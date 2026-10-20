@@ -1,0 +1,29 @@
+name: tender lookup
+
+# Looks up specific notices by number on the real portal (they may already be closed).
+on:
+  workflow_dispatch:
+    inputs:
+      codes:
+        description: 'Notice numbers, space separated (e.g. IB2600452648-00)'
+        required: false
+  pull_request:
+    paths: ['server/scripts/lookup-tenders.ts', 'server/scripts/lookup.txt', '.github/workflows/tender-lookup.yml']
+
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - run: npm ci
+      - run: npx playwright-core install --with-deps chromium
+      - name: Look up notices
+        run: npm run lookup:tenders -- ${{ inputs.codes }} --mode=direct || npm run lookup:tenders -- ${{ inputs.codes }} --mode=browser
