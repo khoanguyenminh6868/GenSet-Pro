@@ -47,7 +47,7 @@ Quét mã QR bằng Expo Go (Android/iOS), hoặc bấm `w` để mở bản web
 
 ## Triển khai
 
-**Máy chủ** (`server/Dockerfile`, có sẵn Chromium): trên [Render](https://render.com), chọn *New → Blueprint*, trỏ tới repo này. Render đọc `render.yaml` và chỉ hỏi `ANTHROPIC_API_KEY`. Cần gói từ Starter trở lên vì Chromium cần khoảng 1 GB RAM. Có thể dùng bất kỳ host chạy Docker nào khác (Railway, Fly.io, VPS).
+**Máy chủ** (`server/Dockerfile`, có sẵn Chromium): trên [Render](https://render.com), chọn *New → Blueprint*, trỏ tới repo này. Render đọc `render.yaml` và chỉ hỏi `ANTHROPIC_API_KEY`. Cấu hình mặc định dùng gói **Free**: máy chủ ngủ sau 15 phút không dùng, lần mở đầu tiên chờ khoảng 1 phút, và tắt chế độ trình duyệt ẩn (`MUASAMCONG_MODE=direct`) vì gói này chỉ có 512 MB RAM. Nếu muasamcong bắt đầu đòi reCAPTCHA, chuyển sang gói Starter và đặt `MUASAMCONG_MODE=auto`. Có thể dùng bất kỳ host chạy Docker nào khác (Railway, Fly.io, VPS).
 
 **Ứng dụng**: `app/eas.json` có sẵn hai cấu hình build, đều trỏ tới `https://genbid-pro-api.onrender.com`. Nếu máy chủ của anh có địa chỉ khác thì sửa lại trong tệp này.
 
