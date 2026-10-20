@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: '0 1 * * *' # 08:00 Vietnam time, daily
 
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -28,3 +31,25 @@ jobs:
         continue-on-error: true
       - name: Through headless browser
         run: npm run check:portal -- browser
+      - name: Export open tenders feed
+        if: success() || failure()
+        run: |
+          npm run export:feed -- ../feed.json direct || npm run export:feed -- ../feed.json browser
+          echo "=====FEED-JSON-BEGIN====="
+          cat ../feed.json
+          echo
+          echo "=====FEED-JSON-END====="
+      # The GenBid Pro artifact is refreshed from this branch.
+      - name: Publish feed to the feed-data branch
+        if: github.event_name != 'pull_request'
+        working-directory: .
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp feed.json /tmp/tenders.json
+          git fetch origin feed-data || true
+          if git rev-parse --verify origin/feed-data >/dev/null 2>&1; then git checkout -B feed-data origin/feed-data; else git checkout --orphan feed-data && git rm -rf --quiet .; fi
+          cp /tmp/tenders.json tenders.json
+          git add tenders.json
+          git commit -m "Update open generator tenders feed" || exit 0
+          git push origin feed-data

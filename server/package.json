@@ -9,7 +9,8 @@
     "start": "node --env-file-if-exists=.env dist/index.js",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test test/*.test.ts",
-    "check:portal": "tsx scripts/check-portal.ts"
+    "check:portal": "tsx scripts/check-portal.ts",
+    "export:feed": "tsx scripts/export-feed.ts"
   },
   "license": "ISC",
   "dependencies": {
