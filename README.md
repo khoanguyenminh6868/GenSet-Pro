@@ -70,7 +70,7 @@ npx eas-cli@latest build -p ios --profile production    # cần tài khoản App
 ## Ghi chú
 
 - **Kết nối muasamcong**: phần lấy dữ liệu nằm trọn trong `server/src/muasamcong.ts`. Nó gọi đúng endpoint tìm kiếm mà trang muasamcong dùng (`/o/egp-portal-contractor-selection-v2/services/smart/search`), tìm theo các từ khoá trong `GENERATOR_KEYWORDS` và chỉ giữ gói có thời điểm đóng thầu sau hiện tại. Trang này yêu cầu token reCAPTCHA v3, nên nếu gọi trực tiếp bị từ chối, máy chủ sẽ mở trang trong Chromium ẩn để lấy token (`MUASAMCONG_MODE=auto|direct|browser`). Workflow *muasamcong live check* trên GitHub chạy kiểm tra thật mỗi sáng; chạy tay bằng `npm run check:portal`.
-- **AI**: dùng Claude (`claude-opus-5-5`, đổi bằng `ANTHROPIC_MODEL`) với structured outputs để kết quả luôn đúng cấu trúc. Tệp tối đa 20 MB mỗi tệp; PDF và ảnh được gửi nguyên để AI đọc được cả bản scan.
+- **AI**: phân tích và đối chiếu dùng Claude `claude-opus-5-5` (đổi bằng `ANTHROPIC_MODEL`); dịch dùng `claude-haiku-5-5` cho rẻ (đổi bằng `ANTHROPIC_TRANSLATE_MODEL`). Dùng với structured outputs để kết quả luôn đúng cấu trúc. Tệp tối đa 20 MB mỗi tệp; PDF và ảnh được gửi nguyên để AI đọc được cả bản scan.
 - **Dữ liệu theo dõi** lưu trên thiết bị (AsyncStorage). Muốn dùng chung cho cả nhóm cần thêm cơ sở dữ liệu và đăng nhập ở `server`.
 
 ## Kiểm tra
