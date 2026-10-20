@@ -1,0 +1,1859 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="/shim.js"></script></head><body><title>GenBid Pro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js"></script>
+<script>
+try { const t = localStorage.getItem("genbid-theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
+<style>
+/* Layout: one dense operations column (banner, KPI row, status tabs, tender grid) with a right-side drawer per tender. Dark-first, after the Incident Control Center. */
+:root{
+  --bg:#0b1020;--panel:#121a2e;--panel2:#17213a;--line:#24304d;--rule:#3e4f78;--fg:#e6eaf5;--muted:#8d98b5;--dim:#5e6a88;
+  --violet:#8b7cf6;--mint:#34d399;--amber:#fbbf24;--rose:#fb7185;--orange:#fb923c;--cyan:#22d3ee;--blue:#60a5fa;
+  --violet-soft:rgba(139,124,246,.16);--mint-soft:rgba(52,211,153,.14);--rose-soft:rgba(251,113,133,.14);--amber-soft:rgba(251,191,36,.14);--cyan-soft:rgba(34,211,238,.12);
+  --banner-a:#151d36;--banner-b:#0f1529;--wave:rgba(139,124,246,.35);
+  --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 8px 24px rgba(0,0,0,.25);
+  --f-display:"Sora",ui-sans-serif,system-ui,sans-serif;--f-body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --green:var(--mint);--red:var(--rose);--yellow:var(--violet);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f4f5fa;--panel:#ffffff;--panel2:#f0f2f9;--line:#dde1ee;--rule:#aab3cc;--fg:#141a2c;--muted:#5b6582;--dim:#8a93ad;
+  --violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
+  --violet-soft:rgba(109,92,232,.10);--mint-soft:rgba(5,150,105,.10);--rose-soft:rgba(225,29,72,.09);--amber-soft:rgba(183,121,31,.12);--cyan-soft:rgba(8,145,178,.10);
+  --banner-a:#ffffff;--banner-b:#eef0fa;--wave:rgba(109,92,232,.28);
+  --shadow:0 1px 2px rgba(20,26,44,.06),0 6px 18px rgba(20,26,44,.06);color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f4f5fa;--panel:#ffffff;--panel2:#f0f2f9;--line:#dde1ee;--rule:#aab3cc;--fg:#141a2c;--muted:#5b6582;--dim:#8a93ad;
+  --violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
+  --violet-soft:rgba(109,92,232,.10);--mint-soft:rgba(5,150,105,.10);--rose-soft:rgba(225,29,72,.09);--amber-soft:rgba(183,121,31,.12);--cyan-soft:rgba(8,145,178,.10);
+  --banner-a:#ffffff;--banner-b:#eef0fa;--wave:rgba(109,92,232,.28);
+  --shadow:0 1px 2px rgba(20,26,44,.06),0 6px 18px rgba(20,26,44,.06);color-scheme:light}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--bg)}
+html{scrollbar-gutter:stable;overflow-y:scroll}
+table.grid{table-layout:fixed}
+table.grid td{white-space:normal!important;overflow-wrap:anywhere}
+body{color:var(--fg);font:14px/1.45 var(--f-body);margin:0}
+main{max-width:1440px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 60px;display:flex;flex-direction:column;gap:16px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+a{color:var(--violet)}
+h1{font:600 24px/1.15 var(--f-display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+h2{font:600 15px/1.25 var(--f-display);margin:0;letter-spacing:.01em}
+h3{font:600 14px/1.3 var(--f-body);margin:0}
+.mono,.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}.small{font-size:12.5px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.spacer{flex:1}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.btn{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;font-weight:500;text-decoration:none;color:var(--fg);white-space:nowrap}
+.btn:hover{border-color:var(--violet)}
+.btn.primary{background:var(--violet);border-color:var(--violet);color:#fff}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn.sm{padding:4px 9px;font-size:12.5px}
+.btn.danger{color:var(--rose)}
+/* Read-only view for people not signed in to Claude: no controls that change data. */
+.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro [data-act],.ro #cmRun,.ro #cmSide,.ro #hsRun,.ro #bdRun,.ro #bdDrop,.ro #bdText,.ro #cmDrop,.ro #cmText,.ro #runQueueBtn{display:none!important}
+.ro #dStage,.ro #dNote{pointer-events:none;opacity:.7}
+.ro [data-viewtext],.ext [data-openpdf]{display:none!important}
+.btn.green{background:var(--mint);border-color:var(--mint);color:#fff}
+.bpline.none{color:var(--muted);font-weight:500}
+.bpline .btn{margin-left:6px}
+tr.us td{background:var(--cyan-soft)}
+.ibtn{border:1px solid var(--line);background:var(--panel);border-radius:8px;width:34px;height:34px;display:inline-grid;place-items:center;padding:0;color:var(--fg)}
+.ibtn svg{width:17px;height:17px}
+input[type=search],input[type=text],input[type=datetime-local],input[type=url],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:0}
+textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
+.note{border-left:3px solid var(--blue);background:var(--cyan-soft);padding:9px 12px;border-radius:0 8px 8px 0;font-size:13px}
+.note.warn{border-color:var(--amber);background:var(--amber-soft)}
+.note.err{border-color:var(--rose);background:var(--rose-soft)}
+
+/* Banner */
+.banner{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:linear-gradient(120deg,var(--banner-a),var(--banner-b));box-shadow:var(--shadow);padding:18px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.banner svg.wave{position:absolute;right:0;top:0;height:100%;width:62%;pointer-events:none}
+.mark{width:46px;height:46px;border-radius:12px;background:var(--violet);color:#fff;display:grid;place-items:center;flex:none;position:relative}
+.mark svg{width:28px;height:28px}
+.btitle{display:flex;flex-direction:column;gap:3px;min-width:0;position:relative}
+.btitle h1 span{color:var(--violet)}
+.btitle .tag{color:var(--muted);font-size:13px}
+.bmeta{margin-left:auto;display:flex;align-items:center;gap:10px;position:relative;flex-wrap:wrap}
+.syncline{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.syncline .ibtn{width:30px;height:30px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--dim);display:inline-block}
+.dot.live{background:var(--mint);box-shadow:0 0 0 3px var(--mint-soft)}
+.dot.busy{background:var(--violet);box-shadow:0 0 0 3px var(--violet-soft)}
+.spec{font:500 11px var(--f-mono);color:var(--dim);letter-spacing:.04em}
+
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{padding:12px 14px;display:flex;flex-direction:column;gap:2px;text-align:left;border:1px solid var(--line);background:var(--panel);border-radius:12px;box-shadow:var(--shadow);position:relative;overflow:hidden;color:var(--fg)}
+.kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--kc,var(--violet))}
+.kpi .kl{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kpi .kv{font:600 26px/1.15 var(--f-mono);font-variant-numeric:tabular-nums}
+.kpi .ks{font-size:12px;color:var(--dim)}
+.kpi{cursor:pointer}
+.kpi:hover,.kpi.on{border-color:var(--kc)}
+.kpi .kref{position:absolute;top:10px;right:10px;width:30px;height:30px}
+.lrow{display:flex;flex-direction:column;gap:3px;text-align:left;border:1px solid var(--line);background:var(--panel2);border-radius:8px;padding:9px 11px;color:var(--fg)}
+.lrow:hover{border-color:var(--violet)}
+
+/* Status tabs */
+.tabsbar{padding:12px 16px;display:flex;flex-direction:column;gap:10px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow-x:auto;background:var(--panel2);max-width:100%}
+.seg button{border:0;background:transparent;padding:6px 12px;font-size:13px;color:var(--muted);white-space:nowrap;display:inline-flex;gap:6px;align-items:center}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-selected="true"]{background:var(--violet-soft);color:var(--fg);font-weight:600}
+.seg .c{font:600 11.5px var(--f-mono);color:var(--dim)}
+.seg button[aria-selected="true"] .c{color:var(--violet)}
+
+/* Grid */
+.gridcard{padding:0;overflow:hidden}
+.gridwrap{overflow-x:auto;scrollbar-width:none}
+.gridwrap::-webkit-scrollbar{display:none}
+.thc{display:flex;align-items:center;gap:4px}
+.thsort{border:0;background:none;padding:0;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;white-space:nowrap;text-align:left}
+.thsort:hover{color:var(--fg)}
+.thf{border:0;background:none;padding:3px;border-radius:5px;color:var(--dim);display:inline-grid;place-items:center}
+.thf svg{width:13px;height:13px}
+.thf:hover{color:var(--fg);background:var(--panel2)}
+.thf.on{color:var(--violet);background:var(--violet-soft)}
+.fpop{position:fixed;z-index:60;width:260px;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:12px;display:flex;flex-direction:column;gap:10px}
+.fpop select,.fpop input{width:100%}
+.tlink{text-decoration:none}
+.tlink:hover{text-decoration:underline}
+td.noc{min-width:170px}
+td.locc{white-space:normal!important;min-width:90px;max-width:130px}
+.aicon{width:26px;height:24px;border-radius:6px;display:inline-grid;place-items:center}
+.aicon svg{width:14px;height:14px}
+.aicon.ok{background:var(--mint-soft);color:var(--mint)}
+.aicon.run{background:var(--violet-soft);color:var(--violet)}
+.aicon.bad{background:var(--rose-soft);color:var(--rose)}
+.aicon.mut{background:var(--panel2);color:var(--dim);border:1px solid var(--line)}
+.aline{margin-top:5px;display:flex}
+.closed-at{color:var(--rose)!important}
+.sbtn.win:hover{color:var(--mint);border-color:var(--mint)}
+.sbtn.lose:hover{color:var(--rose);border-color:var(--rose)}
+.sbtn.x:hover:not(:disabled){color:var(--rose);border-color:var(--rose)}
+.pline{color:var(--mint);font-weight:600;margin-top:4px}
+.bpline{color:var(--cyan);font-weight:600;margin-top:2px}
+.stepbtns{display:flex;gap:4px;margin-top:5px}
+.sbtn{width:26px;height:24px;border:1px solid var(--line);background:var(--panel2);border-radius:6px;display:inline-grid;place-items:center;padding:0;color:var(--muted)}
+.sbtn svg{width:14px;height:14px}
+.sbtn:hover:not(:disabled){color:var(--fg);border-color:var(--violet)}
+.sbtn:disabled{opacity:.35;cursor:default}
+.more{display:flex;justify-content:center;padding:12px;border-top:1px solid var(--line)}
+.pv{display:flex;flex-direction:column;gap:10px;align-items:center}
+.pv canvas{width:100%;height:auto;background:#fff;border-radius:4px;box-shadow:var(--shadow)}
+.modal.wide{width:min(1040px,100%)}
+table{border-collapse:collapse;width:100%}
+th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:600;white-space:nowrap;background:var(--panel)}
+table.grid{min-width:1060px;font-size:13px}
+td.capc{white-space:normal!important;min-width:120px;max-width:190px}
+table.grid th.sortable{cursor:pointer;user-select:none}
+table.grid th.sortable:hover{color:var(--fg)}
+table.grid th .arw{color:var(--violet);margin-left:4px}
+table.grid .flt input,table.grid .flt select{width:100%;min-width:80px;font-size:12.5px;padding:4px 7px}
+table.grid tbody tr{cursor:pointer}
+table.grid tbody tr:hover td{background:var(--panel2)}
+table.grid tbody tr.open td{background:var(--violet-soft)}
+table.grid td{white-space:nowrap}
+table.grid tbody td{border-bottom:1px solid var(--rule)}
+td.wrap{white-space:normal!important;min-width:260px;max-width:360px}
+td.org{white-space:normal!important;min-width:190px;max-width:260px}
+td.r{text-align:right}
+.kcell{font:600 12.5px var(--f-mono)}
+.src{font-size:11px;color:var(--dim)}
+.cap{font:600 13px var(--f-mono);color:var(--fg)}
+.chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:1px 8px;font-size:11.5px;font-weight:600;white-space:nowrap;border:1px solid transparent}
+.chip.ok{background:var(--mint-soft);color:var(--mint)}
+.chip.bad{background:var(--rose-soft);color:var(--rose)}
+.chip.warn{background:var(--amber-soft);color:var(--amber)}
+.chip.run{background:var(--violet-soft);color:var(--violet)}
+.chip.mut{background:var(--panel2);color:var(--muted);border-color:var(--line)}
+.tleft{font:600 11.5px var(--f-mono);margin-top:2px;color:var(--muted)}
+.tleft.urgent{color:var(--orange)}
+.badge{display:inline-flex;align-items:center;border-radius:999px;padding:2px 8px;font-size:12px;background:var(--violet-soft);color:var(--violet);font-weight:600;border:1px solid transparent}
+.stage{font-weight:600;font-size:12.5px}
+.st-new{color:var(--cyan)}.st-reviewing{color:var(--blue)}.st-preparing{color:var(--violet)}.st-submitted{color:var(--amber)}.st-won{color:var(--mint)}.st-lost{color:var(--rose)}.st-dropped{color:var(--dim)}.st-closed{color:var(--rose)}
+.scrollbtns{position:fixed;z-index:40;right:calc(16px + env(safe-area-inset-right, 0px));bottom:calc(16px + env(safe-area-inset-bottom, 0px));display:flex;flex-direction:column;gap:8px}
+.scrollbtns .ibtn{background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);width:36px;height:36px;opacity:.9}
+.empty{color:var(--muted);padding:28px 16px;text-align:center}
+.spin{width:12px;height:12px;border:2px solid var(--line);border-top-color:var(--violet);border-radius:50%;animation:sp .8s linear infinite;display:inline-block;flex:none}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation-duration:3s}}
+.progress{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
+
+/* Drawer */
+#scrim{position:fixed;inset:0;background:rgba(5,8,18,.45);z-index:45}
+#drawer{position:fixed;top:0;right:0;bottom:0;width:min(760px,100vw);background:var(--panel);border-left:1px solid var(--line);box-shadow:-12px 0 30px rgba(0,0,0,.25);z-index:50;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .18s ease;padding-top:env(safe-area-inset-top,0px);padding-right:env(safe-area-inset-right,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#drawer.open{transform:none}
+@media (prefers-reduced-motion:reduce){#drawer{transition:none}}
+.dhead{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:flex-start}
+.dhead .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.dhead .t h2{font-size:16px;overflow-wrap:anywhere}
+.dtabs{padding:10px 16px 0;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
+.dtabs button{border:0;background:none;padding:8px 12px;color:var(--muted);font-weight:500;border-bottom:2px solid transparent;white-space:nowrap}
+.dtabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--violet)}
+.dtabs button:disabled{opacity:.45;cursor:not-allowed}
+.dbody{overflow:auto;padding:14px 16px 28px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:0}
+.kv{display:grid;grid-template-columns:minmax(120px,34%) minmax(0,1fr);gap:6px 12px;font-size:13.5px;margin:0}
+.kv dt{color:var(--muted)}.kv dd{margin:0;overflow-wrap:anywhere}
+.doclist{display:flex;flex-direction:column;gap:6px}
+.docrow{display:flex;gap:10px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;flex-wrap:wrap}
+.docrow .fn{flex:1;min-width:160px;overflow-wrap:anywhere;font-size:13px}
+.textview{white-space:pre-wrap;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13px;max-height:55vh;overflow:auto;overflow-wrap:anywhere}
+.drop{border:1.5px dashed var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.drop.over{border-color:var(--violet)}
+.files{display:flex;flex-direction:column;gap:6px}
+.file{display:flex;align-items:center;gap:8px;font-size:13px;background:var(--panel2);border-radius:6px;padding:5px 10px;min-width:0}
+.file .fn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+.file button{background:none;border:0;color:var(--muted);padding:0 4px;font-size:16px}
+
+/* Analysis and comparison blocks */
+.sev{border:1px solid var(--line);border-left-width:4px;border-radius:8px;padding:10px 12px;background:var(--panel2);display:flex;flex-direction:column;gap:5px}
+.sev.critical{border-left-color:var(--rose)}.sev.warning{border-left-color:var(--amber)}.sev.info{border-left-color:var(--blue)}
+.sev .tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.sev.critical .tag{color:var(--rose)}.sev.warning .tag{color:var(--amber)}.sev.info .tag{color:var(--blue)}
+blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var(--muted);font-style:italic;font-size:13px}
+.rec{font-size:13px}.rec b{color:var(--violet);font-weight:600}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+.tablewrap table{font-size:13px}
+.tablewrap tr:last-child td{border-bottom:0}
+ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+details.sec{border-top:1px solid var(--line);padding-top:10px}
+details.sec summary{cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px}
+details.sec summary::before{content:"+";font-family:var(--f-mono);color:var(--violet);width:14px}
+details.sec[open] summary::before{content:"–"}
+details.sec>div{margin-top:10px}
+.score{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.dial{width:86px;height:86px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--c,var(--violet)) calc(var(--p)*1%),var(--panel2) 0);flex:none}
+.dial span{width:66px;height:66px;border-radius:50%;background:var(--panel);display:grid;place-items:center;font:600 24px var(--f-mono)}
+.st{font-size:12px;font-weight:700;white-space:nowrap}
+.st.met{color:var(--mint)}.st.partial{color:var(--amber)}.st.not_met,.st.missing{color:var(--rose)}.st.unclear{color:var(--blue)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 14px;box-shadow:var(--shadow);z-index:70;font-size:13px}
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field label{font-size:12px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+#ov{position:fixed;inset:0;background:rgba(5,8,18,.55);z-index:80;display:grid;place-items:center;padding:16px}
+.modal{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);width:min(560px,100%);max-height:calc(100vh - 32px);overflow:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+/* Phone: each tender becomes a card so the full name shows without sideways scrolling. */
+@media (max-width:640px){
+  .gridwrap{overflow-x:visible}
+  table.grid{min-width:0;display:block}
+  table.grid colgroup{display:none}
+  table.grid thead,table.grid tbody{display:block}
+  table.grid thead tr{display:flex;flex-wrap:wrap;gap:6px 14px;padding:10px 12px;border-bottom:1px solid var(--line)}
+  table.grid th{display:block;padding:0;border:0;background:none}
+  table.grid tbody tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:12px;border-bottom:2px solid var(--rule)}
+  table.grid tbody td{display:block;padding:0;border:0;min-width:0!important;max-width:none!important;background:none!important}
+  table.grid tbody tr:hover,table.grid tbody tr.open{background:var(--panel2)}
+  table.grid td.c-name{grid-column:1/-1;grid-row:1;font-size:14px}
+  table.grid td.c-no{grid-column:1;grid-row:2}
+  table.grid td.c-stage{grid-column:2;grid-row:2;text-align:right}
+  table.grid td.c-stage .stepbtns,table.grid td.c-stage .aline{justify-content:flex-end}
+  table.grid td.c-offerer,table.grid td.c-cap,table.grid td.c-loc{grid-column:1/-1}
+  table.grid td.c-offerer::before,table.grid td.c-cap::before,table.grid td.c-loc::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+  table.grid td.c-cap .src{display:inline;margin-left:6px}
+  table.grid td[colspan]{grid-column:1/-1}
+}
+@media (max-width:640px){table.grid th.h-no,table.grid th.h-name,table.grid th.h-cap,table.grid th.h-loc,.kpi[data-kpi="done"],.kpi[data-kpi="prep"]{display:none}.seg{display:flex;flex-wrap:wrap;overflow:visible;border:0;background:none;gap:6px}.seg button{border:1px solid var(--line)!important;border-radius:8px;background:var(--panel2);padding:6px 10px}.banner svg.wave{width:100%;opacity:.5}.bmeta{margin-left:0}.kpi .kv{font-size:22px}}
+</style>
+
+<main>
+  <header class="banner" aria-label="GenBid Pro">
+    <svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/>
+      <path d="M0 60 C 25 35, 50 35, 75 60 S 125 85, 150 60 S 200 35, 225 60 S 275 85, 300 60 S 350 35, 375 60 S 425 85, 450 60 S 500 35, 525 60 S 575 85, 600 60" fill="none" stroke="var(--wave)" stroke-width="1" opacity=".6" transform="translate(50 0)"/>
+      <path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/>
+    </svg>
+    <div class="mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="16" cy="16" r="12.5"/><path d="M8.5 16c1.6-4.2 3.9-4.2 5.5 0s3.9 4.2 5.5 0 3.9-4.2 5.5 0"/></svg></div>
+    <div class="btitle">
+      <h1>GenBid <span>Pro</span></h1>
+    </div>
+    <div class="bmeta">
+      <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
+        <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Lấy danh sách gói thầu mới nhất và cập nhật trạng thái"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
+        <button class="ibtn" id="themeBtn" aria-label="Đổi giao diện sáng tối" title="Đổi giao diện sáng / tối"></button></div>
+    </div>
+  </header>
+
+  <section class="kpis" id="kpis" aria-label="Số liệu chính"></section>
+
+  <section class="card tabsbar" aria-label="Trạng thái gói thầu">
+    <div class="seg" id="stageTabs" role="tablist"></div>
+    <div class="row">
+      <input type="search" id="q" placeholder="Tìm kiếm..." aria-label="Tìm gói thầu" style="flex:1;min-width:200px">
+      <button class="btn" id="clearFilters">Xoá lọc</button>
+      <span class="muted small" id="count"></span>
+    </div>
+    <div id="autoNote"></div>
+    <div id="bulkBar" class="row" hidden></div>
+  </section>
+
+  <section class="card gridcard" aria-label="Danh sách gói thầu"><div id="grid"></div></section>
+</main>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" aria-hidden="true" aria-label="Chi tiết gói thầu">
+  <div class="dhead">
+    <div class="t"><div class="row" id="dmeta"></div><h2 id="dtitle"></h2></div>
+    <button class="ibtn" id="dclose" aria-label="Đóng">✕</button>
+  </div>
+  <div class="dtabs" role="tablist" id="dtabs">
+    <button data-dt="info" aria-selected="true">Tổng quan</button>
+    <button data-dt="analysis">Phân tích</button>
+    <button data-dt="translate">YCKT tiếng Anh (PDF)</button>
+    <button data-dt="hsdt">Tạo HSDT tham khảo</button>
+    <button data-dt="compare">Đối chiếu HSDT</button>
+  </div>
+  <div class="dbody" id="dbody"></div>
+</aside>
+<div id="fpop" class="fpop" hidden role="dialog" aria-label="Lọc cột"></div>
+<div class="scrollbtns" aria-label="Cuộn trang"><button class="ibtn" id="toTop" aria-label="Lên đầu trang" title="Lên đầu trang"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button><button class="ibtn" id="toBottom" aria-label="Xuống cuối trang" title="Xuống cuối trang"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>
+<div id="ov" hidden><div class="modal" id="mdl" role="dialog" aria-modal="true"></div></div>
+
+<script>
+(() => {
+"use strict";
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const h = (strings, ...vals) => strings.reduce((a, s, i) => a + s + (i < vals.length ? (vals[i] && vals[i].__html !== undefined ? vals[i].__html : esc(vals[i])) : ""), "");
+const raw = (s) => ({ __html: s });
+const TAB_ID = "t" + Math.random().toString(36).slice(2, 10);
+
+// Rows per page: 10 on phones, 20 elsewhere.
+const pageSize = () => (matchMedia("(max-width:640px)").matches ? 10 : 20);
+// ---------- Domain constants ----------
+const STAGES = [
+  { key: "new", label: "Mới" },
+  { key: "preparing", label: "Chuẩn bị HSDT" },
+  { key: "submitted", label: "Đã nộp" },
+  { key: "won", label: "Trúng thầu" },
+  { key: "lost", label: "Không trúng" },
+  { key: "dropped", label: "Bỏ qua" },
+];
+const stageLabel = (k) => STAGES.find((s) => s.key === k)?.label ?? k;
+const SEV = { critical: "Quan trọng", warning: "Cần lưu ý", info: "Thông tin" };
+const CAT = { deadline: "Thời hạn", eligibility: "Tư cách hợp lệ", technical: "Kỹ thuật", financial: "Tài chính", documents: "Hồ sơ", contract: "Hợp đồng", risk: "Rủi ro", qualification: "Năng lực - kinh nghiệm", commercial: "Thương mại", other: "Khác" };
+const STATUS = { met: "Đạt", partial: "Đạt một phần", not_met: "Không đạt", missing: "Thiếu", unclear: "Chưa rõ" };
+const BID_FORM = { DTRR: "Đấu thầu rộng rãi", DTHC: "Đấu thầu hạn chế", CHCT: "Chào hàng cạnh tranh", CHCTRG: "Chào hàng cạnh tranh rút gọn", CDT: "Chỉ định thầu", CDTRG: "Chỉ định thầu rút gọn", MSTT: "Mua sắm trực tiếp", TTH: "Tự thực hiện", DPCT: "Đàm phán giá" };
+const VERDICT = { pass: ["Có khả năng đạt", "var(--green)"], at_risk: ["Có rủi ro, sửa được", "var(--amber)"], fail: ["Có lỗi có thể bị loại", "var(--red)"] };
+
+const DOMAIN = `You assist a Vietnamese company that bids on public tenders for electric generators (máy phát điện, tổ máy phát điện diesel/gas, ATS, tủ hòa đồng bộ, lắp đặt, bảo dưỡng) published on the national e-procurement system muasamcong.mof.gov.vn.
+Tender documents (E-HSMT / HSMT / HSYC) follow Vietnam's Law on Bidding (Luật Đấu thầu 22/2023/QH15) and Decree 24/2024/NĐ-CP and its circulars. You know the usual chapters: Chỉ dẫn nhà thầu (CDNT), Bảng dữ liệu đấu thầu (BDL), Tiêu chuẩn đánh giá (năng lực-kinh nghiệm, kỹ thuật, tài chính), Yêu cầu kỹ thuật, Biểu mẫu, Điều kiện hợp đồng.
+For generators, the technical points that most often disqualify a bid are: rated vs. standby power (kVA/kW, PRP/ESP/COP per ISO 8528), engine and alternator make/origin, voltage/frequency, fuel consumption, noise level (dB(A) @ 7m), enclosure, ATS rating, controller, emission standard, manufacture year/"mới 100%", CO/CQ, warranty period, delivery time, and installation scope.
+Quote the document's own words when you cite a requirement, and say so when a figure is not stated rather than guessing.`;
+const langLine = (l) => (l === "en" ? "Write every text value of your answer in English." : "Viết toàn bộ nội dung các trường bằng tiếng Việt.");
+
+const ANALYSIS_SHAPE = `{
+  "summary": string (3-5 sentences: what is procured and the main conditions),
+  "keyInfo": { "bidName", "notifyNo", "investor", "procuringEntity", "bidForm", "bidMethod", "closingTime", "bidValidity", "bidSecurity", "budget", "contractType", "deliveryTime", "deliveryLocation", "warranty", "evaluationMethod", "generatorCapacity" (rated power of the generator set(s) with unit and prime/standby, e.g. "500 kVA dự phòng") } (each string or null when not stated),
+  "technicalSpecs": [ { "item": string, "requirement": string, "reference": string|null } ] (every technical requirement for the generator set and related equipment),
+  "qualificationRequirements": [ { "requirement": string, "reference": string|null } ],
+  "highlights": [ { "severity": "critical"|"warning"|"info", "category": "deadline"|"eligibility"|"technical"|"financial"|"documents"|"contract"|"risk"|"other", "title": string, "detail": string, "quote": string|null (exact words from the document), "reference": string|null, "recommendation": string } ] (most severe first; critical = can disqualify the bid),
+  "requiredDocuments": [string],
+  "restrictiveClauses": [string] (clauses that look tailored to a brand or unusually restrictive),
+  "questionsForClarification": [string]
+}`;
+const COMPARE_SHAPE = `{
+  "overallScore": number 0-100 (share of requirements fully met, weighting critical ones higher),
+  "verdict": "pass"|"at_risk"|"fail" (pass = likely compliant, at_risk = fixable gaps, fail = disqualifying gaps),
+  "summary": string,
+  "items": [ { "category": "technical"|"qualification"|"financial"|"documents"|"commercial"|"other", "requirement": string, "requirementRef": string|null, "offered": string|null, "offeredRef": string|null, "status": "met"|"partial"|"not_met"|"missing"|"unclear", "critical": boolean, "note": string (why, with figures, and what to fix) } ],
+  "missingDocuments": [string],
+  "recommendations": [string] (concrete fixes before submission, most important first)
+}`;
+
+// ---------- Formatting ----------
+const TZ = "Asia/Ho_Chi_Minh";
+function fmtDate(iso, withTime = true) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(d)) return "";
+  return d.toLocaleString("vi-VN", { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric", ...(withTime ? { hour: "2-digit", minute: "2-digit" } : {}) });
+}
+function fmtVnd(n) {
+  if (n == null || isNaN(n)) return "";
+  if (n >= 1e9) return (n / 1e9).toLocaleString("vi-VN", { maximumFractionDigits: 2 }) + " tỷ đ";
+  if (n >= 1e6) return (n / 1e6).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + " triệu đ";
+  return n.toLocaleString("vi-VN") + " đ";
+}
+function timeLeft(iso) {
+  if (!iso) return null;
+  const ms = new Date(iso).getTime() - Date.now();
+  if (!(ms > 0)) return null;
+  const hrs = Math.floor(ms / 3.6e6), d = Math.floor(hrs / 24);
+  return { text: d >= 1 ? `còn ${d} ngày ${hrs % 24} giờ` : `còn ${hrs} giờ ${Math.floor((ms % 3.6e6) / 6e4)} phút`, urgent: d < 3 };
+}
+const portalSearch = (notifyNo) => `https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=search&keyword=${encodeURIComponent(notifyNo)}`;
+// Direct link to the Biên bản mở thầu tab, or with kq to the Kết quả lựa chọn nhà thầu tab once results are out, built from the ids the portal's search returns once bids are opened.
+function minutesLink(t, kq = false) {
+  const p = state.portalids?.[t._key];
+  if (!p?.bidOpenId || (kq && !p.inputResultId)) return null;
+  const P = "egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2";
+  const q = { p_p_id: P, p_p_lifecycle: 0, p_p_state: "normal", p_p_mode: "view", [`_${P}_render`]: "detail-v2", type: "es-notify-contractor", stepCode: kq ? "notify-contractor-step-4-kqlcnt" : "notify-contractor-step-2-kqmt",
+    id: p.id, notifyId: p.id, inputResultId: p.inputResultId || "undefined", bidOpenId: p.bidOpenId, techReqId: "undefined", bidPreNotifyResultId: "undefined", bidPreOpenId: "undefined",
+    processApply: p.processApply, bidMode: p.bidMode, notifyNo: t.notifyNo, planNo: p.planNo, pno: "undefined", step: kq ? "kqlcnt" : "kqmt", isInternet: p.isInternet, caseKHKQ: "undefined", bidForm: p.bidForm };
+  return "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?" + Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v ?? "undefined")}`).join("&");
+}
+const tenderLink = (t) => t.sourceUrl || (t.notifyNo ? portalSearch(t.notifyNo) : "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=index");
+function toast(msg) {
+  const el = document.createElement("div");
+  el.className = "toast"; el.textContent = msg; el.setAttribute("role", "status");
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2600);
+}
+const progress = (msg) => h`<div class="progress"><span class="spin"></span><span>${msg}</span></div>`;
+const safeId = (s) => String(s).replace(/[^A-Za-z0-9_-]/g, "_").slice(0, 120) || "t" + Date.now();
+const local = {
+  get(k, d) { try { const v = localStorage.getItem("genbid:" + k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("genbid:" + k, JSON.stringify(v)); } catch {} },
+};
+
+// ---------- State ----------
+const state = {
+  db: null, sample: undefined,
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false }, seen: {}, list: null,
+  stage: local.get("stage", "all"),
+  sort: local.get("gridSort2", { col: "no", dir: -1 }),
+  filters: {},
+  open: null, dtab: "info",
+  auto: { running: false, current: null, blocked: null },
+};
+
+function sampleErrorText(e) {
+  const c = e?.code;
+  if (c === "not_granted" || c === "sampling_disabled" || c === "capability_disabled" || c === "not_declared") return "Trang này chưa được phép dùng Claude. Mở trang trong claude.ai khi đã đăng nhập và bấm Cho phép khi được hỏi.";
+  if (c === "rate_limited") return "Đã chạm giới hạn sử dụng Claude của tài khoản. Hãy thử lại sau ít phút.";
+  if (c === "session_expired") return "Phiên đăng nhập claude.ai đã hết hạn. Hãy đăng nhập lại.";
+  if (c === "prompt_too_large") return "Hồ sơ quá dài cho một lần. Hãy chỉ gửi các chương chính (Tiêu chuẩn đánh giá, Yêu cầu kỹ thuật, Bảng dữ liệu).";
+  if (c === "refused") return "Claude không xử lý nội dung này. Hãy kiểm tra lại tệp.";
+  if (c === "invalid_json") return "Kết quả trả về không đúng định dạng. Bấm chạy lại.";
+  if (c === "image_rejected") return "Ảnh không đọc được hoặc quá lớn. Hãy chọn ảnh khác.";
+  if (c === "images_unavailable") return "Phiên này không gửi được ảnh cho Claude. Hãy dùng tệp PDF có chữ hoặc dán nội dung.";
+  return "Kết nối tới Claude bị gián đoạn. Bấm chạy lại.";
+}
+const noClaudeHtml = () => h`<div class="note warn">Không kết nối được Claude ở chế độ xem này. Hãy mở trang trong claude.ai (ứng dụng hoặc trình duyệt) khi đã đăng nhập.</div>`;
+
+// ---------- Document reading ----------
+const MAX_TEXT = 170000; // bytes budget for document text in one call
+if (window.pdfjsLib) { try { pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"; } catch {} }
+
+async function pdfToContent(file, imageBudget) {
+  if (!window.pdfjsLib) throw new Error("Không tải được bộ đọc PDF.");
+  const doc = await pdfjsLib.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise;
+  let text = "";
+  for (let p = 1; p <= doc.numPages; p++) {
+    const page = await doc.getPage(p);
+    const tc = await page.getTextContent();
+    let line = "", out = [];
+    let lastY = null;
+    for (const it of tc.items) {
+      const y = it.transform?.[5];
+      if (lastY !== null && Math.abs(y - lastY) > 2) { out.push(line); line = ""; }
+      line += it.str + (it.hasEOL ? "\n" : "");
+      lastY = y;
+    }
+    out.push(line);
+    text += `\n[Trang ${p}]\n` + out.join("\n").replace(/\n{3,}/g, "\n\n");
+  }
+  const images = [];
+  // A scanned PDF has almost no text layer: send page pictures instead.
+  if (text.replace(/\[Trang \d+\]|\s/g, "").length < 80 * doc.numPages && imageBudget > 0) {
+    for (let p = 1; p <= Math.min(doc.numPages, imageBudget); p++) {
+      const page = await doc.getPage(p);
+      const vp = page.getViewport({ scale: 1.6 });
+      const canvas = document.createElement("canvas");
+      canvas.width = vp.width; canvas.height = vp.height;
+      await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
+      images.push(await new Promise((r) => canvas.toBlob(r, "image/jpeg", 0.82)));
+    }
+    return { text: `(Tệp scan ${doc.numPages} trang; gửi kèm ảnh ${images.length} trang đầu)`, images, scanned: true, pages: doc.numPages };
+  }
+  return { text, images, pages: doc.numPages };
+}
+async function readFile(file, imageBudget) {
+  const name = file.name.toLowerCase();
+  if (file.type.startsWith("image/")) return { text: "", images: [file] };
+  if (name.endsWith(".pdf")) return pdfToContent(file, imageBudget);
+  if (name.endsWith(".docx")) {
+    if (!window.mammoth) throw new Error("Không tải được bộ đọc DOCX.");
+    const r = await mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() });
+    return { text: r.value, images: [] };
+  }
+  if (name.endsWith(".doc")) throw new Error(`"${file.name}" là định dạng .doc cũ. Hãy lưu lại thành .docx hoặc PDF.`);
+  return { text: await file.text(), images: [] };
+}
+async function collectDocs(files, pasted, label, imageBudget) {
+  const parts = [], images = [], notes = [];
+  for (const f of files) {
+    const r = await readFile(f, imageBudget - images.length);
+    if (r.scanned) notes.push(`${f.name}: bản scan, Claude đọc ảnh ${r.images.length}/${r.pages} trang đầu.`);
+    images.push(...r.images.slice(0, Math.max(0, imageBudget - images.length)));
+    if (r.text) parts.push(`--- ${label}: ${f.name} ---\n${r.text}`);
+    else if (r.images.length) parts.push(`--- ${label}: ${f.name} (ảnh đính kèm) ---`);
+  }
+  if (pasted.trim()) parts.push(`--- ${label}: nội dung dán ---\n${pasted.trim()}`);
+  return { text: parts.join("\n\n"), images, notes };
+}
+function clip(text, budget) {
+  const enc = new TextEncoder();
+  if (enc.encode(text).length <= budget) return { text, clipped: false };
+  let lo = 0, hi = text.length;
+  while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (enc.encode(text.slice(0, mid)).length <= budget) lo = mid; else hi = mid - 1; }
+  return { text: text.slice(0, lo) + "\n\n[... phần sau bị cắt do quá dài ...]", clipped: true };
+}
+function filePicker(inputId, dropId, listId) {
+  const files = [];
+  const input = $("#" + inputId), drop = $("#" + dropId), list = $("#" + listId);
+  const render = () => {
+    list.innerHTML = files.map((f, i) => h`<div class="file"><span class="fn">${f.name}</span><span class="muted mono">${(f.size / 1024 / 1024).toFixed(1)} MB</span><button aria-label="Bỏ tệp" data-i="${i}">×</button></div>`).join("");
+  };
+  const add = (fl) => { for (const f of fl) files.push(f); render(); };
+  input.addEventListener("change", () => { add(input.files); input.value = ""; });
+  list.addEventListener("click", (e) => { const b = e.target.closest("button[data-i]"); if (b) { files.splice(+b.dataset.i, 1); render(); } });
+  drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });
+  drop.addEventListener("dragleave", () => drop.classList.remove("over"));
+  drop.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("over"); add(e.dataTransfer.files); });
+  return { files, clear() { files.length = 0; render(); } };
+}
+const CAP_RE = /(\d+(?:[.,]\d+)?)\s*(kva|kw|mva|mw)\b/gi;
+function capFromText(text) {
+  if (!text) return null;
+  const found = [];
+  for (const m of String(text).matchAll(CAP_RE)) {
+    const n = parseFloat(m[1].replace(",", "."));
+    const u = m[2].toLowerCase();
+    if (!(n > 0)) continue;
+    found.push({ n, u: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW" });
+  }
+  if (!found.length) return null;
+  const seen = new Set(), uniq = found.filter((f) => { const k = f.n + f.u; if (seen.has(k)) return false; seen.add(k); return true; });
+  return { text: uniq.map((f) => f.n.toLocaleString("vi-VN") + " " + f.u).join(", "), n: uniq[0].u.startsWith("M") ? uniq[0].n * 1000 : uniq[0].n };
+}
+const fold = (v) => String(v ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase();
+// Numeric filters: ">500", "<=1000", "100-500", "500"
+function numMatch(n, f) {
+  if (n == null || isNaN(n)) return false;
+  const q = f.replace(/\s/g, "").replace(/,/g, ".");
+  let m;
+  if ((m = q.match(/^(>=|<=|>|<|=)?(\d+(?:\.\d+)?)$/))) {
+    const v = +m[2];
+    switch (m[1]) { case ">": return n > v; case "<": return n < v; case ">=": return n >= v; case "<=": return n <= v; case "=": return n === v; default: return String(n).includes(m[2]); }
+  }
+  if ((m = q.match(/^(\d+(?:\.\d+)?)-(\d+(?:\.\d+)?)$/))) return n >= +m[1] && n <= +m[2];
+  return null; // not a numeric expression: fall back to text
+}
+
+// ---------- Data ----------
+function allTenders() {
+  const map = new Map();
+  const now = Date.now();
+  for (const t of state.feed?.tenders ?? []) { const k = safeId(t.notifyNo || t.id); map.set(k, { ...t, _key: k }); }
+  for (const [id, t] of Object.entries(state.manual)) if (!map.has(id)) map.set(id, { ...t, _key: id });
+  for (const [id, r] of Object.entries(state.tracked)) if (!map.has(id) && r.tender) map.set(id, { ...r.tender, _key: id });
+  // Tenders that left the daily feed (closed) are kept from "seen" so they show under Đã đóng.
+  for (const [id, t] of Object.entries(state.seen)) if (!map.has(id)) map.set(id, { ...t, _key: id });
+  // Tenders the user deleted stay hidden, even when the daily feed or a refresh brings them back.
+  return [...map.values()].filter((t) => !state.deleted[t._key]);
+}
+const isClosed = (t) => !!t.bidCloseDate && new Date(t.bidCloseDate).getTime() <= Date.now();
+// A tender still in an early stage when bidding closes moves to the Đã đóng tab.
+// Label and colour class for a tender, with closed tenders shown as Đã đóng.
+const shownStage = (t) => (tabOf(t) === "closed" ? { key: "closed", label: "Đã đóng" } : { key: stageOf(t), label: stageLabel(stageOf(t)) });
+const tabOf = (t) => { const s = stageOf(t); return isClosed(t) && ["new", "reviewing", "preparing"].includes(s) ? "closed" : s; };
+const TABS = [...STAGES.slice(0, 5), { key: "closed", label: "Đã đóng" }, STAGES[5]];
+let seenBusy = false;
+async function rememberSeen() {
+  if (seenBusy || !state.db || !state.loaded.feed || !state.loaded.seen) return;
+  seenBusy = true;
+  try { for (const t of state.feed?.tenders ?? []) { const k = safeId(t.notifyNo || t.id); if (!state.seen[k] && !state.deleted[k]) { state.seen[k] = t; await dbSet("seen/" + k, t); } } }
+  finally { seenBusy = false; }
+}
+const findTender = (key) => allTenders().find((t) => t._key === key) || (state.tracked[key]?.tender ? { ...state.tracked[key].tender, _key: key } : null);
+// "Đang đánh giá" was retired; any tender still saved in it counts as Mới.
+const stageOf = (t) => { const s = state.tracked[t._key]?.stage || "new"; return s === "reviewing" ? "new" : s; };
+const stripTender = (t) => t ? Object.fromEntries(Object.entries(t).filter(([k]) => !k.startsWith("_"))) : {};
+function analysisOf(key) {
+  const a = state.analysis[key];
+  if (a?.status === "done" && a.result) return a;
+  const old = state.tracked[key]?.analysis;
+  if (old) return { status: "done", result: old, analyzedAt: state.tracked[key].analyzedAt };
+  return a || null;
+}
+const RUN_STALE = 20 * 60 * 1000;
+function analysisState(t) {
+  const a = analysisOf(t._key);
+  if (a?.status === "done") return "done";
+  if (state.auto.current === t._key) return "running";
+  if (a?.status === "running" && Date.now() - new Date(a.startedAt).getTime() < RUN_STALE) return "running";
+  if (a?.status === "error") return "error";
+  // Only open tenders still in Mới are analysed automatically.
+  if (stageOf(t) !== "new" || isClosed(t)) return "skip";
+  if (!state.hsmt[t._key]?.files?.length) return "nodocs";
+  return "queued";
+}
+function capacityOf(t) {
+  const fromName = capFromText(t.bidName);
+  if (fromName) return { ...fromName, src: "tên gói" };
+  const doc = state.hsmt[t._key];
+  if (doc?.capacity) { const c = capFromText(doc.capacity); return { text: doc.capacity, n: c?.n ?? null, src: "HSMT" }; }
+  if (capScan.found[t._key]) return { ...capScan.found[t._key], src: "đọc từ tệp HSMT" };
+  const kc = analysisOf(t._key)?.result?.keyInfo?.generatorCapacity;
+  if (kc && capFromText(kc)) return { text: kc, n: capFromText(kc).n, src: "phân tích" };
+  const specs = analysisOf(t._key)?.result?.technicalSpecs || [];
+  const sp = specs.find((x) => /công suất|capacity|power|kva|kw/i.test((x.item || "") + " " + (x.requirement || "")) && capFromText(x.requirement));
+  if (sp) return { ...capFromText(sp.requirement), src: "phân tích" };
+  return null;
+}
+// "Đơn vị chào" = bên mời thầu. Notices under the 2025 law show only "Chủ đầu tư".
+function offererOf(t) {
+  if (t.procuringEntityName) return { text: t.procuringEntityName, src: "" };
+  if (state.hsmt[t._key]?.procuringEntity) return { text: state.hsmt[t._key].procuringEntity, src: "HSMT" };
+  const a = analysisOf(t._key)?.result?.keyInfo?.procuringEntity;
+  if (a) return { text: a, src: "phân tích" };
+  if (t.investorName) return { text: t.investorName, src: "chủ đầu tư" };
+  return null;
+}
+
+// ---------- Storage ----------
+async function dbSet(path, data) {
+  if (state.readOnly) return false;
+  if (!state.db) return false;
+  try { await state.db.doc(path).set(JSON.parse(JSON.stringify(data))); return true; }
+  catch (e) { if (e?.code === "permission_denied") toast("Bạn chỉ có quyền xem, không lưu được."); return false; }
+}
+async function saveTracked(id, rec) {
+  if (state.readOnly) { toast("Đăng nhập Claude để chỉnh sửa. Đây là bản chỉ xem."); return; }
+  const clean = JSON.parse(JSON.stringify(rec));
+  state.tracked = { ...state.tracked, [id]: clean };
+  if (state.db) await dbSet("tracked/" + id, clean); else local.set("tracked", state.tracked);
+  renderAll();
+}
+// Moving to Đã nộp needs a bid that the comparison found complete and compliant.
+function submitBlockers(key) {
+  const c = state.compare[key]?.result;
+  if (!c) return ["Chưa đối chiếu hồ sơ dự thầu với HSMT của gói này."];
+  if (state.compare[key]?.stale) return ["Đang đối chiếu lại, chờ kết quả mới."];
+  if (state.compare[key]?.accepted) return [];
+  const out = [];
+  if (c.verdict !== "pass") out.push(`Kết quả đối chiếu: ${VERDICT[c.verdict]?.[0] || c.verdict}.`);
+  if ((c.missingDocuments || []).length) out.push(`Còn thiếu ${c.missingDocuments.length} tài liệu: ${c.missingDocuments.slice(0, 5).join("; ")}.`);
+  const bad = (c.items || []).filter((i) => i.critical && ["not_met", "missing"].includes(i.status));
+  if (bad.length) out.push(`${bad.length} yêu cầu bắt buộc chưa đạt: ${bad.slice(0, 3).map((i) => i.requirement).join("; ")}.`);
+  return out;
+}
+async function setStage(key, stage, extra = {}) {
+  const t = findTender(key);
+  const prev = state.tracked[key] || {};
+  if (stage === stageOf(t)) return;
+  if (!movesOf(t).includes(stage)) { toast(movesOf(t).length ? "Không thể chuyển sang " + stageLabel(stage) + " từ trạng thái này" : "Gói này đã ở trạng thái cuối, không chuyển được nữa"); renderAll(); return; }
+  if (stage === "submitted" && prev.stage !== "submitted") {
+    const b = submitBlockers(key);
+    if (b.length) {
+      modal(h`<div class="row"><h2 style="flex:1">Chưa chuyển được sang Đã nộp</h2><button class="btn sm" data-close>Đóng</button></div>
+        <p style="margin:0">Gói chỉ chuyển sang Đã nộp khi hồ sơ dự thầu đã được đối chiếu và đầy đủ, hợp lệ với yêu cầu của gói.</p>
+        <ul class="clean">${raw(b.map((x) => h`<li>${x}</li>`).join(""))}</ul>
+        <div class="row"><div class="spacer"></div>${raw(stageOf(t) === "preparing" ? h`<button class="btn primary" id="goCompare" data-key="${key}">Mở Đối chiếu HSDT</button>` : '<span class="muted small">Chuyển gói sang Chuẩn bị HSDT để đối chiếu.</span>')}</div>`);
+      renderAll();
+      return;
+    }
+    if (extra.bidPrice == null) { askBidPrice(key); return; }
+  }
+  await saveTracked(key, { ...prev, ...extra, stage, prevStage: stage === "dropped" ? prev.stage || "new" : prev.prevStage, note: prev.note || "", tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() });
+  toast("Đã chuyển sang " + stageLabel(stage));
+}
+// Public outcome of a closed tender: bidder count from the opening, winner and price once results are out.
+function resultLine(t) {
+  const r = t.result; if (!r) return "";
+  const parts = [];
+  if (r.numBidderJoin) parts.push(`${r.numBidderJoin} nhà thầu dự thầu`);
+  for (const w of r.winners || []) parts.push(`Trúng: ${w.name}${w.price ? " · " + priceShort(w.price) : ""}`);
+  if (!parts.length) return "";
+  return h`<div class="src">${parts.join(" · ")}</div>`;
+}
+// Submitted, won and lost tenders always show the price bid, or a button to enter it.
+const bidLabel = (t) => (stageOf(t) === "won" && state.tracked[t._key]?.bidPriceSrc === "KQLCNT" ? "Giá trúng" : "Giá dự thầu");
+function bidLine(t) {
+  const bp = state.tracked[t._key]?.bidPrice;
+  if (bp) return h`<div class="bpline num">${bidLabel(t)} ${priceShort(bp)}</div>`;
+  if (["submitted", "won", "lost"].includes(stageOf(t))) return h`<div class="bpline none">Giá dự thầu: chưa có<button class="btn sm" data-act="bidprice" data-key="${t._key}">Nhập</button></div>`;
+  return "";
+}
+// Nộp asks for the bid price, which then shows under the tender price.
+function askBidPrice(key, edit = false) {
+  const t = findTender(key);
+  modal(h`<div class="row"><h2 style="flex:1">${edit ? "Giá dự thầu" : "Nộp hồ sơ dự thầu"}</h2><button class="btn sm" data-close>Đóng</button></div>
+    <p class="muted small" style="margin:0">${t?.notifyNo || ""} · ${t?.bidName || ""}${raw(t?.estimatedPrice != null ? h`<br>Giá gói thầu: ${fmtVnd(t.estimatedPrice)}` : "")}</p>
+    <div class="field"><label for="bidPriceIn">Giá dự thầu (đồng)</label><input id="bidPriceIn" inputmode="numeric" autocomplete="off" placeholder="vd 1.250.000.000"><div class="muted small" id="bidPriceView"></div></div>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="bidPriceOk" disabled>${edit ? "Lưu" : "Nộp"}</button></div>`, (m, close) => {
+    const inp = $("#bidPriceIn", m), ok = $("#bidPriceOk", m), view = $("#bidPriceView", m);
+    const val = () => +inp.value.replace(/\D/g, "");
+    inp.addEventListener("input", () => { const n = val(); inp.value = n ? n.toLocaleString("vi-VN") : ""; ok.disabled = !n; view.textContent = n ? fmtVnd(n) + (t?.estimatedPrice ? ` · ${(n / t.estimatedPrice * 100).toFixed(1).replace(".", ",")}% giá gói` : "") : ""; });
+    inp.addEventListener("keydown", (e) => { if (e.key === "Enter" && !ok.disabled) ok.click(); });
+    ok.addEventListener("click", async () => { const n = val(); if (!n) return; close();
+      if (edit) { await saveTracked(key, { ...state.tracked[key], bidPrice: n, bidPriceSrc: "nhập tay", updatedAt: new Date().toISOString() }); toast("Đã lưu giá dự thầu"); }
+      else await setStage(key, "submitted", { bidPrice: n }); });
+    const cur = state.tracked[key]?.bidPrice; if (edit && cur) { inp.value = String(cur); inp.dispatchEvent(new Event("input")); }
+    inp.focus();
+  });
+}
+function subscribe(coll, field, after) {
+  state.db.collection(coll).onSnapshot((snap) => {
+    const next = {};
+    snap.docs.forEach((d) => { next[d.id] = d.data(); });
+    state[field] = next;
+    if (field in state.loaded) state.loaded[field] = true;
+    after?.();
+    renderAll();
+  }, () => { if (field in state.loaded) state.loaded[field] = true; renderAll(); });
+}
+async function initDb() {
+  let db = null;
+  try { db = await window.claude?.use?.("db"); } catch { db = null; }
+  state.db = db;
+  // Not signed in to Claude: show the read-only snapshot published next to the page.
+  if (!db) {
+    // Hosted outside claude.ai (e.g. Vercel): attached files live in the artifact store and cannot open here.
+    if (!window.claude) document.body.classList.add("ext");
+    try {
+      const r = await fetch("snapshot.json", { cache: "no-store" });
+      if (r.ok) {
+        const snap = await r.json();
+        for (const k of ["tracked", "seen", "manual", "analysis", "hsmt", "deleted", "portalids", "bidders"]) state[k] = snap[k] || {};
+        state.feed = snap.feed || null; state.readOnly = snap.builtAt || true;
+        document.body.classList.add("ro");
+        Object.keys(state.loaded).forEach((k) => (state.loaded[k] = true));
+        renderAll();
+        return;
+      }
+    } catch {}
+    state.tracked = local.get("tracked", {}); state.manual = local.get("manual", {}); state.feed = local.get("feed", null);
+    Object.keys(state.loaded).forEach((k) => (state.loaded[k] = true));
+    renderAll();
+    return;
+  }
+  db.doc("feed/current").onSnapshot((snap) => { state.feed = snap.exists ? snap.data() : null; state.loaded.feed = true; renderAll(); scheduleAuto(); rememberSeen(); },
+    () => { state.loaded.feed = true; renderAll(); });
+  subscribe("tracked", "tracked", scheduleAuto);
+  subscribe("manual", "manual");
+  subscribe("seen", "seen", rememberSeen);
+  subscribe("hsmt", "hsmt", () => { scheduleAuto(); setTimeout(scanCapacities, 300); });
+  subscribe("analysis", "analysis", scheduleAuto);
+  subscribe("compare", "compare");
+  subscribe("hsdt", "hsdt");
+  subscribe("bidders", "bidders");
+  subscribe("portalids", "portalids");
+  subscribe("deleted", "deleted");
+}
+
+// ---------- Claude ----------
+async function getSample() {
+  if (state.sample !== undefined) return state.sample;
+  try { state.sample = (await window.claude?.use?.("sample")) ?? null; } catch { state.sample = null; }
+  return state.sample;
+}
+async function loadAttachedText(key) {
+  const d = state.hsmt[key];
+  if (!d?.textChunks || !state.db) return "";
+  const parts = [];
+  for (let i = 0; i < d.textChunks; i++) {
+    const snap = await state.db.doc(`hsmttext/${key}_${i}`).get();
+    if (snap.exists) parts.push(snap.data().text || "");
+  }
+  return parts.join("");
+}
+const isDrawing = (f) => /\.(tif|tiff|twf)$/i.test(f.name) || /^\(WCE\)|^1Q\d/.test(f.name);
+async function scanImages(files, budget, notes, onStep) {
+  const images = [], labels = [];
+  for (const f of files) {
+    const left = budget - images.length;
+    if (left <= 0) { notes.push(`${f.name}: bản scan, không còn chỗ gửi ảnh nên Claude chưa đọc tệp này.`); continue; }
+    try {
+      onStep?.(f.name);
+      const blob = await (await fetch(f.url)).blob();
+      const r = await pdfToContent(new File([blob], f.name, { type: "application/pdf" }), left);
+      if (r.images?.length) { images.push(...r.images.slice(0, left)); labels.push(`${f.name} (bản scan, ảnh ${Math.min(left, r.images.length)}/${r.pages || "?"} trang đầu)`); notes.push(`${f.name}: bản scan, Claude đọc ảnh ${Math.min(left, r.images.length)}/${r.pages || "?"} trang đầu.`); }
+      else if (r.text) labels.push(`--- Tệp: ${f.name} ---\n${r.text}`);
+    } catch { notes.push(`${f.name}: không mở được bản scan.`); }
+  }
+  return { images, labels };
+}
+const tenderCtx = (t) => t ? `Thông tin gói thầu đã biết: ${t.bidName}; số TBMT ${t.notifyNo || "?"}; chủ đầu tư ${t.investorName || "?"}; đóng thầu ${fmtDate(t.bidCloseDate) || "?"}; giá gói thầu ${fmtVnd(t.estimatedPrice) || "?"}.\n\n` : "";
+
+// ---------- Automatic analysis ----------
+let autoTimer = null;
+function scheduleAuto(delay = 2500) {
+  clearTimeout(autoTimer);
+  autoTimer = setTimeout(runQueue, delay);
+}
+function queue() {
+  return allTenders().filter((t) => analysisState(t) === "queued")
+    .sort((a, b) => (a.bidCloseDate || "9").localeCompare(b.bidCloseDate || "9"));
+}
+async function runQueue() {
+  if (state.readOnly) return;
+  if (state.auto.running || state.auto.blocked || !state.db) return;
+  if (!Object.values(state.loaded).every(Boolean)) return scheduleAuto();
+  const q = queue();
+  if (!q.length) return;
+  const sample = await getSample();
+  if (!sample) { state.auto.blocked = "noclaude"; renderAll(); return; }
+  state.auto.running = true; renderAll();
+  try {
+    for (const t of q) {
+      if (state.auto.blocked) break;
+      if (analysisState(t) !== "queued") continue;
+      await analyze(t._key);
+    }
+  } finally { state.auto.running = false; state.auto.current = null; renderAll(); }
+  if (queue().length && !state.auto.blocked) scheduleAuto(1000);
+}
+async function analyze(key, { manual = false } = {}) {
+  const t = findTender(key);
+  const sample = await getSample();
+  if (!sample) { toast("Không kết nối được Claude."); return; }
+  state.auto.current = key; renderAll();
+  await dbSet("analysis/" + key, { status: "running", startedAt: new Date().toISOString(), by: TAB_ID });
+  try {
+    const lim = await sample.limits().catch(() => null);
+    const imgBudget = lim?.images?.maxCount ?? 0;
+    const notes = [];
+    const att = await loadAttachedText(key);
+    const scans = (state.hsmt[key]?.files || []).filter((f) => f.url && !f.hasText && !isDrawing(f));
+    const sc = await scanImages(scans, imgBudget, notes);
+    let text = att ? `--- Hồ sơ mời thầu tải từ muasamcong ---\n${att}` : "";
+    if (sc.labels.length) text += "\n\n" + sc.labels.join("\n\n");
+    if (!text.trim() && !sc.images.length) throw { code: "_empty" };
+    const c = clip(text, MAX_TEXT);
+    if (c.clipped) notes.push("Hồ sơ quá dài nên phần cuối đã bị cắt.");
+    const prompt = `${DOMAIN}
+
+Task: read the tender documents below and produce a structured brief for the bid team. Flag anything that can cause rejection (missing documents, technical non-conformity, deadlines, bid security amount/validity, experience thresholds) as critical. ${langLine("vi")}
+
+Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
+${ANALYSIS_SHAPE}
+
+${tenderCtx(t)}${sc.images.length ? `Kèm theo ${sc.images.length} ảnh trang hồ sơ (bản scan).\n\n` : ""}${c.text}`;
+    const a = await sample.json(prompt, { modelTier: "complex", ...(sc.images.length ? { images: sc.images } : {}) });
+    await dbSet("analysis/" + key, { status: "done", result: a, notes, analyzedAt: new Date().toISOString() });
+    state.analysis = { ...state.analysis, [key]: { status: "done", result: a, notes, analyzedAt: new Date().toISOString() } };
+    if (manual) toast("Đã phân tích xong");
+  } catch (e) {
+    const code = e?.code || "error";
+    if (code === "not_granted" || code === "sampling_disabled" || code === "capability_disabled" || code === "not_declared") state.auto.blocked = "consent";
+    if (code === "rate_limited") { state.auto.blocked = "rate"; setTimeout(() => { state.auto.blocked = null; scheduleAuto(); }, 10 * 60 * 1000); }
+    const msg = code === "_empty" ? "Không đọc được chữ hay ảnh nào từ tài liệu." : (e?.code ? sampleErrorText(e) : (e?.message || "Lỗi không xác định."));
+    if (state.auto.blocked === "consent" || state.auto.blocked === "rate") {
+      // Not the tender's fault: leave it queued instead of marking it failed.
+      await dbSet("analysis/" + key, { status: "queued", at: new Date().toISOString() });
+    } else {
+      await dbSet("analysis/" + key, { status: "error", code, error: msg, at: new Date().toISOString() });
+    }
+  } finally { if (state.auto.current === key) state.auto.current = null; renderAll(); }
+}
+
+// ---------- Banner, KPIs, tabs ----------
+const REFRESH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>';
+const KPIS = [
+  { key: "open", l: "Đang mở", s: "gói còn hạn nộp", c: "var(--violet)", f: (t) => !isClosed(t) && !["dropped", "lost", "won"].includes(stageOf(t)) },
+  { key: "soon", l: "Đóng trong 3 ngày", s: "chưa nộp", c: "var(--orange)", f: (t) => { const tl = timeLeft(t.bidCloseDate); return !!tl && tl.urgent && !["dropped", "lost", "won", "submitted"].includes(stageOf(t)); } },
+  { key: "done", l: "Đã phân tích", s: "", c: "var(--mint)", f: (t) => analysisState(t) === "done" },
+  { key: "prep", l: "Chuẩn bị HSDT", s: "đối chiếu trong từng gói", c: "var(--cyan)", f: (t) => tabOf(t) === "preparing" },
+];
+function renderTop() {
+  const f = state.feed;
+  const dot = $("#sdot"), txt = $("#stext");
+  if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `Claude đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
+  else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật lúc ${fmtDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
+  else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật lúc ${fmtDate(f.fetchedAt)}`; }
+  else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
+  const items = allTenders();
+  const live = items.filter((t) => tabOf(t) !== "closed");
+  const waiting = items.filter((t) => ["queued", "running"].includes(analysisState(t))).length;
+  const K = KPIS.map((k) => ({ ...k, n: items.filter(k.f).length }));
+  $("#kpis").innerHTML = K.map((k) => h`<div class="kpi ${state.list === k.key ? "on" : ""}" role="button" tabindex="0" data-kpi="${k.key}" style="--kc:${raw(k.c)}"><span class="kl">${k.l}</span><span class="kv">${k.n}</span>
+
+    ${raw(k.key === "done" && waiting ? h`<button class="ibtn kref" id="runQueueBtn" aria-label="Phân tích ngay các gói đang chờ" title="Phân tích ngay ${waiting} gói đang chờ">${raw(state.auto.running ? '<span class="spin"></span>' : REFRESH_SVG)}</button>` : "")}</div>`).join("");
+  const counts = Object.fromEntries(TABS.map((s) => [s.key, 0]));
+  items.forEach((t) => counts[tabOf(t)]++);
+  $("#stageTabs").innerHTML = [["all", "Tất cả", live.length], ...TABS.map((s) => [s.key, s.label, counts[s.key]])]
+    .map(([k, l, n]) => h`<button role="tab" data-stage="${k}" aria-selected="${String(state.stage === k)}">${l}<span class="c">${n}</span></button>`).join("");
+  const an = $("#autoNote");
+  if (state.auto.blocked === "consent" || state.auto.blocked === "noclaude") an.innerHTML = h`<div class="note warn row"><span style="flex:1;min-width:200px">${state.auto.blocked === "noclaude" ? "Mở trang trong claude.ai khi đã đăng nhập để Claude tự phân tích các gói mới." : "Claude cần được cho phép để tự phân tích các gói mới."}</span>${raw(state.auto.blocked === "consent" ? '<button class="btn sm primary" id="allowAuto">Cho phép và phân tích</button>' : "")}</div>`;
+  else if (state.auto.blocked === "rate") an.innerHTML = h`<div class="note warn">Đã chạm giới hạn sử dụng Claude. Việc phân tích tự động sẽ chạy lại sau ít phút.</div>`;
+  else an.innerHTML = "";
+}
+
+// ---------- Grid ----------
+const ANA = {
+  done: () => '<span class="chip ok">Đã phân tích</span>',
+  running: () => '<span class="chip run"><span class="spin"></span>Đang phân tích</span>',
+  queued: () => '<span class="chip mut">Chờ phân tích</span>',
+  nodocs: () => '<span class="chip mut">Chưa có HSMT</span>',
+  skip: () => '<span class="chip mut">Không tự phân tích</span>',
+  error: (t) => h`<span class="chip bad">Lỗi</span> <button class="btn sm" data-act="retry" data-key="${t._key}">Retry</button>`,
+};
+const ANA_LABEL = { skip: "Không tự phân tích", done: "Đã phân tích", running: "Đang phân tích", queued: "Chờ phân tích", nodocs: "Chưa có HSMT", error: "Lỗi" };
+function critCount(t) { const a = analysisOf(t._key)?.result; return a ? (a.highlights || []).filter((x) => x.severity === "critical").length : null; }
+const locOf = (t) => [...new Set(String(t.location || "").split(/\s*[,;]\s*/).filter(Boolean).map((x) => x.replace(/^\s*(thành phố|tỉnh|tp\.?)\s+/i, "")))].join(", ");
+const pubOf = (t) => t.publicDate || t.addedAt || "";
+const priceShort = (n) => fmtVnd(n).replace(/\s*đ$/, "");
+const NOT_ANALYZED = "Chưa phân tích";
+function anaIcon(t) {
+  const s = analysisState(t);
+  // Done and not-needed states show nothing; only pending work or errors get an icon.
+  if (s === "done" || s === "skip") return "";
+  const m = { done: ["ok", "Đã phân tích", '<path d="M5 12.5l4.5 4.5L19 7.5"/>'], running: ["run", "Đang phân tích", '<path d="M12 3a9 9 0 1 0 9 9"/>'], error: ["bad", "Phân tích bị lỗi", '<path d="M12 7v6M12 17h.01"/>'], queued: ["mut", "Chưa phân tích, đang chờ", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], nodocs: ["mut", "Chưa phân tích, chưa có HSMT", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], skip: ["mut", "Chưa phân tích (chỉ tự phân tích gói ở trạng thái Mới)", '<circle cx="12" cy="12" r="8"/><path d="M8 12h8"/>'] }[s];
+  return `<span class="aicon ${m[0]}" role="img" aria-label="${m[1]}" title="${m[1]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${m[2]}</svg></span>`;
+}
+const FLOW = ["new", "preparing", "submitted", "won"];
+// Allowed moves: Đã nộp only goes to a result; results and closed tenders are final.
+function movesOf(t) {
+  const s = stageOf(t);
+  if (tabOf(t) === "closed" || s === "won" || s === "lost") return [];
+  if (s === "submitted") return ["won", "lost"];
+  if (s === "dropped") return ["new"];
+  return ["new", "preparing", "submitted", "dropped"].filter((x) => x !== s);
+}
+function stepPrev(t) { const s = stageOf(t); const p = s === "dropped" ? "new" : FLOW[FLOW.indexOf(s) - 1]; return p && movesOf(t).includes(p) ? p : null; }
+function stepNext(t) { const s = stageOf(t); const i = FLOW.indexOf(s); const n = i >= 0 ? FLOW[i + 1] : null; return n && s !== "submitted" && movesOf(t).includes(n) ? n : null; }
+// Results for a submitted bid: Trúng thầu or Không trúng.
+const resultBtns = (t) => !movesOf(t).includes("won") ? "" : h`<button class="sbtn win" data-step="won" data-key="${t._key}" aria-label="Chuyển sang Trúng thầu" title="Trúng thầu">${raw(STAGE_ICON.win)}</button><button class="sbtn lose" data-step="lost" data-key="${t._key}" aria-label="Chuyển sang Không trúng" title="Không trúng">${raw(STAGE_ICON.lose)}</button>`;
+const STAGE_ICON = { win: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>', lose: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 14V3H7l-3 8v3h6l-1 5a2 2 0 0 0 2 2l6-7z"/></svg>', x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>', prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>', next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>' };
+const BUSY = { translate: "Đang dịch sang tiếng Anh", hsdt: "Đang tạo HSDT tham khảo", compare: "Đang đối chiếu HSDT" };
+const busy = {};
+function busyStart(key, kind) { (busy[key] ||= new Set()).add(kind); renderGrid(); }
+function busyEnd(key, kind) { busy[key]?.delete(kind); renderGrid(); if (state.open === key && state.dtab === kind && !document.getElementById(kind === "translate" ? "trOut" : kind === "hsdt" ? "hsOut" : "cmOut")?.isConnected) renderDrawer(); }
+function busyNote(key, kind) { return busy[key]?.has(kind) ? `<div class="note">${progress(BUSY[kind] + "... Kết quả sẽ hiện ở đây khi xong, anh có thể chuyển tab trong lúc chờ.")}</div>` : ""; }
+function anaInline(t) {
+  const jobs = [...(busy[t._key] || [])].map((k) => `<span class="chip run"><span class="spin"></span>${BUSY[k]}</span>`).join(" ");
+  return anaInline0(t) + (jobs ? `<div class="row" style="gap:6px;margin-top:4px">${jobs}</div>` : "");
+}
+function anaInline0(t) {
+  const s = analysisState(t);
+  if (s === "error") return h`<div class="row" style="gap:6px;margin-top:4px"><span class="chip bad">Lỗi phân tích</span><button class="btn sm" data-act="retry" data-key="${t._key}">Retry</button></div>`;
+  if (s === "running") return '<div style="margin-top:4px"><span class="chip run"><span class="spin"></span>Đang phân tích</span></div>';
+  return "";
+}
+const COLS = [
+  { k: "no", label: "Số TBMT", cls: "noc", val: (t) => pubOf(t), text: (t) => `${t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
+    cell: (t) => { const tl = timeLeft(t.bidCloseDate); return h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}
+      <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
+  { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}${raw(t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}</div>` : "")}${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
+  { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return v ? h`${v}` : '<span class="muted">Chưa có</span>'; } },
+  { k: "cap", label: "Công Suất", cls: "capc", num: true, numUnit: "kVA", val: (t) => capacityOf(t)?.n ?? null, text: (t) => capacityOf(t)?.text || "", cell: (t) => { const c = capacityOf(t); return c ? h`<span class="cap">${c.text}</span><div class="src">${c.src}</div>` : capScan.pending.has(t._key) ? '<span class="muted small">Đang đọc HSMT...</span>' : '<span class="muted">Chưa rõ</span>'; } },
+  { k: "stage", label: "Trạng thái", pick: true, val: (t) => TABS.find((x) => x.key === tabOf(t))?.label, cell: (t) => { const st = stageOf(t), p = stepPrev(t), n = stepNext(t), drop = movesOf(t).includes("dropped");
+    // Only moves that are allowed get a button.
+    const btns = (p ? h`<button class="sbtn" data-step="${p}" data-key="${t._key}" aria-label="Chuyển về ${stageLabel(p)}" title="Về: ${stageLabel(p)}">${raw(STAGE_ICON.prev)}</button>` : "")
+      + (n ? h`<button class="sbtn" data-step="${n}" data-key="${t._key}" aria-label="Chuyển sang ${stageLabel(n)}" title="Sang: ${stageLabel(n)}">${raw(STAGE_ICON.next)}</button>` : "")
+      + resultBtns(t)
+      + (drop ? h`<button class="sbtn x" data-step="dropped" data-key="${t._key}" aria-label="Bỏ qua gói thầu" title="Bỏ qua gói này">${raw(STAGE_ICON.x)}</button>` : "");
+    const ai = anaIcon(t);
+    return h`<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(btns ? `<div class="stepbtns">${btns}</div>` : "")}${raw(ai ? `<div class="aline">${ai}</div>` : "")}`; } },
+  { k: "loc", label: "Địa điểm", pick: true, cls: "locc", val: (t) => locOf(t), cell: (t) => h`${locOf(t) || "—"}` },
+];
+const COLW = { no: "13%", name: "33%", offerer: "18%", cap: "13%", stage: "12%", loc: "11%" };
+const colText = (c, t) => (c.text ? c.text(t) : String(c.val(t) ?? ""));
+function passFilters(t) {
+  if (state.stage === "all" ? tabOf(t) === "closed" : tabOf(t) !== state.stage) return false;
+  const q = fold($("#q").value.trim());
+  if (q && !COLS.some((c) => fold(colText(c, t)).includes(q))) return false;
+  for (const c of COLS) {
+    const f = (state.filters[c.k] || "").trim();
+    if (!f) continue;
+    if (c.k === "stage" && f === NOT_ANALYZED) { if (analysisState(t) === "done") return false; continue; }
+    if (c.pick) { if (colText(c, t) !== f) return false; continue; }
+    if (c.num) { const r = numMatch(c.numOf ? c.numOf(t) : c.val(t), f); if (r === false) return false; if (r === true) continue; }
+    if (!fold(colText(c, t)).includes(fold(f))) return false;
+  }
+  return true;
+}
+const FUNNEL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>';
+function renderGrid() {
+  const box = $("#grid");
+  if (!state.loaded.feed) { box.innerHTML = `<div class="empty">${progress("Đang tải danh sách gói thầu...")}</div>`; return; }
+  const all = allTenders();
+  if (!all.length) { box.innerHTML = h`<div class="empty"><b>Chưa có gói thầu nào</b><br>Danh sách được nạp từ muasamcong mỗi sáng. Bấm Refresh để tải lại.</div>`; $("#count").textContent = ""; return; }
+  const col = COLS.find((c) => c.k === state.sort.col) || COLS[0];
+  const items = all.filter(passFilters).sort((a, b) => {
+    const x = col.val(a), y = col.val(b);
+    if (x == null || x === "") return 1;
+    if (y == null || y === "") return -1;
+    return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "vi")) * state.sort.dir;
+  });
+  $("#count").textContent = `${items.length}/${all.filter((t) => (state.stage === "all" ? tabOf(t) !== "closed" : tabOf(t) === state.stage)).length} gói`;
+  const w0 = $(".gridwrap", box); const sl = w0 ? w0.scrollLeft : 0;
+  const head = COLS.map((c) => {
+    const on = !!(state.filters[c.k] || "").trim();
+    const sorted = state.sort.col === c.k;
+    return h`<th class="h-${c.k}" aria-sort="${sorted ? (state.sort.dir > 0 ? "ascending" : "descending") : "none"}"><div class="thc">
+      <button class="thsort" data-sort="${c.k}" title="Bấm để sắp xếp">${c.label}${raw(sorted ? `<span class="arw">${state.sort.dir > 0 ? "▲" : "▼"}</span>` : "")}</button>
+      <button class="thf ${on ? "on" : ""}" data-fcol="${c.k}" aria-label="Lọc ${c.label}" title="${on ? "Đang lọc: " + state.filters[c.k] : "Lọc cột này"}">${raw(FUNNEL)}</button></div></th>`;
+  }).join("");
+  const shown = items.slice(0, state.limit);
+  const del = canDelete();
+  for (const k of [...state.sel]) if (!del || !items.some((t) => t._key === k)) state.sel.delete(k);
+  renderBulk(items);
+  const body = shown.length
+    ? shown.map((t) => `<tr data-key="${esc(t._key)}" class="${state.open === t._key ? "open" : ""}">${COLS.map((c, i) => `<td class="${c.cls || ""} ${c.tdCls || ""} c-${c.k}" data-l="${c.label}">${i === 0 && del ? `<input type="checkbox" class="selbox" data-sel="${esc(t._key)}" aria-label="Chọn gói ${esc(t.notifyNo || "")}" ${state.sel.has(t._key) ? "checked" : ""}> ` : ""}${c.cell(t)}</td>`).join("")}</tr>`).join("")
+    : `<tr><td colspan="${COLS.length}" class="empty">Không có gói thầu nào ở trạng thái này khớp bộ lọc.</td></tr>`;
+  const more = items.length > shown.length ? `<div class="more"><button class="btn" id="moreBtn">Xem thêm ${Math.min(pageSize(), items.length - shown.length)} gói (còn ${items.length - shown.length})</button></div>` : "";
+  box.innerHTML = `<div class="gridwrap"><table class="grid"><colgroup>${COLS.map((c) => `<col style="width:${COLW[c.k]}">`).join("")}</colgroup><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>${more}`;
+  if (sl) $(".gridwrap", box).scrollLeft = sl;
+}
+// Deleting is offered only under Đã đóng and Bỏ qua.
+const canDelete = () => ["closed", "dropped"].includes(state.stage);
+function renderBulk(items) {
+  const bar = $("#bulkBar");
+  if (!canDelete() || !items.length) { bar.hidden = true; bar.innerHTML = ""; return; }
+  const n = state.sel.size, all = n && items.every((t) => state.sel.has(t._key));
+  bar.hidden = false;
+  bar.innerHTML = h`<label class="small row" style="gap:6px"><input type="checkbox" id="selAll" ${all ? "checked" : ""}>Chọn tất cả (${items.length})</label><div class="spacer"></div><button class="btn danger" id="delSel" ${n ? "" : "disabled"}>Xoá ${n || ""} gói</button>`;
+  bar._items = items.map((t) => t._key);
+}
+function askDelete() {
+  const keys = [...state.sel]; if (!keys.length) return;
+  const list = keys.map((k) => findTender(k)).filter(Boolean);
+  modal(h`<div class="row"><h2 style="flex:1">Xoá ${keys.length} gói thầu?</h2><button class="btn sm" data-close>Đóng</button></div>
+    <ul class="clean">${raw(list.slice(0, 8).map((t) => h`<li><b>${t.notifyNo || ""}</b> ${t.bidName || ""}</li>`).join(""))}${raw(list.length > 8 ? h`<li class="muted">và ${list.length - 8} gói khác</li>` : "")}</ul>
+    <p class="muted small" style="margin:0">Các gói này sẽ biến mất khỏi danh sách và không hiện lại khi refresh hay khi dữ liệu được cập nhật hằng ngày.</p>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="delOk" style="background:var(--rose);border-color:var(--rose)">Xoá</button></div>`, (m, close) => {
+    $("#delOk", m).addEventListener("click", async () => {
+      close();
+      const at = new Date().toISOString(), next = { ...state.deleted };
+      for (const t of list) next[t._key] = { at, notifyNo: t.notifyNo || "", bidName: t.bidName || "" };
+      state.deleted = next; state.sel.clear();
+      if (state.open && next[state.open]) closeDrawer?.();
+      renderAll();
+      for (const t of list) await dbSet("deleted/" + t._key, next[t._key]);
+      toast(`Đã xoá ${list.length} gói`);
+    });
+  });
+}
+document.addEventListener("change", (e) => {
+  if (e.target.matches?.(".selbox")) { const k = e.target.dataset.sel; e.target.checked ? state.sel.add(k) : state.sel.delete(k); renderBulk(($("#bulkBar")._items || []).map((k) => ({ _key: k }))); return; }
+  if (e.target.id === "selAll") { const ks = $("#bulkBar")._items || []; if (e.target.checked) ks.forEach((k) => state.sel.add(k)); else state.sel.clear(); renderGrid(); }
+});
+// Filter popover opened from a header's funnel button.
+function openFilter(k, btn) {
+  const c = COLS.find((x) => x.k === k), pop = $("#fpop");
+  const v = state.filters[k] || "";
+  const pool = allTenders().filter((t) => (state.stage === "all" ? tabOf(t) !== "closed" : tabOf(t) === state.stage));
+  const opts = [...new Set(pool.map((t) => colText(c, t)).filter(Boolean))].sort((a, b) => a.localeCompare(b, "vi"));
+  if (k === "stage") opts.push(NOT_ANALYZED);
+  pop.innerHTML = h`<div class="eyebrow">Lọc: ${c.label}</div>${raw(c.pick
+    ? h`<select id="fval"><option value="">Tất cả</option>${raw(opts.map((o) => h`<option ${o === v ? "selected" : ""}>${o}</option>`).join(""))}</select>`
+    : h`<input type="search" id="fval" value="${v}" placeholder="${c.num ? "vd >400 hoặc 100-500 (" + c.numUnit + ")" : "Gõ để lọc..."}">`)}
+    <div class="row"><button class="btn sm" id="fclear">Bỏ lọc</button><div class="spacer"></div><button class="btn sm primary" id="fok">Xong</button></div>`;
+  pop.dataset.col = k; pop.hidden = false;
+  const r = btn.getBoundingClientRect();
+  pop.style.top = Math.min(innerHeight - 140, r.bottom + 6) + "px";
+  pop.style.left = Math.max(8, Math.min(innerWidth - 268, r.left - 120)) + "px";
+  $("#fval").focus();
+}
+const closeFilter = () => { $("#fpop").hidden = true; };
+function applyFilter(val) { const k = $("#fpop").dataset.col; state.filters[k] = val; state.limit = pageSize(); renderGrid(); }
+
+// Capacity from the attached documents, for tenders whose name gives none.
+const capScan = { done: new Set(), pending: new Set(), found: {}, running: false };
+function capFromDocsText(all) {
+  const counts = new Map();
+  const re = /c[ôo]ng\s*su[ấa]t[^\n]{0,80}?(\d+(?:[.,]\d+)?)\s*(kva|kw|mva|mw)\b/gi;
+  for (const m of all.matchAll(re)) {
+    const c = capFromText(m[1] + " " + m[2]);
+    if (c) counts.set(c.text, { ...c, k: (counts.get(c.text)?.k || 0) + 1 });
+  }
+  if (!counts.size) { const c = capFromText(all.slice(0, 200000)); return c ? { text: c.text.split(", ").slice(0, 3).join(", "), n: c.n } : null; }
+  const top = [...counts.values()].sort((a, b) => b.k - a.k).slice(0, 3);
+  return { text: top.map((x) => x.text).join(", "), n: top[0].n };
+}
+async function scanCapacities() {
+  if (capScan.running || !state.db || !state.loaded.hsmt) return;
+  const todo = allTenders().filter((t) => !capScan.done.has(t._key) && state.hsmt[t._key]?.textChunks && !capFromText(t.bidName) && !state.hsmt[t._key]?.capacity);
+  if (!todo.length) return;
+  capScan.running = true;
+  todo.forEach((t) => capScan.pending.add(t._key));
+  renderGrid();
+  for (const t of todo) {
+    try { const c = capFromDocsText(await loadAttachedText(t._key)); if (c) capScan.found[t._key] = c; } catch {}
+    capScan.done.add(t._key); capScan.pending.delete(t._key);
+  }
+  capScan.running = false;
+  renderGrid();
+}
+
+// ---------- Drawer ----------
+function openList(k) {
+  state.list = k; state.open = null;
+  const kp = KPIS.find((x) => x.key === k);
+  const items = allTenders().filter(kp.f).sort((a, b) => (a.bidCloseDate || "9").localeCompare(b.bidCloseDate || "9"));
+  $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
+  $("#dtabs").hidden = true;
+  $("#dmeta").innerHTML = h`<span class="eyebrow">${items.length} gói</span>`;
+  $("#dtitle").textContent = kp.l;
+  $("#dbody").innerHTML = items.length ? items.map((t) => { const tl = timeLeft(t.bidCloseDate); return h`<button class="lrow" data-openkey="${t._key}">
+      <span class="row" style="gap:8px"><span class="kcell st-${shownStage(t).key}">${t.notifyNo || ""}</span><span class="stage st-${shownStage(t).key} small">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}" style="margin:0">${tl.text}</span>` : "")}</span>
+      <span>${t.bidName}</span><span class="src">${[capacityOf(t)?.text, priceShort(t.estimatedPrice), locOf(t)].filter(Boolean).join(" · ")}</span></button>`; }).join("") : '<div class="empty">Không có gói nào.</div>';
+  renderTop();
+}
+function openDrawer(key, tab) {
+  state.list = null; $("#dtabs").hidden = false;
+  state.open = key; state.dtab = tab || "info";
+  $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
+  renderDrawer(); renderGrid();
+}
+function closeDrawer() {
+  state.open = null; state.list = null; $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true"); $("#scrim").hidden = true; renderGrid();
+}
+let drawerSig = "";
+function renderDrawer(force = true) {
+  const key = state.open;
+  if (!key) return;
+  const t = findTender(key);
+  if (!t) { closeDrawer(); return; }
+  const stg = stageOf(t);
+  const tl = timeLeft(t.bidCloseDate);
+  $("#dmeta").innerHTML = h`<span class="kcell">${t.notifyNo || ""}</span><span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
+  $("#dtitle").textContent = t.bidName || "";
+  $$("#dtabs button").forEach((b) => {
+    b.setAttribute("aria-selected", String(b.dataset.dt === state.dtab));
+    if (b.dataset.dt === "compare") { b.disabled = stg !== "preparing"; b.title = stg !== "preparing" ? "Chuyển gói sang Chuẩn bị HSDT để đối chiếu" : ""; }
+  });
+  if (state.dtab === "compare" && stg !== "preparing") state.dtab = "info";
+  // Re-render the body only when what it shows has changed, so typing is not interrupted.
+  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.auto.current === key, state.tracked[key]?.note]);
+  if (!force && sig === drawerSig) return;
+  drawerSig = sig;
+  const body = $("#dbody");
+  if (state.dtab === "info") { body.innerHTML = infoHtml(t); mountBidders(); }
+  else if (state.dtab === "analysis") body.innerHTML = analysisTabHtml(t);
+  else if (state.dtab === "translate") { body.innerHTML = translateTabHtml(t); loadTranslation(key); }
+  else if (state.dtab === "hsdt") body.innerHTML = hsdtTabHtml(t);
+  else if (state.dtab === "compare") { body.innerHTML = compareTabHtml(t); mountCompare(t); }
+}
+function infoHtml(t) {
+  const key = t._key, d = state.hsmt[key], files = d?.files || [];
+  const o = offererOf(t), c = capacityOf(t);
+  const facts = [["Đơn vị chào", o ? o.text + (o.src ? ` (${o.src})` : "") : ""], ["Chủ đầu tư", t.investorName], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Số nhà thầu dự thầu", String(t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin || "")], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => w.name + (w.price ? ` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
+  return h`<div class="grid2">
+      <div class="field"><label for="dStage">Trạng thái</label><select id="dStage" ${movesOf(t).length ? "" : "disabled"}>${raw(tabOf(t) === "closed" ? '<option selected>Đã đóng</option>' : STAGES.map((s) => h`<option value="${s.key}" ${s.key === stageOf(t) ? "selected" : ""} ${s.key === stageOf(t) || movesOf(t).includes(s.key) ? "" : "disabled"}>${s.label}</option>`).join(""))}</select></div>
+      <div class="field"><label>Trang gốc</label><div class="row"><a class="btn" href="${tenderLink(t)}" target="_blank" rel="noopener">Mở trên muasamcong ↗</a>${raw(minutesLink(t) ? h`<a class="btn" href="${minutesLink(t)}" target="_blank" rel="noopener">Biên bản mở thầu ↗</a>` : "")}${raw(minutesLink(t, true) ? h`<a class="btn" href="${minutesLink(t, true)}" target="_blank" rel="noopener">Kết quả LCNT ↗</a>` : "")}</div></div>
+    </div>
+    <div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
+    <dl class="kv">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd>${v}</dd>`).join(""))}</dl>
+    ${raw(ownBidHtml(t))}${raw(["won", "lost"].includes(stageOf(t)) ? biddersHtml(t) : "")}
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp tải từ muasamcong${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
+      ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
+        ${raw(f.url ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>')}
+        ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về. Khi có, Claude sẽ tự phân tích.</div>')}
+    </div>`;
+}
+function ownBidHtml(t) {
+  if (!["submitted", "won", "lost"].includes(stageOf(t))) return "";
+  const r = state.tracked[t._key] || {};
+  return h`<div class="row"><span class="small" style="flex:1;min-width:200px">${bidLabel(t)} của mình: ${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></div>`;
+}
+// Other bidders and their prices: muasamcong only shows them in the bid-opening minutes behind reCAPTCHA,
+// so the user brings a screenshot or PDF of the minutes and Claude reads it.
+const OUR_RE = /thảo\s*nguyên/i;
+let bdPick = null;
+function biddersHtml(t) {
+  const b = state.bidders[t._key], list = b?.list || [], n = t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin;
+  const table = list.length ? h`<div class="tablewrap"><table><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th><th>Giảm giá</th><th>Giá sau giảm</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num">${x.rank ?? i + 1}</td><td>${x.name}${x.note ? h`<div class="src">${x.note}</div>` : ""}</td><td class="num">${x.taxCode || ""}</td><td class="num">${fmtVnd(x.bidPrice)}</td><td class="num">${x.discount || ""}</td><td class="num">${fmtVnd(x.priceAfterDiscount)}</td></tr>`).join(""))}</tbody></table></div>
+    <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>` : "";
+  return h`<details class="sec" ${list.length ? "open" : ""}><summary>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : n ? ` (${n} nhà thầu)` : ""}</summary>
+    <div style="display:flex;flex-direction:column;gap:8px;padding-top:8px">
+    ${raw(table)}
+    <p class="muted small" style="margin:0">Tên và giá các nhà thầu nằm ở tab Biên bản mở thầu và tab Kết quả lựa chọn nhà thầu (có cả nhà thầu không được chọn). Các tab này tải dữ liệu ngay trong trình duyệt của anh nên app không tự đọc được. Anh mở tab, chụp màn hình hoặc tải PDF rồi đưa vào đây, Claude sẽ đọc ra bảng.</p>
+    <div class="row">${raw(minutesLink(t, true) ? h`<a class="btn sm" href="${minutesLink(t, true)}" target="_blank" rel="noopener">Mở Kết quả lựa chọn nhà thầu ↗</a>` : "")}<a class="btn sm" href="${minutesLink(t) || tenderLink(t)}" target="_blank" rel="noopener">${minutesLink(t) ? "Mở Biên bản mở thầu ↗" : "Mở gói trên muasamcong ↗"}</a></div>
+    <div class="drop" id="bdDrop">
+      <div class="row"><span class="muted small" style="flex:1">Ảnh chụp biên bản mở thầu hoặc kết quả LCNT</span><label class="btn sm" for="bdFiles">Chọn tệp</label></div>
+      <input type="file" id="bdFiles" multiple accept=".pdf,.docx,.txt,image/*" hidden>
+      <div class="files" id="bdList"></div>
+    </div>
+    <textarea id="bdText" placeholder="Hoặc dán bảng nhà thầu và giá từ biên bản mở thầu..."></textarea>
+    <div class="row"><div class="spacer"></div><button class="btn primary" id="bdRun" data-key="${t._key}">${list.length ? "Nạp lại nhà thầu" : "Nạp nhà thầu"}</button></div>
+    <div id="bdOut"></div></div></details>`;
+}
+function mountBidders() { bdPick = $("#bdFiles") ? filePicker("bdFiles", "bdDrop", "bdList") : null; }
+const BIDDERS_SHAPE = `{"bidders":[{"rank":1,"name":"tên nhà thầu đầy đủ","taxCode":"mã số thuế hoặc rỗng","bidPrice":123456789,"discount":"tỷ lệ hoặc số tiền giảm giá, hoặc rỗng","priceAfterDiscount":123456789,"note":"ghi chú ngắn, hoặc rỗng"}]}`;
+async function runBidders(key) {
+  const out = $("#bdOut"), btn = $("#bdRun"), t = findTender(key);
+  if (!bdPick?.files.length && !$("#bdText").value.trim()) { out.innerHTML = h`<div class="note">Chọn ảnh/PDF biên bản mở thầu hoặc dán nội dung trước.</div>`; return; }
+  const sample = await getSample();
+  if (!sample) { out.innerHTML = noClaudeHtml(); return; }
+  btn.disabled = true;
+  try {
+    out.innerHTML = progress("Đang đọc biên bản...");
+    const lim = await sample.limits().catch(() => null);
+    const doc = await collectDocs(bdPick?.files || [], $("#bdText").value, "Biên bản mở thầu", lim?.images?.maxCount ?? 0);
+    if (!doc.text.trim() && !doc.images.length) throw new Error("Không đọc được nội dung tệp.");
+    const prompt = `Read this Vietnamese bid-opening record (biên bản mở thầu) or contractor selection result (kết quả lựa chọn nhà thầu, including bidders not selected) for tender ${t?.notifyNo || ""} "${t?.bidName || ""}" and list every bidder exactly as written: name, tax code (MST), bid price (giá dự thầu) in VND as an integer, discount (giảm giá) as written, and price after discount as an integer (equal to bidPrice when there is no discount). Keep the order of the record, or rank by price after discount if the record ranks them. Use null for a number that is not shown. Never invent bidders or prices. Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
+${BIDDERS_SHAPE}
+${doc.images.length ? `\nAttached images: ${doc.images.length} pages of the record.\n` : ""}
+${clip(doc.text, MAX_TEXT).text}`;
+    out.innerHTML = progress("Claude đang đọc danh sách nhà thầu...");
+    const r = await sample.json(prompt, { modelTier: "complex", ...(doc.images.length ? { images: doc.images } : {}) });
+    const list = (r?.bidders || []).filter((x) => x?.name);
+    if (!list.length) throw new Error("Claude không tìm thấy nhà thầu nào trong tài liệu này.");
+    const rec = { list, at: new Date().toISOString(), source: (bdPick?.files || []).map((f) => f.name).join(", ") || "nội dung dán" };
+    state.bidders = { ...state.bidders, [key]: rec };
+    await dbSet("bidders/" + key, rec);
+    // Our own row fills in the bid price when it is still missing.
+    const us = list.find((x) => OUR_RE.test(x.name));
+    const tr = state.tracked[key];
+    if (us && tr && !tr.bidPrice && (us.priceAfterDiscount || us.bidPrice)) await saveTracked(key, { ...tr, bidPrice: us.priceAfterDiscount || us.bidPrice, bidPriceSrc: "biên bản mở thầu", updatedAt: rec.at });
+    renderDrawer();
+    toast(`Đã nạp ${list.length} nhà thầu`);
+  } catch (e) {
+    out.innerHTML = h`<div class="note err">${e?.code ? sampleErrorText(e) : e?.message || "Không đọc được biên bản."}</div>`;
+  } finally { if (btn.isConnected) btn.disabled = false; }
+}
+function analysisTabHtml(t) {
+  const s = analysisState(t), a = analysisOf(t._key);
+  const head = s === "done"
+    ? h`<div class="row"><span class="chip ok">Đã phân tích</span><span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>${raw((a.notes || []).map((n) => h`<div class="note warn">${n}</div>`).join(""))}`
+    : s === "running" ? progress("Claude đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
+    : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
+    : s === "nodocs" ? h`<div class="note">Gói này chưa có hồ sơ mời thầu. Claude sẽ tự phân tích ngay khi tài liệu được tải về.</div>`
+    : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">Claude chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
+    : h`<div class="note">Gói này đang chờ đến lượt phân tích tự động.</div>`;
+  return head + (s === "done" ? analysisHtml(a.result) : "");
+}
+
+// ---------- Libraries and files on demand ----------
+const LIBS = {
+  jspdf: ["https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js", () => window.jspdf],
+  docx: ["https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js", () => window.docx],
+};
+const libCache = {};
+function loadLib(name) {
+  const [src, get] = LIBS[name];
+  if (get()) return Promise.resolve(get());
+  return (libCache[name] ||= new Promise((res, rej) => {
+    const s = document.createElement("script"); s.src = src;
+    s.onload = () => (get() ? res(get()) : rej(new Error("Không tải được thư viện " + name)));
+    s.onerror = () => { delete libCache[name]; rej(new Error("Không tải được thư viện " + name)); };
+    document.head.appendChild(s);
+  }));
+}
+// DejaVu Sans covers Vietnamese, so PDFs keep their diacritics.
+const FONT_URL = { normal: "/_blob/d78c7a10de9ee116b25dd1b64dd27321", bold: "/_blob/06cb96b1e0a2d2b209cb05452505e90f" };
+let fontB64 = null;
+async function fonts() {
+  if (fontB64) return fontB64;
+  const b64 = async (u) => { const buf = new Uint8Array(await (await fetch(u)).arrayBuffer()); let s = ""; for (let i = 0; i < buf.length; i += 0x8000) s += String.fromCharCode.apply(null, buf.subarray(i, i + 0x8000)); return btoa(s); };
+  fontB64 = { normal: await b64(FONT_URL.normal), bold: await b64(FONT_URL.bold) };
+  return fontB64;
+}
+let downloadsNs;
+async function saveFile(filename, data) {
+  if (downloadsNs === undefined) { try { downloadsNs = (await window.claude?.use?.("downloads")) ?? null; } catch { downloadsNs = null; } }
+  if (!downloadsNs) { toast("Chế độ xem này không cho tải tệp. Hãy mở trang trong claude.ai."); return false; }
+  try { await downloadsNs.save({ filename, data }); return true; }
+  catch (e) { if (e?.code !== "declined") toast(e?.code === "rate_limited" ? "Đang có một hộp thoại tải tệp, hãy xử lý nó trước." : "Không tải được tệp."); return false; }
+}
+const fileSafe = (s) => String(s).replace(/[\\/:*?"<>|]+/g, " ").replace(/\s+/g, " ").trim().slice(0, 120);
+
+// In-page PDF viewer: attachments are fetched from the artifact's own storage and drawn with pdf.js.
+async function openPdf(key, i) {
+  const f = state.hsmt[key].files[i];
+  modal(h`<div class="row"><h2 style="flex:1;min-width:0;overflow-wrap:anywhere">${f.name}</h2><button class="btn sm" id="pvSave">Tải về</button><button class="btn sm" data-close>Đóng</button></div>
+    <div id="pvBody" class="pv">${raw(progress("Đang mở tệp..."))}</div>`, null, "wide");
+  let blob;
+  try {
+    const r = await fetch(f.url);
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    blob = await r.blob();
+  } catch (e) { $("#pvBody").innerHTML = h`<div class="note err">Không tải được tệp từ kho lưu trữ (${e.message}). Hãy thử lại.</div>`; return; }
+  const pdfName = /\.pdf$/i.test(f.name) ? f.name : f.name.replace(/\.[^.]+$/, "") + ".pdf";
+  $("#pvSave").onclick = () => saveFile(fileSafe(pdfName), blob);
+  try {
+    const doc = await pdfjsLib.getDocument({ data: new Uint8Array(await blob.arrayBuffer()) }).promise;
+    const body = $("#pvBody"); if (!body) return;
+    body.innerHTML = h`<div class="muted small">${doc.numPages} trang</div>`;
+    const w = Math.min(body.clientWidth || 800, 1000);
+    for (let p = 1; p <= doc.numPages; p++) {
+      if (!$("#pvBody")) return;
+      const page = await doc.getPage(p);
+      const vp0 = page.getViewport({ scale: 1 });
+      const scale = (w / vp0.width) * (window.devicePixelRatio > 1 ? 1.5 : 1);
+      const vp = page.getViewport({ scale });
+      const c = document.createElement("canvas"); c.width = vp.width; c.height = vp.height;
+      body.appendChild(c);
+      await page.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
+    }
+  } catch (e) { $("#pvBody") && ($("#pvBody").innerHTML = h`<div class="note err">Không hiển thị được tệp này. Bấm Tải về để mở bằng máy.</div>`); }
+}
+
+// ---------- Technical requirements in English (key points, PDF) ----------
+const YCKT_RE = /ch(ư|u)(ơ|o)ng\s*(v\b|5)|y(ê|e)u\s*c(ầ|a)u.*k(ỹ|y)\s*thu(ậ|a)t|yckt|ph(ầ|a)n\s*2|technical|k(ỹ|y)\s*thu(ậ|a)t/i;
+function ycktSections(all) {
+  const parts = all.split(/\n(?=--- Tệp: )/);
+  const pick = parts.filter((p) => { const m = p.match(/^-*\s*Tệp: (.+?) ---/); return m && YCKT_RE.test(m[1]); });
+  return pick.join("\n");
+}
+function chunkText(text, size) {
+  const out = []; let i = 0;
+  while (i < text.length) {
+    let j = Math.min(text.length, i + size);
+    if (j < text.length) { const k = text.lastIndexOf("\n", j); if (k > i + size * 0.5) j = k; }
+    out.push(text.slice(i, j)); i = j;
+  }
+  return out;
+}
+const TR_SHAPE = `{ "sections": [ { "heading": string (English), "points": [string] (English, one requirement per point, with its figures and units) } ] }`;
+function translateTabHtml(t) {
+  const files = state.hsmt[t._key]?.files || [];
+  if (!files.length) return h`<div class="note">Gói này chưa có hồ sơ mời thầu để dịch.</div>`;
+  return busyNote(t._key, "translate") + h`<p class="muted small" style="margin:0">Claude đọc toàn bộ phần yêu cầu kỹ thuật của gói, chỉ giữ các điểm quan trọng (công suất, tiêu chuẩn, cấu hình, phụ kiện, thử nghiệm, bảo hành, giao hàng, tài liệu) và dịch sang tiếng Anh thành tệp PDF. Phần thủ tục và chi tiết lặp lại được lược bỏ.</p>
+    <div class="row"><button class="btn primary" id="trRun" data-key="${t._key}">Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo"></span></div>
+    <div id="trOut"></div>`;
+}
+// The English brief is edited as plain text: "## Heading" starts a section, "- " starts a point.
+const secsToText = (secs) => secs.map((s) => `## ${s.heading}\n` + (s.points || []).map((p) => `- ${p}`).join("\n")).join("\n\n");
+function textToSecs(text) {
+  const secs = []; let cur = null;
+  for (const raw0 of String(text).split("\n")) {
+    const line = raw0.trim();
+    if (!line) continue;
+    if (line.startsWith("#")) { cur = { heading: line.replace(/^#+\s*/, ""), points: [] }; secs.push(cur); continue; }
+    if (!cur) { cur = { heading: "", points: [] }; secs.push(cur); }
+    if (/^[-•*]\s+/.test(line) || !cur.points.length) cur.points.push(line.replace(/^[-•*]\s+/, ""));
+    else cur.points[cur.points.length - 1] += " " + line;
+  }
+  return secs;
+}
+function trHtml(secs, busy, text) {
+  return h`<div class="field"><label for="trEdit">Nội dung tiếng Anh. Sửa trực tiếp trước khi tải PDF: dòng bắt đầu bằng ## là tiêu đề mục, dòng bắt đầu bằng - là một ý.</label>
+    <textarea id="trEdit" class="mono" style="min-height:52vh;font-size:12.5px" ${busy ? "readonly" : ""}>${text ?? secsToText(secs)}</textarea>
+    <div class="muted small" id="trSaved"></div></div>`;
+}
+let trSaveTimer = null;
+function saveTrEdit(key, text) {
+  clearTimeout(trSaveTimer);
+  $("#trSaved").textContent = "Đang lưu...";
+  trSaveTimer = setTimeout(async () => { const ok = await dbSet(`translation/${key}_edit`, { text, at: new Date().toISOString() }); if ($("#trSaved")) $("#trSaved").textContent = ok ? "Đã lưu chỉnh sửa." : "Chưa lưu được chỉnh sửa."; }, 800);
+}
+async function loadTranslation(key) {
+  if (!state.db) return;
+  try {
+    const m = (await state.db.doc("translation/" + key).get());
+    if (state.open !== key || state.dtab !== "translate" || !m.exists || !m.data().v2) return;
+    const meta = m.data(), secs = [];
+    for (let i = 0; i < meta.parts; i++) { const s = await state.db.doc(`translation/${key}_${i}`).get(); if (s.exists) secs.push(...(s.data().sections || [])); }
+    if (state.open !== key || state.dtab !== "translate") return;
+    trState[key] = secs;
+    const ed = await state.db.doc(`translation/${key}_edit`).get();
+    if (state.open !== key || state.dtab !== "translate") return;
+    $("#trOut").innerHTML = trHtml(secs, !meta.done, ed.exists && ed.data().text ? ed.data().text : null);
+    $("#trPdf").hidden = !meta.done;
+    $("#trInfo").textContent = meta.done ? `Đã tạo lúc ${fmtDate(meta.at)}` : `Đã làm ${meta.parts}/${meta.total} phần. Bấm để làm tiếp.`;
+    $("#trRun").textContent = meta.done ? "Tạo lại" : "Làm tiếp";
+    $("#trRun").dataset.resume = meta.done ? "" : String(meta.parts);
+  } catch {}
+}
+const trState = {};
+async function runTranslate(key, resumeFrom) { busyStart(key, "translate"); try { await runTranslate0(key, resumeFrom); } finally { busyEnd(key, "translate"); } }
+async function runTranslate0(key, resumeFrom) {
+  const out = $("#trOut"), info = $("#trInfo"), btn = $("#trRun");
+  const sample = await getSample();
+  if (!sample) { info.textContent = "Không kết nối được Claude ở chế độ xem này."; return; }
+  btn.disabled = true; $("#trPdf").hidden = true;
+  try {
+    info.textContent = "Đang lấy phần yêu cầu kỹ thuật...";
+    const all = await loadAttachedText(key);
+    let src = ycktSections(all), images = [];
+    if (!src) {
+      const scans = (state.hsmt[key].files || []).filter((f) => f.url && !f.hasText && !isDrawing(f));
+      if (scans.length) {
+        const lim = await sample.limits().catch(() => null);
+        images = (await scanImages(scans.filter((f) => YCKT_RE.test(f.name)).concat(scans).slice(0, 2), lim?.images?.maxCount ?? 0, [], (n) => (info.textContent = `Đang mở bản scan ${n}...`))).images;
+      }
+      if (!images.length) src = all;
+    }
+    if (!src && !images.length) { info.textContent = "Không tìm thấy nội dung yêu cầu kỹ thuật."; return; }
+    const chunks = images.length ? [""] : chunkText(src, 60000);
+    const start = resumeFrom || 0;
+    const secs = start ? [...(trState[key] || [])] : [];
+    if (!start) await dbSet(`translation/${key}_edit`, { text: null });
+    for (let i = start; i < chunks.length; i++) {
+      info.textContent = `Claude đang đọc và dịch phần ${i + 1}/${chunks.length}...`;
+      const prompt = `${DOMAIN}
+
+You are preparing an English brief of the technical requirements of a Vietnamese generator tender for a foreign supplier/manufacturer.
+From the text below, keep ONLY the important technical points: scope and quantity, rated power (kVA/kW, prime/standby per ISO 8528), voltage/frequency/phase, engine, alternator, controller, ATS, enclosure/noise, fuel tank, cooling, installation, standards and certificates (CO/CQ), testing and commissioning, warranty, delivery time and place, required technical documents. Drop legal boilerplate, bidding procedure, repeated or generic text. Translate into precise English using standard generator terminology (prime power = công suất liên tục, standby power = công suất dự phòng). Keep every number, unit, model reference and clause number exactly. Group into short sections.
+Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
+${TR_SHAPE}
+${images.length ? "The text is in the attached page images." : `\nTEXT (part ${i + 1} of ${chunks.length}):\n${chunks[i]}`}`;
+      const r = await sample.json(prompt, { modelTier: "default", ...(images.length ? { images } : {}) });
+      const part = (r.sections || []).filter((s) => s.points?.length);
+      secs.push(...part);
+      trState[key] = secs;
+      out.innerHTML = trHtml(secs, true);
+      await dbSet(`translation/${key}_${i}`, { sections: part });
+      await dbSet("translation/" + key, { v2: true, parts: i + 1, total: chunks.length, done: i + 1 === chunks.length, at: new Date().toISOString() });
+    }
+    out.innerHTML = trHtml(secs, false);
+    info.textContent = "Đã xong. Anh có thể sửa nội dung bên dưới rồi bấm Tải PDF.";
+    $("#trPdf").hidden = false; btn.textContent = "Tạo lại"; btn.dataset.resume = "";
+  } catch (e) {
+    info.textContent = e?.code ? sampleErrorText(e) : (e?.message || "Không dịch được.");
+  } finally { btn.disabled = false; }
+}
+async function translationPdf(key) {
+  const t = findTender(key), secs = $("#trEdit") ? textToSecs($("#trEdit").value) : trState[key] || [];
+  const info = $("#trInfo"); info.textContent = "Đang tạo PDF...";
+  try {
+    const [{ jsPDF }, f] = await Promise.all([loadLib("jspdf"), fonts()]);
+    const doc = new jsPDF({ unit: "mm", format: "a4" });
+    doc.addFileToVFS("DejaVuSans.ttf", f.normal); doc.addFont("DejaVuSans.ttf", "DejaVu", "normal");
+    doc.addFileToVFS("DejaVuSans-Bold.ttf", f.bold); doc.addFont("DejaVuSans-Bold.ttf", "DejaVu", "bold");
+    const M = 18, W = 210 - 2 * M; let y = M;
+    const need = (hgt) => { if (y + hgt > 297 - M) { doc.addPage(); y = M; } };
+    const text = (s, size, bold, gap = 1.5, indent = 0) => {
+      doc.setFont("DejaVu", bold ? "bold" : "normal"); doc.setFontSize(size);
+      const lines = doc.splitTextToSize(String(s), W - indent), lh = size * 0.42;
+      for (const ln of lines) { need(lh); doc.text(ln, M + indent, y + lh * 0.8); y += lh; }
+      y += gap;
+    };
+    text("Technical Requirements (key points)", 16, true, 2);
+    text(`${t?.bidName || ""}`, 10.5, false, 1);
+    text(`Notice no. ${t?.notifyNo || "-"} · Bid closing ${fmtDate(t?.bidCloseDate) || "-"} · Source: muasamcong.mof.gov.vn`, 9, false, 5);
+    for (const s of secs) {
+      need(12); text(s.heading, 12, true, 1.5);
+      for (const p of s.points || []) { need(6); doc.setFont("DejaVu", "normal"); doc.setFontSize(10); doc.text("•", M + 1, y + 3.4); text(p, 10, false, 1.2, 5); }
+      y += 2;
+    }
+    const n = doc.getNumberOfPages();
+    for (let i = 1; i <= n; i++) { doc.setPage(i); doc.setFont("DejaVu", "normal"); doc.setFontSize(8); doc.text(`GenBid Pro · ${t?.notifyNo || ""} · ${i}/${n}`, M, 297 - 8); }
+    const ok = await saveFile(fileSafe(`${t?.notifyNo || "tender"} Technical requirements EN.pdf`), doc.output("blob"));
+    info.textContent = ok ? "Đã tải PDF." : "";
+  } catch (e) { info.textContent = e?.message || "Không tạo được PDF."; }
+}
+
+// ---------- Reference bid (HSDT tham khảo) ----------
+const HSDT_SHAPE = `{
+  "summary": string (2-3 sentences: what this reference bid covers),
+  "sections": [ {
+    "title": string (e.g. "Đơn dự thầu", "Bảng đáp ứng yêu cầu kỹ thuật", "Bảo lãnh dự thầu", "Năng lực và kinh nghiệm", "Tiến độ cung cấp", "Bảo hành, bảo trì", "Danh mục tài liệu kèm theo"),
+    "paragraphs": [string] (ready-to-use text in the tender's own form, with the tender's real name, number, investor, amounts and deadlines; put bidder-specific data in square brackets like [Tên nhà thầu], [Model máy]),
+    "table": { "headers": [string], "rows": [[string]] } | null (for the technical compliance table: Yêu cầu của HSMT | Đề xuất của nhà thầu | Tài liệu chứng minh, one row per requirement)
+  } ],
+  "checklist": [ { "document": string, "required": boolean, "note": string } ],
+  "warnings": [string] (points the bidder must not miss: bid security amount/validity, deadlines, eligibility)
+}`;
+function hsdtTabHtml(t) {
+  const prev = state.hsdt[t._key];
+  const has = state.hsmt[t._key]?.files?.length || analysisOf(t._key)?.result;
+  if (!has) return h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
+  return busyNote(t._key, "hsdt") + h`<p class="muted small" style="margin:0">Claude soạn bộ hồ sơ dự thầu tham khảo theo đúng gói này: đơn dự thầu, bảng đáp ứng kỹ thuật, bảo lãnh, năng lực, tiến độ, bảo hành và danh mục tài liệu. Thông tin riêng của công ty để trong [ngoặc vuông] để anh điền.</p>
+    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}">${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) : ""}</span></div>
+    <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
+}
+function hsdtHtml(r) {
+  return h`<div class="panel" style="display:flex;flex-direction:column;gap:14px">
+    <p style="margin:0">${r.summary || ""}</p>
+    ${raw((r.warnings || []).map((w) => h`<div class="note warn">${w}</div>`).join(""))}
+    ${raw((r.sections || []).map((s) => h`<details class="sec" open><summary>${s.title}</summary><div style="display:flex;flex-direction:column;gap:8px">
+      ${raw((s.paragraphs || []).map((p) => h`<p style="margin:0;white-space:pre-wrap">${p}</p>`).join(""))}
+      ${raw(s.table?.rows?.length ? h`<div class="tablewrap"><table><thead><tr>${raw((s.table.headers || []).map((x) => h`<th>${x}</th>`).join(""))}</tr></thead><tbody>${raw(s.table.rows.map((row) => `<tr>${row.map((c) => h`<td>${c}</td>`).join("")}</tr>`).join(""))}</tbody></table></div>` : "")}
+    </div></details>`).join(""))}
+    <details class="sec" open><summary>Danh mục hồ sơ cần chuẩn bị (${(r.checklist || []).length})</summary><div><ul class="clean">${raw((r.checklist || []).map((c) => h`<li>${raw(c.required ? '<b style="color:var(--rose)">Bắt buộc</b> · ' : "")}${c.document}${raw(c.note ? h` <span class="muted small">(${c.note})</span>` : "")}</li>`).join(""))}</ul></div></details>
+  </div>`;
+}
+async function runHsdt(key) { busyStart(key, "hsdt"); try { await runHsdt0(key); } finally { busyEnd(key, "hsdt"); } }
+async function runHsdt0(key) {
+  const out = $("#hsOut"), info = $("#hsInfo"), btn = $("#hsRun");
+  const sample = await getSample();
+  if (!sample) { info.textContent = "Không kết nối được Claude ở chế độ xem này."; return; }
+  btn.disabled = true;
+  try {
+    out.innerHTML = progress("Claude đang đọc HSMT và soạn hồ sơ tham khảo. Có thể mất vài phút.");
+    const t = findTender(key);
+    const att = await loadAttachedText(key);
+    const a = analysisOf(key)?.result;
+    const c = clip(att || "", MAX_TEXT - 30000);
+    const prompt = `${DOMAIN}
+
+Task: draft a reference bid (hồ sơ dự thầu tham khảo) for this tender that a Vietnamese generator supplier can complete and submit. Follow the forms and order the HSMT itself prescribes (Chương IV biểu mẫu dự thầu) when they are in the text. Fill in everything known from the tender: name, notice number, investor, procuring entity, bid closing time, bid validity, bid security amount and form, delivery place and time, warranty. The technical compliance table must list every technical requirement from the HSMT with the required value, and a proposed compliant offer written as a template ([Hãng/Model], [Công suất PRP/ESP kVA], ...). Never invent the bidder's own data. ${langLine("vi")}
+
+Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
+${HSDT_SHAPE}
+
+${tenderCtx(t)}${a ? "Kết quả phân tích HSMT trước đó:\n" + JSON.stringify({ keyInfo: a.keyInfo, technicalSpecs: a.technicalSpecs, qualificationRequirements: a.qualificationRequirements, requiredDocuments: a.requiredDocuments }) + "\n\n" : ""}${c.text ? "--- Hồ sơ mời thầu ---\n" + c.text : ""}`;
+    const r = await sample.json(prompt, { modelTier: "complex" });
+    const at = new Date().toISOString();
+    state.hsdt = { ...state.hsdt, [key]: { result: r, at } };
+    await dbSet("hsdt/" + key, { result: r, at });
+    out.innerHTML = hsdtHtml(r);
+    info.textContent = "Bản soạn lúc " + fmtDate(at);
+    $("#hsDocx").hidden = false; btn.textContent = "Soạn lại";
+  } catch (e) {
+    out.innerHTML = h`<div class="note err">${e?.code ? sampleErrorText(e) : e?.message || "Không soạn được."}</div>`;
+  } finally { btn.disabled = false; }
+}
+async function hsdtDocx(key) {
+  const r = state.hsdt[key]?.result, t = findTender(key), info = $("#hsInfo");
+  if (!r) return;
+  info.textContent = "Đang tạo tệp Word...";
+  try {
+    const D = await loadLib("docx");
+    const { Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell, WidthType, AlignmentType } = D;
+    const P = (text, opts = {}) => new Paragraph({ spacing: { after: 120 }, ...opts, children: [new TextRun({ text: String(text ?? ""), font: "Times New Roman", size: 26, ...(opts.run || {}) })] });
+    const kids = [
+      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: "HỒ SƠ DỰ THẦU (BẢN THAM KHẢO)", bold: true, size: 32, font: "Times New Roman" })] }),
+      P(t?.bidName || "", { alignment: AlignmentType.CENTER, run: { bold: true } }),
+      P(`Số TBMT: ${t?.notifyNo || "—"} · Chủ đầu tư: ${t?.investorName || "—"} · Đóng thầu: ${fmtDate(t?.bidCloseDate) || "—"}`, { alignment: AlignmentType.CENTER }),
+      P(r.summary || ""),
+    ];
+    for (const w of r.warnings || []) kids.push(P("Lưu ý: " + w, { run: { italics: true } }));
+    for (const s of r.sections || []) {
+      kids.push(new Paragraph({ heading: HeadingLevel.HEADING_1, spacing: { before: 240, after: 120 }, children: [new TextRun({ text: s.title, bold: true, font: "Times New Roman", size: 28 })] }));
+      for (const p of s.paragraphs || []) for (const line of String(p).split("\n")) kids.push(P(line));
+      if (s.table?.rows?.length) {
+        const cell = (x, bold) => new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: String(x ?? ""), bold, font: "Times New Roman", size: 22 })] })] });
+        kids.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [new TableRow({ tableHeader: true, children: (s.table.headers || []).map((x) => cell(x, true)) }), ...s.table.rows.map((row) => new TableRow({ children: row.map((x) => cell(x)) }))] }));
+      }
+    }
+    kids.push(new Paragraph({ heading: HeadingLevel.HEADING_1, spacing: { before: 240, after: 120 }, children: [new TextRun({ text: "Danh mục hồ sơ cần chuẩn bị", bold: true, font: "Times New Roman", size: 28 })] }));
+    for (const c of r.checklist || []) kids.push(P(`☐ ${c.document}${c.required ? " (bắt buộc)" : ""}${c.note ? " – " + c.note : ""}`));
+    const doc = new Document({ sections: [{ properties: { page: { margin: { top: 1134, bottom: 1134, left: 1701, right: 1134 } } }, children: kids }] });
+    const blob = await Packer.toBlob(doc);
+    const ok = await saveFile(fileSafe(`HSDT tham khao ${t?.notifyNo || ""}.docx`), blob);
+    info.textContent = ok ? "Đã tải tệp Word." : "";
+  } catch (e) { info.textContent = e?.message || "Không tạo được tệp Word."; }
+}
+
+// ---------- Compare (Chuẩn bị HSDT) ----------
+let subPick = null;
+function compareTabHtml(t) {
+  const prev = state.compare[t._key];
+  return busyNote(t._key, "compare") + h`<p class="muted small" style="margin:0">So hồ sơ dự thầu với yêu cầu trong HSMT đã tải về của gói này, từng dòng như tổ chuyên gia sẽ chấm.</p>
+    <div class="drop" id="cmDrop">
+      <div class="row"><span class="muted small" style="flex:1">Tệp hồ sơ dự thầu (PDF, DOCX, ảnh)</span><label class="btn sm" for="cmFiles">Chọn tệp</label></div>
+      <input type="file" id="cmFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
+      <div class="files" id="cmList"></div>
+    </div>
+    <textarea id="cmText" placeholder="Hoặc dán bảng đáp ứng kỹ thuật, catalogue, báo giá..."></textarea>
+    <div class="row"><div class="spacer"></div><button class="btn primary" id="cmRun" data-key="${t._key}">Đối chiếu</button>${raw(sideBtns(t._key))}</div>
+    <div id="cmOut">${raw(prev?.result ? h`<div class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.accepted ? " · đã đánh dấu là đã đối chiếu" : ""}</div>` + comparisonHtml(prev.result) : "")}</div>`;
+}
+// Mismatches left after a comparison: fix and compare again, or accept it as compared.
+function askAfterCompare(key, left) {
+  modal(h`<div class="row"><h2 style="flex:1">Hồ sơ còn điểm chưa khớp</h2><button class="btn sm" data-close>Đóng</button></div>
+    <ul class="clean">${raw(left.map((x) => h`<li>${x}</li>`).join(""))}</ul>
+    <p class="muted small" style="margin:0">Anh sửa hồ sơ rồi đối chiếu lại, hoặc đánh dấu là đã đối chiếu để mở nút Nộp.</p>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Sửa và đối chiếu lại</button><button class="btn primary" id="cmAccept">Đánh dấu đã đối chiếu</button></div>`, (m, close) => {
+    $("#cmAccept", m).addEventListener("click", async () => { close(); await acceptCompare(key); });
+  });
+}
+function askAccept(key) {
+  const left = submitBlockers(key);
+  modal(h`<div class="row"><h2 style="flex:1">Xác nhận đã đối chiếu?</h2><button class="btn sm" data-close>Đóng</button></div>
+    <p class="small" style="margin:0">Kết quả đối chiếu còn các điểm sau. Đánh dấu là đã đối chiếu thì nút Nộp sẽ mở.</p>
+    <ul class="clean">${raw(left.map((x) => h`<li>${x}</li>`).join(""))}</ul>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn green" id="cmAcceptOk">Xác nhận</button></div>`, (m, close) => {
+    $("#cmAcceptOk", m).addEventListener("click", async () => { close(); await acceptCompare(key); });
+  });
+}
+async function acceptCompare(key) {
+  const cur = state.compare[key]; if (!cur?.result) return;
+  const rec = { ...cur, accepted: true, acceptedAt: new Date().toISOString() };
+  state.compare = { ...state.compare, [key]: rec };
+  await dbSet("compare/" + key, rec);
+  refreshSubmitBtn(key); toast("Đã đánh dấu là đã đối chiếu, có thể nộp");
+}
+// A previous comparison exists: confirm before spending another run on it.
+function askRecompare(key) {
+  modal(h`<div class="row"><h2 style="flex:1">Đối chiếu lại?</h2><button class="btn sm" data-close>Đóng</button></div>
+    <p class="small" style="margin:0">Gói này đã có kết quả đối chiếu lúc ${fmtDate(state.compare[key].at)}${state.compare[key].accepted ? " và đã được đánh dấu là đã đối chiếu" : ""}. Đối chiếu lại sẽ thay kết quả cũ${state.compare[key].accepted ? " và bỏ dấu đã đối chiếu" : ""}.</p>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="cmAgain">Đối chiếu lại</button></div>`, (m, close) => {
+    $("#cmAgain", m).addEventListener("click", async () => {
+      close();
+      // Nộp stays off from here until a new comparison comes back.
+      const { accepted, acceptedAt, ...rest } = state.compare[key];
+      const rec = { ...rest, stale: true };
+      state.compare = { ...state.compare, [key]: rec };
+      refreshSubmitBtn(key);
+      await dbSet("compare/" + key, rec);
+      runCompare(key);
+    });
+  });
+}
+// Nộp lights up only when the latest comparison shows the bid fully meets the tender.
+function submitBtn(key) {
+  const b = submitBlockers(key);
+  return h`<button class="btn ${b.length ? "" : "primary"}" id="cmSubmit" data-key="${key}" ${b.length ? "disabled" : ""} title="${b.length ? b.join(" ") : "Chuyển gói sang Đã nộp"}">Nộp</button>`;
+}
+// "Đã đối chiếu" shows while the latest comparison still has mismatches; clicking it accepts them and unlocks Nộp.
+function sideBtns(key) {
+  const c = state.compare[key];
+  const acc = c?.result && !c.accepted && !c.stale && submitBlockers(key).length ? h`<button class="btn green" id="cmAccepted" data-key="${key}" title="Đánh dấu là đã đối chiếu để mở nút Nộp">Đã đối chiếu</button>` : "";
+  return `<span id="cmSide" style="display:contents">${acc}${submitBtn(key)}</span>`;
+}
+function refreshSubmitBtn(key) { const old = $("#cmSide"); if (old) old.outerHTML = sideBtns(key); }
+function mountCompare() { subPick = filePicker("cmFiles", "cmDrop", "cmList"); }
+async function runCompare(key) { busyStart(key, "compare"); try { await runCompare0(key); } finally { busyEnd(key, "compare"); } }
+async function runCompare0(key) {
+  const out = $("#cmOut"), btn = $("#cmRun");
+  if (!subPick?.files.length && !$("#cmText").value.trim()) { out.innerHTML = h`<div class="note">Chọn tệp hồ sơ dự thầu hoặc dán nội dung trước.</div>`; return; }
+  const sample = await getSample();
+  if (!sample) { out.innerHTML = h`<div class="note warn">Không kết nối được Claude ở chế độ xem này.</div>`; return; }
+  btn.disabled = true;
+  try {
+    out.innerHTML = progress("Đang đọc hồ sơ...");
+    const lim = await sample.limits().catch(() => null);
+    const budget = lim?.images?.maxCount ?? 0;
+    const req = await loadAttachedText(key);
+    const a = analysisOf(key)?.result;
+    const reqText = req || (a ? JSON.stringify({ technicalSpecs: a.technicalSpecs, qualificationRequirements: a.qualificationRequirements, requiredDocuments: a.requiredDocuments }) : "");
+    if (!reqText) throw new Error("Gói này chưa có nội dung HSMT để đối chiếu.");
+    const sub = await collectDocs(subPick?.files || [], $("#cmText").value, "HSDT", budget);
+    const r = clip(reqText, MAX_TEXT / 2), s = clip(sub.text, MAX_TEXT / 2);
+    const prompt = `${DOMAIN}
+
+Task: check a bid (hồ sơ dự thầu) against the tender's requirements (hồ sơ mời thầu) line by line, the way the evaluation panel (tổ chuyên gia) would. Go through every technical parameter, qualification criterion, financial condition and required document. Compare numbers precisely (e.g. offered 450kVA standby against required 500kVA prime is not_met). Use "missing" when the submission says nothing about a requirement and "unclear" when evidence is ambiguous. ${langLine("vi")}
+
+Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
+${COMPARE_SHAPE}
+${sub.images.length ? `\nAttached images: ${sub.images.length} pages of the HSDT.\n` : ""}
+=== HỒ SƠ MỜI THẦU / YÊU CẦU (requirements) ===
+${r.text}
+
+=== HỒ SƠ DỰ THẦU (submission) ===
+${s.text}`;
+    out.innerHTML = progress("Claude đang đối chiếu từng yêu cầu. Có thể mất vài phút.");
+    const c = await sample.json(prompt, { modelTier: "complex", ...(sub.images.length ? { images: sub.images } : {}) });
+    const at = new Date().toISOString();
+    state.compare = { ...state.compare, [key]: { result: c, at } };
+    await dbSet("compare/" + key, { result: c, at });
+    const notes = [...sub.notes, ...(r.clipped || s.clipped ? ["Một phía quá dài nên phần cuối đã bị cắt."] : [])];
+    out.innerHTML = notes.map((n) => h`<div class="note warn">${n}</div>`).join("") + comparisonHtml(c);
+    refreshSubmitBtn(key);
+    const left = submitBlockers(key);
+    if (left.length) askAfterCompare(key, left);
+  } catch (e) {
+    out.innerHTML = h`<div class="note err">${e?.code ? sampleErrorText(e) : e?.message || "Không đọc được tệp."}</div>`;
+  } finally { btn.disabled = false; }
+}
+
+// ---------- Analysis rendering ----------
+function analysisHtml(a) {
+  const ki = a.keyInfo || {};
+  const KI = [["bidName", "Tên gói thầu"], ["notifyNo", "Số TBMT"], ["investor", "Chủ đầu tư"], ["procuringEntity", "Bên mời thầu"], ["bidForm", "Hình thức LCNT"], ["bidMethod", "Phương thức"], ["closingTime", "Đóng thầu"], ["bidValidity", "Hiệu lực HSDT"], ["bidSecurity", "Bảo đảm dự thầu"], ["budget", "Giá gói thầu"], ["contractType", "Loại hợp đồng"], ["deliveryTime", "Tiến độ giao hàng"], ["deliveryLocation", "Địa điểm giao"], ["warranty", "Bảo hành"], ["evaluationMethod", "Phương pháp đánh giá"]];
+  const hl = [...(a.highlights || [])].sort((x, y) => ["critical", "warning", "info"].indexOf(x.severity) - ["critical", "warning", "info"].indexOf(y.severity));
+  const n = (s) => hl.filter((x) => x.severity === s).length;
+  const list = (arr) => arr?.length ? `<ul class="clean">${arr.map((x) => h`<li>${x}</li>`).join("")}</ul>` : '<p class="muted small">Không có.</p>';
+  return h`<div class="panel" style="display:flex;flex-direction:column;gap:16px">
+    <div><div class="eyebrow">Tóm tắt</div><p style="margin:6px 0 0">${a.summary || ""}</p></div>
+    <div class="row">
+      <span class="badge" style="color:var(--red);border-color:transparent">${n("critical")} quan trọng</span>
+      <span class="badge" style="color:var(--amber);border-color:transparent">${n("warning")} cần lưu ý</span>
+      <span class="badge" style="color:var(--blue);border-color:transparent">${n("info")} thông tin</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <h2>Điểm cần lưu ý</h2>
+      ${raw(hl.map((x) => h`<div class="sev ${x.severity}">
+        <div class="row" style="gap:8px"><span class="tag">${SEV[x.severity] || x.severity}</span><span class="muted small">${CAT[x.category] || x.category || ""}${x.reference ? " · " + x.reference : ""}</span></div>
+        <h3>${x.title}</h3>
+        <div class="small">${x.detail}</div>
+        ${raw(x.quote ? h`<blockquote>"${x.quote}"</blockquote>` : "")}
+        <div class="rec"><b>Nên làm:</b> ${x.recommendation}</div>
+      </div>`).join("") || '<p class="muted">Không có điểm nào được đánh dấu.</p>')}
+    </div>
+    <details class="sec" open><summary>Thông tin chính</summary><div><dl class="kv">${raw(KI.filter(([k]) => ki[k]).map(([k, l]) => h`<dt>${l}</dt><dd>${ki[k]}</dd>`).join(""))}</dl></div></details>
+    <details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table><thead><tr><th>Hạng mục</th><th>Yêu cầu</th><th>Nguồn</th></tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td>${s.item}</td><td>${s.requirement}</td><td class="muted">${s.reference || ""}</td></tr>`).join(""))}</tbody></table></div></details>
+    <details class="sec"><summary>Yêu cầu năng lực, kinh nghiệm (${(a.qualificationRequirements || []).length})</summary><div>${raw(list((a.qualificationRequirements || []).map((q) => q.requirement + (q.reference ? ` (${q.reference})` : ""))))}</div></details>
+    <details class="sec"><summary>Tài liệu phải nộp (${(a.requiredDocuments || []).length})</summary><div>${raw(list(a.requiredDocuments))}</div></details>
+    <details class="sec"><summary>Điều khoản có dấu hiệu hạn chế (${(a.restrictiveClauses || []).length})</summary><div>${raw(list(a.restrictiveClauses))}</div></details>
+    <details class="sec"><summary>Câu hỏi nên gửi làm rõ (${(a.questionsForClarification || []).length})</summary><div>${raw(list(a.questionsForClarification))}</div></details>
+  </div>`;
+}
+function comparisonHtml(c) {
+  const v = VERDICT[c.verdict] || ["", "var(--yellow)"];
+  const items = [...(c.items || [])].sort((a, b) => (b.critical - a.critical) || (["not_met", "missing", "partial", "unclear", "met"].indexOf(a.status) - ["not_met", "missing", "partial", "unclear", "met"].indexOf(b.status)));
+  const cnt = (s) => items.filter((i) => i.status === s).length;
+  return h`<div class="panel" style="display:flex;flex-direction:column;gap:16px">
+    <div class="score">
+      <div class="dial" style="--p:${Math.max(0, Math.min(100, Math.round(c.overallScore || 0)))};--c:${raw(v[1])}"><span>${Math.round(c.overallScore || 0)}</span></div>
+      <div style="flex:1;min-width:200px">
+        <div style="font-family:var(--f-display);font-size:24px;font-weight:700;text-transform:uppercase;color:${raw(v[1])}">${v[0]}</div>
+        <p style="margin:4px 0 0" class="small">${c.summary || ""}</p>
+      </div>
+    </div>
+    <div class="row small">${raw(Object.entries(STATUS).map(([k, l]) => h`<span class="st ${k}">${cnt(k)} ${l}</span>`).join('<span class="muted">·</span>'))}</div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Yêu cầu</th><th>Hồ sơ đáp ứng</th><th>Kết quả</th><th>Ghi chú</th></tr></thead>
+      <tbody>${raw(items.map((i) => h`<tr>
+        <td>${raw(i.critical ? '<span class="badge" style="color:var(--red);border-color:transparent;margin-bottom:4px">Bắt buộc</span><br>' : "")}${i.requirement}${raw(i.requirementRef ? h`<div class="muted small">${i.requirementRef}</div>` : "")}</td>
+        <td>${i.offered || "—"}${raw(i.offeredRef ? h`<div class="muted small">${i.offeredRef}</div>` : "")}</td>
+        <td><span class="st ${i.status}">${STATUS[i.status] || i.status}</span></td>
+        <td class="small">${i.note}</td></tr>`).join(""))}</tbody>
+    </table></div>
+    <details class="sec" open><summary>Việc cần làm trước khi nộp</summary><div><ul class="clean">${raw((c.recommendations || []).map((x) => h`<li>${x}</li>`).join(""))}</ul></div></details>
+    <details class="sec" ${raw((c.missingDocuments || []).length ? "open" : "")}><summary>Tài liệu còn thiếu (${(c.missingDocuments || []).length})</summary><div><ul class="clean">${raw((c.missingDocuments || []).map((x) => h`<li>${x}</li>`).join("") || "<li>Không thiếu tài liệu nào.</li>")}</ul></div></details>
+  </div>`;
+}
+
+
+// ---------- Modal ----------
+function modal(html, onMount, cls = "") {
+  const ov = $("#ov"); $("#mdl").className = "modal " + cls; $("#mdl").innerHTML = html; ov.hidden = false;
+  const close = () => { ov.hidden = true; $("#mdl").innerHTML = ""; };
+  ov.onclick = (e) => { if (e.target === ov || e.target.closest("[data-close]")) close(); };
+  onMount?.($("#mdl"), close);
+}
+
+
+// ---------- Events ----------
+document.addEventListener("click", async (e) => {
+  const act = e.target.closest("[data-act]");
+  if (act) {
+    e.stopPropagation();
+    const key = act.dataset.key;
+    if (act.dataset.act === "retry" || act.dataset.act === "reanalyze") {
+      if (state.auto.current) { toast("Đang phân tích gói khác, thử lại sau ít phút."); return; }
+      state.auto.blocked = null;
+      analyze(key, { manual: true });
+    }
+    if (act.dataset.act === "bidprice") askBidPrice(key, true);
+    return;
+  }
+  if (e.target.id === "allowAuto") { state.auto.blocked = null; state.sample = undefined; runQueue(); return; }
+  const tr = e.target.closest("#grid tbody tr[data-key]");
+  if (e.target.id === "delSel") { askDelete(); return; }
+  if (tr && !e.target.closest("a,button,select,input,label")) { openDrawer(tr.dataset.key); return; }
+  if (!e.target.closest("#fpop") && !e.target.closest("[data-fcol]")) closeFilter();
+  const th = e.target.closest("[data-sort]");
+  if (th) {
+    const k = th.dataset.sort;
+    state.sort = state.sort.col === k ? { col: k, dir: -state.sort.dir } : { col: k, dir: k === "no" ? -1 : 1 };
+    state.limit = pageSize(); local.set("gridSort2", state.sort); renderGrid(); return;
+  }
+  if (e.target.closest("#runQueueBtn")) { e.stopPropagation(); state.auto.blocked = null; state.sample = undefined; runQueue(); toast("Đang phân tích các gói chờ"); return; }
+  const kp = e.target.closest("[data-kpi]");
+  if (kp) { openList(kp.dataset.kpi); return; }
+  const ok = e.target.closest("[data-openkey]");
+  if (ok) { openDrawer(ok.dataset.openkey); return; }
+  if (e.target.id === "goCompare") { $("#ov").hidden = true; openDrawer(e.target.dataset.key, "compare"); return; }
+  if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
+  const sb = e.target.closest("[data-step]");
+  if (sb) { if (sb.dataset.step) setStage(sb.dataset.key, sb.dataset.step); return; }
+  const fc = e.target.closest("[data-fcol]");
+  if (fc) { if (!$("#fpop").hidden && $("#fpop").dataset.col === fc.dataset.fcol) closeFilter(); else openFilter(fc.dataset.fcol, fc); return; }
+  if (e.target.id === "fclear") { applyFilter(""); closeFilter(); return; }
+  if (e.target.id === "fok") { closeFilter(); return; }
+  if (e.target.id === "moreBtn") { state.limit += pageSize(); renderGrid(); return; }
+  const op = e.target.closest("[data-openpdf]");
+  if (op) { openPdf(state.open, +op.dataset.openpdf); return; }
+  if (e.target.id === "trPdf") { translationPdf(e.target.dataset.key); return; }
+  if (e.target.id === "hsRun") { runHsdt(e.target.dataset.key); return; }
+  if (e.target.id === "hsDocx") { hsdtDocx(e.target.dataset.key); return; }
+  const st = e.target.closest("#stageTabs [data-stage]");
+  if (st) { state.stage = st.dataset.stage; local.set("stage", state.stage); state.filters.stage = ""; state.limit = pageSize(); renderAll(); return; }
+  const dt = e.target.closest("#dtabs [data-dt]");
+  if (dt && !dt.disabled) { state.dtab = dt.dataset.dt; renderDrawer(); return; }
+  const vt = e.target.closest("[data-viewtext]");
+  if (vt) {
+    const f = state.hsmt[state.open].files[+vt.dataset.viewtext];
+    const box = $("#docText"); box.innerHTML = progress("Đang tải nội dung...");
+    try {
+      const all = await loadAttachedText(state.open);
+      const marker = `--- Tệp: ${f.name} ---`, i = all.indexOf(marker), n = i >= 0 ? all.indexOf("\n--- Tệp: ", i + marker.length) : -1;
+      box.innerHTML = h`<div class="textview">${(i >= 0 ? all.slice(i, n > 0 ? n : undefined) : all) || "Không có chữ trong tệp này."}</div>`;
+    } catch { box.innerHTML = h`<div class="note err">Không tải được nội dung, hãy thử lại.</div>`; }
+    return;
+  }
+  if (e.target.id === "trRun") { runTranslate(e.target.dataset.key, +(e.target.dataset.resume || 0)); return; }
+  if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
+  if (e.target.id === "cmAccepted") { askAccept(e.target.dataset.key); return; }
+  if (e.target.id === "bdRun") { runBidders(e.target.dataset.key); return; }
+  if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
+});
+document.addEventListener("input", (e) => {
+  const k = e.target.dataset?.filter;
+  if (k && e.target.tagName === "INPUT") { state.filters[k] = e.target.value; renderGrid(); }
+  if (e.target.id === "q") { state.limit = pageSize(); renderGrid(); }
+  if (e.target.id === "fval" && e.target.tagName === "INPUT") applyFilter(e.target.value);
+  if (e.target.id === "trEdit" && state.open) saveTrEdit(state.open, e.target.value);
+});
+document.addEventListener("change", (e) => {
+  const k = e.target.dataset?.filter;
+  if (k && e.target.tagName === "SELECT") { state.filters[k] = e.target.value; renderGrid(); }
+  if (e.target.id === "fval" && e.target.tagName === "SELECT") { applyFilter(e.target.value); closeFilter(); }
+  if (e.target.id === "dStage" && state.open) setStage(state.open, e.target.value);
+  if (e.target.id === "dNote" && state.open) {
+    const key = state.open, t = findTender(key), prev = state.tracked[key] || {};
+    if ((prev.note || "") !== e.target.value) saveTracked(key, { ...prev, stage: prev.stage || "new", note: e.target.value, tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() });
+  }
+});
+$("#toTop").addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
+$("#toBottom").addEventListener("click", () => scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" }));
+$("#clearFilters").addEventListener("click", () => { state.filters = {}; $("#q").value = ""; state.limit = pageSize(); renderGrid(); });
+$("#dclose").addEventListener("click", closeDrawer);
+$("#scrim").addEventListener("click", closeDrawer);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !$("#fpop").hidden) { closeFilter(); return; }
+  if (e.key === "Enter" && e.target.id === "fval") { closeFilter(); return; }
+  if (e.key === "Escape" && !$("#ov").hidden) { $("#ov").hidden = true; return; }
+  if (e.key === "Escape" && (state.open || state.list)) closeDrawer();
+});
+addEventListener("resize", closeFilter);
+
+// ---------- Refresh ----------
+async function refreshAll() {
+  const btn = $("#refreshBtn"); btn.disabled = true;
+  const before = new Set(allTenders().map((t) => t._key));
+  try {
+    if (state.db) {
+      const snap = await state.db.doc("feed/current").get();
+      state.feed = snap.exists ? snap.data() : state.feed;
+      await rememberSeen();
+    }
+    capScan.done.clear();
+    state.auto.blocked = null; state.sample = undefined;
+    renderAll(); scanCapacities(); scheduleAuto(300);
+    const fresh = allTenders().filter((t) => !before.has(t._key)).length;
+    const closed = allTenders().filter((t) => tabOf(t) === "closed").length;
+    toast(`Đã cập nhật: ${fresh} gói mới, ${closed} gói đã đóng. Dữ liệu muasamcong lúc ${fmtDate(state.feed?.fetchedAt) || "?"}`);
+  } catch { toast("Không cập nhật được, hãy thử lại."); }
+  finally { btn.disabled = false; }
+}
+document.addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-kpi]"); if (k && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openList(k.dataset.kpi); } });
+
+// ---------- Theme ----------
+const SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+const isDark = () => { const a = document.documentElement.getAttribute("data-theme"); return a ? a === "dark" : !matchMedia("(prefers-color-scheme: light)").matches; };
+function paintTheme() { $("#themeBtn").innerHTML = isDark() ? SUN : MOON; }
+$("#themeBtn").addEventListener("click", () => { const n = isDark() ? "light" : "dark"; document.documentElement.setAttribute("data-theme", n); try { localStorage.setItem("genbid-theme", n); } catch {} paintTheme(); });
+
+function renderAll() { renderTop(); renderGrid(); if (state.open) renderDrawer(false); }
+// Bidding closes while the page is open: once a minute, move tenders whose deadline just passed to Đã đóng.
+let closedSig = "";
+setInterval(() => {
+  if (!state.loaded.feed) return;
+  const sig = allTenders().filter((t) => tabOf(t) === "closed").map((t) => t._key).join(",");
+  if (closedSig && sig !== closedSig) { closedSig = sig; renderAll(); } else closedSig = sig;
+}, 60000);
+paintTheme();
+renderAll();
+setInterval(() => { renderTop(); renderGrid(); }, 60000);
+initDb();
+})();
+</script>
+</body></html>
