@@ -17,21 +17,22 @@ const P = 'egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2';
 const t = T[0];
 const url = `${PORTAL_ORIGIN}/web/guest/contractor-selection?p_p_id=${P}&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_${P}_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-4-kqlcnt&id=${t.id}&notifyId=${t.id}&inputResultId=${t.inputResultId}&bidOpenId=${t.bidOpenId}&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=${t.notifyNo}&planNo=${t.planNo}&pno=undefined&step=kqlcnt&isInternet=1&caseKHKQ=undefined&bidForm=${t.bidForm}`;
 const page = await req(url, { headers: { 'User-Agent': UA } });
-const srcs = [...page.text.matchAll(/src="([^"]+\.js[^"]*)"/g)].map((m) => new URL(m[1].replace(/&amp;/g, '&'), PORTAL_ORIGIN).href).filter((u) => u.includes('contractor-selection'));
+const srcs = [...page.text.matchAll(/src="([^"]+\.js[^"]*)"/g)].map((m) => new URL(m[1].replace(/&amp;/g, '&'), PORTAL_ORIGIN).href).filter((u) => /contractor|egp/i.test(u));
 console.log('DETAIL', page.status, page.text.length, 'scripts', srcs.length);
 const paths = new Set<string>();
 const ctx: string[] = [];
-for (const s of srcs) {
-  const js = await req(s);
-  for (const m of js.text.matchAll(/["'`]((?:\/o\/)?[\w-]*\/?services\/[\w\/-]+)["'`]/g)) paths.add(m[1]);
-  for (const m of js.text.matchAll(/.{0,160}(?:kqlcnt|KQLCNT|inputResult|contractorList|lsContractor|bidderList).{0,160}/g)) if (ctx.length < 40) ctx.push(m[0].replace(/\s+/g, ' '));
-}
+const scan = (text: string, tag: string) => {
+  for (const m of text.matchAll(/services\/[\w\/-]+/g)) paths.add(m[0]);
+  for (const m of text.matchAll(/.{0,120}(?:kqlcnt|KQLCNT|inputResult|contractorList|ContractorList|lsBidder|bidderList|winningContractor).{0,160}/g)) if (ctx.length < 60) ctx.push(tag + ': ' + m[0].replace(/\s+/g, ' '));
+};
+scan(page.text, 'html');
+for (const s of srcs) { const js = await req(s); console.log('JS', s, js.status, js.text.length); scan(js.text, 'js'); }
 console.log('PATHS\n' + [...paths].join('\n'));
 console.log('CTX\n' + ctx.join('\n---\n'));
 // Try the result-related services once each, without any token. Anything that wants a token is reported and left alone.
-const cand = [...paths].filter((p) => /kqlcnt|result|ketqua|kq|contractor/i.test(p)).slice(0, 15);
+const cand = [...paths].filter((p) => /kqlcnt|result|ketqua|kq/i.test(p)).slice(0, 12);
 for (const p of cand) {
-  const u = new URL(p.startsWith('/o/') ? p : `/o/egp-portal-contractor-selection-v2/${p.replace(/^\//, '')}`, PORTAL_ORIGIN).href;
+  const u = `${PORTAL_ORIGIN}/o/egp-portal-contractor-selection-v2/${p}`;
   for (const body of [{ id: t.inputResultId }, { id: t.id }, { notifyId: t.id, inputResultId: t.inputResultId }]) {
     const r = await req(u, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json', Origin: PORTAL_ORIGIN, Referer: url, 'User-Agent': UA }, body: JSON.stringify(body) });
     console.log('TRY', p, JSON.stringify(body).slice(0, 60), r.status, r.text.slice(0, 600).replace(/\s+/g, ' '));
