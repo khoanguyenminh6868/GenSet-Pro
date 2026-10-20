@@ -4,6 +4,8 @@ import { z } from 'zod';
 
 const client = new Anthropic();
 const MODEL = process.env.ANTHROPIC_MODEL ?? 'claude-opus-5-5';
+// Translation is short and well-specified, so a much cheaper model is enough.
+const TRANSLATE_MODEL = process.env.ANTHROPIC_TRANSLATE_MODEL ?? 'claude-haiku-5-5';
 // Server-side fallback: if the model declines a request, the API retries it on
 // the model's default fallback inside the same call.
 const FALLBACK = { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const };
@@ -116,10 +118,10 @@ export async function translate(text: string, direction: Direction): Promise<str
       : direction === 'en-vi'
         ? 'Dịch từ tiếng Anh sang tiếng Việt.'
         : 'Detect the language. If it is Vietnamese translate it into English, otherwise translate it into Vietnamese.';
-  const response = await client.beta.messages.create({
-    model: MODEL,
+  // Haiku has no server-side refusal fallback, so this uses the plain endpoint without FALLBACK.
+  const response = await client.messages.create({
+    model: TRANSLATE_MODEL,
     max_tokens: 16000,
-    ...FALLBACK,
     output_config: { effort: 'low' },
     system: `${DOMAIN_CONTEXT}
 

@@ -5,9 +5,14 @@ services:
     runtime: docker
     rootDir: server
     dockerfilePath: ./Dockerfile
-    plan: starter
+    # Free plan: 512 MB RAM and the service sleeps after 15 idle minutes (first request then takes ~1 min).
+    # The portal currently answers plain requests, so the memory-hungry browser fallback stays off here.
+    # Switch to plan: starter and MUASAMCONG_MODE=auto if muasamcong starts enforcing reCAPTCHA.
+    plan: free
     region: singapore
     healthCheckPath: /api/health
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false
+      - key: MUASAMCONG_MODE
+        value: direct

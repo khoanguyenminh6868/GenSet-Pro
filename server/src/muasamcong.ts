@@ -60,8 +60,9 @@ function pick(raw: Raw, ...keys: string[]): unknown {
 
 function asString(v: unknown): string | undefined {
   if (v === undefined || v === null) return undefined;
-  if (Array.isArray(v)) return v.filter(Boolean).join(' ').trim() || undefined;
-  return String(v).trim() || undefined;
+  // Some portal names contain hard line breaks; collapse all whitespace runs.
+  const s = (Array.isArray(v) ? v.filter(Boolean).join(' ') : String(v)).replace(/\s+/g, ' ').trim();
+  return s || undefined;
 }
 
 function asNumber(v: unknown): number | undefined {

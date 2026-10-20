@@ -47,7 +47,7 @@ Quét mã QR bằng Expo Go (Android/iOS), hoặc bấm `w` để mở bản web
 
 ## Triển khai
 
-**Máy chủ** (`server/Dockerfile`, có sẵn Chromium): trên [Render](https://render.com), chọn *New → Blueprint*, trỏ tới repo này. Render đọc `render.yaml` và chỉ hỏi `ANTHROPIC_API_KEY`. Cần gói từ Starter trở lên vì Chromium cần khoảng 1 GB RAM. Có thể dùng bất kỳ host chạy Docker nào khác (Railway, Fly.io, VPS).
+**Máy chủ** (`server/Dockerfile`, có sẵn Chromium): trên [Render](https://render.com), chọn *New → Blueprint*, trỏ tới repo này. Render đọc `render.yaml` và chỉ hỏi `ANTHROPIC_API_KEY`. Cấu hình mặc định dùng gói **Free**: máy chủ ngủ sau 15 phút không dùng, lần mở đầu tiên chờ khoảng 1 phút, và tắt chế độ trình duyệt ẩn (`MUASAMCONG_MODE=direct`) vì gói này chỉ có 512 MB RAM. Nếu muasamcong bắt đầu đòi reCAPTCHA, chuyển sang gói Starter và đặt `MUASAMCONG_MODE=auto`. Có thể dùng bất kỳ host chạy Docker nào khác (Railway, Fly.io, VPS).
 
 **Ứng dụng**: `app/eas.json` có sẵn hai cấu hình build, đều trỏ tới `https://genbid-pro-api.onrender.com`. Nếu máy chủ của anh có địa chỉ khác thì sửa lại trong tệp này.
 
@@ -70,7 +70,7 @@ npx eas-cli@latest build -p ios --profile production    # cần tài khoản App
 ## Ghi chú
 
 - **Kết nối muasamcong**: phần lấy dữ liệu nằm trọn trong `server/src/muasamcong.ts`. Nó gọi đúng endpoint tìm kiếm mà trang muasamcong dùng (`/o/egp-portal-contractor-selection-v2/services/smart/search`), tìm theo các từ khoá trong `GENERATOR_KEYWORDS` và chỉ giữ gói có thời điểm đóng thầu sau hiện tại. Trang này yêu cầu token reCAPTCHA v3, nên nếu gọi trực tiếp bị từ chối, máy chủ sẽ mở trang trong Chromium ẩn để lấy token (`MUASAMCONG_MODE=auto|direct|browser`). Workflow *muasamcong live check* trên GitHub chạy kiểm tra thật mỗi sáng; chạy tay bằng `npm run check:portal`.
-- **AI**: dùng Claude (`claude-opus-5-5`, đổi bằng `ANTHROPIC_MODEL`) với structured outputs để kết quả luôn đúng cấu trúc. Tệp tối đa 20 MB mỗi tệp; PDF và ảnh được gửi nguyên để AI đọc được cả bản scan.
+- **AI**: phân tích và đối chiếu dùng Claude `claude-opus-5-5` (đổi bằng `ANTHROPIC_MODEL`); dịch dùng `claude-haiku-5-5` cho rẻ (đổi bằng `ANTHROPIC_TRANSLATE_MODEL`). Dùng với structured outputs để kết quả luôn đúng cấu trúc. Tệp tối đa 20 MB mỗi tệp; PDF và ảnh được gửi nguyên để AI đọc được cả bản scan.
 - **Dữ liệu theo dõi** lưu trên thiết bị (AsyncStorage). Muốn dùng chung cho cả nhóm cần thêm cơ sở dữ liệu và đăng nhập ở `server`.
 
 ## Kiểm tra
