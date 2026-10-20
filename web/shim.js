@@ -12,6 +12,7 @@
     member = rows?.[0];
     if (!member) { await gate("denied", session.user.email); return new Promise(() => {}); }
     accountChip(session.user);
+    if (location.hash === "#import" && ["owner", "admin"].includes(member.role)) importPanel();
   })();
 
   // ---------- sign-in screen ----------
@@ -37,6 +38,39 @@
     b.style.cssText = "position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;font:12px system-ui,sans-serif;padding:6px 10px;border-radius:999px;border:1px solid var(--rule,#8884);background:var(--card,#fff);color:var(--fg,#222);opacity:.85;cursor:pointer";
     b.onclick = async () => { await sb.auth.signOut(); location.reload(); };
     document.body.appendChild(b);
+  }
+
+  // ---------- one-time import of the claude.ai data (owner opens /#import) ----------
+  async function importPanel() {
+    const el = document.createElement("div");
+    el.style.cssText = "position:fixed;inset:auto 12px 56px 12px;max-width:420px;margin:auto;z-index:60;padding:16px;border-radius:12px;background:var(--card,#fff);color:var(--fg,#222);border:1px solid var(--rule,#8884);box-shadow:0 8px 30px #0004;font:14px system-ui,sans-serif;display:grid;gap:10px";
+    el.innerHTML = '<b>Nhập dữ liệu từ bản claude.ai</b><span>Chọn tệp genbid-data.zip. Dữ liệu cùng mã sẽ bị ghi đè.</span><input type="file" accept=".zip"><div id="impLog" style="opacity:.8"></div>';
+    document.body.appendChild(el);
+    const log = (t) => (el.querySelector("#impLog").textContent = t);
+    el.querySelector("input").onchange = async (e) => {
+      const file = e.target.files[0]; if (!file) return;
+      try {
+        if (!window.JSZip) await new Promise((ok, bad) => { const sc = document.createElement("script"); sc.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"; sc.onload = ok; sc.onerror = bad; document.head.appendChild(sc); });
+        const zip = await JSZip.loadAsync(file);
+        const rows = JSON.parse(await zip.file("data.json").async("string"));
+        for (let i = 0; i < rows.length; i += 100) {
+          const { error } = await sb.from("docs").upsert(rows.slice(i, i + 100).map((r) => ({ ...r, updated_at: new Date().toISOString() })));
+          if (error) throw error;
+          log(`Dữ liệu: ${Math.min(i + 100, rows.length)}/${rows.length}`);
+        }
+        const blobs = Object.values(zip.files).filter((f) => !f.dir && f.name.startsWith("blobs/"));
+        let done = 0, skipped = 0;
+        for (const f of blobs) {
+          const name = f.name.slice(6).replace(/\.[^.]+$/, "");
+          const type = f.name.endsWith(".pdf") ? "application/pdf" : f.name.endsWith(".ttf") ? "font/ttf" : "application/octet-stream";
+          const { error } = await sb.storage.from("blobs").upload(name, await f.async("blob"), { contentType: type });
+          if (error && !/exists|duplicate/i.test(error.message)) throw error;
+          if (error) skipped++; else done++;
+          log(`Tệp: ${done + skipped}/${blobs.length}`);
+        }
+        log(`Xong: ${rows.length} bản ghi, ${done} tệp mới, ${skipped} tệp đã có. Tải lại trang để xem.`);
+      } catch (err) { log("Lỗi: " + (err.message || err)); }
+    };
   }
 
   // ---------- db (same shape as the claude.ai db capability) ----------
