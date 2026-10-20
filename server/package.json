@@ -8,7 +8,8 @@
     "build": "tsc",
     "start": "node --env-file-if-exists=.env dist/index.js",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test test/*.test.ts"
+    "test": "tsx --test test/*.test.ts",
+    "check:portal": "tsx scripts/check-portal.ts"
   },
   "license": "ISC",
   "dependencies": {
@@ -17,6 +18,7 @@
     "express": "^5.3.0",
     "mammoth": "^1.13.0",
     "multer": "^2.4.0",
+    "playwright-core": "^1.64.1",
     "zod": "^4.6.7"
   },
   "devDependencies": {

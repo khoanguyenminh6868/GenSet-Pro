@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { isGeneratorTender, normalizeTender } from '../src/muasamcong.js';
+import { isGeneratorTender, normalizeTender, searchBody } from '../src/muasamcong.js';
 
 const now = new Date('2026-10-20T00:00:00Z');
 
@@ -44,4 +44,16 @@ test('marks a tender closed once its closing time has passed', () => {
 
 test('drops records without an id, notice number or name', () => {
   assert.equal(normalizeTender({ notifyNo: 'IB1', bidName: 'x' }, now), null);
+});
+
+test('search body asks the portal for open notices only, in Vietnam time', () => {
+  const [body] = searchBody('máy phát điện', 50, new Date('2026-10-20T00:00:00Z'));
+  const filters = body.query[0].filters;
+  assert.deepEqual(filters.find((f) => f.fieldName === 'bidCloseDate'), {
+    fieldName: 'bidCloseDate',
+    searchType: 'range',
+    from: '2026-10-20T07:00:00.000Z',
+    to: null,
+  });
+  assert.ok(filters.some((f) => f.fieldName === 'type' && f.fieldValues?.includes('es-notify-contractor')));
 });
