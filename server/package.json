@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test test/*.test.ts",
     "check:portal": "tsx scripts/check-portal.ts",
-    "export:feed": "tsx scripts/export-feed.ts"
+    "export:feed": "tsx scripts/export-feed.ts",
+    "lookup:tenders": "tsx scripts/lookup-tenders.ts"
   },
   "license": "ISC",
   "dependencies": {

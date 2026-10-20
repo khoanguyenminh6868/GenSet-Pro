@@ -173,7 +173,7 @@ function portalNow(now = new Date()): string {
   return new Date(now.getTime() + 7 * 3600 * 1000).toISOString();
 }
 
-export function searchBody(keyWord: string, pageSize: number, now = new Date()) {
+export function searchBody(keyWord: string, pageSize: number, now = new Date(), openOnly = true) {
   return [
     {
       pageSize,
@@ -188,7 +188,7 @@ export function searchBody(keyWord: string, pageSize: number, now = new Date()) 
             { fieldName: 'type', searchType: 'in', fieldValues: ['es-notify-contractor'] },
             { fieldName: 'caseKHKQ', searchType: 'not_in', fieldValues: ['1'] },
             // Same "still open" filter the portal's "Đang mở" tab sends.
-            { fieldName: 'bidCloseDate', searchType: 'range', from: portalNow(now), to: null },
+            ...(openOnly ? [{ fieldName: 'bidCloseDate', searchType: 'range', from: portalNow(now), to: null }] : []),
           ],
         },
       ],
@@ -217,7 +217,7 @@ function parseSearchResponse(json: unknown): Raw[] {
 }
 
 /** Plain HTTP call without a reCAPTCHA token. Cheap, but the portal may reject it. */
-async function searchDirect(keywords: string[], pageSize: number, signal: AbortSignal): Promise<Raw[][]> {
+async function searchDirect(keywords: string[], pageSize: number, signal: AbortSignal, openOnly = true): Promise<Raw[][]> {
   return Promise.all(
     keywords.map(async (keyWord) => {
       const res = await fetch(`${PORTAL_ORIGIN}${SEARCH_PATH}?token=`, {
@@ -229,7 +229,7 @@ async function searchDirect(keywords: string[], pageSize: number, signal: AbortS
           Referer: `${PORTAL_ORIGIN}/web/guest/contractor-selection?render=index`,
           'User-Agent': 'Mozilla/5.0 (GenBid Pro)',
         },
-        body: JSON.stringify(searchBody(keyWord, pageSize)),
+        body: JSON.stringify(searchBody(keyWord, pageSize, new Date(), openOnly)),
         signal,
       });
       if (!res.ok) throw new Error(`muasamcong trả về HTTP ${res.status}`);
@@ -242,7 +242,7 @@ async function searchDirect(keywords: string[], pageSize: number, signal: AbortS
  * Load the portal in headless Chromium and run the searches from inside the
  * page, so each request carries the reCAPTCHA v3 token the portal's own UI sends.
  */
-async function searchViaBrowser(keywords: string[], pageSize: number): Promise<Raw[][]> {
+async function searchViaBrowser(keywords: string[], pageSize: number, openOnly = true): Promise<Raw[][]> {
   const { chromium } = await import('playwright-core');
   const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
   try {
@@ -271,7 +271,7 @@ async function searchViaBrowser(keywords: string[], pageSize: number): Promise<R
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
           return res.json();
         },
-        { siteKey, url: SEARCH_PATH, body: searchBody(keyWord, pageSize) },
+        { siteKey, url: SEARCH_PATH, body: searchBody(keyWord, pageSize, new Date(), openOnly) },
       );
       results.push(parseSearchResponse(json));
     }
@@ -284,12 +284,12 @@ async function searchViaBrowser(keywords: string[], pageSize: number): Promise<R
 export type FetchMode = 'auto' | 'direct' | 'browser';
 
 /** Raw portal records for each keyword, plus which path produced them. Used by the live check script. */
-export async function searchRaw(keywords: string[], pageSize: number, mode: FetchMode): Promise<{ via: 'direct' | 'browser'; pages: Raw[][] }> {
+export async function searchRaw(keywords: string[], pageSize: number, mode: FetchMode, openOnly = true): Promise<{ via: 'direct' | 'browser'; pages: Raw[][] }> {
   if (mode !== 'browser') {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 20_000);
     try {
-      return { via: 'direct', pages: await searchDirect(keywords, pageSize, controller.signal) };
+      return { via: 'direct', pages: await searchDirect(keywords, pageSize, controller.signal, openOnly) };
     } catch (err) {
       if (mode === 'direct') throw err;
       console.warn(`Direct search failed (${(err as Error).message}); retrying in a headless browser.`);
@@ -297,7 +297,7 @@ export async function searchRaw(keywords: string[], pageSize: number, mode: Fetc
       clearTimeout(timer);
     }
   }
-  return { via: 'browser', pages: await searchViaBrowser(keywords, pageSize) };
+  return { via: 'browser', pages: await searchViaBrowser(keywords, pageSize, openOnly) };
 }
 
 /**
