@@ -1,0 +1,13 @@
+# One-click deploy of the GenBid Pro API on Render (https://render.com/deploy).
+services:
+  - type: web
+    name: genbid-pro-api
+    runtime: docker
+    rootDir: server
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    region: singapore
+    healthCheckPath: /api/health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false

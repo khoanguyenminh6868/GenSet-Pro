@@ -45,7 +45,18 @@ npx expo start
 
 Quét mã QR bằng Expo Go (Android/iOS), hoặc bấm `w` để mở bản web. Trên điện thoại thật, đặt `EXPO_PUBLIC_API_URL` là IP LAN của máy tính chạy server (ví dụ `http://192.168.1.10:8787`), không dùng `localhost`.
 
-**Build cài đặt (APK/IPA)**: dùng EAS, `npx eas-cli@latest build -p android` hoặc `-p ios`. Khi phát hành, triển khai `server` lên một máy chủ có HTTPS (Render, Railway, VPS...) và đặt `EXPO_PUBLIC_API_URL` theo địa chỉ đó.
+## Triển khai
+
+**Máy chủ** (`server/Dockerfile`, có sẵn Chromium): trên [Render](https://render.com), chọn *New → Blueprint*, trỏ tới repo này. Render đọc `render.yaml` và chỉ hỏi `ANTHROPIC_API_KEY`. Cần gói từ Starter trở lên vì Chromium cần khoảng 1 GB RAM. Có thể dùng bất kỳ host chạy Docker nào khác (Railway, Fly.io, VPS).
+
+**Ứng dụng**: `app/eas.json` có sẵn hai cấu hình build, đều trỏ tới `https://genbid-pro-api.onrender.com`. Nếu máy chủ của anh có địa chỉ khác thì sửa lại trong tệp này.
+
+```bash
+cd app
+npx eas-cli@latest login
+npx eas-cli@latest build -p android --profile preview   # file APK cài thẳng lên Android
+npx eas-cli@latest build -p ios --profile production    # cần tài khoản Apple Developer
+```
 
 ## API máy chủ
 
@@ -58,7 +69,7 @@ Quét mã QR bằng Expo Go (Android/iOS), hoặc bấm `w` để mở bản web
 
 ## Ghi chú
 
-- **Kết nối muasamcong**: phần lấy dữ liệu nằm trọn trong `server/src/muasamcong.ts` (endpoint tìm kiếm mà trang muasamcong dùng, từ khoá trong `GENERATOR_KEYWORDS`, chỉ giữ gói có thời điểm đóng thầu sau hiện tại). Cổng thông tin có thể đổi API hoặc bật captcha; khi đó chỉ cần sửa tệp này. Ứng dụng báo lỗi rõ ràng và cho xem dữ liệu mẫu nếu không kết nối được.
+- **Kết nối muasamcong**: phần lấy dữ liệu nằm trọn trong `server/src/muasamcong.ts`. Nó gọi đúng endpoint tìm kiếm mà trang muasamcong dùng (`/o/egp-portal-contractor-selection-v2/services/smart/search`), tìm theo các từ khoá trong `GENERATOR_KEYWORDS` và chỉ giữ gói có thời điểm đóng thầu sau hiện tại. Trang này yêu cầu token reCAPTCHA v3, nên nếu gọi trực tiếp bị từ chối, máy chủ sẽ mở trang trong Chromium ẩn để lấy token (`MUASAMCONG_MODE=auto|direct|browser`). Workflow *muasamcong live check* trên GitHub chạy kiểm tra thật mỗi sáng; chạy tay bằng `npm run check:portal`.
 - **AI**: dùng Claude (`claude-opus-5-5`, đổi bằng `ANTHROPIC_MODEL`) với structured outputs để kết quả luôn đúng cấu trúc. Tệp tối đa 20 MB mỗi tệp; PDF và ảnh được gửi nguyên để AI đọc được cả bản scan.
 - **Dữ liệu theo dõi** lưu trên thiết bị (AsyncStorage). Muốn dùng chung cho cả nhóm cần thêm cơ sở dữ liệu và đăng nhập ở `server`.
 
