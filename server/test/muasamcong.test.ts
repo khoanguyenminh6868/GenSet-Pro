@@ -57,3 +57,12 @@ test('search body asks the portal for open notices only, in Vietnam time', () =>
   });
   assert.ok(filters.some((f) => f.fieldName === 'type' && f.fieldValues?.includes('es-notify-contractor')));
 });
+
+test('collapses line breaks in bid names and reads array prices like the live portal returns', () => {
+  const t = normalizeTender(
+    { id: 'x', notifyNo: 'IB1', bidName: ['Gói thầu số 09: Thi công \nxây dựng \n(bao gồm máy \nphát điện)'], bidPrice: [1429341078], bidCloseDate: '2026-10-30T09:00:00' },
+    now,
+  );
+  assert.equal(t?.bidName, 'Gói thầu số 09: Thi công xây dựng (bao gồm máy phát điện)');
+  assert.equal(t?.estimatedPrice, 1429341078);
+});
