@@ -1,0 +1,6 @@
+{
+  "name": "genbid-pro-web",
+  "private": true,
+  "type": "module",
+  "description": "GenBid Pro on Vercel: static page + serverless functions, data in Supabase"
+}

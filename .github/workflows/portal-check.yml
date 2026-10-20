@@ -39,6 +39,20 @@ jobs:
           cat ../feed.json
           echo
           echo "=====FEED-JSON-END====="
+      # The GenBid Pro web version (Vercel) reads the feed from Supabase; skipped until the secrets exist.
+      - name: Publish feed to Supabase
+        if: github.event_name != 'pull_request' && (success() || failure())
+        working-directory: .
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ ! -s feed.json ]; then echo "Supabase not configured or no feed; skipping."; exit 0; fi
+          jq -c '{coll: "feed", id: "current", data: ., updated_at: (now | todate)}' feed.json > /tmp/feed-row.json
+          curl -fsS -X POST "$SUPABASE_URL/rest/v1/docs" \
+            -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+            -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates,return=minimal" \
+            --data @/tmp/feed-row.json
       # The GenBid Pro artifact is refreshed from this branch.
       - name: Publish feed to the feed-data branch
         if: github.event_name != 'pull_request'

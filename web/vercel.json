@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "rewrites": [{ "source": "/_blob/:id", "destination": "/api/blob?id=:id" }],
+  "functions": { "api/sample.js": { "maxDuration": 300 } },
+  "headers": [{ "source": "/(index.html|shim.js)?", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }]
+}
