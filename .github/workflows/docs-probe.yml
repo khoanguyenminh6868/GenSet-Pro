@@ -1,0 +1,20 @@
+name: docs probe (temporary)
+on:
+  push:
+    branches: [claude/genbid-pro-app-vub7eo]
+    paths: ['server/scripts/probe-docs.ts', '.github/workflows/docs-probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: server } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: server/package-lock.json }
+      - run: npm ci
+      - run: npx playwright-core install --with-deps chromium
+      - name: Probe detail page and E-HSMT viewer
+        run: npx tsx scripts/probe-docs.ts 'https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=14270aa8-9aff-469a-bd93-af627bf1d358&notifyId=14270aa8-9aff-469a-bd93-af627bf1d358&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600570346&planNo=PL2600338617&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=CHCT'
+      - name: Print captured responses (trimmed)
+        if: always()
+        run: for f in probe-out/resp-*.txt; do echo "##### $f"; head -c 3000 "$f"; echo; done; echo "##### viewer"; head -c 6000 probe-out/viewer.txt || true
