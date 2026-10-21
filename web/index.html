@@ -78,6 +78,9 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 
 /* Banner */
 .banner{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:linear-gradient(120deg,var(--banner-a),var(--banner-b));box-shadow:var(--shadow);padding:18px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+/* Banner accent: brand yellow instead of the app violet. */
+.banner{--violet:#ffcc00;--violet-soft:rgba(255,204,0,.18);--wave:rgba(255,204,0,.4)}
+.banner .mark{color:#1f1a00}
 .banner svg.wave{position:absolute;right:0;top:0;height:100%;width:62%;pointer-events:none}
 .mark{width:46px;height:46px;border-radius:12px;background:var(--violet);color:#fff;display:grid;place-items:center;flex:none;position:relative}
 .mark svg{width:28px;height:28px}
@@ -111,8 +114,9 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .seg button{border:0;background:transparent;padding:6px 12px;font-size:13px;color:var(--muted);white-space:nowrap;display:inline-flex;gap:6px;align-items:center}
 .seg button+button{border-left:1px solid var(--line)}
 .seg button[aria-selected="true"]{background:var(--violet-soft);color:var(--fg);font-weight:600}
-.seg .c{font:600 11.5px var(--f-mono);color:var(--dim)}
-.seg button[aria-selected="true"] .c{color:var(--violet)}
+.seg .c{font:600 11.5px var(--f-mono)}
+.seg .c:not([class*="st-"]){color:var(--dim)}
+.seg button[aria-selected="true"] .c:not([class*="st-"]){color:var(--violet)}
 
 /* Grid */
 .gridcard{padding:0;overflow:hidden}
@@ -876,8 +880,8 @@ function renderTop() {
   const f = state.feed;
   const dot = $("#sdot"), txt = $("#stext");
   if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `Claude đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
-  else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật lúc ${fmtDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
-  else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật lúc ${fmtDate(f.fetchedAt)}`; }
+  else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
+  else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtDate(f.fetchedAt)}`; }
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
   const items = allTenders();
   const live = items.filter((t) => tabOf(t) !== "closed");
@@ -889,7 +893,7 @@ function renderTop() {
   const counts = Object.fromEntries(TABS.map((s) => [s.key, 0]));
   items.forEach((t) => counts[tabOf(t)]++);
   $("#stageTabs").innerHTML = [["all", "Tất cả", live.length], ...TABS.map((s) => [s.key, s.label, counts[s.key]])]
-    .map(([k, l, n]) => h`<button role="tab" data-stage="${k}" aria-selected="${String(state.stage === k)}">${l}<span class="c">${n}</span></button>`).join("");
+    .map(([k, l, n]) => h`<button role="tab" data-stage="${k}" aria-selected="${String(state.stage === k)}">${l}<span class="c${k === "all" ? "" : " st-" + k}">${n}</span></button>`).join("");
   const an = $("#autoNote");
   if (state.auto.blocked === "consent" || state.auto.blocked === "noclaude") an.innerHTML = h`<div class="note warn row"><span style="flex:1;min-width:200px">${state.auto.blocked === "noclaude" ? "Mở trang trong claude.ai khi đã đăng nhập để Claude tự phân tích các gói mới." : "Claude cần được cho phép để tự phân tích các gói mới."}</span>${raw(state.auto.blocked === "consent" ? '<button class="btn sm primary" id="allowAuto">Cho phép và phân tích</button>' : "")}</div>`;
   else if (state.auto.blocked === "rate") an.innerHTML = h`<div class="note warn">Đã chạm giới hạn sử dụng Claude. Việc phân tích tự động sẽ chạy lại sau ít phút.</div>`;
