@@ -1187,6 +1187,7 @@ function reqState(key) {
 function refetchHtml(t, have) {
   if (state.readOnly || !window.genbidWeb) return "";
   const s = reqState(t._key);
+  if (s?.kind === "pending") return "";
   const msg = s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
     : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp." : "Lấy tệp hồ sơ từ muasamcong về gói này.";
   return h`<div class="note row${s?.kind === "error" ? " warn" : ""}"><span class="small" style="flex:1;min-width:200px">${msg}</span>
