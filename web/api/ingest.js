@@ -8,7 +8,7 @@ const COLLS = new Set(["analysis", "translation", "compare"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 
-function authorized(req) {
+export function authorized(req) {
   const want = process.env.INGEST_TOKEN || "";
   const got = (req.headers.authorization || "").replace(/^Bearer\s+/i, "");
   if (want.length < 32 || got.length !== want.length) return false;
