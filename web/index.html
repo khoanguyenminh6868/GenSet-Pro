@@ -434,7 +434,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null, sample: undefined,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, hsmtreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort2", { col: "no", dir: -1 }),
@@ -767,6 +767,7 @@ async function initDb() {
   subscribe("bidders", "bidders");
   subscribe("portalids", "portalids");
   subscribe("deleted", "deleted");
+  subscribe("hsmtreq", "hsmtreq");
 }
 
 // ---------- Claude ----------
@@ -1144,7 +1145,7 @@ function renderDrawer(force = true) {
   });
   if (state.dtab === "compare" && stg !== "preparing") state.dtab = "info";
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.auto.current === key, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.auto.current === key, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1173,94 +1174,34 @@ function infoHtml(t) {
       ${raw(refetchHtml(t, files.length))}
     </div>`;
 }
-// Tender files only download through VNeGP Client Agent on a Windows PC, and only from the muasamcong page itself.
-// "Lấy lại tệp" opens the tender there; the GenBid bookmarklet fetches the files through the Agent and posts them back here.
-const PORTAL_ORIGIN = /^https:\/\/muasamcong\.(mof|mpi)\.gov\.vn$/;
-const BOOKMARKLET_PAGE = "https://genset-pro-web.vercel.app/hsmt/cai-nut";
-function refetchHtml(t, have) {
-  if (state.readOnly) return "";
-  const busy = hfWait && hfWait.key === t._key;
-  return h`<div class="note row"><span class="small" style="flex:1;min-width:200px">${busy
-      ? "Đã mở gói trên muasamcong ở tab mới. Đợi trang hiện xong rồi bấm nút GenBid tải HSMT trên thanh dấu trang, tệp sẽ tự về đây."
-      : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp." : "Lấy tệp hồ sơ từ muasamcong về gói này."}
-    Cần máy Windows có VNeGP Client Agent và nút <a href="${BOOKMARKLET_PAGE}" target="_blank" rel="noopener">GenBid tải HSMT</a>.</span>
-    <button class="btn primary" id="hfFetch" data-key="${t._key}">${busy ? "Mở lại trang gói" : "Lấy lại tệp"}</button></div>
-    <div id="hfOut"></div>`;
+// Tender files only download through VNeGP Client Agent on the Windows PC. "Lấy lại tệp" records a request in
+// hsmtreq/<key>; the PC worker fetches the files from the muasamcong page and stores them, then marks it done.
+function reqState(key) {
+  const r = state.hsmtreq?.[key];
+  if (!r?.requestedAt) return null;
+  if (r.doneAt && r.doneAt >= r.requestedAt) return r.error ? { kind: "error", r } : null;
+  const got = state.hsmt[key]?.updatedAt;
+  if (got && got >= r.requestedAt) return null;
+  return { kind: "pending", r };
 }
-let hfWait = null;
-function startRefetch(key) {
+function refetchHtml(t, have) {
+  if (state.readOnly || !window.genbidWeb) return "";
+  const s = reqState(t._key);
+  const msg = s?.kind === "pending" ? `Đang chờ lấy tệp (yêu cầu lúc ${fmtDate(s.r.requestedAt)}). Máy Windows có Agent sẽ tự tải tệp từ muasamcong về gói này khi đang bật.`
+    : s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
+    : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp." : "Lấy tệp hồ sơ từ muasamcong về gói này.";
+  return h`<div class="note row${s?.kind === "error" ? " warn" : ""}"><span class="small" style="flex:1;min-width:200px">${msg}</span>
+    ${raw(s?.kind === "pending" ? h`<button class="btn sm" id="hfCancel" data-key="${t._key}">Huỷ yêu cầu</button>` : h`<button class="btn primary" id="hfFetch" data-key="${t._key}">Lấy lại tệp</button>`)}</div>`;
+}
+async function requestRefetch(key, cancel = false) {
   const t = findTender(key);
   if (!t) return;
-  const w = window.open(tenderLink(t), "_blank");
-  if (!w) { $("#hfOut").innerHTML = h`<div class="note warn">Trình duyệt chặn mở tab mới. Hãy cho phép cửa sổ bật lên rồi bấm lại, hoặc dùng bản GenBid Pro trên web.</div>`; return; }
-  hfWait = { key, notifyNo: t.notifyNo, win: w };
+  const prev = state.hsmtreq?.[key] || {};
+  const rec = cancel ? { ...prev, doneAt: new Date().toISOString(), error: "" } : { notifyNo: t.notifyNo || key, sourceUrl: tenderLink(t), bidName: t.bidName || "", requestedAt: new Date().toISOString() };
+  if (!(await dbSet("hsmtreq/" + key, rec))) { toast("Không lưu được yêu cầu."); return; }
+  state.hsmtreq = { ...state.hsmtreq, [key]: rec };
+  toast(cancel ? "Đã huỷ yêu cầu lấy tệp" : "Đã ghi yêu cầu lấy tệp");
   renderDrawer(true);
-}
-window.addEventListener("message", async (e) => {
-  if (!PORTAL_ORIGIN.test(e.origin) || e.data?.type !== "genbid-hsmt") return;
-  const files = (e.data.files || []).filter((f) => f && f.blob instanceof Blob && f.name).map((f) => new File([f.blob], String(f.name), { type: f.blob.type }));
-  const no = String(e.data.notifyNo || "");
-  const key = hfWait && (!no || hfWait.notifyNo === no) ? hfWait.key : allTenders().find((t) => t.notifyNo === no)?._key;
-  e.source?.postMessage({ type: "genbid-hsmt-ack", ok: !!key, count: files.length }, e.origin);
-  if (!key || !files.length) { toast(key ? "Không nhận được tệp nào." : `Không tìm thấy gói ${no} trong GenBid Pro.`); return; }
-  hfWait = null;
-  toast(`Đã nhận ${files.length} tệp của gói ${no}, đang lưu...`);
-  await saveHsmtFiles(key, files);
-});
-const HSMT_CHUNK = 190000;
-async function saveHsmtFiles(key, picked) {
-  const show = (html) => { const o = state.open === key && $("#hfOut"); if (o) o.innerHTML = html; };
-  const t = findTender(key);
-  if (!state.db) { toast("Chưa kết nối cơ sở dữ liệu nên chưa lưu được tệp."); return; }
-  let assets = null;
-  try { assets = (await window.claude?.use?.("assets")) ?? null; } catch { assets = null; }
-  try {
-    const prev = state.hsmt[key] || {};
-    const files = [...(prev.files || [])], texts = [], notes = [], names = new Set();
-    for (const f of picked) {
-      show(progress(`Đang đọc ${f.name}...`));
-      let text = "";
-      if (/\.(pdf|docx|txt)$/i.test(f.name)) {
-        try { text = (await readFile(f, 0)).text || ""; } catch (e) { notes.push(`${f.name}: ${e.message || "không đọc được"}.`); }
-        if (/^\(Tệp scan/.test(text)) text = "";
-      }
-      const hasText = text.replace(/\s/g, "").length > 40;
-      let url = null;
-      if (assets && f.size <= 20 * 1048576) {
-        show(progress(`Đang lưu ${f.name}...`));
-        try { url = (await assets.upload(f)).url; } catch { if (!hasText) notes.push(`${f.name}: loại tệp này chưa lưu được.`); }
-      } else if (f.size > 20 * 1048576) notes.push(`${f.name}: lớn hơn 20 MB nên ${hasText ? "chỉ lưu phần chữ" : "chưa lưu được"}.`);
-      if (!url && !hasText) continue;
-      const i = files.findIndex((x) => x.name === f.name);
-      const rec = { name: f.name, size: f.size, url, converted: false, hasText };
-      if (i >= 0) files[i] = rec; else files.push(rec);
-      names.add(f.name);
-      if (hasText) texts.push(`--- Tệp: ${f.name} ---\n${text}`);
-    }
-    if (!names.size) throw new Error(notes.join(" ") || "Không lưu được tệp nào.");
-    show(progress("Đang lưu..."));
-    // Keep earlier text, minus the files just fetched again.
-    const old = (await loadAttachedText(key)).split(/(?=--- Tệp: )/).filter((seg) => { const m = seg.match(/^--- Tệp: (.+?) ---/); return seg.trim() && !(m && names.has(m[1])); });
-    const all = [...old.map((x) => x.trim()), ...texts].join("\n\n");
-    const enc = new TextEncoder(), chunks = [];
-    let rest = all;
-    while (rest) {
-      let n = rest.length;
-      while (enc.encode(rest.slice(0, n)).length > HSMT_CHUNK) n = Math.floor(n * 0.9);
-      chunks.push(rest.slice(0, n)); rest = rest.slice(n);
-    }
-    for (let i = 0; i < chunks.length; i++) if (!(await dbSet(`hsmttext/${key}_${i}`, { text: chunks[i] }))) throw new Error("Không lưu được phần chữ của hồ sơ.");
-    const rec = { ...prev, notifyNo: t?.notifyNo || prev.notifyNo || key, updatedAt: new Date().toISOString(), files, textChunks: chunks.length, source: "muasamcong qua Agent" };
-    if (!(await dbSet("hsmt/" + key, rec))) throw new Error("Không lưu được danh sách tệp.");
-    state.hsmt = { ...state.hsmt, [key]: rec };
-    toast(`Đã lưu ${names.size} tệp hồ sơ`);
-    renderAll();
-    scheduleAuto();
-    if (notes.length) setTimeout(() => show(h`<div class="note warn">${notes.join(" ")}</div>`), 50);
-  } catch (e) {
-    show(h`<div class="note err">${e.message || "Không lưu được tệp."}</div>`);
-    toast("Không lưu được tệp hồ sơ");
-  }
 }
 function ownBidHtml(t) {
   if (!["submitted", "won", "lost"].includes(stageOf(t))) return "";
@@ -1883,7 +1824,8 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
   if (e.target.id === "cmAccepted") { askAccept(e.target.dataset.key); return; }
   if (e.target.id === "bdRun") { runBidders(e.target.dataset.key); return; }
-  if (e.target.id === "hfFetch") { startRefetch(e.target.dataset.key); return; }
+  if (e.target.id === "hfFetch") { requestRefetch(e.target.dataset.key); return; }
+  if (e.target.id === "hfCancel") { requestRefetch(e.target.dataset.key, true); return; }
   if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
 });
 document.addEventListener("input", (e) => {

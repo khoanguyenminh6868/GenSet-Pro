@@ -215,6 +215,7 @@
     },
   };
 
+  window.genbidWeb = true; // features that need the web version (e.g. HSMT fetch requests)
   window.claude = {
     async use(name) {
       await ready;
