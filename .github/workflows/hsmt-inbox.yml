@@ -1,8 +1,7 @@
 name: hsmt inbox
 
-# Copies tender documents (HSMT, public files from muasamcong) pushed to this branch into
-# Supabase for the GenBid Pro web version: inbox/<TBMT>/blobs/<id>.pdf -> storage "blobs/<id>",
-# inbox/<TBMT>/hsmt.json -> docs hsmt/<TBMT>, inbox/<TBMT>/hsmttext_<i>.json -> docs hsmttext/<TBMT>_<i>.
+# Tender documents (public HSMT files from muasamcong) pushed here by the Windows PC worker are
+# stored in Supabase for GenBid Pro (web) by ingest.py; see its docstring for the layout.
 on:
   push:
     branches: [hsmt-inbox]
@@ -13,35 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Upload to Supabase
+        with:
+          fetch-depth: 0
+      - run: sudo apt-get install -y -qq poppler-utils >/dev/null
+      - name: Store changed tenders in Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          BEFORE: ${{ github.event.before }}
         run: |
           set -euo pipefail
-          if [ -z "$SUPABASE_URL" ]; then echo "Supabase not configured"; exit 1; fi
-          auth=(-H "apikey: $SUPABASE_SERVICE_ROLE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY")
-          for dir in inbox/*/; do
-            key=$(basename "$dir")
-            echo "== $key"
-            for f in "$dir"blobs/*; do
-              [ -f "$f" ] || continue
-              id=$(basename "$f"); id=${id%.*}
-              type=$(file -b --mime-type "$f")
-              curl -fsS -X POST "$SUPABASE_URL/storage/v1/object/blobs/$id" "${auth[@]}" \
-                -H "Content-Type: $type" -H "x-upsert: true" --data-binary @"$f" > /dev/null
-              echo "blob $id ($type, $(stat -c %s "$f") bytes)"
-            done
-            rows=$(jq -c -n --arg key "$key" --slurpfile h "${dir}hsmt.json" \
-              '[{coll: "hsmt", id: $key, data: $h[0], updated_at: (now | todate)}]')
-            for t in "$dir"hsmttext_*.json; do
-              [ -f "$t" ] || continue
-              i=$(basename "$t" .json); i=${i#hsmttext_}
-              rows=$(jq -c --arg id "${key}_$i" --slurpfile t "$t" '. + [{coll: "hsmttext", id: $id, data: $t[0], updated_at: (now | todate)}]' <<<"$rows")
-            done
-            echo "$rows" > /tmp/rows.json
-            curl -fsS -X POST "$SUPABASE_URL/rest/v1/docs" "${auth[@]}" \
-              -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates,return=minimal" \
-              --data @/tmp/rows.json
-            echo "docs: $(jq length /tmp/rows.json)"
-          done
+          if git cat-file -e "$BEFORE" 2>/dev/null; then
+            keys=$(git diff --name-only "$BEFORE" HEAD -- inbox | cut -d/ -f2 | sort -u)
+          else
+            keys=$(ls inbox)
+          fi
+          echo "Tenders: $keys"
+          python3 ingest.py $keys
