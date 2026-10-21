@@ -1148,7 +1148,7 @@ function renderDrawer(force = true) {
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
-  if (state.dtab === "info") { body.innerHTML = infoHtml(t); mountBidders(); }
+  if (state.dtab === "info") { body.innerHTML = infoHtml(t); mountBidders(); hfPick = $("#hfFiles") ? filePicker("hfFiles", "hfDrop", "hfList") : null; }
   else if (state.dtab === "analysis") body.innerHTML = analysisTabHtml(t);
   else if (state.dtab === "translate") { body.innerHTML = translateTabHtml(t); loadTranslation(key); }
   else if (state.dtab === "hsdt") body.innerHTML = hsdtTabHtml(t);
@@ -1166,11 +1166,83 @@ function infoHtml(t) {
     <dl class="kv">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd>${v}</dd>`).join(""))}</dl>
     ${raw(ownBidHtml(t))}${raw(["won", "lost"].includes(stageOf(t)) ? biddersHtml(t) : "")}
     <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp tải từ muasamcong${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
+      <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp ${d?.source === "tải lên" ? "tải lên" : "tải từ muasamcong"}${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
-        ${raw(f.url ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>')}
+        ${raw(f.url ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
         ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về. Khi có, Claude sẽ tự phân tích.</div>')}
+      ${raw(refetchHtml(t, files.length))}
     </div>`;
+}
+// Tender files only download through VNeGP Client Agent on a Windows PC, so the app takes them as uploads here.
+function refetchHtml(t, have) {
+  if (state.readOnly) return "";
+  return h`<details class="sec" ${have ? "" : "open"}><summary>${have ? "Thêm hoặc lấy lại tệp hồ sơ" : "Lấy tệp hồ sơ"}</summary>
+    <div style="display:flex;flex-direction:column;gap:8px;padding-top:8px">
+    <p class="muted small" style="margin:0">Tệp HSMT chỉ tải được qua VNeGP Client Agent trên máy Windows. Anh mở gói trên muasamcong, bấm bookmarklet GenBid-HSMT để lưu tệp vào thư mục Downloads\\GenBid-HSMT\\${t.notifyNo || "số TBMT"}, rồi chọn các tệp đó ở đây. Lưu xong, Claude tự phân tích nếu gói đang ở trạng thái Mới.</p>
+    <div class="row"><a class="btn sm" href="${tenderLink(t)}" target="_blank" rel="noopener">Mở gói trên muasamcong ↗</a></div>
+    <div class="drop" id="hfDrop">
+      <div class="row"><span class="muted small" style="flex:1">Tệp PDF, DOCX hoặc TXT của hồ sơ mời thầu</span><label class="btn sm" for="hfFiles">Chọn tệp</label></div>
+      <input type="file" id="hfFiles" multiple accept=".pdf,.docx,.txt" hidden>
+      <div class="files" id="hfList"></div>
+    </div>
+    <div class="row"><div class="spacer"></div><button class="btn primary" id="hfSave" data-key="${t._key}">Lưu tệp vào gói</button></div>
+    <div id="hfOut"></div></div></details>`;
+}
+let hfPick = null;
+const HSMT_CHUNK = 190000;
+async function saveHsmtFiles(key) {
+  const out = $("#hfOut"), btn = $("#hfSave"), t = findTender(key);
+  if (!hfPick?.files.length) { out.innerHTML = h`<div class="note">Chọn tệp hồ sơ trước.</div>`; return; }
+  if (!state.db) { out.innerHTML = h`<div class="note warn">Chưa kết nối cơ sở dữ liệu nên chưa lưu được.</div>`; return; }
+  let assets = null;
+  try { assets = (await window.claude?.use?.("assets")) ?? null; } catch { assets = null; }
+  btn.disabled = true;
+  try {
+    const prev = state.hsmt[key] || {};
+    const files = [...(prev.files || [])], texts = [], notes = [];
+    let saved = 0;
+    for (const f of hfPick.files) {
+      out.innerHTML = progress(`Đang đọc ${f.name}...`);
+      const isPdf = /\.pdf$/i.test(f.name);
+      let text = "";
+      try { text = (await readFile(f, 0)).text || ""; } catch (e) { notes.push(`${f.name}: ${e.message || "không đọc được"}`); }
+      if (/^\(Tệp scan/.test(text)) text = "";
+      const hasText = text.replace(/\s/g, "").length > 40;
+      let url = null;
+      if (isPdf && assets && f.size <= 20 * 1048576) {
+        out.innerHTML = progress(`Đang tải lên ${f.name}...`);
+        try { url = (await assets.upload(f)).url; } catch (e) { notes.push(`${f.name}: không tải lên được (${e?.message || "lỗi"}), chỉ lưu phần chữ.`); }
+      } else if (isPdf && f.size > 20 * 1048576) notes.push(`${f.name}: lớn hơn 20 MB nên chỉ lưu phần chữ.`);
+      if (!url && !hasText) { notes.push(`${f.name}: không có chữ và không tải lên được, bỏ qua.`); continue; }
+      const i = files.findIndex((x) => x.name === f.name);
+      const rec = { name: f.name, size: f.size, url, converted: false, hasText };
+      if (i >= 0) files[i] = rec; else files.push(rec);
+      saved++;
+      if (hasText) texts.push(`--- Tệp: ${f.name} ---\n${text}`);
+    }
+    if (!saved) throw new Error(notes.join(" ") || "Không lưu được tệp nào.");
+    out.innerHTML = progress("Đang lưu...");
+    const old = await loadAttachedText(key);
+    const all = [old, ...texts].filter(Boolean).join("\n\n");
+    const enc = new TextEncoder(), chunks = [];
+    let rest = all;
+    while (rest) {
+      let n = rest.length;
+      while (enc.encode(rest.slice(0, n)).length > HSMT_CHUNK) n = Math.floor(n * 0.9);
+      chunks.push(rest.slice(0, n)); rest = rest.slice(n);
+    }
+    for (let i = 0; i < chunks.length; i++) if (!(await dbSet(`hsmttext/${key}_${i}`, { text: chunks[i] }))) throw new Error("Không lưu được phần chữ của hồ sơ.");
+    const rec = { ...prev, notifyNo: t?.notifyNo || prev.notifyNo || key, updatedAt: new Date().toISOString(), files, textChunks: chunks.length, source: "tải lên" };
+    if (!(await dbSet("hsmt/" + key, rec))) throw new Error("Không lưu được danh sách tệp.");
+    state.hsmt = { ...state.hsmt, [key]: rec };
+    hfPick.clear();
+    toast("Đã lưu tệp hồ sơ");
+    renderAll();
+    scheduleAuto();
+    if (notes.length) setTimeout(() => { const o = $("#hfOut"); if (o) o.innerHTML = h`<div class="note warn">${notes.join(" ")}</div>`; }, 50);
+  } catch (e) {
+    out.innerHTML = h`<div class="note err">${e.message || "Không lưu được tệp."}</div>`;
+  } finally { const b = $("#hfSave"); if (b) b.disabled = false; }
 }
 function ownBidHtml(t) {
   if (!["submitted", "won", "lost"].includes(stageOf(t))) return "";
@@ -1793,6 +1865,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
   if (e.target.id === "cmAccepted") { askAccept(e.target.dataset.key); return; }
   if (e.target.id === "bdRun") { runBidders(e.target.dataset.key); return; }
+  if (e.target.id === "hfSave") { saveHsmtFiles(e.target.dataset.key); return; }
   if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
 });
 document.addEventListener("input", (e) => {

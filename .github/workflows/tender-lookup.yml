@@ -26,4 +26,22 @@ jobs:
       - run: npm ci
       - run: npx playwright-core install --with-deps chromium
       - name: Look up notices
-        run: npm run lookup:tenders -- ${{ inputs.codes }} --mode=direct || npm run lookup:tenders -- ${{ inputs.codes }} --mode=browser
+        run: |
+          set -o pipefail
+          (npm run lookup:tenders -- ${{ inputs.codes }} --mode=direct || npm run lookup:tenders -- ${{ inputs.codes }} --mode=browser) | tee /tmp/lookup.log
+      # Adds the found notices to the GenBid Pro web version (Vercel); skipped until the secrets exist.
+      - name: Add found notices to Supabase
+        if: github.event_name != 'pull_request'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ]; then echo "Supabase not configured; skipping."; exit 0; fi
+          sed -n '/=====LOOKUP-JSON-BEGIN=====/,/=====LOOKUP-JSON-END=====/p' /tmp/lookup.log | sed '1d;$d' | tail -n 1 > /tmp/lookup.json
+          jq -c '[.found[] | .tender | select(. != null) | {coll: "manual", id: .notifyNo, data: ., updated_at: (now | todate)}]' /tmp/lookup.json > /tmp/manual-rows.json
+          echo "Rows: $(jq length /tmp/manual-rows.json)"
+          if [ "$(jq length /tmp/manual-rows.json)" = "0" ]; then exit 0; fi
+          curl -fsS -X POST "$SUPABASE_URL/rest/v1/docs" \
+            -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+            -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates,return=minimal" \
+            --data @/tmp/manual-rows.json

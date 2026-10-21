@@ -204,12 +204,24 @@
     },
   };
 
+  // ---------- assets (uploads to the public "blobs" bucket, served at /_blob/<id>) ----------
+  const assets = {
+    async upload(blob) {
+      const id = [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, "0")).join("");
+      const contentType = blob.type || "application/octet-stream";
+      const { error } = await sb.storage.from("blobs").upload(id, blob, { contentType });
+      if (error) throw { code: "error", message: error.message };
+      return { id, url: "/_blob/" + id, sizeBytes: blob.size, contentType };
+    },
+  };
+
   window.claude = {
     async use(name) {
       await ready;
       if (name === "db") return db;
       if (name === "sample") return cfg.ai ? sample : null;
       if (name === "downloads") return downloads;
+      if (name === "assets") return assets;
       return null;
     },
   };
