@@ -1,0 +1,33 @@
+﻿GenBid - tải hồ sơ mời thầu qua VNeGP Client Agent
+===================================================
+
+Cần có trên máy (Windows 10/11):
+  - VNeGP Client Agent, bản chính thức của Bộ Tài chính:
+    https://muasamcong.mof.gov.vn/web/guest/tender-management-unit
+    (bản cài mặc định vào C:\MPI\EGP-AGENT, nghe cổng 1234)
+  - Chrome hoặc Edge. PowerShell có sẵn trong Windows, không cần cài thêm gì.
+
+Cài lần đầu trên mỗi máy:
+  1. Chép cả thư mục này sang máy (đặt ở đâu cũng được).
+  2. Mở file cai-nut-trinh-duyet.html, kéo nút "GenBid tải HSMT" lên thanh dấu trang.
+
+Mỗi lần tải một gói thầu:
+  1. Mở trang chi tiết gói thầu trên muasamcong.mof.gov.vn, đợi trang hiện xong.
+  2. Bấm nút "GenBid tải HSMT" trên thanh dấu trang.
+     - Nút lưu <mã TBMT>_danh-sach-file.txt vào Downloads, rồi tải từng file qua Agent.
+  3. Nếu nút báo không gọi được Agent: nháy đúp GenBid-HSMT.cmd.
+     - Script bật Agent nếu chưa chạy (đợi tối đa 90 giây),
+     - tải mọi file trong các danh sách ở Downloads vào Downloads\GenBid-HSMT\<mã TBMT>\,
+     - ghi manifest.csv (tên file, dung lượng, MD5) và chuyển danh sách đã tải xong vào _danh-sach-da-tai.
+
+Dùng script trực tiếp:
+  GenBid-HSMT.cmd -StartOnly                         chỉ bật Agent
+  GenBid-HSMT.cmd -List "D:\...\IB..._danh-sach-file.txt"
+  GenBid-HSMT.cmd -FileId <fileId> -NotifyNo IB2600584680
+
+Giới hạn:
+  - Chỉ tải được file mà trang muasamcong đưa mã file ra cho người xem. Với gói xây lắp, trang ghi
+    "Vui lòng đăng nhập để tải toàn bộ file"; file nào trang không đưa mã (ví dụ bản vẽ .rar ở gói
+    IB2600584680 khi chưa đăng nhập) sẽ không có trong danh sách. Đăng nhập trên trang rồi bấm lại.
+  - Danh sách file lấy từ trang trong trình duyệt của bạn; công cụ không tự gọi API tìm kiếm của
+    muasamcong (API đó cần mã reCAPTCHA do trang sinh ra).
