@@ -386,6 +386,13 @@ function fmtDate(iso, withTime = true) {
   if (isNaN(d)) return "";
   return d.toLocaleString("vi-VN", { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric", ...(withTime ? { hour: "2-digit", minute: "2-digit" } : {}) });
 }
+// Banner sync time as "HH:mm MM/DD/YY" (the user's chosen format for the banner only).
+function fmtBannerDate(iso) {
+  const d = new Date(iso);
+  if (!iso || isNaN(d)) return "";
+  const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: TZ, month: "2-digit", day: "2-digit", year: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(d).map((x) => [x.type, x.value]));
+  return `${p.hour}:${p.minute} ${p.month}/${p.day}/${p.year}`;
+}
 function fmtVnd(n) {
   if (n == null || isNaN(n)) return "";
   if (n >= 1e9) return (n / 1e9).toLocaleString("vi-VN", { maximumFractionDigits: 2 }) + " tỷ đ";
@@ -880,8 +887,8 @@ function renderTop() {
   const f = state.feed;
   const dot = $("#sdot"), txt = $("#stext");
   if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `Claude đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
-  else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
-  else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtDate(f.fetchedAt)}`; }
+  else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtBannerDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
+  else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
   const items = allTenders();
   const live = items.filter((t) => tabOf(t) !== "closed");
