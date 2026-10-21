@@ -10,5 +10,5 @@ To set up a new PC:
    - C:\Projects\GenSet Pro\.genbid-ingest-token: the Vercel token, on one line.
    - C:\Projects\GenSet Pro\.genbid-artifact-url: the GenBid Pro artifact URL, on one line.
    - C:\Projects\GenSet Pro\.hsmt-worker-state.json containing {"done": []}
-5. Create a Claude Desktop scheduled task with TASK.md as the prompt. Use cron 37 8-21 * * * on a second PC, so it does not run at the same minute as the first PC (:07). Then click Run now once to approve its tools.
+5. Create a Claude Desktop scheduled task with TASK.md as the prompt, set its Schedule to Manual and turn it on. It runs only when Khoa clicks Run now, at any hour, with no time window. Click Run now once to approve its tools.
 6. If the Windows user is not khoan, fix the Downloads path in hsmt-worker.md and TASK.md.

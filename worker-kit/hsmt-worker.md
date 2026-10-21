@@ -1,8 +1,8 @@
 # HSMT worker - one round
 
-Approved by Khoa Nguyen on 2026-10-21. Runs as the Claude desktop scheduled task "hsmt-worker", every 60 min (cron 7 8-21 * * *), only from 08:00 to 22:00 Vietnam time (UTC+7).
+Approved by Khoa Nguyen on 2026-10-21. Runs as the Claude desktop scheduled task "hsmt-worker" on this PC in Manual mode: only when Khoa clicks Run now, at any hour.
 
-1. Check the Vietnam time. Outside 08:00-22:00, do nothing this round.
+1. Note the Vietnam time (UTC+7) for the round summary. There is no time window: always do the round.
 2. `git -C "C:\Projects\GenSet Pro\hsmt-inbox" pull --ff-only origin hsmt-inbox`. Then get the pending list, an array of {notifyNo, key, sourceUrl, bidName, requestedAt}:
    - First choice: `powershell -File "C:\Projects\GenSet Pro\genbid-hsmt\Get-GenBidRequests.ps1" -Out "<scratchpad>\requests.json"`. It does GET https://genset-pro-web.vercel.app/api/requests with the token from `.genbid-ingest-token`, never prints the token, and exits 1 on failure.
    - If that fails (no token, HTTP error, bad JSON), fall back to `requests.json` in the hsmt-inbox clone. Note which source was used in the round summary.
@@ -13,7 +13,7 @@ Approved by Khoa Nguyen on 2026-10-21. Runs as the Claude desktop scheduled task
    - Run `GenBid-HSMT.ps1 -StartOnly` if the Agent is not running. Then run `GenBid-HSMT.ps1 -NotifyNo <key> -OutDir "C:\Users\khoan\OneDrive\Downloads\GenBid-HSMT" -FileId "<id>,<name>" ...`.
    - Delete and recreate `hsmt-inbox\inbox\<key>\files\` and copy the downloaded files into it with their original names. Leave out files over 95 MB and list them in `inbox\<key>\error.txt`. If there are no files, write only `inbox\<key>\error.txt` with a short reason in Vietnamese.
    - Commit with the title "HSMT <key>" and run `git push origin hsmt-inbox`. Then add key|requestedAt to the state file.
-6. At the end of every round (also when there were no HSMT requests, still only inside 08:00-22:00), send the analysis results to Vercel. Khoa approved this on 2026-10-21 as option A, as part of this same schedule.
+6. At the end of every round (also when there were no HSMT requests), send the analysis results to Vercel. Khoa approved this on 2026-10-21 as option A, as part of this same schedule.
    - If `C:\Projects\GenSet Pro\.genbid-ingest-token` does not exist, skip this step. Never print, copy or send the token anywhere except the endpoint below.
    - Use ArtifactData `list` on <GenBid Pro artifact URL, read from C:\Projects\GenSet Pro\.genbid-artifact-url> for the collections `analysis`, `translation` and `compare` (never `tracked`), with `query.limit` 1000 and `out_dir` = `<scratchpad>\genbid-ingest`, where <scratchpad> is your own scratchpad directory. Clear that folder first.
    - Write `<scratchpad>\genbid-ingest\versions.json` as {"<coll>/<doc id>": version, ...} from the versions the list results show.
