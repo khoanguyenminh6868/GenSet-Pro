@@ -1,5 +1,13 @@
 // Small Supabase REST helpers for the serverless functions (no npm dependencies).
-export const SB_URL = process.env.SUPABASE_URL;
+// Accepts the project URL (https://<ref>.supabase.co) or, by mistake, the dashboard link
+// (https://supabase.com/dashboard/project/<ref>) or a URL with a path such as /rest/v1.
+export function projectUrl(raw = process.env.SUPABASE_URL || "") {
+  const v = raw.trim();
+  const dash = v.match(/supabase\.com\/dashboard\/project\/([a-z0-9]+)/i);
+  if (dash) return `https://${dash[1].toLowerCase()}.supabase.co`;
+  try { return new URL(v).origin; } catch { return ""; }
+}
+export const SB_URL = projectUrl();
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 // Returns the signed-in member ({ email, role }) for the request's bearer token, or null.
