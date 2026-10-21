@@ -5,7 +5,7 @@ name: hsmt requests
 # picks them up; it pushes the files back to inbox/<TBMT>/ and the hsmt-inbox workflow stores them.
 on:
   schedule:
-    - cron: '5 1-15 * * *'   # hourly, 08:05-22:05 Vietnam time
+    - cron: '40 1-14 * * *'   # hourly, 08:40-21:40 Vietnam time, ahead of the PC worker's :07 round
   workflow_dispatch:
 
 permissions:
