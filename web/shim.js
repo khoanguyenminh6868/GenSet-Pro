@@ -12,7 +12,14 @@
     member = rows?.[0];
     if (!member) { await gate("denied", session.user.email); return new Promise(() => {}); }
     accountChip(session.user);
-    if (location.hash === "#import" && ["owner", "admin"].includes(member.role)) importPanel();
+    const canImport = ["owner", "admin"].includes(member.role);
+    // The Google round-trip drops "#import", so the panel opens from a button as well as from the link.
+    if (canImport) importButton();
+    if (location.hash === "#import" || sessionStorage.getItem("gbImport")) {
+      sessionStorage.removeItem("gbImport");
+      if (canImport) importPanel(); else toastNote(`Tài khoản ${member.email} có vai trò "${member.role}", cần "owner" hoặc "admin" để nhập dữ liệu.`);
+    }
+    window.addEventListener("hashchange", () => { if (location.hash === "#import" && canImport) importPanel(); });
   })();
 
   // ---------- sign-in screen ----------
@@ -28,7 +35,7 @@
         : `<p>Tài khoản <b></b> chưa được cấp quyền. Hãy nhờ quản trị viên thêm email này.</p><button id="gOut">Đăng xuất</button>`}</div>`;
     if (email) el.querySelector("b").textContent = email;
     document.body.appendChild(el);
-    el.querySelector("#gIn")?.addEventListener("click", () => sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname } }));
+    el.querySelector("#gIn")?.addEventListener("click", () => { if (location.hash === "#import") sessionStorage.setItem("gbImport", "1"); sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname } }); });
     el.querySelector("#gOut")?.addEventListener("click", async () => { await sb.auth.signOut(); location.reload(); });
   }
   function accountChip(user) {
@@ -40,9 +47,27 @@
     document.body.appendChild(b);
   }
 
+  function importButton() {
+    const b = document.createElement("button");
+    b.id = "gbImportBtn";
+    b.textContent = "Nhập dữ liệu";
+    b.style.cssText = "position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(48px + env(safe-area-inset-bottom,0px));z-index:50;font:12px system-ui,sans-serif;padding:6px 10px;border-radius:999px;border:1px solid var(--rule,#8884);background:var(--card,#fff);color:var(--fg,#222);opacity:.85;cursor:pointer";
+    b.onclick = () => importPanel();
+    document.body.appendChild(b);
+  }
+  function toastNote(text) {
+    const n = document.createElement("div");
+    n.textContent = text;
+    n.style.cssText = "position:fixed;left:12px;right:12px;bottom:90px;max-width:420px;margin:auto;z-index:60;padding:12px;border-radius:10px;background:var(--card,#fff);color:var(--fg,#222);border:1px solid var(--rule,#8884);font:14px system-ui,sans-serif";
+    document.body.appendChild(n);
+    setTimeout(() => n.remove(), 12000);
+  }
+
   // ---------- one-time import of the claude.ai data (owner opens /#import) ----------
   async function importPanel() {
+    document.getElementById("gbImportPanel")?.remove();
     const el = document.createElement("div");
+    el.id = "gbImportPanel";
     el.style.cssText = "position:fixed;inset:auto 12px 56px 12px;max-width:420px;margin:auto;z-index:60;padding:16px;border-radius:12px;background:var(--card,#fff);color:var(--fg,#222);border:1px solid var(--rule,#8884);box-shadow:0 8px 30px #0004;font:14px system-ui,sans-serif;display:grid;gap:10px";
     el.innerHTML = '<b>Nhập dữ liệu từ bản claude.ai</b><span>Chọn tệp genbid-data.zip. Dữ liệu cùng mã sẽ bị ghi đè.</span><input type="file" accept=".zip"><div id="impLog" style="opacity:.8"></div>';
     document.body.appendChild(el);
