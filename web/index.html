@@ -1,4 +1,4 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="/shim.js"></script></head><body><title>GenBid Pro</title>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><meta name="theme-color" content="#14171c"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="/shim.js"></script></head><body><title>GenBid Pro</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1187,11 +1187,22 @@ function reqState(key) {
 function refetchHtml(t, have) {
   if (state.readOnly || !window.genbidWeb) return "";
   const s = reqState(t._key);
-  const msg = s?.kind === "pending" ? `Đang chờ lấy tệp (yêu cầu lúc ${fmtDate(s.r.requestedAt)}). Máy Windows có Agent sẽ tự tải tệp từ muasamcong về gói này khi đang bật.`
-    : s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
+  const msg = s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
     : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp." : "Lấy tệp hồ sơ từ muasamcong về gói này.";
   return h`<div class="note row${s?.kind === "error" ? " warn" : ""}"><span class="small" style="flex:1;min-width:200px">${msg}</span>
-    ${raw(s?.kind === "pending" ? h`<button class="btn sm" id="hfCancel" data-key="${t._key}">Huỷ yêu cầu</button>` : h`<button class="btn primary" id="hfFetch" data-key="${t._key}">Lấy lại tệp</button>`)}</div>`;
+    <button class="btn primary" id="hfFetch" data-key="${t._key}">Lấy lại tệp</button></div>`;
+}
+// Sync on the web: ask the Windows worker for files of every open Mới tender that has none and no request yet.
+// Analysis then starts on its own once the files land (subscribe("hsmt") → scheduleAuto).
+async function requestMissingFiles() {
+  if (state.readOnly || !window.genbidWeb || !state.db) return 0;
+  const want = allTenders().filter((t) => stageOf(t) === "new" && !isClosed(t) && !state.hsmt[t._key]?.files?.length && !state.hsmtreq?.[t._key]?.requestedAt);
+  let n = 0;
+  for (const t of want) {
+    const rec = { notifyNo: t.notifyNo || t._key, sourceUrl: tenderLink(t), bidName: t.bidName || "", requestedAt: new Date().toISOString(), auto: true };
+    if (await dbSet("hsmtreq/" + t._key, rec)) { state.hsmtreq = { ...state.hsmtreq, [t._key]: rec }; n++; }
+  }
+  return n;
 }
 async function requestRefetch(key, cancel = false) {
   const t = findTender(key);
@@ -1200,7 +1211,7 @@ async function requestRefetch(key, cancel = false) {
   const rec = cancel ? { ...prev, doneAt: new Date().toISOString(), error: "" } : { notifyNo: t.notifyNo || key, sourceUrl: tenderLink(t), bidName: t.bidName || "", requestedAt: new Date().toISOString() };
   if (!(await dbSet("hsmtreq/" + key, rec))) { toast("Không lưu được yêu cầu."); return; }
   state.hsmtreq = { ...state.hsmtreq, [key]: rec };
-  toast(cancel ? "Đã huỷ yêu cầu lấy tệp" : "Đã ghi yêu cầu lấy tệp");
+  toast(cancel ? "Đã huỷ yêu cầu lấy tệp" : "Đã gửi yêu cầu, tệp sẽ tự về khi máy Windows chạy lượt kế tiếp");
   renderDrawer(true);
 }
 function ownBidHtml(t) {
@@ -1825,7 +1836,6 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "cmAccepted") { askAccept(e.target.dataset.key); return; }
   if (e.target.id === "bdRun") { runBidders(e.target.dataset.key); return; }
   if (e.target.id === "hfFetch") { requestRefetch(e.target.dataset.key); return; }
-  if (e.target.id === "hfCancel") { requestRefetch(e.target.dataset.key, true); return; }
   if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
 });
 document.addEventListener("input", (e) => {
@@ -1873,7 +1883,8 @@ async function refreshAll() {
     renderAll(); scanCapacities(); scheduleAuto(300);
     const fresh = allTenders().filter((t) => !before.has(t._key)).length;
     const closed = allTenders().filter((t) => tabOf(t) === "closed").length;
-    toast(`Đã cập nhật: ${fresh} gói mới, ${closed} gói đã đóng. Dữ liệu muasamcong lúc ${fmtDate(state.feed?.fetchedAt) || "?"}`);
+    const asked = await requestMissingFiles();
+    toast(`Đã cập nhật: ${fresh} gói mới, ${closed} gói đã đóng. Dữ liệu muasamcong lúc ${fmtDate(state.feed?.fetchedAt) || "?"}${asked ? `. Đang lấy tệp cho ${asked} gói, xong sẽ tự phân tích` : ""}`);
   } catch { toast("Không cập nhật được, hãy thử lại."); }
   finally { btn.disabled = false; }
 }
