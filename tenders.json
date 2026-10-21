@@ -1,7 +1,27 @@
 {
- "fetchedAt": "2026-10-21T02:27:52.139Z",
+ "fetchedAt": "2026-10-21T11:09:58.216Z",
  "source": "muasamcong",
  "tenders": [
+  {
+   "id": "22a264cd-a567-4e8d-b670-79901a6b573e",
+   "notifyNo": "IB2600581977",
+   "notifyVersion": "00",
+   "planNo": "PL2400041143",
+   "bidName": "Gói thầu số 50: Cung cấp và lắp đặt máy phát điện",
+   "investorName": "CÔNG TY CP ĐIỆN NƯỚC AN GIANG",
+   "location": "Tỉnh An Giang",
+   "field": "HH",
+   "bidForm": "DTRR",
+   "bidMode": "1_MTHS",
+   "processApply": "LDT",
+   "isInternet": true,
+   "publicDate": "2026-10-21T02:41:11.565Z",
+   "bidCloseDate": "2026-11-05T02:00:00.000Z",
+   "bidOpenDate": "2026-11-05T02:00:00.000Z",
+   "estimatedPrice": 1376908000,
+   "status": "open",
+   "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=22a264cd-a567-4e8d-b670-79901a6b573e&notifyId=22a264cd-a567-4e8d-b670-79901a6b573e&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600581977&planNo=PL2400041143&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=DTRR"
+  },
   {
    "id": "14270aa8-9aff-469a-bd93-af627bf1d358",
    "notifyNo": "IB2600570346",
@@ -265,26 +285,6 @@
    "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=c2bf7075-ab42-4a7b-92a1-9cf3fa34132f&notifyId=c2bf7075-ab42-4a7b-92a1-9cf3fa34132f&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=KHAC&bidMode=1_MTHS&notifyNo=IB2600575567&planNo=PL2600346610&pno=undefined&step=tbmt&isInternet=0&caseKHKQ=undefined&bidForm=DTRR"
   },
   {
-   "id": "65805c2a-1d03-4fd9-905f-7b5de8f292e6",
-   "notifyNo": "IB2600573539",
-   "notifyVersion": "00",
-   "planNo": "PL2600342143",
-   "bidName": "Mua sắm máy phát điện",
-   "investorName": "Viễn Thông Quảng Trị-Tập đoàn Bưu chính Viễn thông Việt Nam",
-   "location": "Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị, Tỉnh Quảng Trị",
-   "field": "HH",
-   "bidForm": "CHCT",
-   "bidMode": "1_MTHS",
-   "processApply": "LDT",
-   "isInternet": true,
-   "publicDate": "2026-10-12T00:43:37.003Z",
-   "bidCloseDate": "2026-10-21T07:00:00.000Z",
-   "bidOpenDate": "2026-10-21T07:00:00.000Z",
-   "estimatedPrice": 9370728000,
-   "status": "open",
-   "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=65805c2a-1d03-4fd9-905f-7b5de8f292e6&notifyId=65805c2a-1d03-4fd9-905f-7b5de8f292e6&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600573539&planNo=PL2600342143&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=CHCT"
-  },
-  {
    "id": "2f60b64e-517e-4e6b-b333-cbb977cc1045",
    "notifyNo": "IB2600561204",
    "notifyVersion": "00",
@@ -298,8 +298,8 @@
    "processApply": "LDT",
    "isInternet": true,
    "publicDate": "2026-10-11T06:08:14.838Z",
-   "bidCloseDate": "2026-10-21T03:00:00.000Z",
-   "bidOpenDate": "2026-10-21T03:00:00.000Z",
+   "bidCloseDate": "2026-10-28T07:00:00.000Z",
+   "bidOpenDate": "2026-10-28T07:00:00.000Z",
    "estimatedPrice": 1191834000,
    "status": "open",
    "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=2f60b64e-517e-4e6b-b333-cbb977cc1045&notifyId=2f60b64e-517e-4e6b-b333-cbb977cc1045&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600561204&planNo=PL2600325844&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=CHCT"
