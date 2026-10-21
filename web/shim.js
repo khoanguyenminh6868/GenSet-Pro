@@ -11,10 +11,9 @@
     const { data: rows } = await sb.from("members").select("email,role").eq("email", session.user.email.toLowerCase());
     member = rows?.[0];
     if (!member) { await gate("denied", session.user.email); return new Promise(() => {}); }
+    if (document.readyState === "loading") await new Promise((r) => document.addEventListener("DOMContentLoaded", r, { once: true }));
     accountChip(session.user);
     const canImport = ["owner", "admin"].includes(member.role);
-    // The Google round-trip drops "#import", so the panel opens from a button as well as from the link.
-    if (canImport) importButton();
     if (location.hash === "#import" || sessionStorage.getItem("gbImport")) {
       sessionStorage.removeItem("gbImport");
       if (canImport) importPanel(); else toastNote(`Tài khoản ${member.email} có vai trò "${member.role}", cần "owner" hoặc "admin" để nhập dữ liệu.`);
@@ -38,23 +37,23 @@
     el.querySelector("#gIn")?.addEventListener("click", () => { if (location.hash === "#import") sessionStorage.setItem("gbImport", "1"); sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname } }); });
     el.querySelector("#gOut")?.addEventListener("click", async () => { await sb.auth.signOut(); location.reload(); });
   }
+  // Sign-out icon next to the theme button in the page banner (bottom-left pill if the banner is missing).
   function accountChip(user) {
     const b = document.createElement("button");
+    b.className = "ibtn";
+    b.id = "signOutBtn";
     b.title = "Đăng xuất " + user.email;
-    b.textContent = (user.user_metadata?.full_name || user.email).split(" ").slice(-1)[0] + " · Đăng xuất";
-    b.style.cssText = "position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;font:12px system-ui,sans-serif;padding:6px 10px;border-radius:999px;border:1px solid var(--rule,#8884);background:var(--card,#fff);color:var(--fg,#222);opacity:.85;cursor:pointer";
+    b.setAttribute("aria-label", "Đăng xuất");
+    b.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/><path d="M10 17l-5-5 5-5"/><path d="M5 12h11"/></svg>';
     b.onclick = async () => { await sb.auth.signOut(); location.reload(); };
-    document.body.appendChild(b);
+    const theme = document.getElementById("themeBtn");
+    if (theme) theme.after(b);
+    else {
+      b.style.cssText = "position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50";
+      document.body.appendChild(b);
+    }
   }
 
-  function importButton() {
-    const b = document.createElement("button");
-    b.id = "gbImportBtn";
-    b.textContent = "Nhập dữ liệu";
-    b.style.cssText = "position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(48px + env(safe-area-inset-bottom,0px));z-index:50;font:12px system-ui,sans-serif;padding:6px 10px;border-radius:999px;border:1px solid var(--rule,#8884);background:var(--card,#fff);color:var(--fg,#222);opacity:.85;cursor:pointer";
-    b.onclick = () => importPanel();
-    document.body.appendChild(b);
-  }
   function toastNote(text) {
     const n = document.createElement("div");
     n.textContent = text;
