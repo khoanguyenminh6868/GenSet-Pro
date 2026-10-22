@@ -134,6 +134,23 @@
   const snapDoc = (id, data) => ({ id, exists: data !== undefined, data: () => data });
   const fail = (error) => { const e = new Error(error.message); e.code = error.code === "42501" ? "permission_denied" : error.code; throw e; };
   const db = {
+    // Re-read some documents ("coll/id") from the server and notify listeners of the ones that changed
+    // (fallback when a realtime change does not arrive, e.g. while waiting for the worker's answer).
+    async refresh(paths) {
+      const changed = new Set();
+      await Promise.all(paths.map(async (path) => {
+        const [coll, id] = split(path);
+        const c = cache.get(coll);
+        if (!c) return;
+        const { data, error } = await sb.from("docs").select("data").eq("coll", coll).eq("id", id).maybeSingle();
+        if (error) return;
+        const next = data?.data;
+        if (JSON.stringify(next) === JSON.stringify(c.get(id))) return;
+        if (next === undefined) c.delete(id); else c.set(id, next);
+        changed.add(coll);
+      }));
+      changed.forEach(notify);
+    },
     doc(path) {
       const [coll, id] = split(path);
       return {
