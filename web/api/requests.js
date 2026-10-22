@@ -8,7 +8,7 @@ import { authorized } from "./ingest.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // tracked only travels as ids: notes and bid prices stay on the web.
-const READABLE = new Set(["feed", "seen", "manual", "tracked", "deleted", "analysis", "hsmt", "hsmttext", "notice", "analysisreq"]);
+const READABLE = new Set(["feed", "seen", "manual", "tracked", "deleted", "analysis", "hsmt", "hsmttext", "notice", "analysisreq", "hsmtreq", "bidders", "portalids"]);
 
 async function docs(coll, id) {
   const out = [];

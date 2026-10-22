@@ -1342,18 +1342,18 @@ function ownBidHtml(t) {
   const r = state.tracked[t._key] || {};
   return h`<div class="row"><span class="small" style="flex:1;min-width:200px">${bidLabel(t)} của mình: ${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></div>`;
 }
-// Other bidders and their prices: muasamcong only shows them in the bid-opening minutes behind reCAPTCHA,
-// so the user brings a screenshot or PDF of the minutes and Claude reads it.
+// Other bidders and their prices: the Windows worker reads them from the bid-opening minutes and results pages
+// on muasamcong (bidders/<key>, source "muasamcong ..."); the user can still bring a screenshot or PDF.
 const OUR_RE = /thảo\s*nguyên/i;
 let bdPick = null;
 function biddersHtml(t) {
   const b = state.bidders[t._key], list = b?.list || [], n = t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin;
-  const table = list.length ? h`<div class="tablewrap"><table><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th><th>Giảm giá</th><th>Giá sau giảm</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num">${x.rank ?? i + 1}</td><td>${x.name}${x.note ? h`<div class="src">${x.note}</div>` : ""}</td><td class="num">${x.taxCode || ""}</td><td class="num">${fmtVnd(x.bidPrice)}</td><td class="num">${x.discount || ""}</td><td class="num">${fmtVnd(x.priceAfterDiscount)}</td></tr>`).join(""))}</tbody></table></div>
+  const table = list.length ? h`<div class="tablewrap"><table><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th><th>Giảm giá</th><th>Giá sau giảm</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num">${x.rank ?? i + 1}</td><td>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${x.note ? h`<div class="src">${x.note}</div>` : ""}</td><td class="num">${x.taxCode || ""}</td><td class="num">${fmtVnd(x.bidPrice)}</td><td class="num">${x.discount || ""}</td><td class="num">${fmtVnd(x.priceAfterDiscount)}</td></tr>`).join(""))}</tbody></table></div>
     <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>` : "";
   return h`<details class="sec" ${list.length ? "open" : ""}><summary>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : n ? ` (${n} nhà thầu)` : ""}</summary>
     <div style="display:flex;flex-direction:column;gap:8px;padding-top:8px">
     ${raw(table)}
-    <p class="muted small" style="margin:0">Tên và giá các nhà thầu nằm ở tab Biên bản mở thầu và tab Kết quả lựa chọn nhà thầu (có cả nhà thầu không được chọn). Các tab này tải dữ liệu ngay trong trình duyệt của anh nên app không tự đọc được. Anh mở tab, chụp màn hình hoặc tải PDF rồi đưa vào đây, AI sẽ đọc ra bảng.</p>
+    <p class="muted small" style="margin:0">Tên và giá các nhà thầu nằm ở tab Biên bản mở thầu và tab Kết quả lựa chọn nhà thầu (có cả nhà thầu không được chọn). Agent tự lấy bảng này từ muasamcong sau khi mở thầu và cập nhật khi có kết quả. Nếu cần ngay, anh chụp màn hình hoặc tải PDF rồi đưa vào đây, AI sẽ đọc ra bảng.</p>
     <div class="row">${raw(minutesLink(t, true) ? h`<a class="btn sm" href="${minutesLink(t, true)}" target="_blank" rel="noopener">Mở Kết quả lựa chọn nhà thầu ↗</a>` : "")}<a class="btn sm" href="${minutesLink(t) || tenderLink(t)}" target="_blank" rel="noopener">${minutesLink(t) ? "Mở Biên bản mở thầu ↗" : "Mở gói trên muasamcong ↗"}</a></div>
     <div class="drop" id="bdDrop">
       <div class="row"><span class="muted small" style="flex:1">Ảnh chụp biên bản mở thầu hoặc kết quả LCNT</span><label class="btn sm" for="bdFiles">Chọn tệp</label></div>
