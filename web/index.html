@@ -677,6 +677,17 @@ async function saveRequests(coll, items) {
 }
 async function requestAnalysis(keys) {
   if (state.readOnly) { toast("Đây là bản chỉ xem, không gửi được yêu cầu phân tích."); return; }
+  // Agent analyses the HSMT files, so a tender without them needs its files fetched first.
+  const noFiles = keys.filter((key) => !state.hsmt[key]?.files?.length);
+  keys = keys.filter((key) => !noFiles.includes(key));
+  let skipped = "";
+  if (noFiles.length) {
+    const one = noFiles.length === 1 && findTender(noFiles[0]);
+    const what = one ? `Gói ${one.notifyNo || noFiles[0]}` : `${noFiles.length} gói`;
+    skipped = noFiles.length === 1 && reqState(noFiles[0])?.kind === "pending" ? `${what} đang tải tệp hồ sơ, phân tích sau khi tải xong.`
+      : `${what} chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) rồi mới phân tích được.`;
+    if (!keys.length) { toast(skipped, 6000); return; }
+  }
   let n = 0;
   try {
     n = (await saveRequests("analysisreq", keys.map((key) => { const t = findTender(key); return { key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "" }; }))).length;
@@ -685,7 +696,7 @@ async function requestAnalysis(keys) {
   // "Đã gửi yêu cầu phân tích" shows for 3 seconds (toast and the Phân tích tab), then the tab just says it is waiting.
   areqNoteUntil = Date.now() + 3000;
   setTimeout(() => renderDrawer(false), 3050);
-  toast(`Đã gửi yêu cầu phân tích${n > 1 ? ` ${n} gói` : ""}`, 3000);
+  toast(`Đã gửi yêu cầu phân tích${n > 1 ? ` ${n} gói` : ""}${skipped ? ". " + skipped : ""}`, skipped ? 6000 : 3000);
   renderAll();
 }
 let areqNoteUntil = 0;
@@ -1270,7 +1281,7 @@ function refetchHtml(t, have) {
   const s = reqState(t._key);
   if (s?.kind === "pending") return waitHtml("Đang tải hồ sơ từ muasamcong bằng Agent...", s.r.requestedAt);
   const msg = s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
-    : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp." : "Lấy tệp hồ sơ từ muasamcong về gói này.";
+    : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp." : "Lấy tệp hồ sơ từ muasamcong";
   return h`<div class="note row${s?.kind === "error" ? " warn" : ""}"><span class="small" style="flex:1;min-width:200px">${msg}</span>
     <button class="btn primary" id="hfFetch" data-key="${t._key}">Lấy lại tệp</button></div>`;
 }
