@@ -1407,7 +1407,7 @@ function analysisTabHtml(t) {
       ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
       : waitHtml("Đang chờ Agent phân tích...", state.analysisreq[t._key].requestedAt))
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
-    : s === "nodocs" ? h`<div class="note row"><span style="flex:1;min-width:200px">Gói này chưa có hồ sơ mời thầu. AI sẽ tự phân tích ngay khi tài liệu được tải về.</span>${raw(window.genbidWeb ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
+    : s === "nodocs" ? h`<div class="note row"><span style="flex:1;min-width:200px">Gói này chưa có hồ sơ mời thầu.</span>${raw(window.genbidWeb ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
     : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">AI chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(window.genbidWeb || state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
     : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này đang chờ đến lượt phân tích tự động."}</div>`;
   const reqErr = s !== "requested" && analysisReqError(t._key);
