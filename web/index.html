@@ -1301,6 +1301,19 @@ function refreshWaits() {
   $$("[data-botwarn]").forEach((el) => { el.textContent = off; el.hidden = !off; });
 }
 setInterval(refreshWaits, 30e3);
+// While a request waits for Agent, re-read its answer every 10 seconds, so the result shows (and the waiting
+// note goes away) even if the realtime change never reaches this page. Nothing is read when nothing waits.
+async function pollPending() {
+  if (!state.db?.refresh || document.hidden) return;
+  const paths = [];
+  const sq = state.syncreq;
+  if (sq?.requestedAt && !(sq.doneAt >= sq.requestedAt)) paths.push("syncreq/current", "feed/current");
+  for (const key of Object.keys(state.analysisreq || {})) if (analysisReqPending(key)) paths.push("analysisreq/" + key, "analysis/" + key);
+  for (const key of Object.keys(state.hsmtreq || {})) if (reqState(key)?.kind === "pending") paths.push("hsmtreq/" + key, "hsmt/" + key);
+  if (paths.length) await state.db.refresh(paths).catch(() => {});
+}
+setInterval(pollPending, 10e3);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) pollPending(); });
 function ownBidHtml(t) {
   if (!["submitted", "won", "lost"].includes(stageOf(t))) return "";
   const r = state.tracked[t._key] || {};
