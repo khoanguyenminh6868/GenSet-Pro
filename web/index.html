@@ -1262,7 +1262,7 @@ function infoHtml(t) {
       <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp tải từ muasamcong${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
         ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải về</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
-        ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về. Khi có, AI sẽ tự phân tích.</div>')}
+        ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t, files.length))}
     </div>`;
 }
