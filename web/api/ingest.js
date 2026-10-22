@@ -1,12 +1,12 @@
 // Machine-to-machine writes from the Windows HSMT worker: analyses (also the answers to the page's
-// "Phân tích" requests, analysisreq/<TBMT> marked done), translations, comparisons, and the
+// "Phân tích" requests, analysisreq/<TBMT> marked done), errors for unanswered hsmtreq, translations, comparisons, and the
 // muasamcong sync (feed/current, notice/<TBMT>, syncreq/current marked done).
 // The worker posts { rows: [{ coll, id, data }] } with "Authorization: Bearer <INGEST_TOKEN>".
 import { timingSafeEqual } from "node:crypto";
 import { SB_URL } from "./_supabase.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "analysisreq"]);
+const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "analysisreq", "hsmtreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 
@@ -35,15 +35,17 @@ export default async function handler(req, res) {
     const cur = (await q.json())[0]?.data;
     newerSync = (cur?.requestedAt || "") > (sync.data.requestedAt || "");
   }
-  // Same for a "Phân tích" pressed again while the worker was analysing.
-  const areq = rows.filter((r) => r.coll === "analysisreq");
+  // Same for a "Phân tích" or "Lấy lại tệp" pressed again while the worker was busy (the bot also posts
+  // hsmtreq/analysisreq with an error when a round left a request unanswered).
   const newerReq = new Set();
-  if (areq.length) {
+  for (const coll of ["analysisreq", "hsmtreq"]) {
+    const areq = rows.filter((r) => r.coll === coll);
+    if (!areq.length) continue;
     const ids = areq.map((r) => `"${r.id}"`).join(",");
-    const q = await fetch(`${SB_URL}/rest/v1/docs?select=id,data&coll=eq.analysisreq&id=in.(${encodeURIComponent(ids)})`, { headers: sbHeaders });
+    const q = await fetch(`${SB_URL}/rest/v1/docs?select=id,data&coll=eq.${coll}&id=in.(${encodeURIComponent(ids)})`, { headers: sbHeaders });
     if (!q.ok) return res.status(502).json({ error: `read ${q.status}` });
     const cur = new Map((await q.json()).map((d) => [d.id, d.data]));
-    for (const r of areq) if ((cur.get(r.id)?.requestedAt || "") > (r.data.requestedAt || "")) newerReq.add(r.id);
+    for (const r of areq) if ((cur.get(r.id)?.requestedAt || "") > (r.data.requestedAt || "")) newerReq.add(coll + "/" + r.id);
   }
   // Only finished analyses travel, and never over a newer one already on the web.
   const ana = rows.filter((r) => r.coll === "analysis");
@@ -56,7 +58,7 @@ export default async function handler(req, res) {
   }
   const keep = rows.filter((r) => {
     if (r.coll === "syncreq") return !newerSync;
-    if (r.coll === "analysisreq") return !newerReq.has(r.id);
+    if (r.coll === "analysisreq" || r.coll === "hsmtreq") return !newerReq.has(r.coll + "/" + r.id);
     if (r.coll !== "analysis") return true;
     if (r.data.status !== "done") return false;
     const cur = have.get(r.id);

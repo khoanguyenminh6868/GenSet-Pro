@@ -37,7 +37,7 @@ export default async function handler(req, res) {
   try {
     // ?kind=all: everything the local bot polls for, in one call (files, analysis, sync).
     if (req.query?.kind === "all") {
-      const [files, analysis, sync] = await Promise.all([fileReqs(), analysisReqs(), syncReq()]);
+      const [files, analysis, sync] = await Promise.all([fileReqs(), analysisReqs(), syncReq(), heartbeat(req.query.running)]);
       return res.json({ files, analysis, sync });
     }
     // ?kind=analysis: tenders whose "Phân tích" button was pressed on the web (analysisreq/<key>).
@@ -48,6 +48,15 @@ export default async function handler(req, res) {
   } catch (e) { res.status(502).json({ error: e.message }); }
 }
 
+// The bot's poll doubles as a heartbeat (botstatus/current), so the page can tell when the Windows PC is off.
+async function heartbeat(running) {
+  const data = { lastPollAt: new Date().toISOString(), running: running === "1" };
+  await fetch(`${SB_URL}/rest/v1/docs`, {
+    method: "POST",
+    headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
+    body: JSON.stringify([{ coll: "botstatus", id: "current", data, updated_at: data.lastPollAt }]),
+  }).catch(() => {});
+}
 const pendingOf = (d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.requestedAt;
 const byRequested = (a, b) => a.requestedAt.localeCompare(b.requestedAt);
 async function fileReqs() {
