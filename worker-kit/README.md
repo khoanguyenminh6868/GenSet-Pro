@@ -10,4 +10,4 @@ To set up a new PC:
    - C:\Projects\GenSet Pro\.genbid-ingest-token: the Vercel token, on one line.
    - C:\Projects\GenSet Pro\.hsmt-worker-state.json containing {"done": []}
 5. Create a Claude Desktop scheduled task with TASK.md as the prompt, set its Schedule to Manual and turn it on. It runs only when Khoa clicks Run now, at any hour, with no time window. Click Run now once to approve its tools.
-6. If the Windows user is not khoan, fix the Downloads path in hsmt-worker.md and TASK.md.7. The /hsmt skill is in skill\hsmt\SKILL.md: zip the hsmt folder and upload it in claude.ai Settings > Capabilities > Skills.
+6. If the Windows user is not khoan, fix the Downloads path in hsmt-worker.md and TASK.md.7. The /hsmt skill is in skill\hsmt\SKILL.md: upload that SKILL.md in claude.ai Settings > Skills > Add > Upload skill (it replaces the old version; a zip made by PowerShell's Compress-Archive is rejected).
