@@ -1,7 +1,8 @@
 // Pending "Lấy lại tệp" requests for the Windows HSMT worker, read straight from Supabase so the
 // worker does not depend on GitHub's cron (which can skip runs). Same token as /api/ingest.
 // ?kind=sync answers whether a Sync is waiting for the worker instead, ?kind=analysis lists the
-// "Phân tích" requests from the page, and ?kind=docs&coll=<c> returns the documents the worker reads.
+// "Phân tích" requests from the page, ?kind=all returns all three for the local bot, and
+// ?kind=docs&coll=<c> returns the documents the worker reads.
 import { SB_URL } from "./_supabase.js";
 import { authorized } from "./ingest.js";
 
@@ -33,28 +34,33 @@ export default async function handler(req, res) {
       return res.json(coll === "tracked" ? rows.map((d) => ({ id: d.id, data: {} })) : rows);
     } catch (e) { return res.status(502).json({ error: e.message }); }
   }
-  // ?kind=analysis: tenders whose "Phân tích" button was pressed on the web (analysisreq/<key>).
-  if (req.query?.kind === "analysis") {
-    try {
-      const pending = (await docs("analysisreq"))
-        .filter((d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.requestedAt)
-        .map((d) => ({ key: d.id, notifyNo: d.data.notifyNo || d.id, requestedAt: d.data.requestedAt }))
-        .sort((a, b) => a.requestedAt.localeCompare(b.requestedAt));
-      return res.json(pending);
-    } catch (e) { return res.status(502).json({ error: e.message }); }
-  }
-  // ?kind=sync: the page's Sync button asked the worker to search muasamcong (syncreq/current).
-  if (req.query?.kind === "sync") {
-    const s = await fetch(`${SB_URL}/rest/v1/docs?coll=eq.syncreq&id=eq.current&select=data`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
-    if (!s.ok) return res.status(502).json({ error: `read ${s.status}` });
-    const d = (await s.json())[0]?.data || {};
-    return res.json({ pending: !!d.requestedAt && (d.doneAt || "") < d.requestedAt, requestedAt: d.requestedAt || null });
-  }
-  const r = await fetch(`${SB_URL}/rest/v1/docs?coll=eq.hsmtreq&select=id,data`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
-  if (!r.ok) return res.status(502).json({ error: `read ${r.status}` });
-  const pending = (await r.json())
-    .filter((d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.requestedAt)
+  try {
+    // ?kind=all: everything the local bot polls for, in one call (files, analysis, sync).
+    if (req.query?.kind === "all") {
+      const [files, analysis, sync] = await Promise.all([fileReqs(), analysisReqs(), syncReq()]);
+      return res.json({ files, analysis, sync });
+    }
+    // ?kind=analysis: tenders whose "Phân tích" button was pressed on the web (analysisreq/<key>).
+    if (req.query?.kind === "analysis") return res.json(await analysisReqs());
+    // ?kind=sync: the page's Sync button asked the worker to search muasamcong (syncreq/current).
+    if (req.query?.kind === "sync") return res.json(await syncReq());
+    res.json(await fileReqs());
+  } catch (e) { res.status(502).json({ error: e.message }); }
+}
+
+const pendingOf = (d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.requestedAt;
+const byRequested = (a, b) => a.requestedAt.localeCompare(b.requestedAt);
+async function fileReqs() {
+  return (await docs("hsmtreq")).filter(pendingOf)
     .map((d) => ({ notifyNo: d.data.notifyNo || d.id, key: d.id, sourceUrl: d.data.sourceUrl, bidName: d.data.bidName, requestedAt: d.data.requestedAt }))
-    .sort((a, b) => a.requestedAt.localeCompare(b.requestedAt));
-  res.json(pending);
+    .sort(byRequested);
+}
+async function analysisReqs() {
+  return (await docs("analysisreq")).filter(pendingOf)
+    .map((d) => ({ key: d.id, notifyNo: d.data.notifyNo || d.id, requestedAt: d.data.requestedAt }))
+    .sort(byRequested);
+}
+async function syncReq() {
+  const d = (await docs("syncreq", "current"))[0]?.data || {};
+  return { pending: !!d.requestedAt && (d.doneAt || "") < d.requestedAt, requestedAt: d.requestedAt || null };
 }
