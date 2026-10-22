@@ -14,12 +14,12 @@ function parseJson(text) {
   const i = Math.min(...["{", "["].map((c) => (t.indexOf(c) < 0 ? Infinity : t.indexOf(c))));
   const j = Math.max(t.lastIndexOf("}"), t.lastIndexOf("]"));
   if (i < Infinity && j > i) return JSON.parse(t.slice(i, j + 1));
-  throw new Error("Claude không trả về JSON hợp lệ.");
+  throw new Error("AI không trả về JSON hợp lệ.");
 }
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ code: "not_granted", message: "Chưa cấu hình khoá API Claude." });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ code: "not_granted", message: "Chưa cấu hình khoá API cho AI." });
   const member = await memberFrom(req);
   if (!member) return res.status(401).json({ code: "not_granted", message: "Chưa đăng nhập hoặc chưa được cấp quyền." });
 
