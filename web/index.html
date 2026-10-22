@@ -648,13 +648,14 @@ function analysisReqPending(key) {
   return !!(window.genbidWeb && r?.requestedAt && !(r.doneAt && r.doneAt >= r.requestedAt));
 }
 async function requestAnalysis(keys) {
-  const at = new Date().toISOString();
+  if (state.readOnly) { toast("Đây là bản chỉ xem, không gửi được yêu cầu phân tích."); return; }
   let n = 0;
-  for (const key of keys) {
-    const t = findTender(key);
-    const rec = { notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", requestedAt: at, by: "web" };
-    if (await dbSet("analysisreq/" + key, rec)) { state.analysisreq = { ...state.analysisreq, [key]: rec }; n++; }
-  }
+  try {
+    const items = keys.map((key) => { const t = findTender(key); return { key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "" }; });
+    const { saved } = await window.genbidApi("/api/analysisreq", { items });
+    for (const s of saved) state.analysisreq = { ...state.analysisreq, [s.key]: s.data };
+    n = saved.length;
+  } catch (e) { toast("Không lưu được yêu cầu phân tích: " + (e?.message || "lỗi không rõ"), 6000); return; }
   if (!n) { toast("Không lưu được yêu cầu phân tích."); return; }
   // "Đã gửi yêu cầu phân tích" shows for 3 seconds (toast and the Phân tích tab), then the tab just says it is waiting.
   areqNoteUntil = Date.now() + 3000;

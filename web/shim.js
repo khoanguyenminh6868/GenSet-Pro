@@ -216,6 +216,15 @@
   };
 
   window.genbidWeb = true; // features that need the web version (e.g. HSMT fetch requests)
+  // POST to one of this site's /api endpoints as the signed-in member; resolves to the JSON body, throws { message }.
+  window.genbidApi = async (path, body) => {
+    await ready;
+    const { data: { session } } = await sb.auth.getSession();
+    const r = await fetch(path, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${session?.access_token || ""}` }, body: JSON.stringify(body) });
+    const out = await r.json().catch(() => ({ error: `HTTP ${r.status}` }));
+    if (!r.ok) throw { message: out.error || `HTTP ${r.status}` };
+    return out;
+  };
   window.claude = {
     async use(name) {
       await ready;
