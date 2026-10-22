@@ -418,11 +418,11 @@ function minutesLink(t, kq = false) {
   return "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?" + Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v ?? "undefined")}`).join("&");
 }
 const tenderLink = (t) => t.sourceUrl || (t.notifyNo ? portalSearch(t.notifyNo) : "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=index");
-function toast(msg) {
+function toast(msg, ms = 2600) {
   const el = document.createElement("div");
   el.className = "toast"; el.textContent = msg; el.setAttribute("role", "status");
   document.body.appendChild(el);
-  setTimeout(() => el.remove(), 2600);
+  setTimeout(() => el.remove(), ms);
 }
 const progress = (msg) => h`<div class="progress"><span class="spin"></span><span>${msg}</span></div>`;
 const safeId = (s) => String(s).replace(/[^A-Za-z0-9_-]/g, "_").slice(0, 120) || "t" + Date.now();
@@ -655,8 +655,19 @@ async function requestAnalysis(keys) {
     const rec = { notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", requestedAt: at, by: "web" };
     if (await dbSet("analysisreq/" + key, rec)) { state.analysisreq = { ...state.analysisreq, [key]: rec }; n++; }
   }
-  toast(n ? `Đã gửi yêu cầu phân tích${n > 1 ? ` ${n} gói` : ""}. Máy Windows sẽ phân tích ở lượt chạy tới.` : "Không lưu được yêu cầu.");
+  if (!n) { toast("Không lưu được yêu cầu phân tích."); return; }
+  // "Đã gửi yêu cầu phân tích" shows for 3 seconds (toast and the Phân tích tab), then the tab just says it is waiting.
+  areqNoteUntil = Date.now() + 3000;
+  setTimeout(() => renderDrawer(false), 3050);
+  toast(`Đã gửi yêu cầu phân tích${n > 1 ? ` ${n} gói` : ""}`, 3000);
   renderAll();
+}
+let areqNoteUntil = 0;
+// The worker answers analysisreq/<key> with doneAt and, when nothing could be read, an error.
+function analysisReqError(key) {
+  const r = state.analysisreq?.[key], a = state.analysis[key];
+  if (!window.genbidWeb || !r?.error || !r.doneAt || r.doneAt < (r.requestedAt || "")) return "";
+  return a?.status === "done" && (a.analyzedAt || "") >= r.doneAt ? "" : r.error;
 }
 async function dbSet(path, data) {
   if (state.readOnly) return false;
@@ -841,8 +852,8 @@ async function runQueue() {
   if (!Object.values(state.loaded).every(Boolean)) return scheduleAuto();
   const q = queue();
   if (!q.length) return;
-  const sample = await getSample();
   // On the web the Windows worker analyses new tenders itself; nothing to run in the page.
+  const sample = window.genbidWeb ? null : await getSample();
   if (!sample) { state.auto.blocked = window.genbidWeb ? "worker" : "noclaude"; renderAll(); return; }
   state.auto.running = true; renderAll();
   try {
@@ -1184,7 +1195,7 @@ function renderDrawer(force = true) {
   });
   if (state.dtab === "compare" && stg !== "preparing") state.dtab = "info";
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.auto.current === key, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1320,12 +1331,16 @@ function analysisTabHtml(t) {
   const head = s === "done"
     ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>${raw((a.notes || []).map((n) => h`<div class="note warn">${n}</div>`).join(""))}`
     : s === "running" ? progress("Claude đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
-    : s === "requested" ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích lúc ${fmtDate(state.analysisreq[t._key].requestedAt)}. Máy Windows sẽ phân tích ở lượt chạy tới (10:00, 15:00 hoặc khi bấm Run now) rồi gửi kết quả về đây.</span></div>`
+    : s === "requested" ? (Date.now() < areqNoteUntil
+      ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
+      : h`<div class="row"><span class="chip mut"><span class="spin"></span>Chờ máy Windows phân tích</span></div>`)
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
-    : s === "nodocs" ? h`<div class="note">Gói này chưa có hồ sơ mời thầu. Claude sẽ tự phân tích ngay khi tài liệu được tải về.</div>`
-    : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">Claude chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
+    : s === "nodocs" ? h`<div class="note row"><span style="flex:1;min-width:200px">Gói này chưa có hồ sơ mời thầu. Claude sẽ tự phân tích ngay khi tài liệu được tải về.</span>${raw(window.genbidWeb ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
+    : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">Claude chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(window.genbidWeb || state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
     : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này đang chờ đến lượt phân tích tự động."}</div>`;
-  return head + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
+  const reqErr = s !== "requested" && analysisReqError(t._key);
+  const errNote = reqErr ? h`<div class="note warn">Máy Windows chưa phân tích được: ${reqErr}</div>` : "";
+  return head + errNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
 }
 
 // ---------- Libraries and files on demand ----------
@@ -1820,7 +1835,7 @@ document.addEventListener("click", async (e) => {
     e.stopPropagation();
     const key = act.dataset.key;
     if (act.dataset.act === "retry" || act.dataset.act === "reanalyze") {
-      if (window.genbidWeb && !(await getSample())) { requestAnalysis([key]); return; }
+      if (window.genbidWeb) { requestAnalysis([key]); return; }
       if (state.auto.current) { toast("Đang phân tích gói khác, thử lại sau ít phút."); return; }
       state.auto.blocked = null;
       analyze(key, { manual: true });
@@ -1839,7 +1854,7 @@ document.addEventListener("click", async (e) => {
     state.sort = state.sort.col === k ? { col: k, dir: -state.sort.dir } : { col: k, dir: k === "no" ? -1 : 1 };
     state.limit = pageSize(); local.set("gridSort2", state.sort); renderGrid(); return;
   }
-  if (e.target.closest("#runQueueBtn") && window.genbidWeb && !(await getSample())) { e.stopPropagation(); requestAnalysis(queue().map((t) => t._key)); return; }
+  if (e.target.closest("#runQueueBtn") && window.genbidWeb) { e.stopPropagation(); requestAnalysis(queue().map((t) => t._key)); return; }
   if (e.target.closest("#runQueueBtn")) { e.stopPropagation(); state.auto.blocked = null; state.sample = undefined; runQueue(); toast("Đang phân tích các gói chờ"); return; }
   const kp = e.target.closest("[data-kpi]");
   if (kp) { openList(kp.dataset.kpi); return; }
