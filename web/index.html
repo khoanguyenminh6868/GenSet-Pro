@@ -886,6 +886,7 @@ const KPIS = [
   { key: "done", l: "Đã phân tích", s: "", c: "var(--mint)", f: (t) => analysisState(t) === "done" },
   { key: "prep", l: "Chuẩn bị HSDT", s: "đối chiếu trong từng gói", c: "var(--cyan)", f: (t) => tabOf(t) === "preparing" },
 ];
+const syncDoneNote = { at: "", until: 0 }, syncReqNote = { at: "", until: 0 };
 function renderTop() {
   const f = state.feed;
   const dot = $("#sdot"), txt = $("#stext");
@@ -910,8 +911,16 @@ function renderTop() {
   else if (state.auto.blocked === "rate") an.innerHTML = h`<div class="note warn">Đã chạm giới hạn sử dụng Claude. Việc phân tích tự động sẽ chạy lại sau ít phút.</div>`;
   else an.innerHTML = "";
   const sq = state.syncreq;
-  if (sq?.requestedAt && !(sq.doneAt && sq.doneAt >= sq.requestedAt) && !syncState.running) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu đồng bộ</span></div>`);
-  else if (sq?.doneAt && sq.doneAt >= (sq.requestedAt || "") && Date.now() - new Date(sq.doneAt).getTime() < 6 * 3600e3 && sq.summary && !syncState.note) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px"><span style="flex:1;min-width:200px">Máy Windows đã đồng bộ lúc ${fmtDate(sq.doneAt)}: ${sq.summary}</span></div>`);
+  if (sq?.requestedAt && !(sq.doneAt && sq.doneAt >= sq.requestedAt) && !syncState.running) {
+    // Show the sync request note for 3 seconds, then hide it.
+    if (syncReqNote.at !== sq.requestedAt) { syncReqNote.at = sq.requestedAt; syncReqNote.until = Date.now() + 3000; setTimeout(renderTop, 3050); }
+    if (Date.now() < syncReqNote.until) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu đồng bộ</span></div>`);
+  }
+  else if (sq?.doneAt && sq.doneAt >= (sq.requestedAt || "") && Date.now() - new Date(sq.doneAt).getTime() < 6 * 3600e3 && sq.summary && !syncState.note) {
+    // Show the worker's sync result for 3 seconds, then hide it.
+    if (syncDoneNote.at !== sq.doneAt) { syncDoneNote.at = sq.doneAt; syncDoneNote.until = Date.now() + 3000; setTimeout(renderTop, 3050); }
+    if (Date.now() < syncDoneNote.until) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px"><span style="flex:1;min-width:200px">Máy Windows đã đồng bộ lúc ${fmtDate(sq.doneAt)}: ${sq.summary}</span></div>`);
+  }
   const sn = syncState.note;
   if (sn) an.insertAdjacentHTML("beforeend", h`<div class="note ${sn.kind} row" style="margin-top:6px"><span style="flex:1;min-width:200px">${sn.text}</span><button class="btn sm" id="syncNoteX" aria-label="Ẩn thông báo">Ẩn</button></div>`);
 }
