@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-21T11:09:58.216Z",
+ "fetchedAt": "2026-10-22T02:27:05.266Z",
  "source": "muasamcong",
  "tenders": [
   {
@@ -222,26 +222,6 @@
    "estimatedPrice": 3068852400,
    "status": "open",
    "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=dfe2e765-fdc0-45d8-ba91-3c658061046e&notifyId=dfe2e765-fdc0-45d8-ba91-3c658061046e&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600576680&planNo=PL2600338945&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=DTRR"
-  },
-  {
-   "id": "e00c89dd-1f71-4636-8152-dc98cd2ad9da",
-   "notifyNo": "IB2600574692",
-   "notifyVersion": "00",
-   "planNo": "PL2600339759",
-   "bidName": "Sửa chữa Công trình: Téc vỉa 14 Hà Tu 2 téc; Hạng mục: Bờ chống va sàn cấp, hệ thống công nghệ xuất, nhà để chất thải, nhà để máy phát, hệ thống cứu hỏa, làm mát Stec, điện, dây tín hiệu, tiếp địa và khu phụ trợ. Số hiệu: SC.14HT.2026",
-   "investorName": "CÔNG TY CỔ PHẦN VẬT TƯ - TKV",
-   "location": "Thành phố Quảng Ninh",
-   "field": "XL",
-   "bidForm": "CHCT",
-   "bidMode": "1_MTHS",
-   "processApply": "LDT",
-   "isInternet": true,
-   "publicDate": "2026-10-13T07:50:39.913Z",
-   "bidCloseDate": "2026-10-22T02:00:00.000Z",
-   "bidOpenDate": "2026-10-22T02:00:00.000Z",
-   "estimatedPrice": 1675912774,
-   "status": "open",
-   "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=e00c89dd-1f71-4636-8152-dc98cd2ad9da&notifyId=e00c89dd-1f71-4636-8152-dc98cd2ad9da&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600574692&planNo=PL2600339759&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=CHCT"
   },
   {
    "id": "6cdace4a-1f65-4922-9737-270c4afa5231",
