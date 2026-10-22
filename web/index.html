@@ -285,7 +285,7 @@ details.sec>div{margin-top:10px}
     </div>
     <div class="bmeta">
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
-        <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Lấy danh sách gói thầu mới nhất và cập nhật trạng thái"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
+        <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng Claude trên máy tính, lấy gói mới trực tiếp từ muasamcong và phân tích; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="themeBtn" aria-label="Đổi giao diện sáng tối" title="Đổi giao diện sáng / tối"></button></div>
     </div>
   </header>
@@ -606,8 +606,9 @@ function analysisOf(key) {
 const RUN_STALE = 20 * 60 * 1000;
 function analysisState(t) {
   const a = analysisOf(t._key);
-  if (a?.status === "done") return "done";
   if (state.auto.current === t._key) return "running";
+  // A first brief read from the notice is redone in full once the HSMT files are here.
+  if (a?.status === "done") return a.basis === "notice" && state.hsmt[t._key]?.files?.length && stageOf(t) === "new" && !isClosed(t) ? "queued" : "done";
   if (a?.status === "running" && Date.now() - new Date(a.startedAt).getTime() < RUN_STALE) return "running";
   if (a?.status === "error") return "error";
   // Only open tenders still in Mới are analysed automatically.
@@ -757,6 +758,7 @@ async function initDb() {
   }
   db.doc("feed/current").onSnapshot((snap) => { state.feed = snap.exists ? snap.data() : null; state.loaded.feed = true; renderAll(); scheduleAuto(); rememberSeen(); },
     () => { state.loaded.feed = true; renderAll(); });
+  db.doc("syncreq/current").onSnapshot((snap) => { state.syncreq = snap.exists ? snap.data() : null; renderTop(); }, () => {});
   subscribe("tracked", "tracked", scheduleAuto);
   subscribe("manual", "manual");
   subscribe("seen", "seen", rememberSeen);
@@ -887,7 +889,8 @@ const KPIS = [
 function renderTop() {
   const f = state.feed;
   const dot = $("#sdot"), txt = $("#stext");
-  if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `Claude đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
+  if (syncState.running) { dot.className = "dot busy"; txt.textContent = syncState.step || "Đang đồng bộ từ muasamcong..."; }
+  else if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `Claude đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
   else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtBannerDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
   else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
@@ -906,6 +909,11 @@ function renderTop() {
   if (state.auto.blocked === "consent" || state.auto.blocked === "noclaude") an.innerHTML = h`<div class="note warn row"><span style="flex:1;min-width:200px">${state.auto.blocked === "noclaude" ? "Mở trang trong claude.ai khi đã đăng nhập để Claude tự phân tích các gói mới." : "Claude cần được cho phép để tự phân tích các gói mới."}</span>${raw(state.auto.blocked === "consent" ? '<button class="btn sm primary" id="allowAuto">Cho phép và phân tích</button>' : "")}</div>`;
   else if (state.auto.blocked === "rate") an.innerHTML = h`<div class="note warn">Đã chạm giới hạn sử dụng Claude. Việc phân tích tự động sẽ chạy lại sau ít phút.</div>`;
   else an.innerHTML = "";
+  const sq = state.syncreq;
+  if (sq?.requestedAt && !(sq.doneAt && sq.doneAt >= sq.requestedAt) && !syncState.running) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu đồng bộ</span></div>`);
+  else if (sq?.doneAt && sq.doneAt >= (sq.requestedAt || "") && Date.now() - new Date(sq.doneAt).getTime() < 6 * 3600e3 && sq.summary && !syncState.note) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px"><span style="flex:1;min-width:200px">Máy Windows đã đồng bộ lúc ${fmtDate(sq.doneAt)}: ${sq.summary}</span></div>`);
+  const sn = syncState.note;
+  if (sn) an.insertAdjacentHTML("beforeend", h`<div class="note ${sn.kind} row" style="margin-top:6px"><span style="flex:1;min-width:200px">${sn.text}</span><button class="btn sm" id="syncNoteX" aria-label="Ẩn thông báo">Ẩn</button></div>`);
 }
 
 // ---------- Grid ----------
@@ -1279,13 +1287,13 @@ ${clip(doc.text, MAX_TEXT).text}`;
 function analysisTabHtml(t) {
   const s = analysisState(t), a = analysisOf(t._key);
   const head = s === "done"
-    ? h`<div class="row"><span class="chip ok">Đã phân tích</span><span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>${raw((a.notes || []).map((n) => h`<div class="note warn">${n}</div>`).join(""))}`
+    ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>${raw((a.notes || []).map((n) => h`<div class="note warn">${n}</div>`).join(""))}`
     : s === "running" ? progress("Claude đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
     : s === "nodocs" ? h`<div class="note">Gói này chưa có hồ sơ mời thầu. Claude sẽ tự phân tích ngay khi tài liệu được tải về.</div>`
     : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">Claude chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
-    : h`<div class="note">Gói này đang chờ đến lượt phân tích tự động.</div>`;
-  return head + (s === "done" ? analysisHtml(a.result) : "");
+    : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này đang chờ đến lượt phân tích tự động."}</div>`;
+  return head + ((s === "done" || s === "queued") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
 }
 
 // ---------- Libraries and files on demand ----------
@@ -1805,6 +1813,7 @@ document.addEventListener("click", async (e) => {
   if (ok) { openDrawer(ok.dataset.openkey); return; }
   if (e.target.id === "goCompare") { $("#ov").hidden = true; openDrawer(e.target.dataset.key, "compare"); return; }
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
+  if (e.target.id === "syncNoteX") { syncState.note = null; renderTop(); return; }
   const sb = e.target.closest("[data-step]");
   if (sb) { if (sb.dataset.step) setStage(sb.dataset.key, sb.dataset.step); return; }
   const fc = e.target.closest("[data-fcol]");
@@ -1837,6 +1846,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "cmAccepted") { askAccept(e.target.dataset.key); return; }
   if (e.target.id === "bdRun") { runBidders(e.target.dataset.key); return; }
   if (e.target.id === "hfFetch") { requestRefetch(e.target.dataset.key); return; }
+  if (e.target.id === "hfCancel") { requestRefetch(e.target.dataset.key, true); return; }
   if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
 });
 document.addEventListener("input", (e) => {
@@ -1869,8 +1879,263 @@ document.addEventListener("keydown", (e) => {
 });
 addEventListener("resize", closeFilter);
 
+// ---------- Sync from muasamcong through the Claude app's own browser ----------
+// Runs only where the page is open in the Claude desktop app (Khoa's PCs), which lends its browser to the page.
+// Elsewhere Refresh only reloads the saved list. A reCAPTCHA or any other check on muasamcong is never got around:
+// the sync stops and says so.
+const HOST = "host:claude_browser";
+const PORTAL_SEARCH = "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=search";
+const SYNC_KEYWORD = "máy phát điện";
+const SYNC_DETAIL_MAX = 5; // tenders opened for full notice details and webform chapters in one sync
+let mcpNs;
+async function getMcp() {
+  if (mcpNs === undefined) { try { mcpNs = (await window.claude?.use?.("mcp")) ?? null; } catch { mcpNs = null; } }
+  return mcpNs;
+}
+async function hostBrowser() {
+  if (state.readOnly || !state.db) return null;
+  const m = await getMcp();
+  if (!m) return null;
+  try { const r = await m.listTools(HOST); return r.servers.some((s) => s.server === HOST) ? m : null; } catch { return null; }
+}
+class SyncStop extends Error {}
+const syncState = { running: false, step: "", note: null };
+function syncStep(msg) { syncState.step = msg; renderTop(); }
+async function bt(m, tool, input) {
+  const r = await m.callTool(HOST, tool, input, { cache: false });
+  return (r.content || []).filter((c) => c.type === "text").map((c) => c.text).join("\n");
+}
+const pause = (m, s) => bt(m, "computer", { action: "wait", duration: s });
+const refOf = (line) => line?.match(/\[(ref_\d+)\]/)?.[1];
+const refNum = (r) => +String(r).replace("ref_", "");
+async function findLines(m, q) { return (await bt(m, "find", { query: q })).split("\n").filter((l) => /\[ref_\d+\]/.test(l)); }
+const CHALLENGE_RE = /recaptcha|không phải là người máy|i'm not a robot|xác minh bạn/i;
+async function pageText(m) {
+  const t = await bt(m, "get_page_text", { max_chars: 200000 });
+  if (CHALLENGE_RE.test(t)) throw new SyncStop("muasamcong đang yêu cầu xác minh (CAPTCHA), nên GenBid Pro dừng đồng bộ. Anh mở muasamcong trong trình duyệt của ứng dụng Claude, tự xác minh, rồi bấm Refresh lại.");
+  return t;
+}
+// Muasamcong shows Vietnam time without a zone.
+const vnIso = (hm, dmy) => { const [d, mo, y] = dmy.split("/"); return new Date(`${y}-${mo}-${d}T${hm}:00+07:00`).toISOString(); };
+const FIELD_CODE = { "Hàng hóa": "HH", "Xây lắp": "XL", "Phi tư vấn": "PTV", "Tư vấn": "TV" };
+
+async function searchPortal(m) {
+  syncStep("Đang mở trang tìm kiếm muasamcong...");
+  await bt(m, "navigate", { url: PORTAL_SEARCH });
+  await pause(m, 4);
+  const box = (await findLines(m, "Nhập số TBMT/Tên gói thầu")).find((l) => /textbox/.test(l));
+  if (!box) { await pageText(m); throw new SyncStop("Không thấy ô tìm kiếm trên muasamcong, có thể trang đã đổi giao diện."); }
+  syncStep(`Đang tìm "${SYNC_KEYWORD}" trên muasamcong...`);
+  await bt(m, "computer", { action: "left_click", ref: refOf(box), action_summary: "Chọn ô tìm số TBMT/tên gói thầu" });
+  await bt(m, "computer", { action: "type", text: SYNC_KEYWORD, action_summary: `Gõ từ khoá ${SYNC_KEYWORD}` });
+  const only = (await findLines(m, "chưa đóng thầu")).find((l) => /Chỉ tìm kiếm/.test(l));
+  if (only) await bt(m, "computer", { action: "left_click", ref: refOf(only), action_summary: "Chỉ lấy gói chưa đóng thầu" });
+  // The search form's own button is the first "Tìm kiếm" button after the field.
+  const after = refNum(refOf(only || box));
+  const go = (await findLines(m, "Tìm kiếm")).filter((l) => /button "Tìm kiếm"/.test(l)).map(refOf).sort((a, b) => refNum(a) - refNum(b)).find((r) => refNum(r) > after);
+  if (!go) throw new SyncStop("Không thấy nút Tìm kiếm trên muasamcong.");
+  await bt(m, "computer", { action: "left_click", ref: go, action_summary: "Tìm gói thầu" });
+  await pause(m, 6);
+  const per = (await findLines(m, "combobox")).find((l) => /combobox "(10|20|50)"/.test(l));
+  if (per && !/combobox "50"/.test(per)) { await bt(m, "form_input", { ref: refOf(per), value: "50", action_summary: "Hiện 50 gói mỗi trang" }); await pause(m, 5); }
+  return pageText(m);
+}
+// One result card: "Mã TBMT : IB...-00", status, name, Bên mời thầu, Chủ đầu tư, posting date, field, place, closing time.
+function parseResults(text) {
+  const out = [];
+  for (const blk of text.split(/Mã TBMT\s*:\s*/).slice(1)) {
+    const m0 = blk.match(/^(IB\d+)-(\d+)/);
+    if (!m0) continue;
+    const lines = blk.split("\n").map((s) => s.trim()).filter(Boolean);
+    const val = (label) => { const l = lines.find((x) => x.startsWith(label + " :")); return l ? l.slice(label.length + 2).trim() : null; };
+    const st = lines.findIndex((l) => /^(Chưa|Đã) đóng thầu$/.test(l));
+    const close = blk.match(/(?:Thời điểm đóng thầu|Thời điểm kết thúc chào giá trực tuyến)\s+(\d\d:\d\d)\s+(\d\d\/\d\d\/\d{4})/);
+    const pub = blk.match(/(?:Ngày đăng tải thông báo|Thời gian sửa TBMT)\s*:\s*(\d\d\/\d\d\/\d{4})\s*-\s*(\d\d:\d\d)/);
+    const loc = [...new Set(String(val("Địa điểm") || "").split(";").map((s) => s.split(" - ").pop().trim()).filter(Boolean))].join(", ");
+    out.push({
+      notifyNo: m0[1], notifyVersion: m0[2],
+      bidName: (lines[st >= 0 ? st + 1 : 1] || "").replace(/\s+/g, " "),
+      procuringEntityName: val("Bên mời thầu"), investorName: val("Chủ đầu tư"),
+      publicDate: pub ? vnIso(pub[2], pub[1]) : null, bidCloseDate: close ? vnIso(close[1], close[2]) : null,
+      field: FIELD_CODE[val("Lĩnh vực")] || val("Lĩnh vực"), location: loc || null,
+      isInternet: !/Không qua mạng/.test(blk),
+    });
+  }
+  return out;
+}
+// Known tenders get their closing time and notice version from the search; open ones missing from it stay; closed ones leave the feed (they stay in "seen").
+function mergeFeed(found) {
+  const cur = state.feed?.tenders || [];
+  const byNo = new Map(found.map((f) => [f.notifyNo, f]));
+  const next = [], changed = [], dropped = [], now = Date.now();
+  for (const t of cur) {
+    const f = byNo.get(t.notifyNo);
+    if (f) {
+      byNo.delete(t.notifyNo);
+      const u = { ...t };
+      if (f.bidCloseDate && f.bidCloseDate !== t.bidCloseDate) { if (!t.bidOpenDate || t.bidOpenDate === t.bidCloseDate) u.bidOpenDate = f.bidCloseDate; u.bidCloseDate = f.bidCloseDate; }
+      if (f.notifyVersion && f.notifyVersion !== t.notifyVersion) { u.notifyVersion = f.notifyVersion; u.bidName = f.bidName || t.bidName; if (f.publicDate) u.publicDate = f.publicDate; }
+      if (JSON.stringify(u) !== JSON.stringify(t)) changed.push(t.notifyNo);
+      next.push(u);
+    } else if (t.bidCloseDate && new Date(t.bidCloseDate).getTime() > now) next.push(t);
+    else dropped.push(t.notifyNo);
+  }
+  return { next, fresh: [...byNo.values()], changed, dropped };
+}
+// The result link carries the ids the feed needs (id, planNo, bidForm...).
+async function linkOf(m, notifyNo) {
+  const line = (await findLines(m, notifyNo)).find((l) => /href="[^"]*detail-v2/.test(l));
+  const href = line?.match(/href="([^"]+)"/)?.[1]?.replace(/&amp;/g, "&");
+  if (!href) return null;
+  const u = new URL(href), q = u.searchParams;
+  q.set("stepCode", "notify-contractor-step-1-tbmt"); q.set("step", "tbmt");
+  return { id: q.get("id"), planNo: q.get("planNo"), processApply: q.get("processApply"), bidMode: q.get("bidMode"), bidForm: q.get("bidForm"), isInternet: q.get("isInternet") === "1", sourceUrl: u.toString() };
+}
+// The notice page: general information, then the list of HSMT chapters and attached files.
+const VIEWER_URL = "https://muasamcong.mof.gov.vn/egp/contractorfe/viewer";
+// Webform chapters worth reading before the files arrive: data sheet, evaluation criteria, technical requirements, special contract conditions.
+const CHAPTER_RE = /Chương (II|III|V|VII)\s*[:.]/;
+const CHAPTER_MAX = 50000;
+async function openHsmtTab(m, t) {
+  await bt(m, "navigate", { url: tenderLink(t) });
+  await pause(m, 4);
+  const tab = (await findLines(m, "Hồ sơ mời thầu")).find((l) => /link "Hồ sơ mời thầu"/.test(l));
+  if (!tab) return false;
+  await bt(m, "computer", { action: "left_click", ref: refOf(tab), action_summary: "Mở tab Hồ sơ mời thầu" });
+  await pause(m, 3);
+  return true;
+}
+const chapterLines = async (m) => (await findLines(m, "Chương")).filter((l) => /generic "Chương/.test(l) && CHAPTER_RE.test(l) && !/\.(pdf|docx?|xlsx?|rar|zip|7z)"/i.test(l));
+// A webform chapter opens in the portal's viewer. The portal hands the chapter to the viewer through the browser's storage when it is
+// clicked, so the click (whose new tab the app does not open) is followed by opening the viewer in this same tab.
+async function readChapter(m, line) {
+  await bt(m, "computer", { action: "left_click", ref: refOf(line), action_summary: "Chọn chương HSMT để xem" });
+  await bt(m, "navigate", { url: VIEWER_URL });
+  let text = "", last = -1;
+  for (let i = 0; i < 6; i++) {
+    await pause(m, 3);
+    // The viewer only draws its pages when the browser paints; a tiny screenshot makes it paint while the pane is hidden.
+    await bt(m, "computer", { action: "screenshot", scale: 0.1 });
+    const all = await pageText(m);
+    const at = all.search(/Tải về/);
+    text = (at >= 0 ? all.slice(at + 6) : all).replace(/\s*\n\s*/g, " ").replace(/\s{2,}/g, " ").trim();
+    if (text.length > 300 && text.length === last) break;
+    last = text.length;
+  }
+  return text.length > 300 ? clip(text, CHAPTER_MAX).text : "";
+}
+async function noticeOf(m, t) {
+  await bt(m, "navigate", { url: tenderLink(t) });
+  await pause(m, 4);
+  const all = await pageText(m);
+  const info = all.slice(Math.max(0, all.indexOf("Thông tin cơ bản")), all.lastIndexOf("Nộp hồ sơ") > 0 ? all.lastIndexOf("Nộp hồ sơ") : undefined).trim();
+  let list = "";
+  const chapters = [];
+  if (await openHsmtTab(m, t)) {
+    const t2 = await pageText(m), i = t2.indexOf("STT");
+    list = i >= 0 ? t2.slice(i, t2.indexOf("Thời điểm đóng thầu", i) > 0 ? t2.indexOf("Thời điểm đóng thầu", i) : undefined).trim() : "";
+    const names = (await chapterLines(m)).map((l) => l.match(/generic "([^"]+)"/)?.[1]).filter(Boolean);
+    for (const [k, name] of names.entries()) {
+      syncStep(`Đang đọc ${name} của ${t.notifyNo}...`);
+      // Refs change after every page load, so the chapter is found again by its name.
+      if (k > 0 && !(await openHsmtTab(m, t))) break;
+      const line = (await chapterLines(m)).find((l) => l.includes(`"${name}"`));
+      if (!line) continue;
+      const text = await readChapter(m, line);
+      if (text) chapters.push({ name, text });
+    }
+  }
+  const open = info.match(/Thời điểm mở thầu\s+(\d\d\/\d\d\/\d{4})\s+(\d\d:\d\d)/);
+  const price = info.match(/Giá gói thầu\s+([\d.]+)\s*VND/);
+  return { info, list, chapters, bidOpenDate: open ? vnIso(open[2], open[1]) : null, estimatedPrice: price ? +price[1].replace(/\./g, "") : null };
+}
+// Before the HSMT files arrive, Claude reads the public notice for a first brief; the full analysis replaces it once files come.
+async function analyzeNotice(key, t, n) {
+  const sample = await getSample();
+  if (!sample || state.auto.blocked) return false;
+  state.auto.current = key; renderAll();
+  try {
+    const prompt = `${DOMAIN}
+
+Task: the attached HSMT files are not downloaded yet. From the public tender notice and the HSMT chapters published as web forms below (thông báo mời thầu: general information, bid security, validity, timing, the list of chapters and attached files; and, where present, Chương II Bảng dữ liệu, Chương III Tiêu chuẩn đánh giá, Chương V Yêu cầu kỹ thuật, Chương VII Điều kiện cụ thể của hợp đồng), write a preliminary brief for the bid team. Fill only what this text states; use null or empty lists for everything else. Add an "info" highlight naming what is only in the attached files and still has to be read (for example Chương V or Chương III when they are attachments). Flag deadlines, bid security and anything that can cause rejection as you would in a full analysis. ${langLine("vi")}
+
+Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
+${ANALYSIS_SHAPE}
+
+${tenderCtx(t)}--- Thông báo mời thầu trên muasamcong ---
+${clip(n.info, 60000).text}
+
+--- Danh mục hồ sơ mời thầu ---
+${clip(n.list || "(không đọc được)", 20000).text}
+${(n.chapters || []).map((c) => `\n--- ${c.name} (webform trên muasamcong) ---\n${clip(c.text, 40000).text}`).join("\n")}`;
+    const a = await sample.json(prompt, { modelTier: "default" });
+    const read = (n.chapters || []).map((c) => c.name).join(", ");
+    const rec = { status: "done", basis: "notice", result: a, notes: [`Phân tích sơ bộ từ thông báo mời thầu${read ? " và các chương webform (" + read + ")" : ""} vì chưa có tệp HSMT đính kèm. Claude sẽ tự phân tích lại đầy đủ khi tệp HSMT được tải về.`], analyzedAt: new Date().toISOString() };
+    await dbSet("analysis/" + key, rec);
+    state.analysis = { ...state.analysis, [key]: rec };
+    return true;
+  } catch (e) {
+    if (e?.code === "not_granted" || e?.code === "sampling_disabled" || e?.code === "capability_disabled") state.auto.blocked = "consent";
+    if (e?.code === "rate_limited") state.auto.blocked = "rate";
+    return false;
+  } finally { if (state.auto.current === key) state.auto.current = null; renderAll(); }
+}
+async function syncPortal(m) {
+  const text = await searchPortal(m);
+  const found = parseResults(text);
+  if (!found.length && !/Tìm thấy\s+0\s+kết quả/.test(text)) throw new SyncStop("Không đọc được danh sách kết quả trên muasamcong. Anh thử bấm Refresh lại sau ít phút.");
+  const total = +(text.match(/Tìm thấy\s+(\d+)\s+kết quả/)?.[1] || found.length);
+  const { next, fresh, changed, dropped } = mergeFeed(found);
+  const isNew = fresh.filter((f) => !state.deleted[safeId(f.notifyNo)]);
+  // New tenders, plus open tenders in Mới that have neither HSMT files nor any analysis yet.
+  const bare = next.filter((t) => { const k = safeId(t.notifyNo); return !state.deleted[k] && !isClosed(t) && stageOf({ ...t, _key: k }) === "new" && !state.hsmt[k]?.files?.length && !state.analysis[k]; });
+  syncStep("Đang đọc liên kết các gói mới...");
+  for (const f of isNew) {
+    const l = await linkOf(m, f.notifyNo);
+    if (!l) continue;
+    const e = { bidCloseDate: f.bidCloseDate, bidForm: l.bidForm, bidMode: l.bidMode, bidName: f.bidName, bidOpenDate: f.bidCloseDate, estimatedPrice: null, field: f.field, id: l.id, investorName: f.investorName, isInternet: l.isInternet, location: f.location, notifyNo: f.notifyNo, notifyVersion: f.notifyVersion, planNo: l.planNo, processApply: l.processApply, publicDate: f.publicDate, sourceUrl: l.sourceUrl, status: "open" };
+    if (f.procuringEntityName) e.procuringEntityName = f.procuringEntityName;
+    next.push(e);
+  }
+  const saveFeed = async () => { const doc = { fetchedAt: new Date().toISOString(), source: "muasamcong", tenders: next }; if (await dbSet("feed/current", doc)) state.feed = doc; renderAll(); };
+  const feedChanged = isNew.length || changed.length || dropped.length;
+  if (feedChanged) await saveFeed();
+  // Full notice details and a first analysis, a few tenders per sync.
+  const todo = [...next.filter((t) => isNew.some((f) => f.notifyNo === t.notifyNo)), ...bare].slice(0, SYNC_DETAIL_MAX);
+  let analysed = 0, detailsChanged = false;
+  for (const [i, t] of todo.entries()) {
+    const key = safeId(t.notifyNo);
+    syncStep(`Đang đọc thông báo mời thầu ${t.notifyNo} (${i + 1}/${todo.length})...`);
+    const n = await noticeOf(m, t);
+    const e = next.find((x) => x.notifyNo === t.notifyNo);
+    if (n.bidOpenDate && e.bidOpenDate !== n.bidOpenDate) { e.bidOpenDate = n.bidOpenDate; detailsChanged = true; }
+    if (n.estimatedPrice && e.estimatedPrice == null) { e.estimatedPrice = n.estimatedPrice; detailsChanged = true; }
+    await dbSet("notice/" + key, { notifyNo: t.notifyNo, info: n.info, hsmtList: n.list, chapters: n.chapters, at: new Date().toISOString() });
+    // Ask the Windows worker for the HSMT files.
+    if (!reqState(key)) { const rec = { notifyNo: t.notifyNo, sourceUrl: tenderLink(t), bidName: t.bidName || "", requestedAt: new Date().toISOString(), by: "sync" }; if (await dbSet("hsmtreq/" + key, rec)) state.hsmtreq = { ...state.hsmtreq, [key]: rec }; }
+    syncStep(`Claude đang phân tích sơ bộ ${t.notifyNo} (${i + 1}/${todo.length})...`);
+    if (await analyzeNotice(key, { ...t, _key: key }, n)) analysed++;
+  }
+  if (detailsChanged) await saveFeed();
+  const parts = [`${found.length}${total > found.length ? "/" + total : ""} gói đang mở`, `${isNew.length} gói mới`];
+  if (changed.length) parts.push(`${changed.length} gói đổi thông tin (${changed.join(", ")})`);
+  if (dropped.length) parts.push(`${dropped.length} gói đã đóng`);
+  if (todo.length) parts.push(`đã đọc thông báo ${todo.length} gói, phân tích sơ bộ ${analysed} gói, đã gửi yêu cầu lấy tệp HSMT`);
+  if (!feedChanged && !detailsChanged) parts.push("danh sách không đổi nên không ghi lại");
+  return `Đồng bộ muasamcong xong: ${parts.join("; ")}.` + (total > found.length ? " Chỉ đọc 50 gói đầu tiên." : "");
+}
+function syncErrorText(e) {
+  if (e instanceof SyncStop) return e.message;
+  const c = e?.code;
+  if (c === "cancelled" || c === "approval_required" || c === "not_in_manifest") return "GenBid Pro chưa được phép dùng trình duyệt của ứng dụng Claude. Bấm Refresh lại và chọn Cho phép khi được hỏi.";
+  if (c === "server_not_connected") return "Trình duyệt của ứng dụng Claude không sẵn sàng. Mở GenBid Pro trong ứng dụng Claude trên máy tính rồi bấm Refresh lại.";
+  if (c === "tool_error") return "Trình duyệt báo lỗi khi đọc muasamcong: " + (e.message || "không rõ") + ".";
+  return "Đồng bộ muasamcong bị gián đoạn (" + (c || e?.message || "lỗi không rõ") + "). Anh bấm Refresh lại sau ít phút.";
+}
+
 // ---------- Refresh ----------
 async function refreshAll() {
+  if (syncState.running) return;
   const btn = $("#refreshBtn"); btn.disabled = true;
   const before = new Set(allTenders().map((t) => t._key));
   try {
@@ -1881,11 +2146,24 @@ async function refreshAll() {
     }
     capScan.done.clear();
     state.auto.blocked = null; state.sample = undefined;
+    const m = await hostBrowser();
+    if (m) {
+      syncState.running = true; syncState.note = null; renderAll();
+      try { syncState.note = { kind: "", text: await syncPortal(m) }; await rememberSeen(); }
+      catch (e) { syncState.note = { kind: e instanceof SyncStop ? "warn" : "err", text: syncErrorText(e) }; }
+      finally { syncState.running = false; syncState.step = ""; }
+    } else {
+      const fresh = allTenders().filter((t) => !before.has(t._key)).length;
+      const closed = allTenders().filter((t) => tabOf(t) === "closed").length;
+      const asked = await requestMissingFiles();
+      toast(`Đã tải lại danh sách: ${fresh} gói mới, ${closed} gói đã đóng. Dữ liệu muasamcong lúc ${fmtDate(state.feed?.fetchedAt) || "?"}${asked ? `. Đang lấy tệp cho ${asked} gói, xong sẽ tự phân tích` : ""}`);
+      // No browser here (web version, phone): the Windows HSMT worker does the muasamcong sync on its next round.
+      if (!state.readOnly && state.db) {
+        const rec = { requestedAt: new Date().toISOString(), from: window.genbidWeb ? "web" : "claude.ai" };
+        if (await dbSet("syncreq/current", rec)) { state.syncreq = rec; syncState.note = null; }
+      }
+    }
     renderAll(); scanCapacities(); scheduleAuto(300);
-    const fresh = allTenders().filter((t) => !before.has(t._key)).length;
-    const closed = allTenders().filter((t) => tabOf(t) === "closed").length;
-    const asked = await requestMissingFiles();
-    toast(`Đã cập nhật: ${fresh} gói mới, ${closed} gói đã đóng. Dữ liệu muasamcong lúc ${fmtDate(state.feed?.fetchedAt) || "?"}${asked ? `. Đang lấy tệp cho ${asked} gói, xong sẽ tự phân tích` : ""}`);
   } catch { toast("Không cập nhật được, hãy thử lại."); }
   finally { btn.disabled = false; }
 }
@@ -1912,4 +2190,5 @@ setInterval(() => { renderTop(); renderGrid(); }, 60000);
 initDb();
 })();
 </script>
+
 </body></html>

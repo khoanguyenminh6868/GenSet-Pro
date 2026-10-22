@@ -17,5 +17,10 @@ head = ('<!doctype html><html lang="vi"><head><meta charset="utf-8">'
         '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>'
         '<script src="/shim.js"></script>'
         '</head><body>')
-open(out, "w").write(head + open(src).read() + "</body></html>")
+import re
+# The artifact file carries its own document skeleton; keep only what is inside its <body>.
+page = open(src, encoding="utf-8").read()
+page = re.sub(r"^<!doctype html><html><head>.*?</head><body>\n?", "", page, flags=re.S)
+page = re.sub(r"\n?</body></html>\s*$", "", page)
+open(out, "w", encoding="utf-8").write(head + page + "\n</body></html>")
 print("wrote", out)

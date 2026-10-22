@@ -1,10 +1,11 @@
-// Machine-to-machine import of results made in the claude.ai artifact (analysis, translations, comparisons).
+// Machine-to-machine import of results made in the claude.ai artifact (analysis, translations, comparisons)
+// and of the worker's muasamcong sync (feed/current, notice/<TBMT>, syncreq/current marked done).
 // The Windows HSMT worker posts { rows: [{ coll, id, data }] } with "Authorization: Bearer <INGEST_TOKEN>".
 import { timingSafeEqual } from "node:crypto";
 import { SB_URL } from "./_supabase.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const COLLS = new Set(["analysis", "translation", "compare"]);
+const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 
@@ -22,6 +23,16 @@ export default async function handler(req, res) {
   if (!rows?.length || rows.length > 200) return res.status(400).json({ error: "rows: 1-200 items" });
   for (const r of rows) {
     if (!COLLS.has(r?.coll) || !ID_RE.test(r?.id || "") || !r.data || typeof r.data !== "object") return res.status(400).json({ error: `bad row ${r?.coll}/${r?.id}` });
+    if ((r.coll === "feed" || r.coll === "syncreq") && r.id !== "current") return res.status(400).json({ error: `bad row ${r.coll}/${r.id}` });
+  }
+  // A Sync pressed after the worker read the request stays pending: the worker's "done" never overwrites a newer request.
+  const sync = rows.find((r) => r.coll === "syncreq");
+  let newerSync = false;
+  if (sync) {
+    const q = await fetch(`${SB_URL}/rest/v1/docs?select=data&coll=eq.syncreq&id=eq.current`, { headers: sbHeaders });
+    if (!q.ok) return res.status(502).json({ error: `read ${q.status}` });
+    const cur = (await q.json())[0]?.data;
+    newerSync = (cur?.requestedAt || "") > (sync.data.requestedAt || "");
   }
   // Only finished analyses travel, and never over a newer one already on the web.
   const ana = rows.filter((r) => r.coll === "analysis");
@@ -33,6 +44,7 @@ export default async function handler(req, res) {
     for (const d of await q.json()) have.set(d.id, d.data);
   }
   const keep = rows.filter((r) => {
+    if (r.coll === "syncreq") return !newerSync;
     if (r.coll !== "analysis") return true;
     if (r.data.status !== "done") return false;
     const cur = have.get(r.id);
