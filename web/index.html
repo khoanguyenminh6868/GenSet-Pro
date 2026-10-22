@@ -910,7 +910,7 @@ function renderTop() {
   else if (state.auto.blocked === "rate") an.innerHTML = h`<div class="note warn">Đã chạm giới hạn sử dụng Claude. Việc phân tích tự động sẽ chạy lại sau ít phút.</div>`;
   else an.innerHTML = "";
   const sq = state.syncreq;
-  if (sq?.requestedAt && !(sq.doneAt && sq.doneAt >= sq.requestedAt) && !syncState.running) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu đồng bộ lúc ${fmtDate(sq.requestedAt)}. Ở lượt chạy tới, máy Windows (worker HSMT) sẽ tìm gói mới trên muasamcong, đưa thông tin sơ bộ lên đây, tải HSMT rồi phân tích.</span></div>`);
+  if (sq?.requestedAt && !(sq.doneAt && sq.doneAt >= sq.requestedAt) && !syncState.running) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu đồng bộ</span></div>`);
   else if (sq?.doneAt && sq.doneAt >= (sq.requestedAt || "") && Date.now() - new Date(sq.doneAt).getTime() < 6 * 3600e3 && sq.summary && !syncState.note) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px"><span style="flex:1;min-width:200px">Máy Windows đã đồng bộ lúc ${fmtDate(sq.doneAt)}: ${sq.summary}</span></div>`);
   const sn = syncState.note;
   if (sn) an.insertAdjacentHTML("beforeend", h`<div class="note ${sn.kind} row" style="margin-top:6px"><span style="flex:1;min-width:200px">${sn.text}</span><button class="btn sm" id="syncNoteX" aria-label="Ẩn thông báo">Ẩn</button></div>`);
