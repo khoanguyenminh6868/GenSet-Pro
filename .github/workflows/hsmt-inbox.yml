@@ -10,6 +10,12 @@ on:
   push:
     branches: [hsmt-inbox]
     paths: ['inbox/**']
+  # Re-run tenders by hand, e.g. after a failed run: keys "IB2600354007 IB2600320499".
+  workflow_dispatch:
+    inputs:
+      keys:
+        description: TBMT numbers, space-separated
+        required: true
 
 jobs:
   ingest:
@@ -18,7 +24,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: sudo apt-get install -y -qq poppler-utils >/dev/null
+      # Update the package index first: the runner image's cached one can point at removed versions (404).
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils >/dev/null
       - name: Record changed tenders in Supabase
         env:
           GH_TOKEN: ${{ github.token }}
@@ -26,9 +33,12 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           BEFORE: ${{ github.event.before }}
+          KEYS: ${{ inputs.keys }}
         run: |
           set -euo pipefail
-          if git cat-file -e "$BEFORE" 2>/dev/null; then
+          if [ -n "${KEYS:-}" ]; then
+            keys=$KEYS
+          elif git cat-file -e "$BEFORE" 2>/dev/null; then
             keys=$(git diff --name-only "$BEFORE" HEAD -- inbox | cut -d/ -f2 | sort -u)
           else
             keys=$(ls inbox)
