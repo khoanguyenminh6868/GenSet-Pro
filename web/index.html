@@ -434,7 +434,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null, sample: undefined,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, hsmtreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, hsmtreq: {}, analysisreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort2", { col: "no", dir: -1 }),
@@ -607,6 +607,7 @@ const RUN_STALE = 20 * 60 * 1000;
 function analysisState(t) {
   const a = analysisOf(t._key);
   if (state.auto.current === t._key) return "running";
+  if (analysisReqPending(t._key)) return "requested";
   // A first brief read from the notice is redone in full once the HSMT files are here.
   if (a?.status === "done") return a.basis === "notice" && state.hsmt[t._key]?.files?.length && stageOf(t) === "new" && !isClosed(t) ? "queued" : "done";
   if (a?.status === "running" && Date.now() - new Date(a.startedAt).getTime() < RUN_STALE) return "running";
@@ -640,6 +641,23 @@ function offererOf(t) {
 }
 
 // ---------- Storage ----------
+// The web version has no Claude: "Phân tích" records analysisreq/<key> and the Windows PC worker
+// analyses the tender on its next round, then posts analysis/<key> back.
+function analysisReqPending(key) {
+  const r = state.analysisreq?.[key];
+  return !!(window.genbidWeb && r?.requestedAt && !(r.doneAt && r.doneAt >= r.requestedAt));
+}
+async function requestAnalysis(keys) {
+  const at = new Date().toISOString();
+  let n = 0;
+  for (const key of keys) {
+    const t = findTender(key);
+    const rec = { notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", requestedAt: at, by: "web" };
+    if (await dbSet("analysisreq/" + key, rec)) { state.analysisreq = { ...state.analysisreq, [key]: rec }; n++; }
+  }
+  toast(n ? `Đã gửi yêu cầu phân tích${n > 1 ? ` ${n} gói` : ""}. Máy Windows sẽ phân tích ở lượt chạy tới.` : "Không lưu được yêu cầu.");
+  renderAll();
+}
 async function dbSet(path, data) {
   if (state.readOnly) return false;
   if (!state.db) return false;
@@ -770,6 +788,7 @@ async function initDb() {
   subscribe("portalids", "portalids");
   subscribe("deleted", "deleted");
   subscribe("hsmtreq", "hsmtreq");
+  subscribe("analysisreq", "analysisreq");
 }
 
 // ---------- Claude ----------
@@ -823,7 +842,8 @@ async function runQueue() {
   const q = queue();
   if (!q.length) return;
   const sample = await getSample();
-  if (!sample) { state.auto.blocked = "noclaude"; renderAll(); return; }
+  // On the web the Windows worker analyses new tenders itself; nothing to run in the page.
+  if (!sample) { state.auto.blocked = window.genbidWeb ? "worker" : "noclaude"; renderAll(); return; }
   state.auto.running = true; renderAll();
   try {
     for (const t of q) {
@@ -1298,11 +1318,12 @@ function analysisTabHtml(t) {
   const head = s === "done"
     ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>${raw((a.notes || []).map((n) => h`<div class="note warn">${n}</div>`).join(""))}`
     : s === "running" ? progress("Claude đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
+    : s === "requested" ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích lúc ${fmtDate(state.analysisreq[t._key].requestedAt)}. Máy Windows sẽ phân tích ở lượt chạy tới (10:00, 15:00 hoặc khi bấm Run now) rồi gửi kết quả về đây.</span></div>`
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
     : s === "nodocs" ? h`<div class="note">Gói này chưa có hồ sơ mời thầu. Claude sẽ tự phân tích ngay khi tài liệu được tải về.</div>`
     : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">Claude chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
     : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này đang chờ đến lượt phân tích tự động."}</div>`;
-  return head + ((s === "done" || s === "queued") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
+  return head + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
 }
 
 // ---------- Libraries and files on demand ----------
@@ -1797,6 +1818,7 @@ document.addEventListener("click", async (e) => {
     e.stopPropagation();
     const key = act.dataset.key;
     if (act.dataset.act === "retry" || act.dataset.act === "reanalyze") {
+      if (window.genbidWeb && !(await getSample())) { requestAnalysis([key]); return; }
       if (state.auto.current) { toast("Đang phân tích gói khác, thử lại sau ít phút."); return; }
       state.auto.blocked = null;
       analyze(key, { manual: true });
@@ -1815,6 +1837,7 @@ document.addEventListener("click", async (e) => {
     state.sort = state.sort.col === k ? { col: k, dir: -state.sort.dir } : { col: k, dir: k === "no" ? -1 : 1 };
     state.limit = pageSize(); local.set("gridSort2", state.sort); renderGrid(); return;
   }
+  if (e.target.closest("#runQueueBtn") && window.genbidWeb && !(await getSample())) { e.stopPropagation(); requestAnalysis(queue().map((t) => t._key)); return; }
   if (e.target.closest("#runQueueBtn")) { e.stopPropagation(); state.auto.blocked = null; state.sample = undefined; runQueue(); toast("Đang phân tích các gói chờ"); return; }
   const kp = e.target.closest("[data-kpi]");
   if (kp) { openList(kp.dataset.kpi); return; }
