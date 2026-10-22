@@ -964,14 +964,14 @@ function renderTop() {
   if (state.syncreq !== undefined && syncDoneNote.base === undefined) syncDoneNote.base = sq?.doneAt || "";
   if (sq?.requestedAt && !(sq.doneAt && sq.doneAt >= sq.requestedAt) && !syncState.running) {
     // Waiting for the Windows worker: keep the loading note until its answer (or error) arrives.
-    an.insertAdjacentHTML("beforeend", h`<div style="margin-top:6px;display:grid;gap:6px">${raw(waitHtml("Đang đồng bộ từ muasamcong trên máy Windows...", sq.requestedAt))}</div>`);
+    an.insertAdjacentHTML("beforeend", h`<div style="margin-top:6px;display:grid;gap:6px">${raw(waitHtml("Đang đồng bộ từ muasamcong bằng Agent...", sq.requestedAt))}</div>`);
   }
   else if (sq?.doneAt && sq.doneAt !== syncDoneNote.base && sq.doneAt >= (sq.requestedAt || "") && syncDoneNote.at !== sq.doneAt) {
     // The answer arrived while the page was open: show it until Ẩn.
     syncDoneNote.at = sq.doneAt;
     syncState.note = sq.error
       ? { kind: "warn", text: `Đồng bộ không thành công: ${sq.error}` }
-      : { kind: "", text: `Máy Windows đã đồng bộ lúc ${fmtDate(sq.doneAt)}${sq.summary ? ": " + sq.summary : "."}` };
+      : { kind: "", text: `Agent đã đồng bộ lúc ${fmtDate(sq.doneAt)}${sq.summary ? ": " + sq.summary : "."}` };
   }
   const sn = syncState.note;
   if (sn) an.insertAdjacentHTML("beforeend", h`<div class="note ${sn.kind} row" style="margin-top:6px"><span style="flex:1;min-width:200px">${sn.text}</span><button class="btn sm" id="syncNoteX" aria-label="Ẩn thông báo">Ẩn</button></div>`);
@@ -1256,7 +1256,7 @@ function reqState(key) {
 function refetchHtml(t, have) {
   if (state.readOnly || !window.genbidWeb) return "";
   const s = reqState(t._key);
-  if (s?.kind === "pending") return waitHtml("Đang tải hồ sơ từ muasamcong trên máy Windows...", s.r.requestedAt);
+  if (s?.kind === "pending") return waitHtml("Đang tải hồ sơ từ muasamcong bằng Agent...", s.r.requestedAt);
   const msg = s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
     : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp." : "Lấy tệp hồ sơ từ muasamcong về gói này.";
   return h`<div class="note row${s?.kind === "error" ? " warn" : ""}"><span class="small" style="flex:1;min-width:200px">${msg}</span>
@@ -1285,7 +1285,7 @@ function botOfflineText() {
   if (!window.genbidWeb || state.botstatus === undefined) return "";
   const at = state.botstatus?.lastPollAt;
   if (at && Date.now() - new Date(at).getTime() < 3 * 60e3) return "";
-  return at ? `Máy Windows chưa nhận yêu cầu (lần cuối kết nối lúc ${fmtDate(at)}). Yêu cầu sẽ được xử lý khi máy bật lại.` : "Máy Windows chưa kết nối. Yêu cầu sẽ được xử lý khi máy bật lại.";
+  return at ? `Agent chưa nhận yêu cầu (lần cuối kết nối lúc ${fmtDate(at)}). Yêu cầu sẽ được xử lý khi Agent bật lại.` : "Agent chưa kết nối. Yêu cầu sẽ được xử lý khi Agent bật lại.";
 }
 const sinceText = (iso) => { const m = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60e3)); return m < 1 ? "vừa gửi" : `đã chờ ${m} phút`; };
 // A request waiting for the worker: spinner and label until the answer arrives, with the waiting time and a
@@ -1369,13 +1369,13 @@ function analysisTabHtml(t) {
     : s === "running" ? progress("Claude đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
     : s === "requested" ? (Date.now() < areqNoteUntil
       ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
-      : waitHtml("Đang chờ máy Windows phân tích...", state.analysisreq[t._key].requestedAt))
+      : waitHtml("Đang chờ Agent phân tích...", state.analysisreq[t._key].requestedAt))
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
     : s === "nodocs" ? h`<div class="note row"><span style="flex:1;min-width:200px">Gói này chưa có hồ sơ mời thầu. Claude sẽ tự phân tích ngay khi tài liệu được tải về.</span>${raw(window.genbidWeb ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
     : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">Claude chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(window.genbidWeb || state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
     : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này đang chờ đến lượt phân tích tự động."}</div>`;
   const reqErr = s !== "requested" && analysisReqError(t._key);
-  const errNote = reqErr ? h`<div class="note warn">Máy Windows chưa phân tích được: ${reqErr}</div>` : "";
+  const errNote = reqErr ? h`<div class="note warn">Agent chưa phân tích được: ${reqErr}</div>` : "";
   return head + errNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
 }
 
