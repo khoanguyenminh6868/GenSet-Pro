@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
-"""Store tender documents dropped in inbox/<TBMT>/ into Supabase for GenBid Pro (web).
+"""Record tender documents listed in inbox/<TBMT>/ in Supabase for GenBid Pro (web).
 
-The Windows PC worker pushes either
-  inbox/<TBMT>/files/<original file name>   files downloaded through VNeGP Client Agent, or
-  inbox/<TBMT>/error.txt                    why the files could not be fetched.
-Files go to storage "blobs/<md5>", the list to docs hsmt/<TBMT>, text to hsmttext/<TBMT>_<i>,
-and the request hsmtreq/<TBMT> is marked done (or failed).
-Usage: ingest.py <TBMT> [<TBMT> ...]   (SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in the environment)
+The Windows PC worker uploads the files downloaded through VNeGP Client Agent to the GitHub Release
+"hsmt-<TBMT>" and pushes
+  inbox/<TBMT>/release.json   {tag, files: [{name, size, asset, assetName}]}, and/or
+  inbox/<TBMT>/error.txt      files left out (too large) or why nothing could be fetched.
+The files stay on the release (the web serves them at /_gh/<asset>); only the list goes to docs hsmt/<TBMT>,
+text to hsmttext/<TBMT>_<i>, and the request hsmtreq/<TBMT> is marked done (or failed).
+Usage: ingest.py <TBMT> [<TBMT> ...]
+(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GH_TOKEN and GH_REPO in the environment)
 """
-import datetime, hashlib, json, mimetypes, os, re, subprocess, sys, urllib.parse, urllib.request, zipfile
+import datetime, json, os, re, subprocess, sys, tempfile, urllib.error, urllib.parse, urllib.request, zipfile
 from pathlib import Path
 
 URL = os.environ["SUPABASE_URL"].rstrip("/")
 KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
+GH_TOKEN = os.environ["GH_TOKEN"]
+GH_REPO = os.environ["GH_REPO"]
 CHUNK = 190_000
 TEXT_EXT = {".pdf", ".docx", ".txt"}
 
@@ -37,6 +41,26 @@ def get_doc(coll, id):
 def put_docs(rows):
     body = json.dumps([{**r, "updated_at": now()} for r in rows], ensure_ascii=False).encode()
     call("POST", "/rest/v1/docs", body, {"Content-Type": "application/json", "Prefer": "resolution=merge-duplicates,return=minimal"})
+
+
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *a, **k):
+        return None
+
+
+def download_asset(asset, dest: Path):
+    # The API answers 302 to a signed link that must be fetched without the GitHub token.
+    req = urllib.request.Request(f"https://api.github.com/repos/{GH_REPO}/releases/assets/{asset}",
+                                 headers={"Authorization": "Bearer " + GH_TOKEN, "Accept": "application/octet-stream"})
+    try:
+        r = urllib.request.build_opener(NoRedirect).open(req, timeout=120)
+    except urllib.error.HTTPError as e:
+        if e.code not in (301, 302, 307):
+            raise
+        r = urllib.request.urlopen(e.headers["Location"], timeout=600)
+    with r, open(dest, "wb") as out:
+        while b := r.read(1 << 20):
+            out.write(b)
 
 
 def to_text(f: Path) -> str:
@@ -71,24 +95,28 @@ def ingest(key):
     d = Path("inbox") / key
     req = get_doc("hsmtreq", key) or {"notifyNo": key}
     err = d / "error.txt"
-    files = sorted(p for p in (d / "files").glob("**/*") if p.is_file()) if (d / "files").is_dir() else []
-    if err.exists() and not files:
-        put_docs([{"coll": "hsmtreq", "id": key, "data": {**req, "doneAt": now(), "error": err.read_text(errors="replace").strip()[:500]}}])
+    rel = d / "release.json"
+    files = json.loads(rel.read_text(encoding="utf-8"))["files"] if rel.exists() else []
+    if not files:
+        reason = err.read_text(errors="replace").strip()[:500] if err.exists() else "Không có tệp nào."
+        put_docs([{"coll": "hsmtreq", "id": key, "data": {**req, "doneAt": now(), "error": reason}}])
         print(f"{key}: marked failed")
         return
     recs, texts = [], []
-    for f in files:
-        raw = f.read_bytes()
-        id = hashlib.md5(raw).hexdigest()
-        ctype = mimetypes.guess_type(f.name)[0] or "application/octet-stream"
-        call("POST", "/storage/v1/object/blobs/" + id, raw, {"Content-Type": ctype, "x-upsert": "true"})
-        text = to_text(f) if f.suffix.lower() in TEXT_EXT else ""
-        has = len(re.sub(r"\s", "", text)) > 40
-        name = str(f.relative_to(d / "files"))
-        recs.append({"name": name, "size": len(raw), "hasText": has, "converted": False, "path": name, "url": "/_blob/" + id})
-        if has:
-            texts.append(f"--- Tệp: {name} ---\n{text.strip()}")
-        print(f"  {name}: {len(raw)} bytes, {ctype}, text={'yes' if has else 'no'}")
+    with tempfile.TemporaryDirectory() as tmp:
+        for f in files:
+            name = f["name"]
+            text = ""
+            if Path(name).suffix.lower() in TEXT_EXT:
+                local = Path(tmp) / f["assetName"]
+                download_asset(f["asset"], local)
+                text = to_text(local)
+                local.unlink()
+            has = len(re.sub(r"\s", "", text)) > 40
+            recs.append({"name": name, "size": f["size"], "hasText": has, "converted": False, "path": name, "url": f"/_gh/{f['asset']}"})
+            if has:
+                texts.append(f"--- Tệp: {name} ---\n{text.strip()}")
+            print(f"  {name}: {f['size']} bytes, asset {f['asset']}, text={'yes' if has else 'no'}")
     parts = chunks("\n\n".join(texts))
     prev = get_doc("hsmt", key) or {}
     doc = {**prev, "notifyNo": key, "updatedAt": now(), "source": "muasamcong (VNeGP Agent)", "files": recs, "textChunks": len(parts)}

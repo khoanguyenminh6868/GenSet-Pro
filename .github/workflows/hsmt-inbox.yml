@@ -1,7 +1,11 @@
 name: hsmt inbox
 
-# Tender documents (public HSMT files from muasamcong) pushed here by the Windows PC worker are
-# stored in Supabase for GenBid Pro (web) by ingest.py; see its docstring for the layout.
+# Tender documents (public HSMT files from muasamcong) uploaded by the Windows PC worker to the
+# GitHub Release "hsmt-<TBMT>" and listed here are recorded in Supabase for GenBid Pro (web) by
+# ingest.py; see its docstring for the layout.
+permissions:
+  contents: read
+
 on:
   push:
     branches: [hsmt-inbox]
@@ -15,8 +19,10 @@ jobs:
         with:
           fetch-depth: 0
       - run: sudo apt-get install -y -qq poppler-utils >/dev/null
-      - name: Store changed tenders in Supabase
+      - name: Record changed tenders in Supabase
         env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           BEFORE: ${{ github.event.before }}

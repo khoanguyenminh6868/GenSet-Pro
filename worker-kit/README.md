@@ -3,7 +3,7 @@
 These are the tool scripts and instructions for the HSMT worker. They hold no token, state or tender data.
 
 To set up a new PC:
-1. Install the official VNeGP Client Agent (C:\MPI\EGP-AGENT, port 1234) and git.
+1. Install the official VNeGP Client Agent (C:\MPI\EGP-AGENT, port 1234), git and GitHub CLI, then run `gh auth login` (Publish-GenBidHsmt.ps1 uploads the tender files to GitHub Releases).
 2. Copy the scripts into C:\Projects\GenSet Pro\genbid-hsmt\, and copy hsmt-worker.md to C:\Projects\GenSet Pro\.hsmt-worker.md.
 3. Clone only the hsmt-inbox branch into C:\Projects\GenSet Pro\hsmt-inbox. Sign in to GitHub with a `git push --dry-run`, then set `git config user.name` and `git config user.email` inside the clone.
 4. Create these local files by hand. Never commit them, because this repo is public:

@@ -1,0 +1,24 @@
+{
+    "tag":  "hsmt-IB2600587068",
+    "repo":  "khoanguyenminh6868/GenSet-Pro",
+    "files":  [
+                  {
+                      "name":  "13a_E-HSMT.doc",
+                      "size":  781824,
+                      "asset":  666370714,
+                      "assetName":  "01.doc"
+                  },
+                  {
+                      "name":  "HSMT.pdf",
+                      "size":  27579578,
+                      "asset":  666370717,
+                      "assetName":  "02.pdf"
+                  },
+                  {
+                      "name":  "QD_HSMT.pdf",
+                      "size":  746870,
+                      "asset":  666370712,
+                      "assetName":  "03.pdf"
+                  }
+              ]
+}
