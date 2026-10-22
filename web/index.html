@@ -647,14 +647,30 @@ function analysisReqPending(key) {
   const r = state.analysisreq?.[key];
   return !!(window.genbidWeb && r?.requestedAt && !(r.doneAt && r.doneAt >= r.requestedAt));
 }
+// Requests for the Windows worker (analysisreq, hsmtreq, syncreq). On the web they go through /api/webreq,
+// which writes them for the signed-in member; in claude.ai they are written directly. Returns [{ key, data }].
+async function saveRequests(coll, items) {
+  let saved;
+  if (window.genbidWeb) saved = (await window.genbidApi("/api/webreq", { coll, items })).saved;
+  else {
+    saved = [];
+    const at = new Date().toISOString();
+    for (const { key, cancel, ...rest } of items) {
+      const data = cancel ? { ...(state[coll]?.[key] || {}), doneAt: at, error: "" } : { ...rest, requestedAt: at, from: "claude.ai" };
+      if (await dbSet(coll + "/" + key, data)) saved.push({ key, data });
+    }
+  }
+  for (const s of saved) {
+    if (coll === "syncreq") state.syncreq = s.data;
+    else state[coll] = { ...state[coll], [s.key]: s.data };
+  }
+  return saved;
+}
 async function requestAnalysis(keys) {
   if (state.readOnly) { toast("Đây là bản chỉ xem, không gửi được yêu cầu phân tích."); return; }
   let n = 0;
   try {
-    const items = keys.map((key) => { const t = findTender(key); return { key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "" }; });
-    const { saved } = await window.genbidApi("/api/analysisreq", { items });
-    for (const s of saved) state.analysisreq = { ...state.analysisreq, [s.key]: s.data };
-    n = saved.length;
+    n = (await saveRequests("analysisreq", keys.map((key) => { const t = findTender(key); return { key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "" }; }))).length;
   } catch (e) { toast("Không lưu được yêu cầu phân tích: " + (e?.message || "lỗi không rõ"), 6000); return; }
   if (!n) { toast("Không lưu được yêu cầu phân tích."); return; }
   // "Đã gửi yêu cầu phân tích" shows for 3 seconds (toast and the Phân tích tab), then the tab just says it is waiting.
@@ -789,6 +805,7 @@ async function initDb() {
   db.doc("feed/current").onSnapshot((snap) => { state.feed = snap.exists ? snap.data() : null; state.loaded.feed = true; renderAll(); scheduleAuto(); rememberSeen(); },
     () => { state.loaded.feed = true; renderAll(); });
   db.doc("syncreq/current").onSnapshot((snap) => { state.syncreq = snap.exists ? snap.data() : null; renderTop(); }, () => {});
+  if (window.genbidWeb) db.doc("botstatus/current").onSnapshot((snap) => { state.botstatus = snap.exists ? snap.data() : null; refreshWaits(); }, () => {});
   subscribe("tracked", "tracked", scheduleAuto);
   subscribe("manual", "manual");
   subscribe("seen", "seen", rememberSeen);
@@ -918,7 +935,7 @@ const KPIS = [
   { key: "done", l: "Đã phân tích", s: "", c: "var(--mint)", f: (t) => analysisState(t) === "done" },
   { key: "prep", l: "Chuẩn bị HSDT", s: "đối chiếu trong từng gói", c: "var(--cyan)", f: (t) => tabOf(t) === "preparing" },
 ];
-const syncDoneNote = { at: "", until: 0, base: undefined }, syncReqNote = { at: "", until: 0 };
+const syncDoneNote = { at: "", base: undefined };
 function renderTop() {
   const f = state.feed;
   const dot = $("#sdot"), txt = $("#stext");
@@ -946,14 +963,15 @@ function renderTop() {
   // A sync that finished before the page loaded is old news: remember it and only announce later ones.
   if (state.syncreq !== undefined && syncDoneNote.base === undefined) syncDoneNote.base = sq?.doneAt || "";
   if (sq?.requestedAt && !(sq.doneAt && sq.doneAt >= sq.requestedAt) && !syncState.running) {
-    // Show the sync request note for 3 seconds, then hide it.
-    if (syncReqNote.at !== sq.requestedAt) { syncReqNote.at = sq.requestedAt; syncReqNote.until = Date.now() + 3000; setTimeout(renderTop, 3050); }
-    if (Date.now() < syncReqNote.until) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu đồng bộ</span></div>`);
+    // Waiting for the Windows worker: keep the loading note until its answer (or error) arrives.
+    an.insertAdjacentHTML("beforeend", h`<div style="margin-top:6px;display:grid;gap:6px">${raw(waitHtml("Đang đồng bộ từ muasamcong trên máy Windows...", sq.requestedAt))}</div>`);
   }
-  else if (sq?.doneAt && sq.doneAt !== syncDoneNote.base && sq.doneAt >= (sq.requestedAt || "") && Date.now() - new Date(sq.doneAt).getTime() < 6 * 3600e3 && sq.summary && !syncState.note) {
-    // Show the worker's sync result for 3 seconds, then hide it.
-    if (syncDoneNote.at !== sq.doneAt) { syncDoneNote.at = sq.doneAt; syncDoneNote.until = Date.now() + 3000; setTimeout(renderTop, 3050); }
-    if (Date.now() < syncDoneNote.until) an.insertAdjacentHTML("beforeend", h`<div class="note row" style="margin-top:6px"><span style="flex:1;min-width:200px">Máy Windows đã đồng bộ lúc ${fmtDate(sq.doneAt)}: ${sq.summary}</span></div>`);
+  else if (sq?.doneAt && sq.doneAt !== syncDoneNote.base && sq.doneAt >= (sq.requestedAt || "") && syncDoneNote.at !== sq.doneAt) {
+    // The answer arrived while the page was open: show it until Ẩn.
+    syncDoneNote.at = sq.doneAt;
+    syncState.note = sq.error
+      ? { kind: "warn", text: `Đồng bộ không thành công: ${sq.error}` }
+      : { kind: "", text: `Máy Windows đã đồng bộ lúc ${fmtDate(sq.doneAt)}${sq.summary ? ": " + sq.summary : "."}` };
   }
   const sn = syncState.note;
   if (sn) an.insertAdjacentHTML("beforeend", h`<div class="note ${sn.kind} row" style="margin-top:6px"><span style="flex:1;min-width:200px">${sn.text}</span><button class="btn sm" id="syncNoteX" aria-label="Ẩn thông báo">Ẩn</button></div>`);
@@ -1238,7 +1256,7 @@ function reqState(key) {
 function refetchHtml(t, have) {
   if (state.readOnly || !window.genbidWeb) return "";
   const s = reqState(t._key);
-  if (s?.kind === "pending") return "";
+  if (s?.kind === "pending") return waitHtml("Đang tải hồ sơ từ muasamcong trên máy Windows...", s.r.requestedAt);
   const msg = s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
     : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp." : "Lấy tệp hồ sơ từ muasamcong về gói này.";
   return h`<div class="note row${s?.kind === "error" ? " warn" : ""}"><span class="small" style="flex:1;min-width:200px">${msg}</span>
@@ -1249,23 +1267,40 @@ function refetchHtml(t, have) {
 async function requestMissingFiles() {
   if (state.readOnly || !window.genbidWeb || !state.db) return 0;
   const want = allTenders().filter((t) => stageOf(t) === "new" && !isClosed(t) && !state.hsmt[t._key]?.files?.length && !state.hsmtreq?.[t._key]?.requestedAt);
-  let n = 0;
-  for (const t of want) {
-    const rec = { notifyNo: t.notifyNo || t._key, sourceUrl: tenderLink(t), bidName: t.bidName || "", requestedAt: new Date().toISOString(), auto: true };
-    if (await dbSet("hsmtreq/" + t._key, rec)) { state.hsmtreq = { ...state.hsmtreq, [t._key]: rec }; n++; }
-  }
-  return n;
+  if (!want.length) return 0;
+  try { return (await saveRequests("hsmtreq", want.map((t) => ({ key: t._key, notifyNo: t.notifyNo || t._key, sourceUrl: tenderLink(t), bidName: t.bidName || "", auto: true })))).length; }
+  catch { return 0; }
 }
 async function requestRefetch(key, cancel = false) {
   const t = findTender(key);
   if (!t) return;
-  const prev = state.hsmtreq?.[key] || {};
-  const rec = cancel ? { ...prev, doneAt: new Date().toISOString(), error: "" } : { notifyNo: t.notifyNo || key, sourceUrl: tenderLink(t), bidName: t.bidName || "", requestedAt: new Date().toISOString() };
-  if (!(await dbSet("hsmtreq/" + key, rec))) { toast("Không lưu được yêu cầu."); return; }
-  state.hsmtreq = { ...state.hsmtreq, [key]: rec };
-  toast(cancel ? "Đã huỷ yêu cầu lấy tệp" : "Đã gửi yêu cầu, tệp sẽ tự về khi máy Windows chạy lượt kế tiếp");
+  try {
+    await saveRequests("hsmtreq", [cancel ? { key, cancel: true } : { key, notifyNo: t.notifyNo || key, sourceUrl: tenderLink(t), bidName: t.bidName || "" }]);
+  } catch (e) { toast("Không lưu được yêu cầu lấy tệp: " + (e?.message || "lỗi không rõ"), 6000); return; }
+  toast(cancel ? "Đã huỷ yêu cầu lấy tệp" : "Đã gửi yêu cầu tải hồ sơ", 3000);
   renderDrawer(true);
 }
+// The bot asks the web for requests every minute (botstatus/current.lastPollAt). Silent for 3 minutes = the PC is off.
+function botOfflineText() {
+  if (!window.genbidWeb || state.botstatus === undefined) return "";
+  const at = state.botstatus?.lastPollAt;
+  if (at && Date.now() - new Date(at).getTime() < 3 * 60e3) return "";
+  return at ? `Máy Windows chưa nhận yêu cầu (lần cuối kết nối lúc ${fmtDate(at)}). Yêu cầu sẽ được xử lý khi máy bật lại.` : "Máy Windows chưa kết nối. Yêu cầu sẽ được xử lý khi máy bật lại.";
+}
+const sinceText = (iso) => { const m = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60e3)); return m < 1 ? "vừa gửi" : `đã chờ ${m} phút`; };
+// A request waiting for the worker: spinner and label until the answer arrives, with the waiting time and a
+// warning when the PC is off. refreshWaits() updates those in place so nothing else on the page re-renders.
+function waitHtml(label, iso) {
+  const off = botOfflineText();
+  return h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">${label} <span class="muted small" data-since="${iso}">(${sinceText(iso)})</span></span></div>
+    <div class="note warn" data-botwarn ${raw(off ? "" : "hidden")}>${off}</div>`;
+}
+function refreshWaits() {
+  $$("[data-since]").forEach((el) => (el.textContent = `(${sinceText(el.dataset.since)})`));
+  const off = botOfflineText();
+  $$("[data-botwarn]").forEach((el) => { el.textContent = off; el.hidden = !off; });
+}
+setInterval(refreshWaits, 30e3);
 function ownBidHtml(t) {
   if (!["submitted", "won", "lost"].includes(stageOf(t))) return "";
   const r = state.tracked[t._key] || {};
@@ -1334,7 +1369,7 @@ function analysisTabHtml(t) {
     : s === "running" ? progress("Claude đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
     : s === "requested" ? (Date.now() < areqNoteUntil
       ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
-      : h`<div class="row"><span class="chip mut"><span class="spin"></span>Chờ máy Windows phân tích</span></div>`)
+      : waitHtml("Đang chờ máy Windows phân tích...", state.analysisreq[t._key].requestedAt))
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
     : s === "nodocs" ? h`<div class="note row"><span style="flex:1;min-width:200px">Gói này chưa có hồ sơ mời thầu. Claude sẽ tự phân tích ngay khi tài liệu được tải về.</span>${raw(window.genbidWeb ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
     : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">Claude chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(window.genbidWeb || state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
@@ -2209,8 +2244,8 @@ async function refreshAll() {
       toast(`Đã tải lại danh sách: ${fresh} gói mới, ${closed} gói đã đóng. Dữ liệu muasamcong lúc ${fmtDate(state.feed?.fetchedAt) || "?"}${asked ? `. Đang lấy tệp cho ${asked} gói, xong sẽ tự phân tích` : ""}`);
       // No browser here (web version, phone): the Windows HSMT worker does the muasamcong sync on its next round.
       if (!state.readOnly && state.db) {
-        const rec = { requestedAt: new Date().toISOString(), from: window.genbidWeb ? "web" : "claude.ai" };
-        if (await dbSet("syncreq/current", rec)) { state.syncreq = rec; syncState.note = null; }
+        try { await saveRequests("syncreq", [{ key: "current" }]); syncState.note = null; }
+        catch (e) { syncState.note = { kind: "err", text: "Không gửi được yêu cầu đồng bộ: " + (e?.message || "lỗi không rõ") }; }
       }
     }
     renderAll(); scanCapacities(); scheduleAuto(300);
