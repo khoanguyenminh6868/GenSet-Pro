@@ -68,7 +68,7 @@
     const el = document.createElement("div");
     el.id = "gbImportPanel";
     el.style.cssText = "position:fixed;inset:auto 12px 56px 12px;max-width:420px;margin:auto;z-index:60;padding:16px;border-radius:12px;background:var(--card,#fff);color:var(--fg,#222);border:1px solid var(--rule,#8884);box-shadow:0 8px 30px #0004;font:14px system-ui,sans-serif;display:grid;gap:10px";
-    el.innerHTML = '<b>Nhập dữ liệu từ bản claude.ai</b><span>Chọn tệp genbid-data.zip. Dữ liệu cùng mã sẽ bị ghi đè.</span><input type="file" accept=".zip"><div id="impLog" style="opacity:.8"></div>';
+    el.innerHTML = '<b>Nhập dữ liệu từ bản cũ</b><span>Chọn tệp genbid-data.zip. Dữ liệu cùng mã sẽ bị ghi đè.</span><input type="file" accept=".zip"><div id="impLog" style="opacity:.8"></div>';
     document.body.appendChild(el);
     const log = (t) => (el.querySelector("#impLog").textContent = t);
     el.querySelector("input").onchange = async (e) => {

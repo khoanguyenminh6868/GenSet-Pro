@@ -293,7 +293,7 @@ details.sec>div{margin-top:10px}
     </div>
     <div class="bmeta">
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
-        <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng Claude trên máy tính, lấy gói mới trực tiếp từ muasamcong và phân tích; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
+        <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong và phân tích; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="themeBtn" aria-label="Đổi giao diện sáng tối" title="Đổi giao diện sáng / tối"></button></div>
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
@@ -454,17 +454,17 @@ const state = {
 
 function sampleErrorText(e) {
   const c = e?.code;
-  if (c === "not_granted" || c === "sampling_disabled" || c === "capability_disabled" || c === "not_declared") return "Trang này chưa được phép dùng Claude. Mở trang trong claude.ai khi đã đăng nhập và bấm Cho phép khi được hỏi.";
-  if (c === "rate_limited") return "Đã chạm giới hạn sử dụng Claude của tài khoản. Hãy thử lại sau ít phút.";
-  if (c === "session_expired") return "Phiên đăng nhập claude.ai đã hết hạn. Hãy đăng nhập lại.";
+  if (c === "not_granted" || c === "sampling_disabled" || c === "capability_disabled" || c === "not_declared") return "Trang này chưa được phép dùng AI. Đăng nhập rồi bấm Cho phép khi được hỏi.";
+  if (c === "rate_limited") return "Đã chạm giới hạn sử dụng AI của tài khoản. Hãy thử lại sau ít phút.";
+  if (c === "session_expired") return "Phiên đăng nhập đã hết hạn. Hãy đăng nhập lại.";
   if (c === "prompt_too_large") return "Hồ sơ quá dài cho một lần. Hãy chỉ gửi các chương chính (Tiêu chuẩn đánh giá, Yêu cầu kỹ thuật, Bảng dữ liệu).";
-  if (c === "refused") return "Claude không xử lý nội dung này. Hãy kiểm tra lại tệp.";
+  if (c === "refused") return "AI không xử lý nội dung này. Hãy kiểm tra lại tệp.";
   if (c === "invalid_json") return "Kết quả trả về không đúng định dạng. Bấm chạy lại.";
   if (c === "image_rejected") return "Ảnh không đọc được hoặc quá lớn. Hãy chọn ảnh khác.";
-  if (c === "images_unavailable") return "Phiên này không gửi được ảnh cho Claude. Hãy dùng tệp PDF có chữ hoặc dán nội dung.";
-  return "Kết nối tới Claude bị gián đoạn. Bấm chạy lại.";
+  if (c === "images_unavailable") return "Phiên này không gửi được ảnh cho AI. Hãy dùng tệp PDF có chữ hoặc dán nội dung.";
+  return "Kết nối tới AI bị gián đoạn. Bấm chạy lại.";
 }
-const noClaudeHtml = () => h`<div class="note warn">Không kết nối được Claude ở chế độ xem này. Hãy mở trang trong claude.ai (ứng dụng hoặc trình duyệt) khi đã đăng nhập.</div>`;
+const noClaudeHtml = () => h`<div class="note warn">Không kết nối được AI ở chế độ xem này. Hãy đăng nhập rồi mở lại trang.</div>`;
 
 // ---------- Document reading ----------
 const MAX_TEXT = 170000; // bytes budget for document text in one call
@@ -519,7 +519,7 @@ async function collectDocs(files, pasted, label, imageBudget) {
   const parts = [], images = [], notes = [];
   for (const f of files) {
     const r = await readFile(f, imageBudget - images.length);
-    if (r.scanned) notes.push(`${f.name}: bản scan, Claude đọc ảnh ${r.images.length}/${r.pages} trang đầu.`);
+    if (r.scanned) notes.push(`${f.name}: bản scan, AI đọc ảnh ${r.images.length}/${r.pages} trang đầu.`);
     images.push(...r.images.slice(0, Math.max(0, imageBudget - images.length)));
     if (r.text) parts.push(`--- ${label}: ${f.name} ---\n${r.text}`);
     else if (r.images.length) parts.push(`--- ${label}: ${f.name} (ảnh đính kèm) ---`);
@@ -702,7 +702,7 @@ async function dbSet(path, data) {
   catch (e) { if (e?.code === "permission_denied") toast("Bạn chỉ có quyền xem, không lưu được."); return false; }
 }
 async function saveTracked(id, rec) {
-  if (state.readOnly) { toast("Đăng nhập Claude để chỉnh sửa. Đây là bản chỉ xem."); return; }
+  if (state.readOnly) { toast("Đăng nhập để chỉnh sửa. Đây là bản chỉ xem."); return; }
   const clean = JSON.parse(JSON.stringify(rec));
   state.tracked = { ...state.tracked, [id]: clean };
   if (state.db) await dbSet("tracked/" + id, clean); else local.set("tracked", state.tracked);
@@ -850,12 +850,12 @@ async function scanImages(files, budget, notes, onStep) {
   const images = [], labels = [];
   for (const f of files) {
     const left = budget - images.length;
-    if (left <= 0) { notes.push(`${f.name}: bản scan, không còn chỗ gửi ảnh nên Claude chưa đọc tệp này.`); continue; }
+    if (left <= 0) { notes.push(`${f.name}: bản scan, không còn chỗ gửi ảnh nên AI chưa đọc tệp này.`); continue; }
     try {
       onStep?.(f.name);
       const blob = await (await fetch(f.url)).blob();
       const r = await pdfToContent(new File([blob], f.name, { type: "application/pdf" }), left);
-      if (r.images?.length) { images.push(...r.images.slice(0, left)); labels.push(`${f.name} (bản scan, ảnh ${Math.min(left, r.images.length)}/${r.pages || "?"} trang đầu)`); notes.push(`${f.name}: bản scan, Claude đọc ảnh ${Math.min(left, r.images.length)}/${r.pages || "?"} trang đầu.`); }
+      if (r.images?.length) { images.push(...r.images.slice(0, left)); labels.push(`${f.name} (bản scan, ảnh ${Math.min(left, r.images.length)}/${r.pages || "?"} trang đầu)`); notes.push(`${f.name}: bản scan, AI đọc ảnh ${Math.min(left, r.images.length)}/${r.pages || "?"} trang đầu.`); }
       else if (r.text) labels.push(`--- Tệp: ${f.name} ---\n${r.text}`);
     } catch { notes.push(`${f.name}: không mở được bản scan.`); }
   }
@@ -895,7 +895,7 @@ async function runQueue() {
 async function analyze(key, { manual = false } = {}) {
   const t = findTender(key);
   const sample = await getSample();
-  if (!sample) { toast("Không kết nối được Claude."); return; }
+  if (!sample) { toast("Không kết nối được AI."); return; }
   state.auto.current = key; renderAll();
   await dbSet("analysis/" + key, { status: "running", startedAt: new Date().toISOString(), by: TAB_ID });
   try {
@@ -952,7 +952,7 @@ function renderTop() {
   // While syncing, the dot becomes a spinner next to the label.
   if (syncState.running) { dot.className = "spin"; txt.textContent = syncState.step || "Đang đồng bộ từ muasamcong..."; }
   else if (syncPending) { dot.className = "spin"; txt.textContent = "Đang đồng bộ"; }
-  else if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `Claude đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
+  else if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `AI đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
   else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtBannerDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
   else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
@@ -968,8 +968,8 @@ function renderTop() {
   $("#stageTabs").innerHTML = [["all", "Tất cả", live.length], ...TABS.map((s) => [s.key, s.label, counts[s.key]])]
     .map(([k, l, n]) => h`<button role="tab" data-stage="${k}" aria-selected="${String(state.stage === k)}">${l}<span class="c${k === "all" ? "" : " st-" + k}">${n}</span></button>`).join("");
   const an = $("#autoNote");
-  if (state.auto.blocked === "consent" || state.auto.blocked === "noclaude") an.innerHTML = h`<div class="note warn row"><span style="flex:1;min-width:200px">${state.auto.blocked === "noclaude" ? "Mở trang trong claude.ai khi đã đăng nhập để Claude tự phân tích các gói mới." : "Claude cần được cho phép để tự phân tích các gói mới."}</span>${raw(state.auto.blocked === "consent" ? '<button class="btn sm primary" id="allowAuto">Cho phép và phân tích</button>' : "")}</div>`;
-  else if (state.auto.blocked === "rate") an.innerHTML = h`<div class="note warn">Đã chạm giới hạn sử dụng Claude. Việc phân tích tự động sẽ chạy lại sau ít phút.</div>`;
+  if (state.auto.blocked === "consent" || state.auto.blocked === "noclaude") an.innerHTML = h`<div class="note warn row"><span style="flex:1;min-width:200px">${state.auto.blocked === "noclaude" ? "Đăng nhập để AI tự phân tích các gói mới." : "AI cần được cho phép để tự phân tích các gói mới."}</span>${raw(state.auto.blocked === "consent" ? '<button class="btn sm primary" id="allowAuto">Cho phép và phân tích</button>' : "")}</div>`;
+  else if (state.auto.blocked === "rate") an.innerHTML = h`<div class="note warn">Đã chạm giới hạn sử dụng AI. Việc phân tích tự động sẽ chạy lại sau ít phút.</div>`;
   else an.innerHTML = "";
   const sq = state.syncreq;
   // A sync that finished before the page loaded is old news: remember it and only announce later ones.
@@ -1251,7 +1251,7 @@ function infoHtml(t) {
       <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp tải từ muasamcong${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
         ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải về</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
-        ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về. Khi có, Claude sẽ tự phân tích.</div>')}
+        ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về. Khi có, AI sẽ tự phân tích.</div>')}
       ${raw(refetchHtml(t, files.length))}
     </div>`;
 }
@@ -1342,7 +1342,7 @@ function biddersHtml(t) {
   return h`<details class="sec" ${list.length ? "open" : ""}><summary>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : n ? ` (${n} nhà thầu)` : ""}</summary>
     <div style="display:flex;flex-direction:column;gap:8px;padding-top:8px">
     ${raw(table)}
-    <p class="muted small" style="margin:0">Tên và giá các nhà thầu nằm ở tab Biên bản mở thầu và tab Kết quả lựa chọn nhà thầu (có cả nhà thầu không được chọn). Các tab này tải dữ liệu ngay trong trình duyệt của anh nên app không tự đọc được. Anh mở tab, chụp màn hình hoặc tải PDF rồi đưa vào đây, Claude sẽ đọc ra bảng.</p>
+    <p class="muted small" style="margin:0">Tên và giá các nhà thầu nằm ở tab Biên bản mở thầu và tab Kết quả lựa chọn nhà thầu (có cả nhà thầu không được chọn). Các tab này tải dữ liệu ngay trong trình duyệt của anh nên app không tự đọc được. Anh mở tab, chụp màn hình hoặc tải PDF rồi đưa vào đây, AI sẽ đọc ra bảng.</p>
     <div class="row">${raw(minutesLink(t, true) ? h`<a class="btn sm" href="${minutesLink(t, true)}" target="_blank" rel="noopener">Mở Kết quả lựa chọn nhà thầu ↗</a>` : "")}<a class="btn sm" href="${minutesLink(t) || tenderLink(t)}" target="_blank" rel="noopener">${minutesLink(t) ? "Mở Biên bản mở thầu ↗" : "Mở gói trên muasamcong ↗"}</a></div>
     <div class="drop" id="bdDrop">
       <div class="row"><span class="muted small" style="flex:1">Ảnh chụp biên bản mở thầu hoặc kết quả LCNT</span><label class="btn sm" for="bdFiles">Chọn tệp</label></div>
@@ -1370,10 +1370,10 @@ async function runBidders(key) {
 ${BIDDERS_SHAPE}
 ${doc.images.length ? `\nAttached images: ${doc.images.length} pages of the record.\n` : ""}
 ${clip(doc.text, MAX_TEXT).text}`;
-    out.innerHTML = progress("Claude đang đọc danh sách nhà thầu...");
+    out.innerHTML = progress("AI đang đọc danh sách nhà thầu...");
     const r = await sample.json(prompt, { modelTier: "complex", ...(doc.images.length ? { images: doc.images } : {}) });
     const list = (r?.bidders || []).filter((x) => x?.name);
-    if (!list.length) throw new Error("Claude không tìm thấy nhà thầu nào trong tài liệu này.");
+    if (!list.length) throw new Error("AI không tìm thấy nhà thầu nào trong tài liệu này.");
     const rec = { list, at: new Date().toISOString(), source: (bdPick?.files || []).map((f) => f.name).join(", ") || "nội dung dán" };
     state.bidders = { ...state.bidders, [key]: rec };
     await dbSet("bidders/" + key, rec);
@@ -1391,13 +1391,13 @@ function analysisTabHtml(t) {
   const s = analysisState(t), a = analysisOf(t._key);
   const head = s === "done"
     ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>${raw((a.notes || []).map((n) => h`<div class="note warn">${n}</div>`).join(""))}`
-    : s === "running" ? progress("Claude đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
+    : s === "running" ? progress("AI đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
     : s === "requested" ? (Date.now() < areqNoteUntil
       ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
       : waitHtml("Đang chờ Agent phân tích...", state.analysisreq[t._key].requestedAt))
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
-    : s === "nodocs" ? h`<div class="note row"><span style="flex:1;min-width:200px">Gói này chưa có hồ sơ mời thầu. Claude sẽ tự phân tích ngay khi tài liệu được tải về.</span>${raw(window.genbidWeb ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
-    : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">Claude chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(window.genbidWeb || state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
+    : s === "nodocs" ? h`<div class="note row"><span style="flex:1;min-width:200px">Gói này chưa có hồ sơ mời thầu. AI sẽ tự phân tích ngay khi tài liệu được tải về.</span>${raw(window.genbidWeb ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
+    : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">AI chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(window.genbidWeb || state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
     : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này đang chờ đến lượt phân tích tự động."}</div>`;
   const reqErr = s !== "requested" && analysisReqError(t._key);
   const errNote = reqErr ? h`<div class="note warn">Agent chưa phân tích được: ${reqErr}</div>` : "";
@@ -1432,7 +1432,7 @@ async function fonts() {
 let downloadsNs;
 async function saveFile(filename, data) {
   if (downloadsNs === undefined) { try { downloadsNs = (await window.claude?.use?.("downloads")) ?? null; } catch { downloadsNs = null; } }
-  if (!downloadsNs) { toast("Chế độ xem này không cho tải tệp. Hãy mở trang trong claude.ai."); return false; }
+  if (!downloadsNs) { toast("Chế độ xem này không cho tải tệp."); return false; }
   try { await downloadsNs.save({ filename, data }); return true; }
   catch (e) { if (e?.code !== "declined") toast(e?.code === "rate_limited" ? "Đang có một hộp thoại tải tệp, hãy xử lý nó trước." : "Không tải được tệp."); return false; }
 }
@@ -1489,7 +1489,7 @@ const TR_SHAPE = `{ "sections": [ { "heading": string (English), "points": [stri
 function translateTabHtml(t) {
   const files = state.hsmt[t._key]?.files || [];
   if (!files.length) return h`<div class="note">Gói này chưa có hồ sơ mời thầu để dịch.</div>`;
-  return busyNote(t._key, "translate") + h`<p class="muted small" style="margin:0">Claude đọc toàn bộ phần yêu cầu kỹ thuật của gói, chỉ giữ các điểm quan trọng (công suất, tiêu chuẩn, cấu hình, phụ kiện, thử nghiệm, bảo hành, giao hàng, tài liệu) và dịch sang tiếng Anh thành tệp PDF. Phần thủ tục và chi tiết lặp lại được lược bỏ.</p>
+  return busyNote(t._key, "translate") + h`<p class="muted small" style="margin:0">AI đọc toàn bộ phần yêu cầu kỹ thuật của gói, chỉ giữ các điểm quan trọng (công suất, tiêu chuẩn, cấu hình, phụ kiện, thử nghiệm, bảo hành, giao hàng, tài liệu) và dịch sang tiếng Anh thành tệp PDF. Phần thủ tục và chi tiết lặp lại được lược bỏ.</p>
     <div class="row"><button class="btn primary" id="trRun" data-key="${t._key}">Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo"></span></div>
     <div id="trOut"></div>`;
 }
@@ -1541,7 +1541,7 @@ async function runTranslate(key, resumeFrom) { busyStart(key, "translate"); try 
 async function runTranslate0(key, resumeFrom) {
   const out = $("#trOut"), info = $("#trInfo"), btn = $("#trRun");
   const sample = await getSample();
-  if (!sample) { info.textContent = "Không kết nối được Claude ở chế độ xem này."; return; }
+  if (!sample) { info.textContent = "Không kết nối được AI ở chế độ xem này."; return; }
   btn.disabled = true; $("#trPdf").hidden = true;
   try {
     info.textContent = "Đang lấy phần yêu cầu kỹ thuật...";
@@ -1561,7 +1561,7 @@ async function runTranslate0(key, resumeFrom) {
     const secs = start ? [...(trState[key] || [])] : [];
     if (!start) await dbSet(`translation/${key}_edit`, { text: null });
     for (let i = start; i < chunks.length; i++) {
-      info.textContent = `Claude đang đọc và dịch phần ${i + 1}/${chunks.length}...`;
+      info.textContent = `AI đang đọc và dịch phần ${i + 1}/${chunks.length}...`;
       const prompt = `${DOMAIN}
 
 You are preparing an English brief of the technical requirements of a Vietnamese generator tender for a foreign supplier/manufacturer.
@@ -1630,7 +1630,7 @@ function hsdtTabHtml(t) {
   const prev = state.hsdt[t._key];
   const has = state.hsmt[t._key]?.files?.length || analysisOf(t._key)?.result;
   if (!has) return h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
-  return busyNote(t._key, "hsdt") + h`<p class="muted small" style="margin:0">Claude soạn bộ hồ sơ dự thầu tham khảo theo đúng gói này: đơn dự thầu, bảng đáp ứng kỹ thuật, bảo lãnh, năng lực, tiến độ, bảo hành và danh mục tài liệu. Thông tin riêng của công ty để trong [ngoặc vuông] để anh điền.</p>
+  return busyNote(t._key, "hsdt") + h`<p class="muted small" style="margin:0">AI soạn bộ hồ sơ dự thầu tham khảo theo đúng gói này: đơn dự thầu, bảng đáp ứng kỹ thuật, bảo lãnh, năng lực, tiến độ, bảo hành và danh mục tài liệu. Thông tin riêng của công ty để trong [ngoặc vuông] để anh điền.</p>
     <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}">${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) : ""}</span></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
@@ -1649,10 +1649,10 @@ async function runHsdt(key) { busyStart(key, "hsdt"); try { await runHsdt0(key);
 async function runHsdt0(key) {
   const out = $("#hsOut"), info = $("#hsInfo"), btn = $("#hsRun");
   const sample = await getSample();
-  if (!sample) { info.textContent = "Không kết nối được Claude ở chế độ xem này."; return; }
+  if (!sample) { info.textContent = "Không kết nối được AI ở chế độ xem này."; return; }
   btn.disabled = true;
   try {
-    out.innerHTML = progress("Claude đang đọc HSMT và soạn hồ sơ tham khảo. Có thể mất vài phút.");
+    out.innerHTML = progress("AI đang đọc HSMT và soạn hồ sơ tham khảo. Có thể mất vài phút.");
     const t = findTender(key);
     const att = await loadAttachedText(key);
     const a = analysisOf(key)?.result;
@@ -1782,7 +1782,7 @@ async function runCompare0(key) {
   const out = $("#cmOut"), btn = $("#cmRun");
   if (!subPick?.files.length && !$("#cmText").value.trim()) { out.innerHTML = h`<div class="note">Chọn tệp hồ sơ dự thầu hoặc dán nội dung trước.</div>`; return; }
   const sample = await getSample();
-  if (!sample) { out.innerHTML = h`<div class="note warn">Không kết nối được Claude ở chế độ xem này.</div>`; return; }
+  if (!sample) { out.innerHTML = h`<div class="note warn">Không kết nối được AI ở chế độ xem này.</div>`; return; }
   btn.disabled = true;
   try {
     out.innerHTML = progress("Đang đọc hồ sơ...");
@@ -1806,7 +1806,7 @@ ${r.text}
 
 === HỒ SƠ DỰ THẦU (submission) ===
 ${s.text}`;
-    out.innerHTML = progress("Claude đang đối chiếu từng yêu cầu. Có thể mất vài phút.");
+    out.innerHTML = progress("AI đang đối chiếu từng yêu cầu. Có thể mất vài phút.");
     const c = await sample.json(prompt, { modelTier: "complex", ...(sub.images.length ? { images: sub.images } : {}) });
     const at = new Date().toISOString();
     state.compare = { ...state.compare, [key]: { result: c, at } };
@@ -2022,7 +2022,7 @@ async function findLines(m, q) { return (await bt(m, "find", { query: q })).spli
 const CHALLENGE_RE = /recaptcha|không phải là người máy|i'm not a robot|xác minh bạn/i;
 async function pageText(m) {
   const t = await bt(m, "get_page_text", { max_chars: 200000 });
-  if (CHALLENGE_RE.test(t)) throw new SyncStop("muasamcong đang yêu cầu xác minh (CAPTCHA), nên GenBid Pro dừng đồng bộ. Anh mở muasamcong trong trình duyệt của ứng dụng Claude, tự xác minh, rồi bấm Refresh lại.");
+  if (CHALLENGE_RE.test(t)) throw new SyncStop("muasamcong đang yêu cầu xác minh (CAPTCHA), nên GenBid Pro dừng đồng bộ. Anh mở muasamcong trong trình duyệt của ứng dụng trên máy tính, tự xác minh, rồi bấm Refresh lại.");
   return t;
 }
 // Muasamcong shows Vietnam time without a zone.
@@ -2180,7 +2180,7 @@ ${clip(n.list || "(không đọc được)", 20000).text}
 ${(n.chapters || []).map((c) => `\n--- ${c.name} (webform trên muasamcong) ---\n${clip(c.text, 40000).text}`).join("\n")}`;
     const a = await sample.json(prompt, { modelTier: "default" });
     const read = (n.chapters || []).map((c) => c.name).join(", ");
-    const rec = { status: "done", basis: "notice", result: a, notes: [`Phân tích sơ bộ từ thông báo mời thầu${read ? " và các chương webform (" + read + ")" : ""} vì chưa có tệp HSMT đính kèm. Claude sẽ tự phân tích lại đầy đủ khi tệp HSMT được tải về.`], analyzedAt: new Date().toISOString() };
+    const rec = { status: "done", basis: "notice", result: a, notes: [`Phân tích sơ bộ từ thông báo mời thầu${read ? " và các chương webform (" + read + ")" : ""} vì chưa có tệp HSMT đính kèm. AI sẽ tự phân tích lại đầy đủ khi tệp HSMT được tải về.`], analyzedAt: new Date().toISOString() };
     await dbSet("analysis/" + key, rec);
     state.analysis = { ...state.analysis, [key]: rec };
     return true;
@@ -2223,7 +2223,7 @@ async function syncPortal(m) {
     await dbSet("notice/" + key, { notifyNo: t.notifyNo, info: n.info, hsmtList: n.list, chapters: n.chapters, at: new Date().toISOString() });
     // Ask the Windows worker for the HSMT files.
     if (!reqState(key)) { const rec = { notifyNo: t.notifyNo, sourceUrl: tenderLink(t), bidName: t.bidName || "", requestedAt: new Date().toISOString(), by: "sync" }; if (await dbSet("hsmtreq/" + key, rec)) state.hsmtreq = { ...state.hsmtreq, [key]: rec }; }
-    syncStep(`Claude đang phân tích sơ bộ ${t.notifyNo} (${i + 1}/${todo.length})...`);
+    syncStep(`AI đang phân tích sơ bộ ${t.notifyNo} (${i + 1}/${todo.length})...`);
     if (await analyzeNotice(key, { ...t, _key: key }, n)) analysed++;
   }
   if (detailsChanged) await saveFeed();
@@ -2237,8 +2237,8 @@ async function syncPortal(m) {
 function syncErrorText(e) {
   if (e instanceof SyncStop) return e.message;
   const c = e?.code;
-  if (c === "cancelled" || c === "approval_required" || c === "not_in_manifest") return "GenBid Pro chưa được phép dùng trình duyệt của ứng dụng Claude. Bấm Refresh lại và chọn Cho phép khi được hỏi.";
-  if (c === "server_not_connected") return "Trình duyệt của ứng dụng Claude không sẵn sàng. Mở GenBid Pro trong ứng dụng Claude trên máy tính rồi bấm Refresh lại.";
+  if (c === "cancelled" || c === "approval_required" || c === "not_in_manifest") return "GenBid Pro chưa được phép dùng trình duyệt của ứng dụng trên máy tính. Bấm Refresh lại và chọn Cho phép khi được hỏi.";
+  if (c === "server_not_connected") return "Trình duyệt của ứng dụng trên máy tính không sẵn sàng. Mở GenBid Pro trong ứng dụng trên máy tính rồi bấm Refresh lại.";
   if (c === "tool_error") return "Trình duyệt báo lỗi khi đọc muasamcong: " + (e.message || "không rõ") + ".";
   return "Đồng bộ muasamcong bị gián đoạn (" + (c || e?.message || "lỗi không rõ") + "). Anh bấm Refresh lại sau ít phút.";
 }
