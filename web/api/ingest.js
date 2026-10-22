@@ -1,12 +1,14 @@
 // Machine-to-machine writes from the Windows HSMT worker: analyses (also the answers to the page's
-// "Phân tích" requests, analysisreq/<TBMT> marked done), errors for unanswered hsmtreq, translations, comparisons, and the
-// muasamcong sync (feed/current, notice/<TBMT>, syncreq/current marked done).
+// "Phân tích" requests, analysisreq/<TBMT> marked done), errors for unanswered hsmtreq, translations, comparisons, the
+// muasamcong sync (feed/current, notice/<TBMT>, syncreq/current marked done), HSMT files and bidders.
 // The worker posts { rows: [{ coll, id, data }] } with "Authorization: Bearer <INGEST_TOKEN>".
 import { timingSafeEqual } from "node:crypto";
 import { SB_URL } from "./_supabase.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "analysisreq", "hsmtreq"]);
+// hsmt + hsmttext: the file list and text the worker reads from the files itself (the hsmt-inbox Action writes the same).
+// bidders + portalids: bidders and prices the worker reads from the bid-opening minutes and results on muasamcong.
+const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "analysisreq", "hsmtreq", "hsmt", "hsmttext", "bidders", "portalids"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 
