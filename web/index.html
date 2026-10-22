@@ -87,7 +87,11 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .btitle{display:flex;flex-direction:column;gap:3px;min-width:0;position:relative}
 .btitle h1 span{color:var(--violet)}
 .btitle .tag{color:var(--muted);font-size:13px}
-.bmeta{margin-left:auto;display:flex;align-items:center;gap:10px;position:relative;flex-wrap:wrap}
+.bmeta{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:6px;position:relative}
+.bnote{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;justify-content:flex-end;max-width:520px;text-align:right}
+.bnote.warn{color:var(--orange)}.bnote.err{color:var(--red)}
+.bnote .ibtn{width:22px;height:22px;flex:none}
+.syncline .spin{width:10px;height:10px}
 .syncline{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .syncline .ibtn{width:30px;height:30px}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--dim);display:inline-block}
@@ -287,6 +291,7 @@ details.sec>div{margin-top:10px}
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng Claude trên máy tính, lấy gói mới trực tiếp từ muasamcong và phân tích; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="themeBtn" aria-label="Đổi giao diện sáng tối" title="Đổi giao diện sáng / tối"></button></div>
+      <div class="bnote" id="bnote" role="status" hidden></div>
     </div>
   </header>
 
@@ -940,8 +945,9 @@ function renderTop() {
   const f = state.feed;
   const dot = $("#sdot"), txt = $("#stext");
   const sreq = state.syncreq, syncPending = !!sreq?.requestedAt && !(sreq.doneAt >= sreq.requestedAt);
-  if (syncState.running) { dot.className = "dot busy"; txt.textContent = syncState.step || "Đang đồng bộ từ muasamcong..."; }
-  else if (syncPending) { dot.className = "dot busy"; txt.textContent = "Đang đồng bộ"; }
+  // While syncing, the dot becomes a spinner next to the label.
+  if (syncState.running) { dot.className = "spin"; txt.textContent = syncState.step || "Đang đồng bộ từ muasamcong..."; }
+  else if (syncPending) { dot.className = "spin"; txt.textContent = "Đang đồng bộ"; }
   else if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `Claude đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
   else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtBannerDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
   else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
@@ -973,7 +979,10 @@ function renderTop() {
       : { kind: "", text: `Agent đã đồng bộ lúc ${fmtDate(sq.doneAt)}${sq.summary ? ": " + sq.summary : "."}` };
   }
   const sn = syncState.note;
-  if (sn) an.insertAdjacentHTML("beforeend", h`<div class="note ${sn.kind} row" style="margin-top:6px"><span style="flex:1;min-width:200px">${sn.text}</span><button class="btn sm" id="syncNoteX" aria-label="Ẩn thông báo">Ẩn</button></div>`);
+  // The sync result sits in the banner, under the icons, until Ẩn.
+  const bn = $("#bnote");
+  bn.hidden = !sn; bn.className = "bnote" + (sn?.kind ? " " + sn.kind : "");
+  bn.innerHTML = sn ? h`<span>${sn.text}</span><button class="ibtn" id="syncNoteX" aria-label="Ẩn thông báo" title="Ẩn">×</button>` : "";
 }
 
 // ---------- Grid ----------
