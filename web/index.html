@@ -87,10 +87,14 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .btitle{display:flex;flex-direction:column;gap:3px;min-width:0;position:relative}
 .btitle h1 span{color:var(--violet)}
 .btitle .tag{color:var(--muted);font-size:13px}
-.bmeta{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:6px;position:relative}
-.bnote{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;justify-content:flex-end;max-width:520px;text-align:right}
+.bmeta{margin-left:auto;display:flex;align-items:center;gap:10px;position:relative;flex-wrap:wrap}
+/* Sync result: its own row at the bottom of the banner, right-aligned under the icons. */
+.bnote{flex-basis:100%;position:relative;color:var(--muted);font-size:12.5px;line-height:1.45;display:flex;gap:8px;align-items:center;justify-content:flex-end;text-align:right;margin-top:-6px}
+.bnote[hidden]{display:none}
 .bnote.warn{color:var(--orange)}.bnote.err{color:var(--red)}
-.bnote .ibtn{width:22px;height:22px;flex:none}
+.bnote span{max-width:min(820px,75%)}
+.bnote .ibtn{width:24px;height:24px;flex:none}
+@media (max-width:640px){.bnote{justify-content:space-between;text-align:left;margin-top:0;padding-top:10px;border-top:1px dashed var(--line)}.bnote span{max-width:none}}
 .syncline .spin{width:10px;height:10px}
 .syncline{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .syncline .ibtn{width:30px;height:30px}
@@ -291,8 +295,8 @@ details.sec>div{margin-top:10px}
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng Claude trên máy tính, lấy gói mới trực tiếp từ muasamcong và phân tích; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="themeBtn" aria-label="Đổi giao diện sáng tối" title="Đổi giao diện sáng / tối"></button></div>
-      <div class="bnote" id="bnote" role="status" hidden></div>
     </div>
+    <div class="bnote" id="bnote" role="status" hidden></div>
   </header>
 
   <section class="kpis" id="kpis" aria-label="Số liệu chính"></section>
