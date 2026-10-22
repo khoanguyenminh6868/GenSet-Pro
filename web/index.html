@@ -939,7 +939,9 @@ const syncDoneNote = { at: "", base: undefined };
 function renderTop() {
   const f = state.feed;
   const dot = $("#sdot"), txt = $("#stext");
+  const sreq = state.syncreq, syncPending = !!sreq?.requestedAt && !(sreq.doneAt >= sreq.requestedAt);
   if (syncState.running) { dot.className = "dot busy"; txt.textContent = syncState.step || "Đang đồng bộ từ muasamcong..."; }
+  else if (syncPending) { dot.className = "dot busy"; txt.textContent = "Đang đồng bộ"; }
   else if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `Claude đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
   else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtBannerDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
   else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
@@ -962,11 +964,8 @@ function renderTop() {
   const sq = state.syncreq;
   // A sync that finished before the page loaded is old news: remember it and only announce later ones.
   if (state.syncreq !== undefined && syncDoneNote.base === undefined) syncDoneNote.base = sq?.doneAt || "";
-  if (sq?.requestedAt && !(sq.doneAt && sq.doneAt >= sq.requestedAt) && !syncState.running) {
-    // Waiting for the Windows worker: keep the loading note until its answer (or error) arrives.
-    an.insertAdjacentHTML("beforeend", h`<div style="margin-top:6px;display:grid;gap:6px">${raw(waitHtml("Đang đồng bộ từ muasamcong bằng Agent...", sq.requestedAt))}</div>`);
-  }
-  else if (sq?.doneAt && sq.doneAt !== syncDoneNote.base && sq.doneAt >= (sq.requestedAt || "") && syncDoneNote.at !== sq.doneAt) {
+  // While Agent syncs, the banner says "Đang đồng bộ" (see syncPending above).
+  if (sq?.doneAt && sq.doneAt !== syncDoneNote.base && sq.doneAt >= (sq.requestedAt || "") && syncDoneNote.at !== sq.doneAt) {
     // The answer arrived while the page was open: show it until Ẩn.
     syncDoneNote.at = sq.doneAt;
     syncState.note = sq.error
@@ -2235,7 +2234,6 @@ function syncErrorText(e) {
 async function refreshAll() {
   if (syncState.running) return;
   const btn = $("#refreshBtn"); btn.disabled = true;
-  const before = new Set(allTenders().map((t) => t._key));
   try {
     if (state.db) {
       const snap = await state.db.doc("feed/current").get();
@@ -2251,11 +2249,8 @@ async function refreshAll() {
       catch (e) { syncState.note = { kind: e instanceof SyncStop ? "warn" : "err", text: syncErrorText(e) }; }
       finally { syncState.running = false; syncState.step = ""; }
     } else {
-      const fresh = allTenders().filter((t) => !before.has(t._key)).length;
-      const closed = allTenders().filter((t) => tabOf(t) === "closed").length;
-      const asked = await requestMissingFiles();
-      toast(`Đã tải lại danh sách: ${fresh} gói mới, ${closed} gói đã đóng. Dữ liệu muasamcong lúc ${fmtDate(state.feed?.fetchedAt) || "?"}${asked ? `. Đang lấy tệp cho ${asked} gói, xong sẽ tự phân tích` : ""}`);
-      // No browser here (web version, phone): the Windows HSMT worker does the muasamcong sync on its next round.
+      await requestMissingFiles();
+      // No browser here (web version, phone): Agent does the muasamcong sync; the banner says "Đang đồng bộ" until it answers.
       if (!state.readOnly && state.db) {
         try { await saveRequests("syncreq", [{ key: "current" }]); syncState.note = null; }
         catch (e) { syncState.note = { kind: "err", text: "Không gửi được yêu cầu đồng bộ: " + (e?.message || "lỗi không rõ") }; }
