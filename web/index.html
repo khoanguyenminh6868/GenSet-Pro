@@ -1678,8 +1678,7 @@ function hsdtTabHtml(t) {
   if (!has) return h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
   const hsWait = workerReqPending("hsdtreq", t._key) ? waitHtml("Đang chờ Agent soạn HSDT tham khảo...", state.hsdtreq[t._key].requestedAt) : "";
   const hsErr = !hsWait && workerReqError("hsdtreq", t._key);
-  return busyNote(t._key, "hsdt") + hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<p class="muted small" style="margin:0">AI soạn bộ hồ sơ dự thầu tham khảo theo đúng gói này: đơn dự thầu, bảng đáp ứng kỹ thuật, bảo lãnh, năng lực, tiến độ, bảo hành và danh mục tài liệu. Thông tin riêng của công ty để trong [ngoặc vuông] để anh điền.</p>
-    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}">${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) : ""}</span></div>
+  return busyNote(t._key, "hsdt") + hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) : ""}</span></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
 // The reference bid is shown as the Word document it becomes. Every text is editable in place: data-h names the
