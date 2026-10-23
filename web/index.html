@@ -61,7 +61,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .btn.sm{padding:4px 9px;font-size:12.5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
-.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro [data-act],.ro #cmRun,.ro #cmSide,.ro #hsRun,.ro #bdRun,.ro #bdDrop,.ro #bdText,.ro #cmDrop,.ro #cmText,.ro #runQueueBtn{display:none!important}
+.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro [data-act],.ro #cmRun,.ro #cmSide,.ro #hsRun,.ro #cmDrop,.ro #cmText,.ro #runQueueBtn{display:none!important}
 .ro #dStage,.ro #dNote{pointer-events:none;opacity:.7}
 .ro [data-viewtext],.ext [data-openpdf]{display:none!important}
 .btn.green{background:var(--mint);border-color:var(--mint);color:#fff}
@@ -241,7 +241,8 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .tablewrap table{font-size:13px}
 .tablewrap tr:last-child td{border-bottom:0}
 ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
-details.sec{border-top:1px solid var(--line);padding-top:10px}
+details.sec,section.sec{border-top:1px solid var(--line);padding-top:10px}
+section.sec>h4{margin:0 0 10px;font-size:inherit;font-weight:600}
 details.sec summary{cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px}
 details.sec summary::before{content:"+";font-family:var(--f-mono);color:var(--violet);width:14px}
 details.sec[open] summary::before{content:"–"}
@@ -1241,7 +1242,7 @@ function renderDrawer(force = true) {
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
-  if (state.dtab === "info") { body.innerHTML = infoHtml(t); mountBidders(); }
+  if (state.dtab === "info") body.innerHTML = infoHtml(t);
   else if (state.dtab === "analysis") body.innerHTML = analysisTabHtml(t);
   else if (state.dtab === "translate") { body.innerHTML = translateTabHtml(t); loadTranslation(key); }
   else if (state.dtab === "hsdt") body.innerHTML = hsdtTabHtml(t);
@@ -1257,7 +1258,7 @@ function infoHtml(t) {
     </div>
     <div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
     <dl class="kv">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd>${v}</dd>`).join(""))}</dl>
-    ${raw(ownBidHtml(t))}${raw(["won", "lost"].includes(stageOf(t)) ? biddersHtml(t) : "")}
+    ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) ? biddersHtml(t) : "")}
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp tải từ muasamcong${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
@@ -1343,60 +1344,14 @@ function ownBidHtml(t) {
   return h`<div class="row"><span class="small" style="flex:1;min-width:200px">${bidLabel(t)} của mình: ${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></div>`;
 }
 // Other bidders and their prices: the Windows worker reads them from the bid-opening minutes and results pages
-// on muasamcong (bidders/<key>, source "muasamcong ..."); the user can still bring a screenshot or PDF.
+// on muasamcong (bidders/<key>, source "muasamcong ...").
 const OUR_RE = /thảo\s*nguyên/i;
-let bdPick = null;
 function biddersHtml(t) {
   const b = state.bidders[t._key], list = b?.list || [], n = t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin;
-  const table = list.length ? h`<div class="tablewrap"><table><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th><th>Giảm giá</th><th>Giá sau giảm</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num">${x.rank ?? i + 1}</td><td>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${x.note ? h`<div class="src">${x.note}</div>` : ""}</td><td class="num">${x.taxCode || ""}</td><td class="num">${fmtVnd(x.bidPrice)}</td><td class="num">${x.discount || ""}</td><td class="num">${fmtVnd(x.priceAfterDiscount)}</td></tr>`).join(""))}</tbody></table></div>
-    <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>` : "";
-  return h`<details class="sec" ${list.length ? "open" : ""}><summary>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : n ? ` (${n} nhà thầu)` : ""}</summary>
-    <div style="display:flex;flex-direction:column;gap:8px;padding-top:8px">
-    ${raw(table)}
-    <p class="muted small" style="margin:0">Tên và giá các nhà thầu nằm ở tab Biên bản mở thầu và tab Kết quả lựa chọn nhà thầu (có cả nhà thầu không được chọn). Agent tự lấy bảng này từ muasamcong sau khi mở thầu và cập nhật khi có kết quả. Nếu cần ngay, anh chụp màn hình hoặc tải PDF rồi đưa vào đây, AI sẽ đọc ra bảng.</p>
-    <div class="row">${raw(minutesLink(t, true) ? h`<a class="btn sm" href="${minutesLink(t, true)}" target="_blank" rel="noopener">Mở Kết quả lựa chọn nhà thầu ↗</a>` : "")}<a class="btn sm" href="${minutesLink(t) || tenderLink(t)}" target="_blank" rel="noopener">${minutesLink(t) ? "Mở Biên bản mở thầu ↗" : "Mở gói trên muasamcong ↗"}</a></div>
-    <div class="drop" id="bdDrop">
-      <div class="row"><span class="muted small" style="flex:1">Ảnh chụp biên bản mở thầu hoặc kết quả LCNT</span><label class="btn sm" for="bdFiles">Chọn tệp</label></div>
-      <input type="file" id="bdFiles" multiple accept=".pdf,.docx,.txt,image/*" hidden>
-      <div class="files" id="bdList"></div>
-    </div>
-    <textarea id="bdText" placeholder="Hoặc dán bảng nhà thầu và giá từ biên bản mở thầu..."></textarea>
-    <div class="row"><div class="spacer"></div><button class="btn primary" id="bdRun" data-key="${t._key}">${list.length ? "Nạp lại nhà thầu" : "Nạp nhà thầu"}</button></div>
-    <div id="bdOut"></div></div></details>`;
-}
-function mountBidders() { bdPick = $("#bdFiles") ? filePicker("bdFiles", "bdDrop", "bdList") : null; }
-const BIDDERS_SHAPE = `{"bidders":[{"rank":1,"name":"tên nhà thầu đầy đủ","taxCode":"mã số thuế hoặc rỗng","bidPrice":123456789,"discount":"tỷ lệ hoặc số tiền giảm giá, hoặc rỗng","priceAfterDiscount":123456789,"note":"ghi chú ngắn, hoặc rỗng"}]}`;
-async function runBidders(key) {
-  const out = $("#bdOut"), btn = $("#bdRun"), t = findTender(key);
-  if (!bdPick?.files.length && !$("#bdText").value.trim()) { out.innerHTML = h`<div class="note">Chọn ảnh/PDF biên bản mở thầu hoặc dán nội dung trước.</div>`; return; }
-  const sample = await getSample();
-  if (!sample) { out.innerHTML = noClaudeHtml(); return; }
-  btn.disabled = true;
-  try {
-    out.innerHTML = progress("Đang đọc biên bản...");
-    const lim = await sample.limits().catch(() => null);
-    const doc = await collectDocs(bdPick?.files || [], $("#bdText").value, "Biên bản mở thầu", lim?.images?.maxCount ?? 0);
-    if (!doc.text.trim() && !doc.images.length) throw new Error("Không đọc được nội dung tệp.");
-    const prompt = `Read this Vietnamese bid-opening record (biên bản mở thầu) or contractor selection result (kết quả lựa chọn nhà thầu, including bidders not selected) for tender ${t?.notifyNo || ""} "${t?.bidName || ""}" and list every bidder exactly as written: name, tax code (MST), bid price (giá dự thầu) in VND as an integer, discount (giảm giá) as written, and price after discount as an integer (equal to bidPrice when there is no discount). Keep the order of the record, or rank by price after discount if the record ranks them. Use null for a number that is not shown. Never invent bidders or prices. Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
-${BIDDERS_SHAPE}
-${doc.images.length ? `\nAttached images: ${doc.images.length} pages of the record.\n` : ""}
-${clip(doc.text, MAX_TEXT).text}`;
-    out.innerHTML = progress("AI đang đọc danh sách nhà thầu...");
-    const r = await sample.json(prompt, { modelTier: "complex", ...(doc.images.length ? { images: doc.images } : {}) });
-    const list = (r?.bidders || []).filter((x) => x?.name);
-    if (!list.length) throw new Error("AI không tìm thấy nhà thầu nào trong tài liệu này.");
-    const rec = { list, at: new Date().toISOString(), source: (bdPick?.files || []).map((f) => f.name).join(", ") || "nội dung dán" };
-    state.bidders = { ...state.bidders, [key]: rec };
-    await dbSet("bidders/" + key, rec);
-    // Our own row fills in the bid price when it is still missing.
-    const us = list.find((x) => OUR_RE.test(x.name));
-    const tr = state.tracked[key];
-    if (us && tr && !tr.bidPrice && (us.priceAfterDiscount || us.bidPrice)) await saveTracked(key, { ...tr, bidPrice: us.priceAfterDiscount || us.bidPrice, bidPriceSrc: "biên bản mở thầu", updatedAt: rec.at });
-    renderDrawer();
-    toast(`Đã nạp ${list.length} nhà thầu`);
-  } catch (e) {
-    out.innerHTML = h`<div class="note err">${e?.code ? sampleErrorText(e) : e?.message || "Không đọc được biên bản."}</div>`;
-  } finally { if (btn.isConnected) btn.disabled = false; }
+  const body = list.length ? h`<div class="tablewrap"><table><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th><th>Giảm giá</th><th>Giá sau giảm</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num">${x.rank ?? i + 1}</td><td>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${x.note ? h`<div class="src">${x.note}</div>` : ""}</td><td class="num">${x.taxCode || ""}</td><td class="num">${fmtVnd(x.bidPrice)}</td><td class="num">${x.discount || ""}</td><td class="num">${fmtVnd(x.priceAfterDiscount)}</td></tr>`).join(""))}</tbody></table></div>
+    <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>`
+    : h`<div class="muted small">Chưa có biên bản mở thầu${n ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""}.</div>`;
+  return h`<section class="sec"><h4>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : ""}</h4>${raw(body)}</section>`;
 }
 function analysisTabHtml(t) {
   const s = analysisState(t), a = analysisOf(t._key);
@@ -1965,7 +1920,6 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "trRun") { runTranslate(e.target.dataset.key, +(e.target.dataset.resume || 0)); return; }
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
   if (e.target.id === "cmAccepted") { askAccept(e.target.dataset.key); return; }
-  if (e.target.id === "bdRun") { runBidders(e.target.dataset.key); return; }
   if (e.target.id === "hfFetch") { requestRefetch(e.target.dataset.key); return; }
   if (e.target.id === "hfCancel") { requestRefetch(e.target.dataset.key, true); return; }
   if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
