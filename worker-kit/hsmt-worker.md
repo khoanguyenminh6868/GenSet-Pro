@@ -1,6 +1,6 @@
 # HSMT worker - one round
 
-Approved by Khoa Nguyen on 2026-10-21. Runs as the Claude desktop task "hsmt-worker" on this second PC. Since 2026-10-22 it runs automatically every day at 10:00 and 15:00 (local time), and also whenever Khoa clicks Run now, at any hour.
+Approved by Khoa Nguyen on 2026-10-21. Runs as the Claude desktop task "hsmt-worker" on this second PC. Since 2026-10-22 it runs automatically at 10:00 and 15:00 (local time), Monday to Friday only since 2026-10-23,, and also whenever Khoa clicks Run now, at any hour.
 On 2026-10-22 Khoa added step 2 (find new tenders on muasamcong) and step 5 (analyse them), and lifted the old rule against using muasamcong's search. reCAPTCHA is still never bypassed or solved.
 Also on 2026-10-22 Khoa moved the worker off the claude.ai artifact: everything is read from and written to the Vercel web version (https://genset-pro-web.vercel.app, data in Supabase), and tender files live on GitHub Releases. Do not use the artifact or ArtifactData any more.
 
