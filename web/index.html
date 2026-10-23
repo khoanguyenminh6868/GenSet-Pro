@@ -1790,7 +1790,7 @@ function compareTabHtml(t) {
       <div class="files" id="cmList"></div>
     </div>
     <textarea id="cmText" placeholder="Hoặc dán bảng đáp ứng kỹ thuật, catalogue, báo giá..."></textarea>
-    <div class="row"><div class="spacer"></div><button class="btn primary" id="cmRun" data-key="${t._key}">Đối chiếu</button>${raw(sideBtns(t._key))}</div>
+    <div class="row"><div class="spacer"></div><button class="btn primary" id="cmRun" data-key="${t._key}" ${cmWait ? "disabled" : ""}>Đối chiếu</button>${raw(sideBtns(t._key))}</div>
     <div id="cmOut">${raw(prev?.result ? h`<div class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.accepted ? " · đã đánh dấu là đã đối chiếu" : ""}</div>` + comparisonHtml(prev.result) : "")}</div>`;
 }
 // Mismatches left after a comparison: fix and compare again, or accept it as compared.
