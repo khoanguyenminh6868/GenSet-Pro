@@ -141,6 +141,7 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .thf.on{color:var(--brand);background:rgba(255,204,0,.18)}
 .fpop{position:fixed;z-index:60;width:260px;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:12px;display:flex;flex-direction:column;gap:10px}
 .fpop select,.fpop input{width:100%}
+.fchks{display:flex;flex-direction:column;gap:2px;max-height:260px;overflow:auto}.fchk{display:flex;align-items:center;gap:8px;padding:4px 2px;font-size:13px;cursor:pointer}.fpop .fchk input{width:auto}
 .tlink{text-decoration:none}
 .tlink:hover{text-decoration:underline}
 td.noc{min-width:170px}
@@ -1130,7 +1131,7 @@ function passFilters(t) {
   for (const c of COLS) {
     const f = (state.filters[c.k] || "").trim();
     if (!f) continue;
-    if (c.k === "stage" && f === NOT_ANALYZED) { if (analysisState(t) === "done") return false; continue; }
+    if (c.k === "stage") { if (!f.split("|").some((x) => x === NOT_ANALYZED ? analysisState(t) !== "done" : colText(c, t) === x)) return false; continue; }
     if (c.pick) { if (colText(c, t) !== f) return false; continue; }
     if (c.num) { const r = numMatch(c.numOf ? c.numOf(t) : c.val(t), f); if (r === false) return false; if (r === true) continue; }
     if (!fold(colText(c, t)).includes(fold(f))) return false;
@@ -1158,7 +1159,7 @@ function renderGrid() {
     const sorted = state.sort.col === c.k;
     return h`<th class="h-${c.k}" aria-sort="${sorted ? (state.sort.dir > 0 ? "ascending" : "descending") : "none"}"><div class="thc">
       <button class="thsort" data-sort="${c.k}" title="Bấm để sắp xếp">${c.label}${raw(sorted ? `<span class="arw">${state.sort.dir > 0 ? "▲" : "▼"}</span>` : "")}</button>
-      <button class="thf ${on ? "on" : ""}" data-fcol="${c.k}" aria-label="Lọc ${c.label}" title="${on ? "Đang lọc: " + state.filters[c.k] : "Lọc cột này"}">${raw(FUNNEL)}</button></div></th>`;
+      <button class="thf ${on ? "on" : ""}" data-fcol="${c.k}" aria-label="Lọc ${c.label}" title="${on ? "Đang lọc: " + state.filters[c.k].split("|").join(", ") : "Lọc cột này"}">${raw(FUNNEL)}</button></div></th>`;
   }).join("");
   const shown = items.slice(0, state.limit);
   const del = canDelete();
@@ -1211,7 +1212,10 @@ function openFilter(k, btn) {
   const pool = allTenders().filter((t) => (state.stage === "all" || tabOf(t) === state.stage));
   const opts = [...new Set(pool.map((t) => colText(c, t)).filter(Boolean))].sort((a, b) => a.localeCompare(b, "vi"));
   if (k === "stage") opts.push(NOT_ANALYZED);
-  pop.innerHTML = h`<div class="eyebrow">Lọc: ${c.label}</div>${raw(c.pick
+  const multi = k === "stage", chosen = v.split("|");
+  pop.innerHTML = h`<div class="eyebrow">Lọc: ${c.label}</div>${raw(multi
+    ? `<div class="fchks">${opts.map((o) => h`<label class="fchk"><input type="checkbox" class="fchkbox" value="${o}" ${chosen.includes(o) ? "checked" : ""}> <span>${o}</span></label>`).join("")}</div>`
+    : c.pick
     ? h`<select id="fval"><option value="">Tất cả</option>${raw(opts.map((o) => h`<option ${o === v ? "selected" : ""}>${o}</option>`).join(""))}</select>`
     : h`<input type="search" id="fval" value="${v}" placeholder="${c.num ? "vd >400 hoặc 100-500 (" + c.numUnit + ")" : "Gõ để lọc..."}">`)}
     <div class="row"><button class="btn sm" id="fclear">Bỏ lọc</button><div class="spacer"></div><button class="btn sm primary" id="fok">Xong</button></div>`;
@@ -1219,7 +1223,7 @@ function openFilter(k, btn) {
   const r = btn.getBoundingClientRect();
   pop.style.top = Math.min(innerHeight - 140, r.bottom + 6) + "px";
   pop.style.left = Math.max(8, Math.min(innerWidth - 268, r.left - 120)) + "px";
-  $("#fval").focus();
+  $("#fval")?.focus();
 }
 const closeFilter = () => { $("#fpop").hidden = true; };
 function applyFilter(val) { const k = $("#fpop").dataset.col; state.filters[k] = val; state.limit = pageSize(); renderGrid(); }
@@ -2056,6 +2060,7 @@ document.addEventListener("input", (e) => {
 document.addEventListener("change", (e) => {
   const k = e.target.dataset?.filter;
   if (k && e.target.tagName === "SELECT") { state.filters[k] = e.target.value; renderGrid(); }
+  if (e.target.classList?.contains("fchkbox")) { applyFilter([...document.querySelectorAll("#fpop .fchkbox:checked")].map((x) => x.value).join("|")); return; }
   if (e.target.id === "fval" && e.target.tagName === "SELECT") { applyFilter(e.target.value); closeFilter(); }
   if (e.target.id === "dStage" && state.open) setStage(state.open, e.target.value);
   if (e.target.id === "dNote" && state.open) {
