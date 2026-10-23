@@ -12,7 +12,7 @@ try { const t = localStorage.getItem("genbid-theme"); if (t === "light" || t ===
 /* Layout: one dense operations column (banner, KPI row, status tabs, tender grid) with a right-side drawer per tender. Dark-first, after the Incident Control Center. */
 :root{
   --bg:#0b1020;--panel:#121a2e;--panel2:#17213a;--line:#24304d;--rule:#3e4f78;--fg:#e6eaf5;--muted:#8d98b5;--dim:#5e6a88;
-  --violet:#8b7cf6;--mint:#34d399;--amber:#fbbf24;--rose:#fb7185;--orange:#fb923c;--cyan:#22d3ee;--blue:#60a5fa;
+  --brand:#ffcc00;--violet:#8b7cf6;--mint:#34d399;--amber:#fbbf24;--rose:#fb7185;--orange:#fb923c;--cyan:#22d3ee;--blue:#60a5fa;
   --violet-soft:rgba(139,124,246,.16);--mint-soft:rgba(52,211,153,.14);--rose-soft:rgba(251,113,133,.14);--amber-soft:rgba(251,191,36,.14);--cyan-soft:rgba(34,211,238,.12);
   --banner-a:#151d36;--banner-b:#0f1529;--wave:rgba(139,124,246,.35);
   --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 8px 24px rgba(0,0,0,.25);
@@ -22,13 +22,13 @@ try { const t = localStorage.getItem("genbid-theme"); if (t === "light" || t ===
 }
 @media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
   --bg:#f4f5fa;--panel:#ffffff;--panel2:#f0f2f9;--line:#dde1ee;--rule:#aab3cc;--fg:#141a2c;--muted:#5b6582;--dim:#8a93ad;
-  --violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
+  --brand:#d19a00;--violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
   --violet-soft:rgba(109,92,232,.10);--mint-soft:rgba(5,150,105,.10);--rose-soft:rgba(225,29,72,.09);--amber-soft:rgba(183,121,31,.12);--cyan-soft:rgba(8,145,178,.10);
   --banner-a:#ffffff;--banner-b:#eef0fa;--wave:rgba(109,92,232,.28);
   --shadow:0 1px 2px rgba(20,26,44,.06),0 6px 18px rgba(20,26,44,.06);color-scheme:light}}
 :root[data-theme="light"]{
   --bg:#f4f5fa;--panel:#ffffff;--panel2:#f0f2f9;--line:#dde1ee;--rule:#aab3cc;--fg:#141a2c;--muted:#5b6582;--dim:#8a93ad;
-  --violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
+  --brand:#d19a00;--violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
   --violet-soft:rgba(109,92,232,.10);--mint-soft:rgba(5,150,105,.10);--rose-soft:rgba(225,29,72,.09);--amber-soft:rgba(183,121,31,.12);--cyan-soft:rgba(8,145,178,.10);
   --banner-a:#ffffff;--banner-b:#eef0fa;--wave:rgba(109,92,232,.28);
   --shadow:0 1px 2px rgba(20,26,44,.06),0 6px 18px rgba(20,26,44,.06);color-scheme:light}
@@ -125,8 +125,8 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .seg button+button{border-left:1px solid var(--line)}
 .seg button[aria-selected="true"]{background:var(--violet-soft);color:var(--fg);font-weight:600}
 .seg .c{font:600 11.5px var(--f-mono)}
-.seg .c:not([class*="st-"]){color:var(--dim)}
-.seg button[aria-selected="true"] .c:not([class*="st-"]){color:var(--violet)}
+.seg .c:not([class*="st-"]){color:var(--brand)}
+.seg button[aria-selected="true"] .c:not([class*="st-"]){color:var(--brand)}
 
 /* Grid */
 .gridcard{padding:0;overflow:hidden}
@@ -135,10 +135,10 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .thc{display:flex;align-items:center;gap:4px}
 .thsort{border:0;background:none;padding:0;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;white-space:nowrap;text-align:left}
 .thsort:hover{color:var(--fg)}
-.thf{border:0;background:none;padding:3px;border-radius:5px;color:var(--dim);display:inline-grid;place-items:center}
+.thf{border:0;background:none;padding:3px;border-radius:5px;color:var(--brand);display:inline-grid;place-items:center}
 .thf svg{width:13px;height:13px}
 .thf:hover{color:var(--fg);background:var(--panel2)}
-.thf.on{color:var(--violet);background:var(--violet-soft)}
+.thf.on{color:var(--brand);background:rgba(255,204,0,.18)}
 .fpop{position:fixed;z-index:60;width:260px;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:12px;display:flex;flex-direction:column;gap:10px}
 .fpop select,.fpop input{width:100%}
 .tlink{text-decoration:none}
@@ -174,7 +174,7 @@ table.grid{min-width:1060px;font-size:13px}
 td.capc{white-space:normal!important;min-width:120px;max-width:190px}
 table.grid th.sortable{cursor:pointer;user-select:none}
 table.grid th.sortable:hover{color:var(--fg)}
-table.grid th .arw{color:var(--violet);margin-left:4px}
+table.grid th .arw{color:var(--brand);margin-left:4px}
 table.grid .flt input,table.grid .flt select{width:100%;min-width:80px;font-size:12.5px;padding:4px 7px}
 table.grid tbody tr{cursor:pointer}
 table.grid tbody tr:hover td{background:var(--panel2)}
@@ -1003,10 +1003,10 @@ ${tenderCtx(t)}${sc.images.length ? `Kèm theo ${sc.images.length} ảnh trang h
 // ---------- Banner, KPIs, tabs ----------
 const REFRESH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>';
 const KPIS = [
-  { key: "open", l: "Đang mở", s: "gói còn hạn nộp", c: "var(--violet)", f: (t) => !isClosed(t) && !["dropped", "lost", "won"].includes(stageOf(t)) },
+  { key: "open", l: "Đang mở", s: "gói còn hạn nộp", c: "var(--cyan)", f: (t) => !isClosed(t) && !["dropped", "lost", "won"].includes(stageOf(t)) },
   { key: "soon", l: "Đóng trong 3 ngày", s: "chưa nộp", c: "var(--orange)", f: (t) => { const tl = timeLeft(t.bidCloseDate); return !!tl && tl.urgent && !["dropped", "lost", "won", "submitted"].includes(stageOf(t)); } },
   { key: "done", l: "Đã phân tích", s: "", c: "var(--mint)", f: (t) => analysisState(t) === "done" },
-  { key: "prep", l: "Chuẩn bị HSDT", s: "đối chiếu trong từng gói", c: "var(--cyan)", f: (t) => tabOf(t) === "preparing" },
+  { key: "prep", l: "Chuẩn bị HSDT", s: "đối chiếu trong từng gói", c: "var(--violet)", f: (t) => tabOf(t) === "preparing" },
 ];
 const syncDoneNote = { at: "", base: undefined };
 function renderTop() {
