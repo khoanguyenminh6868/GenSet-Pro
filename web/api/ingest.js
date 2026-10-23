@@ -8,9 +8,10 @@ import { SB_URL } from "./_supabase.js";
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // hsmt + hsmttext: the file list and text the worker reads from the files itself (the hsmt-inbox Action writes the same).
 // bidders + portalids: bidders and prices the worker reads from the bid-opening minutes and results on muasamcong.
-// translationreq + comparereq: the answers to the page's "Tạo bản tiếng Anh" and "Đối chiếu" requests.
-const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "analysisreq", "hsmtreq", "hsmt", "hsmttext", "bidders", "portalids", "translationreq", "comparereq"]);
-const REQS = new Set(["analysisreq", "hsmtreq", "translationreq", "comparereq"]);
+// translationreq + comparereq + hsdtreq (+ hsdt): the answers to the page's "Tạo bản tiếng Anh", "Đối chiếu" and
+// "Tạo HSDT tham khảo" requests.
+const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "analysisreq", "hsmtreq", "hsmt", "hsmttext", "bidders", "portalids", "translationreq", "comparereq", "hsdtreq", "hsdt"]);
+const REQS = new Set(["analysisreq", "hsmtreq", "translationreq", "comparereq", "hsdtreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 
@@ -42,7 +43,7 @@ export default async function handler(req, res) {
   // Same for a "Phân tích" or "Lấy lại tệp" pressed again while the worker was busy (the bot also posts
   // hsmtreq/analysisreq with an error when a round left a request unanswered).
   const newerReq = new Set();
-  for (const coll of ["analysisreq", "hsmtreq", "translationreq", "comparereq"]) {
+  for (const coll of ["analysisreq", "hsmtreq", "translationreq", "comparereq", "hsdtreq"]) {
     const areq = rows.filter((r) => r.coll === coll);
     if (!areq.length) continue;
     const ids = areq.map((r) => `"${r.id}"`).join(",");
