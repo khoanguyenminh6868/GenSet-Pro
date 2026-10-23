@@ -2305,7 +2305,7 @@ async function syncPortal(m) {
   const feedChanged = isNew.length || changed.length || dropped.length;
   if (feedChanged) await saveFeed();
   // Full notice details and a first analysis, a few tenders per sync.
-  const todo = [...next.filter((t) => isGenset(t) && isNew.some((f) => f.notifyNo === t.notifyNo)), ...bare].slice(0, SYNC_DETAIL_MAX);
+  const todo = [...next.filter((t) => isNew.some((f) => f.notifyNo === t.notifyNo)), ...bare].slice(0, SYNC_DETAIL_MAX);
   let analysed = 0, detailsChanged = false;
   for (const [i, t] of todo.entries()) {
     const key = safeId(t.notifyNo);
@@ -2316,6 +2316,7 @@ async function syncPortal(m) {
     if (n.estimatedPrice && e.estimatedPrice == null) { e.estimatedPrice = n.estimatedPrice; detailsChanged = true; }
     await dbSet("notice/" + key, { notifyNo: t.notifyNo, info: n.info, hsmtList: n.list, chapters: n.chapters, at: new Date().toISOString() });
     // Ask the Windows worker for the HSMT files.
+    if (!isGenset(t)) continue; // listed with its notice details only; files and analysis on request
     if (!reqState(key)) { const rec = { notifyNo: t.notifyNo, sourceUrl: tenderLink(t), bidName: t.bidName || "", requestedAt: new Date().toISOString(), by: "sync" }; if (await dbSet("hsmtreq/" + key, rec)) state.hsmtreq = { ...state.hsmtreq, [key]: rec }; }
     syncStep(`AI đang phân tích sơ bộ ${t.notifyNo} (${i + 1}/${todo.length})...`);
     if (await analyzeNotice(key, { ...t, _key: key }, n)) analysed++;
