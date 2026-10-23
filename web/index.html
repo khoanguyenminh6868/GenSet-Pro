@@ -243,6 +243,17 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .tablewrap table{font-size:13px}
 .tablewrap tr:last-child td{border-bottom:0}
 ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.trdoc{background:#fff;color:#1b1f2a;border:1px solid var(--line);border-radius:8px;padding:28px 32px;max-width:860px;font:13.5px/1.55 "DejaVu Sans",system-ui,-apple-system,"Segoe UI",sans-serif;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.trdoc .trtitle{font-size:20px;font-weight:700;margin-bottom:4px}
+.trdoc .trmeta{font-size:11.5px;color:#5a6172;margin-top:4px}
+.trdoc .trhead{border-bottom:1px solid #e3e6ee;padding-bottom:12px;margin-bottom:6px}
+.trdoc .trbody{outline:none}
+.trdoc h3{font-size:15px;font-weight:700;margin:16px 0 4px}
+.trdoc ul{margin:0;padding-left:22px}
+.trdoc li{margin:2px 0}
+.trdoc .trbody[contenteditable="true"] h3:focus,.trdoc .trbody[contenteditable="true"]:focus-within{background:none}
+.trdoc .trbody[contenteditable="true"]:hover{box-shadow:inset 0 0 0 1px #e3e6ee;border-radius:4px}
+@media (max-width:640px){.trdoc{padding:16px}}
 details.sec,section.sec{border-top:1px solid var(--line);padding-top:10px}
 section.sec>h4{margin:0 0 10px;font-size:inherit;font-weight:600}
 details.sec summary{cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px}
@@ -1382,7 +1393,7 @@ function biddersHtml(t) {
 function analysisTabHtml(t) {
   const s = analysisState(t), a = analysisOf(t._key);
   const head = s === "done"
-    ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>${raw((a.notes || []).map((n) => h`<div class="note warn">${n}</div>`).join(""))}`
+    ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>`
     : s === "running" ? progress("AI đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
     : s === "requested" ? (Date.now() < areqNoteUntil
       ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
@@ -1501,10 +1512,28 @@ function textToSecs(text) {
   }
   return secs;
 }
+// The English brief is shown and edited as the PDF page it becomes: title, tender line, then each section's
+// heading and its points. Typing edits it in place; Enter in a point adds the next point.
 function trHtml(secs, busy, text) {
-  return h`<div class="field"><label for="trEdit">Nội dung tiếng Anh. Sửa trực tiếp trước khi tải PDF: dòng bắt đầu bằng ## là tiêu đề mục, dòng bắt đầu bằng - là một ý.</label>
-    <textarea id="trEdit" class="mono" style="min-height:52vh;font-size:12.5px" ${busy ? "readonly" : ""}>${text ?? secsToText(secs)}</textarea>
-    <div class="muted small" id="trSaved"></div></div>`;
+  const t = findTender(state.open), list = text ? textToSecs(text) : secs;
+  const body = list.map((x) => h`<h3>${x.heading}</h3><ul>${raw((x.points || []).map((p) => h`<li>${p}</li>`).join("") || "<li></li>")}</ul>`).join("");
+  return h`<div class="row" style="margin-bottom:8px"><span class="muted small" style="flex:1;min-width:200px">Bấm vào chữ để sửa trước khi tải PDF. Enter để thêm ý mới.</span>${raw(busy ? "" : '<button class="btn sm" id="trAddSec">Thêm mục</button>')}</div>
+    <div class="trdoc"><div class="trhead"><div class="trtitle">Technical Requirements (key points)</div><div>${t?.bidName || ""}</div>
+      <div class="trmeta">Notice no. ${t?.notifyNo || "-"} · Bid closing ${fmtDate(t?.bidCloseDate) || "-"} · Source: muasamcong.mof.gov.vn</div></div>
+      <div class="trbody" id="trEdit" contenteditable="${busy ? "false" : "true"}" spellcheck="false">${raw(body)}</div></div>
+    <div class="muted small" id="trSaved"></div>`;
+}
+// Sections back from the page: a heading starts a section; points are the list items (or any other line under it).
+function trFromDoc() {
+  const el = $("#trEdit"), secs = [];
+  if (!el) return null;
+  for (const n of el.children) {
+    if (n.tagName === "H3") { secs.push({ heading: n.textContent.trim(), points: [] }); continue; }
+    const items = n.tagName === "UL" || n.tagName === "OL" ? [...n.querySelectorAll("li")].map((li) => li.textContent.trim()) : [n.textContent.trim()];
+    if (!secs.length) secs.push({ heading: "", points: [] });
+    secs[secs.length - 1].points.push(...items.filter(Boolean));
+  }
+  return secs.filter((x) => x.heading || x.points.length);
 }
 let trSaveTimer = null;
 function saveTrEdit(key, text) {
@@ -1581,7 +1610,7 @@ ${images.length ? "The text is in the attached page images." : `\nTEXT (part ${i
   } finally { btn.disabled = false; }
 }
 async function translationPdf(key) {
-  const t = findTender(key), secs = $("#trEdit") ? textToSecs($("#trEdit").value) : trState[key] || [];
+  const t = findTender(key), secs = trFromDoc() || trState[key] || [];
   const info = $("#trInfo"); info.textContent = "Đang tạo PDF...";
   try {
     const [{ jsPDF }, f] = await Promise.all([loadLib("jspdf"), fonts()]);
@@ -1961,6 +1990,7 @@ document.addEventListener("click", async (e) => {
     } catch { box.innerHTML = h`<div class="note err">Không tải được nội dung, hãy thử lại.</div>`; }
     return;
   }
+  if (e.target.id === "trAddSec") { const el = $("#trEdit"); el.insertAdjacentHTML("beforeend", "<h3>New section</h3><ul><li></li></ul>"); const h3 = el.lastElementChild.previousElementSibling; h3.focus(); getSelection().selectAllChildren(h3); saveTrEdit(state.open, secsToText(trFromDoc() || [])); return; }
   if (e.target.id === "trRun") { runTranslate(e.target.dataset.key, +(e.target.dataset.resume || 0)); return; }
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
   if (e.target.id === "cmAccepted") { askAccept(e.target.dataset.key); return; }
@@ -1973,7 +2003,7 @@ document.addEventListener("input", (e) => {
   if (k && e.target.tagName === "INPUT") { state.filters[k] = e.target.value; renderGrid(); }
   if (e.target.id === "q") { state.limit = pageSize(); renderGrid(); }
   if (e.target.id === "fval" && e.target.tagName === "INPUT") applyFilter(e.target.value);
-  if (e.target.id === "trEdit" && state.open) saveTrEdit(state.open, e.target.value);
+  if (e.target.closest?.("#trEdit") && state.open) saveTrEdit(state.open, secsToText(trFromDoc() || []));
 });
 document.addEventListener("change", (e) => {
   const k = e.target.dataset?.filter;
