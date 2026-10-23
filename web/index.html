@@ -254,6 +254,21 @@ ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
 .trdoc .trbody[contenteditable="true"] h3:focus,.trdoc .trbody[contenteditable="true"]:focus-within{background:none}
 .trdoc .trbody[contenteditable="true"]:hover{box-shadow:inset 0 0 0 1px #e3e6ee;border-radius:4px}
 @media (max-width:640px){.trdoc{padding:16px}}
+.hsdoc{background:#fff;color:#111;border:1px solid var(--line);border-radius:8px;padding:32px 40px;max-width:860px;font:14.5px/1.55 "Times New Roman",Times,serif;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hsdoc .hstitle{text-align:center;font-size:20px;font-weight:700;margin-bottom:6px}
+.hsdoc .hscenter{text-align:center;margin-bottom:4px}
+.hsdoc h3{font-size:16px;font-weight:700;margin:18px 0 6px}
+.hsdoc p{margin:0 0 8px;white-space:pre-wrap}
+.hsdoc .hswarn{color:#7a4b00}
+.hsdoc ul{list-style:none;padding-left:4px;margin:0}
+.hsdoc li{margin:3px 0}
+.hsdoc table{border-collapse:collapse;width:100%;font-size:13.5px}
+.hsdoc th,.hsdoc td{border:1px solid #9aa0ad;padding:5px 7px;vertical-align:top;color:#111;background:#fff}
+.hsdoc th{background:#f1f2f5}
+.hsdoc [contenteditable="true"]{outline:none;border-radius:3px}
+.hsdoc [contenteditable="true"]:hover{box-shadow:0 0 0 1px #e3e6ee}
+.hsdoc [contenteditable="true"]:focus{box-shadow:0 0 0 2px #c7d7ff}
+@media (max-width:640px){.hsdoc{padding:16px}}
 details.sec,section.sec{border-top:1px solid var(--line);padding-top:10px}
 section.sec>h4{margin:0 0 10px;font-size:inherit;font-weight:600}
 details.sec summary{cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px}
@@ -1515,11 +1530,10 @@ function textToSecs(text) {
 // The English brief is shown and edited as the PDF page it becomes: title, tender line, then each section's
 // heading and its points. Typing edits it in place; Enter in a point adds the next point.
 function trHtml(secs, busy, text) {
-  const t = findTender(state.open), list = text ? textToSecs(text) : secs;
+  const list = text ? textToSecs(text) : secs;
   const body = list.map((x) => h`<h3>${x.heading}</h3><ul>${raw((x.points || []).map((p) => h`<li>${p}</li>`).join("") || "<li></li>")}</ul>`).join("");
   return h`<div class="row" style="margin-bottom:8px"><span class="muted small" style="flex:1;min-width:200px">Bấm vào chữ để sửa trước khi tải PDF. Enter để thêm ý mới.</span>${raw(busy ? "" : '<button class="btn sm" id="trAddSec">Thêm mục</button>')}</div>
-    <div class="trdoc"><div class="trhead"><div class="trtitle">Technical Requirements (key points)</div><div>${t?.bidName || ""}</div>
-      <div class="trmeta">Notice no. ${t?.notifyNo || "-"} · Bid closing ${fmtDate(t?.bidCloseDate) || "-"} · Source: muasamcong.mof.gov.vn</div></div>
+    <div class="trdoc"><div class="trhead"><div class="trtitle">Technical Requirement</div></div>
       <div class="trbody" id="trEdit" contenteditable="${busy ? "false" : "true"}" spellcheck="false">${raw(body)}</div></div>
     <div class="muted small" id="trSaved"></div>`;
 }
@@ -1625,9 +1639,7 @@ async function translationPdf(key) {
       for (const ln of lines) { need(lh); doc.text(ln, M + indent, y + lh * 0.8); y += lh; }
       y += gap;
     };
-    text("Technical Requirements (key points)", 16, true, 2);
-    text(`${t?.bidName || ""}`, 10.5, false, 1);
-    text(`Notice no. ${t?.notifyNo || "-"} · Bid closing ${fmtDate(t?.bidCloseDate) || "-"} · Source: muasamcong.mof.gov.vn`, 9, false, 5);
+    text("Technical Requirement", 16, true, 5);
     for (const s of secs) {
       need(12); text(s.heading, 12, true, 1.5);
       for (const p of s.points || []) { need(6); doc.setFont("DejaVu", "normal"); doc.setFontSize(10); doc.text("•", M + 1, y + 3.4); text(p, 10, false, 1.2, 5); }
@@ -1659,16 +1671,38 @@ function hsdtTabHtml(t) {
     <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}">${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) : ""}</span></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
+// The reference bid is shown as the Word document it becomes. Every text is editable in place: data-h names the
+// field of the result it belongs to, and edits are saved back into hsdt/<key> (Tải Word uses the edited result).
 function hsdtHtml(r) {
-  return h`<div class="panel" style="display:flex;flex-direction:column;gap:14px">
-    <p style="margin:0">${r.summary || ""}</p>
-    ${raw((r.warnings || []).map((w) => h`<div class="note warn">${w}</div>`).join(""))}
-    ${raw((r.sections || []).map((s) => h`<details class="sec" open><summary>${s.title}</summary><div style="display:flex;flex-direction:column;gap:8px">
-      ${raw((s.paragraphs || []).map((p) => h`<p style="margin:0;white-space:pre-wrap">${p}</p>`).join(""))}
-      ${raw(s.table?.rows?.length ? h`<div class="tablewrap"><table><thead><tr>${raw((s.table.headers || []).map((x) => h`<th>${x}</th>`).join(""))}</tr></thead><tbody>${raw(s.table.rows.map((row) => `<tr>${row.map((c) => h`<td>${c}</td>`).join("")}</tr>`).join(""))}</tbody></table></div>` : "")}
-    </div></details>`).join(""))}
-    <details class="sec" open><summary>Danh mục hồ sơ cần chuẩn bị (${(r.checklist || []).length})</summary><div><ul class="clean">${raw((r.checklist || []).map((c) => h`<li>${raw(c.required ? '<b style="color:var(--rose)">Bắt buộc</b> · ' : "")}${c.document}${raw(c.note ? h` <span class="muted small">(${c.note})</span>` : "")}</li>`).join(""))}</ul></div></details>
-  </div>`;
+  const t = findTender(state.open);
+  const ed = (path, text, tag = "div", cls = "") => h`<${raw(tag)} class="${cls}" contenteditable="true" spellcheck="false" data-h="${path}">${text ?? ""}</${raw(tag)}>`;
+  return h`<div class="muted small" style="margin-bottom:8px">Bấm vào chữ để sửa trước khi tải Word. Chỗ trong [ngoặc vuông] là thông tin của công ty cần điền.</div>
+    <div class="hsdoc">
+      <div class="hstitle">HỒ SƠ DỰ THẦU (BẢN THAM KHẢO)</div>
+      <div class="hscenter"><b>${t?.bidName || ""}</b></div>
+      <div class="hscenter">Số TBMT: ${t?.notifyNo || "—"} · Chủ đầu tư: ${t?.investorName || "—"} · Đóng thầu: ${fmtDate(t?.bidCloseDate) || "—"}</div>
+      ${raw(ed("summary", r.summary, "p"))}
+      ${raw((r.warnings || []).map((w, i) => h`<p class="hswarn"><i>Lưu ý: </i>${raw(ed("warnings." + i, w, "span"))}</p>`).join(""))}
+      ${raw((r.sections || []).map((x, si) => h`${raw(ed(`sections.${si}.title`, x.title, "h3"))}
+        ${raw((x.paragraphs || []).map((p, pi) => ed(`sections.${si}.paragraphs.${pi}`, p, "p")).join(""))}
+        ${raw(x.table?.rows?.length ? h`<div class="tablewrap"><table><thead><tr>${raw((x.table.headers || []).map((c, ci) => h`<th>${raw(ed(`sections.${si}.table.headers.${ci}`, c, "div"))}</th>`).join(""))}</tr></thead><tbody>${raw(x.table.rows.map((row, ri) => `<tr>${row.map((c, ci) => h`<td>${raw(ed(`sections.${si}.table.rows.${ri}.${ci}`, c, "div"))}</td>`).join("")}</tr>`).join(""))}</tbody></table></div>` : "")}`).join(""))}
+      <h3>Danh mục hồ sơ cần chuẩn bị</h3>
+      <ul>${raw((r.checklist || []).map((c, i) => h`<li>☐ ${raw(ed(`checklist.${i}.document`, c.document, "span"))}${raw(c.required ? " <b>(bắt buộc)</b>" : "")}${raw(c.note ? h` – ${raw(ed(`checklist.${i}.note`, c.note, "span"))}` : "")}</li>`).join(""))}</ul>
+    </div>
+    <div class="muted small" id="hsSaved"></div>`;
+}
+// One edited field back into the stored reference bid (path like "sections.2.table.rows.0.1").
+let hsSaveTimer = null;
+function saveHsEdit(key, path, text) {
+  const rec = state.hsdt[key];
+  if (!rec?.result) return;
+  const parts = path.split("."), last = parts.pop();
+  let o = rec.result;
+  for (const p of parts) { o = o?.[/^\d+$/.test(p) ? +p : p]; if (o == null) return; }
+  o[/^\d+$/.test(last) ? +last : last] = text;
+  clearTimeout(hsSaveTimer);
+  if ($("#hsSaved")) $("#hsSaved").textContent = "Đang lưu...";
+  hsSaveTimer = setTimeout(async () => { const ok = await dbSet("hsdt/" + key, { ...rec, editedAt: new Date().toISOString() }); if ($("#hsSaved")) $("#hsSaved").textContent = ok ? "Đã lưu chỉnh sửa." : "Chưa lưu được chỉnh sửa."; }, 800);
 }
 async function runHsdt(key) { busyStart(key, "hsdt"); try { await runHsdt0(key); } finally { busyEnd(key, "hsdt"); } }
 async function runHsdt0(key) {
@@ -2004,6 +2038,8 @@ document.addEventListener("input", (e) => {
   if (e.target.id === "q") { state.limit = pageSize(); renderGrid(); }
   if (e.target.id === "fval" && e.target.tagName === "INPUT") applyFilter(e.target.value);
   if (e.target.closest?.("#trEdit") && state.open) saveTrEdit(state.open, secsToText(trFromDoc() || []));
+  const hs = e.target.closest?.("[data-h]");
+  if (hs && state.open) saveHsEdit(state.open, hs.dataset.h, hs.innerText.replace(/\n$/, ""));
 });
 document.addEventListener("change", (e) => {
   const k = e.target.dataset?.filter;
