@@ -474,7 +474,7 @@ const local = {
 const state = {
   db: null, sample: undefined,
   feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
-  loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false }, seen: {}, list: null,
+  loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort2", { col: "no", dir: -1 }),
   filters: {},
@@ -1020,8 +1020,8 @@ function renderTop() {
   else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtBannerDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
   else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
-  const items = allTenders();
-  const live = items.filter((t) => tabOf(t) !== "closed");
+  const ready = state.loaded.feed && state.loaded.deleted && state.loaded.seen && state.loaded.tracked;
+  const items = ready ? allTenders() : [];
   const waiting = items.filter((t) => ["queued", "running"].includes(analysisState(t))).length;
   const K = KPIS.map((k) => ({ ...k, n: items.filter(k.f).length }));
   $("#kpis").innerHTML = K.map((k) => h`<div class="kpi ${state.list === k.key ? "on" : ""}" role="button" tabindex="0" data-kpi="${k.key}" style="--kc:${raw(k.c)}"><span class="kl">${k.l}</span><span class="kv">${k.n}</span>
@@ -1140,7 +1140,8 @@ function passFilters(t) {
 const FUNNEL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>';
 function renderGrid() {
   const box = $("#grid");
-  if (!state.loaded.feed) { box.innerHTML = `<div class="empty">${progress("Đang tải danh sách gói thầu...")}</div>`; return; }
+  // Wait for the deleted and closed (seen) lists too, so counts do not jump once they arrive.
+  if (!state.loaded.feed || !state.loaded.deleted || !state.loaded.seen || !state.loaded.tracked) { box.innerHTML = `<div class="empty">${progress("Đang tải danh sách gói thầu...")}</div>`; $("#count").textContent = ""; return; }
   const all = allTenders();
   if (!all.length) { box.innerHTML = h`<div class="empty"><b>Chưa có gói thầu nào</b><br>Danh sách được nạp từ muasamcong mỗi sáng. Bấm Refresh để tải lại.</div>`; $("#count").textContent = ""; return; }
   const col = COLS.find((c) => c.k === state.sort.col) || COLS[0];
