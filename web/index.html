@@ -446,7 +446,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null, sample: undefined,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, hsmtreq: {}, analysisreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort2", { col: "no", dir: -1 }),
@@ -659,7 +659,14 @@ function analysisReqPending(key) {
   const r = state.analysisreq?.[key];
   return !!(window.genbidWeb && r?.requestedAt && !(r.doneAt && r.doneAt >= r.requestedAt));
 }
-// Requests for the Windows worker (analysisreq, hsmtreq, syncreq). On the web they go through /api/webreq,
+// A translation or comparison request the Windows worker has not answered yet (web version only).
+function workerReqPending(coll, key) {
+  const r = state[coll]?.[key];
+  return !!(window.genbidWeb && r?.requestedAt && !(r.doneAt && r.doneAt >= r.requestedAt));
+}
+// The worker's answer to the latest request, when it could not do it.
+const workerReqError = (coll, key) => { const r = state[coll]?.[key]; return r?.doneAt && r.doneAt >= (r.requestedAt || "") ? r.error || "" : ""; };
+// Requests for the Windows worker (analysisreq, hsmtreq, syncreq, translationreq, comparereq). On the web they go through /api/webreq,
 // which writes them for the signed-in member; in claude.ai they are written directly. Returns [{ key, data }].
 async function saveRequests(coll, items) {
   let saved;
@@ -703,6 +710,18 @@ async function requestAnalysis(keys) {
   renderAll();
 }
 let areqNoteUntil = 0;
+// "Tạo bản tiếng Anh" / "Đối chiếu" on the web: a request for the Windows worker, answered on its next round.
+async function requestWorker(coll, key, extra, what) {
+  if (state.readOnly) { toast(`Đây là bản chỉ xem, không gửi được yêu cầu ${what}.`); return; }
+  if (!state.hsmt[key]?.files?.length) { toast("Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
+  const t = findTender(key);
+  try {
+    const n = (await saveRequests(coll, [{ key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", ...extra }])).length;
+    if (!n) throw new Error("");
+  } catch (e) { toast(`Không gửi được yêu cầu ${what}${e?.message ? ": " + e.message : "."}`, 6000); return; }
+  toast(`Đã gửi yêu cầu ${what}. Agent sẽ làm và kết quả hiện ở đây.`, 4000);
+  renderDrawer(false);
+}
 // The worker answers analysisreq/<key> with doneAt and, when nothing could be read, an error.
 function analysisReqError(key) {
   const r = state.analysisreq?.[key], a = state.analysis[key];
@@ -841,6 +860,9 @@ async function initDb() {
   subscribe("deleted", "deleted");
   subscribe("hsmtreq", "hsmtreq");
   subscribe("analysisreq", "analysisreq");
+  // The worker answers "Tạo bản tiếng Anh" and "Đối chiếu": show its result as soon as the request is marked done.
+  subscribe("translationreq", "translationreq", () => { if (state.open && state.dtab === "translate" && !workerReqPending("translationreq", state.open)) loadTranslation(state.open); });
+  subscribe("comparereq", "comparereq");
 }
 
 // ---------- Claude ----------
@@ -1240,7 +1262,7 @@ function renderDrawer(force = true) {
   });
   if (state.dtab === "compare" && stg !== "preparing") state.dtab = "info";
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1457,7 +1479,9 @@ const TR_SHAPE = `{ "sections": [ { "heading": string (English), "points": [stri
 function translateTabHtml(t) {
   const files = state.hsmt[t._key]?.files || [];
   if (!files.length) return h`<div class="note">Gói này chưa có hồ sơ mời thầu để dịch.</div>`;
-  return busyNote(t._key, "translate") + h`<p class="muted small" style="margin:0">AI đọc toàn bộ phần yêu cầu kỹ thuật của gói, chỉ giữ các điểm quan trọng (công suất, tiêu chuẩn, cấu hình, phụ kiện, thử nghiệm, bảo hành, giao hàng, tài liệu) và dịch sang tiếng Anh thành tệp PDF. Phần thủ tục và chi tiết lặp lại được lược bỏ.</p>
+  const trWait = workerReqPending("translationreq", t._key) ? waitHtml("Đang chờ Agent dịch...", state.translationreq[t._key].requestedAt) : "";
+  const trErr = !trWait && workerReqError("translationreq", t._key);
+  return busyNote(t._key, "translate") + trWait + (trErr ? h`<div class="note warn">Agent chưa dịch được: ${trErr}</div>` : "") + h`<p class="muted small" style="margin:0">AI đọc toàn bộ phần yêu cầu kỹ thuật của gói, chỉ giữ các điểm quan trọng (công suất, tiêu chuẩn, cấu hình, phụ kiện, thử nghiệm, bảo hành, giao hàng, tài liệu) và dịch sang tiếng Anh thành tệp PDF. Phần thủ tục và chi tiết lặp lại được lược bỏ.</p>
     <div class="row"><button class="btn primary" id="trRun" data-key="${t._key}">Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo"></span></div>
     <div id="trOut"></div>`;
 }
@@ -1507,6 +1531,8 @@ async function loadTranslation(key) {
 const trState = {};
 async function runTranslate(key, resumeFrom) { busyStart(key, "translate"); try { await runTranslate0(key, resumeFrom); } finally { busyEnd(key, "translate"); } }
 async function runTranslate0(key, resumeFrom) {
+  // Web version: the Windows worker translates (translate-prompt.md) and writes translation/<key> back.
+  if (window.genbidWeb) return requestWorker("translationreq", key, {}, "dịch");
   const out = $("#trOut"), info = $("#trInfo"), btn = $("#trRun");
   const sample = await getSample();
   if (!sample) { info.textContent = "Không kết nối được AI ở chế độ xem này."; return; }
@@ -1680,7 +1706,9 @@ async function hsdtDocx(key) {
 let subPick = null;
 function compareTabHtml(t) {
   const prev = state.compare[t._key];
-  return busyNote(t._key, "compare") + h`<p class="muted small" style="margin:0">So hồ sơ dự thầu với yêu cầu trong HSMT đã tải về của gói này, từng dòng như tổ chuyên gia sẽ chấm.</p>
+  const cmWait = workerReqPending("comparereq", t._key) ? waitHtml("Đang chờ Agent đối chiếu...", state.comparereq[t._key].requestedAt) : "";
+  const cmErr = !cmWait && workerReqError("comparereq", t._key);
+  return busyNote(t._key, "compare") + cmWait + (cmErr ? h`<div class="note warn">Agent chưa đối chiếu được: ${cmErr}</div>` : "") + h`<p class="muted small" style="margin:0">So hồ sơ dự thầu với yêu cầu trong HSMT đã tải về của gói này, từng dòng như tổ chuyên gia sẽ chấm.</p>
     <div class="drop" id="cmDrop">
       <div class="row"><span class="muted small" style="flex:1">Tệp hồ sơ dự thầu (PDF, DOCX, ảnh)</span><label class="btn sm" for="cmFiles">Chọn tệp</label></div>
       <input type="file" id="cmFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
@@ -1749,6 +1777,18 @@ async function runCompare(key) { busyStart(key, "compare"); try { await runCompa
 async function runCompare0(key) {
   const out = $("#cmOut"), btn = $("#cmRun");
   if (!subPick?.files.length && !$("#cmText").value.trim()) { out.innerHTML = h`<div class="note">Chọn tệp hồ sơ dự thầu hoặc dán nội dung trước.</div>`; return; }
+  // Web version: the HSDT goes to the private scratch bucket and the Windows worker compares (compare-prompt.md).
+  if (window.genbidWeb) {
+    btn.disabled = true;
+    try {
+      out.innerHTML = progress("Đang tải hồ sơ dự thầu lên...");
+      const files = subPick?.files.length ? await window.genbidScratch(key, subPick.files) : [];
+      out.innerHTML = "";
+      await requestWorker("comparereq", key, { files, text: $("#cmText").value }, "đối chiếu");
+    } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
+    finally { btn.disabled = false; }
+    return;
+  }
   const sample = await getSample();
   if (!sample) { out.innerHTML = h`<div class="note warn">Không kết nối được AI ở chế độ xem này.</div>`; return; }
   btn.disabled = true;

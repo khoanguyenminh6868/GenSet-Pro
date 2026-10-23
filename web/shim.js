@@ -241,6 +241,22 @@
     },
   };
 
+  // ---------- HSDT files for a "Đối chiếu" request: the private "scratch" bucket, read only by the worker ----------
+  // Storage keys take ASCII only, so the key is a number and a plain-letters name; the real name travels in the request.
+  window.genbidScratch = async (key, files) => {
+    await ready;
+    const base = `hsdt/${key}/${Date.now()}`;
+    const out = [];
+    for (const [i, f] of [...files].entries()) {
+      const plain = f.name.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").replace(/[^A-Za-z0-9._-]+/g, "_").slice(-120);
+      const path = `${base}/${String(i + 1).padStart(2, "0")}-${plain}`;
+      const { error } = await sb.storage.from("scratch").upload(path, f, { contentType: f.type || "application/octet-stream" });
+      if (error) throw { message: `Không tải được ${f.name} lên: ${error.message}` };
+      out.push({ path, name: f.name, size: f.size });
+    }
+    return out;
+  };
+
   window.genbidWeb = true; // features that need the web version (e.g. HSMT fetch requests)
   // POST to one of this site's /api endpoints as the signed-in member; resolves to the JSON body, throws { message }.
   window.genbidApi = async (path, body) => {
