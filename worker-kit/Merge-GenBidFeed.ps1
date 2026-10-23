@@ -25,9 +25,7 @@ function Sig($t) {
 
 $cur = Get-Content -Raw -Encoding UTF8 $Current | ConvertFrom-Json
 if ($cur.PSObject.Properties.Name -contains 'data' -and $cur.PSObject.Properties.Name -contains 'version') { $cur = $cur.data }
-# Chỉ giữ gói có "máy phát điện" trong tên gói thầu.
-$phrase = 'máy phát điện'
-$tenders = @($cur.tenders | Where-Object { ([string]$_.bidName).Normalize().ToLower().Contains($phrase) })
+$tenders = @($cur.tenders)
 
 if ($Mode -eq 'Sigs') {
     $m = [ordered]@{}
