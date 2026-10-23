@@ -105,11 +105,20 @@
   const notify = (coll) => listeners.get(coll)?.forEach((fn) => fn());
   function ensureChannel() {
     if (channel) return;
-    channel = sb.channel("docs").on("postgres_changes", { event: "*", schema: "public", table: "docs" }, (p) => {
+    channel = sb.channel("docs").on("postgres_changes", { event: "*", schema: "public", table: "docs" }, async (p) => {
       const row = p.eventType === "DELETE" ? p.old : p.new;
-      const c = cache.get(row.coll);
+      const c = row && cache.get(row.coll);
       if (!c) return;
-      if (p.eventType === "DELETE") c.delete(row.id); else c.set(row.id, row.data);
+      if (p.eventType === "DELETE") { c.delete(row.id); notify(row.coll); return; }
+      // Realtime can deliver a row without its data (large or unchanged values are left out of the payload):
+      // read the row again instead of overwriting the cached document with nothing.
+      let data = row.data;
+      if (!data || typeof data !== "object" || (p.errors && p.errors.length)) {
+        const { data: rows, error } = await sb.from("docs").select("data").eq("coll", row.coll).eq("id", row.id).limit(1);
+        if (error || !rows?.length) return;
+        data = rows[0].data;
+      }
+      c.set(row.id, data);
       notify(row.coll);
     }).subscribe();
   }
