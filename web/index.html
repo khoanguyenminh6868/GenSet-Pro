@@ -1252,11 +1252,10 @@ function renderDrawer(force = true) {
 }
 function infoHtml(t) {
   const key = t._key, d = state.hsmt[key], files = d?.files || [];
-  const o = offererOf(t), c = capacityOf(t);
-  const facts = [["Đơn vị chào", o ? o.text + (o.src ? ` (${o.src})` : "") : ""], ["Chủ đầu tư", t.investorName], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Số nhà thầu dự thầu", String(t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin || "")], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => w.name + (w.price ? ` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
+  const c = capacityOf(t);
+  const facts = [["Chủ đầu tư", t.investorName], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))]?.numBidderJoin || "")], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => w.name + (w.price ? ` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
   return h`<div class="grid2">
       <div class="field"><label for="dStage">Trạng thái</label><select id="dStage" ${movesOf(t).length ? "" : "disabled"}>${raw(tabOf(t) === "closed" ? '<option selected>Đã đóng</option>' : STAGES.map((s) => h`<option value="${s.key}" ${s.key === stageOf(t) ? "selected" : ""} ${s.key === stageOf(t) || movesOf(t).includes(s.key) ? "" : "disabled"}>${s.label}</option>`).join(""))}</select></div>
-      <div class="field"><label>Trang gốc</label><div class="row"><a class="btn" href="${tenderLink(t)}" target="_blank" rel="noopener">Mở trên muasamcong ↗</a>${raw(minutesLink(t) ? h`<a class="btn" href="${minutesLink(t)}" target="_blank" rel="noopener">Biên bản mở thầu ↗</a>` : "")}${raw(minutesLink(t, true) ? h`<a class="btn" href="${minutesLink(t, true)}" target="_blank" rel="noopener">Kết quả LCNT ↗</a>` : "")}</div></div>
     </div>
     <div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
     <dl class="kv">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd>${v}</dd>`).join(""))}</dl>
