@@ -1348,7 +1348,8 @@ function ownBidHtml(t) {
 const OUR_RE = /thảo\s*nguyên/i;
 function biddersHtml(t) {
   const b = state.bidders[t._key], list = b?.list || [], n = t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin;
-  const body = list.length ? h`<div class="tablewrap"><table><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th><th>Giảm giá</th><th>Giá sau giảm</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num">${x.rank ?? i + 1}</td><td>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${x.note ? h`<div class="src">${x.note}</div>` : ""}</td><td class="num">${x.taxCode || ""}</td><td class="num">${fmtVnd(x.bidPrice)}</td><td class="num">${x.discount || ""}</td><td class="num">${fmtVnd(x.priceAfterDiscount)}</td></tr>`).join(""))}</tbody></table></div>
+  const num = (v) => (v == null || isNaN(v) ? "" : Number(v).toLocaleString("vi-VN"));
+  const body = list.length ? h`<div class="tablewrap"><table><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num">${x.rank ?? i + 1}</td><td>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${raw(x.note ? h`<div class="src">${x.note}</div>` : "")}</td><td class="num">${x.taxCode || ""}</td><td class="num">${num(x.priceAfterDiscount ?? x.bidPrice)}</td></tr>`).join(""))}</tbody></table></div>
     <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>`
     : h`<div class="muted small">Chưa có biên bản mở thầu${n ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""}.</div>`;
   return h`<section class="sec"><h4>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : ""}</h4>${raw(body)}</section>`;
