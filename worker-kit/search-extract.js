@@ -30,7 +30,9 @@ await (async () => {
     const b = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)));
     return [...b].map((x) => x.toString(16).padStart(2, "0")).join("").slice(0, 12);
   };
-  const tenders = list.map((t) => {
+  // Chỉ lấy gói có "máy phát điện" trong tên gói thầu (tìm kiếm của trang còn trả cả gói chỉ khớp ở chỗ khác).
+  const nameOf = (t) => String([].concat(t.bidName || t.pname || "")[0]).replace(/\s+/g, " ").trim();
+  const tenders = list.filter((t) => nameOf(t).normalize("NFC").toLowerCase().includes("máy phát điện")).map((t) => {
     const o = {
       bidCloseDate: utc(t.bidCloseDate), bidForm: t.bidForm, bidMode: t.bidMode,
       bidName: String([].concat(t.bidName || t.pname || "")[0]).replace(/\s+/g, " ").trim(),
