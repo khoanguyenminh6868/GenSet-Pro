@@ -2145,6 +2145,7 @@ async function searchPortal(m) {
 // One result card: "Mã TBMT : IB...-00", status, name, Bên mời thầu, Chủ đầu tư, posting date, field, place, closing time.
 function parseResults(text) {
   const out = [];
+  // Only tenders with "máy phát điện" in the name are wanted.
   for (const blk of text.split(/Mã TBMT\s*:\s*/).slice(1)) {
     const m0 = blk.match(/^(IB\d+)-(\d+)/);
     if (!m0) continue;
@@ -2162,12 +2163,13 @@ function parseResults(text) {
       field: FIELD_CODE[val("Lĩnh vực")] || val("Lĩnh vực"), location: loc || null,
       isInternet: !/Không qua mạng/.test(blk),
     });
+    if (!out[out.length - 1].bidName.normalize("NFC").toLowerCase().includes(SYNC_KEYWORD)) out.pop();
   }
   return out;
 }
 // Known tenders get their closing time and notice version from the search; open ones missing from it stay; closed ones leave the feed (they stay in "seen").
 function mergeFeed(found) {
-  const cur = state.feed?.tenders || [];
+  const cur = (state.feed?.tenders || []).filter((t) => String(t.bidName || "").normalize("NFC").toLowerCase().includes(SYNC_KEYWORD));
   const byNo = new Map(found.map((f) => [f.notifyNo, f]));
   const next = [], changed = [], dropped = [], now = Date.now();
   for (const t of cur) {
