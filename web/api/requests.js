@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     if (!READABLE.has(coll)) return res.status(400).json({ error: "coll" });
     try {
       const rows = await docs(coll, req.query.id ? String(req.query.id) : "");
-      return res.json(coll === "tracked" ? rows.map((d) => ({ id: d.id, data: { stage: d.data?.stage || "new" } })) : rows);
+      return res.json(coll === "tracked" ? rows.map((d) => ({ id: d.id, data: { stage: d.data?.stage || "new", hasTender: !!d.data?.tender, keys: Object.keys(d.data || {}).filter((k) => !["note", "bidPrice"].includes(k)) } })) : rows);
     } catch (e) { return res.status(502).json({ error: e.message }); }
   }
   try {
