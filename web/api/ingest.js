@@ -78,6 +78,8 @@ export default async function handler(req, res) {
     if (!w.ok) return res.status(502).json({ error: `write ${w.status}: ${(await w.text()).slice(0, 200)}` });
   }
   const joined = await markJoined(keep.filter((r) => r.coll === "bidders")).catch(() => []);
+  // A comparison answered: its HSDT files are no longer needed in the scratch bucket.
+  await Promise.all(keep.filter((r) => r.coll === "comparereq" && r.data.doneAt).map((r) => dropHsdt(r.id).catch(() => {})));
   res.json({ written: keep.length, skipped: rows.length - keep.length, ...(joined.length ? { joined } : {}) });
 }
 
@@ -107,4 +109,21 @@ async function markJoined(rows) {
     if (w.ok) moved.push(r.id);
   }
   return moved;
+}
+
+// Deletes every HSDT file the page uploaded for a tender (scratch bucket, hsdt/<TBMT>/<time>/<file>). Only called
+// once the latest comparison request was answered, so no file a pending request still needs is removed.
+async function dropHsdt(key) {
+  const st = `${SB_URL}/storage/v1/object`;
+  const list = async (prefix) => {
+    const r = await fetch(`${st}/list/scratch`, { method: "POST", headers: sbHeaders, body: JSON.stringify({ prefix, limit: 1000 }) });
+    return r.ok ? await r.json() : [];
+  };
+  const paths = [];
+  for (const dir of await list(`hsdt/${key}`)) {
+    if (dir.id) { paths.push(`hsdt/${key}/${dir.name}`); continue; }
+    for (const f of await list(`hsdt/${key}/${dir.name}`)) if (f.id) paths.push(`hsdt/${key}/${dir.name}/${f.name}`);
+  }
+  if (paths.length) await fetch(`${st}/scratch`, { method: "DELETE", headers: sbHeaders, body: JSON.stringify({ prefixes: paths }) });
+  return paths.length;
 }
