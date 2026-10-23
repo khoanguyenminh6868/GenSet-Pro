@@ -12,7 +12,7 @@ try { const t = localStorage.getItem("genbid-theme"); if (t === "light" || t ===
 /* Layout: one dense operations column (banner, KPI row, status tabs, tender grid) with a right-side drawer per tender. Dark-first, after the Incident Control Center. */
 :root{
   --bg:#0b1020;--panel:#121a2e;--panel2:#17213a;--line:#24304d;--rule:#3e4f78;--fg:#e6eaf5;--muted:#8d98b5;--dim:#5e6a88;
-  --brand:#ffcc00;--violet:#8b7cf6;--mint:#34d399;--amber:#fbbf24;--rose:#fb7185;--orange:#fb923c;--cyan:#22d3ee;--blue:#60a5fa;
+  --sky:#7dd3fc;--brand:#ffcc00;--violet:#8b7cf6;--mint:#34d399;--amber:#fbbf24;--rose:#fb7185;--orange:#fb923c;--cyan:#22d3ee;--blue:#60a5fa;
   --violet-soft:rgba(139,124,246,.16);--mint-soft:rgba(52,211,153,.14);--rose-soft:rgba(251,113,133,.14);--amber-soft:rgba(251,191,36,.14);--cyan-soft:rgba(34,211,238,.12);
   --banner-a:#151d36;--banner-b:#0f1529;--wave:rgba(139,124,246,.35);
   --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 8px 24px rgba(0,0,0,.25);
@@ -22,13 +22,13 @@ try { const t = localStorage.getItem("genbid-theme"); if (t === "light" || t ===
 }
 @media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
   --bg:#f4f5fa;--panel:#ffffff;--panel2:#f0f2f9;--line:#dde1ee;--rule:#aab3cc;--fg:#141a2c;--muted:#5b6582;--dim:#8a93ad;
-  --brand:#d19a00;--violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
+  --sky:#0ea5e9;--brand:#d19a00;--violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
   --violet-soft:rgba(109,92,232,.10);--mint-soft:rgba(5,150,105,.10);--rose-soft:rgba(225,29,72,.09);--amber-soft:rgba(183,121,31,.12);--cyan-soft:rgba(8,145,178,.10);
   --banner-a:#ffffff;--banner-b:#eef0fa;--wave:rgba(109,92,232,.28);
   --shadow:0 1px 2px rgba(20,26,44,.06),0 6px 18px rgba(20,26,44,.06);color-scheme:light}}
 :root[data-theme="light"]{
   --bg:#f4f5fa;--panel:#ffffff;--panel2:#f0f2f9;--line:#dde1ee;--rule:#aab3cc;--fg:#141a2c;--muted:#5b6582;--dim:#8a93ad;
-  --brand:#d19a00;--violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
+  --sky:#0ea5e9;--brand:#d19a00;--violet:#6d5ce8;--mint:#059669;--amber:#b7791f;--rose:#e11d48;--orange:#ea580c;--cyan:#0891b2;--blue:#2563eb;
   --violet-soft:rgba(109,92,232,.10);--mint-soft:rgba(5,150,105,.10);--rose-soft:rgba(225,29,72,.09);--amber-soft:rgba(183,121,31,.12);--cyan-soft:rgba(8,145,178,.10);
   --banner-a:#ffffff;--banner-b:#eef0fa;--wave:rgba(109,92,232,.28);
   --shadow:0 1px 2px rgba(20,26,44,.06),0 6px 18px rgba(20,26,44,.06);color-scheme:light}
@@ -197,7 +197,7 @@ td.r{text-align:right}
 .tleft.urgent{color:var(--orange)}
 .badge{display:inline-flex;align-items:center;border-radius:999px;padding:2px 8px;font-size:12px;background:var(--violet-soft);color:var(--violet);font-weight:600;border:1px solid transparent}
 .stage{font-weight:600;font-size:12.5px}
-.st-new{color:var(--cyan)}.st-reviewing{color:var(--blue)}.st-preparing{color:var(--violet)}.st-submitted{color:var(--amber)}.st-won{color:var(--mint)}.st-lost{color:var(--rose)}.st-dropped{color:var(--dim)}.st-closed{color:var(--rose)}
+.st-new{color:var(--cyan)}.st-reviewing{color:var(--blue)}.st-preparing{color:var(--violet)}.st-submitted{color:var(--sky)}.st-won{color:var(--mint)}.st-lost{color:var(--rose)}.st-dropped{color:var(--dim)}.st-closed{color:var(--rose)}
 .scrollbtns{position:fixed;z-index:40;right:calc(16px + env(safe-area-inset-right, 0px));bottom:calc(16px + env(safe-area-inset-bottom, 0px));display:flex;flex-direction:column;gap:8px}
 .scrollbtns .ibtn{background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);width:36px;height:36px;opacity:.9}
 .empty{color:var(--muted);padding:28px 16px;text-align:center}
