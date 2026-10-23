@@ -68,6 +68,8 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .bpline.none{color:var(--muted);font-weight:500}
 .bpline .btn{margin-left:6px}
 tr.us td{background:var(--cyan-soft)}
+table.bdtbl .rk{display:none}
+@media (max-width:640px){table.bdtbl thead,table.bdtbl td.c-rk{display:none}table.bdtbl,table.bdtbl tbody,table.bdtbl tr,table.bdtbl td{display:block;width:auto}table.bdtbl tr{padding:8px 10px;border-bottom:1px solid var(--line)}table.bdtbl tr.us{background:var(--cyan-soft)}table.bdtbl td{border:0;padding:2px 0;text-align:left;background:none!important}table.bdtbl .rk{display:inline}table.bdtbl td[data-l]::before{content:attr(data-l) ": ";color:var(--dim)}}
 .ibtn{border:1px solid var(--line);background:var(--panel);border-radius:8px;width:34px;height:34px;display:inline-grid;place-items:center;padding:0;color:var(--fg)}
 .ibtn svg{width:17px;height:17px}
 input[type=search],input[type=text],input[type=datetime-local],input[type=url],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:0}
@@ -1349,7 +1351,7 @@ const OUR_RE = /thảo\s*nguyên/i;
 function biddersHtml(t) {
   const b = state.bidders[t._key], list = b?.list || [], n = t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin;
   const num = (v) => (v == null || isNaN(v) ? "" : Number(v).toLocaleString("vi-VN"));
-  const body = list.length ? h`<div class="tablewrap"><table><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num">${x.rank ?? i + 1}</td><td>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${raw(x.note ? h`<div class="src">${x.note}</div>` : "")}</td><td class="num">${x.taxCode || ""}</td><td class="num">${num(x.priceAfterDiscount ?? x.bidPrice)}</td></tr>`).join(""))}</tbody></table></div>
+  const body = list.length ? h`<div class="tablewrap"><table class="bdtbl"><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num c-rk">${x.rank ?? i + 1}</td><td><span class="rk">${x.rank ?? i + 1}. </span>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${raw(x.note ? h`<div class="src">${x.note}</div>` : "")}</td><td class="num" data-l="MST">${x.taxCode || ""}</td><td class="num" data-l="Giá dự thầu">${num(x.priceAfterDiscount ?? x.bidPrice)}</td></tr>`).join(""))}</tbody></table></div>
     <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>`
     : h`<div class="muted small">Chưa có biên bản mở thầu${n ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""}.</div>`;
   return h`<section class="sec"><h4>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : ""}</h4>${raw(body)}</section>`;
