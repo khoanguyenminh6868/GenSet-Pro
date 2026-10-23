@@ -644,6 +644,8 @@ function analysisOf(key) {
   return a || null;
 }
 const RUN_STALE = 20 * 60 * 1000;
+// Tenders without "máy phát điện" in the name stay in the list, but their files and analysis are fetched only when Khoa asks.
+const isGenset = (t) => String(t.bidName || "").normalize("NFC").toLowerCase().includes("máy phát điện");
 function analysisState(t) {
   const a = analysisOf(t._key);
   if (state.auto.current === t._key) return "running";
@@ -652,8 +654,8 @@ function analysisState(t) {
   if (a?.status === "done") return a.basis === "notice" && state.hsmt[t._key]?.files?.length && stageOf(t) === "new" && !isClosed(t) ? "queued" : "done";
   if (a?.status === "running" && Date.now() - new Date(a.startedAt).getTime() < RUN_STALE) return "running";
   if (a?.status === "error") return "error";
-  // Only open tenders still in Mới are analysed automatically.
-  if (stageOf(t) !== "new" || isClosed(t)) return "skip";
+  // Only open tenders still in Mới, named máy phát điện, are analysed automatically.
+  if (stageOf(t) !== "new" || isClosed(t) || !isGenset(t)) return "skip";
   if (!state.hsmt[t._key]?.files?.length) return "nodocs";
   return "queued";
 }
@@ -1073,7 +1075,7 @@ function anaIcon(t) {
   const s = analysisState(t);
   // Done and not-needed states show nothing; only pending work or errors get an icon.
   if (s === "done" || s === "skip") return "";
-  const m = { done: ["ok", "Đã phân tích", '<path d="M5 12.5l4.5 4.5L19 7.5"/>'], running: ["run", "Đang phân tích", '<path d="M12 3a9 9 0 1 0 9 9"/>'], error: ["bad", "Phân tích bị lỗi", '<path d="M12 7v6M12 17h.01"/>'], queued: ["mut", "Chưa phân tích, đang chờ", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], nodocs: ["mut", "Chưa phân tích, chưa có HSMT", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], skip: ["mut", "Chưa phân tích (chỉ tự phân tích gói ở trạng thái Mới)", '<circle cx="12" cy="12" r="8"/><path d="M8 12h8"/>'] }[s];
+  const m = { done: ["ok", "Đã phân tích", '<path d="M5 12.5l4.5 4.5L19 7.5"/>'], running: ["run", "Đang phân tích", '<path d="M12 3a9 9 0 1 0 9 9"/>'], error: ["bad", "Phân tích bị lỗi", '<path d="M12 7v6M12 17h.01"/>'], queued: ["mut", "Chưa phân tích, đang chờ", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], nodocs: ["mut", "Chưa phân tích, chưa có HSMT", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], skip: ["mut", "Chưa phân tích (chỉ tự phân tích gói Mới có “máy phát điện” trong tên)", '<circle cx="12" cy="12" r="8"/><path d="M8 12h8"/>'] }[s];
   return `<span class="aicon ${m[0]}" role="img" aria-label="${m[1]}" title="${m[1]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${m[2]}</svg></span>`;
 }
 const FLOW = ["new", "preparing", "submitted", "won"];
@@ -2145,7 +2147,6 @@ async function searchPortal(m) {
 // One result card: "Mã TBMT : IB...-00", status, name, Bên mời thầu, Chủ đầu tư, posting date, field, place, closing time.
 function parseResults(text) {
   const out = [];
-  // Only tenders with "máy phát điện" in the name are wanted.
   for (const blk of text.split(/Mã TBMT\s*:\s*/).slice(1)) {
     const m0 = blk.match(/^(IB\d+)-(\d+)/);
     if (!m0) continue;
@@ -2163,13 +2164,12 @@ function parseResults(text) {
       field: FIELD_CODE[val("Lĩnh vực")] || val("Lĩnh vực"), location: loc || null,
       isInternet: !/Không qua mạng/.test(blk),
     });
-    if (!out[out.length - 1].bidName.normalize("NFC").toLowerCase().includes(SYNC_KEYWORD)) out.pop();
   }
   return out;
 }
 // Known tenders get their closing time and notice version from the search; open ones missing from it stay; closed ones leave the feed (they stay in "seen").
 function mergeFeed(found) {
-  const cur = (state.feed?.tenders || []).filter((t) => String(t.bidName || "").normalize("NFC").toLowerCase().includes(SYNC_KEYWORD));
+  const cur = state.feed?.tenders || [];
   const byNo = new Map(found.map((f) => [f.notifyNo, f]));
   const next = [], changed = [], dropped = [], now = Date.now();
   for (const t of cur) {
@@ -2292,7 +2292,7 @@ async function syncPortal(m) {
   const { next, fresh, changed, dropped } = mergeFeed(found);
   const isNew = fresh.filter((f) => !state.deleted[safeId(f.notifyNo)]);
   // New tenders, plus open tenders in Mới that have neither HSMT files nor any analysis yet.
-  const bare = next.filter((t) => { const k = safeId(t.notifyNo); return !state.deleted[k] && !isClosed(t) && stageOf({ ...t, _key: k }) === "new" && !state.hsmt[k]?.files?.length && !state.analysis[k]; });
+  const bare = next.filter((t) => { const k = safeId(t.notifyNo); return !state.deleted[k] && isGenset(t) && !isClosed(t) && stageOf({ ...t, _key: k }) === "new" && !state.hsmt[k]?.files?.length && !state.analysis[k]; });
   syncStep("Đang đọc liên kết các gói mới...");
   for (const f of isNew) {
     const l = await linkOf(m, f.notifyNo);
@@ -2305,7 +2305,7 @@ async function syncPortal(m) {
   const feedChanged = isNew.length || changed.length || dropped.length;
   if (feedChanged) await saveFeed();
   // Full notice details and a first analysis, a few tenders per sync.
-  const todo = [...next.filter((t) => isNew.some((f) => f.notifyNo === t.notifyNo)), ...bare].slice(0, SYNC_DETAIL_MAX);
+  const todo = [...next.filter((t) => isGenset(t) && isNew.some((f) => f.notifyNo === t.notifyNo)), ...bare].slice(0, SYNC_DETAIL_MAX);
   let analysed = 0, detailsChanged = false;
   for (const [i, t] of todo.entries()) {
     const key = safeId(t.notifyNo);
