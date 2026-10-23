@@ -1,11 +1,11 @@
 // Requests from the web page to the Windows worker: Phân tích (analysisreq/<TBMT>), Tải hồ sơ (hsmtreq/<TBMT>)
-// Sync (syncreq/current), Tạo bản tiếng Anh (translationreq/<TBMT>) and Đối chiếu (comparereq/<TBMT>, with the HSDT
+// Sync (syncreq/current), Tạo bản tiếng Anh (translationreq/<TBMT>), Tạo HSDT tham khảo (hsdtreq/<TBMT>) and Đối chiếu (comparereq/<TBMT>, with the HSDT
 // files the page uploaded to the private "scratch" bucket under hsdt/<TBMT>/, and the pasted text). Written server-side for a signed-in member, so they never depend on the
 // browser's direct database write. POST { coll, items: [{ key, notifyNo?, bidName?, sourceUrl?, auto?, cancel? }] }.
 import { SB_URL, memberFrom } from "./_supabase.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq"]);
+const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 const str = (v, n) => (v == null ? undefined : String(v).slice(0, n));

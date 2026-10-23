@@ -472,7 +472,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null, sample: undefined,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort2", { col: "no", dir: -1 }),
@@ -692,7 +692,7 @@ function workerReqPending(coll, key) {
 }
 // The worker's answer to the latest request, when it could not do it.
 const workerReqError = (coll, key) => { const r = state[coll]?.[key]; return r?.doneAt && r.doneAt >= (r.requestedAt || "") ? r.error || "" : ""; };
-// Requests for the Windows worker (analysisreq, hsmtreq, syncreq, translationreq, comparereq). On the web they go through /api/webreq,
+// Requests for the Windows worker (analysisreq, hsmtreq, syncreq, translationreq, comparereq, hsdtreq). On the web they go through /api/webreq,
 // which writes them for the signed-in member; in claude.ai they are written directly. Returns [{ key, data }].
 async function saveRequests(coll, items) {
   let saved;
@@ -739,7 +739,7 @@ let areqNoteUntil = 0;
 // "Tạo bản tiếng Anh" / "Đối chiếu" on the web: a request for the Windows worker, answered on its next round.
 async function requestWorker(coll, key, extra, what) {
   if (state.readOnly) { toast(`Đây là bản chỉ xem, không gửi được yêu cầu ${what}.`); return; }
-  if (!state.hsmt[key]?.files?.length) { toast("Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
+  if (!state.hsmt[key]?.files?.length && !(coll === "hsdtreq" && analysisOf(key)?.result)) { toast("Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
   const t = findTender(key);
   try {
     const n = (await saveRequests(coll, [{ key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", ...extra }])).length;
@@ -889,6 +889,7 @@ async function initDb() {
   // The worker answers "Tạo bản tiếng Anh" and "Đối chiếu": show its result as soon as the request is marked done.
   subscribe("translationreq", "translationreq", () => setTimeout(() => { if (state.open && state.dtab === "translate" && !workerReqPending("translationreq", state.open)) loadTranslation(state.open); }, 0));
   subscribe("comparereq", "comparereq");
+  subscribe("hsdtreq", "hsdtreq");
 }
 
 // ---------- Claude ----------
@@ -1288,7 +1289,7 @@ function renderDrawer(force = true) {
   });
   if (state.dtab === "compare" && stg !== "preparing") state.dtab = "info";
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1385,6 +1386,7 @@ async function pollPending() {
   for (const key of Object.keys(state.hsmtreq || {})) if (reqState(key)?.kind === "pending") paths.push("hsmtreq/" + key, "hsmt/" + key);
   for (const key of Object.keys(state.translationreq || {})) if (workerReqPending("translationreq", key)) paths.push("translationreq/" + key);
   for (const key of Object.keys(state.comparereq || {})) if (workerReqPending("comparereq", key)) paths.push("comparereq/" + key, "compare/" + key);
+  for (const key of Object.keys(state.hsdtreq || {})) if (workerReqPending("hsdtreq", key)) paths.push("hsdtreq/" + key, "hsdt/" + key);
   if (paths.length) await state.db.refresh(paths).catch(() => {});
 }
 setInterval(pollPending, 10e3);
@@ -1504,14 +1506,19 @@ function chunkText(text, size) {
   return out;
 }
 const TR_SHAPE = `{ "sections": [ { "heading": string (English), "points": [string] (English, one requirement per point, with its figures and units) } ] }`;
+// What the tab shows comes from trCache[key]: undefined = not read yet, null = no brief, else { meta, secs, text }.
+const trCache = {};
 function translateTabHtml(t) {
   const files = state.hsmt[t._key]?.files || [];
   if (!files.length) return h`<div class="note">Gói này chưa có hồ sơ mời thầu để dịch.</div>`;
   const trWait = workerReqPending("translationreq", t._key) ? waitHtml("Đang chờ Agent dịch...", state.translationreq[t._key].requestedAt) : "";
   const trErr = !trWait && workerReqError("translationreq", t._key);
-  return busyNote(t._key, "translate") + trWait + (trErr ? h`<div class="note warn">Agent chưa dịch được: ${trErr}</div>` : "") + h`<p class="muted small" style="margin:0">AI đọc toàn bộ phần yêu cầu kỹ thuật của gói, chỉ giữ các điểm quan trọng (công suất, tiêu chuẩn, cấu hình, phụ kiện, thử nghiệm, bảo hành, giao hàng, tài liệu) và dịch sang tiếng Anh thành tệp PDF. Phần thủ tục và chi tiết lặp lại được lược bỏ.</p>
-    <div class="row"><button class="btn primary" id="trRun" data-key="${t._key}">Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo"></span></div>
-    <div id="trOut"></div>`;
+  const c = trCache[t._key];
+  const btns = c === undefined ? h`<button class="btn primary" id="trRun" data-key="${t._key}" hidden>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo">Đang tải bản dịch...</span>`
+    : c === null ? h`<button class="btn primary" id="trRun" data-key="${t._key}" ${trWait ? "disabled" : ""}>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo"></span>`
+    : h`<button class="btn" id="trRun" data-key="${t._key}" data-resume="${c.meta.done ? "" : c.meta.parts}" ${trWait ? "disabled" : ""}>${c.meta.done ? "Tạo lại" : "Làm tiếp"}</button><button class="btn primary" id="trPdf" data-key="${t._key}" ${c.meta.done ? "" : "hidden"}>Tải PDF</button><span class="muted small" id="trInfo">${c.meta.done ? `Đã tạo lúc ${fmtDate(c.meta.at)}` : `Đã làm ${c.meta.parts}/${c.meta.total} phần. Bấm để làm tiếp.`}</span>`;
+  return busyNote(t._key, "translate") + trWait + (trErr ? h`<div class="note warn">Agent chưa dịch được: ${trErr}</div>` : "") + h`<div class="row">${raw(btns)}</div>
+    <div id="trOut">${raw(c ? trHtml(c.secs, !c.meta.done, c.text) : "")}</div>`;
 }
 // The English brief is edited as plain text: "## Heading" starts a section, "- " starts a point.
 const secsToText = (secs) => secs.map((s) => `## ${s.heading}\n` + (s.points || []).map((p) => `- ${p}`).join("\n")).join("\n\n");
@@ -1551,26 +1558,28 @@ function trFromDoc() {
 }
 let trSaveTimer = null;
 function saveTrEdit(key, text) {
+  if (trCache[key]) trCache[key].text = text;
   clearTimeout(trSaveTimer);
   $("#trSaved").textContent = "Đang lưu...";
   trSaveTimer = setTimeout(async () => { const ok = await dbSet(`translation/${key}_edit`, { text, at: new Date().toISOString() }); if ($("#trSaved")) $("#trSaved").textContent = ok ? "Đã lưu chỉnh sửa." : "Chưa lưu được chỉnh sửa."; }, 800);
 }
+// Reads the stored brief into trCache and redraws the tab only when it changed (typing is never interrupted).
 async function loadTranslation(key) {
   if (!state.db) return;
   try {
-    const m = (await state.db.doc("translation/" + key).get());
-    if (state.open !== key || state.dtab !== "translate" || !m.exists || !m.data().v2) return;
-    const meta = m.data(), secs = [];
-    for (let i = 0; i < meta.parts; i++) { const s = await state.db.doc(`translation/${key}_${i}`).get(); if (s.exists) secs.push(...(s.data().sections || [])); }
-    if (state.open !== key || state.dtab !== "translate") return;
-    trState[key] = secs;
-    const ed = await state.db.doc(`translation/${key}_edit`).get();
-    if (state.open !== key || state.dtab !== "translate") return;
-    $("#trOut").innerHTML = trHtml(secs, !meta.done, ed.exists && ed.data().text ? ed.data().text : null);
-    $("#trPdf").hidden = !meta.done;
-    $("#trInfo").textContent = meta.done ? `Đã tạo lúc ${fmtDate(meta.at)}` : `Đã làm ${meta.parts}/${meta.total} phần. Bấm để làm tiếp.`;
-    $("#trRun").textContent = meta.done ? "Tạo lại" : "Làm tiếp";
-    $("#trRun").dataset.resume = meta.done ? "" : String(meta.parts);
+    const m = await state.db.doc("translation/" + key).get();
+    let next = null;
+    if (m.exists && m.data().v2) {
+      const meta = m.data(), secs = [];
+      for (let i = 0; i < meta.parts; i++) { const s = await state.db.doc(`translation/${key}_${i}`).get(); if (s.exists) secs.push(...(s.data().sections || [])); }
+      const ed = await state.db.doc(`translation/${key}_edit`).get();
+      next = { meta, secs, text: ed.exists && ed.data().text ? ed.data().text : null };
+      trState[key] = secs;
+    }
+    if (JSON.stringify(next) === JSON.stringify(trCache[key])) return;
+    trCache[key] = next;
+    const t = findTender(key);
+    if (state.open === key && state.dtab === "translate" && t && $("#dbody")) $("#dbody").innerHTML = translateTabHtml(t);
   } catch {}
 }
 const trState = {};
@@ -1667,7 +1676,9 @@ function hsdtTabHtml(t) {
   const prev = state.hsdt[t._key];
   const has = state.hsmt[t._key]?.files?.length || analysisOf(t._key)?.result;
   if (!has) return h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
-  return busyNote(t._key, "hsdt") + h`<p class="muted small" style="margin:0">AI soạn bộ hồ sơ dự thầu tham khảo theo đúng gói này: đơn dự thầu, bảng đáp ứng kỹ thuật, bảo lãnh, năng lực, tiến độ, bảo hành và danh mục tài liệu. Thông tin riêng của công ty để trong [ngoặc vuông] để anh điền.</p>
+  const hsWait = workerReqPending("hsdtreq", t._key) ? waitHtml("Đang chờ Agent soạn HSDT tham khảo...", state.hsdtreq[t._key].requestedAt) : "";
+  const hsErr = !hsWait && workerReqError("hsdtreq", t._key);
+  return busyNote(t._key, "hsdt") + hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<p class="muted small" style="margin:0">AI soạn bộ hồ sơ dự thầu tham khảo theo đúng gói này: đơn dự thầu, bảng đáp ứng kỹ thuật, bảo lãnh, năng lực, tiến độ, bảo hành và danh mục tài liệu. Thông tin riêng của công ty để trong [ngoặc vuông] để anh điền.</p>
     <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}">${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) : ""}</span></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
@@ -1704,7 +1715,7 @@ function saveHsEdit(key, path, text) {
   if ($("#hsSaved")) $("#hsSaved").textContent = "Đang lưu...";
   hsSaveTimer = setTimeout(async () => { const ok = await dbSet("hsdt/" + key, { ...rec, editedAt: new Date().toISOString() }); if ($("#hsSaved")) $("#hsSaved").textContent = ok ? "Đã lưu chỉnh sửa." : "Chưa lưu được chỉnh sửa."; }, 800);
 }
-async function runHsdt(key) { busyStart(key, "hsdt"); try { await runHsdt0(key); } finally { busyEnd(key, "hsdt"); } }
+async function runHsdt(key) { if (window.genbidWeb) return requestWorker("hsdtreq", key, {}, "soạn HSDT tham khảo"); busyStart(key, "hsdt"); try { await runHsdt0(key); } finally { busyEnd(key, "hsdt"); } }
 async function runHsdt0(key) {
   const out = $("#hsOut"), info = $("#hsInfo"), btn = $("#hsRun");
   const sample = await getSample();
