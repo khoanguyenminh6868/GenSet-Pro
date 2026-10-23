@@ -27,10 +27,14 @@ await (async () => {
     const list = [];
     for (const lot of kq.lotResultDTO || []) {
       // Hàng hoá từng nhà thầu chào (hãng, model, xuất xứ), nằm trong goodsList dạng chuỗi JSON.
+      // goodsList là mảng [{contractorCode, formValue}], hoặc ở một số gói là object nhiều danh sách (listTG, listKQDR, ...).
       let goods = [];
-      try { goods = JSON.parse(lot.goodsList || "[]"); } catch { goods = []; }
+      try {
+        const g = typeof lot.goodsList === "string" ? JSON.parse(lot.goodsList || "[]") : lot.goodsList || [];
+        goods = Array.isArray(g) ? g : Object.values(g).filter(Array.isArray).flat();
+      } catch { goods = []; }
       const goodsOf = (code) => {
-        const g = goods.find((x) => x.contractorCode === code);
+        const g = goods.find((x) => x && x.contractorCode === code);
         const rows = g?.formValue?.lotContent?.Table || [];
         return rows.slice(0, 4).map((r) => [r.labelGood || r.manufacturer, r.codeGood, r.origin && `(${r.origin})`].filter(Boolean).join(" ")).filter(Boolean).join("; ");
       };
