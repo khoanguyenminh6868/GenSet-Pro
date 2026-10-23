@@ -221,6 +221,7 @@ td.r{text-align:right}
 .dbody{overflow:auto;padding:14px 16px 28px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:0}
 .kv{display:grid;grid-template-columns:minmax(120px,34%) minmax(0,1fr);gap:6px 12px;font-size:13.5px;margin:0}
 .kv dt{color:var(--muted)}.kv dd{margin:0;overflow-wrap:anywhere}
+.kv dd.hl-price{color:var(--mint);font-weight:600}.kv dd.hl-close{color:var(--orange);font-weight:600}
 .doclist{display:flex;flex-direction:column;gap:6px}
 .docrow{display:flex;gap:10px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;flex-wrap:wrap}
 .docrow .fn{flex:1;min-width:160px;overflow-wrap:anywhere;font-size:13px}
@@ -1028,7 +1029,7 @@ function renderTop() {
     ${raw(k.key === "done" && waiting ? h`<button class="ibtn kref" id="runQueueBtn" aria-label="Phân tích ngay các gói đang chờ" title="Phân tích ngay ${waiting} gói đang chờ">${raw(state.auto.running ? '<span class="spin"></span>' : REFRESH_SVG)}</button>` : "")}</div>`).join("");
   const counts = Object.fromEntries(TABS.map((s) => [s.key, 0]));
   items.forEach((t) => counts[tabOf(t)]++);
-  $("#stageTabs").innerHTML = [["all", "Tất cả", live.length], ...TABS.map((s) => [s.key, s.label, counts[s.key]])]
+  $("#stageTabs").innerHTML = [["all", "Tất cả", items.length],...TABS.map((s) => [s.key, s.label, counts[s.key]])]
     .map(([k, l, n]) => h`<button role="tab" data-stage="${k}" aria-selected="${String(state.stage === k)}">${l}<span class="c${k === "all" ? "" : " st-" + k}">${n}</span></button>`).join("");
   const an = $("#autoNote");
   if (state.auto.blocked === "consent" || state.auto.blocked === "noclaude") an.innerHTML = h`<div class="note warn row"><span style="flex:1;min-width:200px">${state.auto.blocked === "noclaude" ? "Đăng nhập để AI tự phân tích các gói mới." : "AI cần được cho phép để tự phân tích các gói mới."}</span>${raw(state.auto.blocked === "consent" ? '<button class="btn sm primary" id="allowAuto">Cho phép và phân tích</button>' : "")}</div>`;
@@ -1109,7 +1110,7 @@ const COLS = [
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
   { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}${raw(t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}</div>` : "")}${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
   { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return v ? h`${v}` : '<span class="muted">Chưa có</span>'; } },
-  { k: "cap", label: "Công Suất", cls: "capc", num: true, numUnit: "kVA", val: (t) => capacityOf(t)?.n ?? null, text: (t) => capacityOf(t)?.text || "", cell: (t) => { const c = capacityOf(t); return c ? h`<span class="cap">${c.text}</span><div class="src">${c.src}</div>` : capScan.pending.has(t._key) ? '<span class="muted small">Đang đọc HSMT...</span>' : '<span class="muted">Chưa rõ</span>'; } },
+  { k: "cap", label: "Công Suất", cls: "capc", num: true, numUnit: "kVA", val: (t) => capacityOf(t)?.n ?? null, text: (t) => capacityOf(t)?.text || "", cell: (t) => { const c = capacityOf(t); return c ? h`<span class="cap">${c.text}</span>` : capScan.pending.has(t._key) ? '<span class="muted small">Đang đọc HSMT...</span>' : '<span class="muted">Chưa rõ</span>'; } },
   { k: "stage", label: "Trạng thái", pick: true, val: (t) => TABS.find((x) => x.key === tabOf(t))?.label, cell: (t) => { const st = stageOf(t), p = stepPrev(t), n = stepNext(t), drop = movesOf(t).includes("dropped");
     // Only moves that are allowed get a button.
     const btns = (p ? h`<button class="sbtn" data-step="${p}" data-key="${t._key}" aria-label="Chuyển về ${stageLabel(p)}" title="Về: ${stageLabel(p)}">${raw(STAGE_ICON.prev)}</button>` : "")
@@ -1123,7 +1124,7 @@ const COLS = [
 const COLW = { no: "13%", name: "33%", offerer: "18%", cap: "13%", stage: "12%", loc: "11%" };
 const colText = (c, t) => (c.text ? c.text(t) : String(c.val(t) ?? ""));
 function passFilters(t) {
-  if (state.stage === "all" ? tabOf(t) === "closed" : tabOf(t) !== state.stage) return false;
+  if (state.stage !== "all" && tabOf(t) !== state.stage) return false;
   const q = fold($("#q").value.trim());
   if (q && !COLS.some((c) => fold(colText(c, t)).includes(q))) return false;
   for (const c of COLS) {
@@ -1149,7 +1150,7 @@ function renderGrid() {
     if (y == null || y === "") return -1;
     return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "vi")) * state.sort.dir;
   });
-  $("#count").textContent = `${items.length}/${all.filter((t) => (state.stage === "all" ? tabOf(t) !== "closed" : tabOf(t) === state.stage)).length} gói`;
+  $("#count").textContent = `${items.length}/${all.filter((t) => (state.stage === "all" || tabOf(t) === state.stage)).length} gói`;
   const w0 = $(".gridwrap", box); const sl = w0 ? w0.scrollLeft : 0;
   const head = COLS.map((c) => {
     const on = !!(state.filters[c.k] || "").trim();
@@ -1206,7 +1207,7 @@ document.addEventListener("change", (e) => {
 function openFilter(k, btn) {
   const c = COLS.find((x) => x.k === k), pop = $("#fpop");
   const v = state.filters[k] || "";
-  const pool = allTenders().filter((t) => (state.stage === "all" ? tabOf(t) !== "closed" : tabOf(t) === state.stage));
+  const pool = allTenders().filter((t) => (state.stage === "all" || tabOf(t) === state.stage));
   const opts = [...new Set(pool.map((t) => colText(c, t)).filter(Boolean))].sort((a, b) => a.localeCompare(b, "vi"));
   if (k === "stage") opts.push(NOT_ANALYZED);
   pop.innerHTML = h`<div class="eyebrow">Lọc: ${c.label}</div>${raw(c.pick
@@ -1307,7 +1308,7 @@ function infoHtml(t) {
       <div class="field"><label for="dStage">Trạng thái</label><select id="dStage" ${movesOf(t).length ? "" : "disabled"}>${raw(tabOf(t) === "closed" ? '<option selected>Đã đóng</option>' : STAGES.map((s) => h`<option value="${s.key}" ${s.key === stageOf(t) ? "selected" : ""} ${s.key === stageOf(t) || movesOf(t).includes(s.key) ? "" : "disabled"}>${s.label}</option>`).join(""))}</select></div>
     </div>
     <div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
-    <dl class="kv">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd>${v}</dd>`).join(""))}</dl>
+    <dl class="kv">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${v}</dd>`).join(""))}</dl>
     ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) ? biddersHtml(t) : "")}
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp tải từ muasamcong${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
