@@ -80,5 +80,5 @@ async function reqsOf(coll) {
 }
 async function syncReq() {
   const d = (await docs("syncreq", "current"))[0]?.data || {};
-  return { pending: !!d.requestedAt && (d.doneAt || "") < d.requestedAt, requestedAt: d.requestedAt || null };
+  return { pending: !!d.requestedAt && (d.doneAt || "") < d.requestedAt, requestedAt: d.requestedAt || null, mode: d.mode || "" };
 }

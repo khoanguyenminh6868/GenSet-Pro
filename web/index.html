@@ -61,7 +61,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .btn.sm{padding:4px 9px;font-size:12.5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
-.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro [data-act],.ro #cmRun,.ro #cmSide,.ro #hsRun,.ro #cmDrop,.ro #cmText,.ro #runQueueBtn{display:none!important}
+.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmSide,.ro #hsRun,.ro #cmDrop,.ro #cmText,.ro #runQueueBtn{display:none!important}
 .ro #dStage,.ro #dNote{pointer-events:none;opacity:.7}
 .ro [data-viewtext],.ext [data-openpdf]{display:none!important}
 .btn.green{background:var(--mint);border-color:var(--mint);color:#fff}
@@ -324,7 +324,8 @@ details.sec>div{margin-top:10px}
     </div>
     <div class="bmeta">
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
-        <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong và phân tích; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
+        <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
+        <button class="ibtn" id="syncNewBtn" aria-label="Chỉ lấy gói mới" title="Chỉ lấy các gói mới nhất từ muasamcong (so với gói mới nhất trong hệ thống), không kiểm tra hay cập nhật gói cũ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
         <button class="ibtn" id="themeBtn" aria-label="Đổi giao diện sáng tối" title="Đổi giao diện sáng / tối"></button></div>
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
@@ -650,14 +651,13 @@ function analysisState(t) {
   const a = analysisOf(t._key);
   if (state.auto.current === t._key) return "running";
   if (analysisReqPending(t._key)) return "requested";
-  // A first brief read from the notice is redone in full once the HSMT files are here.
-  if (a?.status === "done") return a.basis === "notice" && state.hsmt[t._key]?.files?.length && stageOf(t) === "new" && !isClosed(t) ? "queued" : "done";
+  if (a?.status === "done") return "done";
   if (a?.status === "running" && Date.now() - new Date(a.startedAt).getTime() < RUN_STALE) return "running";
   if (a?.status === "error") return "error";
-  // Only open tenders still in Mới, named máy phát điện, are analysed automatically.
+  // Nothing is analysed automatically (Khoa, 2026-10-24): analysis starts only from the Phân tích button.
   if (stageOf(t) !== "new" || isClosed(t) || !isGenset(t)) return "skip";
   if (!state.hsmt[t._key]?.files?.length) return "nodocs";
-  return "queued";
+  return "skip";
 }
 function capacityOf(t) {
   const fromName = capFromText(t.bidName);
@@ -1062,10 +1062,10 @@ const ANA = {
   running: () => '<span class="chip run"><span class="spin"></span>Đang phân tích</span>',
   queued: () => '<span class="chip mut">Chờ phân tích</span>',
   nodocs: () => '<span class="chip mut">Chưa có HSMT</span>',
-  skip: () => '<span class="chip mut">Không tự phân tích</span>',
+  skip: () => '<span class="chip mut">Chưa phân tích</span>',
   error: (t) => h`<span class="chip bad">Lỗi</span> <button class="btn sm" data-act="retry" data-key="${t._key}">Retry</button>`,
 };
-const ANA_LABEL = { skip: "Không tự phân tích", done: "Đã phân tích", running: "Đang phân tích", queued: "Chờ phân tích", nodocs: "Chưa có HSMT", error: "Lỗi" };
+const ANA_LABEL = { skip: "Chưa phân tích", done: "Đã phân tích", running: "Đang phân tích", queued: "Chờ phân tích", nodocs: "Chưa có HSMT", error: "Lỗi" };
 function critCount(t) { const a = analysisOf(t._key)?.result; return a ? (a.highlights || []).filter((x) => x.severity === "critical").length : null; }
 const locOf = (t) => [...new Set(String(t.location || "").split(/\s*[,;]\s*/).filter(Boolean).map((x) => x.replace(/^\s*(thành phố|tỉnh|tp\.?)\s+/i, "")))].join(", ");
 const pubOf = (t) => t.publicDate || t.addedAt || "";
@@ -1425,8 +1425,8 @@ function analysisTabHtml(t) {
       : waitHtml("Đang chờ Agent phân tích...", state.analysisreq[t._key].requestedAt))
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
     : s === "nodocs" ? h`<div class="note row"><span style="flex:1;min-width:200px">Gói này chưa có hồ sơ mời thầu.</span>${raw(window.genbidWeb ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
-    : s === "skip" ? h`<div class="note row"><span style="flex:1;min-width:200px">AI chỉ tự phân tích các gói đang mở ở trạng thái Mới. Gói này chưa được phân tích.</span>${raw(window.genbidWeb || state.hsmt[t._key]?.files?.length ? h`<button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}</div>`
-    : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này đang chờ đến lượt phân tích tự động."}</div>`;
+    : s === "skip" ? (window.genbidWeb || state.hsmt[t._key]?.files?.length ? h`<div class="note row"><span style="flex:1;min-width:200px"></span><button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button></div>` : "")
+    : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này chưa được phân tích."}</div>`;
   const reqErr = s !== "requested" && analysisReqError(t._key);
   const errNote = reqErr ? h`<div class="note warn">Agent chưa phân tích được: ${reqErr}</div>` : "";
   return head + errNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
@@ -2014,6 +2014,7 @@ document.addEventListener("click", async (e) => {
   if (ok) { openDrawer(ok.dataset.openkey); return; }
   if (e.target.id === "goCompare") { $("#ov").hidden = true; openDrawer(e.target.dataset.key, "compare"); return; }
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
+  if (e.target.closest("#syncNewBtn")) { syncNew(); return; }
   if (e.target.id === "syncNoteX") { syncState.note = null; renderTop(); return; }
   const sb = e.target.closest("[data-step]");
   if (sb) { if (sb.dataset.step) setStage(sb.dataset.key, sb.dataset.step); return; }
@@ -2339,6 +2340,14 @@ function syncErrorText(e) {
 }
 
 // ---------- Refresh ----------
+// Only the newest tenders: Agent searches muasamcong but touches nothing older than the newest tender already stored.
+async function syncNew() {
+  if (syncState.running || state.readOnly || !state.db) return;
+  const btn = $("#syncNewBtn"); btn.disabled = true;
+  try { await saveRequests("syncreq", [{ key: "current", mode: "new" }]); syncState.note = null; }
+  catch (e) { syncState.note = { kind: "err", text: "Không gửi được yêu cầu lấy gói mới: " + (e?.message || "lỗi không rõ") }; }
+  finally { btn.disabled = false; renderAll(); }
+}
 async function refreshAll() {
   if (syncState.running) return;
   const btn = $("#refreshBtn"); btn.disabled = true;
