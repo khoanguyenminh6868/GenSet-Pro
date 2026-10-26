@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-25T01:25:14.109Z",
+ "fetchedAt": "2026-10-26T01:34:55.815Z",
  "source": "muasamcong",
  "tenders": [
   {
@@ -123,26 +123,6 @@
    "estimatedPrice": 1056240000,
    "status": "open",
    "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=17fbdbb3-2875-4550-857d-095dbdbded42&notifyId=17fbdbb3-2875-4550-857d-095dbdbded42&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600581294&planNo=PL2600343905&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=CHCT"
-  },
-  {
-   "id": "787a1388-e1a2-49cc-9a4e-1b834aede683",
-   "notifyNo": "IB2600573599",
-   "notifyVersion": "00",
-   "planNo": "PL2600180569",
-   "bidName": "Gói thầu số 09: Thi công xây dựng (bao gồm cả chi phí máy phát điện; chi phí đảm bảo an toàn giao thông phục vụ thi công)",
-   "investorName": "Ủy ban nhân dân xã Thanh Phong",
-   "location": "Tỉnh Thanh Hóa",
-   "field": "XL",
-   "bidForm": "DTRR",
-   "bidMode": "1_MTHS",
-   "processApply": "LDT",
-   "isInternet": true,
-   "publicDate": "2026-10-16T06:43:27.347Z",
-   "bidCloseDate": "2026-10-25T08:00:00.000Z",
-   "bidOpenDate": "2026-10-25T08:00:00.000Z",
-   "estimatedPrice": 16689841000,
-   "status": "open",
-   "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=787a1388-e1a2-49cc-9a4e-1b834aede683&notifyId=787a1388-e1a2-49cc-9a4e-1b834aede683&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600573599&planNo=PL2600180569&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=DTRR"
   },
   {
    "id": "e96ab628-4c1a-49b8-aa59-0ab33dec8df4",
