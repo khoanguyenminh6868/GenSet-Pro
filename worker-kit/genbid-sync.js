@@ -539,6 +539,14 @@ async function prepOne(kind, key, requestedAt, dir) {
     if (unread.length) input += `\nTệp HSDT chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   }
   fs.writeFileSync(path.join(dir, "input.md"), input, "utf8");
+  // Requests that need to look at pages (mostly scanned HSMT, unreadable HSDT files) or are too large for one call
+  // go to the Claude agent (tools: Read for images, Render-GenBidScan.ps1); the rest are answered in one call (ask).
+  const why = [];
+  if (scans.length && text.length < 20000) why.push("HSMT chủ yếu là bản scan");
+  if (kind === "compare" && /Tệp HSDT chưa đọc được chữ/.test(input)) why.push("HSDT có tệp chưa đọc được chữ");
+  if (input.length > 450000) why.push("dữ liệu quá lớn cho một lần gọi");
+  if (!full && !notice?.info) why.push("chưa có chữ HSMT trên web");
+  if (why.length) fs.writeFileSync(path.join(dir, "AGENT"), why.join("; "), "utf8");
   // The prompt without its "Output on the web" part: the bot posts the result itself.
   const prompt = fs.readFileSync(path.join(KIT, KIND_PROMPT[kind]), "utf8").split(/\nOutput on the web/)[0];
   fs.writeFileSync(path.join(dir, "prompt.md"), prompt, "utf8");
@@ -567,6 +575,78 @@ async function runPrep() {
   }
   for (const d of made) log("DIR " + d);
   return `chuẩn bị ${made.length}/${sigs.length} việc`;
+}
+
+// Answer the prepared requests in one model call each (prompt + data in, JSON out, no tools), several at a time.
+// Measured 2026-10-26 on Phân tích IB2600574589 (Opus): same time as the agent (~150 s, writing the JSON is most of it)
+// but 34k instead of 288k input tokens. Folders marked AGENT, or whose answer is not valid JSON, are left for the agent.
+function claudeExe() {
+  if (process.env.GENBID_CLAUDE && fs.existsSync(process.env.GENBID_CLAUDE)) return process.env.GENBID_CLAUDE;
+  const base = path.join(process.env.LOCALAPPDATA || "", "Claude-Data");
+  const found = [];
+  const walk = (d, depth) => { if (depth > 5) return; for (const e of fs.readdirSync(d, { withFileTypes: true })) { const f = path.join(d, e.name); if (e.isDirectory()) walk(f, depth + 1); else if (e.name === "claude.exe" && /[\\/]claude-code[\\/]/.test(f)) found.push(f); } };
+  if (fs.existsSync(base)) walk(base, 0);
+  return found.sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs)[0] || "claude";
+}
+const LIMIT = /hit your [a-z ]*limit|usage limit|rate limit|session limit/i;
+function askOnce(prompt, model) {
+  return new Promise((resolve) => {
+    const p = cp.spawn(claudeExe(), ["-p", "--output-format", "json", "--model", model, "--tools", "", "--strict-mcp-config", "--disable-slash-commands"], { windowsHide: true });
+    let out = "", err = "";
+    const timer = setTimeout(() => p.kill(), 25 * 60e3);
+    p.stdout.on("data", (d) => (out += d)); p.stderr.on("data", (d) => (err += d));
+    p.on("close", (code) => {
+      clearTimeout(timer);
+      let j = null; try { j = JSON.parse(out); } catch {}
+      const text = j?.result || "";
+      if (LIMIT.test(text + err + out) && (code !== 0 || j?.is_error)) return resolve({ limit: (text || err || out).trim().slice(0, 300) });
+      if (!j || j.is_error) return resolve({ error: (text || err || out || `mã thoát ${code}`).trim().slice(0, 300) });
+      const s = text.replace(/^\s*```(?:json)?\s*/, "").replace(/\s*```\s*$/, "");
+      let value = null; try { value = JSON.parse(s.slice(s.indexOf("{"), s.lastIndexOf("}") + 1)); } catch {}
+      resolve(value ? { value, cost: j.total_cost_usd, secs: Math.round((j.duration_ms || 0) / 1000) } : { error: "câu trả lời không phải JSON hợp lệ" });
+    });
+    p.stdin.end(prompt);
+  });
+}
+async function runAsk() {
+  const base = String(opt("dir"));
+  const deep = typeof opt("model") === "string" ? opt("model") : "opus", light = typeof opt("light") === "string" ? opt("light") : "sonnet";
+  const jobs = [];
+  for (const name of fs.existsSync(base) ? fs.readdirSync(base) : []) {
+    const dir = path.join(base, name), meta = readJson(path.join(dir, "meta.json"), null);
+    if (!meta || fs.existsSync(path.join(dir, "AGENT"))) continue;
+    const head = fs.readFileSync(path.join(dir, "prompt.md"), "utf8") + "\n\n=== DỮ LIỆU ĐÃ CHUẨN BỊ ===\n" + fs.readFileSync(path.join(dir, "input.md"), "utf8");
+    const tail = "\n\nTrả lời bằng đúng một đối tượng JSON theo dạng ở trên, không kèm chữ nào khác."
+      + (meta.kind === "analysis" ? " Nếu có phần chưa đọc được (tệp scan, chương thiếu), thêm trường \"_notes\": [chuỗi tiếng Việt]." : "")
+      + " Nếu dữ liệu không đủ để làm, trả {\"_error\": \"<một câu lý do bằng tiếng Việt>\"}.";
+    if (meta.kind === "translation") {
+      const parts = fs.readdirSync(dir).filter((f) => /^part-\d+\.txt$/.test(f));
+      parts.forEach((f) => jobs.push({ dir, meta, model: light, out: `result-${f.match(/\d+/)[0]}.json`, prompt: `${head}\n\n=== PHẦN CẦN DỊCH (${f}) ===\n${fs.readFileSync(path.join(dir, f), "utf8")}${tail}` }));
+    } else jobs.push({ dir, meta, model: deep, out: "result.json", prompt: head + tail });
+  }
+  if (!jobs.length) return "không có việc nào trả lời một lần (tất cả cần agent)";
+  const lines = [], failedDirs = new Set();
+  let limit = null, next = 0;
+  const worker = async () => {
+    while (next < jobs.length && !limit) {
+      const job = jobs[next++];
+      const r = await askOnce(job.prompt, job.model);
+      const tag = `${KIND_NAME[job.meta.kind]} ${job.meta.key}${job.out === "result.json" ? "" : " " + job.out}`;
+      if (r.limit) { limit = r.limit; break; }
+      if (r.error) { failedDirs.add(job.dir); lines.push(`${tag}: lỗi (${r.error}), chuyển cho agent`); continue; }
+      const v = r.value;
+      if (v._error) { fs.writeFileSync(path.join(job.dir, "error.txt"), String(v._error), "utf8"); lines.push(`${tag}: ${v._error}`); continue; }
+      if (v._notes) { fs.writeFileSync(path.join(job.dir, "notes.json"), JSON.stringify([].concat(v._notes)), "utf8"); delete v._notes; }
+      writeJson(path.join(job.dir, job.out), v);
+      lines.push(`${tag}: xong (${r.secs}s, ${job.model})`);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(3, jobs.length) }, worker));
+  // A part that failed leaves its folder to the agent, which redoes the whole request.
+  for (const d of failedDirs) { fs.writeFileSync(path.join(d, "AGENT"), "trả lời một lần không thành công", "utf8"); for (const f of fs.readdirSync(d)) if (/^result(-\d+)?\.json$/.test(f)) fs.rmSync(path.join(d, f)); }
+  lines.forEach((l) => log("  " + l));
+  if (limit) { log(limit); throw new Error("Claude hết hạn mức: " + limit); }
+  return lines.join("; ");
 }
 
 async function runFinish() {
@@ -618,6 +698,7 @@ async function runFinish() {
     else if (cmd === "files") summary = await runFiles();
     else if (cmd === "prep") summary = await runPrep();
     else if (cmd === "finish") summary = await runFinish();
+    else if (cmd === "ask") summary = await runAsk();
     else if (cmd === "notice") { // check: read one tender's notice from feed/current and print its size, post nothing
       const t = ((await doc("feed", "current"))?.tenders || []).find((x) => x.notifyNo === opt("key"));
       if (!t) throw new Error("không có gói này trong feed");

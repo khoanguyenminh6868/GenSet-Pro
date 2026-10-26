@@ -187,6 +187,28 @@ function Invoke-Worker([string[]]$sigs) {
     $prep | ForEach-Object { Log "  $_" }
     $dirs = @(Get-ChildItem $work -Directory -ErrorAction SilentlyContinue | ForEach-Object { $_.FullName })
     if (-not $dirs.Count) { return 'Không chuẩn bị được dữ liệu cho yêu cầu này (không đọc được bản web).' }
+    # Ưu tiên đăng nhập đầy đủ của Claude Code (/login). Token setup-token chỉ dùng khi chưa đăng nhập; nó chỉ nằm
+    # trong biến môi trường của các tiến trình con, bỏ ngay sau lượt.
+    if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
+    $env:GENBID_CLAUDE = $claude
+    try {
+        # 1. Mỗi yêu cầu một lần gọi (dữ liệu + prompt vào, JSON ra, không công cụ), tối đa 3 yêu cầu cùng lúc.
+        Log "Gọi Claude một lần cho mỗi yêu cầu ($DeepModel; dịch: $LightModel): $($sigs -join ', ')  (log: $out)"
+        $reason = Start-Run $node @("`"$SyncJs`"", 'ask', '--dir', "`"$work`"", '--model', $DeepModel, '--light', $LightModel) $null $sigs $out
+        (Get-Content $out -Encoding UTF8 -ErrorAction SilentlyContinue) | Where-Object { $_ -match '^\s+\S' } | ForEach-Object { Log $_ }
+        # 2. Agent chỉ cho các yêu cầu cần xem trang (PDF scan, HSDT chưa đọc được chữ) hoặc trả lời một lần không được.
+        $dirs = @($dirs | Where-Object { Test-Path (Join-Path $_ 'AGENT') })
+        if ($dirs.Count -and -not ($script:PauseUntil -gt (Get-Date))) { $reason = Invoke-Agent $claude $dirs $sigs $stamp }
+    } finally {
+        Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:GENBID_CLAUDE -ErrorAction SilentlyContinue
+        # Gửi kết quả (hoặc lỗi trong error.txt) lên web và xoá thư mục (HSDT là tài liệu riêng của công ty).
+        Invoke-Node finish --dir $work | ForEach-Object { Log "  $_" }
+    }
+    return $reason
+}
+
+function Invoke-Agent([string]$claude, [string[]]$dirs, [string[]]$sigs, [string]$stamp) {
+    $out = Join-Path $LogDir "run-$stamp-agent.log"
     $prompt = @"
 Bot GenBid giao các việc sau. Mỗi việc một thư mục, dữ liệu đã chuẩn bị sẵn:
 $($dirs -join "`n")
@@ -195,19 +217,11 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
 "@
     $promptFile = Join-Path $LogDir "run-$stamp.prompt.txt"
     [IO.File]::WriteAllText($promptFile, $prompt, $Utf8)
-    $model = if (@($sigs | Where-Object { $_ -notlike 'translation:*' }).Count) { $DeepModel } else { $LightModel }
-    Log "Gọi Claude ($model): $($sigs -join ', ')  (log: $out)"
+    $model = if (@($dirs | Where-Object { (Split-Path $_ -Leaf) -notlike 'translation-*' }).Count) { $DeepModel } else { $LightModel }
+    Log "Gọi Claude agent ($model) cho: $(($dirs | ForEach-Object { Split-Path $_ -Leaf }) -join ', ')  (log: $out)"
     # Bộ công cụ tối thiểu: không MCP, không skill/plugin, không Chrome (giảm phần nền mỗi lượt từ ~55k xuống ~9k token).
     $cliArgs = @('-p', '--permission-mode', 'auto', '--output-format', 'text', '--model', $model, '--strict-mcp-config', '--disable-slash-commands', '--tools', 'Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep')
-    # Ưu tiên đăng nhập đầy đủ của Claude Code (/login). Token setup-token chỉ dùng khi chưa đăng nhập; nó chỉ nằm
-    # trong biến môi trường của tiến trình con, bỏ ngay sau khi khởi động.
-    if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
-    try { $reason = Start-Run $claude $cliArgs $promptFile $sigs $out }
-    finally { Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN -ErrorAction SilentlyContinue }
-    # Gửi kết quả (hoặc lỗi trong error.txt) lên web và xoá thư mục (HSDT là tài liệu riêng của công ty).
-    $fin = Invoke-Node finish --dir $work
-    $fin | ForEach-Object { Log "  $_" }
-    return $reason
+    return Start-Run $claude $cliArgs $promptFile $sigs $out
 }
 
 # Chờ một lượt worker kết thúc rồi đọc kết quả: trả lý do để báo về web cho các yêu cầu chưa được trả lời.
