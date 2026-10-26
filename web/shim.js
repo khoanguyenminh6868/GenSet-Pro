@@ -12,7 +12,7 @@
     member = rows?.[0];
     if (!member) { await gate("denied", session.user.email); return new Promise(() => {}); }
     if (document.readyState === "loading") await new Promise((r) => document.addEventListener("DOMContentLoaded", r, { once: true }));
-    accountChip(session.user);
+    // Sign-out button is intentionally hidden (accountChip not shown).
     const canImport = ["owner", "admin"].includes(member.role);
     if (location.hash === "#import" || sessionStorage.getItem("gbImport")) {
       sessionStorage.removeItem("gbImport");

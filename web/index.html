@@ -763,6 +763,11 @@ async function dbSet(path, data) {
   try { await state.db.doc(path).set(JSON.parse(JSON.stringify(data))); return true; }
   catch (e) { if (e?.code === "permission_denied") toast("Bạn chỉ có quyền xem, không lưu được."); return false; }
 }
+// Selected status tab and sort order are shared through the database so every device shows the same view.
+function saveView() {
+  local.set("stage", state.stage); local.set("gridSort2", state.sort);
+  if (state.db) dbSet("prefs/view", { stage: state.stage, sort: state.sort });
+}
 async function saveTracked(id, rec) {
   if (state.readOnly) { toast("Đăng nhập để chỉnh sửa. Đây là bản chỉ xem."); return; }
   const clean = JSON.parse(JSON.stringify(rec));
@@ -877,6 +882,13 @@ async function initDb() {
     () => { state.loaded.feed = true; renderAll(); });
   db.doc("syncreq/current").onSnapshot((snap) => { state.syncreq = snap.exists ? snap.data() : null; renderTop(); }, () => {});
   if (window.genbidWeb) db.doc("botstatus/current").onSnapshot((snap) => { state.botstatus = snap.exists ? snap.data() : null; refreshWaits(); }, () => {});
+  db.doc("prefs/view").onSnapshot((snap) => {
+    const v = snap.exists ? snap.data() : null;
+    if (!v) return;
+    if (v.stage && v.stage !== state.stage) { state.stage = v.stage; state.limit = pageSize(); }
+    if (v.sort?.col) state.sort = v.sort;
+    renderAll();
+  }, () => {});
   subscribe("tracked", "tracked", scheduleAuto);
   subscribe("manual", "manual");
   subscribe("seen", "seen", rememberSeen);
@@ -2003,7 +2015,7 @@ document.addEventListener("click", async (e) => {
   if (th) {
     const k = th.dataset.sort;
     state.sort = state.sort.col === k ? { col: k, dir: -state.sort.dir } : { col: k, dir: k === "no" ? -1 : 1 };
-    state.limit = pageSize(); local.set("gridSort2", state.sort); renderGrid(); return;
+    state.limit = pageSize(); saveView(); renderGrid(); return;
   }
   if (e.target.closest("#runQueueBtn") && window.genbidWeb) { e.stopPropagation(); requestAnalysis(queue().map((t) => t._key)); return; }
   if (e.target.closest("#runQueueBtn")) { e.stopPropagation(); state.auto.blocked = null; state.sample = undefined; runQueue(); toast("Đang phân tích các gói chờ"); return; }
@@ -2028,7 +2040,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "hsRun") { runHsdt(e.target.dataset.key); return; }
   if (e.target.id === "hsDocx") { hsdtDocx(e.target.dataset.key); return; }
   const st = e.target.closest("#stageTabs [data-stage]");
-  if (st) { state.stage = st.dataset.stage; local.set("stage", state.stage); state.filters.stage = ""; state.limit = pageSize(); renderAll(); return; }
+  if (st) { state.stage = st.dataset.stage; saveView(); state.filters.stage = ""; state.limit = pageSize(); renderAll(); return; }
   const dt = e.target.closest("#dtabs [data-dt]");
   if (dt && !dt.disabled) { state.dtab = dt.dataset.dt; renderDrawer(); return; }
   const vt = e.target.closest("[data-viewtext]");
