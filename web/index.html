@@ -1858,16 +1858,17 @@ async function acceptCompare(key) {
 // A previous comparison exists: confirm before spending another run on it.
 function askRecompare(key) {
   modal(h`<div class="row"><h2 style="flex:1">Đối chiếu lại?</h2><button class="btn sm" data-close>Đóng</button></div>
-    <p class="small" style="margin:0">Gói này đã có kết quả đối chiếu lúc ${fmtDate(state.compare[key].at)}${state.compare[key].accepted ? " và đã được đánh dấu là đã đối chiếu" : ""}. Đối chiếu lại sẽ thay kết quả cũ${state.compare[key].accepted ? " và bỏ dấu đã đối chiếu" : ""}.</p>
+    <p class="small" style="margin:0">Gói này đã có kết quả đối chiếu lúc ${fmtDate(state.compare[key].at)}${state.compare[key].accepted ? " và đã được đánh dấu là đã đối chiếu" : ""}. Đối chiếu lại sẽ xóa ngay kết quả cũ${state.compare[key].accepted ? " và dấu đã đối chiếu" : ""}, rồi chờ kết quả mới.</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="cmAgain">Đối chiếu lại</button></div>`, (m, close) => {
     $("#cmAgain", m).addEventListener("click", async () => {
       close();
-      // Nộp stays off from here until a new comparison comes back.
-      const { accepted, acceptedAt, ...rest } = state.compare[key];
-      const rec = { ...rest, stale: true };
-      state.compare = { ...state.compare, [key]: rec };
+      // The old result is deleted and leaves the screen; Nộp stays off until the new comparison comes back.
+      try { if (state.db && !state.readOnly) await state.db.doc("compare/" + key).delete(); }
+      catch { toast("Không xóa được kết quả cũ."); return; }
+      const { [key]: _old, ...rest } = state.compare;
+      state.compare = rest;
+      const out = $("#cmOut"); if (out) out.innerHTML = "";
       refreshSubmitBtn(key);
-      await dbSet("compare/" + key, rec);
       runCompare(key);
     });
   });
