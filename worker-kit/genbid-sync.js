@@ -277,18 +277,24 @@ async function bidders(page) {
 // ---------- sync ----------
 async function runSync() {
   const req = await apiGet("?kind=sync");
-  const newOnly = req.pending && req.mode === "new";
+  // "Chỉ lấy gói mới" (the web's + button, mode "new"); --new does the same from the command line.
+  const newOnly = (req.pending && req.mode === "new") || !!opt("new");
   const last = readJson(SYNC_LAST, null);
   // Sync pressed again soon after the last one: answer with that result, no new search (Khoa, 2026-10-26).
-  if (req.pending && !opt("force") && last?.doneAt && Date.now() - Date.parse(last.doneAt) < SYNC_GAP_MIN * 60e3) {
+  // The + button only waits 3 minutes: it is the quick check for new tenders.
+  const gap = newOnly ? 3 : SYNC_GAP_MIN;
+  if (req.pending && !opt("force") && last?.doneAt && Date.now() - Date.parse(last.doneAt) < gap * 60e3) {
     const at = new Date(last.doneAt).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Ho_Chi_Minh" });
-    const summary = `Đã đồng bộ lúc ${at} (chưa tới ${SYNC_GAP_MIN} phút): ${last.summary}`;
+    const summary = `Chưa tìm lại vì vừa đồng bộ lúc ${at} (dưới ${gap} phút). Kết quả lúc đó: ${last.summary}`;
     await post([{ coll: "syncreq", id: "current", data: { requestedAt: req.requestedAt, doneAt: now(), summary, from: "web" } }]);
     return summary;
   }
   const cur = (await doc("feed", "current")) || { tenders: [] };
-  const feed = [].concat(cur.tenders || []);
+  let feed = [].concat(cur.tenders || []);
   const [seen, manual, tracked, deleted] = await Promise.all(["seen", "manual", "tracked", "deleted"].map(ids));
+  // Check only (--dry --pretend-new <TBMT>): treat a stored tender as new, to run the new-tender steps without posting.
+  const pretend = opt("dry") && typeof opt("pretend-new") === "string" ? opt("pretend-new") : null;
+  if (pretend) { feed = feed.filter((t) => t.notifyNo !== pretend); [seen, manual, tracked, deleted].forEach((s) => s.delete(pretend)); }
   const knownElsewhere = (no) => seen.has(no) || manual.has(no) || tracked.has(no) || deleted.has(no);
   const known = {};
   for (const t of feed) known[t.notifyNo] = await sig(t);
