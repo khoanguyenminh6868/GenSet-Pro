@@ -30,9 +30,10 @@ param(
     [string]$Root = 'C:\Projects\GenSet Pro',
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/requests?kind=all',
     # Sync theo lịch (thay tác vụ hẹn giờ "hsmt-worker" của app Claude, Khoa 2026-10-26): bot tự chạy genbid-sync.js,
-    # không mở phiên Claude. Máy tắt lúc đó thì chạy khi bật lại trong ngày.
-    [string[]]$ScheduleDays = @('Tuesday', 'Friday'),
-    [string]$ScheduleTime = '10:00',
+    # không mở phiên Claude. 10:00 và 15:00 các ngày trong tuần (Khoa, 2026-10-26). Máy tắt lúc đó thì chạy một lần
+    # khi bật lại (bù cho mốc gần nhất đã qua trong ngày).
+    [string[]]$ScheduleDays = @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'),
+    [string[]]$ScheduleTimes = @('10:00', '15:00'),
     [switch]$Once
 )
 
@@ -330,12 +331,15 @@ try {
                     try { Send-Unanswered $dueReqs $reason } catch { Log "Không báo được lỗi về web: $($_.Exception.Message)" }
                 } else {
                     [IO.File]::WriteAllText($StateFile, ([pscustomobject]$handed | ConvertTo-Json -Depth 4), $Utf8)
-                    # Không có yêu cầu nào: tới lịch thì Sync (mỗi ngày theo lịch một lần, nhớ qua các lần khởi động lại bot).
+                    # Không có yêu cầu nào: tới lịch thì Sync. Mỗi mốc chạy một lần (mốc gần nhất đã qua trong ngày),
+                    # nhớ qua các lần khởi động lại bot.
                     $today = $now.ToString('yyyy-MM-dd')
-                    if (-not $due.Count -and $ScheduleDays -contains $now.DayOfWeek.ToString() -and $now -ge [datetime]"$today $ScheduleTime" `
-                        -and (Read-Json $ScheduleFile ([pscustomobject]@{ last = '' })).last -ne $today -and -not (Test-WorkerRunning)) {
-                        [IO.File]::WriteAllText($ScheduleFile, (@{ last = $today } | ConvertTo-Json), $Utf8)
-                        [void](Invoke-Script 'sync' @('--force') @("schedule:$today"))
+                    $slot = $ScheduleTimes | Where-Object { $now -ge [datetime]"$today $_" } | Sort-Object { [datetime]"$today $_" } | Select-Object -Last 1
+                    $slotKey = "$today $slot"
+                    if (-not $due.Count -and $slot -and $ScheduleDays -contains $now.DayOfWeek.ToString() `
+                        -and (Read-Json $ScheduleFile ([pscustomobject]@{ last = '' })).last -ne $slotKey -and -not (Test-WorkerRunning)) {
+                        [IO.File]::WriteAllText($ScheduleFile, (@{ last = $slotKey } | ConvertTo-Json), $Utf8)
+                        [void](Invoke-Script 'sync' @('--force') @("schedule:$slotKey"))
                     }
                 }
             }

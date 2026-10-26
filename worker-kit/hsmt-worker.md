@@ -10,7 +10,7 @@ Approved by Khoa Nguyen on 2026-10-21. Since 2026-10-26 (Khoa) the round runs as
   - "Lấy tệp" → `node genbid-sync.js files --only <TBMT,...>`
   - "Sync" → `node genbid-sync.js sync`
   - Phân tích / Đối chiếu / Tạo bản tiếng Anh / Tạo HSDT tham khảo → `genbid-sync.js prep`, then Claude Code (`-p`, Opus, or Sonnet for translation only; no MCP, no skills, tools Bash/Read/Write/Edit/Glob/Grep), then `genbid-sync.js finish`.
-  - On schedule (Tuesday and Friday 10:00, or later that day if the PC was off; `.genbid-bot-schedule.json`) → `node genbid-sync.js sync --force`, no Claude session.
+  - On schedule (Monday to Friday at 10:00 and 15:00; a PC that was off runs once for the latest missed time that day; `.genbid-bot-schedule.json`) → `node genbid-sync.js sync --force`, no Claude session.
 - The Claude desktop task "hsmt-worker" is unscheduled since 2026-10-26 (Run now still runs the same command and reports the summary).
 
 ## genbid-sync.js
