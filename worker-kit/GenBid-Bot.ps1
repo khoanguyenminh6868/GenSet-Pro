@@ -29,6 +29,10 @@ param(
     [int]$LimitPauseMinutes = 30,
     [string]$Root = 'C:\Projects\GenSet Pro',
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/requests?kind=all',
+    # Sync theo lịch (thay tác vụ hẹn giờ "hsmt-worker" của app Claude, Khoa 2026-10-26): bot tự chạy genbid-sync.js,
+    # không mở phiên Claude. Máy tắt lúc đó thì chạy khi bật lại trong ngày.
+    [string[]]$ScheduleDays = @('Tuesday', 'Friday'),
+    [string]$ScheduleTime = '10:00',
     [switch]$Once
 )
 
@@ -43,6 +47,7 @@ $LockFile = Join-Path $Root '.hsmt-worker.lock'
 $RunFile = Join-Path $Root '.genbid-bot-run.json'
 # Tạm dừng vì hết hạn mức, nhớ qua các lần khởi động lại bot.
 $PauseFile = Join-Path $Root '.genbid-bot-pause.json'
+$ScheduleFile = Join-Path $Root '.genbid-bot-schedule.json'
 $LogDir = Join-Path $Root 'genbid-bot-logs'
 New-Item -ItemType Directory -Force $LogDir | Out-Null
 $Utf8 = New-Object Text.UTF8Encoding $false
@@ -325,6 +330,13 @@ try {
                     try { Send-Unanswered $dueReqs $reason } catch { Log "Không báo được lỗi về web: $($_.Exception.Message)" }
                 } else {
                     [IO.File]::WriteAllText($StateFile, ([pscustomobject]$handed | ConvertTo-Json -Depth 4), $Utf8)
+                    # Không có yêu cầu nào: tới lịch thì Sync (mỗi ngày theo lịch một lần, nhớ qua các lần khởi động lại bot).
+                    $today = $now.ToString('yyyy-MM-dd')
+                    if (-not $due.Count -and $ScheduleDays -contains $now.DayOfWeek.ToString() -and $now -ge [datetime]"$today $ScheduleTime" `
+                        -and (Read-Json $ScheduleFile ([pscustomobject]@{ last = '' })).last -ne $today -and -not (Test-WorkerRunning)) {
+                        [IO.File]::WriteAllText($ScheduleFile, (@{ last = $today } | ConvertTo-Json), $Utf8)
+                        [void](Invoke-Script 'sync' @('--force') @("schedule:$today"))
+                    }
                 }
             }
         } catch {

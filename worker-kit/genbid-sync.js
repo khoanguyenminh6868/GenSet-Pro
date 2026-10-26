@@ -432,6 +432,16 @@ function trimHsmt(text, kind) {
   }).join("\n");
   return { text: body, dropped };
 }
+// pdftotext -layout pads columns with spaces, which cost tokens: drop indentation and trailing spaces, turn wide gaps
+// (table columns) into " | " and other runs into one space, and keep only the first copy of page headers/footers.
+function compact(s) {
+  const lines = s.split("\n").map((l) => l.replace(/\s+$/, "").replace(/^[ \t]+/, "").replace(/[ \t]{4,}/g, " | ").replace(/[ \t]{2,}/g, " "));
+  const count = new Map();
+  for (const l of lines) if (l.length > 20 && l.length < 120 && !l.startsWith("--- Tệp:")) count.set(l, (count.get(l) || 0) + 1);
+  const seen = new Set();
+  return lines.filter((l) => { if ((count.get(l) || 0) < 5) return true; if (seen.has(l)) return false; seen.add(l); return true; })
+    .join("\n").replace(/\n{3,}/g, "\n\n");
+}
 const pdftotext = () => [path.join(process.env.LOCALAPPDATA || "", "Microsoft", "WinGet", "Links", "pdftotext.exe"), "C:\\Program Files\\Git\\mingw64\\bin\\pdftotext.exe"].find((f) => fs.existsSync(f)) || "pdftotext";
 // Text of a local file: PDF (pdftotext), .docx/.xlsx (through tar, which reads zip on Windows 10+), .txt.
 function fileText(f) {
@@ -472,7 +482,11 @@ async function prepOne(kind, key, requestedAt, dir) {
   const [notice, analysis, hsmt] = await Promise.all([doc("notice", key), doc("analysis", key), doc("hsmt", key)]);
   const full = await hsmtText(key);
   if (full) fs.writeFileSync(path.join(dir, "hsmt-full.txt"), full, "utf8");
-  const { text, dropped } = full ? trimHsmt(full, kind) : { text: "", dropped: [] };
+  const trimmed = full ? trimHsmt(full, kind) : { text: "", dropped: [] };
+  const text = compact(trimmed.text), dropped = trimmed.dropped;
+  // Webform chapters already in the HSMT text (same chapter number, a real section) would be read twice: leave them out.
+  const inText = new Set(splitSections(text).filter((x) => /^[IVX]+$/.test(x.chap) && x.text.length > 1500).map((x) => x.chap));
+  const webform = (notice?.chapters || []).filter((c) => !inText.has(((c.name.match(/^Chương\s+([IVX]+)/i) || [])[1] || "").toUpperCase()));
   const price = t.estimatedPrice ? Number(t.estimatedPrice).toLocaleString("vi-VN") + " đồng" : "chưa rõ";
   const close = t.bidCloseDate ? new Date(t.bidCloseDate).toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }) : "chưa rõ";
   const scans = (hsmt?.files || []).filter((f) => f.hasText === false).map((f) => f.name);
@@ -480,7 +494,7 @@ async function prepOne(kind, key, requestedAt, dir) {
   let input = `# ${KIND_NAME[kind]}: ${key}\n\nThông tin gói thầu đã biết: ${t.bidName || "?"}; số TBMT ${key}; chủ đầu tư ${t.investorName || "?"}; bên mời thầu ${t.procuringEntityName || t.investorName || "?"}; đóng thầu ${close}; giá gói thầu ${price}.\n`;
   if (notice?.info) {
     input += `\n## Thông báo mời thầu (muasamcong)\n${notice.info.slice(0, 8000)}\n\n### Danh sách chương HSMT\n${notice.hsmtList || ""}\n`;
-    input += (notice.chapters || []).map((c) => `\n### ${c.name} (biểu mẫu webform)\n${c.text}\n`).join("");
+    input += webform.map((c) => `\n### ${c.name} (biểu mẫu webform)\n${compact(c.text)}\n`).join("");
   }
   if ((kind === "hsdt" || kind === "compare") && analysis?.result) {
     const a = analysis.result;
@@ -488,7 +502,7 @@ async function prepOne(kind, key, requestedAt, dir) {
   }
   if (kind === "translation") {
     // Parts of about 60,000 characters, one JSON answer each (as the web's button does).
-    const src = text || (notice?.chapters || []).map((c) => c.text).join("\n");
+    const src = text || compact((notice?.chapters || []).map((c) => c.text).join("\n"));
     const parts = [];
     for (let i = 0; i < src.length; i += 60000) parts.push(src.slice(i, i + 60000));
     parts.forEach((p, i) => fs.writeFileSync(path.join(dir, `part-${i}.txt`), p, "utf8"));
@@ -517,7 +531,7 @@ async function prepOne(kind, key, requestedAt, dir) {
         fs.mkdirSync(hd, { recursive: true });
         fs.writeFileSync(out, Buffer.from(await (await fetch(url)).arrayBuffer()));
         const tx = fileText(out);
-        if (tx.replace(/\s+/g, "").length > 300) sub += `\n--- Tệp: ${f.name} ---\n${tx}\n`;
+        if (tx.replace(/\s+/g, "").length > 300) sub += `\n--- Tệp: ${f.name} ---\n${compact(tx)}\n`;
         else unread.push(out);
       } catch (e) { unread.push(`${f.name} (không tải được: ${e.message})`); }
     }
