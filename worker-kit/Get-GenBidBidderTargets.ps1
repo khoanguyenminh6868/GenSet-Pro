@@ -1,9 +1,9 @@
 ﻿<#
 Chọn các gói cần lấy danh sách nhà thầu và giá dự thầu từ muasamcong trong lượt này (bước 5b của worker).
-Gói được chọn: đã đóng thầu (quá 30 phút) trong vòng -Days ngày, chưa xoá, chưa có kết quả LCNT trên bản web
+Gói được chọn: đang ở Đã nộp hoặc Trúng thầu (bỏ qua gói Đã đóng, Không trúng, Bỏ qua và gói không theo dõi,
+Khoa 2026-10-27), đã đóng thầu (quá 30 phút) trong vòng -Days ngày, chưa xoá, chưa có kết quả LCNT trên bản web
 (bidders/<TBMT> có final = true), và chưa kiểm tra gần đây (portalids/<TBMT>.checkedAt: 6 giờ với gói đóng
-trong 7 ngày, 24 giờ với gói cũ hơn). Gói đã tham dự (Đã nộp, Trúng thầu, Không trúng) đi trước, rồi tới gói đang
-theo dõi khác, rồi tới gói đóng gần nhất; tối đa -Max gói.
+trong 7 ngày, 24 giờ với gói cũ hơn). Gói đóng gần nhất đi trước; tối đa -Max gói.
 Ghi ra -Out mảng [{key, notifyNo, bidName, bidCloseDate, tracked, stage, joined}].
 #>
 param(
@@ -34,7 +34,8 @@ try {
     $bidders = @{}; foreach ($d in (Get-Coll 'bidders')) { $bidders[$d.id] = $d.data }
     $portal = @{}; foreach ($d in (Get-Coll 'portalids')) { $portal[$d.id] = $d.data }
     $now = (Get-Date).ToUniversalTime()
-    $keys = @($info.Keys) + @($tracked.Keys | Where-Object { -not $info[$_] })
+    # Gói đóng thầu khi còn ở new/reviewing/preparing hiện là Đã đóng trên bản web, nên chỉ còn Đã nộp và Trúng thầu.
+    $keys = @($tracked.Keys | Where-Object { $tracked[$_] -in 'submitted', 'won' })
     $list = foreach ($key in $keys) {
         # Gói đang theo dõi mà bản web không có ngày đóng thầu: vẫn kiểm tra, mỗi 24 giờ một lần.
         $t = if ($info[$key]) { $info[$key] } else { [pscustomobject]@{ bidName = ''; bidCloseDate = $null } }
@@ -47,7 +48,7 @@ try {
         $stage = $tracked[$key]
         [pscustomobject]@{ key = $key; notifyNo = $key; bidName = $t.bidName; bidCloseDate = $t.bidCloseDate; tracked = [bool]$stage; stage = $stage; joined = $stage -in 'submitted', 'won', 'lost'; close = $close }
     }
-    $pick = @($list | Sort-Object @{ e = { -not $_.joined } }, @{ e = { -not $_.tracked } }, @{ e = { $_.close }; Descending = $true } | Select-Object -First $Max | Select-Object key, notifyNo, bidName, bidCloseDate, tracked, stage, joined)
+    $pick = @($list | Sort-Object @{ e = { $_.close }; Descending = $true } | Select-Object -First $Max | Select-Object key, notifyNo, bidName, bidCloseDate, tracked, stage, joined)
     [IO.File]::WriteAllText($Out, (ConvertTo-Json @($pick) -Depth 4), $utf8)
     Write-Host "$(@($list).Count) gói cần lấy nhà thầu, lượt này lấy $($pick.Count): $(($pick | ForEach-Object { $_.key }) -join ', ')"
 } finally { Remove-Item -Recurse -Force $tmp }
