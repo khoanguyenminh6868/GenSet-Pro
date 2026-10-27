@@ -1420,7 +1420,11 @@ function analysisTabHtml(t) {
     : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này chưa được phân tích."}</div>`;
   const reqErr = s !== "requested" && analysisReqError(t._key);
   const errNote = reqErr ? h`<div class="note warn">Agent chưa phân tích được: ${reqErr}</div>` : "";
-  return head + errNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
+  // What the analysis could not read (scanned pages left out, missing chapters) and what the worker's check of the
+  // quotes found: shown, so a partial analysis does not look complete (Khoa, 2026-10-27).
+  const notes = [].concat(a?.notes || []).filter(Boolean);
+  const notesNote = s === "done" && notes.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy:</b><ul class="clean">${raw(notes.map((x) => h`<li>${x}</li>`).join(""))}</ul></div>` : "";
+  return head + errNote + notesNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
 }
 
 // ---------- Libraries and files on demand ----------
@@ -2011,7 +2015,7 @@ function analysisHtml(a) {
       </div>`).join("") || '<p class="muted">Không có điểm nào được đánh dấu.</p>')}
     </div>
     <details class="sec" open><summary>Thông tin chính</summary><div><dl class="kv">${raw(KI.filter(([k]) => ki[k]).map(([k, l]) => h`<dt>${l}</dt><dd>${ki[k]}</dd>`).join(""))}</dl></div></details>
-    <details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table><thead><tr><th>Hạng mục</th><th>Yêu cầu</th><th>Nguồn</th></tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td>${s.item}</td><td>${s.requirement}</td><td class="muted">${s.reference || ""}</td></tr>`).join(""))}</tbody></table></div></details>
+    <details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table><thead><tr><th>Hạng mục</th><th>Yêu cầu</th><th>Nguồn</th></tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td>${s.item}</td><td>${s.requirement}${raw(s.quote ? h`<div class="muted small">"${s.quote}"</div>` : "")}</td><td class="muted">${s.reference || ""}${raw(s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td></tr>`).join(""))}</tbody></table></div></details>
     <details class="sec"><summary>Yêu cầu năng lực, kinh nghiệm (${(a.qualificationRequirements || []).length})</summary><div>${raw(list((a.qualificationRequirements || []).map((q) => q.requirement + (q.reference ? ` (${q.reference})` : ""))))}</div></details>
     <details class="sec"><summary>Tài liệu phải nộp (${(a.requiredDocuments || []).length})</summary><div>${raw(list(a.requiredDocuments))}</div></details>
     <details class="sec"><summary>Điều khoản có dấu hiệu hạn chế (${(a.restrictiveClauses || []).length})</summary><div>${raw(list(a.restrictiveClauses))}</div></details>
