@@ -789,7 +789,7 @@ async function requestWorker(coll, key, extra, what) {
   if (state.readOnly) { toast(`Đây là bản chỉ xem, không gửi được yêu cầu ${what}.`); return; }
   const t = findTender(key);
   // A TLKT comparison against an uploaded shortened YCKT does not read the HSMT.
-  const ownReq = coll === "tlktreq" && (extra.reqFiles?.length || extra.reqText);
+  const ownReq = coll === "tlktreq" && (extra.reqFiles?.length || extra.reqText || extra.translate);
   if (!ownReq && !state.hsmt[key]?.files?.length && !(coll === "hsdtreq" && analysisOf(key)?.result)) { toast(isProject(t) ? "Dự án này chưa có tệp. Tải tệp lên ở tab Tổng quan trước." : "Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
   try {
     const n = (await saveRequests(coll, [{ key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", ...extra }])).length;
@@ -1363,7 +1363,7 @@ function renderDrawer(force = true) {
   });
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlktreq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -2116,10 +2116,13 @@ const TLKT_VERDICT = { pass: ["Đáp ứng yêu cầu kỹ thuật", "var(--gree
 let tlktPick = null, ycktPick = null;
 function tlktTabHtml(t) {
   const prev = state.tlkt[t._key];
-  const tkWait = workerReqPending("tlktreq", t._key) ? waitHtml("Đang chờ Agent đối chiếu tài liệu kỹ thuật...", state.tlktreq[t._key].requestedAt) : "";
+  // tlktreq also carries "Tải PDF" (translate: true): the bot translates the stored result into English.
+  const tr = !!state.tlktreq?.[t._key]?.translate;
+  const tkWait = workerReqPending("tlktreq", t._key) ? waitHtml(tr ? "Đang chờ Agent dịch kết quả sang tiếng Anh. Xong thì bấm Tải PDF." : "Đang chờ Agent đối chiếu tài liệu kỹ thuật...", state.tlktreq[t._key].requestedAt) : "";
   const tkErr = !tkWait && workerReqError("tlktreq", t._key);
+  const enReady = prev?.result && prev.resultEnAt === prev.at;
   // A shortened YCKT, when uploaded, is the only requirements side: the HSMT is not read (Khoa, 2026-10-27).
-  return busyNote(t._key, "tlkt") + tkWait + (tkErr ? h`<div class="note warn">Agent chưa đối chiếu được: ${tkErr}</div>` : "") + h`<div class="drop" id="tyDrop">
+  return busyNote(t._key, "tlkt") + tkWait + (tkErr ? h`<div class="note warn">Agent chưa ${tr ? "dịch" : "đối chiếu"} được: ${tkErr}</div>` : "") + h`<div class="drop" id="tyDrop">
       <div class="row"><span class="muted small" style="flex:1">Tệp YCKT rút gọn (không bắt buộc). Khi có tệp này, chỉ đối chiếu với tệp này, không dùng HSMT gốc.</span><label class="btn sm" for="tyFiles">Chọn tệp</label></div>
       <input type="file" id="tyFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
       <div class="files" id="tyList"></div>
@@ -2131,10 +2134,11 @@ function tlktTabHtml(t) {
     </div>
     <textarea id="tkText" placeholder="Hoặc dán nội dung datasheet, bảng thông số kỹ thuật..."></textarea>
     <div class="row"><div class="spacer"></div><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
-    <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" title="Tải kết quả đối chiếu bằng tiếng Anh (PDF)">Tải PDF</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
+    <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì bấm lại để tải PDF"}">Tải PDF</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
 }
-// Tải PDF: the comparison result in English (Khoa, 2026-10-27). The translation is made once per result with the page's
-// AI and kept next to it (resultEn), so downloading again costs nothing.
+// Tải PDF: the comparison result in English (Khoa, 2026-10-27). The translation is made once per result and kept next to
+// it (resultEn), so downloading again costs nothing. On the web the Windows bot translates it (the web's own AI has no API
+// credit, Khoa 2026-10-27), like YCKT tiếng Anh; in claude.ai the page's AI does.
 const TLKT_VERDICT_EN = { pass: "Complies with the technical requirements", at_risk: "Clarifications needed", fail: "Does not comply with the technical requirements" };
 const STATUS_EN = { met: "Met", partial: "Partially met", not_met: "Not met", missing: "Missing", unclear: "Unclear" };
 async function tlktPdf(key, btn) {
@@ -2144,6 +2148,10 @@ async function tlktPdf(key, btn) {
   btn.disabled = true;
   try {
     let en = cur.resultEnAt === cur.at ? cur.resultEn : null;
+    if (!en && window.genbidWeb) {
+      await requestWorker("tlktreq", key, { translate: true }, "dịch kết quả đối chiếu sang tiếng Anh");
+      return;
+    }
     if (!en) {
       const sample = await getSample();
       if (!sample) throw new Error("Không kết nối được AI để dịch kết quả.");
