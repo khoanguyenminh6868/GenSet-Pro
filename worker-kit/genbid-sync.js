@@ -693,6 +693,33 @@ function askOnce(prompt, model) {
     p.stdin.end(prompt);
   });
 }
+// Translations (Tạo bản tiếng Anh, Tải PDF of a TLKT result) go to Gemini first, through Antigravity CLI signed in with
+// Khoa's Google AI Pro account, so they cost no Claude tokens (Khoa, 2026-10-27). Gemini 3.8 Flash Medium: Low left
+// Vietnamese untranslated; Medium matched Claude on a TLKT result. It runs in an empty folder so the agent sees no files.
+// Any failure (not installed, signed out, out of quota, not JSON) falls back to Claude.
+const AGY = path.join(process.env.LOCALAPPDATA || "", "agy", "bin", "agy.exe");
+const GEMINI_MODEL = process.env.GENBID_GEMINI_MODEL || "gemini-3.8-flash-medium";
+function askGemini(prompt) {
+  if (!fs.existsSync(AGY)) return Promise.resolve({ error: "chưa cài Antigravity CLI (agy)" });
+  const cwd = path.join(require("os").tmpdir(), "genbid-agy-empty");
+  fs.mkdirSync(cwd, { recursive: true });
+  return new Promise((resolve) => {
+    const p = cp.spawn(AGY, ["--model", GEMINI_MODEL, "--output-format", "json", "--disable-slash-commands", "--print-timeout", "1200s"], { cwd, windowsHide: true });
+    let out = "", err = "";
+    const timer = setTimeout(() => p.kill(), 25 * 60e3);
+    p.stdout.on("data", (d) => (out += d)); p.stderr.on("data", (d) => (err += d));
+    p.on("error", (e) => { clearTimeout(timer); resolve({ error: e.message }); });
+    p.on("close", (code) => {
+      clearTimeout(timer);
+      let j = null; try { j = JSON.parse(out); } catch {}
+      if (!j || j.status !== "SUCCESS") return resolve({ error: (j?.response || err || out || `mã thoát ${code}`).trim().slice(0, 300) });
+      const s = String(j.response || "").replace(/^\s*```(?:json)?\s*/, "").replace(/\s*```\s*$/, "");
+      let value = null; try { value = JSON.parse(s.slice(s.indexOf("{"), s.lastIndexOf("}") + 1)); } catch {}
+      resolve(value ? { value, secs: Math.round(j.duration_seconds || 0) } : { error: "câu trả lời của Gemini không phải JSON hợp lệ" });
+    });
+    p.stdin.end(prompt);
+  });
+}
 async function runAsk() {
   const base = String(opt("dir"));
   const deep = typeof opt("model") === "string" ? opt("model") : "opus", light = typeof opt("light") === "string" ? opt("light") : "sonnet";
@@ -706,8 +733,8 @@ async function runAsk() {
       + " Nếu dữ liệu không đủ để làm, trả {\"_error\": \"<một câu lý do bằng tiếng Việt>\"}.";
     if (meta.kind === "translation") {
       const parts = fs.readdirSync(dir).filter((f) => /^part-\d+\.txt$/.test(f));
-      parts.forEach((f) => jobs.push({ dir, meta, model: light, out: `result-${f.match(/\d+/)[0]}.json`, prompt: `${head}\n\n=== PHẦN CẦN DỊCH (${f}) ===\n${fs.readFileSync(path.join(dir, f), "utf8")}${tail}` }));
-    } else jobs.push({ dir, meta, model: meta.translate ? light : deep, out: "result.json", prompt: head + tail });
+      parts.forEach((f) => jobs.push({ dir, meta, model: light, gemini: true, out: `result-${f.match(/\d+/)[0]}.json`, prompt: `${head}\n\n=== PHẦN CẦN DỊCH (${f}) ===\n${fs.readFileSync(path.join(dir, f), "utf8")}${tail}` }));
+    } else jobs.push({ dir, meta, model: meta.translate ? light : deep, gemini: !!meta.translate, out: "result.json", prompt: head + tail });
   }
   if (!jobs.length) return "không có việc nào trả lời một lần (tất cả cần agent)";
   const lines = [], failedDirs = new Set();
@@ -715,15 +742,17 @@ async function runAsk() {
   const worker = async () => {
     while (next < jobs.length && !limit) {
       const job = jobs[next++];
-      const r = await askOnce(job.prompt, job.model);
       const tag = `${KIND_NAME[job.meta.kind]} ${job.meta.key}${job.out === "result.json" ? "" : " " + job.out}`;
+      let r = job.gemini ? await askGemini(job.prompt) : null, model = GEMINI_MODEL;
+      if (r?.error) lines.push(`${tag}: Gemini lỗi (${r.error}), dùng Claude`);
+      if (!r || r.error) { r = await askOnce(job.prompt, job.model); model = job.model; }
       if (r.limit) { limit = r.limit; break; }
       if (r.error) { failedDirs.add(job.dir); lines.push(`${tag}: lỗi (${r.error}), chuyển cho agent`); continue; }
       const v = r.value;
       if (v._error) { fs.writeFileSync(path.join(job.dir, "error.txt"), String(v._error), "utf8"); lines.push(`${tag}: ${v._error}`); continue; }
       if (v._notes) { fs.writeFileSync(path.join(job.dir, "notes.json"), JSON.stringify([].concat(v._notes)), "utf8"); delete v._notes; }
       writeJson(path.join(job.dir, job.out), v);
-      lines.push(`${tag}: xong (${r.secs}s, ${job.model})`);
+      lines.push(`${tag}: xong (${r.secs}s, ${model})`);
     }
   };
   await Promise.all(Array.from({ length: Math.min(3, jobs.length) }, worker));
