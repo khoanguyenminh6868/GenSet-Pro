@@ -62,7 +62,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .cmprev{justify-content:space-between}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
-.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkText,.ro #runQueueBtn{display:none!important}
+.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkText,.ro #tyDrop,.ro #tkDel,.ro #runQueueBtn{display:none!important}
 .ro #dStage,.ro #dNote{pointer-events:none;opacity:.7}
 .ro [data-viewtext],.ext [data-openpdf]{display:none!important}
 .btn.green{background:var(--mint);border-color:var(--mint);color:#fff}
@@ -788,7 +788,9 @@ let areqNoteUntil = 0;
 async function requestWorker(coll, key, extra, what) {
   if (state.readOnly) { toast(`Đây là bản chỉ xem, không gửi được yêu cầu ${what}.`); return; }
   const t = findTender(key);
-  if (!state.hsmt[key]?.files?.length && !(coll === "hsdtreq" && analysisOf(key)?.result)) { toast(isProject(t) ? "Dự án này chưa có tệp. Tải tệp lên ở tab Tổng quan trước." : "Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
+  // A TLKT comparison against an uploaded shortened YCKT does not read the HSMT.
+  const ownReq = coll === "tlktreq" && (extra.reqFiles?.length || extra.reqText);
+  if (!ownReq && !state.hsmt[key]?.files?.length && !(coll === "hsdtreq" && analysisOf(key)?.result)) { toast(isProject(t) ? "Dự án này chưa có tệp. Tải tệp lên ở tab Tổng quan trước." : "Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
   try {
     const n = (await saveRequests(coll, [{ key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", ...extra }])).length;
     if (!n) throw new Error("");
@@ -2111,12 +2113,17 @@ ${s.text}`;
 // ---------- Đối chiếu TLKT (a supplier's technical proposal against the tender's technical requirements) ----------
 // Only the technical side: price, bid security, qualification and other bidding conditions are left out (Khoa, 2026-10-27).
 const TLKT_VERDICT = { pass: ["Đáp ứng yêu cầu kỹ thuật", "var(--green)"], at_risk: ["Còn điểm cần làm rõ", "var(--amber)"], fail: ["Không đáp ứng yêu cầu kỹ thuật", "var(--red)"] };
-let tlktPick = null;
+let tlktPick = null, ycktPick = null;
 function tlktTabHtml(t) {
   const prev = state.tlkt[t._key];
   const tkWait = workerReqPending("tlktreq", t._key) ? waitHtml("Đang chờ Agent đối chiếu tài liệu kỹ thuật...", state.tlktreq[t._key].requestedAt) : "";
   const tkErr = !tkWait && workerReqError("tlktreq", t._key);
-  return busyNote(t._key, "tlkt") + tkWait + (tkErr ? h`<div class="note warn">Agent chưa đối chiếu được: ${tkErr}</div>` : "") + h`<p class="muted small" style="margin:0">So tài liệu kỹ thuật đề xuất (technical proposal) của nhà cung cấp với yêu cầu kỹ thuật trong HSMT của gói này. Chỉ xét kỹ thuật, không xét giá hay các điều kiện đấu thầu khác.</p>
+  // A shortened YCKT, when uploaded, is the only requirements side: the HSMT is not read (Khoa, 2026-10-27).
+  return busyNote(t._key, "tlkt") + tkWait + (tkErr ? h`<div class="note warn">Agent chưa đối chiếu được: ${tkErr}</div>` : "") + h`<div class="drop" id="tyDrop">
+      <div class="row"><span class="muted small" style="flex:1">Tệp YCKT rút gọn (không bắt buộc). Khi có tệp này, chỉ đối chiếu với tệp này, không dùng HSMT gốc.</span><label class="btn sm" for="tyFiles">Chọn tệp</label></div>
+      <input type="file" id="tyFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
+      <div class="files" id="tyList"></div>
+    </div>
     <div class="drop" id="tkDrop">
       <div class="row"><span class="muted small" style="flex:1">Tệp technical proposal của đối tác (PDF, DOCX, ảnh)</span><label class="btn sm" for="tkFiles">Chọn tệp</label></div>
       <input type="file" id="tkFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
@@ -2124,35 +2131,55 @@ function tlktTabHtml(t) {
     </div>
     <textarea id="tkText" placeholder="Hoặc dán nội dung datasheet, bảng thông số kỹ thuật..."></textarea>
     <div class="row"><div class="spacer"></div><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
-    <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}</span></div>` + tlktHtml(prev.result) : "")}</div>`;
+    <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></div>` + tlktHtml(prev.result) : "")}</div>`;
 }
-function mountTlkt() { tlktPick = filePicker("tkFiles", "tkDrop", "tkList"); }
+function mountTlkt() { tlktPick = filePicker("tkFiles", "tkDrop", "tkList"); ycktPick = filePicker("tyFiles", "tyDrop", "tyList"); }
+function askDeleteTlkt(key) {
+  modal(h`<div class="row"><h2 style="flex:1">Xóa kết quả đối chiếu TLKT?</h2><button class="btn sm" data-close>Đóng</button></div>
+    <p class="small" style="margin:0">Kết quả đối chiếu tài liệu kỹ thuật lúc ${fmtDate(state.tlkt[key].at)} sẽ bị xóa.</p>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="tkDelOk" style="color:var(--red)">Xóa</button></div>`, (m, close) => {
+    $("#tkDelOk", m).addEventListener("click", async () => {
+      close();
+      if (state.readOnly || !state.db) { toast("Bạn chỉ có quyền xem, không xóa được."); return; }
+      try { await state.db.doc("tlkt/" + key).delete(); }
+      catch (e) { toast(e?.code === "permission_denied" ? "Bạn chỉ có quyền xem, không xóa được." : "Không xóa được kết quả đối chiếu."); return; }
+      const { [key]: _gone, ...rest } = state.tlkt;
+      state.tlkt = rest;
+      const out = $("#tkOut"); if (out) out.innerHTML = "";
+      toast("Đã xóa kết quả đối chiếu TLKT");
+    });
+  });
+}
+// Web version: files go to the private scratch bucket (tlkt/<key>/). Files over the storage limit, or all of them when
+// the upload fails ("Failed to fetch"), travel as the text the browser reads from them; only a scan with no text stops.
+async function uploadOrText(key, list, pasted, out) {
+  const all = [...list], big = all.filter((f) => f.size > 45 * 1024 * 1024);
+  let files = [], asText = big, why = "tệp lớn hơn 45 MB", text = pasted;
+  if (all.length > big.length) {
+    out.innerHTML = progress("Đang tải tệp lên...");
+    try { files = await window.genbidScratch(key, all.filter((f) => !big.includes(f)), "tlkt"); }
+    catch (e) { asText = all; why = e?.message || "không tải tệp lên được"; }
+  }
+  for (const f of asText) {
+    out.innerHTML = progress(`Đang đọc chữ trong ${f.name}...`);
+    const r = await readFile(f, 0).catch(() => ({ text: "" }));
+    if (!r.text?.trim()) throw new Error(`${f.name}: ${why}, và trang không đọc được chữ trong tệp (bản scan hoặc ảnh). Hãy thử lại, hoặc chia nhỏ tệp.`);
+    text += `\n\n--- Tệp: ${f.name} ---\n${r.text}`;
+  }
+  return { files, text: text.trim() };
+}
 async function runTlkt(key) { if (window.genbidWeb) return runTlkt0(key); busyStart(key, "tlkt"); try { await runTlkt0(key); } finally { busyEnd(key, "tlkt"); } }
 async function runTlkt0(key) {
   const out = $("#tkOut"), btn = $("#tkRun");
   if (!tlktPick?.files.length && !$("#tkText").value.trim()) { out.innerHTML = h`<div class="note">Chọn tệp technical proposal hoặc dán nội dung trước.</div>`; return; }
-  // Web version: the proposal goes to the private scratch bucket (tlkt/<key>/) and the Windows worker compares (tlkt-prompt.md).
+  // Web version: the Windows worker compares (tlkt-prompt.md).
   if (window.genbidWeb) {
     btn.disabled = true;
     try {
-      // Files over the storage limit, or all of them when the upload fails ("Failed to fetch"), travel as the text the
-      // browser reads from them instead; only a scan with no text then stops the request.
-      const all = [...(tlktPick?.files || [])], big = all.filter((f) => f.size > 45 * 1024 * 1024);
-      let files = [], asText = big, why = "tệp lớn hơn 45 MB";
-      if (all.length > big.length) {
-        out.innerHTML = progress("Đang tải tài liệu kỹ thuật lên...");
-        try { files = await window.genbidScratch(key, all.filter((f) => !big.includes(f)), "tlkt"); }
-        catch (e) { asText = all; why = e?.message || "không tải tệp lên được"; }
-      }
-      let text = $("#tkText").value;
-      for (const f of asText) {
-        out.innerHTML = progress(`Đang đọc chữ trong ${f.name}...`);
-        const r = await readFile(f, 0).catch(() => ({ text: "" }));
-        if (!r.text?.trim()) throw new Error(`${f.name}: ${why}, và trang không đọc được chữ trong tệp (bản scan hoặc ảnh). Hãy thử lại, hoặc chia nhỏ tệp.`);
-        text += `\n\n--- Tệp: ${f.name} ---\n${r.text}`;
-      }
+      const y = ycktPick?.files.length ? await uploadOrText(key, ycktPick.files, "", out) : { files: [], text: "" };
+      const p = await uploadOrText(key, tlktPick?.files || [], $("#tkText").value, out);
       out.innerHTML = "";
-      await requestWorker("tlktreq", key, { files, text: text.trim() }, "đối chiếu TLKT");
+      await requestWorker("tlktreq", key, { files: p.files, text: p.text, reqFiles: y.files, reqText: y.text }, "đối chiếu TLKT");
     } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
     finally { btn.disabled = false; }
     return;
@@ -2164,11 +2191,19 @@ async function runTlkt0(key) {
     out.innerHTML = progress("Đang đọc tài liệu...");
     const lim = await sample.limits().catch(() => null);
     const budget = lim?.images?.maxCount ?? 0;
-    const all = await loadAttachedText(key);
-    const a = analysisOf(key)?.result;
-    const reqText = (ycktSections(all) || all) + (a?.technicalSpecs?.length ? "\n\n--- Thông số kỹ thuật từ lần phân tích HSMT ---\n" + JSON.stringify(a.technicalSpecs) : "");
-    if (!reqText.trim()) throw new Error("Gói này chưa có nội dung HSMT để đối chiếu.");
-    const sub = await collectDocs(tlktPick?.files || [], $("#tkText").value, "TLKT", budget);
+    const ownReq = !!ycktPick?.files.length;
+    let reqText, ownImages = [];
+    if (ownReq) {
+      const y = await collectDocs(ycktPick.files, "", "YCKT rút gọn", budget);
+      reqText = y.text; ownImages = y.images;
+    } else {
+      const all = await loadAttachedText(key);
+      const a = analysisOf(key)?.result;
+      reqText = (ycktSections(all) || all) + (a?.technicalSpecs?.length ? "\n\n--- Thông số kỹ thuật từ lần phân tích HSMT ---\n" + JSON.stringify(a.technicalSpecs) : "");
+      if (!reqText.trim()) throw new Error("Gói này chưa có nội dung HSMT để đối chiếu.");
+    }
+    const sub = await collectDocs(tlktPick?.files || [], $("#tkText").value, "TLKT", budget - ownImages.length);
+    sub.images = [...ownImages, ...sub.images];
     const r = clip(reqText, MAX_TEXT / 2), s = clip(sub.text, MAX_TEXT / 2);
     const prompt = `${DOMAIN}
 
@@ -2176,8 +2211,8 @@ Task: check a supplier's technical proposal (tài liệu kỹ thuật đề xu�
 
 Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
 ${TLKT_SHAPE}
-${sub.images.length ? `\nAttached images: ${sub.images.length} pages of the technical proposal.\n` : ""}
-=== YÊU CẦU KỸ THUẬT CỦA GÓI THẦU (requirements) ===
+${ownReq ? "\nThe requirements below are a shortened technical requirements file (YCKT rút gọn) uploaded by the user: they are the ONLY requirements; ignore the original tender documents.\n" : ""}${sub.images.length ? `\nAttached images: ${ownImages.length ? `the first ${ownImages.length} are pages of the YCKT rút gọn, the rest` : sub.images.length} pages of the technical proposal.\n` : ""}
+=== ${ownReq ? "YCKT RÚT GỌN" : "YÊU CẦU KỸ THUẬT CỦA GÓI THẦU"} (requirements) ===
 ${r.text}
 
 === TÀI LIỆU KỸ THUẬT ĐỀ XUẤT CỦA NHÀ CUNG CẤP (technical proposal) ===
@@ -2185,8 +2220,8 @@ ${s.text}`;
     out.innerHTML = progress("AI đang đối chiếu từng yêu cầu kỹ thuật. Có thể mất vài phút.");
     const c = await sample.json(prompt, { modelTier: "complex", ...(sub.images.length ? { images: sub.images } : {}) });
     const at = new Date().toISOString();
-    state.tlkt = { ...state.tlkt, [key]: { result: c, at } };
-    await dbSet("tlkt/" + key, { result: c, at });
+    state.tlkt = { ...state.tlkt, [key]: { result: c, at, ownReq } };
+    await dbSet("tlkt/" + key, { result: c, at, ownReq });
     const notes = [...sub.notes, ...(r.clipped || s.clipped ? ["Một phía quá dài nên phần cuối đã bị cắt."] : [])];
     out.innerHTML = notes.map((n) => h`<div class="note warn">${n}</div>`).join("") + tlktHtml(c);
   } catch (e) {
@@ -2371,6 +2406,7 @@ document.addEventListener("click", async (e) => {
   if (pd && state.open) { askRemoveProjectFile(state.open, +pd.dataset.pdel); return; }
   if (e.target.id === "hfCancel") { requestRefetch(e.target.dataset.key, true); return; }
   if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
+  if (e.target.closest("#tkDel")) { askDeleteTlkt(e.target.closest("#tkDel").dataset.key); return; }
   if (e.target.closest("#cmDel")) { askDeleteCompare(e.target.closest("#cmDel").dataset.key); return; }
 });
 document.addEventListener("input", (e) => {
