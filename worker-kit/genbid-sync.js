@@ -408,6 +408,18 @@ function splitSections(text) {
   push();
   return out;
 }
+// Đối chiếu TLKT needs only the technical criteria of chapter III (Mục 3. Tiêu chuẩn đánh giá về kỹ thuật), not
+// eligibility, capability-experience or price (Khoa, 2026-10-27). Without that heading the chapter stays whole.
+function technicalOfIII(text) {
+  const lines = text.split("\n");
+  const head = (l) => l.trim().length < 150;
+  const from = lines.findIndex((l) => head(l) && /^\s*(Mục|MỤC)\s*3\b/.test(l) && /kỹ thuật|KỸ THUẬT/.test(l));
+  const start = from >= 0 ? from : lines.findIndex((l) => head(l) && /tiêu chuẩn đánh giá về kỹ thuật/i.test(l));
+  if (start < 0) return text;
+  let end = lines.findIndex((l, i) => i > start && head(l) && /^\s*(Mục|MỤC)\s*[4-9]\b/.test(l));
+  if (end < 0) end = lines.length;
+  return [lines[0], ...lines.slice(start, end)].join("\n");
+}
 function trimHsmt(text, kind) {
   const keep = KEEP[kind], secs = splitSections(text), dropped = [];
   // The same chapter often comes twice (a .docx and the full E-HSMT PDF): keep the longest copy.
@@ -430,7 +442,7 @@ function trimHsmt(text, kind) {
   const body = parts.map((s) => {
     const head = s.file !== lastFile && !s.text.startsWith("--- Tệp:") ? `--- Tệp: ${s.file} ---\n` : "";
     lastFile = s.file;
-    return head + s.text;
+    return head + (kind === "tlkt" && s.chap === "III" ? technicalOfIII(s.text) : s.text);
   }).join("\n");
   return { text: body, dropped };
 }
@@ -543,7 +555,7 @@ async function prepOne(kind, key, requestedAt, dir) {
   if (notice?.info) {
     // The notice and the chapter list say nothing technical: Đối chiếu TLKT leaves them out.
     if (kind !== "tlkt") input += `\n## Thông báo mời thầu (muasamcong)\n${notice.info.slice(0, 8000)}\n\n### Danh sách chương HSMT\n${notice.hsmtList || ""}\n`;
-    input += webform.map((c) => `\n### ${c.name} (biểu mẫu webform)\n${compact(c.text)}\n`).join("");
+    input += webform.map((c) => `\n### ${c.name} (biểu mẫu webform)\n${compact(kind === "tlkt" && chapOf(c) === "III" ? technicalOfIII(c.text) : c.text)}\n`).join("");
   }
   // The analysis's technicalSpecs repeat chapter V: added only when chapter V is not there as text.
   const hasV = inText.has("V") || webform.some((c) => chapOf(c) === "V");
