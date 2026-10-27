@@ -640,19 +640,20 @@ const TABS = [...STAGES.slice(0, 5), { key: "closed", label: "Đã đóng" }, ST
 // Projects Khoa creates by hand (tab Dự án, Khoa 2026-10-27): manual/<key> with isProject. They have no muasamcong
 // notice, no stages and no KPIs; their files are uploaded by hand into hsmt/<key> like a tender's HSMT.
 const isProject = (t) => !!t?.isProject;
-// A project's Mã số: "Dự Án <yyyy-mm-dd>-<nn>", numbered by creation day (Vietnam time), saved when the project is
-// created so it never changes. Projects made before the number existed get theirs from their creation order.
+// A project's Mã số: "DA-<yyyy-mm-dd>-<nn>", numbered by creation day (Vietnam time), saved when the project is
+// created so it never changes. Projects made before the number existed get theirs from their creation order, and
+// numbers saved in the earlier "Dự Án <yyyy-mm-dd>-<nn>" form show in the DA- form.
 const projDay = (iso) => new Intl.DateTimeFormat("en-CA", { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(iso || Date.now()));
 function nextProjectNo(iso) {
   const day = projDay(iso);
   const used = Object.values(state.manual).filter((p) => p.isProject).map((p) => projectNo(p)).filter((n) => n.includes(day)).map((n) => +n.slice(-2) || 0);
-  return `Dự Án ${day}-${String(Math.max(0, ...used) + 1).padStart(2, "0")}`;
+  return `DA-${day}-${String(Math.max(0, ...used) + 1).padStart(2, "0")}`;
 }
 function projectNo(t) {
-  if (t.projectNo) return t.projectNo;
+  if (t.projectNo) return t.projectNo.replace(/^Dự Án /, "DA-");
   const day = projDay(t.addedAt);
   const same = Object.values(state.manual).filter((p) => p.isProject && !p.projectNo && projDay(p.addedAt) === day).sort((a, b) => (a.addedAt || "").localeCompare(b.addedAt || ""));
-  return `Dự Án ${day}-${String(same.findIndex((p) => p.addedAt === t.addedAt) + 1 || 1).padStart(2, "0")}`;
+  return `DA-${day}-${String(same.findIndex((p) => p.addedAt === t.addedAt) + 1 || 1).padStart(2, "0")}`;
 }
 // "Tất cả" lists tenders only; every other tab lists what tabOf puts there.
 const inTab = (t) => (state.stage === "all" ? !isProject(t) : tabOf(t) === state.stage);
