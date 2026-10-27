@@ -448,10 +448,11 @@ function trimHsmt(text, kind) {
 }
 // pdftotext -layout pads columns with spaces, which cost tokens: drop indentation and trailing spaces, turn wide gaps
 // (table columns) into " | " and other runs into one space, and keep only the first copy of page headers/footers.
+// List rows ("- Bản vẽ lắp: ...", "1. ...") are real data even when they repeat (one per item of a parts list), so they stay.
 function compact(s) {
   const lines = s.split("\n").map((l) => l.replace(/\s+$/, "").replace(/^[ \t]+/, "").replace(/[ \t]{4,}/g, " | ").replace(/[ \t]{2,}/g, " "));
   const count = new Map();
-  for (const l of lines) if (l.length > 20 && l.length < 120 && !l.startsWith("--- Tệp:")) count.set(l, (count.get(l) || 0) + 1);
+  for (const l of lines) if (l.length > 20 && l.length < 120 && !l.startsWith("--- Tệp:") && !/^([-+•*–]|\d+[.)/]?\s)/.test(l)) count.set(l, (count.get(l) || 0) + 1);
   const seen = new Set();
   return lines.filter((l) => { if ((count.get(l) || 0) < 5) return true; if (seen.has(l)) return false; seen.add(l); return true; })
     .join("\n").replace(/\n{3,}/g, "\n\n");
@@ -569,18 +570,23 @@ async function prepOne(kind, key, requestedAt, dir) {
   const close = t.bidCloseDate ? new Date(t.bidCloseDate).toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }) : "chưa rõ";
   const scans = (hsmt?.files || []).filter((f) => f.hasText === false).map((f) => f.name);
   const local = path.join(DOWNLOADS, key);
-  let input = `# ${KIND_NAME[kind]}: ${key}\n\nThông tin gói thầu đã biết: ${t.bidName || "?"}; số TBMT ${key}; chủ đầu tư ${t.investorName || "?"}; bên mời thầu ${t.procuringEntityName || t.investorName || "?"}; đóng thầu ${close}; giá gói thầu ${price}.\n`;
+  // What finish checks the result's quotes against: the tender's own text (never an earlier AI analysis), and whether
+  // part of it is only in scanned files, which the check cannot see.
+  let reqSrc = ownReq ? "" : [full, notice?.info || "", ...(notice?.chapters || []).map((c) => c.text)].join("\n"), reqUnread = !ownReq && scans.length > 0;
+  let input =`# ${KIND_NAME[kind]}: ${key}\n\nThông tin gói thầu đã biết: ${t.bidName || "?"}; số TBMT ${key}; chủ đầu tư ${t.investorName || "?"}; bên mời thầu ${t.procuringEntityName || t.investorName || "?"}; đóng thầu ${close}; giá gói thầu ${price}.\n`;
   if (notice?.info) {
     // The notice and the chapter list say nothing technical: Đối chiếu TLKT leaves them out.
-    if (kind !== "tlkt") input += `\n## Thông báo mời thầu (muasamcong)\n${notice.info.slice(0, 8000)}\n\n### Danh sách chương HSMT\n${notice.hsmtList || ""}\n`;
+    if (kind !== "tlkt") input += `\n## Thông báo mời thầu (muasamcong)\n${notice.info.slice(0, 8000)}${notice.info.length > 8000 ? "\n(thông báo dài hơn, phần sau đã cắt bớt)" : ""}\n\n### Danh sách chương HSMT\n${notice.hsmtList || ""}\n`;
     input += webform.map((c) => `\n### ${c.name} (biểu mẫu webform)\n${compact(kind === "tlkt" && chapOf(c) === "III" ? technicalOfIII(c.text) : c.text)}\n`).join("");
   }
   // The analysis's technicalSpecs repeat chapter V: added only when chapter V is not there as text.
   const hasV = inText.has("V") || webform.some((c) => chapOf(c) === "V");
-  if (kind === "tlkt" && !hasV && analysis?.result?.technicalSpecs?.length) input += `\n## Thông số kỹ thuật từ lần phân tích HSMT trước đó\n${JSON.stringify(analysis.result.technicalSpecs)}\n`;
+  // An earlier analysis is AI output, not a source: labelled so, and finish never checks quotes against it.
+  const AI_NOTE = "(do AI tạo ở lần Phân tích trước, KHÔNG phải nguồn: chỉ dùng để tìm trong văn bản HSMT; khác với văn bản thì theo văn bản)";
+  if (kind === "tlkt" && !hasV && analysis?.result?.technicalSpecs?.length) input += `\n## Thông số kỹ thuật từ lần phân tích HSMT trước đó ${AI_NOTE}\n${JSON.stringify(analysis.result.technicalSpecs)}\n`;
   if ((kind === "hsdt" || kind === "compare") && analysis?.result) {
     const a = analysis.result;
-    input += `\n## Kết quả phân tích HSMT trước đó\n${JSON.stringify({ keyInfo: a.keyInfo, technicalSpecs: a.technicalSpecs, qualificationRequirements: a.qualificationRequirements, requiredDocuments: a.requiredDocuments }, null, 1)}\n`;
+    input += `\n## Kết quả phân tích HSMT trước đó ${AI_NOTE}\n${JSON.stringify({ keyInfo: a.keyInfo, technicalSpecs: a.technicalSpecs, qualificationRequirements: a.qualificationRequirements, requiredDocuments: a.requiredDocuments }, null, 1)}\n`;
   }
   if (kind === "translation") {
     // Parts of about 60,000 characters, one JSON answer each (as the web's button does).
@@ -591,12 +597,13 @@ async function prepOne(kind, key, requestedAt, dir) {
     input += `\n## Văn bản cần dịch\nĐã chia sẵn thành ${parts.length} phần: ${parts.map((_, i) => `part-${i}.txt`).join(", ")}.\n`;
   } else if (ownReq) {
     const y = await scratchDocs(req.reqFiles, req.reqText, path.join(dir, "yckt"));
+    reqSrc = y.text; reqUnread = y.unread.length > 0;
     input += `\n## YCKT RÚT GỌN (yêu cầu kỹ thuật dùng để đối chiếu; không dùng HSMT gốc)\n${y.text || "(không có chữ)"}\n`;
     if (y.unread.length) input += `\nTệp YCKT rút gọn chưa đọc được chữ (scan, ảnh, .doc): ${y.unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   } else {
     input += `\n## Hồ sơ mời thầu (đã bỏ các chương mẫu không cần cho việc này)\n${text || "(chưa có chữ của tệp HSMT trên web)"}\n`;
   }
-  if (dropped.length) input += `\n## Phần đã bỏ (chỉ đọc lại trong hsmt-full.txt khi thật cần)\n${dropped.map((d) => "- " + d).join("\n")}\n`;
+  if (dropped.length) input += `\n## Phần đã bỏ (không gửi kèm; agent đọc lại trong hsmt-full.txt khi thật cần. Điều gì có thể nằm ở đây thì ghi là không có trong tài liệu được cung cấp, không suy đoán)\n${dropped.map((d) => "- " + d).join("\n")}\n`;
   if (scans.length) {
     const rel = path.join(dir, "rel"), scan = path.join(dir, "scan"), render = path.join(KIT, "Render-GenBidScan.ps1");
     input += `\n## Tệp scan chưa có chữ\n${scans.map((s) => "- " + s).join("\n")}\n`
@@ -614,15 +621,19 @@ async function prepOne(kind, key, requestedAt, dir) {
       + (ownReq ? `; YCKT rút gọn: ${[].concat(req.reqFiles || []).length} tệp, ${(req.reqText || "").length.toLocaleString("vi-VN")} ký tự` : "")
       + (req.uploadError ? `; tải tệp lỗi nên gửi chữ: ${req.uploadError}` : ""));
     input += `\n## ${kind === "tlkt" ? "TÀI LIỆU KỸ THUẬT ĐỀ XUẤT CỦA NHÀ CUNG CẤP (technical proposal)" : "HỒ SƠ DỰ THẦU (submission)"}\n${sub || "(không có chữ)"}\n`;
+    fs.writeFileSync(path.join(dir, "src-sub.txt"), sub, "utf8");
+    if (unread.length) writeJson(path.join(dir, "src-unread.json"), { sub: true });
     // A partner's proposal is read as text only, never as pictures (Khoa, 2026-10-27: save tokens): files without
     // text are skipped, and a proposal with no text at all is answered with an error.
     if (kind === "tlkt") {
       const names = unread.map((f) => path.basename(f));
-      if (names.length) input += `\nTệp tài liệu kỹ thuật không có chữ (scan, ảnh, .doc), đã bỏ qua vì chỉ đọc chữ: ${names.join("; ")}.\n`;
+      if (names.length) input += `\nTệp tài liệu kỹ thuật không có chữ (scan, ảnh, .doc), đã bỏ qua vì chỉ đọc chữ: ${names.join("; ")}. Yêu cầu nào có thể được đáp ứng trong các tệp này thì dùng "unclear" (không dùng "missing") và nêu tên tệp.\n`;
       if (!sub.trim()) fs.writeFileSync(path.join(dir, "error.txt"), `Tài liệu kỹ thuật đề xuất không có chữ đọc được (${names.join("; ") || "không có tệp"}). Chỉ đọc chữ, không đọc hình: hãy gửi bản PDF có chữ, DOCX hoặc XLSX.`, "utf8");
     } else if (unread.length) input += `\nTệp HSDT chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   }
   fs.writeFileSync(path.join(dir, "input.md"), input, "utf8");
+  fs.writeFileSync(path.join(dir, "src-req.txt"), reqSrc, "utf8");
+  if (reqUnread) writeJson(path.join(dir, "src-unread.json"), { ...readJson(path.join(dir, "src-unread.json"), {}), req: true });
   // Requests that need to look at pages (mostly scanned HSMT, unreadable HSDT files) or are too large for one call
   // go to the Claude agent (tools: Read for images, Render-GenBidScan.ps1); the rest are answered in one call (ask).
   const why = [];
@@ -763,6 +774,95 @@ async function runAsk() {
   return lines.join("; ");
 }
 
+// ---------- check a result against the documents it came from (Khoa, 2026-10-27: results only from the real data) ----------
+// A quote counts as found when 80% of its three-word runs and all of its numbers occur in the source, compared on
+// letters and digits only (pdftotext columns, " | " and line breaks differ from what the model copies).
+const normTxt = (s) => String(s || "").normalize("NFC").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+const numsOf = (s) => [...String(s || "").matchAll(/\d+(?:[.,]\d+)*/g)].map((m) => m[0].replace(/[.,]/g, "")).filter((n) => n.length > 1);
+function sourceOf(text) {
+  const norm = normTxt(text);
+  return { norm, nums: new Set(numsOf(text)), usable: norm.length > 300 };
+}
+function found(quote, src) {
+  // Several excerpts joined by "…" are checked one by one.
+  return String(quote || "").split(/\s*(?:…|\.\.\.)\s*/).filter((q) => normTxt(q)).every((q) => {
+    if (!numsOf(q).every((n) => src.nums.has(n))) return false;
+    const w = normTxt(q).split(" ");
+    if (w.length < 3) return src.norm.includes(w.join(" "));
+    let hit = 0;
+    for (let i = 0; i + 3 <= w.length; i++) if (src.norm.includes(w.slice(i, i + 3).join(" "))) hit++;
+    return hit / (w.length - 2) >= 0.8 || nearby(w, src.norm);
+  });
+}
+// pdftotext -layout interleaves the columns of a table, so a real quote can come out split across lines: then 90% of
+// its words must occur within a short stretch of the source around its longest word.
+function nearby(w, norm) {
+  const key = w.reduce((a, b) => (b.length > a.length ? b : a)), span = w.join(" ").length * 3 + 300;
+  for (let p = norm.indexOf(key), n = 0; p >= 0 && n < 200; p = norm.indexOf(key, p + 1), n++) {
+    const win = " " + norm.slice(Math.max(0, p - span), p + span) + " ";
+    if (w.filter((x) => win.includes(" " + x + " ")).length / w.length >= 0.9) return true;
+  }
+  return false;
+}
+// Score and verdict follow from the item statuses, not from the model's own estimate: critical items count twice,
+// partial counts half; a critical not_met fails, any other gap is at risk.
+function scoreItems(items) {
+  let got = 0, all = 0;
+  for (const i of items) { const w = i.critical ? 2 : 1; all += w; got += w * (i.status === "met" ? 1 : i.status === "partial" ? 0.5 : 0); }
+  const verdict = items.some((i) => i.critical && i.status === "not_met") ? "fail" : items.some((i) => i.status !== "met") ? "at_risk" : "pass";
+  return { overallScore: all ? Math.round((100 * got) / all) : 0, verdict };
+}
+function checkResult(meta, result, dir) {
+  const kind = meta.kind;
+  const unread = readJson(path.join(dir, "src-unread.json"), {});
+  const read = (f) => (fs.existsSync(path.join(dir, f)) ? fs.readFileSync(path.join(dir, f), "utf8") : "");
+  const req = sourceOf(read("src-req.txt")), sub = sourceOf(read("src-sub.txt"));
+  const where = meta.ownReq ? "YCKT rút gọn" : "HSMT";
+  const notes = [];
+  if (kind === "analysis") {
+    if (!req.usable) return [`Không kiểm chứng tự động được: ${where} chủ yếu là bản scan (AI đọc qua ảnh), cần đối chiếu lại với tệp gốc.`];
+    const badQuote = [], badNum = [];
+    for (const h of result.highlights || []) if (h.quote && !found(h.quote, req)) { badQuote.push(h.title); h.quote = null; }
+    for (const s of [...(result.technicalSpecs || []), ...(result.qualificationRequirements || [])]) {
+      if (s.quote && !found(s.quote, req)) { s.quote = null; s.unverified = true; }
+      const miss = numsOf(s.requirement).filter((n) => !req.nums.has(n));
+      if (miss.length) { s.unverified = true; badNum.push(`${s.item || String(s.requirement || "").slice(0, 40)} (${miss.join(", ")})`); }
+    }
+    const tail = unread.req ? " (có thể nằm trong tệp scan chưa có chữ)" : "";
+    if (badQuote.length) notes.push(`Kiểm tra tự động: ${badQuote.length} trích dẫn không thấy nguyên văn trong ${where}${tail} nên đã bỏ trích dẫn: ${badQuote.join("; ")}.`);
+    if (badNum.length) notes.push(`Kiểm tra tự động: ${badNum.length} mục có con số không thấy trong ${where}${tail}, cần kiểm tra lại: ${badNum.join("; ")}.`);
+    return notes;
+  }
+  // Đối chiếu / Đối chiếu TLKT
+  const items = result.items || [];
+  let reqOk = 0, subN = 0, subOk = 0;
+  for (const i of items) {
+    const flags = [];
+    if (req.usable) {
+      if (found(i.requirementQuote || i.requirement, req)) reqOk++;
+      else { i.unverified = true; flags.push(`Không thấy nguyên văn yêu cầu này trong ${where}${unread.req ? " (có thể nằm trong tệp scan)" : ""}, cần kiểm tra lại.`); }
+    }
+    if (sub.usable && i.offered) {
+      subN++;
+      if (found(i.offered, sub)) subOk++;
+      else if (unread.sub) flags.push("Nội dung chào không thấy nguyên văn trong phần có chữ của tài liệu (có thể nằm trong tệp scan).");
+      else {
+        flags.push("Nội dung chào không thấy nguyên văn trong tài liệu đã nộp.");
+        if (i.status === "met" || i.status === "partial") { flags.push(`Trạng thái đổi từ "${i.status}" sang "unclear".`); i.status = "unclear"; }
+      }
+    } else if (!i.offered && (i.status === "met" || i.status === "partial")) {
+      flags.push(`Không có trích dẫn tài liệu chào để chứng minh; trạng thái đổi từ "${i.status}" sang "unclear".`); i.status = "unclear";
+    }
+    if (flags.length) i.note = `⚠ ${flags.join(" ")}${i.note ? " " + i.note : ""}`;
+  }
+  Object.assign(result, scoreItems(items));
+  const parts = [req.usable ? `${reqOk}/${items.length} yêu cầu thấy nguyên văn trong ${where}` : `phía yêu cầu không kiểm được (${where} là bản scan)`];
+  if (sub.usable) parts.push(`${subOk}/${subN} nội dung chào thấy nguyên văn trong tài liệu đã nộp`);
+  else parts.push("phía tài liệu chào không kiểm được (không có chữ)");
+  result.summary = `${result.summary || ""} [Kiểm tra tự động: ${parts.join("; ")}. Điểm và kết luận tính từ trạng thái từng mục.]`.trim();
+  return notes;
+}
+
 async function runFinish() {
   const base = String(opt("dir"));
   if (!fs.existsSync(base)) return "không có thư mục kết quả";
@@ -785,7 +885,8 @@ async function runFinish() {
       } else if (fs.existsSync(path.join(dir, "result.json"))) {
         const result = readJson(path.join(dir, "result.json"), null);
         if (!result) throw new Error("result.json không phải JSON hợp lệ");
-        if (meta.kind === "analysis") rows.push({ coll: "analysis", id: meta.key, data: { status: "done", result, notes: [].concat(readJson(path.join(dir, "notes.json"), []) || []), analyzedAt: at, by: "hsmt-worker" } });
+        const checked = meta.translate || meta.kind === "hsdt" ? [] : checkResult(meta, result, dir);
+        if (meta.kind === "analysis") rows.push({ coll: "analysis", id: meta.key, data: { status: "done", result, notes: [].concat(readJson(path.join(dir, "notes.json"), []) || [], checked), analyzedAt: at, by: "hsmt-worker" } });
         else if (meta.translate) {
           // The English version joins the stored result, unless a new comparison replaced it meanwhile.
           const cur = await doc("tlkt", meta.key);
