@@ -207,7 +207,7 @@ td.r{text-align:right}
 .tleft.urgent{color:var(--orange)}
 .badge{display:inline-flex;align-items:center;border-radius:999px;padding:2px 8px;font-size:12px;background:var(--violet-soft);color:var(--violet);font-weight:600;border:1px solid transparent}
 .stage{font-weight:600;font-size:12.5px}
-.st-new{color:var(--blue)}.st-reviewing{color:var(--blue)}.st-preparing{color:var(--violet)}.st-submitted{color:var(--sky)}.st-won{color:var(--mint)}.st-lost{color:var(--rose)}.st-dropped{color:var(--dim)}.st-closed{color:var(--rose)}
+.st-new{color:var(--blue)}.st-reviewing{color:var(--blue)}.st-preparing{color:var(--violet)}.st-submitted{color:var(--sky)}.st-won{color:var(--mint)}.st-lost{color:var(--rose)}.st-dropped{color:var(--dim)}.st-closed{color:var(--rose)}.st-project{color:var(--orange)}
 .scrollbtns{position:fixed;z-index:40;right:calc(16px + env(safe-area-inset-right, 0px));bottom:calc(16px + env(safe-area-inset-bottom, 0px));display:flex;flex-direction:column;gap:8px}
 .scrollbtns .ibtn{background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);width:36px;height:36px;opacity:.9}
 .empty{color:var(--muted);padding:28px 16px;text-align:center}
@@ -348,6 +348,7 @@ details.sec>div{margin-top:10px}
     <div class="row">
       <input type="search" id="q" placeholder="Tìm kiếm..." aria-label="Tìm gói thầu" style="flex:1;min-width:200px">
       <button class="btn" id="clearFilters">Xoá lọc</button>
+      <button class="btn primary" id="newProject" hidden>Tạo dự án</button>
       <span class="muted small" id="count"></span>
     </div>
     <div id="autoNote"></div>
@@ -633,9 +634,14 @@ function allTenders() {
 const isClosed = (t) => !!t.bidCloseDate && new Date(t.bidCloseDate).getTime() <= Date.now();
 // A tender still in an early stage when bidding closes moves to the Đã đóng tab.
 // Label and colour class for a tender, with closed tenders shown as Đã đóng.
-const shownStage = (t) => (tabOf(t) === "closed" ? { key: "closed", label: "Đã đóng" } : { key: stageOf(t), label: stageLabel(stageOf(t)) });
-const tabOf = (t) => { const s = stageOf(t); return isClosed(t) && ["new", "reviewing", "preparing"].includes(s) ? "closed" : s; };
-const TABS = [...STAGES.slice(0, 5), { key: "closed", label: "Đã đóng" }, STAGES[5]];
+const shownStage = (t) => (isProject(t) ? { key: "project", label: "Dự án" } : tabOf(t) === "closed" ? { key: "closed", label: "Đã đóng" } : { key: stageOf(t), label: stageLabel(stageOf(t)) });
+const tabOf = (t) => { if (isProject(t)) return "project"; const s = stageOf(t); return isClosed(t) && ["new", "reviewing", "preparing"].includes(s) ? "closed" : s; };
+const TABS = [...STAGES.slice(0, 5), { key: "closed", label: "Đã đóng" }, STAGES[5], { key: "project", label: "Dự án" }];
+// Projects Khoa creates by hand (tab Dự án, Khoa 2026-10-27): manual/<key> with isProject. They have no muasamcong
+// notice, no stages and no KPIs; their files are uploaded by hand into hsmt/<key> like a tender's HSMT.
+const isProject = (t) => !!t?.isProject;
+// "Tất cả" lists tenders only; every other tab lists what tabOf puts there.
+const inTab = (t) => (state.stage === "all" ? !isProject(t) : tabOf(t) === state.stage);
 let seenBusy = false;
 async function rememberSeen() {
   if (seenBusy || !state.db || !state.loaded.feed || !state.loaded.seen) return;
@@ -733,8 +739,9 @@ async function requestAnalysis(keys) {
   let skipped = "";
   if (noFiles.length) {
     const one = noFiles.length === 1 && findTender(noFiles[0]);
-    const what = one ? `Gói ${one.notifyNo || noFiles[0]}` : `${noFiles.length} gói`;
+    const what = one ? (isProject(one) ? "Dự án này" : `Gói ${one.notifyNo || noFiles[0]}`) : `${noFiles.length} gói`;
     skipped = noFiles.length === 1 && reqState(noFiles[0])?.kind === "pending" ? `${what} đang tải tệp hồ sơ, phân tích sau khi tải xong.`
+      : isProject(one) ? `${what} chưa có tệp. Tải tệp lên ở tab Tổng quan rồi mới phân tích được.`
       : `${what} chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) rồi mới phân tích được.`;
     if (!keys.length) { toast(skipped, 6000); return; }
   }
@@ -753,8 +760,8 @@ let areqNoteUntil = 0;
 // "Tạo bản tiếng Anh" / "Đối chiếu" on the web: a request for the Windows worker, answered on its next round.
 async function requestWorker(coll, key, extra, what) {
   if (state.readOnly) { toast(`Đây là bản chỉ xem, không gửi được yêu cầu ${what}.`); return; }
-  if (!state.hsmt[key]?.files?.length && !(coll === "hsdtreq" && analysisOf(key)?.result)) { toast("Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
   const t = findTender(key);
+  if (!state.hsmt[key]?.files?.length && !(coll === "hsdtreq" && analysisOf(key)?.result)) { toast(isProject(t) ? "Dự án này chưa có tệp. Tải tệp lên ở tab Tổng quan trước." : "Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
   try {
     const n = (await saveRequests(coll, [{ key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", ...extra }])).length;
     if (!n) throw new Error("");
@@ -1046,15 +1053,15 @@ function renderTop() {
   else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
   const ready = state.loaded.feed && state.loaded.deleted && state.loaded.seen && state.loaded.tracked;
-  const items = ready ? allTenders() : [];
-  const waiting = items.filter((t) => ["queued", "running"].includes(analysisState(t))).length;
-  const K = KPIS.map((k) => ({ ...k, n: items.filter(k.f).length }));
+  const items = ready ? allTenders() : [], tenders = items.filter((t) => !isProject(t));
+  const waiting = tenders.filter((t) => ["queued", "running"].includes(analysisState(t))).length;
+  const K = KPIS.map((k) => ({ ...k, n: tenders.filter(k.f).length }));
   $("#kpis").innerHTML = K.map((k) => h`<div class="kpi ${state.list === k.key ? "on" : ""}" role="button" tabindex="0" data-kpi="${k.key}" style="--kc:${raw(k.c)}"><span class="kl">${k.l}</span><span class="kv">${k.n}</span>
 
     ${raw(k.key === "done" && waiting ? h`<button class="ibtn kref" id="runQueueBtn" aria-label="Phân tích ngay các gói đang chờ" title="Phân tích ngay ${waiting} gói đang chờ">${raw(state.auto.running ? '<span class="spin"></span>' : REFRESH_SVG)}</button>` : "")}</div>`).join("");
   const counts = Object.fromEntries(TABS.map((s) => [s.key, 0]));
   items.forEach((t) => counts[tabOf(t)]++);
-  $("#stageTabs").innerHTML = [["all", "Tất cả", items.length],...TABS.map((s) => [s.key, s.label, counts[s.key]])]
+  $("#stageTabs").innerHTML = [["all", "Tất cả", tenders.length],...TABS.map((s) => [s.key, s.label, counts[s.key]])]
     .map(([k, l, n]) => h`<button role="tab" data-stage="${k}" aria-selected="${String(state.stage === k)}">${l}<span class="c${k === "all" ? "" : " st-" + k}">${n}</span></button>`).join("");
   const an = $("#autoNote");
   if (state.auto.blocked === "consent" || state.auto.blocked === "noclaude") an.innerHTML = h`<div class="note warn row"><span style="flex:1;min-width:200px">${state.auto.blocked === "noclaude" ? "Đăng nhập để AI tự phân tích các gói mới." : "AI cần được cho phép để tự phân tích các gói mới."}</span>${raw(state.auto.blocked === "consent" ? '<button class="btn sm primary" id="allowAuto">Cho phép và phân tích</button>' : "")}</div>`;
@@ -1101,14 +1108,14 @@ function anaIcon(t) {
   const s = analysisState(t);
   // Done and not-needed states show nothing; only pending work or errors get an icon.
   if (s === "done" || s === "skip") return "";
-  const m = { done: ["ok", "Đã phân tích", '<path d="M5 12.5l4.5 4.5L19 7.5"/>'], running: ["run", "Đang phân tích", '<path d="M12 3a9 9 0 1 0 9 9"/>'], error: ["bad", "Phân tích bị lỗi", '<path d="M12 7v6M12 17h.01"/>'], queued: ["mut", "Chưa phân tích, đang chờ", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], nodocs: ["mut", "Chưa phân tích, chưa có HSMT", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], skip: ["mut", "Chưa phân tích (chỉ tự phân tích gói Mới có “máy phát điện” trong tên)", '<circle cx="12" cy="12" r="8"/><path d="M8 12h8"/>'] }[s];
+  const m = { done: ["ok", "Đã phân tích", '<path d="M5 12.5l4.5 4.5L19 7.5"/>'], running: ["run", "Đang phân tích", '<path d="M12 3a9 9 0 1 0 9 9"/>'], requested: ["run", "Đã gửi yêu cầu phân tích, chờ Agent", '<path d="M12 3a9 9 0 1 0 9 9"/>'], error: ["bad", "Phân tích bị lỗi", '<path d="M12 7v6M12 17h.01"/>'], queued: ["mut", "Chưa phân tích, đang chờ", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], nodocs: ["mut", "Chưa phân tích, chưa có HSMT", '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'], skip: ["mut", "Chưa phân tích (chỉ tự phân tích gói Mới có “máy phát điện” trong tên)", '<circle cx="12" cy="12" r="8"/><path d="M8 12h8"/>'] }[s];
   return `<span class="aicon ${m[0]}" role="img" aria-label="${m[1]}" title="${m[1]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${m[2]}</svg></span>`;
 }
 const FLOW = ["new", "preparing", "submitted", "won"];
 // Allowed moves: Đã nộp only goes to a result; results and closed tenders are final.
 function movesOf(t) {
   const s = stageOf(t);
-  if (tabOf(t) === "closed" || s === "won" || s === "lost") return [];
+  if (isProject(t) || tabOf(t) === "closed" || s === "won" || s === "lost") return [];
   if (s === "submitted") return ["won", "lost"];
   if (s === "dropped") return ["new"];
   return ["new", "preparing", "submitted", "dropped"].filter((x) => x !== s);
@@ -1135,7 +1142,8 @@ function anaInline0(t) {
 }
 const COLS = [
   { k: "no", label: "Số TBMT", cls: "noc", val: (t) => pubOf(t), text: (t) => `${t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
-    cell: (t) => { const tl = timeLeft(t.bidCloseDate); return h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}
+    cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">Dự án</span><div class="src num">Tạo ${fmtDate(t.addedAt, false) || "—"}</div>`;
+      const tl = timeLeft(t.bidCloseDate); return h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
   { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}${raw(t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}</div>` : "")}${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
   { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return v ? h`${v}` : '<span class="muted">Chưa có</span>'; } },
@@ -1153,7 +1161,7 @@ const COLS = [
 const COLW = { no: "13%", name: "33%", offerer: "18%", cap: "13%", stage: "12%", loc: "11%" };
 const colText = (c, t) => (c.text ? c.text(t) : String(c.val(t) ?? ""));
 function passFilters(t) {
-  if (state.stage !== "all" && tabOf(t) !== state.stage) return false;
+  if (!inTab(t)) return false;
   const q = fold($("#q").value.trim());
   if (q && !COLS.some((c) => fold(colText(c, t)).includes(q))) return false;
   for (const c of COLS) {
@@ -1180,7 +1188,8 @@ function renderGrid() {
     if (y == null || y === "") return -1;
     return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "vi")) * state.sort.dir;
   });
-  $("#count").textContent = `${items.length}/${all.filter((t) => (state.stage === "all" || tabOf(t) === state.stage)).length} gói`;
+  $("#count").textContent = `${items.length}/${all.filter(inTab).length} ${state.stage === "project" ? "dự án" : "gói"}`;
+  const np = $("#newProject"); np.hidden = state.stage !== "project" || !!state.readOnly;
   const w0 = $(".gridwrap", box); const sl = w0 ? w0.scrollLeft : 0;
   const head = COLS.map((c) => {
     const on = !!(state.filters[c.k] || "").trim();
@@ -1195,25 +1204,25 @@ function renderGrid() {
   renderBulk(items);
   const body = shown.length
     ? shown.map((t) => `<tr data-key="${esc(t._key)}" class="${state.open === t._key ? "open" : ""}">${COLS.map((c, i) => `<td class="${c.cls || ""} ${c.tdCls || ""} c-${c.k}" data-l="${c.label}">${i === 0 && del ? `<input type="checkbox" class="selbox" data-sel="${esc(t._key)}" aria-label="Chọn gói ${esc(t.notifyNo || "")}" ${state.sel.has(t._key) ? "checked" : ""}> ` : ""}${c.cell(t)}</td>`).join("")}</tr>`).join("")
-    : `<tr><td colspan="${COLS.length}" class="empty">Không có gói thầu nào ở trạng thái này khớp bộ lọc.</td></tr>`;
+    : `<tr><td colspan="${COLS.length}" class="empty">${state.stage === "project" && !all.some(isProject) ? "Chưa có dự án nào. Bấm Tạo dự án để thêm." : "Không có gói thầu nào ở trạng thái này khớp bộ lọc."}</td></tr>`;
   const more = items.length > shown.length ? `<div class="more"><button class="btn" id="moreBtn">Xem thêm ${Math.min(pageSize(), items.length - shown.length)} gói (còn ${items.length - shown.length})</button></div>` : "";
   box.innerHTML = `<div class="gridwrap"><table class="grid"><colgroup>${COLS.map((c) => `<col style="width:${COLW[c.k]}">`).join("")}</colgroup><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>${more}`;
   if (sl) $(".gridwrap", box).scrollLeft = sl;
 }
-// Deleting is offered only under Đã đóng and Bỏ qua.
-const canDelete = () => ["closed", "dropped"].includes(state.stage);
+// Deleting is offered only under Đã đóng, Bỏ qua and Dự án.
+const canDelete = () => ["closed", "dropped", "project"].includes(state.stage);
 function renderBulk(items) {
   const bar = $("#bulkBar");
   if (!canDelete() || !items.length) { bar.hidden = true; bar.innerHTML = ""; return; }
   const n = state.sel.size, all = n && items.every((t) => state.sel.has(t._key));
   bar.hidden = false;
-  bar.innerHTML = h`<label class="small row" style="gap:6px"><input type="checkbox" id="selAll" ${all ? "checked" : ""}>Chọn tất cả (${items.length})</label><div class="spacer"></div><button class="btn danger" id="delSel" ${n ? "" : "disabled"}>Xoá ${n || ""} gói</button>`;
+  bar.innerHTML = h`<label class="small row" style="gap:6px"><input type="checkbox" id="selAll" ${all ? "checked" : ""}>Chọn tất cả (${items.length})</label><div class="spacer"></div><button class="btn danger" id="delSel" ${n ? "" : "disabled"}>Xoá ${n || ""} ${state.stage === "project" ? "dự án" : "gói"}</button>`;
   bar._items = items.map((t) => t._key);
 }
 function askDelete() {
   const keys = [...state.sel]; if (!keys.length) return;
   const list = keys.map((k) => findTender(k)).filter(Boolean);
-  modal(h`<div class="row"><h2 style="flex:1">Xoá ${keys.length} gói thầu?</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Xoá ${keys.length} ${state.stage === "project" ? "dự án" : "gói thầu"}?</h2><button class="btn sm" data-close>Đóng</button></div>
     <ul class="clean">${raw(list.slice(0, 8).map((t) => h`<li><b>${t.notifyNo || ""}</b> ${t.bidName || ""}</li>`).join(""))}${raw(list.length > 8 ? h`<li class="muted">và ${list.length - 8} gói khác</li>` : "")}</ul>
     <p class="muted small" style="margin:0">Các gói này sẽ biến mất khỏi danh sách và không hiện lại khi refresh hay khi dữ liệu được cập nhật hằng ngày.</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="delOk" style="background:var(--rose);border-color:var(--rose)">Xoá</button></div>`, (m, close) => {
@@ -1237,7 +1246,7 @@ document.addEventListener("change", (e) => {
 function openFilter(k, btn) {
   const c = COLS.find((x) => x.k === k), pop = $("#fpop");
   const v = state.filters[k] || "";
-  const pool = allTenders().filter((t) => (state.stage === "all" || tabOf(t) === state.stage));
+  const pool = allTenders().filter(inTab);
   const opts = [...new Set(pool.map((t) => colText(c, t)).filter(Boolean))].sort((a, b) => a.localeCompare(b, "vi"));
   if (k === "stage") opts.push(NOT_ANALYZED);
   const multi = k === "stage", chosen = v.split("|");
@@ -1288,7 +1297,7 @@ async function scanCapacities() {
 function openList(k) {
   state.list = k; state.open = null;
   const kp = KPIS.find((x) => x.key === k);
-  const items = allTenders().filter(kp.f).sort((a, b) => (a.bidCloseDate || "9").localeCompare(b.bidCloseDate || "9"));
+  const items = allTenders().filter((t) => !isProject(t) && kp.f(t)).sort((a, b) => (a.bidCloseDate || "9").localeCompare(b.bidCloseDate || "9"));
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
   $("#dtabs").hidden = true;
   $("#dmeta").innerHTML = h`<span class="eyebrow">${items.length} gói</span>`;
@@ -1313,21 +1322,21 @@ function renderDrawer(force = true) {
   if (!key) return;
   const t = findTender(key);
   if (!t) { closeDrawer(); return; }
-  const stg = stageOf(t);
+  const stg = stageOf(t), canCompare = stg === "preparing" || isProject(t);
   const tl = timeLeft(t.bidCloseDate);
-  $("#dmeta").innerHTML = h`<span class="kcell">${t.notifyNo || ""}</span><span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
+  $("#dmeta").innerHTML = h`${raw(t.notifyNo ? h`<span class="kcell">${t.notifyNo}</span>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
   $("#dtitle").textContent = t.bidName || "";
   $$("#dtabs button").forEach((b) => {
     b.setAttribute("aria-selected", String(b.dataset.dt === state.dtab));
-    if (b.dataset.dt === "compare") { b.disabled = stg !== "preparing"; b.title = stg !== "preparing" ? "Chuyển gói sang Chuẩn bị HSDT để đối chiếu" : ""; }
+    if (b.dataset.dt === "compare") { b.disabled = !canCompare; b.title = !canCompare ? "Chuyển gói sang Chuẩn bị HSDT để đối chiếu" : ""; }
   });
-  if (state.dtab === "compare" && stg !== "preparing") state.dtab = "info";
+  if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
-  if (state.dtab === "info") body.innerHTML = infoHtml(t);
+  if (state.dtab === "info") body.innerHTML = isProject(t) ? projectInfoHtml(t) : infoHtml(t);
   else if (state.dtab === "analysis") body.innerHTML = analysisTabHtml(t);
   else if (state.dtab === "translate") { body.innerHTML = translateTabHtml(t); loadTranslation(key); }
   else if (state.dtab === "hsdt") body.innerHTML = hsdtTabHtml(t);
@@ -1351,6 +1360,116 @@ function infoHtml(t) {
       ${raw(refetchHtml(t, files.length))}
     </div>`;
 }
+// ---------- Projects (tab Dự án) ----------
+// Overview of a project: name, Chủ đầu tư, Địa điểm and Ghi chú typed by hand, and files uploaded by hand.
+const projUp = {}; // key -> progress text while files upload
+function projectInfoHtml(t) {
+  const key = t._key, d = state.hsmt[key], files = d?.files || [], ro = state.readOnly ? "disabled" : "";
+  return h`<div class="field"><label for="pName">Tên dự án</label><input type="text" id="pName" style="width:100%" value="${t.bidName || ""}" autocomplete="off" ${raw(ro)}></div>
+    <div class="grid2">
+      <div class="field"><label for="pInvestor">Chủ đầu tư</label><input type="text" id="pInvestor" style="width:100%" value="${t.investorName || ""}" autocomplete="off" ${raw(ro)}></div>
+      <div class="field"><label for="pLoc">Địa điểm</label><input type="text" id="pLoc" style="width:100%" value="${t.location || ""}" autocomplete="off" ${raw(ro)}></div>
+    </div>
+    <div class="field"><label for="dNote">Ghi chú</label><textarea id="dNote" placeholder="Người phụ trách, tiến độ, việc cần làm..." ${raw(ro)}>${state.tracked[key]?.note || ""}</textarea></div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="row"><h2>Tệp hồ sơ</h2><span class="muted small">${files.length ? `${files.length} tệp${d?.updatedAt ? " · cập nhật " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
+      ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
+        ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}">Xem</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải về</a>` : "")}
+        ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : '<span class="chip mut">Không đọc được chữ</span>')}
+        ${raw(state.readOnly ? "" : h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div><div id="docText"></div>` : "")}
+      ${raw(state.readOnly ? "" : projUp[key] ? `<div class="note">${progress(projUp[key])}</div>` : h`<div class="drop" id="pDrop">
+        <div class="row"><span class="muted small" style="flex:1">Kéo thả tệp vào đây (PDF, DOCX, TXT; tệp khác vẫn lưu nhưng AI không đọc được chữ)</span><label class="btn sm primary" for="pFiles">Tải tệp lên</label></div>
+        <input type="file" id="pFiles" multiple hidden></div>`)}
+    </div>`;
+}
+function askNewProject() {
+  modal(h`<div class="row"><h2 style="flex:1">Tạo dự án</h2><button class="btn sm" data-close>Đóng</button></div>
+    <div class="field"><label for="npName">Tên dự án</label><input type="text" id="npName" style="width:100%" autocomplete="off"></div>
+    <div class="grid2"><div class="field"><label for="npInv">Chủ đầu tư</label><input type="text" id="npInv" style="width:100%" autocomplete="off"></div><div class="field"><label for="npLoc">Địa điểm</label><input type="text" id="npLoc" style="width:100%" autocomplete="off"></div></div>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="npOk" disabled>Tạo</button></div>`, (m, close) => {
+    const name = $("#npName", m), ok = $("#npOk", m);
+    name.addEventListener("input", () => (ok.disabled = !name.value.trim()));
+    m.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.tagName === "INPUT" && !ok.disabled) ok.click(); });
+    ok.addEventListener("click", async () => {
+      const key = "DA-" + Date.now().toString(36);
+      const rec = { isProject: true, bidName: name.value.trim(), investorName: $("#npInv", m).value.trim(), location: $("#npLoc", m).value.trim(), addedAt: new Date().toISOString() };
+      close();
+      if (!(await saveProject(key, rec))) return;
+      toast("Đã tạo dự án");
+      openDrawer(key);
+    });
+    name.focus();
+  });
+}
+async function saveProject(key, patch) {
+  if (state.readOnly) { toast("Đăng nhập để chỉnh sửa. Đây là bản chỉ xem."); return false; }
+  const rec = { ...stripTender(state.manual[key]), ...patch, updatedAt: new Date().toISOString() };
+  state.manual = { ...state.manual, [key]: rec };
+  if (state.db) { if (!(await dbSet("manual/" + key, rec))) { toast("Không lưu được dự án."); return false; } }
+  else local.set("manual", state.manual);
+  renderAll();
+  return true;
+}
+// Uploaded files go to the file store; their text is written as hsmttext/<key>_<i> and the list as hsmt/<key>, the way
+// the worker publishes a tender's HSMT, so Phân tích, YCKT tiếng Anh, HSDT tham khảo and Đối chiếu read them unchanged.
+const PROJ_TEXT = /\.(pdf|docx|txt|md|csv)$/i;
+function textByFile(all) {
+  const out = new Map();
+  for (const m of String(all).matchAll(/--- Tệp: (.+?) ---\n([\s\S]*?)(?=\n\n--- Tệp: |$)/g)) out.set(m[1], m[2]);
+  return out;
+}
+async function saveProjectFiles(key, files, texts) {
+  const all = files.filter((f) => texts.has(f.name)).map((f) => `--- Tệp: ${f.name} ---\n${texts.get(f.name).trim()}`).join("\n\n");
+  const parts = all ? chunkText(all, 60000) : [], old = state.hsmt[key]?.textChunks || 0;
+  for (const [i, text] of parts.entries()) if (!(await dbSet(`hsmttext/${key}_${i}`, { text }))) throw new Error("không lưu được nội dung tệp");
+  for (let i = parts.length; i < old; i++) await state.db.doc(`hsmttext/${key}_${i}`).delete().catch(() => {});
+  const rec = { notifyNo: key, updatedAt: new Date().toISOString(), source: "tải tay", files, textChunks: parts.length };
+  if (!(await dbSet("hsmt/" + key, rec))) throw new Error("không lưu được danh sách tệp");
+  state.hsmt = { ...state.hsmt, [key]: rec };
+}
+async function addProjectFiles(key, list) {
+  if (!list.length) return;
+  if (state.readOnly || !state.db) { toast("Đăng nhập để tải tệp lên."); return; }
+  let store = null;
+  try { store = await window.claude?.use?.("assets"); } catch {}
+  if (!store) { toast("Chế độ xem này không tải tệp lên được."); return; }
+  try {
+    const texts = textByFile(await loadAttachedText(key)), files = [...(state.hsmt[key]?.files || [])];
+    for (const [n, f] of list.entries()) {
+      projUp[key] = `Đang tải lên ${f.name} (${n + 1}/${list.length})...`; renderDrawer(false);
+      const up = await store.upload(f);
+      let text = "";
+      if (PROJ_TEXT.test(f.name)) { try { text = (await readFile(f, 0)).text || ""; } catch {} }
+      const hasText = text.replace(/\[Trang \d+\]|\s/g, "").length > 40;
+      const rec = { name: f.name, size: f.size, hasText, converted: false, url: up.url };
+      const i = files.findIndex((x) => x.name === f.name);
+      if (i >= 0) files[i] = rec; else files.push(rec);
+      if (hasText) texts.set(f.name, text); else texts.delete(f.name);
+    }
+    projUp[key] = "Đang lưu nội dung tệp..."; renderDrawer(false);
+    await saveProjectFiles(key, files, texts);
+    toast(`Đã tải lên ${list.length} tệp`);
+  } catch (e) { toast("Không tải được tệp lên: " + (e?.message || "lỗi không rõ"), 6000); }
+  finally { delete projUp[key]; renderDrawer(false); }
+}
+function askRemoveProjectFile(key, i) {
+  const f = state.hsmt[key]?.files?.[i];
+  if (!f) return;
+  modal(h`<div class="row"><h2 style="flex:1">Bỏ tệp này?</h2><button class="btn sm" data-close>Đóng</button></div>
+    <p class="small" style="margin:0;overflow-wrap:anywhere">${f.name} sẽ không còn trong hồ sơ của dự án, và các lần Phân tích, Đối chiếu sau sẽ không đọc tệp này.</p>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="pDelOk" style="color:var(--red)">Bỏ tệp</button></div>`, (m, close) => {
+    $("#pDelOk", m).addEventListener("click", async () => {
+      close();
+      try {
+        const texts = textByFile(await loadAttachedText(key));
+        texts.delete(f.name);
+        await saveProjectFiles(key, state.hsmt[key].files.filter((x) => x !== f), texts);
+        toast("Đã bỏ tệp"); renderDrawer(false);
+      } catch (e) { toast("Không bỏ được tệp: " + (e?.message || "lỗi không rõ"), 6000); }
+    });
+  });
+}
+
 // Tender files only download through VNeGP Client Agent on the Windows PC. "Lấy lại tệp" records a request in
 // hsmtreq/<key>; the PC worker fetches the files from the muasamcong page and stores them, then marks it done.
 function reqState(key) {
@@ -1374,7 +1493,7 @@ function refetchHtml(t, have) {
 // Analysis then starts on its own once the files land (subscribe("hsmt") → scheduleAuto).
 async function requestMissingFiles() {
   if (state.readOnly || !window.genbidWeb || !state.db) return 0;
-  const want = allTenders().filter((t) => stageOf(t) === "new" && !isClosed(t) && !state.hsmt[t._key]?.files?.length && !state.hsmtreq?.[t._key]?.requestedAt);
+  const want = allTenders().filter((t) => !isProject(t) && stageOf(t) === "new" && !isClosed(t) && !state.hsmt[t._key]?.files?.length && !state.hsmtreq?.[t._key]?.requestedAt);
   if (!want.length) return 0;
   try { return (await saveRequests("hsmtreq", want.map((t) => ({ key: t._key, notifyNo: t.notifyNo || t._key, sourceUrl: tenderLink(t), bidName: t.bidName || "", auto: true })))).length; }
   catch { return 0; }
@@ -1889,6 +2008,7 @@ function askRecompare(key) {
 }
 // Nộp lights up only when the latest comparison shows the bid fully meets the tender.
 function submitBtn(key) {
+  if (isProject(findTender(key))) return "";
   const b = submitBlockers(key);
   return h`<button class="btn ${b.length ? "" : "primary"}" id="cmSubmit" data-key="${key}" ${b.length ? "disabled" : ""} title="${b.length ? b.join(" ") : "Chuyển gói sang Đã nộp"}">Nộp</button>`;
 }
@@ -2099,6 +2219,9 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
   if (e.target.id === "cmAccepted") { askAccept(e.target.dataset.key); return; }
   if (e.target.id === "hfFetch") { requestRefetch(e.target.dataset.key); return; }
+  if (e.target.id === "newProject") { askNewProject(); return; }
+  const pd = e.target.closest("[data-pdel]");
+  if (pd && state.open) { askRemoveProjectFile(state.open, +pd.dataset.pdel); return; }
   if (e.target.id === "hfCancel") { requestRefetch(e.target.dataset.key, true); return; }
   if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
   if (e.target.closest("#cmDel")) { askDeleteCompare(e.target.closest("#cmDel").dataset.key); return; }
@@ -2118,11 +2241,22 @@ document.addEventListener("change", (e) => {
   if (e.target.classList?.contains("fchkbox")) { applyFilter([...document.querySelectorAll("#fpop .fchkbox:checked")].map((x) => x.value).join("|")); return; }
   if (e.target.id === "fval" && e.target.tagName === "SELECT") { applyFilter(e.target.value); closeFilter(); }
   if (e.target.id === "dStage" && state.open) setStage(state.open, e.target.value);
+  const pf = { pName: "bidName", pInvestor: "investorName", pLoc: "location" }[e.target.id];
+  if (pf && state.open) {
+    const v = e.target.value.trim();
+    if (pf === "bidName" && !v) { e.target.value = findTender(state.open)?.bidName || ""; toast("Tên dự án không được để trống."); }
+    else if (v !== (state.manual[state.open]?.[pf] || "")) saveProject(state.open, { [pf]: v });
+  }
+  if (e.target.id === "pFiles" && state.open) { const list = [...e.target.files]; e.target.value = ""; addProjectFiles(state.open, list); }
   if (e.target.id === "dNote" && state.open) {
     const key = state.open, t = findTender(key), prev = state.tracked[key] || {};
     if ((prev.note || "") !== e.target.value) saveTracked(key, { ...prev, stage: prev.stage || "new", note: e.target.value, tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() });
   }
 });
+// Dropping files on a project's upload box.
+document.addEventListener("dragover", (e) => { const d = e.target.closest?.("#pDrop"); if (d) { e.preventDefault(); d.classList.add("over"); } });
+document.addEventListener("dragleave", (e) => e.target.closest?.("#pDrop")?.classList.remove("over"));
+document.addEventListener("drop", (e) => { if (!e.target.closest?.("#pDrop") || !state.open) return; e.preventDefault(); addProjectFiles(state.open, [...e.dataTransfer.files]); });
 $("#toTop").addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
 $("#toBottom").addEventListener("click", () => scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" }));
 $("#clearFilters").addEventListener("click", () => { state.filters = {}; $("#q").value = ""; state.limit = pageSize(); renderGrid(); });
