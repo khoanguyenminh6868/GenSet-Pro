@@ -143,6 +143,7 @@
           <option value="">Mọi hoạt động</option><option value="data">Thay đổi dữ liệu</option><option value="login">Đăng nhập</option>
           <option value="upload">Tải tệp lên</option><option value="ai">Gọi AI</option></select>
         <label>Ngày <input type="date" id="lgDay"></label>
+        <label><input type="checkbox" id="lgNoBot" checked> Ẩn log của Máy chủ HSMT (tự động)</label>
       </div>
       <div class="ll" id="lgList"></div>
       <div class="lb"><span id="lgInfo">Đang tải...</span><button class="btn sm" id="lgMore" hidden>Tải thêm</button></div>
@@ -169,6 +170,8 @@
       let q = sb.from("activity_log").select("*", { count: "exact" }).order("at", { ascending: false }).order("id", { ascending: false });
       const who = $("#lgWho").value, kind = $("#lgKind").value, day = $("#lgDay").value;
       if (who) q = q.eq("actor", who);
+      // Picking the worker in the people filter shows its rows even with the box ticked.
+      else if ($("#lgNoBot").checked) q = q.neq("actor", "worker");
       if (kind === "data") q = q.in("action", ["insert", "update", "delete"]);
       else if (kind) q = q.eq("action", kind);
       if (day) { const from = new Date(`${day}T00:00:00+07:00`); q = q.gte("at", from.toISOString()).lt("at", new Date(+from + 864e5).toISOString()); }
@@ -197,7 +200,7 @@
       $("#lgMore").hidden = rows.length >= total;
     }
     $("#lgMore").onclick = () => load(true);
-    for (const id of ["#lgWho", "#lgKind", "#lgDay"]) $(id).onchange = () => load(false);
+    for (const id of ["#lgWho", "#lgKind", "#lgDay", "#lgNoBot"]) $(id).onchange = () => load(false);
     load(false);
   }
 
