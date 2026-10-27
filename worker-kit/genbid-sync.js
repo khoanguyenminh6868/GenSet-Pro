@@ -472,6 +472,26 @@ async function hsmtText(key) {
   return chunks.map((d) => d.data?.text || "").join("");
 }
 
+// Files the page uploaded to the scratch bucket, downloaded into <hd>, with their text; unread = files with no text.
+async function scratchDocs(files, pasted, hd) {
+  let text = pasted ? `### Nội dung dán vào\n${pasted}\n` : "";
+  const unread = [];
+  for (const f of [].concat(files || [])) {
+    try {
+      const r = await fetch(`${API}/scratch?path=${encodeURIComponent(f.path)}`, { headers: { Authorization: `Bearer ${token()}` } });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const { url } = await r.json();
+      const out = path.join(hd, (f.name || path.basename(f.path)).replace(/[\\/:*?"<>|]+/g, "_"));
+      fs.mkdirSync(hd, { recursive: true });
+      fs.writeFileSync(out, Buffer.from(await (await fetch(url)).arrayBuffer()));
+      const tx = fileText(out);
+      if (tx.replace(/\s+/g, "").length > 300) text += `\n--- Tệp: ${f.name} ---\n${compact(tx)}\n`;
+      else unread.push(out);
+    } catch (e) { unread.push(`${f.name} (không tải được: ${e.message})`); }
+  }
+  return { text, unread };
+}
+
 async function prepOne(kind, key, requestedAt, dir) {
   const reqs = [].concat(await apiGet(`?kind=${kind}`));
   // --test: prepare a folder without a pending request (to check the prepared input).
@@ -480,8 +500,12 @@ async function prepOne(kind, key, requestedAt, dir) {
   fs.mkdirSync(dir, { recursive: true });
   writeJson(path.join(dir, "meta.json"), { kind, key, notifyNo: req.notifyNo || key, requestedAt: req.requestedAt });
   const t = await tenderInfo(key);
-  const [notice, analysis, hsmt] = await Promise.all([doc("notice", key), doc("analysis", key), doc("hsmt", key)]);
-  const full = await hsmtText(key);
+  // Đối chiếu TLKT with a shortened YCKT uploaded (Khoa, 2026-10-27): the proposal is checked against that file only,
+  // so the HSMT, notice and analysis are left out.
+  const ownReq = kind === "tlkt" && !!(req.reqText || [].concat(req.reqFiles || []).length);
+  if (ownReq) writeJson(path.join(dir, "meta.json"), { kind, key, notifyNo: req.notifyNo || key, requestedAt: req.requestedAt, ownReq });
+  const [notice, analysis, hsmt] = ownReq ? [null, null, null] : await Promise.all([doc("notice", key), doc("analysis", key), doc("hsmt", key)]);
+  const full = ownReq ? "" : await hsmtText(key);
   if (full) fs.writeFileSync(path.join(dir, "hsmt-full.txt"), full, "utf8");
   const trimmed = full ? trimHsmt(full, kind) : { text: "", dropped: [] };
   const text = compact(trimmed.text), dropped = trimmed.dropped;
@@ -509,6 +533,10 @@ async function prepOne(kind, key, requestedAt, dir) {
     for (let i = 0; i < src.length; i += 60000) parts.push(src.slice(i, i + 60000));
     parts.forEach((p, i) => fs.writeFileSync(path.join(dir, `part-${i}.txt`), p, "utf8"));
     input += `\n## Văn bản cần dịch\nĐã chia sẵn thành ${parts.length} phần: ${parts.map((_, i) => `part-${i}.txt`).join(", ")}.\n`;
+  } else if (ownReq) {
+    const y = await scratchDocs(req.reqFiles, req.reqText, path.join(dir, "yckt"));
+    input += `\n## YCKT RÚT GỌN (yêu cầu kỹ thuật dùng để đối chiếu; không dùng HSMT gốc)\n${y.text || "(không có chữ)"}\n`;
+    if (y.unread.length) input += `\nTệp YCKT rút gọn chưa đọc được chữ (scan, ảnh, .doc): ${y.unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   } else {
     input += `\n## Hồ sơ mời thầu (đã bỏ các chương mẫu không cần cho việc này)\n${text || "(chưa có chữ của tệp HSMT trên web)"}\n`;
   }
@@ -521,25 +549,11 @@ async function prepOne(kind, key, requestedAt, dir) {
       + `Tệp nằm ở ${local}. Nếu không có: gh release download hsmt-${key} --repo khoanguyenminh6868/GenSet-Pro --dir "${rel}" (tên gốc trong C:\\Projects\\GenSet Pro\\hsmt-inbox\\inbox\\${key}\\release.json).\n`
       + `Xem trang: powershell -NoProfile -File "${render}" -Pdf <pdf> -OutDir "${scan}" -First <n> -Last <m>, rồi đọc ảnh PNG, mỗi lần khoảng 10 trang, chỉ các chương cần.\n`;
   }
-  if (!full && !notice?.info && !scans.length) input += `\nKHÔNG có chữ HSMT nào trên web: kiểm tra ${local}; nếu cũng không có thì ghi error.txt.\n`;
+  if (!ownReq && !full && !notice?.info && !scans.length) input += `\nKHÔNG có chữ HSMT nào trên web: kiểm tra ${local}; nếu cũng không có thì ghi error.txt.\n`;
   if (kind === "compare" || kind === "tlkt") {
     // The bid (HSDT) is the company's own confidential document, and a supplier's technical proposal (Đối chiếu TLKT)
     // is the partner's: either stays in this folder, deleted after the round.
-    const hd = path.join(dir, kind), unread = [];
-    let sub = req.text ? `### Nội dung dán vào\n${req.text}\n` : "";
-    for (const f of [].concat(req.files || [])) {
-      try {
-        const r = await fetch(`${API}/scratch?path=${encodeURIComponent(f.path)}`, { headers: { Authorization: `Bearer ${token()}` } });
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        const { url } = await r.json();
-        const out = path.join(hd, (f.name || path.basename(f.path)).replace(/[\\/:*?"<>|]+/g, "_"));
-        fs.mkdirSync(hd, { recursive: true });
-        fs.writeFileSync(out, Buffer.from(await (await fetch(url)).arrayBuffer()));
-        const tx = fileText(out);
-        if (tx.replace(/\s+/g, "").length > 300) sub += `\n--- Tệp: ${f.name} ---\n${compact(tx)}\n`;
-        else unread.push(out);
-      } catch (e) { unread.push(`${f.name} (không tải được: ${e.message})`); }
-    }
+    const { text: sub, unread } = await scratchDocs(req.files, req.text, path.join(dir, kind));
     input += `\n## ${kind === "tlkt" ? "TÀI LIỆU KỸ THUẬT ĐỀ XUẤT CỦA NHÀ CUNG CẤP (technical proposal)" : "HỒ SƠ DỰ THẦU (submission)"}\n${sub || "(không có chữ)"}\n`;
     if (unread.length) input += `\nTệp ${kind === "tlkt" ? "tài liệu kỹ thuật" : "HSDT"} chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   }
@@ -549,9 +563,9 @@ async function prepOne(kind, key, requestedAt, dir) {
   const why = [];
   if (scans.length && text.length < 20000) why.push("HSMT chủ yếu là bản scan");
   if (kind === "compare" && /Tệp HSDT chưa đọc được chữ/.test(input)) why.push("HSDT có tệp chưa đọc được chữ");
-  if (kind === "tlkt" && /Tệp tài liệu kỹ thuật chưa đọc được chữ/.test(input)) why.push("tài liệu kỹ thuật có tệp chưa đọc được chữ");
+  if (kind === "tlkt" && /Tệp (tài liệu kỹ thuật|YCKT rút gọn) chưa đọc được chữ/.test(input)) why.push("tài liệu kỹ thuật có tệp chưa đọc được chữ");
   if (input.length > 450000) why.push("dữ liệu quá lớn cho một lần gọi");
-  if (!full && !notice?.info) why.push("chưa có chữ HSMT trên web");
+  if (!ownReq && !full && !notice?.info) why.push("chưa có chữ HSMT trên web");
   if (why.length) fs.writeFileSync(path.join(dir, "AGENT"), why.join("; "), "utf8");
   // The prompt without its "Output on the web" part: the bot posts the result itself.
   const prompt = fs.readFileSync(path.join(KIT, KIND_PROMPT[kind]), "utf8").split(/\nOutput on the web/)[0];
@@ -678,7 +692,7 @@ async function runFinish() {
         const result = readJson(path.join(dir, "result.json"), null);
         if (!result) throw new Error("result.json không phải JSON hợp lệ");
         if (meta.kind === "analysis") rows.push({ coll: "analysis", id: meta.key, data: { status: "done", result, notes: [].concat(readJson(path.join(dir, "notes.json"), []) || []), analyzedAt: at, by: "hsmt-worker" } });
-        else rows.push({ coll: meta.kind, id: meta.key, data: { result, at } });
+        else rows.push({ coll: meta.kind, id: meta.key, data: { result, at, ...(meta.ownReq ? { ownReq: true } : {}) } });
       }
       // No result and no error.txt: leave the request waiting; GenBid-Bot.ps1 answers it with the round's error.
       if (rows.length) rows.push(reqDoc(""));
