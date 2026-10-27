@@ -35,7 +35,8 @@ export default async function handler(req, res) {
     }));
     return { coll, id: i.key, data, updated_at: at };
   });
-  const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify(rows) });
+  // x-actor: the activity log's trigger records the member, not the service role, as the one who did it.
+  const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, "x-actor": member.email, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify(rows) });
   if (!w.ok) return res.status(502).json({ error: `Lưu thất bại (HTTP ${w.status}): ${(await w.text()).slice(0, 200)}` });
   res.json({ saved: rows.map((r) => ({ key: r.id, data: r.data })) });
 }

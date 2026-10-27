@@ -13,7 +13,13 @@
     if (!member) { await gate("denied", session.user.email); return new Promise(() => {}); }
     if (document.readyState === "loading") await new Promise((r) => document.addEventListener("DOMContentLoaded", r, { once: true }));
     // Sign-out button is intentionally hidden (accountChip not shown).
-    const canImport = ["owner", "admin"].includes(member.role);
+    if (!sessionStorage.getItem("gbLogged")) {
+      sessionStorage.setItem("gbLogged", "1");
+      const ua = navigator.userAgent;
+      sb.rpc("log_activity", { p_action: "login", p_detail: { device: /Mobi|Android|iPhone|iPad/.test(ua) ? "Điện thoại" : "Máy tính", ua: ua.slice(0, 200) } }).then(() => {}, () => {});
+    }
+    if (member.role === "superadmin") logButton();
+    const canImport = ["superadmin", "owner", "admin"].includes(member.role);
     if (location.hash === "#import" || sessionStorage.getItem("gbImport")) {
       sessionStorage.removeItem("gbImport");
       if (canImport) importPanel(); else toastNote(`Tài khoản ${member.email} có vai trò "${member.role}", cần "owner" hoặc "admin" để nhập dữ liệu.`);
@@ -52,6 +58,149 @@
       b.style.cssText = "position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50";
       document.body.appendChild(b);
     }
+  }
+
+  // ---------- activity log (superadmin only; the activity_log table is readable by superadmin only) ----------
+  function logButton() {
+    const b = document.createElement("button");
+    b.className = "ibtn";
+    b.id = "logBtn";
+    b.title = "Xem nhật ký hoạt động (chỉ superadmin)";
+    b.setAttribute("aria-label", "Xem log");
+    b.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg>';
+    b.onclick = logPanel;
+    const anchor = document.getElementById("syncNewBtn");
+    if (anchor) anchor.after(b);
+    else { b.style.cssText = "position:fixed;right:max(12px,env(safe-area-inset-right,0px));top:12px;z-index:50"; document.body.appendChild(b); }
+  }
+
+  const LOG_COLL = {
+    tracked: "theo dõi gói thầu", manual: "gói thêm tay", deleted: "danh sách gói đã xoá", seen: "gói mới ghi nhận", feed: "danh sách gói từ muasamcong",
+    notice: "thông báo mời thầu", analysis: "kết quả phân tích", analysisreq: "yêu cầu phân tích", hsmtreq: "yêu cầu tải HSMT", hsmt: "tệp HSMT",
+    hsmttext: "nội dung HSMT", syncreq: "yêu cầu đồng bộ muasamcong", translationreq: "yêu cầu tạo YCKT tiếng Anh", translation: "YCKT tiếng Anh",
+    comparereq: "yêu cầu đối chiếu HSDT", compare: "kết quả đối chiếu HSDT", hsdtreq: "yêu cầu tạo HSDT tham khảo", hsdt: "HSDT tham khảo",
+    bidders: "nhà thầu tham dự", portalids: "mã gói trên cổng", prefs: "tab / sắp xếp đang xem",
+  };
+  const LOG_OP = { insert: "Tạo", update: "Cập nhật", delete: "Xoá" };
+  const LOG_STAGE = { new: "Mới", reviewing: "Đang xem", preparing: "Chuẩn bị HSDT", submitted: "Đã nộp", won: "Trúng thầu", lost: "Không trúng", dropped: "Bỏ qua" };
+  const LOG_KEY = { stage: "trạng thái", prevStage: "trạng thái trước", note: "ghi chú", bidPrice: "giá dự thầu", bidPriceSrc: "nguồn giá", tender: "thông tin gói",
+    requestedAt: "thời điểm yêu cầu", doneAt: "thời điểm xong", error: "lỗi", status: "tình trạng", files: "tệp", text: "nội dung", updatedAt: "thời điểm sửa", sort: "sắp xếp" };
+  const logTz = { timeZone: "Asia/Ho_Chi_Minh" };
+  const logDate = new Intl.DateTimeFormat("vi-VN", { ...logTz, weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" });
+  const logTime = new Intl.DateTimeFormat("vi-VN", { ...logTz, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+  // [title, details] in plain Vietnamese for one log row.
+  function logText(r) {
+    const d = r.detail || {};
+    if (r.action === "login") return ["Đăng nhập / mở ứng dụng", d.device || ""];
+    if (r.action === "upload") return ["Tải tệp lên", [d.key ? `Mã: ${d.key}` : "", (d.files || []).join(", ")].filter(Boolean).join(" · ")];
+    if (r.action === "ai") return [`Gọi AI (${d.tier || "default"}${d.images ? `, ${d.images} ảnh` : ""})`, d.ask ? `“${d.ask}…”` : ""];
+    const what = LOG_COLL[r.coll] || r.coll;
+    let title = `${LOG_OP[r.action] || r.action} ${what}`;
+    const keys = d.keys || [];
+    if (/req$/.test(r.coll) && r.action !== "delete") {
+      if (keys.includes("doneAt") && !keys.includes("requestedAt")) title = (r.source === "worker" ? "Hoàn tất " : "Huỷ ") + what;
+      else title = "Gửi " + what;
+    }
+    const parts = [];
+    if (r.doc_id && r.doc_id !== "current" && r.doc_id !== "view") parts.push(`Mã: ${r.doc_id}`);
+    if (d.name) parts.push(d.name);
+    if (d.stage && (r.action === "insert" || keys.includes("stage"))) parts.push(`Trạng thái: ${d.prevStage && d.prevStage !== d.stage ? `${LOG_STAGE[d.prevStage] || d.prevStage} → ` : ""}${LOG_STAGE[d.stage] || d.stage}`);
+    const changed = keys.filter((k) => k !== "stage" && k !== "prevStage" && k !== "updatedAt");
+    if (changed.length) parts.push("Thay đổi: " + changed.slice(0, 8).map((k) => LOG_KEY[k] || k).join(", ") + (changed.length > 8 ? `, … (+${changed.length - 8})` : ""));
+    if (d.mode === "new") parts.push("Chỉ lấy gói mới");
+    return [title, parts.join(" · ")];
+  }
+
+  async function logPanel() {
+    document.getElementById("gbLog")?.remove();
+    const el = document.createElement("div");
+    el.id = "gbLog";
+    el.innerHTML = `<style>
+      #gbLog{position:fixed;inset:0;z-index:90;background:rgba(5,8,18,.6);display:grid;place-items:center;padding:16px}
+      #gbLog .lp{width:min(1000px,100%);max-height:calc(100dvh - 32px);display:grid;grid-template-rows:auto auto 1fr auto;background:var(--panel,#121a2e);color:var(--fg,#e6eaf5);border:1px solid var(--line,#24304d);border-radius:14px;box-shadow:0 12px 40px #0006;overflow:hidden}
+      #gbLog .lh{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line,#24304d)}
+      #gbLog .lh h2{margin:0;font-size:17px;flex:1}
+      #gbLog .lf{display:flex;flex-wrap:wrap;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line,#24304d);align-items:center}
+      #gbLog select,#gbLog input[type=date]{background:var(--panel2,#17213a);color:inherit;border:1px solid var(--line,#24304d);border-radius:8px;padding:6px 8px;font:inherit;max-width:100%}
+      #gbLog label{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:var(--muted,#8d98b5)}
+      #gbLog .ll{overflow:auto;padding:0 16px}
+      #gbLog .day{position:sticky;top:0;background:var(--panel,#121a2e);padding:10px 0 6px;font-weight:600;font-size:13px;color:var(--muted,#8d98b5);border-bottom:1px solid var(--line,#24304d)}
+      #gbLog .r{display:grid;grid-template-columns:72px minmax(150px,220px) 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--line,#24304d);font-size:13.5px;line-height:1.45}
+      #gbLog .t{font-variant-numeric:tabular-nums;color:var(--muted,#8d98b5)}
+      #gbLog .a{overflow-wrap:anywhere}#gbLog .a small{display:block;color:var(--dim,#5e6a88)}
+      #gbLog .w b{font-weight:600}#gbLog .w div{color:var(--muted,#8d98b5);overflow-wrap:anywhere}
+      #gbLog .lb{display:flex;gap:10px;align-items:center;padding:10px 16px;border-top:1px solid var(--line,#24304d);font-size:13px;color:var(--muted,#8d98b5)}
+      #gbLog .lb span{flex:1}
+      @media (max-width:640px){#gbLog{padding:0}#gbLog .lp{max-height:100dvh;height:100dvh;border-radius:0}#gbLog .r{grid-template-columns:64px 1fr}#gbLog .w{grid-column:1/-1}}
+    </style>
+    <div class="lp" role="dialog" aria-modal="true" aria-label="Nhật ký hoạt động">
+      <div class="lh"><h2>Nhật ký hoạt động</h2><button class="ibtn" id="lgX" aria-label="Đóng">✕</button></div>
+      <div class="lf">
+        <select id="lgWho" aria-label="Người thực hiện"><option value="">Tất cả người dùng</option></select>
+        <select id="lgKind" aria-label="Loại hoạt động">
+          <option value="">Mọi hoạt động</option><option value="data">Thay đổi dữ liệu</option><option value="login">Đăng nhập</option>
+          <option value="upload">Tải tệp lên</option><option value="ai">Gọi AI</option></select>
+        <label>Ngày <input type="date" id="lgDay"></label>
+        <label><input type="checkbox" id="lgQuiet" checked> Ẩn đổi tab / sắp xếp</label>
+      </div>
+      <div class="ll" id="lgList"></div>
+      <div class="lb"><span id="lgInfo">Đang tải...</span><button class="btn sm" id="lgMore" hidden>Tải thêm</button></div>
+    </div>`;
+    document.body.appendChild(el);
+    const $ = (s) => el.querySelector(s);
+    const close = () => { el.remove(); document.removeEventListener("keydown", onKey); };
+    const onKey = (e) => { if (e.key === "Escape") close(); };
+    document.addEventListener("keydown", onKey);
+    $("#lgX").onclick = close;
+    el.addEventListener("click", (e) => { if (e.target === el) close(); });
+
+    const { data: people } = await sb.from("members").select("email").order("email");
+    for (const email of [...(people || []).map((p) => p.email), "worker"]) {
+      const o = document.createElement("option");
+      o.value = email; o.textContent = email === "worker" ? "Máy chủ HSMT (tự động)" : email;
+      $("#lgWho").appendChild(o);
+    }
+
+    const PAGE = 200;
+    let rows = [], total = 0, seq = 0;
+    async function load(more) {
+      const my = ++seq;
+      let q = sb.from("activity_log").select("*", { count: "exact" }).order("at", { ascending: false }).order("id", { ascending: false });
+      const who = $("#lgWho").value, kind = $("#lgKind").value, day = $("#lgDay").value;
+      if (who) q = q.eq("actor", who);
+      if (kind === "data") q = q.in("action", ["insert", "update", "delete"]);
+      else if (kind) q = q.eq("action", kind);
+      if (day) { const from = new Date(`${day}T00:00:00+07:00`); q = q.gte("at", from.toISOString()).lt("at", new Date(+from + 864e5).toISOString()); }
+      if ($("#lgQuiet").checked) q = q.or("coll.is.null,coll.neq.prefs");
+      $("#lgInfo").textContent = "Đang tải...";
+      const { data, error, count } = await q.range(more ? rows.length : 0, (more ? rows.length : 0) + PAGE - 1);
+      if (my !== seq) return;
+      if (error) { $("#lgInfo").textContent = /activity_log/.test(error.message) ? "Chưa có bảng nhật ký: cần chạy lại supabase/schema.sql." : "Lỗi: " + error.message; return; }
+      rows = more ? rows.concat(data) : data;
+      total = count ?? rows.length;
+      render();
+    }
+    function render() {
+      let lastDay = "", html = "";
+      for (const r of rows) {
+        const at = new Date(r.at), day = logDate.format(at);
+        if (day !== lastDay) { html += `<div class="day">${esc(day)}</div>`; lastDay = day; }
+        const [title, sub] = logText(r);
+        const who = r.actor === "worker" ? "Máy chủ HSMT (tự động)" : r.actor;
+        const via = r.source === "worker" ? "" : r.source === "server" ? "qua máy chủ web" : "trên trang web";
+        html += `<div class="r"><div class="t" title="${esc(at.toISOString())}">${esc(logTime.format(at))}</div>
+          <div class="a">${esc(who)}${via ? `<small>${esc(via)}</small>` : ""}</div>
+          <div class="w"><b>${esc(title)}</b>${sub ? `<div>${esc(sub)}</div>` : ""}</div></div>`;
+      }
+      $("#lgList").innerHTML = html || '<p class="muted" style="padding:16px 0">Không có hoạt động nào.</p>';
+      $("#lgInfo").textContent = `Hiển thị ${rows.length} / ${total} hoạt động · giờ Việt Nam (GMT+7)`;
+      $("#lgMore").hidden = rows.length >= total;
+    }
+    $("#lgMore").onclick = () => load(true);
+    for (const id of ["#lgWho", "#lgKind", "#lgDay", "#lgQuiet"]) $(id).onchange = () => load(false);
+    load(false);
   }
 
   function toastNote(text) {
@@ -237,6 +386,7 @@
       const contentType = blob.type || "application/octet-stream";
       const { error } = await sb.storage.from("blobs").upload(id, blob, { contentType });
       if (error) throw { code: "error", message: error.message };
+      logUpload([blob.name || contentType]);
       return { id, url: "/_blob/" + id, sizeBytes: blob.size, contentType };
     },
   };
@@ -254,8 +404,12 @@
       if (error) throw { message: `Không tải được ${f.name} lên: ${error.message}` };
       out.push({ path, name: f.name, size: f.size });
     }
+    if (out.length) logUpload(out.map((f) => f.name), key);
     return out;
   };
+  function logUpload(files, key) {
+    sb.rpc("log_activity", { p_action: "upload", p_detail: { files: files.slice(0, 50), ...(key ? { key } : {}) } }).then(() => {}, () => {});
+  }
 
   window.genbidWeb = true; // features that need the web version (e.g. HSMT fetch requests)
   // POST to one of this site's /api endpoints as the signed-in member; resolves to the JSON body, throws { message }.
