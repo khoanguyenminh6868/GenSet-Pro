@@ -86,25 +86,28 @@ export default async function handler(req, res) {
 
 // Khoa's company (CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN). A tender whose bidders include it was bid on:
 // one still in an early stage (Mới, Đang xem, Chuẩn bị HSDT, also shown as Đã đóng) moves to Đã nộp, with our
-// price when none was entered. Later stages and Bỏ qua stay as the user set them. Returns the ids moved.
+// price when none was entered. Once the result is out (final), it moves on to Trúng thầu or Không trúng, also from
+// Đã nộp (Khoa, 2026-10-27). Bỏ qua and a result already set stay as the user set them. Returns the ids moved.
 const OUR_TAX = "4101623015";
 async function markJoined(rows) {
   const moved = [];
   for (const r of rows) {
-    const us = (r.data.list || []).find((x) => String(x.taxCode || "").replace(/D/g, "") === OUR_TAX);
+    const mine = (r.data.list || []).filter((x) => String(x.taxCode || "").replace(/\D/g, "") === OUR_TAX);
+    const us = mine.find((x) => x.won) || mine[0];
     if (!us) continue;
+    const stage = !r.data.final ? "submitted" : mine.some((x) => x.won) ? "won" : "lost";
     const get = async (coll, id) => {
       const q = await fetch(`${SB_URL}/rest/v1/docs?select=data&coll=eq.${coll}&id=eq.${encodeURIComponent(id)}`, { headers: sbHeaders });
       return q.ok ? (await q.json())[0]?.data : undefined;
     };
     const cur = (await get("tracked", r.id)) || {};
-    if (cur.stage && !["new", "reviewing", "preparing"].includes(cur.stage)) continue;
+    if (cur.stage && !["new", "reviewing", "preparing", ...(stage === "submitted" ? [] : ["submitted"])].includes(cur.stage)) continue;
     const tender = cur.tender || (await get("seen", r.id)) || (await get("manual", r.id)) || ((await get("feed", "current"))?.tenders || []).find((t) => t.notifyNo === r.id);
     if (!tender) continue;
     const price = us.priceAfterDiscount ?? us.bidPrice;
     const now = new Date().toISOString();
-    const data = { ...cur, stage: "submitted", prevStage: cur.stage || "new", tender, note: cur.note || "", updatedAt: now,
-      ...(cur.bidPrice || !price ? {} : { bidPrice: price, bidPriceSrc: "biên bản mở thầu" }) };
+    const data = { ...cur, stage, prevStage: cur.stage || "new", tender, note: cur.note || "", updatedAt: now,
+      ...(cur.bidPrice || !price ? {} : { bidPrice: price, bidPriceSrc: r.data.final ? "KQLCNT" : "biên bản mở thầu" }) };
     const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, Prefer: "resolution=merge-duplicates,return=minimal" },
       body: JSON.stringify([{ coll: "tracked", id: r.id, data, updated_at: now }]) });
     if (w.ok) moved.push(r.id);
