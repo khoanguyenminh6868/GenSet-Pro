@@ -7,8 +7,8 @@ Không in token ra màn hình.
 param(
     [Parameter(Mandatory)][string]$Out,
     # files: yêu cầu lấy tệp (mảng). sync: {pending, requestedAt}. analysis: [{key, notifyNo, requestedAt}].
-    # translation / compare / hsdt: yêu cầu Tạo bản tiếng Anh / Đối chiếu / Tạo HSDT tham khảo [{key, notifyNo, requestedAt, ...}]; compare có files [{path, name, size}] và text.
-    [ValidateSet('files', 'sync', 'analysis', 'translation', 'compare', 'hsdt', 'docs')][string]$Kind = 'files',
+    # translation / compare / hsdt / tlkt: yêu cầu Tạo bản tiếng Anh / Đối chiếu / Tạo HSDT tham khảo / Đối chiếu TLKT [{key, notifyNo, requestedAt, ...}]; compare và tlkt có files [{path, name, size}] và text.
+    [ValidateSet('files', 'sync', 'analysis', 'translation', 'compare', 'hsdt', 'tlkt', 'docs')][string]$Kind = 'files',
     [string]$Coll,
     [string]$Id,
     [string]$TokenFile = 'C:\Projects\GenSet Pro\.genbid-ingest-token',

@@ -393,7 +393,7 @@ async function runFiles() {
 // ---------- AI requests: prepare the input, then post what Claude wrote ----------
 // Chapters each request needs; the rest (Chỉ dẫn nhà thầu, Điều kiện chung, biểu mẫu hợp đồng, ...) is standard
 // boilerplate that only costs tokens. The full text stays next to it (hsmt-full.txt) in case something is missing.
-const KEEP = { analysis: ["II", "III", "V", "VII"], compare: ["II", "III", "V", "VII"], hsdt: ["II", "III", "IV", "V", "VII"], translation: ["V"] };
+const KEEP = { analysis: ["II", "III", "V", "VII"], compare: ["II", "III", "V", "VII"], hsdt: ["II", "III", "IV", "V", "VII"], translation: ["V"], tlkt: ["III", "V"] };
 function splitSections(text) {
   const out = []; let cur = { file: "", chap: "", title: "(đầu)", lines: [] };
   const push = () => { const t = cur.lines.join("\n"); if (t.trim()) out.push({ ...cur, text: t }); };
@@ -459,9 +459,9 @@ function fileText(f) {
   } catch {}
   return "";
 }
-const KIND_PROMPT = { analysis: "analysis-prompt.md", translation: "translate-prompt.md", compare: "compare-prompt.md", hsdt: "hsdt-prompt.md" };
-const KIND_REQ = { analysis: "analysisreq", translation: "translationreq", compare: "comparereq", hsdt: "hsdtreq" };
-const KIND_NAME = { analysis: "Phân tích", translation: "Tạo bản tiếng Anh", compare: "Đối chiếu", hsdt: "Tạo HSDT tham khảo" };
+const KIND_PROMPT = { analysis: "analysis-prompt.md", translation: "translate-prompt.md", compare: "compare-prompt.md", hsdt: "hsdt-prompt.md", tlkt: "tlkt-prompt.md" };
+const KIND_REQ = { analysis: "analysisreq", translation: "translationreq", compare: "comparereq", hsdt: "hsdtreq", tlkt: "tlktreq" };
+const KIND_NAME = { analysis: "Phân tích", translation: "Tạo bản tiếng Anh", compare: "Đối chiếu", hsdt: "Tạo HSDT tham khảo", tlkt: "Đối chiếu TLKT" };
 
 async function tenderInfo(key) {
   const feed = (await doc("feed", "current"))?.tenders || [];
@@ -497,6 +497,7 @@ async function prepOne(kind, key, requestedAt, dir) {
     input += `\n## Thông báo mời thầu (muasamcong)\n${notice.info.slice(0, 8000)}\n\n### Danh sách chương HSMT\n${notice.hsmtList || ""}\n`;
     input += webform.map((c) => `\n### ${c.name} (biểu mẫu webform)\n${compact(c.text)}\n`).join("");
   }
+  if (kind === "tlkt" && analysis?.result?.technicalSpecs?.length) input += `\n## Thông số kỹ thuật từ lần phân tích HSMT trước đó\n${JSON.stringify(analysis.result.technicalSpecs, null, 1)}\n`;
   if ((kind === "hsdt" || kind === "compare") && analysis?.result) {
     const a = analysis.result;
     input += `\n## Kết quả phân tích HSMT trước đó\n${JSON.stringify({ keyInfo: a.keyInfo, technicalSpecs: a.technicalSpecs, qualificationRequirements: a.qualificationRequirements, requiredDocuments: a.requiredDocuments }, null, 1)}\n`;
@@ -515,13 +516,16 @@ async function prepOne(kind, key, requestedAt, dir) {
   if (scans.length) {
     const rel = path.join(dir, "rel"), scan = path.join(dir, "scan"), render = path.join(KIT, "Render-GenBidScan.ps1");
     input += `\n## Tệp scan chưa có chữ\n${scans.map((s) => "- " + s).join("\n")}\n`
+      // Files a project's owner uploaded on the web (tab Dự án) live only in the web's file store.
+      + (hsmt?.source === "tải tay" ? `Tệp tải tay trên web, tải về bằng Invoke-WebRequest:\n${(hsmt.files || []).filter((f) => f.hasText === false && f.url).map((f) => `- ${f.name}: ${API.replace(/\/api$/, "")}${f.url}`).join("\n")}\n` : "")
       + `Tệp nằm ở ${local}. Nếu không có: gh release download hsmt-${key} --repo khoanguyenminh6868/GenSet-Pro --dir "${rel}" (tên gốc trong C:\\Projects\\GenSet Pro\\hsmt-inbox\\inbox\\${key}\\release.json).\n`
       + `Xem trang: powershell -NoProfile -File "${render}" -Pdf <pdf> -OutDir "${scan}" -First <n> -Last <m>, rồi đọc ảnh PNG, mỗi lần khoảng 10 trang, chỉ các chương cần.\n`;
   }
   if (!full && !notice?.info && !scans.length) input += `\nKHÔNG có chữ HSMT nào trên web: kiểm tra ${local}; nếu cũng không có thì ghi error.txt.\n`;
-  if (kind === "compare") {
-    // The bid (HSDT) is the company's own confidential document: it stays in this folder, deleted after the round.
-    const hd = path.join(dir, "hsdt"), unread = [];
+  if (kind === "compare" || kind === "tlkt") {
+    // The bid (HSDT) is the company's own confidential document, and a supplier's technical proposal (Đối chiếu TLKT)
+    // is the partner's: either stays in this folder, deleted after the round.
+    const hd = path.join(dir, kind), unread = [];
     let sub = req.text ? `### Nội dung dán vào\n${req.text}\n` : "";
     for (const f of [].concat(req.files || [])) {
       try {
@@ -536,8 +540,8 @@ async function prepOne(kind, key, requestedAt, dir) {
         else unread.push(out);
       } catch (e) { unread.push(`${f.name} (không tải được: ${e.message})`); }
     }
-    input += `\n## HỒ SƠ DỰ THẦU (submission)\n${sub || "(không có chữ)"}\n`;
-    if (unread.length) input += `\nTệp HSDT chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
+    input += `\n## ${kind === "tlkt" ? "TÀI LIỆU KỸ THUẬT ĐỀ XUẤT CỦA NHÀ CUNG CẤP (technical proposal)" : "HỒ SƠ DỰ THẦU (submission)"}\n${sub || "(không có chữ)"}\n`;
+    if (unread.length) input += `\nTệp ${kind === "tlkt" ? "tài liệu kỹ thuật" : "HSDT"} chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   }
   fs.writeFileSync(path.join(dir, "input.md"), input, "utf8");
   // Requests that need to look at pages (mostly scanned HSMT, unreadable HSDT files) or are too large for one call
@@ -545,6 +549,7 @@ async function prepOne(kind, key, requestedAt, dir) {
   const why = [];
   if (scans.length && text.length < 20000) why.push("HSMT chủ yếu là bản scan");
   if (kind === "compare" && /Tệp HSDT chưa đọc được chữ/.test(input)) why.push("HSDT có tệp chưa đọc được chữ");
+  if (kind === "tlkt" && /Tệp tài liệu kỹ thuật chưa đọc được chữ/.test(input)) why.push("tài liệu kỹ thuật có tệp chưa đọc được chữ");
   if (input.length > 450000) why.push("dữ liệu quá lớn cho một lần gọi");
   if (!full && !notice?.info) why.push("chưa có chữ HSMT trên web");
   if (why.length) fs.writeFileSync(path.join(dir, "AGENT"), why.join("; "), "utf8");
@@ -569,7 +574,7 @@ async function runPrep() {
   const outDir = String(opt("out"));
   const made = [];
   for (const s of sigs) {
-    const m = s.match(/^(analysis|translation|compare|hsdt):([^|]+)\|(.*)$/);
+    const m = s.match(/^(analysis|translation|compare|hsdt|tlkt):([^|]+)\|(.*)$/);
     if (!m) continue;
     try { const d = await prepOne(m[1], m[2], m[3], path.join(outDir, `${m[1]}-${m[2].replace(/[^\w.-]/g, "_")}`)); if (d) made.push(d); }
     catch (e) { log(`Không chuẩn bị được ${s}: ${e.message}`); }

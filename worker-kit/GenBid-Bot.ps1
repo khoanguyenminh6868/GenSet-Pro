@@ -98,6 +98,7 @@ function Get-Requests($p) {
     }
     foreach ($x in @($p.translation)) { if ($x) { $reqs["translation:$($x.key)|$($x.requestedAt)"] = @{ coll = 'translationreq'; id = $x.key; data = [ordered]@{ notifyNo = $x.notifyNo; requestedAt = $x.requestedAt } } } }
     foreach ($x in @($p.compare)) { if ($x) { $reqs["compare:$($x.key)|$($x.requestedAt)"] = @{ coll = 'comparereq'; id = $x.key; data = [ordered]@{ notifyNo = $x.notifyNo; requestedAt = $x.requestedAt } } } }
+    foreach ($x in @($p.tlkt)) { if ($x) { $reqs["tlkt:$($x.key)|$($x.requestedAt)"] = @{ coll = 'tlktreq'; id = $x.key; data = [ordered]@{ notifyNo = $x.notifyNo; requestedAt = $x.requestedAt } } } }
     foreach ($x in @($p.hsdt)) { if ($x) { $reqs["hsdt:$($x.key)|$($x.requestedAt)"] = @{ coll = 'hsdtreq'; id = $x.key; data = [ordered]@{ notifyNo = $x.notifyNo; requestedAt = $x.requestedAt } } } }
     if ($p.sync.pending) { $reqs["sync:$($p.sync.requestedAt)"] = @{ coll = 'syncreq'; id = 'current'; data = [ordered]@{ requestedAt = $p.sync.requestedAt; from = 'web' } } }
     return $reqs
