@@ -79,7 +79,7 @@
     notice: "thông báo mời thầu", analysis: "kết quả phân tích", analysisreq: "yêu cầu phân tích", hsmtreq: "yêu cầu tải HSMT", hsmt: "tệp HSMT",
     hsmttext: "nội dung HSMT", syncreq: "yêu cầu đồng bộ muasamcong", translationreq: "yêu cầu tạo YCKT tiếng Anh", translation: "YCKT tiếng Anh",
     comparereq: "yêu cầu đối chiếu HSDT", compare: "kết quả đối chiếu HSDT", hsdtreq: "yêu cầu tạo HSDT tham khảo", hsdt: "HSDT tham khảo",
-    bidders: "nhà thầu tham dự", portalids: "mã gói trên cổng",
+    bidders: "nhà thầu tham dự", portalids: "mã gói trên cổng", synclog: "Sync theo lịch",
   };
   const LOG_OP = { insert: "Tạo", update: "Cập nhật", delete: "Xoá" };
   const LOG_STAGE = { new: "Mới", reviewing: "Đang xem", preparing: "Chuẩn bị HSDT", submitted: "Đã nộp", won: "Trúng thầu", lost: "Không trúng", dropped: "Bỏ qua" };
@@ -96,6 +96,7 @@
     if (r.action === "login") return ["Đăng nhập / mở ứng dụng", d.device || ""];
     if (r.action === "upload") return ["Tải tệp lên", [d.key ? `Mã: ${d.key}` : "", (d.files || []).join(", ")].filter(Boolean).join(" · ")];
     if (r.action === "ai") return [`Gọi AI (${d.tier || "default"}${d.images ? `, ${d.images} ảnh` : ""})`, d.ask ? `“${d.ask}…”` : ""];
+    if (r.coll === "synclog") return [`Sync theo lịch${d.slot ? ` (${d.slot.slice(-5)})` : ""}`, d.summary || ""];
     const what = LOG_COLL[r.coll] || r.coll;
     let title = `${LOG_OP[r.action] || r.action} ${what}`;
     const keys = d.keys || [];
