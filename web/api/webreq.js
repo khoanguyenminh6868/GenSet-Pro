@@ -43,11 +43,12 @@ export default async function handler(req, res) {
 }
 
 // The HSDT of a comparison (or the technical proposal of a TLKT one): files already uploaded under <dir>/<TBMT>/ in the
-// scratch bucket, and pasted text.
+// scratch bucket, and pasted text. A TLKT one may also carry a shortened YCKT (reqFiles, reqText) that replaces the HSMT.
 function compareFields(i, dir) {
-  const files = (Array.isArray(i.files) ? i.files : []).slice(0, 50)
+  const list = (arr) => (Array.isArray(arr) ? arr : []).slice(0, 50)
     .filter((f) => typeof f?.path === "string" && f.path.startsWith(`${dir}/${i.key}/`) && !f.path.includes(".."))
     .map((f) => ({ path: f.path.slice(0, 600), name: str(f.name, 300), size: Number(f.size) || undefined }));
-  // A technical proposal the browser could not upload travels as its text, so it gets more room.
-  return { files, text: str(i.text, dir === "tlkt" ? 800000 : 200000) || "" };
+  if (dir !== "tlkt") return { files: list(i.files), text: str(i.text, 200000) || "" };
+  // A file the browser could not upload travels as its text, so it gets more room.
+  return { files: list(i.files), text: str(i.text, 800000) || "", reqFiles: list(i.reqFiles), reqText: str(i.reqText, 400000) || "" };
 }
