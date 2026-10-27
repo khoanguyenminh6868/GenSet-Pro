@@ -10,7 +10,8 @@ const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // bidders + portalids: bidders and prices the worker reads from the bid-opening minutes and results on muasamcong.
 // translationreq + comparereq + hsdtreq (+ hsdt): the answers to the page's "Tạo bản tiếng Anh", "Đối chiếu" and
 // "Tạo HSDT tham khảo" requests.
-const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "analysisreq", "hsmtreq", "hsmt", "hsmttext", "bidders", "portalids", "translationreq", "comparereq", "hsdtreq", "hsdt"]);
+// synclog: the last scheduled Sync (always posted, so the activity log shows each one ran).
+const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "synclog", "analysisreq", "hsmtreq", "hsmt", "hsmttext", "bidders", "portalids", "translationreq", "comparereq", "hsdtreq", "hsdt"]);
 const REQS = new Set(["analysisreq", "hsmtreq", "translationreq", "comparereq", "hsdtreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
@@ -29,7 +30,7 @@ export default async function handler(req, res) {
   if (!rows?.length || rows.length > 200) return res.status(400).json({ error: "rows: 1-200 items" });
   for (const r of rows) {
     if (!COLLS.has(r?.coll) || !ID_RE.test(r?.id || "") || !r.data || typeof r.data !== "object") return res.status(400).json({ error: `bad row ${r?.coll}/${r?.id}` });
-    if ((r.coll === "feed" || r.coll === "syncreq") && r.id !== "current") return res.status(400).json({ error: `bad row ${r.coll}/${r.id}` });
+    if ((r.coll === "feed" || r.coll === "syncreq" || r.coll === "synclog") && r.id !== "current") return res.status(400).json({ error: `bad row ${r.coll}/${r.id}` });
   }
   // A Sync pressed after the worker read the request stays pending: the worker's "done" never overwrites a newer request.
   const sync = rows.find((r) => r.coll === "syncreq");

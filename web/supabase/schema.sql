@@ -107,7 +107,10 @@ begin
     'stage', r.data ->> 'stage',
     'prevStage', case when tg_op = 'UPDATE' then old.data ->> 'stage' end,
     'name', left(coalesce(r.data ->> 'bidName', r.data -> 'tender' ->> 'bidName'), 200),
-    'mode', r.data ->> 'mode')));
+    'mode', r.data ->> 'mode',
+    -- A scheduled Sync (synclog/current): its time slot and result.
+    'slot', case when r.coll = 'synclog' then r.data ->> 'slot' end,
+    'summary', case when r.coll = 'synclog' then left(r.data ->> 'summary', 300) end)));
   return null;
 exception when others then
   return null; -- a logging failure never blocks the save itself
