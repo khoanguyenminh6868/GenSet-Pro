@@ -640,6 +640,20 @@ const TABS = [...STAGES.slice(0, 5), { key: "closed", label: "Đã đóng" }, ST
 // Projects Khoa creates by hand (tab Dự án, Khoa 2026-10-27): manual/<key> with isProject. They have no muasamcong
 // notice, no stages and no KPIs; their files are uploaded by hand into hsmt/<key> like a tender's HSMT.
 const isProject = (t) => !!t?.isProject;
+// A project's Mã số: "Dự Án <yyyy-mm-dd>-<nn>", numbered by creation day (Vietnam time), saved when the project is
+// created so it never changes. Projects made before the number existed get theirs from their creation order.
+const projDay = (iso) => new Intl.DateTimeFormat("en-CA", { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(iso || Date.now()));
+function nextProjectNo(iso) {
+  const day = projDay(iso);
+  const used = Object.values(state.manual).filter((p) => p.isProject).map((p) => projectNo(p)).filter((n) => n.includes(day)).map((n) => +n.slice(-2) || 0);
+  return `Dự Án ${day}-${String(Math.max(0, ...used) + 1).padStart(2, "0")}`;
+}
+function projectNo(t) {
+  if (t.projectNo) return t.projectNo;
+  const day = projDay(t.addedAt);
+  const same = Object.values(state.manual).filter((p) => p.isProject && !p.projectNo && projDay(p.addedAt) === day).sort((a, b) => (a.addedAt || "").localeCompare(b.addedAt || ""));
+  return `Dự Án ${day}-${String(same.findIndex((p) => p.addedAt === t.addedAt) + 1 || 1).padStart(2, "0")}`;
+}
 // "Tất cả" lists tenders only; every other tab lists what tabOf puts there.
 const inTab = (t) => (state.stage === "all" ? !isProject(t) : tabOf(t) === state.stage);
 let seenBusy = false;
@@ -1141,8 +1155,8 @@ function anaInline0(t) {
   return "";
 }
 const COLS = [
-  { k: "no", label: "Số TBMT", cls: "noc", val: (t) => pubOf(t), text: (t) => `${t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
-    cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">Dự án</span><div class="src num">Tạo ${fmtDate(t.addedAt, false) || "—"}</div>`;
+  { k: "no", label: "Mã Số", cls: "noc", val: (t) => pubOf(t), text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
+    cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span><div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
       const tl = timeLeft(t.bidCloseDate); return h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
   { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}${raw(t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}</div>` : "")}${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
@@ -1324,7 +1338,7 @@ function renderDrawer(force = true) {
   if (!t) { closeDrawer(); return; }
   const stg = stageOf(t), canCompare = stg === "preparing" || isProject(t);
   const tl = timeLeft(t.bidCloseDate);
-  $("#dmeta").innerHTML = h`${raw(t.notifyNo ? h`<span class="kcell">${t.notifyNo}</span>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
+  $("#dmeta").innerHTML = h`${raw(isProject(t) ? h`<span class="kcell">${projectNo(t)}</span>` : t.notifyNo ? h`<span class="kcell">${t.notifyNo}</span>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
   $("#dtitle").textContent = t.bidName || "";
   $$("#dtabs button").forEach((b) => {
     b.setAttribute("aria-selected", String(b.dataset.dt === state.dtab));
@@ -1392,7 +1406,8 @@ function askNewProject() {
     m.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.tagName === "INPUT" && !ok.disabled) ok.click(); });
     ok.addEventListener("click", async () => {
       const key = "DA-" + Date.now().toString(36);
-      const rec = { isProject: true, bidName: name.value.trim(), investorName: $("#npInv", m).value.trim(), location: $("#npLoc", m).value.trim(), addedAt: new Date().toISOString() };
+      const at = new Date().toISOString();
+      const rec = { isProject: true, projectNo: nextProjectNo(at), bidName: name.value.trim(), investorName: $("#npInv", m).value.trim(), location: $("#npLoc", m).value.trim(), addedAt: at };
       close();
       if (!(await saveProject(key, rec))) return;
       toast("Đã tạo dự án");
