@@ -1801,7 +1801,7 @@ function tlktTabHtml(t) {
   const enReady = prev?.result && prev.resultEnAt === prev.at;
   // A shortened YCKT, when uploaded, is the only requirements side: the HSMT is not read (Khoa, 2026-10-27).
   return tkWait + (tkErr ? h`<div class="note warn">Agent chưa ${tr ? "dịch" : "đối chiếu"} được: ${tkErr}</div>` : "") + h`<div class="drop" id="tyDrop">
-      <div class="row"><span class="muted small" style="flex:1">Tệp YCKT rút gọn (không bắt buộc). Khi có tệp này, chỉ đối chiếu với tệp này, không dùng HSMT gốc.</span><label class="btn sm" for="tyFiles">Chọn tệp</label></div>
+      <div class="row"><span class="muted small" style="flex:1">Tệp YCKT rút gọn (không bắt buộc). Khi có tệp này, chỉ đối chiếu với nó, không dùng HSMT gốc.</span><label class="btn sm" for="tyFiles">Chọn tệp</label></div>
       <input type="file" id="tyFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
       <div class="files" id="tyList"></div>
     </div>
