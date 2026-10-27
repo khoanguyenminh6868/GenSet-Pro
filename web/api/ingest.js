@@ -9,10 +9,10 @@ const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // hsmt + hsmttext: the file list and text the worker reads from the files itself (the hsmt-inbox Action writes the same).
 // bidders + portalids: bidders and prices the worker reads from the bid-opening minutes and results on muasamcong.
 // translationreq + comparereq + hsdtreq (+ hsdt): the answers to the page's "Tạo bản tiếng Anh", "Đối chiếu" and
-// "Tạo HSDT tham khảo" requests.
+// "Tạo HSDT tham khảo" requests; tlktreq + tlkt: "Đối chiếu TLKT" (a supplier's technical proposal).
 // synclog: the last scheduled Sync (always posted, so the activity log shows each one ran).
-const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "synclog", "analysisreq", "hsmtreq", "hsmt", "hsmttext", "bidders", "portalids", "translationreq", "comparereq", "hsdtreq", "hsdt"]);
-const REQS = new Set(["analysisreq", "hsmtreq", "translationreq", "comparereq", "hsdtreq"]);
+const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "synclog", "analysisreq", "hsmtreq", "hsmt", "hsmttext", "bidders", "portalids", "translationreq", "comparereq", "hsdtreq", "hsdt", "tlktreq", "tlkt"]);
+const REQS = new Set(["analysisreq", "hsmtreq", "translationreq", "comparereq", "hsdtreq", "tlktreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 
@@ -44,7 +44,7 @@ export default async function handler(req, res) {
   // Same for a "Phân tích" or "Lấy lại tệp" pressed again while the worker was busy (the bot also posts
   // hsmtreq/analysisreq with an error when a round left a request unanswered).
   const newerReq = new Set();
-  for (const coll of ["analysisreq", "hsmtreq", "translationreq", "comparereq", "hsdtreq"]) {
+  for (const coll of REQS) {
     const areq = rows.filter((r) => r.coll === coll);
     if (!areq.length) continue;
     const ids = areq.map((r) => `"${r.id}"`).join(",");
@@ -80,8 +80,8 @@ export default async function handler(req, res) {
     if (!w.ok) return res.status(502).json({ error: `write ${w.status}: ${(await w.text()).slice(0, 200)}` });
   }
   const joined = await markJoined(keep.filter((r) => r.coll === "bidders")).catch(() => []);
-  // A comparison answered: its HSDT files are no longer needed in the scratch bucket.
-  await Promise.all(keep.filter((r) => r.coll === "comparereq" && r.data.doneAt).map((r) => dropHsdt(r.id).catch(() => {})));
+  // A comparison answered: its HSDT (or technical proposal) files are no longer needed in the scratch bucket.
+  await Promise.all(keep.filter((r) => (r.coll === "comparereq" || r.coll === "tlktreq") && r.data.doneAt).map((r) => dropScratch(r.coll === "tlktreq" ? "tlkt" : "hsdt", r.id).catch(() => {})));
   res.json({ written: keep.length, skipped: rows.length - keep.length, ...(joined.length ? { joined } : {}) });
 }
 
@@ -117,18 +117,18 @@ async function markJoined(rows) {
   return moved;
 }
 
-// Deletes every HSDT file the page uploaded for a tender (scratch bucket, hsdt/<TBMT>/<time>/<file>). Only called
-// once the latest comparison request was answered, so no file a pending request still needs is removed.
-async function dropHsdt(key) {
+// Deletes every HSDT (dir "hsdt") or technical proposal (dir "tlkt") file the page uploaded for a tender (scratch bucket,
+// <dir>/<TBMT>/<time>/<file>). Only called once the latest request was answered, so no file a pending request still needs is removed.
+async function dropScratch(dir0, key) {
   const st = `${SB_URL}/storage/v1/object`;
   const list = async (prefix) => {
     const r = await fetch(`${st}/list/scratch`, { method: "POST", headers: sbHeaders, body: JSON.stringify({ prefix, limit: 1000 }) });
     return r.ok ? await r.json() : [];
   };
   const paths = [];
-  for (const dir of await list(`hsdt/${key}`)) {
-    if (dir.id) { paths.push(`hsdt/${key}/${dir.name}`); continue; }
-    for (const f of await list(`hsdt/${key}/${dir.name}`)) if (f.id) paths.push(`hsdt/${key}/${dir.name}/${f.name}`);
+  for (const dir of await list(`${dir0}/${key}`)) {
+    if (dir.id) { paths.push(`${dir0}/${key}/${dir.name}`); continue; }
+    for (const f of await list(`${dir0}/${key}/${dir.name}`)) if (f.id) paths.push(`${dir0}/${key}/${dir.name}/${f.name}`);
   }
   if (paths.length) await fetch(`${st}/scratch`, { method: "DELETE", headers: sbHeaders, body: JSON.stringify({ prefixes: paths }) });
   return paths.length;

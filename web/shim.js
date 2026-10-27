@@ -79,6 +79,7 @@
     notice: "thông báo mời thầu", analysis: "kết quả phân tích", analysisreq: "yêu cầu phân tích", hsmtreq: "yêu cầu tải HSMT", hsmt: "tệp HSMT",
     hsmttext: "nội dung HSMT", syncreq: "yêu cầu đồng bộ muasamcong", translationreq: "yêu cầu tạo YCKT tiếng Anh", translation: "YCKT tiếng Anh",
     comparereq: "yêu cầu đối chiếu HSDT", compare: "kết quả đối chiếu HSDT", hsdtreq: "yêu cầu tạo HSDT tham khảo", hsdt: "HSDT tham khảo",
+    tlktreq: "yêu cầu đối chiếu TLKT", tlkt: "kết quả đối chiếu TLKT",
     bidders: "nhà thầu tham dự", portalids: "mã gói trên cổng", synclog: "Sync theo lịch",
   };
   const LOG_OP = { insert: "Tạo", update: "Cập nhật", delete: "Xoá" };
@@ -393,11 +394,12 @@
     },
   };
 
-  // ---------- HSDT files for a "Đối chiếu" request: the private "scratch" bucket, read only by the worker ----------
+  // ---------- HSDT files for a "Đối chiếu" request (dir "hsdt"), or the technical proposal of a "Đối chiếu TLKT" one (dir "tlkt"):
+  // the private "scratch" bucket, read only by the worker ----------
   // Storage keys take ASCII only, so the key is a number and a plain-letters name; the real name travels in the request.
-  window.genbidScratch = async (key, files) => {
+  window.genbidScratch = async (key, files, dir = "hsdt") => {
     await ready;
-    const base = `hsdt/${key}/${Date.now()}`;
+    const base = `${dir}/${key}/${Date.now()}`;
     const out = [];
     for (const [i, f] of [...files].entries()) {
       const plain = f.name.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").replace(/[^A-Za-z0-9._-]+/g, "_").slice(-120);

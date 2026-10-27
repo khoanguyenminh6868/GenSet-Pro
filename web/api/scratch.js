@@ -1,10 +1,10 @@
 // A short-lived download link for a file the page uploaded to the private "scratch" bucket (the HSDT files of a
-// "Đối chiếu" request), for the Windows worker. GET ?path=<path> with the ingest token -> { url } (valid 10 minutes).
+// "Đối chiếu" request, the technical proposal of a "Đối chiếu TLKT" one), for the Windows worker. GET ?path=<path> with the ingest token -> { url } (valid 10 minutes).
 import { SB_URL } from "./_supabase.js";
 import { authorized } from "./ingest.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const PATH_RE = /^hsdt\/[A-Za-z0-9_\-.~:@+]{1,200}\/[^\\]{1,400}$/;
+const PATH_RE = /^(hsdt|tlkt)\/[A-Za-z0-9_\-.~:@+]{1,200}\/[^\\]{1,400}$/;
 
 export default async function handler(req, res) {
   if (req.method !== "GET") return res.status(405).end();
