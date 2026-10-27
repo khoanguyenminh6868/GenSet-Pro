@@ -952,7 +952,7 @@ async function initDb() {
   subscribe("translationreq", "translationreq", () => setTimeout(() => { if (state.open && state.dtab === "translate" && !workerReqPending("translationreq", state.open)) loadTranslation(state.open); }, 0));
   subscribe("comparereq", "comparereq");
   subscribe("hsdtreq", "hsdtreq");
-  subscribe("tlkt", "tlkt");
+  subscribe("tlkt", "tlkt", () => setTimeout(checkAutoPdf, 0));
   subscribe("tlktreq", "tlktreq");
 }
 
@@ -2118,7 +2118,7 @@ function tlktTabHtml(t) {
   const prev = state.tlkt[t._key];
   // tlktreq also carries "Tải PDF" (translate: true): the bot translates the stored result into English.
   const tr = !!state.tlktreq?.[t._key]?.translate;
-  const tkWait = workerReqPending("tlktreq", t._key) ? waitHtml(tr ? "Đang chờ Agent dịch kết quả sang tiếng Anh. Xong thì bấm Tải PDF." : "Đang chờ Agent đối chiếu tài liệu kỹ thuật...", state.tlktreq[t._key].requestedAt) : "";
+  const tkWait = workerReqPending("tlktreq", t._key) ? waitHtml(tr ? "Đang chờ Agent dịch kết quả sang tiếng Anh. Xong thì PDF tự tải về." : "Đang chờ Agent đối chiếu tài liệu kỹ thuật...", state.tlktreq[t._key].requestedAt) : "";
   const tkErr = !tkWait && workerReqError("tlktreq", t._key);
   const enReady = prev?.result && prev.resultEnAt === prev.at;
   // A shortened YCKT, when uploaded, is the only requirements side: the HSMT is not read (Khoa, 2026-10-27).
@@ -2134,22 +2134,36 @@ function tlktTabHtml(t) {
     </div>
     <textarea id="tkText" placeholder="Hoặc dán nội dung datasheet, bảng thông số kỹ thuật..."></textarea>
     <div class="row"><div class="spacer"></div><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
-    <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì bấm lại để tải PDF"}">Tải PDF</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
+    <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì PDF tự tải về"}">Tải PDF</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
 }
 // Tải PDF: the comparison result in English (Khoa, 2026-10-27). The translation is made once per result and kept next to
 // it (resultEn), so downloading again costs nothing. On the web the Windows bot translates it (the web's own AI has no API
 // credit, Khoa 2026-10-27), like YCKT tiếng Anh; in claude.ai the page's AI does.
 const TLKT_VERDICT_EN = { pass: "Complies with the technical requirements", at_risk: "Clarifications needed", fail: "Does not comply with the technical requirements" };
 const STATUS_EN = { met: "Met", partial: "Partially met", not_met: "Not met", missing: "Missing", unclear: "Unclear" };
-async function tlktPdf(key, btn) {
+// Tải PDF pressed on the web while the bot translates: the PDF downloads by itself as soon as the English version
+// arrives (Khoa, 2026-10-27). Kept per device for 2 hours, and dropped when the bot answers with an error.
+const autoPdf = local.get("tlktAutoPdf", {});
+function checkAutoPdf() {
+  for (const [key, since] of Object.entries(autoPdf)) {
+    const c = state.tlkt[key], r = state.tlktreq?.[key];
+    const ready = c?.result && c.resultEnAt === c.at;
+    const failed = r?.doneAt && r.doneAt >= (r.requestedAt || "") && r.error;
+    if (!ready && !failed && Date.now() - since < 2 * 3600e3) continue;
+    delete autoPdf[key]; local.set("tlktAutoPdf", autoPdf);
+    if (ready) tlktPdf(key);
+  }
+}
+async function tlktPdf(key, btn = $("#tkPdf")) {
   const cur = state.tlkt[key], t = findTender(key);
   if (!cur?.result) return;
-  const label = btn.innerHTML;
-  btn.disabled = true;
+  const label = btn?.innerHTML;
+  if (btn) btn.disabled = true;
   try {
     let en = cur.resultEnAt === cur.at ? cur.resultEn : null;
     if (!en && window.genbidWeb) {
       await requestWorker("tlktreq", key, { translate: true }, "dịch kết quả đối chiếu sang tiếng Anh");
+      if (workerReqPending("tlktreq", key)) { autoPdf[key] = Date.now(); local.set("tlktAutoPdf", autoPdf); }
       return;
     }
     if (!en) {
@@ -2177,7 +2191,7 @@ ${JSON.stringify(cur.result)}`, { modelTier: "default" });
       y += gap;
     };
     text("Technical Proposal Compliance Review", 16, true, 2);
-    text(`${t?.notifyNo || key} · ${t?.bidName || ""}`, 10, false, 3);
+    y += 1;
     if (en.supplier || en.offer) text([en.supplier, en.offer].filter(Boolean).join(" · "), 10, true, 2);
     text(`Result: ${TLKT_VERDICT_EN[en.verdict] || en.verdict || ""} · Score ${Math.round(en.overallScore || 0)}/100`, 11, true, 1.5);
     text(en.summary || "", 10, false, 2);
@@ -2221,11 +2235,11 @@ ${JSON.stringify(cur.result)}`, { modelTier: "default" });
       y += 2;
     }
     const pages = doc.getNumberOfPages();
-    for (let i = 1; i <= pages; i++) { doc.setPage(i); doc.setFont("DejaVu", "normal"); doc.setFontSize(7); doc.text(`GenBid Pro · ${t?.notifyNo || key} · ${fmtDate(cur.at)} · ${i}/${pages}`, M, PH - 6); }
+    for (let i = 1; i <= pages; i++) { doc.setPage(i); doc.setFont("DejaVu", "normal"); doc.setFontSize(7); doc.text(`${fmtDate(cur.at)} · ${i}/${pages}`, M, PH - 6); }
     await saveFile(fileSafe(`${t?.notifyNo || key} Technical compliance review EN.pdf`), doc.output("blob"));
   } catch (e) {
     toast(e?.code ? sampleErrorText(e) : e?.message || "Không tạo được PDF.", 6000);
-  } finally { btn.disabled = false; btn.innerHTML = label; }
+  } finally { if (btn?.isConnected) { btn.disabled = false; btn.innerHTML = label; } }
 }
 function mountTlkt() { tlktPick = filePicker("tkFiles", "tkDrop", "tkList"); ycktPick = filePicker("tyFiles", "tyDrop", "tyList"); }
 function askDeleteTlkt(key) {
