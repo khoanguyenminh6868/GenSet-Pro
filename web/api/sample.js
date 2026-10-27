@@ -1,5 +1,5 @@
 // Claude for the page: stands in for the claude.ai `sample` capability, using the Anthropic API key.
-import { memberFrom, downloadScratch, removeScratch } from "./_supabase.js";
+import { memberFrom, downloadScratch, removeScratch, logActivity } from "./_supabase.js";
 
 const MODELS = {
   quick: process.env.MODEL_QUICK || "claude-haiku-5-5",
@@ -45,6 +45,7 @@ export default async function handler(req, res) {
     }
     const text = (body.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
     const out = { text, truncated: body.stop_reason === "max_tokens", model: body.model };
+    await logActivity({ actor: member.email, action: "ai", detail: { tier: modelTier, images: images.length, ask: String(blocks[blocks.length - 1].text).slice(0, 120) } });
     if (json) out.value = parseJson(text);
     res.json(out);
   } catch (e) {

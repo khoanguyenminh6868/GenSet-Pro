@@ -16,5 +16,8 @@ The same page as the claude.ai artifact, with claude.ai's runtime replaced:
 2. Supabase → Authentication → Providers → Google: paste a Google OAuth client id/secret; add the Vercel URL to the redirect URLs.
 3. Vercel: import this repo with **Root Directory** `web`, and set `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `GITHUB_TOKEN` (fine-grained, this repo only, Contents: read-only, for the tender files) (and `ANTHROPIC_API_KEY` only if AI should run here).
 
+## Activity log
+Every change to `docs` (database trigger), each sign-in, upload and AI call goes to `activity_log`. Only members with role `superadmin` can read it, through the list button next to "Chỉ lấy gói mới". After changing `supabase/schema.sql`, run it again in the SQL editor (it is safe to re-run).
+
 ## Updating the page
 `index.html` is generated from the artifact source: `python3 scripts/build-from-artifact.py genbid-pro.html index.html`.

@@ -23,6 +23,15 @@ export async function memberFrom(req) {
   return rows[0] || null;
 }
 
+// One row of the superadmin's activity log (docs changes are logged by a database trigger instead).
+export async function logActivity({ actor, action, detail }) {
+  await fetch(`${SB_URL}/rest/v1/activity_log`, {
+    method: "POST",
+    headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json", Prefer: "return=minimal" },
+    body: JSON.stringify({ actor, source: "server", action, detail }),
+  }).catch(() => {});
+}
+
 export async function downloadScratch(path) {
   const r = await fetch(`${SB_URL}/storage/v1/object/scratch/${path}`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
   if (!r.ok) throw new Error(`scratch ${path}: HTTP ${r.status}`);
