@@ -420,7 +420,8 @@ function trimHsmt(text, kind) {
     if (!hasKept) ok = true;                                        // no chapter headings found: keep everything
     else if (/^[IVX]+$/.test(s.chap)) ok = small || (keep.includes(s.chap) && best[s.chap] === s);
     else if (/^P/.test(s.chap)) ok = small || !/^P(3B|4)$/.test(s.chap);
-    else ok = kind !== "translation" || small;                     // file starts (e.g. the approval decision)
+    // File starts (e.g. the approval decision, which Đối chiếu TLKT does not need).
+    else ok = small || (kind !== "translation" && !(kind === "tlkt" && /QuyetDinh|PheDuyet/i.test(s.file || "")));
     if (!ok) dropped.push(`${s.file || "?"} / ${s.title.slice(0, 70)} (${s.text.length.toLocaleString("vi-VN")} ký tự)`);
     return ok;
   });
@@ -531,17 +532,22 @@ async function prepOne(kind, key, requestedAt, dir) {
   const text = compact(trimmed.text), dropped = trimmed.dropped;
   // Webform chapters already in the HSMT text (same chapter number, a real section) would be read twice: leave them out.
   const inText = new Set(splitSections(text).filter((x) => /^[IVX]+$/.test(x.chap) && x.text.length > 1500).map((x) => x.chap));
-  const webform = (notice?.chapters || []).filter((c) => !inText.has(((c.name.match(/^Chương\s+([IVX]+)/i) || [])[1] || "").toUpperCase()));
+  const chapOf = (c) => ((c.name.match(/^Chương\s+([IVX]+)/i) || [])[1] || "").toUpperCase();
+  // Đối chiếu TLKT reads only the technical chapters (III, V) of the webform too (Khoa, 2026-10-27: save tokens).
+  const webform = (notice?.chapters || []).filter((c) => !inText.has(chapOf(c)) && (kind !== "tlkt" || KEEP.tlkt.includes(chapOf(c))));
   const price = t.estimatedPrice ? Number(t.estimatedPrice).toLocaleString("vi-VN") + " đồng" : "chưa rõ";
   const close = t.bidCloseDate ? new Date(t.bidCloseDate).toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }) : "chưa rõ";
   const scans = (hsmt?.files || []).filter((f) => f.hasText === false).map((f) => f.name);
   const local = path.join(DOWNLOADS, key);
   let input = `# ${KIND_NAME[kind]}: ${key}\n\nThông tin gói thầu đã biết: ${t.bidName || "?"}; số TBMT ${key}; chủ đầu tư ${t.investorName || "?"}; bên mời thầu ${t.procuringEntityName || t.investorName || "?"}; đóng thầu ${close}; giá gói thầu ${price}.\n`;
   if (notice?.info) {
-    input += `\n## Thông báo mời thầu (muasamcong)\n${notice.info.slice(0, 8000)}\n\n### Danh sách chương HSMT\n${notice.hsmtList || ""}\n`;
+    // The notice and the chapter list say nothing technical: Đối chiếu TLKT leaves them out.
+    if (kind !== "tlkt") input += `\n## Thông báo mời thầu (muasamcong)\n${notice.info.slice(0, 8000)}\n\n### Danh sách chương HSMT\n${notice.hsmtList || ""}\n`;
     input += webform.map((c) => `\n### ${c.name} (biểu mẫu webform)\n${compact(c.text)}\n`).join("");
   }
-  if (kind === "tlkt" && analysis?.result?.technicalSpecs?.length) input += `\n## Thông số kỹ thuật từ lần phân tích HSMT trước đó\n${JSON.stringify(analysis.result.technicalSpecs, null, 1)}\n`;
+  // The analysis's technicalSpecs repeat chapter V: added only when chapter V is not there as text.
+  const hasV = inText.has("V") || webform.some((c) => chapOf(c) === "V");
+  if (kind === "tlkt" && !hasV && analysis?.result?.technicalSpecs?.length) input += `\n## Thông số kỹ thuật từ lần phân tích HSMT trước đó\n${JSON.stringify(analysis.result.technicalSpecs)}\n`;
   if ((kind === "hsdt" || kind === "compare") && analysis?.result) {
     const a = analysis.result;
     input += `\n## Kết quả phân tích HSMT trước đó\n${JSON.stringify({ keyInfo: a.keyInfo, technicalSpecs: a.technicalSpecs, qualificationRequirements: a.qualificationRequirements, requiredDocuments: a.requiredDocuments }, null, 1)}\n`;
@@ -578,7 +584,13 @@ async function prepOne(kind, key, requestedAt, dir) {
       + (ownReq ? `; YCKT rút gọn: ${[].concat(req.reqFiles || []).length} tệp, ${(req.reqText || "").length.toLocaleString("vi-VN")} ký tự` : "")
       + (req.uploadError ? `; tải tệp lỗi nên gửi chữ: ${req.uploadError}` : ""));
     input += `\n## ${kind === "tlkt" ? "TÀI LIỆU KỸ THUẬT ĐỀ XUẤT CỦA NHÀ CUNG CẤP (technical proposal)" : "HỒ SƠ DỰ THẦU (submission)"}\n${sub || "(không có chữ)"}\n`;
-    if (unread.length) input += `\nTệp ${kind === "tlkt" ? "tài liệu kỹ thuật" : "HSDT"} chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
+    // A partner's proposal is read as text only, never as pictures (Khoa, 2026-10-27: save tokens): files without
+    // text are skipped, and a proposal with no text at all is answered with an error.
+    if (kind === "tlkt") {
+      const names = unread.map((f) => path.basename(f));
+      if (names.length) input += `\nTệp tài liệu kỹ thuật không có chữ (scan, ảnh, .doc), đã bỏ qua vì chỉ đọc chữ: ${names.join("; ")}.\n`;
+      if (!sub.trim()) fs.writeFileSync(path.join(dir, "error.txt"), `Tài liệu kỹ thuật đề xuất không có chữ đọc được (${names.join("; ") || "không có tệp"}). Chỉ đọc chữ, không đọc hình: hãy gửi bản PDF có chữ hoặc DOCX.`, "utf8");
+    } else if (unread.length) input += `\nTệp HSDT chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   }
   fs.writeFileSync(path.join(dir, "input.md"), input, "utf8");
   // Requests that need to look at pages (mostly scanned HSMT, unreadable HSDT files) or are too large for one call
@@ -586,10 +598,10 @@ async function prepOne(kind, key, requestedAt, dir) {
   const why = [];
   if (scans.length && text.length < 20000) why.push("HSMT chủ yếu là bản scan");
   if (kind === "compare" && /Tệp HSDT chưa đọc được chữ/.test(input)) why.push("HSDT có tệp chưa đọc được chữ");
-  if (kind === "tlkt" && /Tệp (tài liệu kỹ thuật|YCKT rút gọn) chưa đọc được chữ/.test(input)) why.push("tài liệu kỹ thuật có tệp chưa đọc được chữ");
+  if (kind === "tlkt" && /Tệp YCKT rút gọn chưa đọc được chữ/.test(input)) why.push("YCKT rút gọn có tệp chưa đọc được chữ");
   if (input.length > 450000) why.push("dữ liệu quá lớn cho một lần gọi");
   if (!ownReq && !full && !notice?.info) why.push("chưa có chữ HSMT trên web");
-  if (why.length) fs.writeFileSync(path.join(dir, "AGENT"), why.join("; "), "utf8");
+  if (why.length && !fs.existsSync(path.join(dir, "error.txt"))) fs.writeFileSync(path.join(dir, "AGENT"), why.join("; "), "utf8");
   // The prompt without its "Output on the web" part: the bot posts the result itself.
   const prompt = fs.readFileSync(path.join(KIT, KIND_PROMPT[kind]), "utf8").split(/\nOutput on the web/)[0];
   fs.writeFileSync(path.join(dir, "prompt.md"), prompt, "utf8");
