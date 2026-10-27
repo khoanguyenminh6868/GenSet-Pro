@@ -2,7 +2,8 @@
 // AI requests run as code here, so Claude is only called for the work that needs it (Phân tích, Đối chiếu,
 // Tạo bản tiếng Anh, Tạo HSDT tham khảo, scanned pages).
 //
-//   node genbid-sync.js sync [--force] [--scheduled]   Sync (muasamcong search, notices, files of new tenders, bidders)
+//   node genbid-sync.js sync [--force] [--scheduled "<yyyy-MM-dd HH:mm>"]   Sync (muasamcong search, notices, files of new
+//                                                      tenders, bidders); --scheduled also posts synclog/current
 //   node genbid-sync.js files [--only K1,K2]           pending "Lấy tệp" requests
 //   node genbid-sync.js prep --sigs "<sig>,<sig>" --out <dir>   prepare one folder per AI request (TASK.md, input.md)
 //   node genbid-sync.js finish --dir <dir>             post the AI results of those folders to the web, delete them
@@ -718,6 +719,13 @@ async function runFinish() {
       } catch {}
     }
   } finally { if (locked) dropLock(); }
+  // A scheduled Sync always leaves a row on the web (synclog/current), even when nothing changed, so the activity
+  // log shows it ran (Khoa, 2026-10-27).
+  const slot = opt("scheduled");
+  if (cmd === "sync" && typeof slot === "string" && !opt("dry")) {
+    try { await post([{ coll: "synclog", id: "current", data: { slot, doneAt: now(), summary: String(summary).replace(/\n/g, " | ").slice(0, 2000), ok: !code } }]); }
+    catch (e) { console.error(`Không ghi được synclog: ${e.message}`); }
+  }
   console.log("SUMMARY: " + String(summary).replace(/\n/g, " | "));
   process.exit(code);
 })();

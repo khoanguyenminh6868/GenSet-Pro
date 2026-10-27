@@ -353,7 +353,7 @@ try {
                     if (-not $due.Count -and $slot -and $ScheduleDays -contains $now.DayOfWeek.ToString() `
                         -and (Read-Json $ScheduleFile ([pscustomobject]@{ last = '' })).last -ne $slotKey -and -not (Test-WorkerRunning)) {
                         [IO.File]::WriteAllText($ScheduleFile, (@{ last = $slotKey } | ConvertTo-Json), $Utf8)
-                        [void](Invoke-Script 'sync' @('--force') @("schedule:$slotKey"))
+                        [void](Invoke-Script 'sync' @('--force', '--scheduled', "`"$slotKey`"") @("schedule:$slotKey"))
                     }
                 }
             }
