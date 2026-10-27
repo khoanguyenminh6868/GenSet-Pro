@@ -567,6 +567,14 @@ async function readFile(file, imageBudget) {
     const r = await mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() });
     return { text: r.value, images: [] };
   }
+  // Every sheet, one row per line and cells joined by " | " (as the Windows bot reads it).
+  if (name.endsWith(".xlsx")) {
+    const XLSX = await loadLib("xlsx");
+    const wb = XLSX.read(await file.arrayBuffer(), { type: "array" });
+    const sheets = wb.SheetNames.map((n) => `### Sheet: ${n}\n` + XLSX.utils.sheet_to_json(wb.Sheets[n], { header: 1, raw: false, blankrows: false })
+      .map((r) => r.filter((c) => String(c ?? "").trim()).join(" | ")).filter(Boolean).join("\n"));
+    return { text: sheets.join("\n\n"), images: [] };
+  }
   if (name.endsWith(".doc")) throw new Error(`"${file.name}" là định dạng .doc cũ. Hãy lưu lại thành .docx hoặc PDF.`);
   return { text: await file.text(), images: [] };
 }
@@ -1615,6 +1623,7 @@ function analysisTabHtml(t) {
 const LIBS = {
   jspdf: ["https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js", () => window.jspdf],
   docx: ["https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js", () => window.docx],
+  xlsx: ["https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js", () => window.XLSX],
 };
 const libCache = {};
 function loadLib(name) {
@@ -2128,8 +2137,8 @@ function tlktTabHtml(t) {
       <div class="files" id="tyList"></div>
     </div>
     <div class="drop" id="tkDrop">
-      <div class="row"><span class="muted small" style="flex:1">Tệp technical proposal của đối tác (PDF, DOCX). Chỉ đọc chữ, không đọc hình, nên bản scan không dùng được.</span><label class="btn sm" for="tkFiles">Chọn tệp</label></div>
-      <input type="file" id="tkFiles" multiple accept=".pdf,.docx,.txt,.md,.csv" hidden>
+      <div class="row"><span class="muted small" style="flex:1">Tệp đề xuất của đối tác (PDF, DOCX, XLSX)</span><label class="btn sm" for="tkFiles">Chọn tệp</label></div>
+      <input type="file" id="tkFiles" multiple accept=".pdf,.docx,.xlsx,.txt,.md,.csv" hidden>
       <div class="files" id="tkList"></div>
     </div>
     <div class="row"><div class="spacer"></div><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
@@ -2312,7 +2321,7 @@ async function runTlkt0(key) {
     }
     // The partner's proposal is read as text only, never as pictures, to save tokens (Khoa, 2026-10-27).
     const sub = await collectDocs(tlktPick.files, "", "TLKT", 0);
-    if (sub.text.replace(/---[^\n]*---|\[Trang \d+\]|\s/g, "").length < 300) throw new Error("Tệp technical proposal không có chữ đọc được (bản scan hoặc ảnh). Chỉ đọc chữ, không đọc hình: hãy dùng bản PDF có chữ hoặc DOCX.");
+    if (sub.text.replace(/---[^\n]*---|\[Trang \d+\]|\s/g, "").length < 300) throw new Error("Tệp technical proposal không có chữ đọc được (bản scan hoặc ảnh). Chỉ đọc chữ, không đọc hình: hãy dùng bản PDF có chữ, DOCX hoặc XLSX.");
     sub.images = ownImages;
     const r = clip(reqText, MAX_TEXT / 2), s = clip(sub.text, MAX_TEXT / 2);
     const prompt = `${DOMAIN}
