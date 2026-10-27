@@ -1,11 +1,12 @@
 // Requests from the web page to the Windows worker: Phân tích (analysisreq/<TBMT>), Tải hồ sơ (hsmtreq/<TBMT>)
-// Sync (syncreq/current), Tạo bản tiếng Anh (translationreq/<TBMT>), Tạo HSDT tham khảo (hsdtreq/<TBMT>) and Đối chiếu (comparereq/<TBMT>, with the HSDT
-// files the page uploaded to the private "scratch" bucket under hsdt/<TBMT>/, and the pasted text). Written server-side for a signed-in member, so they never depend on the
+// Sync (syncreq/current), Tạo bản tiếng Anh (translationreq/<TBMT>), Tạo HSDT tham khảo (hsdtreq/<TBMT>), Đối chiếu (comparereq/<TBMT>, with the HSDT
+// files the page uploaded to the private "scratch" bucket under hsdt/<TBMT>/, and the pasted text) and Đối chiếu TLKT
+// (tlktreq/<TBMT>, a supplier's technical proposal uploaded under tlkt/<TBMT>/). Written server-side for a signed-in member, so they never depend on the
 // browser's direct database write. POST { coll, items: [{ key, notifyNo?, bidName?, sourceUrl?, auto?, cancel? }] }.
 import { SB_URL, memberFrom } from "./_supabase.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq"]);
+const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 const str = (v, n) => (v == null ? undefined : String(v).slice(0, n));
@@ -31,7 +32,7 @@ export default async function handler(req, res) {
     const data = i.cancel ? { ...(cur.get(i.key) || {}), doneAt: at, error: "" } : JSON.parse(JSON.stringify({
       notifyNo: coll === "syncreq" ? undefined : str(i.notifyNo || i.key, 200), bidName: str(i.bidName, 1000), sourceUrl: str(i.sourceUrl, 1000),
       auto: i.auto ? true : undefined, mode: coll === "syncreq" && i.mode === "new" ? "new" : undefined, requestedAt: at, by: member.email, from: "web",
-      ...(coll === "comparereq" ? compareFields(i) : {}),
+      ...(coll === "comparereq" ? compareFields(i, "hsdt") : coll === "tlktreq" ? compareFields(i, "tlkt") : {}),
     }));
     return { coll, id: i.key, data, updated_at: at };
   });
@@ -41,10 +42,11 @@ export default async function handler(req, res) {
   res.json({ saved: rows.map((r) => ({ key: r.id, data: r.data })) });
 }
 
-// The HSDT of a comparison: files already uploaded under hsdt/<TBMT>/ in the scratch bucket, and pasted text.
-function compareFields(i) {
+// The HSDT of a comparison (or the technical proposal of a TLKT one): files already uploaded under <dir>/<TBMT>/ in the
+// scratch bucket, and pasted text.
+function compareFields(i, dir) {
   const files = (Array.isArray(i.files) ? i.files : []).slice(0, 50)
-    .filter((f) => typeof f?.path === "string" && f.path.startsWith(`hsdt/${i.key}/`) && !f.path.includes(".."))
+    .filter((f) => typeof f?.path === "string" && f.path.startsWith(`${dir}/${i.key}/`) && !f.path.includes(".."))
     .map((f) => ({ path: f.path.slice(0, 600), name: str(f.name, 300), size: Number(f.size) || undefined }));
   return { files, text: str(i.text, 200000) || "" };
 }
