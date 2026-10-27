@@ -1,5 +1,5 @@
-// GenBid Pro outside claude.ai: provides window.claude.use() backed by Supabase (Google sign-in,
-// shared data, files) and /api/sample (Claude through the API key), so the page code is unchanged.
+// GenBid Pro on the web: provides window.claude.use() backed by Supabase (Google sign-in, shared data, files).
+// The AI work runs on the Windows bot, not in the page.
 (() => {
   let sb, cfg, member;
   const ready = (async () => {
@@ -19,12 +19,6 @@
       sb.rpc("log_activity", { p_action: "login", p_detail: { device: /Mobi|Android|iPhone|iPad/.test(ua) ? "Điện thoại" : "Máy tính", ua: ua.slice(0, 200) } }).then(() => {}, () => {});
     }
     if (member.role === "superadmin") logButton();
-    const canImport = ["superadmin", "owner", "admin"].includes(member.role);
-    if (location.hash === "#import" || sessionStorage.getItem("gbImport")) {
-      sessionStorage.removeItem("gbImport");
-      if (canImport) importPanel(); else toastNote(`Tài khoản ${member.email} có vai trò "${member.role}", cần "owner" hoặc "admin" để nhập dữ liệu.`);
-    }
-    window.addEventListener("hashchange", () => { if (location.hash === "#import" && canImport) importPanel(); });
   })();
 
   // ---------- sign-in screen ----------
@@ -40,7 +34,7 @@
         : `<p>Tài khoản <b></b> chưa được cấp quyền. Hãy nhờ quản trị viên thêm email này.</p><button id="gOut">Đăng xuất</button>`}</div>`;
     if (email) el.querySelector("b").textContent = email;
     document.body.appendChild(el);
-    el.querySelector("#gIn")?.addEventListener("click", () => { if (location.hash === "#import") sessionStorage.setItem("gbImport", "1"); sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname } }); });
+    el.querySelector("#gIn")?.addEventListener("click", () => { sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname } }); });
     el.querySelector("#gOut")?.addEventListener("click", async () => { await sb.auth.signOut(); location.reload(); });
   }
   // Sign-out icon next to the theme button in the page banner (bottom-left pill if the banner is missing).
@@ -206,49 +200,6 @@
     load(false);
   }
 
-  function toastNote(text) {
-    const n = document.createElement("div");
-    n.textContent = text;
-    n.style.cssText = "position:fixed;left:12px;right:12px;bottom:90px;max-width:420px;margin:auto;z-index:60;padding:12px;border-radius:10px;background:var(--card,#fff);color:var(--fg,#222);border:1px solid var(--rule,#8884);font:14px system-ui,sans-serif";
-    document.body.appendChild(n);
-    setTimeout(() => n.remove(), 12000);
-  }
-
-  // ---------- one-time import of the claude.ai data (owner opens /#import) ----------
-  async function importPanel() {
-    document.getElementById("gbImportPanel")?.remove();
-    const el = document.createElement("div");
-    el.id = "gbImportPanel";
-    el.style.cssText = "position:fixed;inset:auto 12px 56px 12px;max-width:420px;margin:auto;z-index:60;padding:16px;border-radius:12px;background:var(--card,#fff);color:var(--fg,#222);border:1px solid var(--rule,#8884);box-shadow:0 8px 30px #0004;font:14px system-ui,sans-serif;display:grid;gap:10px";
-    el.innerHTML = '<b>Nhập dữ liệu từ bản cũ</b><span>Chọn tệp genbid-data.zip. Dữ liệu cùng mã sẽ bị ghi đè.</span><input type="file" accept=".zip"><div id="impLog" style="opacity:.8"></div>';
-    document.body.appendChild(el);
-    const log = (t) => (el.querySelector("#impLog").textContent = t);
-    el.querySelector("input").onchange = async (e) => {
-      const file = e.target.files[0]; if (!file) return;
-      try {
-        if (!window.JSZip) await new Promise((ok, bad) => { const sc = document.createElement("script"); sc.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"; sc.onload = ok; sc.onerror = bad; document.head.appendChild(sc); });
-        const zip = await JSZip.loadAsync(file);
-        const rows = JSON.parse(await zip.file("data.json").async("string"));
-        for (let i = 0; i < rows.length; i += 100) {
-          const { error } = await sb.from("docs").upsert(rows.slice(i, i + 100).map((r) => ({ ...r, updated_at: new Date().toISOString() })));
-          if (error) throw error;
-          log(`Dữ liệu: ${Math.min(i + 100, rows.length)}/${rows.length}`);
-        }
-        const blobs = Object.values(zip.files).filter((f) => !f.dir && f.name.startsWith("blobs/"));
-        let done = 0, skipped = 0;
-        for (const f of blobs) {
-          const name = f.name.slice(6).replace(/\.[^.]+$/, "");
-          const type = f.name.endsWith(".pdf") ? "application/pdf" : f.name.endsWith(".ttf") ? "font/ttf" : "application/octet-stream";
-          const { error } = await sb.storage.from("blobs").upload(name, await f.async("blob"), { contentType: type });
-          if (error && !/exists|duplicate/i.test(error.message)) throw error;
-          if (error) skipped++; else done++;
-          log(`Tệp: ${done + skipped}/${blobs.length}`);
-        }
-        log(`Xong: ${rows.length} bản ghi, ${done} tệp mới, ${skipped} tệp đã có. Tải lại trang để xem.`);
-      } catch (err) { log("Lỗi: " + (err.message || err)); }
-    };
-  }
-
   // ---------- db (same shape as the claude.ai db capability) ----------
   const split = (path) => { const i = path.indexOf("/"); return [path.slice(0, i), path.slice(i + 1)]; };
   const cache = new Map();      // coll -> Map(id -> data)
@@ -346,31 +297,6 @@
     },
   };
 
-  // ---------- sample (Claude via /api/sample) ----------
-  async function call(input, opts, json) {
-    const { data: { session } } = await sb.auth.getSession();
-    const images = [];
-    for (const blob of opts?.images || []) {
-      const path = `${session.user.id}/${Date.now()}-${Math.random().toString(36).slice(2)}.jpg`;
-      const { error } = await sb.storage.from("scratch").upload(path, blob, { contentType: blob.type || "image/jpeg" });
-      if (error) throw { code: "error", message: error.message };
-      images.push(path);
-    }
-    const r = await fetch("/api/sample", {
-      method: "POST", signal: opts?.signal,
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}` },
-      body: JSON.stringify({ input, json, modelTier: opts?.modelTier || "default", images }),
-    });
-    const body = await r.json().catch(() => ({ code: "error", message: `HTTP ${r.status}` }));
-    if (!r.ok) throw body;
-    opts?.onText?.({ text: body.text, delta: body.text });
-    return body;
-  }
-  const sample = Object.assign((input, opts) => call(input, opts, false).then((b) => ({ text: b.text, truncated: b.truncated })), {
-    json: (input, opts) => call(input, opts, true).then((b) => b.value),
-    limits: async () => ({ images: { maxCount: 20 } }),
-  });
-
   // ---------- downloads ----------
   const downloads = {
     async save({ filename, data }) {
@@ -429,7 +355,6 @@
     async use(name) {
       await ready;
       if (name === "db") return db;
-      if (name === "sample") return cfg.ai ? sample : null;
       if (name === "downloads") return downloads;
       if (name === "assets") return assets;
       return null;

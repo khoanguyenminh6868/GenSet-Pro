@@ -351,7 +351,6 @@ details.sec>div{margin-top:10px}
       <button class="btn primary" id="newProject" hidden>Tạo dự án</button>
       <span class="muted small" id="count"></span>
     </div>
-    <div id="autoNote"></div>
     <div id="bulkBar" class="row" hidden></div>
   </section>
 
@@ -406,41 +405,7 @@ const STATUS = { met: "Đạt", partial: "Đạt một phần", not_met: "Không
 const BID_FORM = { DTRR: "Đấu thầu rộng rãi", DTHC: "Đấu thầu hạn chế", CHCT: "Chào hàng cạnh tranh", CHCTRG: "Chào hàng cạnh tranh rút gọn", CDT: "Chỉ định thầu", CDTRG: "Chỉ định thầu rút gọn", MSTT: "Mua sắm trực tiếp", TTH: "Tự thực hiện", DPCT: "Đàm phán giá" };
 const VERDICT = { pass: ["Có khả năng đạt", "var(--green)"], at_risk: ["Có rủi ro, sửa được", "var(--amber)"], fail: ["Có lỗi có thể bị loại", "var(--red)"] };
 
-const DOMAIN = `You assist a Vietnamese company that bids on public tenders for electric generators (máy phát điện, tổ máy phát điện diesel/gas, ATS, tủ hòa đồng bộ, lắp đặt, bảo dưỡng) published on the national e-procurement system muasamcong.mof.gov.vn.
-Tender documents (E-HSMT / HSMT / HSYC) follow Vietnam's Law on Bidding (Luật Đấu thầu 22/2023/QH15) and Decree 24/2024/NĐ-CP and its circulars. You know the usual chapters: Chỉ dẫn nhà thầu (CDNT), Bảng dữ liệu đấu thầu (BDL), Tiêu chuẩn đánh giá (năng lực-kinh nghiệm, kỹ thuật, tài chính), Yêu cầu kỹ thuật, Biểu mẫu, Điều kiện hợp đồng.
-For generators, the technical points that most often disqualify a bid are: rated vs. standby power (kVA/kW, PRP/ESP/COP per ISO 8528), engine and alternator make/origin, voltage/frequency, fuel consumption, noise level (dB(A) @ 7m), enclosure, ATS rating, controller, emission standard, manufacture year/"mới 100%", CO/CQ, warranty period, delivery time, and installation scope.
-Quote the document's own words when you cite a requirement, and say so when a figure is not stated rather than guessing.`;
-const langLine = (l) => (l === "en" ? "Write every text value of your answer in English." : "Viết toàn bộ nội dung các trường bằng tiếng Việt.");
-
-const ANALYSIS_SHAPE = `{
-  "summary": string (3-5 sentences: what is procured and the main conditions),
-  "keyInfo": { "bidName", "notifyNo", "investor", "procuringEntity", "bidForm", "bidMethod", "closingTime", "bidValidity", "bidSecurity", "budget", "contractType", "deliveryTime", "deliveryLocation", "warranty", "evaluationMethod", "generatorCapacity" (rated power of the generator set(s) with unit and prime/standby, e.g. "500 kVA dự phòng") } (each string or null when not stated),
-  "technicalSpecs": [ { "item": string, "requirement": string, "reference": string|null } ] (every technical requirement for the generator set and related equipment),
-  "qualificationRequirements": [ { "requirement": string, "reference": string|null } ],
-  "highlights": [ { "severity": "critical"|"warning"|"info", "category": "deadline"|"eligibility"|"technical"|"financial"|"documents"|"contract"|"risk"|"other", "title": string, "detail": string, "quote": string|null (exact words from the document), "reference": string|null, "recommendation": string } ] (most severe first; critical = can disqualify the bid),
-  "requiredDocuments": [string],
-  "restrictiveClauses": [string] (clauses that look tailored to a brand or unusually restrictive),
-  "questionsForClarification": [string]
-}`;
-const COMPARE_SHAPE = `{
-  "overallScore": number 0-100 (share of requirements fully met, weighting critical ones higher),
-  "verdict": "pass"|"at_risk"|"fail" (pass = likely compliant, at_risk = fixable gaps, fail = disqualifying gaps),
-  "summary": string,
-  "items": [ { "category": "technical"|"qualification"|"financial"|"documents"|"commercial"|"other", "requirement": string, "requirementRef": string|null, "offered": string|null, "offeredRef": string|null, "status": "met"|"partial"|"not_met"|"missing"|"unclear", "critical": boolean, "note": string (why, with figures, and what to fix) } ],
-  "missingDocuments": [string],
-  "recommendations": [string] (concrete fixes before submission, most important first)
-}`;
-// Đối chiếu TLKT: a supplier's technical proposal against the tender's technical requirements only (no price, no bidding conditions).
-const TLKT_SHAPE = `{
-  "supplier": string|null (the supplier or manufacturer that wrote the proposal),
-  "offer": string|null (what is offered: make, model, rated power, quantity),
-  "overallScore": number 0-100 (share of technical requirements fully met, weighting critical ones higher),
-  "verdict": "pass"|"at_risk"|"fail" (pass = the proposal meets the technical requirements, at_risk = gaps the supplier can fix or clarify, fail = the offered equipment does not meet a critical requirement),
-  "summary": string (2-4 sentences),
-  "items": [ { "group": string (e.g. Phạm vi cung cấp, Công suất, Động cơ, Đầu phát, Bộ điều khiển, Vỏ chống ồn, Bồn nhiên liệu, ATS, Lắp đặt - thử nghiệm, Tiêu chuẩn - chứng chỉ, Bảo hành kỹ thuật, Tài liệu kỹ thuật), "requirement": string, "requirementRef": string|null, "offered": string|null, "offeredRef": string|null, "status": "met"|"partial"|"not_met"|"missing"|"unclear", "critical": boolean, "note": string (why, with figures) } ] (every technical requirement of the tender, in the order of the tender),
-  "deviations": [string] (where the proposal offers something different from what is required, better or worse),
-  "questionsForSupplier": [string] (what to ask the supplier to confirm or correct, most important first)
-}`;
+// The AI prompts and JSON shapes live in the Windows bot's kit (genbid-hsmt/*-prompt.md).
 
 // ---------- Formatting ----------
 const TZ = "Asia/Ho_Chi_Minh";
@@ -497,35 +462,20 @@ const local = {
 
 // ---------- State ----------
 const state = {
-  db: null, sample: undefined,
+  db: null,
   feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort2", { col: "no", dir: -1 }),
   filters: {},
   open: null, dtab: "info",
-  auto: { running: false, current: null, blocked: null },
 };
 
-function sampleErrorText(e) {
-  const c = e?.code;
-  if (c === "not_granted" || c === "sampling_disabled" || c === "capability_disabled" || c === "not_declared") return "Trang này chưa được phép dùng AI. Đăng nhập rồi bấm Cho phép khi được hỏi.";
-  if (c === "rate_limited") return "Đã chạm giới hạn sử dụng AI của tài khoản. Hãy thử lại sau ít phút.";
-  if (c === "session_expired") return "Phiên đăng nhập đã hết hạn. Hãy đăng nhập lại.";
-  if (c === "prompt_too_large") return "Hồ sơ quá dài cho một lần. Hãy chỉ gửi các chương chính (Tiêu chuẩn đánh giá, Yêu cầu kỹ thuật, Bảng dữ liệu).";
-  if (c === "refused") return "AI không xử lý nội dung này. Hãy kiểm tra lại tệp.";
-  if (c === "invalid_json") return "Kết quả trả về không đúng định dạng. Bấm chạy lại.";
-  if (c === "image_rejected") return "Ảnh không đọc được hoặc quá lớn. Hãy chọn ảnh khác.";
-  if (c === "images_unavailable") return "Phiên này không gửi được ảnh cho AI. Hãy dùng tệp PDF có chữ hoặc dán nội dung.";
-  return "Kết nối tới AI bị gián đoạn. Bấm chạy lại.";
-}
-const noClaudeHtml = () => h`<div class="note warn">Không kết nối được AI ở chế độ xem này. Hãy đăng nhập rồi mở lại trang.</div>`;
-
 // ---------- Document reading ----------
-const MAX_TEXT = 170000; // bytes budget for document text in one call
 if (window.pdfjsLib) { try { pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"; } catch {} }
 
-async function pdfToContent(file, imageBudget) {
+// The browser reads a file's text only when it cannot upload the file (uploadOrText) or for a project's own files.
+async function pdfText(file) {
   if (!window.pdfjsLib) throw new Error("Không tải được bộ đọc PDF.");
   const doc = await pdfjsLib.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise;
   let text = "";
@@ -543,29 +493,16 @@ async function pdfToContent(file, imageBudget) {
     out.push(line);
     text += `\n[Trang ${p}]\n` + out.join("\n").replace(/\n{3,}/g, "\n\n");
   }
-  const images = [];
-  // A scanned PDF has almost no text layer: send page pictures instead.
-  if (text.replace(/\[Trang \d+\]|\s/g, "").length < 80 * doc.numPages && imageBudget > 0) {
-    for (let p = 1; p <= Math.min(doc.numPages, imageBudget); p++) {
-      const page = await doc.getPage(p);
-      const vp = page.getViewport({ scale: 1.6 });
-      const canvas = document.createElement("canvas");
-      canvas.width = vp.width; canvas.height = vp.height;
-      await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
-      images.push(await new Promise((r) => canvas.toBlob(r, "image/jpeg", 0.82)));
-    }
-    return { text: `(Tệp scan ${doc.numPages} trang; gửi kèm ảnh ${images.length} trang đầu)`, images, scanned: true, pages: doc.numPages };
-  }
-  return { text, images, pages: doc.numPages };
+  return text;
 }
-async function readFile(file, imageBudget) {
+async function readFile(file) {
   const name = file.name.toLowerCase();
-  if (file.type.startsWith("image/")) return { text: "", images: [file] };
-  if (name.endsWith(".pdf")) return pdfToContent(file, imageBudget);
+  if (file.type.startsWith("image/")) return { text: "" };
+  if (name.endsWith(".pdf")) return { text: await pdfText(file) };
   if (name.endsWith(".docx")) {
     if (!window.mammoth) throw new Error("Không tải được bộ đọc DOCX.");
     const r = await mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() });
-    return { text: r.value, images: [] };
+    return { text: r.value };
   }
   // Every sheet, one row per line and cells joined by " | " (as the Windows bot reads it).
   if (name.endsWith(".xlsx")) {
@@ -573,29 +510,10 @@ async function readFile(file, imageBudget) {
     const wb = XLSX.read(await file.arrayBuffer(), { type: "array" });
     const sheets = wb.SheetNames.map((n) => `### Sheet: ${n}\n` + XLSX.utils.sheet_to_json(wb.Sheets[n], { header: 1, raw: false, blankrows: false })
       .map((r) => r.filter((c) => String(c ?? "").trim()).join(" | ")).filter(Boolean).join("\n"));
-    return { text: sheets.join("\n\n"), images: [] };
+    return { text: sheets.join("\n\n") };
   }
   if (name.endsWith(".doc")) throw new Error(`"${file.name}" là định dạng .doc cũ. Hãy lưu lại thành .docx hoặc PDF.`);
-  return { text: await file.text(), images: [] };
-}
-async function collectDocs(files, pasted, label, imageBudget) {
-  const parts = [], images = [], notes = [];
-  for (const f of files) {
-    const r = await readFile(f, imageBudget - images.length);
-    if (r.scanned) notes.push(`${f.name}: bản scan, AI đọc ảnh ${r.images.length}/${r.pages} trang đầu.`);
-    images.push(...r.images.slice(0, Math.max(0, imageBudget - images.length)));
-    if (r.text) parts.push(`--- ${label}: ${f.name} ---\n${r.text}`);
-    else if (r.images.length) parts.push(`--- ${label}: ${f.name} (ảnh đính kèm) ---`);
-  }
-  if (pasted.trim()) parts.push(`--- ${label}: nội dung dán ---\n${pasted.trim()}`);
-  return { text: parts.join("\n\n"), images, notes };
-}
-function clip(text, budget) {
-  const enc = new TextEncoder();
-  if (enc.encode(text).length <= budget) return { text, clipped: false };
-  let lo = 0, hi = text.length;
-  while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (enc.encode(text.slice(0, mid)).length <= budget) lo = mid; else hi = mid - 1; }
-  return { text: text.slice(0, lo) + "\n\n[... phần sau bị cắt do quá dài ...]", clipped: true };
+  return { text: await file.text() };
 }
 function filePicker(inputId, dropId, listId) {
   const files = [];
@@ -700,7 +618,6 @@ const RUN_STALE = 20 * 60 * 1000;
 const isGenset = (t) => String(t.bidName || "").normalize("NFC").toLowerCase().includes("máy phát điện");
 function analysisState(t) {
   const a = analysisOf(t._key);
-  if (state.auto.current === t._key) return "running";
   if (analysisReqPending(t._key)) return "requested";
   if (a?.status === "done") return "done";
   if (a?.status === "running" && Date.now() - new Date(a.startedAt).getTime() < RUN_STALE) return "running";
@@ -738,28 +655,19 @@ function offererOf(t) {
 // analyses the tender on its next round, then posts analysis/<key> back.
 function analysisReqPending(key) {
   const r = state.analysisreq?.[key];
-  return !!(window.genbidWeb && r?.requestedAt && !(r.doneAt && r.doneAt >= r.requestedAt));
+  return !!(r?.requestedAt && !(r.doneAt && r.doneAt >= r.requestedAt));
 }
-// A translation or comparison request the Windows worker has not answered yet (web version only).
+// A translation or comparison request the Windows worker has not answered yet.
 function workerReqPending(coll, key) {
   const r = state[coll]?.[key];
-  return !!(window.genbidWeb && r?.requestedAt && !(r.doneAt && r.doneAt >= r.requestedAt));
+  return !!(r?.requestedAt && !(r.doneAt && r.doneAt >= r.requestedAt));
 }
 // The worker's answer to the latest request, when it could not do it.
 const workerReqError = (coll, key) => { const r = state[coll]?.[key]; return r?.doneAt && r.doneAt >= (r.requestedAt || "") ? r.error || "" : ""; };
-// Requests for the Windows worker (analysisreq, hsmtreq, syncreq, translationreq, comparereq, hsdtreq). On the web they go through /api/webreq,
-// which writes them for the signed-in member; in claude.ai they are written directly. Returns [{ key, data }].
+// Requests for the Windows worker (analysisreq, hsmtreq, syncreq, translationreq, comparereq, hsdtreq, tlktreq) go through
+// /api/webreq, which writes them for the signed-in member. Returns [{ key, data }].
 async function saveRequests(coll, items) {
-  let saved;
-  if (window.genbidWeb) saved = (await window.genbidApi("/api/webreq", { coll, items })).saved;
-  else {
-    saved = [];
-    const at = new Date().toISOString();
-    for (const { key, cancel, ...rest } of items) {
-      const data = cancel ? { ...(state[coll]?.[key] || {}), doneAt: at, error: "" } : { ...rest, requestedAt: at, from: "claude.ai" };
-      if (await dbSet(coll + "/" + key, data)) saved.push({ key, data });
-    }
-  }
+  const { saved } = await window.genbidApi("/api/webreq", { coll, items });
   for (const s of saved) {
     if (coll === "syncreq") state.syncreq = s.data;
     else state[coll] = { ...state[coll], [s.key]: s.data };
@@ -809,7 +717,7 @@ async function requestWorker(coll, key, extra, what) {
 // The worker answers analysisreq/<key> with doneAt and, when nothing could be read, an error.
 function analysisReqError(key) {
   const r = state.analysisreq?.[key], a = state.analysis[key];
-  if (!window.genbidWeb || !r?.error || !r.doneAt || r.doneAt < (r.requestedAt || "")) return "";
+  if (!r?.error || !r.doneAt || r.doneAt < (r.requestedAt || "")) return "";
   return a?.status === "done" && (a.analyzedAt || "") >= r.doneAt ? "" : r.error;
 }
 async function dbSet(path, data) {
@@ -933,10 +841,10 @@ async function initDb() {
     renderAll();
     return;
   }
-  db.doc("feed/current").onSnapshot((snap) => { state.feed = snap.exists ? snap.data() : null; state.loaded.feed = true; renderAll(); scheduleAuto(); rememberSeen(); },
+  db.doc("feed/current").onSnapshot((snap) => { state.feed = snap.exists ? snap.data() : null; state.loaded.feed = true; renderAll(); rememberSeen(); },
     () => { state.loaded.feed = true; renderAll(); });
   db.doc("syncreq/current").onSnapshot((snap) => { state.syncreq = snap.exists ? snap.data() : null; renderTop(); }, () => {});
-  if (window.genbidWeb) db.doc("botstatus/current").onSnapshot((snap) => { state.botstatus = snap.exists ? snap.data() : null; refreshWaits(); }, () => {});
+  db.doc("botstatus/current").onSnapshot((snap) => { state.botstatus = snap.exists ? snap.data() : null; refreshWaits(); }, () => {});
   db.doc("prefs/view").onSnapshot((snap) => {
     const v = snap.exists ? snap.data() : null;
     if (!v) return;
@@ -944,11 +852,11 @@ async function initDb() {
     if (v.sort?.col) state.sort = v.sort;
     renderAll();
   }, () => {});
-  subscribe("tracked", "tracked", scheduleAuto);
+  subscribe("tracked", "tracked");
   subscribe("manual", "manual");
   subscribe("seen", "seen", rememberSeen);
-  subscribe("hsmt", "hsmt", () => { scheduleAuto(); setTimeout(scanCapacities, 300); });
-  subscribe("analysis", "analysis", scheduleAuto);
+  subscribe("hsmt", "hsmt", () => setTimeout(scanCapacities, 300));
+  subscribe("analysis", "analysis");
   subscribe("compare", "compare");
   subscribe("hsdt", "hsdt");
   subscribe("bidders", "bidders");
@@ -964,12 +872,8 @@ async function initDb() {
   subscribe("tlktreq", "tlktreq");
 }
 
-// ---------- Claude ----------
-async function getSample() {
-  if (state.sample !== undefined) return state.sample;
-  try { state.sample = (await window.claude?.use?.("sample")) ?? null; } catch { state.sample = null; }
-  return state.sample;
-}
+// ---------- HSMT text ----------
+const isDrawing = (f) => /\.(tif|tiff|twf)$/i.test(f.name) || /^\(WCE\)|^1Q\d/.test(f.name);
 async function loadAttachedText(key) {
   const d = state.hsmt[key];
   if (!d?.textChunks || !state.db) return "";
@@ -980,95 +884,11 @@ async function loadAttachedText(key) {
   }
   return parts.join("");
 }
-const isDrawing = (f) => /\.(tif|tiff|twf)$/i.test(f.name) || /^\(WCE\)|^1Q\d/.test(f.name);
-async function scanImages(files, budget, notes, onStep) {
-  const images = [], labels = [];
-  for (const f of files) {
-    const left = budget - images.length;
-    if (left <= 0) { notes.push(`${f.name}: bản scan, không còn chỗ gửi ảnh nên AI chưa đọc tệp này.`); continue; }
-    try {
-      onStep?.(f.name);
-      const blob = await (await fetch(f.url)).blob();
-      const r = await pdfToContent(new File([blob], f.name, { type: "application/pdf" }), left);
-      if (r.images?.length) { images.push(...r.images.slice(0, left)); labels.push(`${f.name} (bản scan, ảnh ${Math.min(left, r.images.length)}/${r.pages || "?"} trang đầu)`); notes.push(`${f.name}: bản scan, AI đọc ảnh ${Math.min(left, r.images.length)}/${r.pages || "?"} trang đầu.`); }
-      else if (r.text) labels.push(`--- Tệp: ${f.name} ---\n${r.text}`);
-    } catch { notes.push(`${f.name}: không mở được bản scan.`); }
-  }
-  return { images, labels };
-}
-const tenderCtx = (t) => t ? `Thông tin gói thầu đã biết: ${t.bidName}; số TBMT ${t.notifyNo || "?"}; chủ đầu tư ${t.investorName || "?"}; đóng thầu ${fmtDate(t.bidCloseDate) || "?"}; giá gói thầu ${fmtVnd(t.estimatedPrice) || "?"}.\n\n` : "";
-
-// ---------- Automatic analysis ----------
-let autoTimer = null;
-function scheduleAuto(delay = 2500) {
-  clearTimeout(autoTimer);
-  autoTimer = setTimeout(runQueue, delay);
-}
+// ---------- Analysis queue ----------
+// The Windows bot analyses; the page only sends requests (requestAnalysis).
 function queue() {
   return allTenders().filter((t) => analysisState(t) === "queued")
     .sort((a, b) => (a.bidCloseDate || "9").localeCompare(b.bidCloseDate || "9"));
-}
-async function runQueue() {
-  if (state.readOnly) return;
-  if (state.auto.running || state.auto.blocked || !state.db) return;
-  if (!Object.values(state.loaded).every(Boolean)) return scheduleAuto();
-  const q = queue();
-  if (!q.length) return;
-  // On the web the Windows worker analyses new tenders itself; nothing to run in the page.
-  const sample = window.genbidWeb ? null : await getSample();
-  if (!sample) { state.auto.blocked = window.genbidWeb ? "worker" : "noclaude"; renderAll(); return; }
-  state.auto.running = true; renderAll();
-  try {
-    for (const t of q) {
-      if (state.auto.blocked) break;
-      if (analysisState(t) !== "queued") continue;
-      await analyze(t._key);
-    }
-  } finally { state.auto.running = false; state.auto.current = null; renderAll(); }
-  if (queue().length && !state.auto.blocked) scheduleAuto(1000);
-}
-async function analyze(key, { manual = false } = {}) {
-  const t = findTender(key);
-  const sample = await getSample();
-  if (!sample) { toast("Không kết nối được AI."); return; }
-  state.auto.current = key; renderAll();
-  await dbSet("analysis/" + key, { status: "running", startedAt: new Date().toISOString(), by: TAB_ID });
-  try {
-    const lim = await sample.limits().catch(() => null);
-    const imgBudget = lim?.images?.maxCount ?? 0;
-    const notes = [];
-    const att = await loadAttachedText(key);
-    const scans = (state.hsmt[key]?.files || []).filter((f) => f.url && !f.hasText && !isDrawing(f));
-    const sc = await scanImages(scans, imgBudget, notes);
-    let text = att ? `--- Hồ sơ mời thầu tải từ muasamcong ---\n${att}` : "";
-    if (sc.labels.length) text += "\n\n" + sc.labels.join("\n\n");
-    if (!text.trim() && !sc.images.length) throw { code: "_empty" };
-    const c = clip(text, MAX_TEXT);
-    if (c.clipped) notes.push("Hồ sơ quá dài nên phần cuối đã bị cắt.");
-    const prompt = `${DOMAIN}
-
-Task: read the tender documents below and produce a structured brief for the bid team. Flag anything that can cause rejection (missing documents, technical non-conformity, deadlines, bid security amount/validity, experience thresholds) as critical. ${langLine("vi")}
-
-Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
-${ANALYSIS_SHAPE}
-
-${tenderCtx(t)}${sc.images.length ? `Kèm theo ${sc.images.length} ảnh trang hồ sơ (bản scan).\n\n` : ""}${c.text}`;
-    const a = await sample.json(prompt, { modelTier: "complex", ...(sc.images.length ? { images: sc.images } : {}) });
-    await dbSet("analysis/" + key, { status: "done", result: a, notes, analyzedAt: new Date().toISOString() });
-    state.analysis = { ...state.analysis, [key]: { status: "done", result: a, notes, analyzedAt: new Date().toISOString() } };
-    if (manual) toast("Đã phân tích xong");
-  } catch (e) {
-    const code = e?.code || "error";
-    if (code === "not_granted" || code === "sampling_disabled" || code === "capability_disabled" || code === "not_declared") state.auto.blocked = "consent";
-    if (code === "rate_limited") { state.auto.blocked = "rate"; setTimeout(() => { state.auto.blocked = null; scheduleAuto(); }, 10 * 60 * 1000); }
-    const msg = code === "_empty" ? "Không đọc được chữ hay ảnh nào từ tài liệu." : (e?.code ? sampleErrorText(e) : (e?.message || "Lỗi không xác định."));
-    if (state.auto.blocked === "consent" || state.auto.blocked === "rate") {
-      // Not the tender's fault: leave it queued instead of marking it failed.
-      await dbSet("analysis/" + key, { status: "queued", at: new Date().toISOString() });
-    } else {
-      await dbSet("analysis/" + key, { status: "error", code, error: msg, at: new Date().toISOString() });
-    }
-  } finally { if (state.auto.current === key) state.auto.current = null; renderAll(); }
 }
 
 // ---------- Banner, KPIs, tabs ----------
@@ -1085,9 +905,7 @@ function renderTop() {
   const dot = $("#sdot"), txt = $("#stext");
   const sreq = state.syncreq, syncPending = !!sreq?.requestedAt && !(sreq.doneAt >= sreq.requestedAt);
   // While syncing, the dot becomes a spinner next to the label.
-  if (syncState.running) { dot.className = "spin"; txt.textContent = syncState.step || "Đang đồng bộ từ muasamcong..."; }
-  else if (syncPending) { dot.className = "spin"; txt.textContent = "Đang đồng bộ"; }
-  else if (state.auto.running) { dot.className = "dot busy"; const t = state.auto.current && findTender(state.auto.current); txt.textContent = `AI đang phân tích ${t?.notifyNo || "gói thầu"} · còn ${queue().length} gói chờ`; }
+  if (syncPending) { dot.className = "spin"; txt.textContent = "Đang đồng bộ"; }
   else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtBannerDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
   else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
@@ -1097,15 +915,11 @@ function renderTop() {
   const K = KPIS.map((k) => ({ ...k, n: tenders.filter(k.f).length }));
   $("#kpis").innerHTML = K.map((k) => h`<div class="kpi ${state.list === k.key ? "on" : ""}" role="button" tabindex="0" data-kpi="${k.key}" style="--kc:${raw(k.c)}"><span class="kl">${k.l}</span><span class="kv">${k.n}</span>
 
-    ${raw(k.key === "done" && waiting ? h`<button class="ibtn kref" id="runQueueBtn" aria-label="Phân tích ngay các gói đang chờ" title="Phân tích ngay ${waiting} gói đang chờ">${raw(state.auto.running ? '<span class="spin"></span>' : REFRESH_SVG)}</button>` : "")}</div>`).join("");
+    ${raw(k.key === "done" && waiting ? h`<button class="ibtn kref" id="runQueueBtn" aria-label="Phân tích ngay các gói đang chờ" title="Phân tích ngay ${waiting} gói đang chờ">${raw(REFRESH_SVG)}</button>` : "")}</div>`).join("");
   const counts = Object.fromEntries(TABS.map((s) => [s.key, 0]));
   items.forEach((t) => counts[tabOf(t)]++);
   $("#stageTabs").innerHTML = [["all", "Tất cả", tenders.length],...TABS.map((s) => [s.key, s.label, counts[s.key]])]
     .map(([k, l, n]) => h`<button role="tab" data-stage="${k}" aria-selected="${String(state.stage === k)}">${l}<span class="c${k === "all" ? "" : " st-" + k}">${n}</span></button>`).join("");
-  const an = $("#autoNote");
-  if (state.auto.blocked === "consent" || state.auto.blocked === "noclaude") an.innerHTML = h`<div class="note warn row"><span style="flex:1;min-width:200px">${state.auto.blocked === "noclaude" ? "Đăng nhập để AI tự phân tích các gói mới." : "AI cần được cho phép để tự phân tích các gói mới."}</span>${raw(state.auto.blocked === "consent" ? '<button class="btn sm primary" id="allowAuto">Cho phép và phân tích</button>' : "")}</div>`;
-  else if (state.auto.blocked === "rate") an.innerHTML = h`<div class="note warn">Đã chạm giới hạn sử dụng AI. Việc phân tích tự động sẽ chạy lại sau ít phút.</div>`;
-  else an.innerHTML = "";
   const sq = state.syncreq;
   // A sync that finished before the page loaded is old news: remember it and only announce later ones.
   if (state.syncreq !== undefined && syncDoneNote.base === undefined) syncDoneNote.base = sq?.doneAt || "";
@@ -1164,16 +978,7 @@ function stepNext(t) { const s = stageOf(t); const i = FLOW.indexOf(s); const n 
 // Results for a submitted bid: Trúng thầu or Không trúng.
 const resultBtns = (t) => !movesOf(t).includes("won") ? "" : h`<button class="sbtn win" data-step="won" data-key="${t._key}" aria-label="Chuyển sang Trúng thầu" title="Trúng thầu">${raw(STAGE_ICON.win)}</button><button class="sbtn lose" data-step="lost" data-key="${t._key}" aria-label="Chuyển sang Không trúng" title="Không trúng">${raw(STAGE_ICON.lose)}</button>`;
 const STAGE_ICON = { win: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>', lose: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 14V3H7l-3 8v3h6l-1 5a2 2 0 0 0 2 2l6-7z"/></svg>', x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>', prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>', next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>' };
-const BUSY = { translate: "Đang dịch sang tiếng Anh", hsdt: "Đang tạo HSDT tham khảo", compare: "Đang đối chiếu HSDT", tlkt: "Đang đối chiếu TLKT" };
-const busy = {};
-function busyStart(key, kind) { (busy[key] ||= new Set()).add(kind); renderGrid(); }
-function busyEnd(key, kind) { busy[key]?.delete(kind); renderGrid(); if (state.open === key && state.dtab === kind && !document.getElementById(kind === "translate" ? "trOut" : kind === "hsdt" ? "hsOut" : kind === "tlkt" ? "tkOut" : "cmOut")?.isConnected) renderDrawer(); }
-function busyNote(key, kind) { return busy[key]?.has(kind) ? `<div class="note">${progress(BUSY[kind] + "... Kết quả sẽ hiện ở đây khi xong, anh có thể chuyển tab trong lúc chờ.")}</div>` : ""; }
 function anaInline(t) {
-  const jobs = [...(busy[t._key] || [])].map((k) => `<span class="chip run"><span class="spin"></span>${BUSY[k]}</span>`).join(" ");
-  return anaInline0(t) + (jobs ? `<div class="row" style="gap:6px;margin-top:4px">${jobs}</div>` : "");
-}
-function anaInline0(t) {
   const s = analysisState(t);
   if (s === "error") return h`<div class="row" style="gap:6px;margin-top:4px"><span class="chip bad">Lỗi phân tích</span><button class="btn sm" data-act="retry" data-key="${t._key}">Retry</button></div>`;
   if (s === "running") return '<div style="margin-top:4px"><span class="chip run"><span class="spin"></span>Đang phân tích</span></div>';
@@ -1371,7 +1176,7 @@ function renderDrawer(force = true) {
   });
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], Date.now() < areqNoteUntil, state.auto.current === key, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], Date.now() < areqNoteUntil, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1480,7 +1285,7 @@ async function addProjectFiles(key, list) {
       projUp[key] = `Đang tải lên ${f.name} (${n + 1}/${list.length})...`; renderDrawer(false);
       const up = await store.upload(f);
       let text = "";
-      if (PROJ_TEXT.test(f.name)) { try { text = (await readFile(f, 0)).text || ""; } catch {} }
+      if (PROJ_TEXT.test(f.name)) { try { text = (await readFile(f)).text || ""; } catch {} }
       const hasText = text.replace(/\[Trang \d+\]|\s/g, "").length > 40;
       const rec = { name: f.name, size: f.size, hasText, converted: false, url: up.url };
       const i = files.findIndex((x) => x.name === f.name);
@@ -1522,7 +1327,7 @@ function reqState(key) {
   return { kind: "pending", r };
 }
 function refetchHtml(t, have) {
-  if (state.readOnly || !window.genbidWeb) return "";
+  if (state.readOnly) return "";
   const s = reqState(t._key);
   if (s?.kind === "pending") return waitHtml("Đang tải hồ sơ từ muasamcong bằng Agent...", s.r.requestedAt);
   const msg = s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
@@ -1531,9 +1336,8 @@ function refetchHtml(t, have) {
     <button class="btn primary" id="hfFetch" data-key="${t._key}">Lấy lại tệp</button></div>`;
 }
 // Sync on the web: ask the Windows worker for files of every open Mới tender that has none and no request yet.
-// Analysis then starts on its own once the files land (subscribe("hsmt") → scheduleAuto).
 async function requestMissingFiles() {
-  if (state.readOnly || !window.genbidWeb || !state.db) return 0;
+  if (state.readOnly || !state.db) return 0;
   const want = allTenders().filter((t) => !isProject(t) && stageOf(t) === "new" && !isClosed(t) && !state.hsmt[t._key]?.files?.length && !state.hsmtreq?.[t._key]?.requestedAt);
   if (!want.length) return 0;
   try { return (await saveRequests("hsmtreq", want.map((t) => ({ key: t._key, notifyNo: t.notifyNo || t._key, sourceUrl: tenderLink(t), bidName: t.bidName || "", auto: true })))).length; }
@@ -1550,7 +1354,7 @@ async function requestRefetch(key, cancel = false) {
 }
 // The bot asks the web for requests every minute (botstatus/current.lastPollAt). Silent for 3 minutes = the PC is off.
 function botOfflineText() {
-  if (!window.genbidWeb || state.botstatus === undefined) return "";
+  if (state.botstatus === undefined) return "";
   const at = state.botstatus?.lastPollAt;
   if (at && Date.now() - new Date(at).getTime() < 3 * 60e3) return "";
   return at ? `Agent chưa nhận yêu cầu (lần cuối kết nối lúc ${fmtDate(at)}). Yêu cầu sẽ được xử lý khi Agent bật lại.` : "Agent chưa kết nối. Yêu cầu sẽ được xử lý khi Agent bật lại.";
@@ -1611,8 +1415,8 @@ function analysisTabHtml(t) {
       ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
       : waitHtml("Đang chờ Agent phân tích...", state.analysisreq[t._key].requestedAt))
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
-    : s === "nodocs" ? h`<div class="row">${raw(window.genbidWeb ? h`<button class="btn primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button>` : "")}<span class="muted small">Gói này chưa có hồ sơ mời thầu.</span></div>`
-    : s === "skip" ? (window.genbidWeb || state.hsmt[t._key]?.files?.length ? h`<div class="row"><button class="btn primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button></div>` : "")
+    : s === "nodocs" ? h`<div class="row"><button class="btn primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button><span class="muted small">Gói này chưa có hồ sơ mời thầu.</span></div>`
+    : s === "skip" ? h`<div class="row"><button class="btn primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button></div>`
     : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này chưa được phân tích."}</div>`;
   const reqErr = s !== "requested" && analysisReqError(t._key);
   const errNote = reqErr ? h`<div class="note warn">Agent chưa phân tích được: ${reqErr}</div>` : "";
@@ -1686,12 +1490,6 @@ async function openPdf(key, i) {
 }
 
 // ---------- Technical requirements in English (key points, PDF) ----------
-const YCKT_RE = /ch(ư|u)(ơ|o)ng\s*(v\b|5)|y(ê|e)u\s*c(ầ|a)u.*k(ỹ|y)\s*thu(ậ|a)t|yckt|ph(ầ|a)n\s*2|technical|k(ỹ|y)\s*thu(ậ|a)t/i;
-function ycktSections(all) {
-  const parts = all.split(/\n(?=--- Tệp: )/);
-  const pick = parts.filter((p) => { const m = p.match(/^-*\s*Tệp: (.+?) ---/); return m && YCKT_RE.test(m[1]); });
-  return pick.join("\n");
-}
 function chunkText(text, size) {
   const out = []; let i = 0;
   while (i < text.length) {
@@ -1701,7 +1499,6 @@ function chunkText(text, size) {
   }
   return out;
 }
-const TR_SHAPE = `{ "sections": [ { "heading": string (English), "points": [string] (English, one requirement per point, with its figures and units) } ] }`;
 // What the tab shows comes from trCache[key]: undefined = not read yet, null = no brief, else { meta, secs, text }.
 const trCache = {};
 function translateTabHtml(t) {
@@ -1713,7 +1510,7 @@ function translateTabHtml(t) {
   const btns = c === undefined ? h`<button class="btn primary" id="trRun" data-key="${t._key}" hidden>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo">Đang tải bản dịch...</span>`
     : c === null ? h`<button class="btn primary" id="trRun" data-key="${t._key}" ${trWait ? "disabled" : ""}>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo"></span>`
     : h`<button class="btn" id="trRun" data-key="${t._key}" data-resume="${c.meta.done ? "" : c.meta.parts}" ${trWait ? "disabled" : ""}>${c.meta.done ? "Tạo lại" : "Làm tiếp"}</button><button class="btn primary" id="trPdf" data-key="${t._key}" ${c.meta.done ? "" : "hidden"}>Tải PDF</button><span class="muted small" id="trInfo">${c.meta.done ? `Đã tạo lúc ${fmtDate(c.meta.at)}` : `Đã làm ${c.meta.parts}/${c.meta.total} phần. Bấm để làm tiếp.`}</span>`;
-  return busyNote(t._key, "translate") + trWait + (trErr ? h`<div class="note warn">Agent chưa dịch được: ${trErr}</div>` : "") + h`<div class="row">${raw(btns)}</div>
+  return trWait + (trErr ? h`<div class="note warn">Agent chưa dịch được: ${trErr}</div>` : "") + h`<div class="row">${raw(btns)}</div>
     <div id="trOut">${raw(c ? trHtml(c.secs, !c.meta.done, c.text) : "")}</div>`;
 }
 // The English brief is edited as plain text: "## Heading" starts a section, "- " starts a point.
@@ -1779,55 +1576,8 @@ async function loadTranslation(key) {
   } catch {}
 }
 const trState = {};
-async function runTranslate(key, resumeFrom) { if (window.genbidWeb) return runTranslate0(key, resumeFrom); busyStart(key, "translate"); try { await runTranslate0(key, resumeFrom); } finally { busyEnd(key, "translate"); } }
-async function runTranslate0(key, resumeFrom) {
-  // Web version: the Windows worker translates (translate-prompt.md) and writes translation/<key> back.
-  if (window.genbidWeb) return requestWorker("translationreq", key, {}, "dịch");
-  const out = $("#trOut"), info = $("#trInfo"), btn = $("#trRun");
-  const sample = await getSample();
-  if (!sample) { info.textContent = "Không kết nối được AI ở chế độ xem này."; return; }
-  btn.disabled = true; $("#trPdf").hidden = true;
-  try {
-    info.textContent = "Đang lấy phần yêu cầu kỹ thuật...";
-    const all = await loadAttachedText(key);
-    let src = ycktSections(all), images = [];
-    if (!src) {
-      const scans = (state.hsmt[key].files || []).filter((f) => f.url && !f.hasText && !isDrawing(f));
-      if (scans.length) {
-        const lim = await sample.limits().catch(() => null);
-        images = (await scanImages(scans.filter((f) => YCKT_RE.test(f.name)).concat(scans).slice(0, 2), lim?.images?.maxCount ?? 0, [], (n) => (info.textContent = `Đang mở bản scan ${n}...`))).images;
-      }
-      if (!images.length) src = all;
-    }
-    if (!src && !images.length) { info.textContent = "Không tìm thấy nội dung yêu cầu kỹ thuật."; return; }
-    const chunks = images.length ? [""] : chunkText(src, 60000);
-    const start = resumeFrom || 0;
-    const secs = start ? [...(trState[key] || [])] : [];
-    if (!start) await dbSet(`translation/${key}_edit`, { text: null });
-    for (let i = start; i < chunks.length; i++) {
-      info.textContent = `AI đang đọc và dịch phần ${i + 1}/${chunks.length}...`;
-      const prompt = `${DOMAIN}
-
-You are preparing an English brief of the technical requirements of a Vietnamese generator tender for a foreign supplier/manufacturer.
-From the text below, keep ONLY the important technical points: scope and quantity, rated power (kVA/kW, prime/standby per ISO 8528), voltage/frequency/phase, engine, alternator, controller, ATS, enclosure/noise, fuel tank, cooling, installation, standards and certificates (CO/CQ), testing and commissioning, warranty, delivery time and place, required technical documents. Drop legal boilerplate, bidding procedure, repeated or generic text. Translate into precise English using standard generator terminology (prime power = công suất liên tục, standby power = công suất dự phòng). Keep every number, unit, model reference and clause number exactly. Group into short sections.
-Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
-${TR_SHAPE}
-${images.length ? "The text is in the attached page images." : `\nTEXT (part ${i + 1} of ${chunks.length}):\n${chunks[i]}`}`;
-      const r = await sample.json(prompt, { modelTier: "default", ...(images.length ? { images } : {}) });
-      const part = (r.sections || []).filter((s) => s.points?.length);
-      secs.push(...part);
-      trState[key] = secs;
-      out.innerHTML = trHtml(secs, true);
-      await dbSet(`translation/${key}_${i}`, { sections: part });
-      await dbSet("translation/" + key, { v2: true, parts: i + 1, total: chunks.length, done: i + 1 === chunks.length, at: new Date().toISOString() });
-    }
-    out.innerHTML = trHtml(secs, false);
-    info.textContent = "Đã xong. Anh có thể sửa nội dung bên dưới rồi bấm Tải PDF.";
-    $("#trPdf").hidden = false; btn.textContent = "Tạo lại"; btn.dataset.resume = "";
-  } catch (e) {
-    info.textContent = e?.code ? sampleErrorText(e) : (e?.message || "Không dịch được.");
-  } finally { btn.disabled = false; }
-}
+// The Windows bot translates (translate-prompt.md) and writes translation/<key> back.
+function runTranslate(key) { return requestWorker("translationreq", key, {}, "dịch"); }
 async function translationPdf(key) {
   const t = findTender(key), secs = trFromDoc() || trState[key] || [];
   const info = $("#trInfo"); info.textContent = "Đang tạo PDF...";
@@ -1858,23 +1608,13 @@ async function translationPdf(key) {
 }
 
 // ---------- Reference bid (HSDT tham khảo) ----------
-const HSDT_SHAPE = `{
-  "summary": string (2-3 sentences: what this reference bid covers),
-  "sections": [ {
-    "title": string (e.g. "Đơn dự thầu", "Bảng đáp ứng yêu cầu kỹ thuật", "Bảo lãnh dự thầu", "Năng lực và kinh nghiệm", "Tiến độ cung cấp", "Bảo hành, bảo trì", "Danh mục tài liệu kèm theo"),
-    "paragraphs": [string] (ready-to-use text in the tender's own form, with the tender's real name, number, investor, amounts and deadlines; put bidder-specific data in square brackets like [Tên nhà thầu], [Model máy]),
-    "table": { "headers": [string], "rows": [[string]] } | null (for the technical compliance table: Yêu cầu của HSMT | Đề xuất của nhà thầu | Tài liệu chứng minh, one row per requirement)
-  } ],
-  "checklist": [ { "document": string, "required": boolean, "note": string } ],
-  "warnings": [string] (points the bidder must not miss: bid security amount/validity, deadlines, eligibility)
-}`;
 function hsdtTabHtml(t) {
   const prev = state.hsdt[t._key];
   const has = state.hsmt[t._key]?.files?.length || analysisOf(t._key)?.result;
   if (!has) return h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
   const hsWait = workerReqPending("hsdtreq", t._key) ? waitHtml("Đang chờ Agent soạn HSDT tham khảo...", state.hsdtreq[t._key].requestedAt) : "";
   const hsErr = !hsWait && workerReqError("hsdtreq", t._key);
-  return busyNote(t._key, "hsdt") + hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) : ""}</span></div>
+  return hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) : ""}</span></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
 // The reference bid is shown as the Word document it becomes. Every text is editable in place: data-h names the
@@ -1910,37 +1650,8 @@ function saveHsEdit(key, path, text) {
   if ($("#hsSaved")) $("#hsSaved").textContent = "Đang lưu...";
   hsSaveTimer = setTimeout(async () => { const ok = await dbSet("hsdt/" + key, { ...rec, editedAt: new Date().toISOString() }); if ($("#hsSaved")) $("#hsSaved").textContent = ok ? "Đã lưu chỉnh sửa." : "Chưa lưu được chỉnh sửa."; }, 800);
 }
-async function runHsdt(key) { if (window.genbidWeb) return requestWorker("hsdtreq", key, {}, "soạn HSDT tham khảo"); busyStart(key, "hsdt"); try { await runHsdt0(key); } finally { busyEnd(key, "hsdt"); } }
-async function runHsdt0(key) {
-  const out = $("#hsOut"), info = $("#hsInfo"), btn = $("#hsRun");
-  const sample = await getSample();
-  if (!sample) { info.textContent = "Không kết nối được AI ở chế độ xem này."; return; }
-  btn.disabled = true;
-  try {
-    out.innerHTML = progress("AI đang đọc HSMT và soạn hồ sơ tham khảo. Có thể mất vài phút.");
-    const t = findTender(key);
-    const att = await loadAttachedText(key);
-    const a = analysisOf(key)?.result;
-    const c = clip(att || "", MAX_TEXT - 30000);
-    const prompt = `${DOMAIN}
-
-Task: draft a reference bid (hồ sơ dự thầu tham khảo) for this tender that a Vietnamese generator supplier can complete and submit. Follow the forms and order the HSMT itself prescribes (Chương IV biểu mẫu dự thầu) when they are in the text. Fill in everything known from the tender: name, notice number, investor, procuring entity, bid closing time, bid validity, bid security amount and form, delivery place and time, warranty. The technical compliance table must list every technical requirement from the HSMT with the required value, and a proposed compliant offer written as a template ([Hãng/Model], [Công suất PRP/ESP kVA], ...). Never invent the bidder's own data. ${langLine("vi")}
-
-Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
-${HSDT_SHAPE}
-
-${tenderCtx(t)}${a ? "Kết quả phân tích HSMT trước đó:\n" + JSON.stringify({ keyInfo: a.keyInfo, technicalSpecs: a.technicalSpecs, qualificationRequirements: a.qualificationRequirements, requiredDocuments: a.requiredDocuments }) + "\n\n" : ""}${c.text ? "--- Hồ sơ mời thầu ---\n" + c.text : ""}`;
-    const r = await sample.json(prompt, { modelTier: "complex" });
-    const at = new Date().toISOString();
-    state.hsdt = { ...state.hsdt, [key]: { result: r, at } };
-    await dbSet("hsdt/" + key, { result: r, at });
-    out.innerHTML = hsdtHtml(r);
-    info.textContent = "Bản soạn lúc " + fmtDate(at);
-    $("#hsDocx").hidden = false; btn.textContent = "Soạn lại";
-  } catch (e) {
-    out.innerHTML = h`<div class="note err">${e?.code ? sampleErrorText(e) : e?.message || "Không soạn được."}</div>`;
-  } finally { btn.disabled = false; }
-}
+// The Windows bot drafts it (hsdt-prompt.md).
+function runHsdt(key) { return requestWorker("hsdtreq", key, {}, "soạn HSDT tham khảo"); }
 async function hsdtDocx(key) {
   const r = state.hsdt[key]?.result, t = findTender(key), info = $("#hsInfo");
   if (!r) return;
@@ -1979,7 +1690,7 @@ function compareTabHtml(t) {
   const prev = state.compare[t._key];
   const cmWait = workerReqPending("comparereq", t._key) ? waitHtml("Đang chờ Agent đối chiếu...", state.comparereq[t._key].requestedAt) : "";
   const cmErr = !cmWait && workerReqError("comparereq", t._key);
-  return busyNote(t._key, "compare") + cmWait + (cmErr ? h`<div class="note warn">Agent chưa đối chiếu được: ${cmErr}</div>` : "") + h`<p class="muted small" style="margin:0">So hồ sơ dự thầu với yêu cầu trong HSMT đã tải về của gói này, từng dòng như tổ chuyên gia sẽ chấm.</p>
+  return cmWait + (cmErr ? h`<div class="note warn">Agent chưa đối chiếu được: ${cmErr}</div>` : "") + h`<p class="muted small" style="margin:0">So hồ sơ dự thầu với yêu cầu trong HSMT đã tải về của gói này, từng dòng như tổ chuyên gia sẽ chấm.</p>
     <div class="drop" id="cmDrop">
       <div class="row"><span class="muted small" style="flex:1">Tệp hồ sơ dự thầu (PDF, DOCX, ảnh)</span><label class="btn sm" for="cmFiles">Chọn tệp</label></div>
       <input type="file" id="cmFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
@@ -2063,60 +1774,18 @@ function sideBtns(key) {
 }
 function refreshSubmitBtn(key) { const old = $("#cmSide"); if (old) old.outerHTML = sideBtns(key); }
 function mountCompare() { subPick = filePicker("cmFiles", "cmDrop", "cmList"); }
-async function runCompare(key) { if (window.genbidWeb) return runCompare0(key); busyStart(key, "compare"); try { await runCompare0(key); } finally { busyEnd(key, "compare"); } }
-async function runCompare0(key) {
+// The HSDT goes to the private scratch bucket and the Windows bot compares (compare-prompt.md).
+async function runCompare(key) {
   const out = $("#cmOut"), btn = $("#cmRun");
   if (!subPick?.files.length && !$("#cmText").value.trim()) { out.innerHTML = h`<div class="note">Chọn tệp hồ sơ dự thầu hoặc dán nội dung trước.</div>`; return; }
-  // Web version: the HSDT goes to the private scratch bucket and the Windows worker compares (compare-prompt.md).
-  if (window.genbidWeb) {
-    btn.disabled = true;
-    try {
-      out.innerHTML = progress("Đang tải hồ sơ dự thầu lên...");
-      const files = subPick?.files.length ? await window.genbidScratch(key, subPick.files) : [];
-      out.innerHTML = "";
-      await requestWorker("comparereq", key, { files, text: $("#cmText").value }, "đối chiếu");
-    } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
-    finally { btn.disabled = false; }
-    return;
-  }
-  const sample = await getSample();
-  if (!sample) { out.innerHTML = h`<div class="note warn">Không kết nối được AI ở chế độ xem này.</div>`; return; }
   btn.disabled = true;
   try {
-    out.innerHTML = progress("Đang đọc hồ sơ...");
-    const lim = await sample.limits().catch(() => null);
-    const budget = lim?.images?.maxCount ?? 0;
-    const req = await loadAttachedText(key);
-    const a = analysisOf(key)?.result;
-    const reqText = req || (a ? JSON.stringify({ technicalSpecs: a.technicalSpecs, qualificationRequirements: a.qualificationRequirements, requiredDocuments: a.requiredDocuments }) : "");
-    if (!reqText) throw new Error("Gói này chưa có nội dung HSMT để đối chiếu.");
-    const sub = await collectDocs(subPick?.files || [], $("#cmText").value, "HSDT", budget);
-    const r = clip(reqText, MAX_TEXT / 2), s = clip(sub.text, MAX_TEXT / 2);
-    const prompt = `${DOMAIN}
-
-Task: check a bid (hồ sơ dự thầu) against the tender's requirements (hồ sơ mời thầu) line by line, the way the evaluation panel (tổ chuyên gia) would. Go through every technical parameter, qualification criterion, financial condition and required document. Compare numbers precisely (e.g. offered 450kVA standby against required 500kVA prime is not_met). Use "missing" when the submission says nothing about a requirement and "unclear" when evidence is ambiguous. ${langLine("vi")}
-
-Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
-${COMPARE_SHAPE}
-${sub.images.length ? `\nAttached images: ${sub.images.length} pages of the HSDT.\n` : ""}
-=== HỒ SƠ MỜI THẦU / YÊU CẦU (requirements) ===
-${r.text}
-
-=== HỒ SƠ DỰ THẦU (submission) ===
-${s.text}`;
-    out.innerHTML = progress("AI đang đối chiếu từng yêu cầu. Có thể mất vài phút.");
-    const c = await sample.json(prompt, { modelTier: "complex", ...(sub.images.length ? { images: sub.images } : {}) });
-    const at = new Date().toISOString();
-    state.compare = { ...state.compare, [key]: { result: c, at } };
-    await dbSet("compare/" + key, { result: c, at });
-    const notes = [...sub.notes, ...(r.clipped || s.clipped ? ["Một phía quá dài nên phần cuối đã bị cắt."] : [])];
-    out.innerHTML = notes.map((n) => h`<div class="note warn">${n}</div>`).join("") + comparisonHtml(c);
-    refreshSubmitBtn(key);
-    const left = submitBlockers(key);
-    if (left.length) askAfterCompare(key, left);
-  } catch (e) {
-    out.innerHTML = h`<div class="note err">${e?.code ? sampleErrorText(e) : e?.message || "Không đọc được tệp."}</div>`;
-  } finally { btn.disabled = false; }
+    out.innerHTML = progress("Đang tải hồ sơ dự thầu lên...");
+    const files = subPick?.files.length ? await window.genbidScratch(key, subPick.files) : [];
+    out.innerHTML = "";
+    await requestWorker("comparereq", key, { files, text: $("#cmText").value }, "đối chiếu");
+  } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
+  finally { btn.disabled = false; }
 }
 
 // ---------- Đối chiếu TLKT (a supplier's technical proposal against the tender's technical requirements) ----------
@@ -2131,7 +1800,7 @@ function tlktTabHtml(t) {
   const tkErr = !tkWait && workerReqError("tlktreq", t._key);
   const enReady = prev?.result && prev.resultEnAt === prev.at;
   // A shortened YCKT, when uploaded, is the only requirements side: the HSMT is not read (Khoa, 2026-10-27).
-  return busyNote(t._key, "tlkt") + tkWait + (tkErr ? h`<div class="note warn">Agent chưa ${tr ? "dịch" : "đối chiếu"} được: ${tkErr}</div>` : "") + h`<div class="drop" id="tyDrop">
+  return tkWait + (tkErr ? h`<div class="note warn">Agent chưa ${tr ? "dịch" : "đối chiếu"} được: ${tkErr}</div>` : "") + h`<div class="drop" id="tyDrop">
       <div class="row"><span class="muted small" style="flex:1">Tệp YCKT rút gọn (không bắt buộc). Khi có tệp này, chỉ đối chiếu với tệp này, không dùng HSMT gốc.</span><label class="btn sm" for="tyFiles">Chọn tệp</label></div>
       <input type="file" id="tyFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
       <div class="files" id="tyList"></div>
@@ -2169,21 +1838,11 @@ async function tlktPdf(key, btn = $("#tkPdf")) {
   if (btn) btn.disabled = true;
   try {
     let en = cur.resultEnAt === cur.at ? cur.resultEn : null;
-    if (!en && window.genbidWeb) {
+    // The Windows bot translates the result once (tlkt-en-prompt.md); the PDF then downloads by itself (checkAutoPdf).
+    if (!en) {
       await requestWorker("tlktreq", key, { translate: true }, "dịch kết quả đối chiếu sang tiếng Anh");
       if (workerReqPending("tlktreq", key)) { autoPdf[key] = Date.now(); local.set("tlktAutoPdf", autoPdf); }
       return;
-    }
-    if (!en) {
-      const sample = await getSample();
-      if (!sample) throw new Error("Không kết nối được AI để dịch kết quả.");
-      btn.textContent = "Đang dịch...";
-      en = await sample.json(`Translate every human-readable string value of this JSON (a technical compliance review of a generator supplier's proposal against a Vietnamese tender's technical requirements) from Vietnamese into precise English, using standard generator terminology (công suất liên tục = prime power, công suất dự phòng = standby power). Keep the same keys and structure, keep the values of "verdict", "status" and "critical" unchanged, and keep every number, unit, model name and clause reference exactly. Answer with ONLY the translated JSON object, no prose and no code fence.
-
-${JSON.stringify(cur.result)}`, { modelTier: "default" });
-      const rec = { ...cur, resultEn: en, resultEnAt: cur.at };
-      state.tlkt = { ...state.tlkt, [key]: rec };
-      await dbSet("tlkt/" + key, rec);
     }
     btn.textContent = "Đang tạo PDF...";
     const [{ jsPDF }, f] = await Promise.all([loadLib("jspdf"), fonts()]);
@@ -2246,7 +1905,7 @@ ${JSON.stringify(cur.result)}`, { modelTier: "default" });
     for (let i = 1; i <= pages; i++) { doc.setPage(i); doc.setFont("DejaVu", "normal"); doc.setFontSize(7); doc.text(`${fmtDate(cur.at)} · ${i}/${pages}`, M, PH - 6); }
     await saveFile(fileSafe(`${t?.notifyNo || key} Technical compliance review EN.pdf`), doc.output("blob"));
   } catch (e) {
-    toast(e?.code ? sampleErrorText(e) : e?.message || "Không tạo được PDF.", 6000);
+    toast(e?.message || "Không tạo được PDF.", 6000);
   } finally { if (btn?.isConnected) { btn.disabled = false; btn.innerHTML = label; } }
 }
 function mountTlkt() { tlktPick = filePicker("tkFiles", "tkDrop", "tkList"); ycktPick = filePicker("tyFiles", "tyDrop", "tyList"); }
@@ -2278,74 +1937,25 @@ async function uploadOrText(key, list, pasted, out) {
   }
   for (const f of asText) {
     out.innerHTML = progress(`Đang đọc chữ trong ${f.name}...`);
-    const r = await readFile(f, 0).catch(() => ({ text: "" }));
+    const r = await readFile(f).catch(() => ({ text: "" }));
     if (!r.text?.trim()) throw new Error(`${f.name}: ${why}, và trang không đọc được chữ trong tệp (bản scan hoặc ảnh). Hãy thử lại, hoặc chia nhỏ tệp.`);
     text += `\n\n--- Tệp: ${f.name} ---\n${r.text}`;
   }
   // uploadError: why the files went as text, kept in the request so the bot's log shows it.
   return { files, text: text.trim(), uploadError: asText.length ? `${asText.map((f) => f.name).join(", ")}: ${why}` : "" };
 }
-async function runTlkt(key) { if (window.genbidWeb) return runTlkt0(key); busyStart(key, "tlkt"); try { await runTlkt0(key); } finally { busyEnd(key, "tlkt"); } }
-async function runTlkt0(key) {
+// The Windows bot compares (tlkt-prompt.md).
+async function runTlkt(key) {
   const out = $("#tkOut"), btn = $("#tkRun");
   if (!tlktPick?.files.length) { out.innerHTML = h`<div class="note">Chọn tệp technical proposal trước.</div>`; return; }
-  // Web version: the Windows worker compares (tlkt-prompt.md).
-  if (window.genbidWeb) {
-    btn.disabled = true;
-    try {
-      const y = ycktPick?.files.length ? await uploadOrText(key, ycktPick.files, "", out) : { files: [], text: "", uploadError: "" };
-      const p = await uploadOrText(key, tlktPick.files, "", out);
-      out.innerHTML = "";
-      await requestWorker("tlktreq", key, { files: p.files, text: p.text, reqFiles: y.files, reqText: y.text, uploadError: [y.uploadError, p.uploadError].filter(Boolean).join("; ") }, "đối chiếu TLKT");
-    } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
-    finally { btn.disabled = false; }
-    return;
-  }
-  const sample = await getSample();
-  if (!sample) { out.innerHTML = h`<div class="note warn">Không kết nối được AI ở chế độ xem này.</div>`; return; }
   btn.disabled = true;
   try {
-    out.innerHTML = progress("Đang đọc tài liệu...");
-    const lim = await sample.limits().catch(() => null);
-    const budget = lim?.images?.maxCount ?? 0;
-    const ownReq = !!ycktPick?.files.length;
-    let reqText, ownImages = [];
-    if (ownReq) {
-      const y = await collectDocs(ycktPick.files, "", "YCKT rút gọn", budget);
-      reqText = y.text; ownImages = y.images;
-    } else {
-      const all = await loadAttachedText(key);
-      const a = analysisOf(key)?.result;
-      reqText = (ycktSections(all) || all) + (a?.technicalSpecs?.length ? "\n\n--- Thông số kỹ thuật từ lần phân tích HSMT ---\n" + JSON.stringify(a.technicalSpecs) : "");
-      if (!reqText.trim()) throw new Error("Gói này chưa có nội dung HSMT để đối chiếu.");
-    }
-    // The partner's proposal is read as text only, never as pictures, to save tokens (Khoa, 2026-10-27).
-    const sub = await collectDocs(tlktPick.files, "", "TLKT", 0);
-    if (sub.text.replace(/---[^\n]*---|\[Trang \d+\]|\s/g, "").length < 300) throw new Error("Tệp technical proposal không có chữ đọc được (bản scan hoặc ảnh). Chỉ đọc chữ, không đọc hình: hãy dùng bản PDF có chữ, DOCX hoặc XLSX.");
-    sub.images = ownImages;
-    const r = clip(reqText, MAX_TEXT / 2), s = clip(sub.text, MAX_TEXT / 2);
-    const prompt = `${DOMAIN}
-
-Task: check a supplier's technical proposal (tài liệu kỹ thuật đề xuất / technical proposal, often in English, from a generator manufacturer or distributor) against the technical requirements of the tender (Chương V Yêu cầu kỹ thuật, and the technical evaluation criteria). Go through every technical requirement: scope and quantity, rated power (prime/standby per ISO 8528), voltage/frequency/phase, engine, alternator, controller, ATS, enclosure and noise, fuel tank and consumption, cooling, emission, installation, testing and commissioning, standards and certificates (CO/CQ, ISO), technical warranty, manuals and technical documents. Compare numbers and units precisely (e.g. 450 kVA standby offered against 500 kVA prime required is not_met; convert kW/kVA with the stated power factor). Use "missing" when the proposal says nothing about a requirement and "unclear" when the evidence is ambiguous. Do NOT assess price, bid security, bidder qualification, experience, contract terms or any other non-technical aspect of the bidding. ${langLine("vi")}
-
-Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
-${TLKT_SHAPE}
-${ownReq ? "\nThe requirements below are a shortened technical requirements file (YCKT rút gọn) uploaded by the user: they are the ONLY requirements; ignore the original tender documents.\n" : ""}${sub.images.length ? `\nAttached images: ${sub.images.length} pages of the YCKT rút gọn.\n` : ""}
-=== ${ownReq ? "YCKT RÚT GỌN" : "YÊU CẦU KỸ THUẬT CỦA GÓI THẦU"} (requirements) ===
-${r.text}
-
-=== TÀI LIỆU KỸ THUẬT ĐỀ XUẤT CỦA NHÀ CUNG CẤP (technical proposal) ===
-${s.text}`;
-    out.innerHTML = progress("AI đang đối chiếu từng yêu cầu kỹ thuật. Có thể mất vài phút.");
-    const c = await sample.json(prompt, { modelTier: "complex", ...(sub.images.length ? { images: sub.images } : {}) });
-    const at = new Date().toISOString();
-    state.tlkt = { ...state.tlkt, [key]: { result: c, at, ownReq } };
-    await dbSet("tlkt/" + key, { result: c, at, ownReq });
-    const notes = [...sub.notes, ...(r.clipped || s.clipped ? ["Một phía quá dài nên phần cuối đã bị cắt."] : [])];
-    out.innerHTML = notes.map((n) => h`<div class="note warn">${n}</div>`).join("") + tlktHtml(c);
-  } catch (e) {
-    out.innerHTML = h`<div class="note err">${e?.code ? sampleErrorText(e) : e?.message || "Không đọc được tệp."}</div>`;
-  } finally { btn.disabled = false; }
+    const y = ycktPick?.files.length ? await uploadOrText(key, ycktPick.files, "", out) : { files: [], text: "", uploadError: "" };
+    const p = await uploadOrText(key, tlktPick.files, "", out);
+    out.innerHTML = "";
+    await requestWorker("tlktreq", key, { files: p.files, text: p.text, reqFiles: y.files, reqText: y.text, uploadError: [y.uploadError, p.uploadError].filter(Boolean).join("; ") }, "đối chiếu TLKT");
+  } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
+  finally { btn.disabled = false; }
 }
 function tlktHtml(c) {
   const v = TLKT_VERDICT[c.verdict] || ["", "var(--yellow)"];
@@ -2451,15 +2061,11 @@ document.addEventListener("click", async (e) => {
     e.stopPropagation();
     const key = act.dataset.key;
     if (act.dataset.act === "retry" || act.dataset.act === "reanalyze") {
-      if (window.genbidWeb) { requestAnalysis([key]); return; }
-      if (state.auto.current) { toast("Đang phân tích gói khác, thử lại sau ít phút."); return; }
-      state.auto.blocked = null;
-      analyze(key, { manual: true });
+      requestAnalysis([key]); return;
     }
     if (act.dataset.act === "bidprice") askBidPrice(key, true);
     return;
   }
-  if (e.target.id === "allowAuto") { state.auto.blocked = null; state.sample = undefined; runQueue(); return; }
   const tr = e.target.closest("#grid tbody tr[data-key]");
   if (e.target.id === "delSel") { askDelete(); return; }
   if (tr && !e.target.closest("a,button,select,input,label")) { openDrawer(tr.dataset.key); return; }
@@ -2470,8 +2076,7 @@ document.addEventListener("click", async (e) => {
     state.sort = state.sort.col === k ? { col: k, dir: -state.sort.dir } : { col: k, dir: k === "no" ? -1 : 1 };
     state.limit = pageSize(); saveView(); renderGrid(); return;
   }
-  if (e.target.closest("#runQueueBtn") && window.genbidWeb) { e.stopPropagation(); requestAnalysis(queue().map((t) => t._key)); return; }
-  if (e.target.closest("#runQueueBtn")) { e.stopPropagation(); state.auto.blocked = null; state.sample = undefined; runQueue(); toast("Đang phân tích các gói chờ"); return; }
+  if (e.target.closest("#runQueueBtn")) { e.stopPropagation(); requestAnalysis(queue().map((t) => t._key)); return; }
   const kp = e.target.closest("[data-kpi]");
   if (kp) { openList(kp.dataset.kpi); return; }
   const ok = e.target.closest("[data-openkey]");
@@ -2573,272 +2178,20 @@ document.addEventListener("keydown", (e) => {
 });
 addEventListener("resize", closeFilter);
 
-// ---------- Sync from muasamcong through the Claude app's own browser ----------
-// Runs only where the page is open in the Claude desktop app (Khoa's PCs), which lends its browser to the page.
-// Elsewhere Refresh only reloads the saved list. A reCAPTCHA or any other check on muasamcong is never got around:
-// the sync stops and says so.
-const HOST = "host:claude_browser";
-const PORTAL_SEARCH = "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=search";
-const SYNC_KEYWORD = "máy phát điện";
-const SYNC_DETAIL_MAX = 5; // tenders opened for full notice details and webform chapters in one sync
-let mcpNs;
-async function getMcp() {
-  if (mcpNs === undefined) { try { mcpNs = (await window.claude?.use?.("mcp")) ?? null; } catch { mcpNs = null; } }
-  return mcpNs;
-}
-async function hostBrowser() {
-  if (state.readOnly || !state.db) return null;
-  const m = await getMcp();
-  if (!m) return null;
-  try { const r = await m.listTools(HOST); return r.servers.some((s) => s.server === HOST) ? m : null; } catch { return null; }
-}
-class SyncStop extends Error {}
-const syncState = { running: false, step: "", note: null };
-function syncStep(msg) { syncState.step = msg; renderTop(); }
-async function bt(m, tool, input) {
-  const r = await m.callTool(HOST, tool, input, { cache: false });
-  return (r.content || []).filter((c) => c.type === "text").map((c) => c.text).join("\n");
-}
-const pause = (m, s) => bt(m, "computer", { action: "wait", duration: s });
-const refOf = (line) => line?.match(/\[(ref_\d+)\]/)?.[1];
-const refNum = (r) => +String(r).replace("ref_", "");
-async function findLines(m, q) { return (await bt(m, "find", { query: q })).split("\n").filter((l) => /\[ref_\d+\]/.test(l)); }
-const CHALLENGE_RE = /recaptcha|không phải là người máy|i'm not a robot|xác minh bạn/i;
-async function pageText(m) {
-  const t = await bt(m, "get_page_text", { max_chars: 200000 });
-  if (CHALLENGE_RE.test(t)) throw new SyncStop("muasamcong đang yêu cầu xác minh (CAPTCHA), nên GenBid Pro dừng đồng bộ. Anh mở muasamcong trong trình duyệt của ứng dụng trên máy tính, tự xác minh, rồi bấm Refresh lại.");
-  return t;
-}
-// Muasamcong shows Vietnam time without a zone.
-const vnIso = (hm, dmy) => { const [d, mo, y] = dmy.split("/"); return new Date(`${y}-${mo}-${d}T${hm}:00+07:00`).toISOString(); };
-const FIELD_CODE = { "Hàng hóa": "HH", "Xây lắp": "XL", "Phi tư vấn": "PTV", "Tư vấn": "TV" };
-
-async function searchPortal(m) {
-  syncStep("Đang mở trang tìm kiếm muasamcong...");
-  await bt(m, "navigate", { url: PORTAL_SEARCH });
-  await pause(m, 4);
-  const box = (await findLines(m, "Nhập số TBMT/Tên gói thầu")).find((l) => /textbox/.test(l));
-  if (!box) { await pageText(m); throw new SyncStop("Không thấy ô tìm kiếm trên muasamcong, có thể trang đã đổi giao diện."); }
-  syncStep(`Đang tìm "${SYNC_KEYWORD}" trên muasamcong...`);
-  await bt(m, "computer", { action: "left_click", ref: refOf(box), action_summary: "Chọn ô tìm số TBMT/tên gói thầu" });
-  await bt(m, "computer", { action: "type", text: SYNC_KEYWORD, action_summary: `Gõ từ khoá ${SYNC_KEYWORD}` });
-  const only = (await findLines(m, "chưa đóng thầu")).find((l) => /Chỉ tìm kiếm/.test(l));
-  if (only) await bt(m, "computer", { action: "left_click", ref: refOf(only), action_summary: "Chỉ lấy gói chưa đóng thầu" });
-  // The search form's own button is the first "Tìm kiếm" button after the field.
-  const after = refNum(refOf(only || box));
-  const go = (await findLines(m, "Tìm kiếm")).filter((l) => /button "Tìm kiếm"/.test(l)).map(refOf).sort((a, b) => refNum(a) - refNum(b)).find((r) => refNum(r) > after);
-  if (!go) throw new SyncStop("Không thấy nút Tìm kiếm trên muasamcong.");
-  await bt(m, "computer", { action: "left_click", ref: go, action_summary: "Tìm gói thầu" });
-  await pause(m, 6);
-  const per = (await findLines(m, "combobox")).find((l) => /combobox "(10|20|50)"/.test(l));
-  if (per && !/combobox "50"/.test(per)) { await bt(m, "form_input", { ref: refOf(per), value: "50", action_summary: "Hiện 50 gói mỗi trang" }); await pause(m, 5); }
-  return pageText(m);
-}
-// One result card: "Mã TBMT : IB...-00", status, name, Bên mời thầu, Chủ đầu tư, posting date, field, place, closing time.
-function parseResults(text) {
-  const out = [];
-  for (const blk of text.split(/Mã TBMT\s*:\s*/).slice(1)) {
-    const m0 = blk.match(/^(IB\d+)-(\d+)/);
-    if (!m0) continue;
-    const lines = blk.split("\n").map((s) => s.trim()).filter(Boolean);
-    const val = (label) => { const l = lines.find((x) => x.startsWith(label + " :")); return l ? l.slice(label.length + 2).trim() : null; };
-    const st = lines.findIndex((l) => /^(Chưa|Đã) đóng thầu$/.test(l));
-    const close = blk.match(/(?:Thời điểm đóng thầu|Thời điểm kết thúc chào giá trực tuyến)\s+(\d\d:\d\d)\s+(\d\d\/\d\d\/\d{4})/);
-    const pub = blk.match(/(?:Ngày đăng tải thông báo|Thời gian sửa TBMT)\s*:\s*(\d\d\/\d\d\/\d{4})\s*-\s*(\d\d:\d\d)/);
-    const loc = [...new Set(String(val("Địa điểm") || "").split(";").map((s) => s.split(" - ").pop().trim()).filter(Boolean))].join(", ");
-    out.push({
-      notifyNo: m0[1], notifyVersion: m0[2],
-      bidName: (lines[st >= 0 ? st + 1 : 1] || "").replace(/\s+/g, " "),
-      procuringEntityName: val("Bên mời thầu"), investorName: val("Chủ đầu tư"),
-      publicDate: pub ? vnIso(pub[2], pub[1]) : null, bidCloseDate: close ? vnIso(close[1], close[2]) : null,
-      field: FIELD_CODE[val("Lĩnh vực")] || val("Lĩnh vực"), location: loc || null,
-      isInternet: !/Không qua mạng/.test(blk),
-    });
-  }
-  return out;
-}
-// Known tenders get their closing time and notice version from the search; open ones missing from it stay; closed ones leave the feed (they stay in "seen").
-function mergeFeed(found) {
-  const cur = state.feed?.tenders || [];
-  const byNo = new Map(found.map((f) => [f.notifyNo, f]));
-  const next = [], changed = [], dropped = [], now = Date.now();
-  for (const t of cur) {
-    const f = byNo.get(t.notifyNo);
-    if (f) {
-      byNo.delete(t.notifyNo);
-      const u = { ...t };
-      if (f.bidCloseDate && f.bidCloseDate !== t.bidCloseDate) { if (!t.bidOpenDate || t.bidOpenDate === t.bidCloseDate) u.bidOpenDate = f.bidCloseDate; u.bidCloseDate = f.bidCloseDate; }
-      if (f.notifyVersion && f.notifyVersion !== t.notifyVersion) { u.notifyVersion = f.notifyVersion; u.bidName = f.bidName || t.bidName; if (f.publicDate) u.publicDate = f.publicDate; }
-      if (JSON.stringify(u) !== JSON.stringify(t)) changed.push(t.notifyNo);
-      next.push(u);
-    } else if (t.bidCloseDate && new Date(t.bidCloseDate).getTime() > now) next.push(t);
-    else dropped.push(t.notifyNo);
-  }
-  return { next, fresh: [...byNo.values()], changed, dropped };
-}
-// The result link carries the ids the feed needs (id, planNo, bidForm...).
-async function linkOf(m, notifyNo) {
-  const line = (await findLines(m, notifyNo)).find((l) => /href="[^"]*detail-v2/.test(l));
-  const href = line?.match(/href="([^"]+)"/)?.[1]?.replace(/&amp;/g, "&");
-  if (!href) return null;
-  const u = new URL(href), q = u.searchParams;
-  q.set("stepCode", "notify-contractor-step-1-tbmt"); q.set("step", "tbmt");
-  return { id: q.get("id"), planNo: q.get("planNo"), processApply: q.get("processApply"), bidMode: q.get("bidMode"), bidForm: q.get("bidForm"), isInternet: q.get("isInternet") === "1", sourceUrl: u.toString() };
-}
-// The notice page: general information, then the list of HSMT chapters and attached files.
-const VIEWER_URL = "https://muasamcong.mof.gov.vn/egp/contractorfe/viewer";
-// Webform chapters worth reading before the files arrive: data sheet, evaluation criteria, technical requirements, special contract conditions.
-const CHAPTER_RE = /Chương (II|III|V|VII)\s*[:.]/;
-const CHAPTER_MAX = 50000;
-async function openHsmtTab(m, t) {
-  await bt(m, "navigate", { url: tenderLink(t) });
-  await pause(m, 4);
-  const tab = (await findLines(m, "Hồ sơ mời thầu")).find((l) => /link "Hồ sơ mời thầu"/.test(l));
-  if (!tab) return false;
-  await bt(m, "computer", { action: "left_click", ref: refOf(tab), action_summary: "Mở tab Hồ sơ mời thầu" });
-  await pause(m, 3);
-  return true;
-}
-const chapterLines = async (m) => (await findLines(m, "Chương")).filter((l) => /generic "Chương/.test(l) && CHAPTER_RE.test(l) && !/\.(pdf|docx?|xlsx?|rar|zip|7z)"/i.test(l));
-// A webform chapter opens in the portal's viewer. The portal hands the chapter to the viewer through the browser's storage when it is
-// clicked, so the click (whose new tab the app does not open) is followed by opening the viewer in this same tab.
-async function readChapter(m, line) {
-  await bt(m, "computer", { action: "left_click", ref: refOf(line), action_summary: "Chọn chương HSMT để xem" });
-  await bt(m, "navigate", { url: VIEWER_URL });
-  let text = "", last = -1;
-  for (let i = 0; i < 6; i++) {
-    await pause(m, 3);
-    // The viewer only draws its pages when the browser paints; a tiny screenshot makes it paint while the pane is hidden.
-    await bt(m, "computer", { action: "screenshot", scale: 0.1 });
-    const all = await pageText(m);
-    const at = all.search(/Tải về/);
-    text = (at >= 0 ? all.slice(at + 6) : all).replace(/\s*\n\s*/g, " ").replace(/\s{2,}/g, " ").trim();
-    if (text.length > 300 && text.length === last) break;
-    last = text.length;
-  }
-  return text.length > 300 ? clip(text, CHAPTER_MAX).text : "";
-}
-async function noticeOf(m, t) {
-  await bt(m, "navigate", { url: tenderLink(t) });
-  await pause(m, 4);
-  const all = await pageText(m);
-  const info = all.slice(Math.max(0, all.indexOf("Thông tin cơ bản")), all.lastIndexOf("Nộp hồ sơ") > 0 ? all.lastIndexOf("Nộp hồ sơ") : undefined).trim();
-  let list = "";
-  const chapters = [];
-  if (await openHsmtTab(m, t)) {
-    const t2 = await pageText(m), i = t2.indexOf("STT");
-    list = i >= 0 ? t2.slice(i, t2.indexOf("Thời điểm đóng thầu", i) > 0 ? t2.indexOf("Thời điểm đóng thầu", i) : undefined).trim() : "";
-    const names = (await chapterLines(m)).map((l) => l.match(/generic "([^"]+)"/)?.[1]).filter(Boolean);
-    for (const [k, name] of names.entries()) {
-      syncStep(`Đang đọc ${name} của ${t.notifyNo}...`);
-      // Refs change after every page load, so the chapter is found again by its name.
-      if (k > 0 && !(await openHsmtTab(m, t))) break;
-      const line = (await chapterLines(m)).find((l) => l.includes(`"${name}"`));
-      if (!line) continue;
-      const text = await readChapter(m, line);
-      if (text) chapters.push({ name, text });
-    }
-  }
-  const open = info.match(/Thời điểm mở thầu\s+(\d\d\/\d\d\/\d{4})\s+(\d\d:\d\d)/);
-  const price = info.match(/Giá gói thầu\s+([\d.]+)\s*VND/);
-  return { info, list, chapters, bidOpenDate: open ? vnIso(open[2], open[1]) : null, estimatedPrice: price ? +price[1].replace(/\./g, "") : null };
-}
-// Before the HSMT files arrive, Claude reads the public notice for a first brief; the full analysis replaces it once files come.
-async function analyzeNotice(key, t, n) {
-  const sample = await getSample();
-  if (!sample || state.auto.blocked) return false;
-  state.auto.current = key; renderAll();
-  try {
-    const prompt = `${DOMAIN}
-
-Task: the attached HSMT files are not downloaded yet. From the public tender notice and the HSMT chapters published as web forms below (thông báo mời thầu: general information, bid security, validity, timing, the list of chapters and attached files; and, where present, Chương II Bảng dữ liệu, Chương III Tiêu chuẩn đánh giá, Chương V Yêu cầu kỹ thuật, Chương VII Điều kiện cụ thể của hợp đồng), write a preliminary brief for the bid team. Fill only what this text states; use null or empty lists for everything else. Add an "info" highlight naming what is only in the attached files and still has to be read (for example Chương V or Chương III when they are attachments). Flag deadlines, bid security and anything that can cause rejection as you would in a full analysis. ${langLine("vi")}
-
-Answer with ONLY one JSON object, no prose and no code fence, in exactly this shape:
-${ANALYSIS_SHAPE}
-
-${tenderCtx(t)}--- Thông báo mời thầu trên muasamcong ---
-${clip(n.info, 60000).text}
-
---- Danh mục hồ sơ mời thầu ---
-${clip(n.list || "(không đọc được)", 20000).text}
-${(n.chapters || []).map((c) => `\n--- ${c.name} (webform trên muasamcong) ---\n${clip(c.text, 40000).text}`).join("\n")}`;
-    const a = await sample.json(prompt, { modelTier: "default" });
-    const read = (n.chapters || []).map((c) => c.name).join(", ");
-    const rec = { status: "done", basis: "notice", result: a, notes: [`Phân tích sơ bộ từ thông báo mời thầu${read ? " và các chương webform (" + read + ")" : ""} vì chưa có tệp HSMT đính kèm. AI sẽ tự phân tích lại đầy đủ khi tệp HSMT được tải về.`], analyzedAt: new Date().toISOString() };
-    await dbSet("analysis/" + key, rec);
-    state.analysis = { ...state.analysis, [key]: rec };
-    return true;
-  } catch (e) {
-    if (e?.code === "not_granted" || e?.code === "sampling_disabled" || e?.code === "capability_disabled") state.auto.blocked = "consent";
-    if (e?.code === "rate_limited") state.auto.blocked = "rate";
-    return false;
-  } finally { if (state.auto.current === key) state.auto.current = null; renderAll(); }
-}
-async function syncPortal(m) {
-  const text = await searchPortal(m);
-  const found = parseResults(text);
-  if (!found.length && !/Tìm thấy\s+0\s+kết quả/.test(text)) throw new SyncStop("Không đọc được danh sách kết quả trên muasamcong. Anh thử bấm Refresh lại sau ít phút.");
-  const total = +(text.match(/Tìm thấy\s+(\d+)\s+kết quả/)?.[1] || found.length);
-  const { next, fresh, changed, dropped } = mergeFeed(found);
-  const isNew = fresh.filter((f) => !state.deleted[safeId(f.notifyNo)]);
-  // New tenders, plus open tenders in Mới that have neither HSMT files nor any analysis yet.
-  const bare = next.filter((t) => { const k = safeId(t.notifyNo); return !state.deleted[k] && isGenset(t) && !isClosed(t) && stageOf({ ...t, _key: k }) === "new" && !state.hsmt[k]?.files?.length && !state.analysis[k]; });
-  syncStep("Đang đọc liên kết các gói mới...");
-  for (const f of isNew) {
-    const l = await linkOf(m, f.notifyNo);
-    if (!l) continue;
-    const e = { bidCloseDate: f.bidCloseDate, bidForm: l.bidForm, bidMode: l.bidMode, bidName: f.bidName, bidOpenDate: f.bidCloseDate, estimatedPrice: null, field: f.field, id: l.id, investorName: f.investorName, isInternet: l.isInternet, location: f.location, notifyNo: f.notifyNo, notifyVersion: f.notifyVersion, planNo: l.planNo, processApply: l.processApply, publicDate: f.publicDate, sourceUrl: l.sourceUrl, status: "open" };
-    if (f.procuringEntityName) e.procuringEntityName = f.procuringEntityName;
-    next.push(e);
-  }
-  const saveFeed = async () => { const doc = { fetchedAt: new Date().toISOString(), source: "muasamcong", tenders: next }; if (await dbSet("feed/current", doc)) state.feed = doc; renderAll(); };
-  const feedChanged = isNew.length || changed.length || dropped.length;
-  if (feedChanged) await saveFeed();
-  // Full notice details and a first analysis, a few tenders per sync.
-  const todo = [...next.filter((t) => isNew.some((f) => f.notifyNo === t.notifyNo)), ...bare].slice(0, SYNC_DETAIL_MAX);
-  let analysed = 0, detailsChanged = false;
-  for (const [i, t] of todo.entries()) {
-    const key = safeId(t.notifyNo);
-    syncStep(`Đang đọc thông báo mời thầu ${t.notifyNo} (${i + 1}/${todo.length})...`);
-    const n = await noticeOf(m, t);
-    const e = next.find((x) => x.notifyNo === t.notifyNo);
-    if (n.bidOpenDate && e.bidOpenDate !== n.bidOpenDate) { e.bidOpenDate = n.bidOpenDate; detailsChanged = true; }
-    if (n.estimatedPrice && e.estimatedPrice == null) { e.estimatedPrice = n.estimatedPrice; detailsChanged = true; }
-    await dbSet("notice/" + key, { notifyNo: t.notifyNo, info: n.info, hsmtList: n.list, chapters: n.chapters, at: new Date().toISOString() });
-    // Ask the Windows worker for the HSMT files.
-    if (!isGenset(t)) continue; // listed with its notice details only; files and analysis on request
-    if (!reqState(key)) { const rec = { notifyNo: t.notifyNo, sourceUrl: tenderLink(t), bidName: t.bidName || "", requestedAt: new Date().toISOString(), by: "sync" }; if (await dbSet("hsmtreq/" + key, rec)) state.hsmtreq = { ...state.hsmtreq, [key]: rec }; }
-    syncStep(`AI đang phân tích sơ bộ ${t.notifyNo} (${i + 1}/${todo.length})...`);
-    if (await analyzeNotice(key, { ...t, _key: key }, n)) analysed++;
-  }
-  if (detailsChanged) await saveFeed();
-  const parts = [`${found.length}${total > found.length ? "/" + total : ""} gói đang mở`, `${isNew.length} gói mới`];
-  if (changed.length) parts.push(`${changed.length} gói đổi thông tin (${changed.join(", ")})`);
-  if (dropped.length) parts.push(`${dropped.length} gói đã đóng`);
-  if (todo.length) parts.push(`đã đọc thông báo ${todo.length} gói, phân tích sơ bộ ${analysed} gói, đã gửi yêu cầu lấy tệp HSMT`);
-  if (!feedChanged && !detailsChanged) parts.push("danh sách không đổi nên không ghi lại");
-  return `Đồng bộ muasamcong xong: ${parts.join("; ")}.` + (total > found.length ? " Chỉ đọc 50 gói đầu tiên." : "");
-}
-function syncErrorText(e) {
-  if (e instanceof SyncStop) return e.message;
-  const c = e?.code;
-  if (c === "cancelled" || c === "approval_required" || c === "not_in_manifest") return "GenBid Pro chưa được phép dùng trình duyệt của ứng dụng trên máy tính. Bấm Refresh lại và chọn Cho phép khi được hỏi.";
-  if (c === "server_not_connected") return "Trình duyệt của ứng dụng trên máy tính không sẵn sàng. Mở GenBid Pro trong ứng dụng trên máy tính rồi bấm Refresh lại.";
-  if (c === "tool_error") return "Trình duyệt báo lỗi khi đọc muasamcong: " + (e.message || "không rõ") + ".";
-  return "Đồng bộ muasamcong bị gián đoạn (" + (c || e?.message || "lỗi không rõ") + "). Anh bấm Refresh lại sau ít phút.";
-}
+// ---------- Sync ----------
+// The Windows bot (genbid-sync.js) syncs muasamcong; the page only asks for it (syncreq) and shows the answer.
+const syncState = { note: null };
 
 // ---------- Refresh ----------
 // Only the newest tenders: Agent searches muasamcong but touches nothing older than the newest tender already stored.
 async function syncNew() {
-  if (syncState.running || state.readOnly || !state.db) return;
+  if (state.readOnly || !state.db) return;
   const btn = $("#syncNewBtn"); btn.disabled = true;
   try { await saveRequests("syncreq", [{ key: "current", mode: "new" }]); syncState.note = null; }
   catch (e) { syncState.note = { kind: "err", text: "Không gửi được yêu cầu lấy gói mới: " + (e?.message || "lỗi không rõ") }; }
   finally { btn.disabled = false; renderAll(); }
 }
 async function refreshAll() {
-  if (syncState.running) return;
   const btn = $("#refreshBtn"); btn.disabled = true;
   try {
     if (state.db) {
@@ -2847,22 +2200,13 @@ async function refreshAll() {
       await rememberSeen();
     }
     capScan.done.clear();
-    state.auto.blocked = null; state.sample = undefined;
-    const m = await hostBrowser();
-    if (m) {
-      syncState.running = true; syncState.note = null; renderAll();
-      try { syncState.note = { kind: "", text: await syncPortal(m) }; await rememberSeen(); }
-      catch (e) { syncState.note = { kind: e instanceof SyncStop ? "warn" : "err", text: syncErrorText(e) }; }
-      finally { syncState.running = false; syncState.step = ""; }
-    } else {
-      await requestMissingFiles();
-      // No browser here (web version, phone): Agent does the muasamcong sync; the banner says "Đang đồng bộ" until it answers.
-      if (!state.readOnly && state.db) {
-        try { await saveRequests("syncreq", [{ key: "current" }]); syncState.note = null; }
-        catch (e) { syncState.note = { kind: "err", text: "Không gửi được yêu cầu đồng bộ: " + (e?.message || "lỗi không rõ") }; }
-      }
+    await requestMissingFiles();
+    // Agent does the muasamcong sync; the banner says "Đang đồng bộ" until it answers.
+    if (!state.readOnly && state.db) {
+      try { await saveRequests("syncreq", [{ key: "current" }]); syncState.note = null; }
+      catch (e) { syncState.note = { kind: "err", text: "Không gửi được yêu cầu đồng bộ: " + (e?.message || "lỗi không rõ") }; }
     }
-    renderAll(); scanCapacities(); scheduleAuto(300);
+    renderAll(); scanCapacities();
   } catch { toast("Không cập nhật được, hãy thử lại."); }
   finally { btn.disabled = false; }
 }
