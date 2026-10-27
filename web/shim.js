@@ -79,12 +79,12 @@
     notice: "thông báo mời thầu", analysis: "kết quả phân tích", analysisreq: "yêu cầu phân tích", hsmtreq: "yêu cầu tải HSMT", hsmt: "tệp HSMT",
     hsmttext: "nội dung HSMT", syncreq: "yêu cầu đồng bộ muasamcong", translationreq: "yêu cầu tạo YCKT tiếng Anh", translation: "YCKT tiếng Anh",
     comparereq: "yêu cầu đối chiếu HSDT", compare: "kết quả đối chiếu HSDT", hsdtreq: "yêu cầu tạo HSDT tham khảo", hsdt: "HSDT tham khảo",
-    bidders: "nhà thầu tham dự", portalids: "mã gói trên cổng", prefs: "tab / sắp xếp đang xem",
+    bidders: "nhà thầu tham dự", portalids: "mã gói trên cổng",
   };
   const LOG_OP = { insert: "Tạo", update: "Cập nhật", delete: "Xoá" };
   const LOG_STAGE = { new: "Mới", reviewing: "Đang xem", preparing: "Chuẩn bị HSDT", submitted: "Đã nộp", won: "Trúng thầu", lost: "Không trúng", dropped: "Bỏ qua" };
   const LOG_KEY = { stage: "trạng thái", prevStage: "trạng thái trước", note: "ghi chú", bidPrice: "giá dự thầu", bidPriceSrc: "nguồn giá", tender: "thông tin gói",
-    requestedAt: "thời điểm yêu cầu", doneAt: "thời điểm xong", error: "lỗi", status: "tình trạng", files: "tệp", text: "nội dung", updatedAt: "thời điểm sửa", sort: "sắp xếp" };
+    requestedAt: "thời điểm yêu cầu", doneAt: "thời điểm xong", error: "lỗi", status: "tình trạng", files: "tệp", text: "nội dung", updatedAt: "thời điểm sửa" };
   const logTz = { timeZone: "Asia/Ho_Chi_Minh" };
   const logDate = new Intl.DateTimeFormat("vi-VN", { ...logTz, weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" });
   const logTime = new Intl.DateTimeFormat("vi-VN", { ...logTz, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
@@ -104,7 +104,7 @@
       else title = "Gửi " + what;
     }
     const parts = [];
-    if (r.doc_id && r.doc_id !== "current" && r.doc_id !== "view") parts.push(`Mã: ${r.doc_id}`);
+    if (r.doc_id && r.doc_id !== "current") parts.push(`Mã: ${r.doc_id}`);
     if (d.name) parts.push(d.name);
     if (d.stage && (r.action === "insert" || keys.includes("stage"))) parts.push(`Trạng thái: ${d.prevStage && d.prevStage !== d.stage ? `${LOG_STAGE[d.prevStage] || d.prevStage} → ` : ""}${LOG_STAGE[d.stage] || d.stage}`);
     const changed = keys.filter((k) => k !== "stage" && k !== "prevStage" && k !== "updatedAt");
@@ -143,7 +143,6 @@
           <option value="">Mọi hoạt động</option><option value="data">Thay đổi dữ liệu</option><option value="login">Đăng nhập</option>
           <option value="upload">Tải tệp lên</option><option value="ai">Gọi AI</option></select>
         <label>Ngày <input type="date" id="lgDay"></label>
-        <label><input type="checkbox" id="lgQuiet" checked> Ẩn đổi tab / sắp xếp</label>
       </div>
       <div class="ll" id="lgList"></div>
       <div class="lb"><span id="lgInfo">Đang tải...</span><button class="btn sm" id="lgMore" hidden>Tải thêm</button></div>
@@ -173,7 +172,6 @@
       if (kind === "data") q = q.in("action", ["insert", "update", "delete"]);
       else if (kind) q = q.eq("action", kind);
       if (day) { const from = new Date(`${day}T00:00:00+07:00`); q = q.gte("at", from.toISOString()).lt("at", new Date(+from + 864e5).toISOString()); }
-      if ($("#lgQuiet").checked) q = q.or("coll.is.null,coll.neq.prefs");
       $("#lgInfo").textContent = "Đang tải...";
       const { data, error, count } = await q.range(more ? rows.length : 0, (more ? rows.length : 0) + PAGE - 1);
       if (my !== seq) return;
@@ -199,7 +197,7 @@
       $("#lgMore").hidden = rows.length >= total;
     }
     $("#lgMore").onclick = () => load(true);
-    for (const id of ["#lgWho", "#lgKind", "#lgDay", "#lgQuiet"]) $(id).onchange = () => load(false);
+    for (const id of ["#lgWho", "#lgKind", "#lgDay"]) $(id).onchange = () => load(false);
     load(false);
   }
 

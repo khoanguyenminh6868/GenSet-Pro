@@ -76,7 +76,8 @@ create policy activity_log_read on public.activity_log for select to authenticat
 -- No insert/update/delete policies: rows come only from the trigger, log_activity() and the service role.
 
 -- Who made a docs change: the signed-in member's email; for the /api functions (service role) the
--- "x-actor" header they send; otherwise the worker. The bot's heartbeat (botstatus) is not an activity.
+-- "x-actor" header they send; otherwise the worker. The bot's heartbeat (botstatus) and the tab / sort
+-- being viewed (prefs) are not activities.
 create or replace function public.log_docs_change() returns trigger
 language plpgsql security definer set search_path = public as $$
 declare
@@ -88,7 +89,7 @@ declare
   keys text[];
 begin
   r := case when tg_op = 'DELETE' then old else new end;
-  if r.coll = 'botstatus' then return null; end if;
+  if r.coll in ('botstatus', 'prefs') then return null; end if;
   if tg_op = 'UPDATE' and new.data = old.data then return null; end if;
   if tg_op = 'UPDATE' and jsonb_typeof(new.data) = 'object' and jsonb_typeof(old.data) = 'object' then
     select array_agg(k order by k) into keys
