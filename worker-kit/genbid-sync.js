@@ -457,17 +457,35 @@ function compact(s) {
     .join("\n").replace(/\n{3,}/g, "\n\n");
 }
 const pdftotext = () => [path.join(process.env.LOCALAPPDATA || "", "Microsoft", "WinGet", "Links", "pdftotext.exe"), "C:\\Program Files\\Git\\mingw64\\bin\\pdftotext.exe"].find((f) => fs.existsSync(f)) || "pdftotext";
+// Windows' own tar (bsdtar) reads zip; the tar of Git Bash, first on PATH there, does not.
+const TAR = [path.join(process.env.SystemRoot || "C:\\Windows", "System32", "tar.exe")].find((f) => fs.existsSync(f)) || "tar";
+const zipPart = (f, part) => cp.spawnSync(TAR, ["-xOf", f, part], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "";
+const unxml = (s) => s.replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, "&");
+// Every sheet of an .xlsx, one row per line and cells joined by " | ", numbers included (a supplier's datasheet in
+// Excel keeps its figures as numbers, not in sharedStrings; Khoa 2026-10-27).
+function xlsxText(f) {
+  const shared = [...zipPart(f, "xl/sharedStrings.xml").matchAll(/<si>([\s\S]*?)<\/si>/g)].map((m) => unxml(m[1]));
+  const names = [...zipPart(f, "xl/workbook.xml").matchAll(/<sheet\b[^>]*\bname="([^"]*)"/g)].map((m) => unxml(m[1]));
+  const sheets = (cp.spawnSync(TAR, ["-tf", f], { encoding: "utf8" }).stdout || "").split(/\r?\n/)
+    .filter((p) => /^xl\/worksheets\/sheet\d+\.xml$/.test(p)).sort((a, b) => parseInt(a.match(/\d+/)) - parseInt(b.match(/\d+/)));
+  return sheets.map((p, i) => {
+    const rows = [...zipPart(f, p).matchAll(/<row\b[^>]*>([\s\S]*?)<\/row>/g)].map((r) =>
+      [...r[1].matchAll(/<c\b([^>]*?)(?:\/>|>([\s\S]*?)<\/c>)/g)].map(([, attr, body = ""]) => {
+        const t = (attr.match(/\bt="([^"]+)"/) || [])[1], v = (body.match(/<v>([\s\S]*?)<\/v>/) || [])[1];
+        if (t === "s") return shared[Number(v)] ?? "";
+        if (t === "inlineStr") return unxml(body);
+        return v == null ? "" : unxml(v);
+      }).filter((c) => c.trim()).join(" | ")).filter(Boolean);
+    return `### Sheet: ${names[i] || p}\n${rows.join("\n")}`;
+  }).join("\n\n");
+}
 // Text of a local file: PDF (pdftotext), .docx/.xlsx (through tar, which reads zip on Windows 10+), .txt.
 function fileText(f) {
   const ext = path.extname(f).toLowerCase();
   try {
     if (ext === ".pdf") return cp.spawnSync(pdftotext(), ["-layout", "-enc", "UTF-8", f, "-"], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "";
-    if (ext === ".docx" || ext === ".xlsx") {
-      const part = ext === ".docx" ? "word/document.xml" : "xl/sharedStrings.xml";
-      const xml = cp.spawnSync("tar", ["-xOf", f, part], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "";
-      return xml.replace(/<\/w:p>|<\/si>/g, "\n").replace(/<w:tab\/>/g, "\t").replace(/<[^>]+>/g, "")
-        .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, "&");
-    }
+    if (ext === ".docx") return unxml(zipPart(f, "word/document.xml").replace(/<\/w:p>/g, "\n").replace(/<w:tab\/>/g, "\t"));
+    if (ext === ".xlsx") return xlsxText(f);
     if (ext === ".txt" || ext === ".csv") return fs.readFileSync(f, "utf8");
   } catch {}
   return "";
@@ -601,7 +619,7 @@ async function prepOne(kind, key, requestedAt, dir) {
     if (kind === "tlkt") {
       const names = unread.map((f) => path.basename(f));
       if (names.length) input += `\nTệp tài liệu kỹ thuật không có chữ (scan, ảnh, .doc), đã bỏ qua vì chỉ đọc chữ: ${names.join("; ")}.\n`;
-      if (!sub.trim()) fs.writeFileSync(path.join(dir, "error.txt"), `Tài liệu kỹ thuật đề xuất không có chữ đọc được (${names.join("; ") || "không có tệp"}). Chỉ đọc chữ, không đọc hình: hãy gửi bản PDF có chữ hoặc DOCX.`, "utf8");
+      if (!sub.trim()) fs.writeFileSync(path.join(dir, "error.txt"), `Tài liệu kỹ thuật đề xuất không có chữ đọc được (${names.join("; ") || "không có tệp"}). Chỉ đọc chữ, không đọc hình: hãy gửi bản PDF có chữ, DOCX hoặc XLSX.`, "utf8");
     } else if (unread.length) input += `\nTệp HSDT chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   }
   fs.writeFileSync(path.join(dir, "input.md"), input, "utf8");
