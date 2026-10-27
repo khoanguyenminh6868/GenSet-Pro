@@ -474,7 +474,8 @@ async function hsmtText(key) {
 
 // Files the page uploaded to the scratch bucket, downloaded into <hd>, with their text; unread = files with no text.
 async function scratchDocs(files, pasted, hd) {
-  let text = pasted ? `### Nội dung dán vào\n${pasted}\n` : "";
+  // Pasted text (also the text the page read from a file it could not upload) is compacted like a file's.
+  let text = pasted ? `### Nội dung dán vào\n${compact(pasted)}\n` : "";
   const unread = [];
   for (const f of [].concat(files || [])) {
     try {
@@ -554,6 +555,9 @@ async function prepOne(kind, key, requestedAt, dir) {
     // The bid (HSDT) is the company's own confidential document, and a supplier's technical proposal (Đối chiếu TLKT)
     // is the partner's: either stays in this folder, deleted after the round.
     const { text: sub, unread } = await scratchDocs(req.files, req.text, path.join(dir, kind));
+    log(`${KIND_NAME[kind]} ${key}: ${[].concat(req.files || []).length} tệp tải lên, ${(req.text || "").length.toLocaleString("vi-VN")} ký tự chữ gửi kèm`
+      + (ownReq ? `; YCKT rút gọn: ${[].concat(req.reqFiles || []).length} tệp, ${(req.reqText || "").length.toLocaleString("vi-VN")} ký tự` : "")
+      + (req.uploadError ? `; tải tệp lỗi nên gửi chữ: ${req.uploadError}` : ""));
     input += `\n## ${kind === "tlkt" ? "TÀI LIỆU KỸ THUẬT ĐỀ XUẤT CỦA NHÀ CUNG CẤP (technical proposal)" : "HỒ SƠ DỰ THẦU (submission)"}\n${sub || "(không có chữ)"}\n`;
     if (unread.length) input += `\nTệp ${kind === "tlkt" ? "tài liệu kỹ thuật" : "HSDT"} chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   }
