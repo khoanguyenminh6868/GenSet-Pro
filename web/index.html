@@ -2166,7 +2166,8 @@ async function uploadOrText(key, list, pasted, out) {
     if (!r.text?.trim()) throw new Error(`${f.name}: ${why}, và trang không đọc được chữ trong tệp (bản scan hoặc ảnh). Hãy thử lại, hoặc chia nhỏ tệp.`);
     text += `\n\n--- Tệp: ${f.name} ---\n${r.text}`;
   }
-  return { files, text: text.trim() };
+  // uploadError: why the files went as text, kept in the request so the bot's log shows it.
+  return { files, text: text.trim(), uploadError: asText.length ? `${asText.map((f) => f.name).join(", ")}: ${why}` : "" };
 }
 async function runTlkt(key) { if (window.genbidWeb) return runTlkt0(key); busyStart(key, "tlkt"); try { await runTlkt0(key); } finally { busyEnd(key, "tlkt"); } }
 async function runTlkt0(key) {
@@ -2176,10 +2177,10 @@ async function runTlkt0(key) {
   if (window.genbidWeb) {
     btn.disabled = true;
     try {
-      const y = ycktPick?.files.length ? await uploadOrText(key, ycktPick.files, "", out) : { files: [], text: "" };
+      const y = ycktPick?.files.length ? await uploadOrText(key, ycktPick.files, "", out) : { files: [], text: "", uploadError: "" };
       const p = await uploadOrText(key, tlktPick?.files || [], $("#tkText").value, out);
       out.innerHTML = "";
-      await requestWorker("tlktreq", key, { files: p.files, text: p.text, reqFiles: y.files, reqText: y.text }, "đối chiếu TLKT");
+      await requestWorker("tlktreq", key, { files: p.files, text: p.text, reqFiles: y.files, reqText: y.text, uploadError: [y.uploadError, p.uploadError].filter(Boolean).join("; ") }, "đối chiếu TLKT");
     } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
     finally { btn.disabled = false; }
     return;
