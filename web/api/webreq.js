@@ -48,5 +48,6 @@ function compareFields(i, dir) {
   const files = (Array.isArray(i.files) ? i.files : []).slice(0, 50)
     .filter((f) => typeof f?.path === "string" && f.path.startsWith(`${dir}/${i.key}/`) && !f.path.includes(".."))
     .map((f) => ({ path: f.path.slice(0, 600), name: str(f.name, 300), size: Number(f.size) || undefined }));
-  return { files, text: str(i.text, 200000) || "" };
+  // A technical proposal the browser could not upload travels as its text, so it gets more room.
+  return { files, text: str(i.text, dir === "tlkt" ? 800000 : 200000) || "" };
 }

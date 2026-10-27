@@ -2135,10 +2135,24 @@ async function runTlkt0(key) {
   if (window.genbidWeb) {
     btn.disabled = true;
     try {
-      out.innerHTML = progress("Đang tải tài liệu kỹ thuật lên...");
-      const files = tlktPick?.files.length ? await window.genbidScratch(key, tlktPick.files, "tlkt") : [];
+      // Files over the storage limit, or all of them when the upload fails ("Failed to fetch"), travel as the text the
+      // browser reads from them instead; only a scan with no text then stops the request.
+      const all = [...(tlktPick?.files || [])], big = all.filter((f) => f.size > 45 * 1024 * 1024);
+      let files = [], asText = big, why = "tệp lớn hơn 45 MB";
+      if (all.length > big.length) {
+        out.innerHTML = progress("Đang tải tài liệu kỹ thuật lên...");
+        try { files = await window.genbidScratch(key, all.filter((f) => !big.includes(f)), "tlkt"); }
+        catch (e) { asText = all; why = e?.message || "không tải tệp lên được"; }
+      }
+      let text = $("#tkText").value;
+      for (const f of asText) {
+        out.innerHTML = progress(`Đang đọc chữ trong ${f.name}...`);
+        const r = await readFile(f, 0).catch(() => ({ text: "" }));
+        if (!r.text?.trim()) throw new Error(`${f.name}: ${why}, và trang không đọc được chữ trong tệp (bản scan hoặc ảnh). Hãy thử lại, hoặc chia nhỏ tệp.`);
+        text += `\n\n--- Tệp: ${f.name} ---\n${r.text}`;
+      }
       out.innerHTML = "";
-      await requestWorker("tlktreq", key, { files, text: $("#tkText").value }, "đối chiếu TLKT");
+      await requestWorker("tlktreq", key, { files, text: text.trim() }, "đối chiếu TLKT");
     } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
     finally { btn.disabled = false; }
     return;
