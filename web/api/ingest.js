@@ -106,7 +106,8 @@ async function markJoined(rows) {
     if (!tender) continue;
     const price = us.priceAfterDiscount ?? us.bidPrice;
     const now = new Date().toISOString();
-    const data = { ...cur, stage, prevStage: cur.stage || "new", tender, note: cur.note || "", updatedAt: now,
+    // wonAt: the web announces the win under the banner until Khoa closes it (wonSeenAt).
+    const data = { ...cur, stage, prevStage: cur.stage || "new", tender, note: cur.note || "", updatedAt: now, ...(stage === "won" ? { wonAt: now } : {}),
       ...(cur.bidPrice || !price ? {} : { bidPrice: price, bidPriceSrc: r.data.final ? "KQLCNT" : "biên bản mở thầu" }) };
     const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, Prefer: "resolution=merge-duplicates,return=minimal" },
       body: JSON.stringify([{ coll: "tracked", id: r.id, data, updated_at: now }]) });

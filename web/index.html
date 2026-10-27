@@ -97,6 +97,14 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .bnote.warn{color:var(--orange)}.bnote.err{color:var(--red)}
 .bnote span{max-width:min(820px,75%)}
 .bnote .ibtn{width:24px;height:24px;flex:none}
+/* Wins found by Sync: one row each under the banner, until closed. */
+#wonNotes{display:flex;flex-direction:column;gap:8px}
+#wonNotes:empty{display:none}
+.note.won{border-color:var(--mint);background:var(--mint-soft);display:flex;gap:10px;align-items:center}
+.note.won svg{width:18px;height:18px;color:var(--mint);flex:none}
+.note.won .wtext{flex:1;min-width:0}
+.note.won .ibtn{width:24px;height:24px;flex:none}
+.note.won .linkbtn{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--mint);text-decoration:underline;cursor:pointer}
 @media (max-width:640px){.bnote{justify-content:space-between;text-align:left;margin-top:0;padding-top:10px;border-top:1px dashed var(--line)}.bnote span{max-width:none}}
 .syncline .spin{width:10px;height:10px}
 .syncline{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
@@ -330,6 +338,8 @@ details.sec>div{margin-top:10px}
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
   </header>
+
+  <div id="wonNotes" role="status"></div>
 
   <section class="kpis" id="kpis" aria-label="Số liệu chính"></section>
 
@@ -1066,6 +1076,10 @@ function renderTop() {
   const bn = $("#bnote");
   bn.hidden = !sn; bn.className = "bnote" + (sn?.kind ? " " + sn.kind : "");
   bn.innerHTML = sn ? h`<span>${sn.text}</span><button class="ibtn" id="syncNoteX" aria-label="Ẩn thông báo" title="Ẩn">×</button>` : "";
+  // Tenders Sync moved to Trúng thầu (api/ingest.js sets wonAt), under the banner until × (wonSeenAt).
+  const wins = Object.entries(state.tracked).filter(([id, r]) => r.stage === "won" && r.wonAt && !(r.wonSeenAt >= r.wonAt) && !state.deleted[id]);
+  $("#wonNotes").innerHTML = wins.map(([id, r]) => { const t = findTender(id) || r.tender || {};
+    return h`<div class="note won">${raw(STAGE_ICON.win)}<span class="wtext">Chúc mừng! Công ty trúng thầu gói <button class="linkbtn" data-openkey="${id}">${t.notifyNo || id}</button>${t.bidName ? " · " + t.bidName : ""}${r.bidPrice ? " · giá " + fmtVnd(r.bidPrice) : ""} (kết quả LCNT, Agent cập nhật lúc ${fmtDate(r.wonAt)}).</span><button class="ibtn" data-wonx="${id}" aria-label="Đóng thông báo" title="Đóng">×</button></div>`; }).join("");
 }
 
 // ---------- Grid ----------
@@ -2046,6 +2060,13 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
   if (e.target.closest("#syncNewBtn")) { syncNew(); return; }
   if (e.target.id === "syncNoteX") { syncState.note = null; renderTop(); return; }
+  const wx = e.target.closest("[data-wonx]");
+  if (wx) {
+    const id = wx.dataset.wonx, r = state.tracked[id], seen = { ...r, wonSeenAt: new Date().toISOString() };
+    // Read-only viewers can't save: hide it for this page only.
+    if (state.readOnly) { state.tracked = { ...state.tracked, [id]: seen }; renderTop(); } else saveTracked(id, seen);
+    return;
+  }
   const sb = e.target.closest("[data-step]");
   if (sb) { if (sb.dataset.step) setStage(sb.dataset.key, sb.dataset.step); return; }
   const fc = e.target.closest("[data-fcol]");
