@@ -252,6 +252,8 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .rec{font-size:13px}.rec b{color:var(--violet);font-weight:600}
 .suptable{width:100%;border-collapse:collapse;font-size:13px}.suptable th,.suptable td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.suptable tbody tr[data-supopen]{cursor:pointer}.suptable tbody tr[data-supopen]:hover{background:var(--panel2)}
 .supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supcard{padding:12px;display:flex;flex-direction:column;gap:6px;margin:8px 0}.suprow select,.suprow input{min-width:0}
+/* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
+@media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
 .tablewrap table{font-size:13px}
 .tablewrap tr:last-child td{border-bottom:0}
@@ -1869,14 +1871,14 @@ function renderSuppliers() {
 function renderSupList() {
   const list = supAll().filter(supMatches), filtered = supFilter.engine || supFilter.fuel || Number(supFilter.power) > 0;
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
-  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
+  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
     return h`<tr data-supopen="${s.id}"><td><b>${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div></td>
-      <td>${SUP_ROLE[s.role] || s.role}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
-      <td>${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
-      <td class="small">${[...new Set(lines.flatMap((p) => p.engineMakes || []))].join(", ") || "—"}</td>
-      <td><span class="chip ${conf[1]}">${conf[0]}</span></td></tr>`;
+      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
+      <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
+      <td class="small" data-l="Động cơ">${[...new Set(lines.flatMap((p) => p.engineMakes || []))].join(", ") || "—"}</td>
+      <td data-l="Độ tin cậy"><span class="chip ${conf[1]}">${conf[0]}</span></td></tr>`;
   }).join(""))}</tbody></table></div>` : h`<div class="note">Không có nhà cung cấp nào khớp bộ lọc.${raw(Number(supFilter.power) > 0 ? " Lưu ý: chỉ so với dòng máy ghi cùng đơn vị (kVA hoặc kW), không quy đổi." : "")}</div>`;
 }
 function supDetailHtml(s) {
@@ -1892,12 +1894,12 @@ function supDetailHtml(s) {
       <dt>Năm thành lập</dt><dd>${raw(s.founded ? h`${s.founded} ${raw(supRefs(s.foundedSrc))}` : "—")}</dd>
     </dl>
     <h4>Thế mạnh</h4>${raw(list(s.strengths, (x) => h`<li>${x.text} ${raw(supRefs(x.src))}</li>`))}
-    <h4>Dòng máy phân phối</h4>${raw(s.productLines?.length ? h`<div class="tablewrap"><table class="suptable"><thead><tr><th>Loại</th><th>Dòng máy</th><th>Công suất</th><th>Động cơ</th><th>Đầu phát</th><th>Khác</th></tr></thead><tbody>${raw(s.productLines.map((p) => h`<tr>
-      <td>${SUP_KIND[p.kind] || p.kind}</td><td>${p.series} ${raw(supRefs(p.src))}</td>
-      <td>${raw(p.power ? h`<b>${fmtPower(p.power)}</b> ${raw(supRefs(p.power.src))}${raw(p.power.rating === "unspecified" ? '<div class="muted small">nguồn không ghi prime/standby</div>' : "")}` : '<span class="muted">chưa có</span>')}</td>
-      <td class="small">${[...(p.engineMakes || []), ...(p.engineModels?.length ? ["(" + p.engineModels.join(", ") + ")"] : [])].join(" ") || "—"}</td>
-      <td class="small">${(p.alternatorMakes || []).join(", ") || "—"}</td>
-      <td class="small">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div>` : '<div class="muted small">Chưa có dữ liệu.</div>')}
+    <h4>Dòng máy phân phối</h4>${raw(s.productLines?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Loại</th><th>Dòng máy</th><th>Công suất</th><th>Động cơ</th><th>Đầu phát</th><th>Khác</th></tr></thead><tbody>${raw(s.productLines.map((p) => h`<tr>
+      <td data-l="Loại">${SUP_KIND[p.kind] || p.kind}</td><td data-l="Dòng máy">${p.series} ${raw(supRefs(p.src))}</td>
+      <td data-l="Công suất">${raw(p.power ? h`<b>${fmtPower(p.power)}</b> ${raw(supRefs(p.power.src))}${raw(p.power.rating === "unspecified" ? '<div class="muted small">nguồn không ghi prime/standby</div>' : "")}` : '<span class="muted">chưa có</span>')}</td>
+      <td class="small" data-l="Động cơ">${[...(p.engineMakes || []), ...(p.engineModels?.length ? ["(" + p.engineModels.join(", ") + ")"] : [])].join(" ") || "—"}</td>
+      <td class="small" data-l="Đầu phát">${(p.alternatorMakes || []).join(", ") || "—"}</td>
+      <td class="small" data-l="Khác">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div>` : '<div class="muted small">Chưa có dữ liệu.</div>')}
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
     ${raw(s.missing?.length ? h`<h4>Chưa tìm thấy / lưu ý</h4>${raw(list(s.missing, (m) => h`<li>${m}</li>`))}` : "")}
     <h4>Nguồn</h4><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${x.url}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
@@ -1917,7 +1919,7 @@ function supplierTabHtml(t) {
   if (!n) return h`<div class="note">Chưa có dữ liệu nhà cung cấp.</div>`;
   if (!analysisOf(key)?.result && !state.hsmt[key]?.files?.length) return h`<div class="note">Cần tải hồ sơ hoặc Phân tích HSMT của gói này trước, để có yêu cầu kỹ thuật mà so với nhà cung cấp.</div>`;
   return wait + (err ? h`<div class="note warn">Agent chưa gợi ý được: ${err}</div>` : "") + h`<div class="row"><button class="btn primary" id="spRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý top 3 nhà cung cấp"}</button>
-      <span class="muted small" style="flex:1">Chỉ chọn trong ${n} nhà cung cấp đã có trong dữ liệu; mỗi nhận định dẫn nguồn của nhà cung cấp và trích HSMT.</span>
+      <span class="spacer"></span>
       ${raw(isSuperadmin() ? '<button class="btn sm" data-supopen="">Xem danh sách nhà cung cấp</button>' : "")}</div>
     <div id="spOut">${raw(prev?.result ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${prev.candidates ? ` · chọn trong ${prev.candidates} nhà cung cấp` : ""}</div>` + supMatchHtml(prev.result) : "")}</div>`;
 }
