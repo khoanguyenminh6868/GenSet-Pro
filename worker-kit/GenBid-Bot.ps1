@@ -2,7 +2,7 @@
 Bot cục bộ của GenBid trên máy Windows: quét liên tục yêu cầu từ bản web (lấy tệp, Phân tích, Sync, ...).
 Việc quét chỉ là một lệnh HTTP tới /api/requests?kind=all, không gọi Claude, nên không tốn token.
 Từ 2026-10-26 (Khoa): Sync và Lấy tệp chạy bằng code (genbid-sync.js, Playwright), không gọi Claude.
-Chỉ Phân tích, Đối chiếu, Tạo bản tiếng Anh và Tạo HSDT tham khảo gọi Claude Code; dữ liệu được chuẩn bị sẵn
+Chỉ Phân tích, Đối chiếu, Tạo bản tiếng Anh, Tạo HSDT tham khảo và Gợi ý cấu hình (config-bot.mjs của repo) gọi Claude Code; dữ liệu được chuẩn bị sẵn
 (genbid-sync.js prep: bỏ các chương mẫu, gom chữ HSDT), Claude chỉ ghi result.json, rồi bot tự gửi lên web
 (genbid-sync.js finish). Claude chạy với bộ công cụ tối thiểu (không MCP, không skill, không Chrome).
 
@@ -34,6 +34,8 @@ param(
     # khi bật lại (bù cho mốc gần nhất đã qua trong ngày).
     [string[]]$ScheduleDays = @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'),
     [string[]]$ScheduleTimes = @('10:00', '15:00'),
+    # Gợi ý cấu hình (tab "Cấu hình gợi ý", Khoa 2026-10-28): bản sao repo GenSet-Pro (nhánh main) trên máy này.
+    [string]$RepoDir = 'C:\Projects\GenSet Pro\GenSet-Pro',
     [switch]$Once
 )
 
@@ -225,6 +227,24 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
     return Start-Run $claude $cliArgs $promptFile $sigs $out
 }
 
+# "Gợi ý" ở tab Cấu hình gợi ý: suppliers\config-bot.mjs của repo GenSet-Pro tự đọc yêu cầu, gọi Claude (Opus, có tìm
+# web), kiểm nguồn bằng code và gửi kết quả hoặc lỗi lên web. Bot chỉ cập nhật repo rồi chạy nó.
+function Invoke-Config {
+    $cfgJs = Join-Path $RepoDir 'suppliers\config-bot.mjs'
+    if (-not (Test-Path $cfgJs)) { if (-not $script:ConfigWarned) { Log "Chưa có repo GenSet-Pro ở $RepoDir, bỏ qua Gợi ý cấu hình."; $script:ConfigWarned = 1 }; return }
+    $claude = Find-Claude; $node = Find-Node
+    if (-not $claude -or -not $node) { Log 'Thiếu Claude Code hoặc Node.js cho Gợi ý cấu hình.'; return }
+    $eap = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+    try { & git -C $RepoDir pull -q --ff-only origin main 2>&1 | ForEach-Object { Log "  git: $_" } } finally { $ErrorActionPreference = $eap }
+    if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
+    $env:GENBID_CLAUDE = $claude; $env:GENBID_INGEST_TOKEN_FILE = $IngestTokenFile
+    $out = Join-Path $LogDir "config-$(Get-Date -Format 'yyyyMMdd-HHmmss').log"
+    Log "Gợi ý cấu hình (Claude $DeepModel, có tìm web)  (log: $out)"
+    try { [void](Start-Run $node @("`"$cfgJs`"", 'run') $null @('config') $out) }
+    finally { Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:GENBID_CLAUDE, Env:GENBID_INGEST_TOKEN_FILE -ErrorAction SilentlyContinue }
+    (Get-Content $out -Encoding UTF8 -ErrorAction SilentlyContinue) | Where-Object { $_ } | ForEach-Object { Log "  $_" }
+}
+
 # Chờ một lượt worker kết thúc rồi đọc kết quả: trả lý do để báo về web cho các yêu cầu chưa được trả lời.
 # $p có thể là tiến trình do lần chạy bot trước khởi động (khi đó không đọc được mã thoát, chỉ dựa vào log).
 function Wait-Worker($p, [string]$out) {
@@ -303,7 +323,10 @@ try {
             elseif (-not (Test-ClaudeLogin) -and -not (Test-Path $ClaudeTokenFile)) { if (-not $warned.claude) { Log 'Thiếu .claude-bot-token (chạy `claude setup-token`), chờ.'; $warned.claude = 1 } }
             else {
                 $warned = @{}
-                $reqs = Get-Requests (Get-Pending)
+                $pend = Get-Pending
+                # Gợi ý cấu hình chạy riêng (config-bot.mjs tự trả lời web), khi không có lượt nào khác đang chạy.
+                if (@($pend.config | Where-Object { $_ }).Count -and -not (Test-WorkerRunning) -and -not (Test-Path $RunFile)) { Invoke-Config; $pend = Get-Pending }
+                $reqs = Get-Requests $pend
                 $sigs = @($reqs.Keys)
                 $state = Read-Json $StateFile ([pscustomobject]@{})
                 $handed = @{}; $state.PSObject.Properties | ForEach-Object { $handed[$_.Name] = $_.Value }
