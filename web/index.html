@@ -1845,8 +1845,7 @@ function renderSuppliers() {
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu nhà cung cấp.</div>`; return; }
   const engines = [...new Set(all.flatMap((s) => (s.productLines || []).flatMap((p) => p.engineMakes || [])).map((m) => m.replace(/\s*\(.*\)$/, "")))].sort();
   const f = supFilter, opt = (v, l, cur) => h`<option value="${v}" ${v === cur ? "selected" : ""}>${l}</option>`;
-  body.innerHTML = h`<div class="note">Dữ liệu chỉ lấy từ nguồn công khai, mỗi thông tin có số [n] dẫn tới nguồn và câu trích nguyên văn. Thông tin không tìm thấy được ghi ở mục "Chưa tìm thấy", không suy đoán. Giai đoạn này: nhà cung cấp Trung Quốc.</div>
-    <div class="row suprow">
+  body.innerHTML = h`<div class="row suprow">
       <input type="search" id="supQ" placeholder="Tìm tên, thương hiệu, tỉnh..." value="${f.q}" style="flex:1;min-width:180px">
       <select id="supRole">${raw(opt("", "Mọi vai trò", f.role) + Object.entries(SUP_ROLE).map(([k, l]) => opt(k, l, f.role)).join(""))}</select>
       <select id="supEngine">${raw(opt("", "Mọi hãng động cơ", f.engine) + engines.map((m) => opt(m, m, f.engine)).join(""))}</select>
