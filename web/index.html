@@ -307,13 +307,13 @@ details.sec>div{margin-top:10px}
   table.grid thead,table.grid tbody{display:block}
   table.grid thead tr{display:flex;flex-wrap:wrap;gap:6px 14px;padding:10px 12px;border-bottom:1px solid var(--line)}
   table.grid th{display:block;padding:0;border:0;background:none}
-  table.grid tbody tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:12px;border-bottom:2px solid var(--rule)}
+  table.grid tbody tr{display:grid;grid-template-columns:minmax(0,1fr);gap:6px 12px;padding:12px;border-bottom:2px solid var(--rule)}
   table.grid tbody td{display:block;padding:0;border:0;min-width:0!important;max-width:none!important;background:none!important}
   table.grid tbody tr:hover,table.grid tbody tr.open{background:var(--panel2)}
   table.grid td.c-name{grid-column:1/-1;grid-row:1;font-size:14px}
   table.grid td.c-no{grid-column:1;grid-row:2}
-  table.grid td.c-stage{grid-column:2;grid-row:2;text-align:right}
-  table.grid td.c-stage .stepbtns,table.grid td.c-stage .aline{justify-content:flex-end}
+  table.grid td.c-stage{grid-column:1;grid-row:3;text-align:left}
+  table.grid td.c-stage .stepbtns,table.grid td.c-stage .aline{justify-content:flex-start}
   table.grid td.c-offerer,table.grid td.c-cap,table.grid td.c-loc{grid-column:1/-1}
   table.grid td.c-offerer::before,table.grid td.c-cap::before,table.grid td.c-loc::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
   table.grid td.c-cap .src{display:inline;margin-left:6px}
@@ -337,7 +337,7 @@ details.sec>div{margin-top:10px}
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="syncNewBtn" aria-label="Chỉ lấy gói mới" title="Chỉ lấy các gói mới nhất từ muasamcong (so với gói mới nhất trong hệ thống), không kiểm tra hay cập nhật gói cũ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin">Nhà cung cấp</button></div>
+        <button class="btn sm" id="supBtn" hidden title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin">Nhà cung cấp</button></div>
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
   </header>
@@ -875,6 +875,7 @@ async function initDb() {
   subscribe("tlkt", "tlkt", () => setTimeout(checkAutoPdf, 0));
   subscribe("tlktreq", "tlktreq");
   subscribe("supplier", "supplier", () => setTimeout(renderSuppliers, 0));
+  $("#supBtn").hidden = !isSuperadmin();
   subscribe("suppliermatch", "suppliermatch");
   subscribe("supplierreq", "supplierreq");
 }
@@ -1903,6 +1904,8 @@ function supDetailHtml(s) {
       <ul>${raw((Array.isArray(x.quote) ? x.quote : [x.quote]).map((q) => h`<li class="small"><q>${q}</q></li>`).join(""))}</ul></li>`).join(""))}</ol>
     <div class="muted small">Kiểm tra lúc ${s.checkedAt || "—"}.</div>`;
 }
+// The supplier list (button "Nhà cung cấp") is for superadmin only (Khoa, 2026-10-28); shim.js sets the role.
+const isSuperadmin = () => window.genbidRole === "superadmin";
 // Tab "Nhà cung cấp" of a tender: the Windows bot asks Opus for the (up to) 3 suppliers that fit the tender best, choosing
 // only among supplier/*, then checks every quote in code before posting suppliermatch/<key> (supplier-prompt.md).
 const SUP_FIT = { good: ["Phù hợp", "ok"], partial: ["Phù hợp một phần", "warn"] };
@@ -1915,7 +1918,7 @@ function supplierTabHtml(t) {
   if (!analysisOf(key)?.result && !state.hsmt[key]?.files?.length) return h`<div class="note">Cần tải hồ sơ hoặc Phân tích HSMT của gói này trước, để có yêu cầu kỹ thuật mà so với nhà cung cấp.</div>`;
   return wait + (err ? h`<div class="note warn">Agent chưa gợi ý được: ${err}</div>` : "") + h`<div class="row"><button class="btn primary" id="spRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý top 3 nhà cung cấp"}</button>
       <span class="muted small" style="flex:1">Chỉ chọn trong ${n} nhà cung cấp đã có trong dữ liệu; mỗi nhận định dẫn nguồn của nhà cung cấp và trích HSMT.</span>
-      <button class="btn sm" data-supopen="">Xem danh sách nhà cung cấp</button></div>
+      ${raw(isSuperadmin() ? '<button class="btn sm" data-supopen="">Xem danh sách nhà cung cấp</button>' : "")}</div>
     <div id="spOut">${raw(prev?.result ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${prev.candidates ? ` · chọn trong ${prev.candidates} nhà cung cấp` : ""}</div>` + supMatchHtml(prev.result) : "")}</div>`;
 }
 function supMatchHtml(r) {
