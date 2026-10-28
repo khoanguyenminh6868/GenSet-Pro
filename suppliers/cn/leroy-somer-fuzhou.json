@@ -1,0 +1,30 @@
+{
+  "id": "leroy-somer-fuzhou",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": { "en": "Leroy-Somer Electro-Technique Fuzhou Co. Ltd. (Nidec Leroy-Somer)", "zh": null, "brands": ["Leroy-Somer"] },
+  "website": "https://www.leroy-somer.com/",
+  "hq": { "province": "Fujian", "city": "Fuzhou" },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    { "text": "Theo thông cáo của Nidec Leroy-Somer: sản xuất đầu phát tại Trung Quốc với dải 10 đến 18000 kVA (70 kg đến 35 tấn mỗi máy)", "src": [1] },
+    { "text": "Thương hiệu Leroy-Somer (Pháp, thuộc Nidec); nhà máy tại Phúc Châu sản xuất đầu phát. Lưu ý HSMT yêu cầu xuất xứ G7: nhà máy ở Trung Quốc thì C/O là Trung Quốc", "src": [1] }
+  ],
+  "productLines": [
+    { "kind": "alternator", "series": "Leroy-Somer alternators (sản xuất tại Trung Quốc)", "fuel": null, "engineMakes": [], "engineModels": [], "alternatorMakes": ["Leroy-Somer"],
+      "power": { "min": 10, "max": 18000, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+  ],
+  "certifications": [],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Nguồn là thông cáo chống hàng giả, không phải catalogue: chưa có danh sách model (TAL, LSA...) sản xuất tại Phúc Châu", "Chưa có năm thành lập nhà máy Phúc Châu"],
+  "sources": [
+    { "n": 1, "url": "https://www.leroy-somer.com/downloads/Nidec-Leroy-Somer-against-counterfeiting-PR.pdf", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["Nidec Leroy-Somer currently has the most comprehensive manufacturing of alternators in China with a range of 10 to 18000kVA (70kg to 35tons per unit).", "Leroy-Somer Electro-Technique Fuzhou Co. Ltd."], "file": "sources/leroy-somer-fuzhou/1.md" }
+  ],
+  "confidence": "high",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

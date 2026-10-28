@@ -1,0 +1,33 @@
+{
+  "id": "hosem-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": { "en": "Fuzhou Hosem Power Co., Ltd.", "zh": null, "brands": ["Hosem"] },
+  "website": "https://www.industrialgeneratorset.com/",
+  "hq": { "province": "Fujian", "city": "Fuzhou" },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    { "text": "Theo hãng: tổ máy thương hiệu Hosem từ 3 kVA đến 3000 kVA, 50 Hz hoặc 60 Hz", "src": [1] },
+    { "text": "Nhiều lựa chọn động cơ (Cummins, Deutz, Perkins, Volvo, Fawde, Yuchai, Ricardo) và đầu phát (Stamford, Leroy Somer, Marathon, Mecc Alte, Hosem)", "src": [2] },
+    { "text": "Có dây chuyền tự làm vỏ cách âm (máy chấn tôn cho canopy)", "src": [2] }
+  ],
+  "productLines": [
+    { "kind": "genset", "series": "Hosem diesel generator set", "fuel": "diesel", "engineMakes": ["Cummins", "Deutz", "Perkins", "Volvo", "Fawde", "Yuchai", "Ricardo"], "engineModels": [], "alternatorMakes": ["Stamford", "Leroy Somer", "Marathon", "Mecc Alte", "Hosem"],
+      "power": { "min": 3, "max": 3000, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz", "60Hz"], "voltage": [], "types": ["open", "silent"], "emission": [], "standards": [], "src": [1, 2] }
+  ],
+  "certifications": [],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Không tìm thấy năm thành lập", "Không tìm thấy chứng chỉ ISO/CE trên trang đã đọc", "Không ghi prime/standby cho dải công suất"],
+  "sources": [
+    { "n": 1, "url": "https://www.industrialgeneratorset.com/", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["The Hosem brand generator set output range from 3kVA to 3000kVA with frequency at 50Hz or 60Hz"], "file": "sources/hosem-power/1.md" },
+    { "n": 2, "url": "https://www.industrialgeneratorset.com/aboutus.html", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["Fuzhou Hosem Power Co., Ltd have a complete production line of produce the diesel generator set", "The diesel generator powered by Cummins diesel engine, Deutz diesel engine, Perkins diesel engine, Volvo diesel engine, Fawde diesel engine, Yuchai diesel engine, Ricardo diesel engine and other famous brand diesel engine, Coupled with Stamford alternator, Leroy Somer alternator, Marathon alternator, Mecc Alte alternator and Hosem brand alternator for optional.", "3. Bending machinery for produce the soundproof canopy of diesel generator"], "file": "sources/hosem-power/2.md" }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

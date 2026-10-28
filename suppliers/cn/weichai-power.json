@@ -1,0 +1,49 @@
+{
+  "id": "weichai-power",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": { "en": "Weichai Power Co., Ltd.", "zh": "潍柴动力股份有限公司", "brands": ["Weichai", "Baudouin"] },
+  "website": "https://en.weichaipower.com/",
+  "hq": { "province": "Shandong", "city": "Weifang" },
+  "founded": 2002,
+  "foundedSrc": [5],
+  "relatedIds": ["weichai-heavy-machinery"],
+  "strengths": [
+    { "text": "Tự sản xuất động cơ và bán tổ máy phát điện trọn bộ trên đất liền; các series công bố trên website từ 15 kVA đến 1650 kVA", "src": [1, 3] },
+    { "text": "Sở hữu thương hiệu Baudouin; có dòng động cơ phát điện Baudouin 4M12, 6M13 đạt EU Stage V", "src": [4, 5] },
+    { "text": "Theo hãng tự giới thiệu: sản phẩm xuất khẩu tới hơn 180 quốc gia và vùng lãnh thổ", "src": [5] }
+  ],
+  "productLines": [
+    { "kind": "genset", "series": "Standard Land-based Generator Set (Non-road Stage III)", "fuel": "diesel", "engineMakes": ["Weichai"], "engineModels": [], "alternatorMakes": [],
+      "power": { "min": 15, "max": 550, "unit": "kVA", "rating": "unspecified", "src": [3] }, "frequency": [], "voltage": [], "types": [], "emission": ["Non-road Stage III"], "standards": [], "src": [3] },
+    { "kind": "genset", "series": "12M33 Standard Land-based Generator Set", "fuel": "diesel", "engineMakes": ["Weichai"], "engineModels": ["12M33"], "alternatorMakes": [],
+      "power": { "min": 1125, "max": 1650, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": ["open"], "emission": ["Non-Road Emission Exempt"], "standards": [], "src": [1] },
+    { "kind": "engine", "series": "Baudouin 4M12 / 6M13 EU Stage V Power Generation Engine", "fuel": "diesel", "engineMakes": ["Baudouin"], "engineModels": ["4M12", "6M13"], "alternatorMakes": [],
+      "power": null, "frequency": [], "voltage": [], "types": [], "emission": ["EU Stage V"], "standards": [], "src": [4] }
+  ],
+  "certifications": [],
+  "vietnam": {
+    "distributors": [ { "name": "Weichai Việt Nam (VP Hà Nội: Charm Vit Tower, 117 Trần Duy Hưng; VP TP.HCM: Đại Minh Convention Tower, 77 Hoàng Văn Thái, Q.7)", "website": "https://weichai.com.vn/", "src": [7] } ],
+    "note": "Website weichai.com.vn tự giới thiệu là Weichai Vietnam; chưa thấy website Weichai Trung Quốc xác nhận đây là đơn vị của hãng. Trang này ghi tổ máy Weichai theo ISO 8528 và GB/T2820, dải 10-4.300 kW, có ISO9001, CE, TLC."
+  },
+  "exportMarkets": [],
+  "missing": ["Tên series không ghi công suất là prime hay standby", "Chưa có xác nhận từ website Weichai Trung Quốc về văn phòng/nhà phân phối tại Việt Nam", "Trang Baudouin đã đọc không ghi dải công suất"],
+  "sources": [
+    { "n": 1, "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=e2520cbec2084e52a43c9108a3416414&columnId=d700eb428cb44ef69ed6bacffa790cb7", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["1125 kVA-1650 kVA Standard Land-based Generator Set Series", "The 12M33 series diesel generator set is a new generation of high power density generator sets independently developed by Weichai"], "file": "sources/weichai-power/1.md" },
+    { "n": 3, "url": "https://en.weichaipower.com/subsidiary/weichaipower/en/products/energy-power/generator-set/diesel/non-road-stageiii/index.html", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["15 kVA-41 kVA Standard Land-based Generator Set Series", "400 kVA – 550 kVA Standard Land-based Generator Set Series"], "file": "sources/weichai-power/3.md" },
+    { "n": 4, "url": "https://en.weichaipower.com/subsidiary/weichaipower/en/products/energy-power/power-generation/baudouin/diesel/index.html", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["4M12 EU Stage V Series Power Generation Engine", "6M13 EU Stage V Series Power Generation Engine"], "file": "sources/weichai-power/4.md" },
+    { "n": 5, "url": "https://en.weichaipower.com/subsidiary/weichaipower/en/about-us/company-profile/index.html", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["Weichai Power Co., Ltd. was founded in 2002 by the Weifang Diesel Engine Factory", "products are exported to more than 180 countries and regions", "Torch spark plug, KION, LHY Powertrain, Dematic, PSI, Baud"], "file": "sources/weichai-power/5.md" },
+    { "n": 6, "url": "https://weichai.com.vn/en/generator-set", "accessedAt": "2026-10-28", "tier": "C",
+      "quote": ["It is manufactured and tested according to ISO 8528 and GB/T2820 standards, with a power range of 10-4,300kW. Strictly in compliance with ISO9001 Quality Control System and European CE Safety Certification Standard, we have obtained TLC certificate."], "file": "sources/weichai-power/6.md" },
+    { "n": 7, "url": "https://weichai.com.vn/en", "accessedAt": "2026-10-28", "tier": "C",
+      "quote": ["WEICHAI VIỆT NAM", "Văn phòng Hà Nội: P1703, tầng 17, Charm Vit Tower, 117 Trần Duy Hưng, Quận Cầu Giấy, Hà Nội", "Văn phòng Hồ Chí Minh: P702, Đại Minh Convention Tower, 77 Hoàng Văn Thái, Phường Tân Phú, Quận 7, Thành phố Hồ Chí Minh", "Hotline: 1800 6333"], "file": "sources/weichai-power/7.md" }
+  ],
+  "confidence": "high",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "perkins-wuxi",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": { "en": "Perkins Small Engines (Wuxi) Co., Ltd.", "zh": null, "brands": ["Perkins"] },
+  "website": "https://www.perkins.com/",
+  "hq": { "province": "Jiangsu", "city": "Wuxi" },
+  "founded": 2007,
+  "foundedSrc": [1],
+  "relatedIds": [],
+  "strengths": [
+    { "text": "Nhà máy Perkins (thuộc Caterpillar) tại Vô Tích, sản xuất động cơ 400 Series và 1100 Series; áp dụng Caterpillar Production System", "src": [1] },
+    { "text": "Động cơ từ Vô Tích cung cấp cho ngành phát điện ở Trung Quốc và châu Á - Thái Bình Dương", "src": [1] },
+    { "text": "Lưu ý xuất xứ: động cơ Perkins 400/1100 Series có thể sản xuất tại Vô Tích (C/O Trung Quốc), cần kiểm tra C/O khi HSMT yêu cầu G7", "src": [1] }
+  ],
+  "productLines": [
+    { "kind": "engine", "series": "Perkins 400 Series (2, 3, 4 xi-lanh) và 1100 Series", "fuel": "diesel", "engineMakes": ["Perkins"], "engineModels": ["400 Series", "1100 Series"], "alternatorMakes": [],
+      "power": null, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+  ],
+  "certifications": [],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Trang nhà máy không ghi dải công suất", "Chưa có danh sách model động cơ phát điện sản xuất tại Vô Tích"],
+  "sources": [
+    { "n": 1, "url": "https://www.perkins.com/en_GB/company/locations/wuxi.html", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["Perkins Small Engines (Wuxi) Co., Ltd.", "Production : 400 and 1100 Series", "The facility at Wuxi, near Shanghai in China was established in 2007", "Engines from Wuxi go to machine manufacturers and end-users in the construction, agricultural, materials handling and electric power sectors across China and the Asia-Pacific region", "The Caterpillar Production System guarantees consistent quality and reliability", "Since 2008 Wuxi has supplied customers across China and the wider Asia region with the compact 400 Series of 2, 3 and 4 cylinder engines."], "file": "sources/perkins-wuxi/1.md" }
+  ],
+  "confidence": "high",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "molong-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": { "en": "Shandong Molong Power Co., Ltd", "zh": null, "brands": ["Molong"] },
+  "website": "https://www.molongpower.com/",
+  "hq": { "province": "Shandong", "city": null },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    { "text": "Theo hãng: tổ máy 15 kW–3.000 kW với động cơ Cummins (CCEC/DCEC), Weichai, Volvo Penta, MTU, Perkins, Yuchai, SDEC", "src": [1] },
+    { "text": "Theo hãng: vỏ giảm âm thép sơn tĩnh điện đạt chống ăn mòn C4/C5, thử phun muối 1.500 giờ; có container 20FT/40FT", "src": [1] },
+    { "text": "Có giải pháp microgrid / PV-diesel-BESS", "src": [1] }
+  ],
+  "productLines": [
+    { "kind": "genset", "series": "Diesel generator portfolio", "fuel": "diesel", "engineMakes": ["Cummins (CCEC)", "Cummins (DCEC)", "Weichai", "Volvo Penta", "MTU", "Perkins", "Yuchai", "SDEC"], "engineModels": [], "alternatorMakes": [],
+      "power": { "min": 15, "max": 3000, "unit": "kW", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": ["silent", "container", "trailer"], "emission": [], "standards": [], "src": [1] }
+  ],
+  "certifications": [],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Câu '190 countries ... 500 distributors and 5,200 dealers' trên trang có vẻ nói về mạng lưới hãng động cơ, không ghi vào thế mạnh", "Không tìm thấy năm thành lập, chứng chỉ cụ thể"],
+  "sources": [
+    { "n": 1, "url": "https://www.molongpower.com/", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["featuring engines from world-renowned manufacturers including Cummins (CCEC/DCEC), Weichai, Volvo Penta, MTU, Perkins, Yuchai, and SDEC – delivers proven performance across every application from 15 kW to 3,000 kW.", "meeting C4 and C5 anti-corrosion standards, validated by 1,500-hour salt spray testing", "Container Generator 20FT, 40FT ISO Standard Container", "factory direct PV diesel BESS quote", "Copyright © 2026 Shandong Molong Power Co., Ltd All rights reserved."], "file": "sources/molong-power/1.md" }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

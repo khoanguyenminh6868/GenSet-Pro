@@ -1,0 +1,33 @@
+{
+  "id": "dcec",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": { "en": "Dongfeng Cummins Engine Co., Ltd. (DCEC)", "zh": "东风康明斯发动机有限公司", "brands": ["Cummins"] },
+  "website": "https://www.dcec.com.cn/",
+  "hq": { "province": "Hubei", "city": "Xiangyang" },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    { "text": "Liên doanh 50/50 giữa Cummins Inc. và Dongfeng; sản xuất động cơ do Cummins thiết kế", "src": [1, 2] },
+    { "text": "Động cơ dùng cho phát điện: dung tích 3,9–13 L, công suất 24–563 kW", "src": [1] },
+    { "text": "Hơn 2.000 điểm dịch vụ ủy quyền DCEC tại Trung Quốc; đại lý Cummins ở hơn 190 quốc gia và vùng lãnh thổ", "src": [2] }
+  ],
+  "productLines": [
+    { "kind": "engine", "series": "发电用发动机 (động cơ cho máy phát điện)", "fuel": "diesel", "engineMakes": ["Cummins"], "engineModels": [], "alternatorMakes": [],
+      "power": { "min": 24, "max": 563, "unit": "kW", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+  ],
+  "certifications": [],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Trang đã đọc không ghi năm thành lập liên doanh (chỉ ghi năm 1986 ký giấy phép B-series)", "Chưa có danh sách model động cơ phát điện từ trang chính hãng"],
+  "sources": [
+    { "n": 1, "url": "https://www.dcec.com.cn/", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["东风康明斯发动机有限公司是由东风汽车股份有限公司和康明斯（中国）投资有限公司以50:50的比例建立的合资公司", "发电用发动机 排量：3.9-13L 功率覆盖：24-563kW", "中国 湖北 襄阳"], "file": "sources/dcec/1.md" },
+    { "n": 2, "url": "https://en.dcec.com.cn/", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["Dongfeng Cummins Engine Co., Ltd.(DCEC) is a 50/50 joint venture between Cummins Inc. and Dongfeng Automobile Co.,Ltd.", "With more than 2,000 DCEC authorized service outlets across the country, and overseas Cummins dealers in more than 190 countries and regions"], "file": "sources/dcec/2.md" }
+  ],
+  "confidence": "high",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}
