@@ -27,7 +27,11 @@ Trang web dựng danh mục ngay trên trình duyệt từ `specTables` của m�
 - hãng chỉ ghi khi nguồn ghi rõ (ô trong dòng > tiêu đề cột hoặc chính hãng sản xuất > tên trang), không đoán từ tên model;
 - công suất là của tổ máy dùng model đó: cặp số có tỉ lệ 1,15–1,35 là kVA / kW; hai cặp thì cặp lớn là dự phòng, cặp nhỏ là liên tục; không quy đổi kW ↔ kVA.
 
-Tab "Cấu hình gợi ý" của gói thầu dùng chính danh mục này để xếp top 3 động cơ và top 3 đầu phát (`suggest` trong `web/catalog.js`).
+## Tab "Cấu hình gợi ý"
+Chỉ có nút **Gợi ý**: trang ghi `configreq/<TBMT>`, máy Windows trả lời `configmatch/<TBMT>` (Khoa, 2026-10-28).
+- `config-bot.mjs run`: với mỗi yêu cầu, `prep` chuẩn bị thư mục (văn bản HSMT, phần kỹ thuật, các model trong danh mục quanh công suất của gói), gọi agent `claude -p` (Opus, có WebSearch) theo `config-prompt.md`: chọn trong danh mục trước, không có mới tìm trên internet (trang dùng phải lưu bằng lệnh `save`), không có nữa thì trả `configs: []` kèm lời nhắn.
+- `check` kiểm bằng code trước khi đăng: câu trích HSMT phải có nguyên văn trong HSMT; model, dòng bảng, câu trích và mọi số của thông số chào phải có nguyên văn trong dòng bảng của danh mục hoặc trang web đã lưu. Không khớp thì đánh dấu ⚠ và "Đạt" thành "Chưa rõ".
+- Cài trên máy Windows (một lần): trong vòng lặp của `GenBid-Bot.ps1`, khi `/api/requests?kind=all` trả `config` khác rỗng thì chạy `node "<repo>\suppliers\config-bot.mjs" run` (cần `claude` CLI, Node 20+, `pdftotext`; token đọc từ `.genbid-ingest-token`, đổi bằng `GENBID_INGEST_TOKEN_FILE`).
 - `catalog-stats.mjs [--json out.json] [--samples]`: dựng danh mục từ `cn/*.json` như trang web và in số liệu.
 - `node --test suppliers/*.test.mjs`: kiểm tra bộ đọc danh mục (chạy trong CI cùng `verify.mjs`).
 
