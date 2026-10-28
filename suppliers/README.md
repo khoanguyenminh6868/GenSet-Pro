@@ -25,7 +25,8 @@ Không thu thập nhà phân phối tại Việt Nam (Khoa, 2026-10-28).
 Trang web dựng danh mục ngay trên trình duyệt từ `specTables` của mọi bản ghi (`web/catalog.js`), không có dữ liệu riêng:
 - model động cơ / đầu phát là ô chữ-số trong dòng bảng có cột động cơ / đầu phát; mỗi model giữ mọi dòng nguyên văn ghi nó, kèm nguồn `[n]`;
 - hãng chỉ ghi khi nguồn ghi rõ (ô trong dòng > tiêu đề cột hoặc chính hãng sản xuất > tên trang), không đoán từ tên model;
-- công suất là của tổ máy dùng model đó: cặp số có tỉ lệ 1,15–1,35 là kVA / kW; hai cặp thì cặp lớn là dự phòng, cặp nhỏ là liên tục; không quy đổi kW ↔ kVA.
+- công suất là của tổ máy dùng model đó: cặp số có tỉ lệ 1,15–1,35 là kVA / kW; hai cặp thì cặp lớn là dự phòng, cặp nhỏ là liên tục; không quy đổi kW ↔ kVA;
+- thông số khác (số xi lanh, dung tích, đường kính × hành trình, tốc độ, điều tốc, khí thải; hiệu suất, cấp cách điện, IP của đầu phát; tiêu hao nhiên liệu, độ ồn, kích thước, khối lượng, bình nhiên liệu của tổ máy...) đọc theo nhãn cột / nhãn dòng, nhãn và giá trị chép nguyên văn. Chỉ dùng khi tiêu đề khớp số ô của dòng; một giá trị sai dạng (ví dụ "105×118" ở cột điều tốc) thì bỏ cả dòng vì cột đã lệch. Đầu phát không hiện thông số động cơ và ngược lại.
 
 ## Tab "Cấu hình gợi ý"
 Chỉ có nút **Gợi ý**: trang ghi `configreq/<TBMT>`, máy Windows trả lời `configmatch/<TBMT>` (Khoa, 2026-10-28).

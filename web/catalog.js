@@ -40,6 +40,59 @@
   const PRIME = /prime|\bprp\b|continuous|\bcop\b|常用|主用|liên tục/i;
   const STANDBY = /standby|stand-by|\besp\b|\bltp\b|backup|备用|dự phòng|max(imum)?\s*power/i;
 
+  // Other figures a row gives, read by the label of its column or line. Label and value are kept as the source
+  // writes them; the key only groups them. scope: what the figure is about (engine, alternator, or the genset).
+  // Order matters: the first label that fits wins ("fuel tank" before "fuel", "cylinder bore" before "cylinder").
+  // Each entry: key, scope, Vietnamese name, label pattern, labels to leave out, and the shape a value must have
+  // (a value of another shape means the column did not line up with its title).
+  const N = /\d/, TXT = /[a-z一-鿿]{3}/i, BY = /\d\s*[*×xX/]\s*\d/;
+  const SPECS = [
+    ["tank", "genset", "Bình nhiên liệu", /fuel\s*tank|fuel\s*capacity|tank\s*capacity|油箱/i, null, N],
+    ["fuel", "genset", "Tiêu hao nhiên liệu", /fuel|consumption|cons\.|\bcons\b|油耗|耗油|燃油|燃气消耗|tiêu hao/i, /lub|oil\s*consum/i, /^[≤<~]?\s*\d/],
+    ["noise", "genset", "Độ ồn", /noise|sound\s*(level|pressure)|噪音|噪声|độ ồn|\bdb\(?a?\)?\b/i, null, /(^|\D)([4-9]\d|1[01]\d)(?!\d)/],
+    ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*w\s*[x×*]\s*h|尺寸|kích thước/i, null, BY],
+    ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng/i, null, /^[≈~]?\s*\d/],
+    ["runtime", "genset", "Chạy liên tục", /continuous\s*(run|work)|run(ning)?\s*time/i, null, N],
+    ["bore", "engine", "Đường kính × hành trình", /bore|stroke|storke|strock|cylinder\s*diameter|缸径|行程/i, null, /^\d+(\.\d+)?(\s*(mm)?\s*[*×xX/]\s*\d+(\.\d+)?)?\s*[(（]?(mm)?[)）]?$/i],
+    ["disp", "engine", "Dung tích xi lanh", /displace|swept|\bdisp\b|排量/i, null, /^\d+([.,]\d+)?\s*(l|ltr|litres?|cc|ml)?$/i],
+    ["cyl", "engine", "Số xi lanh", /cylinder|^cyl|^cil|气缸|缸数/i, /air\s*flow/i, /^(\d{1,2}|\d{1,2}\s*[-–]?\s*(l|v|in-?line|cyl\w*)\b.*|[lv]\s?-?\d{1,2}|in-?line.*|vertical.*|v-?type.*)$/i],
+    ["compr", "engine", "Tỉ số nén", /compression/i, null, /\d\s*:\s*1|^\d+(\.\d+)?$/],
+    ["asp", "engine", "Nạp khí", /aspirat|intake|进气/i, null, /turbo|natural|aftercool|intercool|增压|自然|ta\b|na\b/i],
+    ["gov", "engine", "Điều tốc", /gov|调速/i, null, /electr|mechan|electron|ecu|governor|电子|机械|\bg[123]\b|class/i],
+    ["emission", "engine", "Tiêu chuẩn khí thải", /emission|排放/i, null, TXT],
+    ["coolant", "engine", "Nước làm mát", /coolant|cooling\s*water|water\s*(tank|capacity)/i, null, /^\d/],
+    ["cooling", "engine", "Làm mát", /cooling\s*(system|type|method|mode)?$|冷却方式/i, /air\s*flow/i, TXT],
+    ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油/i, /brand/i, N],
+    ["start", "engine", "Khởi động", /start/i, null, /\d\s*v|electric|电/i],
+    ["engPower", "engine", "Công suất động cơ", /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp/i, null, /^\d/],
+    ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
+    ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$/i, null, /stroke|cool|line|turbo|vertical|冲程/i],
+    ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
+    ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
+    ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
+    ["excit", "alternator", "Kích từ / AVR", /excit|\bavr\b|励磁/i, null, TXT],
+    ["vreg", "alternator", "Ổn định điện áp", /voltage\s*(regul|stab|stead)|调压/i, null, /\d\s*[%％s]/i],
+    ["freg", "genset", "Ổn định tần số", /frequency\s*(regul|wav|recover|stab)|frequencyrecovery|smooth\s*speed/i, null, /\d\s*[%％s]/i],
+    ["current", "genset", "Dòng điện định mức", /rated\s*current|电流/i, null, /^\d/],
+    ["voltage", "genset", "Điện áp", /voltage|电压|điện áp/i, /dc|start|level|type|regul|stab/i, /\d{3}/],
+    ["pf", "genset", "Hệ số công suất", /power\s*factor|cos|功率因数/i, null, /0[.,]\d|^1$/],
+    ["phase", "genset", "Số pha", /phase|wire|相数/i, null, /[13]\s*-?\s*(ph|phase|相)|wire|线/i],
+    ["controller", "genset", "Bộ điều khiển", /controller|控制器/i, null, TXT],
+  ];
+  const SPEC = Object.fromEntries(SPECS.map(([key, scope, vi, , , ok]) => [key, { scope, vi, ok }]));
+  function specKey(label) {
+    const L = String(label || "").trim();
+    if (!L || L.length > 70 || /\bmodel\b|型号|brand|make|品牌|厂家/i.test(L)) return null;
+    // Genset power is read on its own (powersIn); an engine's own output is kept here.
+    if (/power|output|capacity|rating|功率/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|tank|fuel/i.test(L)) return null;
+    for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
+    return null;
+  }
+  const UNIT_CELL = /^\(?(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|l\/h|l\/hr|mm|kg|kgs|l|rpm|r\/min|g\/kw\.?h|g\/kwh|%|a|cm|m)\)?$/i;
+  const specVal = (v) => { const s = String(v || "").trim(); return s && s.length <= 80 && !/^[-–—/]+$/.test(s) ? s : null; };
+  // A value fits its kind when it has the expected shape and is not a model code (a code there means a shifted column).
+  const specFits = (key, v) => SPEC[key].ok.test(v) && !(isCode(v) && !/^(asp|gov|emission|engType|excit|controller|cyl)$/.test(key));
+
   const cellsOf = (line) => {
     const s = String(line).trim();
     if (s.startsWith("|")) return s.split("|").slice(1).map((c) => c.trim()).filter((c, i, a) => c || i < a.length - 1);
@@ -105,13 +158,22 @@
     const put = (j, k, v) => { const c = (cols[j] = cols[j] || {}); if (c[k] == null) c[k] = v; };
     const merge = (j, k, v) => { const c = (cols[j] = cols[j] || {}); c[k] = { ...v, ...(c[k] || {}) }; };
     for (const l of lines) {
-      const c = cellsOf(l);
+      let c = cellsOf(l);
+      // "| Noise(LP1m): 100dB(A)": label and value in one cell.
+      if (c.length === 1) { const m = c[0].match(/^([^:：]{2,60})[:：]\s*(.+)$/); if (m) c = [m[1].trim(), m[2].trim()]; }
       if (c.length < 2) continue;
       const label = c[0];
       let vals = c.slice(1).filter((v) => v && !/^(kva|kw|kw\/kva|kva\/kw|v|hz)$/i.test(v));
       const unitCell = c.slice(1).find((v) => /^(kva|kw)$/i.test(v));
       if (!vals.length) continue;
       const L = label.toLowerCase();
+      const sk = specKey(label);
+      if (sk) {
+        const sv = c.slice(1).filter((v) => v && !UNIT_CELL.test(v));
+        sv.forEach((v, j) => { const val = specVal(v); if (val && specFits(sk, val)) { const col = (cols[j] = cols[j] || {}); (col.specs = col.specs || []); if (!col.specs.some((x) => x.key === sk)) col.specs.push({ key: sk, label, value: val }); } });
+        // "Engine type" is the engine model on some sites: read it as before too.
+        if (sk !== "engType") continue;
+      }
       if (ENGINE_LBL.test(L) && /model|type|型号|^\s*(diesel\s*)?engine\s*$|发动机$|柴油机$/i.test(L) && !/brand|make|manufactur|speed|power|output|cylinder|displace|bore|governor|consum|oil|cool|start|origin|品牌|厂家/i.test(L))
         vals.forEach((v, j) => put(j, "engine", v));
       else if (ENGINE_LBL.test(L) && /brand|make|manufactur|品牌|厂家/i.test(L)) vals.forEach((v, j) => put(j, "engineBrand", v));
@@ -144,6 +206,31 @@
     return h.length >= 2 && /model|型号/i.test(h[0]) && h.slice(1).every((x) => isCode(x)) && t.rows.every((r) => !isCode(cellsOf(r)[0]));
   };
 
+  // Figures of a table row, by the title of their column. Only when the header lines up with the row: the same
+  // number of cells, or one fewer with the genset model in front left untitled. A second header line made only of
+  // units ("| KVA/KW | L/h") is added to the title.
+  function rowSpecs(t, cells) {
+    const hs = (t.header || []).map(cellsOf);
+    if (!hs.length) return [];
+    // A blank first title ("| | Genset Model | ...") is a stray cell when the row has one cell fewer.
+    let titles = hs[0];
+    if (!titles[0] && titles.length === cells.length + 1) titles = titles.slice(1);
+    const units = hs[1] && hs[1].every((x) => !x || (x.length <= 12 && /^[a-z/%().·³\s0-9-]+$/i.test(x) && !isCode(x))) ? hs[1] : [];
+    let shift;
+    if (titles.length === cells.length) shift = 0;
+    else if (titles.length === cells.length - 1 && isCode(cells[0]) && !/model|型号/i.test(titles[0])) shift = 1;
+    else return [];
+    const out = [];
+    for (let i = 0; i < titles.length; i++) {
+      const ttl = titles[i], label = units[i] ? `${ttl} (${units[i]})` : ttl, key = specKey(ttl), val = specVal(cells[i + shift]);
+      if (!key || !val) continue;
+      // One value of the wrong shape: the row does not line up with the header, so none of it is used.
+      if (!specFits(key, val)) return [];
+      if (!out.some((x) => x.key === key)) out.push({ key, label, value: val });
+    }
+    return out;
+  }
+
   function addMake(list, name, via) { if (name && !list.some((m) => m.name === name)) list.push({ name, via }); }
 
   // One supplier record → occurrences of engines and alternators.
@@ -174,9 +261,9 @@
           const power = c.prime || c.standby || c.rated ? { ...(c.prime ? { prime: c.prime } : {}), ...(c.standby ? { standby: c.standby } : {}), ...(c.rated ? { rated: c.rated } : {}) } : null;
           const rowText = [c.genset, c.engine, c.alternator].filter(Boolean).join(" ");
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
-            out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, lines: { header: t.header || [], rows: t.rows } });
+            out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
           if (c.alternator && isCode(c.alternator.replace(/^[a-z-]+\s+(?=\S*\d)/i, "")))
-            out.push({ ...base, kind: "alternator", model: c.alternator.replace(/^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga)\s+/i, ""), makes: makesFor("alternator", c.alternator + " " + (c.altBrand || ""), c.altBrand), genset: c.genset || null, power, freq: tFreq, other: c.engine || null, lines: { header: t.header || [], rows: t.rows } });
+            out.push({ ...base, kind: "alternator", model: c.alternator.replace(/^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga)\s+/i, ""), makes: makesFor("alternator", c.alternator + " " + (c.altBrand || ""), c.altBrand), genset: c.genset || null, power, freq: tFreq, other: c.engine || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
         }
         return;
       }
@@ -205,7 +292,7 @@
         }
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const power = engineTable ? null : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title);
-        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [] };
+        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: rowSpecs(t, cells) };
         if (ei >= 0) out.push({ ...common, kind: "engine", model: cells[ei], makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: cells[ai], makes: makesFor("alternator", rowText, null), other: ei >= 0 ? cells[ei] : null });
       });
@@ -243,7 +330,23 @@
     const finish = (e) => {
       const kva = [], kw = [];
       for (const u of e.uses) for (const p of Object.values(u.power || {})) { if (p.kVA) kva.push(p.kVA); if (p.kW) kw.push(p.kW); }
-      return { ...e, names: [...e.names], suppliers: [...e.suppliers], freq: [...e.freq].sort(),
+      // Other figures, grouped by kind: each distinct value with how many rows give it. An alternator does not
+      // show engine figures and an engine not alternator ones; genset figures (fuel, noise, size...) go with both.
+      const specs = new Map();
+      for (const u of e.uses) for (const sp of u.specs || []) {
+        const def = SPEC[sp.key];
+        if (!def || (def.scope !== "genset" && def.scope !== e.kind)) continue;
+        if (!specs.has(sp.key)) specs.set(sp.key, { key: sp.key, vi: def.vi, scope: def.scope, values: new Map() });
+        const vk = sp.value.toLowerCase().replace(/\s+/g, "");
+        const vs = specs.get(sp.key).values;
+        if (!vs.has(vk)) vs.set(vk, { value: sp.value, label: sp.label, rows: 0, suppliers: new Set() });
+        const v = vs.get(vk); v.rows++; v.suppliers.add(u.supplierId);
+      }
+      const specList = SPECS.filter(([k]) => specs.has(k)).map(([k]) => {
+        const g = specs.get(k);
+        return { ...g, values: [...g.values.values()].map((v) => ({ ...v, suppliers: [...v.suppliers] })).sort((a, b) => b.suppliers.length - a.suppliers.length || b.rows - a.rows) };
+      });
+      return { ...e, specs: specList, names: [...e.names], suppliers: [...e.suppliers], freq: [...e.freq].sort(),
         kva: kva.length ? [Math.min(...kva), Math.max(...kva)] : null, kw: kw.length ? [Math.min(...kw), Math.max(...kw)] : null,
         make: makeOf(e.makes) };
     };
@@ -320,7 +423,7 @@
     return scored.sort((a, b) => b.score - a.score).slice(0, limit);
   }
 
-  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, ENGINE_BRANDS, ALT_BRANDS };
+  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, SPEC, ENGINE_BRANDS, ALT_BRANDS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
