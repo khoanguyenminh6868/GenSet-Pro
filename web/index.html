@@ -1907,6 +1907,7 @@ function supDetailHtml(s) {
       <td class="small" data-l="Động cơ">${[...(p.engineMakes || []), ...(p.engineModels?.length ? ["(" + p.engineModels.join(", ") + ")"] : [])].join(" ") || "—"}</td>
       <td class="small" data-l="Đầu phát">${(p.alternatorMakes || []).join(", ") || "—"}</td>
       <td class="small" data-l="Khác">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div>` : '<div class="muted small">Chưa có dữ liệu.</div>')}
+    ${raw(supModelsHtml(s))}
     ${raw(supSpecHtml(s))}
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
     ${raw(s.missing?.length ? h`<h4>Chưa tìm thấy / lưu ý</h4>${raw(list(s.missing, (m) => h`<li>${m}</li>`))}` : "")}
@@ -1915,6 +1916,29 @@ function supDetailHtml(s) {
     <div class="muted small">Kiểm tra lúc ${s.checkedAt || "—"}.</div>`;
 }
 // The supplier list (button "Nhà cung cấp") is open to every member (Khoa, 2026-10-28).
+// Engines and alternators a supplier offers: the catalog models (web/catalog.js) whose rows come from this supplier's
+// tables. Power is that of the gensets in this supplier's rows only; a click opens the model in the catalog.
+function supModelsHtml(s) {
+  const cat = catalog();
+  const part = (kind) => {
+    const K = CAT_KIND[kind];
+    const ms = cat[K.list].filter((e) => e.suppliers.includes(s.id)).map((e) => {
+      const us = e.uses.filter((u) => u.supplierId === s.id), kva = [], kw = [];
+      for (const u of us) for (const p of Object.values(u.power || {})) { if (p.kVA) kva.push(p.kVA); if (p.kW) kw.push(p.kW); }
+      return { e, rows: us.length, kva: kva.length ? [Math.min(...kva), Math.max(...kva)] : null, kw: kw.length ? [Math.min(...kw), Math.max(...kw)] : null };
+    }).sort((a, b) => (a.e.make || "~").localeCompare(b.e.make || "~") || a.e.model.localeCompare(b.e.model));
+    if (!ms.length) return "";
+    const makes = Object.entries(ms.reduce((m, x) => { for (const k of (x.e.make || "").split(" / ").filter(Boolean)) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1]);
+    return h`<details class="supspec" ${ms.length <= 15 ? "open" : ""}><summary><b>${K.one.replace(/^./, (c) => c.toUpperCase())}</b> · ${ms.length} model${raw(makes.length ? h` · <span class="muted">${makes.map(([m, n]) => `${m} (${n})`).join(", ")}</span>` : "")}</summary>
+      <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>Số dòng</th></tr></thead><tbody>${raw(ms.map((x) => h`<tr data-catitem="${x.e.key}" data-catopen="${kind}" data-catkey="${x.e.key}">
+        <td><b>${x.e.model}</b></td>
+        <td data-l="Hãng">${raw(catMakeHtml(x.e))}</td>
+        <td data-l="Tổ máy" class="small">${raw([catRange(x.kva, "kVA"), catRange(x.kw, "kW")].filter(Boolean).map((r) => h`<div>${r}</div>`).join("") || '<span class="muted">bảng không ghi công suất</span>')}</td>
+        <td data-l="Số dòng" class="small">${x.rows}</td></tr>`).join(""))}</tbody></table></div></details>`;
+  };
+  const body = part("engine") + part("alternator");
+  return h`<h4>Động cơ và đầu phát phân phối</h4>${raw(body ? h`<div class="muted small">Rút từ các bảng thông số của nhà cung cấp này (mục "Cấu hình các model" bên dưới); công suất là của tổ máy trong các dòng đó. Bấm một model để xem trong danh mục.</div>${raw(body)}` : '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}`;
+}
 // The model tables of a supplier (crawl-specs.mjs), each line as it is on the supplier's page, with its source [n].
 const supCells = (line) => String(line).split("|").map((c) => c.trim()).slice(1);
 function supSpecHtml(s) {
