@@ -73,9 +73,107 @@
         "The Werna generators are self-excited, self-regulating, brushless synchronous machines. The insulation system of the windings confirms to the requirements of temperature class H"
       ],
       "file": "sources/werna-alternator/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.brushlessacgenerator.com/sale-2002913-40kw-50kva-1800rpm-self-excited-three-phase-ac-generator-ip23-for-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| KVA | KW | mm | kgs"
+      ],
+      "file": "sources/werna-alternator/101.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.brushlessacgenerator.com/german/sale-2002913-40kw-50kva-1800rpm-self-excited-three-phase-ac-generator-ip23-for-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| KVA | Kilowatt | Millimeter | Kilogramm"
+      ],
+      "file": "sources/werna-alternator/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.brushlessacgenerator.com/french/sale-2002913-40kw-50kva-1800rpm-self-excited-three-phase-ac-generator-ip23-for-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| KVA | Kilowatt | millimètre | kilogrammes"
+      ],
+      "file": "sources/werna-alternator/105.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "40kw / 50kva 1800rpm Self-excited Three Phase AC Generator IP23 For Generator Set",
+      "header": [
+        "| KVA | KW | mm | kgs"
+      ],
+      "rows": [
+        "| mm | WR164A | 10.2 | 8.2",
+        "| 373.16 | 9.98 | 65 | WR164B",
+        "| 13.8 | 11 | 373.16 | 11.18",
+        "| 80 | WR164C | 16.9 | 13.5",
+        "| 400.16 | 11.6 | 100 | WR164D",
+        "| 20.2 | 16 | 400.16 | 11.88",
+        "| 115 | WR184E | 28.8 | 23",
+        "| 440.16 | 14.72 | 150 | WR184F",
+        "| 34.4 | 27.5 | 530.16 | 16.2",
+        "| 190 | WR184G | 37.5 | 30",
+        "| 530.16 | 17.8 | 230 | WR184H",
+        "| 46.9 | 37.5 | 673.3 | 19.21",
+        "| 255 | WR184J | 50 | 40"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "40kw/50kva 1800rpm selbsterregte Dreiphasenwechselstromerzeugung IP23 für Generator-Satz",
+      "header": [
+        "| KVA | Kilowatt | Millimeter | Kilogramm"
+      ],
+      "rows": [
+        "| Millimeter | WR164A | 10,2 | 8,2",
+        "| 373,16 | 9,98 | 65 | WR164B",
+        "| 13,8 | 11 | 373,16 | 11,18",
+        "| 80 | WR164C | 16,9 | 13,5",
+        "| 400,16 | 11,6 | 100 | WR164D",
+        "| 20,2 | 16 | 400,16 | 11,88",
+        "| 115 | WR184E | 28,8 | 23",
+        "| 440,16 | 14,72 | 150 | WR184F",
+        "| 34,4 | 27,5 | 530,16 | 16,2",
+        "| 190 | WR184G | 37,5 | 30",
+        "| 530,16 | 17,8 | 230 | WR184H",
+        "| 46,9 | 37,5 | 673,3 | 19,21",
+        "| 255 | WR184J | 50 | 40"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "générateur CA Triphasé autoexcité de 40kw/50kva 1800rpm IP23 pour le groupe électrogène",
+      "header": [
+        "| KVA | Kilowatt | millimètre | kilogrammes"
+      ],
+      "rows": [
+        "| millimètre | WR164A | 10,2 | 8,2",
+        "| 373,16 | 9,98 | 65 | WR164B",
+        "| 13,8 | 11 | 373,16 | 11,18",
+        "| 80 | WR164C | 16,9 | 13,5",
+        "| 400,16 | 11,6 | 100 | WR164D",
+        "| 20,2 | 16 | 400,16 | 11,88",
+        "| 115 | WR184E | 28,8 | 23",
+        "| 440,16 | 14,72 | 150 | WR184F",
+        "| 34,4 | 27,5 | 530,16 | 16,2",
+        "| 190 | WR184G | 37,5 | 30",
+        "| 530,16 | 17,8 | 230 | WR184H",
+        "| 46,9 | 37,5 | 673,3 | 19,21",
+        "| 255 | WR184J | 50 | 40"
+      ]
+    }
+  ]
 }

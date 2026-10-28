@@ -96,6 +96,16 @@
         "Model Number: SED110NG"
       ],
       "file": "sources/wagna-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.wagnapower.com/gas-generator/natural-gas-generator/green-power-natural-gas-generator-factory.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Model: DC50W-50S"
+      ],
+      "file": "sources/wagna-power/103.md"
     }
   ],
   "confidence": "medium",
@@ -127,6 +137,27 @@
         "Frequency: 50/60HZ",
         "Prime Power: 95KW/118KVA",
         "Standby Power: 105KW/130KVA"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "China Durable Green Power Natural Gas Generator Manufacturers, Suppliers and Factory - wagna power",
+      "header": [],
+      "rows": [
+        "Model: DC50W-50S",
+        "Frequency: 50HZ/60HZ",
+        "Rated voltage: 400/230V adjustable",
+        "Prime Power: 95KW/118KVA",
+        "Standby Power: 105KW/130KVA",
+        "Prime power: 80kw 100kva",
+        "Model Number: GC120W-50N",
+        "Rated Voltage: 400/230V adjustable",
+        "Model Number: GC66W-50N",
+        "Speed: 1500/1800rpm",
+        "Frequency: 50Hz/60Hz",
+        "Rated Power: 52KW/66KVA",
+        "Rated Voltage: 280V/480V",
+        "Rated Current: 57A/45A"
       ]
     }
   ]

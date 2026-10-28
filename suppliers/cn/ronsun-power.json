@@ -636,6 +636,26 @@
         "Genset Model: 200GF-Biogas"
       ],
       "file": "sources/ronsun-power/157.md"
+    },
+    {
+      "n": 158,
+      "url": "https://www.ronsunpower.com/product/720kw---900kva-diesel-generator-set/101",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: CD-900kVA"
+      ],
+      "file": "sources/ronsun-power/158.md"
+    },
+    {
+      "n": 159,
+      "url": "https://www.ronsunpower.com/product/50kw-62.5kva-natural-gas-generator-set/5",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: NG-50GF"
+      ],
+      "file": "sources/ronsun-power/159.md"
     }
   ],
   "confidence": "medium",
@@ -1820,6 +1840,50 @@
         "Bore × Stroke: 126 mm × 130 mm",
         "Rated Speed: 1500 rpm / 1800 rpm",
         "Fuel Consumption: &le; 0.60 m&sup3;/kW·h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 158,
+      "title": "720kW / 900kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: CD-900kVA",
+        "Rated Power (kW / kVA): 720 kW / 900 kVA",
+        "Standby Power (kW / kVA): 800 kW / 1000 kVA",
+        "Rated Current: 1296 A",
+        "Engine Model: KTA38 Series or Equivalent",
+        "Rated Power: 800 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 38 L",
+        "Bore × Stroke: 159 × 159 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: ~195 g/kWh",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 159,
+      "title": "50kW 62.5kVA Natural Gas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: NG-50GF",
+        "Rated Power (kW / kVA): 50 kW / 62.5 kVA",
+        "Standby Power (kW / kVA): 55 kW / 68.75 kVA",
+        "Rated Current: 90 A",
+        "Engine Model: 4 Cylinder Series",
+        "Rated Power: 56 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 3.9 L",
+        "Bore × Stroke: 102 mm × 115 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.30 m&sup3;/kW·h",
         "Frequency: 50 Hz / 60 Hz",
         "Phase / Connection: 3 Phase / 4 Wire",
         "Power Factor: 0.8 (Lagging)",

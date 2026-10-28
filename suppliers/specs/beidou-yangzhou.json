@@ -25,5 +25,18 @@
    "| 6300 | BD-S1125 | 1125 | 1238 | 6WTAA35-G310 | 1273/1400 | 4430*1855*2450",
    "| 8000 | BD-S1125 | 1250 | 1375 | 6WTAA35-G311 | 1398/1538 | 4430*1855*2450"
   ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.bdgenerator.com/la/500kva-400kw-perkins-generator-2-product/",
+  "title": "Generator Perkins 500KVA 400KW",
+  "header": [
+   "| Typus | Frequentia | Potestas | Currens (A) | Genus machinae | Genus alternatoris | Magnitudo (cm) | Pondus",
+   "| (Hz) | (kW/kva) | (kg)"
+  ],
+  "rows": [
+   "| BD-P400 | 50 | 400/500 | DCCXX | 2506C-E15TAG2 | BDI720A | 376*113*206 | 3570",
+   "| BD-P400 | 60 | 400/500 | DCCXX | 2506C-E15TAG2 | BDI720A | 376*113*206 | 3570"
+  ]
  }
 ]

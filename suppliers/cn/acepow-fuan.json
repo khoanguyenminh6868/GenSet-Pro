@@ -331,6 +331,16 @@
         "| Model | 50Hz,1500rpm | | Engine |"
       ],
       "file": "sources/acepow-fuan/104.md"
+    },
+    {
+      "n": 105,
+      "url": "http://www.acepow.net/sale-13576022-industrial-750kva-three-phase-380v-containerized-genset.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset model | Output | Output | Engine | Engine (kw) | Alternator Model"
+      ],
+      "file": "sources/acepow-fuan/105.md"
     }
   ],
   "confidence": "medium",
@@ -445,6 +455,32 @@
         "| APYN-50 | 50 | 55 | 62.5 | 69 | UC224E | YN38GBZ | 60 | 66",
         "| APYN-50 | 50 | 55 | 62.5 | 69 | UC224E | YN48GBZ | 60 | 66",
         "| APYN-65 | 65 | 72 | 81.25 | 90 | UC224G | YN48GBZ | 77 | 84.7"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Industrial 750KVA Three Phase 380V Containerized Genset",
+      "header": [
+        "| Genset model | Output | Output | Engine | Engine (kw) | Alternator Model",
+        "| Prime(kw) | Prime(kva) | Brand | Model | Rated | Standby"
+      ],
+      "rows": [
+        "| APVM-250 | 250 | 312.5 | VMAN | D11B2 | 288 | 317 | 314D",
+        "| APVM-280 | 280 | 350 | VMAN | D11B1 | 318 | 340 | 314E",
+        "| APVM-300 | 300 | 375 | VMAN | D11B | 342 | 390 | 314F",
+        "| APVM-320 | 320 | 400 | VMAN | D15B2 | 370 | 405 | 314F",
+        "| APVM-360 | 360 | 450 | VMAN | D15B1 | 405 | 460 | 354C",
+        "| APVM-390 | 390 | 487.5 | VMAN | D15B | 440 | 500 | 354C",
+        "| APVM-470 | 470 | 587.5 | VMAN | D22B3 | 525 | 577 | 354E",
+        "| APVM-500 | 500 | 625 | VMAN | D22B2 | 565 | 627 | 354E",
+        "| APVM-540 | 540 | 675 | VMAN | D22B1 | 620 | 682 | 354F",
+        "| APVM-590 | 590 | 737.5 | VMAN | D22B | 671 | 739 | 354F",
+        "| APVM-630 | 630 | 787.5 | VMAN | D22.2 | 718 | 790 | 404C",
+        "| APVM-660 | 660 | 825 | VMAN | D22.1 | 756 | 832 | 404C",
+        "| APVM-660 | 660 | 825 | VMAN | D30B4 | 750 | 850 | 404C",
+        "| APVM-700 | 700 | 875 | VMAN | D30B3 | 825 | 910 | 404D",
+        "| APVM-750 | 750 | 937.5 | VMAN | D30B2 | 880 | 965 | 404E",
+        "| APVM-800 | 800 | 1000 | VMAN | D30B1 | 930 | 1020 | 404E"
       ]
     }
   ]
