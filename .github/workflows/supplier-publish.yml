@@ -1,0 +1,29 @@
+name: Supplier publish
+
+# Posts the supplier records (suppliers/cn/*.json) to the web as supplier/<id> once they are on main, so the
+# "Nhà cung cấp" list and the engine / alternator catalog show what was merged. Same checks as upload.mjs.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['suppliers/cn/**']
+
+concurrency:
+  group: supplier-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Publish
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
+          node suppliers/upload.mjs
