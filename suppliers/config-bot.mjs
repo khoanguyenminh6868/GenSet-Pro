@@ -78,6 +78,8 @@ function catalogMd(cat, cap, brands) {
         out.push(`- supplierId: ${u.supplierId}, n: ${u.n}${u.genset ? `, tổ máy: ${u.genset}` : ""}${u.other ? `, đi kèm: ${u.other}` : ""}`);
         if (u.header?.length) out.push(`  header: ${u.header.join(" ")}`);
         out.push(u.line ? `  line: ${u.line}` : `  bảng một model: ${(u.lines?.rows || []).join(" ; ")}`);
+        // Figures read from that row by column title (web/catalog.js), each in the row word for word.
+        if (u.specs?.length) out.push(`  thông số: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
       }
       out.push("");
     }
