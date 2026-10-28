@@ -18,6 +18,7 @@
       const ua = navigator.userAgent;
       sb.rpc("log_activity", { p_action: "login", p_detail: { device: /Mobi|Android|iPhone|iPad/.test(ua) ? "Điện thoại" : "Máy tính", ua: ua.slice(0, 200) } }).then(() => {}, () => {});
     }
+    window.genbidRole = member.role;
     if (member.role === "superadmin") logButton();
   })();
 
