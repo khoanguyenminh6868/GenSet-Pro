@@ -212,8 +212,12 @@ async function answer(req, suppliers) {
   };
   try {
     await prep(key, dir, req);
-    const r = spawnSync(CLAUDE, ["-p", "--model", "opus", "--allowedTools", "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch", "--permission-mode", "acceptEdits",
-      "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json."], { cwd: dir, encoding: "utf8", timeout: 40 * 60e3, shell: process.platform === "win32", maxBuffer: 64 << 20 });
+    // Same minimal setup as the bot's agent (GenBid-Bot.ps1), plus web search for step 3 of config-prompt.md.
+    const r = spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "text", "--model", process.env.GENBID_CONFIG_MODEL || "opus",
+      "--strict-mcp-config", "--disable-slash-commands", "--tools", "Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"],
+      { cwd: dir, encoding: "utf8", timeout: 40 * 60e3, maxBuffer: 64 << 20, windowsHide: true,
+        input: "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json. Chạy không người trông, không ai trả lời câu hỏi." });
+    fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
     if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
     const { result, problems } = checkDir(dir, suppliers);
     await done({ result, error: "" });
