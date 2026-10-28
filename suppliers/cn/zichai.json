@@ -55,9 +55,160 @@
         "Zichai Power Co.,Ltd , founded in 1970, is a wholly-owned subsidiary of China National Agricultural Development Group Co., Ltd., a specialized manufacturer of high-power medium speed diesel engines"
       ],
       "file": "sources/zichai/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.zichai.net/products",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Cylinder Bore: 160mm"
+      ],
+      "file": "sources/zichai/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.zichai.net/marine-diesel-engine-1",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Cylinder Bore: 160mm"
+      ],
+      "file": "sources/zichai/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.zichai.net/zichai-l6160-diesel-engine-high-reliability",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Cylinder Bore: 160mm"
+      ],
+      "file": "sources/zichai/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.zichai.net/l230-1800hp-marine-diesel-engines-for-sale",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Cylinder Bore: 225mm"
+      ],
+      "file": "sources/zichai/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.zichai.net/productlist-2",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Bore: 225mm"
+      ],
+      "file": "sources/zichai/105.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "China Generator Sets Manufacturers, Suppliers, Factory - Wholesale Diesel Generator Sets Products - ZICHAI",
+      "header": [],
+      "rows": [
+        "Cylinder Bore: 160mm",
+        "Rated power: 480 kW",
+        "Rated speed: 1500r/min",
+        "Fuel consumption rate: 185 g/kW.h",
+        "Rated Power: 500kw-1000kw",
+        "Speed : 500rpm/600rpm/750rpm",
+        "Rated Power: 1500kw",
+        "Speed: 600rpm",
+        "Frequency: 50/60Hz",
+        "Power Factor: 0.8 Lag",
+        "Model NO.300GF-2000GF Rated Power:400kw",
+        "Speed:500rpm Structure: Inline 4 Stroke",
+        "Cylinder diameter: 250mm",
+        "Continuous power: 588kW～2426kW",
+        "Cylinder Bore: 150mm",
+        "Rated power: 147-360kW",
+        "Rated speed: 1000-1500r/min",
+        "Fuel consumption rate: 196g/kW.h...",
+        "Cylinder Bore: 210mm",
+        "Rated power: 330-1103kW",
+        "Rated speed: 600-1000r/min",
+        "Fuel consumption rate: 198g/kW.h...",
+        "Cylinder diameter: 260mm",
+        "Continuous power: 1544kW～660kW",
+        "Cylinder diameter: 170mm",
+        "Continuous power: 218kW～660kW",
+        "Cylinder Bore: 225mm",
+        "Rated power: 1324 kW",
+        "Rated speed: 1000r/min",
+        "Fuel consumption rate: 195 g/kW.h"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "China Marine Diesel Engine Manufacturers, Suppliers, Factory - Wholesale Marine Diesel Engine Products - ZICHAI",
+      "header": [],
+      "rows": [
+        "Cylinder Bore: 160mm",
+        "Rated power: 480 kW",
+        "Rated speed: 1500r/min",
+        "Fuel consumption rate: 185 g/kW.h",
+        "Cylinder diameter: 250mm",
+        "Continuous power: 588kW～2426kW",
+        "Cylinder Bore: 150mm",
+        "Rated power: 147-360kW",
+        "Rated speed: 1000-1500r/min",
+        "Fuel consumption rate: 196g/kW.h...",
+        "Cylinder Bore: 210mm",
+        "Rated power: 330-1103kW",
+        "Rated speed: 600-1000r/min",
+        "Fuel consumption rate: 198g/kW.h...",
+        "Cylinder diameter: 260mm",
+        "Continuous power: 1544kW～660kW",
+        "Cylinder diameter: 170mm",
+        "Continuous power: 218kW～660kW",
+        "Cylinder Bore: 225mm",
+        "Rated power: 1324 kW",
+        "Rated speed: 1000r/min",
+        "Fuel consumption rate: 195 g/kW.h"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "China ZICHAI L6160 Diesel Engine-High Reliability Structural Design Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [],
+      "rows": [
+        "Cylinder Bore: 160mm",
+        "Rated power: 480 kW",
+        "Rated speed: 1500r/min",
+        "Fuel consumption rate: 185 g/kW.h"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "China L230 1800HP Marine Diesel Engines For Sale Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [],
+      "rows": [
+        "Cylinder Bore: 225mm",
+        "Rated power: 1324 kW",
+        "Rated speed: 1000r/min",
+        "Fuel consumption rate: 195 g/kW.h"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "China Generator Sets Manufacturers, Suppliers, Factory - Wholesale Diesel Generator Sets Products - ZICHAI - Page 2",
+      "header": [],
+      "rows": [
+        "Bore: 225mm",
+        "Continuous power: 1213 kW",
+        "Continuous speed: 1000r / min",
+        "Fuel consumption rate: 195 g / KW.h"
+      ]
+    }
+  ]
 }

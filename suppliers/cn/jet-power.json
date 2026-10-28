@@ -76,9 +76,887 @@
         "gas generator set, light tower generator, trailer diesel generator"
       ],
       "file": "sources/jet-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.jetgenset.com/50hz-16kva-to-2500kva-sdec-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 400V / 50Hz / 1500RPM | SDEC Diesel Engine | Alternator"
+      ],
+      "file": "sources/jet-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.jetgenset.com/50hz-11kva-to-440kva-uk-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 400V / 50Hz / 1500RPM | UK Design Engine | Alternator"
+      ],
+      "file": "sources/jet-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.jetgenset.com/emission-epa-38kva-to-1100kva-hyundai-doosan-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 440V / 60Hz / 1800rpm | HYUNDAI Diesel Engine | Emission | Alternator"
+      ],
+      "file": "sources/jet-power/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.jetgenset.com/50hz-11kva-to-440kva-uk-diesel-generator-set-1746275358196233.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 416V / 60Hz / 1800RPM | UK Design Engine | Alternator"
+      ],
+      "file": "sources/jet-power/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.jetgenset.com/60hz-20kva-to-1100kva-sdec-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 480V / 60Hz / 1800RPM | SDEC Diesel Engine | Alternator"
+      ],
+      "file": "sources/jet-power/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.jetgenset.com/60hz-73kva-to-1125kva-hyundai-doosan-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 440V / 60Hz / 1800rpm | HYUNDAI Diesel Engine | Emission | Alternator"
+      ],
+      "file": "sources/jet-power/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.jetgenset.com/eu-stage-v-50hz-30kva-to-330kva-hyundai-doosan-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 400V / 50Hz / 1500rpm | HYUNDAI Diesel Engine | Emission | Alternator"
+      ],
+      "file": "sources/jet-power/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.jetgenset.com/9kva-to-18kva-portable-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KDE12STA | JDE16000SE | JDE17000SE | JDE23000SE"
+      ],
+      "file": "sources/jet-power/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.jetgenset.com/open-type-air-cooled-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | JDE3500 | JDE6500 | JDE7500 | JDE8500 | JDE9500 | JDE11000 | JDE12000"
+      ],
+      "file": "sources/jet-power/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.jetgenset.com/kubota-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| KVA | KW | KVA | KW | (L) | (MM) | (L x W x H) | Kg | (L x W x H) | Kg"
+      ],
+      "file": "sources/jet-power/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.jetgenset.com/60hz-weichai-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 416V / 60Hz / 1800RPM | WEICHAI Diesel Engine | Brushless Alternator"
+      ],
+      "file": "sources/jet-power/111.md"
+    },
+    {
+      "n": 112,
+      "url": "https://www.jetgenset.com/50hz-weichai-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 400V / 50Hz / 1500RPM | WEICHAI Diesel Engine | Brushless Alternator"
+      ],
+      "file": "sources/jet-power/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.jetgenset.com/60hz-cummins-water-cooled-diesel-generator-set-supply.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 480V/ 60Hz / 1800rpm | Cummins Diesel Engine | Alternator"
+      ],
+      "file": "sources/jet-power/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.jetgenset.com/60hz-25kva-to-69kva-isuzu-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 416V / 60Hz / 1800RPM | ISUZU Diesel Engine | Alternator"
+      ],
+      "file": "sources/jet-power/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.jetgenset.com/electrical-ricardo-water-cooled-diesel-generator-set-supply.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 400V / 50Hz / 1500RPM | Chinese Diesel Engine | Alternator"
+      ],
+      "file": "sources/jet-power/115.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.jetgenset.com/wholesale-brushless-synchronous-alternator-supply.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| MODEL | 3-PHASE 50Hz /380V-440V | 3-PHASE 60Hz / 416V-480V | PACKAGE | WEIGHT"
+      ],
+      "file": "sources/jet-power/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.jetgenset.com/best-ohv-gasoline-engine-manufacture-supply.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | GE160 (168F) | GE200 (168FA) | GE210 (170F) | GE390 (188F) | GE420 (190F) | GE460 (192F)"
+      ],
+      "file": "sources/jet-power/118.md"
+    },
+    {
+      "n": 120,
+      "url": "https://www.jetgenset.com/powered-by-volvo-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 400V / 50Hz / 1500rpm | VOLVO PENTA Diesel Engine |"
+      ],
+      "file": "sources/jet-power/120.md"
+    },
+    {
+      "n": 121,
+      "url": "https://www.jetgenset.com/60hz-water-cooled-yangdong-diesel-generator-set-wholesale.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 416V / 60Hz / 1800RPM | Yangdong Diesel Engine 1800rpm | Alternator / 60Hz | Open type | Soundproof type"
+      ],
+      "file": "sources/jet-power/121.md"
+    },
+    {
+      "n": 122,
+      "url": "https://www.jetgenset.com/50hz-powered-by-yangdong-water-cooled-diesel-generator-supply.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | 400V / 50Hz /1500RPM | Yangdong Diesel Engine 1500rpm | Alternator | Open type | Soundproof type"
+      ],
+      "file": "sources/jet-power/122.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "50Hz 16KVA to 2500KVA SDEC Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 400V / 50Hz / 1500RPM | SDEC Diesel Engine | Alternator",
+        "| Standby output | Prime Output | Model | Cylinder No. | Bore*Stroke | Displacement | Fuel Cons. | Brushless",
+        "| KVA | KW | KVA | KW | (mm) | (L) | g/Kw.H"
+      ],
+      "rows": [
+        "| SD-18 | 18 | 14 | 16 | 12.8 | 4Z2.3-G21 | 4L | 85×100 | 2.3 | 210 | JET164D",
+        "| SD-25 | 25 | 20 | 22.5 | 18 | 4Z2.7-G21 | 4L | 90×105 | 2.7 | 210 | JET184E",
+        "| SD-30 | 30 | 24 | 27.5 | 22 | 4Z3.0-G21 | 4L | 95×105 | 3 | 210 | JET184F",
+        "| SD-35 | 35 | 28 | 31.3 | 25 | 4Z3.2-G21 | 4L | 98×105 | 3.2 | 210 | JET184G",
+        "| SD-44 | 44 | 35 | 40 | 32 | 4ZT3.2-G21 | 4L | 98×105 | 3.2 | 210 | JET184J",
+        "| SD-55 | 55 | 44 | 50 | 40 | 4ZT3.5-G21 | 4L | 98×115 | 3.5 | 210 | JET224D",
+        "| SD-69 | 69 | 55 | 63 | 50 | 4ZT4.1-G21 | 4L | 105×118 | 4.1 | 192 | JET224E",
+        "| SD-75 | 75 | 60 | 69 | 55 | 4ZTAA4.1-G21 | 4L | 105×118 | 4.1 | 192 | JET224F",
+        "| SD-88 | 88 | 70 | 80 | 64 | 4ZTAA4.1-G31 | 4L | 105×118 | 4.1 | 192 | JET224G",
+        "| SD-110 | 110 | 88 | 100 | 80 | 4HTAA4.3-G21 | 4L | 105×124 | 4.3 | 192 | JET274C",
+        "| SD-125 | 125 | 100 | 113.75 | 91 | 4HTAA4.3-G23 | 4L | 105×124 | 4.3 | 192 | JET274D",
+        "| SD-138 | 138 | 110 | 125 | 100 | 4HTAA4.3-G22 | 4L | 105×124 | 4.3 | 192 | JET274DM",
+        "| SD-165 | 165 | 132 | 150 | 120 | 6HTAA6.5-G22 | 6L | 105×124 | 6.5 | 192 | JET274F",
+        "| SD-200 | 200 | 160 | 180 | 144 | 6HTAA6.5-G23 | 6L | 105×124 | 6.5 | 192 | JET274G",
+        "| SD-220 | 220 | 176 | 200 | 160 | 6DTAA8.9-G21 | 6L | 114×144 | 8.9 | 192 | JET274H",
+        "| SD-250 | 250 | 200 | 225 | 180 | 6DTAA8.9-G24 | 6L | 114×144 | 8.9 | 192 | JET274J",
+        "| SD-275 | 275 | 220 | 250 | 200 | 6DTAA8.9-G23 | 6L | 114×144 | 8.9 | 192 | JET274K",
+        "| SD-330 | 330 | 264 | 300 | 240 | 6ETAA11.8-G22 | 6L | 128×153 | 11.8 | 190 | JET444D",
+        "| SD-358 | 358 | 286 | 325 | 260 | 6ETAA11.8-G21 | 6L | 128×153 | 11.8 | 190 | JET444E",
+        "| SD-413 | 413 | 330 | 375 | 300 | 6ETAA12.8-G22 | 6L | 130×161 | 12.8 | 190 | JET444FS",
+        "| SD-440 | 440 | 352 | 400 | 320 | 6ETAA12.8-G21 | 6L | 130×161 | 12.8 | 190 | JET444F",
+        "| SD-500 | 500 | 400 | 450 | 360 | 6ETAA12.8-G31 | 6L | 130×161 | 12.8 | 190 | JET544C",
+        "| SD-550 | 550 | 440 | 500 | 400 | 6ETAA12.8-G310 | 6L | 130×161 | 12.8 | 190 | JET544D",
+        "| SD-625 | 625 | 500 | 563 | 450 | 6KTAA25-G310 | 6L | 170×185 | 25.2 | 192 | JET544ES",
+        "| SD-688 | 688 | 550 | 625 | 500 | 6KTAA25-G39 | 6L | 170×185 | 25.2 | 192 | JET544FS",
+        "| SD-750 | 750 | 600 | 688 | 550 | 6KTAA25-G38 | 6L | 170×185 | 25.2 | 192 | JET544FM",
+        "| SD-825 | 825 | 660 | 750 | 600 | 6KTAA25-G320 | 6L | 170×185 | 25.2 | 192 | JET634B",
+        "| SD-880 | 880 | 704 | 800 | 640 | 6KTAA25-G321 | 6L | 170×185 | 25.2 | 192 | JET634C",
+        "| SD-1000 | 1000 | 800 | 900 | 720 | 6WTAA35-G32 | 6L | 186×215 | 35.1 | 192 | JET634D",
+        "| SD-1100 | 1100 | 880 | 1000 | 800 | 6WTAA35-G31 | 6L | 186×215 | 35.1 | 192 | JET634E",
+        "| SD-1250 | 1250 | 1000 | 1125 | 900 | 6WTAA35-G310 | 6L | 186×215 | 35.1 | 192 | JET634F",
+        "| SD-1375 | 1375 | 1100 | 1250 | 1000 | 6WTAA35-G311 | 6L | 186×215 | 35.1 | 192 | JET634G",
+        "| SD-1500 | 1500 | 1200 | 1375 | 1100 | 12KTA58-G36 | 12V | 170×210 | 57.2 | 188 | JET734B",
+        "| SD-1688 | 1688 | 1350 | 1563 | 1250 | 12KTA58-G35 | 12V | 170×210 | 57.2 | 188 | JET734C",
+        "| SD-1875 | 1875 | 1500 | 1688 | 1350 | 12KTA58-G34 | 12V | 170×210 | 57.2 | 188 | JET734D",
+        "| SD-2063 | 2063 | 1650 | 1875 | 1500 | 12KTA58-G33 | 12V | 170×210 | 57.2 | 188 | JET734E",
+        "| SD-2250 | 2250 | 1800 | 2000 | 1600 | 12KTA58-G32 | 12V | 170×210 | 57.2 | 188 | JET734F",
+        "| SD-2500 | 2500 | 2000 | 2250 | 1800 | 12KTA58-G31 | 12V | 170×210 | 57.2 | 188 | JET734G"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "50Hz 11KVA to 440KVA UK Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 400V / 50Hz / 1500RPM | UK Design Engine | Alternator",
+        "| Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Brushless",
+        "| KVA | KW | KVA | KW | No. of Cydlinder | Governor | (L) | (MM)"
+      ],
+      "rows": [
+        "| UK-12Y | 12 | 9.6 | 11 | 8.8 | YD490-D17 | L4 | Mechanical | 2.55 | 90×100 | JET164B",
+        "| UK-15Y | 15 | 12 | 14 | 10.8 | YD490-D17 | L4 | Mechanical | 2.55 | 90×100 | JET164C",
+        "| UK-18Y | 18 | 14 | 16 | 12.8 | YD490-D17 | L4 | Mechanical | 2.55 | 90×100 | JET164D",
+        "| UK-22Y | 22 | 17.6 | 20 | 16 | YD490-D22 | L4 | Mechanical | 2.55 | 90×100 | JET184D",
+        "| UK-25Y | 25 | 20 | 23 | 18 | YD490-D22 | L4 | Mechanical | 2.55 | 90×100 | JET184E",
+        "| UK-28Y | 28 | 22 | 25 | 20 | YD493-D25 | L4 | Mechanical | 2.77 | 93×102 | JET184FS",
+        "| UK-33Y | 33 | 26 | 30 | 24 | YD493-D28 | L4 | Mechanical | 2.77 | 93×102 | JET184G",
+        "| UK-41R | 41 | 33 | 38 | 30 | YD4105-D38 | L4 | Mechanical | 4.2 | 105×120 | JET184H",
+        "| UK-55R | 55 | 44 | 50 | 40 | YD4105-D60 | L4 | Mechanical | 4.2 | 105×120 | JET224D",
+        "| UK-70R | 69 | 55 | 63 | 50 | YD4105-D60 | L4 | Mechanical | 4.2 | 105×120 | JET224E",
+        "| UK-83R | 83 | 66 | 75 | 60 | YD4105-D75 | L4 | Mechanical | 4.2 | 105×120 | JET224F",
+        "| UK-96R | 96 | 77 | 88 | 70 | YD4110-D88 | L4 | Mechanical | 5.3 | 110×140 | JET224G",
+        "| UK-110R | 110 | 88 | 100 | 80 | YD4110-D110 | L4 | Mechanical | 5.3 | 110×140 | JET274C",
+        "| UK-110R | 110 | 88 | 100 | 80 | 6RT05-D121 | L6 | Mechanical | 6.75 | 105×130 | JET274C",
+        "| UK-125R | 125 | 100 | 113 | 90 | 6RT05-D121 | L6 | Mechanical | 6.75 | 105×130 | JET274D",
+        "| UK-138R | 138 | 110 | 125 | 100 | 6RT05-D132 | L6 | Mechanical | 7.01 | 105×135 | JET274DM",
+        "| UK-165R | 165 | 132 | 150 | 120 | 6RT08-D150 | L6 | Mechanical | 7.42 | 108×135 | JET274F",
+        "| UK-206R | 206 | 165 | 188 | 150 | 6RT80-176DE | L6 | Mechanical | 7.82 | 113×130 | JET274G",
+        "| UK-250S | 250 | 200 | 225 | 180 | 6DTAA8.9-G24 | L6 | Electric | 9.73 | 126X130 | JET274J",
+        "| UK-275S | 275 | 220 | 250 | 200 | 6DTAA8.9-G23 | L6 | Electric | 9.73 | 126X130 | JET274K",
+        "| UK-330S | 330 | 264 | 300 | 240 | 6ETAA11.8-G22 | L6 | Electric | 11.59 | 126X155 | JET444E",
+        "| UK-385S | 385 | 308 | 350 | 280 | 6ETAA11.8-G21 | L6 | Electric | 11.59 | 126X155 | JET444EM",
+        "| UK-413S | 413 | 330 | 375 | 300 | 6ETAA12.8-G22 | L6 | Electric | 12.6 | 126X155 | JET444FS",
+        "| UK-440S | 440 | 352 | 400 | 320 | 6ETAA12.8-G21 | L6 | Electric | 12.6 | 126X155 | JET444F"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Emission EPA 38KVA to 1100KVA HYUNDAI Doosan Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 440V / 60Hz / 1800rpm | HYUNDAI Diesel Engine | Emission | Alternator",
+        "| Standby output | Prime Output | Model | No. of Cylinder | Displacement | Bore×Stroke | Fuel cons. | Leroy Somer",
+        "| KVA | KW | KVA | KW | (L) | (MM) | （ L/h ） | level"
+      ],
+      "rows": [
+        "| HD-41TF | 41 | 33 | 38 | 30 | DM01PP | L3 | 1.8 | 90 x 94 | 7.5 | EPA Tier 4F | TAL-A42-E",
+        "| HD-55TF | 55 | 44 | 50 | 40 | DM02PP | L4 | 2.4 | 90 x 94 | 12.2 | EPA Tier 4F | TAL-A42-F",
+        "| HD-58TF | 58 | 46 | 58 | 46 | DM03PG | L4 | 3.4 | 98 x 113 | 13.6 | EPA Tier 4F | TAL-A42-G",
+        "| HD-163T3 | 163 | 130 | / | / | DP54CAK | L4 | 5.0 | 110 x 132 | 35.4 | EPA Tier 3 | TAL-A44-E",
+        "| HD-219T3 | 219 | 175 | / | / | DP54CBK | L4 | 5.0 | 110 x 132 | 46.2 | EPA Tier 3 | TAL-A44-K",
+        "| HD-163T4 | 163 | 130 | 148 | 118 | DP054CAP | L4 | 5.0 | 110 x 132 | 32.8 | EPA Tier 4F | TAL-A44-E",
+        "| HD-193T4 | 193 | 154 | 174 | 139 | DP054CBP | L4 | 5.0 | 110 x 132 | 38.3 | EPA Tier 4F | TAL-A44-J",
+        "| HD-220T4 | 220 | 176 | 219 | 175 | DP054CCP | L4 | 5.0 | 110 x 132 | 48.2 | EPA Tier 4F | TAL-A44-L",
+        "| HD-261T3 | 261 | 209 | / | / | DP086CAK | L6 | 7.5 | 110 x 132 | 52.8 | EPA Tier 3 | TAL-A44-M",
+        "| HD-293T3 | 293 | 234 | / | / | DP086CBK | L6 | 7.5 | 110 x 132 | 58.6 | EPA Tier 3 | TAL-A46-C",
+        "| HD-333T3 | 333 | 266 | / | / | DP086CCK | L6 | 7.5 | 110 x 132 | 67.3 | EPA Tier 3 | TAL-A46-D",
+        "| HD-293T4 | 293 | 234 | 263 | 210 | DP086CBP | L6 | 7.5 | 110 x 132 | 56.1 | EPA Tier 4F | TAL-A46-C",
+        "| HD-316T4 | 316 | 253 | 288 | 230 | DP086CCP | L6 | 7.5 | 110 x 132 | 62.4 | EPA Tier 4F | TAL-A46-C",
+        "| HD-344T4 | 344 | 275 | 313 | 250 | DP086CDP | L6 | 7.5 | 110 x 132 | 67.2 | EPA Tier 4F | TAL-A46-D",
+        "| HD-396T3 | 400 | 320 | / | / | DP126CAK | L6 | 11.1 | 123 x 155 | 96 | EPA Tier 3 | TAL-A46-G",
+        "| HD-438T3 | 438 | 350 | / | / | DP126CBK | L6 | 11.1 | 123 x 155 | 103 | EPA Tier 3 | TAL-A46-G",
+        "| HD-475T3 | 475 | 380 | / | / | DP126CCK | L6 | 11.1 | 123 x 155 | 113 | EPA Tier 3 | TAL-A46-H",
+        "| HD-950T2 | 950 | 760 | 863 | 690 | DP222CAS | 12V | 21.9 | 128 x 142 | 205 | EPA Tier 2 | TAL-A49-B",
+        "| HD-1031T2 | 1031 | 825 | 938 | 750 | DP222CBS | 12V | 21.9 | 128 x 142 | 218 | EPA Tier 2 | TAL-A49-C",
+        "| HD-1100T2 | 1100 | 880 | 1000 | 800 | DP222CCS | 12V | 21.9 | 128 x 142 | 246 | EPA Tier 2 | TAL-A49-D"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "50Hz 11KVA to 440KVA UK Diesel Generator Set-1746275358196233 | Jet Power Generator",
+      "header": [
+        "| Model | 416V / 60Hz / 1800RPM | UK Design Engine | Alternator",
+        "| Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Brushless",
+        "| KVA | KW | KVA | KW | No. of Cydlinder | Governor | (L) | (MM)"
+      ],
+      "rows": [
+        "| UK-12Y | 12 | 9.6 | 11 | 8.8 | YD490-D17 | L4 | Mechanical | 2.55 | 90×100 | JET164B",
+        "| UK-15Y | 15 | 12 | 14 | 10.8 | YD490-D17 | L4 | Mechanical | 2.55 | 90×100 | JET164C",
+        "| UK-18Y | 18 | 14 | 16 | 12.8 | YD490-D17 | L4 | Mechanical | 2.55 | 90×100 | JET164D",
+        "| UK-22Y | 22 | 17.6 | 20 | 16 | YD490-D22 | L4 | Mechanical | 2.55 | 90×100 | JET184D",
+        "| UK-25Y | 25 | 20 | 23 | 18 | YD490-D22 | L4 | Mechanical | 2.55 | 90×100 | JET184E",
+        "| UK-28Y | 28 | 22 | 25 | 20 | YD493-D25 | L4 | Mechanical | 2.77 | 93×102 | JET184FS",
+        "| UK-33Y | 33 | 26 | 30 | 24 | YD493-D28 | L4 | Mechanical | 2.77 | 93×102 | JET184G",
+        "| UK-41R | 41 | 33 | 38 | 30 | YD4105-D38 | L4 | Mechanical | 4.2 | 105×120 | JET184H",
+        "| UK-55R | 55 | 44 | 50 | 40 | YD4105-D60 | L4 | Mechanical | 4.2 | 105×120 | JET224D",
+        "| UK-70R | 69 | 55 | 63 | 50 | YD4105-D60 | L4 | Mechanical | 4.2 | 105×120 | JET224E",
+        "| UK-83R | 83 | 66 | 75 | 60 | YD4105-D75 | L4 | Mechanical | 4.2 | 105×120 | JET224F",
+        "| UK-96R | 96 | 77 | 88 | 70 | YD4110-D88 | L4 | Mechanical | 5.3 | 110×140 | JET224G",
+        "| UK-110R | 110 | 88 | 100 | 80 | YD4110-D110 | L4 | Mechanical | 5.3 | 110×140 | JET274C",
+        "| UK-110R | 110 | 88 | 100 | 80 | 6RT05-D121 | L6 | Mechanical | 6.75 | 105×130 | JET274C",
+        "| UK-125R | 125 | 100 | 113 | 90 | 6RT05-D121 | L6 | Mechanical | 6.75 | 105×130 | JET274D",
+        "| UK-138R | 138 | 110 | 125 | 100 | 6RT05-D132 | L6 | Mechanical | 7.01 | 105×135 | JET274DM",
+        "| UK-165R | 165 | 132 | 150 | 120 | 6RT08-D150 | L6 | Mechanical | 7.42 | 108×135 | JET274F",
+        "| UK-206R | 206 | 165 | 188 | 150 | 6RT80-176DE | L6 | Mechanical | 7.82 | 113×130 | JET274G",
+        "| UK-275S | 275 | 220 | 250 | 200 | 6DTAA8.9-G24 | L6 | Electric | 9.73 | 126X130 | JET274J",
+        "| UK-303S | 303 | 242 | 275 | 220 | 6DTAA8.9-G23 | L6 | Electric | 9.73 | 126X130 | JET274K",
+        "| UK-385S | 385 | 308 | 350 | 280 | 6ETAA11.8-G22 | L6 | Electric | 11.59 | 126X155 | JET444E",
+        "| UK-440S | 440 | 352 | 400 | 320 | 6ETAA12.8-G22 | L6 | Electric | 12.6 | 126X155 | JET444FS"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "60Hz 20KVA to 1100KVA SDEC Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 480V / 60Hz / 1800RPM | SDEC Diesel Engine | Alternator",
+        "| Standby output | Prime Output | Model | Cylinder No. | Bore*Stroke | Displacement | Fuel Cons. | Brushless",
+        "| KVA | KW | KVA | KW | (mm) | (L) | g/Kw.H"
+      ],
+      "rows": [
+        "| SD-22 | 22 | 17.6 | 20 | 16 | 4Z2.3-G21 | 4L | 85×100 | 2.3 | 210 | JET164D",
+        "| SD-28 | 28 | 22 | 25 | 20 | 4Z2.7-G21 | 4L | 90×105 | 2.7 | 210 | JET184E",
+        "| SD-33 | 33 | 26.4 | 30 | 24 | 4Z3.0-G21 | 4L | 95×105 | 3 | 210 | JET184F",
+        "| SD-41 | 41 | 33 | 38 | 30 | 4Z3.2-G21 | 4L | 98×105 | 3.2 | 210 | JET184G",
+        "| SD-48 | 48 | 38.5 | 44 | 35 | 4ZT3.2-G21 | 4L | 98×105 | 3.2 | 210 | JET184J",
+        "| SD-70 | 70 | 56 | 64 | 51 | 4ZT3.5-G21 | 4L | 98×115 | 3.5 | 210 | JET224D",
+        "| SD-83 | 83 | 66 | 75 | 60 | 4ZT4.1-G21 | 4L | 105×118 | 4.1 | 192 | JET224E",
+        "| SD-88 | 88 | 70.4 | 80 | 64 | 4ZTAA4.1-G21 | 4L | 105×118 | 4.1 | 192 | JET224F",
+        "| SD-94 | 94 | 74.8 | 85 | 68 | 4ZTAA4.1-G31 | 4L | 105×118 | 4.1 | 192 | JET224G",
+        "| SD-125 | 125 | 100 | 113 | 90 | 4HTAA4.3-G21 | 4L | 105×124 | 4.3 | 192 | JET274C",
+        "| SD-138 | 138 | 110 | 125 | 100 | 4HTAA4.3-G23 | 4L | 105×124 | 4.3 | 192 | JET274D",
+        "| SD-175 | 175 | 140 | 160 | 128 | 6HTAA6.5-G22 | 6L | 105×124 | 6.5 | 192 | JET274E",
+        "| SD-206 | 206 | 165 | 188 | 150 | 6HTAA6.5-G23 | 6L | 105×124 | 6.5 | 192 | JET274F",
+        "| SD-250 | 250 | 200 | 225 | 180 | 6DTAA8.9-G21 | 6L | 114×144 | 8.9 | 192 | JET274G",
+        "| SD-275 | 275 | 220 | 250 | 200 | 6DTAA8.9-G24 | 6L | 114×144 | 8.9 | 192 | JET274H",
+        "| SD-303 | 303 | 242 | 275 | 220 | 6DTAA8.9-G23 | 6L | 114×144 | 8.9 | 192 | JET274J",
+        "| SD-358 | 358 | 286 | 325 | 260 | 6ETAA11.8-G22 | 6L | 128×153 | 11.8 | 190 | JET444D",
+        "| SD-440 | 440 | 352 | 400 | 320 | 6ETAA12.8-G22 | 6L | 130×161 | 12.8 | 190 | JET444E",
+        "| SD-500 | 500 | 400 | 450 | 360 | 6ETAA12.8-G32 | 6L | 130×161 | 12.8 | 190 | JET444FS",
+        "| SD-550 | 550 | 440 | 500 | 400 | 6ETAA12.8-G310.1 | 6L | 130×161 | 12.8 | 190 | JET544C",
+        "| SD-625 | 625 | 500 | 575 | 460 | 6KTAA25-G311 | 6L | 170×185 | 25.2 | 192 | JET544D",
+        "| SD-688 | 688 | 550 | 625 | 500 | 6KTAA25-G310 | 6L | 170×185 | 25.2 | 192 | JET544D",
+        "| SD-770 | 770 | 616 | 700 | 560 | 6KTAA25-G39 | 6L | 170×185 | 25.2 | 192 | JET544ES",
+        "| SD-825 | 825 | 660 | 750 | 600 | 6KTAA25-G32.1 | 6L | 170×185 | 25.2 | 192 | JET544FS",
+        "| SD-900 | 900 | 720 | 813 | 650 | 6KTAA25-G31.1 | 6L | 170×185 | 25.2 | 192 | JET544FM",
+        "| SD-1000 | 1000 | 800 | 900 | 720 | 6KTAA25-G320.1 | 6L | 170×185 | 25.2 | 192 | JET634D",
+        "| SD-1100 | 1100 | 880 | 1000 | 800 | 6KTAA25-G321.1 | 6L | 170×185 | 25.2 | 192 | JET634E"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "60Hz 73KVA to 1125KVA HYUNDAI Doosan Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 440V / 60Hz / 1800rpm | HYUNDAI Diesel Engine | Emission | Alternator",
+        "| Standby output | Prime Output | Model | No. of Cylinder | Displacement | Bore×Stroke | Fuel cons. | Leroy Somer",
+        "| KVA | KW | KVA | KW | (L) | (MM) | （ L/h ） | level"
+      ],
+      "rows": [
+        "| HD-80 | 80 | 64 | 73 | 58 | SP344CB | L4 | 3.4 | 98 x 113 | 13 | N/A | TAL-A42-H",
+        "| HD-100 | 100 | 80 | 91.25 | 73 | SP344CC | L4 | 3.4 | 98 x 113 | 15.7 | N/A | TAL-A44-C",
+        "| HD-164 | 164 | 131 | 147.5 | 118 | DP054CA | L4 | 5.0 | 110 x 132 | 32.8 | N/A | TAL-A44-H",
+        "| HD-193 | 193 | 154 | 175 | 140 | DP054CB | L4 | 5.0 | 110 x 132 | 38.3 | N/A | TAL-A44-K",
+        "| HD-253 | 253 | 202 | 230 | 184 | DP086CA | L6 | 7.5 | 110 x 132 | 49.4 | N/A | TAL-A44-M",
+        "| HD-289 | 289 | 231 | 262.5 | 210 | DP086CB | L6 | 7.5 | 110 x 132 | 54.9 | N/A | TAL-A46-C",
+        "| HD-321 | 321 | 257 | 280 | 224 | DP086CC | L6 | 7.5 | 110 x 132 | 61.1 | N/A | TAL-A46-D",
+        "| HD-350 | 350 | 280 | 315 | 252 | DP086CD | L6 | 7.5 | 110 x 132 | 67.1 | N/A | TAL-A46-E",
+        "| HD-380 | 380 | 304 | 340 | 272 | DP086CE | L6 | 7.5 | 110 x 132 | 73.1 | N/A | TAL-A46-F",
+        "| HD-440 | 440 | 352 | 400 | 320 | DP126LB | L6 | 11.1 | 123 x 155 | 85.8 | N/A | TAL-A46-H",
+        "| HD-510 | 510 | 408 | 444 | 355 | P158LE | 8V | 14.6 | 128 x 142 | 102.5 | N/A | TAL-A473-A",
+        "| HD-575 | 575 | 460 | 520 | 416 | DP158LC | 8V | 14.6 | 128 x 142 | 110.9 | N/A | TAL-A473-B",
+        "| HD-625 | 625 | 500 | 566.25 | 453 | DP158LD | 8V | 14.6 | 128 x 142 | 127.1 | N/A | TAL-A473-D",
+        "| HD-695 | 695 | 556 | 630 | 504 | DP180LA | 10V | 18.3 | 128 x 142 | 140.5 | N/A | TAL-A473-E",
+        "| HD-750 | 750 | 600 | 679 | 543 | DP180LB | 10V | 18.3 | 128 x 142 | 150.7 | N/A | TAL-A473-F",
+        "| HD-875 | 875 | 700 | 794 | 635 | DP222LB | 12V | 21.9 | 128 x 142 | 172.7 | N/A | TAL-A49-B",
+        "| HD-930 | 930 | 744 | 842.5 | 674 | DP222LC | 12V | 21.9 | 128 x 142 | 183.2 | N/A | TAL-A49-C",
+        "| HD-1025 | 1025 | 820 | 937.5 | 750 | DP222CB | 12V | 21.9 | 128 x 142 | 216 | N/A | TAL-A49-C",
+        "| HD-1125 | 1125 | 900 | 1000 | 800 | DP222CC | 12V | 21.9 | 128 x 142 | 241 | N/A | TAL-A49-D"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "EU Stage V 50Hz 30KVA to 330KVA HYUNDAI Doosan Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 400V / 50Hz / 1500rpm | HYUNDAI Diesel Engine | Emission | Alternator",
+        "| Standby output | Prime Output | Model | No. of Cylinder | Displacement | Bore×Stroke | Fuel cons. | Leroy Somer",
+        "| KVA | KW | KVA | KW | (L) | (MM) | （ L/h ） | level"
+      ],
+      "rows": [
+        "| HD-33V | 33 | 26.4 | 30 | 24 | DM01VP | L3 | 1.8 | 90 x 94 | 5.6 | EU Stage V | TAL-A42-C",
+        "| HD-53V | 53 | 42 | 50 | 40 | DM02VP | L4 | 2.4 | 90 x 94 | 8.4 | EU Stage V | TAL-A42-H",
+        "| HD-60V | 60 | 48 | 60 | 48 | DM03VG | L4 | 3.4 | 98 x 113 | 10.6 | EU Stage V | TAL-A42-H",
+        "| HD-138V | 138 | 110 | 125 | 100 | DP054CAV | L4 | 5.0 | 110 x 132 | 26.8 | EU Stage V | TAL-A44-E",
+        "| HD-175V | 175 | 140 | 160 | 128 | DP054CBV | L4 | 5.0 | 110 x 132 | 33.4 | EU Stage V | TAL-A44-K",
+        "| HD-206V | 206 | 165 | 200 | 160 | DP054CCV | L4 | 5.0 | 110 x 132 | 43 | EU Stage V | TAL-A44-M",
+        "| HD-250V | 250 | 200 | 225 | 180 | DP086CBV | L6 | 7.5 | 110 x 132 | 47.8 | EU Stage V | TAL-A46-C",
+        "| HD-275V | 275 | 220 | 250 | 200 | DP086CCV | L6 | 7.5 | 110 x 132 | 52.4 | EU Stage V | TAL-A46-D",
+        "| HD-330V | 330 | 264 | 300 | 240 | DP086CEV | L6 | 7.5 | 110 x 132 | 62.9 | EU Stage V | TAL-A46-F"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "9KVA to 18KVA Portable Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | KDE12STA | JDE16000SE | JDE17000SE | JDE23000SE"
+      ],
+      "rows": [
+        "| Rated frequency (Hz) | 50 60 | 50 60 | 50 60 | 50 60",
+        "| Rated output (kVA) | 9 10 | 11 12 | 13 14 | 16",
+        "| Max. output (kVA) | 10 11 | 12 13 | 14 15 | 18",
+        "| Rated Voltage (V) | 110/220,120/240 | 110/220,120/240 | 110/220,120/240 | 110/220,120/240",
+        "| Rated Speed (r/min) | 3000 3600 | 3000 3600 | 3000 3600 | 3000 3600",
+        "| Power factor (Cos Φ) | 1 | 1 | 1 | 1",
+        "| Pole number | 2 | 2 | 2 | 2",
+        "| Noise level （ @7m ） | 72 dB(A) | 74 dB(A) | 74 dB(A) | 74 dB(A)",
+        "| Engine Model | KD2V80G | 2V92 | 2V95 | 2V100",
+        "| Cylinder NO.-bore×stroke (mm) | 2- 80×79 | 2-92×75 | 2-95×88 | 2-100×88",
+        "| Displacement (ml) | 794 | 996 | 1247 | 1382",
+        "| Rated power KW/(r/min) | 14.5/3600 | 16/3600 | 19/3600 | 22/3600",
+        "| Lube capacity (L) | 2.3 | 2.75 | 4 | 4",
+        "| Fuel consumption (g/kw.h) | ≤285 | ≤268 | ≤268 | ≤268",
+        "| Fuel tank capacity (L) | 26 | 30 | 30 | 30",
+        "| Dimension (mm) | 1260×720×865 | 1260×820×920 | 1360×820×920 | 1360×820×920",
+        "| Weight (kg) | 285 | 310 | 320 | 350",
+        "| Qty / 20GP | 26 | 24 | 22 | 22"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "Open Type Air Cooled Diesel Generator Set | Jet Power",
+      "header": [],
+      "rows": [
+        "| Model | JDE3500 | JDE6500 | JDE7500 | JDE8500 | JDE9500 | JDE11000 | JDE12000",
+        "| Rated frequency (Hz) | 50 60 | 50 60 | 50 60 | 50 60 | 50 60 | 50 60 | 50 60",
+        "| Rated output (kVA) | 2.8 3.3 | 4.5 5.0 | 5.0 5.5 | 5.5 6.0 | 6.0 6.5 | 8.0 8.5 | 9.0",
+        "| Max. output (kVA) | 3.2 3.8 | 5.0 5.5 | 5.5 6.0 | 6.0 6.5 | 6.5 7.0 | 8.8 9.0 | 10.0",
+        "| Rated Voltage (V) | 230 120/240 | 230 120/240 | 230 120/240 | 230 120/240 | 230 120/240 | 230 120/240 | 230 120/240",
+        "| Rated current (A) | 12.2 27.5/13.8 | 19.6 41.7/20.8 | 21.7 45.8/22.9 | 23.9 50/25 | 26 54/27 | 34.8 70/35 | 34.8 70/35",
+        "| Rated rotation speed (r/min) | 3000 3600 | 3000 3600 | 3000 3600 | 3000 3600 | 3000 3600 | 3000 3600 | 3000 3600",
+        "| Power factor (Cos Φ) | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0",
+        "| Voltage (V) | 115/230 120/240 | 115/230 120/240 | 115/230 120/240 | 115/230 120/240 | 115/230 120/240 | 115/230 120/240 | 115/230 120/240",
+        "| DC output | 12V/8.3A | 12V/8.3A | 12V/8.3A | 12V/8.3A | 12V/8.3A | 12V/8.3A | 12V/8.3A",
+        "| Cylinder NO.-bore×stroke (mm) | 1-78×62 | 1-86×72 | 1-88×75 | 1-92×75 | 1-95×75 | 1-100×85 | 1-105×88",
+        "| Displacement (ml) | 296 | 418 | 456 | 518 | 532 | 667 | 762",
+        "| Rated power [KW/(r/min)] | 3.68/3000 4.0/3600 | 5.7/3000 6.3/3600 | 7.5/3000 8.2/3600 | 8.0/3000 9.2/3600 | 8.8/3000 9.5/3600 | 10.5/3000 11/3600 | 12.5/3000 13.5/3600",
+        "| Compression ratio | 19:01 | 19:01 | 19:01 | 19:01 | 19:01 | 19:01 | 19:01",
+        "| Lube capacity (L) | 1.1 | 1.65 | 1.65 | 1.65 | 1.65 | 1.65 | 2",
+        "| Starting motor capacity (V-kW) | 12V 0.8kW | 12V 0.8kW | 12V 0.8kW | 12V 0.8kW | 12V 0.8kW | 12V 0.8kW | 12V 0.8kW",
+        "| Charging generator capacity (V-A) | 12V 3A | 12V 3A | 12V 3A | 12V 3A | 12V 3A | 12V 3A | 12V 3A",
+        "| Fuel consumption (g/kW.h) | ≤370 | ≤360 | ≤360 | ≤360 | ≤360 | ≤360 | ≤360",
+        "| Fuel tank capacity (L) | 13.5 | 13.5 | 13.5 | 13.5 | 13.5 | 13.5 | 25",
+        "| Packing size MM | 960×560×760 | 960×560×760 | 960×560×760 | 960×560×760 | 960×560×760 | 960×560×760 | 1100×630×860",
+        "| N.Weight (Kg) | 136 | 145 | 148 | 151 | 158 | 175 | 205",
+        "| G.Weight (Kg) | 143 | 152 | 155 | 160 | 165 | 180 | 215",
+        "| Loading quantity @ 20GP | 72 pcs | 72 pcs | 72 pcs | 72 pcs | 72 pcs | 72 pcs | 36 pcs"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "Kubota Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| KVA | KW | KVA | KW | (L) | (MM) | (L x W x H) | Kg | (L x W x H) | Kg"
+      ],
+      "rows": [
+        "| K-7D5 | 7.0 | 5.6 | 6.4 | 5.1 | D905 | T2 | 247 | 3 | Mechanical | 0.898 | 72×73.6 | JET164A | 1200*650*1000 | 320 | 1800*850*1100 | 540",
+        "| K-9D5 | 9.0 | 7.2 | 8.1 | 6.5 | D1105 | T2 | 247 | 3 | Mechanical | 1.123 | 78×78.4 | JET164A | 1200*650*1000 | 350 | 1800*850*1100 | 570",
+        "| K-13D5 | 12.5 | 10.0 | 11.0 | 8.8 | V1505 | T2 | 247 | 4 | Mechanical | 1.498 | 78×78.4 | JET164B | 1400*750*1050 | 400 | 1800*850*1100 | 630",
+        "| K-15D5 | 15.0 | 12.0 | 12.5 | 10.0 | D1703 | T2 | 233 | 3 | Mechanical | 1.647 | 87×92.5 | JET164C | 1400*750*1050 | 450 | 1800*850*1100 | 680",
+        "| K-17D5 | 16.5 | 13.2 | 15.0 | 12.0 | D1803 | T2 | 233 | 3 | EGV | 1.826 | 87×102.4 | JET164D | 1400*750*1050 | 560 | 1800*850*1100 | 790",
+        "| K-20D5 | 20.0 | 16.0 | 18.0 | 14.4 | V2203 | T2 | 233 | 4 | Mechanical | 2.197 | 87×92.5 | JET184D | 1600*750*1050 | 580 | 2000*950*1150 | 810",
+        "| K-22D5 | 22.0 | 17.6 | 20.0 | 16.0 | V2003T | T2 | 233 | 4 | Mechanical | 1.999 | 83×92.4 | JET184D | 1600*750*1050 | 620 | 2000*950*1150 | 850",
+        "| K-22D5 | 22.0 | 17.6 | 20.0 | 16.0 | V2403 | T2 | 233 | 4 | EGV | 2.434 | 87×102.4 | JET184D | 1600*750*1050 | 650 | 2000*950*1150 | 880",
+        "| K-30D5 | 30.0 | 24.0 | 27.5 | 22.0 | V3300 | T2 | 243 | 4 | Mechanical | 3.318 | 98×110 | JET184F | 1800*750*1050 | 670 | 2200*950*1150 | 900",
+        "| K-38D5 | 37.5 | 30.0 | 35.0 | 28.0 | V3300T | T2 | 236 | 4 | Mechanical | 3.318 | 98×110 | JET184H | 1800*750*1050 | 700 | 2200*950*1150 | 930",
+        "| K-45D5 | 45.0 | 36.0 | 40.0 | 32.0 | V3800T | T2 | 230 | 4 | EGV | 3.769 | 100×120 | JET184J | 1800*750*1050 | 720 | 2200*950*1150 | 950"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "60Hz WeiChai Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 416V / 60Hz / 1800RPM | WEICHAI Diesel Engine | Brushless Alternator",
+        "| Standby output | Prime Output | Model | No. of Cylinder | Governor | Bore×Stroke | Displacement | Fuel cons.",
+        "| KVA | KW | KVA | KW | (MM) | (L) | （L/h）"
+      ],
+      "rows": [
+        "| WP-28 | 27.5 | 22 | 25 | 20 | WP2.3D30E201 | 4L | Electronic | 89*92 | 2.3 | 6.1 | JET184E",
+        "| WP-41 | 41 | 33 | 38 | 30 | WP2.3D41E201 | 4L | Electronic | 89*92 | 2.3 | 7.5 | JET184G",
+        "| WP-50 | 50 | 40 | 44 | 35 | WP2.3D47E201 | 4L | Electronic | 89*92 | 2.3 | 9.3 | JET184H",
+        "| WP-63 | 63 | 50 | 50 | 40 | WP2.3D58E201 | 4L | Electronic | 89*92 | 2.3 | 11.4 | JET224C",
+        "| WP-69 | 69 | 55 | 63 | 50 | WP4.1D80E201 | 4L | Electronic | 105*118 | 4.1 | 13 | JET224D",
+        "| WP-83 | 83 | 66 | 75 | 60 | WP4.1D80E201 | 4L | Electronic | 105*118 | 4.1 | 16.6 | JET224E",
+        "| WP-104 | 104 | 83 | 94 | 75 | WP4.1D95E201 | 4L | Electronic | 105*118 | 4.1 | 17 | JET224G",
+        "| WP-125 | 125 | 100 | 113 | 90 | WP4.1D120E201 | 4L | Electronic | 105*118 | 4.1 | 20.8 | JET274C",
+        "| WP-138 | 138 | 110 | 125 | 100 | WP6D132E201 | 6L | Electronic | 105*130 | 6.75 | 28.9 | JET274DM",
+        "| WP-165 | 165 | 132 | 150 | 120 | WP6D158E201 | 6L | Electronic | 105*130 | 6.75 | 33.3 | JET274E",
+        "| WP-188 | 188 | 150 | 181 | 145 | WP6D180E201^ | 6L | Electronic | 105*130 | 6.75 | 36.7 | JET274F",
+        "| WP-206 | 206 | 165 | 188 | 150 | WP10D200E201 | 6L | Electronic | 126*130 | 9.73 | 46 | JET274G",
+        "| WP-250 | 250 | 200 | 225 | 180 | WP10D238E201 | 6L | Electronic | 126*130 | 9.73 | 54.6 | JET274J",
+        "| WP-275 | 275 | 220 | 250 | 200 | WP10D264E201 | 6L | Electronic | 126*130 | 9.73 | 60.7 | JET274K",
+        "| WP-385 | 385 | 308 | 350 | 280 | WP10D360E201 | 6L | Electronic | 126*130 | 9.73 | 73.4 | JET444E",
+        "| WP-413 | 413 | 330 | 375 | 300 | WP13D385E201 | 6L | Electronic | 127*165 | 12.54 | 86.5 | JET444FS",
+        "| WP-500 | 500 | 400 | 450 | 360 | WP13D448E201 | 6L | Electronic | 127*165 | 12.54 | 90.9 | JET444F",
+        "| WP-575 | 575 | 460 | 500 | 400 | WP13D510E311 | 6L | ECU | 150*150 | 15.9 | 108.7 | JET544D",
+        "| WP-719 | 719 | 575 | 650 | 520 | 6M33D633E201 | 6L | Electronic | 150*185 | 19.6 | 142.1 | JET544E",
+        "| WP-750 | 750 | 600 | 688 | 550 | 6M33D670E201 | 6L | Electronic | 150*185 | 19.6 | 142.1 | JET544F",
+        "| WP-791 | 791 | 633 | 719 | 575 | 6M33D710E201 | 6L | Electronic | 150*185 | 19.6 | 142.1 | JET544FM",
+        "| WP-825 | 825 | 660 | 750 | 600 | 6M33D740E311 | 6L | Electronic | 150*185 | 19.6 | 165.5 | JET634B",
+        "| WP-875 | 875 | 700 | 800 | 640 | 8M33D845E201 | 8L | Electronic | 150*185 | 26.1 | 170 | JET634C",
+        "| WP-1000 | 1000 | 800 | 900 | 720 | 8M33D909E201 | 8L | Electronic | 150*185 | 26.1 | 176 | JET634D",
+        "| WP-1125 | 1125 | 900 | 1000 | 800 | 8M33D1012E311 | 8L | Electronic | 150*185 | 26.1 | 198 | JET634E",
+        "| WP-1000 | 1000 | 800 | 900 | 720 | 12M26D902E201 | 12V | Electronic | 150*150 | 31.8 | 173 | JET634D",
+        "| WP-1125 | 1125 | 900 | 1000 | 800 | 12M26D1012E201 | 12V | Electronic | 150*150 | 31.8 | 195 | JET634E",
+        "| WP-1375 | 1375 | 1100 | 1250 | 1000 | 12M33D1265E201 | 12V | Electronic | 150*185 | 39.2 | 248.8 | JET634G",
+        "| WP-1500 | 1500 | 1200 | 1375 | 1100 | 12M33D1320E201 | 12V | Electronic | 150*185 | 39.2 | 271.8 | JET734B",
+        "| WP-1625 | 1625 | 1300 | 1500 | 1200 | 12M33D1420E201 | 12V | Electronic | 150*185 | 39.2 | 326.1 | JET734C",
+        "| WP-2063 | 2063 | 1650 | 1875 | 1500 | 16M33D1785E311 | 16V | ECU | 150*185 | 52.3 | 353.3 | JET734E",
+        "| WP-2188 | 2200 | 1760 | 2000 | 1600 | 16M33D1920E311 | 16V | ECU | 150*185 | 52.3 | 378 | JET734E"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "50HZ Weichai Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 400V / 50Hz / 1500RPM | WEICHAI Diesel Engine | Brushless Alternator",
+        "| Standby output | Prime Output | Model | No. of Cylinder | Governor | Bore×Stroke | Displacement | Fuel cons.",
+        "| KVA | KW | KVA | KW |",
+        "| (MM) | (L) | （ L/h ）"
+      ],
+      "rows": [
+        "| WP-23 | 23 | 18 | 20 | 16 | WP2.3D25E200 | 4L | Electronic | 89*92 | 2.3 | 6.1 | JET184D",
+        "| WP-33 | 33 | 26 | 30 | 24 | WP2.3D33E200 | 4L | Electronic | 89*92 | 2.3 | 7.5 | JET184G",
+        "| WP-41 | 41 | 33 | 38 | 30 | WP2.3D40E200 | 4L | Electronic | 89*92 | 2.3 | 9.3 | JET184H",
+        "| WP-50 | 50 | 40 | 45 | 36 | WP2.3D48E200 | 4L | Electronic | 89*92 | 2.3 | 11.4 | JET224C",
+        "| WP-55 | 55 | 44 | 50 | 40 | WP4.1D66E200 | 4L | Electronic | 105*118 | 4.1 | 13 | JET224D",
+        "| WP-69 | 69 | 55 | 63 | 50 | WP4.1D66E200 | 4L | Electronic | 105*118 | 4.1 | 16.6 | JET224E",
+        "| WP-88 | 88 | 70 | 80 | 64 | WP4.1D80E200 | 4L | Electronic | 105*118 | 4.1 | 17 | JET224G",
+        "| WP-125 | 125 | 100 | 100 | 80 | WP4.1D113E200 | 4L | Electronic | 105*118 | 4.1 | 20.8 | JET274C",
+        "| WP-150 | 150 | 120 | 125 | 100 | WP6D132E200 | 6L | Electronic | 105*130 | 6.75 | 28.9 | JET274DM",
+        "| WP-165 | 165 | 132 | 150 | 120 | WP6D152E200 | 6L | Electronic | 105*130 | 6.75 | 33.3 | JET274F",
+        "| WP-188 | 188 | 150 | 170 | 136 | WP6D167E200 | 6L | Electronic | 105*130 | 6.75 | 36.7 | JET274G",
+        "| WP-220 | 220 | 176 | 200 | 160 | WP10D200E200 | 6L | Electronic | 126*130 | 9.73 | 46 | JET274H",
+        "| WP-250 | 250 | 200 | 225 | 180 | WP10D238E200 | 6L | Electronic | 126*130 | 9.73 | 54.6 | JET274J",
+        "| WP-275 | 275 | 220 | 250 | 200 | WP10D264E200 | 6L | Electronic | 126*130 | 9.73 | 60.7 | JET274K",
+        "| WP-350 | 350 | 280 | 313 | 250 | WP10D320E200 | 6L | Electronic | 126*130 | 9.73 | 73.4 | JET444E",
+        "| WP-400 | 400 | 320 | 375 | 300 | WP13D385E200 | 6L | Electronic | 127*165 | 12.54 | 86.5 | JET444FS",
+        "| WP-438 | 438 | 350 | 400 | 320 | WP13D405E200 | 6L | Electronic | 127*165 | 12.54 | 90.9 | JET444F",
+        "| WP-500 | 500 | 400 | 438 | 350 | WP13D440E310 | 6L | ECU | 127*165 | 12.54 | 98.8 | JET544C",
+        "| WP-550 | 550 | 440 | 500 | 400 | WP13D490E310 | 6L | ECU | 150*150 | 15.9 | 108.7 | JET544D",
+        "| WP-650 | 650 | 520 | 575 | 460 | 6M33D572E200 | 6L | Electronic | 150*185 | 19.6 | 142.1 | JET544E",
+        "| WP-725 | 725 | 580 | 650 | 520 | 6M33D633E200 | 6L | Electronic | 150*185 | 19.6 | 142.1 | JET544F",
+        "| WP-750 | 750 | 600 | 675 | 540 | 6M33D670E200 | 6L | Electronic | 150*185 | 19.6 | 142.1 | JET544FM",
+        "| WP-813 | 813 | 650 | 750 | 600 | 6M33D725E310 | 6L | Electronic | 150*185 | 19.6 | 165.5 | JET634B",
+        "| WP-875 | 875 | 700 | 800 | 640 | 8M33D800E200 | 8L | Electronic | 150*185 | 26.1 | 170 | JET634C",
+        "| WP-1000 | 1000 | 800 | 900 | 720 | 8M33D890E200 | 8L | Electronic | 150*185 | 26.1 | 176 | JET634D",
+        "| WP-1100 | 1100 | 880 | 1000 | 800 | 8M33D975E310 | 8L | Electronic | 150*185 | 26.1 | 198 | JET634E",
+        "| WP-875 | 875 | 700 | 800 | 640 | 12M26D792E200 | 12V | Electronic | 150*150 | 31.8 | 173 | JET634C",
+        "| WP-1000 | 1000 | 800 | 900 | 720 | 12M26D902E200 | 12V | Electronic | 150*150 | 31.8 | 195 | JET634D",
+        "| WP-1100 | 1100 | 880 | 1000 | 800 | 12M26D968E200 | 12V | Electronic | 150*150 | 31.8 | 217 | JET634E",
+        "| WP-1250 | 1250 | 1000 | 1125 | 900 | 12M33D1108E200 | 12V | Electronic | 150*185 | 39.2 | 248.8 | JET634F",
+        "| WP-1375 | 1375 | 1100 | 1250 | 1000 | 12M33D1210E200 | 12V | Electronic | 150*185 | 39.2 | 271.8 | JET634G",
+        "| WP-1500 | 1500 | 1200 | 1375 | 1100 | 12M33D1320E200 | 12V | Electronic | 150*185 | 39.2 | 326.1 | JET734B",
+        "| WP-1650 | 1650 | 1320 | 1500 | 1200 | 12M33D1500E310 | 16V | ECU | 150*185 | 52.3 | 343.4 | JET734C",
+        "| WP-1900 | 1900 | 1520 | 1750 | 1400 | 16M33D1680E310 | 16V | ECU | 150*185 | 52.3 | 353.3 | JET734E",
+        "| WP-2063 | 2063 | 1650 | 1875 | 1500 | 16M33D1800E310 | 16V | ECU | 150*185 | 52.3 | 378 | JET734E",
+        "| WP-2250 | 2250 | 1800 | 2000 | 1600 | 16M33D1980E310 | 16V | ECU | 150*185 | 52.3 | 420 | JET734F",
+        "| WP-2500 | 2500 | 2000 | 2250 | 1800 | 12M55D2210E310 | 12V | ECU | 180*215 | 65.7 | 457.1 | JET734G",
+        "| WP-2750 | 2750 | 2200 | 2500 | 2000 | 12M55D2450E310 | 12V | ECU | 180*215 | 65.7 | 490.4 | JET734H",
+        "| WP-3125 | 3125 | 2500 | 2813 | 2250 | 16M55D2750E310 | 16V | ECU | 180*215 | 87 | 517 | JET504B",
+        "| WP-3313 | 3313 | 2650 | 3000 | 2400 | 16M55D2900E310 | 16V | ECU | 180*215 | 87 | 564 | JET504D",
+        "| WP-3750 | 3750 | 3000 | 3250 | 2600 | 16M55D3300E310 | 16V | ECU | 180*215 | 87 | 612 | JET564C"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "60Hz Cummins Water Cooled Diesel Generator Set Supply | Jet Power",
+      "header": [
+        "| Model | 480V/ 60Hz / 1800rpm | Cummins Diesel Engine | Alternator",
+        "| Standby | Prime | Model | No. of Cylinder | Displacement | Bore×Stroke | Fuel cons. | Leroy Somer",
+        "| KVA | KW | KVA | KW | (L) | (MM) | （ L/h ）"
+      ],
+      "rows": [
+        "| C-23 | 23 | 18 | 20 | 16 | 4B3.9-G11 | 4L | 3.9 | 102ˣ120 | 7 | TAL-A40-F",
+        "| C-28 | 28 | 22 | 25 | 20 | 4B3.9-G11 | 4L | 3.9 | 102ˣ120 | 8.6 | TAL-A40-G",
+        "| C-33 | 33 | 26 | 30 | 24 | 4B3.9-G2 | 4L | 3.9 | 102ˣ120 | 10.7 | TAL-A40-G",
+        "| C-38 | 38 | 30 | 35 | 28 | 4B3.9-G12 | 4L | 3.9 | 102ˣ120 | 11 | TAL-A42-C",
+        "| C-44 | 44 | 35 | 40 | 32 | 4BT3.9-G2 | 4L | 3.9 | 102ˣ120 | 12 | TAL-A42-E",
+        "| C-55 | 55 | 44 | 50 | 40 | 4BTA3.9-G2 | 4L | 3.9 | 102ˣ120 | 13 | TAL-A42-F",
+        "| C-66 | 66 | 53 | 63 | 50 | 4BTA3.9-G2 | 4L | 3.9 | 102ˣ120 | 15.9 | TAL-A42-H",
+        "| C-80 | 80 | 64 | 73 | 58 | 4BTA3.9-G11 | 4L | 3.9 | 102ˣ120 | 19 | TAL-A42-H",
+        "| C-96 | 96 | 77 | 88 | 70 | 4BTA3.9-G11 | 4L | 3.9 | 102ˣ120 | 20.1 | TAL-A44-C",
+        "| C-110 | 110 | 88 | 100 | 80 | 6BT5.9-G2 | 6L | 5.9 | 102ˣ120 | 23.9 | TAL-A44-C",
+        "| C-125 | 125 | 100 | 114 | 91 | 6BT5.9-G2 | 6L | 5.9 | 102ˣ120 | 26 | TAL-A44-D",
+        "| C-138 | 138 | 110 | 125 | 100 | 6BTA5.9-G2 | 6L | 5.9 | 102ˣ120 | 31 | TAL-A44-E",
+        "| C-150 | 150 | 120 | 138 | 110 | 6BTAA5.9-G2 | 6L | 5.9 | 102ˣ120 | 34 | TAL-A44-E",
+        "| C-176 | 176 | 141 | 160 | 128 | 6BTAA5.9-G12 | 6L | 5.9 | 102ˣ120 | 38 | TAL-A44-H",
+        "| C-200 | 200 | 160 | 180 | 144 | 6CTA8.3-G2 | 6L | 8.3 | 114ˣ135 | 44 | TAL-A44-J",
+        "| C-220 | 220 | 176 | 200 | 160 | 6CTAA8.3-G2 | 6L | 8.3 | 114ˣ135 | 49 | TAL-A44-K",
+        "| C-275 | 275 | 220 | 250 | 200 | 6LTAA8.9-G2 | 6L | 8.9 | 114ˣ135 | 59 | TAL-A44-M",
+        "| C-303 | 303 | 242 | 275 | 220 | 6LTAA8.9-G3 | 6L | 8.9 | 114ˣ145 | 62 | TAL-A46-C",
+        "| C-344 | 344 | 275 | 313 | 250 | 6LTAA9.5-G1 | 6L | 9.5 | 116.5ˣ148 | 62.3 | TAL-A46-D",
+        "| C-440 | 440 | 352 | 400 | 320 | 6ZTAA13-G2 | 6L | 13 | 130ˣ163 | 82.3 | TAL-A46-G",
+        "| C-460 | 460 | 368 | 438 | 350 | 6ZTAA13-G4 | 6L | 13 | 130ˣ163 | 89 | TAL-A46-H",
+        "| C-523 | 523 | 418 | 475 | 380 | QSZ13-G3 | 6L | 13 | 130ˣ163 | 90.2 | TAL-A473-A",
+        "| C-625 | 625 | 500 | 563 | 450 | QSZ13-G11 | 6L | 13 | 130ˣ163 | 104.1 | TAL-A473-B",
+        "| C-344 | 344 | 275 | 313 | 250 | NTA855-G1 | 6L | 14 | 140ˣ152 | 73 | TAL-A46-D",
+        "| C-375 | 375 | 300 | 344 | 275 | NTA855-G1B | 6L | 14 | 140ˣ152 | 80.5 | TAL-A46-F",
+        "| C-438 | 438 | 350 | 400 | 320 | QSNT-G3 | 6L | 14 | 140ˣ152 | 86 | TAL-A46-G",
+        "| C-500 | 500 | 400 | 450 | 360 | KTA19-G2 | 6L | 14.5L | 135×169 | 98 | TAL-A473-A",
+        "| C-563 | 563 | 450 | 513 | 410 | KTA19-G3 | 6L | 18.9 | 159ˣ159 | 111 | TAL-A473-B",
+        "| C-625 | 625 | 500 | 563 | 450 | KTA19-G3A | 6L | 18.9 | 159ˣ159 | 122 | TAL-A473-B",
+        "| C-688 | 688 | 550 | 588 | 470 | KTAA19-G5 | 6L | 18.9 | 159ˣ159 | 134 | TAL-A473-C",
+        "| C-713 | 713 | 570 | 625 | 500 | QSK19-G4 | 6L | 18.9 | 159ˣ159 | 140 | TAL-A473-C",
+        "| C-750s | 750 | 600 | / | / | KTAA19-G6A | 6L | 18.9 | 159ˣ159 | 145 | TAL-A473-D",
+        "| C-750 | 750 | 600 | 688 | 550 | QSK19-G5 | 6L | 18.9 | 159ˣ159 | 151 | TAL-A473-D",
+        "| C-813 | 813 | 650 | 681 | 545 | QSK19-G8 | 6L | 18.9 | 159ˣ159 | 160 | TAL-A473-E",
+        "| C-850 | 850 | 680 | 775 | 620 | KT38-G | 12V | 37.8 | 159ˣ159 | 154 | TAL-A473-F",
+        "| C-1000 | 1000 | 800 | 906 | 725 | KTA38-G2 | 12V | 37.8 | 159ˣ159 | 204 | TAL-A49-B",
+        "| C-1125 | 1125 | 900 | 1000 | 800 | KTA38-G2A | 12V | 37.8 | 159ˣ159 | 225 | TAL-A49-C",
+        "| C-1250 | 1250 | 1000 | 1125 | 900 | KTA38-G4 | 12V | 37.8 | 159ˣ159 | 237 | TAL-A49-D",
+        "| C-1313 | 1313 | 1050 | 1188 | 950 | KTA38-G4B | 12V | 37.8 | 159ˣ159 | 254 | TAL-A49-E",
+        "| C-1375s | 1375 | 1100 | / | / | KTA38-G9 | 12V | 37.8 | 159ˣ159 | 287 | TAL-A49-E",
+        "| C-1575 | 1575 | 1260 | 1375 | 1100 | KTA50-G3 | 16V | 50.3 | 159ˣ159 | 291 | LSA50.2 M6",
+        "| C-1875 | 1875 | 1500 | 1575 | 1260 | KTA50-G9 | 16V | 50.3 | 159ˣ159 | 330 | LSA50.2 L8",
+        "| C-2250 | 2250 | 1800 | 2000 | 1600 | QSK60G6 | 16 | 60.2 | 159*190 | 412 | LSA 50.2 VL10",
+        "| C-2500 | 2500 | 2000 | 2250 | 1800 | QSK60G6 | 16 | 60.2 | 159*190 | 466 | LSA52.3S6"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "60Hz 25KVA to 69KVA ISUZU Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 416V / 60Hz / 1800RPM | ISUZU Diesel Engine | Alternator",
+        "| Standby output | Prime Output | Model / Output | Engine type | Displacement | Bore×Stroke | BRUSHLESS",
+        "| KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | 100% copper"
+      ],
+      "rows": [
+        "| IS-28 | 27.5 | 22 | 25 | 20 | JE493DB-03/24KW | L4 | Mechanical | 2.771 | 93×102 | JET184FS/20KW",
+        "| IS-33 | 33 | 26.4 | 30 | 24 | JE493DB-01/28KW | L4 | Mechanical | 2.771 | 93×102 | JET184G/25KW",
+        "| IS-38 | 38 | 30 | 35 | 28 | JE493ZDB-03/34KW | L4 | Mechanical | 2.771 | 93×102 | JET184H/30KW",
+        "| IS-55 | 55 | 44 | 50 | 40 | JE493ZLDB-01/46KW | L4 | Mechanical | 2.771 | 93×102 | JET224C/40KW",
+        "| IS-69 | 69 | 55 | 63 | 50 | JE493ZLDC-01/61KW | L4 | Mechanical | 2.771 | 93×102 | JET224E/50KW"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Electrical Ricardo Water Cooled Diesel Generator Set | Jet Power",
+      "header": [
+        "| Model | 400V / 50Hz / 1500RPM | Chinese Diesel Engine | Alternator",
+        "| Standby Output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Brushless type",
+        "| KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM)"
+      ],
+      "rows": [
+        "| GF-11 | 11 | 9 | 10 | 8 | K2105D | L2 | Mechanical | 2.026 | 105×117 | JET164B",
+        "| GF-14 | 14 | 11 | 13 | 10 | K2105D | L2 | Mechanical | 2.026 | 105×117 | JET164C",
+        "| GF-17 | 17 | 13 | 15 | 12 | K2105D | L4 | Mechanical | 2.026 | 105×117 | JET164D",
+        "| GF-21 | 21 | 17 | 19 | 15 | K4100D | L4 | Mechanical | 3.61 | 100×115 | JET184D",
+        "| GF-25 | 25 | 20 | 23 | 18 | K4100D | L4 | Mechanical | 3.61 | 100×115 | JET184E",
+        "| GF-28 | 28 | 22 | 25 | 20 | K4100D | L4 | Mechanical | 3.61 | 100×115 | JET184F",
+        "| GF-33 | 33 | 26 | 30 | 24 | K4100D | L4 | Mechanical | 3.61 | 100×115 | JET184G",
+        "| GF-41 | 41 | 33 | 38 | 30 | K4100ZD | L4 | Mechanical | 3.61 | 100×115 | JET184H",
+        "| GF-55 | 55 | 44 | 50 | 40 | N4105ZD | L4 | Mechanical | 3.98 | 105×115 | JET224D",
+        "| GF-70 | 69 | 55 | 63 | 50 | N4105ZLD | L4 | Mechanical | 4.33 | 105×125 | JET224E",
+        "| GF-70 | 69 | 55 | 63 | 50 | R4105AZD | L4 | Mechanical | 4.5 | 105×135 | JET224E",
+        "| GF-83 | 83 | 66 | 75 | 60 | R4110ZD | L4 | Mechanical | 5.13 | 110×135 | JET224F",
+        "| GF-96 | 96 | 77 | 88 | 70 | R4110AZLD | L4 | Mechanical | 5.13 | 110×135 | JET224G",
+        "| GF-100 | 96 | 77 | 88 | 70 | R6105ZD | L6 | Mechanical | 6.49 | 105×125 | JET224G",
+        "| GF-110 | 110 | 88 | 100 | 80 | R6105AZLD | L6 | Mechanical | 6.7 | 105×130 | JET274C",
+        "| GF-125 | 125 | 100 | 113 | 90 | R6105AZLD | L6 | Mechanical | 6.7 | 105×130 | JET274D",
+        "| GF-138 | 138 | 110 | 125 | 100 | R6105IZLD | L6 | Mechanical | 7.1 | 105×135 | JET274D1",
+        "| GF-165 | 165 | 132 | 150 | 120 | R6110ZLD | L6 | Mechanical | 7.697 | 110×135 | JET274F",
+        "| GF-206 | 206 | 165 | 188 | 150 | R6113ZLD | L6 | Mechanical | 7.82 | 113×130 | JET274G",
+        "| GF-250 | 250 | 200 | 225 | 180 | R6126ZLD | L6 | Mechanical | 9.726 | 126×130 | JET274J",
+        "| GF-275 | 275 | 220 | 250 | 200 | R6126ZLD-1 | L6 | Electric | 9.726 | 126×130 | JET274K",
+        "| GF-330 | 330 | 264 | 300 | 240 | 618ZLD | L6 | Electric | 11.596 | 126×155 | JET444D",
+        "| GF-358 | 358 | 286 | 325 | 260 | 618AZLD | L6 | Electric | 11.596 | 126×155 | JET444E",
+        "| GF-413 | 413 | 330 | 375 | 300 | 618AZLD-1 | L6 | Electric | 11.596 | 126×155 | JET444FS",
+        "| GF-440 | 440 | 352 | 400 | 320 | 618AZLD-1 | L6 | Electric | 11.596 | 126×155 | JET444F",
+        "| GF-500 | 500 | 400 | 450 | 360 | K25G829D | 12V | Electric | 26.6 | 135×155 | JET544C",
+        "| GF-550 | 550 | 440 | 500 | 400 | K25G829D | 12V | Electric | 26.6 | 135×155 | JET544D",
+        "| GF-688 | 687.5 | 550 | 625 | 500 | K29G1120D | 12V | Electric | 28.7 | 138×160 | JET544FS",
+        "| GF-750 | 750 | 600 | 670 | 536 | K29G1120D | 12V | Electric | 28.7 | 138×160 | JET544F",
+        "| GF-825 | 825 | 660 | 750 | 600 | K29G1210D | 12V | Electric | 29.6 | 138×165 | JET634B",
+        "| GF-880 | 880 | 704 | 800 | 640 | K33G1310D | 12V | Electric | 31.4 | 140×170 | JET634C",
+        "| GF-1000 | 1000 | 800 | 910 | 728 | K33G1500D | 12V | Electric | 31.15 | 138×168 | JET634D",
+        "| GF-1100 | 1100 | 880 | 1000 | 800 | K33G1600D | 12V | Electric | 31.15 | 138×168 | JET634E"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "Wholesale Brushless Synchronous Alternator Supply | Jet Power",
+      "header": [
+        "| MODEL | 3-PHASE 50Hz /380V-440V | 3-PHASE 60Hz / 416V-480V | PACKAGE | WEIGHT",
+        "| (KVA) | (KW) | (KVA) | (KW) | LXWXH | kg"
+      ],
+      "rows": [
+        "| JET164A | 8.1 | 6.5 | 9.6 | 7.7 | 49X45X58 | 86",
+        "| JET164B | 11 | 8.8 | 13 | 10.4 | 49X45X58 | 93",
+        "| JET164C | 13.5 | 10.8 | 16 | 12.8 | 49X45X58 | 98",
+        "| JET164D | 16 | 12.8 | 19 | 15.1 | 49X45X58 | 108",
+        "| JET184D | 20 | 16 | 23 | 18.5 | 55X49X58 | 117",
+        "| JET184E | 22.5 | 18 | 28 | 22 | 55X49X58 | 133",
+        "| JET184FS | 25 | 20 | 29 | 23 | 63X49X58 | 143",
+        "| JET184F | 27.5 | 22 | 33 | 26 | 63X49X58 | 151",
+        "| JET184G | 31.3 | 25 | 35 | 28 | 63X49X58 | 173",
+        "| JET184H | 37.5 | 30 | 44 | 35.4 | 70X49X70 | 188",
+        "| JET184J | 40 | 32 | 47 | 37.8 | 70X49X70 | 199",
+        "| JET224C | 42.5 | 34 | 50 | 40 | 78X49X84 | 233",
+        "| JET224D | 50 | 40 | 60 | 48 | 78X49X84 | 249",
+        "| JET224E | 60 | 48 | 68 | 54 | 86X55X84 | 277",
+        "| JET224F | 72.5 | 58 | 84 | 67 | 86X55X84 | 313",
+        "| JET224G | 85 | 68 | 94 | 75 | 90X55X84 | 355",
+        "| JET274C | 100 | 80 | 113 | 90 | 88X63X94 | 371",
+        "| JET274D | 114 | 91 | 125 | 100 | 88X63X94 | 402",
+        "| JET274D1 | 125 | 100 | 131 | 105 | 98X63X94 | 430",
+        "| JET274E | 140 | 112 | 160 | 128 | 98X63X94 | 460",
+        "| JET274F | 160 | 128 | 181 | 145 | 98X63X94 | 513",
+        "| JET274G | 180 | 144 | 205 | 164 | 104X63X94 | 563",
+        "| JET274H | 200 | 160 | 238 | 190 | 108X63X94 | 615",
+        "| JET274J | 225 | 180 | 269 | 215 | 115X63X94 | 623",
+        "| JET274K | 250 | 200 | 290 | 232 | 115X63X94 | 688",
+        "| JET444C | 250 | 200 | 281 | 225 | 122X70X104 | 800",
+        "| JET444D | 295 | 236 | 338 | 270 | 122X70X104 | 878",
+        "| JET444E | 325 | 260 | 358 | 286 | 122X70X104 | 920",
+        "| JET444FS | 380 | 304 | 413 | 330 | 133X70X104 | 1088",
+        "| JET444F | 400 | 320 | 445 | 356 | 133X70X104 | 1103",
+        "| JET544C | 450 | 360 | 525 | 420 | 138X80X115 | 1213",
+        "| JET544D | 500 | 400 | 575 | 460 | 138X80X115 | 1363",
+        "| JET544ES | 563 | 450 | 625 | 500 | 138X80X115 | 1410",
+        "| JET544E | 600 | 480 | 681 | 545 | 138X80X115 | 1459",
+        "| JET544FS | 625 | 500 | 700 | 560 | 149X80X115 | 1580",
+        "| JET544F | 670 | 536 | 738 | 590 | 149X80X115 | 1632",
+        "| JET634B | 750 | 600 | 810 | 648 | 178X97X133 | 1866",
+        "| JET634C | 800 | 640 | 865 | 692 | 178X97X133 | 1950",
+        "| JET634D | 910 | 728 | 986 | 789 | 178X97X133 | 2002",
+        "| JET634E | 1000 | 800 | 1083 | 866 | 178X97X133 | 2142",
+        "| JET634F | 1130 | 904 | 1204 | 963 | 178X97X133 | 2375",
+        "| JET634G | 1250 | 1000 | 1310 | 1048 | 186X97X133 | 2721",
+        "| JET734B | 1400 | 1120 | 1525 | 1220 | 186X105X149 | 2790",
+        "| JET734C | 1550 | 1240 | 1705 | 1364 | 186X105X149 | 3025",
+        "| JET734D | 1650 | 1320 | 1815 | 1452 | 215X101X159 | 3320",
+        "| JET734E | 1900 | 1520 | 2070 | 1656 | 215X101X159 | 3585",
+        "| JET734F | 2080 | 1664 | 2345 | 1876 | 220X101X159 | 3850",
+        "| JET734G | 2250 | 1800 | 2420 | 1936 | 220X101X159 | 4090",
+        "| JET734H | 2500 | 2000 | 2669 | 2135 | 220X101X159 | 4580"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "Best OHV Gasoline Engine Manufacture & Supply | Jet Power Generator",
+      "header": [],
+      "rows": [
+        "| Model | GE160 (168F) | GE200 (168FA) | GE210 (170F) | GE390 (188F) | GE420 (190F) | GE460 (192F)",
+        "| Max. Power Output （ HP/rpm ） | 5.5 / 3600 | 6.5 / 3600 | 7.0 / 3600 | 13 / 3600 | 15 / 3600 | 16 / 3600",
+        "| Bore X Stroke （ mm ） | 68 x 45 | 68 x 54 | 70 x 55 | 88 x 64 | 90 x 66 | 92 x 66",
+        "| Displacement （ cc ） | 163 | 196 | 212 | 389 | 420 | 439",
+        "| Compression Ratio | 8.5 : 1 | 8.5:1 | 8.5:1 | 8:1 | 8.5:1 | 8.0:1",
+        "| Max. Torque （ N.m/rpm ） | 10.3N.m/2500rpm | 12.4N.m/2500rpm | 12.5N.m/2500rpm | 25.1N.m/2500rpm | 26.5N.m/2500rpm | 28N.m/2500rpm",
+        "| Fuel Tank （ L ） | 3.6 | 3.6 | 3.6 | 6.5 | 6.5 | 6.5",
+        "| Oil Capacity （ L ） | 0.6 | 0.6 | 0.6 | 1.1 | 1.1 | 1.2",
+        "| Fuel Consumption （ g/kw-hour ） | ≤ 395 | ≤ 395 | ≤ 395 | ≤ 374 | ≤ 374 | ≤ 374",
+        "| Dimension （ L x W x H ） mm | 380 x 330 x 375 | 380 x 330 x 375 | 380 x 330 x 375 | 480 x 420 x 505 | 480 x 420 x 505 | 480 x 420 x 505",
+        "| G.W （ Kg ） | 16 | 16.5 | 17 | 33 | 34 | 36",
+        "| 20FT/40HQ （ pcs ） | 620 | 620 | 620 | 252/670 | 252/670 | 252/670"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "Powered by VOLVO Diesel Generator Set | Jet Power Generator",
+      "header": [
+        "| Model | 400V / 50Hz / 1500rpm | VOLVO PENTA Diesel Engine |",
+        "| Emission level | Alternator",
+        "| Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Fuel Cons. | Mecc Alte",
+        "| KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | L | Mecc Alte"
+      ],
+      "rows": [
+        "| V-220T2 | 220 | 176 | 200 | 160 | TAD840GE-B | L6 | EMS | 7.7 | 110*135 | 39.2 | Stage II | ECO38 2S4C",
+        "| V-275T2 | 275 | 220 | 250 | 200 | TAD841GE | L6 | EMS | 7.7 | 110*135 | 49 | Stage II | ECO38 2M4C",
+        "| V-330T2 | 330 | 264 | 300 | 240 | TAD842GE | L6 | EMS | 7.7 | 110*135 | 58.8 | Stage II | ECO38 1L4C",
+        "| V-358T2 | 358 | 286 | 325 | 260 | TAD843GE | L6 | EMS | 7.7 | 110*135 | 60 | Stage II | ECO38 2L4C",
+        "| V-385T2 | 385 | 308 | 350 | 280 | TAD1342GE-B | L6 | EMS | 12.78 | 131*158 | 68 | Stage II | ECO38 2L4C",
+        "| V-413T2 | 413 | 330 | 375 | 300 | TAD1343GE-B | L6 | EMS | 12.78 | 131*158 | 74.3 | Stage II | ECO40 1S4C",
+        "| V-440T2 | 440 | 352 | 400 | 320 | TAD1344GE-B | L6 | EMS | 12.78 | 131*158 | 75.8 | Stage II | ECO40 1S4C",
+        "| V-500T2 | 500 | 400 | 450 | 360 | TAD1345GE-B | L6 | EMS | 12.78 | 131*158 | 89 | Stage II | ECO40 2S4C",
+        "| V-550T2 | 550 | 440 | 500 | 400 | TAD1346GE | L6 | EMS | 12.78 | 131*158 | 100 | Stage II | ECO40 3S4C",
+        "| V-550T2 | 550 | 440 | 500 | 400 | TAD1641GE-B | L6 | EMS | 16.12 | 144*165 | 102 | Stage II | ECO40 3S4C",
+        "| V-650T2 | 650 | 520 | 591 | 473 | TAD1642GE-B | L6 | EMS | 16.12 | 144*165 | 119 | Stage II | ECO40 2L4C",
+        "| V-715T2 | 715 | 572 | 650 | 520 | TWD1644GE | L6 | EMS | 16.12 | 144*165 | 125 | Stage II | ECO40 3L4C",
+        "| V-750T2 | 750 | 600 | 680 | 544 | TWD1645GE | L6 | EMS | 16.12 | 144*165 | 133 | Stage II | ECO40 3L4C",
+        "| V-825T2 | 825 | 660 | 750 | 600 | TWD1744GE | L6 | EMS | 17.26 | 149*165 | 147 | Stage II | ECO40 VL4C",
+        "| V-275T3 | 275 | 220 | 250 | 200 | TAD851GE | L6 | EMS | 7.7 | 110*135 | 49 | Stage IIIA / Tier 3 | ECO38 2M4C",
+        "| V-316T3 | 316 | 253 | 288 | 230 | TAD852GE | L6 | EMS | 7.7 | 110*135 | 56.3 | Stage IIIA / Tier 3 | ECO38 1L4C",
+        "| V-358T3 | 358 | 286 | 325 | 260 | TAD1351GE | L6 | EMS | 12.78 | 131*158 | 65 | Stage IIIA / Tier 3 | ECO38 2L4C",
+        "| V-400T3 | 400 | 320 | 365 | 292 | TAD1352GE | L6 | EMS | 12.78 | 131*158 | 69 | Stage IIIA / Tier 3 | ECO40 1S4C",
+        "| V-413T3 | 413 | 330 | 375 | 300 | TAD1354GE | L6 | EMS | 12.78 | 131*158 | 75 | Stage IIIA / Tier 3 | ECO40 1S4C",
+        "| V-440T3 | 440 | 352 | 400 | 320 | TAD1355GE | L6 | EMS | 12.78 | 131*158 | 82 | Stage IIIA / Tier 3 | ECO40 1S4C",
+        "| V-500T3 | 500 | 400 | 450 | 360 | TAD1650GE | L6 | EMS | 16.12 | 144*165 | 91 | Stage IIIA / Tier 3 | ECO40 2S4C",
+        "| V-550T3 | 550 | 440 | 500 | 400 | TAD1651GE | L6 | EMS | 16.12 | 144*165 | 102 | Stage IIIA / Tier 3 | ECO40 3S4C",
+        "| V-660T3 | 660 | 528 | 600 | 480 | TWD1652GE | L6 | EMS | 16.12 | 144*165 | 118 | Stage IIIA / Tier 3 | ECO40 2L4C",
+        "| V-715T3 | 715 | 572 | 650 | 520 | TWD1653GE | L6 | EMS | 16.12 | 144*165 | 132 | Stage IIIA / Tier 3 | ECO40 3L4C"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "60Hz Water Cooled YANGDONG Diesel Generator Set Wholesale",
+      "header": [
+        "| Model | 416V / 60Hz / 1800RPM | Yangdong Diesel Engine 1800rpm | Alternator / 60Hz | Open type | Soundproof type",
+        "| Standby output | Prime Output | Model / Output | Engine type | Displacement | Bore×Stroke | Stamford type | Packing (mm) | Weight | Packing (mm) | Weight",
+        "| KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | Brushless type | (L x W x H) | Kg | (L x W x H) | Kg"
+      ],
+      "rows": [
+        "| YD-11 | 12 | 9.6 | 11 | 8.8 | YD385D/13KW | L3 | Mechanical | 1.532 | 85×90 | JET164B/8.8KW | 1650*800*1000 | 510 | 2100*900*1100 | 720",
+        "| YD-14 | 15 | 12 | 14 | 11 | YD385D/13KW | L3 | Mechanical | 1.532 | 85×90 | JET164C/11KW | 1650*800*1000 | 530 | 2100*900*1100 | 740",
+        "| YD-16 | 17.5 | 14 | 16 | 13 | YD480D/17KW | L4 | Mechanical | 1.809 | 80×90 | JET164D/13KW | 1650*800*1000 | 580 | 2100*900*1100 | 790",
+        "| YD-20 | 22 | 17.6 | 20 | 16 | YND485D/20KW | L4 | Mechanical | 2.043 | 85×90 | JET164D/16KW | 1650*800*1000 | 600 | 2200*1000*1150 | 800",
+        "| YD-25 | 27.5 | 22 | 25 | 20 | YSD490D/25KW | L4 | Mechanical | 2.54 | 90×100 | JET184E/20KW | 1800*800*1100 | 750 | 2200*1000*1150 | 980",
+        "| YD-30 | 33 | 26.4 | 30 | 24 | Y4100D/333KW | L4 | Mechanical | 3.298 | 100×105 | JET184F/24KW | 1800*800*1100 | 800 | 2200*1000*1150 | 1030",
+        "| YD-38 | 41 | 33 | 37.5 | 30 | Y4102D/39.6KW | L4 | Mechanical | 3.857 | 102×118 | JET184G/30KW | 1900*900*1250 | 910 | 2300*1000*1300 | 1150",
+        "| YD-50 | 55 | 44 | 50 | 40 | Y4102ZD/48KW | L4 | Mechanical | 3.857 | 102×118 | JET184J/40KW | 1900*900*1250 | 980 | 2300*1000*1300 | 1230"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "50Hz Powered by YANGDONG Water Cooled Diesel Generator",
+      "header": [
+        "| Model | 400V / 50Hz /1500RPM | Yangdong Diesel Engine 1500rpm | Alternator | Open type | Soundproof type",
+        "| Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Stamford type | Packing (mm) | Weight | Packing (mm) | Weight",
+        "| KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | Brushless type | (L x W x H) | Kg | (L x W x H) | Kg"
+      ],
+      "rows": [
+        "| YD-12 | 12 | 9.6 | 11 | 8.8 | YD385D/11KW | L3 | Mechanical | 1.532 | 85×90 | JET164B/8.8KW | 1650*800*1000 | 510 | 2100*900*1100 | 720",
+        "| YD-15 | 15 | 12 | 13.8 | 11 | YD480D/14KW | L4 | Mechanical | 1.809 | 80×90 | JET164C/10.8KW | 1650*800*1000 | 530 | 2100*900*1100 | 740",
+        "| YD-17 | 16.5 | 13.2 | 15 | 12 | YD485D/17KW | L4 | Mechanical | 2.043 | 85×90 | JET164D/12.8KW | 1650*800*1000 | 580 | 2100*900*1100 | 790",
+        "| YD-25 | 25 | 20 | 22.5 | 18 | Y490D/24KW | L4 | Mechanical | 2.54 | 90×100 | JET184E/18KW | 1800*800*1100 | 600 | 2200*1000*1150 | 820",
+        "| YD-28 | 28 | 22 | 25 | 20 | Y4100D/34.5KW | L4 | Mechanical | 3.298 | 100×105 | JET184F/22KW | 1800*800*1100 | 750 | 2200*1000*1150 | 980",
+        "| YD-35 | 35 | 28 | 31 | 25 | Y4102D/33KW | L4 | Mechanical | 3.857 | 102×118 | JET184G/25KW | 1800*800*1100 | 800 | 2200*1000*1150 | 1030",
+        "| YD-42 | 42 | 33 | 38 | 30 | Y4105D/38KW | L4 | Mechanical | 4.1 | 105×118 | JET184H/30KW | 1900*900*1250 | 910 | 2300*1000*1300 | 1150",
+        "| YD-55 | 55 | 44 | 50 | 40 | Y4105ZLD/55KW | L4 | Mechanical | 4.1 | 105×118 | JET224D/40KW | 1900*900*1250 | 980 | 2300*1000*1300 | 1230"
+      ]
+    }
+  ]
 }

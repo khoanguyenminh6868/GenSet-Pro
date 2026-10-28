@@ -1,0 +1,720 @@
+{
+  "id": "kc-generatorset",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Yangzhou Kangcheng Power Equipment Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Kangcheng"
+    ]
+  },
+  "website": "https://www.kcgeneratorset.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": 2003,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Kangcheng diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MAN",
+        "MTU",
+        "Perkins",
+        "Cummins",
+        "IVECO",
+        "Volvo",
+        "SDEC",
+        "Weichai",
+        "Yuchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 7,
+        "max": 2500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.kcgeneratorset.com/about/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Yangzhou Kangcheng Power Equipment Co., Ltd. was founded in 2003 and is located in Jiangdu District, Yangzhou",
+        "Our Kangcheng diesel generator sets ranging from 7KW to 2500KW adopt world-renowned engines including MAN, MTU, Perkins, Cummins, IVECO and VOLVO, as well as domestic leading engines such as Shanghai Diesel Engine, Weichai Power and Yuchai Machinery.",
+        "The company’s quality management system and environmental management system comply with the requirements of ISO9001 and ISO14001 standards."
+      ],
+      "file": "sources/kc-generatorset/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.kcgeneratorset.com/product/shanghai-diesel-engine-generator-set/800kw-shanghai-diesel-engine-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: 6WTAA35-G31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.kcgeneratorset.com/product/chongqing-cummins-generator-set/260kw-chongqing-cummins-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: NTA855-G1B | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.kcgeneratorset.com/product/dongfeng-cummins-generator-set/132kw-dongfeng-cummins-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: QSB6.7-G3 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.kcgeneratorset.com/product/chongqing-cummins-generator-set/500kw-chongqing-cummins-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: KTAA19-G6A | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.kcgeneratorset.com/product/dongfeng-cummins-generator-set/30kw-dongfeng-cummins-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: 4BT3.9-G2 | Generator: single bearing, protection rating IP22, insulation class H | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler) and standard connecting fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.kcgeneratorset.com/product/chongqing-cummins-generator-set/600kw-chongqing-cummins-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: KTA38-G1B | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.kcgeneratorset.com/product/chongqing-pangu-diesel-generator-set/1320kw-chongqing-pangu-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: QTA10V-EG1670D | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.kcgeneratorset.com/product/shanghai-diesel-engine-generator-set/400kw-shanghai-diesel-engine-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine：6KTAA25-G311 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.kcgeneratorset.com/product/dongfeng-cummins-generator-set/400kw-dongfeng-cummins-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: QSZ13-G3 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.kcgeneratorset.com/product/weichai-power-generator-sets/400kw-weichai-power-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: WP13D490E310 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.kcgeneratorset.com/product/weichai-power-generator-sets/140kw-weichai-power-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: WP6D167E200 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank is 40℃, cooling fan with fan safety cover, air filter, fuel filter, and oil filter. | Shared steel chassis, shock absorbers, and standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/111.md"
+    },
+    {
+      "n": 112,
+      "url": "https://www.kcgeneratorset.com/product/deutz-generator-sets/160kw-deutz-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: BF6M1013EC G1 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.kcgeneratorset.com/product/weichai-power-generator-sets/800kw-weichai-power-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: 12M26D902E200 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.kcgeneratorset.com/product/deutz-generator-sets/180kw-deutz-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: BF6M1013FC G3 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.kcgeneratorset.com/product/guangxi-yuchai-generator-sets/400kw-guangxi-yuchai-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: YC6TD780-D31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.kcgeneratorset.com/product/guangxi-yuchai-generator-sets/1000kw-guangxi-yuchai-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: YC6TF1660-D31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.kcgeneratorset.com/product/deutz-generator-sets/24kw-deutz-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: BF3MG2 | Generator: Single bearing, IP22 protection rating, H-class insulation. | The water tank is 40℃, equipped with a cooling fan and fan safety cover, air filter, fuel filter, and oil filter. | Shared steel chassis, shock absorbers, and standard control panel | 24V rechargeable generator, industrial silencer and standard connecting parts | Maintenance-free lead-acid batteries and battery connection cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.kcgeneratorset.com/product/deutz-generator-sets/128kw-deutz-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: BF4M1013FC | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/118.md"
+    },
+    {
+      "n": 119,
+      "url": "https://www.kcgeneratorset.com/product/guangxi-yuchai-generator-sets/360kw-guangxi-yuchai-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: YC6MJ600-D30 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/119.md"
+    },
+    {
+      "n": 120,
+      "url": "https://www.kcgeneratorset.com/product/chongqing-cummins-generator-set/360kw-chongqing-cummins-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine：NTAA855-G7 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/120.md"
+    },
+    {
+      "n": 121,
+      "url": "https://www.kcgeneratorset.com/product/guangxi-yuchai-generator-sets/900kw-guangxi-yuchai-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: YC6C1520-D31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/121.md"
+    },
+    {
+      "n": 122,
+      "url": "https://www.kcgeneratorset.com/product/weichai-power-generator-sets/180kw-weichai-power-generator-sets.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: WP10D238E200 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/122.md"
+    },
+    {
+      "n": 123,
+      "url": "https://www.kcgeneratorset.com/product/shanghai-diesel-engine-generator-set/34kw-shanghai-diesel-engine-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: 4ZT3.2-G21 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/123.md"
+    },
+    {
+      "n": 124,
+      "url": "https://www.kcgeneratorset.com/product/shanghai-diesel-engine-generator-set/150kw-shanghai-diesel-engine-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Engine: SC7H250D2 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "file": "sources/kc-generatorset/124.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Wholesale 800KW Shanghai diesel engine generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: 6WTAA35-G31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 1440 | 800 | 0.8 | Engine parameters | Manufacturer/Model | Shanghai Diesel Engine Co., Ltd. / 6WTAA35-G31 | Intake system | Supercharged Intercooler",
+        "| Cylinder liner type | wet | Number of cylinders/arrangement | 6-cylinder/inline | Displacement | 35.1 L | Cylinder bore * stroke | 186*215 mm | Compression ratio | 16：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 882KW/970KW | Speed control system | Electrically controlled unit pump | Fuel system | Fuel consumption rate | 195 g/kw.h | Lubrication system | Lubricating oil capacity | 75~100 L | Cooling system | Coolant capacity",
+        "| 78 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "260KW Chongqing Cummins Generator Set Manufacturers, OEM Company",
+      "header": [
+        "| Engine: NTA855-G1B | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 468 | 260 | 0.8 | Engine parameters | Manufacturer/Model | Chongkang/NTA855-G1B | Intake system | Supercharged, intercooled",
+        "| Fuel system | Cummins PT System | Number of cylinders/arrangement | 6-cylinder/inline | Displacement | 14L | cylinder bore * stroke | 140*152 mm | Compression ratio | 14.0：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 284KW/321KW | Speed control system | Electronic speed control | Fuel system | Backup fuel consumption rate | 208.7 g/kw.h | Lubrication system | Lubricating oil capacity | 38.6 L | Cooling system | Coolant capacity",
+        "| 20.8 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Wholesale 132KW Dongfeng cummins generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: QSB6.7-G3 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 259.2 | 144 | 0.8 | Engine parameters | Manufacturer/Model | Dongfeng Cummins/QSB6.7-G3 | Inhalation method | Turbocharged, air-to-air intercooled",
+        "| Fuel system | BOSCH Common Rail System | Compression ratio | 17.3：1 | Number of cylinders/arrangement | 6-cylinder/inline | Displacement | 6.7 L | Cylinder bore * stroke | 107*124 mm | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 151KW/166KW | Speed control system | Electronic speed control | Fuel system | 100% backup power | 210 g/kw.h | Basic output power 25% | 250 g/kw.h | Basic output power 50% | 236 g/kw.h | Basic output power 75%",
+        "| 229 g/kw.h | Basic output power 100% | 208 g/kw.h | Lubrication system | Lubricating oil capacity | 19.5 L | Cooling system | Coolant capacity | 9.4 L | Generator parameters | Number of phases | 3",
+        "| Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22 | Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet",
+        "| Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range | ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction)",
+        "| ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range | 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction)"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Wholesale 500KW Chongqing cummins generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: KTAA19-G6A | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 900 | 500 | 0.8 | Engine parameters | Manufacturer/Model | Shigeyasu/KTAA19-G6A | Intake system | Exhaust gas turbocharging, air-to-air intercooling",
+        "| Fuel system | Cummins PT System | Number of cylinders/arrangement | 6-cylinder/inline | Displacement | 19L | Cylinder bore * stroke | 159*159 mm | Compression ratio | 13.9：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 610KW | Speed control system | Electronic speed control | Fuel system | Backup fuel consumption rate | 216 g/kw.h | Lubrication system | Lubricating oil capacity | 50.0 L | Cooling system | Coolant capacity",
+        "| 26.5 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Wholesale 30KW Dongfeng cummins generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: 4BT3.9-G2 | Generator: single bearing, protection rating IP22, insulation class H | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler) and standard connecting fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 54 | 30 | 0.8 | Engine parameters | Manufacturer/Model | Dongfeng Cummins/4BT3.9-G2 | Intake system | Boost",
+        "| Fuel system | North Oil A Pump/Electronic Speed ​​Regulator | Number of cylinders/arrangement | 4-cylinder/inline | Displacement | 3.9 L | Compression ratio | 18：1 | Cylinder bore * stroke | 102*120 mm | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 36KW/40KW | Speed control system | Electronic speed control | Fuel system | 100% backup power | 212 g/kw.h | Basic output power 25% | 312 g/kw.h | Basic output power 50% | 244 g/kw.h | Basic output power 75%",
+        "| 223 g/kw.h | Basic output power 100% | 214 g/kw.h | Lubrication system | Lubricating oil capacity | 10.9 L | Cooling system | Coolant capacity | 7.2 L | Generator parameters | Number of phases | 3",
+        "| Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22 | Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet",
+        "| Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range | ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction)",
+        "| ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range | 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction)"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Wholesale 600KW Chongqing cummins generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: KTA38-G1B | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 1080 | 600 | 0.8 | Engine parameters | Manufacturer/Model | Chongkang/KTA38-G1B | Intake system | Exhaust gas turbocharger, intercooler",
+        "| Fuel system | Cummins PT System | Number of cylinders/arrangement | 12-cylinder/V-type | Displacement | 38L | Cylinder bore * stroke | 159*159 mm | Compression ratio | 15.5：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 634KW/701KW | Speed control system | Electronic speed control | Fuel system | Backup fuel consumption rate | 201 g/kw.h | Lubrication system | Lubricating oil capacity | 135.1 L | Cooling system | Coolant capacity",
+        "| 118.1 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Wholesale 1320KW Chongqing pangu diesel generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: QTA10V-EG1670D | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 2376 | 1320 | 0.8 | Engine parameters | Manufacturer/Model | Pangu Power/QTA10V-EG1670D | Intake system | Air Cool",
+        "| Fuel system | High-pressure common rail | Number of cylinders/arrangement | 10-cylinder/V-type | Displacement | 53.8L | Cylinder bore * stroke | 185*200 mm | Compression ratio | 15：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 1520KW/1670KW | Speed control system | Electronic speed control | Fuel system | Backup fuel consumption rate | 197.34 g/kw.h | Lubrication system | Lubricating oil capacity | 150 L | Cooling system | Coolant capacity",
+        "| 85 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Wholesale 400KW Shanghai diesel engine generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine：6KTAA25-G311 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 720 | 400 | 0.8 | Engine parameters | Manufacturer/Model | Shanghai Diesel Engine Co., Ltd. / 6KTAA25-G311 | Intake system | Supercharged Intercooler",
+        "| Cylinder liner type | Wet | Number of cylinders/arrangement | 6-cylinder/inline | Displacement | 25.18 L | Cylinder bore * stroke | 170*185 mm | Compression ratio | 16：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 460KW/506KW | Speed control system | Electrically controlled unit pump | Fuel system | Fuel consumption rate | 192 g/kw.h | Lubrication system | Lubricating oil capacity | 45~70 L | Cooling system | Coolant capacity",
+        "| 55 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "Wholesale 400KW Dongfeng cummins generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: QSZ13-G3 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 720 | 400 | 0.8 | Engine parameters | Manufacturer/Model | Dongfeng Cummins/QSZ13-G3 | Inhalation method | Turbocharged & Air-to-Air Intercooled",
+        "| Fuel system | Electronically controlled high-pressure common rail injection system | Compression ratio | 17：1 | Number of cylinders/arrangement | 6-cylinder/inline | Displacement | 13.0 L | Cylinder bore * stroke | 130*163 mm | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 450KW/470KW | Speed control system | High-pressure common rail | Fuel system | 100% backup power | 193 g/kw.h | Basic output power 25% | 199 g/kw.h | Basic output power 50% | 187 g/kw.h | Basic output power 75%",
+        "| 189 g/kw.h | Basic output power 100% | 193 g/kw.h | Lubrication system | Lubricating oil capacity | 45.42 L | Cooling system | Coolant capacity | 23.1 L | Generator parameters | Number of phases | 3",
+        "| Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22 | Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet",
+        "| Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range | ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction)",
+        "| ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range | 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction)"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "Wholesale 400KW Weichai power generator sets Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: WP13D490E310 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "rows": [
+        "| Power Factor | 400/230 | 50 | 3 | 720 | 400 | 0.8 | Engine parameters | Manufacturer/Model | Weichai Power WP13D490E310 | Intake System | Turbocharging + intercooling (turbocharged intercooled)",
+        "| Fuel System | High-pressure common rail | Number of Cylinders/Arrangement | 6-cylinder/inline | Displacement | 9.726L | Bore * Stroke | 127*165 mm | Compression Ratio | 17：1 | Rated Speed | 1500rpm",
+        "| Engine Power (Common/Spare) | 450KW/490KW | Speed Control System | Electronic speed control | Fuel system | Backup fuel consumption rate | 205g/kw.h | Lubrication system | Lubricating oil capacity | 36L | Cooling system | Coolant capacity",
+        "| 69L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection class | IP22",
+        "| Altitude requirement | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/Temperature rise class | H/H | Telephone impact factor (TIF) | ＜50 | Telephone harmonic factor (THF) | ＜2% | Unit performance parameters | Voltage Setting Range",
+        "| ≥±5% | Steady-State Voltage Regulation | ≤±1% | Transient Voltage Deviation (100% Power Drop) | ≤+25% | Transient Voltage Deviation (Power Increase) | ≤-20% | Voltage Recovery Time (100% Power Drop) | ≤6S | Voltage Recovery Time (Power Increase) | ≤6S | Frequency Setting Range",
+        "| 0-5% | Steady-State Frequency Band | ≤1.5% | Transient Frequency Deviation (100% Power Drop) | ≤+12% | Transient Frequency Deviation (Power Increase) | ≤-10% | Frequency Recovery Time (100% Power Drop) | ≤5S | Frequency Recovery Time (Power Increase) | ≤5S | Unit Weight"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "Wholesale 140KW Weichai power generator sets Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: WP6D167E200 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank is 40℃, cooling fan with fan safety cover, air filter, fuel filter, and oil filter. | Shared steel chassis, shock absorbers, and standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "rows": [
+        "| Power Factor | 400/230 | 50 | 3 | 252 | 140 | 0.8 | Engine parameters | Manufacturer/Model | Weichai Power WP6D167E200 | Intake System | Turbocharging + intercooling (turbocharged intercooled)",
+        "| Fuel System | High-pressure common rail | Number of Cylinders/Arrangement | 6-cylinder/inline | Displacement | 6.87L | Bore * Stroke | 105*130 mm | Compression Ratio | 17：1 | Rated Speed | 1500rpm",
+        "| Engine Power (Common/Spare) | 152KW/167KW | Speed Control System | Electronic speed control | Fuel system | Backup fuel consumption rate | 195g/kw.h | Lubrication system | Lubricating oil capacity | 18 L | Cooling system | Coolant capacity",
+        "| 36L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection class | IP22",
+        "| Altitude requirement | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/Temperature rise class | H/H | Telephone impact factor (TIF) | ＜50 | Telephone harmonic factor (THF) | ＜2% | Unit performance parameters | Voltage Setting Range",
+        "| ≥±5% | Steady-State Voltage Regulation | ≤±1% | Transient Voltage Deviation (100% Power Drop) | ≤+25% | Transient Voltage Deviation (Power Increase) | ≤-20% | Voltage Recovery Time (100% Power Drop) | ≤6S | Voltage Recovery Time (Power Increase) | ≤6S | Frequency Setting Range",
+        "| 0-5% | Steady-State Frequency Band | ≤1.5% | Transient Frequency Deviation (100% Power Drop) | ≤+12% | Transient Frequency Deviation (Power Increase) | ≤-10% | Frequency Recovery Time (100% Power Drop) | ≤5S | Frequency Recovery Time (Power Increase) | ≤5S | Unit Weight"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Wholesale 160KW Deutz generator sets Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: BF6M1013EC G1 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "rows": [
+        "| Power Factor | 400/230 | 50 | 3 | 230.4 | 128 | 0.8 | Engine parameters | Manufacturer/Model | Deutz BF6M1013EC G1 | Intake System | Turbocharged",
+        "| Fuel System | Inline fuel injection pump | Number of Cylinders/Arrangement | 6-cylinder/inline | Displacement | 7.146L | Bore * Stroke | 108*130 mm | Compression Ratio | 19：1 | Rated Speed | 1500rpm",
+        "| Engine Power (Common/Spare) | 146KW/153KW | Speed Control System | Electronic speed control | Fuel system | Backup fuel consumption rate | 228g/kw.h | Lubrication system | Lubricating oil capacity | 20L | Cooling system | Coolant capacity",
+        "| 23.1L | Coolant capacity | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone Harmonic Factor (THF) | ＜2% | Unit performance parameters | Voltage Setting Range",
+        "| ≥±5% | Steady-State Voltage Regulation | ≤±1% | Transient Voltage Deviation (100% Power Drop) | ≤+25% | Transient Voltage Deviation (Power Increase) | ≤-20% | Voltage Recovery Time (100% Power Drop) | ≤6S | Voltage Recovery Time (Power Increase) | ≤6S | Frequency Setting Range",
+        "| 0-5% | Steady-State Frequency Band | ≤1.5% | Transient Frequency Deviation (100% Power Drop) | ≤+12% | Transient Frequency Deviation (Power Increase) | ≤-10% | Frequency Recovery Time (100% Power Drop) | ≤5S | Frequency Recovery Time (Power Increase) | ≤5S | Unit Weight"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Wholesale 800KW Weichai power generator sets Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: 12M26D902E200 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "rows": [
+        "| Power Factor | 400/230 | 50 | 3 | 1440 | 800 | 0.8 | Engine parameters | Manufacturer/Model | Weichai Power 12M26D902E200 | Intake System | Turbocharging + intercooling (turbocharged intercooled)",
+        "| Fuel System | High-pressure common rail | Number of Cylinders/Arrangement | 12-cylinder/V-type | Displacement | 31.8L | Bore * Stroke | 150*150 mm | Compression Ratio | 15：1 | Rated Speed | 1500rpm",
+        "| Engine Power (Common/Spare) | 8200KW/902KW | Speed Control System | Electronic speed control | Fuel system | Backup fuel consumption rate | 225g/kw.h | Lubrication system | Lubricating oil capacity | 113L | Cooling system | Coolant capacity",
+        "| 203L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection class | IP22",
+        "| Altitude requirement | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/Temperature rise class | H/H | Telephone impact factor (TIF) | ＜50 | Telephone harmonic factor (THF) | ＜2% | Unit performance parameters | Voltage Setting Range",
+        "| ≥±5% | Steady-State Voltage Regulation | ≤±1% | Transient Voltage Deviation (100% Power Drop) | ≤+25% | Transient Voltage Deviation (Power Increase) | ≤-20% | Voltage Recovery Time (100% Power Drop) | ≤6S | Voltage Recovery Time (Power Increase) | ≤6S | Frequency Setting Range",
+        "| 0-5% | Steady-State Frequency Band | ≤1.5% | Transient Frequency Deviation (100% Power Drop) | ≤+12% | Transient Frequency Deviation (Power Increase) | ≤-10% | Frequency Recovery Time (100% Power Drop) | ≤5S | Frequency Recovery Time (Power Increase) | ≤5S | Unit Weight"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Wholesale 180KW Deutz generator sets Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: BF6M1013FC G3 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "rows": [
+        "| Power Factor | 400/230 | 50 | 3 | 288 | 160 | 0.8 | Engine parameters | Manufacturer/Model | Deutz BF6M1013FC G3 | Intake System | Supercharged Intercooler",
+        "| Fuel System | Mechanical unit pump | Number of Cylinders/Arrangement | 6-cylinder/inline | Displacement | 7.146L | Bore * Stroke | 108*130 mm | Compression Ratio | 19：1 | Rated Speed | 1500rpm",
+        "| Engine Power (Common/Spare) | 162KW/178KW | Speed ​​Control System | Electronic speed control | Fuel system | Backup fuel consumption rate | 209g/kw.h | Lubrication system | Lubricating oil capacity | 31L | Cooling system | Coolant capacity",
+        "| 27.3L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection class | IP22",
+        "| Altitude requirement | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/Temperature rise class | H/H | Telephone impact factor (TIF) | ＜50 | Telephone harmonic factor (THF) | ＜2% | Unit performance parameters | Voltage Setting Range",
+        "| ≥±5% | Steady-State Voltage Regulation | ≤±1% | Transient Voltage Deviation (100% Power Drop) | ≤+25% | Transient Voltage Deviation (Power Increase) | ≤-20% | Voltage Recovery Time (100% Power Drop) | ≤6S | Voltage Recovery Time (Power Increase) | ≤6S | Frequency Setting Range",
+        "| 0-5% | Steady-State Frequency Band | ≤1.5% | Transient Frequency Deviation (100% Power Drop) | ≤+12% | Transient Frequency Deviation (Power Increase) | ≤-10% | Frequency Recovery Time (100% Power Drop) | ≤5S | Frequency Recovery Time (Power Increase) | ≤5S | Unit Weight"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Wholesale 400KW Guangxi yuchai generator sets Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: YC6TD780-D31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 90 | 50 | 0.8 | Engine parameters | Manufacturer/Model | Guangxi Yuchai/YC6TD780-D31 | Intake system | Supercharging, air-to-air intercooling",
+        "| Fuel system | direct injection | Number of cylinders/arrangement | 6-cylinder/vertical, inline | Displacement | 19.6L | Cylinder bore * stroke | 152*180 mm | Compression ratio | 14：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 520KW/572KW | Speed control system | Electronic control | Fuel system | Backup fuel consumption rate | 225 g/kw.h | Lubrication system | Lubricating oil capacity | 55 L | Cooling system | Coolant capacity",
+        "| 130.5 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "1000KW Guangxi yuchai generator sets - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: YC6TF1660-D31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 1800 | 1000 | 0.8 | Engine parameters | Manufacturer/Model | Guangxi Yuchai/YC6TF1660-D31 | Intake system | Supercharging, air-to-air intercooling",
+        "| Fuel system | direct injection | Number of cylinders/arrangement | 6-cylinder/vertical, inline | Displacement | 31.75L | Cylinder bore * stroke | 175*220 mm | Compression ratio | 15：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 1110KW/1221KW | Speed control system | Electronic control | Fuel system | Backup fuel consumption rate | 220 g/kw.h | Lubrication system | Lubricating oil capacity | 115L | Cooling system | Coolant capacity",
+        "| 180L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "24KW Deutz generator sets - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: BF3MG2 | Generator: Single bearing, IP22 protection rating, H-class insulation. | The water tank is 40℃, equipped with a cooling fan and fan safety cover, air filter, fuel filter, and oil filter. | Shared steel chassis, shock absorbers, and standard control panel | 24V rechargeable generator, industrial silencer and standard connecting parts | Maintenance-free lead-acid batteries and battery connection cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 43.2 | 24 | 0.8 | Engine parameters | Manufacturer/Model | Deutz BF3MG2 | Intake system | Natural inhalation",
+        "| Fuel system | Inline fuel injection pump | Number of cylinders/arrangement | 3-cylinder/inline | Displacement | 3.168L | Cylinder bore * stroke | 98*105 mm | Compression ratio | 18.5：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 29KW/32KW | Speed control system | Mechanical speed regulation | Fuel system | Backup fuel consumption rate | 226g/kw.h | Lubrication system | Lubricating oil capacity | 8L | Cooling system | Coolant capacity",
+        "| 17.9L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic factor (THF) | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% power drop) | ≤6S | Voltage recovery time (power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% power drop) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% sudden power decrease) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "Wholesale 128KW Deutz generator sets Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: BF4M1013FC | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "rows": [
+        "| Power Factor | 400/230 | 50 | 3 | 187.2 | 104 | 0.8 | Engine parameters | Manufacturer/Model | 道依茨BF4M1013FC | Intake System | Turbocharged Intercooler",
+        "| Fuel System | Mechanical unit pump | Number of Cylinders/Arrangement | 4-cylinder/inline | Displacement | 4.76L | Bore * Stroke | 108*130 mm | Compression Ratio | 18.1：1 | Rated Speed | 1500rpm",
+        "| Engine Power (Common/Spare) | 117KW/129KW | Speed Control System | Electronic speed control | Fuel system | Backup fuel consumption rate | 208g/kw.h | Lubrication system | Lubricating oil capacity | 17L | Cooling system | Coolant capacity",
+        "| 20L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection class | IP22",
+        "| Altitude requirement | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/Temperature rise class | H/H | Telephone impact factor (TIF) | ＜50 | Telephone harmonic factor (THF) | ＜2% | Unit performance parameters | Voltage Setting Range",
+        "| ≥±5% | Steady-State Voltage Regulation | ≤±1% | Transient Voltage Deviation (100% Power Drop) | ≤+25% | Transient Voltage Deviation (Power Increase) | ≤-20% | Voltage Recovery Time (100% Power Drop) | ≤6S | Voltage Recovery Time (Power Increase) | ≤6S | Frequency Setting Range",
+        "| 0-5% | Steady-State Frequency Band | ≤1.5% | Transient Frequency Deviation (100% Power Drop) | ≤+12% | Transient Frequency Deviation (Power Increase) | ≤-10% | Frequency Recovery Time (100% Power Drop) | ≤5S | Frequency Recovery Time (Power Increase) | ≤5S | Unit Weight"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "360KW Guangxi yuchai generator sets - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: YC6MJ600-D30 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 648 | 360 | 0.8 | Engine parameters | Manufacturer/Model | Guangxi Yuchai/YC6MJ600-D30 | Intake system | Supercharging, air-to-air intercooling",
+        "| Fuel system | direct injection | Number of cylinders/arrangement | 6-cylinder/vertical, inline | Displacement | 11.73L | Cylinder bore * stroke | 131*145 mm | Compression ratio | 16.8：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 441KW/485KW | Speed control system | Electronic control | Fuel system | Backup fuel consumption rate | 195g/kw.h | Lubrication system | Lubricating oil capacity | 37L | Cooling system | Coolant capacity",
+        "| 52 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "Wholesale 360KW Chongqing cummins generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine：NTAA855-G7 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 504 | 280 | 0.8 | Engine parameters | Manufacturer/Model | Chongkang/NTAA855-G7 | Intake system | Supercharging, air-to-air intercooling",
+        "| Fuel system | Cummins PT System | Number of cylinders/arrangement | 6-cylinder/inline | Displacement | 14L | Cylinder bore * stroke | 140*152 mm | Compression ratio | 14.0：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 343KW/377KW | Speed control system | Electronic speed control | Fuel system | Backup fuel consumption rate | 206.9 g/kw.h | Lubrication system | Lubricating oil capacity | 38.6 L | Cooling system | Coolant capacity",
+        "| 20.8 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "Wholesale 900KW Guangxi yuchai generator sets Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: YC6C1520-D31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 1620 | 900 | 0.8 | Engine parameters | Manufacturer/Model | Guangxi Yuchai/YC6C1520-D31 | Intake system | Supercharging, air-to-air intercooling",
+        "| Fuel system | Direct injection | Number of cylinders/arrangement | 6-cylinder/vertical, inline | Displacement | 13.5L | Cylinder bore * stroke | 200*210 mm | Compression ratio | 13.5：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 1016KW/1118KW | Speed control system | Electronic control | Fuel system | Backup fuel consumption rate | 213.3 g/kw.h | Lubrication system | Lubricating oil capacity | 160 L | Cooling system | Coolant capacity",
+        "| 230 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "Wholesale 180KW Weichai power generator sets Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: WP10D238E200 | Generator: Single bearing, IP22 protection rating, H-class insulation. | Water tank (40℃), cooling fan with fan safety cover, air filter, fuel filter, oil filter. | Shared steel chassis, shock absorbers, standard control panel. | 24V rechargeable generator, industrial muffler and standard connecting parts. | Maintenance-free lead-acid battery and battery connection cables. | Voltage level | Voltage V | Frequency Hz | Number of Phases | Rated Current A | Power KW"
+      ],
+      "rows": [
+        "| Power Factor | 400/230 | 50 | 3 | 324 | 180 | 0.8 | Engine parameters | Manufacturer/Model | Weichai Power WP10D238E200 | Intake System | Turbocharging + intercooling (turbocharged intercooled)",
+        "| Fuel System | High-pressure common rail | Number of Cylinders/Arrangement | 6-cylinder/inline | Displacement | 9.726L | Bore * Stroke | 126*130 mm | Compression Ratio | 17：1 | Rated Speed | 1500rpm",
+        "| Engine Power (Common/Spare) | 216KW/238KW | Speed Control System | Electronic speed control | Fuel system | Backup fuel consumption rate | 215g/kw.h | Lubrication system | Lubricating oil capacity | 24L | Cooling system | Coolant capacity",
+        "| 51.6L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection class | IP22",
+        "| Altitude requirement | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/Temperature rise class | H/H | Telephone influence factor (TIF) | ＜50 | Telephone harmonic factor (THF) | ＜2% | Unit performance parameters | Voltage Setting Range",
+        "| ≥±5% | Steady-State Voltage Regulation | ≤±1% | Transient Voltage Deviation (100% Power Drop) | ≤+25% | Transient Voltage Deviation (Power Increase) | ≤-20% | Voltage Recovery Time (100% Power Drop) | ≤6S | Voltage Recovery Time (Power Increase) | ≤6S | Frequency Setting Range",
+        "| 0-5% | Steady-State Frequency Band | ≤1.5% | Transient Frequency Deviation (100% Power Drop) | ≤+12% | Transient Frequency Deviation (Power Increase) | ≤-10% | Frequency Recovery Time (100% Power Drop) | ≤5S | Frequency Recovery Time (Power Increase) | ≤5S | Unit Weight"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "Wholesale 34KW Shanghai diesel engine generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: 4ZT3.2-G21 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 61.2 | 34 | 0.8 | Engine parameters | Manufacturer/Model | Shanghai Diesel Engine Co., Ltd. / 4ZT3.2-G21 | Intake system | Natural inhalation",
+        "| Fuel system | BQ inline pump | Number of cylinders/arrangement | 4-cylinder/inline | Displacement | 3.2L | Cylinder bore * stroke | 98*105 mm | Compression ratio | 18.5：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 39KW/44KW | Speed control system | Electronic speed control | Fuel system | Fuel consumption rate | 220 g/kw.h | Lubrication system | Lubricating oil capacity | 6.5 L | Cooling system | Coolant capacity",
+        "| 5.75 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "Wholesale 150KW Shanghai diesel engine generator set Manufacturers, OEM Company - Yangzhou Kangcheng Power Equipment Co., Ltd",
+      "header": [
+        "| Engine: SC7H250D2 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
+      ],
+      "rows": [
+        "| Power factor | 400/230 | 50 | 3 | 270 | 150 | 0.8 | Engine parameters | Manufacturer/Model | Shanghai Diesel Engine/SC7H250D2 | Intake system | Supercharged Intercooler",
+        "| Cylinder liner type | dry | Number of cylinders/arrangement | 4-cylinder/inline | Displacement | 6.5L | Cylinder bore * stroke | 105*124 mm | Compression ratio | 16：1 | Rated speed | 1500rpm",
+        "| Engine power (main/spare) | 168KW/185KW | Speed control system | Electronic speed control | Fuel system | Fuel consumption rate | 195 g/kw.h | Lubrication system | Lubricating oil capacity | 15~17.5 L | Cooling system | Coolant capacity",
+        "| 9.6 L | Generator parameters | Number of phases | 3 | Wiring method | Three-phase four-wire, Y-type interconnection | Number of bearings | 1 | Power factor | 0.8 | Protection level | IP22",
+        "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
+        "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
+        "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    }
+  ]
+}

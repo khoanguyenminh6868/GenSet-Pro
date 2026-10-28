@@ -100,9 +100,194 @@
         "Certificates of BV, ISO9001, ISO4001, CE, HSE, CCS are proof of our commitment"
       ],
       "file": "sources/jichai/3.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.jichai.com/product/140_series_300kw457kw/140_series_300kw457kw.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "file": "sources/jichai/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.jichai.com/product/2000_series_330kw2200kw/2000_series_330kw2200kw.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "file": "sources/jichai/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.jichai.com/product/3000_series_810kw1200kw/3000_series_810kw1200kw.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "file": "sources/jichai/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.jichai.com/product/4000_series_540kw1200kw/4000_series_540kw1200kw.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "file": "sources/jichai/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.jichai.com/product/2632_series_2085kw4170kw/2632_series_2085kw4170kw.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "file": "sources/jichai/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.jichai.com/product/190_series_800kw2000kw/6000_series_1200kw2000kw.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset model | Rated power kw | Rotate speed r/min | Frequency Hz | Voltage V | Engine model | Power factor"
+      ],
+      "file": "sources/jichai/106.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "140 Series (300KW-457KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+      "header": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "rows": [
+        "| JC15C-3 | Four stroke, supercharged intercooling, water cooling, high pressure common rail ECU electronic control jet | 6 cylinders, in-line | 140 | 165 | 450/612 | 1800 | 15.2 | ≤ 189 | ≤ 0.35 | 1935×1160×1600 | 1850",
+        "| JC15C | 457/622 | 1500",
+        "| JC15C-4 | 300/408 | 1200",
+        "| JC15C-5 | 336/457 | 1350",
+        "| JC15CD | 457 | 1500",
+        "| JC15CG-3 | 450 | 1800",
+        "| JC15CG | 375 | 1500",
+        "| JC15CG-5 | 336 | 1350",
+        "| JC15CG-4 | 300 | 1200"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "2000 Series (330KW-2200KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+      "header": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "rows": [
+        "| 6190ZLC | Four stroke, pressurized intercooled, water-cooled, direct-injection combustor | 6 cylinders, in-line | 190 | 210 | 450/610 | 1450 | 35.73 | ≤ 204 | ≤ 1.2 | 2990×1243×1763 | 3960",
+        "| 6190ZLC-1 | 400/540 | 1200",
+        "| 6190ZLC-2 | 330/450 | 1000",
+        "| 6190ZLC-3 | 400/540 | 1300",
+        "| B6190ZLC | 450/610 | 1450 | 3000×1324×1820",
+        "| B6190ZLC-1 | 400/540 | 1200",
+        "| B6190ZLC-2 | 330/450 | 1000",
+        "| B6190ZLC-3 | 400/540 | 1300",
+        "| 8190ZLC | 8 cylinders, in-line | 720/980 | 1450 | 47.63 | 3175×1220×2055 | 5200",
+        "| 8190ZLC-1 | 600/816 | 1200",
+        "| 8190ZLC-2 | 500/680 | 1000",
+        "| 8190ZLC-3 | 650/884 | 1300",
+        "| C6190ZLC | 6 cylinders, in-line | 230 | 550/748 | 1350 | 39.13 | ≤ 1.0 | 2995×1133×1754 | 3960",
+        "| C6190ZLC-1 | 490/667 | 1200",
+        "| C6190ZLC-2 | 400/544 | 1000",
+        "| C6190ZLC-3 | 530/721 | 1300",
+        "| C8190ZLC | 8 cylinders, in-line | 540/735 | 1000 | 52.17 | 3180X1220X2055 | 5200",
+        "| C8190ZLC-1 | 650/884 | 1200",
+        "| C8190ZLC-2 | 700/952 | 1300",
+        "| C8190ZLC-3 | 735/1000 | 1350",
+        "| S6190ZLC-1 | 6 cylinders, in-line | 275 | 900/1225 | 1200 | 46.78 | ≤ 195 | ≤ 1.0 | 3144×1571×2246 | 7200",
+        "| S6190ZLC-2 | 750/1020 | 1000",
+        "| S6190ZLC-4 | 675/918 | 900",
+        "| S6190ZLC-5 | 825/1122 | 1100",
+        "| S6190ZLC-7 | 535/728 | 750",
+        "| AS6190ZLC-2 | 1000/1361 | 1200 | 3440×1405×2190 | 8200",
+        "| S8190ZLC-1 | 8 cylinders, in-line | 1200/1633 | 1200 | 62.38 | ≤ 195 |",
+        "| 3744X1571X2246 | 8500",
+        "| S8190ZLC-2 | 1000/1361 | 1000",
+        "| S8190ZLC-4 | 900/1245 | 900",
+        "| S8190ZLC-5 | 1100/1497 | 1100",
+        "| S8190ZLC-7 | 750/1020 | 750",
+        "| AS8190ZLC-2 | Electronically controlled injection | 1320/1796 | 1200 | 4040X1410X2190",
+        "| G6190ZLC | Four stroke, pressurized intercooled, water-cooled, direct-injection combustor | 6 cylinders, in-line | 210 | 540/735 | 1450 | 35.37 | ≤ 204 | ≤ 1.2 | 2995×1259×1754 | 4500",
+        "| G6190ZLC-1 | 450/612 | 1200",
+        "| G6190ZLC-2 | 380/517 | 1000",
+        "| G6190ZLC-3 | 480/653 | 1300",
+        "| G12V190ZLC1 | 12 cylinders V type | 1000/1360 | 1450 | 71.45 | ≤ 209 | ≤ 1.6 | 3744.5×1571×2246 | 5800",
+        "| G12V190ZLC-1 | 750/1020 | 1200",
+        "| G12V190ZLC-2 | 620/844 | 1000",
+        "| G12V190ZLC-3 | 810/1102 | 1300"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "3000 Series (810KW-1200KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+      "header": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "rows": [
+        "| A12V190ZLC | Four-stroke, pressurized intercooler, water-cooled, direct-injection combustor | 12 cylinders V type | 190 | 215 | 1200/1630 | 1500 | 73.15 | ≤ 205 | ≤ 1.0 | 2969×1907×2206 | 9300",
+        "| A12V190ZLC1 | 1080/1470 | 1350",
+        "| A12V190ZLC-1 | 900/1225 | 1200",
+        "| A12V190ZLC-2 | 810/1100 | 1000"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "4000 Series (540KW-1200KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+      "header": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "rows": [
+        "| L8190ZLC | Four stroke, pressurized intercooled, water-cooled, direct-injection combustor | 8 cylinders, in-line | 190 | 255 | 830/1129 | 1000 | 57.84 | ≤ 200 | ≤ 1.0 | 3144×1571×2246 | 8500",
+        "| L8190ZLC-1 | 1000/1361 | 1200",
+        "| L8190ZLC-2 | 550/748 | 900",
+        "| L6190ZLC | 6 cylinders, in-line | 540/735 | 900 | 43.38 | ≤ 200 | 3144×1571×2246 | 7200",
+        "| L6190ZLC-1 | 750/1020 | 1200",
+        "| L6190ZLC-2 | 625/850 | 1000",
+        "| L12V190ZLC-1 | 12 cylinders V type | 1200/1633 | 1200 | 86.72 | ≤ 188 | ≤ 0.9 | 2950×1980×2312 | 9300",
+        "| L12V190ZLC-2 | 1000/1361 | 1000"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "2632 Series (2085KW-4170KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+      "header": [
+        "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+      ],
+      "rows": [
+        "| 6L2632 | Four-stroke, supercharged intercooler, water cooling, high-pressure common rail ECU electronic control jet | 6 cylinders, in-line | 260 | 320 | 2085/2837 | 1000 | 102 | ≤ 184 | ≤ 0.6 | 5050×2160×3450 | 19700",
+        "| 8L2632 | 8 cylinders, in-line | 2780/3782 | 136 | 5950×2160×3450 | 26000",
+        "| 9L2632 | 9 cylinders, in-line | 3130/4259 | 153 | 6400×2160×3450 | 29500",
+        "| 12V2632 | 12 cylinders V type | 4170/5673 | 204 | 5830×2240×3355 | 39400"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "6000 Series (1200KW-2000KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+      "header": [
+        "| Genset model | Rated power kw | Rotate speed r/min | Frequency Hz | Voltage V | Engine model | Power factor"
+      ],
+      "rows": [
+        "| 1200GF | 1200 | 1000 | 50 | 600 | H16V190ZL-2 | 0.7",
+        "| 1500GF | 1500 | 1200 | 60 | 600 | H16V190ZL-1 | 0.7",
+        "| 2000GF | 2000 | 1500 | 50 | 600 | H16V190ZL | 0.7"
+      ]
+    }
+  ]
 }

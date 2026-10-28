@@ -1,0 +1,1830 @@
+{
+  "id": "ronsun-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Weifang Ronsun Power Technology Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Ronsun"
+    ]
+  },
+  "website": "https://www.ronsunpower.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Chuyên máy phát gas đa nhiên liệu (biogas, khí tự nhiên, khí mỏ than, khí lò cốc, khí sinh khối)",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gas generator sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.ronsunpower.com/page/about/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Weifang Ronsun Power Technology Co., Ltd.",
+        "Ronsun Power provides a complete range of gas generator sets covering biogas, natural gas, coalbed methane, coking gas, straw gas, biomass gas, and other gas fuels, with calorific values ranging from 800 to 18,000 kcal. The power output of a single generator set ranges from 10kW to 1000kW"
+      ],
+      "file": "sources/ronsun-power/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.ronsunpower.com/product/150kw-187.5kva-natural-gas-generator-set/10",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GN-150GF"
+      ],
+      "file": "sources/ronsun-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.ronsunpower.com/product/250kw-312.5kva-natural-gas-generator-set/12",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: NG250-Series"
+      ],
+      "file": "sources/ronsun-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.ronsunpower.com/product/200kw-250kva-natural-gas-generator-set/11",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: NG200-Series"
+      ],
+      "file": "sources/ronsun-power/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.ronsunpower.com/product/1000kw-1250kva-natural-gas-generator-set/17",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: NGT-1000"
+      ],
+      "file": "sources/ronsun-power/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.ronsunpower.com/product/50kw-62.5kva-lpg-generator-set/38",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-50kW-LPG"
+      ],
+      "file": "sources/ronsun-power/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.ronsunpower.com/product/120kw-150kva-biogas-generator-set/26",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: BG-120GF"
+      ],
+      "file": "sources/ronsun-power/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.ronsunpower.com/product/50kw---63kva-diesel-generator-set/72",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 50GF / 63kVA"
+      ],
+      "file": "sources/ronsun-power/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.ronsunpower.com/product/100kw---125kva-diesel-generator-set/78",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-100"
+      ],
+      "file": "sources/ronsun-power/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.ronsunpower.com/product/800kw---1000kva-diesel-generator-set/104",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 800GF / 1000kVA"
+      ],
+      "file": "sources/ronsun-power/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.ronsunpower.com/product/1400kw---1750kva-diesel-generator-set/113",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: G-1400KW"
+      ],
+      "file": "sources/ronsun-power/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.ronsunpower.com/product/1000kw---1250kva-diesel-generator-set/107",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-1000/1250"
+      ],
+      "file": "sources/ronsun-power/111.md"
+    },
+    {
+      "n": 112,
+      "url": "https://www.ronsunpower.com/product/3000kw---3750kva-diesel-generator-set/122",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 3000GF"
+      ],
+      "file": "sources/ronsun-power/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.ronsunpower.com/product/100kw-125kva-syngas-generator-set/51",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: SG100-SYN"
+      ],
+      "file": "sources/ronsun-power/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.ronsunpower.com/product/100kw-125kva-biomass-generator-set/63",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-100"
+      ],
+      "file": "sources/ronsun-power/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.ronsunpower.com/product/80kw-100kva-syngas-generator-set/50",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: S80-SG"
+      ],
+      "file": "sources/ronsun-power/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.ronsunpower.com/product/200kw-250kva-biomass-generator-set/66",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 200GF-Biomass"
+      ],
+      "file": "sources/ronsun-power/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.ronsunpower.com/product/80kw-100kva-lpg-generator-set/39",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 80GF-LPG"
+      ],
+      "file": "sources/ronsun-power/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.ronsunpower.com/product/250kw---313kva-diesel-generator-set/87",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-250"
+      ],
+      "file": "sources/ronsun-power/118.md"
+    },
+    {
+      "n": 119,
+      "url": "https://www.ronsunpower.com/product/1000kw-1250kva-biogas-generator-set/33",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF1000-Bio"
+      ],
+      "file": "sources/ronsun-power/119.md"
+    },
+    {
+      "n": 120,
+      "url": "https://www.ronsunpower.com/product/300kw-375kva-biogas-generator-set/30",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: BG300-Series"
+      ],
+      "file": "sources/ronsun-power/120.md"
+    },
+    {
+      "n": 121,
+      "url": "https://www.ronsunpower.com/product/650kw---813kva-diesel-generator-set/100",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 650GF-Diesel"
+      ],
+      "file": "sources/ronsun-power/121.md"
+    },
+    {
+      "n": 122,
+      "url": "https://www.ronsunpower.com/product/80kw---100kva-diesel-generator-set/76",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-80"
+      ],
+      "file": "sources/ronsun-power/122.md"
+    },
+    {
+      "n": 123,
+      "url": "https://www.ronsunpower.com/product/30kw---38kva-diesel-generator-set/69",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 30kW-DG"
+      ],
+      "file": "sources/ronsun-power/123.md"
+    },
+    {
+      "n": 124,
+      "url": "https://www.ronsunpower.com/product/30kw-37.5kva-lpg-generator-set/36",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 30GF / 30kW LPG"
+      ],
+      "file": "sources/ronsun-power/124.md"
+    },
+    {
+      "n": 125,
+      "url": "https://www.ronsunpower.com/product/100kw-125kva-natural-gas-generator-set/8",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GN-100GF"
+      ],
+      "file": "sources/ronsun-power/125.md"
+    },
+    {
+      "n": 126,
+      "url": "https://www.ronsunpower.com/product/350kw---438kva-diesel-generator-set/92",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 350kW Diesel Series"
+      ],
+      "file": "sources/ronsun-power/126.md"
+    },
+    {
+      "n": 127,
+      "url": "https://www.ronsunpower.com/product/280kw---350kva-diesel-generator-set/89",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-280"
+      ],
+      "file": "sources/ronsun-power/127.md"
+    },
+    {
+      "n": 128,
+      "url": "https://www.ronsunpower.com/product/30kw-37.5kva-biogas-generator-set/20",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: BG30-G"
+      ],
+      "file": "sources/ronsun-power/128.md"
+    },
+    {
+      "n": 129,
+      "url": "https://www.ronsunpower.com/product/150kw-187.5kva-biogas-generator-set/27",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: BG-150-GF"
+      ],
+      "file": "sources/ronsun-power/129.md"
+    },
+    {
+      "n": 130,
+      "url": "https://www.ronsunpower.com/product/250kw-312.5kva-biogas-generator-set/29",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: BG-250GF"
+      ],
+      "file": "sources/ronsun-power/130.md"
+    },
+    {
+      "n": 131,
+      "url": "https://www.ronsunpower.com/product/450kw---563kva-diesel-generator-set/95",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-450"
+      ],
+      "file": "sources/ronsun-power/131.md"
+    },
+    {
+      "n": 132,
+      "url": "https://www.ronsunpower.com/product/150kw---188kva-diesel-generator-set/83",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-150"
+      ],
+      "file": "sources/ronsun-power/132.md"
+    },
+    {
+      "n": 133,
+      "url": "https://www.ronsunpower.com/product/200kw---250kva-diesel-generator-set/86",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 200kW Series"
+      ],
+      "file": "sources/ronsun-power/133.md"
+    },
+    {
+      "n": 134,
+      "url": "https://www.ronsunpower.com/product/350kw-437.5kva-biogas-generator-set/31",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: BG-350GF"
+      ],
+      "file": "sources/ronsun-power/134.md"
+    },
+    {
+      "n": 135,
+      "url": "https://www.ronsunpower.com/product/120kw-150kva-syngas-generator-set/52",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: Syngas-120KW"
+      ],
+      "file": "sources/ronsun-power/135.md"
+    },
+    {
+      "n": 136,
+      "url": "https://www.ronsunpower.com/product/50kw-62.5kva-biomass-generator-set/59",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 50GF-Biomass"
+      ],
+      "file": "sources/ronsun-power/136.md"
+    },
+    {
+      "n": 137,
+      "url": "https://www.ronsunpower.com/product/150kw-187.5kva-lpg-generator-set/42",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 150GF-LPG"
+      ],
+      "file": "sources/ronsun-power/137.md"
+    },
+    {
+      "n": 138,
+      "url": "https://www.ronsunpower.com/product/500kw---625kva-diesel-generator-set/97",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 500GF"
+      ],
+      "file": "sources/ronsun-power/138.md"
+    },
+    {
+      "n": 139,
+      "url": "https://www.ronsunpower.com/product/40kw-50kva-biogas-generator-set/21",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 40GF-BG"
+      ],
+      "file": "sources/ronsun-power/139.md"
+    },
+    {
+      "n": 140,
+      "url": "https://www.ronsunpower.com/product/400kw---500kva-diesel-generator-set/94",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-400"
+      ],
+      "file": "sources/ronsun-power/140.md"
+    },
+    {
+      "n": 141,
+      "url": "https://www.ronsunpower.com/product/30kw-37.5kva-biomass-generator-set/57",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 30GF-Biomass"
+      ],
+      "file": "sources/ronsun-power/141.md"
+    },
+    {
+      "n": 142,
+      "url": "https://www.ronsunpower.com/product/550kw---688kva-diesel-generator-set/98",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 550GF / 550kW"
+      ],
+      "file": "sources/ronsun-power/142.md"
+    },
+    {
+      "n": 143,
+      "url": "https://www.ronsunpower.com/product/30kw-37.5kva-syngas-generator-set/46",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 30GF-Syngas"
+      ],
+      "file": "sources/ronsun-power/143.md"
+    },
+    {
+      "n": 144,
+      "url": "https://www.ronsunpower.com/product/100kw-125kva-lpg-generator-set/40",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 100GF-LPG"
+      ],
+      "file": "sources/ronsun-power/144.md"
+    },
+    {
+      "n": 145,
+      "url": "https://www.ronsunpower.com/product/80kw-100kva-biomass-generator-set/62",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 80GF-Biomass"
+      ],
+      "file": "sources/ronsun-power/145.md"
+    },
+    {
+      "n": 146,
+      "url": "https://www.ronsunpower.com/product/150kw-187.5kva-syngas-generator-set/53",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: SG-150GF"
+      ],
+      "file": "sources/ronsun-power/146.md"
+    },
+    {
+      "n": 147,
+      "url": "https://www.ronsunpower.com/product/120kw-150kva-lpg-generator-set/41",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GPT-120LPG"
+      ],
+      "file": "sources/ronsun-power/147.md"
+    },
+    {
+      "n": 148,
+      "url": "https://www.ronsunpower.com/product/350kw-437.5kva-natural-gas-generator-set/14",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: NG-350GF"
+      ],
+      "file": "sources/ronsun-power/148.md"
+    },
+    {
+      "n": 149,
+      "url": "https://www.ronsunpower.com/product/500kw-625kva-biogas-generator-set/32",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: BG-500GF"
+      ],
+      "file": "sources/ronsun-power/149.md"
+    },
+    {
+      "n": 150,
+      "url": "https://www.ronsunpower.com/product/60kw-75kva-syngas-generator-set/49",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: SG60-SYN"
+      ],
+      "file": "sources/ronsun-power/150.md"
+    },
+    {
+      "n": 151,
+      "url": "https://www.ronsunpower.com/product/120kw---150kva-diesel-generator-set/80",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-120"
+      ],
+      "file": "sources/ronsun-power/151.md"
+    },
+    {
+      "n": 152,
+      "url": "https://www.ronsunpower.com/product/2000kw---2500kva-diesel-generator-set/118",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 2000GF"
+      ],
+      "file": "sources/ronsun-power/152.md"
+    },
+    {
+      "n": 153,
+      "url": "https://www.ronsunpower.com/product/220kw-275kva-lpg-generator-set/43",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-220kw"
+      ],
+      "file": "sources/ronsun-power/153.md"
+    },
+    {
+      "n": 154,
+      "url": "https://www.ronsunpower.com/product/50kw-62.5kva-syngas-generator-set/48",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: GF-50 (Customizable)"
+      ],
+      "file": "sources/ronsun-power/154.md"
+    },
+    {
+      "n": 155,
+      "url": "https://www.ronsunpower.com/product/300kw---375kva-diesel-generator-set/90",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 300GF"
+      ],
+      "file": "sources/ronsun-power/155.md"
+    },
+    {
+      "n": 156,
+      "url": "https://www.ronsunpower.com/product/60kw---75kva-diesel-generator-set/73",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 60GF/75kVA"
+      ],
+      "file": "sources/ronsun-power/156.md"
+    },
+    {
+      "n": 157,
+      "url": "https://www.ronsunpower.com/product/200kw-250kva-biogas-generator-set/28",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Genset Model: 200GF-Biogas"
+      ],
+      "file": "sources/ronsun-power/157.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "150kW 187.5kVA Natural Gas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GN-150GF",
+        "Rated Power (kW / kVA): 150 kW / 187.5 kVA",
+        "Standby Power (kW / kVA): 165 kW / 206 kVA",
+        "Rated Current: 270 A",
+        "Engine Model: Gas Series 6 Cylinder",
+        "Rated Power: 180 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 10L - 14L",
+        "Bore × Stroke: 126 × 130 mm (varies by model)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.30 m&sup3;/kW·h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire (Y-Type)",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "250kW 312.5kVA Natural Gas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: NG250-Series",
+        "Rated Power (kW / kVA): 250 kW / 312.5 kVA",
+        "Standby Power (kW / kVA): 275 kW / 343.75 kVA",
+        "Rated Current: 450 A",
+        "Rated Power: 280 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: Approx. 12-14 L",
+        "Bore × Stroke: 135 mm × 155 mm (Customizable)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.3 m&sup3;/kW·h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "200kW 250kVA Natural Gas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: NG200-Series",
+        "Rated Power (kW / kVA): 200 kW / 250 kVA",
+        "Standby Power (kW / kVA): 220 kW / 275 kVA",
+        "Rated Current: 360 A",
+        "Rated Power: 210 kW",
+        "Starting System: 24V DC Electric Start",
+        "Rated Speed: 1500 rpm or 1800 rpm",
+        "Fuel Consumption: &le; 0.30 m&sup3;/kW.h (approx.)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3-Phase, 4-Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "1000kW 1250kVA Natural Gas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: NGT-1000",
+        "Rated Power (kW / kVA): 1000 kW / 1250 kVA",
+        "Standby Power (kW / kVA): 1100 kW / 1375 kVA",
+        "Rated Current: 1800 A",
+        "Engine Model: 12V190 Series",
+        "Rated Power: 1100 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: Various (approx. 50L+)",
+        "Bore × Stroke: 190mm × 215mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 9.5 MJ/kWh",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3-Phase, 4-Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "50kW 62.5kVA LPG Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-50kW-LPG",
+        "Rated Power (kW / kVA): 50 kW / 62.5 kVA",
+        "Standby Power (kW / kVA): 55 kW / 68.75 kVA",
+        "Rated Current: 90 A",
+        "Rated Power: 56 kW",
+        "Starting System: 24V Electric Start",
+        "Displacement: 4.3 L - 5.9 L (Customizable)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "120kW 150kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: BG-120GF",
+        "Rated Power (kW / kVA): 120 kW / 150 kVA",
+        "Standby Power (kW / kVA): 132 kW / 165 kVA",
+        "Rated Current: 216 A",
+        "Rated Power: 140 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 9.7 L",
+        "Bore × Stroke: 126 × 130 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le;0.25 m&sup3;/kW.h (Biogas >60% CH4)",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / Class H"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "50kW / 63kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 50GF / 63kVA",
+        "Rated Power (kW / kVA): 50 kW / 63 kVA",
+        "Standby Power (kW / kVA): 55 kW / 69 kVA",
+        "Rated Current: 90 A",
+        "Engine Model: 4-Cylinder Series",
+        "Rated Power: &ge; 56 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 3.9 L - 4.5 L (Est.)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "100kW / 125kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-100",
+        "Rated Power (kW / kVA): 100 / 125",
+        "Standby Power (kW / kVA): 110 / 137.5",
+        "Rated Current: 180 A",
+        "Engine Model: Series 6 Cylinder",
+        "Rated Power: 110 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 6.5 L",
+        "Bore × Stroke: 105 × 130 mm",
+        "Rated Speed: 1500 / 1800 rpm",
+        "Fuel Consumption: &le; 210 g/kW.h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "800kW / 1000kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 800GF / 1000kVA",
+        "Rated Power (kW / kVA): 800 kW / 1000 kVA",
+        "Standby Power (kW / kVA): 880 kW / 1100 kVA",
+        "Rated Current: 1440 A",
+        "Rated Power: &ge; 880 kW",
+        "Starting System: 24V DC Electric Start",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "1400kW / 1750kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: G-1400KW",
+        "Rated Power (kW / kVA): 1400 / 1750",
+        "Standby Power (kW / kVA): 1540 / 1925",
+        "Rated Current: 2526 A",
+        "Engine Model: K50 Series or Equiv.",
+        "Rated Power: 1500 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 50 L",
+        "Bore × Stroke: 159 × 159 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: 198 g/kW.h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire, Y-Connection",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "1000kW / 1250kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-1000/1250",
+        "Rated Power (kW / kVA): 1000 kW / 1250 kVA",
+        "Standby Power (kW / kVA): 1100 kW / 1375 kVA",
+        "Rated Current: 1800 A",
+        "Engine Model: V12/V16 Series (Selectable)",
+        "Rated Power: 1000 kW",
+        "Starting System: 24V DC Electric Start",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: Optimal Efficiency (<200g/kW.h)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "3000kW / 3750kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 3000GF",
+        "Rated Power (kW / kVA): 3000 / 3750",
+        "Standby Power (kW / kVA): 3300 / 4125",
+        "Rated Current: 5412 A (at 400V)",
+        "Rated Power: 3300 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 95.4 L",
+        "Bore × Stroke: 170 × 195 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: 195 g/kW.h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "100kW 125kVA Syngas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: SG100-SYN",
+        "Rated Power (kW / kVA): 100 kW / 125 kVA",
+        "Standby Power (kW / kVA): 110 kW / 137.5 kVA",
+        "Rated Current: 180 A",
+        "Engine Model: GY-Series 6 Cylinders",
+        "Rated Power: 120 kW (Engine Output)",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 9.7 L",
+        "Bore × Stroke: 126 mm × 130 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.30 m&sup3;/kW·h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire, Y Type",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "100kW 125kVA Biomass Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-100",
+        "Rated Power (kW / kVA): 100 / 125",
+        "Standby Power (kW / kVA): 110 / 137.5",
+        "Rated Current: 180 A",
+        "Rated Power: 110kW",
+        "Starting System: DC Electric 24V",
+        "Displacement: 6.75 L",
+        "Bore × Stroke: 105 × 130 mm",
+        "Rated Speed: 1500 / 1800 rpm",
+        "Fuel Consumption: &le; 0.30 m&sup3;/kW·h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / Class H"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "80kW 100kVA Syngas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: S80-SG",
+        "Rated Power (kW / kVA): 80 kW / 100 kVA",
+        "Standby Power (kW / kVA): 88 kW / 110 kVA",
+        "Rated Current: 144 A",
+        "Engine Model: Gas Series 6 Cylinder",
+        "Rated Power: 90 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 6.5 L",
+        "Bore × Stroke: 105 × 130 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.30 m&sup3;/kW·h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "200kW 250kVA Biomass Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 200GF-Biomass",
+        "Rated Power (kW / kVA): 200 kW / 250 kVA",
+        "Standby Power (kW / kVA): 220 kW / 275 kVA",
+        "Rated Current: 360 A",
+        "Engine Model: Gas Series 6 Cylinder",
+        "Rated Power: 240 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 12L - 14L",
+        "Bore × Stroke: 135mm x 150mm (Customizable)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 2.5 kg/kWh (Biomass)",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3-Phase, 4-Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "80kW 100kVA LPG Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 80GF-LPG",
+        "Rated Power (kW / kVA): 80 kW / 100 kVA",
+        "Standby Power (kW / kVA): 88 kW / 110 kVA",
+        "Rated Current: 144 A",
+        "Engine Model: 6 Cylinder Series",
+        "Rated Power: 95 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 6.75 L",
+        "Bore × Stroke: 105 × 130 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.30 kg/kWh",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire (Y Type)",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "250kW / 313kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-250",
+        "Rated Power (kW / kVA): 250 kW / 313 kVA",
+        "Standby Power (kW / kVA): 275 kW / 344 kVA",
+        "Rated Current: 450 A",
+        "Rated Power: 260 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 10 L - 14 L",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "1000kW 1250kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF1000-Bio",
+        "Rated Power (kW / kVA): 1000 kW / 1250 kVA",
+        "Standby Power (kW / kVA): 1100 kW / 1375 kVA",
+        "Rated Current: 1800 A",
+        "Engine Model: H16V190ZLZ-2",
+        "Rated Power: 1100 kW (Engine Prime)",
+        "Starting System: 24V DC Electric Start / Air Start",
+        "Displacement: Typically 50L - 70L Range",
+        "Bore × Stroke: 190mm × 215mm",
+        "Rated Speed: 1000 rpm / 1500 rpm (Adjustable)",
+        "Fuel Consumption: &le; 0.3g/kW.h (Oil) / High Efficiency Gas Use",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire (Y Type)",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "300kW 375kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: BG300-Series",
+        "Rated Power (kW / kVA): 300 kW / 375 kVA",
+        "Standby Power (kW / kVA): 330 kW / 412.5 kVA",
+        "Rated Current: 540 A",
+        "Rated Power: 320 kW",
+        "Starting System: 24V DC Electric Start",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le;0.25 m&sup3;/kWh (Biogas >60% CH4)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire / Y-Type",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "650kW / 813kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 650GF-Diesel",
+        "Rated Power (kW / kVA): 650 kW / 813 kVA",
+        "Standby Power (kW / kVA): 715 kW / 893 kVA",
+        "Rated Current: 1170 A",
+        "Rated Power: 720 kW+",
+        "Starting System: 24V DC Electric Start",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "80kW / 100kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-80",
+        "Rated Power (kW / kVA): 80kW / 100kVA",
+        "Standby Power (kW / kVA): 88kW / 110kVA",
+        "Rated Current: 144 A",
+        "Starting System: 24V DC Electric Start",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "30kW / 38kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 30kW-DG",
+        "Rated Power (kW / kVA): 30 kW / 37.5 kVA",
+        "Standby Power (kW / kVA): 33 kW / 41.25 kVA",
+        "Rated Current: 54 A",
+        "Engine Model: 4 Cylinder Series",
+        "Rated Power: 36 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 3.9 L",
+        "Bore × Stroke: 102 × 115 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 210 g/kW.h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "30kW 37.5kVA LPG Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 30GF / 30kW LPG",
+        "Rated Power (kW / kVA): 30 kW / 37.5 kVA",
+        "Standby Power (kW / kVA): 33 kW / 41.25 kVA",
+        "Rated Current: 54 A",
+        "Engine Model: 4-Cylinder Series",
+        "Rated Power: 36 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 3.9 L",
+        "Bore × Stroke: 102 × 115 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le;0.30 kg/kW·h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 125,
+      "title": "100kW 125kVA Natural Gas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GN-100GF",
+        "Rated Power (kW / kVA): 100 kW / 125 kVA",
+        "Standby Power (kW / kVA): 110 kW / 137.5 kVA",
+        "Rated Current: 180 A",
+        "Engine Model: 6 Cylinder / Turbocharged",
+        "Rated Power: 115 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 6.75 L",
+        "Bore × Stroke: 105 x 130 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.3 m&sup3;/kWh (Natural Gas)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "350kW / 438kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 350kW Diesel Series",
+        "Rated Power (kW / kVA): 350 kW / 438 kVA",
+        "Standby Power (kW / kVA): 385 kW / 481 kVA",
+        "Rated Current: 630 A",
+        "Rated Power: 400 kW (approx)",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 12.0 L - 14.0 L",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 127,
+      "title": "280kW / 350kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-280",
+        "Rated Power (kW / kVA): 280 / 350",
+        "Standby Power (kW / kVA): 308 / 385",
+        "Rated Current: 504 A",
+        "Rated Power: 310 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 10 - 14 L",
+        "Rated Speed: 1500 / 1800 rpm",
+        "Fuel Consumption: Approx. 195 - 205 g/kW.h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 128,
+      "title": "30kW 37.5kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: BG30-G",
+        "Rated Power (kW / kVA): 30 kW / 37.5 kVA",
+        "Standby Power (kW / kVA): 33 kW / 41.25 kVA",
+        "Rated Current: 54 A",
+        "Engine Model: 4 Cylinder Gas Engine",
+        "Rated Power: 36 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 3.9 L",
+        "Bore × Stroke: 102 × 115 mm",
+        "Rated Speed: 1500 / 1800 rpm",
+        "Fuel Consumption: &le; 0.3 m&sup3;/kW·h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase 4 Wire, Y Connection",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 129,
+      "title": "150kW 187.5kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: BG-150-GF",
+        "Rated Power (kW / kVA): 150 kW / 187.5 kVA",
+        "Standby Power (kW / kVA): 165 kW / 206 kVA",
+        "Rated Current: 270 A",
+        "Engine Model: V6 / L6 Series",
+        "Rated Power: 170 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 9.7 L - 12 L (Approx.)",
+        "Bore × Stroke: 126 × 130 mm (or similar)",
+        "Rated Speed: 1500 / 1800 RPM",
+        "Fuel Consumption: &le; 0.6 m&sup3;/kWh (Biogas)",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 130,
+      "title": "250kW 312.5kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: BG-250GF",
+        "Rated Power (kW / kVA): 250 kW / 312.5 kVA",
+        "Standby Power (kW / kVA): 275 kW / 343.75 kVA",
+        "Rated Current: 450 A",
+        "Engine Model: Gas Series 12V",
+        "Rated Power: 270 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: Varies by config (e.g., 12L - 19L)",
+        "Bore × Stroke: 135 x 155 mm (Typical)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.6 m&sup3;/kW·h (Biogas)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 131,
+      "title": "450kW / 563kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-450",
+        "Rated Power (kW / kVA): 450 kW / 563 kVA",
+        "Standby Power (kW / kVA): 495 kW / 619 kVA",
+        "Rated Current: 810 A",
+        "Starting System: 24V DC Electric Start",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 132,
+      "title": "150kW / 188kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-150",
+        "Rated Power (kW / kVA): 150 kW / 188 kVA",
+        "Standby Power (kW / kVA): 165 kW / 206 kVA",
+        "Rated Current: 270 A",
+        "Engine Model: 6-Cylinder Series",
+        "Rated Power: 170 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 8.9 L",
+        "Bore × Stroke: 114 × 135 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 205 g/kW.h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 133,
+      "title": "200kW / 250kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 200kW Series",
+        "Rated Power (kW / kVA): 200 kW / 250 kVA",
+        "Standby Power (kW / kVA): 220 kW / 275 kVA",
+        "Rated Current: 360 A",
+        "Rated Power: &ge; 200 kW",
+        "Starting System: 24V DC Electric Start",
+        "Rated Speed: 1500 / 1800 RPM",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 134,
+      "title": "350kW 437.5kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: BG-350GF",
+        "Rated Power (kW / kVA): 350 / 437.5",
+        "Standby Power (kW / kVA): 385 / 481.25",
+        "Rated Current: 630 A",
+        "Engine Model: Performance Series 6-Cyl",
+        "Rated Power: 380 kW",
+        "Starting System: Electric 24V DC",
+        "Displacement: 19.5 L",
+        "Bore × Stroke: 152 mm × 168 mm",
+        "Rated Speed: 1500 / 1800 rpm",
+        "Fuel Consumption: &le; 0.3g/kW.h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 135,
+      "title": "120kW 150kVA Syngas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: Syngas-120KW",
+        "Rated Power (kW / kVA): 120 kW / 150 kVA",
+        "Standby Power (kW / kVA): 132 kW / 165 kVA",
+        "Rated Current: 216 A",
+        "Engine Model: Performance Series 6-Cylinder",
+        "Rated Power: 140 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 9.7 L",
+        "Bore × Stroke: 126 × 130 mm",
+        "Rated Speed: 1500 / 1800 rpm",
+        "Fuel Consumption: &le; 0.30 m&sup3;/kW·h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / Class H"
+      ]
+    },
+    {
+      "n": 136,
+      "title": "50kW 62.5kVA Biomass Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 50GF-Biomass",
+        "Rated Power (kW / kVA): 50 kW / 62.5 kVA",
+        "Standby Power (kW / kVA): 55 kW / 69 kVA",
+        "Rated Current: 90 A",
+        "Engine Model: Gas-Spec Series 4Cyl",
+        "Rated Power: 55 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 4.3 L",
+        "Bore × Stroke: 105 mm × 125 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le;0.30 m&sup3;/kW·h (Ref. Biogas)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 137,
+      "title": "150kW 187.5kVA LPG Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 150GF-LPG",
+        "Rated Power (kW / kVA): 150 kW / 187.5 kVA",
+        "Standby Power (kW / kVA): 165 kW / 206 kVA",
+        "Rated Current: 270 A",
+        "Rated Power: 170 kW (Engine Net)",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 9.726 L (varies by engine)",
+        "Bore × Stroke: 126 × 130 mm (Typical)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.3kg/kW.h (LPG)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire, Y Type",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 138,
+      "title": "500kW / 625kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 500GF",
+        "Rated Power (kW / kVA): 500 kW / 625 kVA",
+        "Standby Power (kW / kVA): 550 kW / 687.5 kVA",
+        "Rated Current: 900 A",
+        "Rated Power: 550 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: ~19 Liters",
+        "Bore × Stroke: 145 mm × 165 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 205 g/kWh",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 139,
+      "title": "40kW 50kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 40GF-BG",
+        "Rated Power (kW / kVA): 40 kW / 50 kVA",
+        "Standby Power (kW / kVA): 44 kW / 55 kVA",
+        "Rated Current: 72 A",
+        "Engine Model: 4-Cylinder Series",
+        "Rated Power: 48 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 3.9 L",
+        "Bore × Stroke: 102 mm × 115 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.3 m&sup3;/kW·h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 140,
+      "title": "400kW / 500kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-400",
+        "Rated Power (kW / kVA): 400kW / 500kVA",
+        "Standby Power (kW / kVA): 440kW / 550kVA",
+        "Rated Current: 720 A",
+        "Rated Power: 440 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 14 L",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase, 4 Wire, Y Type",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 141,
+      "title": "30kW 37.5kVA Biomass Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 30GF-Biomass",
+        "Rated Power (kW / kVA): 30 kW / 37.5 kVA",
+        "Standby Power (kW / kVA): 33 kW / 41.25 kVA",
+        "Rated Current: 54 A",
+        "Engine Model: 4-Cylinder Gas Series",
+        "Rated Power: 36 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 3.9 L",
+        "Bore × Stroke: 102 × 115 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le;0.3 m&sup3;/kW·h (depends on gas calorific value)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 142,
+      "title": "550kW / 688kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 550GF / 550kW",
+        "Rated Power (kW / kVA): 550 kW / 688 kVA",
+        "Standby Power (kW / kVA): 605 kW / 756 kVA",
+        "Rated Current: 990 A",
+        "Rated Power: &ge; 600 kW",
+        "Starting System: 24V DC Electric Start",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 143,
+      "title": "30kW 37.5kVA Syngas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 30GF-Syngas",
+        "Rated Power (kW / kVA): 30 kW / 37.5 kVA",
+        "Standby Power (kW / kVA): 33 kW / 41.25 kVA",
+        "Rated Current: 54 A",
+        "Engine Model: Gas Series 4-Cylinder",
+        "Rated Power: 36 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 3.9 L",
+        "Bore × Stroke: 102 mm × 115 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.30 m&sup3;/kWh",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase, 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 144,
+      "title": "100kW 125kVA LPG Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 100GF-LPG",
+        "Rated Power (kW / kVA): 100 / 125",
+        "Standby Power (kW / kVA): 110 / 137.5",
+        "Rated Current: 180 A",
+        "Engine Model: 6-Cylinder Series",
+        "Rated Power: 115 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 6.75 L",
+        "Bore × Stroke: 108 × 125 mm",
+        "Rated Speed: 1500 / 1800 rpm",
+        "Fuel Consumption: &le;0.23 kg/kW.h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 145,
+      "title": "80kW 100kVA Biomass Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 80GF-Biomass",
+        "Rated Power (kW / kVA): 80 kW / 100 kVA",
+        "Standby Power (kW / kVA): 88 kW / 110 kVA",
+        "Rated Current: 144 A",
+        "Rated Power: 90 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 6.5 L",
+        "Bore × Stroke: 105 mm × 125 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.30 m&sup3;/kW·h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 146,
+      "title": "150kW 187.5kVA Syngas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: SG-150GF",
+        "Rated Power (kW / kVA): 150 kW / 187.5 kVA",
+        "Standby Power (kW / kVA): 165 kW / 206 kVA",
+        "Rated Current: 270 A",
+        "Engine Model: Gas-6126 Series (Customizable)",
+        "Rated Power: 170 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 9.726 L",
+        "Bore × Stroke: 126 mm × 130 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.3g / kW.h (Oil) / High Efficiency Gas",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 147,
+      "title": "120kW 150kVA LPG Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GPT-120LPG",
+        "Rated Power (kW / kVA): 120 kW / 150 kVA",
+        "Standby Power (kW / kVA): 132 kW / 165 kVA",
+        "Rated Current: 216 A",
+        "Engine Model: 6 Cylinder Series",
+        "Rated Power: 140 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 9.7 L",
+        "Bore × Stroke: 126 × 130 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le;0.3 m&sup3;/kW.h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / Class H"
+      ]
+    },
+    {
+      "n": 148,
+      "title": "350kW 437.5kVA Natural Gas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: NG-350GF",
+        "Rated Power (kW / kVA): 350 / 437.5",
+        "Standby Power (kW / kVA): 385 / 481.25",
+        "Rated Current: 630 A",
+        "Rated Power: 380 kW",
+        "Starting System: 24V DC Electric Start",
+        "Bore × Stroke: Optimized for 350kW",
+        "Rated Speed: 1500 / 1800 rpm",
+        "Fuel Consumption: &le; 0.3 m&sup3;/kW·h",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase 4 Wire (Y Type)",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 149,
+      "title": "500kW 625kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: BG-500GF",
+        "Rated Power (kW / kVA): 500 kW / 625 kVA",
+        "Standby Power (kW / kVA): 550 kW / 687.5 kVA",
+        "Rated Current: 900 A",
+        "Engine Model: V12-Gas Series",
+        "Rated Power: 560 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 25 - 30 L (Approx.)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le;0.3 m&sup3;/kW.h (Biogas depend on CH4%)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase 4 Wire (Y Type)",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 150,
+      "title": "60kW 75kVA Syngas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: SG60-SYN",
+        "Rated Power (kW / kVA): 60 kW / 75 kVA",
+        "Standby Power (kW / kVA): 66 kW / 82.5 kVA",
+        "Rated Current: 108 A",
+        "Rated Power: 70 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 4.5 L - 6.5 L (Customizable)",
+        "Bore × Stroke: 105 x 125 mm (Reference)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 2.5 m&sup3;/kWh (Depends on Gas CV)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire (Y-Type)",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / Class H"
+      ]
+    },
+    {
+      "n": 151,
+      "title": "120kW / 150kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-120",
+        "Rated Power (kW / kVA): 120 kW / 150 kVA",
+        "Standby Power (kW / kVA): 132 kW / 165 kVA",
+        "Rated Current: 216 A",
+        "Engine Model: Series-120D",
+        "Rated Power: 132 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 6.5 L - 7.5 L (Approx.)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 210 g/kW.h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 152,
+      "title": "2000kW / 2500kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 2000GF",
+        "Rated Power (kW / kVA): 2000 / 2500",
+        "Standby Power (kW / kVA): 2200 / 2750",
+        "Rated Current: 3600 A",
+        "Rated Power: 2200 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 60L - 80L (Approx)",
+        "Bore × Stroke: 200 x 210 mm (varies)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 205 g/kWh",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 Lagging",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 153,
+      "title": "220kW 275kVA LPG Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-220kw",
+        "Rated Power (kW / kVA): 220 kW / 275 kVA",
+        "Standby Power (kW / kVA): 242 kW / 302 kVA",
+        "Rated Current: 396 A",
+        "Engine Model: Performance Series 6 Cyl",
+        "Rated Power: 245 kW",
+        "Starting System: 24V DC Electric Start",
+        "Bore × Stroke: 126mm × 155mm (Reference)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le;0.3 m&sup3;/kW·h (LPG)",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 154,
+      "title": "50kW 62.5kVA Syngas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: GF-50 (Customizable)",
+        "Rated Power (kW / kVA): 50 kW / 62.5 kVA",
+        "Standby Power (kW / kVA): 55 kW / 68.75 kVA",
+        "Rated Current: 90 A (Approx.)",
+        "Rated Power: 55 kW - 60 kW",
+        "Starting System: 24V Electric Start",
+        "Displacement: 4L - 6L (Depending on config)",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase, 4 Wire, Y Type",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H Class"
+      ]
+    },
+    {
+      "n": 155,
+      "title": "300kW / 375kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 300GF",
+        "Rated Power (kW / kVA): 300 kW / 375 kVA",
+        "Standby Power (kW / kVA): 330 kW / 412.5 kVA",
+        "Rated Current: 540 A",
+        "Engine Model: Series-300",
+        "Rated Power: &ge; 330 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 12 - 14 L",
+        "Rated Speed: 1500 / 1800 rpm",
+        "Fuel Consumption: &le; 205 g/kW.h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 156,
+      "title": "60kW / 75kVA Diesel Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 60GF/75kVA",
+        "Rated Power (kW / kVA): 60kW / 75kVA",
+        "Standby Power (kW / kVA): 66kW / 82.5kVA",
+        "Rated Current: 108 A",
+        "Engine Model: 4-Cylinder Diesel",
+        "Rated Power: &ge; 66kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 3.9 L - 4.5 L",
+        "Rated Speed: 1500 / 1800 RPM",
+        "Frequency: 50Hz / 60Hz",
+        "Phase / Connection: 3 Phase 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    },
+    {
+      "n": 157,
+      "title": "200kW 250kVA Biogas Generator Set - Ronsun Power",
+      "header": [],
+      "rows": [
+        "Genset Model: 200GF-Biogas",
+        "Rated Power (kW / kVA): 200 kW / 250 kVA",
+        "Standby Power (kW / kVA): 220 kW / 275 kVA",
+        "Rated Current: 360 A",
+        "Engine Model: H12V190 Series or Equivalent",
+        "Rated Power: 240 kW",
+        "Starting System: 24V DC Electric Start",
+        "Displacement: 12.8 L",
+        "Bore × Stroke: 126 mm × 130 mm",
+        "Rated Speed: 1500 rpm / 1800 rpm",
+        "Fuel Consumption: &le; 0.60 m&sup3;/kW·h",
+        "Frequency: 50 Hz / 60 Hz",
+        "Phase / Connection: 3 Phase / 4 Wire",
+        "Power Factor: 0.8 (Lagging)",
+        "Protection Level / Insulation Class: IP23 / H"
+      ]
+    }
+  ]
+}

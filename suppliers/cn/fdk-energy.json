@@ -3,46 +3,358 @@
   "country": "CN",
   "role": "genset_oem",
   "status": "verified",
-  "names": { "en": "Guangdong FuDianKang (FDK) Diesel Generator", "zh": null, "brands": ["FDK", "FuDianKang"] },
+  "names": {
+    "en": "Guangdong FuDianKang (FDK) Diesel Generator",
+    "zh": null,
+    "brands": [
+      "FDK",
+      "FuDianKang"
+    ]
+  },
   "website": "https://fdkenergy.com/",
-  "hq": { "province": "Guangdong", "city": "Guangzhou" },
+  "hq": {
+    "province": "Guangdong",
+    "city": "Guangzhou"
+  },
   "founded": 2000,
-  "foundedSrc": [2],
+  "foundedSrc": [
+    2
+  ],
   "relatedIds": [],
   "strengths": [
-    { "text": "Dải rộng theo động cơ: Cummins nhập khẩu 225–3025 kVA, Perkins 9–2500 kVA, Mitsubishi 625–2750 kVA, Cummins DCEC 20–550 kVA, CCEC 225–2750 kVA, Yuchai 20–3250 kVA, Shangchai 50–3250 kVA, Weichai 20–2200 kVA (50 Hz)", "src": [1] },
-    { "text": "Theo hãng: có kho ngoại quan, rút ngắn thời gian giao động cơ nhập khẩu (KTA50, QSK60, KTA38) từ 6 tháng xuống 20 ngày", "src": [1] },
-    { "text": "Theo hãng: có kinh nghiệm hồ sơ đấu thầu, đội ngũ hỗ trợ bộ tài liệu dự án", "src": [1] },
-    { "text": "Theo hãng: nhà sản xuất GOEM được Cummins ủy quyền; hợp tác với Perkins, Mitsubishi, MTU", "src": [2] },
-    { "text": "Theo hãng: đạt ISO9001, ISO45001 và CE", "src": [1] }
+    {
+      "text": "Dải rộng theo động cơ: Cummins nhập khẩu 225–3025 kVA, Perkins 9–2500 kVA, Mitsubishi 625–2750 kVA, Cummins DCEC 20–550 kVA, CCEC 225–2750 kVA, Yuchai 20–3250 kVA, Shangchai 50–3250 kVA, Weichai 20–2200 kVA (50 Hz)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: có kho ngoại quan, rút ngắn thời gian giao động cơ nhập khẩu (KTA50, QSK60, KTA38) từ 6 tháng xuống 20 ngày",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: có kinh nghiệm hồ sơ đấu thầu, đội ngũ hỗ trợ bộ tài liệu dự án",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: nhà sản xuất GOEM được Cummins ủy quyền; hợp tác với Perkins, Mitsubishi, MTU",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Theo hãng: đạt ISO9001, ISO45001 và CE",
+      "src": [
+        1
+      ]
+    }
   ],
   "productLines": [
-    { "kind": "genset", "series": "Diesel Generator Set (50Hz) Cummins Original Engine", "fuel": "diesel", "engineMakes": ["Cummins"], "engineModels": ["KTA38", "KTA50", "QSK60"], "alternatorMakes": [],
-      "power": { "min": 225, "max": 3025, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz"], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] },
-    { "kind": "genset", "series": "Cummins China DCEC Engine", "fuel": "diesel", "engineMakes": ["Cummins (DCEC)"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 20, "max": 550, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz"], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] },
-    { "kind": "genset", "series": "Cummins China CCEC Engine", "fuel": "diesel", "engineMakes": ["Cummins (CCEC)"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 225, "max": 2750, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz"], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] },
-    { "kind": "genset", "series": "Perkins Original Engine", "fuel": "diesel", "engineMakes": ["Perkins"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 9, "max": 2500, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz"], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] },
-    { "kind": "genset", "series": "Mitsubishi Original Engine", "fuel": "diesel", "engineMakes": ["Mitsubishi"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 625, "max": 2750, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz"], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] },
-    { "kind": "genset", "series": "Yuchai China Engine", "fuel": "diesel", "engineMakes": ["Yuchai"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 20, "max": 3250, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz"], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] },
-    { "kind": "genset", "series": "Shangchai China Engine", "fuel": "diesel", "engineMakes": ["SDEC (Shangchai)"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 50, "max": 3250, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz"], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] },
-    { "kind": "genset", "series": "Weichai China Engine", "fuel": "diesel", "engineMakes": ["Weichai"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 20, "max": 2200, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz"], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+    {
+      "kind": "genset",
+      "series": "Diesel Generator Set (50Hz) Cummins Original Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38",
+        "KTA50",
+        "QSK60"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 225,
+        "max": 3025,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins China DCEC Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (DCEC)"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins China CCEC Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (CCEC)"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 225,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins Original Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 9,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mitsubishi Original Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 625,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Yuchai China Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 3250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Shangchai China Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC (Shangchai)"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 50,
+        "max": 3250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Weichai China Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 2200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
   ],
-  "certifications": [ { "name": "ISO9001", "src": [1] }, { "name": "ISO45001", "src": [1] }, { "name": "CE", "src": [1] } ],
-  "vietnam": { "distributors": [], "note": null },
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO45001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "vietnam": {
+    "distributors": [],
+    "note": null
+  },
   "exportMarkets": [],
-  "missing": ["Không ghi prime/standby", "Không tìm thấy tên pháp nhân đầy đủ trên trang đã đọc"],
+  "missing": [
+    "Không ghi prime/standby",
+    "Không tìm thấy tên pháp nhân đầy đủ trên trang đã đọc"
+  ],
   "sources": [
-    { "n": 1, "url": "https://fdkenergy.com/", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["New Genset Diesel Generator Set (50Hz) Cummins Original Engine (225-3025KVA)", "Cummins China DCEC Engine (20-550KVA)", "Cummins China CCEC Engine (225-2750KVA)", "Perkins Original Engine (9-2500KVA)", "Mitsubishi Original Engine (625-2750KVA)", "Yuchai China Engine (20-3250KVA)", "Shangchai China Engine (50-3250KVA)", "Weichai China Engine (20-2200KVA)", "Means we can compress the delivery time of original engines like KTA50 series, QSK60 series, KTA 38 series, etc. from six months to 20days.", "We have extensive experience in bidding and tendering.", "Each generator undergoes rigorous testing and complies with ISO9001, ISO45001, and CE certifications.", "No.6, Niujiaoling Industrial Zone, Dagang, Nansha, Guangzhou", "We have BONDED WAREHOUSES"], "file": "sources/fdk-energy/1.md" },
-    { "n": 2, "url": "https://fdkenergy.com/about-us/", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["FuDianKang Group was founded in 2000", "As Cummins’ TOP GOEM authorized manufacturer", "At the same time with the UK Perkins, Japan Mitsubishi, Germany MTU and other top engine companies in-depth cooperation for many years."], "file": "sources/fdk-energy/2.md" }
+    {
+      "n": 1,
+      "url": "https://fdkenergy.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "New Genset Diesel Generator Set (50Hz) Cummins Original Engine (225-3025KVA)",
+        "Cummins China DCEC Engine (20-550KVA)",
+        "Cummins China CCEC Engine (225-2750KVA)",
+        "Perkins Original Engine (9-2500KVA)",
+        "Mitsubishi Original Engine (625-2750KVA)",
+        "Yuchai China Engine (20-3250KVA)",
+        "Shangchai China Engine (50-3250KVA)",
+        "Weichai China Engine (20-2200KVA)",
+        "Means we can compress the delivery time of original engines like KTA50 series, QSK60 series, KTA 38 series, etc. from six months to 20days.",
+        "We have extensive experience in bidding and tendering.",
+        "Each generator undergoes rigorous testing and complies with ISO9001, ISO45001, and CE certifications.",
+        "No.6, Niujiaoling Industrial Zone, Dagang, Nansha, Guangzhou",
+        "We have BONDED WAREHOUSES"
+      ],
+      "file": "sources/fdk-energy/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://fdkenergy.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "FuDianKang Group was founded in 2000",
+        "As Cummins’ TOP GOEM authorized manufacturer",
+        "At the same time with the UK Perkins, Japan Mitsubishi, Germany MTU and other top engine companies in-depth cooperation for many years."
+      ],
+      "file": "sources/fdk-energy/2.md"
+    }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",

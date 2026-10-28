@@ -69,9 +69,124 @@
         "all products are certified with CE certificate"
       ],
       "file": "sources/sevenpower-chengdu/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.gas-chp.com/sale-12673261-three-phase-biogas-generator-set-127v-250kw-biogas-powered-electric-generator.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| frequency | Hz | 60"
+      ],
+      "file": "sources/sevenpower-chengdu/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.gas-chp.com/sale-12667482-silent-120kw-150kva-natural-gas-cogeneration-unit.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| thermal output(KWt) | kWt | 177"
+      ],
+      "file": "sources/sevenpower-chengdu/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.gas-chp.com/sale-12670001-green-energy-biogas-chp-16kw-20kva-biogas-combined-heat-power-system-ce-verified.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| thermal output(KWe) | kWt | 33"
+      ],
+      "file": "sources/sevenpower-chengdu/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.gas-chp.com/sale-12656893-50hz-380v-220v-biogas-cogeneration-40kw-50kva-electrical-automatic-start.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| thermal output(KWe) | kWt | 78"
+      ],
+      "file": "sources/sevenpower-chengdu/104.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Three Phase Biogas Generator Set , 127V 250KW Biogas Powered Electric Generator",
+      "header": [
+        "| frequency | Hz | 60",
+        "| voltage | V | 110/220",
+        "| gas inlet pressure | kPa | 3-5",
+        "| dimension (soundproof type) | mm*mm*mm | 3500*1800*2000",
+        "| net weight | kg | 4000"
+      ],
+      "rows": [
+        "| Biogas consumption | m 3 /kW.h | 0.41",
+        "| Biogas consumption for one hours | m3/h | 102.5",
+        "| db(A)@7m | — | 59"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Silent 120KW 150KVA Natural Gas Cogeneration Unit",
+      "header": [
+        "| thermal output(KWt) | kWt | 177",
+        "| electrical efficiency | % | 34.1%",
+        "| thermal efficiency | % | 50.4%",
+        "| overall efficiency | % | 84.5%",
+        "| frequency | Hz | 50",
+        "| voltage | V | 400/230",
+        "| gas inlet pressure | kPa | 4-15kpa"
+      ],
+      "rows": [
+        "| NG consumption | m3/kW.h | 0.297",
+        "| NG consumption per hour | m3/h | 35.6"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Green Energy Biogas CHP 16KW 20KVA , Biogas Combined Heat Power System CE Verified",
+      "header": [
+        "| thermal output(KWe) | kWt | 33",
+        "| electrical efficiency | % | 25.84%",
+        "| thermal efficiency | % | 53.3%",
+        "| overall efficiency | % | 79.14%",
+        "| frequency | Hz | 50",
+        "| voltage | V | 380/220",
+        "| gas inlet pressure | kPa | 1-10",
+        "| dimension (soundproof type) | mm*mm*mm | 1800*780*1020",
+        "| net weight | kg | 700"
+      ],
+      "rows": [
+        "| Biogas consumption | m 3 /kW.h | 0.540",
+        "| Biogas consumption for one hours | m3/h | 8.64",
+        "| db(A)@7m | — | 58"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "50Hz 380V / 220V Biogas Cogeneration 40KW 50KVA Electrical Automatic Start",
+      "header": [
+        "| thermal output(KWe) | kWt | 78",
+        "| electrical efficiency | % | 27.9%",
+        "| thermal efficiency | % | 54.42%",
+        "| overall efficiency | % | 82.32%",
+        "| frequency | Hz | 50",
+        "| voltage | V | 400/230",
+        "| gas inlet pressure | kPa | 1-10",
+        "| dimension (soundproof type) | mm*mm*mm | 2500*1400*1600",
+        "| net weight | kg | 2000"
+      ],
+      "rows": [
+        "| Biogas consumption | m 3 /kW.h | 0.5",
+        "| Biogas consumption for one hours | m3/h | 20",
+        "| db(A)@7m | — | 58"
+      ]
+    }
+  ]
 }

@@ -61,9 +61,55 @@
         "Copyright © Jinan Jichai Huanneng Gas Generating Equipment Co.,Ltd All rights reserved."
       ],
       "file": "sources/jichai-huanneng/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://m.jichaipower.com/gas-generator/biomass-generator-set/silent-type-ce-approved-low-rpm-600kw-biomass.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Engine type: Line type, water cooling, 4 strokes, spark plug ignition, open type firebox, non-turbo charged."
+      ],
+      "file": "sources/jichai-huanneng/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://m.jichaipower.com/gas-generator/natural-gas-generator/4500kw-natural-gas-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Rated power（kW） | 5200"
+      ],
+      "file": "sources/jichai-huanneng/102.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "600KW Biomass Gas ( Syngas) Generator Set Suppliers and Manufacturers China - New Energy - Jichai Huanneng",
+      "header": [],
+      "rows": [
+        "Engine type: Line type, water cooling, 4 strokes, spark plug ignition, open type firebox, non-turbo charged.",
+        "Rated power:660kw",
+        "Bore/stroke:300/380mm",
+        "Rated load caloric consumption:11.0 MJ/kW·h"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "4500KW Natural Gas Generator Set Suppliers and Manufacturers China - New Energy - Jichai Huanneng",
+      "header": [],
+      "rows": [
+        "| Rated power（kW） | 5200",
+        "| Rated voltage（V） | 10.5",
+        "| Frequency（Hz） | 50",
+        "| Rated speed（r/min） | 750",
+        "| Rated Power(kw) | 5400",
+        "| Cylinder bore x stroke (mm) | 320x400"
+      ]
+    }
+  ]
 }

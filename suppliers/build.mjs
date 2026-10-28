@@ -42,6 +42,12 @@ for (const r of specs) {
     checkedAt: today,
     checkedBy: "claude-code",
   };
-  fs.writeFileSync(path.join(ROOT, "cn", `${r.id}.json`), JSON.stringify(rec, null, 2) + "\n", "utf8");
+  // Spec tables added by merge-specs.mjs (sources 101+) stay.
+  const out = path.join(ROOT, "cn", `${r.id}.json`);
+  if (fs.existsSync(out)) {
+    const old = JSON.parse(fs.readFileSync(out, "utf8"));
+    if (old.specTables) { rec.specTables = old.specTables; rec.sources.push(...old.sources.filter((x) => x.n >= 101)); }
+  }
+  fs.writeFileSync(out, JSON.stringify(rec, null, 2) + "\n", "utf8");
   console.log("wrote", r.id);
 }

@@ -58,9 +58,1051 @@
         "Westinpower has established long-term partnerships with Perkins"
       ],
       "file": "sources/westinpower/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://power-gensets.com/1-7-diesel-generators.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Frequency : 50Hz"
+      ],
+      "file": "sources/westinpower/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://power-gensets.com/1-6-diesel-generators.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Frequency : 50Hz"
+      ],
+      "file": "sources/westinpower/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://power-gensets.com/1-5-diesel-generators.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Frequency : 50Hz"
+      ],
+      "file": "sources/westinpower/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://power-gensets.com/1-4-diesel-generators.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Frequency : 50Hz"
+      ],
+      "file": "sources/westinpower/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://power-gensets.com/1-3-diesel-generators.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Frequency : 50Hz"
+      ],
+      "file": "sources/westinpower/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://power-gensets.com/1-2-diesel-generators.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Frequency : 50Hz"
+      ],
+      "file": "sources/westinpower/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://power-gensets.com/1-1-diesel-generators.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Frequency : 50Hz"
+      ],
+      "file": "sources/westinpower/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://power-gensets.com/3-1-6-baudouin-diesel-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |"
+      ],
+      "file": "sources/westinpower/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://power-gensets.com/3-1-7-yuchai-diesel-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |"
+      ],
+      "file": "sources/westinpower/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://power-gensets.com/3-1-3-sdec-diesel-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |"
+      ],
+      "file": "sources/westinpower/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://power-gensets.com/3-1-2-perkins-diesel-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |"
+      ],
+      "file": "sources/westinpower/111.md"
+    },
+    {
+      "n": 112,
+      "url": "https://power-gensets.com/3-2-1-man-gas-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions"
+      ],
+      "file": "sources/westinpower/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://power-gensets.com/3-2-3-liyu-gas-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions"
+      ],
+      "file": "sources/westinpower/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://power-gensets.com/3-2-4-baudouin-gas-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions"
+      ],
+      "file": "sources/westinpower/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://power-gensets.com/3-2-2-perkins-gas-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions"
+      ],
+      "file": "sources/westinpower/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://power-gensets.com/3-1-5-sme-diesel-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |"
+      ],
+      "file": "sources/westinpower/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://power-gensets.com/3-1-4-mtu-diesel-engine-series.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |"
+      ],
+      "file": "sources/westinpower/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://power-gensets.com/1-diesel-generators.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Frequency : 50Hz"
+      ],
+      "file": "sources/westinpower/118.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "2001-4000kW Diesel Generator Set | Genset Manufacturer | Westinpower",
+      "header": [],
+      "rows": [
+        "Frequency : 50Hz",
+        "Standby Power : 2500kVA 2000kW",
+        "Prime Power : 2250kVA 1800kW",
+        "Engine Type : Perkins Engine 4016-61TRG3",
+        "Standby Power : 2680kVA 2144kW",
+        "Prime Power : 2500kVA 2000kW",
+        "Engine Type : MTU Engine 20V4000G14F",
+        "Standby Power : 3070kVA 2456kW",
+        "Prime Power : 2790kVA 2232kW",
+        "Engine Type : MTU Engine 20V4000G24F",
+        "Standby Power : 3300kVA 2640kW",
+        "Prime Power : 3000kVA 2400kW",
+        "Engine Type : MTU Engine 20V4000G34F",
+        "Engine Type : Baudouin Engine 20M33G2500/5",
+        "Frequency : 60HZ",
+        "Standby Power : 2544kVA 2035kW",
+        "Prime Power : 2313kVA 1850kW",
+        "Engine Type : MTU Engine 16V4000G14S"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "1001-2000kW Diesel Generator Set | Genset Manufacturer | Westinpower",
+      "header": [],
+      "rows": [
+        "Frequency : 50Hz",
+        "Standby Power : 1345kVA 1076kW",
+        "Prime Power : 1250kVA 1000kW",
+        "Engine Type : Perkins Engine 4012-46TWG2A",
+        "Standby Power : 1650kVA 1320kW",
+        "Prime Power : 1500kVA 1200kW",
+        "Engine Type : Perkins Engine 4012-46TAG2A",
+        "Standby Power : 2250kVA 1800kW",
+        "Prime Power : 2000kVA 1600kW",
+        "Engine Type : Perkins Engine 4016TAG2A",
+        "Standby Power : 2500kVA 2000kW",
+        "Prime Power : 2250kVA 1800kW",
+        "Engine Type : Perkins Engine 4016-61TRG3",
+        "Engine Type : Yuchai Engine YC12VTD1680-D30",
+        "Standby Power : 1660kVA 1328kW",
+        "Engine Type : Yuchai Engine YC12VC2070-D31",
+        "Engine Type : Yuchai Engine YC16VC3000-D31",
+        "Engine Type : SME Engine S12R-PTAA2-C",
+        "Standby Power : 1873kVA 1498kW",
+        "Prime Power : 1710kVA 1370kW",
+        "Engine Type : SME Engine S16R-PTA-C",
+        "Standby Power : 2000kVA 1600kW",
+        "Prime Power : 1875kVA 1500kW",
+        "Engine Type : SME Engine S16R-PTA2-C",
+        "Engine Type : SME Engine S16R-PTAA2-C",
+        "Prime Power : 2273kVA 1818kW",
+        "Engine Type : SME Engine S16R2-PTAW-C",
+        "Engine Type : MTU Engine 18V2000G26F",
+        "Standby Power : 1500kVA 1200kW",
+        "Prime Power : 1365kVA 1092kW",
+        "Engine Type : MTU Engine 12V4000G14RF",
+        "Standby Power : 1980kVA 1584kW",
+        "Prime Power : 1800kVA 1440kW",
+        "Engine Type : MTU Engine 12V4000G24F",
+        "Prime Power : 2080kVA 1664kW",
+        "Engine Type : MTU Engine 16V4000G14F",
+        "Engine Type : Baudouin Engine 12M33G1650/5",
+        "Frequency : 60HZ",
+        "Standby Power : 1375kVA 1100kW",
+        "Standby Power : 1675kVA 1330kW",
+        "Standby Power : 1350kVA 1080kW",
+        "Standby Power : 1670kVA 1330kW",
+        "Standby Power : 1513kVA 1210kW",
+        "Prime Power : 1375kVA 1100kW",
+        "Engine Type : MTU Engine 18V2000G85"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "700-1000kW Diesel Generator Set | Genset Manufacturer | Westinpower",
+      "header": [],
+      "rows": [
+        "Frequency : 50Hz",
+        "Standby Power : 900kVA 718kW",
+        "Prime Power : 800kVA 641kW",
+        "Engine Type : Perkins Engine 4006-23TAG3A",
+        "Standby Power : 1100kVA 880kW",
+        "Prime Power : 1000kVA 800kW",
+        "Engine Type : Perkins Engine 4008TAG2",
+        "Standby Power : 1001kVA 801kW",
+        "Prime Power : 910kVA 728kW",
+        "Engine Type : MTU Engine 16V2000G25",
+        "Engine Type : MTU Engine 16V2000G65",
+        "Standby Power : 1000kVA 800kW",
+        "Prime Power : 900kVA 720kW",
+        "Engine Type : Baudouin Engine 12M26G1000/5",
+        "Standby Power : 1120kVA 898kW",
+        "Prime Power : 1020kVA 816kW",
+        "Engine Type : Baudouin Engine 12M26G1100/5",
+        "Standby Power : 1125kVA 900kW",
+        "Engine Type : Yuchai Engine YC12VTD1350-D30",
+        "Frequency : 60HZ",
+        "Standby Power : 1100kVA 875kW",
+        "Standby Power : 1080kVA 864kW"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "400-699kW Diesel Generator Set | Genset Manufacturer | Westinpower",
+      "header": [],
+      "rows": [
+        "Frequency : 50Hz",
+        "Standby Power : 500kVA 400kW",
+        "Prime Power : 450kVA 360kW",
+        "Engine Type : Perkins Engine 2506C-E15TAG1",
+        "Standby Power : 550kVA 440kW",
+        "Prime Power : 500kVA 400kW",
+        "Engine Type : Perkins Engine 2506C-E15TAG2",
+        "Standby Power : 650kVA 520kW",
+        "Prime Power : 591kVA 473kW",
+        "Engine Type : Perkins Engine 2806C-E18TAG1A",
+        "Standby Power : 700kVA 560kW",
+        "Prime Power : 650kVA 520kW",
+        "Engine Type : Perkins Engine 2806A-E18TAG2",
+        "Engine Type : SDEC Engine SC25G690D2",
+        "Standby Power : 825kVA 660kW",
+        "Prime Power : 750kVA 600kW",
+        "Engine Type : Yuchai Engine YC6TD1000-D30",
+        "Engine Type : Baudouin Engine 6M21G550/5",
+        "Frequency : 60HZ",
+        "Standby Power : 390kVA 310kW",
+        "Prime Power : 350kVA 280kW",
+        "Engine Type : Perkins Engine 1506A-E88TAG5",
+        "Prime Power : 438kVA 350kW",
+        "Engine Type : Perkins Engine 2206A-E13TAG6"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "200-399kW Diesel Generator Set | Genset Manufacturer | Westinpower",
+      "header": [],
+      "rows": [
+        "Frequency : 50Hz",
+        "Standby Power : 275kVA 220kW",
+        "Prime Power : 250kVA 200kW",
+        "Engine Type : Perkins Engine 1206A-E70TTAG3",
+        "Standby Power : 384kVA 307kW",
+        "Prime Power : 348kVA 278kW",
+        "Engine Type : Perkins Engine 1706A-E93TAG2",
+        "Engine Type : SDEC Engine 6DTAA8.9-G22",
+        "Engine Type : SDEC Engine SC9D340D2",
+        "Engine Type : Yuchai Engine YC6MK350-D30",
+        "Engine Type : Baudouin Engine 6M16G275/5",
+        "Frequency : 60HZ",
+        "Standby Power : 390kVA 310kW",
+        "Prime Power : 350kVA 280kW",
+        "Engine Type : Perkins Engine 1506A-E88TAG5",
+        "Standby Power : 385kVA 308kW",
+        "Standby Power : 444kVA 355kW",
+        "Prime Power : 402kVA 321kW",
+        "Engine Type : Doosan Engine P158LE-1"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "101-199kW Diesel Generator Set | Genset Manufacturer | Westinpower",
+      "header": [],
+      "rows": [
+        "Frequency : 50Hz",
+        "Standby Power : 165kVA 132kW",
+        "Prime Power : 150kVA 120kW",
+        "Engine Type : Perkins Engine 1106A-70TAG2",
+        "Standby Power : 220kVA 176kW",
+        "Prime Power : 200kVA 160kW",
+        "Engine Type : Perkins Engine 1106A-70TAG4",
+        "Standby Power : 161kVA 129kW",
+        "Engine Type : SDEC Engine 6HTAA6.5-G22",
+        "Engine Type : Doosan Engine P086TI",
+        "Standby Power : 110kVA 88kW",
+        "Prime Power : 100kVA 80kW",
+        "Engine Type : Baudouin Engine 4M10G110/5",
+        "Frequency : 60HZ",
+        "Standby Power : 219kVA 175kW",
+        "Prime Power : 197kVA 158kW",
+        "Engine Type : Perkins Engine 1106A-70TAG3",
+        "Standby Power : 212.5kVA 170kW",
+        "Engine Type : SDEC Engine 6HTAA6.5-G21"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "0-100kW Diesel Generator Set | Genset Manufacturer | Westinpower",
+      "header": [],
+      "rows": [
+        "Frequency : 50Hz",
+        "Standby Power : 22kVA 18kW",
+        "Prime Power : 20kVA 16kW",
+        "Engine Type : Perkins Engine 404A-22G1/404D-22G",
+        "Standby Power : 33kVA 26kW",
+        "Prime Power : 30kVA 24kW",
+        "Engine Type : Perkins Engine 1103A-33G",
+        "Standby Power : 49.5kVA 40kW",
+        "Prime Power : 45kVA 36kW",
+        "Engine Type : Perkins Engine 1103A-33TG1",
+        "Standby Power : 66kVA 53kW",
+        "Prime Power : 60kVA 48kW",
+        "Engine Type : Perkins Engine 1103A-33TG2",
+        "Standby Power : 110kVA 88kW",
+        "Prime Power : 100kVA 80kW",
+        "Engine Type : Perkins Engine 1104C-44TAG2",
+        "Standby Power : 44kVA 35kW",
+        "Prime Power : 80kVA 64kW",
+        "Engine Type : SDEC Engine SC4H115D2",
+        "Standby Power : 124kVA 98.8kW",
+        "Prime Power : 112.5kVA 90kW",
+        "Engine Type : SDEC Engine SC4H160D2",
+        "Standby Power : 115.5kVA 92kW",
+        "Prime Power : 105kVA 84kW",
+        "Engine Type : SDEC Engine 4HTAA4.3-G34",
+        "Engine Type : Yuchai Engine YC4A140-D30",
+        "Standby Power : 44 kVA 35kW",
+        "Prime Power : 40kVA 32 kW",
+        "Engine Type : Baudouin Engine 4M06G44/5"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Diesel Generator Sets with Baudouin Engines | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TB20 | 20 | 16 | 18 | 15 | 4M06G20/5 | 2.3 | 4.7 | 1425*680*1140 | 2396*1056*1723",
+        "| TB25 | 25 | 20 | 23 | 18 | 4M06G25/5 | 2.3 | 6.1 | 1460*680*1140 | 2396*1056*1723",
+        "| TB35 | 35 | 28 | 32 | 26 | 4M06G35/5 | 2.3 | 7.6 | 1580*735*1150 | 2396*1056*1723",
+        "| TB44 | 44 | 35 | 40 | 32 | 4M06G44/5 | 2.3 | 9.5 | 1600*735*1150 | 2396*1056*1723",
+        "| TB50 | 50 | 40 | 45 | 36 | 4M06G50/5 | 2.3 | 10.7 | 1565*680*1150 | 2396*1056*1723",
+        "| TB55 | 55 | 44 | 50 | 40 | 4M06G55/5 | 2.3 | 11.9 | 1585*680*1150 | 2396*1056*1723",
+        "| TB72 | 72 | 57 | 65 | 52 | 4M10G70/5 | 4.087 | 15 | 1890*785*1240 | 3146*1056*1850",
+        "| TB88 | 88 | 70 | 80 | 64 | 4M10G88/5 | 4.087 | 18.8 | 1940*785*1240 | 3146*1056*1850",
+        "| TB110 | 110 | 88 | 100 | 80 | 4M10G110/5 | 4.087 | 21.3 | 1965*791*1345 | 3146*1056*1850",
+        "| TB150 | 150 | 120 | 135 | 108 | 6M11G150/5 | 6.75 | 30.2 | 2400*860*1460 | 3436*1106*1968",
+        "| TB165 | 165 | 132 | 150 | 120 | 6M11G165/5 | 6.75 | 32.6 | 2400*860*1460 | 3436*1106*1968",
+        "| TB220 | 220 | 176 | 200 | 160 | 6M16G220/5 | 9.726 | 43.1 | 2715*1085*1615 | 3686*1256*2068",
+        "| TB250 | 250 | 200 | 230 | 184 | 6M16G250/5 | 9.726 | 50.9 | 2770*1085*1615 | 3686*1256*2068",
+        "| TB275 | 275 | 220 | 250 | 200 | 6M16G275/5 | 9.726 | 56.9 | 2770*1085*1615 | 3686*1256*2068",
+        "| TB350 | 350 | 280 | 320 | 256 | 6M16G350/5 | 9.726 | 70.5 | 2895*1135*1660 | 4366*1406*2260",
+        "| TB400 | 400 | 320 | 375 | 300 | 6M21G400/5 | 12.54 | 82.1 | 3010*1150*1715 | 4786*1356*2537",
+        "| TB440 | 440 | 352 | 400 | 320 | 6M21G440/5 | 12.54 | 85.5 | 3010*1150*1715 | 4786*1356*2537",
+        "| TB500 | 500 | 400 | 450 | 360 | 6M21G500/5 | 12.54 | 96.58 | 3055*1155*1725 | 5306*1566*2585",
+        "| TB550 | 550 | 440 | 500 | 400 | 6M21G550/5 | 12.54 | 109.5 | 3140*1285*1840 | 5306*1566*2585",
+        "| TB660 | 660 | 528 | 600 | 480 | 6M33G660/5 | 19.6 | 126.5 | 3555*1360*2085 | 6058*2438*2591",
+        "| TB715 | 715 | 572 | 650 | 520 | 6M33G715/5 | 19.6 | 136.3 | 3630*1360*2085 | 6058*2438*2591",
+        "| TB750 | 738 | 590 | 670 | 536 | 6M33G750/5 | 19.6 | 151.1 | 3630*1360*2085 | 6058*2438*2591",
+        "| TB825 | 825 | 660 | 750 | 600 | 6M33G825/5 | 19.6 | 161.5 | 3700*1360*2085 | 6058*2438*2591",
+        "| TB900 | 900 | 720 | 815 | 652 | 12M26G900/5 | 31.8 | 173.7 | 4210*1800*2500 | /",
+        "| TB1000 | 1000 | 800 | 900 | 720 | 12M26G1000/5 | 31.8 | 195.5 | 4210*1800*2500 | /",
+        "| TB1120 | 1120 | 898 | 1020 | 816 | 12M26G1100/5 | 31.8 | 207.1 | 4330*1800*2500 | /",
+        "| TB1250 | 1230 | 984 | 1150 | 920 | 12M33G1250/5 | 39.2 | 236.2 | 4625*1925*2745 | /",
+        "| TB1400 | 1400 | 1120 | 1250 | 1000 | 12M33G1400/5 | 39.2 | 258.6 | 4720*1925*2745 | /",
+        "| TB1500 | 1500 | 1200 | 1375 | 1100 | 12M33G1500/5 | 39.2 | 296.9 | 4720*1925*2745 | /",
+        "| TB1650 | 1650 | 1320 | 1500 | 1200 | 12M33G1650/5 | 39.2 | 324 | 4755*2295*2740 | /",
+        "| TB1900 | 1873 | 1498 | 1750 | 1400 | 16M33G1900/5 | 52.3 | 364.3 | 5170*2290*2835 | /",
+        "| TB2000 | 2000 | 1600 | 1875 | 1500 | 16M33G2000/5 | 52.3 | 401 | 5170*2290*2835 | /",
+        "| TB2250 | 2250 | 1800 | 2000 | 1600 | 16M33G2250/5 | 52.3 | 485.3 | 5375*2810*3220 | /",
+        "| TB2500 | 2500 | 2000 | 2250 | 1800 | 20M33G2500/5 | 65.4 | 495 | 6685*2295*3005 | /",
+        "| TB2750 | 2750 | 2200 | 2500 | 2000 | 12M55G2750/5 | 65.65 | 513.9 | 6530*2300*3140 | /"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "Diesel Generator Sets with Yuchai Engines | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TY23 | 22 | 18 | 20 | 16 | 4D24G6 | 2.45 | 4.8 | 1856*835*1351.5 | 2396*1056*1723",
+        "| TY28 | 28 | 22 | 25 | 20 | 4D24G7 | 2.45 | 6 | 1856*835*1351.5 | 2396*1056*1723",
+        "| TY33 | 33 | 26 | 30 | 24 | 4D24TG2 | 2.45 | 7.3 | 1856*835*1351.5 | 2396*1056*1723",
+        "| TY41 | 41 | 33 | 38 | 30 | 4D24TG0 | 2.45 | 9.3 | 1856*835*1351.5 | 2396*1056*1723",
+        "| TY63 | 63 | 50 | 56 | 45 | YC4D80-D34 | 4.21 | 14.8 | 1856*820*1271 | 2396*1056*1723",
+        "| TY69 | 69 | 55 | 63 | 50 | YC4D90-D34 | 4.21 | 17 | 1856*835*1351.5 | 2396*1056*1723",
+        "| TY80 | 80 | 64 | 75 | 60 | YC4D105-D34 | 4.21 | 19.6 | 2400*995*1428 | 3146*1056*1850",
+        "| TY100 | 100 | 80 | 88 | 70 | YC4D120-D31 | 4.21 | 21.9 | 2350*900*1412.5 | 3146*1056*1850",
+        "| TY110 | 110 | 88 | 100 | 80 | YC4A140-D30 | 4.84 | 25.6 | 2480*1125*1412.5 | 3146*1056*1850",
+        "| TY110 | 110 | 88 | 100 | 80 | YC4D140-D31 | 4.21 | 25.6 | 2150*880*1306 | 3146*1056*1850",
+        "| TY125 | 125 | 100 | 113 | 90 | YC4A155-D30 | 4.84 | 27.1 | 2239*900*1412.5 | 3146*1056*1850",
+        "| TY125 | 125 | 100 | 113 | 90 | YC4D155-D31 | 4.21 | 27.6 | 2239*900*1412.5 | 3146*1056*1850",
+        "| TY125 | 125 | 100 | 113 | 90 | YC4A165-D30 | 4.84 | 28.3 | 2239*900*1412.5 | 3146*1056*1850",
+        "| TY150 | 150 | 120 | 138 | 110 | YC4A190-D30 | 4.84 | 31.9 | 2200*950*1436 | 3436*1106*1968",
+        "| TY165 | 163 | 130 | 150 | 120 | YC6A205-D30 | 7.25 | 35.3 | 2400*1000*1680 | 3436*1106*1968",
+        "| TY188 | 188 | 150 | 175 | 140 | YC6A230-D30 | 7.25 | 39.8 | 2450*1000*1680 | 3436*1106*1968",
+        "| TY200 | 200 | 160 | 180 | 144 | YC6A245-D30 | 7.25 | 41.8 | 2450*1000*1680 | 3436*1106*1968",
+        "| TY220 | 220 | 176 | 200 | 160 | YC6A275-D30 | 7.25 | 47.1 | 2550*980*1209 | 3686*1256*2068",
+        "| TY275 | 275 | 220 | 250 | 200 | YC6MK350-D30 | 10.34 | 57.5 | 2600*1008*1667.5 | 3686*1256*2068",
+        "| TY344 | 340 | 272 | 310 | 248 | YC6MK420-D30 | 10.34 | 68.3 | 3150*1147*1897 | 4366*1406*2260",
+        "| TY350 | 375 | 300 | 350 | 280 | YC6MK450-D30 | 10.34 | 72.6 | 3174*1147*1897 | 4366*1406*2260",
+        "| TY400 | 400 | 320 | 375 | 300 | YC6K500-D30 | 12.16 | 83 | 3200*1360*2050 | 4786*1356*2537",
+        "| TY400 | 400 | 320 | 375 | 300 | YC6K500-D31 | 12.16 | 83 | 3200*1360*2050 | 4786*1356*2537",
+        "| TY425 | 425 | 340 | 400 | 320 | YC6K520-D30 | 12.16 | 87 | 3250*1360*1995 | 4786*1356*2537",
+        "| TY500 | 500 | 400 | 450 | 360 | YC6K600-D30 | 12.94 | 101 | 3350*1360*1818 | 5306*1566*2585",
+        "| TY550 | 550 | 440 | 500 | 400 | YC6T660-D31 | 16.35 | 113.8 | 3630*1460*2050 | 5306*1566*2585",
+        "| TY625 | 625 | 500 | 563 | 450 | YC6TD780-D31 | 19.6 | 137 | 3650*1460*2000 | 6058*2438*2591",
+        "| TY690 | 688 | 550 | 625 | 500 | YC6TD840-D31 | 19.6 | 144.5 | 3680*1670*2029 | 6058*2438*2591",
+        "| TY750 | 738 | 590 | 670 | 536 | YC6TD900-D31 | 19.6 | 154.3 | 3680*1460*2150 | 6058*2438*2591",
+        "| TY825 | 825 | 660 | 750 | 600 | YC6TD1000-D30 | 19.6 | 166.4 | 4248*1660*2195 | 6058*2438*2591",
+        "| TY825 | 825 | 660 | 750 | 600 | YC6C1020-D31 | 39.58 | 172.5 | 4248*1660*2195 | 6058*2438*2591",
+        "| TY890 | 888 | 710 | 813 | 650 | YC6C1070-D31 | 39.58 | 181.6 | 4268*1760*2340 | 6058*2438*2591",
+        "| TY1000 | 1000 | 800 | 913 | 730 | YC6C1220-D31 | 39.58 | 203.7 | 4380*1771*2463 | 6058*2438*2591",
+        "| TY1100 | 1125 | 900 | 1000 | 800 | YC12VTD1350-D30 | 39.2 | 225.3 | 4350*2000*2263 | 6058*2438*2591",
+        "| TY1125 | 1125 | 900 | 1000 | 800 | YC6C1320-D31 | 39.58 | 220.2 | 4380*1771*2463 | 6058*2438*2591",
+        "| TY1250 | 1230 | 984 | 1125 | 900 | YC6C1520-D31 | 39.58 | 253.3 | 4817*2145*2448 | 12192*2438*2896",
+        "| TY1250 | 1230 | 984 | 1125 | 900 | YC12VTD1500-D30 | 39.2 | 250.4 | 4810*2200*2630 | 12192*2438*2896",
+        "| TY1375 | 1345 | 1076 | 1250 | 1000 | YC6C1660-D30 | 39.58 | 276.8 | 4668*2033*2198 | 12192*2438*2896",
+        "| TY1375 | 1345 | 1076 | 1250 | 1000 | YC12VTD1680-D30 | 39.2 | 280.4 | 4985*2060*2399 | 12192*2438*2896",
+        "| TY1375 | 1345 | 1076 | 1250 | 1000 | YC12VC1680-D31 | 79.17 | 281.7 | 4985*2060*2399 | 12192*2438*2896",
+        "| TY1500 | 1500 | 1200 | 1375 | 1100 | YC12VTD1830-D30 | 39.2 | 305.7 | 4602*2130*2535 | 12192*2438*2896",
+        "| TY1625 | 1625 | 1300 | 1500 | 1200 | YC12VTD2000-D30 | 39.2 | 336.8 | 4516*2200*2611 | 12192*2438*2896",
+        "| TY1650 | 1660 | 1328 | 1500 | 1200 | YC12VC2070-D31 | 79.17 | 339.2 | 5620*2555*2836 | /",
+        "| TY1875 | 1873 | 1498 | 1688 | 1350 | YC12VC2270-D31 | 79.17 | 370.6 | 5600*2050*2420 | /",
+        "| TY2000 | 2000 | 1600 | 1875 | 1500 | YC12VC2510-D31 | 79.17 | 416.5 | 5800*2250*2600 | /",
+        "| TY2250 | 2250 | 1800 | 2080 | 1664 | YC12VC2700-D31 | 79.17 | 441.9 | 5820*2250*2600 | /",
+        "| TY2500 | 2500 | 2000 | 2250 | 1800 | YC16VC3000-D31 | 105.56 | 493.9 | 6000*2590*2770 | /",
+        "| TY2750 | 2750 | 2200 | 2500 | 2000 | YC16VC3300-D31 | 105.56 | 543.2 | 6540*2575*3035 | /"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "Diesel Generator Sets with SDEC Engines | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TSO28 | 28 | 22 | 25 | 20 | 4H4.3-G21 | 4.3 | 8.2 | 1800*820*1247 | 2396*1056*1723",
+        "| TSO44 | 44 | 35 | 40 | 32 | 4H4.3-G22 | 4.3 | 11.5 | 1800*820*1247 | 2396*1056*1723",
+        "| TSO55 | 55 | 44 | 50 | 40 | 4HT4.3-G21 | 4.3 | 12.8 | 1850*820*1290 | 2396*1056*1723",
+        "| TSO88 | 88 | 70 | 80 | 64 | 4HT4.3-G23 | 4.3 | 19.5 | 1800*820*1278 | 3146*1056*1850",
+        "| TSO115 | 116 | 92 | 105 | 84 | 4HTAA4.3-G21 | 4.3 | 23 | 2170*880*1359 | 3146*1056*1850",
+        "| TSO135 | 135 | 108 | 125 | 100 | 4HTAA4.3-G22 | 4.3 | 28.3 | 2170*880*1392 | 3436*1106*1968",
+        "| TSO150 | 151 | 121 | 138 | 110 | 6HTAA6.5-G21 | 6.5 | 30.5 | 2170*880*1397 | 3436*1106*1968",
+        "| TSO165 | 161 | 129 | 150 | 120 | 6HTAA6.5-G22 | 6.5 | 33.1 | 2170*880*1397 | 3436*1106*1968",
+        "| TSO200 | 202 | 162 | 188 | 150 | 6HTAA6.5-G23 | 6.5 | 39.7 | 2350*950*1570 | 3436*1106*1968",
+        "| TSO220 | 220 | 176 | 200 | 160 | 6DTAA8.9-G21 | 8.82 | 44.1 | 2550*980*1582 | 3686*1256*2068",
+        "| TSO275 | 275 | 220 | 250 | 200 | 6DTAA8.9-G22 | 8.82 | 52.7 | 2550*980*1650 | 3686*1256*2068",
+        "| TSO275 | 275 | 220 | 250 | 200 | 6DTAA8.9-G23 | 8.82 | 55.1 | 2550*980*1650 | 3686*1256*2068",
+        "| TSO385 | 385 | 308 | 350 | 280 | 6ETAA11.8-G21 | 11.8 | 72.9 | 3150*1100*1825 | 4786*1356*2537",
+        "| TS69 | 69 | 55 | 63 | 50 | SC4H95D2 | 4.3 | 14.8 | 1990*835*1358 | 2396*1056*1723",
+        "| TS88 | 88 | 70 | 80 | 64 | SC4H115D2 | 4.3 | 20.2 | 2000*800*1360 | 3146*1056*1850",
+        "| TS125 | 124 | 99 | 113 | 90 | SC4H160D2 | 4.3 | 25 | 2000*915*1430 | 3146*1056*1850",
+        "| TS135 | 135 | 108 | 125 | 100 | SC4H180D2 | 4.3 | 28.6 | 2000*915*1430 | 3436*1106*1968",
+        "| TS185 | 186 | 149 | 169 | 135 | SC7H230D2 | 6.44 | 36.5 | 2580*950*1600 | 3436*1106*1968",
+        "| TS200 | 202 | 162 | 188 | 150 | SC7H250D2 | 6.44 | 39.7 | 2504*985*1563 | 3436*1106*1968",
+        "| TS225 | 227 | 182 | 206 | 165 | SC8D280D2 | 8.27 | 44.9 | 2604*1015*1718 | 3686*1256*2068",
+        "| TS250 | 248 | 198 | 225 | 180 | SC9D310D2 | 8.82 | 50.4 | 2605*1015*1691 | 3686*1256*2068",
+        "| TS275 | 275 | 220 | 250 | 200 | SC9D340D2 | 8.82 | 53.6 | 2580*950*1600 | 3686*1256*2068",
+        "| TS385 | 385 | 308 | 350 | 280 | SC12E460D2 | 11.8 | 71.6 | 3200*1100*1750 | 4366*1406*2260",
+        "| TS410 | 413 | 330 | 375 | 300 | SC15G500D2 | 14.16 | 81.2 | 3200*1250*1850 | 4786*1356*2537",
+        "| TS495 | 495 | 396 | 450 | 360 | SC25G610D2 | 25.8 | 98 | 3550*1400*1940 | 5306*1566*2585",
+        "| TS550 | 550 | 440 | 500 | 400 | SC25G690D2 | 25.8 | 111 | 3511*1690*2150 | 5306*1566*2585",
+        "| TS620 | 615 | 492 | 563 | 450 | SC27G755D2 | 26.6 | 122.2 | 3550*1400*1940 | 6058*2438*2591",
+        "| TS690 | 680 | 544 | 625 | 500 | SC27G830D2 | 26.6 | 141 | 3614.5*1690*2110 | 6058*2438*2591",
+        "| TS825 | 825 | 660 | 750 | 600 | SC33W990D2 | 32.8 | 142.2 | 4398*1775*2299 | 6058*2438*2591",
+        "| TS1000 | 990 | 792 | 900 | 720 | SC33W1150D2 | 32.8 | 186.4 | 4400*1775*2300 | 6058*2438*2591",
+        "| TSO55 | 55 | 44 | 50 | 40 | 4HTAA4.3-G31 | 4.3 | 11.9 | 2170*880*1359 | 2396*1056*1723",
+        "| TSO69 | 68.8 | 55 | 63 | 50 | 4HTAA4.3-G32 | 4.3 | 14.5 | 2170*880*1359 | 2396*1056*1723",
+        "| TSO88 | 87.5 | 70 | 80 | 64 | 4HTAA4.3-G33 | 4.3 | 18.2 | 2170*880*1359 | 3146*1056*1850",
+        "| TSO115 | 115.5 | 92 | 105 | 84 | 4HTAA4.3-G34 | 4.3 | 22.1 | 2170*880*1359 | 3146*1056*1850",
+        "| TSO125 | 124 | 99 | 113 | 90 | 4HTAA4.3-G35 | 4.3 | 24.7 | 2170*880*1359 | 3146*1056*1850",
+        "| TSO135 | 135 | 108 | 125 | 100 | 4HTAA4.3-G36 | 4.3 | 29.1 | 2170*880*1397 | 3436*1106*1968",
+        "| TSO150 | 151 | 121 | 138 | 110 | 6HTAA6.5-G31 | 6.5 | 29.8 | 2170*880*1397 | 3436*1106*1968",
+        "| TSO160 | 161 | 129 | 150 | 120 | 6HTAA6.5-G32 | 6.5 | 32.6 | 2170*880*1397 | 3436*1106*1968",
+        "| TSO200 | 202 | 162 | 188 | 150 | 6HTAA6.5-G33 | 6.5 | 39.2 | 2350*950*1570 | 3436*1106*1968",
+        "| TSO220 | 224 | 179 | 200 | 160 | 6DTAA8.9-G31 | 8.82 | 43.1 | 2550*980*1650 | 3686*1256*2068",
+        "| TSO220 | 220 | 176 | 200 | 160 | 6HTAA6.5-G34 | 6.5 | 43.4 | 2381*995*1540 | 3686*1256*2068",
+        "| TSO250 | 253 | 202 | 230 | 184 | 6DTAA8.9-G32 | 8.82 | 48.9 | 2550*980*1650 | 3686*1256*2068",
+        "| TSO275 | 275 | 220 | 250 | 200 | 6DTAA8.9-G33 | 8.82 | 53.6 | 2550*980*1650 | 3686*1256*2068",
+        "| TSO350 | 346 | 276 | 313 | 250 | 6ETAA11.8-G32 | 11.8 | 32.7 | 3150*1100*1825 | 4366*1406*2260",
+        "| TSO375 | 385 | 308 | 350 | 280 | 6ETAA11.8-G33 | 11.8 | 71.6 | 3150*1100*1825 | 4366*1406*2260",
+        "| TSO410 | 412.5 | 330 | 375 | 300 | 6ETAA11.8-G31 | 11.8 | 79.3 | 3150*1100*1825 | 4786*1356*2537"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "Diesel Generator Sets with SDEC Engines | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TS034 | 34 | 27 | 31 | 25 | 4H4.3-G21 | 4.3 | 9.5 | 1800*820*1247 | 2396*1056*1723",
+        "| TS055 | 54 | 43 | 50 | 40 | 4H4.3-G22 | 4.3 | 13.8 | 1800*820*1247 | 2396*1056*1723",
+        "| TS094 | 94 | 75 | 85 | 68 | 4HT4.3-G23 | 4.3 | 21.6 | 2170*880*1278 | 3146*1126*1850",
+        "| TS0125 | 124 | 99 | 113 | 90 | 4HTAA4.3-G21 | 4.3 | 25.6 | 2170*880*1359 | 3146*1126*1850",
+        "| TS0135 | 138 | 110 | 125 | 100 | 4HTAA4.3-G22 | 4.3 | 28.8 | 2170*880*1392 | 3146*1126*1850",
+        "| TS0165 | 165 | 132 | 150 | 120 | 6HTAA6.5-G21 | 6.5 | 33.1 | 2170*880*1397 | 3146*1126*1850",
+        "| TS0175 | 176 | 141 | 160 | 128 | 6HTAA6.5-G22 | 6.5 | 36.3 | 2170*880*1397 | 3146*1126*1850",
+        "| TS0225 | 227 | 182 | 206 | 165 | 6HTAA6.5-G23 | 6.5 | 43.4 | 2350*950*1570 | 3856*1256*2068",
+        "| TS0250 | 250 | 200 | 228 | 182 | 6DTAA8.9-G21 | 8.82 | 50.9 | 2550*980*1582 | 3856*1256*2068",
+        "| TS0285 | 289 | 231 | 263 | 210 | 6DTAA8.9-G22 | 8.82 | 58.9 | 2550*980*1650 | 3856*1256*2068",
+        "| TS0300 | 303 | 242 | 275 | 220 | 6DTAA8.9-G23 | 8.82 | 63 | 2550*980*1650 | 3856*1256*2068",
+        "| TS0385 | 385 | 308 | 350 | 280 | 6ETAA11.8-G21 | 11.8 | 75.8 | 3150*1100*1825 | 4506*1506*2260",
+        "| TS0410 | 407 | 325 | 367 | 293 | 6ETAA11.8-G31 | 11.8 | 79.5 | 3150*1100*1825 | 4506*1506*2260"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "Diesel Generator Sets with SDEC Engines | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TS034 | 34 | 28 | 31 | 25 | 4H4.3-G21 | 4.3 | 9.5 | 1800*820*1247 | 2396*1056*1723",
+        "| TS055 | 55 | 44 | 50 | 40 | 4H4.3-G22 | 4.3 | 13.8 | 1800*820*1247 | 2396*1056*1723",
+        "| TS094 | 93 | 74 | 85 | 68 | 4HT4.3-G23 | 4.3 | 21.6 | 2170*880*1278 | 3146*1056*1850",
+        "| TS0125 | 124 | 99 | 113 | 90 | 4HTAA4.3-G21 | 4.3 | 25.6 | 2170*880*1359 | 3146*1056*1850",
+        "| TS0135 | 138 | 110 | 125 | 100 | 4HTAA4.3-G22 | 4.3 | 28.8 | 2170*880*1392 | 3146*1056*1850",
+        "| TS0165 | 165 | 132 | 150 | 120 | 6HTAA6.5-G21 | 6.5 | 33.1 | 2170*880*1397 | 3146*1056*1850",
+        "| TS0175 | 175 | 140 | 160 | 128 | 6HTAA6.5-G22 | 6.5 | 36.3 | 2170*880*1397 | 3146*1056*1850",
+        "| TS0225 | 227 | 182 | 206 | 165 | 6HTAA6.5-G23 | 6.5 | 43.4 | 2350*950*1570 | 3686*1256*2068",
+        "| TS0250 | 250 | 200 | 228 | 182 | 6DTAA8.9-G21 | 8.82 | 50.9 | 2550*980*1582 | 3686*1256*2068",
+        "| TS0285 | 289 | 231 | 263 | 210 | 6DTAA8.9-G22 | 8.82 | 58.9 | 2550*980*1650 | 3686*1256*2068",
+        "| TS0300 | 300 | 240 | 275 | 220 | 6DTAA8.9-G23 | 8.82 | 63 | 2550*980*1650 | 3686*1256*2068",
+        "| TS0385 | 385 | 308 | 350 | 280 | 6ETAA11.8-G21 | 11.8 | 75.8 | 3150*1100*1825 | 4506*1506*2260",
+        "| TS0410 | 405 | 323 | 368 | 294 | 6ETAA11.8-G31 | 11.8 | 79.5 | 3150*1100*1825 | 4506*1506*2260"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "Diesel Generator Sets with Perkins Engines | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TP10 | 10 | 8 | 9 | 7 | 403A-11G1/403D-11G | 1.1 | 2.6 | 1402*715*1155 | 1856*826*1415",
+        "| TP14 | 14 | 11 | 13 | 10 | 403D-15G | 1.5 | 3.7 | 1402*715*1155 | 1856*826*1415",
+        "| TP15 | 15 | 11 | 13 | 10 | 403A-15G1 | 1.5 | 3.7 | 1402*715*1155 | 1856*826*1415",
+        "| TP22 | 22 | 18 | 20 | 16 | 404A-22G1/404D-22G | 2.2 | 5.3 | 1402*715*1155 | 1856*826*1415",
+        "| TP33 | 33 | 26 | 30 | 24 | 1103A-33G | 3.3 | 7.2 | 1765*785*1256 | 2396*1056*1723",
+        "| TP50 | 50 | 40 | 45 | 36 | 1103A-33TG1 | 3.3 | 7.2 | 1765*785*1256 | 2396*1056*1723",
+        "| TP66 | 66 | 53 | 60 | 48 | 1103A-33TG2 | 3.3 | 14.6 | 1765*785*1256 | 2396*1056*1723",
+        "| TP88 | 88 | 70 | 80 | 64 | 1104A-44TG2 | 4.4 | 18.7 | 1939*840*1309 | 3146*1056*1850",
+        "| TP110 | 110 | 88 | 100 | 80 | 1104C-44TAG2 | 4.4 | 22.6 | 1939*840*1309 | 3146*1056*1850",
+        "| TP150 | 150 | 120 | 135 | 108 | 1106A-70TG1 | 7 | 30.3 | 2481*1004*1534 | 3436*1106*1968",
+        "| TP165 | 165 | 132 | 150 | 120 | 1106A-70TAG2 | 7 | 33.4 | 2481*1004*1534 | 3436*1106*1968",
+        "| TP200 | 200 | 160 | 180 | 144 | 1106A-70TAG3 | 7 | 41.4 | 2481*1004*1534 | 3436*1106*1968",
+        "| TP220 | 220 | 176 | 200 | 160 | 1106A-70TAG4 | 7 | 45.8 | 2481*1004*1534 | 3436*1106*1968",
+        "| TP250 | 250 | 200 | 230 | 184 | 1206A-E70TTAG2 | 7.01 | 51 | 2830*1120*1660 | 3686*1256*2068",
+        "| TP275 | 275 | 220 | 250 | 200 | 1206A-E70TTAG3 | 7.01 | 56.9 | 2830*1120*1660 | 3686*1256*2068",
+        "| TP330 | 339 | 271 | 307 | 246 | 1706A-E93TAG1 | 9.29 | 69.6 | 2830*1125*1703 | 4366*1306*2250",
+        "| TP340 | 337 | 270 | 308 | 246 | 1506A-E88TAG5 | 8.8 | 64.9 | 2923*1120*1703 | 4366*1306*2250",
+        "| TP385 | 384 | 307 | 348 | 278 | 1706A-E93TAG2 | 9.29 | 78.4 | 2830*1125*1703 | 4786*1356*2537",
+        "| TP400 | 400 | 320 | 350 | 280 | 2206C-E13TAG2 | 12.5 | 75 | 3230*1187*1988 | 4786*1356*2537",
+        "| TP450 | 450 | 360 | 400 | 320 | 2206C-E13TAG3 | 12.5 | 85 | 3230*1187*1988 | 4786*1356*2537",
+        "| TP500 | 500 | 400 | 450 | 360 | 2506C-E15TAG1 | 15 | 99 | 3460*1182*1987 | 5306*1566*2585",
+        "| TP550 | 550 | 440 | 500 | 400 | 2506C-E15TAG2 | 15 | 106 | 3460*1182*1987 | 5306*1566*2585",
+        "| TP660 | 650 | 520 | 591 | 473 | 2806C-E18TAG1A | 18.1 | 129 | 3465*1548*1980 | 6058*2438*2591",
+        "| TP700 | 700 | 560 | 650 | 520 | 2806A-E18TAG2 | 18.1 | 132 | 3505*1548*1980 | 6058*2438*2591",
+        "| TP825 | 820 | 656 | 746 | 597 | 4006-23TAG2A | 22.9 | 161 | 4318*1720*2230 | 6058*2438*2591",
+        "| TP880 | 900 | 718 | 800 | 641 | 4006-23TAG3A | 22.9 | 172 | 4318*1720*2230 | 6058*2438*2591",
+        "| TP1000 | 1000 | 800 | 900 | 720 | 4008TAG1A | 30.6 | 195 | 4699*2070*2269 | 6058*2438*2591",
+        "| TP1100 | 1100 | 880 | 1000 | 800 | 4008TAG2 | 30.6 | 224 | 4699*2070*2269 | 6058*2438*2591",
+        "| TP1375 | 1345 | 1076 | 1250 | 1000 | 4012-46TWG2A | 45.8 | 258 | 4811*2010*2448 | 12192*2438*2896",
+        "| TP1500 | 1500 | 1200 | 1350 | 1100 | 4012-46TWG3A | 45.8 | 281 | 4811*2010*2448 | 12192*2438*2896",
+        "| TP1650 | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | 45.8 | 310 | 4985*2240*2569 | 12192*2438*2896",
+        "| TP1875 | 1873 | 1498 | 1710 | 1350 | 4012-46TAG3A | 45.8 | 370 | 5070*2240*2569 | 12192*2438*2896",
+        "| TP2000 | 2000 | 1600 | 1850 | 1480 | 4016TAG1A | 61.1 | 383 | 5990*2160*2543 | 12192*2438*2896",
+        "| TP2250 | 2250 | 1800 | 2000 | 1600 | 4016TAG2A | 61.1 | 434 | 5990*2160*2543 | 12192*2438*2896",
+        "| TP2500 | 2500 | 2000 | 2250 | 1800 | 4016-61TRG3 | 61.1 | 470 | 6010*2250*2783 |"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "Diesel Generator Sets with Perkins Engines | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TP12 | 12 | 10 | 11 | 9 | 403D-11G | 1.131 | 3.2 | 1402*715*1155 | 1856*826*1415",
+        "| TP17 | 17 | 14 | 16 | 13 | 403D-15G | 1.496 | 4.3 | 1402*715*1155 | 1856*826*1415",
+        "| TP27 | 27 | 21 | 24 | 19 | 404D-22G | 2.216 | 6.2 | 1402*715*1155 | 1856*826*1415",
+        "| TP38 | 38 | 31 | 35 | 28 | 1103A-33G | 3.3 | 8.6 | 1765*798*1256 | 2396*1056*1723",
+        "| TP60 | 59 | 47 | 53 | 43 | 1103A-33TG1 | 3.3 | 12.9 | 1765*798*1256 | 2396*1056*1723",
+        "| TP75 | 75 | 60 | 68 | 55 | 1103A-33TG2 | 3.3 | 16.6 | 1765*798*1256 | 2396*1056*1723",
+        "| TP85 | 84 | 67 | 76 | 61 | 1104A-44TG1 | 4.41 | 17.8 | 1939*840*1309 | 3146*1126*1850",
+        "| TP100 | 100 | 80 | 90 | 72 | 1104C-44TAG1 | 4.41 | 22 | 1939*860*1364 | 3146*1126*1850",
+        "| TP125 | 127 | 101 | 114 | 92 | 1104C-44TAG2 | 4.41 | 26.9 | 1939*860*1364 | 3146*1126*1850",
+        "| TP190 | 188 | 150 | 169 | 135 | 1106A-70TAG2 | 7.01 | 38.2 | 2481*1004*1534 | 3856*1256*2068",
+        "| TP220 | 219 | 175 | 197 | 158 | 1106A-70TAG3 | 7.01 | 46.4 | 2481*1004*1534 | 3856*1256*2068",
+        "| TP250 | 250 | 200 | 225 | 180 | 1206A-E70TTAG1 | 7.01 | 54.5 | 2650*1187*1775 | 3686*1256*2068",
+        "| TP385 | 390 | 310 | 350 | 280 | 1506A-E88TAG5 | 8.8 | 77.1 | 2923*1187*1703 | 4556*1406*2250",
+        "| TP400 | 400 | 320 | 364 | 290 | 1706A-E93TAG1 | 9.29 | 75.2 | |",
+        "| TP438 | 438 | 350 | 400 | 320 | 2206C-E13TAG2 | 12.5 | 84 | 3200*1225*1988 | 4786*1556*2537",
+        "| TP500 | 500 | 400 | 438 | 350 | 2206A-E13TAG6 | 12.5 | 91 | |",
+        "| TP550 | 550 | 440 | 500 | 400 | 2506C-E15TAG1 | 15 | 100 | 3438*1190*1987 | 5306*1566*2585",
+        "| TP625 | 625 | 500 | 569 | 455 | 2506C-E15TAG3 | 15.2 | 121 | 3438*1190*1987 | 5306*1566*2585",
+        "| TP690 | 687 | 550 | 625 | 500 | 2806C-E18TAG1A | 18.13 | 130 | 3352*1536*1957 | 6058*2438*2591",
+        "| TP750 | 750 | 600 | 681 | 545 | 2806C-E18TAG3 | 18.13 | 145 | 3352*1536*1957 | 6058*2438*2591",
+        "| TP825 | 825 | 660 | 750 | 600 | 4006-23TAG2A | 22.921 | 176 | 4300*1720*2222 | 6058*2438*2591",
+        "| TP940 | 931 | 745 | 844 | 675 | 4006-23TAG3A | 22.921 | 200 | 4300*1720*2222 | 6058*2438*2591",
+        "| TP975 | 975 | 780 | 884 | 707 | 4008TAG1 | 30.561 | 201 | 4565*2070*2269 | 6058*2438*2591",
+        "| TP1100 | 1100 | 875 | 1000 | 800 | 4008TAG2 | 30.561 | 224 | 4565*2070*2269 | 6058*2438*2591",
+        "| TP1375 | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | 45.842 | 266 | 4720*2006*2530 | 12192*2438*2896",
+        "| TP1500 | 1463 | 1170 | 1338 | 1070 | 4012-46TWG3A | 45.842 | 289 | 4780*2192*2501 | 12192*2438*2896",
+        "| TP1650 | 1675 | 1330 | 1500 | 1200 | 4012-46TAG2A | 45.842 | 315 | 5000*2200*2565 | 12192*2438*2896",
+        "| TP1880 | 1880 | 1500 | 1700 | 1350 | 4012-46TAG3A | 45.842 | 356 | 5000*2200*2565 |"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "Diesel Generator Sets with Perkins Engines | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TP12 | 12 | 10 | 11 | 9 | 403D-11G | 1.131 | 3.2 | 1320*700*1160 | 1856*826*1415",
+        "| TP17 | 17 | 14 | 16 | 13 | 403D-15G | 1.496 | 4.3 | 1320*700*1160 | 1856*826*1415",
+        "| TP27 | 27 | 21 | 24 | 19 | 404D-22G | 2.216 | 6.2 | 1320*700*1160 | 1856*826*1415",
+        "| TP38 | 38 | 31 | 35 | 28 | 1103A-33G | 3.3 | 8.6 | 1650*770*1254 | 2396*1056*1723",
+        "| TP60 | 59 | 47 | 53 | 43 | 1103A-33TG1 | 3.3 | 12.9 | 1650*770*1254 | 2396*1056*1723",
+        "| TP75 | 75 | 60 | 68 | 55 | 1103A-33TG2 | 3.3 | 16.6 | 1650*770*1256 | 2396*1056*1723",
+        "| TP85 | 84 | 67 | 76 | 61 | 1104A-44TG1 | 4.41 | 17.8 | 2100*815*1310 | 3146*1056*1850",
+        "| TP100 | 100 | 80 | 90 | 72 | 1104C-44TAG1 | 4.41 | 22 | 2100*815*1310 | 3146*1056*1850",
+        "| TP125 | 127 | 101 | 114 | 92 | 1104C-44TAG2 | 4.41 | 26.9 | 2100*815*1310 | 3146*1056*1850",
+        "| TP190 | 188 | 150 | 169 | 135 | 1106A-70TAG2 | 7.01 | 38.2 | 2550*950*1608 | 3686*1256*2068",
+        "| TP220 | 213 | 170 | 197 | 158 | 1106A-70TAG3 | 7.01 | 46.4 | 2550*950*1608 | 3686*1256*2068",
+        "| TP250 | 250 | 200 | 225 | 180 | 1206A-E70TTAG1 | 7.01 | 54.5 | 2650*1187*1775 | 3686*1256*2068",
+        "| TP385 | 385 | 308 | 350 | 280 | 1506A-E88TAG5 | 8.8 | 77.1 | 3150*1150*1800 | 4556*1406*2250",
+        "| TP400 | 400 | 320 | 364 | 290 | 1706A-E93TAG1 | 9.29 | 75.2 | |",
+        "| TP438 | 438 | 350 | 400 | 320 | 2206C-E13TAG2 | 12.5 | 84 | 3200*1150*2000 | 4786*1556*2537",
+        "| TP500 | 500 | 400 | 438 | 350 | 2206A-E13TAG6 | 12.5 | 91 | |",
+        "| TP550 | 550 | 440 | 500 | 400 | 2506C-E15TAG1 | 15 | 100 | 3440*1150*1990 | 5306*1566*2585",
+        "| TP625 | 625 | 500 | 569 | 455 | 2506C-E15TAG3 | 15.2 | 121 | 3440*1150*1990 | 5306*1566*2585",
+        "| TP690 | 673 | 538 | 625 | 500 | 2806C-E18TAG1A | 18.13 | 130 | 3440*1540*1960 | 6058*2438*2591",
+        "| TP750 | 730 | 584 | 675 | 540 | 2806C-E18TAG3 | 18.13 | 145 | 3440*1540*1960 | 6058*2438*2591",
+        "| TP825 | 825 | 660 | 750 | 600 | 4006-23TAG2A | 22.921 | 176 | 4235*1720*2220 | 6058*2438*2591",
+        "| TP940 | 944 | 755 | 850 | 680 | 4006-23TAG3A | 22.921 | 200 | 4300*1720*2220 | 6058*2438*2591",
+        "| TP960 | 950 | 760 | 875 | 700 | 4008TAG1 | 30.561 | 201 | 4565*2070*2400 | 6058*2438*2591",
+        "| TP1100 | 1080 | 864 | 1000 | 800 | 4008TAG2 | 30.561 | 224 | 4565*2070*2400 | 6058*2438*2591",
+        "| TP1375 | 1350 | 1080 | 1250 | 1000 | 4012-46TWG2A | 45.842 | 266 | 4720*2006*2530 | 12192*2438*2896",
+        "| TP1500 | 1500 | 1200 | 1350 | 1100 | 4012-46TWG3A | 45.842 | 289 | 4720*2006*2530 | 12192*2438*2896",
+        "| TP1650 | 1670 | 1330 | 1500 | 1200 | 4012-46TAG2A | 45.842 | 315 | 5000*2200*2565 | 12192*2438*2896",
+        "| TP1880 | 1880 | 1500 | 1700 | 1350 | 4012-46TAG3A | 45.842 | 356 | 5000*2200*2565 | 12192*2438*2896"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Gas Generator Sets with MAN Engines | Westinpower",
+      "header": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions",
+        "| kW | kVA | L*W*H (mm)"
+      ],
+      "rows": [
+        "| 1 | RN40N | 32 | 40 | E0834 E312 | 4/L | 108*125 | 3.9 | 2075*740*960",
+        "| 2 | RN60N | 48 | 60 | E0834 E302 | 4/L | 108*125 | 4.0 | 2075*740*960",
+        "| 3 | RN62N | 50 | 62 | E0836 E312 | 4/L | 108*125 | 6.0 | 2640*940*1100",
+        "| 4 | RN75N | 60 | 75 | E0834 LE312 | 4/L | 108*125 | 3.9 | 2905*960*1100",
+        "| 5 | RN85N | 68 | 85 | E0836 E302 | 6/L | 108*125 | 6.0 | 2940*960*1100",
+        "| 6 | RN125N | 100 | 125 | E0836 LE302 | 6/L | 108*125 | 5.9 | 3080*960*1100",
+        "| 7 | RN160N | 128 | 160 | E2676 E302 | 6/L | 126*166 | 12.4 | 3319*960*1206",
+        "| 8 | RN175N | 140 | 175 | E2876 E312 | 6/L | 128*166 | 13.0 | 3060*960*1535",
+        "| 9 | RN245N | 196 | 245 | E2876 LE302 | 6/L | 128*166 | 13.0 | 3570*1000*1210",
+        "| 10 | RN255N | 204 | 255 | E2876 LE212 | 6/L | 128*166 | 13.0 | 3570*1000*1210",
+        "| 11 | RN275N | 220 | 275 | E2676 LE202 | 6/L | 126*166 | 12.4 | 3639*100*1300",
+        "| 12 | RN320N | 256 | 320 | E3262 E302 | 8/V | 132*157 | 25.8 | 3793*1300*1504",
+        "| 13 | RN370N | 296 | 370 | E3268 LE242 | 8/V | 132*157 | 17.2 | 3670*1300*1500",
+        "| 14 | RN425N | 340 | 425 | E3268 LE212 | 8/V | 132*157 | 17.2 | 4280*1300*1500",
+        "| 15 | RN520N | 416 | 520 | E3262 LE232 | 12/V | 132*157 | 25.8 | 3908*1343*1550",
+        "| 16 | RN650N | 520 | 650 | E3262 LE202 | 12/V | 132*157 | 25.8 | 4578*1400*1600"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Gas Generator Sets with MAN Engines | Westinpower",
+      "header": [
+        "| Genset Model | Rated Power | Engine Model | Generator Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Mechanical Efficiency (%) | Thermal Efficiency (%) | Rated Current (A) | Battery | Breaker Model | Dimensions | Weight",
+        "| kW | kVA | L*W*H (mm) | (kg)"
+      ],
+      "rows": [
+        "| RN50NT | 40 | 50 | E0834 E312 | UCI224D | 4/L | 108*125 | 4.6 | 31.9 | 46.8 | 76 | 100AH/24V | S203-C80 | 1875*740*940 | 652",
+        "| RN70NT | 56 | 70 | E0834 E302 | UCI224F | 4/L | 108*125 | 4.6 | 36.5 | 52.8 | 106 | 100AH/24V | A1N125 TMF125/1250 FF 3P | 2075*740*960 | 830",
+        "| RN71NT | 57 | 71 | E0836 E312 | UCI224F | 6/L | 108*125 | 6.9 | 33.3 | 55.2 | 107 | 100AH/24V | A1N125 TMF125/1250 FF 3P | 2340*740*960 | 930",
+        "| RN75NT | 60 | 75 | E0834 LE312 | UCI224F | 6/L | 108*125 | 4.6 | 38.2 | 48.5 | 114 | 100AH/24V | A1N125 TMF125/1250 FF 3P | 2305*809*960 | 895",
+        "| RN95NT | 76 | 95 | E0836 E302 | UCI274C | 6/L | 108*125 | 6.9 | 36.4 | 53.6 | 144 | 100AH/24V | A2N250 TMF160/1600 FF 3P | 2440*740*1030 | 1000",
+        "| RN125NT | 100 | 125 | E0836 LE302 | UCI274E | 6/L | 108*125 | 6.9 | 38.0 | 52.1 | 190 | 100AH/24V | A2N250 TMF200/2000 FF 3P | 2930*740*1030 | 1180",
+        "| RN185NT | 148 | 185 | E2676 E302 | UCI274G | 6/L | 126*166 | 12.4 | 38.7 | 54.7 | 281 | 200AH/24V | T5N400 TMA R320 FF 3P | 3219*895*1206 | 1630",
+        "| RN195NT | 156 | 195 | E2876 E312 | UCI274H | 6/L | 128*166 | 12.8 | 38.0 | 54.1 | 296 | 200AH/24V | T5N400 TMA R400 FF 3P | 3056*830*1035 | 1539",
+        "| RN240NT | 192 | 240 | E2876 LE302 | S4L1S-C | 6/L | 128*166 | 12.8 | 37.0 | 50.7 | 365 | 200AH/24V | T5N400 TMA R400 FF 3P | 3250*830*1210 | 1790",
+        "| RN250NT | 200 | 250 | E2676 LE202 | S4L1S-C | 6/L | 126*166 | 12.4 | 39.4 | 49.1 | 380 | 200AH/24V | T5N400 TMA R400 FF 3P | 3319*1080*1206 | 1795",
+        "| RN350NT | 280 | 350 | E3262 E302 | HCI544C | 12/V | 132*157 | 25.8 | 38.7 | 54.9 | 531 | 200AH/24V | T5N630 PR221DS-LS/I R630 FF 3P | 3893*1500*1600 | 2873",
+        "| RN395NT | 316 | 395 | E3268 LE242 | HCI544C | 8/V | 132*157 | 17.2 | 40.3 | 48.2 | 600 | 200AH/24V | T5N630 PR221DS-LS/I R630 FF 3P | 3880*1500*1650 | 3055",
+        "| RN455NT | 364 | 455 | E3268 LE212 | HCI544C | 8/V | 132*157 | 17.2 | 40.8 | 47.9 | 691 | 200AH/24V | T6N800 TMA R800 FF 3P | 4170*1600*1700 | 3750",
+        "| RN525NT | 420 | 525 | E3262 LE232 | HCI544D | 12/V | 132*157 | 25.8 | 39.6 | 50.4 | 798 | 200AH/24V | T6N800 TMA R800 FF 3P | 4408*1680*1750 | 4334",
+        "| RN675NT | 540 | 675 | E3262 LE202 | HCI544F | 12/V | 132*157 | 25.8 | 40.0 | 49.9 | 1025 | 200AH/24V | T7S1250 PR231/P-LS/I R1250 FF 3P | 4408*1680*1750 | 4334"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Gas Generator Sets with MAN Engines | Westinpower",
+      "header": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions",
+        "| kW | kVA | L*W*H (mm)"
+      ],
+      "rows": [
+        "| 1 | RB90N | 72 | 90 | E0834 LE322 | 4/L | 108*125 | 4.6 | 2355*809*1080",
+        "| 2 | RB125N | 100 | 125 | E0836 LE302 | 6/L | 108*125 | 6.9 | 2830*740*1080",
+        "| 3 | RB150N | 120 | 150 | E2876 TE302 | 6/L | 128*166 | 12.8 | 2975*835*1210",
+        "| 4 | RB255N | 204 | 255 | E2676 LE212 | 6/L | 126*166 | 12.4 | 3339*870*1206",
+        "| 5 | RB360N | 288 | 360 | E3268 LE252 | 8/V | 132*157 | 17.2 | 3370*1210*1422",
+        "| 6 | RB425N | 340 | 425 | E3268 LE222 | 8/V | 132*157 | 17.2 | 3480*1210*1422",
+        "| 7 | RB525N | 420 | 525 | E3262 LE242 | 12/V | 132*157 | 25.8 | 3408*1243*1500",
+        "| 8 | RB635N | 508 | 635 | E3262 LE202 | 12/V | 132*157 | 25.8 | 4078*1243*1500"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Gas Generator Sets with MAN Engines | Westinpower",
+      "header": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Alternator Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Mechanical Efficiency (%) | Thermal Efficiency (%) | Rated Current (A) | Battery | Breaker Model | Dimensions | Weight",
+        "| kW | kVA | L*W*H (mm) | (kg)"
+      ],
+      "rows": [
+        "| 1 | RB90NT | 72 | 90 | E0834 LE322 | UCI224G | 4/L | 108*125 | 4.58 | 38.6 | 49.0 | 137 | 100AH/24V | A2N250 TMF160/1600 FF 3P | 2305*809*960 | 899",
+        "| 2 | RB125NT | 100 | 125 | E0836 LE302 | UCI274E | 6/L | 108*125 | 6.87 | 39.6 | 49.6 | 190 | 100AH/24V | A2N250 TMF200/2000 FF 3P | 2695*670*1030 | 1131",
+        "| 3 | RB150NT | 120 | 150 | E2876 TE302 | UCI274F | 6/L | 128*166 | 12.82 | 38.0 | 52.8 | 228 | 200AH/24V | A2N250 TMF250/2500 FF 3P | 2995*835*1210 | 1503",
+        "| 4 | RB155NT | 124 | 155 | E2676 E312 | UCI274F | 6/L | 126*166 | 12.4 | 35.8 | 56.5 | 236 | 200AH/24V | A2N250 TMF250/2500 FF 3P | 3500*1136*1200 | 1830",
+        "| 5 | RB225NT | 180 | 225 | E2876 LE302 | UCDI274J | 6/L | 128*166 | 12.82 | 40.4 | 49.5 | 342 | 200AH/24V | T5N400 TMA R400 FF 3P | 3370*870*1210 | 1940",
+        "| 6 | RB285NT | 228 | 285 | E2676 LE212 | S4L1S-D | 6/L | 126*166 | 12.4 | 40.3 | 46.4 | 433 | 200AH/24V | T5N630 TMA R500 FF 3P | 3939*1000*1206 | 1845",
+        "| 7 | RB445NT | 356 | 445 | E3268 LE222 | HCI544C | 8/V | 132*157 | 17.19 | 41.7 | 46.9 | 676 | 200AH/24V | T6N800 TMA R800 FF 3P | 4170*1210*1500 | 3727",
+        "| 8 | RB500NT | 400 | 500 | E3262 LE242 | HCI544D | 12/V | 132*157 | 25.78 | 41.1 | 47.8 | 760 | 200AH/24V | T6N800 TMA R800 FF 3P | 4408*1350*1650 | 4334",
+        "| 9 | RB675NT | 520 | 650 | E3262 LE212 | HCI544F | 12/V | 132*157 | 25.78 | 41.7 | 46.0 | 988 | 200AH/24V | T7S1000 PR231/P-LS/I R1000 FF 3P | 4408*1350*1650 | 4334"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Natural Gas Generator Sets with Liyu Engines | Westinpower",
+      "header": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions",
+        "| kW | kVA | L*W*H (mm)"
+      ],
+      "rows": [
+        "| 1 | LY1200 | 1100 | 1375 | Liyu Engine | 12/V | 170*195 | 53.1 | 4700*1700*2300",
+        "| 2 | LY1600 | 1460 | 1825 | Liyu Engine | 16/V | 170*195 | 70.8 | 5940*1700*2615",
+        "| 3 | LY2000 | 1800 | 2250 | Liyu Engine | 20/V | 170*195 | 89 | 7320*1700*2615"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Natural Gas Generator Sets with Liyu Engines | Westinpower",
+      "header": [
+        "| N0. | Genset Model | Rated Power | Cylinder | Bore*Stroke (mm) | Displacement (L) | Rated Current (A) | Battery | Breaker Model | Dimensions | Weight",
+        "| kW | kVA | L*W*H (mm) | (kg)"
+      ],
+      "rows": [
+        "| 1 | LY1100GH/L-Z | 1100 | 1375 | 12/V | 170*195 | 53.1 | 1985 | 240Ah/24V | E2B2000 D LI 3P FHR NST | 4700*1700*2300 | 10300",
+        "| 2 | LY1500GH/L-Z | 1460 | 1825 | 16/V | 170*195 | 70.8 | 2634 | 360Ah/24V | E4N3200 D LI 3P FHR NST | 5940*1700*2615 | 12500"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Natural Gas Generator Sets with Baudouin Engines | Westinpower",
+      "header": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions",
+        "| kW | kVA | L*W*H (mm)"
+      ],
+      "rows": [
+        "| 1 | RN63B | 50 | 63 | 4M11G2N0/5 | 4/L | 105*130 | 4.5 | 1726*654*1203",
+        "| 2 | RN75B | 60 | 75 | 4M11G4N0/5 | 4/L | 105*130 | 4.5 | 1726*654*1203",
+        "| 3 | RN188B | 150 | 188 | 6M16G4N0/5 | 6/L | 126*130 | 9.7 | 2325*1230*1363",
+        "| 4 | RN313B | 250 | 313 | 6M21G4N0/5 | 6/L | 127*165 | 12.5 | 2556*1317*1594",
+        "| 5 | RN400B | 320 | 400 | 6M33G2N0/5 | 6/L | 150*185 | 19.6 | 3260*1380*1610",
+        "| 6 | RN500B | 400 | 500 | 6M33G6N0/5 | 6/L | 150*185 | 19.6 | 3260*1380*1610",
+        "| 7 | RN1000B | 800 | 1000 | 12M33G10N0/5 | 12/V | 150*185 | 39.2 | 4151*2338*2431",
+        "| 8 | RN1750B | 1400 | 1750 | 12M55G6N0/5 | 12/V | 150*185 | 65.7 | 5720*2502*2757"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Gas Generator Sets with Perkins Engines | Westinpower",
+      "header": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions",
+        "| kW | kVA | L*W*H (mm)"
+      ],
+      "rows": [
+        "| 1 | RN385P | 307 | 385 | 4006-23TRS1 | 6/L | 160*190 | 22.92 | 3780*1720*2220",
+        "| 3 | RN470P | 375 | 470 | 4006-23TRS2 | 6/L | 160*190 | 22.92 | 3780*1720*2220",
+        "| 4 | RN510P | 408 | 510 | 4006-E23TRS4 | 6/L | 160*190 | 22.92 | 3780*1720*2220",
+        "| 5 | RN530P | 424 | 530 | 4008-30TRS1 | 8/L | 160*190 | 30.56 | 4380*1850*2350",
+        "| 6 | RN625P | 500 | 625 | 4008-30TRS2 | 8/L | 160*190 | 30.56 | 4460*1850*2350",
+        "| 7 | RN1100P | 875 | 1100 | 4016-61TRS1 | 16/V | 160*190 | 61.00 | 5560*2600*2960",
+        "| 8 | RN1250P | 1000 | 1250 | 4016-61TRS2 | 16/V | 160*190 | 61.00 | 5660*2600*2960"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Gas Generator Sets with Perkins Engines | Westinpower",
+      "header": [
+        "| N0. | Genset Model | Rated Power | Engine Model | Displacement (L) | Dimensions | Weight",
+        "| kW | kVA | L*W*H (mm) | (kg)"
+      ],
+      "rows": [
+        "| 1 | RB385PT | 307 | 385 | 4006-23TRS1 | 22.92 | 3780*1720*2220 | 4960",
+        "| 2 | RB388PT | 310 | 388 | 4006-E23TRS3 | 22.92 | 3780*1720*2220 | 4960",
+        "| 3 | RB470PT | 375 | 468 | 4006-23TRS2 | 22.92 | 3780*1720*2220 | 5138",
+        "| 4 | RB510PT | 408 | 510 | 4006-E23TRS4 | 22.92 | 3780*1720*2220 | 5138",
+        "| 5 | RB530PT | 424 | 530 | 4008-30TRS1 | 30.56 | 4380*1850*2350 | 6591",
+        "| 6 | RB625PT | 500 | 625 | 4008-30TRS2 | 30.56 | 4460*1850*2350 | 7004",
+        "| 7 | RB1100PT | 875 | 1094 | 4016-61TRS1 | 61.00 | 5560*2600*2960 | 11536",
+        "| 8 | RB1250PT | 1000 | 1250 | 4016-61TRS2 | 61.00 | 5660*2600*2960 | 11998"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "Diesel Generator Sets with SME Engines | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TMC750 | 738 | 590 | 660 | 530 | S6R2-PTA-C | 29.96 | 123 | 4100*1720-*2185 | 6058*2438*2591",
+        "| TMC825 | 825 | 660 | 750 | 600 | S6R2-PTAA-C | 29.96 | 148 | 4100*1720-*2185 | 6058*2438*2591",
+        "| TMC1375 | 1375 | 1100 | 1250 | 1000 | S12R-PTA-C | 49.03 | 235 | 4505*2210*2316 | 12192*2438*2896",
+        "| TMC1500 | 1500 | 1200 | 1375 | 1100 | S12R-PTA2-C | 49.03 | 259 | 4505*2200*2400 | 12192*2438*2896",
+        "| TMC1650 | 1650 | 1320 | 1500 | 1200 | S12R-PTAA2-C | 49.03 | 317 | 5000*2226*2582 | 12192*2438*2896",
+        "| TMC1900 | 1873 | 1498 | 1710 | 1370 | S16R-PTA-C | 65.37 | 351 | 5340*2250*2518 | 12192*2438*2896",
+        "| TMC2000 | 2000 | 1600 | 1875 | 1500 | S16R-PTA2-C | 65.37 | 388 | 5350*2250*2880 |",
+        "| TMC2250 | 2250 | 1800 | 2000 | 1600 | S16R-PTAA2-C | 65.37 | 415 | 5750*2135*2860 |",
+        "| TMC2500 | 2500 | 2000 | 2273 | 1818 | S16R2-PTAW-C | 79.9 | 464 | 5980*2200*3000 |"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "Diesel Generator Set with MTU Engine | Genset Supplier | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TX710 | 715 | 572 | 650 | 520 | 12V2000G25 | 23.88 | 156 | 4000*1585*2265 | 5306*1706*3015",
+        "| TX850 | 858 | 686 | 780 | 624 | 12V2000G65 | 23.88 | 185 | 4000*1585*2265 | 5306*1706*3015",
+        "| TX1000 | 1001 | 801 | 910 | 728 | 16V2000G25 | 31.84 | 212.5 | 4350*1650*2253 | 6058*2438*2591",
+        "| TX1100 | 1100 | 880 | 1000 | 800 | 16V2000G65 | 31.84 | 235.9 | 4430*1682*2285 | 6058*2438*2591",
+        "| TX1250 | 1230 | 984 | 1135 | 908 | 18V2000G65 | 35.82 | 266.3 | 4750*2015*2340 | 12192*2438*2896",
+        "| TX1375 | 1345 | 1076 | 1250 | 1000 | 18V2000G26F | 40.2 | 275.9 | 4845*2015*2350 | 12192*2438*2896",
+        "| TX1500 | 1500 | 1200 | 1365 | 1092 | 12V4000G14RF | 57.2 | 306.5 | 5750*2275*2600 |",
+        "| TX1800 | 1760 | 1408 | 1600 | 1280 | 12V4000G14F | 57.2 | 355.6 | 5750*2275*2600 |",
+        "| TX2000 | 1980 | 1584 | 1800 | 1440 | 12V4000G24F | 57.2 | 400.8 | 5870*2300*2702 |",
+        "| TX2250 | 2250 | 1800 | 2080 | 1664 | 16V4000G14F | 76.3 | 448 | 5870*2300*2705 |",
+        "| TX2475 | 2400 | 1920 | 2250 | 1800 | 16V4000G24F | 76.3 | 492.3 | 5870*2300*2705 |",
+        "| TX2750 | 2680 | 2144 | 2500 | 2000 | 20V4000G14F | 95.4 | 559.8 | 6535*2575*3035 |",
+        "| TX3000 | 3070 | 2456 | 2790 | 2232 | 20V4000G24F | 95.4 | 609.4 | 6535*2575*3035 |",
+        "| TX3300 | 3300 | 2640 | 3000 | 2400 | 20V4000G34F | 95.4 | 659 | 6535*2575*3035 |"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "Diesel Generator Set with MTU Engine | Genset Supplier | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TX880 | 869 | 695 | 794 | 635 | 12V2000G45 | 23.88 | 198.5 | 4050*1585*2150 | 6058*2438*2591",
+        "| TX1000 | 1000 | 800 | 919 | 735 | 12V2000G85 | 23.88 | 224.4 | 4050*1585*2150 | 6058*2438*2591",
+        "| TX1150 | 1141 | 913 | 1038 | 830 | 16V2000G45 | 31.84 | 249.9 | 4475*1650*2300 | 6058*2438*2591",
+        "| TX1250 | 1272 | 1018 | 1156 | 925 | 16V2000G85 | 31.84 | 275.1 | 4475*1650*2300 | 6058*2438*2591",
+        "| TX1500 | 1513 | 1210 | 1375 | 1100 | 18V2000G85 | 35.82 | 320.4 | 4650*1900*2500 | 12192*2438*2896"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "Diesel Generator Set with MTU Engine | Genset Supplier | Westinpower",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+        "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+      ],
+      "rows": [
+        "| TX880 | 880 | 704 | 800 | 640 | 12V2000G45 | 23.88 | 198.5 | 4050*1585*2150 | 6058*2438*2591",
+        "| TX1000 | 1011 | 809 | 919 | 735 | 12V2000G85 | 23.88 | 224.4 | 4050*1585*2150 | 6058*2438*2591",
+        "| TX1150 | 1141 | 913 | 1038 | 830 | 16V2000G45 | 31.84 | 249.9 | 4475*1650*2300 | 6058*2438*2591",
+        "| TX1250 | 1272 | 1018 | 1156 | 925 | 16V2000G85 | 31.84 | 275.1 | 4475*1650*2300 | 6058*2438*2591",
+        "| TX1500 | 1500 | 1200 | 1375 | 1100 | 18V2000G85 | 35.82 | 320.4 | 4650*1900*2500 | 12192*2438*2896",
+        "| TX1900 | 1895 | 1516 | 1750 | 1400 | 12V4000G14S | 57.2 | 396.8 | 6350*2250*2500 | 12192*2438*2896",
+        "| TX2200 | 2200 | 1760 | 2000 | 1600 | 12V4000G24S | 57.2 | 417.9 | 6350*2250*2500 | 12192*2438*2896",
+        "| TX2500 | 2544 | 2035 | 2313 | 1850 | 16V4000G14S | 76.3 | 483.8 | 6870*2740*2650 |"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "Diesel Generators | Industrial Generator Set | Westinpower",
+      "header": [],
+      "rows": [
+        "Frequency : 50Hz",
+        "Standby Power : 22kVA 18kW",
+        "Prime Power : 20kVA 16kW",
+        "Engine Type : Perkins Engine 404A-22G1/404D-22G",
+        "Standby Power : 33kVA 26kW",
+        "Prime Power : 30kVA 24kW",
+        "Engine Type : Perkins Engine 1103A-33G",
+        "Standby Power : 49.5kVA 40kW",
+        "Prime Power : 45kVA 36kW",
+        "Engine Type : Perkins Engine 1103A-33TG1",
+        "Standby Power : 66kVA 53kW",
+        "Prime Power : 60kVA 48kW",
+        "Engine Type : Perkins Engine 1103A-33TG2",
+        "Standby Power : 110kVA 88kW",
+        "Prime Power : 100kVA 80kW",
+        "Engine Type : Perkins Engine 1104C-44TAG2",
+        "Standby Power : 44kVA 35kW",
+        "Prime Power : 80kVA 64kW",
+        "Engine Type : SDEC Engine SC4H115D2",
+        "Standby Power : 124kVA 98.8kW",
+        "Prime Power : 112.5kVA 90kW",
+        "Engine Type : SDEC Engine SC4H160D2",
+        "Standby Power : 115.5kVA 92kW",
+        "Prime Power : 105kVA 84kW",
+        "Engine Type : SDEC Engine 4HTAA4.3-G34",
+        "Engine Type : Yuchai Engine YC4A140-D30",
+        "Standby Power : 44 kVA 35kW",
+        "Prime Power : 40kVA 32 kW",
+        "Engine Type : Baudouin Engine 4M06G44/5",
+        "Standby Power : 165kVA 132kW",
+        "Prime Power : 150kVA 120kW",
+        "Engine Type : Perkins Engine 1106A-70TAG2",
+        "Standby Power : 220kVA 176kW",
+        "Prime Power : 200kVA 160kW",
+        "Engine Type : Perkins Engine 1106A-70TAG4",
+        "Standby Power : 161kVA 129kW",
+        "Engine Type : SDEC Engine 6HTAA6.5-G22",
+        "Engine Type : Doosan Engine P086TI",
+        "Engine Type : Baudouin Engine 4M10G110/5",
+        "Standby Power : 275kVA 220kW",
+        "Prime Power : 250kVA 200kW",
+        "Engine Type : Perkins Engine 1206A-E70TTAG3",
+        "Standby Power : 384kVA 307kW",
+        "Prime Power : 348kVA 278kW",
+        "Engine Type : Perkins Engine 1706A-E93TAG2",
+        "Engine Type : SDEC Engine 6DTAA8.9-G22",
+        "Engine Type : SDEC Engine SC9D340D2",
+        "Engine Type : Yuchai Engine YC6MK350-D30",
+        "Engine Type : Baudouin Engine 6M16G275/5",
+        "Standby Power : 500kVA 400kW",
+        "Prime Power : 450kVA 360kW",
+        "Engine Type : Perkins Engine 2506C-E15TAG1",
+        "Standby Power : 550kVA 440kW",
+        "Prime Power : 500kVA 400kW",
+        "Engine Type : Perkins Engine 2506C-E15TAG2",
+        "Standby Power : 650kVA 520kW",
+        "Prime Power : 591kVA 473kW",
+        "Engine Type : Perkins Engine 2806C-E18TAG1A",
+        "Standby Power : 700kVA 560kW",
+        "Prime Power : 650kVA 520kW"
+      ]
+    }
+  ]
 }

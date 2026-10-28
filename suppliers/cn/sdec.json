@@ -3,27 +3,103 @@
   "country": "CN",
   "role": "engine_maker",
   "status": "verified",
-  "names": { "en": "Shanghai Diesel Engine Co., Ltd. (SDEC)", "zh": "上海柴油机股份有限公司", "brands": ["SDEC", "上柴"] },
+  "names": {
+    "en": "Shanghai Diesel Engine Co., Ltd. (SDEC)",
+    "zh": "上海柴油机股份有限公司",
+    "brands": [
+      "SDEC",
+      "上柴"
+    ]
+  },
   "website": "http://www.sdec.com.cn",
-  "hq": { "province": "Shanghai", "city": "Shanghai" },
+  "hq": {
+    "province": "Shanghai",
+    "city": "Shanghai"
+  },
   "founded": 1947,
-  "foundedSrc": [1],
+  "foundedSrc": [
+    1
+  ],
   "relatedIds": [],
   "strengths": [
-    { "text": "Doanh nghiệp nhà nước niêm yết (SH600841), thuộc tập đoàn SAIC (上汽集团); sản xuất cả động cơ và tổ máy phát điện diesel", "src": [1] },
-    { "text": "Động cơ phát điện công suất lớn: 13E (300–441 kW, đạt non-road T3 / EU S3A, đáp ứng G3), 25K (460–800 kW), 35W (660–970 kW)", "src": [1] }
+    {
+      "text": "Doanh nghiệp nhà nước niêm yết (SH600841), thuộc tập đoàn SAIC (上汽集团); sản xuất cả động cơ và tổ máy phát điện diesel",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Động cơ phát điện công suất lớn: 13E (300–441 kW, đạt non-road T3 / EU S3A, đáp ứng G3), 25K (460–800 kW), 35W (660–970 kW)",
+      "src": [
+        1
+      ]
+    }
   ],
   "productLines": [
-    { "kind": "engine", "series": "Động cơ phát điện 13E / 25K / 35W", "fuel": "diesel", "engineMakes": ["SDEC"], "engineModels": ["13E", "25K", "35W"], "alternatorMakes": [],
-      "power": { "min": 300, "max": 970, "unit": "kW", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": [], "emission": ["China non-road T3", "EU Stage IIIA (13E)"], "standards": ["ISO 8528 G3 (13E)"], "src": [1] }
+    {
+      "kind": "engine",
+      "series": "Động cơ phát điện 13E / 25K / 35W",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "engineModels": [
+        "13E",
+        "25K",
+        "35W"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 300,
+        "max": 970,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [
+        "China non-road T3",
+        "EU Stage IIIA (13E)"
+      ],
+      "standards": [
+        "ISO 8528 G3 (13E)"
+      ],
+      "src": [
+        1
+      ]
+    }
   ],
   "certifications": [],
-  "vietnam": { "distributors": [], "note": null },
+  "vietnam": {
+    "distributors": [],
+    "note": null
+  },
   "exportMarkets": [],
-  "missing": ["Website chính hãng sdec.com.cn không truy cập được; thông tin lấy từ trang giới thiệu nhà triển lãm (tier B)", "Dải 300–970 kW chỉ gồm 3 dòng trưng bày tại triển lãm, chưa phải toàn bộ danh mục động cơ phát điện", "Năm 2022 công ty đổi tên thành 上海新动力汽车科技 (theo báo chí, chưa đọc nguồn gốc)"],
+  "missing": [
+    "Website chính hãng sdec.com.cn không truy cập được; thông tin lấy từ trang giới thiệu nhà triển lãm (tier B)",
+    "Dải 300–970 kW chỉ gồm 3 dòng trưng bày tại triển lãm, chưa phải toàn bộ danh mục động cơ phát điện",
+    "Năm 2022 công ty đổi tên thành 上海新动力汽车科技 (theo báo chí, chưa đọc nguồn gốc)"
+  ],
   "sources": [
-    { "n": 1, "url": "http://www.china-cpower.com/companyshow.asp?id=1256", "accessedAt": "2026-10-28", "tier": "B",
-      "quote": ["上海柴油机股份有限公司（SH600841），前身为上海柴油机厂，始建于1947 年", "是研发、制造发动机及零部件、柴油发电机 组的国家大型高新技术企业，现隶属于上汽集团（SH600104）", "13E ▲ 功率范围： 300~441kW", "符合非道路T3和欧洲S3A标准；满足发电机组G3要求", "25K▲ 功率范围： 460~800kW", "35W▲ 功率范围： 660~970kW"], "file": "sources/sdec/1.md" }
+    {
+      "n": 1,
+      "url": "http://www.china-cpower.com/companyshow.asp?id=1256",
+      "accessedAt": "2026-10-28",
+      "tier": "B",
+      "quote": [
+        "上海柴油机股份有限公司（SH600841），前身为上海柴油机厂，始建于1947 年",
+        "是研发、制造发动机及零部件、柴油发电机 组的国家大型高新技术企业，现隶属于上汽集团（SH600104）",
+        "13E ▲ 功率范围： 300~441kW",
+        "符合非道路T3和欧洲S3A标准；满足发电机组G3要求",
+        "25K▲ 功率范围： 460~800kW",
+        "35W▲ 功率范围： 660~970kW"
+      ],
+      "file": "sources/sdec/1.md"
+    }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",

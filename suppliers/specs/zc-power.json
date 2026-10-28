@@ -1,0 +1,64 @@
+[
+ {
+  "n": 101,
+  "url": "https://zccpower.com/electric-generators/single-cylinder-silent-diesel-generators/",
+  "title": "5-10 kW Single Cylinder Silent Diesel Generator | ZC Power",
+  "header": [],
+  "rows": [
+   "| Rated Power | 5.0 kW / 6.25 kVA | 6.5 kW / 8.1 kVA | 10.0 kW / 12.5 kVA",
+   "| Max Power | 5.5 kW | 7.0 kW | 10.5 kW",
+   "| Engine Model | 186FA(E) | 192F(E) | 1100F(E)",
+   "| Displacement | 418 cc | 498 cc | 660 cc",
+   "| Bore x Stroke | 86 x 72 mm | 92 x 75 mm | 100 x 84 mm",
+   "| Compression Ratio | 19:1 | 19:1 | 19.5:1",
+   "| Noise Level (at 7m) | 68-72 dB(A) | 68-72 dB(A) | 70-75 dB(A)",
+   "| Fuel Tank | 15 L | 15 L | 25 L",
+   "| Fuel Consumption (75% load) | ~1.6 L/h | ~2.0 L/h | ~2.8 L/h",
+   "| Oil Capacity | 1.3 L | 1.5 L | 1.65 L",
+   "| Dimensions (L x W x H) | 950 x 530 x 700 mm | 980 x 560 x 740 mm | 1,100 x 600 x 800 mm",
+   "| Net Weight | 155 kg | 165 kg | 280 kg"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://zccpower.com/electric-generators/gasoline-generators/",
+  "title": "Gasoline Generators | Factory-Direct Prices | ZC Power",
+  "header": [
+   "| Model | Rated Power | Max Power | Voltage | Frequency | Engine | Fuel Tank | Runtime (50%) | Noise (7m) | Start | Weight"
+  ],
+  "rows": [
+   "| ZC-GF2500 | 2.0 kW | 2.5 kW | 110/220V | 50/60Hz | OHV 208cc | 15L | 11 hrs | 68 dB | Recoil | 42 kg",
+   "| ZC-GF3500 | 2.8 kW | 3.5 kW | 110/220V | 50/60Hz | OHV 223cc | 15L | 10 hrs | 69 dB | Recoil | 48 kg",
+   "| ZC-GF5500 | 5.0 kW | 5.5 kW | 110/220V | 50/60Hz | OHV 389cc | 25L | 9 hrs | 72 dB | Recoil / Electric | 75 kg",
+   "| ZC-GF6500 | 6.0 kW | 6.5 kW | 110/220/380V | 50/60Hz | OHV 420cc | 25L | 8 hrs | 74 dB | Recoil / Electric | 82 kg",
+   "| ZC-GF8000 | 7.5 kW | 8.0 kW | 220/380V | 50/60Hz | OHV 460cc | 25L | 7 hrs | 75 dB | Electric | 90 kg"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://zccpower.com/electric-generators/gasoline-generators/",
+  "title": "Gasoline Generators | Factory-Direct Prices | ZC Power",
+  "header": [
+   "| Model | Rated Power | Max Power | Voltage | Frequency | Noise (7m) | Fuel Tank | Runtime (50%) | Start | Weight"
+  ],
+  "rows": [
+   "| ZC-GS3500 | 2.8 kW | 3.5 kW | 110/220V | 50/60Hz | 62 dB | 15L | 10 hrs | Recoil / Electric | 55 kg",
+   "| ZC-GS5500 | 5.0 kW | 5.5 kW | 110/220V | 50/60Hz | 64 dB | 25L | 9 hrs | Electric | 85 kg",
+   "| ZC-GS8000 | 7.5 kW | 8.0 kW | 220/380V | 50/60Hz | 65 dB | 28L | 8 hrs | Electric | 105 kg",
+   "| ZC-GS10000 | 9.0 kW | 10.0 kW | 220/380V | 50/60Hz | 67 dB | 28L | 7 hrs | Electric | 120 kg"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://zccpower.com/heavy-duty-diesel-generator-fuel-consumption/",
+  "title": "500kW–4,000kW Heavy Duty Diesel Generator Fuel Consumption",
+  "header": [],
+  "rows": [
+   "Fuel consumption: 187.5 L/h",
+   "Fuel cost per kWh: ( 1.20/L×187.5L/h)÷750kW=∗∗ 1.20/ L × 187.5 L / h ) ÷ 750 kW = ∗ ∗ 0.30/kWh**",
+   "Output: 1,500 × 0.70 = 1,050 kW",
+   "Consumption: 1,050 × 0.23 = 241.5 L/h",
+   "Tank capacity: 241.5 × 72 × 1.1 = 19,127 L"
+  ]
+ }
+]

@@ -1,0 +1,226 @@
+{
+  "id": "bobig-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "FUJIAN BOBIG ELECTRIC MACHINERY CO.,LTD",
+    "zh": null,
+    "brands": [
+      "Bobig"
+    ]
+  },
+  "website": "https://www.bobigpower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Container / open diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 16,
+        "max": 1500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Dải công suất lấy từ tên sản phẩm trên trang chủ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.bobigpower.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Original Engine Container Diesel Generator Big Dg Generator 16KW To 1500KW",
+        "50KW To 300KW Home Open Type Diesel Generator With Stamford Alternator",
+        "Fujian Bobig Electric Machinery Co., Ltd. is an electrical machinery manufacturer collecting the technological research, production and sale together."
+      ],
+      "file": "sources/bobig-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.bobigpower.com/sale-54947845-600kva-hot-selling-customizable-high-power-diesel-generator-480kw-factory-direct-sale-professional-c.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| General Information | Prime Power | Standby Power"
+      ],
+      "file": "sources/bobig-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.bobigpower.com/sale-55185126-custom-100kw-200kva-200kw-300-kva-400kw-sdec-silent-diesel-generator-300kw-400kva-500kva-genset-elec.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Parameter | Prime Power | Standby Power"
+      ],
+      "file": "sources/bobig-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.bobigpower.com/sale-54948087-high-quality-open-silent-type-yunnei-diesel-generator-64kw-80kva-power-supply-water-cooling.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| General information | Prime power | Standby power"
+      ],
+      "file": "sources/bobig-power/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.bobigpower.com/sale-55002566-high-quality-open-silent-type-yunnei-diesel-generator-100kw-125kva-power-supply-water-cooling.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Specification | Prime Power | Standby Power"
+      ],
+      "file": "sources/bobig-power/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.bobigpower.com/sale-55036736-280kw-diesel-generator-super-silent-350kva-3-phase-50hz-ats-stamford-alternator-iso-ce-certified-sil.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Parameter | Prime Power | Standby Power"
+      ],
+      "file": "sources/bobig-power/105.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.bobigpower.com/sale-55096794-1500kw-1875kva-3-phase-diesel-generator-super-silent-1500kw-power-plant-generator-for-data-centre-50.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Specification | Prime Power | Standby Power"
+      ],
+      "file": "sources/bobig-power/107.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.bobigpower.com/sale-55215432-520-kw-generator-diesel-power-by-weichai-engine-6m33d633e200-leroy-somer-alternator-generators-650-k.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Parameter | Prime Power | Standby Power"
+      ],
+      "file": "sources/bobig-power/109.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "480kW 600KVA BAUDOUIN Diesel Generator - Reliable Power Solution",
+      "header": [
+        "| General Information | Prime Power | Standby Power"
+      ],
+      "rows": [
+        "| Rated Power (kVA) | 600 | 660",
+        "| Power Rating (kW) | 480 | 528"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "300kw SDEC Silent Diesel Generator | 375kva Genset Power",
+      "header": [
+        "| Parameter | Prime Power | Standby Power"
+      ],
+      "rows": [
+        "| Rated Power (kVA) | 375 | 413",
+        "| Power Rating (kW) | 300 | 330"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "64KW Yunnei Diesel Generator | Open/Silent Type Water Cooling",
+      "header": [
+        "| General information | Prime power | Standby power"
+      ],
+      "rows": [
+        "| Rated Power (kVA) | 80 | 88",
+        "| Power Rating (kW) | 64 | 70"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "100KW Yunnei Diesel Generator - Open/Silent Type Water Cooling",
+      "header": [
+        "| Specification | Prime Power | Standby Power"
+      ],
+      "rows": [
+        "| Rated Power (kVA) | 125 | 138",
+        "| Power Rating (kW) | 100 | 110"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "280kw Diesel Generator Super Silent 350kVA 3 Phase 50Hz",
+      "header": [
+        "| Parameter | Prime Power | Standby Power"
+      ],
+      "rows": [
+        "| Rated Power (kVA) | 350 | 385",
+        "| Power Rating (kW) | 280 | 308"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "1500KW Super Silent Diesel Generator for Data Centers",
+      "header": [
+        "| Specification | Prime Power | Standby Power"
+      ],
+      "rows": [
+        "| Rated Power (kVA) | 1875 | 2063",
+        "| Power Rating (kW) | 1500 | 1650"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "520kW Diesel Generator with Weichai Engine & Leroy Somer Alternator",
+      "header": [
+        "| Parameter | Prime Power | Standby Power"
+      ],
+      "rows": [
+        "| Rated Power (kVA) | 650 | 715",
+        "| Power Rating (kW) | 520 | 572"
+      ]
+    }
+  ]
+}

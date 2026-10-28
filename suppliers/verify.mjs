@@ -64,6 +64,14 @@ export function checkRecord(rec, file) {
       for (const v of [pw.min, pw.max]) if (!nums.includes(v)) err(`${where}: số ${v} không có trong câu trích nguồn`);
     }
   }
+  // Spec tables (crawl-specs.mjs): every header and row line must be in the saved page of its source.
+  for (const [i, t] of (rec.specTables || []).entries()) {
+    const s = sources.get(t.n);
+    if (!s) { err(`specTables[${i}]: src ${t.n} không có`); continue; }
+    if (!t.rows?.length) err(`specTables[${i}]: không có dòng`);
+    const text = s.file && fs.existsSync(path.join(ROOT, s.file)) ? norm(fs.readFileSync(path.join(ROOT, s.file), "utf8")) : "";
+    for (const l of [...(t.header || []), ...(t.rows || [])]) if (!text.includes(norm(l))) err(`specTables[${i}]: không tìm thấy dòng "${String(l).slice(0, 60)}"`);
+  }
   if (rec.status === "verified") {
     if (!rec.website) err("verified: thiếu website");
     if (!(rec.productLines || []).some((p) => p.power)) err("verified: cần ít nhất 1 dòng máy có dải công suất");

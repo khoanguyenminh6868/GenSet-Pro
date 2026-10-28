@@ -1,0 +1,69 @@
+{
+  "id": "jieli-weifang",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "WEIFANG KANGTE ELECTROMECHANICAL CO.,LTD",
+    "zh": null,
+    "brands": [
+      "Kangte"
+    ]
+  },
+  "website": "http://wfjldl.com/en/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gas and diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Tên miền wfjldl.com (捷力动力) nhưng bản quyền ghi Weifang Kangte; chưa rõ quan hệ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://wfjldl.com/en/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "WEIFANG KANGTE is a company specialized in the manufacturing of a gas generator sets and diesel generator sets, from 10kw to 3000kw",
+        "©2023 WEIFANG KANGTE ELECTORMECHANICAL CO.,LTD copyright"
+      ],
+      "file": "sources/jieli-weifang/1.md"
+    }
+  ],
+  "confidence": "low",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

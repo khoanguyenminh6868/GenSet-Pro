@@ -3,26 +3,98 @@
   "country": "CN",
   "role": "genset_oem",
   "status": "verified",
-  "names": { "en": "Usuper Power", "zh": null, "brands": ["Usuper"] },
+  "names": {
+    "en": "Usuper Power",
+    "zh": null,
+    "brands": [
+      "Usuper"
+    ]
+  },
   "website": "https://usuperpower.com/",
-  "hq": { "province": null, "city": null },
+  "hq": {
+    "province": null,
+    "city": null
+  },
   "founded": null,
   "relatedIds": [],
   "strengths": [
-    { "text": "Theo hãng: dải 20 kVA–2000 kVA; máy trần, giảm âm, rơ-moóc, container, hệ hòa song song tự động; nhận ODM/OEM", "src": [1] },
-    { "text": "Theo hãng: thử đầy tải trước khi xuất xưởng; đạt CE và EPA", "src": [1] }
+    {
+      "text": "Theo hãng: dải 20 kVA–2000 kVA; máy trần, giảm âm, rơ-moóc, container, hệ hòa song song tự động; nhận ODM/OEM",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: thử đầy tải trước khi xuất xưởng; đạt CE và EPA",
+      "src": [
+        1
+      ]
+    }
   ],
   "productLines": [
-    { "kind": "genset", "series": "Usuper diesel generator", "fuel": "diesel", "engineMakes": [], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 20, "max": 2000, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": ["open", "silent", "trailer", "container"], "emission": ["EPA"], "standards": [], "src": [1] }
+    {
+      "kind": "genset",
+      "series": "Usuper diesel generator",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "trailer",
+        "container"
+      ],
+      "emission": [
+        "EPA"
+      ],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
   ],
-  "certifications": [ { "name": "CE", "src": [1] } ],
-  "vietnam": { "distributors": [], "note": null },
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "vietnam": {
+    "distributors": [],
+    "note": null
+  },
   "exportMarkets": [],
-  "missing": ["Không tìm thấy tên pháp nhân, địa chỉ, năm thành lập trên trang đã đọc", "Chưa có danh sách hãng động cơ cụ thể (chỉ có ví dụ Yuchai 100 kVA)"],
+  "missing": [
+    "Không tìm thấy tên pháp nhân, địa chỉ, năm thành lập trên trang đã đọc",
+    "Chưa có danh sách hãng động cơ cụ thể (chỉ có ví dụ Yuchai 100 kVA)"
+  ],
   "sources": [
-    { "n": 1, "url": "https://usuperpower.com/diesel-generator/", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["Up to now, Usuper Power has covered the full power range of 20kVA-2000kVA and can provide customized diesel generators, including open types, silent types, trailer types, container types, and an automated parallel system. All diesel generators will undergo a strict full-load test before leaving the factory", "The Usuper Power diesel generator is compliant with global mainstream emission standards, such as CE and EPA.", "We also provide full ODM&OEM customized services"], "file": "sources/usuper-power/1.md" }
+    {
+      "n": 1,
+      "url": "https://usuperpower.com/diesel-generator/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Up to now, Usuper Power has covered the full power range of 20kVA-2000kVA and can provide customized diesel generators, including open types, silent types, trailer types, container types, and an automated parallel system. All diesel generators will undergo a strict full-load test before leaving the factory",
+        "The Usuper Power diesel generator is compliant with global mainstream emission standards, such as CE and EPA.",
+        "We also provide full ODM&OEM customized services"
+      ],
+      "file": "sources/usuper-power/1.md"
+    }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
