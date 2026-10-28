@@ -1,6 +1,6 @@
 # Nhà cung cấp máy phát điện
 
-Dữ liệu cho trang "Nhà cung cấp" và tab "Nhà cung cấp" (Gợi ý top 3) của GenBid Pro. Giai đoạn này: Trung Quốc. Duyệt bởi Khoa, 2026-10-28.
+Dữ liệu cho trang "Nhà cung cấp", danh mục "Động cơ" / "Đầu phát", tab "Nhà cung cấp" (Gợi ý top 3) và tab "Cấu hình gợi ý" của GenBid Pro. Giai đoạn này: Trung Quốc. Duyệt bởi Khoa, 2026-10-28.
 
 ## Nguyên tắc
 - Mỗi thông tin có nguồn `[n]`: link, ngày đọc, hạng nguồn và câu trích nguyên văn (giữ ngôn ngữ gốc).
@@ -20,6 +20,19 @@ Dữ liệu cho trang "Nhà cung cấp" và tab "Nhà cung cấp" (Gợi ý top 
 - `upload.mjs [--dry]`: chạy kiểm tra rồi đăng lên web thành `supplier/<id>` (qua `/api/ingest`). Bản ghi `incomplete` không đăng.
 
 Không thu thập nhà phân phối tại Việt Nam (Khoa, 2026-10-28).
+
+## Danh mục động cơ và đầu phát
+Trang web dựng danh mục ngay trên trình duyệt từ `specTables` của mọi bản ghi (`web/catalog.js`), không có dữ liệu riêng:
+- model động cơ / đầu phát là ô chữ-số trong dòng bảng có cột động cơ / đầu phát; mỗi model giữ mọi dòng nguyên văn ghi nó, kèm nguồn `[n]`;
+- hãng chỉ ghi khi nguồn ghi rõ (ô trong dòng > tiêu đề cột hoặc chính hãng sản xuất > tên trang), không đoán từ tên model;
+- công suất là của tổ máy dùng model đó: cặp số có tỉ lệ 1,15–1,35 là kVA / kW; hai cặp thì cặp lớn là dự phòng, cặp nhỏ là liên tục; không quy đổi kW ↔ kVA.
+
+Tab "Cấu hình gợi ý" của gói thầu dùng chính danh mục này để xếp top 3 động cơ và top 3 đầu phát (`suggest` trong `web/catalog.js`).
+- `catalog-stats.mjs [--json out.json] [--samples]`: dựng danh mục từ `cn/*.json` như trang web và in số liệu.
+- `node --test suppliers/*.test.mjs`: kiểm tra bộ đọc danh mục (chạy trong CI cùng `verify.mjs`).
+
+## Cào lại trên GitHub
+Workflow *Supplier spec crawl* (`.github/workflows/supplier-crawl.yml`) chạy `crawl-specs.mjs` hai lượt (đọc thường, rồi Chromium) trên máy của GitHub, `merge-specs.mjs`, `verify.mjs`, rồi commit vào nhánh nó chạy. Chạy tay (Actions → Run workflow, chọn nhánh) hoặc đẩy lên một nhánh `crawl/...`. Một hãng mà lần cào mới tìm được ít dòng hơn lần trước thì giữ nguyên kết quả cũ. Xem lại commit qua pull request trước khi gộp vào `main`; khi `suppliers/cn/` trên `main` thay đổi, workflow *Supplier publish* tự đăng lên web (cùng kiểm tra như `upload.mjs`).
 
 ## Thêm hoặc sửa một nhà cung cấp
 1. `node suppliers/fetch-source.mjs <id> <n> <url>` cho từng trang nguồn.

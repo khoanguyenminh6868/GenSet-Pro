@@ -1,6 +1,8 @@
 // Posts the supplier records to the web as supplier/<id>: node suppliers/upload.mjs [--dry]
 // Runs verify.mjs first and stops on any error. Records with status "incomplete" stay local. The saved source pages
 // (sources/) never leave git. The ingest token is read from the file and never printed.
+// With SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY set (the GitHub workflow supplier-publish.yml), the rows go straight
+// to the docs table instead, the way /api/ingest writes them.
 import fs from "node:fs";
 import path from "node:path";
 import { checkRecord, loadAll } from "./verify.mjs";
@@ -19,7 +21,8 @@ const rows = all.map(({ rec }) => rec).filter((r) => r.status !== "incomplete").
 console.log(`${rows.length} bản ghi sẽ đăng (${all.length - rows.length} incomplete giữ lại).`);
 if (dry) process.exit(0);
 
-const token = fs.readFileSync(TOKEN_FILE, "utf8").trim();
+const SB = process.env.SUPABASE_URL, SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const token = SB && SERVICE ? null : fs.readFileSync(TOKEN_FILE, "utf8").trim();
 // Batches of at most 200 rows and about 2 MB (Vercel takes 4.5 MB per request; spec tables make records large).
 const batches = [];
 for (const row of rows) {
@@ -28,12 +31,15 @@ for (const row of rows) {
   else { last.rows.push(row); last.size += size; }
 }
 for (const b of batches) {
-  const r = await fetch(`${WEB}/api/ingest`, {
-    method: "POST",
-    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ rows: b.rows }),
-  });
+  const now = new Date().toISOString();
+  const r = token
+    ? await fetch(`${WEB}/api/ingest`, { method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }, body: JSON.stringify({ rows: b.rows }) })
+    : await fetch(`${SB}/rest/v1/docs`, {
+      method: "POST",
+      headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
+      body: JSON.stringify(b.rows.map((x) => ({ coll: x.coll, id: x.id, data: x.data, updated_at: now }))),
+    });
   const body = await r.text();
   if (!r.ok) { console.error(`HTTP ${r.status}: ${body.slice(0, 300)}`); process.exit(1); }
-  console.log(body);
+  console.log(body || `${b.rows.length} bản ghi đã đăng`);
 }

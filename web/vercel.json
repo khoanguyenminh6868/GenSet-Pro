@@ -5,5 +5,5 @@
     { "source": "/_gh/:id", "destination": "/api/gh?id=:id" }
   ],
   "functions": { "api/gh.js": { "maxDuration": 300 } },
-  "headers": [{ "source": "/(index.html|shim.js)?", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }]
+  "headers": [{ "source": "/(index.html|shim.js|catalog.js)?", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }]
 }
