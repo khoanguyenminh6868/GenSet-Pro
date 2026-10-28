@@ -915,5 +915,764 @@
    "| Standby Power Rating | 200 KVA",
    "| Frequency | 50Hz / 60Hz"
   ]
+ },
+ {
+  "n": 143,
+  "url": "https://www.camda-generator.com/product/150-kw-gas-generator.html",
+  "title": "High Efficiency 150 KW Gas Generator Natural Gas Power System - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| No. of Cylinders | 6 | Engine power(KW) | 176",
+   "| Bore * Stroke (mm) | 114 * 135 | Compression Ratio | 10.5:1"
+  ]
+ },
+ {
+  "n": 144,
+  "url": "https://www.camda-generator.com/product/120-kw-gas-generator.html",
+  "title": "High Efficiency 120 KW Gas Generator for Reliable Energy Output - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| | No. of Cylinders | 6 | Engine power(KW) | 145",
+   "| Bore * Stroke (mm) | 140 * 152 | Compression Ratio | 0.459027778"
+  ]
+ },
+ {
+  "n": 145,
+  "url": "https://www.camda-generator.com/product/150-kva-standby-diesel-generator.html",
+  "title": "150 KVA Standby Diesel Generator China Manufacturers - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Prime Power | KVA | 135",
+   "| Voltage type | 50Hz, 380/220V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA44.3M8",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) (100% Load) | 27",
+   "| Dimensions: (mm) | L | 2300 | 3200",
+   "| Weights (kg) | 1360 | 2053",
+   "| Power Rating | 150 KVA",
+   "| Frequency | 50Hz / 60Hz"
+  ]
+ },
+ {
+  "n": 146,
+  "url": "https://www.camda-generator.com/product/hot-selling-135-kva-standby-diesel-generator.html",
+  "title": "Hot selling 135 KVA standby Diesel Generator with Cummins engine and ATS system - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Standby Power | KVA | 138",
+   "| Prime Power | KVA | 125",
+   "| Voltage type | 50Hz,380/220V, 3 phases and 4 wires",
+   "| Engine Brand & Model | Cummins 6BTAA5.9-G2",
+   "| Alternator Brand & Model | Leroy Somer LSA44.3M6",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) | 100% Load | 30",
+   "| Dimensions: (mm) | L | 2300 | 3200",
+   "| Weights (kg) | 1360 | 2053",
+   "| Power Rating | 135 KVA",
+   "| Frequency | 50Hz / 60Hz"
+  ]
+ },
+ {
+  "n": 147,
+  "url": "https://www.camda-generator.com/product/125-kva-standby-diesel-generator.html",
+  "title": "Reliable 125 KVA Standby Diesel Generator for factory and construction use - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Prime Power | KVA | 113",
+   "| Voltage type | 50Hz, 380/220V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA44.3M6",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) (100% Load) | 22.5",
+   "| Dimensions: (mm) | L | 2250 | 2900",
+   "| Weights (kg) | 1300 | 1990",
+   "| Power Rating | 125 KVA",
+   "| Frequency | 50Hz / 60Hz"
+  ]
+ },
+ {
+  "n": 148,
+  "url": "https://www.camda-generator.com/product/100-kva-standby-diesel-generator.html",
+  "title": "100 KVA Standby Diesel Generator for Reliable Emergency Power Supply - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Standby Power | KVA | 100",
+   "| Prime Power | KVA | 90",
+   "| Voltage type | 50Hz, 380/220V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA44.3 S4",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) (100% Load) | 18",
+   "| Dimensions: (mm) | L | 2250 | 2900",
+   "| Weights (kg) | 1210 | 1900"
+  ]
+ },
+ {
+  "n": 149,
+  "url": "https://www.camda-generator.com/product/60-kva-standby-diesel-generator.html",
+  "title": "60 KVA Standby Diesel Generator for Reliable Backup Power Supply - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Prime Power | KVA | 56",
+   "| Voltage type | 50Hz, 380/220V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA42.3L9",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) (100% Load) | 11.25",
+   "| Dimensions: (mm) | L | 1800 | 2370",
+   "| Weights (kg) | 900 | 1506",
+   "| Power Rating | 60 KVA / 48 kW | ISO 8528 Generator Standard",
+   "| Frequency | 50 / 60 Hz | IEC Electrical Standards",
+   "| Phase | 3 Phase | Industrial Power Distribution Norm",
+   "| Voltage Stability | ±1% to ±2% | Within ±1.5%",
+   "| Noise Level | Industry dependent | 70–75 dB(A) optional silent canopy"
+  ]
+ },
+ {
+  "n": 150,
+  "url": "https://www.camda-generator.com/product/50-kva-standby-super-silent-diesel-generator.html",
+  "title": "50 KVA Standby Super Silent Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Prime Power | KVA | 45",
+   "| Voltage type | 50Hz, 380/220V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA42.3 M7",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) (100% Load) | 9",
+   "| Dimensions: (mm) | L | 1800 | 2370",
+   "| Weights (kg) | 885 | 1491",
+   "| Rated Power | 50 KVA / 40 kW | ISO 8528 Generator Standards",
+   "| Noise Level | 65–75 dB @ 7m | Camda Acoustic Test Data",
+   "| Fuel Consumption | 10–13 L/h (75% load) | Cummins Engine Handbook"
+  ]
+ },
+ {
+  "n": 151,
+  "url": "https://www.camda-generator.com/product/45-kva-35-kw-standby-power-diesel-generator.html",
+  "title": "45 KVA 35 kW Standby Power Diesel Generator for Reliable Backup Supply - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Prime Power | KVA | 40",
+   "| Voltage type | 50Hz,380/220V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA42.3 S5",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) (100% Load) | 8",
+   "| Dimensions: (mm) | L | 1700 | 2370",
+   "| Weights (kg) | 850 | 1462",
+   "| Rated Power | 45 KVA / 35 kW | ISO 8528 Standard",
+   "| Frequency | 50/60 Hz | IEC Electrical Standard",
+   "| Alternator (Stamford / Leroy Somer) | Electricity conversion | IEC 60034 Standard"
+  ]
+ },
+ {
+  "n": 152,
+  "url": "https://www.camda-generator.com/product/35-kva-standby-diesel-generator-open-type-or-super-silent-type.html",
+  "title": "35 KVA Standby Diesel Generator Open Type or Super Silent Type for Industrial Use - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Standby Power | KVA | 35",
+   "| Prime Power | KVA | 31",
+   "| Voltage type | 50Hz, 380/220V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA42.3 VS3",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) (100% Load) | 6.25",
+   "| Dimensions: (mm) | L | 1700 | 2300",
+   "| Weights (kg) | 825 | 1437",
+   "| Rated Power | 35 kW / 35 KVA | ISO 8528 Generator Set Standard",
+   "| Alternator (Stamford / Leroy Somer) | Electricity conversion | IEC 60034 Standard"
+  ]
+ },
+ {
+  "n": 153,
+  "url": "https://www.camda-generator.com/product/30-kva-standby-power-diesel-generator-set.html",
+  "title": "30 KVA Standby Power Diesel Generator Set for Reliable Backup Supply - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Standby Power | KVA | 28",
+   "| Prime Power | KVA | 25",
+   "| Voltage type | 50Hz, 415/240V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA42.3VS2",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) (100% Load) | 5",
+   "| Dimensions: (mm) | L | 1700 | 2370",
+   "| Weights (kg) | 710 | 1322",
+   "| Rated Power | 30 KVA / approx. 24 kW | ISO 8528 Generator Standard",
+   "| Noise Control Option | Reduced operational noise | ISO 3744 Acoustic Standard"
+  ]
+ },
+ {
+  "n": 154,
+  "url": "https://www.camda-generator.com/product/27-kva-standby-diesel-generator-with-ce-and-iso-verified.html",
+  "title": "27 KVA Standby Diesel Generator with CE and ISO Verified for Emergency Power Supply - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Prime Power | KVA | 23",
+   "| Voltage type | 50Hz,380/220V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA40 M7",
+   "| Frequency & Phase | 50hz 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr) | 100% Load | 5.9",
+   "| Dimensions: (mm) | L | 1700 | 2370",
+   "| Weights (kg) | 697 | 1309",
+   "| Rated Power | 27 KVA / approx. 22 kW | ISO 8528 Generator Standard",
+   "| Noise Reduction Option | Suitable for urban areas | ISO 3744 Acoustic Standard"
+  ]
+ },
+ {
+  "n": 155,
+  "url": "https://www.camda-generator.com/product/perkins-powered-container-diesel-genertaor.html",
+  "title": "Perkins Powered Container Diesel Generator for Industrial Power Supply - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Container type | kVA | kW"
+  ],
+  "rows": [
+   "| KDGC660S | 800 | 660 | 725 | 580 | 4006-23TAG2A | LSA49.1M6 | 6058×2438×2591 | 10370",
+   "| KDGC704S | 880 | 704 | 800 | 640 | 4006-23TAG3A | LSA49.1M75 | 6058×2438×2591 | 10400",
+   "| KDGC770S | 960 | 770 | 880 | 704 | 4008TAG1A | LSA49.1L9 | 6058×2438×2591 | 11667",
+   "| KDGC880S | 1100 | 880 | 1000 | 800 | 4008TAG2A | LSA49.1L11 | 6058×2438×2591 | 12030",
+   "| KDGC1100S | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | LSA50.2M6 | 12192×2438×2896 | 17950",
+   "| KDGC1200S | 1500 | 1200 | 1350 | 1080 | 4012-46TWG3A | LSA50.2L7 | 12192×2438×2896 | 18205",
+   "| KDGC1320S | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | LSA50.2L8 | 12192×2438×2896 | 18435",
+   "| KDGC1500S | 1875 | 1500 | 1710 | 1368 | 4012-46TAG3A | LSA51.2S55 | 12192×2438×2896 | 19200",
+   "| KDGC1600S | 2000 | 1600 | 1825 | 1460 | 4016TAG1A | LSA51.2S55 | 12192×2438×2896 | 21780",
+   "| KDGC1800S | 2250 | 1800 | 2050 | 1640 | 4016TAG2A | LSA51.2M60 | 12192×2438×2896 | 21875",
+   "| KDGC2000S | 2500 | 2000 | 2250 | 1800 | 4016-61TRG3 | LSA51.2VL90 | 12192×2438×2896 | 22900"
+  ]
+ },
+ {
+  "n": 156,
+  "url": "https://www.camda-generator.com/product/mtu-powered-diesel-generator.html",
+  "title": "High Performance MTU Powered Diesel Generator Set for Reliable Energy - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Genset model | MTU model | Engine frequency | Genset prime/standby power（KW） | Leroy Somer alternator"
+  ],
+  "rows": [
+   "| KDGM560S | 12V2000G25 | S2000/50HZ | 512/560 | LSA49.3S4/528KW",
+   "| KDGM680S | 12V2000G65 | S2000/50HZ | 620/680 | LSA49.3M8/656KW",
+   "| KDGM800S | 16V2000G25 | S2000/50HZ | 728/800 | LSA49.3L9/728KW",
+   "| KDGM880S | 16V2000G65 | S2000/50HZ | 800/880 | LSA49.3L10/808KW",
+   "| KDGM1000S | 18V2000G65 | S2000/50HZ | 910/1000 | LSA50.2M6/1000KW",
+   "| KDGM696S1 | 12V2000G45 | S2000/60HZ | 632/696 | LSA49.3S4/660KW",
+   "| KDGM800S1 | 12V2000G85 | S2000/60HZ | 728/800 | LSA49.3M6/730KW",
+   "| KDGM910S1 | 16V2000G45 | S2000/60HZ | 820/910 | LSA49.3M8/820KW",
+   "| KDGM1000S1 | 16V2000G85 | S2000/60HZ | 910/1000 | LSA49.3L9/910KW",
+   "| KDGM1100S1 | 18V2000G85 | S2000/60HZ | 1000/1100 | LSA49.3L10/1000KW",
+   "| KDGM240S | 6R1600G10F | S1600/50HZ | 224/240 | LSA46.2L9/224KW",
+   "| KDGM275S | 6R1600G20F | S1600/50HZ | 250/275 | LSA46.2VL12/252KW",
+   "| KDGM330S | 8V1600G10F | S1600/50HZ | 300/330 | LSA47.2VS2/300KW",
+   "| KDGM352S | 8V1600G20F | S1600/50HZ | 320/352 | LSA47.2S4/328KW",
+   "| KDGM400S | 10V1600G10F | S1600/50HZ | 360/400 | LSA47.2S5/364KW",
+   "| KDGM440S | 10V1600G20F | S1600/50HZ | 400/440 | LSA47.2M7/400KW",
+   "| KDGM528S | 12V1600G10F | S1600/50HZ | 480/528 | LSA47.2L9/480KW",
+   "| KDGM580S | 12V1600G20F | S1600/50HZ | 528/580 | LSA49.3S4/528KW",
+   "| KDGM275S1 | 6R1600G10S | S1600/60HZ | 250/275 | LSA46.2L9/275KW",
+   "| KDGM308S1 | 6R1600G20S | S1600/60HZ | 280/308 | LSA46.2VL12/350KW",
+   "| KDGM365S1 | 8V1600G10S | S1600/60HZ | 332/365 | LSA46.2VL12/350KW",
+   "| KDGM402S1 | 8V1600G20S | S1600/60HZ | 365/402 | LSA47.2VS2/365KW",
+   "| KDGM462S1 | 10V1600G10S | S1600/60HZ | 420/462 | LSA47.2S5/456KW",
+   "| KDGM512S1 | 10V1600G20S | S1600/60HZ | 465/512 | LSA47.2M7/500KW",
+   "| KDGM560S1 | 12V1600G10S | S1600/60HZ | 504/560 | LSA47.2M8/552KW",
+   "| KDGM605S1 | 12V1600G20S | S1600/60HZ | 550/605 | LSA47.2M8/552KW",
+   "| KDGM1100S | 18V2000G26F | S4000/50HZ | 1000/1100 | LSA52.2ZL60/1000KW",
+   "| KDGM1230S | 12V4000F23R | S4000/50HZ | 1120/1230 | LSA52.2ZL70/1200KW",
+   "| KDGM1408S | 12V4000G23 | S4000/50HZ | 1280/1408 | LSA53.1UL70/1600KW",
+   "| KDGM1408S1 | 12V4000G23 | S4000/60HZ | 1280/1408 | LSA53.1UL70/1680KW",
+   "| KDGM1600S | 12V4000G63 | S4000/50HZ | 1440/1600 | LSA53.1UL70/1600KW",
+   "| KDGM1800S | 16V4000G23 | S4000/50HZ | 1600/1800 | LSA53.1UL70/1600KW",
+   "| KDGM2000S | 16V4000G63 | S4000/50HZ | 1800/2000 | LSA53.1UL80/1800KW",
+   "| KDGM2200S | 20V4000G23 | S4000/50HZ | 2000/2200 | LSA53.1UL85/2000KW",
+   "| KDGM2500S | 20V4000G63 | S4000/50HZ | 2260/2500 | LSA54XL75/2320KW",
+   "| KDGM2640S | 20V4000G63L | S4000/50HZ | 2400/2640 | LSA54XL85/2560KW",
+   "| KDGM1600S1 | 12V4000G83 | S4000/60HZ | 1440/1600 | LSA53.1UL70/1680KW",
+   "| KDGM1800S1 | 16V4000G43 | S4000/60HZ | 1600/1800 | LSA53.1UL70/1680KW",
+   "| KDGM2000S1 | 16V4000G83 | S4000/60HZ | 1800/2000 | LSA53.1UL80/1890KW",
+   "| KDGM2400S1 | 16V4000G83L | S4000/60HZ | 2400KW | LSA54XL75/2440KW",
+   "| KDGM2200S1 | 20V4000G43 | S4000/60HZ | 2000/2200 | LSA53.1UL85/2100KW",
+   "| KDGM2500S1 | 20V4000G83 | S4000/60HZ | 2260/2500 | LSA54XL75/2440KW",
+   "| KDGM2640S1 | 20V4000G63L | S4000/60HZ | 2400/2640 | LSA54XL75/2440KW"
+  ]
+ },
+ {
+  "n": 157,
+  "url": "https://www.camda-generator.com/product/perkins-powered-silent-diesel-generator.html",
+  "title": "Perkins Engine Silent Diesel Generator for Reliable Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Silent Canopy | kVA | kW | kVA | kW"
+  ],
+  "rows": [
+   "| KDGP8S | 10 | 8 | 9 | 7 | 403D-11G | 2200×1033×1304 | 896",
+   "| KDGP11S | 14 | 11 | 13 | 10 | 403D-15G | 2200×1033×1304 | 956",
+   "| KDGP18S | 22 | 18 | 20 | 16 | 404D-22G | 2200×1033×1304 | 1070",
+   "| KDGP22S | 28 | 22 | 25 | 20 | 404D-22TG | 2200×1033×1304 | 1087",
+   "| KDGP26S | 33 | 26 | 30 | 24 | 1103A-33G | 2300×1133×1376 | 1270",
+   "| KDGP40S | 50 | 40 | 45 | 36 | 1103A-33TG1 | 2300×1133×1376 | 1407",
+   "| KDGP52S | 65 | 52 | 58 | 48 | 1103A-33TG2 | 2300×1133×1376 | 1434",
+   "| KDGP58S | 73 | 58 | 65 | 52 | 1104A-44TG1 | 2300×1133×1376 | 1547",
+   "| KDGP70S | 88 | 70 | 80 | 64 | 1104A-44TG2 | 2300×1133×1376 | 1560",
+   "| KDGP80S | 100 | 80 | 92 | 73 | 1104C-44TAG2 | 2700×1133×1666 | 1735",
+   "| KDGP88S | 110 | 88 | 100 | 80 | 1104C-44TAG2 | 2700×1133×1666 | 1750",
+   "| KDGP120S | 150 | 120 | 137 | 110 | 1006TAG | 3600×1333×1940 | 2727",
+   "| KDGP132S | 165 | 132 | 150 | 120 | 1006TAG2 | 3600×1333×1940 | 2765",
+   "| KDGP160S | 200 | 160 | 180 | 144 | 1106C-E66TAG4 | 3600×1333×1940 | 2920",
+   "| KDGP176S | 220 | 176 | 200 | 160 | 1306C-E87TAG3 | 3600×1333×1940 | 2982",
+   "| KDGP200S | 250 | 200 | 225 | 180 | 1306C-E87TAG4 | 3600×1333×1940 | 2990",
+   "| KDGP220S | 275 | 220 | 250 | 200 | 1306C-E87TAG6 | 3600×1333×1940 | 3015",
+   "| KDGP240S | 300 | 240 | 275 | 220 | 1606A-E93TAG4 | 4100×1490×2000 | 4250",
+   "| KDGP264S | 330 | 264 | 300 | 240 | 1606A-E93TAG5 | 4100×1490×2000 | 4290",
+   "| KDGP320S | 400 | 320 | 350 | 280 | 2206C-E13TAG2 | 4500×1583×2200 | 4724",
+   "| KDGP360S | 450 | 360 | 400 | 320 | 2206C-E13TAG3 | 4500×1583×2200 | 4860",
+   "| KDGP400S | 500 | 400 | 455 | 360 | 2506C-E15TAG1 | 4700×1583×2200 | 5039",
+   "| KDGP440S | 550 | 440 | 500 | 400 | 2506C-E15TAG2 | 4700×1583×2200 | 5166",
+   "| KDGP528S | 660 | 528 | 600 | 480 | 2806C-E18TAG1A | 4700×1983×2200 | 5993",
+   "| KDGP560S | 700 | 560 | 650 | 525 | 2806C-E18TAG2 | 4700×1983×2200 | 6041",
+   "| KDGP660S | 800 | 660 | 725 | 580 | 4006-23TAG2A | 6058×2438×2591 | 10370",
+   "| KDGP704S | 880 | 704 | 800 | 640 | 4006-23TAG3A | 6058×2438×2591 | 10400",
+   "| KDGP770S | 960 | 770 | 880 | 704 | 4008TAG1A | 6058×2438×2591 | 11667",
+   "| KDGP880S | 1100 | 880 | 1000 | 800 | 4008TAG2A | 6058×2438×2591 | 12030",
+   "| KDGP1100S | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | 12192×2438×2896 | 17950",
+   "| KDGP1200S | 1500 | 1200 | 1350 | 1080 | 4012-46TWG3A | 12192×2438×2896 | 18205",
+   "| KDGP1320S | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | 12192×2438×2896 | 18435",
+   "| KDGP1500S | 1875 | 1500 | 1710 | 1368 | 4012-46TAG3A | 12192×2438×2896 | 19200",
+   "| KDGP1600S | 2000 | 1600 | 1825 | 1460 | 4016TAG1A | 12192×2438×2896 | 21780",
+   "| KDGP1800S | 2250 | 1800 | 2050 | 1640 | 4016TAG2A | 12192×2438×2896 | 21875",
+   "| KDGP2000S | 2500 | 2000 | 2250 | 1800 | 4016-61TRG3 | 12192×2438×2896 | 22900"
+  ]
+ },
+ {
+  "n": 157,
+  "url": "https://www.camda-generator.com/product/perkins-powered-silent-diesel-generator.html",
+  "title": "Perkins Engine Silent Diesel Generator for Reliable Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Silent Canopy | kVA | kW | kVA | kW"
+  ],
+  "rows": [
+   "| KDGP10S1 | 12 | 10 | 11 | 9 | 403D-11G | 2200×1033×1304 | 946",
+   "| KDGP13S1 | 17 | 13 | 15 | 12 | 403D-15G | 2200×1033×1304 | 1006",
+   "| KDGP21S1 | 26.5 | 21 | 24 | 19 | 404D-22G | 2200×1033×1304 | 1130",
+   "| KDGP28S1 | 35 | 28 | 31 | 25 | 404D-22TG | 2200×1033×1304 | 1154",
+   "| KDGP30S1 | 37 | 30 | 34 | 27 | 404D-22TAG | 2200×1033×1304 | 1180",
+   "| KDGP47S1 | 60 | 47 | 53 | 42 | 1103A-33TG1 | 2300×1133×1376 | 1484",
+   "| KDGP55S1 | 68 | 55 | 62.5 | 50 | 1104D-44TG1 | 2500×1133×1566 | 1590",
+   "| KDGP60S1 | 75 | 60 | 68 | 54 | 1103A-33TG2 | 2300×1133×1376 | 1484",
+   "| KDGP64S1 | 80 | 64 | 73 | 58 | 1104D-E44TG1 | 2700×1133×1666 | 1780",
+   "| KDGP68S1 | 85 | 68 | 77 | 62 | 1104A-44TG1 | 2300×1133×1376 | 1553",
+   "| KDGP80S1 | 100 | 80 | 90 | 72 | 1104A-44TG2 | 2300×1133×1376 | 1597",
+   "| KDGP96S1 | 120 | 96 | 109 | 87 | 1006TG1A | 3600×1333×1940 | 2291",
+   "| KDGP100S1 | 125 | 100 | 112 | 90 | 1104C-44TAG2 | 2700×1133×1666 | 1805",
+   "| KDGP106S1 | 132 | 106 | 120 | 96 | 1006TG2A | 3600×1333×1940 | 2750",
+   "| KDGP133S1 | 166 | 133 | 151 | 121 | 1006TAG | 3600×1333×1940 | 2805",
+   "| KDGP140S1 | 175 | 140 | 159 | 127 | 1106D-E66TAG2 | 3600×1333×1940 | 2820",
+   "| KDGP149S1 | 186 | 149 | 168 | 134 | 1106C-E66TAG3 | 3600×1333×1940 | 2845",
+   "| KDGP176S1 | 220 | 176 | 200 | 160 | 1106C-E66TAG4 | 3600×1333×1940 | 2950",
+   "| KDGP200S1 | 250 | 200 | 228 | 182 | 1306C-E87TAG3 | 3600×1333×1940 | 2910",
+   "| KDGP216S1 | 270 | 216 | 245 | 196 | 1306C-E87TAG4 | 3600×1333×1940 | 3032",
+   "| KDGP280S1 | 350 | 280 | 318 | 255 | 1606A-E93TAG4 | 4100×1490×2000 | 4300",
+   "| KDGP352S1 | 440 | 352 | 400 | 320 | 2206A-E13TAG5 | 4500×1583×2200 | 4774",
+   "| KDGP400S1 | 500 | 400 | 456 | 365 | 2206D-E13TAG3 | 4500×1583×2200 | 4800",
+   "| KDGP440S1 | 550 | 440 | 500 | 400 | 2506D-E15TAG1 | 4700×1583×2200 | 5089",
+   "| KDGP460S1 | 575 | 460 | 512 | 410 | 2506A-E15TAG3 | 4700×1583×2200 | 5100",
+   "| KDGP513S1 | 641 | 513 | 585 | 468 | 2506A-E15TAG4 | 4700×1583×2200 | 5216",
+   "| KDGP550S1 | 688 | 550 | 625 | 500 | 2806A-E18TAG1A | 4700×1983×2200 | 5911",
+   "| KDGP600S1 | 750 | 600 | 690 | 552 | 2806A-E18TAG3 | 4700×1983×2200 | 5960",
+   "| KDGP660S1 | 825 | 660 | 750 | 600 | 4006-23TAG2A | 6058×2438×2591 | 10172",
+   "| KDGP753S1 | 941 | 753 | 846 | 677 | 4006-23TAG3A | 6058×2438×2591 | 10420",
+   "| KDGP784S1 | 980 | 784 | 892 | 714 | 4008TAG1 | 6058×2438×2591 | 11517",
+   "| KDGP880S1 | 1100 | 880 | 1000 | 800 | 4008TAG2 | 6058×2438×2591 | 11717",
+   "| KDGP1100S1 | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | 12192×2438×2896 | 17800",
+   "| KDGP1200S1 | 1500 | 1200 | 1368 | 1094 | 4012-46TWG3A | 12192×2438×2896 | 18000",
+   "| KDGP1324S1 | 1655 | 1324 | 1506 | 1205 | 4012-46TAG2A | 12192×2438×2896 | 18100",
+   "| KDGP1505S1 | 1880 | 1505 | 1713 | 1370 | 4012-46TAG3A | 12192×2438×2896 | 18485"
+  ]
+ },
+ {
+  "n": 158,
+  "url": "https://www.camda-generator.com/product/perkins-powered-open-diesel-generator.html",
+  "title": "Perkins Powered Open Diesel Generator for Industrial Power Applications - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Open Type | kVA | kW | kVA | kW"
+  ],
+  "rows": [
+   "| KDGP8S | 10 | 8 | 9 | 7 | 403D-11G | 1500×650×1225 | 425",
+   "| KDGP11S | 14 | 11 | 13 | 10 | 403D-15G | 1500×650×1225 | 496",
+   "| KDGP18S | 22 | 18 | 20 | 16 | 404D-22G | 1500×650×1225 | 610",
+   "| KDGP22S | 28 | 22 | 25 | 20 | 404D-22TG | 1500×650×1225 | 660",
+   "| KDGP26S | 33 | 26 | 30 | 24 | 1103A-33G | 1650×750×1280 | 780",
+   "| KDGP40S | 50 | 40 | 45 | 36 | 1103A-33TG1 | 1650×750×1280 | 887",
+   "| KDGP52S | 65 | 52 | 58 | 48 | 1103A-33TG2 | 1650×750×1280 | 908",
+   "| KDGP58S | 73 | 58 | 65 | 52 | 1104A-44TG1 | 1750×850×1300 | 923",
+   "| KDGP70S | 88 | 70 | 80 | 64 | 1104A-44TG2 | 1750×850×1300 | 1037",
+   "| KDGP80S | 100 | 80 | 92 | 73 | 1104C-44TAG2 | 2240×850×1320 | 1175",
+   "| KDGP88S | 110 | 88 | 100 | 80 | 1104C-44TAG2 | 2240×850×1320 | 1190",
+   "| KDGP120S | 150 | 120 | 137 | 110 | 1006TAG | 2240×850×1320 | 1363",
+   "| KDGP132S | 165 | 132 | 150 | 120 | 1006TAG2 | 2400×850×1500 | 1420",
+   "| KDGP160S | 200 | 160 | 180 | 144 | 1106C-E66TAG4 | 2900×900×1536 | 1796",
+   "| KDGP176S | 220 | 176 | 200 | 160 | 1306C-E87TAG3 | 2600×1130×2000 | 1910",
+   "| KDGP200S | 250 | 200 | 225 | 180 | 1306C-E87TAG4 | 2600×1130×2000 | 2027",
+   "| KDGP220S | 275 | 220 | 250 | 200 | 1306C-E87TAG6 | 2600×1130×2000 | 2042",
+   "| KDGP240S | 300 | 240 | 275 | 220 | 1606A-E93TAG4 | 4100×1483×2000 | 2560",
+   "| KDGP264S | 330 | 264 | 300 | 240 | 1606A-E93TAG5 | 4100×1483×2000 | 2600",
+   "| KDGP320S | 400 | 320 | 350 | 280 | 2206C-E13TAG2 | 3200×1206×1980 | 2932",
+   "| KDGP360S | 450 | 360 | 400 | 320 | 2206C-E13TAG3 | 3200×1206×1980 | 3069",
+   "| KDGP400S | 500 | 400 | 455 | 360 | 2506C-E15TAG1 | 3500×1540×1850 | 3400",
+   "| KDGP440S | 550 | 440 | 500 | 400 | 2506C-E15TAG2 | 3500×1540×1850 | 3551",
+   "| KDGP528S | 660 | 528 | 600 | 480 | 2806C-E18TAG1A | 3500×1540×2050 | 3813",
+   "| KDGP560S | 700 | 560 | 650 | 525 | 2806C-E18TAG2 | 3500×1540×2050 | 3925",
+   "| KDGP660S | 800 | 660 | 725 | 580 | 4006-23TAG2A | 4350×1750×2270 | 5525",
+   "| KDGP704S | 880 | 704 | 800 | 640 | 4006-23TAG3A | 4350×1750×2270 | 5570",
+   "| KDGP770S | 960 | 770 | 880 | 704 | 4008TAG1A | 4700×2070×2414 | 6667",
+   "| KDGP880S | 1100 | 880 | 1000 | 800 | 4008TAG2A | 4700×2070×2414 | 6792",
+   "| KDGP1100S | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | 4800×2200×2477 | 9950",
+   "| KDGP1200S | 1500 | 1200 | 1350 | 1080 | 4012-46TWG3A | 4900×2200×2477 | 10205",
+   "| KDGP1320S | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | 4900×2200×2477 | 10435",
+   "| KDGP1500S | 1875 | 1500 | 1710 | 1368 | 4012-46TAG3A | 5100×2200×2477 | 11200",
+   "| KDGP1600S | 2000 | 1600 | 1825 | 1460 | 4016TAG1A | 6100×2740×3120 | 13780",
+   "| KDGP1800S | 2250 | 1800 | 2050 | 1640 | 4016TAG2A | 6100×2740×3120 | 13875",
+   "| KDGP2000S | 2500 | 2000 | 2250 | 1800 | 4016-61TRG3 | 6100×2740×3120 | 14900"
+  ]
+ },
+ {
+  "n": 158,
+  "url": "https://www.camda-generator.com/product/perkins-powered-open-diesel-generator.html",
+  "title": "Perkins Powered Open Diesel Generator for Industrial Power Applications - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Open Type | kVA | kW | kVA | kW"
+  ],
+  "rows": [
+   "| KDGP10S1 | 12 | 10 | 11 | 9 | 403D-11G | 1500×650×1225 | 436",
+   "| KDGP13S1 | 17 | 13 | 15 | 12 | 403D-15G | 1500×650×1225 | 500",
+   "| KDGP21S1 | 26.5 | 21 | 24 | 19 | 404D-22G | 1500×650×1225 | 610",
+   "| KDGP28S1 | 35 | 28 | 31 | 25 | 404D-22TG | 1500×650×1225 | 644",
+   "| KDGP30S1 | 37 | 30 | 34 | 27 | 404D-22TAG | 1500×650×1225 | 665",
+   "| KDGP47S1 | 60 | 47 | 53 | 42 | 1103A-33TG1 | 1650×750×1280 | 890",
+   "| KDGP55S1 | 68 | 55 | 62.5 | 50 | 1104D-44TG1 | 2240×850×1320 | 925",
+   "| KDGP60S1 | 75 | 60 | 68 | 54 | 1103A-33TG2 | 1650×750×1280 | 910",
+   "| KDGP64S1 | 80 | 64 | 73 | 58 | 1104D-E44TG1 | 2240×850×1320 | 940",
+   "| KDGP68S1 | 85 | 68 | 77 | 62 | 1104A-44TG1 | 1750×850×1300 | 789",
+   "| KDGP80S1 | 100 | 80 | 90 | 72 | 1104A-44TG2 | 1750×850×1300 | 805",
+   "| KDGP96S1 | 120 | 96 | 109 | 87 | 1006TG1A | 2240×850×1320 | 1263",
+   "| KDGP100S1 | 125 | 100 | 112 | 90 | 1104C-44TAG2 | 2240×850×1320 | 1175",
+   "| KDGP106S1 | 132 | 106 | 120 | 96 | 1006TG2A | 2240×850×1320 | 1310",
+   "| KDGP133S1 | 166 | 133 | 151 | 121 | 1006TAG | 2240×850×1320 | 1363",
+   "| KDGP140S1 | 175 | 140 | 159 | 127 | 1106D-E66TAG2 | 2900×900×1536 | 1710",
+   "| KDGP149S1 | 186 | 149 | 168 | 134 | 1106C-E66TAG3 | 2900×900×1536 | 1725",
+   "| KDGP176S1 | 220 | 176 | 200 | 160 | 1106C-E66TAG4 | 2900×900×1536 | 1840",
+   "| KDGP200S1 | 250 | 200 | 228 | 182 | 1306C-E87TAG3 | 2600×1130×2000 | 1860",
+   "| KDGP216S1 | 270 | 216 | 245 | 196 | 1306C-E87TAG4 | 2600×1130×2000 | 1910",
+   "| KDGP280S1 | 350 | 280 | 318 | 255 | 1606A-E93TAG4 | 4100×1483×2000 | 2525",
+   "| KDGP352S1 | 440 | 352 | 400 | 320 | 2206A-E13TAG5 | 3200×1206×1980 | 2955",
+   "| KDGP400S1 | 500 | 400 | 456 | 365 | 2206D-E13TAG3 | 3200×1206×1980 | 2985",
+   "| KDGP440S1 | 550 | 440 | 500 | 400 | 2506D-E15TAG1 | 3500×1540×1850 | 3375",
+   "| KDGP460S1 | 575 | 460 | 512 | 410 | 2506A-E15TAG3 | 3500×1540×1850 | 3410",
+   "| KDGP513S1 | 641 | 513 | 585 | 468 | 2506A-E15TAG4 | 3500×1540×1850 | 3550",
+   "| KDGP550S1 | 688 | 550 | 625 | 500 | 2806A-E18TAG1A | 3500×1540×2050 | 3680",
+   "| KDGP600S1 | 750 | 600 | 690 | 552 | 2806A-E18TAG3 | 3500×1540×2050 | 3769",
+   "| KDGP660S1 | 825 | 660 | 750 | 600 | 4006-23TAG2A | 4350×1750×2270 | 5300",
+   "| KDGP753S1 | 941 | 753 | 846 | 677 | 4006-23TAG3A | 4350×1750×2270 | 5600",
+   "| KDGP784S1 | 980 | 784 | 892 | 714 | 4008TAG1 | 4700×2070×2414 | 6460",
+   "| KDGP880S1 | 1100 | 880 | 1000 | 800 | 4008TAG2 | 4700×2070×2414 | 6700",
+   "| KDGP1100S1 | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | 4700×2200×2477 | 9750",
+   "| KDGP1200S1 | 1500 | 1200 | 1368 | 1094 | 4012-46TWG3A | 4800×2200×2477 | 10030",
+   "| KDGP1324S1 | 1655 | 1324 | 1506 | 1205 | 4012-46TAG2A | 4800×2200×2477 | 10100",
+   "| KDGP1505S1 | 1880 | 1505 | 1713 | 1370 | 4012-46TAG3A | 4900×2200×2477 | 10500"
+  ]
+ },
+ {
+  "n": 159,
+  "url": "https://www.camda-generator.com/product/120-kw-biogas-generator.html",
+  "title": "120 KW Biogas Generator with Low Emission High Efficiency Engine System - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| | | No. of Cylinders | 6 | Engine power(KW) | 145",
+   "| Bore * Stroke (mm) | 140 * 152 | Compression Ratio | 0.459027778"
+  ]
+ },
+ {
+  "n": 160,
+  "url": "https://www.camda-generator.com/product/100-kw-biogas-generator.html",
+  "title": "100 KW Biogas Generator for Industrial Renewable Energy Power Systems - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| No. of Cylinders | 6 | Engine power(KW) | 145",
+   "| Bore * Stroke (mm) | 140 * 152 | Compression Ratio | 0.459027778"
+  ]
+ },
+ {
+  "n": 161,
+  "url": "https://www.camda-generator.com/product/1000-kva-standby-diesel-generator.html",
+  "title": "1000 KVA Standby Diesel Generator with Automatic Control System - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Power Rating | KVA | Power Factor | Equivalent kW"
+  ],
+  "rows": [
+   "| Standby Power | 1000 KVA | 0.8 | 800 kW",
+   "| Prime Power | 900 KVA | 0.8 | 720 kW"
+  ]
+ },
+ {
+  "n": 162,
+  "url": "https://www.camda-generator.com/product/1500-kva-standby-soundproof-diesel-generator.html",
+  "title": "1500 KVA Standby Sound-Proof Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Standby Power | kVA | 1500",
+   "| Prime Power | kVA | 1375",
+   "| Voltage type | 50Hz, 230/400V, 3 phases and 4 wires",
+   "| Engine Brand & Model | Cummins KTA50-G8",
+   "| Alternator Brand & Model | Leroy Somer LSA50.2L8",
+   "| Frequency & Phase | 50Hz, 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr)（100% Load） | 275",
+   "| Dimensions: (mm) | L | 5150 | 6058",
+   "| Weights (kg) | 10700 | 12700",
+   "| Standby Power | 1500 KVA",
+   "| Frequency | 50Hz / 60Hz",
+   "| Voltage | 380V – 13.8kV Optional",
+   "| Power Factor | 0.8"
+  ]
+ },
+ {
+  "n": 163,
+  "url": "https://www.camda-generator.com/product/1375-kva-standby-shockproof-diesel-generator.html",
+  "title": "High Performance 1375 KVA Standby Shock-Proof Diesel Generator - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| | No. of Cylinders | 12 V | Gross Engine Power(kW) | Prime | 1227",
+   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.9:1"
+  ]
+ },
+ {
+  "n": 164,
+  "url": "https://www.camda-generator.com/product/1000-kw-standby-diesel-generator.html",
+  "title": "1000 KW Standby Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Prime Power | kVA | 1125",
+   "| Voltage type | 50Hz, 380/220V or 400/230V or 415/240V",
+   "| Alternator Brand & Model | Leroy Somer LSA50.2M6",
+   "| Frequency & Phase | 50Hz, 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr)（100% Load） | 225",
+   "| Dimensions: (mm) | L | 4500 | 12196",
+   "| Weights (kg) | 7450 | 13350",
+   "| Rated Power | 1000 KW",
+   "| Frequency | 50Hz / 60Hz",
+   "| Voltage Range | 400V – 13.8kV optional",
+   "| Power Factor | 0.8"
+  ]
+ },
+ {
+  "n": 165,
+  "url": "https://www.camda-generator.com/product/1100-kva-standby-diesel-generator.html",
+  "title": "1100 KVA Standby Diesel Generator China Manufacturers - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| Standby Power | kVA | 1100",
+   "| Prime Power | kVA | 1000",
+   "| Voltage type | 50Hz, 380/220V or 400/230V or 415/240V, 3 phases and 4 wires",
+   "| Alternator Brand & Model | Leroy Somer LSA49.3L10",
+   "| Frequency & Phase | 50Hz, 3Phases + 4Wires",
+   "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (kg/hr)(100% Load) | 200",
+   "| Dimensions: (mm) | L | 4500 | 6058",
+   "| Weights (kg) | 7350 | 12435",
+   "| Rated Power | 1100 KVA",
+   "| Frequency | 50Hz / 60Hz",
+   "| Voltage Range | 400V – 13.8kV optional",
+   "| Power Factor | 0.8"
+  ]
+ },
+ {
+  "n": 166,
+  "url": "https://www.camda-generator.com/product/888-kva-standby-diesel-generator.html",
+  "title": "Reliable 888 KVA Standby Diesel Generator for Emergency Power - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| No. of Cylinders | 12 V | Gross Engine Power(kW) | Prime | 711",
+   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 14.5:1"
+  ]
+ },
+ {
+  "n": 166,
+  "url": "https://www.camda-generator.com/product/888-kva-standby-diesel-generator.html",
+  "title": "Reliable 888 KVA Standby Diesel Generator for Emergency Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Generator Rating | Power Factor | Output (kW) | Application Type"
+  ],
+  "rows": [
+   "| 888 KVA Standby | 0.8 | 710 kW | Emergency Backup Power",
+   "| 800 KVA Prime | 0.8 | 640 kW | Continuous Operation"
+  ]
+ },
+ {
+  "n": 167,
+  "url": "https://www.camda-generator.com/product/825-kva-standby-diesel-generator.html",
+  "title": "825 KVA Standby Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [],
+  "rows": [
+   "| | No. of Cylinders | 12 V | Gross Engine Power(kW) | Prime | 664",
+   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 14.5:1"
+  ]
+ },
+ {
+  "n": 167,
+  "url": "https://www.camda-generator.com/product/825-kva-standby-diesel-generator.html",
+  "title": "825 KVA Standby Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Generator Rating | Power Factor | Equivalent Output | Typical Usage"
+  ],
+  "rows": [
+   "| 825 KVA Standby | 0.8 | 660 kW | Emergency Backup Power",
+   "| 750 KVA Prime | 0.8 | 600 kW | Continuous Operation"
+  ]
+ },
+ {
+  "n": 168,
+  "url": "https://www.camda-generator.com/product/800-kva-standby-diesel-generator.html",
+  "title": "800 KVA Standby Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| | No. of Cylinders | 12 V | Gross Engine Power(kW) | Prime | /",
+   "| Cycle | 4 Stroke | Standby | 711"
+  ],
+  "rows": [
+   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.9:1"
+  ]
+ },
+ {
+  "n": 168,
+  "url": "https://www.camda-generator.com/product/800-kva-standby-diesel-generator.html",
+  "title": "800 KVA Standby Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Rating | Power Factor | Real Power Output | Usage Type"
+  ],
+  "rows": [
+   "| 800 KVA Standby | 0.8 | 640 kW | Emergency Backup",
+   "| 750 KVA Prime | 0.8 | 600 kW | Continuous Duty"
+  ]
+ },
+ {
+  "n": 169,
+  "url": "https://www.camda-generator.com/product/688-kva-standby-diesel-generator.html",
+  "title": "688 KVA Standby Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| | No. of Cylinders | 6 L | Gross Engine Power(kW) | Prime | /",
+   "| Cycle | 4 Stroke | Standby | 610"
+  ],
+  "rows": [
+   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.5:1"
+  ]
+ },
+ {
+  "n": 169,
+  "url": "https://www.camda-generator.com/product/688-kva-standby-diesel-generator.html",
+  "title": "688 KVA Standby Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Generator Rating | Power Factor | Output Power | Application Type"
+  ],
+  "rows": [
+   "| 688 KVA Standby | 0.8 | 550 kW | Emergency Backup",
+   "| 630 KVA Prime | 0.8 | 504 kW | Continuous Duty"
+  ]
+ },
+ {
+  "n": 170,
+  "url": "https://www.camda-generator.com/product/1500-rmp-1800rmp-650-kva-standby-diesel-generator.html",
+  "title": "650 KVA Standby Diesel Generator 1500 RPM 1800 RPM High Performance Set - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| | No. of Cylinders | 6 in line type | Gross Engine Power(kW) | Prime | /",
+   "| Cycle | 4 Stroke | Standby | 575"
+  ],
+  "rows": [
+   "| Bore / Stroke | 159mm /159mm | Compression Ratio | 13.9:1"
+  ]
+ },
+ {
+  "n": 170,
+  "url": "https://www.camda-generator.com/product/1500-rmp-1800rmp-650-kva-standby-diesel-generator.html",
+  "title": "650 KVA Standby Diesel Generator 1500 RPM 1800 RPM High Performance Set - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Speed | Frequency | Power Factor | Output Power"
+  ],
+  "rows": [
+   "| 1500 RPM | 50 Hz | 0.8 | 520 kW",
+   "| 1800 RPM | 60 Hz | 0.8 | 520 kW"
+  ]
+ },
+ {
+  "n": 171,
+  "url": "https://www.camda-generator.com/product/600-kva-standby-diesel-generator.html",
+  "title": "600 KVA Standby Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Generator Type | Power Factor | Output Power | Application"
+  ],
+  "rows": [
+   "| 600 KVA Standby | 0.8 | 480 kW | Emergency Backup",
+   "| 550 KVA Prime | 0.8 | 440 kW | Continuous Operation"
+  ]
+ },
+ {
+  "n": 172,
+  "url": "https://www.camda-generator.com/product/550-kva-standby-diesel-generator.html",
+  "title": "550 KVA Standby Diesel Generator for Industrial Backup Power - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Generator Rating | Power Factor | Power Output | Application"
+  ],
+  "rows": [
+   "| 550 KVA Standby | 0.8 | 440 kW | Emergency Backup",
+   "| 500 KVA Prime | 0.8 | 400 kW | Continuous Operation"
+  ]
+ },
+ {
+  "n": 173,
+  "url": "https://www.camda-generator.com/product/500-kva-standby-diesel-generator.html",
+  "title": "High Performance 500 KVA Standby Diesel Generator Set - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Generator Rating | Power Factor | Usable Output | Typical Application"
+  ],
+  "rows": [
+   "| 500 KVA Standby | 0.8 | 400 kW | Emergency Backup Power",
+   "| 450 KVA Prime | 0.8 | 360 kW | Continuous Power Supply"
+  ]
+ },
+ {
+  "n": 174,
+  "url": "https://www.camda-generator.com/product/450-kva-standby-diesel-generator.html",
+  "title": "450 KVA Standby Diesel Generator Set with Stable Output and Efficiency - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| | No. of Cylinders | 6 in line type | Gross Engine Power(kW) | Prime | 366",
+   "| Cycle | 4 Stroke | Standby | 407"
+  ],
+  "rows": [
+   "| Bore / Stroke | 140mm / 152 mm | Compression Ratio | 14.0:1"
+  ]
+ },
+ {
+  "n": 174,
+  "url": "https://www.camda-generator.com/product/450-kva-standby-diesel-generator.html",
+  "title": "450 KVA Standby Diesel Generator Set with Stable Output and Efficiency - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Specification | 450 KVA Standby Generator | Industry Average (Source: ISO 8528 Standard Reference)",
+   "| Rated Capacity | 450 KVA / ~360 kW | 300–500 KVA range",
+   "| Start-up Time | <10 seconds | 10–20 seconds"
+  ],
+  "rows": [
+   "| Voltage Stability | ±1% | ±2–5%"
+  ]
+ },
+ {
+  "n": 174,
+  "url": "https://www.camda-generator.com/product/450-kva-standby-diesel-generator.html",
+  "title": "450 KVA Standby Diesel Generator Set with Stable Output and Efficiency - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Performance Parameter | Camda 450 kva generator | Test Standard Source"
+  ],
+  "rows": [
+   "| Frequency Stability | 50/60 Hz ±0.25% | ISO 8528-5"
+  ]
  }
 ]

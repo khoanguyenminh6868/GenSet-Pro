@@ -74,9 +74,34 @@
         "We have 18 kinds of basic types of multi-cylinder diesel engine, bore from 80mm to 110mm, displacement from 1.3 to 4.5L, power cover 10kw to 105kW."
       ],
       "file": "sources/yangdong/2.md"
+    },
+    {
+      "n": 101,
+      "url": "http://m.yangdong.net/fire-and-water-pump-engines/yangdong-y4102g.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | Y4102G"
+      ],
+      "file": "sources/yangdong/101.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "China Yangdong Y4102G Manufacturers, Suppliers - YANGDONG",
+      "header": [],
+      "rows": [
+        "| Model | Y4102G",
+        "| Bore(mm) | 102",
+        "| Speed | 3000",
+        "| Rated power KW/HP | 63/86",
+        "| Bore(mm) | 100",
+        "| Rated power KW/HP | 55/1500"
+      ]
+    }
+  ]
 }

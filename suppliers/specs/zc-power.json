@@ -60,5 +60,50 @@
    "Consumption: 1,050 × 0.23 = 241.5 L/h",
    "Tank capacity: 241.5 × 72 × 1.1 = 19,127 L"
   ]
+ },
+ {
+  "n": 104,
+  "url": "https://zccpower.com/three-phase-generator-guide/",
+  "title": "Three Phase Generator: Complete Industrial Power Guide | ZC Power",
+  "header": [],
+  "rows": [
+   "Voltage Versatility: It supports all voltage configurations of 208V, 480V, 400V, and many more within the same setup.",
+   "Power Factor: The ratio of kW to kVA, typically 0.8 for industrial loads. A 100kW generator with 0.8 power factor is rated 125kVA.",
+   "Generator Sizing Rule: The generator must supply starting kVA without excessive voltage dip (typically maximum 15-20% dip allowed).",
+   "Starting kVA (CNC only): 110kVA",
+   "Voltage and Frequency Verification: Confirm all three phases are balanced within 2% voltage and frequency within 0.5 Hz.",
+   "Fuel piping and fittings: 1,000− 1 , 000 − 5,000",
+   "Power output: 150kW",
+   "Fuel consumption: ~12 gallons/hour"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://zccpower.com/standby-generator-technical-guide/",
+  "title": "Standby Generator: Complete Technical Guide 2025 | ZC Power",
+  "header": [],
+  "rows": [
+   "Standby Generator: Complete Technical Guide 2025 | ZC Power",
+   "Standby Generator: Complete Technical Guide 2026 [Types, Sizing & Installation]",
+   "Fuel treatment and polishing: 500− 500 − 2,000 annually (diesel)",
+   "Power requirements exceeding 150 kW : Manufacturing facilities, large commercial buildings"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://zccpower.com/stationary-generators/",
+  "title": "Stationary Generators: Installation, Sizing & Cost Guide [2026]",
+  "header": [],
+  "rows": [
+   "Continuous Power (COP): Constant load at 100% rated capacity for unlimited hours.",
+   "Standby (ESP): Maximum output for emergency use. Typical limit: 200 hours per year.",
+   "Prime (PRP): Variable load for unlimited hours. Must average 70% of rated load over 24 hours.",
+   "Continuous (COP): 100% rated load for unlimited hours. Used in base-load power stations and remote mining camps.",
+   "Size: The largest variable. Expect roughly 300– 300– 450 per kW for commercial units.",
+   "Fuel type: Natural gas units typically cost 15–30% more than equivalent diesel units but have lower operating costs.",
+   "Standby / low runtime (< 500 hours/year): Diesel wins. The lower capital cost dominates.",
+   "Prime / continuous power (> 2,000 hours/year): Natural gas wins. Fuel savings compound and offset the higher initial investment.",
+   "Size with the 125% rule: An undersized generator will fail when you need it most."
+  ]
  }
 ]

@@ -22,7 +22,8 @@
    "Rated Power: 1500 kW",
    "Voltage: 400/230V",
    "Rated Power: 1600 kW",
-   "Voltage: 400/230V Options"
+   "Voltage: 400/230V Options",
+   "Generator Refueling Safety: Procedures for Every Scale (2026)"
   ]
  },
  {
@@ -42,7 +43,8 @@
    "Frequency: 60Hz",
    "Rated Power: 60 kW",
    "Rated Power: 80 kW",
-   "Rated Power: 100 kW"
+   "Rated Power: 100 kW",
+   "Generator Room Fire Safety Requirements: A Complete Guide (2026)"
   ]
  },
  {
@@ -107,7 +109,8 @@
    "Rated Power: 300 kW",
    "Rated Power: 320 kW",
    "Voltage: 380V",
-   "Fuel Efficiency : Reduces operating costs with optimized engines, offering up to 24-hour runtime per tank."
+   "Fuel Efficiency : Reduces operating costs with optimized engines, offering up to 24-hour runtime per tank.",
+   "Generator Set Specifications Explained: The Complete Guide (2026)"
   ]
  },
  {
@@ -139,8 +142,7 @@
    "Rated Power: 800 kW",
    "Rated Power: 1000 kW",
    "Voltage: 480 V",
-   "Generator Set Specification for Tender: A Complete Guide (2026)",
-   "Generator Refueling Safety: Procedures for Every Scale (2026)"
+   "Generator Exhaust Safety: Hazards, System Design, and Compliance (2026)"
   ]
  },
  {
@@ -166,7 +168,8 @@
    "Rated Power: 1500 kW",
    "Voltage: 400/230V",
    "Rated Power: 1600 kW",
-   "Voltage: 400/230V Options"
+   "Voltage: 400/230V Options",
+   "Generator Lockout Tagout Procedures: OSHA Steps for Safe Servicing (2026)"
   ]
  },
  {
@@ -227,7 +230,7 @@
    "Rated Power: 60 kW",
    "Rated Power: 80 kW",
    "Rated Power: 100 kW",
-   "Generator Set Specification for Tender: A Complete Guide (2026)"
+   "Generator Remote Monitoring: 2026 Industrial Buyer’s Guide"
   ]
  },
  {
@@ -264,7 +267,7 @@
    "Voltage: 480 volts (V)",
    "Frequency: 60 hertz (Hz)",
    "Rated Power: 300KW",
-   "Generator Performance Class G1 G2 G3 G4: Meaning & Guide"
+   "Generator Lockout Tagout Procedures: OSHA Steps for Safe Servicing (2026)"
   ]
  },
  {
@@ -350,8 +353,21 @@
    "Rated Power: 1500 kW",
    "Voltage: 400/230V",
    "Rated Power: 1600 kW",
-   "Voltage: 400/230V Options",
-   "Generator Noise Regulations: Limits, Standards, and Compliance (2026)"
+   "Voltage: 400/230V Options"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "https://shanhuachina.cn/marine-generator-brands-comparison/",
+  "title": "Marine Generator Brands Comparison: 10 Brands Ranked",
+  "header": [],
+  "rows": [
+   "Power range: 4.5 kW to 400 kW. Standard warranty: 2 years.",
+   "Power range: 3.5 kW to 100+ kW. Standard warranty: 2 years.",
+   "Power range: 5 kW to 100+ kW. Standard warranty: 2 years.",
+   "Power range: 5 kW to 100+ kW.",
+   "Power range: 10 kW to 900 kW. Standard warranty: 1 year.",
+   "Power range: 3.5 kW to 12 kW."
   ]
  }
 ]

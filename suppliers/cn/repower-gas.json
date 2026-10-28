@@ -67,9 +67,51 @@
         "4) Power generator: gas generator from 300-4000KW, gas power plant, off-grid power generation solution from natural gas fuel, bio-gas power generation solution"
       ],
       "file": "sources/repower-gas/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.repowergas.com/product/skid-mounted-gas-dryer",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Item | Description | Item | Description"
+      ],
+      "file": "sources/repower-gas/101.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Supply Skid Mounted Gas Dryer Wholesale Factory - Tianjin Sinogas Repower Energy Co., Ltd",
+      "header": [
+        "| Item | Description | Item | Description",
+        "| Flow capacity | 720-3000 Nm3/h | Fuel type | Natural gas"
+      ],
+      "rows": [
+        "| Working pressure | 120-250 Bar | Inlet TEMP | ≤40 ℃",
+        "| Design pressure | 260 Bar | Regeneration time | 6-10 h",
+        "| Power | 3-14 Kw | Outlet filtration accuracy | ≤3~10 μm",
+        "| Overall dimension | (2000~2400) x 1200 x 2635 mm | Inlet outlet pipe diameter | DN15~25"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Supply Skid Mounted Gas Dryer Wholesale Factory - Tianjin Sinogas Repower Energy Co., Ltd",
+      "header": [
+        "| Item | Description | Item | Description",
+        "| Flow capacity | 720-20000 Nm3/h | Fuel type | Natural gas"
+      ],
+      "rows": [
+        "| Working pressure | 1-130 Bar | Inlet TEMP | ≤40 ℃",
+        "| Inlet pressure drew point | -13 ℃ | Single tower continuous working time | 12-24 h",
+        "| Design pressure | 3-160 Bar | Regeneration time | 6-10 h",
+        "| Power | 6-100 Kw | Protection grade | IP55",
+        "| Noise | ≤75 Db | Regeneration gas heat TEMP | 150~220 ℃",
+        "| Overall dimension | (3400~4000) x (1950~2200) x (2350~3200) mm | Inlet outlet pipe diameter | DN65-250"
+      ]
+    }
+  ]
 }

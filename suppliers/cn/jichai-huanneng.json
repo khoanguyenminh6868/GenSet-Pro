@@ -81,6 +81,16 @@
         "| Rated power（kW） | 5200"
       ],
       "file": "sources/jichai-huanneng/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://m.jichaipower.com/diesel-generator/120kw-cummins-6btaa5-9-g2-diesel-generator.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Standby Power(50HZ):132KW/165KVA"
+      ],
+      "file": "sources/jichai-huanneng/103.md"
     }
   ],
   "confidence": "medium",
@@ -109,6 +119,15 @@
         "| Rated speed（r/min） | 750",
         "| Rated Power(kw) | 5400",
         "| Cylinder bore x stroke (mm) | 320x400"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "120kw Cummins 6BTAA5.9-G2 Diesel Generator Suppliers and Manufacturers China - New Energy - Jichai Huanneng",
+      "header": [],
+      "rows": [
+        "Standby Power(50HZ):132KW/165KVA",
+        "Prime Power(50HZ):120KW/150KVA"
       ]
     }
   ]

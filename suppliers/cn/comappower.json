@@ -205,6 +205,16 @@
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
       ],
       "file": "sources/comappower/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://comappower.com/grupos-eletrogenos-a-diesel-tecnologia-aplicacoes-e-vantagens/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| | kVA | kW (FP 0.8) | Aplicação Típica"
+      ],
+      "file": "sources/comappower/114.md"
     }
   ],
   "confidence": "medium",
@@ -1395,6 +1405,19 @@
         "| COM375 | 375kVA | 300kW | 350kVA | 280kW | YC6MJ480L-D21 | 6 | COM375",
         "| COM413 | 413kVA | 330kW | 375kVA | 300kW | YC6MJ500-D22 | 6 | COM413",
         "| COM550 | 550kVA | 440kW | 500kVA | 400kW | YC6T660L-D21 | 6 | COM550"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Grupos Eletrógenos a Diesel: Tecnologia, Aplicações e Vantagens - Comappower",
+      "header": [
+        "| | kVA | kW (FP 0.8) | Aplicação Típica"
+      ],
+      "rows": [
+        "| 10-50 kVA | 8-40 kW | Pequenos comércios, residências",
+        "| 50-200 kVA | 40-160 kW | Indústrias médias, hospitais",
+        "| 200-500 kVA | 160-400 kW | Grandes indústrias, data centers",
+        "| 500+ kVA | 400+ kW | Aplicações industriais críticas"
       ]
     }
   ]
