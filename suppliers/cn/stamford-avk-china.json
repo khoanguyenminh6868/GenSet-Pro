@@ -3,27 +3,82 @@
   "country": "CN",
   "role": "alternator_maker",
   "status": "partial",
-  "names": { "en": "STAMFORD | AvK (Cummins Generator Technologies) (China) Co., Ltd.", "zh": null, "brands": ["STAMFORD", "AvK"] },
+  "names": {
+    "en": "STAMFORD | AvK (Cummins Generator Technologies) (China) Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "STAMFORD",
+      "AvK"
+    ]
+  },
   "website": "https://www.stamford-avk.com/",
-  "hq": { "province": "Jiangsu", "city": "Wuxi" },
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Wuxi"
+  },
   "founded": 1996,
-  "foundedSrc": [1],
+  "foundedSrc": [
+    1
+  ],
   "relatedIds": [],
   "strengths": [
-    { "text": "Công ty duy nhất được ủy quyền sản xuất và bán đầu phát STAMFORD và AvK tại Trung Quốc; 2 nhà máy tại Vô Tích", "src": [1] },
-    { "text": "Lưu ý xuất xứ: đầu phát STAMFORD sản xuất ở Vô Tích có C/O Trung Quốc (quan trọng với HSMT yêu cầu G7)", "src": [1] }
+    {
+      "text": "Công ty duy nhất được ủy quyền sản xuất và bán đầu phát STAMFORD và AvK tại Trung Quốc; 2 nhà máy tại Vô Tích",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Lưu ý xuất xứ: đầu phát STAMFORD sản xuất ở Vô Tích có C/O Trung Quốc (quan trọng với HSMT yêu cầu G7)",
+      "src": [
+        1
+      ]
+    }
   ],
   "productLines": [
-    { "kind": "alternator", "series": "STAMFORD / AvK alternators (sản xuất tại Vô Tích)", "fuel": null, "engineMakes": [], "engineModels": [], "alternatorMakes": ["STAMFORD", "AvK"],
-      "power": null, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+    {
+      "kind": "alternator",
+      "series": "STAMFORD / AvK alternators (sản xuất tại Vô Tích)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [
+        "STAMFORD",
+        "AvK"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
   ],
   "certifications": [],
-  "vietnam": { "distributors": [], "note": null },
+  "vietnam": {
+    "distributors": [],
+    "note": null
+  },
   "exportMarkets": [],
-  "missing": ["Trang nhà máy Trung Quốc không ghi dải kVA của dòng sản xuất tại Vô Tích", "Chưa có danh sách model (S0, S1, P7...) sản xuất tại Trung Quốc"],
+  "missing": [
+    "Trang nhà máy Trung Quốc không ghi dải kVA của dòng sản xuất tại Vô Tích",
+    "Chưa có danh sách model (S0, S1, P7...) sản xuất tại Trung Quốc"
+  ],
   "sources": [
-    { "n": 1, "url": "https://www.stamford-avk.com/manufacturing-locations/china", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["STAMFORD | AvK (Cummins Generator Technologies) (China) Co., Ltd. was founded in 1996 in Wuxi City, Jiangsu Province, with a total investment of more than $40 million USD. We are the only authorised company that manufactures and sells STAMFORD and AvK brand alternators in China.", "Two world-class production facilities in Wuxi, Jiangsu Province"], "file": "sources/stamford-avk-china/1.md" }
+    {
+      "n": 1,
+      "url": "https://www.stamford-avk.com/manufacturing-locations/china",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "STAMFORD | AvK (Cummins Generator Technologies) (China) Co., Ltd. was founded in 1996 in Wuxi City, Jiangsu Province, with a total investment of more than $40 million USD. We are the only authorised company that manufactures and sells STAMFORD and AvK brand alternators in China.",
+        "Two world-class production facilities in Wuxi, Jiangsu Province"
+      ],
+      "file": "sources/stamford-avk-china/1.md"
+    }
   ],
   "confidence": "high",
   "checkedAt": "2026-10-28",

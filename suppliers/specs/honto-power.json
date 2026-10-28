@@ -1,0 +1,561 @@
+[
+ {
+  "n": 101,
+  "url": "https://honto-power.com/en/portfolio-item/perkins-series-8-2250kva-generator-sets/",
+  "title": "Perkins Diesel Generator Set 8-2250kVA - Reliable Genset for Industrial & Prime Power | Shandong Honto",
+  "header": [
+   "| | Model | Output Power | Current (A) | Engine Model | Cyl. | Bore×Stroke (mm) | Displ. (L) | Fuel Cons. (g/kW·h) | Dimensions L×W×H (mm) | Weight (kg)",
+   "| | kW | kVA | | | | | | | |"
+  ],
+  "rows": [
+   "| BC-7GF | 7 | 8.75 | 12.6 | 403A-11G1 | 3 | 77×87 | 0.99 | 248 | 1200×700×1100 | 500",
+   "| BC-8GF | 8 | 10 | 14.4 | 403D-11G | 3 | 77×81 | 1.13 | 252 | 1200×700×1100 | 300",
+   "| BC-10GF | 10 | 12.5 | 18 | 403A-15G1 | 3 | 84×90 | 1.62 | 264 | 1250×700×1100 | 350",
+   "| BC-11GF | 11 | 13.75 | 19.8 | 403D-15G | 3 | 84×90 | 1.49 | 247 | 1250×700×1100 | 350",
+   "| BC-12GF | 12 | 15 | 21.6 | 403A-15G2 | 3 | 84×90 | 1.49 | 264 | 1250×700×1100 | 350",
+   "| BC-16GF | 16 | 20 | 28.8 | 404A-22G1 | 4 | 84×100 | 2.2 | 237 | 1500×730×1300 | 500",
+   "| BC-16GF | 16 | 20 | 28.8 | 404D-22G | 4 | 84×100 | 2.2 | 245 | 1500×730×1300 | 500",
+   "| BC-24GF | 24 | 30 | 43.2 | 1103A-33G | 3 | 105×127 | 3.3 | 211 | 1770×750×1600 | 800",
+   "| BC-36GF | 36 | 45 | 64.8 | 1103A-33TG1 | 3 | 105×127 | 3.3 | 211 | 2050×750×1600 | 920",
+   "| BC-50GF | 50 | 62.5 | 90 | 1104A-44TG1 | 4 | 105×127 | 4.4 | 208 | 2250×750×1600 | 1100",
+   "| BC-50GF | 50 | 62.5 | 90 | 1103A-33TG2 | 3 | 105×127 | 3.3 | 215 | 2200×750×1600 | 1050",
+   "| BC-64GF | 64 | 80 | 115.2 | 1104A-44TG2 | 4 | 105×127 | 4.4 | 208 | 2300×750×1600 | 1150",
+   "| BC-64GF | 64 | 80 | 115.2 | 1104C-44TAG1 | 4 | 100×127 | 4.4 | 205 | 2480×760×1600 | 1250",
+   "| BC-80GF | 80 | 100 | 144 | 1104C-44TAG2 | 4 | 100×127 | 4.4 | 208 | 2480×760×1600 | 1250",
+   "| BC-110GF | 110 | 137.5 | 198 | 1106A-70TG1 | 6 | 100×120 | 7.01 | 199 | 2480×760×1600 | 1250",
+   "| BC-120GF | 120 | 150 | 216 | 1106A-70TAG2 | 6 | 105×135 | 7.01 | 208 | 2650×760×1600 | 1450",
+   "| BC-140GF | 140 | 175 | 252 | 1106A-70TAG3 | 6 | 105×135 | 7.01 | 206 | 2700×900×1600 | 1700",
+   "| BC-160GF | 160 | 200 | 288 | 1106A-70TAG4 | 6 | 105×135 | 7.01 | 220 | 3000×1000×1700 | 2100",
+   "| BC-180GF | 180 | 225 | 324 | 1306A-E87TAG4 | 6 | 116×136 | 8.7 | 206 | 3000×1000×1700 | 2100",
+   "| BC-180GF | 180 | 225 | 324 | 1506A-E88TAG2 | 6 | 112×149 | 8.8 | 200 | 3000×1000×1700 | 2100",
+   "| BC-200GF | 200 | 250 | 360 | 1306A-E87TAG6 | 6 | 116×136 | 8.7 | 198 | 3100×1000×1700 | 2150",
+   "| BC-200GF | 200 | 250 | 360 | 1506A-E88TAG3 | 6 | 112×149 | 8.8 | 200 | 3100×1000×1700 | 2150",
+   "| BC-220GF | 220 | 275 | 396 | 1606A-E93TAG4 | 6 | 116×136 | 8.7 | 201 | 3100×1000×1700 | 2150",
+   "| BC-220GF | 220 | 275 | 396 | 1506A-E88TAG4 | 6 | 112×149 | 8.8 | 198 | 3100×1000×1700 | 2150",
+   "| BC-240GF | 240 | 300 | 432 | 1606A-E93TAG5 | 6 | 116×136 | 12.5 | 216 | 3100×1000×1700 | 2150",
+   "| BC-240GF | 240 | 300 | 432 | 1506A-E88TAG5 | 6 | 112×149 | 8.8 | 198 | 3100×1000×1700 | 2150",
+   "| BC-280GF | 280 | 350 | 504 | 2206C-E13TAG2 | 6 | 130×157 | 12.5 | 209 | 3600×1200×2000 | 3200",
+   "| BC-320GF | 320 | 400 | 576 | 2206C-E13TAG3 | 6 | 130×157 | 12.5 | 206 | 3650×1200×2000 | 3300",
+   "| BC-360GF | 360 | 450 | 648 | 2506C-E15TAG1 | 6 | 137×171 | 15.2 | 211 | 4000×1200×2100 | 3700",
+   "| BC-400GF | 400 | 500 | 720 | 2506C-E15TAG2 | 6 | 137×171 | 15.2 | 211 | 4050×1200×2100 | 3760",
+   "| BC-480GF | 480 | 600 | 864 | 2806C-E18TAG1A | 6 | 145×183 | 18.1 | 216 | 4100×1600×2200 | 4600",
+   "| BC-520GF | 520 | 650 | 936 | 2806A-E18TAG2 | 6 | 145×183 | 18.1 | 202 | 4200×1600×2200 | 4800",
+   "| BC-600GF | 600 | 750 | 1080 | 4006-23TAG2A | 6 | 160×190 | 22.9 | 209 | 4500×1800×2300 | 5500",
+   "| BC-640GF | 640 | 800 | 1152 | 4006-23TAG3A | 6 | 160×190 | 22.9 | 209 | 4600×1800×2300 | 6000",
+   "| BC-720GF | 720 | 900 | 1296 | 4008TAG1A | 8 | 160×190 | 30.5 | 206 | 4800×2100×2500 | 7700",
+   "| BC-800GF | 800 | 1000 | 1440 | 4008TAG2A | 8 | 160×190 | 30.5 | 206 | 4900×2100×2500 | 8000",
+   "| BC-1000GF | 1000 | 1250 | 1800 | 4012-46TWG2A | 12 | 160×190 | 45.8 | 212 | 5300×2200×2600 | 10000",
+   "| BC-1100GF | 1100 | 1375 | 1980 | 4012-46TWG3A | 12 | 160×190 | 45.8 | 212 | 5300×2200×2600 | 10000",
+   "| BC-1200GF | 1200 | 1500 | 2160 | 4012-46TAG2A | 12 | 160×190 | 45.8 | 212 | 5400×2200×2600 | 11000",
+   "| BC-1360GF | 1360 | 1700 | 2448 | 4012-46TAG3A | 12 | 160×190 | 45.8 | 212 | 5500×2200×2600 | 12000",
+   "| BC-1368GF | 1368 | 1710 | 2462 | 4012-46TAG3A | 12 | 160×190 | 45.8 | 212 | 5500×2200×2600 | 12000",
+   "| BC-1480GF | 1480 | 1850 | 2664 | 4016TAG1A | 16 | 160×190 | 61.1 | 205 | 5700×2800×3100 | 13500",
+   "| BC-1600GF | 1600 | 2000 | 2880 | 4016TAG2A | 16 | 160×190 | 61.1 | 208 | 5800×2800×3100 | 14000",
+   "| BC-1800GF | 1800 | 2250 | 3240 | 4016-61TRG3 | 16 | 160×190 | 61.1 | 205 | 5900×2800×3100 | 15700"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://honto-power.com/en/portfolio-item/sh15-m-30-oil-immersed-amorphous-alloy-transformer/",
+  "title": "SH15-M-30 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-100/",
+  "title": "SH15-M-100 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-200/",
+  "title": "SH15-M-200 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-500/",
+  "title": "SH15-M-500 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-800/",
+  "title": "SH15-M-800 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-1000/",
+  "title": "SH15-M-1000 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-1600/",
+  "title": "SH15-M-1600 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-2500/",
+  "title": "SH15-M-2500 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-transformer/",
+  "title": "Oil Immersed Power Transformer Manufacturer - 10kVA to 500MVA | Shandong Honto",
+  "header": [
+   "| | Capacity (kVA) | Voltage Combination | Connection | No-Load Loss (kW) | Load Loss (kW) | No-Load Current (%) | Impedance (%)",
+   "| | HV (kV) | Tap Range (%) | LV (kV) | | | | |"
+  ],
+  "rows": [
+   "| 30 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.1 | 0.6 | 1.5 | 4.0",
+   "| 50 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.13 | 0.87 | 1.3 | 4.0",
+   "| 63 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.15 | 1.04 | 1.2 | 4.0",
+   "| 80 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.18 | 1.25 | — | 4.0",
+   "| 100 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.2 | 1.5 | 1.1 | 4.0",
+   "| 125 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.24 | 1.8 | — | 4.0",
+   "| 160 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.28 | 2.2 | 1.0 | 4.0",
+   "| 200 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.34 | 2.6 | — | 4.0",
+   "| 250 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.4 | 3.05 | 0.9 | 4.0",
+   "| 315 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.48 | 3.65 | — | 4.0",
+   "| 400 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.57 | 4.3 | 0.8 | 4.0",
+   "| 500 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.68 | 5.15 | — | 4.0",
+   "| 630 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.81 | 6.2 | 0.6 | 4.5",
+   "| 800 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.98 | 7.5 | — | 4.5",
+   "| 1000 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.15 | 10.3 | — | 4.5",
+   "| 1250 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.36 | 12.0 | 0.50 | 4.5",
+   "| 1600 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.64 | 14.5 | — | 4.5",
+   "| 2000 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.95 | 17.2 | 0.4 | 5.0",
+   "| 2500 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 2.35 | 20.5 | — | 5.0",
+   "| 3150 | 6/6.3/10/10.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 2.78 | 24.1 | — | 5.0"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-transformer/",
+  "title": "Oil Immersed Power Transformer Manufacturer - 10kVA to 500MVA | Shandong Honto",
+  "header": [
+   "| | Capacity (kVA) | Voltage Combination | Connection | No-Load Loss (kW) | Load Loss (kW) | No-Load Current (%) | Impedance (%)",
+   "| | HV (kV) | Tap Range (%) | LV (kV) | | | | |"
+  ],
+  "rows": [
+   "| 30 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.1 | 0.6 | 1.5 | 4.0",
+   "| 50 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.13 | 0.87 | 1.3 | 4.0",
+   "| 63 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.15 | 1.04 | 1.2 | 4.0",
+   "| 80 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.18 | 1.25 | — | 4.0",
+   "| 100 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.2 | 1.5 | 1.1 | 4.0",
+   "| 125 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.24 | 1.8 | — | 4.0",
+   "| 160 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.28 | 2.2 | 1.0 | 4.0",
+   "| 200 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.34 | 2.6 | — | 4.0",
+   "| 250 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.4 | 3.05 | 0.9 | 4.0",
+   "| 315 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.48 | 3.65 | — | 4.0",
+   "| 400 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.57 | 4.3 | 0.8 | 4.0",
+   "| 500 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yzn11/Yyn0 | 0.68 | 5.15 | — | 4.0",
+   "| 630 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.81 | 6.2 | 0.6 | 4.5",
+   "| 800 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.98 | 7.5 | — | 4.5",
+   "| 1000 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.15 | 10.3 | — | 4.5",
+   "| 1250 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.36 | 12.0 | 0.50 | 4.5",
+   "| 1600 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.64 | 14.5 | — | 4.5",
+   "| 2000 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.95 | 17.2 | 0.4 | 5.0",
+   "| 2500 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 2.35 | 20.5 | — | 5.0",
+   "| 3150 | 20 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 2.78 | 24.1 | — | 5.0"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-transformer/",
+  "title": "Oil Immersed Power Transformer Manufacturer - 10kVA to 500MVA | Shandong Honto",
+  "header": [
+   "| | Capacity (kVA) | Voltage Combination | Connection | No-Load Loss (kW) | Load Loss (kW) | No-Load Current (%) | Impedance (%)",
+   "| | HV (kV) | Tap Range (%) | LV (kV) | | | | |"
+  ],
+  "rows": [
+   "| 50 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.16 | 1.14 | 1.3 | 6.5",
+   "| 100 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.23 | 1.91 | 1.1 | 6.5",
+   "| 125 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.27 | 2.26 | — | 6.5",
+   "| 160 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.28 | 2.68 | 1.0 | 6.5",
+   "| 200 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.34 | 3.16 | — | 6.5",
+   "| 250 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.40 | 3.76 | 0.95 | 6.5",
+   "| 315 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.48 | 4.53 | — | 6.5",
+   "| 400 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.58 | 5.47 | 0.85 | 6.5",
+   "| 500 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.68 | 6.58 | — | 6.5",
+   "| 630 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.83 | 7.86 | 0.65 | 6.5",
+   "| 800 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 0.98 | 9.40 | — | 6.5",
+   "| 1000 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.15 | 11.5 | — | 6.5",
+   "| 1250 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.40 | 13.9 | 0.60 | 6.5",
+   "| 1600 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.69 | 16.6 | — | 6.5",
+   "| 2000 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 1.99 | 19.7 | 0.55 | 6.5",
+   "| 2500 | 35/38.5 | ±2×2.5 or ±5.0 | 0.4 | Dyn11/Yyn0 | 2.36 | 23.2 | — | 6.5"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://honto-power.com/en/portfolio-item/35110220-kv-power-transformers/",
+  "title": "35kV 110kV 220kV Power Transformer Manufacturer - High Voltage Transformer Supplier | Shandong Honto",
+  "header": [
+   "| | Rating (kVA) | Voltage Combined | No Load Loss (kW) | Load Loss (kW) | No Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV (kV) | LV (kV)"
+  ],
+  "rows": [
+   "| 6300 | 110kV ±8×1.25%"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://honto-power.com/en/portfolio-item/35110220-kv-power-transformers/",
+  "title": "35kV 110kV 220kV Power Transformer Manufacturer - High Voltage Transformer Supplier | Shandong Honto",
+  "header": [
+   "| | Rating (kVA) | Voltage Combined | No Load Loss (kW) | Load Loss (kW) | No Load Current (%)",
+   "| HV (kV) | MV (kV) | LV (kV)"
+  ],
+  "rows": [
+   "| 6300 | 110kV ±8×1.25%"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://honto-power.com/en/portfolio-item/box-type-substation/",
+  "title": "Box Type Substation Manufacturer - Prefabricated Compact Substation 10-35kV | Shandong Honto",
+  "header": [
+   "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
+  ],
+  "rows": [
+   "| YBW | 10kV/20kV/35kV | 0.4 | 50",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 80",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 100",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 125",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 160",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 200",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 250",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 315",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 400",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 500",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 630",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 800",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 1000",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 1250",
+   "| YBW | 10kV/20kV/35kV | 0.4 | 1600"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://honto-power.com/en/portfolio-item/box-type-substation/",
+  "title": "Box Type Substation Manufacturer - Prefabricated Compact Substation 10-35kV | Shandong Honto",
+  "header": [
+   "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
+  ],
+  "rows": [
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 400",
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 500",
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 630",
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 800",
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 1000",
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 1250",
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 1600",
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 2000",
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 2500",
+   "| YBW-G | 10kV/20kV/35kV | 0.315 | 3150"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://honto-power.com/en/portfolio-item/box-type-substation/",
+  "title": "Box Type Substation Manufacturer - Prefabricated Compact Substation 10-35kV | Shandong Honto",
+  "header": [
+   "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
+  ],
+  "rows": [
+   "| YBW | 10kV/20kV/35kV | 0.69 | 1000",
+   "| YBW | 10kV/20kV/35kV | 0.69 | 1250",
+   "| YBW | 10kV/20kV/35kV | 0.69 | 1600",
+   "| YBW | 10kV/20kV/35kV | 0.69 | 2000",
+   "| YBW | 10kV/20kV/35kV | 0.69 | 2500",
+   "| YBW | 10kV/20kV/35kV | 0.69 | 3150"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://honto-power.com/en/portfolio-item/sh15-m-30-oil-immersed-amorphous-alloy-transformer/",
+  "title": "SH15-M-30 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-100/",
+  "title": "SH15-M-100 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 115,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-200/",
+  "title": "SH15-M-200 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 116,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-500/",
+  "title": "SH15-M-500 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 117,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-800/",
+  "title": "SH15-M-800 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 118,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-1000/",
+  "title": "SH15-M-1000 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 119,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-1600/",
+  "title": "SH15-M-1600 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://honto-power.com/en/portfolio-item/oil-immersed-laminated-core-power-transformer-sh15-m-2500/",
+  "title": "SH15-M-2500 Oil-Immersed Amorphous Alloy Transformer Manufacturer | Shandong Honto",
+  "header": [
+   "| | Model | Rated Capacity (kVA) | Connection Symbol | Voltage Combination (kV) | No-Load Loss (W) | Load Loss (W) | No-Load Current (%) | Short-Circuit Impedance (%)",
+   "| HV | Tap Range | LV"
+  ],
+  "rows": [
+   "| SH15-M-30 | 30 | | | | | 33 | 630/600 | 1.50 | 4.0",
+   "| SH15-M-50 | 50 | 43 | 910/870 | 1.20 | 4.0",
+   "| SH15-M-63 | 63 | 50 | 1090/1040 | 1.10 | 4.0",
+   "| SH15-M-80 | 80 | 60 | 1310/1250 | 1.00 | 4.0",
+   "| SH15-M-100 | 100 | 75 | 1580/1500 | 0.90 | 4.0",
+   "| SH15-M-125 | 125 | 85 | 1890/1800 | 0.80 | 4.0",
+   "| SH15-M-160 | 160 | 100 | 2310/2200 | 0.60 | 4.0",
+   "| SH15-M-200 | 200 | 120 | 2730/2600 | 0.60 | 4.0",
+   "| SH15-M-250 | 250 | Dyn11 | 6"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://honto-power.com/en/elegir-transformador-6kv-10kv-35kv-latinoamerica/",
+  "title": "Cómo Elegir Transformador de Potencia 6kV 10kV 35kV en Latinoamérica 2026 | Honto Power",
+  "header": [],
+  "rows": [
+   "| | Criterio | 6kV | 10kV | 35kV",
+   "| Capacidad típica | 30–2500 kVA | 30–5000 kVA | 1000 kVA–50 MVA"
+  ]
+ }
+]

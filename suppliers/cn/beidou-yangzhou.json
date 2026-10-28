@@ -53,9 +53,47 @@
         "Rainproof Type 500kW Cummins Power DieselGenerator"
       ],
       "file": "sources/beidou-yangzhou/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.bdgenerator.com/225kva-180kw-shangchai-diesel-generator-set-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Genset Power (KVA) | Engine Model | Engine Power | Diemension (MM) | Weight (KG) | Rated"
+      ],
+      "file": "sources/beidou-yangzhou/101.md"
     }
   ],
   "confidence": "low",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "225KVA 180KW Shangchai Diesel Generator Set",
+      "header": [
+        "| Genset Model | Genset Power (KVA) | Engine Model | Engine Power | Diemension (MM) | Weight (KG) | Rated"
+      ],
+      "rows": [
+        "| Backup | BD-S18 | 18 | 20 | 4Z2.3-G11 | 20/23 | 1400*560*1100",
+        "| 400 | BD-S63 | 63 | 69 | 4ZT4.1-G21 | 75/83 | 1650*750*1150",
+        "| 900 | BD-S125 | 125 | 138 | SC4H180D2 | 150/165 | 2150*850*1250",
+        "| 1200 | BD-S150 | 150 | 165 | SC7H250D2 | 168/185 | 2550*1050*1450",
+        "| 1650 | BD-S250 | 250 | 275 | SC9D340D2 | 285/319 | 2750*1100*1590",
+        "| 2300 | BD-S313 | 313 | 344 | SC12E420D2 | 350/385 | 3000*1150*1750",
+        "| 2600 | BD-S375 | 375 | 413 | SC15G500D2 | 424/466 | 3100*1240*1720",
+        "| 2800 | BD-S450 | 450 | 495 | SC25G610D2 | 506/556 | 3450*1530*2050",
+        "| 3800 | BD-S500 | 500 | 550 | SC25G690D2 | 574/631 | 3450*1500*2100",
+        "| 3950 | BD-S500 | 563 | 619 | SC27G755D2 | 631/700 | 3500*1600*2150",
+        "| 4200 | BD-S625 | 625 | 688 | SC27G830D2 | 701/763 | 3650*1680*2200",
+        "| 4300 | BD-S688 | 688 | 756 | SC27G900D2 | 753/828 | 3650*1680*2200",
+        "| 4400 | BD-S750 | 750 | 825 | SC33W990D2 | 825/908 | 4450*1780*2400",
+        "| 6000 | BD-S875 | 875 | 963 | SC33W1150D2 | 978/1075 | 4450*1780*2400",
+        "| 6500 | BD-S1000 | 1000 | 1100 | 6WTAA35-G31 | 1103/1213 | 4100*2000*2200",
+        "| 6300 | BD-S1125 | 1125 | 1238 | 6WTAA35-G310 | 1273/1400 | 4430*1855*2450",
+        "| 8000 | BD-S1125 | 1250 | 1375 | 6WTAA35-G311 | 1398/1538 | 4430*1855*2450"
+      ]
+    }
+  ]
 }

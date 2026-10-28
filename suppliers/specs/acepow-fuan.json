@@ -1,0 +1,117 @@
+[
+ {
+  "n": 101,
+  "url": "http://www.acepow.net/sale-13504364-r6105zlds-100kva-400-volt-diesel-engine-generator-set.html",
+  "title": "R6105ZLDS 100KVA 400 Volt Diesel Engine Generator Set",
+  "header": [
+   "| Generating Set Model | Prime | Standby"
+  ],
+  "rows": [
+   "| APW-100 | 100kVA/80kW | 110kVA/88kW"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "http://www.acepow.net/sale-13504364-r6105zlds-100kva-400-volt-diesel-engine-generator-set.html",
+  "title": "R6105ZLDS 100KVA 400 Volt Diesel Engine Generator Set",
+  "header": [
+   "| APW-100 | 100% Load | 90% Load | 70% Load | 50% Load | 20% Load"
+  ],
+  "rows": [
+   "| g/kw.h | 228 | 230 | 238 | 240 | 330"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "http://www.acepow.net/sale-13566853-saso-three-phase-10kva-mobile-genset-trailer.html",
+  "title": "SASO Three Phase 10KVA Mobile Genset Trailer",
+  "header": [
+   "| Model | Rated Output | Standby Output | Alternator | Model",
+   "| Kw | kva | Kw | kva"
+  ],
+  "rows": [
+   "| APDS-5.4 | 5.4 | 6.8 | 6.0 | 7.5 | BC164A | SP103NA",
+   "| APDS-11 | 11.0 | 13.8 | 12.0 | 15.0 | BC164C | SP173NA",
+   "| APDS-14 | 14 | 18 | 15 | 19 | BC164E | SP224NA",
+   "| APDS-20 | 20 | 25 | 22 | 28 | BC184ES | SP244TA",
+   "| APDS-19 | 19 | 24 | 21 | 26 | BC184ES | SP183CA",
+   "| APDS-30 | 30 | 38 | 33 | 41 | BC184H | SP244CA",
+   "| APDS-50 | 50 | 63 | 55 | 69 | UC224E | SP344CA",
+   "| APDS-120 | 120 | 150 | 132 | 165 | UC274E | DP086TA",
+   "| APDS-130 | 130 | 163 | 143 | 179 | UC274F | P086TI-1",
+   "| APDS-160 | 160 | 200 | 176 | 220 | UC274H | P086TI",
+   "| APDS-180 | 180 | 225 | 198 | 248 | UC274J | DP086LA",
+   "| APDS-220 | 220 | 275 | 242 | 303 | HC434CS | P126TI",
+   "| APDS-240 | 240 | 300 | 264 | 330 | HC434D | P126TI-II",
+   "| APDS-280 | 280 | 350 | 308 | 385 | HC434F | P158LE-1",
+   "| APDS-320 | 320 | 400 | 352 | 440 | HC434FS | P158LE",
+   "| APDS-420 | 420 | 525 | 462 | 578 | HC534DS | DP158LD",
+   "| APDS-450 | 450 | 563 | 495 | 619 | HC534DS | DP180LA",
+   "| APDS-500 | 500 | 625 | 550 | 688 | HC534F | DP180LB",
+   "| APDS-550 | 550 | 688 | 605 | 756 | HC534G | DP222LB",
+   "| APDS-600 | 600 | 750 | 660 | 825 | LV634B | DP222LC",
+   "| APDS-360 | 360 | 450 | 396 | 495 | HC534C | P158FE",
+   "| APDS-400 | 400 | 500 | 440 | 550 | HC534D | P180FE",
+   "| APDS-500 | 500 | 625 | 550 | 688 | HC534F | P222FE"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "http://www.acepow.net/sale-13566802-4-wheels-94kva-75kw-mobile-genset-trailer-mobile-diesel-generators.html",
+  "title": "4 Wheels 94KVA 75KW Mobile Genset Trailer , Mobile Diesel Generators",
+  "header": [
+   "| Model | 50Hz,1500rpm | | 3Phases/50Hz/400V/PF=0.8 | Engine",
+   "| Generating Sets | Acepow | Prime | Standby",
+   "| Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Alternator | KW | KW"
+  ],
+  "rows": [
+   "| APF-12 | 12 | 15 | 13.2 | 16.5 | BC164D | 12.8 | 14.08 | 4DW81-23D-YFD10W",
+   "| APF-16 | 16 | 20 | 17.6 | 22 | BC184E | 18 | 19.8 | 4DW91-29D-YFD10W",
+   "| APF-20 | 20 | 25 | 22 | 27.5 | BC184F | 22 | 24.2 | 4DW92-35D-YFD10W",
+   "| APF-24 | 24 | 30 | 26.4 | 33 | BC184G | 25 | 27.5 | 4DW92-39D-HMS20W",
+   "| APF-24 | 24 | 30 | 26.4 | 33 | BC184G | 25 | 27.5 | 4DW93-42D-YFD10W",
+   "| APF-25 | 25 | 31.25 | 27.5 | 34.375 | BC184GS | 28 | 30.8 | 4DX21-45D-YFD10W",
+   "| APF-32 | 32 | 40 | 35.2 | 44 | BC184J | 32 | 35.2 | 4DX21-53D-HMS20W",
+   "| APF-30 | 30 | 37.5 | 33 | 41.25 | BC184H | 30 | 33 | 4DX22-50D-YFD10W",
+   "| APF-40 | 40 | 50 | 44 | 55 | UC224D | 40 | 44 | 4DX22-65D-HMS20W",
+   "| APF-38 | 38 | 47.5 | 41.8 | 52.25 | UC224D | 40 | 44 | 4DX23-65D-YFD10W",
+   "| APF-48 | 48 | 60 | 52.8 | 66 | UC224E | 50 | 55 | 4DX23-78D-HMS20W",
+   "| APF-55 | 55 | 68.75 | 60.5 | 75.625 | UC224F | 60 | 66 | 4110/125Z-09D-YFD10W",
+   "| APF-72 | 72 | 90 | 79.2 | 99 | UC274C | 80 | 88 | CA4F2-12D-YFD10W",
+   "| APF-80 | 80 | 100 | 88 | 110 | UC274C | 80 | 88 | 6CDF2D-14D-YFD10W",
+   "| APF-100 | 100 | 125 | 110 | 137.5 | UC274DS | 100 | 110 | CA6DF2-17D-YFD10W",
+   "| APF-120 | 120 | 150 | 132 | 165 | UC274F | 128 | 140.8 | CA6DF2-19D-YFD11W",
+   "| APF-150 | 150 | 187.5 | 165 | 206.25 | UC274H | 160 | 176 | CA6DL1-24D",
+   "| APF-180 | 180 | 225 | 198 | 247.5 | UC274J | 180 | 198 | CA6DL2-27D",
+   "| APF-200 | 200 | 250 | 220 | 275 | UC274K | 200 | 220 | CA6DL2-30D",
+   "| APF-250 | 250 | 312.5 | 275 | 343.75 | HC434E | 260 | 286 | CA6DM2J-39D",
+   "| APF-270 | 270 | 337.5 | 297 | 371.25 | HC434ES | 280 | 308 | CA6DM2J-41D",
+   "| APF-300 | 300 | 375 | 330 | 412.5 | HC434F | 304 | 334.4 | CA6DN1J-45D"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "http://www.acepow.net/sale-13594800-silent-1500-rpm-standby-diesel-generator-10kw-silent-diesel-generator.html",
+  "title": "Silent 1500 RPM Standby Diesel Generator , 10KW Silent Diesel Generator",
+  "header": [
+   "| Model | 50Hz,1500rpm | | Engine |",
+   "| Generating Sets | Acepow | Prime | Standby",
+   "| Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Alternator | KW | KW"
+  ],
+  "rows": [
+   "| APYN-10 | 10 | 11 | 12.5 | 14 | BC164C | YN25GB | 18 | 19.8",
+   "| APYN-12 | 12 | 13.2 | 15 | 17 | BC164D | YN25GB | 18 | 19.8",
+   "| APYN-15 | 15 | 16.5 | 18.75 | 21 | BC184ES | YN25GB | 18 | 19.8",
+   "| APYN-18 | 18 | 20 | 22.5 | 25 | BC184E | YN25GB | 21 | 23.1",
+   "| APYN-21 | 21 | 23 | 26.25 | 29 | BC184F | YN27GB | 25 | 27.5",
+   "| APYN-25 | 25 | 28 | 31.25 | 35 | BC184G | YN27GBZ | 30 | 33",
+   "| APYN-25 | 25 | 28 | 31.25 | 35 | BC184G | YN36GB | 30 | 33",
+   "| APYN-30 | 30 | 33 | 37.5 | 41 | BC184H | YN38GB | 36 | 39.6",
+   "| APYN-40 | 40 | 44 | 50 | 55 | UC224D | YN38GBZ | 48 | 52.8",
+   "| APYN-40 | 40 | 44 | 50 | 55 | UC224D | YN38GBZL | 50 | 55",
+   "| APYN-50 | 50 | 55 | 62.5 | 69 | UC224E | YN38GBZ | 60 | 66",
+   "| APYN-50 | 50 | 55 | 62.5 | 69 | UC224E | YN48GBZ | 60 | 66",
+   "| APYN-65 | 65 | 72 | 81.25 | 90 | UC224G | YN48GBZ | 77 | 84.7"
+  ]
+ }
+]

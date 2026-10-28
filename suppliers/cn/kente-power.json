@@ -108,9 +108,1934 @@
         "brand enterprises such as CUMMINS, PERKINS, MAN, VOLVO, MITSUBISHI, DEUTZ, DOOSAN, STAMFORD, LEROY SOMER, MARATHON, It has developed all types of diesel generator sets from 5Kva to 3000Kva"
       ],
       "file": "sources/kente-power/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.kentepower.com/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| genset type | rated output | engine | alternator"
+      ],
+      "file": "sources/kente-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.kentepower.com/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | cyl | Bore | Storke | displacement | Governor | Open Type Dimension"
+      ],
+      "file": "sources/kente-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.kentepower.com/zu/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| uhlobo lwe-genset | okukhiphayo okukaliwe | injini | i-alternator"
+      ],
+      "file": "sources/kente-power/103.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.kentepower.com/zu/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Imodeli yeGenset | 50HZ PF=0.8 400/230V 3Phase 4Wire | Imodeli Yenjini | cyl | Bore | UStorke | ukufuduka | Umbusi | Vula Uhlobo Lobukhulu"
+      ],
+      "file": "sources/kente-power/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.kentepower.com/xh/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| uhlobo lwegenset | imveliso rated | injini | ialternator"
+      ],
+      "file": "sources/kente-power/106.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.kentepower.com/xh/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Umzekelo weGenset | 50HZ PF=0.8 400/230V 3Phase 4Wire | Imodeli yeNjini | cyl | Bore | IStorke | ukufuduswa | Irhuluneli | Vula Uhlobo loMda"
+      ],
+      "file": "sources/kente-power/108.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.kentepower.com/gd/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| seòrsa genset | toradh air a mheas | einnsean | alternator"
+      ],
+      "file": "sources/kente-power/115.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.kentepower.com/cy/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model Genset | 50HZ PF=0.8 400/230V 3Cyfnod 4Wire | Model Injan | cyl | Bore | Strôc | dadleoli | Llywodraethwr | Dimensiwn Math Agored"
+      ],
+      "file": "sources/kente-power/118.md"
+    },
+    {
+      "n": 121,
+      "url": "https://www.kentepower.com/sk/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| typ agregátu | menovitý výkon | motora | alternátor"
+      ],
+      "file": "sources/kente-power/121.md"
+    },
+    {
+      "n": 128,
+      "url": "https://www.kentepower.com/so/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Nooca Genset | 50HZ PF=0.8 400/230V 3 Wajiga 4 Wire | Qaabka Matoorka | cyl | Bore | Storke | barakac | Gudoomiye | Fur nooca cabbirka"
+      ],
+      "file": "sources/kente-power/128.md"
+    },
+    {
+      "n": 130,
+      "url": "https://www.kentepower.com/sk/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model generátora | 50HZ PF=0,8 400/230V 3fázový 4dr. | Model motora | cyl | Bore | Storke | posunutie | guvernér | Otvorený rozmer typu"
+      ],
+      "file": "sources/kente-power/130.md"
+    },
+    {
+      "n": 135,
+      "url": "https://www.kentepower.com/mi/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Tauira Genset | 50HZ PF=0.8 400/230V Waea 3Waea 4 | Tauira Miihini | cyl | Poaka | Taaka | whakanekehanga | Kawana | Tuwhera Momo Ahu"
+      ],
+      "file": "sources/kente-power/135.md"
+    },
+    {
+      "n": 136,
+      "url": "https://www.kentepower.com/st/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| mofuta oa genset | tlhahiso e lekantsoeng | enjene | alternator"
+      ],
+      "file": "sources/kente-power/136.md"
+    },
+    {
+      "n": 137,
+      "url": "https://www.kentepower.com/mt/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Mudell Genset | 50HZ PF=0.8 400/230V 3Phase 4Wire | Mudell tal-Magna | cil | Bore | Storke | spostament | Gvernatur | Dimensjoni tat-Tip Miftuħ"
+      ],
+      "file": "sources/kente-power/137.md"
+    },
+    {
+      "n": 145,
+      "url": "https://www.kentepower.com/mg/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| karazana genset | vokatra nomena | maotera | alternator"
+      ],
+      "file": "sources/kente-power/145.md"
+    },
+    {
+      "n": 147,
+      "url": "https://www.kentepower.com/lb/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Typ | bewäert Ausgang | motor | Alternator"
+      ],
+      "file": "sources/kente-power/147.md"
+    },
+    {
+      "n": 149,
+      "url": "https://www.kentepower.com/lv/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| ģenseta tips | nominālā jauda | dzinējs | ģenerators"
+      ],
+      "file": "sources/kente-power/149.md"
+    },
+    {
+      "n": 150,
+      "url": "https://www.kentepower.com/la/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| genset type | rated output | engine | alternator"
+      ],
+      "file": "sources/kente-power/150.md"
+    },
+    {
+      "n": 154,
+      "url": "https://www.kentepower.com/is/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| tegund gensets | metið framleiðsla | vél | alternator"
+      ],
+      "file": "sources/kente-power/154.md"
+    },
+    {
+      "n": 155,
+      "url": "https://www.kentepower.com/mg/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Modely Genset | 50HZ PF=0.8 400/230V 3 Phase 4 Wire | Modely motera | cyl | niteraka | Storke | famindran-toerana | governora | Open Type Dimension"
+      ],
+      "file": "sources/kente-power/155.md"
+    },
+    {
+      "n": 157,
+      "url": "https://www.kentepower.com/hmn/kt-ricardo-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| yam genset | rated tso zis | cav | alternator"
+      ],
+      "file": "sources/kente-power/157.md"
+    },
+    {
+      "n": 159,
+      "url": "https://www.kentepower.com/lb/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Modell | 50HZ PF=0.8 400/230V 3-Phase 4 Wire | Motor Modell | cyl | Bore | Storke | Verlagerung | Gouverneur | Open Typ Dimensioun"
+      ],
+      "file": "sources/kente-power/159.md"
+    },
+    {
+      "n": 160,
+      "url": "https://www.kentepower.com/lt/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset modelis | 50 HZ PF = 0,8 400/230 V 3 fazių 4 laidų | Variklio modelis | cil | Gręžimas | Gandras | poslinkis | gubernatorius | Atidarykite tipo matmenis"
+      ],
+      "file": "sources/kente-power/160.md"
+    },
+    {
+      "n": 161,
+      "url": "https://www.kentepower.com/lv/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset modelis | 50 HZ PF=0,8 400/230 V 3 fāzu 4 vadu | Dzinēja modelis | cil | Urbums | Stārķis | pārvietošanās | gubernators | Atveriet tipa izmēru"
+      ],
+      "file": "sources/kente-power/161.md"
+    },
+    {
+      "n": 164,
+      "url": "https://www.kentepower.com/ku/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Modela Genset | 50HZ PF=0,8 400/230V 3Phase 4Wire | Modela motorê | cyl | Kolîn | Storke | jicîhûwarkirin | Walî | Pîvana Tîpa Vekirî"
+      ],
+      "file": "sources/kente-power/164.md"
+    },
+    {
+      "n": 167,
+      "url": "https://www.kentepower.com/is/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset líkan | 50HZ PF=0,8 400/230V 3fasa 4víra | Vélargerð | cyl | Bore | Storke | tilfærslu | ríkisstjóri | Opna tegundarvídd"
+      ],
+      "file": "sources/kente-power/167.md"
+    },
+    {
+      "n": 168,
+      "url": "https://www.kentepower.com/hmn/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Qauv | 50HZ PF = 0.8 400/230V 3phase 4Wire | Cav Qauv | cil | Npog | Storke | hloov chaw | Tus tswv xeev | Qhib Hom Dimension"
+      ],
+      "file": "sources/kente-power/168.md"
+    },
+    {
+      "n": 170,
+      "url": "https://www.kentepower.com/haw/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Ke Ana Hoʻohālike Genset | 50HZ PF=0.8 400/230V 3Phase 4Uea | Hoʻohālike ʻenekini | cyl | ʻAha | Storke | ka hoʻoneʻe ʻana | Kiaaina | Wehe ʻAno Ana"
+      ],
+      "file": "sources/kente-power/170.md"
+    },
+    {
+      "n": 171,
+      "url": "https://www.kentepower.com/ht/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Modèl | 50HZ PF = 0.8 400/230V 3Phase 4Wire | Modèl motè | sil | raz | Storke | deplasman | Gouvènè | Louvri Kalite Dimansyon"
+      ],
+      "file": "sources/kente-power/171.md"
+    },
+    {
+      "n": 173,
+      "url": "https://www.kentepower.com/ka/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| გენსეტი მოდელი | 50HZ PF=0.8 400/230V 3ფაზიანი 4მავთული | ძრავის მოდელი | ცილი | მოწყენილი | სტორკი | გადაადგილება | გუბერნატორი | ღია ტიპის განზომილება"
+      ],
+      "file": "sources/kente-power/173.md"
+    },
+    {
+      "n": 174,
+      "url": "https://www.kentepower.com/gl/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Modelo de grupo electrógeno | 50 HZ PF = 0,8 400/230 V trifásico 4 cables | Modelo de motor | cil | Aborrecer | Cegoña | desprazamento | Gobernador | Dimensión de tipo aberto"
+      ],
+      "file": "sources/kente-power/174.md"
+    },
+    {
+      "n": 175,
+      "url": "https://www.kentepower.com/fy/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 50HZ PF=0.8 400/230V 3-faze 4draad | Motor Model | cyl | Bore | Storke | ferpleatsing | Gûverneur | Iepen Type Dimension"
+      ],
+      "file": "sources/kente-power/175.md"
+    },
+    {
+      "n": 176,
+      "url": "https://www.kentepower.com/et/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genseti mudel | 50 HZ PF=0,8 400/230 V 3-faasiline 4-juhtmeline | Mootori mudel | tsyl | Puur | toonekurg | nihe | kuberner | Ava Tüüp Dimensioon"
+      ],
+      "file": "sources/kente-power/176.md"
+    },
+    {
+      "n": 179,
+      "url": "https://www.kentepower.com/hr/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model generatora | 50HZ PF=0.8 400/230V 3fazna 4žica | Model motora | cyl | Dosadno | Štorke | pomak | Guverner | Otvorena dimenzija tipa"
+      ],
+      "file": "sources/kente-power/179.md"
+    },
+    {
+      "n": 180,
+      "url": "https://www.kentepower.com/co/kt-sdec-series-diesel-generator-product/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Modellu Genset | 50HZ PF = 0.8 400/230V 3Phase 4Wire | Mudellu di mutore | cil | Bore | Cicogna | spustamentu | guvernatore | Dimensione di tipu aperta"
+      ],
+      "file": "sources/kente-power/180.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory | KENT",
+      "header": [
+        "| genset type | rated output | engine | alternator",
+        "| KW/KVA | model | rated power | model"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | Y480BD | 14 | KT164D",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 30 | KT184E",
+        "| KT2-W27 | 20/25 | N4100DS-30 | 30 | KT184F",
+        "| KT2-W32 | 24/30 | N4100DS-30 | 30 | KT184G",
+        "| KT2-W41 | 30/38 | N4105DS-38 | 38 | KT184H",
+        "| KT2-W50 | 36/45 | N4105DS-46 | 46 | KT224C",
+        "| KT2-W55 | 40/50 | N4105ZDS | 56 | KT224D",
+        "| KT2-W65 | 48/60 | N4105ZDS | 56 | KT224E",
+        "| KT2-W76 | 54/68 | N4105ZLDS | 66 | KT224F",
+        "| KT2-W83 | 60/75 | R4105BZLDS | 74 | KT224F",
+        "| KT2-W98 | 70/88 | R6105ZDS | 84 | KT224G",
+        "| KT2-W111 | 80/100 | R6105ZLDS | 100 | KT274C",
+        "| KT2-W137 | 100/125 | R6105AZLDS | 121 | KT274D",
+        "| KT2-W165 | 120/150 | R6105BZLDS | 132 | KT274F",
+        "| KT2-W200 | 150/187 | R6110ZLDS | 170 | KT274G",
+        "| KT2-W220 | 160/200 | 6126-68D | 187 | KT274H",
+        "| KT2-W225 | 180/225 | 6126-42D | 231 | KT274J",
+        "| KT2-W250 | 200/250 | 6126-42D | 231 | KT274K",
+        "| KT-W300 | 220/275 | 6126A-260DE | 250 | KT444D",
+        "| KT-W350 | 250/313 | WT12D-308E | 308 | KT444ES",
+        "| | 300/375 | WT13-330DE | 330 | KT444F",
+        "| | 320/400 | WT13-360DE | 360 | KT544C",
+        "| | 360/450 | WT13A-390DE | 390 | KT544C"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory | KENT",
+      "header": [
+        "| genset type | rated output | engine | alternator",
+        "| KW/KVA | model | rated power | model"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | Y480BD | 14 | STC-12",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 26 | STC-16",
+        "| KT2-W25 | 20/25 | N4100DS-30 | 30 | STC20",
+        "| KT2-W30 | 24/30 | N4100DS-30 | 30 | STC24",
+        "| KT2-W38 | 30/38 | N4105DS-38 | 36 | STC30",
+        "| KT2-W45 | 36/45 | N4105DS-46 | 40 | STC36",
+        "| KT2-W50 | 40/50 | N4105ZDS | 56 | STC40",
+        "| KT2-W62 | 50/62 | N4105ZDS | 56 | STC50"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory | KENT",
+      "header": [
+        "| genset type | rated output | engine | alternator",
+        "| KW/KVA | model | rated power | model"
+      ],
+      "rows": [
+        "| KT2-W18 | 13/16 | Y480BD | 15 | KT164C",
+        "| KT2-W26 | 18/23 | N4100DS-30 | 33 | KT184ES",
+        "| KT2-W31 | 22/28 | N4100DS-30 | 33 | KT184E",
+        "| KT2-W37 | 27/33 | N4100DS-30 | 33 | KT184F",
+        "| KT2-W47 | 34/43 | N4105DS-38 | 42 | KT184H",
+        "| KT2-W55 | 40/50 | N4105DS-46 | 51 | KT224C",
+        "| KT2-W70 | 50/63 | N4105ZDS | 62 | KT224D",
+        "| KT2-W83 | 60/75 | N4105ZLDS | 73 | KT224E",
+        "| KT2-W92 | 66/83 | R4105BZLDS | 81 | KT224F",
+        "| KT2-W107 | 77/96 | R6105ZDS | 92 | KT224G",
+        "| KT2-W125 | 90/113 | R6105ZLDS | 110 | KT274C",
+        "| KT2-W153 | 110/138 | R6105AZLDS | 133 | KT274D",
+        "| KT2-W180 | 130/163 | R6105BZLDS | 145 | KT274E",
+        "| KT2-W222 | 160/200 | R6110ZLDS | 187 | KT274G",
+        "| KT2-W244 | 176/220 | 6126-68D | 206 | KT274G",
+        "| KT2-W278 | 200/250 | 6126-42D | 254 | KT274H",
+        "| KT2-W305 | 220/275 | 6126-42D | 254 | KT274J",
+        "| KT-W333 | 240/300 | 6126A-260DE | 275 | KT274K",
+        "| KT-W389 | 280/350 | WT12D-308E | 339 | KT444C"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "China KT-SDEC Series Diesel Generator Manufacture and Factory | KENT",
+      "header": [
+        "| Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | cyl | Bore | Storke | displacement | Governor | Open Type Dimension",
+        "| Standby Power | Prime Power | Cons 100%（L/H）",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Weight KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory |KENT",
+      "header": [
+        "| uhlobo lwe-genset | okukhiphayo okukaliwe | injini | i-alternator",
+        "| KW/KVA | imodeli | amandla alinganiselwe | imodeli"
+      ],
+      "rows": [
+        "| I-KT2-W17 | 12/15 | Y480BD | 14 | I-KT164D",
+        "| I-KT2-W22 | 16/20 | I-N4100DS-30 | 30 | I-KT184E",
+        "| I-KT2-W27 | 20/25 | I-N4100DS-30 | 30 | I-KT184F",
+        "| I-KT2-W32 | 24/30 | I-N4100DS-30 | 30 | I-KT184G",
+        "| I-KT2-W41 | 30/38 | I-N4105DS-38 | 38 | I-KT184H",
+        "| I-KT2-W50 | 36/45 | I-N4105DS-46 | 46 | I-KT224C",
+        "| I-KT2-W55 | 40/50 | I-N4105ZDS | 56 | I-KT224D",
+        "| I-KT2-W65 | 48/60 | I-N4105ZDS | 56 | I-KT224E",
+        "| I-KT2-W76 | 54/68 | I-N4105ZLDS | 66 | I-KT224F",
+        "| I-KT2-W83 | 60/75 | I-R4105BZLDS | 74 | I-KT224F",
+        "| I-KT2-W98 | 70/88 | I-R6105ZDS | 84 | I-KT224G",
+        "| I-KT2-W111 | 80/100 | I-R6105ZLDS | 100 | I-KT274C",
+        "| I-KT2-W137 | 100/125 | I-R6105AZLDS | 121 | I-KT274D",
+        "| I-KT2-W165 | 120/150 | I-R6105BZLDS | 132 | I-KT274F",
+        "| I-KT2-W200 | 150/187 | I-R6110ZLDS | 170 | I-KT274G",
+        "| I-KT2-W220 | 160/200 | 6126-68D | 187 | I-KT274H",
+        "| I-KT2-W225 | 180/225 | 6126-42D | 231 | I-KT274J",
+        "| I-KT2-W250 | 200/250 | 6126-42D | 231 | I-KT274K",
+        "| I-KT-W300 | 220/275 | 6126A-260DE | 250 | I-KT444D",
+        "| I-KT-W350 | 250/313 | I-WT12D-308E | 308 | I-KT444ES",
+        "| | 300/375 | I-WT13-330DE | 330 | I-KT444F",
+        "| | 320/400 | I-WT13-360DE | 360 | I-KT544C",
+        "| | 360/450 | I-WT13A-390DE | 390 | I-KT544C"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory |KENT",
+      "header": [
+        "| uhlobo lwe-genset | okukhiphayo okukaliwe | injini | i-alternator",
+        "| KW/KVA | imodeli | amandla alinganiselwe | imodeli"
+      ],
+      "rows": [
+        "| I-KT2-W17 | 12/15 | Y480BD | 14 | I-STC-12",
+        "| I-KT2-W22 | 16/20 | I-N4100DS-30 | 26 | I-STC-16",
+        "| I-KT2-W25 | 20/25 | I-N4100DS-30 | 30 | I-STC20",
+        "| I-KT2-W30 | 24/30 | I-N4100DS-30 | 30 | STC24",
+        "| I-KT2-W38 | 30/38 | I-N4105DS-38 | 36 | I-STC30",
+        "| I-KT2-W45 | 36/45 | I-N4105DS-46 | 40 | I-STC36",
+        "| I-KT2-W50 | 40/50 | I-N4105ZDS | 56 | I-STC40",
+        "| I-KT2-W62 | 50/62 | I-N4105ZDS | 56 | I-STC50"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory |KENT",
+      "header": [
+        "| uhlobo lwe-genset | okukhiphayo okukaliwe | injini | i-alternator",
+        "| KW/KVA | imodeli | amandla alinganiselwe | imodeli"
+      ],
+      "rows": [
+        "| I-KT2-W18 | 13/16 | Y480BD | 15 | I-KT164C",
+        "| I-KT2-W26 | 18/23 | I-N4100DS-30 | 33 | I-KT184ES",
+        "| I-KT2-W31 | 22/28 | I-N4100DS-30 | 33 | I-KT184E",
+        "| I-KT2-W37 | 27/33 | I-N4100DS-30 | 33 | I-KT184F",
+        "| I-KT2-W47 | 34/43 | I-N4105DS-38 | 42 | I-KT184H",
+        "| I-KT2-W55 | 40/50 | I-N4105DS-46 | 51 | I-KT224C",
+        "| I-KT2-W70 | 50/63 | I-N4105ZDS | 62 | I-KT224D",
+        "| I-KT2-W83 | 60/75 | I-N4105ZLDS | 73 | I-KT224E",
+        "| I-KT2-W92 | 66/83 | I-R4105BZLDS | 81 | I-KT224F",
+        "| I-KT2-W107 | 77/96 | I-R6105ZDS | 92 | I-KT224G",
+        "| I-KT2-W125 | 90/113 | I-R6105ZLDS | 110 | I-KT274C",
+        "| I-KT2-W153 | 110/138 | I-R6105AZLDS | 133 | I-KT274D",
+        "| I-KT2-W180 | 130/163 | I-R6105BZLDS | 145 | I-KT274E",
+        "| I-KT2-W222 | 160/200 | I-R6110ZLDS | 187 | I-KT274G",
+        "| I-KT2-W244 | 176/220 | 6126-68D | 206 | I-KT274G",
+        "| I-KT2-W278 | 200/250 | 6126-42D | 254 | I-KT274H",
+        "| I-KT2-W305 | 220/275 | 6126-42D | 254 | I-KT274J",
+        "| I-KT-W333 | 240/300 | 6126A-260DE | 275 | I-KT274K",
+        "| I-KT-W389 | 280/350 | I-WT12D-308E | 339 | I-KT444C"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "China KT-SDEC Series Diesel Generator Manufacture and Factory |KENT",
+      "header": [
+        "| Imodeli yeGenset | 50HZ PF=0.8 400/230V 3Phase 4Wire | Imodeli Yenjini | cyl | Bore | UStorke | ukufuduka | Umbusi | Vula Uhlobo Lobukhulu",
+        "| Amandla Okulinda | Amandla Ayinhloko | I-Cons 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H(MM) | Isisindo KG"
+      ],
+      "rows": [
+        "| I-KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| I-KT-SC88 | 88/70 | 80/64 | 19 | I-SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| I-KT-SC110 | 110/88 | 100/80 | 25 | I-SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| I-KT-SC125 | 125/100 | 113/90 | 25 | I-SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| I-KT-SC138 | 138/110 | 125/100 | 28.6 | I-SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| I-KT-SC165 | 165/132 | 150/120 | 36.5 | I-SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| I-KT-SC175 | 175/140 | 160/128 | 35.7 | I-SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| I-KT-SC185 | 185/148 | 169/135 | 36.5 | I-SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| I-KT-SC200 | 200/160 | 180/144 | 40.7 | I-SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| I-KT-SC206 | 206/165 | 188/150 | 39.9 | I-SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| I-KT-SC220 | 220/176 | 200/160 | 45 | I-SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| I-KT-SC250 | 250/200 | 225/180 | 49.6 | I-SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 1818",
+        "| I-KT-SC275 | 275/220 | 250/200 | 54.1 | I-SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 2028",
+        "| I-KT-SC330 | 330/264 | 300/240 | 70.4 | I-SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| I-KT-SC344 | 344/275 | 313/250 | 70.4 | I-SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| I-KT-SC385 | 385/308 | 350/280 | 71.6 | I-SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| I-KT-SC413 | 413/330 | 375/300 | 81.2 | I-SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| I-KT-SC500 | 500/400 | 450/360 | 100.4 | I-SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| I-KT-SC550 | 550/440 | 500/400 | 113.1 | I-SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| I-KT-SC605 | 605/484 | 550/440 | 125.6 | I-SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| I-KT-SC620 | 620/496 | 563/450 | 125.6 | I-SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| I-KT-SC688 | 688/550 | 625/500 | 141 | I-SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| I-KT-SC825 | 825/660 | 750/600 | 174.9 | I-SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| I-KT-SC950 | 950/760 | 875/700 | 210 | I-SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory |KENT",
+      "header": [
+        "| uhlobo lwegenset | imveliso rated | injini | ialternator",
+        "| KW/KVA | imodeli | amandla alinganisiwe | imodeli"
+      ],
+      "rows": [
+        "| I-KT2-W17 | 12/15 | Y480BD | 14 | I-KT164D",
+        "| I-KT2-W22 | 16/20 | N4100DS-30 | 30 | I-KT184E",
+        "| I-KT2-W27 | 20/25 | N4100DS-30 | 30 | I-KT184F",
+        "| I-KT2-W32 | 24/30 | N4100DS-30 | 30 | I-KT184G",
+        "| I-KT2-W41 | 30/38 | I-N4105DS-38 | 38 | I-KT184H",
+        "| I-KT2-W50 | 36/45 | I-N4105DS-46 | 46 | I-KT224C",
+        "| I-KT2-W55 | 40/50 | N4105ZDS | 56 | I-KT224D",
+        "| I-KT2-W65 | 48/60 | N4105ZDS | 56 | I-KT224E",
+        "| I-KT2-W76 | 54/68 | I-N4105ZLDS | 66 | I-KT224F",
+        "| I-KT2-W83 | 60/75 | R4105BZLDS | 74 | I-KT224F",
+        "| I-KT2-W98 | 70/88 | R6105ZDS | 84 | I-KT224G",
+        "| I-KT2-W111 | 80/100 | R6105ZLDS | I-100 | I-KT274C",
+        "| I-KT2-W137 | 100/125 | R6105AZLDS | 121 | I-KT274D",
+        "| I-KT2-W165 | 120/150 | R6105BZLDS | 132 | I-KT274F",
+        "| I-KT2-W200 | 150/187 | R6110ZLDS | 170 | I-KT274G",
+        "| I-KT2-W220 | 160/200 | 6126-68D | 187 | I-KT274H",
+        "| I-KT2-W225 | 180/225 | 6126-42D | 231 | I-KT274J",
+        "| I-KT2-W250 | 200/250 | 6126-42D | 231 | I-KT274K",
+        "| I-KT-W300 | 220/275 | 6126A-260DE | 250 | I-KT444D",
+        "| I-KT-W350 | 250/313 | I-WT12D-308E | 308 | I-KT444ES",
+        "| | 300/375 | I-WT13-330DE | 330 | I-KT444F",
+        "| | 320/400 | I-WT13-360DE | 360 | I-KT544C",
+        "| | 360/450 | I-WT13A-390DE | 390 | I-KT544C"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory |KENT",
+      "header": [
+        "| uhlobo lwegenset | imveliso rated | injini | ialternator",
+        "| KW/KVA | imodeli | amandla alinganisiwe | imodeli"
+      ],
+      "rows": [
+        "| I-KT2-W17 | 12/15 | Y480BD | 14 | STC-12",
+        "| I-KT2-W22 | 16/20 | N4100DS-30 | 26 | STC-16",
+        "| I-KT2-W25 | 20/25 | N4100DS-30 | 30 | STC20",
+        "| I-KT2-W30 | 24/30 | N4100DS-30 | 30 | STC24",
+        "| I-KT2-W38 | 30/38 | I-N4105DS-38 | 36 | STC30",
+        "| I-KT2-W45 | 36/45 | I-N4105DS-46 | 40 | STC36",
+        "| I-KT2-W50 | 40/50 | N4105ZDS | 56 | STC40",
+        "| I-KT2-W62 | 50/62 | N4105ZDS | 56 | STC50"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory |KENT",
+      "header": [
+        "| uhlobo lwegenset | imveliso rated | injini | ialternator",
+        "| KW/KVA | imodeli | amandla alinganisiwe | imodeli"
+      ],
+      "rows": [
+        "| I-KT2-W18 | 13/16 | Y480BD | 15 | I-KT164C",
+        "| I-KT2-W26 | 18/23 | N4100DS-30 | 33 | I-KT184ES",
+        "| I-KT2-W31 | 22/28 | N4100DS-30 | 33 | I-KT184E",
+        "| I-KT2-W37 | 27/33 | N4100DS-30 | 33 | I-KT184F",
+        "| I-KT2-W47 | 34/43 | I-N4105DS-38 | 42 | I-KT184H",
+        "| I-KT2-W55 | 40/50 | I-N4105DS-46 | 51 | I-KT224C",
+        "| I-KT2-W70 | 50/63 | N4105ZDS | 62 | I-KT224D",
+        "| I-KT2-W83 | 60/75 | I-N4105ZLDS | 73 | I-KT224E",
+        "| I-KT2-W92 | 66/83 | R4105BZLDS | 81 | I-KT224F",
+        "| I-KT2-W107 | 77/96 | R6105ZDS | 92 | I-KT224G",
+        "| I-KT2-W125 | 90/113 | R6105ZLDS | 110 | I-KT274C",
+        "| I-KT2-W153 | 110/138 | R6105AZLDS | 133 | I-KT274D",
+        "| I-KT2-W180 | 130/163 | R6105BZLDS | 145 | I-KT274E",
+        "| I-KT2-W222 | 160/200 | R6110ZLDS | 187 | I-KT274G",
+        "| I-KT2-W244 | 176/220 | 6126-68D | 206 | I-KT274G",
+        "| I-KT2-W278 | 200/250 | 6126-42D | 254 | I-KT274H",
+        "| I-KT2-W305 | 220/275 | 6126-42D | 254 | I-KT274J",
+        "| I-KT-W333 | 240/300 | 6126A-260DE | 275 | I-KT274K",
+        "| I-KT-W389 | 280/350 | I-WT12D-308E | 339 | I-KT444C"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "China KT-SDEC Series Diesel Generator Manufacture kunye Factory |KENT",
+      "header": [
+        "| Umzekelo weGenset | 50HZ PF=0.8 400/230V 3Phase 4Wire | Imodeli yeNjini | cyl | Bore | IStorke | ukufuduswa | Irhuluneli | Vula Uhlobo loMda",
+        "| Amandla okulinda | Prime Power | I-Cons 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H (MM) | Ubunzima KG"
+      ],
+      "rows": [
+        "| I-KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| I-KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| I-KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| I-KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| I-KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| I-KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| I-KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| I-KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| I-KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| I-KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| I-KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| I-KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 1818",
+        "| I-KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 2028",
+        "| I-KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| I-KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| I-KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| I-KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| I-KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| I-KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| I-KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| I-KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| I-KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| I-KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| I-KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Sìona KT Ricardo Series Diesel Generator Manufacture and Factory |CEANN",
+      "header": [
+        "| seòrsa genset | toradh air a mheas | einnsean | alternator",
+        "| KW/KVA | modail | cumhachd air a mheas | modail"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | Y480BD | 14 | KT164D",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 30 | KT184E",
+        "| KT2-W27 | 20/25 | N4100DS-30 | 30 | KT184F",
+        "| KT2-W32 | 24/30 | N4100DS-30 | 30 | KT184G",
+        "| KT2-W41 | 30/38 | N4105DS-38 | 38 | KT184H",
+        "| KT2-W50 | 36/45 | N4105DS-46 | 46 | KT224C",
+        "| KT2-W55 | 40/50 | N4105ZDS | 56 | KT224D",
+        "| KT2-W65 | 48/60 | N4105ZDS | 56 | KT224E",
+        "| KT2-W76 | 54/68 | N4105ZLDS | 66 | KT224F",
+        "| KT2-W83 | 60/75 | R4105BZLDS | 74 | KT224F",
+        "| KT2-W98 | 70/88 | R6105ZDS | 84 | KT224G",
+        "| KT2-W111 | 80/100 | R6105ZLDS | 100 | KT274C",
+        "| KT2-W137 | 100/125 | R6105AZLDS | 121 | KT274D",
+        "| KT2-W165 | 120/150 | R6105BZLDS | 132 | KT274F",
+        "| KT2-W200 | 150/187 | R6110ZLDS | 170 | KT274G",
+        "| KT2-W220 | 160/200 | 6126-68d | 187 | KT274H",
+        "| KT2-W225 | 180/225 | 6126-42d | 231 | KT274J",
+        "| KT2-W250 | 200/250 | 6126-42d | 231 | KT274K",
+        "| KT-W300 | 220/275 | 6126A-260DE | 250 | KT444D",
+        "| KT-W350 | 250/313 | WT12D-308E | 308 | KT444ES",
+        "| | 300/375 | WT13-330DE | 330 | KT444F",
+        "| | 320/400 | WT13-360DE | 360 | KT544C",
+        "| | 360/450 | WT13A-390DE | 390 | KT544C"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Sìona KT Ricardo Series Diesel Generator Manufacture and Factory |CEANN",
+      "header": [
+        "| seòrsa genset | toradh air a mheas | einnsean | alternator",
+        "| KW/KVA | modail | cumhachd air a mheas | modail"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | Y480BD | 14 | STC-12",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 26 | STC-16",
+        "| KT2-W25 | 20/25 | N4100DS-30 | 30 | STC20",
+        "| KT2-W30 | 24/30 | N4100DS-30 | 30 | STC24",
+        "| KT2-W38 | 30/38 | N4105DS-38 | 36 | STC30",
+        "| KT2-W45 | 36/45 | N4105DS-46 | 40 | STC36",
+        "| KT2-W50 | 40/50 | N4105ZDS | 56 | STC 40",
+        "| KT2-W62 | 50/62 | N4105ZDS | 56 | STC50"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Sìona KT Ricardo Series Diesel Generator Manufacture and Factory |CEANN",
+      "header": [
+        "| seòrsa genset | toradh air a mheas | einnsean | alternator",
+        "| KW/KVA | modail | cumhachd air a mheas | modail"
+      ],
+      "rows": [
+        "| KT2-W18 | 13/16 | Y480BD | 15 | KT164C",
+        "| KT2-W26 | 18/23 | N4100DS-30 | 33 | KT184ES",
+        "| KT2-W31 | 22/28 | N4100DS-30 | 33 | KT184E",
+        "| KT2-W37 | 27/33 | N4100DS-30 | 33 | KT184F",
+        "| KT2-W47 | 34/43 | N4105DS-38 | 42 | KT184H",
+        "| KT2-W55 | 40/50 | N4105DS-46 | 51 | KT224C",
+        "| KT2-W70 | 50/63 | N4105ZDS | 62 | KT224D",
+        "| KT2-W83 | 60/75 | N4105ZLDS | 73 | KT224E",
+        "| KT2-W92 | 66/83 | R4105BZLDS | 81 | KT224F",
+        "| KT2-W107 | 77/96 | R6105ZDS | 92 | KT224G",
+        "| KT2-W125 | 90/113 | R6105ZLDS | 110 | KT274C",
+        "| KT2-W153 | 110/138 | R6105AZLDS | 133 | KT274D",
+        "| KT2-W180 | 130/163 | R6105BZLDS | 145 | KT274E",
+        "| KT2-W222 | 160/200 | R6110ZLDS | 187 | KT274G",
+        "| KT2-W244 | 176/220 | 6126-68d | 206 | KT274G",
+        "| KT2-W278 | 200/250 | 6126-42d | 254 | KT274H",
+        "| KT2-W305 | 220/275 | 6126-42d | 254 | KT274J",
+        "| KT-W333 | 240/300 | 6126A-260DE | 275 | KT274K",
+        "| KT-W389 | 280/350 | WT12D-308E | 339 | KT444C"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "Tsieina KT-SDEC Cyfres Diesel Generator Gweithgynhyrchu a Ffatri |CENT",
+      "header": [
+        "| Model Genset | 50HZ PF=0.8 400/230V 3Cyfnod 4Wire | Model Injan | cyl | Bore | Strôc | dadleoli | Llywodraethwr | Dimensiwn Math Agored",
+        "| Pŵer Wrth Gefn | Prif Bwer | Anfanteision 100% （L/H）",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L × W × H （MM） | Pwysau KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Trydan. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Trydan. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Trydan. | 2000*930*1580 | 1115. llarieidd-dra eg",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Trydan. | 2000*930*1580 | 1135. llarieidd-dra eg",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Trydan. | 2150*930*1580 | 1170. llarieidd-dra eg",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Trydan. | 2460*980*1690 | 1410. llarieidd-dra eg",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Trydan. | 2490*1080*1800 | 1610. llarieidd-dra eg",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Trydan. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Trydan. | 2490*1080*1800 | 1660. llarieidd-dra eg",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Trydan. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Trydan. | 2490*1080*1800 | 1770. llarieidd-dra eg",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Trydan. | 2600*1080*1800 | 1818. llarieidd-dra eg",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Trydan. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Trydan. | 3040*1380*1880 | 2861. llarieidd-dra eg",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Trydan. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Trydan. | 3230*1180*1750 | 2841. llarieidd-dra eg",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Trydan. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Trydan. | 3630*1720*2230 | 4163. llarieidd-dra eg",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Trydan. | 3630*1720*2230 | 4271. llarieidd-dra eg",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Trydan. | 3630*1720*2230 | 4413. llarieidd-dra eg",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Trydan. | 3630*1720*2230 | 4413. llarieidd-dra eg",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Trydan. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Trydan. | 4360*1620*2140 | 6296. cenhedl",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Trydan. | 4360*1620*2140 | 6296. cenhedl"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "Čína KT Ricardo Series Diesel Generator Výroba a továreň |KENT",
+      "header": [
+        "| typ agregátu | menovitý výkon | motora | alternátor",
+        "| KW/KVA | Model | menovitý výkon | Model"
+      ],
+      "rows": [
+        "| KT2-W17 | 15. 12 | Y480BD | 14 | KT164D",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 30 | KT184E",
+        "| KT2-W27 | 20/25 | N4100DS-30 | 30 | KT184F",
+        "| KT2-W32 | 24/30 | N4100DS-30 | 30 | KT184G",
+        "| KT2-W41 | 30/38 | N4105DS-38 | 38 | KT184H",
+        "| KT2-W50 | 36/45 | N4105DS-46 | 46 | KT224C",
+        "| KT2-W55 | 40/50 | N4105ZDS | 56 | KT224D",
+        "| KT2-W65 | 48/60 | N4105ZDS | 56 | KT224E",
+        "| KT2-W76 | 54/68 | N4105ZLDS | 66 | KT224F",
+        "| KT2-W83 | 60/75 | R4105BZLDS | 74 | KT224F",
+        "| KT2-W98 | 70/88 | R6105ZDS | 84 | KT224G",
+        "| KT2-W111 | 80/100 | R6105ZLDS | 100 | KT274C",
+        "| KT2-W137 | 100/125 | R6105AZLDS | 121 | KT274D",
+        "| KT2-W165 | 120/150 | R6105BZLDS | 132 | KT274F",
+        "| KT2-W200 | 150/187 | R6110ZLDS | 170 | KT274G",
+        "| KT2-W220 | 160/200 | 6126-68D | 187 | KT274H",
+        "| KT2-W225 | 180/225 | 6126-42D | 231 | KT274J",
+        "| KT2-W250 | 200/250 | 6126-42D | 231 | KT274K",
+        "| KT-W300 | 220/275 | 6126A-260DE | 250 | KT444D",
+        "| KT-W350 | 250/313 | WT12D-308E | 308 | KT444ES",
+        "| | 300/375 | WT13-330DE | 330 | KT444F",
+        "| | 320/400 | WT13-360DE | 360 | KT544C",
+        "| | 360/450 | WT13A-390DE | 390 | KT544C"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "Čína KT Ricardo Series Diesel Generator Výroba a továreň |KENT",
+      "header": [
+        "| typ agregátu | menovitý výkon | motora | alternátor",
+        "| KW/KVA | Model | menovitý výkon | Model"
+      ],
+      "rows": [
+        "| KT2-W17 | 15. 12 | Y480BD | 14 | STC-12",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 26 | STC-16",
+        "| KT2-W25 | 20/25 | N4100DS-30 | 30 | STC20",
+        "| KT2-W30 | 24/30 | N4100DS-30 | 30 | STC24",
+        "| KT2-W38 | 30/38 | N4105DS-38 | 36 | STC30",
+        "| KT2-W45 | 36/45 | N4105DS-46 | 40 | STC36",
+        "| KT2-W50 | 40/50 | N4105ZDS | 56 | STC40",
+        "| KT2-W62 | 50/62 | N4105ZDS | 56 | STC50"
+      ]
+    },
+    {
+      "n": 128,
+      "title": "Shiinaha KT-SDEC Taxanaha Naaftada wax soo saarka iyo Warshada |KENT",
+      "header": [
+        "| Nooca Genset | 50HZ PF=0.8 400/230V 3 Wajiga 4 Wire | Qaabka Matoorka | cyl | Bore | Storke | barakac | Gudoomiye | Fur nooca cabbirka",
+        "| Awoodda Joogtada | Awoodda Koowaad | Qasaarooyinka 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H(MM) | Miisaanka KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490kii",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660kii",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490kii",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770kii",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 1818kii",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 130,
+      "title": "Čína Výroba a továreň dieselových generátorov radu KT-SDEC |KENT",
+      "header": [
+        "| Model generátora | 50HZ PF=0,8 400/230V 3fázový 4dr. | Model motora | cyl | Bore | Storke | posunutie | guvernér | Otvorený rozmer typu",
+        "| Pohotovostný režim | Prime Power | Nevýhody 100 % (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | D×Š×V（MM） | Hmotnosť KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8,82 | Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8,82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70,4 | SC13G420D2 | 6L | 135 | 150 | 12,88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70,4 | SC13G420D2 | 6L | 135 | 150 | 12,88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71,6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81,2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100,4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113,1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125,6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125,6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174,9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 135,
+      "title": "Haina KT-SDEC Series Diesel Generator Hangaia me te wheketere |KENT",
+      "header": [
+        "| Tauira Genset | 50HZ PF=0.8 400/230V Waea 3Waea 4 | Tauira Miihini | cyl | Poaka | Taaka | whakanekehanga | Kawana | Tuwhera Momo Ahu",
+        "| Mana Tatari | Te Mana Pirimia | He kino 100%（L/H）",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Taumaha KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Ko te Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Ko te Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Ko te Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Ko te Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Ko te Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Ko te Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Ko te Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Ko te Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Ko te Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Ko te Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Ko te Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Ko te Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Ko te Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Ko te Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Ko te Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Ko te Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Ko te Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Ko te Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Ko te Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Ko te Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Ko te Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Ko te Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Ko te Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Ko te Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 136,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture le Fektheri |KENT",
+      "header": [
+        "| mofuta oa genset | tlhahiso e lekantsoeng | enjene | alternator",
+        "| KW/KVA | mohlala | matla a lekantsoeng | mohlala"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | Y480BD | 14 | KT164D",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 30 | KT184E",
+        "| KT2-W27 | 20/25 | N4100DS-30 | 30 | KT184F",
+        "| KT2-W32 | 24/30 | N4100DS-30 | 30 | KT184G",
+        "| KT2-W41 | 30/38 | N4105DS-38 | 38 | KT184H",
+        "| KT2-W50 | 36/45 | N4105DS-46 | 46 | KT224C",
+        "| KT2-W55 | 40/50 | N4105ZDS | 56 | KT224D",
+        "| KT2-W65 | 48/60 | N4105ZDS | 56 | KT224E",
+        "| KT2-W76 | 54/68 | N4105ZLDS | 66 | KT224F",
+        "| KT2-W83 | 60/75 | R4105BZLDS | 74 | KT224F",
+        "| KT2-W98 | 70/88 | R6105ZDS | 84 | KT224G",
+        "| KT2-W111 | 80/100 | R6105ZLDS | 100 | KT274C",
+        "| KT2-W137 | 100/125 | R6105AZLDS | 121 | KT274D",
+        "| KT2-W165 | 120/150 | R6105BZLDS | 132 | KT274F",
+        "| KT2-W200 | 150/187 | R6110ZLDS | 170 | KT274G",
+        "| KT2-W220 | 160/200 | 6126-68D | 187 | KT274H",
+        "| KT2-W225 | 180/225 | 6126-42D | 231 | KT274J",
+        "| KT2-W250 | 200/250 | 6126-42D | 231 | KT274K",
+        "| KT-W300 | 220/275 | 6126A-260DE | 250 | KT444D",
+        "| KT-W350 | 250/313 | WT12D-308E | 308 | KT444ES",
+        "| | 300/375 | WT13-330DE | 330 | KT444F",
+        "| | 320/400 | WT13-360DE | 360 | KT544C",
+        "| | 360/450 | Setšoantšo sa WT13A-390DE | 390 | KT544C"
+      ]
+    },
+    {
+      "n": 137,
+      "title": "Ċina KT-SDEC Serje Diżil Ġeneratur Manifattura u Fabbrika |KENT",
+      "header": [
+        "| Mudell Genset | 50HZ PF=0.8 400/230V 3Phase 4Wire | Mudell tal-Magna | cil | Bore | Storke | spostament | Gvernatur | Dimensjoni tat-Tip Miftuħ",
+        "| Qawwa Standby | Qawwa Prim | Żvantaġġi 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Piż KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elett. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elett. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elett. | 2000 * 930 * 1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elett. | 2000 * 930 * 1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elett. | 2150 * 930 * 1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elett. | 2460 * 980 * 1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elett. | 2490 * 1080 * 1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elett. | 2460 * 980 * 1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elett. | 2490 * 1080 * 1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elett. | 2460 * 980 * 1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elett. | 2490 * 1080 * 1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elett. | 2600 * 1080 * 1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elett. | 2600 * 1080 * 1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elett. | 3040 * 1380 * 1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elett. | 3040 * 1380 * 1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elett. | 3230 * 1180 * 1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elett. | 3040 * 1380 * 1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elett. | 3630 * 1720 * 2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elett. | 3630 * 1720 * 2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elett. | 3630 * 1720 * 2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elett. | 3630 * 1720 * 2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elett. | 3630 * 1720 * 2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elett. | 4360 * 1620 * 2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elett. | 4360 * 1620 * 2140 | 6296"
+      ]
+    },
+    {
+      "n": 145,
+      "title": "China KT Ricardo Series Diesel Generator Manufacturing sy Factory |KENT",
+      "header": [
+        "| karazana genset | vokatra nomena | maotera | alternator",
+        "| KW/KVA | MODELY | fahefana nomena | MODELY"
+      ],
+      "rows": [
+        "| KT2-W17 | 15/12 | Y480BD | 14 | KT164D",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 30 | KT184E",
+        "| KT2-W27 | 20/25 | N4100DS-30 | 30 | KT184F",
+        "| KT2-W32 | 24/30 | N4100DS-30 | 30 | KT184G",
+        "| KT2-W41 | 30/38 | N4105DS-38 | 38 | KT184H",
+        "| KT2-W50 | 36/45 | N4105DS-46 | 46 | KT224C",
+        "| KT2-W55 | 40/50 | N4105ZDS | 56 | KT224D",
+        "| KT2-W65 | 48/60 | N4105ZDS | 56 | KT224E",
+        "| KT2-W76 | 54/68 | Sary N4105ZLDS | 66 | KT224F",
+        "| KT2-W83 | 60/75 | Sary R4105BZLDS | 74 | KT224F",
+        "| KT2-W98 | 70/88 | R6105ZDS | 84 | KT224G",
+        "| KT2-W111 | 80/100 | Sary R6105ZLDS | 100 | KT274C",
+        "| KT2-W137 | 100/125 | R6105AZLDS | 121 | KT274D",
+        "| KT2-W165 | 120/150 | Sary R6105BZLDS | 132 | KT274F",
+        "| KT2-W200 | 150/187 | Sary R6110ZLDS | 170 | KT274G",
+        "| KT2-W220 | 160/200 | 6126-68D | 187 | KT274H",
+        "| KT2-W225 | 180/225 | 6126-42D | 231 | KT274J",
+        "| KT2-W250 | 200/250 | 6126-42D | 231 | KT274K",
+        "| KT-W300 | 220/275 | 6126A-260DE | 250 | KT444D",
+        "| KT-W350 | 250/313 | WT12D-308E | 308 | KT444ES",
+        "| | 300/375 | WT13-330DE | 330 | KT444F",
+        "| | 320/400 | WT13-360DE | 360 | KT544C",
+        "| | 360/450 | Ampahany WT13A-390DE | 390 | KT544C"
+      ]
+    },
+    {
+      "n": 145,
+      "title": "China KT Ricardo Series Diesel Generator Manufacturing sy Factory |KENT",
+      "header": [
+        "| karazana genset | vokatra nomena | maotera | alternator",
+        "| KW/KVA | MODELY | fahefana nomena | MODELY"
+      ],
+      "rows": [
+        "| KT2-W17 | 15/12 | Y480BD | 14 | STC-12",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 26 | STC-16",
+        "| KT2-W25 | 20/25 | N4100DS-30 | 30 | STC20",
+        "| KT2-W30 | 24/30 | N4100DS-30 | 30 | STC24",
+        "| KT2-W38 | 30/38 | N4105DS-38 | 36 | STC30",
+        "| KT2-W45 | 36/45 | N4105DS-46 | 40 | STC36",
+        "| KT2-W50 | 40/50 | N4105ZDS | 56 | STC40",
+        "| KT2-W62 | 50/62 | N4105ZDS | 56 | STC50"
+      ]
+    },
+    {
+      "n": 145,
+      "title": "China KT Ricardo Series Diesel Generator Manufacturing sy Factory |KENT",
+      "header": [
+        "| karazana genset | vokatra nomena | maotera | alternator",
+        "| KW/KVA | MODELY | fahefana nomena | MODELY"
+      ],
+      "rows": [
+        "| KT2-W18 | 13/16 | Y480BD | 15 | KT164C",
+        "| KT2-W26 | 18/23 | N4100DS-30 | 33 | KT184ES",
+        "| KT2-W31 | 22/28 | N4100DS-30 | 33 | KT184E",
+        "| KT2-W37 | 27/33 | N4100DS-30 | 33 | KT184F",
+        "| KT2-W47 | 34/43 | N4105DS-38 | 42 | KT184H",
+        "| KT2-W55 | 40/50 | N4105DS-46 | 51 | KT224C",
+        "| KT2-W70 | 50/63 | N4105ZDS | 62 | KT224D",
+        "| KT2-W83 | 60/75 | Sary N4105ZLDS | 73 | KT224E",
+        "| KT2-W92 | 66/83 | Sary R4105BZLDS | 81 | KT224F",
+        "| KT2-W107 | 77/96 | R6105ZDS | 92 | KT224G",
+        "| KT2-W125 | 90/113 | Sary R6105ZLDS | 110 | KT274C",
+        "| KT2-W153 | 110/138 | R6105AZLDS | 133 | KT274D",
+        "| KT2-W180 | 130/163 | Sary R6105BZLDS | 145 | KT274E",
+        "| KT2-W222 | 160/200 | Sary R6110ZLDS | 187 | KT274G",
+        "| KT2-W244 | 176/220 | 6126-68D | 206 | KT274G",
+        "| KT2-W278 | 200/250 | 6126-42D | 254 | KT274H",
+        "| KT2-W305 | 220/275 | 6126-42D | 254 | KT274J",
+        "| KT-W333 | 240/300 | 6126A-260DE | 275 | KT274K",
+        "| KT-W389 | 280/350 | WT12D-308E | 339 | KT444C"
+      ]
+    },
+    {
+      "n": 147,
+      "title": "China KT Ricardo Serie Diesel Generator Fabrikatioun a Fabréck |KENT",
+      "header": [
+        "| Genset Typ | bewäert Ausgang | motor | Alternator",
+        "| KW/KVA | Modell | bewäert Kraaft | Modell"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | Y480BD | 14 | KT164D",
+        "| KT2-W22 | 16/20 | N4100DS-30 Fotoen | 30 | KT184E",
+        "| KT2-W27 | 20/25 | N4100DS-30 Fotoen | 30 | KT184F",
+        "| KT2-W32 | 24/30 | N4100DS-30 Fotoen | 30 | KT184G",
+        "| KT2-W41 | 30/38 | N4105DS-38 Präis | 38 | KT184H",
+        "| KT2-W50 | 36/45 | N4105DS-46 Präis | 46 | KT224C",
+        "| KT2-W55 | 40/50 | N4105ZDS Ubidder | 56 | KT224D",
+        "| KT2-W65 Fotoen | 48/60 | N4105ZDS Ubidder | 56 | KT224E",
+        "| KT2-W76 | 54/68 | N4105ZLDS Fotoen | 66 | KT224F",
+        "| KT2-W83 | 60/75 | R4105BZLDS Ubidder | 74 | KT224F",
+        "| KT2-W98 | 70/88 | R6105ZDS | 84 | KT224G",
+        "| KT2-W111 Ubidder | 80/100 | R6105ZLDS | 100 | KT274C",
+        "| KT2-W137 | 100/125 | R6105AZLDS | 121 | KT274D",
+        "| KT2-W165 Fotoen | 120/150 | R6105BZLDS Ubidder | 132 | KT274F",
+        "| KT2-W200 | 150/187 | R6110ZLDS | 170 | KT274G",
+        "| KT2-W220 Fotoen | 160/200 | 6126-68D | 187 | KT274H",
+        "| KT2-W225 | 180/225 | 6126-42D | 231 | KT274J",
+        "| KT2-W250 | 200/250 | 6126-42D | 231 | KT274K",
+        "| KT-W300 | 220/275 | Spezifikatioune vun 6126A-260DE | 250 | KT444D",
+        "| KT-W350 | 250/313 | WT12D-308E Fotoen | 308 | KT444ES",
+        "| | 300/375 | WT13-330DE Fotoen | 330 | KT444F",
+        "| | 320/400 | WT13-360DE Fotoen | 360 | KT544C",
+        "| | 360/450 | WT13A-390DE Fotoen | 390 | KT544C"
+      ]
+    },
+    {
+      "n": 147,
+      "title": "China KT Ricardo Serie Diesel Generator Fabrikatioun a Fabréck |KENT",
+      "header": [
+        "| Genset Typ | bewäert Ausgang | motor | Alternator",
+        "| KW/KVA | Modell | bewäert Kraaft | Modell"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | Y480BD | 14 | STC-12",
+        "| KT2-W22 | 16/20 | N4100DS-30 Fotoen | 26 | STC-16",
+        "| KT2-W25 | 20/25 | N4100DS-30 Fotoen | 30 | STC20",
+        "| KT2-W30 | 24/30 | N4100DS-30 Fotoen | 30 | STC24",
+        "| KT2-W38 | 30/38 | N4105DS-38 Präis | 36 | STC 30",
+        "| KT2-W45 | 36/45 | N4105DS-46 Präis | 40 | STC36",
+        "| KT2-W50 | 40/50 | N4105ZDS Ubidder | 56 | STC40",
+        "| KT2-W62 Fotoen | 50/62 | N4105ZDS Ubidder | 56 | STC50"
+      ]
+    },
+    {
+      "n": 147,
+      "title": "China KT Ricardo Serie Diesel Generator Fabrikatioun a Fabréck |KENT",
+      "header": [
+        "| Genset Typ | bewäert Ausgang | motor | Alternator",
+        "| KW/KVA | Modell | bewäert Kraaft | Modell"
+      ],
+      "rows": [
+        "| KT2-W18 | 13/16 | Y480BD | 15 | KT164C",
+        "| KT2-W26 | 18/23 | N4100DS-30 Fotoen | 33 | KT184ES",
+        "| KT2-W31 | 22/28 | N4100DS-30 Fotoen | 33 | KT184E",
+        "| KT2-W37 | 27/33 | N4100DS-30 Fotoen | 33 | KT184F",
+        "| KT2-W47 | 34/43 | N4105DS-38 Präis | 42 | KT184H",
+        "| KT2-W55 | 40/50 | N4105DS-46 Präis | 51 | KT224C",
+        "| KT2-W70 | 50/63 | N4105ZDS Ubidder | 62 | KT224D",
+        "| KT2-W83 | 60/75 | N4105ZLDS Fotoen | 73 | KT224E",
+        "| KT2-W92 | 66/83 | R4105BZLDS Ubidder | 81 | KT224F",
+        "| KT2-W107 | 77/96 | R6105ZDS | 92 | KT224G",
+        "| KT2-W125 | 90/113 | R6105ZLDS | 110 | KT274C",
+        "| KT2-W153 | 110/138 | R6105AZLDS | 133 | KT274D",
+        "| KT2-W180 Fotoen | 130/163 | R6105BZLDS Ubidder | 145 | KT274E",
+        "| KT2-W222 | 160/200 | R6110ZLDS | 187 | KT274G",
+        "| KT2-W244 Ubidder | 176/220 | 6126-68D | 206 | KT274G",
+        "| KT2-W278 | 200/250 | 6126-42D | 254 | KT274H",
+        "| KT2-W305 | 220/275 | 6126-42D | 254 | KT274J",
+        "| KT-W333 | 240/300 | Spezifikatioune vun 6126A-260DE | 275 | KT274K",
+        "| KT-W389 | 280/350 | WT12D-308E Fotoen | 339 | KT444C"
+      ]
+    },
+    {
+      "n": 149,
+      "title": "Ķīnas KT Ricardo sērijas dīzeļa ģeneratoru ražošana un rūpnīca |KENT",
+      "header": [
+        "| ģenseta tips | nominālā jauda | dzinējs | ģenerators",
+        "| KW/KVA | modelis | nominālā jauda | modelis"
+      ],
+      "rows": [
+        "| KT2-W18 | 13/16 | Y480BD | 15 | KT164C",
+        "| KT2-W26 | 23.18 | N4100DS-30 | 33 | KT184ES",
+        "| KT2-W31 | 22/28 | N4100DS-30 | 33 | KT184E",
+        "| KT2-W37 | 27/33 | N4100DS-30 | 33 | KT184F",
+        "| KT2-W47 | 34/43 | N4105DS-38 | 42 | KT184H",
+        "| KT2-W55 | 40/50 | N4105DS-46 | 51 | KT224C",
+        "| KT2-W70 | 50/63 | N4105ZDS | 62 | KT224D",
+        "| KT2-W83 | 60/75 | N4105ZLDS | 73 | KT224E",
+        "| KT2-W92 | 66/83 | R4105BZLDS | 81 | KT224F",
+        "| KT2-W107 | 77/96 | R6105ZDS | 92 | KT224G",
+        "| KT2-W125 | 90/113 | R6105ZLDS | 110 | KT274C",
+        "| KT2-W153 | 110/138 | R6105AZLDS | 133 | KT274D",
+        "| KT2-W180 | 130/163 | R6105BZLDS | 145 | KT274E",
+        "| KT2-W222 | 160/200 | R6110ZLDS | 187 | KT274G",
+        "| KT2-W244 | 176/220 | 6126-68D | 206 | KT274G",
+        "| KT2-W278 | 200/250 | 6126-42D | 254 | KT274H",
+        "| KT2-W305 | 220/275 | 6126-42D | 254 | KT274J",
+        "| KT-W333 | 240/300 | 6126A-260DE | 275 | KT274K",
+        "| KT-W389 | 280/350 | WT12D-308E | 339 | KT444C"
+      ]
+    },
+    {
+      "n": 150,
+      "title": "China KT Ricardo Series Diesel Generator Manufacture and Factory |CANTIUM",
+      "header": [
+        "| genset type | rated output | engine | alternator",
+        "| KW/KVA | exemplum | rated potestas | exemplum"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | Y480BD | 14 | KT164D",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 30 | KT184E",
+        "| KT2-W27 | 20/25 | N4100DS-30 | 30 | KT184F",
+        "| KT2-W32 | 24/30 | N4100DS-30 | 30 | KT184G",
+        "| KT2-W41 | 30/38 | N4105DS-38 | 38 | KT184H",
+        "| KT2-W50 | 36/45 | N4105DS-46 | 46 | KT224C",
+        "| KT2-W55 | 40/50 | N4105ZDS | 56 | KT224D",
+        "| KT2-W65 | 48/60 | N4105ZDS | 56 | KT224E",
+        "| KT2-W76 | 54/68 | N4105ZLDS | 66 | KT224F",
+        "| KT2-W83 | 60/75 | R4105BZLDS | 74 | KT224F",
+        "| KT2-W98 | 70/88 | R6105ZDS | 84 | KT224G",
+        "| KT2-W111 | 80/100 | R6105ZLDS | 100 | KT274C",
+        "| KT2-W137 | 100/125 | R6105AZLDS | 121 | KT274D",
+        "| KT2-W165 | 120/150 | R6105BZLDS | 132 | KT274F",
+        "| KT2-W200 | 150/187 | R6110ZLDS | 170 | KT274G",
+        "| KT2-W220 | 160/200 | 6126-68D | 187 | KT274H",
+        "| KT2-W225 | 180/225 | 6126-42D | 231 | KT274J",
+        "| KT2-W250 | 200/250 | 6126-42D | 231 | KT274K",
+        "| KT-W300 | 220/275 | 6126A-260DE | 250 | KT444D",
+        "| KT-W350 | 250/313 | WT12D-308E | 308 | KT444ES",
+        "| | 300/375 | WT13-30DE | 330 | KT444F",
+        "| | 320/400 | WT13-60DE | 360 | KT544C",
+        "| | 360/450 | WT13A-390DE | 390 | KT544C"
+      ]
+    },
+    {
+      "n": 154,
+      "title": "Kína KT Ricardo Series Diesel Generator Framleiðsla og verksmiðja |KENT",
+      "header": [
+        "| tegund gensets | metið framleiðsla | vél | alternator",
+        "| KW/KVA | fyrirmynd | nafnafli | fyrirmynd"
+      ],
+      "rows": [
+        "| KT2-W17 | 15/12 | Y480BD | 14 | KT164D",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 30 | KT184E",
+        "| KT2-W27 | 20/25 | N4100DS-30 | 30 | KT184F",
+        "| KT2-W32 | 24/30 | N4100DS-30 | 30 | KT184G",
+        "| KT2-W41 | 30/38 | N4105DS-38 | 38 | KT184H",
+        "| KT2-W50 | 36/45 | N4105DS-46 | 46 | KT224C",
+        "| KT2-W55 | 40/50 | N4105ZDS | 56 | KT224D",
+        "| KT2-W65 | 48/60 | N4105ZDS | 56 | KT224E",
+        "| KT2-W76 | 54/68 | N4105ZLDS | 66 | KT224F",
+        "| KT2-W83 | 60/75 | R4105BZLDS | 74 | KT224F",
+        "| KT2-W98 | 70/88 | R6105ZDS | 84 | KT224G",
+        "| KT2-W111 | 80/100 | R6105ZLDS | 100 | KT274C",
+        "| KT2-W137 | 100/125 | R6105AZLDS | 121 | KT274D",
+        "| KT2-W165 | 120/150 | R6105BZLDS | 132 | KT274F",
+        "| KT2-W200 | 150/187 | R6110ZLDS | 170 | KT274G",
+        "| KT2-W220 | 160/200 | 6126-68D | 187 | KT274H",
+        "| KT2-W225 | 180/225 | 6126-42D | 231 | KT274J",
+        "| KT2-W250 | 200/250 | 6126-42D | 231 | KT274K",
+        "| KT-W300 | 220/275 | 6126A-260DE | 250 | KT444D",
+        "| KT-W350 | 250/313 | WT12D-308E | 308 | KT444ES",
+        "| | 300/375 | WT13-330DE | 330 | KT444F",
+        "| | 320/400 | WT13-360DE | 360 | KT544C",
+        "| | 360/450 | WT13A-390DE | 390 | KT544C"
+      ]
+    },
+    {
+      "n": 154,
+      "title": "Kína KT Ricardo Series Diesel Generator Framleiðsla og verksmiðja |KENT",
+      "header": [
+        "| tegund gensets | metið framleiðsla | vél | alternator",
+        "| KW/KVA | fyrirmynd | nafnafli | fyrirmynd"
+      ],
+      "rows": [
+        "| KT2-W18 | 13/16 | Y480BD | 15 | KT164C",
+        "| KT2-W26 | 23/18 | N4100DS-30 | 33 | KT184ES",
+        "| KT2-W31 | 22/28 | N4100DS-30 | 33 | KT184E",
+        "| KT2-W37 | 27/33 | N4100DS-30 | 33 | KT184F",
+        "| KT2-W47 | 34/43 | N4105DS-38 | 42 | KT184H",
+        "| KT2-W55 | 40/50 | N4105DS-46 | 51 | KT224C",
+        "| KT2-W70 | 50/63 | N4105ZDS | 62 | KT224D",
+        "| KT2-W83 | 60/75 | N4105ZLDS | 73 | KT224E",
+        "| KT2-W92 | 66/83 | R4105BZLDS | 81 | KT224F",
+        "| KT2-W107 | 77/96 | R6105ZDS | 92 | KT224G",
+        "| KT2-W125 | 90/113 | R6105ZLDS | 110 | KT274C",
+        "| KT2-W153 | 110/138 | R6105AZLDS | 133 | KT274D",
+        "| KT2-W180 | 130/163 | R6105BZLDS | 145 | KT274E",
+        "| KT2-W222 | 160/200 | R6110ZLDS | 187 | KT274G",
+        "| KT2-W244 | 176/220 | 6126-68D | 206 | KT274G",
+        "| KT2-W278 | 200/250 | 6126-42D | 254 | KT274H",
+        "| KT2-W305 | 220/275 | 6126-42D | 254 | KT274J",
+        "| KT-W333 | 240/300 | 6126A-260DE | 275 | KT274K",
+        "| KT-W389 | 280/350 | WT12D-308E | 339 | KT444C"
+      ]
+    },
+    {
+      "n": 155,
+      "title": "China KT-SDEC Series Diesel Generator Manufacture sy Factory |KENT",
+      "header": [
+        "| Modely Genset | 50HZ PF=0.8 400/230V 3 Phase 4 Wire | Modely motera | cyl | niteraka | Storke | famindran-toerana | governora | Open Type Dimension",
+        "| Hery mijoro | Prime Power | Ny ratsy 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Lanja KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | Sary SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | Sary SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | Sary SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | Sary SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | Sary SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | Sary SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | Sary SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | Sary SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | Sary SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | Sary SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | Sary SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | Sary SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | Sary SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | Sary SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | Sary SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | Sary SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 157,
+      "title": "Tuam Tshoj KT Ricardo Series Diesel Generator Chaw tsim tshuaj paus thiab Hoobkas |KENT",
+      "header": [
+        "| yam genset | rated tso zis | cav | alternator",
+        "| KW/KVA | qauv | rated zog | qauv"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | y480 wb | 14 | KT164D",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 30 | KT 184 E",
+        "| KT2-W27 | 20/25 | N4100DS-30 | 30 | KT184 F",
+        "| KT2-W32 | 24/30 ib | N4100DS-30 | 30 | KT184G",
+        "| KT2-W41 | 30/38 ib | N4105DS-38 | 38 | KT 184 H",
+        "| KT2-W50 | 36/45 ib | N4105DS-46 | 46 | KT 224 C",
+        "| KT2-W55 | 40/50 ib | N4105 ZOS | 56 | KT 224D",
+        "| KT2-W65 | 48/60 ib | N4105 ZOS | 56 | KT 224 E",
+        "| KT2-W76 | 54/68 ib | N4105 ZLDS | 66 | KT 224 F",
+        "| KT2-W83 | 60/75 ib | R4105 ZPO | 74 | KT 224 F",
+        "| KT2-W98 | 70/88 ib | R6105 ZOS | 84 | KT 224 G",
+        "| KT2-W111 | 80/100 | R6105 ZLDS | 100 | KT 274 C",
+        "| KT2-W137 | 100/125 | R6105 AZLDS | 121 | KT274D",
+        "| KT2-W165 | 120/150 | R6105 ZPO | 132 | KT 274 F",
+        "| KT2-W200 | 150/187 ib | R6110 ZLDS | 170 | KT274G",
+        "| KT2-W220 | 160/200 ib | 6126-68D ib | 187 | KT 274 H",
+        "| KT2-W225 | 180/225 ib | 6126-42D ib | 231 | KT274J",
+        "| KT2-W250 | 200/250 | 6126-42D ib | 231 | KT274K",
+        "| KT-W 300 | 220/275 ib | 6126A-260 UAS | 250 | KT444D",
+        "| KT-W 350 | 250/313 ib | WT12D-308E | 308 | KT444 ES",
+        "| | 300/375 ib | WT13-330 UAS | 330 | KT444F",
+        "| | 320/400 ib | WT13-360 DE | 360 | KT544C",
+        "| | 360/450 | WT13A-390 DE | 390 | KT544C"
+      ]
+    },
+    {
+      "n": 157,
+      "title": "Tuam Tshoj KT Ricardo Series Diesel Generator Chaw tsim tshuaj paus thiab Hoobkas |KENT",
+      "header": [
+        "| yam genset | rated tso zis | cav | alternator",
+        "| KW/KVA | qauv | rated zog | qauv"
+      ],
+      "rows": [
+        "| KT2-W17 | 12/15 | y480 wb | 14 | STC-12",
+        "| KT2-W22 | 16/20 | N4100DS-30 | 26 | STC-16",
+        "| KT2-W25 | 20/25 | N4100DS-30 | 30 | STC 20",
+        "| KT2-W30 | 24/30 ib | N4100DS-30 | 30 | STC 24",
+        "| KT2-W38 | 30/38 ib | N4105DS-38 | 36 | STC 30",
+        "| KT2-W45 | 36/45 ib | N4105DS-46 | 40 | STC36",
+        "| KT2-W50 | 40/50 ib | N4105 ZOS | 56 | STC 40",
+        "| KT2-W62 | 50/62 ib | N4105 ZOS | 56 | STC 50"
+      ]
+    },
+    {
+      "n": 157,
+      "title": "Tuam Tshoj KT Ricardo Series Diesel Generator Chaw tsim tshuaj paus thiab Hoobkas |KENT",
+      "header": [
+        "| yam genset | rated tso zis | cav | alternator",
+        "| KW/KVA | qauv | rated zog | qauv"
+      ],
+      "rows": [
+        "| KT2-W18 | 13/16 | y480 wb | 15 | KT 164 C",
+        "| KT2-W26 | 18/23 | N4100DS-30 | 33 | KT184 ES",
+        "| KT2-W31 | 22/28 ib | N4100DS-30 | 33 | KT 184 E",
+        "| KT2-W37 | 27/33 ib | N4100DS-30 | 33 | KT184 F",
+        "| KT2-W47 | 34/43 ib | N4105DS-38 | 42 | KT 184 H",
+        "| KT2-W55 | 40/50 ib | N4105DS-46 | 51 | KT 224 C",
+        "| KT2-W70 | 50/63 ib | N4105 ZOS | 62 | KT 224D",
+        "| KT2-W83 | 60/75 ib | N4105 ZLDS | 73 | KT 224 E",
+        "| KT2-W92 | 66/83 ib | R4105 ZPO | 81 | KT 224 F",
+        "| KT2-W107 | 77/96 ib | R6105 ZOS | 92 | KT 224 G",
+        "| KT2-W125 | 90/113 ib | R6105 ZLDS | 110 | KT 274 C",
+        "| KT2-W153 | 110/138 ib | R6105 AZLDS | 133 | KT274D",
+        "| KT2-W180 | 130/163 ib | R6105 ZPO | 145 | KT 274 E",
+        "| KT2-W222 | 160/200 ib | R6110 ZLDS | 187 | KT274G",
+        "| KT2-W244 | 176/220 ib | 6126-68D ib | 206 | KT274G",
+        "| KT2-W278 | 200/250 | 6126-42D ib | 254 | KT 274 H",
+        "| KT2-W305 | 220/275 ib | 6126-42D ib | 254 | KT274J",
+        "| KT-W333 | 240/300 ib | 6126A-260 UAS | 275 | KT274K",
+        "| KT-W389 | 280/350 ib | WT12D-308E | 339 ib | KT 444 C"
+      ]
+    },
+    {
+      "n": 159,
+      "title": "China KT-SDEC Serie Diesel Generator Fabrikatioun a Fabréck |KENT",
+      "header": [
+        "| Genset Modell | 50HZ PF=0.8 400/230V 3-Phase 4 Wire | Motor Modell | cyl | Bore | Storke | Verlagerung | Gouverneur | Open Typ Dimensioun",
+        "| Standby Power | Prime Power | Cons 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Gewiicht KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36,5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35,7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36,5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40,7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39,9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49,6 | SC9D310D2 | 6L | 114 | 144 | 8,82 | Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8,82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70,4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70,4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71,6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81,2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100,4 | SC25G610D2 | 12 V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12 V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125,6 | SC27G755D2 | 12 V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125,6 | SC27G755D2 | 12 V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12 V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174,9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 160,
+      "title": "Kinijos KT-SDEC serijos dyzelinių generatorių gamyba ir gamykla |KENT",
+      "header": [
+        "| Genset modelis | 50 HZ PF = 0,8 400/230 V 3 fazių 4 laidų | Variklio modelis | cil | Gręžimas | Gandras | poslinkis | gubernatorius | Atidarykite tipo matmenis",
+        "| Maitinimas budėjimo režimu | Pirminė galia | Minusai 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | P × P × A (MM) | Svoris KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | El. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | El. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | El. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | El. | 2000*930*1580 | 1135 m",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | El. | 2150*930*1580 | 1170 m",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | El. | 2460*980*1690 | 1410 m",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | El. | 2490*1080*1800 | 1610 m",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | El. | 2460*980*1690 | 1490 m",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | El. | 2490*1080*1800 | 1660 m",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | El. | 2460*980*1690 | 1490 m",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | El. | 2490*1080*1800 | 1770 m",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | El. | 2600*1080*1800 | 1818 m",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | El. | 2600*1080*1800 | 2028 m",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | El. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | El. | 3040*1380*1880 | 2941 m",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | El. | 3230*1180*1750 | 2841 m",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | El. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | El. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | El. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | El. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | El. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | El. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174,9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | El. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | El. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 161,
+      "title": "Ķīnas KT-SDEC sērijas dīzeļa ģeneratoru ražošana un rūpnīca |KENT",
+      "header": [
+        "| Genset modelis | 50 HZ PF=0,8 400/230 V 3 fāzu 4 vadu | Dzinēja modelis | cil | Urbums | Stārķis | pārvietošanās | gubernators | Atveriet tipa izmēru",
+        "| Gaidstāves barošana | Galvenā jauda | Mīnusi 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | G × P × A (MM) | Svars KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elektr. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elektr. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elektr. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elektr. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elektr. | 2150*930*1580 | 1170. gads",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elektr. | 2460*980*1690 | 1410. gads",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elektr. | 2490*1080*1800 | 1610. gads",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elektr. | 2460*980*1690 | 1490. gads",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elektr. | 2490*1080*1800 | 1660. gads",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elektr. | 2460*980*1690 | 1490. gads",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elektr. | 2490*1080*1800 | 1770. gads",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elektr. | 2600*1080*1800 | 1818. gads",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elektr. | 2600*1080*1800 | 2028. gads",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elektr. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elektr. | 3040*1380*1880 | 2941. gads",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elektr. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elektr. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elektr. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elektr. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elektr. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elektr. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elektr. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elektr. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elektr. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 164,
+      "title": "Çîn KT-SDEC Series Çêkirin û Fabrîkaya Generatorê Mazotê |KENT",
+      "header": [
+        "| Modela Genset | 50HZ PF=0,8 400/230V 3Phase 4Wire | Modela motorê | cyl | Kolîn | Storke | jicîhûwarkirin | Walî | Pîvana Tîpa Vekirî",
+        "| Standby Power | Hêza Serokwezîr | Kêmasî 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Giraniya KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174,9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 167,
+      "title": "Kína KT-SDEC Series Diesel Generator Framleiðsla og verksmiðja |KENT",
+      "header": [
+        "| Genset líkan | 50HZ PF=0,8 400/230V 3fasa 4víra | Vélargerð | cyl | Bore | Storke | tilfærslu | ríkisstjóri | Opna tegundarvídd",
+        "| Standby Power | Prime Power | Gallar 100%（L/H）",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×B×H（MM） | Þyngd KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36,5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35,7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36,5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40,7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39,9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49,6 | SC9D310D2 | 6L | 114 | 144 | 8,82 | Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54,1 | SC9D340D2 | 6L | 114 | 144 | 8,82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70,4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70,4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71,6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81,2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100,4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113,1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125,6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125,6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174,9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 168,
+      "title": "Tuam Tshoj KT-SDEC Series Diesel Generator Chaw tsim tshuaj paus thiab Hoobkas |KENT",
+      "header": [
+        "| Genset Qauv | 50HZ PF = 0.8 400/230V 3phase 4Wire | Cav Qauv | cil | Npog | Storke | hloov chaw | Tus tswv xeev | Qhib Hom Dimension",
+        "| Standby Fais Fab | Prime hwj chim | Cons 100% (L / H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L × W × H (MM) | Nyhav KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 ib | 63/50 ib | 15.1 | SC4H95D 2 | 4L | 105 | 124 | 4.3 | Elec. | 1980 * 880 * 1510 | 960 ua",
+        "| KT-SC88 | 88/70 ib | 80/64 ib | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980 * 880 * 1510 | 1020",
+        "| KT-SC110 | 110/88 ib | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000 * 930 * 1580 hli | 1115",
+        "| KT-SC125 | 125/100 ib | 113/90 ib | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000 * 930 * 1580 hli | 1135 ib",
+        "| KT-SC138 | 138/110 ib | 125/100 ib | 28.6 ib | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150 * 930 * 1580 hli | 1170 ib",
+        "| KT-SC165 | 165/132 ib | 150/120 | 36.5 ib | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460 * 980 * 1690 hli | 1410",
+        "| KT-SC175 | 175/140 ib | 160/128 ib | 35.7 ib | SC8D220D2 | 6L | 114 | 135 | 8.27 ib | Elec. | 2490 * 1080 * 1800 hli | 1610",
+        "| KT-SC185 | 185/148 ib | 169/135 ib | 36.5 ib | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460 * 980 * 1690 hli | 1490 ib",
+        "| KT-SC200 | 200/160 | 180/144 ib | 40.7 ua | SC8D250D2 | 6L | 114 | 135 | 8.27 ib | Elec. | 2490 * 1080 * 1800 hli | 1660",
+        "| KT-SC206 | 206/165 ib | 188/150 ib | 39.9 ib | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460 * 980 * 1690 hli | 1490 ib",
+        "| KT-SC220 | 220/176 ib | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 ib | Elec. | 2490 * 1080 * 1800 hli | 1770 ib",
+        "| KT-SC250 | 250/200 | 225/180 ib | 49.6 ib | TIAB SA 9D310D2 | 6L | 114 | 144 | 8.82 ib | Elec. | 2600 * 1080 * 1800 hli | 1818",
+        "| KT-SC275 | 275/220 ib | 250/200 | 54.1 ib | TIAB SA 9D340D2 | 6L | 114 | 144 | 8.82 ib | Elec. | 2600 * 1080 * 1800 hli | 2028",
+        "| KT-SC330 | 330/264 ib | 300/240 | 70.4 ua | SC13G420D2 | 6L | 135 | 150 | 12.88 Nws | Elec. | 3040 * 1380 * 1880 | 2861 ib",
+        "| KT-SC344 | 344/275 ib | 313/250 ib | 70.4 ua | SC13G420D2 | 6L | 135 | 150 | 12.88 Nws | Elec. | 3040 * 1380 * 1880 | 2941 ib",
+        "| KT-SC385 | 385/308 ib | 350/280 ib | 71.6 ib | SC12E460D2 | 6L | 128 | 153 | 11.8 ib | Elec. | 3230 * 1180 * 1750 hli | 2841 ib",
+        "| KT-SC413 | 413/330 ib | 375/300 ib | 81.2 ib | SC15G500D2 | 6L | 135 | 165 | 14.16 Nws | Elec. | 3040 * 1380 * 1880 | ib 3069",
+        "| KT-SC500 | 500/400 | 450/360 ib | 100.4 | SC25G610D2 | 12 v | 135 | 150 | 25.8 ib | Elec. | 3630 * 1720 * 2230 hli | ib 4163",
+        "| KT-SC550 | 550/440 ib | 500/400 | 113.1 ib | SC25G690D2 | 12 v | 135 | 150 | 25.8 ib | Elec. | 3630 * 1720 * 2230 hli | 4271 ib",
+        "| KT-SC605 | 605/484 ib | 550/440 ib | 125.6 ib | SC27G755D2 | 12 v | 135 | 150 | 26.6 ib | Elec. | 3630 * 1720 * 2230 hli | ib 4413",
+        "| KT-SC620 | 620/496 ib | 563/450 ib | 125.6 ib | SC27G755D2 | 12 v | 135 | 150 | 26.6 ib | Elec. | 3630 * 1720 * 2230 hli | ib 4413",
+        "| KT-SC688 | 688/550 ib | 625/500 ib | 141 | SC27G830D2 | 12 v | 135 | 155 | 26.6 ib | Elec. | 3630 * 1720 * 2230 hli | ib 4553",
+        "| KT-SC825 | 825/660 ib | 750/600 ib | 174.9 ib | SC33W990D2 | 6L | 180 | 215 | 32.8 ib | Elec. | 4360 * 1620 * 2140 hli | 6296 ib",
+        "| KT-SC950 | 950/760 ib | 875/700 ib | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 ib | Elec. | 4360 * 1620 * 2140 hli | 6296 ib"
+      ]
+    },
+    {
+      "n": 170,
+      "title": "Kina KT-SDEC Series Diesel Generator Manufacture and Factory |KENT",
+      "header": [
+        "| Ke Ana Hoʻohālike Genset | 50HZ PF=0.8 400/230V 3Phase 4Uea | Hoʻohālike ʻenekini | cyl | ʻAha | Storke | ka hoʻoneʻe ʻana | Kiaaina | Wehe ʻAno Ana",
+        "| Mana Kū | Mana Nui | He 100%（L/H）",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Kaumaha KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | ʻO Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | ʻO Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | ʻO Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | ʻO Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | ʻO Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | ʻO Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | ʻO Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | ʻO Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | ʻO Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | ʻO Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | ʻO Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | ʻO Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | ʻO Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | ʻO Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | ʻO Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | ʻO Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | ʻO Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | ʻO Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | ʻO Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | ʻO Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | ʻO Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | ʻO Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | ʻO Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | ʻO Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 171,
+      "title": "Lachin KT-SDEC Seri Diesel dèlko fabrikasyon ak faktori |KENT",
+      "header": [
+        "| Genset Modèl | 50HZ PF = 0.8 400/230V 3Phase 4Wire | Modèl motè | sil | raz | Storke | deplasman | Gouvènè | Louvri Kalite Dimansyon",
+        "| Sispansyon pouvwa | Premye pouvwa | Dezavantaj 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Pwa KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elekt. | 1980 * 880 * 1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elekt. | 1980 * 880 * 1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elekt. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elekt. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elekt. | 2150 * 930 * 1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elekt. | 2460 * 980 * 1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elekt. | 2490 * 1080 * 1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elekt. | 2460 * 980 * 1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elekt. | 2490 * 1080 * 1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elekt. | 2460 * 980 * 1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elekt. | 2490 * 1080 * 1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elekt. | 2600 * 1080 * 1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elekt. | 2600 * 1080 * 1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elekt. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elekt. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elekt. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elekt. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elekt. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elekt. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elekt. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elekt. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elekt. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elekt. | 4360 * 1620 * 2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elekt. | 4360 * 1620 * 2140 | 6296"
+      ]
+    },
+    {
+      "n": 173,
+      "title": "ჩინეთის KT-SDEC სერიის დიზელის გენერატორის წარმოება და ქარხანა |კენტ",
+      "header": [
+        "| გენსეტი მოდელი | 50HZ PF=0.8 400/230V 3ფაზიანი 4მავთული | ძრავის მოდელი | ცილი | მოწყენილი | სტორკი | გადაადგილება | გუბერნატორი | ღია ტიპის განზომილება",
+        "| ლოდინის სიმძლავრე | Prime Power | მინუსები 100% (L/H)",
+        "| კვა/კვტ | კვა/კვტ | MM | MM | L | | L×W×H(MM) | წონა კგ"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | ელექ. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | ელექ. | 1980*880*1510 | 1020 წ",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | ელექ. | 2000*930*1580 | 1115 წ",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | ელექ. | 2000*930*1580 | 1135 წ",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | ელექ. | 2150*930*1580 | 1170 წ",
+        "| KT-SC165 | 165/132 წ | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | ელექ. | 2460*980*1690 | 1410 წ",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | ელექ. | 2490*1080*1800 | 1610 წ",
+        "| KT-SC185 | 185/148 წ | 169/135 წ | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | ელექ. | 2460*980*1690 | 1490 წ",
+        "| KT-SC200 | 200/160 | 180/144 წ | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | ელექ. | 2490*1080*1800 | 1660 წ",
+        "| KT-SC206 | 206/165 წ | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | ელექ. | 2460*980*1690 | 1490 წ",
+        "| KT-SC220 | 220/176 წ | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | ელექ. | 2490*1080*1800 | 1770 წ",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | ელექ. | 2600*1080*1800 | 1818 წ",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | ელექ. | 2600*1080*1800 | 2028 წელი",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | ელექ. | 3040*1380*1880 | 2861 წ",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | ელექ. | 3040*1380*1880 | 2941 წ",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | ელექ. | 3230*1180*1750 | 2841 წ",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | ელექ. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12 ვ | 135 | 150 | 25.8 | ელექ. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 წ | 500/400 | 113.1 | SC25G690D2 | 12 ვ | 135 | 150 | 25.8 | ელექ. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 წ | 550/440 წ | 125.6 | SC27G755D2 | 12 ვ | 135 | 150 | 26.6 | ელექ. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 წ | 563/450 წ | 125.6 | SC27G755D2 | 12 ვ | 135 | 150 | 26.6 | ელექ. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 წ | 625/500 | 141 | SC27G830D2 | 12 ვ | 135 | 155 | 26.6 | ელექ. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 წ | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | ელექ. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 წ | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | ელექ. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 174,
+      "title": "China KT-SDEC serie xerador diésel fabricación e fábrica |KENT",
+      "header": [
+        "| Modelo de grupo electrógeno | 50 HZ PF = 0,8 400/230 V trifásico 4 cables | Modelo de motor | cil | Aborrecer | Cegoña | desprazamento | Gobernador | Dimensión de tipo aberto",
+        "| Alimentación en espera | Poder Primeiro | Contras 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H (MM) | Peso KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8,82 | Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8,82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12 V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12 V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12 V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12 V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12 V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 175,
+      "title": "China KT-SDEC Series Diesel Generator Manufacturing en fabryk |KENT",
+      "header": [
+        "| Genset Model | 50HZ PF=0.8 400/230V 3-faze 4draad | Motor Model | cyl | Bore | Storke | ferpleatsing | Gûverneur | Iepen Type Dimension",
+        "| Standby Power | Prime Power | Neidielen 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Gewicht KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36,5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36,5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39,9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49,6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70,4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70,4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125,6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125,6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174,9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 176,
+      "title": "Hiina KT-SDEC seeria diiselgeneraatorite tootmine ja tehas |KENT",
+      "header": [
+        "| Genseti mudel | 50 HZ PF=0,8 400/230 V 3-faasiline 4-juhtmeline | Mootori mudel | tsyl | Puur | toonekurg | nihe | kuberner | Ava Tüüp Dimensioon",
+        "| Ooterežiim | Peamine jõud | Miinused 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | P × L × K (MM) | Kaal KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125,6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125,6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174,9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 179,
+      "title": "Kina KT-SDEC serija diesel generatora Proizvodnja i tvornica |KENT",
+      "header": [
+        "| Model generatora | 50HZ PF=0.8 400/230V 3fazna 4žica | Model motora | cyl | Dosadno | Štorke | pomak | Guverner | Otvorena dimenzija tipa",
+        "| Napajanje u stanju pripravnosti | Prime Power | Nedostaci 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | D×Š×V (MM) | Težina KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000*930*1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1610. godine",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490. godine",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1660. godine",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460*980*1690 | 1490. godine",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490*1080*1800 | 1770. godine",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 1818. godine",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600*1080*1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040*1380*1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230*1180*1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040*1380*1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630*1720*2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630*1720*2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630*1720*2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360*1620*2140 | 6296"
+      ]
+    },
+    {
+      "n": 180,
+      "title": "China KT-SDEC Series Generatore Diesel Fabricazione è Fabbrica |KENT",
+      "header": [
+        "| Modellu Genset | 50HZ PF = 0.8 400/230V 3Phase 4Wire | Mudellu di mutore | cil | Bore | Cicogna | spustamentu | guvernatore | Dimensione di tipu aperta",
+        "| Power Standby | Primu Power | Cons 100% (L/H)",
+        "| KVA/KW | KVA/KW | MM | MM | L | | L × L × H (MM) | Pesu KG"
+      ],
+      "rows": [
+        "| KT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 960",
+        "| KT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 105 | 124 | 4.3 | Elec. | 1980*880*1510 | 1020",
+        "| KT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000 * 930 * 1580 | 1115",
+        "| KT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 105 | 124 | 4.3 | Elec. | 2000 * 930 * 1580 | 1135",
+        "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150 * 930 * 1580 | 1170",
+        "| KT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460 * 980 * 1690 | 1410",
+        "| KT-SC175 | 175/140 | 160/128 | 35.7 | SC8D220D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490 * 1080 * 1800 | 1610",
+        "| KT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460 * 980 * 1690 | 1490",
+        "| KT-SC200 | 200/160 | 180/144 | 40.7 | SC8D250D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490 * 1080 * 1800 | 1660",
+        "| KT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 105 | 124 | 6.5 | Elec. | 2460 * 980 * 1690 | 1490",
+        "| KT-SC220 | 220/176 | 200/160 | 45 | SC8D280D2 | 6L | 114 | 135 | 8.27 | Elec. | 2490 * 1080 * 1800 | 1770",
+        "| KT-SC250 | 250/200 | 225/180 | 49.6 | SC9D310D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600 * 1080 * 1800 | 1818",
+        "| KT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 114 | 144 | 8.82 | Elec. | 2600 * 1080 * 1800 | 2028",
+        "| KT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040 * 1380 * 1880 | 2861",
+        "| KT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 135 | 150 | 12.88 | Elec. | 3040 * 1380 * 1880 | 2941",
+        "| KT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 128 | 153 | 11.8 | Elec. | 3230 * 1180 * 1750 | 2841",
+        "| KT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 135 | 165 | 14.16 | Elec. | 3040 * 1380 * 1880 | 3069",
+        "| KT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630 * 1720 * 2230 | 4163",
+        "| KT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 135 | 150 | 25.8 | Elec. | 3630 * 1720 * 2230 | 4271",
+        "| KT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630 * 1720 * 2230 | 4413",
+        "| KT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 135 | 150 | 26.6 | Elec. | 3630 * 1720 * 2230 | 4413",
+        "| KT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 135 | 155 | 26.6 | Elec. | 3630 * 1720 * 2230 | 4553",
+        "| KT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360 * 1620 * 2140 | 6296",
+        "| KT-SC950 | 950/760 | 875/700 | 210 | SC33W1150D2 | 6L | 180 | 215 | 32.8 | Elec. | 4360 * 1620 * 2140 | 6296"
+      ]
+    }
+  ]
 }

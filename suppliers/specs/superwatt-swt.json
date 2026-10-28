@@ -1,0 +1,40 @@
+[
+ {
+  "n": 101,
+  "url": "https://swt.cn/products/300kw-375kva-sdec-diesel-generator-set/",
+  "title": "300kW / 375kVA SDEC Diesel Generator Set | SWT",
+  "header": [],
+  "rows": [
+   "Prime power: 300kW / 375kVA",
+   "Standby power: 330kW / 413kVA",
+   "Engine model: SDEC 6ETAA11.8-G31",
+   "Frequency: 50Hz; rated speed: 1500 r/min",
+   "Rated voltage: 380V / 400V / 415V"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://swt.cn/products/cummins-series-1000kw-1250kva-diesel-generator-set/",
+  "title": "Cummins Series (1000)kW (1250)kVA Diesel Generator Set | SWT",
+  "header": [],
+  "rows": [
+   "Prime Power : 908kW/1135kVA",
+   "Standby Power : 1000kW/1250kVA",
+   "Fuel Efficiency : Powered by a Cummins 12-cylinder, 37.8L turbocharged engine, providing excellent fuel efficiency, with consumption rates of 235L/h at 100% prime power and 271L/h at standby power.",
+   "Continuous Operation : Capable of running continuously for 24 hours under variable loads, with a 10% overload capacity for 1 hour every 12 hours, ensuring flexibility."
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://swt.cn/products/spn-series-powered-by-perkins-50hz300kw-1000kw/",
+  "title": "SPN Series Powered by Perkins (50Hz:300kW-1000kW) | SWT",
+  "header": [
+   "| Genset models | Rated power | Engine model | Efficiency | Electric | Heat | Total | kWe | kVA | % | %"
+  ],
+  "rows": [
+   "| % | SPN375 | 300 | 375 | 4006-23TRS1 | 37.4 | 52.8 | 90.2 | SPN460 | 368 | 460",
+   "| 4006-23TRS2 | 38.4 | 47.1 | 85.5 | SPN525 | 420 | 525 | 4008-30TRS1 | 37.9 | 48.1 | 86.0",
+   "| SPN625 | 500 | 625 | 4008-30TRS2 | 38.5 | 46.4 | 84.9 | SPN1075 | 860 | 1075 | 4016-61TRS1"
+  ]
+ }
+]

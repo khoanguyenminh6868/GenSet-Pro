@@ -3,28 +3,129 @@
   "country": "CN",
   "role": "engine_maker",
   "status": "verified",
-  "names": { "en": "Quanchai Engine Co., Ltd. (QuanChai Group)", "zh": "全柴动力", "brands": ["Quanchai"] },
+  "names": {
+    "en": "Quanchai Engine Co., Ltd. (QuanChai Group)",
+    "zh": "全柴动力",
+    "brands": [
+      "Quanchai"
+    ]
+  },
   "website": "https://en.quanchai.com.cn/",
-  "hq": { "province": "Anhui", "city": null },
+  "hq": {
+    "province": "Anhui",
+    "city": null
+  },
   "founded": null,
   "relatedIds": [],
   "strengths": [
-    { "text": "Động cơ công suất nhỏ 15–380 hp, có dòng chuyên cho tổ máy phát điện (Generator Set Diesel Engines)", "src": [1] },
-    { "text": "Theo hãng: năng lực sản xuất hơn 600.000 động cơ diesel nhiều xi-lanh; đội R&D 350 kỹ sư", "src": [1] }
+    {
+      "text": "Động cơ công suất nhỏ 15–380 hp, có dòng chuyên cho tổ máy phát điện (Generator Set Diesel Engines)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: năng lực sản xuất hơn 600.000 động cơ diesel nhiều xi-lanh; đội R&D 350 kỹ sư",
+      "src": [
+        1
+      ]
+    }
   ],
   "productLines": [
-    { "kind": "engine", "series": "Generator Set Diesel Engines", "fuel": "diesel", "engineMakes": ["Quanchai"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 15, "max": 380, "unit": "hp", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+    {
+      "kind": "engine",
+      "series": "Generator Set Diesel Engines",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Quanchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 15,
+        "max": 380,
+        "unit": "hp",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
   ],
   "certifications": [],
-  "vietnam": { "distributors": [], "note": null },
+  "vietnam": {
+    "distributors": [],
+    "note": null
+  },
   "exportMarkets": [],
-  "missing": ["Trang ghi hai năm thành lập khác nhau (1998 và 1949) nên để trống", "Dải 15–380 hp là của toàn bộ động cơ, không riêng dòng phát điện", "Chưa có trang chi tiết dòng động cơ phát điện"],
+  "missing": [
+    "Trang ghi hai năm thành lập khác nhau (1998 và 1949) nên để trống",
+    "Dải 15–380 hp là của toàn bộ động cơ, không riêng dòng phát điện",
+    "Chưa có trang chi tiết dòng động cơ phát điện"
+  ],
   "sources": [
-    { "n": 1, "url": "https://en.quanchai.com.cn/", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["QuanChai engine, with power range of 15 to 380 hp, which is widely used in automobile, forklift, agricultural equipment, construction machinery and Generating Sets", "Generator Set Diesel Engines", "It has the manufacturing capacity of more than 600000 multi cylinder diesel engines", "QUANCHAI has a technology R&D team with 350 engineers", "Quanchai Engine Co., Ltd, founded in 1998", "Quanchai Engine Co, Ltd, founded in 1949"], "file": "sources/quanchai/1.md" }
+    {
+      "n": 1,
+      "url": "https://en.quanchai.com.cn/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "QuanChai engine, with power range of 15 to 380 hp, which is widely used in automobile, forklift, agricultural equipment, construction machinery and Generating Sets",
+        "Generator Set Diesel Engines",
+        "It has the manufacturing capacity of more than 600000 multi cylinder diesel engines",
+        "QUANCHAI has a technology R&D team with 350 engineers",
+        "Quanchai Engine Co., Ltd, founded in 1998",
+        "Quanchai Engine Co, Ltd, founded in 1949"
+      ],
+      "file": "sources/quanchai/1.md"
+    },
+    {
+      "n": 103,
+      "url": "https://en.quanchai.com.cn/p_display.php?id=1201",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| BORE* STROKE | FUEL INJECTION PUMP TYPE | INTAKE WAY | standy power | Rated speed | max torque | Emission standard | KW | HP | r/min | Nm"
+      ],
+      "file": "sources/quanchai/103.md"
+    }
   ],
   "confidence": "high",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 103,
+      "title": "Stage III Agricultural Euipment Diesel Engine - Anhui Quanchai Engine Co.,ltd",
+      "header": [
+        "| BORE* STROKE | FUEL INJECTION PUMP TYPE | INTAKE WAY | standy power | Rated speed | max torque | Emission standard | KW | HP | r/min | Nm"
+      ],
+      "rows": [
+        "| B | 3B2 | 1.91 | 2 | 90 × 100 | VE INJECTIPN PUMP | natural aspirated | 22.1 | 30 | 2400 | 103",
+        "| Off -road stage III | 4B4 | 2.27 | 85×100 | 110 | 25.8 | 35 | 121 | 4B2 | 2.54 | 90×100",
+        "| 29.4 | 40 | 150 | 33.1 | 45 | 154 | 4B5 | 2.83 | 95×100 | 171 | 36.8",
+        "| 50 | 181 | 4B2 | 2.54 | 90×100 | Unit pump | turbocharged | 40.5 | 55 | 210 | 44.2",
+        "| 60 | 230 | 4B5 | 2.83 | 95×100 | 51.5 | 70 | 240 | Common rail | 44.2-66.2 | 60-90",
+        "| 230-320 | C | 4C2 | 2.67 | 2 | 90×105 | VE INJECTIPN PUMP | natural aspirated | 29.4 | 40 | 2300",
+        "| 155 | 2400 | 150 | 4C3 | 2.98 | 95×105 | 33.1 | 45 | 2300 | 171 | 2400",
+        "| 36.8 | 50 | 2300 | 180 | 2400 | 176 | 4C4 | 3.17 | 98×105 | 2300-2400 | 185-186",
+        "| 4C6 | 3.47 | 95×115 | Common rail | 44.2 | 60 | 2300-2400 | 206 | 4C5 | 3.26 | 95×115",
+        "| Unit pump | turbocharged | 40.5-51.5 | 55-70 | 2300-2400 | 210-280 | 4C6 | 3.47 | 2 | 98×115 | 55.2",
+        "| 75 | 2400 | 285 | 59 | 80 | 2300 | 315 | 2400 | 305 | Common rail | turbocharged and inter-cooled",
+        "| Unit pump | turbocharged | 66.2 | 90 | 2300-2400 | 320-360 | Common rail fuel injection pumpl | turbocharged and inter-cooled | 2300-2400 | 350-360 | turbocharged",
+        "| 73.5 | 100 | 2300 | 395 | 74 | 2400 | 380 | turbocharged and inter-cooled | 73.5 | 2300 | 395",
+        "| 2400 | 380 | 88.2 | 120 | 425 | V | V36 | 3.62 | 2 | 98×120 | Common rail injection pump",
+        "| turbocharged and inter-cooled | 88.2-118 | 120-160 | 2400 | 450-580 | M | 4M6 | 4.95 | 2 | 112×126 | Common rail injection pump",
+        "| turbocharged and inter-cooled | 88.2-118 | 120-160 | 2200 | 500-665 | J | 6J1 | 6.44 | 4 | 105×124 | Common rail injection pump"
+      ]
+    }
+  ]
 }

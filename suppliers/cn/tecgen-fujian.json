@@ -1,0 +1,206 @@
+{
+  "id": "tecgen-fujian",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "FUJIAN TECGEN POWER CO., LTD.",
+    "zh": null,
+    "brands": [
+      "Tecgen"
+    ]
+  },
+  "website": "https://www.dgdieselgenerator.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Tecgen diesel generating sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "Deutz",
+        "SDEC",
+        "Weichai",
+        "Yuchai",
+        "Ricardo",
+        "FAW",
+        "Yangdong"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Mecc Alte",
+        "Marathon"
+      ],
+      "power": {
+        "min": 8,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.dgdieselgenerator.com/aboutus.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Tecgen brand diesel generating set ranging from 8kVA to 3000kVA with various famous engine brand like Cummins, Perkins, Deutz, Ricardo.",
+        "Tecgen adopts internationally and domestically reputed high-quality engines and alternators including CUMMINS, PERKINS, Deutz, SDEC, WEICHAI, YUCHAI, RICARDO ,FAW, Yangdong, Stamford, Leroy Somer, Mecc Alte and Marathon"
+      ],
+      "file": "sources/tecgen-fujian/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.dgdieselgenerator.com/sale-41275936-60hz-75kva-60kw-soundproof-perkins-silent-diesel-generator.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | TG75PSD6"
+      ],
+      "file": "sources/tecgen-fujian/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.dgdieselgenerator.com/sale-41368887-home-use-silent-perkins-diesel-generators-60hz-1-phase-120v-240v-10kw-15kw-20kw.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Frequency: 60 Hz"
+      ],
+      "file": "sources/tecgen-fujian/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.dgdieselgenerator.com/quality-41335779-60kva-heavy-duty-yangdong-genset-for-industrial-application-prime-power-55kva",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Standby Power | 60kVA/48kW"
+      ],
+      "file": "sources/tecgen-fujian/103.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.dgdieselgenerator.com/sale-41340890-100kva-80kw-silent-deutz-diesel-generators-suitable-for-any-application.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Power Output: 20kVA - 800kVA"
+      ],
+      "file": "sources/tecgen-fujian/105.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "60HZ 75KVA 60KW Soundproof Perkins Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Genset Model | TG75PSD6",
+        "| Prime Power | 68KVA/55KW",
+        "| Standby Power | 75KVA/60KW",
+        "| Rated Voltage (V) | 220",
+        "| Rated Frequency (Hz) | 60",
+        "| Rated Speed (RPM) | 1800",
+        "| Engine Model | 1103A-33TG2",
+        "| Bore*Stroke (mm*mm) | 105*127",
+        "| Displacement (Liter) | 3.3",
+        "| Fuel Consumption (g/kw.h) | 207",
+        "| Prime Power | 55KW",
+        "| Voltage Regulation, Steady State | 1.00%"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Home Use Silent Perkins Diesel Generators 60HZ 1 Phase 120V 240V 10KW 15KW 20KW",
+      "header": [],
+      "rows": [
+        "Frequency: 60 Hz",
+        "Noise Level: 65dB(A)",
+        "| Genset Model | TG22PSD6",
+        "| Prime Power | 20KVA/20KW",
+        "| Standby Power | 22KVA/22KW",
+        "| Rated Voltage (V) | 120/240V",
+        "| Rated Frequency (Hz) | 60",
+        "| Rated Speed (RPM) | 1800",
+        "| Engine Model | 404D-22G",
+        "| Bore*Stroke (mm*mm) | 84*100",
+        "| Displacement (Liter) | 2.216",
+        "| Fuel Consumption (g/kw.h) | 233",
+        "| Prime Power | 20KW",
+        "| Voltage Regulation, Steady State | 1.00%"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "60kVA Heavy Duty Yangdong Genset For Industrial Application Prime Power 55kVA",
+      "header": [],
+      "rows": [
+        "| Standby Power | 60kVA/48kW",
+        "| Prime Power | 55kVA/44kW",
+        "| Frequency | 50Hz",
+        "| Rated Voltage | 400V",
+        "| Power Factor | 0.8",
+        "| Engine Model | Y4105ZLD",
+        "| Alternator Model | TGI224S-44",
+        "| Engine General Data | Engine Power(kW) | 55",
+        "| Bore×Stroke (mm×mm) | 105 x118",
+        "| Fuel Consumption (g/kw.h)) | 220",
+        "| Alternator Data | Model | TGI224S-44",
+        "| Protection Grade | IP 23",
+        "| Model | HGM6120N"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "100kVA 80kw Silent Deutz Diesel Generators Suitable For Any Application",
+      "header": [],
+      "rows": [
+        "Power Output: 20kVA - 800kVA",
+        "Noise Level: 65dB(A)",
+        "| Prime Power | 100kVA/80kW",
+        "| Standby Power | 110kVA/88kW",
+        "| Frequency | 50Hz",
+        "| Rated Voltage | 400V",
+        "| Power Factor | 0.8",
+        "| Engine Model | BF4M1013ECG1",
+        "| Alternator Model | TGI274S-80",
+        "| Engine General Data | Engine Power(kW) | 97",
+        "| Bore×Stroke (mm×mm) | 108x130",
+        "| Fuel Consumption (g/kw.h)) | 208",
+        "| Alternator Data | Model | TGI274S-80",
+        "| Protection Grade | IP 23",
+        "| Model | HGM6120N"
+      ]
+    }
+  ]
+}

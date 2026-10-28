@@ -20,11 +20,18 @@ console.log(`${rows.length} bản ghi sẽ đăng (${all.length - rows.length} i
 if (dry) process.exit(0);
 
 const token = fs.readFileSync(TOKEN_FILE, "utf8").trim();
-for (let i = 0; i < rows.length; i += 200) {
+// Batches of at most 200 rows and about 2 MB (Vercel takes 4.5 MB per request; spec tables make records large).
+const batches = [];
+for (const row of rows) {
+  const last = batches[batches.length - 1], size = JSON.stringify(row).length;
+  if (!last || last.rows.length >= 200 || last.size + size > 2e6) batches.push({ rows: [row], size });
+  else { last.rows.push(row); last.size += size; }
+}
+for (const b of batches) {
   const r = await fetch(`${WEB}/api/ingest`, {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ rows: rows.slice(i, i + 200) }),
+    body: JSON.stringify({ rows: b.rows }),
   });
   const body = await r.text();
   if (!r.ok) { console.error(`HTTP ${r.status}: ${body.slice(0, 300)}`); process.exit(1); }

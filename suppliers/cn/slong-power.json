@@ -78,9 +78,47 @@
         "Founded in 2007, YANCHENG SLONG MACHINERY & ELECTRIC CO., LTD. is situated in Changzhou Hi-Tech Industrial Park, Dafeng District of Yancheng City, Jiangsu Province, China. As a professional manufacturer, we specialize in gas and gasoline generators"
       ],
       "file": "sources/slong-power/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.slongpower.com/silent-generators/silent-lp-ng-gasoline-generator/high-performance-domestic-silent-generators.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | SL10000W-SE-TRI | SL12000W-SE-TRI | SL18000W-SE-TRI"
+      ],
+      "file": "sources/slong-power/101.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "China 8kw Green Power Dual Fuel Propane and Gasoline Powered Portable Generator Manufacturers Factory - Yancheng Slong",
+      "header": [
+        "| Model | SL10000W-SE-TRI | SL12000W-SE-TRI | SL18000W-SE-TRI",
+        "| Fuel Type | Gasoline , LPG , NG | Gasoline , LPG , NG | Gasoline , LPG , NG"
+      ],
+      "rows": [
+        "| Frequency (hz) | 50 / 60 | 50 / 60 | 50 / 60",
+        "| Voltage (v) | 220 120/240 | 220 120/240 | 220 120/240",
+        "| Rated Output Gasoline (kw) | 8.0 / 8.5 | 10.0 / 11.0 | 15.0 / 17.0",
+        "| Rated Output LPG (kw) | 7.2 / 7.7 | 9.0 / 10.0 | 13.5 / 15.3",
+        "| Rated Output NG (kw) | 6.5 / 7.0 | 8.0 / 9.0 | 12.0 / 13.5",
+        "| Power factor cos￠ | 1.0 | 1.0 | 1.0",
+        "| Fuel tank capacity (L) | 25 | 50 | 50",
+        "| Gasoline consumption at 75% load (L/h) | 3.22 | 4.14 | 5.29",
+        "| LPG consumption at 75% load (kg/h) | 2.14 | 2.9 | 3.62",
+        "| NG consumption at 75% load (m3/h) | 2.02 | 2.75 | 5.65",
+        "| Noise level at 7m dB(A) | 69 | 69 | 75",
+        "| Engine Model | SL460 | SL550 | GB1000",
+        "| Displacement (cc) | 459 | 550 | 999",
+        "| Packing size (mm) | 940 × 570 × 780 | 930 × 650 × 790 | 1370 × 750 × 1100",
+        "| Net / Gross weight (kg) | 155 / 165 | 170 / 182 | 335 / 365",
+        "| 20'ft / 40'hq | 72 / 150 | 63 / 129 | 24 / 50"
+      ]
+    }
+  ]
 }

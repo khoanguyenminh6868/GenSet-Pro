@@ -69,9 +69,36 @@
         "It covers an area of more than 30,000 square meters, including 10,000 square meters of production workshops, with a designed annual production capacity of 10KVA-4000KVA generating sets of 10,000 units"
       ],
       "file": "sources/haitai-weifang/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.hitepower.com/product-lng-cng-natural-methane-gas-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Weight | KW | KVA | mm | L | mm | kg"
+      ],
+      "file": "sources/haitai-weifang/101.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "LNG CNG PNG Natural Methane Gas Generator Set",
+      "header": [
+        "| Weight | KW | KVA | mm | L | mm | kg"
+      ],
+      "rows": [
+        "| HTG-500GF | 500 | 625 | 12V190ZDT-2 | 190 *210 | 39.2 | IG-NT",
+        "| 4770×2200×2778 | 11800 | HTG-1100GF | 1100 | 1375 | H16V190ZLT-2 | 190x215",
+        "| 97.53 | IG-NT | 6070×2380×2776 | 22000 | HTG-1500GF | 1500 | 1875",
+        "| 16V190 | 190x215 | 97.53 | IG-NT | 6070×2380×2776 | 22000 | HTG-2000GF",
+        "| 2000 | 2500 | L20V190 | 19 0x255 | 144.6 | IG-NT | 7500x2300x2800",
+        "| 29000 | HTG-4000GF | 4000 | 5000 | 16V26/32T | 260x320 | 272"
+      ]
+    }
+  ]
 }

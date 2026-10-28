@@ -1,0 +1,214 @@
+{
+  "id": "honto-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Shandong Honto",
+    "zh": null,
+    "brands": [
+      "Honto"
+    ]
+  },
+  "website": "https://honto-power.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Generators (Weichai series and others)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có dải công suất trên trang đã lưu",
+    "Kết quả tìm kiếm ghi Weichai 16–1000 kVA nhưng chưa có trong trang đã lưu"
+  ],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://honto-power.com/en/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "As a leading power equipment manufacturer since 1984, Shandong Honto specializes in the R&D and production of generators, transformers, and energy storage systems"
+      ],
+      "file": "sources/honto-power/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://honto-power.com/en/portfolio-item/perkins-series-8-2250kva-generator-sets/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| | Model | Output Power | Current (A) | Engine Model | Cyl. | Bore×Stroke (mm) | Displ. (L) | Fuel Cons. (g/kW·h) | Dimensions L×W×H (mm) | Weight (kg)"
+      ],
+      "file": "sources/honto-power/101.md"
+    },
+    {
+      "n": 112,
+      "url": "https://honto-power.com/en/portfolio-item/box-type-substation/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
+      ],
+      "file": "sources/honto-power/112.md"
+    },
+    {
+      "n": 121,
+      "url": "https://honto-power.com/en/elegir-transformador-6kv-10kv-35kv-latinoamerica/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| | Criterio | 6kV | 10kV | 35kV"
+      ],
+      "file": "sources/honto-power/121.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Perkins Diesel Generator Set 8-2250kVA - Reliable Genset for Industrial & Prime Power | Shandong Honto",
+      "header": [
+        "| | Model | Output Power | Current (A) | Engine Model | Cyl. | Bore×Stroke (mm) | Displ. (L) | Fuel Cons. (g/kW·h) | Dimensions L×W×H (mm) | Weight (kg)",
+        "| | kW | kVA | | | | | | | |"
+      ],
+      "rows": [
+        "| BC-7GF | 7 | 8.75 | 12.6 | 403A-11G1 | 3 | 77×87 | 0.99 | 248 | 1200×700×1100 | 500",
+        "| BC-8GF | 8 | 10 | 14.4 | 403D-11G | 3 | 77×81 | 1.13 | 252 | 1200×700×1100 | 300",
+        "| BC-10GF | 10 | 12.5 | 18 | 403A-15G1 | 3 | 84×90 | 1.62 | 264 | 1250×700×1100 | 350",
+        "| BC-11GF | 11 | 13.75 | 19.8 | 403D-15G | 3 | 84×90 | 1.49 | 247 | 1250×700×1100 | 350",
+        "| BC-12GF | 12 | 15 | 21.6 | 403A-15G2 | 3 | 84×90 | 1.49 | 264 | 1250×700×1100 | 350",
+        "| BC-16GF | 16 | 20 | 28.8 | 404A-22G1 | 4 | 84×100 | 2.2 | 237 | 1500×730×1300 | 500",
+        "| BC-16GF | 16 | 20 | 28.8 | 404D-22G | 4 | 84×100 | 2.2 | 245 | 1500×730×1300 | 500",
+        "| BC-24GF | 24 | 30 | 43.2 | 1103A-33G | 3 | 105×127 | 3.3 | 211 | 1770×750×1600 | 800",
+        "| BC-36GF | 36 | 45 | 64.8 | 1103A-33TG1 | 3 | 105×127 | 3.3 | 211 | 2050×750×1600 | 920",
+        "| BC-50GF | 50 | 62.5 | 90 | 1104A-44TG1 | 4 | 105×127 | 4.4 | 208 | 2250×750×1600 | 1100",
+        "| BC-50GF | 50 | 62.5 | 90 | 1103A-33TG2 | 3 | 105×127 | 3.3 | 215 | 2200×750×1600 | 1050",
+        "| BC-64GF | 64 | 80 | 115.2 | 1104A-44TG2 | 4 | 105×127 | 4.4 | 208 | 2300×750×1600 | 1150",
+        "| BC-64GF | 64 | 80 | 115.2 | 1104C-44TAG1 | 4 | 100×127 | 4.4 | 205 | 2480×760×1600 | 1250",
+        "| BC-80GF | 80 | 100 | 144 | 1104C-44TAG2 | 4 | 100×127 | 4.4 | 208 | 2480×760×1600 | 1250",
+        "| BC-110GF | 110 | 137.5 | 198 | 1106A-70TG1 | 6 | 100×120 | 7.01 | 199 | 2480×760×1600 | 1250",
+        "| BC-120GF | 120 | 150 | 216 | 1106A-70TAG2 | 6 | 105×135 | 7.01 | 208 | 2650×760×1600 | 1450",
+        "| BC-140GF | 140 | 175 | 252 | 1106A-70TAG3 | 6 | 105×135 | 7.01 | 206 | 2700×900×1600 | 1700",
+        "| BC-160GF | 160 | 200 | 288 | 1106A-70TAG4 | 6 | 105×135 | 7.01 | 220 | 3000×1000×1700 | 2100",
+        "| BC-180GF | 180 | 225 | 324 | 1306A-E87TAG4 | 6 | 116×136 | 8.7 | 206 | 3000×1000×1700 | 2100",
+        "| BC-180GF | 180 | 225 | 324 | 1506A-E88TAG2 | 6 | 112×149 | 8.8 | 200 | 3000×1000×1700 | 2100",
+        "| BC-200GF | 200 | 250 | 360 | 1306A-E87TAG6 | 6 | 116×136 | 8.7 | 198 | 3100×1000×1700 | 2150",
+        "| BC-200GF | 200 | 250 | 360 | 1506A-E88TAG3 | 6 | 112×149 | 8.8 | 200 | 3100×1000×1700 | 2150",
+        "| BC-220GF | 220 | 275 | 396 | 1606A-E93TAG4 | 6 | 116×136 | 8.7 | 201 | 3100×1000×1700 | 2150",
+        "| BC-220GF | 220 | 275 | 396 | 1506A-E88TAG4 | 6 | 112×149 | 8.8 | 198 | 3100×1000×1700 | 2150",
+        "| BC-240GF | 240 | 300 | 432 | 1606A-E93TAG5 | 6 | 116×136 | 12.5 | 216 | 3100×1000×1700 | 2150",
+        "| BC-240GF | 240 | 300 | 432 | 1506A-E88TAG5 | 6 | 112×149 | 8.8 | 198 | 3100×1000×1700 | 2150",
+        "| BC-280GF | 280 | 350 | 504 | 2206C-E13TAG2 | 6 | 130×157 | 12.5 | 209 | 3600×1200×2000 | 3200",
+        "| BC-320GF | 320 | 400 | 576 | 2206C-E13TAG3 | 6 | 130×157 | 12.5 | 206 | 3650×1200×2000 | 3300",
+        "| BC-360GF | 360 | 450 | 648 | 2506C-E15TAG1 | 6 | 137×171 | 15.2 | 211 | 4000×1200×2100 | 3700",
+        "| BC-400GF | 400 | 500 | 720 | 2506C-E15TAG2 | 6 | 137×171 | 15.2 | 211 | 4050×1200×2100 | 3760",
+        "| BC-480GF | 480 | 600 | 864 | 2806C-E18TAG1A | 6 | 145×183 | 18.1 | 216 | 4100×1600×2200 | 4600",
+        "| BC-520GF | 520 | 650 | 936 | 2806A-E18TAG2 | 6 | 145×183 | 18.1 | 202 | 4200×1600×2200 | 4800",
+        "| BC-600GF | 600 | 750 | 1080 | 4006-23TAG2A | 6 | 160×190 | 22.9 | 209 | 4500×1800×2300 | 5500",
+        "| BC-640GF | 640 | 800 | 1152 | 4006-23TAG3A | 6 | 160×190 | 22.9 | 209 | 4600×1800×2300 | 6000",
+        "| BC-720GF | 720 | 900 | 1296 | 4008TAG1A | 8 | 160×190 | 30.5 | 206 | 4800×2100×2500 | 7700",
+        "| BC-800GF | 800 | 1000 | 1440 | 4008TAG2A | 8 | 160×190 | 30.5 | 206 | 4900×2100×2500 | 8000",
+        "| BC-1000GF | 1000 | 1250 | 1800 | 4012-46TWG2A | 12 | 160×190 | 45.8 | 212 | 5300×2200×2600 | 10000",
+        "| BC-1100GF | 1100 | 1375 | 1980 | 4012-46TWG3A | 12 | 160×190 | 45.8 | 212 | 5300×2200×2600 | 10000",
+        "| BC-1200GF | 1200 | 1500 | 2160 | 4012-46TAG2A | 12 | 160×190 | 45.8 | 212 | 5400×2200×2600 | 11000",
+        "| BC-1360GF | 1360 | 1700 | 2448 | 4012-46TAG3A | 12 | 160×190 | 45.8 | 212 | 5500×2200×2600 | 12000",
+        "| BC-1368GF | 1368 | 1710 | 2462 | 4012-46TAG3A | 12 | 160×190 | 45.8 | 212 | 5500×2200×2600 | 12000",
+        "| BC-1480GF | 1480 | 1850 | 2664 | 4016TAG1A | 16 | 160×190 | 61.1 | 205 | 5700×2800×3100 | 13500",
+        "| BC-1600GF | 1600 | 2000 | 2880 | 4016TAG2A | 16 | 160×190 | 61.1 | 208 | 5800×2800×3100 | 14000",
+        "| BC-1800GF | 1800 | 2250 | 3240 | 4016-61TRG3 | 16 | 160×190 | 61.1 | 205 | 5900×2800×3100 | 15700"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Box Type Substation Manufacturer - Prefabricated Compact Substation 10-35kV | Shandong Honto",
+      "header": [
+        "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
+      ],
+      "rows": [
+        "| YBW | 10kV/20kV/35kV | 0.4 | 50",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 80",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 100",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 125",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 160",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 200",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 250",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 315",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 400",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 500",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 630",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 800",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 1000",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 1250",
+        "| YBW | 10kV/20kV/35kV | 0.4 | 1600"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Box Type Substation Manufacturer - Prefabricated Compact Substation 10-35kV | Shandong Honto",
+      "header": [
+        "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
+      ],
+      "rows": [
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 400",
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 500",
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 630",
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 800",
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 1000",
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 1250",
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 1600",
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 2000",
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 2500",
+        "| YBW-G | 10kV/20kV/35kV | 0.315 | 3150"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Box Type Substation Manufacturer - Prefabricated Compact Substation 10-35kV | Shandong Honto",
+      "header": [
+        "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
+      ],
+      "rows": [
+        "| YBW | 10kV/20kV/35kV | 0.69 | 1000",
+        "| YBW | 10kV/20kV/35kV | 0.69 | 1250",
+        "| YBW | 10kV/20kV/35kV | 0.69 | 1600",
+        "| YBW | 10kV/20kV/35kV | 0.69 | 2000",
+        "| YBW | 10kV/20kV/35kV | 0.69 | 2500",
+        "| YBW | 10kV/20kV/35kV | 0.69 | 3150"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "Cómo Elegir Transformador de Potencia 6kV 10kV 35kV en Latinoamérica 2026 | Honto Power",
+      "header": [],
+      "rows": [
+        "| | Criterio | 6kV | 10kV | 35kV",
+        "| Capacidad típica | 30–2500 kVA | 30–5000 kVA | 1000 kVA–50 MVA"
+      ]
+    }
+  ]
+}

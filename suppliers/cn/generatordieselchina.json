@@ -1,0 +1,360 @@
+{
+  "id": "generatordieselchina",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Fuzhou H&C imp&exp Co., Ltd",
+    "zh": null,
+    "brands": [
+      "H&C"
+    ]
+  },
+  "website": "https://generatordieselchina.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "MTU",
+        "Mitsubishi"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [
+        "ISO 8528"
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO 9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO 14001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Tên là công ty xuất nhập khẩu (imp&exp), thành lập 2018, nhưng tự giới thiệu có nhà máy từ 1983: chưa xác minh"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://generatordieselchina.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "20+ Years | 30-2000kW | ISO 8528 Certified",
+        "available with Cummins, Perkins, MTU, and Mitsubishi engines"
+      ],
+      "file": "sources/generatordieselchina/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://generatordieselchina.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Fuzhou H&C imp&exp Co., Ltd, established in 2018, is a factory-direct diesel generator manufacturer. We produce generator sets in our own self-owned factory that has been manufacturing since 1983",
+        "ISO 9001 · ISO 14001 · CE · ISO 8528 Certified"
+      ],
+      "file": "sources/generatordieselchina/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://generatordieselchina.com/products/cummins-diesel-generator/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Standby Power | 55 kW / 70 kVA"
+      ],
+      "file": "sources/generatordieselchina/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://generatordieselchina.com/products/perkins-diesel-generator/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Standby Power | 11 kW / 13.8 kVA"
+      ],
+      "file": "sources/generatordieselchina/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://generatordieselchina.com/products/mtu-diesel-generator/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Standby Power | 572 kW / 715 kVA"
+      ],
+      "file": "sources/generatordieselchina/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://generatordieselchina.com/products/mitsubishi-diesel-generator/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Standby Power | 572 kW / 715 kVA"
+      ],
+      "file": "sources/generatordieselchina/104.md"
+    }
+  ],
+  "confidence": "low",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Cummins Diesel Generator | DCEC & CCEC | 16-1,340kW",
+      "header": [],
+      "rows": [
+        "| Standby Power | 55 kW / 70 kVA",
+        "| Prime Power | 50 kW / 63 kVA",
+        "| Engine Model | Cummins 4BTA3.9-G2",
+        "| Alternator | Stamford S1L2-Y1 / Leroy-Somer TAL-A42-H",
+        "| Fuel Consumption | 9.5 / 12.7 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 213 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 1800×850×1320 / 2530×1030×1490 mm",
+        "| Weight (Open / Silent) | 820 / 1350 kg",
+        "| Standby Power | 60 kW / 75 kVA",
+        "| Prime Power | 55 kW / 68 kVA",
+        "| Alternator | Stamford UCI224E / Leroy-Somer TAL-A42-H",
+        "| Fuel Consumption | 10.8 / 14.3 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 219 g/kW·h (ISO 3046-1)",
+        "| Standby Power | 88 kW / 110 kVA",
+        "| Prime Power | 80 kW / 100 kVA",
+        "| Engine Model | Cummins 6BT5.9-G2",
+        "| Alternator | Stamford UCI274C / Leroy-Somer TAL-A44-D",
+        "| Fuel Consumption | 15.3 / 20.4 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 214 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 2200×950×1440 / 2830×1080×1500 mm",
+        "| Weight (Open / Silent) | 1100 / 1520 kg",
+        "| Standby Power | 220 kW / 275 kVA",
+        "| Prime Power | 200 kW / 250 kVA",
+        "| Engine Model | Cummins 6LTAA8.9-G3",
+        "| Alternator | Stamford UCDI274K / Leroy-Somer TAL-A46-D",
+        "| Fuel Consumption | 34.8 / 46.4 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 195 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 2700×1050×1700 / 3530×1150×1920 mm",
+        "| Weight (Open / Silent) | 1800 / 2820 kg",
+        "| Standby Power | 275 kW / 343 kVA",
+        "| Prime Power | 250 kW / 312 kVA",
+        "| Engine Model | Cummins NTA855-G1B",
+        "| Alternator | Stamford S4L1D-D4 / Leroy-Somer TAL-A46-G",
+        "| Fuel Consumption | 46.4 / 61.9 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 208 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 3000×1120×1950 / 4000×1430×2040 mm",
+        "| Weight (Open / Silent) | 3100 / 3900 kg",
+        "| Standby Power | 330 kW / 413 kVA",
+        "| Prime Power | 300 kW / 375 kVA",
+        "| Engine Model | Cummins 6ZTAA13-G3",
+        "| Alternator | Stamford S4L1D-F4 / Leroy-Somer TAL-A473-A",
+        "| Fuel Consumption | 50.6 / 67.5 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 189 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 3200×1370×2000 / 4630×1830×2060 mm",
+        "| Weight (Open / Silent) | 2000 / 2600 kg",
+        "| Standby Power | 440 kW / 550 kVA",
+        "| Prime Power | 400 kW / 500 kVA",
+        "| Engine Model | Cummins KTA19-G3A",
+        "| Alternator | Stamford S5L1D-C4 / Leroy-Somer TAL-A473-C",
+        "| Fuel Consumption | 72.5 / 96.7 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 203 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 3400×1380×2000 / 4830×1930×2200 mm",
+        "| Weight (Open / Silent) | 4500 / 5500 kg",
+        "| Standby Power | 550 kW / 687 kVA",
+        "| Prime Power | 500 kW / 625 kVA",
+        "| Engine Model | Cummins KTAA19-G6A",
+        "| Alternator | Stamford S5L1D-F4 / Leroy-Somer TAL-A473-F",
+        "| Fuel Consumption | 96.4 / 128.6 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 216 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 3660×1450×2280 / 5230×1930×2200 mm"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Perkins Diesel Generator | 7-1,800kW R-P Series | H&C",
+      "header": [],
+      "rows": [
+        "| Standby Power | 11 kW / 13.8 kVA",
+        "| Prime Power | 10 kW / 12.5 kVA",
+        "| Engine Model | Perkins 403D-15G",
+        "| Alternator | Stamford S0L1-L1 / Leroy-Somer TAL-A40-C",
+        "| Fuel Consumption | 2.4 / 3.1 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 264 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 1160×780×1170 / 1830×750×1090 mm",
+        "| Weight (Open / Silent) | 700 / 1050 kg",
+        "| Standby Power | 17.6 kW / 22 kVA",
+        "| Prime Power | 16 kW / 20 kVA",
+        "| Engine Model | Perkins 404D-22G",
+        "| Alternator | Stamford S0L2-G1 / Leroy-Somer TAL-A40-F",
+        "| Fuel Consumption | 3.6 / 4.8 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 250 g/kW·h (ISO 3046-1)",
+        "| Weight (Open / Silent) | 800 / 1120 kg",
+        "| Standby Power | 26.4 kW / 33 kVA",
+        "| Prime Power | 24 kW / 30 kVA",
+        "| Engine Model | Perkins 1103A-33G",
+        "| Alternator | Stamford S0L2-P1 / Leroy-Somer TAL-A42-C",
+        "| Fuel Consumption | 5.1 / 6.8 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 237 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 1160×780×1170 / 2030×890×1105 mm",
+        "| Weight (Open / Silent) | 840 / 1160 kg",
+        "| Standby Power | 57.2 kW / 71.5 kVA",
+        "| Prime Power | 52 kW / 65 kVA",
+        "| Engine Model | Perkins 1104A-44TG1",
+        "| Alternator | Stamford UCI224F / Leroy-Somer TAL-A42-H",
+        "| Fuel Consumption | 9.8 / 13.1 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 212 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 1680×825×1230 / 2480×1030×1315 mm",
+        "| Weight (Open / Silent) | 1140 / 1560 kg",
+        "| Standby Power | 70.4 kW / 88 kVA",
+        "| Prime Power | 64 kW / 80 kVA",
+        "| Engine Model | Perkins 1104A-44TG2",
+        "| Alternator | Stamford UCI224G / Leroy-Somer TAL-A44-C",
+        "| Fuel Consumption | 11.9 / 15.9 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 208 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 1860×855×1250 / 2580×1030×1500 mm",
+        "| Weight (Open / Silent) | 1150 / 1600 kg",
+        "| Standby Power | 88 kW / 110 kVA",
+        "| Prime Power | 80 kW / 100 kVA",
+        "| Engine Model | Perkins 1104C-44TAG2",
+        "| Alternator | Stamford UCI274C / Leroy-Somer TAL-A44-D",
+        "| Fuel Consumption | 15.3 / 20.4 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 214 g/kW·h (ISO 3046-1)",
+        "| Weight (Open / Silent) | 1200 / 1700 kg",
+        "| Standby Power | 118.8 kW / 148.5 kVA",
+        "| Prime Power | 108 kW / 135 kVA",
+        "| Engine Model | Perkins 1106A-70TG1",
+        "| Alternator | Stamford UCI274E / Leroy-Somer TAL-A44-H",
+        "| Fuel Consumption | 20.1 / 26.7 L/h (@75% / @100%)",
+        "| Dimensions (Open / Silent) | 1900×890×1310 / 2580×1030×1500 mm",
+        "| Weight (Open / Silent) | 1300 / 1800 kg",
+        "| Standby Power | 528 kW / 660 kVA",
+        "| Prime Power | 480 kW / 600 kVA",
+        "| Engine Model | Perkins 2806C-E18TAG1A",
+        "| Alternator | Stamford S5L1D-E4 / Leroy-Somer TAL-A473-D",
+        "| Fuel Consumption | 89.6 / 119.4 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 209 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 3400×1120×2050 / 5030×1830×2050 mm"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "MTU Diesel Generator | 2000 & 4000 Series | 520-2,400kW",
+      "header": [],
+      "rows": [
+        "| Standby Power | 572 kW / 715 kVA",
+        "| Prime Power | 520 kW / 650 kVA",
+        "| Engine Model | MTU 12V2000G25",
+        "| Alternator | Stamford S5L1D-F4 / Leroy-Somer TAL-A473-F",
+        "| Fuel Consumption | 94.2 / 125.6 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 203 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 3420×1550×2100 / 5030×1850×2510 mm",
+        "| Weight (Open / Silent) | 4000 / 5000 kg",
+        "| Standby Power | 880 kW / 1,100 kVA",
+        "| Prime Power | 800 kW / 1,000 kVA",
+        "| Engine Model | MTU 16V2000G65",
+        "| Alternator | Stamford S6L1D-E4 / Leroy-Somer TAL-A49-E",
+        "| Fuel Consumption | 141.4 / 188.6 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 198 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 4450×2000×2220 / 12192×2435×2896 mm",
+        "| Weight (Open / Silent) | 10100 / 11600 kg",
+        "| Standby Power | 1,320 kW / 1,650 kVA",
+        "| Prime Power | 1,200 kW / 1,500 kVA",
+        "| Engine Model | MTU 12V4000G23F",
+        "| Alternator | Stamford S7L1D-C4 / Leroy-Somer LSA 50.2 L8",
+        "| Fuel Consumption | 202.5 / 270.0 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 189 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 4100×1720×2100 / 5800×1880×2550 mm",
+        "| Weight (Open / Silent) | 5300 / 6800 kg",
+        "| Standby Power | 2,200 kW / 2,750 kVA",
+        "| Prime Power | 2,000 kW / 2,500 kVA",
+        "| Engine Model | MTU 20V4000G23F",
+        "| Alternator | Stamford S7L1D-J4 / Leroy-Somer LSA 52.3 L12",
+        "| Fuel Consumption | 342.9 / 457.1 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 192 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 5450×2250×3070 / 12192×2435×2896 mm",
+        "| Weight (Open / Silent) | 15000 / 18000 kg"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Mitsubishi Diesel Generator | R-SM & R-JM | 520-1,800kW",
+      "header": [],
+      "rows": [
+        "| Standby Power | 572 kW / 715 kVA",
+        "| Prime Power | 520 kW / 650 kVA",
+        "| Engine Model | Mitsubishi S6R2-PTA-C",
+        "| Alternator | Stamford S5L1D-F4 / Leroy-Somer TAL-A473-F",
+        "| Fuel Consumption | 93.8 / 125.0 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 202 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 3420×1550×2100 / 5030×1850×2510 mm",
+        "| Weight (Open / Silent) | 4000 / 5000 kg",
+        "| Standby Power | 1,100 kW / 1,375 kVA",
+        "| Prime Power | 1,000 kW / 1,250 kVA",
+        "| Engine Model | Mitsubishi S12R-PTA-C",
+        "| Alternator | Stamford S6L1D-G4 / Leroy-Somer LSA 50.2 M6",
+        "| Fuel Consumption | 178.6 / 238.1 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 200 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 4450×1850×2250 / 12192×2435×2896 mm",
+        "| Weight (Open / Silent) | 10000 / 11500 kg",
+        "| Standby Power | 1,320 kW / 1,650 kVA",
+        "| Prime Power | 1,200 kW / 1,500 kVA",
+        "| Engine Model | Mitsubishi S12R-PTAA2-C",
+        "| Alternator | Stamford S7L1D-C4 / Leroy-Somer LSA 50.2 L8",
+        "| Fuel Consumption | 213.2 / 284.3 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 199 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 4850×2000×2450 / 12192×2435×2896 mm",
+        "| Weight (Open / Silent) | 10100 / 11600 kg",
+        "| Standby Power | 2,000 kW / 2,500 kVA",
+        "| Prime Power | 1,800 kW / 2,250 kVA",
+        "| Engine Model | Mitsubishi S16R2-PTAW-C",
+        "| Alternator | Stamford S7L1D-H4 / Leroy-Somer LSA 52.3 L9",
+        "| Fuel Consumption | 335.9 / 447.9 L/h (@75% / @100%)",
+        "| Fuel Efficiency | 209 g/kW·h (ISO 3046-1)",
+        "| Dimensions (Open / Silent) | 6050×2500×3200 / 12192×2435×2896 mm",
+        "| Weight (Open / Silent) | 15000 / 18000 kg"
+      ]
+    }
+  ]
+}

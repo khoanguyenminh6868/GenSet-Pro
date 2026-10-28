@@ -67,9 +67,235 @@
         "StonePower adopts internationally and domestically reputed high-uality engines and alternators including Cummins,Perkins Deutz,Mitsubishi,Lovol,YTO,Ricardo"
       ],
       "file": "sources/stone-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.silentgeneratorset.com/sale-10509320-1000kw-1250kva-mitsubishi-diesel-engine-generator-set-with-iso9001-ce-certification.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| kW | kVA | kW | kVA"
+      ],
+      "file": "sources/stone-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.silentgeneratorset.com/quality-10601013-880kva-perkins-open-type-700kw-800kw-diesel-powered-generator-for-industrial",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Perkins Engine: | 4006-23TAG3A | Stamford Alternator: | LVI634C"
+      ],
+      "file": "sources/stone-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.silentgeneratorset.com/sale-10616247-4-stroke-50hz-doosan-diesel-generator-140kw-175kva-genset-silent-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Doosan Engine: | P086TI-1 | Stamford Alternator: | UCI274G"
+      ],
+      "file": "sources/stone-power/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.silentgeneratorset.com/sale-10616257-sound-proof-doosan-d1146-three-phase-diesel-generator-70kw-with-stamford-alternator.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Doosan Engine: | D1146 | Stamford Alternator: | UCI224G"
+      ],
+      "file": "sources/stone-power/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.silentgeneratorset.com/sale-10616235-professional-silent-doosan-diesel-generator-400-kw-500-kva-genset.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Doosan Engine: | DP158LC | Stamford Alternator: | HCI544C"
+      ],
+      "file": "sources/stone-power/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.silentgeneratorset.com/sale-35934256-100kva-fg-wilson-generator-set-60hz-open-silent-type-diesel-generator.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Frequency(Hz) | 50"
+      ],
+      "file": "sources/stone-power/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.silentgeneratorset.com/sale-12809623-so21275-cummins-marine-diesel-engines-main-propulsion-diesel-engine-high-performance-164kw-220hp-180.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Displacement: 8.3 L Aspiration: Turbocharged/Aftercooled"
+      ],
+      "file": "sources/stone-power/107.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "1000KW 1250KVA MITSUBISHI Diesel Engine Generator Set With ISO9001 / CE Certification",
+      "header": [
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SM1250E5 | 1000 | 1250 | 1100 | 1375",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 1582-1728 | 2736-2985 | 3157-3457"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "1000KW 1250KVA MITSUBISHI Diesel Engine Generator Set With ISO9001 / CE Certification",
+      "header": [
+        "| GENSET MODEL | OUTPUT(kW) | OUTPUT(kVA) | ENGINE | ALTERNATOR",
+        "| STANDBY | PRIME | STNADBY | PRIME | MITSUBISHI | STAMFORD | MARATHON | WATTEK"
+      ],
+      "rows": [
+        "| SM675E5 | 600 | 540 | 750 | 675 | S6R2-PTA | HCI 544F | MX-560-4 | WHI 5F",
+        "| SM750E5 | 660 | 600 | 825 | 750 | S6R2-PTAA | LVI 634B | MX-600-4 | WHI 6B",
+        "| SM1000E5 | 880 | 800 | 1100 | 1000 | S12H-PTA | LVI 634E | MX-850-4 | WHI 6E",
+        "| SM1250E5 | 1100 | 1000 | 1375 | 1250 | S12R-PTA | LVI 634G | MX-1030-4 | WHI 6G",
+        "| SM1375E5 | 1200 | 1100 | 1500 | 1375 | S12R-PTA2 | PI 734B | MX-1240-4 | WHI 7B",
+        "| SM1500E5 | 1320 | 1200 | 1650 | 1500 | S12R-PTAA2 | PI 734C | MX-1240-4 | WHI 7C",
+        "| SM1688E5 | 1485 | 1350 | 1856 | 1688 | S16R-PTA | PI 734D | MX-1350-4 | WHI 7D",
+        "| SM1875E5 | 1650 | 1500 | 2063 | 1875 | S16R-PTA2 | PI 734E | MX-1600-4 | WHI 7E",
+        "| SM2000E5 | 1760 | 1600 | 2200 | 2000 | S16R-PTAA2 | PI 734F | MX-1600-4 | WHI 7F",
+        "| SM2250E5 | 2000 | 1800 | 2500 | 2250 | S16R2-PTAW | PI 734H | MX-1800-4 | WHI 7G"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "880KVA Perkins Open Type 700KW - 800KW Diesel powered Generator for Industrial",
+      "header": [],
+      "rows": [
+        "| Perkins Engine: | 4006-23TAG3A | Stamford Alternator: | LVI634C",
+        "| Prime Power: | 640KW / 800KVA | Standby Power: | 704KW / 880KVA"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "880KVA Perkins Open Type 700KW - 800KW Diesel powered Generator for Industrial",
+      "header": [
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SP880P | 640 | 800 | 704 | 880",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 1113-1216 | 1925-2100 | 2221-2431"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "4 Stroke 50Hz DOOSAN Diesel Generator , 140KW / 175KVA Genset Silent Generator Set",
+      "header": [
+        "| Doosan Engine: | P086TI-1 | Stamford Alternator: | UCI274G"
+      ],
+      "rows": [
+        "| Prime Power: | 140KW / 175KVA | Standby Power: | 154KW / 192KVA",
+        "| Amps: | 243-266A / 420-460A / 485-532A | Voltage: | 380V-415V / 220V-240V / 190V-208V"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "4 Stroke 50Hz DOOSAN Diesel Generator , 140KW / 175KVA Genset Silent Generator Set",
+      "header": [
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SP200DS | 140 | 175 | 154 | 192.5",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 243-266 | 420-460 | 485-532"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Sound proof Doosan D1146 Three Phase Diesel Generator 70KW with Stamford Alternator",
+      "header": [
+        "| Doosan Engine: | D1146 | Stamford Alternator: | UCI224G"
+      ],
+      "rows": [
+        "| Prime Power: | 70KW / 87.5KVA | Standby Power: | 77 KW / 96KVA",
+        "| Amps: | 121-133A / 210-230A / 242-266A | Voltage: | 380V-415V / 220V-240V / 190V-208V"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Sound proof Doosan D1146 Three Phase Diesel Generator 70KW with Stamford Alternator",
+      "header": [
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SP96DS | 70 | 87.5 | 77 | 96",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 121-133 | 210-230 | 242-266"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Professional Silent DOOSAN Diesel Generator 400 KW / 500 kva genset",
+      "header": [
+        "| Doosan Engine: | DP158LC | Stamford Alternator: | HCI544C"
+      ],
+      "rows": [
+        "| Prime Power: | 360KW / 450KVA | Standby Power: | 400KW / 500KVA",
+        "| Amps: | 556-608A / 962-1050A / 1110-1216A | Voltage: | 380V-415V / 220V-240V / 190V-208V"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Professional Silent DOOSAN Diesel Generator 400 KW / 500 kva genset",
+      "header": [
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SP500DS | 360 | 450 | 400 | 500",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 626-684 | 1083-1181 | 1249-1367"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "100kva FG WILSON Generator Set 60hz Open Silent Type Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Frequency(Hz) | 50",
+        "| ENGINE | Engine | 4 Stroke, water cooled",
+        "| Model type | LR4N5LP-D",
+        "| Cylinders | 4",
+        "| Bore×stroke(mm) | 110x125",
+        "| Displacement(L) | 4.75",
+        "| Fuel consumption(g/kw.h) | 210",
+        "| ALTERNATOR | Model | 274E",
+        "| Rated power(kW/kVA) | 80/100",
+        "| Rated currency(A) | 139.1",
+        "| Rated voltage(V) | 230/400,240/415 or other",
+        "| Power factor(cos&oslash;) | 0.8(Lagging)",
+        "| Phase / Rotary speed | 3-phase, 1500rpm"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "SO21275 Cummins Marine Diesel Engines / Main Propulsion Diesel Engine High Performance 164KW/220hp@1800 rpm",
+      "header": [],
+      "rows": [
+        "Displacement: 8.3 L Aspiration: Turbocharged/Aftercooled",
+        "Bore: 114 mm kW (BHP) @ RPM",
+        "Engine Type: 6CTA8.3-M220 control unit",
+        "Fuel System: PB / RSV 180 kW @ 1858rpm",
+        "Rated power: 220 bhp @ 1800 rpm"
+      ]
+    }
+  ]
 }

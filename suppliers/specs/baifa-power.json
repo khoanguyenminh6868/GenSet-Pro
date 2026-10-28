@@ -1,0 +1,88 @@
+[
+ {
+  "n": 101,
+  "url": "https://www.baifapower.cn/Generatorwithemissioncontrol",
+  "title": "",
+  "header": [
+   "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD"
+  ],
+  "rows": [
+   "| BF-C28Q-3 | 28 | 25 | CUMMINS"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://www.baifapower.cn/Generatorwithemissioncontrol",
+  "title": "",
+  "header": [
+   "| Standby | Prime | Brand | Model | Gov. | VARIOUS",
+   "| KVA | KVA"
+  ],
+  "rows": [
+   "| BF-M1700 | 1700 | 1550 | MTU JV CHINA | 12V4000G23F | ADEC | S7L1D-C41 | CHINA STAGE3 | CHINA",
+   "| BF-M1800 | 1800 | 1640 | 12V4000G23F | ADEC | S7L1D-D41 | CHINA STAGE3 | CHINA",
+   "| BF-M2000 | 2000 | 1850 | 16V4000G23F | ADEC | S7L1D-G41 | CHINA STAGE3 | CHINA",
+   "| BF-M2250 | 2250 | 2050 | 16V4000G23F | ADEC | S7L1D-G41 | CHINA STAGE3 | CHINA",
+   "| BF-M2500 | 2500 | 2275 | 16V4000G63F | ADEC | S7L1D-H41 | CHINA STAGE3 | CHINA",
+   "| BF-M2750 | 2750 | 2500 | 20V4000G23F | ADEC | S7L1D-J41 | CHINA STAGE3 | CHINA",
+   "| BF-M3000 | 3000 | 2750 | 20V4000G63F | ADEC | LSA52.3 UL16 | CHINA STAGE3 | CHINA",
+   "| BF-M3250 | 3300 | 3000 | 20V4000G63LF | ADEC | LSA 53.2M9 | CHINA STAGE3 | CHINA"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://www.baifapower.cn/Generatorwithemissioncontrol",
+  "title": "",
+  "header": [
+   "| | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD | FUEL CONSUMPTION 75% L/H | Emission | ENGINE MANUFACTURER / COUNTRY | ESTIMATED ENGINE DELIVERY TIME | 1500/1800 RPM SWITCHABLE"
+  ],
+  "rows": [
+   "| BF-P10-V | 10 | 9 | PERKINS | 403J-11G | ECU | S0L1-H1 | 1.96 | STAGE V | UK | 16-24WKS LT |",
+   "| BF-P22-V | 22 | 20 | PERKINS | 404J-22G | ECU | S0L2-G1 | 3.99 | STAGE V | UK | 16-24WKS LT |",
+   "| BF-P44-V | 44 | 40 | PERKINS | 404J-E22TAG | ECU | S1L2-K1 | 7.13 | STAGE V | USA | 16-24WKS LT | ●"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.baifapower.cn/STAGE-III-3/",
+  "title": "",
+  "header": [
+   "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD"
+  ],
+  "rows": [
+   "| BF-C28Q-3 | 28 | 25 | CUMMINS"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.baifapower.cn/STAGE-III-3/",
+  "title": "",
+  "header": [
+   "| Standby | Prime | Brand | Model | Gov. | VARIOUS",
+   "| KVA | KVA"
+  ],
+  "rows": [
+   "| BF-M1700 | 1700 | 1550 | MTU JV CHINA | 12V4000G23F | ADEC | S7L1D-C41 | CHINA STAGE3 | CHINA",
+   "| BF-M1800 | 1800 | 1640 | 12V4000G23F | ADEC | S7L1D-D41 | CHINA STAGE3 | CHINA",
+   "| BF-M2000 | 2000 | 1850 | 16V4000G23F | ADEC | S7L1D-G41 | CHINA STAGE3 | CHINA",
+   "| BF-M2250 | 2250 | 2050 | 16V4000G23F | ADEC | S7L1D-G41 | CHINA STAGE3 | CHINA",
+   "| BF-M2500 | 2500 | 2275 | 16V4000G63F | ADEC | S7L1D-H41 | CHINA STAGE3 | CHINA",
+   "| BF-M2750 | 2750 | 2500 | 20V4000G23F | ADEC | S7L1D-J41 | CHINA STAGE3 | CHINA",
+   "| BF-M3000 | 3000 | 2750 | 20V4000G63F | ADEC | LSA52.3 UL16 | CHINA STAGE3 | CHINA",
+   "| BF-M3250 | 3300 | 3000 | 20V4000G63LF | ADEC | LSA 53.2M9 | CHINA STAGE3 | CHINA"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.baifapower.cn/50Hz-STAGE-V5",
+  "title": "",
+  "header": [
+   "| | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD | FUEL CONSUMPTION 75% L/H | Emission | ENGINE MANUFACTURER / COUNTRY | ESTIMATED ENGINE DELIVERY TIME | 1500/1800 RPM SWITCHABLE"
+  ],
+  "rows": [
+   "| BF-P10-V | 10 | 9 | PERKINS | 403J-11G | ECU | S0L1-H1 | 1.96 | STAGE V | UK | 16-24WKS LT |",
+   "| BF-P22-V | 22 | 20 | PERKINS | 404J-22G | ECU | S0L2-G1 | 3.99 | STAGE V | UK | 16-24WKS LT |",
+   "| BF-P44-V | 44 | 40 | PERKINS | 404J-E22TAG | ECU | S1L2-K1 | 7.13 | STAGE V | USA | 16-24WKS LT | ●"
+  ]
+ }
+]

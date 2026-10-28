@@ -251,9 +251,10 @@ td.r{text-align:right}
 blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var(--muted);font-style:italic;font-size:13px}
 .rec{font-size:13px}.rec b{color:var(--violet);font-weight:600}
 .suptable{width:100%;border-collapse:collapse;font-size:13px}.suptable th,.suptable td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.suptable tbody tr[data-supopen]{cursor:pointer}.suptable tbody tr[data-supopen]:hover{background:var(--panel2)}
-.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supcard{padding:12px;display:flex;flex-direction:column;gap:6px;margin:8px 0}.suprow select,.suprow input{min-width:0}
+.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
 /* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
+.supcard{padding:12px;display:flex;flex-direction:column;gap:6px;margin:8px 0}.suprow select,.suprow input{min-width:0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
 .tablewrap table{font-size:13px}
 .tablewrap tr:last-child td{border-bottom:0}
@@ -1874,7 +1875,7 @@ function renderSupList() {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
     return h`<tr data-supopen="${s.id}"><td><b>${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div></td>
-      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
+      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
       <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
       <td class="small" data-l="Động cơ">${[...new Set(lines.flatMap((p) => p.engineMakes || []))].join(", ") || "—"}</td>
       <td data-l="Độ tin cậy"><span class="chip ${conf[1]}">${conf[0]}</span></td></tr>`;
@@ -1899,6 +1900,7 @@ function supDetailHtml(s) {
       <td class="small" data-l="Động cơ">${[...(p.engineMakes || []), ...(p.engineModels?.length ? ["(" + p.engineModels.join(", ") + ")"] : [])].join(" ") || "—"}</td>
       <td class="small" data-l="Đầu phát">${(p.alternatorMakes || []).join(", ") || "—"}</td>
       <td class="small" data-l="Khác">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div>` : '<div class="muted small">Chưa có dữ liệu.</div>')}
+    ${raw(supSpecHtml(s))}
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
     ${raw(s.missing?.length ? h`<h4>Chưa tìm thấy / lưu ý</h4>${raw(list(s.missing, (m) => h`<li>${m}</li>`))}` : "")}
     <h4>Nguồn</h4><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${x.url}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
@@ -1907,6 +1909,16 @@ function supDetailHtml(s) {
 }
 // The supplier list (button "Nhà cung cấp") is for superadmin only (Khoa, 2026-10-28); shim.js sets the role.
 const isSuperadmin = () => window.genbidRole === "superadmin";
+// The model tables of a supplier (crawl-specs.mjs), each line as it is on the supplier's page, with its source [n].
+const supCells = (line) => String(line).split("|").map((c) => c.trim()).slice(1);
+function supSpecHtml(s) {
+  const t = s.specTables || [];
+  if (!t.length) return "";
+  const rows = t.reduce((a, x) => a + x.rows.length, 0);
+  return h`<h4>Cấu hình các model (${rows} dòng, ${t.length} bảng)</h4><div class="muted small">Chép nguyên văn từ bảng thông số trên website của hãng; tiêu đề cột giữ như nguồn.</div>${raw(t.map((x) => h`<details class="supspec"><summary>${x.title || "Bảng thông số"} · ${x.rows.length} dòng ${raw(supRefs([x.n]))}</summary>
+    <div class="tablewrap"><table class="suptable"><thead>${raw((x.header || []).map((l) => `<tr>${supCells(l).map((c) => h`<th>${c}</th>`).join("")}</tr>`).join(""))}</thead>
+    <tbody>${raw(x.rows.map((l) => `<tr>${supCells(l).map((c) => h`<td>${c}</td>`).join("")}</tr>`).join(""))}</tbody></table></div></details>`).join(""))}`;
+}
 // Tab "Nhà cung cấp" of a tender: the Windows bot asks Opus for the (up to) 3 suppliers that fit the tender best, choosing
 // only among supplier/*, then checks every quote in code before posting suppliermatch/<key> (supplier-prompt.md).
 const SUP_FIT = { good: ["Phù hợp", "ok"], partial: ["Phù hợp một phần", "warn"] };
@@ -1929,6 +1941,7 @@ function supMatchHtml(r) {
     const s = state.supplier?.[x.supplierId], fit = SUP_FIT[x.fit] || ["", "mut"];
     return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${x.rank || ""} ${s ? supName(s) : x.supplierId}</b><span class="chip ${fit[1]}">${fit[0]}</span>${raw(s ? h`<span class="muted small">${SUP_ROLE[s.role] || ""}</span>` : "")}<span class="spacer"></span><button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ nhà cung cấp</button></div>
       ${raw(x.productLine ? h`<div class="small">Dòng máy đề xuất: <b>${x.productLine}</b></div>` : "")}
+      ${raw(x.model ? h`<div class="small">Model đề xuất: <b>${x.model}</b>${raw(x.modelRow ? h`<div class="muted small" style="overflow-wrap:anywhere">Dòng trong bảng của hãng: ${x.modelRow}</div>` : "")}</div>` : "")}
       <ul class="suplist">${raw((x.reasons || []).map((y) => h`<li>${y.text} ${raw(refs(x.supplierId, y.supplierSrc))}${raw(y.unverified ? '<span class="chip warn" title="Code không tìm thấy trích dẫn hoặc số liệu này trong nguồn">⚠ chưa khớp nguồn</span>' : "")}
         ${raw(y.requirementQuote ? h`<div class="muted small">HSMT: <q>${y.requirementQuote}</q></div>` : "")}</li>`).join(""))}</ul>
       ${raw(x.gaps?.length ? h`<div class="small"><b>Còn thiếu / cần làm rõ:</b></div><ul class="suplist">${raw(x.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;

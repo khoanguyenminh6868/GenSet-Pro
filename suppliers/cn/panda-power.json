@@ -3,27 +3,109 @@
   "country": "CN",
   "role": "genset_oem",
   "status": "verified",
-  "names": { "en": "Jiangsu Panda Power Technology Co., Ltd.", "zh": null, "brands": ["Panda"] },
+  "names": {
+    "en": "Jiangsu Panda Power Technology Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Panda"
+    ]
+  },
   "website": "https://www.jspandapower.com/",
-  "hq": { "province": "Jiangsu", "city": null },
+  "hq": {
+    "province": "Jiangsu",
+    "city": null
+  },
   "founded": 1993,
-  "foundedSrc": [1],
+  "foundedSrc": [
+    1
+  ],
   "relatedIds": [],
   "strengths": [
-    { "text": "Theo hãng: tổ máy diesel từ 1 kVA đến 3750 kVA, động cơ Cummins, Volvo, Perkins, Deutz, MTU, Shanghai (SDEC), FAW, Weichai; đầu phát Stamford, Marathon, Leroy Somer, Engga", "src": [1] },
-    { "text": "Có các dạng máy trần, giảm âm, container, rơ-moóc (trailer)", "src": [1] }
+    {
+      "text": "Theo hãng: tổ máy diesel từ 1 kVA đến 3750 kVA, động cơ Cummins, Volvo, Perkins, Deutz, MTU, Shanghai (SDEC), FAW, Weichai; đầu phát Stamford, Marathon, Leroy Somer, Engga",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có các dạng máy trần, giảm âm, container, rơ-moóc (trailer)",
+      "src": [
+        1
+      ]
+    }
   ],
   "productLines": [
-    { "kind": "genset", "series": "Diesel generator sets", "fuel": "diesel", "engineMakes": ["Cummins", "Volvo", "Perkins", "Deutz", "MTU", "SDEC (Shanghai)", "FAW", "Weichai"], "engineModels": [], "alternatorMakes": ["Stamford", "Marathon", "Leroy Somer", "Engga"],
-      "power": { "min": 1, "max": 3750, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": ["open", "silent", "container", "trailer"], "emission": [], "standards": [], "src": [1] }
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Volvo",
+        "Perkins",
+        "Deutz",
+        "MTU",
+        "SDEC (Shanghai)",
+        "FAW",
+        "Weichai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Marathon",
+        "Leroy Somer",
+        "Engga"
+      ],
+      "power": {
+        "min": 1,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "container",
+        "trailer"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
   ],
   "certifications": [],
-  "vietnam": { "distributors": [], "note": null },
+  "vietnam": {
+    "distributors": [],
+    "note": null
+  },
   "exportMarkets": [],
-  "missing": ["Chưa tìm thấy chứng chỉ ISO/CE trên trang đã đọc", "Không ghi prime/standby cho dải chung"],
+  "missing": [
+    "Chưa tìm thấy chứng chỉ ISO/CE trên trang đã đọc",
+    "Không ghi prime/standby cho dải chung"
+  ],
   "sources": [
-    { "n": 1, "url": "https://www.jspandapower.com/", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["Jiangsu Panda Power Technology Co., Ltd. established in 1993, we are one of the largest diesel generator set manufacturers in Chinese Mainland. We are specialized in producing 1KVA to 3750kVA diesel generator sets with Cummins, Volvo, PERKINS, DEUTZ, MTU, Shanghai, FAW, Weichai and other engines, equipped with STAMFORD, MARATHON, LEROY SOMER, ENGGA alternators.", "Address: No.9 Fuxi Road, Hanjiang District, Jiangsu Province , China", "Container generator diesel 600KW/750KVA", "Trailer generator 700KW/875KVA", "Silent generator 50KW/63KVA", "Open generator 55KW/69KVA"], "file": "sources/panda-power/1.md" }
+    {
+      "n": 1,
+      "url": "https://www.jspandapower.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Jiangsu Panda Power Technology Co., Ltd. established in 1993, we are one of the largest diesel generator set manufacturers in Chinese Mainland. We are specialized in producing 1KVA to 3750kVA diesel generator sets with Cummins, Volvo, PERKINS, DEUTZ, MTU, Shanghai, FAW, Weichai and other engines, equipped with STAMFORD, MARATHON, LEROY SOMER, ENGGA alternators.",
+        "Address: No.9 Fuxi Road, Hanjiang District, Jiangsu Province , China",
+        "Container generator diesel 600KW/750KVA",
+        "Trailer generator 700KW/875KVA",
+        "Silent generator 50KW/63KVA",
+        "Open generator 55KW/69KVA"
+      ],
+      "file": "sources/panda-power/1.md"
+    }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
