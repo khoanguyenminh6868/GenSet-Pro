@@ -1,0 +1,86 @@
+{
+  "id": "zc-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Shandong ZC Power CO., LTD",
+    "zh": null,
+    "brands": [
+      "ZC Power",
+      "PowerCore"
+    ]
+  },
+  "website": "https://zccpower.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel and gas generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "CAT"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang vừa ghi 'Founded in 1999, PowerCore...' vừa ghi 'Since 2006'; tên PowerCore và ZC Power lẫn lộn, cần xác minh thêm"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://zccpower.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "From 10kW to 3000kW, we engineer diesel and gas generator sets",
+        "Reliable standby and prime power from 10kW to 3000kW with Cummins, Perkins, and CAT engines.",
+        "Established in 1999, Shandong ZC Power CO., LTD is a direct manufacturer of industrial-grade standby and prime power solutions.",
+        "we provide DNV GL, Bureau Veritas, ABS, and Lloyd’s Register approvals for marine use, as well as ATEX certification for hazardous area installations."
+      ],
+      "file": "sources/zc-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://zccpower.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Since 2006 | Powering the World"
+      ],
+      "file": "sources/zc-power/2.md"
+    }
+  ],
+  "confidence": "low",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

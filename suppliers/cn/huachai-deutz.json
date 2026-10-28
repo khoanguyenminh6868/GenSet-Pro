@@ -1,0 +1,116 @@
+{
+  "id": "huachai-deutz",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Hebei Huabei Diesel Engine Co.,Ltd. (Huachai)",
+    "zh": null,
+    "brands": [
+      "Huachai",
+      "Deutz (license)"
+    ]
+  },
+  "website": "https://deutzchbdp.com/",
+  "hq": {
+    "province": "Hebei",
+    "city": null
+  },
+  "founded": 1970,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất động cơ theo giấy phép Deutz AG (B/FL413/513, BFM1015, TCD2015); thuộc NORINCO (100% nhà nước)",
+      "src": [
+        1,
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Deutz-licensed diesel engines and generators",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz (Huachai)"
+      ],
+      "engineModels": [
+        "B/FL413",
+        "B/FL513",
+        "BFM1015",
+        "TCD2015"
+      ],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO9001/14001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "TUV",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "TS16949",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Lưu ý xuất xứ: động cơ Deutz sản xuất theo giấy phép tại TQ có C/O Trung Quốc",
+    "Chưa có dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://deutzchbdp.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Hebei Huabei Diesel Engine Co., Ltd (hereinafter called as Huachai) established in 1970, is affiliated with NORINCO, one 100% state-owned company.",
+        "Huachai Deutz engines have CE, ISO9001/14001, TUV, TS16949 Certificates."
+      ],
+      "file": "sources/huachai-deutz/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://deutzchbdp.com/profile/about-us/221631/0/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Our air and water-cooled diesel engines and generators are produced under the Deutz AG license and we are the exclusive licensed manufacturer of B/FL413/513 Series, BFM1015 series and TCD2015 series diesel engines"
+      ],
+      "file": "sources/huachai-deutz/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

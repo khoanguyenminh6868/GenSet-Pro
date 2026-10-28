@@ -1,0 +1,75 @@
+{
+  "id": "stone-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "JIANGSU STONE POWER CO.,LTD",
+    "zh": null,
+    "brands": [
+      "Stonepower"
+    ]
+  },
+  "website": "https://www.silentgeneratorset.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Stonepower generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "Deutz",
+        "Mitsubishi",
+        "Lovol",
+        "YTO",
+        "Ricardo"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 2475,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.silentgeneratorset.com/aboutus.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "From 8KVA-2475KVA (6.4KW-1980KW) , Stonepower brand Gen-set are powered by world famous engines Cummins(20kw-1240kw), Perkins(7kw-200kw), Deutz (24kw-1600kw), Misubishi(540kw-1800kw )",
+        "StonePower adopts internationally and domestically reputed high-uality engines and alternators including Cummins,Perkins Deutz,Mitsubishi,Lovol,YTO,Ricardo"
+      ],
+      "file": "sources/stone-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

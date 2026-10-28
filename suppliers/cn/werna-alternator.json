@@ -1,0 +1,81 @@
+{
+  "id": "werna-alternator",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "Wuxi Werna Alternator Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Werna"
+    ]
+  },
+  "website": "https://www.brushlessacgenerator.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Wuxi"
+  },
+  "founded": 2005,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than tự kích từ, cách điện cấp H; bảo hành 2 năm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "Werna brushless synchronous alternators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Werna"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có dải kVA"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.brushlessacgenerator.com/aboutus.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Established in 2005, is a manufacturer of a wide variety of generators(alternators). We are able to offer high quality generators with two year warranty and best material.",
+        "We are ISO9001 certified",
+        "The Werna generators are self-excited, self-regulating, brushless synchronous machines. The insulation system of the windings confirms to the requirements of temperature class H"
+      ],
+      "file": "sources/werna-alternator/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

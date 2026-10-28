@@ -1,0 +1,85 @@
+{
+  "id": "huaquan-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Huaquan Power (HQ-POWER)",
+    "zh": null,
+    "brands": [
+      "HQ-POWER",
+      "HUAQUAN",
+      "华全"
+    ]
+  },
+  "website": "https://huaquanpower.net/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": 2010,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel và gas 1–3000 kW; có tủ trung/hạ thế, lưu trữ năng lượng, EPC",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel & Gas Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "trailer",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://huaquanpower.net/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Diesel & Gas Generator Sets (1kW-3000kW), providing all kinds of power solutions as follows: Common Sets, Soundproof Sets, Vehicle/Trailer-mounted, and Containerized Mobile Power Plants.",
+        "Huaquan Power was established in 2010, with its headquarters in Weifang City.",
+        "high/low voltage switchgears, and EPC power solutions"
+      ],
+      "file": "sources/huaquan-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

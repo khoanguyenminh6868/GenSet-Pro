@@ -1,0 +1,108 @@
+{
+  "id": "jichai",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": "CNPC Jichai Power Company Limited",
+    "zh": "济柴动力",
+    "brands": [
+      "Jichai"
+    ]
+  },
+  "website": "https://www.jichai.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Jinan"
+  },
+  "founded": 1920,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [
+    "jichai-huanneng"
+  ],
+  "strengths": [
+    {
+      "text": "Thuộc CNPC (Tập đoàn Dầu khí Quốc gia TQ); chuyên nguồn động lực cho khoan dầu khí",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Diesel engines (theo trang jinanengine.com, nguồn C)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Gas engines and generator sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Dải 30–2400 kW lấy từ jinanengine.com, trang xuất khẩu không phải website chính jichai.com (nguồn C)"
+  ],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.jichai.com/aboutus/gongsijianjie.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "China National Petroleum Corporation ( CNPC ) Jichai Power Company Limited founded in 1920, is the only power equipment manufacturer affiliated to CNPC and the world's mainstream drilling power service provider."
+      ],
+      "file": "sources/jichai/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://jinanengine.com/about.html",
+      "accessedAt": "2026-10-28",
+      "tier": "C",
+      "quote": [
+        "We provide diesel engine with power ranging from 30kW to 2400kW",
+        "Certificates of BV, ISO9001, ISO4001, CE, HSE, CCS are proof of our commitment"
+      ],
+      "file": "sources/jichai/3.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

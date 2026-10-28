@@ -1,0 +1,83 @@
+{
+  "id": "yongcai-elecmama",
+  "country": "CN",
+  "role": "distributor",
+  "status": "verified",
+  "names": {
+    "en": "Yangzhou Yongcai Machinery Co., Ltd.",
+    "zh": null,
+    "brands": []
+  },
+  "website": "https://www.elecmama.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Công ty xuất khẩu (không ghi là nhà máy); mạnh dòng 8–200 kW động cơ TQ",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Weichai",
+        "Yuchai",
+        "Yangdong",
+        "YTO",
+        "Quanchai",
+        "FAWDE"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Marathon"
+      ],
+      "power": {
+        "min": 8,
+        "max": 200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.elecmama.com/about-us.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "we specializes in exporting industrial and commercial diesel generator sets for land use, marine diesel generators for ship use",
+        "Our advantageous products are 8kw to 200kw diesel generators manufactured in China. These diesel powered gensets are drove by famous brands diesel engines, such as Cummins, Weichai, Yuchai, Yangdong, YTO, Quanchai, FAWDE etc."
+      ],
+      "file": "sources/yongcai-elecmama/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

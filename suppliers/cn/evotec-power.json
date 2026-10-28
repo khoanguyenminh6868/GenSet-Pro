@@ -1,0 +1,72 @@
+{
+  "id": "evotec-power",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "EvoTec Power Generation Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "EVOTEC"
+    ]
+  },
+  "website": "https://en.evotecpower.com/",
+  "hq": {
+    "province": "Anhui",
+    "city": "Hefei"
+  },
+  "founded": 2011,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát hạ, trung, cao thế cho công nghiệp và tàu thủy; đầu phát nam châm vĩnh cửu",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "Low / Medium / High Voltage synchronous alternators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [
+        "EVOTEC"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có dải kVA"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://en.evotecpower.com/about-us.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "EVOTEC,a National High-tech Enterprise, was established in May 2011,specializing in research and development, manufacturing, and sales of Industrial/Marine Synchronous Low,Medium and High Voltage alternators and Permanent Magnet alternators.EVOTEC is located in Lujiang High-tech Development Zone in Hefei City,Anhui Province"
+      ],
+      "file": "sources/evotec-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

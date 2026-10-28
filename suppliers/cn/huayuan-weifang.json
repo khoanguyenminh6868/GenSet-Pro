@@ -1,0 +1,131 @@
+{
+  "id": "huayuan-weifang",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Weifang Huayuan Diesel Engine Manufacture Co.,Ltd.",
+    "zh": null,
+    "brands": [
+      "Huayuan"
+    ]
+  },
+  "website": "http://en.wf-hy.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": 1999,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tự sản xuất động cơ Ricardo, Steyr (26,5–280 kW) và tổ máy 8–1000 kW",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Generator Set",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Ricardo",
+        "Steyr"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Ricardo / Steyr series diesel engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Ricardo",
+        "Steyr"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 26.5,
+        "max": 280,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://en.wf-hy.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Founded in 1999, the factory covers an area of 50,000 square meters and employs more than 300 people.",
+        "Our products have obtained certifications from various systems such as CE and ISO9001, as well as ship engine inspection certification."
+      ],
+      "file": "sources/huayuan-weifang/1.md"
+    },
+    {
+      "n": 2,
+      "url": "http://en.wf-hy.com/about/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "We specialize in manufacture and develop Ricardo series , Steyr series diesel engine from 26.5KW to 280 KW , Generator Set from 8KW to 1000KW and Water Pump Set ."
+      ],
+      "file": "sources/huayuan-weifang/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

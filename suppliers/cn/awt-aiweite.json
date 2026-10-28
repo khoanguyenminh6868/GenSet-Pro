@@ -1,0 +1,70 @@
+{
+  "id": "awt-aiweite",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Yangzhou Aiweite Electromechanical Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "AWT"
+    ]
+  },
+  "website": "https://www.awtgenset.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": 2008,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Universal Diesel Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.awtgenset.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Established in 2008, we are a professional manufacturer of diesel generator sets ranging from 1KVA to 2500KVA.",
+        "1000kVA – 2500kVA Universal Diesel Generator Sets"
+      ],
+      "file": "sources/awt-aiweite/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

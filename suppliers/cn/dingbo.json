@@ -3,30 +3,208 @@
   "country": "CN",
   "role": "genset_oem",
   "status": "verified",
-  "names": { "en": "Guangxi Dingbo Generator Set Manufacturing Co., Ltd.", "zh": null, "brands": ["Dingbo"] },
+  "names": {
+    "en": "Guangxi Dingbo Generator Set Manufacturing Co., Ltd.",
+    "zh": "广西顶博发电机组制造有限公司",
+    "brands": [
+      "Dingbo"
+    ]
+  },
   "website": "https://www.dieselgeneratortech.com/",
-  "hq": { "province": "Guangxi", "city": "Nanning" },
+  "hq": {
+    "province": "Guangxi",
+    "city": "Nanning"
+  },
   "founded": 2006,
-  "foundedSrc": [2],
+  "foundedSrc": [
+    2
+  ],
   "relatedIds": [],
   "strengths": [
-    { "text": "Tổ máy dùng động cơ Yuchai 20–2200 kW; danh mục có các model đến 3000kVA/2400kW", "src": [1] },
-    { "text": "Theo hãng: có chứng chỉ CE, ISO, CQC và quyền xuất nhập khẩu trực tiếp; quản lý theo ISO9001 và ISO14001", "src": [2] },
-    { "text": "Theo hãng: hơn 500 nhân viên, 100 nhân sự kỹ thuật; dịch vụ 24/7", "src": [2] }
+    {
+      "text": "Tổ máy dùng động cơ Yuchai 20–2200 kW; danh mục có các model đến 3000kVA/2400kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: có chứng chỉ CE, ISO, CQC và quyền xuất nhập khẩu trực tiếp; quản lý theo ISO9001 và ISO14001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 500 nhân viên, 100 nhân sự kỹ thuật; dịch vụ 24/7",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Theo hãng: là nhà máy OEM và trung tâm kỹ thuật của Cummins, Volvo, Perkins, Yuchai, SDEC, Weichai",
+      "src": [
+        4
+      ]
+    }
   ],
   "productLines": [
-    { "kind": "genset", "series": "Yuchai Diesel Generator", "fuel": "diesel", "engineMakes": ["Yuchai"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 20, "max": 2200, "unit": "kW", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+    {
+      "kind": "genset",
+      "series": "Yuchai Diesel Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 2200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "标准及自动化发电机组 (tổ máy tiêu chuẩn và tự động)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Volvo",
+        "Perkins",
+        "Yuchai",
+        "SDEC",
+        "Weichai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          4
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        4
+      ]
+    }
   ],
-  "certifications": [ { "name": "CE", "src": [2] }, { "name": "ISO9001", "src": [2] }, { "name": "ISO14001", "src": [2] }, { "name": "CQC", "src": [2] } ],
-  "vietnam": { "distributors": [], "note": null },
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CQC",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO9001-2015",
+      "src": [
+        3
+      ]
+    },
+    {
+      "name": "ISO14001:2015",
+      "src": [
+        3
+      ]
+    }
+  ],
+  "vietnam": {
+    "distributors": [],
+    "note": null
+  },
   "exportMarkets": [],
-  "missing": ["Tiêu đề trang ghi 20KW-2200KW nhưng danh sách có model 3000kVA/2400kW: chưa rõ dải tối đa", "Chưa đọc các dòng dùng động cơ khác", "Kết quả tìm kiếm gắn trang này với tên 'Starlight' nhưng bản quyền website là Guangxi Dingbo; không ghi Starlight là thương hiệu"],
+  "missing": [
+    "Tiêu đề trang ghi 20KW-2200KW nhưng danh sách có model 3000kVA/2400kW: chưa rõ dải tối đa",
+    "Chưa đọc các dòng dùng động cơ khác",
+    "Kết quả tìm kiếm gắn trang này với tên 'Starlight' nhưng bản quyền website là Guangxi Dingbo; không ghi Starlight là thương hiệu"
+  ],
   "sources": [
-    { "n": 1, "url": "https://www.dieselgeneratortech.com/yuchai/", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["Yuchai Diesel Generator & China Generator 20KW-2200KW", "3000kVA/2400kW Yuchai Diesel Generator Set", "Copyright © Guangxi Dingbo Generator Set Manufacturing Co., Ltd. All Rights Reserved"], "file": "sources/dingbo/1.md" },
-    { "n": 2, "url": "https://www.dieselgeneratortech.com/about-us/", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["Our company was established in 2006", "with the existing staff of more than 500 people, including 100 professional technical personnel", "We have CE,ISO,CQC certificate, and also have independent import and export right.", "Management is implemented in strict accordance with ISO9001 Quality Management System and ISO14001Environmental Management System.", "Add.: No. 10 Kechuang Road, High tech Zone, Nanning, Guangxi, China", "24/7/365 Customer Service Center"], "file": "sources/dingbo/2.md" }
+    {
+      "n": 1,
+      "url": "https://www.dieselgeneratortech.com/yuchai/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Yuchai Diesel Generator & China Generator 20KW-2200KW",
+        "3000kVA/2400kW Yuchai Diesel Generator Set",
+        "Copyright © Guangxi Dingbo Generator Set Manufacturing Co., Ltd. All Rights Reserved"
+      ],
+      "file": "sources/dingbo/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.dieselgeneratortech.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Our company was established in 2006",
+        "with the existing staff of more than 500 people, including 100 professional technical personnel",
+        "We have CE,ISO,CQC certificate, and also have independent import and export right.",
+        "Management is implemented in strict accordance with ISO9001 Quality Management System and ISO14001Environmental Management System.",
+        "Add.: No. 10 Kechuang Road, High tech Zone, Nanning, Guangxi, China",
+        "24/7/365 Customer Service Center"
+      ],
+      "file": "sources/dingbo/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.gxdbdl.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "广西顶博发电机组制造有限公司成立于2006年",
+        "产品已经通过ISO9001-2015质量体系认证，ISO14001:2015环境管理体系认证，GB/T28001-2011职位健康安全管理体系认证"
+      ],
+      "file": "sources/dingbo/3.md"
+    },
+    {
+      "n": 4,
+      "url": "https://www.gxdbdl.com/company/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "标准及自动化发电机组： 涵盖5kW-3000kW多功率段",
+        "是康明斯、沃尔沃、珀金斯、玉柴、上柴、潍柴等知名发动机品牌的OEM配套工厂和技术中心"
+      ],
+      "file": "sources/dingbo/4.md"
+    }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",

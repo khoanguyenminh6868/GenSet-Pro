@@ -1,0 +1,121 @@
+{
+  "id": "byc-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Fuan Boyuan Power Machinery Co.,LTD. (BYC Power)",
+    "zh": null,
+    "brands": [
+      "BYC"
+    ]
+  },
+  "website": "https://www.bycpower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất tổ máy diesel và đầu phát AC; theo ISO8528, ISO9001:2015, CE",
+      "src": [
+        1,
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [
+        "ISO8528"
+      ],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "AC alternators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [
+        "BYC"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001:2015",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ ghi 5KVA to 3000KVA, trang giới thiệu ghi 5KVA to 2500KVA"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.bycpower.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Our production is submit to ISO8528 and CE certification, and quality controllered accoding to ISO9001 Management System",
+        "Our products ranges: 5KVA to 3000KVA."
+      ],
+      "file": "sources/byc-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.bycpower.com/aboutus.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Main products cover diesel generator sets and AC alternator. Power range from 5KVA to 2500KVA. All products are strictly manufactured in accordance with the ISO9001：2015 production standard to assure best quality, and are complied with CE certificate."
+      ],
+      "file": "sources/byc-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

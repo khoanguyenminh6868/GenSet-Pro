@@ -1,0 +1,75 @@
+{
+  "id": "repower-gas",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Tianjin Sinogas Repower Energy Co., Ltd",
+    "zh": null,
+    "brands": []
+  },
+  "website": "https://www.repowergas.com/",
+  "hq": {
+    "province": "Tianjin",
+    "city": "Tianjin"
+  },
+  "founded": 2009,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Chuyên thiết bị khí tự nhiên/LNG; có máy phát gas 300–4000 kW và nhà máy điện khí",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gas generator",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 300,
+        "max": 4000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.repowergas.com/aboutus",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Tianjin Sinogas Repower Energy Co., Ltd was established in 2009, is located in Tianjin, China.",
+        "4) Power generator: gas generator from 300-4000KW, gas power plant, off-grid power generation solution from natural gas fuel, bio-gas power generation solution"
+      ],
+      "file": "sources/repower-gas/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

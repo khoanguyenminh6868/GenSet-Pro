@@ -1,0 +1,111 @@
+{
+  "id": "camda-generator",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Camda New Energy Equipment Co., Ltd",
+    "zh": null,
+    "brands": [
+      "Camda"
+    ]
+  },
+  "website": "https://www.camda-generator.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 1998,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tự phát triển động cơ gas (hợp tác Cummins Trung Quốc) cho tổ máy gas 30–500 kWe",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gas Generator sets (Camda gas engines)",
+      "fuel": "gas",
+      "engineMakes": [
+        "Camda"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001:2008",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001:2015",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.camda-generator.com/page/about-us.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Camda was previously known as Camda Generator Work Co. Ltd which was established in 1998, mainly producing Diesel Generator Set s.",
+        "Through cooperation with China Cummins, Camda has developed its own brand of gas engines to power 30kWe to 500kWe Gas Generator sets",
+        "Camda has been authorized as an exclusive distributor for GE gas engines",
+        "ISO14001:2015 Environmental Management System is strictly followed in gensets manufacturing. ISO9001:2008"
+      ],
+      "file": "sources/camda-generator/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

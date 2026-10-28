@@ -1,0 +1,60 @@
+{
+  "id": "suneco-linyi",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Suneco Diesel Generators",
+    "zh": null,
+    "brands": [
+      "Suneco"
+    ]
+  },
+  "website": "https://www.generators365.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Linyi"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không có tên pháp nhân, dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.generators365.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "We have our own diesel generators factory in Linyi, Shandong, China, close to the port"
+      ],
+      "file": "sources/suneco-linyi/1.md"
+    }
+  ],
+  "confidence": "low",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

@@ -1,0 +1,102 @@
+{
+  "id": "wintpower",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "FUZHOU WINTPOWER TECHNOLOGY CO., LTD",
+    "zh": null,
+    "brands": [
+      "WINTPOWER"
+    ]
+  },
+  "website": "https://www.wintpower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "Volvo",
+        "Deutz",
+        "Mitsubishi",
+        "Kubota",
+        "Yanmar",
+        "Doosan"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Marathon"
+      ],
+      "power": {
+        "min": 5,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.wintpower.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "WINTPOWER is certificated with ISO9001, ISO14001, CE Certificate and so on.",
+        "Established long-term cooperative relations with brand enterprises such as Cummins engine, Perkins engine, Volvo engine, Deutz engine, Mitsubishi engine, Kubota, Yanmar, Doosan, Stamford alternator, Leroy Somer alternator, Marathon, we have developed types of diesel generator sets from 5Kva to 3000Kva"
+      ],
+      "file": "sources/wintpower/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

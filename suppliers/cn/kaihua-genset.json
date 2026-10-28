@@ -1,0 +1,135 @@
+{
+  "id": "kaihua-genset",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Taizhou Kaihua Diesel Generator Sets Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Kaihua"
+    ]
+  },
+  "website": "https://www.kaihuagenset.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Taizhou"
+  },
+  "founded": 2003,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: OEM cho Cummins, Stamford, Marathon, Weichai; công suất hơn 3.000 bộ/năm",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Có trạm điện di động 15–750 kVA, máy thủy, máy gas",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Land use generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Weichai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Marathon"
+      ],
+      "power": {
+        "min": 3,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mobile power stations",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 15,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "trailer"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gas and marine generator sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.kaihuagenset.com/About-Us.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Taizhou Kaihua Diesel Generator Sets Co., Ltd. was established in 2003 and is located in Taizhou City, Jiangsu Province. With 22 years of manufacturing experience, the company has an annual production capacity of over 3,000 units.",
+        "Kaihua serves as an OEM for renowned brands such as Cummins, Stamford, Marathon, and Weichai",
+        "mobile power stations from 15 to 750 KVA, land use generator sets from 3 to 3,750 KVA",
+        "We offer a full range of diesel, gas, and marine generator sets from 15 to 3750 kVA"
+      ],
+      "file": "sources/kaihua-genset/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

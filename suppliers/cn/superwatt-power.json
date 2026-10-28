@@ -1,0 +1,113 @@
+{
+  "id": "superwatt-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Guangdong Superwatt Power Equipment Co., Ltd",
+    "zh": null,
+    "brands": [
+      "SWT"
+    ]
+  },
+  "website": "https://www.swtgenset.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel Generator Powered by MTU",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1000,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SWT Gas Generators",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "OHSAS18001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CCC",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Mới có dải của dòng MTU; còn các dòng Cummins, Perkins, Yuchai chưa có dải"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.swtgenset.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Certs:ISO14001, ISO9001, OHSAS18001, CCC",
+        "Diesel Generator Powered by MTU 1000kVA-3000kVA"
+      ],
+      "file": "sources/superwatt-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

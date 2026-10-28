@@ -1,0 +1,299 @@
+{
+  "id": "acepow-fuan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "FUAN ACEPOW EQUIPMENT CO.,LTD",
+    "zh": null,
+    "brands": [
+      "Acepow"
+    ]
+  },
+  "website": "http://www.acepow.net/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Bảng dải công suất theo từng hãng động cơ (Cummins, Perkins, Volvo, Doosan, SDEC, Yuchai, Weichai, FPT Iveco...)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Cummins Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Volvo Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 85,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Doosan Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 60,
+        "max": 850,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Shanghai Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 60,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Yuchai Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Weichai Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FPT Iveco Engine",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT Iveco"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "SASO",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "SONCAP",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang ghi 'ISO4001' (có thể là ISO14001, không sửa)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.acepow.net/aboutus.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "It’s special at manufacturing diesel generator set, diesel alternator and motor product. Now our factory, covers an area of 50000 square meters, and have gotten ISO9001 and ISO4001 certificate. Our diesel genset have passed CE, SASO, SONCAP certificate.",
+        "1.Cummins Engine 20KVA - 2000KVA",
+        "4.Perkins Engine 8KVA - 2000KVA",
+        "5.Volvo Engine 85KVA - 700KVA",
+        "6.Doosan Engine 60KVA - 850KVA",
+        "10. Shanghai Engine 60KVA-1000KVA",
+        "11. Yuchai Engine 20KVA-1125KVA",
+        "9. Weichai Engine 8KVA - 150KVA",
+        "3.FPT Iveco Engine 30KVA - 350KVA"
+      ],
+      "file": "sources/acepow-fuan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

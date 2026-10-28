@@ -1,0 +1,61 @@
+{
+  "id": "beidou-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Yangzhou Beidou Power Equipment Co., Ltd.",
+    "zh": null,
+    "brands": []
+  },
+  "website": "https://www.bdgenerator.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.bdgenerator.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Yangzhou Beidou Power Equipment Co., Ltd. Registration No.: Su ICP No. 13056022-8",
+        "Rainproof Type 500kW Cummins Power DieselGenerator"
+      ],
+      "file": "sources/beidou-yangzhou/1.md"
+    }
+  ],
+  "confidence": "low",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

@@ -13,8 +13,11 @@ Dữ liệu cho trang "Nhà cung cấp" và tab "Nhà cung cấp" (Gợi ý top 
 - `cn/<id>.json`: một nhà cung cấp (định dạng: `schema.json`).
 - `sources/<id>/<n>.md`: bản lưu trang nguồn (dòng đầu: URL, ngày đọc). Trang dựng bằng JavaScript được đọc qua firecrawl, ghi `Via: firecrawl`.
 - `fetch-source.mjs <id> <n> <url>`: lưu một trang (HTML hoặc PDF) thành văn bản.
+- `build.mjs <specs.mjs>`: dựng `cn/<id>.json` từ mô tả ngắn; URL và ngày đọc của mỗi nguồn lấy từ dòng đầu file đã lưu, không gõ tay.
 - `verify.mjs`: kiểm tra bằng code: mỗi câu trích phải có nguyên văn trong file nguồn, số min/max công suất phải có trong câu trích, mỗi `src` trỏ tới nguồn có thật.
 - `upload.mjs [--dry]`: chạy kiểm tra rồi đăng lên web thành `supplier/<id>` (qua `/api/ingest`). Bản ghi `incomplete` không đăng.
+
+Không thu thập nhà phân phối tại Việt Nam (Khoa, 2026-10-28).
 
 ## Thêm hoặc sửa một nhà cung cấp
 1. `node suppliers/fetch-source.mjs <id> <n> <url>` cho từng trang nguồn.

@@ -1,0 +1,92 @@
+{
+  "id": "kangwo-xiamen",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Xiamen Kangwo Mechanical and Electrical Equipment Co., Ltd.",
+    "zh": "厦门康沃机电设备有限公司",
+    "brands": [
+      "康沃",
+      "Kangwo"
+    ]
+  },
+  "website": "http://www.kangwopowers.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Xiamen"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "康沃 diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Kangwo"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 80,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001:2000",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001:2004",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.kangwopowers.com/index.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "功率覆盖80KW--2000KW"
+      ],
+      "file": "sources/kangwo-xiamen/1.md"
+    },
+    {
+      "n": 2,
+      "url": "http://www.kangwopowers.com/cn/single/profile.htm?menuid=33",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "通过了 ISO9001:2000、ISO14001:2004"
+      ],
+      "file": "sources/kangwo-xiamen/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

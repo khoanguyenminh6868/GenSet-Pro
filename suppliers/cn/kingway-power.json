@@ -1,0 +1,122 @@
+{
+  "id": "kingway-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Qingdao Kingway Industry Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Kingway"
+    ]
+  },
+  "website": "https://www.kingwaygenerator.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Qingdao"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: có chứng nhận ATEX (vùng nổ Zone 2), DNV, BV, Lloyd's Register, CCS; máy gas và diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gas generator sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ATEX",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "DNV",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "BV",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CCS",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có dải công suất trên trang đã đọc"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.kingwaygenerator.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Copyright © Qingdao Kingway Industry Co., Ltd.All Rights Reserved.",
+        "The company boasts 18 patents covering various core technologies and has obtained more than 10 product and production certifications, including ISO, CE, ATEX, ROHS, DNV, BV, SGS, Lloyd’s Register, CSC, and CCS, etc."
+      ],
+      "file": "sources/kingway-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

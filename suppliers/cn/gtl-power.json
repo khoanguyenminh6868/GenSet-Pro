@@ -1,0 +1,125 @@
+{
+  "id": "gtl-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Xiamen GTL Power System Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "GTL"
+    ]
+  },
+  "website": "https://www.gtlplus.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Xiamen"
+  },
+  "founded": 2009,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 4000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gas generators",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 12,
+        "max": 1500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO 9001",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ còn ghi 5KVA ~ 6250 KVA cho tổ máy tiêu chuẩn"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.gtlplus.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "the supply of power ranging from 5KVA ~ 6250 KVA of the standard Generator Sets"
+      ],
+      "file": "sources/gtl-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.gtlplus.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Xiamen GTL Power System Co., Ltd established in 2009",
+        "The Generators we provide can be both in Open skid, weatherproof and Soundproof, power range from 5 kW to 4000 kW;",
+        "The Gas generator can range from 12 kW to 1500 kW,",
+        "All products conform to CE and ISO 9001 standards."
+      ],
+      "file": "sources/gtl-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

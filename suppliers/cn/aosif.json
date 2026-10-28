@@ -1,0 +1,140 @@
+{
+  "id": "aosif",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Xiamen AOSIF Engineering Ltd",
+    "zh": null,
+    "brands": [
+      "AOSIF"
+    ]
+  },
+  "website": "https://www.aosif.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Xiamen"
+  },
+  "founded": 2001,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Dải rộng: diesel 10–5000 kVA, gas 25–2500 kVA; tự sản xuất đầu phát 10–2500 kVA",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 5000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gas generator sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 25,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "AOSIF alternators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [
+        "AOSIF"
+      ],
+      "power": {
+        "min": 10,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.aosif.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Xiamen AOSIF Engineering Ltd has focused on R&D and manufacturing of generator sets & alternators since it founding in 2001",
+        "The manufacture base is located in Changtai Economic Development Zone with an area of 33,333 square meters"
+      ],
+      "file": "sources/aosif/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.aosif.com/c_guanyuwomen/companyprofile.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Its product range includes diesel generator sets ranging from 10kVA to 5000kVA, gas generator sets ranging from 25kVA to 2500kVA",
+        "ors ranging from 10kVA to 2500kVA"
+      ],
+      "file": "sources/aosif/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

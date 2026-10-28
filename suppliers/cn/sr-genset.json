@@ -1,0 +1,94 @@
+{
+  "id": "sr-genset",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "SR GENSET",
+    "zh": null,
+    "brands": [
+      "SR"
+    ]
+  },
+  "website": "https://sr-genset.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: 4 dây chuyền, 45.000 tổ máy/năm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 3,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Không ghi tên pháp nhân, địa chỉ",
+    "Trang chủ ghi 3kva-2500kva, trang giới thiệu ghi 3kW-2000kW"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://sr-genset.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "There are 4 production lines with an annual output of 45,000 diesel generators. The power range is from 3kva to 2500kva"
+      ],
+      "file": "sources/sr-genset/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://sr-genset.com/company-profile/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "The power range is from 3kW to 2000kW",
+        "Our company has passed ISO9001 quality"
+      ],
+      "file": "sources/sr-genset/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

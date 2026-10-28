@@ -1,0 +1,141 @@
+{
+  "id": "ettes-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Ettes Power",
+    "zh": null,
+    "brands": [
+      "ETTES"
+    ]
+  },
+  "website": "https://www.ettesgenerator.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 1998,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Máy gas, biogas và CHP/CCHP (đồng phát) cho dự án rác thải và trạm năng lượng phân tán",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Ettes diesel gensets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "MTU",
+        "Mitsubishi"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Ettes gas gensets & CCHPs",
+      "fuel": "gas",
+      "engineMakes": [
+        "MAN",
+        "MWM",
+        "Cummins",
+        "CNPC 190"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001:2008",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.ettesgenerator.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Ettes gas gensets & CCHPs can be driven by top engine brands of MAN, MWM, Cummins and CNPC 190 Series, 20kW~2000kW",
+        "Ettes diesel gensets can be driven by world top engine brands of Cummins, MTU and Mitsubishi, ranging from 20kVa to 3000kVa"
+      ],
+      "file": "sources/ettes-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.ettesgenerator.com/about-us-gas-and-diesel-generator.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Transformed from China state owned enterprise and founded in 1998",
+        "All Ettes brand gensets are certified by ISO9001:2008, ISO14001 and CE"
+      ],
+      "file": "sources/ettes-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

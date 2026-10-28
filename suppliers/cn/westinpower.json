@@ -1,0 +1,66 @@
+{
+  "id": "westinpower",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Westinpower",
+    "zh": null,
+    "brands": [
+      "Westinpower"
+    ]
+  },
+  "website": "https://power-gensets.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": null
+  },
+  "founded": 2003,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://power-gensets.com/about-us.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Since 2003, Westinpower has been focusing on the R&D, design, manufacture and supply of generator sets",
+        "Westinpower has established long-term partnerships with Perkins"
+      ],
+      "file": "sources/westinpower/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

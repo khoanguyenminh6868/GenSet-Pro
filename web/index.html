@@ -1815,7 +1815,7 @@ const supName = (s) => s?.names?.en || s?.names?.zh || s?.id || "";
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
-let supFilter = { q: "", role: "", engine: "", fuel: "", vn: false, power: "", unit: "kVA" };
+let supFilter = { q: "", role: "", engine: "", fuel: "", power: "", unit: "kVA" };
 let supOpenId = null;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
 function supLinesFor(s, f = supFilter) {
@@ -1827,7 +1827,6 @@ function supLinesFor(s, f = supFilter) {
 function supMatches(s) {
   const f = supFilter, q = f.q.trim().toLowerCase();
   if (f.role && s.role !== f.role) return false;
-  if (f.vn && !s.vietnam?.distributors?.length) return false;
   if (q && ![s.id, s.names?.en, s.names?.zh, ...(s.names?.brands || []), s.hq?.province, s.hq?.city].some((x) => String(x || "").toLowerCase().includes(q))) return false;
   return !(f.engine || f.fuel || Number(f.power) > 0) || supLinesFor(s).length > 0;
 }
@@ -1854,7 +1853,6 @@ function renderSuppliers() {
       <label class="muted small" for="supPower">Công suất cần</label>
       <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="vd. 500">
       <select id="supUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
-      <label class="row small" style="gap:4px"><input type="checkbox" id="supVn" ${f.vn ? "checked" : ""}>Có nhà phân phối tại Việt Nam</label>
       <span class="spacer"></span><span class="muted small" id="supCount"></span>
     </div>
     <div id="supList"></div>`;
@@ -1866,19 +1864,17 @@ function renderSuppliers() {
   $("#supFuel").onchange = (e) => set("fuel", e.target.value);
   $("#supPower").oninput = (e) => set("power", e.target.value);
   $("#supUnit").onchange = (e) => set("unit", e.target.value);
-  $("#supVn").onchange = (e) => set("vn", e.target.checked);
 }
 function renderSupList() {
   const list = supAll().filter(supMatches), filtered = supFilter.engine || supFilter.fuel || Number(supFilter.power) > 0;
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
-  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Tại VN</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
+  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
     return h`<tr data-supopen="${s.id}"><td><b>${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div></td>
       <td>${SUP_ROLE[s.role] || s.role}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
       <td>${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
       <td class="small">${[...new Set(lines.flatMap((p) => p.engineMakes || []))].join(", ") || "—"}</td>
-      <td>${raw(s.vietnam?.distributors?.length ? '<span class="chip ok">Có</span>' : '<span class="muted small">Chưa có dữ liệu</span>')}</td>
       <td><span class="chip ${conf[1]}">${conf[0]}</span></td></tr>`;
   }).join(""))}</tbody></table></div>` : h`<div class="note">Không có nhà cung cấp nào khớp bộ lọc.${raw(Number(supFilter.power) > 0 ? " Lưu ý: chỉ so với dòng máy ghi cùng đơn vị (kVA hoặc kW), không quy đổi." : "")}</div>`;
 }
@@ -1902,7 +1898,6 @@ function supDetailHtml(s) {
       <td class="small">${(p.alternatorMakes || []).join(", ") || "—"}</td>
       <td class="small">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div>` : '<div class="muted small">Chưa có dữ liệu.</div>')}
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
-    <h4>Tại Việt Nam</h4>${raw(list(s.vietnam?.distributors, (d) => h`<li>${d.name}${raw(d.website ? h` · <a href="${d.website}" target="_blank" rel="noopener">${d.website}</a>` : "")} ${raw(supRefs(d.src))}</li>`))}${raw(s.vietnam?.note ? h`<div class="note warn small">${s.vietnam.note}</div>` : "")}
     ${raw(s.missing?.length ? h`<h4>Chưa tìm thấy / lưu ý</h4>${raw(list(s.missing, (m) => h`<li>${m}</li>`))}` : "")}
     <h4>Nguồn</h4><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${x.url}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
       <ul>${raw((Array.isArray(x.quote) ? x.quote : [x.quote]).map((q) => h`<li class="small"><q>${q}</q></li>`).join(""))}</ul></li>`).join(""))}</ol>
@@ -1932,8 +1927,7 @@ function supMatchHtml(r) {
       ${raw(x.productLine ? h`<div class="small">Dòng máy đề xuất: <b>${x.productLine}</b></div>` : "")}
       <ul class="suplist">${raw((x.reasons || []).map((y) => h`<li>${y.text} ${raw(refs(x.supplierId, y.supplierSrc))}${raw(y.unverified ? '<span class="chip warn" title="Code không tìm thấy trích dẫn hoặc số liệu này trong nguồn">⚠ chưa khớp nguồn</span>' : "")}
         ${raw(y.requirementQuote ? h`<div class="muted small">HSMT: <q>${y.requirementQuote}</q></div>` : "")}</li>`).join(""))}</ul>
-      ${raw(x.gaps?.length ? h`<div class="small"><b>Còn thiếu / cần làm rõ:</b></div><ul class="suplist">${raw(x.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}
-      <div class="small">Nhà phân phối tại Việt Nam: ${x.vietnamDistributor === true ? "có trong dữ liệu" : x.vietnamDistributor === false ? "không có trong dữ liệu" : "chưa có dữ liệu"}</div></div>`;
+      ${raw(x.gaps?.length ? h`<div class="small"><b>Còn thiếu / cần làm rõ:</b></div><ul class="suplist">${raw(x.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
   }).join("") : h`<div class="note warn">Không có nhà cung cấp nào trong dữ liệu đủ phù hợp với gói này.</div>`)
     + (r.requirementsUsed?.length ? h`<details><summary class="small">Yêu cầu của gói đã dùng để so (${r.requirementsUsed.length})</summary><ul class="suplist">${raw(r.requirementsUsed.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "")
     + (r.notes?.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy</b><ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul></div>` : "");

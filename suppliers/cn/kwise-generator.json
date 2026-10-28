@@ -1,0 +1,70 @@
+{
+  "id": "kwise-generator",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "FUJIAN KWISE GENERATOR CO.,LTD",
+    "zh": "航天凯威斯电气（福州）有限公司",
+    "brands": [
+      "KWISE"
+    ]
+  },
+  "website": "https://kwisegenerator.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất đầu phát đồng bộ từ năm 1955; thuộc ADDSINO (công ty con của CASIC)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "Synchronous alternators (KAL series)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [
+        "KWISE"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có dải kVA"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://kwisegenerator.com/about/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "As one of wholly-controlled company of ADDSINO CO.,LTD, FUJIAN KWISE GENERATOR CO.,LTD is an integrated professional factory committed to research ,development ,sale and after-sale and to be one of earliest factory to produce synchronous alternators. Since 1955, KWISE began to produce alternators",
+        "We joined the ADDSINO Co.,Ltd, a subsidiary of the CASIC."
+      ],
+      "file": "sources/kwise-generator/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

@@ -1,0 +1,88 @@
+{
+  "id": "mingbang-mbkl",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Jiangsu Mingbang Intelligent Technology Co., Ltd (MBKL)",
+    "zh": null,
+    "brands": [
+      "MBKL"
+    ]
+  },
+  "website": "http://www.generatorset-china.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "MBKL diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 2.5,
+        "max": 3500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [
+        "50Hz",
+        "60Hz"
+      ],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "trailer",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "http://www.generatorset-china.com/about-us",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "MBKL diesel generator sets range from 2.5kVA to 3500kVA, 50Hz or 60Hz frequency, can be open type gensets, silent type gensets, trailer type gensets or container type gensets",
+        "They meet the highest quality requirements as stipulated in ISO9001, ISO14000:14001, SGS,TUV,ASC etc"
+      ],
+      "file": "sources/mingbang-mbkl/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

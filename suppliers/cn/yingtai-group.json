@@ -1,0 +1,100 @@
+{
+  "id": "yingtai-group",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Yingtai Group Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Yingtai"
+    ]
+  },
+  "website": "https://www.yingtaigenerator.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": 1972,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: đơn vị tham gia soạn tiêu chuẩn quốc gia về tổ máy; cơ sở hơn 240.000 m²; có máy diesel, gas, dầu nặng, đầu phát, tủ trung/hạ thế",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Generator sets (diesel, gas, heavy oil)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 3,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "Yingtai alternators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Yingtai"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Thành phố lấy theo kết quả tìm kiếm (Yangzhou), trang đã lưu không ghi"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.yingtaigenerator.com/about.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Founded in 1972, we have specialized in power generation equipment for half a century",
+        "Yingtai Group Co., Ltd. is a national standard drafting genset manufacturer, supplying 3kW–3000kW generators with world-famous engine partners.",
+        "has a modern production base with an area of over 240,000 square meters",
+        "Our main products include generator sets (diesel, gas, heavy oil, clean energy), alternators, high and low voltage switchge"
+      ],
+      "file": "sources/yingtai-group/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

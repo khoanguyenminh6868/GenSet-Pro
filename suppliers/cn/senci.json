@@ -1,0 +1,90 @@
+{
+  "id": "senci",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Senci Mechanical & Electrical Co.,Ltd.",
+    "zh": "神驰机电股份有限公司",
+    "brands": [
+      "SENCI"
+    ]
+  },
+  "website": "https://www.senci.com/",
+  "hq": {
+    "province": "Chongqing",
+    "city": "Chongqing"
+  },
+  "founded": 1990,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Công ty niêm yết Thượng Hải (603109); mạnh về máy phát xăng di động, inverter, đầu phát cỡ nhỏ",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gasoline / inverter generators",
+      "fuel": "gasoline",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1,
+        "max": 8,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "portable"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001:2008",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Dải 1–8 kW lấy từ các model trên trang chủ, chưa phải toàn bộ danh mục"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.senci.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Senci Mechanical & Electrical Co.,Ltd. , established in 1990, has been publicly listed on the Shanghai Stock Exchange since late 2019, trading under the stock code 603109",
+        "Rated power,1KW-3KW",
+        "Rated power,3KW-8KW",
+        "adheres to the ISO9001:2008 quality management standard"
+      ],
+      "file": "sources/senci/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}
