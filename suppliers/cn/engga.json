@@ -1,0 +1,31 @@
+{
+  "id": "engga",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": { "en": "ENGGA (Yangjiang) Electric Co., Ltd.", "zh": null, "brands": ["ENGGA"] },
+  "website": "https://en.engga.cn/",
+  "hq": { "province": "Guangdong", "city": "Yangjiang" },
+  "founded": 1992,
+  "foundedSrc": [1],
+  "relatedIds": [],
+  "strengths": [
+    { "text": "Theo hãng: sản xuất đầu phát từ 1992 (thành lập ở Quảng Châu), công suất hơn 30.000 máy/năm, thử 100% có tải, 8 bệ thử", "src": [1] },
+    { "text": "Đầu phát dùng cho cả trên bờ và ngoài khơi; có bộ điều khiển kích từ số (DEC)", "src": [1] }
+  ],
+  "productLines": [
+    { "kind": "alternator", "series": "ENGGA generators / alternators", "fuel": null, "engineMakes": [], "engineModels": [], "alternatorMakes": ["ENGGA"],
+      "power": null, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+  ],
+  "certifications": [],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Website chính hãng không ghi dải kVA; gian hàng Made-in-China ghi 30–2500 kVA nhưng là nguồn tự giới thiệu, chưa đưa vào", "Một số đơn vị khác dùng tên 'Guangzhou Engga Generators Co., Ltd.': chưa xác minh quan hệ với ENGGA (Yangjiang)"],
+  "sources": [
+    { "n": 1, "url": "https://en.engga.cn/", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["Founded in Guangzhou in 1992, ENGGA is a global manufacturer and service provider of generators and new energy vehicle drive systems", "with an annual capacity of over 30,000 units. Equipped with 8 major testing platforms, we carry out full-process quality control and 100% load testing.", "Engga generator products cover a wide range of applications from onshore to offshore.", "COPYRIGHT 2026 ENGGA (Yangjiang) Electric Co., Ltd."], "file": "sources/engga/1.md" }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "sunkings",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": { "en": "Guangdong Sunkings Electric Co., Ltd.", "zh": null, "brands": ["Sunkings", "SHX"] },
+  "website": "https://www.dieselpowergeneratorset.com/",
+  "hq": { "province": "Guangdong", "city": "Foshan" },
+  "founded": 1993,
+  "foundedSrc": [2],
+  "relatedIds": [],
+  "strengths": [
+    { "text": "Tổ máy diesel và biogas 20–2400 kW (25–3000 kVA)", "src": [2] },
+    { "text": "Theo hãng: đối tác OEM được chỉ định của Cummins, Perkins, Volvo, Daewoo; đầu phát Stamford, Marathon, Engga, Farada", "src": [2] },
+    { "text": "Theo hãng: thiết bị đạt hệ thống chất lượng ISO9001, thử nghiệm trước khi giao", "src": [2] }
+  ],
+  "productLines": [
+    { "kind": "genset", "series": "Diesel Generator Sets / Biogas Generator Sets", "fuel": "diesel", "engineMakes": ["Cummins", "Perkins", "Volvo", "Daewoo"], "engineModels": [], "alternatorMakes": ["Stamford", "Marathon", "Engga", "Farada"],
+      "power": { "min": 25, "max": 3000, "unit": "kVA", "rating": "unspecified", "src": [2] }, "frequency": [], "voltage": [], "types": ["open", "silent"], "emission": [], "standards": [], "src": [1, 2] },
+    { "kind": "genset", "series": "Biogas Generator Sets", "fuel": "gas", "engineMakes": [], "engineModels": [], "alternatorMakes": [],
+      "power": null, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [2] }
+  ],
+  "certifications": [ { "name": "ISO9001", "src": [2] } ],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Dải 20–2400 kW chung cho diesel và biogas; chưa tách riêng dải biogas", "Không ghi prime/standby", "Bảo hành tiêu chuẩn theo trang: 1 năm hoặc 1000 giờ"],
+  "sources": [
+    { "n": 1, "url": "https://www.dieselpowergeneratorset.com/", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["GUANGDONG SUNKINGS ELECTRIC CO., LTD is one of the leading generator sets manufacture and supplier in southern China since 1993.", "200KW 250KVA Silent Type Generator Set Powered By Cummins Engine"], "file": "sources/sunkings/1.md" },
+    { "n": 2, "url": "https://www.dieselpowergeneratorset.com/aboutus.html", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["We make Diesel Generator Sets /Biogas Generator Sets covering 20KW to 2400KW (25KVA to 3000KVA)", "We are the appointed OEM partner of Cum m ins, Perkins, Vo lvo and Daewoo.Excellent engines equipped with world-known alternators such as Stamford, Marathon, Engga and Farada.", "We start our diesel power generator sets business since 1993.", "Our factory and office are located in Foshan City", "All diesel generator set equipments supplied by our company have passed certification of ISO9001 international quality system", "The equipment guarantee period is one year or 1000 running hours since the date of delivery."], "file": "sources/sunkings/2.md" }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

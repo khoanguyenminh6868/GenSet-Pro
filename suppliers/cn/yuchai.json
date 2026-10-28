@@ -1,0 +1,37 @@
+{
+  "id": "yuchai",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": { "en": "Guangxi Yuchai Machinery Co., Ltd.", "zh": "广西玉柴机器股份有限公司", "brands": ["Yuchai"] },
+  "website": "https://en.yuchaidiesel.com/",
+  "hq": { "province": "Guangxi", "city": "Yulin" },
+  "founded": 1992,
+  "foundedSrc": [3],
+  "relatedIds": [],
+  "strengths": [
+    { "text": "Động cơ phát điện (G-drive) 10 nền tảng, dải 15 kW đến 4.200 kW; đạt CE (EU) và chứng nhận TLC ngành viễn thông Trung Quốc", "src": [4] },
+    { "text": "Danh mục G-drive có cả dòng MTU 4000 Series 1190–3490 kW", "src": [4] },
+    { "text": "Ở nước ngoài có 13 văn phòng, 224 đại lý dịch vụ, 460 điểm dịch vụ; có bảo hành quốc tế", "src": [4] },
+    { "text": "Là đơn vị chủ tịch Hiệp hội Công nghiệp Động cơ đốt trong Trung Quốc (CICEIA)", "src": [3] }
+  ],
+  "productLines": [
+    { "kind": "engine", "series": "G-drive Engine (YC4D, YC4A, YC6A, YC6MK/YC6MJ, YC6K, YC6T/YC6TD, YC6C, YC12VC, MTU 4000)", "fuel": "diesel", "engineMakes": ["Yuchai", "MTU"], "engineModels": ["YC4D", "YC4A", "YC6A", "YC6MK", "YC6MJ", "YC6K", "YC6T", "YC6TD", "YC6C", "YC12VC", "MTU 4000"], "alternatorMakes": [],
+      "power": { "min": 15, "max": 4200, "unit": "kW", "rating": "unspecified", "src": [4] }, "frequency": [], "voltage": [], "types": [], "emission": ["China non-road T3"], "standards": [], "src": [4] },
+    { "kind": "genset", "series": "Tổ máy phù hợp với động cơ G-drive (Adapted Generator Set, theo bảng của hãng)", "fuel": "diesel", "engineMakes": ["Yuchai"], "engineModels": ["YC4D", "YC12VC"], "alternatorMakes": [],
+      "power": { "min": 45, "max": 2000, "unit": "kW", "rating": "unspecified", "src": [4] }, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [4] }
+  ],
+  "certifications": [ { "name": "CE (động cơ G-drive)", "src": [4] }, { "name": "TLC (ngành viễn thông Trung Quốc)", "src": [4] } ],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Chưa có danh sách nhà phân phối tại Việt Nam từ nguồn chính hãng", "Công suất G-drive không ghi prime/standby", "Bảng 'Adapted Generator Set' là công suất tổ máy phù hợp, không phải tổ máy Yuchai tự bán"],
+  "sources": [
+    { "n": 3, "url": "https://en.yuchaidiesel.com/about/guan-yu-wo-men.htm", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["Founded in 1992, Guangxi Yuchai Machinery Co., Ltd. (Yuchai for short) is the first Chinese-foreign joint venture in the domestic industry listed abroad and the president unit of China Internal Combustion Engine Industry Association (CICEIA).", "Headquartered in Yulin, Guangxi Zhuang Autonomous Region"], "file": "sources/yuchai/3.md" },
+    { "n": 4, "url": "https://en.yuchaidiesel.com/product/pro-list-33-0.htm", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["With the power ranging from 15 kW to 4,200 kW, Yuchai G-drive engines meet the requirements of China's non-road T3 emission regulations, and have passed both EU's CE certification and the TLC certification in China's communication industry.", "MTU 4000 Series Diesel Engine - 1190-3490 Power Range(kW)", "YC12VC Diesel Engine - 1120~2205 Power Range(kW) - 1000~2000 Adapted Generator Set (kW)", "YC4D Diesel Engine - 53~132 Power Range(kW) - 45~110 Adapted Generator Set (kW)", "With 13 offices, 224 service agents and 460 service outlets at abroad, we are able to provide international warranty service."], "file": "sources/yuchai/4.md" }
+  ],
+  "confidence": "high",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

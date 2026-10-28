@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenBid supplier record (suppliers/<country>/<id>.json)",
+  "type": "object",
+  "required": ["id", "country", "role", "status", "names", "productLines", "sources", "confidence", "checkedAt"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "role": { "enum": ["genset_oem", "engine_maker", "alternator_maker", "distributor"] },
+    "status": { "enum": ["verified", "partial", "incomplete"] },
+    "names": { "type": "object", "properties": { "en": { "type": ["string", "null"] }, "zh": { "type": ["string", "null"] }, "brands": { "type": "array", "items": { "type": "string" } } } },
+    "website": { "type": ["string", "null"] },
+    "hq": { "type": "object", "properties": { "province": { "type": ["string", "null"] }, "city": { "type": ["string", "null"] } } },
+    "founded": { "type": ["integer", "null"] },
+    "foundedSrc": { "$ref": "#/$defs/src" },
+    "relatedIds": { "type": "array", "items": { "type": "string" } },
+    "strengths": { "type": "array", "items": { "type": "object", "required": ["text", "src"], "properties": { "text": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
+    "productLines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "series", "src"],
+        "properties": {
+          "kind": { "enum": ["genset", "engine", "alternator"] },
+          "series": { "type": "string" },
+          "fuel": { "enum": ["diesel", "gas", "dual", "hfo", "gasoline", "other", null] },
+          "engineMakes": { "type": "array", "items": { "type": "string" } },
+          "engineModels": { "type": "array", "items": { "type": "string" } },
+          "alternatorMakes": { "type": "array", "items": { "type": "string" } },
+          "power": {
+            "type": ["object", "null"],
+            "required": ["min", "max", "unit", "rating", "src"],
+            "properties": { "min": { "type": "number" }, "max": { "type": "number" }, "unit": { "enum": ["kVA", "kW", "hp", "PS"] }, "rating": { "enum": ["prime", "standby", "continuous", "unspecified"] }, "src": { "$ref": "#/$defs/src" } }
+          },
+          "frequency": { "type": "array", "items": { "type": "string" } },
+          "voltage": { "type": "array", "items": { "type": "string" } },
+          "types": { "type": "array", "items": { "type": "string" } },
+          "emission": { "type": "array", "items": { "type": "string" } },
+          "standards": { "type": "array", "items": { "type": "string" } },
+          "src": { "$ref": "#/$defs/src" }
+        }
+      }
+    },
+    "certifications": { "type": "array", "items": { "type": "object", "required": ["name", "src"], "properties": { "name": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
+    "vietnam": { "type": "object", "properties": { "distributors": { "type": "array", "items": { "type": "object", "required": ["name", "src"], "properties": { "name": { "type": "string" }, "website": { "type": ["string", "null"] }, "src": { "$ref": "#/$defs/src" } } } }, "note": { "type": ["string", "null"] } } },
+    "exportMarkets": { "type": "array", "items": { "type": "string" } },
+    "missing": { "type": "array", "items": { "type": "string" } },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["n", "url", "accessedAt", "tier", "quote", "file"],
+        "properties": {
+          "n": { "type": "integer" },
+          "url": { "type": "string" },
+          "accessedAt": { "type": "string" },
+          "tier": { "enum": ["A", "B", "C"] },
+          "quote": { "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }] },
+          "file": { "type": "string" }
+        }
+      }
+    },
+    "confidence": { "enum": ["high", "medium", "low"] },
+    "checkedAt": { "type": "string" },
+    "checkedBy": { "type": "string" }
+  },
+  "$defs": { "src": { "type": "array", "items": { "type": "integer" }, "minItems": 1 } }
+}

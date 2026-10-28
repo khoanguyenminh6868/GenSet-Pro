@@ -1,0 +1,30 @@
+{
+  "id": "quanchai",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": { "en": "Quanchai Engine Co., Ltd. (QuanChai Group)", "zh": "全柴动力", "brands": ["Quanchai"] },
+  "website": "https://en.quanchai.com.cn/",
+  "hq": { "province": "Anhui", "city": null },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    { "text": "Động cơ công suất nhỏ 15–380 hp, có dòng chuyên cho tổ máy phát điện (Generator Set Diesel Engines)", "src": [1] },
+    { "text": "Theo hãng: năng lực sản xuất hơn 600.000 động cơ diesel nhiều xi-lanh; đội R&D 350 kỹ sư", "src": [1] }
+  ],
+  "productLines": [
+    { "kind": "engine", "series": "Generator Set Diesel Engines", "fuel": "diesel", "engineMakes": ["Quanchai"], "engineModels": [], "alternatorMakes": [],
+      "power": { "min": 15, "max": 380, "unit": "hp", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+  ],
+  "certifications": [],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Trang ghi hai năm thành lập khác nhau (1998 và 1949) nên để trống", "Dải 15–380 hp là của toàn bộ động cơ, không riêng dòng phát điện", "Chưa có trang chi tiết dòng động cơ phát điện"],
+  "sources": [
+    { "n": 1, "url": "https://en.quanchai.com.cn/", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["QuanChai engine, with power range of 15 to 380 hp, which is widely used in automobile, forklift, agricultural equipment, construction machinery and Generating Sets", "Generator Set Diesel Engines", "It has the manufacturing capacity of more than 600000 multi cylinder diesel engines", "QUANCHAI has a technology R&D team with 350 engineers", "Quanchai Engine Co., Ltd, founded in 1998", "Quanchai Engine Co, Ltd, founded in 1949"], "file": "sources/quanchai/1.md" }
+  ],
+  "confidence": "high",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

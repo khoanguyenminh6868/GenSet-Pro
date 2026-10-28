@@ -1,0 +1,29 @@
+{
+  "id": "weichai-heavy-machinery",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": { "en": "Weichai Heavy Machinery Co., Ltd.", "zh": "潍柴重机股份有限公司", "brands": ["Weichai"] },
+  "website": "http://en.weichaihm.com/",
+  "hq": { "province": "Shandong", "city": "Weifang" },
+  "founded": null,
+  "relatedIds": ["weichai-power"],
+  "strengths": [
+    { "text": "Tổ máy 12M26 do Weichai tự phát triển, dải 900–1100 kVA (720–1000 kW)", "src": [1] }
+  ],
+  "productLines": [
+    { "kind": "genset", "series": "12M26 Standard Land-based Generator Set", "fuel": "diesel", "engineMakes": ["Weichai"], "engineModels": ["12M26"], "alternatorMakes": [],
+      "power": { "min": 900, "max": 1100, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": [], "voltage": [], "types": [], "emission": [], "standards": [], "src": [1] }
+  ],
+  "certifications": [],
+  "vietnam": { "distributors": [], "note": null },
+  "exportMarkets": [],
+  "missing": ["Chưa đọc trang giới thiệu công ty (năm thành lập, quan hệ với Weichai Power)", "Chưa có các dòng tổ máy khác của công ty"],
+  "sources": [
+    { "n": 1, "url": "http://en.weichaihm.com/subsidiary/weichaihm/en/products&solutions/land-based-generator-set/diesel-generator-set/2026101609385495241/index.html", "accessedAt": "2026-10-28", "tier": "A",
+      "quote": ["900 kVA-1100 kVA Standard Land-based Generator Set Series", "The 12M26 series diesel generator set is a new generation of high power density generator sets independently developed by Weichai, featuring a compact structure and superior fuel economy; Generator sets with a power output range of 720-1000 kW."], "file": "sources/weichai-heavy-machinery/1.md" }
+  ],
+  "confidence": "high",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}
