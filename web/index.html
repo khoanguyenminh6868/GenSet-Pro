@@ -471,7 +471,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, supplier: {}, suppliermatch: {}, supplierreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, supplier: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort2", { col: "no", dir: -1 }),
@@ -714,7 +714,7 @@ async function requestWorker(coll, key, extra, what) {
   const t = findTender(key);
   // A TLKT comparison against an uploaded shortened YCKT does not read the HSMT.
   const ownReq = coll === "tlktreq" && (extra.reqFiles?.length || extra.reqText || extra.translate);
-  if (!ownReq && !state.hsmt[key]?.files?.length && !((coll === "hsdtreq" || coll === "supplierreq") && analysisOf(key)?.result)) { toast(isProject(t) ? "Dự án này chưa có tệp. Tải tệp lên ở tab Tổng quan trước." : "Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
+  if (!ownReq && !state.hsmt[key]?.files?.length && !((coll === "hsdtreq" || coll === "supplierreq" || coll === "configreq") && analysisOf(key)?.result)) { toast(isProject(t) ? "Dự án này chưa có tệp. Tải tệp lên ở tab Tổng quan trước." : "Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
   try {
     const n = (await saveRequests(coll, [{ key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", ...extra }])).length;
     if (!n) throw new Error("");
@@ -881,6 +881,8 @@ async function initDb() {
   subscribe("supplier", "supplier", () => setTimeout(renderSuppliers, 0));
   subscribe("suppliermatch", "suppliermatch");
   subscribe("supplierreq", "supplierreq");
+  subscribe("configmatch", "configmatch");
+  subscribe("configreq", "configreq");
 }
 
 // ---------- HSMT text ----------
@@ -1187,7 +1189,7 @@ function renderDrawer(force = true) {
   });
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configreq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1400,6 +1402,7 @@ async function pollPending() {
   for (const key of Object.keys(state.hsdtreq || {})) if (workerReqPending("hsdtreq", key)) paths.push("hsdtreq/" + key, "hsdt/" + key);
   for (const key of Object.keys(state.tlktreq || {})) if (workerReqPending("tlktreq", key)) paths.push("tlktreq/" + key, "tlkt/" + key);
   for (const key of Object.keys(state.supplierreq || {})) if (workerReqPending("supplierreq", key)) paths.push("supplierreq/" + key, "suppliermatch/" + key);
+  for (const key of Object.keys(state.configreq || {})) if (workerReqPending("configreq", key)) paths.push("configreq/" + key, "configmatch/" + key);
   if (paths.length) await state.db.refresh(paths).catch(() => {});
 }
 setInterval(pollPending, 10e3);
@@ -2057,114 +2060,53 @@ function catDetailHtml(e) {
     <div class="muted small">Cách đọc công suất: trong mỗi dòng, cặp số có tỉ lệ 1,15–1,35 là kVA / kW (hệ số 0,8); hai cặp thì cặp lớn là dự phòng, cặp nhỏ là liên tục. Luôn đối chiếu với dòng nguyên văn và trang nguồn.</div>`;
 }
 
-// ---------- Tab "Cấu hình gợi ý": top 3 động cơ và top 3 đầu phát cho gói thầu, tính ngay trên trang ----------
-// Theo yêu cầu đọc được (công suất tổ máy, loại công suất, tần số, hãng HSMT nêu), chọn trong danh mục trên.
-const cfgNeeds = {};
-function cfgNeedFrom(t) {
-  const key = t._key, a = analysisOf(key)?.result;
-  const texts = [...(a?.technicalSpecs || []).map((s) => ({ item: s.item, text: [s.requirement, s.quote].filter(Boolean).join(" — ") })),
-    ...(a?.keyInfo?.generatorCapacity ? [{ item: "Công suất máy phát", text: a.keyInfo.generatorCapacity }] : []),
-    ...(cfgNeeds[key]?.hsmtLines || [])];
-  const need = window.GenbidCatalog.needsOf(texts);
-  const cap = capacityOf(t);
-  const m = cap && String(cap.text).match(/(\d+(?:[.,]\d+)*)\s*(kVA|kW|MVA|MW)/i);
-  if (m) {
-    let v = m[1]; v = /^\d{1,3}([.,]\d{3})+$/.test(v) ? v.replace(/[.,]/g, "") : v.replace(",", ".");
-    const u = m[2].toLowerCase(), n = Number(v) * (u.startsWith("m") ? 1000 : 1), unit = u.endsWith("va") ? "kVA" : "kW";
-    need.kVA = unit === "kVA" ? n : null; need.kW = unit === "kW" ? n : null;
-    need.quotes = need.quotes.filter((q) => q.what !== "Công suất");
-    need.quotes.unshift({ what: "Công suất", text: `${cap.text} (${cap.src})` });
-  }
-  return need;
-}
+// ---------- Tab "Cấu hình gợi ý": cấu hình động cơ + đầu phát cho gói thầu (Khoa, 2026-10-28) ----------
+// Chỉ một nút. Agent trên máy Windows (suppliers/config-prompt.md) đọc yêu cầu kỹ thuật trong HSMT, chọn trong danh mục
+// động cơ / đầu phát của hệ thống (web/catalog.js); không có thì tìm trên internet; không có nữa thì trả lời "không
+// tìm thấy". suppliers/config-check.mjs kiểm bằng code trước khi đăng configmatch/<key>: mỗi câu trích HSMT phải có
+// nguyên văn trong HSMT, mỗi thông số chào phải có nguyên văn trong dòng bảng của danh mục hoặc trang web đã lưu.
+const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], unclear: ["Chưa rõ", "warn"] };
+const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet" };
 function configTabHtml(t) {
-  const key = t._key, cat = catalog();
-  if (!cat.engines.length && !cat.alternators.length) return h`<div class="note">Chưa có dữ liệu nhà cung cấp để gợi ý cấu hình.</div>`;
-  const st = cfgNeeds[key] || (cfgNeeds[key] = {});
-  const need = st.form || cfgNeedFrom(t);
-  st.auto = st.auto || need;
-  const unit = need.kVA ? "kVA" : need.kW ? "kW" : "kVA", val = need.kVA || need.kW || "";
-  const opt = (v, l, cur) => h`<option value="${v}" ${String(v) === String(cur ?? "") ? "selected" : ""}>${l}</option>`;
-  const noSource = !analysisOf(key)?.result && !state.hsmt[key]?.textChunks && !capacityOf(t);
-  return h`<div class="muted small">Gợi ý top 3 động cơ và top 3 đầu phát trong danh mục rút từ bảng thông số của ${supAll().length} nhà cung cấp (${cat.engines.length} model động cơ, ${cat.alternators.length} model đầu phát), theo yêu cầu dưới đây. Sửa yêu cầu nếu cần rồi bấm Gợi ý.</div>
-    ${raw(noSource ? '<div class="note warn">Gói này chưa có HSMT hay kết quả phân tích: hãy nhập công suất cần.</div>' : "")}
-    <div class="row suprow">
-      <label class="muted small" for="cfgPower">Công suất tổ máy</label>
-      <input type="number" id="cfgPower" min="0" step="any" value="${val}" style="width:110px" placeholder="vd. 500">
-      <select id="cfgUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, unit)).join(""))}</select>
-      <select id="cfgRating">${raw(opt("", "Loại công suất: không rõ", need.rating) + opt("prime", "Liên tục (prime)", need.rating) + opt("standby", "Dự phòng (standby)", need.rating))}</select>
-      <select id="cfgFreq">${raw(opt("", "Tần số: không rõ", need.freq) + opt("50", "50 Hz", need.freq) + opt("60", "60 Hz", need.freq))}</select>
-    </div>
-    <div class="grid2">
-      <div class="field"><label for="cfgEng">Hãng động cơ gói thầu nêu (bỏ trống nếu không)</label><input id="cfgEng" placeholder="vd. Cummins, Perkins" value="${(need.engineBrands || []).join(", ")}"></div>
-      <div class="field"><label for="cfgAlt">Hãng đầu phát gói thầu nêu (bỏ trống nếu không)</label><input id="cfgAlt" placeholder="vd. Stamford, Leroy-Somer" value="${(need.altBrands || []).join(", ")}"></div>
-    </div>
-    ${raw(need.quotes?.length ? h`<details><summary class="small">Căn cứ đọc từ gói thầu (${need.quotes.length})</summary><ul class="suplist">${raw(need.quotes.map((q) => h`<li class="small"><b>${q.what}:</b> <q>${q.text}</q></li>`).join(""))}</ul></details>` : "")}
-    <div class="row"><button class="btn primary" id="cfgRun" data-key="${key}">${st.result ? "Gợi ý lại" : "Gợi ý"}</button>
-      <span class="spacer"></span><button class="btn sm" data-catopen="engine">Danh mục động cơ</button><button class="btn sm" data-catopen="alternator">Danh mục đầu phát</button></div>
-    <div id="cfgOut">${raw(st.result ? cfgResultHtml(st.result) : "")}</div>`;
+  const key = t._key, prev = state.configmatch[key];
+  const wait = workerReqPending("configreq", key) ? waitHtml("Đang chờ Agent đọc HSMT và chọn cấu hình động cơ, đầu phát...", state.configreq[key].requestedAt) : "";
+  const err = !wait && workerReqError("configreq", key);
+  return wait + (err ? h`<div class="note warn">${err}</div>` : "")
+    + h`<div class="row"><button class="btn primary" id="cfgRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button></div>`
+    + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}</div>` + cfgResultHtml(prev.result) : "");
 }
-// Brands typed by the user, matched to the catalog's names ("leroy somer" → Leroy-Somer).
-function cfgBrands(text, list) {
-  const out = [];
-  for (const part of String(text || "").split(/[,;/]+/).map((x) => x.trim()).filter(Boolean)) {
-    const hit = list.find(([re]) => re.test(part));
-    const name = hit ? hit[1] : part;
-    if (!out.includes(name)) out.push(name);
+function cfgSrcHtml(src) {
+  if (!src) return "";
+  if (src.kind === "catalog") {
+    const s = state.supplier?.[src.supplierId], url = s?.sources?.find((x) => x.n === src.n)?.url;
+    return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: ${supName(s) || src.supplierId}${raw(url ? h` · <a href="${url}" target="_blank" rel="noopener">trang [${src.n}]</a>` : "")}${raw(src.line ? h`<div><code>${src.line}</code></div>` : "")}</div>`;
   }
-  return out;
-}
-async function runConfig(key) {
-  const t = findTender(key);
-  if (!t) return;
-  const st = cfgNeeds[key] || (cfgNeeds[key] = {}), out = $("#cfgOut"), C = window.GenbidCatalog;
-  // No analysis yet: read the brands and frequency from the HSMT text (once), as the analysis would give them.
-  if (!analysisOf(key)?.result && state.hsmt[key]?.textChunks && !st.hsmtLines) {
-    out.innerHTML = progress("Đang đọc HSMT...");
-    try {
-      const text = await loadAttachedText(key);
-      st.hsmtLines = text.split(/\n+/).map((l) => l.trim()).filter((l) => l.length < 400 && /(động cơ|engine|đầu phát|alternator|\b50\s?hz|\b60\s?hz)/i.test(l)).slice(0, 600).map((l) => ({ item: "", text: l }));
-    } catch { st.hsmtLines = []; }
-    const auto = cfgNeedFrom(t);
-    if (!$("#cfgEng").value && auto.engineBrands.length) $("#cfgEng").value = auto.engineBrands.join(", ");
-    if (!$("#cfgAlt").value && auto.altBrands.length) $("#cfgAlt").value = auto.altBrands.join(", ");
-    if (!$("#cfgFreq").value && auto.freq) $("#cfgFreq").value = String(auto.freq);
-    st.auto = { ...auto, ...(st.auto?.kVA || st.auto?.kW ? { kVA: st.auto.kVA, kW: st.auto.kW } : {}) };
-  }
-  const v = Number(String($("#cfgPower").value).replace(",", ".")), unit = $("#cfgUnit").value;
-  const need = {
-    kVA: unit === "kVA" && v > 0 ? v : null, kW: unit === "kW" && v > 0 ? v : null, rating: $("#cfgRating").value || null, freq: Number($("#cfgFreq").value) || null,
-    engineBrands: cfgBrands($("#cfgEng").value, C.ENGINE_BRANDS), altBrands: cfgBrands($("#cfgAlt").value, C.ALT_BRANDS), quotes: st.auto?.quotes || [],
-  };
-  st.form = need;
-  if (!need.kVA && !need.kW && !need.engineBrands.length && !need.altBrands.length) { out.innerHTML = h`<div class="note warn">Nhập công suất tổ máy (hoặc hãng yêu cầu) để gợi ý.</div>`; return; }
-  const cat = catalog();
-  st.result = { need, at: new Date().toISOString(), engines: C.suggest(cat, need, "engine"), alternators: C.suggest(cat, need, "alternator") };
-  out.innerHTML = cfgResultHtml(st.result);
-  $("#cfgRun").textContent = "Gợi ý lại";
+  return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: <a href="${src.url}" target="_blank" rel="noopener">${src.url}</a>${raw(src.quote ? h` — <q>${src.quote}</q>` : "")}</div>`;
 }
 function cfgResultHtml(r) {
-  const n = r.need, unit = n.kVA ? "kVA" : "kW", want = n[unit];
-  const block = (kind, list, brands) => {
-    const K = CAT_KIND[kind];
-    const head = h`<h3 style="margin:10px 0 2px">Top ${list.length || 3} ${K.one}</h3>`;
-    if (!list.length) return head + h`<div class="note warn">Không có ${K.one} nào trong danh mục ${want ? `dùng cho tổ máy ${fmtNum(want)}–${fmtNum(Math.round(want * 1.35))} ${unit}` : ""}${brands.length ? ` của hãng ${brands.join(", ")}` : ""}. Thử bỏ bớt điều kiện (hãng, loại công suất) hoặc xem Danh mục ${K.one}.</div>`;
-    return head + list.map((x, i) => {
-      const e = x.entry, b = x.best, u = b?.use, s = u && state.supplier?.[u.supplierId], url = u && catSrcUrl(u.supplierId, u.n);
-      const fit = !b && want ? ["Không rõ công suất", "warn"] : x.brandHit === false || x.freqOk === false ? ["Phù hợp một phần", "warn"] : ["Phù hợp", "ok"];
-      const reasons = [];
-      if (b) reasons.push(h`Tổ máy <b>${u.genset || "(không ghi model)"}</b> của ${supName(s) || u.supplierId}: ${CAT_RATING[b.rating].toLowerCase()} <b>${catPow(u.power[b.rating])}</b>${raw(b.over > 1.0001 ? h`, cao hơn mức cần ${Math.round((b.over - 1) * 100)}%` : ", đúng mức cần")} ${raw(url ? h`<a class="small" href="${url}" target="_blank" rel="noopener">[nguồn]</a>` : "")}${raw(b.rating === "rated" && n.rating ? '<div class="muted small">Bảng nguồn không ghi đây là công suất liên tục hay dự phòng.</div>' : "")}`);
-      reasons.push(h`Có trong bảng của ${e.suppliers.length} nhà cung cấp (${e.uses.length} dòng)${raw(e.freq.length ? h` · ${e.freq.map((f) => f + " Hz").join(", ")}` : "")}`);
-      if (brands.length) reasons.push(x.brandHit ? h`✓ Đúng hãng gói thầu nêu (${brands.join(", ")})` : h`⚠ Gói thầu nêu hãng ${brands.join(", ")}, model này ${e.make ? "của " + e.make : "không ghi hãng"}`);
-      if (x.freqOk === false) reasons.push(h`⚠ Nguồn chỉ ghi ${e.freq.map((f) => f + " Hz").join(", ")}, gói cần ${n.freq} Hz`);
-      return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${i + 1} ${e.model}</b><span class="chip ${fit[1]}">${fit[0]}</span><span class="muted small">${e.make || "Nguồn không ghi hãng"}</span><span class="spacer"></span><button class="btn sm" data-catopen="${kind}" data-catkey="${e.key}">Chi tiết model</button></div>
-        <ul class="suplist">${raw(reasons.map((y) => `<li class="small">${y}</li>`).join(""))}</ul></div>`;
-    }).join("");
-  };
-  return h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(r.at)} · yêu cầu: ${want ? `${fmtNum(want)} ${unit}${n.rating ? " " + CAT_RATING[n.rating].toLowerCase() : ""}` : "không nêu công suất"}${n.freq ? ` · ${n.freq} Hz` : ""}</div>`
-    + block("engine", r.engines, n.engineBrands) + block("alternator", r.alternators, n.altBrands)
-    + h`<div class="note">Xếp hạng theo dữ liệu trên website các hãng: tổ máy dùng model đó có công suất bằng hoặc cao hơn mức cần gần nhất (tối đa 35%), cùng đơn vị; ưu tiên hãng gói thầu nêu, tần số và số nhà cung cấp có model. Cần xác nhận thông số với nhà cung cấp trước khi chào.</div>`;
+  if (!r.configs?.length) return h`<div class="note warn"><b>Không tìm thấy cấu hình phù hợp.</b> ${r.message || "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT."}</div>`
+    + cfgReqHtml(r) + cfgNotesHtml(r);
+  return (r.summary ? h`<p>${r.summary}</p>` : "") + r.configs.map((c, i) => {
+    const bad = (c.checks || []).some((x) => x.status === "not_met"), unclear = (c.checks || []).some((x) => x.status !== "met" || x.unverified);
+    const fit = bad ? ["Không đạt đủ", "bad"] : unclear ? ["Còn điểm chưa rõ", "warn"] : ["Đạt mọi yêu cầu đã đọc", "ok"];
+    // An engine and alternator read from the genset's own row show that row once, under the genset.
+    const sameRow = (p) => c.genset?.src?.line && p.src?.line === c.genset.src.line;
+    const part = (label, p) => (p ? h`<div><b>${label}:</b> ${p.model}${raw(p.make ? h` <span class="muted">(${p.make})</span>` : "")} <span class="chip mut">${CFG_SRC[p.src?.kind] || ""}</span>${raw(p.unverified ? '<span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(sameRow(p) ? "" : cfgSrcHtml(p.src))}</div>` : "");
+    return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${c.rank || i + 1}</b><span class="chip ${fit[1]}">${fit[0]}</span><span class="spacer"></span>
+        ${raw(c.engine?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="engine" data-catkey="${window.GenbidCatalog?.keyOf(c.engine.model) || ""}">Xem động cơ</button>` : "")}
+        ${raw(c.alternator?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="alternator" data-catkey="${window.GenbidCatalog?.keyOf(c.alternator.model) || ""}">Xem đầu phát</button>` : "")}</div>
+      ${raw(part("Động cơ", c.engine))}${raw(part("Đầu phát", c.alternator))}${raw(c.genset ? h`<div class="small">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
+      ${raw(c.checks?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
+        const st = CFG_STATUS[x.status] || ["", "mut"];
+        return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
+          <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn: <q>${x.sourceQuote}</q></div>` : "")}</td>
+          <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
+      }).join(""))}</tbody></table></div>` : "")}
+      ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
+  }).join("") + cfgNotesHtml(r);
 }
+const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="small">Yêu cầu đọc từ HSMT (${r.requirements.length})</summary><ul class="suplist">${raw(r.requirements.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "");
+const cfgNotesHtml = (r) => (r.notes?.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy</b><ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul></div>` : "");
 
 // ---------- Đối chiếu TLKT (a supplier's technical proposal against the tender's technical requirements) ----------
 // Only the technical side: price, bid security, qualification and other bidding conditions are left out (Khoa, 2026-10-27).
@@ -2476,7 +2418,7 @@ document.addEventListener("click", async (e) => {
   if (cki) { catView.open = cki.dataset.catitem; renderCatalog(); return; }
   if (e.target.id === "catBack") { catView.open = null; renderCatalog(); return; }
   if (e.target.id === "catMore") { catView.limit += 100; renderCatList(); return; }
-  if (e.target.id === "cfgRun") { runConfig(e.target.dataset.key); return; }
+  if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, {}, "gợi ý cấu hình"); return; }
   if (e.target.id === "spRun") { requestWorker("supplierreq", e.target.dataset.key, {}, "gợi ý nhà cung cấp"); return; }
   if (e.target.id === "syncNoteX") { syncState.note = null; renderTop(); return; }
   const wx = e.target.closest("[data-wonx]");
