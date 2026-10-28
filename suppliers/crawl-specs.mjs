@@ -4,7 +4,7 @@
 // with the table lines exactly as saved. merge-specs.mjs then adds them to the record; verify.mjs checks each line.
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
@@ -14,7 +14,7 @@ const STRONG = /(\d\s?k\s?va|\d\s?kw)/i;
 const MODELISH = /(\d+\s?k?va|\d+\s?kw|-pd\d|\/pd\d|product[-_/]?(detail|show)|\/products?\/[^/]+\.html|series|_p\d|\/p\d+|detail)/i;
 const only = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--max");
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
-const LINK = /(product|generator|genset|gen-set|diesel|series|cummins|perkins|weichai|yuchai|sdec|shangchai|deutz|volvo|mtu|mitsubishi|doosan|baudouin|kubota|yanmar|isuzu|ricardo|fawde|lovol|kva|kw|silent|open|container|gas|marine|alternator|power|chanpin|产品|机组|pd\d|pl\d)/i;
+const LINK = /(product|engine|generator|genset|gen-set|diesel|series|cummins|perkins|weichai|yuchai|sdec|shangchai|deutz|volvo|mtu|mitsubishi|doosan|baudouin|kubota|yanmar|isuzu|ricardo|fawde|lovol|kva|kw|silent|open|container|gas|marine|alternator|power|chanpin|产品|机组|发动机|柴油机|发电机|pd\d|pl\d)/i;
 const SKIP = /(\/(ar|ru|es|fr|pt|de|it|ne|hi|th|vi|id|tr|ja|ko|pl|nl|fa|ur|bn|ms|uk|he|ro|cs|hu|el|sv|fi|da|no|tl|my|km|lo|si|kk|uz|az|am|sw|ha|yo|ig)(\/|$)|(^|[/_.?=-])(news|blog|article|contact|about|faq|video|case|project|service|login|cart|tags?|privacy|sitemap)s?([/_.?=-]|$)|\.(jpg|jpeg|png|gif|webp|pdf|zip|doc|xls)(\?|$))/i;
 const POWER = /\b(k\s?va|kw|kwe|prime|standby|备用|常用|功率)\b/i;
 
@@ -32,12 +32,15 @@ export function htmlToText(html) {
     .replace(/<[^>]+>/g, " "))
     .split("\n").map((l) => l.replace(/[ \t ]+/g, " ").trim()).filter(Boolean).join("\n");
 }
-// --render: open each page in Chromium (playwright-core of the bot kit), for sites that build their tables with JavaScript.
+// --render: open each page in Chromium, for sites that build their tables with JavaScript: playwright-core from
+// PLAYWRIGHT_CORE (a path to its index.mjs), else the bot kit's on the Windows PC, else the installed package.
 const RENDER = args.includes("--render");
 let browser = null;
 async function getRendered(url) {
   if (!browser) {
-    const { chromium } = await import("file:///C:/Projects/GenSet%20Pro/genbid-hsmt/node_modules/playwright-core/index.mjs");
+    const kit = "file:///C:/Projects/GenSet%20Pro/genbid-hsmt/node_modules/playwright-core/index.mjs";
+    const where = process.env.PLAYWRIGHT_CORE ? pathToFileURL(process.env.PLAYWRIGHT_CORE).href : process.platform === "win32" ? kit : "playwright-core";
+    const { chromium } = await import(where);
     browser = await chromium.launch({ headless: true });
   }
   const page = await browser.newPage({ userAgent: UA });
@@ -109,9 +112,9 @@ async function crawl(id) {
   if (!rec.website) return { id, pages: 0, rows: 0 };
   const host = new URL(rec.website).hostname.replace(/^www\.|^m\./, "");
   const seen = new Set(), queue = [...rec.sources.filter((s) => s.n < 101).map((s) => s.url).filter((u) => { try { return new URL(u).hostname.replace(/^www\.|^m\./, "") === host; } catch { return false; } }), rec.website];
-  const found = []; let fetched = 0, n = 101;
-  const dir = path.join(ROOT, "sources", id);
-  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) if (/^\d{3}\.md$/.test(f)) fs.rmSync(path.join(dir, f));
+  // Pages are kept in memory and written only at the end, and only when this crawl found at least as many table
+  // lines as the last one (a site that is down or blocks the crawler never wipes what was found before).
+  const found = [], pages = []; let fetched = 0, n = 101;
   while (queue.length && fetched < MAX) {
     const u = queue.shift().replace(/\/$/, "");
     if (seen.has(u)) continue; seen.add(u);
@@ -119,24 +122,31 @@ async function crawl(id) {
     if (process.env.DEBUG) console.log("  +", u);
     const text = htmlToText(page.html);
     const tables = tablesOf(text);
-    if (tables.length && tables.reduce((a, t) => a + t.rows.length, 0) >= 2) {
+    if (tables.length && tables.reduce((a, t) => a + t.rows.length, 0) >= 2 && n <= 999) {
       const title = (page.html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [, ""])[1].replace(/\s+/g, " ").trim().slice(0, 200);
-      fs.mkdirSync(dir, { recursive: true });
-      fs.writeFileSync(path.join(dir, `${n}.md`), `URL: ${page.url}\nAccessed: ${new Date().toISOString().slice(0, 10)}\n\n${text}\n`, "utf8");
+      pages.push({ n, body: `URL: ${page.url}\nAccessed: ${new Date().toISOString().slice(0, 10)}\n\n${text}\n` });
       for (const t of tables) { delete t.sheet; found.push({ n, url: page.url, title: decode(title), ...t }); }
       n++;
     }
     for (const l of linksOf(page.html, page.url, host)) if (!seen.has(l.replace(/\/$/, ""))) (STRONG.test(l) ? queue.unshift(l) : MODELISH.test(l) ? queue.splice(Math.min(queue.length, 20), 0, l) : queue.push(l));
   }
+  const rows = found.reduce((a, t) => a + t.rows.length, 0);
+  const specFile = path.join(ROOT, "specs", `${id}.json`);
+  const oldRows = fs.existsSync(specFile) ? JSON.parse(fs.readFileSync(specFile, "utf8")).reduce((a, t) => a + t.rows.length, 0) : 0;
+  if (rows < oldRows || (!rows && !oldRows && fs.existsSync(specFile))) return { id, fetched, pages: pages.length, rows, kept: oldRows };
+  const dir = path.join(ROOT, "sources", id);
+  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) if (/^\d{3}\.md$/.test(f)) fs.rmSync(path.join(dir, f));
+  if (pages.length) fs.mkdirSync(dir, { recursive: true });
+  for (const p of pages) fs.writeFileSync(path.join(dir, `${p.n}.md`), p.body, "utf8");
   fs.mkdirSync(path.join(ROOT, "specs"), { recursive: true });
-  fs.writeFileSync(path.join(ROOT, "specs", `${id}.json`), JSON.stringify(found, null, 1) + "\n", "utf8");
-  return { id, fetched, pages: new Set(found.map((f) => f.n)).size, rows: found.reduce((a, t) => a + t.rows.length, 0) };
+  fs.writeFileSync(specFile, JSON.stringify(found, null, 1) + "\n", "utf8");
+  return { id, fetched, pages: pages.length, rows };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const ids = only.length ? only : fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5));
   let next = 0;
-  const work = async () => { while (next < ids.length) { const id = ids[next++]; try { const r = await crawl(id); console.log(`${r.id}: ${r.fetched ?? 0} trang đọc, ${r.pages} trang có bảng, ${r.rows} dòng`); } catch (e) { console.log(`${id}: lỗi ${e.message}`); } } };
+  const work = async () => { while (next < ids.length) { const id = ids[next++]; try { const r = await crawl(id); console.log(`${r.id}: ${r.fetched ?? 0} trang đọc, ${r.pages} trang có bảng, ${r.rows} dòng${r.kept != null ? ` (ít hơn lần trước, giữ ${r.kept} dòng cũ)` : ""}`); } catch (e) { console.log(`${id}: lỗi ${e.message}`); } } };
   await Promise.all(Array.from({ length: RENDER ? 4 : 6 }, work));
   if (browser) await browser.close();
 }

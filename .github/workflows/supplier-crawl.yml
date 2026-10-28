@@ -1,0 +1,80 @@
+name: Supplier spec crawl
+
+# Reads the suppliers' websites again for model spec tables (gensets, engines, alternators), merges them into
+# suppliers/cn/*.json, checks them with verify.mjs and commits the result back to the branch it ran on.
+# A site that is down or blocks the crawl keeps what was found before (crawl-specs.mjs only replaces a supplier's
+# tables when the new crawl found at least as many lines). Review the commit in a pull request before merging.
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: 'Supplier ids (space separated); empty = all'
+        required: false
+        default: ''
+      max:
+        description: 'Pages read per supplier'
+        required: false
+        default: '150'
+      render:
+        description: 'Also run a pass in headless Chromium (slower, for sites built with JavaScript)'
+        type: boolean
+        default: true
+  push:
+    branches: ['crawl/**']
+    paths: ['.github/workflows/supplier-crawl.yml', 'suppliers/crawl-specs.mjs']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: supplier-crawl-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      IDS: ${{ github.event.inputs.ids || '' }}
+      MAX: ${{ github.event.inputs.max || '150' }}
+      RENDER: ${{ github.event_name == 'push' || github.event.inputs.render == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Chromium for the render pass
+        if: env.RENDER == 'true'
+        run: |
+          mkdir -p "$RUNNER_TEMP/pw" && cd "$RUNNER_TEMP/pw"
+          npm init -y >/dev/null && npm i --no-audit --no-fund playwright-core@1
+          npx playwright-core install --with-deps chromium
+          echo "PLAYWRIGHT_CORE=$RUNNER_TEMP/pw/node_modules/playwright-core/index.mjs" >> "$GITHUB_ENV"
+      - name: Commit helper
+        run: |
+          git config user.name "genbid-crawl[bot]"
+          git config user.email "genbid-crawl@users.noreply.github.com"
+          cat > "$RUNNER_TEMP/commit.sh" <<'EOF'
+          set -e
+          node suppliers/merge-specs.mjs
+          node suppliers/verify.mjs > "$RUNNER_TEMP/verify.txt" || true
+          tail -3 "$RUNNER_TEMP/verify.txt"
+          git add -A suppliers
+          git diff --cached --quiet && { echo "No changes."; exit 0; }
+          git commit -q -m "$1"
+          for i in 1 2 3; do git pull -q --rebase origin "$GITHUB_REF_NAME" && git push -q origin "HEAD:$GITHUB_REF_NAME" && exit 0; sleep 5; done
+          exit 1
+          EOF
+      - name: Pass 1, plain requests
+        run: |
+          node suppliers/crawl-specs.mjs $IDS --max "$MAX" | tee "$RUNNER_TEMP/pass1.txt"
+          bash "$RUNNER_TEMP/commit.sh" "Nhà cung cấp: cào lại bảng thông số (đọc thường, tối đa $MAX trang mỗi hãng)"
+      - name: Pass 2, headless Chromium
+        if: env.RENDER == 'true'
+        run: |
+          node suppliers/crawl-specs.mjs $IDS --max 60 --render | tee "$RUNNER_TEMP/pass2.txt"
+          bash "$RUNNER_TEMP/commit.sh" "Nhà cung cấp: cào lại bảng thông số (Chromium, tối đa 60 trang mỗi hãng)"
+      - name: Summary
+        if: always()
+        run: |
+          for f in pass1 pass2 verify; do [ -f "$RUNNER_TEMP/$f.txt" ] && { echo "== $f"; cat "$RUNNER_TEMP/$f.txt"; } >> "$GITHUB_STEP_SUMMARY"; done; true
