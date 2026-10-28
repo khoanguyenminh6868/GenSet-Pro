@@ -1823,7 +1823,7 @@ const supName = (s) => s?.names?.en || s?.names?.zh || s?.id || "";
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
-let supFilter = { q: "", role: "", conf: "high", engine:"", fuel: "", power: "", unit: "kVA" };
+let supFilter = { q: "", role: "", conf: "", engine:"", fuel: "", power: "", unit: "kVA" };
 let supOpenId = null;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
 function supLinesFor(s, f = supFilter) {
