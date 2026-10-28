@@ -250,7 +250,7 @@ td.r{text-align:right}
 .sev.critical .tag{color:var(--rose)}.sev.warning .tag{color:var(--amber)}.sev.info .tag{color:var(--blue)}
 blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var(--muted);font-style:italic;font-size:13px}
 .rec{font-size:13px}.rec b{color:var(--violet);font-weight:600}
-.suptable{width:100%;border-collapse:collapse;font-size:13px}.suptable th,.suptable td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.suptable tbody tr[data-supopen]{cursor:pointer}.suptable tbody tr[data-supopen]:hover{background:var(--panel2)}
+.suptable{width:100%;border-collapse:collapse;font-size:13px}.suptable th,.suptable td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.suptable tbody tr:is([data-supopen],[data-catitem]){cursor:pointer}.suptable tbody tr:is([data-supopen],[data-catitem]):hover{background:var(--panel2)}
 .supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
 /* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
@@ -1994,9 +1994,9 @@ function renderCatalog() {
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu ${K.one}: danh mục được rút từ bảng thông số của các nhà cung cấp.</div>`; return; }
   const makes = Object.entries(all.reduce((m, e) => { for (const k of (e.make || "—").split(" / ")) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => (a[0] === "—") - (b[0] === "—") || b[1] - a[1]);
   const f = catView, opt = (v, l, cur) => h`<option value="${v}" ${String(v) === String(cur) ? "selected" : ""}>${l}</option>`;
-  body.innerHTML = h`<div class="seg" role="tablist" style="align-self:flex-start">${raw(Object.entries(CAT_KIND).map(([k, x]) => h`<button role="tab" data-catkind="${k}" aria-selected="${String(k === f.kind)}">${x.title.replace("Danh mục ", "").replace(/^./, (c) => c.toUpperCase())}<span class="c">${cat[x.list].length}</span></button>`).join(""))}</div>
-    <div class="row suprow">
+  body.innerHTML = h`<div class="row suprow">
       <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:180px">
+      <select id="catKind">${raw(Object.entries(CAT_KIND).map(([k, x]) => opt(k, `${x.one.replace(/^./, (c) => c.toUpperCase())} (${cat[x.list].length})`, f.kind)).join(""))}</select>
       <select id="catMake">${raw(opt("", "Mọi hãng", f.make) + makes.map(([m, n]) => opt(m, m === "—" ? `Nguồn không ghi hãng (${n})` : `${m} (${n})`, f.make)).join(""))}</select>
       <select id="catFreq">${raw(opt("", "Mọi tần số", f.freq) + opt("50", "50 Hz", f.freq) + opt("60", "60 Hz", f.freq))}</select>
     </div>
@@ -2007,10 +2007,11 @@ function renderCatalog() {
       <select id="catSort">${raw([["sup", "Nhiều nhà cung cấp nhất"], ["power", "Công suất tổ máy tăng dần"], ["model", "Model A–Z"]].map(([k, l]) => opt(k, l, f.sort)).join(""))}</select>
       <span class="spacer"></span><span class="muted small" id="catCount"></span>
     </div>
-    <div class="muted small">Rút từ bảng thông số trên website của các nhà cung cấp (mỗi dòng giữ nguyên văn, có link nguồn). Công suất là của tổ máy dùng model đó, không phải công suất trục của động cơ. Hãng chỉ ghi khi nguồn ghi rõ.</div>
-    <div id="catList"></div>`;
+    <div id="catList"></div>
+    <div class="muted small">Rút từ bảng thông số trên website của các nhà cung cấp (mỗi dòng giữ nguyên văn, có link nguồn). Công suất là của tổ máy dùng model đó, không phải công suất trục của động cơ. Hãng chỉ ghi khi nguồn ghi rõ.</div>`;
   renderCatList();
   const set = (k, v) => { catView = { ...catView, [k]: v, limit: 60 }; renderCatList(); };
+  $("#catKind").onchange = (e) => { catView = { ...catView, kind: e.target.value, make: "", q: "", limit: 60 }; renderCatalog(); };
   $("#catQ").oninput = (e) => set("q", e.target.value);
   $("#catMake").onchange = (e) => set("make", e.target.value);
   $("#catFreq").onchange = (e) => set("freq", e.target.value);
@@ -2412,8 +2413,6 @@ document.addEventListener("click", async (e) => {
   if (supo) { if ($("#supBody")) { supOpenId = supo.dataset.supopen || null; renderSuppliers(); $("#mdl").scrollTop = 0; } else openSuppliers(supo.dataset.supopen); return; }
   const cko = e.target.closest("[data-catopen]");
   if (cko) { openCatalog(cko.dataset.catopen, cko.dataset.catkey); return; }
-  const ckk = e.target.closest("[data-catkind]");
-  if (ckk) { catView = { ...catView, kind: ckk.dataset.catkind, make: "", limit: 60, open: null }; renderCatalog(); return; }
   const cki = e.target.closest("#catList [data-catitem]");
   if (cki) { catView.open = cki.dataset.catitem; renderCatalog(); return; }
   if (e.target.id === "catBack") { catView.open = null; renderCatalog(); return; }
