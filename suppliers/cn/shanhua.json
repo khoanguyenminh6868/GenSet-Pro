@@ -204,6 +204,16 @@
       "file": "sources/shanhua/105.md"
     },
     {
+      "n": 106,
+      "url": "https://shanhuachina.cn/power-range/1001-kw-and-up/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Power Output Range | 1001 kW and above"
+      ],
+      "file": "sources/shanhua/106.md"
+    },
+    {
       "n": 107,
       "url": "https://shanhuachina.cn/generator-derating-altitude-temperature/",
       "accessedAt": "2026-10-28",
@@ -244,6 +254,16 @@
       "file": "sources/shanhua/110.md"
     },
     {
+      "n": 111,
+      "url": "https://shanhuachina.cn/power-range/301-500-kw/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Power Output Range | 301 kW–500 kW (standby), 270 kW–400 kW (prime)"
+      ],
+      "file": "sources/shanhua/111.md"
+    },
+    {
       "n": 112,
       "url": "https://shanhuachina.cn/power-range/501-1000-kw/",
       "accessedAt": "2026-10-28",
@@ -262,6 +282,16 @@
         "| Power Output Range | 1001 kW and above"
       ],
       "file": "sources/shanhua/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://shanhuachina.cn/marine-generator-brands-comparison/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Power range: 4.5 kW to 400 kW. Standard warranty: 2 years."
+      ],
+      "file": "sources/shanhua/114.md"
     }
   ],
   "confidence": "medium",
@@ -290,7 +320,8 @@
         "Rated Power: 1500 kW",
         "Voltage: 400/230V",
         "Rated Power: 1600 kW",
-        "Voltage: 400/230V Options"
+        "Voltage: 400/230V Options",
+        "Generator Refueling Safety: Procedures for Every Scale (2026)"
       ]
     },
     {
@@ -309,7 +340,8 @@
         "Frequency: 60Hz",
         "Rated Power: 60 kW",
         "Rated Power: 80 kW",
-        "Rated Power: 100 kW"
+        "Rated Power: 100 kW",
+        "Generator Room Fire Safety Requirements: A Complete Guide (2026)"
       ]
     },
     {
@@ -372,7 +404,8 @@
         "Rated Power: 300 kW",
         "Rated Power: 320 kW",
         "Voltage: 380V",
-        "Fuel Efficiency : Reduces operating costs with optimized engines, offering up to 24-hour runtime per tank."
+        "Fuel Efficiency : Reduces operating costs with optimized engines, offering up to 24-hour runtime per tank.",
+        "Generator Set Specifications Explained: The Complete Guide (2026)"
       ]
     },
     {
@@ -403,8 +436,33 @@
         "Rated Power: 800 kW",
         "Rated Power: 1000 kW",
         "Voltage: 480 V",
-        "Generator Set Specification for Tender: A Complete Guide (2026)",
-        "Generator Refueling Safety: Procedures for Every Scale (2026)"
+        "Generator Exhaust Safety: Hazards, System Design, and Compliance (2026)"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Diesel Generator for Sale: 1001 Kw And Up, kW Generators",
+      "header": [],
+      "rows": [
+        "| Power Output Range | 1001 kW and above",
+        "| Voltage | 220V/380V, customizable for specific requirements",
+        "| Fuel Consumption | 0.2 - 0.5 L/kWh",
+        "| Fuel Tank Capacity | 500 - 2000 liters, depending on model",
+        "| Frequency | 50 Hz or 60 Hz",
+        "| Engine Type | 4-stroke, Turbocharged, Intercooled",
+        "| Continuous Run Time | 8 - 24 hours (depending on load and fuel tank capacity)",
+        "| Dimensions (L x W x H) | Varies by model, typically 3000 x 1500 x 2000 mm",
+        "| Weight | 2000 - 5000 kg",
+        "Rated Power: 1200 kW",
+        "Voltage: 400/230V (optional 380/220V, 440/254V)",
+        "Frequency: 50Hz",
+        "Voltage: 230/400V or 240/440V Options",
+        "Frequency: 50Hz or 60Hz",
+        "Rated Power: 1500 kW",
+        "Voltage: 400/230V",
+        "Rated Power: 1600 kW",
+        "Voltage: 400/230V Options",
+        "Generator Lockout Tagout Procedures: OSHA Steps for Safe Servicing (2026)"
       ]
     },
     {
@@ -462,7 +520,7 @@
         "Rated Power: 60 kW",
         "Rated Power: 80 kW",
         "Rated Power: 100 kW",
-        "Generator Set Specification for Tender: A Complete Guide (2026)"
+        "Generator Remote Monitoring: 2026 Industrial Buyer’s Guide"
       ]
     },
     {
@@ -498,7 +556,35 @@
         "Voltage: 480 volts (V)",
         "Frequency: 60 hertz (Hz)",
         "Rated Power: 300KW",
-        "Generator Performance Class G1 G2 G3 G4: Meaning & Guide"
+        "Generator Lockout Tagout Procedures: OSHA Steps for Safe Servicing (2026)"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "301 – 500 kW Diesel Generator: Power Solutions",
+      "header": [],
+      "rows": [
+        "| Power Output Range | 301 kW–500 kW (standby), 270 kW–400 kW (prime)",
+        "| Voltage | 277/480V, 208/120V, 400V (three-phase)",
+        "| Fuel Consumption | 0.1–0.5 gallons/kW per hour, varies by load",
+        "| Fuel Capacity | 700L–1100L (185–290 gal), 6–24 hours runtime",
+        "| Frequency | 50 Hz or 60 Hz, depending on model",
+        "| Engine Type | 4-stroke, turbocharged, inline 6-cylinder",
+        "| Continuous Run Time | 6–24 hours per tank, extendable with refueling",
+        "Rated Power: 440 kW",
+        "Voltage: 400V",
+        "Frequency: 50Hz",
+        "Rated Power: 500 kW",
+        "Voltage: 230V/400V Options",
+        "Frequency: 50Hz or 60Hz",
+        "Voltage: 400V Options",
+        "Rated Power: 400 kW",
+        "Voltage: 220V Options",
+        "Frequency: 60Hz",
+        "Rated Power: 300 kW",
+        "Rated Power: 320 kW",
+        "Voltage: 380V",
+        "Fuel Efficiency : Reduces operating costs with optimized engines, offering up to 24-hour runtime per tank."
       ]
     },
     {
@@ -553,8 +639,20 @@
         "Rated Power: 1500 kW",
         "Voltage: 400/230V",
         "Rated Power: 1600 kW",
-        "Voltage: 400/230V Options",
-        "Generator Noise Regulations: Limits, Standards, and Compliance (2026)"
+        "Voltage: 400/230V Options"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Marine Generator Brands Comparison: 10 Brands Ranked",
+      "header": [],
+      "rows": [
+        "Power range: 4.5 kW to 400 kW. Standard warranty: 2 years.",
+        "Power range: 3.5 kW to 100+ kW. Standard warranty: 2 years.",
+        "Power range: 5 kW to 100+ kW. Standard warranty: 2 years.",
+        "Power range: 5 kW to 100+ kW.",
+        "Power range: 10 kW to 900 kW. Standard warranty: 1 year.",
+        "Power range: 3.5 kW to 12 kW."
       ]
     }
   ]

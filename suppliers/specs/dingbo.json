@@ -405,5 +405,63 @@
    "| Frequency Recovery Time (100% Sudden Reduce): | ≤5S",
    "| Frequency Recovery Time (Sudden Increase): | ≤5S"
   ]
+ },
+ {
+  "n": 114,
+  "url": "https://www.dieselgeneratortech.com/applications/Cummins-containerized-silent-generator-set.html",
+  "title": "Two Units 700KW 875KVA Cummins Containerized Silent Generator Set Export to Angola",
+  "header": [],
+  "rows": [
+   "Rated power: 700KW/875KVA",
+   "Rated currency: 1260A",
+   "Rated frequency: 50Hz",
+   "Rated speed: 1500rpm",
+   "Power factor: 0.8 lag",
+   "Rated voltage: 400V",
+   "Dimension: 6000 x 2600 x 2800 mm",
+   "Weight: 12000kg",
+   "Model: KTA38-G2A",
+   "Prime power: 813KW",
+   "Standby power: 896KW",
+   "Bore x Stroke: 159 x 159mm",
+   "Displacement: 37.8L",
+   "Model: LVI634D",
+   "Rated power: 728A",
+   "Phase: 3",
+   "Protection level: IP23"
+  ]
+ },
+ {
+  "n": 115,
+  "url": "https://www.dieselgeneratortech.com/cummins/heavy-duty-diesel-generator-set.html",
+  "title": "2000 KW Cummins Generator | 2750 KVA Prime Generator",
+  "header": [],
+  "rows": [
+   "Prime Power: 2000KW/2500KVA",
+   "Rated Current: 3600(A)",
+   "Rated Frequency: 50(Hz)",
+   "Power Factor: 0.8(Lag)",
+   "Rated Voltage: 400/230(V)",
+   "| Model: | QSK60-G23",
+   "| Prime Power: | 2157KW |",
+   "| Standby Power: | 2388KW",
+   "| Rated Speed: | 1500（r/min）",
+   "| Cylinder Arrangement: | 16 cylinders, V type",
+   "| Displacement: | 60.2L",
+   "| Bore and Stroke: | 159*190（mm）",
+   "| Engine Oil Tank Capacity: | 348L",
+   "| Alternator Capacity: | 2500KVA",
+   "| Alternator Efficiencies: | 95％",
+   "| Protection Level: | IP22-IP23",
+   "| Voltage Regulation, Steady State: | ≤±1%",
+   "| Voltage Regulation: | ≥±5%",
+   "| Voltage Regulation, Stead State: | ≤±1%",
+   "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+   "| Voltage Stable Time (Sudden Increase): | ≤6S",
+   "| Frequency Regulation, Stead State: | ≤5%",
+   "| Frequency Waving: | ≤1.5%",
+   "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+   "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+  ]
  }
 ]

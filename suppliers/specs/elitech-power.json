@@ -32,10 +32,12 @@
    "| Phase | 3-Phase",
    "| Frequency (Hz) | 50Hz",
    "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 40",
-   "Phase: 3-Phase",
+   "Power(kVA): 14",
+   "Phase: 1-Phase, 3-Phase",
    "Power(kVA): 62.5",
-   "Power(kVA): 22",
+   "Phase: 3-Phase",
+   "Power(kVA): 400",
+   "Power(kVA): 125.0",
    "Power(kVA): 30"
   ]
  },
@@ -51,532 +53,18 @@
    "| Phase | 3-Phase",
    "| Frequency (Hz) | 50Hz/60Hz",
    "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 13",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 55",
+   "Power(kVA): 15",
    "Phase: 3-Phase",
    "Power(kVA): 30",
-   "Power(kVA): 80.0",
-   "Power(kVA): 10"
-  ]
- },
- {
-  "n": 104,
-  "url": "https://elitechpower.com/product/10kva-perkins/",
-  "title": "10Kva Perkins Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS10PKA-3S | 10kVA | 1-Phase, 3-Phase | 50Hz, 60Hz",
-   "| Power (kVA) | 10",
-   "| Engine Model | 403A-11G1",
-   "| Phase | 1-Phase , 3-Phase",
-   "| Frequency (Hz) | 50Hz , 60Hz",
-   "| Fuel Tank Capacity | 8 Hrs, Extended Fuel Tank Option",
-   "Power(kVA): 44",
-   "Phase: 3-Phase",
    "Power(kVA): 40",
-   "Power(kVA): 55",
-   "Power(kVA): 30"
-  ]
- },
- {
-  "n": 105,
-  "url": "https://elitechpower.com/product/30kva-cummins-diesel-generator/",
-  "title": "30kVA Cummins Diesel Generator | Engine Model 4B3.9-G2 | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS30CUA-3SA | 30kVA | 3-Phase | 50Hz/60Hz",
-   "| Power (kVA) | 30",
-   "| Engine Model | 4B3.9-G2",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz/60Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 150.0",
-   "Phase: 3-Phase",
-   "Power(kVA): 42",
-   "Power(kVA): 50"
-  ]
- },
- {
-  "n": 106,
-  "url": "https://elitechpower.com/product/50kva-lovol/",
-  "title": "50kVA Lovol Diesel Generator | Engine Model 1003TG | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS50LVA-3SA | 50kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 50",
-   "| Engine Model | 1003TG",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 13",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 30",
-   "Phase: 3-Phase",
-   "Power(kVA): 125.0",
-   "Power(kVA): 150.0",
-   "Power(kVA): 22"
-  ]
- },
- {
-  "n": 107,
-  "url": "https://elitechpower.com/product/150kva-yto-silent-power-set/",
-  "title": "150kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS150YTA-3S | 150.0kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 150.0",
-   "| Engine Model | LR6B3LD",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 8",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 50",
-   "Phase: 3-Phase",
-   "Power(kVA): 125.0",
-   "Power(kVA): 25",
-   "Power(kVA): 80.0"
-  ]
- },
- {
-  "n": 108,
-  "url": "https://elitechpower.com/product/80kva-yto-turbocharged-generator/",
-  "title": "80kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS80YTA-3S | 80.0kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 80.0",
-   "| Engine Model | LR4M3-D",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 15",
-   "Phase: 3-Phase",
-   "Power(kVA): 400",
-   "Power(kVA): 22",
-   "Power(kVA): 62.5",
-   "Power(kVA): 40",
-   "Power(kVA): 44",
    "Power(kVA): 200.0",
-   "Power(kVA): 125.0"
-  ]
- },
- {
-  "n": 109,
-  "url": "https://elitechpower.com/product/125kva-yto-diesel-generator-set/",
-  "title": "125kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS125YTA-3S | 125.0kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 125.0",
-   "| Engine Model | LR6A3L-D",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 100.0",
-   "Phase: 3-Phase",
-   "Power(kVA): 200.0",
-   "Power(kVA): 15",
-   "Power(kVA): 50"
-  ]
- },
- {
-  "n": 110,
-  "url": "https://elitechpower.com/product/15kva-quanchai-diesel-generator-copy/",
-  "title": "15kVA Quanchai Silent Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS15QCA-3S | 15kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 15",
-   "| Engine Model | QC385D",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz",
-   "| Fuel Tank Capacity | 8 Hrs, Extended Fuel Tank Option",
-   "Power(kVA): 55",
-   "Phase: 3-Phase",
    "Power(kVA): 50",
    "Power(kVA): 62.5",
-   "Power(kVA): 44",
-   "Power(kVA): 13",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 10",
-   "Power(kVA): 14"
-  ]
- },
- {
-  "n": 111,
-  "url": "https://elitechpower.com/product/14kva-perkins/",
-  "title": "13.8Kva Perkins Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS14PKA-3S | 14kVA | 1-Phase, 3-Phase | 50Hz, 60Hz",
-   "| Power (kVA) | 14",
-   "| Engine Model | 404D-22G",
-   "| Phase | 1-Phase , 3-Phase",
-   "| Frequency (Hz) | 50Hz , 60Hz",
-   "| Fuel Tank Capacity | 8 Hrs, Extended Fuel Tank Option",
-   "Power(kVA): 25",
-   "Phase: 3-Phase",
-   "Power(kVA): 13",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 80.0",
-   "Power(kVA): 15",
-   "Power(kVA): 62.5",
-   "Power(kVA): 22"
-  ]
- },
- {
-  "n": 112,
-  "url": "https://elitechpower.com/product/63kva-yto-industrial-generator/",
-  "title": "63kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS63YTA-3S | 62.5kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 62.5",
-   "| Engine Model | LR4B3Z-D",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 50",
-   "Phase: 3-Phase",
-   "Power(kVA): 400",
-   "Power(kVA): 100.0",
-   "Power(kVA): 42"
-  ]
- },
- {
-  "n": 113,
-  "url": "https://elitechpower.com/product/42kva-deutz/",
-  "title": "40kVA Deutz Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS40DZA-3S | 42kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 42",
-   "| Engine Model | BFM3G2",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 14",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 8",
-   "Power(kVA): 10",
-   "Power(kVA): 150.0",
-   "Phase: 3-Phase",
-   "Power(kVA): 55",
-   "Power(kVA): 62.5"
-  ]
- },
- {
-  "n": 114,
-  "url": "https://elitechpower.com/product/55kva-lovol-diesel-generator/",
-  "title": "55kVA Lovol Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS55LVA-3S | 55kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 55",
-   "| Engine Model | 1004TG",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 200.0",
-   "Phase: 3-Phase",
-   "Power(kVA): 62.5",
-   "Power(kVA): 25",
-   "Power(kVA): 22",
-   "Power(kVA): 15"
-  ]
- },
- {
-  "n": 115,
-  "url": "https://elitechpower.com/product/22kva-yuchai-diesel-generator-yc4v35/",
-  "title": "22kVA Yuchai Diesel Generator | Engine Model YC4V35-D20 | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS22YCA-3S | 22kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 22",
-   "| Engine Model | YC4V35-D20",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 125.0",
-   "Phase: 3-Phase",
-   "Power(kVA): 50",
-   "Power(kVA): 30",
-   "Power(kVA): 400",
-   "Power(kVA): 55"
-  ]
- },
- {
-  "n": 116,
-  "url": "https://elitechpower.com/product/400kva-320kw-prime-power-volvo-diesel-generator/",
-  "title": "400kVA Volvo Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS400VVA-3S | 400kVA | 3-Phase | 50Hz",
-   "Power(kVA): 15",
-   "Phase: 3-Phase",
-   "Power(kVA): 125.0",
-   "Power(kVA): 22",
-   "Power(kVA): 42",
-   "Power(kVA): 55"
-  ]
- },
- {
-  "n": 117,
-  "url": "https://elitechpower.com/brands/250-600kva/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 250",
-   "Phase: 3-Phase"
-  ]
- },
- {
-  "n": 118,
-  "url": "https://elitechpower.com/brands/250-600kva/page/18/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 560",
-   "Phase: 3-Phase",
-   "Power(kVA): 580"
-  ]
- },
- {
-  "n": 119,
-  "url": "https://elitechpower.com/brands/250-600kva/page/16/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 500",
-   "Phase: 3-Phase",
-   "Power(kVA): 525",
-   "Power(kVA): 520",
-   "Power(kVA): 550"
-  ]
- },
- {
-  "n": 120,
-  "url": "https://elitechpower.com/brands/250-600kva/page/17/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 550",
-   "Phase: 3-Phase",
-   "Power(kVA): 560",
-   "Power(kVA): 564"
-  ]
- },
- {
-  "n": 121,
-  "url": "https://elitechpower.com/brands/250-600kva/page/15/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 481",
-   "Phase: 3-Phase",
-   "Power(kVA): 480",
-   "Power(kVA): 500"
-  ]
- },
- {
-  "n": 122,
-  "url": "https://elitechpower.com/brands/250-600kva/page/13/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 440",
-   "Phase: 3-Phase",
-   "Power(kVA): 440.0",
-   "Power(kVA): 450"
-  ]
- },
- {
-  "n": 123,
-  "url": "https://elitechpower.com/brands/250-600kva/page/14/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 450",
-   "Phase: 3-Phase",
-   "Power(kVA): 474",
-   "Power(kVA): 475",
-   "Power(kVA): 480"
-  ]
- },
- {
-  "n": 124,
-  "url": "https://elitechpower.com/brands/250-600kva/page/12/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 400",
-   "Phase: 3-Phase",
-   "Power(kVA): 410",
-   "Power(kVA): 415",
-   "Power(kVA): 425",
-   "Power(kVA): 440"
-  ]
- },
- {
-  "n": 125,
-  "url": "https://elitechpower.com/brands/250-600kva/page/10/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 375.0",
-   "Phase: 3-Phase",
-   "Power(kVA): 375",
-   "Power(kVA): 380",
-   "Power(kVA): 385",
-   "Power(kVA): 388",
-   "Power(kVA): 400"
-  ]
- },
- {
-  "n": 126,
-  "url": "https://elitechpower.com/brands/250-600kva/page/11/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 400",
-   "Phase: 3-Phase",
-   "Power(kVA): 400.0"
-  ]
- },
- {
-  "n": 127,
-  "url": "https://elitechpower.com/brands/250-600kva/page/9/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 370",
-   "Phase: 3-Phase",
-   "Power(kVA): 375"
-  ]
- },
- {
-  "n": 128,
-  "url": "https://elitechpower.com/brands/250-600kva/page/7/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 330",
-   "Phase: 3-Phase",
-   "Power(kVA): 340",
-   "Power(kVA): 350"
-  ]
- },
- {
-  "n": 129,
-  "url": "https://elitechpower.com/brands/250-600kva/page/8/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 350",
-   "Phase: 3-Phase",
-   "Power(kVA): 350.0",
-   "Power(kVA): 360",
-   "Power(kVA): 369"
-  ]
- },
- {
-  "n": 130,
-  "url": "https://elitechpower.com/brands/250-600kva/page/6/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 320",
-   "Phase: 3-Phase",
-   "Power(kVA): 330",
-   "Power(kVA): 330.0"
-  ]
- },
- {
-  "n": 131,
-  "url": "https://elitechpower.com/brands/250-600kva/page/4/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 275",
-   "Phase: 3-Phase",
-   "Power(kVA): 300"
-  ]
- },
- {
-  "n": 132,
-  "url": "https://elitechpower.com/brands/250-600kva/page/5/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 300",
-   "Phase: 3-Phase",
-   "Power(kVA): 300.0",
-   "Power(kVA): 310",
-   "Power(kVA): 313",
-   "Power(kVA): 312.5",
-   "Power(kVA): 320"
-  ]
- },
- {
-  "n": 133,
-  "url": "https://elitechpower.com/brands/250-600kva/page/3/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 275",
-   "Phase: 3-Phase",
-   "Power(kVA): 275.0"
-  ]
- },
- {
-  "n": 134,
-  "url": "https://elitechpower.com/brands/250-600kva/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 250",
-   "Phase: 3-Phase"
-  ]
- },
- {
-  "n": 135,
-  "url": "https://elitechpower.com/brands/250-600kva/page/2/",
-  "title": "250-600kVA Diesel Generators | Factory Direct | Elitech Power",
-  "header": [],
-  "rows": [
-   "Power(kVA): 250",
-   "Phase: 3-Phase",
-   "Power(kVA): 250.0",
-   "Power(kVA): 260",
-   "Power(kVA): 270",
-   "Power(kVA): 275"
-  ]
- },
- {
-  "n": 136,
-  "url": "https://elitechpower.com/product/275kva-baudouin-diesel-generator/",
-  "title": "275kVA Baudouin Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS275BDA-3S | 275kVA | 3-Phase | 50Hz, 60Hz",
-   "| Power (kVA) | 275",
-   "| Engine Model | 6M16G250/5",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz , 60Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 62.5",
-   "Phase: 3-Phase",
-   "Power(kVA): 10",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 125.0",
-   "Power(kVA): 25",
    "Power(kVA): 100.0"
   ]
  },
  {
-  "n": 137,
+  "n": 104,
   "url": "https://elitechpower.com/product/100kva-yto-high-torque-diesel-generator/",
   "title": "100kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
   "header": [],
@@ -587,19 +75,18 @@
    "| Phase | 3-Phase",
    "| Frequency (Hz) | 50Hz",
    "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 80.0",
-   "Phase: 3-Phase",
-   "Power(kVA): 50",
    "Power(kVA): 22",
-   "Power(kVA): 150.0",
-   "Power(kVA): 15",
-   "Power(kVA): 30",
-   "Power(kVA): 13",
-   "Phase: 1-Phase, 3-Phase"
+   "Phase: 3-Phase",
+   "Power(kVA): 55",
+   "Power(kVA): 200.0",
+   "Power(kVA): 10",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 62.5",
+   "Power(kVA): 13"
   ]
  },
  {
-  "n": 138,
+  "n": 105,
   "url": "https://elitechpower.com/product/12-5kva-prime-perkins/",
   "title": "12.5kVA Perkins Diesel Generator | Diesel Generator | Elitech Power",
   "header": [],
@@ -610,67 +97,165 @@
    "| Phase | 1-Phase , 3-Phase",
    "| Frequency (Hz) | 50Hz , 60Hz",
    "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 150.0",
+   "Phase: 3-Phase",
    "Power(kVA): 14",
    "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 22",
-   "Phase: 3-Phase",
-   "Power(kVA): 100.0",
    "Power(kVA): 400",
-   "Power(kVA): 42",
-   "Power(kVA): 200.0",
    "Power(kVA): 80.0",
-   "Power(kVA): 125.0"
+   "Power(kVA): 8",
+   "Power(kVA): 15"
   ]
  },
  {
-  "n": 139,
-  "url": "https://elitechpower.com/product/200kva-yto-industrial-silent-gen/",
-  "title": "200kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
+  "n": 106,
+  "url": "https://elitechpower.com/product/15kva-quanchai-diesel-generator-copy/",
+  "title": "15kVA Quanchai Silent Generator | Diesel Generator | Elitech Power",
   "header": [],
   "rows": [
-   "Model: EPS200YTA-3S | 200.0kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 200.0",
-   "| Engine Model | LR6M3L-D",
+   "Model: EPS15QCA-3S | 15kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 15",
+   "| Engine Model | QC385D",
    "| Phase | 3-Phase",
    "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hrs, Extended Fuel Tank Option",
+   "Power(kVA): 50",
+   "Phase: 3-Phase",
+   "Power(kVA): 22",
+   "Power(kVA): 40",
+   "Power(kVA): 80.0",
+   "Power(kVA): 10",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 100.0",
+   "Power(kVA): 25"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://elitechpower.com/product/cummins-25kva-diesel-generator/",
+  "title": "25kVA Cummins Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS25CUA-3S | 25kVA | 3-Phase | 50Hz/60Hz",
+   "| Power (kVA) | 25",
+   "| Engine Model | 4B3.9-G11",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz/60Hz",
    "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
    "Power(kVA): 55",
    "Phase: 3-Phase",
-   "Power(kVA): 10",
+   "Power(kVA): 14",
    "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 80.0",
-   "Power(kVA): 30",
-   "Power(kVA): 8",
-   "Power(kVA): 22",
-   "Power(kVA): 125.0"
+   "Power(kVA): 42",
+   "Power(kVA): 30"
   ]
  },
  {
-  "n": 140,
-  "url": "https://elitechpower.com/product/8kva-perkins-diesel-generator/",
-  "title": "8Kva Perkins Diesel Generator | Diesel Generator | Elitech Power",
+  "n": 108,
+  "url": "https://elitechpower.com/product/42kva-deutz/",
+  "title": "40kVA Deutz Diesel Generator | Diesel Generator | Elitech Power",
   "header": [],
   "rows": [
-   "Model: EPS8PKA-3S | 8kVA | 1-Phase, 3-Phase | 50Hz, 60Hz",
-   "| Power (kVA) | 8",
+   "Model: EPS40DZA-3S | 42kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 42",
+   "| Engine Model | BFM3G2",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 13",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 40",
+   "Phase: 3-Phase",
+   "Power(kVA): 22",
+   "Power(kVA): 14",
+   "Power(kVA): 100.0",
+   "Power(kVA): 8",
+   "Power(kVA): 10"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://elitechpower.com/product/10kva-perkins/",
+  "title": "10Kva Perkins Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS10PKA-3S | 10kVA | 1-Phase, 3-Phase | 50Hz, 60Hz",
+   "| Power (kVA) | 10",
    "| Engine Model | 403A-11G1",
    "| Phase | 1-Phase , 3-Phase",
    "| Frequency (Hz) | 50Hz , 60Hz",
    "| Fuel Tank Capacity | 8 Hrs, Extended Fuel Tank Option",
-   "Power(kVA): 200.0",
+   "Power(kVA): 100.0",
    "Phase: 3-Phase",
-   "Power(kVA): 40",
+   "Power(kVA): 30",
+   "Power(kVA): 125.0",
+   "Power(kVA): 22",
+   "Power(kVA): 44",
    "Power(kVA): 14",
    "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 62.5",
-   "Power(kVA): 22",
-   "Power(kVA): 15",
-   "Power(kVA): 400",
-   "Power(kVA): 100.0"
+   "Power(kVA): 25"
   ]
  },
  {
-  "n": 141,
+  "n": 110,
+  "url": "https://elitechpower.com/product/14kva-perkins/",
+  "title": "13.8Kva Perkins Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS14PKA-3S | 14kVA | 1-Phase, 3-Phase | 50Hz, 60Hz",
+   "| Power (kVA) | 14",
+   "| Engine Model | 404D-22G",
+   "| Phase | 1-Phase , 3-Phase",
+   "| Frequency (Hz) | 50Hz , 60Hz",
+   "| Fuel Tank Capacity | 8 Hrs, Extended Fuel Tank Option",
+   "Power(kVA): 30",
+   "Phase: 3-Phase",
+   "Power(kVA): 8",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 25",
+   "Power(kVA): 40",
+   "Power(kVA): 80.0"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://elitechpower.com/product/80kva-yto-turbocharged-generator/",
+  "title": "80kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS80YTA-3S | 80.0kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 80.0",
+   "| Engine Model | LR4M3-D",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 22",
+   "Phase: 3-Phase",
+   "Power(kVA): 25",
+   "Power(kVA): 40",
+   "Power(kVA): 100.0",
+   "Power(kVA): 15",
+   "Power(kVA): 400"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://elitechpower.com/product/400kva-320kw-prime-power-volvo-diesel-generator/",
+  "title": "400kVA Volvo Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS400VVA-3S | 400kVA | 3-Phase | 50Hz",
+   "Power(kVA): 125.0",
+   "Phase: 3-Phase",
+   "Power(kVA): 62.5",
+   "Power(kVA): 50",
+   "Power(kVA): 55",
+   "Power(kVA): 30",
+   "Power(kVA): 40"
+  ]
+ },
+ {
+  "n": 113,
   "url": "https://elitechpower.com/product/40kva-cummins-diesel-generator/",
   "title": "40kVA Cummins Diesel Generator | Diesel Generator | Elitech Power",
   "header": [],
@@ -681,17 +266,120 @@
    "| Phase | 3-Phase",
    "| Frequency (Hz) | 50Hz/60Hz",
    "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 80.0",
+   "Power(kVA): 44",
    "Phase: 3-Phase",
-   "Power(kVA): 100.0",
-   "Power(kVA): 10",
-   "Phase: 1-Phase, 3-Phase",
    "Power(kVA): 13",
-   "Power(kVA): 44"
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 100.0",
+   "Power(kVA): 15",
+   "Power(kVA): 42",
+   "Power(kVA): 62.5"
   ]
  },
  {
-  "n": 142,
+  "n": 114,
+  "url": "https://elitechpower.com/product/63kva-yto-industrial-generator/",
+  "title": "63kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS63YTA-3S | 62.5kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 62.5",
+   "| Engine Model | LR4B3Z-D",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 14",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 42",
+   "Phase: 3-Phase",
+   "Power(kVA): 30",
+   "Power(kVA): 125.0",
+   "Power(kVA): 10"
+  ]
+ },
+ {
+  "n": 115,
+  "url": "https://elitechpower.com/product/125kva-yto-diesel-generator-set/",
+  "title": "125kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS125YTA-3S | 125.0kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 125.0",
+   "| Engine Model | LR6A3L-D",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 14",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 10",
+   "Power(kVA): 42",
+   "Phase: 3-Phase",
+   "Power(kVA): 55",
+   "Power(kVA): 200.0"
+  ]
+ },
+ {
+  "n": 116,
+  "url": "https://elitechpower.com/product/200kva-yto-industrial-silent-gen/",
+  "title": "200kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS200YTA-3S | 200.0kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 200.0",
+   "| Engine Model | LR6M3L-D",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 30",
+   "Phase: 3-Phase",
+   "Power(kVA): 25",
+   "Power(kVA): 42",
+   "Power(kVA): 62.5",
+   "Power(kVA): 100.0"
+  ]
+ },
+ {
+  "n": 117,
+  "url": "https://elitechpower.com/product/30kva-cummins-diesel-generator/",
+  "title": "30kVA Cummins Diesel Generator | Engine Model 4B3.9-G2 | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS30CUA-3SA | 30kVA | 3-Phase | 50Hz/60Hz",
+   "| Power (kVA) | 30",
+   "| Engine Model | 4B3.9-G2",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz/60Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 42",
+   "Phase: 3-Phase",
+   "Power(kVA): 80.0",
+   "Power(kVA): 55",
+   "Power(kVA): 14",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 15",
+   "Power(kVA): 50"
+  ]
+ },
+ {
+  "n": 118,
+  "url": "https://elitechpower.com/product/50kva-lovol/",
+  "title": "50kVA Lovol Diesel Generator | Engine Model 1003TG | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS50LVA-3SA | 50kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 50",
+   "| Engine Model | 1003TG",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 30",
+   "Phase: 3-Phase",
+   "Power(kVA): 62.5",
+   "Power(kVA): 15"
+  ]
+ },
+ {
+  "n": 119,
   "url": "https://elitechpower.com/brands/under-100kva/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -705,7 +393,7 @@
   ]
  },
  {
-  "n": 143,
+  "n": 120,
   "url": "https://elitechpower.com/brands/under-100kva/page/33/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -718,7 +406,7 @@
   ]
  },
  {
-  "n": 144,
+  "n": 121,
   "url": "https://elitechpower.com/brands/under-100kva/page/31/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -733,7 +421,7 @@
   ]
  },
  {
-  "n": 145,
+  "n": 122,
   "url": "https://elitechpower.com/brands/under-100kva/page/32/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -746,7 +434,7 @@
   ]
  },
  {
-  "n": 146,
+  "n": 123,
   "url": "https://elitechpower.com/brands/under-100kva/page/30/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -759,7 +447,7 @@
   ]
  },
  {
-  "n": 147,
+  "n": 124,
   "url": "https://elitechpower.com/brands/under-100kva/page/28/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -772,7 +460,7 @@
   ]
  },
  {
-  "n": 148,
+  "n": 125,
   "url": "https://elitechpower.com/brands/under-100kva/page/29/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -783,7 +471,7 @@
   ]
  },
  {
-  "n": 149,
+  "n": 126,
   "url": "https://elitechpower.com/brands/under-100kva/page/27/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -793,7 +481,7 @@
   ]
  },
  {
-  "n": 150,
+  "n": 127,
   "url": "https://elitechpower.com/brands/under-100kva/page/25/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -808,7 +496,7 @@
   ]
  },
  {
-  "n": 151,
+  "n": 128,
   "url": "https://elitechpower.com/brands/under-100kva/page/26/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -824,7 +512,7 @@
   ]
  },
  {
-  "n": 152,
+  "n": 129,
   "url": "https://elitechpower.com/brands/under-100kva/page/24/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -835,7 +523,7 @@
   ]
  },
  {
-  "n": 153,
+  "n": 130,
   "url": "https://elitechpower.com/brands/under-100kva/page/22/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -849,7 +537,7 @@
   ]
  },
  {
-  "n": 154,
+  "n": 131,
   "url": "https://elitechpower.com/brands/under-100kva/page/23/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -862,7 +550,7 @@
   ]
  },
  {
-  "n": 155,
+  "n": 132,
   "url": "https://elitechpower.com/brands/under-100kva/page/21/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -876,7 +564,7 @@
   ]
  },
  {
-  "n": 156,
+  "n": 133,
   "url": "https://elitechpower.com/brands/under-100kva/page/19/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -890,7 +578,7 @@
   ]
  },
  {
-  "n": 157,
+  "n": 134,
   "url": "https://elitechpower.com/brands/under-100kva/page/20/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -900,7 +588,7 @@
   ]
  },
  {
-  "n": 158,
+  "n": 135,
   "url": "https://elitechpower.com/brands/under-100kva/page/18/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -915,7 +603,7 @@
   ]
  },
  {
-  "n": 159,
+  "n": 136,
   "url": "https://elitechpower.com/brands/under-100kva/page/16/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -928,7 +616,7 @@
   ]
  },
  {
-  "n": 160,
+  "n": 137,
   "url": "https://elitechpower.com/brands/under-100kva/page/17/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -939,7 +627,7 @@
   ]
  },
  {
-  "n": 161,
+  "n": 138,
   "url": "https://elitechpower.com/brands/under-100kva/page/15/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -955,7 +643,7 @@
   ]
  },
  {
-  "n": 162,
+  "n": 139,
   "url": "https://elitechpower.com/brands/under-100kva/page/13/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -969,7 +657,7 @@
   ]
  },
  {
-  "n": 163,
+  "n": 140,
   "url": "https://elitechpower.com/brands/under-100kva/page/14/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -980,7 +668,7 @@
   ]
  },
  {
-  "n": 164,
+  "n": 141,
   "url": "https://elitechpower.com/brands/under-100kva/page/12/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -992,7 +680,7 @@
   ]
  },
  {
-  "n": 165,
+  "n": 142,
   "url": "https://elitechpower.com/brands/under-100kva/page/10/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1007,7 +695,7 @@
   ]
  },
  {
-  "n": 166,
+  "n": 143,
   "url": "https://elitechpower.com/brands/under-100kva/page/11/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1021,7 +709,7 @@
   ]
  },
  {
-  "n": 167,
+  "n": 144,
   "url": "https://elitechpower.com/brands/under-100kva/page/9/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1033,7 +721,7 @@
   ]
  },
  {
-  "n": 168,
+  "n": 145,
   "url": "https://elitechpower.com/brands/under-100kva/page/7/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1047,7 +735,7 @@
   ]
  },
  {
-  "n": 169,
+  "n": 146,
   "url": "https://elitechpower.com/brands/under-100kva/page/8/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1062,7 +750,7 @@
   ]
  },
  {
-  "n": 170,
+  "n": 147,
   "url": "https://elitechpower.com/brands/under-100kva/page/6/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1075,7 +763,7 @@
   ]
  },
  {
-  "n": 171,
+  "n": 148,
   "url": "https://elitechpower.com/brands/under-100kva/page/4/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1090,7 +778,7 @@
   ]
  },
  {
-  "n": 172,
+  "n": 149,
   "url": "https://elitechpower.com/brands/under-100kva/page/5/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1105,7 +793,7 @@
   ]
  },
  {
-  "n": 173,
+  "n": 150,
   "url": "https://elitechpower.com/brands/under-100kva/page/3/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1121,7 +809,7 @@
   ]
  },
  {
-  "n": 174,
+  "n": 151,
   "url": "https://elitechpower.com/brands/under-100kva/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1135,7 +823,7 @@
   ]
  },
  {
-  "n": 175,
+  "n": 152,
   "url": "https://elitechpower.com/brands/under-100kva/page/2/",
   "title": "Under 100kVA Diesel Generators | Factory Direct | Elitech Power",
   "header": [],
@@ -1149,7 +837,7 @@
   ]
  },
  {
-  "n": 176,
+  "n": 153,
   "url": "https://elitechpower.com/product/13kva-quanchai-silent-generator/",
   "title": "13kVA Quanchai Diesel Generator | Diesel Generator | Elitech Power",
   "header": [],
@@ -1160,61 +848,61 @@
    "| Phase | 3-Phase",
    "| Frequency (Hz) | 50Hz",
    "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 14",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 150.0",
-   "Phase: 3-Phase",
    "Power(kVA): 8",
-   "Power(kVA): 125.0",
-   "Power(kVA): 40"
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 80.0",
+   "Phase: 3-Phase",
+   "Power(kVA): 30",
+   "Power(kVA): 100.0",
+   "Power(kVA): 44"
   ]
  },
  {
-  "n": 177,
-  "url": "https://elitechpower.com/product/200kva-yunnei-power-silent-gen/",
-  "title": "200kVA Yunnei Diesel Generator | Diesel Generator | Elitech Power",
+  "n": 154,
+  "url": "https://elitechpower.com/product/44kva-cummins-diesel-generator/",
+  "title": "44kVA Cummins Diesel Generator | Diesel Generator | Elitech Power",
   "header": [],
   "rows": [
-   "Model: EPS200YNA-3S | 200.0kVA | 3-Phase | 50Hz",
-   "| Power (kVA) | 200.0",
-   "| Engine Model | YN6L280",
+   "Model: EPS44CUA-3S | 44kVA | 3-Phase | 50Hz/60Hz",
+   "| Power (kVA) | 44",
+   "| Engine Model | 4BT3.9-G2",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz/60Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 30",
+   "Phase: 3-Phase",
+   "Power(kVA): 22",
+   "Power(kVA): 200.0",
+   "Power(kVA): 10",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 125.0"
+  ]
+ },
+ {
+  "n": 155,
+  "url": "https://elitechpower.com/product/22kva-yuchai-diesel-generator-yc4v35/",
+  "title": "22kVA Yuchai Diesel Generator | Engine Model YC4V35-D20 | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS22YCA-3S | 22kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 22",
+   "| Engine Model | YC4V35-D20",
    "| Phase | 3-Phase",
    "| Frequency (Hz) | 50Hz",
    "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 40",
-   "Phase: 3-Phase",
-   "Power(kVA): 14",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 15",
-   "Power(kVA): 400",
    "Power(kVA): 25",
-   "Power(kVA): 30",
+   "Phase: 3-Phase",
+   "Power(kVA): 400",
+   "Power(kVA): 100.0",
+   "Power(kVA): 200.0",
+   "Power(kVA): 40",
+   "Power(kVA): 10",
+   "Phase: 1-Phase, 3-Phase",
    "Power(kVA): 62.5"
   ]
  },
  {
-  "n": 178,
-  "url": "https://elitechpower.com/product/cummins-25kva-diesel-generator/",
-  "title": "25kVA Cummins Diesel Generator | Diesel Generator | Elitech Power",
-  "header": [],
-  "rows": [
-   "Model: EPS25CUA-3S | 25kVA | 3-Phase | 50Hz/60Hz",
-   "| Power (kVA) | 25",
-   "| Engine Model | 4B3.9-G11",
-   "| Phase | 3-Phase",
-   "| Frequency (Hz) | 50Hz/60Hz",
-   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
-   "Power(kVA): 22",
-   "Phase: 3-Phase",
-   "Power(kVA): 80.0",
-   "Power(kVA): 400",
-   "Power(kVA): 14",
-   "Phase: 1-Phase, 3-Phase",
-   "Power(kVA): 50"
-  ]
- },
- {
-  "n": 179,
+  "n": 156,
   "url": "https://elitechpower.com/product/marathon-alternator/",
   "title": "Marathon Electric Alternator 5kVA–3000kVA | 4P Series | NEMA MG1 | Elitech Power",
   "header": [],
@@ -1230,8 +918,321 @@
    "| Protection Class | IP23 standard",
    "| Voltage Regulation | ±0.5% steady state",
    "Power(kVA): 5-2500",
+   "Power(kVA): 10-3000",
+   "Power(kVA): 7.5-5000"
+  ]
+ },
+ {
+  "n": 157,
+  "url": "https://elitechpower.com/product/mecc-alte-alternator/",
+  "title": "Mecc Alte Alternator 5kVA–2500kVA | ECO, ECP & UniStar Series | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EC | 5-2500kVA | 50Hz/60Hz",
+   "| Power (kVA) | 5-2500",
+   "| Frequency (Hz) | 50Hz/60Hz",
+   "Power range:5Kva-2500Kva",
+   "| Power Range | 5 kVA – 2,500 kVA",
+   "| Voltage Output | 110V – 11,000V",
+   "| Frequency | 50Hz or 60Hz",
+   "| Power Factor | 0.8 lagging (standard)",
+   "| Insulation Class | Class H (180°C)",
+   "| Protection Class | IP23 standard; IP44 optional",
+   "| Voltage Regulation | ±1% steady state",
+   "Power(kVA): 5-2500",
+   "Power(kVA): 10-3000",
    "Power(kVA): 7.5-5000",
+   "Power(kVA): 5-3000"
+  ]
+ },
+ {
+  "n": 158,
+  "url": "https://elitechpower.com/product/stamford-alternator/",
+  "title": "Stamford Alternator 7.5kVA–5000kVA | UCI, HCI, PI Series | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: HC, S, UC | 7.5-5000kVA | 50Hz/60Hz",
+   "| Power (kVA) | 7.5-5000",
+   "| Frequency (Hz) | 50Hz/60Hz",
+   "| Power Range | 7.5 kVA – 5,000 kVA",
+   "| Voltage Output | 110V – 13,800V",
+   "| Frequency | 50Hz or 60Hz",
+   "| Power Factor | 0.8 lagging (standard)",
+   "| Insulation Class | Class H (180°C)",
+   "| Protection Class | IP23 standard; IP44 / IP54 optional",
+   "| Voltage Regulation | ±0.5% steady state; ±1% transient",
+   "Power(kVA): 5-3000",
+   "Power(kVA): 5-2500",
    "Power(kVA): 10-3000"
+  ]
+ },
+ {
+  "n": 159,
+  "url": "https://elitechpower.com/product/leroysomer-alternator/",
+  "title": "Leroy-Somer Alternator 10kVA–3000kVA | TAL, LSA & UCI Series | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: LL, LSA, TAL | 10-3000kVA | 50Hz/60Hz",
+   "| Power (kVA) | 10-3000",
+   "| Frequency (Hz) | 50Hz/60Hz",
+   "| Power Range | 10 kVA – 3,000 kVA",
+   "| Voltage Output | 110V – 13,800V (custom winding available)",
+   "| Frequency | 50Hz or 60Hz",
+   "| Power Factor | 0.8 lagging (standard)",
+   "| Insulation Class | Class H (180°C)",
+   "| Protection Class | IP23 standard; IP44 optional",
+   "Power(kVA): 5-3000",
+   "Power(kVA): 5-2500",
+   "Power(kVA): 7.5-5000"
+  ]
+ },
+ {
+  "n": 160,
+  "url": "https://elitechpower.com/product/acelite-alternator/",
+  "title": "Acelite Alternator 5kVA–2500kVA | Industrial Brushless | Best Price | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: ACE, EPA | 5-2500kVA | 50Hz/60Hz",
+   "| Power (kVA) | 5-2500",
+   "| Frequency (Hz) | 50Hz/60Hz",
+   "Protection: IP22 and IP23 for your option",
+   "| Power Range | 8 kVA – 4000 kVA",
+   "| Voltage Output | 110V – 11,000V",
+   "| Frequency | 50Hz or 60Hz",
+   "| Power Factor | 0.8 lagging (standard)",
+   "| Insulation Class | Class H (180°C)",
+   "| Protection Class | IP23 standard",
+   "| Voltage Regulation | ±1% steady state",
+   "Power(kVA): 5-3000",
+   "Power(kVA): 10-3000",
+   "Power(kVA): 5-2500",
+   "Power(kVA): 7.5-5000"
+  ]
+ },
+ {
+  "n": 161,
+  "url": "https://elitechpower.com/products-finder/?_brand=kubota",
+  "title": "Generator Finder: Select by Power, Brands & Application | Elitech Power",
+  "header": [],
+  "rows": [
+   "Power(kVA): 10",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 12",
+   "Power(kVA): 15",
+   "Power(kVA): 18",
+   "Power(kVA): 20",
+   "Power(kVA): 24",
+   "Power(kVA): 25",
+   "Power(kVA): 30",
+   "Power(kVA): 38",
+   "Power(kVA): 6",
+   "Power(kVA): 8"
+  ]
+ },
+ {
+  "n": 162,
+  "url": "https://elitechpower.com/product/8kva-prime-kubota-diesel-generator/",
+  "title": "8kVA Kubota Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS8KBA-3S | 8kVA | 1-Phase, 3-Phase | 50Hz, 60Hz",
+   "| Power (kVA) | 8",
+   "| Engine Model | D722",
+   "| Phase | 1-Phase , 3-Phase",
+   "| Frequency (Hz) | 50Hz , 60Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 30",
+   "Phase: 3-Phase",
+   "Power(kVA): 40",
+   "Power(kVA): 100.0",
+   "Power(kVA): 125.0",
+   "Power(kVA): 15"
+  ]
+ },
+ {
+  "n": 163,
+  "url": "https://elitechpower.com/product/125kva-isuzu-diesel-generator/",
+  "title": "125kVA Isuzu Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS125IZA-3S | 125kVA | 3-Phase | 50Hz, 60Hz",
+   "| Power (kVA) | 125",
+   "| Engine Model | JE493ZLDC-02",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz , 60Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 44",
+   "Phase: 3-Phase",
+   "Power(kVA): 30",
+   "Power(kVA): 55",
+   "Power(kVA): 8",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 100.0",
+   "Power(kVA): 42"
+  ]
+ },
+ {
+  "n": 164,
+  "url": "https://elitechpower.com/product/8kva-perkins-diesel-generator/",
+  "title": "8Kva Perkins Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS8PKA-3S | 8kVA | 1-Phase, 3-Phase | 50Hz, 60Hz",
+   "| Power (kVA) | 8",
+   "| Engine Model | 403A-11G1",
+   "| Phase | 1-Phase , 3-Phase",
+   "| Frequency (Hz) | 50Hz , 60Hz",
+   "| Fuel Tank Capacity | 8 Hrs, Extended Fuel Tank Option",
+   "Power(kVA): 13",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 125.0",
+   "Phase: 3-Phase",
+   "Power(kVA): 50",
+   "Power(kVA): 100.0",
+   "Power(kVA): 62.5",
+   "Power(kVA): 25",
+   "Power(kVA): 22"
+  ]
+ },
+ {
+  "n": 165,
+  "url": "https://elitechpower.com/brands/under-50kva-diesel-generators/",
+  "title": "Diesel Generators Under 50kVA | Small Generator Supplier | Elitech Power",
+  "header": [],
+  "rows": [
+   "Power(kVA): 10",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 14",
+   "Power(kVA): 15",
+   "Phase: 3-Phase",
+   "Power(kVA): 20",
+   "Power(kVA): 25",
+   "Power(kVA): 30",
+   "Power(kVA): 50",
+   "Power(kVA): 8"
+  ]
+ },
+ {
+  "n": 166,
+  "url": "https://elitechpower.com/product/50kva-40kw-prime-power-lovol-diesel-generator/",
+  "title": "50Kva/40Kw Prime Power LOVOL Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS30LVA-3S | 50kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 50",
+   "| Engine Model | 1004TG",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hrs, Extended Fuel Tank Option",
+   "Power(kVA): 14",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 44",
+   "Phase: 3-Phase",
+   "Power(kVA): 55",
+   "Power(kVA): 22",
+   "Power(kVA): 100.0",
+   "Power(kVA): 125.0"
+  ]
+ },
+ {
+  "n": 167,
+  "url": "https://elitechpower.com/product/55kva-lovol-diesel-generator/",
+  "title": "55kVA Lovol Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS55LVA-3S | 55kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 55",
+   "| Engine Model | 1004TG",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 62.5",
+   "Phase: 3-Phase",
+   "Power(kVA): 125.0",
+   "Power(kVA): 40",
+   "Power(kVA): 10",
+   "Phase: 1-Phase, 3-Phase",
+   "Power(kVA): 80.0",
+   "Power(kVA): 30",
+   "Power(kVA): 150.0"
+  ]
+ },
+ {
+  "n": 168,
+  "url": "https://elitechpower.com/product/150kva-yto-silent-power-set/",
+  "title": "150kVA YTO Diesel Generator | Diesel Generator | Elitech Power",
+  "header": [],
+  "rows": [
+   "Model: EPS150YTA-3S | 150.0kVA | 3-Phase | 50Hz",
+   "| Power (kVA) | 150.0",
+   "| Engine Model | LR6B3LD",
+   "| Phase | 3-Phase",
+   "| Frequency (Hz) | 50Hz",
+   "| Fuel Tank Capacity | 8 Hours | Extended Option Available",
+   "Power(kVA): 50",
+   "Phase: 3-Phase",
+   "Power(kVA): 30",
+   "Power(kVA): 42",
+   "Power(kVA): 200.0",
+   "Power(kVA): 22",
+   "Power(kVA): 44"
+  ]
+ },
+ {
+  "n": 169,
+  "url": "https://elitechpower.com/brands/100-250kva/",
+  "title": "100-250kVA Diesel Generators | Factory Direct | Elitech Power",
+  "header": [],
+  "rows": [
+   "Power(kVA): 100",
+   "Phase: 3-Phase",
+   "Power(kVA): 100.0"
+  ]
+ },
+ {
+  "n": 170,
+  "url": "https://elitechpower.com/brands/100-250kva/page/21/",
+  "title": "100-250kVA Diesel Generators | Factory Direct | Elitech Power",
+  "header": [],
+  "rows": [
+   "Power(kVA): 240",
+   "Phase: 3-Phase",
+   "Power(kVA): 240.0"
+  ]
+ },
+ {
+  "n": 171,
+  "url": "https://elitechpower.com/brands/100-250kva/page/19/",
+  "title": "100-250kVA Diesel Generators | Factory Direct | Elitech Power",
+  "header": [],
+  "rows": [
+   "Power(kVA): 200",
+   "Phase: 3-Phase",
+   "Power(kVA): 200.0",
+   "Power(kVA): 210",
+   "Power(kVA): 220"
+  ]
+ },
+ {
+  "n": 172,
+  "url": "https://elitechpower.com/brands/100-250kva/page/20/",
+  "title": "100-250kVA Diesel Generators | Factory Direct | Elitech Power",
+  "header": [],
+  "rows": [
+   "Power(kVA): 220",
+   "Phase: 3-Phase",
+   "Power(kVA): 220.0",
+   "Power(kVA): 240"
+  ]
+ },
+ {
+  "n": 173,
+  "url": "https://elitechpower.com/brands/100-250kva/page/18/",
+  "title": "100-250kVA Diesel Generators | Factory Direct | Elitech Power",
+  "header": [],
+  "rows": [
+   "Power(kVA): 200",
+   "Phase: 3-Phase"
   ]
  }
 ]

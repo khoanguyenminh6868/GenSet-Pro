@@ -109,6 +109,16 @@
         "| thermal output(KWe) | kWt | 78"
       ],
       "file": "sources/sevenpower-chengdu/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.gas-chp.com/sale-12633969-rpm1500-internal-combustion-engine-200kva-ac-three-phase-natural-gas-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| frequency | Hz | 50"
+      ],
+      "file": "sources/sevenpower-chengdu/105.md"
     }
   ],
   "confidence": "medium",
@@ -186,6 +196,21 @@
         "| Biogas consumption | m 3 /kW.h | 0.5",
         "| Biogas consumption for one hours | m3/h | 20",
         "| db(A)@7m | — | 58"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "RPM1500 Internal Combustion Engine 200KVA AC Three Phase Natural Gas Generator Set",
+      "header": [
+        "| frequency | Hz | 50",
+        "| voltage | V | 400/230",
+        "| gas inlet pressure | kPa | 3-5",
+        "| dimension (soundproof type) | mm*mm*mm | 2900*1600*1800",
+        "| net weight | kg | 3500"
+      ],
+      "rows": [
+        "| NG consumption | m3/kW.h | 0.28",
+        "| db(A)@7m | — | 59"
       ]
     }
   ]

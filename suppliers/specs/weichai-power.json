@@ -363,5 +363,144 @@
    "| WPG440L8 | 1500 | 440/350 | 400/320 | 6M21G4D3/5 | 6 | 127×165 | Electronic control | Stage IIIA",
    "| WPG550L8 | 1500 | 550/440 | 500/400 | 6M21G8D3/5 | 6 | 127×165 | Electronic control | Stage IIIA"
   ]
+ },
+ {
+  "n": 125,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=1cee3af6378b4791952957007732c5e0&columnId=9d7a192702694160b330c56651108ed5",
+  "title": "1350 kVA – 1500 kVA Standard Land-based Generator Set-Weichai Power official website",
+  "header": [
+   "| Genset Model | Engine Model | Displacement (L) | Speed (rpm) | Continuous Power (kVA/kW) | Prime Power (kW)"
+  ],
+  "rows": [
+   "| BPG1500*7NG | 16M33G6N0/5 | 52.3 | 1500 | 1500/1230 | /",
+   "| BPG1375*7NG | 16M33G6N2/5 | 52.3 | 1500 | 1375/1100 | /",
+   "| BPG1200*76NG | 16M33G6N0/6 | 52.3 | 1800 | 1500/1200 | /",
+   "| BPG1050*76NG | 16M33G4N2/6 | 52.3 | 1800 | 1350/1050 | /"
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=7451a6dcc0a447c0a6733a129f7d224c&columnId=9d7a192702694160b330c56651108ed5",
+  "title": "1060 kVA – 1130 kVA Standard Land-based Generator Set-Weichai Power official website",
+  "header": [
+   "| Genset Model | Engine Model | Displacement (L) | Speed (rpm) | Continuous Power (kVA/kW) | Prime Power (kW)"
+  ],
+  "rows": [
+   "| PG1000*7NG | 12M33G10N0/5 | 39.2 | 1500 | 1060/850 | /",
+   "| PG900*76NG | 12M33G14N0/6 | 39.2 | 1800 | 1130/900 | /"
+  ]
+ },
+ {
+  "n": 127,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=7623c6bbf71c43a080c0bd501f023c7a&columnId=9d7a192702694160b330c56651108ed5",
+  "title": "625 kVA Standard Land-based Generator Set-Weichai Power official website",
+  "header": [
+   "| Genset Model | Engine Model | Displacement (L) | Speed (rpm) | Continuous Power (kVA/kW) | Prime Power (kW)"
+  ],
+  "rows": [
+   "| PG625*7NG | 12M26G2N0/5 | 31.8 | 1500 | 625/500 | /",
+   "| PG500*76NG | 12M26G2N0/6 | 31.8 | 1800 | 625/500 | /"
+  ]
+ },
+ {
+  "n": 128,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=78c72730f88842c7ae8232f42934d170&columnId=9d7a192702694160b330c56651108ed5",
+  "title": "500 kVA Standard Land-based Generator Set-Weichai Power official website",
+  "header": [
+   "| Genset Model | Engine Model | Displacement (L) | Speed (rpm) | Continuous Power (kVA/kW) | Prime Power (kW)"
+  ],
+  "rows": [
+   "| PG500*7NG | 6M33G6N0/5 | 19.6 | 1500 | 500/400 | /",
+   "| PG400*76NG | 6M33G6N0/6 | 19.6 | 1800 | 500/400 | /"
+  ]
+ },
+ {
+  "n": 129,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=d1a9c8e1987645a29415b3cde1ed61bf&columnId=1f8e4feefee140798333c65f7f00cec7",
+  "title": "4800 kVA Standard Land-based Generator Set-Weichai Power official website",
+  "header": [
+   "| Genset Model | Engine Model | Displacement (L) | Valves per Cylinder | Continuous Power/Speed (kWm/rpm) | Continuous Power (kVA/kW) | Technical route"
+  ],
+  "rows": [
+   "| WPGC4800B4 | 8WH32D4000-7.5 | 257 | 4 | 4000/750 | 4800/3840 | Mechanical unit pump",
+   "| WPGC3840B46 | 8WH32D4000-7.2 | 257 | 4 | 4000/720 | 4800/3840 | Mechanical unit pump"
+  ]
+ },
+ {
+  "n": 130,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=e2520cbec2084e52a43c9108a3416414&columnId=d700eb428cb44ef69ed6bacffa790cb7",
+  "title": "1125 kVA-1650 kVA Standard Land-based Generator Set Series-Weichai Power official website",
+  "header": [
+   "| Genset Model | Rated speed (rpm) | Standby Power (kVA/kW) | Prime Power (kVA/kW) | Weichai Engine Model | Cylinders | Bore × Stroke (mm) | Governing System | Emission standard"
+  ],
+  "rows": [
+   "| WPG1250*7 | 1500 | 1250/1000 | 1125/900 | 12M33G1250/5 | 12 | 150×185 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG1400*7 | 1500 | 1375/1100 | 1250/1000 | 12M33G1400/5 | 12 | 150×185 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG1650*7 | 1500 | 1650/1300 | 1500/1200 | 12M33G1650/5 | 12 | 150×185 | Electronic control | Non-Road Emission Exempt",
+   "| WPG1100*76 | 1800 | 1375/1100 | 1250/1000 | 12M33G1100/6 | 12 | 150×185 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG1300*76 | 1800 | 1650/1300 | 1500/1200 | 12M33G1300/6 | 12 | 150×185 | Electronic control | Non-Road Emission Exempt"
+  ]
+ },
+ {
+  "n": 131,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=ab513ea8543749ce9f5bd3b4f4400ae7&columnId=d700eb428cb44ef69ed6bacffa790cb7",
+  "title": "900 kVA-1100 kVA Standard Land-based Generator Set Series-Weichai Power official website",
+  "header": [
+   "| Genset Model | Rated speed (rpm) | Standby Power (kVA/kW) | Prime Power (kVA/kW) | Weichai Engine Model | Cylinders | Bore × Stroke (mm) | Governing System | Emission standard"
+  ],
+  "rows": [
+   "| WPG1000*7 | 1500 | 1000/800 | 900/720 | 12M26G1000/5 | 12 | 150×150 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG1100*7 | 1500 | 1100/880 | 1000/800 | 12M26G1100/5 | 12 | 150×150 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG800*76 | 1800 | 1000/800 | 900/720 | 12M26G800/6 | 12 | 150×150 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG900*76 | 1800 | 1125/900 | 1000/800 | 12M26G900/6 | 12 | 150×150 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG1000*76 | 1800 | 1100/1000 | / | 12M26G1000/6 | 12 | 150×150 | Electronic Governor | Non-Road Emission Exempt"
+  ]
+ },
+ {
+  "n": 132,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=16b520e5fe9947eab53057924ccf097a&columnId=d700eb428cb44ef69ed6bacffa790cb7",
+  "title": "900 kVA-1125 kVA Standard Land-based Generator Set Series-Weichai Power official website",
+  "header": [
+   "| Genset Model | Rated speed (rpm) | Standby Power (kVA/kW) | Prime Power (kVA/kW) | Weichai Engine Model | Cylinders | Bore × Stroke (mm) | Governing System | Emission standard"
+  ],
+  "rows": [
+   "| WPG1000*7 | 1500 | 1000/800 | 900/720 | 8M33G1000/5 | 8 | 150×185 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG1100*7 | 1500 | 1100/880 | 1000/800 | 8M33G1100/5 | 8 | 150×185 | Electronic control | Non-Road Emission Exempt",
+   "| WPG800*76 | 1800 | 1000/800 | 900/720 | 8M33G800/6 | 8 | 150×185 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG900*76 | 1800 | 1125/900 | 1000/800 | 8M33G900/6 | 8 | 150×185 | Electronic control | Non-Road Emission Exempt"
+  ]
+ },
+ {
+  "n": 133,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=5f37f8517f174fb7aba7124e73265103&columnId=d700eb428cb44ef69ed6bacffa790cb7",
+  "title": "625 kVA-825 kVA Standard Land-based Generator Set Series-Weichai Power official website",
+  "header": [
+   "| Genset Model | Rated speed (rpm) | Standby Power (kVA/kW) | Prime Power (kVA/kW) | Baudouin Engine Model | Cylinders | Bore × Stroke (mm) | Governing System | Emission standard"
+  ],
+  "rows": [
+   "| WPG700*7 | 1500 | 700/560 | 640/512 | 6M33G715/5 | 6 | 150×185 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG825*7 | 1500 | 825/660 | 750/600 | 6M33G825/5 | 6 | 150×185 | Electronic control | Non-Road Emission Exempt",
+   "| WPG550*76 | 1800 | 688/550 | 625/500 | 6M33G575/6 | 6 | 150×185 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG600F76 | 1800 | 750/600 | 681/545 | 6M33G600/6 | 6 | 150×185 | Electronic Governor | Non-Road Emission Exempt",
+   "| WPG660*76 | 1800 | 825/660 | 750/600 | 6M33G660/6 | 6 | 150×185 | Electronic control | Non-Road Emission Exempt"
+  ]
+ },
+ {
+  "n": 134,
+  "url": "https://en.weichaipower.com/eportal/ui?pageId=c1ba1ab9217240e791deec19e8d9ac06&articleKey=9fcf8ebe19504459b1e89a9ae49b27ab&columnId=d700eb428cb44ef69ed6bacffa790cb7",
+  "title": "625 kVA-1000 kVA Standard Land-based Generator Set Series-Weichai Power official website",
+  "header": [
+   "| Genset Model | Rated speed (rpm) | Standby Power (kVA/kW) | Prime Power (kVA/kW) | Baudouin Engine Model | Cylinders | Bore × Stroke (mm) | Governing System | Emission standard"
+  ],
+  "rows": [
+   "| WPG700*7 | 1500 | 700/560 | 640/512 | 6M31G725/5 | 6 | 149×177 | Electronic control | Non-Road Emission Exempt",
+   "| WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | Non-Road Emission Exempt",
+   "| WPG900*7 | 1500 | 900/720 | 800/640 | 6M31G900/5 | 6 | 149×177 | Electronic control | Non-Road Emission Exempt",
+   "| WPG1000*7^ | 1500 | 1000/800 | / | 6M31G1000/5^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt",
+   "| WPG550*76 | 1800 | 688/550 | 625/500 | 6M31G580/6 | 6 | 149×177 | Electronic control | Non-Road Emission Exempt",
+   "| WPG600*76 | 1800 | 750/600 | 681/545 | 6M31G600/6 | 6 | 149×177 | Electronic control | Non-Road Emission Exempt",
+   "| WPG660*76 | 1800 | 825/660 | 750/600 | 6M31G660/6 | 6 | 149×177 | Electronic control | Non-Road Emission Exempt",
+   "| WPG800*76 | 1800 | 1000/800 | / | 6M31G800/6^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt"
+  ]
  }
 ]

@@ -1360,5 +1360,19 @@
    "| COM413 | 413kVA | 330kW | 375kVA | 300kW | YC6MJ500-D22 | 6 | COM413",
    "| COM550 | 550kVA | 440kW | 500kVA | 400kW | YC6T660L-D21 | 6 | COM550"
   ]
+ },
+ {
+  "n": 114,
+  "url": "https://comappower.com/grupos-eletrogenos-a-diesel-tecnologia-aplicacoes-e-vantagens/",
+  "title": "Grupos Eletrógenos a Diesel: Tecnologia, Aplicações e Vantagens - Comappower",
+  "header": [
+   "| | kVA | kW (FP 0.8) | Aplicação Típica"
+  ],
+  "rows": [
+   "| 10-50 kVA | 8-40 kW | Pequenos comércios, residências",
+   "| 50-200 kVA | 40-160 kW | Indústrias médias, hospitais",
+   "| 200-500 kVA | 160-400 kW | Grandes indústrias, data centers",
+   "| 500+ kVA | 400+ kW | Aplicações industriais críticas"
+  ]
  }
 ]

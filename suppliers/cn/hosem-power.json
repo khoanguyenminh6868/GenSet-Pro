@@ -138,6 +138,26 @@
         "| Model | A-C300H"
       ],
       "file": "sources/hosem-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.industrialgeneratorset.com/sale-14321657-60hz-60kva-65kva-silent-generator-with-bfm3c-deutz-engine.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | A-DE66H"
+      ],
+      "file": "sources/hosem-power/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.industrialgeneratorset.com/sale-13151578-60kva-50kw-bf4m2012-deutz-diesel-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | A-DE66"
+      ],
+      "file": "sources/hosem-power/104.md"
     }
   ],
   "confidence": "medium",
@@ -195,6 +215,53 @@
         "| Protection Grade | IP23",
         "| Controller | Deepsea Brand Model DSE7320",
         "| Generator starts count: 999999 times (Max)"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "60Hz 60kVA 65kVA Silent Generator With BFM3C Deutz Engine",
+      "header": [],
+      "rows": [
+        "| Model | A-DE66H",
+        "| Standby Power | kVA | 66",
+        "| Prime Power | kVA | 60",
+        "| Frequency | Hz | 60",
+        "| Output Voltage | V | 133/230",
+        "| Dimension For Open-type | mm | 1720 X 750 X 1050",
+        "| Weight For Open-type | kg | 950",
+        "| Dimension For Soundproof | mm | 2150 X 900 X 1200",
+        "| Weight For Soundprof | kg | 1050",
+        "| Engine Model | BFM3C",
+        "| Bore | mm | 105",
+        "| Displacement | L | 8.7",
+        "| Cooling Water Capacity | L | 17",
+        "| Starting Voltage | V | 24",
+        "| Engine Max.Output Power | kW | 306"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "60kVA 50kW BF4M2012 Deutz Diesel Generator Set",
+      "header": [],
+      "rows": [
+        "| Model | A-DE66",
+        "| Standby Power | kVA | 66",
+        "| Prime Power | kVA | 60",
+        "| Frequency | Hz | 50",
+        "| Output Voltage | V | 400/230",
+        "| Dimension For Open-type | mm | 1950 X 820 X 1250",
+        "| Weight For Open-type | kg | 1020",
+        "| Dimension For Soundproof | mm | 2300 X900 X 1250",
+        "| Weight For Soundprof | kg | 1520",
+        "| Engine Model | BF4M2012",
+        "| Bore | mm | 101",
+        "| Displacement | L | 1.04",
+        "| Cooling Water Capacity | L | 15.9",
+        "| Starting Voltage | V | 12",
+        "| Engine Max.Output Power | kW | 58",
+        "| Alternator Model | UCI 224 E",
+        "| Frequency | Hz | 50Hz",
+        "| Protection Grade | IP23"
       ]
     }
   ]
