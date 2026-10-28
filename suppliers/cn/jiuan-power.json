@@ -1,0 +1,98 @@
+{
+  "id": "jiuan-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Guangzhou JIUAN Mechanical and Electrical Co.,LTD",
+    "zh": null,
+    "brands": [
+      "JIUAN"
+    ]
+  },
+  "website": "https://www.jiuangenerator.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": "Guangzhou"
+  },
+  "founded": 2008,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: tổ máy đến 5 MW mỗi bộ",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "BV",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "SASO",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Chỉ có mức tối đa 5 MW, chưa có dải đầy đủ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.jiuangenerator.com/about-us",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Professional Diesel Gen Manufacturer Since 2008",
+        "major international certifications (CE, ISO, BV, SASO and more)",
+        "Power range, up to 5 MW per set",
+        "Copyright © 2026 by Guangzhou JIUAN Mechanical and Electrical Co.,LTD"
+      ],
+      "file": "sources/jiuan-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

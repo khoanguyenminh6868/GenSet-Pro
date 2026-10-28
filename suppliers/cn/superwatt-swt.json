@@ -1,0 +1,82 @@
+{
+  "id": "superwatt-swt",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Shandong Superwatt Power Tech Co., Ltd. (SWT)",
+    "zh": null,
+    "brands": [
+      "SWT"
+    ]
+  },
+  "website": "https://swt.cn/",
+  "hq": {
+    "province": "Shandong",
+    "city": null
+  },
+  "founded": 1993,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel and gaseous generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8.3,
+        "max": 3781,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Có thể cùng nhóm với Guangdong Superwatt (swtgenset.com), chưa xác nhận"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://swt.cn/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Shandong Superwatt Power Tech Co., Ltd. specializes in the design and manufacturing of premium diesel and gaseous generator sets, as well as mobile lighting towers.",
+        "with outputs spanning from 8.3kVA to 3781kVA"
+      ],
+      "file": "sources/superwatt-swt/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://swt.cn/about/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "SWT, the leading power equipment manufacturer in China, was founded in 1993."
+      ],
+      "file": "sources/superwatt-swt/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

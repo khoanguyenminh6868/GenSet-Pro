@@ -1,0 +1,177 @@
+{
+  "id": "huipu-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Jiangsu Huipu Industrial Co., Ltd. (HP POWER)",
+    "zh": null,
+    "brands": [
+      "HP POWER",
+      "GOOGOL"
+    ]
+  },
+  "website": "https://www.huipupower.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Có ghi rõ công suất prime và standby theo từng dòng",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "GOOGOL diesel generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "GOOGOL"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 350,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GOOGOL diesel generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "GOOGOL"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 388,
+        "max": 3300,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 200,
+        "max": 2125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 275,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.huipupower.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Developed for more than 20 years since 1993",
+        "The first in the domestic generator industry to pass ISO9001 international quality system certification"
+      ],
+      "file": "sources/huipu-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.huipupower.com/about-us/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Jiangsu Huipu Industrial Co.,Ltd is a professional manufacturer of 2-2000kw",
+        "GOOGOL diesel generator with 350-3000 kVA Prime and 388-3300 kVA Standby power",
+        "Cummins Generator Sets with 200-2125 kVA Prime and 275-2500 kVA Standby power"
+      ],
+      "file": "sources/huipu-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

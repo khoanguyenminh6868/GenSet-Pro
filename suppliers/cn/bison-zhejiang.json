@@ -1,0 +1,108 @@
+{
+  "id": "bison-zhejiang",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "ZheJiang BISON Machinery Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "BISON"
+    ]
+  },
+  "website": "https://www.bisongenerator.com/",
+  "hq": {
+    "province": "Zhejiang",
+    "city": "Taizhou"
+  },
+  "founded": 2014,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators (air-cooled / water-cooled)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 3,
+        "max": 20,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO 9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "EPA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CARB",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang có 2 tên: Taizhou BISON Machinery Co., Ltd và ZheJiang BISON Machinery Co., Ltd."
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.bisongenerator.com/generator/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "BISON has been manufacturing generators since 2014.",
+        "3–20 kW | CE, EPA, CARB certified | ATS-ready.",
+        "BISON holds ISO 9001, CE, EPA, and CARB certifications."
+      ],
+      "file": "sources/bison-zhejiang/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.bisongenerator.com/about/factory/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "ZheJiang BISON Machinery Co., Ltd."
+      ],
+      "file": "sources/bison-zhejiang/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

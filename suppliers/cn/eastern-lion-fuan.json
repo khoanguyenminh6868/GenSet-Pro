@@ -1,0 +1,87 @@
+{
+  "id": "eastern-lion-fuan",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "verified",
+  "names": {
+    "en": "Fuan EASTERNLION Electric Machines Co., Ltd",
+    "zh": null,
+    "brands": [
+      "EASTERNLION"
+    ]
+  },
+  "website": "https://easternlion.net/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "STC series brush alternators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [
+        "EASTERNLION"
+      ],
+      "power": {
+        "min": 8,
+        "max": 500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://easternlion.net/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "STC series brush alternators from 8 kW to 500 kW.",
+        "Every machine is load-tested before it leaves the factory",
+        "Fuan EASTERNLION Electric Machines Co., Ltd is a professional manufacturer of diesel generator sets, brush alternators and brushless alternators."
+      ],
+      "file": "sources/eastern-lion-fuan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

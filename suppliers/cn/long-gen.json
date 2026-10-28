@@ -1,0 +1,244 @@
+{
+  "id": "long-gen",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "JIANGSU LONGEN POWER TECHNOLOGY CO., LTD.",
+    "zh": null,
+    "brands": [
+      "Longen"
+    ]
+  },
+  "website": "https://www.long-gen.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Perkins Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 9,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Doosan Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 60,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MTU Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1250,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mitsubishi Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 650,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kubota Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Kubota"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 35,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Yanmar Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 12.5,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Longen Diesel Generator",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://long-gen.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Perkins Generator 9KVA To 2500KVA",
+        "Doosan Generator 60KVA To 900KVA",
+        "Mtu Generator 1250KVA To 3000KVA",
+        "Mitsubishi Generator 650KVA To 2500KVA",
+        "Kubota Generator 10KVA To 35KVA",
+        "Yanmar Generator 12.5KVA To 50KVA",
+        "Economical And Durable Longen Diesel Generator 8KVA-1000KVA"
+      ],
+      "file": "sources/long-gen/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.long-gen.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "About Us - JIANGSU LONGEN POWER TECHNOLOGY CO., LTD."
+      ],
+      "file": "sources/long-gen/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

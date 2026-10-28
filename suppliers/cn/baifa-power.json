@@ -1,0 +1,88 @@
+{
+  "id": "baifa-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Baifa Power (百发动力)",
+    "zh": "百发动力",
+    "brands": [
+      "BAIFA",
+      "百发"
+    ]
+  },
+  "website": "https://www.baifapower.cn/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: cơ sở sản xuất hơn 60.000 m²; hợp tác Volvo, Cummins, MTU, Perkins, Scania, Baudouin, SME, Stamford, Leroy-Somer",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets (BF series)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo",
+        "Cummins",
+        "MTU",
+        "Perkins",
+        "Scania",
+        "Baudouin",
+        "SME"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy-Somer"
+      ],
+      "power": {
+        "min": 8,
+        "max": 3200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có tên pháp nhân đầy đủ và địa chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.baifapower.cn/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "现代化生产基地，占地6万多平方米，总装车间3万4千平方米。百发与世界知名的发动机、发电机制造商保持着长期合作，如沃尔沃、康明斯、MTU、帕金斯、斯堪尼亚、博杜安、菱重、斯坦福、利莱森玛等等，机组功率8kW至3200kW",
+        "与柏金斯合作，提供BF-P系列柴油发电机组"
+      ],
+      "file": "sources/baifa-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

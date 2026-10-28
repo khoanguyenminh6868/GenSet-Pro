@@ -1,0 +1,100 @@
+{
+  "id": "shanhua",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Shandong Huali Electromechanical Co., Ltd. (ShanHua)",
+    "zh": null,
+    "brands": [
+      "ShanHua"
+    ]
+  },
+  "website": "https://shanhuachina.cn/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Jining"
+  },
+  "founded": 1999,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 4000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CCC",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://shanhuachina.cn/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "From 8kVA for residential needs to 4000kVA for major industrial projects, we offer tailored solutions for every kind of power supply demand, including prime and standby power.",
+        "Our generator sets are ISO9001, CE, and CCC certified.",
+        "There are 300 employees, including 80 technical personnel."
+      ],
+      "file": "sources/shanhua/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://shanhuachina.cn/about/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Founded in 1999, Shandong Huali Electromechanical Co., Ltd. is a leading enterprise headquartered in Jining City"
+      ],
+      "file": "sources/shanhua/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

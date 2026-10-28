@@ -1,0 +1,84 @@
+{
+  "id": "wagna-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Guangdong Wagna Power Technology Co.,Ltd",
+    "zh": null,
+    "brands": [
+      "WAGNA"
+    ]
+  },
+  "website": "https://www.wagnapower.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel / gas / gasoline generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WAGNA G series gas generators",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.wagnapower.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Full product line coverage: 10KVA-3000KVA power range meets the needs of multiple scenarios",
+        "WAGNA G series are devoted to developing and applying for renewable energy such as biomass gas, biogas, coal seam gas, petroleum gas and natural gas"
+      ],
+      "file": "sources/wagna-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

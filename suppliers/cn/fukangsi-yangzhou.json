@@ -1,0 +1,111 @@
+{
+  "id": "fukangsi-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Yangzhou Fukangsi Generator Co., Ltd.",
+    "zh": "扬州福康斯发电机有限公司",
+    "brands": [
+      "福康斯"
+    ]
+  },
+  "website": "http://yzfks.cn/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "成套发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Volvo",
+        "Mitsubishi",
+        "MTU",
+        "Perkins",
+        "Doosan",
+        "Weichai",
+        "SDEC",
+        "Yuchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Marathon",
+        "Engga"
+      ],
+      "power": {
+        "min": 30,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1,
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://yzfks.cn/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "通过ISO9001质量认证体系、ISO14001环境认证体系SGS认证、CE认证等",
+        "现成套发电机组功率范围为30KW-2000KW/每台，各类机型选型谱共计1700余种"
+      ],
+      "file": "sources/fukangsi-yangzhou/1.md"
+    },
+    {
+      "n": 2,
+      "url": "http://yzfks.cn/?about/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "选配套斯坦福、马拉松、英格等知名品牌交流无刷纯铜电机成套生产发电机组"
+      ],
+      "file": "sources/fukangsi-yangzhou/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

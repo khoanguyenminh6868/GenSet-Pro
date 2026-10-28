@@ -1,0 +1,97 @@
+{
+  "id": "yanan-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Fujian Yanan Technology Co., Ltd (Yanan Power Group)",
+    "zh": null,
+    "brands": [
+      "YANAN"
+    ]
+  },
+  "website": "https://www.yanan-motor.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets and SLG series alternators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO45001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "UL",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CCC",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang giới thiệu đã đọc không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.yanan-motor.com/aboutus.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "YANAN has obtained certifications of ISO14001 environment management system, ISO45001 occupation Health safety management system and ISO9001 quality management system, and UL, CCC, CE, Taier and GS"
+      ],
+      "file": "sources/yanan-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

@@ -1,0 +1,133 @@
+{
+  "id": "longkai-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Fuan Longkai Power Co.,Ltd.",
+    "zh": null,
+    "brands": [
+      "Longkai"
+    ]
+  },
+  "website": "https://www.longkaipower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": 2002,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy 10–3.300 kVA; có tủ ATS, tủ hòa đồng bộ, tải giả; tự làm đầu phát",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Theo hãng: ISO 9001, ISO 14001, CE, CCS, CCC",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generating sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "Lovol",
+        "Deutz"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Longkai (copy Stamford)"
+      ],
+      "power": {
+        "min": 10,
+        "max": 3300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "trailer",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO 9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO 14001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CCS",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CCC",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ ghi 10KVA—3,000KVA, trang giới thiệu ghi 10KVA—3,300KVA; lấy theo trang giới thiệu"
+  ],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.longkaipower.com/aboutus.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Estabished in 2002, We--FUAN LONGKAI POWER CO.,LTD become one of the professional players of generating set manufacturer in China.",
+        "Now Longkai supplies generating sets ranging 10KVA—3,300KVA open type, soundproof type",
+        "We are ISO 9001 and ISO 14001 CE,CCS,CCC certificated.",
+        "Powered by Cummins Perkins Lovol Deutz engines",
+        "Coupled with Stamford,Leroy sommer or our own copy Stamford brushless alternators, Class H Insulation, IP23(or NEMA1) protection"
+      ],
+      "file": "sources/longkai-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

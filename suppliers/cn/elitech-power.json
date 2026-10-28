@@ -1,0 +1,84 @@
+{
+  "id": "elitech-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Elitech Power",
+    "zh": null,
+    "brands": [
+      "Elitech"
+    ]
+  },
+  "website": "https://elitechpower.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Heavy-duty diesel gensets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "Yanmar"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [
+        "ISO 8528",
+        "ISO 3046"
+      ],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Không ghi tên pháp nhân, địa chỉ"
+  ],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://elitechpower.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Specializing in heavy-duty diesel gensets (5kVA – 3000kVA)",
+        "By integrating world-class engines like Cummins, Perkins, and Yanmar with our precision-engineered alternators",
+        "Global Compliance ISO 8528, ISO 3046 & CE Certified"
+      ],
+      "file": "sources/elitech-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "jichai-huanneng",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Jinan Jichai Huanneng Gas Generating Equipment Co.,Ltd",
+    "zh": null,
+    "brands": [
+      "Jichai Huanneng"
+    ]
+  },
+  "website": "https://m.jichaipower.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Jinan"
+  },
+  "founded": null,
+  "relatedIds": [
+    "jichai"
+  ],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Natural gas / biogas / landfill gas / syngas and diesel generators",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 50,
+        "max": 4500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://m.jichaipower.com/about-us",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Natural gas generator,biogas generator,landfill gas generator,syngas generator and diesel generator. The power rang is from 50kW to 4500kW.",
+        "Copyright © Jinan Jichai Huanneng Gas Generating Equipment Co.,Ltd All rights reserved."
+      ],
+      "file": "sources/jichai-huanneng/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

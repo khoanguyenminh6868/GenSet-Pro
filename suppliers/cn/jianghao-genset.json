@@ -1,0 +1,83 @@
+{
+  "id": "jianghao-genset",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Jiangsu Jianghao Generator Co.,Ltd.",
+    "zh": "江苏江豪发电机组有限公司",
+    "brands": [
+      "Jianghao"
+    ]
+  },
+  "website": "http://www.jhgensets.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "trailer"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001：2008",
+      "src": [
+        3
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có dải công suất",
+    "Năm thành lập không thống nhất: trang tiếng Trung ghi 创建于1998年, trang jsjhgensets.com ghi established in 2010; để trống"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.jhgensets.com/about.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Our products include seven large diesel generator sets: ordinary open frame type, silent type, mobile power station, automatic type, multi-machine interconnection type, unattended, and computerized centralized remote monitoring."
+      ],
+      "file": "sources/jianghao-genset/1.md"
+    },
+    {
+      "n": 3,
+      "url": "http://www.jhpowerok.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "江苏江豪发电机组有限公司创建于1998年",
+        "产品通过ISO9001：2008国际质量管理认证体系"
+      ],
+      "file": "sources/jianghao-genset/3.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

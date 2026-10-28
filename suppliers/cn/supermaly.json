@@ -1,0 +1,90 @@
+{
+  "id": "supermaly",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Shandong Supermaly Generating Equipment Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Supermaly"
+    ]
+  },
+  "website": "https://www.sdsupermaly.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": null
+  },
+  "founded": 2007,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gas and diesel generator sets (land and marine)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "trailer",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO 9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.sdsupermaly.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Shandong Supermaly Generating Equipment Co., Ltd. was founded in 2007, a well-known domestic generator set manufacturer with annual revenues of more than $ 50 million.",
+        "can produce a variety of gas and diesel power products, including open type generator sets, silent type generator sets, trailer generator sets, light tower generator sets, container type gene",
+        "The power ranges from 6kw to 2000kw.",
+        "Octorber IOS 9001 Certificate, CE Certificate."
+      ],
+      "file": "sources/supermaly/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

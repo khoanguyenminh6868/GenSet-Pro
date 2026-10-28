@@ -1,0 +1,128 @@
+{
+  "id": "mecca-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "MECCA POWER",
+    "zh": null,
+    "brands": [
+      "MECCA"
+    ]
+  },
+  "website": "https://www.meccapower.com.cn/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Có tổ máy cao thế 10,5/11/13,8 kV (Cummins 1000–3750 kVA); làm cho data center, mỏ, dầu khí",
+      "src": [
+        1,
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "MTU",
+        "Deutz",
+        "Mitsubishi",
+        "SME",
+        "Doosan",
+        "Volvo"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 4000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "High Voltage Genset 10.5kV 11kV 13.8kV (Cummins)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1000,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [
+        "10.5kV",
+        "11kV",
+        "13.8kV"
+      ],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không thấy tên pháp nhân đầy đủ và địa chỉ trên trang đã đọc",
+    "Trang chủ ghi 10KW-4000KW, trang giới thiệu ghi 10KVA to 4000KVA"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.meccapower.com.cn/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "We offer generators from 10KW-4000KW, with all engine brands like Cummins, Perkins, MTU,Deutz, Mitsubishi, SME,Doosan, Volvo",
+        "High Voltage Genset 10.5kV 11kV 13.8kV G-Drive Cummins Diesel Generator 1000kva-3750kva for Power Plant"
+      ],
+      "file": "sources/mecca-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.meccapower.com.cn/aboutus.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "premium diesel generator sets (10KVA to 4000KVA), specializing in customized power solutions for critical large-scale projects"
+      ],
+      "file": "sources/mecca-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

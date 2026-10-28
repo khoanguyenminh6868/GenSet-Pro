@@ -1,0 +1,116 @@
+{
+  "id": "kente-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "FUJIAN KENT MECHANICAL AND ELECTRICAL CO., LTD (KENTPOWER)",
+    "zh": null,
+    "brands": [
+      "KENTPOWER"
+    ]
+  },
+  "website": "https://www.kentepower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuzhou"
+  },
+  "founded": 2005,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Có dòng máy phát quân sự, máy phát dã chiến",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "MAN",
+        "Volvo",
+        "Mitsubishi",
+        "Deutz",
+        "Doosan"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Marathon"
+      ],
+      "power": {
+        "min": 5,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Natural gas generator sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.kentepower.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Military generator set is an important power supply equipment for weapon equipment under field conditions."
+      ],
+      "file": "sources/kente-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.kentepower.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "FUJIAN KENT MECHANICAL AND ELECTRICAL CO., LTD (KENTPOWER for short), founded in 2005 with a registered capital of USD$ 15 million, design and manufacture diesel generator sets, natural gas generator sets, solar power system",
+        "brand enterprises such as CUMMINS, PERKINS, MAN, VOLVO, MITSUBISHI, DEUTZ, DOOSAN, STAMFORD, LEROY SOMER, MARATHON, It has developed all types of diesel generator sets from 5Kva to 3000Kva"
+      ],
+      "file": "sources/kente-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

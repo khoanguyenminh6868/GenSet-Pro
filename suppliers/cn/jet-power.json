@@ -1,0 +1,84 @@
+{
+  "id": "jet-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "JET Electric Machinery Co., Ltd. (Jet Power)",
+    "zh": null,
+    "brands": [
+      "JET"
+    ]
+  },
+  "website": "https://www.jetgenset.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": 2002,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: lắp ráp tổ máy 1–4000 kVA; có máy diesel, gas, rơ-moóc, container; tự làm đầu phát và động cơ điện",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Generator sets (diesel, gas)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1,
+        "max": 4000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "trailer",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.jetgenset.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "main power range from 1KVA-4000KVA",
+        "JET Electric machinery Co,.ltd since 2002",
+        "The generator set factory located in Fuan City, Fujian province",
+        "gas generator set, light tower generator, trailer diesel generator"
+      ],
+      "file": "sources/jet-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

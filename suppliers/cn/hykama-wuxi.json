@@ -1,0 +1,95 @@
+{
+  "id": "hykama-wuxi",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Wuxi Huayuan Kama Engine Co., Ltd.",
+    "zh": "无锡华源凯马发动机有限公司",
+    "brands": [
+      "Kama"
+    ]
+  },
+  "website": "https://www.hykama.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Wuxi"
+  },
+  "founded": 2004,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Diesel engines and generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "EPA",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CARB",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có dải công suất trong trang đã lưu"
+  ],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.hykama.com/about",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "无锡华源凯马发动机有限公司成立于2004年9月27日，是高新技术企业",
+        "并通过ISO9001质量体系认证、ISO14001环境体系认证及ISO28001职业安全健康体系认证，各产品也分别通过了CE、CARB、EPA、SONCAP、泰尔认证等"
+      ],
+      "file": "sources/hykama-wuxi/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

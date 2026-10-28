@@ -1,0 +1,68 @@
+{
+  "id": "world-power-fuzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Fuzhou World Power Generation Co.,Ltd (WD POWER)",
+    "zh": null,
+    "brands": [
+      "WD POWER"
+    ]
+  },
+  "website": "http://worldpowergen.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không ghi hãng động cơ, năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://worldpowergen.com/Home/AboutDetail/79",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Fuzhou World Power Generation CO.,Ltd (WD POWER) is one of leading professional manufacturer of diesel generators located in China.Supply a comprehensive range of diesel generator sets with outputs ranging from 10kVA to 3000kVA."
+      ],
+      "file": "sources/world-power-fuzhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

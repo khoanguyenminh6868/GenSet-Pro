@@ -1,0 +1,89 @@
+{
+  "id": "sanq-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Guangzhou Sanq Power Equipment Co.,Ltd. (SANQ POWER)",
+    "zh": null,
+    "brands": [
+      "SANQ"
+    ]
+  },
+  "website": "http://www.gz-sanqpower.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": "Guangzhou"
+  },
+  "founded": 2004,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: đại lý dịch vụ sửa chữa được Cummins ủy quyền tại Quảng Đông; hơn 200 nhân viên",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator units",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001:2015",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.gz-sanqpower.com/Company-profile.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Guangzhou Sanq Power EquipmentCo.,Ltd. (SANQ POWER for short) Founded in 2004",
+        "It is Cummins Authorized de aler for repair service in Guangdong territory. We have over 200 employees",
+        "Making sure the products are certified to ISO9001:2015.",
+        "It has developed all types of diesel generator units from 10 to 3000KVA"
+      ],
+      "file": "sources/sanq-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

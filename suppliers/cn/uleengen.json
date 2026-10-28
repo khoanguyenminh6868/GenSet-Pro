@@ -3,30 +3,174 @@
   "country": "CN",
   "role": "genset_oem",
   "status": "verified",
-  "names": { "en": "Shandong Uleen Generator Co., Ltd.", "zh": null, "brands": ["Uleengen", "Uleen"] },
+  "names": {
+    "en": "Shandong Uleen Generator Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Uleengen",
+      "Uleen"
+    ]
+  },
   "website": "https://www.uleengen.com/",
-  "hq": { "province": "Shandong", "city": null },
+  "hq": {
+    "province": "Shandong",
+    "city": null
+  },
   "founded": 2011,
-  "foundedSrc": [2],
+  "foundedSrc": [
+    2
+  ],
   "relatedIds": [],
   "strengths": [
-    { "text": "Tổ máy dùng động cơ Weichai từ 20 đến 3750 kVA, động cơ mới 1500/1800 rpm, đầu phát không chổi than IP22/IP23 cấp cách điện H", "src": [1] },
-    { "text": "Theo hãng: sản phẩm theo GB/T2820-97, có chứng nhận CE, hệ thống ISO9001 & ISO14001; hơn 20 bằng sáng chế", "src": [2] },
-    { "text": "Hợp tác với nhiều hãng động cơ và đầu phát: Cummins, Perkins, Doosan, Lovol, Weichai, Yuchai, SDEC, Deutz, Baudouin, Leroy Somer", "src": [2] }
+    {
+      "text": "Tổ máy dùng động cơ Weichai từ 20 đến 3750 kVA, động cơ mới 1500/1800 rpm, đầu phát không chổi than IP22/IP23 cấp cách điện H",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: sản phẩm theo GB/T2820-97, có chứng nhận CE, hệ thống ISO9001 & ISO14001; hơn 20 bằng sáng chế",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Hợp tác với nhiều hãng động cơ và đầu phát: Cummins, Perkins, Doosan, Lovol, Weichai, Yuchai, SDEC, Deutz, Baudouin, Leroy Somer",
+      "src": [
+        2
+      ]
+    }
   ],
   "productLines": [
-    { "kind": "genset", "series": "Weichai Diesel Generator", "fuel": "diesel", "engineMakes": ["Weichai"], "engineModels": [], "alternatorMakes": [],
-      "power": { "min": 20, "max": 3750, "unit": "kVA", "rating": "unspecified", "src": [1] }, "frequency": ["50Hz", "60Hz"], "voltage": [], "types": [], "emission": [], "standards": ["GB/T2820-97"], "src": [1, 2] }
+    {
+      "kind": "genset",
+      "series": "Weichai Diesel Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz",
+        "60Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [
+        "GB/T2820-97"
+      ],
+      "src": [
+        1,
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins Diesel Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (DCEC)",
+        "Cummins (CCEC)"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [
+        "ISO8528"
+      ],
+      "src": [
+        3
+      ]
+    }
   ],
-  "certifications": [ { "name": "CE", "src": [2] }, { "name": "ISO9001", "src": [2] }, { "name": "ISO14001", "src": [2] } ],
-  "vietnam": { "distributors": [], "note": null },
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "vietnam": {
+    "distributors": [],
+    "note": null
+  },
   "exportMarkets": [],
-  "missing": ["Mới đọc trang dòng Weichai; các dòng động cơ khác chưa có dải công suất", "Không ghi prime/standby"],
+  "missing": [
+    "Không ghi prime/standby",
+    "Đã đọc dòng Weichai và Cummins; các dòng động cơ khác chưa có dải công suất"
+  ],
   "sources": [
-    { "n": 1, "url": "https://www.uleengen.com/weichai-series-diesel-generator/", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["Weichai diesel generator set with power ranging from 20 to 3750 KVA", "Brand-new Weichai engine 1500rpm / 1800rpm", "Brand new brushless alternator,Single bearing, IP22 IP23, H insulation class"], "file": "sources/uleengen/1.md" },
-    { "n": 2, "url": "https://www.uleengen.com/about-us/", "accessedAt": "2026-10-28", "tier": "A",
-      "quote": ["Shandong Uleen Generator Co., ltd. (referred to as \"Uleengen\") is a professional manufacturer of intelligent generator sets since 2011", "Uleen generator production are submit to GB/T2820-97 and CE certification, and quality certified by ISO9001 & ISO14001 Management System", "We have 20 more patents and we maintain long term strategic friendship cooperation with the famous engine and alternator such as Cummins, Perkins, Doosan, Lovol, Weichai, Yuchai, SDEC , Deutz, Baudouin, Leroy Somer,"], "file": "sources/uleengen/2.md" }
+    {
+      "n": 1,
+      "url": "https://www.uleengen.com/weichai-series-diesel-generator/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Weichai diesel generator set with power ranging from 20 to 3750 KVA",
+        "Brand-new Weichai engine 1500rpm / 1800rpm",
+        "Brand new brushless alternator,Single bearing, IP22 IP23, H insulation class"
+      ],
+      "file": "sources/uleengen/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.uleengen.com/about-us/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Shandong Uleen Generator Co., ltd. (referred to as \"Uleengen\") is a professional manufacturer of intelligent generator sets since 2011",
+        "Uleen generator production are submit to GB/T2820-97 and CE certification, and quality certified by ISO9001 & ISO14001 Management System",
+        "We have 20 more patents and we maintain long term strategic friendship cooperation with the famous engine and alternator such as Cummins, Perkins, Doosan, Lovol, Weichai, Yuchai, SDEC , Deutz, Baudouin, Leroy Somer,"
+      ],
+      "file": "sources/uleengen/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.uleengen.com/cummins-series-diesel-generator/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Cummins diesel generator set with power range from 20 to 2500 KVA",
+        "Comply with CE ISO8528 standard and ISO9001 quality standard."
+      ],
+      "file": "sources/uleengen/3.md"
+    }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
