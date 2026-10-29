@@ -1,7 +1,7 @@
 // node --test suppliers/*.test.mjs — the code check of a "Gợi ý cấu hình" answer (config-bot.mjs).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, catalogRecords } from "./config-bot.mjs";
+import { check, catalogRecords, byOrigin } from "./config-bot.mjs";
 
 const sup = [{ id: "s", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Standby kW/kVA | Prime kW/kVA | Engine | Alternator"], rows: ["| SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | UK"] }] }];
 const hsmt = "Chương V. Yêu cầu kỹ thuật\nCông suất liên tục (Prime): ≥ 450 kVA\nĐầu phát: Stamford hoặc tương đương\nTần số 50Hz";
@@ -124,4 +124,23 @@ test("internet finds become supplier records with renumbered, saved sources", ()
   assert.equal(b.rec.sources[1].n, 2004);
   assert.ok(!b.isNew);
   assert.match(c.error, /không có trang đã lưu/);
+});
+
+test("Xuất xứ Trung Quốc drops a foreign engine, Khác keeps only foreign ones", () => {
+  // 2506C-E15TAG1 is a Perkins code and the table title names Perkins.
+  const cn = check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "cn" });
+  assert.equal(cn.result.configs.length, 0);
+  assert.equal(cn.result.origin, "cn");
+  assert.ok(cn.problems.some((p) => p.includes("không phải hãng Trung Quốc")));
+  assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "other" }).result.configs.length, 1);
+  assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "all" }).result.configs.length, 1);
+});
+
+test("engines are split by origin from their make or model code", () => {
+  const C = globalThis.GenbidCatalog, eng = (model, ...names) => ({ model, makes: names.map((name) => ({ name, via: "dòng bảng" })) });
+  const list = [eng("WP13D440E310", "Weichai"), eng("6BTA5.9-G2"), eng("TAD1641GE", "Volvo Penta"), eng("YC6MK420L-D20"), eng("4TNV98T", "Yanmar"), eng("16M33G4N2/6")];
+  assert.deepEqual(byOrigin(list, "cn").map((e) => e.model), ["WP13D440E310", "YC6MK420L-D20"]);
+  assert.deepEqual(byOrigin(list, "other").map((e) => e.model), ["6BTA5.9-G2", "TAD1641GE", "4TNV98T", "16M33G4N2/6"]);
+  assert.equal(C.originIn("Kubota V3300", "V3300"), "other");
+  assert.equal(C.originIn("Yuchai", "YC4D"), "cn");
 });

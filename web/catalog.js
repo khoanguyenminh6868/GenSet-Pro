@@ -24,6 +24,7 @@
     [/\bjohn deere\b|\bdeere\b|约翰迪尔/i, "John Deere"], [/\bdaewoo\b|大宇/i, "Daewoo"], [/\bgoogol\b/i, "Googol"],
     [/\bwudong\b|无动/i, "Wudong"], [/\btongchai\b|通柴/i, "Tongchai"], [/\bxichai\b/i, "Xichai"],
     [/\bmwm\b/i, "MWM"], [/\bkohler\b|科勒/i, "Kohler"], [/\blister\b/i, "Lister Petter"], [/\bhonda\b|本田/i, "Honda"],
+    [/\bcaterpillar\b|卡特彼勒/i, "Caterpillar"], [/\bfpt\b|\biveco\b|依维柯/i, "FPT"], [/\bMAN\b|曼恩/, "MAN"], [/\bdetroit\b/i, "Detroit Diesel"],
   ];
   const ALT_BRANDS = [
     [/\bstamford\b|斯坦福/i, "Stamford"], [/\bleroy[\s-]?somer\b|\bleroy\b|利莱森玛/i, "Leroy-Somer"],
@@ -39,6 +40,26 @@
   const GENSET_LBL = /genset|gen-set|generator\s*set|机组/i;
   const PRIME = /prime|\bprp\b|continuous|\bcop\b|常用|主用|liên tục/i;
   const STANDBY = /standby|stand[\s-]by|\besp\b|\bltp\b|backup|备用|dự phòng|max(imum)?\s*power/i;
+  // Engine makes from outside China (Khoa, 2026-10-29: "Xuất xứ: Trung Quốc" in Gợi ý cấu hình leaves them out).
+  // A foreign make built under licence in China (Dongfeng / Chongqing Cummins...) still counts as foreign.
+  const FOREIGN_ENGINE = new Set(["Cummins", "Perkins", "Baudouin", "Deutz", "Volvo Penta", "MTU", "Mitsubishi", "Doosan", "Hyundai",
+    "Kubota", "Yanmar", "Isuzu", "Scania", "John Deere", "Daewoo", "MWM", "Kohler", "Lister Petter", "Honda",
+    "Caterpillar", "FPT", "MAN", "Detroit Diesel"]);
+  // Model codes of foreign series, for a row that does not name the make.
+  const FOREIGN_MODEL = [
+    [/^(4BTA?|6BTA?A?|6CTA?A?|6LTAA?|NTA?A?855|KTA?A?19|KTA?38|KTA?50|QS[BKLMTXZ]\d|VTA?28)/i, "Cummins"],
+    [/^(403[A-D]?|404[A-D]?|1103[A-D]|1104[A-D]|1106[A-D]|1204[A-F]|1206[A-F]|1506[A-D]|1706[A-D]|1806[A-D]|2206[A-D]|2506[A-D]|2806[A-D]|400[68]|4012|4016)-/i, "Perkins"],
+    [/^T?AD\d{3,4}/i, "Volvo Penta"], [/^\d{1,2}V\d{4}/i, "MTU"], [/^\d{1,2}M\d{2}/i, "Baudouin"],
+    [/^D?(E|D)(08|26|28|32)\d{2}[A-Z]/, "MAN"], [/^(NEF\d|CURSOR|C(87|10|13|16)\s?TE|N(45|67)\s?[A-Z])/i, "FPT"],
+    [/^(CAT\s?C\d|35(08|12|16)\b|3412\b|C(15|18|27|32)\b)/i, "Caterpillar"], [/^(DB58|P0?86TI|P1(26|58|80)|P222|DP(086|126|158|180|222))/i, "Doosan"],
+    [/^\d{1,2}V(71|92|149)\b/i, "Detroit Diesel"],
+  ];
+  // "other" (a foreign make), "cn" (only Chinese makes) or null (the sources do not say).
+  function engineOrigin(names, model) {
+    const all = [...names, ...FOREIGN_MODEL.filter(([re]) => re.test(String(model || "").trim())).map(([, n]) => n)];
+    if (all.some((n) => FOREIGN_ENGINE.has(n))) return "other";
+    return all.length ? "cn" : null;
+  }
 
   // Other figures a row gives, read by the label of its column or line. Label and value are kept as the source
   // writes them; the key only groups them. scope: what the figure is about (engine, alternator, or the genset).
@@ -450,7 +471,12 @@
     return scored.sort((a, b) => b.score - a.score).slice(0, limit);
   }
 
-  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, SPEC, ENGINE_BRANDS, ALT_BRANDS };
+  // The origin of a catalog engine (an entry of build().engines), from the makes its rows give and its model code.
+  const originOf = (e) => engineOrigin((e.makes || []).map((m) => m.name), e.model);
+  // The origin of an engine named in a text (a make, a model, a row).
+  const originIn = (text, model) => engineOrigin(brandIn(String(text || ""), ENGINE_BRANDS), model);
+
+  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
