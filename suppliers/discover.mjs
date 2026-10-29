@@ -21,6 +21,8 @@ import { checkRecord, loadAll, norm } from "./verify.mjs";
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.join(ROOT, "..");
 const LOG = path.join(ROOT, "discover-log.json");
+// Companies Khoa works with: checked first on every run (seeds), each by a search on its own name.
+const WATCH = path.join(ROOT, "discover-watchlist.json");
 const WEB = process.env.GENBID_WEB || "https://genset-pro-web.vercel.app";
 const TOKEN_FILE = process.env.GENBID_INGEST_TOKEN_FILE || "C:/Projects/GenSet Pro/.genbid-ingest-token";
 const ROLES = new Set(["genset_oem", "engine_maker", "alternator_maker", "distributor"]);
@@ -65,17 +67,20 @@ const words = (s) => norm(s).replace(/[^a-z0-9一-鿿]+/g, " ").split(" ").filte
 const zhCore = (s) => (String(s || "").match(/[一-鿿]+/g) || []).join("").replace(ZH_STOP, "");
 function index() {
   return loadAll().filter((x) => x.rec).map(({ rec }) => ({
-    id: rec.id, role: rec.role, website: rec.website, host: host(rec.website || ""),
+    id: rec.id, role: rec.role, website: rec.website, host: host(rec.website || ""), label: host(rec.website || "").split(".")[0],
     words: new Set([rec.names?.en, ...(rec.names?.brands || []), rec.id.replace(/-/g, " ")].flatMap(words)),
     zh: [rec.names?.zh, ...(rec.names?.brands || [])].map(zhCore).filter((z) => z.length >= 2),
   }));
 }
 function matches(q, idx) {
   if (/^https?:\/\//.test(q)) { const h = host(q); return idx.filter((r) => r.host && (r.host === h || h.endsWith("." + r.host) || r.host.endsWith("." + h))).map((r) => ({ ...r, how: "cùng website" })); }
-  const w = words(q), z = zhCore(q);
+  const w = words(q), z = zhCore(q), compact = norm(q).replace(/[^a-z0-9]/g, "");
   return idx.flatMap((r) => {
     const shared = w.filter((x) => x.length >= 3 && r.words.has(x));
     if (shared.length) return [{ ...r, how: `trùng chữ "${shared.join(" ")}"` }];
+    // "Power HF" ↔ powerhf.com, "Kaichen" ↔ kaichenpower.com: the name written into the site's domain.
+    const inHost = [compact, ...w].filter((x) => x.length >= 4 && r.label && r.label.includes(x));
+    if (inHost.length) return [{ ...r, how: `tên nằm trong tên miền ${r.host}` }];
     if (z.length >= 2 && r.zh.some((x) => x.includes(z) || z.includes(x))) return [{ ...r, how: "trùng tên tiếng Trung" }];
     return [];
   });
@@ -176,6 +181,15 @@ export function checkDraft(d, id) {
 
 // ---------- commands ----------
 async function seeds() {
+  if (fs.existsSync(WATCH)) {
+    const idx = index(), log = readLog();
+    console.log("Công ty Khoa hay làm việc (discover-watchlist.json) — CHƯA CÓ thì tìm riêng theo tên trước mọi việc khác:");
+    for (const x of JSON.parse(fs.readFileSync(WATCH, "utf8"))) {
+      const m = matches(x.name, idx), seen = log.filter((l) => l.name && words(l.name).join(" ") === words(x.name).join(" "));
+      console.log(`  ${m.length ? "đã có" : "CHƯA CÓ"}  ${x.name}${m.length ? ` (${m.map((r) => r.id).join(", ")})` : ""}${seen.length ? ` — nhật ký: ${seen.at(-1).reason || "đã thêm"}` : ""}${x.note ? ` — ${x.note}` : ""}`);
+    }
+    console.log("");
+  }
   await import(pathToFileURL(path.join(REPO, "web", "catalog.js")).href);
   const recs = loadAll().filter((x) => x.rec).map((x) => x.rec);
   const cat = globalThis.GenbidCatalog.build(recs), idx = index();
