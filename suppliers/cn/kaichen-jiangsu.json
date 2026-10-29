@@ -1,0 +1,117 @@
+{
+  "id": "kaichen-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Jiangsu Kaichen Electric Power Equipment Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Kaichen"
+    ]
+  },
+  "website": "https://www.kaichenpower.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà máy 24.000 m² ở Giang Đô, Dương Châu; hơn 6.000 tổ máy/năm, hơn 200 nhân sự",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có dòng tổ máy KC-C (Cummins) và KC-P (Perkins)",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 20 năm kinh nghiệm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Open Diesel Generator KC-C (CUMMINS)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "CUMMINS"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins KC-P series Open Type Diesel Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Công ty có nhiều website (kaichenpower.com, jskcgenerator.com, cnkcpower.com, kcgenset.com...); hai tên ghi trên trang: 'Jiangsu Kaichen Electric Power Equipment Co., Ltd.' và 'Jiangsu Kaichen Power Equipment Co., Ltd.'",
+    "Các trang đã lưu không ghi dải công suất chung và chứng chỉ cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.kaichenpower.com/company-profile",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright © Jiangsu Kaichen Electric Power Equipment Co., Ltd. All Rights Reserved.",
+        "Dinghuo Industrial Park, Jiangdu District, Yangzhou, Jiangsu Province",
+        "Jiangsu Kaichen Electric Power Equipment Co., Ltd. is a professional manufacturer specializing in diesel generator sets and integrated power solutions. With over 20 years of industry experience",
+        "We operate a modern 24,000㎡ production facility with an annual output of over 6,000 generator sets. Supported by a team of more than 200 professionals"
+      ],
+      "file": "sources/kaichen-jiangsu/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.jskcgenerator.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2026 Jiangsu Kaichen Electric Power Equipment Co., Ltd.",
+        "Add: Nanhuan East Road, Majiazhuang, Dinghuo Town, Jiangdu District, Yangzhou City, Jiangsu Province",
+        "Open Diesel Generator KC-C（CUMMINS）",
+        "Perkins KCP Open Type Diesel Generator"
+      ],
+      "file": "sources/kaichen-jiangsu/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}
