@@ -124,7 +124,7 @@ Giải thích từng trường:
   - `k`: `genset` (tổ máy), `engine` (động cơ), `alternator` (đầu phát).
   - `s`: tên dòng máy như nguồn ghi.
   - `fuel`: `diesel | gas | dual | hfo | gasoline | other` (đầu phát bỏ trường này).
-  - `eng` / `alt`: hãng động cơ / đầu phát mà nguồn ghi rõ là dùng cho dòng này. `models`: model động cơ nguồn ghi.
+  - `eng` / `alt`: hãng động cơ / đầu phát mà nguồn ghi rõ là dùng cho dòng này. `models`: model động cơ nguồn ghi. Mỗi tên phải viết đúng như trong câu trích của nguồn dòng này (nguồn ghi "现代" thì ghi "现代", không tự dịch thành "Hyundai"); `finish` kiểm điều này.
   - `p`: `[min, max, "đơn vị", "rating", số nguồn]`. Đơn vị `kVA | kW | hp | PS` đúng như nguồn. Rating `prime | standby | continuous` chỉ khi nguồn ghi rõ, không thì `unspecified`. Không có dải công suất thì bỏ hẳn `p` và phải có `src`.
   - Tuỳ chọn khi nguồn ghi: `freq` (["50Hz","60Hz"]), `volt`, `types` (["open","silent","container"]), `emis` (["EU Stage V"]), `std` (["ISO8528"]).
 - `status`: `verified` khi có `web` chính thức **và** ít nhất một dòng có `p`; không thì `partial`.
