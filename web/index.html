@@ -375,7 +375,7 @@ details.sec>div{margin-top:10px}
     <button data-dt="analysis">Phân tích</button>
     <button data-dt="translate">YCKT tiếng Anh</button>
     <button data-dt="tlkt">Đối chiếu TLKT</button>
-    <button data-dt="supplier">Nhà cung cấp</button>
+    <button data-dt="supplier" hidden>Nhà cung cấp</button><!-- tab ẩn theo yêu cầu Khoa 2026-10-29; bỏ hidden để hiện lại -->
     <button data-dt="config">Cấu hình gợi ý</button>
     <button data-dt="hsdt">Tạo HSDT tham khảo</button>
     <button data-dt="compare">Đối chiếu HSDT</button>
@@ -1193,6 +1193,7 @@ function renderDrawer(force = true) {
     if (b.dataset.dt === "compare") { b.disabled = !canCompare; b.title = !canCompare ? "Chuyển gói sang Chuẩn bị HSDT để đối chiếu" : ""; }
   });
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
+  if (state.dtab === "supplier") state.dtab = "info"; // tab Nhà cung cấp đang ẩn
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
   const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configreq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
