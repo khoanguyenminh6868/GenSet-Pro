@@ -1,0 +1,47 @@
+{
+ "id": "cummins-dealer-kangji-power-xiamen-import-and-export",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Kangji Power Xiamen Import And Export Co. Ltd",
+ "zh": null,
+ "brands": [],
+ "web": null,
+ "prov": "Fujian",
+ "city": "Xiamen",
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Kangji Power Xiamen Import And Export Co. Ltd",
+   "Welcome to Kangji Power Xiamen Import And Export Co. Ltd, located in Xiamen, Fujian, China. Our team is ready to help with your power needs. Let us know how we can help you.",
+   "Automotive, Construction, Generator, Bus",
+   "Independent"
+  ]
+ },
+ "str": [
+  [
+   "Đại lý / điểm dịch vụ có tên trên trang tra địa điểm chính thức của Cummins, có ứng dụng phát điện (Generator)",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "engine",
+   "s": "Cummins engines / power generation (authorised location)",
+   "fuel": "diesel",
+   "eng": [],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là trang địa điểm trên cummins.com (lưu qua firecrawl vì website chặn máy Windows); chưa lưu website riêng"
+ ],
+ "by": "discover-bot"
+}
