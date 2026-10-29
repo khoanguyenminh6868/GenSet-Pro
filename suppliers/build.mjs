@@ -1,4 +1,4 @@
-// Builds cn/<id>.json from a short spec: node suppliers/build.mjs <specs.mjs>
+// Builds cn/<id>.json from a short spec: node suppliers/build.mjs <specs.mjs | draft.json>
 // The spec file exports an array of records written briefly; each source's URL and read date come from the first
 // lines of its saved file (sources/<id>/<n>.md), so they are never typed by hand. Then run verify.mjs.
 //   { id, role, en, zh, brands, web, prov, city, founded, fsrc, conf, status,
@@ -11,7 +11,9 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
-const specs = (await import(pathToFileURL(path.resolve(process.argv[2])).href)).default;
+const input = path.resolve(process.argv[2]);
+// A .json file (a discover.mjs draft) holds one record or an array, in the same short form.
+const specs = input.endsWith(".json") ? [].concat(JSON.parse(fs.readFileSync(input, "utf8"))) : (await import(pathToFileURL(input).href)).default;
 const today = new Date().toISOString().slice(0, 10);
 for (const r of specs) {
   const sources = Object.entries(r.src).map(([n, [tier, ...quote]]) => {
@@ -40,7 +42,7 @@ for (const r of specs) {
     sources,
     confidence: r.conf || "medium",
     checkedAt: today,
-    checkedBy: "claude-code",
+    checkedBy: r.by || "claude-code",
   };
   // Spec tables added by merge-specs.mjs (sources 101+) stay.
   const out = path.join(ROOT, "cn", `${r.id}.json`);
