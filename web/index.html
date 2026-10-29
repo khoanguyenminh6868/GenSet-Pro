@@ -2154,7 +2154,7 @@ function cfgSuppliersHtml(c) {
 }
 function cfgResultHtml(r) {
   if (!r.configs?.length) return h`<div class="note warn"><b>Không tìm thấy cấu hình phù hợp.</b> ${r.message || "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT."}</div>`
-    + cfgReqHtml(r) + cfgNotesHtml(r);
+    + cfgReqHtml(r) + cfgAddedHtml(r) + cfgNotesHtml(r);
   return (r.summary ? h`<p>${r.summary}</p>` : "") + r.configs.map((c, i) => {
     const bad = (c.checks || []).some((x) => x.status === "not_met"), unclear = (c.checks || []).some((x) => x.status !== "met" || x.unverified);
     const fit = bad ? ["Không đạt đủ", "bad"] : unclear ? ["Còn điểm chưa rõ", "warn"] : ["Đạt mọi yêu cầu đã đọc", "ok"];
@@ -2173,9 +2173,13 @@ function cfgResultHtml(r) {
       }).join(""))}</tbody></table></div>` : "")}
       ${raw(cfgSuppliersHtml(c))}
       ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
-  }).join("") + cfgNotesHtml(r);
+  }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
 const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="small">Yêu cầu đọc từ HSMT (${r.requirements.length})</summary><ul class="suplist">${raw(r.requirements.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "");
+// Internet finds added to the catalog by config-bot.mjs (each checked with verify.mjs before it is added).
+const cfgAddedHtml = (r) => (r.catalogAdded?.length ? h`<div class="note"><b>Bổ sung vào danh mục nhà cung cấp từ internet</b><ul class="suplist">${raw(r.catalogAdded.map((a) => a.error
+  ? h`<li class="small">${a.supplierId || ""}: chưa bổ sung — ${a.error}</li>`
+  : h`<li class="small"><b>${a.name}</b> (${a.isNew ? "nhà cung cấp mới" : "thêm dữ liệu"}, ${a.tables} bảng thông số) <button class="btn sm" data-supopen="${a.supplierId}">Hồ sơ</button>${raw(a.pr ? h` · <a href="${a.pr}" target="_blank" rel="noopener">PR vào repo</a>` : "")}${raw(a.prError ? h`<div class="muted small">${a.prError}</div>` : "")}</li>`).join(""))}</ul></div>` : "");
 const cfgNotesHtml = (r) => (r.notes?.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy</b><ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul></div>` : "");
 
 // ---------- Đối chiếu TLKT (a supplier's technical proposal against the tender's technical requirements) ----------
