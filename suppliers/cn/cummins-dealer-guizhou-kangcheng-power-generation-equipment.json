@@ -57,12 +57,22 @@
         "Guizhou Kangcheng Power Generation Equipment Co., Ltd",
         "Welcome to Guizhou Kangcheng Power Generation Equipment Co., Ltd, located in Guiyang, Guizhou, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator, Railroad, Mining",
-        "Independent"
+        "Independent",
+        "[13595029133](tel:+113595029133) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.+1-2%2C+Engineering+Machinery+Market%2C+Guiyang+International+Automobile+Trade+City%2C+Gaimao+Village%2C+Guiyang%2C+GUIZHOU+550000%2C+China)"
       ],
       "file": "sources/cummins-dealer-guizhou-kangcheng-power-generation-equipment/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "13595029133",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

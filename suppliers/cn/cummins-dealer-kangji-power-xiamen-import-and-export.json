@@ -57,12 +57,22 @@
         "Kangji Power Xiamen Import And Export Co. Ltd",
         "Welcome to Kangji Power Xiamen Import And Export Co. Ltd, located in Xiamen, Fujian, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Automotive, Construction, Generator, Bus",
-        "Independent"
+        "Independent",
+        "[13806013386](tel:+113806013386) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.+1256%2C+Lantau+Logistics+Distribution%2C+Xiamen%2C+FUJIAN+301006%2C+China)"
       ],
       "file": "sources/cummins-dealer-kangji-power-xiamen-import-and-export/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "13806013386",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

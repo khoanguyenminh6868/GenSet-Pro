@@ -59,12 +59,22 @@
         "Hefei Dongneng Electromechanical Equipment Co., Ltd",
         "Welcome to Hefei Dongneng Electromechanical Equipment Co., Ltd, located in Hefei, Anhui Sheng, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Cpg Product",
-        "Cummins, Cummins Power Generation"
+        "Cummins, Cummins Power Generation",
+        "[055162631276](tel:+1055162631276) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Dongyi+Financial+Plaza%2C+Funan+Road%2C+Luyang+District%2C+Hefei%2C+ANHUI+SHENG+230001%2C+China)"
       ],
       "file": "sources/cummins-dealer-hefei-dongneng-electromechanical-equipment/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "055162631276",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

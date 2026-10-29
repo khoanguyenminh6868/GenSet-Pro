@@ -59,7 +59,8 @@
         "Cummins (China) Investment Co., Ltd. - Chengdu Distribution Branch",
         "Welcome to Cummins (China) Investment Co., Ltd. - Chengdu Distribution Branch, located in Chengdu, Sichuan, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Commercial Industrial, Generator, Automotive, Mining, Construction, Railroad",
-        "Cummins Power Generation, Cummins"
+        "Cummins Power Generation, Cummins",
+        "[28-83011311](tel:+12883011311) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Zone%2C333%2CXingong+Avenue%2C+Xindu+Town%2C%2C+Chengdu%2C+SICHUAN+610500%2C+China)"
       ],
       "file": "sources/cummins-china-investment/1.md"
     },
@@ -72,7 +73,8 @@
         "Cummins (China) Investment Co., Ltd. - Shanghai Distribution Branch",
         "Welcome to Cummins (China) Investment Co., Ltd. - Shanghai Distribution Branch, located in Shanghai, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator, Automotive, Construction, Commercial Industrial, Mining, Marine, Railroad",
-        "Cummins, Cummins Power Generation"
+        "Cummins, Cummins Power Generation",
+        "[86-21-61651288](tel:+1862161651288) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=9%2F10f%2C+Building+T2%2C+No.+398+Huoshan+Road%2C+Yangpu+District%2C+Shanghai+200082+P.R.+China.%2C+Shanghai%2C+SHANGHAI+200082%2C+China)"
       ],
       "file": "sources/cummins-china-investment/2.md"
     },
@@ -85,7 +87,8 @@
         "Cummins China Investment Co.Ltd. - Shenyang Distribution Branch",
         "Welcome to Cummins China Investment Co.Ltd. - Shenyang Distribution Branch, located in Shenyang, Liaoning, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Automotive, Commercial Industrial, Mining, Construction, Bus",
-        "Cummins, Cummins Power Generation, Nhl, Foton, Baotou"
+        "Cummins, Cummins Power Generation, Nhl, Foton, Baotou",
+        "[02425325888](tel:+102425325888) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.5-2+Seventh+Streed%2C+Shenyang%2C+LIAONING+1100141%2C+China)"
       ],
       "file": "sources/cummins-china-investment/3.md"
     },
@@ -98,7 +101,8 @@
         "Cummins (China) Investment Co., Ltd. - Urumqi Distribution Branch",
         "Welcome to Cummins (China) Investment Co., Ltd. - Urumqi Distribution Branch, located in Urumqi, Xinjiang, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Automotive, Construction, Light Duty-Step-Vans/Dodge Ram, Commercial Industrial, Generator, Bus",
-        "Cummins, Foton, Hyundai, Cummins Power Generation, Komatsu Ltd, Xaingfan Electric Machinery"
+        "Cummins, Foton, Hyundai, Cummins Power Generation, Komatsu Ltd, Xaingfan Electric Machinery",
+        "[0991-6607317](tel:+109916607317) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.713+Kaiyuan+Street%2CMidong+Zone%2CUrumqi%2C+Urumqi%2C+XINJIANG+831400%2C+China)"
       ],
       "file": "sources/cummins-china-investment/4.md"
     },
@@ -111,7 +115,8 @@
         "Cummins (China) Investment Co., Ltd. - Wuhan Distribution Branch",
         "Welcome to Cummins (China) Investment Co., Ltd. - Wuhan Distribution Branch, located in Wuhan, Hubei, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Bus, Construction, Automotive, Generator, Commercial Industrial, Mining",
-        "Cummins, Cummins Power Generation"
+        "Cummins, Cummins Power Generation",
+        "[027-83081677](tel:+102783081677) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Gate+A+%2C+Kaili+Economic+And+Trade+Building%2C%2C+Wuhan%2C+HUBEI+430040%2C+China)"
       ],
       "file": "sources/cummins-china-investment/5.md"
     },
@@ -124,12 +129,57 @@
         "Cummins (China) Investment Co., Ltd. - Xi'An Distribution Branch",
         "Welcome to Cummins (China) Investment Co., Ltd. - Xi'An Distribution Branch, located in Xi'An, Shaanxi, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Automotive, Railroad, Bus, Commercial Industrial, Construction, Generator, Mining, Oil & Gas",
-        "Cummins, Cummins Power Generation"
+        "Cummins, Cummins Power Generation",
+        "[029-83217576](tel:+102983217576) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.31%2CXianning+East+Road%2C+Xi%27An%2C+SHAANXI+710043%2C+China)"
       ],
       "file": "sources/cummins-china-investment/6.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "28-83011311",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "86-21-61651288",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "02425325888",
+      "src": [
+        3
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0991-6607317",
+      "src": [
+        4
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "027-83081677",
+      "src": [
+        5
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "029-83217576",
+      "src": [
+        6
+      ]
+    }
+  ]
 }

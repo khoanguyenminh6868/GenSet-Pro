@@ -57,12 +57,22 @@
         "Xi'An Chongkang Diesel Engine Parts Co., Ltd",
         "Welcome to Xi'An Chongkang Diesel Engine Parts Co., Ltd, located in Xian, Shaanxi, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator",
-        "Independent"
+        "Independent",
+        "[13991281721](tel:+113991281721) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Tianding+Industrial+Park%2C+No.+41%2C+Guangde+Road%2C+Beidu+Street%2C+Weicheng+District%2C+Xianyang+City%2C+Xian%2C+SHAANXI+710086%2C+China)"
       ],
       "file": "sources/cummins-dealer-xi-an-chongkang-diesel-engine-parts/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "13991281721",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

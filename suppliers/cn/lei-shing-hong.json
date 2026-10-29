@@ -60,12 +60,30 @@
         "Lei Shing Hong Machinery Limited",
         "Distributor",
         "Perkins Building No 432 Kuntai Road",
-        "KunShan City"
+        "KunShan City",
+        "Phone: 0531-88772225Â",
+        "Email: perkins@lsh.com"
       ],
       "file": "sources/lei-shing-hong/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "perkins@lsh.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0531-88772225",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

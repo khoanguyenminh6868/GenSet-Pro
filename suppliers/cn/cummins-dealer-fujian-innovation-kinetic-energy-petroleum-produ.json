@@ -57,12 +57,22 @@
         "Fujian Innovation Kinetic Energy Petroleum Products Co., Ltd",
         "Welcome to Fujian Innovation Kinetic Energy Petroleum Products Co., Ltd, located in Quanzhou, Fujian, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator",
-        "Independent"
+        "Independent",
+        "[13799227251](tel:+113799227251) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.+1472%2C+Xuefu+Road%2C+Baogai+Town%2C+Shishi+City%2C+Quanzhou+City%2C+Fujian+Province%2C+Quanzhou%2C+FUJIAN+362000%2C+China)"
       ],
       "file": "sources/cummins-dealer-fujian-innovation-kinetic-energy-petroleum-produ/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "13799227251",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

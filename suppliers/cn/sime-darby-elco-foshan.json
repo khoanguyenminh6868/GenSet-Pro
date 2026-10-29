@@ -60,12 +60,30 @@
         "Foshan Sime Darby Elco Power Equipment Limited",
         "Distributor",
         "No. 10-1 Weiye Road, Beijiao Industrial Park, Beijiao, Shunde",
-        "Guangdong"
+        "Guangdong",
+        "Phone: 0731-85255301",
+        "Email: knight.zhao.wei@simedarby.com.hk"
       ],
       "file": "sources/sime-darby-elco-foshan/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "knight.zhao.wei@simedarby.com.hk",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0731-85255301",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

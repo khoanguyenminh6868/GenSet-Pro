@@ -59,12 +59,22 @@
         "Fuzhou Zhong Qi Kang Hui M&E Co.,Ltd",
         "Welcome to Fuzhou Zhong Qi Kang Hui M&E Co.,Ltd, located in Fuzhou, Fujian, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Automotive, Construction, Emergency Vehicles (Fire/Ems), Bus, Generator",
-        "Jac, Foton, Cummins, Ankai, Xiagong, Liugong, King Long, Anhui Heli, Yutong, Hongyan"
+        "Jac, Foton, Cummins, Ankai, Xiagong, Liugong, King Long, Anhui Heli, Yutong, Hongyan",
+        "[86 591 87326102](tel:+18659187326102) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No+125+Huagong+Road%2C+Jinan+District%2C+Fuzhou%2C+FUJIAN+350011%2C+China)"
       ],
       "file": "sources/cummins-dealer-fuzhou-zhong-qi-kang-hui-m-e/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "86 591 87326102",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

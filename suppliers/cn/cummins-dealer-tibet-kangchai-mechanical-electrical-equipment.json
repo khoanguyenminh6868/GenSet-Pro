@@ -57,12 +57,22 @@
         "Tibet Kangchai Mechanical & Electrical Equipment Co., Ltd.",
         "Welcome to Tibet Kangchai Mechanical & Electrical Equipment Co., Ltd., located in Changdu, Tibet, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator",
-        "Independent"
+        "Independent",
+        "[15086814538](tel:+115086814538) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Sichuan+Qiao%2C+Chengguan%2C+Karuo%2C+Changdu%2C+Xizang%2C+Changdu%2C+TIBET+854000%2C+China)"
       ],
       "file": "sources/cummins-dealer-tibet-kangchai-mechanical-electrical-equipment/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "15086814538",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

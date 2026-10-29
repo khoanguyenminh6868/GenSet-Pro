@@ -57,12 +57,63 @@
         "Weifang Yidaneng Power Co., Ltd",
         "Welcome to Weifang Yidaneng Power Co., Ltd, located in Weifang, Shandong, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator",
-        "Independent"
+        "Independent",
+        "[15318917186](tel:+115318917186) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=East+Of+Hailin+Road+And+South+Of+Changhai+Street%2C+Binhai+Economic+And+Technological+Development+Zone%2C+Weifang%2C+SHANDONG+261108%2C+China)"
       ],
       "file": "sources/cummins-dealer-weifang-yidaneng-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.ydnpower.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "C",
+      "quote": [
+        "kevin@yidaneng.com",
+        "Tel: 18653607886",
+        "Mobile: 400-6351635",
+        "WeChat: zhangkevin0722"
+      ],
+      "file": "sources/cummins-dealer-weifang-yidaneng-power/2.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "kevin@yidaneng.com",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "15318917186",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "18653607886",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "400-6351635",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "wechat",
+      "value": "zhangkevin0722",
+      "src": [
+        2
+      ]
+    }
+  ]
 }

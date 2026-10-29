@@ -59,12 +59,30 @@
         "Perkins distributor locator",
         "XINING YA TU ELECTROMECHANICAL CO.,LTD.",
         "Local Branch / Dealer",
-        "Rm1062, building 2, Wantong center, No. 45, Wusi street"
+        "Rm1062, building 2, Wantong center, No. 45, Wusi street",
+        "Phone: 0971-6101169",
+        "Email: cel@simedarby.com.hk"
       ],
       "file": "sources/yatu-xining/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "cel@simedarby.com.hk",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0971-6101169",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

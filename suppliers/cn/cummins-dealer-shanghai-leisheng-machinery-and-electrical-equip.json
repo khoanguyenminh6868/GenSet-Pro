@@ -59,12 +59,22 @@
         "Shanghai Leisheng Machinery And Electrical Equipment Co.,Ltd",
         "Welcome to Shanghai Leisheng Machinery And Electrical Equipment Co.,Ltd, located in Shanghai, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Commercial Industrial",
-        "Cummins Power Generation"
+        "Cummins Power Generation",
+        "[021 56840089](tel:+102156840089) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=821a%2CNo.721+Lingshi+Road%2C+Shanghai%2C+SHANGHAI+200072%2C+China)"
       ],
       "file": "sources/cummins-dealer-shanghai-leisheng-machinery-and-electrical-equip/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "021 56840089",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

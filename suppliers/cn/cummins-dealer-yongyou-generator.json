@@ -56,12 +56,22 @@
       "quote": [
         "Yongyou Generator Co., Ltd.",
         "Welcome to Yongyou Generator Co., Ltd., located in Taichung City, Taiwan, China. Our team is ready to help with your power needs. Let us know how we can help you.",
-        "Generator"
+        "Generator",
+        "[0423381910](tel:+10423381910) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.123-7%2C+Sec.+6%2C+Huanzhong+Rd.%2C%2C+Taichung+City%2C+TAIWAN+41473%2C+China)"
       ],
       "file": "sources/cummins-dealer-yongyou-generator/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "0423381910",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

@@ -59,12 +59,22 @@
         "Ningxia Simike Generating Equipment Co.",
         "Welcome to Ningxia Simike Generating Equipment Co., located in Yinchuan, Ningxia, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Cpg Product",
-        "Cummins Power Generation"
+        "Cummins Power Generation",
+        "[86 951-5012335](tel:+1869515012335) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.4-2%2C+Duofeng+Rd.%2C+Yinchuan%2C+NINGXIA+750001%2C+China)"
       ],
       "file": "sources/cummins-dealer-ningxia-simike-generating-equipment-co/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "86 951-5012335",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

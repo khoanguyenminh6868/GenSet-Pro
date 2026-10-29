@@ -61,12 +61,30 @@
         "No.8 Zhongshan North Road",
         "Zhenjiang City",
         "Jiangsu Province",
-        "http://www.jwdl.com"
+        "http://www.jwdl.com",
+        "jw5244878@126.com",
+        "0511-85244878"
       ],
       "file": "sources/juwei-zhenjiang/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "jw5244878@126.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0511-85244878",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

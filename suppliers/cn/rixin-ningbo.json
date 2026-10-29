@@ -60,12 +60,30 @@
         "Ningbo Rixin Power Technology Co.,Ltd.",
         "Local Branch / Dealer",
         "宁波市北仑区小港联合路264-252号",
-        "Lian He Lu"
+        "Lian He Lu",
+        "Phone: 15088860848",
+        "Email: ppower@lsh.com"
       ],
       "file": "sources/rixin-ningbo/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "ppower@lsh.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "15088860848",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

@@ -61,12 +61,95 @@
         "No.2, Yumin Road",
         "Xiaolan Town, Zhongshan City",
         "Guangdong Province",
-        "http://www.cypower.com.cn"
+        "http://www.cypower.com.cn",
+        "578193196@qq.com",
+        "13702529722"
       ],
       "file": "sources/chuangyuan-zhongshan/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.cypower.com.cn/page.html?id=2",
+      "accessedAt": "2026-10-29",
+      "tier": "C",
+      "quote": [
+        "电话：0760-22109938（20条线）",
+        "邮箱： cy@cypower.com.cn 外贸事业部",
+        "电话：0760-22234699 、22218692",
+        "邮箱：chuangyuanpower@163.com 创远机电设备（广东）有限公司（子公司） 地址：广东省中山市东升镇裕民大道2号",
+        "电话：0760-22218360 、22218667",
+        "电话： 0760-22100304",
+        "电话：0760-22234695、22234610"
+      ],
+      "file": "sources/chuangyuan-zhongshan/2.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "578193196@qq.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "email",
+      "value": "cy@cypower.com.cn",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "email",
+      "value": "chuangyuanpower@163.com",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "13702529722",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0760-22109938",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0760-22234699",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0760-22218360",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0760-22100304",
+      "src": [
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0760-22234695",
+      "src": [
+        2
+      ]
+    }
+  ]
 }

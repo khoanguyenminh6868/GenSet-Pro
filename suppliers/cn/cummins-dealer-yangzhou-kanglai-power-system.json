@@ -59,12 +59,22 @@
         "Yangzhou Kanglai Power System Co.Ltd.",
         "Welcome to Yangzhou Kanglai Power System Co.Ltd., located in Yangzhou, Jiangsu, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Cpg Product",
-        "Cummins Power Generation"
+        "Cummins Power Generation",
+        "[0514-82369991](tel:+1051482369991) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Room+2501%2C+Building+1%2C+Taida+Y-Msd%2C+Shawan+North+Road%2C%2C+Yangzhou%2C+JIANGSU+225000%2C+China)"
       ],
       "file": "sources/cummins-dealer-yangzhou-kanglai-power-system/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "0514-82369991",
+      "src": [
+        1
+      ]
+    }
+  ]
 }
