@@ -1,7 +1,7 @@
 // node --test suppliers/*.test.mjs — the code check of a "Gợi ý cấu hình" answer (config-bot.mjs).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check } from "./config-bot.mjs";
+import { check, catalogRecords } from "./config-bot.mjs";
 
 const sup = [{ id: "s", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Standby kW/kVA | Prime kW/kVA | Engine | Alternator"], rows: ["| SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | UK"] }] }];
 const hsmt = "Chương V. Yêu cầu kỹ thuật\nCông suất liên tục (Prime): ≥ 450 kVA\nĐầu phát: Stamford hoặc tương đương\nTần số 50Hz";
@@ -95,4 +95,33 @@ test("suppliers: unknown ids are dropped, a row must be the supplier's own and n
   assert.ok(!s[0].unverified && s[0].hasAlternator);
   assert.ok(s[1].unverified);
   assert.equal(problems.length, 2);
+});
+
+test("at most 10 configurations and 3 suppliers each are kept", () => {
+  const r = base(); r.configs = Array.from({ length: 12 }, (_, i) => ({ ...base().configs[0], rank: i + 1, suppliers: Array(5).fill({ supplierId: "s", n: 101, line: row.line }) }));
+  const { result } = check(r, { hsmtText: hsmt, suppliers: sup, readWeb });
+  assert.equal(result.configs.length, 10);
+  assert.equal(result.configs[0].suppliers.length, 3);
+});
+
+test("internet finds become supplier records with renumbered, saved sources", () => {
+  const page = "URL: https://maker.example/g400\nAccessed: 2026-10-29\n\n| Model | Prime kVA | Engine | Alternator\n| MX400 | 400 | 2206C-E13TAG2 | HCI444ES";
+  const entry = { id: "maker-x", country: "GB", role: "genset_oem", names: { en: "Maker X" }, website: "https://maker.example/", confidence: "medium", status: "verified",
+    sources: [{ n: 1, file: "web/1.txt", tier: "A", quote: ["| MX400 | 400 | 2206C-E13TAG2 | HCI444ES"] }],
+    productLines: [{ kind: "genset", series: "MX", fuel: "diesel", power: { min: 400, max: 400, unit: "kVA", rating: "prime", src: [1] }, src: [1] }],
+    specTables: [{ n: 1, title: "MX", header: ["| Model | Prime kVA | Engine | Alternator"], rows: ["| MX400 | 400 | 2206C-E13TAG2 | HCI444ES"] }] };
+  const old = { id: "s", sources: [{ n: 2003, file: "sources/s/2003.md" }], specTables: [], productLines: [] };
+  const [a, b, c] = catalogRecords([entry, { ...entry, id: "s" }, { ...entry, id: "bad", sources: [{ n: 1, file: "web/9.txt" }] }],
+    { existing: new Map([["s", old]]), readWeb: (f) => (f === "web/1.txt" ? page : null), today: "2026-10-29" });
+  assert.equal(a.rec.status, "partial");
+  assert.equal(a.rec.sources[0].n, 2001);
+  assert.equal(a.rec.sources[0].url, "https://maker.example/g400");
+  assert.equal(a.rec.sources[0].file, "sources/maker-x/2001.md");
+  assert.deepEqual(a.rec.productLines[0].power.src, [2001]);
+  assert.equal(a.rec.specTables[0].n, 2001);
+  assert.equal(a.files["sources/maker-x/2001.md"], page);
+  assert.equal(b.rec.sources.length, 2);
+  assert.equal(b.rec.sources[1].n, 2004);
+  assert.ok(!b.isNew);
+  assert.match(c.error, /không có trang đã lưu/);
 });

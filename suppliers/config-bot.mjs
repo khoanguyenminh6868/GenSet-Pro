@@ -180,7 +180,7 @@ export function check(result, { hsmtText, suppliers, readWeb }) {
     }
     return null;
   };
-  result.configs = (result.configs || []).slice(0, 3);
+  result.configs = (result.configs || []).slice(0, 10);
   for (const c of result.configs) {
     const texts = {};
     for (const part of ["engine", "alternator", "genset"]) {
@@ -245,7 +245,7 @@ export function check(result, { hsmtText, suppliers, readWeb }) {
       if (sup.has(s.supplierId)) return true;
       problems.push(`#${c.rank}: nhà cung cấp ${s.supplierId} không có trong hệ thống, đã bỏ`);
       return false;
-    }).slice(0, 5);
+    }).slice(0, 3);
     for (const s of c.suppliers) {
       const t = (sup.get(s.supplierId).specTables || []).find((x) => x.n === Number(s.n) && x.rows.some((l) => norm(l) === norm(s.line)));
       const row = t ? squash([...(t.header || []), s.line, t.title].join(" ")) : "";
@@ -259,10 +259,99 @@ export function check(result, { hsmtText, suppliers, readWeb }) {
   if (!result.configs.length && !result.message) result.message = "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT.";
   return { result, problems };
 }
-function checkDir(dir, suppliers) {
+function checkDir(dir, suppliers, added = []) {
   const result = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8"));
+  // A supplier added from the internet: its rows were numbered in newCatalog.json, renumbered when added.
+  for (const a of added) if (a.nmap) for (const c of result.configs || []) for (const s of c.suppliers || []) if (s.supplierId === a.supplierId && a.nmap[s.n] != null) s.n = a.nmap[s.n];
+  if (added.length) result.catalogAdded = added.map(({ nmap, ...a }) => a);
   const readWeb = (f) => { const p = path.join(dir, f); return p.startsWith(path.join(dir, "web")) && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
   return check(result, { hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), suppliers, readWeb });
+}
+
+// ---------- add internet finds to the catalog ----------
+// newCatalog.json (agent, only after an internet search): supplier records in the schema.json shape whose sources
+// point at pages saved with `save` (web/<k>.txt). For a supplier already in the system only its new sources,
+// productLines and specTables are added. Sources are renumbered after the record's own (from 2001) and the saved
+// page becomes sources/<id>/<n>.md, the way fetch-source.mjs writes it (Khoa, 2026-10-29).
+export function catalogRecords(entries, { existing, readWeb, today }) {
+  const out = [];
+  for (const e of Array.isArray(entries) ? entries : []) {
+    const id = String(e?.id || "");
+    if (!/^[a-z0-9-]+$/.test(id)) { out.push({ id, error: "id không hợp lệ" }); continue; }
+    const old = existing.get(id) || null, files = {}, nmap = new Map(), sources = [];
+    let next = Math.max(2000, ...(old?.sources || []).map((s) => s.n)) + 1, error = "";
+    for (const s of e.sources || []) {
+      const txt = /^web\/\d+\.txt$/.test(s.file || "") ? readWeb(s.file) : null;
+      if (!txt) { error = `nguồn ${s.n}: không có trang đã lưu ${s.file}`; break; }
+      const [, url = "", accessed = ""] = txt.match(/^URL:\s*(\S+)\s*\nAccessed:\s*(\S+)/) || [];
+      const n = next++, file = `sources/${id}/${n}.md`;
+      nmap.set(Number(s.n), n); files[file] = txt;
+      sources.push({ n, url, accessedAt: accessed, tier: s.tier, quote: s.quote, file });
+    }
+    if (error) { out.push({ id, error }); continue; }
+    const re = (src) => (Array.isArray(src) ? src.map((n) => nmap.get(Number(n)) ?? -1) : src);
+    const lines = (e.productLines || []).map((p) => ({ ...p, src: re(p.src), ...(p.power ? { power: { ...p.power, src: re(p.power.src) } } : {}) }));
+    const tables = (e.specTables || []).map((t) => ({ ...t, n: nmap.get(Number(t.n)) ?? -1 }));
+    const rec = old
+      ? { ...old, sources: [...old.sources, ...sources], productLines: [...(old.productLines || []), ...lines], specTables: [...(old.specTables || []), ...tables], checkedAt: today }
+      : { country: e.country, role: e.role, status: "partial", names: e.names || {}, website: e.website || null, hq: e.hq || { province: null, city: null },
+        founded: null, relatedIds: [], strengths: (e.strengths || []).map((x) => ({ ...x, src: re(x.src) })), productLines: lines,
+        certifications: (e.certifications || []).map((x) => ({ ...x, src: re(x.src) })), exportMarkets: [], missing: e.missing || [],
+        sources, confidence: e.confidence, checkedAt: today, checkedBy: "config-bot", specTables: tables, id };
+    out.push({ id, rec, files, nmap, isNew: !old, tables: tables.length });
+  }
+  return out;
+}
+
+const git = (cwd, ...a) => execFileSync("git", ["-C", cwd, ...a], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
+// Writes the records into a fresh worktree of the repo (origin/main), checks them with that tree's verify.mjs, posts
+// the ones that pass to the web as supplier/<id> and opens a pull request with them (records, saved pages).
+export async function addToCatalog(dir, key, suppliers) {
+  const file = path.join(dir, "newCatalog.json");
+  if (!fs.existsSync(file)) return { added: [], records: [] };
+  const repo = process.env.GENBID_REPO_DIR || path.join(ROOT, ".."), wt = path.join(os.tmpdir(), "genbid-catalog", key), branch = `catalog/${key.toLowerCase()}`;
+  fs.rmSync(wt, { recursive: true, force: true });
+  git(repo, "fetch", "-q", "origin", "main");
+  git(repo, "worktree", "add", "-f", "-B", branch, wt, "origin/main");
+  const added = [], records = [];
+  try {
+    const { checkRecord } = await import(pathToFileURL(path.join(wt, "suppliers", "verify.mjs")).href + `?${Date.now()}`);
+    // The repo copy of a record comes with its saved pages, which verify.mjs reads.
+    const existing = new Map(suppliers.map((s) => [s.id, s])), cnDir = path.join(wt, "suppliers", "cn");
+    for (const f of fs.readdirSync(cnDir).filter((f) => f.endsWith(".json"))) existing.set(f.slice(0, -5), JSON.parse(fs.readFileSync(path.join(cnDir, f), "utf8")));
+    const readWeb = (f) => { const p = path.join(dir, f); return fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
+    for (const x of catalogRecords(JSON.parse(fs.readFileSync(file, "utf8")), { existing, readWeb, today: new Date().toISOString().slice(0, 10) })) {
+      if (x.error) { added.push({ supplierId: x.id, error: x.error }); continue; }
+      for (const [f, txt] of Object.entries(x.files)) { fs.mkdirSync(path.dirname(path.join(wt, "suppliers", f)), { recursive: true }); fs.writeFileSync(path.join(wt, "suppliers", f), txt, "utf8"); }
+      const recFile = path.join(wt, "suppliers", "cn", `${x.id}.json`);
+      const { errors } = checkRecord(x.rec, recFile);
+      if (errors.length) {
+        for (const f of Object.keys(x.files)) fs.rmSync(path.join(wt, "suppliers", f), { force: true });
+        added.push({ supplierId: x.id, error: `verify.mjs: ${errors.slice(0, 4).join("; ")}${errors.length > 4 ? ` (+${errors.length - 4})` : ""}` });
+        continue;
+      }
+      fs.writeFileSync(recFile, JSON.stringify(x.rec, null, 1) + "\n", "utf8");
+      records.push(x.rec);
+      added.push({ supplierId: x.id, name: x.rec.names?.en || x.rec.names?.zh || x.id, isNew: x.isNew, tables: x.tables, nmap: Object.fromEntries(x.nmap) });
+    }
+    // GENBID_CATALOG_DRY=1: check only, nothing is posted or pushed.
+    if (records.length && !process.env.GENBID_CATALOG_DRY) {
+      await post(records.map((r) => ({ coll: "supplier", id: r.id, data: r })));
+      try {
+        git(wt, "add", "-A", "suppliers");
+        git(wt, "-c", `user.name=${process.env.GENBID_GIT_NAME || "GenBid Bot"}`, "-c", `user.email=${process.env.GENBID_GIT_EMAIL || "genbid-bot@users.noreply.github.com"}`,
+          "commit", "-q", "-m", `Danh mục: bổ sung từ Gợi ý cấu hình ${key} (${records.map((r) => r.id).join(", ")})`);
+        git(wt, "push", "-q", "-f", "-u", "origin", branch);
+        const pr = execFileSync(process.env.GENBID_GH || "gh", ["pr", "create", "--head", branch, "--base", "main", "--title", `Danh mục: bổ sung từ Gợi ý cấu hình ${key}`,
+          "--body", `Tìm trên internet khi Gợi ý cấu hình gói ${key} không có nhà cung cấp phù hợp trong hệ thống. Bản ghi đã qua verify.mjs và đã đăng lên web.`], { cwd: wt, encoding: "utf8" }).trim();
+        for (const a of added) if (!a.error) a.pr = pr.split("\n").pop();
+      } catch (e) { for (const a of added) if (!a.error) a.prError = `Đã đăng lên web nhưng chưa mở được PR vào repo: ${String(e.stderr || e.message).trim().slice(0, 200)}`; }
+    }
+  } finally {
+    try { git(repo, "worktree", "remove", "-f", wt); } catch { fs.rmSync(wt, { recursive: true, force: true }); }
+    try { git(repo, "branch", "-D", branch); } catch {}
+  }
+  return { added, records };
 }
 
 // ---------- run ----------
@@ -281,10 +370,13 @@ async function answer(req, suppliers) {
     const r = spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "text", "--model", process.env.GENBID_CONFIG_MODEL || "opus",
       "--strict-mcp-config", "--disable-slash-commands", "--tools", "Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"],
       { cwd: dir, encoding: "utf8", timeout: 40 * 60e3, maxBuffer: 64 << 20, windowsHide: true,
-        input: "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json. Chạy không người trông, không ai trả lời câu hỏi." });
+        input: "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json (và newCatalog.json khi prompt.md yêu cầu). Chạy không người trông, không ai trả lời câu hỏi." });
     fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
     if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
-    const { result, problems } = checkDir(dir, suppliers);
+    // Internet finds that pass verify.mjs join the catalog first, so the configuration's suppliers can point at them.
+    const { added, records } = await addToCatalog(dir, key, suppliers).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
+    const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
+    const { result, problems } = checkDir(dir, all, added);
     await done({ result, error: "" });
     console.log(`${key}: ${result.configs.length} cấu hình${problems.length ? `, ${problems.length} điểm chưa khớp nguồn` : ""}`);
   } catch (e) {
