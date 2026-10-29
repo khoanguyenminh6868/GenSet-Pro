@@ -7,7 +7,10 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 
 ## Files
 - `input.md`: the tender (name, capacity) and the technical requirements of the HSMT (chapter V or the parts about the
-  generator set, engine and alternator), plus the analysis's technicalSpecs as a guide only.
+  generator set, engine and alternator), plus the analysis's technicalSpecs as a guide only. Its "Xuất xứ động cơ"
+  section says which engine makes may be suggested (Chinese only, foreign only, or any): follow it in every step,
+  internet search included. catalog.md already lists only engines of that origin; the code drops a configuration
+  whose engine is of the other origin.
 - `hsmt.txt`: the tender's own text. Every requirement quote must be copied from here.
 - `catalog.md`: the engines and alternators in the system (web/catalog.js), each with the genset table rows that name
   it, exactly as on the supplier's website, and the source `supplierId` / `n`; at the end, the suppliers in the system

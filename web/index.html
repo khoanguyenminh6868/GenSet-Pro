@@ -59,6 +59,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .btn.primary{background:var(--violet);border-color:var(--violet);color:#fff}
 .btn:disabled{opacity:.55;cursor:not-allowed}
 .btn.sm{padding:4px 9px;font-size:12.5px}
+.radios{gap:14px}.radios label{display:inline-flex;align-items:center;gap:5px;cursor:pointer}
 .cmprev{justify-content:space-between}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
@@ -1100,6 +1101,7 @@ function askDelete() {
 document.addEventListener("change", (e) => {
   if (e.target.matches?.(".selbox")) { const k = e.target.dataset.sel; e.target.checked ? state.sel.add(k) : state.sel.delete(k); renderBulk(($("#bulkBar")._items || []).map((k) => ({ _key: k }))); return; }
   if (e.target.id === "selAll") { const ks = $("#bulkBar")._items || []; if (e.target.checked) ks.forEach((k) => state.sel.add(k)); else state.sel.clear(); renderGrid(); }
+  if (e.target.name === "cfgOrigin") cfgOrigin[e.target.dataset.key] = e.target.value;
 });
 // Filter popover opened from a header's funnel button.
 function openFilter(k, btn) {
@@ -2147,13 +2149,19 @@ function catDetailHtml(e) {
 // quả một công thức quy đổi của web/conversions.js mà code đã tính lại. Mỗi cấu hình kèm nhà cung cấp trong hệ thống bán nó.
 const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], unclear: ["Chưa rõ", "warn"] };
 const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet" };
+// Xuất xứ (Khoa, 2026-10-29): Trung Quốc by default leaves out engines of foreign makes (Perkins, Cummins, Volvo Penta,
+// Baudouin, Kubota, Yanmar...); Khác keeps only those. The list is web/catalog.js FOREIGN_ENGINE.
+const CFG_ORIGIN = [["all", "Tất cả"], ["cn", "Trung Quốc"], ["other", "Khác"]];
+const cfgOrigin = {};
 function configTabHtml(t) {
-  const key = t._key, prev = state.configmatch[key];
+  const key = t._key, prev = state.configmatch[key], origin = cfgOrigin[key] || "cn";
   const wait = workerReqPending("configreq", key) ? waitHtml("Đang chờ Agent đọc HSMT và chọn cấu hình động cơ, đầu phát...", state.configreq[key].requestedAt) : "";
   const err = !wait && workerReqError("configreq", key);
+  const usedOrigin = CFG_ORIGIN.find(([k]) => k === prev?.result?.origin)?.[1];
   return wait + (err ? h`<div class="note warn">${err}</div>` : "")
+    + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${wait ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
     + h`<div class="row"><button class="btn primary" id="cfgRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button></div>`
-    + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}</div>` + cfgResultHtml(prev.result) : "");
+    + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}</div>` + cfgResultHtml(prev.result) : "");
 }
 function cfgSrcHtml(src) {
   if (!src) return "";
@@ -2513,7 +2521,7 @@ document.addEventListener("click", async (e) => {
   if (cki) { listScroll.cat = $("#mdl").scrollTop; catView.open = cki.dataset.catitem; renderCatalog(); return; }
   if (e.target.id === "catBack") { catView.open = null; renderCatalog(); $("#mdl").scrollTop = listScroll.cat; return; }
   if (e.target.id === "catMore") { catView.limit += 100; renderCatList(); return; }
-  if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, {}, "gợi ý cấu hình"); return; }
+  if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn" }, "gợi ý cấu hình"); return; }
   if (e.target.id === "spRun") { requestWorker("supplierreq", e.target.dataset.key, {}, "gợi ý nhà cung cấp"); return; }
   if (e.target.id === "syncNoteX") { syncState.note = null; renderTop(); return; }
   const wx = e.target.closest("[data-wonx]");

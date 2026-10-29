@@ -32,6 +32,8 @@ export default async function handler(req, res) {
     const data = i.cancel ? { ...(cur.get(i.key) || {}), doneAt: at, error: "" } : JSON.parse(JSON.stringify({
       notifyNo: coll === "syncreq" ? undefined : str(i.notifyNo || i.key, 200), bidName: str(i.bidName, 1000), sourceUrl: str(i.sourceUrl, 1000),
       auto: i.auto ? true : undefined, mode: coll === "syncreq" && i.mode === "new" ? "new" : undefined, requestedAt: at, by: member.email, from: "web",
+      // Gợi ý cấu hình: the engines' origin (Xuất xứ), Trung Quốc unless the page says otherwise.
+      ...(coll === "configreq" ? { origin: ["cn", "other", "all"].includes(i.origin) ? i.origin : "cn" } : {}),
       ...(coll === "comparereq" ? compareFields(i, "hsdt") : coll === "tlktreq" ? compareFields(i, "tlkt") : {}),
     }));
     return { coll, id: i.key, data, updated_at: at };

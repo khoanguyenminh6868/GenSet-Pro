@@ -10,6 +10,8 @@
 // "met" into "unclear" (Khoa, 2026-10-28: the answer must be exactly right). A value may be converted (kW ↔ kVA,
 // L/h ↔ g/kWh...) only with a formula of web/conversions.js, which check recomputes; each configuration also names
 // the suppliers in the system that sell it, each checked against that supplier's own table row (Khoa, 2026-10-29).
+// "Xuất xứ" (configreq origin: cn, default / other / all) limits the engines to Chinese makes or to foreign ones
+// (web/catalog.js originOf); check drops a configuration whose engine is of the other origin (Khoa, 2026-10-29).
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -31,6 +33,10 @@ const numbersIn = (s) => (norm(s).replace(/(\d),(\d{3})/g, "$1$2").match(/\d+(?:
 const numbersLoose = (s) => [...numbersIn(s), ...numbersIn(String(s ?? "").replace(/(\d),(\d{1,2})(?!\d)/g, "$1.$2"))];
 await import(pathToFileURL(path.join(ROOT, "..", "web", "conversions.js")).href);
 const CONV = globalThis.GenbidConversions;
+await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
+const CAT = globalThis.GenbidCatalog;
+export const ORIGIN = { cn: "Trung Quốc", other: "Khác (không phải Trung Quốc)", all: "Tất cả" };
+const originOfReq = (o) => (ORIGIN[o] ? o : "cn");
 
 async function api(q) {
   const r = await fetch(`${WEB}/api/requests?${q}`, { headers: { Authorization: `Bearer ${token()}` } });
@@ -49,9 +55,12 @@ async function post(rows) {
   if (!r.ok) throw new Error(`ingest HTTP ${r.status}: ${body.slice(0, 200)}`);
   return body;
 }
-async function loadCatalog(suppliers) {
-  await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
-  return globalThis.GenbidCatalog.build(suppliers);
+// Engines of the origin asked for: "cn" leaves out foreign makes (an engine whose make no source gives stays),
+// "other" keeps only engines a source or the model code shows to be of a foreign make.
+export function byOrigin(engines, origin) {
+  if (origin === "cn") return engines.filter((e) => CAT.originOf(e) !== "other");
+  if (origin === "other") return engines.filter((e) => CAT.originOf(e) === "other");
+  return engines;
 }
 
 // ---------- prep ----------
@@ -123,11 +132,16 @@ async function prep(key, dir, reqData = {}) {
   const a = analysis?.result;
   const cap = capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
   const brands = [...new Set((technicalPart(text).match(/cummins|perkins|mitsubishi|doosan|volvo|mtu|baudouin|weichai|yuchai|deutz|stamford|leroy|mecc alte|marathon/gi) || []).map((b) => b.toLowerCase()))];
-  const cat = await loadCatalog(suppliers.map((d) => d.data));
+  const origin = originOfReq(reqData.origin), full = CAT.build(suppliers.map((d) => d.data));
+  const cat = { ...full, engines: byOrigin(full.engines, origin) };
   fs.writeFileSync(path.join(dir, "catalog.md"), catalogMd(cat, cap, brands) + "\n\n" + suppliersMd(suppliers.map((d) => d.data)), "utf8");
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`, "",
+    `## Xuất xứ động cơ: ${ORIGIN[origin]}`,
+    origin === "cn" ? `Chỉ gợi ý động cơ của hãng Trung Quốc. Không gợi ý động cơ của hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả loại sản xuất theo giấy phép tại Trung Quốc (Dongfeng Cummins, Chongqing Cummins...), cả khi tìm trên internet. Nếu HSMT chỉ định một hãng nước ngoài thì trả lời "configs": [] và nói rõ trong message.`
+    : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
+    : "Không giới hạn xuất xứ động cơ.", "",
     "## Thông số kỹ thuật theo phân tích (chỉ để định hướng, trích dẫn phải lấy từ hsmt.txt)",
     ...(a?.technicalSpecs || []).map((s) => `- ${s.item}: ${s.requirement}${s.reference ? ` (${s.reference})` : ""}`), "",
     "## Phần kỹ thuật của HSMT", technicalPart(text),
@@ -135,7 +149,7 @@ async function prep(key, dir, reqData = {}) {
   // The allowed formulas, written from web/conversions.js so the prompt and the check use the same list.
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "config-prompt.md"), "utf8") + "\n## Công thức được phép\n"
     + Object.entries(CONV.FORMULAS).map(([id, f]) => `- \`${id}\`: ${f.label} — đầu vào ${f.inputs.map((n) => `\`${n}\``).join(", ")}; cơ sở: ${f.basis}${f.standard ? `; giá trị chuẩn: ${Object.entries(f.standard).map(([n, st]) => `\`${n}\` = ${st.min}–${st.max} ${st.unit} (${st.basis})`).join("; ")}` : ""}`).join("\n") + "\n", "utf8");
-  return { cap, engines: cat.engines.length, alternators: cat.alternators.length };
+  return { cap, origin, engines: cat.engines.length, alternators: cat.alternators.length };
 }
 
 // ---------- save (agent: internet sources) ----------
@@ -162,7 +176,7 @@ async function save(dir, url) {
 
 // ---------- check ----------
 // Returns { result, problems } with result fixed in place: unverified marks, "met" without proof → "unclear".
-export function check(result, { hsmtText, suppliers, readWeb }) {
+export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   const problems = [], H = norm(hsmtText);
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
@@ -185,6 +199,19 @@ export function check(result, { hsmtText, suppliers, readWeb }) {
     }
     return null;
   };
+  // An engine of the other origin is not a suggestion: its make, model code, or the brand its source row names.
+  if (origin === "cn" || origin === "other") {
+    result.configs = (result.configs || []).filter((c) => {
+      const e = c.engine;
+      if (!e) return true;
+      const own = e.src?.kind === "catalog" ? sourceText(e.src) : e.src?.quote;
+      const o = CAT.originIn(`${e.make || ""} ${e.model || ""} ${own || ""}`, e.model);
+      const drop = origin === "cn" ? o === "other" : o !== "other";
+      if (drop) problems.push(`#${c.rank}: động cơ ${e.model}${e.make ? ` (${e.make})` : ""} ${origin === "cn" ? "không phải hãng Trung Quốc" : "không rõ là hãng ngoài Trung Quốc"}, đã bỏ`);
+      return !drop;
+    });
+    result.origin = origin;
+  }
   result.configs = (result.configs || []).slice(0, 10);
   for (const c of result.configs) {
     const texts = {};
@@ -264,13 +291,13 @@ export function check(result, { hsmtText, suppliers, readWeb }) {
   if (!result.configs.length && !result.message) result.message = "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT.";
   return { result, problems };
 }
-function checkDir(dir, suppliers, added = []) {
+function checkDir(dir, suppliers, added = [], origin) {
   const result = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8"));
   // A supplier added from the internet: its rows were numbered in newCatalog.json, renumbered when added.
   for (const a of added) if (a.nmap) for (const c of result.configs || []) for (const s of c.suppliers || []) if (s.supplierId === a.supplierId && a.nmap[s.n] != null) s.n = a.nmap[s.n];
   if (added.length) result.catalogAdded = added.map(({ nmap, ...a }) => a);
   const readWeb = (f) => { const p = path.join(dir, f); return p.startsWith(path.join(dir, "web")) && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
-  return check(result, { hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), suppliers, readWeb });
+  return check(result, { hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), suppliers, readWeb, origin });
 }
 
 // ---------- add internet finds to the catalog ----------
@@ -366,7 +393,7 @@ async function answer(req, suppliers) {
   // configreq keeps the request's own fields and gets doneAt (+ error); configmatch carries the verified result.
   const done = ({ result, error }) => {
     const at = new Date().toISOString();
-    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
+    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
     return post([...(result ? [{ coll: "configmatch", id: key, data: { at, result } }] : []), { coll: "configreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
@@ -381,7 +408,7 @@ async function answer(req, suppliers) {
     // Internet finds that pass verify.mjs join the catalog first, so the configuration's suppliers can point at them.
     const { added, records } = await addToCatalog(dir, key, suppliers).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
     const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
-    const { result, problems } = checkDir(dir, all, added);
+    const { result, problems } = checkDir(dir, all, added, originOfReq(req.origin));
     await done({ result, error: "" });
     console.log(`${key}: ${result.configs.length} cấu hình${problems.length ? `, ${problems.length} điểm chưa khớp nguồn` : ""}`);
   } catch (e) {
@@ -393,7 +420,7 @@ async function answer(req, suppliers) {
 const cmd = process.argv[2];
 if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   if (cmd === "save") console.log(await save(arg("dir", "."), arg("url")));
-  else if (cmd === "prep") console.log(JSON.stringify(await prep(arg("key"), arg("out"), { bidName: arg("bid-name") })));
+  else if (cmd === "prep") console.log(JSON.stringify(await prep(arg("key"), arg("out"), { bidName: arg("bid-name"), origin: arg("origin") })));
   else if (cmd === "check") {
     const { problems, result } = checkDir(arg("dir", "."), (await api("kind=docs&coll=supplier")).map((d) => d.data));
     fs.writeFileSync(path.join(arg("dir", "."), "result.checked.json"), JSON.stringify(result, null, 1));
