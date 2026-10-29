@@ -1,0 +1,68 @@
+{
+  "id": "cummins-dealer-liuzhou-kangfa-electromechanical",
+  "country": "CN",
+  "role": "distributor",
+  "status": "partial",
+  "names": {
+    "en": "Liuzhou Kangfa Electromechanical Co., Ltd",
+    "zh": null,
+    "brands": []
+  },
+  "website": null,
+  "hq": {
+    "province": "Guangxi",
+    "city": "Liuzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đại lý / điểm dịch vụ có tên trên trang tra địa điểm chính thức của Cummins, có ứng dụng phát điện (Generator)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Cummins engines / power generation (authorised location)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là trang địa điểm trên cummins.com (lưu qua firecrawl vì website chặn máy Windows); chưa lưu website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cummins.com/en-apac/locations/china/guangxi/liuzhou/liuzhou-kangfa-electromechanical-co-ltd",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Liuzhou Kangfa Electromechanical Co., Ltd",
+        "Welcome to Liuzhou Kangfa Electromechanical Co., Ltd, located in Liuzhou, Guangxi, China. Our team is ready to help with your power needs. Let us know how we can help you.",
+        "Generator",
+        "Independent"
+      ],
+      "file": "sources/cummins-dealer-liuzhou-kangfa-electromechanical/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}
