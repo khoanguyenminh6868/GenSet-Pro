@@ -80,3 +80,16 @@ test("other figures on a single-model page, grouped per model in the catalog", (
   assert.equal(by.disp, "16.12L"); assert.equal(by.bore, "144*165（mm）"); assert.equal(by.noise, "100dB（A）");
   assert.equal(by.eff, undefined, "an engine does not show alternator figures");
 });
+
+test("datasheet: a bare Model line belongs to the part whose heading it is under", () => {
+  const rows = ["General Performance Data", "| Prime Power | 20KVA/16KW", "| Stand by Power | 22KVA/18KW", "Engine specification", "| Manufacturer | dongfeng Cummins", "| Model | 4B3.9-G11",
+    "| Displacement | 3.9L", "| Compression ratio | 18.0:1", "Alternator specification", "| Model | UCI224F", "| Insulation class | H", "| Protection | IP23"];
+  const cat = C.build([rec("genset_oem", [{ n: 1001, title: "Datasheet", header: [], rows }])]);
+  const e = cat.engines.find((x) => x.model === "4B3.9-G11"), a = cat.alternators.find((x) => x.model === "UCI224F");
+  assert.ok(e && a);
+  assert.equal(e.make, "Cummins");
+  assert.deepEqual(e.uses[0].power, { prime: { kVA: 20, kW: 16 }, standby: { kVA: 22, kW: 18 } });
+  assert.equal(C.headingOf("| Brand | Cummins"), undefined);
+  const by = Object.fromEntries(a.specs.map((g) => [g.key, g.values[0].value]));
+  assert.equal(by.insul, "H"); assert.equal(by.ip, "IP23");
+});

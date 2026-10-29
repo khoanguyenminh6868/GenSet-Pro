@@ -38,7 +38,7 @@
   const ALT_LBL = /alternator|generator\s*(model|type|brand)|发电机|电球|stamford|leroy|mecc|marathon|engga|alternador/i;
   const GENSET_LBL = /genset|gen-set|generator\s*set|机组/i;
   const PRIME = /prime|\bprp\b|continuous|\bcop\b|常用|主用|liên tục/i;
-  const STANDBY = /standby|stand-by|\besp\b|\bltp\b|backup|备用|dự phòng|max(imum)?\s*power/i;
+  const STANDBY = /standby|stand[\s-]by|\besp\b|\bltp\b|backup|备用|dự phòng|max(imum)?\s*power/i;
 
   // Other figures a row gives, read by the label of its column or line. Label and value are kept as the source
   // writes them; the key only groups them. scope: what the figure is about (engine, alternator, or the genset).
@@ -48,7 +48,7 @@
   const N = /\d/, TXT = /[a-z一-鿿]{3}/i, BY = /\d\s*[*×xX/]\s*\d/;
   const SPECS = [
     ["tank", "genset", "Bình nhiên liệu", /fuel\s*tank|fuel\s*capacity|tank\s*capacity|油箱/i, null, N],
-    ["fuel", "genset", "Tiêu hao nhiên liệu", /fuel|consumption|cons\.|\bcons\b|油耗|耗油|燃油|燃气消耗|tiêu hao/i, /lub|oil\s*consum/i, /^[≤<~]?\s*\d/],
+    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃气消耗|tiêu hao/i, /lub|oil\s*consum|air\s*consum/i, /^[≤<~]?\s*\d/],
     ["noise", "genset", "Độ ồn", /noise|sound\s*(level|pressure)|噪音|噪声|độ ồn|\bdb\(?a?\)?\b/i, null, /(^|\D)([4-9]\d|1[01]\d)(?!\d)/],
     ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*w\s*[x×*]\s*h|尺寸|kích thước/i, null, BY],
     ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng/i, null, /^[≈~]?\s*\d/],
@@ -152,13 +152,29 @@
     return p && !s ? { prime: pairs[0] } : s && !p ? { standby: pairs[0] } : { rated: pairs[0] };
   }
   // Label tables ("Engine model: X", "| Prime power | 300kVA |"): one model per value column.
+  // A heading line of a datasheet: "engine" / "alternator" for the part the lines below are about, null for a genset
+  // section (performance, dimensions...), "keep" for a sub-heading that does not change the part ("Cooling system"),
+  // undefined when the line is not a heading.
+  function headingOf(text) {
+    const s = String(text || "").trim().replace(/[:：]$/, "");
+    if (!s || s.length > 50 || /[:：|]/.test(s) || /\d/.test(s) || !/[a-z一-鿿]{3}/i.test(s)) return undefined;
+    if (/^(diesel\s+|gas\s+)?engine(\s+(specifications?|spec|data|parameters?|technical\s+(data|specifications?|parameters?)|details?|information))?$|^(发动机|柴油机)(参数|技术参数|技术规格)?$/i.test(s)) return "engine";
+    if (/^(alternator|generator)(\s+(specifications?|spec|data|parameters?|technical\s+(data|specifications?|parameters?)|details?|information))?$|^(发电机|电球)(参数|技术参数|技术规格)?$/i.test(s)) return "alternator";
+    if (/^(general|performance|genset|generator\s+set|dimensions?|weights?|canopy|enclosure|control|controller|standards?|package|scope|fuel\s+consumption|机组|外形|控制)/i.test(s)) return null;
+    return "keep";
+  }
   function fromLabelTable(lines) {
     const cols = [];
     // The first line naming a value wins: single-model pages often list related models further down.
     const put = (j, k, v) => { const c = (cols[j] = cols[j] || {}); if (c[k] == null) c[k] = v; };
     const merge = (j, k, v) => { const c = (cols[j] = cols[j] || {}); c[k] = { ...v, ...(c[k] || {}) }; };
+    // Datasheets put the engine and the alternator under their own heading ("Engine specification", then
+    // "Model | 4B3.9-G11"): a bare "Model" or "Brand" line belongs to the part whose heading it is under.
+    let part = null;
     for (const l of lines) {
       let c = cellsOf(l);
+      const head = c.length === 1 ? headingOf(c[0]) : undefined;
+      if (head !== undefined) { if (head !== "keep") part = head; continue; }
       // "| Noise(LP1m): 100dB(A)": label and value in one cell.
       if (c.length === 1) { const m = c[0].match(/^([^:：]{2,60})[:：]\s*(.+)$/); if (m) c = [m[1].trim(), m[2].trim()]; }
       if (c.length < 2) continue;
@@ -167,6 +183,9 @@
       const unitCell = c.slice(1).find((v) => /^(kva|kw)$/i.test(v));
       if (!vals.length) continue;
       const L = label.toLowerCase();
+      const bare = L.replace(/[:：\s]+$/, "");
+      if (part && /^(model|model\s*no\.?|type\s*model|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, part === "engine" ? "engine" : "alternator", vals[0]); continue; }
+      if (part && /^(brand|make|manufacturer|品牌|厂家|制造商)$/.test(bare)) { put(0, part === "engine" ? "engineBrand" : "altBrand", vals[0]); continue; }
       const sk = specKey(label);
       if (sk) {
         const sv = c.slice(1).filter((v) => v && !UNIT_CELL.test(v));
@@ -423,7 +442,7 @@
     return scored.sort((a, b) => b.score - a.score).slice(0, limit);
   }
 
-  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, SPEC, ENGINE_BRANDS, ALT_BRANDS };
+  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, SPEC, ENGINE_BRANDS, ALT_BRANDS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
