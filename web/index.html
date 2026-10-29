@@ -734,10 +734,12 @@ async function dbSet(path, data) {
   try { await state.db.doc(path).set(JSON.parse(JSON.stringify(data))); return true; }
   catch (e) { if (e?.code === "permission_denied") toast("Bạn chỉ có quyền xem, không lưu được."); return false; }
 }
-// Selected status tab and sort order are shared through the database so every device shows the same view.
+// Selected status tab and sort order are saved per signed-in user (Khoa 2026-10-29): each person's devices
+// share their own view without changing anyone else's.
+const viewDoc = () => "prefs/view" + (window.genbidEmail ? ":" + window.genbidEmail : "");
 function saveView() {
   local.set("stage", state.stage); local.set("gridSort2", state.sort);
-  if (state.db) dbSet("prefs/view", { stage: state.stage, sort: state.sort });
+  if (state.db) dbSet(viewDoc(), { stage: state.stage, sort: state.sort });
 }
 async function saveTracked(id, rec) {
   if (state.readOnly) { toast("Đăng nhập để chỉnh sửa. Đây là bản chỉ xem."); return; }
@@ -853,7 +855,7 @@ async function initDb() {
     () => { state.loaded.feed = true; renderAll(); });
   db.doc("syncreq/current").onSnapshot((snap) => { state.syncreq = snap.exists ? snap.data() : null; renderTop(); }, () => {});
   db.doc("botstatus/current").onSnapshot((snap) => { state.botstatus = snap.exists ? snap.data() : null; refreshWaits(); }, () => {});
-  db.doc("prefs/view").onSnapshot((snap) => {
+  db.doc(viewDoc()).onSnapshot((snap) => {
     const v = snap.exists ? snap.data() : null;
     if (!v) return;
     if (v.stage && v.stage !== state.stage) { state.stage = v.stage; state.limit = pageSize(); }
