@@ -73,9 +73,12 @@ export async function get(url) {
   return { html, url: r.url || url };
 }
 // Same-site links whose address or visible text names a product (CMS addresses like ?pageId=... say nothing).
-export const linksOf = (html, base, host) => [...new Set([...html.matchAll(/<a\b[^>]*?href=["']([^"'#]+)["'][^>]*>([\s\S]{0,400}?)<\/a>/gi)].map((m) => {
+// The address may be unquoted (<a href=/products/>). lang: a language part of the address the site itself sent us to
+// (a site that answers every visit from Vietnam with /vi/), followed like an English one.
+export const linksOf = (html, base, host, lang = null) => [...new Set([...html.matchAll(/<a\b[^>]*?href\s*=\s*(?:"([^"#]+)[^"]*"|'([^'#]+)[^']*'|([^\s>"'#]+)[^\s>]*)[^>]*>([\s\S]{0,400}?)<\/a>/gi)].map((m) => {
+  m = [m[0], m[1] || m[2] || m[3], m[4]];
   try { const u = new URL(m[1].replace(/&amp;/g, "&"), base).href; const label = m[2].replace(/<[^>]+>/g, " "); return LINK.test(u) || (LINK.test(label) && !SKIP.test(label)) ? (STRONG.test(label) && !STRONG.test(u) ? u + "#0kva" : u) : null; } catch { return null; }
-}).filter((u) => u && /^https?:/.test(u) && new URL(u).hostname.replace(/^www\.|^m\./, "") === host && !SKIP.test(u)))];
+}).filter((u) => u && /^https?:/.test(u) && new URL(u).hostname.replace(/^www\.|^m\./, "") === host && !SKIP.test(lang ? u.replace(`/${lang}/`, "/") : u)))];
 const isNumCell = (c) => /\d/.test(c) && c.replace(/[\d.,~\-–/()%\s]|kva|kw|v|hz|rpm|l\/h|mm|kg|db|a\b/gi, "").length <= 3;
 // Table blocks: 2+ consecutive lines of 3+ cells; header = the leading lines that are mostly not numbers.
 export function tablesOf(text) {
@@ -128,12 +131,14 @@ async function crawl(id) {
   const seen = new Set(), queue = [...rec.sources.filter((s) => s.n < 101).map((s) => s.url).filter((u) => { try { return new URL(u).hostname.replace(/^www\.|^m\./, "") === host; } catch { return false; } }), rec.website];
   // Pages are kept in memory and written only at the end, and only when this crawl found at least as many table
   // lines as the last one (a site that is down or blocks the crawler never wipes what was found before).
-  const found = [], pages = []; let fetched = 0, n = 101;
+  const found = [], pages = []; let fetched = 0, n = 101, lang = null;
   while (queue.length && fetched < MAX) {
     const u = queue.shift().replace(/\/$/, "");
     if (seen.has(u)) continue; seen.add(u);
     let page; try { page = await get(u); fetched++; } catch (e) { if (process.env.DEBUG) console.log("  x", u, e.message); continue; }
     if (process.env.DEBUG) console.log("  +", u);
+    // The home page answered in another language (/vi/ for a visit from Vietnam): that language is followed too.
+    if (u === rec.website.replace(/\/$/, "")) lang = (new URL(page.url).pathname.match(/^\/([a-z]{2})(\/|$)/) || [])[1] || null;
     const text = htmlToText(page.html);
     const tables = tablesOf(text);
     if (tables.length && tables.reduce((a, t) => a + t.rows.length, 0) >= 2 && n <= 999) {
@@ -142,7 +147,7 @@ async function crawl(id) {
       for (const t of tables) { delete t.sheet; found.push({ n, url: page.url, title: decode(title), ...t }); }
       n++;
     }
-    for (const l of linksOf(page.html, page.url, host)) if (!seen.has(l.replace(/\/$/, ""))) (STRONG.test(l) ? queue.unshift(l) : MODELISH.test(l) ? queue.splice(Math.min(queue.length, 20), 0, l) : queue.push(l));
+    for (const l of linksOf(page.html, page.url, host, lang)) if (!seen.has(l.replace(/\/$/, ""))) (STRONG.test(l) ? queue.unshift(l) : MODELISH.test(l) ? queue.splice(Math.min(queue.length, 20), 0, l) : queue.push(l));
   }
   const rows = found.reduce((a, t) => a + t.rows.length, 0);
   const specFile = path.join(ROOT, "specs", `${id}.json`);
