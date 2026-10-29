@@ -7,7 +7,9 @@
 // Data is read from and written to the web (Vercel API) with the ingest token, which is never printed.
 // The agent (claude -p, Opus, with WebSearch) follows config-prompt.md. check marks every quote or number the code
 // cannot find word for word in the HSMT text, the catalog row or a saved web page as unverified, and turns such a
-// "met" into "unclear" (Khoa, 2026-10-28: the answer must be exactly right).
+// "met" into "unclear" (Khoa, 2026-10-28: the answer must be exactly right). A value may be converted (kW ↔ kVA,
+// L/h ↔ g/kWh...) only with a formula of web/conversions.js, which check recomputes; each configuration also names
+// the suppliers in the system that sell it, each checked against that supplier's own table row (Khoa, 2026-10-29).
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -25,6 +27,10 @@ const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 const arg = (k, d = "") => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : d; };
 const token = () => fs.readFileSync(TOKEN_FILE, "utf8").trim();
 const numbersIn = (s) => (norm(s).replace(/(\d),(\d{3})/g, "$1$2").match(/\d+(?:\.\d+)?/g) || []).map(Number);
+// Also reads "0,8" as 0.8 (Vietnamese decimal comma).
+const numbersLoose = (s) => [...numbersIn(s), ...numbersIn(String(s ?? "").replace(/(\d),(\d{1,2})(?!\d)/g, "$1.$2"))];
+await import(pathToFileURL(path.join(ROOT, "..", "web", "conversions.js")).href);
+const CONV = globalThis.GenbidConversions;
 
 async function api(q) {
   const r = await fetch(`${WEB}/api/requests?${q}`, { headers: { Authorization: `Bearer ${token()}` } });
@@ -74,7 +80,7 @@ function catalogMd(cat, cap, brands) {
     for (const e of list) {
       out.push(`### ${e.model}${e.make ? ` — hãng: ${e.make} (theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " — nguồn không ghi hãng"}`);
       const uses = cap ? e.uses.slice().sort((a, b) => Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value)) : e.uses;
-      for (const u of uses.slice(0, 5)) {
+      for (const u of uses.slice(0, 8)) {
         out.push(`- supplierId: ${u.supplierId}, n: ${u.n}${u.genset ? `, tổ máy: ${u.genset}` : ""}${u.other ? `, đi kèm: ${u.other}` : ""}`);
         if (u.header?.length) out.push(`  header: ${u.header.join(" ")}`);
         out.push(u.line ? `  line: ${u.line}` : `  bảng một model: ${(u.lines?.rows || []).join(" ; ")}`);
@@ -83,6 +89,18 @@ function catalogMd(cat, cap, brands) {
       }
       out.push("");
     }
+  }
+  return out.join("\n");
+}
+// The suppliers behind the catalog rows, as recorded in the supplier DB (every fact there has a source).
+function suppliersMd(suppliers) {
+  const out = ["# Nhà cung cấp trong hệ thống (CSDL supplier/<id>)", ""];
+  for (const s of suppliers) {
+    if (!s.specTables?.length) continue;
+    const vn = (s.vietnam?.distributors || []).map((d) => d.name).join("; "), hq = [s.hq?.city, s.hq?.province].filter(Boolean).join(", ");
+    out.push(`- ${s.id}: ${s.names?.en || s.names?.zh || s.id} — vai trò: ${s.role}, trạng thái: ${s.status}, độ tin cậy: ${s.confidence}`
+      + `${s.website ? `, website: ${s.website}` : ""}${hq ? `, trụ sở: ${hq}` : ""}${s.founded ? `, thành lập: ${s.founded}` : ""}`
+      + `${vn ? `, đại lý tại Việt Nam: ${vn}` : ""}${s.certifications?.length ? `, chứng nhận: ${s.certifications.map((c) => c.name).join("; ")}` : ""}`);
   }
   return out.join("\n");
 }
@@ -101,7 +119,7 @@ async function prep(key, dir, reqData = {}) {
   const cap = capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
   const brands = [...new Set((technicalPart(text).match(/cummins|perkins|mitsubishi|doosan|volvo|mtu|baudouin|weichai|yuchai|deutz|stamford|leroy|mecc alte|marathon/gi) || []).map((b) => b.toLowerCase()))];
   const cat = await loadCatalog(suppliers.map((d) => d.data));
-  fs.writeFileSync(path.join(dir, "catalog.md"), catalogMd(cat, cap, brands), "utf8");
+  fs.writeFileSync(path.join(dir, "catalog.md"), catalogMd(cat, cap, brands) + "\n\n" + suppliersMd(suppliers.map((d) => d.data)), "utf8");
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`, "",
@@ -109,7 +127,9 @@ async function prep(key, dir, reqData = {}) {
     ...(a?.technicalSpecs || []).map((s) => `- ${s.item}: ${s.requirement}${s.reference ? ` (${s.reference})` : ""}`), "",
     "## Phần kỹ thuật của HSMT", technicalPart(text),
   ].filter((l) => l !== null).join("\n"), "utf8");
-  fs.copyFileSync(path.join(ROOT, "config-prompt.md"), path.join(dir, "prompt.md"));
+  // The allowed formulas, written from web/conversions.js so the prompt and the check use the same list.
+  fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "config-prompt.md"), "utf8") + "\n## Công thức được phép\n"
+    + Object.entries(CONV.FORMULAS).map(([id, f]) => `- \`${id}\`: ${f.label} — đầu vào ${f.inputs.map((n) => `\`${n}\``).join(", ")}; cơ sở: ${f.basis}${f.standard ? `; giá trị chuẩn: ${Object.entries(f.standard).map(([n, st]) => `\`${n}\` = ${st.min}–${st.max} ${st.unit} (${st.basis})`).join("; ")}` : ""}`).join("\n") + "\n", "utf8");
   return { cap, engines: cat.engines.length, alternators: cat.alternators.length };
 }
 
@@ -176,12 +196,40 @@ export function check(result, { hsmtText, suppliers, readWeb }) {
       const reasons = [];
       if (x.hsmtQuote && !inHsmt(x.hsmtQuote)) reasons.push("câu trích HSMT");
       const src = texts[x.part] || texts.genset || texts.engine || texts.alternator;
+      // Conversions: recomputed here from web/conversions.js; each input must be in the source / HSMT quote, a standard
+      // constant of that formula, or the result of an earlier conversion of this check.
+      const calc = [], used = [];
+      for (const cv of x.conversions || []) {
+        const r = CONV.compute(cv);
+        if (r.error) { reasons.push(`quy đổi: ${r.error}`); cv.invalid = true; continue; }
+        const f = CONV.FORMULAS[cv.formula];
+        // The formula's own constants (1000, 120, √3 written as 1,732...) may appear in the offered text.
+        used.push(...numbersIn(f.label.replace(/(\d),(\d+)/g, "$1.$2")), ...(f.label.includes("√3") ? [3, 1.73, 1.732] : []));
+        for (const i of cv.inputs || []) {
+          const v = Number(i.value);
+          if (i.from === "source" && !numbersLoose(x.sourceQuote).includes(v)) reasons.push(`đầu vào ${i.name} = ${i.value} không có trong câu trích nguồn`);
+          else if (i.from === "hsmt" && !numbersLoose(x.hsmtQuote).includes(v)) reasons.push(`đầu vào ${i.name} = ${i.value} không có trong câu trích HSMT`);
+          else if (i.from === "calc" && !calc.some((c) => CONV.matches(v, c))) reasons.push(`đầu vào ${i.name} = ${i.value} không phải kết quả quy đổi trước`);
+          else if (!["source", "hsmt", "calc", "standard"].includes(i.from)) reasons.push(`đầu vào ${i.name} không ghi lấy từ đâu`);
+          const st = f.standard?.[i.name];
+          used.push(...(i.from === "standard" && st ? [st.min, st.max] : [v]));
+        }
+        const stated = Array.isArray(cv.value) ? cv.value : cv.value != null ? [Number(cv.value)] : [];
+        if (stated.some((v) => !CONV.matches(v, r.value))) reasons.push(`kết quả quy đổi ${cv.formula} ghi sai`);
+        Object.assign(cv, { value: r.value, unit: f.unit, label: f.label, basis: f.basis });
+        calc.push(r.value);
+      }
       if (x.status === "met" || x.status === "not_met") {
         if (!x.sourceQuote) reasons.push("thiếu câu trích nguồn");
         else {
           const all = Object.values(texts).filter(Boolean);
           if (!all.some((t) => t.includes(norm(x.sourceQuote)))) reasons.push("câu trích nguồn");
-          else { const nums = numbersIn(x.sourceQuote); for (const v of numbersIn(x.offered)) if (!nums.includes(v)) { reasons.push(`số ${v}`); break; } }
+          else {
+            // Every number offered is in the source quote, is an input of a conversion, or is a recomputed result.
+            const nums = numbersLoose(x.sourceQuote);
+            const ok = (v) => nums.includes(v) || used.includes(v) || calc.some((c) => CONV.matches(v, c));
+            for (const v of numbersIn(String(x.offered ?? "").replace(/(\d),(\d{1,2})(?!\d)/g, "$1.$2"))) if (!ok(v)) { reasons.push(`số ${v}`); break; }
+          }
         }
       }
       if (!src && x.status !== "unclear") reasons.push("nguồn");
@@ -191,6 +239,21 @@ export function check(result, { hsmtText, suppliers, readWeb }) {
         problems.push(`#${c.rank} ${x.item}: ${reasons.join(", ")}`);
       }
     }
+    // Suppliers: only ids of the supplier DB, each with a row of its own tables that names this engine (and alternator).
+    const squash = (s) => norm(s).replace(/\s/g, "");
+    c.suppliers = (c.suppliers || []).filter((s) => {
+      if (sup.has(s.supplierId)) return true;
+      problems.push(`#${c.rank}: nhà cung cấp ${s.supplierId} không có trong hệ thống, đã bỏ`);
+      return false;
+    }).slice(0, 5);
+    for (const s of c.suppliers) {
+      const t = (sup.get(s.supplierId).specTables || []).find((x) => x.n === Number(s.n) && x.rows.some((l) => norm(l) === norm(s.line)));
+      const row = t ? squash([...(t.header || []), s.line, t.title].join(" ")) : "";
+      if (!t) { s.unverified = true; problems.push(`#${c.rank}: dòng bảng của ${s.supplierId} không có trong CSDL`); continue; }
+      if (c.engine?.model && !row.includes(squash(c.engine.model))) { s.unverified = true; problems.push(`#${c.rank}: dòng của ${s.supplierId} không ghi động cơ ${c.engine.model}`); }
+      s.hasAlternator = !!c.alternator?.model && row.includes(squash(c.alternator.model));
+    }
+    if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
   if (!result.configs.length && !result.message) result.message = "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT.";

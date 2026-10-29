@@ -48,3 +48,51 @@ test("no configuration gives the 'not found' message", () => {
   const { result } = check({ requirements: [], configs: [] }, { hsmtText: hsmt, suppliers: sup, readWeb });
   assert.match(result.message, /Không có động cơ và đầu phát/);
 });
+
+const hsmt2 = hsmt + "\nDòng điện định mức ≥ 600A tại điện áp định mức 380V, hệ số công suất Cosφ = 0,8 trễ\nTiêu hao nhiên liệu ≤ 90 L/h";
+const conv = (inputs, formula, value) => ({ formula, inputs, value });
+test("a recomputed conversion with quoted inputs counts as met", () => {
+  const r = base();
+  r.configs[0].checks.push({ item: "Dòng điện", hsmtQuote: "Dòng điện định mức ≥ 600A tại điện áp định mức 380V", offered: "450 kVA × 1000 / (√3 × 380 V) = 683,7 A", sourceQuote: "360/450", part: "genset", status: "met",
+    conversions: [conv([{ name: "S_kVA", value: 450, from: "source" }, { name: "U_V", value: 380, from: "hsmt" }], "current_3ph", 683.7)] });
+  const { problems, result } = check(r, { hsmtText: hsmt2, suppliers: sup, readWeb });
+  assert.deepEqual(problems, []);
+  assert.equal(result.configs[0].checks[1].status, "met");
+  assert.equal(result.configs[0].checks[1].conversions[0].unit, "A");
+});
+
+test("a wrong result, an invented input or an unknown formula is not met", () => {
+  for (const [cv, offered] of [
+    [conv([{ name: "S_kVA", value: 450, from: "source" }, { name: "U_V", value: 380, from: "hsmt" }], "current_3ph", 720), "720 A"],
+    [conv([{ name: "S_kVA", value: 500, from: "source" }, { name: "U_V", value: 380, from: "hsmt" }], "current_3ph", 759.7), "759,7 A"],
+    [conv([{ name: "P_kW", value: 360, from: "source" }, { name: "pf", value: 0.8, from: "standard" }], "kva_from_kw", 450), "450 kVA"],
+    [conv([{ name: "x", value: 450, from: "source" }], "magic", 700), "700 A"],
+  ]) {
+    const r = base();
+    r.configs[0].checks.push({ item: "Dòng điện", hsmtQuote: "Dòng điện định mức ≥ 600A tại điện áp định mức 380V", offered, sourceQuote: "360/450", part: "genset", status: "met", conversions: [cv] });
+    const { result } = check(r, { hsmtText: hsmt2, suppliers: sup, readWeb });
+    assert.equal(result.configs[0].checks[1].status, "unclear", cv.formula + " " + offered);
+  }
+});
+
+test("fuel from g/kWh uses the EN 590 density range, filled in by the code", () => {
+  const s2 = [{ id: "s", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Prime kW | Engine | Fuel g/kWh"], rows: ["| SQP500 | 360 | 2506C-E15TAG1 | 205"] }] }];
+  const line = "| SQP500 | 360 | 2506C-E15TAG1 | 205", src = { kind: "catalog", supplierId: "s", n: 101, line };
+  const r = { requirements: [], configs: [{ rank: 1, engine: { model: "2506C-E15TAG1", src }, genset: { model: "SQP500", src }, checks: [{ item: "Nhiên liệu", hsmtQuote: "Tiêu hao nhiên liệu ≤ 90 L/h", offered: "205 × 360 / 820–845 = 87,3–90 L/h", sourceQuote: "360 | 2506C-E15TAG1 | 205", part: "genset", status: "met",
+    conversions: [conv([{ name: "b_gkWh", value: 205, from: "source" }, { name: "P_kW", value: 360, from: "source" }, { name: "rho_gL", value: 1, from: "standard" }], "lph_from_gkwh")] }] }] };
+  const { problems, result } = check(r, { hsmtText: hsmt2, suppliers: s2, readWeb });
+  assert.deepEqual(problems, []);
+  const v = result.configs[0].checks[0].conversions[0].value;
+  assert.ok(Math.abs(v[0] - 87.34) < 0.01 && Math.abs(v[1] - 90) < 0.01);
+});
+
+test("suppliers: unknown ids are dropped, a row must be the supplier's own and name the engine", () => {
+  const r = base();
+  r.configs[0].suppliers = [{ supplierId: "s", n: 101, line: row.line, why: "" }, { supplierId: "nobody", n: 1, line: "x" }, { supplierId: "s", n: 101, line: "| SQP600 | KTA19 |" }];
+  const { result, problems } = check(r, { hsmtText: hsmt, suppliers: sup, readWeb });
+  const s = result.configs[0].suppliers;
+  assert.equal(s.length, 2);
+  assert.ok(!s[0].unverified && s[0].hasAlternator);
+  assert.ok(s[1].unverified);
+  assert.equal(problems.length, 2);
+});
