@@ -105,6 +105,16 @@
         "Bore: 225mm"
       ],
       "file": "sources/zichai/105.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://www.zichai.net/Content/upload/pdf/20225300/6160-Diesel-Engine.pdf?rnd=989",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Diesel Engine"
+      ],
+      "file": "sources/zichai/1001.md"
     }
   ],
   "confidence": "medium",
@@ -208,6 +218,30 @@
         "Continuous power: 1213 kW",
         "Continuous speed: 1000r / min",
         "Fuel consumption rate: 195 g / KW.h"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: 6160-Diesel Engine",
+      "header": [],
+      "rows": [
+        "Diesel Engine",
+        "| Instructions for Modeling of Marine L6160 Main Diesel | Engines",
+        "| ■ Cylinder number and | steering",
+        "Left engine: the exhaust pipe is on the left",
+        "Left turn engine: turn counterclockwise",
+        "| four-stroke, direct injection, turbocharged, air | intercooled",
+        "| Cylinder bore | 160mm",
+        "| Piston stroke | 200mm",
+        "| Displacement of single cylinder | 4.02L",
+        "| Compression ratio | 14.5",
+        "| Min fuel consumption | 185g/kW·h",
+        "| Lub oil consumption | 0.5g/kW·h",
+        "| Starting method | Air start, electric start or dual air start",
+        "| Emission standard | IMO TII 、CHINA-2",
+        "| Model | kW/Ps",
+        "| ■ Dimensions and | Weight",
+        "| Model | L"
       ]
     }
   ]

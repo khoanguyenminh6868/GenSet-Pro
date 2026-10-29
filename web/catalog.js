@@ -48,7 +48,7 @@
   const N = /\d/, TXT = /[a-z一-鿿]{3}/i, BY = /\d\s*[*×xX/]\s*\d/;
   const SPECS = [
     ["tank", "genset", "Bình nhiên liệu", /fuel\s*tank|fuel\s*capacity|tank\s*capacity|油箱/i, null, N],
-    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃气消耗|tiêu hao/i, /lub|oil\s*consum|air\s*consum/i, /^[≤<~]?\s*\d/],
+    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃气消耗|tiêu hao/i, /lub|oil\s*consum|air\s*consum|fan/i, /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(%|l\/h|l\/hr|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h)?\s*$/i],
     ["noise", "genset", "Độ ồn", /noise|sound\s*(level|pressure)|噪音|噪声|độ ồn|\bdb\(?a?\)?\b/i, null, /(^|\D)([4-9]\d|1[01]\d)(?!\d)/],
     ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*w\s*[x×*]\s*h|尺寸|kích thước/i, null, BY],
     ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng/i, null, /^[≈~]?\s*\d/],
@@ -59,10 +59,10 @@
     ["compr", "engine", "Tỉ số nén", /compression/i, null, /\d\s*:\s*1|^\d+(\.\d+)?$/],
     ["asp", "engine", "Nạp khí", /aspirat|intake|进气/i, null, /turbo|natural|aftercool|intercool|增压|自然|ta\b|na\b/i],
     ["gov", "engine", "Điều tốc", /gov|调速/i, null, /electr|mechan|electron|ecu|governor|电子|机械|\bg[123]\b|class/i],
-    ["emission", "engine", "Tiêu chuẩn khí thải", /emission|排放/i, null, TXT],
-    ["coolant", "engine", "Nước làm mát", /coolant|cooling\s*water|water\s*(tank|capacity)/i, null, /^\d/],
+    ["emission", "engine", "Tiêu chuẩn khí thải", /emission|排放/i, null, /stage|tier|euro|epa|non-road|exempt|china|\bgb\b|国[一二三四五ⅡⅢⅣ]|[ⅡⅢⅣ]|\b(ii|iii|iv|v)\b/i],
+    ["coolant", "engine", "Nước làm mát", /coolant|cooling\s*water|water\s*(tank|capacity)/i, /temp|温度|pressure|压力|flow/i, /^\d/],
     ["cooling", "engine", "Làm mát", /cooling\s*(system|type|method|mode)?$|冷却方式/i, /air\s*flow/i, TXT],
-    ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油/i, /brand/i, N],
+    ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油/i, /brand|temp|温度|pressure|压力/i, N],
     ["start", "engine", "Khởi động", /start/i, null, /\d\s*v|electric|电/i],
     ["engPower", "engine", "Công suất động cơ", /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp/i, null, /^\d/],
     ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
@@ -70,14 +70,14 @@
     ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
     ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
-    ["excit", "alternator", "Kích từ / AVR", /excit|\bavr\b|励磁/i, null, TXT],
-    ["vreg", "alternator", "Ổn định điện áp", /voltage\s*(regul|stab|stead)|调压/i, null, /\d\s*[%％s]/i],
+    ["excit", "alternator", "Kích từ / AVR", /excit|\bavr\b|励磁/i, null, /brush|self|pmg|shunt|aref|separately|\bavr\b|自励|永磁|无刷|有刷/i],
+    ["vreg", "alternator", "Ổn định điện áp", /voltage\s*(regul|stab|stead)|调压/i, /time|时间/i, /\d\s*[%％]/i],
     ["freg", "genset", "Ổn định tần số", /frequency\s*(regul|wav|recover|stab)|frequencyrecovery|smooth\s*speed/i, null, /\d\s*[%％s]/i],
     ["current", "genset", "Dòng điện định mức", /rated\s*current|电流/i, null, /^\d/],
-    ["voltage", "genset", "Điện áp", /voltage|电压|điện áp/i, /dc|start|level|type|regul|stab/i, /\d{3}/],
+    ["voltage", "genset", "Điện áp", /voltage|电压|điện áp/i, /dc|start|level|type|regul|stab|sudden|warp|dip|transient|drop|偏差/i, /^\D{0,3}\d{3}/],
     ["pf", "genset", "Hệ số công suất", /power\s*factor|cos|功率因数/i, null, /0[.,]\d|^1$/],
-    ["phase", "genset", "Số pha", /phase|wire|相数/i, null, /[13]\s*-?\s*(ph|phase|相)|wire|线/i],
-    ["controller", "genset", "Bộ điều khiển", /controller|控制器/i, null, TXT],
+    ["phase", "genset", "Số pha", /phase|wire|相数/i, null, /^[13]$|[13]\s*-?\s*(ph|phase|相)|\d\s*-?\s*wire|three|single|三相|单相/i],
+    ["controller", "genset", "Bộ điều khiển", /^(controller|control\s*(module|panel)|控制器)\s*(model|type|brand)?\s*[:：]?$/i, null, /[a-z]{2,}\s?-?\d{3,}/i],
   ];
   const SPEC = Object.fromEntries(SPECS.map(([key, scope, vi, , , ok]) => [key, { scope, vi, ok }]));
   function specKey(label) {
@@ -89,7 +89,8 @@
     return null;
   }
   const UNIT_CELL = /^\(?(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|l\/h|l\/hr|mm|kg|kgs|l|rpm|r\/min|g\/kw\.?h|g\/kwh|%|a|cm|m)\)?$/i;
-  const specVal = (v) => { const s = String(v || "").trim(); return s && s.length <= 80 && !/^[-–—/]+$/.test(s) ? s : null; };
+  // A cell that is itself a label ("(瞬态电压偏差):", "Exciter Type") is not a value.
+  const specVal = (v) => { const s = String(v || "").trim(); return s && s.length <= 80 && !/^[-–—/]+$/.test(s) && !/[:：]$/.test(s) && !/^[(（][^)）]*[一-鿿]/.test(s) ? s : null; };
   // A value fits its kind when it has the expected shape and is not a model code (a code there means a shifted column).
   const specFits = (key, v) => SPEC[key].ok.test(v) && !(isCode(v) && !/^(asp|gov|emission|engType|excit|controller|cyl)$/.test(key));
 
