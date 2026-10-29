@@ -3,7 +3,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { htmlToText, tablesOf } from "./crawl-specs.mjs";
+import { htmlToText, tablesOf, linksOf } from "./crawl-specs.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
@@ -66,4 +66,11 @@ test("models across: every line of the table is kept, and the catalog reads engi
   const e = o.filter((x) => x.kind === "engine");
   assert.deepEqual(e.map((x) => [x.genset, x.model]), [["SC-44YC", "YC4D60-D21"], ["SC-55YC", "YC4D80-D34"]]);
   assert.deepEqual(e[0].power, { prime: { kVA: 50 }, standby: { kVA: 55 } });
+});
+
+test("links: unquoted and quoted addresses, a #part cut off; the language the home page was sent to is followed", () => {
+  const html = `<a href=/products/diesel-generator-set/>Gensets</a> <a href="/product/50kva.html#spec">50kVA</a>
+    <a href='/vi/products/diesel-generator/'>Diesel</a> <a href=/news/>News</a>`;
+  assert.deepEqual(linksOf(html, "https://x.com/", "x.com"), ["https://x.com/products/diesel-generator-set/", "https://x.com/product/50kva.html"]);
+  assert.ok(linksOf(html, "https://x.com/vi/", "x.com", "vi").includes("https://x.com/vi/products/diesel-generator/"));
 });

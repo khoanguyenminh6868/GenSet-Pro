@@ -169,9 +169,603 @@
         "With 13 offices, 224 service agents and 460 service outlets at abroad, we are able to provide international warranty service."
       ],
       "file": "sources/yuchai/4.md"
+    },
+    {
+      "n": 101,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-170.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | YCK05240-60 | YCK05230-60 | YCK05210-60 | YCK05190-60"
+      ],
+      "file": "sources/yuchai/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-202.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Product Series | 6J-30 | 6J-33 | 6J-52"
+      ],
+      "file": "sources/yuchai/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-207.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model Series | YC6K380N-50 | YC6K400N-50 | YC6K420N-50 | YC6K440N-50"
+      ],
+      "file": "sources/yuchai/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-164.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | YCS04160N-60 | YCS04160N-60A | YCS04140N-60 | YCS04120N-60"
+      ],
+      "file": "sources/yuchai/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-160.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | YCA07260N-60 | YCA07245N-60 | YCA07220N-60 | YCA07190N-60"
+      ],
+      "file": "sources/yuchai/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-161.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | YCK08300N-60 | YCK08280N-60 | YCK08260N-60"
+      ],
+      "file": "sources/yuchai/106.md"
+    },
+    {
+      "n": 108,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-146.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | YC6MJ365L-C20 | YC6MJ410L-C20 | YC6MJ450L-C20"
+      ],
+      "file": "sources/yuchai/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-140.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | YC6B165C | YC6B165L-C20 | YC6B150C | YC6108ZLCA | YC6108ZCA | YC6108ZC | YC6B85Z-C10 | YC6B165L-C22 | YC6108ZLCA | YC6108ZC | YC6B85Z-C12"
+      ],
+      "file": "sources/yuchai/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-156.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | YC6A200L-C20 | YC6108ZLCB | YC6A170C | YC6A190C | YC6A220C"
+      ],
+      "file": "sources/yuchai/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-137.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | YC4D55Z | YC4108ZC | YC4D75C | YC4D100Z-C20 | YC4D120Z-C20 | YC4D55Z-C12 | YC4108ZC"
+      ],
+      "file": "sources/yuchai/111.md"
+    },
+    {
+      "n": 113,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-28.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Models | YCF2450-T420 | YCF2465-T480"
+      ],
+      "file": "sources/yuchai/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-27.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Models | YCF3050-T420 | YCF3075-T480 | YCF30115-T480"
+      ],
+      "file": "sources/yuchai/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-30.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Models | YCF3675-T480 | YCF36130-T480 | YCF36150-T400"
+      ],
+      "file": "sources/yuchai/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-24.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Models | YCA05175-T480 | YCA05200-T400"
+      ],
+      "file": "sources/yuchai/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-26.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Models | YCA07175-T480 | YCA07P260-T400"
+      ],
+      "file": "sources/yuchai/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-25.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Models | YCA08320-T400 | YCA08300-T400 | YCA08240-T400"
+      ],
+      "file": "sources/yuchai/118.md"
+    },
+    {
+      "n": 119,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-33.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Models | YCK09220-T400 | YCK09300-T400 | YCK09400-T400"
+      ],
+      "file": "sources/yuchai/119.md"
+    },
+    {
+      "n": 120,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-34.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Models | YCK11350-T400 | YCK11430-T400 | YCK11480-T400"
+      ],
+      "file": "sources/yuchai/120.md"
+    },
+    {
+      "n": 121,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-31.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Models | YCK13480-T400 | YCK13530-T400 | YCK13580-T400"
+      ],
+      "file": "sources/yuchai/121.md"
+    },
+    {
+      "n": 122,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-32.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| 1 | Models | YCK16580-T400 | YCK16660-T400 | YCK16775-T300"
+      ],
+      "file": "sources/yuchai/122.md"
+    },
+    {
+      "n": 124,
+      "url": "https://en.yuchaidiesel.com/product/pro-detail-57.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | YCF3675-T480 | YCF36130-T480 | YCF36150-T400"
+      ],
+      "file": "sources/yuchai/124.md"
     }
   ],
   "confidence": "high",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | YCK05240-60 | YCK05230-60 | YCK05210-60 | YCK05190-60",
+        "| Rated power/Speed（kW/rpm） | 176/2200 | 169/2200 | 157/2200 | 140/2200",
+        "| Max Torque/Speed（N.m/rpm） | 900/1200～1600 | 840/1200～1700 | 750/1200～1700 | 700/1200～1700"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| Product Series | 6J-30 | 6J-33 | 6J-52",
+        "| Model Series | YC6J180-30 | YC6J190-30 | YC6J200-30 | YC6J220-30 | YC6J230-30 | YC6J160-33 | YC6J170-33 | YC6J180-33 | YC6J190-33 | YC6J200-33 | YC6J210-33 | YC6J220-33 | YC6J180-52 | YC6J200-52 | YC6J220-52 | YC6J245-52",
+        "| Number of Valves per Cylinder | 4 | 2 | 4",
+        "| Emissions | Euro III | Euro II | Euro Ⅴ",
+        "| Power (kw/rpm) | 132/2500 | 140/2500 | 147/2500 | 162/2500 | 170/2500 | 118/2500 | 125/2500 | 132/2500 | 140/2500 | 147/2500 | 155/2500 | 162/2500 | 132/2300 | 147/2300 | 162/2300 | 180/2300",
+        "| Torque (N.m/rpm) | 650/1200~1700 | 700/1200~1700 | 730/1200~1700 | 800/1200~1700 | 850/1200~1700 | 550/1400~1700 | 550/1400~1700 | 590/1400~1700 | 630/1400~1700 | 700/1400~1700 | 710/1400~1700 | 760/1400~1700 | 700/1200~1800 | 800/1200~1800 | 860/1200~1800 | 950/1200~1800",
+        "| Fuel System | BOSCH high pressure common rail system | In-line mechanical pump | BOSCH high pressure common rail system",
+        "| Exhaust Aftertreatment | No | No | SCR"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Model Series | YC6K380N-50 | YC6K400N-50 | YC6K420N-50 | YC6K440N-50",
+        "| Displacement (L) | 12.94",
+        "| Bore × Stroke | 129X165",
+        "| Number of Valves per Cylinder | 4",
+        "| Emissions | Euro Ⅴ"
+      ],
+      "rows": [
+        "| Power (kw/rpm) | 280/1900 | 294/1900 | 309/1900 | 324/1900",
+        "| Torque (N.m/rpm) | 1620/1000~1500 | 1700/1000~1500 | 1800/1100~1500 | 1880/1100~1500"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Model | YCS04160N-60 | YCS04160N-60A | YCS04140N-60 | YCS04120N-60",
+        "| YCS04160N-62 | YCS04160N-62A | YCS04140N-62 | YCS04120N-62",
+        "| Disp.（L） | 4.16",
+        "| Number of cylinders-Bore × Stroke（mm） | 4-105×120",
+        "| Number of valves per cylinder | 4"
+      ],
+      "rows": [
+        "| Rated power/Speed（kW/rpm） | 118/2100 | 118/2100 | 103/2100 | 88/2100",
+        "| Max Torque/Speed（N.m/rpm） | 600/1200~1600 | 540/1200~1600 | 500/1200~1600 | 400/1200~1600"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Model | YCA07260N-60 | YCA07245N-60 | YCA07220N-60 | YCA07190N-60",
+        "| YCA07260N-62 | YCA07245N-62 | YCA07220N-62 | YCA07190N-62",
+        "| Disp.（L） | 6.9",
+        "| Number of cylinders-Bore × Stroke（mm） | 6-108×125",
+        "| Number of valves per cylinder | 4"
+      ],
+      "rows": [
+        "| Rated power/Speed（kW/rpm） | 191/ 2100 | 180/2100 | 162/2100 | 140/2100",
+        "| Max Torque/Speed（N.m/rpm） | 1000/1200～1700 | 950/1200～1700 | 850/1200～1700 | 750/1200～1700"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Model | YCK08300N-60 | YCK08280N-60 | YCK08260N-60",
+        "| Disp.（L） | 7.7",
+        "| Number of cylinders-Bore × Stroke（mm） | 6-110×135",
+        "| Number of valves per cylinder | 4"
+      ],
+      "rows": [
+        "| Rated power/Speed（kW/rpm） | 221/ 2000 | 206/ 2000 | 191/ 2000",
+        "| Max Torque/Speed（N.m/rpm） | 1180/1200~1600 | 1000/1200~1600 | 1000/1200~1600"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Model | YC6MJ365L-C20 | YC6MJ410L-C20 | YC6MJ450L-C20",
+        "| Number of cylinders-Bore × Stroke（mm） | 6×131×145",
+        "| DisplacementL | 11.73",
+        "| Number of valves per cylinder | 4",
+        "| Intake way | Turbo-charged& inter-cooled"
+      ],
+      "rows": [
+        "| Continuous power /speed(kW（Ps）/r/min) | 267（365）/1500 | 300（410）/1800 | 330（450）/2100",
+        "| One-hour power/speed(kW（Ps）/r/min) | 293.7（400）/1548 | 330（450）/1858 | 363（495）/2168"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Model | YC6B165C | YC6B165L-C20 | YC6B150C | YC6108ZLCA | YC6108ZCA | YC6108ZC | YC6B85Z-C10 | YC6B165L-C22 | YC6108ZLCA | YC6108ZC | YC6B85Z-C12",
+        "| Type | Vertical, in-line, water-cooled, four-stroke | Vertical, in-line, water-cooled, four-stroke | Vertical, in-line, water-cooled, four-stroke",
+        "| Intake way | Turbo-charged& inter-cooled | Turbo charged | Turbo-charged& inter-cooled | Turbo charged"
+      ],
+      "rows": [
+        "| No. of cylinders - Bore × Stroke（mm） | 6-108×125 | 6-108×125 | 6-108×125",
+        "| Displacement(L) | 6.871 | 6.871 | 6.871",
+        "| Compression ratio | 17.5:1 | 17.5:1 | 17.5:1",
+        "| Continuous power /speed （kW（Ps）/r/min） | 120 | 120 | 110 | 90 | 103 | 80 | 63 | 120 | 90 | 80 | 63",
+        "| -165 | -165 | -150 | -125 | -140 | -110 | -85 | -165 | -125 | -110 | -85",
+        "| /2300 | /1800 | /1800 | /1500 | /2300 | /1500 | /1500 | /1500 | /1500 | /1500 | /1500",
+        "| One-hour power/speed（kW（Ps）/r/min） | 132 | 132 | 121 | 99 | 113.3 | 88 | 69.3 | 132 | 99 | 88 | 69.3",
+        "| -180 | -180 | -165 | -135 | -155 | -120 | -95 | -180 | -135 | -120 | -95",
+        "| /2374 | /1858 | /1858 | /1548 | /2374 | /1548 | /1548 | /1500 | /1500 | /1500 | /1500",
+        "| Min. specific fuel consumption （g/kW·h） | ≤198 | ≤198 | ≤198",
+        "| Specific oil consumption (g/kW·h) | ≤0.5 | ≤0.5 | ≤0.5",
+        "| Engine oil capacity(L) | 15~17 | 15~17 | 15~17",
+        "| Min.steady working speed（r/min） | ≤1035 | ≤810 | ≤810 | ≤675 | ≤1035 | ≤675 | /",
+        "| Crankshaft rotation direction (seen from power output end) | Anticlockwise | Anticlockwise | Anticlockwise",
+        "| Starting way | Electrical | Electrical | Electrical",
+        "| Net weight (kg) | 750 | 720 | 750",
+        "| Overall dimensions (LxWxH) | 1414×857×1055 | 1293×780×1198 | 1420×810×1020"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Model | YC6A200L-C20 | YC6108ZLCB | YC6A170C | YC6A190C | YC6A220C",
+        "| Type | Vertical, in-line, water-cooled, four-stroke",
+        "| Intake way | Turbo-charged& inter-cooled",
+        "| No. of cylinders - Bore × Stroke（mm） | 6-108×132",
+        "| Displacement(L) | 7.252",
+        "| Compression ratio | 17:01"
+      ],
+      "rows": [
+        "| Continuous power /speed （kW（Ps）/r/min） | 145 | 112 | 125 | 140 | 162",
+        "| -200 | -150 | -170 | -190 | -220",
+        "| /1500 | /1500 | /1500 | /1800 | /2300",
+        "| One-hour power/speed （kW（Ps）/r/min） | 159.5 | 123.2 | 137.5 | 154 | 178.2",
+        "| -220 | -170 | -185 | -210 | -240",
+        "| /1500 | /1548 | /1548 | /1858 | /2374",
+        "| Min.steady working speed（r/min） | / | ≤0.5 | ≤810 | ≤1035",
+        "| Overall dimensions (LxWxH) （mm） | 1415×910×1075 | 1415×910×1075"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Model | YC4D55Z | YC4108ZC | YC4D75C | YC4D100Z-C20 | YC4D120Z-C20 | YC4D55Z-C12 | YC4108ZC",
+        "| Type | Vertical, in-line, water-cooled, four-stroke | Vertical, in-line, water-cooled, four-stroke",
+        "| Intake way | Turbo charged | Turbo charged"
+      ],
+      "rows": [
+        "| No. of cylinders - Bore × Stroke（mm） | 4-108×115 | 4-108×115",
+        "| Displacement(L) | 4.214 | 4.214",
+        "| Compression ratio | 17:01 | 17:01",
+        "| Continuous power /speed（kW（Ps）/r/min） | 40 | 50 | 55 | 75 | 90 | 40 | 50",
+        "| -55 | -70 | -75 | -100 | -120 | -55 | -70",
+        "| /1500 | /1500 | /1800 | /2400 | /3000 | /1500 | /1500",
+        "| One-hour power/speed（kW（Ps）/r/min） | 44 | 55 | 60.5 | 82.5 | 99 | 44 | 55",
+        "| -60 | -75 | -80 | -110 | -135 | -60 | -75",
+        "| /1548 | /1548 | /1858 | /2478 | /3096 | /1500 | /1500",
+        "| Min. specific fuel consumption（g/kW·h） | ≤198 | ≤200",
+        "| Specific oil consumption(g/kW·h) | ≤0.5 | ≤0.5",
+        "| Engine oil capacity(L) | 11～13 | 11～13",
+        "| Min.steady working speed（r/min） | ≤675 | ≤675 | ≤810 | ≤1080 | ≤1350 | /",
+        "| Crankshaft rotation direction (seen from power output end) | Anticlockwise | Anticlockwise",
+        "| Starting way | Electrical | Electrical",
+        "| Net weight(kg) | 390 | 370",
+        "| Overall dimensions (LxWxH) | 1043×741×1099 | 986×730×948"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Models | YCF2450-T420 | YCF2465-T480"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke(mm) | 4-87×103 | 4-87×103",
+        "| Displacement(L) | 2.4 | 2.4",
+        "| Number of valves per cylinder | 2 | 2",
+        "| Air intake method | Nature | Turbocharged",
+        "| Rated power/speed(kW,r/min) | 36.8/2200 | 48/2200",
+        "| Maximum torque / speed(N·m,r/min) | 210/1600 | 230/1600",
+        "| Low speed torque/speed(N·m,r/min) | ≥150/800 | ≥200/1000",
+        "| Emission technology route | CR | CR+DOC+DPF+SCR",
+        "| External characteristic minimum fuel consumption(g/kW·h) | ≤215 | ≤215",
+        "| Oil change cycle | 500h | 500h"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Models | YCF3050-T420 | YCF3075-T480 | YCF30115-T480"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke(mm) | 4-96×103 | 4-96×103 | 4-96×103",
+        "| Displacement(L) | 3 | 3 | 3",
+        "| Number of valves per cylinder | 2 | 2 | 2",
+        "| Air intake method | Nature | Turbocharged | charge inter-cooling",
+        "| Rated power/speed(kW,r/min) | 36.8/2200 | 55.8/2200 | 85/2400",
+        "| Maximum torque / speed(N·m,r/min) | 210/1500 | 310/1600 | 430/1600",
+        "| Low speed torque/speed(N·m,r/min) | ≥185/1000 | ≥290/1000 | ≥320/1000",
+        "| Emission technology route | CR | CR+EGR+DOC+DPF | CR+DOC+DPF+SCR",
+        "| External characteristic minimum fuel consumption(g/kW·h) | ≤210 | ≤210 | ≤205",
+        "| Oil change cycle | 500h | 500h | 500h"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Models | YCF3675-T480 | YCF36130-T480 | YCF36150-T400"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke(mm) | 4-98×120 | 4-98×120 | 4-98×120",
+        "| Displacement(L) | 3.6 | 3.6 | 3.6",
+        "| Number of valves per cylinder | 2 | 2 | 2",
+        "| Air intake method | Turbocharged | charge inter-cooling | charge inter-cooling",
+        "| Rated power/speed(kW,r/min) | 55.8/2200 | 96/2400 | 110/2400",
+        "| Maximum torque / speed(N·m,r/min) | 330/1600 | 480/1600 | 500/1600",
+        "| Low speed torque/speed(N·m,r/min) | ≥300/1000 | ≥400/1000 | ≥400/1000",
+        "| Emission technology route | CR+EGR+DOC+DPF | CR+EGR+DOC+DPF | CR+DOC+DPF+SCR",
+        "| External characteristic minimum fuel consumption(g/kW·h) | ≤205 | ≤200 | ≤195",
+        "| Oil change cycle | 500h | 500h | 500h"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Models | YCA05175-T480 | YCA05200-T400"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke(mm) | 4-108×132 | 4-108×132",
+        "| Displacement(L) | 4.8 | 4.8",
+        "| Number of valves per cylinder | 2 | 2",
+        "| Air intake method | charge inter-cooling | charge inter-cooling",
+        "| Rated power/speed(kW,r/min) | 129/2200 | 147/2200",
+        "| Maximum torque / speed(N·m,r/min) | 700/1600 | 720/1600",
+        "| Low speed torque/speed(N·m,r/min) | ≥580/1000 | ≥550/1000",
+        "| Emission technology route | CR+EGR+DOC+DPF | CR+DOC+DPF+SCR",
+        "| External characteristic minimum fuel consumption(g/kW·h) | ≤205 | ≤200",
+        "| Oil change cycle | 500h | 500h"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Models | YCA07175-T480 | YCA07P260-T400"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke(mm) | 6-108×125 | 6-108×125",
+        "| Displacement(L) | 6.9 | 6.9",
+        "| Number of valves per cylinder | 2 | 2",
+        "| Air intake method | charge inter-cooling | charge inter-cooling",
+        "| Rated power/speed(kW,r/min) | 129/2200 | 191/2200",
+        "| Maximum torque / speed(N·m,r/min) | 750/1600 | 1080/1600",
+        "| Low speed torque/speed(N·m,r/min) | ≥550/800 | ≥780/1000",
+        "| Emission technology route | CR+DOC+DPF+SCR | CR+DOC+DPF+SCR",
+        "| External characteristic minimum fuel consumption(g/kW·h) | ≤200 | ≤198",
+        "| Oil change cycle | 500h | 500h"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Models | YCA08320-T400 | YCA08300-T400 | YCA08240-T400"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke(mm) | 6-110×132 | 6-110×132 | 6-110×132",
+        "| Displacement(L) | 7.5 | 7.5 | 7.5",
+        "| Number of valves per cylinder | 4 | 4 | 4",
+        "| Air intake method | charge inter-cooling | charge inter-cooling | charge inter-cooling",
+        "| Rated power/speed(kW,r/min) | 235/2200 | 221/2200 | 184/2200",
+        "| Maximum torque / speed(N·m,r/min) | 1180/1600 | 1200/1600 | 1080/1600",
+        "| Low speed torque/speed(N·m,r/min) | ≥1100/1000 | ≥1100/1000 | ≥960/1000",
+        "| External characteristic minimum fuel consumption | ≤200 | ≤200 | ≤200"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Models | YCK09220-T400 | YCK09300-T400 | YCK09400-T400"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke(mm) | 6-123×132 | 6-123×132 | 6-123×132",
+        "| Displacement(L) | 9.4 | 9.4 | 9.4",
+        "| Number of valves per cylinder | 4 | 4 | 4",
+        "| Air intake method | charge inter-cooling | charge inter-cooling | charge inter-cooling",
+        "| Rated power/speed(kW,r/min) | 162/2000 | 221/2200 | 295/2200",
+        "| Maximum torque / speed(N·m,r/min) | 1050/1200 | 1400/1200 | 1850/1200",
+        "| Low speed torque/speed(N·m,r/min) | ≥1000/800 | ≥1100/800 | ≥1300/800",
+        "| External characteristic minimum fuel consumption(g/kW·h) | ≤195 | ≤195 | ≤195",
+        "| Oil change cycle | 500h | 500h | 500h"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Models | YCK11350-T400 | YCK11430-T400 | YCK11480-T400"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke(mm) | 6-123×154 | 6-123×154 | 6-123×154",
+        "| Displacement(L) | 11 | 11 | 11",
+        "| Number of valves per cylinder | 4 | 4 | 4",
+        "| Air intake method | charge inter-cooling | charge inter-cooling | charge inter-cooling",
+        "| Rated power/speed(kW,r/min) | 257/1900 | 316/2100 | 353/2100",
+        "| Maximum torque / speed(N·m,r/min) | 1850/1200 | 2050/1200 | 2200/1200",
+        "| Low speed torque/speed(N·m,r/min) | ≥1300/800 | ≥1500/800 | ≥1800/800",
+        "| External characteristic minimum fuel consumption(g/kW·h) | ≤188 | ≤188 | ≤188",
+        "| Oil change cycle | 500h | 500h | 500h"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Models | YCK13480-T400 | YCK13530-T400 | YCK13580-T400"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke(mm) | 6-129×165 | 6-129×165 | 6-129×165",
+        "| Displacement(L) | 12.9 | 12.9 | 12.9",
+        "| Number of valves per cylinder | 4 | 4 | 4",
+        "| Air intake method | charge inter-cooling | charge inter-cooling | charge inter-cooling",
+        "| Rated power/speed(kW,r/min) | 353/1900 | 390/1900 | 426/1900",
+        "| Maximum torque / speed(N·m,r/min) | 2240/1200 | 2450/1200 | 2600/1200",
+        "| Low speed torque/speed(N·m,r/min) | ≥1800/800 | ≥1800/800 | ≥1800/800",
+        "| External characteristic minimum fuel consumption(g/kW·h) | ≤190 | ≤190 | ≤190",
+        "| Oil change cycle | 500h | 500h | 500h"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "Powerful Diesel Engines for Agriculture | Yuchai-Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| 1 | Models | YCK16580-T400 | YCK16660-T400 | YCK16775-T300"
+      ],
+      "rows": [
+        "| 2 | Number of cylinders, Bore×Stroke(mm) | 6-141×170 | 6-141×170 | 6-141×170",
+        "| 3 | Displacement(L) | 15.9 | 15.9 | 15.9",
+        "| 4 | Number of valves per cylinder | 4 | 4 | 4",
+        "| 5 | Air intake method | charge inter-cooling | charge inter-cooling | charge inter-cooling",
+        "| 6 | Rated power/speed(kW,r/min) | 426/1900 | 485/1900 | 570/1900",
+        "| 7 | Maximum torque / speed(N·m,r/min) | 2700/1200 | 3000/1200 | 3200/1200",
+        "| 8 | Low speed torque/speed(N·m,r/min) | ≥1800/800 | ≥1800/800 | ≥1800/800",
+        "| 10 | Emission technology route | CR+ DOC+DPF+SCR | CR+ DOC+DPF+SCR | CR",
+        "| 11 | External characteristic minimum fuel consumption(g/kW·h) | ≤190 | ≤190 | ≤190",
+        "| 12 | Oil change cycle | 500h | 500h | 500h"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "Guangxi Yuchai Machinery Co., Ltd.",
+      "header": [
+        "| Model | YCF3675-T480 | YCF36130-T480 | YCF36150-T400"
+      ],
+      "rows": [
+        "| Number of cylinders, Bore×Stroke (mm) | 4-98×120 | 4-98×120 | 4-98×120",
+        "| Displacement L | 3.6 | 3.6 | 3.6",
+        "| Number of valves per cylinder | 2 | 2 | 2",
+        "| Air inlet mode | Turbocharged | charge inter-cooling | charge inter-cooling",
+        "| Rated power / speed kW/r/min | 55.8/2200 | 96/2400 | 110/2400",
+        "| Maximum torque / speed N.m/r/min | 330/1600 | 480/1600 | 500/1600",
+        "| Low speed torque / speed | ≥300/1000 | ≥400/1000 | ≥400/1000",
+        "| Emission level | GB20891-2014 Phase IV Emission Standards | GB20891-2014 Phase IV Emission Standards | GB20891-2014 Phase IV Emission Standards",
+        "| Emission technology route | CR+EGR+DOC+DPF | CR+EGR+DOC+DPF | CR+DOC+DPF+SCR",
+        "| External characteristic minimum fuel consumption g/kW.h | ≤205 | ≤200 | ≤195",
+        "| Oil change interval | 500h | 500h | 500h"
+      ]
+    }
+  ]
 }

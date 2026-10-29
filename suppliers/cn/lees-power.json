@@ -219,7 +219,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| | | | | | |"
+        "| Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications"
       ],
       "file": "sources/lees-power/118.md"
     }
@@ -792,7 +792,6 @@
       "n": 118,
       "title": "LEES Series - Buy Diesel generator, generator set, LEES generator Product on Wuxi Lees Power Company Limited - Generator Expert!",
       "header": [
-        "| | | | | | |",
         "| Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications"
       ],
       "rows": [
