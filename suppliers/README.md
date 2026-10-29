@@ -43,6 +43,15 @@ Chỉ có nút **Gợi ý**: trang ghi `configreq/<TBMT>`, máy Windows trả l�
 ## Cào lại trên GitHub
 Workflow *Supplier spec crawl* (`.github/workflows/supplier-crawl.yml`) chạy `crawl-specs.mjs` hai lượt (đọc thường, rồi Chromium) trên máy của GitHub, `merge-specs.mjs`, `verify.mjs`, rồi commit vào nhánh nó chạy. Chạy tay (Actions → Run workflow, chọn nhánh) hoặc đẩy lên một nhánh `crawl/...`. Một hãng mà lần cào mới tìm được ít dòng hơn lần trước thì giữ nguyên kết quả cũ. Xem lại commit qua pull request trước khi gộp vào `main`; khi `suppliers/cn/` trên `main` thay đổi, workflow *Supplier publish* tự đăng lên web (cùng kiểm tra như `upload.mjs`).
 
+## Bot tìm nhà cung cấp mới
+Agent trong Antigravity (Gemini 3.8 Flash, medium) làm theo `discover-prompt.md` (hoặc gõ `/tim-nha-cung-cap`, file `.agent/workflows/`). Agent chỉ chọn trang và chép câu trích; `discover.mjs` làm phần còn lại bằng code (Khoa, 2026-10-29):
+- `seeds [--genbid]`: hãng động cơ / đầu phát có trong bảng thông số nhưng chưa có bản ghi hãng; `--genbid` ghi các yêu cầu về hãng / xuất xứ trong gói đã phân tích ra thư mục tạm (không vào repo).
+- `check <url|tên>`: trùng với bản ghi nào (cùng website, trùng chữ trong tên/thương hiệu, trùng tên tiếng Trung), đã bỏ qua trong nhật ký chưa, có phải sàn B2B / website đại lý không.
+- `save <id> <url> [--render]` (lưu như `fetch-source.mjs`, số nguồn 1–99 tự tăng), `grep <id> <regex>` (dòng nguyên văn để chép câu trích), `new <id>` (bản nháp `drafts/<id>.json` dạng ngắn của `build.mjs`).
+- `finish <id>`: kiểm bản nháp trước khi dựng — câu trích có nguyên văn (sai thì in dòng gần nhất), số công suất và năm thành lập có trong câu trích, sàn B2B / đại lý chỉ hạng C, không dùng Wikipedia / Baike / tra cứu trả phí, lời quảng cáo phải ghi "Theo hãng", `verified` cần website và dải công suất — rồi `build.mjs`, `crawl-specs.mjs` (thường, không có bảng thì `--render`), `crawl-datasheets.mjs`, `merge-specs.mjs`, `verify.mjs`.
+- `skip <url|tên> --reason R`, `status`; nhật ký ở `discover-log.json` để lượt sau không làm lại.
+- `pr`: `verify.mjs` toàn bộ, commit, push nhánh `discover/...`, mở PR. Bot không đăng thẳng lên web; Khoa gộp PR thì *Supplier publish* đăng.
+
 ## Thêm hoặc sửa một nhà cung cấp
 1. `node suppliers/fetch-source.mjs <id> <n> <url>` cho từng trang nguồn.
 2. Viết `cn/<id>.json`, chép câu trích từ file nguồn.
