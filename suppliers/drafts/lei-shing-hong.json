@@ -1,0 +1,50 @@
+{
+ "id": "lei-shing-hong",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Lei Shing Hong Machinery Limited",
+ "zh": null,
+ "brands": [],
+ "web": null,
+ "prov": null,
+ "city": null,
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Perkins distributor locator",
+   "Lei Shing Hong Machinery Limited",
+   "Distributor",
+   "Perkins Building No 432 Kuntai Road",
+   "KunShan City"
+  ]
+ },
+ "str": [
+  [
+   "Nhà phân phối (Distributor) của Perkins tại Trung Quốc, có tên trên trang tra nhà phân phối chính thức của Perkins",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "engine",
+   "s": "Perkins engines (distributor)",
+   "fuel": "diesel",
+   "eng": [
+    "Perkins"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là trang tra nhà phân phối của Perkins (tìm theo thành phố); website ghi trên trang: không có (chưa lưu, nhiều đại lý ghi website của nhà phân phối chính)"
+ ],
+ "by": "discover-bot"
+}

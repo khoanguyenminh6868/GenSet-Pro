@@ -1,0 +1,72 @@
+{
+  "id": "kangzhen-weifang",
+  "country": "CN",
+  "role": "distributor",
+  "status": "partial",
+  "names": {
+    "en": "Shandong Kangzhen Electric Power Technology Co., Ltd",
+    "zh": null,
+    "brands": []
+  },
+  "website": null,
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà phân phối ủy quyền STAMFORD tại Trung Quốc, có tên trong danh sách 'Authorised Distributors' trên website chính thức của STAMFORD",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "STAMFORD alternators (authorised distributor)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [
+        "STAMFORD"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là danh sách nhà phân phối ủy quyền trên website của STAMFORD; chưa lưu website riêng của nhà phân phối"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.stamford-avk.com/contact/authorised-distributors",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "STAMFORD | AvK Authorised Distributors",
+        "Shandong Kangzhen Electric Power Technology Co., Ltd",
+        "12-1522, No.1 Building, No. 5021 Shengli East Street",
+        "Kuiwen District",
+        "Weifang City",
+        "Shandong Province"
+      ],
+      "file": "sources/kangzhen-weifang/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

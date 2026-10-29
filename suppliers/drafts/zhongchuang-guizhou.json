@@ -1,0 +1,49 @@
+{
+ "id": "zhongchuang-guizhou",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "GuiZhou ZhongChuang Electrical Technology Co.,Ltd",
+ "zh": null,
+ "brands": [],
+ "web": null,
+ "prov": "Guizhou",
+ "city": "Guiyang",
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Perkins distributor locator",
+   "GuiZhou ZhongChuang Electrical Technology Co.,Ltd",
+   "Local Branch / Dealer",
+   "Nanming Qu, Guiyang Shi, Guizhou Sheng, China, 550000"
+  ]
+ },
+ "str": [
+  [
+   "Đại lý (Local Branch / Dealer) trong mạng Perkins, có tên trên trang tra nhà phân phối chính thức của Perkins",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "engine",
+   "s": "Perkins engines (local dealer)",
+   "fuel": "diesel",
+   "eng": [
+    "Perkins"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là trang tra nhà phân phối của Perkins (tìm theo thành phố); website ghi trên trang: http://www.simedarbyindustrial.com (chưa lưu, nhiều đại lý ghi website của nhà phân phối chính)"
+ ],
+ "by": "discover-bot"
+}

@@ -1,0 +1,49 @@
+{
+ "id": "jinghai-qixiang-hainan",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Hainan Jinghai Qixiang Technology Development Co.,LTD",
+ "zh": null,
+ "brands": [],
+ "web": null,
+ "prov": "Hainan",
+ "city": null,
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Perkins distributor locator",
+   "Hainan Jinghai Qixiang Technology Development Co.,LTD",
+   "Local Branch / Dealer",
+   "1205, building 11, Changmao Chengbang, yahai Avenue"
+  ]
+ },
+ "str": [
+  [
+   "Đại lý (Local Branch / Dealer) trong mạng Perkins, có tên trên trang tra nhà phân phối chính thức của Perkins",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "engine",
+   "s": "Perkins engines (local dealer)",
+   "fuel": "diesel",
+   "eng": [
+    "Perkins"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là trang tra nhà phân phối của Perkins (tìm theo thành phố); website ghi trên trang: http://www.simedarbyindustrial.com (chưa lưu, nhiều đại lý ghi website của nhà phân phối chính)"
+ ],
+ "by": "discover-bot"
+}
