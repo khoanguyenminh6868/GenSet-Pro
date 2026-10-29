@@ -1,0 +1,134 @@
+{
+  "id": "yto",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": "YTO (Luoyang) Engine Machinery Company",
+    "zh": null,
+    "brands": [
+      "YTO",
+      "Dongfanghong"
+    ]
+  },
+  "website": "https://www.ytocorp.com/",
+  "hq": {
+    "province": "Henan",
+    "city": "Luoyang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy dòng YTR/LR/S/H dùng động cơ do YTO (Luoyang) Engine Machinery tự sản xuất, dải 12–200 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 50 năm sản xuất động cơ diesel",
+      "src": [
+        3
+      ]
+    },
+    {
+      "text": "Tập đoàn YTO (Lạc Dương, từ 1955); công ty YTO Co., Ltd. niêm yết ở Hồng Kông (1997) và Thượng Hải (2012)",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "YTR/LR/S/H series diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "YTO"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 12,
+        "max": 200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [
+        "Euro 5"
+      ],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Diesel Engine",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không thấy năm thành lập riêng của YTO (Luoyang) Engine Machinery Company (1955 là năm của tập đoàn YTO)",
+    "Không thấy tên tiếng Trung trên các trang đã lưu",
+    "Chứng chỉ ISO 9001/14001 trên trang giới thiệu là của YTO Co., Ltd. (máy nông nghiệp), không ghi riêng cho công ty động cơ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.ytocorp.com/4-2-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "YTO has developed YTR/LR/S/H series diesel generator sets (genset) made up of the diesel engines independently manufactured by YTO (Luoyang) Engine Machinery Company.",
+        "they can provide power ranging from 12 kW to 200 kW",
+        "they meet the Euro 5 emission standard and E-mark authentication standard"
+      ],
+      "file": "sources/yto/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.ytocorp.com/about.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "1955 Founded in Luoyang, YTO is the first tractor manufacturer in new China",
+        "It got listed on the Hong Kong Stock Exchange on June 23, 1997 and began to issue H shares. On August 8, 2012, its shares started to be traded on the Shanghai Stock Exchange."
+      ],
+      "file": "sources/yto/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.ytocorp.com/4-engine.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "As a diesel engine manufacturer with over 50 years of experience, we at YTO can provide customers with a wide range of diesel engines."
+      ],
+      "file": "sources/yto/3.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

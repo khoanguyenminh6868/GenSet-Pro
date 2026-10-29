@@ -1,0 +1,21 @@
+{
+  "id": "shanghai-mhi-engine", "country": "CN", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": "Shanghai MHI Engine Co., Ltd.", "zh": null, "brands": ["Mitsubishi", "SME"],
+  "web": null, "prov": "Shanghai", "city": "Shanghai", "founded": 2013, "fsrc": [1], "related": ["sdec"],
+  "src": {
+    "1": ["A", "Shanghai MHI Engine Co., Ltd. (SME), a joint venture of Shanghai New Power Automotive Technology Company Ltd. (SNAT) and Mitsubishi Heavy Industries Engine & Turbocharger, Ltd. (MHIET)", "SME was founded in 2013 as a joint venture of MHIET and SNAT", "SME manufactures industrial diesel engines ranging between 500 and 1,800kW for emergency generator sets and others", "reached cumulative sales of 2,000 units in 2022", "SME office building in Yangpu District, Shanghai"],
+    "2": ["A", "The S16R2-PTAW-C engine newly added to SME’s lineup delivers an output of 2,167kW (mechanical), topping the previously available eight models which have featured outputs in the 635kW to 1,895kW range.", "Engines manufactured by SME will be sold to genset manufacturers."],
+    "3": ["A", "The model first to go into mass production at Shanghai MHI Engine is the \"S12R-PTA-C,\" a diesel engine featuring an output of 1,190kW at 1,500 revolutions per minute (rpm) for use in power generation systems."]
+  },
+  "str": [
+    ["Liên doanh của Mitsubishi Heavy Industries Engine & Turbocharger (MHIET) tại Thượng Hải, sản xuất động cơ diesel theo license MHIET cho tổ máy phát dự phòng, 500–1.800 kW", 1],
+    ["Bán động cơ cho các hãng lắp tổ máy; đạt 2.000 động cơ cộng dồn năm 2022", 1, 2],
+    ["Dòng SR: S12R-PTA-C 1.190 kW ở 1.500 rpm; S16R2-PTAW-C 2.167 kW (cơ)", 2, 3]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "engine", "s": "SR series diesel engines for power generation", "fuel": "diesel", "models": ["S12R-PTA-C", "S16R2-PTAW-C"], "p": [500, 1800, "kW", "unspecified", 1], "src": [1, 2, 3] }
+  ],
+  "miss": ["Không thấy website riêng của SME; nguồn là thông cáo trên mhi.com", "Đối tác liên doanh ghi khác nhau theo thời gian: SDEC (thông cáo 2013, 2019), SNAT thuộc SAIC Motor (thông cáo 2023)", "Không thấy tên tiếng Trung trên các trang đã lưu"],
+  "by": "discover-bot"
+}

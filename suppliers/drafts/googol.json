@@ -1,0 +1,25 @@
+{
+  "id": "googol", "country": "CN", "role": "engine_maker", "status": "verified", "conf": "medium",
+  "en": "Chongqing Googol Engine-Tech Co., Ltd.", "zh": null, "brands": ["Googol", "Pangu"],
+  "web": "http://www.googol-power.com/en/", "prov": "Chongqing", "city": "Chongqing", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright © 2026 Chongqing Googol Engine-Tech. Co.,Ltd.", "A: No. 333, Fenglong Road, Yongchuan District, Chongqing, China"],
+    "2": ["A", "This results in standby output power ranging from 490 to 3600 kW at 1500 rpm.", "with cylinder counts ranging from 6 to 20", "has passed the ISO9001-2015 quality management system certification", "In 2006, we made a strategic investment and established a manufacturing base in Yongchuan, Chongqing, formerly known as “Chongqing Cork Engine Technology Co., Ltd.” Due to the development needs of the company, it was renamed “Chongqing Googol Engine-Tech Co.,Ltd.”in 2021.", "The company has obtained 14 invention patents"],
+    "3": ["A", "（LTP：440kW-3300kw）"],
+    "4": ["A", "Googol Power gas genset with COP power coverage ranging from 280kW to 2000kW"]
+  },
+  "str": [
+    ["Động cơ diesel 6–20 xi lanh, công suất dự phòng 490–3600 kW ở 1500 rpm", 2],
+    ["Có tổ máy khí, công suất liên tục (COP) 280–2000 kW", 4],
+    ["Nhà máy ở Vĩnh Xuyên, Trùng Khánh từ 2006 (tên cũ Chongqing Cork Engine Technology), đổi tên thành Googol Engine-Tech năm 2021", 2],
+    ["Theo hãng: có 14 bằng sáng chế", 2]
+  ],
+  "cert": [["ISO9001", 2]],
+  "lines": [
+    { "k": "engine", "s": "Diesel engine (P-Series, Q-Series)", "fuel": "diesel", "p": [490, 3600, "kW", "standby", 2], "src": [2] },
+    { "k": "genset", "s": "Diesel genset (LTP)", "fuel": "diesel", "eng": ["Googol"], "p": [440, 3300, "kW", "unspecified", 3], "src": [3] },
+    { "k": "genset", "s": "Gas genset", "fuel": "gas", "eng": ["Googol"], "p": [280, 2000, "kW", "continuous", 4], "src": [4] }
+  ],
+  "miss": ["Không thấy tên tiếng Trung trên các trang tiếng Anh đã lưu", "Năm thành lập pháp nhân không ghi rõ (2006 là năm lập nhà máy, 2021 đổi tên)"],
+  "by": "discover-bot"
+}

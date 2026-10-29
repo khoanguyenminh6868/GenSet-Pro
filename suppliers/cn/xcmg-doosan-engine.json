@@ -1,0 +1,78 @@
+{
+  "id": "xcmg-doosan-engine",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Xuzhou XCMG Doosan Engine",
+    "zh": null,
+    "brands": [
+      "Doosan"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Xuzhou"
+  },
+  "founded": 2009,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Liên doanh 50-50 Doosan Infracore – XCMG ở Từ Châu, sản xuất động cơ diesel cho máy xây dựng, xe tải nặng và máy phát điện",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo kế hoạch công bố: động cơ 6 lít / 8 lít, công suất 100.000 động cơ/năm vào 2018",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "6-liter/8-liter diesel engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn duy nhất là thông cáo khởi công của Doosan Infracore (hd-ce.com); không thấy website riêng, tình trạng hiện tại và dải công suất",
+    "Doosan Infracore nay thuộc HD Hyundai; chưa có nguồn chính hãng về hiện trạng liên doanh"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.hd-ce.com/en/company/media/news_prev-view/7052?page=51",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "A 50-50 joint venture between Doosan Infracore and the XCMG Group of China engaged in the production and sales of diesel engines for construction machinery, heavy duty trucks and power generators, Xuzhou Xuzhou XCMG Doosan Engine was established in September 2009",
+        "The 198,000 ㎡-sized factory will start manufacturing 6-liter/8-liter diesel engines for construction machinery from July 2011 and for other vehicles from 2013. By 2018, it will have an annual production capacity of 100,000 units."
+      ],
+      "file": "sources/xcmg-doosan-engine/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}
