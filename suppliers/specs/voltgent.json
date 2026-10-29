@@ -1,6 +1,55 @@
 [
  {
   "n": 101,
+  "url": "https://www.voltgent.com/diesel-gensets/fg-wilson-series.html",
+  "title": "Diesel Backup Power Generator",
+  "header": [
+   "| Model | Prime Power (Kva) | Prime Power (kWe) | Standby Power (kVA) | Standby Power (kWe) | Engine Model | Alternator Model | Control Panel"
+  ],
+  "rows": [
+   "| P9.5-4 | 8.5 | 6.8 | 9.5 | 7.6 | 403D-11G | FGL10020 | FG100",
+   "| P13.5-6 | 12.5 | 10 | 13.5 | 10.8 | 403D-15G | FGL10020 | FG100",
+   "| P18-6 | 16.5 | 13.2 | 18 | 14.4 | 404D-22G1 | FGL10040 | FG100",
+   "| P22-6 | 20 | 16 | 22 | 17.6 | 404D-22G | FGL10060 | FG100",
+   "| P33-3 | 30 | 24 | 33 | 26.4 | 1103A-33G1 | FGL20030 | FG100",
+   "| P50-3 | 45 | 36 | 50 | 40 | 1103A-33TG1 | FGL20060 | FG100",
+   "| P55-3 | 50 | 40 | 55 | 44 | 1103A-33TG2 | FGL20060 | FG100",
+   "| P65-5 | 60 | 48 | 65 | 52 | 1103A-33TG2 | FGL20070 | FG100",
+   "| P88-3 | 80 | 64 | 88 | 70.4 | 1104A-44TG2 | FGL20080 | FG100",
+   "| P110-3 | 100 | 80 | 110 | 88 | 1104C-44TAG2 | FGL30020 | FG100",
+   "| P150-5 | 135 | 108 | 150 | 120 | 1106A-70TG1 | FGL30040 | FG100",
+   "| P165-5 | 150 | 120 | 165 | 132 | 1106A-70TAG2 | FGL30080 | FG100",
+   "| P200-3 | 180 | 144 | 200 | 160 | 1106A-70TAG3 | FGL30100 | FG100",
+   "| P220-3 | 200 | 160 | 220 | 176 | 1106A-70TAG4 | FGL30120 | FG100",
+   "| P250-5 | 230 | 184 | 250 | 200 | 1506A-E88TAG2 | LL5114H | DSE7410",
+   "| P275-5 | 250 | 200 | 275 | 220 | 1506A-E88TAG3 | LL5114H | DSE7410",
+   "| P300-5 | 275 | 220 | 300 | 240 | 1506A-E88TAG4 | FG26A230 | DSE7410",
+   "| P330-5 | 300 | 240 | 330 | 264 | 15606A-E88AG5 | FG26A250 | DSE7410",
+   "| P400-3 | 350 | 280 | 400 | 320 | 2206A-E13TAG2 | FG29A280 | FG100",
+   "| P450-3 | 400 | 320 | 450 | 360 | 2206A-E13TAG3 | FG29A320 | FG100",
+   "| P500-3 | 455 | 364 | 500 | 400 | 2506A-E15TAG1 | FG29A360 | FG100",
+   "| P550-3 | 500 | 400 | 550 | 440 | 2506A-E15TAG2 | FG29A400 | FG100",
+   "| P605-3 | 550 | 440 | 605 | 484 | 2806A-E18TAG1 | FG33A450 | FG100",
+   "| P660-3 | 600 | 480 | 660 | 528 | 2806A-E18TAG1A | FG33A500 | FG100",
+   "| P715-3 | 650 | 520 | 715 | 572 | 2806A-E18TAG2 | FG33A560 | FG100",
+   "| P780-1 | 706 | 564.8 | 780 | 624 | 2806A-E18TTAG4 | LL7224J | FG100",
+   "| P850-1 | 770 | 616 | 850 | 680 | 2806A-E18TTAG5 | LL7224L | FG100",
+   "| P900-1 | 800 | 640 | 900 | 720 | 4006-23TAG3A | FGL70030 | DSE7420",
+   "| P1000-1 | 910 | 728 | 1000 | 800 | 4008TAG1A | FGL70040 | DSE7420",
+   "| P1100-1 | 1000 | 800 | 1100 | 880 | 4008TAG2A | FGL70050 | DSE7420",
+   "| P1250-1 | 1125 | 900 | 1250 | 1000 | 4008-30TAG3 | LL8224H | DSE7420",
+   "| P1375-1 | 1250 | 1000 | 1375 | 1100 | 4012-46TWG2A | LL8224H | DSE7420",
+   "| P1500-1 | 1350 | 1080 | 1500 | 1200 | 4012-46TWG3A | LL8224L | DSE7420",
+   "| P1650-1 | 1500 | 1200 | 1650 | 1320 | 4012-46TAG2A | LL8224N | DSE7420",
+   "| P1875-1 | 1700 | 1360 | 1875 | 1500 | 4012-46TAG3A | LL9324F | DSE7420",
+   "| P2000-3 | 1850 | 1480 | 2000 | 1600 | 4016-61TRG1 | LL9324F | DSE7420",
+   "| P2250-3 | 2000 | 1600 | 2250 | 1800 | 4016-61TRG2 | LL9324H | DSE7420",
+   "| P2500-3 | 2250 | 1800 | 2500 | 2000 | 4016-61TRG3 | LL9324P | DSE7420",
+   "| P2500-1P | 2500 | 2000 | - | - | 4016-61TRG3X | LL9324R | DSE7420"
+  ]
+ },
+ {
+  "n": 102,
   "url": "https://www.voltgent.com/diesel-gensets/clearAir-series.html",
   "title": "Low Emission Diesel Generator Sets | Stage V & Tier 4 | Voltgent",
   "header": [
@@ -107,6 +156,7 @@
    "| VSC2000-5-S3 | 2000 | 1600 | 1875 | 1500 | SDEC | 12KTA58-G33 | [EN] [RU] [ES] [PT]",
    "| VSC2250-5-S3 | 2250 | 1800 | 2000 | 1600 | SDEC | 12KTA58-G32 | [EN] [RU] [ES] [PT]",
    "| VSC2500-5-S3 | 2500 | 2000 | 2250 | 1800 | SDEC | 12KTA58-G31 | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VR9-5-S5 | 9 | 7 | 9 | 7 | RAYWIN | 3D11G3/A | [EN] [RU] [ES] [PT]",
    "| VR15-5-S5 | 15 | 12 | 15 | 12 | RAYWIN | 3M18G0/5 | [EN] [RU] [ES] [PT]",
    "| VR20-5-S5 | 20 | 16 | 20 | 16 | RAYWIN | 3M18TG7/5 | [EN] [RU] [ES] [PT]",
@@ -158,6 +208,7 @@
    "| VS500-5-S5 | 500 | 400 | 450 | 360 | SCANIA | DC13 320A 02-63 | [EN] [RU] [ES] [PT]",
    "| VS550-5-S5 | 550 | 440 | 500 | 400 | SCANIA | DC13 505A | [EN]",
    "| VS600-5-S5 | 600 | 480 | 550 | 440 | SCANIA | DC16 320A 02-63 | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VYM16-6 | 16 | 13 | 14 | 11 | Yanmar | 3TNV88-GGHWC |",
    "| VYM22-6 | 22 | 18 | 20 | 16 | Raywin | 4TNV88-GGECC |",
    "| VYM27.5-6 | 27.5 | 22 | 25 | 20 | Raywin | 4TNV84T-GGFC |",
@@ -167,7 +218,7 @@
   ]
  },
  {
-  "n": 102,
+  "n": 103,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-cummins.html",
   "title": "Diesel Backup Power Generators Powered by Cummins | Reliable, Efficient & Durable Solutions",
   "header": [
@@ -208,6 +259,7 @@
    "| VC1760-5 | 1760 | 1408 | 1625 | 1300 | Cummins | QSK38-G32 | [EN] [RU] [ES] [PT]",
    "| VC1875-5 | 1875 | 1500 | 1675 | 1340 | Cummins | KTA50-G15A | [EN] [RU] [ES] [PT]",
    "| VC2000-5 | 2000 | 1600 | 1875 | 1500 | Cummins | KTA50-G16A | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VC35-6 | 35 | 28 | 31 | 25 | Cummins | 4B3.9-G12 | [EN] [RU] [ES] [PT]",
    "| VC55-6 | 55 | 44 | 50 | 40 | Cummins | 4BT3.9-G2 | [EN] [RU] [ES] [PT]",
    "| VC66-6 | 66 | 53 | 60 | 48 | Cummins | 4BTA3.9-G2 | [EN] [RU] [ES] [PT]",
@@ -248,7 +300,7 @@
   ]
  },
  {
-  "n": 103,
+  "n": 104,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-perkins.html",
   "title": "Perkins Diesel Generator Sets 10–2500 kVA | Voltgent",
   "header": [
@@ -290,6 +342,7 @@
    "| VP2030-5 | 2030 | 1624 | 1845 | 1476 | Perkins | 4016TAG1A | [EN] [RU] [ES] [PT]",
    "| VP2200-5 | 2200 | 1808 | 2000 | 1640 | Perkins | 4016TAG2A | [EN] [RU] [ES] [PT]",
    "| VP2500-5 | 2500 | 2000 | 2250 | 1800 | Perkins | 4016-61TRG3 | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VP12-6 | 12 | 10 | 11 | 9 | Perkins | 403D-11G | [EN] [RU] [ES] [PT]",
    "| VP17-6 | 17 | 14 | 15 | 12 | Perkins | 403D-15G | [EN] [RU] [ES] [PT]",
    "| VP20-6 | 20 | 16 | 18 | 14 | Perkins | 403A-15G2 | [EN] [RU] [ES] [PT]",
@@ -321,7 +374,7 @@
   ]
  },
  {
-  "n": 104,
+  "n": 105,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-mitsubishi.html",
   "title": "Mitsubishi Diesel Generator",
   "header": [
@@ -339,7 +392,7 @@
   ]
  },
  {
-  "n": 105,
+  "n": 106,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-mtu.html",
   "title": "Diesel Power Generation Systems Powered by MTU ：Complete Energy Solutions for Your Business",
   "header": [
@@ -364,6 +417,7 @@
    "| VM3250-5C | 3250 | 2600 | 3000 | 2400 | MTU | 20V4000G63L | [EN] [RU] [ES] [PT]",
    "| VM3250-5D | 3250 | 2600 | 3000 | 2400 | MTU | 20V4000G34F | [EN] [RU] [ES] [PT]",
    "| VM3575-5D | 3575 | 2860 | 3250 | 2600 | MTU | 20V4000G44F | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VM988-6 | 987.5 | 790 | 900 | 720 | MTU | 12V2000G85 | [EN] [RU] [ES] [PT]",
    "| VM1125-6 | 1125 | 900 | 1031.25 | 825 | MTU | 16V2000G45 | [EN] [RU] [ES] [PT]",
    "| VM1250-6 | 1250 | 1000 | 1137.5 | 910 | MTU | 16V2000G85 | [EN] [RU] [ES] [PT]",
@@ -385,7 +439,7 @@
   ]
  },
  {
-  "n": 106,
+  "n": 107,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-scania-diesel-gensets.html",
   "title": "Scania Diesel Generator",
   "header": [
@@ -412,6 +466,7 @@
    "| VS550-5 | 550 | 440 | 500 | 400 | Scania | DC13 507A 500 | [EN] [RU] [ES] [PT]",
    "| VS600-5 | 600 | 480 | 550 | 440 | Scania | DC13 507A 550 | [EN] [RU] [ES] [PT]",
    "| VS660-5 | 660 | 528 | 600 | 480 | Scania | DC13 507A 600 | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VS313-6 | 313 | 250 | 275 | 220 | Scania | DC09 072A 02-11 | [EN] [RU] [ES] [PT]",
    "| VS344-6 | 344 | 275 | 313 | 250 | Scania | DC09 072A 02-12 | [EN] [RU] [ES] [PT]",
    "| VS360-6 | 360 | 288 | 330 | 264 | Scania | DC09 072A 02-13 | [EN] [RU] [ES] [PT]",
@@ -427,7 +482,7 @@
   ]
  },
  {
-  "n": 107,
+  "n": 108,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-fpt.html",
   "title": "FPT Diesel Generator: Efficient and Reliable Power for Every Application",
   "header": [
@@ -451,6 +506,7 @@
    "| VFP500-5 | 500 | 396 | 450 | 360 | FPT | CR13TE6W.S550 | [EN] [RU] [ES] [PT]",
    "| VFP550-5 | 550 | 440 | 500 | 400 | FPT | CR13TE7W.S550 | [EN] [RU] [ES] [PT]",
    "| VFP660-5 | 660 | 528 | 600 | 480 | FPT | CR16TE1W.S550 | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VFP28-6 | 28 | 22 | 25 | 20 | FPT | R24MANS01.23A02 | [EN] [RU] [ES] [PT]",
    "| VFP36-6 | 36 | 28 | 33 | 26 | FPT | R24MSNS01.31A02 | [EN] [RU] [ES] [PT]",
    "| VFP42-6 | 42 | 33 | 38 | 30 | FPT | R24MSNS01.40A02 | [EN] [RU] [ES] [PT]",
@@ -472,7 +528,7 @@
   ]
  },
  {
-  "n": 108,
+  "n": 109,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-deutz.html",
   "title": "Deutz Diesel Generator",
   "header": [
@@ -499,6 +555,7 @@
    "| VDE400-5 | 400 | 320 | 375 | 300 | Deutz | TCD12.1 G2 | [EN] [RU] [ES] [PT]",
    "| VDE500-5 | 500 | 400 | 450 | 360 | Deutz | TCD13.0 G1 | [EN] [RU] [ES] [PT]",
    "| VDE550-5 | 550 | 440 | 500 | 400 | Deutz | TCD13.0 G2 | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VDE28-6 | 28 | 22.4 | 25 | 20 | Deutz | BFM3 G3 | [EN] [RU] [ES] [PT]",
    "| VDE32-6 | 32 | 25 | 30 | 24 | Deutz | BFM3 G4 | [EN] [RU] [ES] [PT]",
    "| VDE38-6 | 38 | 30.4 | 35 | 28 | Deutz | BFM3T G1 | [EN] [RU] [ES] [PT]",
@@ -522,7 +579,7 @@
   ]
  },
  {
-  "n": 109,
+  "n": 110,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-baudouin.html",
   "title": "Large Diesel Generator",
   "header": [
@@ -572,6 +629,7 @@
    "| VB3313-5 | 3313 | 2650 | 3000 | 2400 | Baudouin | 16M55G3300/5 | [EN] [RU] [ES] [PT]",
    "| VB3750-5 | 3750 | 3000 | 3250 | 2600 | Baudouin | 16M55G3750/5 | [EN] [RU] [ES] [PT]",
    "| VB4125-5 | 4125 | 3300 | 3750 | 3000 | Baudouin | 16M55G4000/5 | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VB25-6 | 25 | 20 | 23 | 18 | Baudouin | 4M06G20/6 | [EN] [RU] [ES] [PT]",
    "| VB32-6 | 32 | 25 | 29 | 23 | Baudouin | 4M06G25/6 | [EN] [RU] [ES] [PT]",
    "| VB42-6 | 42 | 33 | 38 | 30 | Baudouin | 4M06G33/6 | [EN] [RU] [ES] [PT]",
@@ -615,7 +673,7 @@
   ]
  },
  {
-  "n": 110,
+  "n": 111,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-sdec.html",
   "title": "Reliable SDEC Diesel Generators for Industrial and Commercial Use",
   "header": [
@@ -668,6 +726,7 @@
    "| VSC2000-5 | 2000 | 1600 | 1875 | 1500 | SDEC | 12KTA58-G33 | [EN] [RU] [ES] [PT]",
    "| VSC2250-5 | 2250 | 1800 | 2000 | 1600 | SDEC | 12KTA58-G32 | [EN] [RU] [ES] [PT]",
    "| VSC2500-5 | 2500 | 2000 | 2250 | 1800 | SDEC | 12KTA58-G31 | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VSC22-6 | 22 | 17.6 | 20 | 16 | SDEC | 4Z2.3-G12 | [EN] [RU] [ES] [PT]",
    "| VSC22-6E | 22 | 17.6 | 20 | 16 | SDEC | 4Z2.3-G21 | [EN] [RU] [ES] [PT]",
    "| VSC28-6 | 27.5 | 22 | 25 | 20 | SDEC | 4Z2.7-G12 | [EN] [RU] [ES] [PT]",
@@ -706,7 +765,7 @@
   ]
  },
  {
-  "n": 111,
+  "n": 112,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-yanmar-diesel-gensets.html",
   "title": "Silent Genset 10 kVA - Yanmar Powered Diesel Generator",
   "header": [
@@ -722,6 +781,7 @@
    "| VYM45-5 | 45 | 36 | 40 | 32 | Yanmar | 4TNV98T-GGE | [EN] [RU] [ES] [PT]",
    "| VYM55-5 | 55 | 44 | 50 | 40 | Yanmar | 4TNV106-GGE |",
    "| VYM66-5 | 66 | 52 | 60 | 48 | Yanmar | 4TNV106T-GGE |",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VYM15.5-6 | 15.5 | 12.5 | 14 | 11.5 | Yanmar | 3TNV88-GGE | [EN] [RU] [ES] [PT]",
    "| VYM22-6 | 22 | 17.5 | 20 | 16 | Yanmar | 4TNV88-GGE | [EN] [RU] [ES] [PT]",
    "| VYM27.5-6 | 27.5 | 22 | 25 | 20 | Yanmar | 4TNV84T-GGE | [EN] [RU] [ES] [PT]",
@@ -730,7 +790,7 @@
   ]
  },
  {
-  "n": 112,
+  "n": 113,
   "url": "https://www.voltgent.com/diesel-gensets/powered-by-fawded.html",
   "title": "Fawde Diesel Generator",
   "header": [
@@ -747,6 +807,7 @@
    "| VF44-5 | 44 | 35.2 | 40 | 32 | FAWDE | 4DX21-53D | [EN] [RU] [ES] [PT]",
    "| VF55-5 | 55 | 44 | 50 | 40 | FAWDE | 4DX22-65D | [EN] [RU] [ES] [PT]",
    "| VF66-5 | 66 | 52.8 | 60 | 48 | FAWDE | 4DX23-78D | [EN] [RU] [ES] [PT]",
+   "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
    "| VF22-6 | 22 | 18 | 20 | 16 | FAWDE | 4DW81-28D | [EN] [RU] [ES] [PT]",
    "| VF22-6E | 22 | 18 | 20 | 16 | FAWDE | 4DW81-28D | [EN] [RU] [ES] [PT]",
    "| VF33-6 | 33 | 26 | 30 | 24 | FAWDE | 4DW91-38D | [EN] [RU] [ES] [PT]",

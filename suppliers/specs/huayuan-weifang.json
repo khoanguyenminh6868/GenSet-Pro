@@ -1,1 +1,281 @@
-[]
+[
+ {
+  "n": 101,
+  "url": "http://en.wf-hy.com/product/Generator/Pump/0830/157.html",
+  "title": "Container generating set - Trailer Generator set, Water Pump Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 规格 | 机组功率 KW | 电站尺寸 MM"
+  ],
+  "rows": [
+   "| 20GP | 68 - 640 | 6038 * 2438 * 2591",
+   "| 40GP | 260 - 640 | 12192 * 2438 * 2591",
+   "| 40HQ | 260 - 1600 | 12192 * 2438 * 2896"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "http://en.wf-hy.com/product/Generator/Perkins/0830/156.html",
+  "title": "Standby generator set - Perkins series Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 珀金斯型号 | 外形尺寸(MM) | 重量（KGS）"
+  ],
+  "rows": [
+   "| HY 22P | 24 | 27 | 404D22TG | 1680 * 730 * 1100 | 715",
+   "| HY 24P | 28 | 30 | 404D-22TG | 1800 * 730 * 1100 | 715",
+   "| HY 36P | 41 | 46 | 1103A-33G | 1800 * 730 * 1100 | 880",
+   "| HY 48P | 54 | 59 | 1103A-33TG2 | 1900 * 740 * 1200 | 880",
+   "| HY 52P | 58 | 64 | 1104A-44TG2 | 1900 * 740 * 1200 | 900",
+   "| HY 64P | 72 | 79 | 1104A-44TAG1 | 1850 * 830 * 1350 | 1100",
+   "| HY 72P | 83 | 92 | 1006TG1A | 2330 * 800 * 1200 | 1120",
+   "| HY 80P | 90 | 100 | 1104C-44TAG2 | 2330 * 800 * 1200 | 1120",
+   "| HY 108P | 121 | 134 | 1006TAG | 2400 * 880 * 1360 | 1180",
+   "| HY 120P | 129 | 143 | 1006TAG2 | 2400 * 800 * 1350 | 1400",
+   "| HY 144P | 158 | 176 | 1106C-E66TAG4 | 2500 * 900 * 1400 | 1700",
+   "| HY 160P | 174 | 191 | 1106A-70TAG4 | 2600 * 960 * 1500 | 1750",
+   "| HY 180P | 198 | 217 | 1306C-E87TAG4 | 2600 * 960 * 1500 | 1750",
+   "| HY 200P | 217 | 239 | 1306C-E87TAG6 | 2560 * 950 * 1450 | 2580",
+   "| HY 280P | 305 | 349 | 2206A-E13TAG2 | 3000 * 1700 * 1750 | 3050",
+   "| HY 320P | 349 | 392 | 2206A-E13TAG3 | 3300 * 1150 * 1800 | 3150",
+   "| HY 364P | 396 | 434 | 2506A-E15TAG1 | 3050 * 1150 * 1800 | 3150",
+   "| HY 400P | 435 | 478 | 2506A-E15TAG2 | 3480 * 1200 * 2000 | 3910",
+   "| HY 480P | 522 | 574 | 2806A-E18TAG1A | 3550 * 1580 * 2100 | 4430",
+   "| HY 520P | 565 | 609 | 2806A-E18TAG2 | 3550 * 1580 * 2100 | 4430",
+   "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 康明斯型号 | 外形尺寸(MM) | 重量（KGS）",
+   "| HY 20C | 20 | 22 | 4B3.9-G2 | 1680 * 730 * 1100 | 715",
+   "| HY 30C | 30 | 33 | 4BT3.9-G2 | 1800 * 730 * 1100 | 880",
+   "| HY 50C | 50 | 55 | 4BTA3.9-G2 | 1900 * 740 * 1200 | 900",
+   "| HY 80C | 80 | 90 | 6BT5.9-G2 | 2330 * 800 * 1200 | 1130",
+   "| HY 100C | 100 | 110 | 6BTA5.9-G2 | 2200 * 800 * 1350 | 1188",
+   "| HY 110C | 110 | 121 | 6BTAA5.9-G2 | 2400 * 880 * 1360 | 1188",
+   "| HY 120C | 120 | 132 | 6CTA8.3-G2 | 2400 * 800 * 1350 | 1485",
+   "| HY 150C | 150 | 163 | 6CTA8.3-G2 | 2500 * 900 * 1400 | 1700",
+   "| HY 160C | 160 | 180 | 6CTAA8.3-G2 | 2600 * 960 * 1500 | 1790",
+   "| HY 200C | 200 | 220 | 6LTAA8.9-G2 | 2560 * 950 * 1450 | 2580",
+   "| HY 250C | 250 | 275 | MTAA11-G3 | 3000 * 1050 * 1800 | 2860",
+   "| HY 280C | 280 | 308 | NTA855-G2A | 3000 * 1700 * 1750 | 3050",
+   "| HY 300C | 300 | 330 | NTAA855-G7A | 3150 * 1050 * 1750 | 3150",
+   "| HY 330C | 330 | 360 | NTAA855-G7A | 3300 * 1150 * 1800 | 3150",
+   "| HY 400C | 400 | 440 | KTA19-G4 | 3480 * 1200 * 2000 | 3910",
+   "| HY 500C | 500 | 550 | KTAA19-G6A | 3550 * 1580 * 2100 | 4430",
+   "| HY 600C | 600 | 660 | KTA38-G2 | 3600 * 1650 * 2240 | 6500",
+   "| HY 640C | 640 | 704 | KTA38-G2A | 3600 * 1600 * 2500 | 8600",
+   "| HY 720C | 720 | 792 | KTA38-G2A | 3600 * 1600 * 2500 | 8600",
+   "| HY 800C | 800 | 880 | KTA38-G5 | 4850 * 1800 * 2350 | 10450"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "http://en.wf-hy.com/product/Generator/Standard/0830/153.html",
+  "title": "Cummins marine generator set - Standard Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组型号 | 机组额定输出 | 柴油机 | 最大耗油量 | 外型尺寸及重量",
+   "| 功率(KW) | 型号 | 额定功率(KW) | 柴油 | 长 x 宽 x 高 (MM) | 净重 (KGS)"
+  ],
+  "rows": [
+   "| HY30MC | 30 | 4BTA3.9-G2M | 47 | 225 | 1820x600x960 | 960",
+   "| HY40MC | 40 | 4BTA3.9-G2M | 47 | 225 | 1820x600x960 | 1160",
+   "| HY50MC | 50 | 6BT5.9-G2M | 80 | 225 | 2380x600x960 | 1460",
+   "| HY64MC | 64 | 6BTS.9-G2M | 80 | 210 | 2380x720x1060 | 1650",
+   "| HY75MC | 75 | 6BTAA5.9-G2M | 115 | 210 | 2460x720x1160 | 1800",
+   "| HY90MC | 90 | BTAA5.9-G2M6 | 115 | 210 | 2460x720x1160 | 1860",
+   "| HY120MC | 120 | 6CTA8.3-G2M | 155 | 210 | 2460x720x1160 | 2160",
+   "| HY150MC | 150 | NTA885-G1(M) | 240 | 210 | 2760x900x1660 | 2560",
+   "| HY180MC | 180 | NTA885-Gl(M) | 240 | 210 | 2760x900x1660 | 2800",
+   "| HY20MC | 200 | NTA885-G1(M) | 240 | 210 | 2760x900x1660 | 2900",
+   "| HY250MC | 250 | NTA855-G2(M) | 284 | 210 | 2860x900x1660 | 3150",
+   "| HY300MC | 300 | KTAlg-G2(M) | 336 | 208 | 2860x900x1660 | 3150",
+   "| HY350MC | 350 | KTA19-G3(M) | 403 | 208 | 2860X900X1660 | 3360",
+   "| HY400MC | 400 | KTA19-G4(M) | 448 | 208 | 2860X900X1660 | 3460",
+   "| HY500MC | 500 | KTA38-G(M) | 560 | 218 | 3260X1100X1660 | 5100",
+   "| HY600MC | 600 | Kl-A38-G2(M) | 664 | 218 | 260X1100X1660 | 5700"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "http://en.wf-hy.com/product/Generator/Standard/0830/152.html",
+  "title": "Marine generating set - Standard Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组型号 | 机组额定功率 KW | 柴油机 | 最大油耗 | 外形尺寸及重量",
+   "| 型号 | 额定 功率 | 长宽高 MM | 重量 KGS"
+  ],
+  "rows": [
+   "| HY40M | 40 | 4135Caf | 60 | 232.5 | 1800x900x1300 | 1600",
+   "| HY50M | 50 | 4135Caf | 60 | 232.5 | 1800x900x1300 | 1650",
+   "| HY64M | 64 | 4135ACaf | 76 | 229.8 | 2000x900x1350 | 1850",
+   "| HY75M | 75 | 6135Caf | 90 | 229.8 | 2250x900x1350 | 1980",
+   "| HY90M | 90 | 6135ACaf | 108 | 229.8 | 2250x900x1350 | 2010",
+   "| HY100M | 100 | 6135JCaf | 144 | 225.7 | 2350x900x1350 | 2050",
+   "| HY120M | 120 | G128ZCaf | 144 | 220 | 2380x900x1850 | 2150",
+   "| HY150M | 150 | G128ZLCafl | 198 | 225 | 2400x900x1850 | 2250",
+   "| HY200M | 200 | G128ZLCaf2 | 240 | 225 | 2450x900x185 | 2650",
+   "| HY250M | 250 | G128ZLCaf3 | 276 | 225 | 2550x900x1850 | 2850"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "http://en.wf-hy.com/product/Generator/Automatic/0830/150.html",
+  "title": "Cummings series gas generator set - Automatic Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组 型号 | 机组主用功率 | 发动机型号 | 排量(L) | 压缩比 | 燃气消耗(m3 /kw.h) | 机组尺寸 (mm) | 净重 (Kg)",
+   "| KW | KVA | A | 长 × 宽 × 高"
+  ],
+  "rows": [
+   "| HY20ZK | 20 | 25 | 36 | 4B3.9 | 3.9 | 10.5:1 | <0.50 | 1800 ×790×1375 | 850",
+   "| HY30ZK | 30 | 37.5 | 54 | 4BTA3.9G | 3.9 | 10.5:1 | <0.50 | 1800 ×790×1375 | 850",
+   "| HY40ZK | 40 | 50 | 72 | 6B5.9G | 5.9 | 10.5:1 | <0.50 | 2100 ×800×1375 | 900",
+   "| HY50ZK | 50 | 62.5 | 90 | 6BT5.9G | 5.9 | 10.5:1 | <0.50 | 2100 ×800×1375 | 900",
+   "| HY60ZK | 60 | 75 | 108 | 6BT5.9 | 5.9 | 10.5:1 | <0.50 | 2100 ×800×1375 | 1120",
+   "| HY80ZK | 80 | 100 | 144 | 6CT8.3G | 8.3 | 10.5:1 | <0.50 | 2440 ×945×1490 | 1350",
+   "| HY100ZK | 100 | 125 | 180 | 6CTA8.3G | 8.3 | 10.5:1 | <0.50 | 2440 ×945×1490 | 1350",
+   "| HY120ZK | 120 | 150 | 216 | 6LTAA8.9G | 8.9 | 10.5:1 | <0.50 | 2550 ×970×1500 | 1800",
+   "| HY140ZK | 140 | 175 | 252 | 6LTAA8.9G | 8.9 | 10.5:1 | <0.50 | 2550 ×970×1500 | 1800",
+   "| HY160ZK | 160 | 200 | 288 | NT855G | 14 | 10.5:1 | <0.50 | 3000 ×1150×1780 | 2850",
+   "| HY200ZK | 200 | 250 | 361 | NTA855G | 14 | 10.5:1 | <0.50 | 3000 ×1150×1780 | 2850",
+   "| HY250ZK | 250 | 312.5 | 451 | KTA19G | 18.9 | 9.5:1 | <0.50 | 3440 ×1550×2200 | 4250",
+   "| HY300ZK | 300 | 375 | 541 | KTA19G | 18.9 | 9.5:1 | <0.50 | 3440 ×1550×2200 | 4250",
+   "| HY350ZK | 350 | 437.5 | 631 | KTA38G | 37.8 | 9.5:1 | <0.50 | 3440 ×1550×2200 | 4250",
+   "| HY400ZK | 400 | 500 | 721 | KTA38G | 37.8 | 9.5:1 | <0.50 | 4300 ×2300×2400 | 6880",
+   "| HY450ZK | 450 | 562.5 | 811 | KTA38G | 37.8 | 9.5:1 | <0.50 | 4300 ×2300×2400 | 6880",
+   "| HY500ZK | 500 | 625 | 902 | KTA38G | 37.8 | 9.5:1 | <0.50 | 4300 ×2300×2400 | 7200",
+   "| HY600ZK | 600 | 750 | 1082 | KTA50G | 50.3 | 9.5:1 | <0.50 | 5652 ×2286×2441 | 9600",
+   "| HY700ZK | 700 | 875 | 1262 | KTA50G | 50.3 | 9.5:1 | <0.50 | 5652 ×2286×2441 | 9600"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "http://en.wf-hy.com/product/Generator/Automatic/0830/149.html",
+  "title": "Huayuan 12 cylinder gas generating set - Automatic Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [],
+  "rows": [
+   "| 机组型号 Type | HR-150KW | HR-200KW | HR-250KW | HR-275KW | HR-400KW | HR-500KW",
+   "| 额定功率（KW） Rated output (KW) | 150 | 200 | 250 | 275 | 400 | 500",
+   "| 额定电流（A） Current (A) | 270 | 360 | 450 | 495 | 720 | 900",
+   "| 发 动 机 E N G I N E | 型号 Type | 12V135Q | 12V135Q1 | 12V135ZQ | 12V135ZQ1 | 12V190Q | Z12V190ZQ",
+   "| 缸数*缸径*行程（MM） Cylinder no. bore * stroke (MM) | 12×135×150 | 12×135×155 | 12×135×150 | 12×135×155 | 12×190×210 | 12×190×210",
+   "| 总排量（L） Displacement (L) | 25.8 | 26.9 | 25.8 | 26.9 | 71.5 | 71.5",
+   "| 额定功率 Rated output (KW) | 180 | 235 | 280 | 310 | 440 | 550",
+   "| 外形尺寸（长*宽*高） Overall Size (L*W*H) (MM) | 3200×1450×2140 | 3250×1450×2140 | 3200×1450×2100 | 3200×1450×2100 | 5120×2200×2312 | 4566×2040×2780",
+   "| 净重（KG） Weight | 3000 | 3200 | 3600 | 3800 | 11300 | 11800"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "http://en.wf-hy.com/product/Generator/Automatic/0830/148.html",
+  "title": "Huayuan 6 cylinder gas generating set - Automatic Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组型号 Type | HR-50GFQ | HR-60GFQ | HR-75GFQ | HR-80GFQ | HR-100GFQ | HR-120GFQ",
+   "| 接线方式 Phase and connection | 三相四线 3 phase 4 wire |",
+   "| 发电机励磁方式 Excitation | 无刷AVR Brushless , AVR |"
+  ],
+  "rows": [
+   "| 额定功率（KW） Rated output (KW) | 50 | 60 | 75 | 80 | 100 | 120",
+   "| 额定电流（A） Current (A) | 90 | 108 | 135 | 144 | 180 | 216",
+   "| 发 动 机 E N G I N E | 型号 Type | HR6105Q | 6105ZQ | 6126Q | 6126Q | 6126ZQ | 6126ZQ",
+   "| 缸数*缸径*行程(MM) Cylinder no. bore * stroke (MM) | 6×105×125 | 6×113×125 | 6×126×130 | 6×126×130 | 6×126×130 | 6×126×130 |",
+   "| 额定功率 Rated output (KW) | 60 | 72 | 85 | 95 | 140 | 140",
+   "| 外形尺寸（长*宽*高） Overall Size (L*W*H)(MM) | 2100*780*1300 | 2200*800*1400 | 2650*900*1650 | 2650*980*1800 | 2650*1100* 1900 | 2650*1100* 1900",
+   "| 净重（KG） Weight | 1650 | 1800 | 2000 | 2100 | 2450 | 2600"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "http://en.wf-hy.com/product/Generator/Automatic/0830/147.html",
+  "title": "Huayuan 4 cylinder gas generating set - Automatic Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组型号 Type | HR-10FQ | HR-20GFQ | HR-25GFQ | HR-30GFQ",
+   "| 接线方式 Phase and connection | 三相四线 3 phase 4 wire",
+   "| 发电机励磁方式 Excitation | 无刷AVR Brushless , AVR"
+  ],
+  "rows": [
+   "| 额定功率（KW） Rated output (KW) | 10 | 20 | 25 | 30",
+   "| 额定电流（A） Current (A) | 18 | 36 | 45 | 54",
+   "| 发 动 机 E N G I N E | 型号 Type | HR485Q | HR4100Q | HR4102Q | HR4105Q",
+   "| 缸数*缸径*行程（MM） Cylinder no. bore * stroke (MM) | 4×85×95 | 4×100×115 | 4×102×115 | 4×105×115",
+   "| 总排量（L） Displacement (L) | 2.16 | 3.61 | 3.76 | 4.33",
+   "| 压缩比 Compression Ratio | 11.3:1 | 11.3:1 | 11.4:1 | 11.5:1",
+   "| 额定功率 Rated output (KW) | 15 | 25 | 30 | 38",
+   "| 外形尺寸（长*宽*高） Overall Size (L*W*H)(MM) | 1350×680×1050 | 1650×720×1250 | 1650×740×1250 | 1650×740×1280",
+   "| 净重（KG） Weight | 450 | 750 | 820 | 900"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "http://en.wf-hy.com/product/Generator/Cummins/0830/129.html",
+  "title": "20KW - 1000KW Cummins series Generator Set - Cummins series Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 康明斯型号 | 康明斯功率(KW) | 燃油消耗率 (L/H)"
+  ],
+  "rows": [
+   "| HF 20C | 20 | 22 | 4B3.9-G2 | 26 | 6.7",
+   "| HF 30C | 30 | 33 | 4BT3.9-G2 | 36 | 8",
+   "| HF 50C | 50 | 55 | 4BTA3.9-G2 | 50 | 11.5",
+   "| HF 80C | 80 | 90 | 6BT5.9-G2 | 92 | 23.1",
+   "| HF 100C | 100 | 110 | 6BTA5.9-G2 | 110 | 27.5",
+   "| HF 110C | 110 | 121 | 6BTAA5.9-G2 | 120 | 32.2",
+   "| HF 120C | 120 | 132 | 6CTA8.3-G2 | 163 | 36.4",
+   "| HF 150C | 150 | 163 | 6CTA8.3-G2 | 163 | 40.9",
+   "| HF 160C | 160 | 180 | 6CTAA8.3-G2 | 185 | 44.6",
+   "| HF 200C | 200 | 220 | 6LTAA8.9-G2 | 220 | 55.8",
+   "| HF 250C | 250 | 275 | MTAA11-G3 | 265 | 66.9",
+   "| HF 280C | 280 | 308 | NTA855-G2A | 313 | 77",
+   "| HF 300C | 300 | 330 | NTAA855-G7A | 343 | 84",
+   "| HF 330C | 330 | 360 | NTAA855-G7A | 343 | 94",
+   "| HF 400C | 400 | 440 | KTA19-G4 | 448 | 107",
+   "| HF 500C | 500 | 550 | KTAA19-G6A | 518 | 134",
+   "| HF 600C | 600 | 660 | KTA38-G2 | 665 | 170",
+   "| HF 640C | 640 | 704 | KTA38-G2A | 665 | 186",
+   "| HF 720C | 720 | 792 | KTA38-G2A | 814 | 204",
+   "| HF 800C | 800 | 880 | KTA38-G5 | 881 | 207"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "http://en.wf-hy.com/product/engine/Gas/0830/56.html",
+  "title": "Engine for gas turbine unit - Gas engine - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 型号: | HR6126Q,HR6126ZQ | Model: | HR6126Q,HR6126ZQ"
+  ],
+  "rows": [
+   "| 转速: | 1500/1800 | Speed: | 1500/1800",
+   "| 功率: | 85-140KW | Power: | 85-140KW",
+   "| 用途: | 75-120kw机组用发动机 | Purpose: | 75-120kw机组用发动机",
+   "| 型号 Type | | | 6126Q | 6126Q | 6126ZQ | 6126ZQ",
+   "| 缸数*缸径*行程(MM) Cylinder no. bore * stroke (MM) | | | 6×126×130 | 6×126×130 | 6×126×130 | 6×126×130 |",
+   "| 额定功率 Rated output (KW) | | | 85 | 95 | 140 | 140"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "http://en.wf-hy.com/product/engine/Gas/0830/55.html",
+  "title": "Engine for gas turbine unit - Gas engine - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 型号: | HR6105Q,HR6105ZQ | Model: | HR6105Q,HR6105ZQ"
+  ],
+  "rows": [
+   "| 转速: | 1500/1800 | Speed: | 1500/1800",
+   "| 功率: | 60kw,72KW | Power: | 60kw,72KW",
+   "| 用途: | 50KW,60KW机组用燃气发动机 | Purpose: | 50KW,60KW机组用燃气发动机",
+   "| 型号 Type | HR6105Q | 6105ZQ | | | |",
+   "| 缸数*缸径*行程(MM) Cylinder no. bore * stroke (MM) | 6×105×125 | 6×113×125 | | | | |",
+   "| 额定功率 Rated output (KW) | 60 | 72 | | | |"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "http://en.wf-hy.com/product/engine/Gas/0830/53.html",
+  "title": "Engine for gas turbine unit - Gas engine - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 型号: | HHR485Q ,HR4100Q,HR4105Q | Model: | HHR485Q ,HR4100Q,HR4105Q"
+  ],
+  "rows": [
+   "| 转速: | 1500/1800转 | Speed: | 1500/1800转",
+   "| 功率: | 15KW,25KW,30KW,38KW, | Power: | 15KW,25KW,30KW,38KW,",
+   "| 用途: | 天然气，沼气发电机组 | Purpose: | 天然气，沼气发电机组",
+   "| 型号 Type | HR485Q | HR4100Q | HR4102Q | HR4105Q",
+   "| 缸数*缸径*行程（MM） Cylinder no. bore * stroke (MM) | 4×85×95 | 4×100×115 | 4×102×115 | 4×105×115",
+   "| 总排量（L） Displacement (L) | 2.16 | 3.61 | 3.76 | 4.33",
+   "| 压缩比 Compression Ratio | 11.3:1 | 11.3:1 | 11.4:1 | 11.5:1",
+   "| 额定功率 Rated output (KW) | 15 | 25 | 30 | 38"
+  ]
+ }
+]

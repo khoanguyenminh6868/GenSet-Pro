@@ -1,1 +1,165 @@
-[]
+[
+ {
+  "n": 101,
+  "url": "https://www.kaichenpower.com/cummins-diesel-generator/300kw-industrial-diesel-generators.html",
+  "title": "300kW Industrial Diesel Generator | Reliable Power Solution for Industrial Use",
+  "header": [],
+  "rows": [
+   "Engine: Chongqing Cummins NTA855-G2A",
+   "Alternator: KCC-350GF",
+   "Controller: Smartgen HGM6110",
+   "| Genset Model | KCC-350GF",
+   "| Standby Power | 375 kVA / 300 kW",
+   "| Prime Power | 350 kVA / 280 kW",
+   "| Engine Model | NTA855-G2A",
+   "| Displacement | 14 L",
+   "| Fuel Consumption | 207 g/kW·h"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.kaichenpower.com/silent-diesel-generator-set/20kw-silent-diesel-generator.html",
+  "title": "20kW Silent Diesel Generator | Low Noise Backup Power",
+  "header": [],
+  "rows": [
+   "| Prime Power | 20 kW",
+   "| Standby Power | 22 kW",
+   "| Voltage | 400/230V",
+   "| Frequency | 50Hz",
+   "| Power Factor | 0.8",
+   "| Speed | 1500 RPM"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.kaichenpower.com/household-diesel-generator/100kw-diesel-generator-set.html",
+  "title": "100kW Diesel Generator Set | Commercial & Industrial Power Solutions",
+  "header": [],
+  "rows": [
+   "| Prime Power | 100 kW",
+   "| Standby Power | 110–125 kVA",
+   "| Voltage | 400/230V",
+   "| Frequency | 50Hz",
+   "| Power Factor | 0.8",
+   "| Speed | 1500 RPM",
+   "| Starting System | 24V Electric Start",
+   "| Protection Grade | IP23"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.kaichenpower.com/household-diesel-generator/75kw-diesel-generator.html",
+  "title": "75kW Diesel Generator | Commercial & Industrial Power Solution",
+  "header": [],
+  "rows": [
+   "| Prime Power | 75 kW",
+   "| Standby Power | 82.5 kW",
+   "| Voltage | 400/230V",
+   "| Frequency | 50Hz",
+   "| Power Factor | 0.8",
+   "| Speed | 1500 RPM",
+   "| Starting System | 24V Electric Start",
+   "| Fuel Consumption | Approx. 14–18 L/H",
+   "| Protection Class | IP23"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.kaichenpower.com/household-diesel-generator/200kw-diesel-generator-set.html",
+  "title": "200kW Diesel Generator Set | Industrial & Backup Power Solution",
+  "header": [],
+  "rows": [
+   "| Power Output | 200 kW / 250 kVA",
+   "| Standby Power | 220 kW / 275 kVA",
+   "| Voltage | 400/230 V",
+   "| Frequency | 50 Hz",
+   "| Fuel Consumption | ~52 L/h (100% load)"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.kaichenpower.com/perkins-diesel-generator/370kw-perkins-generator-set.html",
+  "title": "370KW Perkins Generator Set | Industrial Backup Power Solution",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Type | Dimension Open type L*W*H(mm) | Weight",
+   "| KVA | KW | KVA | KW | (kg)"
+  ],
+  "rows": [
+   "| KCP-10GF | 10 | 8 | 9 | 7 | 403A-11 G1 | 1350*500 * 1090 | 335",
+   "| KCP-10GF* | 10 | 8 | 9 | 7 | 403D-11G | 1350*500 * 1090 | 335",
+   "| KCP-15GF | 14 | 11 | 13 | 10 | 403A-15G1 | 1430*500*1150 | 400",
+   "| KCP-15GF* | 14 | 11 | 13 | 10 | 403D-15G | 1430*500*1150 | 415",
+   "| KCP-20GF | 16 | 13 | 15 | 12 | 403A-15G2 | 1430*500*1150 | 415",
+   "| KCP-25GF | 22 | 18 | 20 | 16 | 404A-22G1 | 1610*560*1195 | 525",
+   "| KCP-25GF* | 22 | 18 | 20 | 16 | 404D-22G | 1610*560*1195 | 525",
+   "| KCP-30GF | 30 | 24 | 27 | 22 | 404D-22TG | 1610*560*1195 | 550",
+   "| KCP-35GF | 32 | 26 | 30 | 24 | 1103A-33G | 1840*700*1270 | 860",
+   "| KCP-50GF | 50 | 40 | 45 | 36 | 1103A-33TG1 | 1960*700*1350 | 870",
+   "| KCP-70GF | 66 | 53 | 60 | 48 | 1103A-33TG2 | 2050*700*1350 | 980",
+   "| KCP-80GF | 72 | 57 | 65 | 52 | 1104A-44TG1 | 2200*700*1350 | 1050",
+   "| KCP-90GF | 88 | 70 | 80 | 64 | 1104A-44TG2 | 2200*700*1350 | 1080",
+   "| KCP-90GF* | 88 | 70 | 80 | 64 | 1104C-44TAG1 | 2280*700*1350 | 1150",
+   "| KCP-110GF | 110 | 88 | 100 | 80 | 1104C-44TAG2 | 2280*700*1350 | 1250",
+   "| KCP-150GF | 150 | 120 | 135 | 108 | 1106A-70TG1 | 2565*850*1425 | 1522",
+   "| KCP-170GF | 165 | 132 | 150 | 120 | 1106A-70TAG2 | 2750*850*1350 | 1580",
+   "| KCP-200GF | 200 | 160 | 180 | 144 | 1106A-70TAG3 | 2850*850*1350 | 1590",
+   "| KCP-220GF | 220 | 176 | 200 | 160 | 1106A-70TAG4 | 2850*1045*1825 | 1600",
+   "| KCP-260GF | 254 | 203 | 231 | 185 | 1506A-E88TAG2 | 2980*1055*1695 | 2335",
+   "| KCP-300GF | 283 | 226 | 257 | 206 | 1506A-E88TAG3 | 2980*1055*1695 | 2350",
+   "| KCP-350GF | 338 | 270 | 307 | 246 | 1506A-E88TAG5 | 3080*1090*1700 | 2500",
+   "| KCP-400GF | 400 | 320 | 350 | 280 | 2206C-E13TAG2 | 3460*1150*2030 | 2980",
+   "| KCP-450GF | 450 | 360 | 400 | 320 | 2206C-E13TAG3 | 3460*1150*2030 | 3135",
+   "| KCP-500GF | 500 | 400 | 455 | 364 | 2506C-E15TAG1 | 3780*1270*2020 | 3760",
+   "| KCP-550GF | 550 | 440 | 500 | 400 | 2506C-E15TAG2 | 3780*1270*2020 | 3880",
+   "| KCP-650GF | 650 | 520 | 591 | 473 | 2806C-E18TAG1A | 3780*1536*2180 | 4555",
+   "| KCP-700GF | 700 | 560 | 650 | 520 | 2806A-E18TAG2 | 3780*1536*2180 | 4600",
+   "| KCP-900GF | 820 | 656 | 746 | 597 | 4006-23TAG2A | 4250*1690*2150 | 6460",
+   "| KCP-900GF* | 880 | 704 | 800 | 640 | 4006-23TAG3A | 4250*1690*2150 | 6500",
+   "| KCP-1000GF | 1000 | 800 | 910 | 728 | 4008TAG1A | 4735*2261*2256 | 7400",
+   "| KCP-1200GF | 1125 | 900 | 1022 | 818 | 4008TAG2A | 4735*2261*2256 | 7450",
+   "| KCP-1200GF* | 1125 | 900 | 1022 | 818 | 4008TAG2 | 4735*2261*2256 | 7450",
+   "| KCP-1250GF | 1250 | 1000 | 1125 | 900 | 4008-30TAG3 | 4735*2261*2256 | 7450",
+   "| KCP-1400GF | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | 4800*2100*2297 | 9030",
+   "| KCP-1400GF* | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2 | 4800*2100*2297 | 9050",
+   "| KCP-1500GF | 1500 | 1200 | 1375 | 1100 | 4012-46TWG3A | 4800*2100*2297 | 9100",
+   "| KCP-1700GF | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | 4900*2100*2297 | 9730",
+   "| KCP-1900GF | 1850 | 1480 | 1688 | 1350 | 4012-46TAG3A | 4900*2100*2297 | 9730",
+   "| KCP-2000GF | 2000 | 1600 | 1850 | 1480 | 4016TAG1A | 5035*2597*2150 | 10300",
+   "| KCP-2200GF | 2200 | 1760 | 2000 | 1600 | 4016TAG2A | 5035 * 2597 * 2150 | 10300",
+   "| KCP-2200GF | 2200 | 1760 | 2000 | 1600 | 4016-61TRG2 | 5250 * 2600 * 2150 | 10270",
+   "| KCP-2500GF | 2500 | 2000 | 2250 | 1800 | 4016-61TRG3 | 5250 * 2600 * 2150 | 11000"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.kaichenpower.com/perkins-diesel-generator/200kw-gen-power-diesel-generator.html",
+  "title": "200KW Perkins Diesel Generator | Reliable Industrial Backup Power",
+  "header": [],
+  "rows": [
+   "| Genset Model | KCP-300GF",
+   "| Standby Power | 283 kVA / 226 kW",
+   "| Prime Power | 257 kVA / 206 kW",
+   "| Engine Model | Perkins 1506A-E88TAG3",
+   "| Dimensions (Open Type) | 2980 × 1055 × 1695 mm",
+   "| Weight | 2350 kg"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.kaichenpower.com/cummins-diesel-generator/320kw-diesel-generator-sets.html",
+  "title": "320kW Cummins Diesel Generator Set | Industrial Power Solution",
+  "header": [],
+  "rows": [
+   "Engine: Cummins NTAA855-G7",
+   "Alternator: KCC-375GF",
+   "| Genset Model | KCC-375GF",
+   "| Standby Power | 413 kVA / 330 kW",
+   "| Prime Power | 375 kVA / 300 kW",
+   "| Engine Model | NTAA855-G7",
+   "| Displacement | 14 L",
+   "| Fuel Consumption | 209 g/kW·h",
+   "| Voltage | 400/230 V",
+   "| Frequency | 50 Hz"
+  ]
+ }
+]

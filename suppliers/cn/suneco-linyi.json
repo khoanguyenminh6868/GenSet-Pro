@@ -52,9 +52,326 @@
         "We have our own diesel generators factory in Linyi, Shandong, China, close to the port"
       ],
       "file": "sources/suneco-linyi/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.generators365.com/cummins-diesel-generator-set/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+      ],
+      "file": "sources/suneco-linyi/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.generators365.com/basic-diesel-generator-set/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+      ],
+      "file": "sources/suneco-linyi/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.generators365.com/automatic-start-diesel-generator-set/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby power | Prime power | Engine Model | Engine origin | NO. of Cylinder | Detail Data"
+      ],
+      "file": "sources/suneco-linyi/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.generators365.com/automatic-control-diesel-generator-set/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+      ],
+      "file": "sources/suneco-linyi/104.md"
     }
   ],
   "confidence": "low",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "CUMMINS Diesel Generator Set Manufacturers and suppliers in China",
+      "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+      ],
+      "rows": [
+        "| ECO28C | 28kVA | 22kW | 25kVA | 20kW | 4B3.9-G1 | 4 | ECO28C",
+        "| ECO28C | 28kVA | 22kW | 25kVA | 20kW | 4B3.9-G2 | 4 | ECO28C",
+        "| ECO42C | 42kVA | 34kW | 38kVA | 30kW | 4BT3.9-G1 | 4 | ECO42C",
+        "| ECO42C | 42kVA | 34kW | 38kVA | 30kW | 4BT3.9-G2 | 4 | ECO42C",
+        "| ECO63C | 63kVA | 50kW | 56kVA | 45kW | 4BTA3.9-G2(G45E1) | 4 | ECO63C",
+        "| ECO69C | 69kVA | 55kW | 63kVA | 50kW | 4BTA3.9-G2(G52E1) | 4 | ECO69C",
+        "| ECO88C | 88kVA | 70kW | 80kVA | 64kW | 4BTA3.9-G11 | 4 | ECO88C",
+        "| ECO94C | 94kVA | 75kW | 85kVA | 68kW | 6BT5.9-G1 | 6 | ECO94C",
+        "| ECO94C | 110kVA | 88kW | 85kVA | 68kW | 6BT5.9-G2(G75E1) | 6 | ECO94C",
+        "| ECO105C | 105kVA | 84kW | 95kVA | 76kW | 4BTA3.9-G13 | 4 | ECO105C",
+        "| ECO110C | 110kVA | 88kW | 100kVA | 80kW | 6BT5.9-G2(G75E1) | 6 | ECO110C",
+        "| ECO115C | 115kVA | 92kW | 105kVA | 84kW | 6BT5.9-G2(G84E1) | 6 | ECO115C",
+        "| ECO125C | 125kVA | 100kW | 114kVA | 91kW | 6BTA5.9-G2 | 6 | ECO125C",
+        "| ECO143C | 143kVA | 114kW | 130kVA | 104kW | 6BTAA5.9-G2 | 6 | ECO143C",
+        "| ECO165C | 165kVA | 132kW | 150kVA | 120kW | 6BTAA5.9-G12 | 6 | ECO165C",
+        "| ECO200C | 200kVA | 160kW | 180kVA | 144kW | 6CTA8.3-G2 | 6 | ECO200C",
+        "| ECO220C | 220kVA | 176kW | 200kVA | 160kW | 6CTAA8.3-G2 | 6 | ECO220C",
+        "| ECO250C | 250kVA | 200kW | N/A | N/A | 6CTAA8.3-G9 | 6 | ECO250C",
+        "| ECO275C | 275kVA | 220kW | 250kVA | 200kW | 6LTAA8.9-G2 | 6 | ECO275C",
+        "| ECO275C | 275kVA | 220kW | 250kVA | 200kW | MTA11-G2 | 6 | ECO275C",
+        "| ECO275C | 275kVA | 220kW | 250kVA | 200kW | NT855-GA | 6 | ECO275C",
+        "| ECO290C | 290kVA | 232kW | 263kVA | 210kW | 6LTAA8.9-G3 | 6 | ECO290C",
+        "| ECO300C | 300kVA | 240kW | 270kVA | 216kW | 6LTAA9.5-G3 | 6 | ECO300C",
+        "| ECO313C | 313kVA | 250kW | 275kVA | 220kW | NTA855-G1A | 6 | ECO313C",
+        "| ECO350C | 350kVA | 280kW | 313kVA | 250kW | MTAA11-G3 | 6 | ECO350C",
+        "| ECO350C | 350kVA | 280kW | 313kVA | 250kW | NTA855-G1B | 6 | ECO350C",
+        "| ECO350C | 350kVA | 280kW | 320kVA | 256kW | 6LTAA9.5-G1 | 6 | ECO350C",
+        "| ECO375C | 375kVA | 300kW | 350kVA | 280kW | NTA855-G2A | 6 | ECO375C",
+        "| ECO412C | 412kVA | 330kW | 375kVA | 300kW | NTAA855-G7 | 6 | ECO412C",
+        "| ECO418C | 418kVA | 334kW | 380kVA | 304kW | 6ZTAA13-G3 | 6 | ECO418C",
+        "| ECO450C | 450kVA | 360kW | N/A | N/A | NTAA855-G7A | 6 | ECO450C",
+        "| ECO468C | 468kVA | 374kW | 425kVA | 340kW | 6ZTAA13-G2 | 6 | ECO468C",
+        "| ECO475C | 475kVA | 380kW | 438kVA | 350kW | 6ZTAA13-G4 | 6 | ECO475C",
+        "| ECO500C | 500kVA | 400kW | 450kVA | 360kW | KTA19-G3 | 6 | ECO500C",
+        "| ECO550C | 550kVA | 440kW | 500kVA | 400kW | KTA19-G3A | 6 | ECO550C",
+        "| ECO550C | 550kVA | 440kW | 500kVA | 400kW | KTA19-G4 | 6 | ECO550C",
+        "| ECO650C | 650kVA | 520kW | 575kVA | 460kW | KTAA19-G6 | 6 | ECO650C",
+        "| ECO688C | 688kVA | 550kW | N/A | N/A | KTAA19-G6A | 6 | ECO688C",
+        "| ECO788C | 788kVA | 630kW | 713kVA | 570kW | KTA38-G1 | 12 | ECO788C",
+        "| ECO825C | 825kVA | 660kW | 750kVA | 600kW | KTA38-G2 | 12 | ECO825C",
+        "| ECO888C | 888kVA | 710kW | 800kVA | 640kW | KTA38-G2B | 12 | ECO888C",
+        "| ECO1000C | 1000kVA | 800kW | 910kVA | 728kW | KTA38-G2A | 12 | ECO1000C",
+        "| ECO1100C | 1100kVA | 880kW | 1000kVA | 800kW | KTA38-G5 | 12 | ECO1100C",
+        "| ECO1250C | 1250kVA | 1000kW | N/A | N/A | KTA38-G9 | 12 | ECO1250C",
+        "| ECO1375C | 1375kVA | 1100kW | 1250kVA | 1000kW | KTA50-G3 | 16 | ECO1375C",
+        "| ECO1650C | 1650kVA | 1320kW | 1375kVA | 1100kW | KTA50-G8 | 16 | ECO1650C",
+        "| ECO1650C | 1650kVA | 1320kW | 1500kVA | 1200kW | KTA50-GS8 | 16 | ECO1650C",
+        "| ECO1875C | 1875kVA | 1500kW | N/A | N/A | KTA50-G15 | 16 | ECO1875C",
+        "| ECO275C | 275kVA | 220kW | 250kVA | 200kW | QSNT-G6 | 6 | ECO275C",
+        "| ECO313C | 313kVA | 250kW | 275kVA | 220kW | QSNT-G7 | 6 | ECO313C",
+        "| ECO350C | 350kVA | 280kW | 313kVA | 250kW | QSNT-G1 | 6 | ECO350C",
+        "| ECO388C | 388kVA | 310kW | 350kVA | 280kW | QSNT-G2 | 6 | ECO388C",
+        "| ECO440C | 440kVA | 352kW | 400kVA | 320kW | QSNT-G3 | 6 | ECO440C",
+        "| ECO500C | 500kVA | 400kW | 450kVA | 360kW | QSK19-G14 | 6 | ECO500C",
+        "| ECO500C | 500kVA | 400kW | N/A | N/A | QSNT-G4X | 6 | ECO500C",
+        "| ECO550C | 550kVA | 440kW | 500kVA | 400kW | QSK19-G13 | 6 | ECO550C",
+        "| ECO550C | 550kVA | 440kW | 500kVA | 400kW | QSZ13-G10 | 6 | ECO550C",
+        "| ECO625C | 625kVA | 500kW | 575kVA | 460kW | QSK19-G12 | 6 | ECO625C",
+        "| ECO650C | 650kVA | 520kW | 588kVA | 470kW | QSK19-G6 | 6 | ECO650C",
+        "| ECO688C | 688kVA | 550kW | 625kVA | 500kW | QSK19-G7 | 6 | ECO688C",
+        "| ECO715C | 715kVA | 572kW | 650kVA | 520kW | QSK19-G4 | 6 | ECO715C",
+        "| ECO750C | 750kVA | 600kW | 688kVA | 550kW | QSK19-G11 | 6 | ECO750C",
+        "| ECO750C | 750kVA | 600kW | N/A | N/A | QSK19-G11X | 6 | ECO750C",
+        "| ECO825C | 825kVA | 660kW | 750kVA | 600kW | QSK38-G8 | 12 | ECO825C",
+        "| ECO888C | 888kVA | 710kW | 800kVA | 640kW | QSK38-G7 | 12 | ECO888C",
+        "| ECO1000C | 1000kVA | 800kW | 910kVA | 728kW | QSK38-G6 | 12 | ECO1000C",
+        "| ECO1100C | 1100kVA | 880kW | 1000kVA | 800kW | QSK38-G1 | 12 | ECO1100C",
+        "| ECO1250C | 1250kVA | 1000kW | 1135kVA | 908kW | QSK38-G2 | 12 | ECO1250C",
+        "| ECO1375C | 1375kVA | 1100kW | 1250kVA | 1000kW | QSK38-G5 | 12 | ECO1375C",
+        "| ECO1500C | 1500kVA | 1200kW | 1375kVA | 1100kW | QSK38-G5A | 12 | ECO1500C"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "CUMMINS Diesel Generator Set Manufacturers and suppliers in China",
+      "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+      ],
+      "rows": [
+        "| ECO35C | 35kVA | 28kW | 31kVA | 25kW | 4B3.9-G2 | 4 | ECO35C",
+        "| ECO50C | 50kVA | 40kW | 45kVA | 36kW | 4BT3.9-G2 | 4 | ECO50C",
+        "| ECO69C | 69kVA | 55kW | 63kVA | 50kW | 4BTA3.9-G2(G45E1) | 4 | ECO69C",
+        "| ECO85C | 85kVA | 68kW | 0kVA | 60kW | 4BTA3.9-G2(G52E1) | 4 | ECO85C",
+        "| ECO97C | 97kVA | 78kW | 88kVA | 70kW | 4BTA3.9-G11 | 4 | ECO97C",
+        "| ECO120C | 120kVA | 96kW | 110kVA | 88kW | 6BT5.9-G2(G75E1) | 6 | ECO120C",
+        "| ECO138C | 138kVA | 110kW | 125kVA | 100kW | 6BT5.9-G2(G84E1) | 6 | ECO138C",
+        "| ECO143C | 143kVA | 114kW | 130kVA | 104kW | 6BTA5.9-G2 | 6 | ECO143C",
+        "| ECO160C | 160kVA | 128kW | 145kVA | 116kW | 6BTAA5.9-G2 | 6 | ECO160C",
+        "| ECO175C | 175kVA | 140kW | 160kVA | 128kW | 6BTAA5.9-G12 | 6 | ECO175C",
+        "| ECO185C | 185kVA | 148kW | 168kVA | 134kW | 6CTA8.3-G2 | 6 | ECO185C",
+        "| ECO210C | 210kVA | 168kW | 190kVA | 152kW | 6CTA8.3-G2 | 6 | ECO210C",
+        "| ECO230C | 230kVA | 184kW | 210kVA | 168kW | 6CTAA8.3-G2 | 6 | ECO230C",
+        "| ECO275C | 275kVA | 220kW | N/A | N/A | 6CTAA8.3-G9 | 6 | ECO275C",
+        "| ECO275C | 275kVA | 220kW | 250kVA | 200kW | 6LTAA8.9-G2 | 6 | ECO275C",
+        "| ECO275C | 275kVA | 220kW | N/A | N/A | NT855-GA | 6 | ECO275C",
+        "| ECO313C | 313kVA | 250kW | 280kVA | 224kW | 6LTAA8.9-G3 | 6 | ECO313C",
+        "| ECO325C | 325kVA | 260kW | 288kVA | 230kW | 6LTAA9.5-G3 | 6 | ECO325C",
+        "| ECO344C | 344kVA | 275kW | 313kVA | 250kW | NTA855-G1 | 6 | ECO344C",
+        "| ECO350C | 350kVA | 280kW | 319kVA | 255kW | 6LTAA9.5-G1 | 6 | ECO350C",
+        "| ECO385C | 385kVA | 308kW | 350kVA | 280kW | NTA855-G1B | 6 | ECO385C",
+        "| ECO425C | 425kVA | 340kW | 388kVA | 310kW | 6ZTAA13-G3 | 6 | ECO425C",
+        "| ECO438C | 438kVA | 350kW | 394kVA | 315kW | NTA855-G3 | 6 | ECO438C",
+        "| ECO475C | 475kVA | 380kW | 438kVA | 350kW | 6ZTAA13-G2 | 6 | ECO475C",
+        "| ECO475C | 475kVA | 380kW | 438kVA | 350kW | 6ZTAA13-G4 | 6 | ECO475C",
+        "| ECO500C | 500kVA | 400kW | 438kVA | 350kW | KTA19-G2 | 6 | ECO500C",
+        "| ECO563C | 563kVA | 450kW | 513kVA | 410kW | KTA19-G3 | 6 | ECO563C",
+        "| ECO625C | 625kVA | 500kW | 563kVA | 450kW | KTA19-G3A | 6 | ECO625C",
+        "| ECO625C | 625kVA | 500kW | 563kVA | 450kW | KTA19-G4 | 6 | ECO625C",
+        "| ECO750C | 750kVA | 600kW | N/A | N/A | KTAA19-G6A | 6 | ECO750C",
+        "| ECO850C | 850kVA | 680kW | 775kVA | 620kW | KT38-G | 12 | ECO850C",
+        "| ECO850C | 963kVA | 770kW | 875kVA | 700kW | KT38-G1 | 12 | ECO850C",
+        "| ECO1000C | 1000kVA | 800kW | 906kVA | 725kW | KTA38-G2 | 12 | ECO1000C",
+        "| ECO1038C | 1038kVA | 830kW | 938kVA | 750kW | KTA38-G2B | 12 | ECO1038C",
+        "| ECO1125C | 1125kVA | 900kW | 1000kVA | 800kW | KTA38-G2A | 12 | ECO1125C",
+        "| ECO1250C | 1250kVA | 1000kW | 1125kVA | 900kW | KTA38-G4 | 12 | ECO1250C",
+        "| ECO1375C | 1375kVA | 1100kW | N/A | N/A | KTA38-G9 | 12 | ECO1375C",
+        "| ECO1575C | 1575kVA | 1260kW | 1375kVA | 1100kW | KTA50-G3 | 12 | ECO1575C",
+        "| ECO1875C | 1875kVA | 1500kW | 1575kVA | 1260kW | KTA50-G9 | 12 | ECO1875C",
+        "| ECO438C | 438kVA | 350kW | 400kVA | 320kW | QSNT-G3 | 6 | ECO438C",
+        "| ECO668C | 668kVA | 534kW | 625kVA | 500kW | QSK19-G4 | 6 | ECO668C",
+        "| ECO750C | 750kVA | 600kW | 688kVA | 550kW | QSK19-G5 | 6 | ECO750C",
+        "| ECO750C | 750kVA | 600kW | 688kVA | 550kW | QSK19-G8 | 6 | ECO750C",
+        "| ECO1438C | 1438kVA | 1150kW | 1200kVA | 960kW | QSK38-G5 | 6 | ECO1438C",
+        "| ECO1550C | 1550kVA | 1240kW | 1375kVA | 1100kW | QSK38-G4 | 6 | ECO1550C"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Basic Diesel Generator Set Manufacturers and suppliers in China",
+      "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+      ],
+      "rows": [
+        "| ECO30P | 30kVA | 24kW | 28kVA | 22kW | 1003G | 3 | ECO30P",
+        "| ECO34P | 34kVA | 27.5kW | 31kVA | 25kW | 1003G | 3 | ECO34P",
+        "| ECO41P | 41kVA | 33kW | 38kVA | 30kW | 1003TG | 3 | ECO41P",
+        "| ECO47P | 47kVA | 37.4kW | 43kVA | 34kW | 1003TG | 3 | ECO47P",
+        "| ECO41P | 41kVA | 33kW | 38kVA | 30kW | 1004G | 4 | ECO41P",
+        "| ECO47P | 47kVA | 37.4kW | 43kVA | 34kW | 1004G | 4 | ECO47P",
+        "| ECO50P | 50kVA | 40kW | 45kVA | 36kW | 1004G | 4 | ECO50P",
+        "| ECO55P | 55kVA | 44kW | 50kVA | 40kW | 1004TG | 4 | ECO55P",
+        "| ECO66P | 66kVA | 52.8kW | 60kVA | 48kW | 1004TG | 4 | ECO66P",
+        "| ECO77P | 77kVA | 61.6kW | 70kVA | 56kW | 1004TG | 4 | ECO77P",
+        "| ECO95P | 95kVA | 76kW | 85kVA | 68kW | 1006TG1A | 6 | ECO95P",
+        "| ECO100P | 100kVA | 80kW | 90kVA | 72kW | 1006TG1A | 6 | ECO100P",
+        "| ECO110P | 110kVA | 88kW | 100kVA | 80kW | 1006TG2A | 6 | ECO110P",
+        "| ECO130P | 130kVA | 104kW | 118kVA | 94kW | 1006TAG1A | 6 | ECO130P",
+        "| ECO150P | 150kVA | 120kW | 135kVA | 108kW | 1006TAG | 6 | ECO150P",
+        "| ECO165P | 165kVA | 132kW | 150kVA | 120kW | 1106C-P6TAG2A | 6 | ECO165P",
+        "| ECO180P | 180kVA | 143kW | 163kVA | 130kW | 1106C-P6TAG3A | 6 | ECO180P",
+        "| ECO200P | 200kVA | 160kW | 180kVA | 144kW | 1106C-P6TAG4A | 6 | ECO200P"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Basic Diesel Generator Set Manufacturers and suppliers in China",
+      "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+      ],
+      "rows": [
+        "| ECO37P | 37kVA | 30kW | 34kVA | 27kW | 1003G | 3 | ECO37P",
+        "| ECO55P | 55kVA | 44kW | 50kVA | 40kW | 1003TG | 3 | ECO55P",
+        "| ECO51P | 51kVA | 41kW | 46kVA | 37kW | 1004G | 4 | ECO51P",
+        "| ECO55P | 55kVA | 44kW | 50kVA | 40kW | 1004G | 4 | ECO55P",
+        "| ECO69P | 69kVA | 55kW | 63kVA | 50kW | 1004TG | 4 | ECO69P",
+        "| ECO77P | 77kVA | 61.6kW | 70kVA | 56kW | 1004TG | 4 | ECO77P",
+        "| ECO89P | 89kVA | 71kW | 81kVA | 65kW | 1004TG | 4 | ECO89P",
+        "| ECO107P | 107kVA | 86kW | 98kVA | 78kW | 1006TG1A | 6 | ECO107P",
+        "| ECO125P | 125kVA | 100kW | 114kVA | 91kW | 1006TG2A | 6 | ECO125P",
+        "| ECO151P | 151kVA | 121kW | 138kVA | 110kW | 1006TAG | 6 | ECO151P",
+        "| ECO177P | 177kVA | 142kW | 161kVA | 129kW | 1106C-P6TAG2A | 6 | ECO177P",
+        "| ECO193P | 193kVA | 154kW | 175kVA | 140kW | 1106C-P6TAG3A | 6 | ECO193P",
+        "| ECO216P | 216kVA | 173kW | 196kVA | 157kW | 1106C-P6TAG4A | 6 | ECO216P"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Automatic start diesel generator set Manufacturers and suppliers in China",
+      "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | Engine origin | NO. of Cylinder | Detail Data"
+      ],
+      "rows": [
+        "| ECO275SL | 275kVA | 220kW | 250kVA | 200kW | S6B-PTA | JAPAN | 6 | ECO275SL",
+        "| ECO325SL | 325kVA | 260kW | 295kVA | 236kW | S6B-PTA2 | JAPAN | 6 | ECO325SL",
+        "| ECO413SL | 413kVA | 330kW | 375kVA | 300kW | S6B3-PTA | JAPAN | 6 | ECO413SL",
+        "| ECO495SL | 495kVA | 396kW | 450kVA | 360kW | S6A3-PTA | JAPAN | 6 | ECO495SL",
+        "| ECO651SL | 651kVA | 521kW | 593kVA | 474kW | S6R-PTA | JAPAN | 6 | ECO651SL",
+        "| ECO737SL | 737kVA | 590kW | 670kVA | 536kW | S6R2-PTA | JAPAN OR CHINA | 6 | ECO737SL",
+        "| ECO825SL | 825kVA | 660kW | 750kVA | 600kW | S6R2-PTAA | JAPAN OR CHINA | 6 | ECO825SL",
+        "| ECO853SL | 853kVA | 682kW | 775kVA | 620kW | S12A2-PTA | JAPAN | 12 | ECO853SL",
+        "| ECO1133SL | 1133kVA | 906kW | 1030kVA | 824kW | S12H-PTA | JAPAN | 12 | ECO1133SL",
+        "| ECO1155SL | 1155kVA | 924kW | 1050kVA | 840kW | S12H-PTA | JAPAN | 12 | ECO1155SL",
+        "| ECO1382SL | 1382kVA | 1106kW | 1256kVA | 1005kW | S12R-PTA | JAPAN OR CHINA | 12 | ECO1382SL",
+        "| ECO1415SL | 1415kVA | 1132kW | 1285kVA | 1028kW | S12R-PTA | JAPAN OR CHINA | 12 | ECO1415SL",
+        "| ECO1540SL | 1540kVA | 1232kW | 1400kVA | 1120kW | S12R-PTA2 | JAPAN OR CHINA | 12 | ECO1540SL",
+        "| ECO1650SL | 1650kVA | 1320kW | 1500kVA | 1200kW | S12R-PTAA2 | JAPAN OR CHINA | 12 | ECO1650SL",
+        "| ECO1815SL | 1815kVA | 1452kW | 1650kVA | 1320kW | S16R-PTA | JAPAN OR CHINA | 16 | ECO1815SL",
+        "| ECO1925SL | 1925kVA | 1540kW | 1750kVA | 1400kW | S16R-PTA | JAPAN OR CHINA | 16 | ECO1925SL",
+        "| ECO2090SL | 2090kVA | 1672kW | 1900kVA | 1520kW | S16R-PTA2 | JAPAN OR CHINA | 16 | ECO2090SL",
+        "| ECO2200SL | 2200kVA | 1760kW | 2000kVA | 1600kW | S16R-PTAA2 | JAPAN OR CHINA | 16 | ECO2200SL",
+        "| ECO2475SL | 2475kVA | 1980kW | 2250kVA | 1800kW | S16R2-PTAW | JAPAN | 16 | ECO2475SL",
+        "| ECO2750SL | 2750kVA | 2200kW | 2500kVA | 2000kW | S16R2-PTAW-E | JAPAN | 16 | ECO2750SL",
+        "| ECO737SL | 737kVA | 590kW | 670kVA | 536kW | S6R2-PTA-C | CHINA | 6 | ECO737SL",
+        "| ECO825SL | 825kVA | 660kW | 750kVA | 600kW | S6R2-PTAA-C | CHINA | 6 | ECO825SL",
+        "| ECO1382SL | 1382kVA | 1106kW | 1256kVA | 1005kW | S12R-PTA-C | CHINA | 12 | ECO1382SL",
+        "| ECO1415SL | 1415kVA | 1132kW | 1285kVA | 1028kW | S12R-PTA-C | CHINA | 12 | ECO1415SL",
+        "| ECO1540SL | 1540kVA | 1232kW | 1400kVA | 1120kW | S12R-PTA2-C | CHINA | 12 | ECO1540SL",
+        "| ECO1650SL | 1650kVA | 1320kW | 1500kVA | 1200kW | S12R-PTAA2-C | CHINA | 12 | ECO1650SL",
+        "| ECO1815SL | 1815kVA | 1452kW | 1650kVA | 1320kW | S16R-PTA-C | CHINA | 16 | ECO1815SL",
+        "| ECO1925SL | 1925kVA | 1540kW | 1750kVA | 1400kW | S16R-PTA-C | CHINA | 16 | ECO1925SL",
+        "| ECO2090SL | 2090kVA | 1672kW | 1900kVA | 1520kW | S16R-PTA2-C | CHINA | 16 | ECO2090SL",
+        "| ECO2200SL | 2200kVA | 1760kW | 2000kVA | 1600kW | S16R-PTAA2-C | CHINA | 16 | ECO2200SL",
+        "| ECO2500SL | 2500kVA | 2000kW | 2250kVA | 1800kW | S16R2-PTAW-C | CHINA | 16 | ECO2500SL"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Automatic start diesel generator set Manufacturers and suppliers in China",
+      "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | Engine origin | NO. of Cylinder | Detail Data"
+      ],
+      "rows": [
+        "| ECO756SL | 756kVA | 605kW | 688kVA | 550kW | S6R-PTA | JAPAN | 6 | ECO756SL",
+        "| ECO963SL | 963kVA | 770kW | 875kVA | 700kW | S12A2-PTA | JAPAN | 12 | ECO963SL",
+        "| ECO1100SL | 1100kVA | 880kW | 1000kVA | 800kW | S12A2-PTA2 | JAPAN | 12 | ECO1100SL",
+        "| ECO1279SL | 1279kVA | 1023kW | 1163kVA | 930kW | S12H-PTA | JAPAN | 12 | ECO1279SL",
+        "| ECO1513SL | 1513kVA | 1210kW | 1375kVA | 1100kW | S12R-PTA | JAPAN | 12 | ECO1513SL",
+        "| ECO1678SL | 1678kVA | 1342kW | 1525kVA | 1220kW | S12R-PTA2 | JAPAN | 12 | ECO1678SL",
+        "| ECO1856SL | 1856kVA | 1485kW | 1688kVA | 1350kW | S12R-PTAA2 | JAPAN | 12 | ECO1856SL",
+        "| ECO2024SL | 2024kVA | 1619kW | 1840kVA | 1472kW | S16R-PTA | JAPAN | 16 | ECO2024SL",
+        "| ECO2255SL | 2255kVA | 1804kW | 2050kVA | 1640kW | S16R-PTA2 | JAPAN | 16 | ECO2255SL",
+        "| ECO2475SL | 2475kVA | 1980kW | 2250kVA | 1800kW | S16R-PTAA2 | JAPAN | 16 | ECO2475SL"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Automatic Control Diesel Generator Set Manufacturers China.",
+      "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+      ],
+      "rows": [
+        "| ECO7K | 7kVA | 5.5kW | 6.3kVA | 5kW | D905-E2BG | 3 | ECO7K",
+        "| ECO9K | 9kVA | 7.4kW | 8.4kVA | 6.7kW | D1105-E2BG | 3 | ECO9K",
+        "| ECO12K | 12kVA | 9.9kW | 11.3kVA | 9kW | V1505-E2BG | 4 | ECO12K",
+        "| ECO14K | 14kVA | 11.4kW | 13kVA | 10.4kW | D1703-E2BG | 3 | ECO14K",
+        "| ECO20K | 20kVA | 16kW | 18kVA | 14.5kW | V2203-E2BG | 4 | ECO20K",
+        "| ECO24K | 24kVA | 18.7kW | 21.3kVA | 17kW | V2003-T-E2BG | 4 | ECO24K",
+        "| ECO30K | 30kVA | 24kW | 27.5kVA | 22kW | V3300-E2BG | 4 | ECO30K",
+        "| ECO38K | 38kVA | 30kW | 34.8kVA | 27.8kW | V3300-T-E2BG | 4 | ECO38K"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Automatic Control Diesel Generator Set Manufacturers China.",
+      "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+      ],
+      "rows": [
+        "| ECO8K | 8kVA | 6.6kW | 7.5kVA | 6kW | D905-E2BG | 3 | ECO8K",
+        "| ECO11K | 11kVA | 8.8kW | 10kVA | 8kW | D1105-E2BG | 3 | ECO11K",
+        "| ECO15K | 15kVA | 11.9kW | 13.5kVA | 10.8kW | V1505-E2BG | 4 | ECO15K",
+        "| ECO17K | 17kVA | 13kW | 15kVA | 12kW | D1703-E2BG | 3 | ECO17K",
+        "| ECO23K | 23kVA | 18.7kW | 21kVA | 17kW | V2203-E2BG | 4 | ECO23K",
+        "| ECO28K | 28kVA | 22.7kW | 26kVA | 20.6kW | V2003-T-E2BG | 4 | ECO28K",
+        "| ECO38K | 38kVA | 30kW | 34kVA | 27.5kW | V3300-E2BG | 4 | ECO38K",
+        "| ECO47K | 47kVA | 37kW | 42.5kVA | 34kW | V3300-T-E2BG | 4 | ECO47K"
+      ]
+    }
+  ]
 }

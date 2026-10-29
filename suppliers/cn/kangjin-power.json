@@ -71,9 +71,59 @@
         "Our core business includes diesel engine R&D, production, customization, maintenance and testing; explosion-proof engine development; Cummins spare parts supply, plus engine overhaul and testing services."
       ],
       "file": "sources/kangjin-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://kangjinpower.com/products/6cta8-3-diesel-engine/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Model | Rated Power (kW@rpm) | Max Torque (N·m@rpm)"
+      ],
+      "file": "sources/kangjin-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://kangjinpower.com/products/qsb6-7-diesel-engine/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Model | Rated Power (kW@rpm) | Max Torque (N·m@rpm)"
+      ],
+      "file": "sources/kangjin-power/102.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "6CTA8.3 Diesel Engine | Offer OEM/ODM Customization Services - Kangjin Power",
+      "header": [
+        "| | Model | Rated Power (kW@rpm) | Max Torque (N·m@rpm)"
+      ],
+      "rows": [
+        "| 6CTA8.3-C190-II | 142 @ 2200 | 860 @ 1400",
+        "| 6CTA8.3-C215-II | 160 @ 2200 | 908 @ 1500",
+        "| 6CTA8.3-C230-II | 172 @ 2200 | 1000 @ 1500",
+        "| 6CTA8.3-C260-II | 194 @ 1900 | 1150 @ 1300"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "QSB6.7 Diesel Engine | Offer OEM/ODM Customization Services - Kangjin Power",
+      "header": [
+        "| | Model | Rated Power (kW@rpm) | Max Torque (N·m@rpm)"
+      ],
+      "rows": [
+        "| QSB6.7-C130-30 | 99 @ 2200 | 580 @ 1400",
+        "| QSB6.7-C155-30 | 116 @ 2000 | 622 @ 1500",
+        "| QSB6.7-C215-31 | 160 @ 2500 | 888 @ 1500",
+        "| QSB6.7-C220-30 | 164 @ 2200 | 949 @ 1500",
+        "| QSB6.7-C260-30 | 194 @ 2200 | 990 @ 1500",
+        "| QSB6.7-C260-31 | 194 @ 2400 | 990 @ 1500"
+      ]
+    }
+  ]
 }

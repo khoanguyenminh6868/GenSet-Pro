@@ -4,6 +4,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+// Same conversion as the spec crawl, so a saved page reads the same either way.
+import { htmlToText } from "./crawl-specs.mjs";
 
 const [id, n, url] = process.argv.slice(2);
 if (!/^[a-z0-9-]+$/.test(id || "") || !/^\d+$/.test(n || "") || !/^https?:\/\//.test(url || "")) {
@@ -12,20 +14,6 @@ if (!/^[a-z0-9-]+$/.test(id || "") || !/^\d+$/.test(n || "") || !/^https?:\/\//.
 }
 const dir = path.join(path.dirname(fileURLToPath(import.meta.url)), "sources", id);
 fs.mkdirSync(dir, { recursive: true });
-
-const entities = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", middot: "·", deg: "°", times: "×", plusmn: "±", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", reg: "®", trade: "™", copy: "©" };
-const decode = (s) => s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) =>
-  e[0] === "#" ? String.fromCodePoint(e[1].toLowerCase() === "x" ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10)) : entities[e.toLowerCase()] ?? m);
-function htmlToText(html) {
-  return decode(html
-    .replace(/<(script|style|noscript|svg|template)[\s\S]*?<\/\1>/gi, " ")
-    .replace(/<!--[\s\S]*?-->/g, " ")
-    .replace(/<br\s*\/?>/gi, "\n")
-    .replace(/<\/(p|div|li|tr|h[1-6]|table|section|article|dd|dt)>/gi, "\n")
-    .replace(/<t[dh][^>]*>/gi, " | ")
-    .replace(/<[^>]+>/g, " "))
-    .split("\n").map((l) => l.replace(/[ \t ]+/g, " ").trim()).filter(Boolean).join("\n");
-}
 
 const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36", "Accept-Language": "en,zh-CN;q=0.8" }, redirect: "follow", signal: AbortSignal.timeout(60000) });
 if (!res.ok) { console.error(`HTTP ${res.status}`); process.exit(1); }

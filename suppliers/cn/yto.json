@@ -126,9 +126,67 @@
         "As a diesel engine manufacturer with over 50 years of experience, we at YTO can provide customers with a wide range of diesel engines."
       ],
       "file": "sources/yto/3.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.ytocorp.com/4-2-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Model of Genset | Prime power | Standby power | Engine model | Dimensions of genset (mm)"
+      ],
+      "file": "sources/yto/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.ytocorp.com/4a-diesel-engine.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Engine | Model | Style | Cylinder diameter×engine stroke | Total displacement | Power | Speed | Minimum fuel consumption | Engine air intake system"
+      ],
+      "file": "sources/yto/102.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Diesel Engine and Generator Set | Agricultural Machinery | YTO",
+      "header": [
+        "| | Model of Genset | Prime power | Standby power | Engine model | Dimensions of genset (mm)"
+      ],
+      "rows": [
+        "| GENSET | GDYD15 | 12KW/15KVA | 13KW/16KVA | YND485D | 2000*900*1150",
+        "| GDYD20 | 16KW/20KVA | 18KW/23KVA | YSD490D | 2000*900*1150",
+        "| GDYD30 | 24KW/30KVA | 26KW/33KVA | Y4102D | 2000*900*1150",
+        "| GDYTO45 | 36KW/45KVA | 40KW/50KVA | LR4B5-D | 2450*1000*1400",
+        "| GDYTO63 | 50KW/63KVA | 55KW/69KVA | LR4B3Z-D | 2450*1000*1400",
+        "| GDYTO100 | 80KW/100KVA | 88KW/110KVA | LR4M3L-D | 2800*1130*1650"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Diesel Engine,Construction Machinery,Farm Machinery,China Engine Manufacturer",
+      "header": [
+        "| Engine | Model | Style | Cylinder diameter×engine stroke | Total displacement | Power | Speed | Minimum fuel consumption | Engine air intake system",
+        "| mm×mm | L | kW | rpm | g/(kW·h)"
+      ],
+      "rows": [
+        "| LR Series | LR4B5-D | Four cylinder, inline, water-cooled, four stroke, direct injection, electronic governor | 108×135 | 4.95 | 53 | 1800 | 235 | Naturally Aspirated",
+        "| LR4B3Z-D | 108×125 | 4.58 | 71 | 1800 | 230 | Turbocharged",
+        "| LR4M3L-D | 110×125 | 4.75 | 93 | 1800 | 230 | Turbocharged and Intercooled",
+        "| LR6A3L-D | 105×125 | 6.49 | 120 | 1800 | 230",
+        "| LR6A3L-DA | 105×125 | 6.49 | 127 | 1800 | 230",
+        "| LR6M3L-DA | 110×125 | 7.13 | 152 | 1800 | 230",
+        "| YM Series | YM6H4LF-D | Six cylinder, inline, water-cooled, four stroke, direct injection, electronic governor | 120×130 | 8.82 | 235 | 1800 | 225 | Turbocharged and Intercooled",
+        "| YM6S4LF-D | 126×130 | 9.726 | 300 | 1800 | 220",
+        "| YM6S9L-D | 126×155 | 11.6 | 360 | 1800 | 215",
+        "| YM6S9LF-D | 126×155 | 11.6 | 400 | 1800 | 230",
+        "| YM6S9LF-DA | 126×155 | 11.6 | 430 | 1800 | 230"
+      ]
+    }
+  ]
 }

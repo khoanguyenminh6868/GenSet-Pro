@@ -1,0 +1,19 @@
+[
+ {
+  "n": 101,
+  "url": "https://www.fawde.com/l1-series/mechanical-injection-pump.html",
+  "title": "Mechanical Injection Pump",
+  "header": [
+   "| Model | CA6DL1-31 | CA6DL1-28 | CA6DL1-26",
+   "| Type | 6-cylinder in-line, direct injection, turbocharged&intercooling",
+   "| Bore× Stroke (mm ×mm) | 110×125",
+   "| Valve number | 4",
+   "| Total displacement (L) | 7.7"
+  ],
+  "rows": [
+   "| Rated power/speed (kW/r/min) | 239/2300 | 209/2300 | 203/2300",
+   "| Net power/speed (kW/r/min) | 228/2300 | 206/2300 | 192/2300",
+   "| Max torque/speed (N. m /r/min) | 1100/1300～1500 | 1100/1300～1500 | 1000/1300～1500"
+  ]
+ }
+]

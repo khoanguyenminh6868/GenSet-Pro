@@ -18,14 +18,21 @@ const LINK = /(product|engine|generator|genset|gen-set|diesel|series|cummins|per
 const SKIP = /(\/(ar|ru|es|fr|pt|de|it|ne|hi|th|vi|id|tr|ja|ko|pl|nl|fa|ur|bn|ms|uk|he|ro|cs|hu|el|sv|fi|da|no|tl|my|km|lo|si|kk|uz|az|am|sw|ha|yo|ig)(\/|$)|(^|[/_.?=-])(news|blog|article|contact|about|faq|video|case|project|service|login|cart|tags?|privacy|sitemap)s?([/_.?=-]|$)|\.(jpg|jpeg|png|gif|webp|pdf|zip|doc|xls)(\?|$))/i;
 const POWER = /\b(k\s?va|kw|kwe|prime|standby|备用|常用|功率)\b/i;
 
-const entities = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", middot: "·", deg: "°", times: "×", plusmn: "±", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", reg: "®", trade: "™", copy: "©", emsp: " ", ensp: " " };
-const decode = (s) => s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) =>
+const entities = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", middot: "·", deg: "°", times: "×", plusmn: "±", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", reg: "®", trade: "™", copy: "©", emsp: " ", ensp: " ", le: "≤", ge: "≥", asymp: "≈", sup2: "²", sup3: "³", micro: "µ", divide: "÷", hellip: "…", bull: "•" };
+// "&amp;le;" (an entity written twice, as some site editors save it) reads as "≤".
+const decode = (s) => s.replace(/&amp;(?=(#x[0-9a-f]+|#\d+|[a-z]+\d?);)/gi, "&").replace(/&(#x[0-9a-f]+|#\d+|[a-z]+\d?);/gi, (m, e) =>
   e[0] === "#" ? String.fromCodePoint(e[1].toLowerCase() === "x" ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10)) : entities[e.toLowerCase()] ?? m);
-// Same conversion as fetch-source.mjs, so a saved page reads the same either way.
+// In a table, rows and cells come from the tags only: a newline in the HTML source is a space there, and a cell stays
+// on one line though editors often wrap its text in <p> / <div> / <br> ("Rate Power(kva)<br>(prime/standby)").
+// Either one otherwise puts every cell on a line of its own and the table is not seen. Outside tables source
+// newlines still break lines: some sites show their spec lists with CSS white-space: pre-line.
+const cellLine = (html) => html.replace(/<table\b[\s\S]*?<\/table>/gi, (t) => t.replace(/\s+/g, " ")).replace(/<(t[dh])\b[^>]*>([\s\S]*?)(?=<\/?t[dhr]\b|<\/table)/gi, (m, tag, inner) =>
+  `<${tag}>` + inner.replace(/<br\s*\/?>|<\/?(p|div|li|ul|ol|h[1-6]|section|article|dd|dt|dl)\b[^>]*>/gi, " "));
+// fetch-source.mjs uses this too, so a saved page reads the same either way.
 export function htmlToText(html) {
-  return decode(html
+  return decode(cellLine(html
     .replace(/<(script|style|noscript|svg|template)[\s\S]*?<\/\1>/gi, " ")
-    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<!--[\s\S]*?-->/g, " "))
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<\/(p|div|li|tr|h[1-6]|table|section|article|dd|dt)>/gi, "\n")
     .replace(/<t[dh][^>]*>/gi, " | ")
@@ -77,7 +84,10 @@ export function tablesOf(text) {
     const isData = (l) => { const c = l.split("|").map((x) => x.trim()).filter(Boolean); return c.filter(isNumCell).length >= Math.max(2, c.length * 0.4); };
     const k = block.findIndex(isData);
     if (k < 0) continue;
-    const header = block.slice(0, k), rows = block.slice(k).filter(isData);
+    // A line as wide as the first data line stays even with few numbers: in a table with the models across
+    // ("| Engine Model | YC4D60-D21 | YC4D80-D34") it is the engine or alternator of each model.
+    const width = (l) => l.split("|").length, w = width(block[k]);
+    const header = block.slice(0, k).filter((l) => l.replace(/[|\s]/g, "")), rows = block.slice(k).filter((l) => isData(l) || (w >= 4 && width(l) === w));
     if (rows.length < 2 && !POWER.test(block.join(" "))) continue;
     if (!POWER.test(header.join(" ") + rows.join(" "))) continue;
     out.push({ header, rows });

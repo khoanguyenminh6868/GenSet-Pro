@@ -117,7 +117,7 @@
     {
       "n": 101,
       "url": "https://www.bycpower.com/High-performance-10-Kva-Open-Diesel-Generator-for-Mining-pd540497758.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Model | CKD1000E"
@@ -127,12 +127,22 @@
     {
       "n": 102,
       "url": "https://www.bycpower.com/Self-Starting-600kw-Container-Generator-Manufacturer-pd517297758.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Model | LDDL-S16"
       ],
       "file": "sources/byc-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.bycpower.com/Diesel-Generator-Powered-By-YuChai-pd561363178.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (kVA) | Engine Model | Speed (rpm) | Engine Prime Power (kW) | Alternator Model | Alternator Prime Power (kW)"
+      ],
+      "file": "sources/byc-power/103.md"
     }
   ],
   "confidence": "medium",
@@ -179,6 +189,64 @@
         "| Voltage Regulation | 25%",
         "| Protection Level | IP23",
         "Voltage options: 220V, 380V, 480V and 50-60Hz frequency are available to meet the needs of different regions"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "20-4200kVA YuChai Diesel Generator - BYC Power",
+      "header": [
+        "| Genset Model | Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (kVA) | Engine Model | Speed (rpm) | Engine Prime Power (kW) | Alternator Model | Alternator Prime Power (kW)"
+      ],
+      "rows": [
+        "| BY-YC22 | 16 | 20 | 18 | 22 | YCV2.5N35-G20 | 1500 | 23 | 184ES | 15",
+        "| BY-YC22 | 16 | 20 | 18 | 22 | YCV2.5N35-G20 | 1500 | 23 | 184ES | 15",
+        "| BY-YC33 | 24 | 30 | 27 | 33 | YCV2.5T45-G20 | 1500 | 30 | 184GS | 24",
+        "| BY-YC33 | 24 | 30 | 27 | 33 | YCV2.5T45-G20 | 1500 | 30 | 184GS | 24",
+        "| BY-YC41 | 30 | 38 | 33 | 41 | YCV2.5T55-G20 | 1500 | 38 | 184H | 30",
+        "| BY-YC41 | 30 | 38 | 33 | 41 | YCV2.5T55-G20 | 1500 | 38 | 184H | 30",
+        "| BY-YC45 | 32 | 40 | 36 | 45 | YCD4.2N60-G20 | 1500 | 40 | 184H | 30",
+        "| BY-YC69 | 50 | 63 | 55 | 69 | YCD4.2T90-G20 | 1500 | 60 | 224E | 48/50",
+        "| BY-YC80 | 60 | 75 | 64 | 80 | YCA4.8T100-G20 | 1500 | 70 | 224F | 58",
+        "| BY-YC88 | 64 | 80 | 70 | 88 | YCA4.8T110-G20 | 1500 | 77 | 224GS | 64",
+        "| BY-YC113 | 80 | 100 | 90 | 113 | YCM4.8TAA140-G20 | 1500 | 100 | 274C | 80",
+        "| BY-YC138 | 100 | 125 | 110 | 138 | YCA4.8TAA180-G20 | 1500 | 120 | 274D | 96/100",
+        "| BY-YC150 | 108 | 135 | 120 | 150 | YCB6.9TAA180-G20 | 1500 | 120 | 274D | 96/100",
+        "| BY-YC165 | 120 | 150 | 132 | 165 | YCB6.9TAA205-G20 | 1500 | 136 | 274FS | 120",
+        "| BY-YC200 | 150 | 188 | 160 | 200 | YCA7.3TAA245-G20 | 1500 | 165 | 274HS | 150",
+        "| BY-YC225 | 160 | 200 | 180 | 225 | YCQ7.5280-G30 | 1500 | 190 | 274H | 160",
+        "| BY-YC225 | 160 | 200 | 180 | 225 | YCMK10TAA285-G20 | 1500 | 190 | 274H | 160",
+        "| BY-YC275 | 200 | 250 | 220 | 275 | YCMK10TAA350-G20 | 1500 | 235 | 274K | 200",
+        "| BY-YC350 | 250 | 313 | 280 | 350 | YCMK10TAA420-G20 | 1500 | 281 | 444DL | 250",
+        "| BY-YC400 | 300 | 375 | 320 | 400 | YCMJ12TAA500-G20 | 1500 | 334 | 444FS | 300",
+        "| BY-YC450 | 320 | 400 | 360 | 450 | YCMJ12TAA500-G20 | 1500 | 365 | 444F | 320",
+        "| BY-YC500 | 360 | 450 | 400 | 500 | YCT16TAA600-G20 | 1500 | 401 | 544CS | 360",
+        "| BY-YC550 | 400 | 500 | 440 | 550 | YCT16TAA660-G20 | 1500 | 441 | 544C | 400",
+        "| BY-YC550 | 400 | 500 | 440 | 550 | YCT16660-G31 | 1500 | 441 | 544C | 400",
+        "| BY-YC625 | 450 | 563 | 500 | 625 | YCTD20780-G31 | 1500 | 520 | 544D | 440",
+        "| BY-YC688 | 500 | 625 | 550 | 688 | YCTD20640-G31 | 1500 | 561 | 544FS | 500",
+        "| BY-YC750 | 560 | 700 | 600 | 750 | YCTD20900-G31 | 1500 | 605 | 544F | 550",
+        "| BY-YC825 | 600 | 750 | 660 | 825 | YCTD201000-G30 | 1500 | 668 | 634B | 600",
+        "| BY-YC900 | 650 | 813 | 720 | 900 | YCTH281070-G31 | 1500 | 715 | 634C | 640",
+        "| BY-YC1000 | 720 | 900 | 800 | 1000 | YCTH281220-G31 | 1500 | 815 | 634D | 730",
+        "| BY-YC1125 | 800 | 1000 | 900 | 1125 | YCTH281320-G31 | 1500 | 880 | 634E | 800",
+        "| BY-YC1125 | 800 | 1000 | 900 | 1125 | YCC401320-G31 | 1500 | 880 | 634E | 800",
+        "| BY-YC1250 | 900 | 1125 | 1000 | 1250 | YCC401520-G31 | 1500 | 1016 | 634F | 900",
+        "| BY-YC1250 | 900 | 1125 | 1000 | 1250 | YCTD40TA1500-G30 | 1500 | 1000 | 634F | 900",
+        "| BY-YC1375 | 1000 | 1250 | 1100 | 1375 | YCTD40TA1680-G30 | 1500 | 1120 | 634G | 1000",
+        "| BY-YC1500 | 1100 | 1375 | 1200 | 1500 | YCTD40TA1830-G30 | 1500 | 1220 | 734B | 1120",
+        "| BY-YC1625 | 1200 | 1500 | 1300 | 1625 | YCTD40TA2000-G30 | 1500 | 1345 | 734C | 1240",
+        "| BY-YC1875 | 1350 | 1688 | 1500 | 1875 | YCTD52TA2270-G30 | 1500 | 1520 | 734D | 1320",
+        "| BY-YC2063 | 1500 | 1875 | 1650 | 2063 | YCTD52TA2510-G30 | 1500 | 1680 | 734E | 1520",
+        "| BY-YC2250 | 1600 | 2000 | 1800 | 2250 | YCTD52TA2700-G30 | 1500 | 1805 | 734F | 1664",
+        "| BY-YC2250 | 1700 | 2125 | 1900 | 2250 | YCC80TA2700-G31 | 1500 | 1805 | 734F | 1664",
+        "| BY-YC2500 | 1800 | 2250 | 2000 | 2500 | YCC80TA3000-G30 | 1500 | 2005 | 734G | 1800",
+        "| BY-YC2500 | 1800 | 2250 | 2000 | 2500 | YCC105TA3000-G31 | 1500 | 2005 | 734G | 1800",
+        "| BY-YC2750 | 2000 | 2500 | 2200 | 2750 | YCC105TA3300-G31 | 1500 | 2205 | 734H | 2000",
+        "| BY-YC3000 | 2200 | 2750 | 2400 | 3000 | YCC105TA3600-G31 | 1500 | 2405 | QYI504B | 2200",
+        "| BY-YC3250 | 2400 | 3000 | 2600 | 3250 | YCC105TA4000-G31 | 1500 | 2573 | QYI564B | 2700",
+        "| BY-YC3500 | 2600 | 3250 | 2800 | 3500 | YCC105TA4200-G30 | 1500 | 2806 | QYI564B | 2700",
+        "| BY-YC3750 | 2800 | 3500 | 3000 | 3750 | YCC105TA4500-G30 | 1500 | 3010 | QYI564C | 3000",
+        "| BY-YC4190 | 3050 | 3810 | 3355 | 4190 | YCC105TA4900-G30 | 1500 | 3280 | QYI564C | 3000"
       ]
     }
   ]

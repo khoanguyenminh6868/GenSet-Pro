@@ -175,7 +175,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)"
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders /arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity"
       ],
       "file": "sources/tellhow-power/101.md"
     },
@@ -185,7 +185,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Weight | Noise (no load) | Tank capacity"
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity"
       ],
       "file": "sources/tellhow-power/102.md"
     },
@@ -195,7 +195,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Weight | Noise (no load) | Tank capacity"
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity"
       ],
       "file": "sources/tellhow-power/103.md"
     },
@@ -205,7 +205,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Weight | Noise (no load) | Tank capacity"
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity"
       ],
       "file": "sources/tellhow-power/104.md"
     },
@@ -215,7 +215,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Weight | Noise (no load) | Tank capacity"
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity"
       ],
       "file": "sources/tellhow-power/105.md"
     },
@@ -225,7 +225,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Weight | Noise (no load) | Tank capacity"
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity"
       ],
       "file": "sources/tellhow-power/106.md"
     },
@@ -245,7 +245,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Weight | Engine model | Number of cylinders/arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity"
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders/arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity"
       ],
       "file": "sources/tellhow-power/115.md"
     },
@@ -255,7 +255,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)"
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders /arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity"
       ],
       "file": "sources/tellhow-power/123.md"
     },
@@ -265,7 +265,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity"
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders /arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity"
       ],
       "file": "sources/tellhow-power/124.md"
     },
@@ -275,7 +275,7 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity"
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders /arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity"
       ],
       "file": "sources/tellhow-power/126.md"
     }
@@ -288,6 +288,7 @@
       "n": 101,
       "title": "1000kW-1800kW THHS Series Diesel Generator Set with Compact Mitsubishi Engines",
       "header": [
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders /arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
         "| (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)"
       ],
       "rows": [
@@ -305,7 +306,7 @@
       "n": 102,
       "title": "THSC Silent Diesel Generator Sets | 20–520 kW Compact, Low-Noise Cummins Gensets",
       "header": [
-        "| Weight | Noise (no load) | Tank capacity",
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity",
         "| （kW） | （kW） | mm | （kg） | dB(A)@1m | dB(A)@7m | （L）"
       ],
       "rows": [
@@ -346,7 +347,7 @@
       "n": 103,
       "title": "570kW-1500kW THCC Silent Diesel Generator Sets | Cummins-Powered, Low-Noise Design",
       "header": [
-        "| Weight | Noise (no load) | Tank capacity",
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity",
         "| kW | kW | mm | kg | dB(A)@1m | dB(A)@7m | （L）"
       ],
       "rows": [
@@ -379,7 +380,7 @@
       "n": 104,
       "title": "650kW–3000kW THCY Silent Diesel Generator Sets | Yuchai Engines, Low-Noise Design",
       "header": [
-        "| Weight | Noise (no load) | Tank capacity",
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity",
         "| （kW） | （kW） | mm | （kg） | dB(A)@1m | dB(A)@7m | （L）"
       ],
       "rows": [
@@ -408,7 +409,7 @@
       "n": 105,
       "title": "16kW-550kW THSY series silent generator set | Yuchai Engines, Ultra-Quiet Design",
       "header": [
-        "| Weight | Noise (no load) | Tank capacity",
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity",
         "| （kW） | （kW） | mm | （kg） | dB(A)@1m | dB(A)@7m | （L）"
       ],
       "rows": [
@@ -443,7 +444,7 @@
       "n": 106,
       "title": "500kW-1800kW THCS Silent Diesel Generator Sets | 500–1800 kW Mitsubishi Engines, Low Noise Design",
       "header": [
-        "| Weight | Noise (no load) | Tank capacity",
+        "| Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity",
         "| （kW） | （kW） | mm | （kg） | dB(A)@1m | dB(A)@7m | （L）"
       ],
       "rows": [
@@ -495,7 +496,7 @@
       "n": 115,
       "title": "160kW-641kW THLV (VOLVO)series diesel generator set",
       "header": [
-        "| Weight | Engine model | Number of cylinders/arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders/arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
         "| (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)"
       ],
       "rows": [
@@ -529,7 +530,7 @@
       "n": 115,
       "title": "160kW-641kW THLV (VOLVO)series diesel generator set",
       "header": [
-        "| Weight | Engine model | Number of cylinders/arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders/arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
         "| (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)"
       ],
       "rows": [
@@ -563,6 +564,7 @@
       "n": 123,
       "title": "800-kW00-3000kW THHY Series Diesel Generator Set for Indoor Use",
       "header": [
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders /arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
         "| (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)"
       ],
       "rows": [
@@ -589,7 +591,7 @@
       "n": 124,
       "title": "730kW-1500kW THHC Series Diesel Generator Set with Compact Cummins Engines",
       "header": [
-        "| Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders /arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
         "| (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)"
       ],
       "rows": [
@@ -617,7 +619,7 @@
       "n": 126,
       "title": "730kW-2600kW THHM Series Diesel Generator Set with MTU Engines",
       "header": [
-        "| Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
+        "| Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders /arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity",
         "| (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)"
       ],
       "rows": [

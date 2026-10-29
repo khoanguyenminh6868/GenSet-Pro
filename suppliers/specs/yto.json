@@ -1,1 +1,180 @@
-[]
+[
+ {
+  "n": 101,
+  "url": "https://www.ytocorp.com/4-2-generator-set.html",
+  "title": "Diesel Engine and Generator Set | Agricultural Machinery | YTO",
+  "header": [
+   "| | Model of Genset | Prime power | Standby power | Engine model | Dimensions of genset (mm)"
+  ],
+  "rows": [
+   "| GENSET | GDYD15 | 12KW/15KVA | 13KW/16KVA | YND485D | 2000*900*1150",
+   "| GDYD20 | 16KW/20KVA | 18KW/23KVA | YSD490D | 2000*900*1150",
+   "| GDYD30 | 24KW/30KVA | 26KW/33KVA | Y4102D | 2000*900*1150",
+   "| GDYTO45 | 36KW/45KVA | 40KW/50KVA | LR4B5-D | 2450*1000*1400",
+   "| GDYTO63 | 50KW/63KVA | 55KW/69KVA | LR4B3Z-D | 2450*1000*1400",
+   "| GDYTO100 | 80KW/100KVA | 88KW/110KVA | LR4M3L-D | 2800*1130*1650"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.ytocorp.com/4a-diesel-engine.html",
+  "title": "Diesel Engine,Construction Machinery,Farm Machinery,China Engine Manufacturer",
+  "header": [
+   "| Engine | Model | Style | Cylinder diameter×engine stroke | Total displacement | Power | Speed | Minimum fuel consumption | Engine air intake system",
+   "| mm×mm | L | kW | rpm | g/(kW·h)"
+  ],
+  "rows": [
+   "| LR Series | LR4B5-D | Four cylinder, inline, water-cooled, four stroke, direct injection, electronic governor | 108×135 | 4.95 | 53 | 1800 | 235 | Naturally Aspirated",
+   "| LR4B3Z-D | 108×125 | 4.58 | 71 | 1800 | 230 | Turbocharged",
+   "| LR4M3L-D | 110×125 | 4.75 | 93 | 1800 | 230 | Turbocharged and Intercooled",
+   "| LR6A3L-D | 105×125 | 6.49 | 120 | 1800 | 230",
+   "| LR6A3L-DA | 105×125 | 6.49 | 127 | 1800 | 230",
+   "| LR6M3L-DA | 110×125 | 7.13 | 152 | 1800 | 230",
+   "| YM Series | YM6H4LF-D | Six cylinder, inline, water-cooled, four stroke, direct injection, electronic governor | 120×130 | 8.82 | 235 | 1800 | 225 | Turbocharged and Intercooled",
+   "| YM6S4LF-D | 126×130 | 9.726 | 300 | 1800 | 220",
+   "| YM6S9L-D | 126×155 | 11.6 | 360 | 1800 | 215",
+   "| YM6S9LF-D | 126×155 | 11.6 | 400 | 1800 | 230",
+   "| YM6S9LF-DA | 126×155 | 11.6 | 430 | 1800 | 230"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.ytocorp.com/5-1-220-240hp-tractor-elx-series.html",
+  "title": "Utility Tractor | Agricultural Tractor Maker | YTO",
+  "header": [],
+  "rows": [
+   "| Model | LX2204* | ELX2404",
+   "| Rated Engine HP (kW) | 161 (219) | 177 (240)"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.ytocorp.com/5-2-260-300hp-tractor-elp-elz-series.html",
+  "title": "Utility Tractor | Agricultural Tractor Supplier | YTO",
+  "header": [],
+  "rows": [
+   "| Model | ELP2604 | ELP2804 | ELP3004 | ELZ2804 | ELZ3004",
+   "| Rated engine HP (kW) | 191.5 (260) | 205 (279) | 220.6 (300) | 205 (279) | 220.6 (300)",
+   "| Gears | 16F+16R | 40F+40R",
+   "| Speed range (km/h) | 3.19-38.9 | 0.3-36.8",
+   "| Dimensions (L*W*H) (mm) | 5730*2890*3500 | 5935*2760*3350",
+   "| Wheel base (mm) | 3104 | 3120",
+   "| Ground clearance (mm) | 460 | 495",
+   "| Wheel track (F/R) (mm) | 1591-2235/1849-2165 | 2050-2250/2050-2300",
+   "| Min. turning radius (m) | 8±0.3 | 10±0.3"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.ytocorp.com/5-3-160-195-hp-tractor-elg-series.html",
+  "title": "Utility Tractor | Agricultural Tractor Manufacturer | YTO",
+  "header": [],
+  "rows": [
+   "| Model | ELG1604 | ELG1754 | ELG1954",
+   "| Rated engine HP (kW) | 118 (160) | 128.6 (175) | 144 (195)"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.ytocorp.com/5-4-130-140hp-tractor-nlx-series.html",
+  "title": "Utility Tractor | Agricultural Tractor Manufacturer | YTO",
+  "header": [
+   "| Model | NLX1304 | NLX1404*",
+   "| Engine type | Naturally aspirated 6-cylinder diesel engine"
+  ],
+  "rows": [
+   "| Rated engine HP (kW) | 95.6 (130) | 103 (140)",
+   "| Wheel track (F/R) (mm) | 1672-2003/ 1662-2262 | 1822-2153/1662-2262",
+   "| Min. operating mass (kg) | 5200 | 5250"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.ytocorp.com/5-5-1-80-115hp-tractor-nlx-nly-series.html",
+  "title": "Utility Tractor | Agricultural Machinery Manufacturer | YTO",
+  "header": [],
+  "rows": [
+   "| Model | NLX854 | NLX954 | NLX1024 | NLX1054 | NLY1154E | EX800 (sunshade) | EX954H",
+   "| Driving type | 4*4 | 4*2 | 4*4",
+   "| Rated engine HP (kW) kW (HP) | 62.5 (85) | 70 (95) | 76 (102) | 77.2 (105) | 84.5 (115) | 59 (80) | 70 (95)",
+   "| Speed range (km/h) | 1.64-26.97 | 1.65-27.17 | 2.17-36.7 | 2.28-36.9 | 1.9-31.7 | 1.29-21.20",
+   "| Dimensions (L*W*H) (mm) | 4350*2300*2765 | 3950*2170*2530 | 4080*2165*3025",
+   "| Wheelbase (mm) | 2314 | 2342 | 2542",
+   "| Ground clearance (mm) | 430 | 440 | 360 | 900",
+   "| Wheel track (F/R) (mm) | 1630-1960/ 1540-2120 | 1562-2000/1540-2120 | 1400-1900/1520-2120 | 1800/1800",
+   "| Min. turning radius (m) | 5.6±0.3 | 4.1±0.3 | 7±0.3",
+   "| Tyre (F/R) | 11.2-28/ 16.9-34 | 13.6-24/16.9-34 | 7.50-16/16.9-30 | 12.4-54/12.4-54",
+   "| Min. operating mass (kg) | 3900 | 4100 | 3150 | 4830"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.ytocorp.com/5-5-2-90-110hp-tractor-nlx-nly-series.html",
+  "title": "Utility Tractor | Agricultural Equipment Manufacturer | YTO",
+  "header": [],
+  "rows": [
+   "| Model | NLX904-1 | NLX954-1 | NLX1054-1 | NLX1104-1",
+   "| Rated engine HP (kW) | 66.1 (90) | 70 (95) | 77.2 (105) | 81 (110)"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://www.ytocorp.com/5-6-1-65-75hp-tractor-ef-emf-series.html",
+  "title": "65-75HP Utility Tractor | Agricultural Machinery Supplier | YTO",
+  "header": [],
+  "rows": [
+   "| Model (with ROPS) | EF654 | EF704 | EF754",
+   "| Rated engine HP (kW) | 47.8 (65) | 51.5 (70) | 55.2 (75)"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://www.ytocorp.com/5-6-2-55-60hp-tractor-ef-emf-series.html",
+  "title": "55-60HP Utility Tractor | Agricultural Machinery Supplier | YTO",
+  "header": [
+   "| Model (with ROPS) | EMF554X | EMF604",
+   "| Engine type | Naturally aspirated 4-cylinder diesel engine"
+  ],
+  "rows": [
+   "| Rated engine HP (kW) | 40.5 (55) | 44.1 (60)",
+   "| Speed range (km/h) | 2.74-33.22 | 2.84-34.54",
+   "| Dimensions (L*W*H) (mm) | 3910*1615*2445 | 4180*1745*2570",
+   "| Wheelbase (mm) | 2092 | 2127",
+   "| Tyre (F/R) | 8.3-20/12.4-28 | 8.3-20/13.6-28",
+   "| Min. operating mass (kg) | 2380 | 2600"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://www.ytocorp.com/5-8-45-55hp-tractor-eme-series.html",
+  "title": "Compact Tractor | Agricultural Tractor Supplier | YTO",
+  "header": [],
+  "rows": [
+   "| Model (with ROPS) | EME454 | NME504 | NME554",
+   "| Rated engine HP (kW) | 33.1 (45) | 36.8 (50) | 40.5 (55)",
+   "| Engine speed (rpm) | 2300 | 2200",
+   "| Speed range (km/h) | 2.46-33.22 | 2.36-30.88 | 2.255-29.53",
+   "| Dimensions (L*W*H) (mm) | 3660*1485*2720 | 3675*1515*2720",
+   "| Wheelbase (mm) | 1830 | 1840",
+   "| Min. operating mass (kg) | 1820 | 1930"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://www.ytocorp.com/5-9-24-55hp-tractor-sk-esk-series.html",
+  "title": "Compact Tractor | Agricultural Tractor Manufacturer | YTO",
+  "header": [],
+  "rows": [
+   "| Model (without ROPS) | SK244 (254) | ESK404 | ESK454 | ESK504",
+   "| Rated engine HP (kW) | 17.7 (24) | 29.4 (40) | 33.1 (45) | 36.8 (50)",
+   "| Engine speed (rpm) | 2300 | 2400 | 2300",
+   "| Speed range (km/h) | 1.74～25.7 | 2.17～33.11 | 1.95-28.8",
+   "| Lift capacity (pivot point) (kN) | ≥7 | ≥9.75 | ≥10.8",
+   "| Dimensions (L*W*H) (mm) | 3480*1465*1900 | 3600*1485*1940",
+   "| Wheelbase (mm) | 1650 | 1830 | 1850",
+   "| Ground clearance (mm) | 275 | 300",
+   "| Min. turning radius (m) | 3.8±0.3 | 4.0±0.3",
+   "| Min. operating mass (kg) | 1460 | 1570 | 1600"
+  ]
+ }
+]

@@ -111,219 +111,259 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| KW | KVA | KW | KVA"
+        "| Genset model | Frequency (Hz) | Prime Power | Standby Power | Engine | Cylinder. | Air intake way | Combustion chamber | Displacement (L) | Bore*Stroke (mm) | Stable Timing Rate（%） | Fuel consumption (g/kW.h) | SIZE for silent type (L*W*H/mm)"
       ],
       "file": "sources/victory-generator/101.md"
     },
     {
       "n": 102,
-      "url": "https://www.victorygenerator.com/yangdong/9kva-72.5kva-yangdong-diesel-generator-set.html",
+      "url": "https://www.victorygenerator.com/brushless-alternator/5kva-1625kva-victory-brushless-alternator.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| KW | KVA | KW | KVA"
+        "| New Model | Old Model | 60HZ 380-400V Standard | 60HZ/416V or YY 208V | 60HZ/440-460V or YY 220V | 60HZ /480V or YY 240V | 60HZ/380-400V Special winding)"
       ],
       "file": "sources/victory-generator/102.md"
     },
     {
       "n": 103,
-      "url": "https://www.victorygenerator.com/lovol/27.5kva-220kva-lovol-diesel-generator-set.html",
+      "url": "https://www.victorygenerator.com/yangdong/9kva-72.5kva-yangdong-diesel-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| KW | KVA | KW | KVA | (mm) | (kg)"
+        "| Genset model | Frequency (Hz) | Prime Power | Standby Power | Engine | Cylinder No. | Air intake way | Combustion chamber | Displacement (L) | Bore*Stroke (mm) | Stable Timing Rate (%) | Fuel consumption (g/kW.h) | SIZE for silent type (L*W*H/mm)"
       ],
       "file": "sources/victory-generator/103.md"
     },
     {
       "n": 104,
-      "url": "https://www.victorygenerator.com/yanmar/8kva-72kva-yanmar-diesel-generator-set.html",
+      "url": "https://www.victorygenerator.com/lovol/27.5kva-220kva-lovol-diesel-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| KW | KVA | KW | KVA"
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel consumption (g/kw.h) | NO. OF CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open type Dimensions L*W*H"
       ],
       "file": "sources/victory-generator/104.md"
     },
     {
       "n": 105,
+      "url": "https://www.victorygenerator.com/yanmar/8kva-72kva-yanmar-diesel-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | NO. OF CYCLINDER | DISPLACEMENT | BORE | STROKE | ASPIRATION | COMBUSTION | COOLING SYSTEM | Dimensions (mm) | Weight (kg)"
+      ],
+      "file": "sources/victory-generator/105.md"
+    },
+    {
+      "n": 106,
       "url": "https://www.victorygenerator.com/daewoo/60kva-875kva-doosan-daewoo-diesel-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consumption (L/H) | CYCLINDER | Generator Set"
       ],
-      "file": "sources/victory-generator/105.md"
+      "file": "sources/victory-generator/106.md"
     },
     {
-      "n": 106,
+      "n": 107,
       "url": "https://www.victorygenerator.com/mtu/275kva-4000kva-mtu-diesel-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consumption (L/H) | Cylinder | Open Generator Set | Silent Generator Set"
       ],
-      "file": "sources/victory-generator/106.md"
-    },
-    {
-      "n": 107,
-      "url": "https://www.victorygenerator.com/shangchai/63kva-975kva-sdec-diesel-generator-set.html",
-      "accessedAt": "2026-10-29",
-      "tier": "A",
-      "quote": [
-        "| KW | KVA | KW | KVA"
-      ],
       "file": "sources/victory-generator/107.md"
     },
     {
       "n": 108,
-      "url": "https://www.victorygenerator.com/yuchai/38kva-1650kva-yuchai-diesel-generator-set.html",
+      "url": "https://www.victorygenerator.com/shangchai/63kva-975kva-sdec-diesel-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| KW | KVA | KW | KVA"
+        "| Genset Model | Frequency (Hz) | Prime Power | Standby Power | Engine Model | Cylinder | Displacement (L) | Dimensions (mm) | Weight (kg)"
       ],
       "file": "sources/victory-generator/108.md"
     },
     {
       "n": 109,
+      "url": "https://www.victorygenerator.com/yuchai/38kva-1650kva-yuchai-diesel-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Fre. (HZ) | Prime Power | Stanby Power | Model | Cylinder | Model | Rated current (based on 400V) | IP | Protection Grade"
+      ],
+      "file": "sources/victory-generator/109.md"
+    },
+    {
+      "n": 110,
       "url": "https://www.victorygenerator.com/cummins/20kva-1718kva-cummins-diesel-generating-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Model | Frequency | Prime Power | Standby Power | Engine Model | Full-Load Diesel Consumption (L/H) | Displacement (L) | Cylinders & arrangement | Governor Type | Open Type | Silent Type"
       ],
-      "file": "sources/victory-generator/109.md"
+      "file": "sources/victory-generator/110.md"
     },
     {
-      "n": 110,
+      "n": 111,
       "url": "https://www.victorygenerator.com/volvo-penta/250kva~770kva-volvo-penta-diesel-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Genset Model | Prime Power | Standby Power | Engine model | Emission Standards | Bore*Stroke | CYL | Displacement | Lube | Fuel consumption | Dimension | Weight"
       ],
-      "file": "sources/victory-generator/110.md"
+      "file": "sources/victory-generator/111.md"
     },
     {
-      "n": 111,
+      "n": 112,
+      "url": "https://www.victorygenerator.com/perkins/7kva-2500kva-perkins-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel Consumption @Prime Power (L/H) | CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open Generator Set"
+      ],
+      "file": "sources/victory-generator/112.md"
+    },
+    {
+      "n": 113,
       "url": "https://www.victorygenerator.com/cummins/38kva-1031kva-cummins-marine-diesel-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Genset Model | Frequency (Hz) | Prime Power | Stanby Power | Current (A) | Voltage (V) | Engine Model | Engine Power(KW) | Rated Speed (rpm) | Cylinder"
       ],
-      "file": "sources/victory-generator/111.md"
+      "file": "sources/victory-generator/113.md"
     },
     {
-      "n": 112,
+      "n": 114,
       "url": "https://www.victorygenerator.com/weichai/25kva-438kva-weichai-diesel-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| KW | KVA | KW | KVA"
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine model | Fuel consumption (g/kw.h ) | No. of cylinder | Bore (mm) | Stroke (mm) | Displacement (L) | Lub-oil pan capacity (L) | Coolant capacity (L) | Volt. For start(DC) | Measurement L X W X H (mm) | Weight (kg)"
       ],
-      "file": "sources/victory-generator/112.md"
+      "file": "sources/victory-generator/114.md"
     },
     {
-      "n": 114,
+      "n": 115,
+      "url": "https://www.victorygenerator.com/weichai/10kva-434kva-Weifang-Ricardo-diesel-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset model | Frequency | Prime Power | Standby Power | Engine model | Fuel comsuption | Lube comsuption | Open type | Silent Type"
+      ],
+      "file": "sources/victory-generator/115.md"
+    },
+    {
+      "n": 117,
       "url": "https://www.victorygenerator.com/cummins/30kva-625kva-cummins-gas-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Genset Model | Rated power | Engine Type | Displacement (L) | Cylinders/ Arrangement | Bore×Stroke (MM) | Compression Ratio | Engine Rated Power (KW) | Gas Consumption (M3/KW.h) | Oil Consumption | Exhanst Temerature | Aspration | Net Weight | Dimension"
       ],
-      "file": "sources/victory-generator/114.md"
+      "file": "sources/victory-generator/117.md"
     },
     {
-      "n": 115,
+      "n": 118,
       "url": "https://www.victorygenerator.com/victory/2kw-10.5kw-gas-lpg-portable-generator.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Generator | Model : | LPG2500 | LPG6500 | LPG11000"
       ],
-      "file": "sources/victory-generator/115.md"
+      "file": "sources/victory-generator/118.md"
     },
     {
-      "n": 116,
+      "n": 119,
       "url": "https://www.victorygenerator.com/victory/2kw-8.8kw-gasoline-portable-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Generator | Model: | VT2500CL | VT3000CL | VT3800CL | VT5000CL | VT6500CL | VT7500CL | VT9000CL | VT10000CL"
       ],
-      "file": "sources/victory-generator/116.md"
+      "file": "sources/victory-generator/119.md"
     },
     {
-      "n": 117,
+      "n": 120,
       "url": "https://www.victorygenerator.com/victory/2.7kw-6.6kw-silent-diesel-portable-generator.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Model : | VDG3600S | VDG5000S | VDG6000S | VDG6500S | VDG7500S"
       ],
-      "file": "sources/victory-generator/117.md"
+      "file": "sources/victory-generator/120.md"
     },
     {
-      "n": 118,
+      "n": 121,
       "url": "https://www.victorygenerator.com/victory/1.7kw-6.5kw-diesel-portable-generator.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Generator | Model: | VDG2200CL | VDG3600CL | VDG5000CL | VDG6000CL | VDG6500CL | VDG7500CL"
       ],
-      "file": "sources/victory-generator/118.md"
+      "file": "sources/victory-generator/121.md"
     },
     {
-      "n": 119,
+      "n": 122,
       "url": "https://www.victorygenerator.com/victory/4.5kw-5.5kw-diesel-welding-generator.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| DC Welder | Model: | DW180ARE | DW200ARE"
       ],
-      "file": "sources/victory-generator/119.md"
+      "file": "sources/victory-generator/122.md"
     },
     {
-      "n": 120,
+      "n": 123,
       "url": "https://www.victorygenerator.com/victory/4.5kw-5.5kw-silent-diesel-welding-generator.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Power Factor: 1.0"
       ],
-      "file": "sources/victory-generator/120.md"
+      "file": "sources/victory-generator/123.md"
     },
     {
-      "n": 121,
+      "n": 124,
       "url": "https://www.victorygenerator.com/victory/4.5kw-5.5kw-gasoline-welding-generator.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Power Factor: 1.0"
       ],
-      "file": "sources/victory-generator/121.md"
+      "file": "sources/victory-generator/124.md"
     },
     {
-      "n": 122,
+      "n": 125,
       "url": "https://www.victorygenerator.com/deutz/12.5kva-165kva-deutz-air-cooled-diesel-generator-set.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| KW | KVA | KW | KVA"
+        "| Genset Model | Frequency (Hz) | Prime Power | Standby Power | Engine Model | Fuel Consumption (g/kwh) | Governor Type | Intaking method | Bore*Stroke (mm) | Displacement (L)"
       ],
-      "file": "sources/victory-generator/122.md"
+      "file": "sources/victory-generator/125.md"
     },
     {
-      "n": 123,
+      "n": 126,
       "url": "https://www.victorygenerator.com/deutz/60kva-625kva-original-deutz-diesel-generator.html",
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| KW | KVA | KW | KVA"
+        "| Genset model | Frequency (HZ) | Prime Power | Standby Power | Engine model | Fuel consumption under full load (L/H) | Cylinder | Volt. For start (DC) | Measurement L X W X H (mm) | Weight (kg)"
       ],
-      "file": "sources/victory-generator/123.md"
+      "file": "sources/victory-generator/126.md"
+    },
+    {
+      "n": 127,
+      "url": "https://www.victorygenerator.com/isuzu/20kva-55kva-isuzu-diesel-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| GENSET MODEL | Prime Power | Standby Power | DIESEL ENGINE MODEL | Aspiration | BoreXStroke (mm) | Cubic Capacity (L) | Compression Ratio | Steedy Governing Rate | Rating Fuel Consumption (L/h) | Open type dimensions (LxWxH) mm | Open type Weight (kg)"
+      ],
+      "file": "sources/victory-generator/127.md"
     }
   ],
   "confidence": "medium",
@@ -334,6 +374,7 @@
       "n": 101,
       "title": "10KVA~68KVA FAW-Xichai Diesel Generator Set",
       "header": [
+        "| Genset model | Frequency (Hz) | Prime Power | Standby Power | Engine | Cylinder. | Air intake way | Combustion chamber | Displacement (L) | Bore*Stroke (mm) | Stable Timing Rate（%） | Fuel consumption (g/kW.h) | SIZE for silent type (L*W*H/mm)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -351,6 +392,7 @@
       "n": 101,
       "title": "10KVA~68KVA FAW-Xichai Diesel Generator Set",
       "header": [
+        "| Genset model | Frequency (Hz) | Prime Power | Standby Power | Engine | Cylinder No. | Air intake way | Combustion chamber | Displacement (L) | Bore*Stroke (mm) | Stable Timing Rate（%） | Fuel consumption (g/kW.h) | SIZE for silent type (L*W*H/mm)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -365,8 +407,69 @@
     },
     {
       "n": 102,
+      "title": "5KVA~1625KVA Victory Brushless Alternator",
+      "header": [
+        "| New Model | Old Model | 60HZ 380-400V Standard | 60HZ/416V or YY 208V | 60HZ/440-460V or YY 220V | 60HZ /480V or YY 240V | 60HZ/380-400V Special winding)",
+        "| KW/Cont. | KW/Standby | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby"
+      ],
+      "rows": [
+        "| LA106 | VHG-6KW | 5.2 | 5.72 | 6 | 6.5 | 6.5 | 7.0 | 6.5 | 7.0 | |",
+        "| LA108 | VHG-10KW | 8 | 8.8 | 8.4 | 9.1 | 9.6 | 10.3 | 9.6 | 10.3 | |",
+        "| LA110 | VHG-12KW | 10 | 11 | 11.2 | 12.1 | 12.5 | 13.4 | 12.5 | 13.4 | |",
+        "| LA112 | VHG-15KW | 13 | 14 | 14 | 15.1 | 15.2 | 16.3 | 15.2 | 16.3 | |",
+        "| LA215 | VHG-18KW | 15.2 | 16.7 | 16.4 | 17.7 | 17.6 | 18.8 | 18 | 19.3 | 20 | 22",
+        "| LA218 | VHG-23KW | 20.6 | 22.7 | 22 | 23.8 | 23 | 24.6 | 24 | 25.7 | 24 | 26.4",
+        "| LA220 | VHG-25KW | 22.5 | 24.8 | 24 | 25.9 | 25 | 26.8 | 26 | 27.8 | 26 | 28.6",
+        "| LA222 | VHG-28KW | 24 | 27 | 26 | 28 | 27.5 | 29 | 28 | 30 | 28 | 31",
+        "| LA225 | VHG-30KW | 25 | 28 | 28 | 30 | 30 | 32 | 30 | 32 | 32 | 35",
+        "| LA230 | VHG-38KW | 33 | 36 | 35 | 38 | 37.5 | 40 | 37.5 | 40 | 38 | 41",
+        "| LA334 | VHG-42KW | 38 | 42 | 40 | 43 | 42 | 45 | 44 | 47 | 42 | 46",
+        "| LA340 | VHG-50KW | 46 | 51 | 48 | 52 | 50 | 54 | 52 | 56 | 50 | 55",
+        "| LA348 | VHG-58KW | 52 | 57 | 54 | 58 | 58 | 62 | 62 | 66 | 64 | 70",
+        "| LA358 | VHG-70KW | 64 | 70 | 67 | 72 | 70 | 75 | 75 | 80 | 75 | 83",
+        "| LA364 | VHG-75KW | 66 | 73 | 71 | 77 | 75 | 80 | 80 | 86 | 82 | 90",
+        "| LA368 | VHG-78KW | 72 | 79 | 75 | 81 | 78 | 83 | 83 | 89 | 86 | 95",
+        "| LA375 | VHG-90KW | 77 | 83 | 84 | 91 | 89 | 95 | 94 | 101 | 94 | 102",
+        "| LA480 | VHG-94KW | 84 | 92 | 90 | 97 | 94 | 101 | 100 | 107 | 100 | 110",
+        "| LA490 | VHG-105KW | 100 | 110 | 102 | 110 | 105 | 112 | 117 | 125 | 114 | 125",
+        "| LA4100 | VHG-116KW | 105 | 116 | 110 | 119 | 116 | 124 | 124 | 133 | 124 | 136",
+        "| LA4112 | VHG-134KW | 120 | 132 | 128 | 138 | 134 | 143 | 143 | 153 | 140 | 154",
+        "| LA4120 | VHG-140KW | 124 | 136 | 132 | 143 | 140 | 150 | 148 | 158 | 150 | 165",
+        "| LA4132 | VHG-150KW | 136 | 150 | 146 | 158 | 154 | 165 | 164 | 175 | 170 | 187",
+        "| LA4150 | VHG-170KW | 152 | 167 | 166 | 179 | 174 | 186 | 184 | 197 | 190 | 209",
+        "| LA4160 | VHG-186KW | 164 | 180 | 178 | 192 | 186 | 199 | 200 | 214 | 200 | 220",
+        "| LA4180 | VHG-200KW | 182 | 200 | 194 | 210 | 206 | 220 | 218 | 233 | 220 | 242",
+        "| LA4200 | VHG-220KW | 200 | 216 | 212 | 229 | 224 | 240 | 236 | 253 | 250 | 270",
+        "| LA5200 | VHG-230KW | 204 | 224 | 216 | 233 | 228 | 244 | 240 | 257 | 250 | 275",
+        "| LA5220 | VHG-250KW | 225 | 248 | 238 | 257 | 250 | 268 | 264 | 282 | 280 | 308",
+        "| LA5240 | VHG-270KW | 248 | 273 | 260 | 281 | 272 | 291 | 288 | 308 | 300 | 330",
+        "| LA5260 | VHG-300KW | 272 | 299 | 286 | 309 | 300 | 321 | 312 | 334 | 320 | 352",
+        "| LA5280 | VHG-320KW | 290 | 319 | 304 | 328 | 320 | 342 | 336 | 360 | 350 | 385",
+        "| LA5300 | VHG-350KW | 312 | 343 | 330 | 356 | 346 | 370 | 360 | 385 | 370 | 407",
+        "| LA5320 | VHG-370KW | 334 | 361 | 352 | 380 | 368 | 394 | 384 | 411 | 400 | 432",
+        "| LA6360 | VHG-420KW | 382 | 420 | 400 | 432 | 416 | 445 | 432 | 462 | 440 | 484",
+        "| LA6400 | VHG-460KW | 424 | 466 | 442 | 477 | 460 | 492 | 480 | 514 | 480 | 528",
+        "| LA6450 | VHG-520KW | 478 | 526 | 495 | 535 | 516 | 552 | 540 | 578 | 550 | 605",
+        "| LA6480 | VHG-550KW | 510 | 561 | 528 | 570 | 550 | 589 | 576 | 616 | 580 | 638",
+        "| LA6500 | VHG-570KW | 528 | 581 | 550 | 594 | 570 | 610 | 600 | 642 | 620 | 682",
+        "| LA6520 | VHG-600KW | 560 | 605 | 578 | 624 | 600 | 642 | 624 | 668 | 650 | 702",
+        "| LA6536 | VHG-620KW | 582 | 629 | 600 | 648 | 620 | 663 | 648 | 693 | 680 | 734",
+        "| LA6560 | VHG-640KW | 606 | 654 | 620 | 670 | 640 | 685 | 672 | 719 | 710 | 767",
+        "| LA7600 | VHG-680KW | 620 | 670 | 648 | 700 | 684 | 732 | 750 | 803 | 728 | 786",
+        "| LA7640 | VHG-730KW | 660 | 713 | 692 | 747 | 733 | 784 | 800 | 856 | 780 | 842",
+        "| LA7720 | VHG-840KW | 750 | 810 | 788 | 851 | 843 | 902 | 910 | 974 | 832 | 900",
+        "| LA7800 | VHG-910KW | 820 | 886 | 866 | 935 | 916 | 980 | 1000 | 1070 | 900 | 972",
+        "| LA7900 | VHG-1000KW | 910 | 983 | 963 | 1040 | 1019 | 1090 | 1112 | 1190 | 1050 | 1134",
+        "| LA71000 | VHG-1100KW | 1000 | 1080 | 1048 | 1132 | 1109 | 1187 | 1210 | 1295 | 1200 | 1296",
+        "| LA71100 | VHG-1160KW | 1055 | 1139 | 1110 | 1199 | 1160 | 1241 | 1300 | 1391 | 1280 | 1382",
+        "| LA71200 | VHG-1300KW | 1131 | 1221 | 1190 | 1285 | 1300 | 1391 | 1500 | 1605 | |"
+      ]
+    },
+    {
+      "n": 103,
       "title": "9KVA~72.5KVA Yangdong Diesel Generator Set",
       "header": [
+        "| Genset model | Frequency (Hz) | Prime Power | Standby Power | Engine | Cylinder No. | Air intake way | Combustion chamber | Displacement (L) | Bore*Stroke (mm) | Stable Timing Rate (%) | Fuel consumption (g/kW.h) | SIZE for silent type (L*W*H/mm)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -383,9 +486,10 @@
       ]
     },
     {
-      "n": 102,
+      "n": 103,
       "title": "9KVA~72.5KVA Yangdong Diesel Generator Set",
       "header": [
+        "| Genset model | Frequency (Hz) | Prime Power | Standby Power | Engine | Cylinder No. | Air intake way | Combustion chamber | Displacement (L) | Bore*Stroke (mm) | Stable Timing Rate (%) | Fuel consumption (g/kW.h) | SIZE for silent type (L*W*H/mm)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -402,9 +506,10 @@
       ]
     },
     {
-      "n": 103,
+      "n": 104,
       "title": "KVA~220KVA Lovol Diesel Generator Set",
       "header": [
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel consumption (g/kw.h) | NO. OF CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open type Dimensions L*W*H",
         "| KW | KVA | KW | KVA | (mm) | (kg)"
       ],
       "rows": [
@@ -425,9 +530,10 @@
       ]
     },
     {
-      "n": 103,
+      "n": 104,
       "title": "KVA~220KVA Lovol Diesel Generator Set",
       "header": [
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel consumption (g/kw.h) | NO. OF CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open type Dimensions L*W*H",
         "| KW | KVA | KW | KVA | (mm) | (kg)"
       ],
       "rows": [
@@ -450,9 +556,10 @@
       ]
     },
     {
-      "n": 104,
+      "n": 105,
       "title": "8KVA~72KVA Yanmar Diesel Generator Set",
       "header": [
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | NO. OF CYCLINDER | DISPLACEMENT | BORE | STROKE | ASPIRATION | COMBUSTION | COOLING SYSTEM | Dimensions (mm) | Weight (kg)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -468,9 +575,10 @@
       ]
     },
     {
-      "n": 104,
+      "n": 105,
       "title": "8KVA~72KVA Yanmar Diesel Generator Set",
       "header": [
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | NO. OF CYCLINDER | DISPLACEMENT | BORE | STROKE | ASPIRATION | COMBUSTION | COOLING SYSTEM | Dimensions (mm) | Weight (kg)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -486,7 +594,7 @@
       ]
     },
     {
-      "n": 105,
+      "n": 106,
       "title": "60KVA~875KVA Doosan Daewoo Diesel Generator Set",
       "header": [
         "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consumption (L/H) | CYCLINDER | Generator Set",
@@ -512,7 +620,7 @@
       ]
     },
     {
-      "n": 105,
+      "n": 106,
       "title": "60KVA~875KVA Doosan Daewoo Diesel Generator Set",
       "header": [
         "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consumption (L/H) | CYCLINDER | Generator Set",
@@ -539,7 +647,7 @@
       ]
     },
     {
-      "n": 106,
+      "n": 107,
       "title": "275KVA~4000KVA MTU Diesel Generator Set",
       "header": [
         "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consumption (L/H) | Cylinder | Open Generator Set | Silent Generator Set",
@@ -575,7 +683,7 @@
       ]
     },
     {
-      "n": 106,
+      "n": 107,
       "title": "275KVA~4000KVA MTU Diesel Generator Set",
       "header": [
         "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consumption (L/H) | Cylinder | Open Generator Set | Silent Generator Set",
@@ -609,9 +717,10 @@
       ]
     },
     {
-      "n": 107,
+      "n": 108,
       "title": "63KVA~975KVA SDEC Diesel Generator Set",
       "header": [
+        "| Genset Model | Frequency (Hz) | Prime Power | Standby Power | Engine Model | Cylinder | Displacement (L) | Dimensions (mm) | Weight (kg)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -641,9 +750,10 @@
       ]
     },
     {
-      "n": 108,
+      "n": 109,
       "title": "38KVA~1650KVA Yuchai Diesel Generator Set",
       "header": [
+        "| Genset Model | Fre. (HZ) | Prime Power | Stanby Power | Model | Cylinder | Model | Rated current (based on 400V) | IP | Protection Grade",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -674,7 +784,7 @@
       ]
     },
     {
-      "n": 109,
+      "n": 110,
       "title": "20KVA~1718KVA Cummins Diesel Generator Set",
       "header": [
         "| Model | Frequency | Prime Power | Standby Power | Engine Model | Full-Load Diesel Consumption (L/H) | Displacement (L) | Cylinders & arrangement | Governor Type | Open Type | Silent Type",
@@ -801,7 +911,7 @@
       ]
     },
     {
-      "n": 110,
+      "n": 111,
       "title": "250KVA~770KVA Volvo Penta Diesel Generator Set Wholesaler",
       "header": [
         "| Genset Model | Prime Power | Standby Power | Engine model | Emission Standards | Bore*Stroke | CYL | Displacement | Lube | Fuel consumption | Dimension | Weight",
@@ -834,7 +944,84 @@
       ]
     },
     {
-      "n": 111,
+      "n": 112,
+      "title": "7KVA~2500KVA Perkins Diesel Generator Set",
+      "header": [
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel Consumption @Prime Power (L/H) | CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open Generator Set",
+        "| KW | KVA | KW | KVA | DIMENSION (mm) | WEIGHT (kg)"
+      ],
+      "rows": [
+        "| V8P | 50 | 7.2 | 9 | 8 | 10 | 403A-11G1/ 403D-11G | 3 | 3 | 77 | 81 | 4.9 | 5.2 | 1480*750*1270 | 390",
+        "| V11P | 50 | 10.4 | 13 | 11 | 14 | 403A-15G1/ 403D-15G | 3.7 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469",
+        "| V13P | 50 | 12 | 15 | 13 | 16 | 403A-15G2 | 5 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469",
+        "| V18P | 50 | 16 | 20 | 18 | 22 | 404A-22G1/ 404D-22G | 5.3 | 4 | 84 | 100 | 10.6 | 7 | 1630*750*1320 | 553",
+        "| V24P | 50 | 22 | 27.5 | 24 | 30 | 404D-22TG | 7.1 | 4 | 84 | 100 | 10.6 | 9.3 | 1630*750*1320 | 600",
+        "| V26P | 50 | 24 | 30 | 26.4 | 33 | 1103A-33G | 7.1 | 3 | 105 | 127 | 7.9 | 10.2 | 1780*750*1430 | 788",
+        "| V40P | 50 | 36 | 45 | 40 | 50 | 1103A-33TG1 | 10.7 | 3 | 105 | 127 | 7.9 | 10.2 | 1850*750*1430 | 908",
+        "| V53P | 50 | 48 | 60 | 53 | 66 | 1103A-33TG2 | 13.9 | 3 | 105 | 127 | 8 | 13 | 1950*750*1430 | 933",
+        "| V58P | 50 | 52 | 65 | 58 | 72 | 1104A-44TG1 | 14.8 | 4 | 105 | 127 | 8 | 13 | 2220*750*1530 | 1053",
+        "| V72P | 50 | 64 | 80 | 72 | 90 | 1104A-44TG2 | 18.7 | 4 | 105 | 127 | 8 | 13 | 2220*750*1530 | 1093",
+        "| V88P | 50 | 80 | 100 | 88 | 110 | 1104C-44TAG2 | 22.6 | 4 | 105 | 127 | 8 | 12.6 | 2220*750*1530 | 1054",
+        "| V110P | 50 | 100 | 125 | 110 | 138 | 1106A-70TG1 | 27.5 | 6 | 105 | 135 | 18 | 21 | 2620*770*1570 | 1380",
+        "| V120P | 50 | 110 | 138 | 120 | 150 | 1106A-70TG1 | 30.2 | 6 | 105 | 135 | 18 | 21 | 2620*770*1570 | 1416",
+        "| V132P | 50 | 120 | 150 | 132 | 165 | 1106A-70TAG2 | 33.4 | 6 | 105 | 135 | 16.5 | 21 | 2620*770*1570 | 1699",
+        "| V160P | 50 | 144 | 180 | 160 | 200 | 1106A-70TAG3 | 41.6 | 6 | 105 | 135 | 16.5 | 21 | 2620*770*1570 | 1749",
+        "| V176P | 50 | 160 | 200 | 176 | 220 | 1106A-70TAG4 | 45.8 | 6 | 105 | 135 | 16.5 | 21 | 2620*770*1570 | 1799",
+        "| V200P | 50 | 180 | 225 | 200 | 250 | 1506A-E88TAG2 | 52 | 6 | 112 | 149 | 41 | 37 | 2920*930*1810 | 2064",
+        "| V220P | 50 | 200 | 250 | 220 | 275 | 1506A-E88TAG3 | 56 | 6 | 112 | 149 | 41 | 37 | 2920*930*1810 | 2084",
+        "| V240P | 50 | 220 | 275 | 240 | 300 | 1506A-E88TAG4 | 60 | 6 | 112 | 149 | 41 | 37 | 2920*930*1810 | 2502",
+        "| V264P | 50 | 240 | 300 | 264 | 330 | 1506A-E88TAG5 | 65 | 6 | 112 | 149 | 41 | 37 | 2920*930*1810 | 2502",
+        "| V320P | 50 | 280 | 350 | 320 | 400 | 2206A/C-E13TAG2 | 75 | 6 | 130 | 157 | 40 | 51.4 | 3500*1150*2000 | 3178",
+        "| V360P | 50 | 320 | 400 | 360 | 450 | 2206A/C-E13TAG3 | 85 | 6 | 130 | 157 | 40 | 51.4 | 3500*1150*2000 | 3306",
+        "| V400P | 50 | 360 | 450 | 400 | 500 | 2506A/C-E15TAG1 | 99 | 6 | 137 | 171 | 62 | 58 | 3830*1190*2020 | 3637",
+        "| V440P | 50 | 400 | 500 | 440 | 550 | 2506A/C-E15TAG2 | 106 | 6 | 137 | 171 | 62 | 58 | 3830*1190*2020 | 3637",
+        "| V530P | 50 | 480 | 600 | 530 | 663 | 2806A/C-E18TAG1A | 123 | 6 | 145 | 183 | 62 | 61 | 3750*1550*2080 | 4382",
+        "| V580P | 50 | 520 | 650 | 580 | 725 | 2806A/C-E18TAG2 | 132 | 6 | 145 | 183 | 62 | 61 | 3750*1550*2080 | 4537",
+        "| V660P | 50 | 600 | 750 | 660 | 825 | 4006-23TAG2A | 157 | 6 | 160 | 190 | 113.4 | 105 | 4320*1730*2180 | 6127",
+        "| V720P | 50 | 648 | 810 | 720 | 900 | 4006-23TAG3A | 172 | 6 | 160 | 190 | 113.4 | 105 | 4320*1730*2180 | 6130",
+        "| V750P | 50 | 680 | 850 | 750 | 938 | 4008TAG | 202 | 8 | 160 | 190 | 165.6 | 162 | 4680*2070*2450 | 7900",
+        "| V800P | 50 | 728 | 910 | 800 | 1000 | 4008TAG1A | 195 | 8 | 160 | 190 | 153 | 162 | 4680*2070*2450 | 8350",
+        "| V880P | 50 | 800 | 1000 | 880 | 1100 | 4008TAG2A | 215 | 8 | 160 | 190 | 153 | 162 | 4680*2070*2450 | 8650",
+        "| V1100P | 50 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | 259 | 12 | 160 | 190 | 177 | 201 | 4760*2020*2481 | 8929",
+        "| V1200P | 50 | 1100 | 1375 | 1200 | 1500 | 4012-46TWG3A/ 4012-46TAG1A | 283 | 12 | 160 | 190 | 177 | 201 | 4760*2020*2481 | 8987",
+        "| V1320P | 50 | 1200 | 1500 | 1320 | 1650 | 4012-46TWG4A/ 4012-46TAG2A | 316 | 12 | 160 | 190 | 177 | 201 | 4950*2200*2460 | 9900",
+        "| V1500P | 50 | 1364 | 1705 | 1500 | 1875 | 4012-46TAG3A | 370 | 12 | 160 | 190 | 177 | 210 | 5030*2180*2600 | 10127",
+        "| V1624P | 50 | 1480 | 1850 | 1624 | 2030 | 4016TAG1A | 470 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12229",
+        "| V1800P | 50 | 1640 | 2050 | 1800 | 2250 | 4016TAG2A | 529 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12513",
+        "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281",
+        "| V10P | 60 | 9 | 11 | 10 | 12.5 | 403D-11G | 3 | 3 | 77 | 81 | 4.9 | 5.2 | 1480*750*1270 | 390",
+        "| V13P | 60 | 12 | 15 | 13 | 16 | 403D-15G | 3 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469",
+        "| V20P | 60 | 18 | 22.5 | 20 | 25 | 404D-22G | 6.2 | 4 | 84 | 100 | 10.6 | 7 | 1630*750*1320 | 553",
+        "| V28P | 60 | 26 | 32.5 | 28 | 35 | 404D-22TG | 7.1 | 4 | 84 | 100 | 10.6 | 9.3 | 1630*750*1320 | 553",
+        "| V31P | 60 | 28 | 35 | 31 | 39 | 404D-22TAG | 8.9 | 4 | 84 | 100 | 10.6 | 9.3 | 1630*750*1320 | 553",
+        "| V45P | 60 | 40 | 50 | 45 | 56 | 1103A-33TG1 | 12.9 | 3 | 105 | 127 | 8.3 | 10.2 | 1780*750*1430 | 908",
+        "| V60P | 60 | 54 | 68 | 60 | 75 | 1104D-44TG1/ 1103A-33TG2 | 16 | 4 | 105 | 127 | 8 | 13 | 1950*750*1430 | 1054",
+        "| V66P | 60 | 60 | 75 | 66 | 83 | 1104A-44TG1/ 1104D-E44TG1 | 17.7 | 4 | 105 | 127 | 8 | 13 | 2220*750*1530 | 1054",
+        "| V80P | 60 | 72 | 90 | 80 | 100 | 1104A/C-44TG2/ 1104D-E44TAG1 | 22.3 | 4 | 105 | 127 | 8 | 13 | 2220*750*1530 | 1054",
+        "| V100P | 60 | 92 | 115 | 100 | 125 | 1104C-44TAG2/ 1104D-E44TAG2 | 26.9 | 4 | 105 | 127 | 8 | 12.6 | 2220*750*1530 | 1054",
+        "| V132P | 60 | 120 | 150 | 132 | 165 | 1106A-70TG1 | 35.2 | 6 | 105 | 135 | 18 | 21 | 2620*770*1570 | 1550",
+        "| V150P | 60 | 135 | 169 | 150 | 188 | 1106A-70TAG2/ 1106D-E70TAG2 | 38.2 | 6 | 105 | 135 | 16.5 | 21 | 2620*770*1570 | 1699",
+        "| V176P | 60 | 160 | 200 | 176 | 220 | 1106A-70TAG3 | 47 | 6 | 105 | 135 | 16.5 | 21 | 2620*770*1570 | 1749",
+        "| V220P | 60 | 200 | 250 | 220 | 275 | 1506A-E88TAG1 | 53 | 6 | 112 | 149 | 41 | 37 | 2920*930*1810 | 2084",
+        "| V252P | 60 | 230 | 288 | 252 | 315 | 1506A-E88TAG3 | 63 | 6 | 112 | 149 | 41 | 37 | 2920*930*1810 | 2502",
+        "| V280P | 60 | 250 | 313 | 280 | 350 | 1506A-E88TAG4 | 68 | 6 | 112 | 149 | 41 | 37 | 2920*930*1810 | 2502",
+        "| V310P | 60 | 280 | 350 | 310 | 388 | 1506A-E88TAG5 | 73 | 6 | 112 | 149 | 41 | 37 | 2920*930*1810 | 2600",
+        "| V352P | 60 | 320 | 400 | 352 | 440 | 2206C/D-E13TAG2 | 84 | 6 | 130 | 157 | 40 | 51.4 | 3500*1150*2000 | 3178",
+        "| V400P | 60 | 360 | 450 | 400 | 500 | 2206A-E13TAG6 | 91 | 6 | 130 | 157 | 40 | 51.4 | 3500*1150*2000 | 3306",
+        "| V450P | 60 | 400 | 500 | 450 | 563 | 2506C/D-E15TAG1 | 113 | 6 | 137 | 171 | 62 | 58 | 3830*1190*2020 | 3637",
+        "| V550P | 60 | 500 | 625 | 550 | 688 | 2806A-E18TAG1A | 127 | 6 | 145 | 183 | 62 | 61 | 3750*1550*2080 | 3637",
+        "| V600P | 60 | 545 | 681 | 600 | 750 | 2806A/C-E18TAG3 | 144 | 6 | 145 | 183 | 62 | 61 | 3750*1550*2080 | 4382",
+        "| V660P | 60 | 600 | 750 | 660 | 825 | 4006-23TAG2A | 177 | 6 | 160 | 190 | 113.4 | 105 | 4320*1730*2180 | 6127",
+        "| V728P | 60 | 660 | 825 | 728 | 910 | 4006-23TAG3A | 200 | 6 | 160 | 190 | 113.4 | 105 | 4320*1730*2180 | 6130",
+        "| V880P | 60 | 800 | 1000 | 880 | 1100 | 4008TAG2 | 224 | 8 | 160 | 190 | 153 | 162 | 4680*2070*2450 | 6500",
+        "| V1100P | 60 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | 266 | 12 | 160 | 190 | 177 | 201 | 4950*2200*2460 | 8929",
+        "| V1200P | 60 | 1100 | 1375 | 1200 | 1500 | 4012-46TWG3A | 291 | 12 | 160 | 190 | 177 | 201 | 5030*2180*2600 | 8987",
+        "| V1320P | 60 | 1200 | 1500 | 1320 | 1650 | 4012-46TWG4A/ 4012-46TAG2A | 323 | 12 | 160 | 190 | 177 | 201 | 5030*2180*2600 | 9462",
+        "| V1500P | 60 | 1360 | 1700 | 1500 | 1875 | 4012-46TAG3A | 361 | 12 | 160 | 190 | 177 | 210 | 5030*2180*2600 | 9889"
+      ]
+    },
+    {
+      "n": 113,
       "title": "38KVA~1031KVA Cummins Marine Diesel Generator Set",
       "header": [
         "| Genset Model | Frequency (Hz) | Prime Power | Stanby Power | Current (A) | Voltage (V) | Engine Model | Engine Power(KW) | Rated Speed (rpm) | Cylinder",
@@ -860,7 +1047,7 @@
       ]
     },
     {
-      "n": 111,
+      "n": 113,
       "title": "38KVA~1031KVA Cummins Marine Diesel Generator Set",
       "header": [
         "| Genset Model | Frequency (Hz) | Prime Power | Stanby Power | Current (A) | Voltage (V) | Engine Model | Engine Power (KW) | Rated Speed (rpm) | Cylinder",
@@ -887,9 +1074,10 @@
       ]
     },
     {
-      "n": 112,
+      "n": 114,
       "title": "25KVA~438KVA Weichai Diesel Generator Set",
       "header": [
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine model | Fuel consumption (g/kw.h ) | No. of cylinder | Bore (mm) | Stroke (mm) | Displacement (L) | Lub-oil pan capacity (L) | Coolant capacity (L) | Volt. For start(DC) | Measurement L X W X H (mm) | Weight (kg)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -912,9 +1100,10 @@
       ]
     },
     {
-      "n": 112,
+      "n": 114,
       "title": "25KVA~438KVA Weichai Diesel Generator Set",
       "header": [
+        "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine model | Fuel consumption (g/kw.h ) | No. of cylinder | Bore (mm) | Stroke (mm) | Displacement (L) | Lub-oil pan capacity (L) | Coolant capacity (L) | Volt. For start (DC) | Measurement L X W X H (mm) | Weight (kg)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -931,7 +1120,61 @@
       ]
     },
     {
-      "n": 114,
+      "n": 115,
+      "title": "10KVA~434KVA Weifang Ricardo Diesel Generator Set",
+      "header": [
+        "| Genset model | Frequency | Prime Power | Standby Power | Engine model | Fuel comsuption | Lube comsuption | Open type | Silent Type",
+        "| KW | KVA | KW | KVA | g/kw.h | g/kw.h | Dimension (mm) | Weight (kg) | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| V12T | 50 | 10 | 12.5 | 11 | 13.75 | Y480BD | <=257 | <=2.04 | 1350*670*1030 | 630 | 1700*900*1150 | 800",
+        "| V14T | 50 | 12 | 15 | 14 | 17.5 | Y485BD | <=257 | <=2.04 | 1350*670*1030 | 680 | 1700*900*1150 | 850",
+        "| V18T | 50 | 16 | 20 | 18 | 22.5 | 495D | <=256 | <=2.04 | 1700*630*1000 | 750 | 2000*900*1200 | 900",
+        "| V22T | 50 | 20 | 25 | 22 | 27.5 | 495D | <=256 | <=2.04 | 1700*630*1000 | 780 | 2000*900*1200 | 950",
+        "| V26T | 50 | 24 | 30 | 26 | 32.5 | K4100D | <=256 | <=2.04 | 1700*630*1000 | 800 | 2000*900*1200 | 990",
+        "| V32T | 50 | 28 | 35 | 32 | 40 | K4102D | <=256 | <=2.04 | 1700*630*1000 | 850 | 2000*900*1200 | 1050",
+        "| V33T | 50 | 30 | 37.5 | 33 | 41 | 495ZD | <=256 | <=2.04 | 1760*800*1100 | 900 | 2250*1000*1300 | 1000",
+        "| V40T | 50 | 36 | 45 | 40 | 50 | 4100ZD | <=256 | <=2.04 | 1760*800*1100 | 950 | 2250*1000*1300 | 1170",
+        "| V45T | 50 | 40 | 50 | 45 | 56.25 | R4105ZD | <=256 | <=1.63 | 1850*800*1100 | 1000 | 2250*1000*1300 | 1200",
+        "| V53T | 50 | 48 | 60 | 53 | 66.25 | R4105ZD | <=231 | <=1.63 | 1850*800*1100 | 1050 | 2250*1000*1300 | 1300",
+        "| V64T | 50 | 58 | 72.5 | 64 | 80 | R4105AZLD | <=231 | <=1.63 | 2200*800*1200 | 1200 | 2450*1000*1300 | 1350",
+        "| V85T | 50 | 75 | 94 | 85 | 106 | R6105ZD | <=231 | <=1.63 | 2350*800*1270 | 1300 | 2800*1150*1610 | 1450",
+        "| V100T | 50 | 90 | 112.5 | 100 | 125 | R6105ZLD | <=231 | <=1.63 | 2350*800*1270 | 1350 | 2800*1150*1610 | 1500",
+        "| V110T | 50 | 100 | 125 | 110 | 137.5 | R6105AZLD | <=218 | <=1.63 | 2470*800*1270 | 1450 | 2800*1150*1610 | 1650",
+        "| V120T | 50 | 120 | 150 | 132 | 165 | R6105IZLD | <=218 | <=1.63 | 2470*800*1270 | 1550 | 2800*1150*1610 | 1700",
+        "| V160T | 50 | 140 | 175 | 160 | 200 | R6113AZLD | <=218 | <=2.04 | 2470*800*1270 | 1550 | 2800*1150*1610 | 1700",
+        "| V220T | 50 | 200 | 250 | 220 | 275 | TH6126ZD | <=198 | <=2.04 | 2800*1100*1800 | 2300 | 3300*1200*2000 | 2500",
+        "| V275T | 50 | 250 | 312.5 | 275 | 343.75 | TH6126IZLD | <=198 | <=2.04 | 2900*1100*1800 | 2650 | 3400*1200*2000 | 2800"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "10KVA~434KVA Weifang Ricardo Diesel Generator Set",
+      "header": [
+        "| Genset model | Frequency | Prime Power | Standby Power | Engine model | Fuel comsuption | Lube comsuption | Open type | Silent Type",
+        "| KW | KVA | KW | KVA | g/kw.h | g/kw.h | Dimension (mm) | Weight (kg) | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| V12T | 60 | 10 | 12.5 | 11 | 13.75 | Y480BD | <=257 | <=2.04 | 1350*670*1030 | 630 | 1700*900*1150 | 800",
+        "| V14T | 60 | 12 | 15 | 14 | 17.5 | Y485BD | <=257 | <=2.04 | 1350*670*1030 | 680 | 1700*900*1150 | 850",
+        "| V18T | 60 | 16 | 20 | 18 | 22.5 | 495D | <=256 | <=2.04 | 1700*630*1000 | 750 | 2000*900*1200 | 900",
+        "| V22T | 60 | 20 | 25 | 22 | 27.5 | 495D | <=256 | <=2.04 | 1700*630*1000 | 780 | 2000*900*1200 | 950",
+        "| V32T | 60 | 28 | 35 | 32 | 40 | K4100D | <=256 | <=2.04 | 1700*630*1000 | 850 | 2000*900*1200 | 1050",
+        "| V40T | 60 | 36 | 45 | 40 | 50 | 4100ZD | <=256 | <=2.04 | 1760*800*1100 | 950 | 2250*1000*1300 | 1170",
+        "| V45T | 60 | 40 | 50 | 45 | 56.25 | R4105ZD | <=256 | <=1.63 | 1850*800*1100 | 1000 | 2250*1000*1300 | 1200",
+        "| V53T | 60 | 48 | 60 | 53 | 66.25 | R4105ZD | <=231 | <=1.63 | 1850*800*1100 | 1050 | 2250*1000*1300 | 1300",
+        "| V75T | 60 | 68 | 85 | 75 | 94 | R6105ZD | <=231 | <=1.64 | 2350*800*1270 | 1250 | 2800*1150*1610 | 1400",
+        "| V98T | 60 | 80 | 100 | 88 | 110 | R6105ZD | <=231 | <=1.63 | 2350*800*1270 | 1300 | 2800*1150*1610 | 1450",
+        "| V100T | 60 | 90 | 112.5 | 100 | 125 | R6105ZLD | <=231 | <=1.63 | 2350*800*1270 | 1350 | 2800*1150*1610 | 1500",
+        "| V110T | 60 | 100 | 125 | 110 | 137.5 | R6105AZLD | <=218 | <=1.63 | 2470*800*1270 | 1450 | 2800*1150*1610 | 1650",
+        "| V120T | 60 | 120 | 150 | 132 | 165 | R6105IZLD | <=218 | <=1.63 | 2470*800*1270 | 1550 | 2800*1150*1610 | 1700",
+        "| V170T | 60 | 150 | 187.5 | 165 | 206.25 | R6113AZLD | <=218 | <=2.04 | 2470*800*1270 | 1500 | 2800*1150*1610 | 1800",
+        "| V220T | 60 | 200 | 250 | 220 | 275 | TH6126ZD | <=198 | <=2.04 | 2800*1100*1800 | 2300 | 3300*1200*2000 | 2500",
+        "| V275T | 60 | 250 | 312.5 | 275 | 343.75 | TH6126IZLD | <=198 | <=2.04 | 2900*1100*1800 | 2650 | 3400*1200*2000 | 2800"
+      ]
+    },
+    {
+      "n": 117,
       "title": "30KVA~625KVA Cummins Gas Generator Set",
       "header": [
         "| Genset Model | Rated power | Engine Type | Displacement (L) | Cylinders/ Arrangement | Bore×Stroke (MM) | Compression Ratio | Engine Rated Power (KW) | Gas Consumption (M3/KW.h) | Oil Consumption | Exhanst Temerature | Aspration | Net Weight | Dimension",
@@ -951,7 +1194,7 @@
       ]
     },
     {
-      "n": 115,
+      "n": 118,
       "title": "2KW~10.5KW Gas(LPG) Portable Generator",
       "header": [],
       "rows": [
@@ -977,11 +1220,12 @@
         "| Dimensions | Size(LxWxH) | 590*433*483mm | 685*512*550mm | 930*555*710mm",
         "| Net weight | 39kg | 85kg | 190kg",
         "| 20ft Container | 240PCS | 135PCS | 63PCS",
-        "| 40ft Container | 480PCS | 270PCS | 132PCS"
+        "| 40ft Container | 480PCS | 270PCS | 132PCS",
+        "| Optional Features | Handle & Wheels | Yes | Yes | Include"
       ]
     },
     {
-      "n": 115,
+      "n": 118,
       "title": "2KW~10.5KW Gas(LPG) Portable Generator",
       "header": [],
       "rows": [
@@ -1007,11 +1251,12 @@
         "| Dimensions | Size(LxWxH) | 590*433*483mm | 685*512*550mm | 930*555*710mm",
         "| Net weight | 39kg | 85kg | 190kg",
         "| 20ft Container | 240PCS | 135PCS | 63PCS",
-        "| 40ft Container | 480PCS | 270PCS | 132PCS"
+        "| 40ft Container | 480PCS | 270PCS | 132PCS",
+        "| Optional Features | Handle & Wheels | Yes | Yes | Included"
       ]
     },
     {
-      "n": 116,
+      "n": 119,
       "title": "2KW~8.8KW Gasoline Portable Generator",
       "header": [],
       "rows": [
@@ -1023,6 +1268,7 @@
         "| D.C. output/V-A | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3",
         "| Power factor(cosΦ) | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0",
         "| Noice level at 7 M (dBA) | 67 | 68 | 69 | 75 | 75 | 75 | 76 | 76",
+        "| Engine | Engine Model | Honda GX160 or LT210 | Honda GX160 or LT210 | Honda or LT225 | Honda or LT420 | Honda or LT420 | Honda or LT420 | Honda or LT460 | Honda or LT460",
         "| Bore×stroke(mm) | 70*54 | 70*54 | 70*58 | 90*66 | 90*66 | 90*66 | 92*69 | 92*69",
         "| Speed (rpm) | 3000 | 3000 | 3000 | 3000 | 3000 | 3000 | 3000 | 3000",
         "| Displacement (cc) | 208 | 208 | 223 | 420 | 420 | 420 | 458 | 458",
@@ -1036,11 +1282,12 @@
         "| Dimensions | Size(LxWxH) | 590*433*483mm | 590*433*483mm | 590*433*483mm | 685*512*550mm | 685*512*550mm | 685*512*550mm | 685*512*550mm | 685*512*550mm",
         "| Net weight | 39kg | 39kg | 48kg | 80kg | 85kg | 87kg | 90kg | 94kg",
         "| 20ft Container | 180PCS | 180PCS | 180PCS | 180PCS | 180PCS | 180PCS | 180PCS | 180PCS",
-        "| 40ft Container | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS"
+        "| 40ft Container | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS",
+        "| Optional Features | Handle & Wheels | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes"
       ]
     },
     {
-      "n": 116,
+      "n": 119,
       "title": "2KW~8.8KW Gasoline Portable Generator",
       "header": [],
       "rows": [
@@ -1052,6 +1299,7 @@
         "| D.C. output/V-A | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3",
         "| Power factor(cosΦ) | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0",
         "| Noice level at 7 M (dBA) | 78 | 78 | 80 | 84 | 84 | 88 | 76 | 76",
+        "| Engine | Engine Model | Honda GX160 or LT210 | Honda GX160 or LT210 | Honda or LT225 | Honda or LT420 | Honda or LT420 | Honda or LT420 | Honda or LT460 | Honda or LT460",
         "| Bore×stroke(mm) | 70*54 | 70*54 | 70*58 | 90*66 | 90*66 | 90*66 | 92*69 | 92*69",
         "| Speed (rpm) | 3600 | 3600 | 3600 | 3600 | 3600 | 3600 | 3600 | 3600",
         "| Displacement (cc) | 208 | 208 | 223 | 420 | 420 | 420 | 458 | 458",
@@ -1065,11 +1313,12 @@
         "| Dimensions | Size(LxWxH) | 590*433*483mm | 590*433*483mm | 590*433*483mm | 685*512*550mm | 685*512*550mm | 685*512*550mm | 685*512*550mm | 685*512*550mm",
         "| Net weight | 39kg | 39kg | 48kg | 80kg | 85kg | 87kg | 90kg | 94kg",
         "| 20ft Container | 180PCS | 180PCS | 180PCS | 180PCS | 180PCS | 180PCS | 180PCS | 180PCS",
-        "| 40ft Container | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS"
+        "| 40ft Container | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS | 380PCS",
+        "| Optional Features | Handle & Wheels | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes"
       ]
     },
     {
-      "n": 117,
+      "n": 120,
       "title": "2.7KW~6.6KW Silent Diesel Portable Generator",
       "header": [],
       "rows": [
@@ -1078,10 +1327,16 @@
         "| Rated.AC output (KVA) | 2.7 | 4.2 | 4.5 | 5.0 | 5.5",
         "| Max.AC output (KVA) | 3.0 | 4.6 | 5.0 | 5.5 | 6.0",
         "| Voltage | 110V-240V | 110V-240V | 110V-240V | 110V-240V | 110V-240V",
+        "| Phase | Single phase | Single phase | Single phase | Single phase | Single phase",
         "| D.C. output/V-A | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3",
         "| Power factor(cosΦ) | 1.0 | 1.0 | 1.0 | 1.0 | 1.0",
+        "| Alternator type | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase",
+        "| Material of winding | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire",
+        "| Starting system | Electric starting with battery | Electric starting with battery | Electric starting with battery | Electric starting with battery | Electric starting with battery",
         "| Noice level at 7 M (dBA) | 70 | 71 | 71 | 71 | 68",
         "| Fuel Tank Capacity (L) | 16 | 16 | 16 | 16 | 25",
+        "| Engine Model | LA178FG | LA186FG | LA186FAG | LA188FG | LA188FG",
+        "| Type | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine",
         "| Bore×stroke(mm) | 78*62 | 86*70 | 86*72 | 88*78 | 88*78",
         "| Speed (rpm) | 3000 | 3000 | 3000 | 3000 | 3000",
         "| Displacement (cc) | 296 | 406 | 418 | 474 | 474",
@@ -1090,15 +1345,18 @@
         "| Rated Output | 5.0HP (3.7KW) | 7.7HP(5.7KW) | 7.7HP(5.7KW) | 9HP(6.6KW) | 9HP(6.6KW)",
         "| Max. Torque | 11.9N.m | 18.7N.m | 21.4N.m | 21.4N.m | 21.4N.m",
         "| Fuel Consumption | ≤420g/kw/h | ≤400g/kw/h | ≤400g/kw/h | ≤400g/kw/h | ≤370g/kw/h",
+        "| Lubracation System | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed",
         "| Lube oil capacity (L) | 1.65 | 1.65 | 1.65 | 1.65 | 1.65",
         "| Size(LxWxH) | 835*525*570mm | 900*520*700mm | 900*520*700mm | 900*520*700mm | 960*560*730mm",
         "| Net weight | 130kg | 140kg | 150kg | 154kg | 160kg",
         "| 20ft Container | 81PCS | 72PCS | 72PCS | 72PCS | 72PCS",
-        "| 40ft Container | 171PCS | 150PCS | 150PCS | 150PCS | 150PCS"
+        "| 40ft Container | 171PCS | 150PCS | 150PCS | 150PCS | 150PCS",
+        "| Handle & Wheels | Included | Included | Included | Included | Included",
+        "| Three phase voltage | Yes | Yes | Yes | Yes | Yes"
       ]
     },
     {
-      "n": 117,
+      "n": 120,
       "title": "2.7KW~6.6KW Silent Diesel Portable Generator",
       "header": [],
       "rows": [
@@ -1107,10 +1365,16 @@
         "| Rated.AC output (KVA) | 3.0 | 4.6 | 5.0 | 5.3 | 6.0",
         "| Max.AC output (KVA) | 3.3 | 5.0 | 5.5 | 5.8 | 6.6",
         "| Voltage | 110V-240V | 110V-240V | 110V-240V | 110V-240V | 110V-240V",
+        "| Phase | Single phase | Single phase | Single phase | Single phase | Single phase",
         "| D.C. output/V-A | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3",
         "| Power factor(cosΦ) | 1.0 | 1.0 | 1.0 | 1.0 | 1.0",
+        "| Alternator type | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase",
+        "| Material of winding | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire",
+        "| Starting system | Electric starting with battery | Electric starting with battery | Electric starting with battery | Electric starting with battery | Electric starting with battery",
         "| Noice level at 7 M (dBA) | 70 | 71 | 71 | 71 | 68",
         "| Fuel Tank Capacity (L) | 16 | 16 | 16 | 16 | 25",
+        "| Engine Model | LA178FG | LA186FG | LA186FAG | LA188FG | LA188FG",
+        "| Type | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine",
         "| Bore×stroke(mm) | 78*62 | 86*70 | 86*72 | 88*78 | 88*78",
         "| Speed (rpm) | 3600 | 3600 | 3600 | 3600 | 3600",
         "| Displacement (cc) | 305 | 406 | 418 | 474 | 474",
@@ -1119,15 +1383,18 @@
         "| Rated Output | 5.4HP (4.0KW) | 8.6HP(6.3KW) | 8.6HP(6.3KW) | 9.8HP(7.2KW) | 9.8HP(7.2KW)",
         "| Max. Torque | 11.9N.m | 18.7N.m | 21.4N.m | 21.4N.m | 21.4N.m",
         "| Fuel Consumption | ≤420g/kw/h | ≤400g/kw/h | ≤400g/kw/h | ≤400g/kw/h | ≤370g/kw/h",
+        "| Lubracation System | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed",
         "| Lube oil capacity (L) | 1.1 | 1.65 | 1.65 | 1.65 | 1.65",
         "| Size(LxWxH) | 835*525*570mm | 900*520*700mm | 900*520*700mm | 900*520*700mm | 960*560*730mm",
         "| Net weight | 130kg | 140kg | 150kg | 154kg | 160kg",
         "| 20ft Container | 81PCS | 72PCS | 72PCS | 72PCS | 72PCS",
-        "| 40ft Container | 171PCS | 150PCS | 150PCS | 150PCS | 150PCS"
+        "| 40ft Container | 171PCS | 150PCS | 150PCS | 150PCS | 150PCS",
+        "| Handle & Wheels | Included | Included | Included | Included | Included",
+        "| Three phase voltage | Yes | Yes | Yes | Yes | Yes"
       ]
     },
     {
-      "n": 118,
+      "n": 121,
       "title": "1.7KW~6.5KW Diesel Portable Generator",
       "header": [
         "| Generator | Model: | VDG2200CL | VDG3600CL | VDG5000CL | VDG6000CL | VDG6500CL | VDG7500CL"
@@ -1137,10 +1404,15 @@
         "| Rated.AC output (KVA) | 1.7 | 2.7 | 4.2 | 4.5 | 5.0 | 5.5",
         "| Max.AC output (KVA) | 1.9 | 3.0 | 4.6 | 5.0 | 5.5 | 6.0",
         "| Voltage | 110V-240V | 110V-240V | 110V-240V | 110V-240V | 110V-240V | 110V-240V",
+        "| Phase | Single phase | Single phase | Single phase | Single phase | Single phase | Single phase",
         "| D.C. output/V-A | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3",
         "| Power factor(cosΦ) | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0",
+        "| Alternator type | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase",
+        "| Material of winding | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire",
+        "| Starting system | Recoil or Electric | Recoil or Electric | Recoil or Electric | Recoil or Electric | Recoil or Electric | Recoil or Electric",
         "| Noice level at 7 M (dBA) | 79 | 80 | 82 | 82 | 82 | 82",
         "| Fuel Tank Capacity (L) | 12.5 | 12.5 | 12.5 | 12.5 | 12.5 | 12.5",
+        "| Type | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine",
         "| Bore×stroke(mm) | 70*55 | 78*62 | 86*70 | 86*72 | 88*78 | 88*78",
         "| Speed (rpm) | 3000 | 3000 | 3000 | 3000 | 3000 | 3000",
         "| Displacement (cc) | 211 | 296 | 406 | 418 | 474 | 474",
@@ -1149,15 +1421,17 @@
         "| Rated Output | 3.4HP(2.5KW) | 5.0HP (3.7KW) | 7.7HP(5.7KW) | 7.7HP(5.7KW) | 9HP(6.6KW) | 9HP(6.6KW)",
         "| Max. Torque | 9.5N.m | 11.9N.m | 18.7N.m | 21.4N.m | 21.4N.m | 21.4N.m",
         "| Fuel Consumption | ≤430g/kw/h | ≤420g/kw/h | ≤400g/kw/h | ≤400g/kw/h | ≤400g/kw/h | ≤400g/kw/h",
+        "| Lubracation System | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed",
         "| Lube oil capacity (L) | 0.75 | 1.1 | 1.65 | 1.65 | 1.65 | 1.65",
         "| Dimensions | Size(LxWxH) | 610*450*500mm | 680*455*545mm | 740*475*590mm | 740*475*590mm | 740*475*590mm | 740*475*590mm",
         "| Net weight | 57kg | 70kg | 87kg | 88kg | 88kg | 88kg",
         "| 20ft Container | 168PCS | 144PCS | 102PCS | 102PCS | 102PCS | 102PCS",
-        "| 40ft Container | 348PCS | 296PCS | 210PCS | 210PCS | 210PCS | 210PCS"
+        "| 40ft Container | 348PCS | 296PCS | 210PCS | 210PCS | 210PCS | 210PCS",
+        "| Three phase voltage | Yes | Yes | Yes | Yes | Yes | Yes"
       ]
     },
     {
-      "n": 118,
+      "n": 121,
       "title": "1.7KW~6.5KW Diesel Portable Generator",
       "header": [
         "| Model: | VDG2200CL | VDG3600CL | VDG5000CL | VDG6000CL | VDG6500CL | VDG7500CL"
@@ -1167,10 +1441,16 @@
         "| Rated.AC output (KVA) | 2.0 | 3.0 | 4.6 | 5.0 | 5.5 | 6.0",
         "| Max.AC output (KVA) | 2.2 | 3.3 | 5.0 | 5.5 | 6.0 | 6.5",
         "| Voltage | 110V-240V | 110V-240V | 110V-240V | 110V-240V | 110V-240V | 110V-240V",
+        "| Phase | Single phase | Single phase | Single phase | Single phase | Single phase | Single phase",
         "| D.C. output/V-A | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3 | 12/8.3",
         "| Power factor(cosΦ) | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0",
+        "| Alternator type | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase",
+        "| Material of winding | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire | 100% Copper Wire",
+        "| Starting system | Recoil or Electric | Recoil or Electric | Recoil or Electric | Recoil or Electric | Recoil or Electric | Recoil or Electric",
         "| Noice level at 7 M (dBA) | 78 | 81 | 84 | 84 | 84 | 84",
         "| Fuel Tank Capacity (L) | 12.5 | 12.5 | 12.5 | 12.5 | 12.5 | 12.5",
+        "| Engine Model | LA170FG | LA178FG | LA186FG | LA186FAG | LA188FG | LA188FG",
+        "| Type | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine",
         "| Bore×stroke(mm) | 70*55 | 78*62 | 86*72 | 86*75 | 88*78 | 88*78",
         "| Speed (rpm) | 3600 | 3600 | 3600 | 3600 | 3600 | 3600",
         "| Displacement (cc) | 211 | 305 | 406 | 418 | 456 | 456",
@@ -1179,15 +1459,18 @@
         "| Rated Output | 3.8HP(2.8KW) | 5.4HP (4.0KW) | 8.6HP(6.3KW) | 8.6HP(6.3KW) | 9.8HP(7.2KW) | 9.8HP(7.2KW)",
         "| Max. Torque | 9.5N.m | 11.9N.m | 18.7N.m | 21.4N.m | 21.4N.m | 21.4N.m",
         "| Fuel Consumption | ≤430g/kw/h | ≤420g/kw/h | ≤400g/kw/h | ≤400g/kw/h | ≤400g/kw/h | ≤370g/kw/h",
+        "| Lubracation System | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed | Pressure splashed",
         "| Lube oil capacity (L) | 0.75 | 1.1 | 1.65 | 1.65 | 1.65 | 1.65",
         "| Size(LxWxH) | 610*450*500mm | 680*455*545mm | 740*475*590mm | 740*475*590mm | 740*475*590mm | 740*475*590mm",
         "| Net weight | 57kg | 70kg | 87kg | 88kg | 88kg | 88kg",
         "| 20ft Container | 168PCS | 144PCS | 102PCS | 102PCS | 102PCS | 102PCS",
-        "| 40ft Container | 348PCS | 296PCS | 210PCS | 210PCS | 210PCS | 210PCS"
+        "| 40ft Container | 348PCS | 296PCS | 210PCS | 210PCS | 210PCS | 210PCS",
+        "| Handle & Wheels | Yes | Yes | Yes | Yes | Yes | Yes",
+        "| Three phase voltage | Yes | Yes | Yes | Yes | Yes | Yes"
       ]
     },
     {
-      "n": 119,
+      "n": 122,
       "title": "4.5KW~5.5KW Diesel Welding Generator",
       "header": [
         "| DC Welder | Model: | DW180ARE | DW200ARE"
@@ -1203,6 +1486,9 @@
         "| Max Output (KW) | 5.0 | 5.0",
         "| Rated Voltage (V) | 110-240 | 110-240",
         "| Power factor(cosΦ) | 1.0 | 1.0",
+        "| Alternator type | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase",
+        "| Material of winding | 100% Copper Wire | 100% Copper Wire",
+        "| Type | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine",
         "| Bore×stroke(mm) | 86*72 | 88*78",
         "| Speed (rpm) | 3000 | 3000",
         "| Displacement (cc) | 418 | 474",
@@ -1210,17 +1496,20 @@
         "| Max. Output | 8.6HP(6.3KW) | 10HP(7.4KW)",
         "| Rated Output | 7.7HP(5.7KW) | 9.0HP (6.6KW)",
         "| Max. Torque | 18.7N.m | 18.7N.m",
+        "| Starting System | Electric starting with battery | Electric starting with battery",
+        "| Lubrication System | Pressure splashed | Pressure splashed",
         "| Fuel Tank (L) | 12.5 | 12.5",
         "| Oil Capacity (L) | 1.65 | 1.65",
         "| Noise Level at 7m (dBA) | 82 | 82",
         "| Dimensions | Dimension (L*W*H) | 740*475*605mm | 800*520*600mm",
         "| G.W | 125kg | 130kg",
         "| 20ft Container | 102PCS | 102PCS",
-        "| 40ft Container | 210PCS | 210PCS"
+        "| 40ft Container | 210PCS | 210PCS",
+        "| Three phase voltage | Yes | Yes"
       ]
     },
     {
-      "n": 119,
+      "n": 122,
       "title": "4.5KW~5.5KW Diesel Welding Generator",
       "header": [
         "| DC Welder | Model: | DW180ARE | DW200ARE"
@@ -1236,6 +1525,9 @@
         "| Max Output (KW) | 5.5 | 5.5",
         "| Rated Voltage (V) | 110-240 | 110-240",
         "| Power factor(cosΦ) | 1.0 | 1.0",
+        "| Alternator type | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase",
+        "| Material of winding | 100% Copper Wire | 100% Copper Wire",
+        "| Type | 1-cylinder, 4 stroke, air-cooled, diesel engine | 1-cylinder, 4 stroke, air-cooled, diesel engine",
         "| Bore×stroke(mm) | 86*72 | 88*78",
         "| Speed (rpm) | 3600 | 3600",
         "| Displacement (cc) | 418 | 474",
@@ -1243,17 +1535,20 @@
         "| Max. Output | 10HP (7.4KW) | 10.9HP (8.0KW)",
         "| Rated Output | 8.6HP(6.3KW) | 9.8HP(7.2KW)",
         "| Max. Torque | 18.7N.m | 18.7N.m",
+        "| Starting System | Electric starting with battery | Electric starting with battery",
+        "| Lubrication System | Pressure splashed | Pressure splashed",
         "| Fuel Tank (L) | 12.5 | 12.5",
         "| Oil Capacity (L) | 1.65 | 1.65",
         "| Noise Level at 7m (dBA) | 82 | 82",
         "| Dimensions | Dimension (L*W*H) | 740*475*605mm | 800*520*600mm",
         "| G.W | 125kg | 130kg",
         "| 20ft Container | 102PCS | 102PCS",
-        "| 40ft Container | 210PCS | 210PCS"
+        "| 40ft Container | 210PCS | 210PCS",
+        "| Three phase volatge | Yes | Yes"
       ]
     },
     {
-      "n": 120,
+      "n": 123,
       "title": "4.5KW~5.5KW Silent Diesel Welding Generator",
       "header": [],
       "rows": [
@@ -1283,7 +1578,7 @@
       ]
     },
     {
-      "n": 121,
+      "n": 124,
       "title": "4.5KW~5.5KW Gasoline Welding Generator",
       "header": [],
       "rows": [
@@ -1310,9 +1605,10 @@
       ]
     },
     {
-      "n": 122,
+      "n": 125,
       "title": "12.5KVA~165KVA Deutz Air-cooled Diesel Generator Set",
       "header": [
+        "| Genset Model | Frequency (Hz) | Prime Power | Standby Power | Engine Model | Fuel Consumption (g/kwh) | Governor Type | Intaking method | Bore*Stroke (mm) | Displacement (L)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -1334,9 +1630,10 @@
       ]
     },
     {
-      "n": 122,
+      "n": 125,
       "title": "12.5KVA~165KVA Deutz Air-cooled Diesel Generator Set",
       "header": [
+        "| Genset Model | Frequency (Hz) | Prime Power | Standby Power | Engine Model | Fuel Consumption (g/kwh) | Governor Type | Intaking method | Bore*Stroke (mm) | Displacement (L)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -1358,9 +1655,10 @@
       ]
     },
     {
-      "n": 123,
+      "n": 126,
       "title": "60KVA~625KVA Original Deutz Diesel Generator Set",
       "header": [
+        "| Genset model | Frequency (HZ) | Prime Power | Standby Power | Engine model | Fuel consumption under full load (L/H) | Cylinder | Volt. For start (DC) | Measurement L X W X H (mm) | Weight (kg)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -1388,9 +1686,10 @@
       ]
     },
     {
-      "n": 123,
+      "n": 126,
       "title": "60KVA~625KVA Original Deutz Diesel Generator Set",
       "header": [
+        "| Genset model | Frequency (HZ) | Prime Power | Standby Power | Engine model | Fuel consumption underfull load (L/H) | Cylinder | Volt. For start (DC) | Measurement L X W X H (mm) | Weight (kg)",
         "| KW | KVA | KW | KVA"
       ],
       "rows": [
@@ -1408,6 +1707,32 @@
         "| V300DH | 60 | 270 | 338 | 300 | 375 | BF6M1015C-LAG3B | 79 | 6V | 24V | 2730 x 1410 x 2150 | 2503",
         "| V400DH | 60 | 360 | 450 | 400 | 500 | BF8M1015C-LAG1B | 106 | 8V | 24V | 3100 x 1560 x 2150 | 3263",
         "| V420DH | 60 | 380 | 475 | 420 | 525 | BF8M1015CP-LAG1B | 112 | 8V | 24V | 3100 x 1560 x 2150 | 3263"
+      ]
+    },
+    {
+      "n": 127,
+      "title": "20KVA~55KVA ISUZU Diesel Generator Set",
+      "header": [
+        "| GENSET MODEL | Prime Power | Standby Power | DIESEL ENGINE MODEL | Aspiration | BoreXStroke (mm) | Cubic Capacity (L) | Compression Ratio | Steedy Governing Rate | Rating Fuel Consumption (L/h) | Open type dimensions (LxWxH) mm | Open type Weight (kg)"
+      ],
+      "rows": [
+        "| V18SU | 16KW/20KVA | 18KW22.5KVA | JE493DB-04 | 50Hz | Natural | 93X102 | 2.771 | 18.2:1 | ≤5% | 5 | 1750*700*1010 | 650",
+        "| V22SU | 20KW/25KVA | 22KW/27.5KVA | JE493DB-02 | 50Hz | Natural | 93X102 | 2.771 | 18.2:1 | ≤5% | 5.6 | 1750*700*1010 | 660",
+        "| V26SU | 24KW/30KVA | 26KW/33KVA | JE493ZDB-04 | 50Hz | Turbocharged | 93X102 | 2.771 | 18.2:1 | ≤5% | 6.4 | 1750*700*1010 | 680",
+        "| V36SU | 32KW/40KVA | 36KW/45KVA | JE493ZLDB-02 | 50Hz | Turbocharged | 93X102 | 2.771 | 18.2:1 | ≤5% | 8.5 | 1850*700*1150 | 780"
+      ]
+    },
+    {
+      "n": 127,
+      "title": "20KVA~55KVA ISUZU Diesel Generator Set",
+      "header": [
+        "| GENSET MODEL | Prime Power | Standby Power | DIESEL ENGINE MODEL | Aspiration | BoreXStroke (mm) | Cubic Capacity (L) | Compression Ratio | Steedy Governing Rate | Rating Fuel Consumption (L/h) | Open type dimensions (LxWxH) mm | Open type Weight (kg)"
+      ],
+      "rows": [
+        "| V22SU | 20KW/25KVA | 22KW27.5KVA | JE493DB-03 | 60Hz | Natural | 93X102 | 2.771 | 18.2:1 | ≤5% | 6 | 1750*700*1010 | 650",
+        "| V26SU | 24KW/30KVA | 26KW/33KVA | JE493DB-01 | 60Hz | Natural | 93X102 | 2.771 | 18.2:1 | ≤5% | 6.5 | 1750*700*1010 | 660",
+        "| V31SU | 28KW/35KVA | 31KW/39KVA | JE493ZDB-03 | 60Hz | Turbocharged | 93X102 | 2.771 | 18.2:1 | ≤5% | 7.8 | 1750*700*1010 | 680",
+        "| V44SU | 40KW/50KVA | 44KW/55KVA | JE493ZLDB-01 | 60Hz | Turbocharged | 93X102 | 2.771 | 18.2:1 | ≤5% | 9.4 | 1850*700*1150 | 780"
       ]
     }
   ]

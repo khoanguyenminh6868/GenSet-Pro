@@ -57,7 +57,7 @@
     {
       "n": 101,
       "url": "https://honto-power.com/en/portfolio-item/perkins-series-8-2250kva-generator-sets/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| | Model | Output Power | Current (A) | Engine Model | Cyl. | Bore×Stroke (mm) | Displ. (L) | Fuel Cons. (g/kW·h) | Dimensions L×W×H (mm) | Weight (kg)"
@@ -65,24 +65,14 @@
       "file": "sources/honto-power/101.md"
     },
     {
-      "n": 112,
+      "n": 114,
       "url": "https://honto-power.com/en/portfolio-item/box-type-substation/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
       ],
-      "file": "sources/honto-power/112.md"
-    },
-    {
-      "n": 121,
-      "url": "https://honto-power.com/en/elegir-transformador-6kv-10kv-35kv-latinoamerica/",
-      "accessedAt": "2026-10-28",
-      "tier": "A",
-      "quote": [
-        "| | Criterio | 6kV | 10kV | 35kV"
-      ],
-      "file": "sources/honto-power/121.md"
+      "file": "sources/honto-power/114.md"
     }
   ],
   "confidence": "medium",
@@ -144,7 +134,7 @@
       ]
     },
     {
-      "n": 112,
+      "n": 114,
       "title": "Box Type Substation Manufacturer - Prefabricated Compact Substation 10-35kV | Shandong Honto",
       "header": [
         "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
@@ -168,7 +158,7 @@
       ]
     },
     {
-      "n": 112,
+      "n": 114,
       "title": "Box Type Substation Manufacturer - Prefabricated Compact Substation 10-35kV | Shandong Honto",
       "header": [
         "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
@@ -187,7 +177,7 @@
       ]
     },
     {
-      "n": 112,
+      "n": 114,
       "title": "Box Type Substation Manufacturer - Prefabricated Compact Substation 10-35kV | Shandong Honto",
       "header": [
         "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
@@ -199,15 +189,6 @@
         "| YBW | 10kV/20kV/35kV | 0.69 | 2000",
         "| YBW | 10kV/20kV/35kV | 0.69 | 2500",
         "| YBW | 10kV/20kV/35kV | 0.69 | 3150"
-      ]
-    },
-    {
-      "n": 121,
-      "title": "Cómo Elegir Transformador de Potencia 6kV 10kV 35kV en Latinoamérica 2026 | Honto Power",
-      "header": [],
-      "rows": [
-        "| | Criterio | 6kV | 10kV | 35kV",
-        "| Capacidad típica | 30–2500 kVA | 30–5000 kVA | 1000 kVA–50 MVA"
       ]
     }
   ]

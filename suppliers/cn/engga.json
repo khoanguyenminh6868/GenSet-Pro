@@ -82,7 +82,7 @@
     {
       "n": 101,
       "url": "https://en.engga.cn/Products.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Model: TZ400XSEG090-001"
@@ -92,7 +92,7 @@
     {
       "n": 107,
       "url": "https://en.engga.cn/Product/1465400917624324096-8-8.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Model: TZ210XFEG025-001"
@@ -102,7 +102,7 @@
     {
       "n": 109,
       "url": "https://en.engga.cn/Product_1/56.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Model: TZ400XSEG090-001"
@@ -112,10 +112,10 @@
     {
       "n": 115,
       "url": "https://en.engga.cn/Product_1/54.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "Voltage range: 400V–13800V"
+        "| Voltage range: 400V–13800V | Power factor COSΦ = 0.8 (lagging)"
       ],
       "file": "sources/engga/115.md"
     }
@@ -213,7 +213,7 @@
       "title": "Z SERIES MEDIUM & LOW SPPED GENERATORS-Engga (Yangjiang) Electric Co., Ltd.",
       "header": [],
       "rows": [
-        "Voltage range: 400V–13800V",
+        "| Voltage range: 400V–13800V | Power factor COSΦ = 0.8 (lagging)",
         "Model: TZ400XSEG090-001",
         "Rated Power (kW): 90",
         "Voltage (V DC): 544",

@@ -52,8 +52,7 @@
    "| S6190ZLC-5 | 825/1122 | 1100",
    "| S6190ZLC-7 | 535/728 | 750",
    "| AS6190ZLC-2 | 1000/1361 | 1200 | 3440×1405×2190 | 8200",
-   "| S8190ZLC-1 | 8 cylinders, in-line | 1200/1633 | 1200 | 62.38 | ≤ 195 |",
-   "| 3744X1571X2246 | 8500",
+   "| S8190ZLC-1 | 8 cylinders, in-line | 1200/1633 | 1200 | 62.38 | ≤ 195 | | 3744X1571X2246 | 8500",
    "| S8190ZLC-2 | 1000/1361 | 1000",
    "| S8190ZLC-4 | 900/1245 | 900",
    "| S8190ZLC-5 | 1100/1497 | 1100",
@@ -103,29 +102,52 @@
  },
  {
   "n": 105,
-  "url": "https://www.jichai.com/product/2632_series_2085kw4170kw/2632_series_2085kw4170kw.html",
-  "title": "2632 Series (2085KW-4170KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
-  "header": [
-   "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
-  ],
+  "url": "https://www.jichai.com/product/t_series_lighting_tower/t_series_lighting_tower.html.html",
+  "title": "“T” series lighting tower CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [],
   "rows": [
-   "| 6L2632 | Four-stroke, supercharged intercooler, water cooling, high-pressure common rail ECU electronic control jet | 6 cylinders, in-line | 260 | 320 | 2085/2837 | 1000 | 102 | ≤ 184 | ≤ 0.6 | 5050×2160×3450 | 19700",
-   "| 8L2632 | 8 cylinders, in-line | 2780/3782 | 136 | 5950×2160×3450 | 26000",
-   "| 9L2632 | 9 cylinders, in-line | 3130/4259 | 153 | 6400×2160×3450 | 29500",
-   "| 12V2632 | 12 cylinders V type | 4170/5673 | 204 | 5830×2240×3355 | 39400"
-  ]
- },
- {
-  "n": 106,
-  "url": "https://www.jichai.com/product/190_series_800kw2000kw/6000_series_1200kw2000kw.html",
-  "title": "6000 Series (1200KW-2000KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
-  "header": [
-   "| Genset model | Rated power kw | Rotate speed r/min | Frequency Hz | Voltage V | Engine model | Power factor"
-  ],
-  "rows": [
-   "| 1200GF | 1200 | 1000 | 50 | 600 | H16V190ZL-2 | 0.7",
-   "| 1500GF | 1500 | 1200 | 60 | 600 | H16V190ZL-1 | 0.7",
-   "| 2000GF | 2000 | 1500 | 50 | 600 | H16V190ZL | 0.7"
+   "| Basic Model | 4TN4000 | 4TN1200 | 4TN1600",
+   "| Dimensions | Length | 4360mm | 4360mm | 4360mm",
+   "| Width | 1430mm | 1430mm | 1430mm",
+   "| Height | 1450mm | 1450mm | 1450mm",
+   "| Loading container Height | 8.8 m | 8.8 m | 8.8 m",
+   "| Full extending Heigh | 6/7.5 | 3/3.5 | 3/3.5",
+   "| Genset power(1500/1800rpm-KW) | 960kg | 910KG | 910KG",
+   "| Engine model | 1500/1800 | 1500/1800 | 1500/1800",
+   "| Speed(rpm) | 3 | 2 | 2",
+   "| Number of cylinders | Vertical, 4-cycle, Water-cooled, diesel engine | Vertical, 4-cycle, Water-cooled, diesel engine | Vertical, 4-cycle, Water-cooled, diesel engine",
+   "| Engine characters | E-TVCS | Direct injection | Direct injection",
+   "| Combustion System | Naturally aspirated | Naturally aspirated | Naturally aspirated",
+   "| Engine aspiration | Regular | Regular | Regular",
+   "| Alternator Model | 50/60 | 50/60 | 50/60",
+   "| Frequency (HZ) | 230V (50HZ), 240V (60HZ) AC | 230V (50HZ), 240V (60HZ) AC | 230V (50HZ), 240V (60HZ) AC",
+   "| Rating voltage ( 50/60Hz) | Class H | Class H | Class H",
+   "| Alternator insulation | IP23 | IP23 | IP23",
+   "| Light's fixture | Oval | Rectangle | Rectangle",
+   "| Luminous flux | 440000(4×110000)LM | 156000(4*39000)LM | 208000(4*52000)LM",
+   "| Number & power of lights | 4×1000W | 4×300W | 4×400W",
+   "| Number of mast sections | 3 | 3 | 3",
+   "| Mast lifting | Manually | Manually | Manually",
+   "| Mast extension | Manually | Manually | Manually",
+   "| Mast rotation | 359° Manually | 359° Manually | 359° Manually",
+   "| Light tilt | Manually | Manually | Manually",
+   "| Tow bar | Retractable & adjustable supporting wheel tow bar | Retractable & adjustable supporting wheel tow bar | Retractable & adjustable supporting wheel tow bar",
+   "| Stabilizing legs & number | 4pcs drawable bar with manual jacks | 4pcs drawable bar with manual jacks | 4pcs drawable bar with manual jacks",
+   "| Wheel's rim size & tires | 14\" rim with regular tires | 14\" rim with regular tires | 14\" rim with regular tires",
+   "| Tow adapter | 2\" ball coupler or 3\" pintle ring | 2\" ball coupler or 3\" pintle ring | 2\" ball coupler or 3\" pintle ring",
+   "| Tail lights | Tail reflector | Tail reflector | Tail reflector",
+   "| Max towing speed | 80km/h ( 62 mph) | 80km/h ( 62 mph) | 80km/h ( 62 mph)",
+   "| Fuel tank capacity | 170 liters | 170 liters | 170 liters",
+   "| Operating hours with full load | 70/58 hours | 132/118 hours | 132/118 hours",
+   "| lighting hours with full fue | 120/108 hours | 310/298 hours | 280/268 hours",
+   "| Wires & electric components | Regular | Regular | Regular",
+   "| Generator starting type or controller | HGM1790N (SMARTGEN) | HGM1790N (SMARTGEN) | HGM1790N (SMARTGEN)",
+   "| Power outlet sockets | 2 | 2 | 2",
+   "| Tool box with the maintenance tools | 1 | 1 | 1",
+   "| Max. against wind when fully extended | 20 m/s | 20 m/s | 20 m/s",
+   "| Acoustic pressure | 72dB(A) at 7 meters away | 72dB(A) at 7 meters away | 72dB(A) at 7 meters away",
+   "| Standard colour | Any colour for canopy with Black chassis, fenders, tow bar & mast base/ Galvanized masts & drawable bar of legs, etc | Any colour for canopy with Black chassis, fenders, tow bar & mast base/ Galvanized masts & drawable bar of legs, etc | Any colour for canopy with Black chassis, fenders, tow bar & mast base/ Galvanized masts & drawable bar of legs, etc",
+   "| Max. # of units loading in 40' high container (Some components would be detached) | 12 | 12 | 12"
   ]
  }
 ]
