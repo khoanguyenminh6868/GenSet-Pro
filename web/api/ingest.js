@@ -82,9 +82,10 @@ export default async function handler(req, res) {
     if (!w.ok) return res.status(502).json({ error: `write ${w.status}: ${(await w.text()).slice(0, 200)}` });
   }
   const joined = await markJoined(keep.filter((r) => r.coll === "bidders")).catch(() => []);
+  const reopened = await reopenAmended(keep.find((r) => r.coll === "feed")).catch(() => []);
   // A comparison answered: its HSDT (or technical proposal) files are no longer needed in the scratch bucket.
   await Promise.all(keep.filter((r) => (r.coll === "comparereq" || r.coll === "tlktreq") && r.data.doneAt).map((r) => dropScratch(r.coll === "tlktreq" ? "tlkt" : "hsdt", r.id).catch(() => {})));
-  res.json({ written: keep.length, skipped: rows.length - keep.length, ...(joined.length ? { joined } : {}) });
+  res.json({ written: keep.length, skipped: rows.length - keep.length, ...(joined.length ? { joined } : {}), ...(reopened.length ? { reopened } : {}) });
 }
 
 // Khoa's company (CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN). A tender whose bidders include it was bid on:
@@ -117,6 +118,26 @@ async function markJoined(rows) {
     if (w.ok) moved.push(r.id);
   }
   return moved;
+}
+
+// A tender set to Bỏ qua whose notice was then amended on muasamcong (a higher notifyVersion in feed/current, e.g. a
+// new closing date) goes back to Mới, with the new notice; its note stays (Khoa, 2026-10-29). Returns the ids moved.
+async function reopenAmended(feed) {
+  const tenders = feed?.data?.tenders || [];
+  if (!tenders.length) return [];
+  const q = await fetch(`${SB_URL}/rest/v1/docs?select=id,data&coll=eq.tracked&id=in.(${encodeURIComponent(tenders.map((t) => t.notifyNo).join(","))})`, { headers: sbHeaders });
+  if (!q.ok) return [];
+  const cur = new Map((await q.json()).map((d) => [d.id, d.data]));
+  const now = new Date().toISOString(), out = [];
+  for (const t of tenders) {
+    const c = cur.get(t.notifyNo);
+    if (c?.stage !== "dropped" || !(Number(t.notifyVersion) > Number(c.tender?.notifyVersion))) continue;
+    out.push({ coll: "tracked", id: t.notifyNo, updated_at: now,
+      data: { ...c, stage: "new", prevStage: "dropped", tender: t, note: c.note || "", updatedAt: now, reopenedAt: now, reopenedVersion: t.notifyVersion } });
+  }
+  if (!out.length) return [];
+  const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify(out) });
+  return w.ok ? out.map((r) => r.id) : [];
 }
 
 // Deletes every HSDT (dir "hsdt") or technical proposal (dir "tlkt") file the page uploaded for a tender (scratch bucket,
