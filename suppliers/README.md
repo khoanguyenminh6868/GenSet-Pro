@@ -59,6 +59,13 @@ Chỉ lấy nhà phân phối mà chính hãng công bố trên website của h�
 - Cummins: cummins.com chặn máy Windows (HTTP 403 cả với Chromium) nên trang từng điểm (…/locations/china/…) được lưu qua firecrawl (`save --firecrawl`, key ở `genbid-hsmt/.firecrawl-key` hoặc `GENBID_FIRECRAWL_KEY_FILE`; Khoa cho phép 2026-10-29). Chỉ giữ điểm mà trang Cummins ghi ứng dụng "Generator" hoặc "Cummins Power Generation".
 - Mecc Alte: trang nhà phân phối không có nhà phân phối ở Trung Quốc (hãng có nhà máy Haimen).
 
+### Liên hệ (email, điện thoại, WhatsApp, WeChat)
+`contacts.mjs [id ...] [--all] [--dry]` (mặc định: mọi nhà phân phối) đọc các trang đã lưu (số nguồn < 100) và ghi `contacts: [{ type, value, src }]`; dòng chứa giá trị được thêm vào câu trích của nguồn đó, `verify.mjs` kiểm giá trị có nguyên văn trong câu trích (Khoa, 2026-10-29).
+- Trang danh sách (Stamford, Perkins) chỉ đọc mục của đúng công ty; trang khác chỉ đọc dòng có nhãn (Tel, Email, WhatsApp, 微信...) hoặc link `tel:` / `wa.me`. Ô bảng gộp nhiều nhãn được cắt trước mỗi nhãn để số fax không thành điện thoại.
+- Email theo tên miền của trang bên thứ ba (support@cummins.com trên trang địa điểm Cummins) không phải của đại lý nên bỏ. Số dưới 9 chữ số (thiếu mã vùng) bỏ.
+- Trang liên hệ trên website riêng: `fetch-source.mjs <id> <n> <url>` hoặc `discover.mjs save` (n < 100); `contacts.mjs` tự thêm thành nguồn hạng C khi trang có liên hệ. Website bị chiếm làm trang rác (SZ-cummins.com, gesaisi.com) không dùng.
+- Email bị Cloudflare che ("[email protected]") được giải mã khi lưu trang (`htmlToText`).
+
 ## Thêm hoặc sửa một nhà cung cấp
 1. `node suppliers/fetch-source.mjs <id> <n> <url>` cho từng trang nguồn.
 2. Viết `cn/<id>.json`, chép câu trích từ file nguồn.
