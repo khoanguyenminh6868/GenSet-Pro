@@ -251,7 +251,7 @@ td.r{text-align:right}
 blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var(--muted);font-style:italic;font-size:13px}
 .rec{font-size:13px}.rec b{color:var(--violet);font-weight:600}
 .suptable{width:100%;border-collapse:collapse;font-size:13px}.suptable th,.suptable td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.suptable tbody tr:is([data-supopen],[data-catitem]){cursor:pointer}.suptable tbody tr:is([data-supopen],[data-catitem]):hover{background:var(--panel2)}
-.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
+.supcontact{margin-top:3px;overflow-wrap:anywhere}.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
 /* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
 .supcard{padding:12px;display:flex;flex-direction:column;gap:6px;margin:8px 0}.suprow select,.suprow input{min-width:0}
@@ -1825,6 +1825,8 @@ const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.r
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
 let supFilter = { q: "", role: "", conf: "", engine:"", fuel: "", power: "", unit: "kVA" };
 let supOpenId = null;
+// Where the supplier / catalog list was scrolled when a detail opened, so "← Danh sách" comes back to the same row (Khoa, 2026-10-29).
+const listScroll = { sup: 0, cat: 0 };
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
 function supLinesFor(s, f = supFilter) {
   const v = Number(String(f.power).replace(",", "."));
@@ -1881,7 +1883,7 @@ function renderSupList() {
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th>Năm thành lập</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
-    return h`<tr data-supopen="${s.id}"><td><b>${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div></td>
+    return h`<tr data-supopen="${s.id}"><td><b>${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div>${raw(supContactsBrief(s.contacts))}</td>
       <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
       <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
@@ -1896,6 +1898,14 @@ function supContactsHtml(list) {
     const xs = list.filter((c) => c.type === type);
     return xs.length ? h`<div class="small"><span class="muted">${label}:</span> ${raw(xs.map((c) => (link ? h`<a href="${link(c.value)}" target="_blank" rel="noopener">${c.value}</a>` : h`<b>${c.value}</b>`) + " " + supRefs(c.src)).join(", "))}</div>` : "";
   }).join("");
+}
+// List row: the first value of each kind; every value with its source [n] is on the detail page.
+function supContactsBrief(list) {
+  const xs = Object.entries(SUP_CONTACT).map(([type, [label, link]]) => {
+    const all = (list || []).filter((x) => x.type === type), c = all[0];
+    return c ? h`<div><span class="muted">${label}:</span> ${raw(link ? h`<a href="${link(c.value)}" target="_blank" rel="noopener">${c.value}</a>` : h`<b>${c.value}</b>`)}${all.length > 1 ? ` (+${all.length - 1})` : ""}</div>` : "";
+  }).filter(Boolean);
+  return xs.length ? `<div class="small supcontact">${xs.join("")}</div>` : "";
 }
 function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
@@ -2489,16 +2499,17 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
   if (e.target.closest("#syncNewBtn")) { syncNew(); return; }
   if (e.target.closest("#supBtn")) { openSuppliers(); return; }
-  if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); return; }
+  if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); $("#mdl").scrollTop = listScroll.sup; return; }
+  if (e.target.closest("tr[data-supopen] a[href]")) return; // e-mail / phone link in a list row: no detail
   const supsrc = e.target.closest("[data-supsrc]");
   if (supsrc) { e.preventDefault(); $("#sup-src-" + supsrc.dataset.supsrc)?.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
   const supo = e.target.closest("[data-supopen]");
-  if (supo) { if ($("#supBody")) { supOpenId = supo.dataset.supopen || null; renderSuppliers(); $("#mdl").scrollTop = 0; } else openSuppliers(supo.dataset.supopen); return; }
+  if (supo) { if ($("#supBody")) { if (!supOpenId) listScroll.sup = $("#mdl").scrollTop; supOpenId = supo.dataset.supopen || null; renderSuppliers(); $("#mdl").scrollTop = 0; } else openSuppliers(supo.dataset.supopen); return; }
   const cko = e.target.closest("[data-catopen]");
   if (cko) { openCatalog(cko.dataset.catopen, cko.dataset.catkey); return; }
   const cki = e.target.closest("#catList [data-catitem]");
-  if (cki) { catView.open = cki.dataset.catitem; renderCatalog(); return; }
-  if (e.target.id === "catBack") { catView.open = null; renderCatalog(); return; }
+  if (cki) { listScroll.cat = $("#mdl").scrollTop; catView.open = cki.dataset.catitem; renderCatalog(); return; }
+  if (e.target.id === "catBack") { catView.open = null; renderCatalog(); $("#mdl").scrollTop = listScroll.cat; return; }
   if (e.target.id === "catMore") { catView.limit += 100; renderCatList(); return; }
   if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, {}, "gợi ý cấu hình"); return; }
   if (e.target.id === "spRun") { requestWorker("supplierreq", e.target.dataset.key, {}, "gợi ý nhà cung cấp"); return; }
