@@ -213,6 +213,13 @@
           const unit = one?.[2] || unitCell || (L.match(/\((kva|kw)\)|\b(kva|kw)\b\s*$/i) || [])[1] || (L.match(/\((kva|kw)\)/i) || [])[1];
           if (one && unit) { merge(j, kind, { [unit.toLowerCase() === "kva" ? "kVA" : "kW"]: +one[1].replace(",", ".") }); return; }
           const pair = String(v).replace(/\s+/g, "").match(/^(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
+          // "Rate Power(kva) (prime/standby) | 50/55": both figures in one unit, in the order the label names them.
+          const order = L.match(/(prime|standby)\s*\/\s*(prime|standby)/);
+          if (pair && unit && order && order[1] !== order[2]) {
+            const u = unit.toLowerCase() === "kva" ? "kVA" : "kW";
+            merge(j, order[1], { [u]: +pair[1] }); merge(j, order[2], { [u]: +pair[2] });
+            return;
+          }
           if (pair) { const p = pairOf(+pair[1], +pair[2]); if (p) merge(j, kind, p); }
         });
       } else if (/^(genset\s*)?model|机组型号|型号$/i.test(L) && !ENGINE_LBL.test(L) && !ALT_LBL.test(L)) vals.forEach((v, j) => isCode(v) && put(j, "genset", v));

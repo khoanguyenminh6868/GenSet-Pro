@@ -77,9 +77,139 @@
         "Fujian Yihua Electrical Machinery Co.,Ltd Establish in 1994,located in “Generator City of China ”—Fu‘an City, covering 30000 square meters and our new plant (around 40000 square meters) is being expanded .We can providing wide range output diesel generators with ISO9001 standard, and obtained CE,Soncap, certification."
       ],
       "file": "sources/yihua-fujian/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.yihua-genset.com/Powered-By-CCEC-OEM-Engine-800kw-1000kva-Soundproof-Diesel-Generator-set-p5525605.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated power | Standby power | Engine | Alternator"
+      ],
+      "file": "sources/yihua-fujian/101.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.yihua-genset.com/Three-Phase-5kw-Brushless-Copy-Stam-Ford-Alternator-AC-Sychronous-Generators-p5522608.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Rated Power | 5kW/6.25kVA-1000kw/1250kva"
+      ],
+      "file": "sources/yihua-fujian/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.yihua-genset.com/Three-Phase-5kw-Brushless-Copy-Stam-Ford-Alternator-AC-Sychronous-Generators-p5531593.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Rated Power | 5kW/6.25kVA-1000kw/1250kva"
+      ],
+      "file": "sources/yihua-fujian/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.yihua-genset.com/Good-Price-Tfx-Series-Compound-Excitation-a-C-Synchronous-Alternator-Generator-p5522604.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated Power (KW/KVA) | Rated Volt(V) | Rated Curr. (A) | Rated Speed (r/min) | Frequency (Hz) | Max.directly-starting Motor (kW)"
+      ],
+      "file": "sources/yihua-fujian/105.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Powered By CCEC OEM Engine 800kw 1000kva Soundproof Diesel Generator set",
+      "header": [
+        "| Model | Rated power | Standby power | Engine | Alternator",
+        "| kw | kva | kw | kva | Brand | Model | Brand | Model"
+      ],
+      "rows": [
+        "| YH-1000C | 800 | 1000 | 880 | 1100 | Cummins | KTA38-G5 | Stamford | LVI634E-800kw"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Powered By CCEC OEM Engine 800kw 1000kva Soundproof Diesel Generator set",
+      "header": [
+        "| Voltage | Frequency. | Phase | Pf. | Rated Output power | Standby Output power | Current Amp.(PRP)"
+      ],
+      "rows": [
+        "| 230/400V | 50Hz | 3 | 0.8Lag | 800kw/1000kva | 880kw/1100kva | 900A"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Three-Phase Brushless Copy Stamford Alternator AC Sychronous Generators",
+      "header": [],
+      "rows": [
+        "| Rated Power | 5kW/6.25kVA-1000kw/1250kva",
+        "| Standby Power | 5.5kw/6.875kva-1100kw/1375kva",
+        "| Rated Power Range | 10-2250kva/8-1800kw",
+        "| Standby Power Range | 11-2475KVA/8.8-1980KW",
+        "| Voltage | 110/220V, 220/380V,230/400V, 440V, 480V, etc.",
+        "| Frequency | 50HZ/60HZ",
+        "| Rated Speed | 1500/1800rpm",
+        "| Fuel Tank | at least 8 hours running time for full load",
+        "| Protection Class | IP21-23",
+        "| Frequency at Stable State | <0.5%",
+        "| Frequency Deviation at Instantaneous State | ≤+10%",
+        "| Frequency Return Time | ≤3s",
+        "| Voltage deviation at stable state | ≤±1%",
+        "| Voltage deviation at instantaneous state | ≤+20%",
+        "| Voltage return time | ≤4s",
+        "| Voltage modulation | ≤0.3%"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "50HZ 60HZ Copy Stamford Brushless Alternator AC Sychronous Generators",
+      "header": [],
+      "rows": [
+        "| Rated Power | 5kW/6.25kVA-1000kw/1250kva",
+        "| Standby Power | 5.5kw/6.875kva-1100kw/1375kva",
+        "| Rated Power Range | 10-2250kva/8-1800kw",
+        "| Standby Power Range | 11-2475KVA/8.8-1980KW",
+        "| Voltage | 110/220V, 220/380V,230/400V, 440V, 480V, etc.",
+        "| Frequency | 50HZ/60HZ",
+        "| Rated Speed | 1500/1800rpm",
+        "| Fuel Tank | at least 8 hours running time for full load",
+        "| Protection Class | IP21-23",
+        "| Frequency Deviation at Instantaneous State | ≤+10%",
+        "| Frequency Return Time | ≤3s",
+        "| Voltage deviation at stable state | ≤±1%",
+        "| Voltage deviation at instantaneous state | ≤+20%",
+        "| Voltage return time | ≤4s",
+        "| Voltage modulation | ≤0.3%"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "TFW2 Series Compound Excitation A. C. Synchronous Alternator Generator",
+      "header": [
+        "| Model | Rated Power (KW/KVA) | Rated Volt(V) | Rated Curr. (A) | Rated Speed (r/min) | Frequency (Hz) | Max.directly-starting Motor (kW)"
+      ],
+      "rows": [
+        "| TFX-10 | 10/12.5 | 400 | 18.1 | 1500 | 50 | 7",
+        "| TFX-12 | 12/15 | 400 | 21.6 | 1500 | 50 | 8.4",
+        "| TFX-16 | 16/20 | 400 | 28.8 | 1500 | 50 | 11.2",
+        "| TFX-20 | 20/25 | 400 | 36.1 | 1500 | 50 | 14",
+        "| TFX-24 | 24/30 | 400 | 43.2 | 1500 | 50 | 16.8",
+        "| TFX-30 | 30/37.5 | 400 | 54.1 | 1500 | 50 | 24",
+        "| TFX-40 | 40/50 | 400 | 72.2 | 1500 | 50 | 28",
+        "| TFX-50 | 50/62.5 | 400 | 90.2 | 1500 | 50 | 30",
+        "| TFX-64 | 64/80 | 400 | 115.6 | 1500 | 50 | 30",
+        "| TFX-75 | 75/93.75 | 400 | 135.5 | 1500 | 50 | 30",
+        "| TFX-90 | 90/112.5 | 400 | 162.6 | 1500 | 50 | 55",
+        "| TFX-120 | 120/150 | 400 | 216.8 | 1500 | 50 | 55",
+        "| TFX-150 | 150/187.5 | 400 | 271 | 1500 | 50 | 75"
+      ]
+    }
+  ]
 }

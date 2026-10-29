@@ -70,73 +70,293 @@
     },
     {
       "n": 101,
-      "url": "https://www.silentgeneratorset.com/sale-10509320-1000kw-1250kva-mitsubishi-diesel-engine-generator-set-with-iso9001-ce-certification.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.silentgeneratorset.com/sale-10698739-commercial-1800-rpm-cummins-marine-engines-261kw-350bhp-wet-type-manifold.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| kW | kVA | kW | kVA"
+        "| Cummins Marine engine model | SO No. | Rated Speed (RPM) | Rated Power (Hp) | Rated power kw/RPM | Application | Ship Survey | Engine configuration"
       ],
       "file": "sources/stone-power/101.md"
     },
     {
       "n": 102,
-      "url": "https://www.silentgeneratorset.com/quality-10601013-880kva-perkins-open-type-700kw-800kw-diesel-powered-generator-for-industrial",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.silentgeneratorset.com/sale-10509320-1000kw-1250kva-mitsubishi-diesel-engine-generator-set-with-iso9001-ce-certification.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Perkins Engine: | 4006-23TAG3A | Stamford Alternator: | LVI634C"
+        "| MITSUBISHI Engine:: | S12R-PTA | Stamford Alternator:: | LVI 634G"
       ],
       "file": "sources/stone-power/102.md"
     },
     {
       "n": 103,
-      "url": "https://www.silentgeneratorset.com/sale-10616247-4-stroke-50hz-doosan-diesel-generator-140kw-175kva-genset-silent-generator-set.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.silentgeneratorset.com/quality-10579616-four-stroke-cummins-residential-generators-1500rpm-730kw-913kva-kta38-g2a",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Doosan Engine: | P086TI-1 | Stamford Alternator: | UCI274G"
+        "| Gensets Model | Prime | Standby"
       ],
       "file": "sources/stone-power/103.md"
     },
     {
       "n": 104,
-      "url": "https://www.silentgeneratorset.com/sale-10616257-sound-proof-doosan-d1146-three-phase-diesel-generator-70kw-with-stamford-alternator.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.silentgeneratorset.com/quality-10677717-1700kva-mitsubishi-diesel-generator-set",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Doosan Engine: | D1146 | Stamford Alternator: | UCI224G"
+        "| MITSUBISHI Engine:: | S16R-PTA | Stamford Alternator:: | PI 734D"
       ],
       "file": "sources/stone-power/104.md"
     },
     {
       "n": 105,
-      "url": "https://www.silentgeneratorset.com/sale-10616235-professional-silent-doosan-diesel-generator-400-kw-500-kva-genset.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.silentgeneratorset.com/sale-10579190-industrial-cummins-400kw-diesel-generator-with-anti-vibration-mounted-system.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Doosan Engine: | DP158LC | Stamford Alternator: | HCI544C"
+        "| Gensets Model | Prime | Standby"
       ],
       "file": "sources/stone-power/105.md"
     },
     {
       "n": 106,
-      "url": "https://www.silentgeneratorset.com/sale-35934256-100kva-fg-wilson-generator-set-60hz-open-silent-type-diesel-generator.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.silentgeneratorset.com/sale-11130754-nt855ga-cummins-diesel-generator-set-250kva-powered-with-three-phase.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Frequency(Hz) | 50"
+        "| GENSET MODEL | Output(kW) | Output(kVA) | Engine | Alternator Model"
       ],
       "file": "sources/stone-power/106.md"
     },
     {
       "n": 107,
-      "url": "https://www.silentgeneratorset.com/sale-12809623-so21275-cummins-marine-diesel-engines-main-propulsion-diesel-engine-high-performance-164kw-220hp-180.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.silentgeneratorset.com/quality-10582312-3-phase-360kw-450kva-cummins-diesel-generator-set-with-dse6020-control-system",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "Displacement: 8.3 L Aspiration: Turbocharged/Aftercooled"
+        "| Gensets Model | Prime | Standby"
       ],
       "file": "sources/stone-power/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.silentgeneratorset.com/quality-10569136-prime-power-construction-cummins-low-noise-diesel-generator-60hz-563kva-450kw",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Gensets Model | Prime | Standby"
+      ],
+      "file": "sources/stone-power/108.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.silentgeneratorset.com/sale-50059078-2000kw-2500kva-diesel-generator-set-deepsea-harsen-smartgen-control-panel.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Control Panel: | Deepsea / Harsen / Smartgen | Standby Power: | 2000KW / 2500KVA"
+      ],
+      "file": "sources/stone-power/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.silentgeneratorset.com/sale-50059111-1650kw-mitsubishi-diesel-generator-with-water-cooling.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Stamford Alternator: | PI 734E | Genset Dimension: | 5450×2600×3100mm"
+      ],
+      "file": "sources/stone-power/111.md"
+    },
+    {
+      "n": 112,
+      "url": "https://www.silentgeneratorset.com/sale-50059150-10kw-2000kw-power-diesel-generator-set-with-mitsubishi-alternator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Open Type: | Large Size Cooling Radiator | Voltage: | 220V - 480V"
+      ],
+      "file": "sources/stone-power/112.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.silentgeneratorset.com/sale-12875352-220v-60hz-marine-diesel-generator-set-36kw-compact-structure-easy-installation.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Prime Output Power:: | 36kw/45kva | Stamford Alternator Model:: | PM 144K"
+      ],
+      "file": "sources/stone-power/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.silentgeneratorset.com/quality-11320850-60hz-24vdc-three-phase-marine-diesel-genset-160kw-200kva",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Prime Output: | 160KW/200KVA | Frequency: | 60Hz"
+      ],
+      "file": "sources/stone-power/116.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.silentgeneratorset.com/sale-10586624-3-pole-cummins-diesel-generator-set-25kva-20kw-silent-diesel-generator-set-for-home.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Gensets Model | Prime | Standby"
+      ],
+      "file": "sources/stone-power/118.md"
+    },
+    {
+      "n": 119,
+      "url": "https://www.silentgeneratorset.com/sale-10586500-open-type-25kva-3ph-water-cooled-diesel-generator-100-load-cummins-4b3-9g1.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Gensets Model | Prime | Standby"
+      ],
+      "file": "sources/stone-power/119.md"
+    },
+    {
+      "n": 120,
+      "url": "https://www.silentgeneratorset.com/sale-10583544-800kva-640kw-open-diesel-generator-soundproof-cummins-diesel-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Cummins Engine Model:: | KTA38-G2B | Stamford Alternator Model:: | LV634C"
+      ],
+      "file": "sources/stone-power/120.md"
+    },
+    {
+      "n": 121,
+      "url": "https://www.silentgeneratorset.com/sale-14290513-iso-anti-vibration-open-type-diesel-generator-300kw-375kva.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Weichai Engine:: | WP13D385E200 | Wattek Alternator: | WHI 4F"
+      ],
+      "file": "sources/stone-power/121.md"
+    },
+    {
+      "n": 122,
+      "url": "https://www.silentgeneratorset.com/sale-14290481-280kw-350kva-open-frame-diesel-generators-with-industrial-silencer.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Weichai Engine:: | WP13D385E200 | Wattek Alternator: | WHI 4FS"
+      ],
+      "file": "sources/stone-power/122.md"
+    },
+    {
+      "n": 123,
+      "url": "https://www.silentgeneratorset.com/sale-14290680-mining-320kw-400kva-open-type-generator-with-multi-cylinder.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Weichai Engine:: | WP13D385E200 | Wattek Alternator: | WHI 4G"
+      ],
+      "file": "sources/stone-power/123.md"
+    },
+    {
+      "n": 125,
+      "url": "https://www.silentgeneratorset.com/sale-27321630-180kw-225kva-weichai-open-diesel-generator-4-cylinders-wp10d238e200.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Product Name: | Open Diesel Generator | Weichai Engine:: | WP10D238E200"
+      ],
+      "file": "sources/stone-power/125.md"
+    },
+    {
+      "n": 126,
+      "url": "https://www.silentgeneratorset.com/sale-27321723-anti-vibration-mounted-weichai-power-generator-200kw-250kva-wp10d264e200.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Weichai Engine:: | WP10D264E200 | Wattek Alternator: | WHI 274K"
+      ],
+      "file": "sources/stone-power/126.md"
+    },
+    {
+      "n": 127,
+      "url": "https://www.silentgeneratorset.com/quality-10601013-880kva-perkins-open-type-700kw-800kw-diesel-powered-generator-for-industrial",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Perkins Engine: | 4006-23TAG3A | Stamford Alternator: | LVI634C"
+      ],
+      "file": "sources/stone-power/127.md"
+    },
+    {
+      "n": 128,
+      "url": "https://www.silentgeneratorset.com/sale-10666296-6-cylinder-trailer-mounted-generator-200kw-250kva-400v-230v-over-current-protection.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Prime Output: | 200KW/250KVA | Frequency: | 50/60Hz"
+      ],
+      "file": "sources/stone-power/128.md"
+    },
+    {
+      "n": 129,
+      "url": "https://www.silentgeneratorset.com/sale-10666200-blue-color-travel-trailer-generator-24kw-30kva-intelligent-led-display-control-panel.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Prime Output: | 24KW/30KVA | Frequency: | 50/60Hz"
+      ],
+      "file": "sources/stone-power/129.md"
+    },
+    {
+      "n": 130,
+      "url": "https://www.silentgeneratorset.com/sale-10666671-mobile-portable-enclosed-trailer-generator-8-1000kw-50hz-60hz-water-cooled.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Prime Output: | 250KW/313KVA | Frequency: | 50/60Hz"
+      ],
+      "file": "sources/stone-power/130.md"
+    },
+    {
+      "n": 131,
+      "url": "https://www.silentgeneratorset.com/quality-10606876-water-cooled-silent-diesel-generator-set-300kw-400v-heavy-duty-for-construction",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Gensets Model | Prime | Standby"
+      ],
+      "file": "sources/stone-power/131.md"
+    },
+    {
+      "n": 132,
+      "url": "https://www.silentgeneratorset.com/sale-10583255-industrial-open-diesel-generator-1200kw-1500kva-deepsea-dse6020-control-panel.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Cummins Engine:: | KTA50-GS8 | Stamford Alternator:: | PI734C"
+      ],
+      "file": "sources/stone-power/132.md"
+    },
+    {
+      "n": 133,
+      "url": "https://www.silentgeneratorset.com/sale-10583062-110kw-138kva-low-noise-diesel-generator-with-deep-sea-6020-control-system.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Gensets Model | Prime | Standby"
+      ],
+      "file": "sources/stone-power/133.md"
+    },
+    {
+      "n": 134,
+      "url": "https://www.silentgeneratorset.com/sale-10582613-6-cylinder-cummins-diesel-generator-set-90kw-220v-240v-heavy-duty-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Gensets Model | Prime | Standby"
+      ],
+      "file": "sources/stone-power/134.md"
     }
   ],
   "confidence": "medium",
@@ -145,8 +365,91 @@
   "specTables": [
     {
       "n": 101,
+      "title": "Commercial 1800 RPM Cummins Marine Engines 261KW 350BHP Wet Type Manifold",
+      "header": [
+        "| Cummins Marine engine model | SO No. | Rated Speed (RPM) | Rated Power (Hp) | Rated power kw/RPM | Application | Ship Survey | Engine configuration"
+      ],
+      "rows": [
+        "| 6BT5.9-M120 | SO10479 | 2,200 | 120 | 90/2200 | marine main engine | CCS | AD pump; RSV Mechanical Governor",
+        "| 6BTA5.9-M150 | SO10480 | 2,200 | 150 | 110/2200 | marine main engine | CCS | AD pump; RSV Mechanical Governor",
+        "| NTA855-M | SO13754 | 1,800 | 182 | 136/1800 | marine main engine | CCS/EIAPP | refer toSO13458,guangxi neihe market",
+        "| 6CTA8.3-M188 | SO21226 | 2,200 | 185 | 138/2200 | marine main engine | CCS | AD pump; RSV Mechanical Governor",
+        "| NTA855-M | SO13753 | 1,800 | 185 | 138/1800 | marine main engine | CCS/EIAPP | refer toSO13273,guangxi neihe market",
+        "| NT855-M | SO13752 | 1,800 | 190 | 140/1800 | marine main engine | CCS/EIAPP | refer toSO13012,guangxi neihe market",
+        "| NTA855-M | SO13755 | 1,800 | 190 | 140/1800 | marine main engine | CCS/EIAPP | refer toSO13496,guangxi neihe market",
+        "| 6CTA8.3-M205 | SO20747 | 2,200 | 202 | 151/2200 | marine main engine | CCS | AD pump; RSV Mechanical Governor",
+        "| 6CTA8.3-M220 | SO21275 | 1,800 | 220 | 164/1800 | marine main engine | CCS | PB pump; RSV Mechanical Governor",
+        "| NT855-M | SO13058 | 1,800 | 240 | 179/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| NT855-M | SO13011 | 1,800 | 270 | 201/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| NT855-M | SO13012 | 1,800 | 300 | 224/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| 6LTAA8.9-M315 | SO30251 | 2,134 | 310 | 230/2134 | marine main engine | CCS | Bosch 7100 pump; RSV Mechanical Governor",
+        "| N855-M | SO13716 | 1,800 | 350 | 261/1800 | marine main engine | CCS/IMO2 | standard configuration",
+        "| NTA855-M | SO13273 | 1,800 | 350 | 261/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| N855-M | SO13715 | 1,800 | 400 | 298/1800 | marine main engine | CCS/IMO2 | standard configuration",
+        "| N855-M | SO13717 | 2,100 | 400 | 298/2100 | marine main engine | CCS/IMO2 | standard configuration",
+        "| NTA855-M | SO13096 | 2,100 | 400 | 298/2100 | marine main engine | CCS/EIAPP | standard configuration/Medium continued power",
+        "| NTA855-M | SO13520 | 2,100 | 400 | 298/2100 | marine main engine | CCS/EIAPP | Medium continued power,Without sea water pump",
+        "| NTA855-M | SO13496 | 1,800 | 400 | 298/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| KT19-M | SO40021 | 1,800 | 425 | 317/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| KT19-M | SO40301 | 1,800 | 425 | 317/1800 | marine main engine | CCS/EIAPP | Without sea water pump",
+        "| KT19-M | SO40447 | 1,800 | 425 | 317/1800 | marine main engine | CCS/EIAPP | info of performance configurationSO40301,Without sea water pump, heat exchanger",
+        "| NTA855-M | SO13458 | 1,800 | 450 | 336/1800 | marine main engine | CCS/EIAPP | standard configuration/ overloaded power,Without silencer",
+        "| KTA19-M | SO40465 | 1,800 | 470 | 351/1800 | marine main engine | CCS/EIAPP | Without sea water pump&instrument box",
+        "| KTA19-M | SO40001 | 1,800 | 470 | 351/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| KTA19-M | SO40197 | 1,800 | 470 | 351/1800 | marine main engine | CCS/EIAPP | Outboard cooling, without heat exchanger, sea water pump",
+        "| K19-M | SO40415 | 1,800 | 500 | 373/1800 | marine main engine | CCS/IMO2 | standard configuration",
+        "| K19-M | SO40436 | 1,800 | 500 | 373/1800 | marine main engine | CCS/IMO2 | Without heat exchanger, sea water pump",
+        "| KTA19-M | SO40467 | 1,800 | 500 | 373/1800 | marine main engine | CCS/EIAPP | performance refer toSO40002,cancel sea water pump ,heat exchanger on this basis",
+        "| KTA19-M3 | SO40379 | 1,800 | 500 | 373/1800 | marine main engine | CCS/EIAPP | standard configuration/heavy duty power",
+        "| KTA19-M | SO40002 | 1,800 | 500 | 373/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| KTA19-M | SO40303 | 1,800 | 500 | 373/1800 | marine main engine | CCS/EIAPP | Without sea water pump",
+        "| KTA19-M | SO40470 | 1,800 | 500 | 373/1800 | marine main engine | CCS/EIAPP | Without instrument box,refer toSO40002",
+        "| K19-M | SO40416 | 2,100 | 550 | 410/2100 | marine main engine | CCS/IMO2 | standard configuration",
+        "| KTA19-M | SO40036 | 2,100 | 550 | 410/2100 | marine main engine | CCS/EIAPP | standard configuration/Medium continued power",
+        "| K19-M | SO40417 | 1,800 | 600 | 447/1800 | marine main engine | CCS/IMO2 | standard configuration",
+        "| K19-M | SO40437 | 1,800 | 600 | 447/1800 | marine main engine | CCS/IMO2 | Without heat exchanger, sea water pump",
+        "| KTA19-M3 | SO40028 | 1,800 | 600 | 447/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| KTA19-M3 | SO40370 | 1,800 | 600 | 447/1800 | marine main engine | CCS/EIAPP | standard configuration,with HD4073 Hydraulic pump drive",
+        "| KTA19-M | SO40471 | 1,800 | 600 | 447/1800 | marine main engine | CCS/EIAPP | Without instrument box,refer toSO40028",
+        "| K19-M | SO40418 | 1,800 | 640 | 477/1800 | marine main engine | CCS/IMO2 | standard configuration",
+        "| K19-M | SO40433 | 1,800 | 640 | 477/1800 | marine main engine | CCS/IMO2 | Without heat exchanger, sea water pump",
+        "| KTA19-M3 | SO40044 | 1,800 | 640 | 477/1800 | marine main engine | CCS/EIAPP | standard configuration/ heavy duty power",
+        "| KTA19-M4 | SO40077 | 2,100 | 700 | 522/2100 | marine main engine | CCS/EIAPP | standard configuration/ heavy duty power",
+        "| KT38-M | SO60170 | 1,800 | 780 | 582/1800 | marine main engine | CCS/EIAPP | Dry exhaust pipe, without heat exchanger, sea water pump",
+        "| K38-M | SO60303 | 1,800 | 800 | 596/1800 | marine main engine | CCS/IMO2 | Without heat exchanger, sea water pump",
+        "| KT38-M | SO60008 | 1,800 | 800 | 596/1800 | marine main engine | CCS/EIAPP | standard configuration,Without silencer",
+        "| K38-M | SO60298 | 1,600 | 900 | 671/1600 | marine main engine | CCS/IMO2 | Without heat exchanger, sea water pump",
+        "| KTA38-M0 | SO60135 | 1,800 | 900 | 671/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| K38-M | SO60305 | 1,800 | 1,000 | 746/1800 | marine main engine | CCS/IMO2 | Without heat exchanger, sea water pump",
+        "| KTA38-M1 | SO60155 | 1,800 | 1,000 | 746/1800 | marine main engine | CCS/EIAPP | standard configuration",
+        "| K38-M | SO60306 | 1,800 | 1,100 | 821/1800 | marine main engine | CCS/IMO2 | Without heat exchanger, sea water pump",
+        "| K38-M | SO60294 | 1,800 | 1,200 | 895/1800 | marine main engine | CCS/IMO2 | standard configuration",
+        "| KTA38-M2 | SO60180 | 1,800 | 1,200 | 895/1800 | marine main engine | CCS/EIAPP | Dry exhaust pipe",
+        "| KTA38-M2 | SO60328 | 1,800 | 1,200 | 895//1800 | marine main engine | CCS/EIAPP | refer to performance configurationSO60180,Without sea water pump, heat exchanger",
+        "| K38-M | SO60293 | 1,900 | 1,350 | 1007/1900 | marine main engine | CCS/IMO2 | standard configuration",
+        "| K38-M | SO60300 | 1,900 | 1,350 | 1007/1900 | marine main engine | CCS/IMO2 | Without heat exchanger, sea water pump",
+        "| K50-M | SO60344 | 1,800 | 1,600 | 1193/1800 | marine main engine | CCS/IMO2 | Without sea water pump, heat exchanger",
+        "| K50-M | SO60345 | 1,800 | 1,600 | 1193/1800 | marine main engine | CCS/IMO2 | standard configuration",
+        "| K50-M | SO60348 | 1,900 | 1,800 | 1342/1900 | marine main engine | CCS/IMO2 | Without sea water pump, heat exchanger"
+      ]
+    },
+    {
+      "n": 102,
       "title": "1000KW 1250KVA MITSUBISHI Diesel Engine Generator Set With ISO9001 / CE Certification",
       "header": [
+        "| MITSUBISHI Engine:: | S12R-PTA | Stamford Alternator:: | LVI 634G"
+      ],
+      "rows": [
+        "| Prime Power:: | 1000KW / 1250KVA | Standby Power:: | 1100KW / 1375KVA",
+        "| Frequency:: | 50HZ/1500rpm | Cooling Method:: | Water",
+        "| Fuel Consumption (l/hr)100% Load:: | 3 Pole MCCB | Test:: | Debugging Before Shipment"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "1000KW 1250KVA MITSUBISHI Diesel Engine Generator Set With ISO9001 / CE Certification",
+      "header": [
+        "| Gensets Model | Prime | Standby",
         "| kW | kVA | kW | kVA"
       ],
       "rows": [
@@ -156,7 +459,7 @@
       ]
     },
     {
-      "n": 101,
+      "n": 102,
       "title": "1000KW 1250KVA MITSUBISHI Diesel Engine Generator Set With ISO9001 / CE Certification",
       "header": [
         "| GENSET MODEL | OUTPUT(kW) | OUTPUT(kVA) | ENGINE | ALTERNATOR",
@@ -176,18 +479,437 @@
       ]
     },
     {
-      "n": 102,
+      "n": 103,
+      "title": "Four Stroke CUMMINS Residential Generators 1500RPM 730KW 913KVA KTA38-G2A",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SC913ES | 730 | 913 | 800 | 1000",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 1113-1216 | 1925-2100 | 2221-2431"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "1700KVA MITSUBISHI Diesel Generator Set",
+      "header": [
+        "| MITSUBISHI Engine:: | S16R-PTA | Stamford Alternator:: | PI 734D"
+      ],
+      "rows": [
+        "| Prime Power:: | 1350KW/1700kva | Standby Power:: | 1485KW/1856KVA",
+        "| Frequency:: | 50HZ/1500rpm | Cooling Method:: | Water",
+        "| Fuel Consumption (l/hr)100% Load:: | 3 Pole MCCB | Test:: | Debugging Before Shipment"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "1700KVA MITSUBISHI Diesel Generator Set",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SM1700E5 | 1350 | 1700 | 1485 | 1856"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Industrial CUMMINS 400KW Diesel Generator With Anti - Vibration Mounted System",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| TP550CS | 400 | 500 | 440 | 550",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 696-760 | 1203-1312 | 1388-1519"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Nt855ga Cummins Diesel Generator Set 250kva Powered With Three Phase",
+      "header": [
+        "| GENSET MODEL | Output(kW) | Output(kVA) | Engine | Alternator Model",
+        "| Standby | Prime | Standby | Prime | Cummins | Stamford | Marathon | Wattek"
+      ],
+      "rows": [
+        "| SC30E6 | 26 | 24 | 33 | 30 | 4B3.9-G2 | PI144E | GM-16-4 | WHI 184E",
+        "| SC40E6 | 35 | 32 | 44 | 40 | 4BT3.9-G2 | PI144H | MP-24-4 | WHI 184H",
+        "| SC50E6 | 44 | 40 | 55 | 50 | 4BTA3.9-G2 | PI144K | MP-30-4 | WHI 224C",
+        "| SC60E6 | 53 | 48 | 66 | 60 | 4BTA3.9-G2 | UCI224D | MP-40-4 | WHI 224D",
+        "| SC70E6 | 62 | 56 | 78 | 70 | 4BTA3.9-G11 | UCI224E | MP-48-4 | WHI 224E",
+        "| SC80E6 | 70 | 64 | 88 | 80 | 4BTA3.9-G11 | UCI224F | MP-58-4 | WHI 224F",
+        "| SC90E6 | 79 | 72 | 100 | 90 | 4BTA3.9-G11 | UCI224G | MP-58-4 | WHI 224G",
+        "| SC100E6 | 88 | 80 | 110 | 100 | 6BT5.9-G2 | UCI224G | MP-70-4 | WHI 274C",
+        "| SC110E6 | 97 | 88 | 121 | 110 | 6BT5.9-G2 | UCI274C | MP-70-4 | WHI 274C",
+        "| SC125E6 | 110 | 100 | 138 | 125 | 6BT5.9-G2 | UCI274D | MP-80-4 | WHI 274D",
+        "| SC138E6 | 121 | 110 | 151 | 138 | 6BTA5.9-G2 | UCI274D | MP-80-4 | WHI 274D",
+        "| SC150E6 | 132 | 120 | 165 | 150 | 6BTAA5.9-G2 | UCI274E | MP-104-4 | WHI 274Es",
+        "| SC160E6 | 141 | 128 | 176 | 160 | 6BTAA5.9-G12 | UCI274E | MP-104-4 | WHI 274Es",
+        "| SC165E6 | 145 | 132 | 181 | 165 | 6BTAA5.9-G12 | UCI274E | MP-104-4 | WHI 274E",
+        "| SC188E5 | 165 | 150 | 206 | 188 | 6CTA8.3-G2 | UCI274F | MP-120-4 | WHI 274F",
+        "| SC200E6 | 176 | 160 | 220 | 200 | 6CTAA8.3-G2 | UCI274G | MP-140-4 | WHI 274H",
+        "| SC250E6 | 220 | 200 | 275 | 250 | NT855-GA | UCI274H | MP-160-4 | WHI 274J",
+        "| SC270E6 | 238 | 216 | 298 | 270 | 6LTAA8.9-G2 | UCD274J | MP-180-4 | WHI 274J",
+        "| SC288E6 | 253 | 230 | 316 | 288 | 6LTAA8.9-G3 | UCD274K | MP-180-4 | WHI 274K",
+        "| SC313E6 | 275 | 250 | 344 | 313 | NTA855-G1 | HCI444C | MP-200-4A | WHI 4D",
+        "| SC344E6 | 303 | 275 | 379 | 344 | NTA855-G1B | HCI444D | MP-217-4A | WHI 4D",
+        "| SC344E6 | 303 | 275 | 379 | 344 | NTA855-G2 | HCI444D | MP-217-4A | WHI 4D",
+        "| SC375E6 | 330 | 300 | 413 | 375 | NTAA855-G3 | HCI444D | MP-240-4A | WHI 4ES",
+        "| SC375E6 | 330 | 300 | 413 | 375 | 6ZTAA13-G3 | HCI444D | MP-240-4A | WHI 4ES",
+        "| SC438E6 | 385 | 350 | 481 | 438 | KTA19-G2 | HCI444E | MP-300-4A | WHI 4F",
+        "| SC438E6 | 385 | 350 | 481 | 438 | 6ZTAA13-G2 | HCI444E | MP-300-4A | WHI 4F",
+        "| SC450E6 | 400 | 360 | 500 | 450 | 6ZTAA13-G4 | HCI444FS | MP-300-4A | WHI 4F",
+        "| SC500E6 | 440 | 400 | 550 | 500 | QSZ13-G3 | HCI444F | MP-320-4A | WHI 4G",
+        "| SC513E6 | 451 | 410 | 563 | 513 | KTA19-G3 | HCI544C | MP-320-4A | WHI 5C",
+        "| SC563E6 | 495 | 450 | 619 | 563 | KTA19-G3A | HCI544C | MP-360-4 | WHI 5D",
+        "| SC588E6 | 517 | 470 | 646 | 588 | KTAA19-G5 | HCI544C | MP-360-4 | WHI 5D",
+        "| SC625E6 | 550 | 500 | 688 | 625 | QSKTAA19-G4 | HCI544D | MP-400-4 | WHI 5ES",
+        "| SC644E6 | 567 | 515 | 709 | 644 | KTAA19-G6A | HCI544E | MP-400-4 | WHI 5ES",
+        "| SC681E6 | 600 | 545 | 750 | 681 | KTAA19-G6A | HCI544E | MP-480-4 | WHI 5ES",
+        "| SC688E6 | 605 | 550 | 756 | 688 | QSKTAA19-G5 | HCI544E | MP-480-4 | WHI 5E",
+        "| SC775E6 | 682 | 620 | 853 | 775 | KT38-G | HCI544FS | MX-560-4 | WHI 5F",
+        "| SC875E6 | 770 | 700 | 963 | 875 | KTA38-G1 | LVI634B | MX-560-4 | WHI 6C",
+        "| SC906E6 | 798 | 725 | 998 | 906 | KTA38-G2 | LVI634C | MX-600-4 | WHI 6C",
+        "| SC938E6 | 825 | 750 | 1031 | 938 | KTA38-G2B | LVI634C | MX-600-4 | WHI 6D",
+        "| SC1000E6 | 880 | 800 | 1100 | 1000 | KTA38-G2A | LVI634D | MX-640-4 | WHI 6D",
+        "| SC1125E6 | 990 | 900 | 1238 | 1125 | KTA38-G4 | LVI634E | MX-750-4 | WHI 6E",
+        "| SC1250E6 | 1100 | 1000 | 1375 | 1250 | KTA38-G9 | LVI634F | MX-850-4 | WHI 6F",
+        "| SC1250E6 | 1100 | 1000 | 1375 | 1250 | QSK38-G5 | LVI634F | MX-850-4 | WHI 6F",
+        "| SC1375E6 | 1210 | 1100 | 1513 | 1375 | KTA50-G3 | LVI634G | MX-1030-4 | WHI 6G",
+        "| SC1550E6 | 1320 | 1200 | 1650 | 1500 | KTA50-G9 | PI734A | MX-1030-4 | WHI 7B",
+        "| SC1625E6 | 1430 | 1300 | 1788 | 1625 | KTA50-G9 | PI734B | MX-1240-4 | WHI 7B"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "3 Phase 360KW / 450KVA CUMMINS Diesel Generator Set With DSE6020 Control System",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| TP550C1 | 360 | 450 | 400 | 500",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 696-760 | 1203-1312 | 1388-1519"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "3 Phase 360KW / 450KVA CUMMINS Diesel Generator Set With DSE6020 Control System",
+      "header": [
+        "| Genset Model | Genset Power(kW) | Genset Capacity(kVA) | Engine Model | Alternator",
+        "| Standby | Prime | Standby | Prime | (Cummins) | Stamford | Marathon | Wattek"
+      ],
+      "rows": [
+        "| SC25M5 | 22 | 20 | 28 | 25 | 4B3.9-G1 | PI144E | GM-20-4 | WHI 184F",
+        "| SC25E5 | 22 | 20 | 28 | 25 | 4B3.9-G2 | PI144E | GM-20-4 | WHI 184F",
+        "| SC27M5 | 24 | 22 | 30 | 27 | 4B3.9-G1 | PI144F | GM-24-4 | WHI 184F",
+        "| SC27E5 | 24 | 22 | 30 | 27 | 4B3.9-G2 | PI144F | GM-24-4 | WHI 184F",
+        "| SC38M5 | 33 | 30 | 41 | 38 | 4BT3.9-G1 | PI144J | GM-30-4 | WHI 184H",
+        "| SC38E5 | 33 | 30 | 41 | 38 | 4BT3.9-G2 | PI144J | GM-30-4 | WHI 184H",
+        "| SC40M5 | 35 | 32 | 44 | 40 | 4BT3.9-G1 | PI144J | GM-32-4 | WHI 224C",
+        "| SC40E5 | 35 | 32 | 44 | 40 | 4BT3.9-G2 | PI144J | GM-32-4 | WHI 224C",
+        "| SC50E5 | 44 | 40 | 55 | 50 | 4BTA3.9-G2 | UCI224D | MP-40-4 | WHI 224D",
+        "| SC60E5 | 55 | 48 | 69 | 60 | 4BTA3.9-G2 | UCI224E | MP-48-4 | WHI 224E",
+        "| SC73E5 | 64 | 58 | 80 | 73 | 4BTA3.9-G11 | UCI224G | MP-58-4 | WHI 224E",
+        "| SC80E5 | 70 | 64 | 88 | 80 | 4BTA3.9-G11 | UCI224G | MP-64-4 | WHI 224G",
+        "| SC100M5 | 88 | 80 | 110 | 100 | 6BT5.9-G1 | UCI274C | MP-80-4 | WHI 274C",
+        "| SC100E5 | 88 | 80 | 110 | 100 | 6BT5.9-G2 | UCI274C | MP-80-4 | WHI 274C",
+        "| SC113E5 | 100 | 90 | 125 | 113 | 6BT5.9-G2 | UCI274D | MP-90-4 | WHI 274D",
+        "| SC113E5 | 100 | 90 | 125 | 113 | 6BTA5.9-G2 | UCI274D | MP-90-4 | WHI 274D",
+        "| SC125E5 | 110 | 100 | 138 | 125 | 6BTAA5.9-G2 | UCI274E | MP-104-4 | WHI 274Es",
+        "| SC138E5 | 120 | 110 | 150 | 138 | 6BTAA5.9-G2 | UCI274E | MP-120-4 | WHI 274D",
+        "| SC150E5 | 132 | 120 | 165 | 150 | 6BTAA5.9-G12 | UCI274F | MP-120-4 | WHI 274F",
+        "| SC180M5 | 160 | 144 | 200 | 180 | 6CTA8.3-G1 | UCI274G | MP-160-4 | WHI 274G",
+        "| SC180M5 | 160 | 144 | 200 | 180 | 6CTA8.3-G2 | UCI274G | MP-160-4 | WHI 274G",
+        "| SC200E5 | 175 | 160 | 220 | 200 | 6CTAA8.3-G2 | UCI274H | MP-160-4 | WHI 274H",
+        "| SC225E5 | 198 | 180 | 250 | 225 | 6LTAA8.9-G2 | UCD274J | MP-180-4 | WHI 274J",
+        "| SC250E5 | 220 | 200 | 275 | 250 | 6LTAA8.9-G2 | UCD274K | MP-200-4 | WHI 274K",
+        "| SC250E5# | 220 | 200 | 275 | 250 | NT855-GA | UCD274K | MP-200-4 | WHI 274K",
+        "| SC288E5 | 250 | 230 | 313 | 288 | NTA855-G1A | HCI444D | MP-230-4 | WHI 4D",
+        "| SC313E5 | 275 | 250 | 344 | 313 | NTA855-G1B | HCI444ES | MP-250-4 | WHI 4ES",
+        "| SC350E5 | 310 | 280 | 388 | 350 | NTA855-G2A | HCI444E | MP-280-4 | WHI 4FS",
+        "| SC350E5# | 310 | 280 | 388 | 350 | NTA855-G4 | HCI444E | MP-280-4 | WHI 4FS",
+        "| SC375E5 | 330 | 300 | 413 | 375 | NTAA855-G7 | HCI444FS | MP-300-4 | WHI 4F",
+        "| SC400E5 | 350 | 320 | 438 | 400 | NTAA855-G7A | HCI444F | MP-320-4 | WHI 4G",
+        "| SC450E5 | 400 | 360 | 500 | 450 | 6ZTAA13-G4 | HCI544C | MP-400-4A | WHI 5C",
+        "| SC450E5 | 400 | 360 | 500 | 450 | KTA19-G3 | HCI544C | MP-400-4A | WHI 5C",
+        "| SC500E5 | 440 | 400 | 550 | 500 | QSZ13-G3 | HCI544D | MP-400-4A | WHI 5D",
+        "| SC500E5 | 440 | 400 | 550 | 500 | KTA19-G3A | HCI544D | MP-400-4A | WHI 5D",
+        "| SC500E5# | 440 | 400 | 550 | 500 | KTA19-G4 | HCI544D | MP-400-4A | WHI 5D",
+        "| SC563E5 | 500 | 450 | 625 | 563 | KTAA19-G5 | HCI544E | MP-480-4A | WHI 5ES",
+        "| SC600E5 | 520 | 475 | 650 | 594 | KTA19-G8 | HCI544E | MP-480-4A | WHI 5E",
+        "| SC625E5 | 550 | 500 | 688 | 625 | KTAA19-G6A | HCI544FS | MP-500-4A | WHI 5FS",
+        "| SC650E5 | 580 | 520 | 725 | 650 | QSK19-G4 | HCI544F | MX-560-4 | WHI 5F",
+        "| SC725E5 | 638 | 580 | 800 | 725 | KT38-GA | LV634B | MX-600-4 | WHI 6B",
+        "| SC750E5 | 660 | 600 | 825 | 750 | KTA38-G2 | LV634B | MX-600-4 | WHI 6B",
+        "| SC800E5 | 710 | 640 | 888 | 800 | KTA38-G2B | LV634C | MX-640-4 | WHI 6C",
+        "| SC913ES | 800 | 730 | 1000 | 913 | KTA38-G2A | LV634D | MX-750-4 | WHI 6D",
+        "| SC1000E5 | 880 | 800 | 1100 | 1000 | KTA38-G5 | LV634E | MX-850-4 | WHI 6E",
+        "| SC1125E5 | 1000 | 900 | 1250 | 1125 | KTA38-G9 | LV634F | MX-1030-4 | WHI 6F",
+        "| SC1250E5 | 1100 | 1000 | 1375 | 1250 | KTA50-G3 | LV634G | MX-1030-4 | WHI 6G",
+        "| SC1500E5 | 1320 | 1200 | 1650 | 1500 | KTA50-G8 | PI734C | MX-1240-4 | WHI7C",
+        "| SC1550E5 | 1360 | 1240 | 1700 | 1550 | KTA50-GS8 | PI734C | MX-1240-4 | WHI 7C"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Prime Power Construction CUMMINS Low Noise Diesel Generator 60HZ 563KVA / 450KW",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| TP625C6S | 450 | 562 | 500 | 625",
+        "| Voltage | 440V-480V | 254V-277V | 208V-240V",
+        "| Amps | 677-738 | 1172-1279 | 1353-1561"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "2000KW 2500KVA Diesel Generator Set Deepsea Harsen Smartgen Control Panel",
+      "header": [
+        "| Control Panel: | Deepsea / Harsen / Smartgen | Standby Power: | 2000KW / 2500KVA",
+        "| Engine Model: | Mistubishi S16R-PTAW-C | Delivery: | 7-30 Days"
+      ],
+      "rows": [
+        "| Genset Dimension: | 6200×2830×3500mm | Stamford Alternator: | PI 734H",
+        "| Alternator: | S16R-PTAW-C | Cooling Method: | Water"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "1650KW MITSUBISHI Diesel Generator With Water Cooling",
+      "header": [],
+      "rows": [
+        "| Stamford Alternator: | PI 734E | Genset Dimension: | 5450×2600×3100mm",
+        "| Engine Model: | Mistubishi S16R-PTA2-C | Standby Power: | 1650KW / 2063KVA",
+        "| Control Panel: | Deepsea / Harsen / Smartgen | Cooling Method: | Water",
+        "| Power Output: | 10kW - 2000kW | Speed: | 1500/1800rpm"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "10KW - 2000KW Power Diesel Generator Set With Mitsubishi Alternator",
+      "header": [
+        "| Open Type: | Large Size Cooling Radiator | Voltage: | 220V - 480V"
+      ],
+      "rows": [
+        "| Power Output: | 10kW - 2000kW | Alternator: | PI 734D",
+        "| Standby Power: | 1485KW / 1856KVA | Genset Dimension: | 5500×1850×2760mm",
+        "| Delivery: | 7-30 Days | Stamford Alternator: | PI 734D"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "220V 60hz Marine Diesel Generator Set 36kw Compact Structure Easy Installation",
+      "header": [],
+      "rows": [
+        "| Prime Output Power:: | 36kw/45kva | Stamford Alternator Model:: | PM 144K",
+        "| Governor Type:: | ELECTRIC TYPE | DRIVE ENGINE:: | 4BTA3.9-GM65",
+        "| Fuel Consumption At Rated Power:: | 17L@100% Load; 13L@75% Load | Frequency:: | 60 Hz",
+        "| Standby Output Power: | 40kw/50kva | Dimension: | 1750*850*1200"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "60Hz 24VDC Three Phase Marine Diesel Genset 160KW 200KVA",
+      "header": [],
+      "rows": [
+        "| Prime Output: | 160KW/200KVA | Frequency: | 60Hz",
+        "| Voltage: | 380V Optional | Engine: | DECE Cummins Model 6CTA8.3-GM175",
+        "| Alternator: | Stafmord,Marathon | Control Panel: | Special Marine Type",
+        "| Cooling System: | Heat Exchanger,sea Water Pump | Marine Class: | CCS (optional)",
+        "| Start Way: | Battery&Air&Spring | Type: | Marine Main Genset"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "3 Pole CUMMINS Diesel Generator Set , 25KVA / 20KW Silent Diesel Generator Set For Home",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| TP28C1S | 20 | 25 | 22 | 28",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 35-38 | 60-66 | 69-76"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "Open Type 25KVA 3PH Water Cooled Diesel Generator 100% Load CUMMINS 4B3.9G1",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| TP28C | 20 | 25 | 22 | 28",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 35-38 | 60-66 | 69-76"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "800KVA 640KW Open Diesel Generator , Soundproof CUMMINS Diesel Generator Set",
+      "header": [
+        "| Cummins Engine Model:: | KTA38-G2B | Stamford Alternator Model:: | LV634C",
+        "| Control System:: | DSE6020 / DSE7320 | Frequency:: | 50Hz"
+      ],
+      "rows": [
+        "| Prime Output:: | 640kw/800kva | Standby Output:: | 704kw/880kva"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "800KVA 640KW Open Diesel Generator , Soundproof CUMMINS Diesel Generator Set",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| TP880C | 640 | 800 | 704 | 880"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "ISO Anti Vibration Open Type Diesel Generator 300kw 375kva",
+      "header": [
+        "| Weichai Engine:: | WP13D385E200 | Wattek Alternator: | WHI 4F"
+      ],
+      "rows": [
+        "| Prime Power: | 375KVA/300KW | Standby Power: | 413KVA/330KW",
+        "| Control System: | Smartgen 6110 | Frequency: | 50HZ/1500rpm",
+        "| Brand: | Weichai | Cylinders: | 4"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "ISO Anti Vibration Open Type Diesel Generator 300kw 375kva",
+      "header": [
+        "| Gensets Model | Prime Power | Standby Power",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SW150M5 | 300 | 375 | 330 | 413"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "280kw 350kva Open Frame Diesel Generators With Industrial Silencer",
+      "header": [
+        "| Weichai Engine:: | WP13D385E200 | Wattek Alternator: | WHI 4FS"
+      ],
+      "rows": [
+        "| Prime Power: | 350KVA/280KW | Standby Power: | 388KVA/310KW",
+        "| Control System: | Smartgen 6110 | Frequency: | 50HZ/1500rpm",
+        "| Brand: | Weichai | Cylinders: | 4"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "280kw 350kva Open Frame Diesel Generators With Industrial Silencer",
+      "header": [
+        "| Gensets Model | Prime Power | Standby Power",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SW150M5 | 280 | 350 | 310 | 388"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "Mining 320kw 400kva Open Type Generator With Multi Cylinder",
+      "header": [
+        "| Weichai Engine:: | WP13D385E200 | Wattek Alternator: | WHI 4G"
+      ],
+      "rows": [
+        "| Prime Power: | 400KVA/320KW | Standby Power: | 438KVA/350KW",
+        "| Control System: | Smartgen 6110 | Frequency: | 50HZ/1500rpm",
+        "| Brand: | Weichai | Cylinders: | 4"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "Mining 320kw 400kva Open Type Generator With Multi Cylinder",
+      "header": [
+        "| Gensets Model | Prime Power | Standby Power",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SW150M5 | 320 | 400 | 350 | 438"
+      ]
+    },
+    {
+      "n": 125,
+      "title": "180kw 225kva WEICHAI Open Diesel Generator 4 Cylinders WP10D238E200",
+      "header": [
+        "| Product Name: | Open Diesel Generator | Weichai Engine:: | WP10D238E200",
+        "| Wattek Alternator: | WHI 274J | Prime Power: | 225KVA/180KW",
+        "| Standby Power: | 248KVA/198KW | Control System: | Smartgen 6110",
+        "| Frequency: | 50HZ/1500rpm | Keyword: | LOW TRANSPORTATION COST"
+      ],
+      "rows": [
+        "| Cylinders: | 4 | Speed: | 1500/1800rpm"
+      ]
+    },
+    {
+      "n": 125,
+      "title": "180kw 225kva WEICHAI Open Diesel Generator 4 Cylinders WP10D238E200",
+      "header": [
+        "| Gensets Model | Prime Power | Standby Power",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SW225M5 | 180 | 225 | 198 | 248"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "Anti Vibration Mounted Weichai Power Generator 200kw 250kva WP10D264E200",
+      "header": [
+        "| Weichai Engine:: | WP10D264E200 | Wattek Alternator: | WHI 274K"
+      ],
+      "rows": [
+        "| Prime Power: | 250KVA/200KW | Standby Power: | 275KVA/220KW",
+        "| Control System: | Smartgen 6110 | Frequency: | 50HZ/1500rpm",
+        "| Cylinders: | 4 | Keyword: | Chint Circuit Breaker",
+        "| Features: | Anti-Vibration Mounted System | Product Name: | Open Diesel Generator"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "Anti Vibration Mounted Weichai Power Generator 200kw 250kva WP10D264E200",
+      "header": [
+        "| Gensets Model | Prime Power | Standby Power",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SW250M5 | 200 | 250 | 220 | 275"
+      ]
+    },
+    {
+      "n": 127,
       "title": "880KVA Perkins Open Type 700KW - 800KW Diesel powered Generator for Industrial",
       "header": [],
       "rows": [
         "| Perkins Engine: | 4006-23TAG3A | Stamford Alternator: | LVI634C",
-        "| Prime Power: | 640KW / 800KVA | Standby Power: | 704KW / 880KVA"
+        "| Prime Power: | 640KW / 800KVA | Standby Power: | 704KW / 880KVA",
+        "| Output Type: | AC Three Phase | Frequency: | 50HZ/1500rpm",
+        "| Cooling Method: | Water Cooled | Control System: | Deep Sea 6020",
+        "| Exciter: | Brushless | Fuel Consumption (l/hr)100% Load: | 3 Pole MCCB",
+        "| Color: | White, Yellow, Blue, Red Etc. For Your Choose | Test: | Debugging Before Shipment",
+        "| Condition: | Brand New | |"
       ]
     },
     {
-      "n": 102,
+      "n": 127,
       "title": "880KVA Perkins Open Type 700KW - 800KW Diesel powered Generator for Industrial",
       "header": [
+        "| Gensets Model | Prime Power | Standby Power",
         "| kW | kVA | kW | kVA"
       ],
       "rows": [
@@ -197,104 +919,119 @@
       ]
     },
     {
-      "n": 103,
-      "title": "4 Stroke 50Hz DOOSAN Diesel Generator , 140KW / 175KVA Genset Silent Generator Set",
-      "header": [
-        "| Doosan Engine: | P086TI-1 | Stamford Alternator: | UCI274G"
-      ],
-      "rows": [
-        "| Prime Power: | 140KW / 175KVA | Standby Power: | 154KW / 192KVA",
-        "| Amps: | 243-266A / 420-460A / 485-532A | Voltage: | 380V-415V / 220V-240V / 190V-208V"
-      ]
-    },
-    {
-      "n": 103,
-      "title": "4 Stroke 50Hz DOOSAN Diesel Generator , 140KW / 175KVA Genset Silent Generator Set",
-      "header": [
-        "| kW | kVA | kW | kVA"
-      ],
-      "rows": [
-        "| SP200DS | 140 | 175 | 154 | 192.5",
-        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
-        "| Amps | 243-266 | 420-460 | 485-532"
-      ]
-    },
-    {
-      "n": 104,
-      "title": "Sound proof Doosan D1146 Three Phase Diesel Generator 70KW with Stamford Alternator",
-      "header": [
-        "| Doosan Engine: | D1146 | Stamford Alternator: | UCI224G"
-      ],
-      "rows": [
-        "| Prime Power: | 70KW / 87.5KVA | Standby Power: | 77 KW / 96KVA",
-        "| Amps: | 121-133A / 210-230A / 242-266A | Voltage: | 380V-415V / 220V-240V / 190V-208V"
-      ]
-    },
-    {
-      "n": 104,
-      "title": "Sound proof Doosan D1146 Three Phase Diesel Generator 70KW with Stamford Alternator",
-      "header": [
-        "| kW | kVA | kW | kVA"
-      ],
-      "rows": [
-        "| SP96DS | 70 | 87.5 | 77 | 96",
-        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
-        "| Amps | 121-133 | 210-230 | 242-266"
-      ]
-    },
-    {
-      "n": 105,
-      "title": "Professional Silent DOOSAN Diesel Generator 400 KW / 500 kva genset",
-      "header": [
-        "| Doosan Engine: | DP158LC | Stamford Alternator: | HCI544C"
-      ],
-      "rows": [
-        "| Prime Power: | 360KW / 450KVA | Standby Power: | 400KW / 500KVA",
-        "| Amps: | 556-608A / 962-1050A / 1110-1216A | Voltage: | 380V-415V / 220V-240V / 190V-208V"
-      ]
-    },
-    {
-      "n": 105,
-      "title": "Professional Silent DOOSAN Diesel Generator 400 KW / 500 kva genset",
-      "header": [
-        "| kW | kVA | kW | kVA"
-      ],
-      "rows": [
-        "| SP500DS | 360 | 450 | 400 | 500",
-        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
-        "| Amps | 626-684 | 1083-1181 | 1249-1367"
-      ]
-    },
-    {
-      "n": 106,
-      "title": "100kva FG WILSON Generator Set 60hz Open Silent Type Diesel Generator",
+      "n": 128,
+      "title": "6 Cylinder Trailer Mounted Generator 200KW 250KVA 400V / 230V Over Current Protection",
       "header": [],
       "rows": [
-        "| Frequency(Hz) | 50",
-        "| ENGINE | Engine | 4 Stroke, water cooled",
-        "| Model type | LR4N5LP-D",
-        "| Cylinders | 4",
-        "| Bore×stroke(mm) | 110x125",
-        "| Displacement(L) | 4.75",
-        "| Fuel consumption(g/kw.h) | 210",
-        "| ALTERNATOR | Model | 274E",
-        "| Rated power(kW/kVA) | 80/100",
-        "| Rated currency(A) | 139.1",
-        "| Rated voltage(V) | 230/400,240/415 or other",
-        "| Power factor(cos&oslash;) | 0.8(Lagging)",
-        "| Phase / Rotary speed | 3-phase, 1500rpm"
+        "| Prime Output: | 200KW/250KVA | Frequency: | 50/60Hz",
+        "| Voltage: | 220V-690V Optional | Engine: | Cummins,Perkins,Deutz,Lovol,Yuchai,YTO,etc",
+        "| Alternator: | Stafmord,Marathon,Leroy Somer,Wattek,etc | Controller: | Deepsea,Comap,Harsen,Smartgen,etc",
+        "| MCCB: | ABB,Chint,etc | Genset Type: | Open,Silent,Container,Trailer Type For Optional",
+        "| Cooling System: | Water Cooled | ATS: | Optional"
       ]
     },
     {
-      "n": 107,
-      "title": "SO21275 Cummins Marine Diesel Engines / Main Propulsion Diesel Engine High Performance 164KW/220hp@1800 rpm",
+      "n": 129,
+      "title": "Blue Color Travel Trailer Generator 24KW 30KVA Intelligent LED Display Control Panel",
       "header": [],
       "rows": [
-        "Displacement: 8.3 L Aspiration: Turbocharged/Aftercooled",
-        "Bore: 114 mm kW (BHP) @ RPM",
-        "Engine Type: 6CTA8.3-M220 control unit",
-        "Fuel System: PB / RSV 180 kW @ 1858rpm",
-        "Rated power: 220 bhp @ 1800 rpm"
+        "| Prime Output: | 24KW/30KVA | Frequency: | 50/60Hz",
+        "| Voltage: | 220V-690V Optional | Engine: | Cummins,Perkins,Deutz,Lovol,Yuchai,YTO,etc",
+        "| Alternator: | Stafmord,Marathon,Leroy Somer,Wattek,etc | Controller: | Deepsea,Comap,Harsen,Smartgen,etc",
+        "| MCCB: | ABB,Chint,etc | Genset Type: | Open,Silent,Container,Trailer Type For Optional",
+        "| Cooling System: | Water Cooled | ATS: | Optional"
+      ]
+    },
+    {
+      "n": 130,
+      "title": "Mobile Portable Enclosed Trailer Generator 8 - 1000KW 50Hz / 60Hz Water Cooled",
+      "header": [],
+      "rows": [
+        "| Prime Output: | 250KW/313KVA | Frequency: | 50/60Hz",
+        "| Voltage: | 220V-690V Optional | Engine: | Cummins,Perkins,Deutz,Lovol,Yuchai,YTO,etc",
+        "| Alternator: | Stafmord,Marathon,Leroy Somer,Wattek,etc | Controller: | Deepsea,Comap,Harsen,Smartgen,etc",
+        "| MCCB: | ABB,Chint,etc | Genset Type: | Open,Silent,Container,Trailer Type For Optional",
+        "| Cooling System: | Water Cooled | ATS: | Optional"
+      ]
+    },
+    {
+      "n": 131,
+      "title": "Water Cooled Silent Diesel Generator Set 300KW 400V Heavy Duty For Construction",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SP412CS | 300 | 375 | 330 | 413",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 522-570 | 902-984 | 1041-1140"
+      ]
+    },
+    {
+      "n": 132,
+      "title": "Industrial Open Diesel Generator 1200KW 1500KVA Deepsea DSE6020 Control Panel",
+      "header": [
+        "| Cummins Engine:: | KTA50-GS8 | Stamford Alternator:: | PI734C"
+      ],
+      "rows": [
+        "| Prime Power:: | 1200KW / 1500KVA | Standby Power:: | 1320KW / 1650KVA",
+        "| Output Type:: | AC Three Phase | Control System:: | Deep Sea 6020"
+      ]
+    },
+    {
+      "n": 132,
+      "title": "Industrial Open Diesel Generator 1200KW 1500KVA Deepsea DSE6020 Control Panel",
+      "header": [
+        "| Cummins Engine: | KTA50-GS8 | Stamford Alternator: | PI734C"
+      ],
+      "rows": [
+        "| Prime Power: | 1200KW / 1500KVA | Standby Power: | 1320KW / 1650KVA",
+        "| Output Type: | AC Three Phase | Frequency: | 50HZ/1500rpm",
+        "| Cooling Method: | Water Cooled | Control System: | Deep Sea 6020",
+        "| Exciter: | Brushless | Fuel Consumption (l/hr)100% Load: | 3 Pole MCCB",
+        "| Color: | White, Yellow, Blue, Red Etc. For Your Choose | Test: | Debugging Before Shipment",
+        "| Condition: | 2015 New | Control: | Manual Control / AMF / Synchronizing",
+        "| Governing Type: | Electronic | Cooling Method: | Water",
+        "| Other Alternator: | Marathon, Mecc, Wattek Can Be Choosed | |"
+      ]
+    },
+    {
+      "n": 132,
+      "title": "Industrial Open Diesel Generator 1200KW 1500KVA Deepsea DSE6020 Control Panel",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SP1650C | 1200 | 1500 | 1320 | 1650",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 2087-2279 | 3609-3937 | 4164-4558"
+      ]
+    },
+    {
+      "n": 133,
+      "title": "110KW 138KVA Low Noise Diesel Generator With Deep Sea 6020 Control System",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| SC138E5 | 110 | 138 | 150 | 120",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 111-122 | 192-210 | 222-243"
+      ]
+    },
+    {
+      "n": 134,
+      "title": "6 Cylinder CUMMINS Diesel Generator Set , 90KW 220V / 240V Heavy Duty Diesel Generator",
+      "header": [
+        "| Gensets Model | Prime | Standby",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| TP125CS | 90 | 113 | 100 | 125",
+        "| Voltage | 380V-415V | 220V-240V | 190V-208V",
+        "| Amps | 157-171 | 271-295 | 312-342"
       ]
     }
   ]

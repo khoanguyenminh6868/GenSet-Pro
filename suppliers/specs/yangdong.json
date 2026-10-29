@@ -1,16 +1,293 @@
 [
  {
   "n": 101,
-  "url": "http://m.yangdong.net/fire-and-water-pump-engines/yangdong-y4102g.html",
-  "title": "China Yangdong Y4102G Manufacturers, Suppliers - YANGDONG",
+  "url": "http://m.yangdong.net/other-engines/generator-diesel-engine/70kw-generator-diesel-engine.html",
+  "title": "China 70kw Generator Diesel Engine Manufacturers, Suppliers - YANGDONG",
   "header": [],
   "rows": [
-   "| Model | Y4102G",
-   "| Bore(mm) | 102",
-   "| Speed | 3000",
-   "| Rated power KW/HP | 63/86",
-   "| Bore(mm) | 100",
-   "| Rated power KW/HP | 55/1500"
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 66.1 | 73.5",
+   "| Engine Prime Power (PRP) | kW | 63 | 70",
+   "| Engine Continuous Power (COP) | kW | 63 | 70",
+   "| Cooling Fan Power Consumption (kW) | kW | 2 | 2.5",
+   "| Engine Net Standby Output (LTP) | kW | 63.7 | 70.6",
+   "| Engine Net Prime Output (PRP) | kW | 60.7 | 67.2",
+   "| Engine Net Continuous Output (COP) | kW | 60.7 | 67.2"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "http://m.yangdong.net/other-engines/generator-diesel-engine/50kw-generator-diesel-engine.html",
+  "title": "China 50kw Generator Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 50.4 | 55.6",
+   "| Engine Prime Power (PRP) | kW | 48 | 53",
+   "| Engine Continuous Power (COP) | kW | 48 | 53",
+   "| Cooling Fan Power Consumption (kW) | kW | 2 | 2.5",
+   "| Engine Net Standby Output (LTP) | kW | 47.9 | 52.7",
+   "| Engine Net Prime Output (PRP) | kW | 45.7 | 50.2",
+   "| Engine Net Continuous Output (COP) | kW | 45.7 | 50.2"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "http://m.yangdong.net/other-engines/generator-diesel-engine/100kw-generator-diesel-engine.html",
+  "title": "China 100kw Generator Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 110 | 120",
+   "| Engine Prime Power (PRP) | kW | 100 | 110",
+   "| Engine Continuous Power (COP) | kW | 100 | 110",
+   "| Cooling Fan Power Consumption (kW) | kW | 4 | 4.5",
+   "| Engine Net Standby Output (LTP) | kW | 100 | 110",
+   "| Engine Net Prime Output (PRP) | kW | 90 | 100",
+   "| Engine Net Continuous Output (COP) | kW | 90 | 100"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "http://m.yangdong.net/other-engines/generator-diesel-engine/60kw-generator-diesel-engine.html",
+  "title": "China 60kw Generator Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 60 | 66",
+   "| Engine Prime Power (PRP) | kW | 55 | 60",
+   "| Engine Continuous Power (COP) | kW | 55 | 60",
+   "| Cooling Fan Power Consumption (kW) | kW | 2 | 2.5",
+   "| Engine Net Standby Output (LTP) | kW | 57.7 | 62.1",
+   "| Engine Net Prime Output (PRP) | kW | 52.7 | 57.1",
+   "| Engine Net Continuous Output (COP) | kW | 52.7 | 57.1"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "http://m.yangdong.net/other-engines/generator-diesel-engine/80kw-generator-diesel-engine.html",
+  "title": "China 80kw Generator Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 84 | 94.5",
+   "| Engine Prime Power (PRP) | kW | 80 | 90",
+   "| Engine Continuous Power (COP) | kW | 80 | 90",
+   "| Cooling Fan Power Consumption (kW) | kW | 3 | 3.5",
+   "| Engine Net Standby Output (LTP) | kW | 80.7 | 90.6",
+   "| Engine Net Prime Output (PRP) | kW | 76.7 | 86.2",
+   "| Engine Net Continuous Output (COP) | kW | 76.7 | 86.2"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "http://m.yangdong.net/other-engines/generator-diesel-engine/40kw-generator-diesel-engine.html",
+  "title": "China 40kw Generator Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 41.8 | 49.5",
+   "| Engine Prime Power (PRP) | kW | 38 | 45",
+   "| Engine Continuous Power (COP) | kW | 38 | 45",
+   "| Cooling Fan Power Consumption (kW) | kW | 1.5 | 2",
+   "| Engine Net Standby Output (LTP) | kW | 39.8 | 46.9",
+   "| Engine Net Prime Output (PRP) | kW | 36.2 | 42.7",
+   "| Engine Net Continuous Output (COP) | kW | 36.2 | 42.7"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "http://m.yangdong.net/other-engines/generator-diesel-engine/10kw-generator-diesel-engine.html",
+  "title": "China 10kw Generator Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 11 | 13.2",
+   "| Engine Prime Power (PRP) | kW | 10 | 12",
+   "| Engine Continuous Power (COP) | kW | 10 | 12",
+   "| Cooling Fan Power Consumption (kW) | kW | 1.2 | 1.5",
+   "| Engine Net Standby Output (LTP) | kW | 9.3 | 11.2",
+   "| Engine Net Prime Output (PRP) | kW | 8.5 | 10.2",
+   "| Engine Net Continuous Output (COP) | kW | 8.5 | 10.2"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "http://m.yangdong.net/other-engines/generator-diesel-engine/30kw-generator-diesel-engine.html",
+  "title": "China 30kw Generator Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 33 | 39.6",
+   "| Engine Prime Power (PRP) | kW | 30 | 36",
+   "| Engine Continuous Power (COP) | kW | 30 | 36",
+   "| Cooling Fan Power Consumption (kW) | kW | 1.5 | 2",
+   "| Engine Net Standby Output (LTP) | kW | 31 | 37",
+   "| Engine Net Prime Output (PRP) | kW | 28.2 | 33.7",
+   "| Engine Net Continuous Output (COP) | kW | 28.2 | 33.7"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "http://m.yangdong.net/other-engines/heater-exchanger-diesel-engine.html",
+  "title": "China HEATER EXCHANGER DIESEL ENGINE Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Model | YD380 | YD385 | YD480 | YND485 | YSD490 | Y4100 | Y4102",
+   "| Number of cylinders | 3 | 4",
+   "| Bore(mm) | 80 | 85 | 80 | 85 | 90 | 100 | 102",
+   "| Stoke(mm) | 90 | 100 | 105 | 118",
+   "| Compression ratio | 22 | 18",
+   "| Total displacement(L) | 1.357 | 1.52 | 1.809 | 2.043 | 2.54 | 3.298 | 3.857",
+   "| Firing order | 1-3-2 | 1-3-2 | 1-3-4-2",
+   "| Rated power (HP) | 27/3000 | 32/3000 | 38/3000 | 46/3000 | 57/3000 | 75/3000 | 90/3000",
+   "| Min.specific fuel consumption at full load (g/kW.h) | ≤247 | ≤248 | ≤250.5 | ≤265.2 | ≤247.5 | ≤237 | ≤238",
+   "| Net mass | 165 | 165 | 195 | 195 | 230 | 300 | 330"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "http://m.yangdong.net/other-engines/yangdong-diesel-engine/yangdong-generator-diesel-engine.html",
+  "title": "China Yangdong Generator Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Model | YD380D | YD385D | YD480D | YND485D | YSD490D | Y490D | Y495D | Y4100D | Y4102D | Y4105D | Y4110D | Y4102ZLD | Y4105ZLD | YD4EZLD | Y4110ZLD",
+   "| Number of cylinders | 3 | 4",
+   "| Bore(mm) | 80 | 85 | 80 | 85 | 90 | 90 | 95 | 100 | 102 | 105 | 110 | 102 | 105 | 105 | 110",
+   "| Stoke(mm) | 90 | 95 | 100 | 105 | 105 | 118 | 118 | 118 | 118 | 118 | 118 | 118 | 118",
+   "| Total displacement(L) | 1.357 | 1.532 | 1.809 | 2.156 | 2.54 | 2.67 | 2.977 | 3.707 | 3.875 | 4.1 | 4.4 | 3.875 | 4.1 | 4.1 | 4.4",
+   "| Firing order | 1-3-2 | 1-3-4-2",
+   "| Rated power (KW) | 10/1500 12/1800 | 11/1500 13/1800 | 14/1500 16/1800 | 17/1500 20/1800 | 21/1500 25/1800 | 24/1500 28/1800 | 27/1500 30/1800 | 30/1500 36/1800 | 33/1500 39/1800 | 38/1500 45/1800 | 43/1500 50/1800 | 48/1500 53/1800 | 55/1500 60/1800 | 63/1500 70/1800 | 80/1500 90/1800",
+   "| Min.specific fuel consumption at full load (g/kW.h) | ≤260 | ≤255 | ≤250.5 | ≤247 | ≤247.5 | ≤243 | ≤240 | ≤237 | ≤235 | ≤235 | ≤230 | ≤225 | ≤222 | ≤218 | ≤216"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "http://m.yangdong.net/other-engines/yangdong-diesel-engine/yangdong-water-pump-diesel-engine.html",
+  "title": "China Yangdong Water Pump Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Model | YD380 | YD385 | YD480 | YND485 | YSD490 | Y4100 | Y4102",
+   "| Number of cylinders | 3 | 4",
+   "| Bore(mm) | 80 | 85 | 80 | 85 | 90 | 100 | 102",
+   "| Stoke(mm) | 90 | 100 | 105 | 118",
+   "| Compression ratio | 22 | 18",
+   "| Total displacement(L) | 1.357 | 1.52 | 1.809 | 2.043 | 2.54 | 3.298 | 3.857",
+   "| Firing order | 1-3-2 | 1-3-2 | 1-3-4-2",
+   "| Rated power (HP) | 27/3000 | 32/3000 | 38/3000 | 46/3000 | 57/3000 | 75/3000 | 90/3000",
+   "| Min.specific fuel consumption at full load (g/kW.h) | ≤247 | ≤248 | ≤250.5 | ≤265.2 | ≤247.5 | ≤237 | ≤238",
+   "| Net mass | 165 | 165 | 195 | 195 | 230 | 300 | 330"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "http://m.yangdong.net/other-engines/yangdong-diesel-engine/yangdong-fire-pump-diesel-engine.html",
+  "title": "China Yangdong Fire Pump Diesel Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Model | YD380 | YD385 | YD480 | YND485 | YSD490 | Y4100 | Y4102",
+   "| Number of cylinders | 3 | 4",
+   "| Bore(mm) | 80 | 85 | 80 | 85 | 90 | 100 | 102",
+   "| Stoke(mm) | 90 | 100 | 105 | 118",
+   "| Compression ratio | 22 | 18",
+   "| Total displacement(L) | 1.357 | 1.52 | 1.809 | 2.043 | 2.54 | 3.298 | 3.857",
+   "| Firing order | 1-3-2 | 1-3-2 | 1-3-4-2",
+   "| Rated power (HP) | 27/3000 | 32/3000 | 38/3000 | 46/3000 | 57/3000 | 75/3000 | 90/3000",
+   "| Min.specific fuel consumption at full load (g/kW.h) | ≤247 | ≤248 | ≤250.5 | ≤265.2 | ≤247.5 | ≤237 | ≤238",
+   "| Net mass | 165 | 165 | 195 | 195 | 230 | 300 | 330"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "http://m.yangdong.net/marine-engine/marine-generator-engine.html",
+  "title": "China Marine Generator Engine Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Model | YD380D | YD385D | YD480D | YND485D | YSD490D | Y490D | Y495D | Y4100D | Y4102D | Y4105D | Y4110D | Y4102ZLD | Y4105ZLD | YD4EZLD | Y4110ZLD",
+   "| Number of cylinders | 3 | 4",
+   "| Bore(mm) | 80 | 85 | 80 | 85 | 90 | 90 | 95 | 100 | 102 | 105 | 110 | 102 | 105 | 105 | 110",
+   "| Stoke(mm) | 90 | 95 | 100 | 105 | 105 | 118 | 118 | 118 | 118 | 118 | 118 | 118 | 118",
+   "| Total displacement(L) | 1.357 | 1.532 | 1.809 | 2.156 | 2.54 | 2.67 | 2.977 | 3.707 | 3.875 | 4.1 | 4.4 | 3.875 | 4.1 | 4.1 | 4.4",
+   "| Firing order | 1-3-2 | 1-3-4-2",
+   "| Rated power (KW) | 10/1500 12/1800 | 11/1500 13/1800 | 14/1500 16/1800 | 17/1500 20/1800 | 21/1500 25/1800 | 24/1500 28/1800 | 27/1500 30/1800 | 30/1500 36/1800 | 33/1500 39/1800 | 38/1500 45/1800 | 43/1500 50/1800 | 48/1500 53/1800 | 55/1500 60/1800 | 63/1500 70/1800 | 80/1500 90/1800",
+   "| Min.specific fuel consumption at full load (g/kW.h) | ≤260 | ≤255 | ≤250.5 | ≤247 | ≤247.5 | ≤243 | ≤240 | ≤237 | ≤235 | ≤235 | ≤230 | ≤225 | ≤222 | ≤218 | ≤216"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "http://m.yangdong.net/other-engines/4100-diesel-engines.html",
+  "title": "China 4100 DIESEL ENGINE Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 33 | 39.6",
+   "| Engine Prime Power (PRP) | kW | 30 | 36",
+   "| Engine Continuous Power (COP) | kW | 30 | 36",
+   "| Cooling Fan Power Consumption (kW) | kW | 1.5 | 2",
+   "| Engine Net Standby Output (LTP) | kW | 31 | 37",
+   "| Engine Net Prime Output (PRP) | kW | 28.2 | 33.7",
+   "| Engine Net Continuous Output (COP) | kW | 28.2 | 33.7"
+  ]
+ },
+ {
+  "n": 115,
+  "url": "http://m.yangdong.net/other-engines/485-diesel-engines.html",
+  "title": "China 485 DIESEL ENGINE Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 18.7 | 22",
+   "| Engine Prime Power (PRP) | kW | 17 | 20",
+   "| Engine Continuous Power (COP) | kW | 17 | 20",
+   "| Cooling Fan Power Consumption (kW) | kW | 1.5 | 2",
+   "| Engine Net Standby Output (LTP) | kW | 16.7 | 19.4",
+   "| Engine Net Prime Output (PRP) | kW | 15.2 | 17.7",
+   "| Engine Net Continuous Output (COP) | kW | 15.2 | 17.7"
+  ]
+ },
+ {
+  "n": 116,
+  "url": "http://m.yangdong.net/other-engines/380-diesel-engines.html",
+  "title": "China 380 DIESEL ENGINE Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 11 | 13.2",
+   "| Engine Prime Power (PRP) | kW | 10 | 12",
+   "| Engine Continuous Power (COP) | kW | 10 | 12",
+   "| Cooling Fan Power Consumption (kW) | kW | 1.2 | 1.5",
+   "| Engine Net Standby Output (LTP) | kW | 9.3 | 11.2",
+   "| Engine Net Prime Output (PRP) | kW | 8.5 | 10.2",
+   "| Engine Net Continuous Output (COP) | kW | 8.5 | 10.2"
+  ]
+ },
+ {
+  "n": 117,
+  "url": "http://m.yangdong.net/other-engines/fire-pump-diesel-engine.html",
+  "title": "China FIRE PUMP DIESEL ENGINE Manufacturers, Suppliers - YANGDONG",
+  "header": [],
+  "rows": [
+   "| Model | YD380 | YD385 | YD480 | YND485 | YSD490 | Y4100 | Y4102",
+   "| Number of cylinders | 3 | 4",
+   "| Bore(mm) | 80 | 85 | 80 | 85 | 90 | 100 | 102",
+   "| Stoke(mm) | 90 | 100 | 105 | 118",
+   "| Compression ratio | 22 | 18",
+   "| Total displacement(L) | 1.357 | 1.52 | 1.809 | 2.043 | 2.54 | 3.298 | 3.857",
+   "| Firing order | 1-3-2 | 1-3-2 | 1-3-4-2",
+   "| Rated power (HP) | 27/3000 | 32/3000 | 38/3000 | 46/3000 | 57/3000 | 75/3000 | 90/3000",
+   "| Min.specific fuel consumption at full load (g/kW.h) | ≤247 | ≤248 | ≤250.5 | ≤265.2 | ≤247.5 | ≤237 | ≤238",
+   "| Net mass | 165 | 165 | 195 | 195 | 230 | 300 | 330"
   ]
  }
 ]

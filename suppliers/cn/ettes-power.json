@@ -137,7 +137,7 @@
     {
       "n": 101,
       "url": "https://www.ettesgenerator.com/MAN-biogas-generator-set-CHP.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs"
@@ -146,63 +146,303 @@
     },
     {
       "n": 102,
-      "url": "https://www.ettesgenerator.com/diesel-gensets-models-list-mtu-series.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.ettesgenerator.com/CNPC-natural-gas-engine-generator-set-CHP.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| kW | kVa | kW | kVa"
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl.(L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs D/L"
       ],
       "file": "sources/ettes-power/102.md"
     },
     {
       "n": 103,
-      "url": "https://www.ettesgenerator.com/Perkins-2000-Series-pd46817356.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.ettesgenerator.com/MWM-natural-gas-generator-set-CHP.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| kW | kVa | kW | kVa"
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls.& Type | Dspl. (L) | Elec Eff. | Heat Eff. | Total Eff. | Tech Specs"
       ],
       "file": "sources/ettes-power/103.md"
     },
     {
       "n": 104,
-      "url": "https://www.ettesgenerator.com/cummins-n855-series.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.ettesgenerator.com/MAN-natural-gas-generator-set-CHP.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| kW | kVa | kW | kVa"
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs"
       ],
       "file": "sources/ettes-power/104.md"
     },
     {
-      "n": 110,
-      "url": "https://www.ettesgenerator.com/MTU-4000-Series-pd46684846.html",
-      "accessedAt": "2026-10-28",
+      "n": 105,
+      "url": "https://www.ettesgenerator.com/Cummins-natural-gas-generator-set-CHP.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| kW | kVa | kW | kVa"
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Max Power (kW) | Cyls. & Type | Dspl.(L) | Elec. Eff. | Heat Eff. | Total Eff. | Specs D/L"
+      ],
+      "file": "sources/ettes-power/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.ettesgenerator.com/40kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-40N5"
+      ],
+      "file": "sources/ettes-power/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.ettesgenerator.com/300kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-300N5"
+      ],
+      "file": "sources/ettes-power/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.ettesgenerator.com/200kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-200N5"
+      ],
+      "file": "sources/ettes-power/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.ettesgenerator.com/800kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-800N5"
+      ],
+      "file": "sources/ettes-power/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.ettesgenerator.com/30kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-30N5"
       ],
       "file": "sources/ettes-power/110.md"
     },
     {
       "n": 111,
-      "url": "https://www.ettesgenerator.com/mitsubishi-diesel-generator-s16r-series.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.ettesgenerator.com/100kW-natural-gas-generator-set-CHP.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| kVa | kW | kVa"
+        "Model: EC-100N5"
       ],
       "file": "sources/ettes-power/111.md"
     },
     {
       "n": 112,
-      "url": "https://www.ettesgenerator.com/perkins-gensets-models-list.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.ettesgenerator.com/120kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| kW | kVa | kW | kVa"
+        "Model: EC-120N5"
       ],
       "file": "sources/ettes-power/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.ettesgenerator.com/180kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-180N5"
+      ],
+      "file": "sources/ettes-power/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.ettesgenerator.com/280kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-280N5"
+      ],
+      "file": "sources/ettes-power/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.ettesgenerator.com/1000kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-1000N5"
+      ],
+      "file": "sources/ettes-power/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.ettesgenerator.com/500kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-500N5"
+      ],
+      "file": "sources/ettes-power/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.ettesgenerator.com/60kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-60N5"
+      ],
+      "file": "sources/ettes-power/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.ettesgenerator.com/80kW-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EC-80N5"
+      ],
+      "file": "sources/ettes-power/118.md"
+    },
+    {
+      "n": 122,
+      "url": "https://www.ettesgenerator.com/500kW-natural-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-520N5"
+      ],
+      "file": "sources/ettes-power/122.md"
+    },
+    {
+      "n": 123,
+      "url": "https://www.ettesgenerator.com/400kW-natural-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-430N5"
+      ],
+      "file": "sources/ettes-power/123.md"
+    },
+    {
+      "n": 124,
+      "url": "https://www.ettesgenerator.com/100kW-gas-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-100N6"
+      ],
+      "file": "sources/ettes-power/124.md"
+    },
+    {
+      "n": 125,
+      "url": "https://www.ettesgenerator.com/75kW-natural-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-75N5"
+      ],
+      "file": "sources/ettes-power/125.md"
+    },
+    {
+      "n": 126,
+      "url": "https://www.ettesgenerator.com/200kW-natural-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-200N5"
+      ],
+      "file": "sources/ettes-power/126.md"
+    },
+    {
+      "n": 127,
+      "url": "https://www.ettesgenerator.com/220kW-natural-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-220N5"
+      ],
+      "file": "sources/ettes-power/127.md"
+    },
+    {
+      "n": 128,
+      "url": "https://www.ettesgenerator.com/250kW-natural-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-270N5"
+      ],
+      "file": "sources/ettes-power/128.md"
+    },
+    {
+      "n": 129,
+      "url": "https://www.ettesgenerator.com/300kW-natural-gas-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-300N5"
+      ],
+      "file": "sources/ettes-power/129.md"
+    },
+    {
+      "n": 130,
+      "url": "https://www.ettesgenerator.com/350kW-gas-generator-CHP.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-350N6"
+      ],
+      "file": "sources/ettes-power/130.md"
+    },
+    {
+      "n": 131,
+      "url": "https://www.ettesgenerator.com/250kW-gas-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-270N6"
+      ],
+      "file": "sources/ettes-power/131.md"
+    },
+    {
+      "n": 132,
+      "url": "https://www.ettesgenerator.com/150kW-gas-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-150N6"
+      ],
+      "file": "sources/ettes-power/132.md"
+    },
+    {
+      "n": 133,
+      "url": "https://www.ettesgenerator.com/60kW-gas-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-66N6"
+      ],
+      "file": "sources/ettes-power/133.md"
+    },
+    {
+      "n": 134,
+      "url": "https://www.ettesgenerator.com/50kW-gas-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Model: EM-50N6"
+      ],
+      "file": "sources/ettes-power/134.md"
     }
   ],
   "confidence": "medium",
@@ -223,201 +463,806 @@
         "| EM-220B5 | 220 | 269 | E2676LE212 | 252 | 6.L | 12.4 | 40.2% | 49.1% | 89.3% |",
         "| ※EM-300B5 | 300 | 379 | E3268LE252 | 320 | 8.V | 17.2 | 39.2% | 49.5% | 88.7% |",
         "| EM-350B5 | 350 | 450 | E3268LE222 | 370 | 8.V | 17.2 | 39.3% | 50.5% | 89.8% |",
-        "| EM-430B5 | 430 | 481 | E3262LE242 | 450 | 12.V | 25.8 | 39.3% | 43.9% | 83.2% |"
+        "| EM-430B5 | 430 | 481 | E3262LE242 | 450 | 12.V | 25.8 | 39.3% | 43.9% | 83.2% |",
+        "| EM-520B5 | 520 | 654 | E3262LE212/202 | 550 | 12.V | 25.8 | 38.3% | 48.2% | 86.5% |",
+        "| EM-700B5 | 705 | 731 | E3872LE201 | 741 | 12.V | 29.6 | 41.9% | 43.5% | 85.4% |",
+        "| EP-1000B5 | 1000 | 1090 | 4016-61TRS2 | 1042 | 16.V | 61.1 | 38.7% | 42.2% | 80.9% |"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "MAN Biogas Power generator, Combined Heat and Power (CHP) Unit",
+      "header": [
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs D/L"
+      ],
+      "rows": [
+        "| EM-66B6 | 66 | 93 | E0834LE322 | 80 | 4.L | 4.6 | 36.5% | 45.0% | 81.5% |",
+        "| EM-100B6 | 100 | 135 | E0836LE302 | 110 | 6.L | 6.9 | 37.8% | 45.0% | 82.8% |",
+        "| ★EM-200B6 | 200 | 255 | E2876LE302 | 200 | 6.L | 12.8 | 36.7% | 46.8% | 83.5% |",
+        "| EM-220B6 | 220 | 269 | E2676LE212 | 250 | 6.L | 12.8 | 40.5% | 44.0% | 84.5% |",
+        "| ※EM-320B6 | 320 | 402 | E3268LE252 | 340 | 8.V | 17.2 | 39.2% | 49.3% | 88.5% |",
+        "| EM-350B6 | 350 | 450 | E3268LE222 | 390 | 8.V | 17.2 | 40.0% | 43.0% | 83.0% |",
+        "| EM-430B6 | 430 | 481 | E3262LE242 | 450 | 12.V | 25.8 | 39.3% | 43.0% | 82.3% |",
+        "| EM-520B6 | 520 | 654 | E3262LE202/212 | 580 | 12.V | 25.8 | 40.0% | 43.0% | 83.0% |",
+        "| EM-560 B6 | 560 | 651 | E3262LE202/212 | 580 | 12.V | 25.8 | 40.0% | 46.5% | 86.5% |",
+        "| EM-800B6 | 800 | 928 | E3872LE202 | 846 | 12.V | 29.6 | 39.5% | 45.4% | 84.9% |"
       ]
     },
     {
       "n": 102,
-      "title": "ET Gensets Models List MTU Series from China manufacturer - ETTES POWER",
+      "title": "Natural Gas Power Generator, Combined Heat and Power (CHP ),Cogeneration",
       "header": [
-        "| kW | kVa | kW | kVa"
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl.(L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs D/L"
       ],
       "rows": [
-        "| ET-300 | 220 | 275 | 240 | 300 | 6R1600G10F"
+        "| EJ-300N5 | 300 | 375 | JC15DT | 350 | 6.L | 15 | 37.2 % | 46.5 % | 83.1 % |",
+        "| EJ-500N5 | 500 | 627 | 12V190ZDT | 600 | 12.V | 71 | 36.1 % | 45.3 % | 81.4 % |",
+        "| EJ-600N5 | 600 | 770 | 12V190ZL | 660 | 12.V | 71 | 37.0 % | 47.5 % | 84.5 % |",
+        "| EJ-700N5 | 700 | 903 | 12V190ZL | 750 | 12.V | 71 | 37.2 % | 48.0 % | 85.2 % |",
+        "| EJ-1200N5 | 1200 | 1416 | H16V190ZLT | 1320 | 16.V | 97 | 38.3 % | 45.2 % | 83.5 % |",
+        "| EJ-2000N5 | 2000 | 2258 | L20V190ZLT | 2200 | 20.V | 145 | 40.2 % | 45.4 % | 85.6 % |"
       ]
     },
     {
       "n": 102,
-      "title": "ET Gensets Models List MTU Series from China manufacturer - ETTES POWER",
+      "title": "Natural Gas Power Generator, Combined Heat and Power (CHP ),Cogeneration",
       "header": [
-        "| kW | kVa | kW | kVa"
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl.(L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs D/L"
       ],
       "rows": [
-        "| ET-880 | 640 | 800 | 704 | 880 | 12V2000G45 | 780 | 12.V | TBA | 3971*1848*2150 | 5080 |",
-        "| ET-1000 | 728 | 910 | 800 | 1000 | 12V2000G85 | 810 | 12.V | TBA | 4200*1650*2280 | 7000 |",
-        "| ET-1137 | 820 | 1025 | 910 | 1137 | 16V2000G45 | 1007 | 16.V | TBA | 4500*2000*2300 | 7850 |",
-        "| ET-1265 | 820 | 1025 | 900 | 1125 | 16V2000G65 | 975 | 16.V | TBA | 4500*2000*2300 | 7850 |",
-        "| ET-1450 | 908 | 1135 | 1000 | 1250 | 18V2000G65 | 1100 | 18.V | TBA | 4750*2100*2380 | 9000 |",
-        "| ET-1500 | 1000 | 1250 | / | / | 18V2000G26F",
-        "| 1212 | 18.V | TBA | 4750*2100*2380 | 9000 |",
-        "| ET-1562S | / | / | 1100 | 1375 | 18V2000G76F | 1235 | 18.V | TBA | 4750*2100*2380 | 9000 |",
-        "| ET-1875 | 1312 | 1640 | 1440 | 1800 | 12V4000G23 | 1575 | 12.V | TBA | 6150*2150*2400 | 13500 |",
-        "| ET-2200 | 1600 | 2000 | 1760 | 2200 | 12V4000G83S | 1910 | 12.V | TBA | 6150*2150*2400 | 14000 |",
-        "| ET-2250 | 1640 | 2050 | 1800 | 2250 | 16V4000G23 | 1965 | 16.V | TBA | 6500*2600*2500 | 17000 |",
-        "| ET-2500 | 1800 | 2250 | 2000 | 2500 | 16V4000G63 | 2185 | 16.V | TBA | 6500*2600*2500 | 17600 |",
-        "| ET-2750 | 2000 | 2500 | 2200 | 2750 | 20V4000G23 | 2420 | 20.V | TBA | 8300*2950*2550 | 20500 |",
-        "| ET-3125 | 2200 | 2750 | 2400 | 3000 | 20V4000G63 | 2420 | 20.V | TBA | 8300*2950*2550 | 21000 |",
-        "| ET-3438 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 2590 | 20.V | TBA | 8300*2950*2550 | 21000 |",
-        "| ET-3750 | 2200 | 2750 | 2400 | 3000 | 20V4000G63 | 3311 | 20.V | TBA | 8300*2950*2550 | 21000 |",
-        "| ET-4000 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 3311 | 20.V | TBA | 8300*2950*2550 | 21000 |"
+        "| EJ-300N6 | 300 | 375 | JC15DT | 350 | 6.L | 15 | 37.2 % | 46.5 % | 83.1 % |",
+        "| EJ-500N6 | 500 | 627 | 12V190ZDT | 600 | 12.V | 71 | 36.1 % | 45.3 % | 81.4 % |",
+        "| EJ-600N6 | 600 | 770 | 12V190ZL | 660 | 12.V | 71 | 37.0 % | 47.5 % | 84.5 % |",
+        "| EJ-700N6 | 700 | 903 | 12V190ZL | 750 | 12.V | 71 | 37.2 % | 48.0 % | 85.2 % |",
+        "| EJ-1200N6 | 1200 | 1416 | H16V190ZLT | 1320 | 16.V | 97 | 38.3 % | 45.2 % | 83.5 % |",
+        "| EJ-2000N6 | 2000 | 2258 | L20V190ZLT | 2200 | 20.V | 145 | 40.2 % | 45.4 % | 85.6 % |"
       ]
     },
     {
       "n": 103,
-      "title": "Perkins 2000 Series from China manufacturer - ETTES POWER",
+      "title": "MWM Natural Gas Power Generator, CHP Unit, Cogeneration",
       "header": [
-        "| kW | kVa | kW | kVa"
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls.& Type | Dspl. (L) | Elec Eff. | Heat Eff. | Total Eff. | Tech Specs"
       ],
       "rows": [
-        "| EP-10 | 7 | 9 | 8 | 10 | 403A-11G1★ | TBA | 3.L | TBA | 1150*500*1100 | 280 |",
-        "| EP-15 | 10 | 13 | 11 | 15 | 403A-15G1★ | TBA | 3.L | TBA | 1250*500*1100 | 350 |",
-        "| EP-17 | 12 | 15 | 13 | 17 | 403A-15G2★ | TBA | 3.L | TBA | 1250*500*1100 | 370 |",
-        "| EP-22 | 16 | 20 | 18 | 22 | 404A22G1★ | TBA | 4.L | TBA | 1370*880*1450 | 430 |",
-        "| EP-30 | 22 | 27 | 24 | 30 | 404D-22TG★ | TBA | 4.L | TBA | 1503*900*1200 | 680 |",
-        "| EP-33 | 24 | 30 | 26.4 | 33 | 1103A-33G | TBA | 3.L | TBA | 1560*900*1300 | 750 |",
-        "| EP-48 | 35 | 44 | 38 | 48 | 1104C-44G1 | TBA | 4.L | TBA | 1650*900*1310 | 780 |",
-        "| EP-50 | 36 | 45 | 40 | 50 | 1103C-33TG1 | TBA | 3.L | TBA | 1560*900*1300 | 750 |",
-        "| EP-50 | 36 | 45 | 40 | 50 | 1103C-33TG2 | TBA | 3.L | TBA | 1560*900*1300 | 750 |",
-        "| EP-66 | 48 | 60 | 53 | 66 | 1104C-44TG2 | TBA | 4.L | TBA | 1650*900*1310 | 780 |",
-        "| EP-66 | 48 | 60 | 53 | 66 | 1103A-33TG2 | TBA | 3.L | TBA | 1560*900*1300 | 750 |",
-        "| EP-72 | 52 | 65 | 58 | 72 | 1104A-44TG1★ | TBA | 4.L | TBA | 1760*760*1380 | 900 |",
-        "| EP-88 | 64 | 80 | 70 | 88 | 1104A-44TG2★ | TBA | 4.L | TBA | 1760*760*1380 | 900 |",
-        "| EP-110 | 80 | 100 | 88 | 110 | 1104C-44TAG2★ | TBA | 4.L | TBA | 1760*760*1380 | 900 |",
-        "| EP-150 | 108 | 135 | 120 | 150 | 1106A-70TG1★ | TBA | 6.L | TBA | 2410*930*1650 | 1550 |",
-        "| EP-150 | 108 | 135 | 120 | 150 | 1106A-70TAG1 | TBA | 6.L | TBA | 2410*930*1650 | 1550 |",
-        "| EP-157 | 114 | 143 | 125 | 157 | 1106D-E70TAG2 | TBA | 6.L | TBA | 2410*930*1650 | 1600 |",
-        "| EP-165 | 120 | 150 | 132 | 165 | 1106A-70TAG2★ | TBA | 6.L | TBA | 2410*930*1650 | 1600 |",
-        "| EP-200 | 144 | 180 | 160 | 200 | 1106A-70TAG3★ | TBA | 6.L | TBA | 2550*930*1670 | 1800 |",
-        "| EP-220 | 160 | 200 | 176 | 220 | 1106A-70TAG4★ | TBA | 6.L | TBA | 2550*930*1670 | 1860 |",
-        "| EP-250 | 180 | 225 | 200 | 250 | 1506A-E88TAG2 | TBA | 6.L | TBA | 2600*1255*1850 | 2000 |",
-        "| EP-275 | 200 | 250 | 220 | 275 | 1506A-E88TAG3 | TBA | 6.L | TBA | 2600*1255*1850 | 2100 |",
-        "| EP-275 | 200 | 250 | 220 | 275 | 1306C-E87TAG6 | TBA | 6.L | TBA | 2600*1255*1850 | 2100 |",
-        "| EP-300 | 220 | 275 | 240 | 300 | 1506A-E88TAG4 | TBA | 6.L | TBA | 2600*1255*1850 | 2200 |",
-        "| EP-330 | 240 | 300 | 264 | 330 | 1506A-E88TAG5 | TBA | 6.L | TBA | 2600*1255*1850 | 2300 |",
-        "| EP-330 | 240 | 300 | 264 | 330 | 1606A-E93TAG5 | TBA | 6.L | TBA | 2600*1255*1850 | 2300 |",
-        "| EP-400 | 280 | 350 | 320 | 400 | 2206C-E13TAG2 | TBA | 6.L | TBA | 3100*1120*1788 | 3000 |",
-        "| EP-450 | 320 | 400 | 360 | 450 | 2206C-E13TAG3 | TBA | 6.L | TBA | 3100*1120*1788 | 3200 |",
-        "| EP-500 | 360 | 450 | 400 | 500 | 2506C-E15TAG1 | TBA | 6.L | TBA | 3400*1270*1974 | 4000 |",
-        "| EP-550 | 400 | 500 | 440 | 550 | 2506C-E15TAG2 | TBA | 6.L | TBA | 3400*1270*1974 | 4200 |",
-        "| EP-660 | 480 | 600 | 528 | 660 | 2806C-E18TAG1A | TBA | 6.L | TBA | 3600*1400*2100 | 4500 |",
-        "| EP-715 | 520 | 650 | 572 | 715 | 2806A-E18TAG2 | TBA | 6.L | TBA | 3600*1400*2100 | 4600 |",
-        "| EP-825 | 600 | 750 | 660 | 825 | 4006-23TAG2A | TBA | 6.L | TBA | 3965*1710*2200 | 5480 |",
-        "| EP-880 | 640 | 800 | 704 | 880 | 4006-23TAG3A | TBA | 6.L | TBA | 3965*1710*2200 | 5500 |",
-        "| EP-1000 | 720 | 900 | 800 | 1000 | 4008-TAG1A | TBA | 8.L | TBA | 4650*2060*2300 | 7450 |",
-        "| EP-1100 | 800 | 1000 | 880 | 1100 | 4008TAG2A | TBA | 8.L | TBA | 4650*2060*2300 | 7600 |",
-        "| EP-1250 | 900 | 1125 | 1000 | 1250 | 4008-30TAG3 | TBA | 8.L | TBA | 4700*2060*2300 | 7850 |",
-        "| EP-1375 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | TBA | 12.V | TBA | 4800*1780*2480 | 9500 |",
-        "| EP-1500 | 1100 | 1375 | 1200 | 1500 | 4012-46TWG3A | TBA | 12.V | TBA | 4880*1990*2506 | 9630 |",
-        "| EP-1650 | 1200 | 1500 | 1320 | 1650 | 4012-46TAG2A | TBA | 12.V | TBA | 4900*2000*2506 | 10900 |",
-        "| EP-1875 | 1368 | 1705 | 1500 | 1875 | 4012-46TAG3A | TBA | 12.V | TBA | 5100*2170*2850 | 11200 |",
-        "| EP-2000 | 1480 | 1850 | 1600 | 2000 | 4016TAG1A | TBA | 16.V | TBA | 5710*2775*3350 | 13000 |",
-        "| EP-2000 | 1480 | 1850 | 1600 | 2000 | 4016-61TRG1 | TBA | 16.V | TBA | 5710*2775*3350 | 13000 |",
-        "| EP-2250 | 1600 | 2000 | 1800 | 2250 | 4016TAG2A | TBA | 16.V | TBA | 5710*2775*3350 | 13500 |",
-        "| EP-2250 | 1600 | 2000 | 1800 | 2250 | 4016-61TRG2 | TBA | 16.V | TBA | 5710*2775*3350 | 13500 |",
-        "| EP-2500 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | TBA | 16.V | TBA | 6000*2700*3400 | 14000 |"
+        "| ※TCG-400N5 | 400 | 404 | TCG3016V08 CG132-8 | 436 | 8.V | 17.5 | 43.1% | 43.6% | 86.7% |",
+        "| TCG-600N5 | 600 | 654 | TCG3016V12 CG132-12 | 660 | 12.V | 26.3 | 42.0% | 45.8% | 87.8% |",
+        "| TCG-800N5 | 800 | 858 | TCG3016V16 CG132-16 | 880 | 16.V | 35 | 43.5% | 44.6% | 88.1% |",
+        "| TCG-1000N5 | 1000 | 1100 | TCG3016V16S CG132-16 | 1042 | 16.V | 35 | 40.5% | 47.3% | 87.8% |",
+        "| ※TCG-1000N5 | 1000 | 1177 | TCG2020V12K CG170-12 | 1187 | 12.V | 53.1 | 43.0% | 45.4% | 88.4% |",
+        "| ※TCG-1125N5 | 1125 | 1253 | TCG2020V12K CG17-12 | 1187 | 12.V | 53.1 | 40.9% | 45.6% | 86.5% |",
+        "| TCG-1200N5 | 1200 | 1189 | TCG2020V12 CG170-12 | 1260 | 12.V | 53.1 | 43.7% | 43.3% | 87.0% |",
+        "| TCG-1500N5 | 1500 | 1675 | TCG2020V16K CG170-16 | 1557 | 16.V | 70.8 | 40.9% | 45.7% | 86.6% |",
+        "| TCG-1560N5 | 1560 | 1576 | TCG2020V16 CG170-16 | 1635 | 16.V | 70.8 | 43.2% | 43.8% | 87.0% |",
+        "| TCG-2000N5 | 2000 | 2021 | TCG2020V20 CG170-20 | 2079 | 20.V | 88.5 | 43.7% | 43.2% | 86.9% |",
+        "| TCG-2000N5 | 2000 | 2021 | TCG2020V20 CG170-20 | 2083 | 20.V | 88.5 | 43.7% | 43.2% | 86.9% |",
+        "| ※TCG-2300N5 | 2300 | 2279 | TCG3020V20 CG170-20 | 2387 | 20.V | 89.0 | 44.0% | 43.6% | 87.6% |"
       ]
     },
     {
       "n": 103,
-      "title": "Perkins 2000 Series from China manufacturer - ETTES POWER",
+      "title": "MWM Natural Gas Power Generator, CHP Unit, Cogeneration",
       "header": [
-        "| kW | kVa | kW | kVa"
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls.& Type | Dspl. (L) | Elec Eff. | Heat Eff. | Total Eff. | Tech Specs"
       ],
       "rows": [
-        "| EP-12 | 9 | 11 | 10 | 12 | 403D-11G ★ | TBA | 3.L | TBA | 1300*690*1320 | 280 |",
-        "| EP-18 | 13 | 16 | 14 | 18 | 403D-15G ★ | TBA | 3.L | TBA | 1300*690*1320 | 350 |",
-        "| EP-20 | 14 | 18 | 16 | 20 | 403A-15G2 ★ | TBA | 3.L | TBA | 1300*690*1320 | 360 |",
-        "| EP-26 | 19 | 24 | 21 | 26 | 404D-22G ★ | TBA | 4.L | TBA | 1470*690*1320 | 430 |",
-        "| EP-35 | 26 | 32 | 29 | 35 | 404D-22TG | TBA | 4.L | TBA | 1470*690*1320 | 440 |",
-        "| EP-40 | 29 | 36 | 32 | 40 | 404D-22TAG | TBA | 4.L | TBA | 1760*760*1380 | 550 |",
-        "| EP-69 | 50 | 63 | 55 | 69 | 1104D-44TG1 | TBA | 4.L | TBA | 2000*900*1550 | 1100 |",
-        "| EP-83 | 60 | 75 | 66 | 83 | 1104D-E44TG1 | TBA | 4.L | TBA | 2000*900*1550 | 1200 |",
-        "| EP-100 | 72 | 90 | 80 | 100 | 1104C-44TAG1/"
+        "| TCG-400N6 | 400 | 427 | TCG3016V8 CG132-8 | 436 | 8.V | 17.5 | 42.1% | 45.0% | 87.1% |",
+        "| TCG-600N6 | 600 | 654 | TCG3016V12 CG132-12 | 656 | 12.V | 26.3 | 42.4% | 45.7% | 88.1% |",
+        "| TCG-800N6 | 800 | 856 | TCG3016V16S CG132-16 | 880 | 16.V | 35 | 42.6% | 45.5% | 88.1% |",
+        "| TCG-1000N6 | 1000 | 1120 | TCG3016V16S CG132-16S | 1042 | 16.V | 35 | 40.7% | 45.6% | 86.3% |",
+        "| ※TCG-1125N6 | 1125 | 1261 | TCG2020V12K CG170-12 | 1187 | 12.V | 53.1 | 40.7% | 45.6% | 86.3% |",
+        "| TCG-1200N6 | 1200 | 1189 | TCG2020V12 CG170-12 | 1245 | 12.V | 53.1 | 43.4% | 43.2% | 86.6% |",
+        "| ※EW-1500N6 | 1500 | 1686 | TCG2020V16 CG170-16 | 1557 | 16.V | 70.8 | 40.6% | 45.7% | 86.3% |",
+        "| TCG-1560N6 | 1560 | 1576 | TCG2020V16 CG170-16 | 1620 | 16.V | 70.8 | 43.0% | 43.8% | 86.8% |",
+        "| TCG-2000N6 | 2000 | 2021 | TCG2020V20 CG170-20 | 2079 | 20.V | 88.5 | 43.4% | 43.2% | 86.6% |"
       ]
     },
     {
       "n": 104,
-      "title": "Cummins N855 Series from China manufacturer - ETTES POWER",
+      "title": "MAN Natural Gas Power Generator, CHP Unit, Cogeneration",
       "header": [
-        "| kW | kVa | kW | kVa"
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs"
       ],
       "rows": [
-        "| EC-28 | 20 | 25 | 22 | 28 | 4B3.9-G | 27/36 | 4.L",
-        "| 3.9 | 1820*760*1280 | 876 |",
-        "| EC-30 | 22 | 28 | 24 | 30 | 4B3.9-G | 27/36 | 4.L",
-        "| 3.9 | 1820*760*1400 | 888 |",
-        "| EC-41 | 30 | 38 | 33 | 41 | 4BT3.9-G | 40/54 | 4.L",
-        "| 3.9 | 1820*760*1400 | 893 |",
-        "| EC-55 | 40 | 50 | 44 | 55 | 4BTA3.9-G2 | 55/74 | 4.L",
-        "| 3.9 | 2000*760*1450 | 930 |",
-        "| EC-63 | 45 | 56 | 50 | 63 | 4BTA3.9-G2 | 55/74 | 4.L",
-        "| 3.9 | 2000*760*1300 | 930 |"
+        "| ☆EM-35N5 | 35 | / | E0834E312 | 37 | 4.L | 4.6 | 32.0% | / | / |",
+        "| EM-50N5 | 50 | 73 | E0834E302 | 54 | 4.L | 4.6 | 36.5% | 53.5% | 90.0% |",
+        "| ★EM-66N5 | 66 | 82 | E0834LE312 | 72 | 4.L | 5.5 | 37.0% | 46.0% | 83.0% |",
+        "| EM-75N5 | 75 | 106 | E0836E302 | 80 | 6.L | 5.9 | 36.7% | 46.0% | 83.0% |",
+        "| EM-100N5 | 100 | 138 | E0836LE302 | 110 | 6.L | 6.9 | 38.0% | 46.0% | 84.0% |",
+        "| ※EM-130N5 | 130 | 193 | E2676E302 | 140 | 6.L | 12.4 | 36.6% | 54.2% | 90.8% |",
+        "| EM-150N5 | 150 | 207 | E2876E312 | 150 | 6.L | 12.8 | 38.3% | 52.8% | 91.1% |",
+        "| EM-200N5 | 200 | 263 | E2876LE302 | 210 | 6.L | 12.8 | 37.2% | 48.9% | 86.1% |",
+        "| EM-220N5 | 220 | 237 | E2676LE202 | 220 | 6.L | 12.4 | 43.4% | 46.8% | 90.2% |",
+        "| EM-270N5 | 270 | 368 | E3262E302 | 275 | 12.V | 25.8 | 39.6% | 54.0% | 93.6% |",
+        "| ※EM-300N5 | 300 | 364 | E3268LE242 | 320 | 8.V | 17.2 | 39.1% | 47.5% | 86.6% |",
+        "| EM-350N5 | 350 | 439 | E3268LE212 | 370 | 8.V | 17.2 | 41.9% | 52.5% | 94.4% |",
+        "| EM-430N5 | 430 | 490 | E3262LE232 | 450 | 12.V | 25.8 | 39.6% | 44.6% | 84.2% |",
+        "| EM-520N5 | 520 | 648 | E3262LE202 | 550 | 12.V | 25.8 | 38.8% | 48.3% | 87.1% |",
+        "| EM-700N5 | 700 | 689 | E3872LE201 | 737 | 12.V | 29.6 | 41.8% | 41.1% | 82.9% |",
+        "| EP-1000N5 | 1000 | 1250 | 4016-61TRS2 | 1042 | 16.V | 61.1 | 38.7% | 42.2% | 80.9% |"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "MAN Natural Gas Power Generator, CHP Unit, Cogeneration",
+      "header": [
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs"
+      ],
+      "rows": [
+        "| EM-50N6 | 50 | 79 | E0834E302 | 62 | 4.L | 4.6 | 34.0% | 49.0% | 83.0% |",
+        "| ★EM-66N6 | 66 | 82 | E0834LE312 | 72 | 4.L | 5.5 | 37.0% | 46.0% | 83.0% |",
+        "| EM-80N6 | 80 | 109 | E0836E302 | 85 | 6.L | 5.9 | 37.0% | 46.0% | 83.0% |",
+        "| EM-100N6 | 100 | 132 | E0836LE302 | 110 | 6.L | 6.9 | 38.0% | 46.0% | 84.0% |",
+        "| EM-150N6 | 150 | 207 | E2676E302 | 160 | 6.L | 12.4 | 36.0% | 45.0% | 81.0% |",
+        "| ★EM-200N6 | 200 | 242 | E2876LE302 | 210 | 6.L | 12.8 | 37.2% | 46.0% | 83.2% |",
+        "| EM-220N6 | 220 | 231 | E2676LE202 | 250 | 6.L | 12.4 | 39.4% | 49.1% | 88.5% |",
+        "| ☆EM250N6 | 250 | / | E2676LE202 | 250 | 6.L | 12.4 | 41.6% | / | / |",
+        "| EM-270N6 | 270 | 375 | E3262E302 | 300 | 12.V | 25.8 | 38.0% | 46.0% | 84.0% |",
+        "| ※EM-300N6 | 300 | 354 | E3268LE242 | 340 | 8.V | 17.2 | 39.1% | 47.5% | 86.6% |",
+        "| EM-350N6 | 350 | 380 | E3268LE212 | 390 | 8.V | 17.2 | 39.9% | 45.0% | 84.9% |",
+        "| ※EM-375N6 | 375 | 447 | E3268LE212 | 390 | 8.V | 17.2 | 40.0% | 47.7% | 87.7% |",
+        "| ※EM-430N6 | 430 | 524 | E3262LE232 | 450 | 12.V | 25.8 | 39.6% | 48.3% | 87.9% |",
+        "| EM-450N6 | 450 | 490 | E3262LE232 | 450 | 12.V | 25.8 | 39.6% | 44.6% | 84.2% |",
+        "| EM-520N6 | 520 | 732 | E3262LE202 | 580 | 12.V | 25.8 | 38.2% | 49.9% | 88.1% |",
+        "| EM-560N6 | 560 | 648 | E3262LE202 | 580 | 12.V | 25.8 | 38.6% | 46.5% | 85.1% |",
+        "| EM-800N6 | 794 | 918 | E3872LE202 | 833 | 12.V | 29.6 | 39.6% | 45.8% | 85.4% |"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Cummins Series Natural Gas Power Generator, CHP, Cogeneration",
+      "header": [
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Max Power (kW) | Cyls. & Type | Dspl.(L) | Elec. Eff. | Heat Eff. | Total Eff. | Specs D/L"
+      ],
+      "rows": [
+        "| EC-30N5 | 30 | 45 | 4BTA3.9-G | 45 | 4.L | 3.9 | 32.5 % | 48.7 % | 81.2 % |",
+        "| EC-40N5 | 40 | 60 | 4BTA3.9-G | 45 | 4.L | 3.9 | 32.6 % | 48.9 % | 81.5 % |",
+        "| EC-60N5 | 60 | 90 | 6BTA5.9-G | 100 | 6.L | 5.9 | 32.8 % | 49.0 % | 81.8 % |",
+        "| EC-80N5 | 80 | 120 | 6BTA5.9-G | 100 | 6.L | 5.9 | 33.0 % | 49.1 % | 82.1 % |",
+        "| EC-100N5 | 100 | 145 | 6CTA8.3-G | 145 | 6.L | 8.3 | 33.6 % | 49.1 % | 82.7 % |",
+        "| EC-120N5 | 120 | 175 | 6CTA8.3-G | 145 | 6.L | 8.3 | 33.8 % | 49.2 % | 83.0 % |",
+        "| EC-180N5 | 180 | 251 | NTA855-G | 230 | 6.L | 14 | 35.3 % | 49.3 % | 84.6 % |",
+        "| EC-200N5 | 200 | 277 | NTA855-G | 230 | 6.L | 14 | 35.5 % | 49.3 % | 84.8 % |",
+        "| EC-280N5 | 280 | 351 | KTA19-G | 350 | 6.L | 19 | 38.1 % | 47.8 % | 85.9 % |",
+        "| EC-300N5 | 300 | 375 | KTA19-G | 350 | 6.L | 19 | 38.2 % | 47.8 % | 86.0 % |",
+        "| EC-450N5 | 450 | 556 | KTA38-G | 570 | 12.V | 38 | 38.3 % | 48.2 % | 86.5 % |",
+        "| EC-500N5 | 500 | 627 | KTA38-G | 570 | 12.V | 38 | 38.5 % | 48.3 % | 86.8 % |",
+        "| EC-800N5 | 800 | 982 | K38N-G8 | 900 | 12.V | 38 | 39.0 % | 47.9 % | 86.9 % |",
+        "| EC-1000N5 | 1000 | 1180 | K50N-G10 | 1100 | 16.V | 50 | 40.0 % | 47.2 % | 87.2 % |"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Cummins Series Natural Gas Power Generator, CHP, Cogeneration",
+      "header": [
+        "| Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Max Power (kW) | Cyls. & Type | Dspl.(L) | Elec. Eff. | Heat Eff. | Total Eff. | Specs D/L"
+      ],
+      "rows": [
+        "| EC-30N6 | 30 | 45 | 4BTA3.9-G | 45 | 4.L | 3.9 | 32.5 % | 48.7 % | 81.2 % |",
+        "| EC-40N6 | 40 | 60 | 4BTA3.9-G | 45 | 4.L | 3.9 | 32.6 % | 48.9 % | 81.5 % |",
+        "| EC-60N6 | 60 | 90 | 6BTA5.9-G | 100 | 6.L | 5.9 | 32.8 % | 49.0 % | 81.8 % |",
+        "| EC-80N6 | 80 | 120 | 6BTA5.9-G | 100 | 6.L | 5.9 | 33.0 % | 49.1 % | 82.1 % |",
+        "| EC-100N6 | 100 | 145 | 6CTA8.3-G | 145 | 6.L | 8.3 | 33.6 % | 49.1 % | 82.7 % |",
+        "| EC-120N6 | 120 | 175 | 6CTA8.3-G | 145 | 6.L | 8.3 | 33.8 % | 49.2 % | 83.0 % |",
+        "| EC-180N6 | 180 | 251 | NTA855-G | 230 | 6.L | 14 | 35.3 % | 49.3 % | 84.6 % |",
+        "| EC-200N6 | 200 | 277 | NTA855-G | 230 | 6.L | 14 | 35.5 % | 49.3 % | 84.8 % |",
+        "| EC-280N6 | 280 | 351 | KTA19-G | 350 | 6.L | 19 | 38.1 % | 47.8 % | 85.9 % |",
+        "| EC-300N6 | 300 | 375 | KTA19-G | 350 | 6.L | 19 | 38.2 % | 47.8 % | 86.0 % |",
+        "| EC-450N6 | 450 | 556 | KTA38-G | 570 | 12.V | 38 | 38.3 % | 48.2 % | 86.5 % |",
+        "| EC-500N6 | 500 | 627 | KTA38-G | 570 | 12.V | 38 | 38.5 % | 48.3 % | 86.8 % |",
+        "| EC-800N6 | 800 | 982 | K38N-G8 | 900 | 12.V | 38 | 39.0 % | 47.9 % | 86.9 % |",
+        "| EC-1000N6 | 1000 | 1180 | K50N-G10 | 1100 | 16.V | 50 | 40.0 % | 47.2 % | 87.2 % |"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "40 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-40N5",
+        "| Genset Model: | EC-40N5",
+        "| Power Rating (kW/kVa ) | 40/50",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 13.5",
+        "| Engine Brand & Model | Cummins 4BTA3.9-G",
+        "| Bore x Stroke (mm) | 102 X 120",
+        "| Displacement (L) | 3.9",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 45",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 1000",
+        "| Weight | 1650"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "300 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-300N5",
+        "| Genset Model: | EC-300N5",
+        "| Power Rating (kW/kVa ) | 300/375",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 86",
+        "| Engine Brand & Model | Cummins KTA19-G",
+        "| Bore x Stroke (mm) | 159 X 159",
+        "| Displacement (L) | 159",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 350",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 4210",
+        "| Weight | 6520"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "200 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-200N5",
+        "| Genset Model: | EC-200N5",
+        "| Power Rating (kW/kVa ) | 200/250",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 60.9",
+        "| Engine Brand & Model | Cummins NTA855-G",
+        "| Bore x Stroke (mm) | 140 X 152",
+        "| Displacement (L) | 14",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 230",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 2820",
+        "| Weight | 3950"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "800 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-800N5",
+        "| Genset Model: | EC-800N5",
+        "| Power Rating (kW/kVa ) | 800/1000",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 229",
+        "| Engine Brand & Model | Cummins K38N-G8",
+        "| Bore x Stroke (mm) | 159 X 159",
+        "| Displacement (L) | 159",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 900",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 7000",
+        "| Weight | 9900"
       ]
     },
     {
       "n": 110,
-      "title": "MTU 4000 Series from China manufacturer - ETTES POWER",
-      "header": [
-        "| kW | kVa | kW | kVa"
-      ],
+      "title": "30 kW Gas Generator",
+      "header": [],
       "rows": [
-        "| ET-880 | 640 | 800 | 704 | 880 | 12V2000G45 | 780 | 12.V | TBA | 3971*1848*2150 | 5080 |",
-        "| ET-1000 | 728 | 910 | 800 | 1000 | 12V2000G85 | 810 | 12.V | TBA | 4200*1650*2280 | 7000 |",
-        "| ET-1137 | 820 | 1025 | 910 | 1137 | 16V2000G45 | 1007 | 16.V | TBA | 4500*2000*2300 | 7850 |",
-        "| ET-1265 | 820 | 1025 | 900 | 1125 | 16V2000G65 | 975 | 16.V | TBA | 4500*2000*2300 | 7850 |",
-        "| ET-1450 | 908 | 1135 | 1000 | 1250 | 18V2000G65 | 1100 | 18.V | TBA | 4750*2100*2380 | 9000 |",
-        "| ET-1500 | 1000 | 1250 | / | / | 18V2000G26F",
-        "| 1212 | 18.V | TBA | 4750*2100*2380 | 9000 |",
-        "| ET-1562S | / | / | 1100 | 1375 | 18V2000G76F | 1235 | 18.V | TBA | 4750*2100*2380 | 9000 |",
-        "| ET-1875 | 1312 | 1640 | 1440 | 1800 | 12V4000G23 | 1575 | 12.V | TBA | 6150*2150*2400 | 13500 |",
-        "| ET-2200 | 1640 | 2050 | 1800 | 2250 | 16V4000G23 | 1965 | 16.V | TBA | 6500*2600*2500 | 17000 |",
-        "| ET-2500 | 1800 | 2250 | 2000 | 2500 | 16V4000G63 | 2185 | 16.V | TBA | 6500*2600*2500 | 17600 |",
-        "| ET-2750 | 2000 | 2500 | 2200 | 2750 | 20V4000G23 | 2420 | 20.V | TBA | 8300*2950*2550 | 20500 |",
-        "| ET-3125 | 2200 | 2750 | 2400 | 3000 | 20V4000G63 | 2420 | 20.V | TBA | 8300*2950*2550 | 21000 |",
-        "| ET-3438 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 2590 | 20.V | TBA | 8300*2950*2550 | 21000 |",
-        "| ET-3750 | 2200 | 2750 | 2400 | 3000 | 20V4000G63 | 3311 | 20.V | TBA | 8300*2950*2550 | 21000 |",
-        "| ET-4000 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 3311 | 20.V | TBA | 8300*2950*2550 | 21000 |"
+        "Model: EC-30N5",
+        "| Genset Model: | EC-30N5",
+        "| Power Rating (kW/kVa ) | 30/37.5",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 10.5",
+        "| Engine Brand & Model | Cummins 4BTA3.9-G",
+        "| Bore x Stroke (mm) | 102 X 120",
+        "| Displacement (L) | 3.9",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 45",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 1000",
+        "| Weight | 1650"
       ]
     },
     {
       "n": 111,
-      "title": "Mitsubishi S16R Series from China manufacturer - ETTES POWER",
-      "header": [
-        "| kVa | kW | kVa"
-      ],
+      "title": "100 kW Natural Gas Generator Set",
+      "header": [],
       "rows": [
-        "| ES-600 | 435 | 544 | 480 | 600 | S6A3-PTA-S | TBA | 6.L | TBA | 3560*1420*2050 | 4885 |",
-        "| ES-625 | 460 | 575 | 500 | 625 | S6A3-PTAA-S | TBA | 6.L | TBA",
-        "| 3560*1420*2050 | 4885 |",
-        "| ★ ES-575 | 460 | 575 | / | / | S6R-PTA | TBA | 6.L | TBA | 4080*1715*2000 | 5650 |",
-        "| ES-788 | 570 | 713 | 630 | 788 | S6R-PTA-S | TBA | 6.L | TBA | 4080*1715*2000 | 5650 |",
-        "| ES-1088 | 790 | 988 | 870 | 1088 | S12A2-PTA2-S | TBA | 12.V | TBA | 4225*1815*2360 | 7800 |",
-        "| ES-1338 | 960 | 1200 | 1070 | 1338 | S12H-PTA-S | TBA | 12.V | TBA | 4225*1815*2360 | 7800 |",
-        "| ★ ES-1150 | 920 | 1150 | / | / | S12R-PTA | TBA | 12.V | TBA | 4520*2200*2510 | 9850 |",
-        "| ES-1575 | 1150 | 1438 | 1260 | 1575 | S12R-PTA-S | TBA | 12.V | TBA | 4520*2200*2510 | 9850 |",
-        "| ES-1775 | 1280 | 1600 | 1420 | 1775 | S12R-PTA2-S | TBA | 12.V | TBA | 4920*2200*3000 | 12800 |",
-        "| ★ ES-1563 | 1250 | 1563 | / | / | S16R-PTA | TBA | 16.V | TBA | 5470*2200*2550 | 13000 |",
-        "| ES-2125 | 1550 | 1938 | 1700 | 2125 | S16R-PTA-S | TBA | 16.V | TBA | 5470*2200*2550 | 14500 |",
-        "| ES-2375 | 1730 | 2163 | 1900 | 2375 | S16R-PTA2-S | TBA | 16.V | TBA | 5700*2400*2575 | 16000 |",
-        "| ES-2500 | 1800 | 2250 | 2000 | 2500 | S16R-PTAA2 | TBA | 16.V | TBA | 5985*2555*2775 | 17200 |"
+        "Model: EC-100N5",
+        "| Genset Model: | EC-100N5",
+        "| Power Rating (kW/kVa ) | 100/125",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 32.7",
+        "| Engine Brand & Model | Cummins 6CTA8.3-G",
+        "| Bore x Stroke (mm) | 114 X 135",
+        "| Displacement (L) | 8.3",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 145",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 1000",
+        "| Weight | 1650"
       ]
     },
     {
       "n": 112,
-      "title": "EP Gensets Models List from China manufacturer - ETTES POWER",
-      "header": [
-        "| kW | kVa | kW | kVa"
-      ],
+      "title": "120 kW Gas Generator",
+      "header": [],
       "rows": [
-        "| EP-12 | 9 | 11 | 10 | 12 | 403D-11G ★ | TBA | 3.L | TBA | 1300*690*1320 | 280 |",
-        "| EP-18 | 13 | 16 | 14 | 18 | 403D-15G ★ | TBA | 3.L | TBA | 1300*690*1320 | 350 |",
-        "| EP-20 | 14 | 18 | 16 | 20 | 403A-15G2 ★ | TBA | 3.L | TBA | 1300*690*1320 | 360 |",
-        "| EP-26 | 19 | 24 | 21 | 26 | 404D-22G ★ | TBA | 4.L | TBA | 1470*690*1320 | 430 |",
-        "| EP-35 | 26 | 32 | 29 | 35 | 404D-22TG | TBA | 4.L | TBA | 1470*690*1320 | 440 |",
-        "| EP-40 | 29 | 36 | 32 | 40 | 404D-22TAG | TBA | 4.L | TBA | 1760*760*1380 | 550 |",
-        "| EP-69 | 50 | 63 | 55 | 69 | 1104D-44TG1 | TBA | 4.L | TBA | 2000*900*1550 | 1100 |",
-        "| EP-83 | 60 | 75 | 66 | 83 | 1104D-E44TG1 | TBA | 4.L | TBA | 2000*900*1550 | 1200 |",
-        "| EP-100 | 72 | 90 | 80 | 100 | 1104C-44TAG1 /"
+        "Model: EC-120N5",
+        "| Genset Model: | EC-120N5",
+        "| Power Rating (kW/kVa ) | 120/150",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 39.7",
+        "| Engine Brand & Model | Cummins 6CTA8.3-G",
+        "| Bore x Stroke (mm) | 114 X 135",
+        "| Displacement (L) | 8.3",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 145",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 1000",
+        "| Weight | 1650"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "180 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-180N5",
+        "| Genset Model: | EC-150N5",
+        "| Power Rating (kW/kVa ) | 150/187.5",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 39.7",
+        "| Engine Brand & Model | Cummins 6CTA8.3-G",
+        "| Bore x Stroke (mm) | 114 X 135",
+        "| Displacement (L) | 8.3",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 145",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 1000",
+        "| Weight | 1650"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "280 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-280N5",
+        "| Genset Model: | EC-280N5",
+        "| Power Rating (kW/kVa ) | 280/350",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 82.5",
+        "| Engine Brand & Model | Cummins KTA19-G",
+        "| Bore x Stroke (mm) | 159 X 159",
+        "| Displacement (L) | 19",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 350",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 4400",
+        "| Weight | 6450"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "1000 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-1000N5",
+        "| Genset Model: | EC-1000N5",
+        "| Power Rating (kW/kVa ) | 1000/1250",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 275",
+        "| Engine Brand & Model | Cummins K50N-G10",
+        "| Bore x Stroke (mm) | 159 X 159",
+        "| Displacement (L) | 50.3",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 1100",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 8000",
+        "| Weight | 10900"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "500 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-500N5",
+        "| Genset Model: | EC-500N5",
+        "| Power Rating (kW/kVa ) | 500/625",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 144",
+        "| Engine Brand & Model | Cummins KTA38-G",
+        "| Bore x Stroke (mm) | 159 X 159",
+        "| Displacement (L) | 38",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 570",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 6100",
+        "| Weight | 8100"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "60 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-60N5",
+        "| Genset Model: | EC-60N5",
+        "| Power Rating (kW/kVa ) | 60/75",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 19.8",
+        "| Engine Brand & Model | Cummins 6BTA5.9-G",
+        "| Bore x Stroke (mm) | 102 X 120",
+        "| Displacement (L) | 5.9",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 100",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 1150",
+        "| Weight | 1750"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "80 kW Gas Generator",
+      "header": [],
+      "rows": [
+        "Model: EC-80N5",
+        "| Genset Model: | EC-80N5",
+        "| Power Rating (kW/kVa ) | 80/100",
+        "| Rated Frequnendy | 50Hz/60Hz",
+        "| Fuel consumption @100% load, m³/h | 25.8",
+        "| Engine Brand & Model | Cummins 6BTA5.9-G",
+        "| Bore x Stroke (mm) | 102 X 120",
+        "| Displacement (L) | 5.9",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 100",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23/ H",
+        "| Weight, kg | 1200",
+        "| Weight | 1750"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "500kW natural gas generator",
+      "header": [],
+      "rows": [
+        "Model: EM-520N5",
+        "| Genset Model: | EM-520N5",
+        "| Power Rating (kW/kVa ) | 520/650",
+        "| Rated Frequnendy | 50Hz",
+        "| Fuel consumption @100% load, m³/h | 134",
+        "| Emission | NO X <500mg/Nm 3 , CO<650mg/ Nm 3",
+        "| Engine Brand & Model | MAN E3262LE202",
+        "| Bore x Stroke (mm) | 132x157",
+        "| Displacement (L) | 25.8",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 550",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 7500",
+        "| Weight kg | 8500"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "400kW natural gas generator",
+      "header": [],
+      "rows": [
+        "Model: EM-430N5",
+        "| Genset Model: | EM-430N5",
+        "| Power Rating (kW/kVa ) | 430/537.5",
+        "| Rated Frequnendy | 50Hz",
+        "| Fuel consumption @100% load, m³/h | 108.6",
+        "| Emission | NO X <500mg/Nm 3 , CO<650mg/ Nm 3",
+        "| Engine Brand & Model | MAN E3262LE232",
+        "| Bore x Stroke (mm) | 132x157",
+        "| Displacement (L) | 25.8",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 450",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 6900",
+        "| Weight kg | 7900"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "100kW gas generator set",
+      "header": [],
+      "rows": [
+        "Model: EM-100N6",
+        "| Genset Model: | EM-100N6",
+        "| Power Rating (kW/kVa ) | 100/125",
+        "| Rated Frequnendy | 60Hz",
+        "| Fuel consumption @100% load, m³/h | 26.3",
+        "| Emission | NO X <500mg/Nm 3 , CO<500mg/ Nm 3",
+        "| Engine Brand & Model | MAN E0836LE302",
+        "| Bore x Stroke (mm) | 108x125",
+        "| Displacement (L) | 6.87",
+        "| Rated Speed (rpm) | 1800",
+        "| Rated Output Power (kW) | 110",
+        "| Rated Voltage (V) | 480",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 2200",
+        "| Weight kg | 3500"
+      ]
+    },
+    {
+      "n": 125,
+      "title": "80kW natural gas generator",
+      "header": [],
+      "rows": [
+        "Model: EM-75N5",
+        "| Genset Model: | EM-75N5",
+        "| Power Rating (kW/kVa ) | 75/93.7",
+        "| Rated Frequnendy | 50Hz",
+        "| Fuel consumption @100% load, m³/h | 20",
+        "| Emission | NO X <6500mg/Nm 3 , CO<6500mg/ Nm 3",
+        "| Engine Brand & Model | MAN E0836E302",
+        "| Bore x Stroke (mm) | 108x125",
+        "| Displacement (L) | 5.9",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 80",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 2000",
+        "| Weight kg | 2800"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "200kW natural gas generator",
+      "header": [],
+      "rows": [
+        "Model: EM-200N5",
+        "| Genset Model: | EM-200N5",
+        "| Power Rating (kW/kVa ) | 200/250",
+        "| Rated Frequnendy | 50Hz",
+        "| Fuel consumption @100% load, m³/h | 54",
+        "| Emission | NO X <500mg/Nm 3 , CO<600mg/ Nm 3",
+        "| Engine Brand & Model | MAN E2876LE302",
+        "| Bore x Stroke (mm) | 128x166",
+        "| Displacement (L) | 12.8",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 210",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 4400",
+        "| Weight kg | 5500"
+      ]
+    },
+    {
+      "n": 127,
+      "title": "220kW natural gas generator",
+      "header": [],
+      "rows": [
+        "Model: EM-220N5",
+        "| Genset Model: | EM-220N5",
+        "| Power Rating (kW/kVa ) | 220/275",
+        "| Rated Frequnendy | 50Hz",
+        "| Fuel consumption @100% load, m³/h | 51",
+        "| Emission | NO X <250mg/Nm 3 , CO<300mg/ Nm 3",
+        "| Engine Brand & Model | MAN E3262LE232",
+        "| Bore x Stroke (mm) | 126x166",
+        "| Displacement (L) | 12.4",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 220",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 4400",
+        "| Weight kg | 5500"
+      ]
+    },
+    {
+      "n": 128,
+      "title": "250kW natural gas generator",
+      "header": [],
+      "rows": [
+        "Model: EM-270N5",
+        "| Genset Model: | EM-270N5",
+        "| Power Rating (kW/kVa ) | 270/337.5",
+        "| Rated Frequnendy | 50Hz",
+        "| Fuel consumption @100% load, m³/h | 68",
+        "| Emission | NO X <3500mg/Nm 3 , CO<4500mg/ Nm 3",
+        "| Engine Brand & Model | MAN E3262E302",
+        "| Bore x Stroke (mm) | 132x157",
+        "| Displacement (L) | 25.8",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 275",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 4600",
+        "| Weight kg | 5800"
+      ]
+    },
+    {
+      "n": 129,
+      "title": "300kW natural gas generator",
+      "header": [],
+      "rows": [
+        "Model: EM-300N5",
+        "| Genset Model: | EM-300N5",
+        "| Power Rating (kW/kVa ) | 300/375",
+        "| Rated Frequnendy | 50Hz",
+        "| Fuel consumption @100% load, m³/h | 76",
+        "| Emission | NO X <500mg/Nm 3 , CO<750mg/ Nm 3",
+        "| Engine Brand & Model | MAN E3268LE242",
+        "| Bore x Stroke (mm) | 132x157",
+        "| Displacement (L) | 17.2",
+        "| Rated Speed (rpm) | 1500",
+        "| Rated Output Power (kW) | 370",
+        "| Rated Voltage (V) | 400",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 5700",
+        "| Weight kg | 7500"
+      ]
+    },
+    {
+      "n": 130,
+      "title": "350kW gas combined heat and power (CHP)",
+      "header": [],
+      "rows": [
+        "Model: EM-350N6",
+        "| Genset Model: | EM-350N6",
+        "| Power Rating (kW/kVa) | 350/437.5",
+        "| Rated Frequnendy | 60Hz",
+        "| Fuel consumption @100% load, m³/h | 87.7",
+        "| Emission | NO X <500mg/Nm 3 , CO<750mg/ Nm 3",
+        "| Engine Brand & Model | MAN E3268LE212",
+        "| Bore x Stroke (mm) | 132x157",
+        "| Displacement (L) | 17.2",
+        "| Rated Speed (rpm) | 1800",
+        "| Rated Output Power (kW) | 370",
+        "| Rated Voltage (V) | 440 / 480",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 5700",
+        "| Weight kg | 7500"
+      ]
+    },
+    {
+      "n": 131,
+      "title": "250kW gas generator set",
+      "header": [],
+      "rows": [
+        "Model: EM-270N6",
+        "| Genset Model: | EM-270N6",
+        "| Power Rating (kW/kVa ) | 270/337.5",
+        "| Rated Frequnendy | 50Hz",
+        "| Fuel consumption @100% load, m³/h | 71.1",
+        "| Emission | NO X <3500mg/Nm 3 , CO<4500mg/ Nm 3",
+        "| Engine Brand & Model | MAN E3262E302",
+        "| Bore x Stroke (mm) | 132x157",
+        "| Displacement (L) | 25.8",
+        "| Rated Speed (rpm) | 1800",
+        "| Rated Output Power (kW) | 300",
+        "| Rated Voltage (V) | 440/480",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 4600",
+        "| Weight kg | 5800"
+      ]
+    },
+    {
+      "n": 132,
+      "title": "150kW gas generator set",
+      "header": [],
+      "rows": [
+        "Model: EM-150N6",
+        "| Genset Model: | EM-150N6",
+        "| Power Rating (kW/kVa ) | 150/187.5",
+        "| Rated Frequnendy | 60Hz",
+        "| Fuel consumption @100% load, m³/h | 41.7",
+        "| Emission | NO X <4500mg/Nm 3 , CO<4500mg/ Nm 3",
+        "| Engine Brand & Model | MAN E2676E302",
+        "| Bore x Stroke (mm) | 126x166",
+        "| Displacement (L) | 12.42",
+        "| Rated Speed (rpm) | 1800",
+        "| Rated Output Power (kW) | 160",
+        "| Rated Voltage (V) | 480",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 3300",
+        "| Weight kg | 4300"
+      ]
+    },
+    {
+      "n": 133,
+      "title": "60kW gas generator set",
+      "header": [],
+      "rows": [
+        "Model: EM-66N6",
+        "| Genset Model: | EM-66N6",
+        "| Power Rating (kW/kVa ) | 66/82.5",
+        "| Rated Frequnendy | 60Hz",
+        "| Fuel consumption @100% load, m³/h | 17",
+        "| Emission | NO X <6500mg/Nm 3 , CO<6500mg/ Nm 3",
+        "| Engine Brand & Model | MAN E0834LE322",
+        "| Bore x Stroke (mm) | 108x125",
+        "| Displacement (L) | 4.6",
+        "| Rated Speed (rpm) | 1800",
+        "| Rated Output Power (kW) | 80",
+        "| Rated Voltage (V) | 480",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 1900",
+        "| Weight kg | 2700"
+      ]
+    },
+    {
+      "n": 134,
+      "title": "50kW Gas Generator Set",
+      "header": [],
+      "rows": [
+        "Model: EM-50N6",
+        "| Genset Model: | EM-50N6",
+        "| Power Rating (kW/kVa ) | 50/62.5",
+        "| Rated Frequnendy | 60Hz",
+        "| Fuel consumption @100% load, m³/h | 14",
+        "| Emission | NO X <7000mg/Nm 3 , CO<4000mg/ Nm 3",
+        "| Engine Brand & Model | MAN E0834E302",
+        "| Bore x Stroke (mm) | 108x125",
+        "| Displacement (L) | 4.58",
+        "| Rated Speed (rpm) | 1800",
+        "| Rated Output Power (kW) | 54",
+        "| Rated Voltage (V) | 480",
+        "| Phase / Connection | 3 Phase 4 Wire, Y-Connecton",
+        "| Power Fator (COSΦ) | 0.8 (adjustable)",
+        "| Protection Level / Installation Class | IP 23 / H",
+        "| Weight, kg | 1800",
+        "| Weight kg | 2500"
       ]
     }
   ]

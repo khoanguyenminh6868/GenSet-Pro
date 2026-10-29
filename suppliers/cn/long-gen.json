@@ -236,9 +236,665 @@
         "About Us - JIANGSU LONGEN POWER TECHNOLOGY CO., LTD."
       ],
       "file": "sources/long-gen/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.long-gen.com/stable-performance-volvo-diesel-generator-202kw-520kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Power | ENGINE | ALTERNATOR"
+      ],
+      "file": "sources/long-gen/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.long-gen.com/economical-and-durable-longen-diesel-generator-8kw-1000kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight"
+      ],
+      "file": "sources/long-gen/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.long-gen.com/small-and-compact-yanmar-diesel-generator-8kw-48kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Power (KW/kVA) | ENGINE | ALTERNATOR"
+      ],
+      "file": "sources/long-gen/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.long-gen.com/adapted-to-complex-environments-fpt-diesel-generator-36kw-480kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator"
+      ],
+      "file": "sources/long-gen/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.long-gen.com/small-power-kubota-diesel-generator-8kw-27kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Controller |"
+      ],
+      "file": "sources/long-gen/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.long-gen.com/high-output-power-mitsubishi-diesel-generator-500kw-1640kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension"
+      ],
+      "file": "sources/long-gen/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.long-gen.com/large-power-mtu-diesel-generator-1320kw-2800kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight"
+      ],
+      "file": "sources/long-gen/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.long-gen.com/efficient-and-durable-doosan-diesel-generator-50kw-730kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight"
+      ],
+      "file": "sources/long-gen/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.long-gen.com/popular-perkins-diesel-generator-7kw-1800kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight"
+      ],
+      "file": "sources/long-gen/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.long-gen.com/high-quality-cummins-diesel-generator-17kw-1340kw-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight"
+      ],
+      "file": "sources/long-gen/110.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "China STABLE PERFORMANCE VOLVO DIESEL GENERATOR 202KW-520KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Power | ENGINE | ALTERNATOR",
+        "| | Prime (KW/kVA) | Standby(KW/kVA) | Model | Stamford | Leroy Somer | download"
+      ],
+      "rows": [
+        "| LGVS-278 | 202 | 253 | 222 | 278 | TAD841GE | S4L1D-C4 | LSA46.3 S5 | download",
+        "| LGVS-334 | 243 | 304 | 267 | 334 | TAD842GE | S4L1D-D4 | LSA46.3 M8 | download",
+        "| LGVS-358 | 260 | 325 | 286 | 358 | TAD843GE | HCI 444ES | LSA46.3 L10 | download",
+        "| LGVS-351 | 255 | 319 | 281 | 351 | TAD1341GE-B | HCI 444ES | LSA46.3 L10 | download",
+        "| LGVS-387 | 282 | 352 | 310 | 387 | TAD1342GE-B | S4L1D-E4 | LSA46.3 L11 | download",
+        "| LGVS-415 | 302 | 378 | 332 | 415 | TAD1343GE-B | HCI 444FS | LSA47.3 S4 | download",
+        "| LGVS-450 | 329 | 411 | 362 | 452 | TAD1344GE-B | S4L1D-F4 | LSA47.3 S4 | download",
+        "| LGVS-500 | 360 | 450 | 400 | 500 | TAD1345GE-B | S4L1D-G4 | LSA47.3 S5 | download",
+        "| LGVS-550 | 400 | 500 | 440 | 550 | TAD1346GE | S5L1D-C4 | LSA47.3 M7 | download",
+        "| LGVS-550 | 400 | 500 | 440 | 550 | TAD1641GE-B | S5L1D-C4 | LSA47.3 M7 | download",
+        "| LGVS-650 | 473 | 591 | 520 | 650 | TAD1642GE-B | S5L1D-E4 | LSA47.3 L9 | download",
+        "| LGVS-716 | 521 | 651 | 573 | 716 | TWD1644GE | S5L1D-F4 | LSA47.3 L10 | download",
+        "| LGVS-770 | 560 | 700 | 616 | 770 | TWD1645GE | S5L1D-G4 | LSA49.3M6 | download",
+        "| LGVS-356 | 259 | 324 | 285 | 356 | TAD1351GE | HCI 444ES | LSA46.3 L10 | download",
+        "| LGVS-402 | 292 | 365 | 321 | 402 | TAD1352GE | HCI 444FS | LSA47.3 S4 | download",
+        "| LGVS-420 | 305 | 381 | 336 | 420 | TAD1354GE | HCI 444FS | LSA47.3 S4 | download",
+        "| LGVS-459 | 334 | 418 | 367 | 459 | TAD1355GE | S4L1D-F4 | LSA47.3 S4 | download",
+        "| LGVS-500 | 360 | 450 | 400 | 500 | TAD1650GE | S4L1D-G4 | LSA47.3 S5 | download",
+        "| LGVS-556 | 404 | 505 | 445 | 556 | TAD1651GE | S5L1D-C4 | LSA47.3 M7 | download",
+        "| LGVS-661 | 480 | 600 | 529 | 661 | TAD1652GE | S5L1D-E4 | LSA47.3 L9 | download",
+        "| LGVS-718 | 520 | 650 | 574 | 718 | TAD1653GE | S5L1D-F4 | LSA47.3 L10 | download"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "China STABLE PERFORMANCE VOLVO DIESEL GENERATOR 202KW-520KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator",
+        "| | KW | kVA | KW | kVA | Volvo | Stamford | Leroy Somer(LSA) | download"
+      ],
+      "rows": [
+        "| LGVS-275 | 207 | 259 | 228 | 285 | TAD841GE | UCDI274J | LSA 46.3 S4 | download",
+        "| LGVS-334 | 243 | 304 | 267 | 334 | TAD842GE | S4L1D-D4 | LSA 46.3 M7 | download",
+        "| LGVS-349 | 254 | 318 | 279 | 349 | TAD843GE | S4L1D-D4 | LSA 46.3 M8 | download",
+        "| LGVS-375 | 273 | 341 | 300 | 375 | TAD1341GE-B | S4L1D-D4 | LSA46.3 L10 | download",
+        "| LGVS-341 | 321 | 401 | 353 | 441 | TAD1342GE-B | S4L1D-E4 | LSA46.3 L11 | download",
+        "| LGVS-451 | 328 | 410 | 361 | 451 | TAD1343GE-B | S4L1D-F4 | LSA47.3 S4 | download",
+        "| LGVS-501 | 364 | 455 | 400 | 501 | TAD1344GE-B | S4L1D-F4 | LSA47.3 S4 | download",
+        "| LGVS-506 | 368 | 460 | 405 | 506 | TAD1345GE-B | S4L1D-F4 | LSA47.3 S4 | download",
+        "| LGVS-562 | 409 | 511 | 450 | 562 | TAD1346GE | S5L1D-C4 | LSA47.3 S5 | download",
+        "| LGVS-627 | 456 | 570 | 502 | 627 | TAD1641GE-B | S5L1D-D4 | LSA47.3 M7 | download",
+        "| LGVS-688 | 500 | 625 | 550 | 688 | TAD1642GE-B | S5L1D-E4 | LSA47.3 L9 | download",
+        "| LGVS-752 | 547 | 684 | 602 | 752 | TWD1644GE | S5L1D-E4 | LSA49.3 S4 | download",
+        "| LGVS-800 | 582 | 728 | 640 | 800 | TWD1645GE | S5L1D-F4 | LSA49.3 S4 | download",
+        "| LGVS-375 | 273 | 341 | 300 | 375 | TAD1351GE | S4L1D-D4 | LSA46.3 L10 | download",
+        "| LGVS-440 | 320 | 400 | 352 | 440 | TAD1352GE | S4L1D-E4 | LSA46.3 L11 | download",
+        "| LGVS-501 | 364 | 455 | 400 | 501 | TAD1353GE | S4L1D-F4 | LSA47.3 S4 | download",
+        "| LGVS-568 | 413 | 516 | 454 | 568 | TAD1650GE | S5L1D-C4 | LSA47.3 S5 | download",
+        "| LGVS-641 | 464 | 580 | 513 | 641 | TAD1651GE | S5L1D-D4 | LSA47.3 M7 | download"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "China ECONOMICAL AND DURABLE LONGEN DIESEL GENERATOR 8KW-1000KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight",
+        "| | KW | kVA | KW | kVA | Longen | Longen | L*M*H(mm) (open) | KG (open) | L*M*H(mm) (silent) | KG (silent) | download"
+      ],
+      "rows": [
+        "| LGXL-11 | 8 | 10 | 9 | 11 | 385D | WHI164B | 1450*650*1100 | 400 | 1600*800*1100 | 600 | download",
+        "| LGXL-14 | 10 | 14 | 12 | 15 | NC485BD | WHI164C | 1500*650*1100 | 430 | 1750*850*1200 | 630 | download",
+        "| LGXL-17 | 12 | 15 | 13 | 17 | NC485BD | WHI164D | 1500*650*1100 | 450 | 1750*850*1200 | 650 | download",
+        "| LGXL-22 | 16 | 20 | 18 | 22 | C490BD | WHI184ES | 1500*650*1100 | 500 | 1800*850*1200 | 750 | download",
+        "| LGXL-28 | 20 | 25 | 22 | 28 | A495BD | WHI184F | 1550*650*1100 | 550 | 2000*850*1200 | 750 | download",
+        "| LGXL-33 | 24 | 30 | 27 | 33 | A498BD | WHI184G | 1900*800*1250 | 580 | 2000*850*1200 | 800 | download",
+        "| LGXL-42 | 30 | 38 | 33 | 41 | A498BZD | WHI184H | 1900*800*1350 | 600 | 2500*950*1510 | 830 | download",
+        "| LGXL-55 | 40 | 50 | 44 | 55 | 4D35ZD | WHI224D | 1900*800*1400 | 800 | 2500*950*1510 | 1100 | download",
+        "| LGXL-70 | 50 | 63 | 55 | 69 | A4K41ZD | WHI224E | 1900*800*1400 | 950 | 3100*1100*1610 | 1300 | download",
+        "| LGXL-88 | 64 | 80 | 70 | 88 | A4K41LD31 | WHI224F | 2000*800*1450 | 970 | 3100*1100*1610 | 1330 | download",
+        "| LGSL-110 | 80 | 100 | 88 | 110 | SC4H140D2 | WHI274C | 2100*950*1480 | 1230 | 2700*1050*1650 | 1730 | download",
+        "| LGSL-125 | 90 | 113 | 100 | 125 | SC4H160D2 | WHI274D | 2100*950*1480 | 1260 | 2700*1050*1650 | 1760 | download",
+        "| LGSL-138 | 100 | 125 | 110 | 138 | SC4H180D2 | WHI274ES | 2100*950*1480 | 1280 | 2850*1050*1650 | 1780 | download",
+        "| LGSL-165 | 120 | 150 | 132 | 165 | SC7H220D2 | WHI274E | 2500*1000*1580 | 1530 | 3200*1130*1940 | 2130 | download",
+        "| LGSL-180 | 130 | 163 | 143 | 179 | SC7H230D2 | WHI274F | 2500*1000*1580 | 1550 | 3200*1130*1940 | 2150 | download",
+        "| LGSL-206 | 150 | 188 | 165 | 206 | SC7H250D2 | WHI274G | 2500*1000*1580 | 1580 | 3200*1130*1940 | 2180 | download",
+        "| LGSL-225 | 160 | 200 | 176 | 220 | SC8D280D2 | WHI274H | 2600*1000*1750 | 1960 | 3400*1180*2000 | 2700 | download",
+        "| LGSL-250 | 180 | 225 | 198 | 248 | SC9D310D2 | WHI274J | 2700*1050*1750 | 2000 | 3500*1180*2000 | 2750 | download",
+        "| LGSL-275 | 200 | 250 | 220 | 275 | SC9D340D2 | WHI274K | 2700*1050*1750 | 2200 | 3500*1180*2000 | 3000 | download",
+        "| LGSL-330 | 240 | 300 | 264 | 330 | SC10E380D2 | WHI4D | 3100*1200*1880 | 2800 | 3950*1500*2230 | 3800 | download",
+        "| LGSL-385 | 280 | 350 | 308 | 385 | SC12E460D2 | WHI4FS | 3200*1200*1950 | 3000 | 3950*1500*2230 | 4000 | download",
+        "| LGSL-413 | 300 | 375 | 330 | 413 | SC12E480D2 | WHI4F | 3200*1200*1950 | 3100 | 3950*1500*2230 | 4100 | download",
+        "| LGSL-450 | 330 | 413 | 363 | 454 | 6ETAA12.8-G32 | WHI4G | 3300*1300*2000 | 3400 | 4100*1600*2230 | 4500 | download",
+        "| LGSL-500 | 360 | 450 | 396 | 495 | 6ETAA12.8-G31 | WHI5C | 3300*1300*2000 | 4000 | 4100*1600*2230 | 5200 | download",
+        "| LGSL-550 | 400 | 500 | 440 | 550 | 6ETAA12.8-G310 | WHI5D | 3300*1300*2000 | 4100 | 4100*1600*2230 | 5300 | download",
+        "| LGYL-619 | 450 | 563 | 495 | 619 | YC6TD780-D31 | WHI5ES | 3550*1550*2050 | 4900 | 4900*2000*2435 | 6100 | download",
+        "| LGYL-688 | 500 | 625 | 550 | 688 | YC6TD840-D31 | WHI5FS | 3550*1550*2050 | 5000 | 4900*2000*2435 | 6200 | download",
+        "| LGYL-756 | 550 | 688 | 605 | 756 | YC6TD900-D31 | WHI5F | 3550*1550*2050 | 5100 | 4900*2000*2435 | 6300 | download",
+        "| LGYL-825 | 600 | 750 | 660 | 825 | YC6TD1000-D30 | WHI6B | 3655*1600*2050 | 5300 | 5500*2000*2435 | 6500 | download",
+        "| LGYL-880 | 640 | 800 | 704 | 880 | YC6TH1070-D31 | WHI6C | 5100*2000*2550 | 8040 | 40HQ | 16900 | download",
+        "| LGYL-1000 | 728 | 910 | 801 | 1001 | YC6TH1220-D31 | WHI6D | 5100*2000*2550 | 8100 | 40HQ | 17000 | download",
+        "| LGYL-1100 | 800 | 1000 | 880 | 1100 | YC6TH1320-D31 | WHI6E | 5100*2000*2550 | 8300 | 40HQ | 17200 | download",
+        "| LGYL-1375 | 1000 | 1250 | 1100 | 1375 | YC12VTD1680-D32 | WHI6G | 5200*2000*2550 | 9650 | 40HQ | 18600 | download"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "China SMALL AND COMPACT YANMAR DIESEL GENERATOR 8KW-48KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Power (KW/kVA) | ENGINE | ALTERNATOR",
+        "| | Prime | Standby | Model | Stamford | Leroy Somer | download"
+      ],
+      "rows": [
+        "| LGYS-11 | 8 | 10 | 9 | 11 | 3TNV82A-GGE | S0L1-H1 | TAL-A40-C | download",
+        "| LGYS-14 | 10 | 13 | 11 | 14 | 3TNV88-GGHWC | S0L1-L1 | TAL-A40-C | download",
+        "| LGYS-17 | 12 | 15 | 13 | 17 | 3TNV84T-GGE | S0L1-P1 | TAL-A40-D | download",
+        "| LGYS-19 | 14 | 18 | 15 | 19 | 4TNV88-GGHWC | S0L2-F1 | TAL-A40-E | download",
+        "| LGYS-22 | 16 | 20 | 18 | 22 | 4TNV84T-GGFC | S0L2-G1 | TAL-A40-F | download",
+        "| LGYS-33 | 24 | 30 | 26 | 33 | 4TNV98-GGECC | SOL2-P1 | TAL-A42-C | download",
+        "| LGYS-44 | 32 | 40 | 35 | 44 | 4TNV98T-GGECC | S1L2-K1 | TAL-A42-F | download",
+        "| LGYS-55 | 40 | 50 | 44 | 55 | 4TNV106-GGE | S1L2-R1 | TAL-A42-G | download",
+        "| LGYS-66 | 48 | 60 | 53 | 66 | 4TNV106T-GGE | S1L2-Y1 | TAL-A42-H | download"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "China SMALL AND COMPACT YANMAR DIESEL GENERATOR 8KW-48KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator",
+        "| | KW | kVA | KW | kVA | Yanmar | Stamford | Leroy Somer | download"
+      ],
+      "rows": [
+        "| LGYS-13 | 9 | 12 | 10 | 13 | 3TNV82A-GGE | S0L1-L1 | TAL-A40-C | download",
+        "| LGYS-16 | 12 | 15 | 13 | 16 | 3TNV88-GGHWC | S0L1-P1 | TAL-A40-D | download",
+        "| LGYS-19 | 14 | 17 | 15 | 19 | 3TNV84T-GGE | S0L2-F1 | TAL-A40-E | download",
+        "| LGYS-23 | 16 | 21 | 18 | 23 | 4TNV88-GGHWC | S0L2-G1 | TAL-A40-F | download",
+        "| LGYS-26 | 19 | 24 | 21 | 26 | 4TNV84T-GGFC | S0L2-M1 | TAL-A40-G | download",
+        "| LGYS-39 | 28 | 35 | 31 | 39 | 4TNV98-GGECC | S1L2-J1 | TAL-A42-E | download",
+        "| LGYS-44 | 38 | 47 | 35 | 44 | 4TNV98T-GGECC | S1L2-N1 | TAL-A42-F | download",
+        "| LGYS-62 | 45 | 56 | 50 | 62 | 4TNV106-GGE | UCI224D | TAL-A42-G | download",
+        "| LGYS-74 | 54 | 68 | 59 | 74 | 4TNV106T-GGE | UCI224E | TAL-A42-H | download"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "China ADAPTED TO COMPLEX ENVIROMENTS FPT DIESEL GENERATOR 36KW-480KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator",
+        "| | KW | kVA | KW | kVA | FPT | Stamford | Longen | download"
+      ],
+      "rows": [
+        "| LGFS-44 | 36 | 45 | 40 | 50 | NEF45AM1A.S500 | S1L2-N1 | WHI224C | download",
+        "| LGFS-66 | 48 | 60 | 52.8 | 66 | NEF45SM1A.S500 | S1L2-Y1 | WHI224E | download",
+        "| LGFS-88 | 64 | 80 | 70.4 | 88 | NEF45SM3.S500 | UCI224G | WHI224G | download",
+        "| LGFS-110 | 80 | 100 | 88 | 110 | NEF45TM2A.S500 | UCI274C | WHI274C | download",
+        "| LGFS-132 | 96 | 120 | 105.6 | 132 | NEF45TM3.S500 | UCI274D | WHI274ES | download",
+        "| LGFS-165 | 120 | 150 | 132 | 165 | NEF67TM3A.S500 | UCI274F | WHI274F | download",
+        "| LGFS-187 | 136 | 170 | 149.6 | 187 | NEF67TM4.S500 | UCI274G | WHI274G | download",
+        "| LGFS-220 | 160 | 200 | 176 | 220 | NEF67TM7.S500 | UCI274H | WHI274H | download",
+        "| LGFS-275 | 200 | 250 | 220 | 275 | C87TE3 | S4L1D-C41 | WHI274K | download",
+        "| LGFS-330 | 240 | 300 | 264 | 330 | C87TE4 | S4L1D-D41 | WHI4ES | download",
+        "| LGFS-440 | 320 | 400 | 352 | 440 | CURSOR13TE3A.S551 | S4L1D-F41 | WHI4G | download",
+        "| LGFS-550 | 400 | 500 | 440 | 550 | CR13TE7W.S550 | S5L1D-C41 | WHI5D | download",
+        "| LGFS-660 | 480 | 600 | 528 | 660 | CR16TE1W.S550 | S5L1D-E41 | WHI5E | download"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "China ADAPTED TO COMPLEX ENVIROMENTS FPT DIESEL GENERATOR 36KW-480KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator",
+        "| | KW | kVA | KW | kVA | FPT | Stamford | Longen | download"
+      ],
+      "rows": [
+        "| LGFS-72 | 52 | 65 | 57 | 72 | NEF45SM1A.S500 | S1L2-Y1 | WHI224E | download",
+        "| LGFS-100 | 72 | 90 | 80 | 100 | NEF45SM3.S500 | UCI224G | WHI224G | download",
+        "| LGFS-120 | 88 | 110 | 96 | 120 | NEF45TM2A.S500 | UCI274C | WHI274C | download",
+        "| LGFS-138 | 100 | 125 | 110 | 138 | NEF45TM3.S500 | UCI274D | WHI274D | download",
+        "| LGFS-154 | 112 | 140 | 123 | 154 | NEF67SM1.S500 | UCI274E | WHI274ES | download",
+        "| LGFS-220 | 160 | 200 | 176 | 220 | NEF67M7.S500 | UCI274G | WHI274G | download",
+        "| LGFS-300 | 216 | 270 | 240 | 300 | C87TE3 | UCDI274J | WHI274J | download",
+        "| LGFS-360 | 260 | 325 | 288 | 360 | C87TE4 | S4L1D-D41 | WHI4D | download",
+        "| LGFS-450 | 320 | 400 | 360 | 450 | CURSOR13TE3A.S551 | S4L1D-E41 | WHI4FS | download",
+        "| LGFS-550 | 400 | 500 | 440 | 550 | CR13TE7W | S4L1D-G41 | WHI4G | download",
+        "| LGFS-660 | 480 | 600 | 528 | 660 | CR16TE1W | S5L1D-E41 | WHI5D | download"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "China SMALL POWER KUBOTA DIESEL GENERATOR 8KW-27KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Controller |",
+        "| | KW | kVA | KW | kVA | Kubota | Power(kw) | Stamford(S） | kVA | ComAp | download"
+      ],
+      "rows": [
+        "| LGKS-11 | 8 | 10 | 8.8 | 11 | D1105-E2BG-CHN-1 | 9.5 | S0L1-H1 | 10 | AMF20 | download",
+        "| LGKS-14 | 10 | 13 | 11 | 14 | V1505-E2BG-CHN-1 | 12.5 | S0L1-L1 | 12.5 | AMF20 | download",
+        "| LGKS-17 | 12 | 15 | 13 | 17 | D1703-E2BG-CHN-1 | 15 | S0L1-P1 | 15 | AMF20 | download",
+        "| LGKS-22 | 16 | 20 | 18 | 22 | V2203-E2BG-CHN-1 | 20 | S0L2-G1 | 20 | AMF20 | download",
+        "| LGKS-25 | 20 | 25 | 22 | 28 | V2003-T-E2BG-CHN-1 | 22.5 | S0L2-M1 | 25 | AMF20 | download",
+        "| LGKS-33 | 24 | 30 | 26 | 33 | V3300-E2BG2-CHN-1 | 29 | SOL2-P1 | 30 | AMF20 | download",
+        "| LGKS-38 | 27 | 34 | 30 | 37 | V3300-T-E2BG2-CHN-1 | 35.5 | S1L2-J1 | 35 | AMF20 | download"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "China HIGH OUTPUT POWER MITSUBISHI DIESEL GENERATOR 500KW-1640KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension",
+        "| | KW | kVA | KW | kVA | Mitsubishi(Made in China) | Stamford | Leroy Somer | L*M*H(mm)(open) | L*M*H(mm)(silent) | download"
+      ],
+      "rows": [
+        "| LGMS-687 | 500 | 625 | 550 | 688 | S6R2-PTA-C | HCI544F-S | LSA49.3S4A | 4550*2100*2320 | 5800*2100*2530 | download",
+        "| LGMS-725 | 536 | 670 | 580 | 725 | S6R2-PTA-C | HCI544F | LSA49.3S4 | 4550*2100*2320 | 5800*2100*2530 | download",
+        "| LGMS-825 | 600 | 750 | 660 | 825 | S6R2-PTAA-C | LVI634B | LSA49.3M65 | 4550*2100*2320 | 5800*2100*2530 | download",
+        "| LGMS-1375 | 1000 | 1250 | 1100 | 1375 | S12R-PTA-C | LVI634G | LSA50.2M6 | 5000*2200*2530 | 40HQ | download",
+        "| LGMS-1500 | 1100 | 1375 | 1200 | 1500 | S12R-PTA2-C | PI734B | LSA50.2L7 | 5000*2200*2530 | 40HQ | download",
+        "| LGMS-1650 | 1200 | 1500 | 1320 | 1650 | S12R-PTAA2-C | PI734C | LSA50.2L8 | 5000*2200*2530 | 40HQ | download",
+        "| LGMS-1900 | 1392 | 1740 | 1520 | 1900 | S16R-PTA-C | PI734ES | LSA52.3S5 | 5500*2200*2800 | 40HQ | download",
+        "| LGMS-2100 | 1520 | 1900 | 1680 | 2100 | S16R-PTA2-C | PI734E | LSA52.3S6 | 5500*2200*2800 | 40HQ | download",
+        "| LGMS-2250 | 1640 | 2050 | 1800 | 2250 | S16R-PTAA2-C | PI734F | LSA52.3S6 | 5820*2200*2800 | 40HQ | download"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "China HIGH OUTPUT POWER MITSUBISHI DIESEL GENERATOR 500KW-1640KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension",
+        "| | KW | kVA | KW | kVA | Mitsubishi(Made in Japan) | Stamford | Leroy Somer | L*M*H(mm)(open) | L*M*H(mm)(silent) | download"
+      ],
+      "rows": [
+        "| LGMS-687 | 500 | 625 | 550 | 688 | S6R2-PTA | HCI544F-S | LSA49.3S4A | 4550*2100*2320 | 5800*2100*2530 | download",
+        "| LGMS-725 | 536 | 670 | 580 | 725 | S6R2-PTA | HCI544F | LSA49.3S4 | 4550*2100*2320 | 5800*2100*2530 | download",
+        "| LGMS-825 | 600 | 750 | 660 | 825 | S6R2-PTAA | LVI634B | LSA49.3M65 | 4550*2100*2320 | 5800*2100*2530 | download",
+        "| LGMS-1375 | 1000 | 1250 | 1100 | 1375 | S12R-PTA | LVI634G | LSA50.2M6 | 5000*2200*2530 | 40HQ | download",
+        "| LGMS-1500 | 1100 | 1375 | 1200 | 1500 | S12R-PTA2 | PI734B | LSA50.2L7 | 5000*2200*2530 | 40HQ | download",
+        "| LGMS-1650 | 1200 | 1500 | 1320 | 1650 | S12R-PTAA2 | PI734C | LSA50.2L8 | 5000*2200*2530 | 40HQ | download",
+        "| LGMS-1900 | 1392 | 1740 | 1520 | 1900 | S16R-PTA | PI734ES | LSA52.3S5 | 5500*2200*2800 | 40HQ | download",
+        "| LGMS-2100 | 1520 | 1900 | 1680 | 2100 | S16R-PTA2 | PI734E | LSA52.3S6 | 5500*2200*2800 | 40HQ | download",
+        "| LGMS-2250 | 1640 | 2050 | 1800 | 2250 | S16R-PTAA2 | PI734F | LSA52.3S6 | 5820*2200*2800 | 40HQ | download",
+        "| LGMS-2500 | 1800 | 2250 | 2000 | 2500 | S16R2-PTAW | PI734H | LSA52.3S7 | 6250*2200*2800 | 40HQ | download"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "China LARGE POWER MTU DIESEL GENERATOR 1320KW-2800KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight",
+        "| | KW | kVA | KW | kVA | MTU | Stamford | Leroy Somer | L*M*H(mm) (open) | KG (open) | L*M*H(mm) (silent) | KG (silent) | download"
+      ],
+      "rows": [
+        "| LGMS1815 | 1320 | 1650 | 1452 | 1815 | 12V4000G23F | S7L1D-D4 | LSA50.2 VL10 | 6150*2150*2400 | 13500 | 40HQ | 19500 | download",
+        "| LGMS2024 | 1472 | 1840 | 1619.2 | 2024 | 12V4000G63F | S7L1D-F4 | LSA52.3 S5 | 6150*2150*2400 | 14000 | 40HQ | 20000 | download",
+        "| LGMS2269 | 1650 | 2062.5 | 1815 | 2269 | 16V4000G23F | S7L1D-G4 | LSA52.3 S7 | 6500*2600*2500 | 17000 | 40HQ | 23000 | download",
+        "| LGMS2475 | 1800 | 2250 | 1980 | 2475 | 16V4000G63F | S7L1D-H4 | LSA52.3 L9 | 6550*2600*2500 | 17500 | 40HQ | 23500 | download",
+        "| LGMS2750 | 2000 | 2500 | 2200 | 2750 | 20V4000G23F | S7L1D-J4 | LSA52.3 L12 | 8300*2950*2550 | 24000 | 40HQ | 31000 | download",
+        "| LGMS3025 | 2200 | 2750 | 2420 | 3025 | 20V4000G63F | P80 LVSI804S | LSA52.3 UL16 | 8300*2950*2550 | 24500 | 40HQ | 32000 | download",
+        "| LGMS3300 | 2400 | 3000 | 2640 | 3300 | 20V4000G63LF | P80 LVSI804T | N/A | 8300*2950*2550 | 25000 | 40HQ | 33000 | download"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "China LARGE POWER MTU DIESEL GENERATOR 1320KW-2800KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight",
+        "| | KW | kVA | KW | kVA | MTU | Stamford | Leroy Somer | L*M*H(mm) (open) | KG (open) | L*M*H(mm) (silent) | KG (silent) | download"
+      ],
+      "rows": [
+        "| LGMS1925 | 1400 | 1750 | 1540 | 1925 | 12V4000G43S | S7L1D-D4 | LSA50.2 VL10 | 6150*2150*2400 | 13500 | 40HQ | 19500 | download",
+        "| LGMS2200 | 1600 | 2000 | 1760 | 2200 | 12V4000G83S | S7L1D-F4 | LSA52.3 S6 | 6150*2150*2400 | 14000 | 40HQ | 20000 | download",
+        "| LGMS2544 | 1850 | 2312.5 | 2035 | 2544 | 16V4000G43S | S7L1D-G4 | LSA52.3 L9 | 6500*2600*2500 | 17000 | 40HQ | 23000 | download",
+        "| LGMS2888 | 2100 | 2625 | 2310 | 2888 | 16V4000G83S | S7L1D-J4 | LSA52.3 L12 | 6550*2600*2500 | 17500 | 40HQ | 23500 | download",
+        "| LGMS3163 | 2300 | 2875 | 2530 | 3163 | 20V4000G43S | P80 LVSI804S | LSA52.3 UL16 | 8300*2950*2550 | 24000 | 40HQ | 31000 | download",
+        "| LGMS3506 | 2550 | 3187.5 | 2805 | 3506 | 20V4000G83S | P80 LVSI804T | N/A | 8300*2950*2550 | 24500 | 40HQ | 32000 | download",
+        "| LGMS3850 | 2800 | 3500 | 3080 | 3850 | 20V4000G83LS | P80 LVSI804W | N/A | 8300*2950*2550 | 25000 | 40HQ | 33000 | download"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "China EFFICIENT AND DURABLE DOOSAN DIESEL GENERATOR 50KW-730KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight",
+        "| | KW | kVA | KW | kVA | Doosan | Longen | TAL | L*M*H(mm) (open) | KG (open) | L*M*H(mm) (silent) | KG (silent) | download"
+      ],
+      "rows": [
+        "| LGDO-69 | 50 | 62.5 | 55 | 69 | SP344CB | WHI224E | TAL-A42-H | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGDO-88 | 64 | 80 | 70 | 88 | SP344CC | WHI224G | TAL-A44-C | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGDO-193 | 134 | 168 | 148 | 185 | P086TI-1 | WHI274G | TAL-A44-K | 2800X1050X1600 | 1700 | 3300X1250X1950 | 2300 | download",
+        "| LGDO-220 | 160 | 200 | 176 | 220 | P086TI | WHI274H | TAL-A44-M | 3100X1050X1650 | 2100 | 3450X1180X2100 | 2800 | download",
+        "| LGDO-250 | 180 | 225 | 200 | 250 | DP086LA | WHI274J | TAL-A46-C | 3100X1050X1650 | 2100 | 3450X1180X2100 | 2800 | download",
+        "| LGDO-300 | 220 | 275 | 240 | 300 | P126TI | WHI4D | TAL-A46-E | 3150X1350X1900 | 2600 | 3950X1500X2250 | 3500 | download",
+        "| LGDO-330 | 240 | 300 | 264 | 330 | P126TI-II | WHI4D | TAL-A46-F | 3150X1350X1900 | 2600 | 3950X1500X2250 | 3500 | download",
+        "| LGDO-400 | 292 | 365 | 320 | 400 | DP126LB | WHI4F | TAL-A46-H | 3150X1350X1900 | 2800 | 3950X1500X2250 | 3700 | download",
+        "| LGDO-440 | 320 | 400 | 352 | 440 | P158LE | WHI4G | TAL-A473-A | 3450X1350X2000 | 3200 | 3950X1500X2250 | 4000 | download",
+        "| LGDO-500 | 362 | 453 | 400 | 500 | DP158LC | WHI5C | TAL-A473-B | 3450X1350X2140 | 4000 | 3950X1600X2270 | 4900 | download",
+        "| LGDO-580 | 420 | 525 | 464 | 580 | DP158LD | WHI5D | TAL-A473-C | 3450X1350X2140 | 4000 | 3950X1600X2270 | 4900 | download",
+        "| LGDO-633 | 460 | 575 | 506 | 633 | DP180LA | WHI5E | TAL-A473-E | 3450X1400X2200 | 4150 | 4150X1600X2270 | 5200 | download",
+        "| LGDO-688 | 500 | 625 | 550 | 688 | DP180LB | WHI5FS | TAL-A473-F | 3670X1420X2200 | 4450 | 4150X1600X2270 | 5500 | download",
+        "| LGDO-760 | 550 | 688 | 608 | 760 | DP222LB | WHI5F | TAL-A473-F | 3800X1400X2200 | 4470 | 4800X1700X2400 | 5520 | download",
+        "| LGDO-825 | 600 | 750 | 660 | 825 | DP222LC | WHI6B | TAL-A49-B | 4000X1400X2200 | 4800 | 5200X1700X2400 | 5700 | download",
+        "| LGDO-825 | 600 | 750 | 660 | 825 | DP222CA | WHI6B | TAL-A49-B | 4000X1400X2200 | 5000 | 5200X1700X2400 | 6000 | download",
+        "| LGDO-880 | 640 | 800 | 704 | 880 | DP222CB | WHI6C | TAL-A49-C | 4000X1400X2200 | 5000 | 5200X1700X2400 | 6000 | download",
+        "| LGDO-1000 | 730 | 913 | 800 | 1000 | DP222CC | WHI6D | TAL-A49-D | 4000X1400X2200 | 5000 | 5200X1700X2400 | 6000 | download"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "China EFFICIENT AND DURABLE DOOSAN DIESEL GENERATOR 50KW-730KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight",
+        "| | KW | kVA | KW | kVA | Doosan | Longen | TAL | L*M*H(mm) (open) | KG (open) | L*M*H(mm) (silent) | KG (silent) | download"
+      ],
+      "rows": [
+        "| LGDO-80 | 58 | 72.5 | 64 | 80 | SP344CB | WHI224E | TAL-A44-C | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGDO-100 | 73 | 91.25 | 80 | 100 | SP344CC | WHI224G | TAL-A44-D | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGDO-212 | 154 | 193 | 169 | 212 | P086TI-1 | WHI274F | TAL-A44-L | 2800X1050X1600 | 1700 | 3300X1250X1950 | 2300 | download",
+        "| LGDO-252 | 183 | 229 | 201 | 252 | P086TI | WHI274G | TAL-A46-C | 3100X1050X1650 | 2100 | 3450X1180X2100 | 2800 | download",
+        "| LGDO-280 | 204 | 255 | 224 | 281 | DP086LA | WHI274J | TAL-A46-D | 3100X1050X1650 | 2100 | 3450X1180X2100 | 2800 | download",
+        "| LGDO-340 | 248 | 310 | 273 | 341 | P126TI | WHI274K | TAL-A46-F | 3150X1350X1900 | 2600 | 3950X1500X2250 | 3500 | download",
+        "| LGDO-378 | 275 | 344 | 303 | 378 | P126TI-II | WHI4D | TAL-A46-G | 3150X1350X1900 | 2600 | 3950X1500X2250 | 3500 | download",
+        "| LGDO-440 | 321 | 401 | 353 | 441 | DP126LB | WHI4E | TAL-A473-A | 3150X1350X1900 | 2800 | 3950X1500X2250 | 3700 | download",
+        "| LGDO-488 | 355 | 444 | 391 | 488 | P158LE | WHI4F | TAL-A473-A | 3450X1350X2000 | 3200 | 3950X1500X2250 | 4000 | download",
+        "| LGDO-572 | 416 | 520 | 458 | 572 | DP158LC | WHI5C | TAL-A473-B | 3450X1350X2140 | 4000 | 3950X1600X2270 | 4900 | download",
+        "| LGDO-623 | 453 | 566 | 498 | 623 | DP158LD | WHI5D | TAL-A473-D | 3450X1350X2140 | 4000 | 3950X1600X2270 | 4900 | download",
+        "| LGDO-693 | 504 | 630 | 554 | 693 | DP180LA | WHI5ES | TAL-A473-E | 3450X1400X2200 | 4150 | 4150X1600X2270 | 5200 | download",
+        "| LGDO-747 | 543 | 679 | 597 | 747 | DP180LB | WHI5E | TAL-A473-F | 3670X1420X2200 | 4450 | 4150X1600X2270 | 5500 | download",
+        "| LGDO-820 | 596 | 745 | 656 | 820 | DP222LA | WHI5F | TAL-A49-B | 3800X1400X2200 | 4470 | 4800X1700X2400 | 5520 | download",
+        "| LGDO-873 | 635 | 794 | 699 | 873 | DP222LB | WHI5F | TAL-A49-B | 3800X1400X2200 | 4470 | 4800X1700X2400 | 5520 | download",
+        "| LGDO-927 | 674 | 843 | 741 | 927 | DP222LC | WHI6B | TAL-A49-C | 4000X1400X2200 | 4800 | 5200X1700X2400 | 5700 | download",
+        "| LGDO-950 | 690 | 862.5 | 760 | 950 | DP222CA | WHI6B | TAL-A49-C | 4000X1400X2200 | 5000 | 5200X1700X2400 | 6000 | download",
+        "| LGDO-1030 | 750 | 937.5 | 825 | 1030 | DP222CB | WHI6D | TAL-A49-D | 4000X1400X2200 | 5000 | 5200X1700X2400 | 6000 | download",
+        "| LGDO-1100 | 800 | 1000 | 880 | 1100 | DP222CC | WHI6D | TAL-A49-E | 4000X1400X2200 | 5000 | 5200X1700X2400 | 6000 | download"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "China POPULAR PERKINS DIESEL GENERATOR 7KW-1800KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight",
+        "| | KW | kVA | KW | kVA | Perkins | LSA | Longen | L*M*H(mm) (open) | KG (open) | L*M*H(mm) (silent) | KG (silent) | download"
+      ],
+      "rows": [
+        "| LGPL-10 | 7.2 | 9 | 8 | 10 | 403D-11G | LSA 40 VS1 | WHI164B | 1200*700*1100 | 450 | 1700*850*1100 | 650 | download",
+        "| LGPL-13 | 10 | 12.5 | 11 | 13.8 | 403D-15G | LSA 40 VS2 | WHI164C | 1200*700*1100 | 450 | 1700*850*1100 | 650 | download",
+        "| LGPL-15 | 12 | 15 | 13.2 | 16.5 | 403A-15G2 | LSA 40 S3 | WHI164D | 1200*700*1100 | 450 | 1700*850*1100 | 650 | download",
+        "| LGPL-22 | 16 | 20 | 17.6 | 22 | 404D-22G | LSA 40 M5 | WHI184ES | 1400*700*1100 | 550 | 1900*850*1100 | 750 | download",
+        "| LGPL-33 | 24 | 30 | 26.4 | 33 | 1103A-33G | LSA 42.3 VS3 | WHI184G | 1700*800*1250 | 750 | 2280*950*1510 | 950 | download",
+        "| LGPL-50 | 36 | 45 | 40 | 50 | 1103A-33TG1 | LSA 42.3 M7 | WHI224C | 1700*800*1250 | 800 | 2280*950*1510 | 1000 | download",
+        "| LGPL-66 | 48 | 60 | 52.8 | 66 | 1103A-33TG2 | LSA 42.3 L9 | WHI224E | 1700*800*1250 | 880 | 2280*950*1510 | 1100 | download",
+        "| LGPL-72 | 52 | 65 | 57.2 | 71.5 | 1104A-44TG1 | LSA44.3 S2 | WHI224E | 1900*800*1250 | 980 | 2500*950*1510 | 1300 | download",
+        "| LGPL-88 | 64 | 80 | 70.4 | 88 | 1104A-44TG2 | LSA44.3 S3 | WHI224F | 1900*800*1250 | 980 | 2500*950*1510 | 1300 | download",
+        "| LGPL-110 | 80 | 100 | 88 | 110 | 1104C-44TAG2 | LSA44.3 S5 | WHI274C | 1900*800*1250 | 1100 | 2500*950*1510 | 1450 | download",
+        "| LGPL-150 | 109 | 136 | 120 | 150 | 1106A-70TG1 | LSA44.3 M8 | WHI274ES | 2300*900*1550 | 1350 | 3100*1100*1610 | 1800 | download",
+        "| LGPL-165 | 120 | 150 | 132 | 165 | 1106A-70TAG2 | LSA44.3 L10 | WHI274F | 2300*900*1550 | 1400 | 3100*1100*1610 | 1850 | download",
+        "| LGPL-200 | 144 | 180 | 160 | 200 | 1106A-70TAG3 | LSA44.3 VL13 | WHI274G | 2500*900*1600 | 1500 | 3100*1200*1610 | 1950 | download",
+        "| LGPL-228 | 166 | 208 | 183 | 228 | 1106A-70TAG4 | LSA44.3 VL14 | WHI274H | 2500*900*1600 | 1500 | 3100*1200*1610 | 2100 | download",
+        "| LGPL-220 | 160 | 200 | 176 | 220 | 1206A-E70TTAG1 | LSA44.3 VL14 | WHI274H | 2600*950*1700 | 1950 | 3600*1200*2050 | 2800 | download",
+        "| LGPL-250 | 184 | 230 | 202.4 | 253 | 1206A-E70TTAG2 | LSA46.3 S4 | WHI274J | 2600*950*1700 | 1950 | 3600*1200*2050 | 2800 | download",
+        "| LGPL-275 | 200 | 250 | 220 | 275 | 1206A-E70TTAG3 | LSA46.3 S5 | WHI274K | 3000*1100*1700 | 2600 | 4200*1300*2250 | 3600 | download",
+        "| LGPL-132EV | 96 | 120 | 105.6 | 132 | 1204J-E44TTAG2 | LSA44.3 M6 | WHI274ES | 2600*950*1700 | 1950 | 3600*1200*2050 | 2800 | download",
+        "| LGPL-220EV | 160 | 200 | 176 | 220 | 1206J-E70TTAG3 | LSA44.3 VL14 | WHI274H | 3000*1100*1700 | 2600 | 4200*1300*2250 | 3600 | download",
+        "| LGPL-220EV | 160 | 200 | 176 | 220 | 1206J-E70TTAG4 | LSA44.3 VL14 | WHI274H | 3000*1100*1700 | 2600 | 4200*1300*2250 | 3600 | download",
+        "| LGPL-275 | 200 | 250 | 220 | 275 | 1506A-E88TAG3 | LSA46.3 S5 | WHI274K | 2600*950*1700 | 1950 | 3600*1200*2050 | 2800 | download",
+        "| LGPL-385 | 280 | 350 | 308 | 385 | 2206C-E13TAG2 | LSA46.3 L11 | WHI4FS | 3300*1140*2200 | 3300 | 4300*1600*2250 | 4700 | download",
+        "| LGPL-440 | 320 | 400 | 352 | 440 | 2206C-E13TAG3 | LSA47.3 S4 | WHI4G | 3300*1140*2200 | 3300 | 4300*1600*2250 | 4700 | download",
+        "| LGPL-500 | 364 | 455 | 400 | 500 | 2506C-E15TAG1 | LSA47.3 S5 | WHI5C | 3500*1400*2200 | 3800 | 4600*1700*2370 | 5300 | download",
+        "| LGPL-550 | 400 | 500 | 440 | 550 | 2506C-E15TAG2 | LSA47.3 M7 | WHI5D | 3500*1400*2200 | 3800 | 4600*1700*2370 | 5300 | download",
+        "| LGPL-660 | 480 | 600 | 528 | 660 | 2806C-E18TAG1A | LSA47.3 L9 | WHI5E | 3500*1600*2200 | 4600 | 4600*2100*2450 | 5800 | download",
+        "| LGPL-715 | 520 | 650 | 572 | 715 | 2806A-E18TAG2 | LSA47.3 L10 | WHI5FS | 3500*1600*2200 | 4600 | 4600*2100*2450 | 5800 | download",
+        "| LGPL-440 | 320 | 400 | 352 | 440 | 2206D-E13TAG3 | LSA47.3 S4 | WHI4G | 3500*1400*2200 | 3800 | 4600*1700*2370 | 5300 | download",
+        "| LGPL-550 | 400 | 500 | 440 | 550 | 2506D-E15TAG2 | LSA47.3 M7 | WHI5D | 3500*1400*2200 | 3800 | 4600*1700*2370 | 5300 | download",
+        "| LGPL-825 | 600 | 750 | 660 | 825 | 4006-23TAG2A | LSA49.3 M6 | WHI6B | 4000*1800*2450 | 6100 | 5500*2100*2450 | 7700 | download",
+        "| LGPL-880 | 640 | 800 | 704 | 880 | 4006-23TAG3A | LSA49.3 M8 | WHI6C | 4000*1800*2450 | 6100 | 5500*2100*2450 | 7700 | download",
+        "| LGPL-990 | 720 | 900 | 792 | 990 | 4008TAG1A | LSA49.3 L9 | WHI6D | 4750*2100*2250 | 7500 | 5800*2000*2450 | 10000 | download",
+        "| LGPL-1125 | 800 | 1000 | 880 | 1100 | 4008TAG2A | LSA49.3 L10 | WHI6E | 4750*2100*2250 | 7500 | 5800*2000*2450 | 10000 | download",
+        "| LGPL-1238 | 900 | 1125 | 990 | 1238 | 4008-30TAG3 | LSA50.2 M6 | WHI6F | 4500*1800*2250 | 9900 | 20\" container | 12400 | download",
+        "| LGPL-1375 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | LSA50.2 M6 | WHI6G | 4500*1800*2250 | 9900 | 20\" container | 12400 | download",
+        "| LGPL-1650 | 1200 | 1500 | 1320 | 1650 | 4012-46TAG2A | LSA50.2 L8 | WHI7C | 4500*1800*2250 | 10700 | 20\" container | 13200 | download",
+        "| LGPL-1875 | 1364 | 1752 | 1500 | 1875 | 4012-46TAG3A | LSA52.3 S5 | WHI7D | 5200*2100*2650 | 10700 | 40\" container | 15700 | download",
+        "| LGPL-2000 | 1480 | 1850 | 1600 | 2000 | 4016TAG1A | LSA52.3 S5 | WHI7E | 5200*2100*2650 | 11700 | 40\" container | 16700 | download",
+        "| LGPL-2200 | 1600 | 2000 | 1760 | 2200 | 4016TAG2A | LSA52.3 S6 | WHI7F | 5200*2100*2650 | 11700 | 40\" container | 16700 | download",
+        "| LGPL-2500 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | LSA52.3 L9 | WHI7G | 5200*2100*2650 | 13000 | 40\" container | 17700 | download"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "China POPULAR PERKINS DIESEL GENERATOR 7KW-1800KW factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight",
+        "| | KW | kVA | KW | kVA | Perkins | LSA | Longen | L*M*H(mm) (open) | KG (open) | L*M*H(mm) (silent) | KG (silent) | download"
+      ],
+      "rows": [
+        "| LGPL-12 | 9 | 11 | 10 | 12 | 403D-11G | LSA40 VS1 | WHI164B | 1200*700*1100 | 450 | 1700*850*1100 | 650 | download",
+        "| LGPL-18 | 13 | 16 | 14 | 18 | 403D-15G | LSA40 S3 | WHI164C | 1200*700*1100 | 450 | 1700*850*1100 | 650 | download",
+        "| LGPL-20 | 14 | 18 | 16 | 20 | 403A-15G2 | LSA40 S4 | WHI164D | 1200*700*1100 | 450 | 1700*850*1100 | 650 | download",
+        "| LGPL-26 | 19 | 24 | 21 | 26 | 404D-22G | LSA40 M7 | WHI184ES | 1400*700*1100 | 550 | 1900*850*1100 | 750 | download",
+        "| LGPL-35 | 26 | 32 | 29 | 35 | 404D-22TG | LSA42.3 VS2 | WHI184F | 1400*700*1100 | 550 | 1900*850*1100 | 750 | download",
+        "| LGPL-38 | 28 | 35 | 31 | 38 | 1103A-33G | LSA42.3 VS3 | WHI184G | 1700*800*1250 | 750 | 2280*950*1510 | 950 | download",
+        "| LGPL-59 | 43 | 54 | 47 | 59 | 1103A-33TG1 | LSA42.3 M8 | WHI224D | 1700*800*1250 | 800 | 2280*950*1510 | 1000 | download",
+        "| LGPL-75 | 55 | 68 | 60 | 75 | 1103A-33TG2 | LSA42.3 L9 | WHI224E | 1700*800*1250 | 880 | 2280*950*1510 | 1100 | download",
+        "| LGPL-71 | N/A | N/A | 57 | 71 | 1104D-44TG1 | LSA44.3 S2 | WHI224E | 1900*800*1250 | 980 | 2500*950*1510 | 1300 | download",
+        "| LGPL-84 | 61 | 76 | 67 | 84 | 1104A-44TG1 | LSA44.3 S2 | WHI224F | 1900*800*1250 | 980 | 2500*950*1510 | 1300 | download",
+        "| LGPL-75 | N/A | N/A | 60 | 75 | 1104D-E44TG1 | LSA44.3 S2 | WHI224F | 1900*800*1250 | 980 | 2500*950*1510 | 1300 | download",
+        "| LGPL-100 | 73 | 91 | 80 | 100 | 1104A-44TG2 | LSA44.3 S4 | WHI224G | 1900*800*1250 | 1050 | 2500*950*1510 | 1400 | download",
+        "| LGPL-100 | N/A | N/A | 80 | 100 | 1104D-E44TAG1 | LSA44.3 S4 | WHI274C | 1900*800*1250 | 1050 | 2500*950*1510 | 1400 | download",
+        "| LGPL-125 | N/A | N/A | 100 | 125 | 1104D-E44TAG2 | LSA44.3 M6 | WHI274D | 1900*800*1250 | 1100 | 2500*950*1510 | 1450 | download",
+        "| LGPL-127 | 92 | 113 | 100 | 125 | 1104C-44TAG2 | LSA44.3 M6 | WHI274C | 1900*800*1250 | 1100 | 2500*950*1510 | 1450 | download",
+        "| LGPL-132 | 96 | 120 | 106 | 132 | 1204J-E44TTAG2 | LSA44.3 M6 | WHI274D | 1900*800*1250 | 1100 | 2500*950*1510 | 1450 | download",
+        "| LGPL-168 | 122 | 153 | 134 | 168 | 1106A-70TG1 | LSA44.3 M8 | WHI274ES | 2300*900*1550 | 1350 | 3100*1100*1610 | 1800 | download",
+        "| LGPL-186 | 135 | 169 | 149 | 186 | 1106A-70TAG2 | LSA44.3 L10 | WHI274E | 2300*900*1550 | 1400 | 3100*1100*1610 | 1850 | download",
+        "| LGPL-186 | 135 | 169 | 149 | 186 | 1206F-E70TTAG3 | LSA44.3 L10 | WHI274E | 2300*900*1550 | 1400 | 3100*1100*1610 | 1850 | download",
+        "| LGPL-178 | N/A | N/A | 143 | 178 | 1106D-E70TAG2 | LSA44.3 L10 | WHI274E | 2300*900*1550 | 1400 | 3100*1100*1610 | 1850 | download",
+        "| LGPL-191 | N/A | N/A | 153 | 191 | 1106D-E70TAG3 | LSA44.3 L12 | WHI274F | 2500*900*1600 | 1500 | 3100*1200*1610 | 1950 | download",
+        "| LGPL-218 | 158 | 198 | 174 | 217 | 1106A-70TAG3 | LSA44.3 VL13 | WHI274G | 2500*900*1600 | 1500 | 3100*1200*1610 | 1950 | download",
+        "| LGPL-219 | N/A | N/A | 175 | 219 | 1106D-E70TAG4 | LSA44.3 VL14 | WHI274G | 2500*900*1600 | 1500 | 3100*1200*1610 | 2100 | download",
+        "| LGPL-250 | N/A | N/A | 200 | 250 | 1106D-E70TAG5 | LSA46.3 S4 | WHI274H | 2500*900*1600 | 1500 | 3100*1200*1610 | 2100 | download",
+        "| LGPL-248 | 180 | 225 | 198 | 248 | 1206F-E70TTAG4 | LSA46.3 S4 | WHI274H | 2600*950*1700 | 1950 | 3600*1200*2050 | 2800 | download",
+        "| LGPL-438 | 320 | 400 | 350 | 438 | 2206C-E13TAG2 L | LSA46.3 L11 | WHI4F | 3300*1140*2200 | 3300 | 4300*1600*2250 | 4700 | download",
+        "| LGPL-438 | 320 | 400 | 350 | 438 | 2206A-E13TAG5 | LSA46.3 L11 | WHI4F | 3300*1140*2200 | 3300 | 4300*1600*2250 | 4700 | download",
+        "| LGPL-438 | N/A | N/A | 350 | 438 | 2206D-E13TAG2 | LSA46.3 L11 | WHI4F | 3300*1140*2200 | 3300 | 4300*1600*2250 | 4700 | download",
+        "| LGPL-482 | 350 | 438 | 385 | 481 | 2206A-E13TAG6 | LSA47.3 S4 | WHI4F | 3300*1140*2200 | 3300 | 4300*1600*2250 | 4700 | download",
+        "| LGPL-500 | N/A | N/A | 400 | 500 | 2206D-E13TAG3 | LSA47.3 S5 | WHI4G | 3300*1140*2200 | 3300 | 4300*1600*2250 | 4700 | download",
+        "| LGPL-563 | 400 | 500 | 450 | 563 | 2506C-E15TAG1 L | LSA47.3 S5 | WHI4G | 3500*1400*2200 | 3800 | 4600*1700*2370 | 5300 | download",
+        "| LGPL-563 | N/A | N/A | 450 | 563 | 2506D-E15TAG1 | LSA47.3 M7 | WHI5C | 3500*1400*2200 | 3800 | 4600*1700*2370 | 5300 | download",
+        "| LGPL-625 | N/A | N/A | 500 | 625 | 2506C-E15TAG3 | LSA47.3 M7 | WHI5ES | 3500*1400*2200 | 3800 | 4600*1700*2370 | 5300 | download",
+        "| LGPL-687 | N/A | N/A | 550 | 687 | 2506C-E15TAG4 | LSA47.3 M8 | WHI5ES | 3500*1400*2200 | 3800 | 4600*1700*2370 | 5300 | download",
+        "| LGPL-687 | 500 | 625 | 550 | 687 | 2806C-E18TAG1A L | LSA47.3 M8 | WHI5ES | 3500*1600*2200 | 4600 | 4600*2100*2450 | 5800 | download",
+        "| LGPL-750 | N/A | N/A | 600 | 750 | 2806C-E18TAG3 | LSA49.3 S4 | WHI5F | 3500*1600*2200 | 4600 | 4600*2100*2450 | 5800 | download",
+        "| LGPL-825 | 600 | 750 | 660 | 825 | 4006-23TAG2A | LSA49.3 M6 | WHI5F | 4000*1800*2450 | 6100 | 5500*2100*2450 | 7700 | download",
+        "| LGPL-935 | 680 | 850 | 750 | 935 | 4006-23TAG3A | LSA49.3 M8 | WHI6B | 4000*1800*2450 | 6100 | 5500*2100*2450 | 7700 | download",
+        "| LGPL-1100 | 800 | 1000 | 880 | 1100 | 4008TAG2 | LSA49.3 L10 | WHI6D | 4750*2100*2250 | 7500 | 5800*2000*2450 | 10000 | download",
+        "| LGPL-1375 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | LSA50.2 M6 | WHI6F | 4500*1800*2250 | 9900 | 20″ container | 12400 | download",
+        "| LGPL-1650 | 1200 | 1500 | 1320 | 1650 | 4012-46TAG2A | LSA50.2 L7 | WHI7B | 5010*2270*2400 | 10700 | 40″ container | 13200 | download",
+        "| LGPL-1875 | 1364 | 1705 | 1500 | 1875 | 4012-46TAG3A | LSA50.2 VL10 | WHI7C | 5010*2270*2400 | 10700 | 40″ container | 15700 | download"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "China HIGH QUALITY CUMMINS DIESEL GENERATOR 20kVA-1675kVA factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight",
+        "| | KW | kVA | KW | kVA | Cummins | Stamford | Longen | L*M*H(mm)(open) | KG(open) | L*M*H(mm) (silent) | KG(silent) | download"
+      ],
+      "rows": [
+        "| LGCS-24 | 17 | 21 | 19 | 24 | 4B3.9-G11 | S0L2-G1 | WHI184ES | 1750*800*1350 | 750 | 2280*950*1510 | 1100 | download",
+        "| LGCS-30 | 22 | 28 | 24 | 30 | 4B3.9-G1 | S0L2-P1 | WHI184F | 1750*800*1350 | 750 | 2280*950*1510 | 1100 | download",
+        "| LGCS-30 | 22 | 28 | 24 | 30 | 4B3.9-G2 | S0L2-P1 | WHI184F | 1750*800*1350 | 750 | 2280*950*1510 | 1100 | download",
+        "| LGCS-34 | 25 | 31 | 28 | 34 | 4B3.9-G12 | S1L2-J1 | WHI184G | 1750*800*1350 | 750 | 2280*950*1510 | 1100 | download",
+        "| LGCS-44 | 32 | 40 | 35 | 44 | 4BT3.9-G1 | S1L2-K1 | WHI224C | 1750*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGCS-44 | 32 | 40 | 35 | 44 | 4BT3.9-G2 | S1L2-K1 | WHI224C | 1750*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGCS-55 | 40 | 50 | 44 | 55 | 4BTA3.9-G2 | S1L2-R1 | WHI224D | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGCS-66 | 48 | 60 | 53 | 66 | 4BTA3.9-G2 | S1L2-Y1 | WHI224E | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGCS-83 | 60 | 75 | 66 | 83 | 4BTA3.9-G11 | UCI224G | WHI224F | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGCS-110 | 80 | 100 | 88 | 110 | 4BTA3.9-G13 | UCI274C | WHI274C | 2000*800*1350 | 850 | 2500*950*1600 | 1350 | download",
+        "| LGCS-110 | 80 | 100 | 88 | 110 | 6BT5.9-G1 | UCI274C | WHI274C | 2200*880*1530 | 1050 | 3000*1050*1740 | 1800 | download",
+        "| LGCS-110 | 80 | 100 | 88 | 110 | 6BT5.9-G2 | UCI274C | WHI274C | 2200*880*1530 | 1050 | 3000*1050*1740 | 1800 | download",
+        "| LGCS-116 | 84 | 105 | 92 | 116 | 6BT5.9-G2 | UCI274D | WHI274D | 2200*880*1530 | 1050 | 3000*1050*1740 | 1800 | download",
+        "| LGCS-127 | 92 | 115 | 101 | 127 | 6BTA5.9-G2 | UCI274D | WHI274D | 2200*880*1530 | 1050 | 3000*1050*1740 | 1800 | download",
+        "| LGCS-150 | 112 | 140 | 120 | 150 | 6BTAA5.9-G2 | UCI274E | WHI274E | 2350*880*1530 | 1100 | 3000*1050*1740 | 1850 | download",
+        "| LGCS-170 | 124 | 155 | 136 | 170 | 6BTAA5.9-G12 | UCI274F | WHI274F | 2350*880*1530 | 1150 | 3000*1050*1740 | 1900 | download",
+        "| LGCS-200 | 145 | 181 | 160 | 200 | 6CTA8.3-G1 | UCI274G | WHI274G | 2400*1000*1710 | 1380 | 3200*1200*1950 | 2800 | download",
+        "| LGCS-200 | 145 | 181 | 160 | 200 | 6CTA8.3-G2 | UCI274G | WHI274G | 2400*1000*1710 | 1380 | 3200*1200*1950 | 2800 | download",
+        "| LGCS-220 | 160 | 200 | 176 | 220 | 6CTAA8.3-G2 | UCI274H | WHI274H | 2500*1000*1710 | 1480 | 3200*1130*1950 | 2900 | download",
+        "| LGCS-275 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2 | UCDI274K | WHI274K | 2500*1000*1710 | 1480 | 3400*1180*2080 | 2900 | download",
+        "| LGCS-300 | 216 | 270 | 240 | 300 | 6LTAA9.5-G3 | S4L1S-D4 | WHI4D | 2900*1150*1765 | 1800 | 3800*1500*2100 | 3250 | download",
+        "| LGCS-350 | 256 | 320 | 280 | 350 | 6LTAA9.5-G1 | S4L1S-E4 | WHI4E | 2900*1130*1820 | 2600 | 3950*1500*2250 | 4100 | download",
+        "| LGCS-425 | 310 | 388 | 340 | 425 | 6ZTAA13-G3 | S4L1D-F4 | WHI4G | 2900*1150*1765 | 2600 | 4100*1600*2480 | 4100 | download",
+        "| LGCS-475 | 350 | 438 | 380 | 475 | 6ZTAA13-G2 | S4L1D-G4 | WHI5C | 2900*1150*1765 | 2650 | 4100*1600*2480 | 4100 | download",
+        "| LGCS-550 | 400 | 500 | 440 | 550 | QSZ13-G3 | S5L1D-C4 | WHI5D | 3200*1400*2200 | 3500 | 4300*1600*2250 | 4800 | download",
+        "| LGCS-275 | 200 | 250 | 220 | 275 | MTA11-G2 | UCDI274K | WHI274K | 3050*1150*2000 | 3000 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-350 | 250 | 313 | 280 | 350 | MTAA11-G3 | S4L1D-D4 | WHI4ES | 3050*1150*2000 | 3200 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-275 | 200 | 250 | 220 | 275 | NT855-GA | UCDI274K | WHI274K | 3050*1150*2000 | 3000 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-275 | 200 | 250 | 220 | 275 | NT855-GA1 | UCDI274K | WHI274K | 3050*1150*2000 | 3000 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-313 | 220 | 275 | 250 | 313 | NTA855-G1A | S4L1D-D4 | WHI4D | 3050*1150*2000 | 3200 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-350 | 250 | 313 | 280 | 350 | NTA855-G1B | S4L1D-D4 | WHI4ES | 3050*1150*2000 | 3200 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-375 | 275 | 344 | 300 | 375 | NTA855-G2A | S4L1D-E4 | WHI4FS | 3050*1150*2000 | 3200 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-388 | 280 | 350 | 310 | 388 | NTA855-G4 | S4L1D-E4 | WHI4FS | 3050*1150*2000 | 3200 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-413 | 300 | 375 | 330 | 413 | NTAA855-G7 | S4L1D-F4 | WHI4F | 3300*1150*2000 | 3400 | 4200*1500*2250 | 4700 | download",
+        "| LGCS-450 | N/A | N/A | 360 | 450 | NTAA855-G7A | S4L1D-G4 | WHI5C | 3300*1150*2000 | 3400 | 4200*1500*2250 | 4700 | download",
+        "| LGCS-413 | 300 | 375 | 330 | 413 | KTA19-G2 | S4L1D-F4 | WHI4F | 3200*1400*2200 | 3500 | 4300*1600*2250 | 4800 | download",
+        "| LGCS-500 | 360 | 450 | 400 | 500 | KTA19-G3 | S4L1D-G4 | WHI5C | 3200*1400*2200 | 3500 | 4300*1600*2250 | 4800 | download",
+        "| LGCS-563 | 400 | 500 | 450 | 563 | KTA19-G3A | S5L1D-C4 | WHI5D | 3200*1400*2200 | 3500 | 4300*1600*2250 | 4800 | download",
+        "| LGCS-563 | 400 | 500 | 450 | 563 | KTA19-G4 | S5L1D-C4 | WHI5D | 3200*1400*2200 | 3500 | 4300*1600*2250 | 4800 | download",
+        "| LGCS-631 | 420 | 525 | 505 | 631 | KTAA19-G5 | S5L1D-D4 | WHI5ES | 3430*1520*2200 | 3600 | 4800*2000*2530 | 5900 | download",
+        "| LGCS-650 | 460 | 575 | 520 | 650 | KTAA19-G6 | S5L1D-E4 | WHI5E | 3430*1520*2200 | 3600 | 4800*2000*2530 | 5900 | download",
+        "| LGCS-650 | N/A | N/A | 520 | 650 | KTA19-G8 | S5L1D-F4 | WHI5F | 3430*1520*2200 | 3600 | 4800*2000*2530 | 5900 | download",
+        "| LGCS-688 | N/A | N/A | 550 | 688 | KTAA19-G6A | S5L1D-F4 | WHI5F | 3430*1520*2200 | 3600 | 4500*2000*2530 | 5900 | download",
+        "| LGCS-713 | 520 | 650 | 570 | 713 | QSK19-G4 | S5L1D-F4 | WHI5F | 3430*1520*2200 | 3600 | 4500*2000*2530 | 5900 | download",
+        "| LGCS-688 | 500 | 625 | 550 | 688 | KT38-G | S5L1D-F4 | WHI5FS | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-788 | 570 | 713 | 630 | 788 | KTA38-G1 | S5L1D-H4 | WHI6B | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-825 | 600 | 750 | 660 | 825 | KTA38-G2 | S5L1D-H4 | WHI6B | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-888 | 640 | 800 | 710 | 888 | KTA38-G2B | S6L1D-C4 | WHI6C | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-1000 | 728 | 910 | 800 | 1000 | KTA38-G2A | S6L1D-D4 | WHI6D | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-1100 | 800 | 1000 | 880 | 1100 | KTA38-G5 | S6L1D-E4 | WHI6E | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-1250 | N/A | N/A | 1000 | 1250 | KTA38-G9 | S6L1D-G4 | WHI6G | 4500*1800*2200 | 7500 | 20\" container | 10000 | download",
+        "| LGCS-1375 | 1000 | 1250 | 1100 | 1375 | QSK38-G5 | S6L1D-G4 | WHI6G | 4500*1800*2200 | 7500 | 20\" container | 10000 | download",
+        "| LGCS-1375 | 1000 | 1250 | 1100 | 1375 | KTA50-G3 | S6L1D-G4 | WHI6G | 4500*1800*2200 | 7500 | 20\" container | 10000 | download",
+        "| LGCS-1650 | 1100 | 1375 | 1320 | 1650 | KTA50-G8 | S6L1D-H4 | WHI7B | 4900*2100*2530 | 8600 | 40\" container | 13800 | download",
+        "| LGCS-1650 | 1180 | 1475 | 1320 | 1650 | KTA50-GS8 | S7L1D-C4 | WHI7C | 4900*2100*2530 | 8600 | 40\" container | 14000 | download",
+        "| LGCS-1875 | 1340 | 1675 | 1500 | 1875 | KTA50-G15X | S7L1D-D4 | WHI7D | 4900*2100*2530 | 8600 | 40\" container | 14000 | download"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "China HIGH QUALITY CUMMINS DIESEL GENERATOR 20kVA-1675kVA factory and suppliers | LONGEN",
+      "header": [
+        "| Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight",
+        "| | KW | kVA | KW | kVA | Cummins | Stamford | Longen | L*M*H(mm) (open) | KG (open) | L*M*H(mm) (silent) | KG (silent) | download"
+      ],
+      "rows": [
+        "| LGCS-34 | 24 | 30 | 27 | 34 | 4B3.9-G2 | S0L2-P1 | WHI184F | 1750*800*1350 | 750 | 2280*950*1510 | 1100 | download",
+        "| LGCS-38 | 28 | 35 | 30 | 38 | 4B3.9-G12 | S1L2-J1 | WHI184G | 1750*800*1350 | 750 | 2280*950*1510 | 1100 | download",
+        "| LGCS-50 | 36 | 45 | 40 | 50 | 4BT3.9-G2 | S1L2-N1 | WHI184H | 1750*800*1350 | 750 | 2280*950*1510 | 1100 | download",
+        "| LGCS-69 | 50 | 63 | 55 | 69 | 4BTA3.9-G2 | S1L2-Y1 | WHI224D | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGCS-77 | 56 | 70 | 62 | 78 | 4BTA3.9-G2 | UCI224E | WHI224E | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGCS-85 | 60 | 75 | 68 | 85 | 4BTA3.9-G2 | UCI224F | WHI224F | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGCS-100 | 72 | 90 | 80 | 100 | 4BTA3.9-G11 | UCI224G | WHI224F | 1850*800*1350 | 800 | 2280*950*1510 | 1150 | download",
+        "| LGCS-115 | 84 | 105 | 92 | 115 | 6BT5.9-G2 | UCI274C | WHI274C | 2200*880*1530 | 1050 | 3000*1050*1740 | 1800 | download",
+        "| LGCS-138 | 100 | 125 | 110 | 138 | 6BT5.9-G2 | UCI274D | WHI274D | 2200*880*1530 | 1050 | 3000*1050*1740 | 1800 | download",
+        "| LGCS-145 | 105 | 131 | 116 | 145 | 6BTA5.9-G2 | UCI274D | WHI274D | 2200*880*1530 | 1050 | 3000*1050*1740 | 1800 | download",
+        "| LGCS-156 | 112 | 140 | 123 | 154 | 6BTAA5.9-G2 | UCI274E | WHI274ES | 2350*880*1530 | 1100 | 3000*1050*1740 | 1850 | download",
+        "| LGCS-180 | 128 | 160 | 144 | 180 | 6BTAA5.9-G12 | UCI274E | WHI274E | 2350*880*1530 | 1150 | 3000*1050*1740 | 1900 | download",
+        "| LGCS-209 | 152 | 190 | 167 | 209 | 6CTA8.3-G2 | UCI274G | WHI274F | 2400*1000*1710 | 1380 | 3200*1200*1950 | 2800 | download",
+        "| LGCS-230 | 168 | 210 | 184 | 230 | 6CTAA8.3-G2 | UCI274G | WHI274G | 2500*1000*1710 | 1480 | 3200*1130*1950 | 2900 | download",
+        "| LGCS-285 | 208 | 260 | 228 | 285 | 6LTAA8.9-G2 | UCDI274J | WHI274J | 2500*1000*1710 | 1480 | 3400*1180*2080 | 2900 | download",
+        "| LGCS-315 | 226 | 283 | 252 | 315 | 6LTAA8.9-G3 | UCDI274K | WHI274K | 2900*1150*1765 | 1800 | 3800*1500*2100 | 3250 | download",
+        "| LGCS-350 | 256 | 320 | 280 | 350 | 6LTAA9.5-G1 | S4L1S-D4 | WHI4D | 2900*1150*1765 | 1800 | 3800*1500*2100 | 3250 | download",
+        "| LGCS-425 | 310 | 388 | 340 | 425 | 6ZTAA13-G3 | S4L1D-E4 | WHI4E | 2900*1150*1765 | 2600 | 4100*1600*2480 | 4100 | download",
+        "| LGCS-475 | 350 | 438 | 380 | 475 | 6ZTAA13-G2 | S4L1D-F4 | WHI4F | 2900*1150*1765 | 2650 | 4100*1600*2480 | 4100 | download",
+        "| LGCS-475 | 350 | 438 | 380 | 475 | 6ZTAA13-G4 | S4L1D-F4 | WHI4F | 2900*1150*1765 | 2650 | 4100*1600*2480 | 4100 | download",
+        "| LGCS-468 | 350 | 438 | 374 | 468 | QSZ13-G2 | S4L1D-F4 | WHI4F | 2900*1150*1765 | 2650 | 4100*1600*2480 | 4100 | download",
+        "| LGCS-500 | 380 | 475 | 400 | 500 | QSZ13-G3 | S4L1D-G4 | WHI4G | 2900*1150*1765 | 2650 | 4100*1600*2480 | 4100 | download",
+        "| LGCS-525 | 380 | 475 | 420 | 525 | QSZ13-G5 | S4L1D-G4 | WHI4G | 2900*1150*1765 | 2650 | 4100*1600*2480 | 4100 | download",
+        "| LGCS-275 | N/A | N/A | 220 | 275 | NT855-GA | UCDI274J | WHI274J | 3050*1150*2000 | 3000 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-350 | 250 | 313 | 275 | 344 | NTA855-G1 | S4L1D-D4 | WHI4D | 3050*1150*2000 | 3000 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-375 | 275 | 344 | 300 | 375 | NTA855-G1B | S4L1D-D4 | WHI4E | 3050*1150*2000 | 3000 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-438 | 315 | 394 | 350 | 438 | NTA855-G3 | S4L1D-E4 | WHI4E | 3050*1150*2000 | 3000 | 3950*1500*2250 | 4500 | download",
+        "| LGCS-500 | 350 | 438 | 400 | 500 | KTA19-G2 | S4L1D-F4 | WHI4F | 3200*1400*2200 | 3500 | 4300*1600*2250 | 4800 | download",
+        "| LGCS-575 | 410 | 513 | 450 | 563 | KTA19-G3 | S5L1D-C4 | WHI5C | 3200*1400*2200 | 3500 | 4300*1600*2250 | 4800 | download",
+        "| LGCS-625 | 450 | 563 | 500 | 625 | KTA19-G3A | S5L1D-D4 | WHI5D | 3200*1400*2200 | 3500 | 4300*1600*2250 | 4800 | download",
+        "| LGCS-625 | 450 | 563 | 500 | 625 | KTA19-G4 | S5L1D-D4 | WHI5D | 3200*1400*2200 | 3500 | 4300*1600*2250 | 4800 | download",
+        "| LGCS-688 | 470 | 588 | 550 | 688 | KTAA19-G5 | S5L1D-E4 | WHI5D | 3430*1520*2200 | 3600 | 4800*2000*2530 | 5900 | download",
+        "| LGCS-713 | 500 | 625 | 570 | 713 | QSK19-G4 | S5L1D-E4 | WHI5ES | 3430*1520*2200 | 3600 | 4800*2000*2530 | 5900 | download",
+        "| LGCS-750 | 550 | 688 | 600 | 750 | QSK19-G5 | S5L1D-F4 | WHI5E | 3430*1520*2200 | 3600 | 4800*2000*2530 | 5900 | download",
+        "| LGCS-750 | N/A | N/A | 600 | 750 | KTAA19-G6A | S5L1D-F4 | WHI5FS | 3430*1520*2200 | 3600 | 4800*2000*2530 | 6000 | download",
+        "| LGCS-850 | 620 | 775 | 680 | 850 | KT38-G | S5L1D-H4 | WHI5FS | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-963 | 700 | 875 | 770 | 963 | KTA38-G1 | S6L1D-D4 | WHI6C | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-1000 | 725 | 906 | 800 | 1000 | KTA38-G2 | S6L1D-D4 | WHI6C | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-1038 | 750 | 938 | 830 | 1038 | KTA38-G2B | S6L1D-D4 | WHI6D | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-1125 | 800 | 1000 | 900 | 1125 | KTA38-G2A | S6L1D-E4 | WHI6D | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-1250 | 900 | 1125 | 1000 | 1250 | KTA38-G4 | S6L1D-F4 | WHI6E | 4500*1800*2200 | 7500 | 5800*2000*2530 | 10000 | download",
+        "| LGCS-1375 | N/A | N/A | 1100 | 1375 | KTA38-G9 | S6L1D-G4 | WHI6F | 4500*1800*2200 | 7500 | 20″ container | 10000 | download",
+        "| LGCS-1550 | 1100 | 1375 | 1240 | 1550 | QSK38-G4 | S6L1D-H4 | WHI6G | 4500*1800*2200 | 7500 | 20″ container | 10000 | download",
+        "| LGCS-1575 | 1100 | 1375 | 1260 | 1575 | KTA50-G3 | S6L1D-H4 | WHI6G | 4500*1800*2200 | 7500 | 40″ container | 10000 | download",
+        "| LGCS-1875 | 1260 | 1575 | 1386 | 1733 | KTA50-G9 | S7L1D-D4 | WHI7B | 4900*2100*2530 | 8600 | 40″ container | 13800 | download"
+      ]
+    }
+  ]
 }

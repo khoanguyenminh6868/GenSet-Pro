@@ -100,7 +100,7 @@
     {
       "n": 101,
       "url": "https://www.pulitaenergy.com/natural-gas-generator-set/20kw-25kva-natural-gas-generator-set.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Genset | Genset Model | PLC-20GF | PLR-30GF"
@@ -110,7 +110,7 @@
     {
       "n": 102,
       "url": "https://www.pulitaenergy.com/biogas-generator-set/30kw-37-5kva-biogas-generator-set.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Genset | Genset Model | PLT-30GF | PLTR-30GF"
@@ -120,7 +120,7 @@
     {
       "n": 103,
       "url": "https://www.pulitaenergy.com/lpg-generator-set/20kw-25kva-lpg-gas-generator-set.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Genset | Genset Model | PLT-20GF | PLTR-20GF"
@@ -130,7 +130,7 @@
     {
       "n": 104,
       "url": "https://www.pulitaenergy.com/diesel-generator-set/20kw-25kva-diesel-generator-set.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "| Genset | Genset Model | PLD-20GF | PLD-22GF"
@@ -152,6 +152,7 @@
         "| Rated Power (kW/kVA) | 20/25 | 20/25",
         "| Standby Power (kW/kVA) | 22/27.5 | 22/27.5",
         "| Rated Current (A) | 36 | 36",
+        "| Gas Engine Model | PC4L-NG | PR4102-NG",
         "| Rated Power (kW) | 22 | 22",
         "| Displacement (L) | 3.9 | 4.1",
         "| Bore× Stock (mm) | 102*120 | 102*120",
@@ -170,9 +171,11 @@
         "| Rated Power (kW/kVA) | 30/37.5 | 30/37.5",
         "| Standby Power (kW/kVA) | 33/41.2 | 33/41.2",
         "| Rated Current (A) | 54 | 54",
+        "| Gas Engine Model | PC4L-BG | HT4100D",
         "| Rated Power (kW) | 33 | 33",
         "| Displacement (L) | 3.9 | 4.5",
         "| Bore× Stock (mm) | 102*120 | 102*120",
+        "| Air Intake Way | Turbocharged | Natural",
         "| FD1F | FD1J",
         "| Dimension (for Open Genset, mm) | 1800*900*1400 | 1750*740*1480",
         "| Weight (KG) | 800 | 812"
@@ -188,6 +191,7 @@
         "| Rated Power (kW/kVA) | 20/25 | 20/25",
         "| Standby Power (kW/kVA) | 22/27.5 | 22/27.5",
         "| Rated Current (A) | 36 | 36",
+        "| Gas Engine Model | PC4L-BG | HT4100D",
         "| Rated Power (kW) | 22 | 22",
         "| Displacement (L) | 3.9 | 4.1",
         "| Bore× Stock (mm) | 102*120 | 100*120",
@@ -210,6 +214,7 @@
         "| Rated Power (kW) | 27.7 | 24KW",
         "| Displacement (L) | 2.2 | 3.9",
         "| Bore× Stock (mm) | 84*100 | 102*120",
+        "| Air Intake Way | Turbo-charging | Natural",
         "| Rated Speed (r/min) | 1500/1800 (50/60Hz) | 1500/1800 (50/60Hz)",
         "| Fuel consumption(L/Kw·h) | 0.21 | 0.21",
         "| FD1F-4 | FD1F-4",

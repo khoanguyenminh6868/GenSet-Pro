@@ -78,9 +78,132 @@
         "Our company covers an area of more than 20000 square meters and produces more than 100000 machines every year."
       ],
       "file": "sources/itc-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.itcpowergenerator.com/diesel-inverter-generator/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Model | DS9000SEi | DS10000SEi | DS14000SEi | DS16000SEi | DS20000SEi"
+      ],
+      "file": "sources/itc-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.itcpowergenerator.com/silent-diesel-generator-pro-series/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Model | DP6000SE | DP8600SE | DP10000SE | DP14000SE | DP16000SE | DP20000SE"
+      ],
+      "file": "sources/itc-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.itcpowergenerator.com/silent-diesel-generator/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Model | DG6000SE | DG8500SE | DG8600SE | DS8700SE | DG10000SE | DS10000SE | DG12000XSE | DG14000SE | DS16000SE | DS20000SE"
+      ],
+      "file": "sources/itc-power/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.itcpowergenerator.com/open-type-diesel-generator/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Model | DG6000LE | DG8500LE | DG8600LE | DG10000LE | DG10500LE | DG14000LE | DG16000LE | DG20000LE"
+      ],
+      "file": "sources/itc-power/104.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Reliable Diesel Inverter Generator for Businesses | ITC Power",
+      "header": [
+        "| | Model | DS9000SEi | DS10000SEi | DS14000SEi | DS16000SEi | DS20000SEi"
+      ],
+      "rows": [
+        "| Frequency | 50 | 50 | 50 | 50 | 50",
+        "| Power | 6-6.5 KW / 7.5-8.1 KVA | 8-8.5 KW / 10-10.6 KVA | 10-11 KW / 12.5-13.8 KVA | 12-13 KW / 15-16.3 KVA | 14-15 KW / 18-20 KVA",
+        "| Display | LED6 | LED6 | LED6 | LED6 | LED6",
+        "| Fuel Tank | 15 L | 25 L | 46 L | 46 L | 46 L",
+        "| Running Time@75% Load | 7.8 H | 10.4 H | 14.6 H | 12.7 H | 10.8 H",
+        "| Engine | D500Ei | D680E | 2V88 | 2V92 | 2V95",
+        "| Displacement | 498 CC | 678 CC | 912 CC | 997 CC | 1247 CC",
+        "| Oil Capacity | 1.75 L | 2 L | 2.8 L | 3.5 L | 3.5 L",
+        "| Alternator | AL-7 | AL-9 | AL-10 | AL-12 | AL-16",
+        "| Power | 7 KW | 9 KW | 10 KW | 12 KW | 16 KW",
+        "| Power Factory | 1 / 0.8 | 1 / 0.8 | 1 / 0.8 | 1 / 0.8 | 1 / 0.8",
+        "| Voltage Regulation | PMG | PMG | PMG | PMG | PMG",
+        "| Net Weight | 143 KG | 180 KG | 260 KG | 290 KG | 300 KG",
+        "| Machine Size | 800*525*740 mm | 955*570*700 mm | 1050*660*880 mm | 1050*660*880 mm | 1050*660*880 mm"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Silent Diesel Generator | Generator Manufacturer | CE certificate",
+      "header": [
+        "| | Model | DP6000SE | DP8600SE | DP10000SE | DP14000SE | DP16000SE | DP20000SE"
+      ],
+      "rows": [
+        "| Frecuency | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60",
+        "| Power | 5-5.3 KW | 6-6.3 KW | 8-8.5 KW | 9-10 KW | 11-12 KW | 13-14 KW",
+        "| Fuel Tank | 13 L | 13 L | 25 L | 27 L | 46 L | 46 L",
+        "| Running Time | 9 H | 7 H | 10 H | 8 H | 10 H | 9 H",
+        "| Sound level @ 7m | 72 dBA | 72 dBA | 72 dBA | 72 dBA | 72 dBA | 72 dBA",
+        "| Engine | D400E | D500E | D680E | DV920E | DV1000E | DV1250E",
+        "| Cooling | Air | Air | Air | Air | Air | Air",
+        "| Net Weight | 155 KG | 155 KG | 225 KG | 290 KG | 310 KG | 320 KG",
+        "| Size | 920×520×720 mm | 920×520×720 mm | 1080x570x750 mm | 1100x650x770 mm | 1100x660x880 mm | 1100x660x880 mm"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Silent Diesel Generator | Generator Manufacturer | CE certificate",
+      "header": [
+        "| | Model | DG6000SE | DG8500SE | DG8600SE | DS8700SE | DG10000SE | DS10000SE | DG12000XSE | DG14000SE | DS16000SE | DS20000SE"
+      ],
+      "rows": [
+        "| Frecuency | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60",
+        "| Power | 4.5-5.3 KW | 5.5-6.3 KW | 5.5-6.3 KW | 5.5-6.3 KW | 8-8.5 KW | 8-8.5 KW | 9-10 KW | 9-10 KW | 11-12 KW | 13-14 KW",
+        "| Voltage | 230 V | 230 V | 230 V | 230 V | 230 V | 230 V | 230 V | 230 V | 230 V | 230 V",
+        "| Current | 23 A | 27.4 A | 27.4 A | 27.4 A | 35 A | 35 A | 37.5 A | 47.8 A | 52.2 A | 69.6 A",
+        "| Display | Digital | Digital | Digital | Digital | Digital | Digital | Digital | Digital | Digital | Digital",
+        "| Fuel Tank | 13 L | 13 L | 13 L | 13 L | 25 L | 25 L | 30 L | 27 L | 46 L | 46 L",
+        "| Sound level @ 7m | 72 dBA | 72 dBA | 72 dBA | 72 dBA | 72 dBA | 72 dBA | 75 dBA | 72 dBA | 72 dBA | 72 dBA",
+        "| Engine | D400E | D500E | D500E | D500E | D680E | D680E | EV80 | DV920E | DV1000E | DV1250E",
+        "| Cooling | Air | Air | Air | Air | Air | Air | Water | Air | Air | Air",
+        "| Net Weight | 154 KG | 155 KG | 155 KG | 155 KG | 225 KG | 225 KG | 318 KG | 290 KG | 315 KG | 334 KG",
+        "| Size | 920×520×740 mm | 920×520×740 mm | 920×520×720 mm | 920×520×720 mm | 1080x570x750 mm | 1080x570x750 mm | 1360x650x980 mm | 1020x660x850 mm | 1120x680x930 mm | 1020x680x930 mm"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Open Type Diesel Generator | Generator Manufacturer",
+      "header": [
+        "| | Model | DG6000LE | DG8500LE | DG8600LE | DG10000LE | DG10500LE | DG14000LE | DG16000LE | DG20000LE"
+      ],
+      "rows": [
+        "| Frecuency | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60 | 50 / 60",
+        "| Power | 4.5-5.3 KW | 5.5-6.3 KW | 5.5-6.3 KW | 5.5-6.3 KW | 8-8.5 KW | 9-10 KW | 11-12 KW | 13-14 KW",
+        "| Voltage | 230 V | 230 V | 230 V | 230 V | 230 V | 230 V | 230 V | 230 V",
+        "| Current | 23 A | 27.4 A | 27.4 A | 27.4 A | 35 A | 47.8 A | 52.2 A | 69.6 A",
+        "| Display | Digital | Digital | Digital | Digital | Digital | Digital | Digital | Digital",
+        "| Fuel Tank | 10 L | 10 L | 15 L | 10 L | 15 L | 22.5 L | 22.5 L | 22.5 L",
+        "| Sound level @ 7m | 79 dBA | 79 dBA | 79 dBA | 79 dBA | 79 dBA | 84 dBA | 84 dBA | 84 dBA",
+        "| Engine | D400E | D500E | D500E | D680E | D680E | DV920E | DV1000E | DV1250E",
+        "| Cooling | Air | Air | Air | Air | Air | Air | Air | Air",
+        "| Net Weight | 107 KG | 112 KG | 109 KG | 132 KG | 135 KG | 212 KG | 218 KG | 245 KG",
+        "| Size | 720×480×600 mm | 720×480×600 mm | 810×550×600 mm | 720×550×630 mm | 850×585×650 mm | 1060x660x750 mm | 1060x660x750 mm | 1100x660x750 mm"
+      ]
+    }
+  ]
 }

@@ -1,1 +1,76 @@
-[]
+[
+ {
+  "n": 101,
+  "url": "https://www.awtgenset.com/product/diesel-generator-by-engine/perkins-powered-diesel-generator-sets.html",
+  "title": "Wholesale Perkins Powered Diesel Generator Sets Manufacturers, Factory",
+  "header": [
+   "| Power band | Typical engine families | Application fit"
+  ],
+  "rows": [
+   "| 8–100kW | 403, 404, 1103, 1104 | Shops, offices, telecom stations, residential standby, field work and daily emergency supply",
+   "| 100–1000kW | 1106, 1206, 1506, 1706, 2206, 2506, 2806 | Hospitals, hotels, industrial plants, shopping malls, data centres and mines",
+   "| 1000–2000kW | 4008, 4012 | Large data centres, industrial parks, ports, offshore projects and oil and gas fields",
+   "| 2000–3400kW | 4016 | Utility-scale standby, heavy process plants and multi-unit paralleled power stations"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.awtgenset.com/product/diesel-generator-by-engine/yuchai-powered-diesel-generator-sets.html",
+  "title": "Wholesale Yuchai Powered Diesel Generator Sets Manufacturers, Factory",
+  "header": [
+   "| Model | Prime Power | Standby Power | Engine | Typical Application"
+  ],
+  "rows": [
+   "| AWT-Y20 | 20 kW / 25 kVA | 22 kW / 28 kVA | YC4V35-D20 | Shops, offices, telecom base stations",
+   "| AWT-Y90 | 90 kW / 113 kVA | 100 kW / 125 kVA | YC4A140L-D25 | Factories, hotels, hospitals, medium mines",
+   "| AWT-Y400 | 400 kW / 500 kVA | 440 kW / 550 kVA | YC6T660-D31 | Industrial parks, data centers, ports",
+   "| AWT-Y1000 | 1000 kW / 1250 kVA | 1100 kW / 1375 kVA | YC12VTD1680-D30 | Large data centers, oil and gas fields",
+   "| AWT-Y2500 | 2500 kW / 3125 kVA | 2750 kW / 3438 kVA | YC16VC4200-D30 | Offshore facilities, heavy industrial plants"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.awtgenset.com/product/diesel-generator-by-engine/baudouin-powered-diesel-generator-sets.html",
+  "title": "Wholesale Baudouin Powered Diesel Generator Sets Manufacturers, Factory",
+  "header": [
+   "| Model | Prime / Standby | Engine | Open Type (mm / kg) | Silent Type (mm / kg)"
+  ],
+  "rows": [
+   "| AWT-B50 | 50 / 55 kW | 4M10G2D3/5 | 1800×800×1350 / 750 | 2400×1100×1550 / 1250",
+   "| AWT-B200 | 200 / 220 kW | 6M12G8D3/5 | 2470×950×1450 / 1600 | 3200×1300×1850 / 2500",
+   "| AWT-B600 | 600 / 650 kW | 6M33G8D3/5 | 2850×1000×1530 / 2500 | 3600×1400×2050 / 3600",
+   "| AWT-B1200 | 1200 / 1320 kW | 12M33G14D3/5 | 4500×2000×2350 / 9200 | 5500×2400×2800 / 12000",
+   "| AWT-B2000 | 2000 / 2200 kW | 12M55G4D3/5 | 8230×2600×2700 / 22000 | Container build"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.awtgenset.com/product/diesel-generator-by-engine/mtu-powered-diesel-generator-sets.html",
+  "title": "Wholesale MTU Powered Diesel Generator Sets Manufacturers, Factory",
+  "header": [
+   "| Model | Prime kW/kVA | Standby kW/kVA | Engine"
+  ],
+  "rows": [
+   "| AWT-M520 | 480/600 | 520/650 | 12V1600G10F",
+   "| AWT-M700 | 640/800 | 700/875 | 12V2000G65",
+   "| AWT-M1000 | 900/1125 | 1000/1250 | 18V2000G65",
+   "| AWT-M1650 | 1500/1875 | 1650/2063 | 12V4000G63",
+   "| AWT-M2200 | 2000/2500 | 2200/2750 | 20V4000G23",
+   "| AWT-M2750 | 2500/3125 | 2750/3438 | 20V4000G63L"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.awtgenset.com/product/diesel-generator-by-engine/volvo-powered-diesel-generator-sets.html",
+  "title": "Wholesale Volvo Powered Diesel Generator Sets Manufacturers, Factory",
+  "header": [
+   "| Model | Prime Power (kW/kVA) | Standby Power (kW/kVA) | Engine Model"
+  ],
+  "rows": [
+   "| AWT-V201 | 146 / 183 | 161 / 201 | TAD840GE-B",
+   "| AWT-V451 | 328 / 410 | 361 / 451 | TAD1345GE-B",
+   "| AWT-V649 | 472 / 590 | 519 / 649 | TWD1644GE",
+   "| AWT-V748 | 544 / 680 | 598 / 748 | TWD1744GE"
+  ]
+ }
+]

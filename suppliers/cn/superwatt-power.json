@@ -105,9 +105,205 @@
         "Diesel Generator Powered by MTU 1000kVA-3000kVA"
       ],
       "file": "sources/superwatt-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.swtgenset.com/mtu-diesel-generator/57570727.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Gense t Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "file": "sources/superwatt-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.swtgenset.com/cummins-diesel-generator/57570663.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "file": "sources/superwatt-power/102.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.swtgenset.com/silent-generator/57680874.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Prime Power (kW/kVA) | Standby Power (kW/kVA) | Diesel Engine Model | Open Type Size L x W x H (mm) | Silent Type Siz e L x W x H (mm) | Weight (kg)"
+      ],
+      "file": "sources/superwatt-power/104.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.swtgenset.com/cummins-diesel-generator/57570541.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "file": "sources/superwatt-power/111.md"
+    },
+    {
+      "n": 112,
+      "url": "https://www.swtgenset.com/perkins-diesel-generator/57570717.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Ge nset Mod el | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "file": "sources/superwatt-power/112.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.swtgenset.com/mitsubishi-diesel-generator/57626857.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Gense t Model | Prime Power kW/kVA | Standby Power kW/kVA | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "file": "sources/superwatt-power/117.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Diesel Generator Powered by MTU 1000kVA-3000kVA China Manufacturers Suppliers Factory Exporter",
+      "header": [
+        "| Gense t Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "rows": [
+        "| SM1100 | 800/1000 | 880/1100 | 207 | 16V2000G65 | 4350x1900x2280 | 7150",
+        "| SM1250 | 900/1125 | 1000/1250 | 238 | 18V2000G65 | 4750x1900x2280 | 7850",
+        "| SM1375 | 1000/1250 | 1100/1375 | 261 | 18V2000G26F | 4850x1900x2280 | 9500",
+        "| SM1500 | 1080/1350 | 1200/1500 | 279 | 12V4000G23RF | 5300x2000x2500 | 11600",
+        "| SM1650 | 1200/1500 | 1320/1650 | 329 | 12V4000G23 | 5300x2000x2500 | 12500",
+        "| SM2000 | 1450/1812 | 1600/2000 | 363 | 12V4000G63 | 5300x2000x2500 | 13000",
+        "| SM2250 | 1640/2050 | 1800/2250 | 417 | 16V4000G23 | 6100x2300x2800 | 15600",
+        "| SM2500 | 1800/2250 | 2000/2500 | 451 | 16V4000G63 | 6100x2300x2800 | 16000",
+        "| SM2750 | 2000/2500 | 2200/2750 | 526 | 20V4000G23 | 6100x2300x2900 | 17000",
+        "| SM3000 | 2200/2750 | 2400/3000 | 579 | 20V4000G63 | 6100x2300x2900 | 18000",
+        "| SM3250 | 2400/3000 | 2600/3250 | 619 | 20V4000G63L | 6100x2300x2900 | 20000"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Diesel Generator Powered by Cummins 300kVA-2000kVA China Manufacturers Suppliers Factory Exporter",
+      "header": [
+        "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "rows": [
+        "| SC313 | 228/285 | 250/312.5 | 60 | NTA855-G1A | 3000x1000x1530 | 3100",
+        "| SC350 | 250/312.5 | 280/350 | 64 | NTA855-G1B | 3000x1000x1530 | 3200",
+        "| SC388 | 280/350 | 310/387.5 | 76 | NTA855-G2A | 3150x1050x1530 | 3400",
+        "| SC450 | 320/400 | 360/450 | 86 | NTAA855-G7A | 3300x1380x1550 | 3700",
+        "| SC500 | 360/450 | 400/500 | 97 | KTA19-G3A | 3550x1250x1800 | 4350",
+        "| SC550 | 360/450 | 400/500 | 107 | KTA19-G3A | 3600x1250x1800 | 4500",
+        "| SC650 | 480/600 | 520/650 | 125 | KTA19-G8 | 3750x1250x1900 | 5000",
+        "| SC688 | 500/625 | 550/687.5 | 130 | KTAA19-G6A | 3750x1250x1900 | 5400",
+        "| SC800 | 580/725 | 640/800 | 150 | KTA38-GA | 4400x1800x2270 | 6500",
+        "| SC825 | 600/750 | 660/825 | 156 | KTA38-G2 | 4400x1800x2270 | 7000",
+        "| SC880 | 640/800 | 704/800 | 168 | KTA38-G2B | 4650x1800x2270 | 7400",
+        "| SC1000 | 720/900 | 800/1000 | 189 | KTA38-G2A | 4650x1830x2270 | 7650",
+        "| SC1100 | 800/1000 | 880/1100 | 203 | KTA38-G5 | 4800x1830x2300 | 8650",
+        "| SC1250 | 900/1125 | 1000/1250 | 225 | KTA38-G9 | 4850x1830x2300 | 9300",
+        "| SC1400 | 1000/1250 | 1120/1400 | 254 | KTA50-G3 | 5200x2000x2400 | 10500",
+        "| SC1600 | 1142/1428 | 1280/1600 | 272 | KTA50-G8 | 5200x2000x2400 | 11000",
+        "| SC1675 | 1200/1500 | 1340/1675 | 280 | KTA50-GS8 | 5200x2000x2400 | 11500",
+        "| SC2250 | 1600/2000 | 1800/2250 | 394 | QSK60-G4 | 6090x2300x2600 | 16500"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "30kVA Silent Generator China Manufacturers Suppliers Factory Exporter",
+      "header": [
+        "| Genset Model | Prime Power (kW/kVA) | Standby Power (kW/kVA) | Diesel Engine Model | Open Type Size L x W x H (mm) | Silent Type Siz e L x W x H (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| SC28 | 20/25 | 22/27.5 | 4B3.9-G1 | 1600x830x1300 | 2300x1030x1875 | 950",
+        "| SC33 | 24/30 | 26/32.5 | 4BT3.9-G1 | 1800x830x1300 | 2300x1030x1875 | 1000",
+        "| SC44 | 32/40 | 35/44 | 4BT3.9-G1 | 1800x830x1300 | 2300x1030x1875 | 1050",
+        "| SC56 | 40/50 | 44/56 | 4BTA3.9-G2 | 1850x850x1430 | 2300x1030x1875 | 1100",
+        "| SC69 | 50/62.5 | 55/69 | 4BTA3.9-G2 | 1900x850x1430 | 2300x1030x1875 | 1200",
+        "| SC83 | 60/75 | 66/82.5 | 4BTA3.9-G11 | 2150x850x1430 | 2300x1030x1875 | 1300",
+        "| SC110 | 80/100 | 88/110 | 6BT5.9-G2 | 2300x850x1430 | 2900x1100x1955 | 1400",
+        "| SC125 | 90/112.5 | 100/125 | 6BTA5.9-G2 | 2400x850x1430 | 2900x1100x1955 | 1550",
+        "| SC138 | 100/125 | 110/137.5 | 6TAA5.9-G2 | 2400x950x1500 | 2900x1100x1955 | 1700",
+        "| SC165 | 120/150 | 132/165 | 6BTAA5.9-G12 | 2500X950X1500 | 2900x1100x1955 | 1800",
+        "| SC206 | 150/187.5 | 165/206 | 6CTA8.3-G2 | 2650X1050X1500 | 3200x1120x2100 | 2100",
+        "| SC220 | 160/200 | 176/220 | 6CTAA8.3-G2 | 2800X1050X1500 | 3200x1120x2100 | 2200",
+        "| SC275 | 200/250 | 220/275 | 6LTAA8.9-G2 | 2800x1050x1600 | 3900x1150x2100 | 2500",
+        "| SC500E | 360/450 | 400/500 | QSZ13-G2 | 3100x1050x1600 | 4500x1300x2200 | 3000",
+        "| SC550E | 400/500 | 440/550 | QSZ13-G3 | 3200x1050x1600 | 4500x1300x2200 | 3200"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "40kVA Diesel Generator Powered by Cummins China Manufacturers Suppliers Factory Exporter",
+      "header": [
+        "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "rows": [
+        "| SC28 | 20/25 | 22/27.5 | 6 | 4B3.9-G1 | 1600x830x1300 | 950",
+        "| SC33 | 24/30 | 26/32.5 | 7.2 | 4BT3.9-G1 | 1800x830x1300 | 1000",
+        "| SC44 | 32/40 | 35/44 | 9.2 | 4BT3.9-G1 | 1800x830x1300 | 1050",
+        "| SC55 | 40/50 | 44/55 | 12 | 4BTA3.9-G2 | 1850x850x1430 | 1100",
+        "| SC69 | 50/62.5 | 55/69 | 15.6 | 4BTA3.9-G2 | 1900x850x1430 | 1200",
+        "| SC83 | 60/75 | 66/82.5 | 17.8 | 4BTA3.9-G11 | 2150x850x1430 | 1300",
+        "| SC110 | 80/100 | 88/110 | 23 | 6BT5.9-G2 | 2300x850x1430 | 1400",
+        "| SC125 | 90/112.5 | 100/125 | 26 | 6BTA5.9-G2 | 2400x850x1430 | 1550",
+        "| SC138 | 100/125 | 110/137.5 | 30 | 6BTAA5.9-G2 | 2400x950x1500 | 1700",
+        "| SC165 | 120/150 | 132/165 | 36 | 6BTAA5.9-G12 | 2500x950x1500 | 1800"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "2000kVA Diesel Generator Powered by Perkins China Manufacturers Suppliers Factory Exporter",
+      "header": [
+        "| Ge nset Mod el | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "rows": [
+        "| SP250 | 180/225 | 200/250 | 51 | 1506A-E88TAG2 | 2800x1050x1500 | 2500",
+        "| SP275 | 200/250 | 220/275 | 56 | 1506A-E88TAG3 | 2800x1050x1500 | 2600",
+        "| SP330 | 240/300 | 264/330 | 67.2 | 1506A-E88TAG5 | 2800x1050x1500 | 2800",
+        "| SP400 | 280/350 | 320/400 | 70 | 2206C-E13TAG2 | 3200x1200x1800 | 4200",
+        "| SP450 | 320/400 | 360/450 | 81.7 | 2206C-E13TAG3 | 3200x1200x1800 | 4350",
+        "| SP500 | 360/450 | 400/500 | 95.6 | 2506C-E15TAG1 | 3500x1300x1900 | 4800",
+        "| SP550 | 400/500 | 440/550 | 106 | 2506X-E15TAG2 | 3500x1300x1900 | 4900",
+        "| SP650 | 480/600 | 520/650 | 126.6 | 2806C-E18TAG1A | 3600x1450x2100 | 5400",
+        "| SP700 | 520/650 | 560/700 | 129 | 2806A-E18TAG2 | 3700x1450x2100 | 5400",
+        "| SP825 | 600/750 | 660/825 | 152 | 4006-23TAG2A | 4300x1540x2200 | 5600",
+        "| SP900 | 640/800 | 720/900 | 172 | 4006-23TAG3A | 4300x1540x2200 | 5800",
+        "| SP1100 | 800/1000 | 880/1100 | 215 | 4008TAG2A | 4500x1800x2300 | 7500",
+        "| SP1375 | 1000/1250 | 1100/1375 | 258 | 4012-46TWG2A | 4800x1870x2350 | 8800",
+        "| SP1650 | 1200/1500 | 1320/1650 | 299 | 4012-46TAG2A | 5230x1870x2510 | 9200",
+        "| SP1875 | 1350/1688 | 1500/1875 | 367 | 4012-46TAG3A | 5230x1870x2510 | 10400",
+        "| SP2200 | 1600/2000 | 1760/2200 | 434 | 4016TAG2A | 5500x2100x2700 | 11200",
+        "| SP2500 | 1800/2250 | 2000/2500 | 467 | 4016-61TRG3 | 6020x2300x3000 | 15500"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "1500kVA Diesel Generator Powered by Mitsubishi China Manufacturers Suppliers Factory Exporter",
+      "header": [
+        "| Gense t Model | Prime Power kW/kVA | Standby Power kW/kVA | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "rows": [
+        "| SL725 | 520/650 | 580/725 | S6R2-PTA-C | 3650x1830x1900 | 6300",
+        "| SL825 | 600/750 | 660/825 | S6R2-PTAA-C | 4060x1830x2100 | 6400",
+        "| SL1400 | 1000/1250 | 1120/1400 | S12R-PTA-C | 4950x2040x2350 | 9600",
+        "| SL1540 | 1120/1400 | 1232/1540 | S12R-PTA2-C | 4950x2040x2350 | 9700",
+        "| SL1675 | 1200/1500 | 1340/1675 | S12R-PTAA2-C | 4980x2190x3020 | 10500",
+        "| SL1920 | 1400/1750 | 1536/1920 | S16R-PTA-C | 5200x2250x2570 | 11700",
+        "| SL2100 | 1500/1875 | 1680/2100 | S16R-PTA2-C | 5200x2400x3200 | 14000",
+        "| SL2250 | 1640/2050 | 1800/2250 | S16R-PTAA2-C | 5800x2200x3400 | 15000",
+        "| SL2500 | 1800/2250 | 2000/2500 | S16R2-PTAW-C | 6200X2380X3370 | 17000"
+      ]
+    }
+  ]
 }

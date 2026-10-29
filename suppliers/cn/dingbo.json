@@ -208,7 +208,7 @@
     {
       "n": 101,
       "url": "https://www.dieselgeneratortech.com/volvo-generators/600kw-emergency-diesel-generator-750kva.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Prime Power: 600KW/750KVA"
@@ -218,7 +218,7 @@
     {
       "n": 102,
       "url": "https://www.dieselgeneratortech.com/volvo-generators/150kw-volvo-diesel-generator.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Genset Model: DB-329GF"
@@ -228,7 +228,7 @@
     {
       "n": 103,
       "url": "https://www.dieselgeneratortech.com/applications/Cummins-containerized-silent-generator-set.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Rated power: 700KW/875KVA"
@@ -238,7 +238,7 @@
     {
       "n": 104,
       "url": "https://www.dieselgeneratortech.com/cummins/32kw-40kva-diesel-generator-with-cummins-engine-4bt3.9-g1.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Output Power: 32KW/40KVA"
@@ -248,7 +248,7 @@
     {
       "n": 105,
       "url": "https://www.dieselgeneratortech.com/silent-genset/32kw-40kva-silent-diesel-generator.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
         "Model: DB-32GF"
@@ -257,83 +257,53 @@
     },
     {
       "n": 106,
-      "url": "https://www.dieselgeneratortech.com/cummins/",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.dieselgeneratortech.com/genset/",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| | Engine family | Listed set ratings | Go to the model"
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
       ],
       "file": "sources/dingbo/106.md"
     },
     {
       "n": 107,
-      "url": "https://www.dieselgeneratortech.com/cummins/heavy-duty-diesel-generator-set.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.dieselgeneratortech.com/cummins/",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "Prime Power: 2000KW/2500KVA"
+        "| | Engine family | Listed set ratings | Go to the model"
       ],
       "file": "sources/dingbo/107.md"
     },
     {
       "n": 108,
-      "url": "https://www.dieselgeneratortech.com/cummins/550kw-cummins-diesel-generator.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.dieselgeneratortech.com/cummins/heavy-duty-diesel-generator-set.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "Prime Power: 550KW/687.5KVA"
+        "Prime Power: 2000KW/2500KVA"
       ],
       "file": "sources/dingbo/108.md"
     },
     {
       "n": 109,
-      "url": "https://www.dieselgeneratortech.com/perkins/large-power-generator.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.dieselgeneratortech.com/cummins/550kw-cummins-diesel-generator.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "Prime Output: 1650KW/2062.5KVA"
+        "Prime Power: 550KW/687.5KVA"
       ],
       "file": "sources/dingbo/109.md"
     },
     {
       "n": 110,
-      "url": "https://www.dieselgeneratortech.com/perkins/1250kva-perkins-silent-generator-set.html",
-      "accessedAt": "2026-10-28",
+      "url": "https://www.dieselgeneratortech.com/perkins/",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "Prime Output: 1000KW/1250KVA"
+        "| | Dingbo listing | Perkins engine | What the code suggests | Ask before ordering"
       ],
       "file": "sources/dingbo/110.md"
-    },
-    {
-      "n": 111,
-      "url": "https://www.dieselgeneratortech.com/perkins/genset-perkins-500kva-generator-price.html",
-      "accessedAt": "2026-10-28",
-      "tier": "A",
-      "quote": [
-        "Prime Output: 400KW/500KVA"
-      ],
-      "file": "sources/dingbo/111.md"
-    },
-    {
-      "n": 112,
-      "url": "https://www.dieselgeneratortech.com/perkins/250kva-200kw-perkins-diesel-generator-set.html",
-      "accessedAt": "2026-10-28",
-      "tier": "A",
-      "quote": [
-        "Genset Model: DB-200GF"
-      ],
-      "file": "sources/dingbo/112.md"
-    },
-    {
-      "n": 113,
-      "url": "https://www.dieselgeneratortech.com/perkins/150kva-120kw-perkins-diesel-generator-set.html",
-      "accessedAt": "2026-10-28",
-      "tier": "A",
-      "quote": [
-        "Genset Model: DB-120GF"
-      ],
-      "file": "sources/dingbo/113.md"
     }
   ],
   "confidence": "medium",
@@ -464,11 +434,19 @@
         "| Generator Output | 32kW / 40kVA | Alternative engine or genset selection | Capacity matched to actual load; another engine or rating requires a separate configuration",
         "| Frequency | 50Hz | 60Hz | Compatible engine speed, alternator and output rating selected for the required frequency",
         "| Voltage | 400/230V | 380/220V, 415/240V, 440/254V | Other compatible voltage configurations according to the project electrical specification",
+        "| Model: | 4BT3.9-G1",
         "| Prime Power: | 36KW",
+        "| Standby Power: | 40KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 4 in line",
+        "| Displacement: | 3.9L",
+        "| Bore and Stroke: | 102*120（mm）",
+        "| Engine Oil Tank Capacity: | 8.5-9.5L",
         "| Alternator Capacity: | 40KVA",
         "| Alternator Efficiencies: | 95％",
         "| Protection Level: | IP22-IP23",
         "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
         "| Voltage Regulation, Stead State: | ≤±1%",
         "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
         "| Voltage Stable Time (Sudden Increase): | ≤6S",
@@ -503,6 +481,230 @@
     },
     {
       "n": 106,
+      "title": "Diesel Genset Generator Price | Starlight Generator",
+      "header": [
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| XG-22GF | 22/27.5 | 24/30 | 4B3.9-G2 | PI144F1 | 1750x760x1300 | 800",
+        "| XG-30GF | 30/37.5 | 33/41.25 | 4BT3.9-G2 | PI144J1 | 1750x760x1300 | 800",
+        "| XG-50GF | 50/62.5 | 55/68.75 | 4BTA3.9-G2 | UCI224E14 | 1860x760x1300 | 900",
+        "| XG-64GF | 64/80 | 70/87.5 | 4BTA3.9-G11 | UCI224G14 | 2150x830x1400 | 1100",
+        "| XG-75GF | 75/93.75 | 83/103.75 | 6BT5.9-G2 | UCI274C14 | 2150x830x1400 | 1100",
+        "| XG-90GF | 90/112.5 | 99/123.75 | 6BTA5.9-G2 | UCI274D14 | 2150x830x1400 | 1200",
+        "| XG-100GF | 100/125 | 110/137.5 | 6BTAA5.9-G2 | UCI274ES14 | 2300x830x1400 | 1300",
+        "| XG-120GF | 120/150 | 132/165 | 6BTAA5.9-G12 | UCI274F14 | 2300x830x1400 | 1300",
+        "| XG-150GF | 150/187.5 | 165/206.25 | 6CTA8.3-G2 | UCI274G14 | 2400x850x1500 | 1700",
+        "| XG- 160GF | 160/200 | 176/220 | 6CTAA8.3-G2 | UCI274H14 | 2510x850x1600 | 1800",
+        "| XG-200GF | 200/250 | 220/275 | 6LTAA8.9-G2 | HCI444C1 | 2550x960x1650 | 2000",
+        "| XG-300GF | 300/375 | 330/412.5 | 6ZTAA13-G3 | HCI444FS1 | 3270x1140x1800 | 3200",
+        "| XG-350GF | 350/437.5 | 385/481.25 | QSZ13-G2 | HCI544C1 | 3270x1140x1800 | 3200",
+        "| XG-400GF | 400/500 | 440/550 | QSZ13-G3 | HCI544C1 | 3270x1140x1800 | 3200"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Diesel Genset Generator Price | Starlight Generator",
+      "header": [
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| XG-200GF | 200/250 | 220/275 | NT855-GA | HCI444C1 | 3000x1040x1655 | 2800",
+        "| XG-200GF | 200/250 | 220/275 | MTA11-G2A | HCI444C1 | 2740x1010x1700 | 2800",
+        "| XG-220GF | 220/275 | 242/302.5 | NTA855-G1A | HCI444D1 | 3000x1040x1655 | 2600",
+        "| XG-250GF | 250/312.5 | 275/343.75 | NTA855-G1B | HCI444ES1 | 3000x1040x1655 | 3000",
+        "| XG-280GF | 280/350 | 308/385 | NTA855-G2A | HCI444E1 | 3000x1040x1655 | 3100",
+        "| XG-300GF | 300/375 | 330/412.5 | NTAA855-G7 | HCI444FS1 | 3270x1140x1800 | 3200",
+        "| XG-360GF | 360/450 | 396/495 | QSNT-G4 | HCI544C1 | 3400x1360x2070 | 4200",
+        "| XG-400GF | 400/500 | 440/550 | KTA19-G4/G3A | HCI544C1 | 3400x1360x2070 | 4200",
+        "| XG- 420GF | 420/525 | 462/577.5 | KTAA19-G5 | HCI544D1 | 3600x1550x2200 | 4500",
+        "| XG-500GF | 500/625 | 550/687.5 | KTA19-G8 | HCI544FS1 | 3600x1550x2200 | 4500",
+        "| XG-500GF | 500/625 | 550/687.5 | KTAA19-G6A | HCI544FS1 | 3600x1550x2200 | 4590",
+        "| XG-520GF | 520/650 | 572/715 | QSK19-G4 | HCI544F1 | 3600x1550x2200 | 4580",
+        "| XG-580GF | 580/725 | 638/797.5 | KTA38-GA | LVI634B1 | 4200x1820x2250 | 7600",
+        "| XG-600GF | 600/750 | 660/825 | KTA38-G2 | LVI634B1 | 4200x1820x2250 | 7600",
+        "| XG- 640GF | 640/800 | 704/774.4 | KTA38-G2B | LVI634C1 | 4200x1820x2250 | 7700",
+        "| XG-720GF | 720/900 | 792/990 | KTA38-G2A | LVI634D1 | 4200x1820x2250 | 7800",
+        "| XG-800GF | 800/1000 | 880/1100 | KTA38-G5 | LVI634E1 | 4400x1820x2250 | 8000",
+        "| XG-900GF | 900/1125 | 990/1237.5 | KTA38-G9 | LVI634F1 | 4400x2080x2350 | 9400",
+        "| XG-1000GF | 1000/1250 | 1100/1375 | KTA50-G3 | LVI634G1 | 4870x2100x2350 | 10000",
+        "| XG-1100GF | 1100/1375 | 1210/1512.5 | KTA50-G8 | PI734B1 | 5620x2280x2350 | 11000",
+        "| XG-1200GF | 1200/1500 | 1320/1650 | KTA50-GS8 | PI734C1 | 5620x2280x2350 | 11000",
+        "| XG-1500GF | 1500/1875 | 1650/2062.5 | KTA50-G15 | PI734E1 | 5620x2280x2350 | 11000"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Diesel Genset Generator Price | Starlight Generator",
+      "header": [
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| XG-68GF | 68/85 | 75/93.75 | TAD530GE | LSA44.3 S4 | 2200x720x1380 | 1050",
+        "| XG-80GF | 80/100 | 88/110 | TAD531GE | LSA44.3 S5 | 2200x720x1380 | 1200",
+        "| XG-100GF | 100/125 | 110/137.5 | TAD532GE | LSA44.3 M6 | 2300x720x1380 | 1250",
+        "| XG-120GF | 120/150 | 132/165 | TAD731GE | LSA44.3 L10 | 2600x1000x1650 | 1480",
+        "| XG-150GF | 150/187.5 | 165/206.25 | TAD732GE | LSA44.3 L13 | 2600x1000x1650 | 1500",
+        "| XG-160GF | 160/200 | 176/220 | TAD733GE | LSA44.3 L14 | 2650x1070x1650 | 1550",
+        "| XG-200GF | 200/250 | 220/275 | TAD734GE | LSA46.3 S5 | 2650x1070x1650 | 1650",
+        "| XG-250GF | 250/312.5 | 275/343.75 | TAD1341GE | LSA46.3 L10 | 3000x1100x1750 | 2300",
+        "| XG-250GF | 250/312.5 | 275/343.75 | TAD1351GE | LSA46.3 L10 | 3000x1100x1750 | 2300",
+        "| XG-300GF | 300/375 | 330/412.5 | TAD1343GE | LSA46.3 L11 | 3100x1200x1750 | 2900",
+        "| XG-300GF | 300/375 | 330/412.5 | TAD1352GE | LSA46.3 L11 | 3100x1200x1750 | 2900",
+        "| XG-350GF | 350/437.5 | 385/481.25 | TAD1344GE | LSA47.2 S5 | 3100x1200x1750 | 2950",
+        "| XG-350GF | 350/437.5 | 385/481.25 | TAD1355GE | LSA47.2 S5 | 3100x1200x1750 | 2950",
+        "| XG-360GF | 360/450 | 396/495 | TAD1345GE | LSA47.2 S5 | 3100x1200x1750 | 2950",
+        "| XG-380GF | 380/475 | 418/522.6 | TAD1650GE | LSA47.2 M7 | 3200x1160x2022 | 3000",
+        "| XG-400GF | 400/500 | 440/550 | TAD1641GE | LSA47.2 M7 | 3200x1160x2022 | 3100",
+        "| XG-400GF | 400/500 | 440/550 | TAD1651GE | LSA47.2 M7 | 3200x1160x2022 | 3100",
+        "| XG-500GF | 500/625 | 550/687.5 | TWD1652GE | LSA49.3 S4A | 3200x1160x2022 | 3200",
+        "| XG-500GF | 500/625 | 550/687.5 | TWD1643GE | LSA49.3 S4A | 3460x1400x2100 | 3300",
+        "| XG-520GF | 520/650 | 572/715 | TWD1653GE | LSA49.3 S4 | 3460x1400x2100 | 3400",
+        "| XG-560GF | 560/700 | 616/770 | TWD1645GE | LSA49.3 M6 | 3460x1400x2100 | 3600"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Diesel Genset Generator Price | Starlight Generator",
+      "header": [
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| XG-24GF | 24/30 | 26/32.5 | 1103A-33G | GM-24-4 | 1500x730x1150 | 800",
+        "| XG-30GF | 30/37.5 | 33/41.25 | 1103A-33TG1 | GM-30-4 | 1600x730x1250 | 950",
+        "| XG-48GF | 48/60 | 53/66.25 | 1103A-33TG2 | MP-48-4 | 1750x750x1250 | 1030",
+        "| XG-50GF | 50/62.5 | 55/68.75 | 1104A-44TG1 | MP-50-4 | 1950x750x1250 | 1050",
+        "| XG-64GF | 64/80 | 70/87.5 | 1104A-44TG2 | MP-64-4 | 1950x750x1250 | 1100",
+        "| XG-75GF | 75/93.75 | 83/103.75 | 1104C-44TAG1 | MP-75-4 | 1950x750x1250 | 1250",
+        "| XG-100GF | 100/125 | 110/137.5 | 1106A-70TG1 | MP-104-4 | 2400x850x1400 | 1700",
+        "| XG-120GF | 120/150 | 132/165 | 1106A-70TAG2 | MP-120-4 | 2400x850x1400 | 1780",
+        "| XG-140GF | 140/175 | 154/192.5 | 1106A-70TAG3 | MP-140-4A | 2400x850x1400 | 2200",
+        "| XG-150GF | 150/187.5 | 165/206.25 | 1106A-70TAG4 | MP-160-4A | 2400x850x1400 | 2250",
+        "| XG-180GF | 180/225 | 198/247.5 | 1506A-E88TAG2 | MP-180-4A | 2600x1050x1600 | 2380",
+        "| XG-200GF | 200/250 | 220/275 | 1506A-E88TAG3 | MP-200-4A | 2600x1050x1600 | 2400",
+        "| XG-240GF | 240/300 | 264/330 | 1506A-E88TAG5 | MP-240-4A | 2600x1050x1600 | 2500",
+        "| XG-280GF | 280/350 | 308/385 | 2206C-E13TAG2 | MP-280-4A | 3150x1200x2000 | 3450",
+        "| XG-300GF | 300/375 | 330/412.5 | 2206C-E13TAG3 | MP-300-4A | 3250x1200x2000 | 3500",
+        "| XG-350GF | 350/437.5 | 385/481.25 | 2506C-E15TAG1 | MP-360-4A | 3500x1200x2050 | 3600",
+        "| XG-400GF | 400/500 | 440/550 | 2506C-E15TAG2 | MP-400-4 | 3500x1200x2050 | 3700",
+        "| XG-480GF | 480/576 | 528/660 | 2806A-E18TAG1A | MP-480-4 | 3500x1300x2100 | 4000",
+        "| XG-500GF | 500/625 | 550/687.5 | 2806A-E18TAG2 | MP-500-4 | 3500x1300x2100 | 4600",
+        "| XG-600GF | 600/750 | 660/825 | 4006-23TAG2A | MX-600-4 | 4100x1750x2170 | 5300",
+        "| XG- 640GF | 640/800 | 704/880 | 4006-23TAG3A | MX-640-4 | 4100x1750x2170 | 5500",
+        "| XG-720GF | 720/900 | 792/990 | 4008TAG1A | MX-750-4 | 4700x2100x2250 | 7700",
+        "| XG-800GF | 800/1000 | 880/1100 | 4008TAG2A | MX-850-4 | 4700x2100x2250 | 7900",
+        "| XG-1000GF | 1000/1250 | 1100/1375 | 4012-46TWG2A | MX-1030-4 | 4900x1800x2500 | 10000",
+        "| XG-1100GF | 1100/1375 | 1210/1512.5 | 4012-46TWG3A | MX-1030-4 | 5000x2100x2550 | 10100",
+        "| XG-1200GF | 1200/1500 | 1320/1650 | 4012-46TAG2A | MX-1240-4 | 5000x2200x2550 | 10200",
+        "| XG-1500GF | 1500/1875 | 1650/2027 | 4016TAG1A | MX-1600-4 | 6850x2250x2850 | 13000",
+        "| XG-1600GF | 1600/2000 | 1760/2200 | 4016TAG2A | MX-1600-4 | 6850x2250x2850 | 13500",
+        "| XG-1800GF | 1800/2250 | 1980/2475 | 4016-61TRG3 | MX-1800-4 | 6850x2250x2850 | 15000"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Diesel Genset Generator Price | Starlight Generator",
+      "header": [
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| XG-50GF | 50/62.5 | 55/68.75 | SC4H95D2 | 1FC2 221-4 | 1900x750x1300 | 960",
+        "| XG-75GF | 75/93.75 | 83/103.75 | SC4H115D2 | 1FC2 223-4 | 1950x900x1300 | 1050",
+        "| XG-100GF | 100/125 | 110/137.5 | SC4H160D2 | 1FC2 281-4 | 2000x900x1300 | 1150",
+        "| XG-120GF | 120/150 | 132/165 | SC4H180D2 | 1FC2 281-4 | 2100x900x1300 | 1300",
+        "| XG-150GF | 150/187.5 | 165/206.25 | SC7H230D2 | 1FC2 282-4 | 2500x900x1630 | 1600",
+        "| XG-150GF | 150/187.5 | 165/206.25 | SC7H250D2 | 1FC2 282-4 | 2500x900x1630 | 1600",
+        "| XG-180GF | 180/225 | 198/247.5 | SC8D280D2 | 1FC2 283-4 | 2500x900x1630 | 1600",
+        "| XG-180GF | 180/225 | 198/247.5 | SC13G280D2 | 1FC2 283-4 | 2500x900x1630 | 1600",
+        "| XG-200GF | 200/250 | 220/275 | SC9D310D2 | 1FC2 283-4 | 3100x1020x1780 | 1950",
+        "| XG-200GF | 200/250 | 220/275 | SC9D355D2 | 1FC2 283-4 | 3100x1020x1780 | 1950",
+        "| XG-250GF | 250/312.5 | 275/343.75 | SC13G420D2 | 1FC2 284-4 | 3100x1020x1780 | 1950",
+        "| XG-300GF | 300/375 | 330/412.5 | SC12E500D2 | 1FC2 351-4 | 3100x1020x1780 | 2700",
+        "| XG-300GF | 300/375 | 330/412.5 | SC15G500D2 | 1FC2 351-4 | 3100x1020x1780 | 2700",
+        "| XG-350GF | 350/437.5 | 385/481.25 | SC25G610D2 | 1FC2 353-4 | 3300x1400x1780 | 2850",
+        "| XG-400GF | 400/500 | 440/550 | SC25G690D2 | 1FC2 354-4 | 3500x1400x1850 | 4000",
+        "| XG-500GF | 500/625 | 550/687.5 | SC27G755D2 | 1FC2 355-4 | 3400x1400x1850 | 4500",
+        "| XG-500GF | 500/625 | 550/687.5 | SC27G830D2 | 1FC2 355-4 | 4350x1750x2189 | 4460",
+        "| XG-550GF | 550/687.5 | 605/756.25 | SC27G900D2 | 1FC2 451-4 | 4350x1750x2180 | 4650",
+        "| XG-600GF | 600/750 | 660/825 | SC33W990D2 | 1FC2 451-4 | 4550x1750x2189 | 5860",
+        "| XG-800GF | 800/1000 | 8800/1100 | SC33W1150 | 1FC2 453-4 | 4850x1850x2200 | 6500"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Diesel Genset Generator Price | Starlight Generator",
+      "header": [
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| XG-40GF | 40/50 | 44/55 | YC4D75-D34 | TFW2-40-4A | 1850x760x1300 | 900",
+        "| XG-50GF | 50/62.5 | 55/68.75 | YC4D90-D34 | TFW2-50-4A | 1950x760x1300 | 900",
+        "| XG-60GF | 60/75 | 66/82.5 | YC4D105-D34 | TFW2-60-4A | 1950x760x1300 | 900",
+        "| XG-75GF | 75/93.75 | 83/103.75 | YC6B135Z-D20 | TFW2-75-4A | 2200x900x1400 | 1100",
+        "| XG-90GF | 90/112.5 | 99/123.75 | YC6B155L-D20 | TFW2-90-4A | 2350x950x1400 | 1200",
+        "| XG-100GF | 100/125 | 110/137.5 | YC6B180L-D20 | TFW2-100-4A | 2400x950x1400 | 1300",
+        "| XG-120GF | 120/150 | 132/165 | YC6B205L-D20 | TFW2-120-4A | 2400x950x1400 | 1700",
+        "| XG-120GF | 120/150 | 132/165 | YC6A205-D30 | TFW2-120-4A | 2400x950x1400 | 1700",
+        "| XG-140GF | 140/175 | 154/192.5 | YC6A230-D30 | TFW2-140-4A | 2500x1000x1500 | 1700",
+        "| XG-150GF | 150/187.5 | 165/206.25 | YC6A245-D30 | TFW2-150-4A | 2600x1000x1500 | 1700",
+        "| XG-200GF | 200/250 | 220/275 | YC6MK350-D30 | TFW2-200-4A | 2950x1200x1650 | 2600",
+        "| XG-250GF | 250/312.5 | 275/343.75 | YC6MK420-D30 | TFW2-250-4A | 3000x1200x1655 | 3000",
+        "| XG-280GF | 280/350 | 308/385 | YC6MK450-D30 | TFW2-280-4A | 3000x1200x1655 | 3000",
+        "| XG-300GF | 300/375 | 330/412.5 | YC6MJ480L-D20 | TFW2-300-4A | 3100x1200x1655 | 3100",
+        "| XG-320GF | 320/400 | 352/440 | YC6T550L-D21 | TFW2-320-4A | 3500x1300x1800 | 3200",
+        "| XG-350GF | 350/437.5 | 385/481.25 | YC6T600L-D22 | TFW2-350-4A | 3800x1350x2070 | 4200",
+        "| XG-400GF | 400/500 | 440/550 | YC6T660L-D20 | TFW2-400-4A | 3800x1350x2070 | 4200",
+        "| XG-450GF | 450/562.5 | 495/618.75 | YC6TD780-D31 | TFW2-450-4A | 4500x1750x1950 | 5100",
+        "| XG-500GF | 500/625 | 550/687.5 | YC6TD840-D31 | TFW2-500-4A | 4500x1750x1950 | 5600",
+        "| XG-550GF | 550/687.5 | 605/756.25 | YC6TD900-D31 | TFW2-550-4A | 4500x1750x1950 | 5600",
+        "| XG-600GF | 600/750 | 660/825 | YC6TD1000-D30 | TFW2-600-4A | 4500x1750x2100 | 6200",
+        "| XG-650GF | 650/812.5 | 715/893.75 | YC6C1070-D31 | TFW2-650-4A | 4500x1750x2100 | 7000",
+        "| XG-750GF | 750/937.5 | 825/1031.25 | YC6C1220-D31 | TFW2-750-4A | 4500x1750x2100 | 7200",
+        "| XG-800GF | 800/1000 | 880/1100 | YC6C1320-D31 | TFW2-800-4A | 4800x1800x2500 | 7500",
+        "| XG-1000GF | 1000/1250 | 1100/1375 | YC12VC1680-D31 | TFW2-1000-4A | 5400x2350x2700 | 15400",
+        "| XG-1200GF | 1200/1500 | 1320/1650 | YC12VC2070-D31 | TFW2-1200-4A | 5400x2350x2700 | 16200",
+        "| XG-1500GF | 1500/1875 | 1650/2062.5 | YC12VC2510-D31 | TFW2-1500-4A | 5900x2650x2950 | 17900",
+        "| XG-1800GF | 1800/2250 | 1980/2475 | YC16VC3000-D31 | TFW2-1800-4A | 7400x2800x3250 | 22600",
+        "| XG-2000GF | 2000/2500 | 2200/2750 | YC16VC3300-D31 | TFW2-2000-4A | 7600x2800x3250 | 23800",
+        "| XG-2200GF | 2200/2750 | 2420/3025 | YC16VC3600-D31 | TFW2-2200-4A | 7800x2800x3250 | 24500"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Diesel Genset Generator Price | Starlight Generator",
+      "header": [
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| XG-200GF | 200/250 | 220/275 | BF6M1015-G1A | TFW2-200-4 | 2720x1370x2130 | 2350",
+        "| XG-250GF | 250/312.5 | 275/343.75 | BF6M1015C-G2A | TFW2-250-4 | 3000x1690x1950 | 2450",
+        "| XG-300GF | 300/375 | 330/412.5 | BF6M1015C-G3A | TFW2-300-4 | 3200x1690x1950 | 2850",
+        "| XG-350GF | 350/437.5 | 385/481.25 | BF8M1015C-G1A | TFW2-350-4 | 3200x1690x1950 | 3500",
+        "| XG-400GF | 400/500 | 440/550 | BF8M1015C-G2 | TFW2-400-4 | 3200x1690x2130 | 3700",
+        "| XG-400GF | 400/500 | 440/550 | BF8M1015CP-G1A | TFW2-400-4 | 3200x1690x2130 | 3720",
+        "| XG-450GF | 450/562.5 | 495/618.75 | BF8M1015CP-G2 | TFW2-450-4 | 3400x1690x2130 | 3800",
+        "| XG-500GF | 500/625 | 550/687.5 | BF8M1015CP-G3/4/5 | TFW2-500-4 | 3400x1690x2130 | 4000",
+        "| XG-600GF | 600/750 | 660/825 | HC12V132ZL-LAG1/2A | TFW2-600-4 | 3600x1750x2200 | 4500"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Diesel Genset Generator Price | Starlight Generator",
+      "header": [
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+      ],
+      "rows": [
+        "| XG-1400GF | 1400/1750 | 1540/1925 | 12V4000G23 | TFW2-1400-4 | 6150x2400x2800 | 13000",
+        "| XG-1500GF | 1500/1875 | 1650/2062.5 | 12V4000G63 | TFW2-1500-4 | 6150x2400x2800 | 14000",
+        "| XG-1800GF | 1800/2250 | 1980/2475 | 16V4000G23 | TFW2-1800-4 | 6500x2700x2900 | 17000",
+        "| XG-1900GF | 1900/2375 | 2090/2612.5 | 16V4000G63 | TFW2-1900-4 | 6550x2700x2950 | 17500",
+        "| XG-2200GF | 2200/2750 | 2420/3025 | 20V4000G23 | TFW2-2200-4 | 7350x2700x3000 | 18000",
+        "| XG-2400GF | 2400/3000 | 2640/3300 | 20V4000G63 | TFW2-2400-4 | 7400x3100x3300 | 18500",
+        "| XG-2500GF | 2500/3125 | 2750/3437.5 | 20V4000G63L | TFW2-2500-4 | 7400x3100x3320 | 19000"
+      ]
+    },
+    {
+      "n": 107,
       "title": "Cummins Generators | 25KVA - 3000KVA Cummings Generator",
       "header": [
         "| | Engine family | Listed set ratings | Go to the model"
@@ -512,11 +714,12 @@
         "| QSB3.9 (G35, G37, G39) | 50 kW, 75 kW, 90 kW | 50 kW · 75 kW · 90 kW",
         "| QSB5.9 (G30, G31, G33) | 100 kW, 120 kW, 145 kW | 100 kW · 120 kW · 145 kW",
         "| QSL8.9 (G34, G33, G30) | 220 kW, 250 kW, 270 kW | 220 kW · 250 kW · 270 kW",
-        "| QSZ13-G7 (13 L) | 320 kW / 400 kVA | 400 kVA"
+        "| QSZ13-G7 (13 L) | 320 kW / 400 kVA | 400 kVA",
+        "| Larger sets | 550 kW up to 2000 kW | 550 kW · 1000 kW · 1200 kW · 2000 kW"
       ]
     },
     {
-      "n": 107,
+      "n": 108,
       "title": "2000 KW Cummins Generator | 2750 KVA Prime Generator",
       "header": [],
       "rows": [
@@ -548,7 +751,7 @@
       ]
     },
     {
-      "n": 108,
+      "n": 109,
       "title": "550KW Cummins Diesel Generator Set | Emergency Generator",
       "header": [],
       "rows": [
@@ -579,159 +782,15 @@
       ]
     },
     {
-      "n": 109,
-      "title": "Perkins 1650kw Large Power Diesel Generator for Sale",
-      "header": [],
-      "rows": [
-        "Prime Output: 1650KW/2062.5KVA",
-        "Rated Current: 2700(A)",
-        "Rated Frequency: 50(Hz)",
-        "Power Factor: 0.8(Lag)",
-        "Rated Voltage: 400/230(V)",
-        "| Model: | 4016TAG2A",
-        "| Standby/prime Power: | 1942.6KW/1766KW",
-        "| Rated Speed: | 1500（r/min）",
-        "| Cylinder Arrangement: | 16in line",
-        "| Displacement: | 61.12L",
-        "| Bore and Stroke: | 160*190（mm）",
-        "| Alternator Capacity: | 1875KVA",
-        "| Alternator Efficiencies: | 95％",
-        "| Protection Level: | IP22-IP23",
-        "| Voltage Regulation, Steady State: | ≤±1%",
-        "| Voltage Regulation: | ≥±5%",
-        "| Voltage Regulation, Stead State: | ≤±1%",
-        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
-        "| Voltage Stable Time (Sudden Increase): | ≤6S",
-        "| Frequency Regulation, Stead State: | ≤5%",
-        "| Frequency Waving: | ≤1.5%",
-        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
-        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
-      ]
-    },
-    {
       "n": 110,
-      "title": "1000KW Perkins Diesel Generator | Worldwide Shipment",
-      "header": [],
+      "title": "Perkins Diesel Generators For Sale | Perkins Generator | Buy from Dingbo",
+      "header": [
+        "| | Dingbo listing | Perkins engine | What the code suggests | Ask before ordering"
+      ],
       "rows": [
-        "Prime Output: 1000KW/1250KVA",
-        "Rated Current: 1800(A)",
-        "Rated Frequency: 50(Hz)",
-        "Power Factor: 0.8(Lag)",
-        "Rated Voltage: 400/230(V)",
-        "| Model: | 4012-46TWG2A",
-        "| Standby/Prime Power: | 1224KW/1113KW",
-        "| Rated Speed: | 1500（r/min）",
-        "| Cylinder Arrangement: | 12in line",
-        "| Displacement: | 45.84L",
-        "| Bore and Stroke: | 160*190（mm）",
-        "| Alternator Capacity: | 1250KVA",
-        "| Alternator Efficiencies: | 95％",
-        "| Protection Level: | IP22-IP23",
-        "| Voltage Regulation, Steady State: | ≤±1%",
-        "| Voltage Regulation: | ≥±5%",
-        "| Voltage Regulation, Stead State: | ≤±1%",
-        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
-        "| Voltage Stable Time (Sudden Increase): | ≤6S",
-        "| Frequency Regulation, Stead State: | ≤5%",
-        "| Frequency Waving: | ≤1.5%",
-        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
-        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
-      ]
-    },
-    {
-      "n": 111,
-      "title": "Genset Perkins 500 Kva - Perkins Diesel Generator Set Manufacturer",
-      "header": [],
-      "rows": [
-        "Prime Output: 400KW/500KVA",
-        "Rated Current: 655(A)",
-        "Rated Frequency: 50(Hz)",
-        "Power Factor: 0.8(Lag)",
-        "Rated Voltage: 400/230(V)",
-        "| Model: | 2506C-E15TAG1",
-        "| Standby/Prime Power: | 436KW/396KW",
-        "| Rated Speed: | 1500（r/min）",
-        "| Cylinder Arrangement: | 6 in line",
-        "| Displacement: | 15L",
-        "| Bore and Stroke: | 137*171（mm）",
-        "| Alternator Capacity: | 500KVA",
-        "| Alternator Efficiencies: | 95％",
-        "| Protection Level: | IP22-IP23",
-        "| Voltage Regulation, Steady State: | ≤±1%",
-        "| Voltage Regulation: | ≥±5%",
-        "| Voltage Regulation, Stead State: | ≤±1%",
-        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
-        "| Voltage Stable Time (Sudden Increase): | ≤6S",
-        "| Frequency Regulation, Stead State: | ≤5%",
-        "| Frequency Waving: | ≤1.5%",
-        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
-        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
-      ]
-    },
-    {
-      "n": 112,
-      "title": "250kVA/200kW Perkins Diesel Generator Set Manufacturer China",
-      "header": [],
-      "rows": [
-        "Genset Model: DB-200GF",
-        "Rated Power: 200kW/250kVA",
-        "Rated Current: 360A",
-        "Rated Frequency: 50(Hz)",
-        "Power Factor: 0.8(Lag)",
-        "Phase & Wire: 3 phase 4 wire",
-        "Rated Voltage: 400/230V(customizable)",
-        "| Model: | 1206A-E70TTAG3",
-        "| Prime Power: | 217kW",
-        "| Standby Power: | 238kW",
-        "| Rated Speed: | 1500（r/min）",
-        "| Cylinder Arrangement: | 6 vertical in-line",
-        "| Displacement: | 7.01L",
-        "| Bore and Stroke: | 105*135（mm）",
-        "| Alternator Capacity: | 200KW/250kVA",
-        "| Alternator Efficiencies: | 95％",
-        "| Protection Level: | IP22-IP23",
-        "| Voltage Regulation, Steady State: | ≤±1%",
-        "| Voltage Regulation: | ≥±5%",
-        "| Voltage Regulation, Stead State: | ≤±1%",
-        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
-        "| Voltage Stable Time (Sudden Increase): | ≤6S",
-        "| Frequency Regulation, Stead State: | ≤5%",
-        "| Frequency Waving: | ≤1.5%",
-        "| Frequency Recovery Time (100% Sudden Reduce): | ≤5S",
-        "| Frequency Recovery Time (Sudden Increase): | ≤5S"
-      ]
-    },
-    {
-      "n": 113,
-      "title": "150kVA/120kW Perkins Diesel Generator Set Wholesaler",
-      "header": [],
-      "rows": [
-        "Genset Model: DB-120GF",
-        "Rated Power: 120kW/150kVA",
-        "Rated Current: 216A",
-        "Rated Frequency: 50(Hz)",
-        "Power Factor: 0.8(Lag)",
-        "Phase & Wire: 3 phase 4 wire",
-        "Rated Voltage: 400/230V(customizable)",
-        "| Model: | 1106A-70TAG2",
-        "| Prime Power: | 131kW",
-        "| Standby Power: | 144kW",
-        "| Rated Speed: | 1500（r/min）",
-        "| Cylinder Arrangement: | 6 in-line",
-        "| Displacement: | 7.01L",
-        "| Bore and Stroke: | 105*135（mm）",
-        "| Alternator Capacity: | 120KW/150kVA",
-        "| Alternator Efficiencies: | 95％",
-        "| Protection Level: | IP22-IP23",
-        "| Voltage Regulation, Steady State: | ≤±1%",
-        "| Voltage Regulation: | ≥±5%",
-        "| Voltage Regulation, Stead State: | ≤±1%",
-        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
-        "| Voltage Stable Time (Sudden Increase): | ≤6S",
-        "| Frequency Regulation, Stead State: | ≤5%",
-        "| Frequency Waving: | ≤1.5%",
-        "| Frequency Recovery Time (100% Sudden Reduce): | ≤5S",
-        "| Frequency Recovery Time (Sudden Increase): | ≤5S"
+        "| 30 kVA / 24 kW | 1103A-33G | Three-cylinder, 3.3 L, no turbo | Motor starting margin, available floor space",
+        "| 250 kVA / 200 kW | 1206A-E70TTAG3 | Six-cylinder, 7.0 L, twin-turbo | Ambient temperature and altitude derating",
+        "| 400 kW / 500 kVA | 2506C-E15TAG1 | Six-cylinder, 15 L, turbocharged | Whether the set label is a prime or standby figure, and the engine's own rating at the same duty"
       ]
     }
   ]

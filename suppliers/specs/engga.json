@@ -475,7 +475,7 @@
   "title": "Z SERIES MEDIUM & LOW SPPED GENERATORS-Engga (Yangjiang) Electric Co., Ltd.",
   "header": [],
   "rows": [
-   "Voltage range: 400V–13800V",
+   "| Voltage range: 400V–13800V | Power factor COSΦ = 0.8 (lagging)",
    "Model: TZ400XSEG090-001",
    "Rated Power (kW): 90",
    "Voltage (V DC): 544",

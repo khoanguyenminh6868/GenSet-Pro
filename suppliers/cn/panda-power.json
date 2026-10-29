@@ -105,9 +105,335 @@
         "Open generator 55KW/69KVA"
       ],
       "file": "sources/panda-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.jspandapower.com/hot-sale-1-2000kva-power-supply-vehicle-diesel-generator-genset-cummins-perkins-engine-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Displacement | 2,54l"
+      ],
+      "file": "sources/panda-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.jspandapower.com/professional-220kw275kva-silent-soundproof-diesel-generator-container-power-low-noise-quiet-genset-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Output Type: AC 3/Three Phase Output Type"
+      ],
+      "file": "sources/panda-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.jspandapower.com/90kw113kva-mobile-trailer-diesel-generator-silent-soundproof-electric-start-dynamo-generator-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Output Type: AC 3/Three Phase Output Type"
+      ],
+      "file": "sources/panda-power/103.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.jspandapower.com/open-type-standby-generador-55kw69kva-power-generadores-electrics-diesel-propane-generator-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Output Type: AC 3/Three Phase Output Type"
+      ],
+      "file": "sources/panda-power/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.jspandapower.com/factory-price-open-type-20kw25kva-power-generator-diesel-3-phase-stirling-engine-generators-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Rated Voltage: 400/230V"
+      ],
+      "file": "sources/panda-power/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.jspandapower.com/factory-price-90kw113kva-standby-silent-soundproof-diesel-generators-with-cummins-engine-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Output Type: AC 3/Three Phase Output Type"
+      ],
+      "file": "sources/panda-power/108.md"
+    },
+    {
+      "n": 123,
+      "url": "https://www.jspandapower.com/40kw50kva-panda-diesel-generator-electric-groupe-electrogene-diesel-genset-power-by-brand-engine-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Standby Power: 22kVA @ 230v | 50Hz | 1500rpm"
+      ],
+      "file": "sources/panda-power/123.md"
+    },
+    {
+      "n": 138,
+      "url": "https://www.jspandapower.com/heavy-duty-400kw500kva-container-type-silent-diesel-generator-set-electric-super-silent-genset-product/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Rated Voltage: 400/230V"
+      ],
+      "file": "sources/panda-power/138.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "OEM 1-2000KVA Power Hot Sale Supply Vehicle Diesel Generator Genset Cummins Perkins Weichai Yuchai Engine Manufacturers and Suppliers | Panda Power",
+      "header": [],
+      "rows": [
+        "| Displacement | 2,54l",
+        "| Cylinder bore/Stroke | 90mm x 100mm",
+        "| Cylinders | Four (4) cylinders, water cooled",
+        "| Engine output power at 1500rpm | 21kW",
+        "| Fuel tank capacity | 200l",
+        "| Fuel consumption 100% | 6.3 l/h",
+        "| Fuel consumption 75% | 4.7 l/h",
+        "| Fuel consumption 50% | 3.2 l/h",
+        "| Fuel consumption 25% | 1.6 l/h",
+        "| Engine speed | 1500rpm",
+        "| Standby power output | 22kVA",
+        "| Prime power output | 20kVA",
+        "| Voltage regulation | ± 1%",
+        "| Voltage | 230v",
+        "| Rated frequency | 50Hz",
+        "| Voltage regulate change | ≤ ±10% UN",
+        "| Phase change rate | ± 1%",
+        "| Power factor | 1φ",
+        "| Protection class | IP23 Standard | Screen protected | Drip-proof"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "OEM Professional 220KW/275KVA silent soundproof diesel generator container power low noise quiet genset Manufacturers and Suppliers | Panda Power",
+      "header": [],
+      "rows": [
+        "Output Type: AC 3/Three Phase Output Type",
+        "| Model Number | XM-P792",
+        "| Speed | 1500",
+        "| Power factor | 0.8",
+        "| Displacement | 2,54l",
+        "| Cylinder bore/Stroke | 90mm x 100mm",
+        "| Cylinders | Four (4) cylinders, water cooled",
+        "| Engine output power at 1500rpm | 21kW",
+        "| Fuel tank capacity | 200l",
+        "| Fuel consumption 100% | 6.3 l/h",
+        "| Fuel consumption 75% | 4.7 l/h",
+        "| Fuel consumption 50% | 3.2 l/h",
+        "| Fuel consumption 25% | 1.6 l/h",
+        "| Engine speed | 1500rpm",
+        "| Standby power output | 22kVA",
+        "| Prime power output | 20kVA",
+        "| Voltage regulation | ± 1%",
+        "| Voltage | 230v",
+        "| Rated frequency | 50Hz",
+        "| Voltage regulate change | ≤ ±10% UN",
+        "| Phase change rate | ± 1%",
+        "| Power factor | 1φ",
+        "| Protection class | IP23 Standard | Screen protected | Drip-proof"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "OEM 90KW/113KVA mobile trailer diesel generator silent soundproof electric start dynamo generator Manufacturers and Suppliers | Panda Power",
+      "header": [],
+      "rows": [
+        "Output Type: AC 3/Three Phase Output Type",
+        "| Rated Voltage | 400/230V",
+        "| Rated Current | 217A",
+        "| Frequency | 50/60HZ",
+        "| Model Number | XM-M-KP-120",
+        "| Speed | 1500/1800rpm",
+        "| Displacement | 2,54l",
+        "| Cylinder bore/Stroke | 90mm x 100mm",
+        "| Cylinders | Four (4) cylinders, water cooled",
+        "| Engine output power at 1500rpm | 21kW",
+        "| Fuel tank capacity | 200l",
+        "| Fuel consumption 100% | 6.3 l/h",
+        "| Fuel consumption 75% | 4.7 l/h",
+        "| Fuel consumption 50% | 3.2 l/h",
+        "| Fuel consumption 25% | 1.6 l/h",
+        "| Engine speed | 1500rpm",
+        "| Standby power output | 22kVA",
+        "| Prime power output | 20kVA",
+        "| Voltage regulation | ± 1%",
+        "| Voltage | 230v",
+        "| Rated frequency | 50Hz",
+        "| Voltage regulate change | ≤ ±10% UN",
+        "| Phase change rate | ± 1%",
+        "| Power factor | 1φ",
+        "| Protection class | IP23 Standard | Screen protected | Drip-proof"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "OEM Open generator 55KW/69KVA power standby generator set electrical diesel propane generators Manufacturers and Suppliers | Panda Power",
+      "header": [],
+      "rows": [
+        "Output Type: AC 3/Three Phase Output Type",
+        "| Rated Voltage | 400/230V",
+        "| Rated Current | 162A",
+        "| Frequency | 50/60HZ",
+        "| Model Number | XM-SC4H160D2",
+        "| Speed | 1500",
+        "| Power factor | 0.8",
+        "| Emission standards | TIER 2",
+        "| Displacement | 2,54l",
+        "| Cylinder bore/Stroke | 90mm x 100mm",
+        "| Cylinders | Four (4) cylinders, water cooled",
+        "| Engine output power at 1500rpm | 21kW",
+        "| Fuel tank capacity | 200l",
+        "| Fuel consumption 100% | 6.3 l/h",
+        "| Fuel consumption 75% | 4.7 l/h",
+        "| Fuel consumption 50% | 3.2 l/h",
+        "| Fuel consumption 25% | 1.6 l/h",
+        "| Engine speed | 1500rpm",
+        "| Standby power output | 22kVA",
+        "| Prime power output | 20kVA",
+        "| Voltage regulation | ± 1%",
+        "| Voltage | 230v",
+        "| Rated frequency | 50Hz",
+        "| Voltage regulate change | ≤ ±10% UN",
+        "| Phase change rate | ± 1%",
+        "| Power factor | 1φ",
+        "| Protection class | IP23 Standard | Screen protected | Drip-proof"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "OEM Factory price open type 20KW/25KVA power generator diesel 3 phase stirling engine generators Manufacturers and Suppliers | Panda Power",
+      "header": [],
+      "rows": [
+        "Rated Voltage: 400/230V",
+        "Rated Current: 217A",
+        "Frequency: 50/60HZ",
+        "Output Type: AC 3/Three Phase Output Type",
+        "| Model Number | XM-DF-120",
+        "| Speed | 1500/1800rpm",
+        "| Displacement | 2,54l",
+        "| Cylinder bore/Stroke | 90mm x 100mm",
+        "| Cylinders | Four (4) cylinders, water cooled",
+        "| Engine output power at 1500rpm | 21kW",
+        "| Fuel tank capacity | 200l",
+        "| Fuel consumption 100% | 6.3 l/h",
+        "| Fuel consumption 75% | 4.7 l/h",
+        "| Fuel consumption 50% | 3.2 l/h",
+        "| Fuel consumption 25% | 1.6 l/h",
+        "| Engine speed | 1500rpm",
+        "| Standby power output | 22kVA",
+        "| Prime power output | 20kVA",
+        "| Voltage regulation | ± 1%",
+        "| Voltage | 230v",
+        "| Rated frequency | 50Hz",
+        "| Voltage regulate change | ≤ ±10% UN",
+        "| Phase change rate | ± 1%",
+        "| Power factor | 1φ",
+        "| Protection class | IP23 Standard | Screen protected | Drip-proof"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "OEM Factory price 90KW/113KVA standby silent soundproof diesel generators with brand engine Manufacturers and Suppliers | Panda Power",
+      "header": [],
+      "rows": [
+        "Output Type: AC 3/Three Phase Output Type",
+        "| Displacement | 2,54l",
+        "| Cylinder bore/Stroke | 90mm x 100mm",
+        "| Cylinders | Four (4) cylinders, water cooled",
+        "| Engine output power at 1500rpm | 21kW",
+        "| Fuel tank capacity | 200l",
+        "| Fuel consumption 100% | 6.3 l/h",
+        "| Fuel consumption 75% | 4.7 l/h",
+        "| Fuel consumption 50% | 3.2 l/h",
+        "| Fuel consumption 25% | 1.6 l/h",
+        "| Engine speed | 1500rpm",
+        "| Standby power output | 22kVA",
+        "| Prime power output | 20kVA",
+        "| Voltage regulation | ± 1%",
+        "| Voltage | 230v",
+        "| Rated frequency | 50Hz",
+        "| Voltage regulate change | ≤ ±10% UN",
+        "| Phase change rate | ± 1%",
+        "| Power factor | 1φ",
+        "| Protection class | IP23 Standard | Screen protected | Drip-proof"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "OEM 40KW/50KVA PANDA diesel generator electric groupe electrogene diesel genset power by brand engine Manufacturers and Suppliers | Panda Power",
+      "header": [],
+      "rows": [
+        "Standby Power: 22kVA @ 230v | 50Hz | 1500rpm",
+        "Prime power (PRP): 20kVA",
+        "Dimensions (LxWxH): 2100mm x 920mm x 1050mm",
+        "| Dimensions Length x Width x Height | 2100mm x 920mm x 1050mm",
+        "| Displacement | 2,54l",
+        "| Cylinder bore/Stroke | 90mm x 100mm",
+        "| Cylinders | Four (4) cylinders, water cooled",
+        "| Engine output power at 1500rpm | 21kW",
+        "| Fuel tank capacity | 200l",
+        "| Fuel consumption 100% | 6.3 l/h",
+        "| Fuel consumption 75% | 4.7 l/h",
+        "| Fuel consumption 50% | 3.2 l/h",
+        "| Fuel consumption 25% | 1.6 l/h",
+        "| Engine speed | 1500rpm",
+        "| Standby power output | 22kVA",
+        "| Prime power output | 20kVA",
+        "| Voltage regulation | ± 1%",
+        "| Voltage | 230v",
+        "| Rated frequency | 50Hz",
+        "| Voltage regulate change | ≤ ±10% UN",
+        "| Phase change rate | ± 1%",
+        "| Power factor | 1φ",
+        "| Protection class | IP23 Standard | Screen protected | Drip-proof"
+      ]
+    },
+    {
+      "n": 138,
+      "title": "OEM 200-3000KVA power heavy duty container type silent diesel generator set electric super silent genset Manufacturers and Suppliers | Panda Power",
+      "header": [],
+      "rows": [
+        "Rated Voltage: 400/230V",
+        "Rated Current: 1296A",
+        "Frequency: 50/60HZ",
+        "Output Type: AC 3/Three Phase Output Type",
+        "| Model Number | XM-P792",
+        "| Speed | 1500",
+        "| Power factor | 0.8",
+        "| Displacement | 2,54l",
+        "| Cylinder bore/Stroke | 90mm x 100mm",
+        "| Cylinders | Four (4) cylinders, water cooled",
+        "| Engine output power at 1500rpm | 21kW",
+        "| Fuel tank capacity | 200l",
+        "| Fuel consumption 100% | 6.3 l/h",
+        "| Fuel consumption 75% | 4.7 l/h",
+        "| Fuel consumption 50% | 3.2 l/h",
+        "| Fuel consumption 25% | 1.6 l/h",
+        "| Engine speed | 1500rpm",
+        "| Standby power output | 22kVA",
+        "| Prime power output | 20kVA",
+        "| Voltage regulation | ± 1%",
+        "| Voltage | 230v",
+        "| Rated frequency | 50Hz",
+        "| Voltage regulate change | ≤ ±10% UN",
+        "| Phase change rate | ± 1%",
+        "| Power factor | 1φ",
+        "| Protection class | IP23 Standard | Screen protected | Drip-proof"
+      ]
+    }
+  ]
 }

@@ -294,53 +294,313 @@
     },
     {
       "n": 101,
-      "url": "http://www.acepow.net/sale-13504364-r6105zlds-100kva-400-volt-diesel-engine-generator-set.html",
-      "accessedAt": "2026-10-28",
+      "url": "http://www.acepow.net/sale-13594537-four-stroke-20kva-15kw-electric-start-silent-generator.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Generating Set Model | Prime | Standby"
+        "| Genset Model | Kw | Kva | Alternator"
       ],
       "file": "sources/acepow-fuan/101.md"
     },
     {
       "n": 102,
-      "url": "http://www.acepow.net/sale-13566853-saso-three-phase-10kva-mobile-genset-trailer.html",
-      "accessedAt": "2026-10-28",
+      "url": "http://www.acepow.net/sale-13520999-1800-rpm-230v-12kw-small-silent-diesel-generator-silent-generator-for-house.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Model | Rated Output | Standby Output | Alternator | Model"
+        "| Main data : | | |"
       ],
       "file": "sources/acepow-fuan/102.md"
     },
     {
       "n": 103,
-      "url": "http://www.acepow.net/sale-13566802-4-wheels-94kva-75kw-mobile-genset-trailer-mobile-diesel-generators.html",
-      "accessedAt": "2026-10-28",
+      "url": "http://www.acepow.net/sale-13504694-230v-250-kva-200kw-diesel-standby-generators-for-home-use.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Model | 50Hz,1500rpm | | 3Phases/50Hz/400V/PF=0.8 | Engine"
+        "| Materials: | Steel/ Copper | Type: | Standby Diesel Generator"
       ],
       "file": "sources/acepow-fuan/103.md"
     },
     {
       "n": 104,
-      "url": "http://www.acepow.net/sale-13594800-silent-1500-rpm-standby-diesel-generator-10kw-silent-diesel-generator.html",
-      "accessedAt": "2026-10-28",
+      "url": "http://www.acepow.net/sale-13598301-250kw-313kva-20a-electric-start-diesel-generator.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Model | 50Hz,1500rpm | | Engine |"
+        "| Model | 50Hz | | Engine | Engine | Connector | Emission | Governor"
       ],
       "file": "sources/acepow-fuan/104.md"
     },
     {
       "n": 105,
-      "url": "http://www.acepow.net/sale-13576022-industrial-750kva-three-phase-380v-containerized-genset.html",
-      "accessedAt": "2026-10-28",
+      "url": "http://www.acepow.net/sale-13506580-200kva-160kw-residential-standby-diesel-generator-fawde-diesel-generator.html",
+      "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Genset model | Output | Output | Engine | Engine (kw) | Alternator Model"
+        "| Generating Set Model | Prime | Standby"
       ],
       "file": "sources/acepow-fuan/105.md"
+    },
+    {
+      "n": 106,
+      "url": "http://www.acepow.net/sale-13504347-30kw-canopy-diesel-generator-water-cooled-diesel-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Generating Set Model | Prime | Standby"
+      ],
+      "file": "sources/acepow-fuan/106.md"
+    },
+    {
+      "n": 107,
+      "url": "http://www.acepow.net/sale-13506821-single-phase-100kva-80kw-diesel-home-standby-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Generating Set Model | Prime | Standby"
+      ],
+      "file": "sources/acepow-fuan/107.md"
+    },
+    {
+      "n": 108,
+      "url": "http://www.acepow.net/sale-13596712-1500rpm-32kw-40kva-canopy-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | JE493DB-04 | JE493DB-02 | JE493ZDB-04 | JE493ZDB-02"
+      ],
+      "file": "sources/acepow-fuan/108.md"
+    },
+    {
+      "n": 109,
+      "url": "http://www.acepow.net/sale-13596302-3-phase-40kva-230v-canopy-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| 3Phases/50Hz/400V/PF=0.8 | | Brand | Engine"
+      ],
+      "file": "sources/acepow-fuan/109.md"
+    },
+    {
+      "n": 110,
+      "url": "http://www.acepow.net/sale-13504364-r6105zlds-100kva-400-volt-diesel-engine-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Frequency: | 50HZ | Speed: | 1500RMP"
+      ],
+      "file": "sources/acepow-fuan/110.md"
+    },
+    {
+      "n": 111,
+      "url": "http://www.acepow.net/sale-13596801-four-stroke-30kva-24kw-canopy-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | JE493DB-04 | JE493DB-02 | JE493ZDB-04"
+      ],
+      "file": "sources/acepow-fuan/111.md"
+    },
+    {
+      "n": 112,
+      "url": "http://www.acepow.net/sale-13520933-25kva-400v-canopy-diesel-generator-electric-start-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model Number: | APN-25"
+      ],
+      "file": "sources/acepow-fuan/112.md"
+    },
+    {
+      "n": 113,
+      "url": "http://www.acepow.net/sale-13594532-15kva-12kw-stamford-noiseless-portable-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Kw | Kva | Alternator"
+      ],
+      "file": "sources/acepow-fuan/113.md"
+    },
+    {
+      "n": 114,
+      "url": "http://www.acepow.net/sale-13594541-three-phase-7kw-super-silent-diesel-generator-3-phase-silent-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power"
+      ],
+      "file": "sources/acepow-fuan/114.md"
+    },
+    {
+      "n": 115,
+      "url": "http://www.acepow.net/sale-13598304-brushless-ip23-10a-350kw-silent-automatic-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | 50Hz | | 3Phases/50Hz/ 400V/PF=0.8 | Engine | Engine"
+      ],
+      "file": "sources/acepow-fuan/115.md"
+    },
+    {
+      "n": 116,
+      "url": "http://www.acepow.net/sale-13504454-saso-40kva-1800rpm-230v-ultra-quiet-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Rated Voltage: | 400/230V,380 | Speed: | 1500/1800rpm"
+      ],
+      "file": "sources/acepow-fuan/116.md"
+    },
+    {
+      "n": 117,
+      "url": "http://www.acepow.net/sale-13504449-30kva-water-cooling-230v-silent-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Type: | Silent Diesel Generator | Usage: | Common Units, Standby Unit, Emergency Crew"
+      ],
+      "file": "sources/acepow-fuan/117.md"
+    },
+    {
+      "n": 118,
+      "url": "http://www.acepow.net/sale-13597812-500kw-650kva-1500-rpm-silent-diesel-generator-set-silent-running-diesel-generators.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| 50Hz | | Engine | Engine | Speed(rpm) | Emission"
+      ],
+      "file": "sources/acepow-fuan/118.md"
+    },
+    {
+      "n": 119,
+      "url": "http://www.acepow.net/sale-13562150-anti-rust-150kva-120kw-small-standby-generators.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model Number: | APD-150"
+      ],
+      "file": "sources/acepow-fuan/119.md"
+    },
+    {
+      "n": 120,
+      "url": "http://www.acepow.net/sale-13453591-soundproof-5kw-5kva-120v-air-cooled-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Generator | Frequency(Hz) | 50Hz | 60Hz"
+      ],
+      "file": "sources/acepow-fuan/120.md"
+    },
+    {
+      "n": 121,
+      "url": "http://www.acepow.net/sale-13561084-20kva-15kw-480v-3-phase-portable-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| MODEL | APD-20 | |"
+      ],
+      "file": "sources/acepow-fuan/121.md"
+    },
+    {
+      "n": 122,
+      "url": "http://www.acepow.net/sale-13561133-43kva-34kw-canopy-diesel-generator-electric-start-silent-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model Number: | APD-15"
+      ],
+      "file": "sources/acepow-fuan/122.md"
+    },
+    {
+      "n": 123,
+      "url": "http://www.acepow.net/sale-13560160-4-stroke-12kw-single-cylinder-diesel-engine-generator-mobile-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model Number: | AP1600-3S"
+      ],
+      "file": "sources/acepow-fuan/123.md"
+    },
+    {
+      "n": 124,
+      "url": "http://www.acepow.net/sale-13561418-100kva-80kw-air-cooled-diesel-generator-low-noise-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| MODEL | APD-100 | |"
+      ],
+      "file": "sources/acepow-fuan/124.md"
+    },
+    {
+      "n": 125,
+      "url": "http://www.acepow.net/sale-13655706-15kva-12kw-deutz-air-cooled-diesel-generator-mechanical-governor.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Rated Voltage(V): | 400/230,380/220,etc | Rated Power(KW): | 24"
+      ],
+      "file": "sources/acepow-fuan/125.md"
+    },
+    {
+      "n": 126,
+      "url": "http://www.acepow.net/sale-13597416-250kva-200kw-diesel-powered-generator-water-cooled-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | | | | |"
+      ],
+      "file": "sources/acepow-fuan/126.md"
+    },
+    {
+      "n": 127,
+      "url": "http://www.acepow.net/sale-13504930-soundproof-106-kva-85kw-240-volt-3-phase-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model Number: | API-94"
+      ],
+      "file": "sources/acepow-fuan/127.md"
+    },
+    {
+      "n": 128,
+      "url": "http://www.acepow.net/sale-13597475-160kw-200kva-3-phase-industrial-emergency-generators.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Engine Model | | |"
+      ],
+      "file": "sources/acepow-fuan/128.md"
+    },
+    {
+      "n": 129,
+      "url": "http://www.acepow.net/sale-13597605-low-noise-80kw-100kva-diesel-powered-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| GENSET | Alternator | Engine Model"
+      ],
+      "file": "sources/acepow-fuan/129.md"
+    },
+    {
+      "n": 130,
+      "url": "http://www.acepow.net/sale-13597708-saso-50kva-40kw-diesel-powered-ac-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Frequency | Genset power(KVA) | Engine Model | Engine Power(KW) | Governing | Alternator Model"
+      ],
+      "file": "sources/acepow-fuan/130.md"
+    },
+    {
+      "n": 131,
+      "url": "http://www.acepow.net/sale-13597733-25kw-3-cylinder-three-phase-diesel-powered-generator-sound-proof-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Frequency | Genset power(KW) | Engine Model | Engine Power(KW) | Alternator Model"
+      ],
+      "file": "sources/acepow-fuan/131.md"
     }
   ],
   "confidence": "medium",
@@ -349,6 +609,234 @@
   "specTables": [
     {
       "n": 101,
+      "title": "Four Stroke 20KVA 15KW Electric Start Silent Generator",
+      "header": [
+        "| Genset Model | Kw | Kva | Alternator",
+        "| Rated | Standby | Rated | Standby | Model | Kw"
+      ],
+      "rows": [
+        "| APYD-20 | 16 | 17.6 | 20 | 22 | BC184E | 18"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Four Stroke 20KVA 15KW Electric Start Silent Generator",
+      "header": [
+        "| Engine model | Rated Power | kWe | Governor | Type | Combustion Chamber Type | Number of cylinder"
+      ],
+      "rows": [
+        "| YSD490D | 21KW/1500rpm | 16KW | Mechanical | Vertical, Water cooling, four stroke | Direct injector | 4",
+        "| Bore(mm) | Stoke(mm) | Compression ratio | Total Displacement(L) | Fuel consumption (g/kw.h) | Intake Type | Cooling Methed",
+        "| 90 | 100 | 18 | 2.54 | ≤247.5 | Natural | Forced watercooling"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Four Stroke 20KVA 15KW Electric Start Silent Generator",
+      "header": [
+        "| Genset Model | Kw | Kva | Alternator",
+        "| Rated | Standby | Rated | Standby | Model | Kw"
+      ],
+      "rows": [
+        "| APYD-20 | 16 | 17.6 | 20.0 | 22.0 | APS184E | 20.0"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Four Stroke 20KVA 15KW Electric Start Silent Generator",
+      "header": [
+        "| Engine model | Rated Power | kWe | Governor | Type | Combustion Chamber Type | Number of cylinder"
+      ],
+      "rows": [
+        "| YND485D | 20KW/1800rpm | 16KW | Mechanical | Vertical, Water cooling, four stroke | Direct injector | 4",
+        "| Bore(mm) | Stoke(mm) | Compression ratio | Total Displacement(L) | Fuel consumption (g/kw.h) | Intake Type | Cooling Methed",
+        "| 85 | 95 | 18 | 2.156 | ≤247 | Natural | Forced watercooling"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "1800 RPM 230V 12KW Small Silent Diesel Generator , Silent Generator For House",
+      "header": [
+        "| Main data : | | |",
+        "| Type: | Silent | ATS : | Optional",
+        "| Fuel Tank running hours: | 8/10/12H | Socket: | Optional"
+      ],
+      "rows": [
+        "| Prime Power (KW/KVA): | 12/15' | Frequency, (HZ) : | 50HZ",
+        "| Standby Power (KW/KVA): | 13/17 | Voltage (V): | 230V/400V",
+        "| Genset size(mm) (L×W×H): | 1730*740*1100 | Phase No. : | 3",
+        "| N.W.(kgs): | 680 | G.W.(kgs) | 686",
+        "| Packing | Plastic Films | Controller : | Acepow 6120",
+        "| Model : | NM-518 | Model : | BC164D",
+        "| Governor type: | Mechanical Governor | Capacity (kVA): | 15",
+        "| Speed (r/min): | 1500 | Power factor: | 0.8",
+        "| Engine Size(mm) | 770x520x680 | AVR Type | SX460",
+        "| Prime power(KW): | 22 | Efficiency: | 0.817",
+        "| Standby power(KW): | 24.0 | Bearing number: | 1",
+        "| Cylinder No.&Config.: | 4-cylinder in-line | Leads number: | 12",
+        "| Fuel tank Vol.(L): | 50 | Voltage(V): | 400",
+        "| Displacement (L): | 2.7 | Voltage accuracy: | ≤1.5%",
+        "| Compression ratio : | 18:1 | Frequency, HZ : | 50HZ",
+        "| Oil capacity(L) : | 7 | Insulation class : | H",
+        "| Electrical system (V): | 12 | Protection rate: | IP23",
+        "| Coolant capacity(L) : | 12 | Excitation system : | Brushless",
+        "| Cooling: | Forced water-cooling | Connection type: | Y-type connection",
+        "| Aspiration : | Natural | Short-circuit current : | 1.1",
+        "| Starting Method | Electric | Connection : | SAE 3# / 11,5\""
+      ]
+    },
+    {
+      "n": 103,
+      "title": "230V 250 KVA 200KW Diesel Standby Generators For Home Use",
+      "header": [
+        "| Materials: | Steel/ Copper | Type: | Standby Diesel Generator",
+        "| Used For: | Standby Unit, Emergency Crew | Condition: | Brand New"
+      ],
+      "rows": [
+        "| Rated Voltage: | 400/230V,380 | Speed: | 1500/1800rpm",
+        "| Frequency: | 50Hz Or 60Hz | Engine: | Cummins",
+        "| Noise: | 70-75dB | Type: | Silent(super Silent)or Open,Container"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "230V 250 KVA 200KW Diesel Standby Generators For Home Use",
+      "header": [
+        "| Generating Set Model | Prime | Standby"
+      ],
+      "rows": [
+        "| APC-250 | 250kVA/200kW | 275kVA/220kW"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "250KW 313KVA 20A Electric Start Diesel Generator",
+      "header": [
+        "| Model | 50Hz | | Engine | Engine | Connector | Emission | Governor",
+        "| Generating Sets | Acepow | Prime",
+        "| Prime Power (KW) | Standby Power (KW) | Alternator | KW | KVA"
+      ],
+      "rows": [
+        "| APW-18 | 18 | 20 | BC184E | WP2.3D25E200 | 23 | 29 | 4#7.5-104 | T2 | Mechanically",
+        "| APW-18 | 18 | 20 | BC184E | WP2.3D25E200 | 23 | 29 | 4#7.5-104 | T2 | Electronic",
+        "| APW-24 | 24 | 27 | BC184G | WP2.3D33E200 | 30 | 38 | 4#7.5-104 | T2 | Mechanically",
+        "| APW-24 | 24 | 27 | BC184G | WP2.3D33E200 | 30 | 38 | 4#7.5-104 | T2 | Electronic",
+        "| APW-30 | 30 | 33 | BC184H | WP2.3D40E200 | 36 | 45 | 4#7.5-104 | T2 | Mechanically",
+        "| APW-30 | 30 | 33 | BC184H | WP2.3D40E200 | 36 | 45 | 4#7.5-104 | T2 | Electronic",
+        "| APW-36 | 36 | 40 | UC224D | WP2.3D48E200 | 44 | 55 | 4#7.5-104 | T2 | Mechanically",
+        "| APW-36 | 36 | 40 | UC224D | WP2.3D48E200 | 44 | 55 | 4#7.5-104 | T2 | Electronic",
+        "| APW-50 | 50 | 55 | UC224E | WP4.1D66E200 | 60 | 75 | 3#11.5-128 | T2 | Mechanically",
+        "| APW-50 | 50 | 55 | UC224E | WP4.1D66E200 | 60 | 75 | 3#11.5-128 | T2 | Electronic",
+        "| APW-64 | 64 | 70 | UC224G | WP4.1D80E200 | 72 | 90 | 3#11.5-128 | T2 | Mechanically",
+        "| APW-80 | 80 | 88 | UC274C | WP4.1D100E200 | 90 | 113 | 3#11.5-128 | T2 | Electronic",
+        "| APW-80 | 80 | 88 | UC274C | WP4.1D100E200 | 90 | 113 | 3#11.5-128 | T2 | Electronic",
+        "| APW-80 | 80 | 88 | UC274C | WP2.3ND105E313 | 96 | 120 | 3#10 | T3 | Electronic",
+        "| APW-100 | 100 | 110 | UC274DS | WP3ND132E313 | 120 | 150 | 3#10 | T3 | Electronic",
+        "| APW-80 | 80 | 88 | UC274C | WP4D100E200 | 90 | 113 | 3#11.5 | T2 | Mechanically",
+        "| APW-80 | 80 | 88 | UC274C | WP4D100E200 | 90 | 113 | 3#11.5 | T2 | Electronic",
+        "| APW-82 | 82 | 90 | UC274C | WP4D108E200 | 98 | 123 | 3#11.5 | T2 | Electronic",
+        "| APW-100 | 100 | 110 | UC274DS | WP6D132E200 | 120 | 150 | 1#11.5 | T2 | Mechanically",
+        "| APW-100 | 100 | 110 | UC274DS | WP6D132E200 | 120 | 150 | 1#11.5 | T2 | Electronic",
+        "| APW-120 | 120 | 132 | UC274F | WP6D152E200 | 138 | 173 | 1#11.5 | T2 | Mechanically",
+        "| APW-120 | 120 | 132 | UC274F | WP6D152E200 | 138 | 173 | 1#11.5 | T2 | Electronic",
+        "| APW-130 | 130 | 143 | UC274F | WP6D167E200 | 152 | 190 | 1#11.5 | T2 | Mechanically",
+        "| APW-150 | 150 | 165 | UC274H | WP10D200E200 | 182 | 228 | 1#11.5/14-136 | T2 | Mechanically",
+        "| APW-150 | 150 | 165 | UC274H | WP10D200E200 | 182 | 228 | 1#11.5/14-136 | T2 | Electronic",
+        "| APW-180 | 180 | 200 | UC274J | WP10D238E200 | 216 | 270 | 1#11.5/14-136 | T2 | Mechanically",
+        "| APW-180 | 180 | 200 | UC274J | WP10D238E200 | 216 | 270 | 1#11.5/14-136 | T2 | Electronic",
+        "| APW-220 | 200 | 220 | HC434CS | WP10D264E200 | 240 | 300 | 1#11.5/14-136 | T2 | Mechanically",
+        "| APW-220 | 200 | 220 | HC434CS | WP10D264E200 | 240 | 300 | 1#11.5/14-136 | T2 | Electronic",
+        "| APW-250 | 250 | 275 | HC434DS | WP12D317E200 | 288 | 360 | 1#11.5/14-136 | T2 | Mechanically",
+        "| APW-250 | 250 | 275 | HC434DS | WP12D317E200 | 288 | 360 | 1#11.5/14-136 | T2 | Electronic",
+        "| APW-250 | 250 | 275 | HC434DS | WP10D320E200 | 290 | 363 | 1#11.5-136 | T2 | Mechanically",
+        "| APW-250 | 250 | 275 | HC434DS | WP10D320E200 | 290 | 363 | 1#14-136 | T2 | Electronic"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "200KVA 160KW Residential Standby Diesel Generator , Fawde Diesel Generator",
+      "header": [
+        "| Generating Set Model | Prime | Standby"
+      ],
+      "rows": [
+        "| APX-200 | 200KVA/160KW | 220KVA/176KW",
+        "| APX-200 | 2800 | 1100 | 1600 | 1910 | 1990",
+        "| APXS-200 | 3350 | 1300 | 1850 | 2510 | 2590"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "30KW Canopy Diesel Generator , Water Cooled Diesel Generator Set",
+      "header": [
+        "| Generating Set Model | Prime | Standby"
+      ],
+      "rows": [
+        "| APW-30 | 40kVA/32kW | 44kVA/35kW",
+        "| APW-40 | 1750 | 750 | 1150 | 690 | 740",
+        "| APWS-40 | 2250 | 930 | 1150 | 880 | 930"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Single Phase 100KVA 80KW Diesel Home Standby Generator",
+      "header": [
+        "| Generating Set Model | Prime | Standby"
+      ],
+      "rows": [
+        "| APS-100 | 100KVA/80KW | 110KVA/88KW",
+        "| APS-100 | 2250 | 900 | 1300 | 1310 | 1360",
+        "| APSS-100 | 2920 | 1080 | 1670 | 1730 | 1780"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "1500RPM 32KW 40KVA Canopy Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Model | JE493DB-04 | JE493DB-02 | JE493ZDB-04 | JE493ZDB-02",
+        "| Number of cylinders | 4 | | |",
+        "| Bore×Stroke | 93×102 | | |",
+        "| Rated output(kW) | 24 | 28 | 28 | 34",
+        "| Maximum power(kW) | 27 | 31 | 31 | 38",
+        "| Rated speed(r/min) | 1500 | 1800 | 1500 | 1800",
+        "| Oil consumption rate g/kW.h | ≤190 | ≤185",
+        "| Overall dimension (mm) | 856×601×810 | 860×610×810",
+        "| Net mass (kg) | 230 | 240"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "3 Phase 40KVA 230V Canopy Diesel Generator",
+      "header": [
+        "| 3Phases/50Hz/400V/PF=0.8 | | Brand | Engine",
+        "| Generating Sets | Acepow | Model | Prime | Standby",
+        "| Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Alternator | KW | KW"
+      ],
+      "rows": [
+        "| 18.0 | 22.5 | 19.8 | 24.8 | BC184E | ISUZU | JE493DB-04 | 21 | 23",
+        "| 20.0 | 25.0 | 22.0 | 27.5 | BC184ES | JE493DB-02 | 24 | 27",
+        "| 24.0 | 30.0 | 26.4 | 33.0 | BC184G | JE493ZDB-04 | 28 | 31",
+        "| 32.0 | 40.0 | 35.2 | 44.0 | BC184J | JE493ZLDB-02 | 38 | 42",
+        "| 20.0 | 25.0 | 22.0 | 27.5 | BC184ES | ISUZU | JE493DB-03 | 24 | 27",
+        "| 24.0 | 30.0 | 26.4 | 33.0 | BC184F | JE493DB-01 | 28 | 31",
+        "| 28.0 | 35.0 | 30.8 | 38.5 | BC184H | JE493ZDB-03 | 34 | 38",
+        "| 38.0 | 47.5 | 41.8 | 52.3 | UC224C | JE493ZLDB-01 | 46 | 51"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "R6105ZLDS 100KVA 400 Volt Diesel Engine Generator Set",
+      "header": [],
+      "rows": [
+        "| Frequency: | 50HZ | Speed: | 1500RMP",
+        "| Rated Voltage: | 400/230V,220/380V | Output Type: | AC Three Phase/ Single Phase",
+        "| Warranty Period: | 1 Year | Cooling Method: | Water Cooled",
+        "| Options: | Automatic Transfer Switch | Type2: | Soundproof Generator",
+        "| Type: | Canopy Diesel Generator | Product Name: | Standby Home Super Silent Diesel Generator"
+      ]
+    },
+    {
+      "n": 110,
       "title": "R6105ZLDS 100KVA 400 Volt Diesel Engine Generator Set",
       "header": [
         "| Generating Set Model | Prime | Standby"
@@ -358,7 +846,7 @@
       ]
     },
     {
-      "n": 101,
+      "n": 110,
       "title": "R6105ZLDS 100KVA 400 Volt Diesel Engine Generator Set",
       "header": [
         "| APW-100 | 100% Load | 90% Load | 70% Load | 50% Load | 20% Load"
@@ -368,119 +856,646 @@
       ]
     },
     {
-      "n": 102,
-      "title": "SASO Three Phase 10KVA Mobile Genset Trailer",
-      "header": [
-        "| Model | Rated Output | Standby Output | Alternator | Model",
-        "| Kw | kva | Kw | kva"
-      ],
+      "n": 111,
+      "title": "Four Stroke 30KVA 24KW Canopy Diesel Generator",
+      "header": [],
       "rows": [
-        "| APDS-5.4 | 5.4 | 6.8 | 6.0 | 7.5 | BC164A | SP103NA",
-        "| APDS-11 | 11.0 | 13.8 | 12.0 | 15.0 | BC164C | SP173NA",
-        "| APDS-14 | 14 | 18 | 15 | 19 | BC164E | SP224NA",
-        "| APDS-20 | 20 | 25 | 22 | 28 | BC184ES | SP244TA",
-        "| APDS-19 | 19 | 24 | 21 | 26 | BC184ES | SP183CA",
-        "| APDS-30 | 30 | 38 | 33 | 41 | BC184H | SP244CA",
-        "| APDS-50 | 50 | 63 | 55 | 69 | UC224E | SP344CA",
-        "| APDS-120 | 120 | 150 | 132 | 165 | UC274E | DP086TA",
-        "| APDS-130 | 130 | 163 | 143 | 179 | UC274F | P086TI-1",
-        "| APDS-160 | 160 | 200 | 176 | 220 | UC274H | P086TI",
-        "| APDS-180 | 180 | 225 | 198 | 248 | UC274J | DP086LA",
-        "| APDS-220 | 220 | 275 | 242 | 303 | HC434CS | P126TI",
-        "| APDS-240 | 240 | 300 | 264 | 330 | HC434D | P126TI-II",
-        "| APDS-280 | 280 | 350 | 308 | 385 | HC434F | P158LE-1",
-        "| APDS-320 | 320 | 400 | 352 | 440 | HC434FS | P158LE",
-        "| APDS-420 | 420 | 525 | 462 | 578 | HC534DS | DP158LD",
-        "| APDS-450 | 450 | 563 | 495 | 619 | HC534DS | DP180LA",
-        "| APDS-500 | 500 | 625 | 550 | 688 | HC534F | DP180LB",
-        "| APDS-550 | 550 | 688 | 605 | 756 | HC534G | DP222LB",
-        "| APDS-600 | 600 | 750 | 660 | 825 | LV634B | DP222LC",
-        "| APDS-360 | 360 | 450 | 396 | 495 | HC534C | P158FE",
-        "| APDS-400 | 400 | 500 | 440 | 550 | HC534D | P180FE",
-        "| APDS-500 | 500 | 625 | 550 | 688 | HC534F | P222FE"
+        "| Model | JE493DB-04 | JE493DB-02 | JE493ZDB-04",
+        "| Number of cylinders | 4 | |",
+        "| Bore×Stroke | 93×102 | |",
+        "| Rated output(kW) | 24 | 28 | 28",
+        "| Maximum power(kW) | 27 | 31 | 31",
+        "| Rated speed(r/min) | 1500 | 1800 | 1500",
+        "| Oil consumption rate g/kW.h | ≤190 | ≤185",
+        "| Overall dimension (mm) | 856×601×810 | 860×610×810",
+        "| Net mass (kg) | 230 | 240"
       ]
     },
     {
-      "n": 103,
-      "title": "4 Wheels 94KVA 75KW Mobile Genset Trailer , Mobile Diesel Generators",
+      "n": 112,
+      "title": "25KVA 400V Canopy Diesel Generator , Electric Start Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Model Number: | APN-25",
+        "| Genset model : APN-25",
+        "| Fuel Tank running hours: | 8/10/12H",
+        "| Prime Power (KW/KVA): | 20/25",
+        "| Standby Power (KW/KVA): | 22/27.5",
+        "| Model : | NM-525",
+        "| Speed (r/min): | 1500",
+        "| Engine Size(mm) | 770x520x680",
+        "| Prime power(KW): | 25",
+        "| Cylinder No.&Config.: | 4-cylinder in-line",
+        "| Fuel tank Vol.(L): | 50",
+        "| Displacement (L): | 2.7",
+        "| Frequency, (HZ) : | 50HZ",
+        "| Voltage (V): | 220V/380V",
+        "| Phase No. : | 3",
+        "Engine Model: JE493ZDB-04",
+        "Alternator: 100% copper",
+        "Frequency: 50HZ",
+        "Speed: 1500RMP",
+        "Rated voltage: 400/230V,220/380V",
+        "Engine Model: JE493DB-15",
+        "Frequency: 50 Hz or 60 Hz frequency option"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "15KVA 12KW Stamford Noiseless Portable Generator",
       "header": [
-        "| Model | 50Hz,1500rpm | | 3Phases/50Hz/400V/PF=0.8 | Engine",
+        "| Genset Model | Kw | Kva | Alternator",
+        "| Rated | Standby | Rated | Standby | Model | Kw"
+      ],
+      "rows": [
+        "| APYD-12 | 12 | 13.2 | 15.0 | 16.5 | BC164D | 12.8",
+        "| Engine model | Rated Power | kWe | Governor | Type | Combustion Chamber Type | Number of cylinder",
+        "| YD4KD | 15KW/1500rpm | 12KW | Mechanical | Vertical, Water cooling, four stroke | Direct injector | 4",
+        "| Bore(mm) | Stoke(mm) | Compression ratio | Total Displacement(L) | Fuel consumption (g/kw.h) | Intake Type | Cooling Methed",
+        "| 80 | 90 | 18 | 1.809 | ≤250.5 | Natural | Forced watercooling"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Three Phase 7KW Super Silent Diesel Generator , 3 Phase Silent Generator",
+      "header": [
+        "| Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power",
+        "| Rated | Standby | Rated | Standby | Model"
+      ],
+      "rows": [
+        "| APYD-7 | 50HZ | 7 | 7.7 | 8.8 | 9.6 | BC164B | YD380D | 10KW/1500rpm",
+        "| APYD-9 | 50HZ | 9 | 9.9 | 11.3 | 12.4 | BC164C | YD385D | 12KW/1500rpm",
+        "| APYD-10 | 50HZ | 10 | 11 | 12.5 | 13.8 | BC164C | YD480D | 14KW/1500rpm",
+        "| APYD-12 | 50HZ | 12 | 13.2 | 15.0 | 16.5 | BC164D | YD4KD | 15KW/1500rpm",
+        "| APYD-13 | 50HZ | 13 | 14.3 | 16.3 | 17.9 | BC164E | YND485D | 17KW/1500rpm",
+        "| APYD-16 | 50HZ | 16 | 17.6 | 20 | 22 | BC184E | YSD490D | 21KW/1500rpm",
+        "| APYD-19 | 50HZ | 19 | 20.9 | 24 | 26 | BC184ES | Y490D-P | 24KW/1500rpm",
+        "| APYD-20 | 50HZ | 20 | 22 | 25 | 28 | BC184ES | Y495D | 27KW/1500rpm",
+        "| APYD-24 | 50HZ | 24 | 26.4 | 30 | 33 | BC184G | Y4100D | 30KW/1500rpm",
+        "| APYD-25 | 50HZ | 25 | 27.5 | 31 | 34 | BC184G | Y4102D | 33KW/1500rpm",
+        "| APYD-30 | 50HZ | 30 | 33 | 38 | 41 | BC184H | Y4105D | 38KW/1500rpm",
+        "| APYD-30 | 50HZ | 30 | 33 | 38 | 41 | BC184H | Y4102ZD | 40KW/1500rpm",
+        "| APYD-38 | 50HZ | 38 | 41.8 | 48 | 52 | UC224D | Y4102ZLD | 48KW/1500rpm",
+        "| APYD-44 | 50HZ | 44 | 48.4 | 55 | 61 | UC224E | Y4105ZLD | 55KW/1500rpm",
+        "| APYD-50 | 50HZ | 50 | 55 | 63 | 69 | UC224E | YD4EZLD | 63KW/1500rpm",
+        "| APYD-60 | 50HZ | 60 | 66 | 75 | 83 | UC224F | Y4110ZLD | 80KW/1500rpm",
+        "| APYD-9 | 60HZ | 9 | 9.9 | 11.3 | 12.4 | APS164B | YD380D | 12KW/1800rpm",
+        "| APYD-11 | 60HZ | 11 | 12.1 | 13.8 | 15.1 | APS164C | YD385D | 14.4KW/1800rpm",
+        "| APYD-13 | 60HZ | 13 | 14.3 | 16.3 | 17.9 | APS164D | YD480D | 17KW/1800rpm",
+        "| APYD-15 | 60HZ | 15 | 16.5 | 18.8 | 20.6 | APS164D | (YD485D) | 18KW/1800rpm",
+        "| APYD-16 | 60HZ | 16 | 17.6 | 20.0 | 22.0 | APS184E | YND485D | 20KW/1800rpm",
+        "| APYD-20 | 60HZ | 20 | 22 | 25 | 28 | APS184E | YSD490D | 25KW/1800rpm",
+        "| APYD-21 | 60HZ | 21 | 23.1 | 26 | 29 | APS184F | Y490D-P | 28KW/1800rpm",
+        "| APYD-24 | 60HZ | 24 | 26.4 | 30 | 33 | APS184F | Y495D | 30KW/1800rpm",
+        "| APYD-28 | 60HZ | 28 | 30.8 | 35 | 39 | APS184G | Y4100D | 36KW/1800rpm",
+        "| APYD-32 | 60HZ | 32 | 35.2 | 40 | 44 | APS184H | Y4102D | 39.6KW/1800rpm",
+        "| APYD-36 | 60HZ | 36 | 39.6 | 45 | 50 | APS184J | Y4105D | 45KW/1800rpm",
+        "| APYD-38 | 60HZ | 38 | 41.8 | 48 | 52 | APS184J | Y4102ZD | 48KW/1800rpm",
+        "| APYD-42 | 60HZ | 42 | 46.2 | 53 | 58 | APS224D | Y4102ZLD | 53KW/1800rpm",
+        "| APYD-48 | 60HZ | 48 | 52.8 | 60 | 66 | APS224E | Y4105ZLD | 60KW/1800rpm",
+        "| APYD-55 | 60HZ | 55 | 60.5 | 69 | 76 | APS224E | YD4EZLD | 68KW/1800rpm",
+        "| APYD-65 | 60HZ | 65 | 71.5 | 81 | 89 | APS224F | Y4110ZLD | 85KW/1800rpm"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Brushless IP23 10A 350KW Silent Automatic Generator",
+      "header": [
+        "| Model | 50Hz | | 3Phases/50Hz/ 400V/PF=0.8 | Engine | Engine",
+        "| Generating Sets | Acepow | Prime | Standby | Prime",
+        "| Prime Power (KW) | Prime Power (KVA) | Standby Power (KW) | Standby Power (KVA) | Alternator | KW | KW | KW"
+      ],
+      "rows": [
+        "| APW-300 | 300 | 375 | 330 | 413 | HC434F | 304 | 334 | WP13D385E200 | 350",
+        "| APW-300 | 300 | 375 | 330 | 413 | HC434F | 304 | 334 | WP13D385E200 | 350",
+        "| APW-330 | 330 | 413 | 360 | 450 | HC534C | 360 | 396 | WP13D405E200 | 368",
+        "| APW-330 | 330 | 413 | 360 | 450 | HC534C | 360 | 396 | WP13D405E200 | 368",
+        "| APW-360 | 360 | 450 | 396 | 495 | HC534C | 360 | 396 | WP13D440E310 | 400",
+        "| APW-360 | 360 | 450 | 396 | 495 | HC534C | 360 | 396 | 6M26D447E200 | 406",
+        "| APW-400 | 400 | 500 | 440 | 550 | HC534D | 400 | 440 | 6M26D484E200 | 440",
+        "| APW-460 | 460 | 575 | 506 | 633 | HC534E | 480 | 528 | 6M33D572E200 | 520",
+        "| APW-520 | 520 | 650 | 580 | 725 | HC534FS | 536 | 590 | 6M33D633E200 | 575",
+        "| APW-540 | | | 600 | 750 | HC534G | 588 | 647 | 6M33D670E200 |",
+        "| APW-600 | 600 | 750 | 660 | 825 | LV634B | 600 | 660 | 12M26D748E200 | 680",
+        "| APW-640 | 640 | 800 | 704 | 880 | LV634C | 640 | 704 | 12M26D792E200 | 720",
+        "| APW-720 | 720 | 900 | 792 | 990 | LV634D | 728 | 801 | 12M26D902E200 | 820",
+        "| APW-800 | 800 | 1000 | 880 | 1100 | LV634D | 800 | 880 | 12M26D968E200 | 880",
+        "| APW-900 | 900 | 1125 | 990 | 1238 | LV634D | 904 | 994 | 12M33D1108E200 | 1007",
+        "| APW-1000 | 1000 | 1250 | 1100 | 1375 | LV634G | 1000 | 1100 | 12M33D1210E200 | 1100",
+        "| APW-1090 | | | 1200 | 1500 | PI734C | 1120 | 1232 | 12M33D1320E200 |",
+        "| APW-400 | 400 | 500 | 450 | 563 | HC534D | 400 | 440 | 6M33D506E310 | 460",
+        "| APW-470 | 470 | 588 | 520 | 650 | HC534E | 480 | 528 | 6M33D572E310 | 520",
+        "| APW-520 | 520 | 650 | 580 | 725 | HC534FS | 536 | 590 | 6M33D633E310 | 575",
+        "| APW-590 | | | 650 | 813 | LV634B | 600 | 660 | 6M33D725E310 |",
+        "| APW-600 | 600 | 750 | 660 | 825 | LV634B | 600 | 660 | 12M33D748E310 | 680",
+        "| APW-640 | 640 | 800 | 700 | 875 | LV634C | 640 | 704 | 12M33D792E310 | 720",
+        "| APW-720 | 720 | 900 | 800 | 1000 | LV634C | 728 | 801 | 12M33D902E310 | 820",
+        "| APW-800 | 800 | 1000 | 900 | 1125 | LV634E | 800 | 880 | 12M33D968E310 | 880",
+        "| APW-900 | 900 | 1125 | 1000 | 1250 | LV634F | 904 | 994 | 12M33D1108E310 | 1007",
+        "| APW-1000 | 1000 | 1250 | 1100 | 1375 | LV634G | 1000 | 1100 | 12M33D1240E310 | 1130",
+        "| APW-1100 | 1100 | 1375 | 1280 | 1600 | PI734C | 1120 | 1232 | 16M33D1400E310 | 1280",
+        "| APW-1200 | 1200 | 1500 | 1360 | 1700 | PI734D | 1240 | 1364 | 16M33D1530E310 | 1390",
+        "| APW-1300 | 1300 | 1625 | 1440 | 1800 | PI734D | 1320 | 1452 | 16M33D1580E310 | 1430",
+        "| APW-1400 | 1400 | 1750 | 1520 | 1900 | PI734F | 1520 | 1672 | 16M33D1680E310 | 1530",
+        "| APW-1500 | | | 1650 | 2063 | PI734F | 1520 | 1672 | 16M33D1800E310 |",
+        "| APW-1500 | 1500 | 1875 | 1650 | 2063 | PI734F | 1520 | 1672 | 12M55D1870E310 | 1700",
+        "| APW-1600 | 1600 | 2000 | 1800 | 2250 | PI734G | 1600 | 1760 | 12M55D2020E310 | 1850",
+        "| APW-1800 | 1800 | 2250 | 2000 | 2500 | PI734H | 1760 | 1936 | 12M55D2210E310 | 1985"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "SASO 40KVA 1800RPM 230V Ultra Quiet Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Rated Voltage: | 400/230V,380 | Speed: | 1500/1800rpm",
+        "| Frequency: | 50Hz Or 60Hz | Product Name: | Mobile Portable Diesel Genset 50 Kva Silent Diesel Generator",
+        "| Engine: | Cummins Brand | Alternator: | China Stamford",
+        "| Alternator 2: | 100% Copper | Genset Power: | 40KVA/ 32KW",
+        "| Engine Cylinder: | 4L | HS Code: | 85021000"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "SASO 40KVA 1800RPM 230V Ultra Quiet Diesel Generator",
+      "header": [
+        "| Generating Set Model | Prime | Standby"
+      ],
+      "rows": [
+        "| APC-40 | 40kVA32kW | 44kVA/35kW"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "30KVA Water Cooling 230V Silent Diesel Generator",
+      "header": [
+        "| Type: | Silent Diesel Generator | Usage: | Common Units, Standby Unit, Emergency Crew",
+        "| After-sales Service Provided: | Video Technical Support,Online Support,Free Spare Parts | Condition: | New",
+        "| Key Points: | Easy To Operate,Automatic,Energy Saving | Package: | Plywood Case"
+      ],
+      "rows": [
+        "| Rated Voltage: | 400/230V,380/220V | Speed: | 1500/1800rpm",
+        "| Frequency: | 50Hz Or 60Hz | Genset Power: | 30KVA 24KW"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "30KVA Water Cooling 230V Silent Diesel Generator",
+      "header": [
+        "| Generating Set Model | Prime | Standby"
+      ],
+      "rows": [
+        "| APC-30 | 30kVA/24kW | 33kVA/27kW"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "500KW 650KVA 1500 RPM Silent Diesel Generator Set , Silent Running Diesel Generators",
+      "header": [
+        "| 50Hz | | Engine | Engine | Speed(rpm) | Emission",
         "| Generating Sets | Acepow | Prime | Standby",
-        "| Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Alternator | KW | KW"
+        "| Prime Power (KW) | Prime Power (KVA) | Alternator | KW | KW"
       ],
       "rows": [
-        "| APF-12 | 12 | 15 | 13.2 | 16.5 | BC164D | 12.8 | 14.08 | 4DW81-23D-YFD10W",
-        "| APF-16 | 16 | 20 | 17.6 | 22 | BC184E | 18 | 19.8 | 4DW91-29D-YFD10W",
-        "| APF-20 | 20 | 25 | 22 | 27.5 | BC184F | 22 | 24.2 | 4DW92-35D-YFD10W",
-        "| APF-24 | 24 | 30 | 26.4 | 33 | BC184G | 25 | 27.5 | 4DW92-39D-HMS20W",
-        "| APF-24 | 24 | 30 | 26.4 | 33 | BC184G | 25 | 27.5 | 4DW93-42D-YFD10W",
-        "| APF-25 | 25 | 31.25 | 27.5 | 34.375 | BC184GS | 28 | 30.8 | 4DX21-45D-YFD10W",
-        "| APF-32 | 32 | 40 | 35.2 | 44 | BC184J | 32 | 35.2 | 4DX21-53D-HMS20W",
-        "| APF-30 | 30 | 37.5 | 33 | 41.25 | BC184H | 30 | 33 | 4DX22-50D-YFD10W",
-        "| APF-40 | 40 | 50 | 44 | 55 | UC224D | 40 | 44 | 4DX22-65D-HMS20W",
-        "| APF-38 | 38 | 47.5 | 41.8 | 52.25 | UC224D | 40 | 44 | 4DX23-65D-YFD10W",
-        "| APF-48 | 48 | 60 | 52.8 | 66 | UC224E | 50 | 55 | 4DX23-78D-HMS20W",
-        "| APF-55 | 55 | 68.75 | 60.5 | 75.625 | UC224F | 60 | 66 | 4110/125Z-09D-YFD10W",
-        "| APF-72 | 72 | 90 | 79.2 | 99 | UC274C | 80 | 88 | CA4F2-12D-YFD10W",
-        "| APF-80 | 80 | 100 | 88 | 110 | UC274C | 80 | 88 | 6CDF2D-14D-YFD10W",
-        "| APF-100 | 100 | 125 | 110 | 137.5 | UC274DS | 100 | 110 | CA6DF2-17D-YFD10W",
-        "| APF-120 | 120 | 150 | 132 | 165 | UC274F | 128 | 140.8 | CA6DF2-19D-YFD11W",
-        "| APF-150 | 150 | 187.5 | 165 | 206.25 | UC274H | 160 | 176 | CA6DL1-24D",
-        "| APF-180 | 180 | 225 | 198 | 247.5 | UC274J | 180 | 198 | CA6DL2-27D",
-        "| APF-200 | 200 | 250 | 220 | 275 | UC274K | 200 | 220 | CA6DL2-30D",
-        "| APF-250 | 250 | 312.5 | 275 | 343.75 | HC434E | 260 | 286 | CA6DM2J-39D",
-        "| APF-270 | 270 | 337.5 | 297 | 371.25 | HC434ES | 280 | 308 | CA6DM2J-41D",
-        "| APF-300 | 300 | 375 | 330 | 412.5 | HC434F | 304 | 334.4 | CA6DN1J-45D"
+        "| 300 | 375 | HC434F | WP13D385E200 | 350 | 385 | 1500 | T2",
+        "| 300 | 375 | HC434F | WP13D385E200 | 350 | 385 | 1500 | T2",
+        "| 330 | 413 | HC534C | WP13D405E200 | 368 | 405 | 1500 | T2",
+        "| 330 | 413 | HC534C | WP13D405E200 | 368 | 405 | 1500 | T2",
+        "| 360 | 450 | HC534C | WP13D440E310 | 400 | 440 | 1500 | T3",
+        "| 360 | 450 | HC534C | 6M26D447E200 | 406 | 447 | 1500 | T2",
+        "| 400 | 500 | HC534D | 6M26D484E200 | 440 | 484 | 1500 | T2",
+        "| 460 | 575 | HC534E | 6M33D572E200 | 520 | 572 | 1500 | T2",
+        "| 520 | 650 | HC534FS | 6M33D633E200 | 575 | 633 | 1500 | T2",
+        "| | | HC534G | 6M33D670E200 | | 670 | 1500 |",
+        "| 600 | 750 | LV634B | 12M26D748E200 | 680 | 748 | 1500 | T2",
+        "| 640 | 800 | LV634C | 12M26D792E200 | 720 | 792 | 1500 | T2",
+        "| 720 | 900 | LV634D | 12M26D902E200 | 820 | 902 | 1500 | T2",
+        "| 800 | 1000 | LV634D | 12M26D968E200 | 880 | 968 | 1500 | T2",
+        "| 900 | 1125 | LV634D | 12M33D1108E200 | 1007 | 1108 | 1500 | T2",
+        "| 1000 | 1250 | LV634G | 12M33D1210E200 | 1100 | 1210 | 1500 | T2",
+        "| | | PI734C | 12M33D1320E200 | | 1320 | 1500 |",
+        "| 400 | 500 | HC534D | 6M33D506E310 | 460 | 506 | 1500 | T3",
+        "| 470 | 588 | HC534E | 6M33D572E310 | 520 | 572 | 1500 | T3",
+        "| 520 | 650 | HC534FS | 6M33D633E310 | 575 | 633 | 1500 | T3",
+        "| | | LV634B | 6M33D725E310 | | 725 | 1500 |",
+        "| 600 | 750 | LV634B | 12M33D748E310 | 680 | 748 | 1500 | T3",
+        "| 640 | 800 | LV634C | 12M33D792E310 | 720 | 792 | 1500 | T3",
+        "| 720 | 900 | LV634C | 12M33D902E310 | 820 | 902 | 1500 | T3",
+        "| 800 | 1000 | LV634E | 12M33D968E310 | 880 | 968 | 1500 | T3",
+        "| 900 | 1125 | LV634F | 12M33D1108E310 | 1007 | 1108 | 1500 | T3",
+        "| 1000 | 1250 | LV634G | 12M33D1240E310 | 1130 | 1240 | 1500 | T3",
+        "| 1100 | 1375 | PI734C | 16M33D1400E310 | 1280 | 1400 | 1500 | T3",
+        "| 1200 | 1500 | PI734D | 16M33D1530E310 | 1390 | 1530 | 1500 | T3",
+        "| 1300 | 1625 | PI734D | 16M33D1580E310 | 1430 | 1580 | 1500 | T3",
+        "| 1400 | 1750 | PI734F | 16M33D1680E310 | 1530 | 1680 | 1500 | T3",
+        "| | | PI734F | 16M33D1800E310 | | 1800 | 1500 |",
+        "| 1500 | 1875 | PI734F | 12M55D1870E310 | 1700 | 1870 | 1500 | T3",
+        "| 1600 | 2000 | PI734G | 12M55D2020E310 | 1850 | 2020 | 1500 | T3"
       ]
     },
     {
-      "n": 104,
-      "title": "Silent 1500 RPM Standby Diesel Generator , 10KW Silent Diesel Generator",
-      "header": [
-        "| Model | 50Hz,1500rpm | | Engine |",
-        "| Generating Sets | Acepow | Prime | Standby",
-        "| Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Alternator | KW | KW"
-      ],
+      "n": 119,
+      "title": "Anti Rust 150KVA 120KW Small Standby Generators",
+      "header": [],
       "rows": [
-        "| APYN-10 | 10 | 11 | 12.5 | 14 | BC164C | YN25GB | 18 | 19.8",
-        "| APYN-12 | 12 | 13.2 | 15 | 17 | BC164D | YN25GB | 18 | 19.8",
-        "| APYN-15 | 15 | 16.5 | 18.75 | 21 | BC184ES | YN25GB | 18 | 19.8",
-        "| APYN-18 | 18 | 20 | 22.5 | 25 | BC184E | YN25GB | 21 | 23.1",
-        "| APYN-21 | 21 | 23 | 26.25 | 29 | BC184F | YN27GB | 25 | 27.5",
-        "| APYN-25 | 25 | 28 | 31.25 | 35 | BC184G | YN27GBZ | 30 | 33",
-        "| APYN-25 | 25 | 28 | 31.25 | 35 | BC184G | YN36GB | 30 | 33",
-        "| APYN-30 | 30 | 33 | 37.5 | 41 | BC184H | YN38GB | 36 | 39.6",
-        "| APYN-40 | 40 | 44 | 50 | 55 | UC224D | YN38GBZ | 48 | 52.8",
-        "| APYN-40 | 40 | 44 | 50 | 55 | UC224D | YN38GBZL | 50 | 55",
-        "| APYN-50 | 50 | 55 | 62.5 | 69 | UC224E | YN38GBZ | 60 | 66",
-        "| APYN-50 | 50 | 55 | 62.5 | 69 | UC224E | YN48GBZ | 60 | 66",
-        "| APYN-65 | 65 | 72 | 81.25 | 90 | UC224G | YN48GBZ | 77 | 84.7"
+        "| Model Number: | APD-150",
+        "| Engine Model: | BF6M1013EC | Alternator Type: | Brushless, Self-Exciting",
+        "| MODEL | APD-150",
+        "| PRIME POWER (KVA/KW) | 150/120",
+        "| STANDBY POWER(KVA/KW) | 165/132",
+        "| Model | BF6M1013EC",
+        "| Rated Power(kW) | 146",
+        "| Bore×Stroke(mm) | 108*130",
+        "| Power Factor | 0.8",
+        "| Protection Grade | IP23",
+        "| CONTROLLER CHOICE | DSE6120, DSE7320, DSE8610 and other deepsea models, Comap MRS10, MRS16, AMF20, AMF25",
+        "Engine model: F3L912",
+        "Engine model: AP292F",
+        "Engine: China brand AP186FA",
+        "Engine 2: Single-cylinder, vertical, 4 stroke, air-cooled, direct-injection",
+        "Engine model: F4L912TD"
       ]
     },
     {
-      "n": 105,
-      "title": "Industrial 750KVA Three Phase 380V Containerized Genset",
+      "n": 120,
+      "title": "Soundproof 5KW 5KVA 120V Air Cooled Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Generator | Frequency(Hz) | 50Hz | 60Hz",
+        "| Max. AC output(KW) | 5KW | 6.0KW",
+        "| Rated AC output(KW) | 4.5KW | 5.5KW",
+        "| Engine speed(rpm) | 3000rpm | 3600rpm"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "20KVA 15KW 480V 3 Phase Portable Diesel Generator",
       "header": [
-        "| Genset model | Output | Output | Engine | Engine (kw) | Alternator Model",
-        "| Prime(kw) | Prime(kva) | Brand | Model | Rated | Standby"
+        "| MODEL | APD-20 | |"
       ],
       "rows": [
-        "| APVM-250 | 250 | 312.5 | VMAN | D11B2 | 288 | 317 | 314D",
-        "| APVM-280 | 280 | 350 | VMAN | D11B1 | 318 | 340 | 314E",
-        "| APVM-300 | 300 | 375 | VMAN | D11B | 342 | 390 | 314F",
-        "| APVM-320 | 320 | 400 | VMAN | D15B2 | 370 | 405 | 314F",
-        "| APVM-360 | 360 | 450 | VMAN | D15B1 | 405 | 460 | 354C",
-        "| APVM-390 | 390 | 487.5 | VMAN | D15B | 440 | 500 | 354C",
-        "| APVM-470 | 470 | 587.5 | VMAN | D22B3 | 525 | 577 | 354E",
-        "| APVM-500 | 500 | 625 | VMAN | D22B2 | 565 | 627 | 354E",
-        "| APVM-540 | 540 | 675 | VMAN | D22B1 | 620 | 682 | 354F",
-        "| APVM-590 | 590 | 737.5 | VMAN | D22B | 671 | 739 | 354F",
-        "| APVM-630 | 630 | 787.5 | VMAN | D22.2 | 718 | 790 | 404C",
-        "| APVM-660 | 660 | 825 | VMAN | D22.1 | 756 | 832 | 404C",
-        "| APVM-660 | 660 | 825 | VMAN | D30B4 | 750 | 850 | 404C",
-        "| APVM-700 | 700 | 875 | VMAN | D30B3 | 825 | 910 | 404D",
-        "| APVM-750 | 750 | 937.5 | VMAN | D30B2 | 880 | 965 | 404E",
-        "| APVM-800 | 800 | 1000 | VMAN | D30B1 | 930 | 1020 | 404E"
+        "| PRIME POWER (KVA/KW) | 20/16 | Rated frequency(Hz) | 50",
+        "| STANDBY POWER(KVA/KW) | 22/17.6 | Power factor | 0.8",
+        "| Rated voltage(V) | 400/230 | Ambient temperature(℃) | 40",
+        "| Rated speed(rpm) | 1500 | Altitude(m) | 1000",
+        "| ENGINE MANUFACTURER | DEUTZ | ALTERNATOR MANUFACTURER | STAMFORD",
+        "| Model | F3L912D | Number of Phase | 3",
+        "| Rated Power(kW) | 16 | Connection Type | 3 Phase and 4Wires",
+        "| No. of cylinders & configuration | In-Line 4 cylinders | Number of Bearing | 1",
+        "| Method of operation | 4-stroke | Power Factor | 0.8",
+        "| Speed regulation | Electronic governor | Protection Grade | IP23",
+        "| Starting system | DC 24V Electronic start | Terminal | 12",
+        "| Cooling method | Closed-circuit cooling system | Winding/ Pitch | 100% Copper 2/3 Pitch",
+        "| Total displacement(L) | 4.03 | Cooling Fan | Cast alloy aluminum",
+        "| Bore x Stroke(mm) | 101* 126 | Exciter Type | Brushless, Self-Exciting",
+        "| 100% Load fuel consumption(L/h) | ≤ 13 | Insulation Class, Temperature Rise | H/H"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "43KVA 34KW Canopy Diesel Generator , Electric Start Silent Generator",
+      "header": [],
+      "rows": [
+        "| Model Number: | APD-15",
+        "| Engine Model: | F4L912TD | Alternator Type: | Self-excitation , Brushless Type",
+        "| MODEL | APD-43",
+        "| PRIME POWER (KVA/KW) | 43/34",
+        "| STANDBY POWER(KVA/KW) | 47.3/37.4",
+        "| Rated voltage(V) | 400/230",
+        "| Rated speed(rpm) | 1500",
+        "| Rated frequency(Hz) | 50",
+        "| Power factor | 0.8",
+        "| Model | F4L912TD",
+        "| Rated Power(kW) | 38",
+        "| Starting system | DC 12V Electronic start",
+        "| Bore×Stroke(mm) | 100*120",
+        "| Power Factor | 0.8",
+        "| Protection Grade | IP23",
+        "| Voltage Regulation, Steady State | ≤± 1%",
+        "Engine model: F3L912",
+        "Engine model: AP292F",
+        "Engine: China brand AP186FA",
+        "Engine 2: Single-cylinder, vertical, 4 stroke, air-cooled, direct-injection",
+        "Engine model: F3L912d"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "4 Stroke 12KW Single Cylinder Diesel Engine Generator , Mobile Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Model Number: | AP1600-3S",
+        "| Engine Model: | AP292F | Alternator: | Self-excitation , Brush",
+        "Protection Grade: IP23 Insulation Grade: H",
+        "| Model | AP16000S(-3)",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated Power [Kva] | 11.0(13.75) 12.0(15.0)",
+        "| Power Factor Cos &Phi; | 1.0(0.8)",
+        "| Fuel Capacity [L] | 26",
+        "| Noise Level [Db](@ 7m) | 75",
+        "| Engine Model | AP292F",
+        "| Engine Type | 2-cylinder ,4-Stroke, Air-cooled",
+        "| Displacement [L] | 0.997",
+        "| Rated Rotation Speed [rpm] | 3000 3600",
+        "| Rated Power [Kw] | 14.0 15.0",
+        "Engine model: F3L912",
+        "Engine: China brand AP186FA",
+        "Engine 2: Single-cylinder, vertical, 4 stroke, air-cooled, direct-injection",
+        "Engine model: F4L912TD",
+        "Engine model: F3L912d"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "100KVA 80KW Air Cooled Diesel Generator , Low Noise Diesel Generator",
+      "header": [
+        "| MODEL | APD-100 | |"
+      ],
+      "rows": [
+        "| PRIME POWER (KVA/KW) | 100/80 | STANDBY POWER(KVA/KW) | 110/88",
+        "| Rated speed ( rpm ) | 1500 | Rated frequency ( Hz ) | 50",
+        "| Power factor | 0.8 | Connection type | 3 phase 4 wires"
+      ]
+    },
+    {
+      "n": 125,
+      "title": "15KVA 12KW Deutz Air Cooled Diesel Generator Mechanical Governor",
+      "header": [],
+      "rows": [
+        "| Rated Voltage(V): | 400/230,380/220,etc | Rated Power(KW): | 24",
+        "| No.of Cylinders&Configuration: | In-Line 3 Cylinders | Method Of Operation: | 4-Stroke",
+        "| Speed Ragulation: | Mechanical Governor | Starting System: | DC 12V Electric",
+        "| Cooling Method: | Air-cooled & Naturally Aspiration | Total Displacement(L): | 2.827"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "250KVA 200KW Diesel Powered Generator , Water Cooled Diesel Generator",
+      "header": [
+        "| Engine Model | | | | |",
+        "| Model | Engine Power(KW) | Bore / stroke | Intake | Displacement | Adjustable rate | No of valves per cylinder",
+        "| Rated | Standby | MM"
+      ],
+      "rows": [
+        "| YT3B2-D | 30 | 33 | 108x120 | Natural | 3.3 | <5% |",
+        "| YT3A2Z-D | 36 | 38 | 105x120 | Turbo | 3.12 | <5% |",
+        "| LR4B5-D | 48 | 53 | 108x135 | Natural | 4.67 | <5% |",
+        "| YT4B2Z-D | 60 | 65 | 108x120 | Turbo | 4.39 | <5% |",
+        "| LR4B3Z-D | 62 | 68 | 110x125 | Turbo | 4.58 | |",
+        "| LR4M3L-D | 86 | 95 | 110x125 | Turbo /Inter cooling | 4.75 | <3% |",
+        "| LR4N5LP-D | 98 | 100 | 110x125 | Turbo /Inter cooling | 4.75 | <3% | 2",
+        "| LR6A3Z-D | 90 | 103 | 105x125 | Turbo /Inter cooling | 6.49 | <5% |",
+        "| LR6A3L-D | 110 | 125 | 105x125 | Turbo /Inter cooling | 6.49 | <3% |",
+        "| LR6B3L-D | 138 | 159 | 108x125 | Turbo /Inter cooling | 6.87 | <3% |",
+        "| LR6M3L-D | 145 | 165 | 110x125 | Turbo /Inter cooling | 7.127 | <3% |",
+        "| YM6H4L-D | 186 | 213 | 120x130 | Turbo /Inter cooling | 8.82 | <3% | 2",
+        "| YM6H4LF-D | 206 | 227 | 120x130 | Turbo /Inter cooling | 8.82 | <3% | 4",
+        "| YM6S4L-D | 220 | 258 | 126x130 | Turbo /Inter cooling | 9.726 | <3% | 2",
+        "| YM6S4LF-D | 252 | 308 | 126x130 | Turbo /Inter cooling | 9.726 | <3% | 4",
+        "| YM6S9L-D | 290 | 320 | 126x155 | Turbo /Inter cooling | 12.596 | <3% | 2",
+        "| YM6S9L-DB | 310 | 352 | 126x155 | Turbo /Inter cooling | 12.596 | <3% | 2",
+        "| YM6S9LF-D | 350 | 405 | 126x155 | Turbo /Inter cooling | 12.596 | <3% | 4",
+        "| YM6S9LF-DA | 370 | 420 | 126x155 | Turbo /Inter cooling | 12.596 | <3% | 4",
+        "| YT3B2-D | 36 | 38 | 108x120 | Natural | 3.3 | <5% |",
+        "| YT3A2Z-D | 38 | 43 | 105x120 | Turbo | 3.12 | <5% |",
+        "| LR4B5-D | 50 | 55 | 108x135 | Natural | 4.67 | <5% |",
+        "| YT4B2Z-D | 63 | 68 | 108x120 | Turbo | 4.39 | <5% |",
+        "| LR4B3Z-D | 65 | 72 | 110x125 | Turbo | 4.58 | |",
+        "| LR4M3L-D | 90 | 98 | 110x125 | Turbo /Inter cooling | 4.75 | <5% |",
+        "| LR4N5LP-D | 98 | 110 | 110x125 | Turbo /Inter cooling | 4.75 | <3% | 2",
+        "| LR6A3Z-D | 95 | 105 | 105x125 | Turbo /Inter cooling | 6.49 | <5% |",
+        "| LR6A3L-D | 120 | 130 | 105x125 | Turbo /Inter cooling | 6.49 | <3% |",
+        "| LR6B3L-D | 145 | 165 | 108x125 | Turbo /Inter cooling | 6.87 | <3% |",
+        "| LR6M3L-D | 150 | 170 | 110x125 | Turbo /Inter cooling | 7.127 | <3% |",
+        "| YM6H4L-D | 195 | 220 | 120x130 | Turbo /Inter cooling | 8.82 | <3% | 2",
+        "| YM6H4LF-D | 215 | 238 | 120x130 | Turbo /Inter cooling | 8.82 | <3% | 4",
+        "| YM6S4L-D | 240 | 272 | 126x130 | Turbo /Inter cooling | 9.726 | <3% | 2",
+        "| YM6S4LF-D | 270 | 316 | 126x130 | Turbo /Inter cooling | 9.726 | <3% | 4",
+        "| YM6S9L-D | 315 | 350 | 126x155 | Turbo /Inter cooling | 12.596 | <3% | 2",
+        "| YM6S9L-DB | 340 | 370 | 126x155 | Turbo /Inter cooling | 12.596 | <3% | 2",
+        "| YM6S9LF-D | 365 | 410 | 126x155 | Turbo /Inter cooling | 12.596 | <3% | 4",
+        "| YM6S9LF-DA | 380 | 430 | 126x155 | Turbo /Inter cooling | 12.596 | <3% | 4"
+      ]
+    },
+    {
+      "n": 127,
+      "title": "Soundproof 106 KVA 85KW 240 Volt 3 Phase Generator",
+      "header": [],
+      "rows": [
+        "| Model Number: | API-94",
+        "Starting motor capactiy (V.kw): 24V 3.7KW",
+        "Protection: IP23",
+        "| Engine Model | 6BG1-ZL1",
+        "| Alternator Model | UC274D / UCI274D",
+        "| Frequency / Phase | 50Hz/ Three phase",
+        "| Engine Speed ( RPM) | 1500Rpm",
+        "| Bore/Stroke (mm) | 105*125",
+        "| Speed (RPM) | 1500",
+        "| Displacement (L) | 5.885",
+        "| Starting motor capactiy (V.kw) | 24V 3.7KW",
+        "Engine Model: YT3B2-D",
+        "Engine Model: LR4B5-D",
+        "Engine Model: LR4N5LP-D",
+        "Engine Model: YM6H4L-D",
+        "Engine Brand: China YTO YM6S4L-D",
+        "Engine Model: YM6S4L-D"
+      ]
+    },
+    {
+      "n": 128,
+      "title": "160KW 200KVA 3 Phase Industrial Emergency Generators",
+      "header": [
+        "| | Engine Model | | |",
+        "| Frequ ency | Phase | Model | Engine Power(KW) | Bore / stroke | Intake | Displacement",
+        "| Rated | Standby | MM"
+      ],
+      "rows": [
+        "| 50 | 3 | YT3B2-D | 30 | 33 | 108x120 | Natural | 3.3",
+        "| 50 | 3 | YT3A2Z-D | 36 | 38 | 105x120 | Turbo | 3.12",
+        "| 50 | 3 | LR4B5-D | 48 | 53 | 108x135 | Natural | 4.67",
+        "| 50 | 3 | YT4B2Z-D | 60 | 65 | 108x120 | Turbo | 4.39",
+        "| 50 | 3 | LR4B3Z-D | 62 | 68 | 110x125 | Turbo | 4.58",
+        "| 50 | 3 | LR4M3L-D | 86 | 95 | 110x125 | Turbo /Inter cooling | 4.75",
+        "| 50 | 3 | LR4N5LP-D | 98 | 100 | 110x125 | Turbo /Inter cooling | 4.75",
+        "| 50 | 3 | LR6A3Z-D | 90 | 103 | 105x125 | Turbo /Inter cooling | 6.49",
+        "| 50 | 3 | LR6A3L-D | 110 | 125 | 105x125 | Turbo /Inter cooling | 6.49",
+        "| 50 | 3 | LR6B3L-D | 138 | 159 | 108x125 | Turbo /Inter cooling | 6.87",
+        "| 50 | 3 | LR6M3L-D | 145 | 165 | 110x125 | Turbo /Inter cooling | 7.127",
+        "| 50 | 3 | YM6H4L-D | 186 | 213 | 120x130 | Turbo /Inter cooling | 8.82",
+        "| 50 | 3 | YM6H4LF-D | 206 | 227 | 120x130 | Turbo /Inter cooling | 8.82",
+        "| 50 | 3 | YM6S4L-D | 220 | 258 | 126x130 | Turbo /Inter cooling | 9.726",
+        "| 50 | 3 | YM6S4LF-D | 252 | 308 | 126x130 | Turbo /Inter cooling | 9.726",
+        "| 50 | 3 | YM6S9L-D | 290 | 320 | 126x155 | Turbo /Inter cooling | 12.596",
+        "| 50 | 3 | YM6S9L-DB | 310 | 352 | 126x155 | Turbo /Inter cooling | 12.596",
+        "| 50 | 3 | YM6S9LF-D | 350 | 405 | 126x155 | Turbo /Inter cooling | 12.596",
+        "| 50 | 3 | YM6S9LF-DA | 370 | 420 | 126x155 | Turbo /Inter cooling | 12.596",
+        "| | | | | | | |",
+        "| | | | | | | |",
+        "| 60 | 3 | YT3B2-D | 36 | 38 | 108x120 | Natural | 3.3",
+        "| 60 | 3 | YT3A2Z-D | 38 | 43 | 105x120 | Turbo | 3.12",
+        "| 60 | 3 | LR4B5-D | 50 | 55 | 108x135 | Natural | 4.67",
+        "| 60 | 3 | YT4B2Z-D | 63 | 68 | 108x120 | Turbo | 4.39",
+        "| 50 | 3 | LR4B3Z-D | 65 | 72 | 110x125 | Turbo | 4.58",
+        "| 60 | 3 | LR4M3L-D | 90 | 98 | 110x125 | Turbo /Inter cooling | 4.75",
+        "| 60 | 3 | LR4N5LP-D | 98 | 110 | 110x125 | Turbo /Inter cooling | 4.75",
+        "| 60 | 3 | LR6A3Z-D | 95 | 105 | 105x125 | Turbo /Inter cooling | 6.49",
+        "| 60 | 3 | LR6A3L-D | 120 | 130 | 105x125 | Turbo /Inter cooling | 6.49",
+        "| 60 | 3 | LR6B3L-D | 145 | 165 | 108x125 | Turbo /Inter cooling | 6.87",
+        "| 60 | 3 | LR6M3L-D | 150 | 170 | 110x125 | Turbo /Inter cooling | 7.127",
+        "| 60 | 3 | YM6H4L-D | 195 | 220 | 120x130 | Turbo /Inter cooling | 8.82",
+        "| 60 | 3 | YM6H4LF-D | 215 | 238 | 120x130 | Turbo /Inter cooling | 8.82",
+        "| 60 | 3 | YM6S4L-D | 240 | 272 | 126x130 | Turbo /Inter cooling | 9.726",
+        "| 60 | 3 | YM6S4LF-D | 270 | 316 | 126x130 | Turbo /Inter cooling | 9.726",
+        "| 60 | 3 | YM6S9L-D | 315 | 350 | 126x155 | Turbo /Inter cooling | 12.596",
+        "| 60 | 3 | YM6S9L-DB | 340 | 370 | 126x155 | Turbo /Inter cooling | 12.596",
+        "| 60 | 3 | YM6S9LF-D | 365 | 410 | 126x155 | Turbo /Inter cooling | 12.596",
+        "| 60 | 3 | YM6S9LF-DA | 380 | 430 | 126x155 | Turbo /Inter cooling | 12.596"
+      ]
+    },
+    {
+      "n": 129,
+      "title": "Low Noise 80KW 100KVA Diesel Powered Generator",
+      "header": [
+        "| GENSET | Alternator | Engine Model",
+        "| Model | Frequ ency | Phase | Genset power(KW) | Genset power(KVA) | Model | Model",
+        "| Rated | Standby | Rated | Standby"
+      ],
+      "rows": [
+        "| APYT-26 | 50 | 3 | 26 | 29 | 33 | 36 | BC184G | YT3B2-D",
+        "| APYT-30 | 50 | 3 | 30 | 33 | 38 | 41 | BC184H | YT3A2Z-D",
+        "| APYT-40 | 50 | 3 | 40 | 44 | 50 | 55 | UC224D | LR4B5-D",
+        "| APYT-50 | 50 | 3 | 50 | 55 | 63 | 69 | UC224E | YT4B2Z-D",
+        "| APYT-52 | 50 | 3 | 52 | 57 | 65 | 72 | UC224E | LR4B3Z-D",
+        "| APYT-75 | 50 | 3 | 75 | 83 | 94 | 103 | UC274C | LR4M3L-D",
+        "| APYT-80 | 50 | 3 | 80 | 88 | 100 | 110 | UC274C | LR4N5LP-D",
+        "| APYT-80 | 50 | 3 | 80 | 88 | 100 | 110 | UC274C | LR6A3Z-D",
+        "| APYT-100 | 50 | 3 | 100 | 110 | 125 | 138 | UC274D | LR6A3L-D",
+        "| APYT-120 | 50 | 3 | 120 | 132 | 150 | 165 | UC274E | LR6B3L-D",
+        "| APYT-130 | 50 | 3 | 130 | 143 | 163 | 179 | UC274F | LR6M3L-D",
+        "| APYT-160 | 50 | 3 | 160 | 176 | 200 | 220 | UC274H | YM6H4L-D",
+        "| APYT-180 | 50 | 3 | 180 | 198 | 225 | 248 | UC274J | YM6H4LF-D",
+        "| APYT-200 | 50 | 3 | 200 | 220 | 250 | 275 | UC274K | YM6S4L-D",
+        "| APYT-220 | 50 | 3 | 220 | 242 | 275 | 303 | HC434CS | YM6S4LF-D",
+        "| APYT-250 | 50 | 3 | 250 | 275 | 313 | 344 | HC434DS | YM6S9L-D",
+        "| APYT-280 | 50 | 3 | 280 | 308 | 350 | 385 | HC434ES | YM6S9L-DB",
+        "| APYT-300 | 50 | 3 | 300 | 330 | 375 | 413 | HC434F | YM6S9LF-D",
+        "| APYT-320 | 50 | 3 | 320 | 352 | 400 | 440 | HC434FS | YM6S9LF-DA",
+        "| APYT-30 | 60 | 3 | 30 | 33 | 38 | 41 | BC184G | YT3B2-D",
+        "| APYT-33 | 60 | 3 | 33 | 36 | 41 | 45 | BC184H | YT3A2Z-D",
+        "| APYT-44 | 60 | 3 | 44 | 48 | 55 | 61 | UC224D | LR4B5-D",
+        "| APYT-53 | 60 | 3 | 53 | 58 | 66 | 73 | UC224E | YT4B2Z-D",
+        "| APYT-55 | 50 | 3 | 55 | 61 | 69 | 76 | UC224E | LR4B3Z-D",
+        "| APYT-75 | 60 | 3 | 75 | 83 | 94 | 103 | UC224G | LR4M3L-D",
+        "| APYT-88 | 60 | 3 | 88 | 97 | 110 | 121 | UC274C | LR4N5LP-D",
+        "| APYT-88 | 60 | 3 | 88 | 97 | 110 | 121 | UC274C | LR6A3Z-D",
+        "| APYT-105 | 60 | 3 | 105 | 116 | 130 | 143 | UC274D | LR6A3L-D",
+        "| APYT-125 | 60 | 3 | 125 | 138 | 156 | 172 | UC274E | LR6B3L-D",
+        "| APYT-135 | 60 | 3 | 135 | 149 | 170 | 187 | UC274F | LR6M3L-D",
+        "| APYT-180 | 60 | 3 | 180 | 198 | 225 | 248 | UC274H | YM6H4L-D",
+        "| APYT-190 | 60 | 3 | 190 | 209 | 238 | 261 | UC274J | YM6H4LF-D",
+        "| APYT-220 | 60 | 3 | 220 | 242 | 275 | 303 | UC274K | YM6S4L-D",
+        "| APYT-250 | 60 | 3 | 250 | 275 | 313 | 344 | HC434D | YM6S4LF-D",
+        "| APYT-280 | 60 | 3 | 280 | 308 | 350 | 385 | HC434E | YM6S9L-D",
+        "| APYT-300 | 60 | 3 | 300 | 330 | 375 | 413 | HC434ES | YM6S9L-DB",
+        "| APYT-320 | 60 | 3 | 320 | 352 | 400 | 440 | HC434F | YM6S9LF-D",
+        "| APYT-350 | 60 | 3 | 350 | 385 | 438 | 481 | HC434F | YM6S9LF-DA"
+      ]
+    },
+    {
+      "n": 130,
+      "title": "SASO 50KVA 40KW Diesel Powered AC Generator",
+      "header": [
+        "| Frequency | Genset power(KVA) | Engine Model | Engine Power(KW) | Governing | Alternator Model",
+        "| Rated | Standby | Rated | Standby"
+      ],
+      "rows": [
+        "| 50 | 33 | 36 | YT3B2-D | 30 | 33 | Mechanical | BC184G",
+        "| 50 | 38 | 41 | YT3A2Z-D | 36 | 38 | Mechanical | BC184H",
+        "| 50 | 50 | 55 | LR4B5-D | 48 | 53 | Mechanical | UC224D",
+        "| 50 | 63 | 69 | YT4B2Z-D | 60 | 65 | Mechanical | UC224E",
+        "| 50 | 65 | 72 | LR4B3Z-D | 62 | 68 | Mechanical | UC224E",
+        "| 50 | 94 | 103 | LR4M3L-D | 86 | 95 | Electronic | UC274C",
+        "| 50 | 100 | 110 | LR4N5LP-D | 91 | 100 | Electronic | UC274C",
+        "| 50 | 100 | 110 | LR6A3Z-D | 90 | 103 | Mechanical | UC274C",
+        "| 50 | 125 | 138 | LR6A3L-D | 110 | 125 | Electronic | UC274D",
+        "| 50 | 150 | 165 | LR6B3L-D | 138 | 159 | Electronic | UC274E",
+        "| 50 | 163 | 179 | LR6M3L-D | 145 | 165 | Electronic | UC274F",
+        "| 50 | 200 | 220 | YM6H4L-D | 186 | 213 | Electronic | UC274H",
+        "| 50 | 225 | 248 | YM6H4LF-D | 206 | 227 | Electronic | UC274J",
+        "| 50 | 250 | 275 | YM6S4L-D | 220 | 258 | Electronic | UC274K",
+        "| 50 | 275 | 303 | YM6S4LF-D | 252 | 308 | Electronic | HC434CS",
+        "| 50 | 313 | 344 | YM6S9L-D | 290 | 320 | Electronic | HC434DS",
+        "| 50 | 350 | 385 | YM6S9L-DB | 310 | 352 | Electronic | HC434ES",
+        "| 50 | 375 | 413 | YM6S9LF-D | 350 | 405 | Electronic | HC434F",
+        "| 50 | 400 | 440 | YM6S9LF-DA | 370 | 420 | Electronic | HC434FS",
+        "| 60 | 38 | 41 | YT3B2-D | 36 | 38 | Mechanical | BC184G",
+        "| 60 | 41 | 45 | YT3A2Z-D | 38 | 43 | Mechanical | BC184H",
+        "| 60 | 55 | 61 | LR4B5-D | 50 | 55 | Mechanical | UC224D",
+        "| 60 | 66 | 73 | YT4B2Z-D | 63 | 68 | Mechanical | UC224E",
+        "| 60 | 69 | 76 | LR4B3Z-D | 65 | 72 | Mechanical | UC224E",
+        "| 60 | 94 | 103 | LR4M3L-D | 90 | 98 | Electronic | UC224G",
+        "| 60 | 110 | 121 | LR4N5LP-D | 98 | 110 | Electronic | UC224G",
+        "| 60 | 110 | 121 | LR6A3Z-D | 95 | 105 | Mechanical | UC274C",
+        "| 60 | 130 | 143 | LR6A3L-D | 120 | 130 | Electronic | UC274D",
+        "| 60 | 156 | 172 | LR6B3L-D | 145 | 165 | Electronic | UC274E",
+        "| 60 | 170 | 187 | LR6M3L-D | 150 | 170 | Electronic | UC274F",
+        "| 60 | 225 | 248 | YM6H4L-D | 195 | 220 | Electronic | UC274H",
+        "| 60 | 238 | 261 | YM6H4LF-D | 215 | 238 | Electronic | UC274J",
+        "| 60 | 275 | 303 | YM6S4L-D | 240 | 272 | Electronic | UC274K",
+        "| 60 | 313 | 344 | YM6S4LF-D | 270 | 316 | Electronic | HC434D",
+        "| 60 | 350 | 385 | YM6S9L-D | 315 | 350 | Electronic | HC434E",
+        "| 60 | 375 | 413 | YM6S9L-DB | 340 | 370 | Electronic | HC434ES",
+        "| 60 | 400 | 440 | YM6S9LF-D | 365 | 410 | Electronic | HC434F",
+        "| 60 | 438 | 481 | YM6S9LF-DA | 380 | 430 | Electronic | HC434F"
+      ]
+    },
+    {
+      "n": 131,
+      "title": "25KW 3 Cylinder Three Phase Diesel Powered Generator , Sound Proof Diesel Generator",
+      "header": [
+        "| Model | Frequency | Genset power(KW) | Engine Model | Engine Power(KW) | Alternator Model",
+        "| Rated | Standby | Rated | Standby"
+      ],
+      "rows": [
+        "| APYT-26 | 50 | 26 | 29 | YT3B2-D | 30 | 33 | BC184G",
+        "| APYT-30 | 50 | 30 | 33 | YT3A2Z-D | 36 | 38 | BC184H",
+        "| APYT-40 | 50 | 40 | 44 | LR4B5-D | 48 | 53 | UC224D",
+        "| APYT-50 | 50 | 50 | 55 | YT4B2Z-D | 60 | 65 | UC224E",
+        "| APYT-52 | 50 | 52 | 57 | LR4B3Z-D | 62 | 68 | UC224E",
+        "| APYT-75 | 50 | 75 | 83 | LR4M3L-D | 86 | 95 | UC274C",
+        "| APYT-80 | 50 | 80 | 88 | LR4N5LP-D | 91 | 100 | UC274C",
+        "| APYT-80 | 50 | 80 | 88 | LR6A3Z-D | 90 | 103 | UC274C",
+        "| APYT-100 | 50 | 100 | 110 | LR6A3L-D | 110 | 125 | UC274D",
+        "| APYT-120 | 50 | 120 | 132 | LR6B3L-D | 138 | 159 | UC274E",
+        "| APYT-130 | 50 | 130 | 143 | LR6M3L-D | 145 | 165 | UC274F",
+        "| APYT-160 | 50 | 160 | 176 | YM6H4L-D | 186 | 213 | UC274H",
+        "| APYT-180 | 50 | 180 | 198 | YM6H4LF-D | 206 | 227 | UC274J",
+        "| APYT-200 | 50 | 200 | 220 | YM6S4L-D | 220 | 258 | UC274K",
+        "| APYT-220 | 50 | 220 | 242 | YM6S4LF-D | 252 | 308 | HC434CS",
+        "| APYT-250 | 50 | 250 | 275 | YM6S9L-D | 290 | 320 | HC434DS",
+        "| APYT-280 | 50 | 280 | 308 | YM6S9L-DB | 310 | 352 | HC434ES",
+        "| APYT-300 | 50 | 300 | 330 | YM6S9LF-D | 350 | 405 | HC434F",
+        "| APYT-320 | 50 | 320 | 352 | YM6S9LF-DA | 370 | 420 | HC434FS",
+        "| APYT-30 | 60 | 30 | 33 | YT3B2-D | 36 | 38 | BC184G",
+        "| APYT-33 | 60 | 33 | 36 | YT3A2Z-D | 38 | 43 | BC184H",
+        "| APYT-44 | 60 | 44 | 48 | LR4B5-D | 50 | 55 | UC224D",
+        "| APYT-53 | 60 | 53 | 58 | YT4B2Z-D | 63 | 68 | UC224E",
+        "| APYT-55 | 60 | 55 | 61 | LR4B3Z-D | 65 | 72 | UC224E",
+        "| APYT-75 | 60 | 75 | 83 | LR4M3L-D | 90 | 98 | UC224G",
+        "| APYT-88 | 60 | 88 | 97 | LR4N5LP-D | 98 | 110 | UC224G",
+        "| APYT-88 | 60 | 88 | 97 | LR6A3Z-D | 95 | 105 | UC274C",
+        "| APYT-105 | 60 | 105 | 116 | LR6A3L-D | 120 | 130 | UC274D",
+        "| APYT-125 | 60 | 125 | 138 | LR6B3L-D | 145 | 165 | UC274E",
+        "| APYT-135 | 60 | 135 | 149 | LR6M3L-D | 150 | 170 | UC274F",
+        "| APYT-180 | 60 | 180 | 198 | YM6H4L-D | 195 | 220 | UC274H",
+        "| APYT-190 | 60 | 190 | 209 | YM6H4LF-D | 215 | 238 | UC274J",
+        "| APYT-220 | 60 | 220 | 242 | YM6S4L-D | 240 | 272 | UC274K",
+        "| APYT-250 | 60 | 250 | 275 | YM6S4LF-D | 270 | 316 | HC434D",
+        "| APYT-280 | 60 | 280 | 308 | YM6S9L-D | 315 | 350 | HC434E",
+        "| APYT-300 | 60 | 300 | 330 | YM6S9L-DB | 340 | 370 | HC434ES",
+        "| APYT-320 | 60 | 320 | 352 | YM6S9LF-D | 365 | 410 | HC434F",
+        "| APYT-350 | 60 | 350 | 385 | YM6S9LF-DA | 380 | 430 | HC434F"
       ]
     }
   ]
