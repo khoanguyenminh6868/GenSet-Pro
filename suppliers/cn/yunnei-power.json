@@ -1,0 +1,79 @@
+{
+  "id": "yunnei-power",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "昆明云内动力股份有限公司",
+    "brands": [
+      "云内",
+      "Yunnei"
+    ]
+  },
+  "website": "http://www.yunneidongli.com/",
+  "hq": {
+    "province": "Yunnan",
+    "city": "Kunming"
+  },
+  "founded": 1999,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Công ty niêm yết, lập năm 1999 từ Nhà máy động cơ đốt trong Vân Nam; năng lực 750.000 động cơ diesel/năm",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Có cơ sở Thành Đô (động cơ 490, 495, động cơ khí) và Sơn Đông",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "柴油发动机 (động cơ diesel; có 490、495系列)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang giới thiệu không ghi dải công suất động cơ dùng cho máy phát; mục 'phát điện' trên website chưa lưu"
+  ],
+  "sources": [
+    {
+      "n": 2,
+      "url": "http://www.yunneidongli.com/about/gong-si-jian-jie_yndl.htm",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "昆明云内动力股份有限公司成立于1999年，是由云南内燃机厂作为独家发起人，以社会募集方式设立的股份制上市公司，迄今已有六十年余年从事柴油机开发生产的历史。",
+        "目前，公司具备年产柴油机75万台、汽油机10万台的生产能力",
+        "公司2001年收购成都内燃机总厂，成立成都云内动力有限公司，主要生产490、495系列柴油发动机及天然气发动机产品"
+      ],
+      "file": "sources/yunnei-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

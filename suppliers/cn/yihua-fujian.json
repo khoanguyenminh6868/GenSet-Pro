@@ -1,0 +1,85 @@
+{
+  "id": "yihua-fujian",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Fujian Yihua Electrical Machinery Co.,Ltd",
+    "zh": null,
+    "brands": [
+      "Yihua"
+    ]
+  },
+  "website": "https://www.yihua-genset.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fu'an"
+  },
+  "founded": 1994,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà máy 30.000 m² ở Phúc An, đang mở rộng nhà máy mới khoảng 40.000 m²",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "SONCAP",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất chung",
+    "Câu 'with ISO9001 standard' không nói rõ đã có chứng chỉ ISO9001",
+    "Lượt trước bỏ qua vì chỉ thấy gian hàng B2B; nay đã tìm thấy website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.yihua-genset.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Fujian Yihua Electrical Machinery Co.,Ltd Establish in 1994,located in “Generator City of China ”—Fu‘an City, covering 30000 square meters and our new plant (around 40000 square meters) is being expanded .We can providing wide range output diesel generators with ISO9001 standard, and obtained CE,Soncap, certification."
+      ],
+      "file": "sources/yihua-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

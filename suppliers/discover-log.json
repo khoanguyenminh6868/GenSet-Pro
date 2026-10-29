@@ -274,5 +274,161 @@
   "url": "http://www.googol-power.com/en/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "zhengchi-power",
+  "name": "正驰动力有限公司",
+  "url": "https://www.zcdl.com.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "huadong-yangzhou",
+  "name": "扬州市华东动力机械有限公司",
+  "url": "http://www.yzhddl.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "fengfa-taizhou",
+  "name": "Taizhou Fengfa Power Equipment Co., Ltd.",
+  "url": "https://www.ffdlpower.com/",
+  "tables": 1,
+  "rows": 29
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "keliang-fuan",
+  "name": "Fuan Keliang Electrical Machinery Co.,Ltd.",
+  "url": "https://motors-world.com/",
+  "tables": 6,
+  "rows": 278
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "plus-power",
+  "name": "Plus Power Equipment Co.,Ltd.",
+  "url": "https://www.pluspowergenerator.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "changchai",
+  "name": "常柴股份有限公司",
+  "url": "http://www.changchai.com.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "skip",
+  "url": "https://www.equipmentcn.com/",
+  "reason": "Xuzhou Huayan Gas Equipment chủ yếu làm máy nén khí, không phải nhà máy tổ máy"
+ },
+ {
+  "at": "2026-10-29",
+  "result": "skip",
+  "url": "https://www.kanpor-power.com/",
+  "reason": "trang dựng bằng JavaScript, cả bản Chromium cũng gần như không có chữ"
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "deman-power",
+  "name": "WeiFang Deman Power Technology Co., LTD.",
+  "url": "https://www.demanpower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "frs-shenyang",
+  "name": "沈阳福瑞斯动力设备有限公司",
+  "url": "http://frs-power.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "yihua-fujian",
+  "name": "Fujian Yihua Electrical Machinery Co.,Ltd",
+  "url": "https://www.yihua-genset.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "naipute-weifang",
+  "name": "Weifang Naipute Gas Genset Co., Ltd.",
+  "url": "https://www.nptgasgenset.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "oukai-fuan",
+  "name": "Fuan Oukai Power Equipment Co.,Ltd.",
+  "url": "http://www.fjouk.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "dagus-fuan",
+  "name": "Fu'an Dagus Power Machinery Co., Ltd.",
+  "url": "https://www.daguspower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "astra-fuan",
+  "name": "ASTRA (FUAN) POWER TECHNOLOGY CO.,LTD.",
+  "url": "https://www.intelecgen.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "yunnei-power",
+  "name": "昆明云内动力股份有限公司",
+  "url": "http://www.yunneidongli.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "power-hf",
+  "name": "华丰动力股份有限公司",
+  "url": "http://www.powerhf.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "firstall-power",
+  "name": "Fujian Firstall Power Technology Co., Ltd.",
+  "url": "https://www.firstallpower.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

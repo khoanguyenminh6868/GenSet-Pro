@@ -1,0 +1,139 @@
+{
+  "id": "plus-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Plus Power Equipment Co.,Ltd.",
+    "zh": null,
+    "brands": [
+      "PLUS POWER"
+    ]
+  },
+  "website": "https://www.pluspowergenerator.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fu'an"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tự sản xuất đầu phát và vỏ cách âm; tổ máy 5–2500 kVA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Đầu phát dòng 224 (42,5–85 kVA) đến dòng 454 (1250–2500 kVA)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator set",
+      "fuel": "diesel",
+      "engineMakes": [
+        "PERKINS",
+        "CUMMINS",
+        "BAUDOUIN",
+        "WEICHAI",
+        "HYUNDAI",
+        "DEUTZ",
+        "MITSUBISHI",
+        "YUNNEI",
+        "ISUZU",
+        "YANGDONG",
+        "YTO",
+        "FAWDE",
+        "SDEC",
+        "RICARDO"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "Generator Alternators (224–454 Series)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 42.5,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Không thấy năm thành lập và tên tiếng Trung"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.pluspowergenerator.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2026 PLUS POWER EQUIPMENT CO.,LTD..All Rights Reserved",
+        "Address : No.5 Jinye road, Tiehu industrial park, Fuan city, Fujian, China",
+        "PLUS POWER Genset advance is: we produce alternator and canopy by ourself. Power range from 5kVA to 2500kVA. We can supply PERKINS, CUMMINS, BAUDOUIN/WEICHAI, HYUNDAI, DEUTZ, MITSUBISHI, YUNNEI, ISUZU, YANGDONG/YTO, FAWDE, SDEC, RICARDO engine brand genset and so on.",
+        "42.5kVA to 85kVA 224 Series Brushless Generator Alternators",
+        "1250kVA to 2500kVA 454 Series three phase Generator Alternators",
+        "ISO 9001: 2015 Quality Assurance System, GB/T19001-2016 and European Standard Compliance CE Certificate"
+      ],
+      "file": "sources/plus-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

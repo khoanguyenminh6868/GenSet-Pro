@@ -1,0 +1,84 @@
+{
+  "id": "changchai",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "常柴股份有限公司",
+    "brands": [
+      "常柴",
+      "Changchai"
+    ]
+  },
+  "website": "http://www.changchai.com.cn/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Changzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel công suất vừa và nhỏ 3–129 kW, hơn 1.000 loại, có dùng cho tổ máy phát",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Niêm yết A và B; năng lực 700.000 động cơ diesel/năm",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "中小功率柴油机 (động cơ diesel vừa và nhỏ)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 3,
+        "max": 129,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không ghi năm thành lập cụ thể ('một trăm năm lịch sử')",
+    "Không thấy chứng chỉ trên trang giới thiệu"
+  ],
+  "sources": [
+    {
+      "n": 2,
+      "url": "http://www.changchai.com.cn/lists/2.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "常柴股份有限公司是具有一百多年历史的民族工业企业，是中国最早的内燃机专业制造商之一，也是全国农机行业及常州市第一家上市公司，目前同时拥有A股和B股，具有年产70万台柴油机、6万余吨铸件、20万台汽油机生产能力。",
+        "常柴主要生产中小功率柴油机，功率范围3—129千瓦，共有1000多个品种，产品广泛应用于皮卡、轻卡、低速载货汽车、拖拉机、收割机、园艺机械、植保机械、高速插秧机、发电机组、工程机械、冷链及船舶等领域。"
+      ],
+      "file": "sources/changchai/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

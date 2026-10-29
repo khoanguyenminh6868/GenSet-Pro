@@ -1,0 +1,5 @@
+{"id":"oukai-fuan","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"Fuan Oukai Power Equipment Co.,Ltd.","zh":null,"brands":["Oukai"],"web":"http://www.fjouk.com/","prov":"Fujian","city":"Fu'an","founded":2004,"fsrc":[1],"related":[],
+"src":{"1":["A","China--Oukai power equipment co.,ltd. was founded in 2004, located in the Fuan City known as \"China Motor City\", Oukai is one production-oriented enterprises with generators, generator sets R&D, manufacturing, sales and service as one","Address : Yanhu Development Zone Fuan Fujian"]},
+"str":[["Sản xuất đầu phát và tổ máy ở Phúc An",1]],"cert":[],
+"lines":[{"k":"genset","s":"Generator sets","fuel":"other","src":[1]},{"k":"alternator","s":"Generators (alternators)","src":[1]}],
+"miss":["Trang tiếng Anh không ghi dải công suất, chứng chỉ; bản quyền ghi 2009-2013 nên thông tin có thể cũ","Nguồn không ghi loại nhiên liệu của tổ máy (fuel để other)"],"by":"discover-bot"}

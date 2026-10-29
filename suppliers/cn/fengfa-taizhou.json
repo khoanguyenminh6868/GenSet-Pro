@@ -1,0 +1,178 @@
+{
+  "id": "fengfa-taizhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Taizhou Fengfa Power Equipment Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Fengfa"
+    ]
+  },
+  "website": "https://www.ffdlpower.com/",
+  "hq": {
+    "province": null,
+    "city": "Taizhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Làm tổ máy diesel, tổ máy khẩn cấp tàu thủy và tổ máy khí",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tổ máy tàu thủy 37,5–1250 kVA (30–1000 kW), 50 Hz / 1500 rpm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Marine generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 37.5,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gas gen-sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Không thấy tỉnh (có hai thành phố Thái Châu ở Giang Tô và Chiết Giang), năm thành lập, tên tiếng Trung"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.ffdlpower.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright © Taizhou Fengfa Power Equipment Co., Ltd. All Rights Reserved",
+        "Taizhou Fengfa Power Equipment Co., Ltd. mainly produces and sells diesel generator sets, marinepower emergent diesel gen-sets and gas gen-sets.",
+        "Fengfa Power produces marine generator sets with a power range of 37.5KVA-1250KVA 30kW-1000kW 50Hz/1500RPM",
+        "Fengfa has also obtained AAA qualification and ISO9001-2008 certification."
+      ],
+      "file": "sources/fengfa-taizhou/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.ffdlpower.com/cummins-marine-series897",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset model | Output power | Engine model | Bore*Stroke | CYL | Displacement | C/R | Fuel consumption | Dimension | Weight"
+      ],
+      "file": "sources/fengfa-taizhou/101.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Cummins Marine Series, China Cummins Marine Series Manufacturers, Suppliers, Factory - Taizhou Fengfa Power Equipment Co., Ltd.",
+      "header": [
+        "| Genset model | Output power | Engine model | Bore*Stroke | CYL | Displacement | C/R | Fuel consumption | Dimension | Weight",
+        "| KW | KVA | (mm) | （L） | L/h | (mm) | (Kg)"
+      ],
+      "rows": [
+        "| CCFJ30JW | 30 | 37.5 | 4BTA3.9-GM47 | 102×102 | 4 | 3.9 | 17.3:1 | 6.39 | 1650*850*1270 | 760",
+        "| CCFJ40JW | 40 | 50 | 4BTA3.9-GM47 | 102×102 | 4 | 3.9 | 17.3:1 | 10.02 | 1740*850*1270 | 800",
+        "| CCFJ50JW | 50 | 63 | 6BT5.9-GM83 | 102×120 | 6 | 5.9 | 17.3:1 | 12.47 | 1900*895*1300 | 1000",
+        "| CCFJ64JW | 64 | 80 | 6BT5.9-GM83 | 102×120 | 6 | 5.9 | 17.3:1 | 15.96 | 1900*895*1300 | 1100",
+        "| CCFJ75JW | 75 | 93.75 | 6BT5.9-GM83 | 102×120 | 6 | 5.9 | 17.3:1 | 18.71 | 1920*895*1300 | 1250",
+        "| CCFJ90JW | 90 | 112.5 | 6BTA5.9-GM100 | 102×120 | 6 | 5.9 | 17.3:1 | 22.45 | 1995*895*1300 | 1300",
+        "| CCFJ100JW | 100 | 125 | 6CT8.3–GM115 | 114×135 | 6 | 8.3 | 17.3:1 | 24.94 | 2110*860*1360 | 1650",
+        "| CCFJ120JW | 120 | 150 | 6CTA8.3-GM155 | 114×135 | 6 | 8.3 | 17.3:1 | 29.93 | 2110*860*1360 | 1700",
+        "| CCFJ150JW | 150 | 187.5 | 6LTAA8.9-GM200 | 114×145 | 6 | 8.9 | 16.6:1 | 31.8 | 2210*860*1400 | 1870",
+        "| CCFJ180JW | 180 | 225 | 6LTAA8.9-GM200 | 114×145 | 6 | 8.9 | 16.6:1 | 38.16 | 2210*860*1400 | 1890",
+        "| CCFJ200JW | 200 | 250 | NTA855-DM | 140×152 | 6 | 14 | 14.0:1 | 48.94 | 2760*995*1790 | 3100",
+        "| CCFJ200JW | 200 | 250 | N855-DM | 140X152 | 6 | 14 | 14.0:1 | 48.94 | 2760*995*1790 | 3100",
+        "| CCFJ250JW | 250 | 313 | NTA855-DM | 140×152 | 6 | 14 | 14.0:1 | 61.18 | 2760*995*1790 | 3180",
+        "| CCFJ250JW | 250 | 313 | N855-DM | 140×152 | 6 | 14 | 14.0:1 | 61.18 | 2760*995*1790 | 3180",
+        "| CCFJ280JW | 280 | 350 | NTA855-DM | 140×152 | 6 | 14 | 14.0:1 | 68.52 | 2998*995*1790 | 3250",
+        "| CCFJ280JW | 280 | 350 | N855-DM | 140×152 | 6 | 14 | 14.0:1 | 68.52 | 2998*995*1790 | 3250",
+        "| CCFJ300JW | 300 | 375 | KTA19-DM | 159×159 | 6 | 19 | 14.5:1 | 44.8 | 3170*1000*1905 | 3750",
+        "| CCFJ320JW | 320 | 400 | K19-DM | 159×159 | 6 | 19 | 13.9:1 | 49.5 | 3170*1000*1905 | 3750",
+        "| CCFJ350JW | 350 | 438 | KTA19-DM | 159×159 | 6 | 19 | 13.9:1 | 49.5 | 3170*1000*1905 | 3800",
+        "| CCFJ350JW | 350 | 438 | K19-DM | 159×159 | 6 | 19 | 13.9:1 | 49.5 | 3170*1000*1905 | 3800",
+        "| CCFJ400JW | 400 | 500 | KTA19-DM | 159×159 | 6 | 19 | 13.9:1 | 54.2 | 3170*1000*1905 | 3950",
+        "| CCFJ400JW | 400 | 500 | K19-DM | 159×159 | 6 | 19 | 13.9:1 | 54.2 | 3170*1000*1905 | 3950",
+        "| CCFJ500JW | 500 | 625 | KT38-DM | 159×159 | 12 | 38 | 15.5:1 | 78.5 | 3950*1500*2500 | 6200",
+        "| CCFJ600JW | 600 | 750 | KTA38-DM | 159×159 | 12 | 38 | 14.5:1 | 87.5 | 4050*1400*268 | 6550",
+        "| CCFJ650JW | 650 | 813 | KTA38-DM | 159×159 | 12 | 38 | 14.5:1 | 78.5 | 4050*1400*2680 | 6980",
+        "| CCFJ700JW | 700 | 875 | K38-DM | 159×159 | 12 | 38 | 13.9:1 | 103.7 | 4100*1500*2500 | 6500",
+        "| CCFJ800JW | 800 | 1000 | KTA38-DM | 159×159 | 12 | 38 | 13.9:1 | 109.4 | 4100*1500*2500 | 7000",
+        "| CCFJ800JW | 800 | 1000 | K38-DM | 159×159 | 12 | 38 | 13.9:1 | 109.4 | 4100*1500*2500 | 7000",
+        "| CCFJ1000JW | 1000 | 1250 | K50-DM | 159×159 | 12 | 38 | 15.0:1 | 141.7 | 4250*1500*2500 | 7500"
+      ]
+    }
+  ]
+}
