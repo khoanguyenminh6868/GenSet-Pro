@@ -13,8 +13,21 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   whose engine is of the other origin (under Chinese, also one whose make the source does not state).
 - `hsmt.txt`: the tender's own text. Every requirement quote must be copied from here.
 - `catalog.md`: the engines and alternators in the system (web/catalog.js), each with the genset table rows that name
-  it, exactly as on the supplier's website, and the source `supplierId` / `n`; at the end, the suppliers in the system
+  it, exactly as on the supplier's website, and the source `supplierId` / `n`; then each table's header (once per
+  `supplierId` / `n`, column titles); at the end, the suppliers in the system
   (role, status, confidence, website, Vietnam distributors) as recorded in the supplier DB.
+- `suppliers.json`, `meta.json`: what the check command reads; do not open them.
+
+## Working fast (a run used to take 10 minutes, Khoa 2026-10-29)
+- Read input.md and catalog.md whole, once each (catalog.md is short); search hsmt.txt with grep for the quotes.
+- Do not read the repo's source code (config-bot.mjs, verify.mjs, web/catalog.js, suppliers/) and do not write your
+  own checker: run the check command in input.md once when result.json is written. It works offline, prints every
+  point that does not match its source (or that none fails) and writes `result.checked.json`. Fix what it prints and
+  run it again only if you changed something. A supplier you add in newCatalog.json is reported missing there; that
+  is expected, the bot adds it before its own check.
+- Write result.json (or a script that builds it) with the Write tool, never with a shell heredoc, and write it once:
+  then change only the parts that need it with Edit.
+- Keep `offered`, `note` and `gaps` short; do not repeat the requirement in them.
 
 ## Steps
 1. List the requirements for the engine, the alternator and the genset as a whole that a model can meet or fail:

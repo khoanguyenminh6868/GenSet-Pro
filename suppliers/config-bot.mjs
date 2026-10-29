@@ -82,21 +82,29 @@ function technicalPart(text) {
   const rest = text.slice(start + 10), end = rest.search(/\n\s*ch(ươ|uo)ng\s+(VI|VII)\b/i);
   return text.slice(start, end > 0 ? start + 10 + end : start + 250000).slice(0, 250000);
 }
+// Kept short so the agent reads it in a few passes (a run paged through 3000 lines for minutes, Khoa 2026-10-29):
+// at most 40 models and 3 rows each, first the rows at the power asked for that name the other part too.
+const MODELS = 40, ROWS = 3;
 function catalogMd(cat, cap, brands) {
+  const near = (u) => Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4);
   const pick = (list) => {
-    if (!cap) return list.slice(0, 80);
-    const near = list.filter((e) => e.uses.some((u) => Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4)));
-    return near.sort((a, b) => (brands.some((x) => (b.make || "").includes(x)) - brands.some((x) => (a.make || "").includes(x))) || b.suppliers.length - a.suppliers.length).slice(0, 80);
+    if (!cap) return list.slice(0, MODELS);
+    return list.filter((e) => e.uses.some(near))
+      .sort((a, b) => (brands.some((x) => (b.make || "").includes(x)) - brands.some((x) => (a.make || "").includes(x))) || b.suppliers.length - a.suppliers.length).slice(0, MODELS);
   };
+  const paired = (u) => (cap ? near(u) : true) && !!u.other;
   const out = [`# Danh mục trong hệ thống${cap ? ` (lọc theo tổ máy ${cap.value} ${cap.unit}, từ 95% đến 140%)` : ""}`, ""];
+  // A table's header is written once, at the end (it was repeated on every row, 400 KB of 480); a header that took in
+  // the table's rows (some run to 10 000 characters) is cut, its column titles come first.
+  const headers = new Map();
   for (const [title, list] of [["Động cơ", pick(cat.engines)], ["Đầu phát", pick(cat.alternators)]]) {
     out.push(`## ${title} (${list.length})`, "");
     for (const e of list) {
       out.push(`### ${e.model}${e.make ? ` — hãng: ${e.make} (theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " — nguồn không ghi hãng"}`);
-      const uses = cap ? e.uses.slice().sort((a, b) => Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value)) : e.uses;
-      for (const u of uses.slice(0, 8)) {
+      const uses = e.uses.slice().sort((a, b) => (paired(b) - paired(a)) || (cap ? Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value) : 0));
+      for (const u of uses.slice(0, ROWS)) {
         out.push(`- supplierId: ${u.supplierId}, n: ${u.n}${u.genset ? `, tổ máy: ${u.genset}` : ""}${u.other ? `, đi kèm: ${u.other}` : ""}`);
-        if (u.header?.length) out.push(`  header: ${u.header.join(" ")}`);
+        if (u.header?.length) headers.set(`${u.supplierId} n ${u.n}`, u.header.join(" "));
         out.push(u.line ? `  line: ${u.line}` : `  bảng một model: ${(u.lines?.rows || []).join(" ; ")}`);
         // Figures read from that row by column title (web/catalog.js), each in the row word for word.
         if (u.specs?.length) out.push(`  thông số: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
@@ -104,6 +112,8 @@ function catalogMd(cat, cap, brands) {
       out.push("");
     }
   }
+  out.push("## Tiêu đề bảng (header của mỗi bảng supplierId n, dùng được cho sourceQuote)", "");
+  for (const [k, h] of headers) out.push(`- ${k}: ${h.length > 600 ? h.slice(0, 600) + " …" : h}`);
   return out.join("\n");
 }
 // The suppliers behind the catalog rows, as recorded in the supplier DB (every fact there has a source).
@@ -135,9 +145,13 @@ async function prep(key, dir, reqData = {}) {
   const origin = originOfReq(reqData.origin), full = CAT.build(suppliers.map((d) => d.data));
   const cat = { ...full, engines: byOrigin(full.engines, origin) };
   fs.writeFileSync(path.join(dir, "catalog.md"), catalogMd(cat, cap, brands) + "\n\n" + suppliersMd(suppliers.map((d) => d.data)), "utf8");
+  // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
+  fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(suppliers.map((d) => d.data)), "utf8");
+  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin }), "utf8");
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
-    `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`, "",
+    `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`,
+    `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`, "",
     `## Xuất xứ động cơ: ${ORIGIN[origin]}`,
     origin === "cn" ? `Chỉ gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Không gợi ý động cơ của hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả loại sản xuất theo giấy phép tại Trung Quốc (Dongfeng Cummins, Chongqing Cummins...), cả khi tìm trên internet. Nếu HSMT chỉ định một hãng nước ngoài thì trả lời "configs": [] và nói rõ trong message.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
@@ -425,8 +439,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   if (cmd === "save") console.log(await save(arg("dir", "."), arg("url")));
   else if (cmd === "prep") console.log(JSON.stringify(await prep(arg("key"), arg("out"), { bidName: arg("bid-name"), origin: arg("origin") })));
   else if (cmd === "check") {
-    const { problems, result } = checkDir(arg("dir", "."), (await api("kind=docs&coll=supplier")).map((d) => d.data));
-    fs.writeFileSync(path.join(arg("dir", "."), "result.checked.json"), JSON.stringify(result, null, 1));
+    // Offline in a folder made by prep (suppliers.json, meta.json); elsewhere the supplier DB is read from the web.
+    const dir = arg("dir", "."), local = (f) => (fs.existsSync(path.join(dir, f)) ? JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) : null);
+    const { problems, result } = checkDir(dir, local("suppliers.json") || (await api("kind=docs&coll=supplier")).map((d) => d.data), [], local("meta.json")?.origin);
+    fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
     console.log(problems.length ? problems.join("\n") : "Không có điểm nào chưa khớp nguồn.");
   } else if (cmd === "post") {
     const dir = arg("dir", "."), { result } = checkDir(dir, (await api("kind=docs&coll=supplier")).map((d) => d.data));
