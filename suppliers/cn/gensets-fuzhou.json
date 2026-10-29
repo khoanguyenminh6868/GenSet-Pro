@@ -8,7 +8,7 @@
     "zh": null,
     "brands": []
   },
-  "website": "http://www.gesaisi.com",
+  "website": null,
   "hq": {
     "province": "Fujian",
     "city": "Fuzhou"
@@ -47,7 +47,8 @@
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Nguồn là danh sách nhà phân phối ủy quyền trên website của STAMFORD; chưa lưu website riêng của nhà phân phối"
+    "Nguồn là danh sách nhà phân phối ủy quyền trên website của STAMFORD; chưa lưu website riêng của nhà phân phối",
+    "Website gesaisi.com ghi trên danh sách của STAMFORD đã bị chiếm làm trang cờ bạc (kiểm 2026-10-29), đã bỏ; chưa có website chính thức"
   ],
   "sources": [
     {
