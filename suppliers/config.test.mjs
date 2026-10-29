@@ -139,20 +139,27 @@ test("Xuất xứ Trung Quốc drops a foreign engine, Khác keeps only foreign 
 test("engines are split by origin from their make or model code", () => {
   const C = globalThis.GenbidCatalog, eng = (model, ...names) => ({ model, makes: names.map((name) => ({ name, via: "dòng bảng" })) });
   const list = [eng("WP13D440E310", "Weichai"), eng("6BTA5.9-G2"), eng("TAD1641GE", "Volvo Penta"), eng("YC6MK420L-D20"), eng("4TNV98T", "Yanmar"), eng("16M33G4N2/6")];
-  assert.deepEqual(byOrigin(list, "cn").map((e) => e.model), ["WP13D440E310"]);
+  assert.deepEqual(byOrigin(list, "cn").map((e) => e.model), ["WP13D440E310", "YC6MK420L-D20"]);
   assert.deepEqual(byOrigin(list, "other").map((e) => e.model), ["6BTA5.9-G2", "TAD1641GE", "4TNV98T", "16M33G4N2/6"]);
   assert.equal(C.originIn("Kubota V3300", "V3300"), "other");
   assert.equal(C.originIn("Yuchai", "YC4D"), "cn");
 });
 
 test("Xuất xứ Trung Quốc drops an engine whose source gives no make", () => {
-  const s2 = [{ id: "s", specTables: [{ n: 101, title: "Gensets", header: ["| Model | Prime kW/kVA | Engine | Alternator"], rows: ["| GF450 | 360/450 | YC6MK420L-D20 | HCI544C"] }] }];
-  const row2 = { kind: "catalog", supplierId: "s", n: 101, line: "| GF450 | 360/450 | YC6MK420L-D20 | HCI544C" };
-  const mk = () => { const r = base(); Object.assign(r.configs[0], { engine: { model: "YC6MK420L-D20", make: "Yuchai", src: row2 }, alternator: { model: "HCI544C", src: row2 }, genset: { model: "GF450", src: row2 } }); return r; };
+  const s2 = [{ id: "s", specTables: [{ n: 101, title: "Gensets", header: ["| Model | Prime kW/kVA | Engine | Alternator"], rows: ["| GF450 | 360/450 | XJ420-D20 | HCI544C"] }] }];
+  const row2 = { kind: "catalog", supplierId: "s", n: 101, line: "| GF450 | 360/450 | XJ420-D20 | HCI544C" };
+  const mk = () => { const r = base(); Object.assign(r.configs[0], { engine: { model: "XJ420-D20", make: "Xinjie", src: row2 }, alternator: { model: "HCI544C", src: row2 }, genset: { model: "GF450", src: row2 } }); return r; };
   const r = mk();
   const { result, problems } = check(r, { hsmtText: hsmt, suppliers: s2, readWeb, origin: "cn" });
   assert.equal(result.configs.length, 0);
   assert.ok(problems.some((p) => p.includes("nguồn không ghi hãng")));
   const s3 = [{ ...s2[0], specTables: [{ ...s2[0].specTables[0], title: "Yuchai gensets" }] }];
   assert.equal(check(mk(), { hsmtText: hsmt, suppliers: s3, readWeb, origin: "cn" }).result.configs.length, 1);
+});
+
+test("well-known Chinese model codes count as a stated make, foreign codes win", () => {
+  const C = globalThis.GenbidCatalog;
+  for (const m of ["YC6MK420L-D20", "WP10D158E3OONG", "12V190ZL", "SC9D355D2", "YD4105-D60", "FAW CA6DM2-39D", "6135ACaf", "186FA", "KHKTA50T1"]) assert.equal(C.originIn("", m), "cn", m);
+  for (const m of ["BF6M1015C-G2A", "S16R-PTA3-C", "4TNV88-GGECC", "B5.9CS4-GT1", "QSNT-G4", "TBD620V12-2A", "4016TAG2"]) assert.equal(C.originIn("", m), "other", m);
+  assert.equal(C.originIn("", "ZCDL-K500"), null);
 });
