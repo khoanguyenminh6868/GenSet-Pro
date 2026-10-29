@@ -13,6 +13,7 @@ const RATINGS = new Set(["prime", "standby", "continuous", "unspecified"]);
 const UNITS = new Set(["kVA", "kW", "hp", "PS"]);
 const TIERS = new Set(["A", "B", "C"]);
 const KINDS = new Set(["genset", "engine", "alternator"]);
+const CONTACTS = new Set(["email", "phone", "whatsapp", "wechat"]);
 
 // Same text either side: whitespace collapsed, full-width tildes and dashes read as their ASCII forms.
 export const norm = (s) => String(s ?? "").normalize("NFKC").replace(/[～〜]/g, "~").replace(/[‐-―−]/g, "-").replace(/\s+/g, " ").trim().toLowerCase();
@@ -50,6 +51,13 @@ export function checkRecord(rec, file) {
   for (const [i, c] of (rec.certifications || []).entries()) srcOk(c.src, `certifications[${i}] ${c.name}`);
   for (const [i, d] of (rec.vietnam?.distributors || []).entries()) srcOk(d.src, `vietnam.distributors[${i}]`);
   if (rec.founded != null) srcOk(rec.foundedSrc, "founded");
+  // Contacts (contacts.mjs): the value is in a quote of its source, so it was read from the page, not typed.
+  for (const [i, c] of (rec.contacts || []).entries()) {
+    const where = `contacts[${i}] ${c.type} ${c.value}`;
+    if (!CONTACTS.has(c.type)) err(`${where}: type`);
+    if (!c.value) err(`${where}: value`);
+    else if (!norm(quoted(srcOk(c.src, where))).includes(norm(c.value))) err(`${where}: không có trong câu trích nguồn`);
+  }
   for (const [i, p] of (rec.productLines || []).entries()) {
     const where = `productLines[${i}] ${p.series || ""}`;
     if (!KINDS.has(p.kind)) err(`${where}: kind ${p.kind}`);

@@ -60,12 +60,30 @@
         "Urumqi Dongfang Power Trading Co.,Ltd.",
         "Local Branch / Dealer",
         "45-17 Henghui Electromechanical City, Toutunhe District, Urumqi, Xinjiang",
-        "No. 88, Taihe Road, Xinshi District, Urumqi, Xinjiang"
+        "No. 88, Taihe Road, Xinshi District, Urumqi, Xinjiang",
+        "Phone: 0991-3707727",
+        "Email: dfdl888@126.com"
       ],
       "file": "sources/dongfang-urumqi/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "dfdl888@126.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0991-3707727",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

@@ -57,12 +57,22 @@
         "Chongqing Changkang Electromechanical Equipment Co., Ltd",
         "Welcome to Chongqing Changkang Electromechanical Equipment Co., Ltd, located in Chongqing, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator",
-        "Independent"
+        "Independent",
+        "[15002321988](tel:+115002321988) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.+100%2C+Wulingguan%2C+Martyrs%27+Tomb%2C+Shapingba+District%2C+Chongqing%2C+Chongqing%2C+CHONGQING+400031%2C+China)"
       ],
       "file": "sources/cummins-dealer-chongqing-changkang-electromechanical-equipment/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "15002321988",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

@@ -57,12 +57,22 @@
         "New Chongkang Electromechanical (Shenzhen) Co., Ltd",
         "Welcome to New Chongkang Electromechanical (Shenzhen) Co., Ltd, located in Shenzhen, Guangdong, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Construction, Generator, Marine",
-        "Independent"
+        "Independent",
+        "[13923489818](tel:+113923489818) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=3rd+Floor%2C+Building+68%2C+Zhongwu+Industrial+Zone%2C+Hangcheng+Street%2C+Bao%27An+District%2C%2C+Shenzhen%2C+GUANGDONG+518128%2C+China)"
       ],
       "file": "sources/cummins-dealer-new-chongkang-electromechanical/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "13923489818",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

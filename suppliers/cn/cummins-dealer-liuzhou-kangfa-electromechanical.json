@@ -57,12 +57,22 @@
         "Liuzhou Kangfa Electromechanical Co., Ltd",
         "Welcome to Liuzhou Kangfa Electromechanical Co., Ltd, located in Liuzhou, Guangxi, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator",
-        "Independent"
+        "Independent",
+        "[13707725085](tel:+113707725085) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Shop+9-3%2C+Jixiangyuan%2C+No.+2%2C+West+Ring+Road%2C+Liuzhou%2C+Guangxi%2C+Liuzhou%2C+GUANGXI+545007%2C+China)"
       ],
       "file": "sources/cummins-dealer-liuzhou-kangfa-electromechanical/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "13707725085",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

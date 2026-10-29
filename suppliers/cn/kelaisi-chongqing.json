@@ -60,12 +60,30 @@
         "Chongqing Kelaisi Construction Machinery Co.,Ltd.",
         "Local Branch / Dealer",
         "73 Renhe Blvd, Yubei District, Chong Qing, China, 401121",
-        "重庆市渝北区人和大道73号, 401121"
+        "重庆市渝北区人和大道73号, 401121",
+        "Phone: 13708373188",
+        "Email: jiajun@cqklsjx.cn"
       ],
       "file": "sources/kelaisi-chongqing/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "jiajun@cqklsjx.cn",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "13708373188",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

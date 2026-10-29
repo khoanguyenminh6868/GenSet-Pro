@@ -57,12 +57,22 @@
         "Chengdu Huida Electromechanical Equipment Co., Ltd",
         "Welcome to Chengdu Huida Electromechanical Equipment Co., Ltd, located in Chengdu, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Construction, Generator",
-        "Independent"
+        "Independent",
+        "[18008027919](tel:+118008027919) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.+47-6%2C+Yuanzhen+Machinery+City%2C+Sanhechang%2C+Xindu+District%2C+Chengdu%2C+Chengdu%2C+CHENGDU+610051%2C+China)"
       ],
       "file": "sources/cummins-dealer-chengdu-huida-electromechanical-equipment/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "18008027919",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

@@ -29,7 +29,10 @@ const decode = (s) => s.replace(/&amp;(?=(#x[0-9a-f]+|#\d+|[a-z]+\d?);)/gi, "&")
 const cellLine = (html) => html.replace(/<table\b[\s\S]*?<\/table>/gi, (t) => t.replace(/\s+/g, " ")).replace(/<(t[dh])\b[^>]*>([\s\S]*?)(?=<\/?t[dhr]\b|<\/table)/gi, (m, tag, inner) =>
   `<${tag}>` + inner.replace(/<br\s*\/?>|<\/?(p|div|li|ul|ol|h[1-6]|section|article|dd|dt|dl)\b[^>]*>/gi, " "));
 // fetch-source.mjs uses this too, so a saved page reads the same either way.
+// Cloudflare hides e-mail addresses as hex XOR-ed with the first byte ("[email protected]" on the page).
+const cfEmail = (hex) => { const k = parseInt(hex.slice(0, 2), 16); let s = ""; for (let i = 2; i < hex.length; i += 2) s += String.fromCharCode(parseInt(hex.slice(i, i + 2), 16) ^ k); return s; };
 export function htmlToText(html) {
+  html = html.replace(/<(span|a)\b[^>]*data-cfemail="([0-9a-f]+)"[^>]*>[\s\S]*?<\/\1>/gi, (_, t, x) => cfEmail(x));
   return decode(cellLine(html
     .replace(/<(script|style|noscript|svg|template)[\s\S]*?<\/\1>/gi, " ")
     .replace(/<!--[\s\S]*?-->/g, " "))

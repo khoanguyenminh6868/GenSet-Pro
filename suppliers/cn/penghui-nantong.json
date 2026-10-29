@@ -61,12 +61,30 @@
         "No.8 North Xinghe Road",
         "Gaodun Wei Bridge",
         "Nantong City",
-        "Jiangsu Province"
+        "Jiangsu Province",
+        "lixiang580@126.com",
+        "13906290705"
       ],
       "file": "sources/penghui-nantong/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "lixiang580@126.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "13906290705",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

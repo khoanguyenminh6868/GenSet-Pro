@@ -56,12 +56,22 @@
       "quote": [
         "Beijing Campower Electric Science & Techonology Co., Ltd.",
         "Welcome to Beijing Campower Electric Science & Techonology Co., Ltd., located in Beijing, China. Our team is ready to help with your power needs. Let us know how we can help you.",
-        "Commercial Industrial, Generator"
+        "Commercial Industrial, Generator",
+        "[010-58672884](tel:+101058672884) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=A-26-F%2C+Futon+Center%2C%2C+Beijing%2C+BEIJING+100038%2C+China)"
       ],
       "file": "sources/cummins-dealer-beijing-campower-electric-science-techonology/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "010-58672884",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

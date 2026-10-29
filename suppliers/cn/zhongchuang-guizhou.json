@@ -59,12 +59,38 @@
         "Perkins distributor locator",
         "GuiZhou ZhongChuang Electrical Technology Co.,Ltd",
         "Local Branch / Dealer",
-        "Nanming Qu, Guiyang Shi, Guizhou Sheng, China, 550000"
+        "Nanming Qu, Guiyang Shi, Guizhou Sheng, China, 550000",
+        "Phone: 8515611458",
+        "Email: gzzckj@outlook.com",
+        "Phone: 18198217122"
       ],
       "file": "sources/zhongchuang-guizhou/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "gzzckj@outlook.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "8515611458",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "18198217122",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

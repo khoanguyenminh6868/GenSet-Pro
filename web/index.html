@@ -1889,6 +1889,14 @@ function renderSupList() {
       <td data-l="Độ tin cậy"><span class="chip ${conf[1]}">${conf[0]}</span></td></tr>`;
   }).join(""))}</tbody></table></div>` : h`<div class="note">Không có nhà cung cấp nào khớp bộ lọc.${raw(Number(supFilter.power) > 0 ? " Lưu ý: chỉ so với dòng máy ghi cùng đơn vị (kVA hoặc kW), không quy đổi." : "")}</div>`;
 }
+// Contacts read from the saved sources (suppliers/contacts.mjs), each with its [n]; WeChat ids are not links.
+const SUP_CONTACT = { email: ["Email", (v) => `mailto:${v}`], phone: ["Điện thoại", (v) => `tel:${v.replace(/[^\d+]/g, "")}`], whatsapp: ["WhatsApp", (v) => `https://wa.me/${v.replace(/\D/g, "")}`], wechat: ["WeChat", null] };
+function supContactsHtml(list) {
+  return Object.entries(SUP_CONTACT).map(([type, [label, link]]) => {
+    const xs = list.filter((c) => c.type === type);
+    return xs.length ? h`<div class="small"><span class="muted">${label}:</span> ${raw(xs.map((c) => (link ? h`<a href="${link(c.value)}" target="_blank" rel="noopener">${c.value}</a>` : h`<b>${c.value}</b>`) + " " + supRefs(c.src)).join(", "))}</div>` : "";
+  }).join("");
+}
 function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
@@ -1900,6 +1908,7 @@ function supDetailHtml(s) {
       <dt>Website</dt><dd>${raw(s.website ? h`<a href="${s.website}" target="_blank" rel="noopener">${s.website}</a>` : "—")}</dd>
       <dt>Trụ sở</dt><dd>${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ") || "—"}</dd>
       <dt>Năm thành lập</dt><dd>${raw(s.founded ? h`${s.founded} ${raw(supRefs(s.foundedSrc))}` : "—")}</dd>
+      ${raw(s.contacts?.length ? h`<dt>Liên hệ</dt><dd>${raw(supContactsHtml(s.contacts))}</dd>` : "")}
     </dl>
     <h4>Thế mạnh</h4>${raw(list(s.strengths, (x) => h`<li>${x.text} ${raw(supRefs(x.src))}</li>`))}
     <h4>Dòng máy phân phối</h4>${raw(s.productLines?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Loại</th><th>Dòng máy</th><th>Công suất</th><th>Động cơ</th><th>Đầu phát</th><th>Khác</th></tr></thead><tbody>${raw(s.productLines.map((p) => h`<tr>

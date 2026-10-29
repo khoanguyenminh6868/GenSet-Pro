@@ -57,12 +57,22 @@
         "Nanjing Kanghao Electromechanical Equipment Co., Ltd",
         "Welcome to Nanjing Kanghao Electromechanical Equipment Co., Ltd, located in Nanjing, Jiangsu, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator",
-        "Independent"
+        "Independent",
+        "[025-84901456](tel:+102584901456) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.+108%2C+Zhenxing+Road%2C+Yin+Lane%2C+Moling+Street%2C%2C+Nanjing%2C+JIANGSU+210000%2C+China)"
       ],
       "file": "sources/cummins-dealer-nanjing-kanghao-electromechanical-equipment/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "025-84901456",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

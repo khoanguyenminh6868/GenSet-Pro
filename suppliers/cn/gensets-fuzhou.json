@@ -63,12 +63,30 @@
         "No.30 Shunhua Wulong Jiangnan Avenue",
         "Minhou County, Fuzhou City",
         "Fujian Province",
-        "http://www.gesaisi.com"
+        "http://www.gesaisi.com",
+        "15280028210@139.com",
+        "+86 15280028210"
       ],
       "file": "sources/gensets-fuzhou/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "15280028210@139.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "+86 15280028210",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

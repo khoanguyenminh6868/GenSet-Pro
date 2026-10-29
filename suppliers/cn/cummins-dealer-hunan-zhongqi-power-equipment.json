@@ -59,12 +59,22 @@
         "Hunan Zhongqi Power Equipment Co., Ltd.",
         "Welcome to Hunan Zhongqi Power Equipment Co., Ltd., located in Changsha, Hunan, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Construction, Automotive, Generator, Agriculture",
-        "Hyundai, Cummins, Shaanqi, Changsha Puyuan, Liugong, Cummins Power Generation, Foton, Zhongshan Fusheng, Sany, Changsha Zhonglian, Jac, Dynapac Manufacturing Co."
+        "Hyundai, Cummins, Shaanqi, Changsha Puyuan, Liugong, Cummins Power Generation, Foton, Zhongshan Fusheng, Sany, Changsha Zhonglian, Jac, Dynapac Manufacturing Co.",
+        "[0731-89746617](tel:+1073189746617) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Xingsha+Economic+Development+Zone%2C%2C+Changsha%2C+HUNAN+410200%2C+China)"
       ],
       "file": "sources/cummins-dealer-hunan-zhongqi-power-equipment/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "0731-89746617",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

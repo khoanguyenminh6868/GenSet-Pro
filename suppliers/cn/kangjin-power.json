@@ -68,9 +68,23 @@
         "Xiangyang Kangjin Power Technology Co., Ltd. Professional supplier of diesel engines and engine solutions for construction, power generation, marine, and industrial applications.",
         "Address: Building B7, Jiahai Industrial Park, High-tech Zone, Xiangyang City, Hubei Province, China",
         "We connect you directly to Cummins-authorized supply and factory-level engine resources.",
-        "Our core business includes diesel engine R&D, production, customization, maintenance and testing; explosion-proof engine development; Cummins spare parts supply, plus engine overhaul and testing services."
+        "Our core business includes diesel engine R&D, production, customization, maintenance and testing; explosion-proof engine development; Cummins spare parts supply, plus engine overhaul and testing services.",
+        "Phone: +86 15997180633 / +86 13797711928 / +86 13630150123",
+        "Email: sales@kangjinpower.com"
       ],
       "file": "sources/kangjin-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://kangjinpower.com/contact-us/",
+      "accessedAt": "2026-10-29",
+      "tier": "C",
+      "quote": [
+        "Whatsapp:+86 15997180633",
+        "sales@kangjinpower.com",
+        "Phone: +86 15997180633 / +86 13797711928 / +86 13630150123"
+      ],
+      "file": "sources/kangjin-power/2.md"
     },
     {
       "n": 101,
@@ -123,6 +137,47 @@
         "| QSB6.7-C220-30 | 164 @ 2200 | 949 @ 1500",
         "| QSB6.7-C260-30 | 194 @ 2200 | 990 @ 1500",
         "| QSB6.7-C260-31 | 194 @ 2400 | 990 @ 1500"
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "type": "email",
+      "value": "sales@kangjinpower.com",
+      "src": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "+86 15997180633",
+      "src": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "+86 13797711928",
+      "src": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "+86 13630150123",
+      "src": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "whatsapp",
+      "value": "+86 15997180633",
+      "src": [
+        2
       ]
     }
   ]

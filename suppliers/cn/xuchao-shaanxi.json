@@ -59,12 +59,30 @@
         "Perkins distributor locator",
         "Shaanxi Xuchao Electromechanical Equipment Engineering Co., Ltd.",
         "Local Branch / Dealer",
-        "2nd Floor of Happy Harbor, Sanqiao Changcheng International Auto Parts"
+        "2nd Floor of Happy Harbor, Sanqiao Changcheng International Auto Parts",
+        "Phone: 86 18909160589",
+        "Email: 18909160589@189.com"
       ],
       "file": "sources/xuchao-shaanxi/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "18909160589@189.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "86 18909160589",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

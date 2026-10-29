@@ -61,12 +61,30 @@
         "2nd Floor, Building F2.6 D, Tian'an Cyber Park",
         "Chegong Temple, Shennan Avenue",
         "Shenzhen Province",
-        "http://www.SZ-cummins.com"
+        "http://www.SZ-cummins.com",
+        "linze.li@cummins.com",
+        "13713856550"
       ],
       "file": "sources/chongfa-cummins-shenzhen/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "linze.li@cummins.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "13713856550",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

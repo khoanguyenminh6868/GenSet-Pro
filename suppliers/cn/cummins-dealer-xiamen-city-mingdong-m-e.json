@@ -59,12 +59,22 @@
         "Xiamen City Mingdong M&E Co. Ltd",
         "Welcome to Xiamen City Mingdong M&E Co. Ltd, located in Xiamen, Fujian, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Cpg Product, Generator",
-        "Cummins Power Generation, Baotou"
+        "Cummins Power Generation, Baotou",
+        "[0592-5985865](tel:+105925985865) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Room+1201%2C+Baotuo+Building%2C+Xiamen%2C+FUJIAN+361000%2C+China)"
       ],
       "file": "sources/cummins-dealer-xiamen-city-mingdong-m-e/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "0592-5985865",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

@@ -57,12 +57,22 @@
         "Zhanjiang Weili Electromechanical Equipment Co., Ltd.",
         "Welcome to Zhanjiang Weili Electromechanical Equipment Co., Ltd., located in Zhanjiang, Guangxi, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator",
-        "Independent"
+        "Independent",
+        "[13360126359](tel:+113360126359) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=4th+Floor%2C+No.+141%2C+Middle+Ruiyun+Road%2C+Mazhang+District%2C+Zhanjiang+City%2C+Zhanjiang%2C+GUANGXI+524094%2C+China)"
       ],
       "file": "sources/cummins-dealer-zhanjiang-weili-electromechanical-equipment/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "13360126359",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

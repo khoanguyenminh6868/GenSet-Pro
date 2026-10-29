@@ -61,12 +61,30 @@
         "12-1522, No.1 Building, No. 5021 Shengli East Street",
         "Kuiwen District",
         "Weifang City",
-        "Shandong Province"
+        "Shandong Province",
+        "guanzhen52@126.com",
+        "0536-2298968"
       ],
       "file": "sources/kangzhen-weifang/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "guanzhen52@126.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "0536-2298968",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

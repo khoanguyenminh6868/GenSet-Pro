@@ -60,12 +60,30 @@
         "Xiamen Zongfeng Technology Co., Ltd.",
         "Local Branch / Dealer",
         "Sixth of No. 155-10, Hangtian Road, Jimei District, Xiamen",
-        "Products"
+        "Products",
+        "Phone: 18450040067",
+        "Email: 18850300031@163.com"
       ],
       "file": "sources/zongfeng-xiamen/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "18850300031@163.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "18450040067",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

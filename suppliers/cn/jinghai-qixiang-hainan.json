@@ -59,12 +59,30 @@
         "Perkins distributor locator",
         "Hainan Jinghai Qixiang Technology Development Co.,LTD",
         "Local Branch / Dealer",
-        "1205, building 11, Changmao Chengbang, yahai Avenue"
+        "1205, building 11, Changmao Chengbang, yahai Avenue",
+        "Phone: 86 13701377961",
+        "Email: yangyq7003@163.com"
       ],
       "file": "sources/jinghai-qixiang-hainan/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "yangyq7003@163.com",
+      "src": [
+        1
+      ]
+    },
+    {
+      "type": "phone",
+      "value": "86 13701377961",
+      "src": [
+        1
+      ]
+    }
+  ]
 }

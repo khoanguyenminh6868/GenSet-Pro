@@ -57,12 +57,22 @@
         "Zhengzhou Yukang Electromechanical Equipment Co., Ltd",
         "Welcome to Zhengzhou Yukang Electromechanical Equipment Co., Ltd, located in Zhengzhou, Hainan, China. Our team is ready to help with your power needs. Let us know how we can help you.",
         "Generator",
-        "Independent"
+        "Independent",
+        "[13592580711](tel:+113592580711) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=Room+904%2C+Building+5%2C+Longding+Wealth+Creation+Center%2C+No.+316+Lianhua+Street%2C+Zhengzhou%2C+HAINAN+450000%2C+China)"
       ],
       "file": "sources/cummins-dealer-zhengzhou-yukang-electromechanical-equipment/1.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "13592580711",
+      "src": [
+        1
+      ]
+    }
+  ]
 }
