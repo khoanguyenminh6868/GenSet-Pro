@@ -1,0 +1,50 @@
+{
+ "id": "chongfa-cummins-shenzhen",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Shenzhen Chongfa Cummins Engine Co., Ltd.",
+ "zh": null,
+ "brands": [],
+ "web": "http://www.SZ-cummins.com",
+ "prov": "Guangdong",
+ "city": "Shenzhen",
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "STAMFORD | AvK Authorised Distributors",
+   "Shenzhen Chongfa Cummins Engine Co., Ltd.",
+   "2nd Floor, Building F2.6 D, Tian'an Cyber Park",
+   "Chegong Temple, Shennan Avenue",
+   "Shenzhen Province",
+   "http://www.SZ-cummins.com"
+  ]
+ },
+ "str": [
+  [
+   "Nhà phân phối ủy quyền STAMFORD tại Trung Quốc, có tên trong danh sách 'Authorised Distributors' trên website chính thức của STAMFORD",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "alternator",
+   "s": "STAMFORD alternators (authorised distributor)",
+   "alt": [
+    "STAMFORD"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là danh sách nhà phân phối ủy quyền trên website của STAMFORD; chưa lưu website riêng của nhà phân phối"
+ ],
+ "by": "discover-bot"
+}

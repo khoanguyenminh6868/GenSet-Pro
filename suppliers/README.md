@@ -52,6 +52,12 @@ Agent trong Antigravity (Gemini 3.8 Flash, medium) làm theo `discover-prompt.md
 - `skip <url|tên> --reason R`, `status`; nhật ký ở `discover-log.json` để lượt sau không làm lại.
 - `pr`: `verify.mjs` toàn bộ, commit, push nhánh `discover/...`, mở PR. Bot không đăng thẳng lên web; Khoa gộp PR thì *Supplier publish* đăng.
 
+## Nhà phân phối có ủy quyền
+Chỉ lấy nhà phân phối mà chính hãng công bố trên website của hãng (Khoa, 2026-10-29); giấy ủy quyền dạng ảnh không kiểm được bằng code nên không tính.
+- Stamford: trang "Authorised Distributors" (stamford-avk.com/contact/authorised-distributors).
+- Perkins: `perkins-locator.mjs <file> "<thành phố>, China"` lưu kết quả trang tra nhà phân phối; chạy cho các thành phố lớn, "Distributor" là nhà phân phối chính, "Local Branch / Dealer" là đại lý (chi nhánh của nhà phân phối chính gộp vào công ty mẹ).
+- Cummins (cummins.com/…/locations/china/…) và Mecc Alte chặn máy Windows (HTTP 403 / từ chối kết nối): chưa lấy được.
+
 ## Thêm hoặc sửa một nhà cung cấp
 1. `node suppliers/fetch-source.mjs <id> <n> <url>` cho từng trang nguồn.
 2. Viết `cn/<id>.json`, chép câu trích từ file nguồn.

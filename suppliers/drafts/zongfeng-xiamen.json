@@ -1,0 +1,50 @@
+{
+ "id": "zongfeng-xiamen",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Xiamen Zongfeng Technology Co., Ltd.",
+ "zh": null,
+ "brands": [],
+ "web": null,
+ "prov": "Fujian",
+ "city": "Xiamen",
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Perkins distributor locator",
+   "Xiamen Zongfeng Technology Co., Ltd.",
+   "Local Branch / Dealer",
+   "Sixth of No. 155-10, Hangtian Road, Jimei District, Xiamen",
+   "Products"
+  ]
+ },
+ "str": [
+  [
+   "Đại lý (Local Branch / Dealer) trong mạng Perkins, có tên trên trang tra nhà phân phối chính thức của Perkins",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "engine",
+   "s": "Perkins engines (local dealer)",
+   "fuel": "diesel",
+   "eng": [
+    "Perkins"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là trang tra nhà phân phối của Perkins (tìm theo thành phố); website ghi trên trang: http://N/A (chưa lưu, nhiều đại lý ghi website của nhà phân phối chính)"
+ ],
+ "by": "discover-bot"
+}

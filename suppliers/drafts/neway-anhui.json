@@ -1,0 +1,50 @@
+{
+ "id": "neway-anhui",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Anhui Neway",
+ "zh": null,
+ "brands": [],
+ "web": null,
+ "prov": "Anhui",
+ "city": null,
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Perkins distributor locator",
+   "Anhui Neway",
+   "Local Branch / Dealer",
+   "合肥市瑶海区新蚌埠路（张洼路）七里塘工业园建浩3F",
+   "Yaohai Qu, Hefei Shi, Anhui Sheng, China, 230041"
+  ]
+ },
+ "str": [
+  [
+   "Đại lý (Local Branch / Dealer) trong mạng Perkins, có tên trên trang tra nhà phân phối chính thức của Perkins",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "engine",
+   "s": "Perkins engines (local dealer)",
+   "fuel": "diesel",
+   "eng": [
+    "Perkins"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là trang tra nhà phân phối của Perkins (tìm theo thành phố); website ghi trên trang: http://. (chưa lưu, nhiều đại lý ghi website của nhà phân phối chính)"
+ ],
+ "by": "discover-bot"
+}
