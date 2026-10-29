@@ -1,0 +1,22 @@
+{
+  "id": "fawde", "country": "CN", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": "FAW Jiefang Automotive Co., Ltd. (FAWDE Powertrain Division)", "zh": null, "brands": ["FAWDE", "Jiefang Power"],
+  "web": "https://www.fawde.com/", "prov": "Jiangsu", "city": "Wuxi", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright © Faw Jiefang Automotive Co., Ltd. All Rights Reserved", "98# Yongle East Road, Wuxi, Jiangsu, China.", "Vehicle Engine , Generating Set Engine , gearbox , axle"],
+    "2": ["A", "FAWDE Powertrain Division is an important business unit of China FAWDE's commercial vehicle business.", "with a standard production capacity of 362,000 engines", "To date, the division has exported over 280,000 diesel engines, with sales covering 67 countries and regions worldwide."],
+    "3": ["A", "the 1 MW generator set equipped with the 6SX1 natural gas engine from this power domain", "with a continuous power output of 1 MW"]
+  },
+  "str": [
+    ["Theo hãng: năng lực sản xuất tiêu chuẩn 362.000 động cơ/năm", 2],
+    ["Theo hãng: đã xuất khẩu hơn 280.000 động cơ diesel tới 67 quốc gia và vùng lãnh thổ", 2],
+    ["Có tổ máy khí 1 MW (công suất liên tục) dùng động cơ khí thiên nhiên 6SX1", 3]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "engine", "s": "Generating Set Engine", "fuel": "diesel", "src": [1] },
+    { "k": "genset", "s": "1 MW generator set (6SX1 natural gas engine)", "fuel": "gas", "models": ["6SX1"], "src": [3] }
+  ],
+  "miss": ["Website (đọc 2026-10-29) không còn trang động cơ cho tổ máy: /generating-set-engine/ trả HTTP 404, nên chưa có dải công suất", "Không thấy năm thành lập và tên tiếng Trung trên các trang đã lưu", "Không thấy chứng chỉ trên các trang đã lưu"],
+  "by": "discover-bot"
+}

@@ -1,0 +1,131 @@
+{
+  "id": "bspower-guangdong",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "广东宾士动力科技有限公司",
+    "brands": [
+      "宾士"
+    ]
+  },
+  "website": "http://www.bspower.cn/",
+  "hq": {
+    "province": "Guangdong",
+    "city": null
+  },
+  "founded": 2002,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Làm tổ máy khí, diesel và song nhiên liệu; vốn đăng ký trên 100 triệu NDT",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tổ máy khí dùng cho biogas (xử lý nước thải, bãi rác), khí thiên nhiên, khí than, khí đồng hành",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Hợp tác với Cummins, Guascor, MTU, Hyundai, Deutz, Doosan; đầu phát Marathon, Faraday",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "燃气、双燃料发电机组 (tổ máy khí, song nhiên liệu)",
+      "fuel": "gas",
+      "engineMakes": [
+        "Cummins",
+        "Guascor",
+        "MTU",
+        "现代",
+        "DEUTZ",
+        "Doosan"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "马拉松",
+        "法拉第"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "柴油发电机组 (tổ máy diesel)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "OHSAS18001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang giới thiệu không ghi dải công suất",
+    "Không thấy tên tiếng Anh và thành phố"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.bspower.cn/qiyejianjie/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "广东宾士动力科技有限公司成立于2002年1月，具有多年的发电机组制造和服务经验，注册资本已超过1亿元，是一家专业从事燃气、柴油和双燃料发电机组设计、生产、销售和服务的专业化企业",
+        "我们和世界著名品牌的燃气发电机组制造商美国康明斯Cummins、西班牙高斯科尔Guascor、德国奔驰MTU、韩国现代、德国道依茨DEUTZ、韩国斗山Doosan等形成了长期的合作伙伴关系，机组配用国际著名品牌的发电机如美国马拉松、法拉第等。",
+        "公司已经通过了ISO9001国际质量认证、ISO14001国际环保认证及OHSAS18001职业健康安全管理体系认证"
+      ],
+      "file": "sources/bspower-guangdong/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

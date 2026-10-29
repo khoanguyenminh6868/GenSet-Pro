@@ -162,6 +162,10 @@ export function checkDraft(d, id) {
     }
     if (l.src) refs(l.src, where);
     else if (!l.p) err(`${where}: cần "src" (số nguồn ghi dòng máy này)`);
+    // Engine / alternator makes and models must be written in the quotes of the line's sources.
+    const lq = norm([...(l.src || []), l.p?.[4]].filter((n) => n != null).map((n) => quotes.get(Number(n)) || "").join(" | "));
+    for (const [key, list] of [["eng", l.eng], ["alt", l.alt], ["models", l.models]]) for (const m of list || [])
+      if (!lq.includes(norm(m))) err(`${where}: "${key}" có "${m}" nhưng câu trích của nguồn dòng này không ghi; chép đúng chữ nguồn ghi hoặc bỏ`);
   }
   if ((d.status || "verified") === "verified") {
     if (!d.web) err(`"status": "verified" cần "web"; không có thì để "partial"`);

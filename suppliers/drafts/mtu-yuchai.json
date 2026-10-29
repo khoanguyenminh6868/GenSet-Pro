@@ -1,0 +1,21 @@
+{
+  "id": "mtu-yuchai", "country": "CN", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": "MTU Yuchai Power Co., Ltd.", "zh": null, "brands": ["mtu"],
+  "web": null, "prov": "Guangxi", "city": "Yulin", "founded": 2017, "fsrc": [2], "related": ["yuchai"],
+  "src": {
+    "1": ["A", "MTU Yuchai Power Co. Ltd. is now in place – a joint venture between MTU Friedrichshafen and the Guangxi Yuchai Machinery Company Ltd. (GYMCL) to build large mtu -brand diesel engines in China.", "Production machinery with the capacity for delivering up to 1500 engines per year is currently being procured and will be set up in Yulin."],
+    "2": ["A", "Established in early 2017, MTU Yuchai Power began operations in April 2018 at GYMCL's main production plant in Yulin City.", "a 50-50 joint venture between GYMCL and MTU Friedrichshafen GmbH (\"MTU\"), a subsidiary of Rolls-Royce Power Systems (LON: RR), has produced its 1,000 th unit of the renowned MTU Series 4000 high-horsepower diesel engines.", "The MTU Series 4000 of diesel engines produce s power outputs ranging from 1,400 to 3,490 kW, primarily for the Chinese off-road market, and is especially suited for power generation, mining and oil and gas markets."]
+  },
+  "str": [
+    ["Liên doanh 50-50 giữa Guangxi Yuchai Machinery (GYMCL) và MTU Friedrichshafen (Rolls-Royce Power Systems), sản xuất động cơ mtu Series 4000 tại nhà máy GYMCL ở Ngọc Lâm", 2],
+    ["Động cơ MTU Series 4000 sản xuất tại liên doanh: 1.400–3.490 kW, dùng cho phát điện, mỏ, dầu khí", 2],
+    ["Đã sản xuất chiếc động cơ Series 4000 thứ 1.000 (công bố 04/2022)", 2],
+    ["Công suất dây chuyền theo kế hoạch: tới 1.500 động cơ/năm", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "engine", "s": "MTU Series 4000", "fuel": "diesel", "p": [1400, 3490, "kW", "unspecified", 2], "src": [2] }
+  ],
+  "miss": ["Liên doanh không có website riêng; nguồn là thông cáo của MTU (mtu-solutions.com) và của China Yuchai International (investor.cyilimited.com)", "Không thấy tên tiếng Trung trên các trang đã lưu"],
+  "by": "discover-bot"
+}

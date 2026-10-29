@@ -1,0 +1,79 @@
+{
+  "id": "kubota-wuxi",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Kubota Engine (WUXI) Co.,Ltd.",
+    "zh": null,
+    "brands": [
+      "Kubota"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Wuxi"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Công ty con của Kubota tại Vô Tích, sản xuất động cơ diesel kiểu đứng cho máy Kubota và bán cho công ty khác",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo kế hoạch công bố 2012: sản xuất hàng loạt từ 07/2014, công suất tối đa 97.000 động cơ/năm khoảng năm 2018",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Vertical type diesel engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn duy nhất là thông cáo Kubota 11/2012 (kế hoạch); năm thành lập ghi 'January 2013 (planned)' nên để trống",
+    "Không ghi động cơ dùng cho máy phát điện và không ghi dải công suất",
+    "Không thấy website riêng và tên tiếng Trung"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.kubota.com/news/2012/20121126.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Kubota Engine (WUXI) Co.,Ltd.",
+        "| Wuxi city, Jiangsu, China",
+        "| Manufacture of diesel engines for Kubota tractors, combine harvesters, construction machinery, as well as for outside companies.",
+        "The new plant is scheduled to start the mass production in July 2014 and reach its maximum capacity of 97,000 units by around 2018.",
+        "the new company will be engaged in the production of vertical type diesel engines"
+      ],
+      "file": "sources/kubota-wuxi/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

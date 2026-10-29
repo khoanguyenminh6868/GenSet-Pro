@@ -1,0 +1,149 @@
+{
+  "id": "jinjia-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Dongguan Jinjia Power Equipment Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Jinjia"
+    ]
+  },
+  "website": "https://www.jinjiapower.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": "Dongguan"
+  },
+  "founded": 2011,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà máy 20.000 m², hơn 200 công nhân; làm tổ máy trần, cách âm, container, tàu thủy và hệ hoà đồng bộ",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tổ máy diesel 20–2000 kVA dùng động cơ Cummins, Yuchai, Volvo Penta, SDEC, Weichai, Perkins, MTU, Mitsubishi, Yangdong",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Theo hãng: xuất khẩu tới hơn 80 quốc gia và vùng lãnh thổ",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Yuchai",
+        "Volvo Penta",
+        "SDEC",
+        "Weichai",
+        "Perkins",
+        "MTU",
+        "Mitsubishi",
+        "Yangdong"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Natural gas & biogas generator",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 50,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Không thấy hãng đầu phát và tên tiếng Trung trên các trang đã lưu"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.jinjiapower.com/about-us.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Dongguan Jinjia Power Equipment Co., Ltd. was founded in 2011 and is located in Dongguan City, Guangdong Province, China.",
+        "Jinjia Power has been ISO 9001:2015 certified and our products have been exported to over 80 countries and regions",
+        "Our factory covers an area of 20,000 square meters with over 200 skilled workers and a complete production line. We produce standard diesel generators, silent generators, container generators, marine generators and parallel control systems."
+      ],
+      "file": "sources/jinjia-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.jinjiapower.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "20kVA to 2000kVA, equipped with Cummins, Yuchai, Volvo Penta, SDEC, Weichai, Perkins, MTU, Mitsubishi and Yangdong engines for industrial standby and prime power.",
+        "Natural gas & biogas generator 50kVA-2000kVA"
+      ],
+      "file": "sources/jinjia-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

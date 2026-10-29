@@ -28,6 +28,7 @@ test("checkDraft: quotes, numbers, tiers and puffery are checked against the sav
     assert.match(e({ src: { 1: ["A", "Power range: 10kVA-2500kVA"], 2: ["A", "ZZ Power Co., Ltd. leading supplier"] } }), /src 2: .*hạng phải là "C"/);
     assert.match(e({ src: { 2: ["C", "ZZ Power Co., Ltd. leading supplier"] }, founded: null, lines: [{ s: "x", src: [2] }], status: "partial" }), /conf.*low/);
     assert.match(e({ lines: [{ s: "Diesel", src: [1] }] }), /verified.*cần ít nhất một dòng máy/);
+    assert.match(e({ lines: [{ s: "Diesel", eng: ["Cummins"], p: [10, 2500, "kVA", "unspecified", 1] }] }), /"eng" có "Cummins"/);
     assert.match(e({ src: { 3: ["A", "anything at all"] } }), /chưa lưu trang/);
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });

@@ -1,0 +1,18 @@
+{
+  "id": "volvo-penta-wuxi", "country": "CN", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": "Volvo Penta engine plant in Wuxi (Volvo Penta / Wuxi Diesel Engine Works)", "zh": null, "brands": ["Volvo Penta"],
+  "web": null, "prov": "Jiangsu", "city": "Wuxi", "founded": 2000, "fsrc": [1], "related": ["fawde"],
+  "src": {
+    "1": ["A", "The plant, located in Wuxi, about 100 kilometers west of Shanghai, is jointly owned by Volvo Penta and its Chinese partner, Wuxi Diesel Engine Works.", "Inaugurated in the beginning of 2000, the plant assembles diesel engines delivered as CKD kits, primarily from Volvo’s engine plant in Skövde, Sweden.", "Production involves diesel engines used in industrial applications, mainly generator sets, as well as in various types of workboats and passenger vessels.", "now has a capacity of 10,000 engines annually"]
+  },
+  "str": [
+    ["Nhà máy liên doanh Volvo Penta – Wuxi Diesel Engine Works ở Vô Tích, lắp động cơ diesel từ bộ CKD (chủ yếu từ nhà máy Skövde, Thụy Điển), chủ yếu cho tổ máy phát", 1],
+    ["Công suất khoảng 10.000 động cơ/năm (thông cáo 01/2005)", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "engine", "s": "Industrial diesel engines (mainly for generator sets)", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Nguồn duy nhất là thông cáo Volvo Group 01/2005; không thấy tên pháp nhân, website riêng, tình trạng hiện tại và dải công suất", "Wuxi Diesel Engine Works hiện là lõi của FAWDE (bản ghi fawde)"],
+  "by": "discover-bot"
+}

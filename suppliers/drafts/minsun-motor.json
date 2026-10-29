@@ -1,0 +1,19 @@
+{
+  "id": "minsun-motor", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "Mindong Shengyuan Electromechanical Co., Ltd", "zh": null, "brands": ["MINSUN"],
+  "web": "https://www.minsun-motor.com/", "prov": "Fujian", "city": "Fu'an", "founded": 2000, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Mindong Shengyuan Electromechanical Co., Ltd (FOR SHORT \"MINSUN\" ) was founded in 2000, loacated in Fu'an city, Fujian province.", "Our partners are all from world-famous and Chinese famous engine manufactuers such as Cummins, Perkins, Isuzu, Fawde, Ricardo, Weichai, Yuchai,Shangchai, Yangdong etc.", "we also have the production line for brushless alternator and brush alternator, such as ST/STC SERIERS, MINSUN STAMFORD."]
+  },
+  "str": [
+    ["Lắp tổ máy diesel và có dây chuyền đầu phát có chổi / không chổi than (ST/STC)", 1],
+    ["Động cơ đối tác: Cummins, Perkins, Isuzu, FAWDE, Ricardo, Weichai, Yuchai, Shangchai, Yangdong", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator set", "fuel": "diesel", "eng": ["Cummins", "Perkins", "Isuzu", "FAWDE", "Ricardo", "Weichai", "Yuchai", "Shangchai", "Yangdong"], "src": [1] },
+    { "k": "alternator", "s": "Brush & brushless alternator (ST/STC series)", "src": [1] }
+  ],
+  "miss": ["Trang giới thiệu không ghi dải công suất", "Không thấy chứng chỉ và tên tiếng Trung"],
+  "by": "discover-bot"
+}

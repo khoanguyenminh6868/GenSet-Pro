@@ -1,0 +1,475 @@
+{
+  "id": "minsun-motor",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Mindong Shengyuan Electromechanical Co., Ltd",
+    "zh": null,
+    "brands": [
+      "MINSUN"
+    ]
+  },
+  "website": "https://www.minsun-motor.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fu'an"
+  },
+  "founded": 2000,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Lắp tổ máy diesel và có dây chuyền đầu phát có chổi / không chổi than (ST/STC)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Động cơ đối tác: Cummins, Perkins, Isuzu, FAWDE, Ricardo, Weichai, Yuchai, Shangchai, Yangdong",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator set",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "Isuzu",
+        "FAWDE",
+        "Ricardo",
+        "Weichai",
+        "Yuchai",
+        "Shangchai",
+        "Yangdong"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "Brush & brushless alternator (ST/STC series)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang giới thiệu không ghi dải công suất",
+    "Không thấy chứng chỉ và tên tiếng Trung"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.minsun-motor.com/aboutus.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Mindong Shengyuan Electromechanical Co., Ltd (FOR SHORT \"MINSUN\" ) was founded in 2000, loacated in Fu'an city, Fujian province.",
+        "Our partners are all from world-famous and Chinese famous engine manufactuers such as Cummins, Perkins, Isuzu, Fawde, Ricardo, Weichai, Yuchai,Shangchai, Yangdong etc.",
+        "we also have the production line for brushless alternator and brush alternator, such as ST/STC SERIERS, MINSUN STAMFORD."
+      ],
+      "file": "sources/minsun-motor/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.minsun-motor.com/30Kva-24Kw-Silent-Enclosed-Diesel-Generator-Powered-by-Cummins-Engine-4BT3-9-G1-4BT3-9-G2-pd597357858.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| MODEL | Rated Power | Cummins Engine | Minsun Alternator"
+      ],
+      "file": "sources/minsun-motor/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.minsun-motor.com/100KVA-6BT5-9-G1-cummins-diesel-generator-set-color-can-be-customized-pd502656758.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| MODEL | Rated Power | Cummins Engine | Brushless Alternator"
+      ],
+      "file": "sources/minsun-motor/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.minsun-motor.com/WEICHAI-pd780528978.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| MODEL | Rated Power | Weichai Engine | Brushless Alternator"
+      ],
+      "file": "sources/minsun-motor/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.minsun-motor.com/50-60Hz-Perkins-20KVA-16KW-3-Phase-Silent-Diesel-Geneartor-1500-1800RPM-pd564656758.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| MODEL | Rated Power | Perkins Engine | Minsun Alternator"
+      ],
+      "file": "sources/minsun-motor/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.minsun-motor.com/ISUZU-pd703528978.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated Power | ISUZU Engine | Brushless Alternator"
+      ],
+      "file": "sources/minsun-motor/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.minsun-motor.com/FAWDE-pd787528978.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated Power | FAWDE Engine | Brushless Alternator"
+      ],
+      "file": "sources/minsun-motor/106.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "30Kva/24Kw Silent Enclosed Diesel Generator Powered by Cummins Engine 4BT3.9-G1/4BT3.9-G2 from China manufacturer - MINSUN",
+      "header": [
+        "| MODEL | Rated Power | Cummins Engine | Minsun Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-C20 | 20 | 16 | 4B3.9-G11 | SY-A 184ES",
+        "| GF-C25 | 25 | 20 | 4B3.9-G1 | SY-A 184E",
+        "| GF-C25 | 25 | 20 | 4B3.9-G2 | SY-A 184E",
+        "| GF-C30 | 30 | 24 | 4BT3.9-G1 | SY-A 184G",
+        "| GF-C30 | 30 | 24 | 4BT3.9-G2 | SY-A 184G",
+        "| GF-C38 | 38 | 30 | 4BT3.9-G1 | SY-A 184H",
+        "| GF-C38 | 38 | 30 | 4BT3.9-G2 | SY-A 184H",
+        "| GF-C50 | 50 | 40 | 4BTA3.9-G2 | SY-A 224D",
+        "| GF-C60 | 60 | 48 | 4BTA3.9-G2 | SY-A 224E",
+        "| GF-C72.5 | 72.5 | 58 | 4BTA3.9-G11 | SY-A 224F",
+        "| GF-C80 | 80 | 64 | 4BTA3.9-G11 | SY-A 224G",
+        "| GF-C100 | 100 | 80 | 6BT5.9-G1 | SY-A 274C",
+        "| GF-C100 | 100 | 80 | 6BT5.9-G2 | SY-A 274C",
+        "| GF-C120 | 120 | 96 | 6BTA5.9-G2 | SY-A 274D",
+        "| GF-C140 | 140 | 112 | 6BTAA5.9-G2 | SY-A 274E",
+        "| GF-C160 | 160 | 128 | 6BTAA5.9-G12 | SY-A 274F",
+        "| GF-C180 | 180 | 144 | 6CTA8.3-G1 | SY-A 274G",
+        "| GF-C180 | 180 | 144 | 6CTA8.3-G2 | SY-A 274G",
+        "| GF-C200 | 200 | 160 | 6CTAA8.3-G2 | SY-A 274H",
+        "| GF-C250 | 250 | 200 | 6LTAA8.9-G2 | SY-A 274K",
+        "| GF-C300 | 300 | 240 | 6LTAA9.5-G3 | SY-A 314D",
+        "| GF-C325 | 325 | 260 | 6LTAA9.5-G1 | SY-A 314ES",
+        "| GF-C350 | 350 | 280 | NTA855-G2A | SY-A 314E",
+        "| GF-C375 | 375 | 300 | NTAA855-G7 | SY-A 314FS",
+        "| GF-C400 | 400 | 320 | 6ZTAA13-G2 | SY-A 314F",
+        "| GF-C450 | 450 | 360 | QSZ13-G2 | SY-A 354C",
+        "| GF-C500 | 500 | 400 | QSZ13-G3 | SY-A 354D"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "100KVA 6BT5.9-G1 cummins diesel generator set color can be customized from China manufacturer - MINSUN",
+      "header": [
+        "| MODEL | Rated Power | Cummins Engine | Brushless Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-C20 | 20 | 16 | 4B3.9-G11 | SY-A 184ES",
+        "| GF-C25 | 25 | 20 | 4B3.9-G1 | SY-A 184E",
+        "| GF-C25 | 25 | 20 | 4B3.9-G2 | SY-A 184E",
+        "| GF-C30 | 30 | 24 | 4BT3.9-G1 | SY-A 184G",
+        "| GF-C30 | 30 | 24 | 4BT3.9-G2 | SY-A 184G",
+        "| GF-C38 | 38 | 30 | 4BT3.9-G1 | SY-A 184H",
+        "| GF-C38 | 38 | 30 | 4BT3.9-G2 | SY-A 184H",
+        "| GF-C50 | 50 | 40 | 4BTA3.9-G2 | SY-A 224D",
+        "| GF-C60 | 60 | 48 | 4BTA3.9-G2 | SY-A 224E",
+        "| GF-C80 | 80 | 64 | 4BTA3.9-G11 | SY-A 224G",
+        "| GF-C100 | 100 | 80 | 6BT5.9-G1 | SY-A 274C",
+        "| GF-C100 | 100 | 80 | 6BT5.9-G2 | SY-A 274C",
+        "| GF-C120 | 120 | 96 | 6BTA5.9-G2 | SY-A 274D",
+        "| GF-C140 | 140 | 112 | 6BTAA5.9-G2 | SY-A 274E",
+        "| GF-C160 | 160 | 128 | 6BTAA5.9-G12 | SY-A 274F",
+        "| GF-C180 | 180 | 144 | 6CTA8.3-G1 | SY-A 274G",
+        "| GF-C180 | 180 | 144 | 6CTA8.3-G2 | SY-A 274G",
+        "| GF-C200 | 200 | 160 | 6CTAA8.3-G2 | SY-A 274H",
+        "| GF-C250 | 250 | 200 | 6LTAA8.9-G2 | SY-A 274K",
+        "| GF-C300 | 300 | 240 | 6LTAA9.5-G3 | SY-A 314D",
+        "| GF-C325 | 325 | 260 | 6LTAA9.5-G1 | SY-A 314ES",
+        "| GF-C350 | 350 | 280 | NTA855-G2A | SY-A 314E",
+        "| GF-C375 | 375 | 300 | NTAA855-G7 | SY-A 314FS",
+        "| GF-C400 | 400 | 320 | 6ZTAA13-G2 | SY-A 314F",
+        "| GF-C450 | 450 | 360 | QSZ13-G2 | SY-A 354C",
+        "| GF-C500 | 500 | 400 | QSZ13-G3 | SY-A 354D",
+        "| GF-C500 | 500 | 400 | KTA19-G3A | SY-A 354D",
+        "| GF-C550 | 550 | 440 | KTAA19-G5 | SY-A 354E",
+        "| GF-C625 | 625 | 500 | KTAA19-G6A | SY-A 354F",
+        "| GF-C750 | 750 | 600 | KTA38-G2 | SY-A 354FS",
+        "| GF-C800 | 800 | 640 | KTA38-G2B | SY-A 404C",
+        "| GF-C900 | 900 | 720 | KTA38-G2A | SY-A 404D",
+        "| GF-C1000 | 1000 | 800 | KTA38-G5 | SY-A 404E",
+        "| GF-C1125 | 1125 | 900 | KTA38-G9 | SY-A 404F",
+        "| GF-C1250 | 1250 | 1000 | KTA50-G3 | SY-A 404G",
+        "| GF-C1500 | 1500 | 1200 | KTA50-GS8 | SY-A 404K"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "100KVA 6BT5.9-G1 cummins diesel generator set color can be customized from China manufacturer - MINSUN",
+      "header": [
+        "| MODEL | Rated Power | Cummins Engine | Brushless Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-C25 | 25 | 20 | 4B3.9-G11 | SY-A 184E",
+        "| GF-C30 | 30 | 24 | 4BT3.9-G2 | SY-A 184F",
+        "| GF-C37.5 | 37.5 | 30 | 4BT3.9-G2 | SY-A 184G",
+        "| GF-C45 | 45 | 36 | 4BT3.9-G2 | SY-A 224C",
+        "| GF-C50 | 50 | 40 | 4BTA3.9-G2 | SY-A 224C",
+        "| GF-C60 | 60 | 48 | 4BTA3.9-G2 | SY-A 224D",
+        "| GF-C72.5 | 72.5 | 58 | 4BTA3.9-G2 | SY-A 224E",
+        "| GF-C85 | 85 | 68 | 4BTA3.9-G11 | SY-A 224F",
+        "| GF-C100 | 100 | 80 | 6BT5.9-G2 | SY-A 274CS",
+        "| GF-C120 | 120 | 96 | 6BT5.9-G2 | SY-A 274C",
+        "| GF-C140 | 140 | 112 | 6BTA5.9-G2 | SY-A 274D",
+        "| GF-C160 | 160 | 128 | 6BTAA5.9-G2 | SY-A 274E",
+        "| GF-C180 | 180 | 144 | 6BTAA5.9-G12 | SY-A 274F",
+        "| GF-C200 | 200 | 160 | 6CTA8.3-G2 | SY-A 274G",
+        "| GF-C225 | 225 | 180 | 6CTAA8.3-G2 | SY-A 274H",
+        "| GF-C250 | 250 | 200 | 6LTAA8.9-G2 | SY-A 274J",
+        "| GF-C275 | 275 | 220 | 6LTAA8.9-G3 | SY-A 274K",
+        "| GF-C313 | 313 | 250 | 6LTAA9.5-G1 | SY-A 314C",
+        "| GF-C350 | 350 | 280 | NTA855-G1B | SY-A 314E",
+        "| GF-C375 | 375 | 300 | NTA855-G3 | SY-A 314F",
+        "| GF-C500 | 500 | 400 | QSZ13-G3 | SY-A 354C"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "WEICHAI from China manufacturer - MINSUN",
+      "header": [
+        "| MODEL | Rated Power | Weichai Engine | Brushless Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-W20 | 20 | 16 | WP2.3D25E200 | SY-A 184ES",
+        "| GF-W25 | 25 | 20 | WP2.3D25E200 | SY-A 184E",
+        "| GF-W30 | 30 | 24 | WP2.3D33E200 | SY-A 184G",
+        "| GF-W37.5 | 37.5 | 30 | WP2.3D40E200 | SY-A 184H",
+        "| GF-W50 | 50 | 40 | WP2.3D48E200 | SY-A 224D",
+        "| GF-W62.5 | 62.5 | 50 | WP4.1D66E200 | SY-A 224E",
+        "| GF-W80 | 80 | 64 | WP4.1D80E200 | SY-A 224G",
+        "| GF-W100 | 100 | 80 | WP4.1D100E200 | SY-A 274C",
+        "| GF-W125 | 125 | 100 | WP6D132E200 | SY-A 274D",
+        "| GF-W150 | 150 | 120 | WP6D152E200 | SY-A 274F",
+        "| GF-W180 | 180 | 144 | WP6D167E200 | SY-A 274G",
+        "| GF-W200 | 200 | 160 | WP10D200E200 | SY-A 274H",
+        "| GF-W225 | 225 | 180 | WP10D238E200 | SY-A 274J",
+        "| GF-W250 | 250 | 200 | WP10D264E200 | SY-A 274K",
+        "| GF-W312.5 | 312.5 | 250 | WP10D320E200 | SY-A 314E",
+        "| GF-W375 | 375 | 300 | WP12D353E200 | SY-A 314FS",
+        "| GF-W400 | 400 | 320 | WP13D405E200 | SY-A 314F",
+        "| GF-W450 | 450 | 360 | WP13D440E310 | SY-A 354C",
+        "| GF-W500 | 500 | 400 | WP13D490E310 | SY-A 354D",
+        "| GF-W625 | 625 | 500 | 6M33D633E200 | SY-A 354E",
+        "| GF-W687.5 | 687.5 | 550 | 6M33D670E200 | SY-A 354F",
+        "| GF3-W750 | 750 | 600 | 6M33D725E310 | SY-A 354F",
+        "| GF-W800 | 800 | 640 | 12M26D792E200 | SY-A 404C",
+        "| GF-W900 | 900 | 720 | 12M26D902E200 | SY-A 404D",
+        "| GF-W1000 | 1000 | 800 | 12M26D968E200 | SY-A 404E",
+        "| GF-W1125 | 1125 | 900 | 12M33D1108E200 | SY-A 404F",
+        "| GF-W1250 | 1250 | 1000 | 12M33D1210E200 | SY-A 404G",
+        "| GF-W1375 | 1375 | 1100 | 12M33D1320E200 | SY-A 404G"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "WEICHAI from China manufacturer - MINSUN",
+      "header": [
+        "| MODEL | Rated Power | Weichai Engine | Brushless Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-W20 | 20 | 16 | WP2.3D30E201 | SY-A 184ES",
+        "| GF-W25 | 25 | 20 | WP2.3D30E201 | SY-A 184E",
+        "| GF-W30 | 30 | 24 | WP2.3D36E201 | SY-A 184F",
+        "| GF-W37.5 | 37.5 | 30 | WP2.3D47E201 | SY-A 184G",
+        "| GF-W50 | 50 | 40 | WP2.3D58E201 | SY-A 224C",
+        "| GF-W62 | 62.5 | 50 | WP4.1D80E201 | SY-A 224D",
+        "| GF-W80 | 80 | 64 | WP4.1D80E201 | SY-A 224F",
+        "| GF-W100 | 100 | 80 | WP4.1D95E201 | SY-A 224G",
+        "| GF-W125 | 125 | 100 | WP6D132E201 | SY-A 274C",
+        "| GF-W150 | 150 | 120 | WP6D158E201 | SY-A 274E",
+        "| GF-W180 | 180 | 144 | WP6D180E201 | SY-A 274F",
+        "| GF-W200 | 200 | 160 | WP10D200E201 | SY-A 274G",
+        "| GF-W225 | 225 | 180 | WP10D238E201 | SY-A 274H",
+        "| GF-W250 | 250 | 200 | WP10D264E201 | SY-A 274J",
+        "| GF-W312 | 312.5 | 250 | WP10D360E201 | SY-A 314D",
+        "| GF-W375 | 375 | 300 | WP13D385E201 | SY-A 314E",
+        "| GF-W400 | 400 | 320 | WP13D448E201 | SY-A 314F",
+        "| GF-W450 | 450 | 360 | WP13D460E311 | SY-A 354C",
+        "| GF-W500 | 500 | 400 | WP13D510E311 | SY-A 354D",
+        "| GF-W625 | 625 | 500 | 6M33D670E201 | SY-A 354E",
+        "| GF-W687.5 | 687.5 | 550 | 6M33D670E201 | SY-A 354FS",
+        "| GF-W800 | 800 | 640 | 6M33D740E311 | SY-A 354F",
+        "| GF-W900 | 900 | 720 | 12M26D902E201 | SY-A 404D",
+        "| GF-W1000 | 1000 | 800 | 12M26D1012E201 | SY-A 404E",
+        "| GF-W1125 | 1125 | 900 | 12M33D1265E201 | SY-A 404F",
+        "| GF-W1250 | 1250 | 1000 | 12M33D1265E201 | SY-A 404G",
+        "| GF-W1375 | 1375 | 1100 | 12M33D1320E201 | SY-A 404H",
+        "| GF-W1500 | 1500 | 1200 | 12M33D1420E201 | SY-A 404J"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "50/60Hz Perkins 20KVA 16KW 3 Phase Silent Diesel Geneartor 1500/1800RPM from China manufacturer - MINSUN",
+      "header": [
+        "| MODEL | Rated Power | Perkins Engine | Minsun Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-P20 | 20 | 16 | 404A-22G1 | SY-A 184E",
+        "| GF-P25 | 25 | 20 | 1103A-33G | SY-A 184E",
+        "| GF-P30 | 30 | 24 | 1103A-33G | SY-A 184G",
+        "| GF-P37.5 | 37.5 | 40 | 1103A-33TG1 | SY-A 184H",
+        "| GF-P45 | 45 | 36 | 1103A-33TG1 | SY-A 224C",
+        "| GF-P50 | 50 | 40 | 1104A-44TG1 | SY-A 224D"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "50/60Hz Perkins 20KVA 16KW 3 Phase Silent Diesel Geneartor 1500/1800RPM from China manufacturer - MINSUN",
+      "header": [
+        "| MODEL | Rated Power | Perkins Engine | Minsun Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-P30 | 30",
+        "| 24 | 1103A-33G | SY-A 184F",
+        "| GF-P37.5 | 37.5 | 30 | 1103A-33G | SY-A 184G",
+        "| GF-P45 | 45 | 36 | 1103A-33TG1 | SY-A 224CS",
+        "| GF-P50 | 50 | 40 | 1103A-33TG1 | SY-A 224C"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "ISUZU from China manufacturer - MINSUN",
+      "header": [
+        "| Model | Rated Power | ISUZU Engine | Brushless Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-I15 | 15 | 12 | JE493DB-04 | SY-A 164D",
+        "| GF-I20 | 20 | 16 | JE493DB-04 | SY-A 184ES",
+        "| GF-I25 | 25 | 20 | JE493DB-02 | SY-A 184EL",
+        "| GF-I30 | 30 | 24 | JE493ZDB-04 | SY-A 184G",
+        "| GF-I37.5 | 37.5 | 30 | JE493ZLDB-02 | SY-A 184H",
+        "| GF-I50 | 50 | 40 | JE493ZLDC-02 | SY-A 224D"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "ISUZU from China manufacturer - MINSUN",
+      "header": [
+        "| Model | Rated Power | ISUZU Engine | Brushless Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-I20 | 20 | 16 | JE493DB-03 | SY-A 184ES",
+        "| GF-I25 | 25 | 20 | JE493DB-03 | SY-A 184E",
+        "| GF-I30 | 30 | 24 | JE493DB-01 | SY-A 184F",
+        "| GF-I37.5 | 37.5 | 30 | JE493ZDB-03 | SY-A 184G",
+        "| GF-I45 | 45 | 36 | JE493ZLDB-01 | SY-A 224C",
+        "| GF-I62.5 | 62.5 | 50 | JE493ZLDC-01 | SY-A 224D"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "FAWDE from China manufacturer - MINSUN",
+      "header": [
+        "| Model | Rated Power | FAWDE Engine | Brushless Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-F15 | 15 | 12 | 4DW81-23D | SY-A 164D",
+        "| GF-F20 | 20 | 16 | 4DW91-29D | SY-A 184ES",
+        "| GF-F25 | 25 | 20 | 4DW92-35D | SY-A 184E",
+        "| GF-F30 | 30 | 24 | 4DW92-39D | SY-A 184G",
+        "| GF-F38 | 38 | 30 | 4DX21-53D | SY-A 184H",
+        "| GF-F50 | 50 | 40 | 4DX22-65D | SY-A 224D",
+        "| GF-F60 | 60 | 48 | 4DX23-78D | SY-A 224E",
+        "| GF-F73 | 73 | 58 | 4110/125Z-09D | SY-A 224F",
+        "| GF-F80 | 80 | 68 | CA4F2-12D | SY-A 224G",
+        "| GF-F100 | 100 | 80 | 6CDF2D-14D | SY-A 274C",
+        "| GF-F125 | 125 | 100 | CA6DF2-17D | SY-A 274D",
+        "| GF-F150 | 150 | 120 | CA6DF2-19D | SY-A 274F",
+        "| GF-F200 | 200 | 160 | CA6DL1-24D | SY-A 274H",
+        "| GF-F225 | 225 | 180 | CA6DL2-27D | SY-A 274J",
+        "| GF-F250 | 250 | 200 | CA6DL2-30D | SY-A 274K",
+        "| GF-F313 | 313 | 250 | CA6DM2J-39D | SY-A 314D",
+        "| GF-F375 | 375 | 300 | CA6DM3J-48D | SY-A 314F"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "FAWDE from China manufacturer - MINSUN",
+      "header": [
+        "| MODEL | Rated Power | Fawde Engine | Brushless Alternator",
+        "| KVA | KW"
+      ],
+      "rows": [
+        "| GF-F12.5 | 12.5 | 10 | 4DW81-28D | SY-A 164B",
+        "| GF-F19 | 19 | 15 | 4DW81-28D | SY-A 184ES",
+        "| GF-F28 | 28 | 22 | 4DW91-38D | SY-A 184E",
+        "| GF-F32 | 32 | 25 | 4DW92-42D | SY-A 184F",
+        "| GF-F38 | 38 | 30 | 4DX21-53D | SY-A 184G",
+        "| GF-F45 | 45 | 36 | 4DX21-61D | SY-A 224CS",
+        "| GF-F50 | 50 | 40 | 4DX22-75D | SY-A 224C",
+        "| GF-F60 | 60 | 48 | 4DX23-82D | SY-A 224D",
+        "| GF-F80 | 80 | 64 | 4110/125Z-11D | SY-A 224F",
+        "| GF-F100 | 100 | 80 | CA4DF2-14D | SY-A 274CS",
+        "| GF-F120 | 120 | 96 | CA6DF2D-16D | SY-A 274C",
+        "| GF-F140 | 140 | 112 | CA6DF2-18D | SY-A 274D",
+        "| GF-F160 | 160 | 128 | CA6DF2-21D | SY-A 274E",
+        "| GF-F200 | 200 | 160 | CA6DL1-27D | SY-A 274G",
+        "| GF-F250 | 250 | 200 | CA6DL2-32D | SY-A 274J",
+        "| GF-F325 | 325 | 260 | CA6DM2J-42D | SY-A 314D",
+        "| GF-F375 | 375 | 300 | CA6DM3J-49D | SY-A 314E"
+      ]
+    }
+  ]
+}

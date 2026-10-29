@@ -1,0 +1,535 @@
+{
+  "id": "agestar",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "Fujian Agestar Electrical Machinery Co.,Ltd",
+    "zh": null,
+    "brands": [
+      "Agestar"
+    ]
+  },
+  "website": "https://www.agestarem.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": null
+  },
+  "founded": 2014,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất đầu phát, động cơ điện, tổ máy diesel và bơm nước; trước 2014 là xưởng lá thép (lamination)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "Alternator",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel generating set",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất",
+    "Chỉ ghi 'Manufacturing based on ISO9001', không ghi đã có chứng chỉ",
+    "Không thấy thành phố và tên tiếng Trung"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.agestarem.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Fujian Agestar Electrical Machinery Co.,Ltd (Agestar Power) was established in 2014. Before that it is a lamination manufacturer, located in Fujian Province, the southeast China.",
+        "we had been developing into a factory that professional in design and manufacture alternator, electric motor, diesel generating set and water pump",
+        "Manufacturing based on ISO9001"
+      ],
+      "file": "sources/agestar/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.agestarem.com/FAWDE-Series-silent-type-p.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | KVA | KW | KVA | KW | L/H | mm"
+      ],
+      "file": "sources/agestar/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.agestarem.com/FAWDE-Series-open-type-p.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | KVA | KW | KVA | KW | L/H | mm"
+      ],
+      "file": "sources/agestar/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.agestarem.com/CUMMINS-Series-Diesel-Generator-set-p.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| General specifications | Displacement (L) | Alternator | Silent type | ESP | PRP | Engine | Consumption 100% | Gov | Dimensions (mm) | Weight (kg) | KVA | KW | KVA | KW"
+      ],
+      "file": "sources/agestar/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.agestarem.com/DEUTZ-Series-silent-type-p.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| General specifications | Alternator | Dimensions | Weight (kg) | ESP | PRP | Engine type | Consumption 100% | Gov | KVA | KW | KVA | KW"
+      ],
+      "file": "sources/agestar/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.agestarem.com/ISUZU-Series-generator-p.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| General specifications | Alternator | Dimensions | Weight (kg) | ESP | PRP | Engine type | Consumption 100% | Gov | KVA | KW | KVA | KW"
+      ],
+      "file": "sources/agestar/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.agestarem.com/YUCHAI-Series-silent-type-p.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | mm | kg | KVA | KW | KVA | KW | L/H"
+      ],
+      "file": "sources/agestar/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.agestarem.com/SDEC-Series-silent-type-p.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | KVA | KW | KVA | KW | L/H | mm"
+      ],
+      "file": "sources/agestar/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.agestarem.com/Ricardo-Series-p.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| General specifications | Alternator | Dimensions | Weight/kg | ESP | PRP | Engine type | Consumption 100% | Gov | KVA | KW | KVA | KW"
+      ],
+      "file": "sources/agestar/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.agestarem.com/YUCHAI-Series-p.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | mm | kg | KVA | KW | KVA | KW"
+      ],
+      "file": "sources/agestar/109.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "FAWDE generator set",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | KVA | KW | KVA | KW | L/H | mm"
+      ],
+      "rows": [
+        "| kg | GF16.5(S) | 16.5 | 13.2 | 15 | 12 | 4DW81-23D | 5.5 | Mechanical | ASG164D | 1900*800*1050 | 630 | GF22(S) | 22 | 17.6 | 20",
+        "| 16 | 40W91-29D | 6.8 | Mechanical | ASG184E | 1900*800*1050 | 810 | GF28(S) | 28 | 22 | 25 | 20 | 40W92-35D | 8 | Mechanical | ASG184F",
+        "| 2000*930*1130 | 820 | GF33(S) | 33 | 26.4 | 30 | 24 | 4DW92-39D-HMS20W | 10.6 | Electronic | ASG184G | 2030*930*1130 | 850 | GF33(S) | 33 | 26.4",
+        "| 30 | 24 | 4DW93-42D | 10.6 | Mechanical | ASG184G | 2030*930*1130 | 910 | GF33(S) | 33 | 26.4 | 30 | 24 | 4DX21-4SD | 10.6 | Mechanical",
+        "| ASG184G | 2030*930*1130 | 910 | GF42(S) | 42 | 34 | 38 | 31 | 4DX2 l -53D-HMS20W | 11.2 | Electronic | ASG184H | 2200*1000*1200 | 810 | GF41(S) | 41",
+        "| 33 | 37.5 | 30 | 4DX22-50D | 10.9 | Mechanical | ASG184H | 2400*1000*1250 | 1650 | GF55(S) | 55 | 44 | 50 | 40 | 4DX22-65D-HMS20W | 13.8",
+        "| Electronic | ASG224D | 2750*1020*1550 | 1830 | GF55(S) | 55 | 44 | 50 | 40 | 4DX23-65D | 13.8 | Mechanical | ASG224D | 2750*1020*1550 | 1860 | GF69(S)",
+        "| 69 | 55 | 62.5 | 50 | 4DX23-78-JMS20W | 18.7 | Electronic | ASG224F | 2800*1020*1550 | 1900 | GF69(S) | 69 | 55 | 62.5 | 50 | 4100/125Z-09D",
+        "| 18.7 | Electronic | ASG224F | 2800*1020*1550 | 2150 | GF83(S) | 83 | 66 | 75 | 60 | CA4DF2-12D | 23.1 | Electronic | ASG224G | 2900*1060*1580 | 2250",
+        "| GF110(S) | 110 | 88 | 100 | 80 | CA6DF2D-14D | 26.3 | Electronic | ASG274C | 3000*1100*1580 | 2450 | GF138(S) | 138 | 110 | 125 | 100",
+        "| CA6DF2-17D | 37.9 | Electronic | ASG274D | 3120*1120*1590 | 2690 | GF165(S) | 165 | 132 | 150 | 120 | CA60F2-19D | 33.9 | Electronic | ASG274F | 3250*1130*1600",
+        "| 3500 | GF206(S) | 206 | 165 | 187.5 | 150 | CA6DLl-24D | 37.6 | Electronic | ASG274G | 3300*1150*1650 | 3500 | GF248(S) | 248 | 198 | 225",
+        "| 180 | CA6DL2-27D | 53.6 | Electronic | ASG274J | 3700*1300*1900 | 3700 | GF275(S) | 275 | 220 | 250 | 200 | CA6DL2-30 | 75.1 | Electronic | ASG314C",
+        "| 3700*1300*1900 | 3700 | GF343(S) | 343 | 275 | 313 | 250 | CA6DM2J-39D | 72.8 | GAC | ASG314D | 4300*1430*2160 | 3750 | GF343(S) | 343 | 275",
+        "| 313 | 250 | CA6DM2-39D | 72.8 | ECU | ASG314D | 4300*1430*2160 | 3750 | GF375(S) | 375 | 297 | 338 | 270 | CA6DM2J-41D | 76.1 | GAC",
+        "| ASG314E | 4300*1430*2160 | 3800 | GF375(S) | 375 | 297 | 338 | 270 | CA6DM2-41D | 76.1 | ECU | ASG314E | 4300*1430*2160 | 3800 | GF413(S) | 413",
+        "| 330 | 375 | 300 | CA6DN1J-45D | 86.8 | GAC | ASG314F | 4600*1630*2350 | 3850 | GF413(S) | 413 | 330 | 375 | 300 | CA6DNI-45D | 85.1"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "FAWDE generator set",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | KVA | KW | KVA | KW | L/H | mm"
+      ],
+      "rows": [
+        "| kg | GF16.5 | 16.5 | 13.2 | 15 | 12 | 4DW81-23D | 5.5 | Mechanical | ASG164D | 1800*700*950 | 530 | GF22 | 22 | 17.6 | 20",
+        "| 16 | 40W91-29D | 6.8 | Mechanical | ASG184E | 1800*700*950 | 710 | GF28 | 28 | 22 | 25 | 20 | 40W92-35D | 8 | Mechanical | ASG184F",
+        "| 1900*830*1030 | 720 | GF33 | 33 | 26.4 | 30 | 24 | 4DW92-39D-HMS20W | 10.6 | Electronic | ASG184G | 1900*830*1030 | 750 | GF33 | 33 | 26.4",
+        "| 30 | 24 | 4DW93-42D | 10.6 | Mechanical | ASG184G | 1900*830*1030 | 810 | GF33 | 33 | 26.4 | 30 | 24 | 4DX21-4SD | 10.6 | Mechanical",
+        "| ASG184G | 1900*830*1030 | 810 | GF42 | 42 | 34 | 38 | 31 | 4DX2 l -53D-HMS20W | 11.2 | Electronic | ASG184H | 2100*900*1100 | 810 | GF41 | 41",
+        "| 33 | 37.5 | 30 | 4DX22-50D | 10.9 | Mechanical | ASG184H | 2300*900*1150 | 1550 | GF55 | 55 | 44 | 50 | 40 | 4DX22-65D-HMS20W | 13.8",
+        "| Electronic | ASG224D | 2650*920*1450 | 1730 | GF55 | 55 | 44 | 50 | 40 | 4DX23-65D | 13.8 | Mechanical | ASG224D | 2650*920*1450 | 1760 | GF69",
+        "| 69 | 55 | 62.5 | 50 | 4DX23-78-JMS20W | 18.7 | Electronic | ASG224F | 2700*920*1450 | 1800 | GF69 | 69 | 55 | 62.5 | 50 | 4100/125Z-09D",
+        "| 18.7 | Electronic | ASG224F | 2700*920*1450 | 2050 | GF83 | 83 | 66 | 75 | 60 | CA4DF2-12D | 23.1 | Electronic | ASG224G | 2800*960*1480 | 2150",
+        "| GF110 | 110 | 88 | 100 | 80 | CA6DF2D-14D | 26.3 | Electronic | ASG274C | 2900*1000*1480 | 2350 | GF138 | 138 | 110 | 125 | 100",
+        "| CA6DF2-17D | 37.9 | Electronic | ASG274D | 3020*1020*1490 | 2590 | GF165 | 165 | 132 | 150 | 120 | CA60F2-19D | 33.9 | Electronic | ASG274F | 3150*1030*1500",
+        "| 3400 | GF206 | 206 | 165 | 187.5 | 150 | CA6DLl-24D | 37.6 | Electronic | ASG274G | 3200*1050*1550 | 3400 | GF248 | 248 | 198 | 225",
+        "| 180 | CA6DL2-27D | 53.6 | Electronic | ASG274J | 3600*1200*1800 | 3600 | GF275 | 275 | 220 | 250 | 200 | CA6DL2-30 | 75.1 | Electronic | ASG314C",
+        "| 3600*1200*1800 | 3600 | GF343 | 343 | 275 | 313 | 250 | CA6DM2J-39D | 72.8 | GAC | ASG314D | 4200*1330*2060 | 3650 | GF343 | 343 | 275",
+        "| 313 | 250 | CA6DM2-39D | 72.8 | ECU | ASG314D | 4200*1330*2060 | 3650 | GF375 | 375 | 297 | 338 | 270 | CA6DM2J-41D | 76.1 | GAC",
+        "| ASG314E | 4200*1330*2060 | 3700 | GF375 | 375 | 297 | 338 | 270 | CA6DM2-41D | 76.1 | ECU | ASG314E | 4200*1330*2060 | 3700 | GF413 | 413",
+        "| 330 | 375 | 300 | CA6DN1J-45D | 86.8 | GAC | ASG314F | 4500*1530*2250 | 3750 | GF413 | 413 | 330 | 375 | 300 | CA6DNI-45D | 85.1"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "CUMMINS Series Diesel Generator set",
+      "header": [
+        "| General specifications | Displacement (L) | Alternator | Silent type | ESP | PRP | Engine | Consumption 100% | Gov | Dimensions (mm) | Weight (kg) | KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| L/H | GC-30(S) | 30 | 24 | 27 | 22 | 4B3.9-G 1 | 6.5 | Mechanical | 3.9 | ASG184G | 2150*1000*1250 | 1000 | GC-30(S) | 30",
+        "| 24 | 27 | 22 | 4B3.9-G2 | 6.5 | Electrical | 3.9 | ASG184G | 2250*1000*1250 | 1000 | GC-44(S) | 44 | 35 | 40 | 32",
+        "| 4BT3.9-G1 | 9.5 | Mechanical | 3.9 | ASG184H | 2250*1000*1250 | 1330 | GC-44(S) | 44 | 35 | 40 | 32 | 4BT3.9-G2 | 9.5 | Electrical",
+        "| 3.9 | ASG184H | 2250*1000*1250 | 1330 | GC-50(S) | 50 | 40 | 45 | 36 | 40TA3.9-G2 | 10.2 | Electrical | 3.9 | ASG224D | 2250*1000*1250",
+        "| 1450 | GC-55(S) | 55 | 44 | 50 | 40 | 4BTA3.9-G2 | 11.28 | Electrical | 3.9 | ASG224E | 2250*1000*1250 | 1450 | GC-70(S) | 70",
+        "| 55 | 63 | 50 | 4BTA3.9-G2 | 12.5 | Electrical | 3.9 | ASG224F | 2400*1000*1250 | 1550 | GC-80(S) | 80 | 64 | 72 | 58",
+        "| 4BTA3.9-G11 | 13.1 | Electrical | 3.9 | ASG224G | 2400*1000*1250 | 1650 | GC-94(S) | 94 | 75 | 85 | 68 | 68T5.9-G1 | 16.2 | Mechanical",
+        "| 5.9 | ASG224G | 2750*1020*1550 | 1830 | GC-110(S) | 110 | 88 | 100 | 80 | 6BT5.9-G2 | 18 | Electrical | 5.9 | ASG274C | 2750*1020*1550",
+        "| 1830 | GC-125(S) | 125 | 100 | 113 | 90 | 6BTA5.9-G2 | 21 | Electrical | 5.9 | ASG274C | 2750*1020*1550 | 1860 | GC-138(S) | 138",
+        "| 110 | 125 | 100 | 6BTAA5.9-G2 | 24 | Electrical | 5.9 | ASG274C | 2750*1020*1550 | 1860 | GC-150(S) | 150 | 120 | 138 | 110",
+        "| 6BTAA5.9-G2 | 24 | Electrical | 5.9 | ASG274D | 2800*1020*1550 | 1900 | GC-175(S) | 175 | 140 | 160 | 128 | 6BTAA5.9-G12 | 30 | Electrical",
+        "| 8.3 | ASG274E | 3200*1130*1600 | 2000 | GC-175(S) | 175 | 140 | 160 | 128 | 6CTA8.3-G2 | 32 | Electrical | 8.3 | ASG274F | 3250*1130*1600",
+        "| 2150 | GC-198(S) | 198 | 158 | 180 | 144 | 6CTA8.3-G2 | 40 | Electrical | 8.3 | ASG274G | 3300*1150*1650 | 2250 | GC-215(S) | 215",
+        "| 172 | 200 | 160 | 6CT AA8.3-G2 | 45 | Electrical | 8.9 | ASG274G | 3300*1150*1650 | 2350 | GC-275(S) | 275 | 220 | 250 | 200",
+        "| 6LTAA8.9-G2 | 62 | Electrical | 8.9 | ASG274H | 3300*1150*1650 | 2400 | GC-440(S) | 440 | 352 | 400 | 320 | 6ZTAA13-G3 | 85 | Electrical",
+        "| 13 | ASG274J | 3700*1300*1900 | 2690 | GC-480(S) | 480 | 385 | 437 | 350 | 6ZTAA13-G2 | 98 | Electrical | 14 | ASG274K | 3800*1300*1950",
+        "| 3000 | GC-495(S) | 495 | 396 | 450 | 360 | 6ZTAA13-G4 | 100 | Electrical | 14 | ASG274K | 4300*1430*2160 | 3000 | GC-313(S) | 313",
+        "| 250 | 275 | 220 | NTA855-G1A | 84 | Electrical | 13 | ASG274K | 4300*1430*2160 | 3500 | GC-350(S) | 350 | 280 | 313 | 250",
+        "| NTA855-G1B | 94 | Electrical | 13 | ASG444D | 4300*1430*2160 | 3700 | GC-350(S) | 350 | 280 | 313 | 250 | MTAA11-G3 | 62 | Electrical",
+        "| 13 | ASG444D | 4300*1430*2160 | 3700 | GC-388(S) | 388 | 310 | 350 | 280 | NTA855-G2A | 94 | Electrical | 13 | ASG444D | 4600*1630*2350",
+        "| 3750 | GC-388(S) | 388 | 310 | 350 | 280 | NTA855-G4 | 97 | Electrical | 13 | ASG444E | 4600*1630*2350 | 3800 | GC-413(S) | 413",
+        "| 330 | 375 | 300 | NTAA855-G7 | 101 | Electrical | 13 | ASG444FS | 4600*1630*2350 | 4200 | GC-413(S) | 413 | 330 | 375 | 300",
+        "| KTA19-G2 | 111 | Electrical | 13 | ASG444F | 4700*1630*2400 | 4450 | GC-450(S) | 450 | 360 | 413 | 330 | NTAA855-G7A | 121 | Electrical",
+        "| 13 | ASG544C | 4700*1630*2400 | 4600 | GC-500(S) | 500 | 400 | 450 | 360 | KTA19-G3 | 135 | Electrical | 18.9 | ASG544D | 4700*1630*2400",
+        "| 4700 | GC-550(S) | 550 | 440 | 500 | 400 | KTA19-G4 | 148 | Electrical | 18.9 | ASG544D | 4800*1830*2500 | 4850 | GC-600(S) | 600",
+        "| 480 | 550 | 440 | KTAA19-G5 | 151 | Electrical | 18.9 | ASG544E | 4800*1830*2500 | 5050 | GC-633(S) | 633 | 510 | 575 | 460",
+        "| KTAA19-G6 | 168 | Electrical | 18.9 | ASG544E | 4800*1830*2500 | 5300 | GC-688(S) | 688 | 550 | 625 | 500 | KTAA19-G6A | 175 | Electrical",
+        "| 18.9 | ASG544FS | 4800*1830*2500 | 5600 | GC-688(S) | 688 | 550 | 625 | 500 | KTAA19-G7 | 175 | Electrical | 18.9 | ASG544FS | 4800*1830*2500",
+        "| 5850 | GC-688(S) | 688 | 550 | 625 | 500 | KT38-G | 202 | Electrical | 18.9 | ASG634BS | 4800*1830*2500 | 5700 | GC-825(S) | 825",
+        "| 660 | 750 | 600 | KTA38-G2 | 216 | Electrical | 37.8 | ASG634B | 4900*1830*2500 | 5700 | GC-900(S) | 900 | 720 | 800 | 640",
+        "| KTA38-G2B | 243 | Electrical | 37.8 | ASG634C | 4900*1830*2500 | 8000 | GC-1000(S) | 1000 | 800 | 850 | 720 | KTA38-G2A | 280 | Electrical",
+        "| 37.8 | ASG634D | 4900*1830*2500 | 8900 | GC-1100(S) | 1100 | 880 | 1000 | 800 | KTA38-G5 | 284 | Electrical | 37.8 | ASG634E | 6060*2238*2595",
+        "| 8900 | GC-1238(S) | 1238 | 990 | 1125 | 900 | KTA38-G9 | 256 | Electrical | 37.8 | ASG634F | 6060*2238*2595 | 9000 | GC-1400(S) | 1375",
+        "| 1100 | 1250 | 1000 | KTA50-G3 | 280 | Electrical | 50.3 | ASG634G | 6400*2238*2595 | 10600 | GC-1512(S) | 1512 | 1210 | 1375 | 1100",
+        "| KTA50-G8 | 289 | Electrical | 50.3 | ASG734A | 6400*2238*2595 | 13000 | GC-1650(S) | 1650 | 1320 | 1500 | 1200 | KTA50-GS8 | 309 | Electrical",
+        "| 50.3 | ASG734A | 6400*2238*2595 | 13860 | GC-2035(S) | 2063 | 1650 | 1875 | 1500 | QSK60-G3 | 370 | Electrical | 50.3 | ASG734A | 7500*2300*2695",
+        "| 14200 | GC-2200(S) | 2200 | 1760 | 2000 | 1600 | QSK60-G4 | 390 | Electrical | 50.3 | ASG734A | 7500*2300*2695 | 14200 | ASG-Cummins Series:60HZ | Model"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "CUMMINS Series Diesel Generator set",
+      "header": [
+        "| General specifications | Displacement | Alternator | Silent | ESP | PRP | Engine type | Consumption 100% | Gov | Dimensions | Weight/kg | KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| L/H | GC30(S) | 30 | 24 | 27 | 22 | 4B3.9-G1 | 6.5 | Mechanical | 3.9 | ASG184G | 2150*1000*1250 | 1000 | GC30(S) | 30",
+        "| 24 | 27 | 22 | 4B3.9-G2 | 6.5 | Electrical | 3.9 | ASG184G | 2250*1000*1250 | 1000 | GC34(S) | 34 | 28 | 31 | 25",
+        "| 4B3.9-G1 | 6.5 | Mechanical | 3.9 | ASG184H | 2250*1000*1250 | 1330 | GC34(S) | 34 | 28 | 31 | 25 | 4B3.9-G2 | 6.5 | Electrical",
+        "| 3.9 | ASG184H | 2250*1000*1250 | 1330 | GC50(S) | 50 | 40 | 45 | 36 | 4BT3.9-G1 | 9.5 | Mechanical | 3.9 | ASG224D | 2250*1000*1250",
+        "| 1450 | GC50(S) | 50 | 40 | 45 | 36 | 4BT3.9-G2 | 9.5 | Electrical | 3.9 | ASG224E | 2250*1000*1250 | 1450 | GC55(S) | 55",
+        "| 44 | 50 | 40 | 4BT3.9-G 1 | 9.5 | Mechanical | 3.9 | ASG224F | 2400*1000*1250 | 1550 | GC55(S) | 55 | 44 | 50 | 40",
+        "| 4BT3.9-G2 | 9.5 | Electrical | 3.9 | ASG224G | 2400*1000*1250 | 1650 | GC66(S) | 66 | 53 | 60 | 48 | 4BTA3.9-G2 | 10.2 | Electrical",
+        "| 5.9 | ASG224G | 2750*1020*1550 | 1830 | GC75(S) | 75 | 60 | 68 | 54 | 4BTA3.9-G2 | 11.28 | Electrical | 5.9 | ASG274C | 2750*1020*1550",
+        "| 1830 | GC94(S) | 94 | 75 | 85 | 68 | 6BT5.9-G1 | 16.2 | Mechanical | 5.9 | ASG274C | 2750*1020*1550 | 1860 | GC110(S) | 110",
+        "| 88 | 100 | 80 | 6BT5.9-G1 | 16.2 | Mechanical | 5.9 | ASG274C | 2750*1020*1550 | 1860 | GC121(S) | 121 | 97 | 110 | 88",
+        "| 6BT5.9-G2 | 18 | Electrical | 5.9 | ASG274D | 2800*1020*1550 | 1900 | GC138(S) | 138 | 110 | 125 | 100 | 6BTA5.9-G2 | 21 | Electrical",
+        "| 8.3 | ASG274E | 3200*1130*1600 | 2000 | GC151(S) | 151 | 121 | 138 | 110 | 6BT AA5.9-G2 | 24 | Electrical | 8.3 | ASG274F | 3250*1130*1600",
+        "| 2150 | GC162(S) | 162 | 130 | 148 | 118 | 6BTAA5.9-G2 | 24 | Electrical | 8.3 | ASG274G | 3300*1150*1650 | 2250 | GC186(S) | 186",
+        "| 149 | 169 | 135 | 6CTA8.3-G2 | 32 | Electrical | 8.9 | ASG274G | 3300*1150*1650 | 2350 | GC198(S) | 198 | 158 | 180 | 144",
+        "| 6CTA8.3-G2 | 40 | Electrical | 8.9 | ASG274H | 3300*1150*1650 | 2400 | GC220(S) | 220 | 176 | 200 | 160 | 6CTA8.3-G2 | 40 | Electrical",
+        "| 13 | ASG274J | 3700*1300*1900 | 2690 | GC248(S) | 248 | 198 | 225 | 180 | 6CTAA8.3-G2 | 45 | Electrical | 14 | ASG274K | 3800*1300*1950",
+        "| 3000 | GC309(S) | 309 | 248 | 281 | 225 | 6LT AA8.9-G2 | 62 | Electrical | 14 | ASG274K | 4300*1430*2160 | 3000 | GC330(S) | 330",
+        "| 264 | 300 | 240 | NTA855-G1 | 67 | Electrical | 13 | ASG274K | 4300*1430*2160 | 3500 | GC385(S) | 385 | 308 | 350 | 280",
+        "| NTA855-G1B | 94 | Electrical | 13 | ASG444D | 4300*1430*2160 | 3700 | GC440(S) | 440 | 352 | 400 | 320 | NTA855-G3 | 94 | Electrical",
+        "| 13 | ASG444D | 4300*1430*2160 | 3700 | GC413(S) | 413 | 330 | 375 | 300 | KTA19-G2 | 111 | Electrical | 13 | ASG444D | 4600*1630*2350",
+        "| 3750 | GC500(S) | 500 | 400 | 450 | 360 | KTA19-G3 | 135 | Electrical | 13 | ASG444E | 4600*1630*2350 | 3800 | GC578(S) | 578",
+        "| 462 | 525 | 420 | KTA19-G3 | 135 | Electrical | 13 | ASG444FS | 4600*1630*2350 | 4200 | GC624(S) | 624 | 499 | 568 | 454",
+        "| KTA19-G3A | 135 | Electrical | 13 | ASG444F | 4700*1630*2400 | 4450 | GC624(S) | 624 | 499 | 568 | 454 | KTA19-G4 | 148 | Electrical",
+        "| 13 | ASG544C | 4700*1630*2400 | 4600 | GC718(S) | 718 | 574 | 652 | 522 | KTAA19-G5 | 151 | Electrical | 18.9 | ASG544D | 4700*1630*2400",
+        "| 4700 | GC749(S) | 749 | 600 | 681 | 545 | KTAA19-G6A | 175 | Electrical | 18.9 | ASG544D | 4900*1830*2500 | 4850 | GC825(S) | 852",
+        "| 682 | 775 | 620 | KT38-G | 202 | Electrical | 18.9 | ASG544E | 4900*1830*2500 | 5050 | GC941(S) | 941 | 752 | 855 | 684",
+        "| KTA38-G2 | 216 | Electrical | 18.9 | ASG544E | 4900*1830*2500 | 8860 | GC1018(S) | 1018 | 814 | 925 | 740 | KTA38-G2 | 216 | Electrical",
+        "| 18.9 | ASG544FS | 4900*1830*2500 | 9000 | GC1148(S) | 1148 | 919 | 1044 | 835 | KTA38-G2A | 243 | Electrical | 18.9 | ASG544FS | 6060*2238*2595",
+        "| 10600 | GC1547(S) | 1547 | 1238 | 1406 | 1125 | KTA50-G3 | 280 | Electrical | 18.9 | ASG634BS | 6060*2238*2595 | 13000 | GC1877(S) | 1877"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "DEUTZ generator set",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight (kg) | ESP | PRP | Engine type | Consumption 100% | Gov | KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| L/H | GD66(S) | 66 | 53 | 60 | 48 | BF4M2012 | 13.8 | Mechanical | ASG184F | 2600*1030*1500 | 1450 | GD86(S)",
+        "| 83 | 66 | 75 | 60 | BF4M2012C | 16.5 | Mechanical | ASG224G | 2700*1030*1500 | 1510 | GD110(S) | 110 | 88",
+        "| 100 | 80 | BF4M1013EC | 22.1 | Mechanical | ASG274C | 2700*1030*1500 | 1510 | GD138(S) | 138 | 110 | 125 | 100",
+        "| BF4M1013FC | 27.2 | Mechanical | ASG274C | 2800*1130*1640 | 1650 | GD165(S) | 165 | 132 | 150 | 120 | BF6M1013EC | 32",
+        "| Mechanical | ASG274D | 3200*1130*1740 | 2020 | GD193(S) | 193 | 154 | 175 | 140 | BF6M1013FCG2 | 39.4 | Electrical | ASG274E",
+        "| 3200*1130*1740 | 2020 | GD220(S) | 220 | 176 | 200 | 160 | BF6M1013FCG3 | 42.8 | Electrical | ASG274F | 3400*1130*1740 | 2300"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "DEUTZ generator set",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight (kg) | ESP | PRP | Engine type | Consumption 100% | Gov | KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| L/H | GD248(S) | 248 | 198 | 225 | 180 | BF6M1015-LA GA | 42.7 | Electrical | ASG274J | 3600*1280*2050 | 2790 | GD275(S)",
+        "| 275 | 220 | 250 | 200 | BF6M1015C-LA G1A | 47.4 | Electrical | ASG274K | 3400*1200*1900 | 2810 | GD303(S) | 303 | 242",
+        "| 275 | 220 | BF6M1015C-LA G2A | 52.2 | Electrical | ASG314C | 3400*1200*1900 | 2870 | GD344(S) | 344 | 275 | 313 | 250",
+        "| BF6M1015C-LA G3A | 59.3 | Electrical | ASG314D | 3400*1200*1900 | 3020 | GD385(S) | 385 | 308 | 350 | 280 | BF6M1015C-LA G4 | 66.4",
+        "| Electrical | ASG314E | 3800*1400*2100 | 4100 | GD413(S) | 413 | 330 | 375 | 300 | BF6M1015CP-LA G | 71.1 | Electrical | ASG314F",
+        "| 3800*1400*2100 | 4180 | GD481(S) | 481 | 385 | 438 | 350 | BF8M1015C-LA G1A | 75.9 | Electrical | ASG314F | 3800*1400*2100 | 4180",
+        "| GD495(S) | 495 | 396 | 450 | 360 | BF8M1015C-LA G2 | 85.4 | Electrical | ASG314F | 3800*1400*2100 | 4630 | GD523(S) | 523",
+        "| 418 | 475 | 380 | BF8M1015CP-LA G1A | 90 | Electrical | ASG314F | 4000*1400*2100 | 5030 | GD550(S) | 550 | 440 | 500",
+        "| 400 | BF8M1015CP-LA G2 | 94.9 | Electrical | ASG314F | 4100*1400*2100 | 5830 | GD564(S) | 564 | 451 | 513 | 410 | BF8M1015CP-LA G3",
+        "| 96 | Electrical | ASG354C | 4500*1800*2400 | 6050 | GD578(S) | 578 | 462 | 525 | 420 | BF8M1015CP-LA G4 | 100 | Electrical",
+        "| ASG354C | 4500*1800*2400 | 6080 | GD619(S) | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 106 | Electrical | ASG544C | 6060*2438*2595"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "DEUTZ generator set",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight (kg) | ESP | PRP | Engine type | Consumption 100% | Gov | KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| L/H | GD87(S) | 87 | 70 | 79 | 63 | BF4M2012 | 16.5 | Mechanical | ASG224G | 2700*1030*1500 | 1510 | GD110(S)",
+        "| 110 | 88 | 100 | 80 | BF4M2012C | 22.1 | Mechanical | ASG274C | 2700*1030*1500 | 1510 | GD144(S) | 144 | 116",
+        "| 131 | 105 | BF4M1013EC | 27.2 | Mechanical | ASG274C | 2800*1130*1640 | 1650 | GD172(S) | 172 | 138 | 156 | 125",
+        "| BF4M1013FC | 32 | Mechanical | ASG274D | 3200*1130*1740 | 2020 | GD213(S) | 213 | 171 | 194 | 155 | BF6M1013EC | 39.4",
+        "| Mechanical | ASG274E | 3300*1180*1860 | 2320 | GD255(S) | 255 | 205 | 232 | 186 | BF6M1013FCG2 | 42.7 | Electrical | ASG274F",
+        "| 3600*1280*2050 | 2790 | GD282(S) | 282 | 226 | 256 | 205 | BF6M1013FCG3 | 47.4 | Electrical | ASG274K | 3400*1200*1900 | 2810"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "ISUZU generator set",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight (kg) | ESP | PRP | Engine type | Consumption 100% | Gov | KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| L/H | GI27(S) | 27 | 22 | 25 | 20 | 4JB1 | 4.6 | Mechanical | ASG184F | 2050*780*1110 | 820 | GI28(S)",
+        "| 33 | 26 | 30 | 24 | 4JB1T | 4.8 | Mechanical | ASG184G | 2050*780*1110 | 820 | GI29(S) | 42 | 33",
+        "| 38 | 30 | 4JB1TT | 5.4 | Electrical | ASG184H | 2250*1000*1250 | 1450 | GI30(S) | 47 | 37 | 42.5 | 34",
+        "| 4JB1T-S | 11.3 | Electrical | ASG224C | 2250*1000*1250 | 1450 | GI31(S) | 55 | 44 | 50 | 40 | 4BD1-Z | 12",
+        "| Electrical | ASG224D | 2400*1000*1250 | 1550 | GI32(S) | 66 | 52.8 | 60 | 48 | 4BG1-Z | 14.5 | Electrical | ASG224E"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "YUCHAI generator set",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | mm | kg | KVA | KW | KVA | KW | L/H"
+      ],
+      "rows": [
+        "| GYC17.5(S) | 17.5 | 14 | 15 | 12 | YC2108D | 6 | Mechanical | ASG184E | 2150*1000*1250 | 900 | GYC20(S) | 20 | 16 | 18 | 14 | YC2108D",
+        "| 8 | Mechanical | ASG184G | 2250*1000*1250 | 1080 | GYC25(S) | 25 | 20 | 22 | 18 | YC2115D | 10.2 | Mechanical | ASG184J | 2250*1000*1250 | 1350 | GYC27(S)",
+        "| 27 | 22 | 25 | 20 | YCD3D11D | 13.9 | Mechanical | ASG224D | 2400*1000*1250 | 1450 | GYC34(S) | 34 | 27 | 31 | 25 | YCD3D11D | 10.9",
+        "| Mechanical | ASG224C | 2400*1000*1250 | 1400 | GYC41(S) | 41 | 33 | 37 | 30 | YC4D55-D10 | 14.6 | Mechanical | ASG224E | 2400*1000*1250 | 1520 | GYC44(S) | 44",
+        "| 35 | 40 | 32 | YC4D60-D21 | 15.9 | Mechanical | ASG224F | 2400*1000*1250 | 1550 | GYC55(S) | 55 | 44 | 50 | 40 | YC4D85Z-D20 | 18.6 | Mechanical",
+        "| ASG224G | 2750*1020*1550 | 1600 | GYC70(S) | 70 | 55 | 63 | 50 | YC4D75Z-D20 | 24.1 | Mechanical | ASG274C | 2800*1050*1550 | 1760 | GYC83(S) | 83 | 66",
+        "| 75 | 60 | YC6B100-D10 | 27.3 | Mechanical | ASG274D | 2800*1050*1550 | 1800 | GYC88(S) | 88 | 70 | 80 | 64 | YC6B100-D20 | 31.8 | Mechanical | ASG274E",
+        "| 3200*1130*1600 | 1900 | GYC96(S) | 96 | 77 | 87 | 70 | YC6B115Z-D20 | 33.6 | Mechanical | ASG274F | 3250*1130*1600 | 2050 | GYC110(S) | 110 | 88 | 100",
+        "| 80 | YC6B115Z-D20 | 35.4 | Mechanical | ASG274F | 3250*1130*1600 | 2050 | GYC125(S) | 124 | 99 | 113 | 90 | YC6B135Z-D20 | 35.7 | Mechanical | ASG274F | 3250*1130*1600",
+        "| 2050 | GYC137(S) | 138 | 110 | 125 | 100 | YC6B155L-D20 | 39.4 | Mechanical | ASG274G | 3300*1150*1650 | 2150 | GYC151(S) | 151 | 121 | 137 | 110",
+        "| YC6B155L-D20 | 42.6 | Mechanical | ASG274H | 3300*1150*1650 | 2300 | GYC165(S) | 165 | 132 | 150 | 120 | YC6A190L-D20 | 48.5 | Mechanical | ASG274J | 3700*1300*1900 | 2350",
+        "| GYC176(S) | 176 | 141 | 160 | 128 | YC6A190L-D20 | 60.7 | Mechanical | ASG274K | 3700*1300*1900 | 2590 | GYC220(S) | 220 | 176 | 200 | 160 | YC6M260L-D20",
+        "| 72.6 | Mechanical | ASG314E | 4300*1430*2160 | 3600 | GYC250(S) | 250 | 200 | 225 | 180 | YC6M260L-D20 | 72.6 | Mechanical | ASG314E | 4300*1430*2160 | 3600 | GYC275(S)",
+        "| 275 | 220 | 250 | 200 | YC6M320L-D20 | 83 | Mechanical | ASG314F | 4600*1630*2350 | 3650 | GYC300(S) | 300 | 240 | 275 | 220 | YC6M320L-D20 | 85.3",
+        "| Mechanical | ASG314F | 4600*1630*2350 | 3650 | GYC330(S) | 330 | 264 | 300 | 240 | YC6MK390L-D20 | 95.1 | Mechanical | ASG314F | 4600*1630*2350 | 3650 | GYC413(S) | 413",
+        "| 330 | 375 | 300 | YC6T500L-D20 | 103.6 | Mechanical | ASG354C | 4700*1630*2400 | 4880 | GYC437(S) | 440 | 352 | 400 | 320 | YC6T500L-D20 | 114 | Mechanical",
+        "| ASG354C | 4700*1630*2400 | 4880 | GYC500(S) | 495 | 396 | 450 | 360 | YC6T550L-D20 | 120.9 | Mechanical | ASG354D | 4900*1830*2500 | 4900 | GYC550(S) | 550 | 440",
+        "| 500 | 400 | YC6T600L-D20 | 134.4 | Mechanical | ASG354E | 4900*1830*2500 | 4880 | GYC825(S) | 825 | 660 | 750 | 600 | YC6C1020L-D20 | 144.7 | Mechanical | ASG354F"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "SDEC generator set",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | KVA | KW | KVA | KW | L/H | mm"
+      ],
+      "rows": [
+        "| kg | GS80(S) | 80 | 64 | 72 | 58 | SC4H95D2 | 18.6 | Electrical | ASG224F | 2200*840*1210 | 1200 | GS99(S) | 99 | 79 | 90",
+        "| 72 | SC4H115D2 | 18.6 | Electrical | ASG224F | 2200*840*1210 | 1200 | GS110(S) | 110 | 88 | 100 | 80 | SC4H160D2 | 23.5 | Electrical | ASG224G",
+        "| 2300*840*1510 | 1300 | GS138(S) | 138 | 110 | 125 | 100 | SC4H180D2 | 23.5 | Electrical | ASG224G | 2300*840*1510 | 1300 | GS192(S) | 192 | 154",
+        "| 175 | 140 | SC7H230D2 | 30.8 | Electrical | ASG274C | 2300*880*1510 | 1450 | GS206(S) | 206 | 165 | 188 | 150 | SC7H250D2 | 30.8 | Electrical",
+        "| ASG274C | 2300*880*1510 | 1450 | GS206(S) | 206 | 165 | 188 | 150 | SC8D280D2 | 35.1 | Electrical | ASG274D | 2700*924*1582 | 1860 | GS275(S) | 275",
+        "| 220 | 250 | 200 | SC90310D2 | 44 | Electrical | ASG274E | 2700*924*1582 | 1860 | GS275(S) | 275 | 220 | 250 | 200 | SC9D340D2 | 47.9",
+        "| Electrical | ASG274F | 2700*924*1670 | 2150 | GS248(S) | 248 | 198 | 225 | 180 | SC13G280D2 | 42.9 | Electrical | ASG274G | 2700*1000*1764 | 2200 | GS275(S)",
+        "| 275 | 220 | 250 | 200 | SG13G310D2 | 55 | Electrical | ASG274H | 3000*1172*1750 | 2500 | GS330(S) | 330 | 264 | 300 | 240 | SC13G355D2",
+        "| 61.2 | Electrical | ASG274G | 3000*1172*1750 | 2670 | GS385(S) | 385 | 308 | 350 | 280 | SC13G420D2 | 66.7 | Electrical | ASG274J | 3000*1172*1750 | 2800",
+        "| GS440(S) | 440 | 352 | 400 | 320 | SC15G500D2 | 87.1 | Electrical | ASG274K | 3000*1172*1750 | 3300 | GS550(S) | 550 | 440 | 500 | 400",
+        "| SC25G610D2 | 82.6 | Electrical | ASG314D | 3200*1250*1850 | 3675 | GS618(S) | 618 | 495 | 562 | 450 | SC25G690D2 | 100.1 | Electrical | ASG314F | 3240*1371*2030",
+        "| 4000 | GS688(S) | 688 | 550 | 625 | 500 | SC27G755D2 | 120.6 | Electrical | ASG314E | 3240*1371*2030 | 4500 | GS756(S) | 756 | 605 | 688",
+        "| 550 | SC27G830D2 | 120.6 | Electrical | ASG354F | 3240*1371*2030 | 4800 | GS825(S) | 825 | 660 | 750 | 600 | SC27G900D2 | 136.8 | Electrical | ASG634G",
+        "| 4500*1800*2600 | 5500 | GS880(S) | 880 | 704 | 800 | 640 | SC27G990D2 | 176.4 | Electrical | ASG634G | 6000*2400*2500 | 5500 | GS1100(S) | 1100 | 880"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Ricardo Series (open type)",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight/kg | ESP | PRP | Engine type | Consumption 100% | Gov | KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| L/H | GR11 | 11 | 9 | 10 | 8 | Y480BD | 1.81 | Mechanical | ASG164B | 1550*810*930 | 359 | GR14",
+        "| 14 | 11 | 13 | 10 | Y480BD | 1.81 | Mechanical | ASG164C | 1550*810*930 | 380 | GR17 | 17 | 13",
+        "| 15 | 12 | Y480BD | 1.81 | Mechanical | ASG164D | 1550*810*930 | 390 | GR21 | 21 | 17 | 19 | 15",
+        "| Y485BD | 3.61 | Mechanical | ASG184ES | 1500*810*990 | 467 | GR25 | 25 | 20 | 23 | 18 | Y485BZD | 3.61",
+        "| Mechanical | ASG184E | 1500*810*990 | 487 | GR28 | 28 | 22 | 25 | 20 | Y485BZD | 3.61 | Mechanical | ASG184F",
+        "| 1500*810*990 | 490 | GR28 | 28 | 22 | 25 | 20 | Y485BZLD | 3.85 | Mechanical | ASG184F | 1500*810*990 | 490",
+        "| GR33 | 33 | 26 | 30 | 24 | Y485BZLD | 3.85 | Mechanical | ASG184G | 1650*750*1250 | 700 | GR28 | 28",
+        "| 22 | 25 | 20 | N4100DS-26 | 3.85 | Mechanical | ASG184F | 1500*810*990 | 490 | GR33 | 33 | 26 | 30",
+        "| 24 | N4100DS-30 | 3.85 | Mechanical | ASG184G | 1650*750*1250 | 700 | GR41 | 41 | 33 | 38 | 30 | N41050S-38",
+        "| 3.85 | Mechanical | ASG184H | 1750*750*1250 | 790 | GR55 | 55 | 44 | 50 | 40 | N4105DS-46 | 3.85 | Mechanical",
+        "| ASG224D | 1750*750*1250 | 840 | GR55 | 55 | 44 | 50 | 40 | N4105ZD | 3.85 | Mechanical | ASG224D | 1750*750*1250",
+        "| 840 | GR69 | 69 | 55 | 63 | 50 | N4105ZD | 4.33 | Electrical | ASG224E | 1850*800*1250 | 900 | GR69",
+        "| 69 | 55 | 63 | 50 | N4105ZLD | 4.33 | Mechanical | ASG224E | 1850*800*1250 | 900 | GR83 | 83 | 66",
+        "| 75 | 60 | N4105ZLD | 4.95 | Electrical | ASG224F | 1850*800*1250 | 920 | GR55 | 55 | 44 | 50 | 40",
+        "| R4105ZD1 | 4.95 | Mechanical | ASG224D | 1750*750*1250 | 840 | GR69 | 69 | 55 | 63 | 50 | R4105ZD1 | 4.85",
+        "| Electrical | ASG224E | 1850*800*1250 | 900 | GR69 | 69 | 55 | 63 | 50 | R4105ZLDS1 | 4.85 | Mechanical | ASG224E",
+        "| 1850*800*1250 | 900 | GR83 | 83 | 66 | 75 | 60 | R4105ZLDS1 | 4.95 | Electrical | ASG224F | 1850*800*1250 | 920",
+        "| GR69 | 69 | 55 | 63 | 50 | R4105BZDS1 | 4.85 | Mechanical | ASG224E | 1850*800*1250 | 900 | GR83 | 83",
+        "| 66 | 75 | 60 | R4105BZLDS1 | 4.95 | Electrical | ASG224F | 1850*800*1250 | 920 | GR88 | 88 | 70 | 80",
+        "| 64 | R6105ZDS1 | 4.95 | Electrical | ASG224G | 1850*800*1250 | 920 | GR103 | 103 | 83 | 94 | 75 | R6105ZDS1",
+        "| 7 | Electrical | ASG274C | 1850*810*1250 | 1150 | GR124 | 124 | 99 | 113 | 90 | R6105ZLDS1 | 6.75 | Electrical",
+        "| ASG274D | 1950*880*1280 | 1190 | GR138 | 138 | 110 | 125 | 100 | R6 l 05AZLDS1 | 6.75 | Electrical | ASG274E | 2240*960*1320",
+        "| 1300 | GR165 | 165 | 132 | 150 | 120 | R6105BZLDS1 | 7 | Electrical | ASG274F | 2240* 960*1320 | 1400 | GR206",
+        "| 206 | 165 | 188 | 150 | R6110ZLDS | 7.41 | Electrical | ASG274G | 2550*1050*1670 | 1580 | GR220 | 220 | 176",
+        "| 200 | 160 | 6126-68D | 7.8 | Electrical | ASG274H | 2550*1050*1670 | 1580 | GR248 | 248 | 198 | 225 | 180",
+        "| 6126-42D | 8.1 | Electrical | ASG274J | 2550*1050*1670 | 1650 | GR275 | 275 | 220 | 250 | 200 | 6126-260D | 8.9",
+        "| Electrical | ASG274K | 2550*1050*1670 | 1700 | GR303 | 303 | 242 | 275 | 220 | 6126-275D | 9.3 | Electrical | ASG314C",
+        "| 3000*1150*1980 | 2400 | GR358 | 358 | 286 | 325 | 260 | STD12D-308 | 10.6 | Electrical | ASG314D | 3400*1150*1980 | 2450"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Ricardo Series (open type)",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight/kg | ESP | PRP | Engine type | Consumption 100% | Gov | KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| L/H | GR11 | 11 | 9 | 10 | 8 | Y480BD | 1.81 | Mechanical | ASG164B | 2050*850*1150 | 359 | GR14",
+        "| 14 | 11 | 13 | 10 | Y480BD | 1.81 | Mechanical | ASG164C | 2050*850*1150 | 380 | GR17 | 17 | 13",
+        "| 15 | 12 | Y480BD | 1.81 | Mechanical | ASG164D | 2050*850*1150 | 390 | GR21 | 21 | 16 | 19 | 15",
+        "| Y485BD | 3.61 | Mechanical | ASG184ES | 2030*9000*1150 | 467 | GR25 | 25 | 20 | 23 | 18 | Y485BZD | 3.61",
+        "| Mechanical | ASG184E | 2030*9000*1150 | 487 | GR28 | 28 | 22 | 25 | 20 | Y485BZD | 3.61 | Mechanical | ASG184F",
+        "| 2030*9000*1150 | 490 | GR28 | 28 | 22 | 25 | 20 | Y485BZLD | 3.85 | Mechanical | ASG184F | 2030*9000*1150 | 490",
+        "| GR33 | 33 | 26 | 30 | 24 | Y485BZLD | 3.85 | Mechanical | ASG184G | 2280*1000*1250 | 700 | GR28 | 28",
+        "| 22 | 25 | 20 | N4100DS-26 | 3.85 | Mechanical | ASG184F | 2030*9000*1150 | 490 | GR33 | 33 | 26 | 30",
+        "| 24 | N4100DS-30 | 3.85 | Mechanical | ASG184G | 2280*1000*1250 | 700 | GR41 | 41 | 33 | 38 | 30 | N41050S-38",
+        "| 3.85 | Mechanical | ASG184H | 2290*1030*1260 | 790 | GR55 | 55 | 44 | 50 | 40 | N4105DS-46 | 3.85 | Mechanical",
+        "| ASG224D | 2290*1050*1280 | 840 | GR55 | 55 | 44 | 50 | 40 | N4105ZD | 3.85 | Mechanical | ASG224D | 2290*1050*1280",
+        "| 840 | GR69 | 69 | 55 | 62 | 50 | N4105ZD | 4.33 | Electrical | ASG224E | 2600*1000*1250 | 900 | GR69",
+        "| 69 | 55 | 62 | 50 | N4105ZLD | 4.33 | Mechanical | ASG224E | 2600*1000*1250 | 900 | GR83 | 83 | 66",
+        "| 75 | 60 | N4105ZLD | 4.95 | Electrical | ASG224F | 2600*1000*1250 | 920 | GR55 | 55 | 44 | 50 | 40",
+        "| R4105ZD1 | 4.95 | Mechanical | ASG224D | 2290*1050*1280 | 840 | GR69 | 69 | 55 | 62 | 50 | R4105ZD1 | 4.85",
+        "| Electrical | ASG224E | 2600*1000*1250 | 900 | GR69 | 69 | 55 | 62 | 50 | R4105ZLDS1 | 4.85 | Mechanical | ASG224E",
+        "| 2600*1000*1250 | 900 | GR83 | 83 | 66 | 75 | 60 | R4105ZLDS1 | 4.95 | Electrical | ASG224F | 2600*1000*1250 | 920",
+        "| GR69 | 69 | 55 | 62 | 50 | R4105BZDS1 | 4.85 | Mechanical | ASG224E | 2600*1000*1250 | 900 | GR83 | 83",
+        "| 66 | 75 | 60 | R4105BZLDS1 | 4.95 | Electrical | ASG224F | 2600*1000*1250 | 920 | GR88 | 88 | 70 | 80",
+        "| 64 | R6105ZDS1 | 4.95 | Electrical | ASG224G | 2600*1000*1250 | 920 | GR103 | 103 | 82 | 94 | 75 | R6105ZDS1",
+        "| 7 | Electrical | ASG274C | 2900*1080*1650 | 1150 | GR124 | 124 | 99 | 113 | 90 | R6105ZLDS1 | 6.75 | Electrical",
+        "| ASG274D | 2930*1090*1680 | 1190 | GR138 | 138 | 110 | 125 | 100 | R6 l 05AZLDS1 | 6.75 | Electrical | ASG274E | 3120*1130*1750",
+        "| 1300 | GR165 | 165 | 132 | 150 | 120 | R6105BZLDS1 | 7 | Electrical | ASG274F | 3120*1130*1750 | 1400 | GR206",
+        "| 206 | 165 | 188 | 150 | R6110ZLDS | 7.41 | Electrical | ASG274G | 3190*1130*1780 | 1580 | GR220 | 220 | 176",
+        "| 200 | 160 | 6126-68D | 7.8 | Electrical | ASG274H | 3300*1130*1800 | 1580 | GR248 | 248 | 198 | 225 | 180",
+        "| 6126-42D | 8.1 | Electrical | ASG274J | 3300*1240*1800 | 1650 | GR275 | 275 | 220 | 250 | 200 | 6126-260D | 8.9",
+        "| Electrical | ASG274K | 3600*1240*1800 | 1700 | GR303 | 303 | 242 | 275 | 220 | 6126-275D | 9.3 | Electrical | ASG314C",
+        "| 3900*1240*1800 | 2400 | GR358 | 358 | 286 | 325 | 260 | STD12D-308 | 10.6 | Electrical | ASG314D | 4400*1450*2250 | 2450"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "YUCHAI generator set",
+      "header": [
+        "| General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | mm | kg | KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| L/H | GYC17.5 | 17.5 | 14 | 15 | 12 | YC2108D | 6 | Mechanical | ASG184E | 2050*910*1150 | 800 | GYC20 | 20 | 16 | 18",
+        "| 14 | YC2108D | 8 | Mechanical | ASG184G | 2150*910*1150 | 980 | GYC25 | 25 | 20 | 22 | 18 | YC2115D | 10.2 | Mechanical | ASG184J",
+        "| 2150*910*1150 | 1250 | GYC27 | 27 | 22 | 25 | 20 | YCD3D11D | 13.9 | Mechanical | ASG224D | 2300*1000*1150 | 1350 | GYC34 | 34 | 27",
+        "| 31 | 25 | YCD3D11D | 10.9 | Mechanical | ASG224C | 2300*1000*1150 | 1300 | GYC41 | 41 | 33 | 37 | 30 | YC4D55-D10 | 14.6 | Mechanical",
+        "| ASG224E | 2300*1000*1150 | 1420 | GYC44 | 44 | 35 | 40 | 32 | YC4D60-D21 | 15.9 | Mechanical | ASG224F | 2300*1000*1150 | 1450 | GYC55 | 55",
+        "| 44 | 50 | 40 | YC4D85Z-D20 | 18.6 | Mechanical | ASG224G | 2650*920*1450 | 1500 | GYC70 | 70 | 55 | 63 | 50 | YC4D75Z-D20 | 24.1",
+        "| Mechanical | ASG274C | 2700*1000*1450 | 1660 | GYC83 | 83 | 66 | 75 | 60 | YC6B100-D10 | 27.3 | Mechanical | ASG274D | 2700*1000*1450 | 1700 | GYC88",
+        "| 88 | 70 | 80 | 64 | YC6B100-D20 | 31.8 | Mechanical | ASG274E | 3100*1030*1500 | 1800 | GYC96 | 96 | 77 | 87 | 70 | YC6B115Z-D20",
+        "| 33.6 | Mechanical | ASG274F | 3100*1030*1500 | 1910 | GYC110 | 110 | 88 | 100 | 80 | YC6B115Z-D20 | 35.4 | Mechanical | ASG274F | 3100*1030*1500 | 1910",
+        "| GYC125 | 124 | 99 | 113 | 90 | YC6B135Z-D20 | 35.7 | Mechanical | ASG274F | 3100*1030*1500 | 1910 | GYC137 | 138 | 110 | 125 | 100",
+        "| YC6B155L-D20 | 39.4 | Mechanical | ASG274G | 3200*1050*1550 | 2050 | GYC151 | 151 | 121 | 137 | 110 | YC6B155L-D20 | 42.6 | Mechanical | ASG274H | 3200*1050*1550",
+        "| 2100 | GYC165 | 165 | 132 | 150 | 120 | YC6A190L-D20 | 48.5 | Mechanical | ASG274J | 3600*1200*1800 | 2250 | GYC176 | 176 | 141 | 160",
+        "| 128 | YC6A190L-D20 | 60.7 | Mechanical | ASG274K | 3600*1200*1800 | 2430 | GYC220 | 220 | 176 | 200 | 160 | YC6M260L-D20 | 72.6 | Mechanical | ASG314E",
+        "| 4200*1330*2060 | 3460 | GYC250 | 250 | 200 | 225 | 180 | YC6M260L-D20 | 72.6 | Mechanical | ASG314E | 4200*1330*2060 | 3500 | GYC275 | 275 | 220",
+        "| 250 | 200 | YC6M320L-D20 | 83 | Mechanical | ASG314F | 4500*1530*2250 | 3550 | GYC300 | 300 | 240 | 275 | 220 | YC6M320L-D20 | 85.3 | Mechanical",
+        "| ASG314F | 4500*1530*2250 | 3550 | GYC330 | 330 | 264 | 300 | 240 | YC6MK390L-D20 | 95.1 | Mechanical | ASG314F | 4500*1530*2250 | 3550 | GYC413 | 413",
+        "| 330 | 375 | 300 | YC6T500L-D20 | 103.6 | Mechanical | ASG354C | 4600*1530*2300 | 4780 | GYC437 | 440 | 352 | 400 | 320 | YC6T500L-D20 | 114",
+        "| Mechanical | ASG354C | 4600*1530*2300 | 4780 | GYC500 | 495 | 396 | 450 | 360 | YC6T550L-D20 | 120.9 | Mechanical | ASG354D | 4800*1730*2400 | 4800 | GYC550",
+        "| 550 | 440 | 500 | 400 | YC6T600L-D20 | 134.4 | Mechanical | ASG354E | 4800*1730*2400 | 4780 | GYC825 | 825 | 660 | 750 | 600 | YC6C1020L-D20"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "depco-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Fujian Depco Power Generation Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Depco"
+    ]
+  },
+  "website": "https://www.depcogenerator.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Ningde"
+  },
+  "founded": 2009,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Xưởng 60.000 m², năng lực 11.000–12.000 máy/năm; làm tổ máy diesel và tháp đèn",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO45001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất chung của các dòng máy; xem bảng thông số đã cào"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.depcogenerator.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Fujian Depco Power Generation Co., Ltd. is a manufacturer of diesel generators and lighting towers based in China. Founded in 2009, our company has a 60,000 square meter workshop and an annual production capacity of 11,000-12,000 units.",
+        "NO.83 GONGYE ROAD LOUJIANG DISTRICT NINGDE CITY FUJIAN PROVINCE CHINA",
+        "As an ISO 9001, ISO 14001, ISO 45001 certified company"
+      ],
+      "file": "sources/depco-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}
