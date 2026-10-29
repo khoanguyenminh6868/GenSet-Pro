@@ -1,0 +1,20 @@
+{
+  "id": "penlucky", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Shandong Penlucky Power Equipment Co., Ltd.", "zh": null, "brands": ["Penlucky"],
+  "web": "https://penlucky.com/", "prov": "Shandong", "city": "Weifang", "founded": 2007, "fsrc": [2], "related": [],
+  "src": {
+    "1": ["A", "Copyright © 2023, Shandong Penlucky Power Equipment Co., Ltd. All rights reserved.", "1-1-917, Danguili Golden Street, Dongfeng Street, Kuiwen District, Weifang City, Shandong Province, China", "We provide comprehensive solution for prime/standby power generation from 10-3000kva on oil field."],
+    "2": ["A", "Established in 2007, Penlucky today is one of the Chinese leading manufacturers of the highest quality diesel generating sets and complete power generation systems. We have a wide power range from 9kVA to 3450kVA with world famous engine and alternator brand.", "Penlucky Power is located in Weifang High-Tech Zone, Shandong, China, founded in 2007, specializing in the design, manufacture, and sales of mobile lighting towers, standby generator sets, and continuous operation power stations."]
+  },
+  "str": [
+    ["Tổ máy diesel 9–3450 kVA; làm cả tháp đèn di động và trạm phát chạy liên tục", 2],
+    ["Có giải pháp nguồn liên tục / dự phòng 10–3000 kVA cho mỏ dầu", 1],
+    ["Theo hãng: là một trong các nhà sản xuất hàng đầu Trung Quốc", 2]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generating sets", "fuel": "diesel", "p": [9, 3450, "kVA", "unspecified", 2], "src": [2] }
+  ],
+  "miss": ["Trang chủ có câu 'SWT offers a wide range of precision power equipment from 8.3kVA to 3781kVA' nhắc thương hiệu SWT (có bản ghi superwatt-swt); chưa có nguồn về quan hệ giữa hai công ty nên không dùng", "Trang chứng chỉ không ghi tên chứng chỉ dạng chữ", "Không thấy tên tiếng Trung, hãng động cơ/đầu phát cụ thể"],
+  "by": "discover-bot"
+}

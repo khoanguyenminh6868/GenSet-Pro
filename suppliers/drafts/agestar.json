@@ -1,0 +1,18 @@
+{
+  "id": "agestar", "country": "CN", "role": "alternator_maker", "status": "partial", "conf": "medium",
+  "en": "Fujian Agestar Electrical Machinery Co.,Ltd", "zh": null, "brands": ["Agestar"],
+  "web": "https://www.agestarem.com/", "prov": "Fujian", "city": null, "founded": 2014, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Fujian Agestar Electrical Machinery Co.,Ltd (Agestar Power) was established in 2014. Before that it is a lamination manufacturer, located in Fujian Province, the southeast China.", "we had been developing into a factory that professional in design and manufacture alternator, electric motor, diesel generating set and water pump", "Manufacturing based on ISO9001"]
+  },
+  "str": [
+    ["Sản xuất đầu phát, động cơ điện, tổ máy diesel và bơm nước; trước 2014 là xưởng lá thép (lamination)", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "alternator", "s": "Alternator", "src": [1] },
+    { "k": "genset", "s": "Diesel generating set", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất", "Chỉ ghi 'Manufacturing based on ISO9001', không ghi đã có chứng chỉ", "Không thấy thành phố và tên tiếng Trung"],
+  "by": "discover-bot"
+}

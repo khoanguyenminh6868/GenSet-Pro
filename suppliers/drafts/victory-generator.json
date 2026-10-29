@@ -1,0 +1,19 @@
+{
+  "id": "victory-generator", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Victory Power Technology Co., Ltd.", "zh": null, "brands": ["Victory"],
+  "web": "https://www.victorygenerator.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright © Victory Power Technology Co., Ltd. All Rights Reserved", "Is a professional manufacturer since 1999, specializing in production, design, sales, installation, maintenance and service of generator sets with CUMMINS, PERKINS, DEUTZ, LOVOL, YANMAR, MTU, ISUZU, DOOSAN DAEWOO, Quanchai, Shangcai(SDEC), Weichai, Yuchai, etc. Series world famous diesel engine and STAMFORD, LEROY SOMER, MARATHON series AC alter", "1KVA~10KVA", "1501KVA~4000KVA", "As more as 8000 units big gensets annually", "The China branch as production base not only mainly produce the complete generator sets", "our own brand alternators are being made and exported to overseas countries at hundreds of thousands of units each year", "Comply strictly with ISO9001: 2000 Quality System"]
+  },
+  "str": [
+    ["Theo hãng: sản xuất tổ máy từ 1999; dải 1–4000 kVA, dùng động cơ Cummins, Perkins, Deutz, Lovol, Yanmar, MTU, Isuzu, Doosan Daewoo, Quanchai, SDEC, Weichai, Yuchai", 1],
+    ["Theo hãng: tới 8.000 tổ máy lớn mỗi năm; có đầu phát thương hiệu riêng", 1],
+    ["Công ty đăng ký ở Anh (Coventry) làm thiết kế; chi nhánh Trung Quốc là cơ sở sản xuất", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator sets", "fuel": "diesel", "eng": ["Cummins", "Perkins", "Deutz", "Lovol", "Yanmar", "MTU", "Isuzu", "Doosan", "Quanchai", "SDEC", "Weichai", "Yuchai"], "alt": ["Stamford", "Leroy Somer", "Marathon"], "p": [1, 4000, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Không thấy địa chỉ, tên pháp nhân của chi nhánh sản xuất ở Trung Quốc", "Năm 1999 ghi 'professional manufacturer since 1999', không rõ là năm thành lập pháp nhân nào"],
+  "by": "discover-bot"
+}

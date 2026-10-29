@@ -17,7 +17,7 @@
   "cert": [["ISO9001", 2]],
   "lines": [
     { "k": "engine", "s": "Diesel engine (P-Series, Q-Series)", "fuel": "diesel", "p": [490, 3600, "kW", "standby", 2], "src": [2] },
-    { "k": "genset", "s": "Diesel genset (LTP)", "fuel": "diesel", "eng": ["Googol"], "p": [440, 3300, "kW", "unspecified", 3], "src": [3] },
+    { "k": "genset", "s": "Diesel genset (LTP)", "fuel": "diesel", "p": [440, 3300, "kW", "unspecified", 3], "src": [3] },
     { "k": "genset", "s": "Gas genset", "fuel": "gas", "eng": ["Googol"], "p": [280, 2000, "kW", "continuous", 4], "src": [4] }
   ],
   "miss": ["Không thấy tên tiếng Trung trên các trang tiếng Anh đã lưu", "Năm thành lập pháp nhân không ghi rõ (2006 là năm lập nhà máy, 2021 đổi tên)"],

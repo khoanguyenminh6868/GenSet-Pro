@@ -15,7 +15,7 @@
   "cert": [],
   "lines": [
     { "k": "engine", "s": "Generating Set Engine", "fuel": "diesel", "src": [1] },
-    { "k": "genset", "s": "1 MW generator set (6SX1 natural gas engine)", "fuel": "gas", "eng": ["FAWDE"], "models": ["6SX1"], "src": [3] }
+    { "k": "genset", "s": "1 MW generator set (6SX1 natural gas engine)", "fuel": "gas", "models": ["6SX1"], "src": [3] }
   ],
   "miss": ["Website (đọc 2026-10-29) không còn trang động cơ cho tổ máy: /generating-set-engine/ trả HTTP 404, nên chưa có dải công suất", "Không thấy năm thành lập và tên tiếng Trung trên các trang đã lưu", "Không thấy chứng chỉ trên các trang đã lưu"],
   "by": "discover-bot"

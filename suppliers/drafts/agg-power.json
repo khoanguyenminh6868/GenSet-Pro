@@ -1,0 +1,19 @@
+{
+  "id": "agg-power", "country": "GB", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "AGG Power Technology (UK) Co., Ltd.", "zh": null, "brands": ["AGG"],
+  "web": "https://www.aggpower.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "COPYRIGHT© 2025 AGG POWER TECHNOLOGY (UK) CO., LTD", "K Sereis 7-49 kVA", "M Series 1100-4000 kVA", "CU Series 825-3438 kVA", "MS Series 715-2500 kVA"],
+    "2": ["A", "AGG is a multinational company focused on the design, manufacture and distribution of power generation systems and advanced energy solutions.", "With a dealer and distributor network present in over 80 countries with more than 75,000 generator sets."]
+  },
+  "str": [
+    ["Danh mục tổ máy nhiều dòng (A, CU, DE, H, K, M, MS, P, S, V), từ 7 kVA (dòng K) đến 4000 kVA (dòng M)", 1],
+    ["Theo hãng: mạng lưới đại lý ở hơn 80 quốc gia, hơn 75.000 tổ máy", 2]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator sets (K, P, A, CU, DE, H, S, V, MS, M Series)", "fuel": "diesel", "p": [7, 4000, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Website không ghi địa chỉ nhà máy; tên pháp nhân ghi (UK) nên country ghi GB, chưa có nguồn về nhà máy tại Trung Quốc", "Không thấy năm thành lập, chứng chỉ, hãng động cơ/đầu phát của từng dòng trên các trang đã lưu"],
+  "by": "discover-bot"
+}

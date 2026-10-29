@@ -2,27 +2,9 @@
  {
   "at": "2026-10-29",
   "result": "added",
-  "id": "fawde",
-  "name": "FAW Jiefang Automotive Co., Ltd. (FAWDE Powertrain Division)",
-  "url": "https://www.fawde.com/",
-  "tables": 0,
-  "rows": 0
- },
- {
-  "at": "2026-10-29",
-  "result": "added",
   "id": "yto",
   "name": "YTO (Luoyang) Engine Machinery Company",
   "url": "https://www.ytocorp.com/",
-  "tables": 0,
-  "rows": 0
- },
- {
-  "at": "2026-10-29",
-  "result": "added",
-  "id": "googol",
-  "name": "Chongqing Googol Engine-Tech Co., Ltd.",
-  "url": "http://www.googol-power.com/en/",
   "tables": 0,
   "rows": 0
  },
@@ -145,5 +127,152 @@
   "result": "skip",
   "url": "https://generatorsr.com/",
   "reason": "trang bài viết xếp hạng, không phải nhà sản xuất"
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "agg-power",
+  "name": "AGG Power Technology (UK) Co., Ltd.",
+  "url": "https://www.aggpower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "tellhow-power",
+  "name": "Tellhow Power Technology Co., Ltd.",
+  "url": "https://www.tellhowgenset.com/",
+  "tables": 12,
+  "rows": 241
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "jinjia-power",
+  "name": "Dongguan Jinjia Power Equipment Co., Ltd.",
+  "url": "https://www.jinjiapower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "depco-power",
+  "name": "Fujian Depco Power Generation Co., Ltd.",
+  "url": "https://www.depcogenerator.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "skip",
+  "url": "https://genset-generator-suppliers.com/",
+  "reason": "tên pháp nhân không nhất quán (Genset Generator Suppliers Co., Ltd. / China Topper Generator Sets Manufacturer Co., Ltd.), tên miền chung chung; không xác định được nhà máy"
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "penlucky",
+  "name": "Shandong Penlucky Power Equipment Co., Ltd.",
+  "url": "https://penlucky.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "gordon-power",
+  "name": "Fujian Gordon Industry Co., Ltd.",
+  "url": "https://www.gordon-powers.com/",
+  "tables": 1,
+  "rows": 13
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "agestar",
+  "name": "Fujian Agestar Electrical Machinery Co.,Ltd",
+  "url": "https://www.agestarem.com/",
+  "tables": 13,
+  "rows": 235
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "minsun-motor",
+  "name": "Mindong Shengyuan Electromechanical Co., Ltd",
+  "url": "https://www.minsun-motor.com/",
+  "tables": 11,
+  "rows": 197
+ },
+ {
+  "at": "2026-10-29",
+  "result": "skip",
+  "url": "https://www.himoinsa.com.cn/",
+  "reason": "trang chủ chỉ có tên công ty, không có thông tin sản phẩm/công suất; cần lưu thêm trang giới thiệu ở lượt sau"
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "shunfeng-changzhou",
+  "name": "常州顺风发电设备有限公司",
+  "url": "http://www.sf-fadian.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "rise-power",
+  "name": "RISE Power Equipment Inc.",
+  "url": "https://dieselpower-en.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "eastpower-genset",
+  "name": "Yangzhou East Power Equipment Co., Ltd",
+  "url": "https://www.eastpowergenset.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "victory-generator",
+  "name": "Victory Power Technology Co., Ltd.",
+  "url": "https://www.victorygenerator.com/",
+  "tables": 37,
+  "rows": 754
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "bspower-guangdong",
+  "name": "广东宾士动力科技有限公司",
+  "url": "http://www.bspower.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "fawde",
+  "name": "FAW Jiefang Automotive Co., Ltd. (FAWDE Powertrain Division)",
+  "url": "https://www.fawde.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "googol",
+  "name": "Chongqing Googol Engine-Tech Co., Ltd.",
+  "url": "http://www.googol-power.com/en/",
+  "tables": 0,
+  "rows": 0
  }
 ]

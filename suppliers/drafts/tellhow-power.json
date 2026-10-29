@@ -1,0 +1,24 @@
+{
+  "id": "tellhow-power", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Tellhow Power Technology Co., Ltd.", "zh": "泰豪电源技术有限公司", "brands": ["Tellhow"],
+  "web": "https://www.tellhowgenset.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Tellhow Power Technology Co.,Ltd. 泰豪电源技术有限公司", "7kW-1800kW THLP (PERKINS) series diesel generator set", "160kW-641kW THLV (VOLVO)series diesel generator set", "3200kW / 4000kVA THCQ (Kawasaki M1T-21) Series Gas Turbine Generator Set"],
+    "2": ["A", "Tellhow Power Technology Co., Ltd. is a wholly-owned subsidiary of Tellhow Sci-Tech Co., Ltd. with a registered capital of RMB 200 million", "The most influential enterprise in China’s generator set industry and the only listed company on the main board specializing in emergency power supply."],
+    "3": ["A", "It has the certificates of three major ISO systems"]
+  },
+  "str": [
+    ["Công ty con 100% của Tellhow Sci-Tech Co., Ltd., vốn đăng ký 200 triệu NDT", 2],
+    ["Theo hãng: là công ty niêm yết sàn chính duy nhất chuyên về nguồn điện dự phòng, có ảnh hưởng nhất ngành tổ máy Trung Quốc", 2],
+    ["Có tổ máy tua bin khí THCQ 3200 kW / 4000 kVA (Kawasaki M1T-21)", 1],
+    ["Theo hãng: có chứng chỉ ba hệ thống ISO chính", 3]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "THLP (PERKINS) series diesel generator set", "fuel": "diesel", "eng": ["Perkins"], "p": [7, 1800, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "THLV (VOLVO) series diesel generator set", "fuel": "diesel", "eng": ["Volvo"], "p": [160, 641, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "THCQ (Kawasaki M1T-21) Series Gas Turbine Generator Set", "fuel": "gas", "eng": ["Kawasaki"], "models": ["M1T-21"], "p": [3200, 3200, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Không thấy địa chỉ nhà máy và năm thành lập trên các trang đã lưu (chỉ ghi 'Tellhow Xiaolan industrial production base')", "Trang chứng chỉ không ghi tên từng chứng chỉ ISO"],
+  "by": "discover-bot"
+}

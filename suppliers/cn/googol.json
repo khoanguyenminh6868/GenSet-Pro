@@ -74,9 +74,7 @@
       "kind": "genset",
       "series": "Diesel genset (LTP)",
       "fuel": "diesel",
-      "engineMakes": [
-        "Googol"
-      ],
+      "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
       "power": {

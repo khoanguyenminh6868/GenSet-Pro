@@ -1,0 +1,121 @@
+{
+  "id": "shunfeng-changzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "常州顺风发电设备有限公司",
+    "brands": [
+      "顺风"
+    ]
+  },
+  "website": "http://www.sf-fadian.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Changzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: làm tổ máy từ năm 1985; chuyên tổ máy cho mỏ dầu và cẩu cảng RTG",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Xưởng 15.000 m², tài sản cố định 30 triệu NDT",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组 (tổ máy diesel)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "燃气发电机组 (tổ máy khí)",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO45001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Năm 1985 là năm vào ngành, không phải năm thành lập công ty",
+    "Trang giới thiệu không ghi dải công suất",
+    "Không thấy tên tiếng Anh"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.sf-fadian.com/CompanyProfile.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "常州顺风发电设备有限公司是专业研发、生产、销售柴油发电机组、燃气发电机组、生物能发电机组、太阳能发电系统以及配套设施的生产服务综合供应商",
+        "GB/T 19001-2016 / ISO 9001:2015质量管理体系认证、GB/T 24001-2016 / ISO 14001:2015环境管理体系认证、GB/T 45001-2020 / ISO 45001:2018职业健康安全管理体系认证，以及通过欧盟CE认证",
+        "公司现拥有3000万元固定资产,15000平方米的生产基地",
+        "公司自1985年开始进入发电机组制造行业以来",
+        "是国内油田及RTG港机配套发电机组生产服务商"
+      ],
+      "file": "sources/shunfeng-changzhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

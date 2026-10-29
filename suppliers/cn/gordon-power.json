@@ -1,0 +1,190 @@
+{
+  "id": "gordon-power",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "verified",
+  "names": {
+    "en": "Fujian Gordon Industry Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Gordon"
+    ]
+  },
+  "website": "https://www.gordon-powers.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fu'an"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than 8,5–2500 kVA và đầu phát đồng bộ 2–75 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có lắp tổ máy diesel 6–2500 kVA dùng động cơ Cummins, Deutz, Perkins, Ricardo, Yuchai, Weichai, Shangchai",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "Brushless alternator",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8.5,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "Synchronous AC Alternator",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 2,
+        "max": 75,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Deutz",
+        "Perkins",
+        "Ricardo",
+        "Yuchai",
+        "Weichai",
+        "Shangchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Năm 2005 trên trang là của 'Fujian Gordon Pump Industry Co., Ltd.' (tên khác), nên không ghi năm thành lập",
+    "Không thấy tên tiếng Trung"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.gordon-powers.com/about-us.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2025 Fujian Gordon Industry Co., Ltd .All rights reserved.",
+        "Fujian Gordon Industry Co., Ltd. Located in Fu'an City, Fujian, which is famous motor manufacturing city in China.",
+        "Brushless alternator, power range 8.5KVA to 2500KVA",
+        "Synchronour AC Alternator, power range 2KW to 75KW",
+        "Diesel generator sets, power range from 6KVA to 2500KVA, covering engine Cummins, Deutz, Perkins, Ricardo and Chinese high quality brand(Yuchai, Weichai, Shangchai, Nantong etc.).",
+        "All products are manufactured in accordance with ISO9001-2015 production standard to assure best quality, and are complied with CE certificate."
+      ],
+      "file": "sources/gordon-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.gordon-powers.com/Sound-Insulated-Air-Cooled-Diesel-Generator-For-Homes-pd523627398.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | KDF6700Q(-3)"
+      ],
+      "file": "sources/gordon-power/101.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Sound Insulated Air Cooled Diesel Generator For Homes from China manufacturer - GORDON",
+      "header": [],
+      "rows": [
+        "| Model | KDF6700Q(-3)",
+        "| Frequency [Hz] | 50, 60",
+        "| Voltage [V] | 220, 230, 240, 110/220, 115/230, 120/240, 220/380, 230/400, 240/415",
+        "| Rated Power [KVA] | 4.5 (5.6), 5.0 (6.3)",
+        "| Power Factor Φ | 1.0 (0.8)",
+        "| Fuel Tank Capacity [L] | 14.5",
+        "| Engine Model | KD186FAE",
+        "| Bore * Stroke [mm] | 86 * 72",
+        "| Displacement | 0.418L",
+        "| Speed [rpm] | 3000~3600",
+        "| Power [Kw] | 5.8, 6.6",
+        "| Fuel Grade | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+        "| Dimensions [mm] | 910 * 530 * 740"
+      ]
+    }
+  ]
+}

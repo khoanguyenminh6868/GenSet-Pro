@@ -60,9 +60,7 @@
       "kind": "genset",
       "series": "1 MW generator set (6SX1 natural gas engine)",
       "fuel": "gas",
-      "engineMakes": [
-        "FAWDE"
-      ],
+      "engineMakes": [],
       "engineModels": [
         "6SX1"
       ],

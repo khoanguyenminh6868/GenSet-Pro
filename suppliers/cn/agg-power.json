@@ -1,0 +1,97 @@
+{
+  "id": "agg-power",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "AGG Power Technology (UK) Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "AGG"
+    ]
+  },
+  "website": "https://www.aggpower.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Danh mục tổ máy nhiều dòng (A, CU, DE, H, K, M, MS, P, S, V), từ 7 kVA (dòng K) đến 4000 kVA (dòng M)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: mạng lưới đại lý ở hơn 80 quốc gia, hơn 75.000 tổ máy",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets (K, P, A, CU, DE, H, S, V, MS, M Series)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 7,
+        "max": 4000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Website không ghi địa chỉ nhà máy; tên pháp nhân ghi (UK) nên country ghi GB, chưa có nguồn về nhà máy tại Trung Quốc",
+    "Không thấy năm thành lập, chứng chỉ, hãng động cơ/đầu phát của từng dòng trên các trang đã lưu"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.aggpower.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "COPYRIGHT© 2025 AGG POWER TECHNOLOGY (UK) CO., LTD",
+        "K Sereis 7-49 kVA",
+        "M Series 1100-4000 kVA",
+        "CU Series 825-3438 kVA",
+        "MS Series 715-2500 kVA"
+      ],
+      "file": "sources/agg-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.aggpower.com/about-agg-power/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "AGG is a multinational company focused on the design, manufacture and distribution of power generation systems and advanced energy solutions.",
+        "With a dealer and distributor network present in over 80 countries with more than 75,000 generator sets."
+      ],
+      "file": "sources/agg-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}
