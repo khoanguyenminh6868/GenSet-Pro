@@ -1,0 +1,86 @@
+{
+  "id": "naipute-weifang",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Weifang Naipute Gas Genset Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "NPT",
+      "Naipute"
+    ]
+  },
+  "website": "https://www.nptgasgenset.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": 2008,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Chuyên tổ máy khí: khí thiên nhiên, biogas, khí mỏ dầu, khí than",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gas generator sets (natural gas, biogas, oil field gas)",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất chung",
+    "Tỉnh/thành lấy từ tên công ty (Weifang)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.nptgasgenset.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Weifang Naipute Gas Genset Co., Ltd. has been a reputable gas generator set manufacturer since its establishment in 2008.",
+        "CE, ISO9001, ISO13485 certification"
+      ],
+      "file": "sources/naipute-weifang/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

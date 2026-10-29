@@ -1,0 +1,78 @@
+{
+  "id": "firstall-power",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "verified",
+  "names": {
+    "en": "Fujian Firstall Power Technology Co., Ltd.",
+    "zh": "福建铨一",
+    "brands": [
+      "Firstall"
+    ]
+  },
+  "website": "https://www.firstallpower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than nam châm vĩnh cửu 5–2500 kVA, mặt bích SAE lắp được với động cơ các hãng",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "智能永磁无刷发电机 (đầu phát không chổi than nam châm vĩnh cửu)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ ghi quản lý theo yêu cầu ISO9001 và IATF16949, không ghi đã có chứng chỉ",
+    "Không thấy năm thành lập, thành phố"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.firstallpower.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Fujian Firstall Power Technology Co., Ltd.",
+        "公司专业生产高能量密度及高可靠性的能源供应系统核心装备—智能永磁无刷发电机，功率范围涵盖5KVA-2500KVA，精准的SAE接口可完美匹配国内外各主流品牌的原动机",
+        "福建铨一致力于成为全球领先的智能能源供电系统设备制造商"
+      ],
+      "file": "sources/firstall-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

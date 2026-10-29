@@ -1,0 +1,114 @@
+{
+  "id": "deman-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "WeiFang Deman Power Technology Co., LTD.",
+    "zh": null,
+    "brands": [
+      "Deman"
+    ]
+  },
+  "website": "https://www.demanpower.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": 2014,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel, tổ máy khí và bơm nước chạy diesel, dải 30–3000 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tổ máy khí dùng động cơ Yuchai 30–2000 kW cho khí thiên nhiên, biogas, khí đồng hành, khí mỏ than, khí bãi rác",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Yuchai gas generator sets",
+      "fuel": "gas",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không thấy chứng chỉ và tên tiếng Trung trên trang chủ",
+    "Dải 30–3000 kW ghi chung cho tổ máy diesel, tổ máy khí và bơm"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.demanpower.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright By © WeiFang Deman Power Technology Co., LTD.",
+        "Founded in 2014, Deman Power Technology Co., Ltd. specializes in the design, development, manufacturing, and maintenance of generator sets. We offer a comprehensive range of diesel generator sets, gas generator sets, and diesel-engine water pumps, covering a power range from 30kW to 3000kW.",
+        "Deman Power supplies 30–2000 kW (38–2500 kVA) Yuchai gas generator sets for natural gas, biogas, associated petroleum gas (APG), coal mine methane (CMM), landfill gas, and other gaseous fuels."
+      ],
+      "file": "sources/deman-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

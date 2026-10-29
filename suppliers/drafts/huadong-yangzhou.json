@@ -1,0 +1,19 @@
+{
+  "id": "huadong-yangzhou", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "扬州市华东动力机械有限公司", "brands": ["华东动力"],
+  "web": "http://www.yzhddl.com/", "prov": "Jiangsu", "city": "Yangzhou", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "扬州市华东动力机械有限公司，位于江苏省扬州市江都区仙城工业园，是专业从事发电机、柴油及燃气发电机组研发、制造、销售、服务于一体的高科技民营企业，占地面积10万平方米，厂房及办公面积5.2万平方米", "30多年的研发和制造经验"]
+  },
+  "str": [
+    ["Nhà máy ở Giang Đô, Dương Châu: diện tích 100.000 m², nhà xưởng và văn phòng 52.000 m²; làm đầu phát, tổ máy diesel và tổ máy khí", 1],
+    ["Theo hãng: hơn 30 năm kinh nghiệm; có xe phát điện, trạm phát tàu thủy và trạm phát đặc biệt", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油及燃气发电机组 (tổ máy diesel và khí)", "fuel": "diesel", "src": [1] },
+    { "k": "alternator", "s": "发电机 (đầu phát)", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ, tên tiếng Anh"],
+  "by": "discover-bot"
+}

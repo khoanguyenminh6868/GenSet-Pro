@@ -1,0 +1,97 @@
+{
+  "id": "power-hf",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "华丰动力股份有限公司",
+    "brands": [
+      "华丰",
+      "Huafeng"
+    ]
+  },
+  "website": "http://www.powerhf.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tiền thân là Nhà máy cơ khí Hoa Phong huyện Duy (1920); làm động cơ diesel phi đường bộ và tổ máy phát thông minh",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Có dịch vụ vận hành tổ máy cho trạm viễn thông",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "柴油发动机 (động cơ diesel, phi đường bộ)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "智能化发电机组 (tổ máy phát)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "华丰"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang tổ máy (/pro/fadianji/) gần như không có chữ; chưa có dải công suất",
+    "Năm 1920 là năm của tiền thân, không ghi làm năm thành lập",
+    "Thành phố lấy từ tên cũ 潍县 (Duy Phường)"
+  ],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.powerhf.com/about/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "华丰动力股份有限公司前身创始于1920年，原名为潍县华丰机器厂，是中国最早生产柴油发动机的厂家之一",
+        "业务已从单一的柴油发动机和智能化发电机组的研发、生产和销售，向上游延伸至柴油发动机核心零部件业务，向下游拓展至通信基站发电机组等电源设施综合运维服务业务",
+        "公司柴油发动机业务专注于非道路领域"
+      ],
+      "file": "sources/power-hf/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

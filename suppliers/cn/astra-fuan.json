@@ -1,0 +1,108 @@
+{
+  "id": "astra-fuan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "ASTRA (FUAN) POWER TECHNOLOGY CO.,LTD.",
+    "zh": null,
+    "brands": [
+      "ASTRA"
+    ]
+  },
+  "website": "https://www.intelecgen.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fu'an"
+  },
+  "founded": 2014,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Xưởng 6.000 m², làm tổ máy diesel và đầu phát đồng bộ",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 2014, đăng ký pháp nhân hiện tại năm 2024",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "AC synchronous alternators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang giới thiệu không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.intelecgen.com/about.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "ASTRA (FUAN) POWER TECHNOLOGY CO.,LTD., founded in 2014, registered in 2024,located in Fuan city,Fujian Province,China.",
+        "We’re a modern factory,occupying a total space of 6000M2,specializing in R&D and manufacturing of diesel generator sets, AC synchronous alternators and related accessories",
+        "Our products have obtained CE and ISO9001 certificate"
+      ],
+      "file": "sources/astra-fuan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}
