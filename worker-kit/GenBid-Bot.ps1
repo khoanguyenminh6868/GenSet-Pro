@@ -227,6 +227,24 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
     return Start-Run $claude $cliArgs $promptFile $sigs $out
 }
 
+# Cập nhật repo GenSet-Pro lên origin/main. Không dùng git pull: pull hợp nhất theo FETCH_HEAD, nên khi có lượt fetch
+# khác chạy cùng lúc (app, phiên Claude) thì báo "Cannot fast-forward to multiple branches". Tệp đang sửa dở trong repo
+# được cất tạm rồi trả lại (--autostash); nếu chính tệp đó cũng đổi trên GitHub thì để nguyên, lượt này không cập nhật.
+function Update-Repo {
+    $eap = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+    try {
+        & git -C $RepoDir fetch -q origin main 2>&1 | ForEach-Object { Log "  git: $_" }
+        if ($LASTEXITCODE) { return }
+        $dirty = @(& git -C $RepoDir -c core.quotepath=false status --porcelain --untracked-files=no 2>$null | ForEach-Object { $_.Substring(3) -replace '^.* -> ', '' })
+        if ($dirty) {
+            $theirs = @(& git -C $RepoDir -c core.quotepath=false diff --name-only HEAD origin/main 2>$null)
+            $both = @($dirty | Where-Object { $theirs -contains $_ })
+            if ($both) { Log "  git: chưa cập nhật repo vì tệp đang sửa dở cũng đổi trên GitHub: $($both -join ', ')"; return }
+        }
+        & git -C $RepoDir merge -q --ff-only --autostash origin/main 2>&1 | ForEach-Object { Log "  git: $_" }
+    } finally { $ErrorActionPreference = $eap }
+}
+
 # "Gợi ý" ở tab Cấu hình gợi ý: suppliers\config-bot.mjs của repo GenSet-Pro tự đọc yêu cầu, gọi Claude (Opus, có tìm
 # web), kiểm nguồn bằng code và gửi kết quả hoặc lỗi lên web. Bot chỉ cập nhật repo rồi chạy nó.
 function Invoke-Config {
@@ -234,8 +252,7 @@ function Invoke-Config {
     if (-not (Test-Path $cfgJs)) { if (-not $script:ConfigWarned) { Log "Chưa có repo GenSet-Pro ở $RepoDir, bỏ qua Gợi ý cấu hình."; $script:ConfigWarned = 1 }; return }
     $claude = Find-Claude; $node = Find-Node
     if (-not $claude -or -not $node) { Log 'Thiếu Claude Code hoặc Node.js cho Gợi ý cấu hình.'; return }
-    $eap = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
-    try { & git -C $RepoDir pull -q --ff-only origin main 2>&1 | ForEach-Object { Log "  git: $_" } } finally { $ErrorActionPreference = $eap }
+    Update-Repo
     if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
     $env:GENBID_CLAUDE = $claude; $env:GENBID_INGEST_TOKEN_FILE = $IngestTokenFile
     $out = Join-Path $LogDir "config-$(Get-Date -Format 'yyyyMMdd-HHmmss').log"
