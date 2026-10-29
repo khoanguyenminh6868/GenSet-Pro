@@ -2029,7 +2029,7 @@ function catSpecsCell(e) {
   return key.map((g) => h`<div>${g.vi}: <b>${catSpecText(g.values[0], g.key)}</b>${raw(g.values.length > 1 ? h` <span class="muted">(+${g.values.length - 1})</span>` : "")}</div>`).join("")
     + (set.length ? h`<div class="muted">Tổ máy có: ${set.map((g) => g.vi.toLowerCase()).join(", ")}</div>` : "");
 }
-const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${catVia(e)}</div>` : raw('<span class="muted">Nguồn không ghi hãng</span>'));
+const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${catVia(e)}</div>` : '<span class="muted">Nguồn không ghi hãng</span>');
 function openCatalog(kind, key) {
   catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}) };
   modal(h`<div class="row"><h2 style="flex:1" id="catTitle">${CAT_KIND[kind].title}</h2><button class="btn sm" data-close>Đóng</button></div><div id="catBody"></div>`, () => renderCatalog(), "wide");
