@@ -56,7 +56,8 @@ Agent trong Antigravity (Gemini 3.8 Flash, medium) làm theo `discover-prompt.md
 Chỉ lấy nhà phân phối mà chính hãng công bố trên website của hãng (Khoa, 2026-10-29); giấy ủy quyền dạng ảnh không kiểm được bằng code nên không tính.
 - Stamford: trang "Authorised Distributors" (stamford-avk.com/contact/authorised-distributors).
 - Perkins: `perkins-locator.mjs <file> "<thành phố>, China"` lưu kết quả trang tra nhà phân phối; chạy cho các thành phố lớn, "Distributor" là nhà phân phối chính, "Local Branch / Dealer" là đại lý (chi nhánh của nhà phân phối chính gộp vào công ty mẹ).
-- Cummins (cummins.com/…/locations/china/…) và Mecc Alte chặn máy Windows (HTTP 403 / từ chối kết nối): chưa lấy được.
+- Cummins: cummins.com chặn máy Windows (HTTP 403 cả với Chromium) nên trang từng điểm (…/locations/china/…) được lưu qua firecrawl (`save --firecrawl`, key ở `genbid-hsmt/.firecrawl-key` hoặc `GENBID_FIRECRAWL_KEY_FILE`; Khoa cho phép 2026-10-29). Chỉ giữ điểm mà trang Cummins ghi ứng dụng "Generator" hoặc "Cummins Power Generation".
+- Mecc Alte: trang nhà phân phối không có nhà phân phối ở Trung Quốc (hãng có nhà máy Haimen).
 
 ## Thêm hoặc sửa một nhà cung cấp
 1. `node suppliers/fetch-source.mjs <id> <n> <url>` cho từng trang nguồn.

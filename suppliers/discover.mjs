@@ -250,7 +250,19 @@ async function save() {
   if (n > 99) die("đã có 99 nguồn đánh số tay; dùng crawl cho trang thông số");
   for (const f of used) if (head(sourceFile(id, f)).url === url) die(`trang này đã lưu: sources/${id}/${f}.md`);
   let file;
-  if (args.includes("--render")) {
+  if (args.includes("--firecrawl")) {
+    // For sites that block this PC (cummins.com answers 403 even to Chromium); allowed by Khoa 2026-10-29.
+    // The key is read from the file and never printed.
+    const keyFile = process.env.GENBID_FIRECRAWL_KEY_FILE || "C:/Projects/GenSet Pro/genbid-hsmt/.firecrawl-key";
+    const r = await fetch("https://api.firecrawl.dev/v2/scrape", { method: "POST", signal: AbortSignal.timeout(120000),
+      headers: { Authorization: `Bearer ${fs.readFileSync(keyFile, "utf8").trim()}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ url, formats: ["markdown"], onlyMainContent: true }) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || !j.data?.markdown) die(`firecrawl không lưu được ${url}: HTTP ${r.status} ${String(j.error || "").slice(0, 160)}`);
+    fs.mkdirSync(dir, { recursive: true });
+    file = sourceFile(id, n);
+    fs.writeFileSync(file, `URL: ${j.data.metadata?.sourceURL || url}\nAccessed: ${today()}\nVia: firecrawl\n\n${j.data.markdown}\n`, "utf8");
+  } else if (args.includes("--render")) {
     const { getRendered, htmlToText, closeBrowser } = await import(pathToFileURL(path.join(ROOT, "crawl-specs.mjs")).href);
     try {
       const { html, url: final } = await getRendered(url);
