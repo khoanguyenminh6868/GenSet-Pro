@@ -475,7 +475,7 @@ const state = {
   feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, supplier: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
-  sort: local.get("gridSort2", { col: "no", dir: -1 }),
+  sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
   filters: {},
   open: null, dtab: "info",
 };
@@ -739,7 +739,7 @@ async function dbSet(path, data) {
 // share their own view without changing anyone else's.
 const viewDoc = () => "prefs/view" + (window.genbidEmail ? ":" + window.genbidEmail : "");
 function saveView() {
-  local.set("stage", state.stage); local.set("gridSort2", state.sort);
+  local.set("stage", state.stage); local.set("gridSort3", state.sort);
   if (state.db) dbSet(viewDoc(), { stage: state.stage, sort: state.sort });
 }
 async function saveTracked(id, rec) {
@@ -860,7 +860,8 @@ async function initDb() {
     const v = snap.exists ? snap.data() : null;
     if (!v) return;
     if (v.stage && v.stage !== state.stage) { state.stage = v.stage; state.limit = pageSize(); }
-    if (v.sort?.col) state.sort = v.sort;
+    // Sorts saved before Mã Số sorted by the number itself are dropped, so everyone starts on newest Mã Số.
+    if (v.sort?.col && v.sort.v === 3) state.sort = v.sort;
     renderAll();
   }, () => {});
   subscribe("tracked", "tracked");
@@ -1001,7 +1002,7 @@ function anaInline(t) {
   return "";
 }
 const COLS = [
-  { k: "no", label: "Mã Số", cls: "noc", val: (t) => pubOf(t), text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
+  { k: "no", label: "Mã Số", cls: "noc", val: (t) => (isProject(t) ? projectNo(t) : t.notifyNo || ""), text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
     cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span><div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
       const tl = timeLeft(t.bidCloseDate); return h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
@@ -1046,7 +1047,7 @@ function renderGrid() {
     const x = col.val(a), y = col.val(b);
     if (x == null || x === "") return 1;
     if (y == null || y === "") return -1;
-    return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "vi")) * state.sort.dir;
+    return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "vi", { numeric: true })) * state.sort.dir;
   });
   $("#count").textContent = `${items.length}/${all.filter(inTab).length} ${state.stage === "project" ? "dự án" : "gói"}`;
   const np = $("#newProject"); np.hidden = state.stage !== "project" || !!state.readOnly;
@@ -2497,7 +2498,7 @@ document.addEventListener("click", async (e) => {
   const th = e.target.closest("[data-sort]");
   if (th) {
     const k = th.dataset.sort;
-    state.sort = state.sort.col === k ? { col: k, dir: -state.sort.dir } : { col: k, dir: k === "no" ? -1 : 1 };
+    state.sort = state.sort.col === k ? { col: k, dir: -state.sort.dir, v: 3 } : { col: k, dir: k === "no" ? -1 : 1, v: 3 };
     state.limit = pageSize(); saveView(); renderGrid(); return;
   }
   if (e.target.closest("#runQueueBtn")) { e.stopPropagation(); requestAnalysis(queue().map((t) => t._key)); return; }
