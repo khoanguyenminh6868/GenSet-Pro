@@ -19,7 +19,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 - `suppliers.json`, `meta.json`: what the check command reads; do not open them.
 
 ## Working fast (a run used to take 10 minutes, Khoa 2026-10-29)
-- Read input.md and catalog.md whole, once each (catalog.md is short); search hsmt.txt with grep for the quotes.
+- Read input.md and catalog.md once each, in large parts; search hsmt.txt with grep for the quotes.
 - Do not read the repo's source code (config-bot.mjs, verify.mjs, web/catalog.js, suppliers/) and do not write your
   own checker: run the check command in input.md once when result.json is written. It works offline, prints every
   point that does not match its source (or that none fails) and writes `result.checked.json`. Fix what it prints and
