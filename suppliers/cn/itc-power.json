@@ -1,0 +1,86 @@
+{
+  "id": "itc-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Changzhou ITC Power Equipment Manufacturing Co.,Ltd.",
+    "zh": null,
+    "brands": [
+      "ITCPower",
+      "ITC POWER"
+    ]
+  },
+  "website": "https://www.itcpowergenerator.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Changzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà máy hơn 20.000 m² ở Thường Châu; làm động cơ diesel, tổ máy diesel, bơm, tháp đèn",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 100.000 máy mỗi năm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel Generator (9-1500 KW; 4.5-15 KW air-cooled)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 4.5,
+        "max": 1500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không thấy năm thành lập (video YouTube ghi 'Since 2008' nhưng không dùng làm nguồn), chứng chỉ, hãng động cơ cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.itcpowergenerator.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright © Changzhou ITC Power Equipment Manufacturing Co.,Ltd. All Rights Reserved.",
+        "Building 10, No. 3, Xiaming Road, Wuyi, Hengshanqiao Town, Changzhou City, Jiangsu Province, CHINA.",
+        "9-1500 KW Diesel Generator",
+        "4.5-15 KW Diesel Generator",
+        "Our company covers an area of more than 20000 square meters and produces more than 100000 machines every year."
+      ],
+      "file": "sources/itc-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

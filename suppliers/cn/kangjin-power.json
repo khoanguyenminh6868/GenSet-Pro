@@ -1,0 +1,79 @@
+{
+  "id": "kangjin-power",
+  "country": "CN",
+  "role": "distributor",
+  "status": "partial",
+  "names": {
+    "en": "Xiangyang Kangjin Power Technology Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Kangjin"
+    ]
+  },
+  "website": "https://kangjinpower.com/",
+  "hq": {
+    "province": "Hubei",
+    "city": "Xiangyang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Cung cấp động cơ diesel (chủ yếu Cummins) và phụ tùng Cummins cho phát điện, xây dựng, tàu thủy",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: kết nối trực tiếp tới nguồn cung được Cummins ủy quyền; có đại tu và thử nghiệm động cơ",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Cummins diesel engines and spare parts",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Quan hệ ủy quyền với Cummins chỉ là lời tự giới thiệu trên website, chưa có giấy ủy quyền hay trang của Cummins xác nhận",
+    "Không thấy năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://kangjinpower.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Xiangyang Kangjin Power Technology Co., Ltd. Professional supplier of diesel engines and engine solutions for construction, power generation, marine, and industrial applications.",
+        "Address: Building B7, Jiahai Industrial Park, High-tech Zone, Xiangyang City, Hubei Province, China",
+        "We connect you directly to Cummins-authorized supply and factory-level engine resources.",
+        "Our core business includes diesel engine R&D, production, customization, maintenance and testing; explosion-proof engine development; Cummins spare parts supply, plus engine overhaul and testing services."
+      ],
+      "file": "sources/kangjin-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

@@ -430,5 +430,32 @@
   "url": "https://www.firstallpower.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "itc-power",
+  "name": "Changzhou ITC Power Equipment Manufacturing Co.,Ltd.",
+  "url": "https://www.itcpowergenerator.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "kaichen-jiangsu",
+  "name": "Jiangsu Kaichen Electric Power Equipment Co., Ltd.",
+  "url": "https://www.kaichenpower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-10-29",
+  "result": "added",
+  "id": "kangjin-power",
+  "name": "Xiangyang Kangjin Power Technology Co., Ltd.",
+  "url": "https://kangjinpower.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

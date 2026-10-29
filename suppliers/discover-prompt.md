@@ -44,6 +44,7 @@ Website mang tên hãng nhưng của đại lý (ví dụ `sdec-engine.com`, `dc
 node suppliers/discover.mjs seeds --genbid
 node suppliers/discover.mjs status
 ```
+- **Làm trước tiên:** `seeds` in danh sách công ty Khoa hay làm việc (`suppliers/discover-watchlist.json`). Mỗi dòng **CHƯA CÓ** phải tìm riêng theo tên: `"<tên> official website"`, `"<tên> generator"`, `"<tên> 官网"`, dùng ít nhất hai công cụ tìm kiếm khác nhau. Không tìm ra thì ghi rõ vào báo cáo cho Khoa (kèm những gì đã thử) để Khoa gửi tên đầy đủ hoặc website; không tự bỏ qua. Khoa nhắc thêm công ty nào thì thêm vào file này.
 - `seeds` liệt kê hãng động cơ / đầu phát xuất hiện trong bảng thông số nhưng **CHƯA CÓ** bản ghi hãng. Ưu tiên các dòng CHƯA CÓ có nhiều dòng bảng nhất. Với hãng nước ngoài (Mitsubishi, Doosan, Volvo Penta, MTU...) chỉ lấy **pháp nhân tại Trung Quốc** (nhà máy liên doanh / công ty con sản xuất tại TQ) nếu tìm được website chính thức của pháp nhân đó; không có thì bỏ.
 - `--genbid` ghi file `genbid-mentions.md` (đường dẫn in ra) gồm yêu cầu về hãng / xuất xứ trong các gói thầu đã phân tích. Đọc file này để biết hãng nào hay bị hỏi. Không chép nội dung file này vào repo.
 - Nhà máy tổ máy (`genset_oem`): tìm web với từ khoá `柴油发电机组 生产厂家`, `发电机组 制造商 官网`, `diesel generator set manufacturer China factory`, `燃气发电机组 厂家`, kèm tên tỉnh (福建, 山东 潍坊, 江苏 扬州, 广西...) để ra công ty mới.
@@ -56,6 +57,7 @@ node suppliers/discover.mjs check "<tên công ty>" <url website>
 - `ĐÃ CÓ ... cùng website` → bỏ, không làm lại.
 - `CÓ THỂ TRÙNG` → mở bản ghi đó (`suppliers/cn/<id>.json`) so tên đầy đủ. Cùng pháp nhân thì bỏ. Khác pháp nhân (ví dụ công ty mẹ làm động cơ, công ty con lắp tổ máy) thì làm bản ghi mới và ghi id kia vào `related`.
 - `trong nhật ký ... đã bỏ qua` → không làm lại trừ khi có nguồn mới.
+- Tìm chung chung (“diesel generator manufacturer China”) chủ yếu ra sàn B2B và trang SEO, rất dễ sót công ty thật. Trước khi kết luận "chỉ có sàn B2B", luôn tìm lại theo đúng tên công ty (như trên). Nhiều công ty có vài website cùng tên: chọn trang có "Company Profile / About" ghi tên pháp nhân, ghi các website còn lại vào `miss`.
 - `sàn B2B` → tìm website riêng của công ty. Không có thì chỉ làm khi Khoa yêu cầu, với `conf: "low"`, `status: "partial"`, `web: null`.
 
 ### Bước 3 — Lưu trang nguồn
