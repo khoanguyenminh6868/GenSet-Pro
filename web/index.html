@@ -2150,7 +2150,7 @@ function catDetailHtml(e) {
 const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], unclear: ["Chưa rõ", "warn"] };
 const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet" };
 // Xuất xứ (Khoa, 2026-10-29): Trung Quốc by default leaves out engines of foreign makes (Perkins, Cummins, Volvo Penta,
-// Baudouin, Kubota, Yanmar...); Khác keeps only those. The list is web/catalog.js FOREIGN_ENGINE.
+// Baudouin, Kubota, Yanmar...) and engines whose source gives no make; Khác keeps only foreign makes. The list is web/catalog.js FOREIGN_ENGINE.
 const CFG_ORIGIN = [["all", "Tất cả"], ["cn", "Trung Quốc"], ["other", "Khác"]];
 const cfgOrigin = {};
 function configTabHtml(t) {

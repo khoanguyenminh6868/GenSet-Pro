@@ -55,10 +55,10 @@ async function post(rows) {
   if (!r.ok) throw new Error(`ingest HTTP ${r.status}: ${body.slice(0, 200)}`);
   return body;
 }
-// Engines of the origin asked for: "cn" leaves out foreign makes (an engine whose make no source gives stays),
-// "other" keeps only engines a source or the model code shows to be of a foreign make.
+// Engines of the origin asked for: "cn" keeps only engines a source shows to be of a Chinese make (one whose make no
+// source gives is left out, Khoa 2026-10-29), "other" only engines a source or the model code shows to be foreign.
 export function byOrigin(engines, origin) {
-  if (origin === "cn") return engines.filter((e) => CAT.originOf(e) !== "other");
+  if (origin === "cn") return engines.filter((e) => CAT.originOf(e) === "cn");
   if (origin === "other") return engines.filter((e) => CAT.originOf(e) === "other");
   return engines;
 }
@@ -139,7 +139,7 @@ async function prep(key, dir, reqData = {}) {
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`, "",
     `## Xuất xứ động cơ: ${ORIGIN[origin]}`,
-    origin === "cn" ? `Chỉ gợi ý động cơ của hãng Trung Quốc. Không gợi ý động cơ của hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả loại sản xuất theo giấy phép tại Trung Quốc (Dongfeng Cummins, Chongqing Cummins...), cả khi tìm trên internet. Nếu HSMT chỉ định một hãng nước ngoài thì trả lời "configs": [] và nói rõ trong message.`
+    origin === "cn" ? `Chỉ gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Không gợi ý động cơ của hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả loại sản xuất theo giấy phép tại Trung Quốc (Dongfeng Cummins, Chongqing Cummins...), cả khi tìm trên internet. Nếu HSMT chỉ định một hãng nước ngoài thì trả lời "configs": [] và nói rõ trong message.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
     : "Không giới hạn xuất xứ động cơ.", "",
     "## Thông số kỹ thuật theo phân tích (chỉ để định hướng, trích dẫn phải lấy từ hsmt.txt)",
@@ -199,15 +199,18 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     }
     return null;
   };
-  // An engine of the other origin is not a suggestion: its make, model code, or the brand its source row names.
+  // An engine of the other origin is not a suggestion, nor, under "cn", one whose make the source does not give
+  // (Khoa, 2026-10-29). The make counts only as the source states it: the catalog row (header, title), or for an
+  // internet source the quote, plus the make the agent wrote when the saved page has it.
   if (origin === "cn" || origin === "other") {
     result.configs = (result.configs || []).filter((c) => {
       const e = c.engine;
       if (!e) return true;
-      const own = e.src?.kind === "catalog" ? sourceText(e.src) : e.src?.quote;
-      const o = CAT.originIn(`${e.make || ""} ${e.model || ""} ${own || ""}`, e.model);
-      const drop = origin === "cn" ? o === "other" : o !== "other";
-      if (drop) problems.push(`#${c.rank}: động cơ ${e.model}${e.make ? ` (${e.make})` : ""} ${origin === "cn" ? "không phải hãng Trung Quốc" : "không rõ là hãng ngoài Trung Quốc"}, đã bỏ`);
+      const page = e.src?.kind === "internet" && e.src.file ? norm(readWeb(e.src.file) || "") : "";
+      const own = e.src?.kind === "catalog" ? sourceText(e.src) : `${e.src?.quote || ""} ${e.make && page.includes(norm(e.make)) ? e.make : ""}`;
+      const o = CAT.originIn(`${e.model || ""} ${own || ""}`, e.model);
+      const drop = origin === "cn" ? o !== "cn" : o !== "other";
+      if (drop) problems.push(`#${c.rank}: động cơ ${e.model}${e.make ? ` (${e.make})` : ""} ${origin === "cn" ? (o === "other" ? "không phải hãng Trung Quốc" : "nguồn không ghi hãng") : "không rõ là hãng ngoài Trung Quốc"}, đã bỏ`);
       return !drop;
     });
     result.origin = origin;
