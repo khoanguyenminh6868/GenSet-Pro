@@ -36,7 +36,8 @@ export function htmlToText(html) {
 // PLAYWRIGHT_CORE (a path to its index.mjs), else the bot kit's on the Windows PC, else the installed package.
 const RENDER = args.includes("--render");
 let browser = null;
-async function getRendered(url) {
+export const closeBrowser = async () => { if (browser) await browser.close(); browser = null; };
+export async function getRendered(url) {
   if (!browser) {
     const kit = "file:///C:/Projects/GenSet%20Pro/genbid-hsmt/node_modules/playwright-core/index.mjs";
     const where = process.env.PLAYWRIGHT_CORE ? pathToFileURL(process.env.PLAYWRIGHT_CORE).href : process.platform === "win32" ? kit : "playwright-core";
@@ -51,7 +52,7 @@ async function getRendered(url) {
     return { html: await page.content(), url: page.url() };
   } finally { await page.close().catch(() => {}); }
 }
-async function get(url) {
+export async function get(url) {
   if (RENDER) return getRendered(url);
   const r = await fetch(url, { headers: { "User-Agent": UA, "Accept-Language": "en,zh-CN;q=0.8" }, redirect: "follow", signal: AbortSignal.timeout(25000) });
   if (!r.ok || !/html/i.test(r.headers.get("content-type") || "html")) throw new Error("HTTP " + r.status);
