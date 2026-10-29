@@ -82,17 +82,12 @@ function technicalPart(text) {
   const rest = text.slice(start + 10), end = rest.search(/\n\s*ch(ươ|uo)ng\s+(VI|VII)\b/i);
   return text.slice(start, end > 0 ? start + 10 + end : start + 250000).slice(0, 250000);
 }
-// Kept short so the agent reads it in a few passes (a run paged through 3000 lines for minutes, Khoa 2026-10-29):
-// at most 40 models and 3 rows each, first the rows at the power asked for that name the other part too.
-const MODELS = 40, ROWS = 3;
 function catalogMd(cat, cap, brands) {
-  const near = (u) => Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4);
   const pick = (list) => {
-    if (!cap) return list.slice(0, MODELS);
-    return list.filter((e) => e.uses.some(near))
-      .sort((a, b) => (brands.some((x) => (b.make || "").includes(x)) - brands.some((x) => (a.make || "").includes(x))) || b.suppliers.length - a.suppliers.length).slice(0, MODELS);
+    if (!cap) return list.slice(0, 80);
+    const near = list.filter((e) => e.uses.some((u) => Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4)));
+    return near.sort((a, b) => (brands.some((x) => (b.make || "").includes(x)) - brands.some((x) => (a.make || "").includes(x))) || b.suppliers.length - a.suppliers.length).slice(0, 80);
   };
-  const paired = (u) => (cap ? near(u) : true) && !!u.other;
   const out = [`# Danh mục trong hệ thống${cap ? ` (lọc theo tổ máy ${cap.value} ${cap.unit}, từ 95% đến 140%)` : ""}`, ""];
   // A table's header is written once, at the end (it was repeated on every row, 400 KB of 480); a header that took in
   // the table's rows (some run to 10 000 characters) is cut, its column titles come first.
@@ -101,8 +96,10 @@ function catalogMd(cat, cap, brands) {
     out.push(`## ${title} (${list.length})`, "");
     for (const e of list) {
       out.push(`### ${e.model}${e.make ? ` — hãng: ${e.make} (theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " — nguồn không ghi hãng"}`);
-      const uses = e.uses.slice().sort((a, b) => (paired(b) - paired(a)) || (cap ? Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value) : 0));
-      for (const u of uses.slice(0, ROWS)) {
+      // A supplier's row that is word for word in two of its tables (the same page saved twice) is listed once.
+      const seen = new Set(), uses = (cap ? e.uses.slice().sort((a, b) => Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value)) : e.uses)
+        .filter((u) => { const k = `${u.supplierId}\n${u.line || (u.lines?.rows || []).join("\n")}`; return !seen.has(k) && seen.add(k); });
+      for (const u of uses.slice(0, 8)) {
         out.push(`- supplierId: ${u.supplierId}, n: ${u.n}${u.genset ? `, tổ máy: ${u.genset}` : ""}${u.other ? `, đi kèm: ${u.other}` : ""}`);
         if (u.header?.length) headers.set(`${u.supplierId} n ${u.n}`, u.header.join(" "));
         out.push(u.line ? `  line: ${u.line}` : `  bảng một model: ${(u.lines?.rows || []).join(" ; ")}`);
