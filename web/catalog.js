@@ -47,16 +47,33 @@
     "Caterpillar", "FPT", "MAN", "Detroit Diesel"]);
   // Model codes of foreign series, for a row that does not name the make.
   const FOREIGN_MODEL = [
-    [/^(4BTA?|6BTA?A?|6CTA?A?|6LTAA?|NTA?A?855|KTA?A?19|KTA?38|KTA?50|QS[BKLMTXZ]\d|VTA?28)/i, "Cummins"],
+    [/^(4BTA?|6BTA?A?|6CTA?A?|6LTAA?|NTA?A?855|KTA?A?19|KTA?38|KTA?50|QS[BKLMNTXZ]|VTA?28|[46]?B\d\.\d|L\d{1,2}(\.\d)?CS|6TAA?\d\.\d)/i, "Cummins"],
     [/^(403[A-D]?|404[A-D]?|1103[A-D]|1104[A-D]|1106[A-D]|1204[A-F]|1206[A-F]|1506[A-D]|1706[A-D]|1806[A-D]|2206[A-D]|2506[A-D]|2806[A-D]|400[68]|4012|4016)-/i, "Perkins"],
+    [/^(400[68]|4012|4016)-?\d*T[A-Z]*G/i, "Perkins"],
+    // Deutz / MWM designs (BF..M1015, TBD234 / 604 / 620) count as foreign even when built under licence in China.
+    [/^(BF\d?[46LM]\d{3,4}|F[2-8]L\d{3}|TCD\d|TBD(234|604|620|62O|314))/i, "Deutz"],
+    [/^S\d{1,2}R\d?-/i, "Mitsubishi"], [/^\d?TNV\d/i, "Yanmar"], [/^(D(1005|1105|1305|1703|2203|2403)|V(1505|2003|2203|2403|3300|3600|3800))\b/i, "Kubota"],
     [/^T?AD\d{3,4}/i, "Volvo Penta"], [/^\d{1,2}V\d{4}/i, "MTU"], [/^\d{1,2}M\d{2}/i, "Baudouin"],
     [/^D?(E|D)(08|26|28|32)\d{2}[A-Z]/, "MAN"], [/^(NEF\d|CURSOR|C(87|10|13|16)\s?TE|N(45|67)\s?[A-Z])/i, "FPT"],
     [/^(CAT\s?C\d|35(08|12|16)\b|3412\b|C(15|18|27|32)\b)/i, "Caterpillar"], [/^(DB58|P0?86TI|P1(26|58|80)|P222|DP(086|126|158|180|222))/i, "Doosan"],
-    [/^\d{1,2}V(71|92|149)\b/i, "Detroit Diesel"],
+    [/^(6|8|12|16)V(71|92|149)\b/i, "Detroit Diesel"],
+  ];
+  // Well-known model codes of Chinese engines, counted as a stated make when the row does not name it
+  // (Khoa, 2026-10-29). Foreign codes win: an engine matching both counts as foreign.
+  const CN_MODEL = [
+    [/^YC\d/i, "Yuchai"], [/^(WP\d|WD(10|12|615)\b|WHM|CW\d{0,2}V?\d{3}Z)/i, "Weichai"],
+    [/^(SC\d{1,2}[A-Z]|SC\d{2}W|[46]135|12V135|G128)/i, "SDEC"], [/^[A-Z]?\d{1,2}V190|^\d?190Z/i, "Jichai"], [/^\d300[A-Z]/i, "Zichai"],
+    [/^(YND?\d{3}[A-Z]|YD\d{3,4}|Y\d{3,4}[A-Z])/i, "Yangdong"], [/^(YN\d{2}|D\d{2}TCIF)/i, "Yunnei"], [/^N4\d{3}/i, "Quanchai"],
+    [/^(R[46]1\d{2}|ZH4\d{3})/i, "Ricardo"], [/^LR\d[A-Z]/i, "YTO"], [/^(FAW\s|CA\d?D[FLMN]\d|4DX2\d)/i, "FAWDE"],
+    [/^HC\d{1,2}V\d{3}/i, "Henan Diesel"], [/^KH(\d|K|N)/i, "Kaihua"],
+    // Generic Chinese series: 4100–6113 multi-cylinder, 485–498 small, 178F–198F single-cylinder, 2V88–2V100 twins.
+    [/^[A-Z]{0,3}[46]1(00|02|05|08|10|13)[A-Z]/i, "Trung Quốc"], [/^[A-Z]{0,3}[34](80|85|90|93|95|98)[A-Z]/i, "Trung Quốc"],
+    [/^[A-Z]{0,3}1[1789]\d{1,2}F/i, "Trung Quốc"], [/^[A-Z]{0,3}2V(80|88|92F|95|100)/i, "Trung Quốc"],
   ];
   // "other" (a foreign make), "cn" (only Chinese makes) or null (the sources do not say).
   function engineOrigin(names, model) {
-    const all = [...names, ...FOREIGN_MODEL.filter(([re]) => re.test(String(model || "").trim())).map(([, n]) => n)];
+    const m = String(model || "").trim(), foreign = FOREIGN_MODEL.filter(([re]) => re.test(m)).map(([, n]) => n);
+    const all = [...names, ...foreign, ...(foreign.length ? [] : CN_MODEL.filter(([re]) => re.test(m)).map(([, n]) => n))];
     if (all.some((n) => FOREIGN_ENGINE.has(n))) return "other";
     return all.length ? "cn" : null;
   }
