@@ -1,4 +1,4 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><meta name="theme-color" content="#14171c"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="/shim.js"></script><script src="/catalog.js"></script></head><body><title>GenBid Pro</title>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><meta name="theme-color" content="#14171c"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="/shim.js"></script><script src="/catalog.js"></script><script src="/conversions.js"></script></head><body><title>GenBid Pro</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2121,7 +2121,8 @@ function catDetailHtml(e) {
 // Chỉ một nút. Agent trên máy Windows (suppliers/config-prompt.md) đọc yêu cầu kỹ thuật trong HSMT, chọn trong danh mục
 // động cơ / đầu phát của hệ thống (web/catalog.js); không có thì tìm trên internet; không có nữa thì trả lời "không
 // tìm thấy". suppliers/config-check.mjs kiểm bằng code trước khi đăng configmatch/<key>: mỗi câu trích HSMT phải có
-// nguyên văn trong HSMT, mỗi thông số chào phải có nguyên văn trong dòng bảng của danh mục hoặc trang web đã lưu.
+// nguyên văn trong HSMT, mỗi thông số chào phải có nguyên văn trong dòng bảng của danh mục hoặc trang web đã lưu, hoặc là kết
+// quả một công thức quy đổi của web/conversions.js mà code đã tính lại. Mỗi cấu hình kèm nhà cung cấp trong hệ thống bán nó.
 const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], unclear: ["Chưa rõ", "warn"] };
 const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet" };
 function configTabHtml(t) {
@@ -2140,6 +2141,17 @@ function cfgSrcHtml(src) {
   }
   return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: <a href="${src.url}" target="_blank" rel="noopener">${src.url}</a>${raw(src.quote ? h` — <q>${src.quote}</q>` : "")}</div>`;
 }
+const cfgNum = (v) => (Array.isArray(v) ? v.map(cfgNum).join("–") : Number(v).toLocaleString("vi-VN", { maximumFractionDigits: 2 }));
+const cfgConvHtml = (x) => (x.conversions || []).map((cv) => h`<div class="muted small">Quy đổi: ${cv.label || cv.formula}${raw(cv.value != null && !cv.invalid ? h` → <b>${cfgNum(cv.value)} ${cv.unit || ""}</b>` : "")}${raw(cv.basis ? h` <span title="${cv.basis}">ⓘ</span>` : "")} <span class="muted">(${(cv.inputs || []).map((i) => `${i.name} = ${i.from === "standard" ? "giá trị chuẩn" : i.value}`).join(", ")})</span></div>`).join("");
+function cfgSuppliersHtml(c) {
+  if (!c.suppliers?.length) return "";
+  return h`<div class="small" style="margin-top:6px"><b>Nhà cung cấp đề xuất:</b></div><ol class="suplist">${raw(c.suppliers.map((x) => {
+    const s = state.supplier?.[x.supplierId], conf = SUP_CONF[s?.confidence] || ["", "mut"], vn = s?.vietnam?.distributors || [];
+    return h`<li class="small"><b>${supName(s) || x.supplierId}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}
+      <button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ</button>${raw(s?.website ? h` <a href="${s.website}" target="_blank" rel="noopener">website</a>` : "")}
+      ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
+  }).join(""))}</ol>`;
+}
 function cfgResultHtml(r) {
   if (!r.configs?.length) return h`<div class="note warn"><b>Không tìm thấy cấu hình phù hợp.</b> ${r.message || "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT."}</div>`
     + cfgReqHtml(r) + cfgNotesHtml(r);
@@ -2156,9 +2168,10 @@ function cfgResultHtml(r) {
       ${raw(c.checks?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
         const st = CFG_STATUS[x.status] || ["", "mut"];
         return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
-          <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn: <q>${x.sourceQuote}</q></div>` : "")}</td>
+          <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}</td>
           <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
       }).join(""))}</tbody></table></div>` : "")}
+      ${raw(cfgSuppliersHtml(c))}
       ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
   }).join("") + cfgNotesHtml(r);
 }
