@@ -286,6 +286,10 @@ ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
 .hsdoc [contenteditable="true"]:hover{box-shadow:0 0 0 1px #e3e6ee}
 .hsdoc [contenteditable="true"]:focus{box-shadow:0 0 0 2px #c7d7ff}
 @media (max-width:640px){.hsdoc{padding:16px}}
+.edbar{display:flex;align-items:center;gap:2px;flex-wrap:wrap;max-width:860px;margin-bottom:6px;padding:3px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.edbar button{min-width:30px;height:28px;padding:0 7px;border:0;border-radius:6px;background:none;font-size:14px;line-height:1}
+.edbar button:hover{background:var(--panel2)}
+.edbar .sep{width:1px;height:18px;background:var(--line);margin:0 4px}
 details.sec,section.sec{border-top:1px solid var(--line);padding-top:10px}
 section.sec>h4{margin:0 0 10px;font-size:inherit;font-weight:600}
 details.sec summary{cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px}
@@ -1481,6 +1485,89 @@ async function fonts() {
   fontB64 = { normal: await b64(FONT_URL.normal), bold: await b64(FONT_URL.bold) };
   return fontB64;
 }
+// Italic faces are fetched only when an edited text uses italic.
+const ITALIC_URL = { italic: "https://cdn.jsdelivr.net/npm/dejavu-fonts-ttf@2.37.3/ttf/DejaVuSans-Oblique.ttf", bolditalic: "https://cdn.jsdelivr.net/npm/dejavu-fonts-ttf@2.37.3/ttf/DejaVuSans-BoldOblique.ttf" };
+let italicB64 = null;
+async function italicFonts() {
+  const b64 = async (u) => { const r = await fetch(u); if (!r.ok) throw new Error("font"); const buf = new Uint8Array(await r.arrayBuffer()); let s = ""; for (let i = 0; i < buf.length; i += 0x8000) s += String.fromCharCode.apply(null, buf.subarray(i, i + 0x8000)); return btoa(s); };
+  return (italicB64 ||= Promise.all([b64(ITALIC_URL.italic), b64(ITALIC_URL.bolditalic)]).then(([italic, bolditalic]) => ({ italic, bolditalic })).catch((e) => { italicB64 = null; throw e; }));
+}
+
+// ---------- Editing: text format, undo and redo ----------
+// Edited text keeps bold, italic and underline as <b>, <i>, <u> inside the stored string; everything else is escaped text.
+// richRuns reads such a string (or an edited element) into runs of text with their format, for the page, the PDF and Word.
+function richRuns(src) {
+  let root = src;
+  if (!src || typeof src !== "object") { const tp = document.createElement("template"); tp.innerHTML = String(src ?? ""); root = tp.content; }
+  const out = [];
+  const walk = (n, f) => {
+    for (const c of n.childNodes) {
+      if (c.nodeType === 3) { if (c.data) out.push({ text: c.data, ...f }); continue; }
+      if (c.nodeType !== 1) continue;
+      if (c.tagName === "BR") { out.push({ text: "\n", ...f }); continue; }
+      if (/^(DIV|P|LI|H\d)$/.test(c.tagName) && out.length && !out[out.length - 1].text.endsWith("\n")) out.push({ text: "\n", ...f });
+      const st = c.style || {};
+      walk(c, {
+        b: f.b || /^(B|STRONG)$/.test(c.tagName) || st.fontWeight === "bold" || +st.fontWeight >= 600,
+        i: f.i || /^(I|EM)$/.test(c.tagName) || st.fontStyle === "italic",
+        u: f.u || c.tagName === "U" || /underline/.test(st.textDecoration || st.textDecorationLine || ""),
+      });
+    }
+  };
+  walk(root, {});
+  const runs = [];
+  for (const r of out) {
+    const p = runs[runs.length - 1], b = !!r.b, i = !!r.i, u = !!r.u;
+    if (p && p.b === b && p.i === i && p.u === u) p.text += r.text; else runs.push({ text: r.text, b, i, u });
+  }
+  const last = runs[runs.length - 1];
+  if (last?.text.endsWith("\n")) { last.text = last.text.slice(0, -1); if (!last.text) runs.pop(); }
+  return runs;
+}
+const richHtml = (src) => richRuns(src).map((r) => { let x = esc(r.text); if (r.u) x = `<u>${x}</u>`; if (r.i) x = `<i>${x}</i>`; if (r.b) x = `<b>${x}</b>`; return x; }).join("");
+// The toolbar right before an editable document (#trEdit inside .trdoc, or #hsDoc).
+const edBar = () => `<div class="edbar" role="toolbar" aria-label="Định dạng">
+  <button type="button" data-cmd="undo" title="Hoàn tác (Ctrl+Z)" aria-label="Hoàn tác">↶</button><button type="button" data-cmd="redo" title="Làm lại (Ctrl+Y)" aria-label="Làm lại">↷</button><span class="sep"></span>
+  <button type="button" data-cmd="bold" title="In đậm (Ctrl+B)" aria-label="In đậm"><b>B</b></button><button type="button" data-cmd="italic" title="In nghiêng (Ctrl+I)" aria-label="In nghiêng"><i>I</i></button><button type="button" data-cmd="underline" title="Gạch chân (Ctrl+U)" aria-label="Gạch chân"><u>U</u></button><button type="button" data-cmd="removeFormat" title="Bỏ định dạng của chữ đang chọn" aria-label="Bỏ định dạng">T<sub>x</sub></button></div>`;
+const edRoot = (n) => n?.closest?.("#trEdit, #hsDoc") || null;
+// Undo history: snapshots of the document, one per pause in typing or per format change. A redraw of the tab starts a new one.
+const edHist = { root: null, stack: [], i: 0, timer: null };
+function histInit(root) { if (edHist.root !== root) { clearTimeout(edHist.timer); Object.assign(edHist, { root, stack: [root.innerHTML], i: 0 }); } }
+function histRecord(root) {
+  histInit(root); clearTimeout(edHist.timer);
+  const html = root.innerHTML;
+  if (html === edHist.stack[edHist.i]) return;
+  edHist.stack.splice(edHist.i + 1, Infinity, html);
+  if (edHist.stack.length > 200) edHist.stack.shift();
+  edHist.i = edHist.stack.length - 1;
+}
+function histLater(root) { histInit(root); clearTimeout(edHist.timer); edHist.timer = setTimeout(() => histRecord(root), 500); }
+function edSave(root) {
+  if (!state.open) return;
+  if (root.id === "trEdit") saveTrEdit(state.open, secsToText(trFromDoc() || []));
+  else for (const el of root.querySelectorAll("[data-h]")) saveHsEdit(state.open, el.dataset.h, richHtml(el));
+}
+function edStep(root, d) {
+  histRecord(root);
+  const j = edHist.i + d;
+  if (j < 0 || j >= edHist.stack.length) return;
+  // The field being edited is redrawn too: put the caret back at its end so the next Ctrl+Z still reaches here.
+  const was = document.activeElement, path = was?.dataset?.h;
+  edHist.i = j; root.innerHTML = edHist.stack[j];
+  const f = path ? root.querySelector(`[data-h="${CSS.escape(path)}"]`) : root.contains(was) ? root : null;
+  if (f) { f.focus(); const r = document.createRange(); r.selectNodeContents(f); r.collapse(false); getSelection().removeAllRanges(); getSelection().addRange(r); }
+  edSave(root);
+}
+function edFormat(root, cmd) {
+  const sel = getSelection();
+  if (!sel.rangeCount || sel.isCollapsed || !root.contains(sel.anchorNode)) { toast("Bôi đen chữ cần định dạng trước."); return; }
+  histRecord(root);
+  document.execCommand("styleWithCSS", false, false);
+  document.execCommand(cmd);
+  histRecord(root);
+  edSave(root);
+}
+function edCommand(root, cmd) { if (cmd === "undo" || cmd === "redo") edStep(root, cmd === "undo" ? -1 : 1); else edFormat(root, cmd); }
 let downloadsNs;
 async function saveFile(filename, data) {
   if (downloadsNs === undefined) { try { downloadsNs = (await window.claude?.use?.("downloads")) ?? null; } catch { downloadsNs = null; } }
@@ -1563,9 +1650,9 @@ function textToSecs(text) {
 // heading and its points. Typing edits it in place; Enter in a point adds the next point.
 function trHtml(secs, busy, text) {
   const list = text ? textToSecs(text) : secs;
-  const body = list.map((x) => h`<h3>${x.heading}</h3><ul>${raw((x.points || []).map((p) => h`<li>${p}</li>`).join("") || "<li></li>")}</ul>`).join("");
+  const body = list.map((x) => h`<h3>${x.heading}</h3><ul>${raw((x.points || []).map((p) => `<li>${richHtml(p)}</li>`).join("") || "<li></li>")}</ul>`).join("");
   return h`<div class="row" style="margin-bottom:8px"><span class="muted small" style="flex:1;min-width:200px">Bấm vào chữ để sửa trước khi tải PDF. Enter để thêm ý mới.</span>${raw(busy ? "" : '<button class="btn sm" id="trAddSec">Thêm mục</button>')}</div>
-    <div class="trdoc"><div class="trhead"><div class="trtitle">Technical Requirement</div></div>
+    ${raw(busy ? "" : edBar())}<div class="trdoc"><div class="trhead"><div class="trtitle">Technical Requirement</div></div>
       <div class="trbody" id="trEdit" contenteditable="${busy ? "false" : "true"}" spellcheck="false">${raw(body)}</div></div>
     <div class="muted small" id="trSaved"></div>`;
 }
@@ -1575,7 +1662,8 @@ function trFromDoc() {
   if (!el) return null;
   for (const n of el.children) {
     if (n.tagName === "H3") { secs.push({ heading: n.textContent.trim(), points: [] }); continue; }
-    const items = n.tagName === "UL" || n.tagName === "OL" ? [...n.querySelectorAll("li")].map((li) => li.textContent.trim()) : [n.textContent.trim()];
+    const point = (x) => richHtml(x).replace(/\n/g, " ").trim();
+    const items = n.tagName === "UL" || n.tagName === "OL" ? [...n.querySelectorAll("li")].map(point) : [point(n)];
     if (!secs.length) secs.push({ heading: "", points: [] });
     secs[secs.length - 1].points.push(...items.filter(Boolean));
   }
@@ -1626,10 +1714,43 @@ async function translationPdf(key) {
       for (const ln of lines) { need(lh); doc.text(ln, M + indent, y + lh * 0.8); y += lh; }
       y += gap;
     };
+    // A point keeps its bold, italic and underline: its runs are wrapped word by word, underline drawn under the words.
+    const pts = secs.map((s) => (s.points || []).map(richRuns));
+    let hasItalic = false;
+    if (pts.flat(2).some((r) => r.i)) {
+      try {
+        const it = await italicFonts();
+        doc.addFileToVFS("DejaVuSans-Oblique.ttf", it.italic); doc.addFont("DejaVuSans-Oblique.ttf", "DejaVu", "italic");
+        doc.addFileToVFS("DejaVuSans-BoldOblique.ttf", it.bolditalic); doc.addFont("DejaVuSans-BoldOblique.ttf", "DejaVu", "bolditalic");
+        hasItalic = true;
+      } catch {}
+    }
+    const face = (r) => (r.i && hasItalic ? (r.b ? "bolditalic" : "italic") : r.b ? "bold" : "normal");
+    const rich = (runs, size, gap, indent) => {
+      doc.setFontSize(size); doc.setLineWidth(0.2);
+      const lh = size * 0.42, maxW = W - indent, lines = [[]];
+      let x = 0;
+      for (const r of runs) for (const tok of r.text.split(/(\s+)/)) {
+        if (!tok) continue;
+        if (tok.includes("\n")) { for (let k = tok.split("\n").length - 1; k > 0; k--) lines.push([]); x = 0; continue; }
+        doc.setFont("DejaVu", face(r));
+        const sp = /^\s+$/.test(tok), w = doc.getTextWidth(sp ? " " : tok);
+        if (sp) { if (x) { lines[lines.length - 1].push({ t: " ", r, w }); x += w; } continue; }
+        if (x && x + w > maxW) { const ln = lines[lines.length - 1]; if (ln.length && ln[ln.length - 1].t === " ") ln.pop(); lines.push([]); x = 0; }
+        lines[lines.length - 1].push({ t: tok, r, w }); x += w;
+      }
+      for (const ln of lines) {
+        need(lh);
+        let xx = M + indent; const base = y + lh * 0.8;
+        for (const it of ln) { doc.setFont("DejaVu", face(it.r)); doc.text(it.t, xx, base); if (it.r.u) doc.line(xx, base + 0.7, xx + it.w, base + 0.7); xx += it.w; }
+        y += lh;
+      }
+      y += gap;
+    };
     text("Technical Requirement", 16, true, 5);
-    for (const s of secs) {
+    for (const [si, s] of secs.entries()) {
       need(12); text(s.heading, 12, true, 1.5);
-      for (const p of s.points || []) { need(6); doc.setFont("DejaVu", "normal"); doc.setFontSize(10); doc.text("•", M + 1, y + 3.4); text(p, 10, false, 1.2, 5); }
+      for (const p of pts[si]) { need(6); doc.setFont("DejaVu", "normal"); doc.setFontSize(10); doc.text("•", M + 1, y + 3.4); rich(p, 10, 1.2, 5); }
       y += 2;
     }
     const n = doc.getNumberOfPages();
@@ -1653,9 +1774,9 @@ function hsdtTabHtml(t) {
 // field of the result it belongs to, and edits are saved back into hsdt/<key> (Tải Word uses the edited result).
 function hsdtHtml(r) {
   const t = findTender(state.open);
-  const ed = (path, text, tag = "div", cls = "") => h`<${raw(tag)} class="${cls}" contenteditable="true" spellcheck="false" data-h="${path}">${text ?? ""}</${raw(tag)}>`;
+  const ed = (path, text, tag = "div", cls = "") => h`<${raw(tag)} class="${cls}" contenteditable="true" spellcheck="false" data-h="${path}">${raw(richHtml(text))}</${raw(tag)}>`;
   return h`<div class="muted small" style="margin-bottom:8px">Bấm vào chữ để sửa trước khi tải Word. Chỗ trong [ngoặc vuông] là thông tin của công ty cần điền.</div>
-    <div class="hsdoc">
+    ${raw(edBar())}<div class="hsdoc" id="hsDoc">
       <div class="hstitle">HỒ SƠ DỰ THẦU (BẢN THAM KHẢO)</div>
       <div class="hscenter"><b>${t?.bidName || ""}</b></div>
       <div class="hscenter">Số TBMT: ${t?.notifyNo || "—"} · Chủ đầu tư: ${t?.investorName || "—"} · Đóng thầu: ${fmtDate(t?.bidCloseDate) || "—"}</div>
@@ -1696,19 +1817,23 @@ async function hsdtDocx(key) {
       new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: "HỒ SƠ DỰ THẦU (BẢN THAM KHẢO)", bold: true, size: 32, font: "Times New Roman" })] }),
       P(t?.bidName || "", { alignment: AlignmentType.CENTER, run: { bold: true } }),
       P(`Số TBMT: ${t?.notifyNo || "—"} · Chủ đầu tư: ${t?.investorName || "—"} · Đóng thầu: ${fmtDate(t?.bidCloseDate) || "—"}`, { alignment: AlignmentType.CENTER }),
-      P(r.summary || ""),
     ];
-    for (const w of r.warnings || []) kids.push(P("Lưu ý: " + w, { run: { italics: true } }));
+    // Edited fields keep their bold, italic and underline; each line of a field is its own paragraph.
+    const T = (r, o = {}) => new TextRun({ font: "Times New Roman", size: 26, ...o, text: r.text, bold: r.b || o.bold, italics: r.i || o.italics, underline: r.u ? {} : undefined });
+    const lines = (s) => { const ls = [[]]; for (const r of richRuns(s)) r.text.split("\n").forEach((x, k) => { if (k) ls.push([]); if (x) ls[ls.length - 1].push({ ...r, text: x }); }); return ls; };
+    const RP = (s, opts = {}) => lines(s).map((ln) => new Paragraph({ spacing: { after: 120 }, ...opts, children: ln.map((x) => T(x, opts.run)) }));
+    kids.push(...RP(r.summary || ""));
+    for (const w of r.warnings || []) kids.push(...RP("Lưu ý: " + w, { run: { italics: true } }));
     for (const s of r.sections || []) {
-      kids.push(new Paragraph({ heading: HeadingLevel.HEADING_1, spacing: { before: 240, after: 120 }, children: [new TextRun({ text: s.title, bold: true, font: "Times New Roman", size: 28 })] }));
-      for (const p of s.paragraphs || []) for (const line of String(p).split("\n")) kids.push(P(line));
+      kids.push(new Paragraph({ heading: HeadingLevel.HEADING_1, spacing: { before: 240, after: 120 }, children: lines(s.title).flat().map((x) => T(x, { bold: true, size: 28 })) }));
+      for (const p of s.paragraphs || []) kids.push(...RP(p));
       if (s.table?.rows?.length) {
-        const cell = (x, bold) => new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: String(x ?? ""), bold, font: "Times New Roman", size: 22 })] })] });
+        const cell = (x, bold) => new TableCell({ children: RP(x, { spacing: { after: 0 }, run: { size: 22, bold } }) });
         kids.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [new TableRow({ tableHeader: true, children: (s.table.headers || []).map((x) => cell(x, true)) }), ...s.table.rows.map((row) => new TableRow({ children: row.map((x) => cell(x)) }))] }));
       }
     }
     kids.push(new Paragraph({ heading: HeadingLevel.HEADING_1, spacing: { before: 240, after: 120 }, children: [new TextRun({ text: "Danh mục hồ sơ cần chuẩn bị", bold: true, font: "Times New Roman", size: 28 })] }));
-    for (const c of r.checklist || []) kids.push(P(`☐ ${c.document}${c.required ? " (bắt buộc)" : ""}${c.note ? " – " + c.note : ""}`));
+    for (const c of r.checklist || []) kids.push(...RP(`☐ ${c.document}${c.required ? " (bắt buộc)" : ""}${c.note ? " – " + c.note : ""}`));
     const doc = new Document({ sections: [{ properties: { page: { margin: { top: 1134, bottom: 1134, left: 1701, right: 1134 } } }, children: kids }] });
     const blob = await Packer.toBlob(doc);
     const ok = await saveFile(fileSafe(`HSDT tham khao ${t?.notifyNo || ""}.docx`), blob);
@@ -2565,7 +2690,7 @@ document.addEventListener("click", async (e) => {
     } catch { box.innerHTML = h`<div class="note err">Không tải được nội dung, hãy thử lại.</div>`; }
     return;
   }
-  if (e.target.id === "trAddSec") { const el = $("#trEdit"); el.insertAdjacentHTML("beforeend", "<h3>New section</h3><ul><li></li></ul>"); const h3 = el.lastElementChild.previousElementSibling; h3.focus(); getSelection().selectAllChildren(h3); saveTrEdit(state.open, secsToText(trFromDoc() || [])); return; }
+  if (e.target.id === "trAddSec") { const el = $("#trEdit"); el.insertAdjacentHTML("beforeend", "<h3>New section</h3><ul><li></li></ul>"); const h3 = el.lastElementChild.previousElementSibling; h3.focus(); getSelection().selectAllChildren(h3); saveTrEdit(state.open, secsToText(trFromDoc() || [])); histRecord(el); return; }
   if (e.target.id === "trRun") { runTranslate(e.target.dataset.key, +(e.target.dataset.resume || 0)); return; }
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
   if (e.target.id === "tkRun") { runTlkt(e.target.dataset.key); return; }
@@ -2587,7 +2712,9 @@ document.addEventListener("input", (e) => {
   if (e.target.id === "fval" && e.target.tagName === "INPUT") applyFilter(e.target.value);
   if (e.target.closest?.("#trEdit") && state.open) saveTrEdit(state.open, secsToText(trFromDoc() || []));
   const hs = e.target.closest?.("[data-h]");
-  if (hs && state.open) saveHsEdit(state.open, hs.dataset.h, hs.innerText.replace(/\n$/, ""));
+  if (hs && state.open) saveHsEdit(state.open, hs.dataset.h, richHtml(hs));
+  const er = edRoot(e.target);
+  if (er) histLater(er);
 });
 document.addEventListener("change", (e) => {
   const k = e.target.dataset?.filter;
@@ -2616,7 +2743,19 @@ $("#toBottom").addEventListener("click", () => scrollTo({ top: document.document
 $("#clearFilters").addEventListener("click", () => { state.filters = {}; $("#q").value = ""; state.limit = pageSize(); renderGrid(); });
 $("#dclose").addEventListener("click", closeDrawer);
 $("#scrim").addEventListener("click", closeDrawer);
+// The format toolbar keeps the selection (mousedown does not take focus) and acts on the document right after it.
+document.addEventListener("mousedown", (e) => { if (e.target.closest?.(".edbar button")) e.preventDefault(); });
+document.addEventListener("click", (e) => {
+  const b = e.target.closest?.(".edbar button[data-cmd]");
+  if (!b) return;
+  const sib = b.closest(".edbar").nextElementSibling, root = sib?.matches("#hsDoc") ? sib : sib?.querySelector("#trEdit");
+  if (root) edCommand(root, b.dataset.cmd);
+});
+document.addEventListener("focusin", (e) => { const r = edRoot(e.target); if (r) histInit(r); });
 document.addEventListener("keydown", (e) => {
+  const er = (e.ctrlKey || e.metaKey) && !e.altKey && edRoot(e.target), k = er && e.key.toLowerCase();
+  const cmd = k === "z" ? (e.shiftKey ? "redo" : "undo") : k === "y" ? "redo" : !e.shiftKey && { b: "bold", i: "italic", u: "underline" }[k];
+  if (cmd) { e.preventDefault(); edCommand(er, cmd); return; }
   if (e.key === "Escape" && !$("#fpop").hidden) { closeFilter(); return; }
   if (e.key === "Enter" && e.target.id === "fval") { closeFilter(); return; }
   if (e.key === "Escape" && !$("#ov").hidden) { $("#ov").hidden = true; return; }
