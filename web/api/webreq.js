@@ -1,12 +1,12 @@
 // Requests from the web page to the Windows worker: Phân tích (analysisreq/<TBMT>), Tải hồ sơ (hsmtreq/<TBMT>)
 // Sync (syncreq/current), Tạo bản tiếng Anh (translationreq/<TBMT>), Tạo HSDT tham khảo (hsdtreq/<TBMT>), Đối chiếu (comparereq/<TBMT>, with the HSDT
 // files the page uploaded to the private "scratch" bucket under hsdt/<TBMT>/, and the pasted text) and Đối chiếu TLKT
-// (tlktreq/<TBMT>, a supplier's technical proposal uploaded under tlkt/<TBMT>/) Gợi ý nhà cung cấp (supplierreq/<TBMT>) and Gợi ý cấu hình (configreq/<TBMT>). Written server-side for a signed-in member, so they never depend on the
+// (tlktreq/<TBMT>, a supplier's technical proposal uploaded under tlkt/<TBMT>/) Gợi ý nhà cung cấp (supplierreq/<TBMT>), Gợi ý cấu hình (configreq/<TBMT>) and its Tìm NCC (findreq/<TBMT>). Written server-side for a signed-in member, so they never depend on the
 // browser's direct database write. POST { coll, items: [{ key, notifyNo?, bidName?, sourceUrl?, auto?, cancel? }] }.
 import { SB_URL, memberFrom } from "./_supabase.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq"]);
+const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 const str = (v, n) => (v == null ? undefined : String(v).slice(0, n));
@@ -33,7 +33,7 @@ export default async function handler(req, res) {
       notifyNo: coll === "syncreq" ? undefined : str(i.notifyNo || i.key, 200), bidName: str(i.bidName, 1000), sourceUrl: str(i.sourceUrl, 1000),
       auto: i.auto ? true : undefined, mode: coll === "syncreq" && i.mode === "new" ? "new" : undefined, requestedAt: at, by: member.email, from: "web",
       // Gợi ý cấu hình: the engines' origin (Xuất xứ), Trung Quốc unless the page says otherwise.
-      ...(coll === "configreq" ? { origin: ["cn", "other", "all"].includes(i.origin) ? i.origin : "cn" } : {}),
+      ...(coll === "configreq" || coll === "findreq" ? { origin: ["cn", "other", "all"].includes(i.origin) ? i.origin : "cn" } : {}),
       ...(coll === "comparereq" ? compareFields(i, "hsdt") : coll === "tlktreq" ? compareFields(i, "tlkt") : {}),
     }));
     return { coll, id: i.key, data, updated_at: at };
