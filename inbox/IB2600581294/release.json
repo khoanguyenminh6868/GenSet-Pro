@@ -3,22 +3,28 @@
     "repo":  "khoanguyenminh6868/GenSet-Pro",
     "files":  [
                   {
-                      "name":  "IB2600581294_QuyetDinhPheDuyetHSMT_19_10_2026.pdf",
-                      "size":  685456,
-                      "asset":  678493731,
+                      "name":  "IB2600581294_QuyetDinhPheDuyetHSMT_28_10_2026.pdf",
+                      "size":  734475,
+                      "asset":  694774554,
                       "assetName":  "01.pdf"
                   },
                   {
                       "name":  "Mục 3.docx",
                       "size":  20399,
-                      "asset":  678493727,
+                      "asset":  694774551,
                       "assetName":  "02.docx"
                   },
                   {
-                      "name":  "Phần 2.docx",
-                      "size":  21622,
-                      "asset":  678493726,
-                      "assetName":  "03.docx"
+                      "name":  "Phần 2 Điều chỉnh (1).pdf",
+                      "size":  416572,
+                      "asset":  694774523,
+                      "assetName":  "03.pdf"
+                  },
+                  {
+                      "name":  "Phần 2 Điều chỉnh.pdf",
+                      "size":  416572,
+                      "asset":  694774522,
+                      "assetName":  "04.pdf"
                   }
               ]
 }
