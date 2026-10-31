@@ -256,7 +256,7 @@ function Invoke-Config {
     if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
     $env:GENBID_CLAUDE = $claude; $env:GENBID_INGEST_TOKEN_FILE = $IngestTokenFile
     $out = Join-Path $LogDir "config-$(Get-Date -Format 'yyyyMMdd-HHmmss').log"
-    Log "Gợi ý cấu hình (Claude $DeepModel, có tìm web)  (log: $out)"
+    Log "Gợi ý cấu hình (Claude $DeepModel, có tìm web) và Tìm NCC (Gemini trước, rồi Claude)  (log: $out)"
     try { [void](Start-Run $node @("`"$cfgJs`"", 'run') $null @('config') $out) }
     finally { Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:GENBID_CLAUDE, Env:GENBID_INGEST_TOKEN_FILE -ErrorAction SilentlyContinue }
     (Get-Content $out -Encoding UTF8 -ErrorAction SilentlyContinue) | Where-Object { $_ } | ForEach-Object { Log "  $_" }
@@ -341,8 +341,8 @@ try {
             else {
                 $warned = @{}
                 $pend = Get-Pending
-                # Gợi ý cấu hình chạy riêng (config-bot.mjs tự trả lời web), khi không có lượt nào khác đang chạy.
-                if (@($pend.config | Where-Object { $_ }).Count -and -not (Test-WorkerRunning) -and -not (Test-Path $RunFile)) { Invoke-Config; $pend = Get-Pending }
+                # Gợi ý cấu hình và Tìm NCC chạy riêng (config-bot.mjs tự trả lời web), khi không có lượt nào khác đang chạy.
+                if (@(@($pend.config) + @($pend.find) | Where-Object { $_ }).Count -and -not (Test-WorkerRunning) -and -not (Test-Path $RunFile)) { Invoke-Config; $pend = Get-Pending }
                 $reqs = Get-Requests $pend
                 $sigs = @($reqs.Keys)
                 $state = Read-Json $StateFile ([pscustomobject]@{})
