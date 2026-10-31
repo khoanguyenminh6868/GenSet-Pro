@@ -1,7 +1,10 @@
 // node --test suppliers/*.test.mjs — the code check of a "Gợi ý cấu hình" answer (config-bot.mjs).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, catalogRecords, byOrigin } from "./config-bot.mjs";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { check, catalogRecords, byOrigin, fitsCap, findCheck } from "./config-bot.mjs";
 
 const sup = [{ id: "s", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Standby kW/kVA | Prime kW/kVA | Engine | Alternator"], rows: ["| SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | UK"] }] }];
 const hsmt = "Chương V. Yêu cầu kỹ thuật\nCông suất liên tục (Prime): ≥ 450 kVA\nĐầu phát: Stamford hoặc tương đương\nTần số 50Hz";
@@ -162,4 +165,22 @@ test("well-known Chinese model codes count as a stated make, foreign codes win",
   for (const m of ["YC6MK420L-D20", "WP10D158E3OONG", "12V190ZL", "SC9D355D2", "YD4105-D60", "FAW CA6DM2-39D", "6135ACaf", "186FA", "KHKTA50T1"]) assert.equal(C.originIn("", m), "cn", m);
   for (const m of ["BF6M1015C-G2A", "S16R-PTA3-C", "4TNV88-GGECC", "B5.9CS4-GT1", "QSNT-G4", "TBD620V12-2A", "4016TAG2"]) assert.equal(C.originIn("", m), "other", m);
   assert.equal(C.originIn("", "ZCDL-K500"), null);
+});
+
+test("Tìm NCC: a find counts only when it passes verify.mjs and a product line covers the tender's power", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "find-test-"));
+  fs.mkdirSync(path.join(dir, "web"));
+  fs.writeFileSync(path.join(dir, "web", "1.txt"), "URL: https://maker.example/g400\nAccessed: 2026-10-31\n\n| Model | Prime kVA | Engine | Alternator\n| MX400 | 400 | WP13D385E200 | HCI444ES");
+  const entry = { id: "maker-x", country: "CN", role: "genset_oem", names: { en: "Maker X" }, website: "https://maker.example/", confidence: "medium",
+    sources: [{ n: 1, file: "web/1.txt", tier: "A", quote: ["| MX400 | 400 | WP13D385E200 | HCI444ES"] }],
+    productLines: [{ kind: "genset", series: "MX", fuel: "diesel", power: { min: 400, max: 400, unit: "kVA", rating: "prime", src: [1] }, src: [1] }] };
+  fs.writeFileSync(path.join(dir, "newCatalog.json"), JSON.stringify([entry, { ...entry, id: "maker-y", sources: [{ ...entry.sources[0], quote: ["an invented sentence"] }] }]));
+  try {
+    const [x, y] = await findCheck(dir, [], { value: 400, unit: "kVA" });
+    assert.deepEqual(x.errors, []);
+    assert.ok(x.fits);
+    assert.ok(y.errors.some((e) => e.includes("không tìm thấy câu trích")));
+    assert.ok(!fitsCap(entry, { value: 1000, unit: "kVA" }));
+    assert.ok(!fitsCap(entry, { value: 400, unit: "kW" }));
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });

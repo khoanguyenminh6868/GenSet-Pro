@@ -1,5 +1,7 @@
 // "Gợi ý" in the Cấu hình gợi ý tab, run on the Windows PC next to the GenBid bot:
 //   node suppliers/config-bot.mjs run            answer every pending configreq/<TBMT> (one Claude agent per request)
+//                                                and findreq/<TBMT> (Tìm NCC: Gemini first, then Claude, find-prompt.md)
+//   node suppliers/config-bot.mjs find-check --dir <dir>          check newCatalog.json of a Tìm NCC folder in code
 //   node suppliers/config-bot.mjs prep --key <TBMT> --out <dir>
 //   node suppliers/config-bot.mjs save --dir <dir> --url <url>     (used by the agent for internet sources)
 //   node suppliers/config-bot.mjs check --dir <dir>                verify result.json in code (prints what failed)
@@ -352,10 +354,14 @@ export function catalogRecords(entries, { existing, readWeb, today }) {
 const git = (cwd, ...a) => execFileSync("git", ["-C", cwd, ...a], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
 // Writes the records into a fresh worktree of the repo (origin/main), checks them with that tree's verify.mjs, posts
 // the ones that pass to the web as supplier/<id> and opens a pull request with them (records, saved pages).
-export async function addToCatalog(dir, key, suppliers) {
+// opts (Tìm NCC): its own branch and PR title, so a Gemini round and a Claude round never share a branch.
+export async function addToCatalog(dir, key, suppliers, opts = {}) {
   const file = path.join(dir, "newCatalog.json");
   if (!fs.existsSync(file)) return { added: [], records: [] };
-  const repo = process.env.GENBID_REPO_DIR || path.join(ROOT, ".."), wt = path.join(os.tmpdir(), "genbid-catalog", key), branch = `catalog/${key.toLowerCase()}`;
+  const repo = process.env.GENBID_REPO_DIR || path.join(ROOT, ".."), branch = opts.branch || `catalog/${key.toLowerCase()}`;
+  const wt = path.join(os.tmpdir(), "genbid-catalog", branch.replace(/[^\w-]+/g, "-"));
+  const title = opts.title || `Danh mục: bổ sung từ Gợi ý cấu hình ${key}`;
+  const body = opts.body || `Tìm trên internet khi Gợi ý cấu hình gói ${key} không có nhà cung cấp phù hợp trong hệ thống. Bản ghi đã qua verify.mjs và đã đăng lên web.`;
   fs.rmSync(wt, { recursive: true, force: true });
   git(repo, "fetch", "-q", "origin", "main");
   git(repo, "worktree", "add", "-f", "-B", branch, wt, "origin/main");
@@ -386,10 +392,9 @@ export async function addToCatalog(dir, key, suppliers) {
       try {
         git(wt, "add", "-A", "suppliers");
         git(wt, "-c", `user.name=${process.env.GENBID_GIT_NAME || "GenBid Bot"}`, "-c", `user.email=${process.env.GENBID_GIT_EMAIL || "genbid-bot@users.noreply.github.com"}`,
-          "commit", "-q", "-m", `Danh mục: bổ sung từ Gợi ý cấu hình ${key} (${records.map((r) => r.id).join(", ")})`);
+          "commit", "-q", "-m", `${title} (${records.map((r) => r.id).join(", ")})`);
         git(wt, "push", "-q", "-f", "-u", "origin", branch);
-        const pr = execFileSync(process.env.GENBID_GH || "gh", ["pr", "create", "--head", branch, "--base", "main", "--title", `Danh mục: bổ sung từ Gợi ý cấu hình ${key}`,
-          "--body", `Tìm trên internet khi Gợi ý cấu hình gói ${key} không có nhà cung cấp phù hợp trong hệ thống. Bản ghi đã qua verify.mjs và đã đăng lên web.`], { cwd: wt, encoding: "utf8" }).trim();
+        const pr = execFileSync(process.env.GENBID_GH || "gh", ["pr", "create", "--head", branch, "--base", "main", "--title", title, "--body", body], { cwd: wt, encoding: "utf8" }).trim();
         for (const a of added) if (!a.error) a.pr = pr.split("\n").pop();
       } catch (e) { for (const a of added) if (!a.error) a.prError = `Đã đăng lên web nhưng chưa mở được PR vào repo: ${String(e.stderr || e.message).trim().slice(0, 200)}`; }
     }
@@ -413,10 +418,7 @@ async function answer(req, suppliers) {
   try {
     await prep(key, dir, req);
     // Same minimal setup as the bot's agent (GenBid-Bot.ps1), plus web search for step 3 of config-prompt.md.
-    const r = spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "text", "--model", process.env.GENBID_CONFIG_MODEL || "opus",
-      "--strict-mcp-config", "--disable-slash-commands", "--tools", "Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"],
-      { cwd: dir, encoding: "utf8", timeout: 40 * 60e3, maxBuffer: 64 << 20, windowsHide: true,
-        input: "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json (và newCatalog.json khi prompt.md yêu cầu). Chạy không người trông, không ai trả lời câu hỏi." });
+    const r = runClaude(dir, "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json (và newCatalog.json khi prompt.md yêu cầu). Chạy không người trông, không ai trả lời câu hỏi.");
     fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
     if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
     // Internet finds that pass verify.mjs join the catalog first, so the configuration's suppliers can point at them.
@@ -431,6 +433,110 @@ async function answer(req, suppliers) {
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }
 
+function runClaude(dir, input) {
+  return spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "text", "--model", process.env.GENBID_CONFIG_MODEL || "opus",
+    "--strict-mcp-config", "--disable-slash-commands", "--tools", "Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"],
+    { cwd: dir, encoding: "utf8", timeout: 40 * 60e3, maxBuffer: 64 << 20, windowsHide: true, input });
+}
+
+// ---------- Tìm NCC (findreq/<TBMT> → findmatch/<TBMT>) ----------
+// "Tìm NCC" next to "Gợi ý" (Khoa, 2026-10-31): search the internet for more suppliers that fit the tender's technical
+// requirements and add them to the catalog. Gemini (Antigravity CLI, Khoa's Google AI Pro account, no Claude tokens)
+// goes first, auto-approving its own tool calls (Khoa allowed it); Claude (Opus) runs only when Gemini fails or finds
+// no supplier that passes verify.mjs and covers the tender's power. Both follow find-prompt.md, in a folder made by prep.
+const AGY = process.env.GENBID_AGY || path.join(process.env.LOCALAPPDATA || "", "agy", "bin", "agy.exe");
+const GEMINI_MODEL = process.env.GENBID_GEMINI_MODEL || "gemini-3.8-flash-medium";
+const ENGINE = { gemini: "Gemini (Antigravity)", claude: "Claude" };
+const FIND_INPUT = "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md và catalog.md, tìm trên internet, chỉ ghi newCatalog.json và find.json (cùng các trang lưu bằng lệnh save). Chạy không người trông, không ai trả lời câu hỏi.";
+function runGemini(dir, input) {
+  if (!fs.existsSync(AGY)) return { error: "chưa cài Antigravity CLI (agy)" };
+  const r = spawnSync(AGY, ["--model", GEMINI_MODEL, "--output-format", "json", "--disable-slash-commands", "--dangerously-skip-permissions", "--print-timeout", "2400s"],
+    { cwd: dir, encoding: "utf8", timeout: 42 * 60e3, maxBuffer: 64 << 20, windowsHide: true, input });
+  let j = null; try { j = JSON.parse(r.stdout); } catch {}
+  return { stdout: r.stdout, stderr: r.stderr, error: j?.status === "SUCCESS" ? "" : (j?.response || r.stderr || r.error?.message || `mã thoát ${r.status}`).trim().slice(0, 300) };
+}
+async function findPrep(key, dir, req) {
+  const info = await prep(key, dir, req);
+  const watch = fs.existsSync(path.join(ROOT, "discover-watchlist.json")) ? JSON.parse(fs.readFileSync(path.join(ROOT, "discover-watchlist.json"), "utf8")) : [];
+  const head = [
+    `# Tìm NCC cho gói ${key}`, "",
+    `Lệnh kiểm tra newCatalog.json: node "${SCRIPT}" find-check --dir .`,
+    `Lệnh kiểm tra đã có: node "${path.join(ROOT, "discover.mjs")}" check "<tên công ty hoặc website>"`,
+    "", "## Công ty Khoa hay làm việc (tìm riêng theo tên trước)", ...watch.map((w) => `- ${w.name}${w.note ? ` (${w.note})` : ""}`), "", "",
+  ].join("\n");
+  const input = path.join(dir, "input.md");
+  fs.writeFileSync(input, head + fs.readFileSync(input, "utf8"), "utf8");
+  fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "find-prompt.md"), "utf8"), "utf8");
+  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin: info.origin, cap: info.cap }), "utf8");
+  return info;
+}
+// A product line of the record that covers the tender's power, in the tender's unit (95% to 140%, as catalog.md).
+export function fitsCap(rec, cap) {
+  if (!cap) return (rec.productLines || []).some((p) => p.power);
+  return (rec.productLines || []).some((p) => p.power?.unit === cap.unit && p.power.min <= cap.value * 1.4 && p.power.max >= cap.value * 0.95);
+}
+// newCatalog.json checked offline, the way addToCatalog will: records built with catalogRecords, then verify.mjs on a
+// copy in <dir>/_check with the saved pages. For a supplier already in the system only its new parts are checked
+// (its own pages are not here) and only its new product lines count for the power.
+export async function findCheck(dir, suppliers, cap) {
+  const file = path.join(dir, "newCatalog.json"), out = [];
+  if (!fs.existsSync(file)) return [{ id: "", errors: ["chưa có newCatalog.json"] }];
+  let entries; try { entries = JSON.parse(fs.readFileSync(file, "utf8")); } catch (e) { return [{ id: "", errors: [`newCatalog.json không phải JSON: ${e.message}`] }]; }
+  const chk = path.join(dir, "_check");
+  fs.rmSync(chk, { recursive: true, force: true }); fs.mkdirSync(path.join(chk, "cn"), { recursive: true });
+  fs.copyFileSync(path.join(ROOT, "verify.mjs"), path.join(chk, "verify.mjs"));
+  const { checkRecord } = await import(pathToFileURL(path.join(chk, "verify.mjs")).href + `?${Date.now()}`);
+  const readWeb = (f) => { const p = path.join(dir, f); return fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
+  const existing = new Map(suppliers.map((s) => [s.id, s]));
+  for (const x of catalogRecords(entries, { existing, readWeb, today: new Date().toISOString().slice(0, 10) })) {
+    if (x.error) { out.push({ id: x.id, errors: [x.error] }); continue; }
+    for (const [f, txt] of Object.entries(x.files)) { fs.mkdirSync(path.dirname(path.join(chk, f)), { recursive: true }); fs.writeFileSync(path.join(chk, f), txt, "utf8"); }
+    const own = new Set(x.nmap.values()), isOwn = (src) => Array.isArray(src) && src.length && src.every((n) => own.has(n));
+    const rec = x.isNew ? x.rec : { ...x.rec, sources: x.rec.sources.filter((s) => own.has(s.n)), productLines: (x.rec.productLines || []).filter((p) => isOwn(p.src)),
+      specTables: (x.rec.specTables || []).filter((t) => own.has(t.n)), strengths: [], certifications: [], contacts: [], vietnam: undefined, founded: null };
+    out.push({ id: x.id, isNew: x.isNew, errors: checkRecord(rec, path.join(chk, "cn", `${x.id}.json`)).errors, fits: fitsCap(rec, cap) });
+  }
+  return out;
+}
+async function find(req, suppliers) {
+  const key = req.key, tried = [];
+  const done = ({ result, error }) => {
+    const at = new Date().toISOString();
+    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
+    return post([...(result ? [{ coll: "findmatch", id: key, data: { at, result } }] : []), { coll: "findreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
+  };
+  try {
+    for (const engine of ["gemini", "claude"]) {
+      const dir = path.join(os.tmpdir(), "genbid-find", `${key}-${engine}`);
+      fs.rmSync(dir, { recursive: true, force: true });
+      try {
+        const { cap } = await findPrep(key, dir, req);
+        const r = engine === "gemini" ? runGemini(dir, FIND_INPUT) : runClaude(dir, FIND_INPUT);
+        fs.writeFileSync(path.join(os.tmpdir(), `genbid-find-${key}-${engine}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
+        if (r.error && !fs.existsSync(path.join(dir, "newCatalog.json"))) { tried.push({ engine: ENGINE[engine], error: r.error }); continue; }
+        const checked = await findCheck(dir, suppliers, cap), fit = checked.filter((c) => !c.errors.length && c.fits);
+        const info = (() => { try { return JSON.parse(fs.readFileSync(path.join(dir, "find.json"), "utf8")); } catch { return {}; } })();
+        const dropped = checked.filter((c) => !fit.includes(c)).map((c) => ({ supplierId: c.id, error: c.errors.length ? `verify.mjs: ${c.errors.slice(0, 3).join("; ")}` : `không có dòng sản phẩm đúng công suất ${cap ? `${cap.value} ${cap.unit}` : ""}` }));
+        if (!fit.length) { tried.push({ engine: ENGINE[engine], error: info.summary || "không tìm được nhà cung cấp nào qua được kiểm tra", dropped }); continue; }
+        // Only the suppliers that passed and fit go to the catalog.
+        const ids = new Set(fit.map((c) => c.id));
+        fs.writeFileSync(path.join(dir, "newCatalog.json"), JSON.stringify(JSON.parse(fs.readFileSync(path.join(dir, "newCatalog.json"), "utf8")).filter((e) => ids.has(e?.id)), null, 1), "utf8");
+        const { added } = await addToCatalog(dir, key, suppliers, { branch: `ncc/${key.toLowerCase()}-${engine}`, title: `Nhà cung cấp: Tìm NCC gói ${key} (${ENGINE[engine]})`,
+          body: `Nút Tìm NCC ở tab Cấu hình gợi ý gói ${key}: ${ENGINE[engine]} tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật${cap ? ` (${cap.value} ${cap.unit})` : ""}. Bản ghi đã qua verify.mjs và đã đăng lên web.` });
+        if (!added.some((a) => !a.error)) { tried.push({ engine: ENGINE[engine], error: "bản ghi không qua được verify.mjs của repo", dropped: added }); continue; }
+        await done({ result: { engine: ENGINE[engine], cap, summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried } });
+        console.log(`${key}: Tìm NCC (${ENGINE[engine]}) bổ sung ${added.filter((a) => !a.error).length} nhà cung cấp`);
+        return;
+      } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+    }
+    await done({ result: { engine: "", summary: "Không tìm được nhà cung cấp mới nào phù hợp yêu cầu kỹ thuật và qua được kiểm tra nguồn.", added: [], skipped: [], notes: [], tried } });
+    console.log(`${key}: Tìm NCC không tìm được ai`);
+  } catch (e) {
+    await done({ error: e.message || String(e) }).catch(() => {});
+    console.log(`${key}: Tìm NCC lỗi ${e.message}`);
+  }
+}
+
 const cmd = process.argv[2];
 if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   if (cmd === "save") console.log(await save(arg("dir", "."), arg("url")));
@@ -441,6 +547,12 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     const { problems, result } = checkDir(dir, local("suppliers.json") || (await api("kind=docs&coll=supplier")).map((d) => d.data), [], local("meta.json")?.origin);
     fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
     console.log(problems.length ? problems.join("\n") : "Không có điểm nào chưa khớp nguồn.");
+  } else if (cmd === "find-check") {
+    // Offline in a folder made for Tìm NCC (suppliers.json, meta.json).
+    const dir = arg("dir", "."), meta = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
+    const res = await findCheck(dir, JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8")), meta.cap);
+    for (const c of res) console.log(`${c.id || "?"}: ${c.errors.length ? `KHÔNG QUA — ${c.errors.join("; ")}` : "qua verify.mjs"}${c.errors.length ? "" : c.fits ? ", phù hợp công suất" : `, CHƯA có dòng sản phẩm phù hợp công suất${meta.cap ? ` ${meta.cap.value} ${meta.cap.unit}` : ""}`}`);
+    if (!res.length) console.log("newCatalog.json rỗng.");
   } else if (cmd === "post") {
     const dir = arg("dir", "."), { result } = checkDir(dir, (await api("kind=docs&coll=supplier")).map((d) => d.data));
     console.log(await post([{ coll: "configmatch", id: arg("key"), data: { at: new Date().toISOString(), result } }, { coll: "configreq", id: arg("key"), data: { notifyNo: arg("key"), requestedAt: arg("requested-at"), doneAt: new Date().toISOString(), error: "" } }]));
@@ -449,9 +561,13 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     if (fs.existsSync(lock) && Date.now() - fs.statSync(lock).mtimeMs < 60 * 60e3) { console.log("SUMMARY: đang có lượt khác chạy"); process.exit(4); }
     fs.writeFileSync(lock, String(process.pid));
     try {
-      const pending = await api("kind=config");
-      if (pending.length) { const suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data); for (const req of pending) await answer(req, suppliers); }
-      console.log(`SUMMARY: ${pending.length} yêu cầu gợi ý cấu hình`);
+      const [pending, finds] = await Promise.all([api("kind=config"), api("kind=find")]);
+      if (pending.length || finds.length) {
+        const suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data);
+        for (const req of pending) await answer(req, suppliers);
+        for (const req of finds) await find(req, suppliers);
+      }
+      console.log(`SUMMARY: ${pending.length} yêu cầu gợi ý cấu hình, ${finds.length} yêu cầu Tìm NCC`);
     } finally { fs.rmSync(lock, { force: true }); }
   } else { console.error("usage: config-bot.mjs run | prep --key K --out D | save --dir D --url U | check --dir D | post --dir D --key K --requested-at T"); process.exit(2); }
 }

@@ -476,7 +476,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, supplier: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, supplier: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
@@ -719,7 +719,7 @@ async function requestWorker(coll, key, extra, what) {
   const t = findTender(key);
   // A TLKT comparison against an uploaded shortened YCKT does not read the HSMT.
   const ownReq = coll === "tlktreq" && (extra.reqFiles?.length || extra.reqText || extra.translate);
-  if (!ownReq && !state.hsmt[key]?.files?.length && !((coll === "hsdtreq" || coll === "supplierreq" || coll === "configreq") && analysisOf(key)?.result)) { toast(isProject(t) ? "Dự án này chưa có tệp. Tải tệp lên ở tab Tổng quan trước." : "Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
+  if (!ownReq && !state.hsmt[key]?.files?.length && !((coll === "hsdtreq" || coll === "supplierreq" || coll === "configreq" || coll === "findreq") && analysisOf(key)?.result)) { toast(isProject(t) ? "Dự án này chưa có tệp. Tải tệp lên ở tab Tổng quan trước." : "Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
   try {
     const n = (await saveRequests(coll, [{ key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", ...extra }])).length;
     if (!n) throw new Error("");
@@ -891,6 +891,8 @@ async function initDb() {
   subscribe("supplierreq", "supplierreq");
   subscribe("configmatch", "configmatch");
   subscribe("configreq", "configreq");
+  subscribe("findmatch", "findmatch");
+  subscribe("findreq", "findreq");
 }
 
 // ---------- HSMT text ----------
@@ -1199,7 +1201,7 @@ function renderDrawer(force = true) {
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   if (state.dtab === "supplier") state.dtab = "info"; // tab Nhà cung cấp đang ẩn
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configreq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1418,6 +1420,7 @@ async function pollPending() {
   for (const key of Object.keys(state.tlktreq || {})) if (workerReqPending("tlktreq", key)) paths.push("tlktreq/" + key, "tlkt/" + key);
   for (const key of Object.keys(state.supplierreq || {})) if (workerReqPending("supplierreq", key)) paths.push("supplierreq/" + key, "suppliermatch/" + key);
   for (const key of Object.keys(state.configreq || {})) if (workerReqPending("configreq", key)) paths.push("configreq/" + key, "configmatch/" + key);
+  for (const key of Object.keys(state.findreq || {})) if (workerReqPending("findreq", key)) paths.push("findreq/" + key, "findmatch/" + key);
   if (paths.length) await state.db.refresh(paths).catch(() => {});
 }
 setInterval(pollPending, 10e3);
@@ -2290,10 +2293,25 @@ function configTabHtml(t) {
   const wait = workerReqPending("configreq", key) ? waitHtml("Đang chờ Agent đọc HSMT và chọn cấu hình động cơ, đầu phát...", state.configreq[key].requestedAt) : "";
   const err = !wait && workerReqError("configreq", key);
   const usedOrigin = CFG_ORIGIN.find(([k]) => k === prev?.result?.origin)?.[1];
-  return wait + (err ? h`<div class="note warn">${err}</div>` : "")
-    + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${wait ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
-    + h`<div class="row"><button class="btn primary" id="cfgRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button></div>`
+  // Tìm NCC (Khoa, 2026-10-31): search the internet for more suppliers that fit the requirements and add them to the
+  // catalog (config-bot.mjs, find-prompt.md): Gemini first, Claude only when Gemini finds none that passes verify.mjs.
+  const fprev = state.findmatch[key], fwait = workerReqPending("findreq", key) ? waitHtml("Đang chờ Agent tìm nhà cung cấp trên internet (Gemini trước, không được thì Claude)...", state.findreq[key].requestedAt) : "";
+  const ferr = !fwait && workerReqError("findreq", key), busy = wait || fwait;
+  return wait + fwait + (err ? h`<div class="note warn">${err}</div>` : "") + (ferr ? h`<div class="note warn">Tìm NCC: ${ferr}</div>` : "")
+    + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${busy ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
+    + h`<div class="row"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật và bổ sung vào danh mục">Tìm NCC</button></div>`
+    + (fprev?.result && !fwait ? findResultHtml(fprev) : "")
     + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}</div>` + cfgResultHtml(prev.result) : "");
+}
+function findResultHtml(f) {
+  const r = f.result, ok = (r.added || []).filter((a) => !a.error);
+  return h`<div class="note${ok.length ? "" : " warn"}"><b>Tìm NCC</b> <span class="muted small">lúc ${fmtDate(f.at)}${r.engine ? ` · ${r.engine}` : ""}${r.cap ? ` · công suất ${r.cap.value} ${r.cap.unit}` : ""}</span>${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
+    ${raw(ok.length ? "" : '<p class="small">Chưa bổ sung được nhà cung cấp nào. Bấm Gợi ý lại để dùng danh mục hiện có.</p>')}
+    ${raw(cfgAddedHtml({ catalogAdded: r.added }).replace(/^<div class="note">|<\/div>$/g, ""))}
+    ${raw(ok.length ? '<p class="small muted">Bấm Gợi ý lại để chọn cấu hình với các nhà cung cấp vừa bổ sung.</p>' : "")}
+    ${raw(r.tried?.length ? h`<details><summary class="small">Các lượt tìm (${r.tried.length})</summary><ul class="suplist">${raw(r.tried.map((t) => h`<li class="small">${t.engine}: ${t.error || ""}${raw((t.dropped || []).length ? h`<div class="muted small">${t.dropped.map((d) => `${d.supplierId || "?"}: ${d.error || ""}`).join(" · ")}</div>` : "")}</li>`).join(""))}</ul></details>` : "")}
+    ${raw(r.skipped?.length ? h`<details><summary class="small">Đã xem nhưng bỏ qua (${r.skipped.length})</summary><ul class="suplist">${raw(r.skipped.map((s) => h`<li class="small"><b>${s.name || ""}</b> — ${s.reason || ""}</li>`).join(""))}</ul></details>` : "")}
+    ${raw(r.notes?.length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}</div>`;
 }
 function cfgSrcHtml(src) {
   if (!src) return "";
@@ -2654,6 +2672,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "catBack") { catView.open = null; renderCatalog(); $("#mdl").scrollTop = listScroll.cat; return; }
   if (e.target.id === "catMore") { catView.limit += 100; renderCatList(); return; }
   if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn" }, "gợi ý cấu hình"); return; }
+  if (e.target.id === "cfgFind") { requestWorker("findreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn" }, "tìm nhà cung cấp"); return; }
   if (e.target.id === "spRun") { requestWorker("supplierreq", e.target.dataset.key, {}, "gợi ý nhà cung cấp"); return; }
   if (e.target.id === "syncNoteX") { syncState.note = null; renderTop(); return; }
   const wx = e.target.closest("[data-wonx]");
