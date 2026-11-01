@@ -729,6 +729,25 @@ async function prepOne(kind, key, requestedAt, dir) {
       if (!sub.trim()) fs.writeFileSync(path.join(dir, "error.txt"), `Tài liệu kỹ thuật đề xuất không có chữ đọc được (${names.join("; ") || "không có tệp"}). Chỉ đọc chữ, không đọc hình: hãy gửi bản PDF có chữ, DOCX hoặc XLSX.`, "utf8");
     } else if (unread.length) input += `\nTệp HSDT chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
   }
+  if (kind === "hsdt") {
+    // Template HSDT and the supplier's configuration (Khoa, 2026-11-01), both optional: the reference bid follows the
+    // template's layout and offers the supplier's equipment. Like an HSDT, either stays in this folder.
+    const names = (files, pasted) => [...[].concat(files || []).map((f) => f.name), ...[...String(pasted || "").matchAll(/^--- Tệp: (.+?) ---$/gm)].map((m) => m[1])];
+    const basis = {};
+    for (const [k, sub, label, head] of [
+      ["template", "template", "template HSDT", "TEMPLATE HSDT (mẫu hồ sơ dự thầu của công ty: soạn theo bố cục, lời văn và bảng của mẫu này)"],
+      ["config", "ncc", "cấu hình NCC", "CẤU HÌNH CỦA NHÀ CUNG CẤP (thiết bị chào thầu: lấy thông số đề xuất từ đây)"],
+    ]) {
+      const files = req[k + "Files"], pasted = req[k + "Text"];
+      if (![].concat(files || []).length && !String(pasted || "").trim()) continue;
+      const { text: tx, unread } = await scratchDocs(files, pasted, path.join(dir, sub));
+      basis[k] = names(files, pasted);
+      input += `\n## ${head}\n${tx || "(không có chữ)"}\n`;
+      if (unread.length) input += `\nTệp ${label} chưa đọc được chữ (scan, ảnh, .doc): ${unread.join("; ")}. Đọc bằng Read (ảnh, PDF theo trang) hoặc Render-GenBidScan.ps1.\n`;
+    }
+    if (Object.keys(basis).length) writeJson(path.join(dir, "meta.json"), { ...readJson(path.join(dir, "meta.json"), {}), basis });
+    log(`${KIND_NAME[kind]} ${key}: template ${basis.template ? basis.template.join(", ") : "không"}; cấu hình NCC ${basis.config ? basis.config.join(", ") : "không"}`);
+  }
   fs.writeFileSync(path.join(dir, "input.md"), input, "utf8");
   fs.writeFileSync(path.join(dir, "src-req.txt"), reqSrc, "utf8");
   if (reqUnread) writeJson(path.join(dir, "src-unread.json"), { ...readJson(path.join(dir, "src-unread.json"), {}), req: true });
@@ -738,6 +757,7 @@ async function prepOne(kind, key, requestedAt, dir) {
   if (scans.length && text.length < 20000) why.push("HSMT chủ yếu là bản scan");
   if (kind === "compare" && /Tệp HSDT chưa đọc được chữ/.test(input)) why.push("HSDT có tệp chưa đọc được chữ");
   if (kind === "tlkt" && /Tệp YCKT rút gọn chưa đọc được chữ/.test(input)) why.push("YCKT rút gọn có tệp chưa đọc được chữ");
+  if (kind === "hsdt" && /Tệp (template HSDT|cấu hình NCC) chưa đọc được chữ/.test(input)) why.push("template HSDT hoặc cấu hình NCC có tệp chưa đọc được chữ");
   if (input.length > 450000) why.push("dữ liệu quá lớn cho một lần gọi");
   if (!ownReq && !full && !notice?.info) why.push("chưa có chữ HSMT trên web");
   if (why.length && !fs.existsSync(path.join(dir, "error.txt"))) fs.writeFileSync(path.join(dir, "AGENT"), why.join("; "), "utf8");
@@ -1034,7 +1054,7 @@ async function runFinish() {
           rows.push({ coll: "tlkt", id: meta.key, data: { ...cur, resultEn: result, resultEnAt: meta.at } });
         }
         else if (meta.kind === "supplier") rows.push({ coll: "suppliermatch", id: meta.key, data: { result, at, candidates: meta.candidates, by: "hsmt-worker" } });
-        else rows.push({ coll: meta.kind, id: meta.key, data: { result, at, ...(meta.ownReq ? { ownReq: true } : {}) } });
+        else rows.push({ coll: meta.kind, id: meta.key, data: { result, at, ...(meta.ownReq ? { ownReq: true } : {}), ...(meta.basis ? { basis: meta.basis } : {}) } });
       }
       // No result and no error.txt: leave the request waiting; GenBid-Bot.ps1 answers it with the round's error.
       if (rows.length) rows.push(reqDoc(""));
