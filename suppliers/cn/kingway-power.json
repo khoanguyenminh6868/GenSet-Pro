@@ -2,7 +2,7 @@
   "id": "kingway-power",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Qingdao Kingway Industry Co., Ltd.",
     "zh": null,
@@ -33,14 +33,23 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 40,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          102
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        102
       ]
     },
     {
@@ -100,9 +109,7 @@
     }
   ],
   "exportMarkets": [],
-  "missing": [
-    "Chưa có dải công suất trên trang đã đọc"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -131,7 +138,8 @@
       "accessedAt": "2026-10-28",
       "tier": "A",
       "quote": [
-        "Model: KGY250L"
+        "Model: KGY250L",
+        "Supply 40KVA-600KVA Natural Gas LNG LPG Biogas"
       ],
       "file": "sources/kingway-power/102.md"
     },
@@ -337,7 +345,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-02",
   "checkedBy": "claude-code",
   "specTables": [
     {
