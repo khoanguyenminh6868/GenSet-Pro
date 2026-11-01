@@ -1,0 +1,110 @@
+{
+  "id": "blue-star-power",
+  "country": "US",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Blue Star Power Systems, Inc.",
+    "zh": null,
+    "brands": [
+      "Blue Star"
+    ]
+  },
+  "website": "https://www.bluestarps.com/",
+  "hq": {
+    "province": "Minnesota",
+    "city": "North Mankato"
+  },
+  "founded": 2004,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel và khí 20–2000 kWe, tích hợp hệ thống phát điện",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Thành lập 2004; đạt UL 2200 & CSA (2021)",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel and gaseous driven generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "UL 2200",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "CSA",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Câu 'ranging from 20 to 2000 kWe' bị ngắt dòng trong PDF nên chỉ trích được phần '20 to 2000 kWe'"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.bluestarps.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "BLUE STAR POWER SYSTEMS | 2250 CARLSON DRIVE, NORTH MANKATO MINNESOTA 56003",
+        "©2026 by Blue Star Power Systems"
+      ],
+      "file": "sources/blue-star-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://power.bluestarps.com/media/Submittal/1_History.pdf",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Blue Star Power Systems, a power generation systems integration specialist,",
+        "20 to 2000 kWe. Founded in 2004 as a refurbishing company of existing power",
+        "UL 2200 & CSA - 2021"
+      ],
+      "file": "sources/blue-star-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
