@@ -269,6 +269,9 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 /* Supplier list columns: Năm thành lập and Độ tin cậy narrow, Vai trò and Động cơ wider (Khoa, 2026-11-01). */
 table.supmain{table-layout:fixed}table.supmain th{white-space:normal}table.supmain th:nth-child(1){width:23%}table.supmain th:nth-child(2){width:17%}table.supmain th:nth-child(3){width:8%}table.supmain th:nth-child(4){width:21%}table.supmain th:nth-child(5){width:20%}table.supmain th:nth-child(6){width:11%}table.supmain td{overflow-wrap:anywhere}table.supmain .chip{white-space:normal}
 @media (max-width:640px){.mbanner .tag{display:none}.mbanner h2{font-size:16px}.mbanner .mark{width:30px;height:30px}}
+/* Phone: the search and filter rows fold behind one button, tap to open (Khoa, 2026-11-02). */
+.filtrows{display:flex;flex-direction:column;gap:10px}.filttg{display:none}.filttg .chev{transition:transform .15s}.filttg[aria-expanded="true"] .chev{transform:rotate(180deg)}
+@media (max-width:640px){.filttg{display:flex;gap:6px;align-items:center;align-self:stretch}.filttg .small{margin-left:auto}.filtrows:not(.open){display:none}}
 .supcard{padding:12px;display:flex;flex-direction:column;gap:6px;margin:8px 0}.suprow select,.suprow input{min-width:0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
 .tablewrap table{font-size:13px}
@@ -2119,9 +2122,18 @@ function supMatches(s) {
   if (q && ![s.id, s.names?.en, s.names?.zh, ...(s.names?.brands || []), s.hq?.province, s.hq?.city].some((x) => String(x || "").toLowerCase().includes(q))) return false;
   return !(f.engine || f.fuel || Number(f.power) > 0) || supLinesFor(s).length > 0;
 }
+// Phone: the filter rows of the supplier / catalog window fold behind one button (CSS .filttg); closed each time the window opens, kept across re-renders.
+let filtOpen = false;
+const filtToggle = (id) => h`<button type="button" class="btn sm filttg" id="${id}Tg" aria-expanded="${String(filtOpen)}">Tìm kiếm / lọc <span class="chev">▾</span><span class="muted small" id="${id}N"></span></button><div class="filtrows${filtOpen ? " open" : ""}" id="${id}">`;
+function bindFilt(id) {
+  const b = $(`#${id}Tg`), box = $(`#${id}`);
+  b.onclick = () => { filtOpen = !filtOpen; box.classList.toggle("open", filtOpen); b.setAttribute("aria-expanded", String(filtOpen)); };
+}
+const filtNote = (id, n, total) => { if ($(`#${id}N`)) $(`#${id}N`).textContent = (n ? `${n} bộ lọc · ` : "") + total; };
 function openSuppliers(id) {
   supOpenId = id || null;
-  modal(mBanner("sup", "Nhà cung cấp máy phát điện", "Mỗi thông tin đều có nguồn kèm theo") + '<div id="supBody"></div>', () => renderSuppliers(), "wide pane");
+  filtOpen = false;
+  modal(mBanner("sup", "Nhà cung cấp", "Mỗi thông tin đều có nguồn kèm theo") + '<div id="supBody"></div>', () => renderSuppliers(), "wide pane");
 }
 function renderSuppliers() {
   const body = $("#supBody");
@@ -2131,21 +2143,22 @@ function renderSuppliers() {
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu nhà cung cấp.</div>`; return; }
   const engines = [...new Set(all.flatMap((s) => (s.productLines || []).flatMap((p) => p.engineMakes || [])).map((m) => m.replace(/\s*\(.*\)$/, "")))].sort();
   const f = supFilter, opt = (v, l, cur) => h`<option value="${v}" ${v === cur ? "selected" : ""}>${l}</option>`;
-  body.innerHTML = h`<div class="row suprow">
+  body.innerHTML = h`${raw(filtToggle("supFilt"))}<div class="row suprow">
       <input type="search" id="supQ" placeholder="Tìm tên, thương hiệu, tỉnh..." value="${f.q}" style="flex:1;min-width:180px">
-      <select id="supRole">${raw(opt("", "Mọi vai trò", f.role) + Object.entries(SUP_ROLE).map(([k, l]) => opt(k, l, f.role)).join(""))}</select>
-      <select id="supConf">${raw(opt("", "Mọi độ tin cậy", f.conf) + [["high", "Tin cậy cao"], ["medium", "Trung bình"], ["low", "Chưa xác minh"]].map(([k, l]) => opt(k, l, f.conf)).join(""))}</select>
-      <select id="supEngine">${raw(opt("", "Mọi hãng động cơ", f.engine) + engines.map((m) => opt(m, m, f.engine)).join(""))}</select>
-      <select id="supFuel">${raw(opt("", "Mọi nhiên liệu", f.fuel) + [["diesel", "Diesel"], ["gas", "Khí gas"], ["dual", "Hai nhiên liệu"], ["hfo", "Dầu nặng HFO"]].map(([k, l]) => opt(k, l, f.fuel)).join(""))}</select>
+      <select id="supRole">${raw(opt("", "Vai trò", f.role) + Object.entries(SUP_ROLE).map(([k, l]) => opt(k, l, f.role)).join(""))}</select>
+      <select id="supConf">${raw(opt("", "Độ tin cậy", f.conf) + [["high", "Tin cậy cao"], ["medium", "Trung bình"], ["low", "Chưa xác minh"]].map(([k, l]) => opt(k, l, f.conf)).join(""))}</select>
+      <select id="supEngine">${raw(opt("", "Hãng động cơ", f.engine) + engines.map((m) => opt(m, m, f.engine)).join(""))}</select>
+      <select id="supFuel">${raw(opt("", "Nhiên liệu", f.fuel) + [["diesel", "Diesel"], ["gas", "Khí gas"], ["dual", "Hai nhiên liệu"], ["hfo", "Dầu nặng HFO"]].map(([k, l]) => opt(k, l, f.fuel)).join(""))}</select>
     </div>
     <div class="row suprow">
       <label class="muted small" for="supPower">Công suất cần</label>
       <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="vd. 500">
       <select id="supUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
       <span class="spacer"></span><span class="muted small" id="supCount"></span>
-    </div>
+    </div></div>
     <div class="mscroll"><div id="supList"></div></div>`;
   renderSupList();
+  bindFilt("supFilt");
   const set = (k, v) => { supFilter = { ...supFilter, [k]: v }; renderSupList(); };
   $("#supQ").oninput = (e) => set("q", e.target.value);
   $("#supRole").onchange = (e) => set("role", e.target.value);
@@ -2158,6 +2171,7 @@ function renderSuppliers() {
 function renderSupList() {
   const list = supAll().filter(supMatches), filtered = supFilter.engine || supFilter.fuel || Number(supFilter.power) > 0;
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
+  filtNote("supFilt", [supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.engine, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th title="Năm thành lập">Năm TL</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
@@ -2312,6 +2326,7 @@ function catSpecsCell(e) {
 }
 const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${catVia(e)}</div>` : '<span class="muted">Nguồn không ghi hãng</span>');
 function openCatalog(kind, key) {
+  filtOpen = false;
   catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}) };
   modal(mBanner("cat", CAT_KIND[kind].title, "Rút từ bảng thông số của các nhà cung cấp", "catTitle") + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
 }
@@ -2336,12 +2351,12 @@ function renderCatalog() {
   const specOpts = Object.entries(all.reduce((m, e) => { for (const g of e.specs || []) m[g.key] = [g.vi, ((m[g.key] || [])[1] || 0) + 1]; return m; }, {})).map(([k, [vi, n]]) => [k, vi, n]).sort((a, b) => b[2] - a[2]);
   if (catView.spec && !specOpts.some(([k]) => k === catView.spec)) catView.spec = "";
   const f = catView, opt = (v, l, cur) => h`<option value="${v}" ${String(v) === String(cur) ? "selected" : ""}>${l}</option>`;
-  body.innerHTML = h`<div class="row suprow">
+  body.innerHTML = h`${raw(filtToggle("catFilt"))}<div class="row suprow">
       <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:180px">
       <select id="catKind">${raw(Object.entries(CAT_KIND).map(([k, x]) => opt(k, `${x.one.replace(/^./, (c) => c.toUpperCase())} (${cat[x.list].length})`, f.kind)).join(""))}</select>
-      <select id="catMake">${raw(opt("", "Mọi hãng", f.make) + makes.map(([m, n]) => opt(m, m === "—" ? `Nguồn không ghi hãng (${n})` : `${m} (${n})`, f.make)).join(""))}</select>
-      <select id="catFreq">${raw(opt("", "Mọi tần số", f.freq) + opt("50", "50 Hz", f.freq) + opt("60", "60 Hz", f.freq))}</select>
-      <select id="catSpec">${raw(opt("", "Mọi thông số", f.spec) + specOpts.map(([k, vi, n]) => opt(k, `Có ${vi.toLowerCase()} (${n})`, f.spec)).join(""))}</select>
+      <select id="catMake">${raw(opt("", "Hãng", f.make) + makes.map(([m, n]) => opt(m, m === "—" ? `Nguồn không ghi hãng (${n})` : `${m} (${n})`, f.make)).join(""))}</select>
+      <select id="catFreq">${raw(opt("", "Tần số", f.freq) + opt("50", "50 Hz", f.freq) + opt("60", "60 Hz", f.freq))}</select>
+      <select id="catSpec">${raw(opt("", "Thông số", f.spec) + specOpts.map(([k, vi, n]) => opt(k, `Có ${vi.toLowerCase()} (${n})`, f.spec)).join(""))}</select>
     </div>
     <div class="row suprow">
       <label class="muted small" for="catPower">Tổ máy cần</label>
@@ -2349,10 +2364,11 @@ function renderCatalog() {
       <select id="catUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
       <select id="catSort">${raw([["sup", "Nhiều nhà cung cấp nhất"], ["power", "Công suất tổ máy tăng dần"], ["model", "Model A–Z"]].map(([k, l]) => opt(k, l, f.sort)).join(""))}</select>
       <span class="spacer"></span><span class="muted small" id="catCount"></span>
-    </div>
+    </div></div>
     <div class="mscroll"><div id="catList"></div>
     <div class="muted small" style="margin-top:10px">Rút từ bảng thông số trên website của các nhà cung cấp (mỗi dòng giữ nguyên văn, có link nguồn). Công suất là của tổ máy dùng model đó, không phải công suất trục của động cơ. Hãng chỉ ghi khi nguồn ghi rõ. Thông số khác (xi lanh, tiêu hao nhiên liệu, độ ồn...) chép nguyên văn theo nhãn cột của nguồn; tiêu hao nhiên liệu, độ ồn, kích thước, khối lượng là của tổ máy.</div></div>`;
   renderCatList();
+  bindFilt("catFilt");
   const set = (k, v) => { catView = { ...catView, [k]: v, limit: 60 }; renderCatList(); };
   $("#catKind").onchange = (e) => { catView = { ...catView, kind: e.target.value, make: "", q: "", spec: "", limit: 60 }; renderCatalog(); };
   $("#catSpec").onchange = (e) => set("spec", e.target.value);
@@ -2369,6 +2385,7 @@ function renderCatList() {
   if (catView.sort === "power") list = list.slice().sort((a, b) => ((a.kva || a.kw || [1e9])[0] - (b.kva || b.kw || [1e9])[0]));
   else if (catView.sort === "model") list = list.slice().sort((a, b) => a.model.localeCompare(b.model));
   if ($("#catCount")) $("#catCount").textContent = `${list.length} model`;
+  filtNote("catFilt", [catView.q.trim(), catView.make, catView.freq, catView.spec, Number(catView.power) > 0].filter(Boolean).length, `${list.length} model`);
   const shown = list.slice(0, catView.limit);
   $("#catList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>${catView.kind === "controller" ? "Dòng nguồn" : "Thông số"}</th><th>Tần số</th><th>Nhà cung cấp</th></tr></thead><tbody>${raw(shown.map((e) => h`<tr data-catitem="${e.key}">
       <td><b class="hlname">${e.model}</b>${raw(e.names.length > 1 ? h`<div class="muted small">cũng ghi: ${e.names.filter((x) => x !== e.model).slice(0, 3).join(", ")}</div>` : "")}</td>
