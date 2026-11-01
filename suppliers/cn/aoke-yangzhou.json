@@ -1,0 +1,70 @@
+{
+  "id": "aoke-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "扬州奥克发电设备有限公司",
+    "brands": [
+      "奥克"
+    ]
+  },
+  "website": "http://www.aokepower.cn/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà máy tổ máy tại Dương Châu: thiết kế, sản xuất, bán hàng, hậu mãi",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "康明斯"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Danh mục chỉ ghi từng mức công suất ngắn (10KW ... 2500KW), chưa ghi được dải; năm thành lập 1982 chỉ có trên trang bên thứ ba (powershow.cn) nên không ghi"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.aokepower.cn/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "奥克发电设备有限公司位于“中国发电组之乡”江苏扬州。公司集设计、研发、生产、销售、售后为一体，是构筑智能、节能型发电机组的提供者！",
+        "近期，来自贵州的黄总在我司采购了一台大型柴油发电机组，机组采用中美合资康明斯柴油机"
+      ],
+      "file": "sources/aoke-yangzhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
