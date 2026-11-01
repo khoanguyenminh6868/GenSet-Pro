@@ -2,7 +2,7 @@
   "id": "sevenpower-chengdu",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Chengdu Sevenpower Generating Equipment Co., Ltd.",
     "zh": null,
@@ -26,14 +26,23 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 8,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          106
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        106
       ]
     }
   ],
@@ -46,9 +55,7 @@
     }
   ],
   "exportMarkets": [],
-  "missing": [
-    "Chưa có dải công suất"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -116,7 +123,8 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Item | | Model | SP90N"
+        "| Item | | Model | SP90N",
+        "CCHP with power range from 8kw to 1000kw."
       ],
       "file": "sources/sevenpower-chengdu/106.md"
     },
@@ -312,7 +320,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code",
   "specTables": [
     {

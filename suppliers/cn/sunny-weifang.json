@@ -2,7 +2,7 @@
   "id": "sunny-weifang",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Weifang Sunny Power Machinery Co.,Ltd",
     "zh": null,
@@ -24,7 +24,40 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 5,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Diesel engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 15,
+        "max": 500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
@@ -50,9 +83,7 @@
     }
   ],
   "exportMarkets": [],
-  "missing": [
-    "Chưa có dải công suất"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 2,
@@ -61,7 +92,8 @@
       "tier": "A",
       "quote": [
         "Weifang Sunny Power Machinery Co., Ltd. is located in China Power Capital - Weifang City",
-        "We have been approved by ISO9001 and CE."
+        "We have been approved by ISO9001 and CE.",
+        "diesel engine 15-500KW, diesel generator 5-2000KW"
       ],
       "file": "sources/sunny-weifang/2.md"
     },
@@ -97,7 +129,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code",
   "controllers": [
     {

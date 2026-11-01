@@ -2,7 +2,7 @@
   "id": "deutz-ag",
   "country": "DE",
   "role": "engine_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "DEUTZ AG",
     "zh": null,
@@ -77,12 +77,36 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "engine",
+      "series": "DEUTZ diesel engines (off-highway, stationary)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 18,
+        "max": 620,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang công khai không ghi dải công suất của G-Drive / Classic GenSets (deutz.com chặn trình đọc thường, lưu qua firecrawl)",
     "Liên doanh tại Trung Quốc: huachai-deutz"
   ],
   "sources": [
@@ -109,9 +133,19 @@
         "Executive Vice President and CEO Business Unit Engines DEUTZ AG"
       ],
       "file": "sources/deutz-ag/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.deutz.com/en/products/diesel-engines/",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "DEUTZ diesel engines in the power range from 18 to 620 kW offer versatile solutions in the off-highway sector."
+      ],
+      "file": "sources/deutz-ag/3.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-03",
   "checkedBy": "discover-bot (Claude)"
 }

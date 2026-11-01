@@ -2,7 +2,7 @@
   "id": "keliang-fuan",
   "country": "CN",
   "role": "alternator_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Fuan Keliang Electrical Machinery Co.,Ltd.",
     "zh": null,
@@ -62,12 +62,37 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "alternator",
+      "series": "STC series",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 3,
+        "max": 75,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          108
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        108
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang chủ không ghi dải công suất và chứng chỉ",
+    "Chưa có chứng chỉ; dải công suất mới có cho dòng STC",
     "Tỉnh/thành lấy từ tên công ty (Fuan)"
   ],
   "sources": [
@@ -108,7 +133,8 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Model | Output | Installing dimensions | External dimensions"
+        "| Model | Output | Installing dimensions | External dimensions",
+        "Power Output Spectrum: 3kW - 75kW."
       ],
       "file": "sources/keliang-fuan/108.md"
     },
@@ -124,7 +150,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-03",
   "checkedBy": "discover-bot",
   "specTables": [
     {

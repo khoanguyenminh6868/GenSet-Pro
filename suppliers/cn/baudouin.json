@@ -2,7 +2,7 @@
   "id": "baudouin",
   "country": "FR",
   "role": "engine_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Société Internationale des Moteurs Baudouin",
     "zh": null,
@@ -50,13 +50,61 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "engine",
+      "series": "PowerKit diesel engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 18,
+        "max": 4125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "PowerKit lean burn gas engines",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 63,
+        "max": 1750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
-  "missing": [
-    "Trang chủ chỉ ghi mức tối đa (up to 6250 kVA), chưa có dải công suất động cơ phát điện"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -70,9 +118,20 @@
         "Discover our range of diesel generator sets, specifically designed to meet the needs of the demanding data centre industry."
       ],
       "file": "sources/baudouin/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://baudouin.com/powergen-solutions/",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Our powergen solutions include our PowerKit engines offer the widest range on the market, from 18 to 4125 kVA",
+        "Baudouin gas engines offer a power range from 63 to 1750 kVA."
+      ],
+      "file": "sources/baudouin/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-03",
   "checkedBy": "discover-bot (Claude)"
 }

@@ -2,7 +2,7 @@
   "id": "kwise-generator",
   "country": "CN",
   "role": "alternator_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "FUJIAN KWISE GENERATOR CO.,LTD",
     "zh": "航天凯威斯电气（福州）有限公司",
@@ -44,13 +44,36 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "alternator",
+      "series": "High Voltage Alternator (6300/10500/13800 V)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 375,
+        "max": 5000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
-  "missing": [
-    "Chưa có dải kVA"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -62,9 +85,19 @@
         "We joined the ADDSINO Co.,Ltd, a subsidiary of the CASIC."
       ],
       "file": "sources/kwise-generator/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://kwisegenerator.com/high-voltage-alternator/",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 50/60Hz | 6300V 10500V 13800V | 4/6/8/10 poles | 300-4000KW 375-5000kVA |"
+      ],
+      "file": "sources/kwise-generator/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code"
 }

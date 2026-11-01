@@ -2,7 +2,7 @@
   "id": "nenjo-generator",
   "country": "CN",
   "role": "alternator_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Jiangsu Nenjo Generator Technology Co., Ltd.",
     "zh": null,
@@ -39,6 +39,31 @@
       ],
       "src": [
         2
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "HJG high voltage alternator 10500V",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 500,
+        "max": 2800,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
       ]
     }
   ],
@@ -81,9 +106,7 @@
     }
   ],
   "exportMarkets": [],
-  "missing": [
-    "Chưa có dải kVA"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 2,
@@ -165,10 +188,20 @@
         "| High base | ModeL | KW | KW"
       ],
       "file": "sources/nenjo-generator/111.md"
+    },
+    {
+      "n": 3,
+      "url": "https://en.nenjo.cn/products_details/62.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| NENJO 500-2800KW 10500V ALTERNATOR |"
+      ],
+      "file": "sources/nenjo-generator/3.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code",
   "specTables": [
     {

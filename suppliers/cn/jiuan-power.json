@@ -2,7 +2,7 @@
   "id": "jiuan-power",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Guangzhou JIUAN Mechanical and Electrical Co.,LTD",
     "zh": null,
@@ -36,14 +36,23 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 20,
+        "max": 5000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          101
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        101
       ]
     }
   ],
@@ -74,9 +83,7 @@
     }
   ],
   "exportMarkets": [],
-  "missing": [
-    "Chỉ có mức tối đa 5 MW, chưa có dải đầy đủ"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -97,7 +104,8 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "| Model | CDC1100KVA"
+        "| Model | CDC1100KVA",
+        "Power: From 20kVA to 5000kVA (5MW)."
       ],
       "file": "sources/jiuan-power/101.md"
     },
@@ -463,7 +471,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code",
   "specTables": [
     {

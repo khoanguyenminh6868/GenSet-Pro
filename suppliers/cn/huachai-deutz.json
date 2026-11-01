@@ -2,7 +2,7 @@
   "id": "huachai-deutz",
   "country": "CN",
   "role": "engine_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Hebei Huabei Diesel Engine Co.,Ltd. (Huachai)",
     "zh": null,
@@ -54,6 +54,31 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gensets (Deutz, Cummins and other engines)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
     }
   ],
   "certifications": [
@@ -84,8 +109,7 @@
   ],
   "exportMarkets": [],
   "missing": [
-    "Lưu ý xuất xứ: động cơ Deutz sản xuất theo giấy phép tại TQ có C/O Trung Quốc",
-    "Chưa có dải công suất"
+    "Lưu ý xuất xứ: động cơ Deutz sản xuất theo giấy phép tại TQ có C/O Trung Quốc"
   ],
   "sources": [
     {
@@ -95,7 +119,8 @@
       "tier": "A",
       "quote": [
         "Hebei Huabei Diesel Engine Co., Ltd (hereinafter called as Huachai) established in 1970, is affiliated with NORINCO, one 100% state-owned company.",
-        "Huachai Deutz engines have CE, ISO9001/14001, TUV, TS16949 Certificates."
+        "Huachai Deutz engines have CE, ISO9001/14001, TUV, TS16949 Certificates.",
+        "massively produces 10-1000KW gensets assembled with Deutz"
       ],
       "file": "sources/huachai-deutz/1.md"
     },
@@ -361,7 +386,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code",
   "specTables": [
     {

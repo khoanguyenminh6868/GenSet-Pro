@@ -2,7 +2,7 @@
   "id": "cldj-fujian",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "福安市昌隆电机有限公司",
@@ -36,14 +36,23 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 10,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2
       ]
     },
     {
@@ -67,7 +76,7 @@
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang chủ / giới thiệu không ghi dải công suất, chứng chỉ"
+    "Chưa có chứng chỉ"
   ],
   "sources": [
     {
@@ -80,9 +89,19 @@
         "专业制造柴油发电机/发电机，坐落在福安市城阳镇铁湖工业区金业路6号，公司创办于2002年，工厂占地8000多平方米，建筑面积5000多平方米，专业生产柴油发电机组"
       ],
       "file": "sources/cldj-fujian/1.md"
+    },
+    {
+      "n": 2,
+      "url": "http://www.fjcldj.com/about.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "单机功率范围从10KW至2000KW达400多种规格"
+      ],
+      "file": "sources/cldj-fujian/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-03",
   "checkedBy": "discover-bot (Claude)"
 }

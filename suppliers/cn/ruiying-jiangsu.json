@@ -2,7 +2,7 @@
   "id": "ruiying-jiangsu",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "江苏瑞营机械制造有限公司",
@@ -33,7 +33,15 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 2,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [
@@ -50,7 +58,7 @@
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang không ghi dải công suất, năm thành lập, chứng chỉ"
+    "Trang không ghi năm thành lập, chứng chỉ"
   ],
   "sources": [
     {
@@ -61,12 +69,13 @@
       "quote": [
         "版权所有©江苏瑞营机械制造有限公司",
         "瑞营开架型柴油发电机组由柴油发动机，发电机，底盘和控制系统等组成",
-        "瑞营拖车型柴油发电机组，由柴油发动机，发电机，底盘，控制系统，静音外壳和拖车等组成。"
+        "瑞营拖车型柴油发电机组，由柴油发动机，发电机，底盘，控制系统，静音外壳和拖车等组成。",
+        "设计和开发功率范围从2KVA到2500KVA的高品质发电机组产品"
       ],
       "file": "sources/ruiying-jiangsu/1.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-03",
   "checkedBy": "discover-bot (Claude)"
 }
