@@ -1,0 +1,86 @@
+{
+  "id": "agg-fuzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "福州德塔电源技术有限公司",
+    "brands": [
+      "AGG"
+    ]
+  },
+  "website": "https://www.aggpower.cn/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuzhou"
+  },
+  "founded": null,
+  "relatedIds": [
+    "agg-power"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel AGG 10–4375 kVA (nhỏ 10–300, vừa 301–800, lớn 801–4375 kVA)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Pháp nhân Trung Quốc của thương hiệu AGG (bản ghi agg-power là AGG Power Technology (UK))",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "AGG柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 4375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.aggpower.cn/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "AGG Power中国_福州德塔电源技术有限公司_柴油发电机",
+        "小型：10-300 kVA",
+        "中型：301-800 kVA",
+        "大型：801-4375 kVA"
+      ],
+      "file": "sources/agg-fuzhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

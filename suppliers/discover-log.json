@@ -1909,5 +1909,32 @@
   "url": "https://www.energy-gruppi.it/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "agg-fuzhou",
+  "name": "福州德塔电源技术有限公司",
+  "url": "https://www.aggpower.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "kangwo-guangdong",
+  "name": "广东康沃动力设备有限公司",
+  "url": "https://www.alternator-kangwo.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "gdf-guangzhou",
+  "name": "广州柴油机厂股份有限公司",
+  "url": "https://www.gdfdiesel.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]
