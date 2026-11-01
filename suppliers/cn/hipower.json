@@ -109,7 +109,7 @@
     {
       "n": 2,
       "url": "https://www.hipowersystems.com/electric-generators/generators-and-battery-energy-storage-for-mobile-applications/6/eng.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-02",
       "tier": "A",
       "quote": [
         "A wide range from 25 to 1375 kVA covering the most demanding applications",
@@ -119,6 +119,6 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-03",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }

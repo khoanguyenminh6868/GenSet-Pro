@@ -137,7 +137,7 @@
     {
       "n": 3,
       "url": "https://www.deutz.com/en/products/diesel-engines/",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-02",
       "tier": "A",
       "quote": [
         "DEUTZ diesel engines in the power range from 18 to 620 kW offer versatile solutions in the off-highway sector."
@@ -146,6 +146,6 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-03",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }

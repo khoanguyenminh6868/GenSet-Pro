@@ -1,0 +1,13 @@
+{
+  "id": "jiali-liuzhou", "country": "CN", "role": "alternator_maker", "status": "partial", "conf": "medium",
+  "en": "Liuzhou Jiali Electric Machine", "zh": "柳州佳力电机股份有限公司", "brands": ["佳力"],
+  "web": "http://www.lzjldj.com/", "prov": "Guangxi", "city": "Liuzhou", "founded": 1956, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "柳州佳力电机股份有限公司 （原柳州电机厂），始建于1956年", "是国内早期引进1FC6系列西门子发电机技术之企业", "公司以高压发电机、1FC6系列西门子陆用发电机和1FC6系列西门子船用发电机为核心产品。", "地址：广西柳州市鱼峰区洛维工业集中区维兴路8号"]
+  },
+  "str": [["Đầu phát cao áp và dòng 1FC6 (công nghệ Siemens) cho đất liền và tàu thuỷ", 1], ["Tiền thân là Nhà máy điện cơ Liễu Châu, lập năm 1956", 1]],
+  "cert": [],
+  "lines": [ { "k": "alternator", "s": "1FC6系列 / 高压发电机", "src": [1] } ],
+  "miss": ["Trang giới thiệu không ghi dải công suất, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

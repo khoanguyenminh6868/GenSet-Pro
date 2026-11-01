@@ -1,0 +1,16 @@
+{
+  "id": "simpson-power", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "SIMPSON (China) Ltd", "zh": null, "brands": ["SIMPSON"],
+  "web": "http://www.simpsonpower.cn/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Founded in Vancouver, BC, Canada in 1969, SIMPSON was the largest generator manufacturer in Canada", "With headquarter located in Alberta, Canada, SIMPSON was specialized in the products of diesel and natural gas generator sets", "SIMPSON (China) Ltd was established in July, 2006", "Simpson Indonesia factory was also set up in the same year", "SIMPSON has received ISO9001 Certificate, ISO14000 Certificate, OHSAS 18001 Certificate"]
+  },
+  "str": [["Theo hãng: thương hiệu gốc Canada (1969); SIMPSON (China) Ltd lập tháng 7/2006, cùng năm mở nhà máy ở Indonesia", 1], ["Tổ máy diesel và khí; khách hàng gồm các nhà mạng viễn thông Trung Quốc", 1]],
+  "cert": [["ISO9001", 1], ["OHSAS18001", 1]],
+  "lines": [
+    { "k": "genset", "s": "SIMPSON diesel generator sets", "fuel": "diesel", "src": [1] },
+    { "k": "genset", "s": "SIMPSON natural gas generator sets", "fuel": "gas", "src": [1] }
+  ],
+  "miss": ["Website là của SIMPSON (China) Ltd; chưa tìm được website của công ty mẹ ở Canada nên chưa xác minh quan hệ","Chưa có dải công suất, địa chỉ nhà máy ở Trung Quốc"],
+  "by": "discover-bot (Claude)"
+}

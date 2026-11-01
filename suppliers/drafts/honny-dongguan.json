@@ -1,0 +1,16 @@
+{
+  "id": "honny-dongguan", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "Guangdong Honny Power-Tech", "zh": "广东康菱动力科技有限公司", "brands": ["康菱", "Honny"],
+  "web": "https://www.honny1992.com/", "prov": "Guangdong", "city": "Dongguan", "founded": 1992, "fsrc": [1], "related": ["googol"],
+  "src": {
+    "1": ["A", "广东康菱动力科技有限公司创建于1992年，是一家电力解决方案集成服务商，从事柴油、燃气、双燃料发动机和发电机组及其相关项目的研发、咨询、生产、销售、安装和服务。", "中国广东东莞松山湖高新技术产业开发区工业北路2号", "位于上海青浦的大功率交流发电机研发制造基地投入运营", "高速大马力发动机研发项目迁往重庆，中美合资重庆Googol发动机技术有限公司成立", "低压柴油发电机组", "高压柴油发电机组", "高压数据中心机组", "燃气发电解决方案"]
+  },
+  "str": [["Tổ máy diesel hạ áp, cao áp, tổ máy cho trung tâm dữ liệu, tổ máy khí", 1], ["Có cơ sở sản xuất đầu phát công suất lớn ở Thanh Phố (Thượng Hải)", 1], ["Lập liên doanh động cơ Googol ở Trùng Khánh", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "低压/高压柴油发电机组", "fuel": "diesel", "eng": ["Googol"], "src": [1] },
+    { "k": "genset", "s": "燃气发电机组", "fuel": "gas", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất toàn dòng; chưa có chứng chỉ (trang ghi CE, TUV, SGS cho sản phẩm nhưng chưa lưu đủ câu)"],
+  "by": "discover-bot (Claude)"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "innio-jenbacher", "country": "AT", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "INNIO Jenbacher", "zh": "颜巴赫", "brands": ["Jenbacher"],
+  "web": "https://www.jenbacher.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "INNIO’s Jenbacher engines are packaged generator sets and cogeneration and trigeneration units for power generation."],
+    "2": ["A", "Containerized solutions for Type 2, 3 and 4 (249 – 1562 kW)"]
+  },
+  "str": [["Tổ máy khí, đồng phát/tam phát; động cơ chạy khí tự nhiên và khí tái tạo", 1], ["Tổ máy container Type 2, 3, 4: 249–1562 kW", 2]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "Jenbacher Type 2/3/4 containerized", "fuel": "gas", "p": [249, 1562, "kW", "unspecified", 2], "src": [1, 2] } ],
+  "miss": ["Dải toàn dòng (đến Type 9) ghi bằng MW nên chỉ ghi dải bản container; chưa có trụ sở, năm thành lập"],
+  "by": "discover-bot (Claude)"
+}
