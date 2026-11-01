@@ -4,7 +4,7 @@
   "role": "alternator_maker",
   "status": "partial",
   "names": {
-    "en": null,
+    "en": "Fuan shengfeng electric machinery Co,Ltd.",
     "zh": "福安市晟丰电机有限公司",
     "brands": [
       "晟丰"
@@ -15,13 +15,22 @@
     "province": "Fujian",
     "city": "Fuan"
   },
-  "founded": null,
+  "founded": 1994,
+  "foundedSrc": [
+    2
+  ],
   "relatedIds": [],
   "strengths": [
     {
       "text": "Đầu phát ba pha SFG, không chổi than TFW2, YHG và tổ máy diesel (Yuchai, Deutz...)",
       "src": [
         1
+      ]
+    },
+    {
+      "text": "Thành lập 1994 tại Phúc An, áp dụng ISO9001:2008",
+      "src": [
+        2
       ]
     }
   ],
@@ -64,10 +73,17 @@
       ]
     }
   ],
-  "certifications": [],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    }
+  ],
   "exportMarkets": [],
   "missing": [
-    "Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"
+    "Trang không ghi dải công suất"
   ],
   "sources": [
     {
@@ -84,6 +100,17 @@
         "道依茨系列柴油发电机组"
       ],
       "file": "sources/shengfeng-fuan/1.md"
+    },
+    {
+      "n": 2,
+      "url": "http://sf-motor.com/about_en.asp",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Fuan shengfeng electric machinery Co,Ltd. was founded in 1994, is located in \"China small motor are\" Fujian city of Fu'an Province,",
+        "Enterprises to actively implement ISO9001:2008 international quality management system"
+      ],
+      "file": "sources/shengfeng-fuan/2.md"
     }
   ],
   "confidence": "medium",

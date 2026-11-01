@@ -1,0 +1,5 @@
+{"id":"huawei-fuan","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":"FUJIAN FUAN HUAWEI ELECTRICAL MOTOR CO., LTD.","zh":null,"brands":[],"web":null,"prov":"Fujian","city":"Fuan","founded":1992,"fsrc":[1],"related":[],
+"src":{"1":["B","FUJIAN FUAN HUAWEI ELECTRICAL MOTOR CO., LTD.","Fuan Huawei Electrical Machinery Co.,Ltd Fujian is the joint venture formalluy established in 1992. Our annual production capacity of various is 600 thousand sets. We specialize in producing and exporting all series of alternator, diesel generator set, electric motor, water pump and gasoline generator set."]},
+"str":[["Đầu phát, tổ máy diesel, tổ máy xăng, động cơ điện, bơm; năng lực 600.000 bộ/năm",1],["Liên doanh thành lập 1992 tại Phúc An",1]],"cert":[],
+"lines":[{"k":"alternator","s":"Alternator","src":[1]},{"k":"genset","s":"Diesel generator set","fuel":"diesel","src":[1]}],
+"miss":["Nguồn là gian hàng trên CCCME (hạng B), chưa có website riêng, không ghi dải công suất"],"by":"discover-bot (Claude)"}
