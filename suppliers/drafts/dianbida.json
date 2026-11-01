@@ -1,0 +1,15 @@
+{
+  "id": "dianbida", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "电必达动力设备(江苏)有限公司", "brands": ["电必达"],
+  "web": "https://www.dbddl.com/", "prov": "Jiangsu", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright © 2022 版权所有 电必达动力设备(江苏)有限公司", "柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网"]
+  },
+  "str": [["Tổ máy diesel di động và cách âm", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "types": ["silent"], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "wacker-neuson",
+  "country": "DE",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Wacker Neuson SE",
+    "zh": null,
+    "brands": [
+      "Wacker Neuson"
+    ]
+  },
+  "website": "https://www.wackerneuson.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy di động cho công trường xây dựng",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Mobile generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang danh mục (bản Mỹ) không ghi dải công suất, nhiên liệu, hãng động cơ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.wackerneuson.com/us/products/power-supply/mobile-generators",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2022 - 2026 Wacker Neuson SE",
+        "Wacker Neuson mobile generators can handle all the requirements for most applications on a construction site."
+      ],
+      "file": "sources/wacker-neuson/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

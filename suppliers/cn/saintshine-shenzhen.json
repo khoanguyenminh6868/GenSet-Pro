@@ -1,0 +1,113 @@
+{
+  "id": "saintshine-shenzhen",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Shenzhen Saintshine Power Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Saintshine"
+    ]
+  },
+  "website": "https://www.saintshinepower.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": "Shenzhen"
+  },
+  "founded": 2002,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 8–3000 kW và tổ máy khí 30 kW–4,5 MW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 2002, nhà máy 35.000 m²",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gas generators",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Dải tổ máy khí ghi 30kW to 4.5MW (khác đơn vị) nên chưa ghi vào p; chưa có chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.saintshinepower.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2024 Shenzhen Saintshine Power Co., Ltd.",
+        "provides reliable power solutions, with diesel generators ranging from 8kW to 3000kW and gas generators from 30kW to 4.5MW."
+      ],
+      "file": "sources/saintshine-shenzhen/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.saintshinepower.com/about-us.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Established in 2002",
+        "35,000 square meters"
+      ],
+      "file": "sources/saintshine-shenzhen/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

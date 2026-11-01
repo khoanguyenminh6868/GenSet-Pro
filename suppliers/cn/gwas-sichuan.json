@@ -1,0 +1,166 @@
+{
+  "id": "gwas-sichuan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "四川格瓦斯电力科技有限公司",
+    "brands": [
+      "格瓦斯"
+    ]
+  },
+  "website": "https://www.china-gwas.com/",
+  "hq": {
+    "province": "Sichuan",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà xưởng hơn 35.000 m², tổ máy 30–2400 kW với 21 hãng động cơ",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Dòng SDEC 50–2000 kW, Dongfeng Cummins 20–250 kW, MTU 200–2400 kW",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "上柴发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "上柴动力"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 50,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "东风康明斯发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "东风康明斯"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 250,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "德国奔驰发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 200,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Website có chứng chỉ SSL tự ký, trang lưu qua firecrawl; chưa có năm thành lập (chỉ ghi '15年专注'), chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.china-gwas.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "四川格瓦斯电力科技有限公司是一家集发电机组研发、生产、销售、租赁、维保、售后为一体的现化化技术企业",
+        "格瓦斯拥有35000余平方米的现代化专业厂房，汇集21大发动机品牌，覆盖 30-2400KW，7大特殊装置",
+        "**上柴发电机组** _功率范围：50-2000KW_ _发动机品牌：上柴动力_",
+        "**东风康明斯发电机组** _功率范围：20-250KW_ _发动机品牌：东风康明斯_",
+        "**德国奔驰发电机组** _功率范围：200-2400KW_ _发动机品牌：德国MTU发动机_"
+      ],
+      "file": "sources/gwas-sichuan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

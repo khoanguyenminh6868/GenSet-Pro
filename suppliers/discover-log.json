@@ -1354,5 +1354,107 @@
   "url": "http://gb.kanpor.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "http://www.jsjhpower.com/",
+  "reason": "江苏江豪发电机组有限公司 — trùng bản ghi jianghao-genset (website khác, cả jhpowerok.com)"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://www.shfdjc.com/",
+  "reason": "大泽动力 tự ghi là đơn vị bán hàng/dịch vụ, không thấy nhà máy"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "gwas-sichuan",
+  "name": "四川格瓦斯电力科技有限公司",
+  "url": "https://www.china-gwas.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "dianbida",
+  "name": "电必达动力设备(江苏)有限公司",
+  "url": "https://www.dbddl.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "saintshine-shenzhen",
+  "name": "Shenzhen Saintshine Power Co., Ltd.",
+  "url": "https://www.saintshinepower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "sutong-fujian",
+  "name": "Fujian Sutong Power System Co., Ltd.",
+  "url": "http://www.sutongpower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "sinogen",
+  "name": "SinoGen Power Technology Limited",
+  "url": "https://sino-gen.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "jinlongteng-fujian",
+  "name": "FUJIAN JINLONGTENG POWER ENGINE AND MACHINERY CO.,LTD",
+  "url": "https://www.jlt-power.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hipower",
+  "name": "HIMOINSA POWER SYSTEMS, INC",
+  "url": "https://www.hipowersystems.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "welland-power",
+  "name": "Welland Power Limited",
+  "url": "https://www.wellandpower.net/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "allam-power",
+  "name": "Allam Power Ltd",
+  "url": "https://allam.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "wacker-neuson",
+  "name": "Wacker Neuson SE",
+  "url": "https://www.wackerneuson.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]
