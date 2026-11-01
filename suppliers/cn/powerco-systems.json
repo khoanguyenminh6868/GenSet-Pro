@@ -1,0 +1,93 @@
+{
+  "id": "powerco-systems",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "PowerCo Systems International Ltd.",
+    "zh": null,
+    "brands": [
+      "PowerCo"
+    ]
+  },
+  "website": "https://generatorsets.co.uk/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 1995,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 5–3000 kVA, 50/60 Hz, động cơ Perkins, Cummins, Volvo",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Sản xuất tổ máy tại Anh từ 1995, bộ điều khiển Deep Sea",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins",
+        "Cummins",
+        "Volvo"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz",
+        "60Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có chứng chỉ, địa chỉ nhà máy"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://generatorsets.co.uk/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© PowerCo Systems International Ltd . All Rights Reserved.",
+        "Based in the United Kingdom, our team have been manufacturing generator sets since 1995.",
+        "PowerCo Systems Ltd are independent British manufacturer of a comprehensive range of diesel generator sets with outputs from 5kVA to 3000kVA, 50Hz and 60Hz. Powered by internationally accepted engines such as Perkins, Cummins, and Volvo"
+      ],
+      "file": "sources/powerco-systems/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

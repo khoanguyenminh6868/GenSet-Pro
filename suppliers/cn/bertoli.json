@@ -1,0 +1,201 @@
+{
+  "id": "bertoli",
+  "country": "IT",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Bertoli Srl",
+    "zh": null,
+    "brands": [
+      "Bertoli"
+    ]
+  },
+  "website": "https://www.bertolisrl.it/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 2–2500 kVA và tổ máy khí (metan/propan) 5–650 kVA",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gruppi elettrogeni a gasolio",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 2,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gruppi elettrogeni a gas",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập, địa chỉ, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.bertolisrl.it/prodotto/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "©2026 Bertoli Srl",
+        "Con una gamma di potenza che va da 2 a 2500 kVA e ad alimentazione tramite gasolio e da 5 a 650 KVA ad alimentazione tramite gas metano o gas prope"
+      ],
+      "file": "sources/bertoli/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.bertolisrl.it/en/prodotto/water-cooled-generators/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Power: 5 to 2034 kVA"
+      ],
+      "file": "sources/bertoli/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.bertolisrl.it/en/prodotto/air-cooled-generators/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Power: 2 to 135 kVA"
+      ],
+      "file": "sources/bertoli/102.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "WATER-COOLED GENERATORS - Bertoli",
+      "header": [],
+      "rows": [
+        "Power: 5 to 2034 kVA",
+        "Speed : 1500 / 3000 RPM",
+        "Alternator : 2-4 poles, single/three-phase, self-regulated and self-energised.",
+        "Power: 6 KVA single-phase",
+        "Power: 9 KVA single-phase or",
+        "Power: 15 kVA Three-phase",
+        "Power: 22 KVA",
+        "Power: 33 KVA",
+        "Power: 45 KVA",
+        "Power: 55 KVA",
+        "Power: 66 KVA",
+        "Power: 88 KVA",
+        "Power: 110 KVA",
+        "Power: 130 KVA",
+        "Power: 145 KVA",
+        "Power: 165 KVA",
+        "Power: 180 KVA",
+        "Power: 190 KVA",
+        "Power: 220 KVA",
+        "Power: 275 KVA",
+        "Power: 330 KVA",
+        "Power: 385 KVA",
+        "Power: 440 KVA",
+        "Power: 495 KVA",
+        "Power: 550 KVA",
+        "Power: 650 KVA",
+        "Power: 770 KVA",
+        "Power: 880 KVA",
+        "Power: 1000 KVA",
+        "Power: 1100 KVA",
+        "Power: 1375 KVA",
+        "Power: 1620 KVA",
+        "Power: 1900 KVA",
+        "Power: 2100 KVA",
+        "Power: 20 to 550 kVA",
+        "Speed : 1500 RPM",
+        "Alternator : 4 poles, three-phase, self-regulated and self-energised.",
+        "Power: 20 KVA",
+        "Power: 25 KVA",
+        "Power: 40 KVA",
+        "Power: 80 KVA",
+        "Power: 95 KVA",
+        "Power: 120 KVA",
+        "Power: 150 KVA",
+        "Power: 240 KVA",
+        "Power: 260 KVA",
+        "Power: 350 KVA",
+        "Power: 400 KVA",
+        "Power: 450 KVA"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "AIR-COOLED GENERATORS - Bertoli",
+      "header": [],
+      "rows": [
+        "Power: 2 to 135 kVA",
+        "Speed : 1500 / 3000 RPM",
+        "Alternator : 2-4 poles, single/three-phase, self-regulated and self-energised.",
+        "Power: 12 KVA",
+        "Power: 22 KVA",
+        "Power: 33 KVA",
+        "Power: 42 KVA",
+        "Power: 63 KVA",
+        "Power: 110 KVA",
+        "Power: 135 KVA",
+        "Power: 5 KVA single-phase or three-phase",
+        "Power: 6 KVA single-phase or three-phase",
+        "Power: 8 KVA three-phase or single-phase",
+        "Power: 12 KVA three-phase or single-phase",
+        "Power: 20 KVA"
+      ]
+    }
+  ]
+}
