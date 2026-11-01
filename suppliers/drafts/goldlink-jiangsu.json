@@ -1,0 +1,5 @@
+{"id":"goldlink-jiangsu","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"GoldLink Power Jiangsu Co.,Ltd","zh":null,"brands":["GOLDLINK"],"web":null,"prov":"Jiangsu","city":"Yangzhou","founded":null,"fsrc":[],"related":[],
+"src":{"1":["B","Goldlink Power Jiangsu Co.,Ltd. (hereinafter referred to as \"GOLDLINK power\") is a high-tech generator manufacturer integrating research and development, production, sale and service.","Address:YILING INDUSTRIAL PARK ,JIANGDU,YANGZHOU,JIANGSU PROVINCE,P.R.CHINA","GOLDLINK generator sets are coupled with world famous brand diesel engines ,such as Cummins from US ,Perkins from UK,Deutz from Germany, Volvo from Sweden"]},
+"str":[["Tổ máy GOLDLINK (khung hở, cách âm, container) với động cơ Cummins, Perkins, Deutz, Volvo...",1]],"cert":[],
+"lines":[{"k":"genset","s":"GOLDLINK generator sets","fuel":"diesel","eng":["Cummins","Perkins","Deutz","Volvo"],"src":[1]}],
+"miss":["Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất, năm thành lập"],"by":"discover-bot (Claude)"}

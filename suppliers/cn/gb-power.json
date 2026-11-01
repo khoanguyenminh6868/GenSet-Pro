@@ -1,0 +1,108 @@
+{
+  "id": "gb-power",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "GB POWER CO.,LTD",
+    "zh": null,
+    "brands": [
+      "GB"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Shanghai",
+    "city": "Shanghai"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than 6,5–2000 kW (cấp H, IP22) cho tổ máy trên bộ và tàu thủy, kèm tổ máy diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "GB brushless alternator",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6.5,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel generator set",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng CCCME (hạng B); chưa có website riêng, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cccme.cn/shop/cn2020g4425/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "GB POWER CO.,LTD as a manufacturer for generator and diesel generator set, focus on generator field over 6years",
+        "GB brushless alternator from 6.5kw to 2000KW (Insulation Class H and IP22) be used for land generator set and marine type",
+        "approved ISO9001 quality system certification, product approved CE certification.",
+        "Address:NO 18 INDUSTRY ROAD,HUQIAO DISTRICT,SHANGHAI,CHINA"
+      ],
+      "file": "sources/gb-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
