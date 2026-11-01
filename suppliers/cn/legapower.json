@@ -1,0 +1,93 @@
+{
+ "country": "CN",
+ "role": "genset_oem",
+ "status": "partial",
+ "names": {
+  "en": "Fujian Everstrong Lega Power Equipments Co., Ltd.",
+  "zh": null
+ },
+ "website": "https://www.legapower.com",
+ "hq": {
+  "province": null,
+  "city": null
+ },
+ "founded": null,
+ "relatedIds": [],
+ "strengths": [],
+ "productLines": [
+  {
+   "kind": "genset",
+   "series": "SDEC Series",
+   "fuel": "diesel",
+   "engineMakes": [
+    "SDEC"
+   ],
+   "engineModels": [
+    "SC9D340D2"
+   ],
+   "power": {
+    "min": 250,
+    "max": 250,
+    "unit": "kVA",
+    "rating": "prime",
+    "src": [
+     2002
+    ]
+   },
+   "frequency": [
+    "50Hz"
+   ],
+   "voltage": [
+    "400/230V"
+   ],
+   "src": [
+    2002
+   ]
+  }
+ ],
+ "certifications": [],
+ "exportMarkets": [],
+ "missing": [
+  "đại diện tại Việt Nam"
+ ],
+ "sources": [
+  {
+   "n": 2001,
+   "url": "https://www.legapower.com/products_list/4.html",
+   "accessedAt": "2026-11-01",
+   "tier": "A",
+   "quote": [
+    "Generator Series-Heavy Duty Generator Set-Fujian Everstrong Lega Power Equipments Co., Ltd."
+   ],
+   "file": "sources/legapower/2001.md"
+  },
+  {
+   "n": 2002,
+   "url": "https://www.legapower.com/products_detail/20.html",
+   "accessedAt": "2026-11-01",
+   "tier": "A",
+   "quote": [
+    "SDEC Series-Fujian Everstrong Lega Power Equipments Co., Ltd.",
+    "| LG275SC | 275 | 250 | 54.1 | SC9D340D2 | 6L | Electronic | 8.9 |",
+    "| Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)"
+   ],
+   "file": "sources/legapower/2002.md"
+  }
+ ],
+ "confidence": "medium",
+ "checkedAt": "2026-11-01",
+ "checkedBy": "config-bot",
+ "specTables": [
+  {
+   "n": 2002,
+   "title": "SDEC Series",
+   "header": [
+    "| Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)"
+   ],
+   "rows": [
+    "| LG275SC | 275 | 250 | 54.1 | SC9D340D2 | 6L | Electronic | 8.9 |"
+   ]
+  }
+ ],
+ "id": "legapower"
+}

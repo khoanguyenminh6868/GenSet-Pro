@@ -1,0 +1,145 @@
+{
+ "country": "CN",
+ "role": "genset_oem",
+ "status": "partial",
+ "names": {
+  "en": "Yangzhou Walter Electrical Equipment Co., Ltd.",
+  "zh": null
+ },
+ "website": "https://www.wetgenerator.com",
+ "hq": {
+  "province": null,
+  "city": null
+ },
+ "founded": null,
+ "relatedIds": [],
+ "strengths": [],
+ "productLines": [
+  {
+   "kind": "genset",
+   "series": "Yuchai Series",
+   "fuel": "diesel",
+   "engineMakes": [
+    "Yuchai"
+   ],
+   "engineModels": [
+    "YC6MK350L-D20"
+   ],
+   "power": {
+    "min": 250,
+    "max": 250,
+    "unit": "kVA",
+    "rating": "prime",
+    "src": [
+     2002
+    ]
+   },
+   "frequency": [
+    "50Hz"
+   ],
+   "voltage": [
+    "400V"
+   ],
+   "src": [
+    2002
+   ]
+  },
+  {
+   "kind": "genset",
+   "series": "Weichai Series",
+   "fuel": "diesel",
+   "engineMakes": [
+    "Weichai"
+   ],
+   "engineModels": [
+    "WP10D238E200",
+    "WP10D264E200"
+   ],
+   "power": {
+    "min": 237.5,
+    "max": 275,
+    "unit": "kVA",
+    "rating": "prime",
+    "src": [
+     2003
+    ]
+   },
+   "frequency": [
+    "50Hz"
+   ],
+   "voltage": [
+    "400V"
+   ],
+   "src": [
+    2003
+   ]
+  }
+ ],
+ "certifications": [],
+ "exportMarkets": [],
+ "missing": [
+  "đại diện tại Việt Nam"
+ ],
+ "sources": [
+  {
+   "n": 2001,
+   "url": "https://www.wetgenerator.com/",
+   "accessedAt": "2026-11-01",
+   "tier": "A",
+   "quote": [
+    "Yangzhou Walter Electrical Equipment Co., Ltd. is located in the Industrial Park of Shaobo Town, Yangzhou City, Jiangsu Province. It is a high-tech enterprise specializing in the research and production of diesel generator sets and high and low voltage electrical cabinets."
+   ],
+   "file": "sources/walter-yangzhou/2001.md"
+  },
+  {
+   "n": 2002,
+   "url": "https://www.wetgenerator.com/?products_18/80.html",
+   "accessedAt": "2026-11-01",
+   "tier": "A",
+   "quote": [
+    "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension(MM)L*W*H",
+    "| WET-220 | 275 | 220 | 250 | 200 | YC6MK350L-D20 | 2900*1100*1600"
+   ],
+   "file": "sources/walter-yangzhou/2002.md"
+  },
+  {
+   "n": 2003,
+   "url": "https://www.wetgenerator.com/?products_17/79.html",
+   "accessedAt": "2026-11-01",
+   "tier": "A",
+   "quote": [
+    "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension(MM)L*W*H",
+    "| WET-200 | 250 | 200 | 237.5 | 190 | WP10D238E200 | 2850*1040*1580",
+    "| WET-250 | 312.5 | 250 | 275 | 220 | WP10D264E200 | 3050*1100*1800"
+   ],
+   "file": "sources/walter-yangzhou/2003.md"
+  }
+ ],
+ "confidence": "medium",
+ "checkedAt": "2026-11-01",
+ "checkedBy": "config-bot",
+ "specTables": [
+  {
+   "n": 2002,
+   "title": "Yuchai Series",
+   "header": [
+    "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension(MM)L*W*H"
+   ],
+   "rows": [
+    "| WET-220 | 275 | 220 | 250 | 200 | YC6MK350L-D20 | 2900*1100*1600"
+   ]
+  },
+  {
+   "n": 2003,
+   "title": "Weichai Series",
+   "header": [
+    "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension(MM)L*W*H"
+   ],
+   "rows": [
+    "| WET-200 | 250 | 200 | 237.5 | 190 | WP10D238E200 | 2850*1040*1580",
+    "| WET-250 | 312.5 | 250 | 275 | 220 | WP10D264E200 | 3050*1100*1800"
+   ]
+  }
+ ],
+ "id": "walter-yangzhou"
+}
