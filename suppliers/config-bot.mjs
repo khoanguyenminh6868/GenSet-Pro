@@ -1,6 +1,7 @@
 // "Gợi ý" in the Cấu hình gợi ý tab, run on the Windows PC next to the GenBid bot:
 //   node suppliers/config-bot.mjs run            answer every pending configreq/<TBMT> (one Claude agent per request)
-//                                                and findreq/<TBMT> (Tìm NCC: Gemini first, then Claude, find-prompt.md)
+//                                                and findreq/<TBMT> (Tìm NCC: Gemini first, then Claude, find-prompt.md;
+//                                                when it adds suppliers, Gợi ý runs again for that tender)
 //   node suppliers/config-bot.mjs find-check --dir <dir>          check newCatalog.json of a Tìm NCC folder in code
 //   node suppliers/config-bot.mjs prep --key <TBMT> --out <dir>
 //   node suppliers/config-bot.mjs save --dir <dir> --url <url>     (used by the agent for internet sources)
@@ -524,9 +525,9 @@ async function find(req, suppliers) {
         const { added } = await addToCatalog(dir, key, suppliers, { branch: `ncc/${key.toLowerCase()}-${engine}`, title: `Nhà cung cấp: Tìm NCC gói ${key} (${ENGINE[engine]})`,
           body: `Nút Tìm NCC ở tab Cấu hình gợi ý gói ${key}: ${ENGINE[engine]} tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật${cap ? ` (${cap.value} ${cap.unit})` : ""}. Bản ghi đã qua verify.mjs và đã đăng lên web.` });
         if (!added.some((a) => !a.error)) { tried.push({ engine: ENGINE[engine], error: "bản ghi không qua được verify.mjs của repo", dropped: added }); continue; }
-        await done({ result: { engine: ENGINE[engine], cap, summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried } });
+        await done({ result: { engine: ENGINE[engine], cap, summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried, autoConfig: true } });
         console.log(`${key}: Tìm NCC (${ENGINE[engine]}) bổ sung ${added.filter((a) => !a.error).length} nhà cung cấp`);
-        return;
+        return true;
       } finally { fs.rmSync(dir, { recursive: true, force: true }); }
     }
     await done({ result: { engine: "", summary: "Không tìm được nhà cung cấp mới nào phù hợp yêu cầu kỹ thuật và qua được kiểm tra nguồn.", added: [], skipped: [], notes: [], tried } });
@@ -561,13 +562,25 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     if (fs.existsSync(lock) && Date.now() - fs.statSync(lock).mtimeMs < 60 * 60e3) { console.log("SUMMARY: đang có lượt khác chạy"); process.exit(4); }
     fs.writeFileSync(lock, String(process.pid));
     try {
-      const [pending, finds] = await Promise.all([api("kind=config"), api("kind=find")]);
+      const [pending, finds] = await Promise.all([api("kind=config"), api("kind=find")]), found = [];
       if (pending.length || finds.length) {
         const suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data);
         for (const req of pending) await answer(req, suppliers);
-        for (const req of finds) await find(req, suppliers);
+        for (const req of finds) if (await find(req, suppliers)) found.push(req);
+        // Suppliers that Tìm NCC added go into the suggested configurations right away (Khoa, 2026-11-01): Gợi ý runs
+        // again for the tender, through a configreq of its own so the web shows it waiting, with the catalog re-read.
+        if (found.length) {
+          const fresh = (await api("kind=docs&coll=supplier")).map((d) => d.data);
+          for (const f of found) {
+            const req = { key: f.key, notifyNo: f.notifyNo || f.key, bidName: f.bidName, origin: f.origin, requestedAt: new Date().toISOString(), by: f.by, from: "find" };
+            const { key, ...data } = req;
+            fs.writeFileSync(lock, String(process.pid)); // a long run must not look stale to another one
+            await post([{ coll: "configreq", id: key, data: JSON.parse(JSON.stringify(data)) }]);
+            await answer(req, fresh);
+          }
+        }
       }
-      console.log(`SUMMARY: ${pending.length} yêu cầu gợi ý cấu hình, ${finds.length} yêu cầu Tìm NCC`);
+      console.log(`SUMMARY: ${pending.length} yêu cầu gợi ý cấu hình, ${finds.length} yêu cầu Tìm NCC${found.length ? `, tự gợi ý lại ${found.length} gói` : ""}`);
     } finally { fs.rmSync(lock, { force: true }); }
   } else { console.error("usage: config-bot.mjs run | prep --key K --out D | save --dir D --url U | check --dir D | post --dir D --key K --requested-at T"); process.exit(2); }
 }
