@@ -1,0 +1,78 @@
+{
+  "id": "sanhe-fujian",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "SANHE ELECTRICAL(FUJIAN) CO.,LTD.",
+    "zh": null,
+    "brands": [
+      "MinDong Electric"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Thương hiệu MinDong Electric (từ 1958); ba cơ sở sản xuất tổng 70.000 m²",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Cổ đông 51% là Fujian Electronics & Information (Group), doanh nghiệp nhà nước",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "AC synchronous brushless alternator",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất; 1958 là năm của thương hiệu, không ghi làm năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cccme.cn/shop/cn2020g4648/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "SANHE ELECTRICAL(FUJIAN) CO.,LTD.",
+        "MinDong Electric, China famous trademark, since 1958.",
+        "Fujian Electronics & Information (Group) Co., Ltd. (51%). Its a state-owned public limited enterprise",
+        "Our production land covers 70,000.00 square meters in three production bases.",
+        "Address:EAST BLOCK B1, 104 NATIONAL HIGHWAY, NORTH GANTANG TOWN, FUAN, FUJIAN, CHINA.",
+        "AC synchronous brushless alternator"
+      ],
+      "file": "sources/sanhe-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
