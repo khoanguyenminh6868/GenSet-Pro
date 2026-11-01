@@ -63,7 +63,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .cmprev{justify-content:space-between}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
-.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tyDrop,.ro #tkDel,.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
+.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tyDrop,.ro #tkDel,.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
 .ro #dStage,.ro #dNote{pointer-events:none;opacity:.7}
 .ro [data-viewtext],.ext [data-openpdf]{display:none!important}
 .btn.green{background:var(--mint);border-color:var(--mint);color:#fff}
@@ -1225,7 +1225,7 @@ function renderDrawer(force = true) {
   else if (state.dtab === "tlkt") { body.innerHTML = tlktTabHtml(t); mountTlkt(); }
   else if (state.dtab === "supplier") body.innerHTML = supplierTabHtml(t);
   else if (state.dtab === "config") body.innerHTML = configTabHtml(t);
-  else if (state.dtab === "hsdt") body.innerHTML = hsdtTabHtml(t);
+  else if (state.dtab === "hsdt") { body.innerHTML = hsdtTabHtml(t); mountHsdt(); }
   else if (state.dtab === "compare") { body.innerHTML = compareTabHtml(t); mountCompare(t); }
 }
 function infoHtml(t) {
@@ -1784,7 +1784,20 @@ function hsdtTabHtml(t) {
   if (!has) return h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
   const hsWait = workerReqPending("hsdtreq", t._key) ? waitHtml("Đang chờ Agent soạn HSDT tham khảo...", state.hsdtreq[t._key].requestedAt) : "";
   const hsErr = !hsWait && workerReqError("hsdtreq", t._key);
-  return hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) : ""}</span></div>
+  // Both files are optional (Khoa, 2026-11-01): a template makes the bid follow its layout, a supplier's configuration
+  // fills the offered equipment; without them the bid is drafted from the HSMT alone.
+  const basis = [prev?.basis?.template?.length && "theo template " + prev.basis.template.join(", "), prev?.basis?.config?.length && "cấu hình NCC " + prev.basis.config.join(", ")].filter(Boolean).join(" · ");
+  return hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="drop" id="hpDrop">
+      <div class="row"><span class="muted small" style="flex:1"><b>Template HSDT</b> (không bắt buộc). Khi có, hồ sơ soạn theo bố cục, lời văn và bảng của mẫu này.</span><label class="btn sm" for="hpFiles">Chọn tệp</label></div>
+      <input type="file" id="hpFiles" multiple accept=".docx,.pdf,.xlsx,.txt,.md,.csv" hidden>
+      <div class="files" id="hpList"></div>
+    </div>
+    <div class="drop" id="hcDrop">
+      <div class="row"><span class="muted small" style="flex:1"><b>Cấu hình của NCC</b> (không bắt buộc). Khi có, bảng đáp ứng kỹ thuật lấy thông số thiết bị của nhà cung cấp.</span><label class="btn sm" for="hcFiles">Chọn tệp</label></div>
+      <input type="file" id="hcFiles" multiple accept=".pdf,.docx,.xlsx,.txt,.md,.csv" hidden>
+      <div class="files" id="hcList"></div>
+    </div>
+    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) + (basis ? " · " + basis : "") : ""}</span></div><div id="hsUp"></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
 // The reference bid is shown as the Word document it becomes. Every text is editable in place: data-h names the
@@ -1821,7 +1834,21 @@ function saveHsEdit(key, path, text) {
   hsSaveTimer = setTimeout(async () => { const ok = await dbSet("hsdt/" + key, { ...rec, editedAt: new Date().toISOString() }); if ($("#hsSaved")) $("#hsSaved").textContent = ok ? "Đã lưu chỉnh sửa." : "Chưa lưu được chỉnh sửa."; }, 800);
 }
 // The Windows bot drafts it (hsdt-prompt.md).
-function runHsdt(key) { return requestWorker("hsdtreq", key, {}, "soạn HSDT tham khảo"); }
+// The template and the supplier's configuration, when chosen, go to the scratch bucket (hsdt/<key>/) like an HSDT.
+let tplPick = null, cfgPick = null;
+function mountHsdt() { tplPick = filePicker("hpFiles", "hpDrop", "hpList"); cfgPick = filePicker("hcFiles", "hcDrop", "hcList"); }
+async function runHsdt(key) {
+  const btn = $("#hsRun"), up = $("#hsUp");
+  const none = { files: [], text: "", uploadError: "" };
+  if (btn) btn.disabled = true;
+  try {
+    const tp = tplPick?.files.length ? await uploadOrText(key, tplPick.files, "", up, "hsdt") : none;
+    const cf = cfgPick?.files.length ? await uploadOrText(key, cfgPick.files, "", up, "hsdt") : none;
+    up.innerHTML = "";
+    await requestWorker("hsdtreq", key, { templateFiles: tp.files, templateText: tp.text, configFiles: cf.files, configText: cf.text, uploadError: [tp.uploadError, cf.uploadError].filter(Boolean).join("; ") }, "soạn HSDT tham khảo");
+  } catch (e) { if (up?.isConnected) up.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu soạn HSDT tham khảo."}</div>`; }
+  finally { if (btn?.isConnected) btn.disabled = false; }
+}
 async function hsdtDocx(key) {
   const r = state.hsdt[key]?.result, t = findTender(key), info = $("#hsInfo");
   if (!r) return;
@@ -2519,14 +2546,14 @@ function askDeleteTlkt(key) {
     });
   });
 }
-// Web version: files go to the private scratch bucket (tlkt/<key>/). Files over the storage limit, or all of them when
+// Web version: files go to the private scratch bucket (tlkt/<key>/, or hsdt/<key>/ for Tạo HSDT tham khảo). Files over the storage limit, or all of them when
 // the upload fails ("Failed to fetch"), travel as the text the browser reads from them; only a scan with no text stops.
-async function uploadOrText(key, list, pasted, out) {
+async function uploadOrText(key, list, pasted, out, dir = "tlkt") {
   const all = [...list], big = all.filter((f) => f.size > 45 * 1024 * 1024);
   let files = [], asText = big, why = "tệp lớn hơn 45 MB", text = pasted;
   if (all.length > big.length) {
     out.innerHTML = progress("Đang tải tệp lên...");
-    try { files = await window.genbidScratch(key, all.filter((f) => !big.includes(f)), "tlkt"); }
+    try { files = await window.genbidScratch(key, all.filter((f) => !big.includes(f)), dir); }
     catch (e) { asText = all; why = e?.message || "không tải tệp lên được"; }
   }
   for (const f of asText) {

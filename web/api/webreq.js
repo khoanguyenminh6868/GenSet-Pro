@@ -1,5 +1,5 @@
 // Requests from the web page to the Windows worker: Phân tích (analysisreq/<TBMT>), Tải hồ sơ (hsmtreq/<TBMT>)
-// Sync (syncreq/current), Tạo bản tiếng Anh (translationreq/<TBMT>), Tạo HSDT tham khảo (hsdtreq/<TBMT>), Đối chiếu (comparereq/<TBMT>, with the HSDT
+// Sync (syncreq/current), Tạo bản tiếng Anh (translationreq/<TBMT>), Tạo HSDT tham khảo (hsdtreq/<TBMT>, with an optional template HSDT and supplier configuration), Đối chiếu (comparereq/<TBMT>, with the HSDT
 // files the page uploaded to the private "scratch" bucket under hsdt/<TBMT>/, and the pasted text) and Đối chiếu TLKT
 // (tlktreq/<TBMT>, a supplier's technical proposal uploaded under tlkt/<TBMT>/) Gợi ý nhà cung cấp (supplierreq/<TBMT>), Gợi ý cấu hình (configreq/<TBMT>) and its Tìm NCC (findreq/<TBMT>). Written server-side for a signed-in member, so they never depend on the
 // browser's direct database write. POST { coll, items: [{ key, notifyNo?, bidName?, sourceUrl?, auto?, cancel? }] }.
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
       auto: i.auto ? true : undefined, mode: coll === "syncreq" && i.mode === "new" ? "new" : undefined, requestedAt: at, by: member.email, from: "web",
       // Gợi ý cấu hình: the engines' origin (Xuất xứ), Trung Quốc unless the page says otherwise.
       ...(coll === "configreq" || coll === "findreq" ? { origin: ["cn", "other", "all"].includes(i.origin) ? i.origin : "cn" } : {}),
-      ...(coll === "comparereq" ? compareFields(i, "hsdt") : coll === "tlktreq" ? compareFields(i, "tlkt") : {}),
+      ...(coll === "comparereq" ? compareFields(i, "hsdt") : coll === "tlktreq" ? compareFields(i, "tlkt") : coll === "hsdtreq" ? compareFields(i, "hsdt", true) : {}),
     }));
     return { coll, id: i.key, data, updated_at: at };
   });
@@ -46,10 +46,12 @@ export default async function handler(req, res) {
 
 // The HSDT of a comparison (or the technical proposal of a TLKT one): files already uploaded under <dir>/<TBMT>/ in the
 // scratch bucket, and pasted text. A TLKT one may also carry a shortened YCKT (reqFiles, reqText) that replaces the HSMT.
-function compareFields(i, dir) {
+// Tạo HSDT tham khảo (hsdt): an optional template HSDT and supplier configuration, uploaded under hsdt/<TBMT>/ too.
+function compareFields(i, dir, hsdt) {
   const list = (arr) => (Array.isArray(arr) ? arr : []).slice(0, 50)
     .filter((f) => typeof f?.path === "string" && f.path.startsWith(`${dir}/${i.key}/`) && !f.path.includes(".."))
     .map((f) => ({ path: f.path.slice(0, 600), name: str(f.name, 300), size: Number(f.size) || undefined }));
+  if (hsdt) return { templateFiles: list(i.templateFiles), templateText: str(i.templateText, 400000) || "", configFiles: list(i.configFiles), configText: str(i.configText, 400000) || "", uploadError: str(i.uploadError, 500) || "" };
   if (dir !== "tlkt") return { files: list(i.files), text: str(i.text, 200000) || "" };
   // Tải PDF: translate the stored result into English, nothing else to carry.
   if (i.translate) return { translate: true };
