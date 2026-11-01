@@ -1,0 +1,21 @@
+{
+  "id": "deutz-ag", "country": "DE", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": "DEUTZ AG", "zh": null, "brands": ["DEUTZ", "G-Drive"],
+  "web": "https://www.deutz.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["huachai-deutz"],
+  "src": {
+    "1": ["A", "DEUTZ provides complete solutions for local power generation and decentralized energy supply activities", "Available in two variants – Open Frame and a Sound-Proof System.", "DEUTZ hydrogen gensets run on hydrogen and can be fueled with green hydrogen", "Frerk Aggregatebau GmbH is a systems integrator for diesel and gas emergency power systems"],
+    "2": ["A", "With the new DEUTZ G-Drive lineup , DEUTZ is expanding its engine portfolio—including into higher power classes.", "Executive Vice President and CEO Business Unit Engines DEUTZ AG"]
+  },
+  "str": [
+    ["Dòng động cơ G-Drive chuyên cho tổ máy phát", 2],
+    ["Có tổ máy Classic GenSets (khung hở và cách âm) và tổ máy chạy hydro", 1],
+    ["Sở hữu Frerk Aggregatebau (tích hợp hệ thống phát điện dự phòng diesel/khí)", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "engine", "s": "G-Drive", "fuel": "diesel", "src": [2] },
+    { "k": "genset", "s": "Classic GenSets", "fuel": "diesel", "types": ["open", "silent"], "src": [1] }
+  ],
+  "miss": ["Trang công khai không ghi dải công suất của G-Drive / Classic GenSets (deutz.com chặn trình đọc thường, lưu qua firecrawl)", "Liên doanh tại Trung Quốc: huachai-deutz"],
+  "by": "discover-bot (Claude)"
+}

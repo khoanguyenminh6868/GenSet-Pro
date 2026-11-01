@@ -1,0 +1,109 @@
+{
+  "id": "fpt-industrial",
+  "country": "IT",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": "FPT Industrial S.P.A.",
+    "zh": null,
+    "brands": [
+      "FPT",
+      "G-Drive"
+    ]
+  },
+  "website": "https://www.fptindustrial.com/",
+  "hq": {
+    "province": "Piemonte",
+    "city": "Turin"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ phát điện G-Drive dung tích 2,4–16 L",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: bán hơn 30.000 động cơ phát điện mỗi năm, dẫn đầu phân khúc",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thuộc Iveco Group",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "G-Drive R24",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Power generation engines (2.4 l to 16 l)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa lưu trang danh mục động cơ phát điện có dải công suất toàn dòng; chỉ có thông cáo báo chí 2024"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.fptindustrial.com/en/media/press-releases/2024/04/18/08/28/POWER-GENERATION",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "FPT Industrial S.P.A. a brand of Iveco Group",
+        "Via Puglia, 15 10156 Turin - Italy",
+        "With over 30,000 units/year sold worldwide, FPT Industrial is a leader in the power generation engines segment.",
+        "Its expanded line-up, ranging from 2.4 l to 16 l , complies with worldwide emission standards",
+        "covering power outputs from 20 kVA to 40 kVA"
+      ],
+      "file": "sources/fpt-industrial/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

@@ -931,5 +931,95 @@
   "url": null,
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "rehlko",
+  "name": "Discovery Energy, LLC dba Rehlko",
+  "url": "https://www.powersystems.rehlko.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "generac",
+  "name": "Generac Power Systems, Inc.",
+  "url": "https://www.generac.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "caterpillar",
+  "name": "Caterpillar",
+  "url": "https://www.cat.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "mtu-rolls-royce",
+  "name": "Rolls-Royce Power Systems (mtu)",
+  "url": "https://www.mtu-solutions.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "deutz-ag",
+  "name": "DEUTZ AG",
+  "url": "https://www.deutz.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "fg-wilson",
+  "name": "Caterpillar (NI) Ltd",
+  "url": "https://www.fgwilson.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "mecc-alte",
+  "name": "Mecc Alte SpA",
+  "url": "https://www.meccalte.com/",
+  "tables": 5,
+  "rows": 66
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "fpt-industrial",
+  "name": "FPT Industrial S.P.A.",
+  "url": "https://www.fptindustrial.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "marelli-motori",
+  "name": "Marelli Motori",
+  "url": "https://www.marellimotori.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "pramac",
+  "name": "PR Industrial S.r.l",
+  "url": "https://www.pramac.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

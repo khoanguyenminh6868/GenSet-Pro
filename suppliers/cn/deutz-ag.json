@@ -1,0 +1,117 @@
+{
+  "id": "deutz-ag",
+  "country": "DE",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "DEUTZ AG",
+    "zh": null,
+    "brands": [
+      "DEUTZ",
+      "G-Drive"
+    ]
+  },
+  "website": "https://www.deutz.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "huachai-deutz"
+  ],
+  "strengths": [
+    {
+      "text": "Dòng động cơ G-Drive chuyên cho tổ máy phát",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Có tổ máy Classic GenSets (khung hở và cách âm) và tổ máy chạy hydro",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Sở hữu Frerk Aggregatebau (tích hợp hệ thống phát điện dự phòng diesel/khí)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "G-Drive",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Classic GenSets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang công khai không ghi dải công suất của G-Drive / Classic GenSets (deutz.com chặn trình đọc thường, lưu qua firecrawl)",
+    "Liên doanh tại Trung Quốc: huachai-deutz"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.deutz.com/en/products/gensets/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "DEUTZ provides complete solutions for local power generation and decentralized energy supply activities",
+        "Available in two variants – Open Frame and a Sound-Proof System.",
+        "DEUTZ hydrogen gensets run on hydrogen and can be fueled with green hydrogen",
+        "Frerk Aggregatebau GmbH is a systems integrator for diesel and gas emergency power systems"
+      ],
+      "file": "sources/deutz-ag/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://g-drive.deutz.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "With the new DEUTZ G-Drive lineup , DEUTZ is expanding its engine portfolio—including into higher power classes.",
+        "Executive Vice President and CEO Business Unit Engines DEUTZ AG"
+      ],
+      "file": "sources/deutz-ag/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

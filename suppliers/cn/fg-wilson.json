@@ -1,0 +1,88 @@
+{
+  "id": "fg-wilson",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Caterpillar (NI) Ltd",
+    "zh": null,
+    "brands": [
+      "FG Wilson"
+    ]
+  },
+  "website": "https://www.fgwilson.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "caterpillar"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 6,8–2500 kVA (nhóm nhỏ <220, vừa 225–938, lớn >800 kVA)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 60 năm trong ngành phát điện",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator product range",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6.8,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi năm thành lập, nhà máy, hãng động cơ / đầu phát từng dòng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.fgwilson.com/en_GB.html?fbclid=IwZXh0bgNhZW0BMABwZG9mAWFkaWQBqzmd9Ze49HNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABH5nil2tFGlzDxcpVh3r9oGg0_E-z6pQPnkMxnD4-cQ2bHPqJSmz3QU0o-ij8_aem_vAO00TNn2bb19-nQUj1rLw&utm_medium=paid&utm_source=fb&utm_id=120252382754540020&utm_content=120253165640230020&utm_term=120252386615210020&utm_campaign=120252382754540020",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Caterpillar (NI) Ltd 2024 All Rights Reserved.",
+        "Designed with industrial users in mind, our 6.8 – 2,500 kVA diesel generator product range",
+        "Small Range <220 kVA",
+        "Medium Range 225 – 938 kVA",
+        "Large Range >800 kVA",
+        "now with over 60 years in the power generation business"
+      ],
+      "file": "sources/fg-wilson/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

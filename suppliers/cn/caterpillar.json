@@ -1,0 +1,120 @@
+{
+  "id": "caterpillar",
+  "country": "US",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Caterpillar",
+    "zh": null,
+    "brands": [
+      "Cat"
+    ]
+  },
+  "website": "https://www.cat.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 6,8–7150 kVA, cả 50 Hz và 60 Hz",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tổ máy khí 100–4500 kVA, chạy khí tự nhiên và nhiên liệu khí thay thế",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Cat diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6.8,
+        "max": 7150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz",
+        "60Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cat gas generator sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 100,
+        "max": 4500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa lưu trang giới thiệu công ty (năm thành lập, nhà máy)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2026 Caterpillar. All Rights Reserved.",
+        "Our product range spans 6.8 to 5,720 ekW (6.8 to 7,150 kVA) in both 50 Hz and 60 Hz configurations"
+      ],
+      "file": "sources/caterpillar/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.cat.com/en_US/products/new/power-systems/electric-power/gas-generator-sets.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "With models ranging from 100 to 4,500 ekW (100 to 4,500 kVA), these systems operate on pipeline natural gas as well as a wide range of alternative gaseous fuels"
+      ],
+      "file": "sources/caterpillar/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

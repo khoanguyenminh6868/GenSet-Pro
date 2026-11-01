@@ -1,0 +1,98 @@
+{
+  "id": "marelli-motori",
+  "country": "IT",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "Marelli Motori",
+    "zh": null,
+    "brands": [
+      "Marelli Motori"
+    ]
+  },
+  "website": "https://www.marellimotori.com/",
+  "hq": {
+    "province": "Veneto",
+    "city": "Arzignano"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát MJB (hạ áp) / MJH (trung áp) tới 15000 kVA, 15000 V, khung 315–1250",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Nhà máy tại Arzignano (Ý), máy tới 13 MW, 15 kV",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: nhà sản xuất máy phát, động cơ điện hàng đầu của Ý",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "MJB / MJH",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [
+        "Up to 15000 V"
+      ],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang sản phẩm chỉ ghi công suất tối đa (Up to 15000 kVA), không ghi mức thấp nhất nên chưa có dải công suất",
+    "Chưa có năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.marellimotori.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Marelli Motori is a leading Italian manufacturer of generators, frequency converters and electric motors.",
+        "The company is headquartered in Arzignano, near Verona",
+        "Marelli Motori was acquired by Langley Holdings",
+        "fully integrated production of industrial-grade machines up to 13 MW, 15kV, and 50 tons."
+      ],
+      "file": "sources/marelli-motori/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.marellimotori.com/product/mjh/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "POWER : Up to 15000 kVA",
+        "VOLTAGE : Up to 15000 V",
+        "FRAME : 315 – 1250",
+        "POLES : 4 to 12"
+      ],
+      "file": "sources/marelli-motori/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
