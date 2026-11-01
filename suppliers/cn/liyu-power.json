@@ -1,0 +1,94 @@
+{
+  "id": "liyu-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "湖南省力宇燃气动力有限公司",
+    "brands": [
+      "力宇",
+      "Liyu Power"
+    ]
+  },
+  "website": "https://www.liyupower.cn/",
+  "hq": {
+    "province": "Hunan",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy khí LY170, LY260 công suất 900–4000 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thuộc tập đoàn 力宇集团",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "LY170及LY260系列燃气发电机组",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 900,
+        "max": 4000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập, địa chỉ nhà máy, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.liyupower.cn/gas-generators.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "力宇LY170及LY260系列燃气发电机组（900-4000kW） 为高需求地区提供高效、可靠的电力",
+        "2500kW-4000kW",
+        "900kW-1200kW"
+      ],
+      "file": "sources/liyu-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.liyupower.cn/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "力宇集团旗下湖南省力宇燃气动力有限公司（以下简称“力宇动力”）"
+      ],
+      "file": "sources/liyu-power/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

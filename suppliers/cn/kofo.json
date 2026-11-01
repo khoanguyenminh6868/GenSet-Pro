@@ -1,0 +1,84 @@
+{
+  "id": "kofo",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "山东科发动力有限公司",
+    "brands": [
+      "KOFO",
+      "科发"
+    ]
+  },
+  "website": "https://www.kofopower.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel 10–360 kW, bốn dòng R, 100, Y80 và Steyr (斯太尔)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Nhà máy tại Duy Phường (Sơn Đông)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "R、100、Y80和斯太尔四大系列柴油机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 360,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Website cũ (Copyright 2014), không ghi năm thành lập, chứng chỉ; nhật ký 2026-10-29 từng bỏ qua vì chưa tìm thấy website này"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.kofopower.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright 2014 山东科发动力有限公司 版权所有",
+        "山东科发动力有限公司是一家集柴油机研发、制造、销售为一体的专业化高科技企业。公司主导产品为R、100、Y80和斯太尔四大系列柴油机，功率覆盖范围从10Kw到360Kw。",
+        "公司自成立伊始，即以潍坊这一全国柴油机制造基地的独特区域优势为依托"
+      ],
+      "file": "sources/kofo/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

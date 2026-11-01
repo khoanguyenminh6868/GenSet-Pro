@@ -1,0 +1,100 @@
+{
+  "id": "changsong-weifang",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "潍坊市长松柴油机有限责任公司",
+    "brands": [
+      "长松"
+    ]
+  },
+  "website": "http://www.changsongpower.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà máy động cơ diesel tại Duy Phường, kèm tổ máy",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Động cơ khí 10–1100 kW",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "燃气发动机",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 1100,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "柴油机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất động cơ diesel, năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.changsongpower.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "CopyRight 2017 All Right Reserved 潍坊市长松柴油机有限责任公司",
+        "潍坊市长松柴油机有限责任公司，座落于美丽的国际风筝之都－－山东省潍坊市。是一家大型柴油机生产企业。",
+        "公司加大投入，组建燃气机中心，全系列燃气发动机，功率范围涵盖10KW-1100KW"
+      ],
+      "file": "sources/changsong-weifang/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

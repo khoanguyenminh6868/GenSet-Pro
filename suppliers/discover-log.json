@@ -1456,5 +1456,74 @@
   "url": "https://www.wackerneuson.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "liyu-power",
+  "name": "湖南省力宇燃气动力有限公司",
+  "url": "https://www.liyupower.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "kerui-gas",
+  "name": "科瑞油气",
+  "url": "https://www.keruigroup.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "xinshengan-shandong",
+  "name": "新盛安动力科技（山东）有限公司",
+  "url": "http://www.xsasd.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "huali-shandong",
+  "name": "山东华力机电有限公司",
+  "url": "http://www.hualijidian.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "http://www.fgwilson.com.cn/",
+  "reason": "威尔信（汕头保税区）是nhà phân phối; quy định chỉ lấy nhà phân phối do chính hãng công bố, chưa có trang fgwilson.com xác nhận"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "kofo",
+  "name": "山东科发动力有限公司",
+  "url": "https://www.kofopower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "taihai-taizhou",
+  "name": "泰州泰海机电设备有限公司",
+  "url": "http://jstaihai.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "changsong-weifang",
+  "name": "潍坊市长松柴油机有限责任公司",
+  "url": "http://www.changsongpower.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]
