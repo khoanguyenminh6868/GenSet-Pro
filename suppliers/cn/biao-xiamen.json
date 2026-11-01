@@ -1,0 +1,72 @@
+{
+  "id": "biao-xiamen",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Xiamen Biao Power Technology Co. ltd",
+    "zh": null,
+    "brands": [
+      "BA Power"
+    ]
+  },
+  "website": "https://www.biaopower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Xiamen"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nghiên cứu và sản xuất tổ máy diesel (Cummins, Doosan, MTU...), có tổ máy rơ-moóc và cách âm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Doosan"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chỉ có từng sản phẩm, chưa có dải công suất toàn dòng, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.biaopower.com/xiamen-biao-power-generator-set_n58",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Xiamen Biao Power Technology Co. ltd who is devoted to the R&D and manufacture of diesel generator sets.",
+        "750kva to 1250kva Genset Cummins Power",
+        "400kva Standby Doosan Diesel Generator Set"
+      ],
+      "file": "sources/biao-xiamen/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
