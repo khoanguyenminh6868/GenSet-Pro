@@ -1,0 +1,5 @@
+{"id":"yipu-power","country":"CN","role":"engine_maker","status":"partial","conf":"medium","en":null,"zh":"苏州屹普动力科技有限公司","brands":["屹普"],"web":null,"prov":"Jiangsu","city":"Suzhou","founded":null,"fsrc":[],"related":[],
+"src":{"1":["B","届时， 苏州屹普动力科技有限公司 将重磅亮相展会","打造了兆瓦级大功率动力系统、柴油电力系统及燃气电力系统三大核心产品线(0.8MW-3.3MW, 1500rpm）","功率0.8-3.3MW，1500/1800rpm；8V/12V/16V/20V 四款系列","功率0.8-2MW，1500/1800rpm；8V/12V/16V/20V 四款系列"]},
+"str":[["Động cơ diesel common-rail 0,8–3,3 MW và động cơ khí đốt nghèo 0,8–2 MW (8V/12V/16V/20V), 1500/1800 vòng/phút",1],["Có hệ thống phát điện diesel và khí; ứng dụng trung tâm dữ liệu, điện hạt nhân, quân sự",1]],"cert":[],
+"lines":[{"k":"engine","s":"高压共轨柴油发动机 (8V/12V/16V/20V)","fuel":"diesel","src":[1]},{"k":"engine","s":"稀薄燃烧燃气发动机","fuel":"gas","src":[1]}],
+"miss":["Công suất ghi bằng MW nên chưa ghi vào dải công suất; nguồn là trang nhà triển lãm GPOWER (hạng B), chưa tìm website riêng"],"by":"discover-bot (Claude)"}
