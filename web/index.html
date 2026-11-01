@@ -266,6 +266,8 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .mbanner h2{margin:0;font-size:18px}.mbanner h2 span{color:var(--violet)}
 .mbanner .btn{margin-left:auto;position:relative}
 .hlname{color:var(--green)}
+/* Supplier list columns: Năm thành lập and Độ tin cậy narrow, Vai trò and Động cơ wider (Khoa, 2026-11-01). */
+table.supmain{table-layout:fixed}table.supmain th{white-space:normal}table.supmain th:nth-child(1){width:23%}table.supmain th:nth-child(2){width:17%}table.supmain th:nth-child(3){width:8%}table.supmain th:nth-child(4){width:21%}table.supmain th:nth-child(5){width:20%}table.supmain th:nth-child(6){width:11%}table.supmain td{overflow-wrap:anywhere}table.supmain .chip{white-space:normal}
 @media (max-width:640px){.mbanner .tag{display:none}.mbanner h2{font-size:16px}.mbanner .mark{width:30px;height:30px}}
 .supcard{padding:12px;display:flex;flex-direction:column;gap:6px;margin:8px 0}.suprow select,.suprow input{min-width:0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
@@ -1965,7 +1967,7 @@ async function runCompare(key) {
 // (suppliers/verify.mjs checked each quote against the saved page before upload; Khoa, 2026-10-28).
 const SUP_ROLE = { genset_oem: "Nhà lắp ráp tổ máy", engine_maker: "Hãng động cơ", alternator_maker: "Hãng đầu phát", distributor: "Nhà phân phối" };
 const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đầu phát" };
-const SUP_CONF = { high: ["Tin cậy cao", "ok"], medium: ["Tin cậy trung bình", "warn"], low: ["Nguồn tự giới thiệu, chưa xác minh độc lập", "bad"] };
+const SUP_CONF = { high: ["Tin cậy cao", "ok"], medium: ["Tin cậy trung bình", "warn"], low: ["Chưa xác minh", "bad"] };
 const SUP_TIER = { A: "Website / tài liệu chính hãng", B: "Triển lãm, hiệp hội, sàn công bố", C: "Tự giới thiệu (đại lý, sàn B2B)" };
 const SUP_COUNTRY = { CN: "Trung Quốc" };
 const supAll = () => Object.values(state.supplier || {}).filter((s) => s?.id && s.status !== "incomplete")
@@ -2035,7 +2037,7 @@ function renderSuppliers() {
 function renderSupList() {
   const list = supAll().filter(supMatches), filtered = supFilter.engine || supFilter.fuel || Number(supFilter.power) > 0;
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
-  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th>Năm thành lập</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
+  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th>Năm thành lập</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
     return h`<tr data-supopen="${s.id}"><td><b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div>${raw(supContactsBrief(s.contacts))}</td>
