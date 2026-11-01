@@ -75,7 +75,7 @@
     notice: "thông báo mời thầu", analysis: "kết quả phân tích", analysisreq: "yêu cầu phân tích", hsmtreq: "yêu cầu tải HSMT", hsmt: "tệp HSMT",
     hsmttext: "nội dung HSMT", syncreq: "yêu cầu đồng bộ muasamcong", translationreq: "yêu cầu tạo YCKT tiếng Anh", translation: "YCKT tiếng Anh",
     comparereq: "yêu cầu đối chiếu HSDT", compare: "kết quả đối chiếu HSDT", hsdtreq: "yêu cầu tạo HSDT tham khảo", hsdt: "HSDT tham khảo",
-    tlktreq: "yêu cầu đối chiếu TLKT", tlkt: "kết quả đối chiếu TLKT",
+    tlktreq: "yêu cầu đối chiếu TLKT", tlkt: "kết quả đối chiếu TLKT", quote: "báo giá nhà cung cấp",
     bidders: "nhà thầu tham dự", portalids: "mã gói trên cổng", synclog: "Sync theo lịch",
   };
   const LOG_OP = { insert: "Tạo", update: "Cập nhật", delete: "Xoá" };
@@ -352,6 +352,14 @@
     const out = await r.json().catch(() => ({ error: `HTTP ${r.status}` }));
     if (!r.ok) throw { message: out.error || `HTTP ${r.status}` };
     return out;
+  };
+  // GET one of this site's files as the signed-in member (a supplier's quote at /_gh/<id>); resolves to the Blob.
+  window.genbidFetch = async (path) => {
+    await ready;
+    const { data: { session } } = await sb.auth.getSession();
+    const r = await fetch(path, { headers: { Authorization: `Bearer ${session?.access_token || ""}` } });
+    if (!r.ok) throw { message: `HTTP ${r.status}` };
+    return r.blob();
   };
   window.claude = {
     async use(name) {

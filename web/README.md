@@ -14,7 +14,7 @@ One page (`index.html`) plus `shim.js`, which provides `window.claude.use()` on 
 ## Setup
 1. Supabase: new project, run `supabase/schema.sql` in the SQL editor, then add the first owner to `members`.
 2. Supabase → Authentication → Providers → Google: paste a Google OAuth client id/secret; add the Vercel URL to the redirect URLs.
-3. Vercel: import this repo with **Root Directory** `web`, and set `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `GITHUB_TOKEN` (fine-grained, this repo only, Contents: read-only, for the tender files).
+3. Vercel: import this repo with **Root Directory** `web`, and set `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `GITHUB_TOKEN` (fine-grained, this repo only, Contents: read and write: it reads the tender files and stores the suppliers' quotes on the releases `ncc-<TBMT>`).
 
 ## Activity log
 Every change to `docs` (database trigger), each sign-in and upload goes to `activity_log`. Only members with role `superadmin` can read it, through the list button next to "Chỉ lấy gói mới". After changing `supabase/schema.sql`, run it again in the SQL editor (it is safe to re-run).
