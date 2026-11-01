@@ -1,0 +1,88 @@
+{
+  "id": "cldj-fujian",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "福安市昌隆电机有限公司",
+    "brands": [
+      "昌隆"
+    ]
+  },
+  "website": "http://www.fjcldj.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": 2002,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà máy tổ máy diesel và đầu phát tại Phúc An, thành lập 2002, rộng hơn 8000 m²",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ / giới thiệu không ghi dải công suất, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.fjcldj.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "欢迎访问福安市昌隆电机有限公司！",
+        "专业制造柴油发电机/发电机，坐落在福安市城阳镇铁湖工业区金业路6号，公司创办于2002年，工厂占地8000多平方米，建筑面积5000多平方米，专业生产柴油发电机组"
+      ],
+      "file": "sources/cldj-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

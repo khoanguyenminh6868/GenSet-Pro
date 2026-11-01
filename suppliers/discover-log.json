@@ -1162,5 +1162,59 @@
   "url": "https://www.saonon.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "liangdi-fujian",
+  "name": "福建亮迪电源科技有限公司",
+  "url": "http://www.mdmotor.com/",
+  "tables": 6,
+  "rows": 44
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hengtong-jiangsu",
+  "name": "江苏恒通发电机制造有限公司",
+  "url": "http://www.yzhengtong.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "longhong-foshan",
+  "name": "广东隆宏机电设备有限公司",
+  "url": "https://www.gdfsfdj.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "xingguang-jiangsu",
+  "name": "江苏星光发电设备有限公司",
+  "url": "https://www.jsxggx.com/",
+  "tables": 16,
+  "rows": 433
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "cldj-fujian",
+  "name": "福安市昌隆电机有限公司",
+  "url": "http://www.fjcldj.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "shengfeng-fuan",
+  "name": "福安市晟丰电机有限公司",
+  "url": "http://sf-motor.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

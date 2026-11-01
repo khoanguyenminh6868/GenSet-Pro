@@ -1,0 +1,92 @@
+{
+  "id": "shengfeng-fuan",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "福安市晟丰电机有限公司",
+    "brands": [
+      "晟丰"
+    ]
+  },
+  "website": "http://sf-motor.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát ba pha SFG, không chổi than TFW2, YHG và tổ máy diesel (Yuchai, Deutz...)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "SFG / TFW2 / YHG系列三相交流发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "玉柴",
+        "道依茨"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://sf-motor.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2017 福安市晟丰电机有限公司 all rights reserved.",
+        "SFG系列三相交流发电机",
+        "TFW2系列无刷三相交流",
+        "YHG系列无刷三相交流同",
+        "玉柴系列柴油发电机组",
+        "道依茨系列柴油发电机组"
+      ],
+      "file": "sources/shengfeng-fuan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
