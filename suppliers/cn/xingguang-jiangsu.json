@@ -2,7 +2,7 @@
   "id": "xingguang-jiangsu",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "江苏星光发电设备有限公司",
@@ -51,7 +51,15 @@
       ],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 15,
+        "max": 2500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
@@ -77,9 +85,7 @@
     }
   ],
   "exportMarkets": [],
-  "missing": [
-    "Trang giới thiệu không ghi dải công suất; chưa lưu trang sản phẩm"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -93,7 +99,8 @@
         "2002年 通过了ISO9001质量管理认证与IT产业部颁发的电信设备进网许可证。",
         "2005年 通过了ISO14000环境管理体系认证",
         "2010-2017年期间，连续八年荣获康明斯世界销售冠军，成为美国康明期Cummins中国规模较大OEM合作厂商。",
-        "2009年 成为上柴动力在中国较大的OEM配套工厂"
+        "2009年 成为上柴动力在中国较大的OEM配套工厂",
+        "可提供15KW-2500KW各种规格普及型、自动化、四保护、自动切换、低噪音及移动式等"
       ],
       "file": "sources/xingguang-jiangsu/1.md"
     },
@@ -259,7 +266,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {

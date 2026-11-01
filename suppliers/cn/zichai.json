@@ -2,7 +2,7 @@
   "id": "zichai",
   "country": "CN",
   "role": "engine_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Zichai Power Co.,Ltd",
     "zh": "淄柴动力有限公司",
@@ -29,7 +29,15 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 150,
+        "max": 4410,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
@@ -42,9 +50,7 @@
   ],
   "certifications": [],
   "exportMarkets": [],
-  "missing": [
-    "Chưa có dải công suất"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -52,7 +58,8 @@
       "accessedAt": "2026-10-28",
       "tier": "A",
       "quote": [
-        "Zichai Power Co.,Ltd , founded in 1970, is a wholly-owned subsidiary of China National Agricultural Development Group Co., Ltd., a specialized manufacturer of high-power medium speed diesel engines"
+        "Zichai Power Co.,Ltd , founded in 1970, is a wholly-owned subsidiary of China National Agricultural Development Group Co., Ltd., a specialized manufacturer of high-power medium speed diesel engines",
+        "9340 series 150~4410kW marine and land diesel engines"
       ],
       "file": "sources/zichai/1.md"
     },
@@ -158,7 +165,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-02",
   "checkedBy": "claude-code",
   "specTables": [
     {

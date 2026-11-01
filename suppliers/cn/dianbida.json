@@ -2,7 +2,7 @@
   "id": "dianbida",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "电必达动力设备(江苏)有限公司",
@@ -33,7 +33,15 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 30,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [
@@ -49,7 +57,7 @@
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"
+    "Chưa có năm thành lập, chứng chỉ"
   ],
   "sources": [
     {
@@ -59,12 +67,13 @@
       "tier": "A",
       "quote": [
         "Copyright © 2022 版权所有 电必达动力设备(江苏)有限公司",
-        "柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网"
+        "柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网",
+        "生产30KW-2400KW柴油发电机组"
       ],
       "file": "sources/dianbida/1.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }
