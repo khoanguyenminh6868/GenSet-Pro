@@ -1,0 +1,127 @@
+{
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "MPMC Powertech Corp.",
+    "zh": null,
+    "brands": [
+      "MPMC"
+    ]
+  },
+  "website": "https://www.mpmc-china.com/",
+  "hq": {
+    "province": "Shanghai",
+    "city": "Shanghai"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "MYC Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6T660L-D20"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [
+        "400V/230V"
+      ],
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://www.mpmc-china.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "MPMC Powertech Corp. | Global leader in distributed solar hybrid solutions and off-grid systems",
+        "+86-21-60970158",
+        "+86-15000854420",
+        "sales@mpmc-china.com",
+        "No.2449 Jinhai Rd.,",
+        "Pudong, Shanghai",
+        "Headquartered in Shanghai, the company operates three modern production bases in Jiangsu and Fujian, equipped with complete CNC production, professional testing and independent R&D systems to support standardized and intelligent manufacturing with an annual output of 12,000 units."
+      ],
+      "file": "sources/mpmc-powertech/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.mpmc-china.com/yuchai500-50hz",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "MYC500(S)-1",
+        "Diesel Generator Sets | 50Hz",
+        "Prime Power: 500kVA/400kW",
+        "Standby Power: 550kVA/440kW",
+        "Frequency: 50Hz",
+        "Rated Voltage: 400V/230V Customized",
+        "Engine Brand: Yuchai",
+        "Engine Model: YC6T660L-D20",
+        "Insulation Type: H Class",
+        "IP Rating: IP 23"
+      ],
+      "file": "sources/mpmc-powertech/2002.md"
+    },
+    {
+      "n": 2003,
+      "url": "https://www.mpmc-china.com/blog/power-station-gensets-with-remote-monitoring",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "MPMC POWERTECH CORP., established in 2008 and headquartered in Shanghai Pudong",
+        "Multi-unit parallel operation with intelligent load sharing, managed through DSE or DEIF AGC controllers, gives the plant N+X redundancy with master-standby rotation rather than a single point of failure."
+      ],
+      "file": "sources/mpmc-powertech/2003.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "config-bot",
+  "specTables": [],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "DSE",
+      "line": "Multi-unit parallel operation with intelligent load sharing, managed through DSE or DEIF AGC controllers, gives the plant N+X redundancy with master-standby rotation rather than a single point of failure.",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": "AGC",
+      "text": "DEIF AGC",
+      "line": "Multi-unit parallel operation with intelligent load sharing, managed through DSE or DEIF AGC controllers, gives the plant N+X redundancy with master-standby rotation rather than a single point of failure.",
+      "src": [
+        2003
+      ]
+    }
+  ],
+  "id": "mpmc-powertech"
+}

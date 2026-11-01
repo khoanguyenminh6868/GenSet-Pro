@@ -1,0 +1,121 @@
+{
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Jiangsu Ruichang Gold Generating Equipment Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "RCGPOWER",
+      "RCG Power"
+    ]
+  },
+  "website": "https://www.rcgpower.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Wuxi"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "R-SC Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "engineModels": [
+        "SC25G690D2"
+      ],
+      "alternatorMakes": [
+        "WR544C"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://www.rcgpower.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Home-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+        "We can provide power from 6-3000kW and comprehensive power solutions for you.",
+        "Smartgen",
+        "Leroy Somer",
+        "+86 510-83781999",
+        "info@rcgpower.com",
+        "86 15961889117",
+        "157 Furong Middle 1st Road, Xishan Economic and Technological Development Zone, Wuxi City, Jiangsu, PRC."
+      ],
+      "file": "sources/rcg-power/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-YC-Series.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "R-SC Series (SDEC)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+        "| | Model | Prime Power | Standby Power | Engine | Alternator | Download",
+        "| R-SC500D5-S | 500 kVA / 400 kW | 550 kVA / 440 kW | SC25G690D2 | WR544C | PDF",
+        "| R-SC30D5-S | 30 kVA / 24 kW | 33 kVA / 26 kW | 4Z3.2-G11 | WR184G | PDF"
+      ],
+      "file": "sources/rcg-power/2002.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "config-bot",
+  "specTables": [],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "DSE",
+      "line": "DSE",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "Smartgen",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": null,
+      "text": "DEIF",
+      "line": "DEIF",
+      "src": [
+        2001
+      ]
+    }
+  ],
+  "id": "rcg-power"
+}
