@@ -10156,5 +10156,18 @@
         "| Weight | kg | 13500"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "| Model | DSE6120MK3",
+      "src": [
+        1001,
+        1002,
+        1003
+      ]
+    }
   ]
 }

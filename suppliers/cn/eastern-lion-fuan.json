@@ -1632,5 +1632,28 @@
         "| GF/GFS-YN75 | 75 | 94 | 83 | 104 | YN48GBZ | 85kw/1800 | EL 224G | 68kw | RUIFEN6120"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Mebay",
+      "model": null,
+      "text": "Mebay",
+      "line": "Controller Mebay 6120",
+      "src": [
+        127,
+        137
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120",
+      "text": "Smartgen 6120",
+      "line": "Controller Smartgen 6120",
+      "src": [
+        107,
+        108,
+        109
+      ]
+    }
   ]
 }

@@ -826,5 +826,51 @@
         "| HJI-2000 | 2000 | 2200 | 2300 | 2500"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "COMAP",
+      "line": "| 控制面板Control panel | 众智SMARTGEN/深海DEEPSEA/科迈COMAP/丹控DEIF",
+      "src": [
+        103,
+        104,
+        105
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "深海",
+      "line": "| 控制面板Control panel | 众智SMARTGEN/深海DEEPSEA/科迈COMAP/丹控DEIF",
+      "src": [
+        103,
+        104,
+        105
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": null,
+      "text": "DEIF",
+      "line": "| 控制面板Control panel | 众智SMARTGEN/深海DEEPSEA/科迈COMAP/丹控DEIF",
+      "src": [
+        103,
+        104,
+        105
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "众智",
+      "line": "| 控制面板Control panel | 众智SMARTGEN/深海DEEPSEA/科迈COMAP/丹控DEIF",
+      "src": [
+        103,
+        104,
+        105
+      ]
+    }
   ]
 }

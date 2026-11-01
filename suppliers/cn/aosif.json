@@ -9358,5 +9358,27 @@
         "| Lub oil heater | ● Elec.coolant Heater"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "Deepsea 6120",
+      "line": "| Control module | Deepsea 6120",
+      "src": [
+        1001,
+        1002,
+        1003
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "Deepsea 7320",
+      "line": "| Control module | Deepsea 7320",
+      "src": [
+        1067
+      ]
+    }
   ]
 }

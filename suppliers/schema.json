@@ -44,6 +44,7 @@
     "certifications": { "type": "array", "items": { "type": "object", "required": ["name", "src"], "properties": { "name": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
     "vietnam": { "type": "object", "properties": { "distributors": { "type": "array", "items": { "type": "object", "required": ["name", "src"], "properties": { "name": { "type": "string" }, "website": { "type": ["string", "null"] }, "src": { "$ref": "#/$defs/src" } } } }, "note": { "type": ["string", "null"] } } },
     "contacts": { "type": "array", "items": { "type": "object", "required": ["type", "value", "src"], "properties": { "type": { "enum": ["email", "phone", "whatsapp", "wechat"] }, "value": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
+    "controllers": { "type": "array", "items": { "type": "object", "required": ["brand", "text", "line", "src"], "properties": { "brand": { "type": "string" }, "model": { "type": ["string", "null"] }, "text": { "type": "string" }, "line": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
     "exportMarkets": { "type": "array", "items": { "type": "string" } },
     "missing": { "type": "array", "items": { "type": "string" } },
     "sources": {

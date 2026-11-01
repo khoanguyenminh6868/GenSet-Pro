@@ -348,6 +348,16 @@
         "| Engine coolant capacity | L | 17"
       ],
       "file": "sources/huachai-deutz/130.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://deutzchbdp.com/1-3-gas-generator-sets/221661/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| 140GF | 140 | Gas Genset | HC6V132GCP1 | 180 | ECO38-1SN/4 | 144 | Deep Sea Brand DSE4520 | 132 × 145 | 11.906 | ≤178 | 2300 | 2600 × 1450 × 1950"
+      ],
+      "file": "sources/huachai-deutz/3001.md"
     }
   ],
   "confidence": "medium",
@@ -849,6 +859,28 @@
         "| Air volume of fan | m 3 /s | 4.6",
         "| Fan power consumption | kW | ≤14",
         "| Fan transmission ratio | | 0.96"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "Comap",
+      "line": "Base oil tank, independent oil tank, Assistant starting system when low temperature, Intelligent control system (including Weidian, Comap, Deep sea, etc).Different alternator brands available. One phase is optional.",
+      "src": [
+        108,
+        112,
+        116
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DSE4520",
+      "line": "| 140GF | 140 | Gas Genset | HC6V132GCP1 | 180 | ECO38-1SN/4 | 144 | Deep Sea Brand DSE4520 | 132 × 145 | 11.906 | ≤178 | 2300 | 2600 × 1450 × 1950",
+      "src": [
+        3001
       ]
     }
   ]

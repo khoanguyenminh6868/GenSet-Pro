@@ -251,5 +251,34 @@
         "| 1200GF | 1200/1500 | 1320/1650 | KTA50-G8 | 1299 | PI734 | 1240/1550 | 5400 ×2195×2560 | 10600"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "Control System: Smartgen/Deepsea/ComAp",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "Control System: Smartgen/Deepsea/ComAp",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "Smartgen Silent Electric Generator with Noise Level ≤75dB A Control System",
+      "src": [
+        101
+      ]
+    }
   ]
 }

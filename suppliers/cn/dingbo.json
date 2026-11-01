@@ -304,6 +304,16 @@
         "| | Dingbo listing | Perkins engine | What the code suggests | Ask before ordering"
       ],
       "file": "sources/dingbo/110.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.dieselgeneratortech.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "300KW silent diesel generator set with Cummins engine NTA855-G2A, Marathon MP-300-4A three phase generator and SmartGen 6110 automatic control module."
+      ],
+      "file": "sources/dingbo/3001.md"
     }
   ],
   "confidence": "medium",
@@ -791,6 +801,28 @@
         "| 30 kVA / 24 kW | 1103A-33G | Three-cylinder, 3.3 L, no turbo | Motor starting margin, available floor space",
         "| 250 kVA / 200 kW | 1206A-E70TTAG3 | Six-cylinder, 7.0 L, twin-turbo | Ambient temperature and altitude derating",
         "| 400 kW / 500 kVA | 2506C-E15TAG1 | Six-cylinder, 15 L, turbocharged | Whether the set label is a prime or standby figure, and the engine's own rating at the same duty"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea",
+      "line": "Deep Sea Controller Cabinet",
+      "src": [
+        1,
+        2,
+        101
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "SmartGen 6110",
+      "line": "300KW silent diesel generator set with Cummins engine NTA855-G2A, Marathon MP-300-4A three phase generator and SmartGen 6110 automatic control module.",
+      "src": [
+        3001
       ]
     }
   ]

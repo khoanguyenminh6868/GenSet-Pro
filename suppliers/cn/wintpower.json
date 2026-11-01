@@ -1120,5 +1120,56 @@
         "| WT-J2750E | 2200 | 2000 | H16V190ZL | LSA51.2VL90 | *** | WT500L-2000N"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF25",
+      "text": "AMF25",
+      "line": "| Control Panel- ComAp AMF25",
+      "src": [
+        109
+      ]
+    },
+    {
+      "brand": "Datakom",
+      "model": "DKG-309",
+      "text": "dkg309",
+      "line": "high voltage generator , dkg309 ,",
+      "src": [
+        2,
+        115,
+        116
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4620",
+      "text": "DEEPSEA4620",
+      "line": "| Control Panel -DEEPSEA4620",
+      "src": [
+        101,
+        110
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DEEPSEA7320",
+      "line": "| Control Panel – DEEPSEA7320 | | |",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SMARTGEN",
+      "line": "Hinsulation class. 3. Standard 50ºC radiator with safety guard, engine driven fan mounted on skid 4. DEEPSEA, COMAP, SMARTGEN controller brand with Auto/Manual start and AMF function 5. DELIXI, CHINT or ABB branded MCCB circuit breaker mounted.",
+      "src": [
+        101,
+        110
+      ]
+    }
   ]
 }

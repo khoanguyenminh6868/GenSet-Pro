@@ -572,5 +572,25 @@
         "| WDPG-C1500 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 | 16 | E |"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "ComAp or Deep Sea generator controllers",
+      "src": [
+        1
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea",
+      "line": "ComAp or Deep Sea generator controllers",
+      "src": [
+        1
+      ]
+    }
   ]
 }

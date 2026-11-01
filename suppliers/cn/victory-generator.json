@@ -1735,5 +1735,38 @@
         "| V44SU | 40KW/50KVA | 44KW/55KVA | JE493ZLDB-01 | 60Hz | Turbocharged | 93X102 | 2.771 | 18.2:1 | ≤5% | 9.4 | 1850*700*1150 | 780"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF20",
+      "text": "AMF20",
+      "line": "2. Mounted intelligent European Brand ComAp AMF20 control panel with Auto",
+      "src": [
+        104,
+        105,
+        125
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "2. Mounted intelligent European Brand Deepsea DSE6020 control panel with Auto",
+      "src": [
+        114
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120",
+      "text": "HGM6120",
+      "line": "2. Mounted intelligent famous Brand Smartgen HGM6120 control panel with Auto",
+      "src": [
+        101,
+        108,
+        109
+      ]
+    }
   ]
 }

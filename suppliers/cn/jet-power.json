@@ -1445,5 +1445,51 @@
         "| P-200 | 200 | 160 | 180 | 144 | 1106C-P6TAG4 | L6 | Electric | 5.98 | 100x127 | JET 274G"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "04. Equipped with advanced generator set control system, ATS system, remote control system, parallel operation system, optional control Brand, Deep sea, Smartgen , ComAp , Jet Power",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "• DSE6020, HGM6120N, DSE7320 (AMF) Series Standard control panel, Optional Automatic transfer switch (ATS) and Automatic parallel operation system, Remote control system.",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "• DSE6020, HGM6120N, DSE7320 (AMF) Series Standard control panel, Optional Automatic transfer switch (ATS) and Automatic parallel operation system, Remote control system.",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM6120N",
+      "line": "• DSE6020, HGM6120N, DSE7320 (AMF) Series Standard control panel, Optional Automatic transfer switch (ATS) and Automatic parallel operation system, Remote control system.",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    }
   ]
 }

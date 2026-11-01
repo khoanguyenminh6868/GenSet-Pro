@@ -165,6 +165,16 @@
         "| Gense t Model | Prime Power kW/kVA | Standby Power kW/kVA | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
       ],
       "file": "sources/superwatt-power/117.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.swtgenset.com/spare-parts/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "ComAp Genset Controller: . IL3 AMF20 for Standard Genset Control system . IL3 AMF25 for Genset Control System . IC-NT /IG-NT for Genset Control system, with"
+      ],
+      "file": "sources/superwatt-power/3001.md"
     }
   ],
   "confidence": "medium",
@@ -303,6 +313,89 @@
         "| SL2100 | 1500/1875 | 1680/2100 | S16R-PTA2-C | 5200x2400x3200 | 14000",
         "| SL2250 | 1640/2050 | 1800/2250 | S16R-PTAA2-C | 5800x2200x3400 | 15000",
         "| SL2500 | 1800/2250 | 2000/2500 | S16R2-PTAW-C | 6200X2380X3370 | 17000"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF20",
+      "text": "AMF20",
+      "line": "ComAp Genset Controller: . IL3 AMF20 for Standard Genset Control system . IL3 AMF25 for Genset Control System . IC-NT /IG-NT for Genset Control system, with",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AMF25",
+      "text": "AMF25",
+      "line": "ComAp Genset Controller: . IL3 AMF20 for Standard Genset Control system . IL3 AMF25 for Genset Control System . IC-NT /IG-NT for Genset Control system, with Multi-Genset Auto Synchronization and Load",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "Deepsea Genset Controller: . DSE6120 AMF for Standard Genset Control system . DSE7320 AMF for Genset Control System . DSE8610 for Genset Control system,",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Deepsea Genset Controller: . DSE6120 AMF for Standard Genset Control system . DSE7320 AMF for Genset Control System . DSE8610 for Genset Control system, with Multi-Genset Auto Synchronization and Load",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "Deepsea Genset Controller: . DSE6120 AMF for Standard Genset Control system . DSE7320 AMF for Genset Control System . DSE8610 for Genset Control system, with Multi-Genset Auto Synchronization and Load Sharing . DSE8620AMF for Single Genset",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8620",
+      "text": "DSE8620",
+      "line": "Genset Control System . DSE8610 for Genset Control system, with Multi-Genset Auto Synchronization and Load Sharing . DSE8620AMF for Single Genset Parallel with Mains Grid . DSE 8660 for Multi-Genset Parallel with Mains Grid ....",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8660",
+      "text": "DSE 8660",
+      "line": "with Multi-Genset Auto Synchronization and Load Sharing . DSE8620AMF for Single Genset Parallel with Mains Grid . DSE 8660 for Multi-Genset Parallel with Mains Grid ....",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": null,
+      "text": "Deif",
+      "line": ". Genset controller parts:Deepsea, ComAp, Deif, SmartGen",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SmartGen",
+      "line": ". Genset controller parts:Deepsea, ComAp, Deif, SmartGen",
+      "src": [
+        3001
       ]
     }
   ]

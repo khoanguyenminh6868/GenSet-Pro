@@ -1224,5 +1224,85 @@
         "| Controller | Mebay DC52D | Delivery Time | 10 Working Days"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF20",
+      "text": "AMF20",
+      "line": "| Controller | ComAp AMF20",
+      "src": [
+        125
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AMF25",
+      "text": "AMF 25",
+      "line": "| Controller | ComAP IL-AMF 25",
+      "src": [
+        111
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "| Controller | DSE6020",
+      "src": [
+        107,
+        110
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "| Controller | DSE7320",
+      "src": [
+        101,
+        105
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": "SGC-420",
+      "text": "SGC-420",
+      "line": "| Controller | DEIF SGC-420 | Fuel Tank | Integrated-fuel-tank",
+      "src": [
+        107
+      ]
+    },
+    {
+      "brand": "Harsen",
+      "model": null,
+      "text": "Harsen",
+      "line": "4. Deepsea,Comap,Harsen,Smartgen Set mounted control panel",
+      "src": [
+        104,
+        129
+      ]
+    },
+    {
+      "brand": "Mebay",
+      "model": null,
+      "text": "Mebay",
+      "line": "| Controller | Mebay DC52D | Delivery Time | 10 Working Days",
+      "src": [
+        127,
+        137
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM6120N",
+      "line": "| Control System | Brand | Smartgen | Model | HGM6120N",
+      "src": [
+        102,
+        103,
+        104
+      ]
+    }
   ]
 }

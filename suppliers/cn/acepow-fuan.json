@@ -1498,5 +1498,136 @@
         "| APYT-350 | 60 | 350 | 385 | YM6S9LF-DA | 380 | 430 | HC434F"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF20",
+      "text": "AMF20",
+      "line": "4. Famous brand COMAP AMF20 controller",
+      "src": [
+        104,
+        115,
+        124
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AMF25",
+      "text": "AMF25",
+      "line": "4 poles for option 5. Controller: DSE6120, DSE7320, DSE8610 and other deepsea models, Comap MRS10, MRS16, AMF20, AMF25 for option. 6. Silencer: Heavy duty industrial type silencer with flexible bellow,elbow. 7. Battery: Varta Brand,high",
+      "src": [
+        113
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "MRS10",
+      "text": "MRS10",
+      "line": "breaker as standard, 4 poles for option 5. Controller: DSE6120, DSE7320, DSE8610 and other deepsea models, Comap MRS10, MRS16, AMF20, AMF25 for option. 6. Silencer: Heavy duty industrial type silencer with flexible bellow,elbow. 7.",
+      "src": [
+        113
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "MRS16",
+      "text": "MRS16",
+      "line": "as standard, 4 poles for option 5. Controller: DSE6120, DSE7320, DSE8610 and other deepsea models, Comap MRS10, MRS16, AMF20, AMF25 for option. 6. Silencer: Heavy duty industrial type silencer with flexible bellow,elbow. 7. Battery:",
+      "src": [
+        113
+      ]
+    },
+    {
+      "brand": "Datakom",
+      "model": "DKG-116",
+      "text": "DKG116",
+      "line": "Control System DKG116",
+      "src": [
+        104,
+        115,
+        118
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE3110",
+      "text": "DSE3110",
+      "line": "Control module Smartgen HGM6120N /DSE3110",
+      "src": [
+        103,
+        106,
+        128
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "Genset Control panel: Deepsea DSE6120",
+      "src": [
+        106,
+        108,
+        109
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "base frame 4. Breaker: 3-pole output manual circuit breaker as standard, 4 poles for option 5. Controller: DSE6120, DSE7320, DSE8610 and other deepsea models, Comap MRS10, MRS16, AMF20, AMF25 for option. 6. Silencer: Heavy duty industrial type",
+      "src": [
+        113
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "4. Breaker: 3-pole output manual circuit breaker as standard, 4 poles for option 5. Controller: DSE6120, DSE7320, DSE8610 and other deepsea models, Comap MRS10, MRS16, AMF20, AMF25 for option. 6. Silencer: Heavy duty industrial type silencer",
+      "src": [
+        113
+      ]
+    },
+    {
+      "brand": "Harsen",
+      "model": null,
+      "text": "Harsen",
+      "line": "2. Equipped with Deep Sea,ComAp,Harsen,Smartgen famous control systems.",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "Smartgen 6110",
+      "line": "Control panel: Deepsea / ComAp / Harsen / Smartgen 6110",
+      "src": [
+        103,
+        105,
+        107
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120",
+      "text": "HGM6120",
+      "line": "| Generator Voltage: | 230V/400V | Generator Controller: | Deepsea, HGM6120",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM6120N",
+      "line": "Control module Smartgen HGM6120N /DSE3110",
+      "src": [
+        103,
+        106,
+        128
+      ]
+    }
   ]
 }

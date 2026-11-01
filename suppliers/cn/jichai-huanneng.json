@@ -161,6 +161,26 @@
         "| Generator model | 6116GD"
       ],
       "file": "sources/jichai-huanneng/111.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://m.jichaipower.com/newslist-401124-1",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Characteristics Of InteliSys Gas Controller F..."
+      ],
+      "file": "sources/jichai-huanneng/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://m.jichaipower.com/diesel-engine-generator/diesel-engine-generator-set/1000kw-diesel-engine-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "&radic; DSE6120 controller"
+      ],
+      "file": "sources/jichai-huanneng/3002.md"
     }
   ],
   "confidence": "medium",
@@ -374,6 +394,26 @@
         "| Power factor | 0.8（Lag）",
         "| Protection mode | IP23",
         "| Cooling method | Fan cooling（IC01）"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "InteliSys",
+      "text": "InteliSys",
+      "line": "Characteristics Of InteliSys Gas Controller F...",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "&radic; DSE6120 controller",
+      "src": [
+        3002
       ]
     }
   ]

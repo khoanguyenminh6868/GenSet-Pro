@@ -369,5 +369,16 @@
         "| 机组质量(kg) | 16000 | 14000"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE3110",
+      "text": "DSE3110",
+      "line": "| 控制系统 | 品牌及型号 | Model | Deepsea, DSE3110 | Deepsea, DSE3110",
+      "src": [
+        105
+      ]
+    }
   ]
 }

@@ -359,7 +359,7 @@ details.sec>div{margin-top:10px}
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="syncNewBtn" aria-label="Chỉ lấy gói mới" title="Chỉ lấy các gói mới nhất từ muasamcong (so với gói mới nhất trong hệ thống), không kiểm tra hay cập nhật gói cũ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" data-catopen="engine" title="Danh mục model động cơ rút từ bảng thông số của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Động cơ</button></div>
+        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" data-catopen="engine" title="Danh mục động cơ, đầu phát, bộ điều khiển rút từ dữ liệu của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Động cơ</button></div>
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
   </header>
@@ -2140,8 +2140,8 @@ function supModelsHtml(s) {
         <td data-l="Tổ máy" class="small">${raw([catRange(x.kva, "kVA"), catRange(x.kw, "kW")].filter(Boolean).map((r) => h`<div>${r}</div>`).join("") || '<span class="muted">bảng không ghi công suất</span>')}</td>
         <td data-l="Số dòng" class="small">${x.rows}</td></tr>`).join(""))}</tbody></table></div></details>`;
   };
-  const body = part("engine") + part("alternator");
-  return h`<h4>Động cơ và đầu phát phân phối</h4>${raw(body ? h`<div class="muted small">Rút từ các bảng thông số của nhà cung cấp này (mục "Cấu hình các model" bên dưới); công suất là của tổ máy trong các dòng đó. Bấm một model để xem trong danh mục.</div>${raw(body)}` : '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}`;
+  const body = part("engine") + part("alternator") + part("controller");
+  return h`<h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(body ? h`<div class="muted small">Rút từ các bảng thông số của nhà cung cấp này (mục "Cấu hình các model" bên dưới); công suất là của tổ máy trong các dòng đó. Bấm một model để xem trong danh mục.</div>${raw(body)}` : '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}`;
 }
 // The model tables of a supplier (crawl-specs.mjs), each line as it is on the supplier's page, with its source [n].
 const supCells = (line) => String(line).split("|").map((c) => c.trim()).slice(1);
@@ -2186,11 +2186,14 @@ function supMatchHtml(r) {
 
 // ---------- Danh mục động cơ / đầu phát (web/catalog.js, rút từ bảng thông số của các nhà cung cấp) ----------
 // Mọi user đều xem được (Khoa, 2026-10-28). Không có số liệu nào ngoài các dòng bảng đã kiểm (verify.mjs).
-const CAT_KIND = { engine: { one: "động cơ", title: "Danh mục động cơ", list: "engines", other: "Đầu phát đi kèm" }, alternator: { one: "đầu phát", title: "Danh mục đầu phát", list: "alternators", other: "Động cơ đi kèm" } };
+const CAT_KIND = { engine: { one: "động cơ", title: "Danh mục động cơ", list: "engines", other: "Đầu phát đi kèm" }, alternator: { one: "đầu phát", title: "Danh mục đầu phát", list: "alternators", other: "Động cơ đi kèm" },
+  // Bộ điều khiển (Khoa, 2026-11-01): from the lines of the suppliers' saved pages that name one (suppliers/controllers.mjs)
+  // and from genset rows that name one; "other" is the engine of that row.
+  controller: { one: "bộ điều khiển", title: "Danh mục bộ điều khiển", list: "controllers", other: "Động cơ trong dòng" } };
 const CAT_RATING = { prime: "Liên tục (prime)", standby: "Dự phòng (standby)", rated: "Không ghi loại" };
 let catMemo = { src: null, cat: null };
 function catalog() {
-  if (catMemo.src !== state.supplier) catMemo = { src: state.supplier, cat: window.GenbidCatalog ? window.GenbidCatalog.build(supAll()) : { engines: [], alternators: [] } };
+  if (catMemo.src !== state.supplier) catMemo = { src: state.supplier, cat: window.GenbidCatalog ? window.GenbidCatalog.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
   return catMemo.cat;
 }
 let catView = { kind: "engine", q: "", make: "", power: "", unit: "kVA", freq: "", spec: "", sort: "sup", limit: 60, open: null };
@@ -2273,11 +2276,11 @@ function renderCatList() {
   else if (catView.sort === "model") list = list.slice().sort((a, b) => a.model.localeCompare(b.model));
   if ($("#catCount")) $("#catCount").textContent = `${list.length} model`;
   const shown = list.slice(0, catView.limit);
-  $("#catList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>Thông số</th><th>Tần số</th><th>Nhà cung cấp</th></tr></thead><tbody>${raw(shown.map((e) => h`<tr data-catitem="${e.key}">
+  $("#catList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>${catView.kind === "controller" ? "Dòng nguồn" : "Thông số"}</th><th>Tần số</th><th>Nhà cung cấp</th></tr></thead><tbody>${raw(shown.map((e) => h`<tr data-catitem="${e.key}">
       <td><b class="hlname">${e.model}</b>${raw(e.names.length > 1 ? h`<div class="muted small">cũng ghi: ${e.names.filter((x) => x !== e.model).slice(0, 3).join(", ")}</div>` : "")}</td>
       <td data-l="Hãng">${raw(catMakeHtml(e))}</td>
       <td data-l="Tổ máy" class="small">${raw([catRange(e.kva, "kVA"), catRange(e.kw, "kW")].filter(Boolean).map((x) => h`<div>${x}</div>`).join("") || '<span class="muted">bảng không ghi công suất</span>')}</td>
-      <td data-l="Thông số" class="small">${raw(catSpecsCell(e))}</td>
+      <td data-l="${e.kind === "controller" ? "Dòng nguồn" : "Thông số"}" class="small" style="white-space:normal;overflow-wrap:anywhere">${raw(e.kind === "controller" ? h`<span class="muted">${String(e.uses[0]?.line || "").slice(0, 140)}${String(e.uses[0]?.line || "").length > 140 ? "…" : ""}</span>` : catSpecsCell(e))}</td>
       <td data-l="Tần số" class="small">${e.freq.map((x) => x + " Hz").join(", ") || "—"}</td>
       <td data-l="Nhà cung cấp" class="small">${e.suppliers.length} · ${e.uses.length} dòng</td></tr>`).join(""))}</tbody></table></div>
     ${raw(list.length > shown.length ? h`<button class="btn" id="catMore">Xem thêm (${list.length - shown.length} model)</button>` : "")}`
@@ -2308,8 +2311,8 @@ function catDetailHtml(e) {
       <dt>Tần số</dt><dd>${e.freq.map((x) => x + " Hz").join(", ") || "—"}</dd>
       ${raw(others.length ? h`<dt>${K.other}</dt><dd>${others.map(([m, n]) => `${m}${n > 1 ? ` (${n})` : ""}`).join(", ")}</dd>` : "")}
     </dl>
-    ${raw(catSpecsDetail(e))}
-    <h4>Các dòng bảng ghi model này</h4>
+    ${raw(e.kind === "controller" ? "" : catSpecsDetail(e))}
+    <h4>${e.kind === "controller" ? "Các dòng nguồn ghi bộ điều khiển này" : "Các dòng bảng ghi model này"}</h4>
     ${raw(Object.entries(bySup).map(([sid, us]) => h`<details class="supspec" ${Object.keys(bySup).length <= 3 ? "open" : ""}><summary><b>${supName(state.supplier?.[sid]) || sid}</b> · ${us.length} dòng <button class="btn sm" data-supopen="${sid}" style="margin-left:6px">Hồ sơ nhà cung cấp</button></summary>
       <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Tổ máy</th><th>Công suất tổ máy</th><th>${K.other}</th><th>Thông số trong dòng</th><th>Dòng nguyên văn</th><th>Nguồn</th></tr></thead><tbody>${raw(us.map((u) => h`<tr>
         <td data-l="Tổ máy">${u.genset || "—"}</td>
@@ -2328,7 +2331,7 @@ function catDetailHtml(e) {
 // nguyên văn trong HSMT, mỗi thông số chào phải có nguyên văn trong dòng bảng của danh mục hoặc trang web đã lưu, hoặc là kết
 // quả một công thức quy đổi của web/conversions.js mà code đã tính lại. Mỗi cấu hình kèm nhà cung cấp trong hệ thống bán nó.
 const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], unclear: ["Chưa rõ", "warn"] };
-const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet" };
+const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet", controller: "Trang của nhà cung cấp" };
 // Xuất xứ (Khoa, 2026-10-29): Trung Quốc by default leaves out engines of foreign makes (Perkins, Cummins, Volvo Penta,
 // Baudouin, Kubota, Yanmar...) and engines whose source gives no make; Khác keeps only foreign makes. The list is web/catalog.js FOREIGN_ENGINE.
 const CFG_ORIGIN = [["all", "Tất cả"], ["cn", "Trung Quốc"], ["other", "Khác"]];
@@ -2362,8 +2365,8 @@ function findResultHtml(f, key) {
 }
 function cfgSrcHtml(src) {
   if (!src) return "";
-  if (src.kind === "catalog") {
-    const s = state.supplier?.[src.supplierId], url = s?.sources?.find((x) => x.n === src.n)?.url;
+  if (src.kind === "catalog" || src.kind === "controller") {
+    const s = state.supplier?.[src.supplierId], url = s?.sources?.find((x) => x.n === Number(src.n))?.url;
     return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: ${supName(s) || src.supplierId}${raw(url ? h` · <a href="${url}" target="_blank" rel="noopener">trang [${src.n}]</a>` : "")}${raw(src.line ? h`<div><code>${src.line}</code></div>` : "")}</div>`;
   }
   return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: <a href="${src.url}" target="_blank" rel="noopener">${src.url}</a>${raw(src.quote ? h` — <q>${src.quote}</q>` : "")}</div>`;
@@ -2374,7 +2377,7 @@ function cfgSuppliersHtml(c) {
   if (!c.suppliers?.length) return "";
   return h`<div class="small" style="margin-top:6px"><b>Nhà cung cấp đề xuất:</b></div><ol class="suplist">${raw(c.suppliers.map((x) => {
     const s = state.supplier?.[x.supplierId], conf = SUP_CONF[s?.confidence] || ["", "mut"], vn = s?.vietnam?.distributors || [];
-    return h`<li class="small"><b>${supName(s) || x.supplierId}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}
+    return h`<li class="small"><b>${supName(s) || x.supplierId}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}${raw(c.controller?.model ? (x.hasController ? h`<span class="chip ok">có bộ điều khiển ${c.controller.model}</span>` : h`<span class="chip mut">trang không ghi bộ điều khiển ${c.controller.model}</span>`) : "")}
       <button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ</button>${raw(s?.website ? h` <a href="${s.website}" target="_blank" rel="noopener">website</a>` : "")}
       ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
   }).join(""))}</ol>`;
@@ -2390,8 +2393,9 @@ function cfgResultHtml(r) {
     const part = (label, p) => (p ? h`<div><b>${label}:</b> ${p.model}${raw(p.make ? h` <span class="muted">(${p.make})</span>` : "")} <span class="chip mut">${CFG_SRC[p.src?.kind] || ""}</span>${raw(p.unverified ? '<span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(sameRow(p) ? "" : cfgSrcHtml(p.src))}</div>` : "");
     return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${c.rank || i + 1}</b><span class="chip ${fit[1]}">${fit[0]}</span>${raw(c.fromFind ? '<span class="chip mut" title="Thêm bằng code từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, chưa đối chiếu đủ HSMT">Bổ sung từ Tìm NCC</span>' : "")}<span class="spacer"></span>
         ${raw(c.engine?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="engine" data-catkey="${window.GenbidCatalog?.keyOf(c.engine.model) || ""}">Xem động cơ</button>` : "")}
-        ${raw(c.alternator?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="alternator" data-catkey="${window.GenbidCatalog?.keyOf(c.alternator.model) || ""}">Xem đầu phát</button>` : "")}</div>
-      ${raw(part("Động cơ", c.engine))}${raw(part("Đầu phát", c.alternator))}${raw(c.genset ? h`<div class="small">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
+        ${raw(c.alternator?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="alternator" data-catkey="${window.GenbidCatalog?.keyOf(c.alternator.model) || ""}">Xem đầu phát</button>` : "")}
+        ${raw(c.controller?.model ? h`<button class="btn sm" data-catopen="controller" data-catkey="${window.GenbidCatalog?.keyOf(c.controller.model) || ""}">Xem bộ điều khiển</button>` : "")}</div>
+      ${raw(part("Động cơ", c.engine))}${raw(part("Đầu phát", c.alternator))}${raw(part("Bộ điều khiển", c.controller))}${raw(c.genset ? h`<div class="small">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
       ${raw(c.checks?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
         const st = CFG_STATUS[x.status] || ["", "mut"];
         return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>

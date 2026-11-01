@@ -287,6 +287,26 @@
         "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight"
       ],
       "file": "sources/kaihua-genset/116.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.kaihuagenset.com/Telecom.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "To enhance operational convenience and monitoring capabilities, each base station is equipped with the Deep Sea 8610 controller along with the remote 890 module. This integrated control system serves as the \"brain\" of the power unit,"
+      ],
+      "file": "sources/kaihua-genset/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.kaihuagenset.com/Control-System.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "IL-NT AMF InteliGen-NTC"
+      ],
+      "file": "sources/kaihua-genset/3002.md"
     }
   ],
   "confidence": "medium",
@@ -1209,6 +1229,89 @@
         "| KH-700GF | 962.5 | 770 | 875 | 700 | KHKTA50T2 | 5200x1900x2430 | 9500",
         "| KH-800GF | 1100 | 880 | 1000 | 800 | KHKTA50T3 | 5250x1900x2430 | 10500",
         "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | KHKTA50T4 | 5300x1950x2430 | 11000"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "InteliGen",
+      "text": "InteliGen",
+      "line": "IL-NT AMF InteliGen-NTC",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "3.DSE6020, Smartgen control system",
+      "src": [
+        105
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "3.DSE6120, Smartgen control system",
+      "src": [
+        107
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120 MKII",
+      "text": "DSE6120MKII",
+      "line": "3.DSE6120MKII, Smartgen control system 6.Battery and battery switch",
+      "src": [
+        108
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "Deepsea 7320",
+      "line": "HGM9510 Deepsea 7320",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "Deep Sea 8610",
+      "line": "To enhance operational convenience and monitoring capabilities, each base station is equipped with the Deep Sea 8610 controller along with the remote 890 module. This integrated control system serves as the \"brain\" of the power unit,",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120UC",
+      "text": "HGM6120UC",
+      "line": "IC-NT-MINT-2013 HGM6120UC",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7120UC",
+      "text": "HGM7120UC",
+      "line": "HGM6120UC HGM7120UC",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "HGM7120UC HGM9510",
+      "src": [
+        3002
       ]
     }
   ]

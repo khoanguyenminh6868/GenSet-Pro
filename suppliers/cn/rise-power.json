@@ -258,6 +258,16 @@
         "| Model | Prime Power (kW) | Standby Power (kW) | Engine | Engine Rated Power (kW) | Cylinders | Displacement (L) | Alternator | Rated Current(A) | Dimensions (mm) | Weight (kg)"
       ],
       "file": "sources/rise-power/117.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://dieselpower-en.com/control-system/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "DSE6110 Auto Start Controller with basic protection"
+      ],
+      "file": "sources/rise-power/3001.md"
     }
   ],
   "confidence": "medium",
@@ -971,6 +981,35 @@
         "| D1360MG | 1360 | 1496 | S16R-PTA-C | 1450 | 16L | 65.37 | MX-1360-4 | 2454 | 5400×1850×2595 | 13000",
         "| D1500MG | 1500 | 1650 | S16R-PTA2-C | 1600 | 16L | 65.37 | MX-1540-4 | 2706 | 5380×2560×2930 | 15500",
         "| D1600MG | 1600 | 1760 | S16R-PTAA2-C | 1684 | 16L | 65.37 | MX-1600-4 | 2887 | 5870×2395×3150 | 17500"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6110",
+      "text": "DSE6110",
+      "line": "DSE6110 Auto Start Controller with basic protection",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "DSE7320 Auto Mains (Utility) Failure Controller (Communications and Expansion)",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "DSE8610 Auto Start Load Share Controller (multi-generator synchronization system)",
+      "src": [
+        3001
       ]
     }
   ]

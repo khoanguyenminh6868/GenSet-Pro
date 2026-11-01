@@ -413,5 +413,25 @@
         "| Engine Oil Brand | SAE10W30 or 15W-40 or (CD grade above)"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "systems from industry giants—including Cummins, Baudouin, Weichai, and Caterpillar, alongside Stamford, Leroy-Somer, ComAp, and Deep Sea—we deliver bespoke 1-5MW power solutions. Whether scaling your diesel capacity or navigating a",
+      "src": [
+        1
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea",
+      "line": "industry giants—including Cummins, Baudouin, Weichai, and Caterpillar, alongside Stamford, Leroy-Somer, ComAp, and Deep Sea—we deliver bespoke 1-5MW power solutions. Whether scaling your diesel capacity or navigating a sustainable energy",
+      "src": [
+        1
+      ]
+    }
   ]
 }

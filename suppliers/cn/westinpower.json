@@ -1718,6 +1718,36 @@
         "| Model | TB44T"
       ],
       "file": "sources/westinpower/1150.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://power-gensets.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display."
+      ],
+      "file": "sources/westinpower/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://power-gensets.com/index.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display."
+      ],
+      "file": "sources/westinpower/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://power-gensets.com/huawei-huzhou-data-center.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display."
+      ],
+      "file": "sources/westinpower/3003.md"
     }
   ],
   "confidence": "medium",
@@ -9731,6 +9761,50 @@
         "| AVR model | AS540",
         "Control Panel",
         "Model: SGC 420"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8004",
+      "text": "DSE8004",
+      "line": "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display.",
+      "src": [
+        3001,
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display.",
+      "src": [
+        3001,
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": null,
+      "text": "DEIF",
+      "line": "Hybrid power support: generator controller in the micro-grid system and DEIF ASC-4 controller (PV and Battery).",
+      "src": [
+        108,
+        109,
+        110
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-1800",
+      "text": "easYgen-1800",
+      "line": "|  | easYgen-1800 only: For Mains,",
+      "src": [
+        1032
       ]
     }
   ]

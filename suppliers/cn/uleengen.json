@@ -1413,5 +1413,109 @@
         "| UC1500GF | 1260 | 1575 | KTA50-G9 | 1383 | 16.V | 159*159 | 50.3 | 280 | S6L1D-H41 | 5000x2020x2500 | 9600"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "it covers Auto start control panel, Synchronization panels, ATS etc. With controller such as Deepsea, Smartgen, ComAp, Deif, Harsen, etc.",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "Deepsea DSE7320, DSE7420, DSE6120, DSE6020, DSE8610",
+      "src": [
+        3
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "| Control panel | digital AMF Control panel with protection function, with controller Smartgen HGM6120, Deepsea DSE7320, DSE6120",
+      "src": [
+        1,
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "| Control panel | digital AMF Control panel with protection function, with controller Smartgen HGM6120, Deepsea DSE7320, DSE6120",
+      "src": [
+        1,
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7420",
+      "text": "DSE7420",
+      "line": "Deepsea DSE7320, DSE7420, DSE6120, DSE6020, DSE8610",
+      "src": [
+        3
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "Deepsea DSE7320, DSE7420, DSE6120, DSE6020, DSE8610",
+      "src": [
+        3
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": null,
+      "text": "Deif",
+      "line": "it covers Auto start control panel, Synchronization panels, ATS etc. With controller such as Deepsea, Smartgen, ComAp, Deif, Harsen, etc.",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "Harsen",
+      "model": null,
+      "text": "Harsen",
+      "line": "Auto start control panel, Synchronization panels, ATS etc. With controller such as Deepsea, Smartgen, ComAp, Deif, Harsen, etc.",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "| Controller | Smartgen HGM6120, HGM6110, HGM9510",
+      "src": [
+        3
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120",
+      "text": "HGM6120",
+      "line": "| Control panel | digital AMF Control panel with protection function, with controller Smartgen HGM6120, Deepsea DSE7320, DSE6120",
+      "src": [
+        1,
+        101
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Controller | Smartgen HGM6120, HGM6110, HGM9510",
+      "src": [
+        3
+      ]
+    }
   ]
 }

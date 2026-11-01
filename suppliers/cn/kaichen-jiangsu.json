@@ -350,5 +350,16 @@
         "| Frequency | 50 Hz"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "Controller: Smartgen HGM6110",
+      "src": [
+        101
+      ]
+    }
   ]
 }

@@ -3369,5 +3369,51 @@
         "| Start motor | 12V"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "3- Controller optional: Smartgen/Deepsea/ComAp.",
+      "src": [
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "3- Controller optional: Smartgen/Deepsea/ComAp.",
+      "src": [
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110N",
+      "text": "HGM6110N",
+      "line": "| Control Panel | Smartgen HGM6110N",
+      "src": [
+        1002,
+        1003,
+        1005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM6120N",
+      "line": "Standard Smartgen HGM6120N control moduel with AMF function, Optional for Deepsea, ComAp, Datakom,Deif ect.",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    }
   ]
 }

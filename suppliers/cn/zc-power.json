@@ -198,6 +198,16 @@
         "| | Factor | MTU | Perkins | Cummins | Yuchai | Weichai"
       ],
       "file": "sources/zc-power/112.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://zccpower.com/power-range/501-1000kw-generators/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Deep Sea Electronics DSE 8610 or ComAp InteliGen NT controllers provide comprehensive protection and monitoring. Features include AMF (Auto Mains Failure), remote start capability, Modbus RTU/TCP connectivity for BMS integration, and email/SMS alert notifications."
+      ],
+      "file": "sources/zc-power/3002.md"
     }
   ],
   "confidence": "low",
@@ -454,6 +464,44 @@
         "| Typical Price Tier | Premium ($$$$) | Mid-Range ($$$) | Premium ($$$$) | Value ($$) | Value ($$)",
         "| Fuel Efficiency | Excellent (<200 g/kWh) | Good | Excellent | Competitive | Excellent (world-record)",
         "| Service Interval | Longest in class | Moderate | Long | Standard | Standard to long"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "InteliGen NT",
+      "text": "InteliGen NT",
+      "line": "Deep Sea Electronics DSE 8610 or ComAp InteliGen NT controllers provide comprehensive protection and monitoring. Features include AMF (Auto Mains Failure), remote start capability, Modbus RTU/TCP connectivity for BMS integration, and email/SMS alert notifications.",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Deep Sea Electronics DSE7320 or SmartGen HGM9510 digital controllers standard. Features include auto-start on mains failure, comprehensive engine monitoring (oil pressure, coolant temperature, RPM), and Modbus RTU communications for Building Management System integration.",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE 8610",
+      "line": "Deep Sea Electronics DSE 8610 or ComAp InteliGen NT controllers provide comprehensive protection and monitoring. Features include AMF (Auto Mains Failure), remote start capability, Modbus RTU/TCP connectivity for BMS integration, and email/SMS alert notifications.",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "Deep Sea Electronics DSE7320 or SmartGen HGM9510 digital controllers standard. Features include auto-start on mains failure, comprehensive engine monitoring (oil pressure, coolant temperature, RPM), and Modbus RTU communications for Building Management System integration.",
+      "src": [
+        102
       ]
     }
   ]

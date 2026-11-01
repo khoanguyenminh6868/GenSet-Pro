@@ -324,6 +324,16 @@
         "Model: KGC200N. Voltage/Frequency: 400/230 V, 50 Hz. Standby Power: 220 kVA, 176 kW. Prime Power: 200 kVA, 160kW."
       ],
       "file": "sources/kingway-power/134.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.kingwaygenerator.com/atex-certified-zone-2-products/atex-certified-zone-2-generator/60kvazone-2-ex-proof-diesel-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | ComAp MRS16"
+      ],
+      "file": "sources/kingway-power/3001.md"
     }
   ],
   "confidence": "medium",
@@ -588,6 +598,38 @@
         "Model: KGC625. Voltage/Frequency: 400/230 V, 50 Hz. Standby Power: 688 kVA, 550 kW. Prime Power: 625 kVA, 500 kW.",
         "Cooling: OIL. Displacement (L): 1.554. Gov: M. Cyl Arrangement: 2L.",
         "Power: Below 1250kva. Type: ISO 20FT / 40FT . Mechanism Structure: The shape stainless steel. Standard: GB/T2820."
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "MRS16",
+      "text": "MRS16",
+      "line": "| Controller | ComAp MRS16",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "Alternator brand: With Lerysomer/Meccalt/Marathon/Stamford etc. Controller: Deepsea/Smartgen etc. Warranty: 12 months/1000 working hours. Cooling method: Closed Water-cooled. Noise: 75dba@7m.",
+      "src": [
+        105,
+        106,
+        108
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM 9510",
+      "line": "Controller Model: Smartgen HGM 9510",
+      "src": [
+        102,
+        117
       ]
     }
   ]

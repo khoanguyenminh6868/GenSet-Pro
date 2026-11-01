@@ -8,8 +8,9 @@ find. You run unattended: nobody answers questions.
 
 ## Goal
 Find on the internet up to 3 suppliers (genset makers first, then engine or alternator makers) that sell a product
-meeting the tender's main requirements: power (prime / standby as the HSMT says), frequency, voltage, and any make or
-origin the HSMT names. Follow the "Xuất xứ động cơ" section of input.md. Prefer companies NOT in catalog.md; a
+meeting the tender's main requirements: power (prime / standby as the HSMT says), frequency, voltage, any make or
+origin the HSMT names, and the controller it asks for (make, model or functions; Khoa, 2026-11-01): prefer a supplier
+whose own pages name that controller. Follow the "Xuất xứ động cơ" section of input.md. Prefer companies NOT in catalog.md; a
 supplier already in the system counts only when you add a product line or spec table at the required power that it
 does not have yet (use its id from catalog.md then).
 
@@ -43,6 +44,9 @@ does not have yet (use its id from catalog.md then).
      of that source, and the range must include the tender's power (same unit as the tender when the page gives it).
    - `specTables`: `{ "n": 1, "title": "", "header": ["| ... |"], "rows": ["| ... |"] }` — the header and each row are
      whole lines of the saved page, copied exactly. Give it when the page has a table with the model at that power.
+   - `controllers`: `{ "brand": "Deep Sea", "model": "DSE7320", "text": "DSE7320", "line": "a whole line of the saved page", "src": [1] }`
+     for every controller a saved page of the supplier names (Deep Sea, SmartGen, ComAp, DEIF, Datakom, Woodward...);
+     `text` is the name exactly as written in `line`, `model` null when the page gives only the make.
    - `strengths`, `certifications`: only with a quote of a source (`src`); leave them out when unsure.
 6. Run the check command of input.md. It prints, per supplier, what verify.mjs rejects and whether a product line
    covers the tender's power ("phù hợp công suất"). Fix what it prints (copy quotes exactly, add the power line) and

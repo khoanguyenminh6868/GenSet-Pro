@@ -435,5 +435,34 @@
         "| Protection class | IP23 Standard | Screen protected | Drip-proof"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "A: 1)Controller Brand: Smartgen, Deepsea,ComAp",
+      "src": [
+        103
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "A: 1)Controller Brand: Smartgen, Deepsea,ComAp",
+      "src": [
+        103
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "A: 1)Controller Brand: Smartgen, Deepsea,ComAp",
+      "src": [
+        103
+      ]
+    }
   ]
 }

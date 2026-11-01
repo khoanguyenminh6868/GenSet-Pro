@@ -187,5 +187,34 @@
         "| AWT-V748 | 544 / 680 | 598 / 748 | TWD1744GE"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "Control panels can be supplied with Deep Sea, SmartGen or ComAp controllers, or built to a specified protocol, so the set integrates with existing SCADA, BMS or plant monitoring rather than running as an isolated asset.",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea",
+      "line": "Control panels can be supplied with Deep Sea, SmartGen or ComAp controllers, or built to a specified protocol, so the set integrates with existing SCADA, BMS or plant monitoring rather than running as an isolated asset.",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SmartGen",
+      "line": "Control panels can be supplied with Deep Sea, SmartGen or ComAp controllers, or built to a specified protocol, so the set integrates with existing SCADA, BMS or plant monitoring rather than running as an isolated asset.",
+      "src": [
+        101
+      ]
+    }
   ]
 }

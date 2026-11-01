@@ -745,5 +745,25 @@
         "| GF-F375 | 375 | 300 | CA6DM3J-49D | SY-A 314E"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "Modern power management requires precise control, immediate visibility, and automated safeguards. This generator suite is equipped with advanced Deepsea or Smartgen intelligent control panels, designed to give operators complete command over the entire power ecosystem.",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "Modern power management requires precise control, immediate visibility, and automated safeguards. This generator suite is equipped with advanced Deepsea or Smartgen intelligent control panels, designed to give operators complete command over the entire power ecosystem.",
+      "src": [
+        102
+      ]
+    }
   ]
 }

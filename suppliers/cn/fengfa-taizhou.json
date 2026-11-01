@@ -174,5 +174,25 @@
         "| CCFJ1000JW | 1000 | 1250 | K50-DM | 159×159 | 12 | 38 | 15.0:1 | 141.7 | 4250*1500*2500 | 7500"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "provide customers with parallel systems and remote monitoring systems ect.. The controller brands include Smartgen, Deepsea, Com Ap, etc., which can be customized according to customer requirements.",
+      "src": [
+        1
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "Fengfa can provide customers with parallel systems and remote monitoring systems ect.. The controller brands include Smartgen, Deepsea, Com Ap, etc., which can be customized according to customer requirements.",
+      "src": [
+        1
+      ]
+    }
   ]
 }

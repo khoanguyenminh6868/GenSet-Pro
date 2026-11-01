@@ -1106,5 +1106,61 @@
         "| Oil and Gas Facility | 5–20 MW | 1000–5000 kVA | 5–15"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "the industrial 4000 Series (1,800kW). Every genset is paired with a Stamford or Leroy-Somer alternator and Deep Sea / ComAp controller — assembled and load-tested at our manufacturing facility in Jiangsu, China per ISO 8528 standards.",
+      "src": [
+        125
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DSE4520",
+      "line": "This model is rated 150 kW Prime / 165 kW Standby at 50Hz (1500 rpm), with a Stamford / Leroy-Somer alternator and DSE4520 controller. Key differences below.",
+      "src": [
+        115
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4620",
+      "text": "DSE4620",
+      "line": "This model is rated 160 kW Prime / 176 kW Standby at 50Hz (1500 rpm), with a Stamford / Leroy-Somer alternator and DSE4620 controller. Key differences below.",
+      "src": [
+        114
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "This model is rated 2000 kW Prime / 2200 kW Standby at 50Hz (1500 rpm), with a Stamford / Leroy-Somer alternator and DSE7320 controller. Key differences below.",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE 8610",
+      "line": "or Leroy-Somer TAL/LSA), enclosure (open skid, soundproof canopy or containerized) and controller options ( Deep Sea DSE 8610 or DSE 7320 standard; ComAp and SmartGen optional) also affect the final price. Tell us the required kW, voltage and",
+      "src": [
+        127
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SmartGen",
+      "line": "— open skid, soundproof canopy or containerized enclosure, Stamford or Leroy-Somer alternator, Deep Sea, ComAp or SmartGen controller, and options such as ATS. Tell us the required kW, voltage and destination country and we will quote the",
+      "src": [
+        125
+      ]
+    }
   ]
 }

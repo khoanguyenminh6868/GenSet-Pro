@@ -1013,5 +1013,34 @@
         "| 8170ZC1000-5 | TA | 735/1000 | 1500 | Mechanical pump | IMO Ⅱ | P1"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "MITSUBISHI engines and world famous STAMFORD, Leroy Somer and Mecc Alte alternator. We also use WoodWard, Deep Sea and ComAp control module which are professional engine controllers as our core control module. Also we own abundant skills for",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea",
+      "line": "BAUDOUIN and MITSUBISHI engines and world famous STAMFORD, Leroy Somer and Mecc Alte alternator. We also use WoodWard, Deep Sea and ComAp control module which are professional engine controllers as our core control module. Also we own abundant",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": null,
+      "text": "WoodWard",
+      "line": "PERKINS, BAUDOUIN and MITSUBISHI engines and world famous STAMFORD, Leroy Somer and Mecc Alte alternator. We also use WoodWard, Deep Sea and ComAp control module which are professional engine controllers as our core control module. Also we own",
+      "src": [
+        2
+      ]
+    }
   ]
 }
