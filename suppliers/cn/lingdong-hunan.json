@@ -1,0 +1,112 @@
+{
+  "id": "lingdong-hunan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "湖南翎动科技有限公司",
+    "brands": [
+      "翎动"
+    ]
+  },
+  "website": "http://www.lingdongenergy.com/",
+  "hq": {
+    "province": "Hunan",
+    "city": "Changsha"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel Yuchai 20–3000 kW và tổ máy khí tự nhiên 200–2000 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Cơ sở sản xuất gần 30.000 m² tại Trường Sa",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "玉柴发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "玉柴"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "天燃气发电机",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 200,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang lưu bằng Chromium; chưa có năm thành lập, chứng chỉ cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.lingdongenergy.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "湖南翎动科技有限公司 湘ICP备2023013221号-1",
+        "湖南翎动科技有限公司，坐落于著名的湖湘文化之都-长沙，是一家专注于智慧能源综合解决方案的服务提供商，集自主研发、设计、生产、销售、服务为一体的能源科技企业",
+        "公司产品生产基地拥有占地面积近30000平方米的专业厂房",
+        "玉柴发电机组(20-3000kw)",
+        "天燃气发电机(200-2000kw)"
+      ],
+      "file": "sources/lingdong-hunan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
