@@ -1,0 +1,115 @@
+{
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Jiangsu Starlight Electricity Equipment Co., Ltd.",
+    "zh": "江苏星光发电设备有限公司",
+    "brands": [
+      "Starlight",
+      "Xingguang"
+    ]
+  },
+  "website": "https://www.starlightgenset.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Taixing"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "300-1000kVA",
+      "fuel": "diesel",
+      "engineMakes": [
+        "ShangChai",
+        "WeiChai",
+        "YuChai"
+      ],
+      "power": {
+        "min": 300,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://www.starlightgenset.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Jiangsu Starlight Electricity Equipment Co., Ltd",
+        "Jiangsu Xingguang Power Generation Equipment Co., Ltd. (Jiangsu Xingguang Power Group) was founded in 1974 and is one of the earliest manufacturers of generators and diesel generator sets in China.",
+        "Our main products include diesel engines, generator sets, and diesel generators.",
+        "Phone: +86-139 0143 5002",
+        "Email: sales@starlightgenset.com",
+        "Address: Guxi Industrial Park, Taixing City, Jiangsu, China"
+      ],
+      "file": "sources/starlight-power/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.starlightgenset.com/300z1000/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "300-1000kVA-Jiangsu Starlight Electricity Equipment Co., Ltd",
+        "300-1000kVA",
+        "Cummins Series Perkins Series Volvo Series Kubota Series Starlight series ShangChai WeiChai YuChai",
+        "Professional diesel generator solution providers near you and OME manufacturer."
+      ],
+      "file": "sources/starlight-power/2002.md"
+    },
+    {
+      "n": 2003,
+      "url": "https://www.starlightgenset.com/aboutus/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "The main products include",
+        "Diesel engines, generator sets, and diesel generators, providing users with one-stop services including design, supply, commissioning, and maintenance.",
+        "Over the years, Xingguang has maintained close cooperation with Jiangsu University, Changzhou University, and Yangzhou University, while also collaborating with world-renowned engine manufacturers such as Shangchai, Weichai, Cummins, MTU Benz, DAEWO Daewoo Heavy Industries, UK's Perkins, Guangxi Yuchai, Sweden's Volvo, as well as generator manufacturers like Delco, LS Lilei Senma, Stamford, and Marathon, and controller manufacturers like Zhongzhi and Deep Sea. It has become an (OEM) supporting factory and technology center, establishing long-term and stable strategic partnerships with them."
+      ],
+      "file": "sources/starlight-power/2003.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "config-bot",
+  "specTables": [],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea",
+      "line": "Over the years, Xingguang has maintained close cooperation with Jiangsu University, Changzhou University, and Yangzhou University, while also collaborating with world-renowned engine manufacturers such as Shangchai, Weichai, Cummins, MTU Benz, DAEWO Daewoo Heavy Industries, UK's Perkins, Guangxi Yuchai, Sweden's Volvo, as well as generator manufacturers like Delco, LS Lilei Senma, Stamford, and Marathon, and controller manufacturers like Zhongzhi and Deep Sea. It has become an (OEM) supporting factory and technology center, establishing long-term and stable strategic partnerships with them.",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Zhongzhi",
+      "line": "Over the years, Xingguang has maintained close cooperation with Jiangsu University, Changzhou University, and Yangzhou University, while also collaborating with world-renowned engine manufacturers such as Shangchai, Weichai, Cummins, MTU Benz, DAEWO Daewoo Heavy Industries, UK's Perkins, Guangxi Yuchai, Sweden's Volvo, as well as generator manufacturers like Delco, LS Lilei Senma, Stamford, and Marathon, and controller manufacturers like Zhongzhi and Deep Sea. It has become an (OEM) supporting factory and technology center, establishing long-term and stable strategic partnerships with them.",
+      "src": [
+        2003
+      ]
+    }
+  ],
+  "id": "starlight-power"
+}
