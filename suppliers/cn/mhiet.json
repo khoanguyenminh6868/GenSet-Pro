@@ -1,0 +1,91 @@
+{
+  "id": "mhiet",
+  "country": "JP",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "MITSUBISHI HEAVY INDUSTRIES, LTD. (MHI Engine System Middle East FZE)",
+    "zh": null,
+    "brands": [
+      "Mitsubishi",
+      "MGS"
+    ]
+  },
+  "website": "https://www.mhi.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "shanghai-mhi-engine"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy MGS dùng động cơ diesel và turbo Mitsubishi sản xuất cùng nhà máy tại Nhật",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Dải tổ máy MGS 480–2750 kVA (trang còn ghi 10 loại / 5 model 750–4500 kVA)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "MITSUBISHI GENERATOR SERIES \"MGS\"",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MITSUBISHI"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 480,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang (của MHI Engine System Middle East FZE) ghi hai dải công suất khác nhau: 480–2,750 kVA và 750–4,500 kVA",
+    "Pháp nhân sản xuất động cơ tại Nhật (MHIET) chưa lưu trang riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.mhi.com/group/mhiesme/products/mgs",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© MITSUBISHI HEAVY INDUSTRIES, LTD.",
+        "Diesel Generator Sets | MHI Engine System Middle East FZE",
+        "with proven reliability based on the continues research and development with a wide range of output from 480 kVA to 2,750 kVA",
+        "Ten types in five models cover a wide range of output from 750 kVA to 4,500 kVA.",
+        "configured with MITSUBISHI DIESEL ENGINES and MITSUBISHI TURBO CHARGERS which are engineered and manufactured in same Japanese factory"
+      ],
+      "file": "sources/mhiet/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

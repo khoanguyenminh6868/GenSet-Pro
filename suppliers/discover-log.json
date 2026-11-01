@@ -1021,5 +1021,86 @@
   "url": "https://www.pramac.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "denyo",
+  "name": "Denyo Co., Ltd.",
+  "url": "https://www.denyo.co.jp/english/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "mhiet",
+  "name": "MITSUBISHI HEAVY INDUSTRIES, LTD. (MHI Engine System Middle East FZE)",
+  "url": "https://www.mhi.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "kubota-japan",
+  "name": "KUBOTA Corporation",
+  "url": "https://generator.kubota.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "linz-electric",
+  "name": "Linz Electric S.p.A.",
+  "url": "https://www.linzelectric.com/",
+  "tables": 2,
+  "rows": 114
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "jcb-power",
+  "name": "JC Bamford Excavators Ltd.",
+  "url": "https://www.jcb.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "visa-gensets",
+  "name": "Visa S.p.A. s.u.",
+  "url": "https://www.visa.it/",
+  "tables": 2,
+  "rows": 37
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hatz",
+  "name": "Motorenfabrik Hatz GmbH & Co. KG",
+  "url": "https://www.hatz-diesel.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "mwm",
+  "name": "Caterpillar Energy Solutions GmbH",
+  "url": "https://www.mwm.net/",
+  "tables": 16,
+  "rows": 207
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "marathon-generators",
+  "name": "Marathon Electric LLC",
+  "url": "https://www.marathonelectric.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

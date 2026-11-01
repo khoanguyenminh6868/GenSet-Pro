@@ -1,0 +1,82 @@
+{
+  "id": "marathon-generators",
+  "country": "US",
+  "role": "alternator_maker",
+  "status": "verified",
+  "names": {
+    "en": "Marathon Electric LLC",
+    "zh": null,
+    "brands": [
+      "Marathon",
+      "MagnaPlus",
+      "MagnaMax",
+      "MagnaPower"
+    ]
+  },
+  "website": "https://www.marathonelectric.com/",
+  "hq": {
+    "province": "Wisconsin",
+    "city": "Wausau"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát Marathon (MagnaPlus, MagnaMax, MagnaPower) 5–4000 kVA cho prime và dự phòng",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "Marathon Generator (50 Hz EMEA ratings)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 4000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là bảng thông số 50 Hz (PDF) của hãng; chưa lưu trang giới thiệu công ty, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://literature.marathonelectric.com/wp-content/uploads/woocommerce_uploads/2025/12/MG-CT25083E-R8-Ratings-specifications-Guide-50-hz-EMEA-dhzicr.pdf",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Marathon Electric LLC",
+        "WAUSAU, WISCONSIN, USA",
+        "emergency standby applications from 5 kVA to 4000 kVA."
+      ],
+      "file": "sources/marathon-generators/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "hatz",
+  "country": "DE",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": "Motorenfabrik Hatz GmbH & Co. KG",
+    "zh": null,
+    "brands": [
+      "Hatz"
+    ]
+  },
+  "website": "https://www.hatz-diesel.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy nhỏ 2–9,5 kVA, 230/400 V, dùng động cơ diesel Hatz (1B, 1D)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Conventional generating sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Hatz"
+      ],
+      "engineModels": [
+        "1B20",
+        "1D81Z"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 2,
+        "max": 9.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [
+        "230 V",
+        "400 V"
+      ],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang lưu từ es.hatz-diesel.com (bản tiếng Anh); chưa lưu trang giới thiệu công ty / danh mục động cơ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://es.hatz-diesel.com/en/produkte/systems/power-systems/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2023 Motorenfabrik Hatz GmbH & Co. KG",
+        "Power Systems, diesel power generator - Hatz",
+        "Our standard range of conventional generating sets covers a performance spectrum from 2 to 9.5 kVA delivering 230 or 400 V.",
+        "| 2.0-2-1/S100 | 1B20 | 3000 |",
+        "| 9.5-2-3/S73Z | 1D81Z | 3000 |"
+      ],
+      "file": "sources/hatz/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

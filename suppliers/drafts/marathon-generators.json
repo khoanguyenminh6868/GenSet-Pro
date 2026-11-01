@@ -1,0 +1,15 @@
+{
+  "id": "marathon-generators", "country": "US", "role": "alternator_maker", "status": "verified", "conf": "medium",
+  "en": "Marathon Electric LLC", "zh": null, "brands": ["Marathon", "MagnaPlus", "MagnaMax", "MagnaPower"],
+  "web": "https://www.marathonelectric.com/", "prov": "Wisconsin", "city": "Wausau", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Marathon Electric LLC", "WAUSAU, WISCONSIN, USA", "emergency standby applications from 5 kVA to 4000 kVA."]
+  },
+  "str": [["Đầu phát Marathon (MagnaPlus, MagnaMax, MagnaPower) 5–4000 kVA cho prime và dự phòng", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "alternator", "s": "Marathon Generator (50 Hz EMEA ratings)", "p": [5, 4000, "kVA", "unspecified", 1], "freq": ["50Hz"], "src": [1] }
+  ],
+  "miss": ["Nguồn là bảng thông số 50 Hz (PDF) của hãng; chưa lưu trang giới thiệu công ty, năm thành lập"],
+  "by": "discover-bot (Claude)"
+}

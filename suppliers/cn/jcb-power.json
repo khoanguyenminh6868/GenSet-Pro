@@ -1,0 +1,108 @@
+{
+  "id": "jcb-power",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "JC Bamford Excavators Ltd.",
+    "zh": null,
+    "brands": [
+      "JCB"
+    ]
+  },
+  "website": "https://www.jcb.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel dòng compact 18–220 kVA (động cơ JCB) và dòng mid range 250–780 kVA (Scania, Cummins, Volvo)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Compact generator range",
+      "fuel": "diesel",
+      "engineMakes": [
+        "JCB"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 18,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mid range generators",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania",
+        "Cummins",
+        "Volvo"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 250,
+        "max": 780,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang sản phẩm không ghi năm thành lập, nhà máy, hãng đầu phát"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.jcb.com/en-GB/products/machines/generators/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2026 JC Bamford Excavators Ltd.",
+        "For smaller power requirements, JCB’s compact generator range covers 18kVA to 220kVA. Fueled by JCB Diesel by Kohler, JCB 4 Cylinder DIESELMAX, and JCB 6 Cylinder DIESELMAX engines",
+        "For larger scale power requirements, JCB’s mid range generators cover 250kVA-780kVA. With engines sourced from well-established manufacturers like Scania, Cummins, and Volvo"
+      ],
+      "file": "sources/jcb-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

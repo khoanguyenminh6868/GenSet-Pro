@@ -1,0 +1,18 @@
+{
+  "id": "mhiet", "country": "JP", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "MITSUBISHI HEAVY INDUSTRIES, LTD. (MHI Engine System Middle East FZE)", "zh": null, "brands": ["Mitsubishi", "MGS"],
+  "web": "https://www.mhi.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["shanghai-mhi-engine"],
+  "src": {
+    "1": ["A", "© MITSUBISHI HEAVY INDUSTRIES, LTD.", "Diesel Generator Sets | MHI Engine System Middle East FZE", "with proven reliability based on the continues research and development with a wide range of output from 480 kVA to 2,750 kVA", "Ten types in five models cover a wide range of output from 750 kVA to 4,500 kVA.", "configured with MITSUBISHI DIESEL ENGINES and MITSUBISHI TURBO CHARGERS which are engineered and manufactured in same Japanese factory"]
+  },
+  "str": [
+    ["Tổ máy MGS dùng động cơ diesel và turbo Mitsubishi sản xuất cùng nhà máy tại Nhật", 1],
+    ["Dải tổ máy MGS 480–2750 kVA (trang còn ghi 10 loại / 5 model 750–4500 kVA)", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "MITSUBISHI GENERATOR SERIES \"MGS\"", "fuel": "diesel", "eng": ["MITSUBISHI"], "p": [480, 2750, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Trang (của MHI Engine System Middle East FZE) ghi hai dải công suất khác nhau: 480–2,750 kVA và 750–4,500 kVA", "Pháp nhân sản xuất động cơ tại Nhật (MHIET) chưa lưu trang riêng"],
+  "by": "discover-bot (Claude)"
+}
