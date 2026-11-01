@@ -490,7 +490,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, supplier: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
@@ -889,6 +889,7 @@ async function initDb() {
   subscribe("analysis", "analysis");
   subscribe("compare", "compare");
   subscribe("hsdt", "hsdt");
+  subscribe("quote", "quote");
   subscribe("bidders", "bidders");
   subscribe("portalids", "portalids");
   subscribe("deleted", "deleted");
@@ -1215,7 +1216,7 @@ function renderDrawer(force = true) {
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   if (state.dtab === "supplier") state.dtab = "info"; // tab Nhà cung cấp đang ẩn
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1245,7 +1246,100 @@ function infoHtml(t) {
         ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t, files.length))}
+    </div>
+    ${raw(quoteHtml(t))}`;
+}
+// ---------- Báo giá của Nhà Cung Cấp (quote/<key>; the files live on the GitHub Release ncc-<key>, api/quote.js) ----------
+// One supplier to start with, Thêm adds another; each supplier takes several files (Khoa, 2026-11-01).
+const quoteUp = {}; // key -> { row, text } while files upload
+const quoteRows = (key) => { const r = state.quote[key]?.rows; return r?.length ? r : [{ id: "r1", supplierId: "", files: [] }]; };
+function quoteHtml(t) {
+  const key = t._key, rows = quoteRows(key), ro = state.readOnly, sups = supAll();
+  const n = rows.reduce((s, r) => s + (r.files?.length || 0), 0);
+  const row = (r) => {
+    const taken = new Set(rows.filter((x) => x !== r && x.supplierId).map((x) => x.supplierId));
+    const opts = sups.filter((s) => !taken.has(s.id));
+    if (r.supplierId && !opts.some((s) => s.id === r.supplierId)) opts.unshift(state.supplier?.[r.supplierId] || { id: r.supplierId });
+    const up = quoteUp[key]?.row === r.id ? quoteUp[key].text : "";
+    return h`<div class="drop" data-qrow="${r.id}">
+      <div class="row"><select data-qsup="${r.id}" style="flex:1;min-width:180px" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">Chọn nhà cung cấp...</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
+        ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Tải tệp lên</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
+        ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
+      ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
+        ${raw(ro ? "" : h`<button class="btn sm" data-qopen="${r.id}:${i}">${/\.pdf$/i.test(f.name) ? "Xem" : "Tải về"}</button><button class="btn sm" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
+      ${raw(up ? progress(up) : "")}
     </div>`;
+  };
+  return h`<div style="display:flex;flex-direction:column;gap:8px">
+      <div class="row"><h2 style="flex:1">Báo giá của Nhà Cung Cấp</h2><span class="muted small">${n ? `${n} tệp` : "Chưa có tệp nào"}</span>${raw(ro ? "" : h`<button class="btn sm" id="qAdd" ${quoteUp[key] ? "disabled" : ""}>+ Thêm</button>`)}</div>
+      ${raw(rows.map(row).join(""))}
+    </div>`;
+}
+async function saveQuote(key, rows) {
+  const rec = { rows, updatedAt: new Date().toISOString() };
+  state.quote = { ...state.quote, [key]: rec };
+  renderDrawer(false);
+  return dbSet("quote/" + key, rec);
+}
+// Each file goes to the scratch bucket, then api/quote.js moves it to GitHub; the list is saved after each one.
+async function addQuoteFiles(key, rowId, list) {
+  if (!list.length) return;
+  if (state.readOnly || !state.db || !window.genbidScratch) { toast("Đăng nhập để tải tệp lên."); return; }
+  if (quoteUp[key]) { toast("Đang tải tệp khác lên, chờ xong rồi thử lại."); return; }
+  const big = list.filter((f) => f.size > 45 * 1048576), ok = list.filter((f) => !big.includes(f)), errs = big.map((f) => `${f.name}: lớn hơn 45 MB`);
+  let done = 0;
+  try {
+    for (const [n, f] of ok.entries()) {
+      quoteUp[key] = { row: rowId, text: `Đang tải lên ${f.name} (${n + 1}/${ok.length})...` }; renderDrawer(false);
+      try {
+        const [s] = await window.genbidScratch(key, [f], "quote");
+        const a = await window.genbidApi("/api/quote", { action: "upload", key, path: s.path, name: f.name });
+        const file = { id: a.id, name: a.name, size: a.size, url: a.url, at: new Date().toISOString(), by: window.genbidEmail || "" };
+        // Read the rows again, so a change made while this file uploaded is kept.
+        if (!(await saveQuote(key, quoteRows(key).map((r) => (r.id === rowId ? { ...r, files: [...(r.files || []), file] } : r))))) throw new Error("không lưu được danh sách tệp");
+        done++;
+      } catch (e) { errs.push(`${f.name}: ${e?.message || "lỗi không rõ"}`); }
+    }
+  } finally { delete quoteUp[key]; renderDrawer(false); }
+  if (errs.length) toast(`${done ? `Đã tải lên ${done} tệp. ` : ""}Không tải được ${errs.join("; ")}`, 8000);
+  else toast(`Đã tải lên ${done} tệp`);
+}
+async function openQuoteFile(key, rowId, i) {
+  const f = quoteRows(key).find((r) => r.id === rowId)?.files?.[i];
+  if (!f || !window.genbidFetch) return;
+  // The tab opens before the wait, or the browser blocks it.
+  const pdf = /\.pdf$/i.test(f.name), w = pdf ? window.open("", "_blank") : null;
+  try {
+    const blob = await window.genbidFetch(f.url), u = URL.createObjectURL(pdf ? new Blob([blob], { type: "application/pdf" }) : blob);
+    if (w) w.location.href = u;
+    else { const a = document.createElement("a"); a.href = u; a.download = f.name; document.body.appendChild(a); a.click(); a.remove(); }
+    setTimeout(() => URL.revokeObjectURL(u), 60000);
+  } catch (e) { w?.close(); toast("Không mở được tệp: " + (e?.message || "lỗi không rõ"), 6000); }
+}
+async function deleteQuoteAssets(key, files) {
+  for (const f of files) await window.genbidApi("/api/quote", { action: "delete", key, id: f.id });
+}
+function askRemoveQuote(key, rowId, i) {
+  const r = quoteRows(key).find((x) => x.id === rowId);
+  if (!r) return;
+  const f = i == null ? null : r.files?.[i], files = f ? [f] : r.files || [];
+  const who = supName(state.supplier?.[r.supplierId]) || "chưa chọn";
+  // A supplier with no files goes without asking.
+  if (!f && !files.length) { saveQuote(key, quoteRows(key).filter((x) => x.id !== rowId)); return; }
+  modal(h`<div class="row"><h2 style="flex:1">${f ? "Xoá tệp này?" : "Bỏ nhà cung cấp này?"}</h2><button class="btn sm" data-close>Đóng</button></div>
+    <p class="small" style="margin:0;overflow-wrap:anywhere">${f ? `${f.name} của nhà cung cấp ${who} sẽ bị xoá khỏi GitHub.` : `${files.length} tệp báo giá của nhà cung cấp ${who} sẽ bị xoá khỏi GitHub.`}</p>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="qDelOk" style="color:var(--red)">Xoá</button></div>`, (m, close) => {
+    $("#qDelOk", m).addEventListener("click", async () => {
+      close();
+      try {
+        await deleteQuoteAssets(key, files);
+        const ids = new Set(files.map((x) => x.id));
+        const rows = f ? quoteRows(key).map((x) => (x.id === rowId ? { ...x, files: (x.files || []).filter((y) => !ids.has(y.id)) } : x)) : quoteRows(key).filter((x) => x.id !== rowId);
+        if (!(await saveQuote(key, rows))) throw new Error("không lưu được danh sách tệp");
+        toast(f ? "Đã xoá tệp" : "Đã bỏ nhà cung cấp");
+      } catch (e) { toast("Không xoá được: " + (e?.message || "lỗi không rõ"), 6000); }
+    });
+  });
 }
 // ---------- Projects (tab Dự án) ----------
 // Overview of a project: name, Chủ đầu tư, Địa điểm and Ghi chú typed by hand, and files uploaded by hand.
@@ -2771,6 +2865,13 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "newProject") { askNewProject(); return; }
   const pd = e.target.closest("[data-pdel]");
   if (pd && state.open) { askRemoveProjectFile(state.open, +pd.dataset.pdel); return; }
+  if (e.target.id === "qAdd" && state.open) { const k = state.open; saveQuote(k, [...quoteRows(k), { id: Date.now().toString(36), supplierId: "", files: [] }]); return; }
+  const qo = e.target.closest("[data-qopen]");
+  if (qo && state.open) { const [r, i] = qo.dataset.qopen.split(":"); openQuoteFile(state.open, r, +i); return; }
+  const qd = e.target.closest("[data-qdel]");
+  if (qd && state.open) { const [r, i] = qd.dataset.qdel.split(":"); askRemoveQuote(state.open, r, +i); return; }
+  const qr = e.target.closest("[data-qrowdel]");
+  if (qr && state.open) { askRemoveQuote(state.open, qr.dataset.qrowdel); return; }
   if (e.target.id === "hfCancel") { requestRefetch(e.target.dataset.key, true); return; }
   if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
   if (e.target.closest("#tkPdf")) { const b = e.target.closest("#tkPdf"); tlktPdf(b.dataset.key, b); return; }
@@ -2801,6 +2902,8 @@ document.addEventListener("change", (e) => {
     else if (v !== (state.manual[state.open]?.[pf] || "")) saveProject(state.open, { [pf]: v });
   }
   if (e.target.id === "pFiles" && state.open) { const list = [...e.target.files]; e.target.value = ""; addProjectFiles(state.open, list); }
+  if (e.target.dataset?.qsup && state.open) { const k = state.open, id = e.target.dataset.qsup, v = e.target.value; saveQuote(k, quoteRows(k).map((r) => (r.id === id ? { ...r, supplierId: v } : r))); }
+  if (e.target.dataset?.qfiles && state.open) { const list = [...e.target.files]; e.target.value = ""; addQuoteFiles(state.open, e.target.dataset.qfiles, list); }
   if (e.target.id === "dNote" && state.open) {
     const key = state.open, t = findTender(key), prev = state.tracked[key] || {};
     if ((prev.note || "") !== e.target.value) saveTracked(key, { ...prev, stage: prev.stage || "new", note: e.target.value, tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() });
@@ -2810,6 +2913,11 @@ document.addEventListener("change", (e) => {
 document.addEventListener("dragover", (e) => { const d = e.target.closest?.("#pDrop"); if (d) { e.preventDefault(); d.classList.add("over"); } });
 document.addEventListener("dragleave", (e) => e.target.closest?.("#pDrop")?.classList.remove("over"));
 document.addEventListener("drop", (e) => { if (!e.target.closest?.("#pDrop") || !state.open) return; e.preventDefault(); addProjectFiles(state.open, [...e.dataTransfer.files]); });
+// Dropping files on a supplier of Báo giá của Nhà Cung Cấp, once one is chosen.
+const quoteDrop = (e) => { const d = e.target.closest?.("[data-qrow]"); return d && state.open && !state.readOnly && quoteRows(state.open).find((r) => r.id === d.dataset.qrow)?.supplierId ? d : null; };
+document.addEventListener("dragover", (e) => { const d = quoteDrop(e); if (d) { e.preventDefault(); d.classList.add("over"); } });
+document.addEventListener("dragleave", (e) => e.target.closest?.("[data-qrow]")?.classList.remove("over"));
+document.addEventListener("drop", (e) => { const d = quoteDrop(e); if (!d) return; e.preventDefault(); d.classList.remove("over"); addQuoteFiles(state.open, d.dataset.qrow, [...e.dataTransfer.files]); });
 $("#toTop").addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
 $("#toBottom").addEventListener("click", () => scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" }));
 $("#clearFilters").addEventListener("click", () => { state.filters = {}; $("#q").value = ""; state.limit = pageSize(); renderGrid(); });
