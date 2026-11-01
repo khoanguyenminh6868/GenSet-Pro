@@ -19,7 +19,7 @@
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { spawnSync, execFileSync } from "node:child_process";
+import { spawn, spawnSync, execFileSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
@@ -392,6 +392,19 @@ const git = (cwd, ...a) => execFileSync("git", ["-C", cwd, ...a], { encoding: "u
 // Writes the records into a fresh worktree of the repo (origin/main), checks them with that tree's verify.mjs, posts
 // the ones that pass to the web as supplier/<id> and opens a pull request with them (records, saved pages).
 // opts (Tìm NCC): its own branch and PR title, so a Gemini round and a Claude round never share a branch.
+// The repo is private on the Free plan, so GitHub auto-merge is off. A detached process waits for CI on the PR and
+// squash-merges it when every check passes; a failed check leaves the PR open. The run does not wait for it.
+function mergeWhenGreen(pr, cwd) {
+  const gh = process.env.GENBID_GH || "gh";
+  const code = `const { spawnSync } = require("node:child_process"), [gh, pr] = process.argv.slice(1);
+setTimeout(() => {
+  const opt = { stdio: "ignore", windowsHide: true };
+  if (spawnSync(gh, ["pr", "checks", pr, "--watch", "--fail-fast", "--interval", "20"], opt).status === 0)
+    spawnSync(gh, ["pr", "merge", pr, "--squash", "--delete-branch"], opt);
+}, 30000);`;
+  try { spawn(process.execPath, ["-e", code, gh, pr], { cwd: os.tmpdir(), detached: true, stdio: "ignore", windowsHide: true }).unref(); } catch {}
+}
+
 export async function addToCatalog(dir, key, suppliers, opts = {}) {
   const file = path.join(dir, "newCatalog.json");
   if (!fs.existsSync(file)) return { added: [], records: [] };
@@ -419,7 +432,7 @@ export async function addToCatalog(dir, key, suppliers, opts = {}) {
         added.push({ supplierId: x.id, error: `verify.mjs: ${errors.slice(0, 4).join("; ")}${errors.length > 4 ? ` (+${errors.length - 4})` : ""}` });
         continue;
       }
-      fs.writeFileSync(recFile, JSON.stringify(x.rec, null, 1) + "\n", "utf8");
+      fs.writeFileSync(recFile, JSON.stringify(x.rec, null, 2) + "\n", "utf8");
       records.push(x.rec);
       added.push({ supplierId: x.id, name: x.rec.names?.en || x.rec.names?.zh || x.id, isNew: x.isNew, tables: x.tables, nmap: Object.fromEntries(x.nmap) });
     }
@@ -433,6 +446,7 @@ export async function addToCatalog(dir, key, suppliers, opts = {}) {
         git(wt, "push", "-q", "-f", "-u", "origin", branch);
         const pr = execFileSync(process.env.GENBID_GH || "gh", ["pr", "create", "--head", branch, "--base", "main", "--title", title, "--body", body], { cwd: wt, encoding: "utf8" }).trim();
         for (const a of added) if (!a.error) a.pr = pr.split("\n").pop();
+        mergeWhenGreen(pr.split("\n").pop(), wt);
       } catch (e) { for (const a of added) if (!a.error) a.prError = `Đã đăng lên web nhưng chưa mở được PR vào repo: ${String(e.stderr || e.message).trim().slice(0, 200)}`; }
     }
   } finally {
