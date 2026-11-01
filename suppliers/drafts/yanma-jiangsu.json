@@ -1,0 +1,5 @@
+{"id":"yanma-jiangsu","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"JIANGSU YANMA INDUSTRY CO.,LTD.","zh":null,"brands":["YANMA"],"web":null,"prov":"Jiangsu","city":"Nanjing","founded":null,"fsrc":[],"related":[],
+"src":{"1":["B","JIANGSU YANMA INDUSTRY CO.,LTD.","We design and produce both standard and customized generator sets with power outputs covering 8 to 2,000kVA.","Address:NO.501，QIANCAO MINGYUAN,HUADIAN ROAD,NANJING CITY."]},
+"str":[["Tổ máy tiêu chuẩn và theo yêu cầu 8–2000 kVA",1]],"cert":[],
+"lines":[{"k":"genset","s":"Generator sets","p":[8,2000,"kVA","unspecified",1],"src":[1]}],
+"miss":["Nguồn là gian hàng CCCME (hạng B); chưa có website riêng; tên YANMA khác hãng Yanmar"],"by":"discover-bot (Claude)"}

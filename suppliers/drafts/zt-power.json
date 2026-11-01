@@ -1,0 +1,5 @@
+{"id":"zt-power","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"ZT Power Equipment Co.,Ltd","zh":null,"brands":["ZT Power"],"web":null,"prov":null,"city":"Taizhou","founded":null,"fsrc":[],"related":[],
+"src":{"1":["B","ZT Power Equipment Co.,Ltd","Based on many years experience of generator set’s design,manufacture,sale and after-sale service,ZT Power has built many distributors in the world.","Address:TaiAn Road, TaiZhou City, China"]},
+"str":[["Thiết kế, sản xuất, bán và hậu mãi tổ máy, có mạng lưới nhà phân phối quốc tế",1]],"cert":[],
+"lines":[{"k":"genset","s":"Generator sets","src":[1]}],
+"miss":["Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"],"by":"discover-bot (Claude)"}

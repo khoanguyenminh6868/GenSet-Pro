@@ -1,0 +1,69 @@
+{
+  "id": "kusing-guangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "GUANGZHOU KUSING GENERATOR CO.,LTD.",
+    "zh": null,
+    "brands": [
+      "Kusing"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Guangdong",
+    "city": "Guangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy xăng, diesel và phụ tùng; xưởng 5.000 m² tại Quảng Châu",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gasoline / diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cccme.cn/shop/cccme11042/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "GUANGZHOU KUSING GENERATOR CO.,LTD.",
+        "Address:NO.10#OF JUNMINLU,TAIHE TOWN,BAIYUN DISTRICT,GUANGZHOU,CHINA.",
+        "plant area of ​​5000 square meters"
+      ],
+      "file": "sources/kusing-guangzhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
