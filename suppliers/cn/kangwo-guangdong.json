@@ -1,0 +1,99 @@
+{
+  "id": "kangwo-guangdong",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "广东康沃动力设备有限公司",
+    "brands": [
+      "康沃"
+    ]
+  },
+  "website": "https://www.alternator-kangwo.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": "Dongguan"
+  },
+  "founded": null,
+  "relatedIds": [
+    "kangwo-xiamen"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 5–2500 kVA; cũng có tổ máy xăng, khí tự nhiên",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Đạt ISO9001, ISO14001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập; quan hệ với 厦门康沃机电设备 (kangwo-xiamen) chưa rõ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.alternator-kangwo.com/aboutus.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "关于广东康沃动力设备有限公司",
+        "负责全国的发电机组销售、生产、安装、租赁、售后工作。坐落于广东省东莞市",
+        "提供:从5KVA到2500KVA的全系列柴油发电机组功率",
+        "公司 通过 ISO9001质量管理体系认证、ISO14001环境管理体系认证"
+      ],
+      "file": "sources/kangwo-guangdong/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

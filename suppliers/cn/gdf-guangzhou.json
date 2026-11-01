@@ -1,0 +1,88 @@
+{
+  "id": "gdf-guangzhou",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "广州柴油机厂股份有限公司",
+    "brands": [
+      "广柴",
+      "GDF"
+    ]
+  },
+  "website": "https://www.gdfdiesel.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": "Guangzhou"
+  },
+  "founded": 1911,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel tốc độ trung bình 550–2000 kW (6 và 9 xi lanh)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tiền thân 协同和机器厂 thành lập 1911",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "中速柴油机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 550,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ chỉ ghi hai dải 550-960kW và 1000-2000kW cạnh nhãn 6缸/9缸, chưa rõ dải nào của dòng nào"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.gdfdiesel.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2015 广州柴油机厂股份有限公司ALL Rights Reserved.",
+        "广州柴油机厂股份有限公司（简称“广柴股份”）是中国民族工业的杰出代表，原名为协同和机器厂，创立于1911年",
+        "550-960kW",
+        "1000-2000kW"
+      ],
+      "file": "sources/gdf-guangzhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
