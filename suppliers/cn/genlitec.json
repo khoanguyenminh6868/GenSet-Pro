@@ -1,83 +1,83 @@
 {
- "country": "CN",
- "role": "genset_oem",
- "status": "partial",
- "names": {
-  "en": "Genlitec (Fuzhou) Power Equipment Co., Ltd.",
-  "zh": null
- },
- "website": "https://www.genlitecpower.com",
- "hq": {
-  "province": null,
-  "city": null
- },
- "founded": null,
- "relatedIds": [],
- "strengths": [],
- "productLines": [
-  {
-   "kind": "genset",
-   "series": "GSC SDEC Series",
-   "fuel": "diesel",
-   "engineMakes": [
-    "SDEC"
-   ],
-   "engineModels": [
-    "SC9D340D2"
-   ],
-   "power": {
-    "min": 250,
-    "max": 250,
-    "unit": "kVA",
-    "rating": "prime",
-    "src": [
-     2002
-    ]
-   },
-   "frequency": [
-    "50Hz"
-   ],
-   "voltage": [
-    "230/400V"
-   ],
-   "src": [
-    2002
-   ]
-  }
- ],
- "certifications": [],
- "exportMarkets": [],
- "missing": [
-  "đại diện tại Việt Nam"
- ],
- "sources": [
-  {
-   "n": 2001,
-   "url": "https://www.genlitecpower.com/",
-   "accessedAt": "2026-11-01",
-   "tier": "A",
-   "quote": [
-    "Genlitec (Fuzhou) Power Equipment Co., Ltd. has over 10 years of experience in manufacturing diesel generator sets and mobile lighting towers."
-   ],
-   "file": "sources/genlitec/2001.md"
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Genlitec (Fuzhou) Power Equipment Co., Ltd.",
+    "zh": null
   },
-  {
-   "n": 2002,
-   "url": "https://www.genlitecpower.com/250KVA-SDEC-Diesel-Generator-50Hz-p.html",
-   "accessedAt": "2026-11-01",
-   "tier": "A",
-   "quote": [
-    "GENLITEC POWER GSC250D5-II/GSC250S5-II diesel generator set powered by SDEC SC9D340D2, with prime power 200kW/250kVA and standby power 220kW/275kVA.",
-    "| Prime Power | 200kW/250kVA",
-    "| Standby Power | 220kW/275kVA",
-    "| Engine Model | SDEC SC9D340D2"
-   ],
-   "file": "sources/genlitec/2002.md"
-  }
- ],
- "confidence": "medium",
- "checkedAt": "2026-11-01",
- "checkedBy": "config-bot",
- "specTables": [],
- "id": "genlitec"
+  "website": "https://www.genlitecpower.com",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "GSC SDEC Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "engineModels": [
+        "SC9D340D2"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [
+        "230/400V"
+      ],
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "đại diện tại Việt Nam"
+  ],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://www.genlitecpower.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Genlitec (Fuzhou) Power Equipment Co., Ltd. has over 10 years of experience in manufacturing diesel generator sets and mobile lighting towers."
+      ],
+      "file": "sources/genlitec/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.genlitecpower.com/250KVA-SDEC-Diesel-Generator-50Hz-p.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "GENLITEC POWER GSC250D5-II/GSC250S5-II diesel generator set powered by SDEC SC9D340D2, with prime power 200kW/250kVA and standby power 220kW/275kVA.",
+        "| Prime Power | 200kW/250kVA",
+        "| Standby Power | 220kW/275kVA",
+        "| Engine Model | SDEC SC9D340D2"
+      ],
+      "file": "sources/genlitec/2002.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "config-bot",
+  "specTables": [],
+  "id": "genlitec"
 }
