@@ -1,0 +1,87 @@
+{
+  "id": "denyo",
+  "country": "JP",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Denyo Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Denyo"
+    ]
+  },
+  "website": "https://www.denyo.co.jp/english/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy ba pha chia nhóm tới 25, 26–100, 101–300, 301–1100 kVA và từ 1400 kVA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có công ty con tại Việt Nam (Denyo Vietnam Co.,Ltd.)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Three phase generators",
+      "fuel": "other",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 26,
+        "max": 1100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi năm thành lập; nhóm '- 25kVA' và '1400kVA~' không ghi đủ hai đầu nên dải công suất chỉ lấy 26–1100 kVA"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.denyo.co.jp/english/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Denyo Co., Ltd. | Generator, Welding Machine, Air Compressor",
+        "Three phase ( - 25kVA)",
+        "Three phase ( 26 - 100kVA)",
+        "Three phase ( 101 - 300kVA)",
+        "Three phase ( 301 - 1100kVA)",
+        "Three phase (1400kVA~)",
+        "Denyo Vietnam Co.,Ltd."
+      ],
+      "file": "sources/denyo/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

@@ -1,0 +1,511 @@
+{
+  "id": "mwm",
+  "country": "DE",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Caterpillar Energy Solutions GmbH",
+    "zh": null,
+    "brands": [
+      "MWM"
+    ]
+  },
+  "website": "https://www.mwm.net/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "caterpillar"
+  ],
+  "strengths": [
+    {
+      "text": "Động cơ khí và tổ máy khí 400–4500 kW, cho đồng phát nhiệt điện (CHP)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 150 năm kinh nghiệm cấp điện phân tán",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "MWM gas engines and generator sets",
+      "fuel": "gas",
+      "engineMakes": [
+        "MWM"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 400,
+        "max": 4500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi địa chỉ nhà máy, năm thành lập cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.mwm.net/en/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© Caterpillar Energy Solutions GmbH, 2026",
+        "MWM gas engines and generator sets cover an electrical output range from 400 to 4,500 kW.",
+        "MWM provides gas engines and power generators for different gas types used in various applications such as combined generation of heat and power.",
+        "MWM looks back on more than 150 years of experience in the field of decentralized energy supply."
+      ],
+      "file": "sources/mwm/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.mwm.net/en/gas-engines-gensets/gas-engine-tcg-3016/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | | TCG 3016 V08 P = Optimized for high electrical efficiency | TCG 3016 V12 P = Optimized for high electrical efficiency | TCG 3016 V16 P = Optimized for high electrical efficiency"
+      ],
+      "file": "sources/mwm/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.mwm.net/en/gas-engines-gensets/gas-engine-tcg-3020-v20/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | | TCG 3020 V12 P = Optimized for high electrical efficiency | TCG 3020 V12 R = Optimized for high total efficiency"
+      ],
+      "file": "sources/mwm/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.mwm.net/en/gas-engines-gensets/gas-engine-tcg-2032/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | | TCG 2032 V12 R = Optimized for high total efficiency"
+      ],
+      "file": "sources/mwm/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.mwm.net/en/gas-engines-gensets/gas-engine-tcg-4170/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | | TCG 4170 V20 R = High Response"
+      ],
+      "file": "sources/mwm/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.mwm.net/en/gas-engines-gensets/gas-engine-tcg-2020/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | | TCG 2020 V12 RW = Optimized for high total efficiency at requested power"
+      ],
+      "file": "sources/mwm/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.mwm.net/en/gas-applications/references/tea-manufacturer-r-twining-poland/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Genset / gas engine: | 1x TCG 3016 V12 | 1x TCG 3016 V08"
+      ],
+      "file": "sources/mwm/106.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Gas Engine TCG 3016",
+      "header": [
+        "| | | TCG 3016 V08 P = Optimized for high electrical efficiency | TCG 3016 V12 P = Optimized for high electrical efficiency | TCG 3016 V16 P = Optimized for high electrical efficiency"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 400 | 400 | 600 | 600 | 800 | 800",
+        "| Medium effective pressure | bar | 18.9 | 15.9 | 18.9 | 15.7 | 18.8 | 15.7",
+        "| Thermal output ± 8% | kW | 404 | 428 | 617 | 644 | 821 | 856",
+        "| Electrical efficiency ** | % | 43.1 | 42.1 | 43.4 | 42.4 | 43.6 | 42.6",
+        "| Thermal efficiency ** | % | 43.6 | 45.0 | 44.6 | 45.7 | 44.6 | 45.5",
+        "| Overall efficiency | % | 86.7 | 87.1 | 88.0 | 88.1 | 88.2 | 88.1",
+        "| Power to heat ratio *** | 0.99 | 0.94 | 0.97 | 0.93 | 0.98 | 0.94"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Gas Engine TCG 3016",
+      "header": [
+        "| | | TCG 3016 V08 P+ High Efficiency plus 25H2-Kit = Optimized for high electrical efficiency with 25 Vol.-% Hydrogen Kit | TCG 3016 V12 P+ High Efficiency plus 25H2-Kit = Optimized for high electrical efficiency with 25 Vol.-% Hydrogen Kit"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 400 | 400 | 600 | 600",
+        "| Thermal output ± 8% | kW | 403 | 423 | 614 | 637",
+        "| Electrical efficiency ** | % | 42.8 | 41.9 | 43.0 | 42.4",
+        "| Thermal efficiency ** | % | 43.1 | 44.4 | 44.1 | 45.0",
+        "| Total efficiency | % | 85.9 | 86.3 | 87.1 | 87.4",
+        "| Power to heat ratio *** | 0.99 | 0.94 | 0.98 | 0.94",
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz",
+        "| Electrical output | kW | 800 | 800 | 1,000",
+        "| Thermal output ± 8% | kW | 816 | 848 | 1,092",
+        "| Electrical efficiency ** | % | 43.3 | 42.2 | 41.5",
+        "| Thermal efficiency ** | % | 44.2 | 45.1 | 45.7",
+        "| Total efficiency | % | 87.5 | 87.3 | 87.2",
+        "| Power to heat ratio *** | 0.98 | 0.94 | 0.91"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Gas Engine TCG 3016",
+      "header": [
+        "| | | TCG 3016 V08 X = Optimized for operation with all biogases | TCG 3016 V12 X = Optimized for operation with all biogases | TCG 3016 V16 X = Optimized for operation with all biogases"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 400 | 400 | 600 | 600 | 800 | 800",
+        "| Medium effective pressure | bar | 18.9 | 15.8 | 18.9 | 15.8 | 18.8 | 15.7",
+        "| Thermal output ± 8% | kW | 394 | 415 | 598 | 627 | 790 | 827",
+        "| Electrical efficiency ** | % | 42.8 | 41.7 | 42.9 | 41.7 | 43.2 | 41.9",
+        "| Thermal efficiency ** | % | 42.2 | 43.3 | 42.8 | 43.6 | 42.7 | 43.3",
+        "| Overall efficiency | % | 85.0 | 85.0 | 85.7 | 85.3 | 85.9 | 85.2",
+        "| Power to heat ratio *** | 1.01 | 0.97 | 1.00 | 0.96 | 1.01 | 0.97"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Gas Engine TCG 3020",
+      "header": [
+        "| | | TCG 3020 V12 P = Optimized for high electrical efficiency | TCG 3020 V12 R = Optimized for high total efficiency"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 50 Hz",
+        "| Electrical output | kW | 1,380 | 1,380",
+        "| Electrical efficiency ** | % | 45.0 | 44.0",
+        "| Thermal efficiency ** | % | 42.3 | 43.6",
+        "| Overall efficiency | % | 87.3 | 87.6",
+        "| Power to heat ratio *** | 1.06 | 1.01",
+        "| Engine type | 50 Hz | 50 Hz",
+        "| Electrical output | kW | 1,840 | 1,840",
+        "| Electrical efficiency ** | % | 44.7 | 44.0",
+        "| Thermal efficiency ** | % | 42.6 | 43.6",
+        "| Overall efficiency | % | 87.3 | 87.6",
+        "| Power to heat ratio *** | 1.05 | 1.01",
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 2,300 | 2,300 | 2,300 | 2,300",
+        "| Electrical efficiency ** | % | 45.0 | 44.4 | 44.0 | 43.7",
+        "| Thermal efficiency ** | % | 42.3 | 42.5 | 43.6 | 43.6",
+        "| Overall efficiency | % | 87.3 | 86.9 | 87.6 | 87.3",
+        "| Power to heat ratio *** | 1.06 | 1.04 | 1.01 | 1.01",
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 2,000 | 2,000 | 2,000 | 2,000",
+        "| Electrical efficiency ** | % | 44.4 | 43.9 | 43.7 | 43.4",
+        "| Thermal output | kW | 1,949 | 1,982 | 2,026 | 2,038",
+        "| Thermal efficiency ** | % | 43.3 | 43.5 | 44.2 | 44.2",
+        "| Overall efficiency | % | 87.7 | 87.4 | 87.9 | 87.6",
+        "| Power to heat ratio *** | 1.02 | 1.01 | 0.99 | 0.98"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Gas Engine TCG 3020",
+      "header": [
+        "| | | TCG 3020 V12 P = Optimized for high electrical efficiency | TCG 3020 V12 R = Optimized for high total efficiency"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 50 Hz",
+        "| Electrical output | kW | 1,380 | 1,380",
+        "| Electrical efficiency ** | % | 43.9 | 42.9",
+        "| Thermal efficiency ** | % | 43.2 | 44.5",
+        "| Overall efficiency | % | 87.1 | 87.4",
+        "| Power to heat ratio *** | 1.02 | 0.96",
+        "| Engine type | 50 Hz | 50 Hz",
+        "| Electrical output | kW | 1,840 | 1,840",
+        "| Electrical efficiency ** | % | 43.6 | 42.9",
+        "| Thermal efficiency ** | % | 43.5 | 44.5",
+        "| Overall efficiency | % | 87.1 | 87.4",
+        "| Power to heat ratio *** | 1.00 | 0.96",
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 2,300 | 2,300 | 2,300 | 2,300",
+        "| Electrical efficiency ** | % | 44.0 | 43.5 | 42.9 | 42.6",
+        "| Thermal efficiency ** | % | 43.1 | 43.3 | 44.6 | 44.6",
+        "| Overall efficiency | % | 87.1 | 86.8 | 87.5 | 87.2",
+        "| Power to heat ratio *** | 1.02 | 1.00 | 0.96 | 0.96",
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 2,000 | 2,000 | 2,000 | 2,000",
+        "| Electrical efficiency ** | % | 43.4 | 42.9 | 42.6 | 42.3",
+        "| Thermal output | kW | 2,031 | 2,065 | 2,123 | 2,136",
+        "| Thermal efficiency ** | % | 44.1 | 44.3 | 45.2 | 45.2",
+        "| Overall efficiency | % | 87.5 | 87.2 | 87.8 | 87.5",
+        "| Power to heat ratio *** | 0.98 | 0.97 | 0.94 | 0.94"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Gas Engine TCG 3020",
+      "header": [
+        "| | Engine type Configuration | TCG 3020 V12 P+ High Efficiency plus 25H2-Kit = Optimized for high electrical efficiency with 25 vol.% hydrogen kit | TCG 3020 V12 R+ High Response plus 25H2-Kit = Optimized for high total efficiency with 25 vol.% hydrogen kit"
+      ],
+      "rows": [
+        "| Electrical power ** | kW | 1,380 | 1,380",
+        "| Electrical efficiency | % | 44.6 | 43.9",
+        "| Thermal efficiency (±8 %) | % | 42.5 | 43.6",
+        "| Total efficiency | % | 87.1 | 87.5",
+        "| Power to heat ratio *** | 1.05 | 1.00",
+        "| | Engine type Configuration | TCG 3020 V16 P+ High Efficiency plus 25H2-Kit = Optimized for high electrical efficiency with 25 vol.% hydrogen kit | TCG 3020 V16 R+ High Response plus 25H2-Kit = Optimized for high total efficiency with 25 vol.% hydrogen kit",
+        "| Electrical power ** | kW | 1,840 | 1,840",
+        "| Electrical efficiency | % | 44.6 | 43.6",
+        "| Thermal efficiency (±8 %) | % | 42.6 | 43.9",
+        "| Total efficiency | % | 87.2 | 87.5",
+        "| Power to heat ratio *** | 1.05 | 0.99",
+        "| | Engine type Configuration | TCG 3020 V20 P+ High Efficiency plus 25H2-Kit = Optimized for high electrical efficiency with 25 vol.% hydrogen kit | TCG 3020 V20 R+ High Response plus 25H2-Kit = Optimized for high total efficiency with 25 vol.% hydrogen kit",
+        "| Electrical power ** | kW | 2,300 | 2,300",
+        "| Electrical efficiency | % | 44.6 | 43.6",
+        "| Thermal efficiency (±8 %) | % | 42.6 | 43.9",
+        "| Total efficiency | % | 87.2 | 87.5",
+        "| Power to heat ratio *** | 1.05 | 0.99",
+        "| | Engine type Configuration | TCG 3020 V20 PV+ High Efficiency for Requested Power plus 25H2-Kit = Optimized for high electrical efficiency at requested power with 25 vol.% hydrogen kit | TCG 3020 V20 RV+ High Response for Requested Power plus 25H2-Kit = Optimized for high total efficiency at requested power with 25 vol.% hydrogen kit",
+        "| Electrical power ** | kW | 2,000 | 2,000",
+        "| Electrical efficiency | % | 44.0 | 43.3",
+        "| Thermal efficiency (±8 %) | % | 43,6 | 44,6",
+        "| Total efficiency | % | 87.6 | 87.9",
+        "| Power to heat ratio *** | 1.01 | 0.97"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Gas Engine TCG 3020",
+      "header": [
+        "| | | TCG 3020 V20 Z = Optimized for operation with propane gas"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 1,880 * | 1,880 *",
+        "| Electrical efficiency ** | % | 41.8 | 41.5",
+        "| Thermal output | kW | 2,063 | 2,078",
+        "| Thermal efficiency ** | % | 45.9 | 45.8",
+        "| Overall efficiency | % | 87.7 | 87.3",
+        "| Power to heat ratio *** | 0.91 | 0.91"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Gas Engine TCG 3020",
+      "header": [
+        "| | | TCG 3020 V12 X = Optimized for operation with all biogases | TCG 3020 V16 X = Optimized for operation with all biogases"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 50 Hz",
+        "| Electrical output | kW | 1,380 | 1,840",
+        "| Electrical efficiency ** | % | 43.6 | 43.6",
+        "| Thermal efficiency ** | % | 42.7 | 42.7",
+        "| Overall efficiency | % | 86.3 | 86.3",
+        "| Power to heat ratio *** | 1.02 | 1.02",
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 2,300 | 2,300 | 2,000 | 2,000",
+        "| Electrical efficiency ** | % | 43.6 | 43.1 | 43.2 | 42.7",
+        "| Thermal output | kW | 2,254 | 2,206 | 2,015 | 1,983",
+        "| Thermal efficiency ** | % | 42.9 | 41.4 | 43.5 | 42.3",
+        "| Overall efficiency | % | 86.5 | 84.5 | 86.7 | 85.0",
+        "| Power to heat ratio *** | 1.02 | 1.07 | 1.04 | 1.03"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Gas Engine TCG 3020",
+      "header": [
+        "| | | TCG 3020 V12 X = Optimized for operation with all biogases | TCG 3020 V16 X = Optimized for operation with all biogases"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 50 Hz",
+        "| Electrical output | kW | 1,380 | 1,840",
+        "| Electrical efficiency ** | % | 42.6 | 42.6",
+        "| Thermal efficiency ** | % | 43.4 | 43.5",
+        "| Overall efficiency | % | 86.0 | 86.1",
+        "| Power to heat ratio *** | 0.98 | 0.98",
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 2,300 | 2,300 | 2,000 | 2,000",
+        "| Electrical efficiency ** | % | 42.7 | 42.2 | 42.2 | 41.7",
+        "| Thermal output | kW | 2,346 | 2,293 | 2,097 | 2,060",
+        "| Thermal efficiency ** | % | 43.5 | 42.0 | 44.3 | 43.0",
+        "| Overall efficiency | % | 86.2 | 84.2 | 86.5 | 84.7",
+        "| Power to heat ratio *** | 0.98 | 1.00 | 1.00 | 0.97"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Gas Engine TCG 2032",
+      "header": [
+        "| | | TCG 2032 V12 R = Optimized for high total efficiency"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 60 Hz **",
+        "| Electrical output | kW | 3,333 | 3,000",
+        "| Mean effective pressure | bar | 20.0 | 20.1",
+        "| Thermal output ± 8% | kW | 3,238 | 2,877",
+        "| Electrical efficiency *** | % | 43.9 | 43.9",
+        "| Thermal efficiency *** | % | 42.6 | 42.1",
+        "| Total efficiency | % | 86.5 | 85.9",
+        "| Power to heat ratio **** | 1.03 | 1.04",
+        "| Engine type | 50 Hz | 60 Hz ** | 50 Hz | 60 Hz **",
+        "| Electrical output | kW | 4,300 | 4,000 | 4,500 | 4,050",
+        "| Mean effective pressure | bar | 19.4 | 20.2 | 20.3 | 20.4",
+        "| Thermal output ± 8% | kW | 4,164 | 3,866 | 4,361 | 3,891",
+        "| Electrical efficiency *** | % | 44.1 | 43.8 | 44.6 | 44.3",
+        "| Thermal efficiency *** | % | 42.7 | 42.4 | 43.2 | 42.6",
+        "| Total efficiency | % | 86.8 | 86.2 | 87.8 | 86.9",
+        "| Power to heat ratio **** | 1.03 | 1.03 | 1.03 | 1.04"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Gas Engine TCG 2032",
+      "header": [
+        "| | | TCG 2032 V12 R+ High Response plus 25H2-Kit = Optimized for high total efficiency with 25 vol.% hydrogen kit"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 60 Hz",
+        "| Electrical output ** | kW | 3,333 | 3,000",
+        "| Electrical efficiency | % | 43.7 | 43.7",
+        "| Thermal efficiency *** (±8 %) | % | 42.7 | 42.2",
+        "| Total efficiency | % | 86.4 | 85.9",
+        "| Power to heat ratio **** | 1.02 | 1.03",
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output ** | kW | 4,300 | 4,000 | 4,500 | 4,050",
+        "| Electrical efficiency | % | 44.0 | 43.8 | 44.5 | 44.3",
+        "| Thermal efficiency *** (±8 %) | % | 42.8 | 42.5 | 43.3 | 42.7",
+        "| Total efficiency | % | 86.8 | 86.3 | 87.8 | 87.0",
+        "| Power to heat ratio**** | 1.03 | 1.03 | 1.03 | 1.04"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Gas Engine TCG 2032",
+      "header": [
+        "| | | TCG 2032 V16 X = Optimized for operation with biogases"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 60 Hz **",
+        "| Electrical output | kW | 3,770 | 3,510",
+        "| Mean effective pressure | bar | 17.0 | 17.0",
+        "| Thermal output ± 8% | kW | 3,487 | 3,117",
+        "| Electrical efficiency *** | % | 42.9 | 43.3",
+        "| Thermal efficiency *** | % | 39.7 | 38.5",
+        "| Total efficiency | % | 82.7 | 81.8",
+        "| Power to heat ratio **** | 1.08 | 1.12"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "TCG 4170 V20 Gas Engine",
+      "header": [
+        "| | | TCG 4170 V20 R = High Response"
+      ],
+      "rows": [
+        "| Type | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 2,536 | 2,516",
+        "| Thermal efficiency ** | % | 43.1 | 42.9",
+        "| Total efficiency | % | 89.1 | 88.7",
+        "| Power-to-heat ratio ** | | 1.07 | 1.06"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Gas Engine TCG 2020",
+      "header": [
+        "| | | TCG 2020 V12 RW = Optimized for high total efficiency at requested power",
+        "| Engine type | 50 Hz",
+        "| Electrical output | kW | 1,000",
+        "| Thermal output ± 8% | kW | 1,056",
+        "| Electrical efficiency ** | % | 43.0",
+        "| Thermal efficiency ** | % | 45.4",
+        "| Total efficiency | % | 88.4",
+        "| Power to heat ratio *** | 0.95",
+        "| | | TCG 2020 V12 K K = Optimized for robustness and low CAPEX | TCG 2020 V12 R = Optimized for high total efficiency"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 1,125 | 1,125 | 1,200 | 1,200",
+        "| Thermal output ± 8% | kW | 1,267 | 1,274 | 1,189 | 1,196",
+        "| Electrical efficiency ** | % | 40.7 | 40.4 | 43.7 | 43.4",
+        "| Thermal efficiency ** | % | 45.8 | 45.8 | 43.3 | 43.2",
+        "| Total efficiency | % | 86.6 | 86.2 | 87.0 | 86.6",
+        "| Power to heat ratio *** | 0.90 | 0.89 | 1.00 | 1.00",
+        "| Engine type | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 1,500 | 1,500 | 1,560 | 1,560",
+        "| Thermal output ± 8% | kW | 1,688 | 1,703 | 1,576 | 1,589",
+        "| Electrical efficiency ** | % | 40.8 | 40.4 | 43.3 | 43.0",
+        "| Thermal efficiency ** | % | 45.9 | 45.9 | 43.8 | 43.8",
+        "| Total efficiency | % | 86.7 | 86.3 | 87.1 | 86.8",
+        "| Power to heat ratio *** | 0.89 | 0.89 | 0.99 | 0.98"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Gas Engine TCG 2020",
+      "header": [
+        "| | | TCG 2020 V12 XW = Optimized for operation with biogases at requested power | TCG 2020 V12 X = Optimized for operation with biogases"
+      ],
+      "rows": [
+        "| Engine type | 50 Hz | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 1,000 | 1,200 | 1,200",
+        "| Thermal output ± 8% | kW | 1,035 | 1,192 | 1,201",
+        "| Electrical efficiency ** | % | 42.6 | 43.0 | 42.7",
+        "| Thermal efficiency ** | % | 44.1 | 42.7 | 42.7",
+        "| Total efficiency | % | 86.7 | 85.7 | 85.4",
+        "| Power to heat ratio *** | 0.97 | 1.00 | 1.00",
+        "| Engine type | 50 Hz | 60 Hz",
+        "| Electrical output | kW | 1,560 | 1,560",
+        "| Thermal output ± 8% | kW | 1,566 | 1,580",
+        "| Electrical efficiency ** | % | 42.7 | 42.3",
+        "| Thermal efficiency ** | % | 42.9 | 42.8",
+        "| Total efficiency | % | 85.6 | 85.1",
+        "| Power to heat ratio *** | 1.00 | 0.99"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Tea Manufacturer R. Twining, Poland - MWM",
+      "header": [
+        "| Genset / gas engine: | 1x TCG 3016 V12 | 1x TCG 3016 V08",
+        "| Segment / gas type: | Natural Gas",
+        "| Customer: | Tea Manufacturer R. Twining, Poland"
+      ],
+      "rows": [
+        "| Electrical output: | 1 x 600 kW | 1x 399 kW",
+        "| Thermical output: | 1x 680 kW | 1x 443 kW"
+      ]
+    }
+  ]
+}

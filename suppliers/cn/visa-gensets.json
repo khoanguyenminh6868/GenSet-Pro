@@ -1,0 +1,172 @@
+{
+  "id": "visa-gensets",
+  "country": "IT",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Visa S.p.A. s.u.",
+    "zh": null,
+    "brands": [
+      "ONIS VISA"
+    ]
+  },
+  "website": "https://www.visa.it/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 1960,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy ONIS VISA 9–3000 kVA, thiết kế và sản xuất tại Ý",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 5.500 tổ máy mỗi năm, phân phối hơn 100 nước",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "ONIS VISA generating sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 9,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi hãng động cơ / đầu phát, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.visa.it/en/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Visa S.p.A. s.u. Via I Maggio, 55",
+        "Founded in 1960, Visa SpA is one of the leading Italian manufacturers of power generators , with an impressive output of over 5,500 units produced annually and distributed in more than 100 countries",
+        "Our wide range of ONIS VISA generating sets covers 9 to 3000 kVA , fully designed and manufactured in Italy"
+      ],
+      "file": "sources/visa-gensets/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.visa.it/en/second-hand-gensets",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
+      ],
+      "file": "sources/visa-gensets/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.visa.it/en/second-hand-gensets/power_range/0",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
+      ],
+      "file": "sources/visa-gensets/102.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Second hand | visa.it",
+      "header": [
+        "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE",
+        "| TORRE FARO VB9 + LED | | | Kohler | | 2016 | |",
+        "| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By",
+        "| L 12 OPEN | 12 | Open | Lombardini | Nuova Saccardo | 2020 | Guard Evolution AMF | Stand-By",
+        "| TORRE FARO URBAN ALOGENI | 13 | Soundproof | Kohler | Mecc Alte | 2023 | DSE-4520 AMF | Stand-By",
+        "| TORRE FARO URBAN IODURI | 13 | Soundproof | Kohler | Mecc Alte | 2023 | |"
+      ],
+      "rows": [
+        "| BD20B | 20 | Open | Baudouin | | 2023 | Guard REvolution AMF | Stand-By",
+        "| GSP33TWIS3 | 30 | Soundproof | Perkins | Sincro | 2017 | Manual version | Stand-By",
+        "| GSK40TWIS3 | 35 | | Kohler | Mecc Alte | 2018 | Automatic version | Stand-By",
+        "| GSK40TWIS3 | 35 | Soundproof | Perkins | Mecc Alte | 2018 | Automatic version | Stand-By",
+        "| GSK66TWIK | 60 | Soundproof | Kohler | Sincro | 2022 | Automatic version | Stand-By",
+        "| GSK66TWI | 60 | Soundproof | Kohler | undefined | 2021 | Automatic version | Stand-By",
+        "| GSP66TWIS3 | 60 | Soundproof | Fpt Iveco | Mecc Alte | 2017 | Automatic version | Stand-By",
+        "| JD80S | 80 | Soundproof | John Deere | Mecc Alte | 2018 | DSE-4520 AMF | Stand-By",
+        "| F105S | 105 | Soundproof | Fpt Iveco | Marelli | 2018 | Automatic version | Stand-By",
+        "| GSA130TWI | 125 | Soundproof | Fpt Iveco | Mecc Alte | 2018 | Automatic version | Stand-By",
+        "| VM150U | 150 | Open | Vm | undefined | | Guard Evolution AMF | Stand-By",
+        "| F201GX | 200 | ONIS VISA GALAXY GX | Fpt Iveco | Stamford | 2026 | Guard REvolution AMF | Stand-By",
+        "| DS350SGP | 350 | Soundproof | Doosan | Stamford | 2023 | Automatic version |",
+        "| P400GX | 400 | ONIS VISA GALAXY GX | Perkins | Marelli | 2015 | Guard REvolution AMF | Stand-By",
+        "| D450CO | 430 | Container | Deutz | Ansaldo | 2014 | Automatic version | Stand-By",
+        "| C500 CO | 500 | Container | Cummins | Marelli | | Automatic version | Stand-By",
+        "| D500CO 20\" | 500 | Container 20' | Deutz | Marelli | 2006 | Automatic version | Stand-By",
+        "| F650CO | 650 | Open | Isotta Fraschini | Marelli | 1988 | Automatic version | Stand-By",
+        "| P750CO (CNT 20\") | 750 | Container 20' | Perkins | Stamford | 1990 | Automatic version | Stand-By",
+        "| P800 CO 20\" | 800 | Container 20' | Perkins | Stamford | 2003 | Automatic version | Stand-By",
+        "| P800S | 800 | Soundproof | Perkins | Marelli | 2000 | Automatic version | Stand-By",
+        "| MTU 830 OPEN | 830 | Open | Mtu | Leroy Somer | 1998 | Automatic version | Stand-By",
+        "| MTU1000 U | 1000 | Open | Mtu | Stamford | 2000 | Manual version | Stand-By",
+        "| D1000CO | 1000 | Container 40' | Deutz | Marelli | 2005 | Automatic version | Stand-By",
+        "| IF 1800 U | 1800 | Open | Isotta Fraschini | Marelli | 1992 | Automatic version | Stand-By"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Second hand | visa.it",
+      "header": [
+        "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE",
+        "| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By",
+        "| L 12 OPEN | 12 | Open | Lombardini | Nuova Saccardo | 2020 | Guard Evolution AMF | Stand-By",
+        "| TORRE FARO URBAN ALOGENI | 13 | Soundproof | Kohler | Mecc Alte | 2023 | DSE-4520 AMF | Stand-By",
+        "| TORRE FARO URBAN IODURI | 13 | Soundproof | Kohler | Mecc Alte | 2023 | |"
+      ],
+      "rows": [
+        "| BD20B | 20 | Open | Baudouin | | 2023 | Guard REvolution AMF | Stand-By",
+        "| GSP33TWIS3 | 30 | Soundproof | Perkins | Sincro | 2017 | Manual version | Stand-By",
+        "| GSK40TWIS3 | 35 | | Kohler | Mecc Alte | 2018 | Automatic version | Stand-By",
+        "| GSK40TWIS3 | 35 | Soundproof | Perkins | Mecc Alte | 2018 | Automatic version | Stand-By",
+        "| GSK66TWIK | 60 | Soundproof | Kohler | Sincro | 2022 | Automatic version | Stand-By",
+        "| GSK66TWI | 60 | Soundproof | Kohler | undefined | 2021 | Automatic version | Stand-By",
+        "| GSP66TWIS3 | 60 | Soundproof | Fpt Iveco | Mecc Alte | 2017 | Automatic version | Stand-By",
+        "| JD80S | 80 | Soundproof | John Deere | Mecc Alte | 2018 | DSE-4520 AMF | Stand-By",
+        "| F105S | 105 | Soundproof | Fpt Iveco | Marelli | 2018 | Automatic version | Stand-By",
+        "| GSA130TWI | 125 | Soundproof | Fpt Iveco | Mecc Alte | 2018 | Automatic version | Stand-By",
+        "| VM150U | 150 | Open | Vm | undefined | | Guard Evolution AMF | Stand-By",
+        "| F201GX | 200 | ONIS VISA GALAXY GX | Fpt Iveco | Stamford | 2026 | Guard REvolution AMF | Stand-By"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "id": "kubota-japan",
+  "country": "JP",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "KUBOTA Corporation",
+    "zh": null,
+    "brands": [
+      "Kubota"
+    ]
+  },
+  "website": "https://generator.kubota.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "kubota-wuxi"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy nhỏ 50 Hz: SQ (cách âm) 3 pha 14–35 kVA, KJ 3 pha 12,5–30 kVA, J, GL 5,5–8 kVA",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "SQ Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 14,
+        "max": 35,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KJ Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 12.5,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "J Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 18.8,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GL Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5.5,
+        "max": 8,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang danh sách 50 Hz không ghi nhiên liệu riêng từng dòng; chưa lưu trang động cơ Kubota",
+    "Nhà máy động cơ tại Trung Quốc: kubota-wuxi"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://generator.kubota.com/products/50hz/index.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 1996-2018 KUBOTA Corporation.",
+        "(Three Phase) 14.0 - 35 kVA",
+        "(Single Phase) 11.2 - 24 kVA",
+        "50Hz | Products | Kubota Generator",
+        "Output Range: 5.5 - 8.0 kVA",
+        "(Three Phase) 12.5 - 30.0 kVA",
+        "(Single Phase) 5.5 - 18.8 kVA",
+        "(Three Phase) 8.0 - 18.8 kVA"
+      ],
+      "file": "sources/kubota-japan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

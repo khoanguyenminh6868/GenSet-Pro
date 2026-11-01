@@ -1,0 +1,16 @@
+{
+  "id": "linz-electric", "country": "IT", "role": "alternator_maker", "status": "verified", "conf": "medium",
+  "en": "Linz Electric S.p.A.", "zh": null, "brands": ["Linz Electric"],
+  "web": "https://www.linzelectric.com/", "prov": "Verona", "city": "Arcole", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Linz Electric S.p.A. - 01954820237", "37040 Arcole (Verona) - Italy", "Made in Italy quality", "2 POLES ALTERNATORS", "from 2.6 to 32 kVA", "4 POLES ALTERNATORS", "from 3.5 to 1800 kVA", "Societ&agrave; a socio unico: Pedrollo Group S.r.l."]
+  },
+  "str": [["Đầu phát 4 cực 3,5–1800 kVA và 2 cực 2,6–32 kVA, sản xuất tại Ý", 1], ["Thuộc Pedrollo Group", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "alternator", "s": "4 POLES ALTERNATORS", "p": [3.5, 1800, "kVA", "unspecified", 1], "src": [1] },
+    { "k": "alternator", "s": "2 POLES ALTERNATORS", "p": [2.6, 32, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}
