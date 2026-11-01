@@ -1,0 +1,101 @@
+{
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "OWELL Generators",
+    "zh": null
+  },
+  "website": "https://www.owellgenerators.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Weichai",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "WP13D490E310"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [
+        "380/220V"
+      ],
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "năm thành lập",
+    "nhà phân phối tại Việt Nam"
+  ],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://www.owellgenerators.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Diesel Generators,Gas Generators,Standby Generators,Power Generators - OWELL Generators",
+        "OWELL is at the forefront of revolutionizing power solutions globally, driven by our unwavering dedication to excellence and relentless pursuit of innovation.",
+        "Zhongbo International Center, No. 37 Xiangtan Road, Licang District, Qingdao City, China"
+      ],
+      "file": "sources/owell-generators/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.owellgenerators.com/ultimate-power-solution-the-500kva-weichai-diesel-generator-set/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Introducing the Ultimate Power Solution: The 500kVA WEICHAI Diesel Generator Set",
+        "Rated Power : With a rated power of 500kVA, this generator ensures that you have a steady and reliable power supply to keep your operations running smoothly.",
+        "Advanced WEICHAI Power Engine : At the heart of this generator set is the WEICHAI WP13D490E310 engine. This powerhouse delivers a rated power of 450KW and a standby power of 490KW, ensuring robust performance and high fuel efficiency.",
+        "Comprehensive Control System : Equipped with the SmartGen HGM6120CAN control module, this generator set offers advanced monitoring and protection features, including alarms for high/low speed, battery voltage issues, failed starts, and more.",
+        "The 500kVA WEICHAI Diesel Generator Set is designed to deliver top-tier performance with minimal maintenance. Its brushless self-excitation mode and electronic control unit (ECU) provide precise control and excellent response times, ensuring your power needs are met without interruption.",
+        "Rated Voltage : 380/220V; 3 phase 4 wire",
+        "Frequency : 50Hz",
+        "Rated Speed : 1500rpm"
+      ],
+      "file": "sources/owell-generators/2002.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "config-bot",
+  "specTables": [],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120CAN",
+      "text": "SmartGen HGM6120CAN",
+      "line": "Comprehensive Control System : Equipped with the SmartGen HGM6120CAN control module, this generator set offers advanced monitoring and protection features, including alarms for high/low speed, battery voltage issues, failed starts, and more.",
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "id": "owell-generators"
+}

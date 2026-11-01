@@ -1,0 +1,152 @@
+{
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Jiangsu Haut Mechanical Co., Ltd.",
+    "zh": null
+  },
+  "website": "https://www.haut-power.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "HT",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "engineModels": [
+        "6KTAA25-G311"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Marathon",
+        "Leroy-Somer"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "frequency": [
+        "50Hz",
+        "60Hz"
+      ],
+      "voltage": [
+        "380V",
+        "400V"
+      ],
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "năm thành lập",
+    "nhà phân phối tại Việt Nam"
+  ],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://www.haut-power.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Jiangsu Haut Mechanical Co., Ltd. is a professional manufacturer engaged in the research, development, production, sale and service of diesel generator and natural gas generators.",
+        "We are located in China, Yangzhou City, Jiangsu Province, Adjacent to Shanghai Port With convenient transports access.",
+        "Add: Runfeng Road, Chengbei Industrial Park, Jiangdu District, Yangzhou City, Jiangsu Province, China"
+      ],
+      "file": "sources/haut-power/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.haut-power.com/product/china-500kva-diesel-generator-price-euro-standard-diesel-engine-generators-power-plant-400kw-50hz-60hz/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "China 500kVA diesel generator price Euro standard diesel engine generators power plant 400kW 50Hz 60Hz",
+        "Engine: 6KTAA25-G311",
+        "Alternator:Stamford copy/ Stamford original/Marathon/Leroy-Somer",
+        "Controller:Deepsea / China SmartGen/ ComAp",
+        "| Genset | HT-400 | Prime Power (KW) | 400",
+        "| Rated frequency(Hz) | 50/60 | Prime Power (KVA) | 500",
+        "| Rated speed(Rpm) | 1500/1800 | Phase | 3 Phase",
+        "| Voltage | 220/380V,230/400V,",
+        "| Brand/Original | SDEC | Type | Water Cool,",
+        "| Engine Item No. | 6KTAA25-G311 | Cylinder No. | 6",
+        "| Prime Power (KW) | 460 | Fuel Consumption | 192(g/kw.h)",
+        "| Standby power (KW) | 506 | Combustion | Direct Injection",
+        "| Alternator Model | HT-400D | Protection | IP23",
+        "| Alternator Type | Brushless sel-excited | Insulation | Class H"
+      ],
+      "file": "sources/haut-power/2002.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "config-bot",
+  "specTables": [
+    {
+      "n": 2002,
+      "title": "HT-400 500kVA SDEC",
+      "header": [
+        "| Genset | HT-400 | Prime Power (KW) | 400"
+      ],
+      "rows": [
+        "| Rated frequency(Hz) | 50/60 | Prime Power (KVA) | 500",
+        "| Rated speed(Rpm) | 1500/1800 | Phase | 3 Phase",
+        "| Voltage | 220/380V,230/400V, | N.W (KG) | 3800",
+        "| Brand/Original | SDEC | Type | Water Cool,",
+        "| Engine Item No. | 6KTAA25-G311 | Cylinder No. | 6",
+        "| Prime Power (KW) | 460 | Fuel Consumption | 192(g/kw.h)",
+        "| Standby power (KW) | 506 | Combustion | Direct Injection",
+        "| Governor | Electronic | Aspiration Type | Turbocharged and air intercooled",
+        "| Alternator Model | HT-400D | Protection | IP23",
+        "| Alternator Type | Brushless sel-excited | Insulation | Class H"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "Controller:Deepsea / China SmartGen/ ComAp",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SmartGen",
+      "line": "Controller:Deepsea / China SmartGen/ ComAp",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "Controller:Deepsea / China SmartGen/ ComAp",
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "id": "haut-power"
+}

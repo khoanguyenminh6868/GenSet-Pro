@@ -1,0 +1,112 @@
+{
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Fuzhou Powerzoo Equipment Co., Ltd.",
+    "zh": null
+  },
+  "website": "https://www.powerzoos.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "YC",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6T660L-D20"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "năm thành lập",
+    "nhà phân phối tại Việt Nam"
+  ],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://www.powerzoos.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "POWERZOO -Your trusted partner for comprehensive power solutions.",
+        "With a 20,000 sqm workshop, we are able to supply 6,000 generator units a year.",
+        "Address: N0. 28, Xinbao Road,Shangjie Town Minhou County, Fuzhou, Fujian, China",
+        "Copyright © 2025 Fuzhou Powerzoo Equipment Co., Ltd. 闽ICP备2025098774号-1 All Rights Reserved. Sitemap. Privacy Policy."
+      ],
+      "file": "sources/powerzoo/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.powerzoos.com/500kVA-Diesel-Generators-Sets-by-Yuchai-Engine-YC6T660L-D20-pd577422448.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "500kVA Diesel Generators Sets by Yuchai Engine YC6T660L-D20",
+        "Model: YC500P5",
+        "Frequency: 50Hz",
+        "Prime Power (kW/kVA): 400/500",
+        "Standby Power (kW/kVA): 440/550",
+        "Fuel cons 100%(L/H): 110.1",
+        "Powered by: Yuchai",
+        "Engine Model: YC6T660L-D20",
+        "Exciter type: Brushless, self-excited",
+        "Insulation grade: H",
+        "Protection grade: IP23"
+      ],
+      "file": "sources/powerzoo/2002.md"
+    },
+    {
+      "n": 2003,
+      "url": "https://www.powerzoos.com/1250kVA-Generator-for-Indonesia-Palm-Oil-Plant-id02490845.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Controller : +DSE8610"
+      ],
+      "file": "sources/powerzoo/2003.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "config-bot",
+  "specTables": [],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "+DSE8610",
+      "line": "Controller : +DSE8610",
+      "src": [
+        2003
+      ]
+    }
+  ],
+  "id": "powerzoo"
+}
