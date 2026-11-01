@@ -2149,5 +2149,32 @@
   "url": "https://www.fdjz.biz/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "meao-jiangsu",
+  "name": "江苏美奥动力科技有限公司",
+  "url": "http://www.meaopower.cn/",
+  "tables": 3,
+  "rows": 79
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "yunding-jiangsu",
+  "name": "江苏云顶发电机有限公司",
+  "url": "https://fdjze.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "pingchang-yangzhou",
+  "name": "扬州平常机械有限公司",
+  "url": "http://pcjx8.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

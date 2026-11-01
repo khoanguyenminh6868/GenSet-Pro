@@ -1,0 +1,76 @@
+{
+  "id": "yunding-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "江苏云顶发电机有限公司",
+    "brands": [
+      "云顶"
+    ]
+  },
+  "website": "https://fdjze.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Taizhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel trên bộ 3–3000 kW, trạm phát rơ-moóc 15–600 kW, tổ máy khẩn cấp tàu thủy 12–1000 kW",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "陆用柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 3,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập, chứng chỉ; nội dung trang tương tự website của một số công ty Thái Châu khác (ví dụ Kaihua)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://fdjze.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2025 江苏云顶发电机有限公司 版权所有",
+        "云顶主营产品：3～3000KW陆用柴油发电机组，15～600KW移动拖车电站，12～1000KW船用应急柴油发电机组"
+      ],
+      "file": "sources/yunding-jiangsu/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
