@@ -255,6 +255,18 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .supcontact{margin-top:3px;overflow-wrap:anywhere}.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
 /* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
+/* Supplier / catalog window: small banner on top, the filters and the table header stay put, only the rows scroll (Khoa, 2026-11-01). */
+.modal.pane{height:calc(100vh - 32px);height:calc(100dvh - 32px);overflow:hidden}
+#supBody,#catBody{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}
+.mscroll{flex:1;min-height:0;overflow:auto}
+:is(#supList,#catList)>.tablewrap{overflow:visible}
+:is(#supList,#catList) thead th{position:sticky;top:0;z-index:1;background:var(--panel2);box-shadow:inset 0 -1px var(--line)}
+.mbanner{padding:10px 14px;gap:12px;flex-wrap:nowrap;flex:none}
+.mbanner .mark{width:36px;height:36px;border-radius:10px}.mbanner .mark svg{width:20px;height:20px}
+.mbanner h2{margin:0;font-size:18px}.mbanner h2 span{color:var(--violet)}
+.mbanner .btn{margin-left:auto;position:relative}
+.hlname{color:var(--brand)}
+@media (max-width:640px){.mbanner .tag{display:none}.mbanner h2{font-size:16px}.mbanner .mark{width:30px;height:30px}}
 .supcard{padding:12px;display:flex;flex-direction:column;gap:6px;margin:8px 0}.suprow select,.suprow input{min-width:0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
 .tablewrap table{font-size:13px}
@@ -345,7 +357,7 @@ details.sec>div{margin-top:10px}
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="syncNewBtn" aria-label="Chỉ lấy gói mới" title="Chỉ lấy các gói mới nhất từ muasamcong (so với gói mới nhất trong hệ thống), không kiểm tra hay cập nhật gói cũ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin">Nhà cung cấp</button><button class="btn sm" data-catopen="engine" title="Danh mục model động cơ rút từ bảng thông số của các nhà cung cấp">Động cơ</button></div>
+        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" data-catopen="engine" title="Danh mục model động cơ rút từ bảng thông số của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Động cơ</button></div>
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
   </header>
@@ -1966,6 +1978,10 @@ let supFilter = { q: "", role: "", conf: "", engine:"", fuel: "", power: "", uni
 let supOpenId = null;
 // Where the supplier / catalog list was scrolled when a detail opened, so "← Danh sách" comes back to the same row (Khoa, 2026-10-29).
 const listScroll = { sup: 0, cat: 0 };
+const mScroll = () => $("#mdl .mscroll") || $("#mdl");
+const MB_ICON = { sup: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 21h18\"/><path d=\"M4 21V11l5 3v-3l5 3V5h5v16\"/><path d=\"M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1\"/></svg>", cat: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 4h6M12 4v3\"/><path d=\"M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z\"/><path d=\"M1 11v4\"/></svg>" };
+const mBanner = (icon, title, tag, tid = "") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
+  <div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div><button class="btn sm" data-close>Đóng</button></header>`;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
 function supLinesFor(s, f = supFilter) {
   const v = Number(String(f.power).replace(",", "."));
@@ -1982,12 +1998,12 @@ function supMatches(s) {
 }
 function openSuppliers(id) {
   supOpenId = id || null;
-  modal(h`<div class="row"><h2 style="flex:1">Nhà cung cấp máy phát điện</h2><button class="btn sm" data-close>Đóng</button></div><div id="supBody"></div>`, () => renderSuppliers(), "wide");
+  modal(mBanner("sup", "Nhà cung cấp máy phát điện", "Mỗi thông tin đều có nguồn kèm theo") + '<div id="supBody"></div>', () => renderSuppliers(), "wide pane");
 }
 function renderSuppliers() {
   const body = $("#supBody");
   if (!body) return;
-  if (supOpenId && state.supplier?.[supOpenId]) { body.innerHTML = supDetailHtml(state.supplier[supOpenId]); return; }
+  if (supOpenId && state.supplier?.[supOpenId]) { body.innerHTML = h`<div class="mscroll">${raw(supDetailHtml(state.supplier[supOpenId]))}</div>`; return; }
   const all = supAll();
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu nhà cung cấp.</div>`; return; }
   const engines = [...new Set(all.flatMap((s) => (s.productLines || []).flatMap((p) => p.engineMakes || [])).map((m) => m.replace(/\s*\(.*\)$/, "")))].sort();
@@ -2005,7 +2021,7 @@ function renderSuppliers() {
       <select id="supUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
       <span class="spacer"></span><span class="muted small" id="supCount"></span>
     </div>
-    <div id="supList"></div>`;
+    <div class="mscroll"><div id="supList"></div></div>`;
   renderSupList();
   const set = (k, v) => { supFilter = { ...supFilter, [k]: v }; renderSupList(); };
   $("#supQ").oninput = (e) => set("q", e.target.value);
@@ -2022,7 +2038,7 @@ function renderSupList() {
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th>Năm thành lập</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
-    return h`<tr data-supopen="${s.id}"><td><b>${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div>${raw(supContactsBrief(s.contacts))}</td>
+    return h`<tr data-supopen="${s.id}"><td><b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div>${raw(supContactsBrief(s.contacts))}</td>
       <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
       <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
@@ -2050,7 +2066,7 @@ function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
   return h`<div class="row"><button class="btn sm" id="supBack">← Danh sách</button><span class="spacer"></span><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}</div>
-    <div><h3 style="margin:4px 0">${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}</div>
+    <div><h3 class="hlname" style="margin:4px 0">${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}</div>
     <dl class="kv">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
       <dt>Thương hiệu</dt><dd>${(s.names?.brands || []).join(", ") || "—"}</dd>
@@ -2090,7 +2106,7 @@ function supModelsHtml(s) {
     const makes = Object.entries(ms.reduce((m, x) => { for (const k of (x.e.make || "").split(" / ").filter(Boolean)) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1]);
     return h`<details class="supspec" ${ms.length <= 15 ? "open" : ""}><summary><b>${K.one.replace(/^./, (c) => c.toUpperCase())}</b> · ${ms.length} model${raw(makes.length ? h` · <span class="muted">${makes.map(([m, n]) => `${m} (${n})`).join(", ")}</span>` : "")}</summary>
       <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>Số dòng</th></tr></thead><tbody>${raw(ms.map((x) => h`<tr data-catitem="${x.e.key}" data-catopen="${kind}" data-catkey="${x.e.key}">
-        <td><b>${x.e.model}</b></td>
+        <td><b class="hlname">${x.e.model}</b></td>
         <td data-l="Hãng">${raw(catMakeHtml(x.e))}</td>
         <td data-l="Tổ máy" class="small">${raw([catRange(x.kva, "kVA"), catRange(x.kw, "kW")].filter(Boolean).map((r) => h`<div>${r}</div>`).join("") || '<span class="muted">bảng không ghi công suất</span>')}</td>
         <td data-l="Số dòng" class="small">${x.rows}</td></tr>`).join(""))}</tbody></table></div></details>`;
@@ -2171,7 +2187,7 @@ function catSpecsCell(e) {
 const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${catVia(e)}</div>` : '<span class="muted">Nguồn không ghi hãng</span>');
 function openCatalog(kind, key) {
   catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}) };
-  modal(h`<div class="row"><h2 style="flex:1" id="catTitle">${CAT_KIND[kind].title}</h2><button class="btn sm" data-close>Đóng</button></div><div id="catBody"></div>`, () => renderCatalog(), "wide");
+  modal(mBanner("cat", CAT_KIND[kind].title, "Rút từ bảng thông số của các nhà cung cấp", "catTitle") + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
 }
 function catMatches(e, f = catView) {
   const q = f.q.trim().toLowerCase();
@@ -2188,7 +2204,7 @@ function renderCatalog() {
   if (!body) return;
   const cat = catalog(), K = CAT_KIND[catView.kind], all = cat[K.list];
   if ($("#catTitle")) $("#catTitle").textContent = K.title;
-  if (catView.open) { const e = all.find((x) => x.key === catView.open); if (e) { body.innerHTML = catDetailHtml(e); $("#mdl").scrollTop = 0; return; } catView.open = null; }
+  if (catView.open) { const e = all.find((x) => x.key === catView.open); if (e) { body.innerHTML = h`<div class="mscroll">${raw(catDetailHtml(e))}</div>`; return; } catView.open = null; }
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu ${K.one}: danh mục được rút từ bảng thông số của các nhà cung cấp.</div>`; return; }
   const makes = Object.entries(all.reduce((m, e) => { for (const k of (e.make || "—").split(" / ")) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => (a[0] === "—") - (b[0] === "—") || b[1] - a[1]);
   const specOpts = Object.entries(all.reduce((m, e) => { for (const g of e.specs || []) m[g.key] = [g.vi, ((m[g.key] || [])[1] || 0) + 1]; return m; }, {})).map(([k, [vi, n]]) => [k, vi, n]).sort((a, b) => b[2] - a[2]);
@@ -2208,8 +2224,8 @@ function renderCatalog() {
       <select id="catSort">${raw([["sup", "Nhiều nhà cung cấp nhất"], ["power", "Công suất tổ máy tăng dần"], ["model", "Model A–Z"]].map(([k, l]) => opt(k, l, f.sort)).join(""))}</select>
       <span class="spacer"></span><span class="muted small" id="catCount"></span>
     </div>
-    <div id="catList"></div>
-    <div class="muted small">Rút từ bảng thông số trên website của các nhà cung cấp (mỗi dòng giữ nguyên văn, có link nguồn). Công suất là của tổ máy dùng model đó, không phải công suất trục của động cơ. Hãng chỉ ghi khi nguồn ghi rõ. Thông số khác (xi lanh, tiêu hao nhiên liệu, độ ồn...) chép nguyên văn theo nhãn cột của nguồn; tiêu hao nhiên liệu, độ ồn, kích thước, khối lượng là của tổ máy.</div>`;
+    <div class="mscroll"><div id="catList"></div>
+    <div class="muted small" style="margin-top:10px">Rút từ bảng thông số trên website của các nhà cung cấp (mỗi dòng giữ nguyên văn, có link nguồn). Công suất là của tổ máy dùng model đó, không phải công suất trục của động cơ. Hãng chỉ ghi khi nguồn ghi rõ. Thông số khác (xi lanh, tiêu hao nhiên liệu, độ ồn...) chép nguyên văn theo nhãn cột của nguồn; tiêu hao nhiên liệu, độ ồn, kích thước, khối lượng là của tổ máy.</div></div>`;
   renderCatList();
   const set = (k, v) => { catView = { ...catView, [k]: v, limit: 60 }; renderCatList(); };
   $("#catKind").onchange = (e) => { catView = { ...catView, kind: e.target.value, make: "", q: "", spec: "", limit: 60 }; renderCatalog(); };
@@ -2229,7 +2245,7 @@ function renderCatList() {
   if ($("#catCount")) $("#catCount").textContent = `${list.length} model`;
   const shown = list.slice(0, catView.limit);
   $("#catList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>Thông số</th><th>Tần số</th><th>Nhà cung cấp</th></tr></thead><tbody>${raw(shown.map((e) => h`<tr data-catitem="${e.key}">
-      <td><b>${e.model}</b>${raw(e.names.length > 1 ? h`<div class="muted small">cũng ghi: ${e.names.filter((x) => x !== e.model).slice(0, 3).join(", ")}</div>` : "")}</td>
+      <td><b class="hlname">${e.model}</b>${raw(e.names.length > 1 ? h`<div class="muted small">cũng ghi: ${e.names.filter((x) => x !== e.model).slice(0, 3).join(", ")}</div>` : "")}</td>
       <td data-l="Hãng">${raw(catMakeHtml(e))}</td>
       <td data-l="Tổ máy" class="small">${raw([catRange(e.kva, "kVA"), catRange(e.kw, "kW")].filter(Boolean).map((x) => h`<div>${x}</div>`).join("") || '<span class="muted">bảng không ghi công suất</span>')}</td>
       <td data-l="Thông số" class="small">${raw(catSpecsCell(e))}</td>
@@ -2255,7 +2271,7 @@ function catDetailHtml(e) {
   const others = Object.entries(e.uses.reduce((m, u) => (u.other ? ((m[u.other] = (m[u.other] || 0) + 1), m) : m), {})).sort((a, b) => b[1] - a[1]).slice(0, 12);
   const src = (u) => { const url = catSrcUrl(u.supplierId, u.n); return url ? h`<a href="${url}" target="_blank" rel="noopener" title="${url}">Nguồn [${u.n}]</a>` : h`Nguồn [${u.n}]`; };
   return h`<div class="row"><button class="btn sm" id="catBack">← Danh sách</button><span class="spacer"></span><span class="muted small">${e.suppliers.length} nhà cung cấp · ${e.uses.length} dòng bảng</span></div>
-    <div><h3 style="margin:4px 0">${e.model}</h3>${raw(e.names.length > 1 ? h`<div class="muted small">Cách ghi khác: ${e.names.filter((x) => x !== e.model).join(", ")}</div>` : "")}</div>
+    <div><h3 class="hlname" style="margin:4px 0">${e.model}</h3>${raw(e.names.length > 1 ? h`<div class="muted small">Cách ghi khác: ${e.names.filter((x) => x !== e.model).join(", ")}</div>` : "")}</div>
     <dl class="kv">
       <dt>Loại</dt><dd>${K.one.replace(/^./, (c) => c.toUpperCase())}</dd>
       <dt>Hãng</dt><dd>${raw(e.makes.length ? [...new Set(e.makes.map((m) => m.name))].map((nm) => e.makes.filter((m) => m.name === nm).sort((a, b) => (CAT_VIA_RANK[b.via] || 0) - (CAT_VIA_RANK[a.via] || 0))[0]).map((m) => h`${m.name} <span class="muted small">(theo ${m.via}, ${supName(state.supplier?.[m.supplierId]) || m.supplierId} [${m.n}])</span>`).join("<br>") : '<span class="muted">Nguồn không ghi hãng</span>')}</dd>
@@ -2659,17 +2675,17 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
   if (e.target.closest("#syncNewBtn")) { syncNew(); return; }
   if (e.target.closest("#supBtn")) { openSuppliers(); return; }
-  if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); $("#mdl").scrollTop = listScroll.sup; return; }
+  if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); mScroll().scrollTop = listScroll.sup; return; }
   if (e.target.closest("tr[data-supopen] a[href]")) return; // e-mail / phone link in a list row: no detail
   const supsrc = e.target.closest("[data-supsrc]");
   if (supsrc) { e.preventDefault(); $("#sup-src-" + supsrc.dataset.supsrc)?.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
   const supo = e.target.closest("[data-supopen]");
-  if (supo) { if ($("#supBody")) { if (!supOpenId) listScroll.sup = $("#mdl").scrollTop; supOpenId = supo.dataset.supopen || null; renderSuppliers(); $("#mdl").scrollTop = 0; } else openSuppliers(supo.dataset.supopen); return; }
+  if (supo) { if ($("#supBody")) { if (!supOpenId) listScroll.sup = mScroll().scrollTop; supOpenId = supo.dataset.supopen || null; renderSuppliers(); } else openSuppliers(supo.dataset.supopen); return; }
   const cko = e.target.closest("[data-catopen]");
   if (cko) { openCatalog(cko.dataset.catopen, cko.dataset.catkey); return; }
   const cki = e.target.closest("#catList [data-catitem]");
-  if (cki) { listScroll.cat = $("#mdl").scrollTop; catView.open = cki.dataset.catitem; renderCatalog(); return; }
-  if (e.target.id === "catBack") { catView.open = null; renderCatalog(); $("#mdl").scrollTop = listScroll.cat; return; }
+  if (cki) { listScroll.cat = mScroll().scrollTop; catView.open = cki.dataset.catitem; renderCatalog(); return; }
+  if (e.target.id === "catBack") { catView.open = null; renderCatalog(); mScroll().scrollTop = listScroll.cat; return; }
   if (e.target.id === "catMore") { catView.limit += 100; renderCatList(); return; }
   if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn" }, "gợi ý cấu hình"); return; }
   if (e.target.id === "cfgFind") { requestWorker("findreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn" }, "tìm nhà cung cấp"); return; }
