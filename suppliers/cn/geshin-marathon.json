@@ -1,0 +1,108 @@
+{
+  "id": "geshin-marathon",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "上海马拉松·革新电气有限公司",
+    "brands": [
+      "Marathon",
+      "革新"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Shanghai",
+    "city": "Shanghai"
+  },
+  "founded": 1996,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [
+    "marathon-generators"
+  ],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than một pha / ba pha 5–3000 kW theo công nghệ Marathon (Mỹ)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Liên doanh WEG (Brazil) và Shanghai Mechanical & Electrical (thuộc Shanghai Electric), thành lập 1996; sản phẩm xuất khẩu đạt UL, CE, CSA",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "无刷单、三相交流同步发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "UL",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CSA",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa lưu website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.powerchinashow.com/news2.asp?id=2728",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "上海马拉松·革新电气有限公司 （以下简称“公司”）是巴西WEG集团和上海电气集团旗下的上海机电股份有限公司共同投资的合资企业，成立于1996年。",
+        "公司引进美国马拉松发电机的设计和制造工艺技术，生产具有行业先进水平、具有安全性和可靠性的无刷单、三相交流同步发电机（发电机容量从5KW—3000KW",
+        "出口产品获美国UL、欧洲CE和加拿大CSA的工"
+      ],
+      "file": "sources/geshin-marathon/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

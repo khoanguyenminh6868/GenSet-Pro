@@ -1,0 +1,60 @@
+{
+  "id": "pushi-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": null,
+  "zh": "重庆普什新能源技术有限公司",
+  "brands": [
+    "普什"
+  ],
+  "web": null,
+  "prov": "Chongqing",
+  "city": "Chongqing",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "B",
+      "届时， 重庆普什新能源技术有限公司 将重磅亮相展会",
+      "普什动力：集大功率燃气发电机组研发制造、燃气电站工程系统集成及运维为一",
+      "Coverage power: 1000 kW—1500 kW，speed: 1000rpm",
+      "公司具备年产200台大功率燃气机及机组的生产能力",
+      "四川省宜宾普什集团有限公司 （以下称“普什集团”）是五粮液集团全资子集团公司"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy khí công suất lớn (dòng 1000–1500 kW, 1000 vòng/phút), năng lực 200 máy/năm",
+      1
+    ],
+    [
+      "Thuộc 四川省宜宾普什集团 (tập đoàn Wuliangye)",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "大功率燃气发电机组",
+      "fuel": "gas",
+      "p": [
+        1000,
+        1500,
+        "kW",
+        "unspecified",
+        1
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Nguồn là trang nhà triển lãm GPOWER (hạng B); dải 1000–1500 kW là của một dòng sản phẩm, chưa có website riêng"
+  ],
+  "by": "discover-bot (Claude)"
+}

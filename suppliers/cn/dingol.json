@@ -1,0 +1,69 @@
+{
+  "id": "dingol",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "顶格电力设备江阴有限公司",
+    "brands": [
+      "DINGOL",
+      "顶格"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Jiangyin"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát làm theo yêu cầu cho nhà sản xuất tổ máy, hãng động cơ, máy công trình",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "DINGOL 发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa có dải công suất, năm thành lập, website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.powerchinashow.com/news2.asp?id=2745",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "顶格电力设备江阴有限公司",
+        "DINGOL 顶格电机 ，更擅长定制，致力于为全球国际一线品牌电站制造商、发动机主机厂、各类行业和系统用户、国内外工程机械企业集团提供高可靠性之卓越性能产品"
+      ],
+      "file": "sources/dingol/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
