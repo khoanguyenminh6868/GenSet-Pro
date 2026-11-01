@@ -1,7 +1,8 @@
 // "Gợi ý" in the Cấu hình gợi ý tab, run on the Windows PC next to the GenBid bot:
 //   node suppliers/config-bot.mjs run            answer every pending configreq/<TBMT> (one Claude agent per request)
 //                                                and findreq/<TBMT> (Tìm NCC: Gemini first, then Claude, find-prompt.md;
-//                                                when it adds suppliers, Gợi ý runs again for that tender)
+//                                                the suppliers it adds go into configmatch/<TBMT> in code, no agent)
+//   node suppliers/config-bot.mjs merge-find --key <TBMT>          do that again from the stored findmatch
 //   node suppliers/config-bot.mjs find-check --dir <dir>          check newCatalog.json of a Tìm NCC folder in code
 //   node suppliers/config-bot.mjs prep --key <TBMT> --out <dir>
 //   node suppliers/config-bot.mjs save --dir <dir> --url <url>     (used by the agent for internet sources)
@@ -499,6 +500,59 @@ export async function findCheck(dir, suppliers, cap) {
   }
   return out;
 }
+// Suppliers Tìm NCC added go into the suggested configurations in code, with no agent and no tokens (Khoa,
+// 2026-11-01). From their own table rows (web/catalog.js), for engines of the origin asked for and rows whose smallest
+// rating is 100% to 140% of the tender's power: a row naming the engine of a configuration already suggested adds the supplier to it;
+// another engine becomes a new configuration, marked fromFind, whose only check is the power read from that row and
+// left "unclear", since nothing else of the HSMT was compared with it. Every model and line is the row word for word.
+const powerText = (p) => Object.entries(p || {}).map(([k, v]) => `${{ prime: "Prime", standby: "Standby", rated: "Định mức" }[k] || k} ${[v.kVA && `${v.kVA} kVA`, v.kW && `${v.kW} kW`].filter(Boolean).join(" / ")}`).join(", ");
+export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
+  const ids = new Set(records.map((r) => r.id)), keyOf = CAT.keyOf;
+  // The row's smallest rating (prime when it gives both) is at least the tender's power, and not past 140% of it.
+  const near = (u) => !cap || (rowPower(u, cap) >= cap.value && rowPower(u, cap) <= cap.value * 1.4);
+  const lineOf = (u, model) => u.line || (u.lines?.rows || []).find((l) => keyOf(l).includes(keyOf(model))) || null;
+  const configs = result.configs || (result.configs = []), out = { joined: [], created: [] };
+  for (const e of byOrigin(CAT.build(records).engines, originOfReq(origin))) {
+    const uses = e.uses.filter((u) => ids.has(u.supplierId) && near(u) && lineOf(u, e.model))
+      .sort((a, b) => (cap ? Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value) : 0));
+    if (!uses.length) continue;
+    const entry = (u) => ({ supplierId: u.supplierId, n: u.n, line: lineOf(u, e.model), fromFind: true, why: `Bổ sung từ Tìm NCC: dòng bảng của nhà cung cấp ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.` });
+    const old = configs.find((c) => c.engine?.model && keyOf(c.engine.model) === e.key);
+    if (old) {
+      old.suppliers = old.suppliers || [];
+      for (const u of uses) if (!old.suppliers.some((s) => s.supplierId === u.supplierId)) { old.suppliers.push(entry(u)); out.joined.push({ rank: old.rank, supplierId: u.supplierId }); }
+      continue;
+    }
+    if (out.created.length >= max) continue;
+    const u = uses[0], line = lineOf(u, e.model), src = { kind: "catalog", supplierId: u.supplierId, n: u.n, line };
+    const sups = []; for (const x of uses) if (!sups.some((s) => s.supplierId === x.supplierId)) sups.push(entry(x));
+    const c = {
+      rank: Math.max(0, ...configs.map((x) => x.rank || 0)) + 1, fromFind: true,
+      engine: { model: e.model, ...(e.make ? { make: e.make } : {}), src },
+      ...(u.other ? { alternator: { model: u.other, src } } : {}),
+      ...(u.genset ? { genset: { model: u.genset, src } } : {}),
+      checks: [{ item: "Công suất", part: "genset", requirement: cap ? `khoảng ${cap.value} ${cap.unit}` : "", offered: powerText(u.power) || "—", sourceQuote: line, status: "unclear",
+        note: "Bổ sung tự động từ Tìm NCC, không dùng AI: công suất nhỏ nhất ghi trong dòng bảng từ 100% đến 140% công suất của gói. Các yêu cầu khác của HSMT chưa được đối chiếu (bấm Gợi ý lại nếu cần)." }],
+      suppliers: sups.slice(0, 3),
+      gaps: ["Cấu hình bổ sung từ Tìm NCC: chưa đối chiếu từng yêu cầu kỹ thuật của HSMT."],
+    };
+    configs.push(c);
+    out.created.push({ rank: c.rank, engine: e.model, supplierId: u.supplierId });
+  }
+  return out;
+}
+// Reads configmatch/<key> and posts it back with the new suppliers merged in. No configmatch yet: nothing to merge into.
+async function mergeFindIntoConfig(key, records, { cap, origin }) {
+  const prev = await doc("configmatch", key);
+  if (!prev?.result) return null;
+  const result = JSON.parse(JSON.stringify(prev.result)), out = mergeFind(result, records, { cap, origin: result.origin || origin });
+  if (!out.joined.length && !out.created.length) return out;
+  result.notes = [...(result.notes || []), `Tìm NCC lúc ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC: ${out.joined.length ? `gắn ${out.joined.length} nhà cung cấp vào cấu hình có sẵn` : ""}${out.joined.length && out.created.length ? ", " : ""}${out.created.length ? `thêm ${out.created.length} cấu hình mới (chưa đối chiếu đủ HSMT)` : ""}, bằng code từ dòng bảng của nhà cung cấp.`];
+  await post([{ coll: "configmatch", id: key, data: { ...prev, at: new Date().toISOString(), result } }]);
+  return out;
+}
+const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.joined.length && !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : [m.joined.length && `gắn ${m.joined.length} nhà cung cấp vào cấu hình có sẵn`, m.created.length && `thêm ${m.created.length} cấu hình mới`].filter(Boolean).join(", "));
+
 async function find(req, suppliers) {
   const key = req.key, tried = [];
   const done = ({ result, error }) => {
@@ -522,12 +576,14 @@ async function find(req, suppliers) {
         // Only the suppliers that passed and fit go to the catalog.
         const ids = new Set(fit.map((c) => c.id));
         fs.writeFileSync(path.join(dir, "newCatalog.json"), JSON.stringify(JSON.parse(fs.readFileSync(path.join(dir, "newCatalog.json"), "utf8")).filter((e) => ids.has(e?.id)), null, 1), "utf8");
-        const { added } = await addToCatalog(dir, key, suppliers, { branch: `ncc/${key.toLowerCase()}-${engine}`, title: `Nhà cung cấp: Tìm NCC gói ${key} (${ENGINE[engine]})`,
+        const { added, records } = await addToCatalog(dir, key, suppliers, { branch: `ncc/${key.toLowerCase()}-${engine}`, title: `Nhà cung cấp: Tìm NCC gói ${key} (${ENGINE[engine]})`,
           body: `Nút Tìm NCC ở tab Cấu hình gợi ý gói ${key}: ${ENGINE[engine]} tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật${cap ? ` (${cap.value} ${cap.unit})` : ""}. Bản ghi đã qua verify.mjs và đã đăng lên web.` });
         if (!added.some((a) => !a.error)) { tried.push({ engine: ENGINE[engine], error: "bản ghi không qua được verify.mjs của repo", dropped: added }); continue; }
-        await done({ result: { engine: ENGINE[engine], cap, summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried, autoConfig: true } });
-        console.log(`${key}: Tìm NCC (${ENGINE[engine]}) bổ sung ${added.filter((a) => !a.error).length} nhà cung cấp`);
-        return true;
+        const merged = await mergeFindIntoConfig(key, records, { cap, origin: req.origin }).catch((e) => ({ error: e.message }));
+        const configMerge = merged?.error ? `chưa bổ sung được vào cấu hình gợi ý: ${merged.error}` : mergeText(merged);
+        await done({ result: { engine: ENGINE[engine], cap, summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried, configMerge } });
+        console.log(`${key}: Tìm NCC (${ENGINE[engine]}) bổ sung ${added.filter((a) => !a.error).length} nhà cung cấp; cấu hình: ${configMerge}`);
+        return;
       } finally { fs.rmSync(dir, { recursive: true, force: true }); }
     }
     await done({ result: { engine: "", summary: "Không tìm được nhà cung cấp mới nào phù hợp yêu cầu kỹ thuật và qua được kiểm tra nguồn.", added: [], skipped: [], notes: [], tried } });
@@ -557,30 +613,25 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   } else if (cmd === "post") {
     const dir = arg("dir", "."), { result } = checkDir(dir, (await api("kind=docs&coll=supplier")).map((d) => d.data));
     console.log(await post([{ coll: "configmatch", id: arg("key"), data: { at: new Date().toISOString(), result } }, { coll: "configreq", id: arg("key"), data: { notifyNo: arg("key"), requestedAt: arg("requested-at"), doneAt: new Date().toISOString(), error: "" } }]));
+  } else if (cmd === "merge-find") {
+    // The suppliers of the stored findmatch/<key>, read again from the web, merged into configmatch/<key>.
+    const key = arg("key"), f = await doc("findmatch", key), ids = new Set((f?.result?.added || []).filter((a) => !a.error).map((a) => a.supplierId));
+    const records = (await api("kind=docs&coll=supplier")).map((d) => d.data).filter((s) => ids.has(s.id));
+    const m = await mergeFindIntoConfig(key, records, { cap: f?.result?.cap, origin: (await doc("findreq", key))?.origin });
+    if (f?.result) await post([{ coll: "findmatch", id: key, data: { ...f, result: { ...f.result, configMerge: mergeText(m) } } }]);
+    console.log(`${key}: ${mergeText(m)}${m ? ` ${JSON.stringify(m)}` : ""}`);
   } else if (cmd === "run") {
     const lock = path.join(os.tmpdir(), "genbid-config.lock");
     if (fs.existsSync(lock) && Date.now() - fs.statSync(lock).mtimeMs < 60 * 60e3) { console.log("SUMMARY: đang có lượt khác chạy"); process.exit(4); }
     fs.writeFileSync(lock, String(process.pid));
     try {
-      const [pending, finds] = await Promise.all([api("kind=config"), api("kind=find")]), found = [];
+      const [pending, finds] = await Promise.all([api("kind=config"), api("kind=find")]);
       if (pending.length || finds.length) {
         const suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data);
         for (const req of pending) await answer(req, suppliers);
-        for (const req of finds) if (await find(req, suppliers)) found.push(req);
-        // Suppliers that Tìm NCC added go into the suggested configurations right away (Khoa, 2026-11-01): Gợi ý runs
-        // again for the tender, through a configreq of its own so the web shows it waiting, with the catalog re-read.
-        if (found.length) {
-          const fresh = (await api("kind=docs&coll=supplier")).map((d) => d.data);
-          for (const f of found) {
-            const req = { key: f.key, notifyNo: f.notifyNo || f.key, bidName: f.bidName, origin: f.origin, requestedAt: new Date().toISOString(), by: f.by, from: "find" };
-            const { key, ...data } = req;
-            fs.writeFileSync(lock, String(process.pid)); // a long run must not look stale to another one
-            await post([{ coll: "configreq", id: key, data: JSON.parse(JSON.stringify(data)) }]);
-            await answer(req, fresh);
-          }
-        }
+        for (const req of finds) await find(req, suppliers);
       }
-      console.log(`SUMMARY: ${pending.length} yêu cầu gợi ý cấu hình, ${finds.length} yêu cầu Tìm NCC${found.length ? `, tự gợi ý lại ${found.length} gói` : ""}`);
+      console.log(`SUMMARY: ${pending.length} yêu cầu gợi ý cấu hình, ${finds.length} yêu cầu Tìm NCC`);
     } finally { fs.rmSync(lock, { force: true }); }
   } else { console.error("usage: config-bot.mjs run | prep --key K --out D | save --dir D --url U | check --dir D | post --dir D --key K --requested-at T"); process.exit(2); }
 }

@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { check, catalogRecords, byOrigin, fitsCap, findCheck } from "./config-bot.mjs";
+import { check, catalogRecords, byOrigin, fitsCap, findCheck, mergeFind } from "./config-bot.mjs";
 
 const sup = [{ id: "s", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Standby kW/kVA | Prime kW/kVA | Engine | Alternator"], rows: ["| SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | UK"] }] }];
 const hsmt = "Chương V. Yêu cầu kỹ thuật\nCông suất liên tục (Prime): ≥ 450 kVA\nĐầu phát: Stamford hoặc tương đương\nTần số 50Hz";
@@ -183,4 +183,22 @@ test("Tìm NCC: a find counts only when it passes verify.mjs and a product line 
     assert.ok(!fitsCap(entry, { value: 1000, unit: "kVA" }));
     assert.ok(!fitsCap(entry, { value: 400, unit: "kW" }));
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+});
+
+// Tìm NCC → Cấu hình gợi ý in code (Khoa, 2026-11-01): the new supplier's rows join a configuration with the same
+// engine, or make a new one marked fromFind; a row below the tender's power or of a foreign engine is left out.
+test("mergeFind adds a supplier's rows to the suggested configurations", () => {
+  const rec = { id: "w", role: "genset_maker", names: { en: "W" }, specTables: [{ n: 2001, title: "Weichai gensets", header: ["| Model | Standby kVA | Standby kW | Prime kVA | Prime kW | Engine"],
+    rows: ["| W-1 | 312.5 | 250 | 275 | 220 | WP10D264E200", "| W-2 | 250 | 200 | 237.5 | 190 | WP10D238E200", "| W-3 | 330 | 264 | 300 | 240 | WP12D317E200"] }] };
+  const result = { origin: "cn", configs: [{ rank: 1, engine: { model: "WP12D317E200" }, suppliers: [{ supplierId: "old" }], checks: [] }] };
+  const out = mergeFind(result, [rec], { cap: { value: 250, unit: "kVA" }, origin: "cn" });
+  assert.deepEqual(out.joined, [{ rank: 1, supplierId: "w" }]);
+  assert.deepEqual(out.created.map((c) => c.engine), ["WP10D264E200"]);
+  const c = result.configs[1];
+  assert.equal(c.fromFind, true);
+  assert.equal(c.engine.src.line, "| W-1 | 312.5 | 250 | 275 | 220 | WP10D264E200");
+  assert.equal(c.checks[0].status, "unclear");
+  assert.equal(result.configs[0].suppliers[1].line, "| W-3 | 330 | 264 | 300 | 240 | WP12D317E200");
+  // A second run adds nothing twice.
+  assert.deepEqual(mergeFind(result, [rec], { cap: { value: 250, unit: "kVA" }, origin: "cn" }).joined, []);
 });
