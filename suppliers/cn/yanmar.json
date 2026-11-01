@@ -1,0 +1,90 @@
+{
+  "id": "yanmar",
+  "country": "JP",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "YANMAR HOLDINGS CO., LTD.",
+    "zh": null,
+    "brands": [
+      "Yanmar"
+    ]
+  },
+  "website": "https://www.yanmar.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "yanmar-shandong"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel lớn dòng AY 650–1250 kVA, dùng động cơ AY của Yanmar",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "AY Power Generation Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "AY"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 650,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa lưu trang các dòng tổ máy khác (6HAL, EY, tổ máy nhỏ YDG); trang 2 chỉ có tiêu đề danh mục"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.yanmar.com/us/energy/products/power_generator/on_site_power/ay/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © YANMAR HOLDINGS CO., LTD. All rights reserved.",
+        "With ratings from 650 kVA to 1,250 kVA, each unit is driven by an AY engine"
+      ],
+      "file": "sources/yanmar/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.yanmar.com/global/powergeneration/products/diesel_generators/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR"
+      ],
+      "file": "sources/yanmar/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

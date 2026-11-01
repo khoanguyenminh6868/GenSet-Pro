@@ -1,0 +1,15 @@
+{
+  "id": "zhengdian-zhengzhou", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "郑州郑电发电机有限公司", "brands": [],
+  "web": "http://www.wfcyfdj.net/", "prov": "Henan", "city": "Zhengzhou", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "版权所有：郑州郑电发电机有限公司", "地 址： 郑州市西区工业园区", "康明斯发电机组,上柴发电机组,常柴发电机组,船用发电机组---郑州郑电发电机有限公司专业生产柴油发电机组"]
+  },
+  "str": [["Tổ máy diesel Cummins, SDEC (上柴), Changchai và tổ máy tàu thủy", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "eng": ["康明斯", "上柴", "常柴"], "src": [1] }
+  ],
+  "miss": ["Website cũ, không ghi dải công suất, năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

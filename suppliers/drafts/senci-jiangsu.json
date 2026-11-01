@@ -1,0 +1,15 @@
+{
+  "id": "senci-jiangsu", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": null, "zh": "江苏神驰机电有限公司", "brands": ["神驰", "Senci"],
+  "web": "https://www.jssenci.com/", "prov": "Jiangsu", "city": null, "founded": 2009, "fsrc": [1], "related": ["senci"],
+  "src": {
+    "1": ["A", "江苏神驰机电有限公司成立于2009年2月，从事年产60万台 发电机 和20万台 柴油发电机组 、 静音发电机组 研发、制造、销售为一体的国家高新技术企业。", "依托上市公司神驰机电股份在小型发电机核心部件的研发、制造优势，神驰机电进行大型柴油发电机组产品的研发、生产、制造。柴油发电机组已形成从20千瓦到3000千瓦的"]
+  },
+  "str": [["Tổ máy diesel 20–3000 kW; năng lực 600.000 máy phát và 200.000 tổ máy diesel/năm", 1], ["Công ty con của Senci (神驰机电股份, niêm yết), thành lập 2/2009", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "p": [20, 3000, "kW", "unspecified", 1], "types": ["silent"], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi địa chỉ thành phố, chứng chỉ, hãng động cơ"],
+  "by": "discover-bot (Claude)"
+}

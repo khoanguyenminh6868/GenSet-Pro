@@ -1,0 +1,80 @@
+{
+  "id": "meikangsi-sichuan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "四川美康斯发电设备有限公司",
+    "brands": [
+      "美康斯"
+    ]
+  },
+  "website": "http://www.scmks.com/",
+  "hq": {
+    "province": "Sichuan",
+    "city": "Chengdu"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 24–2000 kW: cơ bản, giảm ồn, rơ-moóc, tự động, hòa lưới, xe phát điện",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "沃尔沃"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 24,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi năm thành lập (chỉ có '© 版权所有 2002-2020'), chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.scmks.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "四川美康斯发电设备有限公司，是一家从事柴油发电机组研发、制造、销售、维修",
+        "坐落于有天府之国美誉的四川成都",
+        "我公司生产的24-2000KW柴油发电机组有：基本型、低噪音型、防雨拖车型、自动化、无人值守型、多机并网和应急发电车等十几种系列，两百多种规格",
+        "200KW沃尔沃柴油发电机组"
+      ],
+      "file": "sources/meikangsi-sichuan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
