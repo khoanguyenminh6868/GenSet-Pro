@@ -1,5 +1,60 @@
-{"id":"dingol","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":null,"zh":"顶格电力设备江阴有限公司","brands":["DINGOL","顶格"],"web":null,"prov":"Jiangsu","city":"Jiangyin","founded":null,"fsrc":[],"related":[],
-"src":{"1":["B","顶格电力设备江阴有限公司","DINGOL 顶格电机 ，更擅长定制，致力于为全球国际一线品牌电站制造商、发动机主机厂、各类行业和系统用户、国内外工程机械企业集团提供高可靠性之卓越性能产品"]},
-"str":[["Đầu phát làm theo yêu cầu cho nhà sản xuất tổ máy, hãng động cơ, máy công trình",1]],"cert":[],
-"lines":[{"k":"alternator","s":"DINGOL 发电机","src":[1]}],
-"miss":["Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa có dải công suất, năm thành lập, website riêng"],"by":"discover-bot (Claude)"}
+{
+  "id": "dingol",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "conf": "medium",
+  "en": null,
+  "zh": "顶格电力设备江阴有限公司",
+  "brands": [
+    "DINGOL",
+    "顶格"
+  ],
+  "web": null,
+  "prov": "Jiangsu",
+  "city": "Jiangyin",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "B",
+      "顶格电力设备江阴有限公司",
+      "DINGOL 顶格电机 ，更擅长定制，致力于为全球国际一线品牌电站制造商、发动机主机厂、各类行业和系统用户、国内外工程机械企业集团提供高可靠性之卓越性能产品",
+      "DINGOL 顶格TEAM19年来与全球伙伴共同成就梦想，已经从国际一线品牌发电机的追随者成长为拥有行业领先专业设备、产品配备CCS、CSA、"
+    ]
+  },
+  "str": [
+    [
+      "Đầu phát làm theo yêu cầu cho nhà sản xuất tổ máy, hãng động cơ, máy công trình",
+      1
+    ],
+    [
+      "Sản phẩm có chứng nhận CCS, CSA; đội ngũ hoạt động 19 năm",
+      1
+    ]
+  ],
+  "cert": [
+    [
+      "CCS",
+      1
+    ],
+    [
+      "CSA",
+      1
+    ]
+  ],
+  "lines": [
+    {
+      "k": "alternator",
+      "s": "DINGOL 发电机",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa có dải công suất, năm thành lập, website riêng"
+  ],
+  "by": "discover-bot (Claude)"
+}

@@ -2261,15 +2261,6 @@
  {
   "at": "2026-11-01",
   "result": "added",
-  "id": "dingol",
-  "name": "顶格电力设备江阴有限公司",
-  "url": null,
-  "tables": 0,
-  "rows": 0
- },
- {
-  "at": "2026-11-01",
-  "result": "added",
   "id": "geshin-marathon",
   "name": "上海马拉松·革新电气有限公司",
   "url": null,
@@ -2299,6 +2290,24 @@
   "result": "added",
   "id": "pushi-power",
   "name": "重庆普什新能源技术有限公司",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hanma-tech",
+  "name": "安徽汉马发动机有限公司",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "dingol",
+  "name": "顶格电力设备江阴有限公司",
   "url": null,
   "tables": 0,
   "rows": 0
