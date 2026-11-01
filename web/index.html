@@ -271,7 +271,10 @@ table.supmain{table-layout:fixed}table.supmain th{white-space:normal}table.supma
 @media (max-width:640px){.mbanner .tag{display:none}.mbanner h2{font-size:16px}.mbanner .mark{width:30px;height:30px}}
 /* Phone: the search and filter rows fold behind one button, tap to open (Khoa, 2026-11-02). */
 .filtrows{display:flex;flex-direction:column;gap:10px}.filttg{display:none}.filttg .chev{transition:transform .15s}.filttg[aria-expanded="true"] .chev{transform:rotate(180deg)}
-@media (max-width:640px){.filttg{display:flex;gap:6px;align-items:center;align-self:stretch}.filttg .small{margin-left:auto}.filtrows:not(.open){display:none}}
+@media (max-width:640px){.filttg{display:flex;gap:6px;align-items:center;align-self:stretch}.filttg .small{margin-left:auto}.filtrows:not(.open){display:none}
+/* Phone: the two filter rows flow as one, dropdowns narrow (the open list still shows full names) so as many as possible share a line (Khoa, 2026-11-02). */
+.filtrows{flex-direction:row;flex-wrap:wrap;gap:8px 6px;align-items:center}.filtrows>.suprow{display:contents}.filtrows input[type=search]{flex:1 1 100%!important}
+.filtrows select{flex:1 1 60px;width:0;padding:6px 2px 6px 5px;font-size:13px;text-overflow:ellipsis}.filtrows input[type=number]{flex:1 1 60px;width:0!important;font-size:13px;align-self:stretch}.filtrows .spacer,.filtrows label,.filtrows :is(#supCount,#catCount){display:none}}
 .supcard{padding:12px;display:flex;flex-direction:column;gap:6px;margin:8px 0}.suprow select,.suprow input{min-width:0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
 .tablewrap table{font-size:13px}
@@ -2173,9 +2176,9 @@ function renderSuppliers() {
     </div>
     <div class="row suprow">
       <select id="supCountry">${raw(opt("", "Quốc gia", f.country) + countries.map(([k]) => opt(k, k === "G7" ? "G7" : SUP_COUNTRY[k] || k, f.country)).join(""))}</select>
-      <select id="supYear">${raw(opt("", "Năm thành lập", f.year) + SUP_YEARS.map(([k, l]) => opt(k, l, f.year)).join(""))}</select>
+      <select id="supYear">${raw(opt("", "Năm", f.year) + SUP_YEARS.map(([k, l]) => opt(k, l, f.year)).join(""))}</select>
       <label class="muted small" for="supPower">Công suất cần</label>
-      <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="vd. 500">
+      <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="${matchMedia("(max-width:640px)").matches ? "Công suất" : "vd. 500"}">
       <select id="supUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
       <span class="spacer"></span><span class="muted small" id="supCount"></span>
     </div></div>
@@ -2385,7 +2388,7 @@ function renderCatalog() {
     </div>
     <div class="row suprow">
       <label class="muted small" for="catPower">Tổ máy cần</label>
-      <input type="number" id="catPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="vd. 500">
+      <input type="number" id="catPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="${matchMedia("(max-width:640px)").matches ? "Tổ máy cần" : "vd. 500"}">
       <select id="catUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
       <select id="catSort">${raw([["sup", "Nhiều nhà cung cấp nhất"], ["power", "Công suất tổ máy tăng dần"], ["model", "Model A–Z"]].map(([k, l]) => opt(k, l, f.sort)).join(""))}</select>
       <span class="spacer"></span><span class="muted small" id="catCount"></span>
