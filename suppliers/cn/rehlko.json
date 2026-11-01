@@ -1,0 +1,135 @@
+{
+  "id": "rehlko",
+  "country": "US",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Discovery Energy, LLC dba Rehlko",
+    "zh": null,
+    "brands": [
+      "Rehlko",
+      "Kohler"
+    ]
+  },
+  "website": "https://www.powersystems.rehlko.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 15–4000 kW và tổ máy khí 25–500 kW",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Kohler Energy đổi tên thành Rehlko từ tháng 9/2024",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 100 năm hoạt động",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel Generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 15,
+        "max": 4000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gas Generators",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 25,
+        "max": 500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "UL 2200",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Brochure chủ yếu cho thị trường 60 Hz (Bắc Mỹ); chưa lưu trang nhà máy / năm thành lập cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.powersystems.rehlko.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rehlko introduces six redesigned KG Series generators for 80–200 kW applications."
+      ],
+      "file": "sources/rehlko/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://techcomm.rehlko.com/$web/techcomm/pdf/Rehlko_Industrial_Full_Line_Brochure.pdf",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "G12-18 10/26 © Discovery Energy, LLC dba Rehlko",
+        "Diesel Generators 15-4000 kW",
+        "Gas Generators 25-500 kW",
+        "In September 2024, Kohler Energy rebranded as Rehlko",
+        "For more than 100 years, we have been through countless reinventions.",
+        "Enclosures are UL 2200-listed, IBC-certified"
+      ],
+      "file": "sources/rehlko/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

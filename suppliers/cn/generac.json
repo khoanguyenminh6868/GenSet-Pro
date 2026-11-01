@@ -1,0 +1,106 @@
+{
+  "id": "generac",
+  "country": "US",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Generac Power Systems, Inc.",
+    "zh": null,
+    "brands": [
+      "Generac"
+    ]
+  },
+  "website": "https://www.generac.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 1959,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: là hãng đầu tiên làm động cơ chuyên cho máy phát",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Dòng tổ máy diesel tĩnh tại từ 10 kW, bộ lọc trang tới nhóm 2000–3500 kW",
+      "src": [
+        3
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Stationary Generators (Diesel)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 3500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Mức trên 3500 kW lấy theo bộ lọc '2000kW - 3500kW' của trang danh sách, chưa lưu trang model lớn nhất",
+    "Chưa có chứng chỉ, tần số; sản phẩm chủ yếu cho thị trường 60 Hz"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.generac.com/industrial/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2026 Generac Power Systems, Inc. All rights reserved."
+      ],
+      "file": "sources/generac/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.generac.com/about/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Founded in 1959, Generac was the first to engineer affordable home standby generators, along with the first engine developed specifically for the rigors of generator use"
+      ],
+      "file": "sources/generac/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.generac.com/industrial-products/stationary-generators/?FuelType=Diesel",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Stationary Generator | 10kW | Diesel | 2.2L",
+        "2000kW - 3500kW"
+      ],
+      "file": "sources/generac/3.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

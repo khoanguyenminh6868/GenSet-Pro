@@ -1,0 +1,20 @@
+{
+  "id": "marelli-motori", "country": "IT", "role": "alternator_maker", "status": "partial", "conf": "medium",
+  "en": "Marelli Motori", "zh": null, "brands": ["Marelli Motori"],
+  "web": "https://www.marellimotori.com/", "prov": "Veneto", "city": "Arzignano", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Marelli Motori is a leading Italian manufacturer of generators, frequency converters and electric motors.", "The company is headquartered in Arzignano, near Verona", "Marelli Motori was acquired by Langley Holdings", "fully integrated production of industrial-grade machines up to 13 MW, 15kV, and 50 tons."],
+    "2": ["A", "POWER : Up to 15000 kVA", "VOLTAGE : Up to 15000 V", "FRAME : 315 – 1250", "POLES : 4 to 12"]
+  },
+  "str": [
+    ["Đầu phát MJB (hạ áp) / MJH (trung áp) tới 15000 kVA, 15000 V, khung 315–1250", 2],
+    ["Nhà máy tại Arzignano (Ý), máy tới 13 MW, 15 kV", 1],
+    ["Theo hãng: nhà sản xuất máy phát, động cơ điện hàng đầu của Ý", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "alternator", "s": "MJB / MJH", "volt": ["Up to 15000 V"], "src": [2] }
+  ],
+  "miss": ["Trang sản phẩm chỉ ghi công suất tối đa (Up to 15000 kVA), không ghi mức thấp nhất nên chưa có dải công suất", "Chưa có năm thành lập"],
+  "by": "discover-bot (Claude)"
+}

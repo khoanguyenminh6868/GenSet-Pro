@@ -1,0 +1,121 @@
+[
+ {
+  "n": 101,
+  "url": "https://www.meccalte.com/en/products/alternators/zanardi-products/pmg",
+  "title": "Permanent Magnet Generator | Mecc Alte",
+  "header": [
+   "| PMG DC - FIXED SPEED | PMG DC - VARIABLE SPEED | PMG AC & INVERTER",
+   "| Models | AC VERSION | DC VERSION 14-28 VDC | DC VERSION 48-56 VDC",
+   "| Power [kW] | Speed Range | Power [kW] | Speed Range | Power [kW] | Speed Range",
+   "| P.F.1 @ max rpm | [rpm] | P.F.1 @ max rpm | [rpm] | P.F.1 @ max rpm | [rpm]"
+  ],
+  "rows": [
+   "| PM3G - Lento | 3 | 1500-2500 | 2 | 1500-2500 | 3 | 1500-2500",
+   "| PM3G - Medio | 5.5 | 2500-3600 | 4 | 2500-3600 | 4.5 | 2500-3600",
+   "| PM5G - 42 Lento | 6 | 1500-2500 | 3 | 1500-2500 | 3.5 | 1500-2500",
+   "| PM5G - 42 Medio | 8 | 2500-3600 | 5 | 2500-3600 | 6 | 2500-3600",
+   "| PM5G - 60 Lento | 8 | 1500-2500 | 5 | 1500-2500 | 6 | 1500-2500",
+   "| PM5G - 60 Medio | 10 | 2500-3600 | 7 | 2500-3600 | 10 | 2500-3600",
+   "| PM5G - 80 Lento | 10 | 1500-2500 | 7 | 1500-2500 | 10 | 1500-2500",
+   "| PM5G - 80 Medio | 15 | 2500-3600 | 10 | 2500-3600 | 15 | 2500-3600",
+   "| PM5G - 100 Lento | 15 | 1500-2500 | 10 | 1500-2500 | 15 | 1500-2500",
+   "| PM5G - 100 Medio | 20 | 2500-3600 | 15 | 2500-3600 | 20 | 2500-3600",
+   "| PM7G - 40 Lento | 10 | 1900-2500 | 8 | 1900-2500 | 10 | 1900-2500",
+   "| PM7G - 40 Medio | 15 | 2500-3600 | 10 | 2500-3600 | 15 | 2500-3600",
+   "| PM7G - 60 Lento | 15 | 1900-2500 | 10 | 1900-2500 | 15 | 1900-2500",
+   "| PM7G - 60 Medio | 20 | 2500-3600 | 15 | 2500-3600 | 20 | 2500-3600",
+   "| PM7G - 80 Lento | 25 | 1900-2500 | 15 | 1900-2500 | 20 | 1900-2500",
+   "| PM7G - 80 Medio | 35 | 2500-3600 | 25 | 2500-3600 | 30 | 2500-3600"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.meccalte.com/en/products/alternators/zanardi-products/alternators",
+  "title": "Three Phase Alternators | Single Phase Alternators | Zanardi",
+  "header": [
+   "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]"
+  ],
+  "rows": [
+   "| BTP3 S/2 | 2 | 13kVA | 15.6kVA",
+   "| BTP3 1L/2 | 2 | 16kVA | 19.2kVA",
+   "| BTP3 2L/2 | 2 | 20kVA | 24kVA",
+   "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]",
+   "| ATO28/2 VS | 2 | 27kVA | 32kVA",
+   "| ATO28/2 1S | 2 | 30kVA | 36kVA",
+   "| ATO28/2 2S | 2 | 35kVA | 40kVA",
+   "| ATO28/2 3S | 2 | 40 kVA | 45 kVA",
+   "| ATO28/2 1L | 2 | 45 kVA | 53 kVA",
+   "| ATO28/2 2 L | 2 | 50 kVA | 60 kVA",
+   "| ATO28/2 V L | 2 | 55 kVA | 65 kVA"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.meccalte.com/en/products/alternators/zanardi-products/alternators",
+  "title": "Three Phase Alternators | Single Phase Alternators | Zanardi",
+  "header": [
+   "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]"
+  ],
+  "rows": [
+   "| CTP3 1S/2 | 2 | 8kVA | 9.6kVA",
+   "| CTP3 2S/2 | 2 | 10kVA | 12kVA",
+   "| CTP3 3S/2 | 2 | 12kVA | 14.4kVA",
+   "| CTP3 1L/2 | 2 | 15kVA | 18kVA",
+   "| CTP3 2L/2 | 2 | 17.5kVA | 21kVA",
+   "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]",
+   "| ECSP28 M/2 | 2 | 22kVA | 26.5kVA",
+   "| ECSP28 2L/2 | 2 | 27kVA | 32.5kVA",
+   "| ECSP28 3L/2 | 2 | 31.5kVA | 37.8kVA",
+   "| ECSP28 VL/2 | 2 | 40 kVA | 48 kVA"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.meccalte.com/en/products/alternators/zanardi-products/alternators",
+  "title": "Three Phase Alternators | Single Phase Alternators | Zanardi",
+  "header": [
+   "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]"
+  ],
+  "rows": [
+   "| BTP3 1S/4 | 4 | 7kVA | 8.4kVA",
+   "| BTP3 2S/4 | 4 | 9kVA | 10.8kVA",
+   "| BTP3 1L/4 | 4 | 11kVA | 13.2kVA",
+   "| BTP3 2L/4 | 4 | 13kVA | 15.6kVA",
+   "| BTP3 3L/4 | 4 | 15kVA | 18kVA",
+   "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]",
+   "| ATO28/4 1VS | 4 | 10kVA | 12kVA",
+   "| ATO28/4 2VS | 4 | 13kVA | 15.5kVA",
+   "| ATO28/4 3VS | 4 | 17kVA | 20.5kVA",
+   "| ATO28/4 4VS | 4 | 20 kVA | 24 kVA",
+   "| ATO28/4 S | 4 | 25 kVA | 30kVA",
+   "| ATO28/4 1 L | 4 | 30 kVA | 36 kVA",
+   "| ATO28/4 2L | 4 | 35kVA | 42kVA",
+   "| ATO28/4 V L | 4 | 37 kVA | 44.4kVA"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.meccalte.com/en/products/alternators/zanardi-products/alternators",
+  "title": "Three Phase Alternators | Single Phase Alternators | Zanardi",
+  "header": [
+   "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]"
+  ],
+  "rows": [
+   "| CTP3 1S/4 | 4 | 6.5kVA | 7.8kVA",
+   "| CTP3 2S/4 | 4 | 8kVA | 9.6kVA",
+   "| CTP3 1L/4 | 4 | 10kVA | 12kVA",
+   "| CTP3 2L/4 | 4 | 13kVA | 15.6kVA",
+   "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]",
+   "| ECSP28 S/4 | 4 | 17kVA | 20.4kVA",
+   "| ECSP28 M/4 | 4 | 20kVA | 24kVA",
+   "| ECSP28 2L/4 | 4 | 25kVA | 30kVA",
+   "| ECSP28 VL/4 | 4 | 30 kVA | 36kVA",
+   "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]",
+   "| ECSP32 2S/4 | 4 | 35kVA | 42kVA",
+   "| ECSP32 3S/4 | 4 | 40kVA | 48kVA",
+   "| ECSP32 1L/4 | 4 | 50kVA | 60kVA",
+   "| ECSP32 2L/4 | 4 | 58 kVA | 72kVA",
+   "| ECSP32 3L/4 | 4 | 70kVA | 84kVA"
+  ]
+ }
+]
