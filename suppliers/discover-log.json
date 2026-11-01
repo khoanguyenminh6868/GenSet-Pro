@@ -2410,5 +2410,32 @@
   "url": null,
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "huadong-weifang",
+  "name": "Weifang Huadong Diesel Engine Co.,Ltd",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "huineng-shandong",
+  "name": "Shandong Huineng Power Co.,Ltd",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "kema-zhejiang",
+  "name": "ZHEJIANG KEMA ENGINE & MACHINERY CO.,LTD",
+  "url": null,
+  "tables": 0,
+  "rows": 0
  }
 ]

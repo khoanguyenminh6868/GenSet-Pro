@@ -1,0 +1,97 @@
+{
+  "id": "huineng-shandong",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Shandong Huineng Power Co.,Ltd",
+    "zh": null,
+    "brands": [
+      "Huineng"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": 1996,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [
+    "xinshengan-shandong"
+  ],
+  "strengths": [
+    {
+      "text": "Tập đoàn sản xuất tổ máy diesel và khí tại Duy Phường, thành lập 1996",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có công ty thành viên 新盛安动力科技（山东） (bản ghi xinshengan-shandong)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generating sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gas generating set",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.cccme.cn/shop/cn1629389676/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "Shandong Huineng Power Co.,Ltd",
+        "Huineng power group was founded in 1996, is located in the world-famous kite - weifang. Group sets Xinshengan power technology (shandong) Co., Ltd., anhui dasheng power Co., Ltd.",
+        "Group research and development production of different kinds of generator set, including diesel generating sets, gas generating set"
+      ],
+      "file": "sources/huineng-shandong/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

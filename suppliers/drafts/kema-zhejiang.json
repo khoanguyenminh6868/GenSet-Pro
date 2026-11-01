@@ -1,0 +1,76 @@
+{
+  "id": "kema-zhejiang",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "ZHEJIANG KEMA ENGINE & MACHINERY CO.,LTD",
+  "zh": null,
+  "brands": [
+    "KEMA"
+  ],
+  "web": null,
+  "prov": "Zhejiang",
+  "city": "Taizhou",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "B",
+      "KEMA is a leading manufacturer of gasoline and diesel engine, generator, water pump, generating and welding machine, high pressure washer. We started making these products in 2001.",
+      "Address:Tangshang,Jinqing,Luqiao,Taizhou,Zhejiang,China",
+      "Besides certified by ISO9001:2008 international quality management system, we also obtained some other international certificates such as GS, CE.",
+      "The company covers an area of 50,000 square meters with 500 staffs and 2 assembling lines.",
+      "Chongqing Kema is located in Jiangjin, Chongqing, a mountain city in China."
+    ]
+  },
+  "str": [
+    [
+      "Động cơ xăng / diesel, máy phát, máy phát-hàn, bơm; bắt đầu sản xuất từ 2001",
+      1
+    ],
+    [
+      "Hai nhà máy (Chiết Giang, Trùng Khánh); nhà máy Trùng Khánh 50.000 m², 500 nhân viên",
+      1
+    ],
+    [
+      "Theo hãng: nhà sản xuất hàng đầu",
+      1
+    ]
+  ],
+  "cert": [
+    [
+      "ISO9001",
+      1
+    ],
+    [
+      "CE",
+      1
+    ],
+    [
+      "GS",
+      1
+    ]
+  ],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Generator / generating and welding machine",
+      "src": [
+        1
+      ]
+    },
+    {
+      "k": "engine",
+      "s": "Gasoline and diesel engine",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"
+  ],
+  "by": "discover-bot (Claude)"
+}
