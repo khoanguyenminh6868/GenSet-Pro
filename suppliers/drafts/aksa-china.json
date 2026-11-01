@@ -1,0 +1,5 @@
+{"id":"aksa-china","country":"CN","role":"genset_oem","status":"verified","conf":"medium","en":null,"zh":"雅柯斯电力科技(中国)有限公司","brands":["AKSA","雅柯斯"],"web":"https://cn.aksapowergen.com/","prov":"Jiangsu","city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Copyright © 雅柯斯电力科技(中国)有限公司 All Rights Reserved.","雅柯斯电力在全球布局4大生产基地（土耳其、中国、美国和西班牙）及2个贸易中心（荷兰、阿联酋），产品涵盖1kW至2750kW汽油、柴油、天然气及船用发电机组","雅柯斯电力科技的新工厂于2012年5月顺利竣工，并于2012年5月28日举行了盛大的开业典礼。新工厂一期厂房面积达10万平方米，拥用16间配备全电脑控制平台的现代化测试房","雅柯斯成功通过ISO 50001能源管理体系认证"]},
+"str":[["Nhà máy tại Trung Quốc của tập đoàn AKSA (Thổ Nhĩ Kỳ), khai trương 5/2012, nhà xưởng giai đoạn 1 rộng 100.000 m², 16 phòng thử",1],["Tập đoàn có tổ máy xăng, diesel, khí, tàu thủy 1–2750 kW",1]],"cert":[["ISO 50001",1]],
+"lines":[{"k":"genset","s":"汽油、柴油、天然气及船用发电机组","fuel":"diesel","p":[1,2750,"kW","unspecified",1],"src":[1]}],
+"miss":["Dải 1–2750 kW là của cả tập đoàn (4 nhà máy), chưa có dải riêng của nhà máy Trung Quốc; tỉnh Giang Tô theo mã ICP 苏"],"by":"discover-bot (Claude)"}

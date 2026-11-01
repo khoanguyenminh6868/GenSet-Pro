@@ -1,0 +1,5 @@
+{"id":"hiearns-changzhou","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":null,"zh":"常州市海润机电有限公司","brands":["Hi-earns","海润"],"web":"https://www.hiearns.com/","prov":"Jiangsu","city":"Changzhou","founded":2005,"fsrc":[1],"related":[],
+"src":{"1":["A","CopyRight © 2020-2026 常州市海润机电有限公司 版权所有","公司成立于2005年，注册资金2518万元，占地3万多平方米，月产量1万多台，产品远销海内外。","公司拥有 8 条先进的自动化流水线生产设备。"]},
+"str":[["Động cơ diesel làm mát gió và tổ máy cỡ nhỏ (một / hai xi lanh), hơn 10.000 máy/tháng",1],["Thành lập 2005, diện tích hơn 30.000 m²",1]],"cert":[],
+"lines":[{"k":"genset","s":"风冷/水冷柴油发电机组","fuel":"diesel","src":[1]},{"k":"engine","s":"单缸/双缸风冷柴油动力","fuel":"diesel","src":[1]}],
+"miss":["Trang giới thiệu không ghi dải công suất kW"],"by":"discover-bot (Claude)"}

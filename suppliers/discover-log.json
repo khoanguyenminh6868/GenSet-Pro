@@ -1936,5 +1936,41 @@
   "url": "https://www.gdfdiesel.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "aksa-china",
+  "name": "雅柯斯电力科技(中国)有限公司",
+  "url": "https://cn.aksapowergen.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hechai-changzhou",
+  "name": "常州河柴动力科技有限公司",
+  "url": "http://czhchai.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "yanfa-yancheng",
+  "name": "盐城发电设备有限公司",
+  "url": "http://www.yanfapower.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hiearns-changzhou",
+  "name": "常州市海润机电有限公司",
+  "url": "https://www.hiearns.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

@@ -1,0 +1,92 @@
+{
+  "id": "aksa-china",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "雅柯斯电力科技(中国)有限公司",
+    "brands": [
+      "AKSA",
+      "雅柯斯"
+    ]
+  },
+  "website": "https://cn.aksapowergen.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà máy tại Trung Quốc của tập đoàn AKSA (Thổ Nhĩ Kỳ), khai trương 5/2012, nhà xưởng giai đoạn 1 rộng 100.000 m², 16 phòng thử",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tập đoàn có tổ máy xăng, diesel, khí, tàu thủy 1–2750 kW",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "汽油、柴油、天然气及船用发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1,
+        "max": 2750,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO 50001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Dải 1–2750 kW là của cả tập đoàn (4 nhà máy), chưa có dải riêng của nhà máy Trung Quốc; tỉnh Giang Tô theo mã ICP 苏"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://cn.aksapowergen.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 雅柯斯电力科技(中国)有限公司 All Rights Reserved.",
+        "雅柯斯电力在全球布局4大生产基地（土耳其、中国、美国和西班牙）及2个贸易中心（荷兰、阿联酋），产品涵盖1kW至2750kW汽油、柴油、天然气及船用发电机组",
+        "雅柯斯电力科技的新工厂于2012年5月顺利竣工，并于2012年5月28日举行了盛大的开业典礼。新工厂一期厂房面积达10万平方米，拥用16间配备全电脑控制平台的现代化测试房",
+        "雅柯斯成功通过ISO 50001能源管理体系认证"
+      ],
+      "file": "sources/aksa-china/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

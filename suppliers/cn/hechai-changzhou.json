@@ -1,0 +1,69 @@
+{
+  "id": "hechai-changzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "常州河柴动力科技有限公司",
+    "brands": [
+      "河柴"
+    ]
+  },
+  "website": "http://czhchai.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Changzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel, danh mục chia nhóm tới trên 2500 kW",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nhóm công suất ghi ngắn, chưa ghi được dải; chưa có năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://czhchai.com/?about_16/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "常州河柴动力科技有限公司 版权所有",
+        "公司简介-常州河柴动力科技有限公司-官网",
+        "2500KW以上"
+      ],
+      "file": "sources/hechai-changzhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

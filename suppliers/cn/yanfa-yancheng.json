@@ -1,0 +1,80 @@
+{
+  "id": "yanfa-yancheng",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "盐城发电设备有限公司",
+    "brands": [
+      "中兴"
+    ]
+  },
+  "website": "http://www.yanfapower.cn/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yancheng"
+  },
+  "founded": 1990,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Chuyên sản xuất tổ máy diesel thương hiệu 中兴, thành lập 18/10/1990",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: đối tác OEM của Cummins",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "康明斯系列柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "康明斯"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang giới thiệu không ghi dải công suất, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.yanfapower.cn/gsjj.asp",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "盐城发电设备有限公司版权所有",
+        "盐城发电设备有限公司创建于1990年10月18日，现为股份制企业，专业制造柴油发电机组，注册商标\"中兴\"牌。",
+        "长期以来，公司作为发动机制造商康明斯公司的OEM合作伙伴，生产的康明斯系列柴油发电机组"
+      ],
+      "file": "sources/yanfa-yancheng/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
