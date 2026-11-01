@@ -1,0 +1,79 @@
+{
+  "id": "hanma-tech",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "安徽汉马发动机有限公司",
+    "brands": [
+      "远程动力",
+      "汉马"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Anhui",
+    "city": "Maanshan"
+  },
+  "founded": 2013,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel 'Yuancheng' (远程动力) cho xe tải, tàu thủy và tổ máy",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 2013 tại Mã An Sơn (An Huy), tiền thân là phân xưởng động cơ của Hualing Motors",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "远程动力发动机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa có dải công suất, website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.powerchinashow.com/news2ae18.html?id=2632",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "安徽汉马发动机有限公司 （以下简称“汉马科技”），成立于2013年，位于安徽马鞍山经济技术开发区，其前身是“安徽华菱汽车有限公司发动机分公司”",
+        "“远程动力”于2013年正式投放市场",
+        "船用发动机和发电机组"
+      ],
+      "file": "sources/hanma-tech/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
