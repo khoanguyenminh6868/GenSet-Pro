@@ -1,0 +1,15 @@
+{
+  "id": "longhong-foshan", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": null, "zh": "广东隆宏机电设备有限公司", "brands": [],
+  "web": "https://www.gdfsfdj.com/", "prov": "Guangdong", "city": "Foshan", "founded": null, "fsrc": [], "related": ["weichai-power"],
+  "src": {
+    "1": ["A", "广东隆宏机电设备有限公司", "因为我们是潍柴动力工厂授权OEM成套商", "地址：广东省佛山市顺德区陈村镇岗北工业区中路2号之一", "WEICHAI 潍柴动力发电机 山东潍柴 48KW潍柴发电机 60HZ 佛山发电机", "1500KW大型低噪音发电机 1875KVA潍柴动力 静音型柴油发电机组 全铜线无刷"]
+  },
+  "str": [["Theo hãng: là nhà lắp ráp OEM được Weichai ủy quyền", 1], ["Tổ máy động cơ Weichai từ 48 kW đến 1500 kW, có loại cách âm", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "潍柴动力发电机组", "fuel": "diesel", "eng": ["潍柴"], "p": [48, 1500, "kW", "unspecified", 1], "types": ["silent"], "src": [1] }
+  ],
+  "miss": ["Ủy quyền OEM của Weichai là lời tự giới thiệu, chưa có xác nhận từ trang Weichai", "Chưa có năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

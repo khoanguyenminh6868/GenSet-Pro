@@ -1,0 +1,112 @@
+{
+  "id": "hengtong-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "江苏恒通发电机制造有限公司",
+    "brands": [
+      "恒通"
+    ]
+  },
+  "website": "http://www.yzhengtong.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than 6,5–2000 kW và tổ máy diesel 8–3000 kW, năng lực 15.000 máy/năm",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Hai khu nhà máy, gần 50.000 m², khoảng 150 nhân viên",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [
+        "GB/T2820-2009"
+      ],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "恒通无刷发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6.5,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [
+        "GB755"
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.yzhengtong.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "江苏恒通发电机制造有限公司-官网",
+        "本公司拥有两个现代化厂区的现代企业，占地近50000平方米，建有国内先进的智能化发电机检测试中心，现有在职员工150余人。",
+        "严格按照 GB755、GB/T2820-2009国家标准生产的恒通6.5-2000KW无刷发电机、8-3000KW柴油发电机组，年生产能力达到 15000台。"
+      ],
+      "file": "sources/hengtong-jiangsu/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
