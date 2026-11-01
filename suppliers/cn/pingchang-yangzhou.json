@@ -1,0 +1,77 @@
+{
+  "id": "pingchang-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "扬州平常机械有限公司",
+    "brands": [
+      "平常"
+    ]
+  },
+  "website": "http://pcjx8.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Chuyên sản xuất tổ máy diesel 6–3000 kW, có bệ thử nghiệm tổ máy",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://pcjx8.com/about_1/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2024. All rights reserved 扬州平常机械有限公司",
+        "扬州平常机械有限公司专注柴油发电机机组生产制造，具有多年发电机组设计、配套及售后服务经验，拥有现代化的发电机组检测试验平台",
+        "公司产品功率覆盖6kw-3000kw"
+      ],
+      "file": "sources/pingchang-yangzhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

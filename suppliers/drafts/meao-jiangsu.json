@@ -1,0 +1,5 @@
+{"id":"meao-jiangsu","country":"CN","role":"genset_oem","status":"verified","conf":"medium","en":null,"zh":"江苏美奥动力科技有限公司","brands":["美奥"],"web":"http://www.meaopower.cn/","prov":"Jiangsu","city":"Taizhou","founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Copyright © 2012-2020 江苏美奥动力科技有限公司 版权所有","江苏美奥动力科技有限公司专注于柴油发电机组的研发与制造","产品范围包括柴油发电机组5KVA～5000KVA；燃气发电机组25KVA～1500KVA"],"2":["A","地址: 江苏省泰州市凤凰西路79号"]},
+"str":[["Tổ máy diesel 5–5000 kVA và tổ máy khí 25–1500 kVA; có loại cách âm, container",1]],"cert":[],
+"lines":[{"k":"genset","s":"柴油发电机组","fuel":"diesel","p":[5,5000,"kVA","unspecified",1],"src":[1]},{"k":"genset","s":"燃气发电机组","fuel":"gas","p":[25,1500,"kVA","unspecified",1],"src":[1]}],
+"miss":["Chưa có năm thành lập, chứng chỉ"],"by":"discover-bot (Claude)"}
