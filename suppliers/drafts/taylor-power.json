@@ -1,0 +1,13 @@
+{
+  "id": "taylor-power", "country": "US", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "TAYLOR GROUP INC. (Taylor Power Systems)", "zh": null, "brands": ["Taylor Power Systems"],
+  "web": "https://www.taylorpowergenerators.com/", "prov": "Mississippi", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "©2026 TAYLOR GROUP INC.", "Proudly built in Mississippi, Taylor Power Systems combines over 30 years of innovation and reliability", "Towable, Tier 4 Final diesel power from 25 kW–1250 kW"]
+  },
+  "str": [["Tổ máy diesel kéo rơ-moóc Tier 4 Final 25–1250 kW, sản xuất tại Mississippi", 1], ["Theo hãng: hơn 30 năm kinh nghiệm", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "Towable, Tier 4 Final diesel", "fuel": "diesel", "p": [25, 1250, "kW", "unspecified", 1], "emis": ["EPA Tier 4 Final"], "src": [1] } ],
+  "miss": ["Chưa lưu trang tổ máy tĩnh tại; chưa có năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

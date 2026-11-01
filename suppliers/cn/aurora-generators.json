@@ -1,0 +1,97 @@
+{
+  "id": "aurora-generators",
+  "country": "CA",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Aurora Generators Inc.",
+    "zh": null,
+    "brands": [
+      "Aurora"
+    ]
+  },
+  "website": "https://auroragenerators.com/",
+  "hq": {
+    "province": "Ontario",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel nhỏ 6–100 kW sản xuất tại Ontario (Canada), động cơ Perkins, Yanmar, Hatz",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Cho dự phòng gia đình, off-grid, viễn thông, thương mại",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Aurora Cottage and Home Generators",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins",
+        "Yanmar",
+        "Hatz"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6,
+        "max": 100,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn 2 là trang chương trình 'Ontario Made' (supportontariomade.ca); website hãng chặn trình đọc thường, lưu bằng Chromium"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://auroragenerators.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© Aurora Generators Inc. 2026",
+        "Explore reliable diesel generators for home backup, off-grid living, telecom and commercial power—built in North America and shipped across the USA and Canada."
+      ],
+      "file": "sources/aurora-generators/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://supportontariomade.ca/explore-products/home-generator",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "Aurora Diesel Generators are made in Ontario, Canada Powered by Perkins, Yanmar and Hatz Diesel",
+        "Made in Ontario - Aurora Cottage and Home Generators. 6 kw to 100 kw Powered by clean, quiet"
+      ],
+      "file": "sources/aurora-generators/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

@@ -1606,5 +1606,53 @@
   "url": "https://www.tesla-power.net/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "cat-tianjin",
+  "name": "亚实动力系统（天津）有限公司",
+  "url": "https://www.cat-cn.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://www.cummins-cpt.com/",
+  "reason": "trang mang tên Cummins nhưng nội dung mẫu (không gỉ, số liệu 0000), không xác minh được là pháp nhân của Cummins"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://www.isuzupowertrain.com/",
+  "reason": "五十铃汽车工程柴油机（上海）: trang chỉ có mục 'Động cơ cho máy phát' quá ngắn để trích, không có dải công suất; thử lại khi lưu được trang sản phẩm"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "aurora-generators",
+  "name": "Aurora Generators Inc.",
+  "url": "https://auroragenerators.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "blue-star-power",
+  "name": "Blue Star Power Systems, Inc.",
+  "url": "https://www.bluestarps.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "taylor-power",
+  "name": "TAYLOR GROUP INC. (Taylor Power Systems)",
+  "url": "https://www.taylorpowergenerators.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

@@ -1,0 +1,89 @@
+{
+  "id": "cat-tianjin",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "亚实动力系统（天津）有限公司",
+    "brands": [
+      "FG Wilson",
+      "Cat"
+    ]
+  },
+  "website": "https://www.cat-cn.com/",
+  "hq": {
+    "province": "Tianjin",
+    "city": "Tianjin"
+  },
+  "founded": 2000,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [
+    "caterpillar",
+    "fg-wilson"
+  ],
+  "strengths": [
+    {
+      "text": "Nhà máy tổ máy diesel FG Wilson và Cat tại Thiên Tân, 6,8–2500 kVA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Công ty con 100% của Caterpillar, thành lập 2000, 28.000 m², 3 dây chuyền lắp ráp",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "FG Wilson / 卡特彼勒柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6.8,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang lưu bằng Chromium (chứng chỉ SSL không xác minh được bằng trình đọc thường); chưa có chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cat-cn.com/company/factory-dltj.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "亚实动力系统（天津）有限公司 | CAT®（卡特）| 卡特彼勒 Caterpillar",
+        "亚实动力系统（天津）有限公司于2000年成立，是卡特彼勒全资子公司。占地28000平方米，具备3条生产装配线和1个定制化装配区域，生产FG Wilson和卡特彼勒两个品牌的柴油发电机组，产品功率覆盖范围6.8kVA-2500kVA"
+      ],
+      "file": "sources/cat-tianjin/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
