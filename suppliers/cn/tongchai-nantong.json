@@ -1,0 +1,90 @@
+{
+  "id": "tongchai-nantong",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "南通柴油机股份有限公司",
+    "brands": [
+      "通柴",
+      "飞鲸"
+    ]
+  },
+  "website": "http://www.ntdec.cn/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Nantong"
+  },
+  "founded": 1958,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel và khí 'Feijing' (NT, TCR, TCU) 25–2400 kW, dùng cho tổ máy trên bộ, tàu thủy, bơm",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 1958, thuộc China Transmission (00658.HK) từ 2010",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "飞鲸牌 NT、TCR、TCU系列柴油发动机、燃气发动机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [
+        "NK296LM83"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 25,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có chứng chỉ; dải 25–2400 kW ghi chung cho động cơ diesel và khí"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.ntdec.cn/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "南通柴油机股份有限公司版权所有",
+        "南通柴油机股份有限公司/南通通柴动力科技有限公司始建于1958年，前身为南通柴油机厂，1993年改制为股份制企业，2010年与中国高速传动设备集团有限公司（香港上市公司，股票代码：00658 .HK）实施资产重组，成为“中国传动”旗下控股企业。",
+        "通柴公司专业研发和生产“飞鲸牌”NT、TCR、TCU等系列柴油发动机、燃气发动机，功率覆盖从25kW到2400kW，主要应用于船舶主推、船用辅机、陆用发电机组、工程机械、消防水泵、农业排灌等动力配套。",
+        "NK296LM83发电型柴油机"
+      ],
+      "file": "sources/tongchai-nantong/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

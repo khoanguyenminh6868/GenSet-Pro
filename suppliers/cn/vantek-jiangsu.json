@@ -1,0 +1,78 @@
+{
+  "id": "vantek-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "江苏万泰动力设备有限公司",
+    "brands": [
+      "万泰",
+      "Vantek"
+    ]
+  },
+  "website": "http://www.vantekpower.cn/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy trên bộ và tàu thủy 8–4000 kW (diesel và khí)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "船用/陆用发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 4000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập, chứng chỉ; mã vùng điện thoại 0523 (Thái Châu) chưa đủ để ghi thành phố"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.vantekpower.cn/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "2021 江苏万泰动力设备有限公司",
+        "江苏万泰主要致力于船用/陆用发电机组科研/设计/制造/安装/调试及其服务，提供全面的发电系统解决之道。功率从8KW-4000KW。",
+        "我公司生产两台600kw潍柴博杜安并机发电机组"
+      ],
+      "file": "sources/vantek-jiangsu/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

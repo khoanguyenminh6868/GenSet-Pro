@@ -1,0 +1,69 @@
+{
+  "id": "honda-power",
+  "country": "US",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "American Honda Motor Co., Inc.",
+    "zh": null,
+    "brands": [
+      "Honda"
+    ]
+  },
+  "website": "https://powerequipment.honda.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Máy phát xách tay / inverter Honda từ 1000 W đến 10000 W (dòng industrial), thị trường Mỹ",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Portable / inverter / industrial generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang ghi công suất bằng watt nên chưa ghi vào dải công suất; trang chỉ áp dụng cho sản phẩm bán tại Mỹ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://powerequipment.honda.com/generators",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "2026 © American Honda Motor Co., Inc. All information contained herein applies to U.S. products only.",
+        "1000 watt 120V inverter generator with CO-MINDER™",
+        "10000 watt 120/240V industrial generator with CO-MINDER™"
+      ],
+      "file": "sources/honda-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
