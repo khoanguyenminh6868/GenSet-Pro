@@ -1,0 +1,155 @@
+{
+  "id": "kanpor-fuan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "福安市康普电机有限公司",
+    "brands": [
+      "康普",
+      "Kanpor"
+    ]
+  },
+  "website": "http://gb.kanpor.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": 2010,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 10–3000 kVA (Cummins, Perkins, Yuchai; đầu phát Marathon, Stamford; bộ điều khiển Deep Sea, ComAp)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tự sản xuất đầu phát không chổi than / nam châm vĩnh cửu 5–5000 kVA, cách điện cấp H",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tổ máy khí 50–4500 kW (khí tự nhiên, biogas, khí mỏ than)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 2010, cơ sở sản xuất 12.000 m²",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "康明斯",
+        "珀金斯",
+        "玉柴"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "马拉松",
+        "斯坦福"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "交流发电机系列",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "燃气发电机组",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang ghi số có dấu cách (10 kVA–3 000 kVA, 5 kVA–5 000 kVA, 50 kW–4 500 kW) nên bộ kiểm số chưa nhận, dải công suất chỉ ghi trong phần thế mạnh",
+    "Website kanpor-power.com (bản tiếng Anh) dựng bằng JavaScript"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://gb.kanpor.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright ©福安市康普电机有限公司",
+        "成立于2010年",
+        "本系列柴油发电机组覆盖10 kVA–3 000 kVA全功率段，采用康明斯、珀金斯、玉柴等国际/国产一线柴油机配套马拉松、斯坦福无刷励磁发电机，标配深海、科迈智能控制系统",
+        "本系列交流发电机囊括5 kVA–5 000 kVA无刷自励磁/永磁励磁两大平台，采用H级绝缘",
+        "本系列燃气发电机组功率覆盖50 kW–4 500 kW，可灵活适配天然气、沼气、煤层气、石油伴生气等多种气源",
+        "便携式发电机组系列覆盖汽油、柴油及变频多燃料平台，功率自1 kVA延伸至15 kVA"
+      ],
+      "file": "sources/kanpor-fuan/1.md"
+    },
+    {
+      "n": 2,
+      "url": "http://gb.kanpor.com/about.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "严格执行ISO9001国际质量管理体系",
+        "成立于2010年",
+        "生产基地12000平方米"
+      ],
+      "file": "sources/kanpor-fuan/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

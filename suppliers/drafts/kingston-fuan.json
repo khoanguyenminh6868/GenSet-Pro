@@ -1,0 +1,16 @@
+{
+  "id": "kingston-fuan", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "福安市金斯顿电机有限公司", "brands": ["金斯顿"],
+  "web": "https://www.kingston-motor.com/", "prov": "Fujian", "city": "Fuan", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "福安市金斯顿电机有限公司是一家专业生产柴油发电机及发电机组的企业，工厂位于筑有\"机电之乡”的福建省福安市。"]
+  },
+  "str": [["Nhà máy đầu phát và tổ máy diesel tại Phúc An", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "src": [1] },
+    { "k": "alternator", "s": "发电机", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}
