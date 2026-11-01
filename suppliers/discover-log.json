@@ -2041,5 +2041,23 @@
   "url": "https://www.whjlmech.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "biao-xiamen",
+  "name": "Xiamen Biao Power Technology Co. ltd",
+  "url": "https://www.biaopower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "landtop-fuzhou",
+  "name": "Fuzhou Landtop Co., Ltd.",
+  "url": "https://www.landtop.cn/",
+  "tables": 0,
+  "rows": 0
  }
 ]
