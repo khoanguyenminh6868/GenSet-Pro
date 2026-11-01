@@ -1,0 +1,15 @@
+{
+  "id": "huatai-yangzhou", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "扬州华泰电气有限公司", "brands": ["华泰"],
+  "web": "http://www.yzhuatai.cn/", "prov": "Jiangsu", "city": "Yangzhou", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright © 2024 扬州华泰电气有限公司", "扬州华泰电气有限公司是专业从事发电机组制造商，主要产品系列包含发电机、柴油发电机组、静音电站、应急电源、智能化电气成套系统制造等5大系列。"]
+  },
+  "str": [["Nhà sản xuất đầu phát, tổ máy diesel, trạm điện cách âm, nguồn khẩn cấp, tủ điện", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

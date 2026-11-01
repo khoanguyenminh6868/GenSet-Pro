@@ -1216,5 +1216,98 @@
   "url": "http://sf-motor.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://www.gxdbdl.com/",
+  "reason": "cùng công ty 广西顶博发电机组制造有限公司 với bản ghi dingbo (website khác)"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://cnhxfdj.com/",
+  "reason": "泰州市凯华柴油发电机组有限公司 — trùng bản ghi kaihua-genset"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "huazhong-weifang",
+  "name": "潍坊华众动力设备有限公司",
+  "url": "http://www.wfhuazhong.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "meikangsi-sichuan",
+  "name": "四川美康斯发电设备有限公司",
+  "url": "http://www.scmks.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "haifeng-taizhou",
+  "name": "泰州市海锋机械制造有限公司",
+  "url": "http://haifengjx.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "zhengdian-zhengzhou",
+  "name": "郑州郑电发电机有限公司",
+  "url": "http://www.wfcyfdj.net/",
+  "tables": 11,
+  "rows": 229
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "senci-jiangsu",
+  "name": "江苏神驰机电有限公司",
+  "url": "https://www.jssenci.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "huatai-yangzhou",
+  "name": "扬州华泰电气有限公司",
+  "url": "http://www.yzhuatai.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "liangzi-yangzhou",
+  "name": "扬州量子电力设备有限公司",
+  "url": "https://www.lzpower.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "pengpai-yangzhou",
+  "name": "扬州澎湃动力设备有限公司",
+  "url": "http://yzppdl.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "yanmar",
+  "name": "YANMAR HOLDINGS CO., LTD.",
+  "url": "https://www.yanmar.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

@@ -1,0 +1,94 @@
+{
+  "id": "huazhong-weifang",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "潍坊华众动力设备有限公司",
+    "brands": [
+      "华众"
+    ]
+  },
+  "website": "http://www.wfhuazhong.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": 2017,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel và khí 20–3000 kW: cách âm, di động, container",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: nhà lắp ráp OEM được Weichai ủy quyền trực tiếp",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组、燃气发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "潍柴",
+        "玉柴",
+        "康明斯",
+        "珀金斯"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "silent",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang không ghi rõ chứng chỉ ISO cụ thể (chỉ ghi 'ISO质量管'), hãng đầu phát"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.wfhuazhong.com/Content/507305.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "潍坊华众动力设备有限公司成立于 2017年，是一家专注于柴油发电机组和燃气发电机组研发、生产与销售的创造型高新技术企业",
+        "公司主营柴油发电机组、燃气发电机组及相关配套产品， 是潍柴直接授权 OEM 成套商， 涵盖静音型、移动式、集装箱式等多种规格，功率范围从 20kW至3000kW",
+        "核心部件采用国际***品牌（如 潍柴、玉柴、 康明斯、珀金斯等）"
+      ],
+      "file": "sources/huazhong-weifang/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
