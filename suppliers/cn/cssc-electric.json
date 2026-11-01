@@ -1,0 +1,97 @@
+{
+  "id": "cssc-electric",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "中船电机科技股份有限公司",
+    "brands": [
+      "中船电气",
+      "中船电机"
+    ]
+  },
+  "website": "https://www.csiem.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Wuxi"
+  },
+  "founded": 2006,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát đồng bộ cao áp công suất lớn (tới 7 MW), tổ máy dầu nặng, trạm phát cách âm",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 3/2006 tại khu công nghệ cao Vô Tích",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "大功率高压同步发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "发电机组 / 静音电站",
+      "fuel": "hfo",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất đầu phát"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.csiem.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "中船电机科技股份有限公司（以下简称“中船电机”或“公司”）成立于2006年3月，注册于江苏省无锡市国家高新技术开发区",
+        "7MW大功率高压同步发电机",
+        "300KW静音电站",
+        "由中船电机科技股份有限公司承担建设的西芒杜港口重油电站项目首台4.3MW重油发电机组成功完成首次启动"
+      ],
+      "file": "sources/cssc-electric/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
