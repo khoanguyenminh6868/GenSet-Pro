@@ -2059,5 +2059,41 @@
   "url": "https://www.landtop.cn/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "shengdong-dongying",
+  "name": "胜利动力机械集团有限公司",
+  "url": "http://www.slpmg.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "vpower-hk",
+  "name": "伟能集团",
+  "url": "https://vpower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hnd-henan",
+  "name": "河南柴油机重工有限责任公司",
+  "url": "http://www.hnd.com.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "sxd-shaanxi",
+  "name": "陕西柴油机重工有限公司",
+  "url": "http://www.sxd408.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

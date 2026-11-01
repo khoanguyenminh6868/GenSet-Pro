@@ -1,0 +1,140 @@
+{
+  "id": "sxd-shaanxi",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "陕西柴油机重工有限公司",
+    "brands": [
+      "中船陕柴",
+      "SXD"
+    ]
+  },
+  "website": "http://www.sxd408.com/",
+  "hq": {
+    "province": "Shaanxi",
+    "city": null
+  },
+  "founded": 1953,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel tốc độ trung bình / cao công suất lớn và tổ máy diesel; thuộc China Power / CSSC Power",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tiền thân thành lập 1953; khu sản xuất ~780.000 m²; chứng nhận 8 đăng kiểm tàu",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "中、高速大功率柴油机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CCS",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ABS",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "BV",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "LR",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "NK",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "RINA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "KR",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang giới thiệu không ghi dải công suất kW; lưu bằng Chromium"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.sxd408.com/gysc/scjj/index.htm",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "本网内容版权均属陕西柴油机重工有限公司所有",
+        "陕西柴油机重工有限公司（简称：中船陕柴）隶属于中国动力/中船动力集团，前身是国营陕西柴油机厂，始建于1953年，是我国“一五”期间投资兴建的156项重点工程之一，是国内主要的中、高速大功率柴油机制造企业和柴油",
+        "先后获得CCS、ABS、BV、LR、NK、RINA、DNV·GL、KR八大船级社的认可证书",
+        "公司生产区占地面积约78万平方米，建筑面积约28万平方米。"
+      ],
+      "file": "sources/sxd-shaanxi/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

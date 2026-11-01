@@ -1,0 +1,174 @@
+{
+  "id": "hnd-henan",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "河南柴油机重工有限责任公司",
+    "brands": [
+      "河柴重工",
+      "HND"
+    ]
+  },
+  "website": "http://www.hnd.com.cn/",
+  "hq": {
+    "province": "Henan",
+    "city": null
+  },
+  "founded": 1958,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel tốc độ cao / trung bình 110–4000 kW, tổ máy diesel 90–3200 kW, tổ máy khí 50–2000 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tiền thân thành lập 5/1958; có chứng nhận các đăng kiểm tàu CCS, ABS, BV, DNV, LR, RS",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "高速/中速柴油机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 110,
+        "max": 4000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 90,
+        "max": 3200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "气体发电机组",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 50,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CCS",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ABS",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "BV",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "DNV",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "LR",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "RS",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "1958 là năm thành lập tiền thân (河南柴油机厂)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.hnd.com.cn/gywm/qyjj/index.htm",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2022 河南柴油机重工有限责任公司",
+        "前身是河南柴油机厂，始建于1958年5月,是我国“一五”期间156项重点项目之一，新中国第一个高速柴油机厂",
+        "产品结构包括高速柴油机、中速柴油机、气体机及成套装置。柴油机功率覆盖范围为110kW-4000kW，柴油发电机组覆盖范围为90 kW-3200 kW。气体发电机组覆盖范围为50 kW-2000 kW。产品取得CCS、ABS、BV、DNV、LR、RS等多家船机社认可证书"
+      ],
+      "file": "sources/hnd-henan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
