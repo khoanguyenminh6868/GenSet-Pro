@@ -1,0 +1,93 @@
+{
+  "id": "yipu-power",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "苏州屹普动力科技有限公司",
+    "brands": [
+      "屹普"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Suzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel common-rail 0,8–3,3 MW và động cơ khí đốt nghèo 0,8–2 MW (8V/12V/16V/20V), 1500/1800 vòng/phút",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có hệ thống phát điện diesel và khí; ứng dụng trung tâm dữ liệu, điện hạt nhân, quân sự",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "高压共轨柴油发动机 (8V/12V/16V/20V)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "稀薄燃烧燃气发动机",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Công suất ghi bằng MW nên chưa ghi vào dải công suất; nguồn là trang nhà triển lãm GPOWER (hạng B), chưa tìm website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.china-gpower.com/news2.asp?id=2729",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "届时， 苏州屹普动力科技有限公司 将重磅亮相展会",
+        "打造了兆瓦级大功率动力系统、柴油电力系统及燃气电力系统三大核心产品线(0.8MW-3.3MW, 1500rpm）",
+        "功率0.8-3.3MW，1500/1800rpm；8V/12V/16V/20V 四款系列",
+        "功率0.8-2MW，1500/1800rpm；8V/12V/16V/20V 四款系列"
+      ],
+      "file": "sources/yipu-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

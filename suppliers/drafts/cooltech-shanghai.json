@@ -1,0 +1,5 @@
+{"id":"cooltech-shanghai","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":null,"zh":"上海科泰电源股份有限公司","brands":["科泰","Cooltech"],"web":null,"prov":"Shanghai","city":"Shanghai","founded":2002,"fsrc":[1],"related":[],
+"src":{"1":["B","上海科泰电源股份有限公司 于2002年在青浦工业园成立，于2008年完成股份制改造，并于2010年在深圳证券交易所上市(股票代码：300153)。位于上海青浦的总部园区占地面积88亩"]},
+"str":[["Nhà cung cấp nguồn dự phòng cho trung tâm dữ liệu; trụ sở Thanh Phố (Thượng Hải) 88 mẫu",1],["Thành lập 2002, niêm yết Thâm Quyến 2010 (300153)",1]],"cert":[],
+"lines":[{"k":"genset","s":"发电机组","src":[1]}],
+"miss":["Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa lưu website riêng, chưa có dải công suất"],"by":"discover-bot (Claude)"}
