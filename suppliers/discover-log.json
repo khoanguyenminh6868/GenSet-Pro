@@ -2113,5 +2113,41 @@
   "url": "https://www.lec.cn/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "himoinsa-china",
+  "name": "伊蒙妮莎（常州）发电设备有限公司",
+  "url": "https://www.himoinsa.com.cn/",
+  "tables": 12,
+  "rows": 204
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "weike-wuxi",
+  "name": "无锡威克电机技术有限公司",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "kaichen-genset-jiangsu",
+  "name": "江苏凯宸发电机有限公司",
+  "url": "http://www.shuibengfx.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "zhongdong-jiangsu",
+  "name": "江苏中动电力设备有限公司",
+  "url": "https://www.fdjz.biz/",
+  "tables": 0,
+  "rows": 0
  }
 ]

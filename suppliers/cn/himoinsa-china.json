@@ -1,0 +1,479 @@
+{
+  "id": "himoinsa-china",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "伊蒙妮莎（常州）发电设备有限公司",
+    "brands": [
+      "HIMOINSA"
+    ]
+  },
+  "website": "https://www.himoinsa.com.cn/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Changzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Pháp nhân tại Thường Châu của HIMOINSA; tổ máy cho trung tâm dữ liệu, IPP, trung áp, nhà máy điện",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, năm thành lập (nguồn bên thứ ba ghi 2004 — không dùng)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.himoinsa.com.cn/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "伊蒙妮莎（常州）发电设备有限公司",
+        "©HIMOINSA 2026",
+        "用于数据中心、IPP、中压、发电站等重要设施的发电机组，专业"
+      ],
+      "file": "sources/himoinsa-china/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-17,20kva-diesel-mobile-hyw/generator-sets-for-stationary-installations/industrial-generator-sets/3-6-27621/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-17,20kva-diesel-mobile-hyw/generator-sets-for-stationary-installations/hi-range/3-6-27250/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-17,20kva-diesel-mobile-hyw/generator-sets-for-stationary-installations/hi-range/3-6-27249/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-17,20kva-diesel-open-skid-hyw/generator-sets-for-stationary-installations/hi-range/3-6-27247/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/104.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-16,60kva-diesel-mobile-hyw/generator-sets-for-stationary-installations/industrial-generator-sets/3-6-10547/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-16,60kva-diesel-mobile-hyw/generator-sets-for-stationary-installations/hi-range/3-6-10549/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-16,60kva-diesel-mobile-hyw/generator-sets-for-stationary-installations/hi-range/3-6-10548/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-16,60kva-diesel-open-skid-hyw/generator-sets-for-stationary-installations/hi-range/3-6-10546/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/109.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-16,30kva-diesel-mobile-hyw/generator-sets-for-stationary-installations/industrial-generator-sets/3-6-10543/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/111.md"
+    },
+    {
+      "n": 112,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-16,30kva-diesel-mobile-hyw/generator-sets-for-stationary-installations/hi-range/3-6-10545/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-16,30kva-diesel-mobile-hyw/generator-sets-for-stationary-installations/hi-range/3-6-10544/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.himoinsa.com.cn/electric-generators/generator-set-16,30kva-diesel-open-skid-hyw/generator-sets-for-stationary-installations/hi-range/3-6-10542/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby"
+      ],
+      "file": "sources/himoinsa-china/114.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "17.2 kVA Generator set Diesel HYW-17 T5 Soundproof",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: S0L2.F1",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,105 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 100 L",
+        "Weight with liquids in radiator and sump: 765 kg",
+        "Fuel tank capacity: 100 L"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "17.2 kVA Generator set Diesel HYW-17 T5 Mobile",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: S0L2.F1",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,105 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 100 L",
+        "Weight with liquids in radiator and sump: 995 kg",
+        "Fuel tank capacity: 100 L"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "17.2 kVA Generator set Diesel HYW-17 T5 Mobile",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: S0L2.F1",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,105 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 100 L",
+        "Weight with liquids in radiator and sump: 925 kg",
+        "Fuel tank capacity: 100 L"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "17.2 kVA Generator set Diesel HYW-17 T5 Open Skid",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: S0L2.F1",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,105 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 60 L",
+        "Weight with liquids in radiator and sump: 409 kg",
+        "Fuel tank capacity: 60 L"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "16.6 kVA Generator set Diesel HYW-20 M5 Soundproof",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: ECP28.VL4C",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,11 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 100 L",
+        "Weight with liquids in radiator and sump: 818 kg",
+        "Fuel tank capacity: 100 L"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "16.6 kVA Generator set Diesel HYW-20 M5 Mobile",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: ECP28.VL4C",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,11 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 100 L",
+        "Weight with liquids in radiator and sump: 1.048 kg",
+        "Fuel tank capacity: 100 L"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "16.6 kVA Generator set Diesel HYW-20 M5 Mobile",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: ECP28.VL4C",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,11 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 100 L",
+        "Weight with liquids in radiator and sump: 978 kg",
+        "Fuel tank capacity: 100 L"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "16.6 kVA Generator set Diesel HYW-20 M5 Open Skid",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: ECP28.VL4C",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,11 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 60 L",
+        "Weight with liquids in radiator and sump: 462 kg",
+        "Fuel tank capacity: 60 L"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "16.3 kVA Generator set Diesel HYW-20 M5 Soundproof",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: S1L2.J1",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,177 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 100 L",
+        "Weight with liquids in radiator and sump: 818 kg",
+        "Fuel tank capacity: 100 L"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "16.3 kVA Generator set Diesel HYW-20 M5 Mobile",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: S1L2.J1",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,177 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 100 L",
+        "Weight with liquids in radiator and sump: 1.048 kg",
+        "Fuel tank capacity: 100 L"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "16.3 kVA Generator set Diesel HYW-20 M5 Mobile",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: S1L2.J1",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,177 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 100 L",
+        "Weight with liquids in radiator and sump: 978 kg",
+        "Fuel tank capacity: 100 L"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "16.3 kVA Generator set Diesel HYW-20 M5 Open Skid",
+      "header": [],
+      "rows": [
+        "Rated Engine Output: 16,4kW prp ; 18kW standby",
+        "Model: 4TNV88BGGEH",
+        "Engine Type: 4-stroke diesel",
+        "Bore and Stroke: 88 x 90 mm",
+        "Displacement: 2,19 L",
+        "Fuel Consumption ESP: 4,63 l/h",
+        "Fuel Consumption 100% PRP: 4,27 l/h",
+        "Fuel Consumption 75 % PRP: 3,29 l/h",
+        "Fuel Consumption 50 % PRP: 2,40 l/h",
+        "Model: S1L2.J1",
+        "Cooling Air Flow: 0,8 m3/s",
+        "Alternator fan air flow: 0,177 m3/s",
+        "Starting power: 1,4 kW",
+        "Starting power: 1,9 CV",
+        "Fuel Tank: 60 L",
+        "Weight with liquids in radiator and sump: 462 kg",
+        "Fuel tank capacity: 60 L"
+      ]
+    }
+  ]
+}

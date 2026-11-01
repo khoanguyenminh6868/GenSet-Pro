@@ -1,0 +1,5 @@
+{"id":"kaichen-genset-jiangsu","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":null,"zh":"江苏凯宸发电机有限公司","brands":["凯宸"],"web":"http://www.shuibengfx.com/","prov":"Jiangsu","city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","江苏凯宸发电机有限公司是一家拥有十几年历史的制造企业，专业从事 柴油发电机组、数码变频发电机组、柴油发电电焊一体机、 柴油机水泵 等","200KW静音柴油发电机"]},
+"str":[["Tổ máy diesel, máy phát inverter, máy phát-hàn, bơm diesel; hơn mười năm sản xuất",1]],"cert":[],
+"lines":[{"k":"genset","s":"柴油发电机组","fuel":"diesel","types":["silent"],"src":[1]}],
+"miss":["Trang không ghi dải công suất toàn dòng, năm thành lập; khác công ty với 江苏凯晨电力设备 (kaichen-jiangsu)"],"by":"discover-bot (Claude)"}
