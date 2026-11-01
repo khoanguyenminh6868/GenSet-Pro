@@ -1,0 +1,5 @@
+{"id":"cssc-electric","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":null,"zh":"中船电机科技股份有限公司","brands":["中船电气","中船电机"],"web":"https://www.csiem.com/","prov":"Jiangsu","city":"Wuxi","founded":2006,"fsrc":[1],"related":[],
+"src":{"1":["A","中船电机科技股份有限公司（以下简称“中船电机”或“公司”）成立于2006年3月，注册于江苏省无锡市国家高新技术开发区","7MW大功率高压同步发电机","300KW静音电站","由中船电机科技股份有限公司承担建设的西芒杜港口重油电站项目首台4.3MW重油发电机组成功完成首次启动"]},
+"str":[["Đầu phát đồng bộ cao áp công suất lớn (tới 7 MW), tổ máy dầu nặng, trạm phát cách âm",1],["Thành lập 3/2006 tại khu công nghệ cao Vô Tích",1]],"cert":[],
+"lines":[{"k":"alternator","s":"大功率高压同步发电机","src":[1]},{"k":"genset","s":"发电机组 / 静音电站","fuel":"hfo","src":[1]}],
+"miss":["Trang chủ không ghi dải công suất đầu phát"],"by":"discover-bot (Claude)"}

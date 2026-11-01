@@ -2212,5 +2212,23 @@
   "url": "http://www.lingdongenergy.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "cssc-electric",
+  "name": "中船电机科技股份有限公司",
+  "url": "https://www.csiem.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "zhenjiang-cssc-hyundai",
+  "name": "镇江中船现代发电设备有限公司",
+  "url": null,
+  "tables": 0,
+  "rows": 0
  }
 ]
