@@ -1,0 +1,83 @@
+{
+  "id": "everllence",
+  "country": "DE",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Everllence (former MAN Energy Solutions)",
+    "zh": null,
+    "brands": [
+      "Everllence",
+      "MAN"
+    ]
+  },
+  "website": "https://www.everllence.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "man-engines"
+  ],
+  "strengths": [
+    {
+      "text": "Động cơ hai nhiên liệu 51/60DF tới 20.700 kWm, 500/514 vòng/phút, 50/60 Hz cho nhà máy điện",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Cung cấp tổ máy cho nhà máy điện 200 MW (Campuchia), 140 MW (Indonesia)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "51/60DF",
+      "fuel": "dual",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [
+        "50Hz",
+        "60Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chỉ ghi mức tối đa (Up to 20,700 kWm), chưa có dải công suất; sản phẩm là động cơ tốc độ trung bình cho nhà máy điện, không phải tổ máy dự phòng thông thường"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.everllence.com/energy/products/dual-fuel-engines",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Everllence (former MAN Energy Solutions) offers a range of reliable dual fuel engines",
+        "This dual fuel engine converts diesel or natural gas efficiently, and can switch from one fuel to another without any fluctuations in speed or output.",
+        "Up to 20,700 kWm",
+        "Engine speed: 500/514 rpm",
+        "Gensets and related plant auxiliaries, 11 × 18V51/60DF LNG dual fuel engines"
+      ],
+      "file": "sources/everllence/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

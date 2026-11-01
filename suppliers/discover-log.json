@@ -1525,5 +1525,50 @@
   "url": "http://www.changsongpower.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hengke-jiangsu",
+  "name": "江苏恒科动力设备有限公司",
+  "url": "http://www.yzhkdl.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "aoke-yangzhou",
+  "name": "扬州奥克发电设备有限公司",
+  "url": "http://www.aokepower.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "aotesai-jiangsu",
+  "name": "江苏奥特赛动力科技有限公司",
+  "url": "http://www.fdjjg.net/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "man-engines",
+  "name": "MAN Truck & Bus (MAN Engines)",
+  "url": "https://www.man.eu/engines/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "everllence",
+  "name": "Everllence (former MAN Energy Solutions)",
+  "url": "https://www.everllence.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

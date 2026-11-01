@@ -1,0 +1,107 @@
+{
+  "id": "man-engines",
+  "country": "DE",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": "MAN Truck & Bus (MAN Engines)",
+    "zh": null,
+    "brands": [
+      "MAN"
+    ]
+  },
+  "website": "https://www.man.eu/engines/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel phát điện MAN D2862 (V12, 24,2 L) 560–1117 kW cho ESP, LTP, PRP, COP",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có dòng động cơ khí đốt nghèo / đốt hóa học",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "MAN D2862",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [
+        "D2862"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 560,
+        "max": 1117,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Gas engines",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Động cơ 4 kỳ lớn 428 kW–21 MW thuộc MAN Energy Solutions (nay là Everllence), pháp nhân khác, chưa làm bản ghi riêng",
+    "Chưa lưu trang các model diesel khác (D2676, D2868...)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.man.eu/engines/en/products/power-generation/diesel/power-generation-diesel.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "MAN Truck & Bus Company",
+        "© MAN 2026",
+        "12 cylinders, 24.2 litres displacement",
+        "Power 560 - 1117 kW",
+        "With the MAN D2862 MAN Engines offers a reliable diesel engine for Emergency Standby Power (ESP) and Limited Time Running Power (LTP), Prime Power (PRP) and Continuous Power (COP) mode.",
+        "In its gas engine portfolio, MAN Engines offers a wide selection of turbocharged lean-burn and naturally aspirated engines",
+        "MAN Energy Solutions offers four-stroke engines with outputs from 428 kW to 21 MW"
+      ],
+      "file": "sources/man-engines/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
