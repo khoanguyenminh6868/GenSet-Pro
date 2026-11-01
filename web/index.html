@@ -2093,14 +2093,23 @@ const SUP_ROLE = { genset_oem: "Nhà lắp ráp tổ máy", engine_maker: "Hãng
 const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đầu phát" };
 const SUP_CONF = { high: ["Tin cậy cao", "ok"], medium: ["Trung bình", "warn"], low: ["Chưa xác minh", "bad"] };
 const SUP_TIER = { A: "Website / tài liệu chính hãng", B: "Triển lãm, hiệp hội, sàn công bố", C: "Tự giới thiệu (đại lý, sàn B2B)" };
-const SUP_COUNTRY = { CN: "Trung Quốc" };
+const SUP_COUNTRY = { CN: "Trung Quốc", US: "Mỹ", GB: "Anh", DE: "Đức", FR: "Pháp", IT: "Ý", JP: "Nhật Bản", CA: "Canada" };
+// Country filter: the G7 countries are one option, "G7" (Khoa, 2026-11-02).
+const G7 = ["US", "GB", "DE", "FR", "IT", "JP", "CA"];
+// Founding-year filter by range; "none" = the sources give no year.
+const SUP_YEARS = [["-1989", "Trước 1990"], ["1990-1999", "1990–1999"], ["2000-2009", "2000–2009"], ["2010-", "Từ 2010"], ["none", "Không ghi năm"]];
+// One "Hãng" filter for engine, alternator and controller makes (Khoa, 2026-11-02); value "engine:Cummins", "alt:Stamford", "ctrl:ComAp".
+const supMakeName = (m) => m.replace(/\s*\(.*\)$/, "");
 const supAll = () => Object.values(state.supplier || {}).filter((s) => s?.id && s.status !== "incomplete")
   .sort((a, b) => (a.names?.en || a.id).localeCompare(b.names?.en || b.id));
 const supName = (s) => s?.names?.en || s?.names?.zh || s?.id || "";
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
-let supFilter = { q: "", role: "", conf: "", engine:"", fuel: "", power: "", unit: "kVA" };
+let supFilter = { q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
+const supMake = (f = supFilter) => { const i = f.make.indexOf(":"); return i > 0 ? [f.make.slice(0, i), f.make.slice(i + 1).toLowerCase()] : ["", ""]; };
+// Product lines are narrowed by engine / alternator make, fuel and power; a controller make is a filter on the supplier.
+const supLineFiltered = (f = supFilter) => ["engine", "alt"].includes(supMake(f)[0]) || !!f.fuel || Number(f.power) > 0;
 let supOpenId = null;
 // Where the supplier / catalog list was scrolled when a detail opened, so "← Danh sách" comes back to the same row (Khoa, 2026-10-29).
 const listScroll = { sup: 0, cat: 0 };
@@ -2111,7 +2120,8 @@ const mBanner = (icon, title, tag, tid = "") => h`<header class="banner mbanner"
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
 function supLinesFor(s, f = supFilter) {
   const v = Number(String(f.power).replace(",", "."));
-  return (s.productLines || []).filter((p) => (!f.engine || (p.engineMakes || []).some((m) => m.toLowerCase().includes(f.engine.toLowerCase())))
+  const [mk, mv] = supMake(f), key = { engine: "engineMakes", alt: "alternatorMakes" }[mk];
+  return (s.productLines || []).filter((p) => (!key || (p[key] || []).some((m) => supMakeName(m).toLowerCase() === mv))
     && (!f.fuel || p.fuel === f.fuel)
     && (!(v > 0) || (p.power && p.power.unit === f.unit && p.power.min <= v && v <= p.power.max)));
 }
@@ -2119,8 +2129,15 @@ function supMatches(s) {
   const f = supFilter, q = f.q.trim().toLowerCase();
   if (f.role && s.role !== f.role) return false;
   if (f.conf && s.confidence !== f.conf) return false;
+  if (f.country && (f.country === "G7" ? !G7.includes(s.country) : s.country !== f.country)) return false;
+  if (f.year) {
+    const [a, b] = f.year.split("-").map((x) => (x ? Number(x) : null));
+    if (f.year === "none" ? s.founded : !s.founded || (a != null && s.founded < a) || (b != null && s.founded > b)) return false;
+  }
+  const [mk, mv] = supMake(f);
+  if (mk === "ctrl" && !(s.controllers || []).some((c) => c.brand.toLowerCase() === mv)) return false;
   if (q && ![s.id, s.names?.en, s.names?.zh, ...(s.names?.brands || []), s.hq?.province, s.hq?.city].some((x) => String(x || "").toLowerCase().includes(q))) return false;
-  return !(f.engine || f.fuel || Number(f.power) > 0) || supLinesFor(s).length > 0;
+  return !supLineFiltered(f) || supLinesFor(s).length > 0;
 }
 // Phone: the filter rows of the supplier / catalog window fold behind one button (CSS .filttg); closed each time the window opens, kept across re-renders.
 let filtOpen = false;
@@ -2141,16 +2158,22 @@ function renderSuppliers() {
   if (supOpenId && state.supplier?.[supOpenId]) { body.innerHTML = h`<div class="mscroll">${raw(supDetailHtml(state.supplier[supOpenId]))}</div>`; return; }
   const all = supAll();
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu nhà cung cấp.</div>`; return; }
-  const engines = [...new Set(all.flatMap((s) => (s.productLines || []).flatMap((p) => p.engineMakes || [])).map((m) => m.replace(/\s*\(.*\)$/, "")))].sort();
+  const makesOf = (pick) => [...new Set(all.flatMap(pick).map(supMakeName))].sort((a, b) => a.localeCompare(b));
+  const makeGroups = [["engine", "Động cơ", makesOf((s) => (s.productLines || []).flatMap((p) => p.engineMakes || []))],
+    ["alt", "Đầu phát", makesOf((s) => (s.productLines || []).flatMap((p) => p.alternatorMakes || []))],
+    ["ctrl", "Bộ điều khiển", makesOf((s) => (s.controllers || []).map((c) => c.brand))]];
+  const countries = Object.entries(all.reduce((m, s) => { const k = G7.includes(s.country) ? "G7" : s.country; if (k) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1]);
   const f = supFilter, opt = (v, l, cur) => h`<option value="${v}" ${v === cur ? "selected" : ""}>${l}</option>`;
   body.innerHTML = h`${raw(filtToggle("supFilt"))}<div class="row suprow">
       <input type="search" id="supQ" placeholder="Tìm tên, thương hiệu, tỉnh..." value="${f.q}" style="flex:1;min-width:180px">
       <select id="supRole">${raw(opt("", "Vai trò", f.role) + Object.entries(SUP_ROLE).map(([k, l]) => opt(k, l, f.role)).join(""))}</select>
       <select id="supConf">${raw(opt("", "Độ tin cậy", f.conf) + [["high", "Tin cậy cao"], ["medium", "Trung bình"], ["low", "Chưa xác minh"]].map(([k, l]) => opt(k, l, f.conf)).join(""))}</select>
-      <select id="supEngine">${raw(opt("", "Hãng động cơ", f.engine) + engines.map((m) => opt(m, m, f.engine)).join(""))}</select>
+      <select id="supMake">${raw(opt("", "Hãng", f.make) + makeGroups.filter((g) => g[2].length).map(([k, l, ms]) => h`<optgroup label="${l}">${raw(ms.map((m) => opt(`${k}:${m}`, m, f.make)).join(""))}</optgroup>`).join(""))}</select>
       <select id="supFuel">${raw(opt("", "Nhiên liệu", f.fuel) + [["diesel", "Diesel"], ["gas", "Khí gas"], ["dual", "Hai nhiên liệu"], ["hfo", "Dầu nặng HFO"]].map(([k, l]) => opt(k, l, f.fuel)).join(""))}</select>
     </div>
     <div class="row suprow">
+      <select id="supCountry">${raw(opt("", "Quốc gia", f.country) + countries.map(([k]) => opt(k, k === "G7" ? "G7" : SUP_COUNTRY[k] || k, f.country)).join(""))}</select>
+      <select id="supYear">${raw(opt("", "Năm thành lập", f.year) + SUP_YEARS.map(([k, l]) => opt(k, l, f.year)).join(""))}</select>
       <label class="muted small" for="supPower">Công suất cần</label>
       <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="vd. 500">
       <select id="supUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
@@ -2163,15 +2186,17 @@ function renderSuppliers() {
   $("#supQ").oninput = (e) => set("q", e.target.value);
   $("#supRole").onchange = (e) => set("role", e.target.value);
   $("#supConf").onchange = (e) => set("conf", e.target.value);
-  $("#supEngine").onchange = (e) => set("engine", e.target.value);
+  $("#supMake").onchange = (e) => set("make", e.target.value);
+  $("#supCountry").onchange = (e) => set("country", e.target.value);
+  $("#supYear").onchange = (e) => set("year", e.target.value);
   $("#supFuel").onchange = (e) => set("fuel", e.target.value);
   $("#supPower").oninput = (e) => set("power", e.target.value);
   $("#supUnit").onchange = (e) => set("unit", e.target.value);
 }
 function renderSupList() {
-  const list = supAll().filter(supMatches), filtered = supFilter.engine || supFilter.fuel || Number(supFilter.power) > 0;
+  const list = supAll().filter(supMatches), filtered = supLineFiltered();
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
-  filtNote("supFilt", [supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.engine, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
+  filtNote("supFilt", [supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th title="Năm thành lập">Năm TL</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
