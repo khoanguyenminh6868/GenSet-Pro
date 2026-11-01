@@ -1,0 +1,97 @@
+{
+  "id": "hutai-fujian",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "互泰发电机（福建）有限公司",
+    "brands": [
+      "互泰",
+      "HUTAI"
+    ]
+  },
+  "website": "http://hutaifdj.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than HUTAI 6,5–1000 kW (khung 164 đến 404), kèm tổ máy",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "互泰无刷发电机 (164–404系列)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6.5,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập, chứng chỉ; trang chủ cũng ghi tên 广东隆宏机电设备有限公司 (longhong-foshan), quan hệ chưa rõ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://hutaifdj.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "互泰发电机（福建）有限公司 —— 发电机及发电机组制造",
+        "地址：福建省福安市世纪大道137号",
+        "164系列 6.5KW-12.8KW互泰无刷发电机",
+        "404系列 600KW-1000KW互泰无刷发电机",
+        "354系列 360KW-550KW互泰无刷发电机"
+      ],
+      "file": "sources/hutai-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

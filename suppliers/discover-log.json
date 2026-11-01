@@ -1309,5 +1309,50 @@
   "url": "https://www.yanmar.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hutai-fujian",
+  "name": "互泰发电机（福建）有限公司",
+  "url": "http://hutaifdj.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "ruiji-fuan",
+  "name": "福安瑞吉动力有限公司",
+  "url": "http://www.fjkmspower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "kingston-fuan",
+  "name": "福安市金斯顿电机有限公司",
+  "url": "https://www.kingston-motor.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "xinrongbang-fujian",
+  "name": "福建新荣邦电机有限公司",
+  "url": "http://www.fujian-motor.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "kanpor-fuan",
+  "name": "福安市康普电机有限公司",
+  "url": "http://gb.kanpor.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

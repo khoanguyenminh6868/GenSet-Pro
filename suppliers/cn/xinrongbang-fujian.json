@@ -1,0 +1,88 @@
+{
+  "id": "xinrongbang-fujian",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "福建新荣邦电机有限公司",
+    "brands": [
+      "新荣邦"
+    ]
+  },
+  "website": "http://www.fujian-motor.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất đầu phát, tổ máy (động cơ SDEC) và máy bơm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "上海柴油机股份有限公司"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang không ghi dải công suất, năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.fujian-motor.com/cn/show.asp?id=13",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 福建新荣邦电机有限公司 版权所有.",
+        "福建新荣邦电机有限公司主要生产发电机,发电机组,水泵等系列",
+        "该系列机组的发动机为上海柴油机股份有限公司制造生产的工业用水冷柴油机"
+      ],
+      "file": "sources/xinrongbang-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
