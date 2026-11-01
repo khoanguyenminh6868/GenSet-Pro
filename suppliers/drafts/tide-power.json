@@ -1,0 +1,21 @@
+{
+  "id": "tide-power", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Tide Power Technology Co., Limited", "zh": null, "brands": ["Tide Power"],
+  "web": "https://www.tidepower.uk/", "prov": "Fujian", "city": "Fuzhou", "founded": 2006, "fsrc": [2], "related": [],
+  "src": {
+    "1": ["A", "Rights Reserved by Tide Power Technology Co., Limited.", "Tide Power diesel generator sets cover a wide power range of 6–5625kVA, available in open, soundproof, and containerized configurations with globally renowned engine brands such as Cummins, Perkins, and Lister Petter.", "Tide Power gas generator sets feature MWM, Lister Petter, and other internationally renowned engine brands, compatible with natural gas, biogas, and various gaseous fuels across a power range of 22–4500kVA."],
+    "2": ["A", "Tide Power - Industrial Power Solutions Manufacturer Since 2006", "Factory in Nigeria", "Factory in Saudi Arabia"],
+    "3": ["A", "Fuzhou, China Factory", "Add: No. 1 & 4 Building, Wan Fu Industrial Park, 2 Wu Yu Road, Cangshan District, Fuzhou, Fujian, China"]
+  },
+  "str": [
+    ["Tổ máy diesel 6–5625 kVA (Cummins, Perkins, Lister Petter) và tổ máy khí 22–4500 kVA (MWM, Lister Petter)", 1],
+    ["Nhà máy tại Phúc Châu (Trung Quốc), Ả Rập Xê Út, Nigeria", 3]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator sets", "fuel": "diesel", "eng": ["Cummins", "Perkins", "Lister Petter"], "p": [6, 5625, "kVA", "unspecified", 1], "types": ["open", "silent", "container"], "src": [1] },
+    { "k": "genset", "s": "Gas generator sets", "fuel": "gas", "eng": ["MWM", "Lister Petter"], "p": [22, 4500, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Chưa thấy chứng chỉ, hãng đầu phát"],
+  "by": "discover-bot (Claude)"
+}

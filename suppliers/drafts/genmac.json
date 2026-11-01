@@ -1,0 +1,16 @@
+{
+  "id": "genmac", "country": "IT", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "GENMAC S.r.l.s.u.", "zh": null, "brands": ["Genmac"],
+  "web": "https://www.genmac.it/", "prov": null, "city": null, "founded": 1983, "fsrc": [1], "related": ["visa-gensets"],
+  "src": {
+    "1": ["A", "© 2017 – 2023 GENMAC S.r.l.s.u.", "GENMAC has been on the market since 1983", "Diesel / Gas", "9 - 2625 kVA", "Gasoline / Diesel / Gas", "2- 130 kVA", "GENMAC S.r.l.s.u. is subject to management and coordination of IPG Spa"]
+  },
+  "str": [["Tổ máy công nghiệp 9–2625 kVA (diesel/khí) và dòng chuyên dụng 2–130 kVA", 1], ["Cùng tập đoàn IPG với Visa", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Industrial generating sets", "fuel": "diesel", "p": [9, 2625, "kVA", "unspecified", 1], "freq": ["50Hz", "60Hz"], "src": [1] },
+    { "k": "genset", "s": "Professional generating sets", "fuel": "other", "p": [2, 130, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi hãng động cơ / đầu phát, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

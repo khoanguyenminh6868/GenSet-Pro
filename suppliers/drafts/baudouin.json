@@ -1,0 +1,15 @@
+{
+  "id": "baudouin", "country": "FR", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": "Société Internationale des Moteurs Baudouin", "zh": null, "brands": ["Baudouin"],
+  "web": "https://www.baudouin.com/", "prov": null, "city": "Cassis", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "© Société Internationale des Moteurs Baudouin 2023", "13260 Cassis, France", "Baudouin generator sets up to 6250 kVA have the highest power rating on the market.", "Discover our range of diesel generator sets, specifically designed to meet the needs of the demanding data centre industry."]
+  },
+  "str": [["Tổ máy diesel cho trung tâm dữ liệu tới 6250 kVA", 1], ["Theo hãng: công suất tổ máy cao nhất thị trường", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator sets (data centres)", "fuel": "diesel", "eng": ["Baudouin"], "src": [1] }
+  ],
+  "miss": ["Trang chủ chỉ ghi mức tối đa (up to 6250 kVA), chưa có dải công suất động cơ phát điện"],
+  "by": "discover-bot (Claude)"
+}

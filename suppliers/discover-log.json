@@ -1102,5 +1102,65 @@
   "url": "https://www.marathonelectric.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "cummins-inc",
+  "name": "Cummins Inc.",
+  "url": "https://www.cummins.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "genmac",
+  "name": "GENMAC S.r.l.s.u.",
+  "url": "https://www.genmac.it/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "baudouin",
+  "name": "Société Internationale des Moteurs Baudouin",
+  "url": "https://www.baudouin.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "name": "Mosa",
+  "reason": "mosa.it từ chối kết nối (ECONNRESET, cả --render), 2026-11-02; thử lại sau"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "mhi-china",
+  "name": "三菱重工业（中国）有限公司",
+  "url": "https://www.mhi.com.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "tide-power",
+  "name": "Tide Power Technology Co., Limited",
+  "url": "https://www.tidepower.uk/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "saonon",
+  "name": "GUANGZHOU WANON ELECTRIC AND MACHINE CO.,LTD",
+  "url": "https://www.saonon.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]
