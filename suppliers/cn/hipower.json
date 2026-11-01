@@ -1,0 +1,97 @@
+{
+  "id": "hipower",
+  "country": "US",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "HIMOINSA POWER SYSTEMS, INC",
+    "zh": null,
+    "brands": [
+      "HIPOWER SYSTEMS"
+    ]
+  },
+  "website": "https://www.hipowersystems.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "yanmar"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy dự phòng tĩnh tại và tổ máy di động (diesel, khí) cho thị trường Bắc Mỹ, 60 Hz",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thuộc Yanmar",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Standby Diesel / Mobile Diesel",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [
+        "60Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Spark Ignited",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất (chỉ có trong trang 'Know the ranges' chưa lưu)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.hipowersystems.com/eng.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "HIPOWER SYSTEMS a Yanmar Company, Generator Sets",
+        "© HIMOINSA POWER SYSTEMS, INC 2026",
+        "Equipment for stationary applications. Continuous or backup power with an immediate response time",
+        "HIPOWER Mobile generators are engineered specifically for the needs of the North American marke"
+      ],
+      "file": "sources/hipower/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

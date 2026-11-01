@@ -1,0 +1,87 @@
+{
+  "id": "sinogen",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "SinoGen Power Technology Limited",
+    "zh": null,
+    "brands": [
+      "SinoGen"
+    ]
+  },
+  "website": "https://sino-gen.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 2013,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel khung hở 20–2000 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thuộc EMAC, thành lập 2013, nhà máy 20.000 m², liên doanh tại Thái Lan",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Open type generator set",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi địa chỉ nhà máy, chứng chỉ; EMAC cũng vận hành các website mang tên hãng động cơ (sdec-engine.com...)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://sino-gen.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "As part of EMAC, SinoGen Power Technology Limitedwas established in 2013, focusing on diesel generator set manufacturing,owns a 20000 square meter area modern high automated plant,one joint venture in Thailand",
+        "covering the power range from 20-2000kW."
+      ],
+      "file": "sources/sinogen/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

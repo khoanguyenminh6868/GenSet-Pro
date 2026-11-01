@@ -1,0 +1,116 @@
+{
+  "id": "sutong-fujian",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Fujian Sutong Power System Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "SUTONG"
+    ]
+  },
+  "website": "http://www.sutongpower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 5–4000 kVA và tháp đèn di động",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Đối tác: Cummins, Perkins, Deutz, Doosan, Volvo; đầu phát Stamford, Leroy Somer",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "CUMMINS",
+        "PERKINS",
+        "DEUTZ",
+        "DOOSAN",
+        "VOLVO"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "STAMFORD",
+        "LEROY SOMER"
+      ],
+      "power": {
+        "min": 5,
+        "max": 4000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi năm thành lập, thành phố, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.sutongpower.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Fujian Sutong Power System Co., Ltd. is committed to the manufacture, R&D, sales and distribution of of diesel generator sets, mobile lighting towers and related spare parts.",
+        "Our power range is form 5kVA to 4000kVA.",
+        "such as CUMMINS, PERKINS, DEUTZ, DOOSAN, VOLVO, STAMFORD, LEROY SOMER"
+      ],
+      "file": "sources/sutong-fujian/1.md"
+    },
+    {
+      "n": 101,
+      "url": "http://www.sutongpower.com/productsdetail_en_2987605.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Prime Power (kVA/kW): 11/11"
+      ],
+      "file": "sources/sutong-fujian/101.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "YUCHAI Series - 福建速通电力系统有限公司",
+      "header": [],
+      "rows": [
+        "Prime Power (kVA/kW): 11/11",
+        "Standby Power (kVA/kW): 13/13",
+        "Frequency: 50Hz",
+        "Speed: 1500RPM",
+        "Speed:1500 rpm"
+      ]
+    }
+  ]
+}

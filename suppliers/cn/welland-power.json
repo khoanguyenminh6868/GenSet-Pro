@@ -1,0 +1,79 @@
+{
+  "id": "welland-power",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Welland Power Limited",
+    "zh": null,
+    "brands": [
+      "Welland Power"
+    ]
+  },
+  "website": "https://www.wellandpower.net/",
+  "hq": {
+    "province": null,
+    "city": "Spalding"
+  },
+  "founded": 1950,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất tổ máy diesel tại nhà máy ở Spalding (Anh) từ 1950",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thuộc Xeinz Group Limited",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, hãng động cơ, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.wellandpower.net/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2026 Welland Power Limited, All rights reserved.",
+        "A family business based in the historic fenland town of Spalding, England – devoted to the craft of outstanding diesel generators.",
+        "Welland since 1950 has been producing generators to provide power in a range of applications. Today our UK factory produces a range of products",
+        "Welland Power is part of Xeinz Group Limited"
+      ],
+      "file": "sources/welland-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

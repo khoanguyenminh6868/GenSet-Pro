@@ -1,0 +1,17 @@
+{
+  "id": "saintshine-shenzhen", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Shenzhen Saintshine Power Co., Ltd.", "zh": null, "brands": ["Saintshine"],
+  "web": "https://www.saintshinepower.com/", "prov": "Guangdong", "city": "Shenzhen", "founded": 2002, "fsrc": [2], "related": [],
+  "src": {
+    "1": ["A", "Copyright © 2024 Shenzhen Saintshine Power Co., Ltd.", "provides reliable power solutions, with diesel generators ranging from 8kW to 3000kW and gas generators from 30kW to 4.5MW."],
+    "2": ["A", "Established in 2002", "35,000 square meters"]
+  },
+  "str": [["Tổ máy diesel 8–3000 kW và tổ máy khí 30 kW–4,5 MW", 1], ["Thành lập 2002, nhà máy 35.000 m²", 2]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generators", "fuel": "diesel", "p": [8, 3000, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "Gas generators", "fuel": "gas", "src": [1] }
+  ],
+  "miss": ["Dải tổ máy khí ghi 30kW to 4.5MW (khác đơn vị) nên chưa ghi vào p; chưa có chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}
