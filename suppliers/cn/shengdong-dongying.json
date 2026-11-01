@@ -1,0 +1,94 @@
+{
+  "id": "shengdong-dongying",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "胜利动力机械集团有限公司",
+    "brands": [
+      "胜动"
+    ]
+  },
+  "website": "http://www.slpmg.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ khí đốt trong và tổ máy khí dòng 190 (12V, 16V, 20V) cho phát điện phân tán",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thuộc tập đoàn 水发集团; tổ máy khí công suất lớn được chọn vào danh sách thiết bị 'đầu tiên' của tỉnh Sơn Đông 2026",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "190系列燃气发电机组",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "燃气内燃机",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất kW, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.slpmg.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyrigh @ 2023 胜利动力机械集团有限公司 All Rights Reserved",
+        "全国分布式燃气发电产业的创建带领者。国家级分布式能源燃气内燃机装备自主化研发制造基地。",
+        "12V190系列燃气发电机组",
+        "20V190系列燃气发电机组",
+        "水发集团权属胜动集团自主研发的“智能化大功率燃气发电机组”成功入选"
+      ],
+      "file": "sources/shengdong-dongying/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

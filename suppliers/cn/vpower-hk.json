@@ -1,0 +1,77 @@
+{
+  "id": "vpower-hk",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "伟能集团",
+    "brands": [
+      "VPower",
+      "伟能"
+    ]
+  },
+  "website": "https://vpower.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy khí (khí tự nhiên, biogas) 191–4500 kWe, có giải pháp đồng phát nhiệt-điện-lạnh",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "伟能燃气发电机组",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 191,
+        "max": 4500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang không ghi tên pháp nhân đầy đủ, địa chỉ nhà máy"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://vpower.com/cn/our-business/gas-gen-sets/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2026 伟能集团　版权所有",
+        "伟能燃气发电机组的功率范围广阔，涵盖191 kWe至4,500 kWe，可使用天然气和沼气为燃料，并可搭配先进和创新技术，如冷热电联供方案等"
+      ],
+      "file": "sources/vpower-hk/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
