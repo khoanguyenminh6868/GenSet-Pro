@@ -41,6 +41,7 @@ await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
 const CAT = globalThis.GenbidCatalog;
 export const ORIGIN = { cn: "Trung Quốc", other: "Khác (không phải Trung Quốc)", all: "Tất cả" };
 const originOfReq = (o) => (ORIGIN[o] ? o : "cn");
+const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
 
 async function api(q) {
   const r = await fetch(`${WEB}/api/requests?${q}`, { headers: { Authorization: `Bearer ${token()}` } });
@@ -178,6 +179,8 @@ async function prep(key, dir, reqData = {}) {
     origin === "cn" ? `Chỉ gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Không gợi ý động cơ của hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả loại sản xuất theo giấy phép tại Trung Quốc (Dongfeng Cummins, Chongqing Cummins...), cả khi tìm trên internet. Nếu HSMT chỉ định một hãng nước ngoài thì trả lời "configs": [] và nói rõ trong message.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
     : "Không giới hạn xuất xứ động cơ.", "",
+    // Yêu cầu khác (Khoa, 2026-11-01): typed on the web next to Gợi ý / Tìm NCC, checked like the HSMT's requirements.
+    ...(extraOf(reqData) ? ["## Yêu cầu khác (người dùng nhập trên web, bắt buộc kiểm tra như yêu cầu của HSMT)", extraOf(reqData), ""] : []),
     "## Thông số kỹ thuật theo phân tích (chỉ để định hướng, trích dẫn phải lấy từ hsmt.txt)",
     ...(a?.technicalSpecs || []).map((s) => `- ${s.item}: ${s.requirement}${s.reference ? ` (${s.reference})` : ""}`), "",
     "## Phần kỹ thuật của HSMT", technicalPart(text),
@@ -446,7 +449,7 @@ async function answer(req, suppliers) {
   // configreq keeps the request's own fields and gets doneAt (+ error); configmatch carries the verified result.
   const done = ({ result, error }) => {
     const at = new Date().toISOString();
-    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
+    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, extra: req.extra, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
     return post([...(result ? [{ coll: "configmatch", id: key, data: { at, result } }] : []), { coll: "configreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
@@ -459,6 +462,7 @@ async function answer(req, suppliers) {
     const { added, records } = await addToCatalog(dir, key, suppliers).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
     const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
     const { result, problems } = checkDir(dir, all, added, originOfReq(req.origin));
+    if (extraOf(req)) result.extra = extraOf(req);
     await done({ result, error: "" });
     console.log(`${key}: ${result.configs.length} cấu hình${problems.length ? `, ${problems.length} điểm chưa khớp nguồn` : ""}`);
   } catch (e) {
@@ -569,7 +573,7 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
       checks: [{ item: "Công suất", part: "genset", requirement: cap ? `khoảng ${cap.value} ${cap.unit}` : "", offered: powerText(u.power) || "—", sourceQuote: line, status: "unclear",
         note: "Bổ sung tự động từ Tìm NCC, không dùng AI: công suất nhỏ nhất ghi trong dòng bảng từ 100% đến 140% công suất của gói. Các yêu cầu khác của HSMT chưa được đối chiếu (bấm Gợi ý lại nếu cần)." }],
       suppliers: sups.slice(0, 3),
-      gaps: ["Cấu hình bổ sung từ Tìm NCC: chưa đối chiếu từng yêu cầu kỹ thuật của HSMT."],
+      gaps: ["Cấu hình bổ sung từ Tìm NCC: chưa đối chiếu từng yêu cầu kỹ thuật của HSMT.", ...(result.extra ? [`Chưa đối chiếu Yêu cầu khác: ${result.extra}`] : [])],
     };
     configs.push(c);
     out.created.push({ rank: c.rank, engine: e.model, supplierId: u.supplierId });
@@ -592,7 +596,7 @@ async function find(req, suppliers) {
   const key = req.key, tried = [];
   const done = ({ result, error }) => {
     const at = new Date().toISOString();
-    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
+    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, extra: req.extra, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
     return post([...(result ? [{ coll: "findmatch", id: key, data: { at, result } }] : []), { coll: "findreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
@@ -616,12 +620,12 @@ async function find(req, suppliers) {
         if (!added.some((a) => !a.error)) { tried.push({ engine: ENGINE[engine], error: "bản ghi không qua được verify.mjs của repo", dropped: added }); continue; }
         const merged = await mergeFindIntoConfig(key, records, { cap, origin: req.origin }).catch((e) => ({ error: e.message }));
         const configMerge = merged?.error ? `chưa bổ sung được vào cấu hình gợi ý: ${merged.error}` : mergeText(merged);
-        await done({ result: { engine: ENGINE[engine], cap, summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried, configMerge } });
+        await done({ result: { engine: ENGINE[engine], cap, ...(extraOf(req) ? { extra: extraOf(req) } : {}), summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried, configMerge } });
         console.log(`${key}: Tìm NCC (${ENGINE[engine]}) bổ sung ${added.filter((a) => !a.error).length} nhà cung cấp; cấu hình: ${configMerge}`);
         return;
       } finally { fs.rmSync(dir, { recursive: true, force: true }); }
     }
-    await done({ result: { engine: "", summary: "Không tìm được nhà cung cấp mới nào phù hợp yêu cầu kỹ thuật và qua được kiểm tra nguồn.", added: [], skipped: [], notes: [], tried } });
+    await done({ result: { engine: "", ...(extraOf(req) ? { extra: extraOf(req) } : {}), summary: "Không tìm được nhà cung cấp mới nào phù hợp yêu cầu kỹ thuật và qua được kiểm tra nguồn.", added: [], skipped: [], notes: [], tried } });
     console.log(`${key}: Tìm NCC không tìm được ai`);
   } catch (e) {
     await done({ error: e.message || String(e) }).catch(() => {});
