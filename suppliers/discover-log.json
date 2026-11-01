@@ -2176,5 +2176,23 @@
   "url": "http://pcjx8.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "jiangchai-xuzhou",
+  "name": "江柴控股集团有限公司",
+  "url": "https://www.jc-zc.net/",
+  "tables": 11,
+  "rows": 356
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "bochuang-weifang",
+  "name": "山东博创动力设备有限公司",
+  "url": "http://www.bocreat.cn/",
+  "tables": 0,
+  "rows": 0
  }
 ]
