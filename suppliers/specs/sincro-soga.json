@@ -1,0 +1,743 @@
+[
+ {
+  "n": 101,
+  "url": "https://www.sogaenergyteam.com/products/iec-standard-induction-low-voltage-ac-1phase-2-poles-ie2/",
+  "title": "IE2 single-phase motors",
+  "header": [
+   "| model | | IEC FRAME SIZE (MM) | kW (S1) – F class 230V 50 Hz | speed rpm | efficiency %"
+  ],
+  "rows": [
+   "| MM2 63MA/2 | no switch | 63M | 0,18 | 2800 | 60,4",
+   "| MM2 63MB/2 | no switch | 63M | 0,25 | 2830 | 64,8",
+   "| MME2 71MA/2 | electronic switch | 71M | 0,37 | 2810 | 69,5",
+   "| MME2 71MC/2 | electronic switch | 71M | 0,55 | 2840 | 74,1",
+   "| MME2 71MD/2 | electronic switch | 71M | 0,75 | 2840 | 77,4",
+   "| MMD2 80MC/2 | centrifugal switch | 80M | 0,75 | 2910 | 77,4",
+   "| MMD2 80MD/2 | centrifugal switch | 80M | 1,1 | 2860 | 79,6",
+   "| MMD2 90LA/2 | centrifugal switch | 90L | 1,5 | 2880 | 81,3",
+   "| MMD2 100LA/2 | centrifugal switch | 100L | 1,8 | 2870 | 82,2",
+   "| MMD2 100LB/2 | centrifugal switch | 100L | 2,2 | 2890 | 83,2",
+   "| MMD2 112MB/2 | centrifugal switch | 112M | 3 | 2910 | 84,6"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.sogaenergyteam.com/products/motors-iec-standard-induction-low-voltage-ac-1phase-2-poles-general-purpose/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC - 1PHASE - 2 POLES - GENERAL PURPOSE",
+  "header": [
+   "| model | IEC FRAME SIZE (MM) | kW (S3 75%) – F class 230V 50 Hz | speed rpm"
+  ],
+  "rows": [
+   "| MM1 63MA/2 | 63M | 0,18 | 2750",
+   "| MM1 63MB/2 | 63M | 0,25 | 2750",
+   "| MM1 63MC/2 | 63M | 0,37 | 2750",
+   "| MM1 71MA/2 | 71M | 0,37 | 2750",
+   "| MM1 71MB/2 | 71M | 0,55 | 2750",
+   "| MM1 71MC/2 | 71M | 0,75 | 2750",
+   "| MM1 71MD/2 | 71M | 1,1 | 2750",
+   "| MM1 80MB/2 | 80M | 0,75 | 2750",
+   "| MM1 80MC/2 | 80M | 1,1 | 2750",
+   "| MM1 80MD/2 | 80M | 1,5 | 2750",
+   "| MM1 80ME/2 | 80M | 2 | 2780",
+   "| MM1 90SB/2 | 90S | 1,85 | 2810",
+   "| MM1 90LA/2 | 90L | 2,2 | 2820",
+   "| MM1 100LA/2 | 100L | 2,2 | 2850"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.sogaenergyteam.com/products/motors-iec-standard-induction-low-voltage-ac-1-phase-2-poles-for-compressors/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – 1 PHASE – 2 POLES – FOR COMPRESSORS",
+  "header": [
+   "| model | IEC FRAME SIZE MM | kW (S3 75%) – F CLASS 230V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MM1 80MC/2 COMPRESSORS | 80M | 1,1 | 2750",
+   "| MM1 80MD/2 COMPRESSORS | 80M | 1,5 | 2750",
+   "| MM1 90SB/2 COMPRESSORS | 90S | 1,85 | 2810",
+   "| MM1 90LA/2 COMPRESSORS | 90L | 2,2 | 2820"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.sogaenergyteam.com/products/iec-standard-induction-low-voltage-ac-1phase-2-poles-with-centrifugal-switch/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – 1PHASE – 2 POLES - WITH CENTRIFUGAL SWITCH",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S3 75%) – F CLASS 230V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MMD1 80MB/2 | 80M | 0,75 | 2800",
+   "| MMD1 80MC/2 | 80M | 1,1 | 2800",
+   "| MMD1 80MD/2 | 80M | 1,5 | 2800",
+   "| MMD1 90SB/2 | 90S | 1,85 | 2800",
+   "| MMD1 90LA/2 | 90L | 2,2 | 2800",
+   "| MMD1 100LB/2 | 100L | 3 | 2800",
+   "| MMD1 100LC/2 | 100L | 4 | 2800"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.sogaenergyteam.com/products/iec-standard-induction-low-voltage-ac-1phase-4-poles-general-purpose/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC - 1PHASE - 4 POLES - GENERAL PURPOSE",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S3 75%) – F CLASS 230V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MM1 63MB/4 | 63M | 0,18 | 1350",
+   "| MM1 71MB/4 | 71M | 0,3 | 1350",
+   "| MM1 71MC/4 | 71M | 0,37 | 1350",
+   "| MM1 80MA/4 | 80M | 0,37 | 1350",
+   "| MM1 80MB/4 | 80M | 0,55 | 1350",
+   "| MM1 80MC/4 | 80M | 0,75 | 1350",
+   "| MM1 80MD/4 | 80M | 1,1 | 1350",
+   "| MM1 90SB/4 | 90S | 1,1 | 1380",
+   "| MM1 90LA/4 | 90L | 1,5 | 1400",
+   "| MM1 90LB/4 | 90L | 1,85 | 1400",
+   "| MM1 90LC/4 | 90L | 2,2 | 1400",
+   "| MM1 100LB/4 | 100L | 2,2 | 1420"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.sogaenergyteam.com/products/motors-iec-standard-induction-low-voltage-ac-1-phase-4-poles-for-concrete-mixers/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – 1 PHASE – 4 POLES – FOR CONCRETE MIXERS",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S3 75%) – F CLASS 230V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MM1 80MC/4 CONCRETE MIXERS | 80M | 0,75 | 1350",
+   "| MM1 90SB/4 CONCRETE MIXERS | 90S | 1,1 | 1350",
+   "| MM1 90LA/4 CONCRETE MIXERS | 90L | 1,5 | 1400",
+   "| MM1 90LB/4 CONCRETE MIXERS | 90L | 1,85 | 1420"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.sogaenergyteam.com/products/6-motors-iec-standard-induction-low-voltage-ac-1-phase-4-poles-motors-with-centrifugal-switch/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC - 1 PHASE - 4 POLES - MOTORS WITH CENTRIFUGAL SWITCH",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S3 75%) – F CLASS 220V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MMD1 80MB/4 | 80M | 0,55 | 1400",
+   "| MMD1 80MC/4 | 80M | 0,75 | 1400",
+   "| MMD1 90SB/4 | 90S | 1,1 | 1400",
+   "| MMD1 90LA/4 | 90L | 1,5 | 1400",
+   "| MMD1 90LB/4 | 90L | 1,85 | 1400",
+   "| MMD1 100LB/4 | 100L | 2,2 | 1420",
+   "| MMD1 100LC/4 | 100L | 2,6 | 1420"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.sogaenergyteam.com/products/motors-iec-standard-induction-low-voltage-ac-1phase-6-poles-general-purpose/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC - 1PHASE - 6 POLES - GENERAL PURPOSE",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S3 75%) – F CLASS 230V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MM1 80MA/6 | 80M | 0,25 | 900",
+   "| MM1 80MB/6 | 80M | 0,37 | 900",
+   "| MM1 80MC/6 | 80M | 0,55 | 900",
+   "| MM1 90LA/6 | 90L | 0,75 | 920",
+   "| MM1 90LB/6 | 90L | 1,1 | 920"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://www.sogaenergyteam.com/products/motors-iec-standard-induction-low-voltage-ac-ie3-premium-efficiency-2-poles/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – IE3 PREMIUM EFFICIENCY - 2 POLES",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S1) – F CLASS 400V 50 HZ | speed rpm | EFFICIENCY 50 HZ"
+  ],
+  "rows": [
+   "| MT3 80MA/2 | 80M | 0,75 | 2900 | 80,7",
+   "| MT3 80MB/2 | 80M | 1,1 | 2900 | 82,7",
+   "| MT3 80MC/2 | 80M* | 1,5 | 2900 | 84,2",
+   "| MT3 90SA/2 | 90S | 1,5 | 2900 | 84,2",
+   "| MT3 90LA/2 | 90L | 2,2 | 2900 | 85,9",
+   "| MT3 100LA/2 | 100L | 3 | 2910 | 87,1",
+   "| MT3 112MA/2 | 112M | 4 | 2930 | 88,1",
+   "| MT3 112MB/2 | 112M* | 5,5 | 2920 | 89,2",
+   "| MT3 132SA/2 | 132S | 5,5 | 2950 | 89,2",
+   "| MT3 132SB/2 | 132S | 7,5 | 2940 | 90,1",
+   "| MT3 132MA/2 | 132M* | 9,2 | 2950 | 90,7",
+   "| MT3 132MB/2 | 132M* | 11 | 2950 | 91,2",
+   "| MT3 160MA/2 | 160M | 11 | 2960 | 91,2",
+   "| MT3 160MB/2 | 160M | 15 | 2960 | 91,9",
+   "| MT3 160LA/2 | 160L | 18,5 | 2955 | 92,4",
+   "| MT3 180MA/2 | 180M | 22 | 2970 | 92,7"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://www.sogaenergyteam.com/products/motors-iec-standard-induction-low-voltage-ac-ie3-premium-efficiency-4-poles/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – IE3 PREMIUM EFFICIENCY – 4 POLES - www.sogaenergyteam.com",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S1) – F CLASS 400V 50 HZ | speed rpm | EFFICIENCY 50 HZ"
+  ],
+  "rows": [
+   "| MT3 80MA/4 | 80M | 0,75 | 1430 | 82,5",
+   "| MT3 90LA/4 | 90L* | 1,1 | 1440 | 84,1",
+   "| MT3 90LB/4 | 90L | 1,5 | 1440 | 85,3",
+   "| MT3 100LA/4 | 100L | 2,2 | 1450 | 86,7",
+   "| MT3 100LB/4 | 100L | 3 | 1450 | 87,7",
+   "| MT3 112MA/4 | 112M | 4 | 1460 | 88,6",
+   "| MT3 132MA/4 | 132M* | 5,5 | 1460 | 89,6",
+   "| MT3 132MB/4 | 132M | 7,5 | 1470 | 90,4",
+   "| MT3 160MA/4 | 160M | 11 | 1470 | 91,1",
+   "| MT3 160LA/4 | 160L | 15 | 1470 | 92,1",
+   "| MT3 180MA/4 | 180M | 18,5 | 1470 | 92,6",
+   "| MT3 180LA/4 | 180L | 22 | 1470 | 93"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://www.sogaenergyteam.com/products/motors-three-phase-standard-induction-low-voltage-ac-single-speed-2-poles/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC - IE1 STANDARD EFFICIENCY - 2 POLES",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S6 75%) – F CLASS 400V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MT1 63MB/2 | 63M | 0,25 | 2800",
+   "| MT1 63MC/2 | 63M* | 0,37 | 2800",
+   "| MT1 71MA/2 | 71M | 0,37 | 2800",
+   "| MT1 71 MB/2 | 71M | 0,55 | 2800",
+   "| MT1 71MC/2 | 71M* | 0,75 | 2800",
+   "| MT1 71MD/2 | 71M* | 1,1 | 2800",
+   "| MT1 80MA/2 | 80M | 0,75 | 2830",
+   "| MT1 80MB/2 | 80M | 1,1 | 2840",
+   "| MT1 80MC/2 | 80M* | 1,5 | 2840",
+   "| MT1 80MD/2 | 80M* | 2,2 | 2840",
+   "| MT1 80ME/2 | 80M* | 2,7 | 2840",
+   "| MT1 90SA/2 | 90S | 1,5 | 2840",
+   "| MT1 90LB/2 | 90L | 2,2 | 2840",
+   "| MT1 90LC/2 | 90L* | 3 | 2840",
+   "| MT1 90LD/2 | 90L* | 4 | 2840",
+   "| MT1 100LA/2 | 100L | 3 | 2840",
+   "| MT1 100LB/2 | 100L* | 4 | 2840",
+   "| MT1 100LC/2 | 100L* | 5,5 | 2840",
+   "| MT1 112MA/2 | 112M | 4 | 2850",
+   "| MT1 112MB/2 | 112M* | 5,5 | 2850",
+   "| MT1 112MC/2 | 112M* | 7,5 | 2850",
+   "| MT1 132SA/2 | 132S | 5,5 | 2860",
+   "| MT1 132SB/2 | 132S | 7,5 | 2870",
+   "| MT1 132MB/2 | 132M* | 9 | 2880",
+   "| MT1 132MC/2 | 132M* | 11 | 2900",
+   "| MT1 132MD/2 | 132M* | 15 | 2920",
+   "| MT1 160MA/2 | 160M | 11 | 2930",
+   "| MT1 160MB/2 | 160M | 15 | 2930",
+   "| MT1 160LA/2 | 160L | 18,5 | 2930",
+   "| MT1 160LB/2 | 160L* | 22 | 2935",
+   "| MT1 160LC/2 | 160L* | 30 | 2935",
+   "| MT1 180MA/2 | 180M | 22 | 2945",
+   "| MT1 180LA/2 | 180L* | 30 | 2945",
+   "| MT1 180LB/2 | 180L* | 37 | 2945",
+   "| MT1 200LA/2 | 200L | 30 | 2950",
+   "| MT1 200LB/2 | 200L | 37 | 2950"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://www.sogaenergyteam.com/products/motors-three-phase-standard-induction-low-voltage-ac-single-speed-4-poles/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC - IE1 STANDARD EFFICIENCY - 4 POLES",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S6 75%) – F CLASS 400V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MT1 63MA/4 | 63M | 0,12 | 1360",
+   "| MT1 63MB/4 | 63M | 0,18 | 1370",
+   "| MT1 71MA/4 | 71M | 0,25 | 1370",
+   "| MT1 71MB/4 | 71M | 0,37 | 1380",
+   "| MT1 71MC/4 | 71M* | 0,5 | 1380",
+   "| MT1 80MA/4 | 80M | 0,55 | 1400",
+   "| MT1 80MB/4 | 80M | 0,75 | 1400",
+   "| MT1 80MC/4 | 80M* | 1,1 | 1400",
+   "| MT1 90SB/4 | 90S | 1,1 | 1400",
+   "| MT1 90LA/4 | 90L | 1,5 | 1400",
+   "| MT1 90LC/4 | 90L* | 2,2 | 1400",
+   "| MT1 100LA/4 | 100L | 2,2 | 1400",
+   "| MT1 100LB/4 | 100L | 3 | 1400",
+   "| MT1 100LC/4 | 100L* | 4 | 1400",
+   "| MT1 112MB/4 | 112M | 4 | 1420",
+   "| MT1 112MC/4 | 112M* | 5,5 | 1420",
+   "| MT1 132SA/4 | 132S | 5,5 | 1440",
+   "| MT1 132MA/4 | 132M | 7,5 | 1450",
+   "| MT1 132MB/4 | 132M* | 9 | 1450",
+   "| MT1 132MC/4 | 132M* | 11 | 1450",
+   "| MT1 160MB/4 | 160M | 11 | 1460",
+   "| MT1 160LA/4 | 160L | 15 | 1460",
+   "| MT1 160LB/4 | 160L* | 18,5 | 1460",
+   "| MT1 160LC/4 | 160L* | 22 | 1460",
+   "| MT1 180MA/4 | 180M | 18,5 | 1460",
+   "| MT1 180LA/4 | 180L | 22 | 1460",
+   "| MT1 180LB/4 | 180L* | 30 | 1465",
+   "| MT1 200LA/4 | 200L | 30 | 1470"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://www.sogaenergyteam.com/products/motors-three-phase-standard-induction-low-voltage-ac-single-speed-6-poles/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – IE1 STANDARD EFFICIENCY – 6 POLES",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S6 75%) – F CLASS 400V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MT1 80MA/6 | 80M | 0,37 | 900",
+   "| MT1 80MB/6 | 80M | 0,55 | 910",
+   "| MT1 80MC/6 | 80M* | 0,75 | 910",
+   "| MT1 90SA/6 | 90S | 0,75 | 920",
+   "| MT1 90LB/6 | 90L | 1,1 | 920",
+   "| MT1 100LA/6 | 100 | 1,5 | 920",
+   "| MT1 112MA/6 | 112M | 2,2 | 920",
+   "| MT1 132SA/6 | 132S | 3 | 940",
+   "| MT1 132MA/6 | 132M | 4 | 950",
+   "| MT1 132MB/6 | 132M | 5,5 | 950",
+   "| MT1 160MA/6 | 160M | 7,5 | 960",
+   "| MT1 160LB/6 | 160L | 11 | 960",
+   "| MT1 180LA/6 | 180L | 15 | 970",
+   "| MT1 180LB/6 | 180L* | 18,5 | 970",
+   "| MT1 180LC/6 | 180L* | 22 | 970",
+   "| MT1 200LA/6 | 200L | 18,5 | 970",
+   "| MT1 200LB/6 | 200L | 22 | 970"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "https://www.sogaenergyteam.com/products/motors-three-phase-standard-induction-low-voltage-ac-single-speed-8-poles/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – IE1 STANDARD EFFICIENCY – 6 POLES",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S6 75%) – F CLASS 400V 50 HZ | speed rpm"
+  ],
+  "rows": [
+   "| MT1 80MA/8 | 80M* | 0,18 | 660",
+   "| MT1 80MB/8 | 80M* | 0,25 | 680",
+   "| MT1 90SA/8 | 90S | 0,37 | 690",
+   "| MT1 90LB/8 | 90L | 0,55 | 690",
+   "| MT1 100LA/8 | 100L | 0,75 | 700",
+   "| MT1 100LB/8 | 100L | 1,1 | 700",
+   "| MT1 112MA/8 | 112M | 1,5 | 700",
+   "| MT1 132SA/8 | 132S | 2,2 | 700",
+   "| MT1 132MA/8 | 132M | 3 | 700",
+   "| MT1 160MA/8 | 160M | 4 | 710",
+   "| MT1 160MB/8 | 160M | 5,5 | 720",
+   "| MT1 160LB/8 | 160L | 7,5 | 720",
+   "| MT1 180LA/8 | 180L | 11 | 720",
+   "| MT1 180LB/8 | 180L* | 15 | 725",
+   "| MT1 200LB/8 | 200L | 15 | 725"
+  ]
+ },
+ {
+  "n": 115,
+  "url": "https://www.sogaenergyteam.com/products/double-speed-three-phase-iec-motors/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – IE1 STANDARD EFFICIENCY – DOUBLE POLARITIES",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S1) – F CLASS 400V 50 HZ"
+  ],
+  "rows": [
+   "| MT1 71MA/2-4 | 71M | 0,45 – 0,3",
+   "| MT1 80MA/2-4 | 80M | 0,65 – 0,5",
+   "| MT1 80MB/2-4 | 80M | 0,9 – 0,6",
+   "| MT1 90SA/2-4 | 90S | 1,2 – 1,1",
+   "| MT1 90LB/2-4 | 90L | 1,8 – 1,5",
+   "| MT1 100LA/2-4 | 100L | 2,4 – 1,8",
+   "| MT1 100LB/2-4 | 100L | 3,3 – 2,5",
+   "| MT1 112MB/2-4 | 112M | 4,5 – 3,3",
+   "| MT1 132SA/2-4 | 132S | 6 – 4",
+   "| MT1 132MB/2-4 | 132M | 7,5 – 5,5",
+   "| MT1 160MB/2-4 | 160M | 11 – 8,8",
+   "| MT1 160LA/2-4 | 160L | 15 – 12",
+   "| MT1 160LB/2-4 | 160L | 18,5 – 15",
+   "| MT1 160LC/2-4 | 160L | 22 – 18,5",
+   "| MT1 180MA/2-4 | 180M | 18,5 – 15",
+   "| MT1 180LB/2-4 | 180L | 22 – 18,5",
+   "| MT1 180LC/2-4 | 180L | 30 – 22",
+   "| MT1 200LB/2-4 | 200L | 30 – 22"
+  ]
+ },
+ {
+  "n": 115,
+  "url": "https://www.sogaenergyteam.com/products/double-speed-three-phase-iec-motors/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – IE1 STANDARD EFFICIENCY – DOUBLE POLARITIES",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S1) – F CLASS 400V 50 HZ"
+  ],
+  "rows": [
+   "| MT1 71MA/4-8 | 71M | 0,22 – 0,18",
+   "| MT1 80MA/4-8 | 80M | 0,33 – 0,25",
+   "| MT1 80MB/4-8 | 80M | 0,45 – 0,3",
+   "| MT1 90SA/4-8 | 90S | 0,55 – 0,37",
+   "| MT1 90LB/4-8 | 90L | 0,9 – 0,55",
+   "| MT1 100LA/4-8 | 100L | 1,1 – 0,75",
+   "| MT1 100LB/4-8 | 100L | 1,85 – 1,1",
+   "| MT1 112MA/4-8 | 112M | 2,2 – 1,5",
+   "| MT1 132SA/4-8 | 132S | 3,3 – 2,2",
+   "| MT1 132MB/4-8 | 132M | 4,5 – 3",
+   "| MT1 160MB/4-8 | 160M | 6 – 3,7",
+   "| MT1 160MB/4-8 | 160M | 7,5 – 5",
+   "| MT1 160LB/4-8 | 160L | 10,3 – 5,9",
+   "| MT1 180LA/4-8 | 180L | 15 – 9",
+   "| MT1 180LB/4-8 | 180L | 18,5 – 10",
+   "| MT1 200LB/4-8 | 200L | 22 – 12"
+  ]
+ },
+ {
+  "n": 115,
+  "url": "https://www.sogaenergyteam.com/products/double-speed-three-phase-iec-motors/",
+  "title": "MOTORS IEC STANDARD INDUCTION LOW VOLTAGE AC – IE1 STANDARD EFFICIENCY – DOUBLE POLARITIES",
+  "header": [
+   "| model | IEC FRAME SIZE MM | KW (S1) – F CLASS 400V 50 HZ"
+  ],
+  "rows": [
+   "| MT1 80MA/4-6 | 80M | 0,37 – 0,25",
+   "| MT1 80MB/4-6 | 80M | 0,55 – 0,37",
+   "| MT1 90SA/4-6 | 90S | 0,75 – 0,55",
+   "| MT1 90LB/4-6 | 90L | 1,1 – 0,75",
+   "| MT1 100LA/4-6 | 100L | 1,5 – 0,9",
+   "| MT1 100LB/4-6 | 100L | 1,85 – 1,3",
+   "| MT1 112MA/4-6 | 112M | 2,2 – 1,5",
+   "| MT1 132SA/4-6 | 132S | 3 – 2,2",
+   "| MT1 132MB/4-6 | 132M | 4,5 – 3",
+   "| MT1 160MB/4-6 | 160M | 6,6 – 4,5",
+   "| MT1 160LB/4-6 | 160L | 8,8 – 6",
+   "| MT1 180MA/4-6 | 180M | 11 – 7,5",
+   "| MT1 180LB/4-6 | 180L | 13 – 9",
+   "| MT1 180LC/4-6 | 180L | 15 – 10",
+   "| MT1 200LB/4-6 | 200L | 15 – 10"
+  ]
+ },
+ {
+  "n": 116,
+  "url": "https://www.sogaenergyteam.com/products/motors-low-center-1-phase-2-poles/",
+  "title": "MOTORS FLAT ASYNCHRONOUS - 1 PHASE - 2 POLES",
+  "header": [
+   "| model | FRAME SIZE MM | KW (S6 40%) – F CLASS 230V 50 HZ | Brake available"
+  ],
+  "rows": [
+   "| MR58 M1SA/2 | 58 | 0,75 | –",
+   "| MR58 M1SB/2 | 58 | 1,1 | –",
+   "| MR58 M1LB/2 | 58 | 1,5 | –",
+   "| MR65 M1SA/2 | 65 | 1,5 | yes",
+   "| MR65 M1SB/2 | 65 | 1,8 | yes",
+   "| MR65 M1SC/2 | 65 | 2,2 | yes",
+   "| MR65 M1MA/2 | 65 | 2,6 | yes"
+  ]
+ },
+ {
+  "n": 117,
+  "url": "https://www.sogaenergyteam.com/products/motors-low-center-1-phase-4-poles/",
+  "title": "MOTORS FLAT ASYNCHRONOUS - 1 PHASE - 4 POLES",
+  "header": [
+   "| model | FRAME SIZE MM | KW (S6 60%) – F CLASS 230V 50 HZ | Brake available"
+  ],
+  "rows": [
+   "| MR71 M1SA/4 | 71 | 1,1 | yes",
+   "| MR71 M1SB/4 | 71 | 1,85 | yes"
+  ]
+ },
+ {
+  "n": 118,
+  "url": "https://www.sogaenergyteam.com/products/motors-low-center-3-phase-2-poles/",
+  "title": "MOTORS FLAT ASYNCHRONOUS - 1 PHASE - 4 POLES",
+  "header": [
+   "| model | FRAME SIZE MM | KW (S6 40%) 400V 50 HZ | Brake available"
+  ],
+  "rows": [
+   "| MR65 T1SA/2 | 65 | 1,5 | yes",
+   "| MR65 T1SB/2 | 65 | 2,2 | yes",
+   "| MR65 T1SC/2 | 65 | 3 | yes",
+   "| MR65 T1MA/2 (only feet) | 65 | 3,7 | yes",
+   "| model | FRAME SIZE MM | KW (S6 60%) 400V 50 HZ | Brake available",
+   "| MR71 T1SA/2 | 71 | 4 | yes",
+   "| MR71 T1SB/2 | 71 | 4,5 | yes",
+   "| MR80 T1SB/2 | 80 | 6 | yes",
+   "| MR80 T1MA/2 | 80 | 9 | yes",
+   "| MR93 T1MA/2 | 93 | 8 | yes",
+   "| MR93 T1LA/2 | 93 | 10 | yes",
+   "| MR107 T1MA/2 | 107 | 10,8 | yes",
+   "| MR107 T1MB/2 | 107 | 13,2 | yes",
+   "| MR107 T1MC/2 | 107 | 15,6 | yes",
+   "| MR107 T1MD/2 | 107 | 18 | yes"
+  ]
+ },
+ {
+  "n": 119,
+  "url": "https://www.sogaenergyteam.com/products/motors-low-center-3-phase-4-poles/",
+  "title": "MOTORS FLAT ASYNCHRONOUS - 3 PHASE - 4 POLES",
+  "header": [
+   "| model | FRAME SIZE MM | KW (S6 60%) 400V 50 HZ | Brake available"
+  ],
+  "rows": [
+   "| MR71 T1SA/4 | 71 | 1,85 | yes",
+   "| MR71 T1SB/4 | 71 | 2,4 | yes",
+   "| MR80 T1SA/4 | 80 | 3 | yes",
+   "| MR80 T1SB/4 | 80 | 4 | yes",
+   "| MR80 T1MA/4 | 80 | 5 | yes",
+   "| MR93 T1MA/4 | 93 | 6 | yes",
+   "| MR93 T1LA/4 | 93 | 8 | yes",
+   "| MR107 T1MA/4 | 107 | 8,4 | yes",
+   "| MR107 T1MB/4 | 107 | 9,6 | yes",
+   "| MR107 T1MC/4 | 107 | 10,8 | yes",
+   "| MR107 T1MD/4 | 107 | 12 | yes"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://www.sogaenergyteam.com/products/motors-low-center-3-phase-6-poles/",
+  "title": "MOTORS FLAT ASYNCHRONOUS - 3 PHASE - 4 POLES",
+  "header": [
+   "| model | FRAME SIZE MM | KW (S6 60%) 400V 50 HZ | Brake available"
+  ],
+  "rows": [
+   "| MR93 T1MA/6 | 93 | 2,2 | yes",
+   "| MR93 T1MB/6 | 93 | 3 | yes",
+   "| MR93 T1LA/6 | 93 | 4 | yes",
+   "| MR107 T1MA/6 | 107 | 5,4 | yes",
+   "| MR107 T1MB/6 | 107 | 7,5 | yes"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://www.sogaenergyteam.com/products/motors-with-gearbox-for-iec80-motors/",
+  "title": "MOTORS WITH GEARBOX FOR IEC80 MOTORS",
+  "header": [
+   "| | | 80 FRAME SIZE MOTOR",
+   "| RPM | POLES | KW – F CLASS 50 HZ"
+  ],
+  "rows": [
+   "| 306 | 2 | 0,75",
+   "| 150 | 4 | 0,37- 0,55 – 0,75",
+   "| 100 | 6 | 0,25 – 0,37 – 0,55",
+   "| 73 | 8 | 0,18 – 0,25",
+   "| 308 – 150 | 2-4 | 0,9 / 0,63",
+   "| 150 – 100 | 4-6 | 0,37 / 0,25 – 0,55 / 0,37",
+   "| 150 – 73 | 4-8 | 0,33 / 0,25 – 0,45 / 0,3"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://www.sogaenergyteam.com/products/motors-hollow-shaft-asynchronous-1-phase/",
+  "title": "MOTORS HOLLOW SHAFT ASYNCHRONOUS - 1 PHASE",
+  "header": [
+   "| model | FRAME SIZE MM | KW (S3 75%) – F CLASS 220V 50 HZ | BEARINGS"
+  ],
+  "rows": [
+   "| HSM1 90LA/4 | 90 | 1,5 | 1",
+   "| HSM1 90LB/4 | 90 | 1,85 | 1",
+   "| HSM1 90LC/4 | 90 | 2,2 | 1",
+   "| HSM1 100LB/4 | 100 | 2,2 | 2"
+  ]
+ },
+ {
+  "n": 123,
+  "url": "https://www.sogaenergyteam.com/products/motors-hollow-shaft-asynchronous-3-phase/",
+  "title": "MOTORS HOLLOW SHAFT ASYNCHRONOUS - 3 PHASE",
+  "header": [
+   "| model | FRAME SIZE MM | KW (S6 75%) – F CLASS 230/400V 50 HZ | BEARINGS"
+  ],
+  "rows": [
+   "| HST1 90LC/4 | 90LC | 2,2 | 1",
+   "| HST1 100LB/4 | 100LB | 3 | 2",
+   "| HST1 100LC/4 | 100LC | 4 | 2",
+   "| HST1 112MC/4 | 112MC | 5,5 | 2",
+   "| HST1 132MA/4 | 132MA | 7,5 | 2",
+   "| HST1 132MB/4 | 132MB | 9 | 2",
+   "| HST1 132MC/4 | 132MC | 11 | 2"
+  ]
+ },
+ {
+  "n": 124,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-asynchronous-low-voltage-ac-ip54-2-poles-1-phase/",
+  "title": "ALTERNATORS - CONSTANT SPEED - ASYNCHRONOUS LOW VOLTAGE AC IP54 - 2 POLES 1 PHASE",
+  "header": [
+   "| model | frame size (mm) | kVA (S1) – H class – p.f.1 230V 50 Hz | efficiency 4/4 50 Hz"
+  ],
+  "rows": [
+   "| ASG 80 C2-M | 80 | 1,2 | 68",
+   "| ASG 80 D2-M | 80 | 1,6 | 70",
+   "| ASG 90 SA2-M | 90 | 2 | 72",
+   "| ASG 90 SB2-M | 90 | 2,2 | 72",
+   "| ASG 112 MB2-M | 112 | 3,5 | 73"
+  ]
+ },
+ {
+  "n": 125,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-asynchronous-low-voltage-ac-ip54-2-poles-3-phase/",
+  "title": "ALTERNATORS - CONSTANT SPEED - ASYNCHRONOUS LOW VOLTAGE AC IP54 - 2 POLES 3 PHASE",
+  "header": [
+   "| model | frame size (mm) | kVA (S1) – H class – p.f.1 400V 50 Hz | kVA (S1) – H class – p.f.1 230V 50 Hz | efficiency 4/4 50 Hz"
+  ],
+  "rows": [
+   "| ASG 112 MB2-T | 112 | 4 | 1,6 | 84",
+   "| ASG 132 SB2-T | 132 | 5,5 | 2,2 | 86",
+   "| ASG 132 MB2-T | 132 | 7,5 | 3 | 87",
+   "| ASG 132 MD2-T | 132 | 10 | 4,5 | 87"
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-asynchronous-low-voltage-ac-ip54-4-poles-3-phase/",
+  "title": "ALTERNATORS - CONSTANT SPEED - ASYNCHRONOUS LOW VOLTAGE AC IP54 - 4 POLES THREE PHASE - www.sogaenergyteam.com",
+  "header": [
+   "| model | frame size (mm) | kW (S1) – H class 400V 50 Hz | kW (S1) – H class 230V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz"
+  ],
+  "rows": [
+   "| ASG 132 MA4-T | 132 | 5,5 | 2,2 | 84",
+   "| ASG 132 MB4-T | 132 | 7,5 | 3 | 85",
+   "| ASG 160 LA4-T | 160 | 11 | 4,5 | 89",
+   "| ASG 160 LB4-T | 160 | 15 | 6 | 90",
+   "| ASG 180 LA4-T | 180 | 20 | 8 | 90,5",
+   "| ASG 180 LB4-T | 180 | 25 | 10 | 91"
+  ]
+ },
+ {
+  "n": 127,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-1-phase-brushless-capacitor/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - SINGLE PHASE - BRUSHLESS / CAPACITOR",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz"
+  ],
+  "rows": [
+   "| R80 MBL | 80 | 1,2 | 1,5 | 68 | 69",
+   "| R80 LBL | 80 | 2,2 | 2,7 | 73 | 75",
+   "| EP 2 72L | 100 | 3 | 3,7 | 75 | 76",
+   "| EP 2 95H | 100 | 3,5 | 4,3 | 76 | 78",
+   "| EP 2 95L | 100 | 4,2 | 5,2 | 77 | 78",
+   "| EP 2 C5L | 100 | 5 | 6,5 | 79 | 81",
+   "| EP 2 C5T | 100 | 5,5 | 6,8 | 79 | 81",
+   "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz",
+   "| ER 2 CXT | 100 | 3 | 3,7 | 75 | 76",
+   "| ER 2 CAH | 100 | 3,5 | 4,3 | 77 | 78",
+   "| ER 2 CAT | 100 | 4,2 | 5,2 | 77 | 78",
+   "| ER 2 CBT | 100 | 4,8 | 6 | 78 | 79",
+   "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz",
+   "| EK 2 MCT | 100 | 6 | 7,5 | 79 | 80",
+   "| EK 2 LAT | 100 | 7 | 8,8 | 80 | 83",
+   "| EK 2 LCT | 100 | 8 | 10 | 81 | 83",
+   "| FK 2 MES | 120 | 10 | 12 | 80 | 80",
+   "| FK 2 MFS | 120 | 12 | 14,4 | 81 | 82",
+   "| FK 2 MGS | 120 | 13,5 | 16,2 | 82 | 83",
+   "| FK 2 LA steel | 132 | 15 | 18 | 82 | 83",
+   "| FK 2 LC steel | 132 | 18,5 | 22 | 84 | 85",
+   "| GK 2 LA steel | 140 | 20 | 25 | 83 | 85",
+   "| GK 2 LB steel | 140 | 25 | 31 | 85 | 87"
+  ]
+ },
+ {
+  "n": 128,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-1-phase-brushes-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+  ],
+  "rows": [
+   "| ER 2 CXA | 100 | 3 | 3,7 | 75 | 76",
+   "| ER 2 CAA | 100 | 4,2 | 5,2 | 77 | 78",
+   "| ER 2 CBA | 100 | 4,8 | 6 | 78 | 79",
+   "| EK 2 LAA | 100 | 6 | 7,5 | 79 | 80",
+   "| EK 2 LCA | 100 | 8 | 10 | 81 | 83",
+   "| FK 2 MEA | 120 | 10 | 12 | 80 | 80",
+   "| FK 2 MFA | 120 | 12 | 14,4 | 81 | 82",
+   "| FK 2 MGA | 120 | 13,5 | 16,2 | 82 | 83",
+   "| FKR 2 LA steel | 132 | 15 | 18 | 82 | 83",
+   "| FKR 2 LC steel | 132 | 18,5 | 22 | 84 | 85",
+   "| GKR 2 LA steel | 140 | 20 | 25 | 83 | 85",
+   "| GKR 2 LB steel | 140 | 25 | 31 | 85 | 87"
+  ]
+ },
+ {
+  "n": 129,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-3-phase-brushes-compound/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230/400V 50 Hz | kVA (S1) – H class 277/480V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+  ],
+  "rows": [
+   "| ET 2 MBS | 100 | 5,5 | 6,9 | 75 | 76",
+   "| ET 2 MCS | 100 | 7 | 9 | 78 | 79",
+   "| ET 2 LAS | 100 | 8,5 | 10,5 | 81 | 82",
+   "| ET 2 LBS | 100 | 10 | 13 | 83 | 84",
+   "| FT 2 MES | 120 | 13,5 | 16,2 | 83 | 84",
+   "| FT 2 MFS | 120 | 16 | 19,2 | 84 | 85",
+   "| FT 2 MGS | 120 | 18 | 21,6 | 85 | 86",
+   "| FT 2 LA steel | 132 | 20 | 24 | 85 | 86",
+   "| FT 2 LC steel | 132 | 24 | 29 | 87 | 88",
+   "| GT 2 MB steel | 140 | 27 | 34 | 86 | 87",
+   "| GT 2 LA steel | 140 | 31,5 | 40 | 87 | 88",
+   "| GT 2 LB steel | 140 | 38 | 47,5 | 89 | 90"
+  ]
+ },
+ {
+  "n": 130,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-3-phase-brushes-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230/400V 50 Hz | kVA (S1) – H class 277/480V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+  ],
+  "rows": [
+   "| ET 2 MBR | 100 | 5,5 | 6,9 | 75 | 76",
+   "| ET 2 MCR | 100 | 7 | 9 | 78 | 79",
+   "| ET 2 LAR | 100 | 8,5 | 10,5 | 81 | 82",
+   "| ET 2 LBR | 100 | 10 | 13 | 83 | 84",
+   "| FT 2 MER | 120 | 13,5 | 16,2 | 83 | 84",
+   "| FT 2 MFR | 120 | 16 | 19,2 | 84 | 85",
+   "| FT 2 MGR | 120 | 18 | 21,6 | 85 | 86",
+   "| FTR 2 LA steel | 132 | 20 | 24 | 85 | 86",
+   "| FTR 2 LC steel | 132 | 24 | 29 | 87 | 88",
+   "| GTR 2 MB steel | 140 | 27 | 34 | 86 | 87",
+   "| GTR 2 LA steel | 140 | 31,5 | 40 | 87 | 88",
+   "| GTR 2 LB steel | 140 | 38 | 47,5 | 89 | 90"
+  ]
+ },
+ {
+  "n": 131,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-3-phase-brushless-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+  "header": [
+   "| model | kVA stand by 400V 50 Hz | kVA (S1) – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | leads"
+  ],
+  "rows": [
+   "| FB2 SA | 14 | 12,5 | 84,8 | 6",
+   "| FB2 SB | 15 | 14 | 85,4 | 6",
+   "| FB2 MA | 18 | 16,5 | 86,6 | 6",
+   "| FB2 MB | 21 | 19 | 87,1 | 6",
+   "| IB2 SA | 31 | 28 | 84,2 | 6",
+   "| IB2 SB | 36 | 33 | 85,3 | 6",
+   "| IB2 MA | 48 | 44 | 88,1 | 6",
+   "| IB2 MB | 61 | 55 | 89,5 | 6",
+   "| IB2 LA | 73 | 66 | 90,4 | 6"
+  ]
+ },
+ {
+  "n": 132,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-3-phase-brushless-avr-supercompact/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP23 - 2 POLES - 3 PHASE - BRUSHLESS / AVR SUPERCOMPACT",
+  "header": [
+   "| model | kVA stand by 400V 50 Hz | kVA (S1) – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | LEADS"
+  ],
+  "rows": [
+   "| SK 160 CA2 | 16,6 | 15 | 82,5 | 6",
+   "| SK 160 MA2 | 22,1 | 20 | 83,7 | 6",
+   "| SK 160 LA2 | 31 | 28 | 84,2 | 6",
+   "| SK 160 LB2 | 36 | 33 | 85,3 | 6",
+   "| SK 160 WA2 | 48 | 44 | 88,1 | 6"
+  ]
+ },
+ {
+  "n": 133,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-4-poles-1-phase-brushless-capacitor/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 4 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz"
+  ],
+  "rows": [
+   "| FK 4 MBS | 120 | 5,5 | 6,8 | 77 | 78",
+   "| FK 4 MCS | 120 | 6,5 | 8,1 | 79 | 80",
+   "| FK 4 MDS | 120 | 8 | 10 | 81 | 82",
+   "| FK 4 LC steel | 132 | 10 | 12 | 83 | 84",
+   "| GK 4 MB steel | 140 | 13,5 | 16,2 | 81 | 83",
+   "| GK 4 LA steel | 140 | 16 | 19,2 | 83 | 84",
+   "| GK 4 LB steel | 140 | 17,5 | 21 | 85 | 86"
+  ]
+ }
+]

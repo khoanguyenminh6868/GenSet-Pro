@@ -1,0 +1,13 @@
+{
+  "id": "airman", "country": "JP", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "Airman Corp", "zh": null, "brands": ["AIRMAN", "SDG"],
+  "web": "https://www.airman-usa.com/", "prov": "Niigata", "city": null, "founded": 1938, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Airman USA is the American arm of Airman Corp, founded in Niigata, Japan in 1938.", "Diesel generators and portable air compressors engineered in Japan, built for the American jobsite.", "Tier 4 Final · 45 kVA prime · 64 dB(A) sound-attenuated enclosure for noise-sensitive deployments."]
+  },
+  "str": [["Tổ máy diesel cách âm dòng SDG thiết kế tại Nhật (ví dụ SDG45 45 kVA prime, Tier 4 Final)", 1], ["Thành lập 1938 tại Niigata (Nhật)", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "SDG canopy series", "fuel": "diesel", "types": ["silent"], "src": [1] } ],
+  "miss": ["Trang của Airman USA ghi dải công suất bị lỗi định dạng ('2 kVA>610') nên không ghi; airman.co.jp không kết nối được"],
+  "by": "discover-bot (Claude)"
+}

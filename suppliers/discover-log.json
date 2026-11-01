@@ -1696,5 +1696,59 @@
   "url": "http://www.vantekpower.cn/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "isuzu-motors",
+  "name": "ISUZU MOTORS LIMITED",
+  "url": "https://www.isuzu.co.jp/world/product/industrial/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "lister-petter",
+  "name": "Lister Petter Engine Company LTD",
+  "url": "https://listerpetter.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "airman",
+  "name": "Airman Corp",
+  "url": "https://www.airman-usa.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "elcos",
+  "name": "Elcos s.r.l.",
+  "url": "https://www.elcospowergenerators.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "coelmo",
+  "name": "Gruppi Elettrogeni COELMO",
+  "url": "https://coelmo.it/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "sincro-soga",
+  "name": "Soga S.p.A.",
+  "url": "https://www.sogaenergyteam.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

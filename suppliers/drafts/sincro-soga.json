@@ -1,0 +1,13 @@
+{
+  "id": "sincro-soga", "country": "IT", "role": "alternator_maker", "status": "partial", "conf": "medium",
+  "en": "Soga S.p.A.", "zh": null, "brands": ["SINCRO"],
+  "web": "https://www.sogaenergyteam.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "© Soga S.p.A. 2026", "Featuring over 400 models for a wide variety of applications, SINCRO range is one of the most complete up to 2,600 kVA.", "We date back our technical expertise to 1986 when the first factory was set up in the Northern-East area of Italy."]
+  },
+  "str": [["Đầu phát đồng bộ SINCRO hơn 400 model, tới 2600 kVA", 1], ["Nhà máy đầu tiên ở Đông Bắc Ý năm 1986", 1]],
+  "cert": [],
+  "lines": [ { "k": "alternator", "s": "SINCRO synchronous alternators", "src": [1] } ],
+  "miss": ["Trang chỉ ghi mức tối đa (up to 2,600 kVA), chưa có dải công suất; 1986 là năm lập nhà máy đầu tiên, không ghi làm năm thành lập"],
+  "by": "discover-bot (Claude)"
+}

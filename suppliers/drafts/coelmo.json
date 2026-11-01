@@ -1,0 +1,13 @@
+{
+  "id": "coelmo", "country": "IT", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Gruppi Elettrogeni COELMO", "zh": null, "brands": ["COELMO"],
+  "web": "https://coelmo.it/", "prov": null, "city": null, "founded": 1946, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Copyright© 2026 – Gruppi Elettrogeni COELMO® P.IVA 00339140618", "Since 1946.", "i Gruppi Elettrogeni COELMO, da 3 a 4.500 kVA, sono progettati per rispondere alle sfide del presente e del futuro.", "Potenza PRP: 2–4000 kVA"]
+  },
+  "str": [["Tổ máy COELMO, trang ghi dải 3–4500 kVA (và PRP 2–4000 kVA)", 1], ["Hoạt động từ 1946", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "Gruppi Elettrogeni COELMO", "fuel": "diesel", "p": [2, 4000, "kVA", "prime", 1], "src": [1] } ],
+  "miss": ["Trang ghi hai dải khác nhau (3–4.500 kVA và PRP 2–4000 kVA); số '4.500' có dấu chấm nên lấy dải PRP"],
+  "by": "discover-bot (Claude)"
+}

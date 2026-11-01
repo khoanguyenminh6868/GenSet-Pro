@@ -1,0 +1,95 @@
+{
+  "id": "lister-petter",
+  "country": "GB",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": "Lister Petter Engine Company LTD",
+    "zh": null,
+    "brands": [
+      "Lister Petter",
+      "Earth Max"
+    ]
+  },
+  "website": "https://listerpetter.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel phát điện Earth Max 1020–2220 kW (1500/1800 vòng/phút), cho tổ máy tới 2750 kVA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Lister và Petter hợp nhất năm 1986; từng là động cơ của tổ máy FG Wilson thập niên 1990",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Earth Max Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1020,
+        "max": 2220,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa lưu trang các dòng động cơ nhỏ; năm 1986 là năm hợp nhất, không ghi vào năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://listerpetter.com/lister-petter-engine-company-ltd-launches-a-new-range-of-diesel-engines/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Lister Petter Engine Company LTD launches a new range of diesel engines",
+        "Engineered for fixed-speed 1500/1800 rpm applications where downtime is not an option, Earth Max Series delivers uncompromising performance from 1020 kW to 2220 kW",
+        "supporting generator installations up to 2750 kVA."
+      ],
+      "file": "sources/lister-petter/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://listerpetter.com/company/history/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "In 1986, their legacies merged to form Lister Petter",
+        "By the 1990s, Lister Petter engines were the heartbeat of FG Wilson’s industry-leading diesel generators"
+      ],
+      "file": "sources/lister-petter/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
