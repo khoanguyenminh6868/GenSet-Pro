@@ -1,0 +1,83 @@
+{
+  "id": "xinhengxin-fujian",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "FUJIAN XINHENGXIN MOTOR CO.,LTD.",
+    "zh": "福建鑫恒鑫电机有限公司",
+    "brands": [
+      "HENSING"
+    ]
+  },
+  "website": "https://www.hensingpower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": 1991,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel làm mát nước HENSING (Cummins, Volvo, Perkins) và đầu phát",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 1991 tại Phúc An",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "HENSING diesel water-cooled generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "VOLVO",
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng CCCME (hạng B); website hensingpower.com có trang sản phẩm gần như trống; chưa có dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cccme.cn/shop/cn2020g4348/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "FUJIAN XINHENGXIN MOTOR CO.,LTD.福建鑫恒鑫电机有限公司",
+        "Fujian Xinhengxin Motor Co., Ltd. ,founded in 1991, is one of the integrated power generation equipment manufacturing enterprises",
+        "HENSING-Brand diesel water-cooled series generator sets are the companys flagship products, with international famous brand engines, including Cummins, VOLVO, Perkins and so on.",
+        "Address:SHANGCUN VILLAGE QIN XI YANG INDUSTRY AREA, FUAN CITY ,FUJIAN,CHINA"
+      ],
+      "file": "sources/xinhengxin-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

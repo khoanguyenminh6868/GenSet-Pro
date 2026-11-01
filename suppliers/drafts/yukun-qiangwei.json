@@ -1,0 +1,55 @@
+{
+  "id": "yukun-qiangwei",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "FUJIAN YUKUN QIANGWEI MOTOR CO., LTD.",
+  "zh": "福建省煜坤强威电机有限公司",
+  "brands": [],
+  "web": null,
+  "prov": "Fujian",
+  "city": "Fuan",
+  "founded": 2010,
+  "fsrc": [
+    1
+  ],
+  "related": [],
+  "src": {
+    "1": [
+      "B",
+      "FUJIAN YUKUN QIANGWEI MOTOR CO., LTD.福建省煜坤强威电机有限公司",
+      "Fujian Yukun Qiangwei Motor Co., Ltd. is a power generation equipment industry and trade enterprise integrating R & D, production, sales and export. It was founded in May 2010",
+      "Address:No. 2, Jinye Road, Tiehu Village, Chengyang Town,Fuan City",
+      "Main Products: Diesel generator , alternator"
+    ]
+  },
+  "str": [
+    [
+      "Nghiên cứu, sản xuất, xuất khẩu thiết bị phát điện (tổ máy diesel, đầu phát) tại Phúc An, thành lập 5/2010",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Diesel generator",
+      "fuel": "diesel",
+      "src": [
+        1
+      ]
+    },
+    {
+      "k": "alternator",
+      "s": "Alternator",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"
+  ],
+  "by": "discover-bot (Claude)"
+}
