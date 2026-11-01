@@ -1,0 +1,68 @@
+{
+  "id": "abz-power",
+  "country": "DE",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "ABZ Aggregate-Bau GmbH & Co. KG",
+    "zh": null,
+    "brands": [
+      "ABZ"
+    ]
+  },
+  "website": "https://www.abz-power.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy phát điện xuất khẩu tới hơn 70 nước, hoạt động 40 năm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Stromerzeugungsanlagen",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, năm thành lập cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.abz-power.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "ABZ Aggregate-Bau GmbH & Co. KG",
+        "Seit 40 Jahren vertrauen uns Kunden aus mehr als 70 L&auml;ndern"
+      ],
+      "file": "sources/abz-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

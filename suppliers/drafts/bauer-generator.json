@@ -1,0 +1,5 @@
+{"id":"bauer-generator","country":"DE","role":"genset_oem","status":"partial","conf":"medium","en":"Bauer Generatoren","zh":null,"brands":["Bauer"],"web":"https://bauer-generator.de/","prov":null,"city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Bauer Generatoren - Ihr Hersteller für Notstromaggregate","Mit dem GFS-50 ATS von Bauer Generatoren sind Sie dank 62,5 kVA Leistung immer auf der sicheren Seite."]},
+"str":[["Tổ máy dự phòng cỡ nhỏ (ví dụ GFS-50 ATS 62,5 kVA), bán trực tiếp từ nhà sản xuất",1]],"cert":[],
+"lines":[{"k":"genset","s":"Notstromaggregate","src":[1]}],
+"miss":["Trang chủ không ghi tên pháp nhân đầy đủ, dải công suất, năm thành lập"],"by":"discover-bot (Claude)"}

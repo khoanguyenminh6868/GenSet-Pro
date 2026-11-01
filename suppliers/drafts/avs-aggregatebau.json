@@ -1,0 +1,5 @@
+{"id":"avs-aggregatebau","country":"DE","role":"genset_oem","status":"verified","conf":"medium","en":"AVS Aggregatebau GmbH","zh":null,"brands":["AVS"],"web":"https://www.avs-aggregatebau.de/","prov":null,"city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","AVS Aggregatebau GmbH","Notstromaggregate & Stromerzeuger vom Hersteller | AVS","Wir bieten Stromaggregate im Leistungsbereich von 20 bis 3.750 kVA – wahlweise als stationäre Lösung, mit Haube, im Container oder in mobiler, fahrbarer Ausführung.","Fahrbare Aggregate 20-125 kVA"]},
+"str":[["Tổ máy 20–3750 kVA: tĩnh tại, vỏ che, container, di động",1],["Có cho thuê tổ máy 40–2000 kVA",1]],"cert":[],
+"lines":[{"k":"genset","s":"Stromaggregate","fuel":"diesel","types":["silent","container"],"src":[1]},{"k":"genset","s":"Fahrbare Aggregate","fuel":"diesel","p":[20,125,"kVA","unspecified",1],"src":[1]}],
+"miss":["Số '3.750' có dấu chấm nên dải toàn dòng chỉ ghi trong thế mạnh; trang chủ không ghi năm thành lập"],"by":"discover-bot (Claude)"}
