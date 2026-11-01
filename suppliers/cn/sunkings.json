@@ -473,5 +473,52 @@
         "| Starting System | 24V DC Electric Start"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "| Controller brands | Deepsea/Smartgen/ComAp etc.",
+      "src": [
+        103
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "Controller by : Smartgen / Deepsea / Camap / Deif .",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": null,
+      "text": "Deif",
+      "line": "Controller by : Smartgen / Deepsea / Camap / Deif .",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "| Cooling System | Closed Cycle Water Cooled | Control System | Smartgen HGM6110",
+      "src": [
+        111
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110N",
+      "text": "HGM6110N",
+      "line": "| SHX-1250-3 | 1375 | 1100 | 1250 | 1000 | KTA50-G3 | FLD634G | HGM6110N",
+      "src": [
+        108
+      ]
+    }
   ]
 }

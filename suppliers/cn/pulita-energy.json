@@ -222,5 +222,18 @@
         "| Weight (KG) | 780 | 780"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "DEIF",
+      "model": "SGC-420",
+      "text": "SGC420",
+      "line": "| Control System | The standard control panel is with functions including manual keys, alarms, protections, auto start and shut down, showing running parameters in LCD Display by DEIF SGC420 Controller.",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    }
   ]
 }

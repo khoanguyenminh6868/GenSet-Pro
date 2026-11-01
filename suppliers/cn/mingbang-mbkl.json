@@ -657,5 +657,34 @@
         "| Insulation Class/Protection Grade | H /IP22 or F/IP21"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "c. Equipped with optional advanced diesel genset control panel brands: Deepsea, Smartgen, ComAp etc. ATS system, remote control system, parallel operation system. High level protection system as electric leakage",
+      "src": [
+        122
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "c. Equipped with optional advanced diesel genset control panel brands: Deepsea, Smartgen, ComAp etc. ATS system, remote control system, parallel operation system. High level protection system as",
+      "src": [
+        122
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "c. Equipped with optional advanced diesel genset control panel brands: Deepsea, Smartgen, ComAp etc. ATS system, remote control system, parallel operation system. High level protection system as electric",
+      "src": [
+        122
+      ]
+    }
   ]
 }

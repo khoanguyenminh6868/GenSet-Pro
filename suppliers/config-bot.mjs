@@ -95,7 +95,7 @@ function catalogMd(cat, cap, brands) {
   const out = [`# Danh mục trong hệ thống${cap ? ` (lọc theo tổ máy ${cap.value} ${cap.unit}, từ 95% đến 140%)` : ""}`, ""];
   // A table's header is written once, at the end (it was repeated on every row, 400 KB of 480); a header that took in
   // the table's rows (some run to 10 000 characters) is cut, its column titles come first.
-  const headers = new Map();
+  const headers = new Map(), shown = new Set();
   for (const [title, list] of [["Động cơ", pick(cat.engines)], ["Đầu phát", pick(cat.alternators)]]) {
     out.push(`## ${title} (${list.length})`, "");
     for (const e of list) {
@@ -104,6 +104,7 @@ function catalogMd(cat, cap, brands) {
       const seen = new Set(), uses = (cap ? e.uses.slice().sort((a, b) => Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value)) : e.uses)
         .filter((u) => { const k = `${u.supplierId}\n${u.line || (u.lines?.rows || []).join("\n")}`; return !seen.has(k) && seen.add(k); });
       for (const u of uses.slice(0, 8)) {
+        shown.add(u.supplierId);
         out.push(`- supplierId: ${u.supplierId}, n: ${u.n}${u.genset ? `, tổ máy: ${u.genset}` : ""}${u.other ? `, đi kèm: ${u.other}` : ""}`);
         if (u.header?.length) headers.set(`${u.supplierId} n ${u.n}`, u.header.join(" "));
         out.push(u.line ? `  line: ${u.line}` : `  bảng một model: ${(u.lines?.rows || []).join(" ; ")}`);
@@ -115,6 +116,25 @@ function catalogMd(cat, cap, brands) {
   }
   out.push("## Tiêu đề bảng (header của mỗi bảng supplierId n, dùng được cho sourceQuote)", "");
   for (const [k, h] of headers) out.push(`- ${k}: ${h.length > 600 ? h.slice(0, 600) + " …" : h}`);
+  out.push("", controllersMd(cat.controllers || [], shown));
+  return out.join("\n");
+}
+// Bộ điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
+// names it; a configuration's controller and its "Bộ điều khiển" check quote one of these lines.
+// Only the suppliers whose rows catalog.md shows, so the file stays small.
+function controllersMd(all, ids) {
+  const list = all.filter((e) => e.uses.some((u) => ids.has(u.supplierId)));
+  const out = [`## Bộ điều khiển (${list.length}) — của các nhà cung cấp có dòng ở trên, dòng nguyên văn trên trang của họ`, ""];
+  for (const e of list) {
+    out.push(`### ${e.model}${e.make ? ` — hãng: ${e.make}` : ""}`);
+    const seen = new Set();
+    for (const u of e.uses) {
+      if (!ids.has(u.supplierId) || seen.has(u.supplierId) || seen.size >= 8) continue;
+      seen.add(u.supplierId);
+      out.push(`- supplierId: ${u.supplierId}, n: ${u.n}${u.genset ? `, tổ máy: ${u.genset}` : ""}${u.other ? `, động cơ trong dòng: ${u.other}` : ""}`, `  line: ${u.line}`);
+    }
+    out.push("");
+  }
   return out.join("\n");
 }
 // The suppliers behind the catalog rows, as recorded in the supplier DB (every fact there has a source).
@@ -125,7 +145,8 @@ function suppliersMd(suppliers) {
     const vn = (s.vietnam?.distributors || []).map((d) => d.name).join("; "), hq = [s.hq?.city, s.hq?.province].filter(Boolean).join(", ");
     out.push(`- ${s.id}: ${s.names?.en || s.names?.zh || s.id} — vai trò: ${s.role}, trạng thái: ${s.status}, độ tin cậy: ${s.confidence}`
       + `${s.website ? `, website: ${s.website}` : ""}${hq ? `, trụ sở: ${hq}` : ""}${s.founded ? `, thành lập: ${s.founded}` : ""}`
-      + `${vn ? `, đại lý tại Việt Nam: ${vn}` : ""}${s.certifications?.length ? `, chứng nhận: ${s.certifications.map((c) => c.name).join("; ")}` : ""}`);
+      + `${vn ? `, đại lý tại Việt Nam: ${vn}` : ""}${s.certifications?.length ? `, chứng nhận: ${s.certifications.map((c) => c.name).join("; ")}` : ""}`
+      + `${s.controllers?.length ? `, bộ điều khiển: ${s.controllers.map((c) => c.model || `${c.brand} (không ghi model)`).join("; ")}` : ""}`);
   }
   return out.join("\n");
 }
@@ -205,6 +226,11 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       const t = tables.find((x) => [...(x.header || []), ...x.rows].some((l) => norm(l) === norm(src.line)));
       return t ? norm([...(t.header || []), src.line, t.title].join(" \n ")) : null;
     }
+    // A controller (Khoa, 2026-11-01): one of the lines the supplier's `controllers` were read from (controllers.mjs).
+    if (src.kind === "controller") {
+      const c = (sup.get(src.supplierId)?.controllers || []).find((x) => norm(x.line) === norm(src.line) && (src.n == null || (x.src || []).includes(Number(src.n))));
+      return c ? norm(c.line) : null;
+    }
     if (src.kind === "internet") {
       const txt = src.file ? readWeb(src.file) : null;
       if (!txt) return null;
@@ -233,14 +259,16 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   result.configs = (result.configs || []).slice(0, 10);
   for (const c of result.configs) {
     const texts = {};
-    for (const part of ["engine", "alternator", "genset"]) {
+    for (const part of ["engine", "alternator", "genset", "controller"]) {
       const p = c[part];
       if (!p) continue;
       texts[part] = sourceText(p.src);
       if (!texts[part]) { p.unverified = true; problems.push(`#${c.rank} ${part} ${p.model}: không tìm thấy nguồn (${p.src?.kind || "?"})`); continue; }
       if (!texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
       if (p.src?.kind === "internet" && p.src.quote && !texts[part].includes(norm(p.src.quote))) { p.unverified = true; problems.push(`#${c.rank} ${part}: câu trích web không có trong trang đã lưu`); }
-      if (p.make && !texts[part].includes(norm(p.make).split(/[\s-]/)[0])) { problems.push(`#${c.rank} ${part}: hãng ${p.make} không ghi trong nguồn`); p.makeUnverified = true; }
+      // A controller's make may come from its model code (DSE… is Deep Sea, HGM… SmartGen), as web/catalog.js reads it.
+      const makeOfCode = part === "controller" && CAT.controllersIn(p.model).some((x) => x.model && x.brand === p.make);
+      if (p.make && !makeOfCode && !texts[part].includes(norm(p.make).split(/[\s-]/)[0])) { problems.push(`#${c.rank} ${part}: hãng ${p.make} không ghi trong nguồn`); p.makeUnverified = true; }
     }
     for (const x of c.checks || []) {
       const reasons = [];
@@ -302,6 +330,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       if (!t) { s.unverified = true; problems.push(`#${c.rank}: dòng bảng của ${s.supplierId} không có trong CSDL`); continue; }
       if (c.engine?.model && !row.includes(squash(c.engine.model))) { s.unverified = true; problems.push(`#${c.rank}: dòng của ${s.supplierId} không ghi động cơ ${c.engine.model}`); }
       s.hasAlternator = !!c.alternator?.model && row.includes(squash(c.alternator.model));
+      const ck = c.controller?.model && CAT.keyOf(c.controller.model);
+      s.hasController = !!ck && (row.includes(squash(c.controller.model)) || (sup.get(s.supplierId).controllers || []).some((x) => x.model && CAT.keyOf(x.model) === ck));
     }
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
@@ -329,7 +359,8 @@ export function catalogRecords(entries, { existing, readWeb, today }) {
     const id = String(e?.id || "");
     if (!/^[a-z0-9-]+$/.test(id)) { out.push({ id, error: "id không hợp lệ" }); continue; }
     const old = existing.get(id) || null, files = {}, nmap = new Map(), sources = [];
-    let next = Math.max(2000, ...(old?.sources || []).map((s) => s.n)) + 1, error = "";
+    // 2001–2999: pages of internet finds; 3001–3999 belong to controllers.mjs --crawl.
+    let next = Math.max(2000, ...(old?.sources || []).map((s) => s.n).filter((n) => n < 3000)) + 1, error = "";
     for (const s of e.sources || []) {
       const txt = /^web\/\d+\.txt$/.test(s.file || "") ? readWeb(s.file) : null;
       if (!txt) { error = `nguồn ${s.n}: không có trang đã lưu ${s.file}`; break; }
@@ -342,12 +373,13 @@ export function catalogRecords(entries, { existing, readWeb, today }) {
     const re = (src) => (Array.isArray(src) ? src.map((n) => nmap.get(Number(n)) ?? -1) : src);
     const lines = (e.productLines || []).map((p) => ({ ...p, src: re(p.src), ...(p.power ? { power: { ...p.power, src: re(p.power.src) } } : {}) }));
     const tables = (e.specTables || []).map((t) => ({ ...t, n: nmap.get(Number(t.n)) ?? -1 }));
+    const ctrls = (e.controllers || []).map((c) => ({ brand: c.brand, model: c.model || null, text: c.text, line: c.line, src: re(c.src) }));
     const rec = old
-      ? { ...old, sources: [...old.sources, ...sources], productLines: [...(old.productLines || []), ...lines], specTables: [...(old.specTables || []), ...tables], checkedAt: today }
+      ? { ...old, sources: [...old.sources, ...sources], productLines: [...(old.productLines || []), ...lines], specTables: [...(old.specTables || []), ...tables], ...(ctrls.length ? { controllers: [...(old.controllers || []), ...ctrls] } : {}), checkedAt: today }
       : { country: e.country, role: e.role, status: "partial", names: e.names || {}, website: e.website || null, hq: e.hq || { province: null, city: null },
         founded: null, relatedIds: [], strengths: (e.strengths || []).map((x) => ({ ...x, src: re(x.src) })), productLines: lines,
         certifications: (e.certifications || []).map((x) => ({ ...x, src: re(x.src) })), exportMarkets: [], missing: e.missing || [],
-        sources, confidence: e.confidence, checkedAt: today, checkedBy: "config-bot", specTables: tables, id };
+        sources, confidence: e.confidence, checkedAt: today, checkedBy: "config-bot", specTables: tables, ...(ctrls.length ? { controllers: ctrls } : {}), id };
     out.push({ id, rec, files, nmap, isNew: !old, tables: tables.length });
   }
   return out;
@@ -495,7 +527,7 @@ export async function findCheck(dir, suppliers, cap) {
     for (const [f, txt] of Object.entries(x.files)) { fs.mkdirSync(path.dirname(path.join(chk, f)), { recursive: true }); fs.writeFileSync(path.join(chk, f), txt, "utf8"); }
     const own = new Set(x.nmap.values()), isOwn = (src) => Array.isArray(src) && src.length && src.every((n) => own.has(n));
     const rec = x.isNew ? x.rec : { ...x.rec, sources: x.rec.sources.filter((s) => own.has(s.n)), productLines: (x.rec.productLines || []).filter((p) => isOwn(p.src)),
-      specTables: (x.rec.specTables || []).filter((t) => own.has(t.n)), strengths: [], certifications: [], contacts: [], vietnam: undefined, founded: null };
+      specTables: (x.rec.specTables || []).filter((t) => own.has(t.n)), controllers: (x.rec.controllers || []).filter((c) => isOwn(c.src)), strengths: [], certifications: [], contacts: [], vietnam: undefined, founded: null };
     out.push({ id: x.id, isNew: x.isNew, errors: checkRecord(rec, path.join(chk, "cn", `${x.id}.json`)).errors, fits: fitsCap(rec, cap) });
   }
   return out;
@@ -516,7 +548,9 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
     const uses = e.uses.filter((u) => ids.has(u.supplierId) && near(u) && lineOf(u, e.model))
       .sort((a, b) => (cap ? Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value) : 0));
     if (!uses.length) continue;
-    const entry = (u) => ({ supplierId: u.supplierId, n: u.n, line: lineOf(u, e.model), fromFind: true, why: `Bổ sung từ Tìm NCC: dòng bảng của nhà cung cấp ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.` });
+    // The controllers the supplier's pages name (controllers.mjs) are said too, as recorded.
+    const ctrlOf = (id) => [...new Set((records.find((r) => r.id === id)?.controllers || []).filter((c) => c.model).map((c) => c.model))];
+    const entry = (u) => ({ supplierId: u.supplierId, n: u.n, line: lineOf(u, e.model), fromFind: true, why: `Bổ sung từ Tìm NCC: dòng bảng của nhà cung cấp ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.${ctrlOf(u.supplierId).length ? ` Bộ điều khiển trên trang của nhà cung cấp: ${ctrlOf(u.supplierId).join(", ")}.` : ""}` });
     const old = configs.find((c) => c.engine?.model && keyOf(c.engine.model) === e.key);
     if (old) {
       old.suppliers = old.suppliers || [];
@@ -531,6 +565,7 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
       engine: { model: e.model, ...(e.make ? { make: e.make } : {}), src },
       ...(u.other ? { alternator: { model: u.other, src } } : {}),
       ...(u.genset ? { genset: { model: u.genset, src } } : {}),
+      ...((ctl) => (ctl ? { controller: { model: ctl.model, make: ctl.brand, src } } : {}))(CAT.controllersIn(line).find((x) => x.model)),
       checks: [{ item: "Công suất", part: "genset", requirement: cap ? `khoảng ${cap.value} ${cap.unit}` : "", offered: powerText(u.power) || "—", sourceQuote: line, status: "unclear",
         note: "Bổ sung tự động từ Tìm NCC, không dùng AI: công suất nhỏ nhất ghi trong dòng bảng từ 100% đến 140% công suất của gói. Các yêu cầu khác của HSMT chưa được đối chiếu (bấm Gợi ý lại nếu cần)." }],
       suppliers: sups.slice(0, 3),

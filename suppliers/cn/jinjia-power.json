@@ -321,6 +321,16 @@
         "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJYD-9GF | 9 | 9.9 | 11.2 | YD380D | 3 | 1.532 | 262 | 560 | 1900*730*1130"
       ],
       "file": "sources/jinjia-power/118.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.jinjiapower.com/parallel-system.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | DeepSea DSE7310 / DSE7320 / DSE8610"
+      ],
+      "file": "sources/jinjia-power/3001.md"
     }
   ],
   "confidence": "medium",
@@ -975,6 +985,35 @@
         "| JJYD-40GF | 40 | 44 | 50 | Y4102ZD | 4 | 3.86 | 240 | 920 | 2250*850*1280",
         "| JJYD-50GF | 50 | 55 | 62.5 | Y4105ZLD | 4 | 3.857 | 240 | 960 | 2250*850*1280",
         "| JJYD-60GF | 60 | 66 | 75 | YD4EZLD | 4 | 3.86 | 240 | 980 | 2250*850*1280"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7310",
+      "text": "DSE7310",
+      "line": "| Controller | DeepSea DSE7310 / DSE7320 / DSE8610",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "| Controller | DeepSea DSE7310 / DSE7320 / DSE8610",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "| Controller | DeepSea DSE7310 / DSE7320 / DSE8610",
+      "src": [
+        3001
       ]
     }
   ]

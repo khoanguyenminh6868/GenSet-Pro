@@ -253,5 +253,45 @@
         "| Noise Level @7m (Silent) | 78 dBA"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "InteliGen",
+      "text": "InteliGen",
+      "line": "Yes, with the appropriate synchronizing controller (DSE 8610, ComAp InteliGen, or equivalent), this KMS generator can operate in parallel with other generators. Parallel operation requires:",
+      "src": [
+        105
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DeepSea 6020",
+      "line": "| Controller | DeepSea 6020 / SmartGen HGM6120",
+      "src": [
+        101,
+        104
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE 8610",
+      "line": "Yes, with the appropriate synchronizing controller (DSE 8610, ComAp InteliGen, or equivalent), this KMS generator can operate in parallel with other generators. Parallel operation",
+      "src": [
+        105
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120",
+      "text": "HGM6120",
+      "line": "| Controller | DeepSea 6020 / SmartGen HGM6120",
+      "src": [
+        101,
+        104
+      ]
+    }
   ]
 }

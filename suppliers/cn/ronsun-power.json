@@ -1890,5 +1890,34 @@
         "Protection Level / Insulation Class: IP23 / H"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "Smart Control: Equipped with an intelligent LCD control panel (DeepSea/ComAp) for automatic start/stop and remote monitoring.",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "DeepSea",
+      "line": "Smart Control: Equipped with an intelligent LCD control panel (DeepSea/ComAp) for automatic start/stop and remote monitoring.",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SmartGen",
+      "line": "- Control System: Equipped with SmartGen/DeepSea controllers for intelligent monitoring and protection.",
+      "src": [
+        139
+      ]
+    }
   ]
 }

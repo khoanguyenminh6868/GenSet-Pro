@@ -806,6 +806,16 @@
         "| | Genset Model | Engine Brand | Prime Power | Standby Power | Engine Model | Freq. | Phase | Specificmation Download | SEO ID"
       ],
       "file": "sources/elitech-power/1001.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://elitechpower.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Cummins generator hot for its global service and warranty. With DeepSea 7320 MKII controllers…"
+      ],
+      "file": "sources/elitech-power/3001.md"
     }
   ],
   "confidence": "medium",
@@ -2339,6 +2349,39 @@
         "| EPS20YCA-3 | Yuchai | 20kVA | 20kVA | YC4V35-D20 | 50Hz | 3-Phase | DOWNLOAD PDF | eps20yca-3-yuchai-20kva-diesel-generator-specs",
         "| EPS20YCA-3B | Yuchai | 20kVA | 24kVA | YC4V35-D20 | 50Hz | 3-Phase | DOWNLOAD PDF | eps20yca-3b-yuchai-20kva-diesel-generator-specs",
         "| EPS28YCA-3 | Yuchai | 28kVA | 30kVA | YC4V35-D20 | 50Hz | 3-Phase | DOWNLOAD PDF | eps28yca-3-yuchai-28kva-diesel-generator-specs"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "• Controller: Integrated digital auto monitoring. (SmartGen/DeepSea/ComAp)",
+      "src": [
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DeepSea 7320",
+      "line": "Cummins generator hot for its global service and warranty. With DeepSea 7320 MKII controllers…",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SmartGen",
+      "line": "• Controller: Integrated digital auto monitoring. (SmartGen/DeepSea/ComAp)",
+      "src": [
+        102,
+        103,
+        104
       ]
     }
   ]

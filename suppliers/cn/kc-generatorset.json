@@ -326,6 +326,26 @@
         "| Engine: SC7H250D2 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
       ],
       "file": "sources/kc-generatorset/124.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.kcgeneratorset.com/product/shanghai-diesel-engine-generator-set/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "extra air/oil/fuel filters, external daily fuel tank, water-fuel separator, and multiple controller options including DSE6020, DSE7320, and DSE8610. Unit types encompass open type, silent type, mobile trailer type, and containerized type, with"
+      ],
+      "file": "sources/kc-generatorset/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.kcgeneratorset.com/product/chongqing-pangu-diesel-generator-set/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Control System | SmartGen HGM6110 Intelligent Controller | Deep Sea DSE7320 Controller"
+      ],
+      "file": "sources/kc-generatorset/3002.md"
     }
   ],
   "confidence": "medium",
@@ -714,6 +734,44 @@
         "| Altitude requirements | ≤1000m | Excitation system | Brushless self-excited magnet | Insulation class/temperature rise class | H/H | Telephone Influence Factor (TIF) | ＜50 | Telephone harmonic coefficient THF | ＜2% | Unit performance parameters | Voltage setting range",
         "| ≥±5% | Steady-state voltage regulation | ≤±1% | Transient voltage deviation (100% sudden power reduction) | ≤+25% | Transient voltage deviation (sudden power increase) | ≤-20% | Voltage recovery time (100% sudden power reduction) | ≤6S | Voltage recovery time (sudden power increase) | ≤6S | Frequency setting range",
         "| 0-5% | Steady-state frequency band | ≤1.5% | Transient frequency deviation (100% sudden power reduction) | ≤+12% | Transient frequency deviation (sudden power increase) | ≤-10% | Frequency recovery time (100% power drop) | ≤5S | Frequency recovery time (sudden power increase) | ≤5S | Unit weight"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "extra air/oil/fuel filters, external daily fuel tank, water-fuel separator, and multiple controller options including DSE6020, DSE7320, and DSE8610. Unit types encompass open type, silent type, mobile trailer type, and containerized type, with",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "filters, external daily fuel tank, water-fuel separator, and multiple controller options including DSE6020, DSE7320, and DSE8610. Unit types encompass open type, silent type, mobile trailer type, and containerized type, with voltage",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "external daily fuel tank, water-fuel separator, and multiple controller options including DSE6020, DSE7320, and DSE8610. Unit types encompass open type, silent type, mobile trailer type, and containerized type, with voltage options",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "| Control System | SmartGen HGM6110 Intelligent Controller | Deep Sea DSE7320 Controller",
+      "src": [
+        3002
       ]
     }
   ]

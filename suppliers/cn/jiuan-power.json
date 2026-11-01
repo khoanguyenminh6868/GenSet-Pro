@@ -440,6 +440,26 @@
         "| Model | CDP900S"
       ],
       "file": "sources/jiuan-power/135.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.jiuangenerator.com/products",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "diesel engine, coupled with a genuine brushless Stamford S4L1D-G41 alternator. Automated by the intelligent SmartGen HGM6120CAN digital AMF controller with J1939 CANbus engine telemetry. Designed for mission-critical standby power backup and"
+      ],
+      "file": "sources/jiuan-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.jiuangenerator.com/diesel-generator-set",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "diesel engine, coupled with a genuine brushless Stamford S4L1D-G41 alternator. Automated by the intelligent SmartGen HGM6120CAN digital AMF controller with J1939 CANbus engine telemetry. Designed for mission-critical standby power backup and"
+      ],
+      "file": "sources/jiuan-power/3003.md"
     }
   ],
   "confidence": "medium",
@@ -1297,6 +1317,95 @@
         "| Weight (KGS) | 9000kg",
         "| Noise (Db) | ≤ 72db@7m",
         "Power: From 20kVA to 5000kVA (5MW)."
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "Separate insulated control compartment inside container pre-installed Deepsea DSE7320 LCD controller (Smartgen/ComAp optional) with bilingual English-Chinese screen, real-time monitoring of voltage, current, coolant/oil temp, oil",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "practice. Each CDS55KVA is constructed as an ISO8528 certified genset — the SDEC 4ZT3.5-G21 engine, Deepsea DSE6120 controller, and single-bearing full-copper alternator are matched by specification and sequentially load-aged at 25%,",
+      "src": [
+        111
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7220",
+      "text": "Deepsea7220",
+      "line": "Factory-fitted Deepsea7220 LCD controller (Smartgen/ComAp optional) with bilingual English-Chinese display, real-time monitoring of voltage,",
+      "src": [
+        109
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Separate insulated control compartment inside container pre-installed Deepsea DSE7320 LCD controller (Smartgen/ComAp optional) with bilingual English-Chinese screen, real-time monitoring of voltage,",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120",
+      "text": "HGM6120",
+      "line": "voltage (±1% steady-state error) and THD below 5%. This 275KVA Perkins generator adopts Deep Sea DSE7320 or SmartGen HGM6120 controllers to monitor phase voltage, current, frequency, power factor, oil pressure, coolant temperature and runtime.",
+      "src": [
+        123
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120CAN",
+      "text": "HGM6120CAN",
+      "line": "diesel engine, coupled with a genuine brushless Stamford S4L1D-G41 alternator. Automated by the intelligent SmartGen HGM6120CAN digital AMF controller with J1939 CANbus engine telemetry. Designed for mission-critical standby power backup and",
+      "src": [
+        131,
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120CAN-4G",
+      "text": "HGM6120CAN-4G",
+      "line": "brushless alternators—the genuine Leroy-Somer TAL-A473-E or Stamford S5L1D-E41. Fully orchestrated by the SmartGen HGM6120CAN-4G digital AMF controller with integrated 4G IoT cloud telemetry and ECU direct CANbus communication. Engineered for",
+      "src": [
+        133,
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM6120N",
+      "line": "Operational automation is spearheaded by an intelligent digital AMF control panel (standard with SmartGen HGM6120N or Deep Sea DSE6120 ). Designed for seamless single-unit emergency standby and utility monitoring, the module",
+      "src": [
+        129
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510N",
+      "text": "HGM9510N",
+      "line": "and coupled with a genuine brushless Stamford S6L1D-C41 alternator. Fully integrated with an intelligent SmartGen HGM9510N digital paralleling and load-sharing control system. Engineered for continuous industrial prime power and critical",
+      "src": [
+        135,
+        3002,
+        3003
       ]
     }
   ]

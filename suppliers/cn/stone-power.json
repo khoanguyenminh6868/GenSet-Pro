@@ -1034,5 +1034,60 @@
         "| Amps | 157-171 | 271-295 | 312-342"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "1) Controller Brand: Smartgen, Deepsea,ComAp",
+      "src": [
+        107
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "| Control System | DSE6020 / DSE7320",
+      "src": [
+        103,
+        105,
+        107
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "| Control System | DSE6020 / DSE7320",
+      "src": [
+        103,
+        105,
+        107
+      ]
+    },
+    {
+      "brand": "Harsen",
+      "model": null,
+      "text": "Harsen",
+      "line": "2000KW 2500KVA Diesel Generator Set Deepsea Harsen Smartgen Control Panel",
+      "src": [
+        102,
+        104,
+        110
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "Smartgen 6110",
+      "line": "| Control System: | Smartgen 6110 | Frequency: | 50HZ/1500rpm",
+      "src": [
+        121,
+        122,
+        123
+      ]
+    }
   ]
 }

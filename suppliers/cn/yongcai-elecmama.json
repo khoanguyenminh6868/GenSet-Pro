@@ -2665,5 +2665,47 @@
         3
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "Deepsea 6120",
+      "line": "3). Auto-Start controlling module with ATS interface, Chinese Smartgen HGM 6120N or UK Deepsea 6120, module settings of low oil level alarm, at the same time install the necessary oil level sensor, anyway, many protections and alarm settings for genset",
+      "src": [
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120 MKII",
+      "text": "DSE6120 MKII",
+      "line": "Smart control panel of genset, adopts genuine UK Deepsea DSE6120 MKII, control module for genset with many protecting functions etc.",
+      "src": [
+        143
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM 6120N",
+      "line": "3). Auto-Start controlling module with ATS interface, Chinese Smartgen HGM 6120N or UK Deepsea 6120, module settings of low oil level alarm, at the same time install the necessary oil level sensor, anyway, many protections and alarm settings for genset",
+      "src": [
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120U",
+      "text": "HGM 6120U",
+      "line": "3). Auto-Start controlling module, Chinese Smartgen brand, model is HGM 6120U as default",
+      "src": [
+        117
+      ]
+    }
   ]
 }

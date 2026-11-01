@@ -181,5 +181,17 @@
         "| KE800 | 800 1000 | 6800X2600X3400 | 11700"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "deep-sea",
+      "line": "can automatically receive remote signals or directly induce the power supply to start/stop the unit. It adopts British deep-sea intelligent controller, large-screen LCD display and full Chinese/English operation. It has functions of automatic,",
+      "src": [
+        1,
+        101
+      ]
+    }
   ]
 }

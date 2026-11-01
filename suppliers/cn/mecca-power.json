@@ -1525,5 +1525,43 @@
         "| CCFJ-1500 | 2063 | 1650 | 1875 | 1500 | QSK60-D(M) | 461 | 16V | 60 | E | 5000*1760*1825 | 17630"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "2.Equipped with generator set control system, ATS system, remote control system, parallel operation system, optional control model, Deep sea, Smartgen , ComAp ,ect.",
+      "src": [
+        112
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep sea",
+      "line": "2.Equipped with generator set control system, ATS system, remote control system, parallel operation system, optional control model, Deep sea, Smartgen , ComAp ,ect.",
+      "src": [
+        112
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": null,
+      "text": "DEIF",
+      "line": "We can offer controller brand like Deepsea,Smartgen,DEIF,MECCA,etc.",
+      "src": [
+        159
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "2.Equipped with generator set control system, ATS system, remote control system, parallel operation system, optional control model, Deep sea, Smartgen , ComAp ,ect.",
+      "src": [
+        112
+      ]
+    }
   ]
 }

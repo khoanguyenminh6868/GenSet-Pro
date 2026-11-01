@@ -58,6 +58,16 @@ export function checkRecord(rec, file) {
     if (!c.value) err(`${where}: value`);
     else if (!norm(quoted(srcOk(c.src, where))).includes(norm(c.value))) err(`${where}: không có trong câu trích nguồn`);
   }
+  // Controllers (controllers.mjs): the line is in the saved page of each source it cites, and names the controller.
+  for (const [i, c] of (rec.controllers || []).entries()) {
+    const where = `controllers[${i}] ${c.brand} ${c.model || ""}`;
+    if (!c.brand) err(`${where}: brand`);
+    if (!c.text || !c.line || !norm(c.line).includes(norm(c.text))) err(`${where}: dòng nguồn không ghi "${c.text || ""}"`);
+    for (const s of srcOk(c.src, where)) {
+      const f = s.file && path.join(ROOT, s.file);
+      if (f && fs.existsSync(f) && !norm(fs.readFileSync(f, "utf8")).includes(norm(c.line))) err(`${where}: không tìm thấy dòng trong nguồn ${s.n}`);
+    }
+  }
   for (const [i, p] of (rec.productLines || []).entries()) {
     const where = `productLines[${i}] ${p.series || ""}`;
     if (!KINDS.has(p.kind)) err(`${where}: kind ${p.kind}`);

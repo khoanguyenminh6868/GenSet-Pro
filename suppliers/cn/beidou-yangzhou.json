@@ -117,5 +117,16 @@
         "| BD-P400 | 60 | 400/500 | DCCXX | 2506C-E15TAG2 | BDI720A | 376*113*206 | 3570"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "Smartgen 6110",
+      "line": "| Controller Model | Smartgen 6110",
+      "src": [
+        101
+      ]
+    }
   ]
 }

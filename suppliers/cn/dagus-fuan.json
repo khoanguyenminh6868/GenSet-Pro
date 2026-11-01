@@ -96,9 +96,102 @@
         "20KVA diesel generator(power by YANGDONG engiine)"
       ],
       "file": "sources/dagus-fuan/1.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.daguspower.com/spare-parts-of-diesel-generator-sets",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "LIXISE LXC6120 ComAp AMF20/25"
+      ],
+      "file": "sources/dagus-fuan/3001.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF20",
+      "text": "AMF20",
+      "line": "LIXISE LXC6120 ComAp AMF20/25",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "MRS10",
+      "text": "MRS10",
+      "line": "ComAp AMF20/25 ComAp MRS10",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE3110",
+      "text": "DEEPSEA 3110",
+      "line": "SmartGen HGM6120N DEEPSEA 3110-1",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4620",
+      "text": "DEEPSEA 4620",
+      "line": "DEEPSEA 3110-1 DEEPSEA 4620",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DEEPSEA 6020",
+      "line": "DEEPSEA 4620 DEEPSEA 6020",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DEEPSEA 7320",
+      "line": "DEEPSEA 6020 DEEPSEA 7320",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM4020T",
+      "text": "HGM4020T",
+      "line": "SmartGen HGM7120A SmartGen HGM4020T",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM6120N",
+      "line": "SmartGen HGM420N SmartGen HGM6120N",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7120A",
+      "text": "HGM7120A",
+      "line": "ComAp MRS10 SmartGen HGM7120A",
+      "src": [
+        3001
+      ]
+    }
+  ]
 }

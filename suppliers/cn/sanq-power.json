@@ -311,6 +311,36 @@
         "| 电源组型号 | SQC500-6/20 | SQC550-6/20 | SQC620-6/20 | SQC688-6/20 | SQC750-6/20"
       ],
       "file": "sources/sanq-power/124.md"
+    },
+    {
+      "n": 3001,
+      "url": "http://www.gz-sanqpower.com/bjkz.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "并机控制系统 自动并联控制面板DSE8610"
+      ],
+      "file": "sources/sanq-power/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "http://www.gz-sanqpower.com/xinwen/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "机组型号：SQIC225备用功率：1760KW主用功率：1600KW发动机：康明斯QSK60-G4发电机：斯坦福PI734F控制系统：DSE8610 MKII带并机功能启动马达：24V出口国：智利..."
+      ],
+      "file": "sources/sanq-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "http://www.gz-sanqpower.com/cpzx/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "机组型号：SQIC225备用功率：1760KW主用功率：1600KW发动机：康明斯QSK60-G4发电机：斯坦福PI734F控制系统：DSE8610 MKII带并机功能启动马达：24V出口国：智利..."
+      ],
+      "file": "sources/sanq-power/3003.md"
     }
   ],
   "confidence": "medium",
@@ -1221,6 +1251,36 @@
         "| 插座数量 | 32 | 40 | 44 | 48 | 48",
         "| 额定功率(kW) | 392 | 463 | 507 | 533 | 590",
         "| 冷却液容量 | 120L | 120L | 120L | 200L | 200L"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "Deepsea 7320",
+      "line": "| Control unit | Deepsea 7320",
+      "src": [
+        116
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "并机控制系统 自动并联控制面板DSE8610",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610 MKII",
+      "text": "DSE8610 MKII",
+      "line": "机组型号：SQIC225备用功率：1760KW主用功率：1600KW发动机：康明斯QSK60-G4发电机：斯坦福PI734F控制系统：DSE8610 MKII带并机功能启动马达：24V出口国：智利...",
+      "src": [
+        3002,
+        3003
       ]
     }
   ]

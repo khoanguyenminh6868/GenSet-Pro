@@ -752,5 +752,80 @@
         "| 40-foot high cabinet installation capacity | 7 | 7"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "| Spare parts | DSE6020 / DSE7320 / DSE8610 / DSE8620 / DSE8660 controller options | ComAp and SmartGen controller options",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "| Spare parts | DSE6020 / DSE7320 / DSE8610 / DSE8620 / DSE8660 controller options | ComAp and SmartGen controller options",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "| Spare parts | DSE6020 / DSE7320 / DSE8610 / DSE8620 / DSE8660 controller options | ComAp and SmartGen controller options",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "| Spare parts | DSE6020 / DSE7320 / DSE8610 / DSE8620 / DSE8660 controller options | ComAp and SmartGen controller options",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8620",
+      "text": "DSE8620",
+      "line": "| Spare parts | DSE6020 / DSE7320 / DSE8610 / DSE8620 / DSE8660 controller options | ComAp and SmartGen controller options",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8660",
+      "text": "DSE8660",
+      "line": "| Spare parts | DSE6020 / DSE7320 / DSE8610 / DSE8620 / DSE8660 controller options | ComAp and SmartGen controller options",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": "AGC-150",
+      "text": "AGC150",
+      "line": "| Controller | AGC150 DEIF",
+      "src": [
+        114,
+        115
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM1790",
+      "text": "HGM1790",
+      "line": "| Control system | HGM1790 (SMARTGEN) | HGM1790 (SMARTGEN)",
+      "src": [
+        120
+      ]
+    }
   ]
 }

@@ -14,8 +14,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 - `hsmt.txt`: the tender's own text. Every requirement quote must be copied from here.
 - `catalog.md`: the engines and alternators in the system (web/catalog.js), each with the genset table rows that name
   it, exactly as on the supplier's website, and the source `supplierId` / `n`; then each table's header (once per
-  `supplierId` / `n`, column titles); at the end, the suppliers in the system
-  (role, status, confidence, website, Vietnam distributors) as recorded in the supplier DB.
+  `supplierId` / `n`, column titles); then "Bộ điều khiển": the genset controllers of those suppliers, each with the
+  line of the supplier's page or genset row that names it (`supplierId`, `n`, `line`); at the end, the suppliers in the
+  system (role, status, confidence, website, Vietnam distributors, controllers) as recorded in the supplier DB.
 - `suppliers.json`, `meta.json`: what the check command reads; do not open them.
 
 ## Working fast (a run used to take 10 minutes, Khoa 2026-10-29)
@@ -33,7 +34,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 1. List the requirements for the engine, the alternator and the genset as a whole that a model can meet or fail:
    power (and whether prime / standby), voltage, frequency, speed, phases, power factor, engine make / origin /
    cylinders / displacement / governor / cooling / emission, alternator make / insulation class / IP / AVR / bearing,
-   and so on. Each one: `item`, `requirement` (short), `quote` (exact words from hsmt.txt). Leave out what a model
+   the controller (make, model, AMF / auto start, paralleling, communication) and so on. Each one: `item`, `requirement` (short), `quote` (exact words from hsmt.txt). Leave out what a model
    cannot decide (enclosure, ATS, delivery, warranty, documents).
 2. From catalog.md, find configurations (one engine + one alternator) that meet them. Prefer an engine and an
    alternator that appear together in the same genset row (a real configuration a manufacturer sells). For every
@@ -54,13 +55,20 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
      per engine kW). A standard density gives a range: decide with the worst end (e.g. for "≤ 90 L/h", the higher L/h).
    - Write the converted value and the formula in `offered` (e.g. "320 kW / 0,8 = 400 kVA"). The code recomputes every
      conversion; a wrong input or result turns `met` into `unclear`.
+   Controller (Khoa, 2026-11-01): give the configuration a `controller` when a source names one: the controller its
+   genset row names (`src.kind: "catalog"`, that row), else one the supplier offers in the "Bộ điều khiển" section
+   (`src.kind: "controller"`, its `supplierId`, `n`, `line` exactly as there). Prefer the make or model the HSMT asks
+   for, and a supplier that offers it. Check the HSMT's controller requirements with `part: "controller"` and a
+   `sourceQuote` from that line; a function (AMF, paralleling, RS485...) the line does not state is `unclear`, never
+   assumed from the model name.
    Keep at most 10 configurations, best first: fewest `not_met`, then a supplier that truly fits (step 3), then
    fewest `unclear`, then power closest above the requirement. A configuration with a `not_met` on power, frequency,
    a named make or origin is not a suggestion.
 3. For every configuration, name the suppliers in the system that sell it (`suppliers`, at most 3, best first): only
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
    this engine and, best, this alternator at the power required. Put the supplier of the genset row first when it fits.
-   Order: a row with this engine and this alternator, then confidence high > medium > low, then role genset_oem,
+   Order: a row with this engine and this alternator, then a supplier that offers the controller the HSMT asks for,
+   then confidence high > medium > low, then role genset_oem,
    then a Vietnam distributor. `why` states only facts shown in catalog.md (the row, the role, the confidence, the
    distributor). A supplier truly fits when its row names this engine and this alternator and the configuration has
    no `not_met` on power, frequency, a named make or origin.
@@ -82,6 +90,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
      "rating": "prime|standby|unspecified", "src": [1] }, "src": [1] }` — min and max must be numbers in the quote of that source.
    - `specTables`: `{ "n": 1, "title": "", "header": ["| ... |"], "rows": ["| ... |"] }` — the header and each row are whole
      lines of the saved page, copied exactly, with columns that name the engine model and the alternator model.
+   - `controllers`: `{ "brand": "Deep Sea", "model": "DSE7320", "text": "DSE7320", "line": "a whole line of the saved page", "src": [1] }`
+     — only when a saved page names the controller; `text` is the name as written in `line`, `model` null for a make alone.
    The code checks it with verify.mjs, adds what passes to the catalog (web and a pull request in the repo) and drops
    what fails; nothing you write there is shown unless it is found word for word in the saved pages.
 5. When neither the system nor the internet gives a configuration that meets the power, frequency and any named
@@ -97,7 +107,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     "engine": { "model": "", "make": "", "src": { "kind": "catalog", "supplierId": "", "n": 101, "line": "| ... |" } },
     "alternator": { "model": "", "make": "", "src": { "kind": "internet", "url": "https://...", "file": "web/1.txt", "quote": "" } },
     "genset": { "model": "", "src": { "kind": "catalog", "supplierId": "", "n": 101, "line": "| ... |" } },
-    "checks": [{ "item": "", "requirement": "", "hsmtQuote": "", "offered": "", "sourceQuote": "", "part": "engine|alternator|genset", "status": "met|not_met|unclear", "note": "",
+    "controller": { "model": "DSE7320", "make": "Deep Sea", "src": { "kind": "controller", "supplierId": "", "n": 3001, "line": "..." } },
+    "checks": [{ "item": "", "requirement": "", "hsmtQuote": "", "offered": "", "sourceQuote": "", "part": "engine|alternator|genset|controller", "status": "met|not_met|unclear", "note": "",
       "conversions": [{ "formula": "current_3ph", "inputs": [{ "name": "S_kVA", "value": 400, "from": "source" }, { "name": "U_V", "value": 380, "from": "hsmt" }], "value": 607.7 }] }],
     "suppliers": [{ "supplierId": "", "n": 101, "line": "| ... |", "why": "" }],
     "gaps": ["what to confirm with the supplier"]

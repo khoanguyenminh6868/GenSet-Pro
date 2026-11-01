@@ -444,6 +444,56 @@
         "| | Genset Model | Standby Power | Prime Power | Engine Model | Engine Original | Alternator Model | Details"
       ],
       "file": "sources/fdk-energy/109.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://fdkenergy.com/high-power-diesel-generator-1250-3250kva/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| CMS1375KVA-50Hz-R-2018-175 GET A QUOTE NOW | Cummins KTA50-G3 | 1375KVA/1100KW 1250KVA/1000KW | Year: 2018 | Stamford | 400V 50Hz/1500rpm | DSE7320 Three Phase | Open Good Used | Details"
+      ],
+      "file": "sources/fdk-energy/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://fdkenergy.com/used-generator-sets/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| PKS2200KVA-50Hz-R-2013-23 GET A QUOTE NOW | Perkins UK 4016TAG2A | 2200KVA/1800KW 2000KVA/1600KW | Hours: 10 Year: 2013 | Siements(CHINA) JFG5605-4/10500 | 10.5 KV 50Hz/1500rpm | ComAP InteliGen Three Phase | Open Good Used | Details"
+      ],
+      "file": "sources/fdk-energy/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://fdkenergy.com/cummins-qsk60-diesel-generator-sets/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| CMS2200KVA-50Hz-R-2014-15 GET A QUOTE NOW | Cummins UK QSK60-G4 | 2200KVA/1800KW 2000KVA/1600KW | Hours: 1200 Year: 2014 | Stamford P I734F1 | 400V 50Hz/1500rpm | DSE8610 Three Phase | Open Good Used | Details"
+      ],
+      "file": "sources/fdk-energy/3003.md"
+    },
+    {
+      "n": 3004,
+      "url": "https://fdkenergy.com/cummins-kta50-diesel-generator-sets/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| CMS1375KVA-50Hz-R-2018-175 GET A QUOTE NOW | Cummins KTA50-G3 | 1375KVA/1100KW 1250KVA/1000KW | Year: 2018 | Stamford | 400V 50Hz/1500rpm | DSE7320 Three Phase | Open Good Used | Details"
+      ],
+      "file": "sources/fdk-energy/3004.md"
+    },
+    {
+      "n": 3005,
+      "url": "https://fdkenergy.com/mtu-20v4-16v4-diesel-generator-sets/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| MTU1100KVA-50Hz-R-2000-12 GET A QUOTE NOW | MTU 16V2000G23 | 1100KVA/880KW 1000KVA/800KW | Hours: 100 Year: 2000 | Siemens MD-840/50 | 400V 50Hz/1500rpm | SmartGen HGM6110N Three Phase | Open Good Used | Details"
+      ],
+      "file": "sources/fdk-energy/3005.md"
     }
   ],
   "confidence": "medium",
@@ -1670,6 +1720,84 @@
         "| Y2200-H2 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | YC16VTD2700-D32 | Yuchai (China) | NIANFENG NFL7-E | Click Here",
         "| Y2500-H2 CONTACT | 2500KVA/ 2100KW | 2250KVA/ 1800KW | YC20VTD3000-D30 | Yuchai (China) | NIANFENG NFL7-F | Click Here",
         "| Y2750-H2 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | YC20VTD3300-D30 | Yuchai (China) | NIANFENG NFL7-G | Click Here"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "InteliGen",
+      "text": "InteliGen",
+      "line": "| PKS2200KVA-50Hz-R-2013-23 GET A QUOTE NOW | Perkins UK 4016TAG2A | 2200KVA/1800KW 2000KVA/1600KW | Hours: 10 Year: 2013 | Siements(CHINA) JFG5605-4/10500 | 10.5 KV 50Hz/1500rpm | ComAP InteliGen Three Phase | Open Good Used | Details",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE3110",
+      "text": "DSE3110",
+      "line": "| CMS220KVA-50Hz-R-2011-116 GET A QUOTE NOW | Cummins 6CTA8.3-G2 | 220KVA/176KW 200KVA/160KW | Year: 2011 | EGGA | 400V 50Hz/1500rpm | DSE3110 | Soundproof Good Used | Details",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "| CMS1375KVA-50Hz-R-2018-175 GET A QUOTE NOW | Cummins KTA50-G3 | 1375KVA/1100KW 1250KVA/1000KW | Year: 2018 | Stamford | 400V 50Hz/1500rpm | DSE7320 Three Phase | Open Good Used | Details",
+      "src": [
+        3001,
+        3002,
+        3004
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "| CMS2200KVA-50Hz-R-2014-15 GET A QUOTE NOW | Cummins UK QSK60-G4 | 2200KVA/1800KW 2000KVA/1600KW | Hours: 1200 Year: 2014 | Stamford P I734F1 | 400V 50Hz/1500rpm | DSE8610 Three Phase | Open Good Used | Details",
+      "src": [
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110N",
+      "text": "HGM6110N",
+      "line": "| MTU1100KVA-50Hz-R-2000-12 GET A QUOTE NOW | MTU 16V2000G23 | 1100KVA/880KW 1000KVA/800KW | Hours: 100 Year: 2000 | Siemens MD-840/50 | 400V 50Hz/1500rpm | SmartGen HGM6110N Three Phase | Open Good Used | Details",
+      "src": [
+        3002,
+        3005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110NC",
+      "text": "HGM6110NC",
+      "line": "| CMS350KVA-50Hz-R-2021-159 GET A QUOTE NOW | Cummins NTA855-G1B | 344KVA/275KW 312KVA/250KW | Hours: 0 Year: 2021 | Faraday FD4M1-4 | 400V 50Hz/1500rpm | HGM6110NC Three Phase | Open Original Unused | Details",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120CAN",
+      "text": "HGM6120CAN",
+      "line": "| SC413KVA-50Hz-R-2020-165 GET A QUOTE NOW | Shangchai SDEC SC12E460D2 | 413KVA/330KW 375KVA/300KW | Year: 2020 | Faraday FD4L1-4 | 400V 50Hz/1500rpm | HGM6120CAN Three Phase | Open Good Used | Details",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| CMS1875KVA-60Hz-R-25 GET A QUOTE NOW | Cummins KTTA50-G2 | 1875KVA/1500KW 1750KVA/1400KW | Hours: 10 Year: 1998 | Stamford | 400V 60Hz/1800rpm | SmartGen HGM9510 Three Phase | Soundproof Good Used | Details",
+      "src": [
+        3002
       ]
     }
   ]

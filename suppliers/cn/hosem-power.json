@@ -258,6 +258,56 @@
         "| Model | A-C206H"
       ],
       "file": "sources/hosem-power/115.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.industrialgeneratorset.com/aboutus-more.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with model MSR10, AMF25, Nano and IC-NT controller, Smartgen brand with HGM6110, HGM6120, HGM7110, HGM7210 and other models."
+      ],
+      "file": "sources/hosem-power/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.industrialgeneratorset.com/buy-200kva-cummins-generator-set.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Control System | Deepsea DSE6120"
+      ],
+      "file": "sources/hosem-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.industrialgeneratorset.com/supplier-413285-perkins-generator-set",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller Modul | ComAp AMF8"
+      ],
+      "file": "sources/hosem-power/3003.md"
+    },
+    {
+      "n": 3004,
+      "url": "https://www.industrialgeneratorset.com/supplier-413286-deutz-diesel-generator-set",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | Smartgen HGM6120N"
+      ],
+      "file": "sources/hosem-power/3004.md"
+    },
+    {
+      "n": 3005,
+      "url": "https://www.industrialgeneratorset.com/buy-3-phase-deutz-generator-set.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | Smartgen HGM6120N"
+      ],
+      "file": "sources/hosem-power/3005.md"
     }
   ],
   "confidence": "medium",
@@ -669,6 +719,127 @@
         "| Alternator Model | UCI 274 F",
         "| Protection Grade | IP23",
         "| Controller | Deepsea Brand Model DSE7320"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF25",
+      "text": "AMF25",
+      "line": "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with model MSR10, AMF25, Nano and IC-NT controller, Smartgen brand with HGM6110, HGM6120, HGM7110, HGM7210 and other models.",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AMF8",
+      "text": "AMF8",
+      "line": "| Controller Modul | ComAp AMF8",
+      "src": [
+        3003
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with m...",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "| Control System | Deepsea DSE6120",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with m...",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320 MKII",
+      "text": "DSE7320MKII",
+      "line": "The Perkins diesel generator with Deepsea DSE7320MKII controller with AMF function. It has the completely protection of the diesel engine and alternator in good working",
+      "src": [
+        112
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7420",
+      "text": "DSE7420",
+      "line": "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with m...",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with model MSR10, AMF25, Nano and IC-NT controller, Smartgen brand with HGM6110, HGM6120, HGM7110, HGM7210 and other models.",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110N",
+      "text": "HGM6110N",
+      "line": "| Controller | Smarten HGM6110N",
+      "src": [
+        105
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120",
+      "text": "HGM6120",
+      "line": "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with model MSR10, AMF25, Nano and IC-NT controller, Smartgen brand with HGM6110, HGM6120, HGM7110, HGM7210 and other models.",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM6120N",
+      "line": "| Controller | Smartgen HGM6120N",
+      "src": [
+        3002,
+        3004,
+        3005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7110",
+      "text": "HGM7110",
+      "line": "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with model MSR10, AMF25, Nano and IC-NT controller, Smartgen brand with HGM6110, HGM6120, HGM7110, HGM7210 and other models.",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7210",
+      "text": "HGM7210",
+      "line": "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with model MSR10, AMF25, Nano and IC-NT controller, Smartgen brand with HGM6110, HGM6120, HGM7110, HGM7210 and other models.",
+      "src": [
+        3001
       ]
     }
   ]

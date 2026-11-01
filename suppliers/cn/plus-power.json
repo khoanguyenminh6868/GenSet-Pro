@@ -131,9 +131,60 @@
         "ISO 9001: 2015 Quality Assurance System, GB/T19001-2016 and European Standard Compliance CE Certificate"
       ],
       "file": "sources/plus-power/1.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.pluspowergenerator.com/cummins-4bt3-9-g1-g2-50hz-40kva-diesel-generator-set-with-deepsea-panel_p12.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Controller Brand/Model: HGM6120"
+      ],
+      "file": "sources/plus-power/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.pluspowergenerator.com/cummins-4bta3-9-g2-50hz-50kva-60hz-50kva-powerica-diesel-generator-set_p8.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Controller Brand/Model: HGM6120"
+      ],
+      "file": "sources/plus-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.pluspowergenerator.com/cummins-4bta3-9-g2-50hz-60kva-60hz-65kva-heavry-duty-inductrial-generator_p11.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "DEEPSEA 4620/HGM6120"
+      ],
+      "file": "sources/plus-power/3003.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedBy": "discover-bot",
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4620",
+      "text": "DEEPSEA 4620",
+      "line": "DEEPSEA 4620/HGM6120",
+      "src": [
+        3003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120",
+      "text": "HGM6120",
+      "line": "Controller Brand/Model: HGM6120",
+      "src": [
+        3001,
+        3002
+      ]
+    }
+  ]
 }

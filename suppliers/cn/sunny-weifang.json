@@ -64,9 +64,107 @@
         "We have been approved by ISO9001 and CE."
       ],
       "file": "sources/sunny-weifang/2.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.wfsunnymachinery.com/diesel-generator/heavy-duty-diesel-generator-powered-500kw.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, including digital LED screen; genset control model: DSE6120, DSE7320, AMF8, AMF20, HGM6120N, SGC420 and others"
+      ],
+      "file": "sources/sunny-weifang/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.wfsunnymachinery.com/diesel-generator/heavy-duty-diesel-generator-silent.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, including digital LED screen; genset control model: DSE6120, DSE7320, AMF8, AMF20, HGM6120N, SGC420 and others"
+      ],
+      "file": "sources/sunny-weifang/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.wfsunnymachinery.com/diesel-generator/heavy-duty-diesel-generator-powered-20-2000kw.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, including digital LED screen; genset control model: DSE6120, DSE7320, AMF8, AMF20, HGM6120N, SGC420 and others"
+      ],
+      "file": "sources/sunny-weifang/3003.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedBy": "claude-code",
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF20",
+      "text": "AMF20",
+      "line": "4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, including digital LED screen; genset control model: DSE6120, DSE7320, AMF8, AMF20, HGM6120N, SGC420 and others",
+      "src": [
+        3001,
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AMF8",
+      "text": "AMF8",
+      "line": "4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, including digital LED screen; genset control model: DSE6120, DSE7320, AMF8, AMF20, HGM6120N, SGC420 and others",
+      "src": [
+        3001,
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, including digital LED screen; genset control model: DSE6120, DSE7320, AMF8, AMF20, HGM6120N, SGC420 and others",
+      "src": [
+        3001,
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, including digital LED screen; genset control model: DSE6120, DSE7320, AMF8, AMF20, HGM6120N, SGC420 and others",
+      "src": [
+        3001,
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "Mebay",
+      "model": null,
+      "text": "Mebay",
+      "line": "4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, including digital LED screen; genset control model: DSE6120, DSE7320, AMF8, AMF20, HGM6120N, SGC420 and others",
+      "src": [
+        3001,
+        3002,
+        3003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM6120N",
+      "line": "4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, including digital LED screen; genset control model: DSE6120, DSE7320, AMF8, AMF20, HGM6120N, SGC420 and others",
+      "src": [
+        3001,
+        3002,
+        3003
+      ]
+    }
+  ]
 }

@@ -79,6 +79,16 @@
         "| Weight | KW | KVA | mm | L | mm | kg"
       ],
       "file": "sources/haitai-weifang/101.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.hitepower.com/product-list-controller.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "DSE8610 Synchronising & Load Sharing Control Module"
+      ],
+      "file": "sources/haitai-weifang/3001.md"
     }
   ],
   "confidence": "medium",
@@ -98,6 +108,44 @@
         "| 16V190 | 190x215 | 97.53 | IG-NT | 6070×2380×2776 | 22000 | HTG-2000GF",
         "| 2000 | 2500 | L20V190 | 19 0x255 | 144.6 | IG-NT | 7500x2300x2800",
         "| 29000 | HTG-4000GF | 4000 | 5000 | 16V26/32T | 260x320 | 272"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "| FD1ES | HGM6110/DSE7320",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "DSE8610 Synchronising & Load Sharing Control Module",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6100N",
+      "text": "HGM6100N",
+      "line": "HGM6100N series automatic controller uses micro-processing technique which can achieve precision...",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "| FD1ES | HGM6110/DSE7320",
+      "src": [
+        101
       ]
     }
   ]

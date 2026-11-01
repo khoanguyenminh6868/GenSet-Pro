@@ -143,6 +143,16 @@
         "| Genset Model | Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (kVA) | Engine Model | Speed (rpm) | Engine Prime Power (kW) | Alternator Model | Alternator Prime Power (kW)"
       ],
       "file": "sources/byc-power/103.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.bycpower.com/Portable-12kw-Open-Diesel-Generator-for-Buildings-pd583697758.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Advanced Controller: Equipped with Smartgen HGM6110, DeepSea or Harsen controller to improve performance and ease of operation."
+      ],
+      "file": "sources/byc-power/3001.md"
     }
   ],
   "confidence": "medium",
@@ -247,6 +257,62 @@
         "| BY-YC3500 | 2600 | 3250 | 2800 | 3500 | YCC105TA4200-G30 | 1500 | 2806 | QYI564B | 2700",
         "| BY-YC3750 | 2800 | 3500 | 3000 | 3750 | YCC105TA4500-G30 | 1500 | 3010 | QYI564C | 3000",
         "| BY-YC4190 | 3050 | 3810 | 3355 | 4190 | YCC105TA4900-G30 | 1500 | 3280 | QYI564C | 3000"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "For easy operation and control, the generators can be equipped with various controller options from DeepSea, DEIF, ComAp or SmartGen.",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "Datakom",
+      "model": null,
+      "text": "DATAKOM",
+      "line": "generators are equipped with state-of-the-art controllers from leading brands including Deepsea, ComAp, SmartGen, and DATAKOM. These systems provide real-time monitoring of all critical parameters, automatic start/stop functionality, and",
+      "src": [
+        103
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "DeepSea",
+      "line": "For easy operation and control, the generators can be equipped with various controller options from DeepSea, DEIF, ComAp or SmartGen.",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": null,
+      "text": "DEIF",
+      "line": "For easy operation and control, the generators can be equipped with various controller options from DeepSea, DEIF, ComAp or SmartGen.",
+      "src": [
+        102
+      ]
+    },
+    {
+      "brand": "Harsen",
+      "model": null,
+      "text": "Harsen",
+      "line": "Advanced Controller: Equipped with Smartgen HGM6110, DeepSea or Harsen controller to improve performance and ease of operation.",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "Advanced Controller: Equipped with Smartgen HGM6110, DeepSea or Harsen controller to improve performance and ease of operation.",
+      "src": [
+        3001
       ]
     }
   ]

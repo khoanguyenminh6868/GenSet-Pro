@@ -269,6 +269,46 @@
         "| General Information | Prime Power | Standby Power"
       ],
       "file": "sources/bobig-power/134.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.bobigpower.com/buy-cummins-diesel-power-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Control Panel | LCD Digital Display, Deepsea, ComAp, Deepsea / ComAp / Harsen / Smartgen 6110, Smartgen"
+      ],
+      "file": "sources/bobig-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.bobigpower.com/buy-cummins-industrial-generators.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | Smartgen,Deepsea,Comap AMF20,AMF25"
+      ],
+      "file": "sources/bobig-power/3003.md"
+    },
+    {
+      "n": 3004,
+      "url": "https://www.bobigpower.com/buy-perkins-power-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Control Panel | LCD Digital Display, Deepsea, ComAp, Deepsea / ComAp / Harsen / Smartgen 6110, Smartgen"
+      ],
+      "file": "sources/bobig-power/3004.md"
+    },
+    {
+      "n": 3005,
+      "url": "https://www.bobigpower.com/buy-perkins-silent-diesel-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | Smartgen,Deepsea,Comap AMF20,AMF25"
+      ],
+      "file": "sources/bobig-power/3005.md"
     }
   ],
   "confidence": "medium",
@@ -649,6 +689,112 @@
       "rows": [
         "| Rated Power (kVA) | 600 | 660",
         "| Power Rating (kW) | 480 | 528"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF20",
+      "text": "AMF20",
+      "line": "| Controller | Smartgen,Deepsea,Comap AMF20,AMF25",
+      "src": [
+        3003,
+        3005
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AMF25",
+      "text": "AMF25",
+      "line": "| Controller | Smartgen,Deepsea,Comap AMF20,AMF25",
+      "src": [
+        3003,
+        3005
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DSE4520",
+      "line": "Standard AMF control panel, including digital LED genset control model: HGM6120U, DSE4520, DSE6120, AMF8,AMF25",
+      "src": [
+        124
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "Standard AMF control panel, including digital LED genset control model: HGM6120U, DSE7320, DSE6020, AMF20, AMF25",
+      "src": [
+        101,
+        111,
+        125
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "Weichai 800KW 1000kVA Power Diesel Generator Prime Power Silent Diesel Generator Set 50Hz 230V with DSE6120 Control Panel Standby ISO CE",
+      "src": [
+        113,
+        114,
+        115
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120 MKII",
+      "text": "DSE6120 MKII",
+      "line": "Automatically transfers between mains (utility) and generator (DSE6120 MKIII only) for convenience",
+      "src": [
+        122
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Standard AMF control panel, including digital LED genset control model: HGM6120U, DSE7320, DSE6020, AMF20, AMF25",
+      "src": [
+        101,
+        111,
+        125
+      ]
+    },
+    {
+      "brand": "Harsen",
+      "model": null,
+      "text": "Harsen",
+      "line": "| Control Panel | LCD Digital Display, Deepsea, ComAp, Deepsea / ComAp / Harsen / Smartgen 6110, Smartgen",
+      "src": [
+        3002,
+        3003,
+        3004
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "Smartgen 6110",
+      "line": "LCD Digital Display, Deepsea, ComAp, Deepsea / ComAp / Harsen / Smartgen 6110, Smartgen",
+      "src": [
+        111,
+        113,
+        114
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120U",
+      "text": "HGM6120U",
+      "line": "Standard AMF control panel, including digital LED genset control model: HGM6120U, DSE7320, DSE6020, AMF20, AMF25",
+      "src": [
+        101,
+        111,
+        125
       ]
     }
   ]

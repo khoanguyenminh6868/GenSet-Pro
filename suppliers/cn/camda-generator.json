@@ -1635,5 +1635,36 @@
         "| KDGP1505S1 | 1880 | 1505 | 1713 | 1370 | 4012-46TAG3A | 4900×2200×2477 | 10500"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "Q: What brands does the controller have? A: Deepsea/ComAp.",
+      "src": [
+        119
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6020",
+      "text": "DSE6020",
+      "line": "| Control System | Deepsea DSE6020",
+      "src": [
+        108
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "| Control System | Deepsea DSE6120",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    }
   ]
 }

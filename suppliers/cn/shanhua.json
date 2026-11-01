@@ -4980,5 +4980,25 @@
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320 MKII",
+      "text": "DSE7320MKII",
+      "line": "| 控制模块 Control Panel | Deepsea | DSE7320MKII",
+      "src": [
+        1003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SmartGen",
+      "line": "| Control System | DeepSea or SmartGen intelligent controllers",
+      "src": [
+        108
+      ]
+    }
   ]
 }

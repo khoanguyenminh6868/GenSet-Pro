@@ -374,12 +374,75 @@
     return [...new Set(makes.filter((m) => (RANK[m.via] || 0) === top).map((m) => m.name))].join(" / ");
   }
   const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·]/g, "");
-  // All suppliers → { engines, alternators }: one entry per model, with every row that names it.
+
+  // Bộ điều khiển (Khoa, 2026-11-01): make and model read from one line of a saved page or a table row, word for word.
+  // A model code is taken where it is written (DSE7320, HGM6120N, InteliLite NT AMF25, DKG-309, easYgen-3000...); a
+  // code that other things also use (AMF25, D-500, AGC-4) only on a line that names the make. A make with no model
+  // counts only on a line about a controller ("Controller: Deepsea / Smartgen"). Deep Sea 2xxx / 9xxx are expansion
+  // modules and battery chargers, not controllers. `text` is the part of the line that names it, as written.
+  const CTRL_LINE = /controller|control\s?(panel|system|module|unit|box)|控制器|控制屏|控制系统/i;
+  const up = (s) => s.toUpperCase().replace(/\s+/g, "");
+  const CONTROLLERS = [
+    { brand: "Deep Sea", word: /\bdeep\s?-?sea\b|深海/i, models: [
+      [/\bDSE\s?-?([3-8]\d{3})(\s?-?MK\s?II|\s?MK2)?(?![\d])/gi, (m) => `DSE${m[1]}${m[2] ? " MKII" : ""}`],
+      [/\bdeep\s?-?sea\s?(?:DSE)?\s?-?([3-8]\d{3})(?![\d])/gi, (m) => `DSE${m[1]}`]] },
+    { brand: "SmartGen", word: /\bsmart\s?gen\b|众智/i, models: [
+      [/\bHGM\s?-?(\d{4}[A-Z]{0,4}(?:-4G)?)(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`],
+      [/\bsmart\s?gen\s?(?:HGM)?\s?-?(\d{4}[A-Z]{0,3})(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`]] },
+    { brand: "ComAp", word: /\bcomap\b/i, models: [
+      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains)\s?(NT|4|500|1000|200)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? m[2].toUpperCase() : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
+      [/\bIL-?NT\s?(AMF|MRS)\s?-?(\d{1,2})(?![\w])/gi, (m) => `InteliLite NT ${up(m[1])}${m[2]}`],
+      [/\b(AMF|MRS)\s?-?(20|25|9|8|10|11|15|16|18|19)(?![\w])/gi, (m) => `${up(m[1])}${m[2]}`, true]] },
+    { brand: "DEIF", word: /\bdeif\b/i, models: [[/\b(AGC|SGC|GC|PPU|GPC|PPM)[\s-]?(\d{1,3}[A-Z]?|1F)(?![\w])/g, (m) => `${m[1]}-${m[2]}`, true]] },
+    { brand: "Datakom", word: /\bdatakom\b/i, models: [
+      [/\bDKG[\s-]?(\d{3})(?![\d])/gi, (m) => `DKG-${m[1]}`],
+      [/\bD-?(\d{3,4})(?![\w])/g, (m) => `D-${m[1]}`, true]] },
+    { brand: "Woodward", word: /\bwoodward\b/i, models: [[/\beasy\s?gen[\s-]?(\d{3,4})(?![\d])/gi, (m) => `easYgen-${m[1]}`]] },
+    { brand: "Harsen", word: /\bharsen\b/i, models: [] },
+    { brand: "Mebay", word: /\bmebay\b/i, models: [] },
+    { brand: "Lixise", word: /\blixise\b/i, models: [] },
+    { brand: "Emko", word: /\bemko\b/i, models: [] },
+  ];
+  function controllersIn(line) {
+    const s = String(line || ""), out = [];
+    for (const c of CONTROLLERS) {
+      const named = c.word.test(s) || (c.brand === "ComAp" && /\binteli\s?(lite|gen|sys|compact)/i.test(s)), found = new Set();
+      for (const [re, canon, needsMake] of c.models) {
+        if (needsMake && !named) continue;
+        for (const m of s.matchAll(re)) {
+          const model = canon(m), k = keyOf(model);
+          if (found.has(k) || [...found].some((x) => x.includes(k))) continue;
+          found.add(k);
+          out.push({ brand: c.brand, model, text: m[0].trim() });
+        }
+      }
+      if (!found.size && named && CTRL_LINE.test(s)) out.push({ brand: c.brand, model: null, text: s.match(c.word)[0] });
+    }
+    return out;
+  }
+
+  // All suppliers → { engines, alternators, controllers }: one entry per model, with every row that names it.
   function build(suppliers) {
-    const maps = { engine: new Map(), alternator: new Map() };
+    const maps = { engine: new Map(), alternator: new Map(), controller: new Map() };
+    // A controller: from the supplier's `controllers` (suppliers/controllers.mjs, each with its source line) and from
+    // the genset rows of its tables that name one (then with that row's genset, power and engine).
+    const addCtrl = (s, c, u) => {
+      const k = c.model ? keyOf(c.model) : `BRAND:${keyOf(c.brand)}`, m = maps.controller;
+      let e = m.get(k);
+      if (!e) { e = { key: k, kind: "controller", model: c.model || `${c.brand} (không ghi model)`, brandOnly: !c.model, names: new Set(), makes: [], uses: [], suppliers: new Set(), freq: new Set() }; m.set(k, e); }
+      if (e.uses.some((x) => x.supplierId === s.id && x.line === u.line)) return;
+      e.names.add(e.model);
+      if (!e.makes.some((x) => x.name === c.brand)) e.makes.push({ name: c.brand, via: "trang nguồn", supplierId: s.id, n: u.n });
+      e.uses.push({ supplierId: s.id, text: c.text, ...u });
+      e.suppliers.add(s.id);
+      if (u.freq) e.freq.add(u.freq);
+    };
     for (const s of suppliers) {
-      if (!s?.specTables?.length || s.status === "incomplete") continue;
+      if (!s || s.status === "incomplete") continue;
+      for (const c of s.controllers || []) addCtrl(s, c, { n: (c.src || [])[0], line: c.line, genset: null, power: null, other: null, specs: [] });
+      if (!s.specTables?.length) continue;
       for (const o of fromSupplier(s)) {
+        if (o.kind === "engine" && o.line) for (const c of controllersIn(o.line)) addCtrl(s, c, { n: o.n, line: o.line, header: o.header, genset: o.genset, power: o.power, freq: o.freq, other: o.model, specs: [] });
         const k = keyOf(o.model);
         if (k.length < 3) continue;
         const m = maps[o.kind];
@@ -416,7 +479,8 @@
         make: makeOf(e.makes) };
     };
     const sort = (a, b) => b.suppliers.length - a.suppliers.length || b.uses.length - a.uses.length || a.model.localeCompare(b.model);
-    return { engines: [...maps.engine.values()].map(finish).sort(sort), alternators: [...maps.alternator.values()].map(finish).sort(sort) };
+    return { engines: [...maps.engine.values()].map(finish).sort(sort), alternators: [...maps.alternator.values()].map(finish).sort(sort),
+      controllers: [...maps.controller.values()].map(finish).sort((a, b) => a.brandOnly - b.brandOnly || sort(a, b)) };
   }
 
   // Tender needs read from the analysis (technicalSpecs, keyInfo) and the HSMT text: power, rating, frequency and
@@ -493,7 +557,7 @@
   // The origin of an engine named in a text (a make, a model, a row).
   const originIn = (text, model) => engineOrigin(brandIn(String(text || ""), ENGINE_BRANDS), model);
 
-  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE };
+  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);

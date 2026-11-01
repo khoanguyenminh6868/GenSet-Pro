@@ -29,6 +29,14 @@ Trang web dựng danh mục ngay trên trình duyệt từ `specTables` của m�
 - công suất là của tổ máy dùng model đó: cặp số có tỉ lệ 1,15–1,35 là kVA / kW; hai cặp thì cặp lớn là dự phòng, cặp nhỏ là liên tục; không quy đổi kW ↔ kVA;
 - thông số khác (số xi lanh, dung tích, đường kính × hành trình, tốc độ, điều tốc, khí thải; hiệu suất, cấp cách điện, IP của đầu phát; tiêu hao nhiên liệu, độ ồn, kích thước, khối lượng, bình nhiên liệu của tổ máy...) đọc theo nhãn cột / nhãn dòng, nhãn và giá trị chép nguyên văn. Chỉ dùng khi tiêu đề khớp số ô của dòng; một giá trị sai dạng (ví dụ "105×118" ở cột điều tốc) thì bỏ cả dòng vì cột đã lệch. Đầu phát không hiện thông số động cơ và ngược lại.
 
+## Bộ điều khiển
+Khoa, 2026-11-01. `controllers.mjs [id ...] [--crawl] [--max 40] [--dry]` ghi `controllers: [{ brand, model, text, line, src }]` của mỗi bản ghi, bằng code, không AI:
+- đọc từng dòng của mọi trang đã lưu của bản ghi bằng `controllersIn` của `web/catalog.js` (trang web và bot cấu hình dùng chung): model Deep Sea (DSE3xxx–8xxx; DSE2xxx/9xxx là module mở rộng, sạc ắc quy nên bỏ), SmartGen (HGM…), ComAp (InteliLite / InteliGen…, AMF/MRS chỉ khi dòng ghi ComAp / Inteli), DEIF, Datakom, Woodward easYgen; hãng không kèm model (Harsen, Mebay… hoặc "Controller: Deepsea/Smartgen") chỉ tính ở dòng nói về bộ điều khiển, và chỉ khi bản ghi không có model nào của hãng đó;
+- `line` là dòng nguyên văn (dòng dài thì cắt quanh tên, vẫn là một đoạn của dòng), `text` là tên đúng như ghi; `verify.mjs` kiểm `line` có trong trang nguồn và ghi `text`;
+- `--crawl`: dò thêm trang sản phẩm cùng website (như `crawl-specs.mjs`), lưu tối đa 6 trang có model bộ điều khiển thành `sources/<id>/3001.md`… (cùng hạng nguồn với website của hãng). Lần cào sau không tìm được trang nào thì giữ trang cũ.
+- Danh mục "Bộ điều khiển" (nút Động cơ → ô chọn loại) dựng trên trình duyệt từ `controllers` và từ dòng bảng tổ máy có ghi bộ điều khiển (kèm công suất, động cơ của dòng đó).
+- Gợi ý cấu hình: `catalog.md` có mục "Bộ điều khiển" (của các nhà cung cấp có dòng trong danh mục); mỗi cấu hình có thể có `controller` (`src.kind: "controller"` trỏ tới dòng trong `controllers`, hoặc dòng bảng tổ máy) và kiểm tra `part: "controller"`; `check` kiểm dòng bằng code, hãng được lấy từ mã model (DSE… = Deep Sea). Tìm NCC: `newCatalog.json` có thể có `controllers`; `mergeFind` ghi bộ điều khiển của dòng bảng / của nhà cung cấp.
+
 ## Tab "Cấu hình gợi ý"
 Chỉ có nút **Gợi ý**: trang ghi `configreq/<TBMT>`, máy Windows trả lời `configmatch/<TBMT>` (Khoa, 2026-10-28).
 - `config-bot.mjs run`: với mỗi yêu cầu, `prep` chuẩn bị thư mục (văn bản HSMT, phần kỹ thuật, các model trong danh mục quanh công suất của gói), gọi agent `claude -p` (Opus, có WebSearch) theo `config-prompt.md`: chọn trong danh mục trước, không có mới tìm trên internet (trang dùng phải lưu bằng lệnh `save`), không có nữa thì trả `configs: []` kèm lời nhắn.

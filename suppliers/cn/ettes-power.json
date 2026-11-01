@@ -1265,5 +1265,47 @@
         "| Weight kg | 2500"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "• Control System: Deepsea, ComAp or DEIF",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8620",
+      "text": "Deepsea 8620",
+      "line": "The gensets run as standby-emergency power, by synchronizing to mains grid with two ACB & Deepsea 8620 control modules, supplying non-stop...",
+      "src": [
+        1
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": null,
+      "text": "DEIF",
+      "line": "• Control System: Deepsea, ComAp or DEIF",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": null,
+      "text": "Woodward",
+      "line": "• Adopting highly intelligent gas control system of USA Woodward EGS, Germany Heinzmann or Motortech, the air fuel ratio can be automatically adjusted as per fluctuation of gas components.",
+      "src": [
+        102
+      ]
+    }
   ]
 }

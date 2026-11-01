@@ -3405,5 +3405,47 @@
         "| communication with compatible engine ECUs | dual-port RS232/RS485 module"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "| Control System | Deep Sea / ComAp",
+      "src": [
+        101,
+        102,
+        105
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "| CONTROL | MODULE Deep Sea DSE6120",
+      "src": [
+        1007,
+        1008,
+        1009
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7410",
+      "text": "DSE7410",
+      "line": "| P250-5 | 230 | 184 | 250 | 200 | 1506A-E88TAG2 | LL5114H | DSE7410",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7420",
+      "text": "DSE7420",
+      "line": "| P900-1 | 800 | 640 | 900 | 720 | 4006-23TAG3A | FGL70030 | DSE7420",
+      "src": [
+        101
+      ]
+    }
   ]
 }

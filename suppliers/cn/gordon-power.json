@@ -210,6 +210,36 @@
         "| Genset Perfomance | Engine Performance | Dimension(L×W×H)"
       ],
       "file": "sources/gordon-power/108.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.gordon-powers.com/Spare-Parts-pl42268387.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "More >> IL-NT AMF20"
+      ],
+      "file": "sources/gordon-power/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.gordon-powers.com/Diesel-Generator-Spare-Parts-pl41268387.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "More >> IL-NT AMF20"
+      ],
+      "file": "sources/gordon-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.gordon-powers.com/ST-STC-pd545891998.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| DSE6120 MKII | DSE7320 MKII | DSE8610 MKII | DSE8620 | DSE8660 MKII | IL-NT AMF20 | IL3 AMF20"
+      ],
+      "file": "sources/gordon-power/3003.md"
     }
   ],
   "confidence": "medium",
@@ -544,6 +574,89 @@
         "| GD-P1375 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | 1800 | 1113 | 266 | 12V-160×190 | 45.842 | 485×205×252 |",
         "| GD-P1650 | 1200 | 1500 | 1320 | 1650 | 4012-46TAG2A | 1800 | 1332 | 319 | 12V-160×190 | 45.842 | 485×205×252 | 40 feet high container",
         "| GD-P1875 | 1360 | 1700 | 1500 | 1875 | 4012-46TAG3A | 1800 | 1500 | 361 | 12V-160×190 | 45.842 | 497×205×252 |"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "InteliLite NT AMF20",
+      "text": "IL-NT AMF20",
+      "line": "More >> IL-NT AMF20",
+      "src": [
+        3001,
+        3002
+      ]
+    },
+    {
+      "brand": "Datakom",
+      "model": null,
+      "text": "DATAKOM",
+      "line": "Controller: Deepsea/Comap/Smartgen/DATAKOM/Others",
+      "src": [
+        101,
+        102,
+        104
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120 MKII",
+      "text": "DSE6120 MKII",
+      "line": "| DSE6120 MKII | DSE7320 MKII | DSE8610 MKII | DSE8620 | DSE8660 MKII | IL-NT AMF20 | IL3 AMF20",
+      "src": [
+        3003
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320 MKII",
+      "text": "DSE7320 MKII",
+      "line": "More >> DSE7320 MKII",
+      "src": [
+        3001,
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610 MKII",
+      "text": "DSE8610 MKII",
+      "line": "More >> DSE8610 MKII",
+      "src": [
+        3001,
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8620",
+      "text": "DSE8620",
+      "line": "More >> DSE8620",
+      "src": [
+        3001,
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8660 MKII",
+      "text": "DSE8660 MKII",
+      "line": "More >> DSE8660 MKII",
+      "src": [
+        3001,
+        3002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "Controller: Deepsea/Comap/Smartgen/DATAKOM/Others",
+      "src": [
+        101,
+        102,
+        104
       ]
     }
   ]

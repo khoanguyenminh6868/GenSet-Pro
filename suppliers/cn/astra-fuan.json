@@ -535,5 +535,51 @@
         "| Displacement | 10.34L"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "Comap",
+      "line": "| Controller | Deep Sea/Comap/DELF/Smartgen/Mebay (optional)",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea",
+      "line": "| Controller | Deep Sea/Comap/DELF/Smartgen/Mebay (optional)",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "brand": "Mebay",
+      "model": null,
+      "text": "Mebay",
+      "line": "| Controller | Deep Sea/Comap/DELF/Smartgen/Mebay (optional)",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "| Controller | Deep Sea/Comap/DELF/Smartgen/Mebay (optional)",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    }
   ]
 }

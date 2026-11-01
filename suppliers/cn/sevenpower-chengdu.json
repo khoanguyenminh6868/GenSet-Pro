@@ -1190,5 +1190,36 @@
         "| Cooling Type | — | air cooled"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "| Controller | | | ComAp",
+      "src": [
+        103,
+        106
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "Controller: ComAp Or Deepsea",
+      "src": [
+        104,
+        106
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SmartGen",
+      "line": "Controller ComAp / DeepSea / SmartGen.",
+      "src": [
+        111
+      ]
+    }
   ]
 }
