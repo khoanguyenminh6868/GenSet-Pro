@@ -2023,5 +2023,23 @@
   "url": "https://www.hy-genset.com/",
   "tables": 9,
   "rows": 243
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "yuchai-equipment",
+  "name": "Guangxi Yuchai Equipment Technology Co., Ltd.",
+  "url": "https://www.yuchaicm.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "jlmech-wuhan",
+  "name": "Wuhan Jlmech Co., Ltd.",
+  "url": "https://www.whjlmech.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

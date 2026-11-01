@@ -1,0 +1,103 @@
+{
+  "id": "jlmech-wuhan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Wuhan Jlmech Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Jlmech"
+    ]
+  },
+  "website": "https://www.whjlmech.com/",
+  "hq": {
+    "province": "Hubei",
+    "city": "Wuhan"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 20–3000 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: 26 năm kinh nghiệm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator gensets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.whjlmech.com/20-3000kw-diesel-generator/diesel-generator-gensets",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © Wuhan Jlmech Co., Ltd All rights reserved.",
+        "Wuhan Jlmech Co., Ltd. is a trusted manufacturer and supplier of diesel generator gensets , combining 26 years of engineering expertise with global certifications (CE, ISO, GB/T).",
+        "AC Output(KW)：20-3000KW",
+        "Certified to CE, CSA, UL, ISO9001, and ISO14001 standards"
+      ],
+      "file": "sources/jlmech-wuhan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

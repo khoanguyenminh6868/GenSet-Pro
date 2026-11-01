@@ -1,0 +1,5 @@
+{"id":"jlmech-wuhan","country":"CN","role":"genset_oem","status":"verified","conf":"medium","en":"Wuhan Jlmech Co., Ltd.","zh":null,"brands":["Jlmech"],"web":"https://www.whjlmech.com/","prov":"Hubei","city":"Wuhan","founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Copyright © Wuhan Jlmech Co., Ltd All rights reserved.","Wuhan Jlmech Co., Ltd. is a trusted manufacturer and supplier of diesel generator gensets , combining 26 years of engineering expertise with global certifications (CE, ISO, GB/T).","AC Output(KW)：20-3000KW","Certified to CE, CSA, UL, ISO9001, and ISO14001 standards"]},
+"str":[["Tổ máy diesel 20–3000 kW",1],["Theo hãng: 26 năm kinh nghiệm",1]],"cert":[["CE",1],["ISO9001",1],["ISO14001",1]],
+"lines":[{"k":"genset","s":"Diesel generator gensets","fuel":"diesel","p":[20,3000,"kW","unspecified",1],"src":[1]}],
+"miss":["Chưa có năm thành lập cụ thể"],"by":"discover-bot (Claude)"}
