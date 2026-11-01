@@ -2095,5 +2095,23 @@
   "url": "http://www.sxd408.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "faraday-wuxi",
+  "name": "无锡法拉第电机有限公司",
+  "url": "http://www.faradaygenerator.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "lanzhou-electric",
+  "name": "兰州电机股份有限公司",
+  "url": "https://www.lec.cn/",
+  "tables": 0,
+  "rows": 0
  }
 ]
