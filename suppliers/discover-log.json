@@ -2437,5 +2437,104 @@
   "url": null,
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "comler-power",
+  "name": "Shandong Comler Power Group",
+  "url": "http://www.comler.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "yingtai-jiangsu",
+  "name": "Yingtai Group",
+  "url": "https://www.yingtaigroup.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "innio-jenbacher",
+  "name": "INNIO Jenbacher",
+  "url": "https://www.jenbacher.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "honny-dongguan",
+  "name": "Guangdong Honny Power-Tech",
+  "url": "https://www.honny1992.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "http://www.ypjt.com/",
+  "reason": "银鹏动力设备（上海）: website không truy cập được (timeout), chỉ có hồ sơ powershow.cn; các trang 银鹏 khác là đơn vị cho thuê/khác pháp nhân"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "http://www.3tech.net/",
+  "reason": "3TECH (飞尔特): trang chủ nói về giải pháp năng lượng viễn thông, không ghi sản xuất tổ máy phát"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "lingyu-jiangsu",
+  "name": "Jiangsu Lingyu Motor",
+  "url": "http://www.yzlingyu.net/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "jiali-liuzhou",
+  "name": "Liuzhou Jiali Electric Machine",
+  "url": "http://www.lzjldj.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "simpson-power",
+  "name": "SIMPSON (China) Ltd",
+  "url": "http://www.simpsonpower.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "pauway-tianjin",
+  "name": "PAUWAY",
+  "url": "https://pauway.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "powerlink-shanghai",
+  "name": "PowerLink",
+  "url": "https://www.powerlinkworld.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "http://www.wattekpower.com/",
+  "reason": "无锡明捷特 WATTEK: trang chủ chỉ có ảnh, không có chữ để trích; chờ lần sau"
  }
 ]

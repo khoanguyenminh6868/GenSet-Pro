@@ -89,7 +89,7 @@
     {
       "n": 2,
       "url": "https://kwisegenerator.com/high-voltage-alternator/",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-02",
       "tier": "A",
       "quote": [
         "| 50/60Hz | 6300V 10500V 13800V | 4/6/8/10 poles | 300-4000KW 375-5000kVA |"
@@ -98,6 +98,6 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-03",
+  "checkedAt": "2026-11-02",
   "checkedBy": "claude-code"
 }

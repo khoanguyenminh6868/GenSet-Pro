@@ -1,0 +1,17 @@
+{
+  "id": "yingtai-jiangsu", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "Yingtai Group", "zh": "英泰集团有限公司", "brands": ["英泰"],
+  "web": "https://www.yingtaigroup.com/", "prov": "Jiangsu", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "发电机组-柴油发电机组-康明斯发电机厂家-英泰集团有限公司", "英泰/高压发电机组", "英泰/燃气发电机组", "英泰/发电机系列"],
+    "2": ["A", "“英泰”商标为江苏省著名商标，“英泰”牌无刷发电机为江苏省名牌产品", "集团下设：江苏英泰机电有限公司、扬州英泰机械有限公司", "公司主要产品有：发电机、发电机组(柴油、汽油、重油、燃气)、高低压成套开关设备", "产品通过ISO9001:2008国际质量管理体系认证，ISO14001:2004环境管理体系认证，以及OHSAS18001:2007职业健康安全管理体系认证"]
+  },
+  "str": [["Tự làm đầu phát không chổi than (thương hiệu 英泰) và tổ máy diesel, xăng, dầu nặng, khí", 2], ["Có tổ máy cao áp", 1]],
+  "cert": [["ISO9001", 2], ["ISO14001", 2], ["OHSAS18001", 2]],
+  "lines": [
+    { "k": "genset", "s": "英泰发电机组", "fuel": "diesel", "src": [1, 2] },
+    { "k": "alternator", "s": "英泰无刷发电机", "src": [2] }
+  ],
+  "miss": ["Trang không ghi dải công suất, năm thành lập, thành phố trụ sở"],
+  "by": "discover-bot (Claude)"
+}

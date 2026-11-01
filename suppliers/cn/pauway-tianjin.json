@@ -1,0 +1,111 @@
+{
+  "id": "pauway-tianjin",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "PAUWAY",
+    "zh": "天津博威动力设备有限公司",
+    "brands": [
+      "PAUWAY",
+      "博威"
+    ]
+  },
+  "website": "https://pauway.cn/",
+  "hq": {
+    "province": "Tianjin",
+    "city": "Tianjin"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel theo dòng động cơ: MTU 500–2760 kW, Cummins 20–1824 kW, Perkins 8–2000 kW, Yuchai 16–3000 kW, SDEC 8–2200 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tổ máy khí dùng động cơ MWM (TCG3016, TCG2032...)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "PAUWAY柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PAUWAY燃气发电机组 (MWM)",
+      "fuel": "gas",
+      "engineMakes": [
+        "MWM"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Dải 8–3000 kW gộp từ các dòng Perkins/SDEC (từ 8 kW) và Yuchai (đến 3000 kW) trên trang chủ; chưa có năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://pauway.cn/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "柴油发电机组厂家_燃气发电机组_PAUWAY天津博威动力",
+        "Copyright © 2025 博威动力设备. All Rights Reserved.",
+        "PAUWAY-MTU系列 500-2760kW",
+        "PAUWAY-康明斯系列 20-1824kW",
+        "PAUWAY-珀金斯系列 8-2000kW",
+        "PAUWAY-玉柴系列 16-3000kW",
+        "PAUWAY-上柴系列 8-2200kW",
+        "曼海姆MWM TCG3016系列",
+        "曼海姆MWM TCG2032 系列"
+      ],
+      "file": "sources/pauway-tianjin/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

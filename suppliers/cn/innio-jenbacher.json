@@ -1,0 +1,92 @@
+{
+  "id": "innio-jenbacher",
+  "country": "AT",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "INNIO Jenbacher",
+    "zh": "颜巴赫",
+    "brands": [
+      "Jenbacher"
+    ]
+  },
+  "website": "https://www.jenbacher.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy khí, đồng phát/tam phát; động cơ chạy khí tự nhiên và khí tái tạo",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tổ máy container Type 2, 3, 4: 249–1562 kW",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Jenbacher Type 2/3/4 containerized",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 249,
+        "max": 1562,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1,
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Dải toàn dòng (đến Type 9) ghi bằng MW nên chỉ ghi dải bản container; chưa có trụ sở, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.innio.com/en/jenbacher/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "INNIO’s Jenbacher engines are packaged generator sets and cogeneration and trigeneration units for power generation."
+      ],
+      "file": "sources/innio-jenbacher/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.jenbacher.com/en/energy-solutions/containerized-solutions/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Containerized solutions for Type 2, 3 and 4 (249 – 1562 kW)"
+      ],
+      "file": "sources/innio-jenbacher/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
