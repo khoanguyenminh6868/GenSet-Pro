@@ -1,0 +1,77 @@
+{
+  "id": "ako-aggregate",
+  "country": "DE",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "AKO Aggregate-Servicegesellschaft mbH",
+    "zh": null,
+    "brands": [
+      "AKO"
+    ]
+  },
+  "website": "https://www.ako-gmbh.de/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy dự phòng làm theo yêu cầu từ khoảng 50 kVA (container, lắp cố định, di động)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 35 năm sản xuất tổ máy tại Đức",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Notstromaggregate",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chỉ ghi mức thấp nhất (ab ca. 50 kVA), chưa có dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.ako-gmbh.de/de",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "AKO Aggregate-Servicegesellschaft mbH - Notstromaggregate direkt vom Hersteller",
+        "AKO begleitet seit über 35 Jahren als deutscher Notstromaggregate-Hersteller mit hoher Fertigungstiefe Unternehmen aller Branchen.",
+        "Individuelle Einzelanfertigung ab ca. 50 kVA – als Container, Festeinbau oder mobil."
+      ],
+      "file": "sources/ako-aggregate/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

@@ -1777,5 +1777,77 @@
   "url": "https://www.cnriyi.net/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "lepron",
+  "name": "LEPRON SAS",
+  "url": "https://www.lepron-sa.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "gelec-energy",
+  "name": "GELEC Energy",
+  "url": "https://www.gelecenergy.fr/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "ims-aggregatebau",
+  "name": "IMS Aggregatebau GmbH & Co. KG",
+  "url": "https://ims-aggregatebau.de/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "bauer-generator",
+  "name": "Bauer Generatoren",
+  "url": "https://bauer-generator.de/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "ako-aggregate",
+  "name": "AKO Aggregate-Servicegesellschaft mbH",
+  "url": "https://www.ako-gmbh.de/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "abz-power",
+  "name": "ABZ Aggregate-Bau GmbH & Co. KG",
+  "url": "https://www.abz-power.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "krauter",
+  "name": "Werner Krauter GmbH",
+  "url": "https://www.krauter.de/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "avs-aggregatebau",
+  "name": "AVS Aggregatebau GmbH",
+  "url": "https://www.avs-aggregatebau.de/",
+  "tables": 0,
+  "rows": 0
  }
 ]

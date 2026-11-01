@@ -1,0 +1,104 @@
+{
+  "id": "avs-aggregatebau",
+  "country": "DE",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "AVS Aggregatebau GmbH",
+    "zh": null,
+    "brands": [
+      "AVS"
+    ]
+  },
+  "website": "https://www.avs-aggregatebau.de/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy 20–3750 kVA: tĩnh tại, vỏ che, container, di động",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có cho thuê tổ máy 40–2000 kVA",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Stromaggregate",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "silent",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Fahrbare Aggregate",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 20,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Số '3.750' có dấu chấm nên dải toàn dòng chỉ ghi trong thế mạnh; trang chủ không ghi năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.avs-aggregatebau.de/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "AVS Aggregatebau GmbH",
+        "Notstromaggregate & Stromerzeuger vom Hersteller | AVS",
+        "Wir bieten Stromaggregate im Leistungsbereich von 20 bis 3.750 kVA – wahlweise als stationäre Lösung, mit Haube, im Container oder in mobiler, fahrbarer Ausführung.",
+        "Fahrbare Aggregate 20-125 kVA"
+      ],
+      "file": "sources/avs-aggregatebau/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

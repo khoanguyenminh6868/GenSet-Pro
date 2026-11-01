@@ -1,0 +1,101 @@
+{
+  "id": "krauter",
+  "country": "DE",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Werner Krauter GmbH",
+    "zh": null,
+    "brands": [
+      "Krauter"
+    ]
+  },
+  "website": "https://www.krauter.de/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 2–2800 kVA; cũng có tổ máy xăng, khí, nhiên liệu tái tạo",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 60 năm sản xuất tổ máy diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Dieselaggregate",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Rental Range",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 22,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Số '2.800' có dấu chấm nên dải toàn dòng chỉ ghi trong thế mạnh"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.krauter.de/stromerzeuger/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright 2026 - Werner Krauter GmbH",
+        "Dieselaggregate von Krauter sind die perfekte Lösung für Ihren Energiebedarf von 2 -2.800 kVA. Seit über 60 Jahren fertigen wir Dieselaggregate für Höchstleistung.",
+        "Krauter fertigt Stromaggregate, die mit Benzin, Diesel, Gas oder regenerativen Kraftstoffen angetrieben werden.",
+        "Prospekt Stromerzeuger Rental Range 22 bis 550 kVA"
+      ],
+      "file": "sources/krauter/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
