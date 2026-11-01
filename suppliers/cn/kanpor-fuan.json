@@ -2,7 +2,7 @@
   "id": "kanpor-fuan",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "福安市康普电机有限公司",
@@ -62,7 +62,15 @@
         "马拉松",
         "斯坦福"
       ],
-      "power": null,
+      "power": {
+        "min": 10,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
@@ -79,7 +87,15 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 5,
+        "max": 5000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
@@ -96,7 +112,15 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 50,
+        "max": 4500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
@@ -117,7 +141,6 @@
   ],
   "exportMarkets": [],
   "missing": [
-    "Trang ghi số có dấu cách (10 kVA–3 000 kVA, 5 kVA–5 000 kVA, 50 kW–4 500 kW) nên bộ kiểm số chưa nhận, dải công suất chỉ ghi trong phần thế mạnh",
     "Website kanpor-power.com (bản tiếng Anh) dựng bằng JavaScript"
   ],
   "sources": [
@@ -150,6 +173,6 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-03",
   "checkedBy": "discover-bot (Claude)"
 }

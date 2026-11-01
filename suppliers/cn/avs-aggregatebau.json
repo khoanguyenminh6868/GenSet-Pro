@@ -39,7 +39,15 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 20,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [
@@ -81,7 +89,7 @@
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Số '3.750' có dấu chấm nên dải toàn dòng chỉ ghi trong thế mạnh; trang chủ không ghi năm thành lập"
+    "trang chủ không ghi năm thành lập"
   ],
   "sources": [
     {
@@ -99,6 +107,6 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-03",
   "checkedBy": "discover-bot (Claude)"
 }

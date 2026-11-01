@@ -36,7 +36,8 @@ const B2B = ["made-in-china.com", "alibaba.com", "1688.com", "aliexpress.com", "
 const DEALER = ["sdec-engine.com", "dcec-engine.com", "ccec-engine.com"];
 // Never a source on their own (README, PLAN-nha-cung-cap.md).
 const BANNED = ["wikipedia.org", "baike.baidu.com", "zhihu.com", "quora.com", "reddit.com", "medium.com", "facebook.com", "youtube.com", "linkedin.com", "qcc.com", "tianyancha.com", "aiqicha.baidu.com"];
-const PUFFERY = /(leading|no\.?\s?1\b|number one|best|top\s?\d*|world[- ]class|famous|hàng đầu|uy tín|chất lượng cao|số 1|tốt nhất|nổi tiếng|lớn nhất|领先|第一|最大|知名)/i;
+// English words need word boundaries so names like "Landtop" do not match; \b does not work on CJK or Vietnamese.
+const PUFFERY = /\b(?:leading|no\.?\s?1|number one|best|top(?:\s?\d+)?|world[- ]class|famous)\b|hàng đầu|uy tín|chất lượng cao|số 1|tốt nhất|nổi tiếng|lớn nhất|领先|第一|最大|知名/i;
 
 const args = process.argv.slice(3);
 const opt = (k) => { const i = args.indexOf("--" + k); return i >= 0 ? args[i + 1] : undefined; };
@@ -48,7 +49,11 @@ const writeLog = (log) => fs.writeFileSync(LOG, JSON.stringify(log, null, 1) + "
 const today = () => new Date().toISOString().slice(0, 10);
 const node = (script, ...a) => spawnSync(process.execPath, [path.join(ROOT, script), ...a], { cwd: REPO, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], maxBuffer: 64 << 20 });
 const git = (...a) => execFileSync("git", ["-C", REPO, ...a], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
-const numbersIn = (s) => (norm(s).replace(/(\d),(\d{3})/g, "$1$2").match(/\d+(?:\.\d+)?/g) || []).map(Number);
+// "3 000" and "3.750" (space or dot thousands, as European sources write them) also read as 3000 and 3750.
+const numbersIn = (s) => {
+  const t = norm(s).replace(/(\d),(\d{3})/g, "$1$2");
+  return [...(t.match(/\d+(?:\.\d+)?/g) || []), ...(t.match(/\b\d{1,3}(?:[ .]\d{3})+\b/g) || []).map((g) => g.replace(/[ .]/g, ""))].map(Number);
+};
 const die = (m) => { console.error(m); process.exit(2); };
 const idOk = (id) => /^[a-z0-9-]+$/.test(id || "") || die(`id phải là a-z 0-9 - (ví dụ "weichai-power"), không phải "${id}"`);
 
