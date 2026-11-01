@@ -2322,13 +2322,13 @@ function configTabHtml(t) {
     + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}</div>` + cfgResultHtml(prev.result) : "");
 }
 // The note can be closed (Khoa, 2026-11-01); it is kept closed in this browser until the next Tìm NCC result.
-// Suppliers it adds are used right away: config-bot.mjs runs Gợi ý again for the tender (r.autoConfig).
+// The suppliers it adds go into the suggested configurations in code, no agent (config-bot.mjs mergeFind, r.configMerge).
 function findResultHtml(f, key) {
   const r = f.result, ok = (r.added || []).filter((a) => !a.error);
   return h`<div class="note${ok.length ? "" : " warn"}"><button class="ibtn" style="float:right" data-findx="${key}" data-at="${f.at}" aria-label="Ẩn thông báo Tìm NCC" title="Ẩn">×</button><b>Tìm NCC</b> <span class="muted small">lúc ${fmtDate(f.at)}${r.engine ? ` · ${r.engine}` : ""}${r.cap ? ` · công suất ${r.cap.value} ${r.cap.unit}` : ""}</span>${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
     ${raw(ok.length ? "" : '<p class="small">Chưa bổ sung được nhà cung cấp nào. Bấm Gợi ý lại để dùng danh mục hiện có.</p>')}
     ${raw(cfgAddedHtml({ catalogAdded: r.added }).replace(/^<div class="note">|<\/div>$/g, ""))}
-    ${raw(ok.length ? `<p class="small muted">${r.autoConfig ? "Cấu hình gợi ý được tự động làm lại với các nhà cung cấp vừa bổ sung." : "Bấm Gợi ý lại để chọn cấu hình với các nhà cung cấp vừa bổ sung."}</p>` : "")}
+    ${raw(ok.length ? (r.configMerge ? h`<p class="small"><b>Cấu hình gợi ý:</b> ${r.configMerge}.</p>` : '<p class="small muted">Bấm Gợi ý lại để chọn cấu hình với các nhà cung cấp vừa bổ sung.</p>') : "")}
     ${raw(r.tried?.length ? h`<details><summary class="small">Các lượt tìm (${r.tried.length})</summary><ul class="suplist">${raw(r.tried.map((t) => h`<li class="small">${t.engine}: ${t.error || ""}${raw((t.dropped || []).length ? h`<div class="muted small">${t.dropped.map((d) => `${d.supplierId || "?"}: ${d.error || ""}`).join(" · ")}</div>` : "")}</li>`).join(""))}</ul></details>` : "")}
     ${raw(r.skipped?.length ? h`<details><summary class="small">Đã xem nhưng bỏ qua (${r.skipped.length})</summary><ul class="suplist">${raw(r.skipped.map((s) => h`<li class="small"><b>${s.name || ""}</b> — ${s.reason || ""}</li>`).join(""))}</ul></details>` : "")}
     ${raw(r.notes?.length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}</div>`;
@@ -2347,7 +2347,7 @@ function cfgSuppliersHtml(c) {
   if (!c.suppliers?.length) return "";
   return h`<div class="small" style="margin-top:6px"><b>Nhà cung cấp đề xuất:</b></div><ol class="suplist">${raw(c.suppliers.map((x) => {
     const s = state.supplier?.[x.supplierId], conf = SUP_CONF[s?.confidence] || ["", "mut"], vn = s?.vietnam?.distributors || [];
-    return h`<li class="small"><b>${supName(s) || x.supplierId}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}
+    return h`<li class="small"><b>${supName(s) || x.supplierId}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}
       <button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ</button>${raw(s?.website ? h` <a href="${s.website}" target="_blank" rel="noopener">website</a>` : "")}
       ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
   }).join(""))}</ol>`;
@@ -2361,7 +2361,7 @@ function cfgResultHtml(r) {
     // An engine and alternator read from the genset's own row show that row once, under the genset.
     const sameRow = (p) => c.genset?.src?.line && p.src?.line === c.genset.src.line;
     const part = (label, p) => (p ? h`<div><b>${label}:</b> ${p.model}${raw(p.make ? h` <span class="muted">(${p.make})</span>` : "")} <span class="chip mut">${CFG_SRC[p.src?.kind] || ""}</span>${raw(p.unverified ? '<span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(sameRow(p) ? "" : cfgSrcHtml(p.src))}</div>` : "");
-    return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${c.rank || i + 1}</b><span class="chip ${fit[1]}">${fit[0]}</span><span class="spacer"></span>
+    return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${c.rank || i + 1}</b><span class="chip ${fit[1]}">${fit[0]}</span>${raw(c.fromFind ? '<span class="chip mut" title="Thêm bằng code từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, chưa đối chiếu đủ HSMT">Bổ sung từ Tìm NCC</span>' : "")}<span class="spacer"></span>
         ${raw(c.engine?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="engine" data-catkey="${window.GenbidCatalog?.keyOf(c.engine.model) || ""}">Xem động cơ</button>` : "")}
         ${raw(c.alternator?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="alternator" data-catkey="${window.GenbidCatalog?.keyOf(c.alternator.model) || ""}">Xem đầu phát</button>` : "")}</div>
       ${raw(part("Động cơ", c.engine))}${raw(part("Đầu phát", c.alternator))}${raw(c.genset ? h`<div class="small">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
