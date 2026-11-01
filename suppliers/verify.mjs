@@ -17,7 +17,11 @@ const CONTACTS = new Set(["email", "phone", "whatsapp", "wechat"]);
 
 // Same text either side: whitespace collapsed, full-width tildes and dashes read as their ASCII forms.
 export const norm = (s) => String(s ?? "").normalize("NFKC").replace(/[～〜]/g, "~").replace(/[‐-―−]/g, "-").replace(/\s+/g, " ").trim().toLowerCase();
-const numbersIn = (s) => (norm(s).replace(/(\d),(\d{3})/g, "$1$2").match(/\d+(?:\.\d+)?/g) || []).map(Number);
+// "3 000" and "3.750" (space or dot thousands, as European sources write them) also read as 3000 and 3750.
+const numbersIn = (s) => {
+  const t = norm(s).replace(/(\d),(\d{3})/g, "$1$2");
+  return [...(t.match(/\d+(?:\.\d+)?/g) || []), ...(t.match(/\b\d{1,3}(?:[ .]\d{3})+\b/g) || []).map((g) => g.replace(/[ .]/g, ""))].map(Number);
+};
 
 export function checkRecord(rec, file) {
   const errors = [], warnings = [];
