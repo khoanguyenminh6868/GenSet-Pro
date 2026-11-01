@@ -2,7 +2,7 @@
   "id": "honto-power",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Shandong Honto",
     "zh": null,
@@ -35,14 +35,111 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Ricardo Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 38,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SHANGCHAI Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 60,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "YUICHAI Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 1800,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
-  "missing": [
-    "Chưa có dải công suất trên trang đã lưu",
-    "Kết quả tìm kiếm ghi Weichai 16–1000 kVA nhưng chưa có trong trang đã lưu"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 2,
@@ -73,10 +170,23 @@
         "| | Model | HV Side (kV) | LV Side (kV) | Rated Capacity (kVA)"
       ],
       "file": "sources/honto-power/114.md"
+    },
+    {
+      "n": 1,
+      "url": "https://honto-power.com/en/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Ricardo Series 38-500kVA Generator Sets",
+        "SHANGCHAI Series 60-1000kVA Generator Sets",
+        "YUICHAI Series 30-1800kVA Generator Sets",
+        "Perkins Series 8-2250kVA Generator Sets"
+      ],
+      "file": "sources/honto-power/1.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code",
   "specTables": [
     {

@@ -2,7 +2,7 @@
   "id": "engga",
   "country": "CN",
   "role": "alternator_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "ENGGA (Yangjiang) Electric Co., Ltd.",
     "zh": null,
@@ -44,14 +44,23 @@
       "alternatorMakes": [
         "ENGGA"
       ],
-      "power": null,
+      "power": {
+        "min": 6,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          101
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        101
       ]
     }
   ],
@@ -62,7 +71,6 @@
   },
   "exportMarkets": [],
   "missing": [
-    "Website chính hãng không ghi dải kVA; gian hàng Made-in-China ghi 30–2500 kVA nhưng là nguồn tự giới thiệu, chưa đưa vào",
     "Một số đơn vị khác dùng tên 'Guangzhou Engga Generators Co., Ltd.': chưa xác minh quan hệ với ENGGA (Yangjiang)"
   ],
   "sources": [
@@ -85,7 +93,8 @@
       "accessedAt": "2026-10-29",
       "tier": "A",
       "quote": [
-        "Model: TZ400XSEG090-001"
+        "Model: TZ400XSEG090-001",
+        "SERIES LV GENERATORS, capacity of 6 to 3,750kVA"
       ],
       "file": "sources/engga/101.md"
     },
@@ -121,7 +130,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code",
   "specTables": [
     {

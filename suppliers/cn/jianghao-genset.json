@@ -2,7 +2,7 @@
   "id": "jianghao-genset",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Jiangsu Jianghao Generator Co.,Ltd.",
     "zh": "江苏江豪发电机组有限公司",
@@ -26,7 +26,15 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 3,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [
@@ -51,7 +59,6 @@
   ],
   "exportMarkets": [],
   "missing": [
-    "Chưa có dải công suất",
     "Năm thành lập không thống nhất: trang tiếng Trung ghi 创建于1998年, trang jsjhgensets.com ghi established in 2010; để trống"
   ],
   "sources": [
@@ -61,7 +68,8 @@
       "accessedAt": "2026-10-28",
       "tier": "A",
       "quote": [
-        "Our products include seven large diesel generator sets: ordinary open frame type, silent type, mobile power station, automatic type, multi-machine interconnection type, unattended, and computerized centralized remote monitoring."
+        "Our products include seven large diesel generator sets: ordinary open frame type, silent type, mobile power station, automatic type, multi-machine interconnection type, unattended, and computerized centralized remote monitoring.",
+        "The power range of fixed diesel generators is 3-3000kw"
       ],
       "file": "sources/jianghao-genset/1.md"
     },
@@ -108,7 +116,7 @@
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code",
   "specTables": [
     {

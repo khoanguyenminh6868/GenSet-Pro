@@ -2,7 +2,7 @@
   "id": "hykama-wuxi",
   "country": "CN",
   "role": "engine_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Wuxi Huayuan Kama Engine Co., Ltd.",
     "zh": "无锡华源凯马发动机有限公司",
@@ -37,6 +37,31 @@
       "standards": [],
       "src": [
         2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "发电机组 (generator sets)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 0.6,
+        "max": 800,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
       ]
     }
   ],
@@ -73,9 +98,7 @@
     }
   ],
   "exportMarkets": [],
-  "missing": [
-    "Chưa có dải công suất trong trang đã lưu"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 2,
@@ -87,9 +110,19 @@
         "并通过ISO9001质量体系认证、ISO14001环境体系认证及ISO28001职业安全健康体系认证，各产品也分别通过了CE、CARB、EPA、SONCAP、泰尔认证等"
       ],
       "file": "sources/hykama-wuxi/2.md"
+    },
+    {
+      "n": 1,
+      "url": "https://www.hykama.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "发电功率从0.6千瓦到800千瓦"
+      ],
+      "file": "sources/hykama-wuxi/1.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code"
 }

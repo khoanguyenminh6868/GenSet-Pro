@@ -2,7 +2,7 @@
   "id": "lees-power",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Wuxi Lees Power Company Limited",
     "zh": null,
@@ -35,6 +35,31 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "LEES SERIES",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 4500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
     }
   ],
   "certifications": [
@@ -58,9 +83,7 @@
     }
   ],
   "exportMarkets": [],
-  "missing": [
-    "Chưa có dải công suất"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 2,
@@ -222,10 +245,22 @@
         "| Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications"
       ],
       "file": "sources/lees-power/118.md"
+    },
+    {
+      "n": 1,
+      "url": "https://www.leespower.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "LEES SERIES 8-300 KVA",
+        "LEES SERIES 315-880 KVA",
+        "LEES SERIES 1000-4500 KVA"
+      ],
+      "file": "sources/lees-power/1.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-03",
   "checkedBy": "claude-code",
   "specTables": [
     {

@@ -2,7 +2,7 @@
   "id": "hipower",
   "country": "US",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "HIMOINSA POWER SYSTEMS, INC",
     "zh": null,
@@ -41,7 +41,15 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 25,
+        "max": 1375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [
         "60Hz"
       ],
@@ -50,7 +58,8 @@
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2
       ]
     },
     {
@@ -60,22 +69,29 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 63,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2
       ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
-  "missing": [
-    "Trang chủ không ghi dải công suất (chỉ có trong trang 'Know the ranges' chưa lưu)"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -89,9 +105,20 @@
         "HIPOWER Mobile generators are engineered specifically for the needs of the North American marke"
       ],
       "file": "sources/hipower/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.hipowersystems.com/electric-generators/generators-and-battery-energy-storage-for-mobile-applications/6/eng.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "A wide range from 25 to 1375 kVA covering the most demanding applications",
+        "manufacture Spark-Ignited Generators with a wide power range, from 63 kVA up to 1250 kVA."
+      ],
+      "file": "sources/hipower/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-03",
   "checkedBy": "discover-bot (Claude)"
 }
