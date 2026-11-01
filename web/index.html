@@ -1967,7 +1967,7 @@ async function runCompare(key) {
 // (suppliers/verify.mjs checked each quote against the saved page before upload; Khoa, 2026-10-28).
 const SUP_ROLE = { genset_oem: "Nhà lắp ráp tổ máy", engine_maker: "Hãng động cơ", alternator_maker: "Hãng đầu phát", distributor: "Nhà phân phối" };
 const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đầu phát" };
-const SUP_CONF = { high: ["Tin cậy cao", "ok"], medium: ["Tin cậy trung bình", "warn"], low: ["Chưa xác minh", "bad"] };
+const SUP_CONF = { high: ["Tin cậy cao", "ok"], medium: ["Trung bình", "warn"], low: ["Chưa xác minh", "bad"] };
 const SUP_TIER = { A: "Website / tài liệu chính hãng", B: "Triển lãm, hiệp hội, sàn công bố", C: "Tự giới thiệu (đại lý, sàn B2B)" };
 const SUP_COUNTRY = { CN: "Trung Quốc" };
 const supAll = () => Object.values(state.supplier || {}).filter((s) => s?.id && s.status !== "incomplete")
@@ -2013,7 +2013,7 @@ function renderSuppliers() {
   body.innerHTML = h`<div class="row suprow">
       <input type="search" id="supQ" placeholder="Tìm tên, thương hiệu, tỉnh..." value="${f.q}" style="flex:1;min-width:180px">
       <select id="supRole">${raw(opt("", "Mọi vai trò", f.role) + Object.entries(SUP_ROLE).map(([k, l]) => opt(k, l, f.role)).join(""))}</select>
-      <select id="supConf">${raw(opt("", "Mọi độ tin cậy", f.conf) + [["high", "Tin cậy cao"], ["medium", "Tin cậy trung bình"], ["low", "Chưa xác minh"]].map(([k, l]) => opt(k, l, f.conf)).join(""))}</select>
+      <select id="supConf">${raw(opt("", "Mọi độ tin cậy", f.conf) + [["high", "Tin cậy cao"], ["medium", "Trung bình"], ["low", "Chưa xác minh"]].map(([k, l]) => opt(k, l, f.conf)).join(""))}</select>
       <select id="supEngine">${raw(opt("", "Mọi hãng động cơ", f.engine) + engines.map((m) => opt(m, m, f.engine)).join(""))}</select>
       <select id="supFuel">${raw(opt("", "Mọi nhiên liệu", f.fuel) + [["diesel", "Diesel"], ["gas", "Khí gas"], ["dual", "Hai nhiên liệu"], ["hfo", "Dầu nặng HFO"]].map(([k, l]) => opt(k, l, f.fuel)).join(""))}</select>
     </div>
@@ -2037,7 +2037,7 @@ function renderSuppliers() {
 function renderSupList() {
   const list = supAll().filter(supMatches), filtered = supFilter.engine || supFilter.fuel || Number(supFilter.power) > 0;
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
-  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th>Năm thành lập</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
+  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th title="Năm thành lập">Năm TL</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
     return h`<tr data-supopen="${s.id}"><td><b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div>${raw(supContactsBrief(s.contacts))}</td>
