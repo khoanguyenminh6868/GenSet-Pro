@@ -1,0 +1,96 @@
+{
+  "id": "fudiankang-hunan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "湖南省富电康机电设备工程有限公司",
+    "brands": [
+      "富电康"
+    ]
+  },
+  "website": "https://www.fudiankang.cn/",
+  "hq": {
+    "province": "Hunan",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 8–2420 kW, văn phòng ở các thành phố lớn toàn quốc",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có giấy phép thiết bị viễn thông và chứng nhận kiểm định tổ máy quốc gia",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 2420,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập (trang ghi 'hơn 20 năm'); trang còn nhắc 深圳市富电康柴油发电机有限公司 (quan hệ chưa rõ)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.fudiankang.cn/Aboutus/1.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2025 湖南省富电康机电设备工程有限公司 All rights reserved.",
+        "强大的营销及服务网络遍布全国，发电机组功率范围从8 KW -2420KW能满足市场上不同功率",
+        "公司取得了IS09001:2015质量管理体系认证证书，ISO 14001:2015环境管理体系认证证书，并获得了国家信息产业部电信设备进网许可证，国家内燃机组检验合格"
+      ],
+      "file": "sources/fudiankang-hunan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

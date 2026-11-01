@@ -1,0 +1,138 @@
+{
+  "id": "calsion-hefei",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Hefei Calsion Electric System Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Calsion"
+    ]
+  },
+  "website": "https://www.calsionpower.com/",
+  "hq": {
+    "province": "Anhui",
+    "city": "Hefei"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 9–3750 kVA",
+      "src": [
+        3
+      ]
+    },
+    {
+      "text": "Doanh nghiệp công nghệ cao quốc gia, cơ sở R&D–sản xuất–thử nghiệm 33.000 m² tại Hợp Phì",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Pháp nhân Hợp Phì hoạt động từ 26/10/2012; tập đoàn có công ty tại Đông Hoản, Bắc Kinh, Thượng Hải, Hải Nam, Hàng Châu",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 9,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Năm 2012 là năm pháp nhân Hợp Phì bắt đầu hoạt động, tập đoàn hoạt động 'over 30 years' — không ghi năm thành lập; trang about lấy từ calsionenergy.com (cùng tập đoàn)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.calsionenergy.com/about-us/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2026 Hefei Calsion Electric System Co., Ltd.",
+        "Calsion, headquartered in Hefei, China, is a national high-tech enterprise with a 33,000 m² integrated R&D, production, and testing facility.",
+        "On October 26, 2012,started the operation of Hefei Calsion Electric System Co., Ltd.",
+        "Calsion had been providing security services for the Boao Forum for Asia for 23 years."
+      ],
+      "file": "sources/calsion-hefei/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.calsionpower.com/contact/marketing-service.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Address: No. 158, Yunmen Road, Economic and Technological Development Zone, Hefei, China"
+      ],
+      "file": "sources/calsion-hefei/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.calsionpower.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Power range:9 kVA to 3750 kVA"
+      ],
+      "file": "sources/calsion-hefei/3.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.calsionpower.com/product/all.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Power Range: 600-3500 kVA"
+      ],
+      "file": "sources/calsion-hefei/101.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Product Center | Diesel/Gas/Methanol Generators | Calsion Power",
+      "header": [],
+      "rows": [
+        "Power Range: 600-3500 kVA",
+        "Frequency: 50 Hz，60 Hz",
+        "Power Range: 9-2500 kVA",
+        "Power Range: 588-2500 kVA",
+        "Power Range: 660-2500 kVA",
+        "Frequency: 50 Hz",
+        "Power Range: 21-2000 kVA",
+        "Power Range: 20-3750 kVA",
+        "Power Range: 10-3125 kVA"
+      ]
+    }
+  ]
+}

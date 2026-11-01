@@ -2,7 +2,7 @@
   "id": "zhengdian-zhengzhou",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "郑州郑电发电机有限公司",
@@ -21,6 +21,12 @@
       "src": [
         1
       ]
+    },
+    {
+      "text": "Tổ máy diesel 3–3000 kW, trạm phát di động 24–300 kW, tổ máy khẩn cấp tàu thủy 24–500 kW",
+      "src": [
+        2
+      ]
     }
   ],
   "productLines": [
@@ -35,21 +41,30 @@
       ],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 3,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2
       ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Website cũ, không ghi dải công suất, năm thành lập, chứng chỉ"
+    "Công ty có hai website (wfcyfdj.net, kmsfdj.net); chưa có năm thành lập, chứng chỉ"
   ],
   "sources": [
     {
@@ -63,6 +78,16 @@
         "康明斯发电机组,上柴发电机组,常柴发电机组,船用发电机组---郑州郑电发电机有限公司专业生产柴油发电机组"
       ],
       "file": "sources/zhengdian-zhengzhou/1.md"
+    },
+    {
+      "n": 2,
+      "url": "http://kmsfdj.net/gsjj.htm",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "郑州郑电发电机有限公司主要制造销售柴油发电机组,发电机组功率为3-3000KW、移动电站为24-300KW、船用应急柴油发电机组24-500KW"
+      ],
+      "file": "sources/zhengdian-zhengzhou/2.md"
     },
     {
       "n": 101,

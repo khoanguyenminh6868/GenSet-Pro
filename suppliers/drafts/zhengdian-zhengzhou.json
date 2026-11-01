@@ -1,15 +1,66 @@
 {
-  "id": "zhengdian-zhengzhou", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
-  "en": null, "zh": "郑州郑电发电机有限公司", "brands": [],
-  "web": "http://www.wfcyfdj.net/", "prov": "Henan", "city": "Zhengzhou", "founded": null, "fsrc": [], "related": [],
+  "id": "zhengdian-zhengzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": null,
+  "zh": "郑州郑电发电机有限公司",
+  "brands": [],
+  "web": "http://www.wfcyfdj.net/",
+  "prov": "Henan",
+  "city": "Zhengzhou",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
   "src": {
-    "1": ["A", "版权所有：郑州郑电发电机有限公司", "地 址： 郑州市西区工业园区", "康明斯发电机组,上柴发电机组,常柴发电机组,船用发电机组---郑州郑电发电机有限公司专业生产柴油发电机组"]
+    "1": [
+      "A",
+      "版权所有：郑州郑电发电机有限公司",
+      "地 址： 郑州市西区工业园区",
+      "康明斯发电机组,上柴发电机组,常柴发电机组,船用发电机组---郑州郑电发电机有限公司专业生产柴油发电机组"
+    ],
+    "2": [
+      "A",
+      "郑州郑电发电机有限公司主要制造销售柴油发电机组,发电机组功率为3-3000KW、移动电站为24-300KW、船用应急柴油发电机组24-500KW"
+    ]
   },
-  "str": [["Tổ máy diesel Cummins, SDEC (上柴), Changchai và tổ máy tàu thủy", 1]],
+  "str": [
+    [
+      "Tổ máy diesel Cummins, SDEC (上柴), Changchai và tổ máy tàu thủy",
+      1
+    ],
+    [
+      "Tổ máy diesel 3–3000 kW, trạm phát di động 24–300 kW, tổ máy khẩn cấp tàu thủy 24–500 kW",
+      2
+    ]
+  ],
   "cert": [],
   "lines": [
-    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "eng": ["康明斯", "上柴", "常柴"], "src": [1] }
+    {
+      "k": "genset",
+      "s": "柴油发电机组",
+      "fuel": "diesel",
+      "eng": [
+        "康明斯",
+        "上柴",
+        "常柴"
+      ],
+      "src": [
+        1,
+        2
+      ],
+      "p": [
+        3,
+        3000,
+        "kW",
+        "unspecified",
+        2
+      ]
+    }
   ],
-  "miss": ["Website cũ, không ghi dải công suất, năm thành lập, chứng chỉ"],
+  "miss": [
+    "Công ty có hai website (wfcyfdj.net, kmsfdj.net); chưa có năm thành lập, chứng chỉ"
+  ],
   "by": "discover-bot (Claude)"
 }

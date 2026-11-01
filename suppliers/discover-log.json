@@ -1259,15 +1259,6 @@
  {
   "at": "2026-11-01",
   "result": "added",
-  "id": "zhengdian-zhengzhou",
-  "name": "郑州郑电发电机有限公司",
-  "url": "http://www.wfcyfdj.net/",
-  "tables": 11,
-  "rows": 229
- },
- {
-  "at": "2026-11-01",
-  "result": "added",
   "id": "senci-jiangsu",
   "name": "江苏神驰机电有限公司",
   "url": "https://www.jssenci.com/",
@@ -1748,6 +1739,42 @@
   "id": "sincro-soga",
   "name": "Soga S.p.A.",
   "url": "https://www.sogaenergyteam.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "calsion-hefei",
+  "name": "Hefei Calsion Electric System Co., Ltd.",
+  "url": "https://www.calsionpower.com/",
+  "tables": 1,
+  "rows": 9
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "zhengdian-zhengzhou",
+  "name": "郑州郑电发电机有限公司",
+  "url": "http://www.wfcyfdj.net/",
+  "tables": 11,
+  "rows": 229
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "fudiankang-hunan",
+  "name": "湖南省富电康机电设备工程有限公司",
+  "url": "https://www.fudiankang.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "ruiying-jiangsu",
+  "name": "江苏瑞营机械制造有限公司",
+  "url": "https://www.cnriyi.net/",
   "tables": 0,
   "rows": 0
  }
