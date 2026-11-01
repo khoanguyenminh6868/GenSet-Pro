@@ -1,0 +1,5 @@
+{"id":"powerco-systems","country":"GB","role":"genset_oem","status":"verified","conf":"medium","en":"PowerCo Systems International Ltd.","zh":null,"brands":["PowerCo"],"web":"https://generatorsets.co.uk/","prov":null,"city":null,"founded":1995,"fsrc":[1],"related":[],
+"src":{"1":["A","© PowerCo Systems International Ltd . All Rights Reserved.","Based in the United Kingdom, our team have been manufacturing generator sets since 1995.","PowerCo Systems Ltd are independent British manufacturer of a comprehensive range of diesel generator sets with outputs from 5kVA to 3000kVA, 50Hz and 60Hz. Powered by internationally accepted engines such as Perkins, Cummins, and Volvo"]},
+"str":[["Tổ máy diesel 5–3000 kVA, 50/60 Hz, động cơ Perkins, Cummins, Volvo",1],["Sản xuất tổ máy tại Anh từ 1995, bộ điều khiển Deep Sea",1]],"cert":[],
+"lines":[{"k":"genset","s":"Diesel generator sets","fuel":"diesel","eng":["Perkins","Cummins","Volvo"],"p":[5,3000,"kVA","unspecified",1],"freq":["50Hz","60Hz"],"src":[1]}],
+"miss":["Chưa có chứng chỉ, địa chỉ nhà máy"],"by":"discover-bot (Claude)"}

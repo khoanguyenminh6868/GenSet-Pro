@@ -1,0 +1,384 @@
+{
+  "id": "green-power-generators",
+  "country": "IT",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "GREEN POWER SYSTEMS S.r.l.",
+    "zh": null,
+    "brands": [
+      "Green Power Generators"
+    ]
+  },
+  "website": "https://www.greenpowergen.it/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Thiết kế, sản xuất và bán tổ máy tại Ý, hơn 25 năm kinh nghiệm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gruppi elettrogeni",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.greenpowergen.it/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright 2025 - GREEN POWER SYSTEMS S.r.l. - P.IVA: 02018810412",
+        "Green Power Generators è un’azienda italiana specializzata nella progettazione, produzione e vendita di gruppi elettrogeni . Con oltre 25 anni di esperienza"
+      ],
+      "file": "sources/green-power-generators/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.greenpowergen.it/prodotti/gruppi-elettrogeni-gpl-gruppi-elettrogeni-a-metano/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | KVA | 0 | 5 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 | 550 | 600 | 700 | 800 | 1000"
+      ],
+      "file": "sources/green-power-generators/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.greenpowergen.it/prodotti/gruppi-elettrogeni-gruppo-elettrogeno-diesel-benzina-3000-rpm/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | KVA | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 26 | 28 | 30"
+      ],
+      "file": "sources/green-power-generators/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.greenpowergen.it/prodotti/gruppo-cardano-gruppi-cardano/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | KVA | 0 | 5 | 10 | 15 | 20 | 30 | 40 | 50 | 60 | 80 | 100 | 120 | 140"
+      ],
+      "file": "sources/green-power-generators/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.greenpowergen.it/prodotti/motosaldatrici-motosaldatrice/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | KVA | 0 | 20 | 60 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 | 550 | 600 | 700 | 800"
+      ],
+      "file": "sources/green-power-generators/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.greenpowergen.it/prodotti/gruppi-elettrogeni-stazionari/gruppo-elettrogeno-kohler/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD"
+      ],
+      "file": "sources/green-power-generators/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.greenpowergen.it/prodotti/gruppi-elettrogeni-stazionari/gruppo-elettrogeno-yanmar/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD"
+      ],
+      "file": "sources/green-power-generators/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.greenpowergen.it/prodotti/gruppi-elettrogeni-stazionari/deutz/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD"
+      ],
+      "file": "sources/green-power-generators/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.greenpowergen.it/prodotti/gruppi-elettrogeni-stazionari/gruppo-elettrogeno-hyundai/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD"
+      ],
+      "file": "sources/green-power-generators/108.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Gruppi elettrogeni a Gas - Green Power Generators",
+      "header": [],
+      "rows": [
+        "| | KVA | 0 | 5 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 | 550 | 600 | 700 | 800 | 1000",
+        "| KVA | 0 | 5 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 | 550 | 600 | 700 | 800 | 1000"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Gruppi Elettrogeni 3000 giri: Diesel, Benzina, Silenziati - Green Power Generators",
+      "header": [],
+      "rows": [
+        "| | KVA | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 26 | 28 | 30",
+        "| KVA | 0 | 2 | 4 | 6 | 8 | 10 | 50 | 60 | 70 | 80 | 90 | 100 | 150 | 200 | 250 | 300"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Gruppi elettrogeni a Cardano - Green Power Generators",
+      "header": [],
+      "rows": [
+        "| | KVA | 0 | 5 | 10 | 15 | 20 | 30 | 40 | 50 | 60 | 80 | 100 | 120 | 140",
+        "| KVA | 0 | 5 | 10 | 15 | 20 | 30 | 40 | 50 | 60 | 80 | 100 | 120 | 140"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Gruppi elettrogeni a Cardano - Green Power Generators",
+      "header": [
+        "| | MODELLO MODEL | POTENZA POWER | TENSIONE VOLTAGE | PRESA DI FORZA POWER TAKE-OFF | DIMENSIONI DIMENSIONS | PESO WEIGHT | POTENZA TRATTORE TRACTOR POWER",
+        "| | kVA | kW | V | GIRI/MIN | L x La x A (mm) | KG | CV"
+      ],
+      "rows": [
+        "| GP 7 TR-M-C | 6 | 6 | 230 | 430 | 705 x 480 x 810 | 93 | 20",
+        "| GP 11 TR-M-C | 10 | 10 | 230 | 430 | 705 x 480 x 855 | 113 | 20",
+        "| GP 11 TR-C | 10 | 8 | 400 / 230 | 430 | 705 x 480 x 855 | 113 | 20",
+        "| GP 14 TR-C | 12.5 | 10 | 400 / 230 | 430 | 705 x 480 x 855 | 128 | 25",
+        "| GP 16 TR-C | 15 | 12.8 | 400 / 230 | 430 | 805 x 580 x 915 | 138 | 30",
+        "| GP 22 TR-C | 20 | 16 | 400 / 230 | 430 | 805 x 580 x 915 | 139 | 40",
+        "| GP 30 TR-C | 27 | 21.6 | 400 / 230 | 430 | 805 x 580 x 985 | 163 | 60",
+        "| GP 40 TR-C | 35 | 28 | 400 / 230 | 430 | 805 x 580 x 985 | 175 | 80"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Gruppi elettrogeni a Cardano - Green Power Generators",
+      "header": [
+        "| | MODELLO MODEL | POTENZA POWER | TENSIONE VOLTAGE | PRESA DI FORZA POWER TAKE-OFF | DIMENSIONI DIMENSIONS | PESO WEIGHT | POTENZA TRATTORE TRACTOR POWER",
+        "| | kVA | kW | V | GIRI/MIN | L x La x A (mm) | KG | CV"
+      ],
+      "rows": [
+        "| GP 22 TR/S-C | 20 | 16 | 400 / 230 | 430 | 805 x 580 x 985 | 175 | 40",
+        "| GP 33 TR/S-C | 30 | 24 | 400 / 230 | 430 | 855 x 580 x 985 | 217 | 60",
+        "| GP22 TR/S | 20 | 16 | 400 / 230 | 430 | 805 x 580 x 985 | 175 | 40",
+        "| GP 33 TR/S | 30 | 24 | 400 / 230 | 430 | 855 x 580 x 985 | 217 | 60",
+        "| GP 50 TR/S | 45 | 36 | 400 / 230 | 430 | 1140 x 750 x 1065 | 357 | 80",
+        "| GP 55 TR/S | 50 | 40 | 400 / 230 | 430 | 1140 x 750 x1065 | 395 | 100",
+        "| GP 66 TR/S | 62.5 | 50 | 400 / 230 | 420 | 1140 x 750 x 1065 | 438 | 120",
+        "| GP 77 TR/S | 75 | 60 | 400 / 230 | 420 | 1140 x 750 x 1065 | 454 | 150",
+        "| GP 95 TR/S | 87.5 | 70 | 400 / 230 | 420 | 1140 x 750 x 1210 | 506 | 180",
+        "| GP 95 TR/SF | 87.5 | 70 | 400 / 230 | 835 | 1140 x 750 x 1210 | 506 | 180",
+        "| GP 115 TR/S | 100 | 80 | 400 / 230 | 420 | 1140 x 750 x 1210 | 572 | 220",
+        "| GP 115 TR/SF | 100 | 80 | 400 / 230 | 835 | 1140 x 750 x 1210 | 572 | 220"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Motosaldatrici - Green Power Generators",
+      "header": [],
+      "rows": [
+        "| | KVA | 0 | 20 | 60 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 | 550 | 600 | 700 | 800",
+        "| KVA | 0 | 20 | 60 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 | 550 | 600 | 700 | 800"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Gruppi elettrogeni Stazionari Rehlko - Green Power Generators",
+      "header": [
+        "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD",
+        "| kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD",
+        "| PRP | ESP | N. | L/h | L | mm | mm | mm | kg"
+      ],
+      "rows": [
+        "| GP6 A/K-SV | O | 5 | 5.5 | KDW 702 | M | 2 | 1.2 | 55 | 1300 | 700 | 1000 | 300 | | | |",
+        "| GP6 SH/K-SV | S | 55 | 1300 | 700 | 970 | 370",
+        "| GP9 A/K-SV | O | 8 | 8.8 | KDW 1003 | M | 3 | 1.9 | 55 | 1300 | 700 | 1000 | 330 | | | |",
+        "| GP9 SH/K-SV | S | 55 | 1300 | 700 | 970 | 400",
+        "| GP11 A/K-SV | O | 10 | 11 | KSD 1403 NA | E | 3 | 2.6 | 55 | 1300 | 700 | 1000 | 350 | | | |",
+        "| GP11 SH/K-SV | LS | 70 | 1750 | 700 | 1020 | 448",
+        "| GP11 S/K-SV | S | 70 | 1750 | 700 | 1125 | 500",
+        "| GP18 A/K-SV | O | 15 | 16.5 | KSD 1403 TC | E | 3 | 3.3 | 60 | 1500 | 700 | 1020 | 440 | | | |",
+        "| GP18 SH/K-SV | LS | 70 | 1750 | 700 | 1020 | 470",
+        "| GP18 S/K-SV | S | 70 | 1750 | 700 | 1125 | 500",
+        "| GP22 A/K-SV | O | 20 | 22 | KSD 1403 TCA | E | 3 | 3.5 | 60 | 1500 | 700 | 1020 | 520 | | | |",
+        "| GP22 SH/K-SV | LS | 70 | 1750 | 700 | 1020 | 588",
+        "| GP22 S/K-SV | S | 70 | 1750 | 700 | 1125 | 630",
+        "| GP30 A/K-T | O | 26 | 28.6 | KDI 2504M | M | 4 | 4.4 | 70 | 1750 | 700 | 1020 | 565 | | | |",
+        "| GP30 SH/K-T | LS | 75 | 1850 | 700 | 1020 | 705",
+        "| GP30 S/K-T | S | 100 | 2100 | 870 | 1165 | 810",
+        "| GP33 A/K-T | O | 30 | 33 | KDI 2504TM-30 | M | 4 | 5.9 | 70 | 1750 | 700 | 1020 | 640 | | | |",
+        "| GP33 SH/K-T | LS | 75 | 1850 | 700 | 1020 | 700",
+        "| GP33 S/K-T | S | 100 | 2100 | 870 | 1165 | 810",
+        "| GP44 A/K-T | O | 40 | 44 | KDI 2504TM-40 | M | 4 | 7.5 | 70 | 1750 | 700 | 1020 | 645 | | | |",
+        "| GP44 SH/K-T | LS | 75 | 1850 | 700 | 1020 | 755",
+        "| GP44 S/K-T | S | 100 | 2100 | 870 | 1165 | 895",
+        "| GP66 A/K-T | O | 62 | 68 | KDI 3404 TM-60 | M | 4 | 11.3 | 100 | 2100 | 870 | 1300 | 910 | | | |",
+        "| GP66 S/K-T | S | 120 | 2260 | 1000 | 1550 | 1220"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Gruppi elettrogeni Stazionari Yanmar - Green Power Generators",
+      "header": [
+        "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD",
+        "| kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD",
+        "| PRP | ESP | N. | L/h | L | mm | mm | mm | kg"
+      ],
+      "rows": [
+        "| GP11 A/Y-SV | O | 8.1 | 11 | 3TNV80F | M | 3 | 1.94 | 55 | 1300 | 700 | 1000 | 380 | | | |",
+        "| GP11 SH/Y-SV | LS | 70 | 1750 | 700 | 1020 | 480",
+        "| GP11 S/Y-SV | S | 70 | 1750 | 700 | 1125 | 530",
+        "| GP18 A/Y-SV | O | 15 | 16.5 | 3TNV88F | M | 3 | 2.9 | 60 | 1500 | 700 | 1020 | 475 | | | |",
+        "| GP18 SH/Y-SV | LS | 70 | 1750 | 700 | 1020 | 525",
+        "| GP18 S/Y-SV | S | 70 | 1750 | 700 | 1125 | 570",
+        "| GP22 A/Y-SV | O | 19 | 22 | 4TNV88 | M | 4 | 3.7 | 60 | 1500 | 700 | 1020 | 520 | | | |",
+        "| GP22 SH/Y-SV | LS | 70 | 1750 | 700 | 1020 | 580",
+        "| GP22 S/Y-SV | S | 70 | 1750 | 700 | 1125 | 630",
+        "| GP33 A/Y-T | O | 30 | 33 | 4TNV98 | M | 4 | 5.2 | 70 | 1750 | 700 | 1100 | 570 | | | |",
+        "| GP33 S/Y-T | S | 100 | 2100 | 870 | 1165 | 835",
+        "| GP44 A/Y | O | 40 | 44 | 4TNV98T | M | 4 | 7 | 70 | 1750 | 700 | 1100 | 630 | | | |",
+        "| GP44 S/Y | S | 100 | 2100 | 870 | 1165 | 850"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Gruppi elettrogeni Stazionari Deutz - Green Power Generators",
+      "header": [
+        "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD",
+        "| kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD",
+        "| PRP | ESP | N. | L/h | L | mm | mm | mm | kg"
+      ],
+      "rows": [
+        "| GP16 A/D | O | 12.5 | 13.1 | F2M 2011 (OIL) | M | 2 | 2.7 | 60 | 1500 | 700 | 1020 | 497 | | | |",
+        "| GP16 SH/D | LS | 70 | 1750 | 700 | 1020 | 582",
+        "| GP16 S/D | S | 70 | 1750 | 700 | 1125 | 595",
+        "| GP22 A/D | O | 20 | 22 | F3M 2011 (OIL) | M | 3 | 3.9 | 60 | 1500 | 700 | 1020 | 565 | | | |",
+        "| GP22 SH/D | LS | 70 | 1750 | 700 | 1020 | 600",
+        "| GP22 S/D | S | 70 | 1750 | 700 | 1125 | 760",
+        "| GP33 A/D | O | 30 | 33 | F4M 2011 (OIL) | M | 4 | 5.4 | 70 | 1750 | 700 | 1125 | 620 | | | |",
+        "| GP33 SH/D | LS | 70 | 1750 | 700 | 1020 | 740",
+        "| GP33 S/D | S | 100 | 2100 | 870 | 1165 | 860",
+        "| GP44 A/D | O | 40 | 44 | BF4M 2011 (OIL) | M | 4 | 7.1 | 70 | 1750 | 700 | 1100 | 695 | | | |",
+        "| GP44 SH/D | LS | 70 | 1850 | 700 | 1020 | 790",
+        "| GP44 S/D | S | 100 | 2100 | 870 | 1165 | 900",
+        "| GP66 A/D | O | 60 | 65 | BF4M 2011C (OIL) | M | 4 | 10.1 | 100 | 2100 | 870 | 1300 | 785 | | | |",
+        "| GP66 S/D | S | 120 | 2260 | 1000 | 1550 | 1170",
+        "| GP84 A/D | O | 75 | 81 | BF4M 2012C | M | 4 | 12.2 | 100 | 2100 | 870 | 1300 | 1030 | | | |",
+        "| GP84 S/D | S | 130 | 2500 | 1000 | 1550 | 1390",
+        "| GP110 A/D | O | 100 | 110 | BF4M 1013EC | M | 4 | 17.3 | 100 | 2100 | 870 | 1300 | 1200 | | | |",
+        "| GP110 S/D | S | 140 | 2850 | 1000 | 1550 | 1590",
+        "| GP145 A/D | O | 130 | 143 | BF4M 1013FC | E | 4 | 20.8 | 125 | 2500 | 1000 | 1400 | 1280 | | | |",
+        "| GP145 S/D | S | 160 | 3000 | 1100 | 1520 | 1810",
+        "| GP165 A/D | O | 150 | 165 | BF6M 1013EC | M | 6 | 23.7 | 125 | 2500 | 1000 | 1400 | 1540 | | | |",
+        "| GP165 S/D | S | 170 | 3300 | 1100 | 1770 | 2090",
+        "| GP176 A/D | O | 160 | 168 | BF6M 1013EC | M | 6 | 25.6 | 125 | 2500 | 1000 | 1400 | 1580 | | | |",
+        "| GP176 S/D | S | 170 | 3300 | 1100 | 1770 | 2130",
+        "| GP198 A/D | O | 180 | 198 | BF6M 1013FCG2 | E | 6 | 31.2 | 140 | 2850 | 1000 | 1650 | 1580 | | | |",
+        "| GP198 S/D | S | 170 | 3300 | 1100 | 1770 | 2130",
+        "| GP220 A/D | O | 200 | 220 | BF6M 1013FCG3 | E | 6 | 35.8 | 140 | 2850 | 1000 | 1650 | 1700 | | | |",
+        "| GP220 S/D | S | 170 | 3300 | 1100 | 1770 | 2250",
+        "| GP280 A/D | O | 250 | 275 | TCD2013L06-4V | E | 6 | 41.6 | 150 | 3000 | 1100 | 1650 | 2050 | | | |",
+        "| GP280 S/D | S | 265 | 3800 | 1200 | 2000 | 2900",
+        "| GP330 A/D | O | 300 | 330 | BF6M 1015C-G1 | E | 6 | 48.2 | 290 | 3300 | 1100 | 2200 | 2180 | | | |",
+        "| GP330 S/D | S | 280 | 3950 | 1300 | 2150 | 3740",
+        "| GP385 A/D | O | 350 | 385 | BF6M 1015C-G2 | E | 6 | 54.4 | 290 | 3300 | 1100 | 2200 | 2350 | | | |",
+        "| GP385 S/D | S | 320 | 3950 | 1300 | 2150 | 3680",
+        "| GP505 A/D | O | 450 | 480 | BF8M 1015C-G1 | E | 8 | 68.2 | 290 | 3200 | 1300 | 2200 | 2800 | | | |",
+        "| GP505 S/D | S | 320 | 4300 | 1600 | 2250 | 4380",
+        "| GP560 A/D | O | 500 | 550 | BF8M 1015CP | E | 8 | 84.7 | 290 | 3200 | 1300 | 2200 | 2870 | | | |",
+        "| GP560 S/D | S | 320 | 4300 | 1600 | 2250 | 4850"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Gruppi elettrogeni Stazionari Hyundai - Green Power Generators",
+      "header": [
+        "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD",
+        "| kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD",
+        "| PRP | ESP | N. | L/h | L | mm | mm | mm | kg"
+      ],
+      "rows": [
+        "| GP220 A/H | O | 200 | 210 | P086TI | E | 6 | 31.7 | 140 | 2850 | 1000 | 1400 | 1650 | | | |",
+        "| GP220 S/H | S | 170 | 3300 | 1100 | 1770 | 2350",
+        "| GP250 A/H | O | 225 | 248 | DP086LA | E | 6 | 36.8 | 210 | 3000 | 1100 | 1900 | 1700 | | | |",
+        "| GP250 S/H | S | 265 | 3800 | 1200 | 2000 | 2400",
+        "| GP280 A/H | O | 250 | 280 | DP086CC | E | 6 | 38.3 | 210 | 3000 | 1100 | 1900 | N.A. | | | |",
+        "| GP280 S/H | S | 265 | 3800 | 1200 | 2000 | N.A.",
+        "| GP305 A/H | O | 280 | 310 | DP086CD | E | 6 | 41.9 | 210 | 3000 | 1100 | 2100 | N.A. | | | |",
+        "| GP305 S/H | S | 265 | 3800 | 1200 | 2000 | N.A.",
+        "| GP330 A/H | O | 300 | 330 | P126TI II | E | 6 | 45.7 | 210 | 3000 | 1100 | 1650 | 1750 | | | |",
+        "| GP330 S/H | S | 265 | 3950 | 1300 | 2150 | 3260",
+        "| GP385 A/H | O | 350 | 385 | DP126LB | E | 6 | 57.1 | 290 | 3200 | 1300 | 1700 | 2560 | | | |",
+        "| GP385 S/H | S | 280 | 3950 | 1300 | 2150 | 3560",
+        "| GP410 A/H | O | 365 | 405 | DP126LB | E | 6 | 57.1 | 290 | 3200 | 1300 | 1700 | 2700 | | | |",
+        "| GP410 S/H | S | 280 | 3950 | 1300 | 2150 | 3700",
+        "| GP440 A/H | O | 400 | 440 | P158LE | E | 8 | 65.1 | 290 | 3200 | 1300 | 1900 | 2340 | | | |",
+        "| GP440 S/H | S | 320 | 4300 | 1600 | 2250 | 3890",
+        "| GP505 A/H | O | 450 | 500 | DP158LC | E | 8 | 72.9 | 290 | 3200 | 1300 | 1900 | 2650 | | | |",
+        "| GP505 S/H | S | 320 | 4300 | 1600 | 2250 | 4180",
+        "| GP560 A/H | O | 500 | 550 | DP158LD | E | 8 | 83.4 | 290 | 3200 | 1300 | 1900 | 2720 | | | |",
+        "| GP560 S/H | S | 320 | 4300 | 1600 | 2250 | 4300",
+        "| GP610 A/H | O | 550 | 600 | DP180LA | E | 10 | 94.2 | 320 | 3400 | 1400 | 2100 | 3750 | | | |",
+        "| GP610 S/H | S | 260 | 4300 | 1600 | 2250 | 4870",
+        "| GP630 A/H | O | 567 | 627 | DP180LA | E | 10 | 94.2 | 320 | 3400 | 1400 | 2100 | 3970 | | | |",
+        "| GP630 S/H | S | 320 | 4300 | 1600 | 2250 | 5100",
+        "| GP700 A/H | O | 640 | 710 | DP180LB | E | 10 | 103.8 | 320 | 3400 | 1400 | 2100 | 4000 | | | |",
+        "| GP700 SM/H | S | 370 | 5000 | 1900 | 2350 | 5690",
+        "| GP760 A/H | O | 680 | 748 | DP222LB | E | 12 | 109.2 | 340 | 3400 | 1400 | 2100 | 4270 | | | |",
+        "| GP760 SM/H | S | 370 | 5000 | 1900 | 2350 | 6200",
+        "| GP810 A/H | O | 743 | 818 | DP222LC | E | 12 | 119.1 | 340 | 3500 | 1500 | 2100 | 4370 | | | |",
+        "| GP810 SM/H | S | 370 | 5000 | 1900 | 2350 | 5930",
+        "| GP880 A/H | O | 800 | 880 | DP222CB | E | 12 | 127 | 400 | 4000 | 1800 | 2350 | 5950 | | | |",
+        "| GP880 S/H | S | 370 | 5000 | 1900 | 2350 | 7245",
+        "| GP880 SM/H | S | 420 | 5850 | 1900 | 2350 | 7800",
+        "| GP900 A/H | O | 810 | 900 | DP222CB | E | 12 | 127 | 400 | 4000 | 1800 | 2350 | 6200 | | | |",
+        "| GP900 S/H | S | 370 | 5000 | 1900 | 2350 | 7670",
+        "| GP900 SM/H | S | 420 | 5850 | 1900 | 2350 | 9150",
+        "| GP1000 A/H | O | 910 | 1010 | DP222CC | E | 12 | 147 | 400 | 4000 | 1800 | 2350 | 6420 | | | |",
+        "| GP1000 S/H | S | 370 | 5000 | 1900 | 2350 | 7890",
+        "| GP1000 SM/H | S | 420 | 5850 | 1900 | 2350 | 9370"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "energy-gruppi",
+  "country": "IT",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Energy srl a Socio Unico",
+    "zh": null,
+    "brands": [
+      "Energy"
+    ]
+  },
+  "website": "https://www.energy-gruppi.it/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất tổ máy tại Ý",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gruppi elettrogeni",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất toàn dòng, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.energy-gruppi.it/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright 2024 • Energy srl a Socio Unico • P.IVA IT03708980242 • REA VI347355",
+        "Energy - Produzione Gruppi Elettrogeni Italiani"
+      ],
+      "file": "sources/energy-gruppi/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

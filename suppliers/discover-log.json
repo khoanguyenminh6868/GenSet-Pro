@@ -1849,5 +1849,65 @@
   "url": "https://www.avs-aggregatebau.de/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "powerco-systems",
+  "name": "PowerCo Systems International Ltd.",
+  "url": "https://generatorsets.co.uk/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "gti-power",
+  "name": "GTI",
+  "url": "https://gtipowergeneration.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://www.cogem.it/",
+  "reason": "Cogem là thương hiệu của VISA S.p.A. (bản ghi visa-gensets)"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "bertoli",
+  "name": "Bertoli Srl",
+  "url": "https://www.bertolisrl.it/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "ivm-gen",
+  "name": "IVM S.R.L.",
+  "url": "https://www.ivmgen.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "green-power-generators",
+  "name": "GREEN POWER SYSTEMS S.r.l.",
+  "url": "https://www.greenpowergen.it/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "energy-gruppi",
+  "name": "Energy srl a Socio Unico",
+  "url": "https://www.energy-gruppi.it/",
+  "tables": 0,
+  "rows": 0
  }
 ]

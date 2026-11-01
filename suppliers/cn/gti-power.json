@@ -1,0 +1,77 @@
+{
+  "id": "gti-power",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "GTI",
+    "zh": null,
+    "brands": [
+      "GTI"
+    ]
+  },
+  "website": "https://gtipowergeneration.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 10–2500 kVA và hệ lưu trữ pin 250 kW–3 MW, thiết kế và sản xuất tại Anh",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generating sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ chỉ ghi tên thương hiệu GTI, chưa có tên pháp nhân đầy đủ, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://gtipowergeneration.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2018 GTI. All Rights Reserved",
+        "All of our products are designed and manufactured in the UK using premium-quality components sourced from internationally recognised European manufacturers.",
+        "Our product portfolio comprises diesel generating sets from 10kVA to 2,500kVA and Battery Energy Storage Systems ranging from 250kW to 3MW."
+      ],
+      "file": "sources/gti-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

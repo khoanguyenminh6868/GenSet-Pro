@@ -1,0 +1,71 @@
+{
+  "id": "ivm-gen",
+  "country": "IT",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "IVM S.R.L.",
+    "zh": null,
+    "brands": [
+      "IVM"
+    ]
+  },
+  "website": "https://www.ivmgen.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 1986,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà sản xuất tổ máy tại Ý, thành lập 1986",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gruppi elettrogeni",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.ivmgen.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Ⓒ 2025 IVM S.R.L. – P.IVA 03709950285",
+        "IVM Gruppi Elettrogeni è stata fondata nel 1986 e vanta oltre 35 anni di esperienza nel settore."
+      ],
+      "file": "sources/ivm-gen/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
