@@ -1,0 +1,69 @@
+{
+  "id": "kerui-gas",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "科瑞油气",
+    "brands": [
+      "科瑞"
+    ]
+  },
+  "website": "https://www.keruigroup.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy biogas đốt nghèo, điều khiển điện tử (trang có model 600 kW và bảng 1000–1500 kW)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "沼气发电机组",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chỉ ghi tên thương hiệu 科瑞油气, chưa có tên pháp nhân đầy đủ, dải công suất toàn dòng, năm thành lập; tỉnh lấy theo mã ICP 鲁"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.keruigroup.com/sys-pd/55.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2022 科瑞油气 版权所有 | 鲁ICP备2023021311号-2",
+        "沼气发电机组（600 kW）",
+        "沼气发电机组采用国际上比较先进的燃气外部混合的方式，运用先进电控技术和稀薄燃烧控制策略"
+      ],
+      "file": "sources/kerui-gas/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

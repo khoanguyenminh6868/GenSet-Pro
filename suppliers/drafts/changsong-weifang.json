@@ -1,0 +1,16 @@
+{
+  "id": "changsong-weifang", "country": "CN", "role": "engine_maker", "status": "verified", "conf": "medium",
+  "en": null, "zh": "潍坊市长松柴油机有限责任公司", "brands": ["长松"],
+  "web": "http://www.changsongpower.com/", "prov": "Shandong", "city": "Weifang", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "CopyRight 2017 All Right Reserved 潍坊市长松柴油机有限责任公司", "潍坊市长松柴油机有限责任公司，座落于美丽的国际风筝之都－－山东省潍坊市。是一家大型柴油机生产企业。", "公司加大投入，组建燃气机中心，全系列燃气发动机，功率范围涵盖10KW-1100KW"]
+  },
+  "str": [["Nhà máy động cơ diesel tại Duy Phường, kèm tổ máy", 1], ["Động cơ khí 10–1100 kW", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "engine", "s": "燃气发动机", "fuel": "gas", "p": [10, 1100, "kW", "unspecified", 1], "src": [1] },
+    { "k": "engine", "s": "柴油机", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất động cơ diesel, năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

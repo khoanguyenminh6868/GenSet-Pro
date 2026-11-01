@@ -1,0 +1,88 @@
+{
+  "id": "taihai-taizhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "泰州泰海机电设备有限公司",
+    "brands": [
+      "泰海"
+    ]
+  },
+  "website": "http://jstaihai.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Taizhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 3–2500 kW (tự động, giảm ồn, di động); 3000 tổ máy/năm",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Nhà xưởng 16.000 m², gần 150 công nhân",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: nhà sản xuất tổ máy hàng đầu trong nước",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 3,
+        "max": 2500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://jstaihai.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "泰州泰海机电设备有限公司是国内一流的柴油发电机组生产制造商。在建现代化的标准厂房16000平方米，职工人数近150名，年生产柴油发电机组3000台（套）。",
+        "为用户提供3KW-2500KW各种规格普及型、自动化、四保护、自动切换、低噪音及移动式等。"
+      ],
+      "file": "sources/taihai-taizhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
