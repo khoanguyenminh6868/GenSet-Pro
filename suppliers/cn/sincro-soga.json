@@ -1,0 +1,362 @@
+{
+  "id": "sincro-soga",
+  "country": "IT",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "Soga S.p.A.",
+    "zh": null,
+    "brands": [
+      "SINCRO"
+    ]
+  },
+  "website": "https://www.sogaenergyteam.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát đồng bộ SINCRO hơn 400 model, tới 2600 kVA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Nhà máy đầu tiên ở Đông Bắc Ý năm 1986",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "SINCRO synchronous alternators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chỉ ghi mức tối đa (up to 2,600 kVA), chưa có dải công suất; 1986 là năm lập nhà máy đầu tiên, không ghi làm năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.sogaenergyteam.com/sincro/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© Soga S.p.A. 2026",
+        "Featuring over 400 models for a wide variety of applications, SINCRO range is one of the most complete up to 2,600 kVA.",
+        "We date back our technical expertise to 1986 when the first factory was set up in the Northern-East area of Italy."
+      ],
+      "file": "sources/sincro-soga/1.md"
+    },
+    {
+      "n": 124,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-asynchronous-low-voltage-ac-ip54-2-poles-1-phase/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | frame size (mm) | kVA (S1) – H class – p.f.1 230V 50 Hz | efficiency 4/4 50 Hz"
+      ],
+      "file": "sources/sincro-soga/124.md"
+    },
+    {
+      "n": 125,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-asynchronous-low-voltage-ac-ip54-2-poles-3-phase/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | frame size (mm) | kVA (S1) – H class – p.f.1 400V 50 Hz | kVA (S1) – H class – p.f.1 230V 50 Hz | efficiency 4/4 50 Hz"
+      ],
+      "file": "sources/sincro-soga/125.md"
+    },
+    {
+      "n": 126,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-asynchronous-low-voltage-ac-ip54-4-poles-3-phase/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | frame size (mm) | kW (S1) – H class 400V 50 Hz | kW (S1) – H class 230V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz"
+      ],
+      "file": "sources/sincro-soga/126.md"
+    },
+    {
+      "n": 127,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-1-phase-brushless-capacitor/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz"
+      ],
+      "file": "sources/sincro-soga/127.md"
+    },
+    {
+      "n": 128,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-1-phase-brushes-avr/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+      ],
+      "file": "sources/sincro-soga/128.md"
+    },
+    {
+      "n": 129,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-3-phase-brushes-compound/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | frame size mm | kVA (S1) – H class 230/400V 50 Hz | kVA (S1) – H class 277/480V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+      ],
+      "file": "sources/sincro-soga/129.md"
+    },
+    {
+      "n": 130,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-3-phase-brushes-avr/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | frame size mm | kVA (S1) – H class 230/400V 50 Hz | kVA (S1) – H class 277/480V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+      ],
+      "file": "sources/sincro-soga/130.md"
+    },
+    {
+      "n": 131,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-3-phase-brushless-avr/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | kVA stand by 400V 50 Hz | kVA (S1) – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | leads"
+      ],
+      "file": "sources/sincro-soga/131.md"
+    },
+    {
+      "n": 132,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-2-poles-3-phase-brushless-avr-supercompact/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | kVA stand by 400V 50 Hz | kVA (S1) – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | LEADS"
+      ],
+      "file": "sources/sincro-soga/132.md"
+    },
+    {
+      "n": 133,
+      "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-4-poles-1-phase-brushless-capacitor/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz"
+      ],
+      "file": "sources/sincro-soga/133.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 124,
+      "title": "ALTERNATORS - CONSTANT SPEED - ASYNCHRONOUS LOW VOLTAGE AC IP54 - 2 POLES 1 PHASE",
+      "header": [
+        "| model | frame size (mm) | kVA (S1) – H class – p.f.1 230V 50 Hz | efficiency 4/4 50 Hz"
+      ],
+      "rows": [
+        "| ASG 80 C2-M | 80 | 1,2 | 68",
+        "| ASG 80 D2-M | 80 | 1,6 | 70",
+        "| ASG 90 SA2-M | 90 | 2 | 72",
+        "| ASG 90 SB2-M | 90 | 2,2 | 72",
+        "| ASG 112 MB2-M | 112 | 3,5 | 73"
+      ]
+    },
+    {
+      "n": 125,
+      "title": "ALTERNATORS - CONSTANT SPEED - ASYNCHRONOUS LOW VOLTAGE AC IP54 - 2 POLES 3 PHASE",
+      "header": [
+        "| model | frame size (mm) | kVA (S1) – H class – p.f.1 400V 50 Hz | kVA (S1) – H class – p.f.1 230V 50 Hz | efficiency 4/4 50 Hz"
+      ],
+      "rows": [
+        "| ASG 112 MB2-T | 112 | 4 | 1,6 | 84",
+        "| ASG 132 SB2-T | 132 | 5,5 | 2,2 | 86",
+        "| ASG 132 MB2-T | 132 | 7,5 | 3 | 87",
+        "| ASG 132 MD2-T | 132 | 10 | 4,5 | 87"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "ALTERNATORS - CONSTANT SPEED - ASYNCHRONOUS LOW VOLTAGE AC IP54 - 4 POLES THREE PHASE - www.sogaenergyteam.com",
+      "header": [
+        "| model | frame size (mm) | kW (S1) – H class 400V 50 Hz | kW (S1) – H class 230V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz"
+      ],
+      "rows": [
+        "| ASG 132 MA4-T | 132 | 5,5 | 2,2 | 84",
+        "| ASG 132 MB4-T | 132 | 7,5 | 3 | 85",
+        "| ASG 160 LA4-T | 160 | 11 | 4,5 | 89",
+        "| ASG 160 LB4-T | 160 | 15 | 6 | 90",
+        "| ASG 180 LA4-T | 180 | 20 | 8 | 90,5",
+        "| ASG 180 LB4-T | 180 | 25 | 10 | 91"
+      ]
+    },
+    {
+      "n": 127,
+      "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - SINGLE PHASE - BRUSHLESS / CAPACITOR",
+      "header": [
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz"
+      ],
+      "rows": [
+        "| R80 MBL | 80 | 1,2 | 1,5 | 68 | 69",
+        "| R80 LBL | 80 | 2,2 | 2,7 | 73 | 75",
+        "| EP 2 72L | 100 | 3 | 3,7 | 75 | 76",
+        "| EP 2 95H | 100 | 3,5 | 4,3 | 76 | 78",
+        "| EP 2 95L | 100 | 4,2 | 5,2 | 77 | 78",
+        "| EP 2 C5L | 100 | 5 | 6,5 | 79 | 81",
+        "| EP 2 C5T | 100 | 5,5 | 6,8 | 79 | 81",
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz",
+        "| ER 2 CXT | 100 | 3 | 3,7 | 75 | 76",
+        "| ER 2 CAH | 100 | 3,5 | 4,3 | 77 | 78",
+        "| ER 2 CAT | 100 | 4,2 | 5,2 | 77 | 78",
+        "| ER 2 CBT | 100 | 4,8 | 6 | 78 | 79",
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz",
+        "| EK 2 MCT | 100 | 6 | 7,5 | 79 | 80",
+        "| EK 2 LAT | 100 | 7 | 8,8 | 80 | 83",
+        "| EK 2 LCT | 100 | 8 | 10 | 81 | 83",
+        "| FK 2 MES | 120 | 10 | 12 | 80 | 80",
+        "| FK 2 MFS | 120 | 12 | 14,4 | 81 | 82",
+        "| FK 2 MGS | 120 | 13,5 | 16,2 | 82 | 83",
+        "| FK 2 LA steel | 132 | 15 | 18 | 82 | 83",
+        "| FK 2 LC steel | 132 | 18,5 | 22 | 84 | 85",
+        "| GK 2 LA steel | 140 | 20 | 25 | 83 | 85",
+        "| GK 2 LB steel | 140 | 25 | 31 | 85 | 87"
+      ]
+    },
+    {
+      "n": 128,
+      "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+      "header": [
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+      ],
+      "rows": [
+        "| ER 2 CXA | 100 | 3 | 3,7 | 75 | 76",
+        "| ER 2 CAA | 100 | 4,2 | 5,2 | 77 | 78",
+        "| ER 2 CBA | 100 | 4,8 | 6 | 78 | 79",
+        "| EK 2 LAA | 100 | 6 | 7,5 | 79 | 80",
+        "| EK 2 LCA | 100 | 8 | 10 | 81 | 83",
+        "| FK 2 MEA | 120 | 10 | 12 | 80 | 80",
+        "| FK 2 MFA | 120 | 12 | 14,4 | 81 | 82",
+        "| FK 2 MGA | 120 | 13,5 | 16,2 | 82 | 83",
+        "| FKR 2 LA steel | 132 | 15 | 18 | 82 | 83",
+        "| FKR 2 LC steel | 132 | 18,5 | 22 | 84 | 85",
+        "| GKR 2 LA steel | 140 | 20 | 25 | 83 | 85",
+        "| GKR 2 LB steel | 140 | 25 | 31 | 85 | 87"
+      ]
+    },
+    {
+      "n": 129,
+      "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+      "header": [
+        "| model | frame size mm | kVA (S1) – H class 230/400V 50 Hz | kVA (S1) – H class 277/480V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+      ],
+      "rows": [
+        "| ET 2 MBS | 100 | 5,5 | 6,9 | 75 | 76",
+        "| ET 2 MCS | 100 | 7 | 9 | 78 | 79",
+        "| ET 2 LAS | 100 | 8,5 | 10,5 | 81 | 82",
+        "| ET 2 LBS | 100 | 10 | 13 | 83 | 84",
+        "| FT 2 MES | 120 | 13,5 | 16,2 | 83 | 84",
+        "| FT 2 MFS | 120 | 16 | 19,2 | 84 | 85",
+        "| FT 2 MGS | 120 | 18 | 21,6 | 85 | 86",
+        "| FT 2 LA steel | 132 | 20 | 24 | 85 | 86",
+        "| FT 2 LC steel | 132 | 24 | 29 | 87 | 88",
+        "| GT 2 MB steel | 140 | 27 | 34 | 86 | 87",
+        "| GT 2 LA steel | 140 | 31,5 | 40 | 87 | 88",
+        "| GT 2 LB steel | 140 | 38 | 47,5 | 89 | 90"
+      ]
+    },
+    {
+      "n": 130,
+      "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+      "header": [
+        "| model | frame size mm | kVA (S1) – H class 230/400V 50 Hz | kVA (S1) – H class 277/480V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+      ],
+      "rows": [
+        "| ET 2 MBR | 100 | 5,5 | 6,9 | 75 | 76",
+        "| ET 2 MCR | 100 | 7 | 9 | 78 | 79",
+        "| ET 2 LAR | 100 | 8,5 | 10,5 | 81 | 82",
+        "| ET 2 LBR | 100 | 10 | 13 | 83 | 84",
+        "| FT 2 MER | 120 | 13,5 | 16,2 | 83 | 84",
+        "| FT 2 MFR | 120 | 16 | 19,2 | 84 | 85",
+        "| FT 2 MGR | 120 | 18 | 21,6 | 85 | 86",
+        "| FTR 2 LA steel | 132 | 20 | 24 | 85 | 86",
+        "| FTR 2 LC steel | 132 | 24 | 29 | 87 | 88",
+        "| GTR 2 MB steel | 140 | 27 | 34 | 86 | 87",
+        "| GTR 2 LA steel | 140 | 31,5 | 40 | 87 | 88",
+        "| GTR 2 LB steel | 140 | 38 | 47,5 | 89 | 90"
+      ]
+    },
+    {
+      "n": 131,
+      "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+      "header": [
+        "| model | kVA stand by 400V 50 Hz | kVA (S1) – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | leads"
+      ],
+      "rows": [
+        "| FB2 SA | 14 | 12,5 | 84,8 | 6",
+        "| FB2 SB | 15 | 14 | 85,4 | 6",
+        "| FB2 MA | 18 | 16,5 | 86,6 | 6",
+        "| FB2 MB | 21 | 19 | 87,1 | 6",
+        "| IB2 SA | 31 | 28 | 84,2 | 6",
+        "| IB2 SB | 36 | 33 | 85,3 | 6",
+        "| IB2 MA | 48 | 44 | 88,1 | 6",
+        "| IB2 MB | 61 | 55 | 89,5 | 6",
+        "| IB2 LA | 73 | 66 | 90,4 | 6"
+      ]
+    },
+    {
+      "n": 132,
+      "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP23 - 2 POLES - 3 PHASE - BRUSHLESS / AVR SUPERCOMPACT",
+      "header": [
+        "| model | kVA stand by 400V 50 Hz | kVA (S1) – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | LEADS"
+      ],
+      "rows": [
+        "| SK 160 CA2 | 16,6 | 15 | 82,5 | 6",
+        "| SK 160 MA2 | 22,1 | 20 | 83,7 | 6",
+        "| SK 160 LA2 | 31 | 28 | 84,2 | 6",
+        "| SK 160 LB2 | 36 | 33 | 85,3 | 6",
+        "| SK 160 WA2 | 48 | 44 | 88,1 | 6"
+      ]
+    },
+    {
+      "n": 133,
+      "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 4 POLES - 1 PHASE - BRUSHLESS / CAPACITOR",
+      "header": [
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz"
+      ],
+      "rows": [
+        "| FK 4 MBS | 120 | 5,5 | 6,8 | 77 | 78",
+        "| FK 4 MCS | 120 | 6,5 | 8,1 | 79 | 80",
+        "| FK 4 MDS | 120 | 8 | 10 | 81 | 82",
+        "| FK 4 LC steel | 132 | 10 | 12 | 83 | 84",
+        "| GK 4 MB steel | 140 | 13,5 | 16,2 | 81 | 83",
+        "| GK 4 LA steel | 140 | 16 | 19,2 | 83 | 84",
+        "| GK 4 LB steel | 140 | 17,5 | 21 | 85 | 86"
+      ]
+    }
+  ]
+}

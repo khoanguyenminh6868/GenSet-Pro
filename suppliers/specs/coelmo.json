@@ -1,0 +1,34 @@
+[
+ {
+  "n": 101,
+  "url": "https://coelmo.it/en/products/battery-energy-storage-systems/",
+  "title": "Battery Energy Storage Systems BESS | HDP Storage Coelmo",
+  "header": [
+   "| | OUTPUT | BATTERIES | RECHARGE | DISCHARGE/RECHARGE",
+   "| | Continuous output power | Peak power (5s) | Voltage | Frequency | Battery type | Number of cycles [DoD 95%]. | Nominal DC battery voltage | Nominal battery capacity | Charging current | Maximum load for 8 hours of continuous use | Charging time [SoC 90%]"
+  ],
+  "rows": [
+   "| HDPS 3/6 | 3 kW | 5.5 kW | 230 V | 50 Hz | LFP | 6000 cycles | 48 V | 6 kWh | 35 A | 570 W | 2.6 h",
+   "| HDPS 5/9.6 | 5 kW | 9 kW | 230 V | 50 Hz | LFP | 6000 cycles | 48 V | 9.6 kWh | 70 A | 1.1 kW | 2.6 h",
+   "| HDPS 8/14.4 | 8 kW | 15 kW | 230 V | 50 Hz | LFP | 6000 cycles | 48 V | 14.4 kWh | 110 A | 1.7 kW | 2.5 h",
+   "| HDPS 10/19.2 | 10 kW | 18 kW | 230 V | 50 Hz | LFP | 6000 cycles | 48 V | 19.2 kWh | 140 A | 2.3 kW | 2.6 h",
+   "| HDPS 15/24 | 15 kW | 27 kW | 230 V | 50 Hz | LFP | 6000 cycles | 48 V | 24 kWh | 200 A | 2.8 kW | 2.2 h"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://coelmo.it/en/products/battery-energy-storage-systems/",
+  "title": "Battery Energy Storage Systems BESS | HDP Storage Coelmo",
+  "header": [
+   "| | OUTPUT | BATTERIES | RECHARGE | DISCHARGE/RECHARGE",
+   "| | Continuous output power | Peak power (5s) | Voltage | Frequency | Battery type | Number of cycles [DoD 95%]. | Nominal DC battery voltage | Nominal battery capacity | Charging current | Maximum load for 8 hours of continuous use | Charging time [SoC 90%]"
+  ],
+  "rows": [
+   "| HDPS 9/18 | 9 kW | 16.5 kW | 400 V | 50 Hz | LFP | 6000 cycles | 48 V | 18 kWh | 105 A | 1.7 kW | 2.6 h",
+   "| HDPS 15/30 | 15 kW | 27 kW | 400 V | 50 Hz | LFP | 6000 cycles | 48 V | 30 kWh | 210 A | 2.9 kW | 2.1 h",
+   "| HDPS 24/48 | 24 kW | 45 kW | 400 V | 50 Hz | LFP | 6000 cycles | 48 V | 48 kWh | 330 A | 4.6 kW | 2.2 h",
+   "| HDPS 30/60 | 30 kW | 54 kW | 400 V | 50 Hz | LFP | 6000 cycles | 48 V | 60 kWh | 420 A | 6.2 kW | 2.4 h",
+   "| HDPS 45/90 | 45 kW | 81 kW | 400 V | 50 Hz | LFP | 6000 cycles | 48 V | 90 kWh | 600 A | 9.1 kW | 2.4 h"
+  ]
+ }
+]

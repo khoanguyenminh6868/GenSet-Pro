@@ -1,0 +1,13 @@
+{
+  "id": "elcos", "country": "IT", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Elcos s.r.l.", "zh": null, "brands": ["ELCOS"],
+  "web": "https://www.elcospowergenerators.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Elcos s.r.l.", "Elcos srl is among the main Italian companies that produce power gene", "10 – 4100 kVA"]
+  },
+  "str": [["Tổ máy 10–4100 kVA, thiết kế và sản xuất tại Ý", 1], ["Theo hãng: một trong những công ty sản xuất tổ máy chính của Ý", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "Power generators", "fuel": "diesel", "p": [10, 4100, "kVA", "unspecified", 1], "src": [1] } ],
+  "miss": ["Trang chủ không ghi năm thành lập, chứng chỉ, hãng động cơ từng dòng"],
+  "by": "discover-bot (Claude)"
+}

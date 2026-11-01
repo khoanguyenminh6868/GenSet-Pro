@@ -1,0 +1,80 @@
+{
+  "id": "isuzu-motors",
+  "country": "JP",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "ISUZU MOTORS LIMITED",
+    "zh": null,
+    "brands": [
+      "ISUZU"
+    ]
+  },
+  "website": "https://www.isuzu.co.jp/world/product/industrial/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 1916,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel công nghiệp từ 4 xi lanh 2,2 L đến 6 xi lanh 15,7 L, có dòng cho máy phát (Stage IIIA, Tier 4 Final)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 1916, bán động cơ công nghiệp từ 1952",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Industrial diesel engines (Generator)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang giới thiệu ghi dung tích, không ghi dải công suất kW"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.isuzu.co.jp/world/product/industrial/about/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyrights © ISUZU MOTORS LIMITED",
+        "ISUZU Motors was founded in 1916, making it one of Japan's oldest automobile manufacturers.",
+        "ISUZU was the first to start working on industrial diesel engines, starting sales in 1952.",
+        "Today, ISUZU produces an extensive line-up of industrial-purpose diesel engines with models ranging from a 4-cylinder 2.2-liter engine to a 6-cylinder 15.7-liter engine.",
+        "Generator Tier4 Final"
+      ],
+      "file": "sources/isuzu-motors/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
