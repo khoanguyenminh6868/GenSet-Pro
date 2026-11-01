@@ -1,0 +1,5 @@
+{"id":"gooall-fujian","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":"Fujian GOOALL Power Technology Co., Ltd.","zh":null,"brands":["GOOALL"],"web":"https://www.gooallpower.com/","prov":"Fujian","city":"Fuan","founded":1996,"fsrc":[1],"related":[],
+"src":{"1":["A","Copyright © 2026 Fujian GOOALL Power Technology Co., Ltd. All Rights Reserved.","Founded in 1996, Fujian GOOALL Power Technology Co., Ltd. has developed into a professional manufacturer specializing in alternators and diesel generator sets.","Located in Fu'an City, Fujian Province, GOOALL Power now operates a modern facility of 4,500 square meters"]},
+"str":[["Chuyên sản xuất đầu phát và tổ máy diesel (khung hở, cách âm) tại Phúc An",1],["Thành lập 1996, xưởng 4.500 m²",1]],"cert":[],
+"lines":[{"k":"alternator","s":"Alternators","src":[1]},{"k":"genset","s":"Diesel generator sets","fuel":"diesel","types":["open","silent"],"src":[1]}],
+"miss":["Trang không ghi dải công suất, chứng chỉ"],"by":"discover-bot (Claude)"}

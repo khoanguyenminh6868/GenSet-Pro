@@ -1210,15 +1210,6 @@
  },
  {
   "at": "2026-11-01",
-  "result": "added",
-  "id": "shengfeng-fuan",
-  "name": "福安市晟丰电机有限公司",
-  "url": "http://sf-motor.com/",
-  "tables": 0,
-  "rows": 0
- },
- {
-  "at": "2026-11-01",
   "result": "skip",
   "url": "https://www.gxdbdl.com/",
   "reason": "cùng công ty 广西顶博发电机组制造有限公司 với bản ghi dingbo (website khác)"
@@ -1970,6 +1961,42 @@
   "id": "hiearns-changzhou",
   "name": "常州市海润机电有限公司",
   "url": "https://www.hiearns.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "shengfeng-fuan",
+  "name": "Fuan shengfeng electric machinery Co,Ltd.",
+  "url": "http://sf-motor.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "huawei-fuan",
+  "name": "FUJIAN FUAN HUAWEI ELECTRICAL MOTOR CO., LTD.",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "nianfeng-fujian",
+  "name": "NIANFENG (FUJIAN) MOTOR CO., LTD.",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "gooall-fujian",
+  "name": "Fujian GOOALL Power Technology Co., Ltd.",
+  "url": "https://www.gooallpower.com/",
   "tables": 0,
   "rows": 0
  }

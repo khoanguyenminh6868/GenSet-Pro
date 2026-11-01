@@ -1,0 +1,92 @@
+{
+  "id": "huawei-fuan",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "FUJIAN FUAN HUAWEI ELECTRICAL MOTOR CO., LTD.",
+    "zh": null,
+    "brands": []
+  },
+  "website": null,
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": 1992,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát, tổ máy diesel, tổ máy xăng, động cơ điện, bơm; năng lực 600.000 bộ/năm",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Liên doanh thành lập 1992 tại Phúc An",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "Alternator",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel generator set",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng trên CCCME (hạng B), chưa có website riêng, không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cccme.cn/shop/cccme2889/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "FUJIAN FUAN HUAWEI ELECTRICAL MOTOR CO., LTD.",
+        "Fuan Huawei Electrical Machinery Co.,Ltd Fujian is the joint venture formalluy established in 1992. Our annual production capacity of various is 600 thousand sets. We specialize in producing and exporting all series of alternator, diesel generator set, electric motor, water pump and gasoline generator set."
+      ],
+      "file": "sources/huawei-fuan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
