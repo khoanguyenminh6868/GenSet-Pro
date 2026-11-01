@@ -1,0 +1,113 @@
+{
+  "id": "cummins-inc",
+  "country": "US",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Cummins Inc.",
+    "zh": null,
+    "brands": [
+      "Cummins"
+    ]
+  },
+  "website": "https://www.cummins.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "dcec",
+    "cummins-china-investment"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 15–3750 kVA và tổ máy khí tự nhiên 13–2000 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: tổ máy diesel là chuẩn mực của ngành về hiệu suất, chất lượng",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Cummins diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 15,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Natural gas generator sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 13,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "cummins.com chặn trình đọc thường, trang lưu qua firecrawl; chưa có năm thành lập, nhà máy"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cummins.com/generators",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "from Cummins Inc., and its affiliates",
+        "Cummins diesel generator sets remain the industry benchmark for efficiency, quality, reliability, and performance. Power ranges from 15 to 3,750 kVA.",
+        "Flexible, powerful, and sustainable solutions from 13 to 2,000 kW."
+      ],
+      "file": "sources/cummins-inc/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

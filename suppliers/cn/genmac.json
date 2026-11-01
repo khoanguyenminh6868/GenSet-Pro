@@ -1,0 +1,120 @@
+{
+  "id": "genmac",
+  "country": "IT",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "GENMAC S.r.l.s.u.",
+    "zh": null,
+    "brands": [
+      "Genmac"
+    ]
+  },
+  "website": "https://www.genmac.it/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 1983,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [
+    "visa-gensets"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy công nghiệp 9–2625 kVA (diesel/khí) và dòng chuyên dụng 2–130 kVA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Cùng tập đoàn IPG với Visa",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Industrial generating sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 9,
+        "max": 2625,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz",
+        "60Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Professional generating sets",
+      "fuel": "other",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 2,
+        "max": 130,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi hãng động cơ / đầu phát, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.genmac.it/en/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "© 2017 – 2023 GENMAC S.r.l.s.u.",
+        "GENMAC has been on the market since 1983",
+        "Diesel / Gas",
+        "9 - 2625 kVA",
+        "Gasoline / Diesel / Gas",
+        "2- 130 kVA",
+        "GENMAC S.r.l.s.u. is subject to management and coordination of IPG Spa"
+      ],
+      "file": "sources/genmac/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

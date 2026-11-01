@@ -1,0 +1,19 @@
+{
+  "id": "saonon", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "GUANGZHOU WANON ELECTRIC AND MACHINE CO.,LTD", "zh": "广州威能机电有限公司", "brands": ["威能", "Saonon"],
+  "web": "https://www.saonon.com/", "prov": "Guangdong", "city": "Guangzhou", "founded": 2005, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "广州威能机电有限公司", "GUANGZHOU WANON ELECTRIC AND MACHINE CO.,LTD", "威能（股票代码：603766）系隆鑫通用控股子公司，综合性国家高新技术企业，成立于2005年，注册资本1.105亿，是一家专业从事柴油发电产品、微电网系统一站式解决方案及电力综合"],
+    "3": ["A", "集装箱型发电机组"]
+  },
+  "str": [
+    ["Công ty con của Loncin (隆鑫通用, mã CK 603766), doanh nghiệp công nghệ cao quốc gia, thành lập 2005", 1],
+    ["Có tổ máy dạng container", 3]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "types": ["container"], "src": [3] }
+  ],
+  "miss": ["Trang danh mục và giới thiệu không ghi dải công suất (nội dung dựng bằng JavaScript), chưa có chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

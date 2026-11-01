@@ -1,0 +1,18 @@
+{
+  "id": "mhi-china", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": null, "zh": "三菱重工业（中国）有限公司", "brands": ["Mitsubishi", "MGS-CN"],
+  "web": "https://www.mhi.com.cn/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["mhiet", "shanghai-mhi-engine"],
+  "src": {
+    "1": ["A", "三菱重工业（中国）有限公司_柴油发电机组", "三菱发电机组MGS-CN系列，功率范围520kW~2200kW", "MGS-CN系列机组三菱重工业（上海）有限公司投资的菱动电力设备有限公司生产。该公司是面向中国市场的三菱发电机组的国内组装工厂，成立于2019年，拥有年250台机组的制造及测", "SYSTEM VIETNAM CO.,LTD（位于越南）所生产的进口发电机组。包括385 kVA至2750"]
+  },
+  "str": [
+    ["Tổ máy MGS-CN 520–2200 kW lắp ráp tại Trung Quốc (菱动电力设备有限公司, thành lập 2019, năng lực 250 tổ máy/năm)", 1],
+    ["Phân phối tổ máy MGS nhập khẩu sản xuất tại Singapore và Việt Nam (MHI Engine System Vietnam)", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "MGS-CN系列", "fuel": "diesel", "p": [520, 2200, "kW", "standby", 1], "src": [1] }
+  ],
+  "miss": ["Năm 2019 là năm thành lập nhà máy lắp ráp 菱动电力设备有限公司, không phải của 三菱重工业（中国）有限公司; dải MGS nhập khẩu bị ngắt dòng (385 kVA至2750) nên không ghi"],
+  "by": "discover-bot (Claude)"
+}

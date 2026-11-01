@@ -1,0 +1,88 @@
+{
+  "id": "mhi-china",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "三菱重工业（中国）有限公司",
+    "brands": [
+      "Mitsubishi",
+      "MGS-CN"
+    ]
+  },
+  "website": "https://www.mhi.com.cn/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "mhiet",
+    "shanghai-mhi-engine"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy MGS-CN 520–2200 kW lắp ráp tại Trung Quốc (菱动电力设备有限公司, thành lập 2019, năng lực 250 tổ máy/năm)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Phân phối tổ máy MGS nhập khẩu sản xuất tại Singapore và Việt Nam (MHI Engine System Vietnam)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "MGS-CN系列",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 520,
+        "max": 2200,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Năm 2019 là năm thành lập nhà máy lắp ráp 菱动电力设备有限公司, không phải của 三菱重工业（中国）有限公司; dải MGS nhập khẩu bị ngắt dòng (385 kVA至2750) nên không ghi"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.mhi.com.cn/product/diesel/generator-sets/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "三菱重工业（中国）有限公司_柴油发电机组",
+        "三菱发电机组MGS-CN系列，功率范围520kW~2200kW",
+        "MGS-CN系列机组三菱重工业（上海）有限公司投资的菱动电力设备有限公司生产。该公司是面向中国市场的三菱发电机组的国内组装工厂，成立于2019年，拥有年250台机组的制造及测",
+        "SYSTEM VIETNAM CO.,LTD（位于越南）所生产的进口发电机组。包括385 kVA至2750"
+      ],
+      "file": "sources/mhi-china/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
