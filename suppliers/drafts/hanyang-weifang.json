@@ -1,0 +1,5 @@
+{"id":"hanyang-weifang","country":"CN","role":"genset_oem","status":"verified","conf":"medium","en":"Weifang Hanyang Diesel Power Equipment Co., Ltd.","zh":null,"brands":["Hanyang"],"web":"https://www.hy-genset.com/","prov":"Shandong","city":"Weifang","founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Weifang Hanyang Diesel Power Equipment Co., Ltd. is located in the beautiful world kite capital - Weifang, Shandong. Our company is a comprehensive enterprise that integrates production, sales, import and export trade.","Power range: 10kVA - 3000kVA"]},
+"str":[["Tổ máy diesel 10–3000 kVA, sản xuất và xuất khẩu tại Duy Phường",1]],"cert":[],
+"lines":[{"k":"genset","s":"Diesel generator sets","fuel":"diesel","p":[10,3000,"kVA","unspecified",1],"src":[1]}],
+"miss":["Trang chủ có mục 'Company Established' nhưng không đọc được năm; chưa có chứng chỉ"],"by":"discover-bot (Claude)"}

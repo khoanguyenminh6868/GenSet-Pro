@@ -1,0 +1,344 @@
+{
+  "id": "ricardo-weifang",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": "Weifang Ricardo Power Technology",
+    "zh": null,
+    "brands": [
+      "Ricardo"
+    ]
+  },
+  "website": "https://www.ricardoengine.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel 'Ricardo' cho máy phát 10–350 kW, 1500/1800 vòng/phút, kèm tổ máy",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: nhà cung cấp động cơ diesel hàng đầu Trung Quốc",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Ricardo engine for generator",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 350,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Theo nhật ký 2026-10-29, 'Ricardo' là tên dòng động cơ do nhiều xưởng Duy Phường làm, không liên quan Ricardo Plc — bản ghi này là một trong các xưởng đó; chưa có tên pháp nhân đầy đủ (Co., Ltd.), năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.ricardoengine.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Weifang Ricardo Power Technology , is a leading supplier of diesel engine, Diesel Generator, and engine parts in China.Ricardo engine for generator, with power range 10kw to 350kw, 1500rpm and 1800rpm"
+      ],
+      "file": "sources/ricardo-weifang/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/29.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | K4100ZD"
+      ],
+      "file": "sources/ricardo-weifang/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/30.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | K4100D"
+      ],
+      "file": "sources/ricardo-weifang/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/31.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | 495ZD"
+      ],
+      "file": "sources/ricardo-weifang/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/32.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | 495D"
+      ],
+      "file": "sources/ricardo-weifang/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/33.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | 490D"
+      ],
+      "file": "sources/ricardo-weifang/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/34.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | 2110D"
+      ],
+      "file": "sources/ricardo-weifang/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/35.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | 2100D"
+      ],
+      "file": "sources/ricardo-weifang/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/36.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | 295D"
+      ],
+      "file": "sources/ricardo-weifang/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/28.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | K4102D"
+      ],
+      "file": "sources/ricardo-weifang/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/27.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | K4102ZD"
+      ],
+      "file": "sources/ricardo-weifang/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.ricardoengine.com/a/Products/ricardoengine/26.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Engine Model | ZH4105ZLD"
+      ],
+      "file": "sources/ricardo-weifang/111.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "41KW Weifang Ricardo Engine K4100ZD_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | K4100ZD",
+        "| Rated Power/Speed(kw/hp/rpm) | 41/56/1500",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke | 100*115",
+        "| Fuel Consumption(g/kw.h) | 239.6"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "30.1KW Weifang Ricardo Engine K4100D_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | K4100D",
+        "| Rated Power/Speed(kw/hp/rpm) | 30.1/40/1500",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke | 100*115",
+        "| Fuel Consumption(g/kw.h) | 243.3"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "36KW Weifang Ricardo Engine 495ZD_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | 495ZD",
+        "| Rated Power/Speed(kw/rpm) | 36/49/1500",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke | 95*115",
+        "| Fuel Consumption(g/kw.h) | 239.6"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "26.5KW Weichai Ricardo Engine 495D_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | 495D",
+        "| Rated Power/Speed(kw/hp/rpm) | 26.5/36/1500",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke | 95*115",
+        "| Fuel Consumption(g/kw.h) | 243.3"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "21KW Weifang Ricardo Engine 490D_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | 490D",
+        "| Rated Power/Speed(kw/hp/rpm) | 21/28.5/1500",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke | 90*100",
+        "| Fuel Consumption(g/kw.h) | 243.3"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "18KW Weifang Ricardo Engine 2110D_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | 2110D",
+        "| Rated Power/Speed(kw/hp/rpm) | 18/24/1500",
+        "| Cylinder Number | 2",
+        "| Bore*Stroke | 110*117",
+        "| Fuel Consumption(g/kw.h) | 243.3"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "15KW Weifang Ricardo Engine 2100D_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | 2100D",
+        "| Rated Power/Speed(kw/hp/rpm) | 15/20/1500",
+        "| Cylinder Number | 2",
+        "| Bore*Stroke | 100*115",
+        "| Fuel Consumption(g/kw.h) | 243.3"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "13.5KW Weifang Ricardo Engine 295D_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | 295D",
+        "| Rated Power/Speed(kw/hp/rpm) | 13.5/18.4/1500",
+        "| Cylinder Number | 2",
+        "| Bore*Stroke | 95*115",
+        "| Fuel Consumption(g/kw.h) | 243.3"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "33KW Weifang Ricardo Engine K4102D_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | K4102D",
+        "| Rated Power/Speed(kw/hp/rpm) | 33/44/1500",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke | 102*115",
+        "| Fuel Consumption(g/kw.h) | 243.3"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "44kw Weifang Ricardo Engine K4102ZD_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | K4102ZD",
+        "| Rated Power/Speed(kw/hp/rpm) | 44/59/1500",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke | 102*115",
+        "| Fuel Consumption(g/kw.h) | 239.6"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "55KW Weifang Ricardo ZH4105ZLD Engine_Weifang Ricardo Diesel Power",
+      "header": [],
+      "rows": [
+        "| Engine Model | ZH4105ZLD",
+        "| Rated Power/Speed(kw/hp/rpm) | 55/75/1500",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke | 105*115",
+        "| Fuel Consumption(g/kw.h) | 239.6"
+      ]
+    }
+  ]
+}

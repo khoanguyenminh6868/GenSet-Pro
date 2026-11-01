@@ -1999,5 +1999,29 @@
   "url": "https://www.gooallpower.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://global.yamaha-motor.com/business/pp/generator/",
+  "reason": "Yamaha đã ngừng sản xuất máy phát (chuyển mảng Power Products cho Willbe Co., Ltd.)"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "ricardo-weifang",
+  "name": "Weifang Ricardo Power Technology",
+  "url": "https://www.ricardoengine.com/",
+  "tables": 11,
+  "rows": 55
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "hanyang-weifang",
+  "name": "Weifang Hanyang Diesel Power Equipment Co., Ltd.",
+  "url": "https://www.hy-genset.com/",
+  "tables": 9,
+  "rows": 243
  }
 ]
