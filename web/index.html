@@ -2430,6 +2430,10 @@ const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trê
 // Baudouin, Kubota, Yanmar...) and engines whose source gives no make; Khác keeps only foreign makes. The list is web/catalog.js FOREIGN_ENGINE.
 const CFG_ORIGIN = [["all", "Tất cả"], ["cn", "Trung Quốc"], ["other", "Khác"]];
 const cfgOrigin = {};
+// Yêu cầu khác (Khoa, 2026-11-01): requirements typed here go with Gợi ý and Tìm NCC (configreq / findreq extra) and
+// are checked like the HSMT's own (config-prompt.md, find-prompt.md); the box starts with the last request's text.
+const cfgExtra = {};
+const cfgExtraOf = (key) => cfgExtra[key] ?? state.configreq[key]?.extra ?? state.findreq[key]?.extra ?? "";
 function configTabHtml(t) {
   const key = t._key, prev = state.configmatch[key], origin = cfgOrigin[key] || "cn";
   const wait = workerReqPending("configreq", key) ? waitHtml("Đang chờ Agent đọc HSMT và chọn cấu hình động cơ, đầu phát...", state.configreq[key].requestedAt) : "";
@@ -2441,15 +2445,16 @@ function configTabHtml(t) {
   const ferr = !fwait && workerReqError("findreq", key), busy = wait || fwait;
   return wait + fwait + (err ? h`<div class="note warn">${err}</div>` : "") + (ferr ? h`<div class="note warn">Tìm NCC: ${ferr}</div>` : "")
     + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${busy ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
-    + h`<div class="row"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật và bổ sung vào danh mục">Tìm NCC</button></div>`
+    + h`<div class="field" style="margin:8px 0"><label for="cfgExtra">Yêu cầu khác</label><textarea id="cfgExtra" data-key="${key}" maxlength="2000" rows="2" placeholder="Không bắt buộc. Ví dụ: động cơ Weichai, đầu phát Stamford, bộ điều khiển Deep Sea DSE7320, hòa đồng bộ..." ${busy ? "disabled" : ""}>${cfgExtraOf(key)}</textarea></div>`
+    + h`<div class="row"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button></div>`
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
-    + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}</div>` + cfgResultHtml(prev.result) : "");
+    + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}</div>` + cfgResultHtml(prev.result) : "");
 }
 // The note can be closed (Khoa, 2026-11-01); it is kept closed in this browser until the next Tìm NCC result.
 // The suppliers it adds go into the suggested configurations in code, no agent (config-bot.mjs mergeFind, r.configMerge).
 function findResultHtml(f, key) {
   const r = f.result, ok = (r.added || []).filter((a) => !a.error);
-  return h`<div class="note${ok.length ? "" : " warn"}"><button class="ibtn" style="float:right" data-findx="${key}" data-at="${f.at}" aria-label="Ẩn thông báo Tìm NCC" title="Ẩn">×</button><b>Tìm NCC</b> <span class="muted small">lúc ${fmtDate(f.at)}${r.engine ? ` · ${r.engine}` : ""}${r.cap ? ` · công suất ${r.cap.value} ${r.cap.unit}` : ""}</span>${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
+  return h`<div class="note${ok.length ? "" : " warn"}"><button class="ibtn" style="float:right" data-findx="${key}" data-at="${f.at}" aria-label="Ẩn thông báo Tìm NCC" title="Ẩn">×</button><b>Tìm NCC</b> <span class="muted small">lúc ${fmtDate(f.at)}${r.engine ? ` · ${r.engine}` : ""}${r.cap ? ` · công suất ${r.cap.value} ${r.cap.unit}` : ""}${r.extra ? ` · yêu cầu khác: ${r.extra}` : ""}</span>${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
     ${raw(ok.length ? "" : '<p class="small">Chưa bổ sung được nhà cung cấp nào. Bấm Gợi ý lại để dùng danh mục hiện có.</p>')}
     ${raw(cfgAddedHtml({ catalogAdded: r.added }).replace(/^<div class="note">|<\/div>$/g, ""))}
     ${raw(ok.length ? (r.configMerge ? h`<p class="small"><b>Cấu hình gợi ý:</b> ${r.configMerge}.</p>` : '<p class="small muted">Bấm Gợi ý lại để chọn cấu hình với các nhà cung cấp vừa bổ sung.</p>') : "")}
@@ -2500,7 +2505,7 @@ function cfgResultHtml(r) {
       ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
-const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="small">Yêu cầu đọc từ HSMT (${r.requirements.length})</summary><ul class="suplist">${raw(r.requirements.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "");
+const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="small">Yêu cầu đọc từ HSMT (${r.requirements.length})</summary><ul class="suplist">${raw(r.requirements.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.from === "user" ? ' <span class="chip mut">Yêu cầu khác</span>' : "")}${raw(q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "");
 // Internet finds added to the catalog by config-bot.mjs (each checked with verify.mjs before it is added).
 const cfgAddedHtml = (r) => (r.catalogAdded?.length ? h`<div class="note"><b>Bổ sung vào danh mục nhà cung cấp từ internet</b><ul class="suplist">${raw(r.catalogAdded.map((a) => a.error
   ? h`<li class="small">${a.supplierId || ""}: chưa bổ sung — ${a.error}</li>`
@@ -2816,8 +2821,8 @@ document.addEventListener("click", async (e) => {
   if (cki) { listScroll.cat = mScroll().scrollTop; catView.open = cki.dataset.catitem; renderCatalog(); return; }
   if (e.target.id === "catBack") { catView.open = null; renderCatalog(); mScroll().scrollTop = listScroll.cat; return; }
   if (e.target.id === "catMore") { catView.limit += 100; renderCatList(); return; }
-  if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn" }, "gợi ý cấu hình"); return; }
-  if (e.target.id === "cfgFind") { requestWorker("findreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn" }, "tìm nhà cung cấp"); return; }
+  if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn", extra: cfgExtraOf(e.target.dataset.key).trim() }, "gợi ý cấu hình"); return; }
+  if (e.target.id === "cfgFind") { requestWorker("findreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn", extra: cfgExtraOf(e.target.dataset.key).trim() }, "tìm nhà cung cấp"); return; }
   if (e.target.id === "spRun") { requestWorker("supplierreq", e.target.dataset.key, {}, "gợi ý nhà cung cấp"); return; }
   const fx = e.target.closest("[data-findx]");
   if (fx) { local.set("findDismiss", { ...local.get("findDismiss", {}), [fx.dataset.findx]: fx.dataset.at }); renderDrawer(); return; }
@@ -2879,6 +2884,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#cmDel")) { askDeleteCompare(e.target.closest("#cmDel").dataset.key); return; }
 });
 document.addEventListener("input", (e) => {
+  if (e.target.id === "cfgExtra") cfgExtra[e.target.dataset.key] = e.target.value;
   const k = e.target.dataset?.filter;
   if (k && e.target.tagName === "INPUT") { state.filters[k] = e.target.value; renderGrid(); }
   if (e.target.id === "q") { state.limit = pageSize(); renderGrid(); }

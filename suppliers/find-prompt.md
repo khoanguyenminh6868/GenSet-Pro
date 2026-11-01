@@ -10,7 +10,10 @@ find. You run unattended: nobody answers questions.
 Find on the internet up to 3 suppliers (genset makers first, then engine or alternator makers) that sell a product
 meeting the tender's main requirements: power (prime / standby as the HSMT says), frequency, voltage, any make or
 origin the HSMT names, and the controller it asks for (make, model or functions; Khoa, 2026-11-01): prefer a supplier
-whose own pages name that controller. Follow the "Xuất xứ động cơ" section of input.md. Prefer companies NOT in catalog.md; a
+whose own pages name that controller. Follow the "Xuất xứ động cơ" section of input.md. When input.md has a "Yêu cầu
+khác" section (typed on the web, Khoa 2026-11-01), the supplier's saved pages must also meet each of those requirements
+(a make or model it names must be on the supplier's own pages); skip a supplier that does not, with the reason in
+`skipped`, and say in `summary` which of them each supplier meets. Prefer companies NOT in catalog.md; a
 supplier already in the system counts only when you add a product line or spec table at the required power that it
 does not have yet (use its id from catalog.md then).
 

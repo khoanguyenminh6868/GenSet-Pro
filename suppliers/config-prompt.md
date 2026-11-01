@@ -36,6 +36,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    cylinders / displacement / governor / cooling / emission, alternator make / insulation class / IP / AVR / bearing,
    the controller (make, model, AMF / auto start, paralleling, communication) and so on. Each one: `item`, `requirement` (short), `quote` (exact words from hsmt.txt). Leave out what a model
    cannot decide (enclosure, ATS, delivery, warranty, documents).
+   When input.md has a "Yêu cầu khác" section (typed on the web, Khoa 2026-11-01), add each of its requirements too,
+   with `"from": "user"`, `quote` empty, and treat it exactly like one of the HSMT: a check in every configuration
+   (`hsmtQuote` empty), counted in the ranking of step 2, searched for in step 4. When it names a make or model
+   (engine, alternator, controller), a configuration that does not offer it has that check `not_met` and is not a
+   suggestion. When it contradicts the HSMT, follow it and say so in `notes`.
 2. From catalog.md, find configurations (one engine + one alternator) that meet them. Prefer an engine and an
    alternator that appear together in the same genset row (a real configuration a manufacturer sells). For every
    requirement write a check: `offered` (what the configuration gives) and `sourceQuote` (exact words from that
