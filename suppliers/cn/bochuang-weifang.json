@@ -1,0 +1,86 @@
+{
+  "id": "bochuang-weifang",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "山东博创动力设备有限公司",
+    "brands": [
+      "博创",
+      "恒力"
+    ]
+  },
+  "website": "http://www.bocreat.cn/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nghiên cứu, sản xuất tổ máy diesel, xăng, khí (cùng 山东恒力动力设备)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "燃气发电机组",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.bocreat.cn/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "山东博创动力设备有限公司/山东恒力动力设备有限公司是一家专门从事柴油发电机组、汽油发电机组、燃气发电机组的研发、生产与销售的大型综合化柴油发动机生产厂家。",
+        "公司位于“动力之城”潍坊，地处交通环境优越"
+      ],
+      "file": "sources/bochuang-weifang/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
