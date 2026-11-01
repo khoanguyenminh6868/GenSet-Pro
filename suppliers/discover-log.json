@@ -1654,5 +1654,47 @@
   "url": "https://www.taylorpowergenerators.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://genprogenerators.co.uk/",
+  "reason": "trang chủ không ghi tên pháp nhân; lưu thêm trang About/Contact ở lượt sau"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "honda-power",
+  "name": "American Honda Motor Co., Inc.",
+  "url": "https://powerequipment.honda.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "wudong-wuxi",
+  "name": "无锡动力工程股份有限公司",
+  "url": "http://www.wdpower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "tongchai-nantong",
+  "name": "南通柴油机股份有限公司",
+  "url": "http://www.ntdec.cn/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "vantek-jiangsu",
+  "name": "江苏万泰动力设备有限公司",
+  "url": "http://www.vantekpower.cn/",
+  "tables": 0,
+  "rows": 0
  }
 ]
