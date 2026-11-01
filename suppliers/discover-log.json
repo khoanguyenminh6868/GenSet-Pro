@@ -2536,5 +2536,29 @@
   "result": "skip",
   "url": "http://www.wattekpower.com/",
   "reason": "无锡明捷特 WATTEK: trang chủ chỉ có ảnh, không có chữ để trích; chờ lần sau"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://www.ratogh.com/",
+  "reason": "重庆润通 Rato: trang chủ tập đoàn không ghi sản xuất tổ máy phát (chỉ 汽柴油动力、储能电源...); chờ trang sản phẩm"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "url": "https://www.crrcgc.cc/dlcyj",
+  "reason": "大连中车柴油机: trang chủ chỉ có tin tức, ghi động cơ đầu máy và tàu thuỷ, không ghi tổ máy phát"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "name": "新晨动力 Xinchen",
+  "reason": "Động cơ ô tô (xce.com.cn), không có dòng cho tổ máy phát"
+ },
+ {
+  "at": "2026-11-01",
+  "result": "skip",
+  "name": "山东华源莱动 / 河北华北柴油机 / 北方通用动力",
+  "reason": "Chưa tìm được website chính hãng (chỉ có baike, trang tuyển dụng, hồ sơ powershow)"
  }
 ]
