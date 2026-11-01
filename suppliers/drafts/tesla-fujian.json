@@ -1,0 +1,16 @@
+{
+  "id": "tesla-fujian", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "Fujian Tesla Power Technology Co.,Ltd", "zh": null, "brands": ["Tesla Power"],
+  "web": "https://www.tesla-power.net/", "prov": "Fujian", "city": null, "founded": null, "fsrc": [], "related": ["boss-fujian"],
+  "src": {
+    "1": ["A", "Fujian Tesla Power Technology Co.,Ltd， as a subsidiary of Fujian BOSS Electrical Machinery Co.,LTD. Focuses On Generator And Generating Set Manufacturing, Marketing And Services.", "got ISO9001, CIQ,CE certification, etc.", "Diesel generator set, Silent generator , Diesel genset , AC Alternator, Open type Generator"]
+  },
+  "str": [["Công ty con của Fujian BOSS Electrical Machinery; tổ máy diesel (hở, cách âm) và đầu phát", 1]],
+  "cert": [["ISO9001", 1], ["CE", 1]],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator set", "fuel": "diesel", "types": ["open", "silent"], "src": [1] },
+    { "k": "alternator", "s": "AC Alternator", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất, năm thành lập"],
+  "by": "discover-bot (Claude)"
+}

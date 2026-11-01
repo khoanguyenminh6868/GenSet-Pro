@@ -1,0 +1,104 @@
+{
+  "id": "tesla-fujian",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Fujian Tesla Power Technology Co.,Ltd",
+    "zh": null,
+    "brands": [
+      "Tesla Power"
+    ]
+  },
+  "website": "https://www.tesla-power.net/",
+  "hq": {
+    "province": "Fujian",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "boss-fujian"
+  ],
+  "strengths": [
+    {
+      "text": "Công ty con của Fujian BOSS Electrical Machinery; tổ máy diesel (hở, cách âm) và đầu phát",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator set",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "AC Alternator",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.tesla-power.net/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Fujian Tesla Power Technology Co.,Ltd， as a subsidiary of Fujian BOSS Electrical Machinery Co.,LTD. Focuses On Generator And Generating Set Manufacturing, Marketing And Services.",
+        "got ISO9001, CIQ,CE certification, etc.",
+        "Diesel generator set, Silent generator , Diesel genset , AC Alternator, Open type Generator"
+      ],
+      "file": "sources/tesla-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
