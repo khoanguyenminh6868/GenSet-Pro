@@ -1,0 +1,5 @@
+{"id":"faraday-wuxi","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":null,"zh":"无锡法拉第电机有限公司","brands":["FARADAY","法拉第"],"web":"http://www.faradaygenerator.com/","prov":"Jiangsu","city":"Wuxi","founded":2004,"fsrc":[2],"related":[],
+"src":{"1":["A","Copyright © 2024 无锡法拉第电机有限公司版权所有","FDH-高压系列发电机","FDM-船用系列发电机","FD经典系列发电机"],"2":["A","法拉第（FARADAY）成立于2004年，专业从事高效率、高可靠性无刷交流高低压发电机的生产制造"]},
+"str":[["Đầu phát không chổi than hạ áp và cao áp: dòng FD, FDH (cao áp), FDM (tàu thủy), FDZ (một chiều)",1],["Thành lập 2004",2]],"cert":[],
+"lines":[{"k":"alternator","s":"FD / FDH / FDM / FDR系列发电机","src":[1]}],
+"miss":["Trang không ghi dải công suất; nhật ký 2026-10-29 từng bỏ qua Wuxi Faraday vì chưa tìm thấy website (faradaygenerator.com)"],"by":"discover-bot (Claude)"}
