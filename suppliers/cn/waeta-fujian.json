@@ -1,0 +1,102 @@
+{
+  "id": "waeta-fujian",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Fujian Waeta Power Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "WAETA"
+    ]
+  },
+  "website": "https://www.waetapower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Zhangzhou"
+  },
+  "founded": 2010,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel, khí, hybrid, DC biến tốc, tháp đèn; 10–4000 kVA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 2010 tại Chương Châu (Phúc Kiến)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 4000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Natural gas generator sets",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Dải 10kVA-4000kVA ghi chung cho mọi dòng; chưa có chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.waetapower.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Found in 2010, Fujian Waeta Power Co., Ltd., located in Zhangzhou City, Fujian Province, is specialized in manufacturing diesel generator sets",
+        "Product scope covers diesel generator sets, natural gas generator sets, generator set control systems, parallel systems, hybrid generator sets, variable-speed DC generator sets and lighting towers, whose power ranges 10kVA-4000kVA."
+      ],
+      "file": "sources/waeta-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

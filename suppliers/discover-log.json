@@ -1570,5 +1570,41 @@
   "url": "https://www.everllence.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "shangyan-jiangsu",
+  "name": "Shangyan Power Technology Jiangsu Co., Ltd",
+  "url": "https://www.sypower.com/",
+  "tables": 16,
+  "rows": 280
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "waeta-fujian",
+  "name": "Fujian Waeta Power Co., Ltd.",
+  "url": "https://www.waetapower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "boss-fujian",
+  "name": "Fujian BOSS Electrical Machinery Co.,Ltd.",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-01",
+  "result": "added",
+  "id": "tesla-fujian",
+  "name": "Fujian Tesla Power Technology Co.,Ltd",
+  "url": "https://www.tesla-power.net/",
+  "tables": 0,
+  "rows": 0
  }
 ]
