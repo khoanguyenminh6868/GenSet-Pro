@@ -1291,7 +1291,7 @@ function infoHtml(t) {
       <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp${files.some((f) => f.manual) ? ` (${files.filter((f) => f.manual).length} tải tay)` : " tải từ muasamcong"}${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
         ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải về</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
-        ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
+        ${raw(f.ocr ? h`<span class="chip mut" title="Bản scan, chữ đọc bằng OCR (${f.ocr} trang), có thể sai vài chữ">OCR</span>` : "")}${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t, files.length))}
     </div>
