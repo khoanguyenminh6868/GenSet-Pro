@@ -2,7 +2,7 @@
   "id": "saonon",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "GUANGZHOU WANON ELECTRIC AND MACHINE CO.,LTD",
     "zh": "广州威能机电有限公司",
@@ -54,12 +54,37 @@
       "src": [
         3
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 9,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          4
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        4
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang danh mục và giới thiệu không ghi dải công suất (nội dung dựng bằng JavaScript), chưa có chứng chỉ"
+    "Chưa có chứng chỉ; mới có dải cho dòng Perkins (trang tiếng Nga)"
   ],
   "sources": [
     {
@@ -83,9 +108,19 @@
         "集装箱型发电机组"
       ],
       "file": "sources/saonon/3.md"
+    },
+    {
+      "n": 4,
+      "url": "https://www.saonon.com/rusproduct/show_100000007938824.html",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "9 kVA -2250 kVA （ 50 Hz"
+      ],
+      "file": "sources/saonon/4.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }

@@ -2,7 +2,7 @@
   "id": "power-hf",
   "country": "CN",
   "role": "engine_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "华丰动力股份有限公司",
@@ -68,12 +68,36 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Huafeng-Perkins Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6.5,
+        "max": 1800,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang tổ máy (/pro/fadianji/) gần như không có chữ; chưa có dải công suất",
     "Năm 1920 là năm của tiền thân, không ghi làm năm thành lập",
     "Thành phố lấy từ tên cũ 潍县 (Duy Phường)"
   ],
@@ -139,10 +163,20 @@
         "| 型式 | 四冲程、直列、水冷、直喷燃烧室 | 四冲程、直列、水冷、直喷燃烧室"
       ],
       "file": "sources/power-hf/105.md"
+    },
+    {
+      "n": 3,
+      "url": "https://en.powerhf.com/pro/fadianji/ranyou/0525/6.html",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "The prime power of the set is from 6.5 to 1800kW."
+      ],
+      "file": "sources/power-hf/3.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot",
   "specTables": [
     {

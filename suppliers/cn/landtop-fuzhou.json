@@ -2,7 +2,7 @@
   "id": "landtop-fuzhou",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Fuzhou Landtop Co., Ltd.",
     "zh": null,
@@ -70,13 +70,36 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "WEICHAI series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 18,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
-  "missing": [
-    "Trang chủ / tin tức không ghi dải công suất"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -99,9 +122,19 @@
         "Fuzhou Landtop Co., Ltd. was founded in 2011 in Fuzhou, Fujian Province, with our own production factories in Fu'an City."
       ],
       "file": "sources/landtop-fuzhou/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.landtop.cn/weichai-generator.html",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "18kW-3000kW WEICHAI丨Diesel Generator Set"
+      ],
+      "file": "sources/landtop-fuzhou/3.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }

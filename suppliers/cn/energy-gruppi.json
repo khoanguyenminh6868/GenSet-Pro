@@ -2,7 +2,7 @@
   "id": "energy-gruppi",
   "country": "IT",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Energy srl a Socio Unico",
     "zh": null,
@@ -33,21 +33,33 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 5,
+        "max": 1850,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2,
+          3
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2,
+        3
       ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang chủ không ghi dải công suất toàn dòng, năm thành lập"
+    "Trang chủ không ghi năm thành lập",
+    "Dải 5–1850 kVA gộp từ trang dòng nhỏ nhất (5–25 kVA) và lớn nhất (1000–1850 kVA) của gamma Industrial"
   ],
   "sources": [
     {
@@ -60,9 +72,29 @@
         "Energy - Produzione Gruppi Elettrogeni Italiani"
       ],
       "file": "sources/energy-gruppi/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.energy-gruppi.it/en/sottocategorie/genartori-di-corrente-gamma-industrial-da-5-a-25-kva-raffreddati-acqua-1500rpm-settore-cantieristico-industriale-energy-gruppi-elettrogeni-made-in-italy",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "The Industrial generators ranging from 5 to 25 kVA"
+      ],
+      "file": "sources/energy-gruppi/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.energy-gruppi.it/en/sottocategorie/genartori-di-corrente-gamma-industrial-da-1000-a-1850-kva-raffreddati-acqua-1500rpm-settore-cantieristico-industriale-energy-gruppi-elettrogeni-made-in-italy",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "The Industrial generator sets ranging from 1000 to 1850 kVA"
+      ],
+      "file": "sources/energy-gruppi/3.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }
