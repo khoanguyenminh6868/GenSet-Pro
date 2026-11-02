@@ -1638,7 +1638,7 @@ function biddersHtml(t) {
 function analysisTabHtml(t) {
   const s = analysisState(t), a = analysisOf(t._key);
   const head = s === "done"
-    ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>`
+    ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : a.basis === "specs" ? '<span class="chip warn">Chỉ thông số kỹ thuật (Chương V)</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>`
     : s === "running" ? progress("AI đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
     : s === "requested" ? (Date.now() < areqNoteUntil
       ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
@@ -1653,7 +1653,7 @@ function analysisTabHtml(t) {
   // quotes found: shown, so a partial analysis does not look complete (Khoa, 2026-10-27).
   const notes = [].concat(a?.notes || []).filter(Boolean);
   const notesNote = s === "done" && notes.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy:</b><ul class="clean">${raw(notes.map((x) => h`<li>${x}</li>`).join(""))}</ul></div>` : "";
-  return head + errNote + notesNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? analysisHtml(a.result) : "");
+  return head + errNote + notesNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? (a.basis === "specs" ? specsOnlyHtml(a.result) : analysisHtml(a.result)) : "");
 }
 
 // ---------- Libraries and files on demand ----------
@@ -2898,6 +2898,15 @@ function tlktHtml(c) {
 }
 
 // ---------- Analysis rendering ----------
+const specsTableHtml = (a) => h`<details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table><thead><tr><th>Hạng mục</th><th>Yêu cầu</th><th>Nguồn</th></tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td>${s.item}</td><td>${s.requirement}${raw(s.quote ? h`<div class="muted small">"${s.quote}"</div>` : "")}</td><td class="muted">${s.reference || ""}${raw(s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td></tr>`).join(""))}</tbody></table></div></details>`;
+// basis "specs": the bot read only the technical specs of Chương V (genbid-sync.js specs, Khoa 2026-11-03).
+function specsOnlyHtml(a) {
+  const cap = a.keyInfo?.generatorCapacity;
+  return h`<div class="panel" style="display:flex;flex-direction:column;gap:16px">
+    <div><div class="eyebrow">Công suất máy phát</div><p style="margin:6px 0 0">${cap || "Chương V không ghi"}</p></div>
+    ${raw(specsTableHtml(a))}
+  </div>`;
+}
 function analysisHtml(a) {
   const ki = a.keyInfo || {};
   // Thông tin chính leaves out Tên gói thầu, Số TBMT and Bên mời thầu (Khoa, 2026-10-27).
@@ -2923,7 +2932,7 @@ function analysisHtml(a) {
       </div>`).join("") || '<p class="muted">Không có điểm nào được đánh dấu.</p>')}
     </div>
     <details class="sec" open><summary>Thông tin chính</summary><div><dl class="kv">${raw(KI.filter(([k]) => ki[k]).map(([k, l]) => h`<dt>${l}</dt><dd>${ki[k]}</dd>`).join(""))}</dl></div></details>
-    <details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table><thead><tr><th>Hạng mục</th><th>Yêu cầu</th><th>Nguồn</th></tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td>${s.item}</td><td>${s.requirement}${raw(s.quote ? h`<div class="muted small">"${s.quote}"</div>` : "")}</td><td class="muted">${s.reference || ""}${raw(s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td></tr>`).join(""))}</tbody></table></div></details>
+    ${raw(specsTableHtml(a))}
     <details class="sec"><summary>Yêu cầu năng lực, kinh nghiệm (${(a.qualificationRequirements || []).length})</summary><div>${raw(list((a.qualificationRequirements || []).map((q) => q.requirement + (q.reference ? ` (${q.reference})` : ""))))}</div></details>
     <details class="sec"><summary>Tài liệu phải nộp (${(a.requiredDocuments || []).length})</summary><div>${raw(list(a.requiredDocuments))}</div></details>
     <details class="sec"><summary>Điều khoản có dấu hiệu hạn chế (${(a.restrictiveClauses || []).length})</summary><div>${raw(list(a.restrictiveClauses))}</div></details>
