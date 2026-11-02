@@ -1,0 +1,76 @@
+{
+  "id": "genpower-turkey",
+  "country": "TR",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Genpower Jeneratör",
+    "zh": null,
+    "brands": [
+      "Genpower"
+    ]
+  },
+  "website": "https://www.genpower.com.tr/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel công nghiệp 10–3300 kVA và máy phát di động 1–12 kVA",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Genpower endüstriyel dizel jeneratör",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 3300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có địa chỉ, năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.genpower.com.tr/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "10 kVa’dan 3300 kVa’ya kadar olan endüstriyel tip dizel jeneratör ve 1 kVa’dan 12 kVa’ya kadar olan portatif jeneratör",
+        "Copyright Genpower Jeneratör ’e aittir"
+      ],
+      "file": "sources/genpower-turkey/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}

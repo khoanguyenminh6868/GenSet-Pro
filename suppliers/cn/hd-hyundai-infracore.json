@@ -1,0 +1,71 @@
+{
+  "id": "hd-hyundai-infracore",
+  "country": "KR",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "HD Construction Equipment (former HD Hyundai Infracore) — Engine",
+    "zh": null,
+    "brands": [
+      "HD Hyundai"
+    ]
+  },
+  "website": "https://www.hd-ce.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "xcmg-doosan-engine",
+    "hd-hyundai-heavy"
+  ],
+  "strengths": [
+    {
+      "text": "Có mảng động cơ; đang phát triển động cơ máy phát cỡ lớn cho trung tâm dữ liệu",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "HD CE engines (generator engines)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất động cơ máy phát; tên thương hiệu động cơ cũ (Doosan) chưa có câu trích"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.hd-ce.com/en/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "HD CONSTRUCTION EQUIPMENT has established an unrivaled position in all our business areas, including construction equipment, engines",
+        "HD Construction Equipment Accelerates Large-Scale Generator Engine Development to Target Data Center Market"
+      ],
+      "file": "sources/hd-hyundai-infracore/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}
