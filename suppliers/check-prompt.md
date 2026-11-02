@@ -21,6 +21,8 @@ the files here; the code verifies it and marks anything it cannot find "chưa kh
    - `met` only when the source states a value that meets the requirement; `not_met` when it states one that does
      not; `unclear` when no source says. Never guess, never take a value from a model name, never assume prime when
      the row does not say prime. A figure marked ⚠ is `unclear`, with the values in `note`.
+   - A requirement with `parts` (a group of the controller's functions): the check has the same `parts`, each with its
+     own `offered`, `sourceQuote`, `factSrc` and `status`; the code decides the group's status from them.
    - A value may be converted only with a formula of "Công thức được phép" below, in the check's `conversions`
      (inputs `from`: `source`, `hsmt`, `calc` or `standard`), as in the example.
 2. When the HSMT asks for a controller and a "Bộ điều khiển" line of this configuration's supplier names one, you may

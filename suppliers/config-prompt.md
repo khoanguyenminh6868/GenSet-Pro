@@ -57,6 +57,13 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    `option` when the supplier sets it when the order is placed without changing those models (fuel tank size,
    dimensions, weight, noise, canopy). Leave out what a model cannot decide (enclosure, ATS, delivery, warranty, documents).
    Give every requirement its own `item` name and use the same name in every check.
+   Group the controller's functions of one kind into ONE requirement (Khoa 2026-11-03): its protections (over / under
+   voltage, frequency, overload, oil pressure, coolant temperature...), its measurements and display, its
+   communication (RS485, Modbus, USB, Ethernet...), its alarms / event log, its start / stop and AMF functions, with
+   `parts`: one `{ "item": "Quá áp" }` per function the HSMT lists, in the HSMT's words. Its check then has the same
+   `parts`, each with its own `status`, `offered`, `sourceQuote` and `factSrc` exactly as a check of its own; the
+   code checks every part, and the group is met only when every part is. A requirement of a single value (make, model,
+   origin) stays on its own.
    When input.md has a "Yêu cầu khác" section (typed on the web, Khoa 2026-11-01), add each of its requirements too,
    with `"from": "user"`, `quote` empty, and treat it exactly like one of the HSMT: a check in every configuration
    (`hsmtQuote` empty), counted in the ranking of step 2, searched for in step 4. When it names a make or model
@@ -66,6 +73,10 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    "Ứng viên". What matters most (Khoa, 2026-11-02): the engine and the controller, then the alternator and the genset
    as a whole, then the `option` requirements. Prefer an
    engine and an alternator that appear together in the same genset row (a real configuration a manufacturer sells).
+   Write each model's checks once (Khoa 2026-11-03): in a configuration whose controller is the controller of an
+   earlier configuration, leave out the controller checks; whose engine (alternator) is that of an earlier one, leave
+   out the checks taken from "Thông số theo model" (`factSrc`). The code copies them from the earlier configuration
+   and checks them against this one's sources. Still write every check this configuration's own row gives.
    For every requirement write a check (`item` as in requirements): `offered` (what the configuration gives) and
    `sourceQuote` (exact words from that catalog row or its table header), and `status`:
    - `met` only when the source states a value that meets the requirement;
@@ -101,11 +112,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    generation is to be confirmed.
    When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
    (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
-   Keep at most 10 configurations, best first: fewest `not_met` on the engine and the controller, then on the
+   Keep at most 6 configurations, best first: fewest `not_met` on the engine and the controller, then on the
    alternator and the genset, then a supplier that truly fits (step 3), then fewest `unclear` in the same order, then
    the `option` requirements, then power closest above the requirement. The code ranks them again this way. A
    configuration with a `not_met` on power, frequency, a named make or origin is not a suggestion. Give several
-   different engines when the catalog has them, not ten rows of one engine.
+   different engines when the catalog has them, not six rows of one engine.
 3. For every configuration, name the suppliers in the system that sell it (`suppliers`, at most 3, best first): only
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
    this engine and, best, this alternator at the power required. Order (Khoa, 2026-11-02): a supplier that offers both
@@ -143,7 +154,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 ```json
 {
   "summary": "1-2 câu",
-  "requirements": [{ "item": "", "requirement": "", "quote": "", "part": "engine|alternator|genset|controller", "level": "core|option" }],
+  "requirements": [{ "item": "", "requirement": "", "quote": "", "part": "engine|alternator|genset|controller", "level": "core|option", "parts": [{ "item": "only for a grouped requirement" }] }],
   "configs": [{
     "rank": 1,
     "engine": { "model": "", "make": "", "src": { "kind": "catalog", "supplierId": "", "n": 101, "line": "| ... |" } },
@@ -152,7 +163,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     "controller": { "model": "DSE7320", "make": "Deep Sea", "src": { "kind": "controller", "supplierId": "", "n": 3001, "line": "..." } },
     "checks": [{ "item": "", "requirement": "", "hsmtQuote": "", "offered": "", "sourceQuote": "", "part": "engine|alternator|genset|controller", "status": "met|not_met|unclear", "note": "",
       "factSrc": { "supplierId": "", "n": 101, "line": "only when the figure comes from Thông số theo model" },
-      "conversions": [{ "formula": "current_3ph", "inputs": [{ "name": "S_kVA", "value": 400, "from": "source" }, { "name": "U_V", "value": 380, "from": "hsmt" }], "value": 607.7 }] }],
+      "conversions": [{ "formula": "current_3ph", "inputs": [{ "name": "S_kVA", "value": 400, "from": "source" }, { "name": "U_V", "value": 380, "from": "hsmt" }], "value": 607.7 }],
+      "parts": [{ "item": "Quá áp", "offered": "", "sourceQuote": "", "status": "met|not_met|unclear", "factSrc": {} }] }],
     "suppliers": [{ "supplierId": "", "n": 101, "line": "| ... |", "why": "" }],
     "gaps": ["what to confirm with the supplier"]
   }],

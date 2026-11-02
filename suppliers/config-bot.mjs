@@ -1,6 +1,6 @@
 // "Gợi ý" in the Cấu hình gợi ý tab, run on the Windows PC next to the GenBid bot:
 //   node suppliers/config-bot.mjs run            answer every pending configreq/<TBMT> (one Claude agent per request)
-//                                                and findreq/<TBMT> (Tìm NCC: Gemini first, then Claude, find-prompt.md;
+//                                                and findreq/<TBMT> (Tìm NCC: Claude, find-prompt.md;
 //                                                the suppliers it adds go into configmatch/<TBMT> in code, no agent)
 //   node suppliers/config-bot.mjs merge-find --key <TBMT>          do that again from the stored findmatch
 //   node suppliers/config-bot.mjs find-check --dir <dir>          check newCatalog.json of a Tìm NCC folder in code
@@ -303,6 +303,26 @@ export function candidates(cat, cap, hints, { suppliers = [], origin = "all", cn
   }
   return { top: out, all: rows };
 }
+// At most 6 configurations (Khoa 2026-11-03: a run checked 49 requirements × 8 configurations in 11 minutes).
+export const MAX_CONFIGS = 6;
+// A configuration whose controller (engine, alternator) is that of an earlier one may leave out the checks of that
+// part: the code copies them: a check read from the model's figures (factSrc), one whose quote is also in this
+// configuration's own source of that part, and a controller function no source states. Each copy is then checked
+// against this configuration's sources like any other check.
+export function copyModelChecks(configs, textOf = () => "") {
+  for (const [i, c] of configs.entries()) {
+    for (const part of ["controller", "engine", "alternator"]) {
+      const key = c[part]?.model && CAT.keyOf(c[part].model);
+      const prev = key && configs.slice(0, i).find((p) => p[part]?.model && CAT.keyOf(p[part].model) === key);
+      if (!prev) continue;
+      const have = new Set((c.checks || []).map((x) => norm(x.item)));
+      const own = textOf(c[part].src) || "";
+      const fits = (x) => x.factSrc || (x.sourceQuote && own.includes(norm(x.sourceQuote))) || (part === "controller" && x.status === "unclear" && !x.parts);
+      const copies = (prev.checks || []).filter((x) => x.part === part && !x.byCode && !have.has(norm(x.item)) && (x.parts ? x.parts.every(fits) : fits(x)));
+      if (copies.length) c.checks = [...(c.checks || []), ...copies.map((x) => ({ ...JSON.parse(JSON.stringify(x)), copiedFrom: prev.rank }))];
+    }
+  }
+}
 const factLine = (f) => `${CAT.SPEC[f.key]?.vi || f.key}: ${f.value} — factSrc: { "supplierId": "${f.supplierId}", "n": ${f.n}, "line": ${JSON.stringify(f.line)} }`;
 export function catalogMd(cat, cap, hints, opts = {}) {
   const facts = opts.facts || modelFacts(cat, opts.suppliers || []), { top, all } = candidates(cat, cap, hints, { ...opts, facts });
@@ -581,15 +601,19 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       const o = CAT.originIn(`${e.model || ""} ${own || ""}`, e.model);
       const cnRow = (x) => sup.get(x.supplierId)?.country === "CN" && (sup.get(x.supplierId).specTables || []).some((t) => t.n === Number(x.n) && t.rows.some((l) => norm(l) === norm(x.line))
         && [...(t.header || []), x.line, t.title].join(" ").replace(/s/g, "").toLowerCase().includes(String(e.model || "").replace(/s/g, "").toLowerCase()));
-      const viaCn = origin === "cn" && o === "other" && !!e.model && (c.suppliers || []).some(cnRow);
-      if (viaCn) c.suppliers = c.suppliers.filter(cnRow);
+      // Or the saved page of a supplier based in China (in the supplier DB or added by this run) names the engine.
+      const cnWeb = (x) => !!page && sup.get(x.supplierId)?.country === "CN" && page.replace(/\s/g, "").includes(norm(e.model || "").replace(/\s/g, ""));
+      const cnOffer = (x) => cnRow(x) || cnWeb(x);
+      const viaCn = origin === "cn" && o === "other" && !!e.model && (c.suppliers || []).some(cnOffer);
+      if (viaCn) c.suppliers = c.suppliers.filter(cnOffer);
       const drop = GROUP_ORIGIN.has(origin) ? !CAT.groupIn(`${e.model || ""} ${own || ""}`, e.model, origin) : origin === "cn" ? o !== "cn" && !viaCn : o !== "other";
       if (drop) problems.push(`#${c.rank}: động cơ ${e.model}${e.make ? ` (${e.make})` : ""} ${GROUP_ORIGIN.has(origin) ? `nguồn không cho thấy là hãng của nước ${origin.toUpperCase()}` : origin === "cn" ? (o === "other" ? "không phải hãng Trung Quốc và không có nhà cung cấp ở Trung Quốc chào" : "nguồn không ghi hãng") : "không rõ là hãng ngoài Trung Quốc"}, đã bỏ`);
       return !drop;
     });
     result.origin = origin;
   }
-  result.configs = (result.configs || []).slice(0, 10);
+  result.configs = (result.configs || []).slice(0, MAX_CONFIGS);
+  copyModelChecks(result.configs, sourceText);
   for (const c of result.configs) {
     const texts = {};
     for (const part of ["engine", "alternator", "genset", "controller"]) {
@@ -603,8 +627,16 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       const makeOfCode = part === "controller" && CAT.controllersIn(p.model).some((x) => x.model && x.brand === p.make);
       if (p.make && !makeOfCode && !texts[part].includes(norm(p.make).split(/[\s-]/)[0])) { problems.push(`#${c.rank} ${part}: hãng ${p.make} không ghi trong nguồn`); p.makeUnverified = true; }
     }
-    for (const x of c.checks || []) {
-      const reasons = [], rq = reqs.get(norm(x.item));
+    // A grouped requirement (the controller's protections, measurements...: Khoa 2026-11-03) has one part per function;
+    // each part is checked here like a check of its own, then the group is put back together.
+    const groups = new Set();
+    c.checks = (c.checks || []).flatMap((x) => {
+      if (!Array.isArray(x.parts) || !x.parts.length) return [x];
+      groups.add(x);
+      return x.parts.map((p) => ({ ...p, item: `${x.item}: ${p.item}`, part: x.part, level: x.level, hsmtQuote: "", group: x, name: p.item }));
+    });
+    for (const x of c.checks) {
+      const reasons = [], rq = reqs.get(norm(x.group ? x.group.item : x.item));
       x.level = (rq?.level || x.level) === "option" ? "option" : "core";
       if (!PARTS.includes(x.part)) x.part = rq?.part || "genset";
       if (x.hsmtQuote && !inHsmt(x.hsmtQuote)) reasons.push("câu trích HSMT");
@@ -679,6 +711,25 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
         problems.push(`#${c.rank} ${x.item}: ${reasons.join(", ")}`);
       }
     }
+    if (groups.size) c.checks = c.checks.flatMap((x) => {
+      if (!x.group) return [x];
+      const g = x.group, parts = c.checks.filter((y) => y.group === g);
+      if (parts[0] !== x) return [];
+      g.parts = parts.map(({ group, name, item, part, level, ...p }) => ({ ...p, item: name }));
+      Object.assign(g, { part: x.part, level: x.level });
+      // Met only when every function is met; one not met makes the group not met.
+      const st = (s) => g.parts.filter((p) => p.status === s).map((p) => p.item);
+      g.status = st("not_met").length ? "not_met" : st("met").length === g.parts.length ? "met" : "unclear";
+      g.offered = `Đạt ${st("met").length}/${g.parts.length}`;
+      g.note = [st("not_met").length && `Không đạt: ${st("not_met").join(", ")}.`, st("unclear").length && `Chưa rõ: ${st("unclear").join(", ")}.`].filter(Boolean).join(" ");
+      delete g.sourceQuote; delete g.factSrc;
+      g.unverified = g.parts.some((p) => p.unverified) || undefined;
+      if (g.hsmtQuote && !inHsmt(g.hsmtQuote)) {
+        g.unverified = true; problems.push(`#${c.rank} ${g.item}: câu trích HSMT`);
+        if (g.status === "met") g.status = "unclear";
+      }
+      return [g];
+    });
     // Suppliers: only ids of the supplier DB, each with a row of its own tables that names this engine (and alternator).
     const squash = (s) => norm(s).replace(/\s/g, "");
     c.suppliers = (c.suppliers || []).filter((s) => {
@@ -900,9 +951,10 @@ function runClaude(dir, input) {
 
 // ---------- Tìm NCC (findreq/<TBMT> → findmatch/<TBMT>) ----------
 // "Tìm NCC" next to "Gợi ý" (Khoa, 2026-10-31): search the internet for more suppliers that fit the tender's technical
-// requirements and add them to the catalog. Gemini (Antigravity CLI, Khoa's Google AI Pro account, no Claude tokens)
-// goes first, auto-approving its own tool calls (Khoa allowed it); Claude (Opus) runs only when Gemini fails or finds
-// no supplier that passes verify.mjs and covers the tender's power. Both follow find-prompt.md, in a folder made by prep.
+// requirements and add them to the catalog, following find-prompt.md in a folder made by prep. Claude (Opus) only
+// (Khoa, 2026-11-03: Gemini took ~23 minutes a run and seldom found a row that fit). GENBID_FIND_ENGINES=gemini,claude
+// puts Gemini (Antigravity CLI) back first.
+const FIND_ENGINES = (process.env.GENBID_FIND_ENGINES || "claude").split(",").map((s) => s.trim()).filter((s) => s === "gemini" || s === "claude");
 const AGY = process.env.GENBID_AGY || path.join(process.env.LOCALAPPDATA || "", "agy", "bin", "agy.exe");
 const GEMINI_MODEL = process.env.GENBID_GEMINI_MODEL || "gemini-3.8-flash-medium";
 const ENGINE = { gemini: "Gemini (Antigravity)", claude: "Claude" };
@@ -1104,7 +1156,7 @@ async function find(req, suppliers) {
     return post([...(result ? [{ coll: "findmatch", id: key, data: { at, result } }] : []), { coll: "findreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
-    for (const engine of ["gemini", "claude"]) {
+    for (const engine of FIND_ENGINES) {
       const dir = path.join(os.tmpdir(), "genbid-find", `${key}-${engine}`);
       fs.rmSync(dir, { recursive: true, force: true });
       try {

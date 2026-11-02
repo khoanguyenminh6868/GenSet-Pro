@@ -2598,8 +2598,8 @@ function configTabHtml(t) {
   const err = !wait && workerReqError("configreq", key);
   const usedOrigin = CFG_ORIGIN.find(([k]) => k === prev?.result?.origin)?.[1];
   // Tìm NCC (Khoa, 2026-10-31): search the internet for more suppliers that fit the requirements and add them to the
-  // catalog (config-bot.mjs, find-prompt.md): Gemini first, Claude only when Gemini finds none that passes verify.mjs.
-  const fprev = state.findmatch[key], fwait = workerReqPending("findreq", key) ? waitHtml("Đang chờ Agent tìm nhà cung cấp trên internet (Gemini trước, không được thì Claude)...", state.findreq[key].requestedAt) : "";
+  // catalog (config-bot.mjs, find-prompt.md), by Claude (Khoa, 2026-11-03).
+  const fprev = state.findmatch[key], fwait = workerReqPending("findreq", key) ? waitHtml("Đang chờ Agent tìm nhà cung cấp trên internet (Claude)...", state.findreq[key].requestedAt) : "";
   const ferr = !fwait && workerReqError("findreq", key), busy = wait || fwait;
   return wait + fwait + (err ? h`<div class="note warn">${err}</div>` : "") + (ferr ? h`<div class="note warn">Tìm NCC: ${ferr}</div>` : "")
     + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${busy ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
@@ -2657,13 +2657,18 @@ function cfgResultHtml(r) {
         const st = CFG_STATUS[x.status] || ["", "mut"];
         // factSrc: a figure of this engine / alternator model from another supplier's row or datasheet (config-bot.mjs modelFacts).
         return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bộ điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
-          <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}</td>
+          <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}${raw(cfgPartsHtml(x))}</td>
           <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
       }).join(""))}</tbody></table></div>` : "")}
       ${raw(cfgSuppliersHtml(c))}
       ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
+// A grouped requirement (the controller's protections, measurements...): each function with its result and source.
+const cfgPartsHtml = (x) => (x.parts?.length ? h`<ul class="suplist">${raw(x.parts.map((p) => {
+  const st = CFG_STATUS[p.status] || ["", "mut"];
+  return h`<li class="small"><span class="chip ${st[1]}">${st[0]}</span> <b>${p.item || ""}</b>${p.offered ? `: ${p.offered}` : ""}${raw(p.unverified ? ' <span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(p.sourceQuote ? h`<div class="muted small">Nguồn${p.factSrc ? ` (trên trang ${p.factSrc.supplierId})` : ""}: <q>${p.sourceQuote}</q></div>` : "")}${raw(p.note ? h`<div class="muted small">${p.note}</div>` : "")}</li>`;
+}).join(""))}</ul>` : "");
 const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="small">Yêu cầu đọc từ HSMT (${r.requirements.length})</summary><ul class="suplist">${raw(r.requirements.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.from === "user" ? ' <span class="chip mut">Yêu cầu khác</span>' : "")}${raw(q.level === "option" ? ' <span class="chip mut">Tùy chọn khi đặt hàng</span>' : "")}${raw(q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "");
 // Internet finds added to the catalog by config-bot.mjs (each checked with verify.mjs before it is added).
 const cfgAddedHtml = (r) => (r.catalogAdded?.length ? h`<div class="note"><b>Bổ sung vào danh mục nhà cung cấp từ internet</b><ul class="suplist">${raw(r.catalogAdded.map((a) => a.error
