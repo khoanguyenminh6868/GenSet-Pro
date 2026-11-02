@@ -374,3 +374,59 @@ test("ComAp: AMF25 written without its generation takes InteliLite 4 AMF25's dat
   assert.equal(factsFor(f, "controller", "InteliLite 4 AMF25")[0].version, undefined);
   assert.deepEqual([factsFor(f, "controller", "InteliLite NT AMF25"), factsFor(f, "controller", "AMF20")], [[], []]);
 });
+
+// Tốc độ (Khoa, 2026-11-03): at most 6 configurations, the controller's functions of one kind grouped, each model's
+// checks written once and copied by the code.
+const ctlSups = () => [...sups, dse].map((s) => (s.id === "b" ? { ...s, specTables: [{ ...s.specTables[0], header: ["| Model | Prime kVA | Prime kW | Engine | Alternator | Controller DSE7320 MKII |"] }] } : s));
+const rs485 = { item: "RS485", offered: "RS485", sourceQuote: "RS232 and RS485 ports", status: "met", factSrc: { supplierId: "dse", n: 1001, line: "| • | Integrated RS232 and RS485 ports providing Modbus RTU support" } };
+
+test("a grouped controller requirement: every part is checked like a check of its own; met only when all are", () => {
+  const group = (parts) => ({ item: "Truyền thông", hsmtQuote: "Bộ điều khiển Deep Sea", part: "controller", status: "met", parts });
+  let { result, problems } = check(ctlConfig("DSE7320 MKII", [group([{ ...rs485 }, { item: "Ethernet", status: "unclear", offered: "" }])]), { hsmtText: hsmt, suppliers: ctlSups(), readWeb: () => null, origin: "all" });
+  let x = result.configs[0].checks[0];
+  assert.deepEqual(problems, []);
+  assert.equal(x.status, "unclear");
+  assert.deepEqual(x.parts.map((p) => [p.item, p.status]), [["RS485", "met"], ["Ethernet", "unclear"]]);
+  assert.match(x.note, /Chưa rõ: Ethernet/);
+  assert.equal(x.offered, "Đạt 1/2");
+  ({ result } = check(ctlConfig("DSE7320 MKII", [group([{ ...rs485 }])]), { hsmtText: hsmt, suppliers: ctlSups(), readWeb: () => null, origin: "all" }));
+  assert.equal(result.configs[0].checks[0].status, "met");
+  // A part whose quote is not in its source is not met, nor is the group; a part not met makes the group not met.
+  ({ result, problems } = check(ctlConfig("DSE7320 MKII", [group([{ ...rs485, sourceQuote: "RS485 and CAN ports" }])]), { hsmtText: hsmt, suppliers: ctlSups(), readWeb: () => null, origin: "all" }));
+  x = result.configs[0].checks[0];
+  assert.equal(x.status, "unclear");
+  assert.ok(x.unverified && x.parts[0].unverified);
+  assert.match(problems.join(" "), /Truyền thông: RS485/);
+  ({ result } = check(ctlConfig("DSE7320 MKII", [group([{ ...rs485 }, { item: "Ethernet", status: "not_met", offered: "RS485", sourceQuote: "RS232 and RS485 ports", factSrc: rs485.factSrc }])]), { hsmtText: hsmt, suppliers: ctlSups(), readWeb: () => null, origin: "all" }));
+  assert.equal(result.configs[0].checks[0].status, "not_met");
+  // Checking again (Tìm NCC, a later merge) gives the same.
+  const again = check(JSON.parse(JSON.stringify(result)), { hsmtText: hsmt, suppliers: ctlSups(), readWeb: () => null, origin: "all" }).result.configs[0].checks[0];
+  assert.deepEqual([again.status, again.parts.length], ["not_met", 2]);
+});
+
+test("a configuration with the controller of an earlier one gets its controller checks copied and checked again", () => {
+  const r = ctlConfig("DSE7320 MKII", [{ ...amf }]);
+  r.configs.push({ ...JSON.parse(JSON.stringify(r.configs[0])), rank: 2, checks: [] });
+  r.configs.push({ ...JSON.parse(JSON.stringify(r.configs[0])), rank: 3, controller: { model: "DSE7310 MKII", make: "Deep Sea", src: rowB }, checks: [] });
+  const { result } = check(r, { hsmtText: hsmt, suppliers: ctlSups(), readWeb: () => null, origin: "all" });
+  const [a, b, c] = result.configs;
+  assert.deepEqual([a.checks[0].status, b.checks[0].status, b.checks[0].copiedFrom], ["met", "met", 1]);
+  assert.equal(c.checks.find((x) => x.item === "AMF"), undefined);
+});
+
+test("an engine's model checks (factSrc) are copied to a later configuration with that engine; its own row's are not", () => {
+  const r = config([{ item: "Số xi lanh", hsmtQuote: "số xi lanh ≥ 6", offered: "6", sourceQuote: lineA, part: "engine", status: "met", factSrc: factA },
+    { item: "Dung tích", hsmtQuote: "Dung tích xi lanh ≥ 11 lít", offered: "?", sourceQuote: "", part: "engine", status: "unclear" }]);
+  r.configs.push({ ...JSON.parse(JSON.stringify(r.configs[0])), rank: 2, checks: [] });
+  const b = run(r).result.configs[1];
+  assert.deepEqual(b.checks.map((x) => [x.item, x.status]), [["Số xi lanh", "met"]]);
+});
+
+
+test("under Chinese origin, a foreign engine on the saved page of a supplier based in China is kept", () => {
+  const page = "Cummins QSZ13-G3 Ranges 550 kva diesel generator, alternator TAL-A473-C";
+  const r = { requirements: [], configs: [{ rank: 1, engine: { model: "QSZ13-G3", make: "Cummins", src: { kind: "internet", url: "https://x.cn/p", file: "web/2.txt", quote: "Cummins QSZ13-G3 Ranges" } },
+    checks: [], suppliers: [{ supplierId: "dep", n: 2001, line: "x" }] }] };
+  const run2 = (country) => check(JSON.parse(JSON.stringify(r)), { hsmtText: hsmt, suppliers: [{ id: "dep", country, specTables: [] }], readWeb: () => `URL: x\n\n${page}`, origin: "cn" }).result.configs.length;
+  assert.deepEqual([run2("CN"), run2("US")], [1, 0]);
+});

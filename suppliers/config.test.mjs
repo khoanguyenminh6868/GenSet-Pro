@@ -100,10 +100,10 @@ test("suppliers: unknown ids are dropped, a row must be the supplier's own and n
   assert.equal(problems.length, 2);
 });
 
-test("at most 10 configurations and 3 suppliers each are kept", () => {
+test("at most 6 configurations (Khoa 2026-11-03) and 3 suppliers each are kept", () => {
   const r = base(); r.configs = Array.from({ length: 12 }, (_, i) => ({ ...base().configs[0], rank: i + 1, suppliers: Array(5).fill({ supplierId: "s", n: 101, line: row.line }) }));
   const { result } = check(r, { hsmtText: hsmt, suppliers: sup, readWeb });
-  assert.equal(result.configs.length, 10);
+  assert.equal(result.configs.length, 6);
   assert.equal(result.configs[0].suppliers.length, 3);
 });
 
