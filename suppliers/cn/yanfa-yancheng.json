@@ -2,7 +2,7 @@
   "id": "yanfa-yancheng",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "盐城发电设备有限公司",
@@ -44,21 +44,30 @@
       ],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 8,
+        "max": 2700,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2
       ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang giới thiệu không ghi dải công suất, chứng chỉ"
+    "Chưa có chứng chỉ; dải 8–2700 kW là dòng YC-Cummins (động cơ Cummins nhập khẩu), các dòng DCEC/CCEC nằm trong khoảng này"
   ],
   "sources": [
     {
@@ -72,9 +81,19 @@
         "长期以来，公司作为发动机制造商康明斯公司的OEM合作伙伴，生产的康明斯系列柴油发电机组"
       ],
       "file": "sources/yanfa-yancheng/1.md"
+    },
+    {
+      "n": 2,
+      "url": "http://www.yanfapower.cn/product1.asp?classid=176",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "8KW-2700KW 进口康明斯系列发动机，重负载耐久型"
+      ],
+      "file": "sources/yanfa-yancheng/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }

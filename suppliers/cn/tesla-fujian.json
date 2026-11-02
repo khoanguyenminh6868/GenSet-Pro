@@ -2,7 +2,7 @@
   "id": "tesla-fujian",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Fujian Tesla Power Technology Co.,Ltd",
     "zh": null,
@@ -55,14 +55,23 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 6.5,
+        "max": 1200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2
       ]
     }
   ],
@@ -82,7 +91,7 @@
   ],
   "exportMarkets": [],
   "missing": [
-    "Trang chủ không ghi dải công suất, năm thành lập"
+    "Chưa có năm thành lập; mới có dải cho đầu phát không chổi than"
   ],
   "sources": [
     {
@@ -96,9 +105,19 @@
         "Diesel generator set, Silent generator , Diesel genset , AC Alternator, Open type Generator"
       ],
       "file": "sources/tesla-fujian/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.tesla-power.net/6-5-1200kw-Single-or-Double-Bearings-Brushless-Alternator-pd43193091.html",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "6.5-1200kw Single or Double Bearings Brushless Alternator"
+      ],
+      "file": "sources/tesla-fujian/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }
