@@ -1234,7 +1234,7 @@ function renderDrawer(force = true) {
   if (state.dtab === "info") body.innerHTML = isProject(t) ? projectInfoHtml(t) : infoHtml(t);
   else if (state.dtab === "analysis") body.innerHTML = analysisTabHtml(t);
   else if (state.dtab === "translate") { body.innerHTML = translateTabHtml(t); loadTranslation(key); }
-  else if (state.dtab === "tlkt") { body.innerHTML = tlktTabHtml(t); mountTlkt(); }
+  else if (state.dtab === "tlkt") { body.innerHTML = tlktTabHtml(t); mountTlkt(key); }
   else if (state.dtab === "supplier") body.innerHTML = supplierTabHtml(t);
   else if (state.dtab === "config") body.innerHTML = configTabHtml(t);
   else if (state.dtab === "hsdt") { body.innerHTML = hsdtTabHtml(t); mountHsdt(); }
@@ -2626,7 +2626,7 @@ function tlktTabHtml(t) {
       <div class="files" id="tkList"></div>
     </div>
     <label class="tkcfg" id="tkCfg"><span class="small"><b>Cấu hình Kỹ Thuật của Nhà Cung Cấp</b> <span class="muted">(không bắt buộc). Khi có điền, chỉ đối chiếu với ô này, không dùng tệp đề xuất.</span></span>
-      <textarea id="tkText" placeholder="Dán cấu hình kỹ thuật nhà cung cấp chào: model, công suất, động cơ, đầu phát, bộ điều khiển..."></textarea></label>
+      <textarea id="tkText" placeholder="Dán cấu hình kỹ thuật nhà cung cấp chào: model, công suất, động cơ, đầu phát, bộ điều khiển...">${tlktCfgOf(t._key)}</textarea></label>
     <div class="row"><div class="spacer"></div><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
     <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì PDF tự tải về"}">Tải PDF</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
 }
@@ -2725,7 +2725,19 @@ async function tlktPdf(key, btn = $("#tkPdf")) {
     toast(e?.message || "Không tạo được PDF.", 6000);
   } finally { if (btn?.isConnected) { btn.disabled = false; btn.innerHTML = label; } }
 }
-function mountTlkt() { tlktPick = filePicker("tkFiles", "tkDrop", "tkList"); ycktPick = filePicker("tyFiles", "tyDrop", "tyList"); }
+function mountTlkt(key) {
+  tlktPick = filePicker("tkFiles", "tkDrop", "tkList"); ycktPick = filePicker("tyFiles", "tyDrop", "tyList");
+  $("#tkText")?.addEventListener("input", (e) => { const d = local.get("tlktCfg", {}); d[key] = e.target.value; local.set("tlktCfg", d); });
+}
+// Cấu hình Kỹ Thuật của Nhà Cung Cấp is kept after Đối chiếu (Khoa, 2026-11-02): per device as typed, else the text of
+// the last request sent with it, so another device sees it too.
+const TLKT_CFG_HEAD = "--- Cấu hình Kỹ Thuật của Nhà Cung Cấp (nhập tay) ---\n";
+function tlktCfgOf(key) {
+  const d = local.get("tlktCfg", {});
+  if (key in d) return d[key];
+  const sent = state.tlktreq?.[key]?.text;
+  return typeof sent === "string" && sent.startsWith(TLKT_CFG_HEAD) ? sent.slice(TLKT_CFG_HEAD.length) : "";
+}
 function askDeleteTlkt(key) {
   modal(h`<div class="row"><h2 style="flex:1">Xóa kết quả đối chiếu TLKT?</h2><button class="btn sm" data-close>Đóng</button></div>
     <p class="small" style="margin:0">Kết quả đối chiếu tài liệu kỹ thuật lúc ${fmtDate(state.tlkt[key].at)} sẽ bị xóa.</p>
@@ -2770,7 +2782,7 @@ async function runTlkt(key) {
   btn.disabled = true;
   try {
     const y = ycktPick?.files.length ? await uploadOrText(key, ycktPick.files, "", out) : { files: [], text: "", uploadError: "" };
-    const p = cfg ? { files: [], text: `--- Cấu hình Kỹ Thuật của Nhà Cung Cấp (nhập tay) ---\n${cfg}`, uploadError: "" } : await uploadOrText(key, tlktPick.files, "", out);
+    const p = cfg ? { files: [], text: TLKT_CFG_HEAD + cfg, uploadError: "" } : await uploadOrText(key, tlktPick.files, "", out);
     out.innerHTML = "";
     await requestWorker("tlktreq", key, { files: p.files, text: p.text, reqFiles: y.files, reqText: y.text, uploadError: [y.uploadError, p.uploadError].filter(Boolean).join("; ") }, "đối chiếu TLKT");
   } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
