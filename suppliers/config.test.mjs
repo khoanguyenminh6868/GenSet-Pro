@@ -210,7 +210,8 @@ test("G7 / G20 origin keeps engines whose make is from a country of the group", 
   const list = [{ model: "WP13D440E310", makes: [{ name: "Weichai" }] }, { model: "6BTA5.9-G2", makes: [] }, { model: "TAD1641GE", makes: [{ name: "Volvo Penta" }] },
     { model: "DP158LC", makes: [{ name: "Doosan" }] }, { model: "ZCDL-K500", makes: [] }];
   assert.deepEqual(byOrigin(list, "g7").map((e) => e.model), ["6BTA5.9-G2"]);
-  assert.deepEqual(byOrigin(list, "g20").map((e) => e.model), ["WP13D440E310", "6BTA5.9-G2", "DP158LC"]);
+  assert.deepEqual(byOrigin(list, "g20").map((e) => e.model), ["6BTA5.9-G2", "DP158LC"]);
+  assert.equal(C.groupIn("Weichai", "WP13D440E310", "g20"), false);
   assert.equal(C.groupIn("Perkins", "1106A-70TG1", "g7"), true);
   assert.equal(C.groupIn("Volvo Penta", "TAD1641GE", "g20"), false);
   for (const n of C.FOREIGN_ENGINE) assert.ok(C.ENGINE_COUNTRY[n], n);

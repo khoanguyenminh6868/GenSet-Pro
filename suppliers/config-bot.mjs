@@ -40,7 +40,7 @@ await import(pathToFileURL(path.join(ROOT, "..", "web", "conversions.js")).href)
 const CONV = globalThis.GenbidConversions;
 await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
 const CAT = globalThis.GenbidCatalog;
-export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (19 nước thành viên, gồm cả Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả" };
+export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (các nước thành viên trừ Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả" };
 const GROUP_ORIGIN = new Set(["g7", "g20"]);
 const originOfReq = (o) => (ORIGIN[o] ? o : "cn");
 const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
@@ -181,7 +181,7 @@ async function prep(key, dir, reqData = {}) {
     `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`, "",
     `## Xuất xứ động cơ: ${ORIGIN[origin]}`,
     origin === "cn" ? `Chỉ gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Không gợi ý động cơ của hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả loại sản xuất theo giấy phép tại Trung Quốc (Dongfeng Cummins, Chongqing Cummins...), cả khi tìm trên internet. Nếu HSMT chỉ định một hãng nước ngoài thì trả lời "configs": [] và nói rõ trong message.`
-    : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${origin.toUpperCase()} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}${origin === "g20" ? "; hãng Trung Quốc như Weichai, Yuchai, SDEC cũng tính" : ""}), kể cả khi tìm trên internet; ghi "make" của động cơ. Động cơ nguồn không ghi hãng thì không gợi ý.`
+    : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${origin.toUpperCase()} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...), kể cả loại sản xuất theo giấy phép. Động cơ nguồn không ghi hãng thì không gợi ý.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
     : "Không giới hạn xuất xứ động cơ.", "",
     // Yêu cầu khác (Khoa, 2026-11-01): typed on the web next to Gợi ý / Tìm NCC, checked like the HSMT's requirements.

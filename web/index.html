@@ -2101,7 +2101,7 @@ const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đ�
 const SUP_CONF = { high: ["Tin cậy cao", "ok"], medium: ["Trung bình", "warn"], low: ["Chưa xác minh", "bad"] };
 const SUP_TIER = { A: "Website / tài liệu chính hãng", B: "Triển lãm, hiệp hội, sàn công bố", C: "Tự giới thiệu (đại lý, sàn B2B)" };
 const SUP_COUNTRY = { CN: "Trung Quốc", US: "Mỹ", GB: "Anh", DE: "Đức", FR: "Pháp", IT: "Ý", JP: "Nhật Bản", CA: "Canada" };
-// Country filter: the G7 countries are one option, "G7"; "G20" is one more option over its member countries (Khoa, 2026-11-02).
+// Country filter: the G7 countries are one option, "G7"; "G20" is one more option over its member countries other than China (Khoa, 2026-11-02).
 const { g7: G7, g20: G20 } = window.GenbidCatalog?.COUNTRY_GROUP || { g7: [], g20: [] };
 // Founding-year filter by range; "none" = the sources give no year.
 const SUP_YEARS = [["-1989", "Trước 1990"], ["1990-1999", "1990–1999"], ["2000-2009", "2000–2009"], ["2010-", "Từ 2010"], ["none", "Không ghi năm"]];
