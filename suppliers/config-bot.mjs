@@ -14,7 +14,8 @@
 // "met" into "unclear" (Khoa, 2026-10-28: the answer must be exactly right). A value may be converted (kW ↔ kVA,
 // L/h ↔ g/kWh...) only with a formula of web/conversions.js, which check recomputes; each configuration also names
 // the suppliers in the system that sell it, each checked against that supplier's own table row (Khoa, 2026-10-29).
-// "Xuất xứ" (configreq origin: cn, default / g7 / g20 / other / all) limits the engines to Chinese makes, to makes of a G7 / G20
+// "Xuất xứ" (configreq origin: cn, default / g7 / g20 / other / all) limits the engines to Chinese makes (or any make a
+// supplier based in China offers, Khoa 2026-11-02), to makes of a G7 / G20
 // country (catalog.js ENGINE_COUNTRY, Khoa 2026-11-02) or to foreign ones
 // (web/catalog.js originOf); check drops a configuration whose engine is of the other origin (Khoa, 2026-10-29).
 import fs from "node:fs";
@@ -62,10 +63,13 @@ async function post(rows) {
   if (!r.ok) throw new Error(`ingest HTTP ${r.status}: ${body.slice(0, 200)}`);
   return body;
 }
-// Engines of the origin asked for: "cn" keeps only engines a source shows to be of a Chinese make (one whose make no
-// source gives is left out, Khoa 2026-10-29), "other" only engines a source or the model code shows to be foreign.
-export function byOrigin(engines, origin) {
-  if (origin === "cn") return engines.filter((e) => CAT.originOf(e) === "cn");
+// Engines of the origin asked for: "cn" keeps engines a source shows to be of a Chinese make (one whose make no
+// source gives is left out, Khoa 2026-10-29) and, since 2026-11-02 (Khoa), an engine of a foreign make that a supplier
+// based in China offers in its own table (cnSupplier: id → true for a supplier whose country is CN);
+// "other" only engines a source or the model code shows to be foreign.
+export const cnSuppliers = (suppliers) => new Set(suppliers.filter((s) => s?.country === "CN").map((s) => s.id));
+export function byOrigin(engines, origin, cn = new Set()) {
+  if (origin === "cn") return engines.filter((e) => CAT.originOf(e) === "cn" || (CAT.originOf(e) === "other" && (e.uses || []).some((u) => cn.has(u.supplierId))));
   if (origin === "other") return engines.filter((e) => CAT.originOf(e) === "other");
   // G7 / G20 (Khoa, 2026-11-02): engines whose make is from a country of the group (web/catalog.js ENGINE_COUNTRY).
   if (GROUP_ORIGIN.has(origin)) return engines.filter((e) => CAT.groupOf(e, origin));
@@ -149,7 +153,7 @@ function suppliersMd(suppliers) {
     if (!s.specTables?.length) continue;
     const vn = (s.vietnam?.distributors || []).map((d) => d.name).join("; "), hq = [s.hq?.city, s.hq?.province].filter(Boolean).join(", ");
     out.push(`- ${s.id}: ${s.names?.en || s.names?.zh || s.id} — vai trò: ${s.role}, trạng thái: ${s.status}, độ tin cậy: ${s.confidence}`
-      + `${s.website ? `, website: ${s.website}` : ""}${hq ? `, trụ sở: ${hq}` : ""}${s.founded ? `, thành lập: ${s.founded}` : ""}`
+      + `${s.country ? `, quốc gia: ${s.country}` : ""}${s.website ? `, website: ${s.website}` : ""}${hq ? `, trụ sở: ${hq}` : ""}${s.founded ? `, thành lập: ${s.founded}` : ""}`
       + `${vn ? `, đại lý tại Việt Nam: ${vn}` : ""}${s.certifications?.length ? `, chứng nhận: ${s.certifications.map((c) => c.name).join("; ")}` : ""}`
       + `${s.controllers?.length ? `, bộ điều khiển: ${s.controllers.map((c) => c.model || `${c.brand} (không ghi model)`).join("; ")}` : ""}`);
   }
@@ -170,7 +174,7 @@ async function prep(key, dir, reqData = {}) {
   const cap = capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
   const brands = [...new Set((technicalPart(text).match(/cummins|perkins|mitsubishi|doosan|volvo|mtu|baudouin|weichai|yuchai|deutz|stamford|leroy|mecc alte|marathon/gi) || []).map((b) => b.toLowerCase()))];
   const origin = originOfReq(reqData.origin), full = CAT.build(suppliers.map((d) => d.data));
-  const cat = { ...full, engines: byOrigin(full.engines, origin) };
+  const cat = { ...full, engines: byOrigin(full.engines, origin, cnSuppliers(suppliers.map((d) => d.data))) };
   fs.writeFileSync(path.join(dir, "catalog.md"), catalogMd(cat, cap, brands) + "\n\n" + suppliersMd(suppliers.map((d) => d.data)), "utf8");
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
   fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(suppliers.map((d) => d.data)), "utf8");
@@ -180,7 +184,7 @@ async function prep(key, dir, reqData = {}) {
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`,
     `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`, "",
     `## Xuất xứ động cơ: ${ORIGIN[origin]}`,
-    origin === "cn" ? `Chỉ gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Không gợi ý động cơ của hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả loại sản xuất theo giấy phép tại Trung Quốc (Dongfeng Cummins, Chongqing Cummins...), cả khi tìm trên internet. Nếu HSMT chỉ định một hãng nước ngoài thì trả lời "configs": [] và nói rõ trong message.`
+    origin === "cn" ? `Gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Động cơ hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}, kể cả loại sản xuất theo giấy phép như Dongfeng Cummins, Chongqing Cummins) chỉ được gợi ý khi có nhà cung cấp đặt tại Trung Quốc (quốc gia CN trong catalog.md) chào động cơ đó trong bảng của mình; khi đó "suppliers" chỉ ghi các nhà cung cấp ở Trung Quốc đó. Khi tìm trên internet cũng vậy: hãng nước ngoài chỉ được tính khi trang của một nhà cung cấp ở Trung Quốc chào nó.`
     : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${origin.toUpperCase()} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...), kể cả loại sản xuất theo giấy phép. Động cơ nguồn không ghi hãng thì không gợi ý.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
     : "Không giới hạn xuất xứ động cơ.", "",
@@ -249,7 +253,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     return null;
   };
   // An engine of the other origin is not a suggestion, nor, under "cn", one whose make the source does not give
-  // (Khoa, 2026-10-29). The make counts only as the source states it: the catalog row (header, title), or for an
+  // (Khoa, 2026-10-29). Under "cn" a foreign engine stays when a supplier based in China offers it in a row of its own
+  // table that names the engine; that configuration then lists only such suppliers (Khoa, 2026-11-02). The make counts only as the source states it: the catalog row (header, title), or for an
   // internet source the quote, plus the make the agent wrote when the saved page has it.
   if (origin === "cn" || origin === "other" || GROUP_ORIGIN.has(origin)) {
     result.configs = (result.configs || []).filter((c) => {
@@ -258,8 +263,12 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       const page = e.src?.kind === "internet" && e.src.file ? norm(readWeb(e.src.file) || "") : "";
       const own = e.src?.kind === "catalog" ? sourceText(e.src) : `${e.src?.quote || ""} ${e.make && page.includes(norm(e.make)) ? e.make : ""}`;
       const o = CAT.originIn(`${e.model || ""} ${own || ""}`, e.model);
-      const drop = GROUP_ORIGIN.has(origin) ? !CAT.groupIn(`${e.model || ""} ${own || ""}`, e.model, origin) : origin === "cn" ? o !== "cn" : o !== "other";
-      if (drop) problems.push(`#${c.rank}: động cơ ${e.model}${e.make ? ` (${e.make})` : ""} ${GROUP_ORIGIN.has(origin) ? `nguồn không cho thấy là hãng của nước ${origin.toUpperCase()}` : origin === "cn" ? (o === "other" ? "không phải hãng Trung Quốc" : "nguồn không ghi hãng") : "không rõ là hãng ngoài Trung Quốc"}, đã bỏ`);
+      const cnRow = (x) => sup.get(x.supplierId)?.country === "CN" && (sup.get(x.supplierId).specTables || []).some((t) => t.n === Number(x.n) && t.rows.some((l) => norm(l) === norm(x.line))
+        && [...(t.header || []), x.line, t.title].join(" ").replace(/s/g, "").toLowerCase().includes(String(e.model || "").replace(/s/g, "").toLowerCase()));
+      const viaCn = origin === "cn" && o === "other" && !!e.model && (c.suppliers || []).some(cnRow);
+      if (viaCn) c.suppliers = c.suppliers.filter(cnRow);
+      const drop = GROUP_ORIGIN.has(origin) ? !CAT.groupIn(`${e.model || ""} ${own || ""}`, e.model, origin) : origin === "cn" ? o !== "cn" && !viaCn : o !== "other";
+      if (drop) problems.push(`#${c.rank}: động cơ ${e.model}${e.make ? ` (${e.make})` : ""} ${GROUP_ORIGIN.has(origin) ? `nguồn không cho thấy là hãng của nước ${origin.toUpperCase()}` : origin === "cn" ? (o === "other" ? "không phải hãng Trung Quốc và không có nhà cung cấp ở Trung Quốc chào" : "nguồn không ghi hãng") : "không rõ là hãng ngoài Trung Quốc"}, đã bỏ`);
       return !drop;
     });
     result.origin = origin;
@@ -567,8 +576,11 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
   const near = (u) => !cap || (rowPower(u, cap) >= cap.value && rowPower(u, cap) <= cap.value * 1.4);
   const lineOf = (u, model) => u.line || (u.lines?.rows || []).find((l) => keyOf(l).includes(keyOf(model))) || null;
   const configs = result.configs || (result.configs = []), out = { joined: [], created: [] };
-  for (const e of byOrigin(CAT.build(records).engines, originOfReq(origin))) {
-    const uses = e.uses.filter((u) => ids.has(u.supplierId) && near(u) && lineOf(u, e.model))
+  const o = originOfReq(origin), cn = cnSuppliers(records);
+  for (const e of byOrigin(CAT.build(records).engines, o, cn)) {
+    // Under "cn" a foreign engine comes only with the suppliers based in China that offer it.
+    const viaCn = o === "cn" && CAT.originOf(e) === "other";
+    const uses = e.uses.filter((u) => ids.has(u.supplierId) && near(u) && lineOf(u, e.model) && (!viaCn || cn.has(u.supplierId)))
       .sort((a, b) => (cap ? Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value) : 0));
     if (!uses.length) continue;
     // The controllers the supplier's pages name (controllers.mjs) are said too, as recorded.

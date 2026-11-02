@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { check, catalogRecords, byOrigin, fitsCap, findCheck, mergeFind } from "./config-bot.mjs";
+import { check, catalogRecords, byOrigin, cnSuppliers, fitsCap, findCheck, mergeFind } from "./config-bot.mjs";
 
 const sup = [{ id: "s", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Standby kW/kVA | Prime kW/kVA | Engine | Alternator"], rows: ["| SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | UK"] }] }];
 const hsmt = "Chương V. Yêu cầu kỹ thuật\nCông suất liên tục (Prime): ≥ 450 kVA\nĐầu phát: Stamford hoặc tương đương\nTần số 50Hz";
@@ -215,4 +215,18 @@ test("G7 / G20 origin keeps engines whose make is from a country of the group", 
   assert.equal(C.groupIn("Perkins", "1106A-70TG1", "g7"), true);
   assert.equal(C.groupIn("Volvo Penta", "TAD1641GE", "g20"), false);
   for (const n of C.FOREIGN_ENGINE) assert.ok(C.ENGINE_COUNTRY[n], n);
+});
+
+test("Xuất xứ Trung Quốc keeps a foreign engine that a supplier based in China offers (Khoa, 2026-11-02)", () => {
+  const cnSup = [{ ...sup[0], country: "CN" }, { id: "uk", country: "GB", specTables: sup[0].specTables }];
+  const r = base(); r.configs[0].suppliers = [{ supplierId: "s", n: 101, line: row.line }, { supplierId: "uk", n: 101, line: row.line }];
+  const { result } = check(r, { hsmtText: hsmt, suppliers: cnSup, readWeb, origin: "cn" });
+  assert.equal(result.configs.length, 1);
+  assert.deepEqual(result.configs[0].suppliers.map((s) => s.supplierId), ["s"]);
+  // The same engine offered only by a supplier outside China is still dropped.
+  const r2 = base(); r2.configs[0].suppliers = [{ supplierId: "uk", n: 101, line: row.line }];
+  assert.equal(check(r2, { hsmtText: hsmt, suppliers: cnSup, readWeb, origin: "cn" }).result.configs.length, 0);
+  // Catalog: a Perkins engine used by a Chinese supplier is listed under "cn".
+  const list = [{ model: "2506C-E15TAG1", makes: [{ name: "Perkins" }], uses: [{ supplierId: "s" }] }, { model: "TAD1641GE", makes: [{ name: "Volvo Penta" }], uses: [{ supplierId: "uk" }] }];
+  assert.deepEqual(byOrigin(list, "cn", cnSuppliers(cnSup)).map((e) => e.model), ["2506C-E15TAG1"]);
 });
