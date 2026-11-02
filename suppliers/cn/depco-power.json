@@ -79,6 +79,23 @@
       "src": [
         2001
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins QSZ13-G3 Ranges",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [
@@ -462,10 +479,24 @@
         "| Model | DPC354D/ S5L1D-D4/ HCI544D/ LSA 47.2 M7/ TAL-A473-C/ ECO40 3S4B"
       ],
       "file": "sources/depco-power/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.depcogenerator.com/cummins-qsz13-g3-ranges-550-kva-diesel-generator_p252.html",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "Copyright @ 2026 FUJIAN DEPCO POWER GENERATION CO.,LTD. All Rights Reserved.",
+        "NO.83 GONGYE ROAD LOUJIANG DISTRICT NINGDE CITY FUJIAN PROVINCE CHINA",
+        "Custom Cummins QSZ13-G3 Ranges 550 kva Diesel Generator manufacturer & factory",
+        "| Prime output | 400kW/500kVA | Standby output | 440kW/550kVA",
+        "| Model | DPC354D/ S5L1D-D4/ HCI544D/ LSA 47.2 M7/ TAL-A473-C/ ECO40 3S4B"
+      ],
+      "file": "sources/depco-power/2002.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-30",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot",
   "specTables": [
     {
@@ -1309,6 +1340,23 @@
         "| Model | DPC354D/ S5L1D-D4/ HCI544D/ LSA 47.2 M7/ TAL-A473-C/ ECO40 3S4B",
         "| No.of bearings | 1 | Insulation class | H",
         "| Wires | 12 | Ingress protection | IP23"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Cummins QSZ13-G3 Ranges 550 kva Diesel Generator (DPK-DC-550)",
+      "header": [
+        "| Details Generator Set | GenSet Model | DPK-DC-550 | Type | Silent"
+      ],
+      "rows": [
+        "| Frequency (Hz) | 50 | Speed ( rpm ) | 1500",
+        "| Phase | 3 | Rated voltage | 380V",
+        "| Prime output | 400kW/500kVA | Standby output | 440kW/550kVA",
+        "| Fuel Con.(L/H) | 101 | Fuel capacity tank | 850 L",
+        "| Details Engine | Brand | CUMMINS",
+        "| Model | QSZ13-G3 | Fuel | Diesel",
+        "| Details Alternator | Brand | Depco, Stamford, Leroy Somer, Mecc Alte",
+        "| Model | DPC354D/ S5L1D-D4/ HCI544D/ LSA 47.2 M7/ TAL-A473-C/ ECO40 3S4B"
       ]
     }
   ]
