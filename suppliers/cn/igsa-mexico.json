@@ -1,0 +1,68 @@
+{
+  "id": "igsa-mexico",
+  "country": "MX",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "IGSA",
+    "zh": null,
+    "brands": [
+      "IGSA"
+    ]
+  },
+  "website": "https://www.igsa.com.mx/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy phát (plantas eléctricas), đồng phát, nguồn cho viễn thông",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Plantas eléctricas IGSA",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.igsa.com.mx/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2025 IGSA, S.A.P.I. de C.V. Todos los derechos reservados.",
+        "IGSA - Plantas eléctricas, cogeneración y telecomunicaciones"
+      ],
+      "file": "sources/igsa-mexico/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "genesal-energy",
+  "country": "ES",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Genesal Energy",
+    "zh": null,
+    "brands": [
+      "Genesal"
+    ]
+  },
+  "website": "https://www.genesalenergy.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 5–5250 kVA, 50/60 Hz, một pha và ba pha",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Grupos electrógenos diésel",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 5250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có địa chỉ, năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://genesalenergy.com/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "Genesal Energy acabamos de suministrar un total de 96 grupos electrógenos para telecom"
+      ],
+      "file": "sources/genesal-energy/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://genesalenergy.com/tipologia/grupos-electrogenos-diesel/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "5-5.250 kVA | 50/60 Hz | 1.500/1.800 rpm | Monofásicos/Trifásicos"
+      ],
+      "file": "sources/genesal-energy/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}

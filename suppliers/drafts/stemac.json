@@ -1,0 +1,47 @@
+{
+  "id": "stemac",
+  "country": "BR",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "STEMAC Grupos Geradores",
+  "zh": null,
+  "brands": [
+    "STEMAC"
+  ],
+  "web": "https://www.stemac.com.br/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "STEMAC GRUPOS GERADORES",
+      "Localize a STEMAC perto de você",
+      "DUOGEN 1000 e 1400kVA"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy diesel và khí; dòng DUOGEN 1000 và 1400 kVA",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Grupos geradores STEMAC",
+      "fuel": "diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Trang không ghi dải công suất toàn dòng, năm thành lập, chứng chỉ"
+  ],
+  "by": "discover-bot (Claude)"
+}

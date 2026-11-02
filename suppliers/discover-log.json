@@ -2560,5 +2560,86 @@
   "result": "skip",
   "name": "山东华源莱动 / 河北华北柴油机 / 北方通用动力",
   "reason": "Chưa tìm được website chính hãng (chỉ có baike, trang tuyển dụng, hồ sơ powershow)"
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "aksa-power",
+  "name": "Aksa Power Generation",
+  "url": "https://aksa.com.tr/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "kirloskar-oil-engines",
+  "name": "Kirloskar Oil Engines Ltd",
+  "url": "https://www.kirloskaroilengines.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "mahindra-powerol",
+  "name": "Mahindra Powerol",
+  "url": "https://www.mahindrapowerol.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "genesal-energy",
+  "name": "Genesal Energy",
+  "url": "https://www.genesalenergy.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "himoinsa",
+  "name": "HIMOINSA",
+  "url": "https://www.himoinsa.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "hd-hyundai-heavy",
+  "name": "HD Hyundai Heavy Industries (Engine & Machinery)",
+  "url": "https://www.hd-hhi.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "teksan",
+  "name": "Teksan",
+  "url": "https://www.teksan.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "igsa-mexico",
+  "name": "IGSA",
+  "url": "https://www.igsa.com.mx/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "stemac",
+  "name": "STEMAC Grupos Geradores",
+  "url": "https://www.stemac.com.br/",
+  "tables": 0,
+  "rows": 0
  }
 ]
