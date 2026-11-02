@@ -2,7 +2,7 @@
   "id": "faraday-wuxi",
   "country": "CN",
   "role": "alternator_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "无锡法拉第电机有限公司",
@@ -43,21 +43,55 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 6.5,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        3
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "高压发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 500,
+        "max": 5000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
       ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang không ghi dải công suất; nhật ký 2026-10-29 từng bỏ qua Wuxi Faraday vì chưa tìm thấy website (faradaygenerator.com)"
+    "Chưa có chứng chỉ; trang còn ghi dải đầu phát tốc độ thấp 240–10000 kW, một chiều 5–24 kW, tàu thuỷ 12–2000 kW (chưa ghi thành dòng riêng)"
   ],
   "sources": [
     {
@@ -172,10 +206,21 @@
         "| | 50Hz(1500转/分) | 60Hz(1800转/分)"
       ],
       "file": "sources/faraday-wuxi/109.md"
+    },
+    {
+      "n": 3,
+      "url": "http://www.faradaygenerator.com/about.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "低压发电机功率从6.5KW到3000KW",
+        "高压发电机功率从500KW到5000KW"
+      ],
+      "file": "sources/faraday-wuxi/3.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {

@@ -2,7 +2,7 @@
   "id": "eastpower-genset",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Yangzhou East Power Equipment Co., Ltd",
     "zh": null,
@@ -59,12 +59,37 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "VOLVO series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 69,
+        "max": 520,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"
+    "Chưa có năm thành lập, chứng chỉ; mới có dải cho dòng Volvo"
   ],
   "sources": [
     {
@@ -77,9 +102,19 @@
         "We specialized in the manufacture of diesel generator sets, gas generator sets, gas turbine generator sets and all kinds of internal combustion power unit."
       ],
       "file": "sources/eastpower-genset/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.eastpowergenset.com/factory-price-20-kw-military-generator-container-type-diesel-genset-weibo-3-product/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "1.Power range cover from 69KW to 520KW"
+      ],
+      "file": "sources/eastpower-genset/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot"
 }

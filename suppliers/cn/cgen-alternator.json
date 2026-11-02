@@ -2,7 +2,7 @@
   "id": "cgen-alternator",
   "country": "CN",
   "role": "alternator_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "NANJING CGENTECH CO LTD (C.GEN)",
     "zh": null,
@@ -28,21 +28,30 @@
       "alternatorMakes": [
         "C.GEN"
       ],
-      "power": null,
+      "power": {
+        "min": 22.6,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2
       ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Chưa có dải kVA, năm thành lập, chứng chỉ"
+    "Chưa có năm thành lập, chứng chỉ; dải 22.6–1250 kVA gộp từ danh mục sản phẩm (dòng nhỏ nhất 22.6~37.5KVA, lớn nhất 750-1250KVA)"
   ],
   "sources": [
     {
@@ -55,9 +64,20 @@
         "NANJING CGENTECH Brushless Synchronous AC Alternator represent the latest alternators technologies"
       ],
       "file": "sources/cgen-alternator/1.md"
+    },
+    {
+      "n": 2,
+      "url": "http://wkmachine.com/index.php/product/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "Rated Capacity:22.6~37.5KVA",
+        "Rated Capacity:750-1250KVA"
+      ],
+      "file": "sources/cgen-alternator/2.md"
     }
   ],
   "confidence": "low",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-02",
   "checkedBy": "claude-code"
 }

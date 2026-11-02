@@ -2,7 +2,7 @@
   "id": "xinchai",
   "country": "CN",
   "role": "engine_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "浙江新柴股份有限公司",
@@ -10,7 +10,7 @@
       "新柴"
     ]
   },
-  "website": null,
+  "website": "https://www.xinchaipower.com/",
   "hq": {
     "province": "Zhejiang",
     "city": null
@@ -55,7 +55,7 @@
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa lưu website riêng, năm thành lập"
+    "Năm thành lập chưa có; dải 10–140 kVA lấy từ trang GPOWER (hạng B), website riêng chưa ghi dải"
   ],
   "sources": [
     {
@@ -68,9 +68,20 @@
         "产品涵盖N、D、K、E、B、H、F七大平台，100多个机型、1300多个变型产品形成了完整的市场配套结构，构筑起了工程机械、农业机械、发电机组等市场的良好发展格局。发电机组动力功率覆盖范围10KVA-140KVA。"
       ],
       "file": "sources/xinchai/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.xinchaipower.com/aboutus.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "新柴简介 - 浙江新柴股份有限公司",
+        "office@xinchaipower.cn"
+      ],
+      "file": "sources/xinchai/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }

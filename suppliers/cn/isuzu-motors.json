@@ -2,7 +2,7 @@
   "id": "isuzu-motors",
   "country": "JP",
   "role": "engine_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "ISUZU MOTORS LIMITED",
     "zh": null,
@@ -37,26 +37,60 @@
   "productLines": [
     {
       "kind": "engine",
-      "series": "Industrial diesel engines (Generator)",
+      "series": "Generator engines Stage IIIA",
       "fuel": "diesel",
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 21,
+        "max": 397,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Generator engines Tier4 Final",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 382,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
       ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Trang giới thiệu ghi dung tích, không ghi dải công suất kW"
+    "Dải công suất là công suất định mức (Rated Output) ở 1500/1800 min-1 theo trang danh mục động cơ máy phát"
   ],
   "sources": [
     {
@@ -72,9 +106,31 @@
         "Generator Tier4 Final"
       ],
       "file": "sources/isuzu-motors/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.isuzu.co.jp/world/product/industrial/generator/s3a.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "25.1 kW / 1800 min -1 　21 kW / 1500 min -1",
+        "397 kW / 1800 min -1 　353 kW / 1500 min -1"
+      ],
+      "file": "sources/isuzu-motors/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.isuzu.co.jp/world/product/industrial/generator/t4.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "30 kW / 1800 min -1",
+        "382 kW / 1800 min -1"
+      ],
+      "file": "sources/isuzu-motors/3.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }

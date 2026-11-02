@@ -2,7 +2,7 @@
   "id": "frs-shenyang",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "沈阳福瑞斯动力设备有限公司",
@@ -83,12 +83,37 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "高压发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 300,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Mới lưu trang tổ máy khí; chưa có trang giới thiệu nên chưa có năm thành lập, chứng chỉ, dải công suất"
+    "Chưa có trang giới thiệu nên chưa có năm thành lập, chứng chỉ; dải công suất mới có cho dòng cao áp"
   ],
   "sources": [
     {
@@ -193,10 +218,20 @@
         "| 型号 | FT-TQ500-H15 | FT-TQ600-H30 | FT-TQ800-H20 | FT-TQ1000-H18"
       ],
       "file": "sources/frs-shenyang/109.md"
+    },
+    {
+      "n": 2,
+      "url": "http://www.frs-power.com/pd.jsp?id=16",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "其功率范围为 (常用功率):300KW~2400KW，电压等级范围为:3000 V 13800V。"
+      ],
+      "file": "sources/frs-shenyang/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot",
   "specTables": [
     {

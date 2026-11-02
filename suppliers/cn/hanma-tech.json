@@ -11,7 +11,7 @@
       "汉马"
     ]
   },
-  "website": null,
+  "website": "https://www.camc.cc/",
   "hq": {
     "province": "Anhui",
     "city": "Maanshan"
@@ -57,7 +57,7 @@
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa có dải công suất, website riêng"
+    "Website là của công ty mẹ 汉马科技 (camc.cc); chưa có dải công suất động cơ"
   ],
   "sources": [
     {
@@ -71,9 +71,20 @@
         "船用发动机和发电机组"
       ],
       "file": "sources/hanma-tech/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.camc.cc/culture",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "拥有安徽华菱汽车有限公司、安徽星马专用汽车有限公司、安徽汉马发动机有限公司等主要分子公司",
+        "拥有华菱汽车、星马汽车、汉马动力三大品牌"
+      ],
+      "file": "sources/hanma-tech/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }

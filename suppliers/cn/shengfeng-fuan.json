@@ -2,7 +2,7 @@
   "id": "shengfeng-fuan",
   "country": "CN",
   "role": "alternator_maker",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Fuan shengfeng electric machinery Co,Ltd.",
     "zh": "福安市晟丰电机有限公司",
@@ -71,6 +71,31 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "WUDONG Series",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 90,
+        "max": 540,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          3
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        3
+      ]
     }
   ],
   "certifications": [
@@ -82,9 +107,7 @@
     }
   ],
   "exportMarkets": [],
-  "missing": [
-    "Trang không ghi dải công suất"
-  ],
+  "missing": [],
   "sources": [
     {
       "n": 1,
@@ -111,9 +134,19 @@
         "Enterprises to actively implement ISO9001:2008 international quality management system"
       ],
       "file": "sources/shengfeng-fuan/2.md"
+    },
+    {
+      "n": 3,
+      "url": "http://www.sf-motor.com/product_view_en.asp?id=116",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "WUDONG series diesel generator power coverage from 90KW to 540KW."
+      ],
+      "file": "sources/shengfeng-fuan/3.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }

@@ -2,7 +2,7 @@
   "id": "leton-power",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Leton Power",
     "zh": null,
@@ -57,6 +57,31 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Industrial diesel generators 50–2000 kVA",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 50,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
     }
   ],
   "certifications": [],
@@ -66,7 +91,6 @@
   },
   "exportMarkets": [],
   "missing": [
-    "Trang chủ không ghi dải công suất tổng (chỉ thấy mục 'Silent 750-1000KVA')",
     "Không ghi hãng động cơ",
     "Thành Đô là nơi đặt R&D; chưa rõ trụ sở pháp lý"
   ],
@@ -182,10 +206,20 @@
         "| Rated Frequency ( Hz) | 50/60"
       ],
       "file": "sources/leton-power/117.md"
+    },
+    {
+      "n": 2,
+      "url": "https://letonpower.com/manufacturer-of-high-power-industrial-diesel-generator-sets-50kva-to-2000kva/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "50–2000 kVA Industrial Diesel Generators"
+      ],
+      "file": "sources/leton-power/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-11-02",
   "checkedBy": "claude-code",
   "specTables": [
     {

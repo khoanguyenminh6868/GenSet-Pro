@@ -2,7 +2,7 @@
   "id": "hengke-jiangsu",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": null,
     "zh": "江苏恒科动力设备有限公司",
@@ -33,7 +33,15 @@
       "engineMakes": [],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 10,
+        "max": 10000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
@@ -47,7 +55,7 @@
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Nhóm công suất ghi ngắn (10-50KW ... 2500KW以上), chưa ghi được dải; chưa có năm thành lập, chứng chỉ"
+    "Chưa có năm thành lập, chứng chỉ"
   ],
   "sources": [
     {
@@ -58,12 +66,13 @@
       "quote": [
         "Copyright © 2022-2025 江苏恒科动力设备有限公司",
         "江苏恒科动力设备有限公司坐落于风景秀丽的扬州",
-        "2500KW以上"
+        "2500KW以上",
+        "产品功率覆盖面从10KW至10000KW"
       ],
       "file": "sources/hengke-jiangsu/1.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-02",
   "checkedBy": "discover-bot (Claude)"
 }
