@@ -1,0 +1,91 @@
+{
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Shanghai Baudouin Power Technology Co., Ltd.",
+    "zh": "上海博杜安动力科技有限公司"
+  },
+  "website": "http://www.bdadl.cn/",
+  "hq": {
+    "province": "Shanghai",
+    "city": "Shanghai"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "BDA Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Chongqing Cummins",
+        "Shangchai",
+        "Weichai"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang web không ghi nhãn hiệu bộ điều khiển cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "http://www.bdadl.cn/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "上海博杜安动力科技有限公司",
+        "上海博杜安动力科技有限公司发电机组采用中美合资康明斯（CUMMINS）、瑞典原装进口沃尔沃（VOLVO）、三菱（MITSUBISHI）、奔驰（MTU）、帕金斯（PERKINS）、韩国原装进口斗山（DOOSAN）、潍柴动力（WEICHAI）、上柴动力（SDEC）、玉柴（YUCHAI)等国内外知名品牌发动机作原动力，选配套斯坦福、马拉松、英格等知名品牌交流无刷纯铜电机成套生产发电机组 ，年销售发电机组6000台左右，是集研发、生产、销售于······",
+        "地址：上海市宝山区逸仙路1321弄3支弄46号"
+      ],
+      "file": "sources/bdadl-shanghai/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "http://www.bdadl.cn/?products_52/74.html",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)",
+        "| BDA-C200 | 200/250 | 重庆康明斯 | NT855-GA | 6 | 14 | 37 | ≤206 | 2900*980*1750 | 2500",
+        "| BDA-S200 | 200/250 | 上柴股份 | SC13G310D2 | 6 | 12.88 | 33 | ≤205 | 2520*980*1500 | 1540",
+        "| BDA-W200 | 200/250 | 潍柴动力 | WP10D238E200 | 6 | 9.726 | 22 | ≤218 | 2800*850*1720 | 2200"
+      ],
+      "file": "sources/bdadl-shanghai/2002.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "config-bot",
+  "specTables": [
+    {
+      "n": 2002,
+      "title": "200KW柴油发电机组技术参数",
+      "header": [
+        "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+      ],
+      "rows": [
+        "| BDA-C200 | 200/250 | 重庆康明斯 | NT855-GA | 6 | 14 | 37 | ≤206 | 2900*980*1750 | 2500",
+        "| BDA-S200 | 200/250 | 上柴股份 | SC13G310D2 | 6 | 12.88 | 33 | ≤205 | 2520*980*1500 | 1540",
+        "| BDA-W200 | 200/250 | 潍柴动力 | WP10D238E200 | 6 | 9.726 | 22 | ≤218 | 2800*850*1720 | 2200"
+      ]
+    }
+  ],
+  "id": "bdadl-shanghai"
+}

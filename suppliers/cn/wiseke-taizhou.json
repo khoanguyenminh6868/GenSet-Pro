@@ -1,0 +1,100 @@
+{
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Wiseke Power Generation",
+    "zh": null
+  },
+  "website": "https://wisekepower.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Taizhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Weichai Power Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "power": {
+        "min": 15,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Không nêu chi tiết model bộ điều khiển"
+  ],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://wisekepower.com/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "Power from 3kVA to 3000kVA",
+        "With over 15 years of specialized expertise in power generation equipment manufacturing, we have dedicated ourselves to engineering robust and innovative power systems tailored to meet global energy demands."
+      ],
+      "file": "sources/wiseke-taizhou/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://wisekepower.com/weichai-power/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "Weichai series diesel engines, famous brand from China. applying advanced technologies, Weichai also have widely service station around the world. which can provide great service for global customer.",
+        "3. Meet ISO9001& CE certification",
+        "5. Coupled with Stamford, Marathon, Leroy somer alternator or China alternator",
+        "6. Power range 15kva to 1250kva."
+      ],
+      "file": "sources/wiseke-taizhou/2002.md"
+    },
+    {
+      "n": 2003,
+      "url": "https://wisekepower.com/contact/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "Address: No. 84 Middle Road, Yexu Town, Taizhou Medical High Tech Industrial Zone, Jiangsu,China",
+        "Phone: +86-17365458165",
+        "Email: info@wisekepower.com"
+      ],
+      "file": "sources/wiseke-taizhou/2003.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "config-bot",
+  "specTables": [],
+  "id": "wiseke-taizhou"
+}
