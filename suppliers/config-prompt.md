@@ -22,6 +22,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     figures, then the alternator.
   - "Thông số theo model": every figure of each engine and alternator above, from ANY supplier's row or datasheet that
     names that model, each with its `factSrc`. A figure marked ⚠ is given differently by its sources.
+  - "Thông số bộ điều khiển": the first lines of the maker's datasheet of the controllers above (Deep Sea, SmartGen),
+    each line of the controller of its heading, with the `supplierId` / `n` to quote it. ALL the lines are in
+    `controllers.md` (a datasheet runs to 250 lines, a SmartGen manual to 700): for every controller requirement
+    (event log, protections, emergency stop, measurements, AMF, RS485...) search controllers.md with grep under that
+    controller's heading before writing `unclear`.
   - "Nhà cung cấp khác có dòng ghi cùng động cơ": more rows naming those engines, to pick `suppliers` from.
   - "Động cơ khác trong khoảng công suất": the other engines near the power, one row each.
   - each table's header (once per `supplierId` / `n`, column titles); "Bộ điều khiển": the controllers of the suppliers
@@ -58,7 +63,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    (engine, alternator, controller), a configuration that does not offer it has that check `not_met` and is not a
    suggestion. When it contradicts the HSMT, follow it and say so in `notes`.
 2. From catalog.md, find configurations (one engine + one alternator + a controller) that meet them, starting from
-   "Ứng viên". What matters most (Khoa, 2026-11-02): the engine and the controller, then the alternator. Prefer an
+   "Ứng viên". What matters most (Khoa, 2026-11-02): the engine and the controller, then the alternator and the genset
+   as a whole, then the `option` requirements. Prefer an
    engine and an alternator that appear together in the same genset row (a real configuration a manufacturer sells).
    For every requirement write a check (`item` as in requirements): `offered` (what the configuration gives) and
    `sourceQuote` (exact words from that catalog row or its table header), and `status`:
@@ -86,18 +92,22 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    Controller (Khoa, 2026-11-01): give the configuration a `controller` when a source names one: the controller its
    genset row names (`src.kind: "catalog"`, that row), else one the supplier offers in the "Bộ điều khiển" section
    (`src.kind: "controller"`, its `supplierId`, `n`, `line` exactly as there). Prefer the make or model the HSMT asks
-   for, and a supplier that offers it. Check the HSMT's controller requirements with `part: "controller"` and a
-   `sourceQuote` from that line; a function (AMF, paralleling, RS485...) the line does not state is `unclear`, never
-   assumed from the model name.
-   Keep at most 10 configurations, best first: fewest `not_met` on the engine, the controller and the genset, then on
-   the alternator, then a supplier that truly fits (step 3), then fewest `unclear` in the same order, then the
-   `option` requirements, then power closest above the requirement. The code ranks them again this way. A
+   for, and a supplier that offers it; a controller with "Thông số bộ điều khiển" (its maker's datasheet) before one
+   without. Check the HSMT's controller requirements with `part: "controller"` and a `sourceQuote` from that line, or
+   from a line of "Thông số bộ điều khiển" of that controller: then copy `factSrc` { `supplierId`, `n`, `line` (the
+   whole line, word for word) } into the check. A function (AMF, paralleling, RS485, event log...) no line states is
+   `unclear`, never assumed from the model name. When the heading says the datasheet is of another generation (the
+   supplier writes DSE7320, the datasheet is DSE7320 MKII), the check may be `met` and the code adds that the
+   generation is to be confirmed.
+   Keep at most 10 configurations, best first: fewest `not_met` on the engine and the controller, then on the
+   alternator and the genset, then a supplier that truly fits (step 3), then fewest `unclear` in the same order, then
+   the `option` requirements, then power closest above the requirement. The code ranks them again this way. A
    configuration with a `not_met` on power, frequency, a named make or origin is not a suggestion. Give several
    different engines when the catalog has them, not ten rows of one engine.
 3. For every configuration, name the suppliers in the system that sell it (`suppliers`, at most 3, best first): only
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
-   this engine and, best, this alternator at the power required. Order (engine and controller first, Khoa
-   2026-11-02): a supplier that offers the configuration's controller, then the supplier of the genset row, then a row
+   this engine and, best, this alternator at the power required. Order (Khoa, 2026-11-02): a supplier that offers both
+   this engine (its row) and the configuration's controller first, then the supplier of the genset row, then a row
    that also names this alternator, then confidence high > medium > low, then role genset_oem. A Vietnam distributor is
    not needed and does not count in the order. `why` states only facts shown in catalog.md (the row, the role, the
    confidence, the controller). A supplier truly fits when its row names this engine and the configuration has no

@@ -116,7 +116,21 @@ test("the code ranks engine and controller before the alternator, and counts mis
   assert.deepEqual(scoreOf({ checks: [], suppliers: [] }, r.requirements), [0, 0, 1, 2, 1, 0, 1]);
 });
 
-test("suppliers offering the controller come first, then the genset row's own, then the alternator", () => {
+test("the engine and the controller weigh more than the alternator and the genset as a whole (Khoa, 2026-11-02)", () => {
+  const ck = (item, part, status) => ({ item, part, status, level: "core" });
+  const reqs = [{ item: "E", part: "engine" }, { item: "K", part: "controller" }, { item: "G", part: "genset" }, { item: "A", part: "alternator" }];
+  const all = (over) => ["E", "K", "G", "A"].map((i) => ck(i, reqs.find((r) => r.item === i).part, over[i] || "met"));
+  const r = { requirements: reqs, configs: [
+    { rank: 1, checks: all({ K: "not_met" }), suppliers: [{ supplierId: "ctl-bad" }] },
+    { rank: 2, checks: all({ G: "not_met", A: "not_met" }), suppliers: [{ supplierId: "genset-alt-bad" }] },
+    { rank: 3, checks: all({ E: "unclear" }), suppliers: [{ supplierId: "engine-unclear" }] },
+    { rank: 4, checks: all({ G: "unclear", A: "unclear" }), suppliers: [{ supplierId: "genset-alt-unclear" }] },
+  ] };
+  rankConfigs(r);
+  assert.deepEqual(r.configs.map((c) => c.suppliers[0].supplierId), ["genset-alt-unclear", "engine-unclear", "genset-alt-bad", "ctl-bad"]);
+});
+
+test("suppliers offering both the engine and the controller come first, then the genset row's own, then the alternator", () => {
   const r = { requirements: [], configs: [{ rank: 1, genset: { src: { supplierId: "g" } }, checks: [], suppliers: [
     { supplierId: "alt", hasAlternator: true }, { supplierId: "g" }, { supplierId: "ctl", hasController: true }, { supplierId: "bad", hasController: true, unverified: true }] }] };
   rankConfigs(r);
@@ -169,4 +183,100 @@ test("Tìm NCC: the agent's checks are verified and put back; the engine and sup
   assert.deepEqual(c.gaps, []);
   // The configuration the agent was not asked about is untouched.
   assert.deepEqual(result.configs[0].checks, [{ item: "Số xi lanh", status: "met" }]);
+});
+
+// Datasheets of a controller maker (Deep Sea: two models in one sheet), Khoa 2026-11-02.
+const dse = { id: "dse", role: "controller_maker", country: "GB", specTables: [{ n: 1001, title: "Datasheet: | DSE7310 MKII Auto Start & DSE7320 MKII | Auto", header: [], rows: [
+  "| DSE7310 MKII | DSE7320 MKII",
+  "The DSE7320 MKII will also monitor the mains (utility) supply.",
+  "Common Key Features",
+  "| • | Integrated RS232 and RS485 ports providing Modbus RTU support",
+  "| DSE7310 MKII Manual / Automatic Start Controller Key Features | Typical Applications",
+  "| • | 3 phase generator sensing with protection",
+  "| DSE7320 MKII Automatic Mains (Utility) Failure (AMF) Controller | Key",
+  "| • | Automatic start and stopping of generator and transfer of load",
+  "| DSE7310 MKII Auto Start | & | DSE7320",
+  "Specifications",
+  "| Number | DSE7310 MKII: 1",
+  "DSE7320 MKII: 2",
+  "| Event Log | Up to 250 events"] }] };
+const ctlLines = (facts, model) => (facts.get(`controller:${C.keyOf(model)}`) || []).map((f) => f.line);
+
+test("a controller datasheet gives each line to the models of its section", () => {
+  const facts = modelFacts(C.build([dse]), [dse]);
+  const a = ctlLines(facts, "DSE7320 MKII"), b = ctlLines(facts, "DSE7310 MKII");
+  for (const l of ["| • | Integrated RS232 and RS485 ports providing Modbus RTU support", "| Event Log | Up to 250 events"]) { assert.ok(a.includes(l), l); assert.ok(b.includes(l), l); }
+  assert.ok(a.includes("| • | Automatic start and stopping of generator and transfer of load"));
+  assert.ok(!b.includes("| • | Automatic start and stopping of generator and transfer of load"));
+  assert.ok(b.includes("| • | 3 phase generator sensing with protection") && !a.includes("| • | 3 phase generator sensing with protection"));
+  // A line naming one model is of that model only, and does not open a section.
+  assert.ok(a.includes("The DSE7320 MKII will also monitor the mains (utility) supply.") && !b.includes("The DSE7320 MKII will also monitor the mains (utility) supply."));
+  assert.ok(a.includes("DSE7320 MKII: 2") && !b.includes("DSE7320 MKII: 2") && b.includes("| Number | DSE7310 MKII: 1"));
+  // The catalog does not read a controller maker's datasheet as gensets.
+  assert.equal(C.build([dse]).engines.length, 0);
+  // A controller only mentioned in another model's datasheet gets none of its lines.
+  const other = { id: "dse2", role: "controller_maker", specTables: [{ n: 1002, title: "Datasheet: DSE8610 MKII Synchronising", header: [], rows: ["| • | Compatible with DSE7320 MKII", "| • | Load sharing"] }] };
+  const f2 = modelFacts(C.build([other]), [other]);
+  assert.deepEqual([ctlLines(f2, "DSE7320 MKII"), ctlLines(f2, "DSE8610 MKII")], [[], ["| • | Compatible with DSE7320 MKII", "| • | Load sharing"]]);
+});
+
+const ctlConfig = (model, checks) => ({ requirements: [{ item: "AMF", requirement: "tự động khi mất điện lưới", quote: "Bộ điều khiển Deep Sea", part: "controller", level: "core" }],
+  configs: [{ rank: 1, engine: { model: "NTA855-G1B", src: rowB }, controller: { model, make: "Deep Sea", src: rowB }, checks, suppliers: [{ supplierId: "b", n: 102, line: lineB }] }] });
+const amf = { item: "AMF", hsmtQuote: "Bộ điều khiển Deep Sea", offered: "AMF", sourceQuote: "Automatic start and stopping of generator", part: "controller", status: "met",
+  factSrc: { supplierId: "dse", n: 1001, line: "| • | Automatic start and stopping of generator and transfer of load" } };
+
+test("a controller check quoting its maker's datasheet (factSrc) is met; a line of the other model is not", () => {
+  const list = [...sups, dse];
+  // The configuration's controller is named in its source row for this test.
+  const row = { ...rowB }, sups2 = list.map((s) => (s.id === "b" ? { ...s, specTables: [{ ...s.specTables[0], header: ["| Model | Prime kVA | Prime kW | Engine | Alternator | Controller DSE7320 MKII DSE7320 |"] }] } : s));
+  let { problems, result } = check(ctlConfig("DSE7320 MKII", [{ ...amf }]), { hsmtText: hsmt, suppliers: sups2, readWeb: () => null, origin: "all" });
+  assert.deepEqual(problems, []);
+  assert.equal(result.configs[0].checks[0].status, "met");
+  assert.equal(result.configs[0].checks[0].version, undefined);
+  ({ result } = check(ctlConfig("DSE7310 MKII", [{ ...amf }]), { hsmtText: hsmt, suppliers: sups2, readWeb: () => null, origin: "all" }));
+  assert.equal(result.configs[0].checks[0].status, "unclear");
+  assert.ok(row);
+});
+
+test("a controller written without its generation takes the datasheet of its generations, to be confirmed", () => {
+  const sups2 = [...sups, dse].map((s) => (s.id === "b" ? { ...s, specTables: [{ ...s.specTables[0], header: ["| Model | Prime kVA | Prime kW | Engine | Alternator | Controller DSE7320 |"] }] } : s));
+  const { problems, result } = check(ctlConfig("DSE7320", [{ ...amf }]), { hsmtText: hsmt, suppliers: sups2, readWeb: () => null, origin: "all" });
+  assert.deepEqual(problems, []);
+  const x = result.configs[0].checks[0];
+  assert.equal(x.status, "met");
+  assert.equal(x.version, "DSE7320 MKII");
+  assert.match(x.note, /cần xác nhận đời/);
+  assert.ok(result.configs[0].gaps.some((g) => /DSE7320 hay DSE7320 MKII/.test(g)));
+});
+
+test("catalog.md lists the controllers' datasheet lines", () => {
+  const b = { ...sups[1], controllers: [{ brand: "Deep Sea", model: "DSE7320", text: "DSE7320", line: "Controller: Deep Sea DSE7320", src: [3001] },
+    { brand: "Deep Sea", model: "DSE7310 MKII", text: "DSE7310 MKII", line: "Controller: Deep Sea DSE7310 MKII", src: [3001] }] };
+  const list = [sups[0], b, sups[2], dse];
+  const { md, ctlMd } = catalogMd(C.build(list), { value: 250, unit: "kVA" }, hintsOf(hsmt), { suppliers: list });
+  assert.match(md, /## Thông số bộ điều khiển/);
+  assert.match(md, /### DSE7320 — datasheet của DSE7320 MKII \(nhà cung cấp ghi DSE7320: cần xác nhận đời\) — supplierId: dse, n: 1001/);
+  assert.ok(md.includes("- | • | Automatic start and stopping of generator and transfer of load"));
+  // controllers.md has every line; two models of one datasheet each have their own lines.
+  const part = (m) => ctlMd.split("\n### ").find((s) => s.startsWith(m)) || "";
+  assert.ok(part("DSE7320 —").includes("Automatic start and stopping") && !part("DSE7320 —").includes("3 phase generator sensing"));
+  assert.ok(part("DSE7310 MKII —").includes("3 phase generator sensing") && !part("DSE7310 MKII —").includes("Automatic start and stopping"));
+});
+
+test("SmartGen: a series written HGM6110N/6120N..., 'models: text' lines and wrapped sentences go to the right models", () => {
+  const sg = { id: "sg", role: "controller_maker", specTables: [{ n: 1001, title: "Datasheet: HGM6100N SERIES (HGM6110N/6120N/6110NC/6120NC)", header: [], rows: [
+    "HGM6100N SERIES",
+    "(HGM6110N/6120N/6110NC/6120NC)",
+    "HGM6110N/6110NC: Automatic Start Module, it controls genset to start/stop automatically by remote signal;",
+    "| HGM6120N/6120NC: Based on HGM6110N/6110NC, it | adds mains",
+    "AC",
+    "| monitoring and mains/generator automatic switching control (AMF), especially | suitable for",
+    "NOTE1: HGM6110NC/6120NC has RS485 port, HGM6110N/6120N without.",
+    "|  | Event log, real-time clock, scheduled start & stop function"] }] };
+  const f = modelFacts(C.build([sg]), [sg]);
+  const amf = "| monitoring and mains/generator automatic switching control (AMF), especially | suitable for";
+  assert.ok(ctlLines(f, "HGM6120N").includes(amf) && ctlLines(f, "HGM6120NC").includes(amf));
+  assert.ok(!ctlLines(f, "HGM6110N").includes(amf) && !ctlLines(f, "HGM6110NC").includes(amf));
+  assert.ok(!ctlLines(f, "HGM6120N").includes("HGM6110N/6110NC: Automatic Start Module, it controls genset to start/stop automatically by remote signal;"));
+  for (const m of ["HGM6110N", "HGM6120N", "HGM6110NC", "HGM6120NC"]) assert.ok(ctlLines(f, m).includes("|  | Event log, real-time clock, scheduled start & stop function"), m);
 });

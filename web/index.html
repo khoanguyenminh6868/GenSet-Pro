@@ -2143,8 +2143,8 @@ async function runCompare(key) {
 // ---------- Nhà cung cấp (suppliers/cn/<id>.json in the repo, posted as supplier/<id> by suppliers/upload.mjs) ----------
 // Read only. Every fact carries [n], a source of that record: its link, its tier and the words quoted from it
 // (suppliers/verify.mjs checked each quote against the saved page before upload; Khoa, 2026-10-28).
-const SUP_ROLE = { genset_oem: "Nhà lắp ráp tổ máy", engine_maker: "Hãng động cơ", alternator_maker: "Hãng đầu phát", distributor: "Nhà phân phối" };
-const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đầu phát" };
+const SUP_ROLE = { genset_oem: "Nhà lắp ráp tổ máy", engine_maker: "Hãng động cơ", alternator_maker: "Hãng đầu phát", controller_maker: "Hãng bộ điều khiển", distributor: "Nhà phân phối" };
+const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển" };
 const SUP_CONF = { high: ["Tin cậy cao", "ok"], medium: ["Trung bình", "warn"], low: ["Chưa xác minh", "bad"] };
 const SUP_TIER = { A: "Website / tài liệu chính hãng", B: "Triển lãm, hiệp hội, sàn công bố", C: "Tự giới thiệu (đại lý, sàn B2B)" };
 const SUP_COUNTRY = { CN: "Trung Quốc", US: "Mỹ", GB: "Anh", DE: "Đức", FR: "Pháp", IT: "Ý", JP: "Nhật Bản", CA: "Canada" };
