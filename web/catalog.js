@@ -70,6 +70,13 @@
     [/^[A-Z]{0,3}[46]1(00|02|05|08|10|13)[A-Z]/i, "Trung Quốc"], [/^[A-Z]{0,3}[34](80|85|90|93|95|98)[A-Z]/i, "Trung Quốc"],
     [/^[A-Z]{0,3}1[1789]\d{1,2}F/i, "Trung Quốc"], [/^[A-Z]{0,3}2V(80|88|92F|95|100)/i, "Trung Quốc"],
   ];
+  // Country of each foreign engine make, for Xuất xứ G7 / G20 in Gợi ý cấu hình and the supplier country filter
+  // (Khoa, 2026-11-02). G20 here is its 19 member countries (China included), not the EU.
+  const ENGINE_COUNTRY = { Cummins: "US", Perkins: "GB", Baudouin: "FR", Deutz: "DE", "Volvo Penta": "SE", MTU: "DE", Mitsubishi: "JP",
+    Doosan: "KR", Hyundai: "KR", Kubota: "JP", Yanmar: "JP", Isuzu: "JP", Scania: "SE", "John Deere": "US", Daewoo: "KR", MWM: "DE",
+    Kohler: "US", "Lister Petter": "GB", Honda: "JP", Caterpillar: "US", FPT: "IT", MAN: "DE", "Detroit Diesel": "US" };
+  const COUNTRY_GROUP = { g7: ["US", "GB", "DE", "FR", "IT", "JP", "CA"],
+    g20: ["AR", "AU", "BR", "CA", "CN", "FR", "DE", "IN", "ID", "IT", "JP", "MX", "RU", "SA", "ZA", "KR", "TR", "GB", "US"] };
   // "other" (a foreign make), "cn" (only Chinese makes) or null (the sources do not say).
   function engineOrigin(names, model) {
     const m = String(model || "").trim(), foreign = FOREIGN_MODEL.filter(([re]) => re.test(m)).map(([, n]) => n);
@@ -556,8 +563,17 @@
   const originOf = (e) => engineOrigin((e.makes || []).map((m) => m.name), e.model);
   // The origin of an engine named in a text (a make, a model, a row).
   const originIn = (text, model) => engineOrigin(brandIn(String(text || ""), ENGINE_BRANDS), model);
+  // The countries of an engine's makes: CN for a Chinese make, the make's country for a foreign one; [] when unknown.
+  function engineCountries(names, model) {
+    const o = engineOrigin(names, model), m = String(model || "").trim();
+    if (o !== "other") return o === "cn" ? ["CN"] : [];
+    return [...new Set([...names, ...FOREIGN_MODEL.filter(([re]) => re.test(m)).map(([, n]) => n)].filter((n) => FOREIGN_ENGINE.has(n)).map((n) => ENGINE_COUNTRY[n]))];
+  }
+  // Whether an engine (catalog entry, or one named in a text) is of a make from a country of the group ("g7" / "g20").
+  const groupOf = (e, g) => engineCountries((e.makes || []).map((m) => m.name), e.model).some((c) => COUNTRY_GROUP[g].includes(c));
+  const groupIn = (text, model, g) => engineCountries(brandIn(String(text || ""), ENGINE_BRANDS), model).some((c) => COUNTRY_GROUP[g].includes(c));
 
-  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, CONTROLLERS };
+  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);

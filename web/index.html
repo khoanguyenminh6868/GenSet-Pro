@@ -2101,8 +2101,8 @@ const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đ�
 const SUP_CONF = { high: ["Tin cậy cao", "ok"], medium: ["Trung bình", "warn"], low: ["Chưa xác minh", "bad"] };
 const SUP_TIER = { A: "Website / tài liệu chính hãng", B: "Triển lãm, hiệp hội, sàn công bố", C: "Tự giới thiệu (đại lý, sàn B2B)" };
 const SUP_COUNTRY = { CN: "Trung Quốc", US: "Mỹ", GB: "Anh", DE: "Đức", FR: "Pháp", IT: "Ý", JP: "Nhật Bản", CA: "Canada" };
-// Country filter: the G7 countries are one option, "G7" (Khoa, 2026-11-02).
-const G7 = ["US", "GB", "DE", "FR", "IT", "JP", "CA"];
+// Country filter: the G7 countries are one option, "G7"; "G20" is one more option over its member countries (Khoa, 2026-11-02).
+const { g7: G7, g20: G20 } = window.GenbidCatalog?.COUNTRY_GROUP || { g7: [], g20: [] };
 // Founding-year filter by range; "none" = the sources give no year.
 const SUP_YEARS = [["-1989", "Trước 1990"], ["1990-1999", "1990–1999"], ["2000-2009", "2000–2009"], ["2010-", "Từ 2010"], ["none", "Không ghi năm"]];
 // One "Hãng" filter for engine, alternator and controller makes (Khoa, 2026-11-02); value "engine:Cummins", "alt:Stamford", "ctrl:ComAp".
@@ -2146,7 +2146,7 @@ function supMatches(s) {
   const f = supFilter, q = f.q.trim().toLowerCase();
   if (f.role && s.role !== f.role) return false;
   if (f.conf && s.confidence !== f.conf) return false;
-  if (f.country && (f.country === "G7" ? !G7.includes(s.country) : s.country !== f.country)) return false;
+  if (f.country && (f.country === "G7" ? !G7.includes(s.country) : f.country === "G20" ? !G20.includes(s.country) : s.country !== f.country)) return false;
   if (f.year) {
     const [a, b] = f.year.split("-").map((x) => (x ? Number(x) : null));
     if (f.year === "none" ? s.founded : !s.founded || (a != null && s.founded < a) || (b != null && s.founded > b)) return false;
@@ -2193,6 +2193,8 @@ function renderSuppliers() {
     ["alt", "Đầu phát", makesOf((s) => (s.productLines || []).flatMap((p) => p.alternatorMakes || []))],
     ["ctrl", "Bộ điều khiển", makesOf((s) => (s.controllers || []).map((c) => c.brand))]];
   const countries = Object.entries(all.reduce((m, s) => { const k = G7.includes(s.country) ? "G7" : s.country; if (k) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1]);
+  const nG20 = all.filter((s) => G20.includes(s.country)).length;
+  if (nG20) countries.splice(countries.findIndex(([k]) => k === "G7") + 1, 0, ["G20", nG20]);
   const f = supFilter, opt = (v, l, cur) => h`<option value="${v}" ${v === cur ? "selected" : ""}>${l}</option>`;
   body.innerHTML = h`${raw(filtToggle("supFilt"))}<div class="row suprow">
       <input type="search" id="supQ" placeholder="Tìm tên, thương hiệu, tỉnh..." value="${f.q}" style="flex:1;min-width:180px">
@@ -2202,7 +2204,7 @@ function renderSuppliers() {
       <select id="supFuel">${raw(opt("", "Nhiên liệu", f.fuel) + [["diesel", "Diesel"], ["gas", "Khí gas"], ["dual", "Hai nhiên liệu"], ["hfo", "Dầu nặng HFO"]].map(([k, l]) => opt(k, l, f.fuel)).join(""))}</select>
     </div>
     <div class="row suprow">
-      <select id="supCountry">${raw(opt("", "Quốc gia", f.country) + countries.map(([k]) => opt(k, k === "G7" ? "G7" : SUP_COUNTRY[k] || k, f.country)).join(""))}</select>
+      <select id="supCountry">${raw(opt("", "Quốc gia", f.country) + countries.map(([k]) => opt(k, k === "G7" || k === "G20" ? k : SUP_COUNTRY[k] || k, f.country)).join(""))}</select>
       <select id="supYear">${raw(opt("", "Năm", f.year) + SUP_YEARS.map(([k, l]) => opt(k, l, f.year)).join(""))}</select>
       <label class="muted small" for="supPower">Công suất cần</label>
       <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="${matchMedia("(max-width:640px)").matches ? "Công suất cần" : "vd. 500"}">
@@ -2510,7 +2512,7 @@ const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], u
 const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet", controller: "Trang của nhà cung cấp" };
 // Xuất xứ (Khoa, 2026-10-29): Trung Quốc by default leaves out engines of foreign makes (Perkins, Cummins, Volvo Penta,
 // Baudouin, Kubota, Yanmar...) and engines whose source gives no make; Khác keeps only foreign makes. The list is web/catalog.js FOREIGN_ENGINE.
-const CFG_ORIGIN = [["all", "Tất cả"], ["cn", "Trung Quốc"], ["other", "Khác"]];
+const CFG_ORIGIN = [["all", "Tất cả"], ["cn", "Trung Quốc"], ["g7", "G7"], ["g20", "G20"], ["other", "Khác"]];
 const cfgOrigin = {};
 // Yêu cầu khác (Khoa, 2026-11-01): requirements typed here go with Gợi ý and Tìm NCC (configreq / findreq extra) and
 // are checked like the HSMT's own (config-prompt.md, find-prompt.md); the box starts with the last request's text.
