@@ -1256,14 +1256,17 @@ function openList(k) {
       <span>${t.bidName}</span><span class="src">${[capacityOf(t)?.text, priceShort(t.estimatedPrice), locOf(t)].filter(Boolean).join(" · ")}</span></button>`; }).join("") : '<div class="empty">Không có gói nào.</div>';
   renderTop();
 }
+// A tender opened from a bidder's page: closing its drawer goes back to that page, at the same scroll.
+let bdReturn = null;
 function openDrawer(key, tab) {
-  state.list = null; $("#dtabs").hidden = false;
+  bdReturn = null; state.list = null; $("#dtabs").hidden = false;
   state.open = key; state.dtab = tab || "info";
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
   renderDrawer(); renderGrid();
 }
 function closeDrawer() {
   state.open = null; state.list = null; $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true"); $("#scrim").hidden = true; renderGrid();
+  if (bdReturn) { const r = bdReturn; bdReturn = null; openBidders(r.id, r.scroll); }
 }
 let drawerSig = "";
 function renderDrawer(force = true) {
@@ -3033,9 +3036,9 @@ const OUR_TAX = "4101623015";
 const BD_SORT = { n: ["Số gói tham dự", (c) => c.n], wins: ["Số gói trúng", (c) => c.wins], rate: ["Tỉ lệ trúng", (c) => (c.decided ? c.wins / c.decided : 0) + c.decided / 1e6], value: ["Giá trị trúng", (c) => c.wonValue], last: ["Gần đây", (c) => c.lastAt] };
 let bdFilter = { q: "", year: "", sort: "n" }, bdOpenId = null, bdLimit = 200;
 const bdYear = (r) => (r.at ? fmtDate(r.at, false).slice(-4) : "");
-function openBidders(id) {
+function openBidders(id, scroll) {
   bdOpenId = id || null; bdLimit = 200; filtOpen = false;
-  modal(mBanner("bd", "Nhà thầu", "Gói máy phát điện trên muasamcong: giá dự thầu và kết quả", "", "#" + SCREEN_HASH.bd) + '<div id="bdBody"><div class="mscroll"><div class="note">Đang tải gói thầu...</div></div></div>', () => loadHist().then(renderBidders), "wide pane");
+  modal(mBanner("bd", "Nhà thầu", "Gói máy phát điện trên muasamcong: giá dự thầu và kết quả", "", "#" + SCREEN_HASH.bd) + '<div id="bdBody"><div class="mscroll"><div class="note">Đang tải gói thầu...</div></div></div>', () => loadHist().then(() => { renderBidders(); if (scroll) mScroll().scrollTop = scroll; }), "wide pane");
   setScreenUrl("bd");
 }
 function renderBidders() {
@@ -3247,7 +3250,7 @@ document.addEventListener("click", async (e) => {
   const bdo = e.target.closest("[data-bdopen]");
   if (bdo && !e.target.closest("a[href]")) { if ($("#bdBody")) { if (!bdOpenId) listScroll.bd = mScroll().scrollTop; bdOpenId = bdo.dataset.bdopen; renderBidders(); mScroll().scrollTop = 0; } else openBidders(bdo.dataset.bdopen); return; }
   const bdt = e.target.closest("[data-bdtender]");
-  if (bdt) { e.preventDefault(); $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); openDrawer(bdt.dataset.bdtender); return; }
+  if (bdt) { e.preventDefault(); const back = { id: bdOpenId, scroll: mScroll().scrollTop }; $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); openDrawer(bdt.dataset.bdtender); bdReturn = back; return; }
   if (e.target.id === "bdBack") { bdOpenId = null; renderBidders(); mScroll().scrollTop = listScroll.bd || 0; return; }
   if (e.target.id === "bdMore") { bdLimit += 200; renderBdList(); return; }
   if (e.target.id === "bpRun") { runBidSuggest(e.target.dataset.key); return; }
