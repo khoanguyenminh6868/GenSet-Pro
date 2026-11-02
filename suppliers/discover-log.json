@@ -2767,5 +2767,35 @@
   "result": "skip",
   "name": "New Way Power (Nam Phi)",
   "reason": "Chưa tìm được website chính hãng (đoán tên miền không tồn tại)"
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "genpower-turkey",
+  "name": "Genpower Jeneratör",
+  "url": "https://www.genpower.com.tr/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "hd-hyundai-infracore",
+  "name": "HD Construction Equipment (former HD Hyundai Infracore) — Engine",
+  "url": "https://www.hd-ce.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "skip",
+  "url": "https://www.ymzmotor.ru/",
+  "reason": "YaMZ (Nga): website trả HTTP 401 khi tải trực tiếp"
+ },
+ {
+  "at": "2026-11-02",
+  "result": "skip",
+  "url": "https://www.emsa.com.tr/",
+  "reason": "Emsa (Thổ Nhĩ Kỳ): website chặn tải (HTTP 403)"
  }
 ]
