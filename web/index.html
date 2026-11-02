@@ -3108,7 +3108,7 @@ function bpSamples(t, K, P) {
 function bidSuggestHtml(t, K, P) {
   const all = bpSamples(t, K, P);
   if (!all.length) return h`<div class="note">Chưa có gói đã có kết quả trong lịch sử để so.</div>`;
-  if (!(P > 0)) return h`<div class="note warn">Cần giá gói thầu để tính giá đề xuất.</div>`;
+  if (!(P > 0)) return h`<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>`;
   const sim = all.slice(0, 60), ratios = sim.map((s) => s.ratio).sort((a, b) => a - b);
   const q = (p) => ratios[Math.min(ratios.length - 1, Math.floor(p * (ratios.length - 1)))];
   const chance = (r) => sim.filter((s) => s.ratio >= r - 1e-9).length / sim.length;
@@ -3142,22 +3142,26 @@ function bidSuggestHtml(t, K, P) {
     <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà thầu</th><th>Số lượt</th><th>Trúng</th><th>Giá thường bỏ (trung vị, % giá gói)</th></tr></thead><tbody>${raw(comps.map((c) => h`<tr data-bdopen="${c.id}" style="cursor:pointer"><td>${c.name}</td><td class="num" data-l="Số lượt">${c.n}</td><td class="num" data-l="Trúng">${c.wins}</td><td class="num" data-l="Giá thường bỏ">${c.ratios.length ? pct(med(c.ratios)) : "—"}</td></tr>`).join(""))}</tbody></table></div>
     <div class="muted small">Ước tính từ dữ liệu quá khứ; gói đánh giá theo kỹ thuật hoặc có nhà thầu bị loại thì giá thấp nhất chưa chắc trúng.</div>`;
 }
+// The tender's own power and package price, no input (Khoa, 2026-11-02): power from the name, else the HSMT or the
+// analysis (capacityOf); package price from the notice, else the history.
+function bidBasis(t) {
+  const cap = capacityOf(t), K = kvaOf(cap?.text) || null;
+  const P = t.estimatedPrice ?? state.bidhist?.[t._key]?.estimatedPrice ?? null;
+  return { K, P, capText: K ? `${cap.text} (${cap.src})` : "" };
+}
 function bidSuggestBox(t) {
   const c = bpCache[t._key] || {};
-  const K = c.K ?? kvaOf(t.bidName), P = c.P ?? t.estimatedPrice ?? null;
   return h`<section class="sec"><h4>Gợi ý giá đấu</h4><div class="row">
-      <label class="muted small" for="bpKva">Công suất (kVA)</label><input type="number" id="bpKva" min="0" step="any" value="${K ? Math.round(K) : ""}" style="width:100px" placeholder="không rõ">
-      <label class="muted small" for="bpPrice">Giá gói (đ)</label><input type="number" id="bpPrice" min="0" step="1000" value="${P || ""}" style="width:150px">
       <button class="btn primary" id="bpRun" data-key="${t._key}">Gợi ý giá đấu</button></div>
     <div id="bpOut">${raw(c.html || "")}</div></section>`;
 }
 async function runBidSuggest(key) {
   const t = findTender(key), out = $("#bpOut");
   if (!t || !out) return;
-  const K = Number($("#bpKva").value) || null, P = Number($("#bpPrice").value) || null;
   out.innerHTML = progress("Đang tải lịch sử gói thầu...");
   await loadHist();
-  const html = bidSuggestHtml(t, K, P);
+  const { K, P, capText } = bidBasis(t);
+  const html = h`<div class="muted small" style="margin-top:6px">Gói này: công suất ${capText || "không rõ (chỉ so theo giá gói)"} · giá gói ${P ? fmtVnd(P) : "không rõ"}</div>` + bidSuggestHtml(t, K, P);
   bpCache[key] = { K, P, html };
   if ($("#bpOut")) $("#bpOut").innerHTML = html;
 }
