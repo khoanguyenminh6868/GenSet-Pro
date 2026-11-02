@@ -599,30 +599,44 @@ function numMatch(n, f) {
 }
 
 // ---------- Data ----------
+// One list of tenders, not current ones and past ones (Khoa, 2026-11-02): each tender is one record merged from every
+// place it is stored — muasamcong's results (bidhist), tenders that left the daily feed (seen), tracked, added by hand,
+// and the daily feed — the later ones winning field by field, empty values never hiding a filled one.
+const filled = (v) => v != null && v !== "" && !(Array.isArray(v) && !v.length);
+function mergeTender(base, top) {
+  if (!base) return { ...top };
+  const out = { ...base };
+  for (const [k, v] of Object.entries(top)) if (filled(v)) out[k] = k === "result" && base.result && typeof v === "object" ? mergeTender(base.result, v) : v;
+  return out;
+}
 function allTenders() {
   const map = new Map();
-  const now = Date.now();
-  for (const t of state.feed?.tenders ?? []) { const k = safeId(t.notifyNo || t.id); map.set(k, { ...t, _key: k }); }
-  for (const [id, t] of Object.entries(state.manual)) if (!map.has(id)) map.set(id, { ...t, _key: id });
-  for (const [id, r] of Object.entries(state.tracked)) if (!map.has(id) && r.tender) map.set(id, { ...r.tender, _key: id });
-  // Tenders that left the daily feed (closed) are kept from "seen" so they show under Đã đóng.
-  for (const [id, t] of Object.entries(state.seen)) if (!map.has(id)) map.set(id, { ...t, _key: id });
-  // Every generator tender read from muasamcong's history (bidhist), so past tenders sit in their tabs too (Khoa, 2026-11-02).
-  for (const t of histTenders()) if (!map.has(t._key)) map.set(t._key, t);
+  const put = (k, t) => map.set(k, { ...mergeTender(map.get(k), t), _key: k });
+  for (const t of histTenders()) put(t._key, t);
+  for (const [id, t] of Object.entries(state.seen)) put(id, t);
+  for (const [id, r] of Object.entries(state.tracked)) if (r.tender) put(id, r.tender);
+  for (const [id, t] of Object.entries(state.manual)) put(id, t);
+  for (const t of state.feed?.tenders ?? []) put(safeId(t.notifyNo || t.id), t);
   // Tenders the user deleted stay hidden, even when the daily feed or a refresh brings them back.
   return [...map.values()].filter((t) => !state.deleted[t._key]);
 }
-// bidhist/<TBMT> in the shape of feed/current, built once per load.
+// bidhist/<TBMT> in the shape of feed/current, with the opening and result, built once per load.
 let histTenderMemo = { src: null, list: [] };
 function histTenders() {
   if (!state.bidhist) return [];
   if (histTenderMemo.src !== state.bidhist) histTenderMemo = { src: state.bidhist, list: Object.entries(state.bidhist).filter(([, d]) => isGensetName(d.bidName)).map(([id, d]) => ({
     notifyNo: d.notifyNo || id, bidName: d.bidName || "", investorName: d.investorName || null, ...(d.procuringEntityName ? { procuringEntityName: d.procuringEntityName } : {}),
     location: d.location || null, bidForm: d.bidForm, field: d.field || null, isInternet: !!d.isInternet, publicDate: d.publicDate || null, bidCloseDate: d.bidCloseDate || null,
-    bidOpenDate: d.openedAt || null, estimatedPrice: d.estimatedPrice ?? null, status: d.status === "DHTBMT" ? "cancelled" : "closed", sourceUrl: d.url || "", _key: id, _hist: true })) };
+    bidOpenDate: d.openedAt || null, estimatedPrice: d.estimatedPrice ?? null, ...(d.status === "DHTBMT" ? { status: "cancelled" } : {}), sourceUrl: d.url || "", _key: id, result: histResult(d) })) };
   return histTenderMemo.list;
 }
-// Our own place in a history tender: Đã nộp until the result, then Trúng thầu or Không trúng (as ingest.js markJoined does for bidders/<TBMT>).
+// Opening and result as the daily feed has them (t.result): bidder count, winners and their prices.
+function histResult(d) {
+  const bidders = (d.lots || []).flatMap((l) => l.bidders || []);
+  const winners = bidders.filter((b) => b.won).map((b) => ({ name: b.name, price: b.winPrice ?? b.finalPrice ?? b.bidPrice ?? null }));
+  return { openedAt: d.openedAt || null, numBidderJoin: new Set(bidders.map(taxKey)).size || null, winners };
+}
+// Our own place in a tender read from muasamcong's results: Đã nộp until the result, then Trúng thầu or Không trúng (as ingest.js markJoined does for bidders/<TBMT>).
 function histStage(key) {
   const d = state.bidhist?.[key];
   if (!d) return null;
@@ -3016,7 +3030,7 @@ let bdFilter = { q: "", year: "", sort: "n" }, bdOpenId = null, bdLimit = 200;
 const bdYear = (r) => (r.at ? fmtDate(r.at, false).slice(-4) : "");
 function openBidders(id) {
   bdOpenId = id || null; bdLimit = 200; filtOpen = false;
-  modal(mBanner("bd", "Nhà thầu", "Gói máy phát điện trên muasamcong: giá dự thầu và kết quả", "", "#" + SCREEN_HASH.bd) + '<div id="bdBody"><div class="mscroll"><div class="note">Đang tải lịch sử gói thầu...</div></div></div>', () => loadHist().then(renderBidders), "wide pane");
+  modal(mBanner("bd", "Nhà thầu", "Gói máy phát điện trên muasamcong: giá dự thầu và kết quả", "", "#" + SCREEN_HASH.bd) + '<div id="bdBody"><div class="mscroll"><div class="note">Đang tải gói thầu...</div></div></div>', () => loadHist().then(renderBidders), "wide pane");
   setScreenUrl("bd");
 }
 function renderBidders() {
@@ -3028,7 +3042,7 @@ function renderBidders() {
     body.innerHTML = h`<div class="mscroll">${raw(c ? bdDetailHtml(c) : '<div class="note">Không có nhà thầu này.</div>')}</div>`;
     return;
   }
-  if (!all.length) { body.innerHTML = h`<div class="mscroll"><div class="note">Chưa có lịch sử gói thầu. Bot trên máy Windows lấy dữ liệu từ muasamcong (lệnh <code>genbid-sync.js history</code>, và mỗi lượt Sync theo lịch).</div></div>`; return; }
+  if (!all.length) { body.innerHTML = h`<div class="mscroll"><div class="note">Chưa có kết quả gói thầu nào. Bot trên máy Windows lấy dữ liệu từ muasamcong (lệnh <code>genbid-sync.js history</code>, và mỗi lượt Sync theo lịch).</div></div>`; return; }
   const years = [...new Set(all.flatMap((c) => c.rows.map(bdYear)).filter(Boolean))].sort().reverse();
   const f = bdFilter, opt = (v, l, cur) => h`<option value="${v}" ${v === cur ? "selected" : ""}>${l}</option>`;
   body.innerHTML = h`${raw(filtToggle("bdFilt"))}<div class="row suprow">
@@ -3124,7 +3138,7 @@ function bpSamples(t, K, P) {
 }
 function bidSuggestHtml(t, K, P) {
   const all = bpSamples(t, K, P);
-  if (!all.length) return h`<div class="note">Chưa có gói đã có kết quả trong lịch sử để so.</div>`;
+  if (!all.length) return h`<div class="note">Chưa có gói đã có kết quả để so.</div>`;
   if (!(P > 0)) return h`<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>`;
   const sim = all.slice(0, 60), ratios = sim.map((s) => s.ratio).sort((a, b) => a - b);
   const q = (p) => ratios[Math.min(ratios.length - 1, Math.floor(p * (ratios.length - 1)))];
@@ -3175,7 +3189,7 @@ function bidSuggestBox(t) {
 async function runBidSuggest(key) {
   const t = findTender(key), out = $("#bpOut");
   if (!t || !out) return;
-  out.innerHTML = progress("Đang tải lịch sử gói thầu...");
+  out.innerHTML = progress("Đang tải gói thầu...");
   await loadHist();
   const { K, P, capText } = bidBasis(t);
   const html = h`<div class="muted small" style="margin-top:6px">Gói này: công suất ${capText || "không rõ (chỉ so theo giá gói)"} · giá gói ${P ? fmtVnd(P) : "không rõ"}</div>` + bidSuggestHtml(t, K, P);
