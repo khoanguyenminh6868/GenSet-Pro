@@ -3104,7 +3104,7 @@ function bdDetailHtml(c0) {
     <div class="tablewrap" style="margin-top:10px"><table class="suptable supcards bdrows"><thead><tr><th>Mở thầu</th><th>Gói thầu</th><th>Giá gói</th><th>Giá dự thầu</th><th>Kết quả</th></tr></thead><tbody>${raw(rows.map((r) => {
       const p = bdPrice(r.b), base = r.lot.price ?? (r.multi ? null : r.d.estimatedPrice), w = r.b.won ? [] : winners(r);
       return h`<tr><td data-l="Mở thầu">${fmtDate(r.at, false)}</td>
-        <td><div><b>${r.d.bidName || r.key}</b></div>${raw(r.multi && r.lot.lotName ? h`<div class="small">${r.lot.lotName}</div>` : "")}
+        <td><div><b>${raw(findTender(r.key) ? h`<a href="#" data-bdtender="${r.key}" title="Mở chi tiết gói thầu">${r.d.bidName || r.key}</a>` : h`${r.d.bidName || r.key}`)}</b></div>${raw(r.multi && r.lot.lotName ? h`<div class="small">${r.lot.lotName}</div>` : "")}
           <div class="muted small">${raw(r.d.url ? h`<a href="${r.d.url}" target="_blank" rel="noopener">${r.key}</a>` : r.key)} · ${[r.d.investorName, r.d.location, BID_FORM[r.d.bidForm] || r.d.bidForm].filter(Boolean).join(" · ")}</div>
           ${raw(r.b.won && r.lot.goods?.length ? h`<div class="small">Hàng chào: ${bdGoods(r.lot.goods)}</div>` : "")}
           ${raw(!r.lot.goods?.length && r.d.config?.kvas?.length ? h`<div class="muted small" title="${r.d.config.text || ""}">Công suất theo HSMT: ${r.d.config.kvas.slice(0, 5).map((p) => p.v.toLocaleString("vi-VN") + " " + p.u).join(", ")}</div>` : "")}
@@ -3246,6 +3246,8 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#bdBtn")) { openBidders(); return; }
   const bdo = e.target.closest("[data-bdopen]");
   if (bdo && !e.target.closest("a[href]")) { if ($("#bdBody")) { if (!bdOpenId) listScroll.bd = mScroll().scrollTop; bdOpenId = bdo.dataset.bdopen; renderBidders(); mScroll().scrollTop = 0; } else openBidders(bdo.dataset.bdopen); return; }
+  const bdt = e.target.closest("[data-bdtender]");
+  if (bdt) { e.preventDefault(); $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); openDrawer(bdt.dataset.bdtender); return; }
   if (e.target.id === "bdBack") { bdOpenId = null; renderBidders(); mScroll().scrollTop = listScroll.bd || 0; return; }
   if (e.target.id === "bdMore") { bdLimit += 200; renderBdList(); return; }
   if (e.target.id === "bpRun") { runBidSuggest(e.target.dataset.key); return; }
