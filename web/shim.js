@@ -230,8 +230,10 @@
   async function loadColl(coll) {
     if (cache.has(coll)) return;
     const m = new Map();
+    // Pages in a fixed order: without one, Postgres may return overlapping pages and some rows are never read
+    // (bidhist, ~1,500 rows, showed 1,033 tenders one load and 1,500+ the next).
     for (let from = 0; ; from += 1000) {
-      const { data, error } = await sb.from("docs").select("id,data").eq("coll", coll).range(from, from + 999);
+      const { data, error } = await sb.from("docs").select("id,data").eq("coll", coll).order("id").range(from, from + 999);
       if (error) throw error;
       data.forEach((r) => m.set(r.id, r.data));
       if (data.length < 1000) break;
