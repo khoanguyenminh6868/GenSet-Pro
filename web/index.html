@@ -695,6 +695,9 @@ function capacityOf(t) {
   if (capScan.found[t._key]) return { ...capScan.found[t._key], src: "đọc từ tệp HSMT" };
   const kc = analysisOf(t._key)?.result?.keyInfo?.generatorCapacity;
   if (kc && capFromText(kc)) return { text: kc, n: capFromText(kc).n, src: "phân tích" };
+  // Past tenders: the powers the bot read from the HSMT (bidhist config).
+  const hc = state.bidhist?.[t._key]?.config?.kvas;
+  if (hc?.length) { const text = hc.slice(0, 4).map((p) => p.v.toLocaleString("vi-VN") + " " + p.u).join(", "), c = capFromText(text); if (c) return { text, n: c.n, src: "HSMT" }; }
   const specs = analysisOf(t._key)?.result?.technicalSpecs || [];
   const sp = specs.find((x) => /công suất|capacity|power|kva|kw/i.test((x.item || "") + " " + (x.requirement || "")) && capFromText(x.requirement));
   if (sp) return { ...capFromText(sp.requirement), src: "phân tích" };
@@ -2954,6 +2957,13 @@ const isGensetName = (n) => { n = String(n || "").normalize("NFC"); return GENSE
 // Repair, upkeep, rental, parts and studies are priced differently from supplying a generator set.
 const SVC_RE = /sửa\s*chữa|bảo\s*dưỡng|bảo\s*trì|đại\s*tu|thuê|phụ\s*tùng|vật\s*tư|chổi\s*than|thí\s*nghiệm|kiểm\s*định|tư\s*vấn|dầu\s*(nhớt|bôi\s*trơn)/i;
 const bidKind = (n) => (SVC_RE.test(String(n || "").normalize("NFC")) ? "svc" : "supply");
+// Power read by the bot from a past tender's HSMT (bidhist config.kvas): the largest set for a one-lot tender; for
+// several lots only when the HSMT names a single power, since it cannot tell which lot each one belongs to.
+function cfgKva(d, multi) {
+  const ps = (d?.config?.kvas || []).map((p) => (p.u === "kW" ? p.v / 0.8 : p.u === "MVA" ? p.v * 1000 : p.v)).filter((v) => v >= 1);
+  if (!ps.length) return null;
+  return multi ? (new Set(ps).size === 1 ? ps[0] : null) : Math.max(...ps);
+}
 const taxKey = (x) => String(x.taxCode || "").replace(/\D/g, "") || String(x.name || "").trim().toUpperCase();
 // The documents as one shape: bidhist as written by the bot, bidders/<TBMT> of tracked tenders turned into one lot.
 function histDocs() {
@@ -3074,6 +3084,7 @@ function bdDetailHtml(c0) {
         <td><div><b>${r.d.bidName || r.key}</b></div>${raw(r.multi && r.lot.lotName ? h`<div class="small">${r.lot.lotName}</div>` : "")}
           <div class="muted small">${raw(r.d.url ? h`<a href="${r.d.url}" target="_blank" rel="noopener">${r.key}</a>` : r.key)} · ${[r.d.investorName, r.d.location, BID_FORM[r.d.bidForm] || r.d.bidForm].filter(Boolean).join(" · ")}</div>
           ${raw(r.b.won && r.lot.goods?.length ? h`<div class="small">Hàng chào: ${bdGoods(r.lot.goods)}</div>` : "")}
+          ${raw(!r.lot.goods?.length && r.d.config?.kvas?.length ? h`<div class="muted small" title="${r.d.config.text || ""}">Công suất theo HSMT: ${r.d.config.kvas.slice(0, 5).map((p) => p.v.toLocaleString("vi-VN") + " " + p.u).join(", ")}</div>` : "")}
           ${raw(w.length ? h`<div class="muted small">Nhà thầu trúng: ${w.join(", ")}${(() => { const x = r.lot.bidders.find((y) => y.won); return x ? " · " + fmtVnd(x.winPrice ?? bdPrice(x)) : ""; })()}</div>` : "")}</td>
         <td class="num" data-l="Giá gói">${base ? fmtVnd(base) : "—"}</td>
         <td class="num" data-l="Giá dự thầu">${p ? fmtVnd(p) : "—"}${raw(r.b.discount ? h`<div class="muted small">giảm ${r.b.discount}</div>` : "")}${raw(bdPct(p, base) ? h`<div class="muted small">${bdPct(p, base)} giá gói</div>` : "")}<div class="muted small">${(r.lot.bidders || []).length} nhà thầu</div></td>
@@ -3096,11 +3107,13 @@ function bpSamples(t, K, P) {
       if (!w || !(price > 0) || !(wp > 0)) continue;
       const ratio = wp / price;
       if (ratio < 0.3 || ratio > 1.02) continue;
-      const k = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)) || Math.max(0, ...(lot.goods || []).map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
+      const kGoods = Math.max(0, ...(lot.goods || []).map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
+      const kName = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)), kCfg = kName || kGoods ? null : cfgKva(d, multi);
+      const k = kName || kGoods || kCfg, kSrc = kName ? "" : kGoods ? "hàng chào" : kCfg ? "HSMT" : "";
       const dist = (K && k ? Math.abs(Math.log(K / k)) : 0.7) + (P ? 0.5 * Math.abs(Math.log(P / price)) : 0) + (d.bidForm && d.bidForm === t.bidForm ? 0 : 0.3)
         + 0.15 * Math.min(years(d.openedAt || d.bidCloseDate), 5) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0)
         + (bidKind((multi && lot.lotName) || d.bidName) === kind ? 0 : 1);
-      out.push({ key, d, lot, w, price, wp, ratio, k, dist, multi });
+      out.push({ key, d, lot, w, price, wp, ratio, k, kSrc, dist, multi });
     }
   }
   return out.sort((a, b) => a.dist - b.dist);
@@ -3137,7 +3150,7 @@ function bidSuggestHtml(t, K, P) {
     <div class="tablewrap"><table class="suptable supcards bprows"><thead><tr><th>#</th><th>Giá đề xuất</th><th>% giá gói</th><th title="Tỉ lệ các gói tương tự có giá trúng bằng hoặc cao hơn mức này: bỏ giá này thì đã thắng giá ở chừng ấy gói">Khả năng thắng giá</th><th>Dựa trên gói</th></tr></thead><tbody>${raw(rows.map((s, i) => h`<tr>
       <td class="num">${i + 1}</td><td class="num" data-l="Giá đề xuất"><b>${fmtVnd(s.sug)}</b><div class="muted small">${s.sug.toLocaleString("vi-VN")} đ</div></td>
       <td class="num" data-l="% giá gói">${pct(s.ratio)}</td><td class="num" data-l="Khả năng thắng giá">${Math.round(100 * chance(s.ratio))}%</td>
-      <td class="small" data-l="Dựa trên"><b>${s.multi && s.lot.lotName ? s.lot.lotName : s.d.bidName}</b><div class="muted">${raw(s.d.url ? h`<a href="${s.d.url}" target="_blank" rel="noopener">${s.key}</a>` : s.key)} · ${fmtDate(s.d.openedAt || s.d.bidCloseDate, false)}${s.k ? ` · ${Math.round(s.k).toLocaleString("vi-VN")} kVA` : ""} · giá gói ${fmtVnd(s.price)} · trúng ${fmtVnd(s.wp)} (${s.w.name}) · ${(s.lot.bidders || []).length} nhà thầu${s.d.investorName === t.investorName ? " · cùng chủ đầu tư" : ""}</div></td></tr>`).join(""))}</tbody></table></div>
+      <td class="small" data-l="Dựa trên"><b>${s.multi && s.lot.lotName ? s.lot.lotName : s.d.bidName}</b><div class="muted">${raw(s.d.url ? h`<a href="${s.d.url}" target="_blank" rel="noopener">${s.key}</a>` : s.key)} · ${fmtDate(s.d.openedAt || s.d.bidCloseDate, false)}${s.k ? ` · ${Math.round(s.k).toLocaleString("vi-VN")} kVA${s.kSrc ? " (" + s.kSrc + ")" : ""}` : ""} · giá gói ${fmtVnd(s.price)} · trúng ${fmtVnd(s.wp)} (${s.w.name}) · ${(s.lot.bidders || []).length} nhà thầu${s.d.investorName === t.investorName ? " · cùng chủ đầu tư" : ""}</div></td></tr>`).join(""))}</tbody></table></div>
     <h4 style="margin:12px 0 4px">Nhà thầu hay dự các gói này</h4>
     <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà thầu</th><th>Số lượt</th><th>Trúng</th><th>Giá thường bỏ (trung vị, % giá gói)</th></tr></thead><tbody>${raw(comps.map((c) => h`<tr data-bdopen="${c.id}" style="cursor:pointer"><td>${c.name}</td><td class="num" data-l="Số lượt">${c.n}</td><td class="num" data-l="Trúng">${c.wins}</td><td class="num" data-l="Giá thường bỏ">${c.ratios.length ? pct(med(c.ratios)) : "—"}</td></tr>`).join(""))}</tbody></table></div>
     <div class="muted small">Ước tính từ dữ liệu quá khứ; gói đánh giá theo kỹ thuật hoặc có nhà thầu bị loại thì giá thấp nhất chưa chắc trúng.</div>`;
