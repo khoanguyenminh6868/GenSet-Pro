@@ -604,7 +604,9 @@ function allTenders() {
   // Tenders the user deleted stay hidden, even when the daily feed or a refresh brings them back.
   return [...map.values()].filter((t) => !state.deleted[t._key]);
 }
-const isClosed = (t) => !!t.bidCloseDate && new Date(t.bidCloseDate).getTime() <= Date.now();
+// A notice cancelled on muasamcong (Đã hủy TBMT, status "cancelled" from Sync) counts as closed (Khoa, 2026-11-02).
+const isCancelled = (t) => t.status === "cancelled";
+const isClosed = (t) => isCancelled(t) || (!!t.bidCloseDate && new Date(t.bidCloseDate).getTime() <= Date.now());
 // A tender still in an early stage when bidding closes moves to the Đã đóng tab.
 // Label and colour class for a tender, with closed tenders shown as Đã đóng.
 const shownStage = (t) => (isProject(t) ? { key: "project", label: "Dự án" } : tabOf(t) === "closed" ? { key: "closed", label: "Đã đóng" } : { key: stageOf(t), label: stageLabel(stageOf(t)) });
@@ -942,7 +944,7 @@ function queue() {
 const REFRESH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>';
 const KPIS = [
   { key: "open", l: "Đang mở", s: "gói còn hạn nộp", c: "var(--cyan)", f: (t) => !isClosed(t) && !["dropped", "lost", "won"].includes(stageOf(t)) },
-  { key: "soon", l: "Đóng trong 3 ngày", s: "chưa nộp", c: "var(--orange)", f: (t) => { const tl = timeLeft(t.bidCloseDate); return !!tl && tl.urgent && !["dropped", "lost", "won", "submitted"].includes(stageOf(t)); } },
+  { key: "soon", l: "Đóng trong 3 ngày", s: "chưa nộp", c: "var(--orange)", f: (t) => { const tl = timeLeft(t.bidCloseDate); return !!tl && tl.urgent && !isCancelled(t) && !["dropped", "lost", "won", "submitted"].includes(stageOf(t)); } },
   { key: "done", l: "Đã phân tích", s: "", c: "var(--mint)", f: (t) => analysisState(t) === "done" },
   { key: "prep", l: "Chuẩn bị HSDT", s: "đối chiếu trong từng gói", c: "var(--violet)", f: (t) => tabOf(t) === "preparing" },
 ];
@@ -1037,7 +1039,7 @@ const COLS = [
   { k: "no", label: "Mã Số", cls: "noc", val: (t) => (isProject(t) ? projectNo(t) : t.notifyNo || ""), text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
     cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span><div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
       const tl = timeLeft(t.bidCloseDate); return h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}
-      <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
+      <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(isCancelled(t) ? '<div class="tleft closed-at">Đã hủy TBMT</div>' : stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
   { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}${raw(t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}</div>` : "")}${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
   { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return v ? h`${v}` : '<span class="muted">Chưa có</span>'; } },
   { k: "cap", label: "Công Suất", cls: "capc", num: true, numUnit: "kVA", val: (t) => capacityOf(t)?.n ?? null, text: (t) => capacityOf(t)?.text || "", cell: (t) => { const c = capacityOf(t); return c ? h`<span class="cap">${c.text}</span>` : capScan.pending.has(t._key) ? '<span class="muted small">Đang đọc HSMT...</span>' : '<span class="muted">Chưa rõ</span>'; } },
