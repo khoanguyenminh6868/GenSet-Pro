@@ -551,6 +551,8 @@ async function readFile(file) {
       .map((r) => r.filter((c) => String(c ?? "").trim()).join(" | ")).filter(Boolean).join("\n"));
     return { text: sheets.join("\n\n") };
   }
+  // Archives are read by the Windows bot once uploaded; the browser cannot read them.
+  if (/.(zip|rar|7z)$/.test(name)) throw new Error(`"${file.name}" là tệp nén: trang chỉ gửi được khi tải tệp lên thành công. Hãy thử lại, hoặc giải nén rồi chọn các tệp bên trong.`);
   if (name.endsWith(".doc")) throw new Error(`"${file.name}" là định dạng .doc cũ. Hãy lưu lại thành .docx hoặc PDF.`);
   return { text: await file.text() };
 }
@@ -1516,13 +1518,13 @@ function refetchHtml(t, have) {
   if (state.readOnly) return "";
   const s = reqState(t._key);
   if (projUp[t._key]) return h`<div class="note">${raw(progress(projUp[t._key]))}</div>`;
-  if (s?.kind === "pending") return waitHtml("Đang tải hồ sơ từ muasamcong bằng Agent...", s.r.requestedAt) + h`<div class="row"><label class="btn" for="pFiles" title="Không muốn chờ Agent: tải tay tệp PDF, DOCX">Upload</label><input type="file" id="pFiles" multiple hidden accept=".pdf,.docx,.doc,.txt,.md,.csv"></div>`;
+  if (s?.kind === "pending") return waitHtml("Đang tải hồ sơ từ muasamcong bằng Agent...", s.r.requestedAt) + h`<div class="row"><label class="btn" for="pFiles" title="Không muốn chờ Agent: tải tay tệp PDF, DOCX">Upload</label><input type="file" id="pFiles" multiple hidden accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,image/*"></div>`;
   const msg = s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
     : state.hsmt[t._key]?.files?.some((f) => f.manual) ? "Có tệp tải tay. Lấy lại tệp từ muasamcong sẽ thay cả danh sách, tệp tải tay sẽ mất."
     : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp. Hoặc Upload tệp PDF, DOCX có sẵn." : "Lấy tệp hồ sơ từ muasamcong, hoặc Upload tệp PDF, DOCX có sẵn.";
   return h`<div class="note row${s?.kind === "error" ? " warn" : ""}"><span class="small" style="flex:1;min-width:200px">${msg}</span>
     <label class="btn" for="pFiles" title="Tải tay tệp PDF, DOCX làm hồ sơ mời thầu">Upload</label>
-    <input type="file" id="pFiles" multiple hidden accept=".pdf,.docx,.doc,.txt,.md,.csv">
+    <input type="file" id="pFiles" multiple hidden accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,image/*">
     <button class="btn primary" id="hfFetch" data-key="${t._key}">Lấy lại tệp</button></div>`;
 }
 // Sync on the web: ask the Windows worker for files of every open Mới tender that has none and no request yet.
@@ -1945,12 +1947,12 @@ function hsdtTabHtml(t) {
   const basis = [prev?.basis?.template?.length && "theo template " + prev.basis.template.join(", "), prev?.basis?.config?.length && "cấu hình NCC " + prev.basis.config.join(", ")].filter(Boolean).join(" · ");
   return bidSuggestBox(t) + hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="drop" id="hpDrop">
       <div class="row"><span class="muted small" style="flex:1"><b>Template HSDT</b> (không bắt buộc). Khi có, hồ sơ soạn theo bố cục, lời văn và bảng của mẫu này.</span><label class="btn sm" for="hpFiles">Chọn tệp</label></div>
-      <input type="file" id="hpFiles" multiple accept=".docx,.pdf,.xlsx,.txt,.md,.csv" hidden>
+      <input type="file" id="hpFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="hpList"></div>
     </div>
     <div class="drop" id="hcDrop">
       <div class="row"><span class="muted small" style="flex:1"><b>Cấu hình của NCC</b> (không bắt buộc). Khi có, bảng đáp ứng kỹ thuật lấy thông số thiết bị của nhà cung cấp.</span><label class="btn sm" for="hcFiles">Chọn tệp</label></div>
-      <input type="file" id="hcFiles" multiple accept=".pdf,.docx,.xlsx,.txt,.md,.csv" hidden>
+      <input type="file" id="hcFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="hcList"></div>
     </div>
     <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) + (basis ? " · " + basis : "") : ""}</span></div><div id="hsUp"></div>
@@ -2050,7 +2052,7 @@ function compareTabHtml(t) {
   return cmWait + (cmErr ? h`<div class="note warn">Agent chưa đối chiếu được: ${cmErr}</div>` : "") + h`<p class="muted small" style="margin:0">So hồ sơ dự thầu với yêu cầu trong HSMT đã tải về của gói này, từng dòng như tổ chuyên gia sẽ chấm.</p>
     <div class="drop" id="cmDrop">
       <div class="row"><span class="muted small" style="flex:1">Tệp hồ sơ dự thầu (PDF, DOCX, ảnh)</span><label class="btn sm" for="cmFiles">Chọn tệp</label></div>
-      <input type="file" id="cmFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
+      <input type="file" id="cmFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="cmList"></div>
     </div>
     <textarea id="cmText" placeholder="Hoặc dán bảng đáp ứng kỹ thuật, catalogue, báo giá..."></textarea>
@@ -2669,12 +2671,12 @@ function tlktTabHtml(t) {
   // A shortened YCKT, when uploaded, is the only requirements side: the HSMT is not read (Khoa, 2026-10-27).
   return tkWait + (tkErr ? h`<div class="note warn">Agent chưa ${tr ? "dịch" : "đối chiếu"} được: ${tkErr}</div>` : "") + h`<div class="drop" id="tyDrop">
       <div class="row"><span class="muted small" style="flex:1">Tệp YCKT rút gọn (không bắt buộc). Khi có tệp này, chỉ đối chiếu với nó, không dùng HSMT gốc.</span><label class="btn sm" for="tyFiles">Chọn tệp</label></div>
-      <input type="file" id="tyFiles" multiple accept=".pdf,.docx,.txt,.md,.csv,image/*" hidden>
+      <input type="file" id="tyFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="tyList"></div>
     </div>
     <div class="drop" id="tkDrop">
       <div class="row"><span class="muted small" style="flex:1">Tệp đề xuất của đối tác (PDF, DOCX, XLSX)</span><label class="btn sm" for="tkFiles">Chọn tệp</label></div>
-      <input type="file" id="tkFiles" multiple accept=".pdf,.docx,.xlsx,.txt,.md,.csv" hidden>
+      <input type="file" id="tkFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="tkList"></div>
     </div>
     <label class="tkcfg" id="tkCfg"><span class="small"><b>Cấu hình Kỹ Thuật của Nhà Cung Cấp</b> <span class="muted">(không bắt buộc). Khi có điền, chỉ đối chiếu với ô này, không dùng tệp đề xuất.</span></span>
