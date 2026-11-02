@@ -165,15 +165,13 @@ td.locc{white-space:normal!important;min-width:90px;max-width:130px}
 .aicon.mut{background:var(--panel2);color:var(--dim);border:1px solid var(--line)}
 .aline{margin-top:5px;display:flex}
 .closed-at{color:var(--rose)!important}
-.sbtn.win:hover{color:var(--mint);border-color:var(--mint)}
-.sbtn.lose:hover{color:var(--rose);border-color:var(--rose)}
-.sbtn.x:hover:not(:disabled){color:var(--rose);border-color:var(--rose)}
 .pline{color:var(--mint);font-weight:600;margin-top:4px}
 .bpline{color:var(--cyan);font-weight:600;margin-top:2px}
-.stepbtns{display:flex;gap:4px;margin-top:5px}
-.sbtn{width:26px;height:24px;border:1px solid var(--line);background:var(--panel2);border-radius:6px;display:inline-grid;place-items:center;padding:0;color:var(--muted)}
-.sbtn svg{width:14px;height:14px}
-.sbtn:hover:not(:disabled){color:var(--fg);border-color:var(--violet)}
+.stepbtns{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+/* Each move button takes the colour of the stage it moves to (st-* class). */
+.sbtn{height:24px;border:1px solid currentColor;background:color-mix(in srgb,currentColor 12%,transparent);border-radius:6px;display:inline-flex;align-items:center;gap:3px;padding:0 7px 0 5px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.sbtn svg{width:13px;height:13px;flex:none}
+.sbtn:hover:not(:disabled){background:color-mix(in srgb,currentColor 24%,transparent)}
 .sbtn:disabled{opacity:.35;cursor:default}
 .more{display:flex;justify-content:center;padding:12px;border-top:1px solid var(--line)}
 .pv{display:flex;flex-direction:column;gap:10px;align-items:center}
@@ -1024,7 +1022,9 @@ function movesOf(t) {
 function stepPrev(t) { const s = stageOf(t); const p = s === "dropped" ? "new" : FLOW[FLOW.indexOf(s) - 1]; return p && movesOf(t).includes(p) ? p : null; }
 function stepNext(t) { const s = stageOf(t); const i = FLOW.indexOf(s); const n = i >= 0 ? FLOW[i + 1] : null; return n && s !== "submitted" && movesOf(t).includes(n) ? n : null; }
 // Results for a submitted bid: Trúng thầu or Không trúng.
-const resultBtns = (t) => !movesOf(t).includes("won") ? "" : h`<button class="sbtn win" data-step="won" data-key="${t._key}" aria-label="Chuyển sang Trúng thầu" title="Trúng thầu">${raw(STAGE_ICON.win)}</button><button class="sbtn lose" data-step="lost" data-key="${t._key}" aria-label="Chuyển sang Không trúng" title="Không trúng">${raw(STAGE_ICON.lose)}</button>`;
+// Move button: icon + target stage label, coloured like that stage.
+const stepBtn = (t, to, icon, title) => h`<button class="sbtn st-${to}" data-step="${to}" data-key="${t._key}" title="${title}">${raw(STAGE_ICON[icon])}${stageLabel(to)}</button>`;
+const resultBtns = (t) => !movesOf(t).includes("won") ? "" : stepBtn(t, "won", "win", "Chuyển sang Trúng thầu") + stepBtn(t, "lost", "lose", "Chuyển sang Không trúng");
 const STAGE_ICON = { win: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>', lose: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 14V3H7l-3 8v3h6l-1 5a2 2 0 0 0 2 2l6-7z"/></svg>', x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>', prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>', next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>' };
 function anaInline(t) {
   const s = analysisState(t);
@@ -1042,10 +1042,10 @@ const COLS = [
   { k: "cap", label: "Công Suất", cls: "capc", num: true, numUnit: "kVA", val: (t) => capacityOf(t)?.n ?? null, text: (t) => capacityOf(t)?.text || "", cell: (t) => { const c = capacityOf(t); return c ? h`<span class="cap">${c.text}</span>` : capScan.pending.has(t._key) ? '<span class="muted small">Đang đọc HSMT...</span>' : '<span class="muted">Chưa rõ</span>'; } },
   { k: "stage", label: "Trạng thái", pick: true, val: (t) => TABS.find((x) => x.key === tabOf(t))?.label, cell: (t) => { const st = stageOf(t), p = stepPrev(t), n = stepNext(t), drop = movesOf(t).includes("dropped");
     // Only moves that are allowed get a button.
-    const btns = (p ? h`<button class="sbtn" data-step="${p}" data-key="${t._key}" aria-label="Chuyển về ${stageLabel(p)}" title="Về: ${stageLabel(p)}">${raw(STAGE_ICON.prev)}</button>` : "")
-      + (n ? h`<button class="sbtn" data-step="${n}" data-key="${t._key}" aria-label="Chuyển sang ${stageLabel(n)}" title="Sang: ${stageLabel(n)}">${raw(STAGE_ICON.next)}</button>` : "")
+    const btns = (p ? stepBtn(t, p, "prev", `Chuyển về ${stageLabel(p)}`) : "")
+      + (n ? stepBtn(t, n, "next", `Chuyển sang ${stageLabel(n)}`) : "")
       + resultBtns(t)
-      + (drop ? h`<button class="sbtn x" data-step="dropped" data-key="${t._key}" aria-label="Bỏ qua gói thầu" title="Bỏ qua gói này">${raw(STAGE_ICON.x)}</button>` : "");
+      + (drop ? stepBtn(t, "dropped", "x", "Bỏ qua gói này") : "");
     const ai = anaIcon(t);
     return h`<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(btns ? `<div class="stepbtns">${btns}</div>` : "")}${raw(ai ? `<div class="aline">${ai}</div>` : "")}`; } },
   { k: "loc", label: "Địa điểm", pick: true, cls: "locc", val: (t) => locOf(t), cell: (t) => h`${locOf(t) || "—"}` },
