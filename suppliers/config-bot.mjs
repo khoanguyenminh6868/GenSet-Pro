@@ -255,8 +255,10 @@ export function hintsOf(text, extra = "") {
 }
 const named = (hints, model) => { const k = squashOf(model); return k.length >= 5 && hints.text.includes(k); };
 const CONF = { high: 30, medium: 15 };
-// A supplier's row that is in two of its tables (the same page saved twice, "| a |" and "| a") is one row.
-const rowKey = (r) => `${r.u.supplierId}\n${squashOf(r.u.line || (r.u.lines?.rows || []).join(" "))}`;
+// A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
+const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
+// Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
+const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4;
 export function candidates(cat, cap, hints, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30 } = {}) {
   const sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a]));
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4);
@@ -273,27 +275,30 @@ export function candidates(cat, cap, hints, { suppliers = [], origin = "all", cn
       const ctrlNamed = offers.some((c) => hints.ctrlModels.includes(CAT.keyOf(c.model || "")) || hints.ctrlMakes.includes(c.brand));
       const why = [];
       let score = 0;
-      if (named(hints, e.model)) { score += 1000; why.push("HSMT ghi model động cơ này"); }
-      if (e.make && hints.engineMakes.includes(e.make)) { score += 300; why.push(`hãng động cơ ${e.make} HSMT nêu`); }
+      const isNamed = named(hints, e.model);
+      if (isNamed) { score += 1000; why.push("HSMT ghi model động cơ này"); }
+      // Sources that name two makes ("Cummins / Doosan"): either one is the HSMT's.
+      const makeNamed = (e.make || "").split(" / ").find((m) => hints.engineMakes.includes(m));
+      if (makeNamed) { score += 300; why.push(`hãng động cơ ${makeNamed} HSMT nêu`); }
       if (ctrlNamed) { score += 200; why.push("có bộ điều khiển hãng HSMT nêu"); }
       if (e.make) score += 60;
       if (offers.length) score += 50;
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
-      if (a) { score += 40; if ((a.make && hints.altMakes.includes(a.make)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
+      if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
       if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
-      rows.push({ e, u, a, score, why, offers, rowCtrl });
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed });
     }
   }
   rows.sort((x, y) => y.score - x.score);
-  // At most 3 rows of one engine model, so other engines get a place too; one row per supplier and line.
-  const per = new Map(), seen = new Set(), out = [];
+  const perEngine = new Map(), perSupplier = new Map(), seen = new Set(), out = [];
+  const add = (m, k) => m.set(k, (m.get(k) || 0) + 1);
   for (const r of rows) {
-    const k = rowKey(r);
-    if (seen.has(k) || (per.get(r.e.key) || 0) >= 3) continue;
-    seen.add(k); per.set(r.e.key, (per.get(r.e.key) || 0) + 1); out.push(r);
+    const k = choiceKey(r);
+    if (seen.has(k) || (perEngine.get(r.e.key) || 0) >= (r.named ? PER_NAMED_ENGINE : PER_ENGINE) || (perSupplier.get(r.u.supplierId) || 0) >= PER_SUPPLIER) continue;
+    seen.add(k); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r);
     if (out.length >= max) break;
   }
   return { top: out, all: rows };
@@ -385,8 +390,10 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   out.push("## Nhà cung cấp khác có dòng ghi cùng động cơ (để chọn suppliers)", "");
   for (const { kind, x } of models) {
     if (kind !== "engine") continue;
-    const shownRows = new Set(top.map(rowKey)), more = [];
-    for (const r of all) if (r.e.key === x.key && !shownRows.has(rowKey(r)) && more.length < 4) { shownRows.add(rowKey(r)); more.push(r); }
+    // One row per supplier not yet listed with this engine; every supplier of the engine the HSMT names.
+    const listed = new Set(top.filter((r) => r.e.key === x.key).map((r) => r.u.supplierId)), more = [];
+    const most = all.some((r) => r.e.key === x.key && r.named) ? 40 : 4;
+    for (const r of all) if (r.e.key === x.key && !listed.has(r.u.supplierId) && more.length < most) { listed.add(r.u.supplierId); more.push(r); }
     if (!more.length) continue;
     out.push(`### ${x.model}`);
     for (const r of more) {
