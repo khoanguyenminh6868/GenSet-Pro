@@ -22,6 +22,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { spawn, spawnSync, execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
@@ -43,8 +44,10 @@ await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
 const CAT = globalThis.GenbidCatalog;
 export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (các nước thành viên trừ Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả" };
 const GROUP_ORIGIN = new Set(["g7", "g20"]);
+const PARTS = ["engine", "alternator", "genset", "controller"];
 const originOfReq = (o) => (ORIGIN[o] ? o : "cn");
 const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
+export const reqHashOf = (text, extra) => createHash("sha1").update(`${text}\n--extra--\n${extra || ""}`).digest("hex").slice(0, 16);
 
 async function api(q) {
   const r = await fetch(`${WEB}/api/requests?${q}`, { headers: { Authorization: `Bearer ${token()}` } });
@@ -95,38 +98,203 @@ function technicalPart(text) {
   const rest = text.slice(start + 10), end = rest.search(/\n\s*ch(ươ|uo)ng\s+(VI|VII)\b/i);
   return text.slice(start, end > 0 ? start + 10 + end : start + 250000).slice(0, 250000);
 }
-function catalogMd(cat, cap, brands) {
-  const pick = (list) => {
-    if (!cap) return list.slice(0, 80);
-    const near = list.filter((e) => e.uses.some((u) => Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4)));
-    return near.sort((a, b) => (brands.some((x) => (b.make || "").includes(x)) - brands.some((x) => (a.make || "").includes(x))) || b.suppliers.length - a.suppliers.length).slice(0, 80);
-  };
-  const out = [`# Danh mục trong hệ thống${cap ? ` (lọc theo tổ máy ${cap.value} ${cap.unit}, từ 95% đến 140%)` : ""}`, ""];
-  // A table's header is written once, at the end (it was repeated on every row, 400 KB of 480); a header that took in
-  // the table's rows (some run to 10 000 characters) is cut, its column titles come first.
-  const headers = new Map(), shown = new Set();
-  for (const [title, list] of [["Động cơ", pick(cat.engines)], ["Đầu phát", pick(cat.alternators)]]) {
-    out.push(`## ${title} (${list.length})`, "");
-    for (const e of list) {
-      out.push(`### ${e.model}${e.make ? ` — hãng: ${e.make} (theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " — nguồn không ghi hãng"}`);
-      // A supplier's row that is word for word in two of its tables (the same page saved twice) is listed once.
-      const seen = new Set(), uses = (cap ? e.uses.slice().sort((a, b) => Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value)) : e.uses)
-        .filter((u) => { const k = `${u.supplierId}\n${u.line || (u.lines?.rows || []).join("\n")}`; return !seen.has(k) && seen.add(k); });
-      for (const u of uses.slice(0, 8)) {
-        shown.add(u.supplierId);
-        out.push(`- supplierId: ${u.supplierId}, n: ${u.n}${u.genset ? `, tổ máy: ${u.genset}` : ""}${u.other ? `, đi kèm: ${u.other}` : ""}`);
-        if (u.header?.length) headers.set(`${u.supplierId} n ${u.n}`, u.header.join(" "));
-        out.push(u.line ? `  line: ${u.line}` : `  bảng một model: ${(u.lines?.rows || []).join(" ; ")}`);
-        // Figures read from that row by column title (web/catalog.js), each in the row word for word.
-        if (u.specs?.length) out.push(`  thông số: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
+// ---------- Thông số theo model (Khoa, 2026-11-02) ----------
+// An engine's own figures (cylinders, displacement, bore, governor, emission...) and an alternator's (insulation, IP,
+// AVR...) are the same in every genset built with that model, so a figure any supplier's row or datasheet gives for
+// the model may be quoted for it (a check's factSrc). Genset figures (fuel, size, tank, noise) stay with their own row.
+// From a row table each fact is the row (with its header and title); from a label table (one model per page, a
+// datasheet) the line that gives it, only when that table names a single model of that part.
+const sigOf = (v) => { const n = numbersIn(v); return n.length ? { nums: n } : { words: norm(v).split(/[^a-z0-9一-鿿]+/).filter((w) => w.length > 1).map((w) => w.slice(0, 6)) }; };
+// Two values of one figure disagree when they share no number (or, for words, no word): "6" / "6L" / "In-line 6" agree,
+// "14" / "10.8" do not.
+const disagree = (a, b) => { const x = sigOf(a), y = sigOf(b); if (x.nums && y.nums) return !x.nums.some((v) => y.nums.includes(v)); if (x.words && y.words) return !x.words.some((w) => y.words.includes(w)); return false; };
+// Engine figures that depend on the genset they are in, so they stay with their own row: the output (prime / standby,
+// 50 / 60 Hz), the speed (1500 / 1800 rpm) and the coolant volume (the radiator is the genset's).
+const ROW_ONLY = new Set(["engPower", "speed", "coolant"]);
+// A maker's datasheet that names its model only in the title (maker-datasheets.mjs: "Datasheet: UCI274F - Winding
+// 311") gives that model's figures too, when the title names exactly one model of the catalog of the maker's part.
+const MAKER_PART = { engine_maker: "engine", alternator_maker: "alternator" };
+export function modelFacts(cat, suppliers = []) {
+  const facts = new Map(), single = new Map();
+  const add = (k, f) => { const out = facts.get(k) || []; if (!out.some((g) => g.key === f.key && g.supplierId === f.supplierId && g.line === f.line)) out.push(f); facts.set(k, out); };
+  for (const s of suppliers) {
+    const kind = MAKER_PART[s?.role];
+    if (!kind) continue;
+    const known = new Set((kind === "engine" ? cat.engines : cat.alternators || []).map((e) => e.key));
+    for (const t of s.specTables || []) {
+      if (t.header?.length) continue;
+      // Every model code of the title, known or not: a title naming two models gives neither.
+      const models = [...new Set(String(t.title || "").split(/[\s:–—|,/()]+/).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+      if (models.length !== 1 || !known.has(models[0])) continue;
+      for (const line of t.rows) {
+        const c = CAT.cellsOf(line), key = c.length >= 2 ? CAT.specKey(c[0]) : null;
+        if (!key || CAT.SPEC[key]?.scope !== kind || ROW_ONLY.has(key)) continue;
+        const value = c.slice(1).find((v) => CAT.SPEC[key].ok.test(v));
+        if (value) add(`${kind}:${models[0]}`, { key, label: c[0], value, supplierId: s.id, n: t.n, line, text: line });
       }
-      out.push("");
     }
   }
+  const parts = [["engine", cat.engines || []], ["alternator", cat.alternators || []]];
+  for (const [kind, list] of parts) for (const e of list) for (const u of e.uses) if (u.lines) {
+    const k = `${kind}|${u.supplierId}|${u.table}`; single.set(k, (single.get(k) || new Set()).add(e.key));
+  }
+  for (const [kind, list] of parts) for (const e of list) {
+    const out = facts.get(`${kind}:${e.key}`) || [];
+    for (const u of e.uses) for (const s of u.specs || []) {
+      if (CAT.SPEC[s.key]?.scope !== kind || ROW_ONLY.has(s.key)) continue;
+      let line, text;
+      if (u.line) { line = u.line; text = [...(u.header || []), u.line, u.title || ""].join(" \n "); }
+      else {
+        if (single.get(`${kind}|${u.supplierId}|${u.table}`)?.size !== 1) continue;
+        line = [...(u.lines?.header || []), ...(u.lines?.rows || [])].find((l) => norm(l).includes(norm(s.label)) && norm(l).includes(norm(s.value)));
+        if (!line) continue;
+        text = line;
+      }
+      if (!out.some((f) => f.key === s.key && f.supplierId === u.supplierId && f.line === line)) out.push({ key: s.key, label: s.label, value: s.value, supplierId: u.supplierId, n: u.n, line, text });
+    }
+    if (out.length) facts.set(`${kind}:${e.key}`, out);
+  }
+  return facts;
+}
+// The figures of one model whose sources disagree: key → the values given. Values of one page (a datasheet giving the
+// voltage regulation of two AVRs, the efficiency at each voltage) are conditions, not a disagreement.
+export function factConflicts(list) {
+  const out = new Map(), src = (f) => `${f.supplierId}#${f.n}`;
+  for (const f of list || []) {
+    const same = list.filter((g) => g.key === f.key);
+    if (same.some((g) => src(g) !== src(f) && disagree(f.value, g.value))) out.set(f.key, [...new Set(same.map((g) => g.value))]);
+  }
+  return out;
+}
+
+// ---------- Ứng viên: code xếp sẵn các dòng tổ máy (Khoa, 2026-11-02) ----------
+// The agent used to read every engine and alternator near the power (catalog.md ~380 KB, 5–11 minutes a run). Now the
+// code ranks the genset rows first and the agent reads the best ones with every figure gathered. Engine and controller
+// weigh more than the alternator (Khoa, 2026-11-02).
+const squashOf = (s) => norm(s).replace(/[^a-z0-9]/g, "");
+export function hintsOf(text, extra = "") {
+  const t = `${technicalPart(text)}\n${extra}`;
+  const names = (list) => list.filter(([re]) => re.test(t)).map(([, n]) => n);
+  const ctrl = CAT.CONTROLLERS.filter((c) => c.word.test(t)).map((c) => c.brand);
+  for (const c of CAT.controllersIn(t)) if (!ctrl.includes(c.brand)) ctrl.push(c.brand);
+  const f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
+  return { engineMakes: names(CAT.ENGINE_BRANDS), altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
+    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, text: squashOf(t) };
+}
+const named = (hints, model) => { const k = squashOf(model); return k.length >= 5 && hints.text.includes(k); };
+const CONF = { high: 30, medium: 15 };
+// A supplier's row that is in two of its tables (the same page saved twice, "| a |" and "| a") is one row.
+const rowKey = (r) => `${r.u.supplierId}\n${squashOf(r.u.line || (r.u.lines?.rows || []).join(" "))}`;
+export function candidates(cat, cap, hints, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30 } = {}) {
+  const sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a]));
+  const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4);
+  const rows = [];
+  for (const e of cat.engines || []) {
+    if (focus && !focus.has(e.key)) continue;
+    const viaCn = origin === "cn" && CAT.originOf(e) === "other";
+    const ef = facts.get(`engine:${e.key}`) || [], eKeys = new Set(ef.map((f) => f.key));
+    for (const u of e.uses) {
+      if ((!u.line && !u.lines) || !near(u) || (hints.freq && u.freq && u.freq !== hints.freq) || (viaCn && !cn.has(u.supplierId))) continue;
+      const a = u.other ? alts.get(CAT.keyOf(u.other)) : null, af = a ? facts.get(`alternator:${a.key}`) || [] : [];
+      const s = sup.get(u.supplierId), rowCtrl = CAT.controllersIn(u.line || (u.lines?.rows || []).join(" "));
+      const offers = [...rowCtrl, ...(s?.controllers || [])];
+      const ctrlNamed = offers.some((c) => hints.ctrlModels.includes(CAT.keyOf(c.model || "")) || hints.ctrlMakes.includes(c.brand));
+      const why = [];
+      let score = 0;
+      if (named(hints, e.model)) { score += 1000; why.push("HSMT ghi model động cơ này"); }
+      if (e.make && hints.engineMakes.includes(e.make)) { score += 300; why.push(`hãng động cơ ${e.make} HSMT nêu`); }
+      if (ctrlNamed) { score += 200; why.push("có bộ điều khiển hãng HSMT nêu"); }
+      if (e.make) score += 60;
+      if (offers.length) score += 50;
+      score += 8 * Math.min(eKeys.size, 8);
+      if (a) { score += 40; if ((a.make && hints.altMakes.includes(a.make)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
+      score += CONF[s?.confidence] || 0;
+      if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
+      rows.push({ e, u, a, score, why, offers, rowCtrl });
+    }
+  }
+  rows.sort((x, y) => y.score - x.score);
+  // At most 3 rows of one engine model, so other engines get a place too; one row per supplier and line.
+  const per = new Map(), seen = new Set(), out = [];
+  for (const r of rows) {
+    const k = rowKey(r);
+    if (seen.has(k) || (per.get(r.e.key) || 0) >= 3) continue;
+    seen.add(k); per.set(r.e.key, (per.get(r.e.key) || 0) + 1); out.push(r);
+    if (out.length >= max) break;
+  }
+  return { top: out, all: rows };
+}
+const factLine = (f) => `${CAT.SPEC[f.key]?.vi || f.key}: ${f.value} — factSrc: { "supplierId": "${f.supplierId}", "n": ${f.n}, "line": ${JSON.stringify(f.line)} }`;
+export function catalogMd(cat, cap, hints, opts = {}) {
+  const facts = opts.facts || modelFacts(cat, opts.suppliers || []), { top, all } = candidates(cat, cap, hints, { ...opts, facts });
+  const sup = new Map((opts.suppliers || []).map((s) => [s.id, s])), shown = new Set(), headers = new Map();
+  const rowText = (u) => (u.line ? `  line: ${u.line}` : `  bảng một model: ${(u.lines?.rows || []).join(" ; ")}`);
+  const out = [`# Danh mục trong hệ thống${cap ? ` (tổ máy ${cap.value} ${cap.unit}, từ 95% đến 140%)` : ""}${hints.freq ? `, ${hints.freq} Hz` : ""} — code đã xếp sẵn`, "",
+    "Thứ tự ưu tiên khi xếp: model động cơ / hãng động cơ HSMT nêu, bộ điều khiển HSMT nêu, động cơ có nhiều thông số có nguồn, rồi mới tới đầu phát; công suất càng sát càng tốt.", "",
+    `## Ứng viên (${top.length} dòng tổ máy, tốt nhất trước)`, ""];
+  top.forEach((r, i) => {
+    const { e, u, a } = r, s = sup.get(u.supplierId);
+    shown.add(u.supplierId);
+    if (u.header?.length) headers.set(`${u.supplierId} n ${u.n}`, u.header.join(" "));
+    out.push(`### ${i + 1}. ${u.genset || "(không ghi model tổ máy)"} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
+      `- supplierId: ${u.supplierId}, n: ${u.n}${s ? `, quốc gia: ${s.country || "?"}, độ tin cậy: ${s.confidence}, vai trò: ${s.role}` : ""}`, rowText(u));
+    if (u.specs?.length) out.push(`  thông số trong dòng: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
+    if (r.rowCtrl.length) out.push(`  bộ điều khiển trong dòng: ${r.rowCtrl.map((c) => c.model || c.brand).join(", ")}`);
+    const sc = [...new Set((s?.controllers || []).map((c) => c.model || `${c.brand} (không ghi model)`))];
+    if (sc.length) out.push(`  bộ điều khiển nhà cung cấp chào (mục Bộ điều khiển): ${sc.join(", ")}`);
+    if (r.why.length) out.push(`  lý do xếp: ${r.why.join("; ")}`);
+    out.push("");
+  });
+  // Every figure of the models above, from any supplier's row or datasheet, with the factSrc to quote.
+  out.push("## Thông số theo model (dùng cho mọi cấu hình có model đó; ghi factSrc như dưới)", "");
+  const models = [];
+  for (const r of top) {
+    if (!models.some((m) => m.kind === "engine" && m.x.key === r.e.key)) models.push({ kind: "engine", x: r.e });
+    if (r.a && !models.some((m) => m.kind === "alternator" && m.x.key === r.a.key)) models.push({ kind: "alternator", x: r.a });
+  }
+  for (const { kind, x } of models) {
+    const list = facts.get(`${kind}:${x.key}`) || [], bad = factConflicts(list);
+    out.push(`### ${kind === "engine" ? "Động cơ" : "Đầu phát"} ${x.model}${x.make ? ` — hãng: ${x.make}` : ""}`);
+    if (!list.length) out.push("- (chưa có thông số nào có nguồn)");
+    for (const key of [...new Set(list.map((f) => f.key))]) {
+      if (bad.has(key)) out.push(`- ⚠ ${CAT.SPEC[key]?.vi || key}: các nguồn ghi khác nhau (${bad.get(key).join(" / ")}) — không dùng làm "met"`);
+      // Two sources a figure, the shortest lines first (a datasheet line before a whole row); all of them when they disagree.
+      const same = list.filter((g) => g.key === key).sort((a, b) => a.line.length - b.line.length);
+      for (const f of bad.has(key) ? same.slice(0, 4) : same.slice(0, 2)) out.push(`- ${factLine(f)}`);
+    }
+    out.push("");
+  }
+  // Other suppliers whose rows name the same engine: what a configuration's `suppliers` are picked from.
+  out.push("## Nhà cung cấp khác có dòng ghi cùng động cơ (để chọn suppliers)", "");
+  for (const { kind, x } of models) {
+    if (kind !== "engine") continue;
+    const shownRows = new Set(top.map(rowKey)), more = [];
+    for (const r of all) if (r.e.key === x.key && !shownRows.has(rowKey(r)) && more.length < 4) { shownRows.add(rowKey(r)); more.push(r); }
+    if (!more.length) continue;
+    out.push(`### ${x.model}`);
+    for (const r of more) {
+      shown.add(r.u.supplierId);
+      if (r.u.header?.length) headers.set(`${r.u.supplierId} n ${r.u.n}`, r.u.header.join(" "));
+      out.push(`- supplierId: ${r.u.supplierId}, n: ${r.u.n}${r.u.genset ? `, tổ máy: ${r.u.genset}` : ""}${r.u.other ? `, đi kèm: ${r.u.other}` : ""}`, rowText(r.u));
+    }
+    out.push("");
+  }
+  // The engines near the power left out of the list above, so the agent knows they exist.
+  const rest = [...new Map(all.filter((r) => !models.some((m) => m.kind === "engine" && m.x.key === r.e.key)).map((r) => [r.e.key, r])).values()].slice(0, 40);
+  if (rest.length) {
+    out.push(`## Động cơ khác trong khoảng công suất (${rest.length}, điểm thấp hơn; mỗi động cơ một dòng)`, "");
+    for (const r of rest) {
+      shown.add(r.u.supplierId);
+      if (r.u.header?.length) headers.set(`${r.u.supplierId} n ${r.u.n}`, r.u.header.join(" "));
+      out.push(`- ${r.e.model}${r.e.make ? ` (${r.e.make})` : ""} — supplierId: ${r.u.supplierId}, n: ${r.u.n}`, rowText(r.u));
+    }
+    out.push("");
+  }
+  // A table's header is written once (it was repeated on every row); a header that took in the table's rows is cut.
   out.push("## Tiêu đề bảng (header của mỗi bảng supplierId n, dùng được cho sourceQuote)", "");
   for (const [k, h] of headers) out.push(`- ${k}: ${h.length > 600 ? h.slice(0, 600) + " …" : h}`);
   out.push("", controllersMd(cat.controllers || [], shown));
-  return out.join("\n");
+  return { md: out.join("\n"), shown, top };
 }
 // Bộ điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
 // names it; a configuration's controller and its "Bộ điều khiển" check quote one of these lines.
@@ -161,28 +329,45 @@ function suppliersMd(suppliers) {
 }
 const rowPower = (u, cap) => Math.min(...Object.values(u.power || {}).map((p) => p[cap.unit] ?? 1e9), 1e9);
 
-async function prep(key, dir, reqData = {}) {
-  fs.mkdirSync(path.join(dir, "web"), { recursive: true });
-  const [analysis, hsmt, notice, suppliers] = await Promise.all([doc("analysis", key), doc("hsmt", key), doc("notice", key), api("kind=docs&coll=supplier")]);
+// The HSMT text of a tender (its files, then the notice); `parts` alone is what the requirements are read from.
+async function hsmtTextOf(key) {
+  const [hsmt, notice] = await Promise.all([doc("hsmt", key), doc("notice", key)]);
   const parts = [];
   for (let i = 0; i < (hsmt?.textChunks || 0); i++) parts.push((await doc("hsmttext", `${key}_${i}`))?.text || "");
   const noticeText = notice ? JSON.stringify(notice) : "";
   const text = parts.join("") + (noticeText ? "\n\n--- Thông báo mời thầu ---\n" + noticeText : "");
   if (!text.trim()) throw new Error("Gói này chưa có văn bản HSMT để đọc yêu cầu kỹ thuật. Cần tải hồ sơ (Lấy lại tệp) trước.");
+  return { hsmt, parts, text };
+}
+// The allowed formulas, written from web/conversions.js so the prompt and the check use the same list.
+const formulasMd = () => "\n## Công thức được phép\n"
+  + Object.entries(CONV.FORMULAS).map(([id, f]) => `- \`${id}\`: ${f.label} — đầu vào ${f.inputs.map((n) => `\`${n}\``).join(", ")}; cơ sở: ${f.basis}${f.standard ? `; giá trị chuẩn: ${Object.entries(f.standard).map(([n, st]) => `\`${n}\` = ${st.min}–${st.max} ${st.unit} (${st.basis})`).join("; ")}` : ""}`).join("\n") + "\n";
+
+async function prep(key, dir, reqData = {}) {
+  fs.mkdirSync(path.join(dir, "web"), { recursive: true });
+  const [analysis, { hsmt, parts, text }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), api("kind=docs&coll=supplier")]);
   fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
   const a = analysis?.result;
   const cap = capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
-  const brands = [...new Set((technicalPart(text).match(/cummins|perkins|mitsubishi|doosan|volvo|mtu|baudouin|weichai|yuchai|deutz|stamford|leroy|mecc alte|marathon/gi) || []).map((b) => b.toLowerCase()))];
-  const origin = originOfReq(reqData.origin), full = CAT.build(suppliers.map((d) => d.data));
-  const cat = { ...full, engines: byOrigin(full.engines, origin, cnSuppliers(suppliers.map((d) => d.data))) };
-  fs.writeFileSync(path.join(dir, "catalog.md"), catalogMd(cat, cap, brands) + "\n\n" + suppliersMd(suppliers.map((d) => d.data)), "utf8");
+  const all = suppliers.map((d) => d.data), hints = hintsOf(text, extraOf(reqData));
+  const origin = originOfReq(reqData.origin), full = CAT.build(all), cn = cnSuppliers(all);
+  const cat = { ...full, engines: byOrigin(full.engines, origin, cn) };
+  const { md, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null });
+  fs.writeFileSync(path.join(dir, "catalog.md"), md + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))), "utf8");
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
-  fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(suppliers.map((d) => d.data)), "utf8");
+  fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(all), "utf8");
   fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin }), "utf8");
+  // The requirements read last time, when the HSMT and Yêu cầu khác are the same (Khoa, 2026-11-02): Gợi ý lại only
+  // matches the configurations again. Each quote is checked again by check.
+  // Only the HSMT files count: the notice is fetched again each time and its status changes.
+  const reqHash = reqHashOf(parts.join(""), extraOf(reqData)), prevReq = reqData.prevResult;
+  const reuse = prevReq?.reqHash === reqHash && prevReq.requirements?.length && prevReq.requirements.every((r) => r.level && r.part && !r.unverified);
+  if (reuse) fs.writeFileSync(path.join(dir, "requirements.json"), JSON.stringify(prevReq.requirements.map(({ item, requirement, quote, from, part, level }) => ({ item, requirement, quote, ...(from ? { from } : {}), part, level })), null, 1), "utf8");
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`,
     `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`, "",
+    reuse ? "## Yêu cầu đã đọc lần trước: requirements.json (HSMT và Yêu cầu khác không đổi) — dùng nguyên danh sách đó, bỏ qua bước 1." : "", "",
     `## Xuất xứ động cơ: ${ORIGIN[origin]}`,
     origin === "cn" ? `Gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Động cơ hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}, kể cả loại sản xuất theo giấy phép như Dongfeng Cummins, Chongqing Cummins) chỉ được gợi ý khi có nhà cung cấp đặt tại Trung Quốc (quốc gia CN trong catalog.md) chào động cơ đó trong bảng của mình; khi đó "suppliers" chỉ ghi các nhà cung cấp ở Trung Quốc đó. Khi tìm trên internet cũng vậy: hãng nước ngoài chỉ được tính khi trang của một nhà cung cấp ở Trung Quốc chào nó.`
     : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${origin.toUpperCase()} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...), kể cả loại sản xuất theo giấy phép. Động cơ nguồn không ghi hãng thì không gợi ý.`
@@ -194,10 +379,8 @@ async function prep(key, dir, reqData = {}) {
     ...(a?.technicalSpecs || []).map((s) => `- ${s.item}: ${s.requirement}${s.reference ? ` (${s.reference})` : ""}`), "",
     "## Phần kỹ thuật của HSMT", technicalPart(text),
   ].filter((l) => l !== null).join("\n"), "utf8");
-  // The allowed formulas, written from web/conversions.js so the prompt and the check use the same list.
-  fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "config-prompt.md"), "utf8") + "\n## Công thức được phép\n"
-    + Object.entries(CONV.FORMULAS).map(([id, f]) => `- \`${id}\`: ${f.label} — đầu vào ${f.inputs.map((n) => `\`${n}\``).join(", ")}; cơ sở: ${f.basis}${f.standard ? `; giá trị chuẩn: ${Object.entries(f.standard).map(([n, st]) => `\`${n}\` = ${st.min}–${st.max} ${st.unit} (${st.basis})`).join("; ")}` : ""}`).join("\n") + "\n", "utf8");
-  return { cap, origin, engines: cat.engines.length, alternators: cat.alternators.length };
+  fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "config-prompt.md"), "utf8") + formulasMd(), "utf8");
+  return { cap, origin, reqHash, reused: !!reuse, candidates: top.length, engines: cat.engines.length, alternators: cat.alternators.length };
 }
 
 // ---------- save (agent: internet sources) ----------
@@ -228,6 +411,12 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   const problems = [], H = norm(hsmtText);
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
+  // Figures of a model from any supplier's row or datasheet (modelFacts); a check may quote one with factSrc.
+  const facts = modelFacts(CAT.build(suppliers), suppliers);
+  const factsOf = (c, part) => ((part === "engine" || part === "alternator") && c[part]?.model ? facts.get(`${part}:${CAT.keyOf(c[part].model)}`) || [] : []);
+  // A requirement's part and level (core: decides the model; option: chosen when ordering), copied to its checks.
+  const reqs = new Map((result.requirements || []).map((r) => [norm(r.item), r]));
+  for (const r of result.requirements || []) { r.level = r.level === "option" ? "option" : "core"; if (!PARTS.includes(r.part)) r.part = "genset"; }
   for (const r of result.requirements || []) if (r.quote && !inHsmt(r.quote)) { r.unverified = true; problems.push(`Câu trích yêu cầu không có trong HSMT: "${r.quote.slice(0, 80)}"`); }
   // The text a part's facts must come from: its catalog row (and table header), or its saved web page.
   const sourceText = (src) => {
@@ -288,8 +477,18 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       if (p.make && !makeOfCode && !texts[part].includes(norm(p.make).split(/[\s-]/)[0])) { problems.push(`#${c.rank} ${part}: hãng ${p.make} không ghi trong nguồn`); p.makeUnverified = true; }
     }
     for (const x of c.checks || []) {
-      const reasons = [];
+      const reasons = [], rq = reqs.get(norm(x.item));
+      x.level = (rq?.level || x.level) === "option" ? "option" : "core";
+      if (!PARTS.includes(x.part)) x.part = rq?.part || "genset";
       if (x.hsmtQuote && !inHsmt(x.hsmtQuote)) reasons.push("câu trích HSMT");
+      // factSrc: a figure of this configuration's engine or alternator read from another row or datasheet that names
+      // the same model. Only those figures (not the genset ones of that row) may be quoted from it.
+      let fact = null;
+      if (x.factSrc) {
+        const mine = factsOf(c, x.part).filter((f) => f.supplierId === x.factSrc.supplierId && Number(f.n) === Number(x.factSrc.n) && norm(f.line) === norm(x.factSrc.line));
+        if (!mine.length) reasons.push("factSrc không phải dòng ghi thông số của model này");
+        else fact = { text: norm(mine[0].text), nums: mine.flatMap((f) => numbersLoose(f.value)) };
+      }
       const src = texts[x.part] || texts.genset || texts.engine || texts.alternator;
       // Conversions: recomputed here from web/conversions.js; each input must be in the source / HSMT quote, a standard
       // constant of that formula, or the result of an earlier conversion of this check.
@@ -316,15 +515,27 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       }
       if (x.status === "met" || x.status === "not_met") {
         if (!x.sourceQuote) reasons.push("thiếu câu trích nguồn");
+        else if (x.factSrc && !fact) { /* already a reason */ }
         else {
-          const all = Object.values(texts).filter(Boolean);
+          const all = fact ? [fact.text] : Object.values(texts).filter(Boolean);
           if (!all.some((t) => t.includes(norm(x.sourceQuote)))) reasons.push("câu trích nguồn");
           else {
-            // Every number offered is in the source quote, is an input of a conversion, or is a recomputed result.
-            const nums = numbersLoose(x.sourceQuote);
+            // Every number offered is in the source quote (from a factSrc: in the model's own figures on that line), is
+            // an input of a conversion, or is a recomputed result.
+            const nums = fact ? fact.nums.filter((v) => numbersLoose(x.sourceQuote).includes(v)) : numbersLoose(x.sourceQuote);
             const ok = (v) => nums.includes(v) || used.includes(v) || calc.some((c) => CONV.matches(v, c));
             for (const v of numbersIn(String(x.offered ?? "").replace(/(\d),(\d{1,2})(?!\d)/g, "$1.$2"))) if (!ok(v)) { reasons.push(`số ${v}`); break; }
           }
+        }
+        // A figure the sources of this model give differently is not "met" (e.g. 14 L on one page, 10.8 on another).
+        const list = factsOf(c, x.part), line = norm(x.factSrc?.line || c[x.part]?.src?.line || "");
+        // Only the figures the check offers: quoted in sourceQuote and stated in `offered` (a number of it, or its words).
+        const bad = factConflicts(list), q = norm(x.sourceQuote), off = norm(x.offered), offNums = numbersLoose(x.offered);
+        const offers = (f) => { const n = numbersLoose(f.value); return n.length ? n.some((v) => offNums.includes(v)) : off.includes(norm(f.value)); };
+        const hit = line ? [...new Set(list.filter((f) => norm(f.line) === line && q.includes(norm(f.value)) && offers(f) && bad.has(f.key)).map((f) => f.key))] : [];
+        if (hit.length && x.status === "met") {
+          x.status = "unclear"; x.conflict = true;
+          x.note = [x.note, `Các nguồn ghi khác nhau: ${hit.map((k) => `${CAT.SPEC[k]?.vi || k} ${bad.get(k).join(" / ")}`).join("; ")}. Cần nhà cung cấp xác nhận.`].filter(Boolean).join(" ");
         }
       }
       if (!src && x.status !== "unclear") reasons.push("nguồn");
@@ -362,7 +573,39 @@ function checkDir(dir, suppliers, added = [], origin) {
   for (const a of added) if (a.nmap) for (const c of result.configs || []) for (const s of c.suppliers || []) if (s.supplierId === a.supplierId && a.nmap[s.n] != null) s.n = a.nmap[s.n];
   if (added.length) result.catalogAdded = added.map(({ nmap, ...a }) => a);
   const readWeb = (f) => { const p = path.join(dir, f); return p.startsWith(path.join(dir, "web")) && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
-  return check(result, { hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), suppliers, readWeb, origin });
+  const out = check(result, { hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), suppliers, readWeb, origin });
+  rankConfigs(out.result);
+  return out;
+}
+// The order of the configurations and of their suppliers, set in code (Khoa, 2026-11-02): the engine, the controller
+// and the genset as a whole weigh more than the alternator; options (tank, size, noise...) come last. In each group a
+// "not met" weighs more than a supplier that fits, which weighs more than an "unclear"; a core requirement with no
+// check counts as unclear, so a configuration checked on fewer points is not ranked higher. Ties keep the agent's order.
+const groupOf = (x) => (x.level === "option" ? 2 : x.part === "alternator" ? 1 : 0);
+export function scoreOf(c, reqs = []) {
+  const n = [[0, 0], [0, 0], [0, 0]], seen = new Set();
+  for (const x of c.checks || []) {
+    seen.add(norm(x.item));
+    const g = groupOf(x);
+    if (x.status === "not_met") n[g][0]++; else if (x.status !== "met" || x.unverified) n[g][1]++;
+  }
+  for (const r of reqs) if (!seen.has(norm(r.item))) n[groupOf(r)][1]++;
+  const fits = (c.suppliers || []).some((s) => !s.unverified) ? 0 : 1;
+  return [n[0][0], n[1][0], fits, n[0][1], n[1][1], n[2][0], n[2][1]];
+}
+export function rankConfigs(result) {
+  const reqs = result.requirements || [];
+  const cmp = (a, b) => { for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
+  const list = (result.configs || []).map((c, i) => ({ c, i, s: scoreOf(c, reqs) }));
+  list.sort((x, y) => cmp(x.s, y.s) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
+  result.configs = list.map(({ c }, i) => {
+    // Suppliers: a checked row first, then one offering the configuration's controller, the genset row's own
+    // supplier, one whose row names the alternator, then the agent's order (confidence, role).
+    const sup = (c.suppliers || []).map((s, j) => ({ s, k: [s.unverified ? 1 : 0, s.hasController ? 0 : 1, c.genset?.src?.supplierId === s.supplierId ? 0 : 1, s.hasAlternator ? 0 : 1, j] }));
+    sup.sort((x, y) => cmp(x.k, y.k));
+    return { ...c, rank: i + 1, suppliers: sup.map((x) => x.s) };
+  });
+  return result;
 }
 
 // ---------- add internet finds to the catalog ----------
@@ -481,7 +724,7 @@ async function answer(req, suppliers) {
     return post([...(result ? [{ coll: "configmatch", id: key, data: { at, result } }] : []), { coll: "configreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
-    await prep(key, dir, req);
+    const info = await prep(key, dir, { ...req, prevResult: (await doc("configmatch", key).catch(() => null))?.result });
     // Same minimal setup as the bot's agent (GenBid-Bot.ps1), plus web search for step 3 of config-prompt.md.
     const r = runClaude(dir, "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json (và newCatalog.json khi prompt.md yêu cầu). Chạy không người trông, không ai trả lời câu hỏi.");
     fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
@@ -491,6 +734,8 @@ async function answer(req, suppliers) {
     const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
     const { result, problems } = checkDir(dir, all, added, originOfReq(req.origin));
     if (extraOf(req)) result.extra = extraOf(req);
+    // Read again next time only when the HSMT or Yêu cầu khác changed (prep, requirements.json).
+    if (!(result.requirements || []).some((r) => r.unverified)) result.reqHash = info.reqHash;
     await done({ result, error: "" });
     console.log(`${key}: ${result.configs.length} cấu hình${problems.length ? `, ${problems.length} điểm chưa khớp nguồn` : ""}`);
   } catch (e) {
@@ -523,6 +768,9 @@ function runGemini(dir, input) {
 }
 async function findPrep(key, dir, req) {
   const info = await prep(key, dir, req);
+  // Tìm NCC must see every supplier in the system (not only those of the candidate rows), so as not to suggest them again.
+  const cat = fs.readFileSync(path.join(dir, "catalog.md"), "utf8"), cut = cat.indexOf("\n\n# Nhà cung cấp trong hệ thống");
+  fs.writeFileSync(path.join(dir, "catalog.md"), (cut >= 0 ? cat.slice(0, cut) : cat) + "\n\n" + suppliersMd(JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8"))), "utf8");
   const watch = fs.existsSync(path.join(ROOT, "discover-watchlist.json")) ? JSON.parse(fs.readFileSync(path.join(ROOT, "discover-watchlist.json"), "utf8")) : [];
   const head = [
     `# Tìm NCC cho gói ${key}`, "",
@@ -633,16 +881,71 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
   return out;
 }
 // Reads configmatch/<key> and posts it back with the new suppliers merged in. No configmatch yet: nothing to merge into.
-async function mergeFindIntoConfig(key, records, { cap, origin }) {
+async function mergeFindIntoConfig(key, records, { cap, origin, suppliers = records }) {
   const prev = await doc("configmatch", key);
   if (!prev?.result) return null;
   const result = JSON.parse(JSON.stringify(prev.result)), out = mergeFind(result, records, { cap, origin: result.origin || origin });
   if (!out.joined.length && !out.created.length) return out;
-  result.notes = [...(result.notes || []), `Tìm NCC lúc ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC: ${mergeText(out)}, bằng code từ dòng bảng của nhà cung cấp.`];
+  const at = new Date().toISOString().slice(0, 16).replace("T", " ");
+  result.notes = [...(result.notes || []), `Tìm NCC lúc ${at} UTC: ${mergeText(out)}, bằng code từ dòng bảng của nhà cung cấp.`];
+  // The new configurations are checked against the stored requirements by a small agent (Khoa, 2026-11-02).
+  if (out.created.length) {
+    const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
+    out.checked = await checkNewConfigs(key, result, out.created.map((c) => c.rank), all, cap).catch((e) => ({ error: e.message }));
+    result.notes.push(out.checked.error ? `Chưa đối chiếu được cấu hình mới với HSMT: ${out.checked.error}` : `Đã đối chiếu ${out.checked.checked} cấu hình mới với ${result.requirements.length} yêu cầu của HSMT${out.checked.problems ? `, ${out.checked.problems} điểm chưa khớp nguồn` : ""}.`);
+  }
+  rankConfigs(result);
   await post([{ coll: "configmatch", id: key, data: { ...prev, at: new Date().toISOString(), result } }]);
   return out;
 }
-const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.joined.length && !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : [m.joined.length && `bổ sung ${m.joined.map((j) => `${j.supplierId} vào cấu hình #${j.rank}`).join(", ")}`, m.created.length && `thêm ${m.created.length} cấu hình mới (chưa đối chiếu đủ HSMT), mỗi cấu hình chỉ có nhà cung cấp vừa tìm được (${m.created.map((c) => c.supplierId).join(", ")})`].filter(Boolean).join("; "));
+// Tìm NCC: the configurations made in code for the suppliers found have only their power read. A small agent
+// (check-prompt.md) checks each against the requirements stored with the suggestion, reading only those
+// configurations and the figures of their models; check() verifies its answer as for Gợi ý.
+async function checkNewConfigs(key, result, ranks, suppliers, cap) {
+  const mine = (result.configs || []).filter((c) => ranks.includes(c.rank) && c.engine?.model);
+  if (!mine.length) return { checked: 0 };
+  if (!result.requirements?.length) throw new Error("gợi ý trước không có danh sách yêu cầu");
+  const dir = path.join(os.tmpdir(), "genbid-findcheck", key);
+  fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(path.join(dir, "web"), { recursive: true });
+  try {
+    const { text } = await hsmtTextOf(key);
+    fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
+    const cat = CAT.build(suppliers), focus = new Set(mine.map((c) => CAT.keyOf(c.engine.model)));
+    const { md, shown } = catalogMd(cat, cap, hintsOf(text, result.extra || ""), { suppliers, origin: "all", focus });
+    fs.writeFileSync(path.join(dir, "catalog.md"), md + "\n\n" + suppliersMd(suppliers.filter((s) => shown.has(s.id))), "utf8");
+    fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(suppliers), "utf8");
+    fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin: result.origin || "all" }), "utf8");
+    fs.writeFileSync(path.join(dir, "result.json"), JSON.stringify({ requirements: result.requirements, configs: mine.map(({ checks, ...c }) => ({ ...c, checks: [] })) }, null, 1), "utf8");
+    fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "check-prompt.md"), "utf8").replace("<check>", `node "${SCRIPT}" check --dir .`) + formulasMd(), "utf8");
+    const r = runClaude(dir, "Đọc prompt.md trong thư mục này và làm đúng như vậy: điền checks cho các cấu hình trong result.json, chỉ sửa result.json. Chạy không người trông, không ai trả lời câu hỏi.");
+    fs.writeFileSync(path.join(os.tmpdir(), `genbid-findcheck-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
+    const got = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8"));
+    return mergeChecked(result, got, { hsmtText: text, suppliers, origin: result.origin });
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+}
+// The agent's checks (and controller) for the configurations of `got`, verified by check() and put back by rank.
+// Only checks and the controller are taken: the engine, alternator, genset and suppliers stay as the code made them.
+export function mergeChecked(result, got, { hsmtText, suppliers, origin }) {
+  const byRank = new Map((result.configs || []).map((c) => [c.rank, c]));
+  const sub = { requirements: JSON.parse(JSON.stringify(result.requirements || [])), configs: [] };
+  for (const g of got.configs || []) {
+    const c = byRank.get(g.rank);
+    if (!c || !Array.isArray(g.checks) || !g.checks.length) continue;
+    sub.configs.push({ ...JSON.parse(JSON.stringify(c)), checks: g.checks, ...(g.controller?.model ? { controller: g.controller } : {}) });
+  }
+  if (!sub.configs.length) return { checked: 0, problems: 0 };
+  const { result: done, problems } = check(sub, { hsmtText, suppliers, readWeb: () => null, origin: origin || "all" });
+  let checked = 0;
+  for (const c of done.configs) {
+    const old = byRank.get(c.rank);
+    if (!old) continue;
+    Object.assign(old, { checks: c.checks, findChecked: true, gaps: (old.gaps || []).filter((g) => !/chưa đối chiếu từng yêu cầu/.test(g)) });
+    if (c.controller) old.controller = c.controller;
+    checked++;
+  }
+  return { checked, problems: problems.length };
+}
+const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.joined.length && !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : [m.joined.length && `bổ sung ${m.joined.map((j) => `${j.supplierId} vào cấu hình #${j.rank}`).join(", ")}`, m.created.length && `thêm ${m.created.length} cấu hình mới${m.checked?.checked ? ` (đã đối chiếu HSMT ${m.checked.checked} cấu hình)` : " (chưa đối chiếu đủ HSMT)"}, mỗi cấu hình chỉ có nhà cung cấp vừa tìm được (${m.created.map((c) => c.supplierId).join(", ")})`].filter(Boolean).join("; "));
 
 async function find(req, suppliers) {
   const key = req.key, tried = [];
@@ -670,7 +973,7 @@ async function find(req, suppliers) {
         const { added, records } = await addToCatalog(dir, key, suppliers, { branch: `ncc/${key.toLowerCase()}-${engine}`, title: `Nhà cung cấp: Tìm NCC gói ${key} (${ENGINE[engine]})`,
           body: `Nút Tìm NCC ở tab Cấu hình gợi ý gói ${key}: ${ENGINE[engine]} tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật${cap ? ` (${cap.value} ${cap.unit})` : ""}. Bản ghi đã qua verify.mjs và đã đăng lên web.` });
         if (!added.some((a) => !a.error)) { tried.push({ engine: ENGINE[engine], error: "bản ghi không qua được verify.mjs của repo", dropped: added }); continue; }
-        const merged = await mergeFindIntoConfig(key, records, { cap, origin: req.origin }).catch((e) => ({ error: e.message }));
+        const merged = await mergeFindIntoConfig(key, records, { cap, origin: req.origin, suppliers }).catch((e) => ({ error: e.message }));
         const configMerge = merged?.error ? `chưa bổ sung được vào cấu hình gợi ý: ${merged.error}` : mergeText(merged);
         await done({ result: { engine: ENGINE[engine], cap, ...(extraOf(req) ? { extra: extraOf(req) } : {}), summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried, configMerge } });
         console.log(`${key}: Tìm NCC (${ENGINE[engine]}) bổ sung ${added.filter((a) => !a.error).length} nhà cung cấp; cấu hình: ${configMerge}`);
@@ -707,8 +1010,8 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   } else if (cmd === "merge-find") {
     // The suppliers of the stored findmatch/<key>, read again from the web, merged into configmatch/<key>.
     const key = arg("key"), f = await doc("findmatch", key), ids = new Set((f?.result?.added || []).filter((a) => !a.error).map((a) => a.supplierId));
-    const records = (await api("kind=docs&coll=supplier")).map((d) => d.data).filter((s) => ids.has(s.id));
-    const m = await mergeFindIntoConfig(key, records, { cap: f?.result?.cap, origin: (await doc("findreq", key))?.origin });
+    const suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data), records = suppliers.filter((s) => ids.has(s.id));
+    const m = await mergeFindIntoConfig(key, records, { cap: f?.result?.cap, origin: (await doc("findreq", key))?.origin, suppliers });
     if (f?.result) await post([{ coll: "findmatch", id: key, data: { ...f, result: { ...f.result, configMerge: mergeText(m) } } }]);
     console.log(`${key}: ${mergeText(m)}${m ? ` ${JSON.stringify(m)}` : ""}`);
   } else if (cmd === "run") {
