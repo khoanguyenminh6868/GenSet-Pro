@@ -499,7 +499,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
@@ -911,6 +911,7 @@ async function initDb() {
   subscribe("tlkt", "tlkt", () => setTimeout(checkAutoPdf, 0));
   subscribe("tlktreq", "tlktreq");
   subscribe("supplier", "supplier", () => setTimeout(renderSuppliers, 0));
+  subscribe("supdeleted", "supdeleted", () => setTimeout(renderSuppliers, 0));
   subscribe("suppliermatch", "suppliermatch");
   subscribe("supplierreq", "supplierreq");
   subscribe("configmatch", "configmatch");
@@ -2106,27 +2107,30 @@ const G7 = ["US", "GB", "DE", "FR", "IT", "JP", "CA"];
 const SUP_YEARS = [["-1989", "Trước 1990"], ["1990-1999", "1990–1999"], ["2000-2009", "2000–2009"], ["2010-", "Từ 2010"], ["none", "Không ghi năm"]];
 // One "Hãng" filter for engine, alternator and controller makes (Khoa, 2026-11-02); value "engine:Cummins", "alt:Stamford", "ctrl:ComAp".
 const supMakeName = (m) => m.replace(/\s*\(.*\)$/, "");
-const supAll = () => Object.values(state.supplier || {}).filter((s) => s?.id && s.status !== "incomplete")
+// A supplier deleted on the web is only hidden (supdeleted/<id>); its file in suppliers/cn/ stays.
+const supAll = () => Object.values(state.supplier || {}).filter((s) => s?.id && s.status !== "incomplete" && !state.supdeleted?.[s.id])
   .sort((a, b) => (a.names?.en || a.id).localeCompare(b.names?.en || b.id));
 const supName = (s) => s?.names?.en || s?.names?.zh || s?.id || "";
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
 let supFilter = { q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
+// "engine:-" = suppliers whose sources name no engine make (Khoa, 2026-11-02).
+const SUP_NONE = "-";
 const supMake = (f = supFilter) => { const i = f.make.indexOf(":"); return i > 0 ? [f.make.slice(0, i), f.make.slice(i + 1).toLowerCase()] : ["", ""]; };
 // Product lines are narrowed by engine / alternator make, fuel and power; a controller make is a filter on the supplier.
-const supLineFiltered = (f = supFilter) => ["engine", "alt"].includes(supMake(f)[0]) || !!f.fuel || Number(f.power) > 0;
+const supLineFiltered = (f = supFilter) => (["engine", "alt"].includes(supMake(f)[0]) && supMake(f)[1] !== SUP_NONE) || !!f.fuel || Number(f.power) > 0;
 let supOpenId = null;
 // Where the supplier / catalog list was scrolled when a detail opened, so "← Danh sách" comes back to the same row (Khoa, 2026-10-29).
 const listScroll = { sup: 0, cat: 0 };
 const mScroll = () => $("#mdl .mscroll") || $("#mdl");
 const MB_ICON = { sup: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 21h18\"/><path d=\"M4 21V11l5 3v-3l5 3V5h5v16\"/><path d=\"M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1\"/></svg>", cat: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 4h6M12 4v3\"/><path d=\"M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z\"/><path d=\"M1 11v4\"/></svg>" };
 const mBanner = (icon, title, tag, tid = "") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
-  <div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div><button class="btn sm" data-close>Đóng</button></header>`;
+  <a class="home" href="/" title="Về trang chủ"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a><button class="btn sm" data-close>Đóng</button></header>`;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
 function supLinesFor(s, f = supFilter) {
   const v = Number(String(f.power).replace(",", "."));
-  const [mk, mv] = supMake(f), key = { engine: "engineMakes", alt: "alternatorMakes" }[mk];
+  const [mk, mv] = supMake(f), key = mv === SUP_NONE ? "" : { engine: "engineMakes", alt: "alternatorMakes" }[mk];
   return (s.productLines || []).filter((p) => (!key || (p[key] || []).some((m) => supMakeName(m).toLowerCase() === mv))
     && (!f.fuel || p.fuel === f.fuel)
     && (!(v > 0) || (p.power && p.power.unit === f.unit && p.power.min <= v && v <= p.power.max)));
@@ -2141,6 +2145,7 @@ function supMatches(s) {
     if (f.year === "none" ? s.founded : !s.founded || (a != null && s.founded < a) || (b != null && s.founded > b)) return false;
   }
   const [mk, mv] = supMake(f);
+  if (mk === "engine" && mv === SUP_NONE && (s.productLines || []).some((p) => p.engineMakes?.length)) return false;
   if (mk === "ctrl" && !(s.controllers || []).some((c) => c.brand.toLowerCase() === mv)) return false;
   if (q && ![s.id, s.names?.en, s.names?.zh, ...(s.names?.brands || []), s.hq?.province, s.hq?.city].some((x) => String(x || "").toLowerCase().includes(q))) return false;
   return !supLineFiltered(f) || supLinesFor(s).length > 0;
@@ -2173,7 +2178,9 @@ function renderSuppliers() {
   if (supOpenId && state.supplier?.[supOpenId]) { body.innerHTML = h`<div class="mscroll">${raw(supDetailHtml(state.supplier[supOpenId]))}</div>`; return; }
   const all = supAll();
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu nhà cung cấp.</div>`; return; }
-  const makesOf = (pick) => [...new Set(all.flatMap(pick).map(supMakeName))].sort((a, b) => a.localeCompare(b));
+  // "Cummins" / "CUMMINS" are one make: grouped without case, shown in their most common spelling.
+  const makesOf = (pick) => Object.values(all.flatMap(pick).map(supMakeName).reduce((m, x) => { const k = x.toLowerCase(); (m[k] ||= {})[x] = (m[k][x] || 0) + 1; return m; }, {}))
+    .map((v) => Object.entries(v).sort((a, b) => b[1] - a[1])[0][0]).sort((a, b) => a.localeCompare(b));
   const makeGroups = [["engine", "Động cơ", makesOf((s) => (s.productLines || []).flatMap((p) => p.engineMakes || []))],
     ["alt", "Đầu phát", makesOf((s) => (s.productLines || []).flatMap((p) => p.alternatorMakes || []))],
     ["ctrl", "Bộ điều khiển", makesOf((s) => (s.controllers || []).map((c) => c.brand))]];
@@ -2183,7 +2190,7 @@ function renderSuppliers() {
       <input type="search" id="supQ" placeholder="Tìm tên, thương hiệu, tỉnh..." value="${f.q}" style="flex:1;min-width:180px">
       <select id="supRole">${raw(opt("", "Vai trò", f.role) + Object.entries(SUP_ROLE).map(([k, l]) => opt(k, l, f.role)).join(""))}</select>
       <select id="supConf">${raw(opt("", "Độ tin cậy", f.conf) + [["high", "Tin cậy cao"], ["medium", "Trung bình"], ["low", "Chưa xác minh"]].map(([k, l]) => opt(k, l, f.conf)).join(""))}</select>
-      <select id="supMake">${raw(opt("", "Hãng", f.make) + makeGroups.filter((g) => g[2].length).map(([k, l, ms]) => h`<optgroup label="${l}">${raw(ms.map((m) => opt(`${k}:${m}`, m, f.make)).join(""))}</optgroup>`).join(""))}</select>
+      <select id="supMake">${raw(opt("", "Hãng", f.make) + makeGroups.filter((g) => g[2].length || g[0] === "engine").map(([k, l, ms]) => h`<optgroup label="${l}">${raw((k === "engine" ? opt(`engine:${SUP_NONE}`, "Không có", f.make) : "") + ms.map((m) => opt(`${k}:${m}`, m, f.make)).join(""))}</optgroup>`).join(""))}</select>
       <select id="supFuel">${raw(opt("", "Nhiên liệu", f.fuel) + [["diesel", "Diesel"], ["gas", "Khí gas"], ["dual", "Hai nhiên liệu"], ["hfo", "Dầu nặng HFO"]].map(([k, l]) => opt(k, l, f.fuel)).join(""))}</select>
     </div>
     <div class="row suprow">
@@ -2239,10 +2246,18 @@ function supContactsBrief(list) {
   }).filter(Boolean);
   return xs.length ? `<div class="small supcontact">${xs.join("")}</div>` : "";
 }
+async function delSupplier(id) {
+  const s = state.supplier?.[id];
+  if (!s || !confirm(`Xoá nhà cung cấp "${supName(s)}"? Nhà cung cấp này sẽ không còn hiện trong danh sách, danh mục và bộ lọc.`)) return;
+  const rec = { at: new Date().toISOString(), by: window.genbidEmail || "", name: supName(s) };
+  state.supdeleted = { ...state.supdeleted, [id]: rec };
+  supOpenId = null; renderSuppliers();
+  toast((await dbSet("supdeleted/" + id, rec)) ? `Đã xoá ${rec.name}` : "Không xoá được nhà cung cấp.");
+}
 function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
-  return h`<div class="row"><button class="btn sm" id="supBack">← Danh sách</button><span class="spacer"></span><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}</div>
+  return h`<div class="row"><button class="btn sm" id="supBack">← Danh sách</button><span class="spacer"></span><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xoá nhà cung cấp</button>`)}</div>
     <div><h3 class="hlname" style="margin:4px 0">${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}</div>
     <dl class="kv">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
@@ -2339,9 +2354,9 @@ const CAT_KIND = { engine: { one: "động cơ", title: "Danh mục động cơ"
   // and from genset rows that name one; "other" is the engine of that row.
   controller: { one: "bộ điều khiển", title: "Danh mục bộ điều khiển", list: "controllers", other: "Động cơ trong dòng" } };
 const CAT_RATING = { prime: "Liên tục (prime)", standby: "Dự phòng (standby)", rated: "Không ghi loại" };
-let catMemo = { src: null, cat: null };
+let catMemo = { src: null, del: null, cat: null };
 function catalog() {
-  if (catMemo.src !== state.supplier) catMemo = { src: state.supplier, cat: window.GenbidCatalog ? window.GenbidCatalog.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
+  if (catMemo.src !== state.supplier || catMemo.del !== state.supdeleted) catMemo = { src: state.supplier, del: state.supdeleted, cat: window.GenbidCatalog ? window.GenbidCatalog.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
   return catMemo.cat;
 }
 let catView = { kind: "engine", q: "", make: "", power: "", unit: "kVA", freq: "", spec: "", sort: "sup", limit: 60, open: null };
@@ -2866,6 +2881,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
   if (e.target.closest("#syncNewBtn")) { syncNew(); return; }
   if (e.target.closest("#supBtn")) { openSuppliers(); return; }
+  if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
   if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); mScroll().scrollTop = listScroll.sup; return; }
   if (e.target.closest("tr[data-supopen] a[href]")) return; // e-mail / phone link in a list row: no detail
   const supsrc = e.target.closest("[data-supsrc]");
