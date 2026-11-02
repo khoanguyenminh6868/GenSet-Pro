@@ -88,6 +88,7 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .banner svg.wave{position:absolute;right:0;top:0;height:100%;width:62%;pointer-events:none}
 .mark{width:46px;height:46px;border-radius:12px;background:var(--violet);color:#fff;display:grid;place-items:center;flex:none;position:relative}
 .mark svg{width:28px;height:28px}
+.banner a.home{display:flex;gap:16px;align-items:center;color:inherit;text-decoration:none;position:relative;min-width:0}
 .btitle{display:flex;flex-direction:column;gap:3px;min-width:0;position:relative}
 .btitle h1 span{color:var(--violet)}
 .btitle .tag{color:var(--muted);font-size:13px}
@@ -357,10 +358,12 @@ details.sec>div{margin-top:10px}
       <path d="M0 60 C 25 35, 50 35, 75 60 S 125 85, 150 60 S 200 35, 225 60 S 275 85, 300 60 S 350 35, 375 60 S 425 85, 450 60 S 500 35, 525 60 S 575 85, 600 60" fill="none" stroke="var(--wave)" stroke-width="1" opacity=".6" transform="translate(50 0)"/>
       <path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/>
     </svg>
+    <a class="home" href="/" title="Về trang chủ" aria-label="GenBid Pro, về trang chủ">
     <div class="mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="16" cy="16" r="12.5"/><path d="M8.5 16c1.6-4.2 3.9-4.2 5.5 0s3.9 4.2 5.5 0 3.9-4.2 5.5 0"/></svg></div>
     <div class="btitle">
       <h1>GenBid <span>Pro</span></h1>
     </div>
+    </a>
     <div class="bmeta">
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
