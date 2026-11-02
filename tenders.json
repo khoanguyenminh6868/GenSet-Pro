@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-01T08:00:39.380Z",
+ "fetchedAt": "2026-11-02T07:00:12.762Z",
  "source": "muasamcong",
  "tenders": [
   {
@@ -298,8 +298,8 @@
    "processApply": "KHAC",
    "isInternet": false,
    "publicDate": "2026-10-19T08:12:32.998Z",
-   "bidCloseDate": "2026-11-02T02:00:00.000Z",
-   "bidOpenDate": "2026-11-02T02:30:00.000Z",
+   "bidCloseDate": "2026-11-09T02:00:00.000Z",
+   "bidOpenDate": "2026-11-09T02:30:00.000Z",
    "estimatedPrice": 2593542612,
    "status": "open",
    "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=8817efb9-b963-4949-86ff-200308047131&notifyId=8817efb9-b963-4949-86ff-200308047131&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=KHAC&bidMode=1_MTHS&notifyNo=IB2600582722&planNo=PL2600357634&pno=undefined&step=tbmt&isInternet=0&caseKHKQ=undefined&bidForm=CHCT"
