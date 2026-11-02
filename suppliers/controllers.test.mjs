@@ -55,3 +55,8 @@ test("check accepts a controller quoted from the supplier's controller line", ()
   const bad = structuredClone(result); bad.configs[0].controller.src.line = "DSE7320 typed by hand";
   assert.ok(check(bad, { hsmtText: "Bộ điều khiển DSE7320", suppliers: sup, readWeb: () => null }).problems.length);
 });
+
+test("Deep Sea MKIII is its own generation, not MKII", () => {
+  const C = globalThis.GenbidCatalog;
+  assert.deepEqual(["DSE6120 MKIII", "DSE6120MK3", "DSE7320 MKII", "DSE8610 MK2", "DSE 7320"].map((s) => C.controllersIn(s).map((c) => c.model).join()), ["DSE6120 MKIII", "DSE6120 MKIII", "DSE7320 MKII", "DSE8610 MKII", "DSE7320"]);
+});

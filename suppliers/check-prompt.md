@@ -25,6 +25,8 @@ the files here; the code verifies it and marks anything it cannot find "chưa kh
      (inputs `from`: `source`, `hsmt`, `calc` or `standard`), as in the example.
 2. When the HSMT asks for a controller and a "Bộ điều khiển" line of this configuration's supplier names one, you may
    set the configuration's `controller`: `{ "model": "", "make": "", "src": { "kind": "controller", "supplierId": "", "n": 3001, "line": "" } }`.
+   Its functions may be quoted from "Thông số bộ điều khiển" (the maker's datasheet of that controller), with
+   `factSrc` { `supplierId`, `n`, `line` } and `part: "controller"`.
 3. Do not change `rank`, `engine`, `alternator`, `genset` or `suppliers`.
 4. Run `<check>` once; fix what it prints and run it again only if you changed something.
 

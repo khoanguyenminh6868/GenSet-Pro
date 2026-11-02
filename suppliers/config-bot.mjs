@@ -114,10 +114,41 @@ const ROW_ONLY = new Set(["engPower", "speed", "coolant"]);
 // A maker's datasheet that names its model only in the title (maker-datasheets.mjs: "Datasheet: UCI274F - Winding
 // 311") gives that model's figures too, when the title names exactly one model of the catalog of the maker's part.
 const MAKER_PART = { engine_maker: "engine", alternator_maker: "alternator" };
+// A controller's datasheet (role controller_maker, maker-datasheets.mjs) is a list of functions and specifications,
+// often of two models at once (Deep Sea: "DSE7310 MKII Auto Start & DSE7320 MKII"). Each line is a fact (key "ctl")
+// of the models of its section (Khoa, 2026-11-02): a line that begins with some of the sheet's models ("DSE7320 MKII
+// Automatic Mains (Utility) Failure (AMF) Controller Key Features") opens a section of those models; one naming all of
+// them, "Common ..." or "Specifications" goes back to all; a line naming some models inside it ("| Number | DSE7310
+// MKII: 1", "DSE7320 MKII: 2") is of those models only, without opening a section.
+const ctlKeys = (line) => [...new Set(CAT.controllersIn(line).filter((c) => c.model).map((c) => CAT.keyOf(c.model)))];
+export function controllerSheetFacts(s, t) {
+  const all = new Set([t.title, ...t.rows].flatMap(ctlKeys)), out = [];
+  // A code cut from its generation by a line break ("& | DSE7320" then "| MKII | Auto") is that generation's model.
+  const gen = (k) => { const g = [...all].filter((x) => x !== k && new RegExp(`^${k}MK(II|III)$`).test(x)); return g.length === 1 ? g[0] : k; };
+  // The sheet's own models are those of its title: a line of another model's datasheet that only mentions a controller
+  // ("compatible with DSE7320") does not give that controller's facts.
+  const sheet = new Set(ctlKeys(t.title).map(gen)), keysOf = (line) => [...new Set(ctlKeys(line).map(gen))].filter((k) => sheet.has(k));
+  if (!sheet.size) return out;
+  let scope = [...sheet];
+  for (const line of t.rows) {
+    const names = keysOf(line), bare = line.replace(/^\|\s*/, "");
+    if (names.length === sheet.size || /^(common\b|specifications$)/i.test(bare)) { scope = [...sheet]; continue; }
+    // A heading begins with the model ("DSE7320 MKII Automatic ... Key Features"), not with a value ("DSE7320 MKII: 2").
+    const first = CAT.controllersIn(bare)[0];
+    const opens = names.length && first && bare.indexOf(first.text) === 0 && !/^[^:]{0,20}:/.test(bare) && bare.length <= 120;
+    if (opens) { scope = names; continue; }
+    for (const k of names.length ? names : scope) out.push({ model: k, f: { key: "ctl", label: "", value: line, supplierId: s.id, n: t.n, line, text: line } });
+  }
+  return out;
+}
 export function modelFacts(cat, suppliers = []) {
   const facts = new Map(), single = new Map();
   const add = (k, f) => { const out = facts.get(k) || []; if (!out.some((g) => g.key === f.key && g.supplierId === f.supplierId && g.line === f.line)) out.push(f); facts.set(k, out); };
   for (const s of suppliers) {
+    if (s?.role === "controller_maker") {
+      for (const t of s.specTables || []) for (const { model, f } of controllerSheetFacts(s, t)) add(`controller:${model}`, f);
+      continue;
+    }
     const kind = MAKER_PART[s?.role];
     if (!kind) continue;
     const known = new Set((kind === "engine" ? cat.engines : cat.alternators || []).map((e) => e.key));
@@ -156,11 +187,21 @@ export function modelFacts(cat, suppliers = []) {
   }
   return facts;
 }
+// The facts of a model. A controller written without its generation ("DSE7320", as most genset tables write it) also
+// takes the facts of the datasheets of its generations ("DSE7320 MKII"), each marked with `version`, and its check
+// then says the generation is to be confirmed. A controller written with one ("DSE7320 MKII") takes only its own.
+export function factsFor(facts, part, model) {
+  const key = CAT.keyOf(model), own = facts.get(`${part}:${key}`) || [];
+  if (part !== "controller" || /MK(II|III|2|3)$/.test(key)) return own;
+  const gens = [...facts.keys()].filter((k) => new RegExp(`^controller:${key}MK(II|III)$`).test(k));
+  return [...own, ...gens.flatMap((k) => facts.get(k).map((f) => ({ ...f, version: `${model} ${k.slice(`controller:${key}`.length)}` })))];
+}
 // The figures of one model whose sources disagree: key → the values given. Values of one page (a datasheet giving the
 // voltage regulation of two AVRs, the efficiency at each voltage) are conditions, not a disagreement.
 export function factConflicts(list) {
   const out = new Map(), src = (f) => `${f.supplierId}#${f.n}`;
   for (const f of list || []) {
+    if (!CAT.SPEC[f.key]) continue;
     const same = list.filter((g) => g.key === f.key);
     if (same.some((g) => src(g) !== src(f) && disagree(f.value, g.value))) out.set(f.key, [...new Set(same.map((g) => g.value))]);
   }
@@ -206,6 +247,8 @@ export function candidates(cat, cap, hints, { suppliers = [], origin = "all", cn
       if (ctrlNamed) { score += 200; why.push("có bộ điều khiển hãng HSMT nêu"); }
       if (e.make) score += 60;
       if (offers.length) score += 50;
+      // A controller with its maker's datasheet: its functions can be checked against the HSMT.
+      if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
       if (a) { score += 40; if ((a.make && hints.altMakes.includes(a.make)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
@@ -263,6 +306,28 @@ export function catalogMd(cat, cap, hints, opts = {}) {
       for (const f of bad.has(key) ? same.slice(0, 4) : same.slice(0, 2)) out.push(`- ${factLine(f)}`);
     }
     out.push("");
+  }
+  // The controllers of the rows above that have their maker's datasheet (the HSMT's make first, then the most offered),
+  // each line word for word: what a controller check quotes, with factSrc { supplierId, n, line }.
+  const ctlCount = new Map();
+  for (const r of top) for (const c of [...r.rowCtrl, ...r.offers]) if (c.model) ctlCount.set(c.model, (ctlCount.get(c.model) || 0) + (hints.ctrlMakes.includes(c.brand) || hints.ctrlModels.includes(CAT.keyOf(c.model)) ? 100 : 1));
+  const ctls = [...ctlCount].sort((a, b) => b[1] - a[1]).map(([m]) => m).filter((m) => factsFor(facts, "controller", m).length).slice(0, 4);
+  if (ctls.length) {
+    out.push("## Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn bên dưới)", "");
+    const printed = new Map();
+    for (const m of ctls) {
+      const list = factsFor(facts, "controller", m), by = new Map();
+      for (const f of list) by.set(`${f.supplierId}#${f.n}`, [...(by.get(`${f.supplierId}#${f.n}`) || []), f]);
+      for (const [k, fs] of by) {
+        const ver = fs[0].version ? ` — datasheet của ${fs[0].version} (nhà cung cấp ghi ${m}: cần xác nhận đời)` : "";
+        // One datasheet is written once, even when two controllers above use it (DSE7320 and DSE7320 MKII).
+        if (printed.has(k)) { out.push(`### ${m}${ver} — supplierId: ${fs[0].supplierId}, n: ${fs[0].n}: các dòng như ở mục ${printed.get(k)} phía trên`, ""); continue; }
+        printed.set(k, m);
+        out.push(`### ${m}${ver} — supplierId: ${fs[0].supplierId}, n: ${fs[0].n}`);
+        for (const f of fs.slice(0, 120)) out.push(`- ${f.line}`);
+        out.push("");
+      }
+    }
   }
   // Other suppliers whose rows name the same engine: what a configuration's `suppliers` are picked from.
   out.push("## Nhà cung cấp khác có dòng ghi cùng động cơ (để chọn suppliers)", "");
@@ -345,7 +410,9 @@ const formulasMd = () => "\n## Công thức được phép\n"
 
 async function prep(key, dir, reqData = {}) {
   fs.mkdirSync(path.join(dir, "web"), { recursive: true });
-  const [analysis, { hsmt, parts, text }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), api("kind=docs&coll=supplier")]);
+  // GENBID_LOCAL_SUPPLIERS=1: the supplier DB of this checkout (cn/*.json) instead of the web's, to try records not yet published.
+  const localSuppliers = () => fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => ({ data: JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8")) })).filter((d) => d.data.status !== "incomplete");
+  const [analysis, { hsmt, parts, text }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : api("kind=docs&coll=supplier")]);
   fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
   const a = analysis?.result;
   const cap = capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
@@ -413,7 +480,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   const inHsmt = (q) => !!q && H.includes(norm(q));
   // Figures of a model from any supplier's row or datasheet (modelFacts); a check may quote one with factSrc.
   const facts = modelFacts(CAT.build(suppliers), suppliers);
-  const factsOf = (c, part) => ((part === "engine" || part === "alternator") && c[part]?.model ? facts.get(`${part}:${CAT.keyOf(c[part].model)}`) || [] : []);
+  const factsOf = (c, part) => (["engine", "alternator", "controller"].includes(part) && c[part]?.model ? factsFor(facts, part, c[part].model) : []);
   // A requirement's part and level (core: decides the model; option: chosen when ordering), copied to its checks.
   const reqs = new Map((result.requirements || []).map((r) => [norm(r.item), r]));
   for (const r of result.requirements || []) { r.level = r.level === "option" ? "option" : "core"; if (!PARTS.includes(r.part)) r.part = "genset"; }
@@ -488,6 +555,13 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
         const mine = factsOf(c, x.part).filter((f) => f.supplierId === x.factSrc.supplierId && Number(f.n) === Number(x.factSrc.n) && norm(f.line) === norm(x.factSrc.line));
         if (!mine.length) reasons.push("factSrc không phải dòng ghi thông số của model này");
         else fact = { text: norm(mine[0].text), nums: mine.flatMap((f) => numbersLoose(f.value)) };
+        // A controller written without its generation ("DSE7320") read from the datasheet of the current one ("DSE7320 MKII").
+        if (mine[0]?.version) {
+          x.version = mine[0].version;
+          x.note = [x.note, `Nguồn là datasheet ${mine[0].version}; nhà cung cấp ghi ${c[x.part].model}, cần xác nhận đời (MK) của bộ điều khiển.`].filter(Boolean).join(" ");
+          const gap = `Xác nhận đời bộ điều khiển: ${c[x.part].model} hay ${mine[0].version}.`;
+          if (!(c.gaps || []).includes(gap)) c.gaps = [...(c.gaps || []), gap];
+        }
       }
       const src = texts[x.part] || texts.genset || texts.engine || texts.alternator;
       // Conversions: recomputed here from web/conversions.js; each input must be in the source / HSMT quote, a standard
@@ -577,11 +651,11 @@ function checkDir(dir, suppliers, added = [], origin) {
   rankConfigs(out.result);
   return out;
 }
-// The order of the configurations and of their suppliers, set in code (Khoa, 2026-11-02): the engine, the controller
-// and the genset as a whole weigh more than the alternator; options (tank, size, noise...) come last. In each group a
-// "not met" weighs more than a supplier that fits, which weighs more than an "unclear"; a core requirement with no
-// check counts as unclear, so a configuration checked on fewer points is not ranked higher. Ties keep the agent's order.
-const groupOf = (x) => (x.level === "option" ? 2 : x.part === "alternator" ? 1 : 0);
+// The order of the configurations and of their suppliers, set in code (Khoa, 2026-11-02): the engine and the
+// controller first, then the alternator and the genset as a whole; options (tank, size, noise...) come last. In each
+// group a "not met" weighs more than a supplier that fits, which weighs more than an "unclear"; a core requirement with
+// no check counts as unclear, so a configuration checked on fewer points is not ranked higher. Ties keep the agent's order.
+const groupOf = (x) => (x.level === "option" ? 2 : x.part === "engine" || x.part === "controller" ? 0 : 1);
 export function scoreOf(c, reqs = []) {
   const n = [[0, 0], [0, 0], [0, 0]], seen = new Set();
   for (const x of c.checks || []) {
@@ -599,9 +673,10 @@ export function rankConfigs(result) {
   const list = (result.configs || []).map((c, i) => ({ c, i, s: scoreOf(c, reqs) }));
   list.sort((x, y) => cmp(x.s, y.s) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
   result.configs = list.map(({ c }, i) => {
-    // Suppliers: a checked row first, then one offering the configuration's controller, the genset row's own
-    // supplier, one whose row names the alternator, then the agent's order (confidence, role).
-    const sup = (c.suppliers || []).map((s, j) => ({ s, k: [s.unverified ? 1 : 0, s.hasController ? 0 : 1, c.genset?.src?.supplierId === s.supplierId ? 0 : 1, s.hasAlternator ? 0 : 1, j] }));
+    // Suppliers: one offering both the engine (its checked row names it) and the controller first, then one whose
+    // row names the engine, then the genset row's own supplier, one whose row names the alternator, then the agent's
+    // order (confidence, role).
+    const sup = (c.suppliers || []).map((s, j) => ({ s, k: [!s.unverified && s.hasController ? 0 : 1, s.unverified ? 1 : 0, c.genset?.src?.supplierId === s.supplierId ? 0 : 1, s.hasAlternator ? 0 : 1, j] }));
     sup.sort((x, y) => cmp(x.k, y.k));
     return { ...c, rank: i + 1, suppliers: sup.map((x) => x.s) };
   });

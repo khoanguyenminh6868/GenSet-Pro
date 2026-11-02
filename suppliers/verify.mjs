@@ -6,13 +6,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
-const ROLES = new Set(["genset_oem", "engine_maker", "alternator_maker", "distributor"]);
+const ROLES = new Set(["genset_oem", "engine_maker", "alternator_maker", "controller_maker", "distributor"]);
 const STATUS = new Set(["verified", "partial", "incomplete"]);
 const FUELS = new Set(["diesel", "gas", "dual", "hfo", "gasoline", "other"]);
 const RATINGS = new Set(["prime", "standby", "continuous", "unspecified"]);
 const UNITS = new Set(["kVA", "kW", "hp", "PS"]);
 const TIERS = new Set(["A", "B", "C"]);
-const KINDS = new Set(["genset", "engine", "alternator"]);
+const KINDS = new Set(["genset", "engine", "alternator", "controller"]);
 const CONTACTS = new Set(["email", "phone", "whatsapp", "wechat"]);
 
 // Same text either side: whitespace collapsed, full-width tildes and dashes read as their ASCII forms.
@@ -75,7 +75,7 @@ export function checkRecord(rec, file) {
   for (const [i, p] of (rec.productLines || []).entries()) {
     const where = `productLines[${i}] ${p.series || ""}`;
     if (!KINDS.has(p.kind)) err(`${where}: kind ${p.kind}`);
-    if (p.kind !== "alternator" && !FUELS.has(p.fuel)) err(`${where}: fuel ${p.fuel}`);
+    if (p.kind !== "alternator" && p.kind !== "controller" && !FUELS.has(p.fuel)) err(`${where}: fuel ${p.fuel}`);
     srcOk(p.src, where);
     if (p.power) {
       const pw = p.power;

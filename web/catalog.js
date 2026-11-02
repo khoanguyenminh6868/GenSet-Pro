@@ -305,9 +305,11 @@
 
   function addMake(list, name, via) { if (name && !list.some((m) => m.name === name)) list.push({ name, via }); }
 
-  // One supplier record → occurrences of engines and alternators.
+  // One supplier record → occurrences of engines and alternators. A controller maker's tables are its controllers'
+  // datasheets (suppliers/maker-datasheets.mjs), read by the config bot as the controllers' figures, not as gensets.
   function fromSupplier(s) {
     const out = [];
+    if (s.role === "controller_maker") return out;
     const ownBrand = (list) => brandIn([s.names?.en, ...(s.names?.brands || [])].join(" "), list);
     (s.specTables || []).forEach((t, ti) => {
       const headerText = (t.header || []).join(" ");
@@ -391,7 +393,8 @@
   const up = (s) => s.toUpperCase().replace(/\s+/g, "");
   const CONTROLLERS = [
     { brand: "Deep Sea", word: /\bdeep\s?-?sea\b|深海/i, models: [
-      [/\bDSE\s?-?([3-8]\d{3})(\s?-?MK\s?II|\s?MK2)?(?![\d])/gi, (m) => `DSE${m[1]}${m[2] ? " MKII" : ""}`],
+      // MKIII is its own generation (DSE6120 MKIII), not MKII.
+      [/\bDSE\s?-?([3-8]\d{3})(\s?-?MK\s?(?:III|II|3|2)\b)?(?![\d])/gi, (m) => `DSE${m[1]}${m[2] ? (/III|3/i.test(m[2]) ? " MKIII" : " MKII") : ""}`],
       [/\bdeep\s?-?sea\s?(?:DSE)?\s?-?([3-8]\d{3})(?![\d])/gi, (m) => `DSE${m[1]}`]] },
     { brand: "SmartGen", word: /\bsmart\s?gen\b|众智/i, models: [
       [/\bHGM\s?-?(\d{4}[A-Z]{0,4}(?:-4G)?)(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`],

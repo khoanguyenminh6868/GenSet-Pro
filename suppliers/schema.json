@@ -6,7 +6,7 @@
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
     "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
-    "role": { "enum": ["genset_oem", "engine_maker", "alternator_maker", "distributor"] },
+    "role": { "enum": ["genset_oem", "engine_maker", "alternator_maker", "controller_maker", "distributor"] },
     "status": { "enum": ["verified", "partial", "incomplete"] },
     "names": { "type": "object", "properties": { "en": { "type": ["string", "null"] }, "zh": { "type": ["string", "null"] }, "brands": { "type": "array", "items": { "type": "string" } } } },
     "website": { "type": ["string", "null"] },
@@ -21,7 +21,7 @@
         "type": "object",
         "required": ["kind", "series", "src"],
         "properties": {
-          "kind": { "enum": ["genset", "engine", "alternator"] },
+          "kind": { "enum": ["genset", "engine", "alternator", "controller"] },
           "series": { "type": "string" },
           "fuel": { "enum": ["diesel", "gas", "dual", "hfo", "gasoline", "other", null] },
           "engineMakes": { "type": "array", "items": { "type": "string" } },
