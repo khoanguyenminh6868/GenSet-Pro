@@ -120,24 +120,42 @@ const MAKER_PART = { engine_maker: "engine", alternator_maker: "alternator" };
 // Automatic Mains (Utility) Failure (AMF) Controller Key Features") opens a section of those models; one naming all of
 // them, "Common ..." or "Specifications" goes back to all; a line naming some models inside it ("| Number | DSE7310
 // MKII: 1", "DSE7320 MKII: 2") is of those models only, without opening a section.
-const ctlKeys = (line) => [...new Set(CAT.controllersIn(line).filter((c) => c.model).map((c) => CAT.keyOf(c.model)))];
+// SmartGen lists a series as "HGM6110N/6120N/6110NC": each code after a slash is a model of its own.
+const ctlKeys = (line) => {
+  const out = CAT.controllersIn(line).filter((c) => c.model).map((c) => CAT.keyOf(c.model));
+  for (const m of String(line).matchAll(/\bHGM\s?(\d{4}[A-Z]{0,4})((?:\s?\/\s?\d{4}[A-Z]{0,4})+)/gi)) for (const c of [m[1], ...m[2].split("/")].map((x) => x.trim()).filter(Boolean)) out.push(CAT.keyOf(`HGM${c}`));
+  return [...new Set(out)];
+};
+// "HGM6100N SERIES" names the series of a SmartGen manual, i.e. every model of the sheet, not a model of its own.
+const isSeries = (k) => /^HGM\d{2}00/.test(k);
 export function controllerSheetFacts(s, t) {
   const all = new Set([t.title, ...t.rows].flatMap(ctlKeys)), out = [];
   // A code cut from its generation by a line break ("& | DSE7320" then "| MKII | Auto") is that generation's model.
   const gen = (k) => { const g = [...all].filter((x) => x !== k && new RegExp(`^${k}MK(II|III)$`).test(x)); return g.length === 1 ? g[0] : k; };
   // The sheet's own models are those of its title: a line of another model's datasheet that only mentions a controller
   // ("compatible with DSE7320") does not give that controller's facts.
-  const sheet = new Set(ctlKeys(t.title).map(gen)), keysOf = (line) => [...new Set(ctlKeys(line).map(gen))].filter((k) => sheet.has(k));
+  const sheet = new Set(ctlKeys(t.title).map(gen).filter((k) => !isSeries(k)));
+  const keysOf = (line) => [...new Set(ctlKeys(line).map(gen).flatMap((k) => (isSeries(k) ? [...sheet] : [k])))].filter((k) => sheet.has(k));
   if (!sheet.size) return out;
-  let scope = [...sheet];
+  let scope = [...sheet], prev = scope, last = "";
   for (const line of t.rows) {
-    const names = keysOf(line), bare = line.replace(/^\|\s*/, "");
-    if (names.length === sheet.size || /^(common\b|specifications$)/i.test(bare)) { scope = [...sheet]; continue; }
-    // A heading begins with the model ("DSE7320 MKII Automatic ... Key Features"), not with a value ("DSE7320 MKII: 2").
-    const first = CAT.controllersIn(bare)[0];
-    const opens = names.length && first && bare.indexOf(first.text) === 0 && !/^[^:]{0,20}:/.test(bare) && bare.length <= 120;
-    if (opens) { scope = names; continue; }
-    for (const k of names.length ? names : scope) out.push({ model: k, f: { key: "ctl", label: "", value: line, supplierId: s.id, n: t.n, line, text: line } });
+    const bare = line.replace(/^[|\s]+/, "");
+    let names = keysOf(line);
+    // "HGM6120N/6120NC/6120CAN: Based on HGM6110N/..., it adds ..." and "DSE7320 MKII: 2" are of the models before the colon.
+    const head = bare.match(/^([^:]{2,60}):/);
+    if (head && keysOf(head[1]).length) names = keysOf(head[1]);
+    if (names.length === sheet.size || /^(common\b|specifications$)/i.test(bare)) scope = [...sheet];
+    else {
+      // A heading begins with the model ("DSE7320 MKII Automatic ... Key Features"), not with a value ("DSE7320 MKII: 2").
+      const first = CAT.controllersIn(bare)[0];
+      if (names.length && !head && first && bare.indexOf(first.text) === 0 && bare.length <= 120) { scope = prev = names; continue; }
+    }
+    // A line that goes on with the sentence before it (it begins in lower case, or is a short piece after a line that
+    // did not end the sentence: "... it | adds mains", "AC", "| monitoring ...") is of the same models as that line.
+    const goesOn = /^[a-z]/.test(bare) || (bare.length <= 15 && !/[.;:!?]$/.test(last));
+    const own = names.length ? names : goesOn ? prev : scope;
+    for (const k of own) out.push({ model: k, f: { key: "ctl", label: "", value: line, supplierId: s.id, n: t.n, line, text: line } });
+    prev = own; last = bare;
   }
   return out;
 }
@@ -311,21 +329,28 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   // each line word for word: what a controller check quotes, with factSrc { supplierId, n, line }.
   const ctlCount = new Map();
   for (const r of top) for (const c of [...r.rowCtrl, ...r.offers]) if (c.model) ctlCount.set(c.model, (ctlCount.get(c.model) || 0) + (hints.ctrlMakes.includes(c.brand) || hints.ctrlModels.includes(CAT.keyOf(c.model)) ? 100 : 1));
-  const ctls = [...ctlCount].sort((a, b) => b[1] - a[1]).map(([m]) => m).filter((m) => factsFor(facts, "controller", m).length).slice(0, 4);
+  const ctls = [...ctlCount].sort((a, b) => b[1] - a[1]).map(([m]) => m).filter((m) => factsFor(facts, "controller", m).length).slice(0, 6);
+  // Every line goes to controllers.md (a datasheet runs to 250 lines, a SmartGen manual to 700): the agent searches it
+  // with grep; catalog.md shows the first lines of each.
+  const ctlOut = [];
   if (ctls.length) {
-    out.push("## Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn bên dưới)", "");
+    const head = "Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)";
+    out.push(`## ${head} — đầu mỗi datasheet; TOÀN BỘ dòng ở controllers.md, tìm chức năng bằng grep trong đó`, "");
+    ctlOut.push(`# ${head}`, "");
     const printed = new Map();
     for (const m of ctls) {
       const list = factsFor(facts, "controller", m), by = new Map();
       for (const f of list) by.set(`${f.supplierId}#${f.n}`, [...(by.get(`${f.supplierId}#${f.n}`) || []), f]);
       for (const [k, fs] of by) {
         const ver = fs[0].version ? ` — datasheet của ${fs[0].version} (nhà cung cấp ghi ${m}: cần xác nhận đời)` : "";
-        // One datasheet is written once, even when two controllers above use it (DSE7320 and DSE7320 MKII).
-        if (printed.has(k)) { out.push(`### ${m}${ver} — supplierId: ${fs[0].supplierId}, n: ${fs[0].n}: các dòng như ở mục ${printed.get(k)} phía trên`, ""); continue; }
-        printed.set(k, m);
-        out.push(`### ${m}${ver} — supplierId: ${fs[0].supplierId}, n: ${fs[0].n}`);
-        for (const f of fs.slice(0, 120)) out.push(`- ${f.line}`);
-        out.push("");
+        const title = `### ${m}${ver} — supplierId: ${fs[0].supplierId}, n: ${fs[0].n}`;
+        // One model's lines are written once, even when two controllers above use them (DSE7320 and DSE7320 MKII);
+        // two models of one datasheet (DSE7310 MKII, DSE7320 MKII) have lines of their own.
+        const same = `${k}|${CAT.keyOf(fs[0].version || m)}`;
+        if (printed.has(same)) { for (const o of [out, ctlOut]) o.push(`${title}: các dòng như ở mục ${printed.get(same)}`, ""); continue; }
+        printed.set(same, m);
+        out.push(title, ...fs.slice(0, 40).map((f) => `- ${f.line}`), fs.length > 40 ? `- … (${fs.length - 40} dòng nữa trong controllers.md)` : "", "");
+        ctlOut.push(title, ...fs.map((f) => `- ${f.line}`), "");
       }
     }
   }
@@ -359,7 +384,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   out.push("## Tiêu đề bảng (header của mỗi bảng supplierId n, dùng được cho sourceQuote)", "");
   for (const [k, h] of headers) out.push(`- ${k}: ${h.length > 600 ? h.slice(0, 600) + " …" : h}`);
   out.push("", controllersMd(cat.controllers || [], shown));
-  return { md: out.join("\n"), shown, top };
+  return { md: out.join("\n"), ctlMd: ctlOut.join("\n"), shown, top };
 }
 // Bộ điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
 // names it; a configuration's controller and its "Bộ điều khiển" check quote one of these lines.
@@ -419,8 +444,9 @@ async function prep(key, dir, reqData = {}) {
   const all = suppliers.map((d) => d.data), hints = hintsOf(text, extraOf(reqData));
   const origin = originOfReq(reqData.origin), full = CAT.build(all), cn = cnSuppliers(all);
   const cat = { ...full, engines: byOrigin(full.engines, origin, cn) };
-  const { md, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null });
+  const { md, ctlMd, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null });
   fs.writeFileSync(path.join(dir, "catalog.md"), md + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))), "utf8");
+  if (ctlMd) fs.writeFileSync(path.join(dir, "controllers.md"), ctlMd, "utf8");
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
   fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(all), "utf8");
   fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin }), "utf8");
@@ -986,8 +1012,9 @@ async function checkNewConfigs(key, result, ranks, suppliers, cap) {
     const { text } = await hsmtTextOf(key);
     fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
     const cat = CAT.build(suppliers), focus = new Set(mine.map((c) => CAT.keyOf(c.engine.model)));
-    const { md, shown } = catalogMd(cat, cap, hintsOf(text, result.extra || ""), { suppliers, origin: "all", focus });
+    const { md, ctlMd, shown } = catalogMd(cat, cap, hintsOf(text, result.extra || ""), { suppliers, origin: "all", focus });
     fs.writeFileSync(path.join(dir, "catalog.md"), md + "\n\n" + suppliersMd(suppliers.filter((s) => shown.has(s.id))), "utf8");
+    if (ctlMd) fs.writeFileSync(path.join(dir, "controllers.md"), ctlMd, "utf8");
     fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(suppliers), "utf8");
     fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin: result.origin || "all" }), "utf8");
     fs.writeFileSync(path.join(dir, "result.json"), JSON.stringify({ requirements: result.requirements, configs: mine.map(({ checks, ...c }) => ({ ...c, checks: [] })) }, null, 1), "utf8");

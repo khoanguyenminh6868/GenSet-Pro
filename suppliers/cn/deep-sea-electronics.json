@@ -53,7 +53,7 @@
       "accessedAt": "2026-11-02",
       "tier": "A",
       "quote": [
-        "| DSE7310 MKII Auto Start & DSE7320 MKII | Auto"
+        "DSEGenset® Data Sheet"
       ],
       "file": "sources/deep-sea-electronics/1001.md"
     },
@@ -63,49 +63,49 @@
       "accessedAt": "2026-11-02",
       "tier": "A",
       "quote": [
-        "| DSE6110 MKIII Auto Start | & DSE6120 MKIII"
+        "| DSEGenset® | Data Sheet"
       ],
       "file": "sources/deep-sea-electronics/1002.md"
     },
     {
-      "n": 1005,
+      "n": 1003,
       "url": "https://www.deepseaelectronics.com/genset/auto-mains-utility-failure-control-modules/dse7420-mkii/downloads/datasheet",
       "accessedAt": "2026-11-02",
       "tier": "A",
       "quote": [
-        "| DSE7410 MKII Auto Start & DSE7420 MKII | Auto"
+        "DSEGenset® Data Sheet"
+      ],
+      "file": "sources/deep-sea-electronics/1003.md"
+    },
+    {
+      "n": 1004,
+      "url": "https://www.deepseaelectronics.com/genset/load-sharing-synchronising-control-modules/dse8610-mkii/downloads/datasheet",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "DSEGenset® Data Sheet"
+      ],
+      "file": "sources/deep-sea-electronics/1004.md"
+    },
+    {
+      "n": 1005,
+      "url": "https://www.deepseaelectronics.com/genset/load-sharing-synchronising-control-modules/dse8660-mkii/downloads/datasheet",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "DSEGenset® Data Sheet"
       ],
       "file": "sources/deep-sea-electronics/1005.md"
     },
     {
       "n": 1006,
-      "url": "https://www.deepseaelectronics.com/genset/load-sharing-synchronising-control-modules/dse8610-mkii/downloads/datasheet",
-      "accessedAt": "2026-11-02",
-      "tier": "A",
-      "quote": [
-        "| DSE8610 MKII Synchronising & Load Sharing | Auto"
-      ],
-      "file": "sources/deep-sea-electronics/1006.md"
-    },
-    {
-      "n": 1008,
-      "url": "https://www.deepseaelectronics.com/genset/load-sharing-synchronising-control-modules/dse8660-mkii/downloads/datasheet",
-      "accessedAt": "2026-11-02",
-      "tier": "A",
-      "quote": [
-        "| DSE8660 MKII Auto Transfer Switch & Mains | (Utility)"
-      ],
-      "file": "sources/deep-sea-electronics/1008.md"
-    },
-    {
-      "n": 1009,
       "url": "https://www.deepseaelectronics.com/genset/manual-auto-start-control-modules/dse3110/downloads/datasheet",
       "accessedAt": "2026-11-02",
       "tier": "A",
       "quote": [
-        "DSE3110 Manual & Auto Start Control Module"
+        "DSEGenset® Data Sheet"
       ],
-      "file": "sources/deep-sea-electronics/1009.md"
+      "file": "sources/deep-sea-electronics/1006.md"
     }
   ],
   "strengths": [],
@@ -123,8 +123,8 @@
       "title": "Datasheet: | DSE7310 MKII Auto Start & DSE7320 MKII | Auto",
       "header": [],
       "rows": [
-        "| DSE7310 MKII Auto Start & DSE7320 MKII | Auto",
         "DSEGenset® Data Sheet",
+        "| DSE7310 MKII Auto Start & DSE7320 MKII | Auto",
         "| Mains | (Utility)",
         "| Failure | Control",
         "Modules",
@@ -376,8 +376,8 @@
       "title": "Datasheet: | DSE6110 MKIII Auto Start | & DSE6120 MKIII",
       "header": [],
       "rows": [
-        "| DSE6110 MKIII Auto Start | & DSE6120 MKIII",
         "| DSEGenset® | Data Sheet",
+        "| DSE6110 MKIII Auto Start | & DSE6120 MKIII",
         "| Auto | Mains",
         "| (Utility) | Failure",
         "| Control | Modules",
@@ -628,12 +628,12 @@
       ]
     },
     {
-      "n": 1005,
+      "n": 1003,
       "title": "Datasheet: | DSE7410 MKII Auto Start & DSE7420 MKII | Auto",
       "header": [],
       "rows": [
-        "| DSE7410 MKII Auto Start & DSE7420 MKII | Auto",
         "DSEGenset® Data Sheet",
+        "| DSE7410 MKII Auto Start & DSE7420 MKII | Auto",
         "| Mains | (Utility)",
         "| Failure | Control",
         "Modules",
@@ -894,12 +894,12 @@
       ]
     },
     {
-      "n": 1006,
+      "n": 1004,
       "title": "Datasheet: | DSE8610 MKII Synchronising & Load Sharing | Auto",
       "header": [],
       "rows": [
-        "| DSE8610 MKII Synchronising & Load Sharing | Auto",
         "DSEGenset® Data Sheet",
+        "| DSE8610 MKII Synchronising & Load Sharing | Auto",
         "| Start | Control",
         "Module",
         "Part Number: 8610-02",
@@ -1154,12 +1154,12 @@
       ]
     },
     {
-      "n": 1008,
+      "n": 1005,
       "title": "Datasheet: | DSE8660 MKII Auto Transfer Switch & Mains | (Utility)",
       "header": [],
       "rows": [
-        "| DSE8660 MKII Auto Transfer Switch & Mains | (Utility)",
         "DSEGenset® Data Sheet",
+        "| DSE8660 MKII Auto Transfer Switch & Mains | (Utility)",
         "| Control | Module",
         "Part Number: 8660-02",
         "Overview",
@@ -1384,12 +1384,12 @@
       ]
     },
     {
-      "n": 1009,
+      "n": 1006,
       "title": "Datasheet: DSE3110 Manual & Auto Start Control Module",
       "header": [],
       "rows": [
-        "DSE3110 Manual & Auto Start Control Module",
         "DSEGenset® Data Sheet",
+        "DSE3110 Manual & Auto Start Control Module",
         "Part Number: 3110-01",
         "Overview",
         "The DSE3110 can be utilised as a manual or auto start module for single gen-set applications or engine only applications. The module has been",
@@ -1559,7 +1559,7 @@
       "text": "DSE3110",
       "line": "DSE3110 Manual & Auto Start Control Module",
       "src": [
-        1009
+        1006
       ]
     },
     {
@@ -1658,7 +1658,7 @@
       "text": "DSE7410",
       "line": "053-191 – DSE7410/20 MKII Installation Instructions",
       "src": [
-        1005
+        1003
       ]
     },
     {
@@ -1668,7 +1668,7 @@
       "line": "| DSE2510 MKII | DSENet® Remote Display Module for DSE7410 MKII | 7310-03",
       "src": [
         1001,
-        1005
+        1003
       ]
     },
     {
@@ -1677,7 +1677,7 @@
       "text": "DSE7420",
       "line": "| DSE7410 MKII Auto Start | & | DSE7420",
       "src": [
-        1005
+        1003
       ]
     },
     {
@@ -1695,8 +1695,8 @@
       "text": "DSE8003 MKII",
       "line": "| DSE8003 MKII | 7” Graphical Colour Multi-Set Remote Overview Display | 8003-02",
       "src": [
-        1006,
-        1008
+        1004,
+        1005
       ]
     },
     {
@@ -1705,7 +1705,7 @@
       "text": "DSE8610",
       "line": "| DSE8610 | MKII | DSE8610 MKII",
       "src": [
-        1006
+        1004
       ]
     },
     {
@@ -1714,7 +1714,7 @@
       "text": "DSE8610 MKII",
       "line": "| DSE8610 MKII Synchronising & Load Sharing | Auto",
       "src": [
-        1006
+        1004
       ]
     },
     {
@@ -1723,7 +1723,7 @@
       "text": "DSE8660",
       "line": "| DSE8660 | MKII | DSE8610 MKII",
       "src": [
-        1008
+        1005
       ]
     },
     {
@@ -1732,7 +1732,7 @@
       "text": "DSE8660 MKII",
       "line": "| DSE8660 MKII | DSE8610 MKII",
       "src": [
-        1006
+        1004
       ]
     },
     {
@@ -1741,7 +1741,7 @@
       "text": "DSE8680",
       "line": "| DSE8680 | Synchronising Generator Bus Tie Control Module | 8680-01",
       "src": [
-        1006
+        1004
       ]
     }
   ]

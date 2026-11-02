@@ -20,12 +20,20 @@ const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 
 // A controller's datasheet (role controller_maker, Khoa 2026-11-02) is a list of functions, not "label | value" lines:
 // every line is kept except the page footer (offices, phone, legal), with the first line that names a controller
-// model as its title. config-bot.mjs modelFacts gives each line to the model of its section.
-const FOOTER = /^(\|\s*)?(T|E|W)\s*:|DEEP SEA ELECTRONICS (UK|USA|UAE|INDIA|CHINA)|Registered in England|maintains a policy|details shown on this data sheet|contents are intended for guidance|^(\|\s*)?(\d{3}-\d{3}\b)/i;
+// model as its title, and the line after it when that lists the series' models (SmartGen: "HGM6100N SERIES" then
+// "(HGM6110N/6120N/6110NC/...)"). config-bot.mjs modelFacts gives each line to the model of its section. A manual is
+// long: its first 700 lines (overview, functions, specifications) are kept.
+const FOOTER = /^(\|\s*)?(T|E|W|Tel|Fax|Web|Email)\s*:|DEEP SEA ELECTRONICS (UK|USA|UAE|INDIA|CHINA)|Registered in England|maintains a policy|details shown on this data sheet|contents are intended for guidance|^(\|\s*)?(\d{3}-\d{3}\b)|Page \d+ of \d+|Xuemei Street|Registered trademark|^(\|\s*)?www\./i;
 export function controllerSheet(text) {
   const lines = text.split("\n").map((l) => l.trim()).filter((l) => l && l.length <= 220 && /[a-z]{2}/i.test(l) && !FOOTER.test(l));
-  const title = lines.find((l) => C.controllersIn(l).some((c) => c.model)) || lines[0] || "";
-  return { title, rows: [...new Set(lines.filter((l) => l !== title))].slice(0, 400) };
+  const i = lines.findIndex((l) => C.controllersIn(l).some((c) => c.model));
+  const next = i >= 0 ? lines[i + 1] || "" : "";
+  const title = i < 0 ? lines[0] || "" : /^\(.*\)$/.test(next) && C.controllersIn(next).length ? `${lines[i]} ${next}` : lines[i];
+  // Every line stays a row, word for word (the title may join two lines); the first row is the source's quote, so it
+  // is a line of 8 characters or more (merge-specs.mjs, verify.mjs).
+  const rows = [...new Set(lines)].slice(0, 700);
+  while (rows.length && rows[0].length < 8) rows.shift();
+  return { title, rows };
 }
 
 // The title line and the spec lines of a datasheet's text, word for word.
@@ -66,7 +74,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     const { title, rows } = isCtl ? controllerSheet(d.text) : makerSheet(d.text);
     if (rows.length < 3) { console.log("x", url, `chỉ ${rows.length} dòng thông số`); continue; }
     fs.writeFileSync(path.join(dir, `${n}.md`), `URL: ${d.url}\nAccessed: ${new Date().toISOString().slice(0, 10)}\n\n${d.text}\n`, "utf8");
-    found.push({ n, url: d.url, title: `Datasheet: ${title}`, from: url, header: [], rows: [title, ...rows] });
+    found.push({ n, url: d.url, title: `Datasheet: ${title}`, from: url, header: [], rows: isCtl ? rows : [title, ...rows] });
     console.log("+", n, title, rows.length, "dòng");
     n++;
   }

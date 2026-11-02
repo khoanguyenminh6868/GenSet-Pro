@@ -250,10 +250,33 @@ test("a controller written without its generation takes the datasheet of its gen
 });
 
 test("catalog.md lists the controllers' datasheet lines", () => {
-  const b = { ...sups[1], controllers: [{ brand: "Deep Sea", model: "DSE7320", text: "DSE7320", line: "Controller: Deep Sea DSE7320", src: [3001] }] };
+  const b = { ...sups[1], controllers: [{ brand: "Deep Sea", model: "DSE7320", text: "DSE7320", line: "Controller: Deep Sea DSE7320", src: [3001] },
+    { brand: "Deep Sea", model: "DSE7310 MKII", text: "DSE7310 MKII", line: "Controller: Deep Sea DSE7310 MKII", src: [3001] }] };
   const list = [sups[0], b, sups[2], dse];
-  const { md } = catalogMd(C.build(list), { value: 250, unit: "kVA" }, hintsOf(hsmt), { suppliers: list });
+  const { md, ctlMd } = catalogMd(C.build(list), { value: 250, unit: "kVA" }, hintsOf(hsmt), { suppliers: list });
   assert.match(md, /## Thông số bộ điều khiển/);
   assert.match(md, /### DSE7320 — datasheet của DSE7320 MKII \(nhà cung cấp ghi DSE7320: cần xác nhận đời\) — supplierId: dse, n: 1001/);
   assert.ok(md.includes("- | • | Automatic start and stopping of generator and transfer of load"));
+  // controllers.md has every line; two models of one datasheet each have their own lines.
+  const part = (m) => ctlMd.split("\n### ").find((s) => s.startsWith(m)) || "";
+  assert.ok(part("DSE7320 —").includes("Automatic start and stopping") && !part("DSE7320 —").includes("3 phase generator sensing"));
+  assert.ok(part("DSE7310 MKII —").includes("3 phase generator sensing") && !part("DSE7310 MKII —").includes("Automatic start and stopping"));
+});
+
+test("SmartGen: a series written HGM6110N/6120N..., 'models: text' lines and wrapped sentences go to the right models", () => {
+  const sg = { id: "sg", role: "controller_maker", specTables: [{ n: 1001, title: "Datasheet: HGM6100N SERIES (HGM6110N/6120N/6110NC/6120NC)", header: [], rows: [
+    "HGM6100N SERIES",
+    "(HGM6110N/6120N/6110NC/6120NC)",
+    "HGM6110N/6110NC: Automatic Start Module, it controls genset to start/stop automatically by remote signal;",
+    "| HGM6120N/6120NC: Based on HGM6110N/6110NC, it | adds mains",
+    "AC",
+    "| monitoring and mains/generator automatic switching control (AMF), especially | suitable for",
+    "NOTE1: HGM6110NC/6120NC has RS485 port, HGM6110N/6120N without.",
+    "|  | Event log, real-time clock, scheduled start & stop function"] }] };
+  const f = modelFacts(C.build([sg]), [sg]);
+  const amf = "| monitoring and mains/generator automatic switching control (AMF), especially | suitable for";
+  assert.ok(ctlLines(f, "HGM6120N").includes(amf) && ctlLines(f, "HGM6120NC").includes(amf));
+  assert.ok(!ctlLines(f, "HGM6110N").includes(amf) && !ctlLines(f, "HGM6110NC").includes(amf));
+  assert.ok(!ctlLines(f, "HGM6120N").includes("HGM6110N/6110NC: Automatic Start Module, it controls genset to start/stop automatically by remote signal;"));
+  for (const m of ["HGM6110N", "HGM6120N", "HGM6110NC", "HGM6120NC"]) assert.ok(ctlLines(f, m).includes("|  | Event log, real-time clock, scheduled start & stop function"), m);
 });

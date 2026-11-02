@@ -22,8 +22,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     figures, then the alternator.
   - "Thông số theo model": every figure of each engine and alternator above, from ANY supplier's row or datasheet that
     names that model, each with its `factSrc`. A figure marked ⚠ is given differently by its sources.
-  - "Thông số bộ điều khiển": the lines of the maker's datasheet of the controllers above (Deep Sea...), each line of
-    the controller of its heading, with the `supplierId` / `n` to quote it.
+  - "Thông số bộ điều khiển": the first lines of the maker's datasheet of the controllers above (Deep Sea, SmartGen),
+    each line of the controller of its heading, with the `supplierId` / `n` to quote it. ALL the lines are in
+    `controllers.md` (a datasheet runs to 250 lines, a SmartGen manual to 700): for every controller requirement
+    (event log, protections, emergency stop, measurements, AMF, RS485...) search controllers.md with grep under that
+    controller's heading before writing `unclear`.
   - "Nhà cung cấp khác có dòng ghi cùng động cơ": more rows naming those engines, to pick `suppliers` from.
   - "Động cơ khác trong khoảng công suất": the other engines near the power, one row each.
   - each table's header (once per `supplierId` / `n`, column titles); "Bộ điều khiển": the controllers of the suppliers
