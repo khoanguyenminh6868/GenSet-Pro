@@ -14,11 +14,21 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   Chinese, a foreign engine that a supplier based in China (country CN) offers in a row of its own table: keep it and
   list only those suppliers.
 - `hsmt.txt`: the tender's own text. Every requirement quote must be copied from here.
-- `catalog.md`: the engines and alternators in the system (web/catalog.js), each with the genset table rows that name
-  it, exactly as on the supplier's website, and the source `supplierId` / `n`; then each table's header (once per
-  `supplierId` / `n`, column titles); then "Bộ điều khiển": the genset controllers of those suppliers, each with the
-  line of the supplier's page or genset row that names it (`supplierId`, `n`, `line`); at the end, the suppliers in the
-  system (role, status, confidence, website, Vietnam distributors, controllers) as recorded in the supplier DB.
+- `catalog.md`, prepared and ranked by code (Khoa, 2026-11-02):
+  - "Ứng viên": the best genset rows of the system for this tender, best first (power 95–140%, the HSMT's frequency,
+    the engine origin asked for), each exactly as on the supplier's website with `supplierId` / `n` / `line`, the
+    figures read from it, the controllers named in the row or offered by that supplier, and why it ranks there.
+    The code ranks the engine model / make and the controller the HSMT names first, then engines with more sourced
+    figures, then the alternator.
+  - "Thông số theo model": every figure of each engine and alternator above, from ANY supplier's row or datasheet that
+    names that model, each with its `factSrc`. A figure marked ⚠ is given differently by its sources.
+  - "Nhà cung cấp khác có dòng ghi cùng động cơ": more rows naming those engines, to pick `suppliers` from.
+  - "Động cơ khác trong khoảng công suất": the other engines near the power, one row each.
+  - each table's header (once per `supplierId` / `n`, column titles); "Bộ điều khiển": the controllers of the suppliers
+    shown, each with the line that names it (`supplierId`, `n`, `line`); at the end, those suppliers (role, status,
+    confidence, website, controllers) as recorded in the supplier DB.
+- `requirements.json` (only when the HSMT and Yêu cầu khác are unchanged since the last run): the requirements read
+  last time. Copy them into result.json as they are and skip step 1.
 - `suppliers.json`, `meta.json`: what the check command reads; do not open them.
 
 ## Working fast (a run used to take 10 minutes, Khoa 2026-10-29)
@@ -36,21 +46,32 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 1. List the requirements for the engine, the alternator and the genset as a whole that a model can meet or fail:
    power (and whether prime / standby), voltage, frequency, speed, phases, power factor, engine make / origin /
    cylinders / displacement / governor / cooling / emission, alternator make / insulation class / IP / AVR / bearing,
-   the controller (make, model, AMF / auto start, paralleling, communication) and so on. Each one: `item`, `requirement` (short), `quote` (exact words from hsmt.txt). Leave out what a model
-   cannot decide (enclosure, ATS, delivery, warranty, documents).
+   the controller (make, model, AMF / auto start, paralleling, communication) and so on. Each one: `item`, `requirement` (short), `quote` (exact words from hsmt.txt),
+   `part` (`engine`, `alternator`, `controller` or `genset` for the set as a whole: power, voltage, frequency, fuel
+   consumption...) and `level`: `core` when it decides which engine, alternator, controller or genset model fits, or
+   `option` when the supplier sets it when the order is placed without changing those models (fuel tank size,
+   dimensions, weight, noise, canopy). Leave out what a model cannot decide (enclosure, ATS, delivery, warranty, documents).
+   Give every requirement its own `item` name and use the same name in every check.
    When input.md has a "Yêu cầu khác" section (typed on the web, Khoa 2026-11-01), add each of its requirements too,
    with `"from": "user"`, `quote` empty, and treat it exactly like one of the HSMT: a check in every configuration
    (`hsmtQuote` empty), counted in the ranking of step 2, searched for in step 4. When it names a make or model
    (engine, alternator, controller), a configuration that does not offer it has that check `not_met` and is not a
    suggestion. When it contradicts the HSMT, follow it and say so in `notes`.
-2. From catalog.md, find configurations (one engine + one alternator) that meet them. Prefer an engine and an
-   alternator that appear together in the same genset row (a real configuration a manufacturer sells). For every
-   requirement write a check: `offered` (what the configuration gives) and `sourceQuote` (exact words from that
-   catalog row or its table header), and `status`:
+2. From catalog.md, find configurations (one engine + one alternator + a controller) that meet them, starting from
+   "Ứng viên". What matters most (Khoa, 2026-11-02): the engine and the controller, then the alternator. Prefer an
+   engine and an alternator that appear together in the same genset row (a real configuration a manufacturer sells).
+   For every requirement write a check (`item` as in requirements): `offered` (what the configuration gives) and
+   `sourceQuote` (exact words from that catalog row or its table header), and `status`:
    - `met` only when the source states a value that meets the requirement;
    - `not_met` when the source states a value that does not;
    - `unclear` when the source does not say. Never guess a value, never take it from the model name, never assume
      prime when the row does not say prime (prime and standby are ratings, not a conversion).
+   An engine or alternator figure (cylinders, displacement, bore, governor, aspiration, emission, insulation, IP, AVR...)
+   that the configuration's own row does not give may be taken from "Thông số theo model" of that same model: copy its
+   `factSrc` into the check, set `part` to `engine` or `alternator`, and quote `sourceQuote` from that factSrc line.
+   Only figures of the engine or alternator itself, never a genset figure (fuel consumption, size, tank, noise) of
+   another supplier's row. A figure marked ⚠ (sources disagree) is `unclear`, with the values in `note`; the code
+   also turns such a "met" into "unclear".
    A value may be converted only with a formula from "Công thức được phép" at the end of this file (kW ↔ kVA,
    current, L/h ↔ g/kWh, hp/PS → kW, speed from poles, displacement from bore × stroke, in³ → L, °F → °C). Put it in
    the check's `conversions` (see result.json): the formula id, every input with `from`:
@@ -68,17 +89,19 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    for, and a supplier that offers it. Check the HSMT's controller requirements with `part: "controller"` and a
    `sourceQuote` from that line; a function (AMF, paralleling, RS485...) the line does not state is `unclear`, never
    assumed from the model name.
-   Keep at most 10 configurations, best first: fewest `not_met`, then a supplier that truly fits (step 3), then
-   fewest `unclear`, then power closest above the requirement. A configuration with a `not_met` on power, frequency,
-   a named make or origin is not a suggestion.
+   Keep at most 10 configurations, best first: fewest `not_met` on the engine, the controller and the genset, then on
+   the alternator, then a supplier that truly fits (step 3), then fewest `unclear` in the same order, then the
+   `option` requirements, then power closest above the requirement. The code ranks them again this way. A
+   configuration with a `not_met` on power, frequency, a named make or origin is not a suggestion. Give several
+   different engines when the catalog has them, not ten rows of one engine.
 3. For every configuration, name the suppliers in the system that sell it (`suppliers`, at most 3, best first): only
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
-   this engine and, best, this alternator at the power required. Put the supplier of the genset row first when it fits.
-   Order: a row with this engine and this alternator, then a supplier that offers the controller the HSMT asks for,
-   then confidence high > medium > low, then role genset_oem. A Vietnam distributor is not needed and does not count
-   in the order (Khoa, 2026-11-02). `why` states only facts shown in catalog.md (the row, the role, the confidence).
-   A supplier truly fits when its row names this engine and this alternator and the configuration has
-   no `not_met` on power, frequency, a named make or origin.
+   this engine and, best, this alternator at the power required. Order (engine and controller first, Khoa
+   2026-11-02): a supplier that offers the configuration's controller, then the supplier of the genset row, then a row
+   that also names this alternator, then confidence high > medium > low, then role genset_oem. A Vietnam distributor is
+   not needed and does not count in the order. `why` states only facts shown in catalog.md (the row, the role, the
+   confidence, the controller). A supplier truly fits when its row names this engine and the configuration has no
+   `not_met` on power, frequency, a named make or origin.
 4. Only when no configuration of step 2 has a supplier that truly fits: search the internet (WebSearch) for the ONE
    best configuration and the supplier that sells it. Official pages first: a genset maker's page or datasheet that
    lists a genset with its engine and alternator, then the engine and alternator makers' datasheets. Save every page
@@ -108,7 +131,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 ```json
 {
   "summary": "1-2 câu",
-  "requirements": [{ "item": "", "requirement": "", "quote": "" }],
+  "requirements": [{ "item": "", "requirement": "", "quote": "", "part": "engine|alternator|genset|controller", "level": "core|option" }],
   "configs": [{
     "rank": 1,
     "engine": { "model": "", "make": "", "src": { "kind": "catalog", "supplierId": "", "n": 101, "line": "| ... |" } },
@@ -116,6 +139,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     "genset": { "model": "", "src": { "kind": "catalog", "supplierId": "", "n": 101, "line": "| ... |" } },
     "controller": { "model": "DSE7320", "make": "Deep Sea", "src": { "kind": "controller", "supplierId": "", "n": 3001, "line": "..." } },
     "checks": [{ "item": "", "requirement": "", "hsmtQuote": "", "offered": "", "sourceQuote": "", "part": "engine|alternator|genset|controller", "status": "met|not_met|unclear", "note": "",
+      "factSrc": { "supplierId": "", "n": 101, "line": "only when the figure comes from Thông số theo model" },
       "conversions": [{ "formula": "current_3ph", "inputs": [{ "name": "S_kVA", "value": 400, "from": "source" }, { "name": "U_V", "value": 380, "from": "hsmt" }], "value": 607.7 }] }],
     "suppliers": [{ "supplierId": "", "n": 101, "line": "| ... |", "why": "" }],
     "gaps": ["what to confirm with the supplier"]
