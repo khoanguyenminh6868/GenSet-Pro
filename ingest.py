@@ -154,11 +154,10 @@ def ingest(key):
     with tempfile.TemporaryDirectory() as tmp:
         for f in files:
             name = f["name"]
-            text = ""
+            text, info = "", {}
             if Path(name).suffix.lower() in TEXT_EXT:
                 local = Path(tmp) / f["assetName"]
                 download_asset(f["asset"], local)
-                info = {}
                 text = to_text(local, info)
                 local.unlink()
             has = len(re.sub(r"\s", "", text)) > 40
