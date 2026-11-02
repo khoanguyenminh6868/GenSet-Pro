@@ -6,7 +6,7 @@
 import { SB_URL, memberFrom } from "./_supabase.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq"]);
+const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq", "bidpricereq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 const str = (v, n) => (v == null ? undefined : String(v).slice(0, n));
@@ -34,6 +34,8 @@ export default async function handler(req, res) {
       auto: i.auto ? true : undefined, mode: coll === "syncreq" && i.mode === "new" ? "new" : undefined, requestedAt: at, by: member.email, from: "web",
       // Gợi ý cấu hình: the engines' origin (Xuất xứ), Trung Quốc unless the page says otherwise, and Yêu cầu khác.
       ...(coll === "configreq" || coll === "findreq" ? { origin: ["cn", "other", "all"].includes(i.origin) ? i.origin : "cn", extra: str(String(i.extra || "").trim(), 2000) || undefined } : {}),
+      // Gợi ý giá đấu: the power and package price the page read for the tender (bidprice-bot.mjs).
+      ...(coll === "bidpricereq" ? { basis: bidBasis(i.basis) } : {}),
       ...(coll === "comparereq" ? compareFields(i, "hsdt") : coll === "tlktreq" ? compareFields(i, "tlkt") : coll === "hsdtreq" ? compareFields(i, "hsdt", true) : {}),
     }));
     return { coll, id: i.key, data, updated_at: at };
@@ -42,6 +44,11 @@ export default async function handler(req, res) {
   const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, "x-actor": member.email, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify(rows) });
   if (!w.ok) return res.status(502).json({ error: `Lưu thất bại (HTTP ${w.status}): ${(await w.text()).slice(0, 200)}` });
   res.json({ saved: rows.map((r) => ({ key: r.id, data: r.data })) });
+}
+
+const posNum = (v) => (Number(v) > 0 && Number(v) < 1e13 ? Number(v) : null);
+function bidBasis(b = {}) {
+  return { kva: posNum(b.kva), price: posNum(b.price), capText: str(b.capText, 300) || "", bidForm: str(b.bidForm, 50) || "", investorName: str(b.investorName, 300) || "" };
 }
 
 // The HSDT of a comparison (or the technical proposal of a TLKT one): files already uploaded under <dir>/<TBMT>/ in the

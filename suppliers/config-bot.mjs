@@ -2,6 +2,7 @@
 //   node suppliers/config-bot.mjs run            answer every pending configreq/<TBMT> (one Claude agent per request)
 //                                                and findreq/<TBMT> (Tìm NCC: Claude, find-prompt.md;
 //                                                the suppliers it adds go into configmatch/<TBMT> in code, no agent)
+//                                                and bidpricereq/<TBMT> (Gợi ý giá đấu, bidprice-bot.mjs)
 //   node suppliers/config-bot.mjs merge-find --key <TBMT>          do that again from the stored findmatch
 //   node suppliers/config-bot.mjs find-check --dir <dir>          check newCatalog.json of a Tìm NCC folder in code
 //   node suppliers/config-bot.mjs prep --key <TBMT> --out <dir>
@@ -49,14 +50,14 @@ const originOfReq = (o) => (ORIGIN[o] ? o : "cn");
 const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
 export const reqHashOf = (text, extra) => createHash("sha1").update(`${text}\n--extra--\n${extra || ""}`).digest("hex").slice(0, 16);
 
-async function api(q) {
+export async function api(q) {
   const r = await fetch(`${WEB}/api/requests?${q}`, { headers: { Authorization: `Bearer ${token()}` } });
   if (!r.ok) throw new Error(`${q}: HTTP ${r.status}`);
   return r.json();
 }
-const doc = async (coll, id) => (await api(`kind=docs&coll=${coll}&id=${encodeURIComponent(id)}`))[0]?.data;
+export const doc = async (coll, id) => (await api(`kind=docs&coll=${coll}&id=${encodeURIComponent(id)}`))[0]?.data;
 // A network error (fetch failed) is retried: one lost post used to throw away a whole agent run (2026-10-29).
-async function post(rows) {
+export async function post(rows) {
   let r;
   for (let i = 0; ; i++) {
     try { r = await fetch(`${WEB}/api/ingest`, { method: "POST", headers: { Authorization: `Bearer ${token()}`, "Content-Type": "application/json" }, body: JSON.stringify({ rows }) }); break; }
@@ -92,7 +93,7 @@ function capacity(texts) {
   return null;
 }
 // The technical part of the HSMT: chapter V (Yêu cầu kỹ thuật) when it can be found, else the whole text.
-function technicalPart(text) {
+export function technicalPart(text) {
   const start = text.search(/ch(ươ|uo)ng\s+V\b[^I\n]{0,80}(y[êe]u c[ầa]u|ph[ạa]m vi)/i);
   if (start < 0) return text.slice(0, 250000);
   const rest = text.slice(start + 10), end = rest.search(/\n\s*ch(ươ|uo)ng\s+(VI|VII)\b/i);
@@ -474,7 +475,7 @@ function suppliersMd(suppliers) {
 const rowPower = (u, cap) => Math.min(...Object.values(u.power || {}).map((p) => p[cap.unit] ?? 1e9), 1e9);
 
 // The HSMT text of a tender (its files, then the notice); `parts` alone is what the requirements are read from.
-async function hsmtTextOf(key) {
+export async function hsmtTextOf(key) {
   const [hsmt, notice] = await Promise.all([doc("hsmt", key), doc("notice", key)]);
   const parts = [];
   for (let i = 0; i < (hsmt?.textChunks || 0); i++) parts.push((await doc("hsmttext", `${key}_${i}`))?.text || "");
@@ -1220,13 +1221,20 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     if (fs.existsSync(lock) && Date.now() - fs.statSync(lock).mtimeMs < 60 * 60e3) { console.log("SUMMARY: đang có lượt khác chạy"); process.exit(4); }
     fs.writeFileSync(lock, String(process.pid));
     try {
-      const [pending, finds] = await Promise.all([api("kind=config"), api("kind=find")]);
+      const [pending, finds, prices] = await Promise.all([api("kind=config"), api("kind=find"), api("kind=bidprice")]);
+      // Gợi ý giá đấu first: a few minutes each, no web search (bidprice-bot.mjs).
+      // Only requests the web wrote (basis): an older API answers an unknown kind with the file requests.
+      if (prices.some((r) => r.basis)) {
+        const { answer: answerPrice } = await import("./bidprice-bot.mjs");
+        const hist = Object.fromEntries((await api("kind=docs&coll=bidhist")).map((d) => [d.id, d.data]));
+        for (const req of prices.filter((r) => r.basis)) await answerPrice(req, hist);
+      }
       if (pending.length || finds.length) {
         const suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data);
         for (const req of pending) await answer(req, suppliers);
         for (const req of finds) await find(req, suppliers);
       }
-      console.log(`SUMMARY: ${pending.length} yêu cầu gợi ý cấu hình, ${finds.length} yêu cầu Tìm NCC`);
+      console.log(`SUMMARY: ${pending.length} yêu cầu gợi ý cấu hình, ${finds.length} yêu cầu Tìm NCC, ${prices.length} yêu cầu gợi ý giá đấu`);
     } finally { fs.rmSync(lock, { force: true }); }
   } else { console.error("usage: config-bot.mjs run | prep --key K --out D | save --dir D --url U | check --dir D | post --dir D --key K --requested-at T"); process.exit(2); }
 }

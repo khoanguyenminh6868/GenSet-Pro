@@ -1,4 +1,4 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><meta name="theme-color" content="#14171c"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="/shim.js"></script><script src="/catalog.js"></script><script src="/conversions.js"></script></head><body><title>GenBid Pro</title>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><meta name="theme-color" content="#14171c"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="/shim.js"></script><script src="/catalog.js"></script><script src="/conversions.js"></script><script src="/bidprice.js"></script></head><body><title>GenBid Pro</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,6 +125,7 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .kpi .kv{font:600 26px/1.15 var(--f-mono);font-variant-numeric:tabular-nums}
 .kpi .ks{font-size:12px;color:var(--dim)}
 .kpi{cursor:pointer}
+.kpi.bplev{cursor:default}.kpi.bplev .kv{font-size:20px}
 .kpi:hover,.kpi.on{border-color:var(--kc)}
 .kpi .kref{position:absolute;top:10px;right:10px;width:30px;height:30px}
 .lrow{display:flex;flex-direction:column;gap:3px;text-align:left;border:1px solid var(--line);background:var(--panel2);border-radius:8px;padding:9px 11px;color:var(--fg)}
@@ -502,7 +503,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
@@ -784,7 +785,8 @@ async function requestWorker(coll, key, extra, what) {
   if (state.readOnly) { toast(`Đây là bản chỉ xem, không gửi được yêu cầu ${what}.`); return; }
   const t = findTender(key);
   // A TLKT comparison against an uploaded shortened YCKT does not read the HSMT.
-  const ownReq = coll === "tlktreq" && (extra.reqFiles?.length || extra.reqText || extra.translate);
+  // Gợi ý giá đấu reads the history, not the HSMT.
+  const ownReq = (coll === "tlktreq" && (extra.reqFiles?.length || extra.reqText || extra.translate)) || coll === "bidpricereq";
   if (!ownReq && !state.hsmt[key]?.files?.length && !((coll === "hsdtreq" || coll === "supplierreq" || coll === "configreq" || coll === "findreq") && analysisOf(key)?.result)) { toast(isProject(t) ? "Dự án này chưa có tệp. Tải tệp lên ở tab Tổng quan trước." : "Gói này chưa có tệp hồ sơ. Cần tải tệp về (nút Lấy lại tệp ở tab Tổng quan) trước.", 6000); return; }
   try {
     const n = (await saveRequests(coll, [{ key, notifyNo: t?.notifyNo || key, bidName: t?.bidName || "", ...extra }])).length;
@@ -968,6 +970,8 @@ async function initDb() {
   subscribe("configreq", "configreq");
   subscribe("findmatch", "findmatch");
   subscribe("findreq", "findreq");
+  subscribe("bidprice", "bidprice");
+  subscribe("bidpricereq", "bidpricereq");
   // Past generator tenders (bidhist, a few MB) sit in the tabs too: the list waits for them, so its count does not jump
   // from the open tenders to every past one after a reload (Khoa, 2026-11-02).
   loadHist();
@@ -1282,7 +1286,7 @@ function renderDrawer(force = true) {
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   if (state.dtab === "supplier") state.dtab = "info"; // tab Nhà cung cấp đang ẩn
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], state.bidprice[key]?.at, state.bidpricereq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1595,6 +1599,7 @@ async function pollPending() {
   for (const key of Object.keys(state.supplierreq || {})) if (workerReqPending("supplierreq", key)) paths.push("supplierreq/" + key, "suppliermatch/" + key);
   for (const key of Object.keys(state.configreq || {})) if (workerReqPending("configreq", key)) paths.push("configreq/" + key, "configmatch/" + key);
   for (const key of Object.keys(state.findreq || {})) if (workerReqPending("findreq", key)) paths.push("findreq/" + key, "findmatch/" + key);
+  for (const key of Object.keys(state.bidpricereq || {})) if (workerReqPending("bidpricereq", key)) paths.push("bidpricereq/" + key, "bidprice/" + key);
   if (paths.length) await state.db.refresh(paths).catch(() => {});
 }
 setInterval(pollPending, 10e3);
@@ -2966,28 +2971,8 @@ function loadHist() {
     }, () => { state.bidhist ||= {}; state.loaded.hist = true; res(); renderAll(); });
   }));
 }
-// Power named in a text: "500KVA", "2 x 250 kVA", "160kW" (kW read as kVA at power factor 0.8, only to find similar tenders).
-function kvaOf(text) {
-  const m = String(text || "").normalize("NFC").match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/i);
-  if (!m) return null;
-  const v = Number(m[1].replace(/\.(?=\d{3}\b)/, "").replace(",", "."));
-  return v > 0 ? (/kw/i.test(m[2]) ? v / 0.8 : v) : null;
-}
-// Same name rules as the bot (genbid-sync.js isGenset): a power plant's own generator is not a generator set.
-const GENSET_RE = /m[áa]y\s*ph[áa]t\s*(đi[ệe]n|di[eê]s[eê]l|di[eê]zen|dự\s*phòng)|m[áa]y\s*ph[áa]t[^,;:]{0,30}\d+\s*k[vV]?[aA]\b|\bgenset\b|\bmp[đd]\b/i;
-const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|di[eê]s[eê]l|di[eê]zen|\d\s*kva\b/i;
-const isGensetName = (n) => { n = String(n || "").normalize("NFC"); return GENSET_RE.test(n) && (!PLANT_RE.test(n) || SET_RE.test(n)); };
-// Repair, upkeep, rental, parts and studies are priced differently from supplying a generator set.
-const SVC_RE = /sửa\s*chữa|bảo\s*dưỡng|bảo\s*trì|đại\s*tu|thuê|phụ\s*tùng|vật\s*tư|chổi\s*than|thí\s*nghiệm|kiểm\s*định|tư\s*vấn|dầu\s*(nhớt|bôi\s*trơn)/i;
-const bidKind = (n) => (SVC_RE.test(String(n || "").normalize("NFC")) ? "svc" : "supply");
-// Power read by the bot from a past tender's HSMT (bidhist config.kvas): the largest set for a one-lot tender; for
-// several lots only when the HSMT names a single power, since it cannot tell which lot each one belongs to.
-function cfgKva(d, multi) {
-  const ps = (d?.config?.kvas || []).map((p) => (p.u === "kW" ? p.v / 0.8 : p.u === "MVA" ? p.v * 1000 : p.v)).filter((v) => v >= 1);
-  if (!ps.length) return null;
-  return multi ? (new Set(ps).size === 1 ? ps[0] : null) : Math.max(...ps);
-}
-const taxKey = (x) => String(x.taxCode || "").replace(/\D/g, "") || String(x.name || "").trim().toUpperCase();
+// Power in a name, genset names, supply vs repair, the power the bot read from a past HSMT: web/bidprice.js, shared with the bot.
+const { kvaOf, isGensetName, taxKey } = window.GenbidBidprice;
 // The documents as one shape: bidhist as written by the bot, bidders/<TBMT> of tracked tenders turned into one lot.
 function histDocs() {
   const out = Object.fromEntries(Object.entries(state.bidhist || {}).filter(([, d]) => isGensetName(d.bidName)));
@@ -3115,91 +3100,59 @@ function bdDetailHtml(c0) {
     }).join(""))}</tbody></table></div>`;
 }
 
-// Gợi ý giá đấu (tab Tạo HSDT tham khảo): from the lots already decided on muasamcong, the ones most like this tender
-// (power, package price, form, investor, how recent), and each one's winning price over its lot price applied to this
-// package price. Computed here, no AI. Shows the 20 highest prices, each with how often a price that high would have won.
-const bpCache = {};
-function bpSamples(t, K, P) {
-  const kind = bidKind(t.bidName), out = [], years = (iso) => (iso ? (Date.now() - Date.parse(iso)) / (365 * 864e5) : 3);
-  for (const [key, d] of Object.entries(histDocs())) {
-    if (key === t.notifyNo || !d.final) continue;
-    const multi = (d.lots || []).length > 1;
-    for (const lot of d.lots || []) {
-      const w = (lot.bidders || []).find((x) => x.won), price = lot.price ?? (multi ? null : d.estimatedPrice);
-      const wp = w && Number(w.winPrice ?? bdPrice(w));
-      if (!w || !(price > 0) || !(wp > 0)) continue;
-      const ratio = wp / price;
-      if (ratio < 0.3 || ratio > 1.02) continue;
-      const kGoods = Math.max(0, ...(lot.goods || []).map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
-      const kName = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)), kCfg = kName || kGoods ? null : cfgKva(d, multi);
-      const k = kName || kGoods || kCfg, kSrc = kName ? "" : kGoods ? "hàng chào" : kCfg ? "HSMT" : "";
-      const dist = (K && k ? Math.abs(Math.log(K / k)) : 0.7) + (P ? 0.5 * Math.abs(Math.log(P / price)) : 0) + (d.bidForm && d.bidForm === t.bidForm ? 0 : 0.3)
-        + 0.15 * Math.min(years(d.openedAt || d.bidCloseDate), 5) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0)
-        + (bidKind((multi && lot.lotName) || d.bidName) === kind ? 0 : 1);
-      out.push({ key, d, lot, w, price, wp, ratio, k, kSrc, dist, multi });
-    }
-  }
-  return out.sort((a, b) => a.dist - b.dist);
-}
-function bidSuggestHtml(t, K, P) {
-  const all = bpSamples(t, K, P);
-  if (!all.length) return h`<div class="note">Chưa có gói đã có kết quả để so.</div>`;
-  if (!(P > 0)) return h`<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>`;
-  const sim = all.slice(0, 60), ratios = sim.map((s) => s.ratio).sort((a, b) => a - b);
-  const q = (p) => ratios[Math.min(ratios.length - 1, Math.floor(p * (ratios.length - 1)))];
-  const chance = (r) => sim.filter((s) => s.ratio >= r - 1e-9).length / sim.length;
-  const round = (v) => Math.round(v / 1000) * 1000;
-  const seen = new Set(), rows = [];
-  for (const s of [...sim].sort((a, b) => b.ratio - a.ratio)) {
-    const price = round(P * s.ratio);
-    if (seen.has(price)) continue;
-    seen.add(price); rows.push({ ...s, sug: price });
-    if (rows.length >= 20) break;
-  }
-  // Who bids on tenders like this one, and how low.
-  const comp = new Map();
-  for (const s of sim) for (const b of s.lot.bidders || []) {
-    const id = taxKey(b), p = bdPrice(b);
-    if (!id) continue;
-    const c = comp.get(id) || { id, name: b.name, n: 0, wins: 0, ratios: [] };
-    c.n++; if (b.won) c.wins++; if (p > 0) c.ratios.push(p / s.price);
-    comp.set(id, c);
-  }
-  const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8);
-  const med = (a) => { const x = [...a].sort((p, q2) => p - q2); return x.length ? x[Math.floor((x.length - 1) / 2)] : null; };
-  const pct = (r) => (100 * r).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + "%";
-  const kn = sim.filter((s) => s.k).length;
-  return h`<div class="muted small" style="margin:6px 0">So với ${sim.length} gói/phần đã có kết quả giống gói này nhất (trong ${all.length} gói/phần có giá trúng)${K ? `, ${kn} gói ghi công suất` : ""}. Giá trúng thường bằng ${pct(q(0.25))}–${pct(q(0.75))} giá gói (trung vị ${pct(q(0.5))}, tức ${fmtVnd(round(P * q(0.5)))}).</div>
-    <div class="tablewrap"><table class="suptable supcards bprows"><thead><tr><th>#</th><th>Giá đề xuất</th><th>% giá gói</th><th title="Tỉ lệ các gói tương tự có giá trúng bằng hoặc cao hơn mức này: bỏ giá này thì đã thắng giá ở chừng ấy gói">Khả năng thắng giá</th><th>Dựa trên gói</th></tr></thead><tbody>${raw(rows.map((s, i) => h`<tr>
-      <td class="num">${i + 1}</td><td class="num" data-l="Giá đề xuất"><b>${fmtVnd(s.sug)}</b><div class="muted small">${s.sug.toLocaleString("vi-VN")} đ</div></td>
-      <td class="num" data-l="% giá gói">${pct(s.ratio)}</td><td class="num" data-l="Khả năng thắng giá">${Math.round(100 * chance(s.ratio))}%</td>
-      <td class="small" data-l="Dựa trên"><b>${s.multi && s.lot.lotName ? s.lot.lotName : s.d.bidName}</b><div class="muted">${raw(s.d.url ? h`<a href="${s.d.url}" target="_blank" rel="noopener">${s.key}</a>` : s.key)} · ${fmtDate(s.d.openedAt || s.d.bidCloseDate, false)}${s.k ? ` · ${Math.round(s.k).toLocaleString("vi-VN")} kVA${s.kSrc ? " (" + s.kSrc + ")" : ""}` : ""} · giá gói ${fmtVnd(s.price)} · trúng ${fmtVnd(s.wp)} (${s.w.name}) · ${(s.lot.bidders || []).length} nhà thầu${s.d.investorName === t.investorName ? " · cùng chủ đầu tư" : ""}</div></td></tr>`).join(""))}</tbody></table></div>
-    <h4 style="margin:12px 0 4px">Nhà thầu hay dự các gói này</h4>
-    <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà thầu</th><th>Số lượt</th><th>Trúng</th><th>Giá thường bỏ (trung vị, % giá gói)</th></tr></thead><tbody>${raw(comps.map((c) => h`<tr data-bdopen="${c.id}" style="cursor:pointer"><td>${c.name}</td><td class="num" data-l="Số lượt">${c.n}</td><td class="num" data-l="Trúng">${c.wins}</td><td class="num" data-l="Giá thường bỏ">${c.ratios.length ? pct(med(c.ratios)) : "—"}</td></tr>`).join(""))}</tbody></table></div>
-    <div class="muted small">Ước tính từ dữ liệu quá khứ; gói đánh giá theo kỹ thuật hoặc có nhà thầu bị loại thì giá thấp nhất chưa chắc trúng.</div>`;
-}
+// Gợi ý giá đấu (tab Tạo HSDT tham khảo; Khoa, 2026-11-03: so theo cấu hình bằng AI). The button records
+// bidpricereq/<key> with this tender's power and package price; the Windows bot (suppliers/bidprice-bot.mjs) picks the
+// decided lots most like it (web/bidprice.js candidates), Agent reads the configuration of this tender and of each lot
+// (won goods, HSMT lines) and calls each one same / close / different / unknown, code checks its quotes and computes
+// the prices from the alike lots with two or more bidders, and posts bidprice/<key>. This only shows that result.
 // The tender's own power and package price, no input (Khoa, 2026-11-02): power from the name, else the HSMT or the
 // analysis (capacityOf); package price from the notice, else the history.
 function bidBasis(t) {
   const cap = capacityOf(t), K = kvaOf(cap?.text) || null;
   const P = t.estimatedPrice ?? state.bidhist?.[t._key]?.estimatedPrice ?? null;
-  return { K, P, capText: K ? `${cap.text} (${cap.src})` : "" };
+  return { kva: K, price: P, capText: K ? `${cap.text} (${cap.src})` : "", bidForm: t.bidForm || "", investorName: t.investorName || "" };
 }
+const BP_LEVEL = { same: ["Giống", "ok"], close: ["Gần", "warn"], different: ["Khác", "mut"], unknown: ["Không đủ thông tin", "mut"] };
+const bpPct = (r) => (100 * r).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + "%";
 function bidSuggestBox(t) {
-  const c = bpCache[t._key] || {};
-  return h`<section class="sec"><h4>Gợi ý giá đấu</h4><div class="row">
-      <button class="btn primary" id="bpRun" data-key="${t._key}">Gợi ý giá đấu</button></div>
-    <div id="bpOut">${raw(c.html || "")}</div></section>`;
+  const key = t._key, prev = state.bidprice[key];
+  const wait = workerReqPending("bidpricereq", key) ? waitHtml("Đang chờ Agent so cấu hình gói này với các gói đã có kết quả...", state.bidpricereq[key].requestedAt) : "";
+  const err = !wait && workerReqError("bidpricereq", key);
+  return h`<section class="sec"><h4>Gợi ý giá đấu</h4>${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row">
+      <button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý giá đấu"}</button>
+      <span class="muted small" style="flex:1;min-width:200px">Agent so cấu hình (công suất, số máy, hãng/xuất xứ, phạm vi) với các gói đã có kết quả trên muasamcong; giá do code tính từ các gói giống.</span></div>
+    ${raw(prev?.result && !wait ? bidPriceHtml(prev, t) : "")}</section>`;
 }
-async function runBidSuggest(key) {
-  const t = findTender(key), out = $("#bpOut");
-  if (!t || !out) return;
-  out.innerHTML = progress("Đang tải gói thầu...");
-  await loadHist();
-  const { K, P, capText } = bidBasis(t);
-  const html = h`<div class="muted small" style="margin-top:6px">Gói này: công suất ${capText || "không rõ (chỉ so theo giá gói)"} · giá gói ${P ? fmtVnd(P) : "không rõ"}</div>` + bidSuggestHtml(t, K, P);
-  bpCache[key] = { K, P, html };
-  if ($("#bpOut")) $("#bpOut").innerHTML = html;
+function bpSampleRow(s, t, i) {
+  const [lv, cls] = BP_LEVEL[s.level] || BP_LEVEL.unknown, one = s.bidders.length < 2;
+  return h`<tr><td class="num">${i + 1}</td>
+    <td><div><b>${s.lotName || s.name}</b></div>
+      <div class="muted small">${raw(s.url ? h`<a href="${s.url}" target="_blank" rel="noopener">${s.key}</a>` : s.key)} · ${fmtDate(s.at, false)} · ${s.investor}${s.investor && s.investor === t.investorName ? " (cùng chủ đầu tư)" : ""}</div>
+      ${raw(s.goods.length ? h`<div class="small">Hàng trúng: ${s.goods.slice(0, 3).map((g) => [g.name.slice(0, 80), g.maker, g.code, g.origin && `(${g.origin})`].filter(Boolean).join(" ")).join("; ")}</div>` : "")}</td>
+    <td class="small" data-l="Mức giống"><span class="chip ${cls}">${lv}</span>${raw(one ? ' <span class="chip mut" title="Chỉ 1 nhà thầu: giá trúng không qua cạnh tranh, không tính vào giá đề xuất">1 nhà thầu</span>' : "")}${raw(s.unverified ? h` <span class="chip warn" title="${s.unverified}">⚠ chưa khớp nguồn</span>` : "")}${raw(s.same.length ? h`<div>✓ ${s.same.join(", ")}</div>` : "")}${raw(s.diff.length ? h`<div class="muted">✗ ${s.diff.join(", ")}</div>` : "")}${raw(s.quote ? h`<div class="muted" style="overflow-wrap:anywhere"><q>${s.quote}</q></div>` : "")}</td>
+    <td class="num" data-l="Giá trúng"><b>${fmtVnd(s.wp)}</b><div class="muted small">giá gói ${fmtVnd(s.price)}</div><div class="muted small">${bpPct(s.ratio)} giá gói${s.k ? ` · ${fmtVnd(Math.round(s.wp / s.k))}/kVA` : ""}</div><div class="muted small" style="font-family:inherit;white-space:normal">${s.winner} · ${s.bidders.length} nhà thầu</div></td></tr>`;
+}
+function bidPriceHtml(doc, t) {
+  const r = doc.result, st = r.stats, b = r.basis, P = b.price;
+  const order = { same: 0, close: 1, different: 2, unknown: 3 };
+  const alike = r.samples.filter((s) => s.level === "same" || s.level === "close").sort((x, y) => order[x.level] - order[y.level] || x.dist - y.dist);
+  const rest = (lv) => r.samples.filter((s) => s.level === lv);
+  const table = (list) => h`<div class="tablewrap"><table class="suptable supcards bprows"><thead><tr><th>#</th><th style="width:40%">Gói đã có kết quả</th><th style="width:34%">Mức giống</th><th style="width:26%">Giá trúng</th></tr></thead><tbody>${raw(list.map((s, i) => bpSampleRow(s, t, i)).join(""))}</tbody></table></div>`;
+  const what = st.basis === "same" ? `${st.n} gói giống` : `${st.n} gói giống hoặc gần (${st.same} giống, ${st.close} gần)`;
+  return h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(doc.at)} · công suất ${b.kva ? `${Math.round(b.kva).toLocaleString("vi-VN")} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"} · giá gói ${P ? fmtVnd(P) : "không rõ"} · Agent xét ${r.samples.length} gói gần nhất trong ${r.total} gói/phần có giá trúng</div>
+    ${raw(r.tender?.summary ? h`<p class="small"><b>Gói này:</b> ${r.tender.summary}${r.tender.points?.length ? ` (${r.tender.points.join("; ")})` : ""}</p>` : "")}
+    ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
+      : !st.levels.length ? h`<div class="note warn">Chưa đủ gói tương tự để gợi ý giá: chỉ có ${st.n} gói giống/gần có từ 2 nhà thầu trở lên (cần ít nhất 3). Xem các gói bên dưới để tự cân nhắc.</div>`
+      : h`${raw(st.enough ? "" : h`<div class="note warn">Chỉ có ${st.n} gói tương tự có cạnh tranh (dưới 5): giá dưới đây chỉ để tham khảo.</div>`)}
+        <div class="kpis" style="margin:8px 0">${raw(st.levels.map((l) => h`<div class="kpi bplev"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${bpPct(l.ratio)} giá gói · khả năng thắng giá ${Math.round(100 * l.chance)}%</span></div>`).join(""))}</div>
+        <div class="muted small">Tính từ ${what}, mỗi gói có từ 2 nhà thầu. Khả năng thắng giá: tỉ lệ các gói đó có giá trúng bằng hoặc cao hơn mức này.${st.perKva ? ` Theo giá trúng/kVA (trung vị ${fmtVnd(st.perKva.value)}/kVA, ${st.perKva.n} gói): ${fmtVnd(st.perKva.price)}.` : ""}</div>`)}
+    ${raw((r.notes || []).length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}
+    <h4 style="margin:12px 0 4px">Gói tương tự (${alike.length})</h4>
+    ${raw(alike.length ? table(alike) : '<div class="note">Agent không thấy gói nào giống hoặc gần với gói này.</div>')}
+    ${raw(["different", "unknown"].map((lv) => rest(lv).length ? h`<details><summary class="small">${lv === "different" ? "Khác cấu hình" : "Không đủ thông tin để so"} (${rest(lv).length})</summary>${raw(table(rest(lv)))}</details>` : "").join(""))}
+    ${raw(st.comps.length ? h`<h4 style="margin:12px 0 4px">Nhà thầu hay dự các gói tương tự</h4>
+    <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà thầu</th><th>Số lượt</th><th>Trúng</th><th>Giá thường bỏ (trung vị, % giá gói)</th></tr></thead><tbody>${raw(st.comps.map((c) => h`<tr data-bdopen="${c.id}" style="cursor:pointer"><td>${c.name}</td><td class="num" data-l="Số lượt">${c.n}</td><td class="num" data-l="Trúng">${c.wins}</td><td class="num" data-l="Giá thường bỏ">${c.ratio ? bpPct(c.ratio) : "—"}</td></tr>`).join(""))}</tbody></table></div>` : "")}
+    <div class="muted small">Ước tính từ dữ liệu quá khứ; gói đánh giá theo kỹ thuật hoặc có nhà thầu bị loại thì giá thấp nhất chưa chắc trúng.</div>`;
 }
 
 // ---------- Modal ----------
@@ -3248,7 +3201,7 @@ document.addEventListener("click", async (e) => {
   if (bdo && !e.target.closest("a[href]")) { if ($("#bdBody")) { if (!bdOpenId) listScroll.bd = mScroll().scrollTop; bdOpenId = bdo.dataset.bdopen; renderBidders(); mScroll().scrollTop = 0; } else openBidders(bdo.dataset.bdopen); return; }
   if (e.target.id === "bdBack") { bdOpenId = null; renderBidders(); mScroll().scrollTop = listScroll.bd || 0; return; }
   if (e.target.id === "bdMore") { bdLimit += 200; renderBdList(); return; }
-  if (e.target.id === "bpRun") { runBidSuggest(e.target.dataset.key); return; }
+  if (e.target.id === "bpRun") { const t = findTender(e.target.dataset.key); if (t) requestWorker("bidpricereq", t._key, { basis: bidBasis(t) }, "gợi ý giá đấu"); return; }
   const home = e.target.closest("#mdl a.home");
   if (home) { e.preventDefault(); setScreenUrl(Object.keys(SCREEN_HASH).find((k) => home.getAttribute("href") === "#" + SCREEN_HASH[k])); openScreenFromUrl(); return; }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }

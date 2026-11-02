@@ -8,7 +8,7 @@ import { authorized } from "./ingest.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // tracked travels without notes and bid prices: those stay on the web.
-const READABLE = new Set(["feed", "seen", "manual", "tracked", "deleted", "analysis", "hsmt", "hsmttext", "notice", "analysisreq", "hsmtreq", "bidders", "portalids", "translationreq", "comparereq", "translation", "compare", "hsdtreq", "hsdt", "tlktreq", "tlkt", "supplier", "supplierreq", "suppliermatch", "configreq", "configmatch", "findreq", "findmatch", "bidhist"]);
+const READABLE = new Set(["feed", "seen", "manual", "tracked", "deleted", "analysis", "hsmt", "hsmttext", "notice", "analysisreq", "hsmtreq", "bidders", "portalids", "translationreq", "comparereq", "translation", "compare", "hsdtreq", "hsdt", "tlktreq", "tlkt", "supplier", "supplierreq", "suppliermatch", "configreq", "configmatch", "findreq", "findmatch", "bidhist", "bidpricereq", "bidprice"]);
 
 async function docs(coll, id) {
   const out = [];
@@ -39,8 +39,8 @@ export default async function handler(req, res) {
   try {
     // ?kind=all: everything the local bot polls for, in one call (files, analysis, sync).
     if (req.query?.kind === "all") {
-      const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, , find] = await Promise.all([fileReqs(), analysisReqs(), syncReq(), reqsOf("translationreq"), reqsOf("comparereq"), reqsOf("hsdtreq"), reqsOf("tlktreq"), reqsOf("supplierreq"), reqsOf("configreq"), heartbeat(req.query.running), reqsOf("findreq")]);
-      return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find });
+      const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, , find, bidprice] = await Promise.all([fileReqs(), analysisReqs(), syncReq(), reqsOf("translationreq"), reqsOf("comparereq"), reqsOf("hsdtreq"), reqsOf("tlktreq"), reqsOf("supplierreq"), reqsOf("configreq"), heartbeat(req.query.running), reqsOf("findreq"), reqsOf("bidpricereq")]);
+      return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice });
     }
     // ?kind=analysis: tenders whose "Phân tích" button was pressed on the web (analysisreq/<key>).
     if (req.query?.kind === "analysis") return res.json(await analysisReqs());
@@ -52,6 +52,8 @@ export default async function handler(req, res) {
     if (req.query?.kind === "supplier") return res.json(await reqsOf("supplierreq"));
     if (req.query?.kind === "config") return res.json(await reqsOf("configreq"));
     if (req.query?.kind === "find") return res.json(await reqsOf("findreq"));
+    // ?kind=bidprice: "Gợi ý giá đấu" (suppliers/bidprice-bot.mjs, run by config-bot.mjs run).
+    if (req.query?.kind === "bidprice") return res.json(await reqsOf("bidpricereq"));
     // ?kind=sync: the page's Sync button asked the worker to search muasamcong (syncreq/current).
     if (req.query?.kind === "sync") return res.json(await syncReq());
     res.json(await fileReqs());
