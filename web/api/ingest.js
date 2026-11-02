@@ -12,8 +12,10 @@ const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // "Tạo HSDT tham khảo" requests; tlktreq + tlkt: "Đối chiếu TLKT" (a supplier's technical proposal).
 // supplier: the supplier database (suppliers/upload.mjs); supplierreq + suppliermatch: "Gợi ý top 3 nhà cung cấp";
 // configreq + configmatch: "Gợi ý" in the Cấu hình gợi ý tab (suppliers/config-bot.mjs); findreq + findmatch: its "Tìm NCC".
+// bidhist: every "máy phát điện" tender on muasamcong with its bidders, prices and won goods (genbid-sync.js history), for
+// the Nhà thầu screen and Gợi ý giá đấu.
 // synclog: the last scheduled Sync (always posted, so the activity log shows each one ran).
-const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "synclog", "analysisreq", "hsmtreq", "hsmt", "hsmttext", "bidders", "portalids", "translationreq", "comparereq", "hsdtreq", "hsdt", "tlktreq", "tlkt", "supplier", "supplierreq", "suppliermatch", "configreq", "configmatch", "findreq", "findmatch"]);
+const COLLS = new Set(["analysis", "translation", "compare", "feed", "notice", "syncreq", "synclog", "analysisreq", "hsmtreq", "hsmt", "hsmttext", "bidders", "portalids", "translationreq", "comparereq", "hsdtreq", "hsdt", "tlktreq", "tlkt", "supplier", "supplierreq", "suppliermatch", "configreq", "configmatch", "findreq", "findmatch", "bidhist"]);
 const REQS = new Set(["analysisreq", "hsmtreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
