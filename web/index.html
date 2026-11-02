@@ -605,8 +605,27 @@ function allTenders() {
   for (const [id, r] of Object.entries(state.tracked)) if (!map.has(id) && r.tender) map.set(id, { ...r.tender, _key: id });
   // Tenders that left the daily feed (closed) are kept from "seen" so they show under Đã đóng.
   for (const [id, t] of Object.entries(state.seen)) if (!map.has(id)) map.set(id, { ...t, _key: id });
+  // Every generator tender read from muasamcong's history (bidhist), so past tenders sit in their tabs too (Khoa, 2026-11-02).
+  for (const t of histTenders()) if (!map.has(t._key)) map.set(t._key, t);
   // Tenders the user deleted stay hidden, even when the daily feed or a refresh brings them back.
   return [...map.values()].filter((t) => !state.deleted[t._key]);
+}
+// bidhist/<TBMT> in the shape of feed/current, built once per load.
+let histTenderMemo = { src: null, list: [] };
+function histTenders() {
+  if (!state.bidhist) return [];
+  if (histTenderMemo.src !== state.bidhist) histTenderMemo = { src: state.bidhist, list: Object.entries(state.bidhist).filter(([, d]) => isGensetName(d.bidName)).map(([id, d]) => ({
+    notifyNo: d.notifyNo || id, bidName: d.bidName || "", investorName: d.investorName || null, ...(d.procuringEntityName ? { procuringEntityName: d.procuringEntityName } : {}),
+    location: d.location || null, bidForm: d.bidForm, field: d.field || null, isInternet: !!d.isInternet, publicDate: d.publicDate || null, bidCloseDate: d.bidCloseDate || null,
+    bidOpenDate: d.openedAt || null, estimatedPrice: d.estimatedPrice ?? null, status: d.status === "DHTBMT" ? "cancelled" : "closed", sourceUrl: d.url || "", _key: id, _hist: true })) };
+  return histTenderMemo.list;
+}
+// Our own place in a history tender: Đã nộp until the result, then Trúng thầu or Không trúng (as ingest.js markJoined does for bidders/<TBMT>).
+function histStage(key) {
+  const d = state.bidhist?.[key];
+  if (!d) return null;
+  const mine = (d.lots || []).flatMap((l) => l.bidders || []).filter((b) => String(b.taxCode || "").replace(/\D/g, "") === OUR_TAX);
+  return !mine.length ? null : !d.final ? "submitted" : mine.some((b) => b.won) ? "won" : "lost";
 }
 // A notice cancelled on muasamcong (Đã hủy TBMT, status "cancelled" from Sync) counts as closed (Khoa, 2026-11-02).
 const isCancelled = (t) => t.status === "cancelled";
@@ -645,7 +664,7 @@ async function rememberSeen() {
 }
 const findTender = (key) => allTenders().find((t) => t._key === key) || (state.tracked[key]?.tender ? { ...state.tracked[key].tender, _key: key } : null);
 // "Đang đánh giá" was retired; any tender still saved in it counts as Mới.
-const stageOf = (t) => { const s = state.tracked[t._key]?.stage || "new"; return s === "reviewing" ? "new" : s; };
+const stageOf = (t) => { const s = state.tracked[t._key]?.stage || histStage(t._key) || "new"; return s === "reviewing" ? "new" : s; };
 const stripTender = (t) => t ? Object.fromEntries(Object.entries(t).filter(([k]) => !k.startsWith("_"))) : {};
 function analysisOf(key) {
   const a = state.analysis[key];
@@ -824,9 +843,16 @@ function resultLine(t) {
   return h`<div class="src">${parts.join(" · ")}</div>`;
 }
 // Submitted, won and lost tenders always show the price bid, or a button to enter it.
-const bidLabel = (t) => (stageOf(t) === "won" && state.tracked[t._key]?.bidPriceSrc === "KQLCNT" ? "Giá trúng" : "Giá dự thầu");
+// Our bid: entered by hand or set by the worker (tracked), else read from the tender's history on muasamcong.
+function ownBid(key) {
+  const r = state.tracked[key] || {};
+  if (r.bidPrice) return r;
+  const us = histBidders(key)?.list.find((x) => String(x.taxCode || "").replace(/\D/g, "") === OUR_TAX), p = us && (us.priceAfterDiscount ?? us.bidPrice);
+  return p ? { ...r, bidPrice: p, bidPriceSrc: state.bidhist[key].final ? "KQLCNT" : "biên bản mở thầu" } : r;
+}
+const bidLabel = (t) => (stageOf(t) === "won" && ownBid(t._key).bidPriceSrc === "KQLCNT" ? "Giá trúng" : "Giá dự thầu");
 function bidLine(t) {
-  const bp = state.tracked[t._key]?.bidPrice;
+  const bp = ownBid(t._key).bidPrice;
   if (bp) return h`<div class="bpline num">${bidLabel(t)} ${priceShort(bp)}</div>`;
   if (["submitted", "won", "lost"].includes(stageOf(t))) return h`<div class="bpline none">Giá dự thầu: chưa có<button class="btn sm" data-act="bidprice" data-key="${t._key}">Nhập</button></div>`;
   return "";
@@ -923,6 +949,8 @@ async function initDb() {
   subscribe("configreq", "configreq");
   subscribe("findmatch", "findmatch");
   subscribe("findreq", "findreq");
+  // Past generator tenders (bidhist, a few MB): read after the rest, so the open tenders show first.
+  setTimeout(loadHist, 1500);
 }
 
 // ---------- HSMT text ----------
@@ -1255,7 +1283,7 @@ function infoHtml(t) {
     </div>
     <div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
     <dl class="kv">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${v}</dd>`).join(""))}</dl>
-    ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) ? biddersHtml(t) : "")}
+    ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) || state.bidhist?.[t._key] ? biddersHtml(t) : "")}
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp${files.some((f) => f.manual) ? ` (${files.filter((f) => f.manual).length} tải tay)` : " tải từ muasamcong"}${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
@@ -1552,14 +1580,26 @@ setInterval(pollPending, 10e3);
 document.addEventListener("visibilitychange", () => { if (!document.hidden) pollPending(); });
 function ownBidHtml(t) {
   if (!["submitted", "won", "lost"].includes(stageOf(t))) return "";
-  const r = state.tracked[t._key] || {};
+  const r = ownBid(t._key);
   return h`<div class="row"><span class="small" style="flex:1;min-width:200px">${bidLabel(t)} của mình: ${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></div>`;
 }
 // Other bidders and their prices: the Windows worker reads them from the bid-opening minutes and results pages
 // on muasamcong (bidders/<key>, source "muasamcong ...").
 const OUR_RE = /thảo\s*nguyên/i;
+// A history tender's lots as one bidders list (a lot name in the note when there are several).
+function histBidders(key) {
+  const d = state.bidhist?.[key];
+  if (!d?.lots?.length) return null;
+  const multi = d.lots.length > 1;
+  const list = d.lots.flatMap((l) => (l.bidders || []).map((x) => ({ name: x.name, taxCode: x.taxCode, bidPrice: x.bidPrice, priceAfterDiscount: x.finalPrice, won: !!x.won,
+    note: [multi && l.lotName, x.won ? `Trúng thầu${x.winPrice ? ", giá trúng " + Number(x.winPrice).toLocaleString("vi-VN") : ""}` : x.reason && "Không được chọn: " + x.reason,
+      x.won && l.goods?.length && "Hàng chào: " + bdGoods(l.goods)].filter(Boolean).join(" · ") })));
+  const price = (x) => x.priceAfterDiscount ?? x.bidPrice ?? 9e15;
+  list.sort((a, b) => (b.won ? 1 : 0) - (a.won ? 1 : 0) || price(a) - price(b));
+  return { list, source: d.final ? "muasamcong (kết quả lựa chọn nhà thầu)" : "muasamcong (biên bản mở thầu)", at: d.at, final: !!d.final };
+}
 function biddersHtml(t) {
-  const b = state.bidders[t._key], list = b?.list || [], n = t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin;
+  const b = state.bidders[t._key] || histBidders(t._key), list = b?.list || [], n = t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin;
   const num = (v) => (v == null || isNaN(v) ? "" : Number(v).toLocaleString("vi-VN"));
   const body = list.length ? h`<div class="tablewrap"><table class="bdtbl"><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num c-rk">${x.rank ?? i + 1}</td><td><span class="rk">${x.rank ?? i + 1}. </span>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${raw(x.note ? h`<div class="src">${x.note}</div>` : "")}</td><td class="num" data-l="MST">${x.taxCode || ""}</td><td class="num" data-l="Giá dự thầu">${num(x.priceAfterDiscount ?? x.bidPrice)}</td></tr>`).join(""))}</tbody></table></div>
     <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>`
@@ -2895,6 +2935,7 @@ function loadHist() {
       const next = {};
       snap.docs.forEach((d) => { next[d.id] = d.data(); });
       state.bidhist = next; histIdx = null; res();
+      renderAll();
       if ($("#bdBody")) renderBidders();
     }, () => { state.bidhist ||= {}; res(); });
   }));
