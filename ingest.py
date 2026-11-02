@@ -138,6 +138,9 @@ def chunks(text):
 
 def ingest(key):
     d = Path("inbox") / key
+    if not d.exists():
+        print(f"{key}: not in inbox/, skipped")  # files that did not come through a release
+        return
     req = get_doc("hsmtreq", key) or {"notifyNo": key}
     err = d / "error.txt"
     rel = d / "release.json"
