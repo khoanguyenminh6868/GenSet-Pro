@@ -2770,8 +2770,7 @@ async function runTlkt(key) {
   btn.disabled = true;
   try {
     const y = ycktPick?.files.length ? await uploadOrText(key, ycktPick.files, "", out) : { files: [], text: "", uploadError: "" };
-    const p = cfg ? { files: [], text: `--- Cấu hình Kỹ Thuật của Nhà Cung Cấp (nhập tay) ---
-${cfg}`, uploadError: "" } : await uploadOrText(key, tlktPick.files, "", out);
+    const p = cfg ? { files: [], text: `--- Cấu hình Kỹ Thuật của Nhà Cung Cấp (nhập tay) ---\n${cfg}`, uploadError: "" } : await uploadOrText(key, tlktPick.files, "", out);
     out.innerHTML = "";
     await requestWorker("tlktreq", key, { files: p.files, text: p.text, reqFiles: y.files, reqText: y.text, uploadError: [y.uploadError, p.uploadError].filter(Boolean).join("; ") }, "đối chiếu TLKT");
   } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
