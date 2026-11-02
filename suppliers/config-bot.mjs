@@ -327,11 +327,25 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   }
   // The controllers of the rows above that have their maker's datasheet (the HSMT's make first, then the most offered),
   // each line word for word: what a controller check quotes, with factSrc { supplierId, n, line }.
-  const ctlCount = new Map();
-  for (const r of top) for (const c of [...r.rowCtrl, ...r.offers]) if (c.model) ctlCount.set(c.model, (ctlCount.get(c.model) || 0) + (hints.ctrlMakes.includes(c.brand) || hints.ctrlModels.includes(CAT.keyOf(c.model)) ? 100 : 1));
-  const ctls = [...ctlCount].sort((a, b) => b[1] - a[1]).map(([m]) => m).filter((m) => factsFor(facts, "controller", m).length).slice(0, 6);
+  // A controller the HSMT names first, then one a candidate row itself names (that genset comes with it), then one its
+  // supplier offers on another page.
+  const ctlCount = new Map(), bump = (m, v) => ctlCount.set(m, (ctlCount.get(m) || 0) + v);
+  for (const r of top) {
+    const make = (c) => (hints.ctrlMakes.includes(c.brand) ? 5 : 0);
+    for (const c of r.rowCtrl) if (c.model) bump(c.model, 20 + make(c));
+    for (const c of r.offers) if (c.model) bump(c.model, 1 + make(c));
+  }
+  for (const [m] of ctlCount) if (hints.ctrlModels.includes(CAT.keyOf(m))) bump(m, 1000);
+  const hasSheet = (m) => factsFor(facts, "controller", m).length > 0, ctls = [];
+  // Each of the 8 best rows brings every controller with a datasheet that it names or its supplier offers, so the
+  // controllers of the configurations the agent is likely to pick are all there; the most named fill the rest.
+  const MAX_CTL = 12;
+  for (const r of top.slice(0, 8)) for (const c of [...r.rowCtrl, ...r.offers].sort((a, b) => ctlCount.get(b.model) - ctlCount.get(a.model))) {
+    if (c.model && hasSheet(c.model) && !ctls.includes(c.model) && ctls.length < MAX_CTL) ctls.push(c.model);
+  }
+  for (const [m] of [...ctlCount].sort((a, b) => b[1] - a[1])) if (ctls.length < MAX_CTL && !ctls.includes(m) && hasSheet(m)) ctls.push(m);
   // Every line goes to controllers.md (a datasheet runs to 250 lines, a SmartGen manual to 700): the agent searches it
-  // with grep; catalog.md shows the first lines of each.
+  // with grep; catalog.md shows the first 15 lines of each.
   const ctlOut = [];
   if (ctls.length) {
     const head = "Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)";
@@ -349,7 +363,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
         const same = `${k}|${CAT.keyOf(fs[0].version || m)}`;
         if (printed.has(same)) { for (const o of [out, ctlOut]) o.push(`${title}: các dòng như ở mục ${printed.get(same)}`, ""); continue; }
         printed.set(same, m);
-        out.push(title, ...fs.slice(0, 40).map((f) => `- ${f.line}`), fs.length > 40 ? `- … (${fs.length - 40} dòng nữa trong controllers.md)` : "", "");
+        out.push(title, ...fs.slice(0, 15).map((f) => `- ${f.line}`), fs.length > 15 ? `- … (${fs.length - 15} dòng nữa trong controllers.md)` : "", "");
         ctlOut.push(title, ...fs.map((f) => `- ${f.line}`), "");
       }
     }
