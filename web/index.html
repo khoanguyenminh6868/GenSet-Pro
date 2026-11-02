@@ -503,7 +503,7 @@ const local = {
 const state = {
   db: null,
   feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
-  loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false }, seen: {}, list: null,
+  loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
   filters: {},
@@ -952,8 +952,9 @@ async function initDb() {
   subscribe("configreq", "configreq");
   subscribe("findmatch", "findmatch");
   subscribe("findreq", "findreq");
-  // Past generator tenders (bidhist, a few MB): read after the rest, so the open tenders show first.
-  setTimeout(loadHist, 1500);
+  // Past generator tenders (bidhist, a few MB) sit in the tabs too: the list waits for them, so its count does not jump
+  // from the open tenders to every past one after a reload (Khoa, 2026-11-02).
+  loadHist();
 }
 
 // ---------- HSMT text ----------
@@ -993,7 +994,7 @@ function renderTop() {
   else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtBannerDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
   else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
-  const ready = state.loaded.feed && state.loaded.deleted && state.loaded.seen && state.loaded.tracked;
+  const ready = listReady();
   const items = ready ? allTenders() : [], tenders = items.filter((t) => !isProject(t));
   const waiting = tenders.filter((t) => ["queued", "running"].includes(analysisState(t))).length;
   const K = KPIS.map((k) => ({ ...k, n: tenders.filter(k.f).length }));
@@ -1105,10 +1106,11 @@ function passFilters(t) {
   return true;
 }
 const FUNNEL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>';
+// Wait for the deleted, closed (seen) and past (bidhist) lists too, so counts do not jump once they arrive.
+const listReady = () => state.loaded.feed && state.loaded.deleted && state.loaded.seen && state.loaded.tracked && state.loaded.hist;
 function renderGrid() {
   const box = $("#grid");
-  // Wait for the deleted and closed (seen) lists too, so counts do not jump once they arrive.
-  if (!state.loaded.feed || !state.loaded.deleted || !state.loaded.seen || !state.loaded.tracked) { box.innerHTML = `<div class="empty">${progress("Đang tải danh sách gói thầu...")}</div>`; $("#count").textContent = ""; return; }
+  if (!listReady()) { box.innerHTML = `<div class="empty">${progress("Đang tải danh sách gói thầu...")}</div>`; $("#count").textContent = ""; return; }
   const all = allTenders();
   if (!all.length) { box.innerHTML = h`<div class="empty"><b>Chưa có gói thầu nào</b><br>Danh sách được nạp từ muasamcong mỗi sáng. Bấm Refresh để tải lại.</div>`; $("#count").textContent = ""; return; }
   const col = COLS.find((c) => c.k === state.sort.col) || COLS[0];
@@ -2933,14 +2935,14 @@ function comparisonHtml(c) {
 let histLoad = null, histIdx = null;
 function loadHist() {
   return (histLoad ||= new Promise((res) => {
-    if (!state.db) { state.bidhist = {}; res(); return; }
+    if (!state.db) { state.bidhist = {}; state.loaded.hist = true; res(); return; }
     state.db.collection("bidhist").onSnapshot((snap) => {
       const next = {};
       snap.docs.forEach((d) => { next[d.id] = d.data(); });
-      state.bidhist = next; histIdx = null; res();
+      state.bidhist = next; histIdx = null; state.loaded.hist = true; res();
       renderAll();
       if ($("#bdBody")) renderBidders();
-    }, () => { state.bidhist ||= {}; res(); });
+    }, () => { state.bidhist ||= {}; state.loaded.hist = true; res(); renderAll(); });
   }));
 }
 // Power named in a text: "500KVA", "2 x 250 kVA", "160kW" (kW read as kVA at power factor 0.8, only to find similar tenders).
