@@ -1,0 +1,77 @@
+{
+  "id": "scania-engines",
+  "country": "SE",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": "Scania (power generation engines)",
+    "zh": null,
+    "brands": [
+      "Scania"
+    ]
+  },
+  "website": "https://www.scania.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ cho tổ máy phát, các model 250–660 kVA (50/60 Hz) theo trang Power generation",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Scania power generation engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 250,
+        "max": 660,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Dải gộp từ các model liệt kê trên trang (nhỏ nhất 250-330 kVA, lớn nhất 330-660 kVA); chưa có địa chỉ, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.scania.com/group/en/home/products-and-services/engines/power-generation.html",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "Scania power generation systems deliver reliable power",
+        "250-330 kVA (50 Hz)",
+        "330-660 kVA (50 Hz and 60 Hz)"
+      ],
+      "file": "sources/scania-engines/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "agco-power",
+  "country": "FI",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "AGCO Power",
+    "zh": null,
+    "brands": [
+      "AGCO Power"
+    ]
+  },
+  "website": "https://www.agcopower.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel, có ứng dụng máy phát và bơm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "AGCO Power engines (power generators & pumps)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, địa chỉ, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.agcopower.com/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "AGCO Power is renowned for benchmark engines, generators and other power solutions",
+        "Power generators and pumps"
+      ],
+      "file": "sources/agco-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}

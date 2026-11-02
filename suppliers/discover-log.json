@@ -2641,5 +2641,68 @@
   "url": "https://www.stemac.com.br/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "scania-engines",
+  "name": "Scania (power generation engines)",
+  "url": "https://www.scania.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "electra-molins",
+  "name": "Electra Molins",
+  "url": "https://www.electramolins.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "grupel",
+  "name": "GRUPEL",
+  "url": "https://www.grupel.eu/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "agco-power",
+  "name": "AGCO Power",
+  "url": "https://www.agcopower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "wartsila",
+  "name": "Wärtsilä Energy",
+  "url": "https://www.wartsila.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "volvo-penta",
+  "name": "Volvo Penta",
+  "url": "https://www.volvopenta.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "jakson",
+  "name": "Jakson Group",
+  "url": "https://www.jakson.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]
