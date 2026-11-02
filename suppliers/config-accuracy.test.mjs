@@ -152,6 +152,48 @@ test("candidate rows: the engine the HSMT names before the alternator it names; 
   assert.match(top[0].why.join(" "), /Weichai/);
 });
 
+test("candidate rows: every supplier of the engine the HSMT names gets a place; one supplier's pages count once and fill at most 4", () => {
+  const table = (n, rows) => ({ n, title: "Cummins gensets 50Hz", header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows });
+  // "big" lists the named engine on three pages and eight other engines; ten more suppliers have the named engine.
+  const big = { id: "big", country: "CN", confidence: "high", controllers: [{ brand: "Deep Sea", model: "DSE7320", text: "DSE7320", line: "DSE7320", src: [3001] }],
+    specTables: [table(101, ["| U-1 | 275 | 220 | QSZ13-G3 | HCI444ES |"]), table(102, ["| U-1 | 275 | 220 | QSZ13-G3 | HCI444ES |"]), table(103, ["U-1 | 275 | 220 | QSZ13-G3 | HCI444ES"]),
+      table(104, ["NTA855-G1B", "NTA855-G2A", "KTA19-G3", "KTA19-G4", "6LTAA8.9-G2", "6CTAA8.3-G2", "QSL9-G2", "QSL9-G3"].map((e, i) => `| B-${i} | 275 | 220 | ${e} | HCI444ES |`))] };
+  const others = Array.from({ length: 10 }, (_, i) => ({ id: `s${i}`, country: "CN", confidence: "low", specTables: [table(101, [`| S-${i} | 275 | 220 | QSZ13-G3 | UCI274G |`])] }));
+  const list = [big, ...others];
+  const hints = hintsOf("Chương V. Yêu cầu kỹ thuật\nĐộng cơ Cummins QSZ13-G3, tần số 50 Hz");
+  const { top } = candidates(C.build(list), { value: 250, unit: "kVA" }, hints, { suppliers: list });
+  const named = top.filter((r) => r.e.model === "QSZ13-G3");
+  assert.equal(named.length, 8);
+  assert.equal(named.filter((r) => r.u.supplierId === "big").length, 1);
+  assert.equal(top.filter((r) => r.u.supplierId === "big").length, 4);
+  // The rest of the named engine's suppliers are listed under it for the configuration's suppliers.
+  const { md } = catalogMd(C.build(list), { value: 250, unit: "kVA" }, hints, { suppliers: list });
+  const more = md.split("## Nhà cung cấp khác")[1].split("\n## ")[0];
+  assert.equal(new Set(more.match(/supplierId: s\d/g)).size, 3);
+});
+
+test("candidate rows: an engine whose sources name two makes still counts as the make the HSMT names", () => {
+  const t = (title, row) => [{ n: 101, title, header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows: [row] }];
+  const list = [
+    { id: "p", country: "CN", specTables: t("Perkins gensets 50Hz", "| P-1 | 275 | 220 | 1506A-E88TAG3 | HCI444ES |") },
+    { id: "l", country: "CN", specTables: t("Lovol gensets 50Hz", "| L-1 | 275 | 220 | 1506A-E88TAG3 | HCI444ES |") },
+    { id: "w", country: "CN", confidence: "high", specTables: t("Weichai gensets 50Hz", "| W-1 | 275 | 220 | WP10D264E200 | HCI444ES |") },
+  ];
+  const cat = C.build(list);
+  assert.match(cat.engines.find((e) => e.model === "1506A-E88TAG3").make, / \/ /);
+  const { top } = candidates(cat, { value: 250, unit: "kVA" }, hintsOf("Chương V. Yêu cầu kỹ thuật\nĐộng cơ Perkins, 50 Hz"), { suppliers: list });
+  assert.equal(top[0].e.model, "1506A-E88TAG3");
+  assert.match(top[0].why.join(" "), /hãng động cơ Perkins/);
+});
+
+test("a single-model table: '| Alternator | Control system' is two headings, not the alternator model", () => {
+  // aosif n 1048: the datasheet names no alternator.
+  const s = { id: "x", country: "CN", specTables: [{ n: 1048, title: "Datasheet", header: [], rows: ["| Prime Power | 500KVA/400KW", "| Brand | Cummins", "Engine", "| Model | QSZ13-G3",
+    "Alternator specification", "Control system Introduction", "| Alternator | Control system"] }] };
+  const e = C.build([s]).engines.find((x) => x.model === "QSZ13-G3");
+  assert.equal(e.uses[0].other, null);
+});
+
 test("catalog.md lists the candidates and each model's figures with their factSrc, and flags disagreement", () => {
   const { md, shown } = catalogMd(C.build(sups), { value: 250, unit: "kVA" }, hintsOf(hsmt), { suppliers: sups });
   assert.match(md, /## Ứng viên \(2 dòng/);
