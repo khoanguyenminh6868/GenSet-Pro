@@ -2704,5 +2704,68 @@
   "url": "https://www.jakson.com/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "maverick-generators",
+  "name": "Maverick Generators",
+  "url": "https://maverickgenerators.co.za/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "traknus",
+  "name": "PT Traktor Nusantara (Traknus)",
+  "url": "https://www.traknus.co.id/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "conductorjasa",
+  "name": "PT Conductorjasa Suryapersada",
+  "url": "https://conductorjasa.co.id/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "saudi-diesel",
+  "name": "Saudi Diesel Equipment Co (SDEC)",
+  "url": "https://www.saudidiesel.com.sa/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "added",
+  "id": "powgen-argentina",
+  "name": "POWGEN",
+  "url": "https://www.powgen.com.ar/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-02",
+  "result": "skip",
+  "url": "https://jubailibros.com/",
+  "reason": "Jubaili Bros: trang en-sa chỉ có danh mục mở (>= 800 kVA, 220-770kVA), chưa xác minh quốc gia nhà máy"
+ },
+ {
+  "at": "2026-11-02",
+  "result": "skip",
+  "url": "https://cdpower.com.au/",
+  "reason": "CD Power (Úc): website chặn tải trang (HTTP 403, cả bản Chromium); chưa xác minh tự sản xuất"
+ },
+ {
+  "at": "2026-11-02",
+  "result": "skip",
+  "name": "New Way Power (Nam Phi)",
+  "reason": "Chưa tìm được website chính hãng (đoán tên miền không tồn tại)"
  }
 ]

@@ -1,0 +1,64 @@
+{
+  "id": "conductorjasa",
+  "country": "ID",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "PT Conductorjasa Suryapersada",
+  "zh": null,
+  "brands": [
+    "Jerbindo",
+    "Voltragen"
+  ],
+  "web": "https://conductorjasa.co.id/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "© 2026 PT Conductorjasa Suryapersada",
+      "Produk Jerbindo dan Voltragen bersertifikat TKDN dan terdaftar di e-Katalog untuk kebutuhan proyek pemerintah.",
+      "9 – 4125 kVA",
+      "Dipercaya sebagai Original Equipment Manufacturer untuk Cummins G-Drive, DEUTZ, Mitsubishi Heavy Industries, dan Baudouin Power"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy thương hiệu Jerbindo và Voltragen 9–4125 kVA, có chứng nhận tỷ lệ nội địa TKDN",
+      1
+    ],
+    [
+      "Theo hãng: là OEM cho Cummins G-Drive, DEUTZ, Mitsubishi Heavy Industries, Baudouin",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Jerbindo / Voltragen generator sets",
+      "fuel": "diesel",
+      "eng": [
+        "DEUTZ",
+        "Baudouin"
+      ],
+      "p": [
+        9,
+        4125,
+        "kVA",
+        "unspecified",
+        1
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Chưa có địa chỉ, năm thành lập"
+  ],
+  "by": "discover-bot (Claude)"
+}
