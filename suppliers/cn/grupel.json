@@ -1,0 +1,68 @@
+{
+  "id": "grupel",
+  "country": "PT",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "GRUPEL",
+    "zh": null,
+    "brands": [
+      "GRUPEL"
+    ]
+  },
+  "website": "https://www.grupel.eu/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất tổ máy đến 4200 kVA, đèn chiếu sáng di động",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "GRUPEL power generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chỉ ghi mức tối đa (up to 4200kVA), chưa có dải công suất; chưa có địa chỉ, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://grupel.eu/en/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "We produce and sell power generators up to 4200kVA, portable lighting towers and customized energy solutions",
+        "Become a Grupel Distributor"
+      ],
+      "file": "sources/grupel/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}

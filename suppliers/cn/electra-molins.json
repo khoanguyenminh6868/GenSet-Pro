@@ -1,0 +1,77 @@
+{
+  "id": "electra-molins",
+  "country": "ES",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Electra Molins",
+    "zh": null,
+    "brands": [
+      "Electra Molins"
+    ]
+  },
+  "website": "https://www.electramolins.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất tổ máy phát, các dòng từ 30 đến 4000 kVA",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Grupos electrógenos Electra Molins",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 4000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Dải gộp từ các dòng trên trang chủ (de 30 a 350 KVA … de 550 a 4000 KVA); chưa có địa chỉ, năm thành lập, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://electramolins.com/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "Electra Molins es una empresa especializada en la fabricación de grupos electrógenos",
+        "de 30 a 350 KVA",
+        "de 550 a 4000 KVA"
+      ],
+      "file": "sources/electra-molins/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}

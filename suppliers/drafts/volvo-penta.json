@@ -1,0 +1,47 @@
+{
+  "id": "volvo-penta",
+  "country": "SE",
+  "role": "engine_maker",
+  "status": "partial",
+  "conf": "medium",
+  "en": "Volvo Penta",
+  "zh": null,
+  "brands": [
+    "Volvo Penta"
+  ],
+  "web": "https://www.volvopenta.com/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [
+    "volvo-penta-wuxi"
+  ],
+  "src": {
+    "1": [
+      "A",
+      "Volvo Penta’s new natural gas engine is designed to deliver dependable performance"
+    ]
+  },
+  "str": [
+    [
+      "Động cơ cho máy phát (trang Industrial / Power generation), có động cơ khí tự nhiên mới",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "engine",
+      "s": "Volvo Penta power generation engines",
+      "fuel": "diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Trang Power generation không ghi dải công suất; chưa có địa chỉ, năm thành lập"
+  ],
+  "by": "discover-bot (Claude)"
+}

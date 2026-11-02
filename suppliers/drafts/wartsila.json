@@ -1,0 +1,47 @@
+{
+  "id": "wartsila",
+  "country": "FI",
+  "role": "engine_maker",
+  "status": "partial",
+  "conf": "medium",
+  "en": "Wärtsilä Energy",
+  "zh": null,
+  "brands": [
+    "Wärtsilä"
+  ],
+  "web": "https://www.wartsila.com/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "Wärtsilä 31SG gas engine",
+      "Wärtsilä 32 liquid fuel engine",
+      "Wärtsilä 31DF dual fuel engine"
+    ]
+  },
+  "str": [
+    [
+      "Nhà máy điện dùng động cơ: Wärtsilä 31SG (khí), 32 (nhiên liệu lỏng), 31DF (hai nhiên liệu)",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "engine",
+      "s": "Wärtsilä engine power plants (31SG, 32, 31DF)",
+      "fuel": "dual",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Công suất ghi bằng MW nên chưa ghi dải; chưa có địa chỉ, năm thành lập"
+  ],
+  "by": "discover-bot (Claude)"
+}
