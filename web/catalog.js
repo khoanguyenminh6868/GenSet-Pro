@@ -71,12 +71,12 @@
     [/^[A-Z]{0,3}1[1789]\d{1,2}F/i, "Trung Quốc"], [/^[A-Z]{0,3}2V(80|88|92F|95|100)/i, "Trung Quốc"],
   ];
   // Country of each foreign engine make, for Xuất xứ G7 / G20 in Gợi ý cấu hình and the supplier country filter
-  // (Khoa, 2026-11-02). G20 here is its 19 member countries (China included), not the EU.
+  // (Khoa, 2026-11-02). G20 here is its member countries other than China (Khoa: "trừ Trung Quốc"), not the EU.
   const ENGINE_COUNTRY = { Cummins: "US", Perkins: "GB", Baudouin: "FR", Deutz: "DE", "Volvo Penta": "SE", MTU: "DE", Mitsubishi: "JP",
     Doosan: "KR", Hyundai: "KR", Kubota: "JP", Yanmar: "JP", Isuzu: "JP", Scania: "SE", "John Deere": "US", Daewoo: "KR", MWM: "DE",
     Kohler: "US", "Lister Petter": "GB", Honda: "JP", Caterpillar: "US", FPT: "IT", MAN: "DE", "Detroit Diesel": "US" };
   const COUNTRY_GROUP = { g7: ["US", "GB", "DE", "FR", "IT", "JP", "CA"],
-    g20: ["AR", "AU", "BR", "CA", "CN", "FR", "DE", "IN", "ID", "IT", "JP", "MX", "RU", "SA", "ZA", "KR", "TR", "GB", "US"] };
+    g20: ["AR", "AU", "BR", "CA", "FR", "DE", "IN", "ID", "IT", "JP", "MX", "RU", "SA", "ZA", "KR", "TR", "GB", "US"] };
   // "other" (a foreign make), "cn" (only Chinese makes) or null (the sources do not say).
   function engineOrigin(names, model) {
     const m = String(model || "").trim(), foreign = FOREIGN_MODEL.filter(([re]) => re.test(m)).map(([, n]) => n);
