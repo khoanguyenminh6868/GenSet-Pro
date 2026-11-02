@@ -1,0 +1,46 @@
+{
+  "id": "teksan",
+  "country": "TR",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "Teksan",
+  "zh": null,
+  "brands": [
+    "Teksan"
+  ],
+  "web": "https://www.teksan.com/",
+  "prov": null,
+  "city": "Istanbul",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "PK:34791 Sancaktepe / ISTANBUL / TURKEY adresinde kayıtlı Teksan firmasına aittir",
+      "Synchronously operating Teksan Twin Generators offer advantages"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy diesel, có dòng tổ máy đôi Twin chạy hoà đồng bộ",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Teksan diesel generator sets",
+      "fuel": "diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Danh mục ghi nhóm mở (46 - 179 kVA … > 1000 kVA) nên chưa ghi dải công suất; chưa có năm thành lập, chứng chỉ"
+  ],
+  "by": "discover-bot (Claude)"
+}

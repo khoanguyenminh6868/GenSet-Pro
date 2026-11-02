@@ -1,0 +1,87 @@
+{
+  "id": "aksa-power",
+  "country": "TR",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Aksa Power Generation",
+    "zh": null,
+    "brands": [
+      "AKSA"
+    ]
+  },
+  "website": "https://aksa.com.tr/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": 1984,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [
+    "aksa-china"
+  ],
+  "strengths": [
+    {
+      "text": "Tổ máy xăng, diesel, khí 1–3750 kVA; cả tổ máy tàu thuỷ, đèn chiếu sáng di động",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Làm tổ máy đầu tiên năm 1984 (khởi đầu là nhà máy động cơ điện từ 1968)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "AKSA generator sets (gasoline, diesel, natural gas)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có địa chỉ nhà máy, chứng chỉ; năm 1984 là năm làm tổ máy đầu tiên"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://aksa.com.tr/usa/en",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "AKSA manufactured its first generator in 1984",
+        "Today, Aksa Power Generation is one of the leading companies in the industry, producing gasoline, diesel, and natural gas generators ranging from 1 kVA to 3,750 kVA"
+      ],
+      "file": "sources/aksa-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}

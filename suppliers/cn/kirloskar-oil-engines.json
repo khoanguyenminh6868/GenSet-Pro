@@ -1,0 +1,87 @@
+{
+  "id": "kirloskar-oil-engines",
+  "country": "IN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Kirloskar Oil Engines Ltd",
+    "zh": null,
+    "brands": [
+      "Kirloskar",
+      "KOEL"
+    ]
+  },
+  "website": "https://www.kirloskaroilengines.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy dải chuẩn 7.5–3000 kVA (toàn bộ từ 2.8 kW)",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Kirloskar standard genset range",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 7.5,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có địa chỉ, năm thành lập; chưa lưu trang động cơ công nghiệp"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.kirloskaroilengines.com/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "are owned by Kirloskar Proprietary Limited and Kirloskar Oil Engines L"
+      ],
+      "file": "sources/kirloskar-oil-engines/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "At Kirloskar Oil Engines, we deliver high-performance gensets ranging from 2.8 kW to 3000 kVA",
+        "Our standard genset range, from 7.5 kVA to 3000 kVA, is built for dependable performance"
+      ],
+      "file": "sources/kirloskar-oil-engines/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}

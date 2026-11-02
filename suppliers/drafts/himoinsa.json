@@ -1,0 +1,53 @@
+{
+  "id": "himoinsa",
+  "country": "ES",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "HIMOINSA",
+  "zh": null,
+  "brands": [
+    "HIMOINSA"
+  ],
+  "web": "https://www.himoinsa.com/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [
+    "himoinsa-china",
+    "hipower",
+    "yanmar"
+  ],
+  "src": {
+    "1": [
+      "A",
+      "HIMOINSA a Yanmar Company, Generator Sets, Lighting towers"
+    ],
+    "2": [
+      "A",
+      "Our longstanding HI range includes diesel and gas generator sets, with an extended scope of supply and a wide power range up to 3000kVA."
+    ]
+  },
+  "str": [
+    [
+      "Thuộc Yanmar; dòng HI gồm tổ máy diesel và khí đến 3000 kVA",
+      2
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "HI Industrial Range",
+      "fuel": "diesel",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "miss": [
+    "Trang chỉ ghi mức tối đa (up to 3000kVA), chưa có dải công suất; chưa có địa chỉ, năm thành lập"
+  ],
+  "by": "discover-bot (Claude)"
+}
