@@ -910,8 +910,8 @@ async function initDb() {
   subscribe("hsdtreq", "hsdtreq");
   subscribe("tlkt", "tlkt", () => setTimeout(checkAutoPdf, 0));
   subscribe("tlktreq", "tlktreq");
-  subscribe("supplier", "supplier", () => setTimeout(renderSuppliers, 0));
-  subscribe("supdeleted", "supdeleted", () => setTimeout(renderSuppliers, 0));
+  subscribe("supplier", "supplier", () => setTimeout(supChanged, 0));
+  subscribe("supdeleted", "supdeleted", () => setTimeout(supChanged, 0));
   subscribe("suppliermatch", "suppliermatch");
   subscribe("supplierreq", "supplierreq");
   subscribe("configmatch", "configmatch");
@@ -2125,8 +2125,15 @@ let supOpenId = null;
 const listScroll = { sup: 0, cat: 0 };
 const mScroll = () => $("#mdl .mscroll") || $("#mdl");
 const MB_ICON = { sup: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 21h18\"/><path d=\"M4 21V11l5 3v-3l5 3V5h5v16\"/><path d=\"M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1\"/></svg>", cat: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 4h6M12 4v3\"/><path d=\"M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z\"/><path d=\"M1 11v4\"/></svg>" };
-const mBanner = (icon, title, tag, tid = "") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
-  <a class="home" href="/" title="Về trang chủ"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a><button class="btn sm" data-close>Đóng</button></header>`;
+// Each screen has its own URL (Khoa, 2026-11-02): /#nha-cung-cap, /#dong-co, /#dau-phat, /#bo-dieu-khien; its logo links there.
+const SCREEN_HASH = { sup: "nha-cung-cap", engine: "dong-co", alternator: "dau-phat", controller: "bo-dieu-khien" };
+const screenOfUrl = () => Object.keys(SCREEN_HASH).find((k) => location.hash === "#" + SCREEN_HASH[k]);
+const setScreenUrl = (k) => { try { history.replaceState(null, "", k ? "#" + SCREEN_HASH[k] : location.pathname + location.search); } catch {} };
+function openScreenFromUrl() { const k = screenOfUrl(); if (k === "sup") openSuppliers(); else if (k) openCatalog(k); }
+window.addEventListener("hashchange", openScreenFromUrl);
+const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); };
+const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
+  <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a><button class="btn sm" data-close>Đóng</button></header>`;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
 function supLinesFor(s, f = supFilter) {
   const v = Number(String(f.power).replace(",", "."));
@@ -2170,7 +2177,8 @@ const filtNote = (id, n, total) => { if ($(`#${id}N`)) $(`#${id}N`).textContent 
 function openSuppliers(id) {
   supOpenId = id || null;
   filtOpen = false;
-  modal(mBanner("sup", "Nhà cung cấp", "Mỗi thông tin đều có nguồn kèm theo") + '<div id="supBody"></div>', () => renderSuppliers(), "wide pane");
+  modal(mBanner("sup", "Nhà cung cấp", "Mỗi thông tin đều có nguồn kèm theo", "", "#" + SCREEN_HASH.sup) + '<div id="supBody"></div>', () => renderSuppliers(), "wide pane");
+  setScreenUrl("sup");
 }
 function renderSuppliers() {
   const body = $("#supBody");
@@ -2383,7 +2391,7 @@ const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${
 function openCatalog(kind, key) {
   filtOpen = false;
   catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}) };
-  modal(mBanner("cat", CAT_KIND[kind].title, "Rút từ bảng thông số của các nhà cung cấp", "catTitle") + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
+  modal(mBanner("cat", CAT_KIND[kind].title, "Rút từ bảng thông số của các nhà cung cấp", "catTitle", "#" + SCREEN_HASH[kind]) + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
 }
 function catMatches(e, f = catView) {
   const q = f.q.trim().toLowerCase();
@@ -2400,6 +2408,8 @@ function renderCatalog() {
   if (!body) return;
   const cat = catalog(), K = CAT_KIND[catView.kind], all = cat[K.list];
   if ($("#catTitle")) $("#catTitle").textContent = K.title;
+  $("#mdl a.home")?.setAttribute("href", "#" + SCREEN_HASH[catView.kind]);
+  setScreenUrl(catView.kind);
   if (catView.open) { const e = all.find((x) => x.key === catView.open); if (e) { body.innerHTML = h`<div class="mscroll">${raw(catDetailHtml(e))}</div>`; return; } catView.open = null; }
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu ${K.one}: danh mục được rút từ bảng thông số của các nhà cung cấp.</div>`; return; }
   const makes = Object.entries(all.reduce((m, e) => { for (const k of (e.make || "—").split(" / ")) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => (a[0] === "—") - (b[0] === "—") || b[1] - a[1]);
@@ -2843,8 +2853,9 @@ function comparisonHtml(c) {
 
 // ---------- Modal ----------
 function modal(html, onMount, cls = "") {
+  if (screenOfUrl()) setScreenUrl();
   const ov = $("#ov"); $("#mdl").className = "modal " + cls; $("#mdl").innerHTML = html; ov.hidden = false;
-  const close = () => { ov.hidden = true; $("#mdl").innerHTML = ""; };
+  const close = () => { ov.hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); };
   ov.onclick = (e) => { if (e.target === ov || e.target.closest("[data-close]")) close(); };
   onMount?.($("#mdl"), close);
 }
@@ -2881,6 +2892,8 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
   if (e.target.closest("#syncNewBtn")) { syncNew(); return; }
   if (e.target.closest("#supBtn")) { openSuppliers(); return; }
+  const home = e.target.closest("#mdl a.home");
+  if (home) { e.preventDefault(); setScreenUrl(Object.keys(SCREEN_HASH).find((k) => home.getAttribute("href") === "#" + SCREEN_HASH[k])); openScreenFromUrl(); return; }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
   if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); mScroll().scrollTop = listScroll.sup; return; }
   if (e.target.closest("tr[data-supopen] a[href]")) return; // e-mail / phone link in a list row: no detail
@@ -3067,6 +3080,7 @@ setInterval(() => {
 renderAll();
 setInterval(() => { renderTop(); renderGrid(); }, 60000);
 initDb();
+openScreenFromUrl();
 })();
 </script>
 

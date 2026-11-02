@@ -19,6 +19,7 @@ Dữ liệu cho trang "Nhà cung cấp", danh mục "Động cơ" / "Đầu phá
 - `merge-specs.mjs [id ...]`: gộp bảng (cả `datasheets/`) vào bản ghi thành `specTables` (mỗi dòng model chép nguyên văn), bỏ bảng trùng, bảng ngôn ngữ khác, bảng không phải máy phát (động cơ điện, biến áp, bơm...). Không chạy song song với crawl.
 - `verify.mjs`: kiểm tra bằng code: mỗi câu trích phải có nguyên văn trong file nguồn, số min/max công suất phải có trong câu trích, mỗi `src` trỏ tới nguồn có thật.
 - `upload.mjs [--dry]`: chạy kiểm tra rồi đăng lên web thành `supplier/<id>` (qua `/api/ingest`). Bản ghi `incomplete` không đăng.
+  Nhà cung cấp bị xoá trên web được ghi vào `supdeleted/<id>`: web ẩn nó, và `/api/requests?kind=docs&coll=supplier` (bot đọc từ đây) bỏ nó ra. Tệp trong `cn/` giữ nguyên.
 
 Không thu thập nhà phân phối tại Việt Nam (Khoa, 2026-10-28).
 

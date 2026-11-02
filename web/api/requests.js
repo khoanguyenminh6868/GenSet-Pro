@@ -30,7 +30,9 @@ export default async function handler(req, res) {
     const coll = String(req.query.coll || "");
     if (!READABLE.has(coll)) return res.status(400).json({ error: "coll" });
     try {
-      const rows = await docs(coll, req.query.id ? String(req.query.id) : "");
+      let rows = await docs(coll, req.query.id ? String(req.query.id) : "");
+      // A supplier deleted on the web (supdeleted/<id>) is skipped by every bot too (Khoa, 2026-11-02).
+      if (coll === "supplier") { const gone = new Set((await docs("supdeleted")).map((d) => d.id)); rows = rows.filter((d) => !gone.has(d.id)); }
       return res.json(coll === "tracked" ? rows.map((d) => ({ id: d.id, data: Object.fromEntries(Object.entries(d.data || {}).filter(([k]) => !["note", "bidPrice"].includes(k))) })) : rows);
     } catch (e) { return res.status(502).json({ error: e.message }); }
   }
