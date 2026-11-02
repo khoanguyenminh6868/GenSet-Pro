@@ -1,0 +1,53 @@
+{
+  "id": "maverick-generators",
+  "country": "ZA",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "Maverick Generators",
+  "zh": null,
+  "brands": [
+    "Maverick"
+  ],
+  "web": "https://maverickgenerators.co.za/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "Generators is a leading South African manufacturer of diesel generators from 30kVA to 2500kVA, synchronized plants up to 20MVA",
+      "© 2018 Maverick Generators"
+    ]
+  },
+  "str": [
+    [
+      "Sản xuất tổ máy diesel 30–2500 kVA, trạm hoà đồng bộ đến 20 MVA, tủ ATS/hoà lưới",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Maverick diesel generators",
+      "fuel": "diesel",
+      "p": [
+        30,
+        2500,
+        "kVA",
+        "unspecified",
+        1
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Chưa có địa chỉ, năm thành lập, chứng chỉ"
+  ],
+  "by": "discover-bot (Claude)"
+}

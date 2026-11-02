@@ -1,0 +1,57 @@
+{
+  "id": "traknus",
+  "country": "ID",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "PT Traktor Nusantara (Traknus)",
+  "zh": null,
+  "brands": [
+    "Traknus"
+  ],
+  "web": "https://www.traknus.co.id/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "Engine Distributor in Indonesia and also fabricating Generator Set (Genset) since 1976",
+      "Open Type ( 9 – 1000 kVA) - Perkins Engine with Traknus Alternator",
+      "Copyright © 2024, traknus"
+    ]
+  },
+  "str": [
+    [
+      "Lắp ráp tổ máy từ 1976; dòng S-Series 9–1000 kVA dùng động cơ Perkins và đầu phát Traknus",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Traknus S-Series",
+      "fuel": "diesel",
+      "eng": [
+        "Perkins"
+      ],
+      "p": [
+        9,
+        1000,
+        "kVA",
+        "unspecified",
+        1
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Chưa có địa chỉ, chứng chỉ; Traknus đồng thời là nhà phân phối động cơ Perkins (trang chưa ghi đủ câu)"
+  ],
+  "by": "discover-bot (Claude)"
+}

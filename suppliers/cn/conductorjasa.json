@@ -1,0 +1,88 @@
+{
+  "id": "conductorjasa",
+  "country": "ID",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "PT Conductorjasa Suryapersada",
+    "zh": null,
+    "brands": [
+      "Jerbindo",
+      "Voltragen"
+    ]
+  },
+  "website": "https://conductorjasa.co.id/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy thương hiệu Jerbindo và Voltragen 9–4125 kVA, có chứng nhận tỷ lệ nội địa TKDN",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: là OEM cho Cummins G-Drive, DEUTZ, Mitsubishi Heavy Industries, Baudouin",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Jerbindo / Voltragen generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "DEUTZ",
+        "Baudouin"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 9,
+        "max": 4125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có địa chỉ, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://conductorjasa.co.id/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "© 2026 PT Conductorjasa Suryapersada",
+        "Produk Jerbindo dan Voltragen bersertifikat TKDN dan terdaftar di e-Katalog untuk kebutuhan proyek pemerintah.",
+        "9 – 4125 kVA",
+        "Dipercaya sebagai Original Equipment Manufacturer untuk Cummins G-Drive, DEUTZ, Mitsubishi Heavy Industries, dan Baudouin Power"
+      ],
+      "file": "sources/conductorjasa/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)"
+}
