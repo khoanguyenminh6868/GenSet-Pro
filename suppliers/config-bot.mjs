@@ -565,36 +565,34 @@ export async function findCheck(dir, suppliers, cap) {
   return out;
 }
 // Suppliers Tìm NCC added go into the suggested configurations in code, with no agent and no tokens (Khoa,
-// 2026-11-01). From their own table rows (web/catalog.js), for engines of the origin asked for and rows whose smallest
-// rating is 100% to 140% of the tender's power: a row naming the engine of a configuration already suggested adds the supplier to it;
-// another engine becomes a new configuration, marked fromFind, whose only check is the power read from that row and
-// left "unclear", since nothing else of the HSMT was compared with it. Every model and line is the row word for word.
+// 2026-11-01). Each supplier found becomes a configuration of its own whose only supplier is that one (Khoa,
+// 2026-11-02), marked fromFind: its table row (web/catalog.js) for an engine of the origin asked for whose smallest
+// rating is 100% to 140% of the tender's power, the closest one. Its only check is the power read from that row, left
+// "unclear", since nothing else of the HSMT was compared with it. Every model and line is the row word for word.
 const powerText = (p) => Object.entries(p || {}).map(([k, v]) => `${{ prime: "Prime", standby: "Standby", rated: "Định mức" }[k] || k} ${[v.kVA && `${v.kVA} kVA`, v.kW && `${v.kW} kW`].filter(Boolean).join(" / ")}`).join(", ");
 export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
   const ids = new Set(records.map((r) => r.id)), keyOf = CAT.keyOf;
   // The row's smallest rating (prime when it gives both) is at least the tender's power, and not past 140% of it.
   const near = (u) => !cap || (rowPower(u, cap) >= cap.value && rowPower(u, cap) <= cap.value * 1.4);
   const lineOf = (u, model) => u.line || (u.lines?.rows || []).find((l) => keyOf(l).includes(keyOf(model))) || null;
-  const configs = result.configs || (result.configs = []), out = { joined: [], created: [] };
-  const o = originOfReq(origin), cn = cnSuppliers(records);
+  const configs = result.configs || (result.configs = []), out = { created: [] };
+  const o = originOfReq(origin), cn = cnSuppliers(records), best = new Map();
   for (const e of byOrigin(CAT.build(records).engines, o, cn)) {
     // Under "cn" a foreign engine comes only with the suppliers based in China that offer it.
     const viaCn = o === "cn" && CAT.originOf(e) === "other";
-    const uses = e.uses.filter((u) => ids.has(u.supplierId) && near(u) && lineOf(u, e.model) && (!viaCn || cn.has(u.supplierId)))
-      .sort((a, b) => (cap ? Math.abs(rowPower(a, cap) - cap.value) - Math.abs(rowPower(b, cap) - cap.value) : 0));
-    if (!uses.length) continue;
-    // The controllers the supplier's pages name (controllers.mjs) are said too, as recorded.
-    const ctrlOf = (id) => [...new Set((records.find((r) => r.id === id)?.controllers || []).filter((c) => c.model).map((c) => c.model))];
-    const entry = (u) => ({ supplierId: u.supplierId, n: u.n, line: lineOf(u, e.model), fromFind: true, why: `Bổ sung từ Tìm NCC: dòng bảng của nhà cung cấp ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.${ctrlOf(u.supplierId).length ? ` Bộ điều khiển trên trang của nhà cung cấp: ${ctrlOf(u.supplierId).join(", ")}.` : ""}` });
-    const old = configs.find((c) => c.engine?.model && keyOf(c.engine.model) === e.key);
-    if (old) {
-      old.suppliers = old.suppliers || [];
-      for (const u of uses) if (!old.suppliers.some((s) => s.supplierId === u.supplierId)) { old.suppliers.push(entry(u)); out.joined.push({ rank: old.rank, supplierId: u.supplierId }); }
-      continue;
+    for (const u of e.uses) {
+      if (!ids.has(u.supplierId) || !near(u) || !lineOf(u, e.model) || (viaCn && !cn.has(u.supplierId))) continue;
+      const d = cap ? Math.abs(rowPower(u, cap) - cap.value) : 0, b = best.get(u.supplierId);
+      if (!b || d < b.d) best.set(u.supplierId, { e, u, d });
     }
-    if (out.created.length >= max) continue;
-    const u = uses[0], line = lineOf(u, e.model), src = { kind: "catalog", supplierId: u.supplierId, n: u.n, line };
-    const sups = []; for (const x of uses) if (!sups.some((s) => s.supplierId === x.supplierId)) sups.push(entry(x));
+  }
+  for (const r of records) {
+    const b = best.get(r.id);
+    // A second run adds nothing twice.
+    if (!b || out.created.length >= max || configs.some((c) => c.fromFind && c.suppliers?.some((s) => s.supplierId === r.id))) continue;
+    const { e, u } = b, line = lineOf(u, e.model), src = { kind: "catalog", supplierId: u.supplierId, n: u.n, line };
+    // The controllers the supplier's pages name (controllers.mjs) are said too, as recorded.
+    const ctrls = [...new Set((r.controllers || []).filter((c) => c.model).map((c) => c.model))];
     const c = {
       rank: Math.max(0, ...configs.map((x) => x.rank || 0)) + 1, fromFind: true,
       engine: { model: e.model, ...(e.make ? { make: e.make } : {}), src },
@@ -603,7 +601,7 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
       ...((ctl) => (ctl ? { controller: { model: ctl.model, make: ctl.brand, src } } : {}))(CAT.controllersIn(line).find((x) => x.model)),
       checks: [{ item: "Công suất", part: "genset", requirement: cap ? `khoảng ${cap.value} ${cap.unit}` : "", offered: powerText(u.power) || "—", sourceQuote: line, status: "unclear",
         note: "Bổ sung tự động từ Tìm NCC, không dùng AI: công suất nhỏ nhất ghi trong dòng bảng từ 100% đến 140% công suất của gói. Các yêu cầu khác của HSMT chưa được đối chiếu (bấm Gợi ý lại nếu cần)." }],
-      suppliers: sups.slice(0, 3),
+      suppliers: [{ supplierId: u.supplierId, n: u.n, line, fromFind: true, why: `Nhà cung cấp mới tìm được (Tìm NCC): dòng bảng ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.${ctrls.length ? ` Bộ điều khiển trên trang của nhà cung cấp: ${ctrls.join(", ")}.` : ""}` }],
       gaps: ["Cấu hình bổ sung từ Tìm NCC: chưa đối chiếu từng yêu cầu kỹ thuật của HSMT.", ...(result.extra ? [`Chưa đối chiếu Yêu cầu khác: ${result.extra}`] : [])],
     };
     configs.push(c);
@@ -616,12 +614,12 @@ async function mergeFindIntoConfig(key, records, { cap, origin }) {
   const prev = await doc("configmatch", key);
   if (!prev?.result) return null;
   const result = JSON.parse(JSON.stringify(prev.result)), out = mergeFind(result, records, { cap, origin: result.origin || origin });
-  if (!out.joined.length && !out.created.length) return out;
-  result.notes = [...(result.notes || []), `Tìm NCC lúc ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC: ${out.joined.length ? `gắn ${out.joined.length} nhà cung cấp vào cấu hình có sẵn` : ""}${out.joined.length && out.created.length ? ", " : ""}${out.created.length ? `thêm ${out.created.length} cấu hình mới (chưa đối chiếu đủ HSMT)` : ""}, bằng code từ dòng bảng của nhà cung cấp.`];
+  if (!out.created.length) return out;
+  result.notes = [...(result.notes || []), `Tìm NCC lúc ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC: thêm ${out.created.length} cấu hình mới, mỗi cấu hình một nhà cung cấp vừa tìm được (chưa đối chiếu đủ HSMT), bằng code từ dòng bảng của nhà cung cấp.`];
   await post([{ coll: "configmatch", id: key, data: { ...prev, at: new Date().toISOString(), result } }]);
   return out;
 }
-const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.joined.length && !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : [m.joined.length && `gắn ${m.joined.length} nhà cung cấp vào cấu hình có sẵn`, m.created.length && `thêm ${m.created.length} cấu hình mới`].filter(Boolean).join(", "));
+const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : `thêm ${m.created.length} cấu hình mới, mỗi cấu hình một nhà cung cấp vừa tìm được (${m.created.map((c) => c.supplierId).join(", ")})`);
 
 async function find(req, suppliers) {
   const key = req.key, tried = [];
