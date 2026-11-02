@@ -137,6 +137,9 @@ test("Xuất xứ Trung Quốc drops a foreign engine, Khác keeps only foreign 
   assert.ok(cn.problems.some((p) => p.includes("không phải hãng Trung Quốc")));
   assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "other" }).result.configs.length, 1);
   assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "all" }).result.configs.length, 1);
+  // Perkins is British: kept under G7 and G20.
+  assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "g7" }).result.configs.length, 1);
+  assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "g20" }).result.configs.length, 1);
 });
 
 test("engines are split by origin from their make or model code", () => {
@@ -201,4 +204,14 @@ test("mergeFind adds a supplier's rows to the suggested configurations", () => {
   assert.equal(result.configs[0].suppliers[1].line, "| W-3 | 330 | 264 | 300 | 240 | WP12D317E200");
   // A second run adds nothing twice.
   assert.deepEqual(mergeFind(result, [rec], { cap: { value: 250, unit: "kVA" }, origin: "cn" }).joined, []);
+});
+test("G7 / G20 origin keeps engines whose make is from a country of the group", () => {
+  const C = globalThis.GenbidCatalog;
+  const list = [{ model: "WP13D440E310", makes: [{ name: "Weichai" }] }, { model: "6BTA5.9-G2", makes: [] }, { model: "TAD1641GE", makes: [{ name: "Volvo Penta" }] },
+    { model: "DP158LC", makes: [{ name: "Doosan" }] }, { model: "ZCDL-K500", makes: [] }];
+  assert.deepEqual(byOrigin(list, "g7").map((e) => e.model), ["6BTA5.9-G2"]);
+  assert.deepEqual(byOrigin(list, "g20").map((e) => e.model), ["WP13D440E310", "6BTA5.9-G2", "DP158LC"]);
+  assert.equal(C.groupIn("Perkins", "1106A-70TG1", "g7"), true);
+  assert.equal(C.groupIn("Volvo Penta", "TAD1641GE", "g20"), false);
+  for (const n of C.FOREIGN_ENGINE) assert.ok(C.ENGINE_COUNTRY[n], n);
 });
