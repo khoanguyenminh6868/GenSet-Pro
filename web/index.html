@@ -257,10 +257,10 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
 /* Supplier / catalog window: small banner on top, the filters and the table header stay put, only the rows scroll (Khoa, 2026-11-01). */
 .modal.pane{height:calc(100vh - 32px);height:calc(100dvh - 32px);overflow:hidden}
-#supBody,#catBody{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}
+#supBody,#catBody,#bdBody{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}
 .mscroll{flex:1;min-height:0;overflow:auto}
-:is(#supList,#catList)>.tablewrap{overflow:visible}
-:is(#supList,#catList) thead th{position:sticky;top:0;z-index:1;background:var(--panel2);box-shadow:inset 0 -1px var(--line)}
+:is(#supList,#catList,#bdList)>.tablewrap{overflow:visible}
+:is(#supList,#catList,#bdList) thead th{position:sticky;top:0;z-index:1;background:var(--panel2);box-shadow:inset 0 -1px var(--line)}
 .mbanner{padding:10px 14px;gap:12px;flex-wrap:nowrap;flex:none}
 .mbanner .mark{width:36px;height:36px;border-radius:10px}.mbanner .mark svg{width:20px;height:20px}
 .mbanner h2{margin:0;font-size:18px}.mbanner h2 span{color:var(--violet)}
@@ -268,6 +268,10 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .hlname{color:var(--green)}
 /* Supplier list columns: Năm thành lập and Độ tin cậy narrow, Vai trò and Động cơ wider (Khoa, 2026-11-01). */
 table.supmain{table-layout:fixed}table.supmain th{white-space:normal}table.supmain th:nth-child(1){width:23%}table.supmain th:nth-child(2){width:17%}table.supmain th:nth-child(3){width:8%}table.supmain th:nth-child(4){width:21%}table.supmain th:nth-child(5){width:20%}table.supmain th:nth-child(6){width:11%}table.supmain td{overflow-wrap:anywhere}table.supmain .chip{white-space:normal}
+/* Nhà thầu: list rows open the bidder; our company stands out. */
+table.bdmain tbody tr{cursor:pointer}table.bdmain tbody tr:hover{background:var(--panel2)}table.bdmain tr.us,table.bdrows tr.us{background:var(--cyan-soft)}
+table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:right;white-space:nowrap}
+@media (max-width:640px){table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:left}}
 @media (max-width:640px){.mbanner .tag{display:none}.mbanner h2{font-size:16px}.mbanner .mark{width:30px;height:30px}}
 /* Phone: the search and filter rows fold behind one button, tap to open (Khoa, 2026-11-02). */
 .filtrows{display:flex;flex-direction:column;gap:10px}.filttg{display:none}.filttg .chev{transition:transform .15s}.filttg[aria-expanded="true"] .chev{transform:rotate(180deg)}
@@ -367,7 +371,7 @@ details.sec>div{margin-top:10px}
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="syncNewBtn" aria-label="Chỉ lấy gói mới" title="Chỉ lấy các gói mới nhất từ muasamcong (so với gói mới nhất trong hệ thống), không kiểm tra hay cập nhật gói cũ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" data-catopen="engine" title="Danh mục động cơ, đầu phát, bộ điều khiển rút từ dữ liệu của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Động cơ</button></div>
+        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" id="bdBtn" title="Các nhà thầu gói máy phát điện trên muasamcong: gói đã dự, giá dự thầu, trúng hay không"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.7.8 2.7 2.6 3 5.2"/></svg>Nhà thầu</button><button class="btn sm" data-catopen="engine" title="Danh mục động cơ, đầu phát, bộ điều khiển rút từ dữ liệu của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Động cơ</button></div>
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
   </header>
@@ -1888,13 +1892,13 @@ async function translationPdf(key) {
 function hsdtTabHtml(t) {
   const prev = state.hsdt[t._key];
   const has = state.hsmt[t._key]?.files?.length || analysisOf(t._key)?.result;
-  if (!has) return h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
+  if (!has) return bidSuggestBox(t) + h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
   const hsWait = workerReqPending("hsdtreq", t._key) ? waitHtml("Đang chờ Agent soạn HSDT tham khảo...", state.hsdtreq[t._key].requestedAt) : "";
   const hsErr = !hsWait && workerReqError("hsdtreq", t._key);
   // Both files are optional (Khoa, 2026-11-01): a template makes the bid follow its layout, a supplier's configuration
   // fills the offered equipment; without them the bid is drafted from the HSMT alone.
   const basis = [prev?.basis?.template?.length && "theo template " + prev.basis.template.join(", "), prev?.basis?.config?.length && "cấu hình NCC " + prev.basis.config.join(", ")].filter(Boolean).join(" · ");
-  return hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="drop" id="hpDrop">
+  return bidSuggestBox(t) + hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="drop" id="hpDrop">
       <div class="row"><span class="muted small" style="flex:1"><b>Template HSDT</b> (không bắt buộc). Khi có, hồ sơ soạn theo bố cục, lời văn và bảng của mẫu này.</span><label class="btn sm" for="hpFiles">Chọn tệp</label></div>
       <input type="file" id="hpFiles" multiple accept=".docx,.pdf,.xlsx,.txt,.md,.csv" hidden>
       <div class="files" id="hpList"></div>
@@ -1943,7 +1947,7 @@ function saveHsEdit(key, path, text) {
 // The Windows bot drafts it (hsdt-prompt.md).
 // The template and the supplier's configuration, when chosen, go to the scratch bucket (hsdt/<key>/) like an HSDT.
 let tplPick = null, cfgPick = null;
-function mountHsdt() { tplPick = filePicker("hpFiles", "hpDrop", "hpList"); cfgPick = filePicker("hcFiles", "hcDrop", "hcList"); }
+function mountHsdt() { if (!$("#hpFiles")) return; tplPick = filePicker("hpFiles", "hpDrop", "hpList"); cfgPick = filePicker("hcFiles", "hcDrop", "hcList"); }
 async function runHsdt(key) {
   const btn = $("#hsRun"), up = $("#hsUp");
   const none = { files: [], text: "", uploadError: "" };
@@ -2131,12 +2135,12 @@ let supOpenId = null;
 // Where the supplier / catalog list was scrolled when a detail opened, so "← Danh sách" comes back to the same row (Khoa, 2026-10-29).
 const listScroll = { sup: 0, cat: 0 };
 const mScroll = () => $("#mdl .mscroll") || $("#mdl");
-const MB_ICON = { sup: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 21h18\"/><path d=\"M4 21V11l5 3v-3l5 3V5h5v16\"/><path d=\"M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1\"/></svg>", cat: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 4h6M12 4v3\"/><path d=\"M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z\"/><path d=\"M1 11v4\"/></svg>" };
+const MB_ICON = { bd: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5\"/><path d=\"M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.7.8 2.7 2.6 3 5.2\"/></svg>", sup: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 21h18\"/><path d=\"M4 21V11l5 3v-3l5 3V5h5v16\"/><path d=\"M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1\"/></svg>", cat: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 4h6M12 4v3\"/><path d=\"M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z\"/><path d=\"M1 11v4\"/></svg>" };
 // Each screen has its own URL (Khoa, 2026-11-02): /#nha-cung-cap, /#dong-co, /#dau-phat, /#bo-dieu-khien; its logo links there.
-const SCREEN_HASH = { sup: "nha-cung-cap", engine: "dong-co", alternator: "dau-phat", controller: "bo-dieu-khien" };
+const SCREEN_HASH = { sup: "nha-cung-cap", engine: "dong-co", alternator: "dau-phat", controller: "bo-dieu-khien", bd: "nha-thau" };
 const screenOfUrl = () => Object.keys(SCREEN_HASH).find((k) => location.hash === "#" + SCREEN_HASH[k]);
 const setScreenUrl = (k) => { try { history.replaceState(null, "", k ? "#" + SCREEN_HASH[k] : location.pathname + location.search); } catch {} };
-function openScreenFromUrl() { const k = screenOfUrl(); if (k === "sup") openSuppliers(); else if (k) openCatalog(k); }
+function openScreenFromUrl() { const k = screenOfUrl(); if (k === "sup") openSuppliers(); else if (k === "bd") openBidders(); else if (k) openCatalog(k); }
 window.addEventListener("hashchange", openScreenFromUrl);
 const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
@@ -2878,6 +2882,244 @@ function comparisonHtml(c) {
 }
 
 
+// ---------- Nhà thầu: bidders' history, and Gợi ý giá đấu (Khoa, 2026-11-02) ----------
+// bidhist/<TBMT>: every "máy phát điện" tender on muasamcong that was opened, with each lot's price, every bidder's bid,
+// result and reason, and the won goods (Windows bot, genbid-sync.js history). Read only when the Nhà thầu screen or
+// Gợi ý giá đấu needs it. Tenders of our own list read before (bidders/<TBMT>) count too when the history lacks them.
+let histLoad = null, histIdx = null;
+function loadHist() {
+  return (histLoad ||= new Promise((res) => {
+    if (!state.db) { state.bidhist = {}; res(); return; }
+    state.db.collection("bidhist").onSnapshot((snap) => {
+      const next = {};
+      snap.docs.forEach((d) => { next[d.id] = d.data(); });
+      state.bidhist = next; histIdx = null; res();
+      if ($("#bdBody")) renderBidders();
+    }, () => { state.bidhist ||= {}; res(); });
+  }));
+}
+// Power named in a text: "500KVA", "2 x 250 kVA", "160kW" (kW read as kVA at power factor 0.8, only to find similar tenders).
+function kvaOf(text) {
+  const m = String(text || "").normalize("NFC").match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/i);
+  if (!m) return null;
+  const v = Number(m[1].replace(/\.(?=\d{3}\b)/, "").replace(",", "."));
+  return v > 0 ? (/kw/i.test(m[2]) ? v / 0.8 : v) : null;
+}
+// Same name rules as the bot (genbid-sync.js isGenset): a power plant's own generator is not a generator set.
+const GENSET_RE = /m[áa]y\s*ph[áa]t\s*(đi[ệe]n|di[eê]s[eê]l|di[eê]zen|dự\s*phòng)|m[áa]y\s*ph[áa]t[^,;:]{0,30}\d+\s*k[vV]?[aA]\b|\bgenset\b|\bmp[đd]\b/i;
+const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|di[eê]s[eê]l|di[eê]zen|\d\s*kva\b/i;
+const isGensetName = (n) => { n = String(n || "").normalize("NFC"); return GENSET_RE.test(n) && (!PLANT_RE.test(n) || SET_RE.test(n)); };
+// Repair, upkeep, rental, parts and studies are priced differently from supplying a generator set.
+const SVC_RE = /sửa\s*chữa|bảo\s*dưỡng|bảo\s*trì|đại\s*tu|thuê|phụ\s*tùng|vật\s*tư|chổi\s*than|thí\s*nghiệm|kiểm\s*định|tư\s*vấn|dầu\s*(nhớt|bôi\s*trơn)/i;
+const bidKind = (n) => (SVC_RE.test(String(n || "").normalize("NFC")) ? "svc" : "supply");
+const taxKey = (x) => String(x.taxCode || "").replace(/\D/g, "") || String(x.name || "").trim().toUpperCase();
+// The documents as one shape: bidhist as written by the bot, bidders/<TBMT> of tracked tenders turned into one lot.
+function histDocs() {
+  const out = Object.fromEntries(Object.entries(state.bidhist || {}).filter(([, d]) => isGensetName(d.bidName)));
+  for (const [key, b] of Object.entries(state.bidders || {})) {
+    if (out[key] || !b?.list?.length) continue;
+    const t = findTender(key) || {};
+    out[key] = { notifyNo: key, bidName: t.bidName || "", investorName: t.investorName || "", location: t.location || "", bidForm: t.bidForm || "",
+      bidCloseDate: t.bidCloseDate || null, openedAt: t.bidOpenDate || t.bidCloseDate || null, estimatedPrice: t.estimatedPrice ?? null, final: !!b.final, url: b.url || t.sourceUrl || "",
+      lots: [{ lotNo: "", lotName: "", price: b.packagePrice ?? t.estimatedPrice ?? null, goods: [],
+        bidders: b.list.map((x) => ({ name: x.name, taxCode: x.taxCode, bidPrice: x.bidPrice ?? null, discount: x.discount || "", finalPrice: x.priceAfterDiscount ?? x.bidPrice ?? null, won: !!x.won, reason: x.note || "" })) }] };
+  }
+  return out;
+}
+// One row per bidder per lot, grouped by tax code.
+function histIndex() {
+  if (histIdx) return histIdx;
+  const by = new Map();
+  for (const [key, d] of Object.entries(histDocs())) {
+    const multi = (d.lots || []).length > 1;
+    for (const lot of d.lots || []) for (const b of lot.bidders || []) {
+      const id = taxKey(b);
+      if (!id) continue;
+      let c = by.get(id);
+      if (!c) by.set(id, (c = { id, tax: String(b.taxCode || "").replace(/\D/g, ""), names: {}, rows: [], n: 0, wins: 0, wonValue: 0, lastAt: "" }));
+      c.names[b.name] = (c.names[b.name] || 0) + 1;
+      const at = d.openedAt || d.bidCloseDate || d.publicDate || "";
+      c.rows.push({ key, d, lot, b, at, multi });
+      c.n++;
+      if (b.won) { c.wins++; c.wonValue += Number(b.winPrice ?? b.finalPrice ?? b.bidPrice) || 0; }
+      if (at > c.lastAt) c.lastAt = at;
+    }
+  }
+  for (const c of by.values()) {
+    c.name = Object.entries(c.names).sort((a, b) => b[1] - a[1])[0][0];
+    c.tenders = new Set(c.rows.map((r) => r.key)).size;
+    c.decided = c.rows.filter((r) => r.d.final).length;
+  }
+  return (histIdx = [...by.values()]);
+}
+const bdPrice = (b) => b.finalPrice ?? b.bidPrice;
+const bdIsUs = (c) => c.tax === OUR_TAX || OUR_RE.test(c.name || "");
+const OUR_TAX = "4101623015";
+const BD_SORT = { n: ["Số gói tham dự", (c) => c.n], wins: ["Số gói trúng", (c) => c.wins], rate: ["Tỉ lệ trúng", (c) => (c.decided ? c.wins / c.decided : 0) + c.decided / 1e6], value: ["Giá trị trúng", (c) => c.wonValue], last: ["Gần đây", (c) => c.lastAt] };
+let bdFilter = { q: "", year: "", sort: "n" }, bdOpenId = null, bdLimit = 200;
+const bdYear = (r) => (r.at ? fmtDate(r.at, false).slice(-4) : "");
+function openBidders(id) {
+  bdOpenId = id || null; bdLimit = 200; filtOpen = false;
+  modal(mBanner("bd", "Nhà thầu", "Gói máy phát điện trên muasamcong: giá dự thầu và kết quả", "", "#" + SCREEN_HASH.bd) + '<div id="bdBody"><div class="mscroll"><div class="note">Đang tải lịch sử gói thầu...</div></div></div>', () => loadHist().then(renderBidders), "wide pane");
+  setScreenUrl("bd");
+}
+function renderBidders() {
+  const body = $("#bdBody");
+  if (!body || !state.bidhist) return;
+  const all = histIndex();
+  if (bdOpenId) {
+    const c = all.find((x) => x.id === bdOpenId);
+    body.innerHTML = h`<div class="mscroll">${raw(c ? bdDetailHtml(c) : '<div class="note">Không có nhà thầu này.</div>')}</div>`;
+    return;
+  }
+  if (!all.length) { body.innerHTML = h`<div class="mscroll"><div class="note">Chưa có lịch sử gói thầu. Bot trên máy Windows lấy dữ liệu từ muasamcong (lệnh <code>genbid-sync.js history</code>, và mỗi lượt Sync theo lịch).</div></div>`; return; }
+  const years = [...new Set(all.flatMap((c) => c.rows.map(bdYear)).filter(Boolean))].sort().reverse();
+  const f = bdFilter, opt = (v, l, cur) => h`<option value="${v}" ${v === cur ? "selected" : ""}>${l}</option>`;
+  body.innerHTML = h`${raw(filtToggle("bdFilt"))}<div class="row suprow">
+      <input type="search" id="bdQ" placeholder="Tìm tên nhà thầu, MST..." value="${f.q}" style="flex:1;min-width:180px">
+      <select id="bdYear">${raw(opt("", "Năm", f.year) + years.map((y) => opt(y, y, f.year)).join(""))}</select>
+      <select id="bdSort">${raw(Object.entries(BD_SORT).map(([k, [l]]) => opt(k, "Xếp: " + l, f.sort)).join(""))}</select>
+      <span class="spacer"></span><span class="muted small" id="bdCount"></span>
+    </div></div>
+    <div class="mscroll"><div id="bdList"></div></div>`;
+  renderBdList();
+  bindFilt("bdFilt");
+  const set = (k, v) => { bdFilter = { ...bdFilter, [k]: v }; bdLimit = 200; renderBdList(); };
+  $("#bdQ").oninput = (e) => set("q", e.target.value);
+  $("#bdYear").onchange = (e) => set("year", e.target.value);
+  $("#bdSort").onchange = (e) => set("sort", e.target.value);
+}
+// A year filter counts only that year's tenders.
+function bdView(c) {
+  if (!bdFilter.year) return c;
+  const rows = c.rows.filter((r) => bdYear(r) === bdFilter.year);
+  if (!rows.length) return null;
+  const won = rows.filter((r) => r.b.won);
+  return { ...c, rows, n: rows.length, wins: won.length, decided: rows.filter((r) => r.d.final).length, wonValue: won.reduce((a, r) => a + (Number(r.b.winPrice ?? bdPrice(r.b)) || 0), 0), lastAt: rows.reduce((a, r) => (r.at > a ? r.at : a), "") };
+}
+function renderBdList() {
+  const q = bdFilter.q.trim().toLowerCase(), key = BD_SORT[bdFilter.sort][1];
+  const list = histIndex().map(bdView).filter(Boolean).filter((c) => !q || c.name.toLowerCase().includes(q) || c.tax.includes(q.replace(/\D/g, "") || "~"))
+    .sort((a, b) => (key(b) > key(a) ? 1 : key(b) < key(a) ? -1 : a.name.localeCompare(b.name)));
+  const nTenders = Object.keys(histDocs()).length;
+  $("#bdCount").textContent = `${list.length} nhà thầu · ${nTenders} gói`;
+  filtNote("bdFilt", [q, bdFilter.year].filter(Boolean).length, `${list.length} nhà thầu`);
+  $("#bdList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards bdmain"><thead><tr><th>Nhà thầu</th><th>Số gói</th><th>Trúng</th><th>Tỉ lệ trúng</th><th>Giá trị trúng</th><th>Gần nhất</th></tr></thead><tbody>${raw(list.slice(0, bdLimit).map((c) => h`<tr data-bdopen="${c.id}" class="${bdIsUs(c) ? "us" : ""}">
+      <td><b class="hlname">${c.name}</b>${raw(c.tax ? h`<div class="muted small">MST ${c.tax}</div>` : "")}</td>
+      <td class="num" data-l="Số gói">${c.n}</td><td class="num" data-l="Trúng">${c.wins}</td>
+      <td class="num" data-l="Tỉ lệ trúng">${c.decided ? Math.round((100 * c.wins) / c.decided) + "%" : "—"}${raw(c.decided < c.n ? h` <span class="muted small" title="Gói chưa có kết quả không tính vào tỉ lệ">(${c.decided} có KQ)</span>` : "")}</td>
+      <td class="num" data-l="Giá trị trúng">${c.wonValue ? fmtVnd(c.wonValue) : "—"}</td>
+      <td data-l="Gần nhất">${fmtDate(c.lastAt, false)}</td></tr>`).join(""))}</tbody></table></div>${raw(list.length > bdLimit ? h`<div class="row"><button class="btn sm" id="bdMore">Xem thêm (${list.length - bdLimit})</button></div>` : "")}`
+    : h`<div class="note">Không có nhà thầu nào khớp.</div>`;
+}
+const bdPct = (v, base) => (v && base ? `${((100 * v) / base).toLocaleString("vi-VN", { maximumFractionDigits: 1 })}%` : "");
+function bdResultHtml(r) {
+  if (r.b.won) return h`<span class="chip ok">Trúng thầu</span>${raw(r.b.winPrice && r.b.winPrice !== bdPrice(r.b) ? h`<div class="muted small">Giá trúng ${fmtVnd(r.b.winPrice)}</div>` : "")}`;
+  if (!r.d.final) return h`<span class="chip mut">Chưa có kết quả</span>`;
+  return h`<span class="chip bad">Không trúng</span>${raw(r.b.reason ? h`<div class="muted small">${r.b.reason}</div>` : "")}`;
+}
+const bdGoods = (g) => (g || []).map((x) => [x.name, [x.label || x.maker, x.code].filter(Boolean).join(" "), x.origin && `(${x.origin})`, x.qty && `× ${x.qty}`, x.unitPrice && `đơn giá ${fmtVnd(x.unitPrice)}`].filter(Boolean).join(" ")).join("; ");
+function bdDetailHtml(c0) {
+  const c = bdView(c0) || c0;
+  const rows = [...c.rows].sort((a, b) => (b.at > a.at ? 1 : -1));
+  const winners = (r) => (r.lot.bidders || []).filter((x) => x.won && taxKey(x) !== c.id).map((x) => x.name);
+  return h`<div class="row"><button class="btn sm" id="bdBack">← Danh sách</button></div>
+    <h3 style="margin:8px 0 2px">${c.name}</h3>
+    <div class="muted small">${c.tax ? "MST " + c.tax + " · " : ""}${c.n} lượt dự thầu ở ${c.tenders} gói · trúng ${c.wins}${c.decided ? ` / ${c.decided} gói có kết quả (${Math.round((100 * c.wins) / c.decided)}%)` : ""}${c.wonValue ? " · giá trị trúng " + fmtVnd(c.wonValue) : ""}${bdFilter.year ? " · năm " + bdFilter.year : ""}</div>
+    <div class="tablewrap" style="margin-top:10px"><table class="suptable supcards bdrows"><thead><tr><th>Mở thầu</th><th>Gói thầu</th><th>Giá gói</th><th>Giá dự thầu</th><th>Kết quả</th></tr></thead><tbody>${raw(rows.map((r) => {
+      const p = bdPrice(r.b), base = r.lot.price ?? (r.multi ? null : r.d.estimatedPrice), w = r.b.won ? [] : winners(r);
+      return h`<tr><td data-l="Mở thầu">${fmtDate(r.at, false)}</td>
+        <td><div><b>${r.d.bidName || r.key}</b></div>${raw(r.multi && r.lot.lotName ? h`<div class="small">${r.lot.lotName}</div>` : "")}
+          <div class="muted small">${raw(r.d.url ? h`<a href="${r.d.url}" target="_blank" rel="noopener">${r.key}</a>` : r.key)} · ${[r.d.investorName, r.d.location, BID_FORM[r.d.bidForm] || r.d.bidForm].filter(Boolean).join(" · ")}</div>
+          ${raw(r.b.won && r.lot.goods?.length ? h`<div class="small">Hàng chào: ${bdGoods(r.lot.goods)}</div>` : "")}
+          ${raw(w.length ? h`<div class="muted small">Nhà thầu trúng: ${w.join(", ")}${(() => { const x = r.lot.bidders.find((y) => y.won); return x ? " · " + fmtVnd(x.winPrice ?? bdPrice(x)) : ""; })()}</div>` : "")}</td>
+        <td class="num" data-l="Giá gói">${base ? fmtVnd(base) : "—"}</td>
+        <td class="num" data-l="Giá dự thầu">${p ? fmtVnd(p) : "—"}${raw(r.b.discount ? h`<div class="muted small">giảm ${r.b.discount}</div>` : "")}${raw(bdPct(p, base) ? h`<div class="muted small">${bdPct(p, base)} giá gói</div>` : "")}<div class="muted small">${(r.lot.bidders || []).length} nhà thầu</div></td>
+        <td data-l="Kết quả">${raw(bdResultHtml(r))}</td></tr>`;
+    }).join(""))}</tbody></table></div>`;
+}
+
+// Gợi ý giá đấu (tab Tạo HSDT tham khảo): from the lots already decided on muasamcong, the ones most like this tender
+// (power, package price, form, investor, how recent), and each one's winning price over its lot price applied to this
+// package price. Computed here, no AI. Shows the 20 highest prices, each with how often a price that high would have won.
+const bpCache = {};
+function bpSamples(t, K, P) {
+  const kind = bidKind(t.bidName), out = [], years = (iso) => (iso ? (Date.now() - Date.parse(iso)) / (365 * 864e5) : 3);
+  for (const [key, d] of Object.entries(histDocs())) {
+    if (key === t.notifyNo || !d.final) continue;
+    const multi = (d.lots || []).length > 1;
+    for (const lot of d.lots || []) {
+      const w = (lot.bidders || []).find((x) => x.won), price = lot.price ?? (multi ? null : d.estimatedPrice);
+      const wp = w && Number(w.winPrice ?? bdPrice(w));
+      if (!w || !(price > 0) || !(wp > 0)) continue;
+      const ratio = wp / price;
+      if (ratio < 0.3 || ratio > 1.02) continue;
+      const k = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)) || Math.max(0, ...(lot.goods || []).map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
+      const dist = (K && k ? Math.abs(Math.log(K / k)) : 0.7) + (P ? 0.5 * Math.abs(Math.log(P / price)) : 0) + (d.bidForm && d.bidForm === t.bidForm ? 0 : 0.3)
+        + 0.15 * Math.min(years(d.openedAt || d.bidCloseDate), 5) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0)
+        + (bidKind((multi && lot.lotName) || d.bidName) === kind ? 0 : 1);
+      out.push({ key, d, lot, w, price, wp, ratio, k, dist, multi });
+    }
+  }
+  return out.sort((a, b) => a.dist - b.dist);
+}
+function bidSuggestHtml(t, K, P) {
+  const all = bpSamples(t, K, P);
+  if (!all.length) return h`<div class="note">Chưa có gói đã có kết quả trong lịch sử để so.</div>`;
+  if (!(P > 0)) return h`<div class="note warn">Cần giá gói thầu để tính giá đề xuất.</div>`;
+  const sim = all.slice(0, 60), ratios = sim.map((s) => s.ratio).sort((a, b) => a - b);
+  const q = (p) => ratios[Math.min(ratios.length - 1, Math.floor(p * (ratios.length - 1)))];
+  const chance = (r) => sim.filter((s) => s.ratio >= r - 1e-9).length / sim.length;
+  const round = (v) => Math.round(v / 1000) * 1000;
+  const seen = new Set(), rows = [];
+  for (const s of [...sim].sort((a, b) => b.ratio - a.ratio)) {
+    const price = round(P * s.ratio);
+    if (seen.has(price)) continue;
+    seen.add(price); rows.push({ ...s, sug: price });
+    if (rows.length >= 20) break;
+  }
+  // Who bids on tenders like this one, and how low.
+  const comp = new Map();
+  for (const s of sim) for (const b of s.lot.bidders || []) {
+    const id = taxKey(b), p = bdPrice(b);
+    if (!id) continue;
+    const c = comp.get(id) || { id, name: b.name, n: 0, wins: 0, ratios: [] };
+    c.n++; if (b.won) c.wins++; if (p > 0) c.ratios.push(p / s.price);
+    comp.set(id, c);
+  }
+  const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8);
+  const med = (a) => { const x = [...a].sort((p, q2) => p - q2); return x.length ? x[Math.floor((x.length - 1) / 2)] : null; };
+  const pct = (r) => (100 * r).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + "%";
+  const kn = sim.filter((s) => s.k).length;
+  return h`<div class="muted small" style="margin:6px 0">So với ${sim.length} gói/phần đã có kết quả giống gói này nhất (trong ${all.length} gói/phần có giá trúng)${K ? `, ${kn} gói ghi công suất` : ""}. Giá trúng thường bằng ${pct(q(0.25))}–${pct(q(0.75))} giá gói (trung vị ${pct(q(0.5))}, tức ${fmtVnd(round(P * q(0.5)))}).</div>
+    <div class="tablewrap"><table class="suptable supcards bprows"><thead><tr><th>#</th><th>Giá đề xuất</th><th>% giá gói</th><th title="Tỉ lệ các gói tương tự có giá trúng bằng hoặc cao hơn mức này: bỏ giá này thì đã thắng giá ở chừng ấy gói">Khả năng thắng giá</th><th>Dựa trên gói</th></tr></thead><tbody>${raw(rows.map((s, i) => h`<tr>
+      <td class="num">${i + 1}</td><td class="num" data-l="Giá đề xuất"><b>${fmtVnd(s.sug)}</b><div class="muted small">${s.sug.toLocaleString("vi-VN")} đ</div></td>
+      <td class="num" data-l="% giá gói">${pct(s.ratio)}</td><td class="num" data-l="Khả năng thắng giá">${Math.round(100 * chance(s.ratio))}%</td>
+      <td class="small" data-l="Dựa trên"><b>${s.multi && s.lot.lotName ? s.lot.lotName : s.d.bidName}</b><div class="muted">${raw(s.d.url ? h`<a href="${s.d.url}" target="_blank" rel="noopener">${s.key}</a>` : s.key)} · ${fmtDate(s.d.openedAt || s.d.bidCloseDate, false)}${s.k ? ` · ${Math.round(s.k).toLocaleString("vi-VN")} kVA` : ""} · giá gói ${fmtVnd(s.price)} · trúng ${fmtVnd(s.wp)} (${s.w.name}) · ${(s.lot.bidders || []).length} nhà thầu${s.d.investorName === t.investorName ? " · cùng chủ đầu tư" : ""}</div></td></tr>`).join(""))}</tbody></table></div>
+    <h4 style="margin:12px 0 4px">Nhà thầu hay dự các gói này</h4>
+    <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà thầu</th><th>Số lượt</th><th>Trúng</th><th>Giá thường bỏ (trung vị, % giá gói)</th></tr></thead><tbody>${raw(comps.map((c) => h`<tr data-bdopen="${c.id}" style="cursor:pointer"><td>${c.name}</td><td class="num" data-l="Số lượt">${c.n}</td><td class="num" data-l="Trúng">${c.wins}</td><td class="num" data-l="Giá thường bỏ">${c.ratios.length ? pct(med(c.ratios)) : "—"}</td></tr>`).join(""))}</tbody></table></div>
+    <div class="muted small">Ước tính từ dữ liệu quá khứ; gói đánh giá theo kỹ thuật hoặc có nhà thầu bị loại thì giá thấp nhất chưa chắc trúng.</div>`;
+}
+function bidSuggestBox(t) {
+  const c = bpCache[t._key] || {};
+  const K = c.K ?? kvaOf(t.bidName), P = c.P ?? t.estimatedPrice ?? null;
+  return h`<section class="sec"><h4>Gợi ý giá đấu</h4><div class="row">
+      <label class="muted small" for="bpKva">Công suất (kVA)</label><input type="number" id="bpKva" min="0" step="any" value="${K ? Math.round(K) : ""}" style="width:100px" placeholder="không rõ">
+      <label class="muted small" for="bpPrice">Giá gói (đ)</label><input type="number" id="bpPrice" min="0" step="1000" value="${P || ""}" style="width:150px">
+      <button class="btn primary" id="bpRun" data-key="${t._key}">Gợi ý giá đấu</button></div>
+    <div id="bpOut">${raw(c.html || "")}</div></section>`;
+}
+async function runBidSuggest(key) {
+  const t = findTender(key), out = $("#bpOut");
+  if (!t || !out) return;
+  const K = Number($("#bpKva").value) || null, P = Number($("#bpPrice").value) || null;
+  out.innerHTML = progress("Đang tải lịch sử gói thầu...");
+  await loadHist();
+  const html = bidSuggestHtml(t, K, P);
+  bpCache[key] = { K, P, html };
+  if ($("#bpOut")) $("#bpOut").innerHTML = html;
+}
+
 // ---------- Modal ----------
 function modal(html, onMount, cls = "") {
   if (screenOfUrl()) setScreenUrl();
@@ -2919,6 +3161,12 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
   if (e.target.closest("#syncNewBtn")) { syncNew(); return; }
   if (e.target.closest("#supBtn")) { openSuppliers(); return; }
+  if (e.target.closest("#bdBtn")) { openBidders(); return; }
+  const bdo = e.target.closest("[data-bdopen]");
+  if (bdo && !e.target.closest("a[href]")) { if ($("#bdBody")) { if (!bdOpenId) listScroll.bd = mScroll().scrollTop; bdOpenId = bdo.dataset.bdopen; renderBidders(); mScroll().scrollTop = 0; } else openBidders(bdo.dataset.bdopen); return; }
+  if (e.target.id === "bdBack") { bdOpenId = null; renderBidders(); mScroll().scrollTop = listScroll.bd || 0; return; }
+  if (e.target.id === "bdMore") { bdLimit += 200; renderBdList(); return; }
+  if (e.target.id === "bpRun") { runBidSuggest(e.target.dataset.key); return; }
   const home = e.target.closest("#mdl a.home");
   if (home) { e.preventDefault(); setScreenUrl(Object.keys(SCREEN_HASH).find((k) => home.getAttribute("href") === "#" + SCREEN_HASH[k])); openScreenFromUrl(); return; }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
