@@ -75,9 +75,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
    this engine and, best, this alternator at the power required. Put the supplier of the genset row first when it fits.
    Order: a row with this engine and this alternator, then a supplier that offers the controller the HSMT asks for,
-   then confidence high > medium > low, then role genset_oem,
-   then a Vietnam distributor. `why` states only facts shown in catalog.md (the row, the role, the confidence, the
-   distributor). A supplier truly fits when its row names this engine and this alternator and the configuration has
+   then confidence high > medium > low, then role genset_oem. A Vietnam distributor is not needed and does not count
+   in the order (Khoa, 2026-11-02). `why` states only facts shown in catalog.md (the row, the role, the confidence).
+   A supplier truly fits when its row names this engine and this alternator and the configuration has
    no `not_met` on power, frequency, a named make or origin.
 4. Only when no configuration of step 2 has a supplier that truly fits: search the internet (WebSearch) for the ONE
    best configuration and the supplier that sells it. Official pages first: a genset maker's page or datasheet that
