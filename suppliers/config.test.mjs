@@ -188,23 +188,33 @@ test("Tìm NCC: a find counts only when it passes verify.mjs and a product line 
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
 
-// Tìm NCC → Cấu hình gợi ý in code (Khoa, 2026-11-02): each supplier found makes a configuration of its own, marked
-// fromFind, whose only supplier is that one, from its row closest to the tender's power; a row below the tender's
-// power or of a foreign engine is left out.
-test("mergeFind makes one configuration per supplier found", () => {
-  const rec = { id: "w", role: "genset_maker", names: { en: "W" }, specTables: [{ n: 2001, title: "Weichai gensets", header: ["| Model | Standby kVA | Standby kW | Prime kVA | Prime kW | Engine"],
+// Tìm NCC → Cấu hình gợi ý in code (Khoa, 2026-11-02): a supplier found with the engine of a configuration already
+// suggested is added under it; one that joins none makes a new configuration, marked fromFind, from its row closest to
+// the tender's power, with that supplier alone. A row below the tender's power or of a foreign engine is left out.
+test("mergeFind adds a supplier under its configuration, or makes a new one with it alone", () => {
+  const head = ["| Model | Standby kVA | Standby kW | Prime kVA | Prime kW | Engine"];
+  const w = { id: "w", role: "genset_maker", names: { en: "W" }, specTables: [{ n: 2001, title: "Weichai gensets", header: head,
     rows: ["| W-1 | 312.5 | 250 | 275 | 220 | WP10D264E200", "| W-2 | 250 | 200 | 237.5 | 190 | WP10D238E200", "| W-3 | 330 | 264 | 300 | 240 | WP12D317E200"] }] };
+  const v = { id: "v", role: "genset_maker", names: { en: "V" }, specTables: [{ n: 2001, title: "Weichai gensets", header: head,
+    rows: ["| V-1 | 330 | 264 | 300 | 240 | WP10D264E200", "| V-2 | 312.5 | 250 | 275 | 220 | WP10D264E200"] }] };
   const result = { origin: "cn", configs: [{ rank: 1, engine: { model: "WP12D317E200" }, suppliers: [{ supplierId: "old" }], checks: [] }] };
-  const out = mergeFind(result, [rec], { cap: { value: 250, unit: "kVA" }, origin: "cn" });
-  assert.deepEqual(out.created, [{ rank: 2, engine: "WP10D264E200", supplierId: "w" }]);
-  assert.deepEqual(result.configs[0].suppliers, [{ supplierId: "old" }]);
+  const out = mergeFind(result, [w, v], { cap: { value: 250, unit: "kVA" }, origin: "cn" });
+  // w also has a row with the engine of the configuration made for v.
+  assert.deepEqual(out.joined, [{ rank: 1, supplierId: "w" }, { rank: 2, supplierId: "w" }]);
+  assert.equal(result.configs[0].suppliers[1].line, "| W-3 | 330 | 264 | 300 | 240 | WP12D317E200");
+  assert.deepEqual(out.created, [{ rank: 2, engine: "WP10D264E200", supplierId: "v" }]);
   const c = result.configs[1];
   assert.equal(c.fromFind, true);
-  assert.equal(c.engine.src.line, "| W-1 | 312.5 | 250 | 275 | 220 | WP10D264E200");
+  assert.equal(c.engine.src.line, "| V-2 | 312.5 | 250 | 275 | 220 | WP10D264E200");
   assert.equal(c.checks[0].status, "unclear");
-  assert.deepEqual(c.suppliers.map((s) => [s.supplierId, s.line]), [["w", "| W-1 | 312.5 | 250 | 275 | 220 | WP10D264E200"]]);
+  assert.deepEqual(c.suppliers.map((s) => s.supplierId), ["v", "w"]);
+  // A supplier that fits no configuration already suggested gets one of its own, with it alone.
+  const alone = { origin: "cn", configs: [] };
+  mergeFind(alone, [v], { cap: { value: 250, unit: "kVA" }, origin: "cn" });
+  assert.deepEqual(alone.configs.map((x) => x.suppliers.map((s) => s.supplierId)), [["v"]]);
   // A second run adds nothing twice.
-  assert.deepEqual(mergeFind(result, [rec], { cap: { value: 250, unit: "kVA" }, origin: "cn" }).created, []);
+  const again = mergeFind(result, [w, v], { cap: { value: 250, unit: "kVA" }, origin: "cn" });
+  assert.deepEqual([again.joined, again.created], [[], []]);
 });
 test("G7 / G20 origin keeps engines whose make is from a country of the group", () => {
   const C = globalThis.GenbidCatalog;

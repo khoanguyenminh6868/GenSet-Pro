@@ -565,34 +565,55 @@ export async function findCheck(dir, suppliers, cap) {
   return out;
 }
 // Suppliers Tìm NCC added go into the suggested configurations in code, with no agent and no tokens (Khoa,
-// 2026-11-01). Each supplier found becomes a configuration of its own whose only supplier is that one (Khoa,
-// 2026-11-02), marked fromFind: its table row (web/catalog.js) for an engine of the origin asked for whose smallest
-// rating is 100% to 140% of the tender's power, the closest one. Its only check is the power read from that row, left
-// "unclear", since nothing else of the HSMT was compared with it. Every model and line is the row word for word.
+// 2026-11-01), from its table rows (web/catalog.js) for an engine of the origin asked for whose smallest rating is 100%
+// to 140% of the tender's power (Khoa, 2026-11-02): a row with the engine (and, when both name one, the alternator) of
+// a configuration already suggested adds the supplier under it; a supplier that joins none becomes a new configuration,
+// marked fromFind, from its row closest to the power, with that supplier alone. The new one's only check is the power
+// read from that row, left "unclear", since nothing else of the HSMT was compared with it. Every model and line is the
+// row word for word.
 const powerText = (p) => Object.entries(p || {}).map(([k, v]) => `${{ prime: "Prime", standby: "Standby", rated: "Định mức" }[k] || k} ${[v.kVA && `${v.kVA} kVA`, v.kW && `${v.kW} kW`].filter(Boolean).join(" / ")}`).join(", ");
 export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
   const ids = new Set(records.map((r) => r.id)), keyOf = CAT.keyOf;
   // The row's smallest rating (prime when it gives both) is at least the tender's power, and not past 140% of it.
   const near = (u) => !cap || (rowPower(u, cap) >= cap.value && rowPower(u, cap) <= cap.value * 1.4);
   const lineOf = (u, model) => u.line || (u.lines?.rows || []).find((l) => keyOf(l).includes(keyOf(model))) || null;
-  const configs = result.configs || (result.configs = []), out = { created: [] };
-  const o = originOfReq(origin), cn = cnSuppliers(records), best = new Map();
+  const configs = result.configs || (result.configs = []), out = { joined: [], created: [] };
+  const o = originOfReq(origin), cn = cnSuppliers(records), rows = new Map();
   for (const e of byOrigin(CAT.build(records).engines, o, cn)) {
     // Under "cn" a foreign engine comes only with the suppliers based in China that offer it.
     const viaCn = o === "cn" && CAT.originOf(e) === "other";
     for (const u of e.uses) {
       if (!ids.has(u.supplierId) || !near(u) || !lineOf(u, e.model) || (viaCn && !cn.has(u.supplierId))) continue;
-      const d = cap ? Math.abs(rowPower(u, cap) - cap.value) : 0, b = best.get(u.supplierId);
-      if (!b || d < b.d) best.set(u.supplierId, { e, u, d });
+      rows.set(u.supplierId, [...(rows.get(u.supplierId) || []), { e, u, d: cap ? Math.abs(rowPower(u, cap) - cap.value) : 0 }]);
     }
   }
-  for (const r of records) {
-    const b = best.get(r.id);
-    // A second run adds nothing twice.
-    if (!b || out.created.length >= max || configs.some((c) => c.fromFind && c.suppliers?.some((s) => s.supplierId === r.id))) continue;
-    const { e, u } = b, line = lineOf(u, e.model), src = { kind: "catalog", supplierId: u.supplierId, n: u.n, line };
-    // The controllers the supplier's pages name (controllers.mjs) are said too, as recorded.
+  // The same configuration: the same engine, and the same alternator when both name one.
+  const same = (c, { e, u }) => c.engine?.model && keyOf(c.engine.model) === e.key && (!c.alternator?.model || !u.other || keyOf(c.alternator.model) === keyOf(u.other));
+  const mineOf = (r) => (rows.get(r.id) || []).sort((a, b) => a.d - b.d);
+  // The controllers the supplier's pages name (controllers.mjs) are said too, as recorded.
+  const entry = (r, { e, u }) => {
     const ctrls = [...new Set((r.controllers || []).filter((c) => c.model).map((c) => c.model))];
+    return { supplierId: u.supplierId, n: u.n, line: lineOf(u, e.model), fromFind: true, why: `Nhà cung cấp mới tìm được (Tìm NCC): dòng bảng ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.${ctrls.length ? ` Bộ điều khiển trên trang của nhà cung cấp: ${ctrls.join(", ")}.` : ""}` };
+  };
+  // Adds the supplier under every configuration it has a row for; true when there is one. A second run adds nothing twice.
+  const join = (r) => {
+    let found = false;
+    for (const c of configs) {
+      const x = mineOf(r).find((m) => same(c, m));
+      if (!x) continue;
+      found = true;
+      c.suppliers = c.suppliers || [];
+      if (!c.suppliers.some((s) => s.supplierId === r.id)) { c.suppliers.push(entry(r, x)); out.joined.push({ rank: c.rank, supplierId: r.id }); }
+    }
+    return found;
+  };
+  const listed = (r) => configs.some((c) => c.suppliers?.some((s) => s.supplierId === r.id));
+  for (const r of records) join(r);
+  for (const r of records) {
+    const mine = mineOf(r);
+    // A configuration made just before for another supplier found may already be this one's.
+    if (!mine.length || listed(r) || join(r) || out.created.length >= max) continue;
+    const { e, u } = mine[0], line = lineOf(u, e.model), src = { kind: "catalog", supplierId: u.supplierId, n: u.n, line };
     const c = {
       rank: Math.max(0, ...configs.map((x) => x.rank || 0)) + 1, fromFind: true,
       engine: { model: e.model, ...(e.make ? { make: e.make } : {}), src },
@@ -601,12 +622,14 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
       ...((ctl) => (ctl ? { controller: { model: ctl.model, make: ctl.brand, src } } : {}))(CAT.controllersIn(line).find((x) => x.model)),
       checks: [{ item: "Công suất", part: "genset", requirement: cap ? `khoảng ${cap.value} ${cap.unit}` : "", offered: powerText(u.power) || "—", sourceQuote: line, status: "unclear",
         note: "Bổ sung tự động từ Tìm NCC, không dùng AI: công suất nhỏ nhất ghi trong dòng bảng từ 100% đến 140% công suất của gói. Các yêu cầu khác của HSMT chưa được đối chiếu (bấm Gợi ý lại nếu cần)." }],
-      suppliers: [{ supplierId: u.supplierId, n: u.n, line, fromFind: true, why: `Nhà cung cấp mới tìm được (Tìm NCC): dòng bảng ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.${ctrls.length ? ` Bộ điều khiển trên trang của nhà cung cấp: ${ctrls.join(", ")}.` : ""}` }],
+      suppliers: [entry(r, mine[0])],
       gaps: ["Cấu hình bổ sung từ Tìm NCC: chưa đối chiếu từng yêu cầu kỹ thuật của HSMT.", ...(result.extra ? [`Chưa đối chiếu Yêu cầu khác: ${result.extra}`] : [])],
     };
     configs.push(c);
     out.created.push({ rank: c.rank, engine: e.model, supplierId: u.supplierId });
   }
+  // The other suppliers found with a row for a configuration made here are added under it too.
+  for (const r of records) join(r);
   return out;
 }
 // Reads configmatch/<key> and posts it back with the new suppliers merged in. No configmatch yet: nothing to merge into.
@@ -614,12 +637,12 @@ async function mergeFindIntoConfig(key, records, { cap, origin }) {
   const prev = await doc("configmatch", key);
   if (!prev?.result) return null;
   const result = JSON.parse(JSON.stringify(prev.result)), out = mergeFind(result, records, { cap, origin: result.origin || origin });
-  if (!out.created.length) return out;
-  result.notes = [...(result.notes || []), `Tìm NCC lúc ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC: thêm ${out.created.length} cấu hình mới, mỗi cấu hình một nhà cung cấp vừa tìm được (chưa đối chiếu đủ HSMT), bằng code từ dòng bảng của nhà cung cấp.`];
+  if (!out.joined.length && !out.created.length) return out;
+  result.notes = [...(result.notes || []), `Tìm NCC lúc ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC: ${mergeText(out)}, bằng code từ dòng bảng của nhà cung cấp.`];
   await post([{ coll: "configmatch", id: key, data: { ...prev, at: new Date().toISOString(), result } }]);
   return out;
 }
-const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : `thêm ${m.created.length} cấu hình mới, mỗi cấu hình một nhà cung cấp vừa tìm được (${m.created.map((c) => c.supplierId).join(", ")})`);
+const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.joined.length && !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : [m.joined.length && `bổ sung ${m.joined.map((j) => `${j.supplierId} vào cấu hình #${j.rank}`).join(", ")}`, m.created.length && `thêm ${m.created.length} cấu hình mới (chưa đối chiếu đủ HSMT), mỗi cấu hình chỉ có nhà cung cấp vừa tìm được (${m.created.map((c) => c.supplierId).join(", ")})`].filter(Boolean).join("; "));
 
 async function find(req, suppliers) {
   const key = req.key, tried = [];
