@@ -121,15 +121,17 @@ const MAKER_PART = { engine_maker: "engine", alternator_maker: "alternator" };
 // them, "Common ..." or "Specifications" goes back to all; a line naming some models inside it ("| Number | DSE7310
 // MKII: 1", "DSE7320 MKII: 2") is of those models only, without opening a section.
 // SmartGen lists a series as "HGM6110N/6120N/6110NC": each code after a slash is a model of its own.
-const ctlKeys = (line) => {
-  const out = CAT.controllersIn(line).filter((c) => c.model).map((c) => CAT.keyOf(c.model));
-  for (const m of String(line).matchAll(/\bHGM\s?(\d{4}[A-Z]{0,4})((?:\s?\/\s?\d{4}[A-Z]{0,4})+)/gi)) for (const c of [m[1], ...m[2].split("/")].map((x) => x.trim()).filter(Boolean)) out.push(CAT.keyOf(`HGM${c}`));
-  return [...new Set(out)];
+const ctlNames = (line) => {
+  const out = CAT.controllersIn(line).filter((c) => c.model).map((c) => ({ key: CAT.keyOf(c.model), model: c.model }));
+  for (const m of String(line).matchAll(/\bHGM\s?(\d{4}[A-Z]{0,4})((?:\s?\/\s?\d{4}[A-Z]{0,4})+)/gi)) for (const c of [m[1], ...m[2].split("/")].map((x) => x.trim()).filter(Boolean)) out.push({ key: CAT.keyOf(`HGM${c}`), model: `HGM${c.toUpperCase()}` });
+  return out;
 };
+const ctlKeys = (line) => [...new Set(ctlNames(line).map((x) => x.key))];
 // "HGM6100N SERIES" names the series of a SmartGen manual, i.e. every model of the sheet, not a model of its own.
 const isSeries = (k) => /^HGM\d{2}00/.test(k);
 export function controllerSheetFacts(s, t) {
-  const all = new Set([t.title, ...t.rows].flatMap(ctlKeys)), out = [];
+  const all = new Set([t.title, ...t.rows].flatMap(ctlKeys)), out = [], nameOf = new Map();
+  for (const x of [t.title, ...t.rows].flatMap(ctlNames)) if (!nameOf.has(x.key)) nameOf.set(x.key, x.model);
   // A code cut from its generation by a line break ("& | DSE7320" then "| MKII | Auto") is that generation's model.
   const gen = (k) => { const g = [...all].filter((x) => x !== k && new RegExp(`^${k}MK(II|III)$`).test(x)); return g.length === 1 ? g[0] : k; };
   // The sheet's own models are those of its title: a line of another model's datasheet that only mentions a controller
@@ -154,7 +156,7 @@ export function controllerSheetFacts(s, t) {
     // did not end the sentence: "... it | adds mains", "AC", "| monitoring ...") is of the same models as that line.
     const goesOn = /^[a-z]/.test(bare) || (bare.length <= 15 && !/[.;:!?]$/.test(last));
     const own = names.length ? names : goesOn ? prev : scope;
-    for (const k of own) out.push({ model: k, f: { key: "ctl", label: "", value: line, supplierId: s.id, n: t.n, line, text: line } });
+    for (const k of own) out.push({ model: k, f: { key: "ctl", label: "", value: line, supplierId: s.id, n: t.n, line, text: line, sheetModel: nameOf.get(k) || k } });
     prev = own; last = bare;
   }
   return out;
@@ -174,12 +176,16 @@ export function modelFacts(cat, suppliers = []) {
       if (t.header?.length) continue;
       // Every model code of the title, known or not: a title naming two models gives neither.
       const models = [...new Set(String(t.title || "").split(/[\s:–—|,/()]+/).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
-      if (models.length !== 1 || !known.has(models[0])) continue;
+      if (models.length !== 1) continue;
+      // A frame's datasheet (Leroy-Somer "TAL-A46", Khoa 2026-11-02) gives its figures to the models of that frame
+      // its own lines name ("TAL-A46-C ... TAL-A46-H" in its ratings table), each a model of the catalog.
+      const covered = known.has(models[0]) ? [models[0]]
+        : [...new Set(t.rows.flatMap((l) => CAT.cellsOf(l)).filter((c) => CAT.isCode(c)).map((c) => CAT.keyOf(c)))].filter((k) => k !== models[0] && k.startsWith(models[0]) && k.length - models[0].length <= 2 && known.has(k));
       for (const line of t.rows) {
         const c = CAT.cellsOf(line), key = c.length >= 2 ? CAT.specKey(c[0]) : null;
         if (!key || CAT.SPEC[key]?.scope !== kind || ROW_ONLY.has(key)) continue;
         const value = c.slice(1).find((v) => CAT.SPEC[key].ok.test(v));
-        if (value) add(`${kind}:${models[0]}`, { key, label: c[0], value, supplierId: s.id, n: t.n, line, text: line });
+        if (value) for (const m of covered) add(`${kind}:${m}`, { key, label: c[0], value, supplierId: s.id, n: t.n, line, text: line });
       }
     }
   }
@@ -208,11 +214,18 @@ export function modelFacts(cat, suppliers = []) {
 // The facts of a model. A controller written without its generation ("DSE7320", as most genset tables write it) also
 // takes the facts of the datasheets of its generations ("DSE7320 MKII"), each marked with `version`, and its check
 // then says the generation is to be confirmed. A controller written with one ("DSE7320 MKII") takes only its own.
+// The same rule for ComAp (Khoa, 2026-11-02): "AMF25" or "InteliLite AMF25" written without its generation takes the
+// datasheet of "InteliLite 4 AMF25" (or "InteliLite NT AMF25"), to be confirmed.
+const comapCore = (k) => k.match(/^(?:INTELILITE)?((?:AMF|MRS)\d+)$/)?.[1];
+const GENERATION = [
+  (key, k) => !/MK(II|III|2|3)$/.test(key) && new RegExp(`^${key}MK(II|III)$`).test(k),
+  (key, k) => !!comapCore(key) && k.match(/^INTELILITE(?:4|NT)((?:AMF|MRS)\d+)$/)?.[1] === comapCore(key),
+];
 export function factsFor(facts, part, model) {
   const key = CAT.keyOf(model), own = facts.get(`${part}:${key}`) || [];
-  if (part !== "controller" || /MK(II|III|2|3)$/.test(key)) return own;
-  const gens = [...facts.keys()].filter((k) => new RegExp(`^controller:${key}MK(II|III)$`).test(k));
-  return [...own, ...gens.flatMap((k) => facts.get(k).map((f) => ({ ...f, version: `${model} ${k.slice(`controller:${key}`.length)}` })))];
+  if (part !== "controller") return own;
+  const gens = [...facts.keys()].filter((k) => k.startsWith("controller:") && k !== `controller:${key}` && GENERATION.some((g) => g(key, k.slice(11))));
+  return [...own, ...gens.flatMap((k) => facts.get(k).map((f) => ({ ...f, version: f.sheetModel || k.slice(11) })))];
 }
 // The figures of one model whose sources disagree: key → the values given. Values of one page (a datasheet giving the
 // voltage regulation of two AVRs, the efficiency at each voltage) are conditions, not a disagreement.
@@ -707,8 +720,21 @@ export function scoreOf(c, reqs = []) {
   const fits = (c.suppliers || []).some((s) => !s.unverified) ? 0 : 1;
   return [n[0][0], n[1][0], fits, n[0][1], n[1][1], n[2][0], n[2][1]];
 }
+// A configuration with no controller, when the HSMT asks for one, is "not met" on the controller (Khoa, 2026-11-02):
+// its controller checks would all be "unclear", which ranked it above configurations that offer one but miss a point
+// elsewhere. The check is written by the code and shown like the others.
+export const NO_CONTROLLER = "Bộ điều khiển của cấu hình";
+function noController(c, reqs) {
+  const has = !!c.controller?.model && !c.controller.unverified, mine = (x) => x.byCode && x.item === NO_CONTROLLER;
+  // A controller added later (Tìm NCC's check) takes the code's check away again.
+  if (has) { if ((c.checks || []).some(mine)) c.checks = c.checks.filter((x) => !mine(x)); return; }
+  if (!reqs.some((r) => r.part === "controller" && r.level !== "option") || (c.checks || []).some(mine)) return;
+  c.checks = [{ item: NO_CONTROLLER, requirement: "Có bộ điều khiển đáp ứng các yêu cầu bộ điều khiển của HSMT", offered: "Không có bộ điều khiển nào có nguồn trong cấu hình này",
+    part: "controller", level: "core", status: "not_met", byCode: true, note: "Code ghi: cấu hình không có bộ điều khiển nên tính là không đạt ở bộ điều khiển." }, ...(c.checks || [])];
+}
 export function rankConfigs(result) {
   const reqs = result.requirements || [];
+  for (const c of result.configs || []) noController(c, reqs);
   const cmp = (a, b) => { for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
   const list = (result.configs || []).map((c, i) => ({ c, i, s: scoreOf(c, reqs) }));
   list.sort((x, y) => cmp(x.s, y.s) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);

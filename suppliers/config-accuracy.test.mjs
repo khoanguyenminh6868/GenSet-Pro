@@ -3,7 +3,8 @@
 // candidate rows written to catalog.md, the requirements kept between runs and the check of Tìm NCC configurations.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, modelFacts, factConflicts, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf } from "./config-bot.mjs";
+import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER } from "./config-bot.mjs";
+import { makerSheet, controllerSheet } from "./maker-datasheets.mjs";
 
 const C = globalThis.GenbidCatalog;
 const lineA = "| A-1 | 275 | 220 | NTA855-G1B | HCI444ES | 6 | 14 |";
@@ -279,4 +280,55 @@ test("SmartGen: a series written HGM6110N/6120N..., 'models: text' lines and wra
   assert.ok(!ctlLines(f, "HGM6110N").includes(amf) && !ctlLines(f, "HGM6110NC").includes(amf));
   assert.ok(!ctlLines(f, "HGM6120N").includes("HGM6110N/6110NC: Automatic Start Module, it controls genset to start/stop automatically by remote signal;"));
   for (const m of ["HGM6110N", "HGM6120N", "HGM6110NC", "HGM6120NC"]) assert.ok(ctlLines(f, m).includes("|  | Event log, real-time clock, scheduled start & stop function"), m);
+});
+
+// Khoa, 2026-11-02: a configuration with no controller is "not met" on the controller.
+test("a configuration without a controller is not met on the controller, and ranks below one that has one", () => {
+  const ck = (item, part, status) => ({ item, part, status, level: "core" });
+  const reqs = [{ item: "E", part: "engine", level: "core" }, { item: "K", part: "controller", level: "core" }, { item: "G", part: "genset", level: "core" }];
+  const r = { requirements: reqs, configs: [
+    { rank: 1, engine: { model: "X" }, checks: [ck("E", "engine", "met"), ck("K", "controller", "unclear"), ck("G", "genset", "met")], suppliers: [{ supplierId: "none" }] },
+    { rank: 2, engine: { model: "Y" }, controller: { model: "DSE7320" }, checks: [ck("E", "engine", "met"), ck("K", "controller", "met"), ck("G", "genset", "not_met")], suppliers: [{ supplierId: "with" }] },
+  ] };
+  rankConfigs(r);
+  assert.deepEqual(r.configs.map((c) => c.suppliers[0].supplierId), ["with", "none"]);
+  const x = r.configs[1].checks.find((c) => c.item === NO_CONTROLLER);
+  assert.deepEqual([x.status, x.part, x.byCode], ["not_met", "controller", true]);
+  assert.ok(!r.configs[0].checks.some((c) => c.item === NO_CONTROLLER));
+  // Ranking again adds it once; a controller added later takes it away; no controller requirement, no check.
+  rankConfigs(r);
+  assert.equal(r.configs[1].checks.filter((c) => c.item === NO_CONTROLLER).length, 1);
+  r.configs[1].controller = { model: "HGM6120N" };
+  rankConfigs(r);
+  assert.ok(!r.configs.some((c) => c.checks.some((x) => x.item === NO_CONTROLLER)));
+  const r2 = { requirements: [reqs[0]], configs: [{ rank: 1, checks: [], suppliers: [] }] };
+  rankConfigs(r2);
+  assert.deepEqual(r2.configs[0].checks, []);
+});
+
+test("Leroy-Somer: a frame's datasheet gives its figures to the models its own lines name", () => {
+  const sheet = makerSheet(["Low Voltage Alternators - 4 pole", "TAL-A46", "| Insulation class | H | Excitation system 6 wires", "| Protection | IP 23",
+    "| TAL-A46-D | kVA | 240 | 250", "| TAL-A46-H | kVA | 350 | 365", "| Some text | without a figure"].join("\n"));
+  assert.equal(sheet.title, "TAL-A46");
+  assert.deepEqual(sheet.rows, ["| Insulation class | H | Excitation system 6 wires", "| Protection | IP 23", "| TAL-A46-D | kVA | 240 | 250", "| TAL-A46-H | kVA | 350 | 365"]);
+  const ls = { id: "ls", role: "alternator_maker", specTables: [{ n: 1004, title: "Datasheet: TAL-A46", header: [], rows: sheet.rows }] };
+  // Genset rows that name the alternators, so the catalog knows them.
+  const g = { id: "g", role: "genset_oem", specTables: [{ n: 101, title: "Gensets 50Hz", header: ["| Model | Prime kVA | Prime kW | Engine | Leroy Somer alternator |"],
+    rows: ["| G-1 | 275 | 220 | NTA855-G1B | TAL-A46-H |", "| G-2 | 250 | 200 | NTA855-G1B | TAL-A46-Z |", "| G-3 | 450 | 360 | KTA19-G3 | TAL-A473-C |"] }] };
+  const f = modelFacts(C.build([g, ls]), [g, ls]);
+  const of = (m) => (f.get(`alternator:${C.keyOf(m)}`) || []).map((x) => `${x.key}=${x.value}`).sort();
+  assert.deepEqual(of("TAL-A46-H"), ["insul=H", "ip=IP 23"]);
+  // Not listed in the datasheet, or of another frame: nothing.
+  assert.deepEqual([of("TAL-A46-Z"), of("TAL-A473-C")], [[], []]);
+});
+
+test("ComAp: AMF25 written without its generation takes InteliLite 4 AMF25's datasheet; InteliLite NT AMF25 does not", () => {
+  const sheet = controllerSheet(["InteliLite 4", "AMF 25", "Order code: IL4AMF25BAA", "| Key benefits | Detailed history log with up to 350 records", "4 applications in 1 HW: AMF (Stand-by) – default"].join("\n"));
+  assert.equal(sheet.title, "InteliLite 4 AMF 25");
+  const ca = { id: "ca", role: "controller_maker", specTables: [{ n: 1001, title: `Datasheet: ${sheet.title}`, header: [], rows: sheet.rows }] };
+  const f = modelFacts(C.build([ca]), [ca]);
+  for (const m of ["AMF25", "InteliLite AMF25", "InteliLite 4 AMF25"]) assert.ok(factsFor(f, "controller", m).some((x) => /350 records/.test(x.line)), m);
+  assert.equal(factsFor(f, "controller", "AMF25")[0].version, "InteliLite 4 AMF25");
+  assert.equal(factsFor(f, "controller", "InteliLite 4 AMF25")[0].version, undefined);
+  assert.deepEqual([factsFor(f, "controller", "InteliLite NT AMF25"), factsFor(f, "controller", "AMF20")], [[], []]);
 });

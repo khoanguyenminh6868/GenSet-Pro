@@ -28,7 +28,10 @@ export function controllerSheet(text) {
   const lines = text.split("\n").map((l) => l.trim()).filter((l) => l && l.length <= 220 && /[a-z]{2}/i.test(l) && !FOOTER.test(l));
   const i = lines.findIndex((l) => C.controllersIn(l).some((c) => c.model));
   const next = i >= 0 ? lines[i + 1] || "" : "";
-  const title = i < 0 ? lines[0] || "" : /^\(.*\)$/.test(next) && C.controllersIn(next).length ? `${lines[i]} ${next}` : lines[i];
+  // ComAp writes its name on two lines ("InteliLite 4" then "AMF 25").
+  const top2 = `${lines[0] || ""} ${lines[1] || ""}`, modelsIn = (s) => C.controllersIn(s).filter((c) => c.model).map((c) => C.keyOf(c.model));
+  const title = modelsIn(top2).some((k) => !modelsIn(lines[0] || "").includes(k)) ? top2
+    : i < 0 ? lines[0] || "" : /^\(.*\)$/.test(next) && C.controllersIn(next).length ? `${lines[i]} ${next}` : lines[i];
   // Every line stays a row, word for word (the title may join two lines); the first row is the source's quote, so it
   // is a line of 8 characters or more (merge-specs.mjs, verify.mjs).
   const rows = [...new Set(lines)].slice(0, 700);
@@ -36,17 +39,33 @@ export function controllerSheet(text) {
   return { title, rows };
 }
 
-// The title line and the spec lines of a datasheet's text, word for word.
+// The title line (the first that names a model or frame: Stamford "UCI274F - Winding 311", Leroy-Somer "TAL-A46"), the
+// spec lines and, for a frame's datasheet, the lines that name the frame's models ("TAL-A46-C  kVA  230 ..."), word for word.
 export function makerSheet(text) {
   const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
+  const title = lines.find((l) => l.split(/[\s|]+/).some((w) => C.isCode(w))) || lines[0] || "";
+  const frame = C.keyOf(title.split(/[\s|]+/).find((w) => C.isCode(w)) || "");
   const rows = [];
   for (const l of lines) {
     const c = C.cellsOf(l);
-    if (c.length < 2 || l.length > 220) continue;
+    if (c.length < 2 || l.length > 220 || rows.includes(l)) continue;
     const key = C.specKey(c[0]);
-    if (key && c.slice(1).some((v) => C.SPEC[key].ok.test(v)) && !rows.includes(l)) rows.push(l);
+    if (key && c.slice(1).some((v) => C.SPEC[key].ok.test(v))) rows.push(l);
+    else if (frame.length >= 4 && c.some((v) => C.isCode(v) && C.keyOf(v).startsWith(frame) && C.keyOf(v) !== frame)) rows.push(l);
   }
-  return { title: lines[0] || "", rows };
+  return { title, rows };
+}
+
+// Leroy-Somer prints two A4 pages side by side on one wide page; each half is read on its own, else pdftotext -table
+// runs the left column's words into the right column's table.
+function pdfTextOf(file) {
+  const run = (args) => execFileSync("pdftotext", ["-table", "-enc", "UTF-8", ...args, file, "-"], { maxBuffer: 64 << 20, timeout: 60000 }).toString("utf8");
+  let pages = [];
+  try { pages = [...execFileSync("pdfinfo", ["-f", "1", "-l", "9999", file]).toString().matchAll(/^Page\s+(\d+)\s+size:\s+([\d.]+) x ([\d.]+)/gm)].map((m) => ({ n: m[1], w: +m[2], h: +m[3] })); } catch { /* one run */ }
+  if (!pages.some((p) => p.w > p.h * 1.2)) return run([]);
+  return pages.map((p) => (p.w > p.h * 1.2
+    ? run(["-f", p.n, "-l", p.n, "-marginr", String(p.w / 2)]) + "\n" + run(["-f", p.n, "-l", p.n, "-marginl", String(p.w / 2)])
+    : run(["-f", p.n, "-l", p.n]))).join("\n");
 }
 
 async function pdfOf(url) {
@@ -56,7 +75,7 @@ async function pdfOf(url) {
   if (buf.subarray(0, 5).toString("latin1") !== "%PDF-") throw new Error("not a PDF");
   const tmp = path.join(os.tmpdir(), `mds-${process.pid}-${Math.random().toString(36).slice(2)}.pdf`);
   fs.writeFileSync(tmp, buf);
-  try { return { url: r.url || url, text: pdfText(execFileSync("pdftotext", ["-table", "-enc", "UTF-8", tmp, "-"], { maxBuffer: 64 << 20, timeout: 60000 }).toString("utf8")) }; }
+  try { return { url: r.url || url, text: pdfText(pdfTextOf(tmp)) }; }
   finally { fs.rmSync(tmp, { force: true }); }
 }
 
@@ -73,8 +92,11 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     let d; try { d = await pdfOf(url); } catch (e) { console.log("x", url, e.message); continue; }
     const { title, rows } = isCtl ? controllerSheet(d.text) : makerSheet(d.text);
     if (rows.length < 3) { console.log("x", url, `chỉ ${rows.length} dòng thông số`); continue; }
-    fs.writeFileSync(path.join(dir, `${n}.md`), `URL: ${d.url}\nAccessed: ${new Date().toISOString().slice(0, 10)}\n\n${d.text}\n`, "utf8");
-    found.push({ n, url: d.url, title: `Datasheet: ${title}`, from: url, header: [], rows: isCtl ? rows : [title, ...rows] });
+    // A link that redirects to a signed, expiring address (ComAp: /productfile/<id> → a blob URL with sig=… and se=…) is
+    // recorded as the link given, which stays valid.
+    const stable = /[?&](sig|se|Expires|X-Amz-Signature)=/i.test(d.url) ? url : d.url;
+    fs.writeFileSync(path.join(dir, `${n}.md`), `URL: ${stable}\nAccessed: ${new Date().toISOString().slice(0, 10)}\n\n${d.text}\n`, "utf8");
+    found.push({ n, url: stable, title: `Datasheet: ${title}`, from: url, header: [], rows: isCtl || title.length < 8 ? rows : [title, ...rows] });
     console.log("+", n, title, rows.length, "dòng");
     n++;
   }

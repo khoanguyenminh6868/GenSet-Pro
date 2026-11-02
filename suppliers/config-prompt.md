@@ -23,7 +23,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   - "Thông số theo model": every figure of each engine and alternator above, from ANY supplier's row or datasheet that
     names that model, each with its `factSrc`. A figure marked ⚠ is given differently by its sources.
   - "Thông số bộ điều khiển": the first lines of the maker's datasheet of the controllers above (Deep Sea, SmartGen),
-    each line of the controller of its heading, with the `supplierId` / `n` to quote it. ALL the lines are in
+    each line of the controller of its heading, with the `supplierId` / `n` to quote it (Deep Sea, SmartGen, ComAp). ALL the lines are in
     `controllers.md` (a datasheet runs to 250 lines, a SmartGen manual to 700): for every controller requirement
     (event log, protections, emergency stop, measurements, AMF, RS485...) search controllers.md with grep under that
     controller's heading before writing `unclear`.
@@ -99,6 +99,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    `unclear`, never assumed from the model name. When the heading says the datasheet is of another generation (the
    supplier writes DSE7320, the datasheet is DSE7320 MKII), the check may be `met` and the code adds that the
    generation is to be confirmed.
+   When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
+   (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
    Keep at most 10 configurations, best first: fewest `not_met` on the engine and the controller, then on the
    alternator and the genset, then a supplier that truly fits (step 3), then fewest `unclear` in the same order, then
    the `option` requirements, then power closest above the requirement. The code ranks them again this way. A
