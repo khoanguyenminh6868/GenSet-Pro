@@ -18,7 +18,11 @@ KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 GH_TOKEN = os.environ["GH_TOKEN"]
 GH_REPO = os.environ["GH_REPO"]
 CHUNK = 190_000
-TEXT_EXT = {".pdf", ".docx", ".txt"}
+TEXT_EXT = {".pdf", ".docx", ".txt", ".jpg", ".jpeg", ".png", ".tif", ".tiff"}
+# Scanned pages (no text layer) and pictures are read with Tesseract OCR in Vietnamese (Khoa, 2026-11-02), so the
+# analysis and its quote check see them as text. A page counts as scanned below this many letters.
+OCR_MIN_CHARS = 60
+OCR_MAX_PAGES = 300
 
 
 def call(method, path, body=None, headers=None):
@@ -63,11 +67,52 @@ def download_asset(asset, dest: Path):
             out.write(b)
 
 
-def to_text(f: Path) -> str:
+def ocr_image(img) -> str:
+    r = subprocess.run(["tesseract", str(img), "-", "-l", "vie+eng", "--psm", "3"], capture_output=True, text=True, timeout=300,
+                       env={**os.environ, "OMP_THREAD_LIMIT": "1"})
+    return r.stdout
+
+
+def ocr_pages(f: Path, pages) -> dict:
+    """OCR the given 1-based pages of a PDF, four at a time; returns {page: text}."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    def one(n):
+        with tempfile.TemporaryDirectory() as t:
+            subprocess.run(["pdftoppm", "-r", "300", "-gray", "-png", "-f", str(n), "-l", str(n), str(f), f"{t}/p"], capture_output=True, timeout=300)
+            imgs = sorted(Path(t).glob("p*.png"))
+            return n, ocr_image(imgs[0]) if imgs else ""
+
+    with ThreadPoolExecutor(4) as ex:
+        return dict(ex.map(one, pages))
+
+
+def pdf_text(f: Path):
+    """Text of a PDF page by page (pdftotext ends each page with a form feed), scanned pages through OCR.
+    Returns (text, number of pages read by OCR)."""
+    pages = subprocess.run(["pdftotext", "-layout", str(f), "-"], capture_output=True, text=True, timeout=300).stdout.split("\f")
+    if pages and not pages[-1].strip():
+        pages.pop()
+    scanned = [i + 1 for i, t in enumerate(pages) if len(re.sub(r"\s", "", t)) < OCR_MIN_CHARS][:OCR_MAX_PAGES]
+    if scanned:
+        print(f"  {f.name}: OCR {len(scanned)}/{len(pages)} pages")
+        for n, t in ocr_pages(f, scanned).items():
+            pages[n - 1] = t
+    return "\f".join(pages), len(scanned)
+
+
+def to_text(f: Path, info=None) -> str:
     ext = f.suffix.lower()
     try:
         if ext == ".pdf":
-            return subprocess.run(["pdftotext", "-layout", str(f), "-"], capture_output=True, text=True, timeout=300).stdout
+            text, n = pdf_text(f)
+            if info is not None and n:
+                info["ocr"] = n
+            return text
+        if ext in {".jpg", ".jpeg", ".png", ".tif", ".tiff"}:
+            if info is not None:
+                info["ocr"] = 1
+            return ocr_image(f)
         if ext == ".docx":
             xml = zipfile.ZipFile(f).read("word/document.xml").decode("utf8", "replace")
             xml = re.sub(r"</w:p>", "\n", xml)
@@ -110,10 +155,11 @@ def ingest(key):
             if Path(name).suffix.lower() in TEXT_EXT:
                 local = Path(tmp) / f["assetName"]
                 download_asset(f["asset"], local)
-                text = to_text(local)
+                info = {}
+                text = to_text(local, info)
                 local.unlink()
             has = len(re.sub(r"\s", "", text)) > 40
-            recs.append({"name": name, "size": f["size"], "hasText": has, "converted": False, "path": name, "url": f"/_gh/{f['asset']}"})
+            recs.append({"name": name, "size": f["size"], "hasText": has, "converted": False, "path": name, "url": f"/_gh/{f['asset']}", **info})
             if has:
                 texts.append(f"--- Tệp: {name} ---\n{text.strip()}")
             print(f"  {name}: {f['size']} bytes, asset {f['asset']}, text={'yes' if has else 'no'}")
