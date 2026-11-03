@@ -60,7 +60,7 @@
           key, lotNo: lot.lotNo || "", name: d.bidName || "", lotName: multi ? lot.lotName || "" : "", investor: d.investorName || "", location: d.location || "",
           bidForm: d.bidForm || "", at: d.openedAt || d.bidCloseDate || "", url: d.url || "", price, wp, ratio, winner: w.name || "", k, kSrc, dist,
           goods: goods.slice(0, 8).map((g) => ({ name: cut(g.name, 300), maker: g.maker || g.label || "", code: g.code || "", origin: g.origin || "", qty: g.qty ?? null, unitPrice: g.unitPrice ?? null, desc: cut(g.desc, 200) })),
-          cfgText: cut(d.config?.text, 1500),
+          cfgText: cut(d.config?.text, 3000),
           bidders: (lot.bidders || []).map((b) => ({ name: b.name || "", tax: String(b.taxCode || "").replace(/\D/g, ""), price: bdPrice(b) ?? null, won: !!b.won })),
         });
       }
