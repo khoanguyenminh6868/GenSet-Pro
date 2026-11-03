@@ -378,20 +378,24 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   const hasSheet = (m) => factsFor(facts, "controller", m).length > 0, ctls = [];
   // Each of the 8 best rows brings every controller with a datasheet that it names or its supplier offers, so the
   // controllers of the configurations the agent is likely to pick are all there; the most named fill the rest.
-  const MAX_CTL = 12;
-  for (const r of top.slice(0, 8)) for (const c of [...r.rowCtrl, ...r.offers].sort((a, b) => ctlCount.get(b.model) - ctlCount.get(a.model))) {
-    if (c.model && hasSheet(c.model) && !ctls.includes(c.model) && ctls.length < MAX_CTL) ctls.push(c.model);
-  }
-  for (const [m] of [...ctlCount].sort((a, b) => b[1] - a[1])) if (ctls.length < MAX_CTL && !ctls.includes(m) && hasSheet(m)) ctls.push(m);
+  // The limit counts datasheets, not models: the models of one sheet (HGM6110N, HGM6120N, HGM6120CAN...) or one model
+  // written with and without its generation (DSE8610, DSE8610 MKII) take one place, so they do not push others out.
+  const MAX_CTL = 12, sheets = new Set(), sheetsOf = (m) => factsFor(facts, "controller", m).map((f) => `${f.supplierId}#${f.n}`);
+  const take = (m) => {
+    if (!m || ctls.includes(m) || !hasSheet(m)) return;
+    const mine = sheetsOf(m);
+    if (sheets.size >= MAX_CTL && !mine.every((k) => sheets.has(k))) return;
+    ctls.push(m); mine.forEach((k) => sheets.add(k));
+  };
+  for (const r of top.slice(0, 8)) for (const c of [...r.rowCtrl, ...r.offers].sort((a, b) => ctlCount.get(b.model) - ctlCount.get(a.model))) take(c.model);
+  for (const [m] of [...ctlCount].sort((a, b) => b[1] - a[1])) take(m);
   // Every line goes to controllers.md (a datasheet runs to 250 lines, a SmartGen manual to 700): the agent searches it
   // with grep; catalog.md shows the first 15 lines of each.
-  const ctlOut = [];
-  if (ctls.length) {
-    const head = "Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)";
-    out.push(`## ${head} — đầu mỗi datasheet; TOÀN BỘ dòng ở controllers.md, tìm chức năng bằng grep trong đó`, "");
-    ctlOut.push(`# ${head}`, "");
-    const printed = new Map();
-    for (const m of ctls) {
+  const ctlOut = [], printed = new Map(), head = "Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)";
+  // A controller's datasheet: the first 15 lines to catalog.md (`out`, when given), every line to controllers.md.
+  const sheetMd = (m, out) => {
+    if (!ctlOut.length) ctlOut.push(`# ${head}`, "");
+    {
       const list = factsFor(facts, "controller", m), by = new Map();
       for (const f of list) by.set(`${f.supplierId}#${f.n}`, [...(by.get(`${f.supplierId}#${f.n}`) || []), f]);
       for (const [k, fs] of by) {
@@ -400,12 +404,16 @@ export function catalogMd(cat, cap, hints, opts = {}) {
         // One model's lines are written once, even when two controllers above use them (DSE7320 and DSE7320 MKII);
         // two models of one datasheet (DSE7310 MKII, DSE7320 MKII) have lines of their own.
         const same = `${k}|${CAT.keyOf(fs[0].version || m)}`;
-        if (printed.has(same)) { for (const o of [out, ctlOut]) o.push(`${title}: các dòng như ở mục ${printed.get(same)}`, ""); continue; }
+        if (printed.has(same)) { for (const o of [out, ctlOut].filter(Boolean)) o.push(`${title}: các dòng như ở mục ${printed.get(same)}`, ""); continue; }
         printed.set(same, m);
-        out.push(title, ...fs.slice(0, 15).map((f) => `- ${f.line}`), fs.length > 15 ? `- … (${fs.length - 15} dòng nữa trong controllers.md)` : "", "");
+        out?.push(title, ...fs.slice(0, 15).map((f) => `- ${f.line}`), fs.length > 15 ? `- … (${fs.length - 15} dòng nữa trong controllers.md)` : "", "");
         ctlOut.push(title, ...fs.map((f) => `- ${f.line}`), "");
       }
     }
+  };
+  if (ctls.length) {
+    out.push(`## ${head} — đầu mỗi datasheet; TOÀN BỘ dòng ở controllers.md, tìm chức năng bằng grep trong đó`, "");
+    for (const m of ctls) sheetMd(m, out);
   }
   // Other suppliers whose rows name the same engine: what a configuration's `suppliers` are picked from.
   out.push("## Nhà cung cấp khác có dòng ghi cùng động cơ (để chọn suppliers)", "");
@@ -438,17 +446,23 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   // A table's header is written once (it was repeated on every row); a header that took in the table's rows is cut.
   out.push("## Tiêu đề bảng (header của mỗi bảng supplierId n, dùng được cho sourceQuote)", "");
   for (const [k, h] of headers) out.push(`- ${k}: ${h.length > 600 ? h.slice(0, 600) + " …" : h}`);
-  out.push("", controllersMd(cat.controllers || [], shown));
+  // Every controller of the "Bộ điều khiển" list that has its maker's datasheet gets all its lines in controllers.md too
+  // (an agent picking one past the 12 above used to find no datasheet and write `unclear`, e.g. DSE7410).
+  const withSheet = new Set(ctls);
+  for (const e of (cat.controllers || []).filter((e) => e.uses.some((u) => shown.has(u.supplierId)))) {
+    if (e.model && !withSheet.has(e.model) && hasSheet(e.model)) { sheetMd(e.model); withSheet.add(e.model); }
+  }
+  out.push("", controllersMd(cat.controllers || [], shown, withSheet));
   return { md: out.join("\n"), ctlMd: ctlOut.join("\n"), shown, top };
 }
 // Bộ điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
 // names it; a configuration's controller and its "Bộ điều khiển" check quote one of these lines.
 // Only the suppliers whose rows catalog.md shows, so the file stays small.
-function controllersMd(all, ids) {
+function controllersMd(all, ids, withSheet = new Set()) {
   const list = all.filter((e) => e.uses.some((u) => ids.has(u.supplierId)));
   const out = [`## Bộ điều khiển (${list.length}) — của các nhà cung cấp có dòng ở trên, dòng nguyên văn trên trang của họ`, ""];
   for (const e of list) {
-    out.push(`### ${e.model}${e.make ? ` — hãng: ${e.make}` : ""}`);
+    out.push(`### ${e.model}${e.make ? ` — hãng: ${e.make}` : ""}${withSheet.has(e.model) ? " — có datasheet hãng: mọi dòng ở controllers.md (grep theo tên model)" : ""}`);
     const seen = new Set();
     for (const u of e.uses) {
       if (!ids.has(u.supplierId) || seen.has(u.supplierId) || seen.size >= 8) continue;
