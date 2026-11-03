@@ -1,0 +1,21 @@
+[
+ {
+  "n": 101,
+  "url": "https://www.marathonelectric.com/generators/mariner-generators",
+  "title": "Mariner® Generator",
+  "header": [
+   "| | Subject | American Bureau Of Shipping (ABS) | Lloyd’s Register | DNV GL"
+  ],
+  "rows": [
+   "| Minimum Rating Requiring Certification | 100 kW | 100 kW | 100 kW",
+   "| Ambient Temperature | 45° C | 45° C | 45° C",
+   "| Temperature Rise | 110° C | 110° C | 110° C",
+   "| Embedded Temperature Detectors | Required for all units 1kV and over | Required for propulsion systems only | Required for all units 1000 kW and over",
+   "| Space Heaters | Required | Not Specified | Required",
+   "| Sustain Short Circuit Current in Percent (%) Rated F.L. Current | 300% for 2 Sec. | 300% for 2 Sec. | 300% for 2 Sec.",
+   "| Drip Cover or Minimum Enclosure Required | IP22 | IP23 | IP23",
+   "| Fixed Termination of Load Leads | Not Specified | Required | Required",
+   "| Shaft Material Test | Propulsion Only | Required | Required"
+  ]
+ }
+]

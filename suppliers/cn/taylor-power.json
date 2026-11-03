@@ -77,9 +77,175 @@
         "Towable, Tier 4 Final diesel power from 25 kW–1250 kW"
       ],
       "file": "sources/taylor-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.taylorpowergenerators.com/generators/agricultural-generators",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | Model | Model | kW | Engine | Spec Sheet"
+      ],
+      "file": "sources/taylor-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.taylorpowergenerators.com/generators/trailer-mounted-generators",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | Model | Model | kW | Engine | Spec Sheet"
+      ],
+      "file": "sources/taylor-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.taylorpowergenerators.com/generators/streamline-series",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | Model | Model | kW | Engine | Spec Sheet"
+      ],
+      "file": "sources/taylor-power/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.taylorpowergenerators.com/generators/select-series",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | Model | Model | kW | Engine | Spec Sheet"
+      ],
+      "file": "sources/taylor-power/104.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Agricultural Generators | Reliable Farm Power | Taylor Power Systems",
+      "header": [
+        "| | Model | Model | kW | Engine | Spec Sheet",
+        "| TA45JD kW: 45 Engine: John Deere, 4045TF290B, 4.5L Turbocharged Inline 4-Cylinder, Tier 4i Download Spec | TA45JD | 45 | John Deere, 4045TF290B, 4.5L Turbocharged Inline 4-Cylinder, Tier 4i | Download"
+      ],
+      "rows": [
+        "| TA55P kW: 55 Engine: Perkins, 1104D-44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier III Download Spec | TA55P | 55 | Perkins, 1104D-44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier III | Download",
+        "| TA60P kW: 60 Engine: Perkins, 1104D-E44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier III Download Spec | TA60P | 60 | Perkins, 1104D-E44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier III | Download",
+        "| TA65JD kW: 65 Engine: John Deere, 4045HF280D, 4.5L Intercooled Inline 4-Cylinder, Tier III Download Spec | TA65JD | 65 | John Deere, 4045HF280D, 4.5L Intercooled Inline 4-Cylinder, Tier III | Download",
+        "| TA80JD kW: 80 Engine: John Deere, 4045HF285J, 4.5L Turbocharged Inline 4-Cylinder, Tier III Download Spec | TA80JD | 80 | John Deere, 4045HF285J, 4.5L Turbocharged Inline 4-Cylinder, Tier III | Download",
+        "| TA80P kW: 80 Engine: Perkins, 1104D-E44TAG1, 4.4L Turbocharged Inline 4-Cylinder, Tier III Download Spec | TA80P | 80 | Perkins, 1104D-E44TAG1, 4.4L Turbocharged Inline 4-Cylinder, Tier III | Download",
+        "| TA100P kW: 100 Engine: Perkins, 1104D-E44TAG2, 4.4L Turbocharged Inline 4-Cylinder, Tier III Download Spec | TA100P | 100 | Perkins, 1104D-E44TAG2, 4.4L Turbocharged Inline 4-Cylinder, Tier III | Download",
+        "| TA105JD kW: 105 Engine: John Deere, 4045HF285I, 4.5L Turbocharged Inline 4-Cylinder, Tier III Download Spec | TA105JD | 105 | John Deere, 4045HF285I, 4.5L Turbocharged Inline 4-Cylinder, Tier III | Download",
+        "| TA125JD kW: 125 Engine: John Deere, 6068HFG82B, 6.8L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA125JD | 125 | John Deere, 6068HFG82B, 6.8L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA125P kW: 125 Engine: Perkins, 1106D-E70TAG2, 7.0L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA125P | 125 | Perkins, 1106D-E70TAG2, 7.0L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA140P kW: 140 Engine: Perkins, 1106D-E70TAG2, 7.0L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA140P | 140 | Perkins, 1106D-E70TAG2, 7.0L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA150P kW: 150 Engine: Perkins, 1106D-E70TAG3, 7.0L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA150P | 150 | Perkins, 1106D-E70TAG3, 7.0L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA165JD kW: 165 Engine: John Deere, 6068HF285K, 6.8L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA165JD | 165 | John Deere, 6068HF285K, 6.8L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA180P kW: 180 Engine: Perkins, 1106D-E70TAG3, 7.0L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA180P | 180 | Perkins, 1106D-E70TAG3, 7.0L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA185JD kW: 185 Engine: John Deere, 6068HFG85U, 6.8L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA185JD | 185 | John Deere, 6068HFG85U, 6.8L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA200P kW: 200 Engine: Perkins, 1106D-E70TAG5, 7.0L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA200P | 200 | Perkins, 1106D-E70TAG5, 7.0L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA210JD kW: 210 Engine: John Deere, 6068HFG85U, 6.8L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA210JD | 210 | John Deere, 6068HFG85U, 6.8L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA225JD kW: 225 Engine: John Deere, 6090HF484C, 9.0L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA225JD | 225 | John Deere, 6090HF484C, 9.0L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA250JD kW: 250 Engine: John Deere, 6090HF484B, 9.0L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA250JD | 250 | John Deere, 6090HF484B, 9.0L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA250P kW: 250 Engine: Perkins, 1506D-E88TAG3, 8.8L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA250P | 250 | Perkins, 1506D-E88TAG3, 8.8L Turbocharged Inline 6-Cylinder, Tier III | Download",
+        "| TA275JD kW: 275 Engine: John Deere, 6090HF484B, 9.0L Turbocharged Inline 6-Cylinder, Tier III Download Spec | TA275JD | 275 | John Deere, 6090HF484B, 9.0L Turbocharged Inline 6-Cylinder, Tier III | Download"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Trailer Mounted Generators | Mobile Power Solutions | Taylor Power Systems",
+      "header": [
+        "| | Model | Model | kW | Engine | Spec Sheet"
+      ],
+      "rows": [
+        "| TM25 kW: 25 Engine: Isuzu, 4LE2T, Turbocharged V-8, 4-Cycle Download Spec | TM25 | 25 | Isuzu, 4LE2T, Turbocharged V-8, 4-Cycle | Download",
+        "| TM50 kW: 50 Engine: Kohler, KDI2504TCR, Turbocharged Inline 4 Cylinder Download Spec | TM50 | 50 | Kohler, KDI2504TCR, Turbocharged Inline 4 Cylinder | Download",
+        "| TM80 kW: 80 Engine: Kohler, KDI3404TCR, Turbocharged Inline 4 Cylinder Download Spec | TM80 | 80 | Kohler, KDI3404TCR, Turbocharged Inline 4 Cylinder | Download",
+        "| TM130 kW: 130 Engine: FPT, NEF45, Turbocharged Inline 4 Cylinder Download Spec | TM130 | 130 | FPT, NEF45, Turbocharged Inline 4 Cylinder | Download",
+        "| TM170 kW: 170 Engine: FPT, NEF67, Turbocharged Inline 6 Cylinder Download Spec | TM170 | 170 | FPT, NEF67, Turbocharged Inline 6 Cylinder | Download",
+        "| TM225 kW: 225 Engine: FPT, NEF67, Turbocharged Inline 6 Cylinder Download Spec | TM225 | 225 | FPT, NEF67, Turbocharged Inline 6 Cylinder | Download",
+        "| TM330 kW: 330 Engine: FPT, Cursor9, Turbocharged Inline 6 Cylinder Download Spec | TM330 | 330 | FPT, Cursor9, Turbocharged Inline 6 Cylinder | Download",
+        "| TM704 kW: 704 Engine: Volvo, TWD1683GE, Turbocharged Inline 6 Cylinder Download Spec | TM704 | 704 | Volvo, TWD1683GE, Turbocharged Inline 6 Cylinder | Download",
+        "| TM1000 kW: 1000 Engine: Volvo, TWD1672GE, Turbocharged Inline 6 Cylinder Download Spec | TM1000 | 1000 | Volvo, TWD1672GE, Turbocharged Inline 6 Cylinder | Download",
+        "| TM1250 kW: 1250 Engine: Volvo, TWD1683GE, Turbocharged Inline 6 Cylinder Download Spec | TM1250 | 1250 | Volvo, TWD1683GE, Turbocharged Inline 6 Cylinder | Download"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Streamline Generators | Efficient Standby Power | Taylor Power Systems",
+      "header": [
+        "| | Model | Model | kW | Engine | Spec Sheet"
+      ],
+      "rows": [
+        "| TGS40 kW: 40 Engine: PSI, 4.3L, V-6, 4-Cycle Download Spec | TGS40 | 40 | PSI, 4.3L, V-6, 4-Cycle | Download",
+        "| TGS60 kW: 60 Engine: PSI, 5.7L, V-8, 4-Cycle Download Spec | TGS60 | 60 | PSI, 5.7L, V-8, 4-Cycle | Download",
+        "| TGS100 kW: 100 Engine: PSI, 5.7L, Turbocharged V-8, 4-Cycle Download Spec | TGS100 | 100 | PSI, 5.7L, Turbocharged V-8, 4-Cycle | Download",
+        "| TGS150 kW: 150 Engine: PSI, 8.8L, Turbocharged V-8, 4-Cycle Download Spec | TGS150 | 150 | PSI, 8.8L, Turbocharged V-8, 4-Cycle | Download",
+        "| TGS80 kW: 80 Engine: PSI, 5.7L, Turbocharged V-8, 4-Cycle Download Spec | TGS80 | 80 | PSI, 5.7L, Turbocharged V-8, 4-Cycle | Download",
+        "| TDS55 kW: 55 Engine: Perkins, 1104D-44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TDS55 | 55 | Perkins, 1104D-44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
+        "| TDS60 kW: 60 Engine: Perkins, 1104D-E44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TDS60 | 60 | Perkins, 1104D-E44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
+        "| TDS80 kW: 80 Engine: Perkins, 1104D-E44TAG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TDS80 | 80 | Perkins, 1104D-E44TAG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
+        "| TDS100 kW: 100 Engine: Perkins, 1104D-E44TAG2, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TDS100 | 100 | Perkins, 1104D-E44TAG2, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
+        "| TDS125 kW: 125 Engine: Perkins, 1106D-E70TAG2, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TDS125 | 125 | Perkins, 1106D-E70TAG2, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TDS140 kW: 140 Engine: Perkins, 1106D-E70TAG2, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TDS140 | 140 | Perkins, 1106D-E70TAG2, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TDS150 kW: 150 Engine: Perkins, 1106D-E70TAG3, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TDS150 | 150 | Perkins, 1106D-E70TAG3, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TDS175 kW: 175 Engine: Perkins, 1106D-E70TAG4, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TDS175 | 175 | Perkins, 1106D-E70TAG4, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TDS200 kW: 200 Engine: Perkins, 1106D-E70TAG5, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TDS200 | 200 | Perkins, 1106D-E70TAG5, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 | Download"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Select Series Generators | Heavy-Duty Standby Power | Taylor Power Systems",
+      "header": [
+        "| | Model | Model | kW | Engine | Spec Sheet"
+      ],
+      "rows": [
+        "| TD20 kW: 20 Engine: Perkins, 404D-22G, 2.22L Inline 4-Cylinder, Tier 4i Download Spec | TD20 | 20 | Perkins, 404D-22G, 2.22L Inline 4-Cylinder, Tier 4i | Download",
+        "| TD28 kW: 28 Engine: Perkins, 404D-22TG, 2.22L Turbocharged Inline 4-Cylinder, Tier 4i Download Spec | TD28 | 28 | Perkins, 404D-22TG, 2.22L Turbocharged Inline 4-Cylinder, Tier 4i | Download",
+        "| TD55 kW: 55 Engine: Perkins, 1104D-44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TD55 | 55 | Perkins, 1104D-44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
+        "| TD60 kW: 60 Engine: Perkins, 1104D-E44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TD60 | 60 | Perkins, 1104D-E44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
+        "| TD80 kW: 80 Engine: Perkins, 1104D-E44TAG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TD80 | 80 | Perkins, 1104D-E44TAG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
+        "| TD100 kW: 100 Engine: Perkins, 1104D-E44TAG2, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TD100 | 100 | Perkins, 1104D-E44TAG2, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
+        "| TD125 kW: 125 Engine: Perkins, 1106D-E70TAG2, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TD125 | 125 | Perkins, 1106D-E70TAG2, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TD150 kW: 150 Engine: Perkins, 1106D-E70TAG3, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TD150 | 150 | Perkins, 1106D-E70TAG3, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TD175 kW: 175 Engine: Perkins, 1106D-E70TAG4, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TD175 | 175 | Perkins, 1106D-E70TAG4, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TD200 kW: 200 Engine: Perkins, 1106D-E70TAG5, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TD200 | 200 | Perkins, 1106D-E70TAG5, 7.01L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TD250 kW: 250 Engine: Perkins, 1706D-E93TAG1, 9.3L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TD250 | 250 | Perkins, 1706D-E93TAG1, 9.3L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TD250V kW: 250 Engine: Volvo, TAD852GE, Turbocharged Vertical Inline 4-Cycle Tier 3 Download Spec | TD250V | 250 | Volvo, TAD852GE, Turbocharged Vertical Inline 4-Cycle Tier 3 | Download",
+        "| TD300 kW: 300 Engine: Perkins, 1706D-E93TAG1, 9.3L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TD300 | 300 | Perkins, 1706D-E93TAG1, 9.3L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TD350 kW: 350 Engine: Perkins, 2206D-E13TAG2, 12.5L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TD350 | 350 | Perkins, 2206D-E13TAG2, 12.5L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TD400 kW: 400 Engine: Perkins, 2206D-E13TAG3, 15.2L Turbocharged Inline 6-Cylinder, Tier 3 Download Spec | TD400 | 400 | Perkins, 2206D-E13TAG3, 15.2L Turbocharged Inline 6-Cylinder, Tier 3 | Download",
+        "| TD450 kW: 450 Engine: Perkins, 2506D-E15TAG1, 15.2L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TD450 | 450 | Perkins, 2506D-E15TAG1, 15.2L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
+        "| TD500 kW: 500 Engine: Perkins, 2506C-E15TAG3, 15.2L Turbocharged Inline 6-Cylinder, Tier 2 Download Spec | TD500 | 500 | Perkins, 2506C-E15TAG3, 15.2L Turbocharged Inline 6-Cylinder, Tier 2 | Download",
+        "| TD550 kW: 550 Engine: Perkins, 2506C-E15TAG4, 15.2L Turbocharged Inline 6-Cylinder, Tier 2 Download Spec | TD550 | 550 | Perkins, 2506C-E15TAG4, 15.2L Turbocharged Inline 6-Cylinder, Tier 2 | Download",
+        "| TD600 kW: 600 Engine: Perkins, 2806C-E18TAG3, 18.13L Turbocharged Inline 6-Cylinder, Tier 2 Download Spec | TD600 | 600 | Perkins, 2806C-E18TAG3, 18.13L Turbocharged Inline 6-Cylinder, Tier 2 | Download",
+        "| TD750 kW: 750 Engine: Perkins, 2806C-E18TTAG7, 18.1L Inline Turbocharged 6-Cylinder, Tier 2 Download Spec | TD750 | 750 | Perkins, 2806C-E18TTAG7, 18.1L Inline Turbocharged 6-Cylinder, Tier 2 | Download",
+        "| TD800 kW: 800 Engine: Mitsubishi, S12A2-Y2PTAW-2, 33.93L Turbocharged V-12, Tier 2 Download Spec | TD800 | 800 | Mitsubishi, S12A2-Y2PTAW-2, 33.93L Turbocharged V-12, Tier 2 | Download",
+        "| TD900 kW: 900 Engine: HD Hyundai , DP222CC, 21.93L Turbocharged V-12, Tier 2 Download Spec | TD900 | 900 | HD Hyundai , DP222CC, 21.93L Turbocharged V-12, Tier 2 | Download",
+        "| TD1000P kW: 1000 Engine: Perkins, 5008C-E30TAG5, 30L Turbocharged 8-Cylinder, Tier 2 Download Spec | TD1000P | 1000 | Perkins, 5008C-E30TAG5, 30L Turbocharged 8-Cylinder, Tier 2 | Download",
+        "| TD1250 kW: 1250 Engine: Mitsubishi, S12R-Y2PTAW-1, 49.03L Turbocharged V-12, Tier 2 Download Spec | TD1250 | 1250 | Mitsubishi, S12R-Y2PTAW-1, 49.03L Turbocharged V-12, Tier 2 | Download",
+        "| TD1500 kW: 1500 Engine: Perkins, 5012C-E46TAG6, 45.84L Quad Turbocharged V-12, Tier 2 Download Spec | TD1500 | 1500 | Perkins, 5012C-E46TAG6, 45.84L Quad Turbocharged V-12, Tier 2 | Download",
+        "| TD1600 kW: 1600 Engine: Mitsubishi, S16R-Y2PTAW-1, 65.37L Turbocharged V-12, Tier 2 Download Spec | TD1600 | 1600 | Mitsubishi, S16R-Y2PTAW-1, 65.37L Turbocharged V-12, Tier 2 | Download",
+        "| TD2000 kW: 2000 Engine: Mitsubishi, S16R-Y2PTAW2-1, 65.37L Turbocharged V-12, Tier 2 Download Spec | TD2000 | 2000 | Mitsubishi, S16R-Y2PTAW2-1, 65.37L Turbocharged V-12, Tier 2 | Download",
+        "| TG40 kW: 40 Engine: GM, 4.3L, Natural Aspirated V-6 Download Spec | TG40 | 40 | GM, 4.3L, Natural Aspirated V-6 | Download",
+        "| TG60 kW: 60 Engine: GM, 5.7L, Natural Aspirated V-8 Download Spec | TG60 | 60 | GM, 5.7L, Natural Aspirated V-8 | Download",
+        "| TG100 kW: 100 Engine: GM, 5.7L, Turbocharged, Air Cooled V-8 Download Spec | TG100 | 100 | GM, 5.7L, Turbocharged, Air Cooled V-8 | Download",
+        "| TG125 kW: 125 Engine: PSI, 8.8L, Turbocharged V-8 Download Spec | TG125 | 125 | PSI, 8.8L, Turbocharged V-8 | Download",
+        "| TG150 kW: 150 Engine: PSI, 8.8L, Turbocharged V-8 Download Spec | TG150 | 150 | PSI, 8.8L, Turbocharged V-8 | Download",
+        "| TG200 kW: 200 Engine: Doosan, 11.1L, Turbocharged Inline 6-Cylinder Download Spec | TG200 | 200 | Doosan, 11.1L, Turbocharged Inline 6-Cylinder | Download",
+        "| TG250 kW: 250 Engine: Doosan, 14.6L, Turbocharged, Air Cooled V-8 Download Spec | TG250 | 250 | Doosan, 14.6L, Turbocharged, Air Cooled V-8 | Download",
+        "| TG300 kW: 300 Engine: Doosan, 14.6L HO, Turbocharged, Air Cooled V-8 Download Spec | TG300 | 300 | Doosan, 14.6L HO, Turbocharged, Air Cooled V-8 | Download",
+        "| TG350 kW: 350 Engine: Doosan, 18.3L, Turbocharged, Air Cooled V-10 Download Spec | TG350 | 350 | Doosan, 18.3L, Turbocharged, Air Cooled V-10 | Download",
+        "| TG400 kW: 400 Engine: Doosan, 21.9L, Turbocharged, Air Cooled V-12 Download Spec | TG400 | 400 | Doosan, 21.9L, Turbocharged, Air Cooled V-12 | Download",
+        "| TG450 kW: 450 Engine: Doosan, 21.9L, Turbocharged, Air Cooled V-12 Download Spec | TG450 | 450 | Doosan, 21.9L, Turbocharged, Air Cooled V-12 | Download",
+        "| TG650 kW: 650 Engine: PSI, 31.8L, Charged Cooled Forced Induction 12-Cylinder Download Spec | TG650 | 650 | PSI, 31.8L, Charged Cooled Forced Induction 12-Cylinder | Download",
+        "| TG800 kW: 800 Engine: PSI, 39.2L, Charged Cooled Forced Induction 12-Cylinder Download Spec | TG800 | 800 | PSI, 39.2L, Charged Cooled Forced Induction 12-Cylinder | Download",
+        "| TG1000 kW: 1000 Engine: PSI, 52.3L, Turbocharged V-16 4-Cycle Download Spec | TG1000 | 1000 | PSI, 52.3L, Turbocharged V-16 4-Cycle | Download",
+        "| TG1250 kW: 1500 Engine: PSI, 5012C-E46TAG6, 52.3L, Turbocharged V-16 4-Cycle Download Spec | TG1250 | 1500 | PSI, 5012C-E46TAG6, 52.3L, Turbocharged V-16 4-Cycle | Download",
+        "| TG80 kW: 80 Engine: GM, 5.7L, Turbocharged V-8 Download Spec | TG80 | 80 | GM, 5.7L, Turbocharged V-8 | Download"
+      ]
+    }
+  ]
 }

@@ -33,7 +33,9 @@ for (const f of [...new Set([...listed("specs"), ...listed("datasheets")])]) {
     tables.push({ n: t.n, title: t.title, header: t.header, rows: t.rows });
   }
   const used = [...new Set(tables.map((t) => t.n))];
-  rec.sources = rec.sources.filter((s) => s.n < 101);
+  // Pages of internet finds (2001–2999, config-bot.mjs) and controller pages (3001+) are not the crawl's: kept, with their tables.
+  const kept = (rec.specTables || []).filter((t) => t.n >= 2000);
+  rec.sources = rec.sources.filter((s) => s.n < 101 || s.n >= 2000);
   for (const n of used) {
     const src = path.join("sources", id, `${n}.md`), head = fs.readFileSync(path.join(ROOT, src), "utf8").split("\n", 2);
     const first = tables.find((t) => t.n === n);
@@ -44,7 +46,7 @@ for (const f of [...new Set([...listed("specs"), ...listed("datasheets")])]) {
   // A page newer than specs/<id>.json belongs to a crawl still running: left alone.
   const specTime = fs.existsSync(path.join(ROOT, "specs", f)) ? fs.statSync(path.join(ROOT, "specs", f)).mtimeMs : 0;
   for (const p of fs.existsSync(dir) ? fs.readdirSync(dir) : []) if (/^\d{3}\.md$/.test(p) && !used.includes(Number(p.slice(0, 3))) && fs.statSync(path.join(dir, p)).mtimeMs <= specTime) fs.rmSync(path.join(dir, p));
-  if (tables.length) rec.specTables = tables; else delete rec.specTables;
+  if (tables.length || kept.length) rec.specTables = [...tables, ...kept]; else delete rec.specTables;
   fs.writeFileSync(file, JSON.stringify(rec, null, 2) + "\n", "utf8");
   const rows = tables.reduce((a, t) => a + t.rows.length, 0);
   if (rows) { recs++; total += rows; }

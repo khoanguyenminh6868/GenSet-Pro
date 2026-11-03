@@ -60,9 +60,158 @@
         "Become a Grupel Distributor"
       ],
       "file": "sources/grupel/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://grupel.eu/en/products/portable-generator-gr3000/?_post_id=8337",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | | kVA | kW"
+      ],
+      "file": "sources/grupel/101.md"
+    },
+    {
+      "n": 103,
+      "url": "https://grupel.eu/en/products/portable-generator-gr6500/?_post_id=8338",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | | kVA | kW"
+      ],
+      "file": "sources/grupel/103.md"
+    },
+    {
+      "n": 105,
+      "url": "https://grupel.eu/en/products/portable-inverter-generator-gr2500/?_post_id=8336",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | | kVA | kW"
+      ],
+      "file": "sources/grupel/105.md"
+    },
+    {
+      "n": 107,
+      "url": "https://grupel.eu/en/products/portable-generator-gr12000/?_post_id=33744",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | | kVA | kW"
+      ],
+      "file": "sources/grupel/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://grupel.eu/en/products/perkins-genset-st-o-60hz-10kva/?_post_id=8101",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | | kVA | kW"
+      ],
+      "file": "sources/grupel/108.md"
+    },
+    {
+      "n": 111,
+      "url": "https://grupel.eu/en/products/perkins-genset-st-o-50hz-9kva/?_post_id=8100",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | | kVA | kW"
+      ],
+      "file": "sources/grupel/111.md"
+    },
+    {
+      "n": 117,
+      "url": "https://grupel.eu/en/products/grupel-genset-st-o-50hz-8kva/?_post_id=7230",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | | kVA | kW"
+      ],
+      "file": "sources/grupel/117.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Portable Generator GR3000 - 3kW - GRUPEL",
+      "header": [
+        "| | | kVA | kW"
+      ],
+      "rows": [
+        "| Stand-by Power (STP) | 3,8 | 3",
+        "| Prime Power (PRP) | 3,5 | 2,8"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Portable Gasoline Generator GR6500 | Grupel",
+      "header": [
+        "| | | kVA | kW"
+      ],
+      "rows": [
+        "| Stand-by Power (STP) | 8,6 | 6,9",
+        "| Prime Power (PRP) | 7,9 | 6,3"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Portable Inverter Generator GR2500 - 2.2kW - GRUPEL",
+      "header": [
+        "| | | kVA | kW"
+      ],
+      "rows": [
+        "| Stand-by Power (STP) | 2,8 | 2,2",
+        "| Prime Power (PRP) | 2,5 | 2"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Portable Gasoline Generator GR12000 | Grupel",
+      "header": [
+        "| | | kVA | kW"
+      ],
+      "rows": [
+        "| Stand-by Power (STP) | 13,8 | 11",
+        "| Prime Power (PRP) | 15 | 12"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Perkins + Stamford Open Genset 10kVA, 60hz | Grupel",
+      "header": [
+        "| | | kVA | kW"
+      ],
+      "rows": [
+        "| Stand-by Power (STP) | 10 | 8",
+        "| Prime Power (PRP) | 9 | 7"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "Perkins + Stamford Open Genset 9kVA, 50hz | Grupel",
+      "header": [
+        "| | | kVA | kW"
+      ],
+      "rows": [
+        "| Stand-by Power (STP) | 9 | 7",
+        "| Prime Power (PRP) | 9 | 7"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "Grupel + Stamford Open Genset 8kVA, 50hz | Grupel",
+      "header": [
+        "| | | kVA | kW"
+      ],
+      "rows": [
+        "| Stand-by Power (STP) | 8 | 7",
+        "| Prime Power (PRP) | 8 | 6"
+      ]
+    }
+  ]
 }

@@ -99,9 +99,489 @@
         "MAN Energy Solutions offers four-stroke engines with outputs from 428 kW to 21 MW"
       ],
       "file": "sources/man-engines/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.man.eu/engines/en/products/power-generation/diesel/power-generation-diesel.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Output in kW | Output in kVA | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "file": "sources/man-engines/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.man.eu/engines/en/products/marine/yacht-engines/yacht.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "file": "sources/man-engines/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/commercial-shipping.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Output in kW | Output in HP | Engine type | Cylinders | Type | Displacement in litres"
+      ],
+      "file": "sources/man-engines/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.man.eu/engines/en/products/marine/auxiliary-motors/auxiliary-motors.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "file": "sources/man-engines/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Output in kW | Air/fuel ratio λ | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "file": "sources/man-engines/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.man.eu/engines/en/products/off-road/construction-and-special-machinery/construction-and-special-machinery.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "file": "sources/man-engines/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.man.eu/engines/en/products/off-road/agricultural-machinery/agricultural-machinery.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "file": "sources/man-engines/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.man.eu/engines/en/products/off-road/railway/railway.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "file": "sources/man-engines/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/man-d3872.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Power in kW | Power in hp | Torque | Emission standards"
+      ],
+      "file": "sources/man-engines/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/man-in-line-six-cylinder-motor.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | | D2676 LE4x6 (light duty) | D2676 LE43x / 42x (medium duty) | D2676 LE4xx (heavy duty)"
+      ],
+      "file": "sources/man-engines/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.man.eu/engines/en/products/power-generation/gas/man-motor-e3262.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | | MAN E3262 E302 | MAN E3262 E302"
+      ],
+      "file": "sources/man-engines/111.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "MAN diesel engines for Limited Time Power, Prime and Continuous Power | MAN Engines",
+      "header": [
+        "| Output in kW | Output in kVA | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 880 – 1,117 | 1,000 – 1,250 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "MAN diesel engines for Limited Time Power, Prime and Continuous Power | MAN Engines",
+      "header": [
+        "| Output in kW | Output in kVA | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 770 – 920 | 880 – 1,030 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "MAN diesel engines for Limited Time Power, Prime and Continuous Power | MAN Engines",
+      "header": [
+        "| Output in kW | Output in kVA | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 700 – 836 | 800 – 930 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "MAN diesel engines for Limited Time Power, Prime and Continuous Power | MAN Engines",
+      "header": [
+        "| Output in kW | Output in kVA | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 560 – 640 | 630 – 700 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Compact MAN diesel engines for yachts and sports boats | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 537 | 730 | i6-730 | 6 | in-line | 12.4",
+        "| 588 | 800 | i6-800 | 6 | in-line | 12.4",
+        "| 625 | 850 | i6-850 | 6 | in-line | 12.4",
+        "| 735 | 1,000 | V8-1,000 | 8 | V 90° | 16.2",
+        "| 882 | 1,200 | V8-1200 | 8 | V 90° | 16.2",
+        "| 956 | 1,300 | V8-1300 | 8 | V 90° | 16.2",
+        "| 1,029 | 1,400 | V12-1,400 | 12 | V 90° | 24.2",
+        "| 1,140 | 1,550 | V12-1550 | 12 | V 90° | 24.2",
+        "| 1,213 | 1,650 | V12-1650 | 12 | V 90° | 24.2",
+        "| 1,324 | 1,800 | V12-1800 | 12 | V 90° | 24.2",
+        "| 1,397 | 1,900 | V12-1900 | 12 | V 90° | 24.2",
+        "| 1,471 | 2,000 | V-12-2000 | 12 | V 90° | 24.2",
+        "| 1,471 | 2,000 | V12X-2000 | 12 | V 90° | 29.6",
+        "| 1,618 | 2,200 | V12X-2200 | 12 | V 90° | 29.6"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "MAN marine engines for commercial shipping | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine type | Cylinders | Type | Displacement in litres"
+      ],
+      "rows": [
+        "| 537 – 625 | 730 – 850 | D2676 | 6 | in-line | 12.4",
+        "| 735 – 956 | 1,000 – 1,300 | D2868 | 8 | V 90° | 16.2",
+        "| 1,029 – 1,471 | 1,400 – 2,000 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "MAN marine engines for commercial shipping | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine type | Cylinders | Type | Displacement in litres"
+      ],
+      "rows": [
+        "| 412 – 478 | 560 – 650 | D2676 | 6 | in-line | 12.4",
+        "| 588 – 662 | 800 – 900 | D2868 | 8 | V 90° | 16.2",
+        "| 749 – 1,066 | 1,019 – 1,450 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "MAN marine engines for commercial shipping | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine type | Cylinders | Type | Displacement in litres"
+      ],
+      "rows": [
+        "| 147 – 382 | 200 – 520 | D2676 | 6 | in-line | 12.4",
+        "| 441 – 500 | 600 – 680 | D2868 | 8 | V 90° | 16.2",
+        "| 551 – 735 | 749 – 1,000 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "MAN marine engines for commercial shipping | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine type | Cylinders | Displacement in litres | exhaust after-treatment"
+      ],
+      "rows": [
+        "| 1,066 | 1,450 | D2862 LE48B | V12 | 24.2 | SCR+DPF",
+        "| 882 | 1,200 | D2862 LE43B | V12 | 24.2 | SCR+DPF",
+        "| 735 | 1,000 | D2862 LE44A | V12 | 24.2 | SCR+DPF",
+        "| 551 | 749 | D2862 LE43A | V12 | 24.2 | SCR+DPF",
+        "| 412 | 560 | D2676 LE43B | 6 in-line | 12.4 | SCR+DPF",
+        "| 368 | 500 | D2676 LE47A | 6 in-line | 12.4 | SCR+DPF",
+        "| 290 | 394 | D2676 LE487 | 6 in-line | 12.4 | SCR only"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "MAN marine engines for commercial shipping | MAN Engines",
+      "header": [
+        "| Output in kW | Speed in min -1 | Engine type | Cylinders | Displacement in litres | Exhaust gas aftertreatment"
+      ],
+      "rows": [
+        "| 800 | 1,800 | D2862 LE32DB | V12 | 24.2 | SCR+DPF",
+        "| 700 | 1,500 | D2862 LE32AA | V12 | 24.2 | SCR+DPF",
+        "| 700 | 1,800 | D2862 LE32EB | V12 | 42.2 | SCR+DPF",
+        "| 600 | 1,500 | D2862 LE32BA | V12 | 24.2 | SCR+DPF",
+        "| 290 | 1,500 | D2676 LE328 | 6 in-line | 12.4 | SCR only",
+        "| 290 | 1,800 | D2676 LE328 | 6 in-line | 12.4 | SCR only"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "MAN marine engines for commercial shipping | MAN Engines",
+      "header": [
+        "| | > 300 kW per engine | < 300 kW per engine"
+      ],
+      "rows": [
+        "| NO x | < 1.8 g/kWh | < 2.1 g/kWh",
+        "| PM | < 0.015 g/kWh | < 0.1 g/kWh",
+        "| PN | < 1.0*10 12 n/kWh |",
+        "| Solution by MAN Engines | SCR + DPF | SCR only"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Compact MAN diesel and gas engines as auxiliary engines | MAN Engines",
+      "header": [
+        "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 190/220 | D2676 | 6 | in-line | 12.4",
+        "| 280/330 | D2676 | 6 | in-line | 12.4",
+        "| 290/290 | D2676 | 6 | in-line | 12.4",
+        "| 360/410 | D2676 | 6 | in-line | 12.4",
+        "| 375/445 | D2676 | 6 | in-line | 12.4",
+        "| 600/700 | D2862 | 12 | V 90° | 24.2",
+        "| 700/800 | D2862 | 12 | V 90° | 24.2",
+        "| 840 2 /960 | D3872 | 12 | V 90° | 29,6",
+        "| 500/580 | E3262 | 12 | V 90° | 25.8"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Low-pollution MAN gas engines for power generation | MAN Engines",
+      "header": [
+        "| Output in kW | Air/fuel ratio λ | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 37 – 68 | 1.0 – 1.6 | E0834 | 4 | in-line | 4.6",
+        "| 56 – 110 | 1.0 – 1.68 | E0836 | 6 | in-line | 6.9",
+        "| 150 – 210 | 1.0 – 1.61 | E2876 | 6 | in-line | 12.8",
+        "| 320 – 390 | 1.69 | E3268 | 8 | V 90° | 17.2",
+        "| 275 – 580 | 1.0 – 1.7 | E3262 | 12 | V 90° | 25.8",
+        "| 735 | 1.77 - 1.78 | E3872 | 12 | V 90° | 29,6"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Low-pollution MAN gas engines for power generation | MAN Engines",
+      "header": [
+        "| Output in kW | Air/fuel ratio λ | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 68 | 1.4/1.5 | E0834 | 4 | in-line | 4.6",
+        "| 110 | 1.4 – 1.49 | E0836 | 6 | in-line | 6.9",
+        "| 130 – 220 | 1.40 | E2876 | 6 | in-line | 12.8",
+        "| 320 – 390 | 1.46 – 1.52 | E3268 | 8 | V 90° | 17.2",
+        "| 450 – 580 | 1.44 – 1.6 | E3262 | 12 | V 90° | 25.8",
+        "| 735 | 1.61 | E3872 | 12 | V 90° | 29.6"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "MAN engines for construction and special machinery | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 118 – 162 | 160 – 220 | D0834 | 4 | in-line | 4.6",
+        "| 184 – 235 | 250 – 320 | D0836 | 6 | in-line | 6.9",
+        "| 205 – 324 | 279 – 440 | D1556 | 6 | in-line | 9.0",
+        "| 294 – 404 | 400 – 550 | D2676 | 6 | in-line | 12.4",
+        "| 415 – 485 | 565 – 660 | D3876 | 6 | in-line | 15.3",
+        "| 450 – 515 | 612 – 700 | D4276 | 6 | in-line | 16.2",
+        "| 570 | 775 | D2868 | 8 | 90° V | 16.2",
+        "| 588 – 816 | 800 – 1,110 | D2862 | 12 | 90° V | 24.2"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Sturdy MAN engines for agricultural machinery | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 118 – 162 | 160 – 220 | D0834 | 4 | in-line | 4.6",
+        "| 184 – 235 | 250 – 320 | D0836 | 6 | in-line | 6.9",
+        "| 205 – 324 | 279 – 440 | D1556 | 6 | in-line | 9.0",
+        "| 294 – 404 | 400 – 550 | D2676 | 6 | in-line | 12.4",
+        "| 415 – 485 | 565 – 660 | D3876 | 6 | in-line | 15.3",
+        "| 450 – 515 | 612 – 700 | D4276 | 6 | in-line | 16.2",
+        "| 570 | 775 | D2868 | 8 | 90° V | 16.2",
+        "| 581 | 790 | D4276 | 6 | in-line | 16.2",
+        "| 588 – 816 | 800 – 1,110 | D2862 | 12 | 90° V | 24.2"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Compact MAN diesel engines for rail applications | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 338 – 382 | 460 – 520 | D2676 | 6 | in-line, vertical | 12.4",
+        "| 588 – 735 | 800 – 1000 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Compact MAN diesel engines for rail applications | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 353 – 382 | 480 – 520 | D2676 | 6 | in-line, vertical | 12.4",
+        "| 588 – 662 | 800 – 900 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Compact MAN diesel engines for rail applications | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 415 – 489 | 565 – 665 | D3876 | 6 | in-line, vertical | 15.3"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Compact MAN diesel engines for rail applications | MAN Engines",
+      "header": [
+        "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
+      ],
+      "rows": [
+        "| 338 – 382 | 460 – 520 | D2676 | 6 | in-line, vertical | 12.4",
+        "| 588 – 735 | 800 – 1,000 | D2862 | 12 | V 90° | 24.2"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "MAN D3872 Workboat Engine | MAN Engines",
+      "header": [
+        "| Power in kW | Power in hp | Torque | Emission standards"
+      ],
+      "rows": [
+        "| 1.471 | 2.000 | 6.689 in Nm | IMO Tier 3 EPA Tier 3",
+        "| 1.618 | 2.200 | 7.358 in Nm | IMO Tier 3 EPA Tier 3"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "MAN D3872 Workboat Engine | MAN Engines",
+      "header": [
+        "| Power in kW | Power in hp | Torque | Emission standards"
+      ],
+      "rows": [
+        "| 1.213 | 1.650 | 6.096 in Nm | IMO Tier 3 IMO Tier 2 EPA Tier 3"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "MAN D3872 Workboat Engine | MAN Engines",
+      "header": [
+        "| Power in kW | Power in hp | Torque | Emission standards"
+      ],
+      "rows": [
+        "| 735 | 1.000 | 4.387 in Nm | IMO Tier 3 IMO Tier 2 EU Stufe V",
+        "| 920 | 1.250 | 5.491 in Nm | IMO Tier 3 IMO Tier 2 EU Stufe V",
+        "| 960 | 1.305 | 5.602 in Nm | IMO Tier 3 IMO Tier 2 EU Stufe V"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "MAN D3872 Workboat Engine | MAN Engines",
+      "header": [
+        "| Power in kW | Power in hp | Torque | Emission standards"
+      ],
+      "rows": [
+        "| 800 | 1.088 | 5.602 in Nm | EU Stage V",
+        "| 840 | 1.142 | 5.882 in Nm | IMO Tier II IMO Tier III"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "MAN in-line six-cylinder engine | MAN Engines",
+      "header": [
+        "| | | D2676 LE4x6 (light duty) | D2676 LE43x / 42x (medium duty) | D2676 LE4xx (heavy duty)"
+      ],
+      "rows": [
+        "| Engine width | mm | 922 | 922 | 922",
+        "| Engine length | mm | 1,800 | 1,800 | 1,800",
+        "| Engine height | mm | 1,103 | 1,103 | 1,103",
+        "| Engine height over crankshaft | mm | 704 | 704 | 704",
+        "| Weight (dry) | kg | 1,215 | 1,215 | 1,215",
+        "| Max. permissible oblique position axial/transverse (inclination when installed considered) | ° | 7,5°/22,5° | 7,5°/22,5° | 7,5°/22,5°",
+        "| Cylinder arrangement | | In-line | In-line | In-line",
+        "| Number of cylinders | | 6 | 6 | 6",
+        "| Bore | mm | 126 | 126 | 126",
+        "| Stroke | mm | 166 | 166 | 166",
+        "| Displacement | l | 12.42 | 12.42 | 12.42",
+        "| Operating mode | | Four-stroke diesel engine | Four-stroke diesel engine | Four-stroke diesel engine",
+        "| Combustion process | | Self-igniter | Self-igniter | Self-igniter",
+        "| Injection system | | Common Rail | Common Rail | Common Rail",
+        "| Engine control unit | | EDC17 | EDC17 | EDC17",
+        "| Direction of rotation looking at flywheel | | Counterclockwise | Counterclockwise | Counterclockwise",
+        "| Rated power according to ISO 1585; 89/491 EWG | kW (HP) | 537/588/625 (730/800/850) | 412/441/478 (560/600/650) | 221/290/331/368 (301/394/450/500)",
+        "| Nominal speed | rpm | 2,300 | 2,100 | 1,800",
+        "| Max. torque at nominal speed according to UN ECE-R120 | Nm/ rpm | see product brochure in the download area | see product brochure in the download area | see product brochure in the download area",
+        "| Specific output | kW/l | 43.2/47.3/50.3 | 33.2/35.5/38.5 | 17.8/23.3/26.7/29.6",
+        "| Exhaust status | | see product brochure in the download area | see product brochure in the download area | see product brochure in the download area",
+        "| Oil fill quantity without/with filter | l | 34 min/40 max | 34 min/40 max | 34 min/40 max"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "Naturally aspirated MAN E3262 gas engine | MAN Engines",
+      "header": [
+        "| | | MAN E3262 E302 | MAN E3262 E302"
+      ],
+      "rows": [
+        "| Speed | rpm (Hz) | 1,500 (50) | 1,800 (60)",
+        "| Engine width | mm | 1,245 | 1,245",
+        "| Engine length | mm | 1,743 | 1,743",
+        "| Engine height | mm | 1,494 | 1,494",
+        "| Dry weight | kg | 1,763 | 1,763",
+        "| Bore | mm | 132 | 132",
+        "| Stroke | mm | 157 | 157",
+        "| Displacement | l | 25.8 | 25.8",
+        "| ISO STANDARD POWER 1 | kW | 275 | 300",
+        "| Air/fuel ratio | λ | 1.00 | 1.00",
+        "| Efficiency 2 | | |",
+        "| mechanical 1 | % | 39.6 | 38.7",
+        "| thermal | % | 54.0 | 54.9",
+        "| total | % | 93.6 | 93.6",
+        "| Combustion 3 | | m | m"
+      ]
+    }
+  ]
 }

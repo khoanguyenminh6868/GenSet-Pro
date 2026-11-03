@@ -80,9 +80,35 @@
         "该系列机组的发动机为上海柴油机股份有限公司制造生产的工业用水冷柴油机"
       ],
       "file": "sources/xinrongbang-fujian/1.md"
+    },
+    {
+      "n": 101,
+      "url": "http://www.fujian-motor.com/show.asp?id=36",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Engine Rated Speed | rpm | 1500 | 1800"
+      ],
+      "file": "sources/xinrongbang-fujian/101.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "FUJIAN NEW RONGBANG MOTOR MACHINERY Production generators, generators sets, pumps, motors Series",
+      "header": [],
+      "rows": [
+        "| Engine Rated Speed | rpm | 1500 | 1800",
+        "| Generator set Frequency | Hz | 50 | 60",
+        "| Engine Standby Power (LTP) | kW | 26,4 | 30,8",
+        "| Engine Prime Power (PRP) | kW | 24 | 28",
+        "| Cooling Fan Power Consumption (kW) | kW | 1,5 | 2",
+        "| Engine Net Standby Output (LTP) | kW | 24,4 | 28,2",
+        "| Engine Net Prime Output (PRP) | kW | 22,2 | 25,7"
+      ]
+    }
+  ]
 }

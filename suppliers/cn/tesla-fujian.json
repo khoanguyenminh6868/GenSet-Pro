@@ -115,9 +115,105 @@
         "6.5-1200kw Single or Double Bearings Brushless Alternator"
       ],
       "file": "sources/tesla-fujian/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.tesla-power.net/20kVA-Silent-Canopy-Diesel-Generator-CE-ISO-by-Yanmar-4tnv84t-Gge-pd47172091.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Copy Stamford Type"
+      ],
+      "file": "sources/tesla-fujian/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.tesla-power.net/6-56kVA-Original-Japan-Made-Yanmar-Diesel-Generator-Set-with-Original-Stamford-Alternator-pd43872091.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford"
+      ],
+      "file": "sources/tesla-fujian/102.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "20kVA Silent Canopy Diesel Generator CE/ISO by Yanmar 4tnv84t-Gge - Buy Generator, Diesel Generator Set, Diesel Genset Product on FUJIAN TESLA POWER ELECTRICAL MACHINERY CO.,LTD.",
+      "header": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Copy Stamford Type"
+      ],
+      "rows": [
+        "| BS- Q 10 | 8 | 10 | 14.4 | QC380D | BS164B",
+        "| BS- Q 10 | 8 | 10 | 14.4 | QC385D | BS164B",
+        "| BS- Q 14 | 10.8 | 13.5 | 19.5 | QC480D | BS164C",
+        "| BS- Q 16 | 12.8 | 16 | 23 | N485D | BS164D",
+        "| BS- Q 20 | 16 | 20 | 28.9 | QC490D | BS184E",
+        "| BS- Q 25 | 20 | 25 | 36 | QC498D | BS184F",
+        "| BS- Q 31 | 25 | 31 | 45 | QC4102D | BS184G",
+        "| BS- Q 38 | 30 | 38 | 54 | QC4105D | BS184H",
+        "| | | | | |"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "20kVA Silent Canopy Diesel Generator CE/ISO by Yanmar 4tnv84t-Gge - Buy Generator, Diesel Generator Set, Diesel Genset Product on FUJIAN TESLA POWER ELECTRICAL MACHINERY CO.,LTD.",
+      "header": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Copy Stamford Type"
+      ],
+      "rows": [
+        "| BS- Q 13 | 10 | 13 | 18 | QC385D | 164B",
+        "| BS- Q 17 | 14 | 17 | 25.3 | QC480D | 164C",
+        "| BS- Q 20 | 16 | 20 | 28.9 | N485D | 164D",
+        "| BS- Q 25 | 20 | 25 | 36 | QC490D | 184E",
+        "| BS- Q 30 | 24 | 30 | 43.3 | QC498D | 184E",
+        "| BS- Q 40 | 32 | 40 | 57.7 | QC4102D | 184G"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "6-56kVA Original Japan Made Yanmar Diesel Generator Set with Original Stamford Alternator - Buy Generator Set, Diesel Generator, Yanmar Generator Product on FUJIAN TESLA POWER ELECTRICAL MACHINERY CO.",
+      "header": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford"
+      ],
+      "rows": [
+        "| BS- YM 5.5 | 4.4 | 5.5 | 7.9 | 3TNM68-GGE | PI044D",
+        "| BS- YM 8 | 6.56 | 8.2 | 11.8 | 3TNV76-GGE | PI044E",
+        "| BS- YM 10 | 7.92 | 10 | 14.3 | 3TNV82A-GGE | PI044F",
+        "| BS- YM 12 | 9.8 | 12 | 17.7 | 3TNV88-GGE | PI044G",
+        "| BS- YM 14 | 11.3 | 14 | 20.4 | 3TNV84T-GGE | PI044H",
+        "| BS- YM 16 | 13.1 | 16 | 23.6 | 4TNV88-GGE | PI044H",
+        "| BS- YM 20 | 15.8 | 20 | 28.5 | 4TNV84T-GGE | PI144D",
+        "| BS- YM 33 | 26.4 | 33 | 47.6 | 4TNV98-GGE | PI144H",
+        "| BS- YM 41 | 33 | 41 | 59.5 | 4TNV98T-GGE | PI144K",
+        "| BS- YM 49 | 39.3 | 49 | 70.9 | 4TNV106-GGE | UCI224D",
+        "| BS- YM 57 | 45.8 | 57 | 82.6 | 4TNV106T-GGE | BS224E",
+        "| | | | | |"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "6-56kVA Original Japan Made Yanmar Diesel Generator Set with Original Stamford Alternator - Buy Generator Set, Diesel Generator, Yanmar Generator Product on FUJIAN TESLA POWER ELECTRICAL MACHINERY CO.",
+      "header": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Copy Stamford Type"
+      ],
+      "rows": [
+        "| BS- YM 6 | 5 | 6 | 7 | 3TNM68-GGE | 164A",
+        "| BS- YM 9 | 7 | 9 | 10 | 3TNV76-GGE | 164B",
+        "| BS- YM 12 | 9 | 12 | 12 | 3TNV82A-GGE | 164C",
+        "| BS- YM 15 | 12 | 15 | 15 | 3TNV88-GGE | 164D",
+        "| BS- YM 17 | 14 | 17 | 24 | 3TNV84T-GGE | 184E",
+        "| BS- YM 21 | 17 | 21 | 18 | 4TNV88-GGE | 184E",
+        "| BS- YM 26 | 21 | 26 | 24 | 4TNV84T-GGE | 184G",
+        "| BS- YM 41 | 33 | 41 | 36 | 4TNV98-GGE | 224D",
+        "| BS- YM 51 | 41 | 51 | 45 | 4TNV98T-GGE | 224E",
+        "| BS- YM 60 | 48 | 60 | 53 | 4TNV106-GGE | 224F",
+        "| BS- YM 69 | 55 | 69 | 61 | 4TNV106T-GGE | 224G"
+      ]
+    }
+  ]
 }
