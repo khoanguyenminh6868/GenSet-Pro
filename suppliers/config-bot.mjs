@@ -22,7 +22,7 @@
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { spawn, spawnSync, execFileSync } from "node:child_process";
+import { spawn, execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
@@ -1182,12 +1182,25 @@ const AGY = process.env.GENBID_AGY || path.join(process.env.LOCALAPPDATA || "", 
 const GEMINI_MODEL = process.env.GENBID_GEMINI_MODEL || "gemini-3.8-flash-medium";
 const ENGINE = { gemini: "Gemini (Antigravity)", claude: "Claude" };
 const FIND_INPUT = "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md và catalog.md, tìm trên internet, chỉ ghi newCatalog.json và find.json (cùng các trang lưu bằng lệnh save). Chạy không người trông, không ai trả lời câu hỏi.";
+// Asynchronous, so the other requests of the run go on while it works (run answers them all at once).
 function runGemini(dir, input) {
-  if (!fs.existsSync(AGY)) return { error: "chưa cài Antigravity CLI (agy)" };
-  const r = spawnSync(AGY, ["--model", GEMINI_MODEL, "--output-format", "json", "--disable-slash-commands", "--dangerously-skip-permissions", "--print-timeout", "2400s"],
-    { cwd: dir, encoding: "utf8", timeout: 42 * 60e3, maxBuffer: 64 << 20, windowsHide: true, input });
-  let j = null; try { j = JSON.parse(r.stdout); } catch {}
-  return { stdout: r.stdout, stderr: r.stderr, error: j?.status === "SUCCESS" ? "" : (j?.response || r.stderr || r.error?.message || `mã thoát ${r.status}`).trim().slice(0, 300) };
+  if (!fs.existsSync(AGY)) return Promise.resolve({ error: "chưa cài Antigravity CLI (agy)" });
+  return new Promise((ok) => {
+    let stdout = "", stderr = "", done = false;
+    const p = spawn(AGY, ["--model", GEMINI_MODEL, "--output-format", "json", "--disable-slash-commands", "--dangerously-skip-permissions", "--print-timeout", "2400s"], { cwd: dir, windowsHide: true });
+    const timer = setTimeout(() => p.kill(), 42 * 60e3);
+    const end = (status, e) => {
+      if (done) return; done = true; clearTimeout(timer);
+      let j = null; try { j = JSON.parse(stdout); } catch {}
+      ok({ stdout, stderr, error: j?.status === "SUCCESS" ? "" : (j?.response || stderr || e?.message || `mã thoát ${status}`).trim().slice(0, 300) });
+    };
+    p.stdout.setEncoding("utf8").on("data", (d) => { stdout += d; });
+    p.stderr.setEncoding("utf8").on("data", (d) => { stderr += d; });
+    p.on("error", (e) => end(null, e));
+    p.on("close", (code) => end(code));
+    p.stdin.on("error", () => {});
+    p.stdin.end(input);
+  });
 }
 async function findPrep(key, dir, req, suppliers) {
   const info = await prep(key, dir, req, suppliers);
@@ -1384,7 +1397,7 @@ async function find(req, suppliers) {
       fs.rmSync(dir, { recursive: true, force: true });
       try {
         const { cap } = await findPrep(key, dir, req, suppliers);
-        const r = engine === "gemini" ? runGemini(dir, FIND_INPUT) : await runClaude(dir, FIND_INPUT);
+        const r = await (engine === "gemini" ? runGemini(dir, FIND_INPUT) : runClaude(dir, FIND_INPUT));
         fs.writeFileSync(path.join(os.tmpdir(), `genbid-find-${key}-${engine}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
         if (r.error && !fs.existsSync(path.join(dir, "newCatalog.json"))) { tried.push({ engine: ENGINE[engine], error: r.error }); continue; }
         const checked = await findCheck(dir, suppliers, cap), fit = checked.filter((c) => !c.errors.length && c.fits);
@@ -1410,6 +1423,56 @@ async function find(req, suppliers) {
     await done({ error: e.message || String(e) }).catch(() => {});
     console.log(`${key}: Tìm NCC lỗi ${e.message}`);
   }
+}
+
+// ---------- run: every pending request at once ----------
+// Khoa, 2026-11-03: Gợi ý cấu hình, Tìm NCC and Gợi ý giá đấu of different tenders run at the same time, with no limit.
+// The queue is read again every POLL_MS, so a request sent mid-run starts then instead of after the run. Gợi ý and
+// Tìm NCC of one tender take turns (both write configmatch/<key>); so do two Gợi ý giá đấu of one tender. A Gợi ý giá
+// đấu runs in a child process (bidprice-bot.mjs imports this script; an import of it from here never settles, #249).
+// After RUN_MAX_MS no new request starts and the run ends when the started ones are done (the bot stops a run after
+// 3 hours); the bot starts the next run for what is left.
+const POLL_MS = 20e3, RUN_MAX_MS = 150 * 60e3;
+function bidpriceChild(key) {
+  return new Promise((ok) => {
+    const p = spawn(process.execPath, [path.join(ROOT, "bidprice-bot.mjs"), "run", "--key", key], { stdio: ["ignore", "pipe", "pipe"], windowsHide: true });
+    const timer = setTimeout(() => p.kill(), 3 * 60 * 60e3);
+    const pass = (d) => process.stdout.write(d);
+    p.stdout.on("data", pass); p.stderr.on("data", pass);
+    p.on("error", (e) => { clearTimeout(timer); console.log(`${key}: Gợi ý giá đấu không chạy được (${e.message})`); ok(); });
+    p.on("close", () => { clearTimeout(timer); ok(); });
+  });
+}
+async function runAll(lock) {
+  const t0 = Date.now(), started = new Set(), busy = new Set(), counts = { config: 0, find: 0, bidprice: 0 };
+  let running = 0, wake = () => {};
+  const t = () => `[${Math.round((Date.now() - t0) / 1000)}s]`;
+  for (let first = true; ; first = false) {
+    let lists;
+    try { lists = await Promise.all([api("kind=config"), api("kind=find"), api("kind=bidprice")]); }
+    catch (e) { if (first) throw e; console.log(`${t()} không đọc được hàng chờ (${e.message}), thử lại sau`); lists = [[], [], []]; }
+    const [pending, finds, prices] = lists;
+    // Only Gợi ý giá đấu requests the web wrote (basis): an older API answers an unknown kind with the file requests.
+    const jobs = [...pending.map((r) => ["config", r]), ...finds.map((r) => ["find", r]), ...prices.filter((r) => r.basis).map((r) => ["bidprice", r])]
+      .map(([kind, req]) => ({ kind, req, sig: `${kind}:${req.key}|${req.requestedAt}`, lane: `${kind === "bidprice" ? "bp" : "cfg"}:${req.key}` }))
+      .filter((j) => !started.has(j.sig));
+    const late = Date.now() - t0 > RUN_MAX_MS;
+    let suppliers = null;
+    for (const j of late ? [] : jobs) {
+      if (busy.has(j.lane)) continue;
+      // The supplier DB as it is now: a Tìm NCC that just finished may have added to it.
+      if (j.kind !== "bidprice" && !suppliers) suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data);
+      started.add(j.sig); busy.add(j.lane); running++; counts[j.kind]++;
+      console.log(`${t()} bắt đầu ${{ config: "Gợi ý cấu hình", find: "Tìm NCC", bidprice: "Gợi ý giá đấu" }[j.kind]} ${j.req.key}`);
+      const work = j.kind === "config" ? answer(j.req, suppliers) : j.kind === "find" ? find(j.req, suppliers) : bidpriceChild(j.req.key);
+      work.catch((e) => console.log(`${j.req.key}: lỗi ${e.message}`)).finally(() => { busy.delete(j.lane); running--; wake(); });
+    }
+    if (!running && (late || !jobs.length)) break;
+    try { const now = new Date(); fs.utimesSync(lock, now, now); } catch {}
+    // Next look at the queue after POLL_MS, or as soon as a request is done (its tender's turn may be next).
+    await new Promise((ok) => { const timer = setTimeout(ok, POLL_MS); wake = () => { clearTimeout(timer); ok(); }; });
+  }
+  return `${counts.config} yêu cầu gợi ý cấu hình, ${counts.find} yêu cầu Tìm NCC, ${counts.bidprice} yêu cầu gợi ý giá đấu (${Math.round((Date.now() - t0) / 60e3)} phút)`;
 }
 
 const cmd = process.argv[2];
@@ -1447,19 +1510,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     const alive = (pid) => { try { process.kill(pid, 0); return true; } catch (e) { return e.code === "EPERM"; } };
     if (fs.existsSync(lock) && Date.now() - fs.statSync(lock).mtimeMs < 4 * 60 * 60e3 && alive(Number(fs.readFileSync(lock, "utf8")) || -1)) { console.log("SUMMARY: đang có lượt khác chạy"); process.exit(4); }
     fs.writeFileSync(lock, String(process.pid));
-    try {
-      const [pending, finds, prices] = await Promise.all([api("kind=config"), api("kind=find"), api("kind=bidprice")]);
-      // Gợi ý giá đấu first: a few minutes each, no web search (bidprice-bot.mjs).
-      // Only requests the web wrote (basis): an older API answers an unknown kind with the file requests.
-      // In a child process: bidprice-bot.mjs imports this script, and an import of it from here (the main module, still
-      // in its top-level await) never settles, so node quit with code 13 and left the lock behind (2026-11-03).
-      if (prices.some((r) => r.basis)) spawnSync(process.execPath, [path.join(ROOT, "bidprice-bot.mjs"), "run"], { stdio: "inherit", windowsHide: true, timeout: 3 * 60 * 60e3 });
-      if (pending.length || finds.length) {
-        const suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data);
-        for (const req of pending) await answer(req, suppliers);
-        for (const req of finds) await find(req, suppliers);
-      }
-      console.log(`SUMMARY: ${pending.length} yêu cầu gợi ý cấu hình, ${finds.length} yêu cầu Tìm NCC, ${prices.length} yêu cầu gợi ý giá đấu`);
-    } finally { fs.rmSync(lock, { force: true }); }
+    try { console.log(`SUMMARY: ${await runAll(lock)}`); }
+    finally { fs.rmSync(lock, { force: true }); }
   } else { console.error("usage: config-bot.mjs run | prep --key K --out D | save --dir D --url U | check --dir D | post --dir D --key K --requested-at T"); process.exit(2); }
 }
