@@ -116,6 +116,7 @@
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
     ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
     ["excit", "alternator", "Kích từ / AVR", /excit|\bavr\b|励磁/i, null, /brush|self|pmg|shunt|aref|separately|\bavr\b|自励|永磁|无刷|有刷/i],
+    ["thd", "alternator", "Méo sóng hài (THD)", /harmonic|\bthd\b|谐波/i, null, /\d\s*[%％]/],
     ["vreg", "alternator", "Ổn định điện áp", /voltage\s*(regul|stab|stead)|调压/i, /time|时间/i, /\d\s*[%％]/i],
     ["freg", "genset", "Ổn định tần số", /frequency\s*(regul|wav|recover|stab)|frequencyrecovery|smooth\s*speed/i, null, /\d\s*[%％s]/i],
     ["current", "genset", "Dòng điện định mức", /rated\s*current|电流/i, null, /^\d/],
@@ -400,7 +401,9 @@
       [/\bHGM\s?-?(\d{4}[A-Z]{0,4}(?:-4G)?)(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`],
       [/\bsmart\s?gen\s?(?:HGM)?\s?-?(\d{4}[A-Z]{0,3})(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`]] },
     { brand: "ComAp", word: /\bcomap\b/i, models: [
-      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains)\s?(NT|4|500|1000|200)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? m[2].toUpperCase() : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
+      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains)\s?(NTC|NT|4|500|1000|200)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? m[2].toUpperCase() : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
+      // ComAp order codes of InteliGen NT / NTC (IG-NT GC, IG-NTC-BB...).
+      [/\bIG-?(NTC?)(?![\w])/gi, (m) => `InteliGen ${m[1].toUpperCase()}`],
       [/\bIL-?NT\s?(AMF|MRS)\s?-?(\d{1,2})(?![\w])/gi, (m) => `InteliLite NT ${up(m[1])}${m[2]}`],
       [/\b(AMF|MRS)\s?-?(20|25|9|8|10|11|15|16|18|19)(?![\w])/gi, (m) => `${up(m[1])}${m[2]}`, true]] },
     { brand: "DEIF", word: /\bdeif\b/i, models: [[/\b(AGC|SGC|GC|PPU|GPC|PPM)[\s-]?(\d{1,3}[A-Z]?|1F)(?![\w])/g, (m) => `${m[1]}-${m[2]}`, true]] },

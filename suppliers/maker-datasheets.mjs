@@ -29,7 +29,9 @@ export function controllerSheet(text) {
   const i = lines.findIndex((l) => C.controllersIn(l).some((c) => c.model));
   const next = i >= 0 ? lines[i + 1] || "" : "";
   // ComAp writes its name on two lines ("InteliLite 4" then "AMF 25").
-  const top2 = `${lines[0] || ""} ${lines[1] || ""}`, modelsIn = (s) => C.controllersIn(s).filter((c) => c.model).map((c) => C.keyOf(c.model));
+  // ... and its number may stand alone on the next line ("InteliGen" then "1000"), a line the filter above drops.
+  const raw = text.split("\n").map((l) => l.trim()).filter(Boolean);
+  const top2 = lines[0] === raw[0] && /^\d{3,4}$/.test(raw[1] || "") ? `${raw[0]} ${raw[1]}` : `${lines[0] || ""} ${lines[1] || ""}`, modelsIn = (s) => C.controllersIn(s).filter((c) => c.model).map((c) => C.keyOf(c.model));
   const title = modelsIn(top2).some((k) => !modelsIn(lines[0] || "").includes(k)) ? top2
     : i < 0 ? lines[0] || "" : /^\(.*\)$/.test(next) && C.controllersIn(next).length ? `${lines[i]} ${next}` : lines[i];
   // Every line stays a row, word for word (the title may join two lines); the first row is the source's quote, so it
