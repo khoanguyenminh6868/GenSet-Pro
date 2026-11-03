@@ -31,22 +31,26 @@ export async function prep(req, dir, hist) {
   const key = req.key || req.notifyNo, b = req.basis || {};
   const [analysis, cfg, hsmt] = await Promise.all([doc("analysis", key).catch(() => null), doc("configmatch", key).catch(() => null), hsmtTextOf(key).catch(() => null)]);
   const a = analysis?.result, K = Number(b.kva) || null, P = Number(b.price) || null;
-  const t = { notifyNo: key, bidName: req.bidName || a?.keyInfo?.bidName || "", bidForm: b.bidForm || "", investorName: b.investorName || a?.keyInfo?.investor || "" };
-  const docs = hist || Object.fromEntries((await api("kind=docs&coll=bidhist")).map((d) => [d.id, d.data]));
-  const { total, list } = BP.candidates(t, docs, K, P);
   const top = (cfg?.result?.configs || []).slice(0, 3);
+  // What this HSMT asks for, read the way bidhist's config.text was (the analysis' technical lines), else the HSMT's
+  // technical part; and the engine of the configuration Gợi ý cấu hình put first (its origin group picks the lots).
+  const cfgText = a?.technicalSpecs?.length ? a.technicalSpecs.map((s) => `${s.item}: ${s.requirement}`).join("\n") : hsmt ? technicalPart(hsmt.text).slice(0, 20000) : "";
+  const t = { notifyNo: key, bidName: req.bidName || a?.keyInfo?.bidName || "", investorName: b.investorName || a?.keyInfo?.investor || "", cfgText, engine: top[0]?.engine || null };
+  const docs = hist || Object.fromEntries((await api("kind=docs&coll=bidhist")).map((d) => [d.id, d.data]));
+  const { total, group, otherGroup, list } = BP.candidates(t, docs, K, P);
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, `Tên gói: ${t.bidName}`, t.investorName ? `Chủ đầu tư: ${t.investorName}` : "",
-    `Công suất: ${K ? `${fmt(Math.round(K))} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"}`, `Giá gói: ${P ? fmt(P) + " đ" : "không rõ"}`, "",
+    `Công suất: ${K ? `${fmt(Math.round(K))} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"}`, `Giá gói: ${P ? fmt(P) + " đ" : "không rõ"}`,
+    `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}`, "",
     ...(a?.keyInfo ? ["## Thông tin chính (phân tích HSMT)", ...Object.entries(a.keyInfo).filter(([, v]) => v).map(([k, v]) => `- ${k}: ${v}`), ""] : []),
     ...(a?.technicalSpecs?.length ? ["## Thông số kỹ thuật (phân tích HSMT)", ...a.technicalSpecs.map((s) => `- ${s.item}: ${s.requirement}`), ""] : []),
     ...(top.length ? ["## Cấu hình dự kiến chào (Gợi ý cấu hình)", ...top.map((c) => `- ${[c.engine && `động cơ ${[c.engine.make, c.engine.model].filter(Boolean).join(" ")}`, c.alternator && `đầu phát ${[c.alternator.make, c.alternator.model].filter(Boolean).join(" ")}`, c.controller && `bộ điều khiển ${[c.controller.make || c.controller.brand, c.controller.model].filter(Boolean).join(" ")}`].filter(Boolean).join(", ")}`), ""] : []),
     hsmt ? "## Phần kỹ thuật của HSMT\n" + technicalPart(hsmt.text).slice(0, 60000) : "Chưa có văn bản HSMT.",
   ].filter((l) => l !== "").join("\n"), "utf8");
-  fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}`).join("\n\n"), "utf8");
+  fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"), "utf8");
   fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "" }, total, list }), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "bidprice-prompt.md"), "utf8"), "utf8");
-  return { total, candidates: list.length, K, P };
+  return { total, group, otherGroup, candidates: list.length, K, P };
 }
 
 // result.json checked against samples.json: every lot gets a level; a lot the agent left out, or whose quote is not in
@@ -82,7 +86,7 @@ function runClaude(dir) {
 async function attempt(req, dir, hist) {
   fs.rmSync(dir, { recursive: true, force: true });
   const info = await prep(req, dir, hist);
-  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "" }, total: info.total, tender: { summary: "", points: [] }, notes: ["Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%)."], samples: [], stats: BP.suggest([], info.P, info.K) }, problems: [] };
+  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "" }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).`], samples: [], stats: BP.suggest([], info.P, info.K) }, problems: [] };
   const started = Date.now(), r = runClaude(dir);
   fs.writeFileSync(path.join(os.tmpdir(), `genbid-bidprice-${req.key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
   if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);

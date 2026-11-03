@@ -24,6 +24,36 @@ test("candidates: only power within 5% when the tender's is known; repair left o
   assert.match(BP.sampleText(list.find((s) => s.key === "A")), /hãng Weichai \| xuất xứ Trung Quốc/);
 });
 
+test("candidates: lots of the other engine origin group left out; alike configuration ranks first", () => {
+  const g = (maker, origin) => [{ name: "Máy phát điện 400kVA", maker, origin }];
+  const more = {
+    CN: { bidName: "Mua sắm máy phát điện 400kVA", final: true, lots: [lot(1e9, 8e8, g("Weichai", "Trung Quốc"))] },
+    US: { bidName: "Mua sắm máy phát điện 400kVA", final: true, lots: [lot(1e9, 8e8, g("Cummins", "Mỹ"))] },
+    // Origin not on the goods, but the HSMT asks for a G7 engine.
+    G7: { bidName: "Mua sắm máy phát điện 400kVA", final: true, config: { text: "Động cơ: xuất xứ các nước G7" }, lots: [lot(1e9, 8e8)] },
+    ATS: { bidName: "Mua sắm máy phát điện 400kVA", final: true, config: { text: "Vỏ cách âm, tủ ATS, bộ điều khiển Deep Sea" }, lots: [lot(1e9, 8e8)] },
+    NONE: { bidName: "Mua sắm máy phát điện 400kVA", final: true, lots: [lot(1e9, 8e8)] },
+  };
+  const t = { notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA", cfgText: "Có vỏ cách âm; ATS 630A; bộ điều khiển Deep Sea DSE7320", engine: { make: "Weichai", model: "WP13D385E200" } };
+  const r = BP.candidates(t, more, 400, 1e9);
+  assert.equal(r.group, "cn");
+  assert.equal(r.otherGroup, 2);
+  assert.deepEqual(r.list.map((s) => s.key), ["ATS", "CN", "NONE"]);
+  const ats = r.list[0];
+  assert.equal(ats.cfg.sim, 1);
+  assert.match(BP.cfgLine(ats), /giống 100% \(cùng: bộ điều khiển Deep Sea, vỏ cách âm, ATS\)/);
+  assert.match(BP.cfgLine(r.list[1]), /nhóm xuất xứ động cơ Trung Quốc/);
+  // No configuration planned and an HSMT naming no make: every group stays.
+  assert.equal(BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, more, 400, 1e9).list.length, 5);
+});
+
+test("profileOf: makes decide the group, a mix of both is none", () => {
+  assert.equal(BP.profileOf("Động cơ Cummins hoặc Perkins").group, "foreign");
+  assert.equal(BP.profileOf("Động cơ Cummins, Weichai hoặc tương đương").group, null);
+  assert.equal(BP.profileOf("Máy phát điện", "YC6MK420L-D20").group, "cn");
+  assert.deepEqual(BP.profileOf("Tổ máy 1 pha 220V, có chuyển nguồn tự động").tags, ["ATS", "1 pha"]);
+});
+
 test("check: a quote not in the lot's text is not counted; lone-bidder lots do not set the price", () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "bp-test-"));
   const { list } = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, { ...docs, F: { bidName: "Mua sắm máy phát điện 420kVA", final: true, lots: [lot(1.5e9, 1.2e9, [], 1)] }, G: { bidName: "Mua sắm máy phát điện 380kVA", final: true, lots: [lot(1e9, 8e8)] } }, 400, 1.2e9);
