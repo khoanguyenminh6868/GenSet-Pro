@@ -889,6 +889,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
           x.note = [x.note, `Nguồn là datasheet ${mine[0].version}; nhà cung cấp ghi ${c[x.part].model}, cần xác nhận đời (MK) của bộ điều khiển.`].filter(Boolean).join(" ");
           const gap = `Xác nhận đời bộ điều khiển: ${c[x.part].model} hay ${mine[0].version}.`;
           if (!(c.gaps || []).includes(gap)) c.gaps = [...(c.gaps || []), gap];
+          // What another generation lacks the one offered may have ("HGM6110N without RS485", the HGM6110NC has it):
+          // not a "not met" until the generation is known (2026-11-03 regression run).
+          if (x.status === "not_met") { x.status = "unclear"; x.note = `${x.note} Code ghi: datasheet đời khác thiếu chức năng này nên tính là chưa rõ, không phải không đạt.`; }
         }
       }
       const src = texts[x.part] || texts.genset || texts.engine || texts.alternator;

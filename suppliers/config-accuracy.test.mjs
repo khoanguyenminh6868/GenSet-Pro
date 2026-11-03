@@ -303,6 +303,9 @@ test("a controller written without its generation takes the datasheet of its gen
   assert.equal(x.version, "DSE7320 MKII");
   assert.match(x.note, /cần xác nhận đời/);
   assert.ok(result.configs[0].gaps.some((g) => /DSE7320 hay DSE7320 MKII/.test(g)));
+  // What that other generation's datasheet does not have is unclear, not "not met", until the generation is known.
+  const no = check(ctlConfig("DSE7320", [{ ...amf, status: "not_met" }]), { hsmtText: hsmt, suppliers: sups2, readWeb: () => null, origin: "all" }).result.configs[0].checks[0];
+  assert.equal(no.status, "unclear");
 });
 
 test("catalog.md lists the controllers' datasheet lines", () => {
