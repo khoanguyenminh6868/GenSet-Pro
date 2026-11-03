@@ -123,7 +123,8 @@ async function markJoined(rows) {
 }
 
 // A tender set to Bỏ qua whose notice was then amended on muasamcong (a higher notifyVersion in feed/current, e.g. a
-// new closing date) goes back to Mới, with the new notice; its note stays (Khoa, 2026-10-29). Returns the ids moved.
+// new closing date) goes back to Mới, with the new notice; its note stays (Khoa, 2026-10-29). A bid dropped from Đã nộp
+// stays dropped. Returns the ids moved.
 async function reopenAmended(feed) {
   const tenders = feed?.data?.tenders || [];
   if (!tenders.length) return [];
@@ -133,7 +134,7 @@ async function reopenAmended(feed) {
   const now = new Date().toISOString(), out = [];
   for (const t of tenders) {
     const c = cur.get(t.notifyNo);
-    if (c?.stage !== "dropped" || !(Number(t.notifyVersion) > Number(c.tender?.notifyVersion))) continue;
+    if (c?.stage !== "dropped" || c.prevStage === "submitted" || !(Number(t.notifyVersion) > Number(c.tender?.notifyVersion))) continue;
     out.push({ coll: "tracked", id: t.notifyNo, updated_at: now,
       data: { ...c, stage: "new", prevStage: "dropped", tender: t, note: c.note || "", updatedAt: now, reopenedAt: now, reopenedVersion: t.notifyVersion } });
   }
