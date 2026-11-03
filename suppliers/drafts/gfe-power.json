@@ -1,0 +1,15 @@
+{
+  "id": "gfe-power", "country": "GB", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "GFE Power Products Limited", "zh": null, "brands": ["GFE"],
+  "web": "https://www.gfepowerproducts.com/", "prov": null, "city": "Pershore", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "GFE Power Products Limited", "A British, ISO 9001:2015 certified leader in the supply and global distribution of diesel, petrol and OEM manufactured generators.", "Our latest range of GFE Cummins-Powered Diesel generators have been a huge success since we introduced them to the market in late 2023.", "GFE Baudouin Powered Diesel Generators", "GFE Perkins Powered Diesel Generators", "GFE Doosan Powered Diesel Generators"]
+  },
+  "str": [["Theo hãng: dòng tổ máy GFE dùng động cơ Cummins, Baudouin, Perkins, Doosan; đồng thời phân phối Perkins, CAT, Kohler-SDMO, FG Wilson", 1]],
+  "cert": [["ISO 9001:2015", 1]],
+  "lines": [
+    { "k": "genset", "s": "GFE Power Products Diesel Generators", "fuel": "diesel", "eng": ["Cummins", "Baudouin", "Perkins", "Doosan"], "models": [], "alt": [], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất của dòng GFE (chỉ có menu theo kVA)", "Không thấy năm thành lập"],
+  "by": "claude (rà hàng chào trúng thầu 04/11)"
+}
