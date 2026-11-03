@@ -125,21 +125,33 @@ async function markJoined(rows) {
 // A tender set to Bỏ qua whose notice was then amended on muasamcong (a higher notifyVersion in feed/current, e.g. a
 // new closing date) goes back to Mới, with the new notice; its note stays (Khoa, 2026-10-29). A bid dropped from Đã nộp
 // stays dropped. Returns the ids moved.
+// A cancelled notice (Đã hủy TBMT, which also raises notifyVersion) is not an amendment: it never goes back to Mới, and
+// its status is written into tracked/<TBMT>.tender and seen/<TBMT> so it stays cancelled once Sync drops it from the
+// feed (Khoa, 2026-11-04).
 async function reopenAmended(feed) {
   const tenders = feed?.data?.tenders || [];
   if (!tenders.length) return [];
-  const q = await fetch(`${SB_URL}/rest/v1/docs?select=id,data&coll=eq.tracked&id=in.(${encodeURIComponent(tenders.map((t) => t.notifyNo).join(","))})`, { headers: sbHeaders });
+  const ids = encodeURIComponent(tenders.map((t) => t.notifyNo).join(","));
+  const q = await fetch(`${SB_URL}/rest/v1/docs?select=coll,id,data&coll=in.(tracked,seen)&id=in.(${ids})`, { headers: sbHeaders });
   if (!q.ok) return [];
-  const cur = new Map((await q.json()).map((d) => [d.id, d.data]));
-  const now = new Date().toISOString(), out = [];
+  const docs = await q.json();
+  const cur = new Map(docs.filter((d) => d.coll === "tracked").map((d) => [d.id, d.data]));
+  const seen = new Map(docs.filter((d) => d.coll === "seen").map((d) => [d.id, d.data]));
+  const now = new Date().toISOString(), out = [], marks = [];
   for (const t of tenders) {
     const c = cur.get(t.notifyNo);
+    if (t.status === "cancelled") {
+      if (c && c.tender?.status !== "cancelled") marks.push({ coll: "tracked", id: t.notifyNo, updated_at: now, data: { ...c, tender: { ...c.tender, ...t } } });
+      const s = seen.get(t.notifyNo);
+      if (s && s.status !== "cancelled") marks.push({ coll: "seen", id: t.notifyNo, updated_at: now, data: { ...s, status: "cancelled" } });
+      continue;
+    }
     if (c?.stage !== "dropped" || c.prevStage === "submitted" || !(Number(t.notifyVersion) > Number(c.tender?.notifyVersion))) continue;
     out.push({ coll: "tracked", id: t.notifyNo, updated_at: now,
       data: { ...c, stage: "new", prevStage: "dropped", tender: t, note: c.note || "", updatedAt: now, reopenedAt: now, reopenedVersion: t.notifyVersion } });
   }
-  if (!out.length) return [];
-  const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify(out) });
+  if (!out.length && !marks.length) return [];
+  const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify([...out, ...marks]) });
   return w.ok ? out.map((r) => r.id) : [];
 }
 

@@ -662,10 +662,11 @@ function histStage(key) {
 // A notice cancelled on muasamcong (Đã hủy TBMT, status "cancelled" from Sync) counts as closed (Khoa, 2026-11-02).
 const isCancelled = (t) => t.status === "cancelled";
 const isClosed = (t) => isCancelled(t) || (!!t.bidCloseDate && new Date(t.bidCloseDate).getTime() <= Date.now());
-// A tender still in an early stage when bidding closes moves to the Đã đóng tab.
+// A tender still in an early stage when bidding closes moves to the Đã đóng tab; a cancelled one does from Bỏ qua too
+// (Khoa, 2026-11-04).
 // Label and colour class for a tender, with closed tenders shown as Đã đóng.
 const shownStage = (t) => (isProject(t) ? { key: "project", label: "Dự án" } : tabOf(t) === "closed" ? { key: "closed", label: "Đã đóng" } : { key: stageOf(t), label: stageLabel(stageOf(t)) });
-const tabOf = (t) => { if (isProject(t)) return "project"; const s = stageOf(t); return isClosed(t) && ["new", "reviewing", "preparing"].includes(s) ? "closed" : s; };
+const tabOf = (t) => { if (isProject(t)) return "project"; const s = stageOf(t); return isClosed(t) && ["new", "reviewing", "preparing", ...(isCancelled(t) ? ["dropped"] : [])].includes(s) ? "closed" : s; };
 const TABS = [...STAGES.slice(0, 5), { key: "closed", label: "Đã đóng" }, STAGES[5], { key: "project", label: "Dự án" }];
 // Projects Khoa creates by hand (tab Dự án, Khoa 2026-10-27): manual/<key> with isProject. They have no muasamcong
 // notice, no stages and no KPIs; their files are uploaded by hand into hsmt/<key> like a tender's HSMT.
