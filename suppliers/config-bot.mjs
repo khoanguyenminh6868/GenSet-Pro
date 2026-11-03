@@ -582,7 +582,13 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
   // Figures of a model from any supplier's row or datasheet (modelFacts); a check may quote one with factSrc.
-  const facts = modelFacts(CAT.build(suppliers), suppliers);
+  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers);
+  // The make of an engine or alternator model as catalog.md shows it: given by a source that names the model (a row,
+  // a column title, a page title), not always the row the configuration takes (a run spent a round fixing "Weichai").
+  const sourcedMake = (part, p) => {
+    const e = (part === "engine" ? built.engines : part === "alternator" ? built.alternators : [])?.find((x) => x.key === CAT.keyOf(p.model || ""));
+    return !!e?.make && e.make.split(" / ").some((m) => norm(m) === norm(p.make));
+  };
   const factsOf = (c, part) => (["engine", "alternator", "controller"].includes(part) && c[part]?.model ? factsFor(facts, part, c[part].model) : []);
   // A requirement's part and level (core: decides the model; option: chosen when ordering), copied to its checks.
   const reqs = new Map((result.requirements || []).map((r) => [norm(r.item), r]));
@@ -648,7 +654,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       if (p.src?.kind === "internet" && p.src.quote && !texts[part].includes(norm(p.src.quote))) { p.unverified = true; problems.push(`#${c.rank} ${part}: câu trích web không có trong trang đã lưu`); }
       // A controller's make may come from its model code (DSE… is Deep Sea, HGM… SmartGen), as web/catalog.js reads it.
       const makeOfCode = part === "controller" && CAT.controllersIn(p.model).some((x) => x.model && x.brand === p.make);
-      if (p.make && !makeOfCode && !texts[part].includes(norm(p.make).split(/[\s-]/)[0])) { problems.push(`#${c.rank} ${part}: hãng ${p.make} không ghi trong nguồn`); p.makeUnverified = true; }
+      if (p.make && !makeOfCode && !sourcedMake(part, p) && !texts[part].includes(norm(p.make).split(/[\s-]/)[0])) { problems.push(`#${c.rank} ${part}: hãng ${p.make} không ghi trong nguồn`); p.makeUnverified = true; }
     }
     // A grouped requirement (the controller's protections, measurements...: Khoa 2026-11-03) has one part per function;
     // each part is checked here like a check of its own, then the group is put back together.
