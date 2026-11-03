@@ -1094,7 +1094,8 @@ function anaInline(t) {
   return "";
 }
 const COLS = [
-  { k: "no", label: "Mã Số", cls: "noc", val: (t) => (isProject(t) ? projectNo(t) : t.notifyNo || ""), text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
+  // Mã Số sorts by the posting date (Đăng), then the number: the number alone is not posting order (Khoa, 2026-11-03).
+  { k: "no", label: "Mã Số", cls: "noc", val: (t) => `${pubOf(t)}|${isProject(t) ? projectNo(t) : t.notifyNo || ""}`, text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
     cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span><div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
       const tl = timeLeft(t.bidCloseDate); return h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(isCancelled(t) ? '<div class="tleft closed-at">Đã hủy TBMT</div>' : stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
