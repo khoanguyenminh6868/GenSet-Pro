@@ -92,9 +92,933 @@
         "Open frame generator set KDF8500X/XE(-3)"
       ],
       "file": "sources/koop-changzhou/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.koopchina.com/KD2V80.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KD2V80"
+      ],
+      "file": "sources/koop-changzhou/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.koopchina.com/Multi-cylinder-diesel-engine-KD2V100F.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KD2V100F"
+      ],
+      "file": "sources/koop-changzhou/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.koopchina.com/KDF25XXE.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF2500X/XE"
+      ],
+      "file": "sources/koop-changzhou/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.koopchina.com/kjcyfdjzKDF4XXE.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF4000X/XE"
+      ],
+      "file": "sources/koop-changzhou/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.koopchina.com/kjcyfdjzKDF67XXE3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF6700X/XE(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.koopchina.com/kjcyfdjzKDF75XXE3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF7500X/XE(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.koopchina.com/kjcyfdjzKDF85XXE3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF8500X/XE(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.koopchina.com/dhfdjKDF67WE.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF6700WE"
+      ],
+      "file": "sources/koop-changzhou/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.koopchina.com/dhfdjKDF75WE.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF7500WE"
+      ],
+      "file": "sources/koop-changzhou/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.koopchina.com/dzyfdjzKDF67Q3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF6700Q(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.koopchina.com/dzyfdjzKDF75Q3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF7500Q(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/111.md"
+    },
+    {
+      "n": 112,
+      "url": "https://www.koopchina.com/dzyfdjzKDF85Q3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF8500Q(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.koopchina.com/dzyfdjzKDF95Q.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF9500Q(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.koopchina.com/dzyfdjzKDF11Q.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF11000Q(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.koopchina.com/dzyfdjzKDF12Q3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF12000Q(-3)"
+      ],
+      "file": "sources/koop-changzhou/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.koopchina.com/dzyfdjzKDF16Q3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF16000Q(-3)"
+      ],
+      "file": "sources/koop-changzhou/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.koopchina.com/dhfdjKDF85WE.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF8500WE"
+      ],
+      "file": "sources/koop-changzhou/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.koopchina.com/cjyfdjzKDF67QQ3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF6700QQ(-3)"
+      ],
+      "file": "sources/koop-changzhou/118.md"
+    },
+    {
+      "n": 119,
+      "url": "https://www.koopchina.com/cjyfdjzKDF75QQ3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF7500QQ(-3)"
+      ],
+      "file": "sources/koop-changzhou/119.md"
+    },
+    {
+      "n": 120,
+      "url": "https://www.koopchina.com/kjcyfdjzKDF95XE3D.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF9500XE(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/120.md"
+    },
+    {
+      "n": 121,
+      "url": "https://www.koopchina.com/cjyfdjzKDF85QQ3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF8500QQ(-3)"
+      ],
+      "file": "sources/koop-changzhou/121.md"
+    },
+    {
+      "n": 122,
+      "url": "https://www.koopchina.com/kjcyfdjzKDF11XE.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF11000XE(-3/3D)"
+      ],
+      "file": "sources/koop-changzhou/122.md"
+    },
+    {
+      "n": 123,
+      "url": "https://www.koopchina.com/kjcyfdjzKDF12XE3.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| model | KDF12000XE(-3)"
+      ],
+      "file": "sources/koop-changzhou/123.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-03",
-  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KD2V80",
+        "| Cylinder diameter x stroke (mm) | 80 × 79",
+        "| Rated power/speed (kW/rpm) | 12/3000 13/3600",
+        "| Cylinder diameter*stroke[mm] | 80*79",
+        "| Displacement [L] | 0.794",
+        "| Rated speed [rpm] | 3000 3600",
+        "| Rated power [Kw/rpm] | 12.0 14.0",
+        "| Rated power [Hp/rpm] | 16.3 19.0",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KD2V100F",
+        "| Cylinder diameter x stroke (mm) | 100x85",
+        "| Rated power/speed (kW/rpm) | 3000",
+        "| Rated power | 20.6kW",
+        "| Fuel consumption（g/kW.h） | ≤245"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF2500X/XE",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240",
+        "| Rated power [Kva] | 1.8 2.2",
+        "| Power limit [Kva] | 2.0 2.5",
+        "| Power factor Φ | 1",
+        "| Fuel tank capacity [L] | 12.5",
+        "| Power model | X: KD170F",
+        "| Cylinder diameter*stroke[mm] | 70 * 55",
+        "| Displacement [L] | 0.211",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 2.5 2.8",
+        "| Fuel consumption [g/kwh] | 275 280",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions [mm] | 640 *460* 520"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF4000X/XE",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 220",
+        "| Rated power (KVA) | 2.6",
+        "| Power limit (KVA) | 2.8",
+        "| Power factor () | 1.0",
+        "| Fuel tank capacity (L) | 12.5",
+        "| Power model | X:KD178F/XE:KD178FE",
+        "| Cylinder diameter*stroke (mm) | 78*62",
+        "| Displacement (L) | 0.296",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 3.7",
+        "| Fuel consumption (g/kwh) | 275",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 660*460*540",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240",
+        "| Rated power [Kva] | 2.8 3.0",
+        "| Power limit [Kva] | 3.0 3.3",
+        "| Power factor Φ | 1",
+        "| Fuel tank capacity [L] | 12.5",
+        "| Power model | X: KD178F",
+        "| Cylinder diameter*stroke[mm] | 78 * 62",
+        "| Displacement [L] | 0.296",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 3.7 4.0",
+        "| Fuel consumption [g/kwh] | 275 280",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Dimensions [mm] | 660*460*540"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF6700X/XE(-3/3D)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (KVA) | 4.5 5.6",
+        "| Power limit (KVA) | 5.0 6.3",
+        "| Power factor () | 1.0 0.8",
+        "| Fuel tank capacity (L) | 12.5",
+        "| Power model | X:KD156FA/XE:KD186FAE",
+        "| Cylinder diameter*stroke (mm) | 86*72",
+        "| Displacement (L) | 0.418",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 5.8",
+        "| Fuel consumption (g/kwh) | 275",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 740*505*630",
+        "| model | KDF6700X/XE(-3)",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power [Kva] | 4.5 (5.6) 5.0(6.3)",
+        "| Power limit [Kva] | 5.0(6.3) 5.5(6.9)",
+        "| Power factor Φ | 1.0(0.8)",
+        "| Fuel tank capacity [L] | 12.5",
+        "| Power model | X: KD186FA",
+        "| Cylinder diameter*stroke[mm] | 86 * 72",
+        "| Displacement [L] | 0.418",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 5.8 6.6",
+        "| Fuel consumption [g/kwh] | 275 280",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Dimensions [mm] | 740* 505*630"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF7500X/XE(-3/3D)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (KVA) | 5.0 6.3",
+        "| Power limit (kVA) | 5.5 6.9",
+        "| Power factor () | 1.0 0.8",
+        "| Fuel tank capacity (L) | 12.5",
+        "| Power model | X:KD188FA/XE:KD188FAE",
+        "| Cylinder diameter*stroke (mm) | 88*75",
+        "| Displacement (L) | 0.456",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 6.6",
+        "| Fuel consumption (g/kwh) | 275",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 740*505*630",
+        "| model | KDF7500X/XE(-3)",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power [Kva] | 5.0(6.3) 5.5(6.9)",
+        "| Power limit [Kva] | 5.5(6.9) 6.0(7.5)",
+        "| Power factor Φ | 1.0(0.8)",
+        "| Fuel tank capacity [L] | 12.5",
+        "| Power model | X: KD188FA",
+        "| Cylinder diameter*stroke[mm] | 88 * 75",
+        "| Displacement [L] | 0.456",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 6.6 6.9",
+        "| Fuel consumption [g/kwh] | 275 280",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Dimensions [mm] | 740* 505*630"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF8500X/XE(-3/3D)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (KVA) | 6.0 7.5",
+        "| Power limit (kVA) | 6.5 8.1",
+        "| Power factor () | 1.0 0.8",
+        "| Fuel tank capacity (L) | 12.5",
+        "| Power model | X:KD192F/XE:KD192FE",
+        "| Cylinder diameter*stroke (mm) | 92*75",
+        "| Displacement (L) | 0.499",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 7.6",
+        "| Fuel consumption (g/kwh) | 275",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 740*505*630",
+        "| model | KDF8500X/XE(-3)",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power [Kva] | 6.0(7.5) 6.5(8.1)",
+        "| Power limit [Kva] | 6.5(8.1) 7.0(8.8)",
+        "| Power factor Φ | 1.0(0.8)",
+        "| Fuel tank capacity [L] | 12.5",
+        "| Power model | X: KD192F",
+        "| Cylinder diameter*stroke[mm] | 92 * 75",
+        "| Displacement [L] | 0.499",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 7.6 8.6",
+        "| Fuel consumption [g/kwh] | 275 280",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Dimensions [mm] | 740* 505*630"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF6700WE",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230",
+        "| Output power (kVA) | 2.0",
+        "| Current adjustment range (A) | 50~180",
+        "| Power factor (medium) | 1.0",
+        "| Fuel tank capacity (L) | 12.5",
+        "| Power model | KD186FAE",
+        "| Cylinder diameter*stroke (mm) | 86*72",
+        "| Displacement (L) | 0.418",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 5.8",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 710*515*630",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240",
+        "| Output power[Kva] | 2.0 2.2",
+        "| Current adjustment range[A] | 50 ~ 180",
+        "| Power factor Φ | 1",
+        "| Fuel tank capacity [L] | 12.5",
+        "| Cylinder diameter*stroke[mm] | 86* 72",
+        "| Displacement [L] | 0.418",
+        "| Power [Kw] | 5.8 6.6",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+        "| Engine oil brand | SAE10W30 (CD grade or above) Use CD or CD grade 15W-40 engine oil (or SAE equivalent grade engine oil)",
+        "| Dimensions [mm] | 750*515*640"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF7500WE",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240",
+        "| Output power[Kva] | 2.0 2.2",
+        "| Current adjustment range[A] | 60~200",
+        "| Power factor Φ | 1",
+        "| Fuel tank capacity [L] | 12.5",
+        "| Power model | KD188FAE",
+        "| Cylinder diameter*stroke[mm] | 88*75",
+        "| Displacement [L] | 0.456",
+        "| Power [Kw] | 6.6 6.9",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+        "| Engine oil brand | SAE10W30 (CD grade or above) Use CD or CD grade 15W-40 engine oil (or SAE equivalent grade engine oil)",
+        "| Dimensions [mm] | 750*515*640"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF6700Q(-3/3D)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (kVA) | 4.5 5.6",
+        "| Power limit (kVA) | 5.0 6.3",
+        "| Power factor (φ) | 1.0 0.8",
+        "| Fuel tank capacity (L) | 14.5",
+        "| Power model | KD186FAE",
+        "| Cylinder diameter*stroke (mm) | 86*72",
+        "| Displacement (L) | 0.418",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 5.8",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 910*530*740",
+        "| model | KDF6700Q(-3)",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power [KVA] | 4.5 (5.6) 5.0(6.3)",
+        "| Power limit [KVA] | 5.0(6.3) 5.5(6.9)",
+        "| Power factor Φ | 1.0(0.8)",
+        "| Fuel tank capacity [L] | 14.5",
+        "| Cylinder diameter*stroke[mm] | 86*72",
+        "| Displacement | 0.418L",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 5.8 6.6",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+        "| Engine oil brand | SAE10W30 (CD grade or above) Use CD or CD grade 15W-40 engine oil (or SAE equivalent grade engine oil)",
+        "| Dimensions [mm] | 910*530*740"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF7500Q(-3/3D)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (kVA) | 5.0 6.3",
+        "| Power limit (kVA) | 5.5 6.9",
+        "| Power factor (φ) | 1.0 0.8",
+        "| Fuel tank capacity (L) | 16",
+        "| Power model | KD188FAE",
+        "| Cylinder diameter*stroke (mm) | 88*75",
+        "| Displacement (L) | 0.456",
+        "| Speed (rpm) | 3000",
+        "| Engine power (kW) | 6.6",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 910*530*740",
+        "| model | KDF7500Q(-3)",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power [KVA] | 5.0(6.3) 5.5(6.9)",
+        "| Power limit [KVA] | 5.5(6.9) 6.0(7.5)",
+        "| Power factor Φ | 1.0(0.8)",
+        "| Fuel tank capacity [L] | 14.5",
+        "| Cylinder diameter*stroke[mm] | 88*75",
+        "| Displacement | 0.456L",
+        "| Speed [rpm] | 3000 3600",
+        "| Power [Kw] | 6.6 6.9",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+        "| Engine oil brand | SAE10W30 (CD grade or above) Use CD or CD grade 15W-40 engine oil (or SAE equivalent grade engine oil)",
+        "| Dimensions [mm] | 910*530*740"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF8500Q(-3/3D)",
+        "| Frequency (Hz) | 550",
+        "| Voltage (V) | 230 400",
+        "| Rated power (kVA) | 6.0 7.5",
+        "| Power limit (kVA) | 6.5 8.1",
+        "| Power factor (φ) | 1.0 0.8",
+        "| Fuel tank capacity (L) | 30.0",
+        "| Power model | KD192FE",
+        "| Cylinder diameter*stroke (mm) | 92*75",
+        "| Displacement (L) | 0.499",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 7.6",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 910*530*840",
+        "| model | KDF8500Q",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power [KVA] | 6.0(7.5) 6.5(8.1)",
+        "| Power limit [KVA] | 6.5(8.1) 7.0(8.8)",
+        "| Power factor Φ | 1.0(0.8)",
+        "| Fuel tank capacity [L] | 30.0",
+        "| Cylinder diameter*stroke[mm] | 92*75",
+        "| Displacement | 0.499L",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 7.6 8.6",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+        "| Engine oil brand | SAE10W30 (CD grade or above) Use CD or CD grade 15W-40 engine oil (or SAE equivalent grade engine oil)",
+        "| Dimensions [mm] | 910*530*840"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF9500Q(-3/3D)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (kVA) | 6.6 8.3",
+        "| Power limit (kVA) | 7.5 9.3",
+        "| Power factor (medium) | 1.0 0.8",
+        "| Fuel tank capacity (L) | 30.0",
+        "| Power model | KD195FE",
+        "| Cylinder diameter*stroke (mm) | 95*75",
+        "| Displacement (L) | 0.532",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 8.0",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 910*530*840"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF11000Q(-3/3D)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (kVA) | 8.0 10.0",
+        "| Power limit (kVA) | 8.5 10.6",
+        "| Power factor (medium) | 1.0 0.8",
+        "| Fuel tank capacity (L) | 30.0",
+        "| Power model | KD1100E",
+        "| Cylinder diameter*stroke (mm) | 100*85",
+        "| Displacement (L) | 0.667",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 10.2",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 1120*695*756"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF12000Q(-3)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (kVA) | 9.0 11.0",
+        "| Power limit (kVA) | 10.0 12.0",
+        "| Power factor (φ) | 1.0 0.8",
+        "| Fuel tank capacity (L) | 26",
+        "| Noise level at 7 meters (dB) | 70",
+        "| Power model | KD2V80",
+        "| Cylinder diameter*stroke (mm) | 2-80*79",
+        "| Displacement (L) | 0.794",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 12.0",
+        "| Fuel brand | Diesel: 0# (summer), - 10# (winter)",
+        "| Engine oil brand | SAE10W30 (CF grade and above)",
+        "| Dimensions (mm) | 1200*650*890",
+        "| Speed/Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power [Kva] | 9.0(11.0) 9.5(11.5)",
+        "| Power limit [Kva] | 10.0(12.0) 10.5(12.5)",
+        "| Power factor Φ | 1.0(0.8)",
+        "| Fuel tank capacity [L] | 26",
+        "| Noise level at 7 meters [Db] | 72",
+        "| Cylinder diameter*stroke[mm] | 2-80*79",
+        "| Displacement [L] | 0.794",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 12.0 14.0",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF16000Q(-3)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (kVA) | 11.0 13.75",
+        "| Power limit (kVA) | 12.0 15.0",
+        "| Power factor (φ) | 1.0 0.8",
+        "| Fuel tank capacity (L) | 26",
+        "| Noise level at 7 meters (dB) | 75",
+        "| Power model | KD292F",
+        "| Cylinder diameter*stroke (mm) | 2-92*75",
+        "| Displacement (L) | 0.997",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 14.0",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CF grade and above)",
+        "| Dimensions (mm) | 1250*650*890",
+        "| Speed/Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power [Kva] | 11.0(13.75) 12.0(15.0)",
+        "| Power limit [Kva] | 12.0(15.0) 13.0(16.0)",
+        "| Power factor Φ | 1.0(0.8)",
+        "| Fuel tank capacity [L] | 26",
+        "| Noise level at 7 meters [Db] | 75",
+        "| Cylinder diameter*stroke[mm] | 2-92*75",
+        "| Displacement [L] | 0.997",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 14.0 15.0",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF8500WE",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230",
+        "| Output power (kVA) | 2.0",
+        "| Current adjustment range (A) | 70~220",
+        "| Power factor (medium) | 1.0",
+        "| Fuel tank capacity (L) | 12.5",
+        "| Power model | KD192FE",
+        "| Cylinder diameter*stroke (mm) | 92*75",
+        "| Displacement (L) | 0.499",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 7.6",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 710*515*640",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240",
+        "| Output power[Kva] | 2.0 2.2",
+        "| Current adjustment range[A] | 70 ~ 220",
+        "| Power factor Φ | 1",
+        "| Fuel tank capacity [L] | 12.5",
+        "| Cylinder diameter*stroke[mm] | 92 * 75",
+        "| Displacement [L] | 0.499",
+        "| Power [Kw] | 7.6 8.6",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+        "| Engine oil brand | SAE10W30 (CD grade or above) Use CD or CD grade 15W-40 engine oil (or SAE equivalent grade engine oil)",
+        "| Dimensions [mm] | 750*515*640"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF6700QQ(-3)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (kVA) | 4.2 5.3",
+        "| Power limit (kVA) | 4.5 5.6",
+        "| Power factor (φ) | 1.0 0.8",
+        "| Fuel tank capacity (L) | 14.5",
+        "| Noise level at 7 meters (dB) | 65",
+        "| Power model | KD186FAE",
+        "| Cylinder diameter*stroke (mm) | 86*72",
+        "| Displacement (L) | 0.418",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 5.8",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 995*645*890",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power[KVA] | 4.2( 5.3 ) 4.5 ( 5.6 )",
+        "| Power limit [Kva] | 4.5 (5.6) 5.0 ( 6.3 )",
+        "| Power factor Φ | 1(0.8)",
+        "| Fuel tank capacity [L] | 14.5",
+        "| Noise at 7 meters | 63",
+        "| Cylinder diameter*stroke[mm] | 86*72",
+        "| Displacement | 0.418L",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 5.8 6.6",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Dimensions [mm] | 995*645*750"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF7500QQ(-3)",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power[KVA] | 5.0 ( 6.3 ) 5.5 ( 6.9 )",
+        "| Power limit [Kva] | 5.5 ( 6.9 ) 6.0 ( 7.5 )",
+        "| Power factor Φ | 1(0.8)",
+        "| Fuel tank capacity [L] | 14.5",
+        "| Noise at 7 meters | 63",
+        "| Power model | KD188FAE",
+        "| Cylinder diameter*stroke[mm] | 86*72",
+        "| Displacement | 0.456L",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 6.6 6.9",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions [mm] | 910*530*740"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF9500XE(-3/3D)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (KVA) | 7.0 8.8",
+        "| Power limit (KVA) | 7.5 9.3",
+        "| Power factor () | 1.0 0.8",
+        "| Fuel tank capacity (L) | 18",
+        "| Power model | KD195FE",
+        "| Cylinder diameter*stroke (mm) | 95*75",
+        "| Displacement (L) | 0.531",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 7.6",
+        "| Fuel consumption (g/kwh) | 260",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 740*505*630"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF8500QQ(-3)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (kVA) | 5.5 6.9",
+        "| Power limit (kVA) | 6.0 7.5",
+        "| Power factor (φ) | 1.0 0.8",
+        "| Fuel tank capacity (L) | 14.5",
+        "| Noise level at 7 meters (dB) | 66",
+        "| Power model | KD192FE",
+        "| Cylinder diameter*stroke (mm) | 92*75",
+        "| Displacement (L) | 0.499",
+        "| Speed (rpm) | 3000",
+        "| Engine power (kW) | 7.6",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 995*645*890",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power[KVA] | 5.5 ( 6.9 ) 6.0( 7.5 )",
+        "| Power limit [Kva] | 6.0(7.5 ) 6.5 ( 8.1 )",
+        "| Power factor Φ | 1(0.8)",
+        "| Fuel tank capacity [L] | 14.5",
+        "| Noise at 7 meters | 63",
+        "| Cylinder diameter*stroke[mm] | 92*75",
+        "| Displacement | 0.499L",
+        "| Speed [rpm] | 3000 3600",
+        "| Power [Kw] | 7.6 8.6",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+        "| Dimensions [mm] | 995*645*750"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF11000XE(-3/3D)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (KVA) | 8.0 10.0",
+        "| Power limit (KVA) | 8.5 10.6",
+        "| Power factor () | 1.0 0.8",
+        "| Fuel tank capacity (L) | 18",
+        "| Power model | KD1100FE",
+        "| Cylinder diameter*stroke (mm) | 100*85",
+        "| Displacement (L) | 0.667",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 10.2",
+        "| Fuel consumption (g/kwh) | 260",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 780*585*705"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "Changzhou Koop Power Machinery Co., Ltd.",
+      "header": [],
+      "rows": [
+        "| model | KDF12000XE(-3)",
+        "| Frequency (Hz) | 50",
+        "| Voltage (V) | 230 400",
+        "| Rated power (KVA) | 9.0 11.0",
+        "| Power limit (KVA) | 10.0 12.0",
+        "| Power factor () | 1.0 0.8",
+        "| Fuel tank capacity (L) | 34",
+        "| Power model | KD2V80",
+        "| Cylinder diameter*stroke (mm) | 2-80*79",
+        "| Displacement (L) | 0.794",
+        "| Speed ​​(rpm) | 3000",
+        "| Engine power (kW) | 12.0",
+        "| Fuel consumption (g/kwh) | 280",
+        "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+        "| Engine oil brand | SAE10W30 (CD grade and above)",
+        "| Dimensions (mm) | 1060*660*880",
+        "| model | KDF12000XE(-3 )",
+        "| Frequency [Hz] | 50 60",
+        "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+        "| Rated power[Kva] | 9.0(11.0) 9.5(11.5)",
+        "| Power limit [Kva] | 10.0(12.0) 10.5(12.5)",
+        "| Power factor Φ | 1.0(0.8)",
+        "| Fuel tank capacity [L] | 34",
+        "| Cylinder diameter*stroke[mm] | 2-80*79",
+        "| Displacement [L] | 0.794",
+        "| Speed ​​[rpm] | 3000 3600",
+        "| Power [Kw] | 12.0 14.0",
+        "| Fuel brand | Diesel: 0#(summer), -10#(winter)"
+      ]
+    }
+  ]
 }

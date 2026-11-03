@@ -21,7 +21,7 @@
     [/\byto\b|一拖/i, "YTO"], [/\byangdong\b|扬动/i, "Yangdong"], [/\bquanchai\b|全柴/i, "Quanchai"],
     [/\bjichai\b|济柴/i, "Jichai"], [/\bzichai\b|淄柴/i, "Zichai"], [/\bhuachai\b|华柴/i, "Huachai"],
     [/\bchangchai\b|常柴/i, "Changchai"], [/\bkofo\b|科孚/i, "Kofo"], [/\bscania\b|斯堪尼亚/i, "Scania"],
-    [/\bjohn deere\b|\bdeere\b|约翰迪尔/i, "John Deere"], [/\bdaewoo\b|大宇/i, "Daewoo"], [/\bgoogol\b/i, "Googol"],
+    [/\bjohn deere\b|\bdeere\b|约翰迪尔/i, "John Deere"], [/\bdaewoo\b|大宇/i, "Daewoo"], [/\bgoogol\b/i, "Googol"], [/\bkoop\b/i, "Koop"],
     [/\bwudong\b|无动/i, "Wudong"], [/\btongchai\b|通柴/i, "Tongchai"], [/\bxichai\b/i, "Xichai"],
     [/\bmwm\b/i, "MWM"], [/\bkohler\b|科勒/i, "Kohler"], [/\blister\b/i, "Lister Petter"], [/\bhonda\b|本田/i, "Honda"],
     [/\bcaterpillar\b|卡特彼勒/i, "Caterpillar"], [/\bfpt\b|\biveco\b|依维柯/i, "FPT"], [/\bMAN\b|曼恩/, "MAN"], [/\bdetroit\b/i, "Detroit Diesel"],
@@ -225,6 +225,9 @@
     // Datasheets put the engine and the alternator under their own heading ("Engine specification", then
     // "Model | 4B3.9-G11"): a bare "Model" or "Brand" line belongs to the part whose heading it is under.
     let part = null;
+    // GFE datasheets head the sheet with "| Engine | Alternator", then "| Cummins | Stamford | GFE2200CSC" (makes and
+    // the genset model) and "| QSK50-G17 | S7L1D-G41" (models): stack counts the lines read after that heading.
+    let stack = 0;
     // Models running across line up at the right: a row with a second label cell ("| Engine | Engine Model | LPG210 |
     // LPG420 | LPG620" beside "| Frequency (Hz) | 50 | 50 | 50") has its extra cells joined to the label (2026-11-03:
     // LPG420 took the 8.5 kVA of LPG620).
@@ -237,6 +240,12 @@
       let c = cellsOf(l);
       // Only label words are joined; numbers there are a second figure per model (50 / 60 Hz columns).
       if (W && c.length - 1 > W && c.length - 1 <= W + 2 && !c.slice(1, c.length - W).some((x) => /\d/.test(x))) c = [c.slice(0, c.length - W).filter(Boolean).join(" "), ...c.slice(c.length - W)];
+      if (c.length === 2 && /^engine$/i.test(c[0]) && /^alternator$/i.test(c[1])) { stack = 1; continue; }
+      if (stack === 1 && c.length >= 2 && c.length <= 3 && !c.slice(0, 2).some((x) => /\d/.test(x))) {
+        put(0, "engineBrand", c[0]); put(0, "altBrand", c[1]); if (c[2] && isCode(c[2])) put(0, "genset", c[2]); stack = 2; continue;
+      }
+      if (stack === 2 && c.length === 2 && isCode(c[0]) && isCode(c[1])) { put(0, "engine", c[0]); put(0, "alternator", c[1]); stack = 0; continue; }
+      stack = 0;
       const head = c.length === 1 ? headingOf(c[0]) : undefined;
       if (head !== undefined) { if (head !== "keep") part = head; continue; }
       // "| Noise(LP1m): 100dB(A)": label and value in one cell.
@@ -258,6 +267,9 @@
         // "Engine type" is the engine model on some sites: read it as before too.
         if (sk !== "engType") continue;
       }
+      // "Engine ref." is the engine model on Kohler-SDMO sheets ("| Engine ref. | 4045TSG20 *", * = a footnote).
+      // "Power model" (动力型号) is the engine on Koop pages ("| Power model | KD292F").
+      if (/^engine\s+ref\.?$|^power\s+model$/.test(bare)) { vals.forEach((v, j) => isCode(v.replace(/\s*\*$/, "")) && put(j, "engine", v.replace(/\s*\*$/, ""))); continue; }
       if (ENGINE_LBL.test(L) && /model|type|型号|^\s*(diesel\s*)?engine\s*$|发动机$|柴油机$/i.test(L) && !/brand|make|manufactur|speed|power|output|cylinder|displace|bore|governor|consum|oil|cool|start|origin|品牌|厂家/i.test(L))
         vals.forEach((v, j) => put(j, "engine", v));
       else if (ENGINE_LBL.test(L) && /brand|make|manufactur|品牌|厂家/i.test(L)) vals.forEach((v, j) => put(j, "engineBrand", v));

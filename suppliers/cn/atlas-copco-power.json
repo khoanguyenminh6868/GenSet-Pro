@@ -90,6 +90,26 @@
         "Power (kW) : 13.5 kW 18 HP"
       ],
       "file": "sources/atlas-copco-power/102.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.atlascopco.com/en-ph/compressors/products/industrial-water-cooling-systems/tdv-industrial-cooler",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | Metric | Imperial"
+      ],
+      "file": "sources/atlas-copco-power/105.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/2_generators/spain/qes-row/2958%202480%2000_QES%20Brochure_LRC%20market_EN_26-02_LR.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| QES9 | QES14 | QES20 | QES 30 | QES 40 | QES60 | QES 80 | QES 100"
+      ],
+      "file": "sources/atlas-copco-power/1001.md"
     }
   ],
   "confidence": "medium",
@@ -121,6 +141,144 @@
         "Power (kW) : 9.6 kW 13 HP",
         "Power (kW) : 5.5 kW 7.4 HP",
         "Power (kW) : 6.7 kW 9 HP"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "TDV ( adiabatic) dry coolers series - Atlas Copco Philippines",
+      "header": [
+        "| | Metric | Imperial",
+        "| Cooling capacity | 50 kW – 750 kW | 170.000 BTU/hr – 2.600.000 BTU/hr",
+        "| Water flow | 5 m 3 /h – 120 m 3 /h | 22 gpm – 520 gpm"
+      ],
+      "rows": [
+        "| Hydraulic allowed pressure | PN10 | 145 psi"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Brochure QES LRC market English",
+      "header": [],
+      "rows": [
+        "| QES9 | QES14 | QES20 | QES 30 | QES 40 | QES60 | QES 80 | QES 100",
+        "| Rated frequency | Hz | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50",
+        "| Rated voltage (1) | V | 230 | 400Y / 230 | 230 | 400Y / 230 | 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230",
+        "| Prime power (PRP) | kVA / kW | 6.6/6.6 | 8.8/7 | 11/11 | 13.8/11 | 17.6/17.6 | 20/16 | 30/24 | 28/23 | 42/34 | 60/48 | 90/72 | 100/80",
+        "| Rated standby power (ESP) | kVA / kW | 6/6 | 10/8 | 10/10 | 15/12 | 16/16 | 21.3/17 | 31/25 | 45/36 | 63/50 | 96/77 | 112/90",
+        "| Power factor cos φ | 1 | 0.8 | 1 | 0.8 | 1 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8",
+        "| Rated current (PRP) | A | 26.1 | 12.6 | 43.5 | 19.9 | 69.6 | 28.9 | 43.0 | 61.0 | 86.0 | 129.0 | 144.3",
+        "| Performance class acc. ISO-8528/5 | G1 | G1 | G1 | G1 | G2 | G1 | G1 | G2 | G2 | G2",
+        "| Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Brochure QES LRC market English",
+      "header": [],
+      "rows": [
+        "| Rated frequency | Hz | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50",
+        "| Rated voltage (1) | V | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230",
+        "| Prime power (PRP) | kVA / kW | 125/100 | 180/144 | 250/200 | 325/260 | 380/304 | 450/360 | 515/412 | 637/510",
+        "| Rated standby power (ESP) | kVA / kW | 135/108 | 194/155 | 272/218 | 350/280 | 414/331 | 502/402 | 531/425 | 700/560",
+        "| Power factor cos φ | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8",
+        "| Rated current (PRP) | A | 180.4 | 259.0 | 360.0 | 469.0 | 548.5 | 649.5 | 743.0 | 951.0",
+        "| Performance class acc. ISO-8528/5 | G2 | G2 | G2 | G3 | G2 | G3 | G3 | G2",
+        "| Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Brochure QES LRC market English",
+      "header": [],
+      "rows": [
+        "| Rated frequency | Hz | 60 | 60 | 60 | 60 | 60 | 60 | 60 | 60",
+        "| Rated voltage (1) | V | 240 | 220Y / 127 | 240 | 220Y / 127 | 240 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127",
+        "| Prime power (PRP) | kVA / kW | 10/8 | 13/13 | 17.5/14 | 22.5/18 | 25/20 | 34/27 | 48,4/39 | 72/58 | 103/82 | 112/89",
+        "| Rated standby power (ESP) | kVA / kW | 11.3/9 | 14.3/14.3 | | 25/19.8 | | 36/29 | 53/42 | 78/63 | 112/89 | 128/102",
+        "| 15/12 | 26.3/21",
+        "| Power factor cos φ | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8",
+        "| Rated current (PRP) | A | 33.3 | 26.2 | 54.2 | 45.9 | 32.5 | 65.6 | 88.2 | 127.0 | 86.0 | 270.0 | 310.0",
+        "| Performance class acc. ISO-8528/5 | G1 | G1 | G1 | G2 | G1 | G2 | G2 | G2",
+        "| Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Brochure QES LRC market English",
+      "header": [],
+      "rows": [
+        "| Rated frequency | Hz | 60 | 60 | 60 | 60 | 60 | 60 | 60 | 60",
+        "| Rated voltage (1) | V | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127",
+        "| Prime power (PRP) | kVA / kW | 139/112 | 186/149 | 262/210 | 311/249 | 373/298 | 447/358 | 509/407 | 691/553",
+        "| Rated standby power (ESP) | kVA / kW | 152/122 | 204/163 | 286/229 | 337/270 | 412/330 | 487/390 | 563/450 | 758/607",
+        "| Power factor cos φ | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8",
+        "| Rated current (PRP) | A | 368.0 | 489.0 | 688.0 | 448.0 | 448.0 | 538.0 | 612.0 | 1813.0",
+        "| Performance class acc. ISO-8528/5 | G2 | G2 | G2 | G3 | G3 | G3 | G3 | G2",
+        "| Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Brochure QES LRC market English",
+      "header": [
+        "| ACA270C | ACA270F | ACA270J | ACA315G | ACA355C | ACA355DS | ACA355E | ACA355E"
+      ],
+      "rows": [
+        "| Rated Output | kVA | 162/150 | 231 | 315 | 532/481 | 644/594 | 708/655 | 845/775 | 845/775",
+        "| Degree of protection / Insulation class | IP23/H | IP23/H | IP23/H | IP23/H | IP23/H | IP23/H | IP23/H | IP23/H"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Brochure QES LRC market English",
+      "header": [],
+      "rows": [
+        "| * QES generators can operate at higher | temperature",
+        "canopy (Polyester powder coating finishing)",
+        "| Model | QES 9-20 | QES 9-10 | QES 14-25 | QES 30-50 | QES 60-695",
+        "| Genset phase number | 1PH | 3PH | 3PH | 3PH | 3PH",
+        "| Single phase L+N+G 16A(3P) | 2 | 1 | 1 | 1 | 1",
+        "| type of application, mobile and stationary, prime and | It’s your generator, have it your way!",
+        "| • Alternator heater for safe and secure starting | Mechanical options",
+        "| remote and local start applications | • Synthetic oil",
+        "| • Expansions modules for inputs and outputs | • Water separator fuel pre-filter",
+        "| Hot Parts Protection | Option",
+        "| Alternator Auxiliary winding (AWES) | Option",
+        "| Radiator Coolant Level Switch | Option (*)",
+        "Fuel consumption",
+        "| (Standard / 24-48H / 1000l fuel tank) | 22 / 52 / 103 | 14 / 32 / 65 | 10,8 / 25 / 50 | / 28 / 54 | 8 / 21 / 39",
+        "Engine",
+        "| Model | Kubota",
+        "| Aspiration | Natural",
+        "| Speed control | Mechanical",
+        "| governor | governor",
+        "| Coolant | water-cooled",
+        "| Exhaust gas emission compliance | China 3 | China 3 | China 3 | Stage 2 | | Stage 2 |",
+        "Alternator",
+        "| Model | Altas Copco",
+        "Engine",
+        "| Model | Cummins",
+        "| Aspiration | Turbo charger Turbo charger Turbocharger Turbocharger",
+        "| Speed control | Electronic",
+        "| Exhaust gas emission compliance | Fuel optimized Fuel optimized Fueloptimized Fueloptimized",
+        "Fuel consumption",
+        "| (Standard / 24-48H / 1000l fuel tank) | 20 /46.3 /92.6 | | 11.4 /26 /52 | 9 /20.5 /41",
+        "Engine",
+        "| Exhaust gas emission | compliance",
+        "Dimensions and weight",
+        "| Skid dimensions (L x W x H) | mm | 2135x720x245 2135x720x245 2135x720x245 2000X910X130 | 2000X910X130 | 2180 X 1005 | 2960 x 1100 | 2960 x 1070",
+        "Dimensions and weight",
+        "| Optimize your power | solutions",
+        "| is not always the most efficient solution. Does the | Just one example:",
+        "| fleet need higher power? A Modular Power Plant (or | The deployment of a 1MVA generator as",
+        "| We have developed a unique Power Management System | application as a guide, could mean up to",
+        "| (PMS). The PMS manages the number of generators | 1677 liters of fuel consumed each day.",
+        "| running in parallel with load demand, starting and | That compares with approximately 1558",
+        "| In this way, the load on each generator remains at a level | were doing the same job. In this case, an",
+        "| that optimizes fuel consumption. | estimated annual saving of more than",
+        "| It also eliminates the need for generators to run with low | to mention 85 tons of CO2 saved over the",
+        "| load levels, which can cause engine damage and shorten | course of a year.",
+        "| HYBRID GENERATORS | LIGHT TOWERS"
       ]
     }
   ]
