@@ -15,31 +15,34 @@ const docs = {
   E: { bidName: "Mua sắm máy phát điện dự phòng", final: true, lots: [lot(1e9, 9.9e8, [{ name: "Máy phát điện", maker: "HBC Power", code: "EXT20KLE.LS" }], 1)] },
 };
 
-test("candidates: power far off, repair, and lots with nothing about their goods are left out", () => {
-  const { list } = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, docs, 400, 1.2e9);
-  assert.deepEqual(list.map((s) => s.key).sort(), ["A", "E"]);
+test("candidates: only power within 10% when the tender's is known; repair left out", () => {
+  const more = { ...docs, G: { bidName: "Mua sắm máy phát điện 440kVA", final: true, lots: [lot(1e9, 8e8)] }, H: { bidName: "Mua sắm máy phát điện 450kVA", final: true, lots: [lot(1e9, 8e8)] } };
+  const { list } = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, more, 400, 1.2e9);
+  assert.deepEqual(list.map((s) => s.key).sort(), ["A", "G"]);
+  // Power not known for the tender: a lot with won goods stays even without a power, one with nothing about it does not.
+  assert.deepEqual(BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện" }, docs, null, 1.2e9).list.map((s) => s.key).sort(), ["A", "B", "E"]);
   assert.match(BP.sampleText(list.find((s) => s.key === "A")), /hãng Weichai \| xuất xứ Trung Quốc/);
 });
 
-test("check: a quote not in the lot's text is not counted; lone-bidder lots and power far off are not 'same'", () => {
+test("check: a quote not in the lot's text is not counted; lone-bidder lots do not set the price", () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "bp-test-"));
-  const { list } = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, { ...docs, F: { bidName: "Mua sắm máy phát điện 600kVA", final: true, lots: [lot(1.5e9, 1.2e9)] } }, 400, 1.2e9);
+  const { list } = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, { ...docs, F: { bidName: "Mua sắm máy phát điện 420kVA", final: true, lots: [lot(1.5e9, 1.2e9, [], 1)] }, G: { bidName: "Mua sắm máy phát điện 380kVA", final: true, lots: [lot(1e9, 8e8)] } }, 400, 1.2e9);
   fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: 400, price: 1.2e9 }, total: 5, list }));
   const id = (k) => list.find((s) => s.key === k).id;
   fs.writeFileSync(path.join(dir, "result.json"), JSON.stringify({ samples: [
     { id: id("A"), level: "same", quote: "Máy phát điện 400kVA | hãng Weichai" },
-    { id: id("E"), level: "same", quote: "Máy phát điện 400kVA | hãng HBC" },
-    { id: id("F"), level: "same", quote: "Mua sắm máy phát điện 600kVA" },
+    { id: id("G"), level: "same", quote: "Máy phát điện 380kVA | hãng X" },
+    { id: id("F"), level: "same", quote: "Mua sắm máy phát điện 420kVA" },
   ] }));
   const { result, problems } = check(dir);
   const by = (k) => result.samples.find((s) => s.key === k);
   assert.equal(by("A").level, "same");
   assert.ok(!by("A").unverified);
-  assert.ok(by("E").unverified);
-  assert.equal(by("F").level, "close");
-  assert.equal(problems.length, 2);
-  // Only A and F count (E is unverified and has one bidder): under 3 lots, no price.
-  assert.equal(result.stats.n, 2);
+  assert.ok(by("G").unverified);
+  assert.ok(!by("F").unverified);
+  assert.equal(problems.length, 1);
+  // Only A counts (G is unverified, F has one bidder): under 3 lots, no price.
+  assert.equal(result.stats.n, 1);
   assert.equal(result.stats.levels.length, 0);
 });
 
