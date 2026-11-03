@@ -47,6 +47,20 @@ test("candidates: lots of the other engine origin group left out; alike configur
   assert.equal(BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, more, 400, 1e9).list.length, 5);
 });
 
+test("candidates: moving or re-installing an owned set is left out", () => {
+  const ks = (more) => BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, more, 400, 1e9).list.map((s) => s.key).sort();
+  const g = [{ name: "Máy phát điện 400kVA", maker: "Weichai" }];
+  assert.deepEqual(ks({
+    A: docs.A,
+    MOVE: { bidName: "Di dời, lắp đặt máy phát điện 400kVA và các tủ điện", final: true, lots: [lot(1e9, 8e8)] },
+    BUY: { bidName: "Mua sắm và điều chuyển máy phát điện 400kVA", final: true, lots: [lot(1e9, 8e8, g)] },
+    OLD: { bidName: "Lắp đặt máy phát điện 400kVA, cải tạo tủ điện", final: true, config: { text: "Máy phát điện 400 KVA do Bệnh viện chuyển giao, cần di dời, cải tạo và lắp đặt" }, lots: [lot(1e9, 8e8)] },
+    // A new set won, the old one taken away: a supply.
+    NEW: { bidName: "Cung cấp, lắp đặt máy phát điện 400kVA", final: true, config: { text: "Tháo dỡ, đóng gói hệ thống máy phát hiện hữu" }, lots: [lot(1e9, 8e8, g)] },
+    WHEEL: { bidName: "Mua máy phát điện 400kVA", final: true, config: { text: "Tổ máy: có bánh xe để di chuyển, tận dụng tối đa không gian" }, lots: [lot(1e9, 8e8)] },
+  }), ["A", "BUY", "NEW", "WHEEL"]);
+});
+
 test("profileOf: makes decide the group, a mix of both is none", () => {
   assert.equal(BP.profileOf("Động cơ Cummins hoặc Perkins").group, "foreign");
   assert.equal(BP.profileOf("Động cơ Cummins, Weichai hoặc tương đương").group, null);
