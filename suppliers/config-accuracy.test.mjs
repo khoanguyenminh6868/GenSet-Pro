@@ -455,3 +455,13 @@ test("check: an engine's make given by another row naming the model is the make 
   assert.equal(res("Weichai").problems.filter((p) => /hãng/.test(p)).length, 0);
   assert.equal(res("Yuchai").problems.filter((p) => /hãng Yuchai/.test(p)).length, 1);
 });
+
+test("modelFacts: a genset maker's own datasheet of an alternator it makes gives that model's figures", () => {
+  const list = [{ id: "g", role: "genset_oem", country: "CN", specTables: [
+    { n: 101, title: "Gensets 50Hz", header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows: ["| G-1 | 275 | 220 | WP10D264E200 | WT274C |"] },
+    { n: 1001, title: "Datasheet: WT274C - Technical Data Sheet", header: [], rows: ["WT274C - Technical Data Sheet", "| INSULATION SYSTEM | CLASS H", "| PROTECTION | IP23"] },
+    { n: 1002, title: "Gensets WT274C brochure", header: [], rows: ["| INSULATION SYSTEM | CLASS F"] }] }];
+  const facts = modelFacts(C.build(list), list).get(`alternator:${C.keyOf("WT274C")}`) || [];
+  assert.deepEqual(facts.filter((f) => f.n === 1001).map((f) => f.key).sort(), ["insul", "ip"]);
+  assert.equal(facts.filter((f) => f.n === 1002).length, 0);
+});
