@@ -27,13 +27,14 @@
   const taxKey = (x) => String(x.taxCode || "").replace(/\D/g, "") || String(x.name || "").trim().toUpperCase();
   const bdPrice = (b) => b.finalPrice ?? b.bidPrice;
 
-  const MAX = 80, LEVELS = ["same", "close", "different", "unknown"];
+  const MAX = 80, POWER_TOL = 0.1, LEVELS = ["same", "close", "different", "unknown"];
   const cut = (s, n) => { s = String(s || "").replace(/\s+/g, " ").trim(); return s.length > n ? s.slice(0, n) + "…" : s; };
   // The decided lots most like the tender, for the agent to compare. t: { notifyNo, bidName, bidForm, investorName },
   // docs: { <TBMT>: bidhist document }, K: kVA, P: package price. Only lots that supply a generator set (same kind as
-  // the tender), with a winner and a price; a lot whose power is known must be within half to twice K; a lot whose power
-  // is not known stays only when it says something about its goods (won goods or the HSMT's lines), so the agent can
-  // tell what it was (Khoa, 2026-11-03: a lot with nothing about its configuration cannot set the price).
+  // the tender), with a winner and a price. When K is known, only lots whose power is known and within 10% of K
+  // (Khoa, 2026-11-03); when it is not, a lot whose power is not known stays only when it says something about its goods
+  // (won goods or the HSMT's lines), so the agent can tell what it was (a lot with nothing about its configuration
+  // cannot set the price).
   function candidates(t, docs, K, P) {
     const kind = bidKind(t.bidName), out = [], years = (iso) => (iso ? (Date.now() - Date.parse(iso)) / (365 * 864e5) : 3);
     let total = 0;
@@ -52,7 +53,7 @@
         const kGoods = Math.max(0, ...goods.map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
         const kName = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)), kCfg = kName || kGoods ? null : cfgKva(d, multi);
         const k = kName || kGoods || kCfg, kSrc = kName ? "tên gói" : kGoods ? "hàng chào" : kCfg ? "HSMT" : "";
-        if (K && k && Math.abs(Math.log(K / k)) > Math.log(2)) continue;
+        if (K && !(k && Math.abs(k - K) <= POWER_TOL * K + 1e-9)) continue;
         if (!k && !goods.length && !d.config?.text) continue;
         const dist = (K && k ? Math.abs(Math.log(K / k)) : 0.7) + (P ? 0.5 * Math.abs(Math.log(P / price)) : 0) + (d.bidForm && d.bidForm === t.bidForm ? 0 : 0.3)
           + 0.15 * Math.min(years(d.openedAt || d.bidCloseDate), 5) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0);
@@ -107,5 +108,5 @@
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
     return { basis, n: use.length, same: same.length, close: close.length, enough: use.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, comps };
   }
-  root.GenbidBidprice = { kvaOf, isGensetName, bidKind, cfgKva, taxKey, bdPrice, candidates, sampleText, suggest, LEVELS, MAX };
+  root.GenbidBidprice = { kvaOf, isGensetName, bidKind, cfgKva, taxKey, bdPrice, candidates, sampleText, suggest, LEVELS, MAX, POWER_TOL };
 })(typeof window !== "undefined" ? window : globalThis);

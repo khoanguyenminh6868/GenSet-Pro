@@ -7,7 +7,7 @@ Không tìm trên internet.
 - `input.md`: gói thầu đang cần bỏ giá — tên gói, công suất, giá gói, phân tích HSMT, cấu hình dự kiến chào (nếu đã có
   Gợi ý cấu hình), phần yêu cầu kỹ thuật của HSMT.
 - `samples.md`: các phần/gói đã có kết quả trên muasamcong mà code thấy gần nhất (cùng là cung cấp máy phát, công suất
-  trong khoảng ½–2 lần, giá gói gần). Mỗi mục có mã `S1`, `S2`... và chỉ có những gì muasamcong ghi: tên gói, chủ đầu tư,
+  code đọc được xê dịch không quá 10% so với gói này, giá gói gần). Mỗi mục có mã `S1`, `S2`... và chỉ có những gì muasamcong ghi: tên gói, chủ đầu tư,
   công suất code đọc được, số nhà thầu, hàng hoá trúng thầu (tên, hãng, model, xuất xứ, số lượng, đơn giá), câu trích HSMT.
 
 ## Việc cần làm
@@ -15,10 +15,10 @@ Không tìm trên internet.
    HSMT yêu cầu hoặc dự kiến chào (G7 / Trung Quốc / lắp ráp Việt Nam...), các hạng mục đi kèm có giá đáng kể (vỏ cách
    âm, ATS, tủ hoà đồng bộ, bồn dầu ngoài, cáp lực, trạm biến áp, xây dựng, lắp đặt, vận chuyển xa...).
 2. Với **mọi** mục trong `samples.md`, xếp một mức:
-   - `same` — giống: cùng là cung cấp tổ máy phát; công suất một máy và số máy tương đương (chênh không quá ~15%);
+   - `same` — giống: cùng là cung cấp tổ máy phát; công suất một máy và số máy tương đương;
      phạm vi tương đương (không kèm hạng mục lớn mà gói kia không có); và khi cả hai cùng có thông tin hãng/xuất xứ thì
      cùng nhóm (G7 với G7, Trung Quốc với Trung Quốc, lắp ráp Việt Nam với lắp ráp Việt Nam).
-   - `close` — gần: cùng loại, công suất chênh không quá ~35%, chỉ khác một điểm phụ, hoặc không ghi hãng/xuất xứ nên
+   - `close` — gần: cùng loại, công suất và số máy tương đương, chỉ khác một điểm phụ (một hạng mục đi kèm), hoặc không ghi hãng/xuất xứ nên
      không biết có cùng nhóm không.
    - `different` — khác: công suất hay số máy khác hẳn (gói nhiều máy, công suất tổng khác), phạm vi khác hẳn (kèm trạm
      biến áp, UPS, xây dựng, nhiều loại hàng khác chiếm phần lớn giá), khác nhóm xuất xứ (G7 với Trung Quốc), hoặc thực ra

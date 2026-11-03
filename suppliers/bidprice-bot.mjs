@@ -82,7 +82,7 @@ function runClaude(dir) {
 async function attempt(req, dir, hist) {
   fs.rmSync(dir, { recursive: true, force: true });
   const info = await prep(req, dir, hist);
-  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "" }, total: info.total, tender: { summary: "", points: [] }, notes: ["Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất trong khoảng ½–2 lần, có thông tin cấu hình)."], samples: [], stats: BP.suggest([], info.P, info.K) }, problems: [] };
+  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "" }, total: info.total, tender: { summary: "", points: [] }, notes: ["Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 10%)."], samples: [], stats: BP.suggest([], info.P, info.K) }, problems: [] };
   const started = Date.now(), r = runClaude(dir);
   fs.writeFileSync(path.join(os.tmpdir(), `genbid-bidprice-${req.key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
   if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
