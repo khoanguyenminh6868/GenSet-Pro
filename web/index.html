@@ -612,7 +612,18 @@ function mergeTender(base, top) {
   for (const [k, v] of Object.entries(top)) if (filled(v)) out[k] = k === "result" && base.result && typeof v === "object" ? mergeTender(base.result, v) : v;
   return out;
 }
+// Built once per change of its sources (each snapshot replaces state.<coll>), since the grid, the KPIs and findTender
+// ask for it many times per render.
+let tenderMemo = { deps: [], list: [], byKey: new Map() };
 function allTenders() {
+  const deps = [state.bidhist, state.seen, state.tracked, state.manual, state.feed, state.deleted, Object.keys(state.seen).length];
+  if (deps.some((d, i) => d !== tenderMemo.deps[i])) {
+    const list = buildTenders();
+    tenderMemo = { deps, list, byKey: new Map(list.map((t) => [t._key, t])) };
+  }
+  return tenderMemo.list.slice();
+}
+function buildTenders() {
   const map = new Map();
   const put = (k, t) => map.set(k, { ...mergeTender(map.get(k), t), _key: k });
   for (const t of histTenders()) put(t._key, t);
@@ -681,7 +692,7 @@ async function rememberSeen() {
   try { for (const t of state.feed?.tenders ?? []) { const k = safeId(t.notifyNo || t.id); if (!state.seen[k] && !state.deleted[k]) { state.seen[k] = t; await dbSet("seen/" + k, t); } } }
   finally { seenBusy = false; }
 }
-const findTender = (key) => allTenders().find((t) => t._key === key) || (state.tracked[key]?.tender ? { ...state.tracked[key].tender, _key: key } : null);
+const findTender = (key) => (allTenders(), tenderMemo.byKey.get(key)) || (state.tracked[key]?.tender ? { ...state.tracked[key].tender, _key: key } : null);
 // "Đang đánh giá" was retired; any tender still saved in it counts as Mới.
 const stageOf = (t) => { const s = state.tracked[t._key]?.stage || histStage(t._key) || "new"; return s === "reviewing" ? "new" : s; };
 const stripTender = (t) => t ? Object.fromEntries(Object.entries(t).filter(([k]) => !k.startsWith("_"))) : {};
@@ -905,8 +916,16 @@ function subscribe(coll, field, after) {
     state[field] = next;
     if (field in state.loaded) state.loaded[field] = true;
     after?.();
-    renderAll();
-  }, () => { if (field in state.loaded) state.loaded[field] = true; renderAll(); });
+    renderSoon();
+  }, () => { if (field in state.loaded) state.loaded[field] = true; renderSoon(); });
+}
+// ~35 collections arrive one after another when the page opens: draw once for a burst, not once per collection
+// (a timer, not requestAnimationFrame, which waits while the tab is in the background).
+let renderQueued = false;
+function renderSoon() {
+  if (renderQueued) return;
+  renderQueued = true;
+  setTimeout(() => { renderQueued = false; renderAll(); }, 30);
 }
 async function initDb() {
   let db = null;
@@ -1239,6 +1258,10 @@ function applyFilter(val) { const k = $("#fpop").dataset.col; state.filters[k] =
 
 // Capacity from the attached documents, for tenders whose name gives none.
 const capScan = { done: new Set(), pending: new Set(), found: {}, running: false };
+// What earlier visits read, per tender and HSMT version ({ key: [hsmt.updatedAt, found or null] }), so a reload does not
+// read the same HSMT texts again.
+const capSeen = local.get("capScan", {});
+for (const [k, [, c]] of Object.entries(capSeen)) if (c) capScan.found[k] = c;
 function capFromDocsText(all) {
   const counts = new Map();
   const re = /c[ôo]ng\s*su[ấa]t[^\n]{0,80}?(\d+(?:[.,]\d+)?)\s*(kva|kw|mva|mw)\b/gi;
@@ -1252,13 +1275,15 @@ function capFromDocsText(all) {
 }
 async function scanCapacities() {
   if (capScan.running || !state.db || !state.loaded.hsmt) return;
-  const todo = allTenders().filter((t) => !capScan.done.has(t._key) && state.hsmt[t._key]?.textChunks && !capFromText(t.bidName) && !state.hsmt[t._key]?.capacity);
+  // Only tenders whose power is nowhere else (name, HSMT, analysis, past-tender config): each one reads the whole HSMT text.
+  const todo = allTenders().filter((t) => !capScan.done.has(t._key) && state.hsmt[t._key]?.textChunks && !capacityOf(t)
+    && capSeen[t._key]?.[0] !== (state.hsmt[t._key].updatedAt || ""));
   if (!todo.length) return;
   capScan.running = true;
   todo.forEach((t) => capScan.pending.add(t._key));
   renderGrid();
   for (const t of todo) {
-    try { const c = capFromDocsText(await loadAttachedText(t._key)); if (c) capScan.found[t._key] = c; } catch {}
+    try { const c = capFromDocsText(await loadAttachedText(t._key)); if (c) capScan.found[t._key] = c; capSeen[t._key] = [state.hsmt[t._key]?.updatedAt || "", c || null]; local.set("capScan", capSeen); } catch {}
     capScan.done.add(t._key); capScan.pending.delete(t._key);
   }
   capScan.running = false;
@@ -3016,7 +3041,7 @@ function loadHist() {
       const next = {};
       snap.docs.forEach((d) => { next[d.id] = d.data(); });
       state.bidhist = next; histIdx = null; state.loaded.hist = true; res();
-      renderAll();
+      renderSoon();
       if ($("#bdBody")) renderBidders();
     }, () => { state.bidhist ||= {}; state.loaded.hist = true; res(); renderAll(); });
   }));

@@ -7,10 +7,11 @@
     if (!cfg.url) throw new Error("Chưa cấu hình Supabase.");
     sb = supabase.createClient(cfg.url, cfg.anonKey);
     let { data: { session } } = await sb.auth.getSession();
-    if (!session) { await gate("login"); return new Promise(() => {}); }
+    // Signed out or not a member: this device keeps no copy of the documents.
+    if (!session) { local.wipe(); await gate("login"); return new Promise(() => {}); }
     const { data: rows } = await sb.from("members").select("email,role").eq("email", session.user.email.toLowerCase());
     member = rows?.[0];
-    if (!member) { await gate("denied", session.user.email); return new Promise(() => {}); }
+    if (!member) { local.wipe(); await gate("denied", session.user.email); return new Promise(() => {}); }
     if (document.readyState === "loading") await new Promise((r) => document.addEventListener("DOMContentLoaded", r, { once: true }));
     // Sign-out button is intentionally hidden (accountChip not shown).
     if (!sessionStorage.getItem("gbLogged")) {
@@ -47,7 +48,7 @@
     b.title = "Đăng xuất " + user.email;
     b.setAttribute("aria-label", "Đăng xuất");
     b.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/><path d="M10 17l-5-5 5-5"/><path d="M5 12h11"/></svg>';
-    b.onclick = async () => { await sb.auth.signOut(); location.reload(); };
+    b.onclick = async () => { local.wipe(); await sb.auth.signOut(); location.reload(); };
     const theme = document.getElementById("themeBtn");
     if (theme) theme.after(b);
     else {
@@ -205,40 +206,128 @@
   // ---------- db (same shape as the claude.ai db capability) ----------
   const split = (path) => { const i = path.indexOf("/"); return [path.slice(0, i), path.slice(i + 1)]; };
   const cache = new Map();      // coll -> Map(id -> data)
+  const stamps = new Map();     // coll -> Map(id -> updated_at), to tell which cached documents changed on the server
+  const loads = new Map();      // coll -> promise of the first read (from this device's copy or the server)
+  const syncs = new Map();      // coll -> promise of the catch-up with the server after starting from this device's copy
   const listeners = new Map();  // coll -> Set(fn)
   let channel;
   const notify = (coll) => listeners.get(coll)?.forEach((fn) => fn());
+  // Remember one document as read from the server (memory, its updated_at, and this device's copy).
+  function keep(coll, id, data, at) {
+    cache.get(coll)?.set(id, data);
+    stamps.get(coll)?.set(id, at || "");
+    local.put([{ coll, id, u: at || "", d: data }]);
+  }
+  function drop(coll, id) {
+    cache.get(coll)?.delete(id);
+    stamps.get(coll)?.delete(id);
+    local.del(coll, [id]);
+  }
   function ensureChannel() {
     if (channel) return;
     channel = sb.channel("docs").on("postgres_changes", { event: "*", schema: "public", table: "docs" }, async (p) => {
       const row = p.eventType === "DELETE" ? p.old : p.new;
       const c = row && cache.get(row.coll);
       if (!c) return;
-      if (p.eventType === "DELETE") { c.delete(row.id); notify(row.coll); return; }
+      touched.add(row.coll + "/" + row.id);
+      if (p.eventType === "DELETE") { drop(row.coll, row.id); notify(row.coll); return; }
       // Realtime can deliver a row without its data (large or unchanged values are left out of the payload):
       // read the row again instead of overwriting the cached document with nothing.
-      let data = row.data;
+      let data = row.data, at = row.updated_at;
       if (!data || typeof data !== "object" || (p.errors && p.errors.length)) {
-        const { data: rows, error } = await sb.from("docs").select("data").eq("coll", row.coll).eq("id", row.id).limit(1);
+        const { data: rows, error } = await sb.from("docs").select("data,updated_at").eq("coll", row.coll).eq("id", row.id).limit(1);
         if (error || !rows?.length) return;
-        data = rows[0].data;
+        ({ data, updated_at: at } = rows[0]);
       }
-      c.set(row.id, data);
+      keep(row.coll, row.id, data, at);
       notify(row.coll);
     }).subscribe();
   }
-  async function loadColl(coll) {
-    if (cache.has(coll)) return;
-    const m = new Map();
-    // Pages in a fixed order: without one, Postgres may return overlapping pages and some rows are never read
-    // (bidhist, ~1,500 rows, showed 1,033 tenders one load and 1,500+ the next).
+
+  // This device's copy of the documents (IndexedDB), so a reload shows the list at once and then reads only the
+  // documents that changed (the whole set is ~30 MB: analyses, past tenders, suppliers). Removed when sign-in fails.
+  const local = (() => {
+    let open;
+    const db = () => (open ||= new Promise((res) => {
+      try {
+        const r = indexedDB.open("genbid-docs", 1);
+        r.onupgradeneeded = () => r.result.createObjectStore("docs", { keyPath: ["coll", "id"] }).createIndex("coll", "coll");
+        r.onsuccess = () => res(r.result);
+        r.onerror = r.onblocked = () => res(null);
+      } catch { res(null); }
+    }));
+    const tx = async (mode, fn) => {
+      const d = await db();
+      if (!d) return null;
+      return new Promise((res) => {
+        try {
+          const t = d.transaction("docs", mode), out = fn(t.objectStore("docs"));
+          t.oncomplete = () => res(out?.result ?? null);
+          t.onerror = t.onabort = () => res(null);
+        } catch { res(null); }
+      });
+    };
+    return {
+      read: (coll) => tx("readonly", (s) => s.index("coll").getAll(coll)),
+      put: (rows) => rows.length && tx("readwrite", (s) => rows.forEach((r) => s.put(r))),
+      del: (coll, ids) => ids.length && tx("readwrite", (s) => ids.forEach((id) => s.delete([coll, id]))),
+      wipe: () => { try { indexedDB.deleteDatabase("genbid-docs"); } catch {} },
+    };
+  })();
+  const touched = new Set(); // "coll/id" changed by realtime or this page while a catch-up runs: the catch-up leaves them alone
+
+  // Every row of a collection, paged in a fixed order: without one, Postgres may return overlapping pages and some
+  // rows are never read (bidhist, ~1,500 rows, showed 1,033 tenders one load and 1,500+ the next).
+  async function readAll(coll, cols) {
+    const out = [];
     for (let from = 0; ; from += 1000) {
-      const { data, error } = await sb.from("docs").select("id,data").eq("coll", coll).order("id").range(from, from + 999);
+      const { data, error } = await sb.from("docs").select(cols).eq("coll", coll).order("id").range(from, from + 999);
       if (error) throw error;
-      data.forEach((r) => m.set(r.id, r.data));
-      if (data.length < 1000) break;
+      out.push(...data);
+      if (data.length < 1000) return out;
     }
-    cache.set(coll, m);
+  }
+  function loadColl(coll) {
+    if (!loads.has(coll)) {
+      const p = (async () => {
+        const saved = await local.read(coll);
+        if (saved?.length) {
+          cache.set(coll, new Map(saved.map((r) => [r.id, r.d])));
+          stamps.set(coll, new Map(saved.map((r) => [r.id, r.u])));
+          syncs.set(coll, catchUp(coll).catch(() => {}));
+          return;
+        }
+        const rows = await readAll(coll, "id,data,updated_at");
+        cache.set(coll, new Map(rows.map((r) => [r.id, r.data])));
+        stamps.set(coll, new Map(rows.map((r) => [r.id, r.updated_at])));
+        local.put(rows.map((r) => ({ coll, id: r.id, u: r.updated_at, d: r.data })));
+      })();
+      loads.set(coll, p);
+      p.catch(() => loads.delete(coll));
+    }
+    return loads.get(coll);
+  }
+  // After starting from this device's copy: list (id, updated_at) on the server, read only the new or changed
+  // documents and forget the removed ones, then tell the listeners once.
+  async function catchUp(coll) {
+    const c = cache.get(coll), st = stamps.get(coll);
+    [...touched].forEach((k) => k.startsWith(coll + "/") && touched.delete(k));
+    const server = await readAll(coll, "id,updated_at");
+    const live = new Set(server.map((r) => r.id));
+    const want = server.filter((r) => st.get(r.id) !== r.updated_at).map((r) => r.id);
+    const gone = [...c.keys()].filter((id) => !live.has(id) && !touched.has(coll + "/" + id));
+    let changed = gone.length > 0;
+    gone.forEach((id) => { c.delete(id); st.delete(id); });
+    local.del(coll, gone);
+    for (let i = 0; i < want.length; i += 100) {
+      const { data, error } = await sb.from("docs").select("id,data,updated_at").eq("coll", coll).in("id", want.slice(i, i + 100));
+      if (error) throw error;
+      const fresh = data.filter((r) => !touched.has(coll + "/" + r.id));
+      fresh.forEach((r) => { c.set(r.id, r.data); st.set(r.id, r.updated_at); });
+      local.put(fresh.map((r) => ({ coll, id: r.id, u: r.updated_at, d: r.data })));
+      if (fresh.length) changed = true;
+    }
+    if (changed) notify(coll);
   }
   function watch(coll, fn, onErr) {
     ensureChannel();
@@ -258,11 +347,12 @@
         const [coll, id] = split(path);
         const c = cache.get(coll);
         if (!c) return;
-        const { data, error } = await sb.from("docs").select("data").eq("coll", coll).eq("id", id).maybeSingle();
+        const { data, error } = await sb.from("docs").select("data,updated_at").eq("coll", coll).eq("id", id).maybeSingle();
         if (error) return;
         const next = data?.data;
         if (JSON.stringify(next) === JSON.stringify(c.get(id))) return;
-        if (next === undefined) c.delete(id); else c.set(id, next);
+        touched.add(path);
+        if (next === undefined) drop(coll, id); else keep(coll, id, next, data.updated_at);
         changed.add(coll);
       }));
       changed.forEach(notify);
@@ -273,21 +363,23 @@
         id,
         onSnapshot(fn, onErr) { return watch(coll, () => fn(snapDoc(id, cache.get(coll).get(id))), onErr); },
         async get() {
-          if (cache.has(coll)) return snapDoc(id, cache.get(coll).get(id));
+          // A collection shown from this device's copy answers once it caught up, so update() never writes over newer data.
+          if (cache.has(coll)) { await syncs.get(coll); return snapDoc(id, cache.get(coll).get(id)); }
           const { data, error } = await sb.from("docs").select("data").eq("coll", coll).eq("id", id).maybeSingle();
           if (error) fail(error);
           return snapDoc(id, data?.data);
         },
         async set(data) {
-          const { error } = await sb.from("docs").upsert({ coll, id, data, updated_at: new Date().toISOString() });
+          const at = new Date().toISOString();
+          const { error } = await sb.from("docs").upsert({ coll, id, data, updated_at: at });
           if (error) fail(error);
-          if (cache.has(coll)) { cache.get(coll).set(id, data); notify(coll); }
+          if (cache.has(coll)) { touched.add(path); keep(coll, id, data, at); notify(coll); }
         },
         async update(patch) { const cur = (await this.get()).data() || {}; await this.set({ ...cur, ...patch }); },
         async delete() {
           const { error } = await sb.from("docs").delete().eq("coll", coll).eq("id", id);
           if (error) fail(error);
-          if (cache.has(coll)) { cache.get(coll).delete(id); notify(coll); }
+          if (cache.has(coll)) { touched.add(path); drop(coll, id); notify(coll); }
         },
       };
     },
