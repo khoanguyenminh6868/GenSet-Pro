@@ -136,6 +136,11 @@ const MAKER_PART = { engine_maker: "engine", alternator_maker: "alternator" };
 const ctlNames = (line) => {
   const out = CAT.controllersIn(line).filter((c) => c.model).map((c) => ({ key: CAT.keyOf(c.model), model: c.model }));
   for (const m of String(line).matchAll(/\bHGM\s?(\d{4}[A-Z]{0,4})((?:\s?\/\s?\d{4}[A-Z]{0,4})+)/gi)) for (const c of [m[1], ...m[2].split("/")].map((x) => x.trim()).filter(Boolean)) out.push({ key: CAT.keyOf(`HGM${c}`), model: `HGM${c.toUpperCase()}` });
+  // Deep Sea writes two models of one sheet as "DSE6010/20 MKII" (DSE6010 MKII and DSE6020 MKII).
+  for (const m of String(line).matchAll(/\bDSE\s?(\d{2})(\d{2})((?:\s?\/\s?\d{2}(?!\d))+)(\s*MK\s?I{2,3})?/gi)) {
+    const gen = m[4] ? ` ${m[4].trim().replace(/\s+/g, "").toUpperCase()}` : "";
+    for (const c of [m[2], ...m[3].split("/").map((x) => x.trim()).filter(Boolean)]) out.push({ key: CAT.keyOf(`DSE${m[1]}${c}${gen}`), model: `DSE${m[1]}${c}${gen}` });
+  }
   return out;
 };
 const ctlKeys = (line) => [...new Set(ctlNames(line).map((x) => x.key))];
@@ -238,6 +243,8 @@ const comapCore = (k) => k.match(/^(?:INTELILITE)?((?:AMF|MRS)\d+)$/)?.[1];
 const GENERATION = [
   (key, k) => !/MK(II|III|2|3)$/.test(key) && new RegExp(`^${key}MK(II|III)$`).test(k),
   (key, k) => !!comapCore(key) && k.match(/^INTELILITE(?:4|NT)((?:AMF|MRS)\d+)$/)?.[1] === comapCore(key),
+  // SmartGen "HGM6110" written without its letter (2026-11-03: 13 suppliers write it so): the current "HGM6110N".
+  (key, k) => /^HGM\d{4}$/.test(key) && k === `${key}N`,
   // "InteliGen" written alone: every InteliGen generation with a datasheet (NT, NTC, 500, 1000...), to be confirmed.
   (key, k) => key === "INTELIGEN" && /^INTELIGEN(NTC?|\d{1,4})$/.test(k),
 ];

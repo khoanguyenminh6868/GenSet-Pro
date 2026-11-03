@@ -544,3 +544,16 @@ test("power minimums of the HSMT: prime by the nearest word, fuel at 100% load; 
   assert.deepEqual(top.map((r) => r.u.supplierId), ["ok", "lo"]);
   assert.match(top[1].why.join(" "), /Prime 375 kVA/);
 });
+
+test("controller datasheets: 'DSE6010/20 MKII' is two models; 'HGM6110' takes the HGM6110N datasheet, to be confirmed", () => {
+  const list = [
+    { id: "dse", role: "controller_maker", country: "GB", specTables: [{ n: 1007, title: "Datasheet: DSEGenset | DSE6010/20 MKII | ENVIRONMENTAL TESTING STANDARDS", header: [], rows: ["| DSE6010/20 MKII | ENVIRONMENTAL TESTING STANDARDS", "| EMERGENCY | DC POWER"] }] },
+    { id: "sg", role: "controller_maker", country: "CN", specTables: [{ n: 1001, title: "Datasheet: HGM6100N SERIES (HGM6110N/6120N)", header: [], rows: ["HGM6100N SERIES (HGM6110N/6120N)", "Event log: 50 records"] }] },
+  ];
+  const facts = modelFacts(C.build(list), list);
+  assert.ok(factsFor(facts, "controller", "DSE6020 MKII").length > 0);
+  const dse = factsFor(facts, "controller", "DSE6020");
+  assert.ok(dse.length > 0 && dse.every((f) => f.version === "DSE6020 MKII"));
+  const hgm = factsFor(facts, "controller", "HGM6110");
+  assert.ok(hgm.some((f) => /Event log/.test(f.line)) && hgm.every((f) => f.version === "HGM6110N"));
+});
