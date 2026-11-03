@@ -60,7 +60,8 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .btn:disabled{opacity:.55;cursor:not-allowed}
 .btn.sm{padding:4px 9px;font-size:12.5px}
 .radios{gap:14px}.radios label{display:inline-flex;align-items:center;gap:5px;cursor:pointer}
-.cmprev{justify-content:space-between}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
+.cmprev{justify-content:space-between}
+.actrow{margin:14px 0 16px}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
 .ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkCfg,.ro #tyDrop,.ro #tkDel,.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
@@ -408,7 +409,8 @@ details.sec>div{margin-top:10px}
     <button data-dt="tlkt">Đối chiếu TLKT</button>
     <button data-dt="supplier" hidden>Nhà cung cấp</button><!-- tab ẩn theo yêu cầu Khoa 2026-10-29; bỏ hidden để hiện lại -->
     <button data-dt="config">Cấu hình gợi ý</button>
-    <button data-dt="hsdt">Tạo HSDT tham khảo</button>
+    <button data-dt="price">Giá gợi ý</button>
+    <button data-dt="hsdt">Tạo HSDT</button>
     <button data-dt="compare">Đối chiếu HSDT</button>
   </div>
   <div class="dbody" id="dbody"></div>
@@ -1299,6 +1301,7 @@ function renderDrawer(force = true) {
   else if (state.dtab === "tlkt") { body.innerHTML = tlktTabHtml(t); mountTlkt(key); }
   else if (state.dtab === "supplier") body.innerHTML = supplierTabHtml(t);
   else if (state.dtab === "config") body.innerHTML = configTabHtml(t);
+  else if (state.dtab === "price") body.innerHTML = bidSuggestBox(t);
   else if (state.dtab === "hsdt") { body.innerHTML = hsdtTabHtml(t); mountHsdt(); }
   else if (state.dtab === "compare") { body.innerHTML = compareTabHtml(t); mountCompare(t); }
 }
@@ -1961,13 +1964,13 @@ async function translationPdf(key) {
 function hsdtTabHtml(t) {
   const prev = state.hsdt[t._key];
   const has = state.hsmt[t._key]?.files?.length || analysisOf(t._key)?.result;
-  if (!has) return bidSuggestBox(t) + h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
+  if (!has) return h`<div class="note">Gói này chưa có HSMT hay kết quả phân tích để soạn hồ sơ tham khảo.</div>`;
   const hsWait = workerReqPending("hsdtreq", t._key) ? waitHtml("Đang chờ Agent soạn HSDT tham khảo...", state.hsdtreq[t._key].requestedAt) : "";
   const hsErr = !hsWait && workerReqError("hsdtreq", t._key);
   // Both files are optional (Khoa, 2026-11-01): a template makes the bid follow its layout, a supplier's configuration
   // fills the offered equipment; without them the bid is drafted from the HSMT alone.
   const basis = [prev?.basis?.template?.length && "theo template " + prev.basis.template.join(", "), prev?.basis?.config?.length && "cấu hình NCC " + prev.basis.config.join(", ")].filter(Boolean).join(" · ");
-  return bidSuggestBox(t) + hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="drop" id="hpDrop">
+  return hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="drop" id="hpDrop">
       <div class="row"><span class="muted small" style="flex:1"><b>Template HSDT</b> (không bắt buộc). Khi có, hồ sơ soạn theo bố cục, lời văn và bảng của mẫu này.</span><label class="btn sm" for="hpFiles">Chọn tệp</label></div>
       <input type="file" id="hpFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="hpList"></div>
@@ -1977,7 +1980,7 @@ function hsdtTabHtml(t) {
       <input type="file" id="hcFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="hcList"></div>
     </div>
-    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT tham khảo"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) + (basis ? " · " + basis : "") : ""}</span></div><div id="hsUp"></div>
+    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) + (basis ? " · " + basis : "") : ""}</span></div><div id="hsUp"></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
 // The reference bid is shown as the Word document it becomes. Every text is editable in place: data-h names the
@@ -2612,7 +2615,7 @@ function configTabHtml(t) {
   return wait + fwait + (err ? h`<div class="note warn">${err}</div>` : "") + (ferr ? h`<div class="note warn">Tìm NCC: ${ferr}</div>` : "")
     + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${busy ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
     + h`<div class="field" style="margin:8px 0"><label for="cfgExtra">Yêu cầu khác</label><textarea id="cfgExtra" data-key="${key}" maxlength="2000" rows="2" placeholder="Không bắt buộc. Ví dụ: động cơ Weichai, đầu phát Stamford, bộ điều khiển Deep Sea DSE7320, hòa đồng bộ..." ${busy ? "disabled" : ""}>${cfgExtraOf(key)}</textarea></div>`
-    + h`<div class="row"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button></div>`
+    + h`<div class="row actrow"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button></div>`
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
     + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}</div>` + cfgResultHtml(prev.result) : "");
 }
@@ -3112,7 +3115,7 @@ function bdDetailHtml(c0) {
     }).join(""))}</tbody></table></div>`;
 }
 
-// Gợi ý giá đấu (tab Tạo HSDT tham khảo; Khoa, 2026-11-03: so theo cấu hình bằng AI). The button records
+// Gợi ý giá đấu (tab Giá gợi ý, sau Cấu hình gợi ý; Khoa, 2026-11-03: so theo cấu hình bằng AI). The button records
 // bidpricereq/<key> with this tender's power and package price; the Windows bot (suppliers/bidprice-bot.mjs) picks the
 // decided lots most like it (web/bidprice.js candidates), Agent reads the configuration of this tender and of each lot
 // (won goods, HSMT lines) and calls each one same / close / different / unknown, code checks its quotes and computes
@@ -3130,7 +3133,7 @@ function bidSuggestBox(t) {
   const key = t._key, prev = state.bidprice[key];
   const wait = workerReqPending("bidpricereq", key) ? waitHtml("Đang chờ Agent so cấu hình gói này với các gói đã có kết quả...", state.bidpricereq[key].requestedAt) : "";
   const err = !wait && workerReqError("bidpricereq", key);
-  return h`<section class="sec"><h4>Gợi ý giá đấu</h4>${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row">
+  return h`<section class="sec">${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row actrow">
       <button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý giá đấu"}</button>
       <span class="muted small" style="flex:1;min-width:200px">Agent so cấu hình (công suất, số máy, hãng/xuất xứ, phạm vi) với các gói đã có kết quả trên muasamcong; giá do code tính từ các gói giống.</span></div>
     ${raw(prev?.result && !wait ? bidPriceHtml(prev, t) : "")}</section>`;
