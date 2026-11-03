@@ -1325,11 +1325,11 @@ function infoHtml(t) {
         ${raw(f.ocr ? h`<span class="chip mut" title="Bản scan, chữ đọc bằng OCR (${f.ocr} trang), có thể sai vài chữ">OCR</span>` : "")}${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t, files.length))}
-    </div>
-    ${raw(quoteHtml(t))}`;
+    </div>`;
 }
 // ---------- Báo giá của Nhà Cung Cấp (quote/<key>; the files live on the GitHub Release ncc-<key>, api/quote.js) ----------
 // One supplier to start with, Thêm adds another; each supplier takes several files (Khoa, 2026-11-01).
+// Shown at the top of tab Giá gợi ý (Khoa, 2026-11-03; was in Tổng quan).
 const quoteUp = {}; // key -> { row, text } while files upload
 const quoteRows = (key) => { const r = state.quote[key]?.rows; return r?.length ? r : [{ id: "r1", supplierId: "", files: [] }]; };
 function quoteHtml(t) {
@@ -3138,16 +3138,16 @@ function bidSuggestBox(t) {
   const key = t._key, prev = state.bidprice[key];
   const wait = workerReqPending("bidpricereq", key) ? waitHtml("Đang chờ Agent so cấu hình gói này với các gói đã có kết quả...", state.bidpricereq[key].requestedAt) : "";
   const err = !wait && workerReqError("bidpricereq", key);
-  return h`<section class="sec">${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row actrow">
+  return h`${raw(quoteHtml(t))}<section class="sec">${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row actrow">
       <button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý giá đấu"}</button>
       <span class="muted small" style="flex:1;min-width:200px">Agent so cấu hình (công suất, số máy, hãng/xuất xứ, phạm vi) với các gói đã có kết quả trên muasamcong; giá do code tính từ các gói giống.</span></div>
     ${raw(prev?.result && !wait ? bidPriceHtml(prev, t) : "")}</section>`;
 }
 function bpSampleRow(s, t, i) {
-  const [lv, cls] = BP_LEVEL[s.level] || BP_LEVEL.unknown, one = s.bidders.length < 2;
+  const [lv, cls] = BP_LEVEL[s.level] || BP_LEVEL.unknown, one = s.bidders.length < 2, url = s.url || portalSearch(s.key);
   return h`<tr><td class="num">${i + 1}</td>
-    <td><div><b>${s.lotName || s.name}</b></div>
-      <div class="muted small">${raw(s.url ? h`<a href="${s.url}" target="_blank" rel="noopener">${s.key}</a>` : s.key)} · ${fmtDate(s.at, false)} · ${s.investor}${s.investor && s.investor === t.investorName ? " (cùng chủ đầu tư)" : ""}</div>
+    <td><div><a href="${url}" target="_blank" rel="noopener"><b>${s.lotName || s.name}</b></a></div>
+      <div class="muted small">${raw(h`<a href="${url}" target="_blank" rel="noopener">${s.key}</a>`)} · ${fmtDate(s.at, false)} · ${s.investor}${s.investor && s.investor === t.investorName ? " (cùng chủ đầu tư)" : ""}</div>
       ${raw(s.goods.length ? h`<div class="small">Hàng trúng: ${s.goods.slice(0, 3).map((g) => [g.name.slice(0, 80), g.maker, g.code, g.origin && `(${g.origin})`].filter(Boolean).join(" ")).join("; ")}</div>` : "")}</td>
     <td class="small" data-l="Mức giống"><span class="chip ${cls}">${lv}</span>${raw(one ? ' <span class="chip mut" title="Chỉ 1 nhà thầu: giá trúng không qua cạnh tranh, không tính vào giá đề xuất">1 nhà thầu</span>' : "")}${raw(s.unverified ? h` <span class="chip warn" title="${s.unverified}">⚠ chưa khớp nguồn</span>` : "")}${raw(s.same.length ? h`<div>✓ ${s.same.join(", ")}</div>` : "")}${raw(s.diff.length ? h`<div class="muted">✗ ${s.diff.join(", ")}</div>` : "")}${raw(s.quote ? h`<div class="muted" style="overflow-wrap:anywhere"><q>${s.quote}</q></div>` : "")}</td>
     <td class="num" data-l="Giá trúng"><b>${fmtVnd(s.wp)}</b><div class="muted small">giá gói ${fmtVnd(s.price)}</div><div class="muted small">${bpPct(s.ratio)} giá gói${s.k ? ` · ${fmtVnd(Math.round(s.wp / s.k))}/kVA` : ""}</div><div class="muted small" style="font-family:inherit;white-space:normal">${s.winner} · ${s.bidders.length} nhà thầu</div></td></tr>`;
