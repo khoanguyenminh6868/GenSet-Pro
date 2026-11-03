@@ -3134,7 +3134,7 @@ function bdDetailHtml(c0) {
   const rows = [...c.rows].sort((a, b) => (b.at > a.at ? 1 : -1));
   const winners = (r) => (r.lot.bidders || []).filter((x) => x.won && taxKey(x) !== c.id).map((x) => x.name);
   return h`<div class="row"><button class="btn sm" id="bdBack">← Danh sách</button></div>
-    <h3 style="margin:8px 0 2px">${c.name}</h3>
+    <h3 class="hlname" style="margin:8px 0 2px">${c.name}</h3>
     <div class="muted small">${c.tax ? "MST " + c.tax + " · " : ""}${c.n} lượt dự thầu ở ${c.tenders} gói · trúng ${c.wins}${c.decided ? ` / ${c.decided} gói có kết quả (${Math.round((100 * c.wins) / c.decided)}%)` : ""}${c.wonValue ? " · giá trị trúng " + fmtVnd(c.wonValue) : ""}${bdFilter.year ? " · năm " + bdFilter.year : ""}</div>
     <div class="tablewrap" style="margin-top:10px"><table class="suptable supcards bdrows"><thead><tr><th>Mở thầu</th><th>Gói thầu</th><th>Giá gói</th><th>Giá dự thầu</th><th>Kết quả</th></tr></thead><tbody>${raw(rows.map((r) => {
       const p = bdPrice(r.b), base = r.lot.price ?? (r.multi ? null : r.d.estimatedPrice), w = r.b.won ? [] : winners(r);
