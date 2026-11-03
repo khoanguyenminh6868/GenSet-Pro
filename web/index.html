@@ -512,20 +512,9 @@ const state = {
 };
 
 // ---------- Document reading ----------
-// The PDF and DOCX readers (~1 MB) load the first time a file is read or shown, not with the page.
-const libLoads = {};
-function loadLib(url, name, what) {
-  return (libLoads[url] ||= new Promise((res, rej) => {
-    if (window[name]) return res(window[name]);
-    const el = document.createElement("script");
-    el.src = url;
-    el.onload = () => (window[name] ? res(window[name]) : rej(new Error(`Không tải được ${what}.`)));
-    el.onerror = () => { delete libLoads[url]; rej(new Error(`Không tải được ${what}.`)); };
-    document.head.appendChild(el);
-  }));
-}
+// The PDF and DOCX readers (~1 MB) load the first time a file is read or shown, not with the page (loadLib, LIBS).
 async function usePdf() {
-  const lib = await loadLib("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js", "pdfjsLib", "bộ đọc PDF");
+  const lib = await loadLib("pdfjs");
   lib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
   return lib;
 }
@@ -555,7 +544,7 @@ async function readFile(file) {
   if (file.type.startsWith("image/")) return { text: "" };
   if (name.endsWith(".pdf")) return { text: await pdfText(file) };
   if (name.endsWith(".docx")) {
-    const mammoth = await loadLib("https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js", "mammoth", "bộ đọc DOCX");
+    const mammoth = await loadLib("mammoth");
     const r = await mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() });
     return { text: r.value };
   }
@@ -1738,6 +1727,8 @@ const LIBS = {
   jspdf: ["https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js", () => window.jspdf],
   docx: ["https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js", () => window.docx],
   xlsx: ["https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js", () => window.XLSX],
+  pdfjs: ["https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js", () => window.pdfjsLib],
+  mammoth: ["https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js", () => window.mammoth],
 };
 const libCache = {};
 function loadLib(name) {
