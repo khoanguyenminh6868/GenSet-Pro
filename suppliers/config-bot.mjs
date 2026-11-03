@@ -162,6 +162,8 @@ export function controllerSheetFacts(s, t) {
   }
   return out;
 }
+// A model of a frame: TAL-A46 + "C", LSA 44.3 + "S2" … "VL14" (the frame and its size and winding).
+const FRAME_SUFFIX = /^([A-Z]{1,2}|[A-Z]{0,2}\d{1,2})$/;
 export function modelFacts(cat, suppliers = []) {
   const facts = new Map(), single = new Map();
   const add = (k, f) => { const out = facts.get(k) || []; if (!out.some((g) => g.key === f.key && g.supplierId === f.supplierId && g.line === f.line)) out.push(f); facts.set(k, out); };
@@ -181,7 +183,7 @@ export function modelFacts(cat, suppliers = []) {
       // A frame's datasheet (Leroy-Somer "TAL-A46", Khoa 2026-11-02) gives its figures to the models of that frame
       // its own lines name ("TAL-A46-C ... TAL-A46-H" in its ratings table), each a model of the catalog.
       const covered = known.has(models[0]) ? [models[0]]
-        : [...new Set(t.rows.flatMap((l) => CAT.cellsOf(l)).filter((c) => CAT.isCode(c)).map((c) => CAT.keyOf(c)))].filter((k) => k !== models[0] && k.startsWith(models[0]) && k.length - models[0].length <= 2 && known.has(k));
+        : [...new Set(t.rows.flatMap((l) => CAT.cellsOf(l)).filter((c) => CAT.isCode(c)).map((c) => CAT.keyOf(c)))].filter((k) => k !== models[0] && k.startsWith(models[0]) && FRAME_SUFFIX.test(k.slice(models[0].length)) && known.has(k));
       for (const line of t.rows) {
         const c = CAT.cellsOf(line), key = c.length >= 2 ? CAT.specKey(c[0]) : null;
         if (!key || CAT.SPEC[key]?.scope !== kind || ROW_ONLY.has(key)) continue;
@@ -221,6 +223,8 @@ const comapCore = (k) => k.match(/^(?:INTELILITE)?((?:AMF|MRS)\d+)$/)?.[1];
 const GENERATION = [
   (key, k) => !/MK(II|III|2|3)$/.test(key) && new RegExp(`^${key}MK(II|III)$`).test(k),
   (key, k) => !!comapCore(key) && k.match(/^INTELILITE(?:4|NT)((?:AMF|MRS)\d+)$/)?.[1] === comapCore(key),
+  // "InteliGen" written alone: every InteliGen generation with a datasheet (NT, NTC, 500, 1000...), to be confirmed.
+  (key, k) => key === "INTELIGEN" && /^INTELIGEN(NTC?|\d{1,4})$/.test(k),
 ];
 export function factsFor(facts, part, model) {
   const key = CAT.keyOf(model), own = facts.get(`${part}:${key}`) || [];
