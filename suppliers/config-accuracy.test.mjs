@@ -631,3 +631,36 @@ test("a controller written two ways ('DSE7320', 'Deepsea 7320') gets the earlier
   assert.equal(configs[1].checks.length, 1);
   assert.equal(configs[1].checks[0].copiedFrom, 1);
 });
+
+test("a table whose models run across: any row may be quoted, each figure from the model's own column", () => {
+  const eng = "| Engine | CP192FE | CP195FE | CP198FE";
+  const s = [{ id: "cam", country: "CN", confidence: "medium", role: "genset_oem", specTables: [{ n: 103, title: "Cameo diesel generators", header: [],
+    rows: ["| Rated Frequency(Hz) | 50 | 50 | 50", "| Rated Power(kva) | 6.5 | 7 | 8", eng, "| Displacement(CC) | 499 | 531 | 633"] }] }];
+  const src = { kind: "catalog", supplierId: "cam", n: 103, line: eng };
+  const r = (offered) => ({ requirements: [{ item: "Dung tích", requirement: "≥ 600 cc", quote: "Dung tích xi lanh ≥ 11 lít", part: "engine", level: "core" }],
+    configs: [{ rank: 1, engine: { model: "CP198FE", src }, suppliers: [{ supplierId: "cam", n: 103, line: eng }],
+      checks: [{ item: "Dung tích", part: "engine", status: "met", offered, sourceQuote: "| Displacement(CC) | 499 | 531 | 633" }] }] });
+  const ok = check(r("633 cc (cột CP198FE)"), { hsmtText: hsmt, suppliers: s, readWeb: () => null, origin: "all" });
+  assert.equal(ok.result.configs[0].checks[0].status, "met");
+  const wrong = check(r("531 cc"), { hsmtText: hsmt, suppliers: s, readWeb: () => null, origin: "all" });
+  assert.equal(wrong.result.configs[0].checks[0].status, "unclear");
+});
+
+test("a largest displacement of the HSMT ('≤ 15,2 L') ranks larger engines lower", () => {
+  assert.equal(engineMins("Dung tích xi lanh ≤ 15,2 L\nDung tích bình nhiên liệu ≤ 500 lít").maxDisp, 15.2);
+  const t = (row) => [{ n: 101, title: "Gensets 50Hz", header: ["| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (L) |"], rows: [row] }];
+  const list = [
+    { id: "big", country: "CN", confidence: "high", specTables: t("| G-1 | 700 | 560 | YC6TD840-D31 | NFS5-F | 19.6 |") },
+    { id: "fit", country: "CN", confidence: "low", specTables: t("| G-2 | 700 | 560 | YC6C1020-D31 | NFS5-F | 14.9 |") },
+  ];
+  const cat = C.build(list), hints = { ...hintsOf("Dung tích xi lanh ≤ 15,2 L"), engineMakes: [], altMakes: [], ctrlMakes: [], ctrlModels: [] };
+  const { top } = candidates(cat, { value: 700, unit: "kVA" }, hints, { suppliers: list, origin: "cn", cn: cnSuppliers(list) });
+  assert.deepEqual(top.map((r) => r.e.model), ["YC6C1020-D31", "YC6TD840-D31"]);
+  assert.match(top[1].why.join(" "), /19.6 L > 15.2 L/);
+});
+
+test("a largest displacement below the least one, or too small for the power, is left out", () => {
+  assert.equal(plausible({ minDisp: 3.9, maxDisp: 2.3 }, { value: 8.8, unit: "kVA" }).maxDisp, null);
+  assert.equal(plausible({ maxDisp: 13 }, { value: 2500, unit: "kVA" }).maxDisp, null);
+  assert.equal(plausible({ maxDisp: 15.3 }, { value: 700, unit: "kVA" }).maxDisp, 15.3);
+});
