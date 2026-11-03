@@ -43,7 +43,13 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 - Do not read the repo's source code (config-bot.mjs, verify.mjs, web/catalog.js, suppliers/) and do not write your
   own checker: run the check command in input.md once when result.json is written. It works offline, prints every
   point that does not match its source (or that none fails) and writes `result.checked.json`. Fix what it prints and
-  run it again only if you changed something. A supplier you add in newCatalog.json is reported missing there; that
+  run it again only if you changed something.
+  Under "CÓ THỂ TRA ĐƯỢC" it then lists the `unclear` checks whose sources have a line about them (a figure of the
+  model, of the configuration's row, or a line of its controller's datasheet, with the factSrc to quote it by). Read
+  each line: when it states a value or function that meets the requirement (or fails it), change that check to `met`
+  (`not_met`) with that line as `sourceQuote` and its factSrc; when it does not say, leave it `unclear`. Never write
+  `unclear` for a figure or function before searching catalog.md and controllers.md for it (2026-11-03: a run left
+  the event log of a DSE8610 `unclear` though its datasheet says "The event log records 250 events"). A supplier you add in newCatalog.json is reported missing there; that
   is expected, the bot adds it before its own check.
 - Write result.json (or a script that builds it) with the Write tool, never with a shell heredoc, and write it once:
   then change only the parts that need it with Edit.

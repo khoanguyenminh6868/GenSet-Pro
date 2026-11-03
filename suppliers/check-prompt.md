@@ -30,7 +30,9 @@ the files here; the code verifies it and marks anything it cannot find "chưa kh
    Its functions may be quoted from "Thông số bộ điều khiển" (the maker's datasheet of that controller; every line in
    `controllers.md`, search it with grep), with `factSrc` { `supplierId`, `n`, `line` } and `part: "controller"`.
 3. Do not change `rank`, `engine`, `alternator`, `genset` or `suppliers`.
-4. Run `<check>` once; fix what it prints and run it again only if you changed something.
+4. Run `<check>` once; fix what it prints and run it again only if you changed something. Under "CÓ THỂ TRA ĐƯỢC" it lists
+   `unclear` checks whose sources have a line about them: read each line, and when it states a value or function
+   that meets (fails) the requirement, make the check `met` (`not_met`) with that line as `sourceQuote` and its factSrc.
 
 Example check:
 ```json
