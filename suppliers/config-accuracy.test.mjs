@@ -3,7 +3,7 @@
 // candidate rows written to catalog.md, the requirements kept between runs and the check of Tìm NCC configurations.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins } from "./config-bot.mjs";
+import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins, powerMins } from "./config-bot.mjs";
 import { makerSheet, controllerSheet } from "./maker-datasheets.mjs";
 
 const C = globalThis.GenbidCatalog;
@@ -506,9 +506,10 @@ test("check hints: an unclear controller function names its datasheet line; the 
 });
 
 test("engine minimums of the HSMT: read once each; an engine a source shows below them ranks lower", () => {
-  assert.deepEqual(engineMins("Dung tích ước tính ≥ 615 lít\nDung tích xy lanh ≥ 11,05 L\nSố xy lanh: ≥ 6 xy lanh\nTiêu hao ≤ 90 L/h"), { minDisp: 11.05, minCyl: 6 });
-  assert.deepEqual(engineMins("Dung tích xi lanh: 3.9L\n6 xilanh thẳng hàng"), { minDisp: null, minCyl: null });
-  assert.deepEqual(engineMins("Dung tích tối thiểu 12 L\nDung tích tối thiểu 3,9 L"), { minDisp: null, minCyl: null });
+  const mins = (t) => { const { minDisp, minCyl } = engineMins(t); return { minDisp, minCyl }; };
+  assert.deepEqual(mins("Dung tích ước tính ≥ 615 lít\nDung tích xy lanh ≥ 11,05 L\nSố xy lanh: ≥ 6 xy lanh\nTiêu hao ≤ 90 L/h"), { minDisp: 11.05, minCyl: 6 });
+  assert.deepEqual(mins("Dung tích xi lanh: 3.9L\n6 xilanh thẳng hàng"), { minDisp: null, minCyl: null });
+  assert.deepEqual(mins("Dung tích tối thiểu 12 L\nDung tích tối thiểu 3,9 L"), { minDisp: null, minCyl: null });
   const t = (title, header, row) => [{ n: 101, title, header: [header], rows: [row] }];
   const list = [
     { id: "s", country: "CN", confidence: "high", specTables: t("Weichai gensets 50Hz", "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (L) |", "| S-1 | 275 | 220 | WP10D264E200 | XY274K | 9.7 |") },
@@ -526,4 +527,20 @@ test("factConflicts: one figure rounded two ways or a China level written two wa
   assert.equal(factConflicts([f("emission", "国二", "a"), f("emission", "国Ⅱ", "b"), f("emission", "国 II", "c")]).size, 0);
   assert.deepEqual([...factConflicts([f("disp", "37.8", "a"), f("disp", "18.9", "b")]).keys()], ["disp"]);
   assert.deepEqual([...factConflicts([f("emission", "国Ⅱ", "a"), f("emission", "国Ⅲ", "b")]).keys()], ["emission"]);
+});
+
+test("power minimums of the HSMT: prime by the nearest word, fuel at 100% load; a row below them ranks lower", () => {
+  assert.deepEqual(powerMins("Công suất liên tục\nI.3   ≥ 400 kVA / 320 kW\n(Prime)\nCông suất dự phòng\nI.4   ≥ 440 kVA / 352 kW\n(Standby)"), { minPrime: { kVA: 400, kW: 320 }, maxFuel: null });
+  assert.deepEqual(powerMins("- Công suất liên tục tổ máy phát điện: 500kVA/ 400kW\n- Công suất dự phòng (Standby Power): 550 kVA (440 kW)."), { minPrime: { kVA: 500, kW: 400 }, maxFuel: null });
+  assert.equal(powerMins("Tiêu hao nhiên liệu\n+ Ở 50% tải nhiên liệu tiêu hao ≤ 49,6 L/h\n+ Ở 75% tải nhiên liệu tiêu hao ≤ 73,2 L/h\n+ Ở 100% tải nhiên liệu tiêu hao ≤ 97,4 L/h").maxFuel, 97.4);
+  assert.equal(powerMins("≤ 90 Lít/giờ tại 100% tải liên tục (Prime Power)").maxFuel, null, "the load is after the figure: not read");
+  const t = (row) => [{ n: 101, title: "Weichai gensets 50Hz", header: ["| Model | Standby kVA | Standby kW | Prime kVA | Prime kW | Engine | Alternator |"], rows: [row] }];
+  const list = [
+    { id: "lo", country: "CN", confidence: "high", specTables: t("| L-1 | 413 | 330 | 375 | 300 | WP13D385E200 | XY444 |") },
+    { id: "ok", country: "CN", confidence: "low", specTables: t("| O-1 | 450 | 360 | 413 | 330 | WP13D405E200 | XY444 |") },
+  ];
+  const hints = hintsOf("Chương V. Yêu cầu kỹ thuật\nCông suất liên tục ≥ 400 kVA (Prime)\n50 Hz");
+  const { top } = candidates(C.build(list), { value: 400, unit: "kVA" }, hints, { suppliers: list });
+  assert.deepEqual(top.map((r) => r.u.supplierId), ["ok", "lo"]);
+  assert.match(top[1].why.join(" "), /Prime 375 kVA/);
 });
