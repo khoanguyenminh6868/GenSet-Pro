@@ -86,13 +86,19 @@ export function byOrigin(engines, origin, cn = new Set()) {
 
 // ---------- prep ----------
 const CAP = /(\d{1,3}(?:[.,]\d{3})+|\d+(?:[.,]\d+)?)\s*(kva|kw|mva|mw)\b/i;
-function capacity(texts) {
+// "1.600" is 1600 and "8,5" is 8.5, as Vietnamese writes them.
+const numOf = (s) => Number(/^\d{1,3}([.,]\d{3})+$/.test(s) ? s.replace(/[.,]/g, "") : s.replace(",", "."));
+// A tolerance ("12 ± 0,5 kVA", "+/- 5 %") is not the capacity: 3 of 4 small-genset tenders read 0.5 kVA and got no candidate.
+const noTolerance = (t) => String(t || "").replace(/(?:±|\+\s*\/\s*-)\s*\d+(?:[.,]\d+)?/g, "");
+// "≥ 12 ± 0,5 kVA" asks at least 11.5 kVA: the lowest value the tolerance allows. A tolerance of a fifth or more of the
+// value ("8,5 ±5KVA", a percent written without %) is left out.
+const lowest = (t) => String(t || "").replace(/(\d+(?:[.,]\d+)?)\s*(?:±|\+\s*\/\s*-)\s*(\d+(?:[.,]\d+)?)/g, (_, a, b) => (numOf(b) < numOf(a) * 0.2 ? String(Math.round((numOf(a) - numOf(b)) * 100) / 100) : a));
+export function capacity(texts) {
   for (const t of texts) {
-    const m = String(t || "").match(CAP);
+    const m = noTolerance(t).match(CAP);
     if (!m) continue;
-    let v = m[1]; v = /^\d{1,3}([.,]\d{3})+$/.test(v) ? v.replace(/[.,]/g, "") : v.replace(",", ".");
     const u = m[2].toLowerCase();
-    return { value: Number(v) * (u.startsWith("m") ? 1000 : 1), unit: u.endsWith("va") ? "kVA" : "kW" };
+    return { value: numOf(m[1]) * (u.startsWith("m") ? 1000 : 1), unit: u.endsWith("va") ? "kVA" : "kW" };
   }
   return null;
 }
@@ -248,6 +254,13 @@ const GENERATION = [
   // "InteliGen" written alone: every InteliGen generation with a datasheet (NT, NTC, 500, 1000...), to be confirmed.
   (key, k) => key === "INTELIGEN" && /^INTELIGEN(NTC?|\d{1,4})$/.test(k),
 ];
+// A controller as the agent wrote it ("6120" made by SmartGen, "Smartgen 6120") → the model web/catalog.js reads from the
+// same words (HGM6120), whose datasheet then counts (2026-11-03 regression run: such controllers checked 0 functions).
+export function ctlModelOf(p) {
+  const m = String(p?.model || ""), found = (t) => CAT.controllersIn(t).filter((x) => x.model && CAT.keyOf(x.model).endsWith(CAT.keyOf(m).replace(/^\D+/, "")));
+  const own = found(m), withMake = own.length ? own : found(`${p?.make || ""} ${m}`);
+  return withMake.length === 1 ? withMake[0].model : m;
+}
 export function factsFor(facts, part, model) {
   const key = CAT.keyOf(model), own = facts.get(`${part}:${key}`) || [];
   if (part !== "controller") return own;
@@ -283,48 +296,60 @@ export function hintsOf(text, extra = "") {
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
 // (2026-11-03: the 11 best rows were 8.9-10.3 L engines for a tender asking 11.05 L).
-const AT_LEAST = /≥|>=|tối thiểu|ít nhất|không (nhỏ|thấp|bé) hơn|trở lên/i;
+const AT_LEAST = /≥|>=|tối thiểu|ít nhất|không (nhỏ|thấp|bé) hơn|trở lên/i, MAXIMUM = /≤|<=|tối đa|không (lớn|vượt|quá)/i;
+const DISP_W = /dung t[íi]ch|displacement/i, TANK_W = /bình|bồn|thùng|két|nhớt|nước|nhiên liệu|tank|dầu|ắc quy/i;
 export function engineMins(t) {
-  const one = (list) => (new Set(list).size === 1 ? list[0] : null), disp = [], cyl = [];
-  for (const line of String(t).split("\n")) {
-    if (!AT_LEAST.test(line)) continue;
-    const d = /dung t[íi]ch/i.test(line) && line.match(/(?<![\d.,])(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null), disp = [], cyl = [], lines = String(t).split("\n");
+  lines.forEach((line, i) => {
+    // A table cell often puts the label on one line and the figure on the next ("Dung tích xi lanh" / "11.051 L").
+    // Only a figure with its sign or unit: a number alone is often the row number of the next item ("Số xy lanh: Nêu rõ" / "7").
+    const prev = lines[i - 1] || "", alone = !/[a-zà-ỹ]{3}/i.test(line.replace(/l[íi]t|xi|xy|lanh|mm|cc/gi, "")) && /[≥>]|l[íi]t|\bL\b|lanh/i.test(line);
+    const cell = alone ? prev + " " + line : line;
+    if (MAXIMUM.test(cell)) return;
+    // A bare figure is the least the HSMT accepts (Khoa, 2026-11-03), for the engine's displacement and cylinders.
+    const dl = DISP_W.test(cell) && !TANK_W.test(cell) && (AT_LEAST.test(cell) || /dung t[íi]ch\s*(xi|xy)\s?lanh|displacement/i.test(cell));
+    const d = dl && cell.match(/(?<![\d.,])(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
     if (d) disp.push(Number(d[1].replace(",", ".")));
-    const c = line.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
-    if (c) cyl.push(Number(c[1]));
-  }
+    const c = cell.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i) || cell.match(/s[ốo]\s*(?:xi|xy)\s?lanh[^\d\n]{0,30}?\b0?(\d{1,2})\s*(?:xi|xy)?\s?(?:lanh)?\b/i)
+      || line.match(/^\s*[-+•]?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
+    if (c && Number(c[1]) >= 1 && Number(c[1]) <= 20) cyl.push(Number(c[1]));
+  });
   return { minDisp: one(disp), minCyl: one(cyl), ...powerMins(t) };
 }
 // "Công suất liên tục (Prime) ≥ 400 kVA / 320 kW" and "Tiêu hao nhiên liệu ≤ 90 Lít/giờ": a table cell of the HSMT
 // often puts the words on the lines around the figure, so each figure goes to the nearest word naming prime or standby
-// (fuel). One value each, as engineMins.
+// (fuel). The engine's own output ("Công suất liên tục của động cơ ≥ 15,5 kW") is shaft power, not the genset's: left
+// out, and so is a maximum ("Công suất tối đa ≥ 17 kW" under it). Figures within 15% of each other (genset 11.5 kVA,
+// alternator 12 kVA) give the lowest; farther apart (a tender of several sizes) give none. kW alone when the HSMT gives the
+// genset in kVA is an engine section whose heading is lines above ("Loại động cơ ... Công suất liên tục ≥ 15,5 kW"): none.
+// A kW figure well below the kVA one (12.5 kVA and 5 kW) is a second, smaller genset: none.
 const PRIME_W = /prime|li[êe]n t[ụu]c|continuous|c[ơo] b[ảa]n|th[ưư][ờo]ng xuy[êe]n/gi, STANDBY_W = /standby|d[ựu] ph[òo]ng|emergency|kh[ẩa]n c[ấa]p/gi;
+const ENGINE_W = /đ[ộo]ng c[ơo]|engine|t[ốo]i [đd]a|max/i, KVA_FIG = /c[ôo]ng su[ấa]t[^\n]{0,60}\n?\s*(?:≥|>=)?\s*\d[\d.,]*\s*kVA/i;
 const nearest = (t, i, re) => { let best = Infinity; for (const m of t.matchAll(re)) best = Math.min(best, Math.abs(m.index - i)); return best; };
 export function powerMins(t) {
-  const text = String(t), prime = [], fuel = [];
-  for (const m of text.matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*\/\s*(\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/gi)) {
+  const text = lowest(t), prime = [], fuel = [];
+  const pair = (a, ua, b, ub) => { const v = { [ua.toLowerCase() === "kva" ? "kVA" : "kW"]: numOf(a) }; if (b && ub.toLowerCase() !== ua.toLowerCase()) v[ub.toLowerCase() === "kva" ? "kVA" : "kW"] = numOf(b); return v; };
+  for (const m of text.matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*\/\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/gi)) {
     const around = text.slice(Math.max(0, m.index - 160), m.index + 160), at = Math.min(m.index, 160);
     const p = nearest(around, at, PRIME_W), sb = nearest(around, at, STANDBY_W);
-    if (!(p < sb && p <= 120)) continue;
-    const v = { [m[2].toLowerCase() === "kva" ? "kVA" : "kW"]: Number(m[1].replace(",", ".")) };
-    if (m[3] && m[4].toLowerCase() !== m[2].toLowerCase()) v[m[4].toLowerCase() === "kva" ? "kVA" : "kW"] = Number(m[3].replace(",", "."));
-    prime.push(JSON.stringify(v));
+    if (!(p < sb && p <= 120) || ENGINE_W.test(text.slice(Math.max(0, m.index - 300), m.index).split("\n").slice(-2).join(" "))) continue;
+    prime.push(pair(m[1], m[2], m[3], m[4]));
   }
-  const pair = (a, ua, b, ub) => { const v = { [ua.toLowerCase() === "kva" ? "kVA" : "kW"]: Number(a.replace(",", ".")) }; if (b && ub.toLowerCase() !== ua.toLowerCase()) v[ub.toLowerCase() === "kva" ? "kVA" : "kW"] = Number(b.replace(",", ".")); return v; };
   for (const line of text.split("\n")) {
-    const m = line.match(/(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n)|prime(?:\s+power)?)[^\n\d≥≤]{0,60}?(\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*[\/(]\s*(\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/i);
-    if (m && !STANDBY_W.test(line.slice(0, m.index + 20))) prime.push(JSON.stringify(pair(m[1], m[2], m[3], m[4])));
+    const m = line.match(/(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n)|prime(?:\s+power)?)[^\n\d≥≤]{0,60}?(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*[\/(]\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/i);
+    if (m && !STANDBY_W.test(line.slice(0, m.index + 20)) && !ENGINE_W.test(m[0])) prime.push(pair(m[1], m[2], m[3], m[4]));
     STANDBY_W.lastIndex = 0;
   }
-  for (const m of text.matchAll(/(?:≤|<=|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)\s*:?\s*(\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t\s*\/\s*gi[ờo]|l\/h|lph|l\/hr)/gi)) {
+  for (const m of text.matchAll(/(?:≤|<=|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t\s*\/\s*gi[ờo]|l\/h|lph|l\/hr)/gi)) {
     const before = text.slice(Math.max(0, m.index - 200), m.index);
     if (!/ti[êe]u hao|nhi[êe]n li[ệe]u|fuel/i.test(before)) continue;
     const load = before.slice(-60).match(/(\d{2,3})\s*%(?![\s\S]*\d{2,3}\s*%)/);
-    fuel.push({ v: Number(m[1].replace(",", ".")), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
+    fuel.push({ v: numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
   }
   const one = (list) => (new Set(list).size === 1 ? list[0] : null);
-  const p = one(prime), full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
-  return { minPrime: p ? JSON.parse(p) : null, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)) };
+  const unit = prime.some((v) => v.kVA != null) ? "kVA" : "kW", same = prime.filter((v) => v[unit] != null).sort((a, b) => a[unit] - b[unit]);
+  const p = same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
+  return { minPrime: p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)) };
 }
 // The displacement (L) and the cylinders of an engine as its facts give them.
 const litres = (v) => { const n = numbersIn(v)[0]; return n == null ? null : n > 100 ? n / 1000 : n; };
@@ -747,7 +772,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     const e = (part === "engine" ? built.engines : part === "alternator" ? built.alternators : [])?.find((x) => x.key === CAT.keyOf(p.model || ""));
     return !!e?.make && e.make.split(" / ").some((m) => norm(m) === norm(p.make));
   };
-  const factsOf = (c, part) => (["engine", "alternator", "controller"].includes(part) && c[part]?.model ? factsFor(facts, part, c[part].model) : []);
+  const factsOf = (c, part) => (["engine", "alternator", "controller"].includes(part) && c[part]?.model ? factsFor(facts, part, part === "controller" ? ctlModelOf(c.controller) : c[part].model) : []);
   // A requirement's part and level (core: decides the model; option: chosen when ordering), copied to its checks.
   const reqs = new Map((result.requirements || []).map((r) => [norm(r.item), r]));
   for (const r of result.requirements || []) { r.level = r.level === "option" ? "option" : "core"; if (!PARTS.includes(r.part)) r.part = "genset"; }
@@ -980,9 +1005,13 @@ export function scoreOf(c, reqs = []) {
   for (const x of c.checks || []) {
     seen.add(norm(x.item));
     const g = groupOf(x);
-    if (x.status === "not_met") n[g][0]++; else if (x.status !== "met" || x.unverified) n[g][1]++;
+    // A group of controller functions counts each function (2026-11-03 regression run: a controller meeting 4 of 30
+    // ranked above one meeting 26 of 30, both being one "unclear" group).
+    for (const p of x.parts?.length ? x.parts.map((q) => ({ ...q, unverified: q.unverified || x.unverified })) : [x]) {
+      if (p.status === "not_met") n[g][0]++; else if (p.status !== "met" || p.unverified) n[g][1]++;
+    }
   }
-  for (const r of reqs) if (!seen.has(norm(r.item))) n[groupOf(r)][1]++;
+  for (const r of reqs) if (!seen.has(norm(r.item))) n[groupOf(r)][1] += r.parts?.length || 1;
   const fits = (c.suppliers || []).some((s) => !s.unverified) ? 0 : 1;
   return [n[0][0], n[1][0], fits, n[0][1], n[1][1], n[2][0], n[2][1]];
 }
