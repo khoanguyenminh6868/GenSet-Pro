@@ -1134,6 +1134,7 @@ const FUNNEL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strok
 // Wait for the deleted, closed (seen) and past (bidhist) lists too, so counts do not jump once they arrive.
 const listReady = () => state.loaded.feed && state.loaded.deleted && state.loaded.seen && state.loaded.tracked && state.loaded.hist;
 function renderGrid() {
+  if (urlTender && findTender(urlTender)) { const k = urlTender; urlTender = null; openDrawer(k); return; }
   const box = $("#grid");
   if (!listReady()) { box.innerHTML = `<div class="empty">${progress("Đang tải danh sách gói thầu...")}</div>`; $("#count").textContent = ""; return; }
   const all = allTenders();
@@ -1265,15 +1266,27 @@ function openList(k) {
       <span>${t.bidName}</span><span class="src">${[capacityOf(t)?.text, priceShort(t.estimatedPrice), locOf(t)].filter(Boolean).join(" · ")}</span></button>`; }).join("") : '<div class="empty">Không có gói nào.</div>';
   renderTop();
 }
+// Each tender has its own URL in the app (Khoa, 2026-11-03): /#goi/<TBMT> opens its drawer, once the data has it.
+const tenderHref = (key) => "#goi/" + encodeURIComponent(key);
+const tenderOfUrl = () => (location.hash.startsWith("#goi/") ? decodeURIComponent(location.hash.slice(5)) : null);
+let urlTender = null; // the tender of the URL, until the data that has it is loaded (renderGrid)
+function openTenderFromUrl() {
+  const key = tenderOfUrl();
+  if (!key || state.open === key) return;
+  if (findTender(key)) { urlTender = null; openDrawer(key); } else urlTender = key;
+}
+window.addEventListener("hashchange", openTenderFromUrl);
 // A tender opened from a bidder's page: closing its drawer goes back to that page, at the same scroll.
 let bdReturn = null;
 function openDrawer(key, tab) {
   bdReturn = null; state.list = null; $("#dtabs").hidden = false;
   state.open = key; state.dtab = tab || "info";
+  if (tenderOfUrl() !== key) try { history.replaceState(null, "", tenderHref(key)); } catch {}
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
   renderDrawer(); renderGrid();
 }
 function closeDrawer() {
+  if (tenderOfUrl()) try { history.replaceState(null, "", location.pathname + location.search); } catch {}
   state.open = null; state.list = null; $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true"); $("#scrim").hidden = true; renderGrid();
   if (bdReturn) { const r = bdReturn; bdReturn = null; openBidders(r.id, r.scroll); }
 }
@@ -3144,10 +3157,10 @@ function bidSuggestBox(t) {
     ${raw(prev?.result && !wait ? bidPriceHtml(prev, t) : "")}</section>`;
 }
 function bpSampleRow(s, t, i) {
-  const [lv, cls] = BP_LEVEL[s.level] || BP_LEVEL.unknown, one = s.bidders.length < 2, url = s.url || portalSearch(s.key);
+  const [lv, cls] = BP_LEVEL[s.level] || BP_LEVEL.unknown, one = s.bidders.length < 2, url = tenderHref(s.key);
   return h`<tr><td class="num">${i + 1}</td>
-    <td><div><a href="${url}" target="_blank" rel="noopener"><b>${s.lotName || s.name}</b></a></div>
-      <div class="muted small">${raw(h`<a href="${url}" target="_blank" rel="noopener">${s.key}</a>`)} · ${fmtDate(s.at, false)} · ${s.investor}${s.investor && s.investor === t.investorName ? " (cùng chủ đầu tư)" : ""}</div>
+    <td><div><a href="${url}"><b>${s.lotName || s.name}</b></a></div>
+      <div class="muted small">${raw(h`<a href="${url}">${s.key}</a>`)} · ${fmtDate(s.at, false)} · ${s.investor}${s.investor && s.investor === t.investorName ? " (cùng chủ đầu tư)" : ""}</div>
       ${raw(s.goods.length ? h`<div class="small">Hàng trúng: ${s.goods.slice(0, 3).map((g) => [g.name.slice(0, 80), g.maker, g.code, g.origin && `(${g.origin})`].filter(Boolean).join(" ")).join("; ")}</div>` : "")}</td>
     <td class="small" data-l="Mức giống"><span class="chip ${cls}">${lv}</span>${raw(one ? ' <span class="chip mut" title="Chỉ 1 nhà thầu: giá trúng không qua cạnh tranh, không tính vào giá đề xuất">1 nhà thầu</span>' : "")}${raw(s.unverified ? h` <span class="chip warn" title="${s.unverified}">⚠ chưa khớp nguồn</span>` : "")}${raw(s.same.length ? h`<div>✓ ${s.same.join(", ")}</div>` : "")}${raw(s.diff.length ? h`<div class="muted">✗ ${s.diff.join(", ")}</div>` : "")}${raw(s.quote ? h`<div class="muted" style="overflow-wrap:anywhere"><q>${s.quote}</q></div>` : "")}</td>
     <td class="num" data-l="Giá trúng"><b>${fmtVnd(s.wp)}</b><div class="muted small">giá gói ${fmtVnd(s.price)}</div><div class="muted small">${bpPct(s.ratio)} giá gói${s.k ? ` · ${fmtVnd(Math.round(s.wp / s.k))}/kVA` : ""}</div><div class="muted small" style="font-family:inherit;white-space:normal">${s.winner} · ${s.bidders.length} nhà thầu</div></td></tr>`;
@@ -3414,6 +3427,7 @@ renderAll();
 setInterval(() => { renderTop(); renderGrid(); }, 60000);
 initDb();
 openScreenFromUrl();
+openTenderFromUrl();
 })();
 </script>
 
