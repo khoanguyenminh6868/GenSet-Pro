@@ -120,3 +120,20 @@ test("a header of several lines whose titles span columns: figures laid over the
   assert.notEqual(us.cyl, "40");
   assert.equal(us.weight, "810");
 });
+
+test("header tweaks: a shifted row is not taken as lined up; open and silent columns give the open one; T2 is an emission level", () => {
+  // hanyang n107: "Engine power" over rated and standby, so the row has one cell more than the titles.
+  const hy = { id: "h", country: "CN", specTables: [{ n: 107, title: "Yuchai", header: [
+    "| Crew Type | Engine model | Engine power | Number of cylinders | Bore-to-stroke ratio (mm) | Displacement (L) | Fuel consumption (g/kWh) | External dimensions Length × Width × Height (mm) | Weight (kg) | Emission standards",
+    "| Rated Power (kW) | Standby Power (kW)"], rows: ["| HY-550 | YC6TD840-D31 | 560 | 616 | 6 | 152*180 | 19.6 | 195 | 3600*1500*2200 | 5300 | T3"] }] };
+  const s1 = Object.fromEntries(C.build([hy]).engines[0].uses[0].specs.map((s) => [s.key, s.value]));
+  assert.equal(s1.engPower, undefined, "560 or 616: the title is over both");
+  assert.deepEqual([s1.cyl, s1.disp, s1.fuel, s1.weight, s1.emission], ["6", "19.6", "195", "5300", "T3"]);
+  // gtl n101: open and silent size and weight under one title line each.
+  const gtl = { id: "g", country: "CN", specTables: [{ n: 101, title: "Cummins", header: [
+    "| Model | 1500 rmp/400v 3P 4W/50HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight",
+    "| Prime Power | Standby Power | Open Genset | Silent Genset",
+    "| KVA | KW | KVA | KW | Dimension(mm) | weight(kg) | Dimension(mm) | weight(kg)"], rows: ["| CCW-1250T5 | 1250 | 1000 | 1375 | 1100 | KTA50-G3 | 5000*2060*2500 | 9400 | 6058*2438*2591 | 15000"] }] };
+  const s2 = Object.fromEntries(C.build([gtl]).engines[0].uses[0].specs.map((s) => [s.key, s.value]));
+  assert.deepEqual([s2.dims, s2.weight], ["5000*2060*2500", "9400"]);
+});

@@ -95,8 +95,8 @@
     ["tank", "genset", "Bình nhiên liệu", /fuel\s*tank|fuel\s*capacity|tank\s*capacity|油箱/i, null, N],
     ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃气消耗|tiêu hao/i, /lub|oil\s*consum|air\s*consum|fan/i, /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(%|l\/h|l\/hr|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h)?\s*$/i],
     ["noise", "genset", "Độ ồn", /noise|sound\s*(level|pressure)|噪音|噪声|độ ồn|\bdb\(?a?\)?\b/i, null, /(^|\D)([4-9]\d|1[01]\d)(?!\d)/],
-    ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*w\s*[x×*]\s*h|尺寸|kích thước/i, null, BY],
-    ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng/i, null, /^[≈~]?\s*\d/],
+    ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*[wm]\s*[x×*]\s*h|尺寸|kích thước/i, null, BY],
+    ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng|^\s*kgs?\s*(\(|$)/i, null, /^[≈~]?\s*\d/],
     ["runtime", "genset", "Chạy liên tục", /continuous\s*(run|work)|run(ning)?\s*time/i, null, N],
     ["bore", "engine", "Đường kính × hành trình", /bore|stroke|storke|strock|cylinder\s*diameter|缸径|行程/i, null, /^\d+(\.\d+)?(\s*(mm)?\s*[*×xX/]\s*\d+(\.\d+)?)?\s*[(（]?(mm)?[)）]?$/i],
     ["disp", "engine", "Dung tích xi lanh", /displace|swept|\bdisp\b|排量/i, null, /^\d+([.,]\d+)?\s*(l|ltr|litres?|cc|ml)?$/i],
@@ -104,7 +104,7 @@
     ["compr", "engine", "Tỉ số nén", /compression/i, null, /\d\s*:\s*1|^\d+(\.\d+)?$/],
     ["asp", "engine", "Nạp khí", /aspirat|intake|进气/i, null, /turbo|natural|aftercool|intercool|增压|自然|ta\b|na\b/i],
     ["gov", "engine", "Điều tốc", /gov|调速/i, null, /electr|mechan|electron|ecu|governor|电子|机械|\bg[123]\b|class/i],
-    ["emission", "engine", "Tiêu chuẩn khí thải", /emission|排放/i, null, /stage|tier|euro|epa|non-road|exempt|china|\bgb\b|国[一二三四五ⅡⅢⅣ]|[ⅡⅢⅣ]|\b(ii|iii|iv|v)\b/i],
+    ["emission", "engine", "Tiêu chuẩn khí thải", /emission|排放/i, null, /stage|tier|euro|epa|non-road|exempt|china|\bgb\b|国[一二三四五ⅡⅢⅣ]|[ⅡⅢⅣ]|\b(ii|iii|iv|v)\b|\bt[1-4]\b/i],
     ["coolant", "engine", "Nước làm mát", /coolant|cooling\s*water|water\s*(tank|capacity)/i, /temp|温度|pressure|压力|flow/i, /^\d/],
     ["cooling", "engine", "Làm mát", /cooling\s*(system|type|method|mode)?$|冷却方式/i, /air\s*flow/i, TXT],
     ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油/i, /brand|temp|温度|pressure|压力/i, N],
@@ -291,6 +291,8 @@
       const out = [];
       for (let i = 0; i < titles.length; i++) {
         const ttl = titles[i], label = units[i] ? `${ttl} (${units[i]})` : ttl, key = specKey(ttl), val = specVal(cells[i + shift]);
+        // The engine's (alternator's) title over another cell: a title spans two cells, the row does not line up.
+        if ((at.ei >= 0 && engTitle(ttl) && i + shift !== at.ei) || (at.ai >= 0 && altTitle(ttl) && i + shift !== at.ai)) return null;
         if (!key || !val) continue;
         if (!specFits(key, val) || (kW !== undefined && !likely(key, val, kW))) return null;
         if (!out.some((x) => x.key === key)) out.push({ key, label, value: val });
@@ -316,6 +318,11 @@
   // another known cell, or at the "Engine" title over any cell but the engine's (a title before it spans two cells). A
   // figure two walks put on different cells is left out (2026-11-03: 8,771 rows had a header of another width).
   const MOVING = /power|output|功率|\bkw\b|\bkva\b|brand|make|manufactur|origin|\bc\/o\b|品牌|厂家|产地/i;
+  // The title of the engine (alternator) model's column: "Engine model", "柴油机型号", "Alternator" (not its power or brand).
+  // Not a figure of the part ("Engine oil system capacity", "Engine type" over cylinders and governor, "Alternator efficiency").
+  const PART_FIGURE = /speed|cylinder|displace|bore|stroke|governor|consum|oil|cool|start|type|efficien|insulat|protect|voltage|regulat|excit|bearing|winding|pitch|temp|frequency|emission/i;
+  const engTitle = (x) => ENGINE_LBL.test(x) && /model|型号|engine\s*$|发动机$|柴油机$/i.test(x) && !specKey(x) && !MOVING.test(x) && !PART_FIGURE.test(x);
+  const altTitle = (x) => ALT_LBL.test(x) && !specKey(x) && !MOVING.test(x) && !PART_FIGURE.test(x);
   // A title over two cells shifts every column after it without a sign in the row, so each figure laid over a cell this
   // way must also be likely for its kind and for the genset's power (prime, else standby, kW): a value that is not
   // ends the walk there ("Engine power" over prime and standby put 1207 under "Fuel consumption").
@@ -340,7 +347,7 @@
   function walkedSpecs(hs, cells, { ei = -1, ai = -1, gi = -1, power = null } = {}) {
     if (ei < 0 && ai < 0) return [];
     const kW = kWOf(power);
-    const engT = (x) => ENGINE_LBL.test(x) && !specKey(x) && !MOVING.test(x), altT = (x) => ALT_LBL.test(x) && !specKey(x) && !MOVING.test(x);
+    const engT = engTitle, altT = altTitle;
     const got = new Map(), bad = new Set();
     for (const h of hs) {
       const starts = [], named = h.some((x) => engT(x) || altT(x));
@@ -359,11 +366,14 @@
           if ((engT(x) && c !== ei) || (altT(x) && c !== ai)) break;
           // A line that names neither ("| Model | Cylinder No. | ... | Brushless") may lay a title that is no figure over them.
           if ((c === ei && !engT(x)) || (c === ai && !altT(x))) { if (named || specKey(x)) break; }
-          if (c === ei || c === ai) anchored = true;
+          if (c === ei || c === ai) { anchored = true; continue; }
           const key = specKey(x), val = key && specVal(cells[c]);
           if (!val) continue;
           if (!specFits(key, val) || !likely(key, val, kW)) break;
-          mine.push({ key, label: x, value: val, c });
+          // Two columns of one kind (open and silent size, weight): the one further left.
+          const same = mine.findIndex((m) => m.key === key);
+          if (same >= 0) { if (c < mine[same].c) mine[same] = { key, label: x, value: val, c }; }
+          else mine.push({ key, label: x, value: val, c });
         }
         // From the last cell alone, with no known cell on the way: only when two figures or more fit.
         if (!anchored && mine.length < 2) continue;
