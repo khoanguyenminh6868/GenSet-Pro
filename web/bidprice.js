@@ -1,5 +1,6 @@
 // Gợi ý giá đấu (Khoa, 2026-11-03: so theo cấu hình bằng AI). Dùng chung cho trang web (window.GenbidBidprice) và bot
-// (suppliers/bidprice-bot.mjs). Code chọn các phần đã có kết quả gần với gói này nhất (candidates), agent đọc cấu hình
+// (suppliers/bidprice-bot.mjs). Code chọn các phần đã có kết quả gần với gói này nhất theo công suất, giá gói và cấu hình
+// yêu cầu, bỏ phần khác nhóm xuất xứ động cơ (candidates), agent đọc cấu hình
 // của gói này và của từng phần (hàng hoá trúng, câu HSMT) rồi xếp mỗi phần vào một mức giống, code tính giá từ các phần
 // giống (suggest). Mọi con số do code tính từ giá trên muasamcong, agent không ghi số giá nào.
 (function (root) {
@@ -27,17 +28,63 @@
   const taxKey = (x) => String(x.taxCode || "").replace(/\D/g, "") || String(x.name || "").trim().toUpperCase();
   const bdPrice = (b) => b.finalPrice ?? b.bidPrice;
 
+  // What a text says about the configuration (Khoa, 2026-11-03: chọn gói tương tự theo cấu hình yêu cầu, không theo hình
+  // thức đấu thầu hay tuổi gói). group: "cn" (only Chinese engine makes named, or Trung Quốc as the origin), "foreign" (only
+  // foreign ones, or G7 / a foreign country), null (none, or both); tags: makes named and items with a price of their own.
+  // Makes come from web/catalog.js (window.GenbidCatalog), loaded on the web and in the bot.
+  const SCOPE = [["vỏ cách âm", /cách\s*âm|chống\s*ồn|giảm\s*âm|soundproof|silent|canopy/i], ["ATS", /\bATS\b|chuyển\s*(đổi\s*)?nguồn\s*tự\s*động/i],
+    ["hoà đồng bộ", /h(oà|òa)\s*đồng\s*bộ|synchroni[sz]/i], ["bồn dầu ngoài", /(bồn|bể|téc)\s*(chứa\s*)?(dầu|nhiên\s*liệu)\s*(ngoài|rời|ngầm|riêng)/i],
+    ["trạm biến áp", /trạm\s*biến\s*áp|máy\s*biến\s*áp/i], ["1 pha", /(^|[^\d])1\s*pha\b|một\s*pha/i]];
+  const CN_WORD = /trung\s*quốc|\bchina\b|\bPRC\b/i;
+  const FOREIGN_WORD = /\bG7\b|\bG20\b|\bmỹ\b|\bUSA\b|vương\s*quốc\s*anh|\bUK\b|nhật\s*bản|\bjapan\b|\bđức\b|\bgermany\b|\bpháp\b|\bfrance\b|\bitaly\b|hàn\s*quốc|\bkorea\b|thụy\s*điển|\bsweden\b|ấn\s*độ|\bindia\b|châu\s*âu/i;
+  function profileOf(text, model = "") {
+    const t = String(text || "").normalize("NFC"), C = root.GenbidCatalog, tags = [];
+    const named = (list) => (list || []).filter(([re]) => re.test(t)).map(([, n]) => n);
+    const engines = C ? named(C.ENGINE_BRANDS) : [];
+    for (const n of engines) tags.push(`động cơ ${n}`);
+    if (C) for (const n of named(C.ALT_BRANDS)) tags.push(`đầu phát ${n}`);
+    if (C) for (const c of C.CONTROLLERS) if (c.word.test(t)) tags.push(`bộ điều khiển ${c.brand}`);
+    for (const [n, re] of SCOPE) if (re.test(t)) tags.push(n);
+    // A model code with no make named ("WP13D385E200"): its make by catalog.js. Countries count only on the lines about the
+    // engine or the set: a cable from Korea or a Deep Sea controller from the UK says nothing of the engine.
+    const o = C && model ? C.originIn(t, model) : null, eng = t.split(/\n/).filter((l) => ENGINE_LINE.test(l) && !OTHER_LINE.test(l)).join("\n");
+    const fr = engines.some((n) => C.FOREIGN_ENGINE.has(n)) || o === "other" || FOREIGN_WORD.test(eng);
+    const cn = engines.some((n) => !C.FOREIGN_ENGINE.has(n)) || o === "cn" || CN_WORD.test(eng);
+    return { group: fr === cn ? null : fr ? "foreign" : "cn", tags };
+  }
+  const ENGINE_LINE = /động\s*cơ|engine|tổ\s*máy|máy\s*phát|genset/i, OTHER_LINE = /\bcáp\b|dây\s*(cáp|điện|tín)|\bATS\b|\btủ\b|bộ\s*điều\s*khiển|controller|đầu\s*phát|alternator|biến\s*áp/i;
+  const GROUP = { cn: "Trung Quốc", foreign: "ngoài Trung Quốc" };
+  // The winning generator sets' engine origin, from the make, model and origin muasamcong lists for each (cables, ATS,
+  // transformers left out): one group for all, else none.
+  function goodsGroup(goods) {
+    const gs = goods.filter((g) => isGensetName(g.name) && !OTHER_LINE.test(g.name)).map((g) => profileOf(`máy phát ${[g.maker, g.origin].join(" ").replace(/\s+/g, " ")}`, g.code).group).filter(Boolean);
+    return gs.length && gs.every((g) => g === gs[0]) ? gs[0] : null;
+  }
+  // How alike the configurations two texts ask for are: what both name, what only one names; sim 0..1, null when neither
+  // names anything.
+  function compareCfg(a, b) {
+    const same = a.tags.filter((x) => b.tags.includes(x)), only = a.tags.filter((x) => !b.tags.includes(x)), other = b.tags.filter((x) => !a.tags.includes(x));
+    const n = same.length + 0.5 * (only.length + other.length);
+    return { sim: n ? same.length / n : null, same, diff: [...only.map((x) => `chỉ gói này: ${x}`), ...other.map((x) => `chỉ gói kia: ${x}`)] };
+  }
+
   const MAX = 80, POWER_TOL = 0.05, LEVELS = ["same", "close", "different", "unknown"];
   const cut = (s, n) => { s = String(s || "").replace(/\s+/g, " ").trim(); return s.length > n ? s.slice(0, n) + "…" : s; };
-  // The decided lots most like the tender, for the agent to compare. t: { notifyNo, bidName, bidForm, investorName },
-  // docs: { <TBMT>: bidhist document }, K: kVA, P: package price. Only lots that supply a generator set (same kind as
+  // The decided lots most like the tender, for the agent to compare. t: { notifyNo, bidName, investorName, cfgText (what
+  // its HSMT asks for), engine ({ make, model } of the configuration Gợi ý cấu hình put first) }, docs: { <TBMT>: bidhist
+  // document }, K: kVA, P: package price. Ranked by power, package price and how alike the configuration asked for is
+  // (not by bid form or age, Khoa 2026-11-03). A lot whose winning engine (else what its HSMT asks for) is of the other
+  // origin group than the engine to be offered (else than this HSMT asks for) is left out: a Chinese set is not priced
+  // from Cummins lots. Only lots that supply a generator set (same kind as
   // the tender), with a winner and a price. When K is known, only lots whose power is known and within 5% of K
   // (Khoa, 2026-11-03); when it is not, a lot whose power is not known stays only when it says something about its goods
   // (won goods or the HSMT's lines), so the agent can tell what it was (a lot with nothing about its configuration
   // cannot set the price).
   function candidates(t, docs, K, P) {
-    const kind = bidKind(t.bidName), out = [], years = (iso) => (iso ? (Date.now() - Date.parse(iso)) / (365 * 864e5) : 3);
-    let total = 0;
+    const kind = bidKind(t.bidName), out = [], tp = profileOf(`${t.bidName || ""}\n${t.cfgText || ""}`);
+    const eg = t.engine && root.GenbidCatalog ? root.GenbidCatalog.originIn(t.engine.make || "", t.engine.model || "") : null;
+    const tGroup = eg === "cn" ? "cn" : eg === "other" ? "foreign" : tp.group;
+    let total = 0, otherGroup = 0;
     for (const [key, d] of Object.entries(docs)) {
       if (key === t.notifyNo || !d.final || !isGensetName(d.bidName)) continue;
       const multi = (d.lots || []).length > 1;
@@ -55,19 +102,31 @@
         const k = kName || kGoods || kCfg, kSrc = kName ? "tên gói" : kGoods ? "hàng chào" : kCfg ? "HSMT" : "";
         if (K && !(k && Math.abs(k - K) <= POWER_TOL * K + 1e-9)) continue;
         if (!k && !goods.length && !d.config?.text) continue;
-        const dist = (K && k ? Math.abs(Math.log(K / k)) : 0.7) + (P ? 0.5 * Math.abs(Math.log(P / price)) : 0) + (d.bidForm && d.bidForm === t.bidForm ? 0 : 0.3)
-          + 0.15 * Math.min(years(d.openedAt || d.bidCloseDate), 5) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0);
+        const lp = profileOf([(multi && lot.lotName) || d.bidName, d.config?.text, ...goods.map((g) => [g.name, g.maker, g.code, g.origin, g.desc].join(" "))].join("\n"));
+        const group = goodsGroup(goods) || profileOf(d.config?.text).group;
+        if (tGroup && group && group !== tGroup) { otherGroup++; continue; }
+        // A lot that names nothing to compare counts as half alike.
+        const cfg = compareCfg(tp, lp), dist = (K && k ? Math.abs(Math.log(K / k)) : 0.7) + (P ? 0.5 * Math.abs(Math.log(P / price)) : 0)
+          + (cfg.sim == null ? 0.5 : 1 - cfg.sim) - (tGroup && group === tGroup ? 0.3 : 0) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0);
         out.push({
           key, lotNo: lot.lotNo || "", name: d.bidName || "", lotName: multi ? lot.lotName || "" : "", investor: d.investorName || "", location: d.location || "",
           bidForm: d.bidForm || "", at: d.openedAt || d.bidCloseDate || "", url: d.url || "", price, wp, ratio, winner: w.name || "", k, kSrc, dist,
           goods: goods.slice(0, 8).map((g) => ({ name: cut(g.name, 300), maker: g.maker || g.label || "", code: g.code || "", origin: g.origin || "", qty: g.qty ?? null, unitPrice: g.unitPrice ?? null, desc: cut(g.desc, 200) })),
           cfgText: cut(d.config?.text, 3000),
           bidders: (lot.bidders || []).map((b) => ({ name: b.name || "", tax: String(b.taxCode || "").replace(/\D/g, ""), price: bdPrice(b) ?? null, won: !!b.won })),
+          group, cfg: { sim: cfg.sim == null ? null : Math.round(cfg.sim * 100) / 100, same: cfg.same, diff: cfg.diff },
         });
       }
     }
     out.sort((a, b) => a.dist - b.dist);
-    return { total, list: out.slice(0, MAX).map((s, i) => ({ id: "S" + (i + 1), ...s })) };
+    return { total, group: tGroup, otherGroup, list: out.slice(0, MAX).map((s, i) => ({ id: "S" + (i + 1), ...s })) };
+  }
+  // The code's comparison of one lot with the tender, shown to the agent beside the lot. Not part of sampleText: the
+  // agent's quote must come from muasamcong's own words.
+  function cfgLine(s) {
+    const c = s.cfg || {};
+    return `So cấu hình (code): nhóm xuất xứ động cơ ${s.group ? GROUP[s.group] : "không rõ"}${c.sim == null ? "; không gói nào nêu hãng hay hạng mục để so"
+      : `; giống ${Math.round(100 * c.sim)}%${c.same.length ? ` (cùng: ${c.same.join(", ")})` : ""}${c.diff.length ? `; khác: ${c.diff.join(", ")}` : ""}`}`;
   }
   // What the agent reads about one lot, and the text its quote must come from.
   function sampleText(s) {
@@ -108,5 +167,5 @@
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
     return { basis, n: use.length, same: same.length, close: close.length, enough: use.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, comps };
   }
-  root.GenbidBidprice = { kvaOf, isGensetName, bidKind, cfgKva, taxKey, bdPrice, candidates, sampleText, suggest, LEVELS, MAX, POWER_TOL };
+  root.GenbidBidprice = { kvaOf, isGensetName, bidKind, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL };
 })(typeof window !== "undefined" ? window : globalThis);
