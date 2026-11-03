@@ -66,7 +66,8 @@ test("other figures: by column title, units from the second header line, only wh
     "| AC24 | 20/17 | 24/19 | 4B3.9-G11 | 5.7 | 4L | 3.9 |", "| AC28 | 25/20 | 28/22 | QSB3.9-G31 | 6.1 | 4L | 3.9 | extra |"] }]);
   const [a, b] = C.fromSupplier(s);
   assert.deepEqual(a.specs.map((x) => [x.key, x.label, x.value]), [["fuel", "Fuel Consumption (L/h)", "5.7"], ["cyl", "Cylinder", "4L"], ["disp", "Displacement", "3.9"]]);
-  assert.deepEqual(b.specs, []);
+  // A cell more than the titles, at the end: laid over the row from the engine's cell (walkedSpecs), it lines up.
+  assert.deepEqual(b.specs.map((x) => [x.key, x.value]), [["fuel", "6.1"], ["cyl", "4L"], ["disp", "3.9"]]);
   const bad = rec("genset_oem", [{ n: 102, title: "x", header: ["| Model | kVA | kW | Engine | Governing System"], rows: ["| AB100 | 100 | 80 | 6BTA5.9-G2 | 105×118"] }]);
   assert.deepEqual(C.fromSupplier(bad)[0].specs, []);
 });
@@ -92,4 +93,30 @@ test("datasheet: a bare Model line belongs to the part whose heading it is under
   assert.equal(C.headingOf("| Brand | Cummins"), undefined);
   const by = Object.fromEntries(a.specs.map((g) => [g.key, g.values[0].value]));
   assert.equal(by.insul, "H"); assert.equal(by.ip, "IP23");
+});
+
+test("a header of several lines whose titles span columns: figures laid over the row from its known cells", () => {
+  // jet-power n101: "Standby output" and "Prime Output" each over KVA | KW, the engine and alternator titles one line up.
+  const jet = { id: "j", country: "CN", specTables: [{ n: 101, title: "50Hz SDEC Diesel Generator", header: [
+    "| Model | 400V / 50Hz / 1500RPM | SDEC Diesel Engine | Alternator",
+    "| Standby output | Prime Output | Model | Cylinder No. | Bore*Stroke | Displacement | Fuel Cons. | Brushless",
+    "| KVA | KW | KVA | KW | (mm) | (L) | g/Kw.H"], rows: ["| SD-275 | 275 | 220 | 250 | 200 | 6DTAA8.9-G23 | 6L | 114×144 | 8.9 | 192 | JET274K"] }] };
+  const u = C.build([jet]).engines[0].uses[0];
+  assert.deepEqual(Object.fromEntries(u.specs.map((s) => [s.key, s.value])), { cyl: "6L", bore: "114×144", disp: "8.9", fuel: "192" });
+  // A title over two cells after the engine ("Engine power" over prime and standby): what follows is not taken.
+  const kel = { id: "k", country: "CN", specTables: [{ n: 116, title: "Gensets", header: [
+    "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator | Size & Weight",
+    "| Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | Fuel consumption | Cylinder*Bore*Stroke | Displacement(L) | Compr-ession Ratio | Asp. | WANTONG | Rated Voltage(V) | Open Type Size(mm) | Weight(KG) | Silent Type Size(mm) | Weight(KG)"],
+    rows: ["| WT-C1400 | 1000 | 1250 | 1100 | 1375 | KTA50-G3 | 1097 | 1207 | 210 | 271.02 | 16×159×159 | 50.3 | 13.9:1 | TC | WT-LV6G | 4950×2100×2320 | 8983 | 40HQ | 11000"] }] };
+  const specs = Object.fromEntries((C.build([kel]).engines[0].uses[0].specs || []).map((s) => [s.key, s.value]));
+  assert.equal(specs.fuel, undefined);
+  assert.equal(specs.disp, undefined);
+  // "Engine brand" is not the engine model's column.
+  const ule = { id: "u", country: "CN", specTables: [{ n: 104, title: "Cummins 50Hz", header: [
+    "| Genset Model | 60HZ | Diesel Engine | Alternator | Overall Size(mm) | Gross Weight(kg)",
+    "| Power (kW) | Power (kVA) | Model | Engine brand | Rated Power(kW) | No. of Cylinder | Bore xStroke(mm) | Displacement (L) | Rated Fuel Consumption (L/h) | Model"],
+    rows: ["| UC40GF | 32 | 40 | 4BT3.9-G2 | Cummins | 40 | 4 | 102*120 | 3.9 | 9.3 | S0L2-P1 | 1800x700x1200 | 810"] }] };
+  const us = Object.fromEntries((C.build([ule]).engines[0].uses[0].specs || []).map((s) => [s.key, s.value]));
+  assert.notEqual(us.cyl, "40");
+  assert.equal(us.weight, "810");
 });

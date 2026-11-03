@@ -519,3 +519,11 @@ test("engine minimums of the HSMT: read once each; an engine a source shows belo
   assert.deepEqual(top.map((r) => r.u.supplierId), ["b", "s"]);
   assert.match(top[1].why.join(" "), /dung tích 9.7 L < 11.05 L/);
 });
+
+test("factConflicts: one figure rounded two ways or a China level written two ways is no disagreement", () => {
+  const f = (key, value, supplierId) => ({ key, value, supplierId, n: 101, line: value });
+  assert.equal(factConflicts([f("disp", "37.8", "a"), f("disp", "38", "b")]).size, 0);
+  assert.equal(factConflicts([f("emission", "国二", "a"), f("emission", "国Ⅱ", "b"), f("emission", "国 II", "c")]).size, 0);
+  assert.deepEqual([...factConflicts([f("disp", "37.8", "a"), f("disp", "18.9", "b")]).keys()], ["disp"]);
+  assert.deepEqual([...factConflicts([f("emission", "国Ⅱ", "a"), f("emission", "国Ⅲ", "b")]).keys()], ["emission"]);
+});
