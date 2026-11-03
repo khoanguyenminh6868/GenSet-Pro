@@ -43,6 +43,8 @@ await import(pathToFileURL(path.join(ROOT, "..", "web", "conversions.js")).href)
 const CONV = globalThis.GenbidConversions;
 await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
 const CAT = globalThis.GenbidCatalog;
+await import(pathToFileURL(path.join(ROOT, "..", "web", "bidprice.js")).href);
+const BP = globalThis.GenbidBidprice;
 export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (các nước thành viên trừ Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả" };
 const GROUP_ORIGIN = new Set(["g7", "g20"]);
 const PARTS = ["engine", "alternator", "genset", "controller"];
@@ -1217,7 +1219,7 @@ async function answer(req, suppliers) {
   // configreq keeps the request's own fields and gets doneAt (+ error); configmatch carries the verified result.
   const done = ({ result, error }) => {
     const at = new Date().toISOString();
-    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, extra: req.extra, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
+    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, extra: req.extra, requestedAt: req.requestedAt, by: req.by, from: req.from, auto: req.auto, basis: req.basis, doneAt: at, error: error || "" };
     return post([...(result ? [{ coll: "configmatch", id: key, data: { at, result } }] : []), { coll: "configreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
@@ -1239,6 +1241,20 @@ async function answer(req, suppliers) {
     await done({ error: e.message || String(e) }).catch(() => {});
     console.log(`${key}: lỗi ${e.message}`);
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+  if (req.auto) await autoBidprice(req).catch((e) => console.log(`${key}: chưa gửi được Gợi ý giá đấu (${e.message})`));
+}
+// A new "Máy phát điện" tender from Sync (configreq auto, genbid-sync.js; Khoa, 2026-11-03): Gợi ý giá đấu follows Gợi ý
+// cấu hình, so it reads that configuration. The basis as the web's bidBasis: package price etc. from the feed (req.basis),
+// power from the name, else the analysis; runAll reads the queue again and starts it.
+async function autoBidprice(req) {
+  const a = (await doc("analysis", req.key).catch(() => null))?.result;
+  const texts = [[req.bidName, "tên gói"], [a?.keyInfo?.generatorCapacity, "phân tích"],
+    ...(a?.technicalSpecs || []).filter((x) => /công suất|capacity|power|kva|kw/i.test(`${x.item || ""} ${x.requirement || ""}`)).map((x) => [x.requirement, "phân tích"])];
+  const hit = texts.find(([t]) => BP.kvaOf(t)), b = req.basis || {};
+  const capText = hit ? `${String(hit[0]).normalize("NFC").match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/i)[0]} (${hit[1]})` : "";
+  const basis = { kva: hit ? BP.kvaOf(hit[0]) : null, price: Number(b.price) || null, capText, bidForm: b.bidForm || "", investorName: b.investorName || a?.keyInfo?.investor || "" };
+  await post([{ coll: "bidpricereq", id: req.key, data: { notifyNo: req.notifyNo || req.key, bidName: req.bidName || "", basis, requestedAt: new Date().toISOString(), from: "sync", auto: true } }]);
+  console.log(`${req.key}: đã gửi Gợi ý giá đấu tự động (${basis.kva ? Math.round(basis.kva) + " kVA" : "công suất không rõ"}, giá gói ${basis.price || "không rõ"})`);
 }
 
 // The log is the agent's whole stream, each line with the seconds since the start, to see where a run's minutes go
