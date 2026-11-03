@@ -443,3 +443,15 @@ test("under Chinese origin, a foreign engine on the saved page of a supplier bas
   const run2 = (country) => check(JSON.parse(JSON.stringify(r)), { hsmtText: hsmt, suppliers: [{ id: "dep", country, specTables: [] }], readWeb: () => `URL: x\n\n${page}`, origin: "cn" }).result.configs.length;
   assert.deepEqual([run2("CN"), run2("US")], [1, 0]);
 });
+
+test("check: an engine's make given by another row naming the model is the make catalog.md shows; another make is not", () => {
+  const t = (title, row) => [{ n: 101, title, header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows: [row] }];
+  const list = [
+    { id: "w", country: "CN", specTables: t("Weichai gensets 50Hz", "| W-1 | 275 | 220 | WP10D264E200 | XY274K |") },
+    { id: "d", country: "CN", specTables: t("Diesel gensets 50Hz", "| D-1 | 275 | 220 | WP10D264E200 | XY274K |") },
+  ];
+  const src = { kind: "catalog", supplierId: "d", n: 101, line: "| D-1 | 275 | 220 | WP10D264E200 | XY274K |" };
+  const res = (make) => check({ requirements: [], configs: [{ rank: 1, engine: { model: "WP10D264E200", make, src }, checks: [] }] }, { hsmtText: "x", suppliers: list, readWeb: () => null, origin: "all" });
+  assert.equal(res("Weichai").problems.filter((p) => /hãng/.test(p)).length, 0);
+  assert.equal(res("Yuchai").problems.filter((p) => /hãng Yuchai/.test(p)).length, 1);
+});
