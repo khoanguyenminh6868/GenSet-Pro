@@ -2,7 +2,7 @@
 // PC by config-bot.mjs run (as a child process: run) for every pending bidpricereq/<TBMT>:
 //   node suppliers/bidprice-bot.mjs prep --key <TBMT> --out <dir> [--kva 400 --price 1230000000]
 //   node suppliers/bidprice-bot.mjs check --dir <dir>          check result.json in code, print the prices
-//   node suppliers/bidprice-bot.mjs run                            answer every pending bidpricereq
+//   node suppliers/bidprice-bot.mjs run [--key <TBMT>]              answer every pending bidpricereq (or that tender's)
 //   node suppliers/bidprice-bot.mjs try --key <TBMT> [--kva .. --price ..]   prep + agent + check, nothing posted
 // Code picks the decided lots most like the tender from bidhist (web/bidprice.js candidates); the agent (claude -p,
 // bidprice-prompt.md) reads this tender's configuration and each lot's (won goods, HSMT lines) and puts each lot in a
@@ -124,8 +124,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   if (cmd === "prep") console.log(JSON.stringify(await prep(req, arg("out"))));
   else if (cmd === "check") printResult(check(arg("dir", ".")));
   else if (cmd === "run") {
-    // Every pending bidpricereq (config-bot.mjs run starts this). Only requests the web wrote (basis).
-    const reqs = (await api("kind=bidprice")).filter((r) => r.basis);
+    // Every pending bidpricereq, or with --key only that tender's (config-bot.mjs run starts one per tender, all at once).
+    // Only requests the web wrote (basis).
+    const reqs = (await api("kind=bidprice")).filter((r) => r.basis && (!arg("key") || r.key === arg("key")));
     if (reqs.length) { const hist = Object.fromEntries((await api("kind=docs&coll=bidhist")).map((d) => [d.id, d.data])); for (const r of reqs) await answer(r, hist); }
   }
   else if (cmd === "try") { const dir = arg("out") || path.join(os.tmpdir(), "genbid-bidprice-try", req.key); printResult(await attempt(req, dir)); console.log(`Thư mục: ${dir}`); }
