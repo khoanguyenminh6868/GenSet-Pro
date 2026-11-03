@@ -473,7 +473,18 @@ const factLine = (f) => `${CAT.SPEC[f.key]?.vi || f.key}: ${f.value} — factSrc
 export function catalogMd(cat, cap, hints, opts = {}) {
   const facts = opts.facts || modelFacts(cat, opts.suppliers || []), { top, all } = candidates(cat, cap, hints, { ...opts, facts });
   const sup = new Map((opts.suppliers || []).map((s) => [s.id, s])), shown = new Set(), headers = new Map();
-  const rowText = (u) => (u.line ? `  line: ${u.line}` : `  bảng một model: ${(u.lines?.rows || []).join(" ; ")}`);
+  // A table whose models run across: each row with this model's own cell after it, so no other column is taken; the
+  // row is quoted whole (check takes the figure from that column).
+  const rowText = (u) => {
+    if (u.line) return `  line: ${u.line}`;
+    const rows = u.lines?.rows || [], k = CAT.keyOf(u.model || ""), cells = rows.map(CAT.cellsOf);
+    const at = cells.find((cs) => cs.length >= 3 && cs.slice(1).some((x) => CAT.keyOf(x) === k));
+    const j = at ? at.findIndex((x, i) => i > 0 && CAT.keyOf(x) === k) : -1;
+    if (j < 1) return `  bảng một model: ${rows.join(" ; ")}`;
+    // Counted from the right: rows have one or two label cells, the model columns line up at the end.
+    const off = at.length - j, cell = (cs) => (cs.length - off >= 1 ? cs[cs.length - off] : "?");
+    return `  bảng nhiều model theo cột (${u.model} là cột thứ ${off} từ phải; sourceQuote là nguyên dòng, src.line là dòng "${rows[cells.indexOf(at)]}"): ${rows.map((r, i) => `${r} → ${cell(cells[i])}`).join(" ; ")}`;
+  };
   const out = [`# Danh mục trong hệ thống${cap ? ` (tổ máy ${cap.value} ${cap.unit}, từ 95% đến 140%)` : ""}${hints.freq ? `, ${hints.freq} Hz` : ""} — code đã xếp sẵn`, "",
     "Thứ tự ưu tiên khi xếp: model động cơ / hãng động cơ HSMT nêu, bộ điều khiển HSMT nêu, động cơ có nhiều thông số có nguồn, rồi mới tới đầu phát; công suất càng sát càng tốt.", "",
     `## Ứng viên (${top.length} dòng tổ máy, tốt nhất trước)`, ""];
@@ -812,7 +823,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     const j = cells.findIndex((x, i) => i > 0 && CAT.keyOf(x) === k);
     if (j < 1 || cells.length < 3 || CAT.isCode(cells[0])) return null;
     const t = (sup.get(src.supplierId)?.specTables || []).find((x) => x.n === Number(src.n) && x.rows.some((l) => norm(l) === norm(src.line)));
-    return t ? { j, t } : null;
+    // Counted from the right: rows have one or two label cells, the model columns line up at the end.
+    return t ? { off: cells.length - j, t } : null;
   };
   // The text a part's facts must come from: its catalog row (and table header), or its saved web page.
   const sourceText = (src, model) => {
@@ -953,7 +965,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
             // From a table whose models run across: only the label and the model's own column of the quoted row.
             const col = !fact && ["genset", "engine", "alternator"].map((p) => c[p] && columnOf(c[p].src, c[p].model)).find(Boolean);
             const qrow = col && col.t.rows.map(CAT.cellsOf).find((cs) => norm(cs.join(" | ")).includes(norm(x.sourceQuote).replace(/^\|\s*/, "")) || norm(x.sourceQuote).includes(norm(cs[0] || "-")));
-            const quoted = qrow ? `${qrow[0]} ${qrow[col.j] ?? ""}` : x.sourceQuote;
+            const quoted = qrow ? `${qrow[0]} ${qrow[qrow.length - col.off] ?? ""}` : x.sourceQuote;
             const nums = fact ? fact.nums.filter((v) => numbersLoose(x.sourceQuote).includes(v)) : numbersLoose(quoted);
             const ok = (v) => nums.includes(v) || used.includes(v) || calc.some((c) => CONV.matches(v, c));
             // The configuration's own model names ("8 kVA (cột CP198FE)") are not figures.

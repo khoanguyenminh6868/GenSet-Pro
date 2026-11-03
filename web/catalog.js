@@ -225,8 +225,18 @@
     // Datasheets put the engine and the alternator under their own heading ("Engine specification", then
     // "Model | 4B3.9-G11"): a bare "Model" or "Brand" line belongs to the part whose heading it is under.
     let part = null;
+    // Models running across line up at the right: a row with a second label cell ("| Engine | Engine Model | LPG210 |
+    // LPG420 | LPG620" beside "| Frequency (Hz) | 50 | 50 | 50") has its extra cells joined to the label (2026-11-03:
+    // LPG420 took the 8.5 kVA of LPG620).
+    // Only a table where most rows have several values: a single-model sheet may put two pairs on one row
+    // ("| Cooling Method | Water Cooling | Ambient Temp | ≤40 C").
+    const all = lines.map((l) => cellsOf(l).length - 1).filter((n) => n >= 1), widths = all.filter((n) => n >= 2), count = new Map();
+    for (const n of widths) count.set(n, (count.get(n) || 0) + 1);
+    const W = widths.length >= all.length * 0.6 ? [...count].sort((a, b) => b[1] - a[1] || a[0] - b[0])[0]?.[0] : null;
     for (const l of lines) {
       let c = cellsOf(l);
+      // Only label words are joined; numbers there are a second figure per model (50 / 60 Hz columns).
+      if (W && c.length - 1 > W && c.length - 1 <= W + 2 && !c.slice(1, c.length - W).some((x) => /\d/.test(x))) c = [c.slice(0, c.length - W).filter(Boolean).join(" "), ...c.slice(c.length - W)];
       const head = c.length === 1 ? headingOf(c[0]) : undefined;
       if (head !== undefined) { if (head !== "keep") part = head; continue; }
       // "| Noise(LP1m): 100dB(A)": label and value in one cell.
