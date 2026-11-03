@@ -88,9 +88,100 @@
         "公司拥有 8 条先进的自动化流水线生产设备。"
       ],
       "file": "sources/hiearns-changzhou/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.hiearns.com/Product/2KVAsldgcyfdj.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 电压 | 频率 (HZ) | 相数 | 功率因素 | 备用电流 | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+      ],
+      "file": "sources/hiearns-changzhou/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.hiearns.com/Product/1KVAslsgcyfdj.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 电压 | 频率 (HZ) | 相数 | 功率因素 (COS ￠ ) | 备用电流 (V) | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+      ],
+      "file": "sources/hiearns-changzhou/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.hiearns.com/Product/12KVAslsgjycyfdj.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 电压 | 频率 (HZ) | 相数 | 功率因素 (COS ￠ ) | 备用电流 | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+      ],
+      "file": "sources/hiearns-changzhou/103.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.hiearns.com/Product/14kvakjfdj.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 转速 (rpm) | 3000 | 3600"
+      ],
+      "file": "sources/hiearns-changzhou/105.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "200KVA水冷多缸柴油发电机,200KVA柴油发电机-常州市海润机电有限公司",
+      "header": [
+        "| 电压 | 频率 (HZ) | 相数 | 功率因素 | 备用电流 | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+      ],
+      "rows": [
+        "| 440/254 | 50 | 3 | 0.8 | 269 | 164/205 | 150/188",
+        "| 415/240 | 50 | 3 | 0.8 | 285 | 164/205 | 150/188",
+        "| 400/230 | 50 | 3 | 0.8 | 296 | 164/205 | 150/188",
+        "| 380/220 | 50 | 3 | 0.8 | 311 | 164/205 | 150/188"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "10KVA水冷双缸柴油发电机,10KVA柴油发电机-常州市海润机电有限公司",
+      "header": [
+        "| 电压 | 频率 (HZ) | 相数 | 功率因素 (COS ￠ ) | 备用电流 (V) | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+      ],
+      "rows": [
+        "| 440/254 | 50 | 3 | 0.8 | 14 | 8.5/11 | 8/10",
+        "| 415/240 | 50 | 3 | 0.8 | 15 | 8.5/11 | 8/10",
+        "| 400/230 | 50 | 3 | 0.8 | 15 | 8.5/11 | 8/10",
+        "| 380/220 | 50 | 3 | 0.8 | 16 | 8.5/11 | 8/10"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "12KVA水冷四缸静音柴油发电机,12KVA柴油发电机-常州市海润机电有限公司",
+      "header": [
+        "| 电压 | 频率 (HZ) | 相数 | 功率因素 (COS ￠ ) | 备用电流 | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+      ],
+      "rows": [
+        "| 440/254 | 50 | 3 | 0.8 | 18 | 11/14 | 10/12",
+        "| 415/240 | 50 | 3 | 0.8 | 19 | 11/14 | 10/12",
+        "| 400/230 | 50 | 3 | 0.8 | 20 | 11/14 | 10/12",
+        "| 380/220 | 50 | 3 | 0.8 | 21 | 11/14 | 10/12"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "常州市海润机电有限公司",
+      "header": [],
+      "rows": [
+        "| 转速 (rpm) | 3000 | 3600",
+        "| 最大输出功率 (kw) | 12.5 | 12.5",
+        "| 持续功率 (kw) | 12.0 | 12.0"
+      ]
+    }
+  ]
 }

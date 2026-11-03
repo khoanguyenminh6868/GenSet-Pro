@@ -35,7 +35,8 @@
   // Mã đầu phát của các dòng phổ biến: dùng để biết ô nào là đầu phát khi bảng có cả động cơ lẫn đầu phát.
   const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z])/i;
   const CONTROLLER = /^(DSE|HGM|IL-|IG-|AMF|COMAP|INTELI|DEEP\s?SEA|SMARTGEN|GU\d|MRS|MEBAY|LXC|BE\d{3})/i;
-  const ENGINE_LBL = /engine|发动机|柴油机|引擎|motor\s*model/i;
+  // "油机型号" (oil engine model, comler-power) and "动力型号" / "配套动力" (power unit model, kanpor-fuan) name the engine too.
+  const ENGINE_LBL = /engine|发动机|柴油机|引擎|motor\s*model|油机|动力型号|配套动力/i;
   const ALT_LBL = /alternator|generator\s*(model|type|brand)|发电机|电球|stamford|leroy|mecc|marathon|engga|alternador/i;
   const GENSET_LBL = /genset|gen-set|generator\s*set|机组/i;
   const PRIME = /prime|\bprp\b|continuous|\bcop\b|常用|主用|liên tục/i;
@@ -210,7 +211,9 @@
     if (/^(general|performance|genset|generator\s+set|dimensions?|weights?|canopy|enclosure|control|controller|standards?|package|scope|fuel\s+consumption|机组|外形|控制)/i.test(s)) return null;
     return "keep";
   }
-  function fromLabelTable(lines) {
+  // bareModel: a bare "Model: X" with no part heading above it is the engine, or the alternator when X is an
+  // alternator code (a page listing gensets one after the other: "Model: KTAA19-G6A" ... "Model: HC534FS").
+  function fromLabelTable(lines, { bareModel = false } = {}) {
     const cols = [];
     // The first line naming a value wins: single-model pages often list related models further down.
     const put = (j, k, v) => { const c = (cols[j] = cols[j] || {}); if (c[k] == null) c[k] = v; };
@@ -232,6 +235,7 @@
       const L = label.toLowerCase();
       const bare = L.replace(/[:：\s]+$/, "");
       if (part && /^(model|model\s*no\.?|type\s*model|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, part === "engine" ? "engine" : "alternator", vals[0]); continue; }
+      if (bareModel && !part && /^(model|model\s*no\.?|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, ALT_CODE.test(vals[0]) ? "alternator" : "engine", vals[0]); continue; }
       if (part && /^(brand|make|manufacturer|品牌|厂家|制造商)$/.test(bare)) { put(0, part === "engine" ? "engineBrand" : "altBrand", vals[0]); continue; }
       const sk = specKey(label);
       if (sk) {
@@ -411,7 +415,11 @@
         return makes;
       };
       if (isLabelTable(t)) {
-        for (const c of fromLabelTable([...(t.header || []), ...t.rows])) {
+        // A page that lists several gensets one after the other ("Genset Model：SC700GFK" ... "Genset Model：SC85GFK",
+        // supermaly): each "Genset Model" line starts a genset of its own.
+        const starts = t.header?.length ? [] : t.rows.map((r, i) => (/^\|?\s*genset\s*model\s*[:：]/i.test(r) ? i : -1)).filter((i) => i >= 0);
+        const blocks = starts.length >= 2 ? starts.map((i, k) => t.rows.slice(i, starts[k + 1] ?? t.rows.length)) : [[...(t.header || []), ...t.rows]];
+        for (const block of blocks) for (const c of fromLabelTable(block, { bareModel: blocks.length > 1 })) {
           const power = c.prime || c.standby || c.rated ? { ...(c.prime ? { prime: c.prime } : {}), ...(c.standby ? { standby: c.standby } : {}), ...(c.rated ? { rated: c.rated } : {}) } : null;
           const rowText = [c.genset, c.engine, c.alternator].filter(Boolean).join(" ");
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))

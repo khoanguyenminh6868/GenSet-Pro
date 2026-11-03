@@ -82,9 +82,58 @@
         "Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR"
       ],
       "file": "sources/yanmar/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.yanmar.com/us/energy/products/power_generator/on_site_power/ay/",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| | Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series"
+      ],
+      "file": "sources/yanmar/101.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "AY Power Generation Series｜On-Site Power｜Power Generator｜Products & Services｜Energy Systems｜YANMAR USA",
+      "header": [
+        "| | Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series",
+        "| Model | AY20L-ET | AY20L-ET | AY40L-UT | AY40L-UT"
+      ],
+      "rows": [
+        "| Frequency | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Generator | Apparent Output (kVA) | 650 | 650 | 750 | 750",
+        "| Rated Output (kWe) | 520 | 520 | 600 | 600",
+        "| Type | 3-Phase Brushless | 3-Phase Brushless | 3-Phase Brushless | 3-Phase Brushless",
+        "| Voltage (V) | 6,600 (3,300 / 440 / 400 / 220 / 200) | 6,600 (3,300 / 440 / 400 / 220 / 200) | 6,600 (3,300 / 440 / 400 / 220 / 200) | 6,600 (3,300 / 440 / 400 / 220 / 200)",
+        "| No. of Poles (P) | 4 | 4 | 4 | 4",
+        "| Power Factor (%) | 80 (lagging) | 80 (lagging) | 80 (lagging) | 80 (lagging)",
+        "| Diesel Engine | Rated Output (kW) | 562 | 595 | 668 | 679",
+        "| Type | Vertical, Water-cooled, 4-stroke Diesel | Vertical, Water-cooled, 4-stroke Diesel | Vertical, Water-cooled, 4-stroke Diesel | Vertical, Water-cooled, 4-stroke Diesel",
+        "| No. of Cylinders | 6 | 6 | 12 | 12",
+        "| Bore × Stroke (mm) | 155 × 180 | 155 × 180 | 155 × 180 | 155 × 180",
+        "| Rated Speed (min -1 ) | 1,500 | 1,800 | 1,500 | 1,800",
+        "| Total Weight (Gen. Set) (kg) | 5,350 | 5,350 | 8,800 | 8,800",
+        "| Model | AY40L-ST | AY40L-ST | AY40L-ET | AY40L-ET",
+        "| Frequency | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
+        "| Generator | Apparent Output (kVA) | 1,000 | 1,000 | 1,250 | 1,250",
+        "| Rated Output (kWe) | 800 | 800 | 1,000 | 1,000",
+        "| Type | 3-Phase Brushless | 3-Phase Brushless | 3-Phase Brushless | 3-Phase Brushless",
+        "| Voltage (V) | 6,600 (3,300 / 440 / 400 / 220 / 200) | 6,600 (3,300 / 440 / 400 / 220 / 200) | 6,600 (3,300 / 440 / 400 / 220 / 200) | 6,600 (3,300 / 440 / 400 / 220 / 200)",
+        "| No. of Poles (P) | 4 | 4 | 4 | 4",
+        "| Power Factor (%) | 80 (lagging) | 80 (lagging) | 80 (lagging) | 80 (lagging)",
+        "| Diesel Engine | Rated Output (kW) | 883 | 891 | 1,106 | 1,127",
+        "| Type | Vertical, Water-cooled, 4-stroke Diesel | Vertical, Water-cooled, 4-stroke Diesel | Vertical, Water-cooled, 4-stroke Diesel | Vertical, Water-cooled, 4-stroke Diesel",
+        "| No. of Cylinders | 12 | 12 | 12 | 12",
+        "| Bore × Stroke (mm) | 155 × 180 | 155 × 180 | 155 × 180 | 155 × 180",
+        "| Rated Speed (min -1 ) | 1,500 | 1,800 | 1,500 | 1,800",
+        "| Total Weight (Gen. Set) (kg) | 9,300 | 9,300 | 9,350 | 9,350"
+      ]
+    }
+  ]
 }

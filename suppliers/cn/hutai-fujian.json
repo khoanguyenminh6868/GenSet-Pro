@@ -89,9 +89,115 @@
         "354系列 360KW-550KW互泰无刷发电机"
       ],
       "file": "sources/hutai-fujian/1.md"
+    },
+    {
+      "n": 101,
+      "url": "http://hutaifdj.com/products_97/966.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率 Frequency Hz | 50 | 60"
+      ],
+      "file": "sources/hutai-fujian/101.md"
+    },
+    {
+      "n": 102,
+      "url": "http://hutaifdj.com/products_97/964.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率 Frequency Hz | 50 | 60"
+      ],
+      "file": "sources/hutai-fujian/102.md"
+    },
+    {
+      "n": 103,
+      "url": "http://hutaifdj.com/products_97/967.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率 Frequency Hz | 50 | 60"
+      ],
+      "file": "sources/hutai-fujian/103.md"
+    },
+    {
+      "n": 104,
+      "url": "http://hutaifdj.com/products_97/965.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率 Frequency Hz | 50 | 60"
+      ],
+      "file": "sources/hutai-fujian/104.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "7-8KW家用便捷移动式互泰柴油发电机工地道路抢修应急小型柴油发电机-互泰发电机",
+      "header": [],
+      "rows": [
+        "| 频率 Frequency Hz | 50 | 60",
+        "| 持续功率 Cont.AC output kW | 5.7 | 6",
+        "| 备用功率 Max.AC output kW | 6 | 6.5",
+        "| 发电机 Generator | 电机型式 Type | 自励、恒压、旋转磁场、两极电机 Self excitation、constant voltage、field rotating、2 pole generator",
+        "| 发动机 Engine | 动力类型 Type | 单缸、V型/直列、四冲程、风冷柴油机 V-twin/L-single、4-cycle、air-cooled diesel engine",
+        "| 额定转速 Engine speed rpm | 3000 | 3600",
+        "| 额定功率 Rated output kW | 7.1 | 7.7",
+        "| 发电机组 Unit | 油箱容积 Fuel tank capacity L | 15",
+        "| 燃油消耗 Fuel consunmption L/h | ≤1.55 | ≤1.75"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "3KW小型互泰风冷柴油发电机组 便捷式家用停电应急户外电源-互泰发电机",
+      "header": [],
+      "rows": [
+        "| 频率 Frequency Hz | 50 | 60",
+        "| 持续功率 Cont.AC output kW | 3.0 | 3.7",
+        "| 备用功率 Max.AC output kW | 3.7 | 4.0",
+        "| 发电机 Generator | 电机型式 Type | 自励、恒压、旋转磁场、两极电机 Self excitation、constant voltage、field rotating、2 pole generator",
+        "| 发动机 Engine | 动力类型 Type | 单缸、V型/直列、四冲程、风冷柴油机 V-twin/L-single、4-cycle、air-cooled diesel engine",
+        "| 额定转速 Engine speed rpm | 3000 | 3600",
+        "| 额定功率 Rated output kW | 4.1 | 4.4",
+        "| 发电机组 Unit | 油箱容积 Fuel tank capacity L | 12.5",
+        "| 燃油消耗 Fuel consunmption L/h | ≤1.0 | ≤1.2"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "9-10KW静音柴油发电机福建互泰小功率发电机停电应急备用-互泰发电机",
+      "header": [],
+      "rows": [
+        "| 频率 Frequency Hz | 50 | 60",
+        "| 持续功率 Cont.AC output kW | 8.0 | 8.5",
+        "| 备用功率 Max.AC output kW | 8.5 | 9.0",
+        "| 发电机 Generator | 电机型式 Type | 自励、恒压、旋转磁场、两极电机 Self excitation、constant voltage、field rotating、2 pole generator",
+        "| 发动机 Engine | 动力类型 Type | 单缸、V型/直列、四冲程、风冷柴油机 V-twin/L-single、4-cycle、air-cooled diesel engine",
+        "| 额定转速 Engine speed rpm | 3000 | 3600",
+        "| 额定功率 Rated output kW | 9.2 | 9.7",
+        "| 发电机组 Unit | 油箱容积 Fuel tank capacity L | 15",
+        "| 燃油消耗 Fuel consunmption L/h | ≤1.8 | ≤1.95"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "5-6KW风冷柴油发电机组220/380v双电压移动式备用电源小功率-互泰发电机",
+      "header": [],
+      "rows": [
+        "| 频率 Frequency Hz | 50 | 60",
+        "| 持续功率 Cont.AC output kW | 4.8 | 5.2",
+        "| 备用功率 Max.AC output kW | 5.5 | 6.0",
+        "| 发电机 Generator | 电机型式 Type | 自励、恒压、旋转磁场、两极电机 Self excitation、constant voltage、field rotating、2 pole generator",
+        "| 发动机 Engine | 动力类型 Type | 单缸、V型/直列、四冲程、风冷柴油机 V-twin/L-single、4-cycle、air-cooled diesel engine",
+        "| 额定转速 Engine speed rpm | 3000 | 3600",
+        "| 额定功率 Rated output kW | 7.0 | 7.2",
+        "| 发电机组 Unit | 油箱容积 Fuel tank capacity L | 15",
+        "| 燃油消耗 Fuel consunmption L/h | ≤1.25 | ≤1.4"
+      ]
+    }
+  ]
 }

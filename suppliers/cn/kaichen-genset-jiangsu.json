@@ -62,9 +62,149 @@
         "200KW静音柴油发电机"
       ],
       "file": "sources/kaichen-genset-jiangsu/1.md"
+    },
+    {
+      "n": 101,
+      "url": "http://www.shuibengfx.com/Products-38737575.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率[Hz] | 50"
+      ],
+      "file": "sources/kaichen-genset-jiangsu/101.md"
+    },
+    {
+      "n": 102,
+      "url": "http://www.shuibengfx.com/Products-38737582.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率[Hz] | 50"
+      ],
+      "file": "sources/kaichen-genset-jiangsu/102.md"
+    },
+    {
+      "n": 103,
+      "url": "http://www.shuibengfx.com/Products-38737587.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率[Hz] | 50"
+      ],
+      "file": "sources/kaichen-genset-jiangsu/103.md"
+    },
+    {
+      "n": 106,
+      "url": "http://www.shuibengfx.com/Products-38737629.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率[Hz] | 50"
+      ],
+      "file": "sources/kaichen-genset-jiangsu/106.md"
+    },
+    {
+      "n": 108,
+      "url": "http://www.shuibengfx.com/Products-38737637.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率[Hz] | 50"
+      ],
+      "file": "sources/kaichen-genset-jiangsu/108.md"
+    },
+    {
+      "n": 110,
+      "url": "http://www.shuibengfx.com/Products-38737683.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 频率[Hz] | 50"
+      ],
+      "file": "sources/kaichen-genset-jiangsu/110.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "3KW小型柴油发电机ECP3500E-江苏凯宸发电机有限公司",
+      "header": [],
+      "rows": [
+        "| 频率[Hz] | 50",
+        "| 电压[V] | 220/380",
+        "| 额定功率[KW] | 3",
+        "| 转速[rpm] | 3600",
+        "| 发动机功率kW] | 3.9",
+        "| 油耗[g/kwh] | 275"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "5KW小型柴油发电机ECP5500E-江苏凯宸发电机有限公司",
+      "header": [],
+      "rows": [
+        "| 频率[Hz] | 50",
+        "| 电压[V] | 230/400",
+        "| 额定功率[KW] | 5.0/6.3",
+        "| 转速[rpm] | 3600",
+        "| 发动机功率kW] | 5.8",
+        "| 油耗[g/kwh] | 275"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "6KW小型柴油发电机ECP6800E-江苏凯宸发电机有限公司",
+      "header": [],
+      "rows": [
+        "| 频率[Hz] | 50",
+        "| 电压[V] | 230/400",
+        "| 额定功率[KW] | 6.0/7.5",
+        "| 转速[rpm] | 3600",
+        "| 发动机功率kW] | 7.6",
+        "| 油耗[g/kwh] | 275"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "7KW小型柴油发电机ECP7800E-江苏凯宸发电机有限公司",
+      "header": [],
+      "rows": [
+        "| 频率[Hz] | 50",
+        "| 电压[V] | 230/400",
+        "| 额定功率[KW] | 7.0/8.8",
+        "| 转速[rpm] | 3600",
+        "| 发动机功率kW] | 8.5",
+        "| 油耗[g/kwh] | 260"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "8KW小型柴油发电机ECP9500T-江苏凯宸发电机有限公司",
+      "header": [],
+      "rows": [
+        "| 频率[Hz] | 50",
+        "| 电压[V] | 230/400",
+        "| 额定功率[KW] | 8.0/10.0",
+        "| 转速[rpm] | 3600",
+        "| 发动机功率kW] | 10.2",
+        "| 油耗[g/kwh] | 260"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "10KW小型柴油发电机ECP11000T-江苏凯宸发电机有限公司",
+      "header": [],
+      "rows": [
+        "| 频率[Hz] | 50",
+        "| 电压[V] | 230/400",
+        "| 额定功率[KW] | 10",
+        "| 转速[rpm] | 3600",
+        "| 发动机功率kW] | 12",
+        "| 油耗[g/kwh] | 280"
+      ]
+    }
+  ]
 }

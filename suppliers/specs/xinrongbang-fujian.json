@@ -1,0 +1,17 @@
+[
+ {
+  "n": 101,
+  "url": "http://www.fujian-motor.com/show.asp?id=36",
+  "title": "FUJIAN NEW RONGBANG MOTOR MACHINERY Production generators, generators sets, pumps, motors Series",
+  "header": [],
+  "rows": [
+   "| Engine Rated Speed | rpm | 1500 | 1800",
+   "| Generator set Frequency | Hz | 50 | 60",
+   "| Engine Standby Power (LTP) | kW | 26,4 | 30,8",
+   "| Engine Prime Power (PRP) | kW | 24 | 28",
+   "| Cooling Fan Power Consumption (kW) | kW | 1,5 | 2",
+   "| Engine Net Standby Output (LTP) | kW | 24,4 | 28,2",
+   "| Engine Net Prime Output (PRP) | kW | 22,2 | 25,7"
+  ]
+ }
+]

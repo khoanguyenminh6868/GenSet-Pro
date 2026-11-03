@@ -61,9 +61,161 @@
         "300kW甲醇发电机组"
       ],
       "file": "sources/xinshengan-shandong/1.md"
+    },
+    {
+      "n": 101,
+      "url": "http://www.xsasd.com/product_1/1.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 发电机型号 | XSA-300"
+      ],
+      "file": "sources/xinshengan-shandong/101.md"
+    },
+    {
+      "n": 102,
+      "url": "http://www.xsasd.com/product/217.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 发电机型号 | XSA-200"
+      ],
+      "file": "sources/xinshengan-shandong/102.md"
+    },
+    {
+      "n": 104,
+      "url": "http://www.xsasd.com/product/45.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 机组型号 | XSA300GFNG"
+      ],
+      "file": "sources/xinshengan-shandong/104.md"
+    },
+    {
+      "n": 105,
+      "url": "http://www.xsasd.com/product/70.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 机组型号 | XSA300GF"
+      ],
+      "file": "sources/xinshengan-shandong/105.md"
+    },
+    {
+      "n": 106,
+      "url": "http://www.xsasd.com/product/153.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 机组型号 | XSA1200GF"
+      ],
+      "file": "sources/xinshengan-shandong/106.md"
+    },
+    {
+      "n": 107,
+      "url": "http://www.xsasd.com/product/216.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 机组型号 | XSA300GF"
+      ],
+      "file": "sources/xinshengan-shandong/107.md"
+    },
+    {
+      "n": 108,
+      "url": "http://www.xsasd.com/product/224.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 机组型号 | XSA40GF-TC"
+      ],
+      "file": "sources/xinshengan-shandong/108.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "300kW燃气发电机组-新盛安动力科技（山东）有限公司",
+      "header": [],
+      "rows": [
+        "| 发电机型号 | XSA-300",
+        "| 额定功率（ kW/KVA） | 300/375",
+        "| 额定功率因数（ cos&phi;） | 0.8（滞后性）",
+        "| 油耗率（ g/kW.h） | ≤0.85"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "新盛安潍柴燃气发电机组-新盛安动力科技（山东）有限公司",
+      "header": [],
+      "rows": [
+        "| 发电机型号 | XSA-200",
+        "| 额定功率（ kW/KVA） | 200/250",
+        "| 额定功率因数（ cos&phi;） | 0.8（滞后性）",
+        "| 油耗率（ g/kW.h） | ≤0.85"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "300kW燃气发电机组-新盛安动力科技（山东）有限公司",
+      "header": [],
+      "rows": [
+        "| 机组型号 | XSA300GFNG",
+        "| 发动机型号 | 12M26D605E300NG",
+        "| 常用功率(KW) | 300",
+        "| 备用功率(KW) | 330"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "300kW柴油发电机组-新盛安动力科技（山东）有限公司",
+      "header": [],
+      "rows": [
+        "| 机组型号 | XSA300GF",
+        "| 发动机型号 | WD12D330",
+        "| 常用功率(KW) | 300",
+        "| 备用功率(KW) | 330"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "康明斯1200KW柴油发电机组 重庆康明斯发动机 新盛安发电机1200KW-新盛安动力科技（山东）有限公司",
+      "header": [],
+      "rows": [
+        "| 机组型号 | XSA1200GF",
+        "| 发动机型号 | KTA50-GS8",
+        "| 常用功率(kW) | 1200",
+        "| 备用功率(kW) | 1320",
+        "| 重量(kg) | 12000"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "柴油发电机组-新盛安动力科技（山东）有限公司",
+      "header": [],
+      "rows": [
+        "| 机组型号 | XSA300GF",
+        "| 发动机型号 | WD12D330",
+        "| 常用功率(kW) | 300",
+        "| 备用功率(kW) | 330",
+        "| 重量(kg) | 3000"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "拖车发电机组-新盛安动力科技（山东）有限公司",
+      "header": [],
+      "rows": [
+        "| 机组型号 | XSA40GF-TC",
+        "| 发动机型号 | WP4.1D66E200",
+        "| 常用功率(kW) | 40",
+        "| 备用功率(kW) | 44",
+        "| 重量(kg) | 1100"
+      ]
+    }
+  ]
 }

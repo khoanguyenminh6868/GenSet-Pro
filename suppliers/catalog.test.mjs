@@ -137,3 +137,14 @@ test("header tweaks: a shifted row is not taken as lined up; open and silent col
   const s2 = Object.fromEntries(C.build([gtl]).engines[0].uses[0].specs.map((s) => [s.key, s.value]));
   assert.deepEqual([s2.dims, s2.weight], ["5000*2060*2500", "9400"]);
 });
+
+test("a label table listing gensets one after the other is one genset per 'Genset Model' line; 油机 / 动力型号 name the engine", () => {
+  const sm = { id: "s", country: "CN", specTables: [{ n: 101, title: "Supermaly", header: [], rows: [
+    "| Genset Model：SC700GFK", "| Power：625KVA", "| Model: KTAA19-G6A", "| Power: 762.5KVA", "| Model: HC534FS",
+    "| Genset Model：SC85GFK", "| Power：75KVA", "| Model: 4BTA3.9-G11", "| Model: UC224F"] }] };
+  const eng = C.fromSupplier(sm).filter((x) => x.kind === "engine").map((x) => [x.genset, x.model, x.other, x.power?.rated?.kVA]);
+  assert.deepEqual(eng, [["SC700GFK", "KTAA19-G6A", "HC534FS", 625], ["SC85GFK", "4BTA3.9-G11", "UC224F", 75]]);
+  const kp = { id: "k", country: "CN", specTables: [{ n: 101, title: "康明斯", header: [], rows: [
+    "| 机组型号 | | KPC1375 | KPC1500", "| 额定功率 | KW/KVA | 1000/1250 | 1100/1375", "| 动力型号 | | KTA50-G3 | KTA50-G8"] }] };
+  assert.deepEqual(C.fromSupplier(kp).filter((x) => x.kind === "engine").map((x) => x.model), ["KTA50-G3", "KTA50-G8"]);
+});

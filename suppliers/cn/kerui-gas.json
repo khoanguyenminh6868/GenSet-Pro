@@ -61,9 +61,33 @@
         "沼气发电机组采用国际上比较先进的燃气外部混合的方式，运用先进电控技术和稀薄燃烧控制策略"
       ],
       "file": "sources/kerui-gas/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.keruigroup.com/sys-pd/55.html",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 机组型号 | 1000GF-Z | 1000GF9-Z"
+      ],
+      "file": "sources/kerui-gas/101.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "沼气发电机组 - 科瑞油气",
+      "header": [],
+      "rows": [
+        "| 机组型号 | 1000GF-Z | 1000GF9-Z",
+        "| 额定功率（ kW ） | 1000 | 1000",
+        "| 额定电压（ V ） | 400 | 10500",
+        "| 机组频率（ Hz ） | 50 | 50",
+        "| 外形尺寸（ mm×mm×mm ） | 7600×2838×2675 | 8500×2838×2675"
+      ]
+    }
+  ]
 }
