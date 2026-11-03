@@ -465,3 +465,25 @@ test("modelFacts: a genset maker's own datasheet of an alternator it makes gives
   assert.deepEqual(facts.filter((f) => f.n === 1001).map((f) => f.key).sort(), ["insul", "ip"]);
   assert.equal(facts.filter((f) => f.n === 1002).length, 0);
 });
+
+test("check: a grouped requirement's function the agent left out makes the group unclear, not met", () => {
+  const line = "| D-1 | 275 | 220 | WP10D264E200 | XY274K |";
+  const list = [{ id: "d", country: "CN", specTables: [{ n: 101, title: "Gensets 50Hz", header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows: [line] }] }];
+  const src = { kind: "catalog", supplierId: "d", n: 101, line };
+  const r = { requirements: [{ item: "Bảo vệ", part: "genset", parts: [{ item: "Quá áp" }, { item: "Thấp áp" }] }],
+    configs: [{ rank: 1, engine: { model: "WP10D264E200", src }, checks: [{ item: "Bảo vệ", part: "genset", parts: [{ item: "Quá áp", status: "met", offered: "275 kVA", sourceQuote: line }] }] }] };
+  const g = check(r, { hsmtText: "x", suppliers: list, readWeb: () => null, origin: "all" }).result.configs[0].checks[0];
+  assert.equal(g.status, "unclear");
+  assert.deepEqual(g.parts.map((p) => [p.item, p.status]), [["Quá áp", "met"], ["Thấp áp", "unclear"]]);
+});
+
+test("check: a Prime power check offering the row's standby figures is not met", () => {
+  const line = "| D-1 | 300 | 240 | 275 | 220 | WP10D264E200 | XY274K |";
+  const list = [{ id: "d", country: "CN", specTables: [{ n: 101, title: "Gensets 50Hz", header: ["| Model | Standby kVA | Standby kW | Prime kVA | Prime kW | Engine | Alternator |"], rows: [line] }] }];
+  const src = { kind: "catalog", supplierId: "d", n: 101, line };
+  const res = (offered) => check({ requirements: [], configs: [{ rank: 1, engine: { model: "WP10D264E200", src }, genset: { model: "D-1", src },
+    checks: [{ item: "Công suất liên tục (Prime)", requirement: "≥ 280 kVA", part: "genset", status: "met", offered, sourceQuote: line }] }] }, { hsmtText: "x", suppliers: list, readWeb: () => null, origin: "all" }).result.configs[0].checks[0].status;
+  assert.equal(C.build(list).engines[0].uses[0].power.prime.kVA, 275);
+  assert.equal(res("Prime 300 kVA / 240 kW"), "unclear");
+  assert.equal(res("Prime 275 kVA / 220 kW"), "met");
+});
