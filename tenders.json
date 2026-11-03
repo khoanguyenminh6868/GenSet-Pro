@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-02T07:00:12.762Z",
+ "fetchedAt": "2026-11-03T08:25:15.020Z",
  "source": "muasamcong",
  "tenders": [
   {
@@ -222,26 +222,6 @@
    "estimatedPrice": 13148411000,
    "status": "open",
    "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=d643199a-97df-48dd-a2fe-e331e8b9fa3f&notifyId=d643199a-97df-48dd-a2fe-e331e8b9fa3f&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600587429&planNo=PL2400225529&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=DTRR"
-  },
-  {
-   "id": "ef0aab6d-7006-461d-846d-25796b2df18c",
-   "notifyNo": "IB2600588204",
-   "notifyVersion": "00",
-   "planNo": "PL2600366957",
-   "bidName": "Cung cấp và lắp đặt máy phát điện",
-   "investorName": "Viễn thông Quảng Ngãi - Chi nhánh Tập đoàn Bưu chính Viễn thông Việt Nam",
-   "location": "Tỉnh Quảng Ngãi",
-   "field": "HH",
-   "bidForm": "DTRR",
-   "bidMode": "1_MTHS",
-   "processApply": "LDT",
-   "isInternet": true,
-   "publicDate": "2026-10-23T08:58:58.370Z",
-   "bidCloseDate": "2026-11-02T09:45:00.000Z",
-   "bidOpenDate": "2026-11-02T09:45:00.000Z",
-   "estimatedPrice": 5898647448,
-   "status": "open",
-   "sourceUrl": "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?p_p_id=egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_egpportalcontractorselectionv2_WAR_egpportalcontractorselectionv2_render=detail-v2&type=es-notify-contractor&stepCode=notify-contractor-step-1-tbmt&id=ef0aab6d-7006-461d-846d-25796b2df18c&notifyId=ef0aab6d-7006-461d-846d-25796b2df18c&inputResultId=undefined&bidOpenId=undefined&techReqId=undefined&bidPreNotifyResultId=undefined&bidPreOpenId=undefined&processApply=LDT&bidMode=1_MTHS&notifyNo=IB2600588204&planNo=PL2600366957&pno=undefined&step=tbmt&isInternet=1&caseKHKQ=undefined&bidForm=DTRR"
   },
   {
    "id": "22a264cd-a567-4e8d-b670-79901a6b573e",
