@@ -3,7 +3,7 @@
 // candidate rows written to catalog.md, the requirements kept between runs and the check of Tìm NCC configurations.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins, powerMins } from "./config-bot.mjs";
+import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins, powerMins, capacity } from "./config-bot.mjs";
 import { makerSheet, controllerSheet } from "./maker-datasheets.mjs";
 
 const C = globalThis.GenbidCatalog;
@@ -508,7 +508,9 @@ test("check hints: an unclear controller function names its datasheet line; the 
 test("engine minimums of the HSMT: read once each; an engine a source shows below them ranks lower", () => {
   const mins = (t) => { const { minDisp, minCyl } = engineMins(t); return { minDisp, minCyl }; };
   assert.deepEqual(mins("Dung tích ước tính ≥ 615 lít\nDung tích xy lanh ≥ 11,05 L\nSố xy lanh: ≥ 6 xy lanh\nTiêu hao ≤ 90 L/h"), { minDisp: 11.05, minCyl: 6 });
-  assert.deepEqual(mins("Dung tích xi lanh: 3.9L\n6 xilanh thẳng hàng"), { minDisp: null, minCyl: null });
+  // A bare figure is the least the HSMT accepts (Khoa, 2026-11-03); the label may sit on the line above.
+  assert.deepEqual(mins("Dung tích xi lanh: 3.9L\n6 xilanh thẳng hàng"), { minDisp: 3.9, minCyl: 6 });
+  assert.deepEqual(mins("Số xylanh, kiểu xếp\n6 xy lanh, xếp trên 1 đường thẳng\nDung tích xi lanh\n11.051 L\nDung tích bình nhiên liệu\n≥ 50 lít"), { minDisp: 11.051, minCyl: 6 });
   assert.deepEqual(mins("Dung tích tối thiểu 12 L\nDung tích tối thiểu 3,9 L"), { minDisp: null, minCyl: null });
   const t = (title, header, row) => [{ n: 101, title, header: [header], rows: [row] }];
   const list = [
@@ -556,4 +558,51 @@ test("controller datasheets: 'DSE6010/20 MKII' is two models; 'HGM6110' takes th
   assert.ok(dse.length > 0 && dse.every((f) => f.version === "DSE6020 MKII"));
   const hgm = factsFor(facts, "controller", "HGM6110");
   assert.ok(hgm.some((f) => /Event log/.test(f.line)) && hgm.every((f) => f.version === "HGM6110N"));
+});
+
+test("figures as Vietnamese writes them: '1.600 kW' is 1600, '12 ± 0,5 kVA' is 12 (2026-11-03 regression run)", () => {
+  assert.deepEqual(powerMins("Công suất liên tục (Prime) ≥ 1.600 kW").minPrime, { kW: 1600 });
+  assert.deepEqual(powerMins("Công suất liên tục ≥ 400 kVA / 320 kW").minPrime, { kVA: 400, kW: 320 });
+  assert.deepEqual(capacity(["39 máy, công suất liên tục ≥ 12 ± 0,5 KVA (100% tải)"]), { value: 12, unit: "kVA" });
+  assert.deepEqual(capacity(["6 x 8,5 +/- 0,5 kVA (1 pha)"]), { value: 8.5, unit: "kVA" });
+  assert.deepEqual(capacity(["2 x 1.600 kW liên tục"]), { value: 1600, unit: "kW" });
+});
+
+test("'≥ 12 ± 0,5 kVA' continuous asks at least 11.5 kVA prime", () => {
+  assert.deepEqual(powerMins("công suất liên tục ≥ 12 ± 0,5 KVA (100% tải)").minPrime, { kVA: 11.5 });
+});
+
+test("the engine's own continuous output is not the genset's; close genset and alternator figures give the lowest", () => {
+  const t = "Công suất liên tục (100 % tải)\n≥ 12 ± 0,5 KVA\n4\nCông suất dự phòng\n≥ 13,2KVA.\n6\nCông suất liên tục của động cơ\n≥ 15,5KW.\n5\nCông suất liên tục\n≥ 12KVA.";
+  assert.deepEqual(powerMins(t).minPrime, { kVA: 11.5 });
+  assert.equal(powerMins("Máy 1: Công suất liên tục ≥ 250 kVA\nMáy 2: Công suất liên tục ≥ 30 kVA").minPrime, null);
+});
+
+test("an engine section in kW under a genset in kVA, a maximum, or a second smaller genset are not the genset prime minimum", () => {
+  assert.deepEqual(powerMins("Công suất định mức\n≥ 12.0 kVA\nLoại động cơ\n4 kỳ làm mát bằng nước\n2\nCông suất liên tục\n≥ 15,5 kW.\n3\nCông suất tối đa\n≥ 17 KW").minPrime, { kVA: 12 });
+  assert.equal(powerMins("- Công suất liên tục: 12.5kVA/10kW\n* Đầu phát\n- Công suất liên tục: 13kVA\n- Công suất liên tục: 5kW").minPrime, null);
+  assert.deepEqual(powerMins("Công suất liên tục (Prime) ≥ 1.600 kW").minPrime, { kW: 1600 });
+});
+
+test("ranking counts each controller function of a group: 26 of 30 met before 4 of 30", () => {
+  const parts = (met) => Array.from({ length: 30 }, (_, i) => ({ item: `F${i}`, status: i < met ? "met" : "unclear" }));
+  const cfg = (model, met, extra) => ({ engine: { model: "E" }, controller: { model }, suppliers: [{ supplierId: "s" }],
+    checks: [{ item: "Chức năng", part: "controller", status: "unclear", parts: parts(met) }, { item: "Công suất", part: "genset", status: extra }] });
+  const r = rankConfigs({ requirements: [], configs: [cfg("DSE7320", 4, "met"), cfg("HGM6110NC", 26, "unclear")] });
+  assert.deepEqual(r.configs.map((c) => c.controller.model), ["HGM6110NC", "DSE7320"]);
+});
+
+test("a controller written without its series ('6120' by SmartGen, 'Smartgen 6120') takes the HGM6120 datasheet", async () => {
+  const { ctlModelOf } = await import("./config-bot.mjs");
+  assert.equal(ctlModelOf({ model: "6120", make: "SmartGen" }), "HGM6120");
+  assert.equal(ctlModelOf({ model: "Smartgen 6120" }), "HGM6120");
+  assert.equal(ctlModelOf({ model: "7320", make: "Deep Sea" }), "DSE7320");
+  assert.equal(ctlModelOf({ model: "RUIFEN6120" }), "RUIFEN6120");
+});
+
+test("a row number under a label is not its figure; a tank or coolant volume is not the displacement", () => {
+  const mins = (t) => { const { minDisp, minCyl } = engineMins(t); return { minDisp, minCyl }; };
+  assert.deepEqual(mins("Số xy lanh: Nêu rõ\n7\n\nTốc độ quay: 1500 vòng / phút"), { minDisp: null, minCyl: null });
+  assert.deepEqual(mins("9    Bình nhiên liệu    Bằng thép, dung tích ≥ 25 lít\n1.7 Hệ thống làm mát Dung tích chất làm mát: Cho động cơ 23,1 Lít"), { minDisp: null, minCyl: null });
+  assert.deepEqual(mins("Số xilanh \n≥ 1 \nX"), { minDisp: null, minCyl: 1 });
 });

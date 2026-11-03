@@ -34,6 +34,10 @@
   ];
   // Mã đầu phát của các dòng phổ biến: dùng để biết ô nào là đầu phát khi bảng có cả động cơ lẫn đầu phát.
   const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z])/i;
+  // Series codes of Chinese alternator makers (Nianfeng NFS, Bobig BW, Jet-Power JET, Wintpower WT): such a model is not
+  // the Stamford that the column title or page title of the table names ("Stamford UCDI274J" rows above, "with stamford
+  // alternator" title): 2026-11-03 regression run showed "NIANFENG NFS5-G (Stamford)", "BW-404B (Stamford)".
+  const CN_ALT_CODE = /^(NIANFENG|NFS?\d|BW-?\d|JET\d|WT\d)/i;
   const CONTROLLER = /^(DSE|HGM|IL-|IG-|AMF|COMAP|INTELI|DEEP\s?SEA|SMARTGEN|GU\d|MRS|MEBAY|LXC|BE\d{3})/i;
   // "油机型号" (oil engine model, comler-power) and "动力型号" / "配套动力" (power unit model, kanpor-fuan) name the engine too.
   const ENGINE_LBL = /engine|发动机|柴油机|引擎|motor\s*model|油机|动力型号|配套动力/i;
@@ -403,12 +407,13 @@
       const hEng = brandIn(headerText, ENGINE_BRANDS), hAlt = brandIn(headerText, ALT_BRANDS);
       const tEng = brandIn(titleHead, ENGINE_BRANDS), tAlt = brandIn(titleHead, ALT_BRANDS);
       const base = { supplierId: s.id, n: t.n, table: ti, title };
-      const makesFor = (kind, rowText, brandCell) => {
+      const makesFor = (kind, rowText, brandCell, model = "") => {
         const list = kind === "engine" ? ENGINE_BRANDS : ALT_BRANDS, makes = [];
         const cell = brandCell ? brandIn(brandCell, list) : [];
         const row = brandIn(rowText, list), hdr = kind === "engine" ? hEng : hAlt, ttl = kind === "engine" ? tEng : tAlt;
         if (cell.length === 1) addMake(makes, cell[0], "dòng bảng");
         else if (row.length === 1) addMake(makes, row[0], "dòng bảng");
+        else if (kind === "alternator" && CN_ALT_CODE.test(String(model).trim())) return makes;
         else if (hdr.length === 1) addMake(makes, hdr[0], "tiêu đề cột");
         else if (ttl.length === 1) addMake(makes, ttl[0], "tên trang");
         else if (s.role === (kind === "engine" ? "engine_maker" : "alternator_maker")) { const o = ownBrand(list); if (o.length === 1) addMake(makes, o[0], "hãng sản xuất"); }
@@ -425,7 +430,7 @@
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
             out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
           if (c.alternator && isCode(c.alternator.replace(/^[a-z-]+\s+(?=\S*\d)/i, "")))
-            out.push({ ...base, kind: "alternator", model: c.alternator.replace(/^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga)\s+/i, ""), makes: makesFor("alternator", c.alternator + " " + (c.altBrand || ""), c.altBrand), genset: c.genset || null, power, freq: tFreq, other: c.engine || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
+            out.push({ ...base, kind: "alternator", model: c.alternator.replace(/^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga)\s+/i, ""), makes: makesFor("alternator", c.alternator + " " + (c.altBrand || ""), c.altBrand, c.alternator), genset: c.genset || null, power, freq: tFreq, other: c.engine || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
         }
         return;
       }
@@ -456,7 +461,7 @@
         const power = engineTable ? null : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title);
         const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: rowSpecs(t, cells, { ei, ai, gi, power }) };
         if (ei >= 0) out.push({ ...common, kind: "engine", model: cells[ei], makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
-        if (ai >= 0) out.push({ ...common, kind: "alternator", model: cells[ai], makes: makesFor("alternator", rowText, null), other: ei >= 0 ? cells[ei] : null });
+        if (ai >= 0) out.push({ ...common, kind: "alternator", model: cells[ai], makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
     });
     return out;
@@ -663,7 +668,10 @@
     return [...new Set([...names, ...FOREIGN_MODEL.filter(([re]) => re.test(m)).map(([, n]) => n)].filter((n) => FOREIGN_ENGINE.has(n)).map((n) => ENGINE_COUNTRY[n]))];
   }
   // Whether an engine (catalog entry, or one named in a text) is of a make from a country of the group ("g7" / "g20").
-  const groupOf = (e, g) => engineCountries((e.makes || []).map((m) => m.name), e.model).some((c) => COUNTRY_GROUP[g].includes(c));
+  // A Chinese make the sources name is a licence build ("6M33D670E200 | WEICHAI (China)", a Baudouin design): not of the
+  // group, as config-prompt.md says ("kể cả loại sản xuất theo giấy phép"); for Xuất xứ Trung Quốc it stays foreign.
+  const cnMade = (names) => names.some((n) => !FOREIGN_ENGINE.has(n));
+  const groupOf = (e, g) => { const names = (e.makes || []).map((m) => m.name); return !cnMade(names) && engineCountries(names, e.model).some((c) => COUNTRY_GROUP[g].includes(c)); };
   const groupIn = (text, model, g) => engineCountries(brandIn(String(text || ""), ENGINE_BRANDS), model).some((c) => COUNTRY_GROUP[g].includes(c));
 
   const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, COUNTRY_GROUP, CONTROLLERS };

@@ -91,6 +91,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    - `not_met` when the source states a value that does not;
    - `unclear` when the source does not say. Never guess a value, never take it from the model name, never assume
      prime when the row does not say prime (prime and standby are ratings, not a conversion).
+   A bare figure of the HSMT (no ≥ / ≤ / "tối thiểu" / "tối đa", e.g. "Dung tích xi lanh 11.051 L") (Khoa, 2026-11-03):
+   for a figure where more is better (power, displacement, cylinders, tank, battery Ah, insulation class, IP, hours...)
+   it is the least accepted: a value at or above it is `met`, below it `not_met`. For a figure with no better side (bore,
+   stroke, dimensions, weight, compression ratio, a speed or voltage of a design) a different value is `unclear`, with
+   both values in `note`, never `not_met`; the same value is `met`.
    An engine or alternator figure (cylinders, displacement, bore, governor, aspiration, emission, insulation, IP, AVR...)
    that the configuration's own row does not give may be taken from "Thông số theo model" of that same model: copy its
    `factSrc` into the check, set `part` to `engine` or `alternator`, and quote `sourceQuote` from that factSrc line.
@@ -117,7 +122,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    whole line, word for word) } into the check. A function (AMF, paralleling, RS485, event log...) no line states is
    `unclear`, never assumed from the model name. When the heading says the datasheet is of another generation (the
    supplier writes DSE7320, the datasheet is DSE7320 MKII), the check may be `met` and the code adds that the
-   generation is to be confirmed.
+   generation is to be confirmed. A controller the source writes without its series ("Smartgen 6120", "SmartGen 6110
+   automatic control module") is the model catalog.md shows after "bộ điều khiển trong dòng" / "bộ điều khiển nhà cung
+   cấp chào" (HGM6120, HGM6110): keep `model` as the source writes it, and its datasheet in controllers.md counts.
    When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
    (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
    Keep at most 6 configurations, best first: fewest `not_met` on the engine and the controller, then on the
