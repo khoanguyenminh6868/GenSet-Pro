@@ -3,7 +3,7 @@
 // candidate rows written to catalog.md, the requirements kept between runs and the check of Tìm NCC configurations.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER } from "./config-bot.mjs";
+import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers } from "./config-bot.mjs";
 import { makerSheet, controllerSheet } from "./maker-datasheets.mjs";
 
 const C = globalThis.GenbidCatalog;
@@ -184,6 +184,19 @@ test("candidate rows: an engine whose sources name two makes still counts as the
   const { top } = candidates(cat, { value: 250, unit: "kVA" }, hintsOf("Chương V. Yêu cầu kỹ thuật\nĐộng cơ Perkins, 50 Hz"), { suppliers: list });
   assert.equal(top[0].e.model, "1506A-E88TAG3");
   assert.match(top[0].why.join(" "), /hãng động cơ Perkins/);
+});
+
+test("candidate rows, Xuất xứ Trung Quốc: a Chinese make before a foreign engine with more figures; a make the HSMT names still first", () => {
+  const t = (title, row) => [{ n: 101, title, header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows: [row] }];
+  const list = [
+    { id: "c", country: "CN", confidence: "high", controllers: [{ brand: "Deep Sea", model: "DSE7320", text: "DSE7320", line: "DSE7320", src: [3001] }], specTables: t("Cummins gensets 50Hz", "| C-1 | 275 | 220 | QSZ13-G3 | HCI444ES |") },
+    { id: "w", country: "CN", confidence: "low", specTables: t("Weichai gensets 50Hz", "| W-1 | 275 | 220 | WP10D264E200 | XY274K |") },
+  ];
+  const cat = C.build(list), cn = cnSuppliers(list), cap = { value: 250, unit: "kVA" };
+  const order = (text, origin) => candidates({ ...cat, engines: byOrigin(cat.engines, origin, cn) }, cap, hintsOf(text), { suppliers: list, origin, cn }).top.map((r) => r.u.supplierId);
+  assert.deepEqual(order("Chương V. Yêu cầu kỹ thuật\n50 Hz", "cn"), ["w", "c"]);
+  assert.deepEqual(order("Chương V. Yêu cầu kỹ thuật\n50 Hz", "all"), ["c", "w"]);
+  assert.deepEqual(order("Chương V. Yêu cầu kỹ thuật\nĐộng cơ Cummins, 50 Hz", "cn"), ["c", "w"]);
 });
 
 test("a single-model table: '| Alternator | Control system' is two headings, not the alternator model", () => {

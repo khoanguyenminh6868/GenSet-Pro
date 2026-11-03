@@ -287,6 +287,9 @@ export function candidates(cat, cap, hints, { suppliers = [], origin = "all", cn
       if (makeNamed) { score += 300; why.push(`hãng động cơ ${makeNamed} HSMT nêu`); }
       if (ctrlNamed) { score += 200; why.push("có bộ điều khiển hãng HSMT nêu"); }
       if (e.make) score += 60;
+      // Xuất xứ Trung Quốc (Khoa, 2026-11-03): an engine of a Chinese make before a foreign one a supplier in China
+      // offers. Those had more datasheet figures and filled 20 of the 30 rows; the make the HSMT names (300) still wins.
+      if (origin === "cn" && !viaCn) { score += 250; why.push("động cơ hãng Trung Quốc"); }
       if (offers.length) score += 50;
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
@@ -536,7 +539,7 @@ async function prep(key, dir, reqData = {}, given = null) {
     `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`, "",
     reuse ? "## Yêu cầu đã đọc lần trước: requirements.json (HSMT và Yêu cầu khác không đổi) — dùng nguyên danh sách đó, bỏ qua bước 1." : "", "",
     `## Xuất xứ động cơ: ${ORIGIN[origin]}`,
-    origin === "cn" ? `Gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Động cơ hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}, kể cả loại sản xuất theo giấy phép như Dongfeng Cummins, Chongqing Cummins) chỉ được gợi ý khi có nhà cung cấp đặt tại Trung Quốc (quốc gia CN trong catalog.md) chào động cơ đó trong bảng của mình; khi đó "suppliers" chỉ ghi các nhà cung cấp ở Trung Quốc đó. Khi tìm trên internet cũng vậy: hãng nước ngoài chỉ được tính khi trang của một nhà cung cấp ở Trung Quốc chào nó.`
+    origin === "cn" ? `Gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Cấu hình động cơ hãng Trung Quốc đứng trước cấu hình động cơ hãng nước khác (Khoa, 2026-11-03). Động cơ hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}, kể cả loại sản xuất theo giấy phép như Dongfeng Cummins, Chongqing Cummins) chỉ được gợi ý khi có nhà cung cấp đặt tại Trung Quốc (quốc gia CN trong catalog.md) chào động cơ đó trong bảng của mình; khi đó "suppliers" chỉ ghi các nhà cung cấp ở Trung Quốc đó. Khi tìm trên internet cũng vậy: hãng nước ngoài chỉ được tính khi trang của một nhà cung cấp ở Trung Quốc chào nó.`
     : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${origin.toUpperCase()} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...), kể cả loại sản xuất theo giấy phép. Động cơ nguồn không ghi hãng thì không gợi ý.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
     : "Không giới hạn xuất xứ động cơ.", "",
