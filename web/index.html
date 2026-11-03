@@ -353,7 +353,7 @@ details.sec>div{margin-top:10px}
   table.grid td.c-cap .src{display:inline;margin-left:6px}
   table.grid td[colspan]{grid-column:1/-1}
 }
-@media (max-width:640px){table.grid th.h-no,table.grid th.h-name,table.grid th.h-cap,table.grid th.h-loc,.kpi[data-kpi="done"],.kpi[data-kpi="prep"]{display:none}.seg{display:flex;flex-wrap:wrap;overflow:visible;border:0;background:none;gap:6px}.seg button{border:1px solid var(--line)!important;border-radius:8px;background:var(--panel2);padding:6px 10px}.banner svg.wave{width:100%;opacity:.5}.bmeta{margin-left:0}.kpi .kv{font-size:22px}}
+@media (max-width:640px){table.grid th.h-no,table.grid th.h-name,table.grid th.h-cap,table.grid th.h-loc,.kpi.kstat{display:none}.seg{display:flex;flex-wrap:wrap;overflow:visible;border:0;background:none;gap:6px}.seg button{border:1px solid var(--line)!important;border-radius:8px;background:var(--panel2);padding:6px 10px}.banner svg.wave{width:100%;opacity:.5}.bmeta{margin-left:0}.kpi .kv{font-size:22px}}
 </style>
 
 <main>
@@ -1003,9 +1003,23 @@ const REFRESH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const KPIS = [
   { key: "open", l: "Đang mở", s: "gói còn hạn nộp", c: "var(--cyan)", f: (t) => !isClosed(t) && !["dropped", "lost", "won"].includes(stageOf(t)) },
   { key: "soon", l: "Đóng trong 3 ngày", s: "chưa nộp", c: "var(--orange)", f: (t) => { const tl = timeLeft(t.bidCloseDate); return !!tl && tl.urgent && !isCancelled(t) && !["dropped", "lost", "won", "submitted"].includes(stageOf(t)); } },
-  { key: "done", l: "Đã phân tích", s: "", c: "var(--mint)", f: (t) => analysisState(t) === "done" },
-  { key: "prep", l: "Chuẩn bị HSDT", s: "đối chiếu trong từng gói", c: "var(--violet)", f: (t) => tabOf(t) === "preparing" },
 ];
+// Tỉ lệ thắng thầu and Giá thường bỏ in place of Đã phân tích / Chuẩn bị HSDT (Khoa, 2026-11-03): the company's own lots
+// in the history (as on the Nhà thầu screen, which a click opens), hidden on phones. Giá thường bỏ: median of the bid
+// price as a share of the package price.
+function ourStats() {
+  const us = state.loaded.hist ? histIndex().find(bdIsUs) : null;
+  if (!us) return null;
+  const r = us.rows.map((x) => { const p = bdPrice(x.b), base = x.lot.price ?? (x.multi ? null : x.d.estimatedPrice); return p && base ? p / base : 0; }).filter((v) => v > 0 && v <= 2).sort((a, b) => a - b);
+  const median = r.length ? (r.length % 2 ? r[(r.length - 1) / 2] : (r[r.length / 2 - 1] + r[r.length / 2]) / 2) : null;
+  return { id: us.id, wins: us.wins, decided: us.decided, median, n: r.length };
+}
+function statTiles() {
+  const st = ourStats(), pct = (v) => (100 * v).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + "%";
+  const tile = (l, v, sub, c) => h`<div class="kpi kstat" role="button" tabindex="0" data-kstat="${st?.id || ""}" style="--kc:${raw(c)}"><span class="kl">${l}</span><span class="kv">${v}</span><span class="ks">${sub}</span></div>`;
+  return tile("Tỉ lệ thắng thầu", st?.decided ? pct(st.wins / st.decided) : "—", st?.decided ? `trúng ${st.wins} / ${st.decided} gói có kết quả` : state.loaded.hist ? "chưa có gói có kết quả" : "đang tải lịch sử thầu", "var(--mint)")
+    + tile("Giá thường bỏ", st?.median ? pct(st.median) : "—", st?.median ? `giá gói, trung vị ${st.n} lượt dự thầu` : state.loaded.hist ? "chưa có giá dự thầu" : "đang tải lịch sử thầu", "var(--violet)");
+}
 const syncDoneNote = { at: "", base: undefined };
 function renderTop() {
   const f = state.feed;
@@ -1018,11 +1032,10 @@ function renderTop() {
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
   const ready = listReady();
   const items = ready ? allTenders() : [], tenders = items.filter((t) => !isProject(t));
-  const waiting = tenders.filter((t) => ["queued", "running"].includes(analysisState(t))).length;
   const K = KPIS.map((k) => ({ ...k, n: tenders.filter(k.f).length }));
   $("#kpis").innerHTML = K.map((k) => h`<div class="kpi ${state.list === k.key ? "on" : ""}" role="button" tabindex="0" data-kpi="${k.key}" style="--kc:${raw(k.c)}"><span class="kl">${k.l}</span><span class="kv">${k.n}</span>
 
-    ${raw(k.key === "done" && waiting ? h`<button class="ibtn kref" id="runQueueBtn" aria-label="Phân tích ngay các gói đang chờ" title="Phân tích ngay ${waiting} gói đang chờ">${raw(REFRESH_SVG)}</button>` : "")}</div>`).join("");
+    </div>`).join("") + statTiles();
   const counts = Object.fromEntries(TABS.map((s) => [s.key, 0]));
   items.forEach((t) => counts[tabOf(t)]++);
   $("#stageTabs").innerHTML = [["all", "Tất cả", tenders.length],...TABS.map((s) => [s.key, s.label, counts[s.key]])]
@@ -3227,6 +3240,8 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#runQueueBtn")) { e.stopPropagation(); requestAnalysis(queue().map((t) => t._key)); return; }
   const kp = e.target.closest("[data-kpi]");
   if (kp) { openList(kp.dataset.kpi); return; }
+  const ks = e.target.closest("[data-kstat]");
+  if (ks) { openBidders(ks.dataset.kstat || null); return; }
   const ok = e.target.closest("[data-openkey]");
   if (ok) { openDrawer(ok.dataset.openkey); return; }
   if (e.target.id === "goCompare") { $("#ov").hidden = true; openDrawer(e.target.dataset.key, "compare"); return; }
@@ -3420,7 +3435,7 @@ async function refreshAll() {
   } catch { toast("Không cập nhật được, hãy thử lại."); }
   finally { btn.disabled = false; }
 }
-document.addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-kpi]"); if (k && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openList(k.dataset.kpi); } });
+document.addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-kpi]"); if (k && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openList(k.dataset.kpi); } const ks = e.target.closest?.("[data-kstat]"); if (ks && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openBidders(ks.dataset.kstat || null); } });
 
 function renderAll() { renderTop(); renderGrid(); if (state.open) renderDrawer(false); }
 // Bidding closes while the page is open: once a minute, move tenders whose deadline just passed to Đã đóng.
