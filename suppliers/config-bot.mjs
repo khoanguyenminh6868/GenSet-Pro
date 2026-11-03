@@ -1224,11 +1224,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
       const [pending, finds, prices] = await Promise.all([api("kind=config"), api("kind=find"), api("kind=bidprice")]);
       // Gợi ý giá đấu first: a few minutes each, no web search (bidprice-bot.mjs).
       // Only requests the web wrote (basis): an older API answers an unknown kind with the file requests.
-      if (prices.some((r) => r.basis)) {
-        const { answer: answerPrice } = await import("./bidprice-bot.mjs");
-        const hist = Object.fromEntries((await api("kind=docs&coll=bidhist")).map((d) => [d.id, d.data]));
-        for (const req of prices.filter((r) => r.basis)) await answerPrice(req, hist);
-      }
+      // In a child process: bidprice-bot.mjs imports this script, and an import of it from here (the main module, still
+      // in its top-level await) never settles, so node quit with code 13 and left the lock behind (2026-11-03).
+      if (prices.some((r) => r.basis)) spawnSync(process.execPath, [path.join(ROOT, "bidprice-bot.mjs"), "run"], { stdio: "inherit", windowsHide: true, timeout: 3 * 60 * 60e3 });
       if (pending.length || finds.length) {
         const suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data);
         for (const req of pending) await answer(req, suppliers);
