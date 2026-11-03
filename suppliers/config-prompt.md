@@ -27,6 +27,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     `controllers.md` (a datasheet runs to 250 lines, a SmartGen manual to 700): for every controller requirement
     (event log, protections, emergency stop, measurements, AMF, RS485...) search controllers.md with grep under that
     controller's heading before writing `unclear`.
+    A controller of "Bộ điều khiển" marked "có datasheet hãng" has its datasheet only in controllers.md: before
+    giving a configuration that controller, or writing `unclear` on its functions, grep controllers.md for its model.
   - "Nhà cung cấp khác có dòng ghi cùng động cơ": more rows naming those engines, to pick `suppliers` from.
   - "Động cơ khác trong khoảng công suất": the other engines near the power, one row each.
   - each table's header (once per `supplierId` / `n`, column titles); "Bộ điều khiển": the controllers of the suppliers
