@@ -16,8 +16,17 @@
   const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|di[eê]s[eê]l|di[eê]zen|\d\s*kva\b/i;
   const isGensetName = (n) => { n = String(n || "").normalize("NFC"); return GENSET_RE.test(n) && (!PLANT_RE.test(n) || SET_RE.test(n)); };
   // Repair, upkeep, rental, parts and studies are priced differently from supplying a generator set.
-  const SVC_RE = /sửa\s*chữa|bảo\s*dưỡng|bảo\s*trì|đại\s*tu|thuê|phụ\s*tùng|vật\s*tư|chổi\s*than|thí\s*nghiệm|kiểm\s*định|tư\s*vấn|dầu\s*(nhớt|bôi\s*trơn)/i;
-  const bidKind = (n) => (SVC_RE.test(String(n || "").normalize("NFC")) ? "svc" : "supply");
+  const SVC_RE = /sửa\s*chữa|bảo\s*dưỡng|bảo\s*trì|đại\s*tu|trung\s*tu|giám\s*sát\s*(thi\s*công|lắp\s*đặt)|thuê|phụ\s*tùng|vật\s*tư|chổi\s*than|thí\s*nghiệm|kiểm\s*định|tư\s*vấn|dầu\s*(nhớt|bôi\s*trơn)/i;
+  // Moving or re-installing a set already owned (Khoa, 2026-11-03) is not supplying one either: "Di dời, lắp đặt máy phát
+  // điện...", "Tháo dỡ, di chuyển trạm biến áp, máy phát điện...". A name that also buys ("Mua sắm và điều chuyển máy
+  // phát điện") is a supply.
+  const MOVE_RE = /tháo\s*dỡ|di\s*dời|di\s*chuyển|điều\s*chuyển|lắp\s*(đặt\s*)?lại|tận\s*dụng/i, BUY_RE = /mua\s*sắm|\bmua\b|trang\s*bị|đầu\s*tư/i;
+  const bidKind = (n) => { n = String(n || "").normalize("NFC"); return SVC_RE.test(n) ? "svc" : MOVE_RE.test(n) && !BUY_RE.test(n) ? "move" : "supply"; };
+  // An HSMT line about a set the owner already has that is to be moved or re-installed ("Máy phát điện 500 KVA do Bệnh
+  // viện Bệnh Nhiệt Đới chuyển giao, cần di dời, cải tạo, lắp đặt"); a set on wheels "để di chuyển" is not one.
+  const OLD_SET_RE = /hiện\s*hữu|chuyển\s*giao|đang\s*(có|sử\s*dụng)|tận\s*dụng/i, MOVE_ACT_RE = /di\s*dời|tháo\s*dỡ|lắp\s*(đặt\s*)?lại|di\s*chuyển/i;
+  const movesOldSet = (text) => String(text || "").normalize("NFC").split(/\n/)
+    .some((l) => /máy\s*phát|tổ\s*máy|\bmáy\b/i.test(l) && OLD_SET_RE.test(l) && MOVE_ACT_RE.test(l) && !/bánh\s*xe/i.test(l));
   // Power read by the bot from a past tender's HSMT (bidhist config.kvas): the largest set for a one-lot tender; for
   // several lots only when the HSMT names a single power, since it cannot tell which lot each one belongs to.
   function cfgKva(d, multi) {
@@ -97,6 +106,8 @@
         total++;
         if (bidKind((multi && lot.lotName) || d.bidName) !== kind) continue;
         const goods = (lot.goods || []).filter((g) => g.name || g.code || g.maker || g.label);
+        // A name that does not say so, but an HSMT that moves an owned set and no set among the won goods: a move.
+        if (kind === "supply" && movesOldSet(d.config?.text) && !goods.some((g) => isGensetName(g.name))) continue;
         const kGoods = Math.max(0, ...goods.map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
         const kName = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)), kCfg = kName || kGoods ? null : cfgKva(d, multi);
         const k = kName || kGoods || kCfg, kSrc = kName ? "tên gói" : kGoods ? "hàng chào" : kCfg ? "HSMT" : "";
@@ -167,5 +178,5 @@
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
     return { basis, n: use.length, same: same.length, close: close.length, enough: use.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, comps };
   }
-  root.GenbidBidprice = { kvaOf, isGensetName, bidKind, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL };
+  root.GenbidBidprice = { kvaOf, isGensetName, bidKind, movesOldSet, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL };
 })(typeof window !== "undefined" ? window : globalThis);
