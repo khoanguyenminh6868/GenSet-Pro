@@ -2671,7 +2671,7 @@ function cfgResultHtml(r) {
         const st = CFG_STATUS[x.status] || ["", "mut"];
         // factSrc: a figure of this engine / alternator model from another supplier's row or datasheet (config-bot.mjs modelFacts).
         return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bộ điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
-          <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}${raw(cfgPartsHtml(x))}</td>
+          <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}${raw(cfgPartsHtml(x))}${raw(cfgHintHtml(x))}</td>
           <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
       }).join(""))}</tbody></table></div>` : "")}
       ${raw(cfgSuppliersHtml(c))}
@@ -2679,9 +2679,11 @@ function cfgResultHtml(r) {
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
 // A grouped requirement (the controller's protections, measurements...): each function with its result and source.
+// An "unclear" whose source has a line about it (config-bot.mjs check hints): shown so it can be read, not counted as met.
+const cfgHintHtml = (x) => (x.hint?.line ? h`<div class="small" style="color:var(--amber)">Nguồn có dòng liên quan (${x.hint.where || ""}), cần xem: <q>${x.hint.line}</q></div>` : "");
 const cfgPartsHtml = (x) => (x.parts?.length ? h`<ul class="suplist">${raw(x.parts.map((p) => {
   const st = CFG_STATUS[p.status] || ["", "mut"];
-  return h`<li class="small"><span class="chip ${st[1]}">${st[0]}</span> <b>${p.item || ""}</b>${p.offered ? `: ${p.offered}` : ""}${raw(p.unverified ? ' <span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(p.sourceQuote ? h`<div class="muted small">Nguồn${p.factSrc ? ` (trên trang ${p.factSrc.supplierId})` : ""}: <q>${p.sourceQuote}</q></div>` : "")}${raw(p.note ? h`<div class="muted small">${p.note}</div>` : "")}</li>`;
+  return h`<li class="small"><span class="chip ${st[1]}">${st[0]}</span> <b>${p.item || ""}</b>${p.offered ? `: ${p.offered}` : ""}${raw(cfgHintHtml(p))}${raw(p.unverified ? ' <span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(p.sourceQuote ? h`<div class="muted small">Nguồn${p.factSrc ? ` (trên trang ${p.factSrc.supplierId})` : ""}: <q>${p.sourceQuote}</q></div>` : "")}${raw(p.note ? h`<div class="muted small">${p.note}</div>` : "")}</li>`;
 }).join(""))}</ul>` : "");
 const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="small">Yêu cầu đọc từ HSMT (${r.requirements.length})</summary><ul class="suplist">${raw(r.requirements.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.from === "user" ? ' <span class="chip mut">Yêu cầu khác</span>' : "")}${raw(q.level === "option" ? ' <span class="chip mut">Tùy chọn khi đặt hàng</span>' : "")}${raw(q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "");
 // Internet finds added to the catalog by config-bot.mjs (each checked with verify.mjs before it is added).

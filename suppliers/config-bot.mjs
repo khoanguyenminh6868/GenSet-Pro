@@ -264,8 +264,25 @@ export function hintsOf(text, extra = "") {
   for (const c of CAT.controllersIn(t)) if (!ctrl.includes(c.brand)) ctrl.push(c.brand);
   const f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   return { engineMakes: names(CAT.ENGINE_BRANDS), altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, text: squashOf(t) };
+    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, text: squashOf(t), ...engineMins(t) };
 }
+// The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
+// of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
+// (2026-11-03: the 11 best rows were 8.9-10.3 L engines for a tender asking 11.05 L).
+const AT_LEAST = /≥|>=|tối thiểu|ít nhất|không (nhỏ|thấp|bé) hơn|trở lên/i;
+export function engineMins(t) {
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null), disp = [], cyl = [];
+  for (const line of String(t).split("\n")) {
+    if (!AT_LEAST.test(line)) continue;
+    const d = /dung t[íi]ch/i.test(line) && line.match(/(?<![\d.,])(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
+    if (d) disp.push(Number(d[1].replace(",", ".")));
+    const c = line.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
+    if (c) cyl.push(Number(c[1]));
+  }
+  return { minDisp: one(disp), minCyl: one(cyl) };
+}
+// The displacement (L) and the cylinders of an engine as its facts give them.
+const litres = (v) => { const n = numbersIn(v)[0]; return n == null ? null : n > 100 ? n / 1000 : n; };
 const named = (hints, model) => { const k = squashOf(model); return k.length >= 5 && hints.text.includes(k); };
 const CONF = { high: 30, medium: 15 };
 // A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
@@ -302,6 +319,15 @@ export function candidates(cat, cap, hints, { suppliers = [], origin = "all", cn
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
+      // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
+      const below = (key, min, read) => { const v = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => read(f.value)).filter((x) => x != null); return min && v.length && v.every((x) => x < min) ? v[0] : null; };
+      // No displacement given: bore × stroke × cylinders (web/conversions.js displacement), when the sources give them.
+      const given = [...ef, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
+      const [b, st] = bs ? numbersIn(bs.value) : [], n = z ? numbersIn(z.value)[0] : null;
+      const calcL = !given.some((f) => f.key === "disp") && b > 50 && st > 50 && n ? Math.round(Math.PI / 4 * b * b * st * n / 1e4) / 100 : null;
+      const dl = below("disp", hints.minDisp, litres) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = below("cyl", hints.minCyl, (v) => numbersIn(v)[0] ?? null);
+      if (dl != null) { score -= 600; why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
+      if (cl != null) { score -= 600; why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
       if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
@@ -583,6 +609,38 @@ async function save(dir, url) {
   return `web/${n}.txt`;
 }
 
+// What an "unclear" check is about, to find the line of its sources that may answer it (check's hints): the figure
+// keys of web/catalog.js SPEC an engine / alternator / genset requirement points at, and the English words of a
+// controller datasheet for a function the HSMT names in Vietnamese.
+const ITEM_KEYS = [
+  [/điều tốc|governor/i, ["gov"]], [/cách điện|insulation/i, ["insul"]], [/\bIP\s?\d|cấp bảo vệ|protection class/i, ["ip"]],
+  [/t[ỉỷ] số nén|compression/i, ["compr"]], [/khởi động|starting/i, ["start"]], [/kiểu động cơ|tăng áp|nạp khí|turbo|aspirat/i, ["asp", "engType"]],
+  [/dung tích|displacement/i, ["disp", "bore"]], [/xi ?lanh|cylinder/i, ["cyl"]], [/(tiêu chuẩn|mức|cấp) khí thải|emission|\b(euro|tier|stage)\b/i, ["emission"]],
+  [/làm mát|cooling/i, ["cooling"]], [/dầu bôi trơn|nhớt|lubricat/i, ["oil"]], [/sóng hài|THD|harmonic/i, ["thd"]],
+  [/(ổn định|biến thiên|điều chỉnh|dao động) điện áp|voltage regulation/i, ["vreg"]], [/AVR|kích từ|excit/i, ["excit", "vreg"]],
+  [/hiệu suất|efficiency/i, ["eff"]], [/tiêu hao nhiên liệu|fuel consumption/i, ["fuel"]], [/độ ồn|noise/i, ["noise"]],
+  [/kích thước|dimension/i, ["dims"]], [/khối lượng|trọng lượng|weight/i, ["weight"]], [/bồn dầu|bình (nhiên liệu|dầu)|fuel tank/i, ["tank"]],
+  [/(ổn định|biến thiên|dao động) tần số|frequency regulation/i, ["freg"]], [/hệ số công suất|cos\s?[φϕø]/i, ["pf"]],
+  [/tốc độ|vòng quay|rpm/i, ["speed"]], [/dòng điện/i, ["current"]],
+];
+const CTL_WORDS = [
+  [/quá áp|điện áp cao/i, /over\s?-?voltage|high voltage/i], [/thấp áp|điện áp thấp|sụt áp/i, /under\s?-?voltage|low voltage/i],
+  [/tần số (cao|thấp)|quá tần|thấp tần/i, /(over|under)\s?-?frequency|(high|low) frequency/i], [/quá tải|quá dòng/i, /overload|over\s?-?current|over\s?-?power/i],
+  [/ngắn mạch/i, /short\s?-?circuit/i], [/áp (suất|lực) (dầu|nhớt)/i, /oil pressure/i], [/nhiệt độ (nước|làm mát|động cơ)/i, /coolant temp|engine temp|high temp/i],
+  [/quá tốc|vượt tốc/i, /over\s?-?speed/i], [/thấp tốc|dưới tốc/i, /under\s?-?speed/i], [/khởi động (không|thất bại)|lỗi khởi động/i, /fail(ed|ure)? to start|start fail/i],
+  [/dừng khẩn/i, /emergency stop/i], [/ắc ?quy|accu|bình điện/i, /battery (voltage|under|over|low|high)|plant supply|(low|high) battery/i], [/sạc/i, /charge/i],
+  [/nhật ký|lịch sử|event log|sự kiện/i, /event log|events/i], [/giờ (chạy|máy|vận hành)|đếm giờ/i, /engine hours|hours run|running hours|run time|hour meter/i],
+  [/hệ số công suất|\bPF\b|cos/i, /power factor|\bpf\b/i], [/công suất|\bkW\b|\bkVA\b/i, /\bkW\b|\bkVA\b|\bkvar\b/i],
+  [/điện áp/i, /voltage (measurement|range|sensing)|(generator|mains|bus|phase).{0,20}voltage|Vs?(L-?L|L-?N|ph-?ph|ph-?n)/i], [/dòng điện/i, /current (measurement|sensing|range)|CT|(generator|phase|load).{0,15}current/i], [/tần số|\bHz\b/i, /frequency/i],
+  [/RS-?485/i, /RS-?485/i], [/RS-?232/i, /RS-?232/i], [/modbus/i, /modbus/i], [/USB/i, /USB/i], [/ethernet|TCP|mạng LAN/i, /ethernet|TCP/i],
+  [/CAN|J1939|ECU/i, /J1939|CAN/i], [/GSM|SMS|GPRS/i, /GSM|SMS|GPRS/i], [/SNMP/i, /SNMP/i],
+  [/AMF|mất (điện )?lưới|ATS/i, /AMF|mains (\(utility\) )?fail|automatic mains/i], [/tự (động )?khởi động|auto start|từ xa/i, /auto start|remote start/i],
+  [/mật khẩu|password|PIN/i, /password|PIN\b|security/i], [/LCD|màn hình/i, /LCD|graphic display|display (size|type|resolution)/i], [/hòa đồng bộ|song song|paralle|đồng bộ/i, /synchron|load ?shar|parallel/i],
+  [/(mức|thấp) nhiên liệu|nhiên liệu (thấp|mức)/i, /fuel level|low fuel/i], [/chế độ|auto\/manual|start\/stop/i, /\bmanual\b|\bauto\b mode|stop\/reset/i],
+];
+// The measured quantities (a controller measures them; a protection or another function that names one is about more).
+const CTL_MEASURE = new Set(CTL_WORDS.filter(([re]) => ["điện áp", "dòng điện", "tần số", "công suất", "hệ số công suất"].some((w) => re.test(w))));
+
 // ---------- check ----------
 // Returns { result, problems } with result fixed in place: unverified marks, "met" without proof → "unclear".
 export function check(result, { hsmtText, suppliers, readWeb, origin }) {
@@ -595,6 +653,34 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   const rows = new Map();
   for (const e of built.engines || []) for (const u of e.uses) if (u.line) rows.set(`${u.supplierId}|${u.n}|${CAT.keyOf(u.line)}`, u);
   const rowOf = (src) => (src?.kind === "catalog" ? rows.get(`${src.supplierId}|${Number(src.n)}|${CAT.keyOf(src.line || "")}`) : null);
+  const hints = [];
+  // The line of a configuration's sources that may answer an "unclear" check: a figure of its engine / alternator
+  // model (the keys its name points at), a figure of its own genset row, or a line of its controller's datasheet
+  // with a word of the function. The first of them, with what to quote it by.
+  const hintFor = (c, x) => {
+    const what = `${x.name || x.item} ${x.requirement || ""}`;
+    if (x.part === "controller") {
+      // The function's own words first ("Điện áp ắc quy thấp": the battery, not any voltage; "Quá tải dòng điện": the
+      // overload, not the current measurement): a measured quantity only when nothing more particular is named.
+      const all = CTL_WORDS.filter(([re]) => re.test(what)), named = all.filter((w) => !CTL_MEASURE.has(w));
+      const words = (named.length ? named : all).map(([, en]) => en);
+      // Not the module's own specification (its supply voltage, current, test standards, clock battery).
+      const own = /BS EN|IEC 600|Operating Current|Continuous Voltage|Cranking|Standby Current|Humidity|Vibration|Shock|RTC|Temperature Range|Cut[- ]?out|Dimensions/i;
+      const lines = factsOf(c, "controller").filter((f) => f.line.length <= 240 && !own.test(f.line));
+      const f = words.map((en) => lines.find((f) => en.test(f.line))).find(Boolean);
+      return f ? { where: `datasheet ${f.sheetModel || c.controller.model}`, line: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line } } : null;
+    }
+    const keys = ITEM_KEYS.filter(([re]) => re.test(what)).flatMap(([, k]) => k);
+    if (!keys.length) return null;
+    const row = rowOf(c.genset?.src || c.engine?.src);
+    // The keys in the order the name gives them ("Dung tích xi lanh": the displacement before the cylinders).
+    const first = (list) => keys.map((k) => list.find((v) => v.key === k)).find(Boolean);
+    const s = first((row?.specs || []).filter((s) => x.part === "genset" || CAT.SPEC[s.key]?.scope === x.part));
+    if (s) return { where: `dòng bảng của cấu hình (${s.label} = ${s.value})`, line: row.line };
+    if (x.part !== "engine" && x.part !== "alternator") return null;
+    const f = first(factsOf(c, x.part));
+    return f ? { where: `thông số theo model ${c[x.part].model} (${f.label} = ${f.value})`, line: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line } } : null;
+  };
   // The rating a power check is about: its name says power and one of prime / standby (not "quá tải ... liên tục").
   const ratingOf = (x) => {
     if (!/c[ôo]ng su[ấa]t|power/i.test(x.item) || /qu[áa] t[ảa]i|overload|h[ệe] s[ốo]/i.test(x.item)) return null;
@@ -773,6 +859,11 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
         if (x.status === "met") { x.status = "unclear"; x.note = [x.note, `Code chưa tìm thấy nguyên văn (${reasons.join(", ")}) nên chưa tính là đạt.`].filter(Boolean).join(" "); }
         problems.push(`#${c.rank} ${x.item}: ${reasons.join(", ")}`);
       }
+      // An "unclear" whose source has a line about it: the agent wrote "Nguồn không ghi" for the event log of a DSE8610
+      // whose datasheet says "The event log records 250 events" (2026-11-03). The code does not judge the line; it
+      // names it, the agent reads it (check prints it) and the web shows it.
+      const h = x.status === "unclear" && !x.byCode && hintFor(c, x);
+      if (h) { x.hint = h; hints.push(`#${c.rank} ${x.item}: ${h.where} có dòng: ${JSON.stringify(h.line)}${h.factSrc ? ` — factSrc ${JSON.stringify(h.factSrc)}` : ""}`); }
     }
     if (groups.size) c.checks = c.checks.flatMap((x) => {
       if (!x.group) return [x];
@@ -813,7 +904,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   }
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
   if (!result.configs.length && !result.message) result.message = "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT.";
-  return { result, problems };
+  return { result, problems, hints };
 }
 function checkDir(dir, suppliers, added = [], origin) {
   const result = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8"));
@@ -1274,9 +1365,11 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   else if (cmd === "check") {
     // Offline in a folder made by prep (suppliers.json, meta.json); elsewhere the supplier DB is read from the web.
     const dir = arg("dir", "."), local = (f) => (fs.existsSync(path.join(dir, f)) ? JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) : null);
-    const { problems, result } = checkDir(dir, local("suppliers.json") || (await api("kind=docs&coll=supplier")).map((d) => d.data), [], local("meta.json")?.origin);
+    const { problems, result, hints } = checkDir(dir, local("suppliers.json") || (await api("kind=docs&coll=supplier")).map((d) => d.data), [], local("meta.json")?.origin);
     fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
     console.log(problems.length ? problems.join("\n") : "Không có điểm nào chưa khớp nguồn.");
+    // "unclear" checks whose sources have a line about them (config-prompt.md: read each, set met / not_met if it says).
+    if (hints.length) console.log(`\nCÓ THỂ TRA ĐƯỢC — ${hints.length} mục chưa rõ mà nguồn có dòng liên quan (đọc dòng đó: nêu đạt / không đạt thì sửa, không nói thì để chưa rõ):\n${hints.join("\n")}`);
   } else if (cmd === "find-check") {
     // Offline in a folder made for Tìm NCC (suppliers.json, meta.json).
     const dir = arg("dir", "."), meta = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));

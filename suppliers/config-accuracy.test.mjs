@@ -3,7 +3,7 @@
 // candidate rows written to catalog.md, the requirements kept between runs and the check of Tìm NCC configurations.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers } from "./config-bot.mjs";
+import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins } from "./config-bot.mjs";
 import { makerSheet, controllerSheet } from "./maker-datasheets.mjs";
 
 const C = globalThis.GenbidCatalog;
@@ -486,4 +486,36 @@ test("check: a Prime power check offering the row's standby figures is not met",
   assert.equal(C.build(list).engines[0].uses[0].power.prime.kVA, 275);
   assert.equal(res("Prime 300 kVA / 240 kW"), "unclear");
   assert.equal(res("Prime 275 kVA / 220 kW"), "met");
+});
+
+test("check hints: an unclear controller function names its datasheet line; the module's own supply voltage is not one", () => {
+  const line = "| D-1 | 275 | 220 | WP10D264E200 | XY274K |";
+  const list = [
+    { id: "d", country: "CN", controllers: [{ brand: "Deep Sea", model: "DSE8610", text: "DSE8610", line: "DSE8610 controller", src: [3001] }], specTables: [{ n: 101, title: "Gensets 50Hz", header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows: [line] }] },
+    { id: "dse", role: "controller_maker", country: "GB", specTables: [{ n: 1004, title: "Datasheet: DSE8610 MKII", header: [], rows: ["DSE8610 MKII", "| Continuous Voltage | Rating | 5 V to 35 V DC continuous", "The event log records 250 events", "Emergency Stop Input"] }] },
+  ];
+  const src = { kind: "catalog", supplierId: "d", n: 101, line };
+  const r = { requirements: [{ item: "Vận hành", part: "controller", parts: [{ item: "Nhật ký sự kiện" }, { item: "Dừng khẩn cấp" }, { item: "Điện áp ắc quy thấp" }] }],
+    configs: [{ rank: 1, engine: { model: "WP10D264E200", src }, controller: { model: "DSE8610", make: "Deep Sea", src: { kind: "controller", supplierId: "d", n: 3001, line: "DSE8610 controller" } },
+      checks: [{ item: "Vận hành", part: "controller", parts: [{ item: "Nhật ký sự kiện", status: "unclear" }, { item: "Dừng khẩn cấp", status: "unclear" }, { item: "Điện áp ắc quy thấp", status: "unclear" }] }] }] };
+  const { result, hints } = check(r, { hsmtText: "x", suppliers: list, readWeb: () => null, origin: "all" });
+  const parts = result.configs[0].checks.find((x) => x.item === "Vận hành").parts;
+  assert.deepEqual(parts.map((p) => p.hint?.line || null), ["The event log records 250 events", "Emergency Stop Input", null]);
+  assert.equal(parts[0].status, "unclear");
+  assert.equal(hints.length, 2);
+});
+
+test("engine minimums of the HSMT: read once each; an engine a source shows below them ranks lower", () => {
+  assert.deepEqual(engineMins("Dung tích ước tính ≥ 615 lít\nDung tích xy lanh ≥ 11,05 L\nSố xy lanh: ≥ 6 xy lanh\nTiêu hao ≤ 90 L/h"), { minDisp: 11.05, minCyl: 6 });
+  assert.deepEqual(engineMins("Dung tích xi lanh: 3.9L\n6 xilanh thẳng hàng"), { minDisp: null, minCyl: null });
+  assert.deepEqual(engineMins("Dung tích tối thiểu 12 L\nDung tích tối thiểu 3,9 L"), { minDisp: null, minCyl: null });
+  const t = (title, header, row) => [{ n: 101, title, header: [header], rows: [row] }];
+  const list = [
+    { id: "s", country: "CN", confidence: "high", specTables: t("Weichai gensets 50Hz", "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (L) |", "| S-1 | 275 | 220 | WP10D264E200 | XY274K | 9.7 |") },
+    { id: "b", country: "CN", confidence: "low", specTables: t("Weichai gensets 50Hz", "| Model | Prime kVA | Prime kW | Engine | Alternator |", "| B-1 | 275 | 220 | WP13D385E200 | XY274K |") },
+  ];
+  const hints = hintsOf("Chương V. Yêu cầu kỹ thuật\nDung tích xy lanh ≥ 11,05 L\n50 Hz");
+  const { top } = candidates(C.build(list), { value: 250, unit: "kVA" }, hints, { suppliers: list });
+  assert.deepEqual(top.map((r) => r.u.supplierId), ["b", "s"]);
+  assert.match(top[1].why.join(" "), /dung tích 9.7 L < 11.05 L/);
 });
