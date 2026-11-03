@@ -3,7 +3,10 @@
 (() => {
   let sb, cfg, member;
   const ready = (async () => {
-    cfg = await (await fetch("/api/config")).json();
+    // The public Supabase settings from the last visit, so sign-in does not wait for /api/config; refreshed for next time.
+    const fresh = fetch("/api/config").then((r) => r.json()).then((c) => { try { localStorage.setItem("genbid:cfg", JSON.stringify(c)); } catch {} return c; });
+    try { cfg = JSON.parse(localStorage.getItem("genbid:cfg") || "null"); } catch {}
+    if (!cfg?.url) cfg = await fresh; else fresh.catch(() => {});
     if (!cfg.url) throw new Error("Chưa cấu hình Supabase.");
     sb = supabase.createClient(cfg.url, cfg.anonKey);
     let { data: { session } } = await sb.auth.getSession();
@@ -208,7 +211,8 @@
   const cache = new Map();      // coll -> Map(id -> data)
   const stamps = new Map();     // coll -> Map(id -> updated_at), to tell which cached documents changed on the server
   const loads = new Map();      // coll -> promise of the first read (from this device's copy or the server)
-  const syncs = new Map();      // coll -> promise of the catch-up with the server after starting from this device's copy
+  const syncs = new Map();
+  const fulls = new Map();      // "coll/id" -> promise of db.full()      // coll -> promise of the catch-up with the server after starting from this device's copy
   const listeners = new Map();  // coll -> Set(fn)
   let channel;
   const notify = (coll) => listeners.get(coll)?.forEach((fn) => fn());
@@ -216,7 +220,8 @@
   function keep(coll, id, data, at) {
     cache.get(coll)?.set(id, data);
     stamps.get(coll)?.set(id, at || "");
-    local.put([{ coll, id, u: at || "", d: data }]);
+    // A whole document of a light collection (the open tender's analysis) stays in memory only.
+    if (!LITE.has(coll) || data?._lite) local.put([{ coll, id, u: at || "", d: data }]);
   }
   function drop(coll, id) {
     cache.get(coll)?.delete(id);
@@ -231,6 +236,12 @@
       if (!c) return;
       touched.add(row.coll + "/" + row.id);
       if (p.eventType === "DELETE") { drop(row.coll, row.id); notify(row.coll); return; }
+      // A light collection reads its light copy again, unless this page holds the whole document.
+      if (LITE.has(row.coll) && (!c.has(row.id) || c.get(row.id)?._lite)) {
+        const [r] = await liteRows(row.coll, [row.id]).catch(() => []);
+        if (r) { keep(row.coll, r.id, r.data, r.updated_at); notify(row.coll); }
+        return;
+      }
       // Realtime can deliver a row without its data (large or unchanged values are left out of the payload):
       // read the row again instead of overwriting the cached document with nothing.
       let data = row.data, at = row.updated_at;
@@ -267,13 +278,25 @@
         } catch { res(null); }
       });
     };
+    // Light collections are kept under "<coll>@lite", apart from the whole documents an earlier version kept.
+    const at = (coll) => (LITE.has(coll) ? coll + "@lite" : coll);
     return {
-      read: (coll) => tx("readonly", (s) => s.index("coll").getAll(coll)),
-      put: (rows) => rows.length && tx("readwrite", (s) => rows.forEach((r) => s.put(r))),
-      del: (coll, ids) => ids.length && tx("readwrite", (s) => ids.forEach((id) => s.delete([coll, id]))),
+      read: (coll) => tx("readonly", (s) => s.index("coll").getAll(at(coll))),
+      put: (rows) => rows.length && tx("readwrite", (s) => rows.forEach((r) => s.put({ ...r, coll: at(r.coll) }))),
+      del: (coll, ids) => ids.length && tx("readwrite", (s) => ids.forEach((id) => s.delete([at(coll), id]))),
+      dropWhole: (coll) => tx("readwrite", (s) => s.delete(IDBKeyRange.bound([coll, ""], [coll, "￿"]))),
       wipe: () => { try { indexedDB.deleteDatabase("genbid-docs"); } catch {} },
     };
   })();
+  // Collections the page reads as light copies (api/lite.js): most of an analysis is its technical specs, needed only
+  // for the open tender, which db.full() then reads whole.
+  const LITE = new Set(["analysis"]);
+  async function liteRows(coll, ids) {
+    const { data: { session } } = await sb.auth.getSession();
+    const r = await fetch(`/api/lite?coll=${coll}&ids=${ids.map(encodeURIComponent).join(",")}`, { headers: { Authorization: `Bearer ${session?.access_token || ""}` } });
+    if (!r.ok) throw new Error(`lite ${coll}: HTTP ${r.status}`);
+    return r.json();
+  }
   const touched = new Set(); // "coll/id" changed by realtime or this page while a catch-up runs: the catch-up leaves them alone
 
   // Every row of a collection, paged in a fixed order: without one, Postgres may return overlapping pages and some
@@ -290,11 +313,15 @@
   function loadColl(coll) {
     if (!loads.has(coll)) {
       const p = (async () => {
-        const saved = await local.read(coll);
-        if (saved?.length) {
+        if (LITE.has(coll)) local.dropWhole(coll);
+        const saved = (await local.read(coll)) || [];
+        // A light collection always goes through catchUp: it lists the ids and reads their light copies.
+        if (saved.length || LITE.has(coll)) {
           cache.set(coll, new Map(saved.map((r) => [r.id, r.d])));
           stamps.set(coll, new Map(saved.map((r) => [r.id, r.u])));
-          syncs.set(coll, catchUp(coll).catch(() => {}));
+          const sync = catchUp(coll);
+          syncs.set(coll, sync.catch(() => {}));
+          if (!saved.length) await sync;
           return;
         }
         const rows = await readAll(coll, "id,data,updated_at");
@@ -319,14 +346,24 @@
     let changed = gone.length > 0;
     gone.forEach((id) => { c.delete(id); st.delete(id); });
     local.del(coll, gone);
-    for (let i = 0; i < want.length; i += 100) {
-      const { data, error } = await sb.from("docs").select("id,data,updated_at").eq("coll", coll).in("id", want.slice(i, i + 100));
-      if (error) throw error;
-      const fresh = data.filter((r) => !touched.has(coll + "/" + r.id));
+    // Whole documents in batches of 100; a light collection's light copies 150 at a time, 4 requests at once, except
+    // the whole documents this page already holds.
+    const lite = LITE.has(coll) ? want.filter((id) => !c.has(id) || c.get(id)?._lite) : [];
+    const whole = want.filter((id) => !lite.includes(id));
+    const take = (rows) => {
+      const fresh = rows.filter((r) => !touched.has(coll + "/" + r.id));
       fresh.forEach((r) => { c.set(r.id, r.data); st.set(r.id, r.updated_at); });
-      local.put(fresh.map((r) => ({ coll, id: r.id, u: r.updated_at, d: r.data })));
+      local.put(fresh.filter((r) => !LITE.has(coll) || r.data?._lite).map((r) => ({ coll, id: r.id, u: r.updated_at, d: r.data })));
       if (fresh.length) changed = true;
+    };
+    for (let i = 0; i < whole.length; i += 100) {
+      const { data, error } = await sb.from("docs").select("id,data,updated_at").eq("coll", coll).in("id", whole.slice(i, i + 100));
+      if (error) throw error;
+      take(data);
     }
+    const parts = [];
+    for (let i = 0; i < lite.length; i += 150) parts.push(lite.slice(i, i + 150));
+    await Promise.all(Array.from({ length: Math.min(4, parts.length) }, async () => { while (parts.length) take(await liteRows(coll, parts.shift())); }));
     if (changed) notify(coll);
   }
   function watch(coll, fn, onErr) {
@@ -357,6 +394,20 @@
       }));
       changed.forEach(notify);
     },
+    // The whole document behind a light copy (the open tender's analysis); listeners hear when it arrives.
+    full(path) {
+      const [coll, id] = split(path);
+      if (!cache.get(coll)?.get(id)?._lite) return Promise.resolve();
+      if (!fulls.has(path)) fulls.set(path, (async () => {
+        const { data, error } = await sb.from("docs").select("data,updated_at").eq("coll", coll).eq("id", id).maybeSingle();
+        fulls.delete(path);
+        if (error || !data) return;
+        touched.add(path);
+        keep(coll, id, data.data, data.updated_at);
+        notify(coll);
+      })());
+      return fulls.get(path);
+    },
     doc(path) {
       const [coll, id] = split(path);
       return {
@@ -364,7 +415,8 @@
         onSnapshot(fn, onErr) { return watch(coll, () => fn(snapDoc(id, cache.get(coll).get(id))), onErr); },
         async get() {
           // A collection shown from this device's copy answers once it caught up, so update() never writes over newer data.
-          if (cache.has(coll)) { await syncs.get(coll); return snapDoc(id, cache.get(coll).get(id)); }
+          // A light copy is never handed out here, so update() writes the whole document back.
+          if (cache.has(coll)) { await syncs.get(coll); await db.full(path); return snapDoc(id, cache.get(coll).get(id)); }
           const { data, error } = await sb.from("docs").select("data").eq("coll", coll).eq("id", id).maybeSingle();
           if (error) fail(error);
           return snapDoc(id, data?.data);
