@@ -85,7 +85,8 @@ export function byOrigin(engines, origin, cn = new Set()) {
 }
 
 // ---------- prep ----------
-const CAP = /(\d{1,3}(?:[.,]\d{3})+|\d+(?:[.,]\d+)?)\s*(kva|kw|mva|mw)\b/i;
+// "250 ekW" (electrical kW, Caterpillar's way) is kW too.
+const CAP = /(\d{1,3}(?:[.,]\d{3})+|\d+(?:[.,]\d+)?)\s*(kva|e?kw|mva|mw)\b/i;
 // "1.600" is 1600 and "8,5" is 8.5, as Vietnamese writes them.
 const numOf = (s) => Number(/^\d{1,3}([.,]\d{3})+$/.test(s) ? s.replace(/[.,]/g, "") : s.replace(",", "."));
 // A tolerance ("12 ± 0,5 kVA", "+/- 5 %") is not the capacity: 3 of 4 small-genset tenders read 0.5 kVA and got no candidate.
@@ -97,7 +98,7 @@ export function capacity(texts) {
   for (const t of texts) {
     const m = noTolerance(t).match(CAP);
     if (!m) continue;
-    const u = m[2].toLowerCase();
+    const u = m[2].toLowerCase().replace(/^e/, "");
     return { value: numOf(m[1]) * (u.startsWith("m") ? 1000 : 1), unit: u.endsWith("va") ? "kVA" : "kW" };
   }
   return null;
@@ -359,8 +360,21 @@ const CONF = { high: 30, medium: 15 };
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
 // Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
 const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4;
-export function candidates(cat, cap, hints, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30 } = {}) {
-  const sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a]));
+// The minimums of the HSMT that fit the genset of this run: a tender of several sizes gives the fuel of its small one
+// (104 L/h beside 2500 kVA), an OCR slip a prime of 107 kVA for 8.5 kVA, "lưu lượng dầu đến bơm ≤ 450 lít/giờ" a fuel
+// limit for 500 kVA (2026-11-03 scan of 390 HSMT). Such a figure would rank every candidate down: left out.
+export function plausible(hints, cap) {
+  if (!cap) return hints;
+  const kva = cap.unit === "kVA" ? cap.value : cap.value / 0.8, out = { ...hints }, mp = hints.minPrime;
+  const mpKva = mp ? (mp.kVA ?? (mp.kW != null ? mp.kW / 0.8 : null)) : null;
+  if (mpKva != null && (mpKva < kva * 0.5 || mpKva > kva * 1.6)) out.minPrime = null;
+  if (hints.maxFuel != null && (hints.maxFuel < kva * 0.12 || hints.maxFuel > kva * 0.6)) out.maxFuel = null;
+  if (hints.minDisp != null && hints.minDisp > Math.max(4, kva * 0.15)) out.minDisp = null;
+  if (hints.minCyl != null && kva < 60 && hints.minCyl > 4) out.minCyl = null;
+  return out;
+}
+export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30 } = {}) {
+  const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a]));
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4);
   const rows = [];
   for (const e of cat.engines || []) {
@@ -432,8 +446,10 @@ export const MAX_CONFIGS = 6;
 export function copyModelChecks(configs, textOf = () => "") {
   for (const [i, c] of configs.entries()) {
     for (const part of ["controller", "engine", "alternator"]) {
-      const key = c[part]?.model && CAT.keyOf(c[part].model);
-      const prev = key && configs.slice(0, i).find((p) => p[part]?.model && CAT.keyOf(p[part].model) === key);
+      // A controller written two ways ("DSE7320", "Deepsea 7320") is one model (2026-11-03: the second had no checks).
+      const keyOf = (p) => p?.model && CAT.keyOf(part === "controller" ? ctlModelOf(p) : p.model);
+      const key = keyOf(c[part]);
+      const prev = key && configs.slice(0, i).find((p) => keyOf(p[part]) === key);
       if (!prev) continue;
       const have = new Set((c.checks || []).map((x) => norm(x.item)));
       const own = textOf(c[part].src) || "";
@@ -873,6 +889,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
           x.note = [x.note, `Nguồn là datasheet ${mine[0].version}; nhà cung cấp ghi ${c[x.part].model}, cần xác nhận đời (MK) của bộ điều khiển.`].filter(Boolean).join(" ");
           const gap = `Xác nhận đời bộ điều khiển: ${c[x.part].model} hay ${mine[0].version}.`;
           if (!(c.gaps || []).includes(gap)) c.gaps = [...(c.gaps || []), gap];
+          // What another generation lacks the one offered may have ("HGM6110N without RS485", the HGM6110NC has it):
+          // not a "not met" until the generation is known (2026-11-03 regression run).
+          if (x.status === "not_met") { x.status = "unclear"; x.note = `${x.note} Code ghi: datasheet đời khác thiếu chức năng này nên tính là chưa rõ, không phải không đạt.`; }
         }
       }
       const src = texts[x.part] || texts.genset || texts.engine || texts.alternator;
