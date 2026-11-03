@@ -172,14 +172,18 @@ export function modelFacts(cat, suppliers = []) {
       for (const t of s.specTables || []) for (const { model, f } of controllerSheetFacts(s, t)) add(`controller:${model}`, f);
       continue;
     }
-    const kind = MAKER_PART[s?.role];
-    if (!kind) continue;
-    const known = new Set((kind === "engine" ? cat.engines : cat.alternators || []).map((e) => e.key));
+    const own = MAKER_PART[s?.role];
     for (const t of s.specTables || []) {
       if (t.header?.length) continue;
       // Every model code of the title, known or not: a title naming two models gives neither.
       const models = [...new Set(String(t.title || "").split(/[\s:–—|,/()]+/).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
       if (models.length !== 1) continue;
+      // A genset maker's own datasheet of a part it makes (Wintpower "WT544C - Technical Data Sheet", Khoa 2026-11-03),
+      // saved by maker-datasheets.mjs ("Datasheet: …"), gives the figures of that model when the catalog knows it.
+      const isPart = (k) => (cat[k === "engine" ? "engines" : "alternators"] || []).some((e) => e.key === models[0]);
+      const kind = own || (/^Datasheet: /.test(t.title || "") ? ["alternator", "engine"].find(isPart) : null);
+      if (!kind) continue;
+      const known = new Set((kind === "engine" ? cat.engines : cat.alternators || []).map((e) => e.key));
       // A frame's datasheet (Leroy-Somer "TAL-A46", Khoa 2026-11-02) gives its figures to the models of that frame
       // its own lines name ("TAL-A46-C ... TAL-A46-H" in its ratings table), each a model of the catalog.
       const covered = known.has(models[0]) ? [models[0]]
