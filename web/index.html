@@ -3,8 +3,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js"></script>
 <script>
 document.documentElement.setAttribute("data-theme", "dark");
 </script>
@@ -506,7 +504,7 @@ const local = {
 const state = {
   db: null,
   feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
-  loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false }, seen: {}, list: null,
+  loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
   filters: {},
@@ -514,12 +512,27 @@ const state = {
 };
 
 // ---------- Document reading ----------
-if (window.pdfjsLib) { try { pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"; } catch {} }
+// The PDF and DOCX readers (~1 MB) load the first time a file is read or shown, not with the page.
+const libLoads = {};
+function loadLib(url, name, what) {
+  return (libLoads[url] ||= new Promise((res, rej) => {
+    if (window[name]) return res(window[name]);
+    const el = document.createElement("script");
+    el.src = url;
+    el.onload = () => (window[name] ? res(window[name]) : rej(new Error(`Không tải được ${what}.`)));
+    el.onerror = () => { delete libLoads[url]; rej(new Error(`Không tải được ${what}.`)); };
+    document.head.appendChild(el);
+  }));
+}
+async function usePdf() {
+  const lib = await loadLib("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js", "pdfjsLib", "bộ đọc PDF");
+  lib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  return lib;
+}
 
 // The browser reads a file's text only when it cannot upload the file (uploadOrText) or for a project's own files.
 async function pdfText(file) {
-  if (!window.pdfjsLib) throw new Error("Không tải được bộ đọc PDF.");
-  const doc = await pdfjsLib.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise;
+  const doc = await (await usePdf()).getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise;
   let text = "";
   for (let p = 1; p <= doc.numPages; p++) {
     const page = await doc.getPage(p);
@@ -542,7 +555,7 @@ async function readFile(file) {
   if (file.type.startsWith("image/")) return { text: "" };
   if (name.endsWith(".pdf")) return { text: await pdfText(file) };
   if (name.endsWith(".docx")) {
-    if (!window.mammoth) throw new Error("Không tải được bộ đọc DOCX.");
+    const mammoth = await loadLib("https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js", "mammoth", "bộ đọc DOCX");
     const r = await mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() });
     return { text: r.value };
   }
@@ -983,8 +996,6 @@ async function initDb() {
   subscribe("hsdtreq", "hsdtreq");
   subscribe("tlkt", "tlkt", () => setTimeout(checkAutoPdf, 0));
   subscribe("tlktreq", "tlktreq");
-  subscribe("supplier", "supplier", () => setTimeout(supChanged, 0));
-  subscribe("supdeleted", "supdeleted", () => setTimeout(supChanged, 0));
   subscribe("suppliermatch", "suppliermatch");
   subscribe("supplierreq", "supplierreq");
   subscribe("configmatch", "configmatch");
@@ -1334,6 +1345,10 @@ function closeDrawer() {
 }
 let drawerSig = "";
 function renderDrawer(force = true) {
+  needSup();
+  // The list holds a light copy of each analysis (shim.js): read the open tender's whole one (again once the
+  // analyses arrive, for a tender opened from its URL before they did).
+  if (state.open && state.analysis[state.open]?._lite) state.db?.full?.("analysis/" + state.open);
   const key = state.open;
   if (!key) return;
   const t = findTender(key);
@@ -1714,6 +1729,7 @@ function analysisTabHtml(t) {
   // quotes found: shown, so a partial analysis does not look complete (Khoa, 2026-10-27).
   const notes = [].concat(a?.notes || []).filter(Boolean);
   const notesNote = s === "done" && notes.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy:</b><ul class="clean">${raw(notes.map((x) => h`<li>${x}</li>`).join(""))}</ul></div>` : "";
+  if (a?._lite && a.status === "done") return head + errNote + notesNote + progress("Đang tải kết quả phân tích...");
   return head + errNote + notesNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? (a.basis === "specs" ? specsOnlyHtml(a.result) : analysisHtml(a.result)) : "");
 }
 
@@ -1849,7 +1865,7 @@ async function openPdf(key, i) {
   const pdfName = /\.pdf$/i.test(f.name) ? f.name : f.name.replace(/\.[^.]+$/, "") + ".pdf";
   $("#pvSave").onclick = () => saveFile(fileSafe(pdfName), blob);
   try {
-    const doc = await pdfjsLib.getDocument({ data: new Uint8Array(await blob.arrayBuffer()) }).promise;
+    const doc = await (await usePdf()).getDocument({ data: new Uint8Array(await blob.arrayBuffer()) }).promise;
     const body = $("#pvBody"); if (!body) return;
     body.innerHTML = h`<div class="muted small">${doc.numPages} trang</div>`;
     const w = Math.min(body.clientWidth || 800, 1000);
@@ -2272,6 +2288,16 @@ const screenOfUrl = () => Object.keys(SCREEN_HASH).find((k) => location.hash ===
 const setScreenUrl = (k) => { try { history.replaceState(null, "", k ? "#" + SCREEN_HASH[k] : location.pathname + location.search); } catch {} };
 function openScreenFromUrl() { const k = screenOfUrl(); if (k === "sup") openSuppliers(); else if (k === "bd") openBidders(); else if (k) openCatalog(k); }
 window.addEventListener("hashchange", openScreenFromUrl);
+// The supplier database (~7 MB of spec tables) is read once a tender, the Nhà cung cấp screen or a catalog opens,
+// not with the list.
+let supLoad = false;
+function needSup() {
+  if (supLoad || !state.db) return;
+  supLoad = true;
+  subscribe("supplier", "supplier", () => setTimeout(supChanged, 0));
+  subscribe("supdeleted", "supdeleted", () => setTimeout(supChanged, 0));
+}
+const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
 const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
   <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a><button class="btn sm" data-close>Đóng</button></header>`;
@@ -2316,6 +2342,7 @@ function bindFilt(id) {
 }
 const filtNote = (id, n, total) => { if ($(`#${id}N`)) $(`#${id}N`).textContent = (n ? `${n} bộ lọc · ` : "") + total; };
 function openSuppliers(id) {
+  needSup();
   supOpenId = id || null;
   filtOpen = false;
   modal(mBanner("sup", "Nhà cung cấp", "Mỗi thông tin đều có nguồn kèm theo", "", "#" + SCREEN_HASH.sup) + '<div id="supBody"></div>', () => renderSuppliers(), "wide pane");
@@ -2324,6 +2351,7 @@ function openSuppliers(id) {
 function renderSuppliers() {
   const body = $("#supBody");
   if (!body) return;
+  if (supWait()) { body.innerHTML = supWait(); return; }
   if (supOpenId && state.supplier?.[supOpenId]) { body.innerHTML = h`<div class="mscroll">${raw(supDetailHtml(state.supplier[supOpenId]))}</div>`; return; }
   const all = supAll();
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu nhà cung cấp.</div>`; return; }
@@ -2532,6 +2560,7 @@ const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${
 // The supplier whose page an engine / alternator / controller was opened from: its detail gets a button back there (Khoa, 2026-11-02).
 let catFrom = null;
 function openCatalog(kind, key, from = null) {
+  needSup();
   filtOpen = false;
   catFrom = from;
   catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}) };
@@ -2550,6 +2579,7 @@ function catMatches(e, f = catView) {
 function renderCatalog() {
   const body = $("#catBody");
   if (!body) return;
+  if (supWait()) { body.innerHTML = supWait(); return; }
   const cat = catalog(), K = CAT_KIND[catView.kind], all = cat[K.list];
   if ($("#catTitle")) $("#catTitle").textContent = K.title;
   $("#mdl a.home")?.setAttribute("href", "#" + SCREEN_HASH[catView.kind]);

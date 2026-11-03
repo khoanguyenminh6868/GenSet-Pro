@@ -4,6 +4,6 @@
     { "source": "/_blob/:id", "destination": "/api/blob?id=:id" },
     { "source": "/_gh/:id", "destination": "/api/gh?id=:id" }
   ],
-  "functions": { "api/gh.js": { "maxDuration": 300 }, "api/quote.js": { "maxDuration": 300 } },
+  "functions": { "api/gh.js": { "maxDuration": 300 }, "api/quote.js": { "maxDuration": 300 }, "api/lite.js": { "maxDuration": 60 } },
   "headers": [{ "source": "/(index.html|shim.js|catalog.js|bidprice.js)?", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }]
 }
