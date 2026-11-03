@@ -15,8 +15,8 @@ const docs = {
   E: { bidName: "Mua sắm máy phát điện dự phòng", final: true, lots: [lot(1e9, 9.9e8, [{ name: "Máy phát điện", maker: "HBC Power", code: "EXT20KLE.LS" }], 1)] },
 };
 
-test("candidates: only power within 10% when the tender's is known; repair left out", () => {
-  const more = { ...docs, G: { bidName: "Mua sắm máy phát điện 440kVA", final: true, lots: [lot(1e9, 8e8)] }, H: { bidName: "Mua sắm máy phát điện 450kVA", final: true, lots: [lot(1e9, 8e8)] } };
+test("candidates: only power within 5% when the tender's is known; repair left out", () => {
+  const more = { ...docs, G: { bidName: "Mua sắm máy phát điện 420kVA", final: true, lots: [lot(1e9, 8e8)] }, H: { bidName: "Mua sắm máy phát điện 440kVA", final: true, lots: [lot(1e9, 8e8)] } };
   const { list } = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, more, 400, 1.2e9);
   assert.deepEqual(list.map((s) => s.key).sort(), ["A", "G"]);
   // Power not known for the tender: a lot with won goods stays even without a power, one with nothing about it does not.
