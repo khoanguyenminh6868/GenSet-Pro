@@ -3017,11 +3017,19 @@ function analysisHtml(a) {
     </div>
     <details class="sec" open><summary>Thông tin chính</summary><div><dl class="kv">${raw(KI.filter(([k]) => ki[k]).map(([k, l]) => h`<dt>${l}</dt><dd>${ki[k]}</dd>`).join(""))}</dl></div></details>
     ${raw(specsTableHtml(a))}
+    ${raw(contractTermsHtml(a))}
     <details class="sec"><summary>Yêu cầu năng lực, kinh nghiệm (${(a.qualificationRequirements || []).length})</summary><div>${raw(list((a.qualificationRequirements || []).map((q) => q.requirement + (q.reference ? ` (${q.reference})` : ""))))}</div></details>
     <details class="sec"><summary>Tài liệu phải nộp (${(a.requiredDocuments || []).length})</summary><div>${raw(list(a.requiredDocuments))}</div></details>
     <details class="sec"><summary>Điều khoản có dấu hiệu hạn chế (${(a.restrictiveClauses || []).length})</summary><div>${raw(list(a.restrictiveClauses))}</div></details>
     <details class="sec"><summary>Câu hỏi nên gửi làm rõ (${(a.questionsForClarification || []).length})</summary><div>${raw(list(a.questionsForClarification))}</div></details>
   </div>`;
+}
+// Contract terms of chapters VI–VIII (ĐKC, ĐKCT, dự thảo hợp đồng): late-delivery penalty and its cap, payment,
+// performance and warranty security (Khoa, 2026-11-04). Analyses made before have none.
+function contractTermsHtml(a) {
+  const t = a.contractTerms || [];
+  if (!t.length) return "";
+  return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
 }
 function comparisonHtml(c) {
   const v = VERDICT[c.verdict] || ["", "var(--yellow)"];
