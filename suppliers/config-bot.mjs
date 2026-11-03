@@ -506,11 +506,12 @@ export async function hsmtTextOf(key) {
 const formulasMd = () => "\n## Công thức được phép\n"
   + Object.entries(CONV.FORMULAS).map(([id, f]) => `- \`${id}\`: ${f.label} — đầu vào ${f.inputs.map((n) => `\`${n}\``).join(", ")}; cơ sở: ${f.basis}${f.standard ? `; giá trị chuẩn: ${Object.entries(f.standard).map(([n, st]) => `\`${n}\` = ${st.min}–${st.max} ${st.unit} (${st.basis})`).join("; ")}` : ""}`).join("\n") + "\n";
 
-async function prep(key, dir, reqData = {}) {
+// `given`: the supplier DB the run already read (run reads it once; check() then uses the same records the agent saw).
+async function prep(key, dir, reqData = {}, given = null) {
   fs.mkdirSync(path.join(dir, "web"), { recursive: true });
   // GENBID_LOCAL_SUPPLIERS=1: the supplier DB of this checkout (cn/*.json) instead of the web's, to try records not yet published.
   const localSuppliers = () => fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => ({ data: JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8")) })).filter((d) => d.data.status !== "incomplete");
-  const [analysis, { hsmt, parts, text }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : api("kind=docs&coll=supplier")]);
+  const [analysis, { hsmt, parts, text }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : given ? given.map((data) => ({ data })) : api("kind=docs&coll=supplier")]);
   fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
   const a = analysis?.result;
   const cap = capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
@@ -942,9 +943,9 @@ async function answer(req, suppliers) {
     return post([...(result ? [{ coll: "configmatch", id: key, data: { at, result } }] : []), { coll: "configreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
-    const info = await prep(key, dir, { ...req, prevResult: (await doc("configmatch", key).catch(() => null))?.result });
+    const info = await prep(key, dir, { ...req, prevResult: (await doc("configmatch", key).catch(() => null))?.result }, suppliers);
     // Same minimal setup as the bot's agent (GenBid-Bot.ps1), plus web search for step 3 of config-prompt.md.
-    const r = runClaude(dir, "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json (và newCatalog.json khi prompt.md yêu cầu). Chạy không người trông, không ai trả lời câu hỏi.");
+    const r = await runClaude(dir, "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json (và newCatalog.json khi prompt.md yêu cầu). Chạy không người trông, không ai trả lời câu hỏi.");
     fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
     if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
     // Internet finds that pass verify.mjs join the catalog first, so the configuration's suppliers can point at them.
@@ -962,10 +963,25 @@ async function answer(req, suppliers) {
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }
 
+// The log is the agent's whole stream, each line with the seconds since the start, to see where a run's minutes go
+// (every tool call and its result); nothing else reads stdout.
+const CLAUDE_TIMEOUT = 40 * 60e3;
 function runClaude(dir, input) {
-  return spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "text", "--model", process.env.GENBID_CONFIG_MODEL || "opus",
-    "--strict-mcp-config", "--disable-slash-commands", "--tools", "Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"],
-    { cwd: dir, encoding: "utf8", timeout: 40 * 60e3, maxBuffer: 64 << 20, windowsHide: true, input });
+  const t0 = Date.now(), args = ["-p", "--permission-mode", "auto", "--output-format", "stream-json", "--verbose", "--model", process.env.GENBID_CONFIG_MODEL || "opus",
+    "--strict-mcp-config", "--disable-slash-commands", "--tools", "Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"];
+  return new Promise((ok) => {
+    let out = "", err = "", buf = "", done = false, late = false;
+    const stamp = (l) => `[${Math.round((Date.now() - t0) / 1000)}s] ${l}\n`;
+    const p = spawn(CLAUDE, args, { cwd: dir, windowsHide: true });
+    const timer = setTimeout(() => { late = true; p.kill(); }, CLAUDE_TIMEOUT);
+    const end = (status, error) => { if (done) return; done = true; clearTimeout(timer); if (buf) out += stamp(buf); ok({ stdout: out, stderr: err, status, error }); };
+    p.stdout.setEncoding("utf8").on("data", (d) => { buf += d; for (let i; (i = buf.indexOf("\n")) >= 0; buf = buf.slice(i + 1)) out += stamp(buf.slice(0, i)); });
+    p.stderr.setEncoding("utf8").on("data", (d) => { err += d; });
+    p.on("error", (e) => end(null, e));
+    p.on("close", (code) => end(code, late ? new Error(`quá ${CLAUDE_TIMEOUT / 60e3} phút`) : null));
+    p.stdin.on("error", () => {});
+    p.stdin.end(input);
+  });
 }
 
 // ---------- Tìm NCC (findreq/<TBMT> → findmatch/<TBMT>) ----------
@@ -985,8 +1001,8 @@ function runGemini(dir, input) {
   let j = null; try { j = JSON.parse(r.stdout); } catch {}
   return { stdout: r.stdout, stderr: r.stderr, error: j?.status === "SUCCESS" ? "" : (j?.response || r.stderr || r.error?.message || `mã thoát ${r.status}`).trim().slice(0, 300) };
 }
-async function findPrep(key, dir, req) {
-  const info = await prep(key, dir, req);
+async function findPrep(key, dir, req, suppliers) {
+  const info = await prep(key, dir, req, suppliers);
   // Tìm NCC must see every supplier in the system (not only those of the candidate rows), so as not to suggest them again.
   const cat = fs.readFileSync(path.join(dir, "catalog.md"), "utf8"), cut = cat.indexOf("\n\n# Nhà cung cấp trong hệ thống");
   fs.writeFileSync(path.join(dir, "catalog.md"), (cut >= 0 ? cat.slice(0, cut) : cat) + "\n\n" + suppliersMd(JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8"))), "utf8");
@@ -1137,7 +1153,7 @@ async function checkNewConfigs(key, result, ranks, suppliers, cap) {
     fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin: result.origin || "all" }), "utf8");
     fs.writeFileSync(path.join(dir, "result.json"), JSON.stringify({ requirements: result.requirements, configs: mine.map(({ checks, ...c }) => ({ ...c, checks: [] })) }, null, 1), "utf8");
     fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "check-prompt.md"), "utf8").replace("<check>", `node "${SCRIPT}" check --dir .`) + formulasMd(), "utf8");
-    const r = runClaude(dir, "Đọc prompt.md trong thư mục này và làm đúng như vậy: điền checks cho các cấu hình trong result.json, chỉ sửa result.json. Chạy không người trông, không ai trả lời câu hỏi.");
+    const r = await runClaude(dir, "Đọc prompt.md trong thư mục này và làm đúng như vậy: điền checks cho các cấu hình trong result.json, chỉ sửa result.json. Chạy không người trông, không ai trả lời câu hỏi.");
     fs.writeFileSync(path.join(os.tmpdir(), `genbid-findcheck-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
     const got = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8"));
     return mergeChecked(result, got, { hsmtText: text, suppliers, origin: result.origin });
@@ -1179,8 +1195,8 @@ async function find(req, suppliers) {
       const dir = path.join(os.tmpdir(), "genbid-find", `${key}-${engine}`);
       fs.rmSync(dir, { recursive: true, force: true });
       try {
-        const { cap } = await findPrep(key, dir, req);
-        const r = engine === "gemini" ? runGemini(dir, FIND_INPUT) : runClaude(dir, FIND_INPUT);
+        const { cap } = await findPrep(key, dir, req, suppliers);
+        const r = engine === "gemini" ? runGemini(dir, FIND_INPUT) : await runClaude(dir, FIND_INPUT);
         fs.writeFileSync(path.join(os.tmpdir(), `genbid-find-${key}-${engine}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
         if (r.error && !fs.existsSync(path.join(dir, "newCatalog.json"))) { tried.push({ engine: ENGINE[engine], error: r.error }); continue; }
         const checked = await findCheck(dir, suppliers, cap), fit = checked.filter((c) => !c.errors.length && c.fits);
@@ -1236,7 +1252,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     console.log(`${key}: ${mergeText(m)}${m ? ` ${JSON.stringify(m)}` : ""}`);
   } else if (cmd === "run") {
     const lock = path.join(os.tmpdir(), "genbid-config.lock");
-    if (fs.existsSync(lock) && Date.now() - fs.statSync(lock).mtimeMs < 60 * 60e3) { console.log("SUMMARY: đang có lượt khác chạy"); process.exit(4); }
+    // A lock left by a run that died (killed, node exit 13) used to hold every request for an hour (2026-11-03): it counts
+    // only while the process that wrote it is alive, and for at most 4 hours (the bot stops a run after 3).
+    const alive = (pid) => { try { process.kill(pid, 0); return true; } catch (e) { return e.code === "EPERM"; } };
+    if (fs.existsSync(lock) && Date.now() - fs.statSync(lock).mtimeMs < 4 * 60 * 60e3 && alive(Number(fs.readFileSync(lock, "utf8")) || -1)) { console.log("SUMMARY: đang có lượt khác chạy"); process.exit(4); }
     fs.writeFileSync(lock, String(process.pid));
     try {
       const [pending, finds, prices] = await Promise.all([api("kind=config"), api("kind=find"), api("kind=bidprice")]);
