@@ -7,7 +7,7 @@ Không tìm trên internet.
 - `input.md`: gói thầu đang cần bỏ giá — tên gói, công suất, giá gói, phân tích HSMT, cấu hình dự kiến chào (nếu đã có
   Gợi ý cấu hình), phần yêu cầu kỹ thuật của HSMT.
 - `samples.md`: các phần/gói đã có kết quả trên muasamcong mà code thấy gần nhất (cùng là cung cấp máy phát, công suất
-  code đọc được xê dịch không quá 10% so với gói này, giá gói gần). Mỗi mục có mã `S1`, `S2`... và chỉ có những gì muasamcong ghi: tên gói, chủ đầu tư,
+  code đọc được xê dịch không quá 5% so với gói này, giá gói gần). Mỗi mục có mã `S1`, `S2`... và chỉ có những gì muasamcong ghi: tên gói, chủ đầu tư,
   công suất code đọc được, số nhà thầu, hàng hoá trúng thầu (tên, hãng, model, xuất xứ, số lượng, đơn giá), câu trích HSMT.
 
 ## Việc cần làm

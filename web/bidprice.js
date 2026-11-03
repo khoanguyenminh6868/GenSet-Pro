@@ -27,11 +27,11 @@
   const taxKey = (x) => String(x.taxCode || "").replace(/\D/g, "") || String(x.name || "").trim().toUpperCase();
   const bdPrice = (b) => b.finalPrice ?? b.bidPrice;
 
-  const MAX = 80, POWER_TOL = 0.1, LEVELS = ["same", "close", "different", "unknown"];
+  const MAX = 80, POWER_TOL = 0.05, LEVELS = ["same", "close", "different", "unknown"];
   const cut = (s, n) => { s = String(s || "").replace(/\s+/g, " ").trim(); return s.length > n ? s.slice(0, n) + "…" : s; };
   // The decided lots most like the tender, for the agent to compare. t: { notifyNo, bidName, bidForm, investorName },
   // docs: { <TBMT>: bidhist document }, K: kVA, P: package price. Only lots that supply a generator set (same kind as
-  // the tender), with a winner and a price. When K is known, only lots whose power is known and within 10% of K
+  // the tender), with a winner and a price. When K is known, only lots whose power is known and within 5% of K
   // (Khoa, 2026-11-03); when it is not, a lot whose power is not known stays only when it says something about its goods
   // (won goods or the HSMT's lines), so the agent can tell what it was (a lot with nothing about its configuration
   // cannot set the price).
