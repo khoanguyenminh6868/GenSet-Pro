@@ -841,7 +841,7 @@ async function setStage(key, stage, extra = {}) {
   const prev = state.tracked[key] || {};
   if (stage === stageOf(t)) return;
   if (!movesOf(t).includes(stage)) { toast(movesOf(t).length ? "Không thể chuyển sang " + stageLabel(stage) + " từ trạng thái này" : "Gói này đã ở trạng thái cuối, không chuyển được nữa"); renderAll(); return; }
-  if (stage === "submitted" && prev.stage !== "submitted") {
+  if (stage === "submitted" && prev.stage !== "submitted" && !(prev.stage === "dropped" && prev.prevStage === "submitted")) {
     const b = submitBlockers(key);
     if (b.length) {
       modal(h`<div class="row"><h2 style="flex:1">Chưa chuyển được sang Đã nộp</h2><button class="btn sm" data-close>Đóng</button></div>
@@ -853,7 +853,7 @@ async function setStage(key, stage, extra = {}) {
     }
     if (extra.bidPrice == null) { askBidPrice(key); return; }
   }
-  await saveTracked(key, { ...prev, ...extra, stage, prevStage: stage === "dropped" ? prev.stage || "new" : prev.prevStage, note: prev.note || "", tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() });
+  await saveTracked(key, { ...prev, ...extra, stage, prevStage: stage === "dropped" ? stageOf(t) : prev.prevStage, note: prev.note || "", tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() });
   toast("Đã chuyển sang " + stageLabel(stage));
 }
 // Public outcome of a closed tender: bidder count from the opening, winner and price once results are out.
@@ -1072,15 +1072,17 @@ function anaIcon(t) {
   return `<span class="aicon ${m[0]}" role="img" aria-label="${m[1]}" title="${m[1]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${m[2]}</svg></span>`;
 }
 const FLOW = ["new", "preparing", "submitted", "won"];
-// Allowed moves: Đã nộp only goes to a result; results and closed tenders are final.
+// Allowed moves: Đã nộp goes to a result or Bỏ qua (Khoa, 2026-11-03); results and closed tenders are final.
+// A tender dropped from Đã nộp goes back to Đã nộp, any other dropped tender back to Mới.
+const undropTo = (t) => (state.tracked[t._key]?.prevStage === "submitted" ? "submitted" : "new");
 function movesOf(t) {
   const s = stageOf(t);
   if (isProject(t) || tabOf(t) === "closed" || s === "won" || s === "lost") return [];
-  if (s === "submitted") return ["won", "lost"];
-  if (s === "dropped") return ["new"];
+  if (s === "submitted") return ["won", "lost", "dropped"];
+  if (s === "dropped") return [undropTo(t)];
   return ["new", "preparing", "submitted", "dropped"].filter((x) => x !== s);
 }
-function stepPrev(t) { const s = stageOf(t); const p = s === "dropped" ? "new" : FLOW[FLOW.indexOf(s) - 1]; return p && movesOf(t).includes(p) ? p : null; }
+function stepPrev(t) { const s = stageOf(t); const p = s === "dropped" ? undropTo(t) : FLOW[FLOW.indexOf(s) - 1]; return p && movesOf(t).includes(p) ? p : null; }
 function stepNext(t) { const s = stageOf(t); const i = FLOW.indexOf(s); const n = i >= 0 ? FLOW[i + 1] : null; return n && s !== "submitted" && movesOf(t).includes(n) ? n : null; }
 // Results for a submitted bid: Trúng thầu or Không trúng.
 // Move button: icon + target stage label, coloured like that stage.
