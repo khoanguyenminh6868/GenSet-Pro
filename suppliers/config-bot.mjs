@@ -286,7 +286,38 @@ export function engineMins(t) {
     const c = line.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
     if (c) cyl.push(Number(c[1]));
   }
-  return { minDisp: one(disp), minCyl: one(cyl) };
+  return { minDisp: one(disp), minCyl: one(cyl), ...powerMins(t) };
+}
+// "Công suất liên tục (Prime) ≥ 400 kVA / 320 kW" and "Tiêu hao nhiên liệu ≤ 90 Lít/giờ": a table cell of the HSMT
+// often puts the words on the lines around the figure, so each figure goes to the nearest word naming prime or standby
+// (fuel). One value each, as engineMins.
+const PRIME_W = /prime|li[êe]n t[ụu]c|continuous|c[ơo] b[ảa]n|th[ưư][ờo]ng xuy[êe]n/gi, STANDBY_W = /standby|d[ựu] ph[òo]ng|emergency|kh[ẩa]n c[ấa]p/gi;
+const nearest = (t, i, re) => { let best = Infinity; for (const m of t.matchAll(re)) best = Math.min(best, Math.abs(m.index - i)); return best; };
+export function powerMins(t) {
+  const text = String(t), prime = [], fuel = [];
+  for (const m of text.matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*\/\s*(\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/gi)) {
+    const around = text.slice(Math.max(0, m.index - 160), m.index + 160), at = Math.min(m.index, 160);
+    const p = nearest(around, at, PRIME_W), sb = nearest(around, at, STANDBY_W);
+    if (!(p < sb && p <= 120)) continue;
+    const v = { [m[2].toLowerCase() === "kva" ? "kVA" : "kW"]: Number(m[1].replace(",", ".")) };
+    if (m[3] && m[4].toLowerCase() !== m[2].toLowerCase()) v[m[4].toLowerCase() === "kva" ? "kVA" : "kW"] = Number(m[3].replace(",", "."));
+    prime.push(JSON.stringify(v));
+  }
+  const pair = (a, ua, b, ub) => { const v = { [ua.toLowerCase() === "kva" ? "kVA" : "kW"]: Number(a.replace(",", ".")) }; if (b && ub.toLowerCase() !== ua.toLowerCase()) v[ub.toLowerCase() === "kva" ? "kVA" : "kW"] = Number(b.replace(",", ".")); return v; };
+  for (const line of text.split("\n")) {
+    const m = line.match(/(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n)|prime(?:\s+power)?)[^\n\d≥≤]{0,60}?(\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*[\/(]\s*(\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/i);
+    if (m && !STANDBY_W.test(line.slice(0, m.index + 20))) prime.push(JSON.stringify(pair(m[1], m[2], m[3], m[4])));
+    STANDBY_W.lastIndex = 0;
+  }
+  for (const m of text.matchAll(/(?:≤|<=|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)\s*:?\s*(\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t\s*\/\s*gi[ờo]|l\/h|lph|l\/hr)/gi)) {
+    const before = text.slice(Math.max(0, m.index - 200), m.index);
+    if (!/ti[êe]u hao|nhi[êe]n li[ệe]u|fuel/i.test(before)) continue;
+    const load = before.slice(-60).match(/(\d{2,3})\s*%(?![\s\S]*\d{2,3}\s*%)/);
+    fuel.push({ v: Number(m[1].replace(",", ".")), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
+  }
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null);
+  const p = one(prime), full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
+  return { minPrime: p ? JSON.parse(p) : null, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)) };
 }
 // The displacement (L) and the cylinders of an engine as its facts give them.
 const litres = (v) => { const n = numbersIn(v)[0]; return n == null ? null : n > 100 ? n / 1000 : n; };
@@ -335,6 +366,14 @@ export function candidates(cat, cap, hints, { suppliers = [], origin = "all", cn
       const dl = below("disp", hints.minDisp, litres) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = below("cyl", hints.minCyl, (v) => numbersIn(v)[0] ?? null);
       if (dl != null) { score -= 600; why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
       if (cl != null) { score -= 600; why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
+      // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
+      const pr = u.power?.prime, mp = hints.minPrime;
+      const lowPrime = pr && mp && ((mp.kVA && pr.kVA != null && pr.kVA < mp.kVA * 0.995) || (!mp.kVA && mp.kW && pr.kW != null && pr.kW < mp.kW * 0.995));
+      if (lowPrime) { score -= 600; why.push(`Prime ${pr.kVA ?? "?"} kVA / ${pr.kW ?? "?"} kW < ${mp.kVA ? `${mp.kVA} kVA` : `${mp.kW} kW`} HSMT yêu cầu`); }
+      // Its own fuel consumption in L/h above the most the HSMT allows.
+      const fl = hints.maxFuel && (u.specs || []).find((x) => x.key === "fuel" && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`));
+      const fv = fl ? numbersIn(fl.value)[0] : null;
+      if (fv != null && fv > hints.maxFuel) { score -= 300; why.push(`tiêu hao ${fv} L/h > ${hints.maxFuel} L/h HSMT cho phép`); }
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
       if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
