@@ -117,5 +117,31 @@
    "| Weight | kg | 11000 | 10000 | 10000 | 25000",
    "| Protection degree IP | | 54 | 54 | 54 | 54"
   ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.atlascopco.com/en-ph/compressors/products/industrial-water-cooling-systems/tdv-industrial-cooler",
+  "title": "TDV ( adiabatic) dry coolers series - Atlas Copco Philippines",
+  "header": [
+   "| | Metric | Imperial",
+   "| Cooling capacity | 50 kW – 750 kW | 170.000 BTU/hr – 2.600.000 BTU/hr",
+   "| Water flow | 5 m 3 /h – 120 m 3 /h | 22 gpm – 520 gpm"
+  ],
+  "rows": [
+   "| Hydraulic allowed pressure | PN10 | 145 psi"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.atlascopco.com/en-ph/compressors/products/industrial-water-cooling-systems/tdv-industrial-cooler",
+  "title": "TDV ( adiabatic) dry coolers series - Atlas Copco Philippines",
+  "header": [
+   "| | Metric | Imperial",
+   "| Cooling capacity | 200 kW – 2400 kW | 680.000 BTU/hr - 8.200.000 BTU/hr",
+   "| Water flow | 14 m3/h - 290 m3/h | 61 gpm - 1270 gpm"
+  ],
+  "rows": [
+   "| Hydraulic allowed pressure | PN10 | 145 psi"
+  ]
  }
 ]

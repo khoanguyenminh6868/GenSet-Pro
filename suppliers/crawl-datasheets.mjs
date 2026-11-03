@@ -65,8 +65,13 @@ export function pdfText(table) {
 const KEEP = /model|engine|alternator|generator|prime|stand\s*-?by|continuous|rated|output|power|frequency|speed|brand|make|manufacturer|发动机|发电机|型号|功率|品牌|厂家/i;
 export function sheetOf(text) {
   const rows = [];
+  // "| Engine | Alternator" and the two lines under it (makes, then models: GFE sheets) are kept as they are.
+  let stack = 0;
   for (const l of text.split("\n")) {
     if (l.length > 220) continue;
+    const s = C.cellsOf(l);
+    if (s.length === 2 && /^engine$/i.test(s[0]) && /^alternator$/i.test(s[1])) { rows.push(l); stack = 2; continue; }
+    if (stack && s.length >= 2) { stack--; if (!rows.includes(l)) rows.push(l); continue; }
     // Section headings stay: they tell which part a bare "Model" line is about (catalog.js headingOf).
     if (["engine", "alternator", null].includes(C.headingOf(l))) { rows.push(l); continue; }
     const c = C.cellsOf(l);
@@ -146,7 +151,7 @@ async function crawl(id) {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  let v = ""; try { v = execFileSync("pdftotext", ["-v"], { stdio: ["ignore", "pipe", "pipe"] }).toString(); } catch (e) { v = String(e.stderr || e.stdout || ""); }
+  let v = ""; try { v = execFileSync("pdftotext", ["-v"], { stdio: ["ignore", "pipe", "pipe"] }).toString(); } catch (e) { v = `${e.stdout || ""}${e.stderr || ""}`; } // xpdf 4.06 prints the version on stdout and exits 99
   if (!/xpdf|Glyph & Cog/i.test(v)) { console.error("Cần pdftotext của xpdf (có -table), ví dụ bản cài trong Git for Windows."); process.exit(2); }
   const ids = only.length ? only : fs.readdirSync(path.join(ROOT, "specs")).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5));
   let next = 0;

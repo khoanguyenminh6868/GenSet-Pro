@@ -105,9 +105,381 @@
         "We have obtained CE, ISO9000,GS,SONCAP,EPA and CARB certificates."
       ],
       "file": "sources/runda-fujian/1.md"
+    },
+    {
+      "n": 4001,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/llBpnKrklqSRjjjqioliio/product-detail-a01.jpg",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-C22 | 16 | 20 | 18 | 22 | 4B3.9-G11 |"
+      ],
+      "file": "sources/runda-fujian/4001.md"
+    },
+    {
+      "n": 4002,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/lpBpnKrklqSRjjjqiopiio/product-detail-a02.jpg",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-C28 | 20 | 25 | 22 | 28 | 4B3.9-G11 |"
+      ],
+      "file": "sources/runda-fujian/4002.md"
+    },
+    {
+      "n": 4003,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/liBpnKrklqSRjjiprlnrio/FAWDE-50hz.png",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-WX22 | 16 | 20 | 18 | 22 | 4DW91-29D |"
+      ],
+      "file": "sources/runda-fujian/4003.md"
+    },
+    {
+      "n": 4004,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/loBpnKrklqSRjjipmkjrio/Isuzu-50hz.png",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-J25 | 18 | 22.5 | 20 | 25 | JE493DB-04 |"
+      ],
+      "file": "sources/runda-fujian/4004.md"
+    },
+    {
+      "n": 4005,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/ljBpnKrklqSRjjjqioijio/product-detail-c01.jpg",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-M750 | 540 | 675 | 600 | 750 | S6R2-PTA |"
+      ],
+      "file": "sources/runda-fujian/4005.md"
+    },
+    {
+      "n": 4006,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/lkBpnKrklqSRjjjqiojjio/product-detail-d01.jpg",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-P22 | 16 | 20 | 17.6 | 22 | 404A-22G1 |"
+      ],
+      "file": "sources/runda-fujian/4006.md"
+    },
+    {
+      "n": 4007,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/llBpnKrklqSRjjjqiokjio/product-detail-d02.jpg",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-P100 | 72 | 90 | 79.2 | 99 | 1104C-44TAG1 |"
+      ],
+      "file": "sources/runda-fujian/4007.md"
+    },
+    {
+      "n": 4008,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/loBpnKrklqSRjjipmkooiq/1ff38460-3f97-41bb-a9a3-3129fd9d043c.png",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-S66 | 48 | 60 | 53 | 66 | SC4H95D2 |"
+      ],
+      "file": "sources/runda-fujian/4008.md"
+    },
+    {
+      "n": 4009,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/lnBpnKrklqSRjjiprlpiio/Weichai-50hz.png",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-W70 | 50 | 62.5 | 56 | 70 | WP4.1D66E200 |"
+      ],
+      "file": "sources/runda-fujian/4009.md"
+    },
+    {
+      "n": 4010,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/loBpnKrklqSRjjipkkknio/YANGDONG-50hz.png",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-YD14 | 10 | 13 | 11 | 14 | YD480D |"
+      ],
+      "file": "sources/runda-fujian/4010.md"
+    },
+    {
+      "n": 4011,
+      "url": "https://iqrorwxhmkorlp5p-static.micyjz.com/cloud/lmBpnKrklqSRjjiprlrkin/Yunnei-50hz.png",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| M-YN25 | 18 | 23 | 20 | 25 | YN25GB |"
+      ],
+      "file": "sources/runda-fujian/4011.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-03",
-  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)",
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "Comap",
+      "line": "3)Optional controller brands: Deepsea,Comap, Datakom,Smartgen,Mebay.",
+      "src": [
+        4002
+      ]
+    },
+    {
+      "brand": "Datakom",
+      "model": null,
+      "text": "Datakom",
+      "line": "3)Optional controller brands: Deepsea,Comap, Datakom,Smartgen,Mebay.",
+      "src": [
+        4002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "highly reliable engines,alternators from variously famous brands like Cummins,Kubota,Perkins,Stamford, LeroySomer and Deepsea, Smartgen controllers etc.",
+      "src": [
+        1
+      ]
+    },
+    {
+      "brand": "Mebay",
+      "model": null,
+      "text": "Mebay",
+      "line": "3)Optional controller brands: Deepsea,Comap, Datakom,Smartgen,Mebay.",
+      "src": [
+        4002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "engines,alternators from variously famous brands like Cummins,Kubota,Perkins,Stamford, LeroySomer and Deepsea, Smartgen controllers etc.",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "specTables": [
+    {
+      "n": 4001,
+      "title": "M-C SERIES « Diesel Generator Sets Powered By Cummins Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-C22 | 16 | 20 | 18 | 22 | 4B3.9-G11 |",
+        "| M-C33 | 24 | 30 | 26 | 33 | 4B3.9-G12 |",
+        "| M-C55 | 40 | 50 | 44 | 55 | 4BTA3.9-G2 |",
+        "| M-C110 | 80 | 100 | 88 | 110 | 6BT5.9-G2 |",
+        "| M-C400 | 288 | 360 | 320 | 400 | QSZ13-G6 |",
+        "| M-C413 | 300 | 375 | 330 | 413 | 6ZTAA13-G3 |",
+        "| M-C440 | 320 | 400 | 352 | 440 | QSZ13-G7 |",
+        "| M-C480 | 350 | 438 | 384 | 480 | 6ZTAA13-G4 |",
+        "| M-C275 | 200 | 250 | 220 | 275 | MTA11-G2 |",
+        "| M-C275 | 200 | 250 | 220 | 275 | NTA855-G1 |",
+        "| M-C413 | 300 | 375 | 330 | 413 | KTA19-G2 |",
+        "| M-C440 | 320 | 400 | 352 | 440 | QSNT-G3 |",
+        "| M-C500 | 360 | 450 | 400 | 500 | KTA19-G3 |",
+        "| M-C550 | 400 | 500 | 440 | 550 | KTA19-G3A |",
+        "| M-C550 | 400 | 500 | 440 | 550 | KTA19-G4 |",
+        "| M-C578 | 420 | 525 | 462 | 578 | KTAA19-G5 |",
+        "| M-C788 | 570 | 713 | 630 | 788 | KT38-G1 |",
+        "| M-C800 | 580 | 725 | 640 | 800 | KT38-GA |",
+        "| M-C825 | 600 | 750 | 660 | 825 | KTA38-G2 |",
+        "| M-C1250 | 900 | 1125 | 1000 | 1250 | KTA38-G9 |",
+        "| M-C1375 | 1000 | 1250 | 1100 | 1375 | KTA50-G3 |"
+      ]
+    },
+    {
+      "n": 4002,
+      "title": "M-C SERIES Diesel Generator Sets Powered By Cummins Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-C28 | 20 | 25 | 22 | 28 | 4B3.9-G11 |",
+        "| M-C39 | 28 | 35 | 31 | 39 | 4B3.9-G12 |",
+        "| M-C69 | 50 | 63 | 55 | 69 | 4BTA3.9-G2 |",
+        "| M-C303 | 220 | 275 | 242 | 303 | NT855-GA |",
+        "| M-C440 | 320 | 400 | 352 | 440 | NTA855-G3 |",
+        "| M-C495 | 360 | 450 | 396 | 495 | KTA19-G2 |",
+        "| M-C550 | 400 | 500 | 440 | 550 | KTA19-G3 |",
+        "| M-C619 | 450 | 563 | 495 | 619 | KTA19-G3A |",
+        "| M-C825 | 600 | 750 | 660 | 825 | KTA38-G |",
+        "| M-C1001 | 728 | 910 | 801 | 1001 | KTA38-G2 |",
+        "| M-C1375 | 1000 | 1250 | 1100 | 1375 | KTA38-G9 |"
+      ]
+    },
+    {
+      "n": 4003,
+      "title": "M-WX SERIES EIS) Diesel Generator Sets Powered By FAWDE Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-WX22 | 16 | 20 | 18 | 22 | 4DW91-29D |",
+        "| M-WX27 | 20 | 25 | 22 | 28 | 4DW92-35D |",
+        "| M-WX41 | 30 | 38 | 33 | 41 | 4DX22-50D |",
+        "| M-WX94 | 68 | 85 | 75 | 94 | CA4DF2-12D |",
+        "| M-WX275 | 200 | 250 | 220 | 275 | CA6DL2-30D |",
+        "| M-WX372 | 270 | 338 | 297 | 371 | CA6DM2J-41D |"
+      ]
+    },
+    {
+      "n": 4004,
+      "title": "M-J SERIES ISUZU Diesel Generator Sets Powered By JIANGXI ISUZU Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-J25 | 18 | 22.5 | 20 | 25 | JE493DB-04 |"
+      ]
+    },
+    {
+      "n": 4005,
+      "title": "M-M SERIES A WO Diesel Generator Sets Powered By MITSUBISHI Engine, original from Japan",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-M750 | 540 | 675 | 600 | 750 | S6R2-PTA |",
+        "| M-M1375 | 1000 | 1250 | 1100 | 1375 | S12R-PTA |",
+        "| M-M1825 | 1320 | 1650 | 1460 | 1825 | S16R-PTA |",
+        "| M-M2200 | 1600 | 2000 | 1760 | 2200 | S16R-PTAA2 |"
+      ]
+    },
+    {
+      "n": 4006,
+      "title": "M-P SERIES NEO er INS Diesel Generator Sets Powered By Perkins Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-P22 | 16 | 20 | 17.6 | 22 | 404A-22G1 |",
+        "| M-P33 | 24 | 30 | 26.4 | 33 | 1103A-33G |",
+        "| M-P50 | 36 | 45 | 40 | 50 | 1103A-33TG1 |",
+        "| M-P69 | 50 | 62.5 | 55 | 69 | 1104A-44TG1 |",
+        "| M-P220 | 160 | 200 | 176 | 220 | 1206A-E70TTAG1 |",
+        "| M-P385 | 280 | 350 | 308 | 385 | 2206C-E13TAG2 |",
+        "| M-P450 | 320 | 400 | 360 | 450 | 2206C-E13TAG3 |",
+        "| M-P550 | 400 | 500 | 440 | 550 | 2506C-E15TAG2 |",
+        "| M-P660 | 480 | 600 | 528 | 660 | 2806C-E18TAG1A |",
+        "| M-P715 | 520 | 650 | 572 | 715 | 2806A-E18TAG2 |",
+        "| M-P825 | 600 | 750 | 660 | 825 | 4006-23TAG2A |",
+        "| M-P880 | 640 | 800 | 704 | 880 | 4006-23TAG3A |",
+        "| M-P1000 | 720 | 900 | 800 | 1000 | 4008TAG1A |",
+        "| M-P1100 | 800 | 1000 | 880 | 1100 | 4008TAG2A |",
+        "| M-P1856 | 1350 | 1688 | 1485 | 1856 | 4012-46TAG3A |",
+        "| M-P2035 | 1480 | 1850 | 1628 | 2035 | 4016TAG1A |",
+        "| M-P2200 | 1600 | 2000 | 1760 | 2200 | 4016TAG2A |",
+        "| M-P2200 | 1600 | 2000 | 1760 | 2200 | 4016-61TRG2 |",
+        "| M-P2475 | 1800 | 2250 | 1980 | 2475 | 4016-61TRG3 |"
+      ]
+    },
+    {
+      "n": 4007,
+      "title": "M-P SERIES er INS Diesel Generator Sets Powered By Perkins Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-P100 | 72 | 90 | 79.2 | 99 | 1104C-44TAG1 |",
+        "| M-P620 | 450 | 563 | 495 | 619 | 2506A-E15TAG4 |",
+        "| M-PG688 | 500 | 625 | 550 | 688 | 2806A-E18TAG1A |",
+        "| M-P743 | 540 | 675 | 594 | 743 | 2806A-E18TAG3 |",
+        "| M-P825 | 600 | 750 | 660 | 825 | 4006-23TAG2A |",
+        "| M-P1100 | 800 | 1000 | 880 | 1100 | 4008TAG2 |",
+        "| M-P1375 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A |",
+        "| M-P1650 | 1200 | 1500 | 1320 | 1650 | 4012-46TAG2A |"
+      ]
+    },
+    {
+      "n": 4008,
+      "title": "M-S SERIES <> Diesel Generator Sets Powered By SDEC Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-S66 | 48 | 60 | 53 | 66 | SC4H95D2 |",
+        "| M-S80 | 58 | 73 | 64 | 80 | SC4H115D2 |",
+        "| M-S110 | 80 | 100 | 88 | 110 | SC4H160D2 |",
+        "| M-S133 | 96 | 120 | 106 | 133 | SC4H180D2 |",
+        "| M-S165 | 120 | 150 | 132 | 165 | SC7H230D2 |",
+        "| M-S330 | 240 | 300 | 264 | 330 | SC12E460D2 |",
+        "| M-S358 | 260 | 325 | 286 | 357.5 | SC12E500D3 |",
+        "| M-S344 | 250 | 313 | 275 | 344 | SC13G420D2 |",
+        "| M-S413 | 300 | 375 | 330 | 413 | SC15G500D2 |",
+        "| M-S500 | 360 | 450 | 400 | 500 | SC25G610D2 |",
+        "| M-S550 | 400 | 500 | 440 | 550 | SC25G690D2 |",
+        "| M-S625 | 450 | 563 | 500 | 625 | SC27G755D2 |",
+        "| M-S660 | 480 | 600 | 528 | 660 | SC27G830D2 |"
+      ]
+    },
+    {
+      "n": 4009,
+      "title": "M-W SERIES WEICHAI Dice] Eno Sets Powered By WEICHAI Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-W70 | 50 | 62.5 | 56 | 70 | WP4.1D66E200 |",
+        "| M-W110 | 80 | 100 | 88 | 110 | WP4.1D100E200 |",
+        "| M-W138 | 100 | 125 | 110 | 138 | WP6D132E200 |",
+        "| M-W165 | 120 | 150 | 132 | 165 | WP6D152E200 |",
+        "| M-W180 | 130 | 162.5 | 144 | 180 | WP6D167E200 |",
+        "| M-W250 | 180 | 225 | 200 | 250 | WP10D238E200 |",
+        "| M-W344 | 250 | 312.5 | 275 | 344 | WP10D320E200 |",
+        "| M-W413 | 300 | 375 | 330 | 413 | WP13D385E200 |",
+        "| M-W495 | 360 | 450 | 396 | 495 | WP13D440E310 |",
+        "| M-W550 | 400 | 500 | 440 | 550 | 6M26D484E200 |",
+        "| M-W633 | 460 | 575 | 506 | 633 | 6M33D572E200 |",
+        "| M-W725 | 520 | 650 | 580 | 725 | 6M33D633E200 |",
+        "| M-W825 | 600 | 750 | 660 | 825 | 12M26D748E200 |",
+        "| M-W1100 | 800 | 1000 | 880 | 1100 | 12M26D968E200 |",
+        "| M-W1238 | 900 | 1125 | 990 | 1238 | 12M33D1108E200 |",
+        "| M-W1375 | 1000 | 1250 | 1100 | 1375 | 12M33D1210E200 |"
+      ]
+    },
+    {
+      "n": 4010,
+      "title": "M-YD SERIES /A Diesel Generator Sets Powered By YANGDONG Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-YD14 | 10 | 13 | 11 | 14 | YD480D |",
+        "| M-YD18 | 13 | 16 | 14 | 18 | YND485D |",
+        "| M-YD22 | 16 | 20 | 18 | 22 | YSD490D |",
+        "| M-YD26 | 19 | 24 | 21 | 26 | Y490D |",
+        "| M-YD28 | 20 | 25 | 22 | 28 | Y495D |",
+        "| M-YD33 | 24 | 30 | 26 | 33 | Y4102D |",
+        "| M-YD40 | 29 | 36 | 32 | 40 | Y4105D |",
+        "| M-YD41 | 30 | 38 | 33 | 41 | Y4102ZD |",
+        "| M-YD55 | 40 | 50 | 44 | 55 | Y4105ZLD |",
+        "| M-YD66 | 48 | 60 | 53 | 66 | YD4EZLD |"
+      ]
+    },
+    {
+      "n": 4011,
+      "title": "M-YN SERIES Sora, Generator Sets Powered By YUNNEI Engine",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| M-YN25 | 18 | 23 | 20 | 25 | YN25GB |",
+        "| M-YN30 | 22 | 27 | 24 | 30 | YN27GB |",
+        "| M-YN41 | 30 | 38 | 33 | 41 | YN38GB |",
+        "| M-YN55 | 40 | 50 | 44 | 55 | YN38GBZ |",
+        "| M-YN88 | 64 | 80 | 70.4 | 88 | YN48GBZ |"
+      ]
+    }
+  ]
 }
