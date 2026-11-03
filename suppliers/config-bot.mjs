@@ -300,13 +300,19 @@ export function hintsOf(text, extra = "") {
 const AT_LEAST = /≥|>=|tối thiểu|ít nhất|không (nhỏ|thấp|bé) hơn|trở lên/i, MAXIMUM = /≤|<=|tối đa|không (lớn|vượt|quá)/i;
 const DISP_W = /dung t[íi]ch|displacement/i, TANK_W = /bình|bồn|thùng|két|nhớt|nước|nhiên liệu|tank|dầu|ắc quy/i;
 export function engineMins(t) {
-  const one = (list) => (new Set(list).size === 1 ? list[0] : null), disp = [], cyl = [], lines = String(t).split("\n");
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null), disp = [], dmax = [], cyl = [], lines = String(t).split("\n");
   lines.forEach((line, i) => {
     // A table cell often puts the label on one line and the figure on the next ("Dung tích xi lanh" / "11.051 L").
     // Only a figure with its sign or unit: a number alone is often the row number of the next item ("Số xy lanh: Nêu rõ" / "7").
     const prev = lines[i - 1] || "", alone = !/[a-zà-ỹ]{3}/i.test(line.replace(/l[íi]t|xi|xy|lanh|mm|cc/gi, "")) && /[≥>]|l[íi]t|\bL\b|lanh/i.test(line);
     const cell = alone ? prev + " " + line : line;
-    if (MAXIMUM.test(cell)) return;
+    // A largest displacement ("Dung tích xi lanh ≤ 15,2 L", an HSMT written around one engine): 2026-11-03, the best
+    // candidates were 19.6 L engines that the agent then marked not met.
+    if (MAXIMUM.test(cell)) {
+      const m = DISP_W.test(cell) && !TANK_W.test(cell) && cell.match(/(?:≤|<=|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)\s*:?\s*(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
+      if (m) dmax.push(Number(m[1].replace(",", ".")));
+      return;
+    }
     // A bare figure is the least the HSMT accepts (Khoa, 2026-11-03), for the engine's displacement and cylinders.
     const dl = DISP_W.test(cell) && !TANK_W.test(cell) && (AT_LEAST.test(cell) || /dung t[íi]ch\s*(xi|xy)\s?lanh|displacement/i.test(cell));
     const d = dl && cell.match(/(?<![\d.,])(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
@@ -315,7 +321,7 @@ export function engineMins(t) {
       || line.match(/^\s*[-+•]?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
     if (c && Number(c[1]) >= 1 && Number(c[1]) <= 20) cyl.push(Number(c[1]));
   });
-  return { minDisp: one(disp), minCyl: one(cyl), ...powerMins(t) };
+  return { minDisp: one(disp), maxDisp: one(dmax), minCyl: one(cyl), ...powerMins(t) };
 }
 // "Công suất liên tục (Prime) ≥ 400 kVA / 320 kW" and "Tiêu hao nhiên liệu ≤ 90 Lít/giờ": a table cell of the HSMT
 // often puts the words on the lines around the figure, so each figure goes to the nearest word naming prime or standby
@@ -371,6 +377,8 @@ export function plausible(hints, cap) {
   if (hints.maxFuel != null && (hints.maxFuel < kva * 0.12 || hints.maxFuel > kva * 0.6)) out.maxFuel = null;
   if (hints.minDisp != null && hints.minDisp > Math.max(4, kva * 0.15)) out.minDisp = null;
   if (hints.minCyl != null && kva < 60 && hints.minCyl > 4) out.minCyl = null;
+  // A largest displacement below the least one, or too small for this power, is another genset's.
+  if (hints.maxDisp != null && ((out.minDisp != null && hints.maxDisp < out.minDisp) || hints.maxDisp < kva * 0.01)) out.maxDisp = null;
   return out;
 }
 export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30 } = {}) {
@@ -411,6 +419,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const calcL = !given.some((f) => f.key === "disp") && b > 50 && st > 50 && n ? Math.round(Math.PI / 4 * b * b * st * n / 1e4) / 100 : null;
       const dl = below("disp", hints.minDisp, litres) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = below("cyl", hints.minCyl, (v) => numbersIn(v)[0] ?? null);
       if (dl != null) { score -= 600; why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
+      const dh = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => litres(f.value)).filter((x) => x != null) : [];
+      if (dh.length && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
       if (cl != null) { score -= 600; why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
       const pr = u.power?.prime, mp = hints.minPrime;
@@ -463,7 +473,18 @@ const factLine = (f) => `${CAT.SPEC[f.key]?.vi || f.key}: ${f.value} — factSrc
 export function catalogMd(cat, cap, hints, opts = {}) {
   const facts = opts.facts || modelFacts(cat, opts.suppliers || []), { top, all } = candidates(cat, cap, hints, { ...opts, facts });
   const sup = new Map((opts.suppliers || []).map((s) => [s.id, s])), shown = new Set(), headers = new Map();
-  const rowText = (u) => (u.line ? `  line: ${u.line}` : `  bảng một model: ${(u.lines?.rows || []).join(" ; ")}`);
+  // A table whose models run across: each row with this model's own cell after it, so no other column is taken; the
+  // row is quoted whole (check takes the figure from that column).
+  const rowText = (u) => {
+    if (u.line) return `  line: ${u.line}`;
+    const rows = u.lines?.rows || [], k = CAT.keyOf(u.model || ""), cells = rows.map(CAT.cellsOf);
+    const at = cells.find((cs) => cs.length >= 3 && cs.slice(1).some((x) => CAT.keyOf(x) === k));
+    const j = at ? at.findIndex((x, i) => i > 0 && CAT.keyOf(x) === k) : -1;
+    if (j < 1) return `  bảng một model: ${rows.join(" ; ")}`;
+    // Counted from the right: rows have one or two label cells, the model columns line up at the end.
+    const off = at.length - j, cell = (cs) => (cs.length - off >= 1 ? cs[cs.length - off] : "?");
+    return `  bảng nhiều model theo cột (${u.model} là cột thứ ${off} từ phải; sourceQuote là nguyên dòng, src.line là dòng "${rows[cells.indexOf(at)]}"): ${rows.map((r, i) => `${r} → ${cell(cells[i])}`).join(" ; ")}`;
+  };
   const out = [`# Danh mục trong hệ thống${cap ? ` (tổ máy ${cap.value} ${cap.unit}, từ 95% đến 140%)` : ""}${hints.freq ? `, ${hints.freq} Hz` : ""} — code đã xếp sẵn`, "",
     "Thứ tự ưu tiên khi xếp: model động cơ / hãng động cơ HSMT nêu, bộ điều khiển HSMT nêu, động cơ có nhiều thông số có nguồn, rồi mới tới đầu phát; công suất càng sát càng tốt.", "",
     `## Ứng viên (${top.length} dòng tổ máy, tốt nhất trước)`, ""];
@@ -793,8 +814,22 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   const reqs = new Map((result.requirements || []).map((r) => [norm(r.item), r]));
   for (const r of result.requirements || []) { r.level = r.level === "option" ? "option" : "core"; if (!PARTS.includes(r.part)) r.part = "genset"; }
   for (const r of result.requirements || []) if (r.quote && !inHsmt(r.quote)) { r.unverified = true; problems.push(`Câu trích yêu cầu không có trong HSMT: "${r.quote.slice(0, 80)}"`); }
+  // A table whose models run across ("| Engine | CP192FE | CP195FE | CP198FE", then "| Rated Frequency(Hz) | 50 | 50 | 50"):
+  // every row is about the model of the configuration, in the column where src.line names it (2026-11-03: 22 checks of
+  // cameo-power quoted those rows and were all turned down). Then each figure must be in that column.
+  const columnOf = (src, model) => {
+    if (src?.kind !== "catalog" || !model) return null;
+    const cells = CAT.cellsOf(src.line || ""), k = CAT.keyOf(model);
+    const j = cells.findIndex((x, i) => i > 0 && CAT.keyOf(x) === k);
+    if (j < 1 || cells.length < 3 || CAT.isCode(cells[0])) return null;
+    const t = (sup.get(src.supplierId)?.specTables || []).find((x) => x.n === Number(src.n) && x.rows.some((l) => norm(l) === norm(src.line)));
+    // Counted from the right: rows have one or two label cells, the model columns line up at the end.
+    return t ? { off: cells.length - j, t } : null;
+  };
   // The text a part's facts must come from: its catalog row (and table header), or its saved web page.
-  const sourceText = (src) => {
+  const sourceText = (src, model) => {
+    const col = columnOf(src, model);
+    if (col) return norm([...(col.t.header || []), ...col.t.rows, col.t.title].join(" \n "));
     if (!src) return null;
     if (src.kind === "catalog") {
       const s = sup.get(src.supplierId);
@@ -847,7 +882,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     for (const part of ["engine", "alternator", "genset", "controller"]) {
       const p = c[part];
       if (!p) continue;
-      texts[part] = sourceText(p.src);
+      texts[part] = sourceText(p.src, p.model);
       if (!texts[part]) { p.unverified = true; problems.push(`#${c.rank} ${part} ${p.model}: không tìm thấy nguồn (${p.src?.kind || "?"})`); continue; }
       if (!texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
       if (p.src?.kind === "internet" && p.src.quote && !texts[part].includes(norm(p.src.quote))) { p.unverified = true; problems.push(`#${c.rank} ${part}: câu trích web không có trong trang đã lưu`); }
@@ -927,9 +962,16 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
           else {
             // Every number offered is in the source quote (from a factSrc: in the model's own figures on that line), is
             // an input of a conversion, or is a recomputed result.
-            const nums = fact ? fact.nums.filter((v) => numbersLoose(x.sourceQuote).includes(v)) : numbersLoose(x.sourceQuote);
+            // From a table whose models run across: only the label and the model's own column of the quoted row.
+            const col = !fact && ["genset", "engine", "alternator"].map((p) => c[p] && columnOf(c[p].src, c[p].model)).find(Boolean);
+            const qrow = col && col.t.rows.map(CAT.cellsOf).find((cs) => norm(cs.join(" | ")).includes(norm(x.sourceQuote).replace(/^\|\s*/, "")) || norm(x.sourceQuote).includes(norm(cs[0] || "-")));
+            const quoted = qrow ? `${qrow[0]} ${qrow[qrow.length - col.off] ?? ""}` : x.sourceQuote;
+            const nums = fact ? fact.nums.filter((v) => numbersLoose(x.sourceQuote).includes(v)) : numbersLoose(quoted);
             const ok = (v) => nums.includes(v) || used.includes(v) || calc.some((c) => CONV.matches(v, c));
-            for (const v of numbersIn(String(x.offered ?? "").replace(/(\d),(\d{1,2})(?!\d)/g, "$1.$2"))) if (!ok(v)) { reasons.push(`số ${v}`); break; }
+            // The configuration's own model names ("8 kVA (cột CP198FE)") are not figures.
+            const models = ["engine", "alternator", "genset", "controller"].map((p) => c[p]?.model).filter((m) => m && /\d/.test(m));
+            const offered = models.reduce((s, m) => s.split(m).join(" "), String(x.offered ?? ""));
+            for (const v of numbersIn(offered.replace(/(\d),(\d{1,2})(?!\d)/g, "$1.$2"))) if (!ok(v)) { reasons.push(`số ${v}`); break; }
           }
         }
         // The power of a rating is that rating's column of the row (web/catalog.js reads it from the header): a "Prime"
