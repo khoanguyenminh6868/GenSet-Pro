@@ -109,10 +109,17 @@ export function technicalPart(text) {
 // the model may be quoted for it (a check's factSrc). Genset figures (fuel, size, tank, noise) stay with their own row.
 // From a row table each fact is the row (with its header and title); from a label table (one model per page, a
 // datasheet) the line that gives it, only when that table names a single model of that part.
-const sigOf = (v) => { const n = numbersIn(v); return n.length ? { nums: n } : { words: norm(v).split(/[^a-z0-9一-鿿]+/).filter((w) => w.length > 1).map((w) => w.slice(0, 6)) }; };
+// A China emission level written three ways ("国二", "国Ⅱ", "China II") is one word list.
+const ROMAN = { 一: "i", 二: "ii", 三: "iii", 四: "iv", 五: "v", Ⅰ: "i", Ⅱ: "ii", Ⅲ: "iii", Ⅳ: "iv", Ⅴ: "v" };
+const levelOf = (v) => String(v ?? "").replace(/国\s*([一二三四五ⅠⅡⅢⅣⅤ])/g, (_, d) => ` china ${ROMAN[d]} `).replace(/[ⅠⅡⅢⅣⅤ]/g, (d) => ` ${ROMAN[d]} `).replace(/国\s*(?=(i{1,3}|iv|v)\b)/gi, " china ");
+// Words every level shares ("China II" / "China III", "Stage IIIA" / "Stage V") say nothing about which one it is.
+const GENERIC = new Set(["china", "stage", "tier", "euro", "epa", "emission", "standard", "level", "class"]);
+const sigOf = (v) => { const n = numbersIn(v); return n.length ? { nums: n } : { words: norm(levelOf(v)).split(/[^a-z0-9一-鿿]+/).filter((w) => (w.length > 1 || w === "v" || w === "i") && !GENERIC.has(w)).map((w) => w.slice(0, 6)) }; };
 // Two values of one figure disagree when they share no number (or, for words, no word): "6" / "6L" / "In-line 6" agree,
 // "14" / "10.8" do not.
-const disagree = (a, b) => { const x = sigOf(a), y = sigOf(b); if (x.nums && y.nums) return !x.nums.some((v) => y.nums.includes(v)); if (x.words && y.words) return !x.words.some((w) => y.words.includes(w)); return false; };
+// Two numbers within 3% are one figure rounded two ways (37.8 / 38 L, 135 / 136 L of oil), not a disagreement.
+const near = (v, w) => Math.abs(v - w) <= Math.max(Math.abs(v), Math.abs(w)) * 0.03;
+const disagree = (a, b) => { const x = sigOf(a), y = sigOf(b); if (x.nums && y.nums) return !x.nums.some((v) => y.nums.some((w) => near(v, w))); if (x.words && y.words) return !x.words.some((w) => y.words.includes(w)); return false; };
 // Engine figures that depend on the genset they are in, so they stay with their own row: the output (prime / standby,
 // 50 / 60 Hz), the speed (1500 / 1800 rpm) and the coolant volume (the radiator is the genset's).
 const ROW_ONLY = new Set(["engPower", "speed", "coolant"]);

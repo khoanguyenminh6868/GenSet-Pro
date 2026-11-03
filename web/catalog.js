@@ -282,26 +282,95 @@
   // Figures of a table row, by the title of their column. Only when the header lines up with the row: the same
   // number of cells, or one fewer with the genset model in front left untitled. A second header line made only of
   // units ("| KVA/KW | L/h") is added to the title.
-  function rowSpecs(t, cells) {
+  function rowSpecs(t, cells, at = {}) {
     const hs = (t.header || []).map(cellsOf);
     if (!hs.length) return [];
+    // The figures of titles laid over cells from `shift`; null when one value has the wrong shape (the row does not
+    // line up with these titles, so none of it is used).
+    const lined = (titles, units, shift, kW) => {
+      const out = [];
+      for (let i = 0; i < titles.length; i++) {
+        const ttl = titles[i], label = units[i] ? `${ttl} (${units[i]})` : ttl, key = specKey(ttl), val = specVal(cells[i + shift]);
+        if (!key || !val) continue;
+        if (!specFits(key, val) || (kW !== undefined && !likely(key, val, kW))) return null;
+        if (!out.some((x) => x.key === key)) out.push({ key, label, value: val });
+      }
+      return out;
+    };
     // A blank first title ("| | Genset Model | ...") is a stray cell when the row has one cell fewer.
     let titles = hs[0];
     if (!titles[0] && titles.length === cells.length + 1) titles = titles.slice(1);
     const units = hs[1] && hs[1].every((x) => !x || (x.length <= 12 && /^[a-z/%().·³\s0-9-]+$/i.test(x) && !isCode(x))) ? hs[1] : [];
-    let shift;
+    let shift = null;
     if (titles.length === cells.length) shift = 0;
     else if (titles.length === cells.length - 1 && isCode(cells[0]) && !/model|型号/i.test(titles[0])) shift = 1;
-    else return [];
-    const out = [];
-    for (let i = 0; i < titles.length; i++) {
-      const ttl = titles[i], label = units[i] ? `${ttl} (${units[i]})` : ttl, key = specKey(ttl), val = specVal(cells[i + shift]);
-      if (!key || !val) continue;
-      // One value of the wrong shape: the row does not line up with the header, so none of it is used.
-      if (!specFits(key, val)) return [];
-      if (!out.some((x) => x.key === key)) out.push({ key, label, value: val });
+    if (shift != null) { const r = lined(titles, units, shift); if (r?.length) return r; }
+    // A header of several lines whose second line names every column ("| | KW | kVA | KW | kVA | Cummins | ...").
+    for (const h of hs.slice(1)) if (h.length === cells.length && h.some((x) => specKey(x))) { const r = lined(h, [], 0, kWOf(at.power)); if (r?.length) return r; }
+    return walkedSpecs(hs, cells, at);
+  }
+  // A header of several lines whose titles span columns ("Standby output" over "KVA | KW", "Displacement (L)" over two
+  // lines): no line has the row's width. Each line is laid over the row from the cells whose column is known: the
+  // engine model under its "Engine" title, the alternator under "Alternator", the genset model under "Model" at the
+  // left, the last cell under the last title. From there it goes one cell per title until a value of the wrong shape or
+  // another known cell, or at the "Engine" title over any cell but the engine's (a title before it spans two cells). A
+  // figure two walks put on different cells is left out (2026-11-03: 8,771 rows had a header of another width).
+  const MOVING = /power|output|功率|\bkw\b|\bkva\b|brand|make|manufactur|origin|\bc\/o\b|品牌|厂家|产地/i;
+  // A title over two cells shifts every column after it without a sign in the row, so each figure laid over a cell this
+  // way must also be likely for its kind and for the genset's power (prime, else standby, kW): a value that is not
+  // ends the walk there ("Engine power" over prime and standby put 1207 under "Fuel consumption").
+  const nums = (v) => (String(v).replace(/(\d),(\d{3})/g, "$1$2").match(/\d+(?:\.\d+)?/g) || []).map(Number);
+  function likely(key, v, kW) {
+    const n = nums(v), x = n[0];
+    if (x == null) return /^(gov|asp|emission|engType|excit|controller|cooling|start|insul|ip|phase)$/.test(key);
+    switch (key) {
+      case "cyl": return x >= 1 && x <= 20;
+      case "disp": return /cc|ml/i.test(v) ? x >= 400 && x <= 100000 : x >= 0.4 && x <= 100;
+      case "bore": return n.length >= 2 && n.slice(0, 2).every((y) => y >= 50 && y <= 400);
+      case "dims": return n.length >= 3 && n.slice(0, 3).every((y) => (y >= 300 && y <= 16000) || (y >= 0.3 && y <= 16));
+      case "weight": return /^[≈~]?\s*\d+(?:[.,]\d+)?\s*(kg|kgs|t)?$/i.test(String(v).trim()) && x >= 30 && x <= 80000;
+      case "speed": return [1000, 1200, 1500, 1800, 3000, 3600].includes(x);
+      case "engPower": return !kW || (x >= kW * 0.9 && x <= kW * 1.8);
+      case "fuel": return x < 1.5 || (x >= 150 && x <= 260) || (kW ? x >= kW * 0.12 && x <= kW * 0.45 : x <= 800);
+      case "noise": return x >= 40 && x <= 120;
+      default: return true;
     }
-    return out;
+  }
+  const kWOf = (power) => (power?.prime || power?.rated || power?.standby)?.kW || null;
+  function walkedSpecs(hs, cells, { ei = -1, ai = -1, gi = -1, power = null } = {}) {
+    if (ei < 0 && ai < 0) return [];
+    const kW = kWOf(power);
+    const engT = (x) => ENGINE_LBL.test(x) && !specKey(x) && !MOVING.test(x), altT = (x) => ALT_LBL.test(x) && !specKey(x) && !MOVING.test(x);
+    const got = new Map(), bad = new Set();
+    for (const h of hs) {
+      const starts = [], named = h.some((x) => engT(x) || altT(x));
+      h.forEach((x, j) => {
+        if (ei >= 0 && engT(x)) starts.push([j, ei, 1], [j, ei, -1]);
+        if (ai >= 0 && altT(x)) starts.push([j, ai, 1], [j, ai, -1]);
+      });
+      if (gi === 0 && /model|型号|机组/i.test(h[0] || "") && !engT(h[0]) && !altT(h[0])) starts.push([0, 0, 1]);
+      starts.push([h.length - 1, cells.length - 1, -1, true]);
+      for (const [j0, c0, d, edge] of starts) {
+        const mine = [];
+        let anchored = !edge;
+        for (let j = j0, c = c0; j >= 0 && j < h.length && c >= 0 && c < cells.length; j += d, c += d) {
+          const x = h[j];
+          // A title of the engine or alternator over another cell: a title before it spans two cells; what came before stays.
+          if ((engT(x) && c !== ei) || (altT(x) && c !== ai)) break;
+          // A line that names neither ("| Model | Cylinder No. | ... | Brushless") may lay a title that is no figure over them.
+          if ((c === ei && !engT(x)) || (c === ai && !altT(x))) { if (named || specKey(x)) break; }
+          if (c === ei || c === ai) anchored = true;
+          const key = specKey(x), val = key && specVal(cells[c]);
+          if (!val) continue;
+          if (!specFits(key, val) || !likely(key, val, kW)) break;
+          mine.push({ key, label: x, value: val, c });
+        }
+        // From the last cell alone, with no known cell on the way: only when two figures or more fit.
+        if (!anchored && mine.length < 2) continue;
+        for (const m of mine) { const g = got.get(m.key); if (g && g.c !== m.c) bad.add(m.key); else if (!g) got.set(m.key, m); }
+      }
+    }
+    return [...got.values()].filter((m) => !bad.has(m.key)).map(({ key, label, value }) => ({ key, label, value }));
   }
 
   function addMake(list, name, via) { if (name && !list.some((m) => m.name === name)) list.push({ name, via }); }
@@ -367,7 +436,7 @@
         }
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const power = engineTable ? null : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title);
-        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: rowSpecs(t, cells) };
+        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: rowSpecs(t, cells, { ei, ai, gi, power }) };
         if (ei >= 0) out.push({ ...common, kind: "engine", model: cells[ei], makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: cells[ai], makes: makesFor("alternator", rowText, null), other: ei >= 0 ? cells[ei] : null });
       });
