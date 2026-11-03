@@ -3,7 +3,7 @@
 // candidate rows written to catalog.md, the requirements kept between runs and the check of Tìm NCC configurations.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins, powerMins, capacity } from "./config-bot.mjs";
+import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins, powerMins, capacity, plausible } from "./config-bot.mjs";
 import { makerSheet, controllerSheet } from "./maker-datasheets.mjs";
 
 const C = globalThis.GenbidCatalog;
@@ -605,4 +605,26 @@ test("a row number under a label is not its figure; a tank or coolant volume is 
   assert.deepEqual(mins("Số xy lanh: Nêu rõ\n7\n\nTốc độ quay: 1500 vòng / phút"), { minDisp: null, minCyl: null });
   assert.deepEqual(mins("9    Bình nhiên liệu    Bằng thép, dung tích ≥ 25 lít\n1.7 Hệ thống làm mát Dung tích chất làm mát: Cho động cơ 23,1 Lít"), { minDisp: null, minCyl: null });
   assert.deepEqual(mins("Số xilanh \n≥ 1 \nX"), { minDisp: null, minCyl: 1 });
+});
+
+test("HSMT minimums that do not fit this genset (another size, an OCR slip) are left out; '250 ekW' is 250 kW", () => {
+  const cap = { value: 2500, unit: "kVA" };
+  assert.equal(plausible({ maxFuel: 104.2, minDisp: 13 }, cap).maxFuel, null);
+  assert.equal(plausible({ maxFuel: 104.2, minDisp: 13 }, cap).minDisp, 13);
+  assert.equal(plausible({ minPrime: { kVA: 107 } }, { value: 8.5, unit: "kVA" }).minPrime, null);
+  assert.deepEqual(plausible({ minPrime: { kVA: 11.5 }, maxFuel: 4.9 }, { value: 12, unit: "kVA" }), { minPrime: { kVA: 11.5 }, maxFuel: 4.9 });
+  assert.equal(plausible({ minDisp: 13 }, { value: 30, unit: "kVA" }).minDisp, null);
+  assert.equal(plausible({ minDisp: 3.9 }, { value: 8.8, unit: "kVA" }).minDisp, 3.9);
+  assert.deepEqual(capacity(["250 ekW và 50 ekW"]), { value: 250, unit: "kW" });
+});
+
+test("a controller written two ways ('DSE7320', 'Deepsea 7320') gets the earlier configuration's checks", async () => {
+  const { copyModelChecks } = await import("./config-bot.mjs");
+  const configs = [
+    { rank: 1, controller: { model: "DSE7320", make: "Deep Sea" }, checks: [{ item: "Chức năng", part: "controller", status: "unclear", parts: [{ item: "AMF", status: "unclear" }] }] },
+    { rank: 2, controller: { model: "Deepsea 7320" }, checks: [] },
+  ];
+  copyModelChecks(configs);
+  assert.equal(configs[1].checks.length, 1);
+  assert.equal(configs[1].checks[0].copiedFrom, 1);
 });
