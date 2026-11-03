@@ -48,7 +48,11 @@ const GROUP_ORIGIN = new Set(["g7", "g20"]);
 const PARTS = ["engine", "alternator", "genset", "controller"];
 const originOfReq = (o) => (ORIGIN[o] ? o : "cn");
 const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
-export const reqHashOf = (text, extra) => createHash("sha1").update(`${text}\n--extra--\n${extra || ""}`).digest("hex").slice(0, 16);
+// The requirements read last time are used again only when the HSMT, Yêu cầu khác and the way they are read are the
+// same: REQ_VERSION goes up when config-prompt.md changes how requirements are written (e.g. the grouped controller
+// functions of 2026-11-03), so older lists are read again once.
+export const REQ_VERSION = 2;
+export const reqHashOf = (text, extra) => createHash("sha1").update(`${text}\n--extra--\n${extra || ""}${REQ_VERSION > 1 ? `\n--v${REQ_VERSION}--` : ""}`).digest("hex").slice(0, 16);
 
 export async function api(q) {
   const r = await fetch(`${WEB}/api/requests?${q}`, { headers: { Authorization: `Bearer ${token()}` } });
@@ -587,6 +591,16 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   const inHsmt = (q) => !!q && H.includes(norm(q));
   // Figures of a model from any supplier's row or datasheet (modelFacts); a check may quote one with factSrc.
   const built = CAT.build(suppliers), facts = modelFacts(built, suppliers);
+  // A genset row as web/catalog.js reads it (its power per rating), by the src that names it.
+  const rows = new Map();
+  for (const e of built.engines || []) for (const u of e.uses) if (u.line) rows.set(`${u.supplierId}|${u.n}|${CAT.keyOf(u.line)}`, u);
+  const rowOf = (src) => (src?.kind === "catalog" ? rows.get(`${src.supplierId}|${Number(src.n)}|${CAT.keyOf(src.line || "")}`) : null);
+  // The rating a power check is about: its name says power and one of prime / standby (not "quá tải ... liên tục").
+  const ratingOf = (x) => {
+    if (!/c[ôo]ng su[ấa]t|power/i.test(x.item) || /qu[áa] t[ảa]i|overload|h[ệe] s[ốo]/i.test(x.item)) return null;
+    const t = `${x.item} ${x.requirement || ""}`, sb = /standby|d[ựu] ph[òo]ng/i.test(t), pr = /prime|li[êe]n t[ụu]c|continuous/i.test(t);
+    return sb === pr ? null : sb ? "standby" : "prime";
+  };
   // The make of an engine or alternator model as catalog.md shows it: given by a source that names the model (a row,
   // a column title, a page title), not always the row the configuration takes (a run spent a round fixing "Weichai").
   const sourcedMake = (part, p) => {
@@ -664,6 +678,14 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     // each part is checked here like a check of its own, then the group is put back together.
     const groups = new Set();
     c.checks = (c.checks || []).flatMap((x) => {
+      // Every function the requirement lists is a part of its check: one the agent left out is "unclear", so a group
+      // checked on 7 of its 10 functions is not "met".
+      const want = (reqs.get(norm(x.item))?.parts || []).filter((p) => p?.item);
+      if (want.length && x.status !== "not_met") {
+        const have = new Set((x.parts || []).map((p) => norm(p.item)));
+        const miss = want.filter((p) => !have.has(norm(p.item)));
+        if (miss.length) x.parts = [...(x.parts || []), ...miss.map((p) => ({ item: p.item, status: "unclear", offered: "", note: "Chưa kiểm chức năng này." }))];
+      }
       if (!Array.isArray(x.parts) || !x.parts.length) return [x];
       groups.add(x);
       return x.parts.map((p) => ({ ...p, item: `${x.item}: ${p.item}`, part: x.part, level: x.level, hsmtQuote: "", group: x, name: p.item }));
@@ -725,6 +747,14 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
             const ok = (v) => nums.includes(v) || used.includes(v) || calc.some((c) => CONV.matches(v, c));
             for (const v of numbersIn(String(x.offered ?? "").replace(/(\d),(\d{1,2})(?!\d)/g, "$1.$2"))) if (!ok(v)) { reasons.push(`số ${v}`); break; }
           }
+        }
+        // The power of a rating is that rating's column of the row (web/catalog.js reads it from the header): a "Prime"
+        // check offering only the row's standby figures quotes numbers that are in the row, so the test above passes it.
+        const rating = x.status === "met" && x.part === "genset" && ratingOf(x), row = rating && rowOf(c.genset?.src || c.engine?.src);
+        const want = row?.power?.[rating];
+        if (want) {
+          const off = numbersLoose(x.offered), others = Object.entries(row.power).filter(([k]) => k !== rating).flatMap(([, p]) => [p.kVA, p.kW]).filter((v) => v != null && v !== want.kVA && v !== want.kW);
+          if (!off.includes(want.kVA) && !off.includes(want.kW) && off.some((v) => others.includes(v))) reasons.push(`số công suất không phải cột ${rating} của dòng bảng (${[want.kVA && `${want.kVA} kVA`, want.kW && `${want.kW} kW`].filter(Boolean).join(" / ")})`);
         }
         // A figure the sources of this model give differently is not "met" (e.g. 14 L on one page, 10.8 on another).
         const list = factsOf(c, x.part), line = norm(x.factSrc?.line || c[x.part]?.src?.line || "");
