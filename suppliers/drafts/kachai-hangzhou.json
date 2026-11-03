@@ -1,0 +1,13 @@
+{
+  "id": "kachai-hangzhou", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "low",
+  "en": "Zhejiang Kachai Generator Co., Ltd", "zh": null, "brands": ["Kachai"],
+  "web": null, "prov": "Zhejiang", "city": "Hangzhou", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["C", "Zhejiang Kachai Generator Co., Ltd", "Our factory located in Hangzhou Yuhang Economic-technological Develpment Area, Hangzhou, Zhejiang Province.", "We have entered into strategic partnerships or OEMs with world-renowned engine and alternators manufacturers, such as US Cummins, Germany Deutz, Korea Doosan, UK Stanford, China Yuchai, SDEC and FAWDE.", "The company's products have passed CE, BV, SGS and other international authority certification."]
+  },
+  "str": [["Theo gian hàng Made-in-China: nhà máy tại Dư Hàng, Hàng Châu; tổ máy diesel dùng động cơ Cummins, Deutz, Doosan, Yuchai, SDEC, FAWDE", 1]],
+  "cert": [["CE", 1]],
+  "lines": [ { "k": "genset", "s": "diesel generators", "fuel": "diesel", "eng": ["Cummins", "Deutz", "Doosan", "Yuchai", "SDEC", "FAWDE"], "models": [], "alt": [], "src": [1] } ],
+  "miss": ["Chỉ có gian hàng Made-in-China; chưa có website chính thức và dải công suất", "Hàng chào trúng thầu: Kachai K33S5, C33 (gói IB2600245437, IB2600354007, IB2600437361)"],
+  "by": "claude (rà hàng chào trúng thầu 04/11)"
+}

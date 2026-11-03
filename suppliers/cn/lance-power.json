@@ -1,0 +1,77 @@
+{
+  "id": "lance-power",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Lance Power",
+    "zh": null,
+    "brands": [
+      "Lance Power"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo trang của YESSS Electrical: cung cấp tổ máy Baudouin, Cummins với đầu phát Leroy-Somer, bộ điều khiển Deep Sea",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "diesel generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin",
+        "Cummins"
+      ],
+      "engineModels": [
+        "6LTAA 8.9-G2"
+      ],
+      "alternatorMakes": [
+        "Leroy-Somer"
+      ],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa tìm được website chính thức; chưa rõ là nhà lắp ráp hay nhà cung cấp",
+    "Hàng chào trúng thầu: L1800S 1.700 kVA, nhãn 'Haco Power generator' (gói IB2600116950)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.yesss.co.uk/blog/lance-power-case-studies",
+      "accessedAt": "2026-11-03",
+      "tier": "C",
+      "quote": [
+        "Lance Power supplied and installed a 1,000 kVA Baudouin diesel generator complete with a Leroy-Somer alternator, Deep Sea Electronics controller, and ABB circuit breakers.",
+        "The generator supplied was powered by a Cummins 6LTAA 8.9-G2 engine and paired with a Leroy-Somer alternator and DSE7320 controller",
+        "Thanks to Lance Power’s UK stock holding"
+      ],
+      "file": "sources/lance-power/1.md"
+    }
+  ],
+  "confidence": "low",
+  "checkedAt": "2026-11-03",
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+}

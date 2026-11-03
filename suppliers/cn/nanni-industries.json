@@ -1,0 +1,100 @@
+{
+  "id": "nanni-industries",
+  "country": "FR",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Nanni Industries",
+    "zh": null,
+    "brands": [
+      "Nanni"
+    ]
+  },
+  "website": "https://www.nannienergy.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Máy phát hàng hải 5–800 kW và động cơ thủy 10–2200 hp; mạng lưới bán hàng/dịch vụ ở 90 nước",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "marine generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 800,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 2200,
+        "unit": "hp",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi năm thành lập, địa chỉ; hàng chào QMF6M (gói IB2300371415) là máy phát thủy 1 pha"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://nannienergy.com/",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Nanni designs and develops complete marine solutions including engines from 10 to 2200 hp, marine generators from 5 to 800 kW, manoeuvring systems and interfaces. Nanni distributes its products through its sales and service network in 90 countries worldwide."
+      ],
+      "file": "sources/nanni-industries/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-03",
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+}

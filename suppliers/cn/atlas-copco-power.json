@@ -1,0 +1,127 @@
+{
+  "id": "atlas-copco-power",
+  "country": "SE",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Atlas Copco",
+    "zh": null,
+    "brands": [
+      "Atlas Copco"
+    ]
+  },
+  "website": "https://www.atlascopco.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Dòng QES (di động và cố định) đến 1250 kVA PRP; QES 20 là 20 kVA PRP",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "QES range",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8.8,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang QES không ghi hãng động cơ/đầu phát",
+    "Chưa lưu trang giới thiệu công ty (tên pháp nhân, năm thành lập)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.atlascopco.com/en-ph/construction-equipment/products/power-diesel-generators/mobile-row/qes",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "fit up to 30 units of Atlas Copco QES 20 in a 40 feet container",
+        "We have extended our QES range with the new models up to 1250 kVA PRP",
+        "| Prime power (PRP) | kVA / kW | 8.8/7 | 13.8/11 | 20/16 | 32/26 | 42/34 | 60/48 | 90/72 | 100/80 | 125/100 | 180/144 | 250/200 | 380/304 | 450/360 | 500/400 | 637/509"
+      ],
+      "file": "sources/atlas-copco-power/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.atlascopco.com/en-ph/construction-equipment/products/power-diesel-generators/mobile-row/qes",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Rated frequency | Hz | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50"
+      ],
+      "file": "sources/atlas-copco-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.atlascopco.com/en-ph/construction-equipment/products/handheld/power-packs-range",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Power (kW) : 13.5 kW 18 HP"
+      ],
+      "file": "sources/atlas-copco-power/102.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-03",
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "QES generator - Atlas Copco Philippines",
+      "header": [],
+      "rows": [
+        "| Rated frequency | Hz | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50",
+        "| Exhaust gas emission compliance | | / | / | / | / | / | / | / | / | / | / | / | Stage 2 | Stage 2 | Stage 2 | Stage 2",
+        "| Rated voltage (1) | V | 400 | 400 | 400 | 400 | 400 | 400 | 400 | 400 | 400 | 400 | 400 | 400 | 400 | 400 | 400",
+        "| Prime power (PRP) | kVA / kW | 8.8/7 | 13.8/11 | 20/16 | 32/26 | 42/34 | 60/48 | 90/72 | 100/80 | 125/100 | 180/144 | 250/200 | 380/304 | 450/360 | 500/400 | 637/509",
+        "| Rated standby power (ESP) | kVA / kW | 10/8 | 15/12 | 21.3/17 | 33/26 | 45/36 | 64/51 | 96/77 | 112/90 | 135/108 | 194/155 | 272/218 | 414/331 | 502/402 | 555/444 | 705/564",
+        "| Power factor cos φ | | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8",
+        "| Rated current (PRP) | A | 12.6 | 19.9 | 28.9 | 46.2 | 60.0 | 86.6 | 129.9 | 144.3 | 180.4 | 259.0 | 360.0 | 548.5 | 649.5 | 721.7 | 919.0",
+        "| Performance class acc. ISO-8528/5 | | G1 | G2 | G1 | G2 | G2 | G2 | G2 | G2 | G2 | G2 | G2 | G2 | G2 | G2 | G2",
+        "| Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Power packs - Atlas Copco Philippines",
+      "header": [],
+      "rows": [
+        "Power (kW) : 13.5 kW 18 HP",
+        "Power (kW) : 9.6 kW 13 HP",
+        "Power (kW) : 5.5 kW 7.4 HP",
+        "Power (kW) : 6.7 kW 9 HP"
+      ]
+    }
+  ]
+}

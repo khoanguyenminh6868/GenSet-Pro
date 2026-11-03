@@ -1,0 +1,100 @@
+{
+  "id": "koop-changzhou",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Changzhou Koop Power Machinery Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "KOOP"
+    ]
+  },
+  "website": "https://www.koopchina.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Changzhou"
+  },
+  "founded": 2007,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel/xăng cỡ nhỏ (KD170F…KD1100F, KD2V80, KP13NM) và tổ máy KDF",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Diesel engine",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Open frame generator set KDF",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất tổ máy KDF",
+    "Không thấy tên tiếng Trung trên trang đã lưu"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.koopchina.com/",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Changzhou Koop Power Machinery Co., Ltd.",
+        "Koop was established in 2007 as an international company focusing on the research and development, intelligent manufacturing, sales and service of small power engines and power machinery products.",
+        "Many products have obtained US EPA, EU CE certification, and Euro 5 emission certification",
+        "Single cylinder air-cooled KD170F/FE",
+        "Water-cooled diesel engine KP13NM",
+        "Open frame generator set KDF8500X/XE(-3)"
+      ],
+      "file": "sources/koop-changzhou/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-03",
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+}

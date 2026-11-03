@@ -1,0 +1,15 @@
+{
+  "id": "atlas-copco-power", "country": "SE", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Atlas Copco", "zh": null, "brands": ["Atlas Copco"],
+  "web": "https://www.atlascopco.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "fit up to 30 units of Atlas Copco QES 20 in a 40 feet container", "We have extended our QES range with the new models up to 1250 kVA PRP", "| Prime power (PRP) | kVA / kW | 8.8/7 | 13.8/11 | 20/16 | 32/26 | 42/34 | 60/48 | 90/72 | 100/80 | 125/100 | 180/144 | 250/200 | 380/304 | 450/360 | 500/400 | 637/509"]
+  },
+  "str": [["Dòng QES (di động và cố định) đến 1250 kVA PRP; QES 20 là 20 kVA PRP", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "QES range", "fuel": "diesel", "p": [8.8, 1250, "kVA", "prime", 1], "src": [1] }
+  ],
+  "miss": ["Trang QES không ghi hãng động cơ/đầu phát", "Chưa lưu trang giới thiệu công ty (tên pháp nhân, năm thành lập)"],
+  "by": "claude (rà hàng chào trúng thầu 04/11)"
+}

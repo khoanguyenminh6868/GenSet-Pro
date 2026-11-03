@@ -1,0 +1,15 @@
+{
+  "id": "runda-fujian", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Fujian Runda Power Machinery Co., Ltd", "zh": null, "brands": ["RUNDA POWER"],
+  "web": "https://www.rundagenset.com/", "prov": "Fujian", "city": "Ningde", "founded": 2008, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Fujian Runda Power Machinery Co., Ltd is a manufacturer specialized in providing diesel generator sets power from 10KVA to 2500KVA since 2008. Located in Ningde City, Fujian Province, with 4 modern standardized plants and covering 32000 square meters.", "RUNDA POWER delivers products with highly reliable engines,alternators from variously famous brands like Cummins,Kubota,Perkins,Stamford, LeroySomer and Deepsea, Smartgen controllers etc.", "We have obtained CE, ISO9000,GS,SONCAP,EPA and CARB certificates."]
+  },
+  "str": [["Tổ máy diesel 10–2500 kVA, 4 nhà xưởng 32000 m² tại Ninh Đức (Phúc Kiến)", 1], ["Dùng động cơ Cummins, Kubota, Perkins; đầu phát Stamford, Leroy-Somer; bộ điều khiển Deepsea, Smartgen", 1]],
+  "cert": [["CE", 1], ["ISO9000", 1], ["EPA", 1]],
+  "lines": [
+    { "k": "genset", "s": "diesel generator sets", "fuel": "diesel", "eng": ["Cummins", "Kubota", "Perkins"], "models": [], "alt": ["Stamford", "LeroySomer"], "p": [10, 2500, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Không thấy tên tiếng Trung", "Trang chủ không ghi thương hiệu TOP CAROL (nhãn hàng chào ở gói IB2600072892, nhà sản xuất ghi Fujian Runda Power Machinery)"],
+  "by": "claude (rà hàng chào trúng thầu 04/11)"
+}

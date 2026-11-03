@@ -1,0 +1,13 @@
+{
+  "id": "perfect-house", "country": "IN", "role": "genset_oem", "status": "partial", "conf": "low",
+  "en": "Perfect House Pvt. Limited", "zh": null, "brands": ["Perfect"],
+  "web": null, "prov": "Maharashtra", "city": "Mumbai", "founded": 1988, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["C", "Perfect House Private Limited, founded in 1988 , is an ISO 9001:2015 certified organization that is engaged in manufacturing and supplying Generator & Water Pumps."]
+  },
+  "str": [["Theo gian hàng IndiaMART: sản xuất máy phát và bơm nước", 1]],
+  "cert": [["ISO 9001:2015", 1]],
+  "lines": [ { "k": "genset", "s": "Generator", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Chỉ có gian hàng IndiaMART; chưa có website chính thức và dải công suất", "Hàng chào trúng thầu: PERFECT-BAUDOUIN B220VGT, PBDN200 (động cơ Baudouin)"],
+  "by": "claude (rà hàng chào trúng thầu 04/11)"
+}

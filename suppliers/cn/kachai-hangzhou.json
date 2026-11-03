@@ -1,0 +1,85 @@
+{
+  "id": "kachai-hangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Zhejiang Kachai Generator Co., Ltd",
+    "zh": null,
+    "brands": [
+      "Kachai"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Zhejiang",
+    "city": "Hangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo gian hàng Made-in-China: nhà máy tại Dư Hàng, Hàng Châu; tổ máy diesel dùng động cơ Cummins, Deutz, Doosan, Yuchai, SDEC, FAWDE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Deutz",
+        "Doosan",
+        "Yuchai",
+        "SDEC",
+        "FAWDE"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Chỉ có gian hàng Made-in-China; chưa có website chính thức và dải công suất",
+    "Hàng chào trúng thầu: Kachai K33S5, C33 (gói IB2600245437, IB2600354007, IB2600437361)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://jcpower.en.made-in-china.com/product/bwCTazJMCjct/China-Sdec-Shanghai-Diesel-Engine-Powered-Generator-Set.html",
+      "accessedAt": "2026-11-03",
+      "tier": "C",
+      "quote": [
+        "Zhejiang Kachai Generator Co., Ltd",
+        "Our factory located in Hangzhou Yuhang Economic-technological Develpment Area, Hangzhou, Zhejiang Province.",
+        "We have entered into strategic partnerships or OEMs with world-renowned engine and alternators manufacturers, such as US Cummins, Germany Deutz, Korea Doosan, UK Stanford, China Yuchai, SDEC and FAWDE.",
+        "The company's products have passed CE, BV, SGS and other international authority certification."
+      ],
+      "file": "sources/kachai-hangzhou/1.md"
+    }
+  ],
+  "confidence": "low",
+  "checkedAt": "2026-11-03",
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+}

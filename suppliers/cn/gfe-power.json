@@ -1,0 +1,85 @@
+{
+  "id": "gfe-power",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "GFE Power Products Limited",
+    "zh": null,
+    "brands": [
+      "GFE"
+    ]
+  },
+  "website": "https://www.gfepowerproducts.com/",
+  "hq": {
+    "province": null,
+    "city": "Pershore"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: dòng tổ máy GFE dùng động cơ Cummins, Baudouin, Perkins, Doosan; đồng thời phân phối Perkins, CAT, Kohler-SDMO, FG Wilson",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "GFE Power Products Diesel Generators",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Baudouin",
+        "Perkins",
+        "Doosan"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO 9001:2015",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất của dòng GFE (chỉ có menu theo kVA)",
+    "Không thấy năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.gfepowerproducts.com/",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "GFE Power Products Limited",
+        "A British, ISO 9001:2015 certified leader in the supply and global distribution of diesel, petrol and OEM manufactured generators.",
+        "Our latest range of GFE Cummins-Powered Diesel generators have been a huge success since we introduced them to the market in late 2023.",
+        "GFE Baudouin Powered Diesel Generators",
+        "GFE Perkins Powered Diesel Generators",
+        "GFE Doosan Powered Diesel Generators"
+      ],
+      "file": "sources/gfe-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-03",
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+}

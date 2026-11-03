@@ -2797,5 +2797,155 @@
   "result": "skip",
   "url": "https://www.emsa.com.tr/",
   "reason": "Emsa (Thổ Nhĩ Kỳ): website chặn tải (HTTP 403)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "koop-changzhou",
+  "name": "Changzhou Koop Power Machinery Co., Ltd.",
+  "url": "https://www.koopchina.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "gfe-power",
+  "name": "GFE Power Products Limited",
+  "url": "https://www.gfepowerproducts.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "runda-fujian",
+  "name": "Fujian Runda Power Machinery Co., Ltd",
+  "url": "https://www.rundagenset.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "atlas-copco-power",
+  "name": "Atlas Copco",
+  "url": "https://www.atlascopco.com/",
+  "tables": 2,
+  "rows": 13
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "weiman-fujian",
+  "name": "Fujian Weiman Power Technology Co., Ltd.",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "nanni-industries",
+  "name": "Nanni Industries",
+  "url": "https://www.nannienergy.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "perfect-house",
+  "name": "Perfect House Pvt. Limited",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "lance-power",
+  "name": "Lance Power",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "previa-ningde",
+  "name": "Ningde Previa Power Co., Ltd.",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-03",
+  "result": "added",
+  "id": "kachai-hangzhou",
+  "name": "Zhejiang Kachai Generator Co., Ltd",
+  "url": null,
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "Wetech",
+  "reason": "chỉ có gian hàng Alibaba (đòi đăng nhập), không có website (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "Elemax",
+  "reason": "sawafuji.co.jp không truy cập được (timeout) (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "KUMA Power",
+  "reason": "không tìm được nguồn (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "Euenon",
+  "reason": "không tìm được nguồn (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "Benzen Power",
+  "reason": "không tìm được nguồn (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "Fujian Dianyou",
+  "reason": "không tìm được nguồn (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "Fujian For You Power",
+  "reason": "không tìm được nguồn (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "Fujian Lingge CKV",
+  "reason": "không tìm được nguồn (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "Leega",
+  "reason": "không tìm được nguồn (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-03",
+  "result": "skip",
+  "name": "Orson Power",
+  "reason": "chỉ có bài LinkedIn (rà hàng chào trúng thầu 04/11)"
  }
 ]
