@@ -1276,19 +1276,23 @@ function openTenderFromUrl() {
   if (findTender(key)) { urlTender = null; openDrawer(key); } else urlTender = key;
 }
 window.addEventListener("hashchange", openTenderFromUrl);
-// A tender opened from a bidder's page: closing its drawer goes back to that page, at the same scroll.
-let bdReturn = null;
-function openDrawer(key, tab) {
-  bdReturn = null; state.list = null; $("#dtabs").hidden = false;
+// Where closing the drawer goes back to, at the same scroll: the bidder's page a tender was opened from ({ id }), or the
+// tender and tab whose Giá gợi ý linked to it ({ key, tab }; Khoa, 2026-11-03). Each close goes back one step.
+let drawerBack = [];
+function openDrawer(key, tab, back) {
+  drawerBack = back ? [...drawerBack, back] : []; state.list = null; $("#dtabs").hidden = false;
   state.open = key; state.dtab = tab || "info";
   if (tenderOfUrl() !== key) try { history.replaceState(null, "", tenderHref(key)); } catch {}
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
   renderDrawer(); renderGrid();
 }
 function closeDrawer() {
+  const r = drawerBack.pop(), rest = drawerBack;
+  if (r?.key && findTender(r.key)) { openDrawer(r.key, r.tab); drawerBack = rest; $("#dbody").scrollTop = r.scroll || 0; return; }
   if (tenderOfUrl()) try { history.replaceState(null, "", location.pathname + location.search); } catch {}
   state.open = null; state.list = null; $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true"); $("#scrim").hidden = true; renderGrid();
-  if (bdReturn) { const r = bdReturn; bdReturn = null; openBidders(r.id, r.scroll); }
+  drawerBack = [];
+  if (r && "id" in r) openBidders(r.id, r.scroll);
 }
 let drawerSig = "";
 function renderDrawer(force = true) {
@@ -3159,8 +3163,8 @@ function bidSuggestBox(t) {
 function bpSampleRow(s, t, i) {
   const [lv, cls] = BP_LEVEL[s.level] || BP_LEVEL.unknown, one = s.bidders.length < 2, url = tenderHref(s.key);
   return h`<tr><td class="num">${i + 1}</td>
-    <td><div><a href="${url}"><b>${s.lotName || s.name}</b></a></div>
-      <div class="muted small">${raw(h`<a href="${url}">${s.key}</a>`)} · ${fmtDate(s.at, false)} · ${s.investor}${s.investor && s.investor === t.investorName ? " (cùng chủ đầu tư)" : ""}</div>
+    <td><div><a href="${url}" data-bptender="${s.key}"><b>${s.lotName || s.name}</b></a></div>
+      <div class="muted small">${raw(h`<a href="${url}" data-bptender="${s.key}">${s.key}</a>`)} · ${fmtDate(s.at, false)} · ${s.investor}${s.investor && s.investor === t.investorName ? " (cùng chủ đầu tư)" : ""}</div>
       ${raw(s.goods.length ? h`<div class="small">Hàng trúng: ${s.goods.slice(0, 3).map((g) => [g.name.slice(0, 80), g.maker, g.code, g.origin && `(${g.origin})`].filter(Boolean).join(" ")).join("; ")}</div>` : "")}</td>
     <td class="small" data-l="Mức giống"><span class="chip ${cls}">${lv}</span>${raw(one ? ' <span class="chip mut" title="Chỉ 1 nhà thầu: giá trúng không qua cạnh tranh, không tính vào giá đề xuất">1 nhà thầu</span>' : "")}${raw(s.unverified ? h` <span class="chip warn" title="${s.unverified}">⚠ chưa khớp nguồn</span>` : "")}${raw(s.same.length ? h`<div>✓ ${s.same.join(", ")}</div>` : "")}${raw(s.diff.length ? h`<div class="muted">✗ ${s.diff.join(", ")}</div>` : "")}${raw(s.quote ? h`<div class="muted" style="overflow-wrap:anywhere"><q>${s.quote}</q></div>` : "")}</td>
     <td class="num" data-l="Giá trúng"><b>${fmtVnd(s.wp)}</b><div class="muted small">giá gói ${fmtVnd(s.price)}</div><div class="muted small">${bpPct(s.ratio)} giá gói${s.k ? ` · ${fmtVnd(Math.round(s.wp / s.k))}/kVA` : ""}</div><div class="muted small" style="font-family:inherit;white-space:normal">${s.winner} · ${s.bidders.length} nhà thầu</div></td></tr>`;
@@ -3233,7 +3237,10 @@ document.addEventListener("click", async (e) => {
   const bdo = e.target.closest("[data-bdopen]");
   if (bdo && !e.target.closest("a[href]")) { if ($("#bdBody")) { if (!bdOpenId) listScroll.bd = mScroll().scrollTop; bdOpenId = bdo.dataset.bdopen; renderBidders(); mScroll().scrollTop = 0; } else openBidders(bdo.dataset.bdopen); return; }
   const bdt = e.target.closest("[data-bdtender]");
-  if (bdt) { e.preventDefault(); const back = { id: bdOpenId, scroll: mScroll().scrollTop }; $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); openDrawer(bdt.dataset.bdtender); bdReturn = back; return; }
+  if (bdt) { e.preventDefault(); const back = { id: bdOpenId, scroll: mScroll().scrollTop }; $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); openDrawer(bdt.dataset.bdtender, "", back); return; }
+  // A tender in Giá gợi ý opens in the drawer; closing it comes back to this tab (a new browser tab keeps the link).
+  const bpt = e.target.closest("a[data-bptender]");
+  if (bpt && !(e.ctrlKey || e.metaKey || e.shiftKey || e.button)) { e.preventDefault(); openDrawer(bpt.dataset.bptender, "", { key: state.open, tab: state.dtab, scroll: $("#dbody").scrollTop }); return; }
   if (e.target.id === "bdBack") { bdOpenId = null; renderBidders(); mScroll().scrollTop = listScroll.bd || 0; return; }
   if (e.target.id === "bdMore") { bdLimit += 200; renderBdList(); return; }
   if (e.target.id === "bpRun") { const t = findTender(e.target.dataset.key); if (t) requestWorker("bidpricereq", t._key, { basis: bidBasis(t) }, "gợi ý giá đấu"); return; }
