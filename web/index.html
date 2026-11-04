@@ -142,7 +142,10 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .seg .c{font:600 11.5px var(--f-mono)}
 .seg .c:not([class*="st-"]){color:var(--brand)}
 .seg button[aria-selected="true"] .c:not([class*="st-"]){color:var(--brand)}
-.seg.cattabs{margin-bottom:10px}
+.seg.cattabs{margin-bottom:10px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;width:max-content}.seg.cattabs button{justify-content:center}
+@media (max-width:640px){.seg.cattabs{width:auto;grid-auto-columns:minmax(0,1fr)}.seg.cattabs button{flex-direction:column;gap:2px;padding:6px 4px}}
+/* Catalog search: wider, the Hãng / Thông số lists capped (their options are long). */
+@media (min-width:641px){#catMake,#catSpec{max-width:170px}}
 
 /* Grid */
 .gridcard{padding:0;overflow:hidden}
@@ -2706,7 +2709,7 @@ function renderCatalog() {
   // Thông số cấu hình (Khoa, 2026-11-04): động cơ, bộ điều khiển, đầu phát là 3 tab, không chọn trong dropdown.
   const tabs = h`<div class="seg cattabs" role="tablist">${raw(Object.entries(CAT_KIND).map(([k, x]) => h`<button type="button" role="tab" data-catkind="${k}" aria-selected="${String(k === f.kind)}">${x.tab} <span class="c">${cat[x.list].length}</span></button>`).join(""))}</div>`;
   body.innerHTML = h`${raw(tabs)}${raw(filtToggle("catFilt"))}<div class="row suprow">
-      <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:180px">
+      <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:300px">
       <select id="catMake">${raw(opt("", "Hãng", f.make) + makes.map(([m, n]) => opt(m, m === "—" ? `Nguồn không ghi hãng (${n})` : `${m} (${n})`, f.make)).join(""))}</select>
       <select id="catFreq">${raw(opt("", "Tần số", f.freq) + opt("50", "50 Hz", f.freq) + opt("60", "60 Hz", f.freq))}</select>
       <select id="catSpec">${raw(opt("", "Thông số", f.spec) + specOpts.map(([k, vi, n]) => opt(k, `Có ${vi.toLowerCase()} (${n})`, f.spec)).join(""))}</select>
