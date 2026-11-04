@@ -1,0 +1,17 @@
+{
+  "id": "cgm-italia", "country": "IT", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "C.G.M. Gruppi elettrogeni Srl", "zh": null, "brands": ["CGM"],
+  "web": "https://www.cgmitalia.it/en", "prov": "Vicenza", "city": "Arzignano", "founded": 1980, "fsrc": [2], "related": [],
+  "src": {
+    "1": ["A", "C.G.M. Gruppi elettrogeni Srl a socio unico", "Via Decima Strada 3, 36071 Arzignano, Vicenza"],
+    "2": ["A", "Since 1980, CGM has embodied the passion and Italian brillance in the design and production of power generators.", "Each GenSet manufactured at the Vicenza plant is not just a product but the result of a commitment to innovation and quality.", "Achievement of ISO 9001:2008"],
+    "3": ["A", "Power range 5-3000 kVA", "Perkins, Ftp, Kohler, Doosan, Deutz, Volvo, Yanmar, Cummins, Mitsubishi, Scania and Baudouin.", "Engines compliant with Stage 0-II-IIIa and V standards"]
+  },
+  "str": [["Sản xuất tổ máy tại nhà máy Vicenza (Ý) từ 1980; dải 5–3000 kVA, có bản open và vỏ cách âm", 3], ["Dùng động cơ Perkins, FPT, Kohler, Doosan, Deutz, Volvo, Yanmar, Cummins, Mitsubishi, Scania, Baudouin", 3]],
+  "cert": [["ISO 9001:2008", 2]],
+  "lines": [
+    { "k": "genset", "s": "Industrial range", "fuel": "diesel", "eng": ["Perkins", "Kohler", "Doosan", "Deutz", "Volvo", "Yanmar", "Cummins", "Mitsubishi", "Scania", "Baudouin"], "models": [], "alt": [], "p": [5, 3000, "kVA", "unspecified", 3], "src": [3] }
+  ],
+  "miss": ["Trang không ghi chữ hãng đầu phát (chỉ có logo 'alternator brands')", "Trang ghi 'Ftp' (FPT) nên không đưa FPT vào danh sách hãng động cơ của dòng"],
+  "by": "claude (Khoa gửi website, 04/11)"
+}

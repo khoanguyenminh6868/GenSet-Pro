@@ -1,0 +1,6 @@
+{ "id": "aj-power", "country": "GB", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "AJ Power Ltd", "zh": null, "brands": ["AJ Power"], "web": "https://ajpower.net/", "prov": "Northern Ireland", "city": "Craigavon", "founded": null, "fsrc": [], "related": [],
+  "src": { "1": ["A", "AJ Power manufactures a wide range of diesel generating sets from 10kVA to 2800kVA for use in various applications.", "All AJ Power Diesel Generators are Made in the UK", "© AJ Power Ltd 2026"] },
+  "str": [["Tổ máy diesel 10–2800 kVA, sản xuất tại Anh (Made in the UK)", 1]], "cert": [],
+  "lines": [ { "k": "genset", "s": "diesel generating sets", "fuel": "diesel", "p": [10, 2800, "kVA", "unspecified", 1], "src": [1] } ],
+  "miss": ["Trang About không ghi năm thành lập, hãng động cơ/đầu phát"], "by": "claude (rà nhà cung cấp G7, 04/11)" }

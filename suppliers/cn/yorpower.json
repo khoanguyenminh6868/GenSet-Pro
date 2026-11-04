@@ -1,0 +1,67 @@
+{
+  "id": "yorpower",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "YorPower",
+    "zh": null,
+    "brands": [
+      "YorPower"
+    ]
+  },
+  "website": "https://www.yorpower.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy thương hiệu YorPower sản xuất tại Anh",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "YorPower generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, tên pháp nhân"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://yorpower.com/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "Our in-house manufactured generators , branded under YorPower, are produced in the UK and shipped worldwide."
+      ],
+      "file": "sources/yorpower/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-04",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+}

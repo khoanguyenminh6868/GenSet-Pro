@@ -1,0 +1,69 @@
+{
+  "id": "winco",
+  "country": "US",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "WINCO Generators",
+    "zh": null,
+    "brands": [
+      "WINCO"
+    ]
+  },
+  "website": "https://www.wincogen.com/",
+  "hq": {
+    "province": "Minnesota",
+    "city": "Le Center"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy dự phòng và prime power diesel/khí, máy PTO",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel Standby / Diesel Prime",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, địa chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.wincogen.com/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "WINCO Generators | WINCO",
+        "Diesel Standby",
+        "Diesel Prime"
+      ],
+      "file": "sources/winco/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-04",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+}
