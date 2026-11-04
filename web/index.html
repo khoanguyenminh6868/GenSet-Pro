@@ -239,6 +239,9 @@ td.r{text-align:right}
 .textview{white-space:pre-wrap;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13px;max-height:55vh;overflow:auto;overflow-wrap:anywhere}
 .drop{border:1.5px dashed var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px}
 .drop.over{border-color:var(--violet)}
+.qrow{display:flex;flex-direction:column;gap:8px;border-radius:6px}
+.qrow+.qrow{border-top:1px solid var(--line);padding-top:8px}
+.qrow.over{outline:1.5px dashed var(--violet);outline-offset:4px}
 .files{display:flex;flex-direction:column;gap:6px}
 .file{display:flex;align-items:center;gap:8px;font-size:13px;background:var(--panel2);border-radius:6px;padding:5px 10px;min-width:0}
 .file .fn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
@@ -1400,7 +1403,7 @@ function quoteHtml(t) {
     const opts = sups.filter((s) => !taken.has(s.id));
     if (r.supplierId && !opts.some((s) => s.id === r.supplierId)) opts.unshift(state.supplier?.[r.supplierId] || { id: r.supplierId });
     const up = quoteUp[key]?.row === r.id ? quoteUp[key].text : "";
-    return h`<div class="drop" data-qrow="${r.id}">
+    return h`<div class="qrow" data-qrow="${r.id}">
       <div class="row"><select data-qsup="${r.id}" style="flex:1;min-width:180px" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">Chọn nhà cung cấp...</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
         ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Tải tệp lên</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
         ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
@@ -1409,8 +1412,9 @@ function quoteHtml(t) {
       ${raw(up ? progress(up) : "")}
     </div>`;
   };
-  return h`<div style="display:flex;flex-direction:column;gap:8px">
-      <div class="row"><h2 style="flex:1">Báo giá của Nhà Cung Cấp</h2><span class="muted small">${n ? `${n} tệp` : "Chưa có tệp nào"}</span>${raw(ro ? "" : h`<button class="btn sm" id="qAdd" ${quoteUp[key] ? "disabled" : ""}>+ Thêm</button>`)}</div>
+  // One box: the heading, the count and Thêm sit with the suppliers (Khoa, 2026-11-04).
+  return h`<div class="drop">
+      <div class="row"><h2 style="flex:1">Báo giá của NCC</h2><span class="muted small">${n ? `${n} tệp` : "Chưa có tệp nào"}</span>${raw(ro ? "" : h`<button class="btn sm" id="qAdd" ${quoteUp[key] ? "disabled" : ""}>+ Thêm</button>`)}</div>
       ${raw(rows.map(row).join(""))}
     </div>`;
 }
@@ -3224,8 +3228,7 @@ function bidSuggestBox(t) {
   const wait = workerReqPending("bidpricereq", key) ? waitHtml("Đang chờ Agent so cấu hình gói này với các gói đã có kết quả...", state.bidpricereq[key].requestedAt) : "";
   const err = !wait && workerReqError("bidpricereq", key);
   return h`${raw(quoteHtml(t))}<section class="sec">${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row actrow">
-      <button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý giá đấu"}</button>
-      <span class="muted small" style="flex:1;min-width:200px">Agent so cấu hình (công suất, số máy, hãng/xuất xứ, phạm vi) với các gói đã có kết quả trên muasamcong; giá do code tính từ các gói giống.</span></div>
+      <button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý giá đấu"}</button></div>
     ${raw(prev?.result && !wait ? bidPriceHtml(prev, t) : "")}</section>`;
 }
 function bpSampleRow(s, t, i) {
