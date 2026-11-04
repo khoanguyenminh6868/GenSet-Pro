@@ -2725,7 +2725,7 @@ function configTabHtml(t) {
     + h`<div class="field" style="margin:8px 0"><label for="cfgExtra">Yêu cầu khác</label><textarea id="cfgExtra" data-key="${key}" maxlength="2000" rows="2" placeholder="Không bắt buộc. Ví dụ: động cơ Weichai, đầu phát Stamford, bộ điều khiển Deep Sea DSE7320, hòa đồng bộ..." ${busy ? "disabled" : ""}>${cfgExtraOf(key)}</textarea></div>`
     + h`<div class="row actrow"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button></div>`
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
-    + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}</div>` + cfgResultHtml(prev.result) : "");
+    + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.originAuto ? ` (bot tự chọn vì HSMT ghi: “${prev.result.originAuto.quote}”)` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}</div>` + cfgResultHtml(prev.result) : "");
 }
 // The note can be closed (Khoa, 2026-11-01); it is kept closed in this browser until the next Tìm NCC result.
 // The suppliers it adds go into the suggested configurations in code, no agent (config-bot.mjs mergeFind, r.configMerge).
