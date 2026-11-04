@@ -784,8 +784,10 @@ async function prep(key, dir, reqData = {}, given = null) {
   const a = analysis?.result;
   const cap = capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
   const all = suppliers.map((d) => d.data), hints = hintsOf(text, extraOf(reqData));
-  // Xuất xứ: the default "cn" gives way to the G7 / G20 the HSMT requires (Khoa, 2026-11-04); one chosen on the web stays.
-  const asked = originOfReq(reqData.origin), auto = asked === "cn" ? originOfHsmt(parts.join("")) : null;
+  // Xuất xứ: "Tất cả" (the web's default) and a request from Sync follow the HSMT: the G7 / G20 it requires, else every
+  // origin (Khoa, 2026-11-04). Trung Quốc, G7, G20 or Khác chosen on the web stays.
+  const fromHsmt = reqData.from === "sync" || originOfReq(reqData.origin) === "all", asked = fromHsmt ? "all" : originOfReq(reqData.origin);
+  const auto = fromHsmt ? originOfHsmt(parts.join("")) : null;
   const origin = auto?.origin || asked, full = CAT.build(all), cn = cnSuppliers(all);
   const cat = { ...full, engines: byOrigin(full.engines, origin, cn) };
   const { md, ctlMd, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null });
