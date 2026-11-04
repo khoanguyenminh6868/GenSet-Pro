@@ -13,6 +13,8 @@
     if (e.type === "keydown" && e.key !== "Enter") return;
     actAt = now();
     actEl = e.target?.closest?.("button,.btn,[role=button]") || null;
+    // A tab needs no spinner of its own: the one in the middle of the screen already shows its content is loading.
+    if (actEl?.closest("[role=tablist]")) actEl = null;
   };
   for (const t of ["click", "change", "submit", "keydown", "drop", "paste"]) addEventListener(t, act, true);
 
