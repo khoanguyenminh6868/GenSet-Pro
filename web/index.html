@@ -268,6 +268,7 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .drop{border:1.5px dashed var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px}
 .drop.over{border-color:var(--violet)}
 .qrow{display:flex;flex-direction:column;gap:8px;border-radius:6px}
+.qline{flex-wrap:nowrap}.qline>select{flex:1 1 auto;min-width:0;width:0}.qline>.muted{flex:0 1 auto;min-width:0;max-width:40%}.qline>.btn{flex:none}
 .qrow+.qrow{border-top:1px solid var(--line);padding-top:8px}
 .qrow.over{outline:1.5px dashed var(--violet);outline-offset:4px}
 .files{display:flex;flex-direction:column;gap:6px}
@@ -1444,8 +1445,8 @@ function quoteHtml(t) {
     if (r.supplierId && !opts.some((s) => s.id === r.supplierId)) opts.unshift(state.supplier?.[r.supplierId] || { id: r.supplierId });
     const up = quoteUp[key]?.row === r.id ? quoteUp[key].text : "";
     return h`<div class="qrow" data-qrow="${r.id}">
-      <div class="row"><select data-qsup="${r.id}" style="flex:1;min-width:180px" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">${favN ? "Chọn nhà cung cấp yêu thích..." : "Chưa có nhà cung cấp yêu thích"}</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
-        ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Tải tệp lên</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
+      <div class="row qline"><select data-qsup="${r.id}" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">${favN ? "Chọn nhà cung cấp yêu thích..." : "Chưa có nhà cung cấp yêu thích"}</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
+        ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Upload</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
         ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
       ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
         ${raw(ro ? "" : h`${raw(/\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-qopen="${r.id}:${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : h`<button class="btn sm" data-qopen="${r.id}:${i}">Tải về</button>`)}<button class="btn sm" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
