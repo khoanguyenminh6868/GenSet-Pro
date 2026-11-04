@@ -22,8 +22,8 @@
     document.documentElement.classList.add("gb-busy");
     if (!pill && document.body) {
       pill = document.createElement("div");
-      pill.className = "busypill"; pill.setAttribute("role", "status");
-      pill.innerHTML = '<span class="spin"></span><span>Đang xử lý…</span>';
+      pill.className = "busypill"; pill.setAttribute("role", "status"); pill.setAttribute("aria-label", "Đang xử lý");
+      pill.innerHTML = '<span class="spin"></span>';
       document.body.appendChild(pill);
     }
     if (pill) pill.hidden = false;

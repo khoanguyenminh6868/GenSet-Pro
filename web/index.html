@@ -218,7 +218,8 @@ td.r{text-align:right}
 .spin{width:12px;height:12px;border:2px solid var(--line);border-top-color:var(--violet);border-radius:50%;animation:sp .8s linear infinite;display:inline-block;flex:none}
 @keyframes sp{to{transform:rotate(360deg)}}
 /* busy.js: spinner while an action waits (middle of the screen, and in the pressed button) */
-.busypill{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:80;display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 14px;box-shadow:var(--shadow);font-size:13px;color:var(--fg);pointer-events:none}
+.busypill{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:80;display:flex;align-items:center;justify-content:center;background:var(--panel);border:1px solid var(--line);border-radius:50%;padding:12px;box-shadow:var(--shadow);pointer-events:none}
+.busypill .spin{width:24px;height:24px;border-width:3px}
 html.gb-busy,html.gb-busy *{cursor:progress}
 .is-busy{pointer-events:none;opacity:.75}
 .is-busy::before{content:"";width:11px;height:11px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sp .8s linear infinite;display:inline-block;flex:none;vertical-align:-1px;margin-right:4px}
