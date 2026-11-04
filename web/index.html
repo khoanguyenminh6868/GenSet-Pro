@@ -1730,7 +1730,7 @@ function biddersHtml(t) {
 function analysisTabHtml(t) {
   const s = analysisState(t), a = analysisOf(t._key);
   const head = s === "done"
-    ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : a.basis === "specs" ? '<span class="chip warn">Chỉ thông số kỹ thuật (Chương V)</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>`
+    ? h`<div class="row"><span class="chip ok">Đã phân tích</span>${raw(a.basis === "notice" ? '<span class="chip warn">Sơ bộ, từ thông báo mời thầu</span>' : a.basis === "specs" ? '<span class="chip warn">Chỉ thông số kỹ thuật (Chương V)</span>' : "")}<span class="muted small">lúc ${fmtDate(a.analyzedAt)}</span><div class="spacer"></div><button class="btn sm primary" data-act="reanalyze" data-key="${t._key}">Phân tích lại</button></div>`
     : s === "running" ? progress("AI đang đọc hồ sơ và phân tích. Hồ sơ dài có thể mất vài phút.")
     : s === "requested" ? (Date.now() < areqNoteUntil
       ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
