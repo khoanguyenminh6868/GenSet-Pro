@@ -73,9 +73,26 @@ foreach ($d in $inbox, $Repo) {
 
 Step "Skills Claude -> $env:USERPROFILE\.claude"
 $cl = Join-Path $env:USERPROFILE '.claude'
-foreach ($sub in 'skills\run-hsmt-worker', 'scheduled-tasks\hsmt-worker') {
+foreach ($sub in 'skills\run-hsmt-worker', 'skills\genbid-setup', 'scheduled-tasks\hsmt-worker') {
     New-Item -ItemType Directory -Force (Join-Path $cl $sub) | Out-Null
     Copy-Item (Join-Path $PSScriptRoot "claude\$sub\SKILL.md") (Join-Path $cl $sub) -Force
+}
+# Bộ nhớ Claude của dự án (tên thư mục theo đường dẫn C:\Projects\GenSet Pro); chỉ chép khi máy mới chưa có.
+$mem = Join-Path $cl ('projects\' + ($Root -replace '[:\\ ]', '-') + '\memory')
+if (-not (Test-Path (Join-Path $mem 'MEMORY.md'))) {
+    New-Item -ItemType Directory -Force $mem | Out-Null
+    Copy-Item (Join-Path $PSScriptRoot 'claude\memory\*') $mem -Force
+}
+Copy-Item (Join-Path $Repo 'CLAUDE.md') (Join-Path $Root 'CLAUDE.md') -Force
+# Stop hook: chặn Claude kết thúc lượt khi bot trên máy khác bot/ trên GitHub.
+$sf = Join-Path $cl 'settings.json'
+$s = if (Test-Path $sf) { Get-Content $sf -Raw -Encoding UTF8 | ConvertFrom-Json } else { New-Object psobject }
+if ((ConvertTo-Json $s -Depth 20) -notmatch 'Test-GenBidBotGit') {
+    $hook = [pscustomobject]@{ hooks = @([pscustomobject]@{ type = 'command'; timeout = 60
+        command = "powershell -NoProfile -ExecutionPolicy Bypass -File `"$($Kit -replace '\\','/')/Test-GenBidBotGit.ps1`"" }) }
+    if (-not $s.hooks) { $s | Add-Member hooks (New-Object psobject) }
+    $s.hooks | Add-Member -Force Stop (@($s.hooks.Stop | Where-Object { $_ }) + $hook)
+    [IO.File]::WriteAllText($sf, (ConvertTo-Json $s -Depth 20), (New-Object Text.UTF8Encoding $false))
 }
 $missing.Add('Skill /hsmt trên claude.ai: Settings > Skills > Upload bot\claude\skills\hsmt\SKILL.md (không làm bằng script được)')
 
