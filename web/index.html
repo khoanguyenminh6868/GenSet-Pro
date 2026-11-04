@@ -1411,7 +1411,7 @@ function infoHtml(t) {
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
-        ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}" title="${f.converted ? "Xem (bản PDF chuyển từ tệp gốc)" : "Xem tệp"}" aria-label="${f.converted ? "Xem bản PDF" : "Xem tệp"}">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
+        ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}" title="${f.converted ? "Xem (bản PDF chuyển từ tệp gốc)" : "Xem tệp"}" aria-label="${f.converted ? "Xem bản PDF" : "Xem tệp"}">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener" title="Tải tệp" aria-label="Tải tệp ${f.name}">${raw(DL_SVG)}</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
         ${raw(!f.hasText && f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t))}
@@ -1525,7 +1525,7 @@ function projectInfoHtml(t) {
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Tệp hồ sơ</h2><span class="muted small">${files.length ? `${files.length} tệp${d?.updatedAt ? " · cập nhật " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
-        ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải</a>` : "")}
+        ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener" title="Tải tệp" aria-label="Tải tệp ${f.name}">${raw(DL_SVG)}</a>` : "")}
         ${raw(f.hasText ? "" : '<span class="chip mut">Không đọc được chữ</span>')}
         ${raw(state.readOnly ? "" : h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(state.readOnly ? "" : projUp[key] ? `<div class="note">${progress(projUp[key])}</div>` : h`<div class="drop" id="pDrop">
@@ -2189,9 +2189,9 @@ function compareTabHtml(t) {
     <div class="row"><div class="spacer"></div><button class="btn primary" id="cmRun" data-key="${t._key}" ${cmWait ? "disabled" : ""}>Đối chiếu</button>${raw(sideBtns(t._key))}</div>
     <div id="cmOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.accepted ? " · đã đánh dấu là đã đối chiếu" : ""}</span><button class="btn sm" id="cmDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></div>` + comparisonHtml(prev.result) : "")}</div>`;
 }
-// Xem tệp / Tải PDF buttons show only this icon (Khoa, 2026-11-04); what they do is in their title.
-const PDF_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 2h9l5 5v13.5A1.5 1.5 0 0 1 18.5 22h-12A1.5 1.5 0 0 1 5 20.5v-17A1.5 1.5 0 0 1 6.5 2z" fill="#e2231a"/><path d="M15 2v3.5A1.5 1.5 0 0 0 16.5 7H20z" fill="#f58a84"/><text x="12.5" y="17.4" text-anchor="middle" font-size="6.6" font-weight="800" font-family="system-ui,sans-serif" fill="#fff">PDF</text></svg>';
-// Tải Word: a green download icon only (Khoa, 2026-11-04).
+// Xem tệp / Tải PDF buttons show only this red badge (Khoa, 2026-11-04); what they do is in their title.
+const PDF_SVG = '<svg viewBox="0 0 30 18" width="30" height="18" aria-hidden="true"><rect x="0.5" y="0.5" width="29" height="17" rx="3.5" fill="#e2231a"/><text x="15" y="13" text-anchor="middle" font-size="10.5" font-weight="800" letter-spacing=".4" font-family="system-ui,sans-serif" fill="#fff">PDF</text></svg>';
+// Tải Word and Tải of a file that is not a PDF: a green download icon only (Khoa, 2026-11-04).
 const DL_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg>';
 const TRASH_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>';
 // Xóa: remove the current comparison (and with it the "đã đối chiếu" mark), after a confirmation.
