@@ -787,3 +787,23 @@ test("a label table of one genset (one page per model) is that genset's source, 
   assert.deepEqual(problems, []);
   assert.equal(result.configs[0].checks[0].status, "met");
 });
+
+
+test("the G7 / G20 origin the HSMT requires of the genset, not an example, a preference, a score or a part (Khoa 2026-11-04)", async () => {
+  const { originOfHsmt } = await import("./config-bot.mjs");
+  const o = (t) => originOfHsmt(t)?.origin ?? null;
+  assert.equal(o("1.2\nXuất xứ\nCác nước thuộc: nhóm G7 hoặc Liên minh Châu Âu (EU) hoặc Việt Nam"), "g7");
+  assert.equal(o("1.3. Đối với máy phát điện nhập khẩu: Máy phát điện có xuất xứ một trong\ncác nước thuộc khối G7."), "g7");
+  assert.equal(o("2 Nước sản xuất, lắp ráp - Thuộc nhóm các nước G20"), "g20");
+  assert.equal(o("- Hãng sản xuất máy phát điện thuộc các nước khối G7."), "g7");
+  for (const t of [
+    "Ví dụ về nhóm nước, vùng lãnh thổ: Liên minh Châu Âu (EU), Hiệp hội các quốc gia Đông Nam Á\n(ASEAN), nhóm các nền kinh tế lớn G20, G8, G7...",
+    "Hàng hóa có xuất xứ G7 được hưởng ưu đãi",
+    "Nhập khẩu nguyên chiếc từ các nước EU hoặc G7 (20 điểm)",
+    "+ Đối với hàng hóa có xuất xứ thuộc nhóm nước G7: Nhà thầu cung cấp đầy đủ chứng chỉ ISO 9001",
+    "- Xuất xứ: G7/ASIA",
+    "Máy mới 100%, sản xuất tại EU, G7, ASEAN hoặc tương đương.",
+    "- Bảng điều khiển xuất xứ G7",
+    "Xuất xứ: Trung Quốc",
+  ]) assert.equal(o(t), null, t);
+});

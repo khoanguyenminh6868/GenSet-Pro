@@ -49,6 +49,30 @@ export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, �
 const GROUP_ORIGIN = new Set(["g7", "g20"]);
 const PARTS = ["engine", "alternator", "genset", "controller"];
 const originOfReq = (o) => (ORIGIN[o] ? o : "cn");
+// The origin group the HSMT requires of the genset / engine (Khoa, 2026-11-04: "nếu HSMT ghi rõ xuất xứ G7/G20 thì bot
+// tự chọn xuất xứ đó"; 4 of 22 runs asked G7 and every configuration of the default "cn" failed): a line naming G7 or
+// G20 with "xuất xứ / nguồn gốc / sản xuất / nhập khẩu / thương hiệu", not a preference ("ưu đãi") or the bidder's own
+// country. The word may be in the table cell's label two lines above ("Xuất xứ" / "Các nước thuộc: nhóm G7 hoặc EU hoặc
+// Việt Nam"). Not an example of the forms ("Ví dụ về nhóm nước … G20, G8, G7"), a recommendation, a score ("(20 điểm)"),
+// a condition ("Đối với hàng hóa có xuất xứ G7: nhà thầu cung cấp…"), nor a line that also allows ASEAN, Korea… or
+// "tương đương": EU and Việt Nam (assembled here) may stand beside it. G20 when the line says G20. { origin, quote } or null.
+const ORIGIN_W = /xu[ấa]t x[ứu]|ngu[ồo]n g[ốo]c|s[ảa]n xu[ấa]t|nh[ậa]p kh[ẩa]u|th[ưư][ơo]ng hi[ệe]u|h[ãa]ng|origin|made in/i;
+const NOT_RULE = /ưu đãi|ưu tiên|khuyến (nghị|khích)|ví dụ|vi du|nhà thầu (nước ngoài|trong nước)|quốc tịch|không (yêu cầu|bắt buộc|hạn chế)|\(\s*\d+\s*điểm|tương đương|asean|asian|châu á|nga\b|russia|hàn quốc|korea|ấn độ|india|trung quốc|china|đối với[^:\n]{0,80}\bG\s?-?(7|20)\b[^:\n]{0,30}:/i;
+export function originOfHsmt(text) {
+  let best = null;
+  const L = String(text ?? "").split("\n").map((x) => x.replace(/\s+/g, " ").trim());
+  L.forEach((l, i) => {
+    if (l.length > 600 || !/\bG\s?-?(7|20)\b/.test(l) || !ORIGIN_W.test([L[i - 2], L[i - 1], l].join(" "))) return;
+    if (NOT_RULE.test(l) || /\basia\b/i.test(l) || /ví dụ|vi du/i.test([L[i - 2], L[i - 1]].join(" "))) return;
+    // Only the controller's, the alternator's or a spare part's origin ("4 Bảng điều khiển Xuất xứ Châu Âu, G7"): the
+    // origin here picks the engine, so it is not one.
+    const near = [L[i - 1], l].join(" ");
+    if (/b[ảa]ng điều khiển|b[ộo] điều khiển|controller|đầu phát|alternator|vật tư|phụ tùng|linh kiện/i.test(near) && !/động cơ|tổ máy|máy phát điện|engine|genset|hàng hóa|thương hiệu/i.test(near)) return;
+    const origin = /\bG\s?-?20\b/.test(l) ? "g20" : "g7";
+    if (!best || (origin === "g20" && best.origin === "g7")) best = { origin, quote: l.slice(0, 300) };
+  });
+  return best;
+}
 const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
 // The requirements read last time are used again only when the HSMT, Yêu cầu khác and the way they are read are the
 // same: REQ_VERSION goes up when config-prompt.md changes how requirements are written (e.g. the grouped controller
@@ -760,7 +784,9 @@ async function prep(key, dir, reqData = {}, given = null) {
   const a = analysis?.result;
   const cap = capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
   const all = suppliers.map((d) => d.data), hints = hintsOf(text, extraOf(reqData));
-  const origin = originOfReq(reqData.origin), full = CAT.build(all), cn = cnSuppliers(all);
+  // Xuất xứ: the default "cn" gives way to the G7 / G20 the HSMT requires (Khoa, 2026-11-04); one chosen on the web stays.
+  const asked = originOfReq(reqData.origin), auto = asked === "cn" ? originOfHsmt(parts.join("")) : null;
+  const origin = auto?.origin || asked, full = CAT.build(all), cn = cnSuppliers(all);
   const cat = { ...full, engines: byOrigin(full.engines, origin, cn) };
   const { md, ctlMd, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null });
   fs.writeFileSync(path.join(dir, "catalog.md"), md + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))), "utf8");
@@ -779,7 +805,7 @@ async function prep(key, dir, reqData = {}, given = null) {
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`,
     `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`, "",
     reuse ? "## Yêu cầu đã đọc lần trước: requirements.json (HSMT và Yêu cầu khác không đổi) — dùng nguyên danh sách đó, bỏ qua bước 1." : "", "",
-    `## Xuất xứ động cơ: ${ORIGIN[origin]}`,
+    `## Xuất xứ động cơ: ${ORIGIN[origin]}`, auto ? `(Bot tự chọn vì HSMT ghi: "${auto.quote}")` : "",
     origin === "cn" ? `Gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Cấu hình động cơ hãng Trung Quốc đứng trước cấu hình động cơ hãng nước khác (Khoa, 2026-11-03). Động cơ hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}, kể cả loại sản xuất theo giấy phép như Dongfeng Cummins, Chongqing Cummins) chỉ được gợi ý khi có nhà cung cấp đặt tại Trung Quốc (quốc gia CN trong catalog.md) chào động cơ đó trong bảng của mình; khi đó "suppliers" chỉ ghi các nhà cung cấp ở Trung Quốc đó. Khi tìm trên internet cũng vậy: hãng nước ngoài chỉ được tính khi trang của một nhà cung cấp ở Trung Quốc chào nó.`
     : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${origin.toUpperCase()} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...), kể cả loại sản xuất theo giấy phép. Động cơ nguồn không ghi hãng thì không gợi ý.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
@@ -791,7 +817,7 @@ async function prep(key, dir, reqData = {}, given = null) {
     "## Phần kỹ thuật của HSMT", technicalPart(text),
   ].filter((l) => l !== null).join("\n"), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "config-prompt.md"), "utf8") + formulasMd(), "utf8");
-  return { cap, origin, reqHash, reused: !!reuse, candidates: top.length, engines: cat.engines.length, alternators: cat.alternators.length };
+  return { cap, origin, originAuto: auto ? { from: asked, origin: auto.origin, quote: auto.quote } : null, reqHash, reused: !!reuse, candidates: top.length, engines: cat.engines.length, alternators: cat.alternators.length };
 }
 
 // ---------- save (agent: internet sources) ----------
@@ -1332,7 +1358,8 @@ async function answer(req, suppliers) {
     // Internet finds that pass verify.mjs join the catalog first, so the configuration's suppliers can point at them.
     const { added, records } = await addToCatalog(dir, key, suppliers).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
     const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
-    const { result, problems } = checkDir(dir, all, added, originOfReq(req.origin));
+    const { result, problems } = checkDir(dir, all, added, info.origin);
+    if (info.originAuto) result.originAuto = info.originAuto;
     if (extraOf(req)) result.extra = extraOf(req);
     // Read again next time only when the HSMT or Yêu cầu khác changed (prep, requirements.json).
     if (!(result.requirements || []).some((r) => r.unverified)) result.reqHash = info.reqHash;
@@ -1603,7 +1630,7 @@ async function find(req, suppliers) {
       const dir = path.join(os.tmpdir(), "genbid-find", `${key}-${engine}`);
       fs.rmSync(dir, { recursive: true, force: true });
       try {
-        const { cap } = await findPrep(key, dir, req, suppliers);
+        const { cap, origin } = await findPrep(key, dir, req, suppliers);
         const r = await (engine === "gemini" ? runGemini(dir, FIND_INPUT) : runClaude(dir, FIND_INPUT));
         fs.writeFileSync(path.join(os.tmpdir(), `genbid-find-${key}-${engine}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
         if (r.error && !fs.existsSync(path.join(dir, "newCatalog.json"))) { tried.push({ engine: ENGINE[engine], error: r.error }); continue; }
@@ -1617,7 +1644,7 @@ async function find(req, suppliers) {
         const { added, records } = await addToCatalog(dir, key, suppliers, { branch: `ncc/${key.toLowerCase()}-${engine}`, title: `Nhà cung cấp: Tìm NCC gói ${key} (${ENGINE[engine]})`,
           body: `Nút Tìm NCC ở tab Cấu hình gợi ý gói ${key}: ${ENGINE[engine]} tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật${cap ? ` (${cap.value} ${cap.unit})` : ""}. Bản ghi đã qua verify.mjs và đã đăng lên web.` });
         if (!added.some((a) => !a.error)) { tried.push({ engine: ENGINE[engine], error: "bản ghi không qua được verify.mjs của repo", dropped: added }); continue; }
-        const merged = await mergeFindIntoConfig(key, records, { cap, origin: req.origin, suppliers }).catch((e) => ({ error: e.message }));
+        const merged = await mergeFindIntoConfig(key, records, { cap, origin, suppliers }).catch((e) => ({ error: e.message }));
         const configMerge = merged?.error ? `chưa bổ sung được vào cấu hình gợi ý: ${merged.error}` : mergeText(merged);
         await done({ result: { engine: ENGINE[engine], cap, ...(extraOf(req) ? { extra: extraOf(req) } : {}), summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried, configMerge } });
         console.log(`${key}: Tìm NCC (${ENGINE[engine]}) bổ sung ${added.filter((a) => !a.error).length} nhà cung cấp; cấu hình: ${configMerge}`);
