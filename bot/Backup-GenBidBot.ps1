@@ -19,6 +19,7 @@ $map = [ordered]@{
     'genbid-hsmt'                               = Join-Path $Root 'genbid-hsmt'
     'claude\skills\run-hsmt-worker'             = Join-Path $Cl 'skills\run-hsmt-worker'
     'claude\scheduled-tasks\hsmt-worker'        = Join-Path $Cl 'scheduled-tasks\hsmt-worker'
+    'claude\memory'                             = Join-Path $Cl ('projects\' + ($Root -replace '[:\\ ]', '-') + '\memory')
 }
 function Keep($f) { $f.Name -notmatch '^\.|\.bak|^New Text Document' }
 

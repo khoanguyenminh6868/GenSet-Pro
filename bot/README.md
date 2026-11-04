@@ -10,6 +10,9 @@ Bản đang chạy vẫn ở `C:\Projects\GenSet Pro\genbid-hsmt\`; sửa ở đ
 | `bot/claude/skills/run-hsmt-worker/` | `%USERPROFILE%\.claude\skills\run-hsmt-worker\` |
 | `bot/claude/scheduled-tasks/hsmt-worker/` | `%USERPROFILE%\.claude\scheduled-tasks\hsmt-worker\` (tác vụ Claude Desktop, chạy tay) |
 | `bot/claude/skills/hsmt/SKILL.md` | skill `/hsmt` tải lên claude.ai (Settings > Skills) |
+| `bot/claude/skills/genbid-setup/` | skill "setup bot trên máy khác" (tải lên claude.ai để theo tài khoản; chạy theo `bot/SETUP-CLAUDE.md`) |
+| `bot/claude/memory/` | bộ nhớ Claude của dự án (`%USERPROFILE%\.claude\projects\C--Projects-GenSet-Pro\memory\`) |
+| `bot/genbid-hsmt/Test-GenBidBotGit.ps1` | Stop hook trong `~\.claude\settings.json`: Claude không kết thúc lượt khi bot trên máy khác GitHub |
 | `bot/windows-tasks/GenBid Bot.xml` | tác vụ Windows "GenBid Bot" (bản xuất để tham khảo; Install tạo lại cho user hiện tại) |
 | `suppliers/config-bot.mjs`, `bidprice-bot.mjs`, `discover.mjs`… | đã ở repo; bot chạy chúng từ `C:\Projects\GenSet Pro\GenSet-Pro` (tự `git merge --ff-only origin/main`) |
 | nhánh `hsmt-inbox` (ingest.py, Action) | `C:\Projects\GenSet Pro\hsmt-inbox\` |
