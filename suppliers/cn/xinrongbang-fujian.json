@@ -90,6 +90,16 @@
         "| Engine Rated Speed | rpm | 1500 | 1800"
       ],
       "file": "sources/xinrongbang-fujian/101.md"
+    },
+    {
+      "n": 1001,
+      "url": "http://www.fujian-motor.com/article.asp?ID=36",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 1. Engine model | MKWY490D"
+      ],
+      "file": "sources/xinrongbang-fujian/1001.md"
     }
   ],
   "confidence": "medium",
@@ -108,6 +118,31 @@
         "| Cooling Fan Power Consumption (kW) | kW | 1,5 | 2",
         "| Engine Net Standby Output (LTP) | kW | 24,4 | 28,2",
         "| Engine Net Prime Output (PRP) | kW | 22,2 | 25,7"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "FUJIAN NEW RONGBANG MOTOR MACHINERY Production generators, generators sets, pumps, motors Series",
+      "header": [],
+      "rows": [
+        "| 1. Engine model | MKWY490D",
+        "| Engine Rated Speed | rpm | 1500 | 1800",
+        "| Generator set Frequency | Hz | 50 | 60",
+        "| Engine Standby Power (LTP) | kW | 26,4 | 30,8",
+        "| Engine Prime Power (PRP) | kW | 24 | 28",
+        "| Cooling Fan Power Consumption (kW) | kW | 1,5 | 2",
+        "| Engine Net Standby Output (LTP) | kW | 24,4 | 28,2",
+        "| Engine Net Prime Output (PRP) | kW | 22,2 | 25,7",
+        "| Engine Dry Weight w/o Cooling System | kg | 240",
+        "| Aspiration Type | | Natural",
+        "| Cylinders and structure | | 4 in-line",
+        "| Displacement | liters | 2,67",
+        "| Bore | mm | 90",
+        "| Stroke | mm | 105",
+        "| Compression Ratio | | 18.5:1",
+        "| Piston Speed | m/s | 5.25/6.3",
+        "| Flywheel House Size | | SAE4",
+        "| Lube Oil Specification | | Oil pump, forced lubrication"
       ]
     }
   ]

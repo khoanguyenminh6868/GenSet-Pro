@@ -99,6 +99,26 @@
       "file": "sources/jiuan-power/1.md"
     },
     {
+      "n": 3002,
+      "url": "https://www.jiuangenerator.com/products",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "diesel engine, coupled with a genuine brushless Stamford S4L1D-G41 alternator. Automated by the intelligent SmartGen HGM6120CAN digital AMF controller with J1939 CANbus engine telemetry. Designed for mission-critical standby power backup and"
+      ],
+      "file": "sources/jiuan-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.jiuangenerator.com/diesel-generator-set",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "diesel engine, coupled with a genuine brushless Stamford S4L1D-G41 alternator. Automated by the intelligent SmartGen HGM6120CAN digital AMF controller with J1939 CANbus engine telemetry. Designed for mission-critical standby power backup and"
+      ],
+      "file": "sources/jiuan-power/3003.md"
+    },
+    {
       "n": 101,
       "url": "https://www.jiuangenerator.com/1100kva-cummins-diesel-generator272",
       "accessedAt": "2026-10-29",
@@ -448,26 +468,6 @@
         "| Model | CDP900S"
       ],
       "file": "sources/jiuan-power/135.md"
-    },
-    {
-      "n": 3002,
-      "url": "https://www.jiuangenerator.com/products",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "diesel engine, coupled with a genuine brushless Stamford S4L1D-G41 alternator. Automated by the intelligent SmartGen HGM6120CAN digital AMF controller with J1939 CANbus engine telemetry. Designed for mission-critical standby power backup and"
-      ],
-      "file": "sources/jiuan-power/3002.md"
-    },
-    {
-      "n": 3003,
-      "url": "https://www.jiuangenerator.com/diesel-generator-set",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "diesel engine, coupled with a genuine brushless Stamford S4L1D-G41 alternator. Automated by the intelligent SmartGen HGM6120CAN digital AMF controller with J1939 CANbus engine telemetry. Designed for mission-critical standby power backup and"
-      ],
-      "file": "sources/jiuan-power/3003.md"
     }
   ],
   "confidence": "medium",

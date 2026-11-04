@@ -108,6 +108,16 @@
       "file": "sources/leton-power/1.md"
     },
     {
+      "n": 2,
+      "url": "https://letonpower.com/manufacturer-of-high-power-industrial-diesel-generator-sets-50kva-to-2000kva/",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "50–2000 kVA Industrial Diesel Generators"
+      ],
+      "file": "sources/leton-power/2.md"
+    },
+    {
       "n": 101,
       "url": "https://letonpower.com/our-product/300-500kva/",
       "accessedAt": "2026-10-28",
@@ -206,16 +216,6 @@
         "| Rated Frequency ( Hz) | 50/60"
       ],
       "file": "sources/leton-power/117.md"
-    },
-    {
-      "n": 2,
-      "url": "https://letonpower.com/manufacturer-of-high-power-industrial-diesel-generator-sets-50kva-to-2000kva/",
-      "accessedAt": "2026-11-02",
-      "tier": "A",
-      "quote": [
-        "50–2000 kVA Industrial Diesel Generators"
-      ],
-      "file": "sources/leton-power/2.md"
     }
   ],
   "confidence": "medium",

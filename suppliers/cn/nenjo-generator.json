@@ -120,6 +120,16 @@
       "file": "sources/nenjo-generator/2.md"
     },
     {
+      "n": 3,
+      "url": "https://en.nenjo.cn/products_details/62.html",
+      "accessedAt": "2026-11-02",
+      "tier": "A",
+      "quote": [
+        "| NENJO 500-2800KW 10500V ALTERNATOR |"
+      ],
+      "file": "sources/nenjo-generator/3.md"
+    },
+    {
       "n": 101,
       "url": "https://en.nenjo.cn/products_details/57.html",
       "accessedAt": "2026-10-29",
@@ -188,16 +198,6 @@
         "| High base | ModeL | KW | KW"
       ],
       "file": "sources/nenjo-generator/111.md"
-    },
-    {
-      "n": 3,
-      "url": "https://en.nenjo.cn/products_details/62.html",
-      "accessedAt": "2026-11-02",
-      "tier": "A",
-      "quote": [
-        "| NENJO 500-2800KW 10500V ALTERNATOR |"
-      ],
-      "file": "sources/nenjo-generator/3.md"
     }
   ],
   "confidence": "medium",

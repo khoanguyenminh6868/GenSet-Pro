@@ -88,6 +88,26 @@
       "file": "sources/kc-generatorset/2.md"
     },
     {
+      "n": 3001,
+      "url": "https://www.kcgeneratorset.com/product/shanghai-diesel-engine-generator-set/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "extra air/oil/fuel filters, external daily fuel tank, water-fuel separator, and multiple controller options including DSE6020, DSE7320, and DSE8610. Unit types encompass open type, silent type, mobile trailer type, and containerized type, with"
+      ],
+      "file": "sources/kc-generatorset/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.kcgeneratorset.com/product/chongqing-pangu-diesel-generator-set/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Control System | SmartGen HGM6110 Intelligent Controller | Deep Sea DSE7320 Controller"
+      ],
+      "file": "sources/kc-generatorset/3002.md"
+    },
+    {
       "n": 101,
       "url": "https://www.kcgeneratorset.com/product/shanghai-diesel-engine-generator-set/800kw-shanghai-diesel-engine-generator-set.html",
       "accessedAt": "2026-10-28",
@@ -326,26 +346,6 @@
         "| Engine: SC7H250D2 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silencer (muffler), and standard connection fittings | Maintenance-free lead-acid battery and battery connecting cables | Voltage level | Voltage V | Frequency Hz | Number of phases | Rated current A | Power KW"
       ],
       "file": "sources/kc-generatorset/124.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://www.kcgeneratorset.com/product/shanghai-diesel-engine-generator-set/",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "extra air/oil/fuel filters, external daily fuel tank, water-fuel separator, and multiple controller options including DSE6020, DSE7320, and DSE8610. Unit types encompass open type, silent type, mobile trailer type, and containerized type, with"
-      ],
-      "file": "sources/kc-generatorset/3001.md"
-    },
-    {
-      "n": 3002,
-      "url": "https://www.kcgeneratorset.com/product/chongqing-pangu-diesel-generator-set/",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Control System | SmartGen HGM6110 Intelligent Controller | Deep Sea DSE7320 Controller"
-      ],
-      "file": "sources/kc-generatorset/3002.md"
     }
   ],
   "confidence": "medium",

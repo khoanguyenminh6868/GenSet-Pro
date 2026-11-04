@@ -102,6 +102,66 @@
         "| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]"
       ],
       "file": "sources/mecc-alte/102.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://www.meccalte.com/downloads/MAU3498_Zanardi_PMG_Leaflet.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "GENERATOR"
+      ],
+      "file": "sources/mecc-alte/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://www.meccalte.com/downloads/MM_MeccAlte_MEC1275.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| POWER | PHYSICAL"
+      ],
+      "file": "sources/mecc-alte/1002.md"
+    },
+    {
+      "n": 1003,
+      "url": "https://www.meccalte.com/downloads/ATO_28_2p.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Kw | p.f. | 0.8 | Kva p.f. 1 | 2/4 | 3/4 | 4/4"
+      ],
+      "file": "sources/mecc-alte/1003.md"
+    },
+    {
+      "n": 1004,
+      "url": "https://www.meccalte.com/downloads/scheda_tecnica_depliant_CTP3_2P.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Motor starting | 2/4 | 3/4 | 4/4"
+      ],
+      "file": "sources/mecc-alte/1004.md"
+    },
+    {
+      "n": 1005,
+      "url": "https://www.meccalte.com/downloads/scheda_tecnica_depliant_PE_28.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| R.P.M. | Kva p.f. | 1 | 2/4 | 3/4 | 4/4"
+      ],
+      "file": "sources/mecc-alte/1005.md"
+    },
+    {
+      "n": 1006,
+      "url": "https://www.meccalte.com/downloads/ATO_28_4p.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| R.P.M. | p.f.0,8 | Kw p.f. 0.8 | Kva p.f. 1 | 2/4 | 3/4 | 4/4"
+      ],
+      "file": "sources/mecc-alte/1006.md"
     }
   ],
   "confidence": "medium",
@@ -220,6 +280,191 @@
         "| ECSP32 1L/4 | 4 | 50kVA | 60kVA",
         "| ECSP32 2L/4 | 4 | 58 kVA | 72kVA",
         "| ECSP32 3L/4 | 4 | 70kVA | 84kVA"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: PMG&nbsp;Leaflet pdf",
+      "header": [],
+      "rows": [
+        "GENERATOR",
+        "| temperature protection and has a built- | 3 PH",
+        "CONTROL",
+        "| Fixed Speed Alternative | Optional F [fixed speed DC without inverter]",
+        "| Efficiency | 80% to 94% (depending on model)",
+        "| Voltage Regulation | +/-2%",
+        "| Ph / Voltage | 1p",
+        "| Insulation | Class H",
+        "| Protection | IP23",
+        "| ˭ Auto-start with mains failure detection | Inverter 15-20kW",
+        "| Model | Inverter 3.6kW | Inverter 4kW | Inverter 6kW | Inverter 8kW | Inverter 10kW | Inverter 15kW | Inverter 20kW",
+        "| Output Power | 4kW | 4kW | 6kW | 8kW | 10kW | 15kW | 20kW",
+        "| Output Voltage | 120V | 230V | 230V | 230V | 230V | 230V | 230V",
+        "| Output Current | 31Arms | 17,4Arms | 26Arms | 34,7Arms | 43,5Arms | 65,2Arms | 87Arms",
+        "| Output Frequency | 50 Hz | 50 Hz | 50 Hz | 50 Hz | 50 Hz | 50 Hz | 50 Hz",
+        "| Input Voltage | 3phase 140 - 230Vac | 3phase 300 - 490Vac | 3phase 300 - 490Vac | 3phase 300 - 490Vac | 3phase 300 - 490Vac | 3phase 300 - 490Vac | 3phase 300 - 490Vac",
+        "| Input Frequency | 200-500Hz | 200-600Hz | 200 – 600Hz | 200 – 600Hz | 200 – 600Hz | 200-600Hz | 200-600Hz",
+        "| Power Supply | Directly from A.C.",
+        "| Speed Control Module | 9",
+        "weight (both alternator and for",
+        "| can be fixed to optimise engine | removing traditional excitation",
+        "| power, fuel consumption and | windings",
+        "| Model | PM3G-Fisso / PM5G-Fisso / PM7G-Fisso",
+        "| rpm | Fixed speed (determinable)",
+        "| Output Voltage | DC (various voltages and current levels are",
+        "| Efficiency | Approx. 80% to 94% depending on model",
+        "| PMG-DC Variable Speed | 10",
+        "fuel consumption and increases engine life.",
+        "| Variable speed benefits: | Model | PM3G-Variabile / PM5G-Variabile /",
+        "| ˭ PMG output voltage is stable across load range | rpm",
+        "GENERATOR",
+        "| GEN OUTPUT (DC VOLT) | F",
+        "| SPEED LOAD CONTROL | H",
+        "| MODEL: MEC 12-75 VDC | J",
+        "| DC SPEED CONTROLLER POWERED BY GAC | MADE IN AGAWAM, MA USA",
+        "| RPM | Voltage",
+        "| POWER PRODUCTS | ALTERNATORI",
+        "| Mecc Alte Alternator Haimen | LTD",
+        "| Mecc Alte Alternators PTY LTD | aftersales@meccalte.in"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: MEC 12-75 VDC - Datasheet pdf",
+      "header": [],
+      "rows": [
+        "| POWER | PHYSICAL",
+        "| Dimensions | 1.02 x 4 x 4.67in",
+        "| PWM Output | Duty Cycle 0 - 100%",
+        "| Frequency 50 – 450Hz | 20 G, 11ms",
+        "| Voltage Regulation | 0.1 V DC",
+        "| Engine | Do Not Crank. Apply DC | Generated residual voltage must be 10 volts or higher for this test.",
+        "| overspeed | power to the governor",
+        "| Manually hold the engine at | Measure the DC voltage between actuator terminals on the speed control unit.",
+        "| the desired running speed. | If the voltage reading is 2.0 to 3.0 V DC check for:",
+        "| Overspeed | Low GAIN setting.",
+        "| during start up | instability.",
+        "| If the voltage is less than the following, check | or replace battery:",
+        "| Engine speed | Measure the actuator output | If voltage measurement is within 2 V DC of the battery supply voltage level, then fuel control may",
+        "| governed speed | governor control."
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: ATO28 2 pole pdf",
+      "header": [],
+      "rows": [
+        "| Kw | p.f. | 0.8 | Kva p.f. 1 | 2/4 | 3/4 | 4/4",
+        "| VS | 3600 | 32 | 25 | 21 | 86 | 88,5 | 87,5 | S1 | <4%",
+        "| ATO | 28/2 | 1S | 3600 | 36 | 29 | 24 | 83,6 | 86,3 | 85,8 | S1 | <4%",
+        "| ATO | 28/2 | 2S | 3600 | 40 | 32 | 26 | 87,6 | 89,5 | 89 | S1 | <4%",
+        "| ATO | 28/2 | 3S | 3600 | 45 | 36 | 30 | 88 | 89,8 | 89,5 | S1 | <4%",
+        "| ATO | 28/2 | 1L | 3600 | 53 | 42 | 35 | 88,3 | 90,2 | 89 | S1 | <4%",
+        "| ATO | 28/2 | 2L | 3600 | 60 | 48 | 40 | 88,6 | 90,7 | 89,6 | S1 | <4%",
+        "| VL | 3600 | 65 | 52 | 43 | 89 | 91,2 | 90,1 | S1 | <4%"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: CTP3 2 pole pdf",
+      "header": [],
+      "rows": [
+        "| Motor starting | 2/4 | 3/4 | 4/4",
+        "| CTP3-1S/2 | 8 | 6,4",
+        "| KVA | 25 | 74 | 76,5 | 76 | 7,2 | 5,76 | 6 | KVA 18 | <5%",
+        "| CTP3-2S/2 | 10 | 8",
+        "| KVA | 32 | 75 | 79 | 78 | 9 | 7,2 | 7,5 | KVA 22 | <5%",
+        "| CTP3-3S/2 | 12 | 9,6",
+        "| KVA | 38 | 78,5 | 81,5 | 81 | 11 | 8,8 | 9 | KVA 27 | <5%",
+        "| CTP3-1L/2 | 15 | 12",
+        "| KVA | 48 | 80 | 84 | 83,5 | 14 | 11,2 | 11 | KVA 32 | <5%",
+        "| CTP3-1L/2 | 17,5 | 14",
+        "| KVA | 53 | 81,5 | 85 | 85 | 16,5 | 13,2 | 12,6 | KVA 34 | <5%",
+        "| A 3600 RPM-60 Hz | AT 3600 RPM -60 Hz | 3600 RPM -60 Hz | 3600 RPM -60 Hz | 3600 RPM-60 Hz"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: CTP3 2 pole pdf",
+      "header": [],
+      "rows": [
+        "| Motor starting | 2/4 | 3/4 | 4/4",
+        "| CTP3-1S/2 | 9,6 | 7,7 | KVA 30 | 75,5 | 78 | 77,5 | 7,3 | 5,8 | 7,2",
+        "| KVA | 21 | <5%",
+        "| CTP3-2S/2 | 12 | 9,6 | KVA 38,5 | 76,5 | 80,5 | 79,5 | 9 | 7,2 | 9",
+        "| KVA | 26 | <5%",
+        "| CTP3-3S/2 | 14,4 | 11,6 | KVA 45,5 | 80 | 83 | 82,5 | 11 | 8,8 | 10,8",
+        "| KVA | 32 | <5%",
+        "| CTP3-1L/2 | 18 | 14,4 | KVA 57,5 | 81,5 | 85,5 | 85 | 14,5 | 11,6 | 13,2",
+        "| KVA | 38 | <5%",
+        "| CTP3-2L/2 | 21 | 16,8 | KVA 63,5 | 83 | 86,5 | 86,5 | 17 | 13,6 | 15,1",
+        "| KVA | 40 | <5%"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: CTP3 2 pole pdf",
+      "header": [],
+      "rows": [
+        "| B3/B14 | B3/B9 | MD35 | B3/B14 | B3/B9 | MD35 | 50Hz | 60Hz | 1mt. | 7mt. | 1mt. | 7mt. | 6 1/2 | 0,0067",
+        "| CTP3-1S/2 | 0,0365 | 0,0354 | 0,0359 | 53 | 51 | 57 | 6,4 | 7,8 | 7 1/2 | 0,0103",
+        "| CTP3-2S/2 | 0,0395 | 0,0394 | 0,0398 | 59 | 57 | 63 | 6,3 | 7,8 | 8 | 0,0171",
+        "| CTP3-3S/2 | 0,0456 | 0,0455 | 0,0459 | 65 | 63 | 69 | 6,2 | 7,8 | 85 | 70 | 89 | 73 | 10 | 0,0319",
+        "| CTP3-1L/2 | 0,0515 | 0,0514 | 0,0519 | 74 | 72 | 78 | 6 | 7,2 | 11 1/2 | 0,0481",
+        "| CTP3-2L/2 | 0,0573 | 0,0572 | 0,0577 | 80 | 78 | 84 | 5,8 | 6,8",
+        "| Rating \"H\" class | kVA 50 Hz | 8 | 10 | 12 | 15 | 17,5",
+        "| Direct-axis synchronous reactance | Xd % | 345 | 305 | 244 | 195 | 164",
+        "| Direct-axis transient reactance | X'd % | 34 | 31,5 | 33 | 26,9 | 22,6",
+        "| Direct-axis subtransient reactance | X\"d % | 19 | 16,3 | 16,5 | 14,6 | 12,3",
+        "| Quadrature-axis synchronous reactance | Xq % | 93 | 91 | 94 | 91,5 | 98",
+        "| Quadrature-axis transient reactance | X'q % | 93 | 91 | 94 | 91,5 | 98",
+        "| Quadrature-axis subtransient reactance | X\"q % | 42,1 | 36,6 | 37,4 | 36,9 | 31",
+        "| Negative - sequence reactance | X2 % | 18 | 18,5 | 17,4 | 17 | 16,5",
+        "| Zero sequence reactance | Xo % | 7 | 6,8 | 6,2 | 5,5 | 5,1",
+        "| transient time constant | T'd (ms) | 68 | 72 | 43 | 62 | 55",
+        "| Subtransient time constant | T\" (ms) | 14 | 12 | 10 | 14 | 10",
+        "| Armature time constant | T (ms) | 5 | 5 | 9 | 12 | 10",
+        "| Open circuit time constant | T'do (s) | 0,6 | 0,65 | 0,68 | 0,71 | 0,77",
+        "| short - circuit ratio | Kcc | 0,45 | 0,48 | 0,51 | 0,55 | 0,63",
+        "| Stator winding resistance | ohm | 1,562 | 0,998 | 0,702 | 0,509 | 0,358"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: PE28 4 pole pdf",
+      "header": [],
+      "rows": [
+        "| R.P.M. | Kva p.f. | 1 | 2/4 | 3/4 | 4/4",
+        "| PE | 28/4 1VS | 1500 | 6 | 76 | 78,3 | 77 | S1 | <5%",
+        "| PE | 28/4 2VS | 1500 | 8 | 77 | 80 | 78,5 | S1 | <5%",
+        "| PE | 28/4 S | 1500 | 10 | 78 | 83 | 82,5 | S1 | <5%"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: PE28 4 pole pdf",
+      "header": [],
+      "rows": [
+        "| R.P.M. | Kw p.f. | 1 | 2/4 | 3/4 | 4/4",
+        "| PE | 28/4 | 1VS | 1800 | 7,2 | 77 | 79 | 78 | S1 | <5%",
+        "| PE | 28/4 | 2VS | 1800 | 9,6 | 78 | 81 | 79,5 | S1 | <5%",
+        "| S | 1800 | 12 | 79 | 83,5 | 83 | S1 | <5%"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: ATO28 4 pole pdf",
+      "header": [],
+      "rows": [
+        "| R.P.M. | p.f.0,8 | Kw p.f. 0.8 | Kva p.f. 1 | 2/4 | 3/4 | 4/4",
+        "| ATO | 28/4 | 1VS | 1500 | 12 | 9,5 | 8 | 85 | 86,1 | 86,5 | S1 | <4%",
+        "| ATO | 28/4 | 2VS | 1500 | 15,5 | 12,5 | 10 | 85,6 | 86,3 | 86,6 | S1 | <4%",
+        "| ATO | 28/4 | 3VS | 1500 | 20,5 | 16,5 | 13,5 | 86 | 88,5 | 88,6 | S1 | <4%",
+        "| ATO | 28/4 | 4VS | 1500 | 24 | 19 | 16 | 87,5 | 89,5 | 89,5 | S1 | <4%",
+        "| S | 1500 | 30 | 24 | 20 | 88 | 90 | 89,5 | S1 | <4%",
+        "| ATO | 28/4 | 1L | 1500 | 36 | 28,5 | 24 | 88,5 | 90,4 | 89,5 | S1 | <4%",
+        "| ATO | 28/4 | 2L | 1500 | 42 | 28 | 28 | 89 | 90,7 | 90,2 | S1 | <4%",
+        "| VL | 1500 | 44,4 | 35,5 | 29,5 | 89,7 | 91,1 | 90,9 | S1 | <4%"
       ]
     }
   ]

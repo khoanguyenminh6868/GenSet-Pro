@@ -296,7 +296,7 @@
     {
       "n": 1001,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/1200KW-Cummins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -306,7 +306,7 @@
     {
       "n": 1002,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/1200KW-Weichai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 6.0kV"
@@ -316,7 +316,7 @@
     {
       "n": 1003,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/1500KW-Weichai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -326,7 +326,7 @@
     {
       "n": 1004,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/1600KW-Yuchai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -336,7 +336,7 @@
     {
       "n": 1005,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/24KW-Weichai-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -346,7 +346,7 @@
     {
       "n": 1006,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/24KW-Yuchai-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 机组型号 | HL24GF"
@@ -356,7 +356,7 @@
     {
       "n": 1007,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/30KW-Perkins-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -366,7 +366,7 @@
     {
       "n": 1008,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/30KW-Weichai-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -376,17 +376,17 @@
     {
       "n": 1009,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/30KW-Yuchai-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL30GF"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1009.md"
     },
     {
       "n": 1010,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/40KW-Cummins-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -396,17 +396,17 @@
     {
       "n": 1011,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/40KW-Perkins-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 备用 Standby Power | 66.0 | 52.8 | 60.5 | 81.1 | 59.3 | 79.5"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1011.md"
     },
     {
       "n": 1012,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/50KW-60HZ-Cummins-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 60Hz | 1800 rpm | 220V"
@@ -416,7 +416,7 @@
     {
       "n": 1013,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/50KW-Cummins-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -426,7 +426,7 @@
     {
       "n": 1014,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/50KW-Weichai-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -436,17 +436,17 @@
     {
       "n": 1015,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/50KW-Yuchai-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL50GF"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1015.md"
     },
     {
       "n": 1016,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/60KW-Perkins-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -456,7 +456,7 @@
     {
       "n": 1017,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/80KW-Cummins-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -466,17 +466,17 @@
     {
       "n": 1018,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/80KW-Perkins-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 备用功率 | Standby power | 205 | 24.9 | 75% 常用功率 75% prime power | 207 | 17.1"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1018.md"
     },
     {
       "n": 1019,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/100KW-Cummins-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -486,27 +486,27 @@
     {
       "n": 1020,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/100KW-Weichai-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL100GF"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1020.md"
     },
     {
       "n": 1021,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/100KW-Yuchai-Generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL100GF"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1021.md"
     },
     {
       "n": 1022,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/120KW-Cummins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -516,7 +516,7 @@
     {
       "n": 1023,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/120KW-Perkins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -526,7 +526,7 @@
     {
       "n": 1024,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/200KW-Cummins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -536,27 +536,27 @@
     {
       "n": 1025,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/200KW-Weichai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL200GF"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1025.md"
     },
     {
       "n": 1026,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/200KW-Yuchai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL200GF"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1026.md"
     },
     {
       "n": 1027,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/240KW-60HZ-Cummins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 60Hz | 1800 rpm | 440V"
@@ -566,7 +566,7 @@
     {
       "n": 1028,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/240KW-60HZ-Weichai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 60Hz | 1800 rpm | 220V"
@@ -576,17 +576,17 @@
     {
       "n": 1029,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/240KW-60HZ-Yuchai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL240GF"
+        "| 60Hz | 1800 rpm | 220V"
       ],
       "file": "sources/shanhua/1029.md"
     },
     {
       "n": 1030,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/250KW-Cummins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -596,7 +596,7 @@
     {
       "n": 1031,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/300KW-60HZ-Cummins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 60Hz | 1800 rpm | 440V"
@@ -606,7 +606,7 @@
     {
       "n": 1032,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/300KW-Weichai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -616,7 +616,7 @@
     {
       "n": 1033,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/400KW-Yuchai-generator_20250702112221.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -626,7 +626,7 @@
     {
       "n": 1034,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/500KW-Perkins-generator_20250702112853.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| Base load Power | 500.0 | 400.0 | 446.0 | 598.0 | 435.0 | 583.0"
@@ -636,17 +636,17 @@
     {
       "n": 1035,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/400KW-Weichai-generator_20250702111539.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL400GF"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1035.md"
     },
     {
       "n": 1036,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/500KW-Weichai-generator_20250702113232.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -656,27 +656,27 @@
     {
       "n": 1037,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/500KW-Yuchai-generator_20250702114048.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL500GF"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1037.md"
     },
     {
       "n": 1038,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/400KW-Cummins-generator_20250702110953.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 备用功率 | Standby power | 118 | 100%功率 | 100% prime power | 107"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1038.md"
     },
     {
       "n": 1039,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/400KW-60HZ-Cummins-generator_20250702114514.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 60Hz | 1800 rpm | 220V"
@@ -686,7 +686,7 @@
     {
       "n": 1040,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/320KW-60HZ-Cummins-generator_20250702114754.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 60Hz | 1800 rpm | 220V"
@@ -696,7 +696,7 @@
     {
       "n": 1041,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/320KW-Cummins-generator_20250702105240.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 380V"
@@ -706,7 +706,7 @@
     {
       "n": 1042,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/500KW-60HZ-Cummins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 60Hz | 1800 rpm | 480V"
@@ -716,7 +716,7 @@
     {
       "n": 1046,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/600KW-Perkins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| Base load Power | 600.0 | 480.0 | 531.0 | 712.0 | 505.0 | 677.0"
@@ -726,7 +726,7 @@
     {
       "n": 1047,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/630KW-Weichai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -736,7 +736,7 @@
     {
       "n": 1048,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/800KW-Perkins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| Base load Power | 809.0 | 647.0 | 719.0 | 964.0 | 681.0 | 913.0"
@@ -746,7 +746,7 @@
     {
       "n": 1049,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/1000KW-Cummins-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
         "| 50Hz | 1500 rpm | 400V"
@@ -756,10 +756,10 @@
     {
       "n": 1050,
       "url": "https://shanhuachina.cn/wp-content/uploads/2025/07/1000KW-Weichai-generator.pdf",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "| 机组型号 | HL1000GF"
+        "| 50Hz | 1500 rpm | 400V"
       ],
       "file": "sources/shanhua/1050.md"
     }
@@ -1133,7 +1133,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 1320 | 1650",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 1200 | 1500"
+        "| 主用功率 Prime Power | 1200 | 1500",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 5100*1830*2440",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 17000",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -1165,10 +1173,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 7500*2400*3000",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1191,7 +1195,6 @@
         "| 进气流量 Air intake flow (L/sec) | 1655",
         "| 冷却液容积 Coolant capacity-engine only (L) | 165",
         "| 冷却液流量 Engine coolant flow (L/sec) | N/A",
-        "| 最大油底壳机油温度 | 121",
         "| 起动机电压 Start Motor Voltage (V) | 24",
         "| 燃油泵系统类型 Fuel injection pump model | 直喷式康明斯PT系统 Direct Injection Cummins PT",
         "| 备用功率 | Standby power | 345 | 100%功率 100% prime power | 309",
@@ -1209,6 +1212,7 @@
         "| Wires | 励磁方式 Exciter Type",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1229,7 +1233,15 @@
         "| 50Hz | 1500 rpm | 6.0kV",
         "| 备用功率 Standby Power | 1320 | 1650",
         "| 50Hz | 1500 rpm | 6.0kV",
-        "| 主用功率 Prime Power | 1200 | 1500"
+        "| 主用功率 Prime Power | 1200 | 1500",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 5470*2070*2300",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 18200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -1249,10 +1261,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 8000*2960*3000",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1283,6 +1291,7 @@
         "| 防护等级 Protection Grade | IP23",
         "| 励磁方式 Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1303,7 +1312,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 1650 | 2062.5",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 1500 | 1875"
+        "| 主用功率 Prime Power | 1500 | 1875",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 5230*2260*2554",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 20000",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -1323,10 +1340,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 8600*2750*3000",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1360,6 +1373,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1380,7 +1394,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 1870 | 2337.5",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 1700 | 2125"
+        "| 主用功率 Prime Power | 1700 | 2125",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 6000*2250*2610",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 25000",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -1400,10 +1422,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 9000*2960*3200",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1435,6 +1453,7 @@
         "| 防护等级 Protection Grade | IP23",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1454,7 +1473,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 26.4 | 33",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 24 | 30"
+        "| 主用功率 Prime Power | 24 | 30",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1900*800*1200",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1400",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -1474,10 +1501,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 2840*1130*1720",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1509,6 +1532,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1538,10 +1562,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 2840*1130*1720",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1574,6 +1594,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1594,7 +1615,9 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 33 | 41",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 30 | 37.5"
+        "| 主用功率 Prime Power | 30 | 37.5",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1900x800x1200",
+        "| Weights | SOUNDPROOF STYLE | 1470"
       ]
     },
     {
@@ -1625,10 +1648,6 @@
         "| Weights | SOUNDPROOF STYLE | 1470",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1668,6 +1687,7 @@
         "| 防护等级 | Protection Grade | IP23",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发动机控制 Engine Control | 发电机欠压/过压",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1687,7 +1707,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 33 | 41.25",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 30 | 37.5"
+        "| 主用功率 Prime Power | 30 | 37.5",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1900*800*1200",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1400",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -1707,10 +1735,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 2840*1130*1720",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1742,6 +1766,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1752,6 +1777,25 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1009,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 33 | 41",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 30 | 37.5",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1900*800*1200",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1400",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -1771,10 +1815,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 2840*1130*1720",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1807,6 +1847,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1827,7 +1868,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 44 | 55",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 40 | 50"
+        "| 主用功率 Prime Power | 40 | 50",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1910*720*1170",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1600",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -1857,10 +1906,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 2820*1140*1710",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1899,6 +1944,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -1909,6 +1955,19 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1011,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 44 | 55",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 40 | 50",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1900x800x1200",
+        "| Weights | SOUNDPROOF STYLE | 1540"
       ]
     },
     {
@@ -1948,10 +2007,6 @@
         "| Weights | SOUNDPROOF STYLE | 1540",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -1994,6 +2049,7 @@
         "| 防护等级 | Protection Grade | IP23",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2014,7 +2070,15 @@
         "| 60Hz | 1800 rpm | 220V",
         "| 备用功率 Standby Power | 55 | 68.8",
         "| 60Hz | 1800 rpm | 220V",
-        "| 主用功率 Prime Power | 50 | 62.5"
+        "| 主用功率 Prime Power | 50 | 62.5",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1910*720*1170",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1600",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2044,10 +2108,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 2820*1140*1710",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2086,6 +2146,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2106,7 +2167,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 55 | 68.8",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 50 | 62.5"
+        "| 主用功率 Prime Power | 50 | 62.5",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1910*720*1170",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1600",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2126,10 +2195,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 2820*1140*1710",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2168,6 +2233,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2188,7 +2254,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 55 | 68.75",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 50 | 62.5"
+        "| 主用功率 Prime Power | 50 | 62.5",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1800*750*1050",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1600",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2208,10 +2282,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 2820*1140*1710",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2244,6 +2314,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2254,6 +2325,25 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1015,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 55 | 68.8",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 50 | 62.5",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1950*700*1200",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1700",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2273,10 +2363,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 2820*1120*1670",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2309,6 +2395,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2329,7 +2416,9 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 66 | 82.5",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 60 | 75"
+        "| 主用功率 Prime Power | 60 | 75",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 1900x800x1200",
+        "| Weights | SOUNDPROOF STYLE | 1540"
       ]
     },
     {
@@ -2369,10 +2458,6 @@
         "| Weights | SOUNDPROOF STYLE | 1540",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2414,6 +2499,7 @@
         "| 防护等级 | Protection Grade | IP23",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 发动机控制 Engine Control | 降速显示 Loss of Speed Signal",
         "| 发电机组监测 | 发电机欠压/过压",
         "| Generator Monitoring | Alternator Under / Over Voltage",
@@ -2433,7 +2519,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 88 | 110",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 80 | 100"
+        "| 主用功率 Prime Power | 80 | 100",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 2210*810*1310",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1850",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2463,10 +2557,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 3150*1250*1670",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2504,6 +2594,7 @@
         "| 防护等级 | Protection Grade | IP21",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2514,6 +2605,25 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1018,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 88 | 110",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 80 | 100",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 2210*800*1300",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 2000",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2542,10 +2652,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 3160x1210x1710",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2582,6 +2688,7 @@
         "| Wires | 励磁方式",
         "| Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2602,7 +2709,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 110 | 137.5",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 100 | 125"
+        "| 主用功率 Prime Power | 100 | 125",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 2210x810x1320",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1900",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2632,10 +2747,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 3170*1280*1620",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2674,6 +2785,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2684,6 +2796,25 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1020,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 110 | 137.5",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 100 | 125",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 2180*800*1300",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 2400",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2703,10 +2834,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 3180*1270*1710",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2738,6 +2865,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2748,6 +2876,25 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1021,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 110 | 137.5",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 100 | 125",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 2350*820*1340",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 2700",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2767,10 +2914,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 3950*1350*2150",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2803,6 +2946,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2823,7 +2967,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 132 | 155",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 120 | 150"
+        "| 主用功率 Prime Power | 120 | 150",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 2210x810x1320",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 1900",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2843,10 +2995,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 3170*1280*1620",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2884,6 +3032,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2904,7 +3053,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 132 | 165",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 120 | 150"
+        "| 主用功率 Prime Power | 120 | 150",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 2380*1000*1500",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 2700",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -2924,10 +3081,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 3300*1200*1710",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -2964,6 +3117,7 @@
         "| Wires | 励磁方式",
         "| Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -2984,7 +3138,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 220 | 275",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 200 | 250"
+        "| 主用功率 Prime Power | 200 | 250",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 2570*950*1520",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 3200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3015,10 +3177,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4000*1525*2250",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3057,6 +3215,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3066,6 +3225,25 @@
         "| Generator Protection | 低速/超速 Under / Over Speed",
         "| 发动机监测 Engine Monitoring | 低油压 Low Oil Pressure",
         "| Phase Sequence Electrical (Option) | High Engine Temperature Pre-Alarm"
+      ]
+    },
+    {
+      "n": 1025,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 220 | 275",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 200 | 250",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 2570*960*1540",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 4300",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3085,10 +3263,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4220*2040*2760",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3120,6 +3294,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3130,6 +3305,25 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1026,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 220 | 275",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 200 | 250",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3000*1050*1650",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 3500",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3149,10 +3343,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4520*1550*2210",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3185,6 +3375,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3205,7 +3396,15 @@
         "| 60Hz | 1800 rpm | 440V",
         "| 备用功率 Standby Power | 264 | 330",
         "| 60Hz | 1800 rpm | 440V",
-        "| 主用功率 Prime Power | 240 | 300"
+        "| 主用功率 Prime Power | 240 | 300",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3100*1050*1800",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 4200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3248,10 +3447,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4490*1525*2200",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3273,7 +3468,6 @@
         "| 进气方式 Air intake way | 涡轮增压 Turbo",
         "| 进气流量 Air intake flow (L/sec) | 463",
         "| 冷却液流量 Engine coolant flow (L/sec) | 6.0",
-        "| 最大油底壳机油温度 | 121",
         "| 起动机电压 Start Motor Voltage (V) | 24",
         "| 燃油泵系统类型 Fuel injection pump model | 直喷式康明斯PT系统 Direct Injection Cummins PT",
         "| 备用功率 | Standby power | 80.7 | 100%功率 100% prime power | 73.4",
@@ -3291,6 +3485,7 @@
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3311,7 +3506,15 @@
         "| 60Hz | 1800 rpm | 220V",
         "| 备用功率 Standby Power | 264 | 330",
         "| 60Hz | 1800 rpm | 220V",
-        "| 主用功率 Prime Power | 240 | 300"
+        "| 主用功率 Prime Power | 240 | 300",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3370*1270*1670",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 4400",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3331,10 +3534,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4500*1550*2140",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3370,6 +3569,7 @@
         "| 防护等级 | Protection Grade | IP21",
         "| Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3380,6 +3580,25 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1029,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 60Hz | 1800 rpm | 220V",
+        "| 备用功率 Standby Power | 264 | 330",
+        "| 60Hz | 1800 rpm | 220V",
+        "| 主用功率 Prime Power | 240 | 300",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3050*1160*1510",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 4100",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3399,10 +3618,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4000*1510*2300",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3435,6 +3650,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3455,7 +3671,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 277 | 346.5",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 252 | 315"
+        "| 主用功率 Prime Power | 252 | 315",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3000*1050*1800",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 4200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3487,10 +3711,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4500*1550*2380",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3513,7 +3733,6 @@
         "| 进气流量 Air intake flow (L/sec) | 418",
         "| 冷却液容积 Coolant capacity-engine only (L) | 20.8",
         "| 冷却液流量 Engine coolant flow (L/sec) | TBD",
-        "| 最大油底壳机油温度 | 121",
         "| 起动机电压 Start Motor Voltage (V) | 24",
         "| 燃油泵系统类型 Fuel injection pump model | BYC A 型直列泵",
         "| 备用功率 | Standby power | 80.7 | 100%功率 100% prime power | 71.4",
@@ -3532,6 +3751,7 @@
         "| 3 Phase and 4 Wires | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3552,7 +3772,15 @@
         "| 60Hz | 1800 rpm | 440V",
         "| 备用功率 Standby Power | 330 | 412.5",
         "| 60Hz | 1800 rpm | 440V",
-        "| 主用功率 Prime Power | 300 | 375"
+        "| 主用功率 Prime Power | 300 | 375",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3100*1050*1800",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 4200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3584,10 +3812,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 5180*2150*2620",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3610,7 +3834,6 @@
         "| 进气流量 Air intake flow (L/sec) | 543",
         "| 冷却液容积 Coolant capacity-engine only (L) | 20.8",
         "| 冷却液流量 Engine coolant flow (L/sec) | N/A",
-        "| 最大油底壳机油温度 | 121",
         "| 起动机电压 Start Motor Voltage (V) | 24",
         "| 燃油泵系统类型 Fuel injection pump model | 直喷式康明斯PT系统 Direct Injection Cummins PT",
         "| 备用功率 | Standby power | 96 | 100%功率 100% prime power | 87",
@@ -3628,6 +3851,7 @@
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3648,7 +3872,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 330 | 468",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 300 | 375"
+        "| 主用功率 Prime Power | 300 | 375",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3080*1145*1560",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 4400",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3668,10 +3900,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4500*1550*2140",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3707,6 +3935,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3727,7 +3956,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 440 | 550",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 400 | 500"
+        "| 主用功率 Prime Power | 400 | 500",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3550*1270*1830",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 5000",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3747,10 +3984,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 5230*2230*2810",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3783,6 +4016,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3831,10 +4065,6 @@
         "| Prime Power (50HZ) 主用功率 | 500KW /625KVA",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)：≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3878,6 +4108,7 @@
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 尺 寸、重 量 Genset Dimensions | and",
         "Weights",
         "| 尺 寸 Overall Size L×W×H，mm | 3530*1460*2100 | 5420*2040*2610",
@@ -3889,6 +4120,25 @@
         "| 机组保护 Generator Protection | 市电欠压/过压 Mains Under / Over Voltage",
         "| 发动机监测 Engine Monitoring | 市电低频/超频 Mains Under/ Over Frequency",
         "| 发动机高温 High Engine Temperature | 过流 Over-current"
+      ]
+    },
+    {
+      "n": 1035,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 440 | 550",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 400 | 500",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3430*1370*1940",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 5500",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3908,10 +4158,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 5200*2060*2460",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -3947,6 +4193,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -3967,7 +4214,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 550 | 687.5",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 500 | 625"
+        "| 主用功率 Prime Power | 500 | 625",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3650*1460*2100",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 7000",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -3987,10 +4242,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 5500X2180X2700",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4022,6 +4273,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -4032,6 +4284,25 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1037,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 550 | 687.5",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 500 | 625",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3540*1240*1790",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 5200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -4051,10 +4322,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 5220*2020*2630",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4087,6 +4354,7 @@
         "| 防护等级 Protection Grade | IP23",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -4097,6 +4365,25 @@
         "| 发动机监测 Engine Monitoring | 低速/超速 Under / Over Speed",
         "| 发动机高温 High Engine Temperature | 发动机高温预警",
         "| Phase Sequence Electrical (Option) | 电池电压过高/过低"
+      ]
+    },
+    {
+      "n": 1038,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 440 | 550",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 400 | 500",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3210*1380*2000",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 6500",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -4126,10 +4413,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 5360*2910*3200",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4168,6 +4451,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -4187,7 +4471,15 @@
         "| 60Hz | 1800 rpm | 220V",
         "| 备用功率 Standby Power | 500 | 550",
         "| 60Hz | 1800 rpm | 220V",
-        "| 主用功率 Prime Power | 400 | 440"
+        "| 主用功率 Prime Power | 400 | 440",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3360*1400*2080",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 6500",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -4219,10 +4511,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 5400*2000*2500",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4244,7 +4532,6 @@
         "| 进气方式 Air intake way | 涡轮增压 Turbo",
         "| 进气流量 Air intake flow (L/sec) | 647",
         "| 冷却液容积 Coolant capacity-engine only (L) | 30",
-        "| 最大油底壳机油温度 | 121",
         "| 起动机电压 Start Motor Voltage (V) | 24",
         "| 燃油泵系统类型 Fuel injection pump model | 直喷式康明斯PT系统 Direct Injection Cummins PT",
         "| 备用功率 | Standby power | 122 | 100%功率 100% prime power | 111",
@@ -4262,6 +4549,7 @@
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -4282,7 +4570,15 @@
         "| 60Hz | 1800 rpm | 220V",
         "| 备用功率 Standby Power | 352 | 440",
         "| 60Hz | 1800 rpm | 220V",
-        "| 主用功率 Prime Power | 320 | 400"
+        "| 主用功率 Prime Power | 320 | 400",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3100*1050*1800",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 4200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -4314,10 +4610,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4500*1550*2380",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4340,7 +4632,6 @@
         "| 进气流量 Air intake flow (L/sec) | 511",
         "| 冷却液容积 Coolant capacity-engine only (L) | 21",
         "| 冷却液流量 Engine coolant flow (L/sec) | N/A",
-        "| 最大油底壳机油温度 | 121",
         "| 起动机电压 Start Motor Voltage (V) | 24",
         "| 燃油泵系统类型 Fuel injection pump model | 直喷式康明斯PT系统 Direct Injection Cummins PT",
         "| 备用功率 | Standby power | 81.5 | 100%功率 100% prime power | 73.4",
@@ -4359,6 +4650,7 @@
         "| 3 Phase and 4 Wires | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -4379,7 +4671,15 @@
         "| 50Hz | 1500 rpm | 380V",
         "| 备用功率 Standby Power | 352 | 440",
         "| 50Hz | 1500 rpm | 380V",
-        "| 主用功率 Prime Power | 320 | 400"
+        "| 主用功率 Prime Power | 320 | 400",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3100*1050*1800",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 4200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -4410,10 +4710,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 4500*1550*2380",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4436,7 +4732,6 @@
         "| 进气流量 Air intake flow (L/sec) | 511",
         "| 冷却液容积 Coolant capacity-engine only (L) | 21",
         "| 冷却液流量 Engine coolant flow (L/sec) | N/A",
-        "| 最大油底壳机油温度 | 121",
         "| 起动机电压 Start Motor Voltage (V) | 24",
         "| 燃油泵系统类型 Fuel injection pump model | 康明斯CELECT系统 CUMMINS CELECT SYSTEM",
         "| 备用功率 | Standby power | 81.5 | 100%功率 100% prime power | 73.4",
@@ -4455,6 +4750,7 @@
         "| 3 Phase and 4 Wires | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -4475,7 +4771,15 @@
         "| 60Hz | 1800 rpm | 480V",
         "| 备用功率 Standby Power | 550 | 687.5",
         "| 60Hz | 1800 rpm | 480V",
-        "| 主用功率 Prime Power | 500 | 625"
+        "| 主用功率 Prime Power | 500 | 625",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3650*1460*2100",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 7000",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -4507,10 +4811,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 5230*2050*2480",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4533,7 +4833,6 @@
         "| 进气流量 Air intake flow (L/sec) | 1037",
         "| 冷却液容积 Coolant capacity-engine only (L) | 41.6",
         "| 冷却液流量 Engine coolant flow (L/sec) | N/A",
-        "| 最大油底壳机油温度 | 121",
         "| 起动机电压 Start Motor Voltage (V) | 24",
         "| 燃油泵系统类型 Fuel injection pump model | 直喷式康明斯PT系统 Direct Injection Cummins PT",
         "| 备用功率 | Standby power | 160 | 100%功率 100% prime power | 140",
@@ -4551,6 +4850,7 @@
         "| Wires | 励磁方式 Exciter Type",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -4595,10 +4895,6 @@
         "| Prime Power (50HZ) 主用功率 | 600KW / 750KVA",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)：≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4643,6 +4939,7 @@
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 尺 寸、重 量 Genset Dimensions | and",
         "Weights",
         "| 尺 寸 Overall Size L×W×H，mm | 4600*1820*2430 | 5900*2750*2910",
@@ -4664,7 +4961,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 693 | 866",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 630 | 787.5"
+        "| 主用功率 Prime Power | 630 | 787.5",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 3470*1400*2050",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 7200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -4684,10 +4989,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 6020*2380*3000",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4720,6 +5021,7 @@
         "| Wires | Brush less,self-exciting",
         "| 励磁方式 | Exciter Type",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -4762,10 +5064,6 @@
         "| Prime Power (50HZ) 主用功率 | 800KW / 1000KVA",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)：≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4807,6 +5105,7 @@
         "| 防护等级 Protection Grade | IP23",
         "| 励磁方式 Exciter Type | Brush less,self-exciting",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 尺 寸、重 量 Genset Dimensions | and",
         "Weights",
         "| 尺 寸 Overall Size L×W×H，mm | 4570*2080*2120 | 6400*2400*3000",
@@ -4828,7 +5127,15 @@
         "| 50Hz | 1500 rpm | 400V",
         "| 备用功率 Standby Power | 1100 | 1375",
         "| 50Hz | 1500 rpm | 400V",
-        "| 主用功率 Prime Power | 1000 | 1250"
+        "| 主用功率 Prime Power | 1000 | 1250",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 5100*1830*2440",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 17000",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -4860,10 +5167,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 7500*2400*3000",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4886,7 +5189,6 @@
         "| 进气流量 Air intake flow (L/sec) | 1643",
         "| 冷却液容积 Coolant capacity-engine only (L) | 161",
         "| 冷却液流量 Engine coolant flow (L/sec) | N/A",
-        "| 最大油底壳机油温度 | 121",
         "| 起动机电压 Start Motor Voltage (V) | 24",
         "| 燃油泵系统类型 Fuel injection pump model | 直喷式康明斯PT系统 Direct Injection Cummins PT",
         "| 备用功率 | Standby power | 282 | 100%功率 100% prime power | 254",
@@ -4904,6 +5206,7 @@
         "| Wires | 励磁方式 Exciter Type",
         "| 绝缘等级 Insulation Class | H",
         "| 绝缘等级Temperature Rise | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",
@@ -4914,6 +5217,25 @@
         "| 发动机监测 Engine Monitoring | Frequency",
         "| 发动机高温 High Engine Temperature | High Engine Temperature Pre-Alarm",
         "| Phase Sequence Electrical (Option) | High/Low Battery Voltage"
+      ]
+    },
+    {
+      "n": 1050,
+      "title": "Datasheet: View Details",
+      "header": [],
+      "rows": [
+        "| 50Hz | 1500 rpm | 400V",
+        "| 备用功率 Standby Power | 1100 | 1375",
+        "| 50Hz | 1500 rpm | 400V",
+        "| 主用功率 Prime Power | 1000 | 1250",
+        "| 开放型 | 尺 寸 Overall Size L×W×H，mm | 4970*2070*2300",
+        "| SOUNDPROOF STYLE | 净 重, Weight(net）kg | 18200",
+        "| Voltage regulation | (电压整定范围)： | ≥±5%",
+        "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
+        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
+        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
+        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
+        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S"
       ]
     },
     {
@@ -4933,10 +5255,6 @@
         "| 尺 寸 Overall Size L×W×H，mm | 8000*2960*3000",
         "| Voltage regulation | (电压整定范围)： | ≥±5%",
         "| Voltage Regulation, Stead State | (稳定电压调整率)： | ≤±1%",
-        "| Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%",
-        "| Sudden voltage Warp(Sudden Increase) | (瞬态电压偏差（突加功率）)： | ≤-20%",
-        "| Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S",
-        "| Voltage Stable Time(Sudden Increase) | (电压稳定时间（突加功率）)： | ≤6S",
         "| Frequency Regulation， Stead State （稳态频率调整率）： | ≤5%",
         "| Frequency Waving （频率波动率）： | ≤1.5%",
         "Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%",
@@ -4968,6 +5286,7 @@
         "| 防护等级 Protection Grade | IP21",
         "| 励磁方式 Exciter Type | 无刷自励磁",
         "| 绝缘等级 Insulation Class | H",
+        "| 电话谐波系数 THF | ＜2%",
         "| 降速显示 Loss of Speed Signal | 发电机欠压/过压",
         "| 发电机欠压/过压 | Alternator Under / Over Voltage",
         "| Alternator Under / Over Voltage | 发电机低频/超频",

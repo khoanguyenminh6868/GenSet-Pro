@@ -86,6 +86,16 @@
       "file": "sources/sutong-fujian/1.md"
     },
     {
+      "n": 4001,
+      "url": "https://image.made-in-china.com/230f3j00rBhcauTGaCbw/Sutong-Power-160kw-200kVA-Perkins-Engine-Portable-Silent-Diesel-Power-Generators-Set.webp",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| ST-P9(S) | 7.2 | 9 | 8 | 10 | 403A-11G1 |"
+      ],
+      "file": "sources/sutong-fujian/4001.md"
+    },
+    {
       "n": 101,
       "url": "http://www.sutongpower.com/productsdetail_en_2987605.html",
       "accessedAt": "2026-11-01",
@@ -110,6 +120,37 @@
         "Frequency: 50Hz",
         "Speed: 1500RPM",
         "Speed:1500 rpm"
+      ]
+    },
+    {
+      "n": 4001,
+      "title": "Sutong-Power-160kw-200kVA-Perkins-Engine-Portable-Silent-Diesel-Power-Generators-Set.webp",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| ST-P9(S) | 7.2 | 9 | 8 | 10 | 403A-11G1 |",
+        "| ST-P20(S) | 16 | 20 | 18 | 22 | 404A-22G1 |",
+        "| ST-P30(S) | 24 | 30 | 26 | 33 | 1103A-33G |",
+        "| ST-P45(S) | 36 | 45 | 40 | 50 | 1103A-33TG1 |",
+        "| ST-P60(S) | 48 | 60 | 53 | 66 | 1103A-33TG2 |",
+        "| ST-P80(S) | 64 | 80 | 70 | 88 | 1104A-44TG2 |",
+        "| ST-P100(S) | 80 | 100 | 88 | 110 | 1104C-44TG2 |",
+        "| ST-P135(S) | 108 | 135 | 119 | 149 | 1106A-70TG1 |",
+        "| ST-P150(S) | 120 | 150 | 132 | 165 | 1106A-70TAG2 |",
+        "| ST-P180(S) | 144 | 180 | 158 | 198 | 1106A-70TAG3 |",
+        "| ST-P200(S) | 160 | 200 | 176 | 220 | 1106A-70TAG4 |",
+        "| ST-P225(S) | 180 | 225 | 198 | 248 | 1506A-E88TAG2 |",
+        "| ST-P250(S) | 200 | 250 | 220 | 275 | 1506A-E88TAG3 |",
+        "| ST-P275(S) | 220 | 275 | 242 | 303 | 1506A-E88TAG4 |",
+        "| ST-P300(S) | 240 | 300 | 264 | 330 | 1506A-E88TAG5 |",
+        "| ST-P350(S) | 280 | 350 | 308 | 385 | 2206A-E13TAG2 |",
+        "| ST-P400(S) | 320 | 400 | 352 | 440 | 2206A-E13TAG3 |",
+        "| ST-P450(S) | 360 | 450 | 396 | 495 | 2506A-E15TAG1 |",
+        "| ST-P500(S) | 400 | 500 | 440 | 550 | 2506A-E15TAG2 |",
+        "| ST-P600(S) | 480 | 600 | 528 | 660 | 2806A-E18TAG1A |",
+        "| ST-P650(S) | 520 | 650 | 572 | 715 | 2806A-E18TAG2 |",
+        "| ST-P900(S) | 720 | 900 | 792 | 990 | 4008TAG1A |"
       ]
     }
   ]

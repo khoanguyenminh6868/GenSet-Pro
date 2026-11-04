@@ -107,6 +107,16 @@
       "file": "sources/superwatt-power/1.md"
     },
     {
+      "n": 3001,
+      "url": "https://www.swtgenset.com/spare-parts/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "ComAp Genset Controller: . IL3 AMF20 for Standard Genset Control system . IL3 AMF25 for Genset Control System . IC-NT /IG-NT for Genset Control system, with"
+      ],
+      "file": "sources/superwatt-power/3001.md"
+    },
+    {
       "n": 101,
       "url": "https://www.swtgenset.com/mtu-diesel-generator/57570727.html",
       "accessedAt": "2026-10-29",
@@ -165,16 +175,6 @@
         "| Gense t Model | Prime Power kW/kVA | Standby Power kW/kVA | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
       ],
       "file": "sources/superwatt-power/117.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://www.swtgenset.com/spare-parts/",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "ComAp Genset Controller: . IL3 AMF20 for Standard Genset Control system . IL3 AMF25 for Genset Control System . IC-NT /IG-NT for Genset Control system, with"
-      ],
-      "file": "sources/superwatt-power/3001.md"
     }
   ],
   "confidence": "medium",

@@ -123,6 +123,16 @@
       "file": "sources/kingway-power/1.md"
     },
     {
+      "n": 3001,
+      "url": "https://www.kingwaygenerator.com/atex-certified-zone-2-products/atex-certified-zone-2-generator/60kvazone-2-ex-proof-diesel-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | ComAp MRS16"
+      ],
+      "file": "sources/kingway-power/3001.md"
+    },
+    {
       "n": 101,
       "url": "https://www.kingwaygenerator.com/gas-generagtor-set/natural-gas-generator-set/500kw-3-phase-silent-natural-gas-powered.html",
       "accessedAt": "2026-10-28",
@@ -332,16 +342,6 @@
         "Model: KGC200N. Voltage/Frequency: 400/230 V, 50 Hz. Standby Power: 220 kVA, 176 kW. Prime Power: 200 kVA, 160kW."
       ],
       "file": "sources/kingway-power/134.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://www.kingwaygenerator.com/atex-certified-zone-2-products/atex-certified-zone-2-generator/60kvazone-2-ex-proof-diesel-generator.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Controller | ComAp MRS16"
-      ],
-      "file": "sources/kingway-power/3001.md"
     }
   ],
   "confidence": "medium",

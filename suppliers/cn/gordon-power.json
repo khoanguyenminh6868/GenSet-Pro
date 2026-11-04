@@ -152,6 +152,36 @@
       "file": "sources/gordon-power/1.md"
     },
     {
+      "n": 3001,
+      "url": "https://www.gordon-powers.com/Spare-Parts-pl42268387.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "More >> IL-NT AMF20"
+      ],
+      "file": "sources/gordon-power/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.gordon-powers.com/Diesel-Generator-Spare-Parts-pl41268387.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "More >> IL-NT AMF20"
+      ],
+      "file": "sources/gordon-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.gordon-powers.com/ST-STC-pd545891998.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| DSE6120 MKII | DSE7320 MKII | DSE8610 MKII | DSE8620 | DSE8660 MKII | IL-NT AMF20 | IL3 AMF20"
+      ],
+      "file": "sources/gordon-power/3003.md"
+    },
+    {
       "n": 101,
       "url": "https://www.gordon-powers.com/RICARDO-pd574610898.html",
       "accessedAt": "2026-10-29",
@@ -210,36 +240,6 @@
         "| Genset Perfomance | Engine Performance | Dimension(L×W×H)"
       ],
       "file": "sources/gordon-power/108.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://www.gordon-powers.com/Spare-Parts-pl42268387.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "More >> IL-NT AMF20"
-      ],
-      "file": "sources/gordon-power/3001.md"
-    },
-    {
-      "n": 3002,
-      "url": "https://www.gordon-powers.com/Diesel-Generator-Spare-Parts-pl41268387.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "More >> IL-NT AMF20"
-      ],
-      "file": "sources/gordon-power/3002.md"
-    },
-    {
-      "n": 3003,
-      "url": "https://www.gordon-powers.com/ST-STC-pd545891998.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| DSE6120 MKII | DSE7320 MKII | DSE8610 MKII | DSE8620 | DSE8660 MKII | IL-NT AMF20 | IL3 AMF20"
-      ],
-      "file": "sources/gordon-power/3003.md"
     }
   ],
   "confidence": "medium",

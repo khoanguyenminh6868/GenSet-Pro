@@ -23,6 +23,7 @@ const MAX = Number(args[args.indexOf("--max") + 1]) || 40;
 const only = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--max");
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 const FIRST = 1001;
+const scans = [];
 
 // A link to a datasheet: its text says so, or it is a PDF that is not about the company (certificates, licences).
 const DS_TEXT = /data\s*-?\s*sheet|spec(ification)?s?\s*sheet|technical\s*(data|spec|sheet|parameter)|detail(ed)?\s*(data|spec|parameter)|tech\s*data|参数表|技术参数|技术规格|数据表/i;
@@ -124,6 +125,8 @@ async function crawl(id) {
       if (seen.has(link.url) || tried >= MAX || n > 9999) continue;
       seen.add(link.url); tried++;
       let d; try { d = await download(link.url); } catch (e) { if (process.env.DEBUG) console.log("  x", link.url, e.message); continue; }
+      // A PDF with (almost) no text is a scan: listed in datasheets/_scans.json for OCR (ocr-specs.mjs), not read here.
+      if (d.pdf && d.text.replace(/\s+/g, "").length < 200) { scans.push({ id, url: d.url, from: page, text: link.text }); continue; }
       // Tables of several models (rows), then the sheet of one model (label lines).
       const tables = tablesOf(d.text).filter((t) => !t.sheet && t.rows.length >= 2);
       const sheet = sheetOf(d.text);
@@ -142,7 +145,8 @@ async function crawl(id) {
   // A site that is down or blocks the crawl never wipes the datasheets found before.
   if (rows < oldRows || !rows) return { id, read, tried, sheets: saved.length, rows, kept: oldRows || null };
   const dir = path.join(ROOT, "sources", id);
-  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) if (/^\d{4}\.md$/.test(f)) fs.rmSync(path.join(dir, f));
+  // Only the datasheets (1001–1999): internet finds (2001+), controller pages (3001+) and OCR (4001+) stay (2026-11-04).
+  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) if (/^1\d{3}\.md$/.test(f)) fs.rmSync(path.join(dir, f));
   fs.mkdirSync(dir, { recursive: true });
   for (const p of saved) fs.writeFileSync(path.join(dir, `${p.n}.md`), p.body, "utf8");
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
@@ -158,4 +162,8 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const work = async () => { while (next < ids.length) { const id = ids[next++]; try { const r = await crawl(id); if (r.read != null) console.log(`${r.id}: ${r.read} trang đọc, ${r.tried} link datasheet, ${r.sheets} datasheet có thông số, ${r.rows} dòng${r.kept ? ` (ít hơn lần trước, giữ ${r.kept} dòng cũ)` : ""}`); } catch (e) { console.log(`${id}: lỗi ${e.message}`); } } };
   await Promise.all(Array.from({ length: 6 }, work));
   await closeBrowser();
+  const scanFile = path.join(ROOT, "datasheets", "_scans.json");
+  const old = fs.existsSync(scanFile) ? JSON.parse(fs.readFileSync(scanFile, "utf8")).filter((s) => !ids.includes(s.id)) : [];
+  fs.writeFileSync(scanFile, JSON.stringify([...old, ...scans].sort((a, b) => a.id.localeCompare(b.id)), null, 1) + "\n", "utf8");
+  console.log(`${scans.length} PDF scan (không có chữ) ghi ở datasheets/_scans.json`);
 }

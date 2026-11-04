@@ -35,11 +35,15 @@ for (const f of [...new Set([...listed("specs"), ...listed("datasheets")])]) {
   const used = [...new Set(tables.map((t) => t.n))];
   // Pages of internet finds (2001–2999, config-bot.mjs) and controller pages (3001+) are not the crawl's: kept, with their tables.
   const kept = (rec.specTables || []).filter((t) => t.n >= 2000);
+  // Quotes written by hand for a crawled page (a power range a product line cites) stay when its URL is the same
+  // (2026-11-04: a merge of every record dropped them and verify failed).
+  const before = new Map(rec.sources.map((s) => [s.n, s]));
   rec.sources = rec.sources.filter((s) => s.n < 101 || s.n >= 2000);
   for (const n of used) {
     const src = path.join("sources", id, `${n}.md`), head = fs.readFileSync(path.join(ROOT, src), "utf8").split("\n", 2);
-    const first = tables.find((t) => t.n === n);
-    rec.sources.push({ n, url: head[0].replace(/^URL:\s*/, "").trim(), accessedAt: head[1].replace(/^Accessed:\s*/, "").trim(), tier: "A", quote: [first.header[0] || first.rows[0]], file: src.replace(/\\/g, "/") });
+    const first = tables.find((t) => t.n === n), url = head[0].replace(/^URL:\s*/, "").trim(), old = before.get(n);
+    const quote = [...new Set([first.header[0] || first.rows[0], ...(old?.url === url ? old.quote || [] : [])])];
+    rec.sources.push({ n, url, accessedAt: head[1].replace(/^Accessed:\s*/, "").trim(), tier: "A", quote, file: src.replace(/\\/g, "/") });
   }
   // Pages saved by the crawl that no table uses are removed.
   const dir = path.join(ROOT, "sources", id);

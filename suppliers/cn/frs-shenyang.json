@@ -130,6 +130,16 @@
       "file": "sources/frs-shenyang/1.md"
     },
     {
+      "n": 2,
+      "url": "http://www.frs-power.com/pd.jsp?id=16",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "其功率范围为 (常用功率):300KW~2400KW，电压等级范围为:3000 V 13800V。"
+      ],
+      "file": "sources/frs-shenyang/2.md"
+    },
+    {
       "n": 101,
       "url": "http://frs-power.com/pd.jsp?id=17",
       "accessedAt": "2026-10-29",
@@ -218,16 +228,6 @@
         "| 型号 | FT-TQ500-H15 | FT-TQ600-H30 | FT-TQ800-H20 | FT-TQ1000-H18"
       ],
       "file": "sources/frs-shenyang/109.md"
-    },
-    {
-      "n": 2,
-      "url": "http://www.frs-power.com/pd.jsp?id=16",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "其功率范围为 (常用功率):300KW~2400KW，电压等级范围为:3000 V 13800V。"
-      ],
-      "file": "sources/frs-shenyang/2.md"
     }
   ],
   "confidence": "medium",

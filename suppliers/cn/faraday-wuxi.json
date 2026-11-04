@@ -118,6 +118,17 @@
       "file": "sources/faraday-wuxi/2.md"
     },
     {
+      "n": 3,
+      "url": "http://www.faradaygenerator.com/about.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "低压发电机功率从6.5KW到3000KW",
+        "高压发电机功率从500KW到5000KW"
+      ],
+      "file": "sources/faraday-wuxi/3.md"
+    },
+    {
       "n": 101,
       "url": "http://www.faradaygenerator.com/product/27.html",
       "accessedAt": "2026-11-01",
@@ -206,17 +217,6 @@
         "| | 50Hz(1500转/分) | 60Hz(1800转/分)"
       ],
       "file": "sources/faraday-wuxi/109.md"
-    },
-    {
-      "n": 3,
-      "url": "http://www.faradaygenerator.com/about.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "低压发电机功率从6.5KW到3000KW",
-        "高压发电机功率从500KW到5000KW"
-      ],
-      "file": "sources/faraday-wuxi/3.md"
     }
   ],
   "confidence": "medium",
