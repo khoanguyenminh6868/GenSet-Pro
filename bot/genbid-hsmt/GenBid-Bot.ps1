@@ -37,10 +37,10 @@ param(
     [string]$Root = 'C:\Projects\GenSet Pro',
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/requests?kind=all',
     # Sync theo lịch (thay tác vụ hẹn giờ "hsmt-worker" của app Claude, Khoa 2026-10-26): bot tự chạy genbid-sync.js,
-    # không mở phiên Claude. 10:00, 14:00 và 18:00 các ngày trong tuần (Khoa, 2026-11-04). Máy tắt lúc đó thì chạy một lần
+    # không mở phiên Claude. 10:10, 14:10 và 18:10 mỗi ngày, cả thứ Bảy và Chủ nhật (Khoa, 2026-11-04). Máy tắt lúc đó thì chạy một lần
     # khi bật lại (bù cho mốc gần nhất đã qua trong ngày).
-    [string[]]$ScheduleDays = @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'),
-    [string[]]$ScheduleTimes = @('10:00', '14:00', '18:00'),
+    [string[]]$ScheduleDays = @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
+    [string[]]$ScheduleTimes = @('10:10', '14:10', '18:10'),
     # Gợi ý cấu hình (tab "Cấu hình gợi ý", Khoa 2026-10-28): bản sao repo GenSet-Pro (nhánh main) trên máy này.
     [string]$RepoDir = 'C:\Projects\GenSet Pro\GenSet-Pro',
     [switch]$Once,
