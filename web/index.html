@@ -3683,6 +3683,9 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && !$("#ov").hidden) { $("#ov").hidden = true; return; }
   if (e.key === "Escape" && (state.open || state.list)) closeDrawer();
 });
+// With a mouse a click on the dimmed page beside the tender details closes them, like Escape (Khoa, 2026-11-04); a phone
+// shows the details full width, so there is nothing beside them to tap.
+$("#scrim").addEventListener("click", () => { if ((state.open || state.list) && matchMedia("(hover: hover) and (pointer: fine)").matches) closeDrawer(); });
 addEventListener("resize", closeFilter);
 
 // ---------- Sync ----------
