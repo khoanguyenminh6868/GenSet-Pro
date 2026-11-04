@@ -554,12 +554,26 @@
     return out;
   }
 
-  // All suppliers → { engines, alternators, controllers }: one entry per model, with every row that names it.
-  // fromSupplier() of a supplier record, kept while that record object is unchanged (the web builds again on every
-  // change of state.supplier, which keeps the objects of the suppliers that did not change).
+  // fromSupplier() of a supplier record and the controllers named in its engine rows, kept while that record object is
+  // unchanged (the web builds again on every change of state.supplier, which keeps the objects of the suppliers that did
+  // not change).
   const rowsMemo = new WeakMap();
-  const rowsOf = (s) => { if (!rowsMemo.has(s)) rowsMemo.set(s, fromSupplier(s)); return rowsMemo.get(s); };
+  const rowsOf = (s) => {
+    if (!rowsMemo.has(s)) {
+      const rows = fromSupplier(s);
+      rowsMemo.set(s, { rows, ctrls: rows.map((o) => (o.kind === "engine" && o.line ? controllersIn(o.line) : [])) });
+    }
+    return rowsMemo.get(s);
+  };
+  // All suppliers → { engines, alternators, controllers }: one entry per model, with every row that names it.
   function build(suppliers) {
+    const b = builder(suppliers);
+    b.step();
+    return b.result();
+  }
+  // build() in small steps, so a page can spread it over idle time: step(timeLeft) works until timeLeft() (ms) is 4 or
+  // less, at least one supplier or model a call, and returns true once done; result() is then what build() returns.
+  function builder(suppliers) {
     const maps = { engine: new Map(), alternator: new Map(), controller: new Map() };
     // A controller: from the supplier's `controllers` (suppliers/controllers.mjs, each with its source line) and from
     // the genset rows of its tables that name one (then with that row's genset, power and engine).
@@ -574,14 +588,15 @@
       e.suppliers.add(s.id);
       if (u.freq) e.freq.add(u.freq);
     };
-    for (const s of suppliers) {
-      if (!s || s.status === "incomplete") continue;
+    const addSupplier = (s) => {
+      if (!s || s.status === "incomplete") return;
       for (const c of s.controllers || []) addCtrl(s, c, { n: (c.src || [])[0], line: c.line, genset: null, power: null, other: null, specs: [] });
-      if (!s.specTables?.length) continue;
-      for (const o of rowsOf(s)) {
-        if (o.kind === "engine" && o.line) for (const c of controllersIn(o.line)) addCtrl(s, c, { n: o.n, line: o.line, header: o.header, genset: o.genset, power: o.power, freq: o.freq, other: o.model, specs: [] });
+      if (!s.specTables?.length) return;
+      const { rows, ctrls } = rowsOf(s);
+      rows.forEach((o, i) => {
+        for (const c of ctrls[i]) addCtrl(s, c, { n: o.n, line: o.line, header: o.header, genset: o.genset, power: o.power, freq: o.freq, other: o.model, specs: [] });
         const k = keyOf(o.model);
-        if (k.length < 3) continue;
+        if (k.length < 3) return;
         const m = maps[o.kind];
         let e = m.get(k);
         if (!e) { e = { key: k, kind: o.kind, model: o.model, names: new Set(), makes: [], uses: [], suppliers: new Set(), freq: new Set() }; m.set(k, e); }
@@ -590,8 +605,8 @@
         e.uses.push(o);
         e.suppliers.add(o.supplierId);
         if (o.freq) e.freq.add(o.freq);
-      }
-    }
+      });
+    };
     const finish = (e) => {
       const kva = [], kw = [];
       for (const u of e.uses) for (const p of Object.values(u.power || {})) { if (p.kVA) kva.push(p.kVA); if (p.kW) kw.push(p.kW); }
@@ -616,8 +631,26 @@
         make: makeOf(e.makes) };
     };
     const sort = (a, b) => b.suppliers.length - a.suppliers.length || b.uses.length - a.uses.length || a.model.localeCompare(b.model);
-    return { engines: [...maps.engine.values()].map(finish).sort(sort), alternators: [...maps.alternator.values()].map(finish).sort(sort),
-      controllers: [...maps.controller.values()].map(finish).sort((a, b) => a.brandOnly - b.brandOnly || sort(a, b)) };
+    // Suppliers one by one, then the models of each kind one by one (in the order they were met), then the sort.
+    const list = [...(suppliers || [])], kinds = ["engine", "alternator", "controller"], done = { engine: [], alternator: [], controller: [] };
+    let si = 0, ki = 0, todo = null, out = null;
+    function unit() {
+      if (si < list.length) return addSupplier(list[si++]);
+      while (ki < kinds.length) {
+        todo ||= [...maps[kinds[ki]].values()];
+        if (done[kinds[ki]].length < todo.length) return done[kinds[ki]].push(finish(todo[done[kinds[ki]].length]));
+        ki++; todo = null;
+      }
+      out = { engines: done.engine.sort(sort), alternators: done.alternator.sort(sort),
+        controllers: done.controller.sort((a, b) => a.brandOnly - b.brandOnly || sort(a, b)) };
+    }
+    return {
+      step(left = () => Infinity) {
+        while (!out) { unit(); if (!out && left() <= 4) return false; }
+        return true;
+      },
+      result: () => out,
+    };
   }
 
   // Tender needs read from the analysis (technicalSpecs, keyInfo) and the HSMT text: power, rating, frequency and
@@ -706,7 +739,7 @@
   const groupOf = (e, g) => { const names = (e.makes || []).map((m) => m.name); return !cnMade(names) && engineCountries(names, e.model).some((c) => COUNTRY_GROUP[g].includes(c)); };
   const groupIn = (text, model, g) => engineCountries(brandIn(String(text || ""), ENGINE_BRANDS), model).some((c) => COUNTRY_GROUP[g].includes(c));
 
-  const api = { build, fromSupplier, prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, fromSupplier, prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);

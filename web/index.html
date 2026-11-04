@@ -2605,22 +2605,35 @@ let catMemo = { src: null, del: null, cat: null };
 const catReady = () => catMemo.src === state.supplier && catMemo.del === state.supdeleted;
 // The catalog is read from every supplier table (seconds on a phone): once the Nhà cung cấp or a catalog screen opens,
 // each supplier's rows are read while the page is idle, then the catalog is built, so opening one is quick.
-let catWarmFor = null;
+let catWarmFor = null, catBuild = null; // catBuild: the build of the catalog being spread over idle time ({ src, del, b })
 const idle = (fn) => (window.requestIdleCallback ? requestIdleCallback(fn, { timeout: 1000 }) : setTimeout(() => { const t = performance.now(); fn({ timeRemaining: () => Math.max(0, 15 - (performance.now() - t)) }); }, 30));
 function catWarm() {
-  if (!window.GenbidCatalog?.prime || !state.loaded.supplier || catReady() || catWarmFor === state.supplier) return;
-  const src = catWarmFor = state.supplier, todo = supAll();
-  const step = (d) => {
-    if (catWarmFor !== src || src !== state.supplier) return;
-    // At least one supplier a step, so a busy page still gets through.
+  if (!window.GenbidCatalog?.builder || !state.loaded.supplier || catReady() || catWarmFor === state.supplier) return;
+  const src = catWarmFor = state.supplier, del = state.supdeleted, todo = supAll();
+  const stop = () => { if (catWarmFor === src) catWarmFor = null; if (catBuild?.src === src) catBuild = null; };
+  const live = () => catWarmFor === src && src === state.supplier && del === state.supdeleted && !catReady();
+  // Each supplier's rows first, at least one supplier a step so a busy page still gets through.
+  const read = (d) => {
+    if (!live()) return stop();
     do window.GenbidCatalog.prime(todo.pop()); while (todo.length && d.timeRemaining() > 4);
-    if (todo.length) return idle(step);
-    idle(() => { if (src === state.supplier) catalog(); if (catWarmFor === src) catWarmFor = null; });
+    if (todo.length) return idle(read);
+    catBuild = { src, del, b: window.GenbidCatalog.builder(supAll()) };
+    idle(make);
   };
-  idle(step);
+  // Then the catalog itself, in steps of the same size (catalog() finishes it at once when it is wanted sooner).
+  const make = (d) => {
+    if (!live()) return stop();
+    if (!catBuild.b.step(() => d.timeRemaining())) return idle(make);
+    catMemo = { src, del, cat: catBuild.b.result() };
+    stop();
+  };
+  idle(read);
 }
 function catalog() {
-  if (catMemo.src !== state.supplier || catMemo.del !== state.supdeleted) catMemo = { src: state.supplier, del: state.supdeleted, cat: window.GenbidCatalog ? window.GenbidCatalog.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
+  if (catMemo.src !== state.supplier || catMemo.del !== state.supdeleted) {
+    const C = window.GenbidCatalog, part = catBuild?.src === state.supplier && catBuild.del === state.supdeleted ? catBuild.b : null;
+    catMemo = { src: state.supplier, del: state.supdeleted, cat: part ? (part.step(), part.result()) : C ? C.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
+  }
   return catMemo.cat;
 }
 let catView = { kind: "engine", q: "", make: "", power: "", unit: "kVA", freq: "", spec: "", sort: "sup", limit: 60, open: null };
