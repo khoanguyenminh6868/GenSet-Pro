@@ -59,7 +59,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .btn.sm{padding:4px 9px;font-size:12.5px}
 .radios{gap:14px}.radios label{display:inline-flex;align-items:center;gap:5px;cursor:pointer}
 .cmprev{justify-content:space-between}
-.actrow{margin:14px 0 16px}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
+.actrow{margin:14px 0 16px}.actrow.cfgact{margin:4px 0 8px}#cfgExtra{min-height:0;height:calc(3em + 14px)}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
 .ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkCfg,.ro #tyDrop,.ro #tkDel,.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
@@ -2192,7 +2192,7 @@ function compareTabHtml(t) {
       <div class="files" id="cmList"></div>
     </div>
     <textarea id="cmText" placeholder="Hoặc dán bảng đáp ứng kỹ thuật, catalogue, báo giá..."></textarea>
-    <div class="row"><div class="spacer"></div><button class="btn primary" id="cmRun" data-key="${t._key}" ${cmWait ? "disabled" : ""}>Đối chiếu</button>${raw(sideBtns(t._key))}</div>
+    <div class="row"><button class="btn primary" id="cmRun" data-key="${t._key}" ${cmWait ? "disabled" : ""}>Đối chiếu</button>${raw(sideBtns(t._key))}</div>
     <div id="cmOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.accepted ? " · đã đánh dấu là đã đối chiếu" : ""}</span><button class="btn sm" id="cmDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></div>` + comparisonHtml(prev.result) : "")}</div>`;
 }
 // Xem tệp / Tải PDF buttons show only this red badge (Khoa, 2026-11-04); what they do is in their title.
@@ -2835,7 +2835,7 @@ function configTabHtml(t) {
   return wait + fwait + (err ? h`<div class="note warn">${err}</div>` : "") + (ferr ? h`<div class="note warn">Tìm NCC: ${ferr}</div>` : "")
     + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${busy ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
     + h`<div class="field" style="margin:8px 0"><label for="cfgExtra">Yêu cầu khác</label><textarea id="cfgExtra" data-key="${key}" maxlength="2000" rows="2" placeholder="Không bắt buộc. Ví dụ: động cơ Weichai, đầu phát Stamford, bộ điều khiển Deep Sea DSE7320, hòa đồng bộ..." ${busy ? "disabled" : ""}>${cfgExtraOf(key)}</textarea></div>`
-    + h`<div class="row actrow"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button></div>`
+    + h`<div class="row actrow cfgact"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button></div>`
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
     + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.originAuto ? ` (bot tự chọn vì HSMT ghi: “${prev.result.originAuto.quote}”)` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}</div>` + (prev.result.sizes ? cfgSizesHtml(prev.result) : cfgResultHtml(prev.result)) : "");
 }
