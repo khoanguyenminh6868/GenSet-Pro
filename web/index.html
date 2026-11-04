@@ -249,6 +249,7 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .dhead{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:flex-start}
 .dhead .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
 .dhead .t h2{font-size:16px;overflow-wrap:anywhere}
+#dmeta{margin-bottom:4px}
 /* Đóng like the one on the supplier / catalog screens: yellow edge on hover (Khoa, 2026-11-04). */
 #dclose{--violet:#ffcc00;flex:none}
 .dtabs{padding:10px 16px 0;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
@@ -1390,7 +1391,7 @@ function renderDrawer(force = true) {
   if (!t) { closeDrawer(); return; }
   const stg = stageOf(t), canCompare = stg === "preparing" || isProject(t);
   const tl = timeLeft(t.bidCloseDate);
-  $("#dmeta").innerHTML = h`${raw(isProject(t) ? h`<span class="kcell">${projectNo(t)}</span>` : t.notifyNo ? h`<span class="kcell">${t.notifyNo}</span>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
+  $("#dmeta").innerHTML = h`${raw(isProject(t) ? h`<span class="kcell">${projectNo(t)}</span>` : t.notifyNo ? h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo} ↗</a>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
   $("#dtitle").textContent = t.bidName || "";
   $$("#dtabs button").forEach((b) => {
     b.setAttribute("aria-selected", String(b.dataset.dt === state.dtab));
