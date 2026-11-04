@@ -1,0 +1,4 @@
+{ "id": "eneria", "country": "FR", "role": "genset_oem", "status": "partial", "conf": "medium", "en": "Eneria", "zh": null, "brands": ["Eneria"], "web": "https://www.eneria.fr/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": { "1": ["A", "Groupes éléctrogènes Diesel", "Groupes électrogènes Gaz", "Eneria peut intégrer, dans ces solutions, un large panel de produits tels que des groupes électrogènes diesel et gaz"] },
+  "str": [["Tích hợp tổ máy diesel, khí, hydro, hàng hải (Pháp)", 1]], "cert": [], "lines": [ { "k": "genset", "s": "Groupes éléctrogènes Diesel", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang chủ không ghi dải công suất, hãng động cơ; theo tài liệu bên thứ ba Eneria thuộc tập đoàn Monnoyeur (chưa có nguồn chính hãng)"], "by": "claude (rà nhà cung cấp G7, 04/11)" }

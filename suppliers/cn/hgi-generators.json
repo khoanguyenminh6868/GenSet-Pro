@@ -1,0 +1,69 @@
+{
+  "id": "hgi-generators",
+  "country": "GB",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "Harrington Generators International (HGI)",
+    "zh": null,
+    "brands": [
+      "HGI"
+    ]
+  },
+  "website": "https://www.hgigenerators.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Thuộc Baker Hughes: máy phát (đầu phát) 2 và 4 cực làm mát bằng không khí, tổ máy di động",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "4-pole, air-cooled generators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.bakerhughes.com/generators-synchronous-condensers-and-motors/harrington-generators-international-hgi",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "Harrington Generators International (HGI) | Baker Hughes",
+        "4-pole, air-cooled generators",
+        "Mobile and trailer-mounted generators"
+      ],
+      "file": "sources/hgi-generators/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-04",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+}

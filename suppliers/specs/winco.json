@@ -1,1 +1,132 @@
-[]
+[
+ {
+  "n": 101,
+  "url": "https://www.wincogen.com/category/productinformation/",
+  "title": "Product Information Archives | WINCO",
+  "header": [
+   "| | Gaseous Standby | Diesel Standby | Prime Power | Portable | PTO",
+   "| Permanent | Permanent | Mobile | Mobile | Mobile"
+  ],
+  "rows": [
+   "| 8kW – 150kW | 12kW – 600kW | 12kW – 400kW | 3kW – 22kW | 10kW – 165kW",
+   "| NG or LP | Diesel | NG, LP or Diesel | Gasoline or Diesel | Tractor Driven"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.wincogen.com/find-the-right-generator-for-you/",
+  "title": "Find the Right Generator for You | WINCO",
+  "header": [
+   "| | Gaseous Standby | Diesel Standby | Prime Power | Portable | PTO",
+   "| Permanent | Permanent | Mobile | Mobile | Mobile"
+  ],
+  "rows": [
+   "| 8kW – 150kW | 12kW – 600kW | 12kW – 400kW | 3kW – 22kW | 10kW – 165kW",
+   "| NG or LP | Diesel | NG, LP or Diesel | Gasoline or Diesel | Tractor Driven"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.wincogen.com/category/productinformation/page/2/",
+  "title": "Product Information Archives | Page 2 of 7 | WINCO",
+  "header": [
+   "| | PPG28 | AIR-COOLED UNTIS",
+   "| Engine | FORD MSG425 | VARIES"
+  ],
+  "rows": [
+   "| Engine Speed (RPM) | 1800 | 3600",
+   "| Governor | Electronic | Mechanical",
+   "| Prime Watts | 25,000 | 19,000 Max",
+   "| Motor Starting | 10 HP | 6 HP",
+   "| EPA & CARB Approved | YES | < 14, 000",
+   "| Fuel Economy | 2.8 GPH @ 25kw | 3.28 GPH @ 19kw",
+   "| Total Weight (lbs) | 1170 | VARIES"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.wincogen.com/prime-power-in-gasoline/",
+  "title": "Prime Power in Gasoline | WINCO",
+  "header": [
+   "| | PPG28 | AIR-COOLED UNTIS",
+   "| Engine | FORD MSG425 | VARIES"
+  ],
+  "rows": [
+   "| Engine Speed (RPM) | 1800 | 3600",
+   "| Governor | Electronic | Mechanical",
+   "| Prime Watts | 25,000 | 19,000 Max",
+   "| Motor Starting | 10 HP | 6 HP",
+   "| EPA & CARB Approved | YES | < 14, 000",
+   "| Fuel Economy | 2.8 GPH @ 25kw | 3.28 GPH @ 19kw",
+   "| Total Weight (lbs) | 1170 | VARIES"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.wincogen.com/product/de23/",
+  "title": "Support for Model: DE23 Gen 3 | WINCO",
+  "header": [],
+  "rows": [
+   "| Standby Watts | 120/240 1-PH: 20,000 120/208 3-PH: 23,000 120/240 3-PH: 23,000 277/480 3-PH: 23,000",
+   "| Prime Watts | 120/240 1-PH: 19,800 120/208 3-PH: 20,700 120/240 3-PH: 20,700 277/480 3-PH: 20,700",
+   "| Standby Amps | 120/240 1-PH: 91 120/208 3-PH: 79 120/240 3-PH: 69 277/480 3-PH: 34",
+   "| Prime Amps | 120/240 1-PH: 82 120/208 1-PH: 71 120/240 3-PH: 62 277/480 3-PH: 31",
+   "| Voltage Output | 120/208 Volt Three Phase, 120/240 Volt Single Phase, 120/240 Volt Three Phase, 277/480 Volt Three Phase",
+   "| Voltage Regulation | AVR – AS440 +/- 1%",
+   "| Engine | Brand: Isuzu Model: 4LE2T",
+   "| Dimensions | 66.7\" x 33.6\" x 43.4\"",
+   "| Weight | Without Tank: 1,450 lbs With Tank: 1,650 lbs"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.wincogen.com/product/de4040f-2/",
+  "title": "Support for Model: DE4040F4 Gen 3 | WINCO",
+  "header": [],
+  "rows": [
+   "| Standby Watts | 120/240 1-PH: 45,000 120/208 3-PH: 49,000 120/240 3-PH: 49,000 277/480 3-PH: 49,000 346/600 3-PH: 49,000",
+   "| Prime Watts | 120/240 1-PH: 40,500 120/208 3-PH: 44,100 120/240 3-PH: 44,100 277/480 3-PH: 44,100 346/480 3-PH: 44,100",
+   "| Voltage Output | 120/208 Volt Three Phase, 120/240 Volt Single Phase, 120/240 Volt Three Phase, 277/480 Volt Three Phase, 346/600 Volt Three Phase",
+   "| Standby Amps | 120/240 1-PH: 187 120/208 3-PH: 170 120/240 3-PH: 147 277/480 3-PH: 73 346/600 3-PH: 59",
+   "| Prime Amps | 120/240 1-PH: 168 120/208 1-PH: 153 120/240 3-PH: 132 277/480 3-PH: 66 346/600 3-PH: 53",
+   "| Voltage Regulation | AVR – AS440 +/- 1%",
+   "| Engine | Brand: FPT Model: F5 C",
+   "| Dimensions | 75.07\" x 38.04\" x 46.86\"",
+   "| Weight | 2,000 lbs"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.wincogen.com/product/de50/",
+  "title": "Support for Model: DE50F4 Gen 3 | WINCO",
+  "header": [],
+  "rows": [
+   "| Standby Watts | 120/240 1-PH: 45,000 120/208 3-PH: 49,000 120/240 3-PH: 49,000 277/480 3-PH: 49,000 346/600 3-PH: 49,000",
+   "| Prime Watts | 120/240 1-PH: 40,500 120/208 3-PH: 44,100 120/240 3-PH: 44,100 277/480 3-PH: 44,100 346/480 3-PH: 44,100",
+   "| Standby Amps | 120/240 1-PH: 187 120/208 3-PH: 170 120/240 3-PH: 147 277/480 3-PH: 73 346/600 3-PH: 59",
+   "| Prime Amps | 120/240 1-PH: 168 120/208 1-PH: 153 120/240 3-PH: 132 277/480 3-PH: 66 346/600 3-PH: 53",
+   "| Voltage Output | 120/208 Volt Three Phase, 120/240 Volt Single Phase, 120/240 Volt Three Phase, 277/480 Volt Three Phase",
+   "| Voltage Regulation | AVR – AS440 +/- 1%",
+   "| Engine | Brand: FPT Model: F5 C",
+   "| Dimensions | 75.07\" x 38.04\" x 46.86\"",
+   "| Weight | Without Tank: 2,020 lbs With Tank: 2,220 lbs"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.wincogen.com/product/de50f4-gen-4/",
+  "title": "Support for ModelDE50F4 Gen 4 | WINCO",
+  "header": [],
+  "rows": [
+   "| Standby Watts | 120/240 1-PH: 45,000 120/208 3-PH: 49,000 120/240 3-PH: 49,000 277/480 3-PH: 49,000 346/600 3-PH: 49,000",
+   "| Prime Watts | 120/240 1-PH: 40,500 120/208 3-PH: 44,100 120/240 3-PH: 44,100 277/480 3-PH: 44,100 346/480 3-PH: 44,100",
+   "| Standby Amps | 120/240 1-PH: 187 120/208 3-PH: 170 120/240 3-PH: 147 277/480 3-PH: 73 346/600 3-PH: 59",
+   "| Prime Amps | 120/240 1-PH: 168 120/208 1-PH: 153 120/240 3-PH: 132 277/480 3-PH: 66 346/600 3-PH: 53",
+   "| Voltage Output | 120/208 Volt Three Phase, 120/240 Volt Single Phase, 120/240 Volt Three Phase, 277/480 Volt Three Phase",
+   "| Voltage Regulation | AVR – AS440 +/- 1%",
+   "| Engine | Brand: FPT Model: F5 C",
+   "| Dimensions | 75.07\" x 38.04\" x 46.86\"",
+   "| Weight | Without Tank: 2,020 lbs With Tank: 2,220 lbs"
+  ]
+ }
+]

@@ -1,0 +1,4 @@
+{ "id": "geko-gemmingen", "country": "DE", "role": "genset_oem", "status": "partial", "conf": "medium", "en": "Metallwarenfabrik Gemmingen GmbH", "zh": null, "brands": ["GEKO"], "web": "https://www.metallwarenfabrik.com/", "prov": "Baden-Württemberg", "city": "Gemmingen", "founded": null, "fsrc": [], "related": [],
+  "src": { "1": ["A", "Die Metallwarenfabrik Gemmingen GmbH produziert in zwei Werken Komponenten f&uuml;r den Elektro-Maschinenbau, Generatoren und Stromerzeuger-Systeme."] },
+  "str": [["Sản xuất máy phát và hệ tổ máy (thương hiệu GEKO) tại hai nhà máy (Đức)", 1]], "cert": [], "lines": [ { "k": "genset", "s": "Stromerzeuger-Systeme", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang chủ không ghi dải công suất"], "by": "claude (rà nhà cung cấp G7, 04/11)" }

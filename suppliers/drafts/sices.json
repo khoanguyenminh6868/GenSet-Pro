@@ -1,0 +1,39 @@
+{
+ "id": "sices",
+ "country": "IT",
+ "role": "controller_maker",
+ "status": "partial",
+ "conf": "medium",
+ "en": "SICES S.r.l.",
+ "zh": null,
+ "brands": [
+  "SICES"
+ ],
+ "web": "https://www.sices.eu/",
+ "prov": null,
+ "city": null,
+ "founded": null,
+ "fsrc": [],
+ "related": [
+  "mecc-alte"
+ ],
+ "src": {
+  "1": [
+   "A",
+   "© 2025 SICES S.r.l.",
+   "Siamo uno dei principali produttori mondiali di controllori per gruppi elettrogeni"
+  ]
+ },
+ "str": [
+  [
+   "Theo hãng: một trong các nhà sản xuất chính bộ điều khiển tổ máy (Ý)",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [],
+ "miss": [
+  "Trang chủ không liệt kê model; theo tin bên thứ ba mảng bộ điều khiển SICES đã về Mecc Alte"
+ ],
+ "by": "claude (rà nhà cung cấp G7, 04/11)"
+}

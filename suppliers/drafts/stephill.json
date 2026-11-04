@@ -1,0 +1,4 @@
+{ "id": "stephill", "country": "GB", "role": "genset_oem", "status": "partial", "conf": "medium", "en": "Stephill Generators", "zh": null, "brands": ["Stephill"], "web": "https://www.stephill-generators.co.uk/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": { "1": ["A", "Home | Stephill Generators", "Diesel Generators 1500rpm", "Diesel Generators 3000rpm"] },
+  "str": [["Máy phát xăng, diesel 1500/3000 vòng/phút, máy hàn (Anh)", 1]], "cert": [], "lines": [ { "k": "genset", "s": "Diesel Generators 1500rpm", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang chủ không ghi dải công suất, tên pháp nhân"], "by": "claude (rà nhà cung cấp G7, 04/11)" }

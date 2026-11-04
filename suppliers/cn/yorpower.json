@@ -59,9 +59,33 @@
         "Our in-house manufactured generators , branded under YorPower, are produced in the UK and shipped worldwide."
       ],
       "file": "sources/yorpower/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://yorpower.com/uninterruptible-power-supply-ups/100kva-yp-defence-gt-ups/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "Prime Power: 100 kVA"
+      ],
+      "file": "sources/yorpower/101.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-04",
-  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "100kVA YP-Defence GT UPS | YorPower Uninterruptible Power Supply",
+      "header": [],
+      "rows": [
+        "Prime Power: 100 kVA",
+        "| Power | 100 kVA",
+        "| Noise | < 62 dBA dB",
+        "| Dimensions (L/W/H) | 825 x 815 x 1670",
+        "| Phase | 3"
+      ]
+    }
+  ]
 }

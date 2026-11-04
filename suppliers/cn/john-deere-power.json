@@ -1,0 +1,69 @@
+{
+  "id": "john-deere-power",
+  "country": "US",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "John Deere Power Systems",
+    "zh": null,
+    "brands": [
+      "John Deere"
+    ]
+  },
+  "website": "https://www.deere.com/en/generator-drive-engines/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ cho máy phát (Generator Drive Engines): JD9 đến 343 kW, JD18 522–677 kW",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Generator Drive Engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang đã lưu là một model (6090CG550); chưa lưu danh mục đầy đủ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.deere.com/en-us/products-solutions/engines-and-drivetrain",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "Generator Drive Engines",
+        "The JD9 features expanded power up to 343 kW (460 hp)",
+        "offer an engine in the 522 – 677 kW (700 – 908 hp) power range without aftertreatment"
+      ],
+      "file": "sources/john-deere-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-04",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+}

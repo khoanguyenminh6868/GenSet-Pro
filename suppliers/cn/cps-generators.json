@@ -1,0 +1,71 @@
+{
+  "id": "cps-generators",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Constant Power Solutions",
+    "zh": null,
+    "brands": [
+      "CPS"
+    ]
+  },
+  "website": "https://www.cps-generators.com/",
+  "hq": {
+    "province": "North Yorkshire",
+    "city": "Selby"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Thiết kế, sản xuất tổ máy diesel/khí theo yêu cầu tại Selby (Anh); dòng Perkins, Kubota",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Perkins Generators",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://cps-generators.com/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions is a manufacturer and supplier of bespoke power generation solutions, proudly based in Selby, North Yorkshire.",
+        "Perkins Generators",
+        "Kubota Engines"
+      ],
+      "file": "sources/cps-generators/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-04",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+}

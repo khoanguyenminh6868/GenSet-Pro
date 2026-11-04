@@ -1,0 +1,5 @@
+{ "id": "interpower-international", "country": "GB", "role": "genset_oem", "status": "verified", "conf": "medium", "en": "Interpower (Musgrave Generators)", "zh": null, "brands": ["Interpower", "Musgrave"], "web": "https://www.interpower.co.uk/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["gfe-power"],
+  "src": { "1": ["A", "Manufacturers of Industrial, Backup, Marine and Bespoke Generators from 2kVA to 4000kVA", "All products are manufactured in UK factory", "Interpower is a division of Musgrave Generators"] },
+  "str": [["Tổ máy công nghiệp, dự phòng, hàng hải 2–4000 kVA, sản xuất tại nhà máy ở Anh", 1]], "cert": [],
+  "lines": [ { "k": "genset", "s": "Industrial, Backup, Marine and Bespoke Generators", "fuel": "diesel", "p": [2, 4000, "kVA", "unspecified", 1], "src": [1] } ],
+  "miss": ["Trang chủ không ghi hãng động cơ/đầu phát, năm thành lập"], "by": "claude (rà nhà cung cấp G7, 04/11)" }

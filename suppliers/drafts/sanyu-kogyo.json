@@ -1,0 +1,4 @@
+{ "id": "sanyu-kogyo", "country": "JP", "role": "genset_oem", "status": "partial", "conf": "medium", "en": "Sanyu Kogyo Co., Ltd.", "zh": null, "brands": ["Cute Power"], "web": "http://www.sanyu-group.com/dynamo/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": { "1": ["A", "非常用自家発電装置の三友工業株式会社", "防災用発電装置の紹介"] },
+  "str": [["Nhà sản xuất chuyên máy phát điện khẩn cấp, phòng cháy (Nhật)", 1]], "cert": [], "lines": [ { "k": "genset", "s": "防災用発電装置", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang chủ không ghi dải công suất"], "by": "claude (rà nhà cung cấp G7, 04/11)" }
