@@ -1015,7 +1015,8 @@ async function runSync() {
           amended.length && `${amended.length} gói có bản sửa đổi (${amended.map((t) => `${t.notifyNo} bản ${t.notifyVersion}`).join(", ")}), tải lại tệp, cần Phân tích lại`].filter(Boolean).join(", ");
       }
       log(`Tìm thầu: ${summary}`);
-      if (next) rows.push({ coll: "feed", id: "current", data: { fetchedAt: now(), source: "muasamcong", tenders: next } });
+      // Posted even with nothing new, so the banner's "Cập nhật" time moves on every Sync / Thêm mới (Khoa, 2026-11-04).
+      rows.push({ coll: "feed", id: "current", data: { fetchedAt: now(), source: "muasamcong", tenders: next || feed } });
       for (const t of [...fresh, ...amended]) {
         try { rows.push({ coll: "notice", id: t.notifyNo, data: await readNotice(ctx, page, t) }); }
         catch (e) { if (e instanceof Captcha) { notes.push("muasamcong yêu cầu xác minh khi đọc thông báo mời thầu"); break; } log(`    Không đọc được thông báo ${t.notifyNo}: ${e.message.split("\n")[0]}`); }
