@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 93e41953-82a9-4265-a2a5-f081042fd87d
-  modified: 2026-11-03T13:57:08.910Z
+  modified: 2026-11-04T06:27:03.335Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (máy Windows, agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Mọi số/câu trích phải có nguyên văn trong nguồn; sai → "Đạt" thành "Chưa rõ". config-bot chạy tiến trình mới mỗi lượt nên sửa không cần restart bot. Lượt agent ~6–11 phút, ~$3/gói.
@@ -24,6 +24,10 @@ metadata:
 
 **Thử / kiểm hồi quy:** `GENBID_LOCAL_SUPPLIERS=1` + script dry-run (prep → claude → check, chép `runClaude` ra `%TEMP%\dry-<K>\run.mjs`). Kiểm nhanh không tốn agent: copy w/ lượt cũ, chạy `check --dir` bằng code mới, so "chưa khớp". Log agent `%TEMP%\genbid-config-<TBMT>.log` (stream-json, mốc `[Ns]`). Khoá `genbid-config.lock` chỉ tính khi PID còn sống. Bash máy này làm mất `\` → viết script bằng Write rồi chạy node.
 
-**Còn dở / chờ Khoa quyết:** nguồn mâu thuẫn (datasheet hãng có nên thắng dòng đại lý? hiện → chưa rõ); LSA đời ngừng chỉ có bản đăng lại ở trang đại lý (dùng hạng C?); InteliLite NT AMF20/25, MRS10 chưa có datasheet. "Chưa rõ" còn lại chủ yếu do thiếu dữ liệu (đầu phát TQ, tiêu hao/quá tải tổ máy TQ, danh mục gần như không ghi số pha nên gói 1 pha hay ra máy 3 pha) → muốn hơn phải xin catalog từ NCC. Đã hết việc tối ưu code đáng làm (03/11); configmatch trên web trước 02/11 21:26 là code cũ.
+**Hồi quy lớn (04/11, PR #311):** tải `bidhist`/`analysis`/`supplier`/`configmatch` qua `api/requests?kind=docs&coll=…` rồi chạy `capacity`/`hintsOf`/`plausible`/`candidates` trên `genbid-work/specs/<K>/text.txt` (~1.240 gói), so với `bidhist.config.text/kvas` (AI đọc). Bộ so tự viết cũng sai (đọc "11.051 L" thành 11051, dự phòng thành Prime) → xem từng ca trước khi kết luận. candidates ~0,6 s/gói (CAT.build 6 s). Sau #311 + #313: công suất 97,8%, dung tích 61%, xi lanh 76%, Prime 59%. #313: `unflatten` (dòng > 300 ký tự tách lại hàng) + `sectionsOf` (số dưới tiêu đề đầu phát/động cơ). Bỏ sót còn lại: AI tính dung sai khác (±0,5 → code lấy số thấp), gói nhiều cỡ máy (code cố ý không đoán), OCR hỏng ký tự (≥ thành 2). Công suất tên gói bỏ số của máy biến áp/TBA/UPS (`capPick` trong web/bidprice.js, dùng chung bot + web + Gợi ý giá đấu). Chỉ có 6 configmatch trên web nên phần agent chưa hồi quy được nhiều.
+
+**Khoa 04/11:** nguồn mâu thuẫn (kể cả 1 nguồn sai rõ ràng, 2 nguồn khác khớp nhau) vẫn để "chưa rõ", KHÔNG lấy đa số.
+
+**Còn dở:** LSA đời ngừng chỉ có bản đăng lại ở trang đại lý (dùng hạng C?); InteliLite NT AMF20/25, MRS10 chưa có datasheet. "Chưa rõ" còn lại chủ yếu do thiếu dữ liệu (đầu phát TQ, tiêu hao/quá tải tổ máy TQ, danh mục gần như không ghi số pha nên gói 1 pha hay ra máy 3 pha) → muốn hơn phải xin catalog từ NCC. Đã hết việc tối ưu code đáng làm (03/11); configmatch trên web trước 02/11 21:26 là code cũ.
 
 Liên quan [[supplier-db]], [[bidprice-suggest]], [[session-log]].
