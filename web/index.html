@@ -2226,8 +2226,7 @@ function compareTabHtml(t) {
   const prev = state.compare[t._key];
   const cmWait = workerReqPending("comparereq", t._key) ? waitHtml("Đang chờ Agent đối chiếu...", state.comparereq[t._key].requestedAt) : "";
   const cmErr = !cmWait && workerReqError("comparereq", t._key);
-  return cmWait + (cmErr ? h`<div class="note warn">Agent chưa đối chiếu được: ${cmErr}</div>` : "") + h`<p class="muted small" style="margin:0">So hồ sơ dự thầu với yêu cầu trong HSMT đã tải về của gói này, từng dòng như tổ chuyên gia sẽ chấm.</p>
-    <div class="drop" id="cmDrop">
+  return cmWait + (cmErr ? h`<div class="note warn">Agent chưa đối chiếu được: ${cmErr}</div>` : "") + h`<div class="drop" id="cmDrop">
       <div class="row"><span class="muted small" style="flex:1">Tệp hồ sơ dự thầu (PDF, DOCX, ảnh)</span><label class="btn sm" for="cmFiles">Chọn tệp</label></div>
       <input type="file" id="cmFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="cmList"></div>
