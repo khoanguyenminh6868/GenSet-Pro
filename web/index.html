@@ -116,6 +116,8 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .syncline .spin{width:10px;height:10px}
 .syncline{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .syncline .ibtn{width:30px;height:30px}
+/* Sync, new-only and log light up yellow on hover like the banner buttons (Khoa, 2026-11-04). */
+.syncline .ibtn:hover{border-color:var(--violet)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--dim);display:inline-block}
 .dot.live{background:var(--mint);box-shadow:0 0 0 3px var(--mint-soft)}
 .dot.busy{background:var(--violet);box-shadow:0 0 0 3px var(--violet-soft)}
@@ -245,6 +247,8 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .dhead{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:flex-start}
 .dhead .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
 .dhead .t h2{font-size:16px;overflow-wrap:anywhere}
+/* Đóng like the one on the supplier / catalog screens: yellow edge on hover (Khoa, 2026-11-04). */
+#dclose{--violet:#ffcc00;flex:none}
 .dtabs{padding:10px 16px 0;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
 .dtabs button{border:0;background:none;padding:8px 12px;color:var(--muted);font-weight:500;border-bottom:2px solid transparent;white-space:nowrap}
 .dtabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--violet)}
@@ -427,7 +431,7 @@ details.sec>div{margin-top:10px}
 <aside id="drawer" aria-hidden="true" aria-label="Chi tiết gói thầu">
   <div class="dhead">
     <div class="t"><div class="row" id="dmeta"></div><h2 id="dtitle"></h2></div>
-    <button class="ibtn" id="dclose" aria-label="Đóng">✕</button>
+    <button class="btn sm" id="dclose">Đóng</button>
   </div>
   <div class="dtabs" role="tablist" id="dtabs">
     <button data-dt="info" aria-selected="true">Tổng quan</button>
