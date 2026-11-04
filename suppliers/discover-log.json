@@ -3016,5 +3016,113 @@
   "result": "skip",
   "name": "genpowerusa.com",
   "reason": "cửa hàng bán nhiều hãng, không phải nhà sản xuất (rà G7 04/11)"
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "vm-motori",
+  "name": "VM Motori S.r.l.",
+  "url": "https://www.vmmotori.it/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "hgi-generators",
+  "name": "Harrington Generators International (HGI)",
+  "url": "https://www.hgigenerators.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "stephill",
+  "name": "Stephill Generators",
+  "url": "https://www.stephill-generators.co.uk/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "eneria",
+  "name": "Eneria",
+  "url": "https://www.eneria.fr/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "john-deere-power",
+  "name": "John Deere Power Systems",
+  "url": "https://www.deere.com/en/generator-drive-engines/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "sanyu-kogyo",
+  "name": "Sanyu Kogyo Co., Ltd.",
+  "url": "http://www.sanyu-group.com/dynamo/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "interpower-international",
+  "name": "Interpower (Musgrave Generators)",
+  "url": "https://www.interpower.co.uk/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "gillette-generators",
+  "name": "Gillette Generators",
+  "url": "https://www.gillettegenerators.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "sices",
+  "name": "SICES S.r.l.",
+  "url": "https://www.sices.eu/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "mase-generators",
+  "name": "Mase Generators S.p.A.",
+  "url": "https://www.masegenerators.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "geko-gemmingen",
+  "name": "Metallwarenfabrik Gemmingen GmbH",
+  "url": "https://www.metallwarenfabrik.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "cps-generators",
+  "name": "Constant Power Solutions",
+  "url": "https://www.cps-generators.com/",
+  "tables": 0,
+  "rows": 0
  }
 ]

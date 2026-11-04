@@ -1,0 +1,910 @@
+{
+  "id": "eneria",
+  "country": "FR",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Eneria",
+    "zh": null,
+    "brands": [
+      "Eneria"
+    ]
+  },
+  "website": "https://www.eneria.fr/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tích hợp tổ máy diesel, khí, hydro, hàng hải (Pháp)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Groupes éléctrogènes Diesel",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, hãng động cơ; theo tài liệu bên thứ ba Eneria thuộc tập đoàn Monnoyeur (chưa có nguồn chính hãng)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.eneria.fr/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "Groupes éléctrogènes Diesel",
+        "Groupes électrogènes Gaz",
+        "Eneria peut intégrer, dans ces solutions, un large panel de produits tels que des groupes électrogènes diesel et gaz"
+      ],
+      "file": "sources/eneria/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.eneria.fr/en/products/ups/static-ups/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "Output power factor: 0.9"
+      ],
+      "file": "sources/eneria/101.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1971/1-pv11rtg2-series-de-1-a-10-kva-2.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| 1 kVA B | 1 x 2 x 9.4Ah | 1,5A"
+      ],
+      "file": "sources/eneria/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1974/1-pv11rtg2-series-de-1-a-10-kva-1.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| internes | + 1 EBM | + 2 EBM | + 3 EBM | + 4 EBM"
+      ],
+      "file": "sources/eneria/1002.md"
+    },
+    {
+      "n": 1003,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1976/3-pv11-31-t-series-de-10-a-20-kva.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| UPS + A* + B** | UPS | + 2B**"
+      ],
+      "file": "sources/eneria/1003.md"
+    },
+    {
+      "n": 1004,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1970/7-sg-purepulse-series-de-10-a-40kva.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| 10 – 15 – 20 – 30 – 40 kVA | IEC | S1"
+      ],
+      "file": "sources/eneria/1004.md"
+    },
+    {
+      "n": 1005,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1972/4-psc33-series-de-10-a-50-kva.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| 7Ah | kg | 168"
+      ],
+      "file": "sources/eneria/1005.md"
+    },
+    {
+      "n": 1006,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1980/9-dpa-upscale-st-s2-series-de-10-a-200-kva.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| Type de module | UPScale M10 | UPScale M20"
+      ],
+      "file": "sources/eneria/1006.md"
+    },
+    {
+      "n": 1007,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1973/8-sg-purepulse-series-de-60-a-120kva.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| Puissance apparente de sortie de FP=0.6 ind. à 0.9 ind. et à 0.9 capacitif | kVA | 60 | 80 | 100 | 120"
+      ],
+      "file": "sources/eneria/1007.md"
+    },
+    {
+      "n": 1008,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1978/8-sg-purepulse-series-de-160-a-300kva.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| Puissance apparente de sortie de FP=0.6 ind. à 0.9 ind. et à 0.9 capacitif | kVA | 160 | 200 | 250 | 300"
+      ],
+      "file": "sources/eneria/1008.md"
+    },
+    {
+      "n": 1009,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1977/8-sg-purepulse-series-de-400-a-500kva.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| Puissance apparente de sortie de FP=0.6 ind. à 0.9 ind. et à 0.9 capacitif | kVA | 400 | 500"
+      ],
+      "file": "sources/eneria/1009.md"
+    },
+    {
+      "n": 1010,
+      "url": "https://www.eneria.fr/download/17/onduleurs-statiques/1975/5-pw33-series-de-60-a-500-kva.pdf?preview=1",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| Modèle ASC | 33 | 33 | 33 | 33 | 33 | 33 | 33 | 33 | 33 | 33"
+      ],
+      "file": "sources/eneria/1010.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-04",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Static UPS range",
+      "header": [],
+      "rows": [
+        "Output power factor: 0.9",
+        "Output power factor: 1",
+        "Power module: 10 or 20 kW rackable when hot",
+        "Power module: 50 kW rackable when hot",
+        "Power module: 100 kW rackable when hot",
+        "Power module: 250 kW rackable when hot"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 1 kVA B | 1 x 2 x 9.4Ah | 1,5A",
+        "| 1 kVA S | – | max. 6A",
+        "| 2 kVA B | 1 x 4 x 9.4Ah | 1,5A",
+        "| 2 kVA S | – | max. 6A",
+        "| 3 kVA B | 1 x 6 x 9.4Ah | 1,5A",
+        "| 3 kVA S | – | max. 6A",
+        "| 6 kVA | – | 0-12A (par défaut : 4A)",
+        "| 10 kVA | – | 0-12A (par défaut : 4A)"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 1 kVA B | 438x86.2x309.8 | 17,92 kg | (2 x 2) x 9.4Ah",
+        "| 1 kVA S | 438x86.2x309.8 | 17,92 kg | (2 x 2) x 9.4Ah",
+        "| 2 kVA B | 438x86.2x426.5 | 31,32 kg | (2 x 4) x 9.4Ah",
+        "| 2 kVA S | 438x86.2x426.5 | 31,32 kg | (2 x 4) x 9.4Ah",
+        "| 3 kVA B | 438x86.2x629.8 | 44,90 kg | (2 x 6) x 9.4Ah",
+        "| 3 kVA S | 438x86.2x629.8 | 44,90 kg | (2 x 6) x 9.4Ah",
+        "| 6 kVA | 438x129x592 | 62,1 kg | (1 x 20) x 9Ah",
+        "| 10 kVA | 438x129x592 | 62,1 kg | (1 x 20) x 9Ah"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [
+        "| (kVA) | internes | ASC + module 1 batt | ASC + module 2 batt | ASC + module 3 batt | ASC + module 4 batt"
+      ],
+      "rows": [
+        "| 1 kVA B | 4 / 6 / 20 / 23 | 21 / 30 / 48 / 104 | 40/ 55 / 86 / 179 | 59 / 81 / 124 / 255 | 79 / 106 / 162 / 331",
+        "| 1 kVA S | – | 12 / 18 / 29 / 66 | 30 / 42 / 67 / 141 | 49 / 73 / 105 / 217 | 69 / 94 / 143 / 293",
+        "| 2 kVA B | 4 / 6 / 11 / 23 | 21 / 30 / 49 / 105 | 40 / 56 / 87 / 181 | 60 / 82 / 126 / 258 | 80 / 108 / 164 / 335",
+        "| 2 kVA S | – | 12 / 18 / 30 / 68 | 31 / 44 / 69 / 145 | 50 / 70 / 108 / 222 | 70 / 96 / 147 / 300",
+        "| 3 kVA B | 4 / 6 / 11 / 24 | 22 / 31 / 50 / 108 | 42 / 57 / 89 / 186 | 61 / 84 / 129 / 264 | 82 / 99 / 168 / 343",
+        "| 3 kVA S | – | 13 / 19 / 32 / 72 | 32 / 45 / 72 / 152 | 51 / 72 / 112 / 233 | 72 / 98 / 152 / 315",
+        "| 6 kVA | – | 7 / 10 / 18 / 49 | 18 / 28 / 49 / 133 | 33 / 49 / 88 / >180 | 49 / 75 / 133 / >180",
+        "| 10 kVA | – | 3 / 5 / 9 / 24 | 9 / 13 / 24 / 64 | 16 / 24 / 43 / 115 | 24 / 36 / 64 / 173"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 2 | KVA | B, 2 KVA S",
+        "| Sortie CA 10A | Entrée CA 16A | RS232",
+        "| Emplacement | SNMP/A | S400"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 8 | CEI-320C13 | 10 A",
+        "| 3 kVA B | 1 | CEI-320C20 | 16 A",
+        "| 1 | CEI-320C19 | 16 A",
+        "| 8 | CEI-320C13 | 10 A",
+        "| 3 kVA S | 1"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| Puissance apparente | 1 kVA | 2 kVA | 3 kVA | 6 kVA | 10 kVA",
+        "| Puissance active | 1 kW | 2 kW | 3 kW | 6 kW | 10 kW"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| CARACTÉRISTIQUES D’ENTRÉE | 1 kVA (B/S) | 2 kVA (B/S) | 3 kVA (B/S) | G2 6 kVA | G2 10 kVA",
+        "| Tension nominale (en permanence, | 120-300 VCA | 120-300 VCA | 120-300 VCA | 100-276 VCA | 100-276 VCA",
+        "| Tension nominale | 208 VCA / 220 VCA / | 208 VCA / 220 VCA / | 208 VCA / 220 VCA / | 208 VCA / 220 VCA / | 208 VCA / 220 VCA /",
+        "| 230 VCA / 240 VCA | 230 VCA / 240 VCA | 230 VCA / 240 VCA | 230 VCA / 240 VCA | 230 VCA / 240 VCA",
+        "| -22% / +30% | -22% / +30% | -22% / +30% | -23% / +20% | -23% / +20%",
+        "| -31% / +30% à <80% | -31% / +30% à <80% | -31% / +30% à <80% | -33% / +20% à <80% | -33% / +20% à <80%",
+        "| Tolérance, pour 230V | de charge, -41% / | de charge, -41% / | de charge, -41% / | de charge, -43% / | de charge, -43% /",
+        "| Fréquence, nominale | 50 Hz / 60 Hz | 50 Hz / 60 Hz | 50 Hz / 60 Hz | 50 Hz / 60 Hz | 50 Hz / 60 Hz"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| CARACTÉRISTIQUES DE SORTIE | 1 kVA (B/S) | 2 kVA (B/S) | 3 kVA (B/S) | G2 6 kVA | G2 10 kVA",
+        "| Puissance nominale | 1 kW | 2 kW | 3 kW | 6 kW | 10 kW"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| TOLÉRANCES | 1 kVA (B/S) | 2 kVA (B/S) | 3 k",
+        "| VA | (B/S) | G2 6 kVA | G2 | 10 kVA"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| VALEURS NOMINALES | 1 kVA (B/S) | 2 kVA (B/S) | 3 kVA (B/S) | G2 6 kVA | G2 10 kVA",
+        "| CB | 1 x 10 A | 1 x 16 A | 1 x 20 A | 1 x 63 A | 1 x 80 A"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: Product information sheet",
+      "header": [
+        "| internes | + 1 EBM | + 2 EBM | + 3 EBM | + 4 EBM"
+      ],
+      "rows": [
+        "| G2 | 1 kVA B | 1 x 2 x 9,4 Ah | 3",
+        "| x | 2 x | 9 Ah | 5 | 23 | 52 | 85 | 120",
+        "| G2 | 1 kVA S",
+        "| x | 2 x | 9 Ah",
+        "| - | 17 | 48 | 70 | 100",
+        "| G2 | 2 kVA B | 1 x 4 x 9,4 Ah | 3",
+        "| x | 4 x | 9 Ah | 5,5 | 25 | 55 | 90 | 125",
+        "| G2 | 2 kVA S",
+        "| x | 4 x | 9 Ah",
+        "| - | 18 | 50 | 80 | 110",
+        "| G2 | 3 kVA B | 1 x 6 x 9,4 Ah | 2",
+        "| x | 6 x | 9 Ah | 5,5 | 16,5 | 35 | 55 | 80",
+        "| G2 | 3 kVA S",
+        "| x | 6 x | 9 Ah",
+        "| - | 10,5 | 28 | 50 | 70",
+        "| G2 | 6 kVA B | 1 x 16 x 7,2 Ah | 2",
+        "| x | 16 | x 9 Ah | 4 | 18 | 41 | 68 | 99",
+        "| G2 | 6 kVA B2 | 1 x 20 x 7,2 Ah | 2",
+        "| x | 20 | x 9 Ah | 5,5 | 25 | 55,5 | 92,5 | 134",
+        "| G2 | 6 kVA S",
+        "| x | 20 | x 9 Ah",
+        "| - | 18 | 49 | 88 | 133",
+        "| G2 | 10 kVA B | 1 x 16 x 9 Ah | 2",
+        "| x | 16 | x 9 Ah | 3 | 12 | 25 | 39 | 55,5",
+        "| G2 | 10 kVA B2 | 1 x 20 x 9 Ah | 2",
+        "| x | 20 | x 9 Ah | 4 | 17 | 34 | 53 | 75",
+        "| G2 | 10 kVA S",
+        "| x | 20 | x 9 Ah",
+        "| - | 9 | 24 | 42,5 | 64"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 5 | 6 | 6 | 6",
+        "| 8 | 8 | 8 | 4 | 4 | 4",
+        "| 8 | 8 | 8",
+        "| 1 | 6 | 1 | 7 | 9 | 12 10 | 1 | 12 10 | 7 | 12 | 10 | 7",
+        "| 1 kVA B | 2 kVA B | 3 kVA",
+        "| B | 1 kVA S | 2 kVA S | 3",
+        "| 1. | Entrée AC 10 A | 4.",
+        "| Mini SNMP/ Mini ModBus / Mini | AS | 4 | 00 | 7. | Entrée AC 16 A | 10.",
+        "| 2. | Port USB | 5.",
+        "| Disjoncteur de sorti | e | 11. | Entrée AC 20 A",
+        "| 3. | RS-232 | 6. | Sortie AC 10 A | 9. | Sortie AC 16 A | 12."
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 6 kVA | S | 10 kVA S | 6 kVA B/B2 | 10 kVA B/B2",
+        "| / | AS400 | 16."
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: Product information sheet",
+      "header": [
+        "| UPS + A* + B** | UPS | + 2B**",
+        "| 10 | kVA"
+      ],
+      "rows": [
+        "| - | 69 / | 30 / 18 / 12 | 151 | / 69 / 42 / 30 | 262 / 109 / 69 / 49 | 380 / 151 | / 96 / 69",
+        "| - | 151 | / 69 / 42 / 30 | 262 / 109 / 69 / 49 | 380 / 151 | / 93 / 69",
+        "| B | 29 / 12 / 6 / 4 | 109 | / 49 | / 29 / | 21 | 208 | / 87 / 55 / 39 | 302 / 130 / 82 / 58 | 442 / 176 | / 109 / 79",
+        "| 10 | kVA | B2 | 69 / 30 / 18 / 12 | 151 | / 69 | / 42 / | 30 | 262 | / 109 / 69 / 49 | 380 / 151 / 93 / 69 | 651 / 208 | / 122 / 87",
+        "| - | 29 / | 12 / | 6 / 4 | 69 / | 29 / 18 / 12 | 69 / 49 / 29 / 21 | 151 / 69 / | 42 / 29",
+        "| - | 69 / | 29 / 18 / 12 | 69 / 49 / 29 / 21 | 151 / 69 / | 42 / 29",
+        "| B | 29 / 12 / 6 / 4 | 69 / | 29 / 18 / 12 | 69 / | 49 / 29 / 21 | 151 / 69 / 42 / 29 | 208 / 97 / | 55 / 39"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| DONNEES GENERALES | 10 kVA | 20 kVA",
+        "| Puissance apparente | 10 kVA | 20 kVA",
+        "| Puissance active | 9 kW | 18 kW"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| CARACTERISTIQUES EN ENTREE | 10 kVA | 20 kVA",
+        "| -23% | / | +20%",
+        "| -43% | / | +20%",
+        "| -48% | / | +20%"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| CARACTERISTIQUES EN SORTIE | 10 kVA | 20 kVA",
+        "| Puissance notée | 9000 W | 18000 W"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| CARACT. DE LA BATTERIE | 10 kVA | 20 kVA",
+        "| Nombre de blocs 12 V (ﬁxes) | 24 (10 kVA B) / 48 (10 kVA | B2) | 48 (20 kVA B)"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| capacité de chargeur de | 1.15 | kW / 2.3",
+        "| kW | (S model) | 1.15 kW / 2.3 kW (S"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| A | 50 cm | 50 cm",
+        "| B | 50 cm | 50 cm",
+        "| C | 0 cm | 0 cm",
+        "| D | 5 cm | 5 cm",
+        "| A | 50 cm | 50 cm",
+        "| B | 50 cm | 50 cm",
+        "| C | 0 cm | 0 cm",
+        "| D | 5 cm | 5 cm",
+        "| DISPERSION DE CHALEUR | 10 kVA | 20 kVA",
+        "| Dissipation de chaleur avec | 669 W / 2282.7 BTU | 1207 W / | 4118.5"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| VALEURS | 10 kVA (1-1) | 10 kVA (3-1) | 20 kVA (1-1) | 20 kVA (3-1)",
+        "| x | 63A | 3",
+        "| x | 63A | 1",
+        "| x | 100A | 3"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 10 – 15 – 20 – 30 – 40 kVA | IEC | S1",
+        "| — | SG Series PurePulse™ | 10 - 15 - 20 - 30 - 40 kVA IEC S1"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| Puissance apparente de sortie de FP=0.6 ind. à 0.9 capacitif | kVA | 10 | 15 | 20 | 30 | 40",
+        "| Puissance active de sortie à FP=1 | kW | 10 | 15 | 20 | 30 | 40",
+        "| Dissipation à 100% de charge en mode de fonctionnement VFI, FP=0.8 ind. et batterie chargée kW | 0.65 | 1.11 | 1.27 | 2.18 | 2.69",
+        "| Dissipation à 100% de charge en mode de fonctionnement VFI, FP=0.9 ind. et batterie chargée kW | 0.73 | 1.25 | 1.43 | 2.46 | 3.03",
+        "| Volume d’air frais nécessaire à FP=0.8 (25°C ÷ 30°C) | m3/h | 189 | 323 | 371 | 637 | 785",
+        "| Volume d’air frais nécessaire à FP=0.9 (25°C ÷ 30°C) | m3/h | 212 | 364 | 417 | 717 | 883",
+        "| Niveau sonore | dB(A) | 63 | 63 | 63 | 65 | 65"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: Product information sheet",
+      "header": [
+        "| Distorsion du courant THD | <3.2% à 100% de charge | <5% à 50% de charge",
+        "| Courant d’enclenchement | Limité par circuit de démarrage en douceur (soft-start)",
+        "| Départ progressif | 15 secondes",
+        "| Tolérance de tension de sortie | +/- 1%",
+        "| Ondulation résiduelle sur tension DC | <1%",
+        "| Caractéristique de recharge de la batterie | IU (DIN 41773), tension de floating compensée en température",
+        "| Limitation du courant de recharge de la batterie | Programmable"
+      ],
+      "rows": [
+        "| Caractéristiques de la puissance d’entrée | kVA | 10 | 15 | 20 | 30 | 40",
+        "| kW | 8.7 | 13.2 | 17.4 | 26.4 | 34.9",
+        "| et batterie en floating | à FP=1 | 10.9 | 16.5 | 21.7 | 33.0 | 43.7",
+        "| Puissance d’entrée onduleur à plein charge et courant | kW | 11.7 | 16.8 | 21.8 | 32.7 | 43.5"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| Caractéristiques de la puissance de la batterie | kVA | 10 | 15 | 20 | 30 | 40",
+        "| Puissance à débiter de la batterie à FP=0.8 | kW | 8.4 | 12.6 | 16.8 | 25.3 | 33.7",
+        "| Puissance à débiter de la batterie à FP=0.9 | kW | 9.5 | 14.2 | 18.9 | 28.4 | 37.9",
+        "| Puissance à débiter de la batterie à FP=1.0 | kW | 10.5 | 15.8 | 21.1 | 31.6 | 42.1"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| kVA | F1 | F2 | F3 | F4",
+        "| 10 | 3x 20A | 3 x 20A | 3 | x 20A | 2 x 40A | 4 x 2.5 | 4 x 2.5 | 5 x 2.5 | 3 x 6",
+        "| 15 | 3 x 25A | 3 x 25A | 3 | x 25A | 2 x 63A | 4 x 4 | 4 x 4 | 5 x 4 | 3 x 10",
+        "| 20 | 3 x 35A | 3 x 35A | 3 | x 35A | 2 x 63A | 4 x 6 | 4 x 6 | 5 x 6 | 3 x 10",
+        "| 30 | 3 x 50A | 3 x 50A | 3 | x 50A | 2 x 100A | 4 x 10 | 4 x 10 | 5 x 10 | 2 x 25 + 16",
+        "| 40 | 3 x 63A | 3 x 63A | 3 | x 63A | 2 x 125A | 4 x 10 | 4 x 10 | 5 x 10 | 2 x 35 + 16",
+        "| F1, F2, | F3, A, B, C,"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 7Ah | kg | 168",
+        "| En emballement standard | kg | +12",
+        "| Couleur | Gris | graphiteRAL 7024",
+        "| kVA | 10 | 15 | 20 | 25",
+        "| Dimensions (LxHxP) | mm | 345x1045x710",
+        "| Poids sans batterie | kg | 68",
+        "| 7Ah | kg | 308",
+        "| En emballement standard | kg | +12",
+        "| 2.3 CARACTERISTIQUES MECANIQUES DE LA | POWERSCALE | 25-50kVA",
+        "| kVA | 25 | 30 | 40 | 50",
+        "| Dimensions (LxHxP) | mm | 440x1400x910",
+        "| Poids sans batterie | kg | 440x1400x910",
+        "| 48 blocs de 28Ah | kg | 537",
+        "| En emballement standard | kg | 640"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| Modèle ASC | PS 10 | PS 15 | PS 20 | PS 25 | PS 30 | PS 40 | PS 50",
+        "| Puissance de sortie | kVA | 10 | 15 | 20 | 25 | 30 | 40 | 50"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| Description | 25 kVA | 30 kVA | 40 kVA | 50 kVA",
+        "| Puissance maximale en | 12 | 16 | 20 | 22.5 | 20 | 24 | 27 | 25 | 32 | 36 | 30 | 35 | 40 | 45"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| Puissance de sortie | kW | 9 | 13.5 | 18 | 22.5 | 27 | 36 | 45",
+        "| Courant nominal de sortie (In) | A | 13.0 | 19.5 | 26.0 | 32.5 | 39.0 | 52.0 | 65.0"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: Product information sheet",
+      "header": [
+        "| Type de module | UPScale M10 | UPScale M20"
+      ],
+      "rows": [
+        "| Puissance de sortie | kW | 10 | 20",
+        "| Tension d’entrée | V | 3x380/220V+N, 3x400V/230V+N, | 3x415/240V+N",
+        "| Tensions d’entrée en fonction | V | (-20%/+15%) 3x308/184 V | à 3x460/264 V",
+        "| du taux de charge | (-26%/+15%) 3x280/170 V | à 3x460/264 V",
+        "| (réf au 3x400/230V) | (-35%/+15%) 3x240/150 V | à 3x460/264 V"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 5 min. | 6 min. | 8 min. | 10 min. | 12 min. | 15 min. | 20 min. | 25 min. | 30 min. | 40 min. | 60 min.",
+        "| n.a. | n.a. | 1x 34x | 1x 34x | 1x 42x 28h | 2x 34x",
+        "| 24Ah | 28Ah | 24Ah",
+        "| n.a. | n.a. | 1x 34x | 1x 34x | 1x 40x | 1x50x 28Ah | 2x 34x | 2x 34x | 2x 42x | 3 x 38x",
+        "| 24Ah | 28Ah | 28Ah | 24Ah | 28Ah | 28Ah | 28Ah",
+        "| 30 kW | 1x 30x | 1x 30x | 1x 34x | 1x 46x | 1x50x 28Ah | 2x 40x | 2x 40x | 2x 46x | 2x50x 28Ah | 3 x 46x | 4x 46x",
+        "| 24Ah | 24Ah | 28Ah | 28Ah | 24Ah | 28Ah | 28Ah | 28Ah | 28Ah",
+        "| 40 kW | 1x 34x | 1x 36x | 1x 48x | 2x 34x | 2x 36x | 2x 40x | 2x50x 28Ah | 3 x 40x | 3 x 44x | 4x 42x"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 28Ah | 28Ah | 28Ah | 24Ah | 24Ah | 28Ah | 28Ah | 28Ah | 28Ah",
+        "| 50 kW | 1x 42x | 1x 48x | 1x50x 28Ah | 2x 36x | 2x 42x | 2x 48x | 3 x 40x | 4x 38x | 5x 34x",
+        "| 28Ah | 28Ah | 28Ah | 28Ah | 28Ah | 28Ah | 28Ah | 28Ah",
+        "| 60 kW | 1x 46x | 1x50x 28Ah | 2x 36x | 2x 42x | 2x 48x | 3 x 40x | 3 x50x | 2x 44x | 4x50x 28Ah",
+        "| 28Ah | 28Ah | 28Ah | 28Ah | 24Ah | 28Ah | 28Ah",
+        "| 80 kW | 2x 34x | 2x 36x | 2x 46x | 3 x 38x | 3 x 44x | 3 x50x | 4x50x 28Ah",
+        "| 28Ah | 28Ah | 28Ah | 28Ah | 28Ah | 28Ah",
+        "| 100 kW | 2x 42x | 2x 48x | 3 x 40x | 3 x 46x | 4x 44x | 4x 48x"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 24Ah | 28Ah | 28Ah | 28Ah | 28Ah | 28Ah",
+        "| 120 kW | 2x 48x | 3 x 40x | 3 x 46x | 4x 44x | 4x50x 28Ah",
+        "| 28Ah | 24Ah | 28Ah | 28Ah",
+        "| 160 kW | 3 x 44x | 3 x 48x | 4x 46x | 4x50x 28Ah"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| 28Ah | 28Ah | 28Ah",
+        "| 200 kW | 4x 40x | 4x 48x"
+      ]
+    },
+    {
+      "n": 1007,
+      "title": "Datasheet: Product information sheet (60 to 120 kVA)",
+      "header": [],
+      "rows": [
+        "| Puissance apparente de sortie de FP=0.6 ind. à 0.9 ind. et à 0.9 capacitif | kVA | 60 | 80 | 100 | 120",
+        "| Puissance active de sortie de FP=0.9 inductif à 0.9 capacitif | kW | 54 | 72 | 90 | 108",
+        "| Rendement à 100% de charge nominale FP=0.9 ind. en fonctionnement VFI | 91.4 | 91.2 | 91.7 | 91.2",
+        "| % | 91.8 | 91.5 | 92.0 | 91.8",
+        "| Rendement à 50% de charge nominale FP=0.9 ind. en fonctionnement VFI | 91.9 | 91.7 | 91.9 | 92.1",
+        "| % | 97.9 | 97.9 | 97.8 | 97.9",
+        "| Dissipation à 100% de charge en fonctionnement VFI, FB=0.8 ind. et batterie chargée | kW | 4.52 | 6.18 | 7.24 | 9.26",
+        "| Volume d’air frais nécessaire (25°C ÷ 30°C) | m3/h | 1320 | 1805 | 2115 | 2710"
+      ]
+    },
+    {
+      "n": 1007,
+      "title": "Datasheet: Product information sheet (60 to 120 kVA)",
+      "header": [
+        "| Distorsion du courant THD | 3% à 100% de charge | <3% à 75% de charge | <3.5% à 50% de charge",
+        "| Courant d’enclenchement | Limité par circuit de démarrage en douceur (soft-start)",
+        "| Départ progressif | 15 secondes",
+        "| Tolérance de tension de sortie | +/- 1%",
+        "| Ondulation résiduelle sur tension DC | <1%",
+        "| Caractéristique de recharge de la batterie | IU (DIN 41773), tension de floating compensée en température",
+        "| Limitation du courant de recharge de la batterie | Programmable"
+      ],
+      "rows": [
+        "| Caractéristiques de la puissance d’entrée | kVA | 60 | 80 | 100 | 120",
+        "| kW | 52.5 | 70.0 | 87.3 | 105.3",
+        "| et batterie en floating | à FP=0.9 ind. | 59.1 | 78.8 | 98.2 | 118.5",
+        "| Puissance d’entrée onduleur à plein charge et courant | kW | 66.0 | 87.8 | 109.5 | 131.6"
+      ]
+    },
+    {
+      "n": 1007,
+      "title": "Datasheet: Product information sheet (60 to 120 kVA)",
+      "header": [],
+      "rows": [
+        "| Caractéristiques de la puissance de la batterie | kVA | 60 | 80 | 100 | 120",
+        "| Puissance à débiter de la batterie à FP=0.8 ind. | kW | 50.8 | 67.8 | 84.7 | 101.6",
+        "| Puissance à débiter de la batterie à FP=0.9 ind. | kW | 57.2 | 76.2 | 95.3 | 114.3",
+        "| Puissance à débiter batterie pour charge type | kW | 41.9 | 55.9 | 69.9 | 83.8"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "Datasheet: Product information sheet (160 to 300 kVA)",
+      "header": [],
+      "rows": [
+        "| Puissance apparente de sortie de FP=0.6 ind. à 0.9 ind. et à 0.9 capacitif | kVA | 160 | 200 | 250 | 300",
+        "| Puissance active de sortie de FP=0.9 inductif à 0.9 capacitif | kW | 144 | 180 | 225 | 270",
+        "| Rendement à 100% de charge nominale FP=1 en mode de fonctionnement VFI / eBoost | 93.6/98.4 | 93.7/98.4 | 93.4/98.4 | 93.5/98.5",
+        "| Rendement à 75% de charge nominale FP=1 en mode de fonctionnement VFI / eBoost | % | 93.9/98.3 | 94.3/98.3 | 94.0/98.3 | 94.0/98.5",
+        "| Rendement à 50% de charge nominale FP=1 en mode de fonctionnement VFI / eBoost | 94.2/98.1 | 94.6/98.1 | 94.1/98.1 | 94.2/98.3",
+        "| Dissipation à 100% de charge en fonctionnement VFI, FP=0.8 ind. et batterie chargée | kW | 8.2 | 10.1 | 13.2 | 15.6",
+        "| Dissipation à 100% de charge en fonctionnement VFI, FP=0.9 ind. et batterie chargée | kW | 9.2 | 11.3 | 14.9 | 17.6",
+        "| Volume d’air frais nécessaire FP=0.8 (25°C ÷ 30°C) | m3/h | 2389 | 2940 | 3850 | 4550",
+        "| Volume d’air frais nécessaire FP=0.9 (25°C ÷ 30°C) | m3/h | 2688 | 3308 | 4331 | 5119"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "Datasheet: Product information sheet (160 to 300 kVA)",
+      "header": [
+        "| Distorsion du courant THD | 2% à 100% de charge | <2.5% à 75% de charge | <3% à 50% de charge",
+        "| Courant d’enclenchement | Limité par circuit de démarrage en douceur (soft-start)",
+        "| Départ progressif | 15 secondes",
+        "| Tolérance de tension de sortie | +/- 1%",
+        "| Ondulation résiduelle sur tension DC | <1%",
+        "| Caractéristique de recharge de la batterie | IU (DIN 41773), tension de floating compensée en température",
+        "| Limitation du courant de recharge de la batterie | Programmable"
+      ],
+      "rows": [
+        "| Caractéristiques de la puissance d’entrée | kVA | 160 | 200 | 250 | 300",
+        "| kW | 136.8 | 170.8 | 214.1 | 256.7",
+        "| et batterie en floating | à FP=0.9 ind. | 153.9 | 192.1 | 240.9 | 288.8",
+        "| Puissance d’entrée onduleur à plein charge et courant | kW | 170.5 | 212.7 | 267.8 | 321.1"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "Datasheet: Product information sheet (160 to 300 kVA)",
+      "header": [
+        "| Tension de décharge minime | (programmable) | 1.65Vdc/élément",
+        "| Temps de recharge | <5 heures jusqu’à 90% de la capacité",
+        "| Détection du défaut “Batterie à la terre” | Standard",
+        "| Test batterie automatique et manuel | Standard"
+      ],
+      "rows": [
+        "| Caractéristiques de la puissance de la batterie | kVA | 160 | 200 | 250 | 300",
+        "| Puissance à débiter de la batterie à FP=0.8 ind. / FP=0.9 ind. | kW | 134.7 / 151.6 | 168.4 / 189.5 | 210.5 / 236.8 | 252.6 / 284.2",
+        "| Puissance à débiter batterie pour charge type informatique (FP=0.66 ind.) kW | 111.2 | 138.9 | 173.7 | 208.4"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "Datasheet: Product information sheet (160 to 300 kVA)",
+      "header": [],
+      "rows": [
+        "| Résistance aux courts circuits à partir de l’entrée réseau jusqu'à la charge, Icc | kVA | 160 | 200 | 250 | 300",
+        "| Par Bypass statique | kA | 65 | 65 | 100 | 100",
+        "| Par l’interrupteur interne manuel Q2 *) | kA | 70 | 70 | 100 | 100"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "Datasheet: Product information sheet (160 to 300 kVA)",
+      "header": [],
+      "rows": [
+        "| Dimensions (L x P x H) |  500x850x1900mm |  850x850x1900mm |  1000x850x1900mm |  1500x850x1900mm",
+        "| 1. | Transformateur redresseur ou bypass ou entrée ASI |  160 et 200 kVA"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "Datasheet: Product information sheet (160 to 300 kVA)",
+      "header": [],
+      "rows": [
+        "| kVA | F1 | F2 | F3 | F4",
+        "| 160 | 3x250A | 3x250A | 3x250A | 2x400A | 3x120+70 | 4x120 | 4x120+70 | 2x240+120",
+        "| 200 | 3x315A | 3x315A | 3x315A | 2x500A | 3x150+95 | 4x150 | 4x150+95 | 2x(2x120)+120",
+        "| 250 | 3x400A | 3x400A | 3x400A | 2x630A | 3x240+120 | 4x240 | 4x240+120 | 2x(2x150)+150",
+        "| 300 | 3x500A | 3x500A | 3x500A | 2x800A | 3x(2x120)+120 | 4x(2x120) | 4x(2x120)+120 | 2x(2x240)+240"
+      ]
+    },
+    {
+      "n": 1009,
+      "title": "Datasheet: Product information sheet (400 to 500 kVA)",
+      "header": [],
+      "rows": [
+        "| Puissance apparente de sortie de FP=0.6 ind. à 0.9 ind. et à 0.9 capacitif | kVA | 400 | 500",
+        "| Puissance active de sortie de FP=0.9 inductif à 0.9 capacitif | kW | 360 | 450",
+        "| Rendement à 100% de charge nominale FP=1 en mode de fonctionnement VFI / eBoost | 93.3 / 98.5% | 93.2 / 98.7%",
+        "| Rendement à 75% de charge nominale FP=1 en mode de fonctionnement VFI / eBoost | % | 93.8 / 98.5% | 93.7 / 98.7%",
+        "| Rendement à 50% de charge nominale FP=1 en mode de fonctionnement VFI / eBoost | 94.2 / 98.3% | 94.2 / 98.6%",
+        "| Dissipation à 100% de charge en fonctionnement VFI, FP=0.8 ind. et batterie chargée | kW | 21.4 | 27.2",
+        "| Dissipation à 100% de charge en fonctionnement VFI, FP=0.9 ind. et batterie chargée | kW | 24.1 | 30.6",
+        "| Volume d’air frais nécessaire FP=0.8 (25°C ÷ 30°C) | m3/h | 6253 | 7933",
+        "| Volume d’air frais nécessaire FP=0.9 (25°C ÷ 30°C) | m3/h | 7035 | 8925"
+      ]
+    },
+    {
+      "n": 1009,
+      "title": "Datasheet: Product information sheet (400 to 500 kVA)",
+      "header": [
+        "| Distorsion du courant THD | 2% à 100% et 75% de charge | <3% à 50% de charge | <4.5% à 25% de charge",
+        "| Courant d’enclenchement | Limité par circuit de démarrage en douceur (soft-start)",
+        "| Départ progressif | 15 secondes",
+        "| Tolérance de tension de sortie | +/- 1%",
+        "| Ondulation résiduelle sur tension DC | <1%",
+        "| Caractéristique de recharge de la batterie | IU (DIN 41773), tension de floating compensée en température",
+        "| Limitation du courant de recharge de la batterie | Programmable"
+      ],
+      "rows": [
+        "| Caractéristiques de la puissance d’entrée | kVA | 400 | 500",
+        "| kW | 343.0 | 429.2",
+        "| et batterie en floating | à FP=0.9 ind. | 385.9 | 482.8",
+        "| Puissance d’entrée onduleur à plein charge et courant | kW | 430 | 539"
+      ]
+    },
+    {
+      "n": 1009,
+      "title": "Datasheet: Product information sheet (400 to 500 kVA)",
+      "header": [],
+      "rows": [
+        "| Caractéristiques de la puissance de la batterie | kVA | 400 | 500",
+        "| Puissance à débiter de la batterie à FP=0.8 ind. / FP=0.9 ind. | kW | 336.8 / 378.9 | 421.0 / 473.7",
+        "| Puissance à débiter batterie pour charge type informatique (FP=0.66 ind.) | kW | 277.9 | 347.4"
+      ]
+    },
+    {
+      "n": 1009,
+      "title": "Datasheet: Product information sheet (400 to 500 kVA)",
+      "header": [],
+      "rows": [
+        "| Résistance aux courts circuits à partir de l’entrée réseau jusqu'à la charge, Icc | kVA | 400 | 500",
+        "| Par Bypass statique | kA | 100 | 100",
+        "| Par l’interrupteur interne manuel Q2 *) | kA | 100 | 100"
+      ]
+    },
+    {
+      "n": 1009,
+      "title": "Datasheet: Product information sheet (400 to 500 kVA)",
+      "header": [],
+      "rows": [
+        "| kVA | F1 | F2 | F3 | F4",
+        "| 400 | 3x630A | 3x630A | 3x630A | 2x1000A | 3x(2x150)+150 | 4x(2x150) | 4x(2x150)+150 | 2x(4x120)+2x120",
+        "| 500 | 3x800A | 3x800A | 3x800A | 2x1250A | 3x(2x240)+240 | 4x(2x240) | 4x(2x240)+240 | 2x(3x240)+2x185"
+      ]
+    },
+    {
+      "n": 1010,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| Modèle ASC | 33 | 33 | 33 | 33 | 33 | 33 | 33 | 33 | 33 | 33",
+        "| 60 | 80 | 100 | 120 | 160 | 200 | 250 | 300 | 400 | 500",
+        "| Puissance de sortie nominale | kW | 60 | 80 | 100 | 120 | 160 | 200 | 250 | 300 | 400 | 500"
+      ]
+    },
+    {
+      "n": 1010,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| Gamme de puissance délivrée | 60 | 80 | 100 | 120 | 160 | 200 (*) | 250 | 300 | 400 | 500",
+        "| Puissance nominale sortie (@ min. 44 blocs | kVA | 60 | 80 | 100 | 120 | 160 | 200 | 250 | 300 | 400 | 500"
+      ]
+    },
+    {
+      "n": 1010,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| Fig. | 3: | 250-300 kW",
+        "| Avec option 04-1530 cable double connexion | à | Avec option 04-1529 cable double connexion"
+      ]
+    },
+    {
+      "n": 1010,
+      "title": "Datasheet: Product information sheet",
+      "header": [],
+      "rows": [
+        "| (kw) | (Agl/CB) | (IEC 60950-1) | (IEC 60950-1)",
+        "| 60 | 3x100 | 5x35 | 5x35 | 3x125A | 3x35+ PE",
+        "| 80 | 3x125 | 5x50 | 5x50 | 3x160A | 3x50 + PE",
+        "| 100 | 3x160 | 5x50 | 5x50 | 3x250A | 3x95 + PE",
+        "| 120 | 3x200 | 5x70 | 5x70 | 3x250A | 3x120 + PE",
+        "| 160 | 3x250 | 5x120 ou | 5x120 ou | 3x350A | 3x(2x70) + PE",
+        "| 5x(2x50)*1 | 5x(2x50)*1",
+        "| 200 | 3x350 | 5x185 ou | 5x185 ou | 3x450A | 3x(2x95) + PE",
+        "| 5x(2x70)*1 | 5x(2x70)*1",
+        "| 250 | 3x400 | 5x240 ou | 5x240 ou | 3x630A | 3x(2x150) + PE",
+        "| 5x(2x95)*1 | 5x(2x95)*1",
+        "| 300 | 3x500 | 5x(2x120) *1 | 5x(2x120)*1 | 3x630A | 3x(2x150) + PE"
+      ]
+    },
+    {
+      "n": 1010,
+      "title": "Datasheet: Product information sheet",
+      "header": [
+        "| (kw) | (Agl/CB) | (IEC 60950-1)"
+      ],
+      "rows": [
+        "| (Agl/CB) | (IEC 60950-1) | (IEC 60950-1)",
+        "| 60 | 3x100 | 5x35 | 3x100 | 5x35 | 5x35 | 3x125A | 3x35+ PE",
+        "| 80 | 3x125 | 5x50 | 3x125 | 5x50 | 5x50 | 3x160A | 3x50+ PE",
+        "| 100 | 3x160 | 5x50 | 3x160 | 5x50 | 5x50 | 3x250A | 3x95+ PE",
+        "| 120 | 3x200 | 5x70 | 3x200 | 5x70 | 5x70 | 3x250A | 3x120+ PE",
+        "| 160 | 3x250 | 5x120 ou | 3x250 | 5x120 ou | 5x120 | 3x350A | 3x(2x70) + PE",
+        "| 5x(2x50)*2 | 5x(2x50)*2",
+        "| 200 | 3x350 | 5x185 ou | 3x315 | 5x185 ou | 5x185 | 3x450A | 3x(2x95) + PE",
+        "| 5x(2x70)*2 | 5x(2x70)*2",
+        "| 250 | 3x400 | 5x240 ou | 3x400 | 5x240 ou | 5x240 ou | 3x630A | 3x(2x150) + PE",
+        "| 5x(2x95)*2 | 5x(2x95)*2 | 5x(2x95)",
+        "| 300 | 3x500 | 5x(2x120)*2 | 3x500 | 5x(2x120)*2 | 5x(2x120) | 3x630A | 3x(2x150) + PE"
+      ]
+    }
+  ]
+}

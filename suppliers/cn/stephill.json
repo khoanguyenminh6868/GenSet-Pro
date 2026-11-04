@@ -1,0 +1,155 @@
+{
+  "id": "stephill",
+  "country": "GB",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Stephill Generators",
+    "zh": null,
+    "brands": [
+      "Stephill"
+    ]
+  },
+  "website": "https://www.stephill-generators.co.uk/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Máy phát xăng, diesel 1500/3000 vòng/phút, máy hàn (Anh)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel Generators 1500rpm",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất, tên pháp nhân"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.stephill-generators.co.uk/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "Home | Stephill Generators",
+        "Diesel Generators 1500rpm",
+        "Diesel Generators 3000rpm"
+      ],
+      "file": "sources/stephill/1.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.stephill-generators.co.uk/downloads?category=117",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "BASIC DEEP SEA 3110 FAULT FINDING ISSUE 7"
+      ],
+      "file": "sources/stephill/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.stephill-generators.co.uk/downloads?category=51",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "SSDP30-70 INTELILITE"
+      ],
+      "file": "sources/stephill/3002.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-04",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "InteliLITE",
+      "text": "INTELILITE",
+      "line": "SSDP30-70 INTELILITE",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliLITE MRS15",
+      "text": "INTELILITE MRS15",
+      "line": "SSDP33-70 HANDBOOK INTELILITE MRS15 ISSUE 4",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliLITE NT MRS15",
+      "text": "INTELILITE NT MRS15",
+      "line": "SSDP33-70 HANDBOOK INTELILITE NT MRS15 ISSUE 2",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE3110",
+      "text": "DEEP SEA 3110",
+      "line": "BASIC DEEP SEA 3110 FAULT FINDING ISSUE 7",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6110",
+      "text": "DEEP SEA 6110",
+      "line": "BASIC DEEP SEA 6110 MK2 FAULT FINDING ISSUE 3",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6110 MKII",
+      "text": "DSE 6110 MK2",
+      "line": "SSDP30-70 DSE 6110 MK2",
+      "src": [
+        3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6110 MKIII",
+      "text": "DSE 6110 MK3",
+      "line": "SSDP30-70 DSE 6110 MK3 USER & FAULT FINDING GUIDE ISSUE 3",
+      "src": [
+        3001,
+        3002
+      ]
+    }
+  ]
+}
