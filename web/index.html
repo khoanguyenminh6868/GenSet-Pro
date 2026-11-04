@@ -2060,9 +2060,9 @@ async function translationPdf(key) {
       for (const p of pts[si]) { need(6); doc.setFont("DejaVu", "normal"); doc.setFontSize(10); doc.text("•", M + 1, y + 3.4); rich(p, 10, 1.2, 5); }
       y += 2;
     }
-    const n = doc.getNumberOfPages();
-    for (let i = 1; i <= n; i++) { doc.setPage(i); doc.setFont("DejaVu", "normal"); doc.setFontSize(8); doc.text(`GenBid Pro · ${t?.notifyNo || ""} · ${i}/${n}`, M, 297 - 8); }
-    const ok = await saveFile(fileSafe(`${t?.notifyNo || "tender"} Technical requirements EN.pdf`), doc.output("blob"));
+    // No footer; named by the genset power, e.g. "500kVA - Technical requirements.pdf" (Khoa, 2026-11-04).
+    const cap = t && capFromText(capacityOf(t)?.text)?.text.replace(/ (kVA|kW|MVA|MW)/g, "$1");
+    const ok = await saveFile(fileSafe(`${cap ? cap + " - " : ""}Technical requirements.pdf`), doc.output("blob"));
     info.textContent = ok ? "Đã tải PDF." : "";
   } catch (e) { info.textContent = e?.message || "Không tạo được PDF."; }
 }
