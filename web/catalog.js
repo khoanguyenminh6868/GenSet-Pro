@@ -128,7 +128,7 @@
     ["voltage", "genset", "Điện áp", /voltage|电压|điện áp/i, /dc|start|level|type|regul|stab|sudden|warp|dip|transient|drop|偏差/i, /^\D{0,3}\d{3}/],
     ["pf", "genset", "Hệ số công suất", /power\s*factor|cos|功率因数/i, null, /0[.,]\d|^1$/],
     ["phase", "genset", "Số pha", /phase|wire|相数/i, null, /^[13]$|[13]\s*-?\s*(ph|phase|相)|\d\s*-?\s*wire|three|single|三相|单相/i],
-    ["controller", "genset", "Bảng điều khiển", /^(controller|control\s*(module|panel)|控制器)\s*(model|type|brand)?\s*[:：]?$/i, null, /[a-z]{2,}\s?-?\d{3,}/i],
+    ["controller", "genset", "Bộ điều khiển", /^(controller|control\s*(module|panel)|控制器)\s*(model|type|brand)?\s*[:：]?$/i, null, /[a-z]{2,}\s?-?\d{3,}/i],
   ];
   const SPEC = Object.fromEntries(SPECS.map(([key, scope, vi, , , ok]) => [key, { scope, vi, ok }]));
   // Pure in the label and asked for every cell of every row: remembered per label (most of the time of build()).
@@ -505,7 +505,7 @@
   }
   const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·]/g, "");
 
-  // Bảng điều khiển (Khoa, 2026-11-01): make and model read from one line of a saved page or a table row, word for word.
+  // Bộ điều khiển (Khoa, 2026-11-01): make and model read from one line of a saved page or a table row, word for word.
   // A model code is taken where it is written (DSE7320, HGM6120N, InteliLite NT AMF25, DKG-309, easYgen-3000...); a
   // code that other things also use (AMF25, D-500, AGC-4) only on a line that names the make. A make with no model
   // counts only on a line about a controller ("Controller: Deepsea / Smartgen"). Deep Sea 2xxx / 9xxx are expansion

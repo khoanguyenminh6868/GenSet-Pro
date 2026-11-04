@@ -313,7 +313,7 @@ test("catalog.md lists the controllers' datasheet lines", () => {
     { brand: "Deep Sea", model: "DSE7310 MKII", text: "DSE7310 MKII", line: "Controller: Deep Sea DSE7310 MKII", src: [3001] }] };
   const list = [sups[0], b, sups[2], dse];
   const { md, ctlMd } = catalogMd(C.build(list), { value: 250, unit: "kVA" }, hintsOf(hsmt), { suppliers: list });
-  assert.match(md, /## Thông số bảng điều khiển/);
+  assert.match(md, /## Thông số bộ điều khiển/);
   assert.match(md, /### DSE7320 — datasheet của DSE7320 MKII \(nhà cung cấp ghi DSE7320: cần xác nhận đời\) — supplierId: dse, n: 1001/);
   assert.ok(md.includes("- | • | Automatic start and stopping of generator and transfer of load"));
   // controllers.md has every line; two models of one datasheet each have their own lines.
