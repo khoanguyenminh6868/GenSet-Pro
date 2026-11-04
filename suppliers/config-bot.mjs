@@ -822,9 +822,10 @@ async function save(dir, url) {
 const ITEM_KEYS = [
   [/điều tốc|governor/i, ["gov"]], [/cách điện|insulation/i, ["insul"]], [/\bIP\s?\d|cấp bảo vệ|protection class/i, ["ip"]],
   [/t[ỉỷ] số nén|compression/i, ["compr"]], [/khởi động|starting/i, ["start"]], [/kiểu động cơ|tăng áp|nạp khí|turbo|aspirat/i, ["asp", "engType"]],
-  [/dung tích|displacement/i, ["disp", "bore"]], [/xi ?lanh|cylinder/i, ["cyl"]], [/(tiêu chuẩn|mức|cấp) khí thải|emission|\b(euro|tier|stage)\b/i, ["emission"]],
-  [/làm mát|cooling/i, ["cooling"]], [/dầu bôi trơn|nhớt|lubricat/i, ["oil"]], [/sóng hài|THD|harmonic/i, ["thd"]],
-  [/(ổn định|biến thiên|điều chỉnh|dao động) điện áp|voltage regulation/i, ["vreg"]], [/AVR|kích từ|excit/i, ["excit", "vreg"]],
+  // Not the coolant's, oil's or tank's volume, nor the oil filter (2026-11-04 agent runs: such hints were noise).
+  [/dung tích(?!\s*(?:của\s*)?(?:nước|chất làm mát|làm mát|nhớt|dầu|nhiên liệu|bình|thùng|két|bồn))|displacement/i, ["disp", "bore"]], [/đường kính|hành trình|\bbore\b|stroke/i, ["bore"]], [/^(?!.*(?:đường kính|hành trình|\bbore\b|stroke)).*(?:xi ?lanh|xy ?lanh|cylinder)/i, ["cyl"]], [/(tiêu chuẩn|mức|cấp) khí thải|emission|\b(euro|tier|stage)\b/i, ["emission"]],
+  [/làm mát|cooling/i, ["cooling"]], [/^(?!.*\blọc\b).*(?:dầu bôi trơn|nhớt|lubricat)/i, ["oil"]], [/sóng hài|THD|harmonic/i, ["thd"]],
+  [/(ổn định|biến thiên|điều chỉnh|dao động) điện áp|voltage regulation/i, ["vreg"]], [/AVR/i, ["vreg"]], [/kích từ|excit/i, ["excit"]],
   [/hiệu suất|efficiency/i, ["eff"]], [/tiêu hao nhiên liệu|fuel consumption/i, ["fuel"]], [/độ ồn|noise/i, ["noise"]],
   [/kích thước|dimension/i, ["dims"]], [/khối lượng|trọng lượng|weight/i, ["weight"]], [/bồn dầu|bình (nhiên liệu|dầu)|fuel tank/i, ["tank"]],
   [/(ổn định|biến thiên|dao động) tần số|frequency regulation/i, ["freg"]], [/hệ số công suất|cos\s?[φϕø]/i, ["pf"]],
@@ -841,9 +842,9 @@ const CTL_WORDS = [
   [/điện áp/i, /voltage (measurement|range|sensing)|(generator|mains|bus|phase).{0,20}voltage|Vs?(L-?L|L-?N|ph-?ph|ph-?n)/i], [/dòng điện/i, /current (measurement|sensing|range)|CT|(generator|phase|load).{0,15}current/i], [/tần số|\bHz\b/i, /frequency/i],
   [/RS-?485/i, /RS-?485/i], [/RS-?232/i, /RS-?232/i], [/modbus/i, /modbus/i], [/USB/i, /USB/i], [/ethernet|TCP|mạng LAN/i, /ethernet|TCP/i],
   [/CAN|J1939|ECU/i, /J1939|CAN/i], [/GSM|SMS|GPRS/i, /GSM|SMS|GPRS/i], [/SNMP/i, /SNMP/i],
-  [/AMF|mất (điện )?lưới|ATS/i, /AMF|mains (\(utility\) )?fail|automatic mains/i], [/tự (động )?khởi động|auto start|từ xa/i, /auto start|remote start/i],
+  [/AMF|mất (điện )?lưới|ATS/i, /AMF|mains (\(utility\) )?fail|automatic mains/i], [/tự (động )?khởi động|auto start|(khởi động|start|dừng|stop) từ xa/i, /auto start|remote start/i],
   [/mật khẩu|password|PIN/i, /password|PIN\b|security/i], [/LCD|màn hình/i, /LCD|graphic display|display (size|type|resolution)/i], [/hòa đồng bộ|song song|paralle|đồng bộ/i, /synchron|load ?shar|parallel/i],
-  [/(mức|thấp) nhiên liệu|nhiên liệu (thấp|mức)/i, /fuel level|low fuel/i], [/chế độ|auto\/manual|start\/stop/i, /\bmanual\b|\bauto\b mode|stop\/reset/i],
+  [/(mức|thấp) nhiên liệu|nhiên liệu (thấp|mức)/i, /fuel level|low fuel/i], [/chế độ (hoạt động|vận hành|làm việc|điều khiển)|auto\s*\/\s*manual|manual\s*\/\s*auto|start\s*\/\s*stop/i, /\bmanual\b|\bauto\b mode|stop\/reset/i],
 ];
 // The measured quantities (a controller measures them; a protection or another function that names one is about more).
 const CTL_MEASURE = new Set(CTL_WORDS.filter(([re]) => ["điện áp", "dòng điện", "tần số", "công suất", "hệ số công suất"].some((w) => re.test(w))));
@@ -870,7 +871,11 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       // The function's own words first ("Điện áp ắc quy thấp": the battery, not any voltage; "Quá tải dòng điện": the
       // overload, not the current measurement): a measured quantity only when nothing more particular is named.
       const all = CTL_WORDS.filter(([re]) => re.test(what)), named = all.filter((w) => !CTL_MEASURE.has(w));
-      const words = (named.length ? named : all).map(([, en]) => en);
+      // A protection or alarm that names only a quantity ("Bảo vệ dừng máy: Điện áp máy phát cao/thấp") is about its
+      // over / under trip, not the measurement range (2026-11-04: hints quoted "Voltage Measurement", "Frequency Range").
+      const trip = /bảo vệ|cảnh báo|dừng máy|báo động|ngắt|alarm|shutdown|protect|trip/i.test(`${x.item} ${what}`);
+      const TRIP = [[/điện áp/i, /over\s?-?voltage|under\s?-?voltage|(high|low) voltage/i], [/tần số|\bHz\b/i, /(over|under)\s?-?frequency|(high|low) frequency/i], [/dòng điện|công suất|\bkW\b/i, /over\s?-?current|overload|over\s?-?power|reverse power/i]];
+      const words = named.length ? named.map(([, en]) => en) : trip ? TRIP.filter(([re]) => re.test(what)).map(([, en]) => en) : all.map(([, en]) => en);
       // Not the module's own specification (its supply voltage, current, test standards, clock battery).
       const own = /BS EN|IEC 600|Operating Current|Continuous Voltage|Cranking|Standby Current|Humidity|Vibration|Shock|RTC|Temperature Range|Cut[- ]?out|Dimensions/i;
       const lines = factsOf(c, "controller").filter((f) => f.line.length <= 240 && !own.test(f.line));
@@ -927,7 +932,13 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       const s = sup.get(src.supplierId);
       const tables = (s?.specTables || []).filter((t) => t.n === Number(src.n));
       const t = tables.find((x) => [...(x.header || []), ...x.rows].some((l) => norm(l) === norm(src.line)));
-      return t ? norm([...(t.header || []), src.line, t.title].join(" \n ")) : null;
+      if (!t) return null;
+      // A label table of one genset ("| Genset Model | FDK-Y1100V2/H1", "| Prime Power | 800KW/1000KVA", one page per
+      // model, catalog.js `lines`): every row of it is that genset's (2026-11-04: 28 checks of 3 fdk-energy configurations
+      // quoted those rows and were all turned down).
+      const one = new Set((built.engines || []).filter((e) => e.uses.some((u) => u.lines && u.supplierId === src.supplierId && Number(u.n) === Number(src.n))).map((e) => e.key));
+      if (one.size === 1) return norm([...(t.header || []), ...t.rows, t.title].join(" \n "));
+      return norm([...(t.header || []), src.line, t.title].join(" \n "));
     }
     // A controller (Khoa, 2026-11-01): one of the lines the supplier's `controllers` were read from (controllers.mjs).
     if (src.kind === "controller") {

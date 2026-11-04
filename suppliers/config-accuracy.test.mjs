@@ -773,3 +773,17 @@ test("the technical chapter by its title, not its number, and not the table of c
   t = technicalPart(`--- Chương V. Yêu cầu kỹ thuật\\a.pdf ---\nChương V. YÊU CẦU VỀ KỸ THUẬT\n${body}theo mẫu tại\nChương IV.\n${body}--- Chương V. Yêu cầu kỹ thuật\\Bản vẽ\\BV-01.pdf ---\nGhi chú`);
   assert.ok(t.startsWith("Chương V. YÊU CẦU VỀ KỸ THUẬT") && t.length > body.length * 2);
 });
+
+
+test("a label table of one genset (one page per model) is that genset's source, every row of it (2026-11-04 agent runs)", () => {
+  const rows = ["| Genset Model | FDK-Y500/H1", "| Engine Model | YC6T660-D31", "| Engine Brand | Yuchai", "| Prime Power | 400KW/500KVA", "| Output Frequency / Rated speed | 50Hz/1500rpm"];
+  const list = [{ id: "fdk", country: "CN", confidence: "medium", role: "genset_oem", specTables: [{ n: 1173, title: "Datasheet: Download", header: [], rows }] }];
+  const src = { kind: "catalog", supplierId: "fdk", n: 1173, line: "| Engine Model | YC6T660-D31" };
+  const hs = "Công suất liên tục ≥ 500 kVA";
+  const r = { requirements: [{ item: "Công suất liên tục", requirement: "≥ 500 kVA", quote: hs, part: "genset", level: "core" }],
+    configs: [{ rank: 1, engine: { model: "YC6T660-D31", make: "Yuchai", src }, genset: { model: "FDK-Y500/H1", src: { ...src, line: rows[0] } }, suppliers: [{ supplierId: "fdk", n: 1173, line: rows[1] }],
+      checks: [{ item: "Công suất liên tục", hsmtQuote: hs, offered: "500 kVA", sourceQuote: "| Prime Power | 400KW/500KVA", part: "genset", status: "met" }] }] };
+  const { problems, result } = check(r, { hsmtText: hs, suppliers: list, readWeb: () => null, origin: "cn" });
+  assert.deepEqual(problems, []);
+  assert.equal(result.configs[0].checks[0].status, "met");
+});
