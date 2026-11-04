@@ -126,6 +126,7 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .kpi .kv{font:600 26px/1.15 var(--f-mono);font-variant-numeric:tabular-nums}
 .kpi .ks{font-size:12px;color:var(--dim)}
 .kpi{cursor:pointer}
+.sizehead{margin:18px 0 4px;font-size:16px;border-top:1px solid var(--line);padding-top:12px}
 .kpi.bplev{cursor:default}.kpi.bplev .kv{font-size:20px}
 .kpi:hover,.kpi.on{border-color:var(--kc)}
 .kpi .kref{position:absolute;top:10px;right:10px;width:30px;height:30px}
@@ -2775,13 +2776,21 @@ function configTabHtml(t) {
     + h`<div class="field" style="margin:8px 0"><label for="cfgExtra">Yêu cầu khác</label><textarea id="cfgExtra" data-key="${key}" maxlength="2000" rows="2" placeholder="Không bắt buộc. Ví dụ: động cơ Weichai, đầu phát Stamford, bộ điều khiển Deep Sea DSE7320, hòa đồng bộ..." ${busy ? "disabled" : ""}>${cfgExtraOf(key)}</textarea></div>`
     + h`<div class="row actrow"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button></div>`
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
-    + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.originAuto ? ` (bot tự chọn vì HSMT ghi: “${prev.result.originAuto.quote}”)` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}</div>` + cfgResultHtml(prev.result) : "");
+    + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.originAuto ? ` (bot tự chọn vì HSMT ghi: “${prev.result.originAuto.quote}”)` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}</div>` + (prev.result.sizes ? cfgSizesHtml(prev.result) : cfgResultHtml(prev.result)) : "");
+}
+// Gói nhiều cỡ máy (Khoa, 2026-11-04): the bot suggests each size on its own (config-bot.mjs sizesOf, result.sizes);
+// each size's result is shown as a tender of one size, under its own heading.
+const sizeTitle = (z) => `Máy ${z.qty ? `${z.qty} x ` : ""}${z.label}`;
+function cfgSizesHtml(r) {
+  return h`<div class="note">Gói có ${r.sizes.length} cỡ máy (${r.sizes.map((z) => sizeTitle(z).slice(4)).join("; ")}): mỗi cỡ được gợi ý cấu hình riêng.${r.skipped?.length ? ` Chưa gợi ý các cỡ: ${r.skipped.join("; ")} (mỗi lượt tối đa ${r.sizes.length} cỡ).` : ""}</div>`
+    + r.sizes.map((z) => h`<h3 class="sizehead">${sizeTitle(z)}</h3>${raw(z.quote ? h`<div class="muted small">Đọc từ: <q>${z.quote}</q></div>` : "")}`
+      + (z.result ? cfgResultHtml(z.result) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`)).join("");
 }
 // The note can be closed (Khoa, 2026-11-01); it is kept closed in this browser until the next Tìm NCC result.
 // The suppliers it adds go into the suggested configurations in code, no agent (config-bot.mjs mergeFind, r.configMerge).
 function findResultHtml(f, key) {
   const r = f.result, ok = (r.added || []).filter((a) => !a.error);
-  return h`<div class="note${ok.length ? "" : " warn"}"><button class="ibtn" style="float:right" data-findx="${key}" data-at="${f.at}" aria-label="Ẩn thông báo Tìm NCC" title="Ẩn">×</button><b>Tìm NCC</b> <span class="muted small">lúc ${fmtDate(f.at)}${r.engine ? ` · ${r.engine}` : ""}${r.cap ? ` · công suất ${r.cap.value} ${r.cap.unit}` : ""}${r.extra ? ` · yêu cầu khác: ${r.extra}` : ""}</span>${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
+  return h`<div class="note${ok.length ? "" : " warn"}"><button class="ibtn" style="float:right" data-findx="${key}" data-at="${f.at}" aria-label="Ẩn thông báo Tìm NCC" title="Ẩn">×</button><b>Tìm NCC</b> <span class="muted small">lúc ${fmtDate(f.at)}${r.engine ? ` · ${r.engine}` : ""}${r.cap ? ` · công suất ${[].concat(r.cap).map((c) => `${c.value} ${c.unit}`).join(", ")}` : ""}${r.extra ? ` · yêu cầu khác: ${r.extra}` : ""}</span>${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
     ${raw(ok.length ? "" : '<p class="small">Chưa bổ sung được nhà cung cấp nào. Bấm Gợi ý lại để dùng danh mục hiện có.</p>')}
     ${raw(cfgAddedHtml({ catalogAdded: r.added }).replace(/^<div class="note">|<\/div>$/g, ""))}
     ${raw(ok.length ? (r.configMerge ? h`<p class="small"><b>Cấu hình gợi ý:</b> ${r.configMerge}.</p>` : '<p class="small muted">Bấm Gợi ý lại để chọn cấu hình với các nhà cung cấp vừa bổ sung.</p>') : "")}
@@ -3303,7 +3312,7 @@ function bidSuggestBox(t) {
   const err = !wait && workerReqError("bidpricereq", key);
   return h`${raw(quoteHtml(t))}<section>${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row actrow">
       <button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý giá đấu"}</button></div>
-    ${raw(prev?.result && !wait ? bidPriceHtml(prev, t) : "")}</section>`;
+    ${raw(prev?.result && !wait ? (prev.result.multi ? bidPriceMultiHtml(prev, t) : bidPriceHtml(prev, t)) : "")}</section>`;
 }
 function bpSampleRow(s, t, i) {
   const [lv, cls] = BP_LEVEL[s.level] || BP_LEVEL.unknown, one = s.bidders.length < 2, url = tenderHref(s.key);
@@ -3321,7 +3330,9 @@ function bidPriceHtml(doc, t) {
   const rest = (lv) => r.samples.filter((s) => s.level === lv);
   const table = (list) => h`<div class="tablewrap"><table class="suptable supcards bprows"><thead><tr><th>#</th><th style="width:40%">Gói đã có kết quả</th><th style="width:34%">Mức giống</th><th style="width:26%">Giá trúng</th></tr></thead><tbody>${raw(list.map((s, i) => bpSampleRow(s, t, i)).join(""))}</tbody></table></div>`;
   const what = st.basis === "same" ? `${st.n} gói giống` : `${st.n} gói giống hoặc gần (${st.same} giống, ${st.close} gần)`;
-  return h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(doc.at)} · công suất ${b.kva ? `${Math.round(b.kva).toLocaleString("vi-VN")} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"} · giá gói ${P ? fmtVnd(P) : "không rõ"} · Agent xét ${r.samples.length} gói gần nhất trong ${r.total} gói/phần có giá trúng</div>
+  // One size of a tender of several (bidPriceMultiHtml): its package price is the share code worked out.
+  const part = "qty" in b;
+  return h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(doc.at)} · công suất ${b.kva ? `${Math.round(b.kva).toLocaleString("vi-VN")} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"} · ${part ? "phần giá gói ước tính" : "giá gói"} ${P ? fmtVnd(P) : "không rõ"} · Agent xét ${r.samples.length} gói gần nhất trong ${r.total} gói/phần có giá trúng</div>
     ${raw(r.tender?.summary ? h`<p class="small"><b>Gói này:</b> ${r.tender.summary}${r.tender.points?.length ? ` (${r.tender.points.join("; ")})` : ""}</p>` : "")}
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
       : !st.levels.length ? h`<div class="note warn">Chưa đủ gói tương tự để gợi ý giá: chỉ có ${st.n} gói giống/gần có từ 2 nhà thầu trở lên (cần ít nhất 3). Xem các gói bên dưới để tự cân nhắc.</div>`
@@ -3335,6 +3346,19 @@ function bidPriceHtml(doc, t) {
     ${raw(st.comps.length ? h`<h4 style="margin:12px 0 4px">Nhà thầu hay dự các gói tương tự</h4>
     <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà thầu</th><th>Số lượt</th><th>Trúng</th><th>Giá thường bỏ (trung vị, % giá gói)</th></tr></thead><tbody>${raw(st.comps.map((c) => h`<tr data-bdopen="${c.id}" style="cursor:pointer"><td>${c.name}</td><td class="num" data-l="Số lượt">${c.n}</td><td class="num" data-l="Trúng">${c.wins}</td><td class="num" data-l="Giá thường bỏ">${c.ratio ? bpPct(c.ratio) : "—"}</td></tr>`).join(""))}</tbody></table></div>` : "")}
     <div class="muted small">Ước tính từ dữ liệu quá khứ; gói đánh giá theo kỹ thuật hoặc có nhà thầu bị loại thì giá thấp nhất chưa chắc trúng.</div>`;
+}
+
+// Gói nhiều cỡ máy (Khoa, 2026-11-04): bidprice-bot.mjs prices each size on its own, with the share of the package
+// price it worked out for it (result.sizes); the package's levels add the sizes' up (result.levels).
+function bidPriceMultiHtml(doc, t) {
+  const r = doc.result, P = r.basis.price;
+  return h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(doc.at)} · ${r.basis.capText} · giá gói ${P ? fmtVnd(P) : "không rõ"}</div>
+    ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
+      : r.levels.length ? h`<h4 style="margin:12px 0 4px">Cả gói (cộng các cỡ máy)</h4><div class="kpis" style="margin:8px 0">${raw(r.levels.map((l) => h`<div class="kpi bplev"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${l.ratio ? bpPct(l.ratio) + " giá gói" : ""}</span></div>`).join(""))}</div>`
+      : '<div class="note warn">Chưa đủ gói tương tự cho mọi cỡ máy nên chưa cộng được giá cả gói. Xem từng cỡ bên dưới.</div>')}
+    ${raw((r.notes || []).length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}`
+    + r.sizes.map((z) => h`<h3 class="sizehead">${sizeTitle(z)} <span class="muted small">· ${Math.round(100 * z.share)}% giá gói${z.result?.basis.price ? ` ≈ ${fmtVnd(z.result.basis.price)}` : ""}</span></h3>`
+      + (z.result ? bidPriceHtml({ at: doc.at, result: z.result }, t) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`)).join("");
 }
 
 // ---------- Modal ----------

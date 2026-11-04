@@ -12,6 +12,10 @@ Không tìm trên internet.
   Dòng cuối mỗi mục, "So cấu hình (code)", là code so hãng và hạng mục (vỏ cách âm, ATS, bồn dầu ngoài...) hai gói nêu,
   chỉ để gợi ý chỗ cần đọc: code chỉ dò chữ, có thể sót hay nhầm. Không chép `quote` từ dòng này.
 
+Nếu `input.md` có mục "Gói có nhiều cỡ máy": gói này mua máy nhiều cỡ và lượt này chỉ so MỘT cỡ (Khoa, 2026-11-04).
+Tóm tắt và xếp mức theo máy cỡ đó: gói cũ chỉ có máy cỡ đó là giống/gần như bình thường, không xếp "khác" chỉ vì gói này
+còn máy cỡ khác; gói cũ nhiều cỡ máy thì xếp "khác" trừ khi các cỡ của nó gần như trùng các cỡ của gói này.
+
 ## Việc cần làm
 1. Đọc `input.md`, tóm tắt cấu hình và phạm vi của gói này: công suất (liên tục/dự phòng), số máy, hãng hoặc xuất xứ
    HSMT yêu cầu hoặc dự kiến chào (G7 / Trung Quốc / lắp ráp Việt Nam...), các hạng mục đi kèm có giá đáng kể (vỏ cách

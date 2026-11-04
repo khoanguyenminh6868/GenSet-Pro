@@ -131,6 +131,81 @@ export function capacity(texts) {
   }
   return null;
 }
+// ---------- Gói nhiều cỡ máy (Khoa, 2026-11-04) ----------
+// A tender of gensets of several sizes ("2 x 250 kVA và 1 x 500 kVA") gets Gợi ý cấu hình and Gợi ý giá đấu for each
+// size. The sizes come from the analysis' generatorCapacity (its prompt writes "2 x 250 kVA"), else the tender's name.
+// Each clause (split at ; , ( + and "và") gives its first figure; a clause naming a transformer, UPS or stabilizer gives
+// none, and a clause of figures only goes with the one before it. Standby figures count only when no prime or unlabelled
+// one is given, maximum ones only when nothing else is ("Prime ≥ 650kVA; Standby ≥ 700kVA" and "2000 kVA dự phòng (công
+// suất tối đa 2250 kVA)" are one set). Figures within 12% of each other are one size (163 kVA and an unlabelled 180;
+// 400 and 450 kVA are two; 250 kVA and 200 kW are one), and so is a kW figure within 15% of a kVA one ("12 kW / 12 kVA",
+// a single-phase set). Quantity: "2 x 250 kVA", "02 máy 250 kVA", "(01 máy)", else null. Checked against the 1,556
+// tenders of bidhist (2026-11-04): about 250 of several sizes, most of them read as the analysis wrote them.
+const SIZE_SPLIT = /[;(\n]|,(?!\d)|\s(?:và|and|\+)\s/i, SIZE_FIG = /(\d{1,3}(?:\.\d{3})+(?!\d)|\d+(?:[.,]\d+)?)\s*(kVA|kW|MVA|MW)\b/i;
+const SIZE_OTHER = /bi[ếe]n [áa]p|\bTBA\b|\bMBA\b|\bUPS\b|[ổo]n [áa]p|t[ụu] b[ùu]/i;
+const SIZE_STANDBY = /d[ựu] ph[òo]ng|standby|stanby|emergency|\bESP\b/i, SIZE_MAX = /t[ốo]i [đd]a|c[ựu]c [đd][ạa]i|\bmax/i;
+const SIZE_PRIME = /li[êe]n t[ụu]c|prime|\bPRP\b|continuous|c[ơo] b[ảa]n|định mức/i;
+const SIZE_QTY_X = /(?:^|[^\d.,])(\d{1,3})\s*(?:x|×|\*)\s*$/i, SIZE_QTY_N = /(?:^|[^\d.,])(\d{1,3})\s*(?:máy|tổ máy|bộ|chiếc|cái|tổ)\b(?![\s\S]*\d\s*(?:máy|tổ máy|bộ|chiếc|cái|tổ)\b)/i;
+// An engine's shaft power ("động cơ diesel 91 kW", "24hp, công suất >=15.2kw") and what the analysis says another text
+// wrote ("tên gói ghi 2000 kVA", "mục giới thiệu ghi 12KVA") are not a size.
+const SIZE_ENGINE = /đ[ộo]ng c[ơo]|engine|\bhp\b|tr[ụu]c khu[ỷy]u/i, SIZE_ELSEWHERE = /tên gói|tiêu đề|giới thiệu/i;
+export const MAX_SIZES = 4;
+export function sizesOf(texts, name = "") {
+  for (const raw of texts) {
+    const t = noTolerance(String(raw || "").normalize("NFC")).replace(/m[áa]y ph[áa]t(?: đi[ệe]n)?(?: di[eê]s[eê]l)? d[ựu] ph[òo]ng|ngu[ồo]n(?: đi[ệe]n)? d[ựu] ph[òo]ng/gi, "máy phát")
+      // "≥275/220 kVA/kW" and "10.0/11 kW (liên tục/tối đa)": the first figure with its own unit.
+      .replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\s*\/\s*(kVA|kW)\b/gi, "$1 $3 / $2 $4").replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\b(?!\s*\/)/gi, "$1 $3 / $2 $3");
+    const figs = [];
+    let other = false, rank = 0, closed = true;
+    for (const clause of t.split(SIZE_SPLIT)) {
+      // A clause of figures only ("Dự phòng: 550 kVA; 450 kVA") goes with the one before it, unless that one closed a
+      // bracket or this one starts a new item ("…dự phòng ≥ 693KVA) + 1 x 800 kVA", "; 41 x 100 kVA").
+      const m = clause.match(SIZE_FIG), words = /[a-zà-ỹ]{2}/i.test(clause.replace(new RegExp(SIZE_FIG.source, "gi"), ""));
+      if (words || closed || /^\W*\d{1,3}\s*[x×]/i.test(clause)) { other = SIZE_OTHER.test(clause); rank = SIZE_PRIME.test(clause) ? 0 : SIZE_STANDBY.test(clause) ? 1 : SIZE_MAX.test(clause) ? 2 : 0; }
+      closed = /\)\s*$/.test(clause);
+      if (!m || other || (m[2].toLowerCase() === "kw" && SIZE_ENGINE.test(clause)) || SIZE_ELSEWHERE.test(clause)) continue;
+      const u = m[2].toLowerCase(), v = numOf(m[1]), kva = u === "kw" ? v / 0.8 : u === "mva" ? v * 1000 : u === "mw" ? v * 1250 : v;
+      if (!(kva >= 1)) continue;
+      // "Tổng 97 máy: 27 x 15 kVA": 27, not the total.
+      const before = clause.slice(0, m.index), q = before.match(SIZE_QTY_X) || before.match(SIZE_QTY_N) || clause.slice(m.index + m[0].length).match(/^\D{0,6}(\d{1,3})\s*(?:máy|tổ máy|bộ|chiếc|cái)\b/i);
+      const qty = q && !/tổng\W*$/i.test(before.slice(0, q.index + q[0].indexOf(q[1]))) ? Number(q[1]) : null;
+      figs.push({ kva, v, cap: { value: v, unit: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW" }, qty, rank, quote: clause.trim() });
+    }
+    const best = Math.min(...figs.map((f) => f.rank));
+    let use = figs.filter((f) => f.rank === best);
+    use = use.filter((f) => f.cap.unit !== "kW" || !use.some((g) => g.cap.unit === "kVA" && Math.abs(g.v - f.v) <= g.v * 0.15));
+    if (!use.length) continue;
+    const groups = [];
+    for (const f of [...use].sort((a, b) => a.kva - b.kva)) {
+      const g = groups.at(-1);
+      if (g && f.kva <= g[0].kva * 1.12) g.push(f); else groups.push([f]);
+    }
+    // A size in kVA as written (the catalog's unit); MVA / MW as kVA / kW.
+    let sizes = groups.map((g) => {
+      const f = g.find((x) => x.cap.unit === "kVA" || x.cap.unit === "MVA") || g[0], big = f.cap.unit.startsWith("M");
+      const cap = big ? { value: f.cap.value * 1000, unit: f.cap.unit === "MVA" ? "kVA" : "kW" } : f.cap;
+      return { cap, kva: Math.round(g[0].kva * 100) / 100, qty: Math.max(0, ...g.map((x) => x.qty || 0)) || null, label: `${cfgNumOf(cap.value)} ${cap.unit}`, quote: g[0].quote.slice(0, 200) };
+    });
+    // Another rating of the same set: "4 x 4000 kVA ... liên tục ≥ 3250kVA" (a size with no quantity up to 30% below one
+    // with a quantity), "Mua sắm 01 Máy phát điện 400KVA" read as 320 and 400 kVA (two sizes within 30%, neither with a
+    // quantity, one the single power the name gives).
+    const near = (a, b) => Math.max(a.kva, b.kva) <= Math.min(a.kva, b.kva) * 1.3;
+    if (sizes.some((s) => s.qty)) sizes = sizes.filter((s) => s.qty || !sizes.some((o) => o.qty && o.kva > s.kva && near(o, s)));
+    const nameK = (String(name || "").match(/\d[\d.,]*\s*(?:kva|kw)\b/gi) || []).length === 1 ? BP.kvaOf(name) : null, named = nameK && sizes.find((s) => !s.qty && Math.abs(s.kva - nameK) <= nameK * 0.05);
+    if (named) sizes = sizes.filter((s) => s === named || s.qty || !near(s, named));
+    return sizes;
+  }
+  return [];
+}
+const cfgNumOf = (v) => Number(v).toLocaleString("vi-VN", { maximumFractionDigits: 2 });
+export const sizeText = (s) => `${s.qty ? `${s.qty} x ` : ""}${s.label}`;
+const sameSize = (a, b) => a?.cap && b?.cap && a.cap.unit === b.cap.unit && Math.abs(a.cap.value - b.cap.value) < 1e-6;
+// The sizes of a tender: from its analysis, else its name.
+export async function sizesFor(key, bidName) {
+  const a = (await doc("analysis", key).catch(() => null))?.result;
+  const name = bidName || a?.keyInfo?.bidName || "";
+  return sizesOf([a?.keyInfo?.generatorCapacity, name], name);
+}
 // The technical part of the HSMT. 2026-11-04 regression over the 33 whole HSMT on the web: 10 had no "Chương V. Yêu
 // cầu" (the technical chapter is III in older E-HSMT, "Chương IV. Yêu cầu về phạm vi cung cấp" in an HSYC, OCR writes
 // "YÊU CÂU VE KỸ THUẬT"), and the first match was often the table of contents. Now: every chapter or part heading
@@ -775,14 +850,15 @@ const formulasMd = () => "\n## Công thức được phép\n"
   + Object.entries(CONV.FORMULAS).map(([id, f]) => `- \`${id}\`: ${f.label} — đầu vào ${f.inputs.map((n) => `\`${n}\``).join(", ")}; cơ sở: ${f.basis}${f.standard ? `; giá trị chuẩn: ${Object.entries(f.standard).map(([n, st]) => `\`${n}\` = ${st.min}–${st.max} ${st.unit} (${st.basis})`).join("; ")}` : ""}`).join("\n") + "\n";
 
 // `given`: the supplier DB the run already read (run reads it once; check() then uses the same records the agent saw).
-async function prep(key, dir, reqData = {}, given = null) {
+// `multi` ({ size, sizes }, sizesOf): a tender of several sizes, this run for one of them.
+async function prep(key, dir, reqData = {}, given = null, multi = null) {
   fs.mkdirSync(path.join(dir, "web"), { recursive: true });
   // GENBID_LOCAL_SUPPLIERS=1: the supplier DB of this checkout (cn/*.json) instead of the web's, to try records not yet published.
   const localSuppliers = () => fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => ({ data: JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8")) })).filter((d) => d.data.status !== "incomplete");
   const [analysis, { hsmt, parts, text }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : given ? given.map((data) => ({ data })) : api("kind=docs&coll=supplier")]);
   fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
   const a = analysis?.result;
-  const cap = capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
+  const cap = multi ? multi.size.cap : capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
   const all = suppliers.map((d) => d.data), hints = hintsOf(text, extraOf(reqData));
   // Xuất xứ: "Tất cả" (the web's default) and a request from Sync follow the HSMT: the G7 / G20 it requires, else every
   // origin (Khoa, 2026-11-04). Trung Quốc, G7, G20 or Khác chosen on the web stays.
@@ -804,6 +880,9 @@ async function prep(key, dir, reqData = {}, given = null) {
   if (reuse) fs.writeFileSync(path.join(dir, "requirements.json"), JSON.stringify(prevReq.requirements.map(({ item, requirement, quote, from, part, level }) => ({ item, requirement, quote, ...(from ? { from } : {}), part, level })), null, 1), "utf8");
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
+    ...(multi?.find ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`, `Tìm nhà cung cấp cho mọi cỡ máy này (danh mục trong catalog.md chỉ xếp cho máy ${multi.size.label}).`]
+    : multi ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`,
+      `Lượt này CHỈ gợi ý cấu hình cho máy ${sizeText(multi.size)} (code đọc từ: "${multi.size.quote}"); các cỡ khác có lượt riêng. Chỉ ghi các yêu cầu của HSMT áp dụng cho máy này hoặc chung cho mọi máy của gói; bỏ yêu cầu chỉ dành cho máy cỡ khác (công suất, tiêu hao nhiên liệu, dung tích, kích thước... của máy khác).`] : []),
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`,
     `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`, "",
     reuse ? "## Yêu cầu đã đọc lần trước: requirements.json (HSMT và Yêu cầu khác không đổi) — dùng nguyên danh sách đó, bỏ qua bước 1." : "", "",
@@ -819,7 +898,7 @@ async function prep(key, dir, reqData = {}, given = null) {
     "## Phần kỹ thuật của HSMT", technicalPart(text),
   ].filter((l) => l !== null).join("\n"), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "config-prompt.md"), "utf8") + formulasMd(), "utf8");
-  return { cap, origin, originAuto: auto ? { from: asked, origin: auto.origin, quote: auto.quote } : null, reqHash, reused: !!reuse, candidates: top.length, engines: cat.engines.length, alternators: cat.alternators.length };
+  return { cap, size: multi?.size || null, origin, originAuto: auto ? { from: asked, origin: auto.origin, quote: auto.quote } : null, reqHash, reused: !!reuse, candidates: top.length, engines: cat.engines.length, alternators: cat.alternators.length };
 }
 
 // ---------- save (agent: internet sources) ----------
@@ -1342,9 +1421,14 @@ export async function addToCatalog(dir, key, suppliers, opts = {}) {
 }
 
 // ---------- run ----------
+const AGENT_INPUT = "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json (và newCatalog.json khi prompt.md yêu cầu). Chạy không người trông, không ai trả lời câu hỏi.";
+// A tender of several sizes (sizesOf, Khoa 2026-11-04): one agent per size, at most MAX_SIZES, all at once; their
+// internet finds join the catalog one size after another (each its own branch), then each is checked like a tender
+// of one size. configmatch/<key> then holds result.sizes = [{ cap, kva, qty, label, quote, result | error }], each
+// result as for one size; origin, originAuto and extra are the run's.
 async function answer(req, suppliers) {
-  const key = req.key, dir = path.join(os.tmpdir(), "genbid-config", key);
-  fs.rmSync(dir, { recursive: true, force: true });
+  const key = req.key, base = path.join(os.tmpdir(), "genbid-config", key);
+  fs.rmSync(base, { recursive: true, force: true });
   // configreq keeps the request's own fields and gets doneAt (+ error); configmatch carries the verified result.
   const done = ({ result, error }) => {
     const at = new Date().toISOString();
@@ -1352,25 +1436,52 @@ async function answer(req, suppliers) {
     return post([...(result ? [{ coll: "configmatch", id: key, data: { at, result } }] : []), { coll: "configreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
-    const info = await prep(key, dir, { ...req, prevResult: (await doc("configmatch", key).catch(() => null))?.result }, suppliers);
-    // Same minimal setup as the bot's agent (GenBid-Bot.ps1), plus web search for step 3 of config-prompt.md.
-    const r = await runClaude(dir, "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json (và newCatalog.json khi prompt.md yêu cầu). Chạy không người trông, không ai trả lời câu hỏi.");
-    fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
-    if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
-    // Internet finds that pass verify.mjs join the catalog first, so the configuration's suppliers can point at them.
-    const { added, records } = await addToCatalog(dir, key, suppliers).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
-    const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
-    const { result, problems } = checkDir(dir, all, added, info.origin);
-    if (info.originAuto) result.originAuto = info.originAuto;
-    if (extraOf(req)) result.extra = extraOf(req);
-    // Read again next time only when the HSMT or Yêu cầu khác changed (prep, requirements.json).
-    if (!(result.requirements || []).some((r) => r.unverified)) result.reqHash = info.reqHash;
+    const prev = (await doc("configmatch", key).catch(() => null))?.result;
+    const found = await sizesFor(key, req.bidName), sizes = found.length > 1 ? found.slice(0, MAX_SIZES) : [null];
+    const runs = await Promise.all(sizes.map(async (size, i) => {
+      const dir = size ? path.join(base, String(i + 1)) : base, tag = size ? `${key}-${i + 1}` : key;
+      // Gợi ý lại reuses the requirements read last time for the same size (prep, requirements.json).
+      const prevResult = size ? prev?.sizes?.find((x) => sameSize(x, size))?.result : prev?.sizes ? null : prev;
+      const info = await prep(key, dir, { ...req, prevResult }, suppliers, size && { size, sizes: found });
+      const r = await runClaude(dir, AGENT_INPUT);
+      fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${tag}.log`), `${r.stdout || ""}
+${r.stderr || ""}`, "utf8");
+      return { dir, info, r, size, i };
+    }));
+    let all = suppliers;
+    const outs = [];
+    for (const { dir, info, r, size, i } of runs) {
+      try {
+        if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
+        // Internet finds that pass verify.mjs join the catalog first, so the configuration's suppliers can point at them.
+        const opts = size ? { branch: `catalog/${key.toLowerCase()}-${i + 1}`, title: `Danh mục: bổ sung từ Gợi ý cấu hình ${key} (máy ${size.label})` } : {};
+        const { added, records } = await addToCatalog(dir, key, all, opts).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
+        all = [...all.filter((s) => !records.some((x) => x.id === s.id)), ...records];
+        const { result, problems } = checkDir(dir, all, added, info.origin);
+        if (info.originAuto) result.originAuto = info.originAuto;
+        if (extraOf(req)) result.extra = extraOf(req);
+        // Read again next time only when the HSMT or Yêu cầu khác changed (prep, requirements.json).
+        if (!(result.requirements || []).some((x) => x.unverified)) result.reqHash = info.reqHash;
+        outs.push({ size, result, problems });
+      } catch (e) {
+        if (!size) throw e;
+        outs.push({ size, error: e.message || String(e) });
+      }
+    }
+    let result;
+    if (sizes[0]) {
+      const one = outs.find((o) => o.result)?.result || {};
+      result = { origin: one.origin, ...(one.originAuto ? { originAuto: one.originAuto } : {}), ...(extraOf(req) ? { extra: extraOf(req) } : {}),
+        sizes: outs.map((o) => ({ cap: o.size.cap, kva: o.size.kva, qty: o.size.qty, label: o.size.label, quote: o.size.quote, ...(o.result ? { result: o.result } : { error: o.error }) })),
+        ...(found.length > MAX_SIZES ? { skipped: found.slice(MAX_SIZES).map(sizeText) } : {}) };
+      if (!outs.some((o) => o.result)) throw new Error(outs.map((o) => `Máy ${o.size.label}: ${o.error}`).join(" "));
+    } else result = outs[0].result;
     await done({ result, error: "" });
-    console.log(`${key}: ${result.configs.length} cấu hình${problems.length ? `, ${problems.length} điểm chưa khớp nguồn` : ""}`);
+    console.log(`${key}: ${outs.map((o) => `${o.size ? `máy ${o.size.label}: ` : ""}${o.result ? `${o.result.configs.length} cấu hình${o.problems.length ? `, ${o.problems.length} điểm chưa khớp nguồn` : ""}` : `lỗi ${o.error}`}`).join("; ")}`);
   } catch (e) {
     await done({ error: e.message || String(e) }).catch(() => {});
     console.log(`${key}: lỗi ${e.message}`);
-  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+  } finally { fs.rmSync(base, { recursive: true, force: true }); }
   if (req.auto) await autoBidprice(req).catch((e) => console.log(`${key}: chưa gửi được Gợi ý giá đấu (${e.message})`));
 }
 // A new "Máy phát điện" tender from Sync (configreq auto, genbid-sync.js; Khoa, 2026-11-03): Gợi ý giá đấu follows Gợi ý
@@ -1438,8 +1549,11 @@ function runGemini(dir, input) {
     p.stdin.end(input);
   });
 }
+// A tender of several sizes: one search for all of them (cap: the list of sizes), merged into each size's suggestion.
 async function findPrep(key, dir, req, suppliers) {
-  const info = await prep(key, dir, req, suppliers);
+  const found = await sizesFor(key, req.bidName), sizes = found.slice(0, MAX_SIZES);
+  const info = await prep(key, dir, req, suppliers, sizes.length > 1 ? { size: sizes[0], sizes, find: true } : null);
+  if (sizes.length > 1) info.cap = sizes.map((x) => x.cap);
   // Tìm NCC must see every supplier in the system (not only those of the candidate rows), so as not to suggest them again.
   const cat = fs.readFileSync(path.join(dir, "catalog.md"), "utf8"), cut = cat.indexOf("\n\n# Nhà cung cấp trong hệ thống");
   fs.writeFileSync(path.join(dir, "catalog.md"), (cut >= 0 ? cat.slice(0, cut) : cat) + "\n\n" + suppliersMd(JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8"))), "utf8");
@@ -1457,7 +1571,10 @@ async function findPrep(key, dir, req, suppliers) {
   return info;
 }
 // A product line of the record that covers the tender's power, in the tender's unit (95% to 140%, as catalog.md).
+const capStr = (c) => (Array.isArray(c) ? c : c ? [c] : []).map((x) => `${x.value} ${x.unit}`).join(", ");
+// cap may be a list (a tender of several sizes): a line that covers any of them.
 export function fitsCap(rec, cap) {
+  if (Array.isArray(cap)) return cap.some((c) => fitsCap(rec, c));
   if (!cap) return (rec.productLines || []).some((p) => p.power);
   return (rec.productLines || []).some((p) => p.power?.unit === cap.unit && p.power.min <= cap.value * 1.4 && p.power.max >= cap.value * 0.95);
 }
@@ -1556,19 +1673,28 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
 async function mergeFindIntoConfig(key, records, { cap, origin, suppliers = records }) {
   const prev = await doc("configmatch", key);
   if (!prev?.result) return null;
-  const result = JSON.parse(JSON.stringify(prev.result)), out = mergeFind(result, records, { cap, origin: result.origin || origin });
-  if (!out.joined.length && !out.created.length) return out;
-  const at = new Date().toISOString().slice(0, 16).replace("T", " ");
-  result.notes = [...(result.notes || []), `Tìm NCC lúc ${at} UTC: ${mergeText(out)}, bằng code từ dòng bảng của nhà cung cấp.`];
-  // The new configurations are checked against the stored requirements by a small agent (Khoa, 2026-11-02).
-  if (out.created.length) {
-    const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
-    out.checked = await checkNewConfigs(key, result, out.created.map((c) => c.rank), all, cap).catch((e) => ({ error: e.message }));
-    result.notes.push(out.checked.error ? `Chưa đối chiếu được cấu hình mới với HSMT: ${out.checked.error}` : `Đã đối chiếu ${out.checked.checked} cấu hình mới với ${result.requirements.length} yêu cầu của HSMT${out.checked.problems ? `, ${out.checked.problems} điểm chưa khớp nguồn` : ""}.`);
+  const whole = JSON.parse(JSON.stringify(prev.result));
+  // A tender of several sizes: each size's suggestion with its own power (Gợi ý nhiều cỡ máy).
+  const parts = whole.sizes ? whole.sizes.filter((x) => x.result).map((x) => ({ result: x.result, cap: x.cap, label: x.label })) : [{ result: whole, cap: Array.isArray(cap) ? null : cap }];
+  const outs = [];
+  for (const part of parts) {
+    const result = part.result, out = mergeFind(result, records, { cap: part.cap, origin: result.origin || whole.origin || origin });
+    outs.push({ ...out, label: part.label });
+    if (!out.joined.length && !out.created.length) continue;
+    const at = new Date().toISOString().slice(0, 16).replace("T", " ");
+    result.notes = [...(result.notes || []), `Tìm NCC lúc ${at} UTC: ${mergeText(out)}, bằng code từ dòng bảng của nhà cung cấp.`];
+    // The new configurations are checked against the stored requirements by a small agent (Khoa, 2026-11-02).
+    if (out.created.length) {
+      const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
+      out.checked = await checkNewConfigs(key, result, out.created.map((c) => c.rank), all, part.cap).catch((e) => ({ error: e.message }));
+      result.notes.push(out.checked.error ? `Chưa đối chiếu được cấu hình mới với HSMT: ${out.checked.error}` : `Đã đối chiếu ${out.checked.checked} cấu hình mới với ${result.requirements.length} yêu cầu của HSMT${out.checked.problems ? `, ${out.checked.problems} điểm chưa khớp nguồn` : ""}.`);
+    }
+    rankConfigs(result);
   }
-  rankConfigs(result);
-  await post([{ coll: "configmatch", id: key, data: { ...prev, at: new Date().toISOString(), result } }]);
-  return out;
+  if (outs.some((o) => o.joined.length || o.created.length)) await post([{ coll: "configmatch", id: key, data: { ...prev, at: new Date().toISOString(), result: whole } }]);
+  if (!whole.sizes) return outs[0];
+  // One summary for the sizes: mergeText reads joined / created / checked; each line says its size.
+  return { joined: outs.flatMap((o) => o.joined.map((j) => ({ ...j, label: o.label }))), created: outs.flatMap((o) => o.created.map((c) => ({ ...c, label: o.label }))), checked: outs.reduce((a, o) => ({ checked: a.checked + (o.checked?.checked || 0) }), { checked: 0 }) };
 }
 // Tìm NCC: the configurations made in code for the suppliers found have only their power read. A small agent
 // (check-prompt.md) checks each against the requirements stored with the suggestion, reading only those
@@ -1618,7 +1744,7 @@ export function mergeChecked(result, got, { hsmtText, suppliers, origin }) {
   }
   return { checked, problems: problems.length };
 }
-const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.joined.length && !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : [m.joined.length && `bổ sung ${m.joined.map((j) => `${j.supplierId} vào cấu hình #${j.rank}`).join(", ")}`, m.created.length && `thêm ${m.created.length} cấu hình mới${m.checked?.checked ? ` (đã đối chiếu HSMT ${m.checked.checked} cấu hình)` : " (chưa đối chiếu đủ HSMT)"}, mỗi cấu hình chỉ có nhà cung cấp vừa tìm được (${m.created.map((c) => c.supplierId).join(", ")})`].filter(Boolean).join("; "));
+const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.joined.length && !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : [m.joined.length && `bổ sung ${m.joined.map((j) => `${j.supplierId} vào cấu hình #${j.rank}${j.label ? ` máy ${j.label}` : ""}`).join(", ")}`, m.created.length && `thêm ${m.created.length} cấu hình mới${m.checked?.checked ? ` (đã đối chiếu HSMT ${m.checked.checked} cấu hình)` : " (chưa đối chiếu đủ HSMT)"}, mỗi cấu hình chỉ có nhà cung cấp vừa tìm được (${m.created.map((c) => c.supplierId).join(", ")})`].filter(Boolean).join("; "));
 
 async function find(req, suppliers) {
   const key = req.key, tried = [];
@@ -1638,13 +1764,13 @@ async function find(req, suppliers) {
         if (r.error && !fs.existsSync(path.join(dir, "newCatalog.json"))) { tried.push({ engine: ENGINE[engine], error: r.error }); continue; }
         const checked = await findCheck(dir, suppliers, cap), fit = checked.filter((c) => !c.errors.length && c.fits);
         const info = (() => { try { return JSON.parse(fs.readFileSync(path.join(dir, "find.json"), "utf8")); } catch { return {}; } })();
-        const dropped = checked.filter((c) => !fit.includes(c)).map((c) => ({ supplierId: c.id, error: c.errors.length ? `verify.mjs: ${c.errors.slice(0, 3).join("; ")}` : `không có dòng sản phẩm đúng công suất ${cap ? `${cap.value} ${cap.unit}` : ""}` }));
+        const dropped = checked.filter((c) => !fit.includes(c)).map((c) => ({ supplierId: c.id, error: c.errors.length ? `verify.mjs: ${c.errors.slice(0, 3).join("; ")}` : `không có dòng sản phẩm đúng công suất ${capStr(cap)}` }));
         if (!fit.length) { tried.push({ engine: ENGINE[engine], error: info.summary || "không tìm được nhà cung cấp nào qua được kiểm tra", dropped }); continue; }
         // Only the suppliers that passed and fit go to the catalog.
         const ids = new Set(fit.map((c) => c.id));
         fs.writeFileSync(path.join(dir, "newCatalog.json"), JSON.stringify(JSON.parse(fs.readFileSync(path.join(dir, "newCatalog.json"), "utf8")).filter((e) => ids.has(e?.id)), null, 1), "utf8");
         const { added, records } = await addToCatalog(dir, key, suppliers, { branch: `ncc/${key.toLowerCase()}-${engine}`, title: `Nhà cung cấp: Tìm NCC gói ${key} (${ENGINE[engine]})`,
-          body: `Nút Tìm NCC ở tab Cấu hình gợi ý gói ${key}: ${ENGINE[engine]} tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật${cap ? ` (${cap.value} ${cap.unit})` : ""}. Bản ghi đã qua verify.mjs và đã đăng lên web.` });
+          body: `Nút Tìm NCC ở tab Cấu hình gợi ý gói ${key}: ${ENGINE[engine]} tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật${cap ? ` (${capStr(cap)})` : ""}. Bản ghi đã qua verify.mjs và đã đăng lên web.` });
         if (!added.some((a) => !a.error)) { tried.push({ engine: ENGINE[engine], error: "bản ghi không qua được verify.mjs của repo", dropped: added }); continue; }
         const merged = await mergeFindIntoConfig(key, records, { cap, origin, suppliers }).catch((e) => ({ error: e.message }));
         const configMerge = merged?.error ? `chưa bổ sung được vào cấu hình gợi ý: ${merged.error}` : mergeText(merged);
@@ -1714,7 +1840,12 @@ async function runAll(lock) {
 const cmd = process.argv[2];
 if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   if (cmd === "save") console.log(await save(arg("dir", "."), arg("url")));
-  else if (cmd === "prep") console.log(JSON.stringify(await prep(arg("key"), arg("out"), { bidName: arg("bid-name"), origin: arg("origin") })));
+  else if (cmd === "prep") {
+    // --size N: the N-th size (from 1) of a tender of several, as run does it.
+    const sizes = arg("size") ? await sizesFor(arg("key"), arg("bid-name")) : [], size = sizes[Number(arg("size")) - 1];
+    if (arg("size") && !size) { console.error(`Gói không có cỡ máy thứ ${arg("size")} (đọc được: ${sizes.map(sizeText).join("; ") || "không"})`); process.exit(2); }
+    console.log(JSON.stringify(await prep(arg("key"), arg("out"), { bidName: arg("bid-name"), origin: arg("origin") }, null, size ? { size, sizes } : null)));
+  }
   else if (cmd === "check") {
     // Offline in a folder made by prep (suppliers.json, meta.json); elsewhere the supplier DB is read from the web.
     const dir = arg("dir", "."), local = (f) => (fs.existsSync(path.join(dir, f)) ? JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) : null);
@@ -1727,7 +1858,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     // Offline in a folder made for Tìm NCC (suppliers.json, meta.json).
     const dir = arg("dir", "."), meta = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
     const res = await findCheck(dir, JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8")), meta.cap);
-    for (const c of res) console.log(`${c.id || "?"}: ${c.errors.length ? `KHÔNG QUA — ${c.errors.join("; ")}` : "qua verify.mjs"}${c.errors.length ? "" : c.fits ? ", phù hợp công suất" : `, CHƯA có dòng sản phẩm phù hợp công suất${meta.cap ? ` ${meta.cap.value} ${meta.cap.unit}` : ""}`}`);
+    for (const c of res) console.log(`${c.id || "?"}: ${c.errors.length ? `KHÔNG QUA — ${c.errors.join("; ")}` : "qua verify.mjs"}${c.errors.length ? "" : c.fits ? ", phù hợp công suất" : `, CHƯA có dòng sản phẩm phù hợp công suất ${capStr(meta.cap)}`}`);
     if (!res.length) console.log("newCatalog.json rỗng.");
   } else if (cmd === "post") {
     const dir = arg("dir", "."), { result } = checkDir(dir, (await api("kind=docs&coll=supplier")).map((d) => d.data));
