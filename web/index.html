@@ -142,6 +142,7 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .seg .c{font:600 11.5px var(--f-mono)}
 .seg .c:not([class*="st-"]){color:var(--brand)}
 .seg button[aria-selected="true"] .c:not([class*="st-"]){color:var(--brand)}
+.seg.cattabs{margin-bottom:10px}
 
 /* Grid */
 .gridcard{padding:0;overflow:hidden}
@@ -388,7 +389,7 @@ details.sec>div{margin-top:10px}
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="syncNewBtn" aria-label="Chỉ lấy gói mới" title="Chỉ lấy các gói mới nhất từ muasamcong (so với gói mới nhất trong hệ thống), không kiểm tra hay cập nhật gói cũ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" id="bdBtn" title="Các nhà thầu gói máy phát điện trên muasamcong: gói đã dự, giá dự thầu, trúng hay không"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.7.8 2.7 2.6 3 5.2"/></svg>Nhà thầu</button><button class="btn sm" data-catopen="engine" title="Danh mục động cơ, đầu phát, bộ điều khiển rút từ dữ liệu của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Động cơ</button></div>
+        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" id="bdBtn" title="Các nhà thầu gói máy phát điện trên muasamcong: gói đã dự, giá dự thầu, trúng hay không"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.7.8 2.7 2.6 3 5.2"/></svg>Nhà thầu</button><button class="btn sm" data-catopen="engine" title="Thông số cấu hình: động cơ, đầu phát, bảng điều khiển rút từ dữ liệu của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Thông số cấu hình</button></div>
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
   </header>
@@ -2599,10 +2600,10 @@ function supMatchHtml(r) {
 
 // ---------- Danh mục động cơ / đầu phát (web/catalog.js, rút từ bảng thông số của các nhà cung cấp) ----------
 // Mọi user đều xem được (Khoa, 2026-10-28). Không có số liệu nào ngoài các dòng bảng đã kiểm (verify.mjs).
-const CAT_KIND = { engine: { one: "động cơ", title: "Danh mục động cơ", list: "engines", other: "Đầu phát đi kèm" }, alternator: { one: "đầu phát", title: "Danh mục đầu phát", list: "alternators", other: "Động cơ đi kèm" },
+const CAT_KIND = { engine: { one: "động cơ", tab: "Động cơ", title: "Danh mục động cơ", list: "engines", other: "Đầu phát đi kèm" }, alternator: { one: "đầu phát", tab: "Đầu phát", title: "Danh mục đầu phát", list: "alternators", other: "Động cơ đi kèm" },
   // Bộ điều khiển (Khoa, 2026-11-01): from the lines of the suppliers' saved pages that name one (suppliers/controllers.mjs)
   // and from genset rows that name one; "other" is the engine of that row.
-  controller: { one: "bộ điều khiển", title: "Danh mục bộ điều khiển", list: "controllers", other: "Động cơ trong dòng" } };
+  controller: { one: "bộ điều khiển", tab: "Bảng điều khiển", title: "Danh mục bộ điều khiển", list: "controllers", other: "Động cơ trong dòng" } };
 const CAT_RATING = { prime: "Liên tục (prime)", standby: "Dự phòng (standby)", rated: "Không ghi loại" };
 let catMemo = { src: null, del: null, cat: null };
 const catReady = () => catMemo.src === state.supplier && catMemo.del === state.supdeleted;
@@ -2667,7 +2668,7 @@ function openCatalog(kind, key, from = null) {
   filtOpen = false;
   catFrom = from;
   catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}) };
-  modal(mBanner("cat", CAT_KIND[kind].title, "Rút từ bảng thông số của các nhà cung cấp", "catTitle", "#" + SCREEN_HASH[kind]) + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
+  modal(mBanner("cat", "Thông số cấu hình", "Rút từ bảng thông số của các nhà cung cấp", "catTitle", "#" + SCREEN_HASH[kind]) + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
 }
 function catMatches(e, f = catView) {
   const q = f.q.trim().toLowerCase();
@@ -2692,7 +2693,6 @@ function renderCatalog() {
     return;
   }
   const cat = catalog(), K = CAT_KIND[catView.kind], all = cat[K.list];
-  if ($("#catTitle")) $("#catTitle").textContent = K.title;
   $("#mdl a.home")?.setAttribute("href", "#" + SCREEN_HASH[catView.kind]);
   setScreenUrl(catView.kind);
   if (catView.open) { const e = all.find((x) => x.key === catView.open); if (e) { body.innerHTML = h`<div class="mscroll">${raw(catDetailHtml(e))}</div>`; return; } catView.open = null; }
@@ -2701,9 +2701,10 @@ function renderCatalog() {
   const specOpts = Object.entries(all.reduce((m, e) => { for (const g of e.specs || []) m[g.key] = [g.vi, ((m[g.key] || [])[1] || 0) + 1]; return m; }, {})).map(([k, [vi, n]]) => [k, vi, n]).sort((a, b) => b[2] - a[2]);
   if (catView.spec && !specOpts.some(([k]) => k === catView.spec)) catView.spec = "";
   const f = catView, opt = (v, l, cur) => h`<option value="${v}" ${String(v) === String(cur) ? "selected" : ""}>${l}</option>`;
-  body.innerHTML = h`${raw(filtToggle("catFilt"))}<div class="row suprow">
+  // Thông số cấu hình (Khoa, 2026-11-04): động cơ, đầu phát, bảng điều khiển là 3 tab, không chọn trong dropdown.
+  const tabs = h`<div class="seg cattabs" role="tablist">${raw(Object.entries(CAT_KIND).map(([k, x]) => h`<button type="button" role="tab" data-catkind="${k}" aria-selected="${String(k === f.kind)}">${x.tab} <span class="c">${cat[x.list].length}</span></button>`).join(""))}</div>`;
+  body.innerHTML = h`${raw(tabs)}${raw(filtToggle("catFilt"))}<div class="row suprow">
       <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:180px">
-      <select id="catKind">${raw(Object.entries(CAT_KIND).map(([k, x]) => opt(k, `${x.one.replace(/^./, (c) => c.toUpperCase())} (${cat[x.list].length})`, f.kind)).join(""))}</select>
       <select id="catMake">${raw(opt("", "Hãng", f.make) + makes.map(([m, n]) => opt(m, m === "—" ? `Nguồn không ghi hãng (${n})` : `${m} (${n})`, f.make)).join(""))}</select>
       <select id="catFreq">${raw(opt("", "Tần số", f.freq) + opt("50", "50 Hz", f.freq) + opt("60", "60 Hz", f.freq))}</select>
       <select id="catSpec">${raw(opt("", "Thông số", f.spec) + specOpts.map(([k, vi, n]) => opt(k, `Có ${vi.toLowerCase()} (${n})`, f.spec)).join(""))}</select>
@@ -2720,7 +2721,7 @@ function renderCatalog() {
   renderCatList();
   bindFilt("catFilt");
   const set = (k, v) => { catView = { ...catView, [k]: v, limit: 60 }; renderCatList(); };
-  $("#catKind").onchange = (e) => { catView = { ...catView, kind: e.target.value, make: "", q: "", spec: "", limit: 60 }; renderCatalog(); };
+  body.querySelectorAll("[data-catkind]").forEach((b) => (b.onclick = () => { if (b.dataset.catkind === catView.kind) return; catView = { ...catView, kind: b.dataset.catkind, make: "", q: "", spec: "", limit: 60 }; renderCatalog(); }));
   $("#catSpec").onchange = (e) => set("spec", e.target.value);
   $("#catQ").oninput = (e) => set("q", e.target.value);
   $("#catMake").onchange = (e) => set("make", e.target.value);
