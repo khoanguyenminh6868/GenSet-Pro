@@ -1,5 +1,5 @@
 // Busy indicator for every action on the page: work that a click, a change, Enter, a drop or a paste starts (any fetch,
-// reading its answer, or a promise passed to window.genbidBusy) and that takes longer than DELAY shows a spinner at the top
+// reading its answer, or a promise passed to window.genbidBusy) and that takes longer than DELAY shows a spinner in the middle
 // of the page and in the button that was pressed; both go away when the work ends. Background reads (catch-ups, realtime)
 // that no action started show nothing. Loaded before supabase-js, so the client picks up the wrapped fetch.
 (() => {

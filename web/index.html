@@ -217,14 +217,16 @@ td.r{text-align:right}
 .empty{color:var(--muted);padding:28px 16px;text-align:center}
 .spin{width:12px;height:12px;border:2px solid var(--line);border-top-color:var(--violet);border-radius:50%;animation:sp .8s linear infinite;display:inline-block;flex:none}
 @keyframes sp{to{transform:rotate(360deg)}}
-/* busy.js: spinner while an action waits (top of the page, and in the pressed button) */
-.busypill{position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:80;display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 14px;box-shadow:var(--shadow);font-size:13px;color:var(--fg);pointer-events:none}
+/* busy.js: spinner while an action waits (middle of the screen, and in the pressed button) */
+.busypill{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:80;display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 14px;box-shadow:var(--shadow);font-size:13px;color:var(--fg);pointer-events:none}
 html.gb-busy,html.gb-busy *{cursor:progress}
 .is-busy{pointer-events:none;opacity:.75}
 .is-busy::before{content:"";width:11px;height:11px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sp .8s linear infinite;display:inline-block;flex:none;vertical-align:-1px;margin-right:4px}
 .btn.is-busy::before{margin-right:0}
 @media (prefers-reduced-motion:reduce){.spin,.is-busy::before{animation-duration:3s}}
 .progress{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
+/* a whole screen or pane still loading: the spinner sits in its middle */
+.loading{display:flex;align-items:center;justify-content:center;min-height:50vh;padding:16px}
 
 /* Drawer */
 #scrim{position:fixed;inset:0;background:rgba(5,8,18,.45);z-index:45}
@@ -1190,7 +1192,7 @@ const listReady = () => state.loaded.feed && state.loaded.deleted && state.loade
 function renderGrid() {
   if (urlTender && findTender(urlTender)) { const k = urlTender; urlTender = null; openDrawer(k); return; }
   const box = $("#grid");
-  if (!listReady()) { box.innerHTML = `<div class="empty">${progress("Đang tải danh sách gói thầu...")}</div>`; $("#count").textContent = ""; return; }
+  if (!listReady()) { box.innerHTML = `<div class="loading">${progress("Đang tải danh sách gói thầu...")}</div>`; $("#count").textContent = ""; return; }
   const all = allTenders();
   if (!all.length) { box.innerHTML = h`<div class="empty"><b>Chưa có gói thầu nào</b><br>Danh sách được nạp từ muasamcong mỗi sáng. Bấm Refresh để tải lại.</div>`; $("#count").textContent = ""; return; }
   const col = COLS.find((c) => c.k === state.sort.col) || COLS[0];
@@ -1866,7 +1868,7 @@ const fileSafe = (s) => String(s).replace(/[\\/:*?"<>|]+/g, " ").replace(/\s+/g,
 async function openPdf(key, i) {
   const f = state.hsmt[key].files[i];
   modal(h`<div class="row"><h2 style="flex:1;min-width:0;overflow-wrap:anywhere">${f.name}</h2><button class="btn sm" id="pvSave">Tải về</button><button class="btn sm" data-close>Đóng</button></div>
-    <div id="pvBody" class="pv">${raw(progress("Đang mở tệp..."))}</div>`, null, "wide");
+    <div id="pvBody" class="pv"><div class="loading">${raw(progress("Đang mở tệp..."))}</div></div>`, null, "wide");
   let blob;
   try {
     const r = await fetch(f.url);
@@ -2327,7 +2329,7 @@ function needSup() {
   subscribe("supplier", "supplier", () => setTimeout(supChanged, 0));
   subscribe("supdeleted", "supdeleted", () => setTimeout(supChanged, 0));
 }
-const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
+const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
 const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
   <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a><button class="btn sm" data-close>Đóng</button></header>`;
@@ -2683,7 +2685,7 @@ function renderCatalog() {
   // The first build holds the page for a few seconds: the spinner is painted first.
   if (!catReady()) {
     if (!body.querySelector(".catwait")) {
-      body.innerHTML = h`<div class="mscroll catwait">${raw(progress("Đang dựng danh mục..."))}</div>`;
+      body.innerHTML = h`<div class="mscroll catwait loading">${raw(progress("Đang dựng danh mục..."))}</div>`;
       window.genbidBusy(new Promise((done) => setTimeout(() => { if (body.isConnected) { catalog(); renderCatalog(); } done(); }, 50)));
     }
     return;
