@@ -758,3 +758,18 @@ test("a displacement with no unit is in litres; a cell that gives the cylinders 
   assert.equal(engineMins("Số xi lanh, dung tích\n≥ 3 xi lanh, thông tin dung tích xi lanh").minDisp, null);
   assert.equal(engineMins("Tỷ số nén, dung tích xi lanh ≥ 17:1").minDisp, null);
 });
+
+
+test("the technical chapter by its title, not its number, and not the table of contents (2026-11-04, 33 whole HSMT)", async () => {
+  const { technicalPart } = await import("./config-bot.mjs");
+  const body = "Công suất liên tục ≥ 350 kVA\n".repeat(80);
+  const toc = "Chương I. Chỉ dẫn nhà thầu\nChương III. Yêu cầu về kỹ thuật\nChương IV. Biểu mẫu\n";
+  // Chapter III in an older E-HSMT, after its contents line.
+  let t = technicalPart(`${toc}...\nChương III. YÊU CẦU VỀ KỸ THUẬT\n${body}Chương IV. BIỂU MẪU MỜI THẦU\nMẫu số 01`);
+  assert.ok(t.startsWith("Chương III. YÊU CẦU VỀ KỸ THUẬT") && t.includes("350 kVA") && !t.includes("Mẫu số 01"));
+  // OCR without diacritics; an HSYC's "phạm vi cung cấp"; a terms of reference.
+  for (const h of ["Chương V. YÊU CÂU VE KỸ THUẬT", "Chương IV. Yêu cầu về phạm vi cung cấp", "CHUONG V. DIEU KHOAN THAM CHIEU"]) assert.ok(technicalPart(`${toc}${h}\n${body}Chương VI. Hợp đồng\nx`).startsWith(h));
+  // A file's marker and a wrapped "Chương IV." are not headings.
+  t = technicalPart(`--- Chương V. Yêu cầu kỹ thuật\\a.pdf ---\nChương V. YÊU CẦU VỀ KỸ THUẬT\n${body}theo mẫu tại\nChương IV.\n${body}--- Chương V. Yêu cầu kỹ thuật\\Bản vẽ\\BV-01.pdf ---\nGhi chú`);
+  assert.ok(t.startsWith("Chương V. YÊU CẦU VỀ KỸ THUẬT") && t.length > body.length * 2);
+});

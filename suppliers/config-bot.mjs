@@ -107,12 +107,44 @@ export function capacity(texts) {
   }
   return null;
 }
-// The technical part of the HSMT: chapter V (Yêu cầu kỹ thuật) when it can be found, else the whole text.
+// The technical part of the HSMT. 2026-11-04 regression over the 33 whole HSMT on the web: 10 had no "Chương V. Yêu
+// cầu" (the technical chapter is III in older E-HSMT, "Chương IV. Yêu cầu về phạm vi cung cấp" in an HSYC, OCR writes
+// "YÊU CÂU VE KỸ THUẬT"), and the first match was often the table of contents. Now: every chapter or part heading
+// whose title is technical, read without diacritics (one letter for one, so places stay), each up to the next heading
+// of its kind; the longest wins (a contents line is a few characters). With no such chapter, the 250,000 characters
+// around the most genset figures (an HSMT of 777,000 characters with no chapters had them past the first 250,000).
+const MAX_TP = 250000;
+const foldSame = (s) => s.replace(/[^\x00-\x7f]/g, (c) => (c === "đ" ? "d" : c === "Đ" ? "D" : c.normalize("NFD")[0]));
+// A heading has a mark after its number ("Chương III. ", "PHẦN 2 - ") or nothing: "Chương IV, Chủ đầu tư…" and "Chương V
+// cho nhà thầu…" are sentences. Its title may run on in a flattened line.
+// A file's own marker ("--- Chương V. Yêu cầu kỹ thuật\Bản vẽ\BV-01.pdf ---", Publish-GenBidHsmt.ps1) is not one.
+const HEADING = /^(?!\s*---)[ \t>*-]*(ch(?:uo|u)ng|phan)[ \t]+([ivx]+|\d+)\b[ \t]*(?:[.:\-–—][ \t]*(.{0,120})|$)/gim;
+const TECH_TITLE = /yeu\s*ca?u\s*(ve\s*)?(ky\s*thuat|pham\s*vi|ke\s*hoach)|pham\s*vi\s*cung\s*cap|thong\s*so\s*ky\s*thuat|chi\s*dan\s*ky\s*thuat|dac\s*tinh\s*ky\s*thuat|tieu\s*chuan\s*ky\s*thuat|dieu\s*khoan\s*tham\s*chieu/i;
+const SPEC_HIT = /kva|xi\s?lanh|xy\s?lanh|dau\s*phat|cong\s*suat\s*(lien\s*tuc|du\s*phong)|prime|standby/gi;
 export function technicalPart(text) {
-  const start = text.search(/ch(ươ|uo)ng\s+V\b[^I\n]{0,80}(y[êe]u c[ầa]u|ph[ạa]m vi)/i);
-  if (start < 0) return text.slice(0, 250000);
-  const rest = text.slice(start + 10), end = rest.search(/\n\s*ch(ươ|uo)ng\s+(VI|VII)\b/i);
-  return text.slice(start, end > 0 ? start + 10 + end : start + 250000).slice(0, 250000);
+  text = String(text ?? "");
+  const f = foldSame(text), heads = [...f.matchAll(HEADING)].map((m) => {
+    // "Chương IV." alone is a wrapped sentence ("…theo mẫu tại" / "Chương IV.") unless the next line is a title in capitals.
+    const after = f.slice(m.index + m[0].length).match(/^\s*\n\s*([^\n]{3,80})/)?.[1] || "", caps = after.replace(/[^a-z]/gi, "");
+    const titled = /[a-z]{3}/i.test(m[3] || "") || (caps.length >= 3 && caps === caps.toUpperCase());
+    return { at: m.index, kind: m[1].toLowerCase().startsWith("p") ? "p" : "c", n: m[2].toLowerCase(), title: m[3] || "", titled };
+  });
+  let best = null;
+  heads.forEach((h, i) => {
+    if (!TECH_TITLE.test(h.title)) return;
+    // Up to the next heading of the same kind with another number ("Chương III" ... "Chương IV").
+    const next = heads.slice(i + 1).find((x) => x.kind === h.kind && x.n !== h.n && x.titled);
+    const end = next ? next.at : text.length, len = end - h.at;
+    if (!best || len > best.len) best = { at: h.at, end, len };
+  });
+  if (best && best.len >= 1500) return text.slice(best.at, Math.min(best.end, best.at + MAX_TP));
+  if (text.length <= MAX_TP) return text;
+  const hits = [...f.matchAll(SPEC_HIT)].map((m) => m.index);
+  if (!hits.length) return text.slice(0, MAX_TP);
+  let from = 0, most = 0;
+  for (let i = 0, j = 0; i < hits.length; i++) { while (hits[j] < hits[i] - MAX_TP * 0.9) j++; if (i - j + 1 > most) { most = i - j + 1; from = hits[j]; } }
+  const start = Math.max(0, Math.min(from - MAX_TP * 0.05, text.length - MAX_TP));
+  return text.slice(start, start + MAX_TP);
 }
 // ---------- Thông số theo model (Khoa, 2026-11-02) ----------
 // An engine's own figures (cylinders, displacement, bore, governor, emission...) and an alternator's (insulation, IP,
