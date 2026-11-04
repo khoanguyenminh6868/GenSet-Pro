@@ -15,6 +15,8 @@
     actEl = e.target?.closest?.("button,.btn,[role=button]") || null;
     // A tab needs no spinner of its own: the one in the middle of the screen already shows its content is loading.
     if (actEl?.closest("[role=tablist]")) actEl = null;
+    // Nor an icon-only button (PDF, download, add, trash): a ring beside its icon is a second spinner (Khoa, 2026-11-04).
+    if (actEl && actEl.textContent.trim() === [...actEl.querySelectorAll("svg")].map((x) => x.textContent).join("").trim()) actEl = null;
   };
   for (const t of ["click", "change", "submit", "keydown", "drop", "paste"]) addEventListener(t, act, true);
 
