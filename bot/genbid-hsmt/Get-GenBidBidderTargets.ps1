@@ -37,6 +37,10 @@ try {
     foreach ($d in (Get-Coll 'tracked')) {
         $tracked[$d.id] = if ($d.data.stage) { $d.data.stage } else { 'new' }
         if ($d.data.tender.status -eq 'cancelled') { $cancelled[$d.id] = 1 }
+        # Gói đã rời feed: seen có thể còn bản TBMT cũ (ngày đóng thầu trước khi sửa, IB2600581294 04/11) → lấy bản
+        # có notifyVersion mới hơn trong tracked.tender.
+        $tt = $d.data.tender
+        if ($tt.bidCloseDate -and (-not $info[$d.id] -or [string]$tt.notifyVersion -gt [string]$info[$d.id].notifyVersion)) { $info[$d.id] = $tt }
     }
     foreach ($k in $info.Keys) { if ($info[$k].status -eq 'cancelled') { $cancelled[$k] = 1 } }
     $deleted = @{}; foreach ($d in (Get-Coll 'deleted')) { $deleted[$d.id] = 1 }
@@ -50,10 +54,15 @@ try {
         $t = if ($info[$key]) { $info[$key] } else { [pscustomobject]@{ bidName = ''; bidCloseDate = $null } }
         if ($deleted[$key] -or $bidders[$key].final -or $cancelled[$key]) { continue }
         $close = if ($t.bidCloseDate) { ([datetime]$t.bidCloseDate).ToUniversalTime() } else { $now.AddDays(-30) }
+        # Ngày đóng thầu lần kiểm tra trước đọc được trên muasamcong: gói gia hạn mà notifyVersion không đổi
+        # (IB2600574589 04/11) thì seen/tracked vẫn giữ ngày cũ.
+        $pc = $portal[$key].bidCloseDate
+        if ($pc -and ([datetime]$pc).ToUniversalTime() -gt $close) { $close = ([datetime]$pc).ToUniversalTime() }
         if ($close -gt $now.AddMinutes(-30) -or $close -lt $now.AddDays(-$Days)) { continue }
         $checked = $portal[$key].checkedAt
         $gap = if ($t.bidCloseDate -and $close -gt $now.AddDays(-7)) { 6 } else { 24 }
-        if ($checked -and ([datetime]$checked).ToUniversalTime() -gt $now.AddHours(-$gap)) { continue }
+        # Lần kiểm tra trước sớm hơn 30 phút sau đóng thầu (khi đó còn dùng ngày đóng thầu cũ) thì không tính.
+        if ($checked -and ([datetime]$checked).ToUniversalTime() -gt $now.AddHours(-$gap) -and ([datetime]$checked).ToUniversalTime() -gt $close.AddMinutes(30)) { continue }
         $stage = $tracked[$key]
         [pscustomobject]@{ key = $key; notifyNo = $key; bidName = $t.bidName; bidCloseDate = $t.bidCloseDate; tracked = [bool]$stage; stage = $stage; joined = $stage -in 'submitted', 'won', 'lost'; close = $close }
     }

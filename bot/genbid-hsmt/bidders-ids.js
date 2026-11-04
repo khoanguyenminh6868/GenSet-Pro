@@ -26,7 +26,7 @@ await (async () => {
   const portal = {
     id: t.id, notifyId: t.notifyId || t.id, bidOpenId: has(t.bidOpenId) ? t.bidOpenId : null, inputResultId: has(t.inputResultId) ? t.inputResultId : null,
     processApply: t.processApply, bidMode: t.bidMode, bidForm: t.bidForm, planNo: t.planNo, isInternet: t.isInternet ? 1 : 0,
-    stepCode: t.stepCode || null, numBidderJoin: t.numBidderJoin ?? null, openedAt: utc(t.bidRealityOpenDate), kqlcntAt: utc(t.publicDateKqlcnt),
+    bidCloseDate: utc(t.bidCloseDate), stepCode: t.stepCode || null, numBidderJoin: t.numBidderJoin ?? null, openedAt: utc(t.bidRealityOpenDate), kqlcntAt: utc(t.publicDateKqlcnt),
     winners: [].concat(t.winningContractorName || t.contractorName || []).filter(Boolean),
     winningPrice: [].concat(t.bidWinningPrice || [])[0] ?? null, checkedAt: new Date().toISOString(),
   };
