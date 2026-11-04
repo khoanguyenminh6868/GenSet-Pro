@@ -2292,6 +2292,8 @@ const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
 let supFilter = { q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
+// Sort by founding year (Khoa, 2026-11-04): click "Năm TL" for oldest first, again for newest, a third time back to A–Z; no year goes last.
+let supSort = 0;
 // "engine:-" = suppliers whose sources name no engine make (Khoa, 2026-11-02).
 const SUP_NONE = "-";
 const supMake = (f = supFilter) => { const i = f.make.indexOf(":"); return i > 0 ? [f.make.slice(0, i), f.make.slice(i + 1).toLowerCase()] : ["", ""]; };
@@ -2414,9 +2416,10 @@ function renderSuppliers() {
 }
 function renderSupList() {
   const list = supAll().filter(supMatches), filtered = supLineFiltered();
+  if (supSort) list.sort((x, y) => (!x.founded - !y.founded) || supSort * ((x.founded || 0) - (y.founded || 0)));
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
   filtNote("supFilt", [supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
-  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th title="Năm thành lập">Năm TL</th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
+  $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th><th aria-sort="${supSort ? (supSort > 0 ? "ascending" : "descending") : "none"}"><button class="thsort" id="supYearSort" title="Năm thành lập — bấm để sắp xếp">Năm TL${raw(supSort ? `<span class="arw">${supSort > 0 ? "▲" : "▼"}</span>` : "")}</button></th><th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
     return h`<tr data-supopen="${s.id}"><td><b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}<div class="muted small">${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ")}</div>${raw(supContactsBrief(s.contacts))}</td>
@@ -2426,6 +2429,7 @@ function renderSupList() {
       <td class="small" data-l="Động cơ">${[...new Set(lines.flatMap((p) => p.engineMakes || []))].join(", ") || "—"}</td>
       <td data-l="Độ tin cậy"><span class="chip ${conf[1]}">${conf[0]}</span></td></tr>`;
   }).join(""))}</tbody></table></div>` : h`<div class="note">Không có nhà cung cấp nào khớp bộ lọc.${raw(Number(supFilter.power) > 0 ? " Lưu ý: chỉ so với dòng máy ghi cùng đơn vị (kVA hoặc kW), không quy đổi." : "")}</div>`;
+  if ($("#supYearSort")) $("#supYearSort").onclick = () => { supSort = supSort === 0 ? 1 : supSort === 1 ? -1 : 0; renderSupList(); };
 }
 // Contacts read from the saved sources (suppliers/contacts.mjs), each with its [n]; WeChat ids are not links.
 const SUP_CONTACT = { email: ["Email", (v) => `mailto:${v}`], phone: ["Điện thoại", (v) => `tel:${v.replace(/[^\d+]/g, "")}`], whatsapp: ["WhatsApp", (v) => `https://wa.me/${v.replace(/\D/g, "")}`], wechat: ["WeChat", null] };
