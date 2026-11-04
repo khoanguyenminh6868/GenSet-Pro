@@ -165,7 +165,7 @@
       $("#lgWho").appendChild(o);
     }
 
-    const PAGE = 200;
+    const PAGE = 20;
     let rows = [], total = 0, seq = 0;
     async function load(more) {
       const my = ++seq;
