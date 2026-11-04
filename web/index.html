@@ -2788,7 +2788,7 @@ function renderCatalog() {
   // Thông số cấu hình (Khoa, 2026-11-04): động cơ, bộ điều khiển, đầu phát là 3 tab, không chọn trong dropdown.
   const tabs = h`<div class="seg cattabs" role="tablist">${raw(Object.entries(CAT_KIND).map(([k, x]) => h`<button type="button" role="tab" data-catkind="${k}" aria-selected="${String(k === f.kind)}">${x.tab} <span class="c">${cat[x.list].length}</span></button>`).join(""))}</div>`;
   body.innerHTML = h`${raw(tabs)}${raw(filtToggle("catFilt"))}<div class="row suprow">
-      <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:300px">
+      <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:180px;max-width:340px">
       <select id="catMake">${raw(opt("", "Hãng", f.make) + makes.map(([m, n]) => opt(m, m === "—" ? `Nguồn không ghi hãng (${n})` : `${m} (${n})`, f.make)).join(""))}</select>
       <select id="catFreq">${raw(opt("", "Tần số", f.freq) + opt("50", "50 Hz", f.freq) + opt("60", "60 Hz", f.freq))}</select>
       <select id="catSpec">${raw(opt("", "Thông số", f.spec) + specOpts.map(([k, vi, n]) => opt(k, `Có ${vi.toLowerCase()} (${n})`, f.spec)).join(""))}</select>
