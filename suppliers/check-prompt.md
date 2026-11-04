@@ -25,9 +25,9 @@ the files here; the code verifies it and marks anything it cannot find "chưa kh
      own `offered`, `sourceQuote`, `factSrc` and `status`; the code decides the group's status from them.
    - A value may be converted only with a formula of "Công thức được phép" below, in the check's `conversions`
      (inputs `from`: `source`, `hsmt`, `calc` or `standard`), as in the example.
-2. When the HSMT asks for a controller and a "Bảng điều khiển" line of this configuration's supplier names one, you may
+2. When the HSMT asks for a controller and a "Bộ điều khiển" line of this configuration's supplier names one, you may
    set the configuration's `controller`: `{ "model": "", "make": "", "src": { "kind": "controller", "supplierId": "", "n": 3001, "line": "" } }`.
-   Its functions may be quoted from "Thông số bảng điều khiển" (the maker's datasheet of that controller; every line in
+   Its functions may be quoted from "Thông số bộ điều khiển" (the maker's datasheet of that controller; every line in
    `controllers.md`, search it with grep), with `factSrc` { `supplierId`, `n`, `line` } and `part: "controller"`.
 3. Do not change `rank`, `engine`, `alternator`, `genset` or `suppliers`.
 4. Run `<check>` once; fix what it prints and run it again only if you changed something. Under "CÓ THỂ TRA ĐƯỢC" it lists

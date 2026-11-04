@@ -48,7 +48,7 @@ export async function prep(req, dir, hist, size = null) {
     `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}`, "",
     ...(a?.keyInfo ? ["## Thông tin chính (phân tích HSMT)", ...Object.entries(a.keyInfo).filter(([, v]) => v).map(([k, v]) => `- ${k}: ${v}`), ""] : []),
     ...(a?.technicalSpecs?.length ? ["## Thông số kỹ thuật (phân tích HSMT)", ...a.technicalSpecs.map((s) => `- ${s.item}: ${s.requirement}`), ""] : []),
-    ...(top.length ? ["## Cấu hình dự kiến chào (Gợi ý cấu hình)", ...top.map((c) => `- ${[c.engine && `động cơ ${[c.engine.make, c.engine.model].filter(Boolean).join(" ")}`, c.alternator && `đầu phát ${[c.alternator.make, c.alternator.model].filter(Boolean).join(" ")}`, c.controller && `bảng điều khiển ${[c.controller.make || c.controller.brand, c.controller.model].filter(Boolean).join(" ")}`].filter(Boolean).join(", ")}`), ""] : []),
+    ...(top.length ? ["## Cấu hình dự kiến chào (Gợi ý cấu hình)", ...top.map((c) => `- ${[c.engine && `động cơ ${[c.engine.make, c.engine.model].filter(Boolean).join(" ")}`, c.alternator && `đầu phát ${[c.alternator.make, c.alternator.model].filter(Boolean).join(" ")}`, c.controller && `bộ điều khiển ${[c.controller.make || c.controller.brand, c.controller.model].filter(Boolean).join(" ")}`].filter(Boolean).join(", ")}`), ""] : []),
     hsmt ? "## Phần kỹ thuật của HSMT\n" + technicalPart(hsmt.text).slice(0, 60000) : "Chưa có văn bản HSMT.",
   ].filter((l) => l !== "").join("\n"), "utf8");
   fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"), "utf8");

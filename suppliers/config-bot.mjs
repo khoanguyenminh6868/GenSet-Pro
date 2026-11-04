@@ -446,7 +446,7 @@ export function unflatten(t) {
 // The part of the genset a section of the HSMT is about, by its heading ("II Yêu cầu đối với động cơ", "III" / "Yêu cầu
 // đối với đầu phát điện", "* Đầu phát"): a heading has a mark (roman numeral, letter, number, bullet) or "Yêu cầu" /
 // "Thông số" before the part, and nothing after it but a few words (a row "Động cơ: 4 thì" is not one).
-const SECTION = /^\s*(?:(?:[IVX]{1,4}|[A-H]|\d{1,2}(?:\.\d{1,2})*)[.):]?\s+|[*+•-]\s*)?(?:(?:yêu cầu|thông số|đặc tính)(?: kỹ thuật)?(?: (?:đối với|về|của|cho))?\s+)?(đầu phát|alternator|động cơ|engine|tổ máy|máy phát điện|genset|bộ điều khiển|bảng điều khiển|hệ thống điều khiển|tủ điều khiển|vỏ)[^:\d\n]{0,40}:?\s*$/i;
+const SECTION = /^\s*(?:(?:[IVX]{1,4}|[A-H]|\d{1,2}(?:\.\d{1,2})*)[.):]?\s+|[*+•-]\s*)?(?:(?:yêu cầu|thông số|đặc tính)(?: kỹ thuật)?(?: (?:đối với|về|của|cho))?\s+)?(đầu phát|alternator|động cơ|engine|tổ máy|máy phát điện|genset|bộ điều khiển|hệ thống điều khiển|tủ điều khiển|vỏ)[^:\d\n]{0,40}:?\s*$/i;
 export function sectionsOf(text) {
   const out = [], L = String(text).split("\n");
   let at = 0;
@@ -593,14 +593,14 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // Sources that name two makes ("Cummins / Doosan"): either one is the HSMT's.
       const makeNamed = (e.make || "").split(" / ").find((m) => hints.engineMakes.includes(m));
       if (makeNamed) { score += 300; why.push(`hãng động cơ ${makeNamed} HSMT nêu`); }
-      if (ctrlNamed) { score += 200; why.push("có bảng điều khiển hãng HSMT nêu"); }
+      if (ctrlNamed) { score += 200; why.push("có bộ điều khiển hãng HSMT nêu"); }
       if (e.make) score += 60;
       // Xuất xứ Trung Quốc (Khoa, 2026-11-03): an engine of a Chinese make before a foreign one a supplier in China
       // offers. Those had more datasheet figures and filled 20 of the 30 rows; the make the HSMT names (300) still wins.
       if (origin === "cn" && !viaCn) { score += 250; why.push("động cơ hãng Trung Quốc"); }
       if (offers.length) score += 50;
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
-      if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bảng điều khiển có datasheet hãng"); }
+      if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
       // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
       const below = (key, min, read) => { const v = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => read(f.value)).filter((x) => x != null); return min && v.length && v.every((x) => x < min) ? v[0] : null; };
@@ -677,7 +677,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     return `  bảng nhiều model theo cột (${u.model} là cột thứ ${off} từ phải; sourceQuote là nguyên dòng, src.line là dòng "${rows[cells.indexOf(at)]}"): ${rows.map((r, i) => `${r} → ${cell(cells[i])}`).join(" ; ")}`;
   };
   const out = [`# Danh mục trong hệ thống${cap ? ` (tổ máy ${cap.value} ${cap.unit}, từ 95% đến 140%)` : ""}${hints.freq ? `, ${hints.freq} Hz` : ""} — code đã xếp sẵn`, "",
-    "Thứ tự ưu tiên khi xếp: model động cơ / hãng động cơ HSMT nêu, bảng điều khiển HSMT nêu, động cơ có nhiều thông số có nguồn, rồi mới tới đầu phát; công suất càng sát càng tốt.", "",
+    "Thứ tự ưu tiên khi xếp: model động cơ / hãng động cơ HSMT nêu, bộ điều khiển HSMT nêu, động cơ có nhiều thông số có nguồn, rồi mới tới đầu phát; công suất càng sát càng tốt.", "",
     `## Ứng viên (${top.length} dòng tổ máy, tốt nhất trước)`, ""];
   top.forEach((r, i) => {
     const { e, u, a } = r, s = sup.get(u.supplierId);
@@ -686,9 +686,9 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     out.push(`### ${i + 1}. ${u.genset || "(không ghi model tổ máy)"} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
       `- supplierId: ${u.supplierId}, n: ${u.n}${s ? `, quốc gia: ${s.country || "?"}, độ tin cậy: ${s.confidence}, vai trò: ${s.role}` : ""}`, rowText(u));
     if (u.specs?.length) out.push(`  thông số trong dòng: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
-    if (r.rowCtrl.length) out.push(`  bảng điều khiển trong dòng: ${r.rowCtrl.map((c) => c.model || c.brand).join(", ")}`);
+    if (r.rowCtrl.length) out.push(`  bộ điều khiển trong dòng: ${r.rowCtrl.map((c) => c.model || c.brand).join(", ")}`);
     const sc = [...new Set((s?.controllers || []).map((c) => c.model || `${c.brand} (không ghi model)`))];
-    if (sc.length) out.push(`  bảng điều khiển nhà cung cấp chào (mục Bảng điều khiển): ${sc.join(", ")}`);
+    if (sc.length) out.push(`  bộ điều khiển nhà cung cấp chào (mục Bộ điều khiển): ${sc.join(", ")}`);
     if (r.why.length) out.push(`  lý do xếp: ${r.why.join("; ")}`);
     out.push("");
   });
@@ -738,7 +738,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   for (const [m] of [...ctlCount].sort((a, b) => b[1] - a[1])) take(m);
   // Every line goes to controllers.md (a datasheet runs to 250 lines, a SmartGen manual to 700): the agent searches it
   // with grep; catalog.md shows the first 15 lines of each.
-  const ctlOut = [], printed = new Map(), head = "Thông số bảng điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)";
+  const ctlOut = [], printed = new Map(), head = "Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)";
   // A controller's datasheet: the first 15 lines to catalog.md (`out`, when given), every line to controllers.md.
   const sheetMd = (m, out) => {
     if (!ctlOut.length) ctlOut.push(`# ${head}`, "");
@@ -793,7 +793,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   // A table's header is written once (it was repeated on every row); a header that took in the table's rows is cut.
   out.push("## Tiêu đề bảng (header của mỗi bảng supplierId n, dùng được cho sourceQuote)", "");
   for (const [k, h] of headers) out.push(`- ${k}: ${h.length > 600 ? h.slice(0, 600) + " …" : h}`);
-  // Every controller of the "Bảng điều khiển" list that has its maker's datasheet gets all its lines in controllers.md too
+  // Every controller of the "Bộ điều khiển" list that has its maker's datasheet gets all its lines in controllers.md too
   // (an agent picking one past the 12 above used to find no datasheet and write `unclear`, e.g. DSE7410).
   const withSheet = new Set(ctls);
   for (const e of (cat.controllers || []).filter((e) => e.uses.some((u) => shown.has(u.supplierId)))) {
@@ -802,12 +802,12 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   out.push("", controllersMd(cat.controllers || [], shown, withSheet));
   return { md: out.join("\n"), ctlMd: ctlOut.join("\n"), shown, top };
 }
-// Bảng điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
-// names it; a configuration's controller and its "Bảng điều khiển" check quote one of these lines.
+// Bộ điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
+// names it; a configuration's controller and its "Bộ điều khiển" check quote one of these lines.
 // Only the suppliers whose rows catalog.md shows, so the file stays small.
 function controllersMd(all, ids, withSheet = new Set()) {
   const list = all.filter((e) => e.uses.some((u) => ids.has(u.supplierId)));
-  const out = [`## Bảng điều khiển (${list.length}) — của các nhà cung cấp có dòng ở trên, dòng nguyên văn trên trang của họ`, ""];
+  const out = [`## Bộ điều khiển (${list.length}) — của các nhà cung cấp có dòng ở trên, dòng nguyên văn trên trang của họ`, ""];
   for (const e of list) {
     out.push(`### ${e.model}${e.make ? ` — hãng: ${e.make}` : ""}${withSheet.has(e.model) ? " — có datasheet hãng: mọi dòng ở controllers.md (grep theo tên model)" : ""}`);
     const seen = new Set();
@@ -829,7 +829,7 @@ function suppliersMd(suppliers) {
     out.push(`- ${s.id}: ${s.names?.en || s.names?.zh || s.id} — vai trò: ${s.role}, trạng thái: ${s.status}, độ tin cậy: ${s.confidence}`
       + `${s.country ? `, quốc gia: ${s.country}` : ""}${s.website ? `, website: ${s.website}` : ""}${hq ? `, trụ sở: ${hq}` : ""}${s.founded ? `, thành lập: ${s.founded}` : ""}`
       + `${vn ? `, đại lý tại Việt Nam: ${vn}` : ""}${s.certifications?.length ? `, chứng nhận: ${s.certifications.map((c) => c.name).join("; ")}` : ""}`
-      + `${s.controllers?.length ? `, bảng điều khiển: ${s.controllers.map((c) => c.model || `${c.brand} (không ghi model)`).join("; ")}` : ""}`);
+      + `${s.controllers?.length ? `, bộ điều khiển: ${s.controllers.map((c) => c.model || `${c.brand} (không ghi model)`).join("; ")}` : ""}`);
   }
   return out.join("\n");
 }
@@ -1131,8 +1131,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
         // A controller written without its generation ("DSE7320") read from the datasheet of the current one ("DSE7320 MKII").
         if (mine[0]?.version) {
           x.version = mine[0].version;
-          x.note = [x.note, `Nguồn là datasheet ${mine[0].version}; nhà cung cấp ghi ${c[x.part].model}, cần xác nhận đời (MK) của bảng điều khiển.`].filter(Boolean).join(" ");
-          const gap = `Xác nhận đời bảng điều khiển: ${c[x.part].model} hay ${mine[0].version}.`;
+          x.note = [x.note, `Nguồn là datasheet ${mine[0].version}; nhà cung cấp ghi ${c[x.part].model}, cần xác nhận đời (MK) của bộ điều khiển.`].filter(Boolean).join(" ");
+          const gap = `Xác nhận đời bộ điều khiển: ${c[x.part].model} hay ${mine[0].version}.`;
           if (!(c.gaps || []).includes(gap)) c.gaps = [...(c.gaps || []), gap];
           // What another generation lacks the one offered may have ("HGM6110N without RS485", the HGM6110NC has it):
           // not a "not met" until the generation is known (2026-11-03 regression run).
@@ -1289,14 +1289,14 @@ export function scoreOf(c, reqs = []) {
 // A configuration with no controller, when the HSMT asks for one, is "not met" on the controller (Khoa, 2026-11-02):
 // its controller checks would all be "unclear", which ranked it above configurations that offer one but miss a point
 // elsewhere. The check is written by the code and shown like the others.
-export const NO_CONTROLLER = "Bảng điều khiển của cấu hình";
+export const NO_CONTROLLER = "Bộ điều khiển của cấu hình";
 function noController(c, reqs) {
-  const has = !!c.controller?.model && !c.controller.unverified, mine = (x) => x.byCode && (x.item === NO_CONTROLLER || x.item === "Bộ điều khiển của cấu hình");
+  const has = !!c.controller?.model && !c.controller.unverified, mine = (x) => x.byCode && (x.item === NO_CONTROLLER || x.item === "Bảng điều khiển của cấu hình");
   // A controller added later (Tìm NCC's check) takes the code's check away again.
   if (has) { if ((c.checks || []).some(mine)) c.checks = c.checks.filter((x) => !mine(x)); return; }
   if (!reqs.some((r) => r.part === "controller" && r.level !== "option") || (c.checks || []).some(mine)) return;
-  c.checks = [{ item: NO_CONTROLLER, requirement: "Có bảng điều khiển đáp ứng các yêu cầu bảng điều khiển của HSMT", offered: "Không có bảng điều khiển nào có nguồn trong cấu hình này",
-    part: "controller", level: "core", status: "not_met", byCode: true, note: "Code ghi: cấu hình không có bảng điều khiển nên tính là không đạt ở bảng điều khiển." }, ...(c.checks || [])];
+  c.checks = [{ item: NO_CONTROLLER, requirement: "Có bộ điều khiển đáp ứng các yêu cầu bộ điều khiển của HSMT", offered: "Không có bộ điều khiển nào có nguồn trong cấu hình này",
+    part: "controller", level: "core", status: "not_met", byCode: true, note: "Code ghi: cấu hình không có bộ điều khiển nên tính là không đạt ở bộ điều khiển." }, ...(c.checks || [])];
 }
 export function rankConfigs(result) {
   const reqs = result.requirements || [];
@@ -1630,7 +1630,7 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
   // The controllers the supplier's pages name (controllers.mjs) are said too, as recorded.
   const entry = (r, { e, u }) => {
     const ctrls = [...new Set((r.controllers || []).filter((c) => c.model).map((c) => c.model))];
-    return { supplierId: u.supplierId, n: u.n, line: lineOf(u, e.model), fromFind: true, why: `Nhà cung cấp mới tìm được (Tìm NCC): dòng bảng ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.${ctrls.length ? ` Bảng điều khiển trên trang của nhà cung cấp: ${ctrls.join(", ")}.` : ""}` };
+    return { supplierId: u.supplierId, n: u.n, line: lineOf(u, e.model), fromFind: true, why: `Nhà cung cấp mới tìm được (Tìm NCC): dòng bảng ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.${ctrls.length ? ` Bộ điều khiển trên trang của nhà cung cấp: ${ctrls.join(", ")}.` : ""}` };
   };
   // Adds the supplier under every configuration it has a row for; true when there is one. A second run adds nothing twice.
   const join = (r) => {

@@ -389,7 +389,7 @@ details.sec>div{margin-top:10px}
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
         <button class="ibtn" id="syncNewBtn" aria-label="Chỉ lấy gói mới" title="Chỉ lấy các gói mới nhất từ muasamcong (so với gói mới nhất trong hệ thống), không kiểm tra hay cập nhật gói cũ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" id="bdBtn" title="Các nhà thầu gói máy phát điện trên muasamcong: gói đã dự, giá dự thầu, trúng hay không"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.7.8 2.7 2.6 3 5.2"/></svg>Nhà thầu</button><button class="btn sm" data-catopen="engine" title="Thông số cấu hình: động cơ, đầu phát, bảng điều khiển rút từ dữ liệu của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Thông số cấu hình</button></div>
+        <button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" id="bdBtn" title="Các nhà thầu gói máy phát điện trên muasamcong: gói đã dự, giá dự thầu, trúng hay không"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.7.8 2.7 2.6 3 5.2"/></svg>Nhà thầu</button><button class="btn sm" data-catopen="engine" title="Thông số cấu hình: động cơ, bộ điều khiển, đầu phát rút từ dữ liệu của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Thông số cấu hình</button></div>
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
   </header>
@@ -2274,8 +2274,8 @@ async function runCompare(key) {
 // ---------- Nhà cung cấp (suppliers/cn/<id>.json in the repo, posted as supplier/<id> by suppliers/upload.mjs) ----------
 // Read only. Every fact carries [n], a source of that record: its link, its tier and the words quoted from it
 // (suppliers/verify.mjs checked each quote against the saved page before upload; Khoa, 2026-10-28).
-const SUP_ROLE = { genset_oem: "Nhà lắp ráp tổ máy", engine_maker: "Hãng động cơ", alternator_maker: "Hãng đầu phát", controller_maker: "Hãng bảng điều khiển", distributor: "Nhà phân phối" };
-const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đầu phát", controller: "Bảng điều khiển" };
+const SUP_ROLE = { genset_oem: "Nhà lắp ráp tổ máy", engine_maker: "Hãng động cơ", alternator_maker: "Hãng đầu phát", controller_maker: "Hãng bộ điều khiển", distributor: "Nhà phân phối" };
+const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển" };
 // [label, chip class, short label for the list's "Độ tin cậy" column (Khoa, 2026-11-04)]
 const SUP_CONF = { high: ["Tin cậy cao", "ok", "Cao"], medium: ["Trung bình", "warn", "TB"], low: ["Chưa xác minh", "bad"] };
 const SUP_TIER = { A: "Website / tài liệu chính hãng", B: "Triển lãm, hiệp hội, sàn công bố", C: "Tự giới thiệu (đại lý, sàn B2B)" };
@@ -2395,7 +2395,7 @@ function renderSuppliers() {
     .map((v) => Object.entries(v).sort((a, b) => b[1] - a[1])[0][0]).sort((a, b) => a.localeCompare(b));
   const makeGroups = [["engine", "Động cơ", makesOf((s) => (s.productLines || []).flatMap((p) => p.engineMakes || []))],
     ["alt", "Đầu phát", makesOf((s) => (s.productLines || []).flatMap((p) => p.alternatorMakes || []))],
-    ["ctrl", "Bảng điều khiển", makesOf((s) => (s.controllers || []).map((c) => c.brand))]];
+    ["ctrl", "Bộ điều khiển", makesOf((s) => (s.controllers || []).map((c) => c.brand))]];
   const countries = SUP_CGROUPS.filter((k) => all.some((s) => supCountryIn(s.country, k)));
   const f = supFilter, opt = (v, l, cur) => h`<option value="${v}" ${v === cur ? "selected" : ""}>${l}</option>`;
   body.innerHTML = h`${raw(filtToggle("supFilt"))}<div class="row suprow">
@@ -2511,7 +2511,7 @@ function supDetailHtml(s) {
 let supLazy = [];
 function supModelsHtml(s) {
   // Building the catalog of every supplier takes seconds: the rest of the page shows first (supModelsLater).
-  if (!catReady()) return h`<div id="supModels" data-id="${s.id}"><h4>Động cơ, đầu phát và bảng điều khiển</h4>${raw(progress("Đang dựng danh mục động cơ, đầu phát..."))}</div>`;
+  if (!catReady()) return h`<div id="supModels" data-id="${s.id}"><h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(progress("Đang dựng danh mục động cơ, đầu phát..."))}</div>`;
   const cat = catalog();
   const part = (kind) => {
     const K = CAT_KIND[kind];
@@ -2533,7 +2533,7 @@ function supModelsHtml(s) {
     return h`<details class="supspec" ${open ? "open" : ""} data-lazy="${lazy}"><summary>${raw(summary)}</summary>${raw(open ? table : "")}</details>`;
   };
   const body = part("engine") + part("alternator") + part("controller");
-  return h`<div id="supModels"><h4>Động cơ, đầu phát và bảng điều khiển</h4>${raw(body ? h`<div class="muted small">Rút từ các bảng thông số của nhà cung cấp này (mục "Cấu hình các model" bên dưới); công suất là của tổ máy trong các dòng đó. Bấm một model để xem trong danh mục.</div>${raw(body)}` : '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}</div>`;
+  return h`<div id="supModels"><h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(body ? h`<div class="muted small">Rút từ các bảng thông số của nhà cung cấp này (mục "Cấu hình các model" bên dưới); công suất là của tổ máy trong các dòng đó. Bấm một model để xem trong danh mục.</div>${raw(body)}` : '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}</div>`;
 }
 function supModelsLater() {
   const el = $("#supModels[data-id]");
@@ -2600,10 +2600,12 @@ function supMatchHtml(r) {
 
 // ---------- Danh mục động cơ / đầu phát (web/catalog.js, rút từ bảng thông số của các nhà cung cấp) ----------
 // Mọi user đều xem được (Khoa, 2026-10-28). Không có số liệu nào ngoài các dòng bảng đã kiểm (verify.mjs).
-const CAT_KIND = { engine: { one: "động cơ", tab: "Động cơ", title: "Danh mục động cơ", list: "engines", other: "Đầu phát đi kèm" }, alternator: { one: "đầu phát", tab: "Đầu phát", title: "Danh mục đầu phát", list: "alternators", other: "Động cơ đi kèm" },
-  // Bảng điều khiển (Khoa, 2026-11-01): from the lines of the suppliers' saved pages that name one (suppliers/controllers.mjs)
+// Tab order follows this object: động cơ, bộ điều khiển, đầu phát (Khoa, 2026-11-04).
+const CAT_KIND = { engine: { one: "động cơ", tab: "Động cơ", title: "Danh mục động cơ", list: "engines", other: "Đầu phát đi kèm" },
+  // Bộ điều khiển (Khoa, 2026-11-01): from the lines of the suppliers' saved pages that name one (suppliers/controllers.mjs)
   // and from genset rows that name one; "other" is the engine of that row.
-  controller: { one: "bảng điều khiển", tab: "Bảng điều khiển", title: "Danh mục bảng điều khiển", list: "controllers", other: "Động cơ trong dòng" } };
+  controller: { one: "bộ điều khiển", tab: "Bộ điều khiển", title: "Danh mục bộ điều khiển", list: "controllers", other: "Động cơ trong dòng" },
+  alternator: { one: "đầu phát", tab: "Đầu phát", title: "Danh mục đầu phát", list: "alternators", other: "Động cơ đi kèm" } };
 const CAT_RATING = { prime: "Liên tục (prime)", standby: "Dự phòng (standby)", rated: "Không ghi loại" };
 let catMemo = { src: null, del: null, cat: null };
 const catReady = () => catMemo.src === state.supplier && catMemo.del === state.supdeleted;
@@ -2701,7 +2703,7 @@ function renderCatalog() {
   const specOpts = Object.entries(all.reduce((m, e) => { for (const g of e.specs || []) m[g.key] = [g.vi, ((m[g.key] || [])[1] || 0) + 1]; return m; }, {})).map(([k, [vi, n]]) => [k, vi, n]).sort((a, b) => b[2] - a[2]);
   if (catView.spec && !specOpts.some(([k]) => k === catView.spec)) catView.spec = "";
   const f = catView, opt = (v, l, cur) => h`<option value="${v}" ${String(v) === String(cur) ? "selected" : ""}>${l}</option>`;
-  // Thông số cấu hình (Khoa, 2026-11-04): động cơ, đầu phát, bảng điều khiển là 3 tab, không chọn trong dropdown.
+  // Thông số cấu hình (Khoa, 2026-11-04): động cơ, bộ điều khiển, đầu phát là 3 tab, không chọn trong dropdown.
   const tabs = h`<div class="seg cattabs" role="tablist">${raw(Object.entries(CAT_KIND).map(([k, x]) => h`<button type="button" role="tab" data-catkind="${k}" aria-selected="${String(k === f.kind)}">${x.tab} <span class="c">${cat[x.list].length}</span></button>`).join(""))}</div>`;
   body.innerHTML = h`${raw(tabs)}${raw(filtToggle("catFilt"))}<div class="row suprow">
       <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:180px">
@@ -2775,7 +2777,7 @@ function catDetailHtml(e) {
       ${raw(others.length ? h`<dt>${K.other}</dt><dd>${others.map(([m, n]) => `${m}${n > 1 ? ` (${n})` : ""}`).join(", ")}</dd>` : "")}
     </dl>
     ${raw(e.kind === "controller" ? "" : catSpecsDetail(e))}
-    <h4>${e.kind === "controller" ? "Các dòng nguồn ghi bảng điều khiển này" : "Các dòng bảng ghi model này"}</h4>
+    <h4>${e.kind === "controller" ? "Các dòng nguồn ghi bộ điều khiển này" : "Các dòng bảng ghi model này"}</h4>
     ${raw(Object.entries(bySup).map(([sid, us]) => h`<details class="supspec" ${Object.keys(bySup).length <= 3 ? "open" : ""}><summary><b>${supName(state.supplier?.[sid]) || sid}</b> · ${us.length} dòng <button class="btn sm" data-supopen="${sid}" style="margin-left:6px">Hồ sơ nhà cung cấp</button></summary>
       <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Tổ máy</th><th>Công suất tổ máy</th><th>${K.other}</th><th>Thông số trong dòng</th><th>Dòng nguyên văn</th><th>Nguồn</th></tr></thead><tbody>${raw(us.map((u) => h`<tr>
         <td data-l="Tổ máy">${u.genset || "—"}</td>
@@ -2815,7 +2817,7 @@ function configTabHtml(t) {
   const ferr = !fwait && workerReqError("findreq", key), busy = wait || fwait;
   return wait + fwait + (err ? h`<div class="note warn">${err}</div>` : "") + (ferr ? h`<div class="note warn">Tìm NCC: ${ferr}</div>` : "")
     + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${busy ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
-    + h`<div class="field" style="margin:8px 0"><label for="cfgExtra">Yêu cầu khác</label><textarea id="cfgExtra" data-key="${key}" maxlength="2000" rows="2" placeholder="Không bắt buộc. Ví dụ: động cơ Weichai, đầu phát Stamford, bảng điều khiển Deep Sea DSE7320, hòa đồng bộ..." ${busy ? "disabled" : ""}>${cfgExtraOf(key)}</textarea></div>`
+    + h`<div class="field" style="margin:8px 0"><label for="cfgExtra">Yêu cầu khác</label><textarea id="cfgExtra" data-key="${key}" maxlength="2000" rows="2" placeholder="Không bắt buộc. Ví dụ: động cơ Weichai, đầu phát Stamford, bộ điều khiển Deep Sea DSE7320, hòa đồng bộ..." ${busy ? "disabled" : ""}>${cfgExtraOf(key)}</textarea></div>`
     + h`<div class="row actrow"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button></div>`
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
     + (prev?.result && !wait ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.originAuto ? ` (bot tự chọn vì HSMT ghi: “${prev.result.originAuto.quote}”)` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}</div>` + (prev.result.sizes ? cfgSizesHtml(prev.result) : cfgResultHtml(prev.result)) : "");
@@ -2854,7 +2856,7 @@ function cfgSuppliersHtml(c) {
   if (!c.suppliers?.length) return "";
   return h`<div class="small" style="margin-top:6px"><b>Nhà cung cấp đề xuất:</b></div><ol class="suplist">${raw(c.suppliers.map((x) => {
     const s = state.supplier?.[x.supplierId], conf = SUP_CONF[s?.confidence] || ["", "mut"], vn = s?.vietnam?.distributors || [];
-    return h`<li class="small"><b>${supName(s) || x.supplierId}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}${raw(c.controller?.model ? (x.hasController ? h`<span class="chip ok">có bảng điều khiển ${c.controller.model}</span>` : h`<span class="chip mut">trang không ghi bảng điều khiển ${c.controller.model}</span>`) : "")}
+    return h`<li class="small"><b>${supName(s) || x.supplierId}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}${raw(c.controller?.model ? (x.hasController ? h`<span class="chip ok">có bộ điều khiển ${c.controller.model}</span>` : h`<span class="chip mut">trang không ghi bộ điều khiển ${c.controller.model}</span>`) : "")}
       <button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ</button>${raw(s?.website ? h` <a href="${s.website}" target="_blank" rel="noopener">website</a>` : "")}
       ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
   }).join(""))}</ol>`;
@@ -2871,12 +2873,12 @@ function cfgResultHtml(r) {
     return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${c.rank || i + 1}</b><span class="chip ${fit[1]}">${fit[0]}</span>${raw(c.fromFind ? `<span class="chip mut" title="${c.findChecked ? "Thêm từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, đã đối chiếu với các yêu cầu HSMT" : "Thêm bằng code từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, chưa đối chiếu đủ HSMT"}">Bổ sung từ Tìm NCC</span>` : "")}<span class="spacer"></span>
         ${raw(c.engine?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="engine" data-catkey="${window.GenbidCatalog?.keyOf(c.engine.model) || ""}">Xem động cơ</button>` : "")}
         ${raw(c.alternator?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="alternator" data-catkey="${window.GenbidCatalog?.keyOf(c.alternator.model) || ""}">Xem đầu phát</button>` : "")}
-        ${raw(c.controller?.model ? h`<button class="btn sm" data-catopen="controller" data-catkey="${window.GenbidCatalog?.keyOf(c.controller.model) || ""}">Xem bảng điều khiển</button>` : "")}</div>
-      ${raw(part("Động cơ", c.engine))}${raw(part("Đầu phát", c.alternator))}${raw(part("Bảng điều khiển", c.controller))}${raw(c.genset ? h`<div class="small">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
+        ${raw(c.controller?.model ? h`<button class="btn sm" data-catopen="controller" data-catkey="${window.GenbidCatalog?.keyOf(c.controller.model) || ""}">Xem bộ điều khiển</button>` : "")}</div>
+      ${raw(part("Động cơ", c.engine))}${raw(part("Đầu phát", c.alternator))}${raw(part("Bộ điều khiển", c.controller))}${raw(c.genset ? h`<div class="small">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
       ${raw(c.checks?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
         const st = CFG_STATUS[x.status] || ["", "mut"];
         // factSrc: a figure of this engine / alternator model from another supplier's row or datasheet (config-bot.mjs modelFacts).
-        return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bảng điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
+        return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bộ điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
           <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}${raw(cfgPartsHtml(x))}${raw(cfgHintHtml(x))}</td>
           <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
       }).join(""))}</tbody></table></div>` : "")}
@@ -2921,7 +2923,7 @@ function tlktTabHtml(t) {
       <div class="files" id="tkList"></div>
     </div>
     <label class="tkcfg" id="tkCfg"><span class="small"><b>Cấu hình Kỹ Thuật của Nhà Cung Cấp</b> <span class="muted">(không bắt buộc). Khi có điền, chỉ đối chiếu với ô này, không dùng tệp đề xuất.</span></span>
-      <textarea id="tkText" placeholder="Dán cấu hình kỹ thuật nhà cung cấp chào: model, công suất, động cơ, đầu phát, bảng điều khiển...">${tlktCfgOf(t._key)}</textarea></label>
+      <textarea id="tkText" placeholder="Dán cấu hình kỹ thuật nhà cung cấp chào: model, công suất, động cơ, đầu phát, bộ điều khiển...">${tlktCfgOf(t._key)}</textarea></label>
     <div class="row"><div class="spacer"></div><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
     <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì PDF tự tải về"}">Tải PDF</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
 }
