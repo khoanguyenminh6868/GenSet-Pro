@@ -1301,7 +1301,7 @@ function openList(k) {
   const kp = KPIS.find((x) => x.key === k);
   const items = allTenders().filter((t) => !isProject(t) && kp.f(t)).sort((a, b) => (a.bidCloseDate || "9").localeCompare(b.bidCloseDate || "9"));
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
-  $("#dtabs").hidden = true; guardBack();
+  $("#dtabs").hidden = true;
   $("#dmeta").innerHTML = h`<span class="eyebrow">${items.length} gói</span>`;
   $("#dtitle").textContent = kp.l;
   $("#dbody").innerHTML = items.length ? items.map((t) => { const tl = timeLeft(t.bidCloseDate); return h`<button class="lrow" data-openkey="${t._key}">
@@ -1318,7 +1318,7 @@ function openTenderFromUrl() {
   if (!key || state.open === key) return;
   if (findTender(key)) { urlTender = null; openDrawer(key); } else urlTender = key;
 }
-window.addEventListener("hashchange", openTenderFromUrl);
+window.addEventListener("hashchange", () => navHashOk() && openTenderFromUrl());
 // Where closing the drawer goes back to, at the same scroll: the bidder's page a tender was opened from ({ id }), or the
 // tender and tab whose Giá gợi ý linked to it ({ key, tab }; Khoa, 2026-11-03), or the KPI list it was opened from ({ list }). Each close goes
 // back one step.
@@ -1326,15 +1326,15 @@ let drawerBack = [];
 function openDrawer(key, tab, back) {
   drawerBack = back ? [...drawerBack, back] : []; state.list = null; $("#dtabs").hidden = false;
   state.open = key; state.dtab = tab || "info";
-  if (tenderOfUrl() !== key) try { history.replaceState(null, "", tenderHref(key)); } catch {}
+  if (tenderOfUrl() !== key) try { history.replaceState(history.state, "", tenderHref(key)); } catch {}
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
-  renderDrawer(); renderGrid(); guardBack();
+  renderDrawer(); renderGrid();
 }
 function closeDrawer() {
   const r = drawerBack.pop(), rest = drawerBack;
   if (r?.key && findTender(r.key)) { openDrawer(r.key, r.tab); drawerBack = rest; $("#dbody").scrollTop = r.scroll || 0; return; }
-  if (r?.list) { openList(r.list); drawerBack = rest; $("#dbody").scrollTop = r.scroll || 0; if (tenderOfUrl()) try { history.replaceState(null, "", location.pathname + location.search); } catch {} return; }
-  if (tenderOfUrl()) try { history.replaceState(null, "", location.pathname + location.search); } catch {}
+  if (r?.list) { openList(r.list); drawerBack = rest; $("#dbody").scrollTop = r.scroll || 0; if (tenderOfUrl()) try { history.replaceState(history.state, "", location.pathname + location.search); } catch {} return; }
+  if (tenderOfUrl()) try { history.replaceState(history.state, "", location.pathname + location.search); } catch {}
   state.open = null; state.list = null; $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true"); $("#scrim").hidden = true; renderGrid();
   drawerBack = [];
   if (r && "id" in r) openBidders(r.id, r.scroll);
@@ -2279,9 +2279,9 @@ const MB_ICON = { bd: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fil
 // Each screen has its own URL (Khoa, 2026-11-02): /#nha-cung-cap, /#dong-co, /#dau-phat, /#bo-dieu-khien; its logo links there.
 const SCREEN_HASH = { sup: "nha-cung-cap", engine: "dong-co", alternator: "dau-phat", controller: "bo-dieu-khien", bd: "nha-thau" };
 const screenOfUrl = () => Object.keys(SCREEN_HASH).find((k) => location.hash === "#" + SCREEN_HASH[k]);
-const setScreenUrl = (k) => { try { history.replaceState(null, "", k ? "#" + SCREEN_HASH[k] : location.pathname + location.search); } catch {} };
+const setScreenUrl = (k) => { try { history.replaceState(history.state, "", k ? "#" + SCREEN_HASH[k] : location.pathname + location.search); } catch {} };
 function openScreenFromUrl() { const k = screenOfUrl(); if (k === "sup") openSuppliers(); else if (k === "bd") openBidders(); else if (k) openCatalog(k); }
-window.addEventListener("hashchange", openScreenFromUrl);
+window.addEventListener("hashchange", () => navHashOk() && openScreenFromUrl());
 // The supplier database (~7 MB of spec tables) is read once a tender, the Nhà cung cấp screen or a catalog opens,
 // not with the list.
 let supLoad = false;
@@ -3268,29 +3268,68 @@ function modal(html, onMount, cls = "") {
   const close = () => { ov.hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); };
   ov.onclick = (e) => { if (e.target === ov || e.target.closest("[data-close]")) close(); };
   onMount?.($("#mdl"), close);
-  guardBack();
 }
-// Back on a phone (swipe from the edge) or the browser goes back one step, like the screen's own ← button (a detail goes
-// back to its list; Khoa, 2026-11-04), else closes the open screen, then the open tender or list, like Escape, instead of
-// leaving the page (Khoa, 2026-11-04: behind the page was the Google sign-in, whose replay is a 400).
-// One extra history entry stands while something is open; closing with the X leaves it, and the next Back only takes it away.
-let backGuard = false;
-function guardBack() {
-  if (backGuard || ($("#ov").hidden && !state.open && !state.list)) return;
-  backGuard = true;
-  try { history.pushState({ genbidBack: 1 }, "", location.href); } catch { backGuard = false; }
+// ---------- Back ----------
+// Back (or a swipe on a phone) always comes back to what was on screen before (Khoa, 2026-11-04). Each step of the UI (a
+// tender, a KPI list, a screen and its detail, a dialog) is a browser history entry, pushed right after the tap that made it
+// (an entry pushed without a tap is skipped by Chrome's Back), holding what was open and where it was scrolled. A step
+// closed with the page's own buttons (X, ← Danh sách, Escape) takes its entry away. The first entry stays behind the home
+// screen, so Back never leaves the page (behind it was the Google sign-in, whose replay is a 400).
+const NAV_HOME = { open: null, dtab: "info", list: null, back: [], scr: null, sup: null, bd: null, cat: null, catOpen: null, catFrom: null, dscroll: 0, mscroll: 0 };
+function navSnap() {
+  const scr = $("#ov").hidden ? null : $("#supBody") ? "sup" : $("#bdBody") ? "bd" : $("#catBody") ? "cat" : "dlg";
+  return { open: state.open, dtab: state.dtab, list: state.list, back: drawerBack.slice(), scr,
+    sup: scr === "sup" ? supOpenId : null, bd: scr === "bd" ? bdOpenId : null,
+    cat: scr === "cat" ? catView.kind : null, catOpen: scr === "cat" ? catView.open : null, catFrom: scr === "cat" ? catFrom : null,
+    dscroll: $("#dbody").scrollTop, mscroll: scr ? mScroll().scrollTop : 0, url: location.href };
 }
-addEventListener("popstate", () => {
-  if (!backGuard) return;
-  backGuard = false;
+const navKey = (s) => JSON.stringify([s.open, s.list, s.scr, s.sup, s.bd, s.cat, s.catOpen]);
+// navStack mirrors this page's history entries; 0 is the page's first entry, 1 the home screen pushed on the first tap.
+let navStack = [NAV_HOME], navAt = 0, navSkip = 0, navPre = null, navPopAt = 0;
+function navTap() {
+  navPre = { dscroll: $("#dbody").scrollTop, mscroll: $("#ov").hidden ? 0 : mScroll().scrollTop };
+  if (navStack.length > 1) return;
+  try { history.replaceState({ gb: 0 }, "", location.href); history.pushState({ gb: 1 }, "", location.href); navStack = [NAV_HOME, { ...NAV_HOME, url: location.pathname + location.search }]; navAt = 1; } catch {}
+}
+function navSync() {
+  if (navStack.length < 2) return;
+  const s = navSnap(), k = navKey(s);
+  if (k === navKey(navStack[navAt])) { navStack[navAt] = s; return; }
+  if (navAt > 1 && k === navKey(navStack[navAt - 1])) { navAt--; navStack[navAt] = s; navSkip++; history.back(); return; }
+  if (navPre) navStack[navAt] = { ...navStack[navAt], ...navPre };
+  // The tap has already put the new step's address on the step before; that one gets its own back.
+  try { if (navStack[navAt].url) history.replaceState({ gb: navAt }, "", navStack[navAt].url); history.pushState({ gb: navAt + 1 }, "", s.url); } catch {}
+  navStack.length = navAt + 1; navStack.push(s); navAt++;
+}
+function navRestore(s) {
+  const cur = navSnap();
+  if (cur.scr && (cur.scr === "dlg" || cur.scr !== s.scr)) { $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); }
+  if (s.open && findTender(s.open)) { if (state.open !== s.open) openDrawer(s.open, s.dtab); }
+  else if (s.list) { if (state.list !== s.list || state.open) openList(s.list); }
+  else if (state.open || state.list) { drawerBack = []; closeDrawer(); }
+  drawerBack = (s.back || []).slice();
+  if (state.open || state.list) $("#dbody").scrollTop = s.dscroll || 0;
+  if (s.scr === "sup") { if ($("#supBody")) { supOpenId = s.sup; renderSuppliers(); } else openSuppliers(s.sup); }
+  else if (s.scr === "bd") { if ($("#bdBody")) { bdOpenId = s.bd; renderBidders(); } else openBidders(s.bd, s.mscroll); }
+  else if (s.scr === "cat") { if ($("#catBody") && catView.kind === s.cat) { catView.open = s.catOpen; catFrom = s.catFrom; renderCatalog(); } else openCatalog(s.cat, s.catOpen, s.catFrom); }
+  if (s.scr && s.scr !== "dlg") mScroll().scrollTop = s.mscroll || 0;
+  navStack[navAt] = { ...navSnap(), dscroll: s.dscroll, mscroll: s.mscroll };
+}
+addEventListener("popstate", (e) => {
+  const i = e.state?.gb;
+  if (typeof i !== "number" || navStack.length < 2) return;
+  navPopAt = Date.now();
+  if (navSkip) { navSkip--; navAt = i; return; }
   if (!$("#fpop").hidden) closeFilter();
-  const step = !$("#ov").hidden && ["#catToSup", "#catBack", "#supBack", "#bdBack"].map((q) => $("#mdl " + q)).find(Boolean);
-  if (step) step.click();
-  else if (!$("#ov").hidden) { $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); }
-  else if (state.open || state.list) closeDrawer();
-  guardBack();
+  if (i === 0) { navAt = 1; navRestore(navStack[1]); navSkip++; history.forward(); return; }
+  navAt = i; navRestore(navStack[i] || NAV_HOME);
 });
-
+// The hash a Back puts back is the step's own; it does not open anything again.
+const navHashOk = () => Date.now() - navPopAt > 500;
+document.addEventListener("click", navTap, true);
+document.addEventListener("keydown", navTap, true);
+document.addEventListener("click", () => setTimeout(navSync, 0));
+document.addEventListener("keydown", () => setTimeout(navSync, 0));
 
 // ---------- Events ----------
 document.addEventListener("click", async (e) => {
