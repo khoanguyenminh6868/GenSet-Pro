@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 93e41953-82a9-4265-a2a5-f081042fd87d
-  modified: 2026-11-04T06:27:03.335Z
+  modified: 2026-11-04T10:26:49.752Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (máy Windows, agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Mọi số/câu trích phải có nguyên văn trong nguồn; sai → "Đạt" thành "Chưa rõ". config-bot chạy tiến trình mới mỗi lượt nên sửa không cần restart bot. Lượt agent ~6–11 phút, ~$3/gói.
@@ -14,7 +14,7 @@ metadata:
 - Xếp hạng (`rankConfigs`): số "không đạt" ở động cơ + bộ điều khiển (đếm từng chức năng BĐK) → không đạt ở đầu phát + tổ máy → có NCC phù hợp → "chưa rõ" cùng thứ tự → yêu cầu `option` (bồn dầu, kích thước, độ ồn) sau cùng. Chưa kiểm = chưa rõ. Tối đa 6 cấu hình.
 - HSMT có yêu cầu BĐK mà cấu hình không có BĐK → "Bộ điều khiển của cấu hình" = Không đạt. Chức năng BĐK cùng loại gộp 1 yêu cầu có `parts`; nhóm đạt khi mọi phần đạt, phần thiếu = chưa rõ.
 - NCC chào đúng CẢ động cơ và BĐK lên đầu. Đại lý tại VN KHÔNG là tiêu chí.
-- Xuất xứ (mặc định cn): động cơ hãng TQ +250 điểm, đứng trước động cơ ngoại do NCC ở TQ chào (hãng HSMT nêu +300 vẫn thắng). G7/G20 theo `ENGINE_COUNTRY`/`COUNTRY_GROUP` (catalog.js), loại động cơ TQ sản xuất theo giấy phép (Weichai 6M33). Gói G7/G20 hay đòi tổ máy cùng hãng → agent tìm internet.
+- Xuất xứ: web mặc định "Tất cả" (#327); "Tất cả" và yêu cầu từ Sync (`from: "sync"`, gửi origin all) theo HSMT: `originOfHsmt` thấy G7/G20 → nhóm đó, không thì tất cả (Khoa 04/11). Chọn cn/g7/g20/other trên web giữ nguyên. Với cn: động cơ hãng TQ +250 điểm, đứng trước động cơ ngoại do NCC ở TQ chào (hãng HSMT nêu +300 vẫn thắng). G7/G20 theo `ENGINE_COUNTRY`/`COUNTRY_GROUP` (catalog.js), loại động cơ TQ sản xuất theo giấy phép (Weichai 6M33). Gói G7/G20 hay đòi tổ máy cùng hãng → agent tìm internet.
 - Số trần trong HSMT = mức tối thiểu với thông số càng lớn càng tốt; đường kính/hành trình/kích thước khác số → chưa rõ, không "không đạt". Datasheet đời khác → chưa rõ.
 - Tìm NCC CHỈ Claude (`GENBID_FIND_ENGINES` bật lại Gemini). NCC mới trùng cấu hình có sẵn (cùng động cơ, cùng đầu phát nếu cả hai ghi) → gắn vào; không trùng → cấu hình mới chỉ có NCC đó; agent nhỏ (`check-prompt.md`) đối chiếu HSMT. Không chạy lại cả Gợi ý.
 
@@ -25,6 +25,8 @@ metadata:
 **Thử / kiểm hồi quy:** `GENBID_LOCAL_SUPPLIERS=1` + script dry-run (prep → claude → check, chép `runClaude` ra `%TEMP%\dry-<K>\run.mjs`). Kiểm nhanh không tốn agent: copy w/ lượt cũ, chạy `check --dir` bằng code mới, so "chưa khớp". Log agent `%TEMP%\genbid-config-<TBMT>.log` (stream-json, mốc `[Ns]`). Khoá `genbid-config.lock` chỉ tính khi PID còn sống. Bash máy này làm mất `\` → viết script bằng Write rồi chạy node.
 
 **Hồi quy lớn (04/11, PR #311):** tải `bidhist`/`analysis`/`supplier`/`configmatch` qua `api/requests?kind=docs&coll=…` rồi chạy `capacity`/`hintsOf`/`plausible`/`candidates` trên `genbid-work/specs/<K>/text.txt` (~1.240 gói), so với `bidhist.config.text/kvas` (AI đọc). Bộ so tự viết cũng sai (đọc "11.051 L" thành 11051, dự phòng thành Prime) → xem từng ca trước khi kết luận. candidates ~0,6 s/gói (CAT.build 6 s). Sau #311 + #313: công suất 97,8%, dung tích 61%, xi lanh 76%, Prime 59%. #313: `unflatten` (dòng > 300 ký tự tách lại hàng) + `sectionsOf` (số dưới tiêu đề đầu phát/động cơ). Bỏ sót còn lại: AI tính dung sai khác (±0,5 → code lấy số thấp), gói nhiều cỡ máy (code cố ý không đoán), OCR hỏng ký tự (≥ thành 2). Công suất tên gói bỏ số của máy biến áp/TBA/UPS (`capPick` trong web/bidprice.js, dùng chung bot + web + Gợi ý giá đấu). Chỉ có 6 configmatch trên web nên phần agent chưa hồi quy được nhiều.
+
+**Bẫy dữ liệu test (04/11):** chữ HSMT trên web (`hsmttext`) của ~1.490 gói lịch sử CHÍNH LÀ chữ Chương V do specs đăng, không phải HSMT cả bộ; chỉ gói đang mời thầu đã Lấy tệp (~33) có HSMT cả bộ. #315: technicalPart tìm chương theo tên (III/IV/V, "phạm vi cung cấp", "điều khoản tham chiếu"), bỏ mục lục. Chạy agent thật hàng loạt: scratchpad `agents.mjs` (prep → run.mjs → check, 4 song song, không post), `evalruns.mjs` chấm; 22 gói $62,65, ~9 phút/gói. #319: bảng nhãn một model (fdk-energy) là nguồn cả trang; gợi ý "tra được" bớt nhiễu. Khoa 04/11 (#320): yêu cầu origin cn (mặc định/chuỗi tự động) mà HSMT ghi rõ G7/G20 → bot tự chọn G7/G20 (`originOfHsmt`, `result.originAuto` có câu HSMT, web hiện); xuất xứ khác chọn trên web giữ nguyên. ~13% HSMT (202/1.520) đòi G7/G20. Lưu ý: nhóm g20 của mình KHÔNG gồm Trung Quốc, dù TQ là thành viên G20.
 
 **Khoa 04/11:** nguồn mâu thuẫn (kể cả 1 nguồn sai rõ ràng, 2 nguồn khác khớp nhau) vẫn để "chưa rõ", KHÔNG lấy đa số.
 

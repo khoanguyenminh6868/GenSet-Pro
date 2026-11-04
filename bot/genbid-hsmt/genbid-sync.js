@@ -1063,14 +1063,14 @@ async function autoRequests(fresh) {
   writeJson(AUTO_FILE, auto);
   return `Tự phân tích, gợi ý cấu hình và giá: ${want.map((t) => t.notifyNo).join(", ")}`;
 }
-// After the automatic analysis (done or not): Gợi ý cấu hình, Xuất xứ Trung Quốc as the web's default. Its configreq
-// carries auto + basis, and config-bot.mjs sends Gợi ý giá đấu once the configuration is posted.
+// After the automatic analysis (done or not): Gợi ý cấu hình, Xuất xứ as the HSMT requires (config-bot.mjs: the G7 / G20
+// it names, else all; Khoa 2026-11-04). Its configreq carries auto + basis, and config-bot.mjs sends Gợi ý giá đấu once the configuration is posted.
 function autoConfigRow(meta) {
   const auto = readJson(AUTO_FILE, {}), a = auto[meta.key];
   if (!a || a.requestedAt !== meta.requestedAt) return null;
   delete auto[meta.key];
   writeJson(AUTO_FILE, auto);
-  return { coll: "configreq", id: meta.key, data: { notifyNo: meta.notifyNo || meta.key, bidName: a.bidName, origin: "cn", requestedAt: now(), from: "sync", auto: true,
+  return { coll: "configreq", id: meta.key, data: { notifyNo: meta.notifyNo || meta.key, bidName: a.bidName, origin: "all", requestedAt: now(), from: "sync", auto: true,
     basis: JSON.parse(JSON.stringify({ price: a.price, bidForm: a.bidForm, investorName: a.investorName })) } };
 }
 
