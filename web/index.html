@@ -3413,7 +3413,8 @@ function modal(html, onMount, cls = "") {
   if (screenOfUrl()) setScreenUrl();
   const ov = $("#ov"); $("#mdl").className = "modal " + cls; $("#mdl").innerHTML = html; ov.hidden = false;
   const close = () => { ov.hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); };
-  ov.onclick = (e) => { if (e.target === ov || e.target.closest("[data-close]")) close(); };
+  // A tap outside the window does nothing: it closes only with its own buttons, Escape or Back (Khoa, 2026-11-04).
+  ov.onclick = (e) => { if (e.target.closest("[data-close]")) close(); };
   onMount?.($("#mdl"), close);
 }
 // ---------- Back ----------
@@ -3647,7 +3648,6 @@ $("#toTop").addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth
 $("#toBottom").addEventListener("click", () => scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" }));
 $("#clearFilters").addEventListener("click", () => { state.filters = {}; $("#q").value = ""; state.limit = pageSize(); renderGrid(); });
 $("#dclose").addEventListener("click", closeDrawer);
-$("#scrim").addEventListener("click", closeDrawer);
 // The format toolbar keeps the selection (mousedown does not take focus) and acts on the document right after it.
 document.addEventListener("mousedown", (e) => { if (e.target.closest?.(".edbar button")) e.preventDefault(); });
 document.addEventListener("click", (e) => {
