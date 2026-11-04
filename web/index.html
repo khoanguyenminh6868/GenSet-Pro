@@ -1411,7 +1411,7 @@ function infoHtml(t) {
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
-        ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
+        ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}" title="${f.converted ? "Xem (bản PDF chuyển từ tệp gốc)" : "Xem tệp"}" aria-label="${f.converted ? "Xem bản PDF" : "Xem tệp"}">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
         ${raw(!f.hasText && f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t))}
@@ -1435,7 +1435,7 @@ function quoteHtml(t) {
         ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Tải tệp lên</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
         ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
       ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
-        ${raw(ro ? "" : h`<button class="btn sm" data-qopen="${r.id}:${i}">${/\.pdf$/i.test(f.name) ? "Xem" : "Tải về"}</button><button class="btn sm" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
+        ${raw(ro ? "" : h`${raw(/\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-qopen="${r.id}:${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : h`<button class="btn sm" data-qopen="${r.id}:${i}">Tải về</button>`)}<button class="btn sm" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(up ? progress(up) : "")}
     </div>`;
   };
@@ -1525,7 +1525,7 @@ function projectInfoHtml(t) {
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Tệp hồ sơ</h2><span class="muted small">${files.length ? `${files.length} tệp${d?.updatedAt ? " · cập nhật " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
-        ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}">Xem</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải</a>` : "")}
+        ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải</a>` : "")}
         ${raw(f.hasText ? "" : '<span class="chip mut">Không đọc được chữ</span>')}
         ${raw(state.readOnly ? "" : h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(state.readOnly ? "" : projUp[key] ? `<div class="note">${progress(projUp[key])}</div>` : h`<div class="drop" id="pDrop">
@@ -1923,9 +1923,9 @@ function translateTabHtml(t) {
   // Never asked for a translation (requests are kept once answered): show the buttons now instead of waiting for the
   // read; loadTranslation still looks in the background for a brief made before requests existed.
   const c = trCache[t._key] === undefined && !state.translationreq?.[t._key] ? null : trCache[t._key];
-  const btns = c === undefined ? h`<button class="btn primary" id="trRun" data-key="${t._key}" hidden>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo">Đang tải bản dịch...</span>`
-    : c === null ? h`<button class="btn primary" id="trRun" data-key="${t._key}" ${trWait ? "disabled" : ""}>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo"></span>`
-    : h`<button class="btn" id="trRun" data-key="${t._key}" data-resume="${c.meta.done ? "" : c.meta.parts}" ${trWait ? "disabled" : ""}>${c.meta.done ? "Tạo lại" : "Làm tiếp"}</button><button class="btn primary" id="trPdf" data-key="${t._key}" ${c.meta.done ? "" : "hidden"}>Tải PDF</button><span class="muted small" id="trInfo">${c.meta.done ? `Đã tạo lúc ${fmtDate(c.meta.at)}` : `Đã làm ${c.meta.parts}/${c.meta.total} phần. Bấm để làm tiếp.`}</span>`;
+  const btns = c === undefined ? h`<button class="btn primary" id="trRun" data-key="${t._key}" hidden>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden title="Tải PDF" aria-label="Tải PDF">${raw(PDF_SVG)}</button><span class="muted small" id="trInfo">Đang tải bản dịch...</span>`
+    : c === null ? h`<button class="btn primary" id="trRun" data-key="${t._key}" ${trWait ? "disabled" : ""}>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden title="Tải PDF" aria-label="Tải PDF">${raw(PDF_SVG)}</button><span class="muted small" id="trInfo"></span>`
+    : h`<button class="btn primary" id="trRun" data-key="${t._key}" data-resume="${c.meta.done ? "" : c.meta.parts}" ${trWait ? "disabled" : ""}>${c.meta.done ? "Tạo lại" : "Làm tiếp"}</button><button class="btn primary" id="trPdf" data-key="${t._key}" ${c.meta.done ? "" : "hidden"} title="Tải PDF" aria-label="Tải PDF">${raw(PDF_SVG)}</button><span class="muted small" id="trInfo">${c.meta.done ? `Đã tạo lúc ${fmtDate(c.meta.at)}` : `Đã làm ${c.meta.parts}/${c.meta.total} phần. Bấm để làm tiếp.`}</span>`;
   return trWait + (trErr ? h`<div class="note warn">Agent chưa dịch được: ${trErr}</div>` : "") + h`<div class="row">${raw(btns)}</div>
     <div id="trOut">${raw(c ? trHtml(c.secs, !c.meta.done, c.text) : "")}</div>`;
 }
@@ -2189,6 +2189,8 @@ function compareTabHtml(t) {
     <div class="row"><div class="spacer"></div><button class="btn primary" id="cmRun" data-key="${t._key}" ${cmWait ? "disabled" : ""}>Đối chiếu</button>${raw(sideBtns(t._key))}</div>
     <div id="cmOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.accepted ? " · đã đánh dấu là đã đối chiếu" : ""}</span><button class="btn sm" id="cmDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></div>` + comparisonHtml(prev.result) : "")}</div>`;
 }
+// Xem tệp / Tải PDF buttons show only this icon (Khoa, 2026-11-04); what they do is in their title.
+const PDF_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5"/><text x="12" y="17.6" text-anchor="middle" font-size="7.4" font-weight="800" font-family="system-ui,sans-serif" fill="currentColor" stroke="none">PDF</text></svg>';
 const TRASH_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>';
 // Xóa: remove the current comparison (and with it the "đã đối chiếu" mark), after a confirmation.
 function askDeleteCompare(key) {
@@ -2931,7 +2933,7 @@ function tlktTabHtml(t) {
     <label class="tkcfg" id="tkCfg"><span class="small"><b>Cấu hình Kỹ Thuật của Nhà Cung Cấp</b> <span class="muted">(không bắt buộc). Khi có điền, chỉ đối chiếu với ô này, không dùng tệp đề xuất.</span></span>
       <textarea id="tkText" placeholder="Dán cấu hình kỹ thuật nhà cung cấp chào: model, công suất, động cơ, đầu phát, bộ điều khiển...">${tlktCfgOf(t._key)}</textarea></label>
     <div class="row"><div class="spacer"></div><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
-    <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì PDF tự tải về"}">Tải PDF</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
+    <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì PDF tự tải về"}" aria-label="Tải PDF">${raw(PDF_SVG)}</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
 }
 // Tải PDF: the comparison result in English (Khoa, 2026-10-27). The translation is made once per result and kept next to
 // it (resultEn), so downloading again costs nothing. On the web the Windows bot translates it (the web's own AI has no API
@@ -3577,7 +3579,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "moreBtn") { state.limit += pageSize(); renderGrid(); return; }
   const op = e.target.closest("[data-openpdf]");
   if (op) { openPdf(state.open, +op.dataset.openpdf); return; }
-  if (e.target.id === "trPdf") { translationPdf(e.target.dataset.key); return; }
+  if (e.target.closest("#trPdf")) { translationPdf(e.target.closest("#trPdf").dataset.key); return; }
   if (e.target.id === "hsRun") { runHsdt(e.target.dataset.key); return; }
   if (e.target.id === "hsDocx") { hsdtDocx(e.target.dataset.key); return; }
   const st = e.target.closest("#stageTabs [data-stage]");
