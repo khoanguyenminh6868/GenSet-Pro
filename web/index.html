@@ -1383,7 +1383,7 @@ function infoHtml(t) {
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp${files.some((f) => f.manual) ? ` (${files.filter((f) => f.manual).length} tải tay)` : " tải từ muasamcong"}${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
-        ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải về</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
+        ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
         ${raw(!f.hasText && f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t))}
@@ -1497,7 +1497,7 @@ function projectInfoHtml(t) {
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Tệp hồ sơ</h2><span class="muted small">${files.length ? `${files.length} tệp${d?.updatedAt ? " · cập nhật " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
-        ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}">Xem</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải về</a>` : "")}
+        ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}">Xem</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải</a>` : "")}
         ${raw(f.hasText ? "" : '<span class="chip mut">Không đọc được chữ</span>')}
         ${raw(state.readOnly ? "" : h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(state.readOnly ? "" : projUp[key] ? `<div class="note">${progress(projUp[key])}</div>` : h`<div class="drop" id="pDrop">
