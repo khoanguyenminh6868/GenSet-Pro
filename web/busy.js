@@ -18,10 +18,13 @@
   };
   for (const t of ["click", "change", "submit", "keydown", "drop", "paste"]) addEventListener(t, act, true);
 
+  // A screen that shows its own spinner while it loads (.loading, e.g. the PDF viewer) gets no second one in the middle.
+  const ownSpinner = () => [...document.querySelectorAll(".loading .spin")].some((e) => e.getClientRects().length);
   function show() {
     timer = 0;
     if (!pending) return;
     document.documentElement.classList.add("gb-busy");
+    if (ownSpinner()) { if (pill) pill.hidden = true; return; }
     if (!pill && document.body) {
       pill = document.createElement("div");
       pill.className = "busypill"; pill.setAttribute("role", "status"); pill.setAttribute("aria-label", "Đang xử lý");
