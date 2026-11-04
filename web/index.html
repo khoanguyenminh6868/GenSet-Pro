@@ -2132,7 +2132,7 @@ function hsdtTabHtml(t) {
       <div class="files" id="hcList"></div>
     </div>
     ${raw(prev ? actBar("Đã soạn HSDT", `lúc ${fmtDate(prev.at)}${basis ? " · " + basis : ""}`, h`<button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>Soạn lại</button>`, "hsInfo")
-      : h`<div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>Tạo HSDT</button><span class="muted small" id="hsInfo"></span></div>`)}<div id="hsUp"></div>
+      : h`<div class="row"><span class="muted small" id="hsInfo"></span><div class="spacer"></div><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>Tạo HSDT</button></div>`)}<div id="hsUp"></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
 // The reference bid is shown as the Word document it becomes. Every text is editable in place: data-h names the
@@ -2241,7 +2241,7 @@ function cmBar(key, wait) {
   const prev = state.compare[key], run = (l) => h`<button class="btn primary" id="cmRun" data-key="${key}" ${wait ? "disabled" : ""}>${l}</button>`;
   return h`<div id="cmBar" style="display:contents">${raw(prev?.result
     ? actBar("Đã đối chiếu", `lúc ${fmtDate(prev.at)}${prev.accepted ? " · đã đánh dấu là đã đối chiếu" : ""}`, run("Đối chiếu lại") + sideBtns(key) + h`<button class="btn sm" id="cmDel" data-key="${key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button>`)
-    : h`<div class="row">${raw(run("Đối chiếu") + sideBtns(key))}</div>`)}</div>`;
+    : h`<div class="row"><div class="spacer"></div>${raw(run("Đối chiếu") + sideBtns(key))}</div>`)}</div>`;
 }
 function cmBarRedo(key) { const b = $("#cmBar"); if (b) b.outerHTML = cmBar(key, workerReqPending("comparereq", key)); }
 // Xem tệp / Tải PDF buttons show only this red badge (Khoa, 2026-11-04); what they do is in their title.
@@ -2892,7 +2892,6 @@ function configTabHtml(t) {
   const key = t._key, prev = state.configmatch[key], origin = cfgOrigin[key] || "all";
   const wait = workerReqPending("configreq", key) ? waitHtml("Đang chờ Agent đọc HSMT và chọn cấu hình động cơ, đầu phát...", state.configreq[key].requestedAt) : "";
   const err = !wait && workerReqError("configreq", key);
-  const usedOrigin = CFG_ORIGIN.find(([k]) => k === prev?.result?.origin)?.[1];
   // Tìm NCC (Khoa, 2026-10-31): search the internet for more suppliers that fit the requirements and add them to the
   // catalog (config-bot.mjs, find-prompt.md), by Claude (Khoa, 2026-11-03).
   const fprev = state.findmatch[key], fwait = workerReqPending("findreq", key) ? waitHtml("Đang chờ Agent tìm nhà cung cấp trên internet (Claude)...", state.findreq[key].requestedAt) : "";
@@ -2903,7 +2902,7 @@ function configTabHtml(t) {
     + (() => {
       const btns = h`<button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button>`;
       if (!prev?.result || wait) return h`<div class="row actrow cfgact">${raw(btns)}</div>`;
-      const info = `lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.originAuto ? ` (bot tự chọn vì HSMT ghi: “${prev.result.originAuto.quote}”)` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}`;
+      const info = `lúc ${fmtDate(prev.at)}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}`;
       return actBar("Đã gợi ý", info, btns, "", "ok", "actrow cfgact");
     })()
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
