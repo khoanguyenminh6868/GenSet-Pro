@@ -1319,7 +1319,8 @@ function openTenderFromUrl() {
 }
 window.addEventListener("hashchange", openTenderFromUrl);
 // Where closing the drawer goes back to, at the same scroll: the bidder's page a tender was opened from ({ id }), or the
-// tender and tab whose Giá gợi ý linked to it ({ key, tab }; Khoa, 2026-11-03). Each close goes back one step.
+// tender and tab whose Giá gợi ý linked to it ({ key, tab }; Khoa, 2026-11-03), or the KPI list it was opened from ({ list }). Each close goes
+// back one step.
 let drawerBack = [];
 function openDrawer(key, tab, back) {
   drawerBack = back ? [...drawerBack, back] : []; state.list = null; $("#dtabs").hidden = false;
@@ -1331,6 +1332,7 @@ function openDrawer(key, tab, back) {
 function closeDrawer() {
   const r = drawerBack.pop(), rest = drawerBack;
   if (r?.key && findTender(r.key)) { openDrawer(r.key, r.tab); drawerBack = rest; $("#dbody").scrollTop = r.scroll || 0; return; }
+  if (r?.list) { openList(r.list); drawerBack = rest; $("#dbody").scrollTop = r.scroll || 0; if (tenderOfUrl()) try { history.replaceState(null, "", location.pathname + location.search); } catch {} return; }
   if (tenderOfUrl()) try { history.replaceState(null, "", location.pathname + location.search); } catch {}
   state.open = null; state.list = null; $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true"); $("#scrim").hidden = true; renderGrid();
   drawerBack = [];
@@ -3267,8 +3269,9 @@ function modal(html, onMount, cls = "") {
   onMount?.($("#mdl"), close);
   guardBack();
 }
-// Back on a phone (swipe from the edge) or the browser closes the open screen, then the open tender or list, like Escape,
-// instead of leaving the page (Khoa, 2026-11-04: behind the page was the Google sign-in, whose replay is a 400).
+// Back on a phone (swipe from the edge) or the browser goes back one step, like the screen's own ← button (a detail goes
+// back to its list; Khoa, 2026-11-04), else closes the open screen, then the open tender or list, like Escape, instead of
+// leaving the page (Khoa, 2026-11-04: behind the page was the Google sign-in, whose replay is a 400).
 // One extra history entry stands while something is open; closing with the X leaves it, and the next Back only takes it away.
 let backGuard = false;
 function guardBack() {
@@ -3280,7 +3283,9 @@ addEventListener("popstate", () => {
   if (!backGuard) return;
   backGuard = false;
   if (!$("#fpop").hidden) closeFilter();
-  if (!$("#ov").hidden) { $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); }
+  const step = !$("#ov").hidden && ["#catToSup", "#catBack", "#supBack", "#bdBack"].map((q) => $("#mdl " + q)).find(Boolean);
+  if (step) step.click();
+  else if (!$("#ov").hidden) { $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); }
   else if (state.open || state.list) closeDrawer();
   guardBack();
 });
@@ -3314,7 +3319,7 @@ document.addEventListener("click", async (e) => {
   const ks = e.target.closest("[data-kstat]");
   if (ks) { openBidders(ks.dataset.kstat || null); return; }
   const ok = e.target.closest("[data-openkey]");
-  if (ok) { openDrawer(ok.dataset.openkey); return; }
+  if (ok) { openDrawer(ok.dataset.openkey, "", state.list ? { list: state.list, scroll: $("#dbody").scrollTop } : undefined); return; }
   if (e.target.id === "goCompare") { $("#ov").hidden = true; openDrawer(e.target.dataset.key, "compare"); return; }
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
   if (e.target.closest("#syncNewBtn")) { syncNew(); return; }
