@@ -716,3 +716,8 @@ test("prime with the load or the units in the label, or the figure on the next l
   assert.deepEqual(powerMins("+ Tổ máy phát: công suất liên tục\n16KW/20KVA, công suất dự phòng 18KW/22KVA").minPrime, { kW: 16, kVA: 20 });
   assert.equal(powerMins("Công suất liên tục của động cơ\n15,5 kW").minPrime, null);
 });
+
+test("a displacement with the unit in the label and no sign is a minimum; '< 1,830' is not", () => {
+  assert.equal(engineMins("7 Tổng dung tích xy lanh (lit) 14.618").minDisp, 14.618);
+  assert.equal(engineMins("9 | Dung tích xilanh (lit) < 1,830").minDisp, null);
+});
