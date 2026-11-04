@@ -1445,7 +1445,7 @@ function quoteHtml(t) {
     if (r.supplierId && !opts.some((s) => s.id === r.supplierId)) opts.unshift(state.supplier?.[r.supplierId] || { id: r.supplierId });
     const up = quoteUp[key]?.row === r.id ? quoteUp[key].text : "";
     return h`<div class="qrow" data-qrow="${r.id}">
-      <div class="row qline"><select data-qsup="${r.id}" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">${favN ? "Chọn nhà cung cấp yêu thích..." : "Chưa có nhà cung cấp yêu thích"}</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
+      <div class="row qline"><select data-qsup="${r.id}" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">${favN ? "Chọn NCC" : "Chưa có nhà cung cấp yêu thích"}</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
         ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Upload</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
         ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
       ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
