@@ -3427,8 +3427,11 @@ function modal(html, onMount, cls = "") {
   if (screenOfUrl()) setScreenUrl();
   const ov = $("#ov"); $("#mdl").className = "modal " + cls; $("#mdl").innerHTML = html; ov.hidden = false;
   const close = () => { ov.hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); };
-  // A tap outside the window does nothing: it closes only with its own buttons, Escape or Back (Khoa, 2026-11-04).
-  ov.onclick = (e) => { if (e.target.closest("[data-close]")) close(); };
+  // On a phone a tap outside the window does nothing: it closes only with its own buttons, Escape or Back (Khoa,
+  // 2026-11-04). With a mouse a click outside closes it too (Khoa, 2026-11-04), unless the press began inside (a text
+  // selection dragged out of the window).
+  ov.onmousedown = (e) => { ov._downOut = e.target === ov; };
+  ov.onclick = (e) => { if (e.target.closest("[data-close]") || (e.target === ov && ov._downOut && matchMedia("(hover: hover) and (pointer: fine)").matches)) close(); };
   onMount?.($("#mdl"), close);
 }
 // ---------- Back ----------
