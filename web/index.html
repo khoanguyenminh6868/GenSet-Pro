@@ -2381,6 +2381,7 @@ function renderSuppliers() {
   const body = $("#supBody");
   if (!body) return;
   if (supWait()) { body.innerHTML = supWait(); return; }
+  catWarm();
   if (supOpenId && state.supplier?.[supOpenId]) { body.innerHTML = h`<div class="mscroll">${raw(supDetailHtml(state.supplier[supOpenId]))}</div>`; supModelsLater(); return; }
   const all = supAll();
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu nhà cung cấp.</div>`; return; }
@@ -2601,6 +2602,22 @@ const CAT_KIND = { engine: { one: "động cơ", title: "Danh mục động cơ"
 const CAT_RATING = { prime: "Liên tục (prime)", standby: "Dự phòng (standby)", rated: "Không ghi loại" };
 let catMemo = { src: null, del: null, cat: null };
 const catReady = () => catMemo.src === state.supplier && catMemo.del === state.supdeleted;
+// The catalog is read from every supplier table (seconds on a phone): once the Nhà cung cấp or a catalog screen opens,
+// each supplier's rows are read while the page is idle, then the catalog is built, so opening one is quick.
+let catWarmFor = null;
+const idle = (fn) => (window.requestIdleCallback ? requestIdleCallback(fn, { timeout: 1000 }) : setTimeout(() => { const t = performance.now(); fn({ timeRemaining: () => Math.max(0, 15 - (performance.now() - t)) }); }, 30));
+function catWarm() {
+  if (!window.GenbidCatalog?.prime || !state.loaded.supplier || catReady() || catWarmFor === state.supplier) return;
+  const src = catWarmFor = state.supplier, todo = supAll();
+  const step = (d) => {
+    if (catWarmFor !== src || src !== state.supplier) return;
+    // At least one supplier a step, so a busy page still gets through.
+    do window.GenbidCatalog.prime(todo.pop()); while (todo.length && d.timeRemaining() > 4);
+    if (todo.length) return idle(step);
+    idle(() => { if (src === state.supplier) catalog(); if (catWarmFor === src) catWarmFor = null; });
+  };
+  idle(step);
+}
 function catalog() {
   if (catMemo.src !== state.supplier || catMemo.del !== state.supdeleted) catMemo = { src: state.supplier, del: state.supdeleted, cat: window.GenbidCatalog ? window.GenbidCatalog.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
   return catMemo.cat;
@@ -2649,6 +2666,14 @@ function renderCatalog() {
   const body = $("#catBody");
   if (!body) return;
   if (supWait()) { body.innerHTML = supWait(); return; }
+  // The first build holds the page for a few seconds: the spinner is painted first.
+  if (!catReady()) {
+    if (!body.querySelector(".catwait")) {
+      body.innerHTML = h`<div class="mscroll catwait">${raw(progress("Đang dựng danh mục..."))}</div>`;
+      window.genbidBusy(new Promise((done) => setTimeout(() => { if (body.isConnected) { catalog(); renderCatalog(); } done(); }, 50)));
+    }
+    return;
+  }
   const cat = catalog(), K = CAT_KIND[catView.kind], all = cat[K.list];
   if ($("#catTitle")) $("#catTitle").textContent = K.title;
   $("#mdl a.home")?.setAttribute("href", "#" + SCREEN_HASH[catView.kind]);
