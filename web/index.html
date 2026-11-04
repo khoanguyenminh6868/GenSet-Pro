@@ -2429,7 +2429,7 @@ async function delSupplier(id) {
 function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
-  return h`<div class="dethead"><div class="row"><button class="btn sm" id="supBack">← Danh sách</button><span class="spacer"></span>${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}</div>
+  return h`<div class="dethead"><div class="row"><button class="btn sm" id="supBack">← Danh sách</button><span class="spacer"></span>${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose);margin-right:14px">Xóa</button>`)}</div>
     <div><h3 class="hlname" style="margin:4px 0">${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div class="row" style="margin-top:4px"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}</div></div></div>
     <dl class="kv">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
