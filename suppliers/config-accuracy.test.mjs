@@ -3,7 +3,7 @@
 // candidate rows written to catalog.md, the requirements kept between runs and the check of Tìm NCC configurations.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins, powerMins, capacity, plausible } from "./config-bot.mjs";
+import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins, powerMins, capacity, plausible, unflatten } from "./config-bot.mjs";
 import { makerSheet, controllerSheet } from "./maker-datasheets.mjs";
 
 const C = globalThis.GenbidCatalog;
@@ -720,4 +720,41 @@ test("prime with the load or the units in the label, or the figure on the next l
 test("a displacement with the unit in the label and no sign is a minimum; '< 1,830' is not", () => {
   assert.equal(engineMins("7 Tổng dung tích xy lanh (lit) 14.618").minDisp, 14.618);
   assert.equal(engineMins("9 | Dung tích xilanh (lit) < 1,830").minDisp, null);
+});
+
+
+test("a table flattened into one long line is split into its rows again; OCR's '500K VA' is kVA (2026-11-04)", () => {
+  const flat = "Nhãn hiệu/ Xuất xứ Nhãn hiệu phải có văn bằng bảo hộ sở hữu trí tuệ do cơ quan có thẩm quyền cấp còn hiệu lực. Xuất xứ nhà thầu tự đề xuất. Đạt Không đạt "
+    + "3 Công suất liên tục ≥ 12.5 ±0.5KVA Đạt Không đạt 4 Công suất tối đa ≥ 13.8 kVA Đạt Không đạt 5 Điện áp/Tần số (danh định) 220-230V/50Hz Đạt Không đạt "
+    + "II Yêu cầu đối với động cơ 1 Loại động cơ Diesel 4 thì Đạt Không đạt 2 Số xy lanh ≥ 2 Đạt Không đạt 3 Dung tích bình nhiên liệu ≥ 8 Lít Đạt Không đạt";
+  const rows = unflatten(flat).split("\n");
+  assert.ok(rows.includes("3 Công suất liên tục ≥ 12.5 ±0.5KVA Đạt Không đạt"));
+  assert.ok(rows.some((r) => r.startsWith("II Yêu cầu đối với động cơ")));
+  // A figure with its unit stays with its label.
+  assert.ok(rows.includes("3 Dung tích bình nhiên liệu ≥ 8 Lít Đạt Không đạt"));
+  assert.deepEqual(powerMins(flat).minPrime, { kVA: 12 });
+  assert.equal(engineMins(flat).minCyl, 2);
+  assert.deepEqual(powerMins("— Công suất liên tục: 500K VA.").minPrime, { kVA: 500 });
+});
+
+test("a figure under the alternator's heading is the alternator's when it fits the genset, else another genset's", () => {
+  const t = (alt) => `I Tổ máy phát điện\n3 Công suất liên tục ≥ 8,5kVA\n4 Công suất dự phòng ≥ 9,35 KVA\nIII Yêu cầu đối với đầu phát điện\nCông suất liên tục tại 40oC\n7 ≥ ${alt} KVA`;
+  assert.deepEqual(powerMins(t(11)).minPrime, { kVA: 8.5 });
+  assert.equal(powerMins(t(30)).minPrime, null);
+  // In the engine's section a kVA figure is a genset's (a tender of 300, 400 and 450 kVA).
+  assert.equal(powerMins("- Công suất liên tục: 300KVA;\nII Yêu cầu đối với động cơ\n- Công suất liên tục: 400KVA;").minPrime, null);
+});
+
+test("prime written as kW/kVA, kVA/kW after the figures, 'liên tục/ dự phòng' and Continuous (2026-11-04)", () => {
+  assert.deepEqual(powerMins("TỔ MÁY PHÁT: - Công suất liên tục (Kw/KVA) 60/75 - Công suất dự phòng (KW/KVA) 66/83").minPrime, { kW: 60, kVA: 75 });
+  assert.deepEqual(powerMins("Công suất liên tục (Prime) 100/80 (kVA/kW)\nCông suất dự phòng (Standby) 110/88 (kVA/kW)").minPrime, { kVA: 100, kW: 80 });
+  assert.deepEqual(powerMins("Máy phát điện công suất liên tục/ dự phòng: 6/6,5 KVA.").minPrime, { kVA: 6 });
+  assert.deepEqual(powerMins("Continuous 110KVA\nStand by 120KVA").minPrime, { kVA: 110 });
+});
+
+
+test("a displacement with no unit is in litres; a cell that gives the cylinders is not one (2026-11-04)", () => {
+  assert.equal(engineMins("4 Dung tích xilanh ≥ 2.5 Đạt Không đạt").minDisp, 2.5);
+  assert.equal(engineMins("Số xi lanh, dung tích\n≥ 3 xi lanh, thông tin dung tích xi lanh").minDisp, null);
+  assert.equal(engineMins("Tỷ số nén, dung tích xi lanh ≥ 17:1").minDisp, null);
 });
