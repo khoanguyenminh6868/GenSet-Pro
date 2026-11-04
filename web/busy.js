@@ -20,8 +20,9 @@
   };
   for (const t of ["click", "change", "submit", "keydown", "drop", "paste"]) addEventListener(t, act, true);
 
-  // A screen that shows its own spinner while it loads (.loading, e.g. the PDF viewer) gets no second one in the middle.
-  const ownSpinner = () => [...document.querySelectorAll(".loading .spin")].some((e) => e.getClientRects().length);
+  // A screen that shows its own spinner while it loads (.loading, e.g. the PDF viewer), or a progress line with one (.progress,
+  // e.g. uploading a quote), gets no second one in the middle.
+  const ownSpinner = () => [...document.querySelectorAll(".loading .spin, .progress .spin")].some((e) => e.getClientRects().length);
   function show() {
     timer = 0;
     if (!pending) return;
