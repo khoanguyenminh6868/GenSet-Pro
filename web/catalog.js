@@ -131,8 +131,14 @@
     ["controller", "genset", "Bộ điều khiển", /^(controller|control\s*(module|panel)|控制器)\s*(model|type|brand)?\s*[:：]?$/i, null, /[a-z]{2,}\s?-?\d{3,}/i],
   ];
   const SPEC = Object.fromEntries(SPECS.map(([key, scope, vi, , , ok]) => [key, { scope, vi, ok }]));
+  // Pure in the label and asked for every cell of every row: remembered per label (most of the time of build()).
+  const specKeys = new Map();
   function specKey(label) {
     const L = String(label || "").trim();
+    if (!specKeys.has(L)) specKeys.set(L, specKeyOf(L));
+    return specKeys.get(L);
+  }
+  function specKeyOf(L) {
     if (!L || L.length > 70 || /\bmodel\b|型号|brand|make|品牌|厂家/i.test(L)) return null;
     // Genset power is read on its own (powersIn); an engine's own output is kept here.
     if (/power|output|capacity|rating|功率/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|tank|fuel/i.test(L)) return null;
@@ -549,6 +555,10 @@
   }
 
   // All suppliers → { engines, alternators, controllers }: one entry per model, with every row that names it.
+  // fromSupplier() of a supplier record, kept while that record object is unchanged (the web builds again on every
+  // change of state.supplier, which keeps the objects of the suppliers that did not change).
+  const rowsMemo = new WeakMap();
+  const rowsOf = (s) => { if (!rowsMemo.has(s)) rowsMemo.set(s, fromSupplier(s)); return rowsMemo.get(s); };
   function build(suppliers) {
     const maps = { engine: new Map(), alternator: new Map(), controller: new Map() };
     // A controller: from the supplier's `controllers` (suppliers/controllers.mjs, each with its source line) and from
@@ -568,7 +578,7 @@
       if (!s || s.status === "incomplete") continue;
       for (const c of s.controllers || []) addCtrl(s, c, { n: (c.src || [])[0], line: c.line, genset: null, power: null, other: null, specs: [] });
       if (!s.specTables?.length) continue;
-      for (const o of fromSupplier(s)) {
+      for (const o of rowsOf(s)) {
         if (o.kind === "engine" && o.line) for (const c of controllersIn(o.line)) addCtrl(s, c, { n: o.n, line: o.line, header: o.header, genset: o.genset, power: o.power, freq: o.freq, other: o.model, specs: [] });
         const k = keyOf(o.model);
         if (k.length < 3) continue;

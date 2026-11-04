@@ -2381,7 +2381,7 @@ function renderSuppliers() {
   const body = $("#supBody");
   if (!body) return;
   if (supWait()) { body.innerHTML = supWait(); return; }
-  if (supOpenId && state.supplier?.[supOpenId]) { body.innerHTML = h`<div class="mscroll">${raw(supDetailHtml(state.supplier[supOpenId]))}</div>`; return; }
+  if (supOpenId && state.supplier?.[supOpenId]) { body.innerHTML = h`<div class="mscroll">${raw(supDetailHtml(state.supplier[supOpenId]))}</div>`; supModelsLater(); return; }
   const all = supAll();
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu nhà cung cấp.</div>`; return; }
   // "Cummins" / "CUMMINS" are one make: grouped without case, shown in their most common spelling.
@@ -2471,6 +2471,7 @@ async function delSupplier(id) {
   toast((await dbSet("supdeleted/" + id, rec)) ? `Đã xoá ${rec.name}` : "Không xoá được nhà cung cấp.");
 }
 function supDetailHtml(s) {
+  supLazy = [];
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
   return h`<div class="dethead"><div class="row"><button class="btn sm" id="supBack">← Danh sách</button></div>
@@ -2500,7 +2501,11 @@ function supDetailHtml(s) {
 // The supplier list (button "Nhà cung cấp") is open to every member (Khoa, 2026-10-28).
 // Engines and alternators a supplier offers: the catalog models (web/catalog.js) whose rows come from this supplier's
 // tables. Power is that of the gensets in this supplier's rows only; a click opens the model in the catalog.
+// Tables of closed model lists, drawn when opened (data-lazy="m<n>" is supLazy[n-1]); emptied with each supplier page.
+let supLazy = [];
 function supModelsHtml(s) {
+  // Building the catalog of every supplier takes seconds: the rest of the page shows first (supModelsLater).
+  if (!catReady()) return h`<div id="supModels" data-id="${s.id}"><h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(progress("Đang dựng danh mục động cơ, đầu phát..."))}</div>`;
   const cat = catalog();
   const part = (kind) => {
     const K = CAT_KIND[kind];
@@ -2511,15 +2516,29 @@ function supModelsHtml(s) {
     }).sort((a, b) => (a.e.make || "~").localeCompare(b.e.make || "~") || a.e.model.localeCompare(b.e.model));
     if (!ms.length) return "";
     const makes = Object.entries(ms.reduce((m, x) => { for (const k of (x.e.make || "").split(" / ").filter(Boolean)) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1]);
-    return h`<details class="supspec" ${ms.length <= 15 ? "open" : ""}><summary><b>${K.one.replace(/^./, (c) => c.toUpperCase())}</b> · ${ms.length} model${raw(makes.length ? h` · <span class="muted">${makes.map(([m, n]) => `${m} (${n})`).join(", ")}</span>` : "")}</summary>
-      <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>Số dòng</th></tr></thead><tbody>${raw(ms.map((x) => h`<tr data-catitem="${x.e.key}" data-catopen="${kind}" data-catkey="${x.e.key}">
+    const summary = h`<b>${K.one.replace(/^./, (c) => c.toUpperCase())}</b> · ${ms.length} model${raw(makes.length ? h` · <span class="muted">${makes.map(([m, n]) => `${m} (${n})`).join(", ")}</span>` : "")}`;
+    const open = ms.length <= 15, lazy = open ? "" : "m" + supLazy.push("");
+    const table = h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>Số dòng</th></tr></thead><tbody>${raw(ms.map((x) => h`<tr data-catitem="${x.e.key}" data-catopen="${kind}" data-catkey="${x.e.key}">
         <td><b class="hlname">${x.e.model}</b></td>
         <td data-l="Hãng">${raw(catMakeHtml(x.e))}</td>
         <td data-l="Tổ máy" class="small">${raw([catRange(x.kva, "kVA"), catRange(x.kw, "kW")].filter(Boolean).map((r) => h`<div>${r}</div>`).join("") || '<span class="muted">bảng không ghi công suất</span>')}</td>
-        <td data-l="Số dòng" class="small">${x.rows}</td></tr>`).join(""))}</tbody></table></div></details>`;
+        <td data-l="Số dòng" class="small">${x.rows}</td></tr>`).join(""))}</tbody></table></div>`;
+    if (lazy) supLazy[lazy.slice(1) - 1] = table;
+    return h`<details class="supspec" ${open ? "open" : ""} data-lazy="${lazy}"><summary>${raw(summary)}</summary>${raw(open ? table : "")}</details>`;
   };
   const body = part("engine") + part("alternator") + part("controller");
-  return h`<h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(body ? h`<div class="muted small">Rút từ các bảng thông số của nhà cung cấp này (mục "Cấu hình các model" bên dưới); công suất là của tổ máy trong các dòng đó. Bấm một model để xem trong danh mục.</div>${raw(body)}` : '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}`;
+  return h`<div id="supModels"><h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(body ? h`<div class="muted small">Rút từ các bảng thông số của nhà cung cấp này (mục "Cấu hình các model" bên dưới); công suất là của tổ máy trong các dòng đó. Bấm một model để xem trong danh mục.</div>${raw(body)}` : '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}</div>`;
+}
+function supModelsLater() {
+  const el = $("#supModels[data-id]");
+  if (!el) return;
+  // A short wait: the page with its spinner is painted before the build holds the thread (not requestAnimationFrame,
+  // which does not run while the tab is hidden).
+  window.genbidBusy(new Promise((done) => setTimeout(() => {
+    const s = state.supplier?.[el.dataset.id];
+    if (el.isConnected && s) { catalog(); el.outerHTML = supModelsHtml(s); }
+    done();
+  }, 50)));
 }
 // The model tables of a supplier (crawl-specs.mjs), each line as it is on the supplier's page, with its source [n].
 const supCells = (line) => String(line).split("|").map((c) => c.trim()).slice(1);
@@ -2527,10 +2546,21 @@ function supSpecHtml(s) {
   const t = s.specTables || [];
   if (!t.length) return "";
   const rows = t.reduce((a, x) => a + x.rows.length, 0);
-  return h`<h4>Cấu hình các model (${rows} dòng, ${t.length} bảng)</h4><div class="muted small">Chép nguyên văn từ bảng thông số trên website của hãng; tiêu đề cột giữ như nguồn.</div>${raw(t.map((x) => h`<details class="supspec"><summary>${x.title || "Bảng thông số"} · ${x.rows.length} dòng ${raw(supRefs([x.n]))}</summary>
-    <div class="tablewrap"><table class="suptable"><thead>${raw((x.header || []).map((l) => `<tr>${supCells(l).map((c) => h`<th>${c}</th>`).join("")}</tr>`).join(""))}</thead>
-    <tbody>${raw(x.rows.map((l) => `<tr>${supCells(l).map((c) => h`<td>${c}</td>`).join("")}</tr>`).join(""))}</tbody></table></div></details>`).join(""))}`;
+  return h`<h4>Cấu hình các model (${rows} dòng, ${t.length} bảng)</h4><div class="muted small">Chép nguyên văn từ bảng thông số trên website của hãng; tiêu đề cột giữ như nguồn.</div>${raw(t.map((x, i) => h`<details class="supspec" data-spect="${s.id}|${i}"><summary>${x.title || "Bảng thông số"} · ${x.rows.length} dòng ${raw(supRefs([x.n]))}</summary></details>`).join(""))}`;
 }
+// A model table is drawn when it is opened (a supplier can have 10,000 rows in closed tables).
+function supSpecTable(x) {
+  return h`<div class="tablewrap"><table class="suptable"><thead>${raw((x.header || []).map((l) => `<tr>${supCells(l).map((c) => h`<th>${c}</th>`).join("")}</tr>`).join(""))}</thead>
+    <tbody>${raw(x.rows.map((l) => `<tr>${supCells(l).map((c) => h`<td>${c}</td>`).join("")}</tr>`).join(""))}</tbody></table></div>`;
+}
+document.addEventListener("toggle", (e) => {
+  const d = e.target;
+  if (!d.open || d.querySelector?.(".tablewrap")) return;
+  if (d.dataset?.lazy) { d.insertAdjacentHTML("beforeend", supLazy[d.dataset.lazy.slice(1) - 1] || ""); return; }
+  if (!d.dataset?.spect) return;
+  const [id, i] = d.dataset.spect.split("|"), x = state.supplier?.[id]?.specTables?.[i];
+  if (x) d.insertAdjacentHTML("beforeend", supSpecTable(x));
+}, true);
 // Tab "Nhà cung cấp" of a tender: the Windows bot asks Opus for the (up to) 3 suppliers that fit the tender best, choosing
 // only among supplier/*, then checks every quote in code before posting suppliermatch/<key> (supplier-prompt.md).
 const SUP_FIT = { good: ["Phù hợp", "ok"], partial: ["Phù hợp một phần", "warn"] };
@@ -2570,6 +2600,7 @@ const CAT_KIND = { engine: { one: "động cơ", title: "Danh mục động cơ"
   controller: { one: "bộ điều khiển", title: "Danh mục bộ điều khiển", list: "controllers", other: "Động cơ trong dòng" } };
 const CAT_RATING = { prime: "Liên tục (prime)", standby: "Dự phòng (standby)", rated: "Không ghi loại" };
 let catMemo = { src: null, del: null, cat: null };
+const catReady = () => catMemo.src === state.supplier && catMemo.del === state.supdeleted;
 function catalog() {
   if (catMemo.src !== state.supplier || catMemo.del !== state.supdeleted) catMemo = { src: state.supplier, del: state.supdeleted, cat: window.GenbidCatalog ? window.GenbidCatalog.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
   return catMemo.cat;
