@@ -5,8 +5,21 @@
 // giống (suggest). Mọi con số do code tính từ giá trên muasamcong, agent không ghi số giá nào.
 (function (root) {
   // Power named in a text: "500KVA", "2 x 250 kVA", "160kW" (kW read as kVA at power factor 0.8, only to find similar tenders).
+  // Which figure of a text is the genset's (2026-11-04 regression over 1,241 HSMT: 30 names read the transformer):
+  // one whose clause names a transformer, a UPS or a stabilizer ("Trạm biến áp 400kVA; máy phát điện 350kVA", "UPS
+  // 10KVA và máy phát điện 5KVA", "TBA 400kVA, 560kVA") is another device's. When some figure is, the one after "máy
+  // phát" wins, else the first of the rest; none when every figure is another device's. Gensets only: the first one.
+  // `matches`: the figures of `text` (String.matchAll, with .index). Shared with suppliers/config-bot.mjs capacity().
+  const OTHER_DEVICE = /bi[ếe]n [áa]p|\bTBA\b|\bMBA\b|\bUPS\b|[ổo]n [áa]p|t[ụu] b[ùu]/i, GENSET_W = /m[áa]y ph[áa]t|\bMP[ĐD]\b|genset|generator|t[ổo] m[áa]y/i;
+  function capPick(text, matches) {
+    const s = String(text || "");
+    // "0,4kV" is not a break; a clause of figures only ("TBA 400kVA, 560kVA") belongs to the one before it.
+    const clause = (m) => { const p = s.slice(0, m.index).split(/[;+(\n]|,(?!\d)|\svà\s/); let i = p.length - 1; while (i > 0 && !/[a-zà-ỹ]{2}/i.test(p[i].replace(/\d[\d.,]*\s*(kva|e?kw|mva|mw)/gi, ""))) i--; return p.slice(i).join(","); };
+    const own = matches.filter((m) => !OTHER_DEVICE.test(clause(m)));
+    return own.length === matches.length ? matches[0] || null : own.find((m) => GENSET_W.test(clause(m))) || own[0] || null;
+  }
   function kvaOf(text) {
-    const m = String(text || "").normalize("NFC").match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/i);
+    const t = String(text || "").normalize("NFC"), m = capPick(t, [...t.matchAll(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/gi)]);
     if (!m) return null;
     const v = Number(m[1].replace(/\.(?=\d{3}\b)/, "").replace(",", "."));
     return v > 0 ? (/kw/i.test(m[2]) ? v / 0.8 : v) : null;
@@ -178,5 +191,5 @@
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
     return { basis, n: use.length, same: same.length, close: close.length, enough: use.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, comps };
   }
-  root.GenbidBidprice = { kvaOf, isGensetName, bidKind, movesOldSet, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL };
+  root.GenbidBidprice = { kvaOf, capPick, isGensetName, bidKind, movesOldSet, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL };
 })(typeof window !== "undefined" ? window : globalThis);

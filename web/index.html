@@ -591,8 +591,13 @@ function filePicker(inputId, dropId, listId) {
 const CAP_RE = /(\d+(?:[.,]\d+)?)\s*(kva|kw|mva|mw)\b/gi;
 function capFromText(text) {
   if (!text) return null;
-  const found = [];
-  for (const m of String(text).matchAll(CAP_RE)) {
+  const found = [], all = [...String(text).matchAll(CAP_RE)];
+  // The genset's figure first, not a transformer's in the same name (web/bidprice.js capPick).
+  // Every figure another device's ("Trạm biến áp 630kVA; Máy phát điện dự phòng"): none, so the HSMT's is read instead.
+  const pick = window.GenbidBidprice ? window.GenbidBidprice.capPick(String(text), all) : all[0];
+  if (!pick) return null;
+  all.unshift(...all.splice(all.indexOf(pick), 1));
+  for (const m of all) {
     const n = parseFloat(m[1].replace(",", "."));
     const u = m[2].toLowerCase();
     if (!(n > 0)) continue;
