@@ -1300,7 +1300,7 @@ function openList(k) {
   const kp = KPIS.find((x) => x.key === k);
   const items = allTenders().filter((t) => !isProject(t) && kp.f(t)).sort((a, b) => (a.bidCloseDate || "9").localeCompare(b.bidCloseDate || "9"));
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
-  $("#dtabs").hidden = true;
+  $("#dtabs").hidden = true; guardBack();
   $("#dmeta").innerHTML = h`<span class="eyebrow">${items.length} gói</span>`;
   $("#dtitle").textContent = kp.l;
   $("#dbody").innerHTML = items.length ? items.map((t) => { const tl = timeLeft(t.bidCloseDate); return h`<button class="lrow" data-openkey="${t._key}">
@@ -1326,7 +1326,7 @@ function openDrawer(key, tab, back) {
   state.open = key; state.dtab = tab || "info";
   if (tenderOfUrl() !== key) try { history.replaceState(null, "", tenderHref(key)); } catch {}
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
-  renderDrawer(); renderGrid();
+  renderDrawer(); renderGrid(); guardBack();
 }
 function closeDrawer() {
   const r = drawerBack.pop(), rest = drawerBack;
@@ -3270,7 +3270,25 @@ function modal(html, onMount, cls = "") {
   const close = () => { ov.hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); };
   ov.onclick = (e) => { if (e.target === ov || e.target.closest("[data-close]")) close(); };
   onMount?.($("#mdl"), close);
+  guardBack();
 }
+// Back on a phone (swipe from the edge) or the browser closes the open screen, then the open tender or list, like Escape,
+// instead of leaving the page (Khoa, 2026-11-04: behind the page was the Google sign-in, whose replay is a 400).
+// One extra history entry stands while something is open; closing with the X leaves it, and the next Back only takes it away.
+let backGuard = false;
+function guardBack() {
+  if (backGuard || ($("#ov").hidden && !state.open && !state.list)) return;
+  backGuard = true;
+  try { history.pushState({ genbidBack: 1 }, "", location.href); } catch { backGuard = false; }
+}
+addEventListener("popstate", () => {
+  if (!backGuard) return;
+  backGuard = false;
+  if (!$("#fpop").hidden) closeFilter();
+  if (!$("#ov").hidden) { $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); }
+  else if (state.open || state.list) closeDrawer();
+  guardBack();
+});
 
 
 // ---------- Events ----------
