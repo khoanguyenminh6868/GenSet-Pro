@@ -2495,8 +2495,7 @@ function supDetailHtml(s) {
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
     ${raw(s.missing?.length ? h`<h4>Chưa tìm thấy / lưu ý</h4>${raw(list(s.missing, (m) => h`<li>${m}</li>`))}` : "")}
     <h4>Nguồn</h4><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${x.url}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
-      <ul>${raw((Array.isArray(x.quote) ? x.quote : [x.quote]).map((q) => h`<li class="small"><q>${q}</q></li>`).join(""))}</ul></li>`).join(""))}</ol>
-    <div class="muted small">Kiểm tra lúc ${s.checkedAt || "—"}.</div>`;
+      <ul>${raw((Array.isArray(x.quote) ? x.quote : [x.quote]).map((q) => h`<li class="small"><q>${q}</q></li>`).join(""))}</ul></li>`).join(""))}</ol>`;
 }
 // The supplier list (button "Nhà cung cấp") is open to every member (Khoa, 2026-10-28).
 // Engines and alternators a supplier offers: the catalog models (web/catalog.js) whose rows come from this supplier's
