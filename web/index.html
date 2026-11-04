@@ -2085,7 +2085,7 @@ function hsdtTabHtml(t) {
       <input type="file" id="hcFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="hcList"></div>
     </div>
-    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"}>Tải Word (.docx)</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) + (basis ? " · " + basis : "") : ""}</span></div><div id="hsUp"></div>
+    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"} title="Tải Word (.docx)" aria-label="Tải Word (.docx)">${raw(DL_SVG)}</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) + (basis ? " · " + basis : "") : ""}</span></div><div id="hsUp"></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
 // The reference bid is shown as the Word document it becomes. Every text is editable in place: data-h names the
@@ -2191,6 +2191,8 @@ function compareTabHtml(t) {
 }
 // Xem tệp / Tải PDF buttons show only this icon (Khoa, 2026-11-04); what they do is in their title.
 const PDF_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 2h9l5 5v13.5A1.5 1.5 0 0 1 18.5 22h-12A1.5 1.5 0 0 1 5 20.5v-17A1.5 1.5 0 0 1 6.5 2z" fill="#e2231a"/><path d="M15 2v3.5A1.5 1.5 0 0 0 16.5 7H20z" fill="#f58a84"/><text x="12.5" y="17.4" text-anchor="middle" font-size="6.6" font-weight="800" font-family="system-ui,sans-serif" fill="#fff">PDF</text></svg>';
+// Tải Word: a green download icon only (Khoa, 2026-11-04).
+const DL_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg>';
 const TRASH_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>';
 // Xóa: remove the current comparison (and with it the "đã đối chiếu" mark), after a confirmation.
 function askDeleteCompare(key) {
@@ -3581,7 +3583,7 @@ document.addEventListener("click", async (e) => {
   if (op) { openPdf(state.open, +op.dataset.openpdf); return; }
   if (e.target.closest("#trPdf")) { translationPdf(e.target.closest("#trPdf").dataset.key); return; }
   if (e.target.id === "hsRun") { runHsdt(e.target.dataset.key); return; }
-  if (e.target.id === "hsDocx") { hsdtDocx(e.target.dataset.key); return; }
+  if (e.target.closest("#hsDocx")) { hsdtDocx(e.target.closest("#hsDocx").dataset.key); return; }
   const st = e.target.closest("#stageTabs [data-stage]");
   if (st) { state.stage = st.dataset.stage; saveView(); state.filters.stage = ""; state.limit = pageSize(); renderAll(); return; }
   const dt = e.target.closest("#dtabs [data-dt]");
