@@ -133,6 +133,8 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .kpi{cursor:pointer}
 .sizehead{margin:18px 0 4px;font-size:16px;border-top:1px solid var(--line);padding-top:12px}
 .kpi.bplev{cursor:default}.kpi.bplev .kv{font-size:20px}
+/* Giá gợi ý: each level its own colour, none violet (Khoa, 2026-11-04). */
+.kpi.bp-low{--kc:var(--mint)}.kpi.bp-mid{--kc:var(--blue)}.kpi.bp-high{--kc:var(--orange)}
 .kpi:hover,.kpi.on{border-color:var(--kc)}
 .kpi .kref{position:absolute;top:10px;right:10px;width:30px;height:30px}
 .lrow{display:flex;flex-direction:column;gap:3px;text-align:left;border:1px solid var(--line);background:var(--panel2);border-radius:8px;padding:9px 11px;color:var(--fg)}
@@ -3402,7 +3404,7 @@ function bidPriceHtml(doc, t) {
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
       : !st.levels.length ? h`<div class="note warn">Chưa đủ gói tương tự để gợi ý giá: chỉ có ${st.n} gói giống/gần có từ 2 nhà thầu trở lên (cần ít nhất 3). Xem các gói bên dưới để tự cân nhắc.</div>`
       : h`${raw(st.enough ? "" : h`<div class="note warn">Chỉ có ${st.n} gói tương tự có cạnh tranh (dưới 5): giá dưới đây chỉ để tham khảo.</div>`)}
-        <div class="kpis" style="margin:8px 0">${raw(st.levels.map((l) => h`<div class="kpi bplev"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${bpPct(l.ratio)} giá gói · khả năng thắng giá ${Math.round(100 * l.chance)}%</span></div>`).join(""))}</div>
+        <div class="kpis" style="margin:8px 0">${raw(st.levels.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${bpPct(l.ratio)} giá gói · khả năng thắng giá ${Math.round(100 * l.chance)}%</span></div>`).join(""))}</div>
         <div class="muted small">Tính từ ${what}, mỗi gói có từ 2 nhà thầu. Khả năng thắng giá: tỉ lệ các gói đó có giá trúng bằng hoặc cao hơn mức này.${st.perKva ? ` Theo giá trúng/kVA (trung vị ${fmtVnd(st.perKva.value)}/kVA, ${st.perKva.n} gói): ${fmtVnd(st.perKva.price)}.` : ""}</div>`)}
     ${raw((r.notes || []).length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}
     <h4 style="margin:12px 0 4px">Gói tương tự (${alike.length})</h4>
@@ -3419,7 +3421,7 @@ function bidPriceMultiHtml(doc, t) {
   const r = doc.result, P = r.basis.price;
   return h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(doc.at)} · ${r.basis.capText} · giá gói ${P ? fmtVnd(P) : "không rõ"}</div>
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
-      : r.levels.length ? h`<h4 style="margin:12px 0 4px">Cả gói (cộng các cỡ máy)</h4><div class="kpis" style="margin:8px 0">${raw(r.levels.map((l) => h`<div class="kpi bplev"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${l.ratio ? bpPct(l.ratio) + " giá gói" : ""}</span></div>`).join(""))}</div>`
+      : r.levels.length ? h`<h4 style="margin:12px 0 4px">Cả gói (cộng các cỡ máy)</h4><div class="kpis" style="margin:8px 0">${raw(r.levels.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${l.ratio ? bpPct(l.ratio) + " giá gói" : ""}</span></div>`).join(""))}</div>`
       : '<div class="note warn">Chưa đủ gói tương tự cho mọi cỡ máy nên chưa cộng được giá cả gói. Xem từng cỡ bên dưới.</div>')}
     ${raw((r.notes || []).length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}`
     + r.sizes.map((z) => h`<h3 class="sizehead">${sizeTitle(z)} <span class="muted small">· ${Math.round(100 * z.share)}% giá gói${z.result?.basis.price ? ` ≈ ${fmtVnd(z.result.basis.price)}` : ""}</span></h3>`
