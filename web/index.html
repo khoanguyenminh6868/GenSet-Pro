@@ -64,7 +64,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
 .ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkCfg,.ro #tyDrop,.ro #tkDel,.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
 .ro #dStage,.ro #dNote{pointer-events:none;opacity:.7}
-.ro [data-viewtext],.ext [data-openpdf]{display:none!important}
+.ext [data-openpdf]{display:none!important}
 .btn.green{background:var(--mint);border-color:var(--mint);color:#fff}
 .bpline.none{color:var(--muted);font-weight:500}
 .bpline .btn{margin-left:6px}
@@ -1384,8 +1384,8 @@ function infoHtml(t) {
       <div class="row"><h2>Hồ sơ mời thầu</h2><span class="muted small">${files.length ? `${files.length} tệp${files.some((f) => f.manual) ? ` (${files.filter((f) => f.manual).length} tải tay)` : " tải từ muasamcong"}${d?.updatedAt ? " lúc " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
         ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải về</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
-        ${raw(f.ocr ? h`<span class="chip mut" title="Bản scan, chữ đọc bằng OCR (${f.ocr} trang), có thể sai vài chữ">OCR</span>` : "")}${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
-        ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
+        ${raw(!f.hasText && f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
+        ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t))}
     </div>`;
 }
@@ -1498,8 +1498,8 @@ function projectInfoHtml(t) {
       <div class="row"><h2>Tệp hồ sơ</h2><span class="muted small">${files.length ? `${files.length} tệp${d?.updatedAt ? " · cập nhật " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
         ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}">Xem</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải về</a>` : "")}
-        ${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : '<span class="chip mut">Không đọc được chữ</span>')}
-        ${raw(state.readOnly ? "" : h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div><div id="docText"></div>` : "")}
+        ${raw(f.hasText ? "" : '<span class="chip mut">Không đọc được chữ</span>')}
+        ${raw(state.readOnly ? "" : h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(state.readOnly ? "" : projUp[key] ? `<div class="note">${progress(projUp[key])}</div>` : h`<div class="drop" id="pDrop">
         <div class="row"><span class="muted small" style="flex:1">Kéo thả tệp vào đây (PDF, DOCX, TXT; tệp khác vẫn lưu nhưng AI không đọc được chữ)</span><label class="btn sm primary" for="pFiles">Tải tệp lên</label></div>
         <input type="file" id="pFiles" multiple hidden></div>`)}
@@ -3380,17 +3380,6 @@ document.addEventListener("click", async (e) => {
   if (st) { state.stage = st.dataset.stage; saveView(); state.filters.stage = ""; state.limit = pageSize(); renderAll(); return; }
   const dt = e.target.closest("#dtabs [data-dt]");
   if (dt && !dt.disabled) { state.dtab = dt.dataset.dt; renderDrawer(); return; }
-  const vt = e.target.closest("[data-viewtext]");
-  if (vt) {
-    const f = state.hsmt[state.open].files[+vt.dataset.viewtext];
-    const box = $("#docText"); box.innerHTML = progress("Đang tải nội dung...");
-    try {
-      const all = await loadAttachedText(state.open);
-      const marker = `--- Tệp: ${f.name} ---`, i = all.indexOf(marker), n = i >= 0 ? all.indexOf("\n--- Tệp: ", i + marker.length) : -1;
-      box.innerHTML = h`<div class="textview">${(i >= 0 ? all.slice(i, n > 0 ? n : undefined) : all) || "Không có chữ trong tệp này."}</div>`;
-    } catch { box.innerHTML = h`<div class="note err">Không tải được nội dung, hãy thử lại.</div>`; }
-    return;
-  }
   if (e.target.id === "trAddSec") { const el = $("#trEdit"); el.insertAdjacentHTML("beforeend", "<h3>New section</h3><ul><li></li></ul>"); const h3 = el.lastElementChild.previousElementSibling; h3.focus(); getSelection().selectAllChildren(h3); saveTrEdit(state.open, secsToText(trFromDoc() || [])); histRecord(el); return; }
   if (e.target.id === "trRun") { runTranslate(e.target.dataset.key, +(e.target.dataset.resume || 0)); return; }
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
