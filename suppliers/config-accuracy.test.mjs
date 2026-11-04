@@ -688,3 +688,31 @@ test("catalog: a second label cell is joined to the label, figures per frequency
     "| Frequency (Hz) | 50 | 60 | 50 | 60", "| Rated output(KW) | 6 | 6.5 | 7 | 7.5", "| Engine Model | 192F | 195F", "| Bore*stroke(mm) | 92*75 | 95*75"] }] }];
   assert.equal(eng(xh, "192F").power.rated.kW, 6);
 });
+
+test("the genset's capacity, not a transformer's or a UPS's in the same name (2026-11-04 regression over 1,241 HSMT)", () => {
+  assert.deepEqual(capacity(["Gói thầu số 14: Mua sắm, lắp đặt máy biến áp 400kVA; máy phát điện 350kVA"]), { value: 350, unit: "kVA" });
+  assert.deepEqual(capacity(["Cung cấp UPS 10KVA và máy phát điện 5KVA, 3KVA"]), { value: 5, unit: "kVA" });
+  assert.deepEqual(capacity(["Thí nghiệm TBA 400kVA, 560kVA; bảo dưỡng máy phát điện", "377 kVA"]), { value: 377, unit: "kVA" });
+  assert.deepEqual(capacity(["Trạm biến áp 630kVA-22/0,4kV; Máy phát điện dự phòng", "250 kVA"]), { value: 250, unit: "kVA" });
+  // Gensets only: the first figure, as before.
+  assert.deepEqual(capacity(["220 kVA (01 tổ máy); 7.5 kVA (01 tổ máy)"]), { value: 220, unit: "kVA" });
+  assert.deepEqual(capacity(["Mua sắm máy phát điện 12.5KVA và 15KVA"]), { value: 12.5, unit: "kVA" });
+});
+
+test("engine minimums in column tables, with the unit in the label or in cc (2026-11-04 regression)", () => {
+  const mins = (t) => { const { minDisp, minCyl } = engineMins(t); return { minDisp, minCyl }; };
+  assert.deepEqual(mins(" 1.2       Số xilanh                                                04"), { minDisp: null, minCyl: 4 });
+  assert.deepEqual(mins("4.    Dung tích xy lanh (L)      ≥ 4.45          Bắt buộc"), { minDisp: 4.45, minCyl: null });
+  assert.deepEqual(mins("7. Dung tích động cơ Tối thiểu 25.000 cm3"), { minDisp: 25, minCyl: null });
+  assert.deepEqual(mins("8 Dung tích xilanh ≥ 2300 cc Đạt Không đạt"), { minDisp: 2.3, minCyl: null });
+  // Two gensets of the tender: no single minimum.
+  assert.deepEqual(mins("Dung tích xi lanh > 2.900 cm3\nDung tích xi lanh > 667 cm3"), { minDisp: null, minCyl: null });
+});
+
+test("prime with the load or the units in the label, or the figure on the next line (2026-11-04 regression)", () => {
+  assert.deepEqual(powerMins("Công suất liên tục (100% tải) 125kVA / 100 kW\nCông suất dự phòng (110% tải) 137,5 kVA / 110 kW").minPrime, { kVA: 125, kW: 100 });
+  assert.deepEqual(powerMins("Công suất liên tục (kVA/kW) 100/80, Công suất dự phòng (kVA/kW) 110/88").minPrime, { kVA: 100, kW: 80 });
+  assert.deepEqual(powerMins("- Công suất dự phòng: 2.500kVA/2.000kW.\n- Công suất liên tục:\n2.250kVA/1.800kW.").minPrime, { kVA: 2250, kW: 1800 });
+  assert.deepEqual(powerMins("+ Tổ máy phát: công suất liên tục\n16KW/20KVA, công suất dự phòng 18KW/22KVA").minPrime, { kW: 16, kVA: 20 });
+  assert.equal(powerMins("Công suất liên tục của động cơ\n15,5 kW").minPrime, null);
+});

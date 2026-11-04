@@ -591,8 +591,11 @@ function filePicker(inputId, dropId, listId) {
 const CAP_RE = /(\d+(?:[.,]\d+)?)\s*(kva|kw|mva|mw)\b/gi;
 function capFromText(text) {
   if (!text) return null;
-  const found = [];
-  for (const m of String(text).matchAll(CAP_RE)) {
+  const found = [], all = [...String(text).matchAll(CAP_RE)];
+  // The genset's figure first, not a transformer's in the same name (web/bidprice.js capPick).
+  const pick = window.GenbidBidprice?.capPick(String(text), all);
+  if (pick) all.unshift(...all.splice(all.indexOf(pick), 1));
+  for (const m of all) {
     const n = parseFloat(m[1].replace(",", "."));
     const u = m[2].toLowerCase();
     if (!(n > 0)) continue;
