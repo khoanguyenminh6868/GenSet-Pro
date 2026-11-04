@@ -76,6 +76,9 @@ table.bdtbl .rk{display:none}
 input[type=search],input[type=text],input[type=datetime-local],input[type=url],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:0}
 textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .tkcfg{display:flex;flex-direction:column;gap:6px}
+/* Đối chiếu TLKT: lower file boxes, result set off from its PDF/Xóa row (Khoa, 2026-11-04). */
+#tyDrop,#tkDrop{padding:7px 10px}#tyDrop .files:empty,#tkDrop .files:empty{display:none}
+#tkOut>.cmprev{margin-bottom:16px}
 .note{border-left:3px solid var(--blue);background:var(--cyan-soft);padding:9px 12px;border-radius:0 8px 8px 0;font-size:13px}
 .note.warn{border-color:var(--amber);background:var(--amber-soft)}
 .note.err{border-color:var(--rose);background:var(--rose-soft)}
@@ -309,7 +312,7 @@ table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:right;whi
 .tablewrap table{font-size:13px}
 .tablewrap tr:last-child td{border-bottom:0}
 ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
-.trdoc{background:#fff;color:#1b1f2a;border:1px solid var(--line);border-radius:8px;padding:28px 32px;max-width:860px;font:13.5px/1.55 "DejaVu Sans",system-ui,-apple-system,"Segoe UI",sans-serif;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.trdoc{background:#fff;color:#1b1f2a;border:1px solid var(--line);border-radius:8px;padding:28px 32px;font:13.5px/1.55 "DejaVu Sans",system-ui,-apple-system,"Segoe UI",sans-serif;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .trdoc .trtitle{font-size:20px;font-weight:700;margin-bottom:4px}
 .trdoc .trmeta{font-size:11.5px;color:#5a6172;margin-top:4px}
 .trdoc .trhead{border-bottom:1px solid #e3e6ee;padding-bottom:12px;margin-bottom:6px}
@@ -338,6 +341,7 @@ ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
 .edbar{position:sticky;top:-14px;z-index:5;display:flex;align-items:center;gap:2px;flex-wrap:wrap;max-width:860px;margin-bottom:6px;padding:3px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
 .edbar button{min-width:30px;height:28px;padding:0 7px;border:0;border-radius:6px;background:none;font-size:14px;line-height:1}
 .edbar button:hover{background:var(--panel2)}
+.edbar:has(+ .trdoc){max-width:none}.edbar button svg{display:block;margin:auto}
 .edbar .sep{width:1px;height:18px;background:var(--line);margin:0 4px}
 details.sec,section.sec{border-top:1px solid var(--line);padding-top:10px}
 section.sec>h4{margin:0 0 10px;font-size:inherit;font-weight:600}
@@ -2937,7 +2941,7 @@ function tlktTabHtml(t) {
     </div>
     <label class="tkcfg" id="tkCfg"><span class="small"><b>Cấu hình Kỹ Thuật của Nhà Cung Cấp</b> <span class="muted">(không bắt buộc). Khi có điền, chỉ đối chiếu với ô này, không dùng tệp đề xuất.</span></span>
       <textarea id="tkText" placeholder="Dán cấu hình kỹ thuật nhà cung cấp chào: model, công suất, động cơ, đầu phát, bộ điều khiển...">${tlktCfgOf(t._key)}</textarea></label>
-    <div class="row"><div class="spacer"></div><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
+    <div class="row"><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
     <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì PDF tự tải về"}" aria-label="Tải PDF">${raw(PDF_SVG)}</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
 }
 // Tải PDF: the comparison result in English (Khoa, 2026-10-27). The translation is made once per result and kept next to
