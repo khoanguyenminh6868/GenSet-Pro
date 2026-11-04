@@ -706,7 +706,7 @@
   const groupOf = (e, g) => { const names = (e.makes || []).map((m) => m.name); return !cnMade(names) && engineCountries(names, e.model).some((c) => COUNTRY_GROUP[g].includes(c)); };
   const groupIn = (text, model, g) => engineCountries(brandIn(String(text || ""), ENGINE_BRANDS), model).some((c) => COUNTRY_GROUP[g].includes(c));
 
-  const api = { build, fromSupplier, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, fromSupplier, prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
