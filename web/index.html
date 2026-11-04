@@ -2721,8 +2721,9 @@ function catDetailHtml(e) {
 // quả một công thức quy đổi của web/conversions.js mà code đã tính lại. Mỗi cấu hình kèm nhà cung cấp trong hệ thống bán nó.
 const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], unclear: ["Chưa rõ", "warn"] };
 const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet", controller: "Trang của nhà cung cấp" };
-// Xuất xứ (Khoa, 2026-10-29): Trung Quốc by default leaves out engines of foreign makes (Perkins, Cummins, Volvo Penta,
+// Xuất xứ (Khoa, 2026-10-29): Trung Quốc leaves out engines of foreign makes (Perkins, Cummins, Volvo Penta,
 // Baudouin, Kubota, Yanmar...) and engines whose source gives no make; Khác keeps only foreign makes. The list is web/catalog.js FOREIGN_ENGINE.
+// Tất cả is the default (Khoa, 2026-11-04; was Trung Quốc).
 const CFG_ORIGIN = [["all", "Tất cả"], ["cn", "Trung Quốc"], ["g7", "G7"], ["g20", "G20"], ["other", "Khác"]];
 const cfgOrigin = {};
 // Yêu cầu khác (Khoa, 2026-11-01): requirements typed here go with Gợi ý and Tìm NCC (configreq / findreq extra) and
@@ -2730,7 +2731,7 @@ const cfgOrigin = {};
 const cfgExtra = {};
 const cfgExtraOf = (key) => cfgExtra[key] ?? state.configreq[key]?.extra ?? state.findreq[key]?.extra ?? "";
 function configTabHtml(t) {
-  const key = t._key, prev = state.configmatch[key], origin = cfgOrigin[key] || "cn";
+  const key = t._key, prev = state.configmatch[key], origin = cfgOrigin[key] || "all";
   const wait = workerReqPending("configreq", key) ? waitHtml("Đang chờ Agent đọc HSMT và chọn cấu hình động cơ, đầu phát...", state.configreq[key].requestedAt) : "";
   const err = !wait && workerReqError("configreq", key);
   const usedOrigin = CFG_ORIGIN.find(([k]) => k === prev?.result?.origin)?.[1];
@@ -3448,8 +3449,8 @@ document.addEventListener("click", async (e) => {
   if (cki) { listScroll.cat = mScroll().scrollTop; catView.open = cki.dataset.catitem; renderCatalog(); return; }
   if (e.target.id === "catBack") { catView.open = null; renderCatalog(); mScroll().scrollTop = listScroll.cat; return; }
   if (e.target.id === "catMore") { catView.limit += 100; renderCatList(); return; }
-  if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn", extra: cfgExtraOf(e.target.dataset.key).trim() }, "gợi ý cấu hình"); return; }
-  if (e.target.id === "cfgFind") { requestWorker("findreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "cn", extra: cfgExtraOf(e.target.dataset.key).trim() }, "tìm nhà cung cấp"); return; }
+  if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "all", extra: cfgExtraOf(e.target.dataset.key).trim() }, "gợi ý cấu hình"); return; }
+  if (e.target.id === "cfgFind") { requestWorker("findreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "all", extra: cfgExtraOf(e.target.dataset.key).trim() }, "tìm nhà cung cấp"); return; }
   if (e.target.id === "spRun") { requestWorker("supplierreq", e.target.dataset.key, {}, "gợi ý nhà cung cấp"); return; }
   const fx = e.target.closest("[data-findx]");
   if (fx) { local.set("findDismiss", { ...local.get("findDismiss", {}), [fx.dataset.findx]: fx.dataset.at }); renderDrawer(); return; }
