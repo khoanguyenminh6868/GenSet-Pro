@@ -58,7 +58,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .btn:disabled{opacity:.55;cursor:not-allowed}
 .btn.sm{padding:4px 9px;font-size:12.5px}
 .radios{gap:14px}.radios label{display:inline-flex;align-items:center;gap:5px;cursor:pointer}
-.cmprev{justify-content:space-between}
+.cmprev{justify-content:space-between}.actbar .btn{padding:4px 9px;font-size:12.5px}
 .actrow{margin:14px 0 16px}.actrow.cfgact{margin:4px 0 0}.cfgsum{margin:0}#cfgExtra{min-height:0;height:calc(3em + 14px)}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
@@ -78,7 +78,6 @@ textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .tkcfg{display:flex;flex-direction:column;gap:6px}
 /* Đối chiếu TLKT and Tạo HSDT: lower file boxes, result set off from its PDF/Xóa row (Khoa, 2026-11-04). */
 #tyDrop,#tkDrop,#hpDrop,#hcDrop{padding:7px 10px}#tyDrop .files:empty,#tkDrop .files:empty,#hpDrop .files:empty,#hcDrop .files:empty{display:none}
-#tkOut>.cmprev{margin-bottom:16px}
 .note{border-left:3px solid var(--blue);background:var(--cyan-soft);padding:9px 12px;border-radius:0 8px 8px 0;font-size:13px}
 .note.warn{border-color:var(--amber);background:var(--amber-soft)}
 .note.err{border-color:var(--rose);background:var(--rose-soft)}
@@ -1773,6 +1772,9 @@ function biddersHtml(t) {
     : h`<div class="muted small">Chưa có biên bản mở thầu${n ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""}.</div>`;
   return h`<section class="sec"><h4>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : ""}</h4>${raw(body)}</section>`;
 }
+// The action row of a tab once its work is done, laid out like Phân tích (Khoa, 2026-11-05): what was done, when, then the
+// buttons on the right. `id` names the time span, which some tabs reuse for a status line (Đang tạo PDF...).
+const actBar = (label, info, btns, id = "", cls = "ok", row = "") => h`<div class="row actbar ${row}"><span class="chip ${cls}">${label}</span><span class="muted small"${raw(id ? ` id="${id}"` : "")}>${info}</span><div class="spacer"></div>${raw(btns)}</div>`;
 function analysisTabHtml(t) {
   const s = analysisState(t), a = analysisOf(t._key);
   const head = s === "done"
@@ -1966,10 +1968,10 @@ function translateTabHtml(t) {
   // Never asked for a translation (requests are kept once answered): show the buttons now instead of waiting for the
   // read; loadTranslation still looks in the background for a brief made before requests existed.
   const c = trCache[t._key] === undefined && !state.translationreq?.[t._key] ? null : trCache[t._key];
-  const btns = c === undefined ? h`<button class="btn primary" id="trRun" data-key="${t._key}" hidden>Tạo bản tiếng Anh</button><span class="muted small" id="trInfo">Đang tải bản dịch...</span>`
-    : c === null ? h`<button class="btn primary" id="trRun" data-key="${t._key}" ${trWait ? "disabled" : ""}>Tạo bản tiếng Anh</button><span class="muted small" id="trInfo"></span>`
-    : h`<button class="btn primary" id="trRun" data-key="${t._key}" data-resume="${c.meta.done ? "" : c.meta.parts}" ${trWait ? "disabled" : ""}>${c.meta.done ? "Tạo lại" : "Làm tiếp"}</button><span class="muted small" id="trInfo">${c.meta.done ? `Đã tạo lúc ${fmtDate(c.meta.at)}` : `Đã làm ${c.meta.parts}/${c.meta.total} phần. Bấm để làm tiếp.`}</span>`;
-  return trWait + (trErr ? h`<div class="note warn">Agent chưa dịch được: ${trErr}</div>` : "") + h`<div class="row">${raw(btns)}</div>
+  const bar = c === undefined ? h`<div class="row"><button class="btn primary" id="trRun" data-key="${t._key}" hidden>Tạo bản tiếng Anh</button><span class="muted small" id="trInfo">Đang tải bản dịch...</span></div>`
+    : c === null ? h`<div class="row"><button class="btn primary" id="trRun" data-key="${t._key}" ${trWait ? "disabled" : ""}>Tạo bản tiếng Anh</button><span class="muted small" id="trInfo"></span></div>`
+    : actBar(c.meta.done ? "Đã dịch" : `Đã dịch ${c.meta.parts}/${c.meta.total} phần`, c.meta.done ? `lúc ${fmtDate(c.meta.at)}` : "", h`<button class="btn primary" id="trRun" data-key="${t._key}" data-resume="${c.meta.done ? "" : c.meta.parts}" ${trWait ? "disabled" : ""}>${c.meta.done ? "Tạo lại" : "Làm tiếp"}</button>`, "trInfo", c.meta.done ? "ok" : "warn");
+  return trWait + (trErr ? h`<div class="note warn">Agent chưa dịch được: ${trErr}</div>` : "") + h`${raw(bar)}
     <div id="trOut">${raw(c ? trHtml(c.secs, !c.meta.done, c.text, t._key) : "")}</div>`;
 }
 // The English brief is edited as plain text: "## Heading" starts a section, "- " starts a point.
@@ -2129,7 +2131,8 @@ function hsdtTabHtml(t) {
       <input type="file" id="hcFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="hcList"></div>
     </div>
-    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT"}</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) + (basis ? " · " + basis : "") : ""}</span></div><div id="hsUp"></div>
+    ${raw(prev ? actBar("Đã soạn HSDT", `lúc ${fmtDate(prev.at)}${basis ? " · " + basis : ""}`, h`<button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>Soạn lại</button>`, "hsInfo")
+      : h`<div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>Tạo HSDT</button><span class="muted small" id="hsInfo"></span></div>`)}<div id="hsUp"></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
 // The reference bid is shown as the Word document it becomes. Every text is editable in place: data-h names the
@@ -2230,9 +2233,17 @@ function compareTabHtml(t) {
       <div class="files" id="cmList"></div>
     </div>
     <textarea id="cmText" placeholder="Hoặc dán bảng đáp ứng kỹ thuật, catalogue, báo giá..."></textarea>
-    <div class="row"><button class="btn primary" id="cmRun" data-key="${t._key}" ${cmWait ? "disabled" : ""}>Đối chiếu</button>${raw(sideBtns(t._key))}</div>
-    <div id="cmOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.accepted ? " · đã đánh dấu là đã đối chiếu" : ""}</span><button class="btn sm" id="cmDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></div>` + comparisonHtml(prev.result) : "")}</div>`;
+    ${raw(cmBar(t._key, cmWait))}
+    <div id="cmOut">${raw(prev?.result ? comparisonHtml(prev.result) : "")}</div>`;
 }
+// The Đối chiếu row: what was done and when, then the buttons (actBar); cmBarRedo redraws it after the result goes.
+function cmBar(key, wait) {
+  const prev = state.compare[key], run = (l) => h`<button class="btn primary" id="cmRun" data-key="${key}" ${wait ? "disabled" : ""}>${l}</button>`;
+  return h`<div id="cmBar" style="display:contents">${raw(prev?.result
+    ? actBar("Đã đối chiếu", `lúc ${fmtDate(prev.at)}${prev.accepted ? " · đã đánh dấu là đã đối chiếu" : ""}`, run("Đối chiếu lại") + sideBtns(key) + h`<button class="btn sm" id="cmDel" data-key="${key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button>`)
+    : h`<div class="row">${raw(run("Đối chiếu") + sideBtns(key))}</div>`)}</div>`;
+}
+function cmBarRedo(key) { const b = $("#cmBar"); if (b) b.outerHTML = cmBar(key, workerReqPending("comparereq", key)); }
 // Xem tệp / Tải PDF buttons show only this red badge (Khoa, 2026-11-04); what they do is in their title.
 const PDF_SVG = '<svg viewBox="0 0 30 18" width="30" height="18" aria-hidden="true"><defs><linearGradient id="pdfg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4554d"/><stop offset="1" stop-color="#c41810"/></linearGradient></defs><rect x="0.5" y="0.5" width="29" height="17" rx="3.5" fill="url(#pdfg)"/><text x="15" y="9.4" text-anchor="middle" dominant-baseline="central" font-size="10.5" font-weight="800" font-family="system-ui,sans-serif" fill="#fff">PDF</text></svg>';
 // Tải Word and Tải of a file that is not a PDF: a green download icon only (Khoa, 2026-11-04).
@@ -2293,7 +2304,7 @@ function askRecompare(key) {
       const { [key]: _old, ...rest } = state.compare;
       state.compare = rest;
       const out = $("#cmOut"); if (out) out.innerHTML = "";
-      refreshSubmitBtn(key);
+      cmBarRedo(key);
       runCompare(key);
     });
   });
@@ -2889,7 +2900,12 @@ function configTabHtml(t) {
   return wait + fwait + (err ? h`<div class="note warn">${err}</div>` : "") + (ferr ? h`<div class="note warn">Tìm NCC: ${ferr}</div>` : "")
     + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${busy ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
     + h`<div class="field" style="margin:8px 0"><label for="cfgExtra">Yêu cầu khác</label><textarea id="cfgExtra" data-key="${key}" maxlength="2000" rows="2" placeholder="Không bắt buộc. Ví dụ: động cơ Weichai, đầu phát Stamford, bộ điều khiển Deep Sea DSE7320, hòa đồng bộ..." ${busy ? "disabled" : ""}>${cfgExtraOf(key)}</textarea></div>`
-    + h`<div class="row actrow cfgact"><button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button>${raw(prev?.result && !wait ? h`<span class="muted small">Kết quả lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.originAuto ? ` (bot tự chọn vì HSMT ghi: “${prev.result.originAuto.quote}”)` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}</span>` : "")}</div>`
+    + (() => {
+      const btns = h`<button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button>`;
+      if (!prev?.result || wait) return h`<div class="row actrow cfgact">${raw(btns)}</div>`;
+      const info = `lúc ${fmtDate(prev.at)}${usedOrigin ? ` · xuất xứ động cơ: ${usedOrigin}` : ""}${prev.result.originAuto ? ` (bot tự chọn vì HSMT ghi: “${prev.result.originAuto.quote}”)` : ""}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}`;
+      return actBar("Đã gợi ý", info, btns, "", "ok", "actrow cfgact");
+    })()
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
     + (prev?.result && !wait ? (prev.result.sizes ? cfgSizesHtml(prev.result) : cfgResultHtml(prev.result)) : "");
 }
@@ -2995,8 +3011,9 @@ function tlktTabHtml(t) {
     </div>
     <label class="tkcfg" id="tkCfg"><span class="small"><b>Cấu hình Kỹ Thuật của Nhà Cung Cấp</b> <span class="muted">(không bắt buộc). Khi có điền, chỉ đối chiếu với ô này, không dùng tệp đề xuất.</span></span>
       <textarea id="tkText" placeholder="Dán cấu hình kỹ thuật nhà cung cấp chào: model, công suất, động cơ, đầu phát, bộ điều khiển...">${tlktCfgOf(t._key)}</textarea></label>
-    <div class="row"><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>
-    <div id="tkOut">${raw(prev?.result ? h`<div class="row cmprev"><span class="muted small">Kết quả lần trước, lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}</span><span class="row" style="gap:6px"><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì PDF tự tải về"}" aria-label="Tải PDF">${raw(PDF_SVG)}</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button></span></div>` + tlktHtml(prev.result) : "")}</div>`;
+    ${raw(prev?.result ? h`<div id="tkBar" style="display:contents">${raw(actBar("Đã đối chiếu", `lúc ${fmtDate(prev.at)}${prev.ownReq ? " · đối chiếu với YCKT rút gọn" : ""}`, h`<button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu lại</button><button class="btn sm" id="tkPdf" data-key="${t._key}" ${tkWait ? "disabled" : ""} title="${enReady ? "Tải kết quả đối chiếu bằng tiếng Anh (PDF)" : "Agent dịch kết quả sang tiếng Anh, xong thì PDF tự tải về"}" aria-label="Tải PDF">${raw(PDF_SVG)}</button><button class="btn sm" id="tkDel" data-key="${t._key}" title="Xóa kết quả đối chiếu này">${raw(TRASH_SVG)}Xóa</button>`))}</div>`
+      : h`<div class="row"><button class="btn primary" id="tkRun" data-key="${t._key}" ${tkWait ? "disabled" : ""}>Đối chiếu</button></div>`)}
+    <div id="tkOut">${raw(prev?.result ? tlktHtml(prev.result) : "")}</div>`;
 }
 // Tải PDF: the comparison result in English (Khoa, 2026-10-27). The translation is made once per result and kept next to
 // it (resultEn), so downloading again costs nothing. On the web the Windows bot translates it (the web's own AI has no API
@@ -3118,6 +3135,8 @@ function askDeleteTlkt(key) {
       const { [key]: _gone, ...rest } = state.tlkt;
       state.tlkt = rest;
       const out = $("#tkOut"); if (out) out.innerHTML = "";
+      // The row goes back to a plain Đối chiếu button; the picked files stay.
+      const bar = $("#tkBar"); if (bar) bar.outerHTML = h`<div class="row"><button class="btn primary" id="tkRun" data-key="${key}">Đối chiếu</button></div>`;
       toast("Đã xóa kết quả đối chiếu TLKT");
     });
   });
@@ -3431,8 +3450,8 @@ function bidSuggestBox(t) {
   const key = t._key, prev = state.bidprice[key];
   const wait = workerReqPending("bidpricereq", key) ? waitHtml("Đang chờ Agent so cấu hình gói này với các gói đã có kết quả...", state.bidpricereq[key].requestedAt) : "";
   const err = !wait && workerReqError("bidpricereq", key);
-  return h`${raw(quoteHtml(t))}<section>${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row actrow">
-      <button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý giá đấu"}</button></div>
+  return h`${raw(quoteHtml(t))}<section>${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}${raw(prev?.result && !wait ? actBar("Đã gợi ý giá", `lúc ${fmtDate(prev.at)}`, h`<button class="btn primary" id="bpRun" data-key="${key}">Gợi ý lại</button>`, "", "ok", "actrow")
+      : h`<div class="row actrow"><button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>Gợi ý giá đấu</button></div>`)}
     ${raw(prev?.result && !wait ? (prev.result.multi ? bidPriceMultiHtml(prev, t) : bidPriceHtml(prev, t)) : "")}</section>`;
 }
 function bpSampleRow(s, t, i) {
@@ -3453,7 +3472,7 @@ function bidPriceHtml(doc, t) {
   const what = st.basis === "same" ? `${st.n} gói giống` : `${st.n} gói giống hoặc gần (${st.same} giống, ${st.close} gần)`;
   // One size of a tender of several (bidPriceMultiHtml): its package price is the share code worked out.
   const part = "qty" in b;
-  return h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(doc.at)} · công suất ${b.kva ? `${Math.round(b.kva).toLocaleString("vi-VN")} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"} · ${part ? "phần giá gói ước tính" : "giá gói"} ${P ? fmtVnd(P) : "không rõ"} · Agent xét ${r.samples.length} gói gần nhất trong ${r.total} gói/phần có giá trúng</div>
+  return h`<div class="muted small cmprev">Công suất ${b.kva ? `${Math.round(b.kva).toLocaleString("vi-VN")} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"} · ${part ? "phần giá gói ước tính" : "giá gói"} ${P ? fmtVnd(P) : "không rõ"} · Agent xét ${r.samples.length} gói gần nhất trong ${r.total} gói/phần có giá trúng</div>
     ${raw(r.tender?.summary ? h`<p class="small"><b>Gói này:</b> ${r.tender.summary}${r.tender.points?.length ? ` (${r.tender.points.join("; ")})` : ""}</p>` : "")}
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
       : !st.levels.length ? h`<div class="note warn">Chưa đủ gói tương tự để gợi ý giá: chỉ có ${st.n} gói giống/gần có từ 2 nhà thầu trở lên (cần ít nhất 3). Xem các gói bên dưới để tự cân nhắc.</div>`
@@ -3473,7 +3492,7 @@ function bidPriceHtml(doc, t) {
 // price it worked out for it (result.sizes); the package's levels add the sizes' up (result.levels).
 function bidPriceMultiHtml(doc, t) {
   const r = doc.result, P = r.basis.price;
-  return h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(doc.at)} · ${r.basis.capText} · giá gói ${P ? fmtVnd(P) : "không rõ"}</div>
+  return h`<div class="muted small cmprev">${r.basis.capText} · giá gói ${P ? fmtVnd(P) : "không rõ"}</div>
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
       : r.levels.length ? h`<h4 style="margin:12px 0 4px">Cả gói (cộng các cỡ máy)</h4><div class="kpis" style="margin:8px 0">${raw(r.levels.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${l.ratio ? bpPct(l.ratio) + " giá gói" : ""}</span></div>`).join(""))}</div>`
       : '<div class="note warn">Chưa đủ gói tương tự cho mọi cỡ máy nên chưa cộng được giá cả gói. Xem từng cỡ bên dưới.</div>')}
