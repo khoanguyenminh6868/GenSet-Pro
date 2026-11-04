@@ -1907,7 +1907,9 @@ function translateTabHtml(t) {
   if (!files.length) return h`<div class="note">Gói này chưa có hồ sơ mời thầu để dịch.</div>`;
   const trWait = workerReqPending("translationreq", t._key) ? waitHtml("Đang chờ Agent dịch...", state.translationreq[t._key].requestedAt) : "";
   const trErr = !trWait && workerReqError("translationreq", t._key);
-  const c = trCache[t._key];
+  // Never asked for a translation (requests are kept once answered): show the buttons now instead of waiting for the
+  // read; loadTranslation still looks in the background for a brief made before requests existed.
+  const c = trCache[t._key] === undefined && !state.translationreq?.[t._key] ? null : trCache[t._key];
   const btns = c === undefined ? h`<button class="btn primary" id="trRun" data-key="${t._key}" hidden>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo">Đang tải bản dịch...</span>`
     : c === null ? h`<button class="btn primary" id="trRun" data-key="${t._key}" ${trWait ? "disabled" : ""}>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden>Tải PDF</button><span class="muted small" id="trInfo"></span>`
     : h`<button class="btn" id="trRun" data-key="${t._key}" data-resume="${c.meta.done ? "" : c.meta.parts}" ${trWait ? "disabled" : ""}>${c.meta.done ? "Tạo lại" : "Làm tiếp"}</button><button class="btn primary" id="trPdf" data-key="${t._key}" ${c.meta.done ? "" : "hidden"}>Tải PDF</button><span class="muted small" id="trInfo">${c.meta.done ? `Đã tạo lúc ${fmtDate(c.meta.at)}` : `Đã làm ${c.meta.parts}/${c.meta.total} phần. Bấm để làm tiếp.`}</span>`;
@@ -1965,17 +1967,25 @@ async function loadTranslation(key) {
     const m = await state.db.doc("translation/" + key).get();
     let next = null;
     if (m.exists && m.data().v2) {
-      const meta = m.data(), secs = [];
-      for (let i = 0; i < meta.parts; i++) { const s = await state.db.doc(`translation/${key}_${i}`).get(); if (s.exists) secs.push(...(s.data().sections || [])); }
-      const ed = await state.db.doc(`translation/${key}_edit`).get();
+      const meta = m.data();
+      // The parts and the edit are read together, not one after another.
+      const [ed, ...parts] = await Promise.all([`translation/${key}_edit`, ...Array.from({ length: meta.parts }, (_, i) => `translation/${key}_${i}`)].map((p) => state.db.doc(p).get()));
+      const secs = parts.flatMap((s) => (s.exists && s.data().sections) || []);
       next = { meta, secs, text: ed.exists && ed.data().text ? ed.data().text : null };
       trState[key] = secs;
     }
-    if (JSON.stringify(next) === JSON.stringify(trCache[key])) return;
+    const shown = trCache[key] === undefined && !state.translationreq?.[key] ? null : trCache[key];
     trCache[key] = next;
+    if (JSON.stringify(next) === JSON.stringify(shown)) return;
     const t = findTender(key);
     if (state.open === key && state.dtab === "translate" && t && $("#dbody")) $("#dbody").innerHTML = translateTabHtml(t);
-  } catch {}
+  } catch {
+    // A failed read shows the buttons rather than "Đang tải bản dịch..." forever.
+    if (trCache[key] !== undefined) return;
+    trCache[key] = null;
+    const t = findTender(key);
+    if (state.open === key && state.dtab === "translate" && t && $("#dbody")) $("#dbody").innerHTML = translateTabHtml(t);
+  }
 }
 const trState = {};
 // The Windows bot translates (translate-prompt.md) and writes translation/<key> back.
