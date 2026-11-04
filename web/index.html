@@ -1822,9 +1822,9 @@ function richRuns(src) {
 }
 const richHtml = (src) => richRuns(src).map((r) => { let x = esc(r.text); if (r.u) x = `<u>${x}</u>`; if (r.i) x = `<i>${x}</i>`; if (r.b) x = `<b>${x}</b>`; return x; }).join("");
 // The toolbar right before an editable document (#trEdit inside .trdoc, or #hsDoc).
-const edBar = () => `<div class="edbar" role="toolbar" aria-label="Định dạng">
+const edBar = (extra = "") => `<div class="edbar" role="toolbar" aria-label="Định dạng">
   <button type="button" data-cmd="undo" title="Hoàn tác (Ctrl+Z)" aria-label="Hoàn tác">↶</button><button type="button" data-cmd="redo" title="Làm lại (Ctrl+Y)" aria-label="Làm lại">↷</button><span class="sep"></span>
-  <button type="button" data-cmd="bold" title="In đậm (Ctrl+B)" aria-label="In đậm"><b>B</b></button><button type="button" data-cmd="italic" title="In nghiêng (Ctrl+I)" aria-label="In nghiêng"><i>I</i></button><button type="button" data-cmd="underline" title="Gạch chân (Ctrl+U)" aria-label="Gạch chân"><u>U</u></button><button type="button" data-cmd="removeFormat" title="Bỏ định dạng của chữ đang chọn" aria-label="Bỏ định dạng">T<sub>x</sub></button></div>`;
+  <button type="button" data-cmd="bold" title="In đậm (Ctrl+B)" aria-label="In đậm"><b>B</b></button><button type="button" data-cmd="italic" title="In nghiêng (Ctrl+I)" aria-label="In nghiêng"><i>I</i></button><button type="button" data-cmd="underline" title="Gạch chân (Ctrl+U)" aria-label="Gạch chân"><u>U</u></button><button type="button" data-cmd="removeFormat" title="Bỏ định dạng của chữ đang chọn" aria-label="Bỏ định dạng">T<sub>x</sub></button>${extra ? `<span class="spacer"></span>${extra}` : ""}</div>`;
 const edRoot = (n) => n?.closest?.("#trEdit, #hsDoc") || null;
 // Undo history: snapshots of the document, one per pause in typing or per format change. A redraw of the tab starts a new one.
 const edHist = { root: null, stack: [], i: 0, timer: null };
@@ -1924,11 +1924,11 @@ function translateTabHtml(t) {
   // Never asked for a translation (requests are kept once answered): show the buttons now instead of waiting for the
   // read; loadTranslation still looks in the background for a brief made before requests existed.
   const c = trCache[t._key] === undefined && !state.translationreq?.[t._key] ? null : trCache[t._key];
-  const btns = c === undefined ? h`<button class="btn primary" id="trRun" data-key="${t._key}" hidden>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden title="Tải PDF" aria-label="Tải PDF">${raw(PDF_SVG)}</button><span class="muted small" id="trInfo">Đang tải bản dịch...</span>`
-    : c === null ? h`<button class="btn primary" id="trRun" data-key="${t._key}" ${trWait ? "disabled" : ""}>Tạo bản tiếng Anh</button><button class="btn" id="trPdf" data-key="${t._key}" hidden title="Tải PDF" aria-label="Tải PDF">${raw(PDF_SVG)}</button><span class="muted small" id="trInfo"></span>`
-    : h`<button class="btn primary" id="trRun" data-key="${t._key}" data-resume="${c.meta.done ? "" : c.meta.parts}" ${trWait ? "disabled" : ""}>${c.meta.done ? "Tạo lại" : "Làm tiếp"}</button><button class="btn" id="trPdf" data-key="${t._key}" ${c.meta.done ? "" : "hidden"} title="Tải PDF" aria-label="Tải PDF">${raw(PDF_SVG)}</button><span class="muted small" id="trInfo">${c.meta.done ? `Đã tạo lúc ${fmtDate(c.meta.at)}` : `Đã làm ${c.meta.parts}/${c.meta.total} phần. Bấm để làm tiếp.`}</span>`;
+  const btns = c === undefined ? h`<button class="btn primary" id="trRun" data-key="${t._key}" hidden>Tạo bản tiếng Anh</button><span class="muted small" id="trInfo">Đang tải bản dịch...</span>`
+    : c === null ? h`<button class="btn primary" id="trRun" data-key="${t._key}" ${trWait ? "disabled" : ""}>Tạo bản tiếng Anh</button><span class="muted small" id="trInfo"></span>`
+    : h`<button class="btn primary" id="trRun" data-key="${t._key}" data-resume="${c.meta.done ? "" : c.meta.parts}" ${trWait ? "disabled" : ""}>${c.meta.done ? "Tạo lại" : "Làm tiếp"}</button><span class="muted small" id="trInfo">${c.meta.done ? `Đã tạo lúc ${fmtDate(c.meta.at)}` : `Đã làm ${c.meta.parts}/${c.meta.total} phần. Bấm để làm tiếp.`}</span>`;
   return trWait + (trErr ? h`<div class="note warn">Agent chưa dịch được: ${trErr}</div>` : "") + h`<div class="row">${raw(btns)}</div>
-    <div id="trOut">${raw(c ? trHtml(c.secs, !c.meta.done, c.text) : "")}</div>`;
+    <div id="trOut">${raw(c ? trHtml(c.secs, !c.meta.done, c.text, t._key) : "")}</div>`;
 }
 // The English brief is edited as plain text: "## Heading" starts a section, "- " starts a point.
 const secsToText = (secs) => secs.map((s) => `## ${s.heading}\n` + (s.points || []).map((p) => `- ${p}`).join("\n")).join("\n\n");
@@ -1946,11 +1946,12 @@ function textToSecs(text) {
 }
 // The English brief is shown and edited as the PDF page it becomes: title, tender line, then each section's
 // heading and its points. Typing edits it in place; Enter in a point adds the next point.
-function trHtml(secs, busy, text) {
+function trHtml(secs, busy, text, key) {
   const list = text ? textToSecs(text) : secs;
   const body = list.map((x) => h`<h3>${x.heading}</h3><ul>${raw((x.points || []).map((p) => `<li>${richHtml(p)}</li>`).join("") || "<li></li>")}</ul>`).join("");
-  return h`<div class="row" style="margin-bottom:8px"><span class="muted small" style="flex:1;min-width:200px">Bấm vào chữ để sửa trước khi tải PDF. Enter để thêm ý mới.</span>${raw(busy ? "" : '<button class="btn sm" id="trAddSec">Thêm mục</button>')}</div>
-    ${raw(busy ? "" : edBar())}<div class="trdoc"><div class="trhead"><div class="trtitle">Technical Requirement</div></div>
+  // Thêm mục and Tải PDF sit in the toolbar of the text (Khoa, 2026-11-04).
+  const tools = h`<button type="button" id="trAddSec" title="Thêm mục" aria-label="Thêm mục">${raw(ADD_SVG)}</button><button type="button" id="trPdf" data-key="${key}" title="Tải PDF" aria-label="Tải PDF">${raw(PDF_SVG)}</button>`;
+  return h`${raw(busy ? "" : edBar(tools))}<div class="trdoc"><div class="trhead"><div class="trtitle">Technical Requirement</div></div>
       <div class="trbody" id="trEdit" contenteditable="${busy ? "false" : "true"}" spellcheck="false">${raw(body)}</div></div>
     <div class="muted small" id="trSaved"></div>`;
 }
@@ -2194,6 +2195,7 @@ function compareTabHtml(t) {
 const PDF_SVG = '<svg viewBox="0 0 30 18" width="30" height="18" aria-hidden="true"><rect x="0.5" y="0.5" width="29" height="17" rx="3.5" fill="#e2231a"/><text x="15" y="9.4" text-anchor="middle" dominant-baseline="central" font-size="10.5" font-weight="800" font-family="system-ui,sans-serif" fill="#fff">PDF</text></svg>';
 // Tải Word and Tải of a file that is not a PDF: a green download icon only (Khoa, 2026-11-04).
 const DL_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg>';
+const ADD_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>';
 const TRASH_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>';
 // Xóa: remove the current comparison (and with it the "đã đối chiếu" mark), after a confirmation.
 function askDeleteCompare(key) {
@@ -2258,7 +2260,7 @@ function askRecompare(key) {
 function submitBtn(key) {
   if (isProject(findTender(key))) return "";
   const b = submitBlockers(key);
-  return h`<button class="btn ${b.length ? "" : "primary"}" id="cmSubmit" data-key="${key}" ${b.length ? "disabled" : ""} title="${b.length ? b.join(" ") : "Chuyển gói sang Đã nộp"}">Nộp</button>`;
+  return h`<button class="btn green" id="cmSubmit" data-key="${key}" ${b.length ? "disabled" : ""} title="${b.length ? b.join(" ") : "Chuyển gói sang Đã nộp"}">Nộp</button>`;
 }
 // "Đã đối chiếu" shows while the latest comparison still has mismatches; clicking it accepts them and unlocks Nộp.
 function sideBtns(key) {
@@ -3589,7 +3591,7 @@ document.addEventListener("click", async (e) => {
   if (st) { state.stage = st.dataset.stage; saveView(); state.filters.stage = ""; state.limit = pageSize(); renderAll(); return; }
   const dt = e.target.closest("#dtabs [data-dt]");
   if (dt && !dt.disabled) { state.dtab = dt.dataset.dt; renderDrawer(); return; }
-  if (e.target.id === "trAddSec") { const el = $("#trEdit"); el.insertAdjacentHTML("beforeend", "<h3>New section</h3><ul><li></li></ul>"); const h3 = el.lastElementChild.previousElementSibling; h3.focus(); getSelection().selectAllChildren(h3); saveTrEdit(state.open, secsToText(trFromDoc() || [])); histRecord(el); return; }
+  if (e.target.closest("#trAddSec")) { const el = $("#trEdit"); el.insertAdjacentHTML("beforeend", "<h3>New section</h3><ul><li></li></ul>"); const h3 = el.lastElementChild.previousElementSibling; h3.focus(); getSelection().selectAllChildren(h3); saveTrEdit(state.open, secsToText(trFromDoc() || [])); histRecord(el); return; }
   if (e.target.id === "trRun") { runTranslate(e.target.dataset.key, +(e.target.dataset.resume || 0)); return; }
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
   if (e.target.id === "tkRun") { runTlkt(e.target.dataset.key); return; }
