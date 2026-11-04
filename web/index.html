@@ -76,8 +76,8 @@ table.bdtbl .rk{display:none}
 input[type=search],input[type=text],input[type=datetime-local],input[type=url],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:0}
 textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .tkcfg{display:flex;flex-direction:column;gap:6px}
-/* Đối chiếu TLKT: lower file boxes, result set off from its PDF/Xóa row (Khoa, 2026-11-04). */
-#tyDrop,#tkDrop{padding:7px 10px}#tyDrop .files:empty,#tkDrop .files:empty{display:none}
+/* Đối chiếu TLKT and Tạo HSDT: lower file boxes, result set off from its PDF/Xóa row (Khoa, 2026-11-04). */
+#tyDrop,#tkDrop,#hpDrop,#hcDrop{padding:7px 10px}#tyDrop .files:empty,#tkDrop .files:empty,#hpDrop .files:empty,#hcDrop .files:empty{display:none}
 #tkOut>.cmprev{margin-bottom:16px}
 .note{border-left:3px solid var(--blue);background:var(--cyan-soft);padding:9px 12px;border-radius:0 8px 8px 0;font-size:13px}
 .note.warn{border-color:var(--amber);background:var(--amber-soft)}
@@ -2091,7 +2091,7 @@ function hsdtTabHtml(t) {
       <input type="file" id="hcFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="hcList"></div>
     </div>
-    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT"}</button><button class="btn" id="hsDocx" data-key="${t._key}" ${prev ? "" : "hidden"} title="Tải Word (.docx)" aria-label="Tải Word (.docx)">${raw(DL_SVG)}</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) + (basis ? " · " + basis : "") : ""}</span></div><div id="hsUp"></div>
+    <div class="row"><button class="btn primary" id="hsRun" data-key="${t._key}" ${hsWait ? "disabled" : ""}>${prev ? "Soạn lại" : "Tạo HSDT"}</button><span class="muted small" id="hsInfo">${prev ? "Bản soạn lúc " + fmtDate(prev.at) + (basis ? " · " + basis : "") : ""}</span></div><div id="hsUp"></div>
     <div id="hsOut">${raw(prev?.result ? hsdtHtml(prev.result) : "")}</div>`;
 }
 // The reference bid is shown as the Word document it becomes. Every text is editable in place: data-h names the
@@ -2100,7 +2100,7 @@ function hsdtHtml(r) {
   const t = findTender(state.open);
   const ed = (path, text, tag = "div", cls = "") => h`<${raw(tag)} class="${cls}" contenteditable="true" spellcheck="false" data-h="${path}">${raw(richHtml(text))}</${raw(tag)}>`;
   return h`<div class="muted small" style="margin-bottom:8px">Bấm vào chữ để sửa trước khi tải Word. Chỗ trong [ngoặc vuông] là thông tin của công ty cần điền.</div>
-    ${raw(edBar())}<div class="hsdoc" id="hsDoc">
+    ${raw(edBar("", h`<button type="button" id="hsDocx" data-key="${state.open}" title="Tải Word (.docx)" aria-label="Tải Word (.docx)">${raw(DL_SVG)}</button>`))}<div class="hsdoc" id="hsDoc">
       <div class="hstitle">HỒ SƠ DỰ THẦU (BẢN THAM KHẢO)</div>
       <div class="hscenter"><b>${t?.bidName || ""}</b></div>
       <div class="hscenter">Số TBMT: ${t?.notifyNo || "—"} · Chủ đầu tư: ${t?.investorName || "—"} · Đóng thầu: ${fmtDate(t?.bidCloseDate) || "—"}</div>
