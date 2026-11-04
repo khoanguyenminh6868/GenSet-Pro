@@ -1375,10 +1375,7 @@ function infoHtml(t) {
   const key = t._key, d = state.hsmt[key], files = d?.files || [];
   const c = capacityOf(t);
   const facts = [["Chủ đầu tư", t.investorName], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => w.name + (w.price ? ` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
-  return h`<div class="grid2">
-      <div class="field"><label for="dStage">Trạng thái</label><select id="dStage" ${movesOf(t).length ? "" : "disabled"}>${raw(tabOf(t) === "closed" ? '<option selected>Đã đóng</option>' : STAGES.map((s) => h`<option value="${s.key}" ${s.key === stageOf(t) ? "selected" : ""} ${s.key === stageOf(t) || movesOf(t).includes(s.key) ? "" : "disabled"}>${s.label}</option>`).join(""))}</select></div>
-    </div>
-    <div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
+  return h`<div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" rows="2" style="min-height:56px" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
     <dl class="kv">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${v}</dd>`).join(""))}</dl>
     ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) || state.bidhist?.[t._key] ? biddersHtml(t) : "")}
     <div style="display:flex;flex-direction:column;gap:8px">
@@ -1387,7 +1384,7 @@ function infoHtml(t) {
         ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}">${f.converted ? "Xem (bản PDF)" : "Xem"}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener">Tải về</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
         ${raw(f.ocr ? h`<span class="chip mut" title="Bản scan, chữ đọc bằng OCR (${f.ocr} trang), có thể sai vài chữ">OCR</span>` : "")}${raw(f.hasText ? h`<button class="btn sm" data-viewtext="${i}">Xem chữ</button>` : f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div><div id="docText"></div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
-      ${raw(refetchHtml(t, files.length))}
+      ${raw(refetchHtml(t))}
     </div>`;
 }
 // ---------- Báo giá của Nhà Cung Cấp (quote/<key>; the files live on the GitHub Release ncc-<key>, api/quote.js) ----------
@@ -1605,18 +1602,16 @@ function reqState(key) {
   if (got && got >= r.requestedAt) return null;
   return { kind: "pending", r };
 }
-function refetchHtml(t, have) {
+function refetchHtml(t) {
   if (state.readOnly) return "";
   const s = reqState(t._key);
   if (projUp[t._key]) return h`<div class="note">${raw(progress(projUp[t._key]))}</div>`;
   if (s?.kind === "pending") return waitHtml("Đang tải hồ sơ từ muasamcong bằng Agent...", s.r.requestedAt) + h`<div class="row"><label class="btn" for="pFiles" title="Không muốn chờ Agent: tải tay tệp PDF, DOCX">Upload</label><input type="file" id="pFiles" multiple hidden accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,image/*"></div>`;
-  const msg = s?.kind === "error" ? `Lần lấy tệp trước không được: ${s.r.error}`
-    : state.hsmt[t._key]?.files?.some((f) => f.manual) ? "Có tệp tải tay. Lấy lại tệp từ muasamcong sẽ thay cả danh sách, tệp tải tay sẽ mất."
-    : have ? "Lấy lại tệp từ muasamcong nếu hồ sơ có thay đổi hoặc còn thiếu tệp. Hoặc Upload tệp PDF, DOCX có sẵn." : "Lấy tệp hồ sơ từ muasamcong, hoặc Upload tệp PDF, DOCX có sẵn.";
-  return h`<div class="note row${s?.kind === "error" ? " warn" : ""}"><span class="small" style="flex:1;min-width:200px">${msg}</span>
+  const warn = state.hsmt[t._key]?.files?.some((f) => f.manual) ? "Có tệp tải tay. Lấy lại tệp từ muasamcong sẽ thay cả danh sách, tệp tải tay sẽ mất." : "Lấy lại tệp từ muasamcong";
+  return h`${raw(s?.kind === "error" ? h`<div class="note warn small">Lần lấy tệp trước không được: ${s.r.error}</div>` : "")}<div class="row" style="justify-content:flex-end">
     <label class="btn" for="pFiles" title="Tải tay tệp PDF, DOCX làm hồ sơ mời thầu">Upload</label>
     <input type="file" id="pFiles" multiple hidden accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,image/*">
-    <button class="btn primary" id="hfFetch" data-key="${t._key}">Lấy lại tệp</button></div>`;
+    <button class="btn primary" id="hfFetch" data-key="${t._key}" title="${warn}">Lấy lại tệp</button></div>`;
 }
 // Sync on the web: ask the Windows worker for files of every open Mới tender that has none and no request yet.
 async function requestMissingFiles() {
@@ -3396,7 +3391,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
   if (e.target.id === "tkRun") { runTlkt(e.target.dataset.key); return; }
   if (e.target.id === "cmAccepted") { askAccept(e.target.dataset.key); return; }
-  if (e.target.id === "hfFetch") { requestRefetch(e.target.dataset.key); return; }
+  if (e.target.id === "hfFetch") { const k = e.target.dataset.key; if (!state.hsmt[k]?.files?.some((f) => f.manual) || confirm("Lấy lại tệp từ muasamcong sẽ thay cả danh sách, tệp tải tay sẽ mất. Tiếp tục?")) requestRefetch(k); return; }
   if (e.target.id === "newProject") { askNewProject(); return; }
   const pd = e.target.closest("[data-pdel]");
   if (pd && state.open) { askRemoveProjectFile(state.open, +pd.dataset.pdel); return; }
