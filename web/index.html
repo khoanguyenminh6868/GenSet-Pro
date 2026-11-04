@@ -3328,8 +3328,12 @@ addEventListener("popstate", (e) => {
 const navHashOk = () => Date.now() - navPopAt > 500;
 document.addEventListener("click", navTap, true);
 document.addEventListener("keydown", navTap, true);
-document.addEventListener("click", () => setTimeout(navSync, 0));
-document.addEventListener("keydown", () => setTimeout(navSync, 0));
+// The step is pushed in the same task as the tap, before the browser paints it: the screenshot a phone shows while swiping
+// Back is then the step before, not this one (pushed a paint later, it flashed; Khoa, 2026-11-04). A tap whose handler stops
+// the event before window, or opens a step after an await, is caught a moment later.
+for (const ev of ["click", "keydown"]) { addEventListener(ev, navSync); document.addEventListener(ev, () => setTimeout(navSync, 0)); }
+// Back puts back the scroll of the step itself (navRestore), not the browser's.
+try { history.scrollRestoration = "manual"; } catch {}
 
 // ---------- Events ----------
 document.addEventListener("click", async (e) => {
