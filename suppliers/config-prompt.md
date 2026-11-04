@@ -24,16 +24,16 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     figures, then the alternator.
   - "Thông số theo model": every figure of each engine and alternator above, from ANY supplier's row or datasheet that
     names that model, each with its `factSrc`. A figure marked ⚠ is given differently by its sources.
-  - "Thông số bộ điều khiển": the first lines of the maker's datasheet of the controllers above (Deep Sea, SmartGen),
+  - "Thông số bảng điều khiển": the first lines of the maker's datasheet of the controllers above (Deep Sea, SmartGen),
     each line of the controller of its heading, with the `supplierId` / `n` to quote it (Deep Sea, SmartGen, ComAp). ALL the lines are in
     `controllers.md` (a datasheet runs to 250 lines, a SmartGen manual to 700): for every controller requirement
     (event log, protections, emergency stop, measurements, AMF, RS485...) search controllers.md with grep under that
     controller's heading before writing `unclear`.
-    A controller of "Bộ điều khiển" marked "có datasheet hãng" has its datasheet only in controllers.md: before
+    A controller of "Bảng điều khiển" marked "có datasheet hãng" has its datasheet only in controllers.md: before
     giving a configuration that controller, or writing `unclear` on its functions, grep controllers.md for its model.
   - "Nhà cung cấp khác có dòng ghi cùng động cơ": more rows naming those engines, to pick `suppliers` from.
   - "Động cơ khác trong khoảng công suất": the other engines near the power, one row each.
-  - each table's header (once per `supplierId` / `n`, column titles); "Bộ điều khiển": the controllers of the suppliers
+  - each table's header (once per `supplierId` / `n`, column titles); "Bảng điều khiển": the controllers of the suppliers
     shown, each with the line that names it (`supplierId`, `n`, `line`); at the end, those suppliers (role, status,
     confidence, website, controllers) as recorded in the supplier DB.
 - `requirements.json` (only when the HSMT and Yêu cầu khác are unchanged since the last run): the requirements read
@@ -116,16 +116,16 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    - Write the converted value and the formula in `offered` (e.g. "320 kW / 0,8 = 400 kVA"). The code recomputes every
      conversion; a wrong input or result turns `met` into `unclear`.
    Controller (Khoa, 2026-11-01): give the configuration a `controller` when a source names one: the controller its
-   genset row names (`src.kind: "catalog"`, that row), else one the supplier offers in the "Bộ điều khiển" section
+   genset row names (`src.kind: "catalog"`, that row), else one the supplier offers in the "Bảng điều khiển" section
    (`src.kind: "controller"`, its `supplierId`, `n`, `line` exactly as there). Prefer the make or model the HSMT asks
-   for, and a supplier that offers it; a controller with "Thông số bộ điều khiển" (its maker's datasheet) before one
+   for, and a supplier that offers it; a controller with "Thông số bảng điều khiển" (its maker's datasheet) before one
    without. Check the HSMT's controller requirements with `part: "controller"` and a `sourceQuote` from that line, or
-   from a line of "Thông số bộ điều khiển" of that controller: then copy `factSrc` { `supplierId`, `n`, `line` (the
+   from a line of "Thông số bảng điều khiển" of that controller: then copy `factSrc` { `supplierId`, `n`, `line` (the
    whole line, word for word) } into the check. A function (AMF, paralleling, RS485, event log...) no line states is
    `unclear`, never assumed from the model name. When the heading says the datasheet is of another generation (the
    supplier writes DSE7320, the datasheet is DSE7320 MKII), the check may be `met` and the code adds that the
    generation is to be confirmed. A controller the source writes without its series ("Smartgen 6120", "SmartGen 6110
-   automatic control module") is the model catalog.md shows after "bộ điều khiển trong dòng" / "bộ điều khiển nhà cung
+   automatic control module") is the model catalog.md shows after "bảng điều khiển trong dòng" / "bảng điều khiển nhà cung
    cấp chào" (HGM6120, HGM6110): keep `model` as the source writes it, and its datasheet in controllers.md counts.
    When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
    (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
