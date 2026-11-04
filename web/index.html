@@ -281,6 +281,7 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .sev.critical .tag{color:var(--rose)}.sev.warning .tag{color:var(--amber)}.sev.info .tag{color:var(--blue)}
 blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var(--muted);font-style:italic;font-size:13px}
 .rec{font-size:13px}.rec b{color:var(--violet);font-weight:600}
+.favstar{background:none;border:0;padding:0 4px 0 0;font-size:17px;line-height:1;cursor:pointer;color:var(--muted);vertical-align:-1px}.favstar.on{color:#f5b301}.favstar:hover{color:#f5b301}
 .suptable{width:100%;border-collapse:collapse;font-size:13px}.suptable th,.suptable td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.suptable tbody tr:is([data-supopen],[data-catitem]){cursor:pointer}.suptable tbody tr:is([data-supopen],[data-catitem]):hover{background:var(--panel2)}
 .supcontact{margin-top:3px;overflow-wrap:anywhere}.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
 /* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
@@ -538,7 +539,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
@@ -1435,14 +1436,14 @@ const quoteUp = {}; // key -> { row, text } while files upload
 const quoteRows = (key) => { const r = state.quote[key]?.rows; return r?.length ? r : [{ id: "r1", supplierId: "", files: [] }]; };
 function quoteHtml(t) {
   const key = t._key, rows = quoteRows(key), ro = state.readOnly, sups = supAll();
-  const n = rows.reduce((s, r) => s + (r.files?.length || 0), 0);
+  const n = rows.reduce((s, r) => s + (r.files?.length || 0), 0), favN = sups.filter((s) => supFav(s.id)).length;
   const row = (r) => {
     const taken = new Set(rows.filter((x) => x !== r && x.supplierId).map((x) => x.supplierId));
-    const opts = sups.filter((s) => !taken.has(s.id));
+    const opts = sups.filter((s) => supFav(s.id) && !taken.has(s.id));
     if (r.supplierId && !opts.some((s) => s.id === r.supplierId)) opts.unshift(state.supplier?.[r.supplierId] || { id: r.supplierId });
     const up = quoteUp[key]?.row === r.id ? quoteUp[key].text : "";
     return h`<div class="qrow" data-qrow="${r.id}">
-      <div class="row"><select data-qsup="${r.id}" style="flex:1;min-width:180px" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">Chọn nhà cung cấp...</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
+      <div class="row"><select data-qsup="${r.id}" style="flex:1;min-width:180px" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">${favN ? "Chọn nhà cung cấp yêu thích..." : "Chưa có nhà cung cấp yêu thích"}</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
         ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Tải tệp lên</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
         ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
       ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
@@ -1454,6 +1455,7 @@ function quoteHtml(t) {
   return h`<div class="drop">
       <div class="row"><h2 style="flex:1">Báo giá của NCC</h2><span class="muted small">${n ? `${n} tệp` : "Chưa có tệp nào"}</span>${raw(ro ? "" : h`<button class="btn sm" id="qAdd" ${quoteUp[key] ? "disabled" : ""}>+ Thêm</button>`)}</div>
       ${raw(rows.map(row).join(""))}
+      ${raw(ro || favN || !state.loaded.supplier ? "" : '<div class="muted small">Danh sách chỉ hiện nhà cung cấp yêu thích: bấm ☆ cạnh tên ở màn <a href="#nha-cung-cap">Nhà cung cấp</a> để thêm.</div>')}
     </div>`;
 }
 async function saveQuote(key, rows) {
@@ -2324,7 +2326,7 @@ const supName = (s) => s?.names?.en || s?.names?.zh || s?.id || "";
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
-let supFilter = { q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
+let supFilter = { fav: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
 // Sort by founding year or country (Khoa, 2026-11-04): click a header for ▲, again for ▼, a third time back to A–Z; a supplier with no value goes last.
 let supSort = { k: "", dir: 0 };
 const SUP_SORT = { year: (s) => s.founded || null, country: (s) => supCountryName(s) || null };
@@ -2353,6 +2355,19 @@ function needSup() {
   supLoad = true;
   subscribe("supplier", "supplier", () => setTimeout(supChanged, 0));
   subscribe("supdeleted", "supdeleted", () => setTimeout(supChanged, 0));
+  subscribe("supfav", "supfav", () => setTimeout(supChanged, 0));
+}
+// Favourite suppliers (Khoa, 2026-11-04): a yellow star on the Nhà cung cấp screen, shared by everyone (supfav/<id> {on});
+// the Báo giá của NCC dropdown in Giá gợi ý lists only these.
+const supFav = (id) => !!state.supfav?.[id]?.on;
+const favStar = (s) => h`<button type="button" class="favstar${supFav(s.id) ? " on" : ""}" data-supfav="${s.id}" aria-pressed="${String(supFav(s.id))}" title="${supFav(s.id) ? "Bỏ khỏi nhà cung cấp yêu thích" : "Thêm vào nhà cung cấp yêu thích"}" aria-label="Yêu thích ${supName(s)}" ${raw(state.readOnly || !state.db ? "disabled" : "")}>${supFav(s.id) ? "★" : "☆"}</button>`;
+async function toggleFav(id) {
+  if (state.readOnly || !state.db) { toast("Đăng nhập để đánh dấu yêu thích."); return; }
+  const rec = { on: !supFav(id), at: new Date().toISOString(), by: window.genbidEmail || "" };
+  state.supfav = { ...state.supfav, [id]: rec };
+  if ($("#supBody")) { if (supOpenId) renderSuppliers(); else renderSupList(); }
+  if (state.open) renderDrawer(false);
+  if (!(await dbSet("supfav/" + id, rec))) toast("Không lưu được nhà cung cấp yêu thích.");
 }
 const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
 const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); };
@@ -2368,6 +2383,7 @@ function supLinesFor(s, f = supFilter) {
 }
 function supMatches(s) {
   const f = supFilter, q = f.q.trim().toLowerCase();
+  if (f.fav && !supFav(s.id)) return false;
   if (f.role && s.role !== f.role) return false;
   if (f.conf && s.confidence !== f.conf) return false;
   if (f.country && !supCountryIn(s.country, f.country)) return false;
@@ -2434,6 +2450,7 @@ function renderSuppliers() {
       <label class="muted small" for="supPower">Công suất cần</label>
       <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="${matchMedia("(max-width:640px)").matches ? "Công suất cần" : "vd. 500"}">
       <select id="supUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
+      <button type="button" class="btn sm" id="supFavF" aria-pressed="${String(f.fav)}" style="${f.fav ? "border-color:#f5b301;color:#b07d00" : ""}">${f.fav ? "★" : "☆"} Yêu thích</button>
       <span class="spacer"></span><span class="muted small" id="supCount"></span>
     </div></div>
     <div class="mscroll"><div id="supList"></div></div>`;
@@ -2449,6 +2466,7 @@ function renderSuppliers() {
   $("#supFuel").onchange = (e) => set("fuel", e.target.value);
   $("#supPower").oninput = (e) => set("power", e.target.value);
   $("#supUnit").onchange = (e) => set("unit", e.target.value);
+  $("#supFavF").onclick = () => { supFilter = { ...supFilter, fav: !supFilter.fav }; renderSuppliers(); };
 }
 function renderSupList() {
   const list = supAll().filter(supMatches), filtered = supLineFiltered();
@@ -2457,11 +2475,11 @@ function renderSupList() {
     list.sort((x, y) => { const a = v(x), b = v(y); return (a == null) - (b == null) || (a == null ? 0 : supSort.dir * (typeof a === "number" ? a - b : a.localeCompare(b, "vi"))); });
   }
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
-  filtNote("supFilt", [supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
+  filtNote("supFilt", [supFilter.fav, supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th>${raw(supSortTh("country", "Quốc gia", "Quốc gia"))}${raw(supSortTh("year", "Năm TL", "Năm thành lập"))}<th>Dòng máy / dải công suất</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
-    return h`<tr data-supopen="${s.id}"><td><b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}</td>
+    return h`<tr data-supopen="${s.id}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}</td>
       <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
       <td data-l="Quốc gia">${supCountryName(s) || "—"}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
@@ -2504,7 +2522,7 @@ function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
   return h`<div class="dethead"><div class="row"><button class="btn sm" id="supBack">← Danh sách</button></div>
-    <div><h3 class="hlname" style="margin:4px 0">${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div class="row" style="margin:6px 0 18px"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}</div></div></div>
+    <div><h3 class="hlname" style="margin:4px 0">${raw(favStar(s))}${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div class="row" style="margin:6px 0 18px"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}</div></div></div>
     <dl class="kv">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
       <dt>Thương hiệu</dt><dd>${(s.names?.brands || []).join(", ") || "—"}</dd>
@@ -3561,6 +3579,8 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "bpRun") { const t = findTender(e.target.dataset.key); if (t) requestWorker("bidpricereq", t._key, { basis: bidBasis(t) }, "gợi ý giá đấu"); return; }
   const home = e.target.closest("#mdl a.home");
   if (home) { e.preventDefault(); setScreenUrl(Object.keys(SCREEN_HASH).find((k) => home.getAttribute("href") === "#" + SCREEN_HASH[k])); openScreenFromUrl(); return; }
+  const fav = e.target.closest("[data-supfav]");
+  if (fav) { e.preventDefault(); toggleFav(fav.dataset.supfav); return; }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
   if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); mScroll().scrollTop = listScroll.sup; return; }
   if (e.target.closest("tr[data-supopen] a[href]")) return; // e-mail / phone link in a list row: no detail
