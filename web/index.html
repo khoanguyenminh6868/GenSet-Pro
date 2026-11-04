@@ -2271,7 +2271,8 @@ async function runCompare(key) {
 // (suppliers/verify.mjs checked each quote against the saved page before upload; Khoa, 2026-10-28).
 const SUP_ROLE = { genset_oem: "Nhà lắp ráp tổ máy", engine_maker: "Hãng động cơ", alternator_maker: "Hãng đầu phát", controller_maker: "Hãng bộ điều khiển", distributor: "Nhà phân phối" };
 const SUP_KIND = { genset: "Tổ máy", engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển" };
-const SUP_CONF = { high: ["Tin cậy cao", "ok"], medium: ["Trung bình", "warn"], low: ["Chưa xác minh", "bad"] };
+// [label, chip class, short label for the list's "Độ tin cậy" column (Khoa, 2026-11-04)]
+const SUP_CONF = { high: ["Tin cậy cao", "ok", "Cao"], medium: ["Trung bình", "warn", "TB"], low: ["Chưa xác minh", "bad"] };
 const SUP_TIER = { A: "Website / tài liệu chính hãng", B: "Triển lãm, hiệp hội, sàn công bố", C: "Tự giới thiệu (đại lý, sàn B2B)" };
 const SUP_COUNTRY = { CN: "Trung Quốc", US: "Mỹ", GB: "Anh", DE: "Đức", FR: "Pháp", IT: "Ý", JP: "Nhật Bản", CA: "Canada",
   FI: "Phần Lan", TR: "Thổ Nhĩ Kỳ", SE: "Thụy Điển", CZ: "Séc", ID: "Indonesia", ES: "Tây Ban Nha", PT: "Bồ Đào Nha", KR: "Hàn Quốc",
@@ -2437,7 +2438,7 @@ function renderSupList() {
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
       <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
       <td class="small" data-l="Động cơ">${[...new Set(lines.flatMap((p) => p.engineMakes || []))].join(", ") || "—"}</td>
-      <td data-l="Độ tin cậy"><span class="chip ${conf[1]}">${conf[0]}</span></td></tr>`;
+      <td data-l="Độ tin cậy"><span class="chip ${conf[1]}" title="${conf[0]}">${conf[2] || conf[0]}</span></td></tr>`;
   }).join(""))}</tbody></table></div>` : h`<div class="note">Không có nhà cung cấp nào khớp bộ lọc.${raw(Number(supFilter.power) > 0 ? " Lưu ý: chỉ so với dòng máy ghi cùng đơn vị (kVA hoặc kW), không quy đổi." : "")}</div>`;
   $("#supList").querySelectorAll("[data-supsort]").forEach((b) => (b.onclick = () => {
     const k = b.dataset.supsort, dir = supSort.k !== k ? 1 : supSort.dir > 0 ? -1 : 0;
