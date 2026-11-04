@@ -100,6 +100,26 @@
         "| | | CORE80 | CORE75 | CORE50"
       ],
       "file": "sources/agco-power/104.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://www.agcopower.com/wp-content/uploads/2026/08/AGCO_Power_CORE80_A4_Vertical_EN_202509_Web.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Max.power | 252 kW / 338 HP | 800 | 150"
+      ],
+      "file": "sources/agco-power/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://www.agcopower.com/wp-content/uploads/2026/08/AGCO_Power_CORE75_A4_Vertical_EN_202509_Web.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Emission level | EU StageV / US T4F"
+      ],
+      "file": "sources/agco-power/1002.md"
     }
   ],
   "confidence": "medium",
@@ -164,6 +184,57 @@
         "| Max output hp | 283-343 hp | 218-340 hp | 160-224 hp",
         "| Max torque | 1450-1680 Nm | 1000-1450 Nm | 715-950 Nm",
         "| | See details | See details |"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Download a brochure",
+      "header": [],
+      "rows": [
+        "| Max.power | 252 kW / 338 HP | 800 | 150",
+        "| 600 | 100",
+        "| 400 | 50",
+        "| Turbocharger technology | Variable Geometry Turbocharger | 0 | 0",
+        "| 800 | 1000 | 1200 | 1400 | 1600"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Download a brochure",
+      "header": [],
+      "rows": [
+        "| Power curves may be subject to | change.",
+        "| Emission level | EU StageV / US T4F | 1600 | 350",
+        "| Number of cylinders | 6",
+        "| Bore / stroke | 110 mm / 139 mm",
+        "| Displacement | 8,0 l | 1200 | 250",
+        "| Rated speed | 1700 RPM",
+        "| Max.power | 252 kW / 338 HP | 800 | 150",
+        "| at speeds | 1500-1700 RPM",
+        "| at speeds | 1200-1400 RPM",
+        "| Engine | speed [1/min]",
+        "| Power | Torque",
+        "Dimensions",
+        "| sales.agcopower@agcocorp.com | to discover more",
+        "| agcopower.com | about AGCO Power"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: Download a brochure",
+      "header": [],
+      "rows": [
+        "| Emission level | EU StageV / US T4F",
+        "| Number of cylinders | 6 | 1400",
+        "| Bore / stroke | 110 mm / 132 mm (4,33in / 5,20in) | 1200",
+        "| Displacement | 7,5 l (458 cu in)",
+        "| Rated speed | 1950 RPM | 1000 | 180,0",
+        "| Max.power | 250 kW / 335 hp",
+        "| at speeds | 1850 RPM",
+        "| at speeds | 1500 RPM",
+        "| Engine | speed | [1/min]",
+        "Dimensions",
+        "| The heritage of reliable power | B"
       ]
     }
   ]

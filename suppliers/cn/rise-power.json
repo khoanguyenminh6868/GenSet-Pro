@@ -110,6 +110,16 @@
       "file": "sources/rise-power/1.md"
     },
     {
+      "n": 3001,
+      "url": "https://dieselpower-en.com/control-system/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "DSE6110 Auto Start Controller with basic protection"
+      ],
+      "file": "sources/rise-power/3001.md"
+    },
+    {
       "n": 101,
       "url": "https://dieselpower-en.com/2-1-2-sdec-marine-generator/",
       "accessedAt": "2026-10-29",
@@ -258,16 +268,6 @@
         "| Model | Prime Power (kW) | Standby Power (kW) | Engine | Engine Rated Power (kW) | Cylinders | Displacement (L) | Alternator | Rated Current(A) | Dimensions (mm) | Weight (kg)"
       ],
       "file": "sources/rise-power/117.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://dieselpower-en.com/control-system/",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "DSE6110 Auto Start Controller with basic protection"
-      ],
-      "file": "sources/rise-power/3001.md"
     }
   ],
   "confidence": "medium",

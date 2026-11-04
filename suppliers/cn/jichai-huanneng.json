@@ -63,6 +63,26 @@
       "file": "sources/jichai-huanneng/2.md"
     },
     {
+      "n": 3001,
+      "url": "https://m.jichaipower.com/newslist-401124-1",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Characteristics Of InteliSys Gas Controller F..."
+      ],
+      "file": "sources/jichai-huanneng/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://m.jichaipower.com/diesel-engine-generator/diesel-engine-generator-set/1000kw-diesel-engine-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "&radic; DSE6120 controller"
+      ],
+      "file": "sources/jichai-huanneng/3002.md"
+    },
+    {
       "n": 101,
       "url": "https://m.jichaipower.com/gas-generator/biomass-generator-set/silent-type-ce-approved-low-rpm-400kw-biomass.html",
       "accessedAt": "2026-10-29",
@@ -161,26 +181,6 @@
         "| Generator model | 6116GD"
       ],
       "file": "sources/jichai-huanneng/111.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://m.jichaipower.com/newslist-401124-1",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "Characteristics Of InteliSys Gas Controller F..."
-      ],
-      "file": "sources/jichai-huanneng/3001.md"
-    },
-    {
-      "n": 3002,
-      "url": "https://m.jichaipower.com/diesel-engine-generator/diesel-engine-generator-set/1000kw-diesel-engine-generator.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "&radic; DSE6120 controller"
-      ],
-      "file": "sources/jichai-huanneng/3002.md"
     }
   ],
   "confidence": "medium",

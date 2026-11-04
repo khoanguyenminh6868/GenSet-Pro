@@ -103,6 +103,16 @@
       "file": "sources/yihua-fujian/1.md"
     },
     {
+      "n": 3001,
+      "url": "https://www.yihua-genset.com/1000kva-open-type-diesel-generator-set-Cumm-insOEM-factory-with-stamford-p5525600.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Smartgen HGM6120N controller | Net weight(kg): | 9500 | Net weight(kg): | 7900 |"
+      ],
+      "file": "sources/yihua-fujian/3001.md"
+    },
+    {
       "n": 101,
       "url": "https://www.yihua-genset.com/Powered-By-CCEC-OEM-Engine-800kw-1000kva-Soundproof-Diesel-Generator-set-p5525605.html",
       "accessedAt": "2026-10-29",
@@ -142,16 +152,6 @@
         "| Model | Rated Power (KW/KVA) | Rated Volt(V) | Rated Curr. (A) | Rated Speed (r/min) | Frequency (Hz) | Max.directly-starting Motor (kW)"
       ],
       "file": "sources/yihua-fujian/105.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://www.yihua-genset.com/1000kva-open-type-diesel-generator-set-Cumm-insOEM-factory-with-stamford-p5525600.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Smartgen HGM6120N controller | Net weight(kg): | 9500 | Net weight(kg): | 7900 |"
-      ],
-      "file": "sources/yihua-fujian/3001.md"
     }
   ],
   "confidence": "medium",

@@ -129,6 +129,26 @@
       "file": "sources/kaihua-genset/2.md"
     },
     {
+      "n": 3001,
+      "url": "https://www.kaihuagenset.com/Telecom.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "To enhance operational convenience and monitoring capabilities, each base station is equipped with the Deep Sea 8610 controller along with the remote 890 module. This integrated control system serves as the \"brain\" of the power unit,"
+      ],
+      "file": "sources/kaihua-genset/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.kaihuagenset.com/Control-System.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "IL-NT AMF InteliGen-NTC"
+      ],
+      "file": "sources/kaihua-genset/3002.md"
+    },
+    {
       "n": 101,
       "url": "https://www.kaihuagenset.com/products/By-Power/1000--2500KW.html",
       "accessedAt": "2026-10-29",
@@ -287,26 +307,6 @@
         "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight"
       ],
       "file": "sources/kaihua-genset/116.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://www.kaihuagenset.com/Telecom.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "To enhance operational convenience and monitoring capabilities, each base station is equipped with the Deep Sea 8610 controller along with the remote 890 module. This integrated control system serves as the \"brain\" of the power unit,"
-      ],
-      "file": "sources/kaihua-genset/3001.md"
-    },
-    {
-      "n": 3002,
-      "url": "https://www.kaihuagenset.com/Control-System.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "IL-NT AMF InteliGen-NTC"
-      ],
-      "file": "sources/kaihua-genset/3002.md"
     }
   ],
   "confidence": "medium",

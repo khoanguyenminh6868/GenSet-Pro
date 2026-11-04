@@ -120,6 +120,56 @@
       "file": "sources/hosem-power/2.md"
     },
     {
+      "n": 3001,
+      "url": "https://www.industrialgeneratorset.com/aboutus-more.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with model MSR10, AMF25, Nano and IC-NT controller, Smartgen brand with HGM6110, HGM6120, HGM7110, HGM7210 and other models."
+      ],
+      "file": "sources/hosem-power/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://www.industrialgeneratorset.com/buy-200kva-cummins-generator-set.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Control System | Deepsea DSE6120"
+      ],
+      "file": "sources/hosem-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.industrialgeneratorset.com/supplier-413285-perkins-generator-set",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller Modul | ComAp AMF8"
+      ],
+      "file": "sources/hosem-power/3003.md"
+    },
+    {
+      "n": 3004,
+      "url": "https://www.industrialgeneratorset.com/supplier-413286-deutz-diesel-generator-set",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | Smartgen HGM6120N"
+      ],
+      "file": "sources/hosem-power/3004.md"
+    },
+    {
+      "n": 3005,
+      "url": "https://www.industrialgeneratorset.com/buy-3-phase-deutz-generator-set.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | Smartgen HGM6120N"
+      ],
+      "file": "sources/hosem-power/3005.md"
+    },
+    {
       "n": 101,
       "url": "https://www.industrialgeneratorset.com/",
       "accessedAt": "2026-10-29",
@@ -260,54 +310,14 @@
       "file": "sources/hosem-power/115.md"
     },
     {
-      "n": 3001,
-      "url": "https://www.industrialgeneratorset.com/aboutus-more.html",
-      "accessedAt": "2026-11-01",
+      "n": 1001,
+      "url": "https://www.hosempower.com/uploadfile/downloads/Specification%20of%202000kVA%20Perkins%20Generator%20Set.pdf",
+      "accessedAt": "2026-11-03",
       "tier": "A",
       "quote": [
-        "Hosem Power uses the most famous brand controller for our diesel generator, include Deepsea brand with model DSE7320, DSE6020 and DSE7420 controller, ComAp brand with model MSR10, AMF25, Nano and IC-NT controller, Smartgen brand with HGM6110, HGM6120, HGM7110, HGM7210 and other models."
+        "Voltage: 400/230V"
       ],
-      "file": "sources/hosem-power/3001.md"
-    },
-    {
-      "n": 3002,
-      "url": "https://www.industrialgeneratorset.com/buy-200kva-cummins-generator-set.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Control System | Deepsea DSE6120"
-      ],
-      "file": "sources/hosem-power/3002.md"
-    },
-    {
-      "n": 3003,
-      "url": "https://www.industrialgeneratorset.com/supplier-413285-perkins-generator-set",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Controller Modul | ComAp AMF8"
-      ],
-      "file": "sources/hosem-power/3003.md"
-    },
-    {
-      "n": 3004,
-      "url": "https://www.industrialgeneratorset.com/supplier-413286-deutz-diesel-generator-set",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Controller | Smartgen HGM6120N"
-      ],
-      "file": "sources/hosem-power/3004.md"
-    },
-    {
-      "n": 3005,
-      "url": "https://www.industrialgeneratorset.com/buy-3-phase-deutz-generator-set.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Controller | Smartgen HGM6120N"
-      ],
-      "file": "sources/hosem-power/3005.md"
+      "file": "sources/hosem-power/1001.md"
     }
   ],
   "confidence": "medium",
@@ -719,6 +729,68 @@
         "| Alternator Model | UCI 274 F",
         "| Protection Grade | IP23",
         "| Controller | Deepsea Brand Model DSE7320"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: Download",
+      "header": [],
+      "rows": [
+        "Voltage: 400/230V",
+        "Frequency: 50Hz",
+        "Genset Image for illustration purposes only",
+        "| Standby Power (ESP) | kVA | 2000.0",
+        "| Prime Power (PRP) | kVA | 1818.0",
+        "| Engine Brand | Perkins",
+        "| Engine Model | 4016TAG1A",
+        "| Alternator Brand | Leroy Somer",
+        "| Alternator Model | LSA51.2S6)",
+        "| Controller | Deepsea DSE7320",
+        "| Measure (L x W x H) | mm | 12192 X 2438 X 2896",
+        "| Empty Weight | kg | 15150",
+        "| Fuel Tank | L | 2000",
+        "| Noise Level for Soundproof | dB(A)",
+        "| Voltage (V) | Prime",
+        "| Power | (PRP)",
+        "| Standby | Power",
+        "Prime Output: Prime output is available for an unlimited number of annual hours in variable load application, in",
+        "Standby Output: The standby output is applicable for supplying emergency power for duration of a utility power",
+        "ENGINE",
+        "| Perkins diesel 4 stroke engine | with 16 Cylinders in line,",
+        "| Bore (mm) | 160.00",
+        "| Model | 4016TAG1A",
+        "| Stroke (mm) | 190.00",
+        "| Compression Ratio | 13.6 : 1",
+        "| Max. Power (kWm) | 1741",
+        "| Min. Fuel Consumption | 207.0",
+        "| No. of Cylinder | 16 Cylinder V",
+        "| Engine Capacity (L) | 61.1",
+        "| Weight | 5847.00",
+        "| Coolant Capacity (L) Engine Only | 223",
+        "| Cooling Type | Water Cooling",
+        "| Coolant Heater Power (W) | 2000 W for optional",
+        "| Intake Air Flow (L/s) | 2283",
+        "| Ta Gas Emission (℃) | 439",
+        "| Starter Voltage System (V) | 24",
+        "| The fuel intake system has a high performance | decanter",
+        "| Fuel Tank Capacity (L) | 2000",
+        "| Prime Power (PRP) | Standby Power (ESP)",
+        "Alternator",
+        "| Brand | Leroy Somer",
+        "| Voltage Stability | +-1%",
+        "| Model | LSA51.2S6 | Proformance at 75% p.f 0.8 (%) 97.9",
+        "| Alternator Power (kVA) | 2000.0 | Proformance at 100% p.f 0.8 (%) 96",
+        "| Numbers of Wires | 6 Wires",
+        "| IP Alternator | IP23",
+        "| Working Altitude without Output | ≤1000m",
+        "| Phase | 3 Phase",
+        "| AVR | R150",
+        "| Circuit Breaker Rated Current (A) | 3200",
+        "| Battery Charger Model | BACM2406",
+        "Engine",
+        "High number of operations. IP54 protection. Connections: Lower/lower.",
+        "DIMENSION, WEIGHT AND DRAWING OF DIESEL GENERATOR",
+        "| Weight (kg) | 15150"
       ]
     }
   ],

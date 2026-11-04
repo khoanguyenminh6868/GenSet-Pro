@@ -115,6 +115,16 @@
       "file": "sources/byc-power/2.md"
     },
     {
+      "n": 3001,
+      "url": "https://www.bycpower.com/Portable-12kw-Open-Diesel-Generator-for-Buildings-pd583697758.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Advanced Controller: Equipped with Smartgen HGM6110, DeepSea or Harsen controller to improve performance and ease of operation."
+      ],
+      "file": "sources/byc-power/3001.md"
+    },
+    {
       "n": 101,
       "url": "https://www.bycpower.com/High-performance-10-Kva-Open-Diesel-Generator-for-Mining-pd540497758.html",
       "accessedAt": "2026-10-29",
@@ -143,16 +153,6 @@
         "| Genset Model | Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (kVA) | Engine Model | Speed (rpm) | Engine Prime Power (kW) | Alternator Model | Alternator Prime Power (kW)"
       ],
       "file": "sources/byc-power/103.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://www.bycpower.com/Portable-12kw-Open-Diesel-Generator-for-Buildings-pd583697758.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "Advanced Controller: Equipped with Smartgen HGM6110, DeepSea or Harsen controller to improve performance and ease of operation."
-      ],
-      "file": "sources/byc-power/3001.md"
     }
   ],
   "confidence": "medium",

@@ -206,6 +206,16 @@
       "file": "sources/dingbo/4.md"
     },
     {
+      "n": 3001,
+      "url": "https://www.dieselgeneratortech.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "300KW silent diesel generator set with Cummins engine NTA855-G2A, Marathon MP-300-4A three phase generator and SmartGen 6110 automatic control module."
+      ],
+      "file": "sources/dingbo/3001.md"
+    },
+    {
       "n": 101,
       "url": "https://www.dieselgeneratortech.com/volvo-generators/600kw-emergency-diesel-generator-750kva.html",
       "accessedAt": "2026-10-29",
@@ -304,16 +314,6 @@
         "| | Dingbo listing | Perkins engine | What the code suggests | Ask before ordering"
       ],
       "file": "sources/dingbo/110.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://www.dieselgeneratortech.com/",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "300KW silent diesel generator set with Cummins engine NTA855-G2A, Marathon MP-300-4A three phase generator and SmartGen 6110 automatic control module."
-      ],
-      "file": "sources/dingbo/3001.md"
     }
   ],
   "confidence": "medium",

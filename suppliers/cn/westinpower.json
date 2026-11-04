@@ -60,6 +60,36 @@
       "file": "sources/westinpower/1.md"
     },
     {
+      "n": 3001,
+      "url": "https://power-gensets.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display."
+      ],
+      "file": "sources/westinpower/3001.md"
+    },
+    {
+      "n": 3002,
+      "url": "https://power-gensets.com/index.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display."
+      ],
+      "file": "sources/westinpower/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://power-gensets.com/huawei-huzhou-data-center.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display."
+      ],
+      "file": "sources/westinpower/3003.md"
+    },
+    {
       "n": 101,
       "url": "https://power-gensets.com/1-7-diesel-generators.html",
       "accessedAt": "2026-10-28",
@@ -1718,36 +1748,6 @@
         "| Model | TB44T"
       ],
       "file": "sources/westinpower/1150.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://power-gensets.com/",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display."
-      ],
-      "file": "sources/westinpower/3001.md"
-    },
-    {
-      "n": 3002,
-      "url": "https://power-gensets.com/index.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display."
-      ],
-      "file": "sources/westinpower/3002.md"
-    },
-    {
-      "n": 3003,
-      "url": "https://power-gensets.com/huawei-huzhou-data-center.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "The generator set equipped in the data center applies TC QSK60-G21 engine, DSE8610 synchronizing & load sharing control module, and DSE8004 graphical remote overview display."
-      ],
-      "file": "sources/westinpower/3003.md"
     }
   ],
   "confidence": "medium",

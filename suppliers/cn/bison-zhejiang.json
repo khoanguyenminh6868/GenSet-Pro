@@ -240,6 +240,36 @@
         "| small gasoline generator | BS950 | BS1800 | BS2500 | BS3000 | BS3500"
       ],
       "file": "sources/bison-zhejiang/114.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://www.bisongenerator.com/resource/pdf/inverter-generator.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 静音变频发电机 | ．R1250iS | ．R2000iS | ．R2500iS | ．R3500iS | ．R80001E-4"
+      ],
+      "file": "sources/bison-zhejiang/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://www.bisongenerator.com/resource/pdf/BISON-diesel-generator.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Rated frequency(Hz) | 50/60 | 50/60 | 50/60 | 50/60 | 50/60 | 50/60"
+      ],
+      "file": "sources/bison-zhejiang/1002.md"
+    },
+    {
+      "n": 1003,
+      "url": "https://www.bisongenerator.com/resource/pdf/BISON-gasoline-generator-2.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| ＂ | Rated Voltage(V) | 110/220 | 110/220 | 110/220"
+      ],
+      "file": "sources/bison-zhejiang/1003.md"
     }
   ],
   "confidence": "medium",
@@ -622,6 +652,450 @@
         "| Mass weight (kg) | 86 | 89 | 162 | 168 | 210",
         "| 20GP (Set) | 136 | 136 | 60 | 60 | 60",
         "| 40HQ (Set) | 292 | 292 | 132 | 132 | 132"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: View the inverter generator Catalog",
+      "header": [],
+      "rows": [
+        "| 静音变频发电机 | ．R1250iS | ．R2000iS | ．R2500iS | ．R3500iS | ．R80001E-4",
+        "Generator",
+        "| 变频发电机／ ：：：；rGenerator | I",
+        "| GENERATOR | OTHER",
+        "| GENERATOR | ＿c",
+        "| ．具有极低的噪声，1吏用更为安静 | -400 | -400",
+        "| 更小的体积和更轻的重量适合车载旅行、 户外应急使用 | -800 | -800",
+        "| Engine type ／发动机型号 | Single cylinder, 4-Stroke(OHV)单缸",
+        "| Engine type ／发动机型号 | Single cylinder, 4-Stroke(OHV)单缸 ，",
+        "| BorexStroke／缸径x行程 | 45x38mm",
+        "| BorexStroke /缸径x行程 | 48.6 x 43mm / 60 x 43mm",
+        "| Displacement／排量 | 60ml",
+        "| Displacement／排量 | 79.7ml / 122ml",
+        "| Compression ratio／压缩比 | 8.2: 1",
+        "| Compression ratio／压缩比 | 8.7 : 1/ 8.2:1",
+        "| Rated frequency／额定频率 | SOHz",
+        "| Rated voltage／额定电压 | 230V",
+        "| Rated power／额定功率 | 1.0kw",
+        "| Rated power／额定功率 | 1.8kw / 2.3kw",
+        "| Max.power／晟大功率 | l.lkw",
+        "| Max.power／录大功率 | 2.0kw / 2.Skw",
+        "| DC output／直流输出 | 12V/5A",
+        "| DC output／直流输出 | 12V/8.3A",
+        "| Starting system ／启动系统 | Recoil手启动",
+        "| Fuel tank capacity /油箱容积 | 2.6 L",
+        "| Fuel tank capacity／油箱容积 | 4 L / 4.SL",
+        "| Full load continuum running time／满载持续运行时间 | 3.5 h",
+        "| Full load continuum running time／满载持续运行时间 | 4h/3h",
+        "| 1/2 load continuum running time／半载持续运行时间 | 5.2 h | 1/2 load continuum running time／半载持续运行时间 | 6h/5h",
+        "| Noise(7m)／噪音 | 63 dB | Noise(7m)／噪音 | 67 dB",
+        "| Dimensions(L x W x H) ／尺寸（长＊宽＊高） | 450x240x395mm",
+        "| Dimensions(L x W x H) ／尺寸（长＊宽高） | 498x290x459mm / 520x320x450mm",
+        "| Net weight ／净重 | 13kg",
+        "| Net weight ／净重 | 22kg / 25kg",
+        "| ．重量轻 | 同类产品中质量更好",
+        "| Engine type ／发动机型号 | Single cylinder, 4-Stroke(OHV)单缸，",
+        "| BorexStroke／缸径x行程 | 48.6x43mm",
+        "| BorexStroke／缸径x行程 | 70 xSSmm",
+        "| Displacement/排量 | 79.7ml",
+        "| Displacement／ 排量 | 21 2ml",
+        "| Compression ratio／压缩比 | 8.7: 1",
+        "| Compression ratio／压缩比 | 8.0: 1",
+        "| Rated voltage／额定电压 | 28V",
+        "| Rated power／额定功率 | 1 .7kw",
+        "| Rated power／额定功率 | 3.2kw",
+        "| Max.power／最大功率 | 1 .8kw",
+        "| Max.power／最大功率 | 3.Skw",
+        "| DC output／直流输出 | 28V/61 A",
+        "| DC output／直流输出 | 1 2V/8.3A",
+        "| Starting system ／启动系统 | Recoil starter 手 ／自启 自停／遥1幻蓝牙",
+        "| Starting system ／启动系统 | Recoil/Electric starter手动／电动",
+        "| Fuel tank capacity/油箱容积 | 4.2L",
+        "| Fuel tank capacity/油箱容积 | 8.3 L",
+        "| Full load continuum running time／满载持续运行时间 | 4.Sh",
+        "| Full load continuum running time／满载持续运行时间 | 5 h",
+        "| 1/2 load continuum running time／半载持续运行时间 | 6h | 1/2 load continuum running time／半载持续运行时间 | 8.5 h",
+        "| Noise(7m)／噪音 | 62dB | Noise(7m)／噪音 | 66 dB",
+        "| Dimensions(L xW xH) ／尺寸（长＊宽高） | 498x290x459mm",
+        "| 印mensions(L xW xH) ／尺寸（长＊宽＊高） | 60Sx432x493mm",
+        "| Net weight ／净重 | 22kg",
+        "| Net weight ／净重 | 44.5kg",
+        "| 变频发电机／器＄怎？elnverter | Open-frame Inverter Generator",
+        "| 具有更高的功率输出 ， 更小的尺寸， 更轻的重量， 更低的THO和稳定的频率， | 低燃料消耗。",
+        "| Enginetype ／发动机型号 | Single cylinder, 4-Stroke(OHV)单缸",
+        "| Enginetype ／发动机型号 | Single cylinder, 4-Stroke(OHV)单缸 ， 四冲程(OHV)",
+        "| BorexStroke /缸径x行程 | 90 x66mm",
+        "| BorexStroke /缸径X行程 | 70 xSSmm / 90 x 66mm",
+        "| Displacement／排量 | 420ml",
+        "| Displacement／排量 | 212ml",
+        "| Compression ratio／压缩比 | 8.5: 1",
+        "| Compression ratio／压缩比 | 8.5 : 1 / 8.0: 1",
+        "| Rated frequency／额定频率 | 50Hz",
+        "| Rated power／额定功率 | 6.8kw",
+        "| Rated power／额定功率 | 3.2kw / 7.0kw",
+        "| Max.power／最大功率 | 7.Skw",
+        "| Max.power／最大功率 | 3.Skw / 7.Skw",
+        "| Starting system ／启动系统 | Recoil / Electric starter手动／电动",
+        "| Fuel tank capacity／油箱容积 | 24L（最大容积）",
+        "| Fuel tank capacity／油箱容积 | 7 L / 15 L",
+        "| Full load continuum running time／满载持续运行时间 | 6 h",
+        "| Full load continuum running time／满载持续运行时间 | 4.3 h / 6.5 h",
+        "| 1/2 load continuum running time／半载持续运行时间 | 8 h | 1/2 load continuum running time／半载持续运行时间 | 7 h / 10 h",
+        "| Noise(7m)／噪音 | =76 dB(7m) | Noise(7m)／噪音 | 676 dB",
+        "| Dimensions(L x W x H) ／尺寸（长＊宽高） | 695x64lx643mm (带轮）",
+        "| Dimensions(L x W x H) ／尺寸（长＊宽＊高） | 502x350x495mm / 605x514x537mm",
+        "| Net weight ／净重 | 76kg",
+        "| Net weight ／净重 | 30kg / 65kg"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: View the diesel generator Catalog",
+      "header": [],
+      "rows": [
+        "| Rated frequency(Hz) | 50/60 | 50/60 | 50/60 | 50/60 | 50/60 | 50/60",
+        "| Rated voltage(V) | 110/220/380 | 110/220/380 | 110/220/380 | 110/220/380 | 110/220/380 | 11 0/220/380",
+        "| Max power(KW) | 3.0 | 4.5 | 5.0 | 6.0 | 10.5 | 12",
+        "| wu | Rated power(KW) | 2.8 | 4.2 | 4.5 | 5.5 | 9.5 | 11",
+        "| Factor | 1 | 1 | 1 | 1 | 1 | 1"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: View the diesel generator Catalog",
+      "header": [],
+      "rows": [
+        "| Fuel tank volume(L) | 16 | 16 | 16 | 16 | 60 | 60",
+        "| Model | 8S178F(E) | BS186F(E) | 8S186FA(E) | 8S188F(E) | BS290F(E) | BS292F(E)",
+        "| Output(KW) | 4.1 | 6.3 | 6.3 | 7.1 | 13.2 | 15.5",
+        "| Bore x stroke(mm) | 78*62 | 86*70 | 86*72 | 88*75 | 90*75 | 92*75",
+        "| 9 | Displacement(cc) | 296 | 406 | 406 | 499 | 794 | 997",
+        "| Compression ratio | 20:1 | 19: 1 | 19:1 | 19: 1 | 19: 1 | 21.5:1"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: View the diesel generator Catalog",
+      "header": [],
+      "rows": [
+        "| Rated frequency(Hz) | 50/60 | 50/60 | 50/60 | 50/60 | 50/60 | 50/60",
+        "| Rated voltage(V) | 110/220/380 | 11 0/220/380 | 110/220/380 | 11 0/220/380 | 110/220/380 | 110/220/380",
+        "| Max power(KW) | 2.0 | 3.0 | 5.0 | 6.0 | 10.5 | 12",
+        "| Rated power(KW) | 1.8 | 2.8 | 4.5 | 5.5 | 9.5 | 11"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: View the diesel generator Catalog",
+      "header": [],
+      "rows": [
+        "| Fuel tank volume(L) | 13.5 | 13.5 | 13.5 | 13.5 | 25 | 25",
+        "| W | B:)utput(KW) | 2.8 | 4.0 | 6.3 | 8.2 | 13.2 | 15.5",
+        "| l�N | 3ore x stroke(mm) | 70*55 | 78*62 | 86*72 | 88*75 | 90*75 | 92*75",
+        "| )isplacement(cc)D | 211 | 296 | 406 | 499 | 794 | 997",
+        "| :ompression ratio | 20:1 | 20:1 | 19:1 | 19: 1 | 19: 1 | 21.5: 1",
+        "| X- | Noise level(dB) | 78 | 78 | 78 | 80 | 84 | 84",
+        "| 3 | G.W.(kg) | 68/72 | 95/98 | 116/119 | 121/124 | 195/205 | 245/275",
+        "| d | Dimension(mm) | 620*490*530 | 690*490*570 | 740*495*600 | 740*495*600"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: View the diesel generator Catalog",
+      "header": [],
+      "rows": [
+        "| Rated frequency(Hz) | 50/60 | 50/60 | 50/60 | 50/60 | 50/60 | 50/60",
+        "| Rated voltage(V) | 230/380 | 230/380 | 230/380 | 230/380 | 230/380 | 230/380",
+        "| Standby power(kw) | 22 | 33 | 43 | 54 | 77 | 105",
+        "| w | Prime power(kw) | 20 | 30 | 40 | 50 | 75 | 100",
+        "| uoz记仁 9w | Rated RPM | 1500 | 1500 | 1500 | 1500 | 1500 | 1500",
+        "| WN | Bore x stroke(mm) | 95*115 | 105*125 | 105*125 | l 105*125 | 105*125",
+        "| l� | Power Factor | 0.8 | 三0.8 | 0.8 | 0.8 | 0.8"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: View the diesel generator Catalog",
+      "header": [
+        "| Model | BS170F(E) | BS178F(E) | BS186F(E) | 8S186F(E) | BS178F(E) | B8186F(E) | BS186F(E)"
+      ],
+      "rows": [
+        "| Output(kw) | 2.5 | 4.0 | 6.3 | 6.3",
+        "| NV | 4.0 | 6.3 | 6.3",
+        "| BoreXstroke(mm) | 70*55 | 78*62 | 86*70 | 86*70 | 78*62 | 86*70 | 86*70",
+        "| NW | Displacement(cc) | 211 | 296 | 406 | 406",
+        "| �w | 296 | 406 | 406",
+        "| 20:1 | 20:1 | 19: 1 | 19: 1 | 20:1 | 19: 1 | 19:1",
+        "| Rated speed(RPM) | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600",
+        "| ws | 3000/3600 | 3000/3600 | 3000/3600",
+        "| Fuel tank | 2.5 | 3.5 | 5.5 | 5.5 | 3.5 | 5.5 | 5.5"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: View the diesel generator Catalog",
+      "header": [],
+      "rows": [
+        "| Inlet/outlet size(mm) | 40(1.5\") | 50(2\") | 50(2\") | 80(3\")",
+        "| Pump lift(m) | 65 | 75 | 85 | 80",
+        "| uoNw 仁记 | Suction(m) | 7 | 7 | 7 | 7",
+        "| w9 | Flux(m习h) | 22 | 30 | 35 | 41",
+        "| Pump impeller(mm) | 171 | 175 | 198 | 188",
+        "| w | Displacement(cc) | 296 | 406 | 499 | 499",
+        "| Nzl | Max.power(kw) | 4.0 | 6.3 | 8.2 | 8.2",
+        "| W� | Bore x stroke(mm) | 78*62 | 86*70 | 86*72 | 86*72",
+        "| Fuel tank volume(L) | 3.5 | 5.5 | 5.5 | 5.5",
+        "| N.W./G.W. (kg) | 52 I 54 | 64 I 67 | 69 I 72 | 70 I 73",
+        "| N | Dimension(mm) | 500*410*500 | 560*440*520 | 560*440*550 | 560*440*550",
+        "| � | 20GP(Set) | 160 | 160 | 126",
+        "| dV | 40HQ(Set) | 404 | 336 | 336 | 336"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: View the diesel generator Catalog",
+      "header": [
+        "| Type | Air | Cooled, Single-Cylinder, 4-Stroke"
+      ],
+      "rows": [
+        "| Output(kw) | 2.8 | 4.0 | 6.3 | 8.2",
+        "| Bore x stroke(mm) | 70*55 | 78*62 | 86*70 | 86*72",
+        "| u2 | Displacement(cc) | 211 | 296 | 406 | 499",
+        "| u16 | Compression ratio | 20: 1 | 20: 1 | 19: 1 | 19: 1"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: View the diesel generator Catalog",
+      "header": [],
+      "rows": [
+        "| 。FOUR-STROKE | ．LOWOPERATING | 。DUAL AC 120/230V",
+        "| ENGINE | NOISE | 12V DC RECEPTACLE",
+        "| Rated frequency(Hz) | 50/60 | 50/60 | 50/60 | 50/60 | 50/60 | 50/60",
+        "| Rated voltage(V) | 110/220/380 | 110/220/380 | 110/220/380 | 110/220/380 | 110/220/380 | 11 0/220/380",
+        "| Max power(KW) | 3.0 | 4.5 | 5.0 | 6.0 | 10.5 | 12",
+        "| Starting system | Key start",
+        "| Key start | Key start",
+        "| Fuel tank volume(L) | 16 | 16 | 16 | 16 | 60 | 60",
+        "| Model | 8S178F(E) | BS186F(E) | 8S186FA(E) | 8S188F(E) | BS290F(E) | BS292F(E)",
+        "| Output(KW) | 4.1 | 6.3 | 6.3 | 7.1 | 13.2 | 15.5",
+        "| Bore x stroke(mm) | 78*62 | 86*70 | 86*72 | 88*75 | 90*75 | 92*75",
+        "| Compression ratio | 20:1 | 19: 1 | 19:1 | 19: 1 | 19: 1 | 21.5:1",
+        "| Rated voltage(V) | 110/220/380 | 11 0/220/380 | 110/220/380 | 11 0/220/380 | 110/220/380 | 110/220/380",
+        "| Max power(KW) | 2.0 | 3.0 | 5.0 | 6.0 | 10.5 | 12",
+        "| Rated power(KW) | 1.8 | 2.8 | 4.5 | 5.5 | 9.5 | 11",
+        "| Alternator | Copper",
+        "| Fuel tank volume(L) | 13.5 | 13.5 | 13.5 | 13.5 | 25 | 25",
+        "| Rated voltage(V) | 230/380 | 230/380 | 230/380 | 230/380 | 230/380 | 230/380",
+        "| Standby power(kw) | 22 | 33 | 43 | 54 | 77 | 105",
+        "| Phase | Three Phase",
+        "| Noise level(dB) | 68-78 | 68-78 | 68-78 | 68-78 | 68-78 | 68-78",
+        "Dimension(mm)",
+        "| 。 ．－ FOUR-STROKE | WFITE� PUMP",
+        "| 。 AIR COOLED ENGINE | KEY START OPTIONAL",
+        "| In/outlet size(mm) | 50(2\") | 80(3\") | 100(4\") | 100(4\") | 40(1.5\") | 50(2\") | 80(3\")",
+        "| Model | BS170F(E) | BS178F(E) | BS186F(E) | 8S186F(E) | BS178F(E) | B8186F(E) | BS186F(E)",
+        "| Output(kw) | 2.5 | 4.0 | 6.3 | 6.3",
+        "| BoreXstroke(mm) | 70*55 | 78*62 | 86*70 | 86*70 | 78*62 | 86*70 | 86*70",
+        "| Rated speed(RPM) | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600",
+        "| Starting system | Recoil start I Key start",
+        "| Fuel tank | 2.5 | 3.5 | 5.5 | 5.5 | 3.5 | 5.5 | 5.5",
+        "| •• FOUR·STROKE | 。lrnn pump body",
+        "| OHV ENGINE | NOISE",
+        "| Inlet/outlet size(mm) | 40(1.5\") | 50(2\") | 50(2\") | 80(3\")",
+        "| Model | BS178F(E)",
+        "| Starting system | Recoil/Electric Starting",
+        "| Fuel tank volume(L) | 3.5 | 5.5 | 5.5 | 5.5",
+        "| Powerful and durable air-cooled | 4-stroke engine;",
+        "| Compact & light-weight, smooth | running with minimal",
+        "| Easy start, fuel-efficient provide | smooth, clean power;",
+        "| Electric start, color & other OEM | service optional.",
+        "| DIESEL ENGINE | I | B5170F(E) | B5178F(E) | B5186F(E) | B5186FA",
+        "| Output(kw) | 2.8 | 4.0 | 6.3 | 8.2",
+        "| Bore x stroke(mm) | 70*55 | 78*62 | 86*70 | 86*72",
+        "| Rated speed(RPM) | 3000 I 3600 | 3000/3600 | 3000/3600 | 3000/3600",
+        "| Fuel tank capacity(L) | 2.5 | 3.5 | 5.5 | 5.5"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: View the gasoline generator Catalog",
+      "header": [],
+      "rows": [
+        "| ＂ | Rated Voltage(V) | 110/220 | 110/220 | 110/220",
+        "| Rated Current(A) | 3.6/1.8 | 5.9/2.9 | 9.0/4.5",
+        "| w \" | Max.Power(KW) | 0.50 | 0.75 | 1.2",
+        "| Rated Power COP(KW) | 0.40 | 0.65 | 1",
+        "| z。 | Phase | 1 | 1 | 1",
+        "| w | Rated Frequency(Hz) | 50/60 | 50/60 | 50/60",
+        "| Factor | 1 | 1 | 1",
+        "| Model | 1E45F | 1E45F | BS156F",
+        "| w | Displacement(cc) | 63 | 63 | 93.5",
+        "| z 。z | Output power(HP) | 2.0 | 2.0 | 2.6",
+        "| Rated speed(RPM) | 3000/3600 | 3000/3600 | 3000/3600",
+        "| w | BoreXstroke | 45*38 | 45*38 | 56*38",
+        "| Compression ratio | 7.3 | 7.3 | 7.7",
+        "| Fuel tank volume(L) | 4 | 4 | 6",
+        "| C) | Mass weight(kg) | 19 | 19 | 26"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: View the gasoline generator Catalog",
+      "header": [],
+      "rows": [
+        "| ” 。 | Rated current(A) | 18/9.1 | 22.7/11/4.5 | 26/13/5 | 27.2/13.5/5 | 36/18/7 | 46/23/8 | 54/27/9.1",
+        "| : | Max power(KW) | 2.2 | 2.8 | 3.0 | 3.5 | 4.5 | 5.5 | 6.5",
+        "| Rated power(KW) | 2.0 | 2.5 | 2.8 | 3.0 | 4.0 | 5.0 | 6.0",
+        "| w | Phase | 1/3 | 1/3 | 1/3 | 1/3 | 1/3 | 1/3 | 1/3"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: View the gasoline generator Catalog",
+      "header": [],
+      "rows": [
+        "| ＂ 。 | Rated current(A) | 18/9.1 | 22.7/11/4.5 | 26/13/5 | 27.2/13.5/5 | 36/18/7 | 46/23/8 | 54/27/9.1",
+        "| : | Max power(KW) | 2.2 | 2.8 | 3.0 | 3.5 | 4.5 | 5.5 | 6.5",
+        "| Rated power(KW) | 2.0 | 2.5 | 2.8 | 3.0 | 4.0 | 5.0 | 6.0",
+        "| w | Phase | 1/3 | 1/3 | 1/3 | 1/3 | 1/3 | 1/3 | 1/3"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: View the gasoline generator Catalog",
+      "header": [],
+      "rows": [
+        "| Displacement(cc) | 93.5 | 163 | 196 | 210 | 270 | 389 | 420",
+        "| Output(hp) | 2.6 | 5.5 | 6.5 | 7.0 | 9.0 | 13 | 15",
+        "| w | Max power(KW) | 1.7 | 4.1 | 4.8 | 5.1 | 6.75 | 9.6 | 11.0",
+        "| 。zz | Rated power(KW) | 1.3 | 3.0 | 4.3 | 4.4 | 5.5 | 8.6 | 9.6",
+        "| w | Rated speed(RPM) | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600",
+        "| BoreXstroke(mm) | 56*38 | 68*45 | 68*54 | 70*54 | 77*58 | 88*64 | 90*66",
+        "| Compression ratio | 7.7 | 8.5 | 8.5 | 8.5 | 8.2 | 8.0 | 8.0",
+        "| 。z | Fuel tank volume(L) | 1.6 | 3.6 | 3.6 | 3.6 | 6.0 | 6.5 | 6.5",
+        "| G.W. (kg) | 10.6 | 15 | 16 | 17 | 28 | 33 | 34",
+        "| x: | Dimenesion(mm) | 300*290*280 | 390*330*340 | 505*415*475",
+        "| 20GP(set) | 1100 | 630 | 630 | 630 | 275 | 275 | 275",
+        "| 40HQ(set) | 2300 | 1505 | 1505 | 1505 | 690 | 690 | 690"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: View the gasoline generator Catalog",
+      "header": [],
+      "rows": [
+        "| Q. | Flux(m打h) | 20 | 36 | 60 | 75 | 90",
+        "| Model | BS156F | BS168F | BS168F-1 | BS170 | 8S177F",
+        "| w | Displacement(cc) | 93.5 | 163 | 196 | 210 | 270",
+        "| 。zz | Max power(KW) | 1.7 | 4.1 | 4.8 | 5.1 | 6.75",
+        "| Rated power(KW) | 1.3 | 3.0 | 4.3 | 4.4 | 5.5",
+        "| w | Rated speed(RPM) | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600",
+        "| Bore x stroke(mm) | 56*38 | 68*45 | 68*54 | 70*54 | 77*58",
+        "| Compression ratio | 7.7 | 8.5 | 8.5 | 8.5 | 8.2",
+        "| 。z | Fuel tank volume(L) | 1.6 | 3.6 | 3.6 | 6 | 6",
+        "| G.W. (kg) | 22 | 28 | 30 | 39 | 49",
+        "| Dimenesion(mm) | 420*335*335 | 485*385*380 | 510*385*425 | 605*435*480 | 635*455*545",
+        "| 20GP(set) | 686 | 385 | 330 | 160 | 144",
+        "| 40HQ(set) | 1568 | 900 | 828 | 402 | 375"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: View the gasoline generator Catalog",
+      "header": [],
+      "rows": [
+        "| Model | BS168F | 8S170 | 8S168F | BS170",
+        "| Displacement(cc) | 163 | 210 | 163 | 210",
+        "| w | Max power(KW) | 4.1 | 5.1 | 4.1 | 5.1"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: View the gasoline generator Catalog",
+      "header": [],
+      "rows": [
+        "| Rated power(KW) | 3.0 | 4.4 | 3.0 | 4.4",
+        "| z | Rated speed(RPM) | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600",
+        "| w | Bore x stroke(mm) | 68*45 | 70*54 | 68*45 | 70*54",
+        "| Compression ratio | 8.5 | 8.5 | 8.5 | 8.5"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: View the gasoline generator Catalog",
+      "header": [],
+      "rows": [
+        "| TWO�STROKE | D",
+        "| ENGINE | EASY MOVE",
+        "| Easy start, compact, fuel-efficient provide smooth, clean | power;",
+        "| Rated Current(A) | 3.6/1.8 | 5.9/2.9 | 9.0/4.5",
+        "| Rated Power COP(KW) | 0.40 | 0.65 | 1",
+        "| Insulation grade | F",
+        "| Model | 1E45F | 1E45F | BS156F",
+        "| Rated speed(RPM) | 3000/3600 | 3000/3600 | 3000/3600",
+        "| Compression ratio | 7.3 | 7.3 | 7.7",
+        "| Startinq system | Recoil Starting",
+        "| Recoil Starting | Recoil Starting",
+        "| Fuel tank volume(L) | 4 | 4 | 6",
+        "| Size(LxWxH)(mm) | 420*340*325 | 420*340*325 | 490*380*400",
+        "| OHV ENGINE | 12V DC RECEPTACLE",
+        "| Rated voltage(V) | 110/220 | 110/220 230/400",
+        "| Rated power(KW) | 2.0 | 2.5 | 2.8 | 3.0 | 4.0 | 5.0 | 6.0",
+        "| Rated frequency(Hz) | 50/60 | 50/60 | 50/60 | 50/60 | 50/60 | 50/60 | 50/60",
+        "| Model | 8S168F | B8168F-1 | BS170F | BS177F | BS188F | 8S188F | BS190F",
+        "| Borexstroke(mm) | 68*45 | 68*54 | 70*54 | 77*58 | 88*64 | 88*64 | 90*66",
+        "| Compression ratio | 8.5 | 8.5 | 8.5 | 8.2 | 8.0 | 8.0 | 8.0",
+        "| Starting system | Recoil/Electric Staring",
+        "| Fuel tank volume(L) | 15 | 25",
+        "| Dimension(mm) | 605*4 70*435 | 710*530*550",
+        "| NO OHVENGINE | Du",
+        "| Model | BS168F | 8S168F-1 | BS170F | BS177F | BS188F | 8S188F | 8S190F",
+        "| FOUR-STROKE | ．LOW OPERATING",
+        "| OHV ENGINE | NOISE",
+        "| Max.Output (HP/rpm) | 5.5/3800 | 0 DISPLAY:",
+        "| Max.Torque (N·m/rpm) | 10.0/2800",
+        "| Fuel Consumption (g/kw.h) I | 395",
+        "| BorexStroke (mm) | I | 66x50",
+        "| Displacement (cc) | I | 171",
+        "| Starting System | I",
+        "| Starter/ Electric | Starter",
+        "| Packing Size (LxWxH) (mm)I | 405X385X405",
+        "| FOUR-STROKE | ．LOWOPERATING",
+        "| Compact & light-weight, smooth running with minimal | vibration;",
+        "| FOUR·STROKE | OWON",
+        "| OHV ENGINE | Ugh! weight",
+        "| .OFOUR·STROKE | 1/4",
+        "| SPEE口ENGINE WITH | GEr-lR BOX",
+        "| Displacement(cc) | 93.5 | 163 | 196 | 210 | 270 | 389 | 420",
+        "| Output(hp) | 2.6 | 5.5 | 6.5 | 7.0 | 9.0 | 13 | 15",
+        "| BoreXstroke(mm) | 56*38 | 68*45 | 68*54 | 70*54 | 77*58 | 88*64 | 90*66",
+        "| Compression ratio | 7.7 | 8.5 | 8.5 | 8.5 | 8.2 | 8.0 | 8.0",
+        "| Inlet and outlet size(mm) | 40(1.5\") | 50(2\") | 80(3\") | 100(4\") | 100(4\")",
+        "| Model | BS156F | BS168F | BS168F-1 | BS170 | 8S177F",
+        "| Rated power(KW) | 1.3 | 3.0 | 4.3 | 4.4 | 5.5",
+        "| Bore x stroke(mm) | 56*38 | 68*45 | 68*54 | 70*54 | 77*58",
+        "| Compression ratio | 7.7 | 8.5 | 8.5 | 8.5 | 8.2",
+        "| Dimenesion(mm) | 420*335*335 | 485*385*380 | 510*385*425 | 605*435*480 | 635*455*545",
+        "| Inlet and outlet size(mm) | 40(1.5\") | 50(2\") | 40(1.5\") | 50(2\")",
+        "| Model | BS168F | 8S170 | 8S168F | BS170",
+        "| Displacement(cc) | 163 | 210 | 163 | 210",
+        "| Rated power(KW) | 3.0 | 4.4 | 3.0 | 4.4",
+        "| Compression ratio | 8.5 | 8.5 | 8.5 | 8.5",
+        "| Fuel tank volume(L) | 3.6 | 3.6 | 3.6 | 3.6",
+        "| Pump engine(HP) | 5 | 7 | 9 | 11 | 13 | 15",
+        "| Inlet and outlet size | 1.5\"x1.5\" | 2\"x2\" | 2\"x2\" | 3\"x3\" | 3\"x3\" | 4\"x3\"",
+        "| Outlet size(mm) | 40 | 50 | 50 | 80 | 80 | 100",
+        "| Inlet size(mm) | 40 | 50 | 50 | 80 | 80 | 80",
+        "| Dimensions(mm) | 485*395*405 | 510*395*420 | 635*460*520 | 485*460*520 | 635*460*520 | 635*460*520",
+        "| Inlet and outlet size(mm) | 80",
+        "| Speed(rpm) | 3600 | 0 DISPLAY:",
+        "| Engine model | | | BS170F",
+        "| Output(hp) | 7.0",
+        "| Inlet and outlet size(mm) | 50 | 80 | 0 DISPLAY:",
+        "| Speed(rpm) | 3600 | 3600",
+        "| Engine model | 8S168F | BS170F",
+        "| Output(hp) | 5.5 | 7.0"
       ]
     }
   ]

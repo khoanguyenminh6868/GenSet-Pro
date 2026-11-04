@@ -135,6 +135,16 @@
       "file": "sources/huachai-deutz/2.md"
     },
     {
+      "n": 3001,
+      "url": "https://deutzchbdp.com/1-3-gas-generator-sets/221661/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| 140GF | 140 | Gas Genset | HC6V132GCP1 | 180 | ECO38-1SN/4 | 144 | Deep Sea Brand DSE4520 | 132 × 145 | 11.906 | ≤178 | 2300 | 2600 × 1450 × 1950"
+      ],
+      "file": "sources/huachai-deutz/3001.md"
+    },
+    {
       "n": 101,
       "url": "https://deutzchbdp.com/",
       "accessedAt": "2026-10-29",
@@ -373,16 +383,6 @@
         "| Engine coolant capacity | L | 17"
       ],
       "file": "sources/huachai-deutz/130.md"
-    },
-    {
-      "n": 3001,
-      "url": "https://deutzchbdp.com/1-3-gas-generator-sets/221661/",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| 140GF | 140 | Gas Genset | HC6V132GCP1 | 180 | ECO38-1SN/4 | 144 | Deep Sea Brand DSE4520 | 132 × 145 | 11.906 | ≤178 | 2300 | 2600 × 1450 × 1950"
-      ],
-      "file": "sources/huachai-deutz/3001.md"
     }
   ],
   "confidence": "medium",

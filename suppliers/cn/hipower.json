@@ -306,6 +306,26 @@
         "Rated Engine Output: 25kW prp ; 30kW standby"
       ],
       "file": "sources/hipower/129.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://red.himoinsa.com/uploads/pdf/t4f-book-rev-07-2025-x-email-1753471349.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Performance | Units | HRVW1250 | HRVW1375"
+      ],
+      "file": "sources/hipower/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://red.himoinsa.com/uploads/pdf/hrvw-twin-pack-brochure-rev-07-2025-x-email-1753461304.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| Performance | Units | HRVW1250 | HRVW1375"
+      ],
+      "file": "sources/hipower/1002.md"
     }
   ],
   "confidence": "medium",
@@ -725,6 +745,134 @@
         "Fuel Tank: 80 Gal",
         "Weight with liquids in radiator and sump: 2,577 Lbs",
         "Fuel tank capacity: 80 Gal"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: t4 Brochure",
+      "header": [],
+      "rows": [
+        "| Performance | Units | HRVW1250 | HRVW1375",
+        "| N/A | N/A | Model (480V) for HRVW1250 | HCI534E w/PMG",
+        "| Model (480V) for HRVW1375 | HCI534F w/PMG | Model for HRVW1250 | TWD 1682 GE",
+        "| Rated PRP/Standby power 3ø | kW | 1000/1100 | 1100/1210"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: t4 Brochure",
+      "header": [
+        "| (+/-1%) | MX341 AVR | Model for HRVW1375 | TWD 1683 GE"
+      ],
+      "rows": [
+        "| Rated PRP/Standby power 3ø | kVA | 1250/1360 | 1375/1512",
+        "| Amp capacity @208V | A | 3468 | 3816 | Nominal Power (1250) | 796",
+        "| Amp capacity @480V | A | 1504 | 1654",
+        "| Temperature Rise | ˚F / ˚C | 105/40 | Nominal Power (1375)",
+        "| Amp capacity @600V | A | 1204 | 1323"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: t4 Brochure",
+      "header": [],
+      "rows": [
+        "| HIPOWER SYSTEMS generators feature skid | outside of the package and is connected to",
+        "| baseframes with integrated high capacity | a standard alarm feature, safeguarding the",
+        "| fuel tanks which provide a full load | environment.",
+        "| Male inlet shore power for battery charger | bus bar panel with plated",
+        "| Model | Ampacity",
+        "| Shore Power | Terminal Box",
+        "control panel standard from",
+        "| 1 Phase; 480 Pri. V | panel box to facilitate",
+        "| Labeled wires to meet Electrical | ABB Standard Circuit",
+        "| Breaker for Auto Start | controller and",
+        "| BETTER GENERATOR PERFORMANCE | Permanent Magnet Generator (PMG) system",
+        "| insulated, 1.0 S.F. motor, if we add the NEMA | over-excitation is standard on this AVR, as is a",
+        "| POWERFUL ENGINES | Isuzu - Redtech Engines",
+        "| ensuring compliance with the latest emissions standards | Isuzu Engines and Power Units are built to customer",
+        "| Boost Transformer 1 Phase; 480 Pri. | chargers rugged and dependable | the built-in thermostat (60–80 °F)",
+        "DIMENSIONS AND WEIGHTS",
+        "| weights | listed",
+        "| Weight | (Pounds)",
+        "| HRIW-25 and HRIW-45 models. | (HRVW-625/685 only)",
+        "package.",
+        "| ALTERNATOR SYSTEM | • Separation of Circuits - Multiple Breakers (Load",
+        "| • 12 Leads (3-Phase, Non 600V) | • Separation of Circuits - High/ Low Voltage",
+        "| • Class H Insulation Material | • Internal Genset Vibration Isolation",
+        "| • Full Load Capacity Alternator | • Standard Factory Testing",
+        "| • Permanent Magnet Excitation | • Emergency Stop",
+        "| ENGINE SYSTEM | • | 5A Battery Charger",
+        "GENERATOR SET",
+        "| • Variable Speed Fan | • Extended Factory Load Testing",
+        "| Stamford Alternator | Units",
+        "| Engine | Units",
+        "| Rated standby power 1ø | kW",
+        "| Manufacturer | VOLVO PENTA",
+        "| Model (480V) for HRVW1375 | HCI534F w/PMG | Model for HRVW1250 | TWD 1682 GE",
+        "| Rated PRP/Standby power 3ø | kW | 1000/1100 | 1100/1210",
+        "| Rated PRP/Standby power 3ø | kVA | 1250/1360 | 1375/1512",
+        "| Insulation | Class H | TIER 4 FINAL",
+        "| Max. sound pressure level | Dimensions and Weight",
+        "Enclosure Set",
+        "| Dimensions (L x W x H) | Inches | 576” x 102” x 152”",
+        "| HRVW1375 - Weight | lbs. | 52,800"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: twin-pack brochure",
+      "header": [],
+      "rows": [
+        "| Performance | Units | HRVW1250 | HRVW1375",
+        "| N/A | N/A | Model (480V) for HRVW1250 | HCI534E w/PMG",
+        "| Model (480V) for HRVW1375 | HCI534F w/PMG | Model for HRVW1250 | TWD 1682 GE",
+        "| kW | 1000/1100 | 1100/1210"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: twin-pack brochure",
+      "header": [
+        "| (+/-1%) | MX341 AVR | Model for HRVW1375 | TWD 1683 GE",
+        "| Rated PRP/Standby power | 3ø"
+      ],
+      "rows": [
+        "| kVA | 1250/1360 | 1375/1512",
+        "| Insulation | Class H | TIER 4 FINAL",
+        "| Amp capacity @208V | A | 3468 | 3816 | Nominal Power (1250) | 796",
+        "| Amp capacity @480V | A | 1504 | 1654",
+        "| Amp capacity @600V | A | 1204 | 1323"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: twin-pack brochure",
+      "header": [],
+      "rows": [
+        "GENERATOR SET",
+        "| • Textured Polyester Powder Coat + Primer | ALTERNATOR SYSTEM",
+        "| ENGINE SYSTEM | • 12 Leads (3-Phase, Non 600V)",
+        "| • Battery Charging Alternator | • Permanent Magnet Excitation",
+        "| ENGINE SYSTEM | • | 5A Battery Charger",
+        "GENERATOR SET",
+        "| • Variable Speed Fan | • Extended Factory Load Testing",
+        "| HIPOWER SYSTEMS is committed to delivering robust and | reliable portable generators to the Power Generation Industry throughout North America. We stand behind every",
+        "| machine we make. That is why all our generators come with | a standard 2 years or 3500 hours (whichever occurs ﬁrst) parts and labor limited warranty.",
+        "| Stamford Alternator | Units",
+        "| Engine | Units",
+        "| Rated standby power 1ø | kW",
+        "| Manufacturer | VOLVO PENTA",
+        "| Model (480V) for HRVW1375 | HCI534F w/PMG | Model for HRVW1250 | TWD 1682 GE",
+        "| Rated PRP/Standby power | 3ø",
+        "| Insulation | Class H | TIER 4 FINAL",
+        "| Max. sound pressure level | Dimensions and Weight",
+        "Enclosure Set",
+        "| dB(A) | 72 | 72",
+        "| HRVW1250 - Weight | lbs. | 51,500",
+        "| HRVW1375 - Weight | lbs. | 52,800",
+        "| output | shore",
+        "| power | box connection"
       ]
     }
   ]

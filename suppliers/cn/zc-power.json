@@ -80,6 +80,16 @@
       "file": "sources/zc-power/2.md"
     },
     {
+      "n": 3002,
+      "url": "https://zccpower.com/power-range/501-1000kw-generators/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Deep Sea Electronics DSE 8610 or ComAp InteliGen NT controllers provide comprehensive protection and monitoring. Features include AMF (Auto Mains Failure), remote start capability, Modbus RTU/TCP connectivity for BMS integration, and email/SMS alert notifications."
+      ],
+      "file": "sources/zc-power/3002.md"
+    },
+    {
       "n": 101,
       "url": "https://zccpower.com/power-range/1001kw-plus-generators/",
       "accessedAt": "2026-10-29",
@@ -198,16 +208,6 @@
         "| | Factor | MTU | Perkins | Cummins | Yuchai | Weichai"
       ],
       "file": "sources/zc-power/112.md"
-    },
-    {
-      "n": 3002,
-      "url": "https://zccpower.com/power-range/501-1000kw-generators/",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "Deep Sea Electronics DSE 8610 or ComAp InteliGen NT controllers provide comprehensive protection and monitoring. Features include AMF (Auto Mains Failure), remote start capability, Modbus RTU/TCP connectivity for BMS integration, and email/SMS alert notifications."
-      ],
-      "file": "sources/zc-power/3002.md"
     }
   ],
   "confidence": "low",

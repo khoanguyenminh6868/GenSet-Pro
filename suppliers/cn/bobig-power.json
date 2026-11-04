@@ -71,6 +71,46 @@
       "file": "sources/bobig-power/1.md"
     },
     {
+      "n": 3002,
+      "url": "https://www.bobigpower.com/buy-cummins-diesel-power-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Control Panel | LCD Digital Display, Deepsea, ComAp, Deepsea / ComAp / Harsen / Smartgen 6110, Smartgen"
+      ],
+      "file": "sources/bobig-power/3002.md"
+    },
+    {
+      "n": 3003,
+      "url": "https://www.bobigpower.com/buy-cummins-industrial-generators.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | Smartgen,Deepsea,Comap AMF20,AMF25"
+      ],
+      "file": "sources/bobig-power/3003.md"
+    },
+    {
+      "n": 3004,
+      "url": "https://www.bobigpower.com/buy-perkins-power-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Control Panel | LCD Digital Display, Deepsea, ComAp, Deepsea / ComAp / Harsen / Smartgen 6110, Smartgen"
+      ],
+      "file": "sources/bobig-power/3004.md"
+    },
+    {
+      "n": 3005,
+      "url": "https://www.bobigpower.com/buy-perkins-silent-diesel-generator.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "| Controller | Smartgen,Deepsea,Comap AMF20,AMF25"
+      ],
+      "file": "sources/bobig-power/3005.md"
+    },
+    {
       "n": 101,
       "url": "https://www.bobigpower.com/sale-37733230-smartgen-controller-900-kw-cummins-generator-set-with-water-cooling-system.html",
       "accessedAt": "2026-10-29",
@@ -269,46 +309,6 @@
         "| General Information | Prime Power | Standby Power"
       ],
       "file": "sources/bobig-power/134.md"
-    },
-    {
-      "n": 3002,
-      "url": "https://www.bobigpower.com/buy-cummins-diesel-power-generator.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Control Panel | LCD Digital Display, Deepsea, ComAp, Deepsea / ComAp / Harsen / Smartgen 6110, Smartgen"
-      ],
-      "file": "sources/bobig-power/3002.md"
-    },
-    {
-      "n": 3003,
-      "url": "https://www.bobigpower.com/buy-cummins-industrial-generators.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Controller | Smartgen,Deepsea,Comap AMF20,AMF25"
-      ],
-      "file": "sources/bobig-power/3003.md"
-    },
-    {
-      "n": 3004,
-      "url": "https://www.bobigpower.com/buy-perkins-power-generator.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Control Panel | LCD Digital Display, Deepsea, ComAp, Deepsea / ComAp / Harsen / Smartgen 6110, Smartgen"
-      ],
-      "file": "sources/bobig-power/3004.md"
-    },
-    {
-      "n": 3005,
-      "url": "https://www.bobigpower.com/buy-perkins-silent-diesel-generator.html",
-      "accessedAt": "2026-11-01",
-      "tier": "A",
-      "quote": [
-        "| Controller | Smartgen,Deepsea,Comap AMF20,AMF25"
-      ],
-      "file": "sources/bobig-power/3005.md"
     }
   ],
   "confidence": "medium",

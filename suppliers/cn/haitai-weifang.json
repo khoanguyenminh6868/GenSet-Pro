@@ -71,16 +71,6 @@
       "file": "sources/haitai-weifang/2.md"
     },
     {
-      "n": 101,
-      "url": "https://www.hitepower.com/product-lng-cng-natural-methane-gas-generator-set.html",
-      "accessedAt": "2026-10-28",
-      "tier": "A",
-      "quote": [
-        "| Weight | KW | KVA | mm | L | mm | kg"
-      ],
-      "file": "sources/haitai-weifang/101.md"
-    },
-    {
       "n": 3001,
       "url": "https://www.hitepower.com/product-list-controller.html",
       "accessedAt": "2026-11-01",
@@ -89,6 +79,16 @@
         "DSE8610 Synchronising & Load Sharing Control Module"
       ],
       "file": "sources/haitai-weifang/3001.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.hitepower.com/product-lng-cng-natural-methane-gas-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Weight | KW | KVA | mm | L | mm | kg"
+      ],
+      "file": "sources/haitai-weifang/101.md"
     }
   ],
   "confidence": "medium",
