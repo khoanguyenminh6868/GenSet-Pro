@@ -14,6 +14,8 @@ Mục tiêu: thêm vào hệ thống nhà cung cấp mới thuộc 3 loại:
 
 Giai đoạn này chỉ lấy công ty **tại Trung Quốc** (`country: "CN"`), trừ khi Khoa nói khác. Không lấy nhà phân phối tại Việt Nam, không lấy công ty chỉ buôn bán.
 
+**Lượt G7** (Khoa, 2026-11-04: gói thầu hay đòi xuất xứ G7, CGM Italia bị sót vì bot chỉ tìm ở Trung Quốc): khi Khoa nói "lượt G7", lấy nhà máy tổ máy / động cơ / đầu phát / bộ điều khiển **sản xuất tại** Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada (`country` là nước đó). Tìm bằng tiếng bản địa: "produttore gruppi elettrogeni" (Ý), "Stromerzeuger Hersteller" / "Notstromaggregate Hersteller" (Đức), "fabricant groupe électrogène" (Pháp), "UK generator manufacturer" / "British built generating sets" (Anh), "発電機 メーカー" / "非常用発電機 メーカー" (Nhật), "generator manufacturer made in USA" (Mỹ); hội viên hiệp hội ngành (AMPS – Anh, EGSA – Mỹ). Bỏ: cửa hàng bán nhiều hãng, công ty cho thuê, đại lý; hãng đã bị mua thì làm bản ghi hãng mẹ (Broadcrown → JCB). Website chỉ dựng bằng JavaScript thì lưu bằng `--render`. Các hãng G7 đã biết mà chưa có bản ghi nằm trong `discover-watchlist.json` (ghi chú "G7").
+
 Mọi lệnh chạy ở thư mục gốc repo (`C:\Projects\GenSet Pro\GenSet-Pro`), bằng `node suppliers/discover.mjs ...`.
 
 ---

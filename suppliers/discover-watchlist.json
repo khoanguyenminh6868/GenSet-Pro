@@ -26,5 +26,97 @@
  {
   "name": "Fortugen",
   "note": "Khoa, 2026-10-29. Là thương hiệu của VIETPOWER (vpower.vn, TP.HCM, Việt Nam), tổ máy nhập nguyên chiếc; nhà máy Trung Quốc chưa rõ (đã tìm Google/firecrawl theo tên, tên tiếng Trung, model FG-C…, dữ liệu xuất nhập khẩu: không có nguồn công khai). Không làm bản ghi VIETPOWER; chờ Khoa gửi tên nhà máy."
+ },
+ {
+  "name": "Mosa",
+  "note": "G7 — IT, tổ máy + máy hàn; mosa.it chặn khi lưu (ECONNRESET) (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Sices",
+  "note": "G7 — IT, bộ điều khiển (rà G7 2026-11-04)"
+ },
+ {
+  "name": "VM Motori",
+  "note": "G7 — IT, động cơ (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Ausonia",
+  "note": "G7 — IT (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Mase Generators",
+  "note": "G7 — IT (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Officine Tanzi",
+  "note": "G7 — IT, Parma (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Geko",
+  "note": "G7 — DE, Metallwarenfabrik Gemmingen (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Eisemann",
+  "note": "G7 — DE (rà G7 2026-11-04)"
+ },
+ {
+  "name": "T and R Generators",
+  "note": "G7 — GB (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Tempest Generators",
+  "note": "G7 — GB (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Interpower Generators",
+  "note": "G7 — GB (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Constant Power Solutions",
+  "note": "G7 — GB (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Harrington Generators",
+  "note": "G7 — GB (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Stephill Generators",
+  "note": "G7 — GB (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Eneria",
+  "note": "G7 — FR, Montlhéry (rà G7 2026-11-04)"
+ },
+ {
+  "name": "SE2M",
+  "note": "G7 — FR (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Sanyu Kogyo 三友工業",
+  "note": "G7 — JP, máy phát khẩn cấp (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Yamabiko Shindaiwa",
+  "note": "G7 — JP (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Nippon Sharyo",
+  "note": "G7 — JP (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Sawafuji Elemax",
+  "note": "G7 — JP; sawafuji.co.jp timeout (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Multiquip MQ Power",
+  "note": "G7 — US (rà G7 2026-11-04)"
+ },
+ {
+  "name": "John Deere Power Systems",
+  "note": "G7 — US, động cơ (rà G7 2026-11-04)"
+ },
+ {
+  "name": "Gillette Generators",
+  "note": "G7 — US (rà G7 2026-11-04)"
  }
 ]

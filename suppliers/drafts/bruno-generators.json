@@ -1,0 +1,6 @@
+{ "id": "bruno-generators", "country": "IT", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "BRUNO S.r.l.", "zh": null, "brands": ["Bruno", "FUSTEQ"], "web": "https://www.brunogenerators.it/", "prov": "Avellino", "city": "Grottaminarda", "founded": null, "fsrc": [], "related": ["tecnogen"],
+  "src": { "1": ["A", "BRUNO S.r.l. , international experience & MADE IN ITALY production", "Bruno S.r.l. - S.S. 91 Km 0,600 - 83035 Grottaminarda (AV) - ITALY", "FUSTEQ SERIES"] },
+  "str": [["Sản xuất tổ máy tại Ý (Made in Italy), dòng FUSTEQ", 1]], "cert": [],
+  "lines": [ { "k": "genset", "s": "FUSTEQ SERIES", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang chủ không ghi dải công suất"], "by": "claude (rà nhà cung cấp G7, 04/11)" }

@@ -1,0 +1,6 @@
+{ "id": "endress-stromerzeuger", "country": "DE", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "Endress Stromerzeuger", "zh": null, "brands": ["ENDRESS"], "web": "https://www.endress-generator.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": { "1": ["A", "Endress Stromerzeuger: Startseite", "LEISTUNGSSTARKE DIESEL‑STROMERZEUGER FÜR INDUSTRIE, BAU & KRITISCHE INFRASTRUKTUR"] },
+  "str": [["Tổ máy diesel cho công nghiệp, xây dựng, hạ tầng trọng yếu (Đức)", 1]], "cert": [],
+  "lines": [ { "k": "genset", "s": "Diesel-Stromerzeuger", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang chủ không ghi tên pháp nhân, dải công suất"], "by": "claude (rà nhà cung cấp G7, 04/11)" }

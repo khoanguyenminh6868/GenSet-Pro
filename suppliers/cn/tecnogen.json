@@ -1,0 +1,71 @@
+{
+  "id": "tecnogen",
+  "country": "IT",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Tecnogen S.p.A.",
+    "zh": null,
+    "brands": [
+      "Tecnogen"
+    ]
+  },
+  "website": "https://www.tecnogen.com/",
+  "hq": {
+    "province": "Piacenza",
+    "city": "Pontenure"
+  },
+  "founded": null,
+  "relatedIds": [
+    "bruno-generators"
+  ],
+  "strengths": [
+    {
+      "text": "Sản xuất tổ máy tại Ý (Made in Italy), thuộc tập đoàn BGG (cùng Bruno)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "generating sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.tecnogen.com/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "TECNOGEN , international experience & MADE IN ITALY production",
+        "Tecnogen S.p.A., a company of the BGG S.p.A. group",
+        "Tecnogen Spa - Strada per Ponteriglio, 25 - 29010 Pontenure (Piacenza) Italy"
+      ],
+      "file": "sources/tecnogen/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-04",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+}

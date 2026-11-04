@@ -2947,5 +2947,74 @@
   "result": "skip",
   "name": "Orson Power",
   "reason": "chỉ có bài LinkedIn (rà hàng chào trúng thầu 04/11)"
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "cgm-italia",
+  "name": "C.G.M. Gruppi elettrogeni Srl",
+  "url": "https://www.cgmitalia.it/en",
+  "tables": 19,
+  "rows": 706
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "aj-power",
+  "name": "AJ Power Ltd",
+  "url": "https://ajpower.net/",
+  "tables": 5,
+  "rows": 197
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "tecnogen",
+  "name": "Tecnogen S.p.A.",
+  "url": "https://www.tecnogen.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "bruno-generators",
+  "name": "BRUNO S.r.l.",
+  "url": "https://www.brunogenerators.it/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "yorpower",
+  "name": "YorPower",
+  "url": "https://www.yorpower.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "endress-stromerzeuger",
+  "name": "Endress Stromerzeuger",
+  "url": "https://www.endress-generator.com/",
+  "tables": 42,
+  "rows": 1249
+ },
+ {
+  "at": "2026-11-04",
+  "result": "added",
+  "id": "winco",
+  "name": "WINCO Generators",
+  "url": "https://www.wincogen.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-04",
+  "result": "skip",
+  "name": "genpowerusa.com",
+  "reason": "cửa hàng bán nhiều hãng, không phải nhà sản xuất (rà G7 04/11)"
  }
 ]

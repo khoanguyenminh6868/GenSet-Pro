@@ -1,0 +1,72 @@
+{
+  "id": "bruno-generators",
+  "country": "IT",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "BRUNO S.r.l.",
+    "zh": null,
+    "brands": [
+      "Bruno",
+      "FUSTEQ"
+    ]
+  },
+  "website": "https://www.brunogenerators.it/",
+  "hq": {
+    "province": "Avellino",
+    "city": "Grottaminarda"
+  },
+  "founded": null,
+  "relatedIds": [
+    "tecnogen"
+  ],
+  "strengths": [
+    {
+      "text": "Sản xuất tổ máy tại Ý (Made in Italy), dòng FUSTEQ",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "FUSTEQ SERIES",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.brunogenerators.it/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "BRUNO S.r.l. , international experience & MADE IN ITALY production",
+        "Bruno S.r.l. - S.S. 91 Km 0,600 - 83035 Grottaminarda (AV) - ITALY",
+        "FUSTEQ SERIES"
+      ],
+      "file": "sources/bruno-generators/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-04",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+}
