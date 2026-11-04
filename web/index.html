@@ -2429,8 +2429,8 @@ async function delSupplier(id) {
 function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
-  return h`<div class="row dethead"><button class="btn sm" id="supBack">← Danh sách</button><span class="spacer"></span>${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}</div>
-    <div><h3 class="hlname" style="margin:4px 0">${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div class="row" style="margin-top:4px"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}</div></div>
+  return h`<div class="dethead"><div class="row"><button class="btn sm" id="supBack">← Danh sách</button><span class="spacer"></span>${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}</div>
+    <div><h3 class="hlname" style="margin:4px 0">${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div class="row" style="margin-top:4px"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}</div></div></div>
     <dl class="kv">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
       <dt>Thương hiệu</dt><dd>${(s.names?.brands || []).join(", ") || "—"}</dd>
@@ -2648,8 +2648,8 @@ function catDetailHtml(e) {
   const others = Object.entries(e.uses.reduce((m, u) => (u.other ? ((m[u.other] = (m[u.other] || 0) + 1), m) : m), {})).sort((a, b) => b[1] - a[1]).slice(0, 12);
   const src = (u) => { const url = catSrcUrl(u.supplierId, u.n); return url ? h`<a href="${url}" target="_blank" rel="noopener" title="${url}">Nguồn [${u.n}]</a>` : h`Nguồn [${u.n}]`; };
   const from = catFrom && state.supplier?.[catFrom];
-  return h`<div class="row dethead">${raw(from ? h`<button class="btn sm" id="catToSup">← ${supName(from)}</button>` : "")}<button class="btn sm" id="catBack">← Danh sách</button><span class="spacer"></span><span class="muted small">${e.suppliers.length} nhà cung cấp · ${e.uses.length} dòng bảng</span></div>
-    <div><h3 class="hlname" style="margin:4px 0">${e.model}</h3>${raw(e.names.length > 1 ? h`<div class="muted small">Cách ghi khác: ${e.names.filter((x) => x !== e.model).join(", ")}</div>` : "")}</div>
+  return h`<div class="dethead"><div class="row">${raw(from ? h`<button class="btn sm" id="catToSup">← ${supName(from)}</button>` : "")}<button class="btn sm" id="catBack">← Danh sách</button><span class="spacer"></span><span class="muted small">${e.suppliers.length} nhà cung cấp · ${e.uses.length} dòng bảng</span></div>
+    <div><h3 class="hlname" style="margin:4px 0">${e.model}</h3>${raw(e.names.length > 1 ? h`<div class="muted small">Cách ghi khác: ${e.names.filter((x) => x !== e.model).join(", ")}</div>` : "")}</div></div>
     <dl class="kv">
       <dt>Loại</dt><dd>${K.one.replace(/^./, (c) => c.toUpperCase())}</dd>
       <dt>Hãng</dt><dd>${raw(e.makes.length ? [...new Set(e.makes.map((m) => m.name))].map((nm) => e.makes.filter((m) => m.name === nm).sort((a, b) => (CAT_VIA_RANK[b.via] || 0) - (CAT_VIA_RANK[a.via] || 0))[0]).map((m) => h`${m.name} <span class="muted small">(theo ${m.via}, ${supName(state.supplier?.[m.supplierId]) || m.supplierId} [${m.n}])</span>`).join("<br>") : '<span class="muted">Nguồn không ghi hãng</span>')}</dd>
@@ -3191,9 +3191,9 @@ function bdDetailHtml(c0) {
   const c = bdView(c0) || c0;
   const rows = [...c.rows].sort((a, b) => (b.at > a.at ? 1 : -1));
   const winners = (r) => (r.lot.bidders || []).filter((x) => x.won && taxKey(x) !== c.id).map((x) => x.name);
-  return h`<div class="row dethead"><button class="btn sm" id="bdBack">← Danh sách</button></div>
+  return h`<div class="dethead"><div class="row"><button class="btn sm" id="bdBack">← Danh sách</button></div>
     <h3 class="hlname" style="margin:8px 0 2px">${c.name}</h3>
-    <div class="muted small">${c.tax ? "MST " + c.tax + " · " : ""}${c.n} lượt dự thầu ở ${c.tenders} gói · trúng ${c.wins}${c.decided ? ` / ${c.decided} gói có kết quả (${Math.round((100 * c.wins) / c.decided)}%)` : ""}${c.wonValue ? " · giá trị trúng " + fmtVnd(c.wonValue) : ""}${bdFilter.year ? " · năm " + bdFilter.year : ""}</div>
+    <div class="muted small">${c.tax ? "MST " + c.tax + " · " : ""}${c.n} lượt dự thầu ở ${c.tenders} gói · trúng ${c.wins}${c.decided ? ` / ${c.decided} gói có kết quả (${Math.round((100 * c.wins) / c.decided)}%)` : ""}${c.wonValue ? " · giá trị trúng " + fmtVnd(c.wonValue) : ""}${bdFilter.year ? " · năm " + bdFilter.year : ""}</div></div>
     <div class="tablewrap" style="margin-top:10px"><table class="suptable supcards bdrows"><thead><tr><th>Mở thầu</th><th>Gói thầu</th><th>Giá gói</th><th>Giá dự thầu</th><th>Kết quả</th></tr></thead><tbody>${raw(rows.map((r) => {
       const p = bdPrice(r.b), base = r.lot.price ?? (r.multi ? null : r.d.estimatedPrice), w = r.b.won ? [] : winners(r);
       return h`<tr><td data-l="Mở thầu">${fmtDate(r.at, false)}</td>
