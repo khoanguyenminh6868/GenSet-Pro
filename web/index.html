@@ -279,6 +279,9 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .modal.pane{height:calc(100vh - 32px);height:calc(100dvh - 32px);overflow:hidden}
 #supBody,#catBody,#bdBody{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}
 .mscroll{flex:1;min-height:0;overflow:auto}
+/* A popup or the tender panel open: the page behind does not scroll, and a scroll reaching the end of a popup list stops there (Khoa, 2026-11-04: on a phone, dragging a popup sometimes dragged the page). */
+html:has(#ov:not([hidden])),html:has(#scrim:not([hidden])){overflow:hidden}
+#ov,.modal,.mscroll,.dbody,#drawer{overscroll-behavior:contain}
 .mscroll>.dethead{position:sticky;top:0;z-index:2;background:var(--panel);padding:2px 0 8px}
 :is(#supList,#catList,#bdList)>.tablewrap{overflow:visible}
 :is(#supList,#catList,#bdList) thead th{position:sticky;top:0;z-index:1;background:var(--panel2);box-shadow:inset 0 -1px var(--line)}
