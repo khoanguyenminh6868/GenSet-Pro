@@ -593,8 +593,10 @@ function capFromText(text) {
   if (!text) return null;
   const found = [], all = [...String(text).matchAll(CAP_RE)];
   // The genset's figure first, not a transformer's in the same name (web/bidprice.js capPick).
-  const pick = window.GenbidBidprice?.capPick(String(text), all);
-  if (pick) all.unshift(...all.splice(all.indexOf(pick), 1));
+  // Every figure another device's ("Trạm biến áp 630kVA; Máy phát điện dự phòng"): none, so the HSMT's is read instead.
+  const pick = window.GenbidBidprice ? window.GenbidBidprice.capPick(String(text), all) : all[0];
+  if (!pick) return null;
+  all.unshift(...all.splice(all.indexOf(pick), 1));
   for (const m of all) {
     const n = parseFloat(m[1].replace(",", "."));
     const u = m[2].toLowerCase();
