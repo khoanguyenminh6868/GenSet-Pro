@@ -23,7 +23,7 @@ Answer with ONLY one JSON object, no prose and no code fence, in exactly this sh
   "supplier": string|null (the supplier or manufacturer that wrote the proposal),
   "offer": string|null (what is offered: make, model, rated power, quantity),
   "summary": string (2-4 sentences),
-  "items": [ { "group": string (e.g. Phạm vi cung cấp, Công suất, Động cơ, Đầu phát, Bộ điều khiển, Vỏ chống ồn, Bồn nhiên liệu, ATS, Lắp đặt - thử nghiệm, Tiêu chuẩn - chứng chỉ, Bảo hành kỹ thuật, Tài liệu kỹ thuật), "requirement": string, "requirementQuote": string (exact words of the requirements text), "requirementRef": string|null, "offered": string|null (exact words of the proposal), "offeredRef": string|null, "status": "met"|"partial"|"not_met"|"missing"|"unclear", "critical": boolean, "note": string (why, with figures) } ] (every technical requirement of the tender, in the order of the tender),
+  "items": [ { "group": string (e.g. Phạm vi cung cấp, Công suất, Động cơ, Đầu phát, Bảng điều khiển, Vỏ chống ồn, Bồn nhiên liệu, ATS, Lắp đặt - thử nghiệm, Tiêu chuẩn - chứng chỉ, Bảo hành kỹ thuật, Tài liệu kỹ thuật), "requirement": string, "requirementQuote": string (exact words of the requirements text), "requirementRef": string|null, "offered": string|null (exact words of the proposal), "offeredRef": string|null, "status": "met"|"partial"|"not_met"|"missing"|"unclear", "critical": boolean, "note": string (why, with figures) } ] (every technical requirement of the tender, in the order of the tender),
   "deviations": [string] (where the proposal offers something different from what is required, better or worse),
   "questionsForSupplier": [string] (what to ask the supplier to confirm or correct, most important first)
 }

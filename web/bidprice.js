@@ -65,7 +65,7 @@
     const engines = C ? named(C.ENGINE_BRANDS) : [];
     for (const n of engines) tags.push(`động cơ ${n}`);
     if (C) for (const n of named(C.ALT_BRANDS)) tags.push(`đầu phát ${n}`);
-    if (C) for (const c of C.CONTROLLERS) if (c.word.test(t)) tags.push(`bộ điều khiển ${c.brand}`);
+    if (C) for (const c of C.CONTROLLERS) if (c.word.test(t)) tags.push(`bảng điều khiển ${c.brand}`);
     for (const [n, re] of SCOPE) if (re.test(t)) tags.push(n);
     // A model code with no make named ("WP13D385E200"): its make by catalog.js. Countries count only on the lines about the
     // engine or the set: a cable from Korea or a Deep Sea controller from the UK says nothing of the engine.

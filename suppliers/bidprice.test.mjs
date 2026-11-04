@@ -41,7 +41,7 @@ test("candidates: lots of the other engine origin group left out; alike configur
   assert.deepEqual(r.list.map((s) => s.key), ["ATS", "CN", "NONE"]);
   const ats = r.list[0];
   assert.equal(ats.cfg.sim, 1);
-  assert.match(BP.cfgLine(ats), /giống 100% \(cùng: bộ điều khiển Deep Sea, vỏ cách âm, ATS\)/);
+  assert.match(BP.cfgLine(ats), /giống 100% \(cùng: bảng điều khiển Deep Sea, vỏ cách âm, ATS\)/);
   assert.match(BP.cfgLine(r.list[1]), /nhóm xuất xứ động cơ Trung Quốc/);
   // No configuration planned and an HSMT naming no make: every group stays.
   assert.equal(BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, more, 400, 1e9).list.length, 5);
