@@ -117,6 +117,8 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .syncline{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .syncline .ibtn{width:30px;height:30px}
 .navbtns{display:flex;gap:8px;flex-wrap:wrap}
+#stageTabs .tshort{display:none}
+@media (max-width:640px){#stageTabs .tlong{display:none}#stageTabs .tshort{display:inline}}
 @media (max-width:640px){#count{display:none}.banner{padding:12px 14px;gap:12px}}
 @media (max-width:640px){.navbtns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;width:100%}.navbtns .btn{justify-content:center;padding-inline:2px;gap:3px;min-width:0;font-size:12px}.navbtns .btn svg{flex-shrink:0}}
 /* Sync, new-only and log light up yellow on hover like the banner buttons (Khoa, 2026-11-04). */
@@ -1112,8 +1114,10 @@ function renderTop() {
     </div>`).join("") + statTiles();
   const counts = Object.fromEntries(TABS.map((s) => [s.key, 0]));
   items.forEach((t) => counts[tabOf(t)]++);
+  // Phones show "Trúng" so Không trúng fits on the same line (Khoa, 2026-11-05).
+  const TAB_SHORT = { won: "Trúng" };
   $("#stageTabs").innerHTML = [["all", "Tất cả", tenders.length],...TABS.map((s) => [s.key, s.label, counts[s.key]])]
-    .map(([k, l, n]) => h`<button role="tab" data-stage="${k}" aria-selected="${String(state.stage === k)}">${l}<span class="c${k === "all" ? "" : " st-" + k}">${n}</span></button>`).join("");
+    .map(([k, l, n]) => h`<button role="tab" data-stage="${k}" aria-selected="${String(state.stage === k)}">${raw(TAB_SHORT[k] ? h`<span class="tlong">${l}</span><span class="tshort">${TAB_SHORT[k]}</span>` : h`${l}`)}<span class="c${k === "all" ? "" : " st-" + k}">${n}</span></button>`).join("");
   const sq = state.syncreq;
   // A sync that finished before the page loaded is old news: remember it and only announce later ones.
   if (state.syncreq !== undefined && syncDoneNote.base === undefined) syncDoneNote.base = sq?.doneAt || "";
