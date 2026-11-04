@@ -301,11 +301,38 @@ export function hintsOf(text, extra = "") {
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
 // (2026-11-03: the 11 best rows were 8.9-10.3 L engines for a tender asking 11.05 L).
+// A webform table or an OCR page often comes as one line of thousands of characters ("… Đạt Không đạt 3 Công suất liên
+// tục ≥ 12.5 ±0.5KVA Đạt Không đạt 4 Công suất tối đa ≥ 13.8 kVA …", 2026-11-04 regression: 1 in 6 HSMT has a line over
+// 300 characters). Its rows are split again before a row number or a section mark followed by a word ("4 Công suất",
+// "III Yêu cầu đối với đầu phát", "- Tần số"), not before a figure with its unit ("≥ 8 Lít"). OCR's "500K VA" / "2.000k W"
+// is kVA / kW.
+const UNIT_WORD = /^(?:l[íi]t|lit|kw|kva|kg|hz|v[òo]ng|gi[ờo]|ph[úu]t|n[ăa]m|th[áa]ng|ng[àa]y|m[ée]t|b[ộo]|c[áa]i|chi[ếe]c|m[áa]y|pha|d[âa]y|xi|xy|t[ấa]n|l[ầa]n|c[ấa]p|ampe|volt|độ)$/i;
+export function unflatten(t) {
+  return String(t ?? "").replace(/(\d)\s*([kK])\s+(VA|W)\b/g, "$1 $2$3").split("\n").map((l) => (l.length <= 300 ? l
+    : l.replace(/\s(?=(?:[IVX]{1,4}|[A-H])\s+\p{Lu}\p{Ll})/gu, "\n").replace(/\s(?=-\s+\p{Lu})/gu, "\n")
+      .replace(/(?<![≥≤<>=:±~\/×]\s*)\s(\d{1,2}(?:\.\d{1,2})*\.?)\s+(?=(\p{Lu}\p{Ll}+))/gu, (all, n, w) => (UNIT_WORD.test(w) ? all : `\n${n} `)))).join("\n");
+}
+// The part of the genset a section of the HSMT is about, by its heading ("II Yêu cầu đối với động cơ", "III" / "Yêu cầu
+// đối với đầu phát điện", "* Đầu phát"): a heading has a mark (roman numeral, letter, number, bullet) or "Yêu cầu" /
+// "Thông số" before the part, and nothing after it but a few words (a row "Động cơ: 4 thì" is not one).
+const SECTION = /^\s*(?:(?:[IVX]{1,4}|[A-H]|\d{1,2}(?:\.\d{1,2})*)[.):]?\s+|[*+•-]\s*)?(?:(?:yêu cầu|thông số|đặc tính)(?: kỹ thuật)?(?: (?:đối với|về|của|cho))?\s+)?(đầu phát|alternator|động cơ|engine|tổ máy|máy phát điện|genset|bộ điều khiển|hệ thống điều khiển|tủ điều khiển|vỏ)[^:\d\n]{0,40}:?\s*$/i;
+export function sectionsOf(text) {
+  const out = [], L = String(text).split("\n");
+  let at = 0;
+  L.forEach((l, i) => {
+    const h = /^\s*(?:[IVX]{1,4}|[A-H])\s*$/.test(l) && L[i + 1] ? `I ${L[i + 1]}` : l;
+    const m = h.length <= 80 && /^\s*([IVX]{1,4}|[A-H]|\d|[*+•-]|yêu|thông|đặc)/i.test(h) && h.match(SECTION);
+    if (m) out.push({ at, kind: /đầu phát|alternator/i.test(m[1]) ? "alt" : /động cơ|engine/i.test(m[1]) ? "engine" : "genset" });
+    at += l.length + 1;
+  });
+  return (i) => { let k = "genset"; for (const s of out) { if (s.at > i) break; k = s.kind; } return k; };
+}
 const AT_LEAST = /≥|>=|tối thiểu|ít nhất|không (nhỏ|thấp|bé) hơn|trở lên/i, MAXIMUM = /≤|<=|tối đa|không (lớn|vượt|quá)/i;
 const DISP_W = /dung t[íi]ch|displacement/i, TANK_W = /bình|bồn|thùng|két|nhớt|nước|nhiên liệu|tank|dầu|ắc quy/i;
 export function engineMins(t) {
   // A table laid out in columns puts 40+ spaces between the label and its figure ("Số xilanh      ...      04"): one space.
-  const one = (list) => (new Set(list).size === 1 ? list[0] : null), disp = [], dmax = [], cyl = [], lines = String(t).split("\n").map((l) => l.replace(/[ \t ]{2,}/g, " "));
+  t = unflatten(t);
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null), disp = [], dmax = [], cyl = [], lines = t.split("\n").map((l) => l.replace(/[ \t ]{2,}/g, " "));
   lines.forEach((line, i) => {
     // A table cell often puts the label on one line and the figure on the next ("Dung tích xi lanh" / "11.051 L").
     // Only a figure with its sign or unit: a number alone is often the row number of the next item ("Số xy lanh: Nêu rõ" / "7").
@@ -323,7 +350,11 @@ export function engineMins(t) {
     const d = dl && cell.match(/(?<![\d.,])(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
     // The unit in the label ("Dung tích xy lanh (L) ≥ 4.45") or in cc ("≥ 2.197 cc", "4087 cm3"): 2026-11-04 regression.
     const du = !d && dl && (cell.match(/\((?:l[íi]t|L)\)[^\d\n<≤]{0,20}?(?:≥|>=|>|tối thiểu|:)?\s*(\d{1,2}(?:[.,]\d{1,3})?)(?![\d.,]*\s*(?:mm|cc|cm|kg|%))/i)
-      || cell.match(/(?<![\d.,])(\d{1,2}[.,]?\d{3}|\d{3})\s*(?:cc|cm3|cm³)(?![a-z\d])/i));
+      || cell.match(/(?<![\d.,])(\d{1,2}[.,]?\d{3}|\d{3})\s*(?:cc|cm3|cm³)(?![a-z\d])/i)
+      // No unit at all ("Dung tích xilanh ≥ 2.5 Đạt Không đạt"): litres, for the cylinders' displacement.
+      // Not a cell that also gives the cylinders ("Số xi lanh, dung tích ≥ 3 xi lanh").
+      || (/dung t[íi]ch\s*(?:xi|xy)\s?lanh|displacement/i.test(cell) && !/s[ốo]\s*(?:xi|xy)\s?lanh|\d\s*(?:xi|xy)\s?lanh/i.test(cell)
+        && cell.match(/dung t[íi]ch[^\d\n]{0,40}?(?:≥|>=|tối thiểu)\s*:?\s*(\d{1,2}(?:[.,]\d{1,3})?)(?![\d.,]|\s*(?:mm|cc|cm|kg|%|kw|kva|l\b|lít|lit|v\b|vòng|rpm|:))/i)));
     if (d) disp.push(Number(d[1].replace(",", ".")));
     else if (du) disp.push(/cc|cm/i.test(du[0]) ? Number(du[1].replace(/[.,]/, "")) / 1000 : Number(du[1].replace(",", ".")));
     const c = cell.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i) || cell.match(/s[ốo]\s*(?:xi|xy)\s?lanh[^\d\n]{0,30}?\b0?(\d{1,2})\s*(?:xi|xy)?\s?(?:lanh)?\b/i)
@@ -343,25 +374,29 @@ const PRIME_W = /prime|li[êe]n t[ụu]c|continuous|c[ơo] b[ảa]n|th[ưư][ờ
 const ENGINE_W = /đ[ộo]ng c[ơo]|engine|t[ốo]i [đd]a|max/i, KVA_FIG = /c[ôo]ng su[ấa]t[^\n]{0,60}\n?\s*(?:≥|>=)?\s*\d[\d.,]*\s*kVA/i;
 const nearest = (t, i, re) => { let best = Infinity; for (const m of t.matchAll(re)) best = Math.min(best, Math.abs(m.index - i)); return best; };
 export function powerMins(t) {
-  const text = lowest(t), prime = [], fuel = [];
-  const pair = (a, ua, b, ub) => { const v = { [ua.toLowerCase() === "kva" ? "kVA" : "kW"]: numOf(a) }; if (b && ub.toLowerCase() !== ua.toLowerCase()) v[ub.toLowerCase() === "kva" ? "kVA" : "kW"] = numOf(b); return v; };
+  const text = lowest(unflatten(t)), prime = [], fuel = [], secAt = sectionsOf(text);
+  const pair = (a, ua, b, ub, at) => { const v = { [ua.toLowerCase() === "kva" ? "kVA" : "kW"]: numOf(a) }; Object.defineProperty(v, "sec", { value: secAt(at) }); if (b && ub.toLowerCase() !== ua.toLowerCase()) v[ub.toLowerCase() === "kva" ? "kVA" : "kW"] = numOf(b); return v; };
   for (const m of text.matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*\/\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/gi)) {
     const around = text.slice(Math.max(0, m.index - 160), m.index + 160), at = Math.min(m.index, 160);
     const p = nearest(around, at, PRIME_W), sb = nearest(around, at, STANDBY_W);
     if (!(p < sb && p <= 120) || ENGINE_W.test(text.slice(Math.max(0, m.index - 300), m.index).split("\n").slice(-2).join(" "))) continue;
-    prime.push(pair(m[1], m[2], m[3], m[4]));
+    prime.push(pair(m[1], m[2], m[3], m[4], m.index));
   }
   // 2026-11-04 regression: "Công suất liên tục (100% tải) 125kVA / 100 kW", "Công suất liên tục (kVA/kW) 100/80" and the
   // figure on the next line ("Công suất liên tục:" / "2.250kVA/1.800kW") were missed.
-  const PRIME_LABEL = /(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n)|prime(?:\s+power)?)/i;
-  const tidy = (l) => l.replace(/\(\s*\d{2,3}\s*%[^)]{0,12}\)/g, " ").replace(/\(\s*kVA\s*[\/\\]\s*kW\s*\)([^\d\n]{0,20})(\d+(?:[.,]\d+)*)\s*\/\s*(\d+(?:[.,]\d+)*)(?![\d.,]*\s*(?:kva|kw))/i, "$1$2 kVA / $3 kW");
+  // Also "(Kw/KVA) 60/75", "200/160 (kVA/kW)", "liên tục/ dự phòng: 6/6,5 KVA" and "Continuous 110KVA" (2026-11-04).
+  const PRIME_LABEL = /(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n)|prime(?:\s+power)?|continuous(?:\s+power)?)/i;
+  const tidy = (l) => l.replace(/\(\s*\d{2,3}\s*%[^)]{0,12}\)/g, " ").replace(/\(\s*kVA\s*[\/\\]\s*kW\s*\)([^\d\n]{0,20})(\d+(?:[.,]\d+)*)\s*\/\s*(\d+(?:[.,]\d+)*)(?![\d.,]*\s*(?:kva|kw))/i, "$1$2 kVA / $3 kW")
+    .replace(/\(\s*kW\s*[\/\\]\s*kVA\s*\)([^\d\n]{0,20})(\d+(?:[.,]\d+)*)\s*\/\s*(\d+(?:[.,]\d+)*)(?![\d.,]*\s*(?:kva|kw))/i, "$1$2 kW / $3 kVA")
+    .replace(/(\d+(?:[.,]\d+)*)\s*\/\s*(\d+(?:[.,]\d+)*)\s*\(\s*kVA\s*[\/\\]\s*kW\s*\)/i, "$1 kVA / $2 kW")
+    .replace(/(li[êe]n t[ụu]c)\s*\/\s*(d[ựu] ph[òo]ng)\s*:?\s*(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)\s*(kVA|kW)\b/i, "$1 $3 $5, $2 $4 $5");
   const L = text.split("\n");
-  for (let i = 0; i < L.length; i++) {
+  for (let i = 0, off = 0; i < L.length; off += L[i].length + 1, i++) {
     let line = tidy(L[i]);
     const at = line.search(PRIME_LABEL);
     if (at >= 0 && !/\d/.test(line.slice(at)) && L[i + 1] && /^\s*[≥>=:]*\s*\d[\d.,\s]*(kva|kw)/i.test(tidy(L[i + 1]))) line += " " + tidy(L[i + 1]);
-    const m = line.match(/(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n)|prime(?:\s+power)?)[^\n\d≥≤]{0,60}?(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*[\/(]\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/i);
-    if (m && !STANDBY_W.test(line.slice(0, m.index + 20)) && !ENGINE_W.test(m[0])) prime.push(pair(m[1], m[2], m[3], m[4]));
+    const m = line.match(/(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n)|prime(?:\s+power)?|continuous(?:\s+power)?)[^\n\d≥≤]{0,60}?(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*[\/(]\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/i);
+    if (m && !STANDBY_W.test(line.slice(0, m.index + 20)) && !ENGINE_W.test(m[0])) prime.push(pair(m[1], m[2], m[3], m[4], off));
     STANDBY_W.lastIndex = 0;
   }
   for (const m of text.matchAll(/(?:≤|<=|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t\s*\/\s*gi[ờo]|l\/h|lph|l\/hr)/gi)) {
@@ -371,7 +406,15 @@ export function powerMins(t) {
     fuel.push({ v: numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
   }
   const one = (list) => (new Set(list).size === 1 ? list[0] : null);
-  const unit = prime.some((v) => v.kVA != null) ? "kVA" : "kW", same = prime.filter((v) => v[unit] != null).sort((a, b) => a[unit] - b[unit]);
+  // A figure in the engine's or the alternator's section (an alternator of 11 kVA for an 8.5 kVA genset) is the genset's
+  // only when no other is given; the smaller second genset (below) is still looked for among all. An alternator is rated
+  // at 1–1.4 times its genset: a figure under "đầu phát" outside that is another genset of the tender (100 and 150 kVA,
+  // 250 and 9.5 kVA), kept so that the sizes disagree and none is given.
+  const own = prime.filter((v) => v.sec === "genset"), low = (u) => Math.min(...own.filter((v) => v[u] != null).map((v) => v[u]));
+  // In the engine's section only a kW figure (shaft power) is the engine's: a kVA one is a genset's (300, 400, 450 kVA).
+  const altFits = (v) => (v.sec === "engine" ? v.kVA == null : v.sec !== "alt" || ["kVA", "kW"].some((u) => v[u] != null && v[u] >= low(u) * 0.995 && v[u] <= low(u) * 1.4));
+  const list = own.length && prime.every(altFits) ? own : prime;
+  const unit = list.some((v) => v.kVA != null) ? "kVA" : "kW", same = list.filter((v) => v[unit] != null).sort((a, b) => a[unit] - b[unit]);
   const p = same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
   return { minPrime: p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)) };
 }
