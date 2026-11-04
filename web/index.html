@@ -59,7 +59,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .btn.sm{padding:4px 9px;font-size:12.5px}
 .radios{gap:14px}.radios label{display:inline-flex;align-items:center;gap:5px;cursor:pointer}
 .cmprev{justify-content:space-between}.actbar .btn{padding:4px 9px;font-size:12.5px}
-.actrow{margin:14px 0 16px}.actrow.cfgact{margin:4px 0 0}.cfgsum{margin:0}#cfgExtra{min-height:0;height:calc(3em + 14px)}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
+.actrow{margin:14px 0 16px}.actrow.cfgact{margin:4px 0 0}.cfgsum{margin:0}#cfgExtra{min-height:0;height:calc(3em + 4px)}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
 .ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkCfg,.ro #tyDrop,.ro #tkDel,.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
@@ -2900,7 +2900,7 @@ function configTabHtml(t) {
     + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${busy ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
     + h`<div class="field" style="margin:8px 0"><label for="cfgExtra">Yêu cầu khác</label><textarea id="cfgExtra" data-key="${key}" maxlength="2000" rows="2" placeholder="Không bắt buộc. Ví dụ: động cơ Weichai, đầu phát Stamford, bộ điều khiển Deep Sea DSE7320, hòa đồng bộ..." ${busy ? "disabled" : ""}>${cfgExtraOf(key)}</textarea></div>`
     + (() => {
-      const btns = h`<button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm NCC</button>`;
+      const btns = h`<button class="btn primary" id="cfgRun" data-key="${key}" ${busy ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý"}</button><button class="btn green" id="cfgFind" data-key="${key}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật (cả Yêu cầu khác) và bổ sung vào danh mục">Tìm</button>`;
       if (!prev?.result || wait) return h`<div class="row actrow cfgact"><div class="spacer"></div>${raw(btns)}</div>`;
       const info = `lúc ${fmtDate(prev.at)}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}`;
       return actBar("Đã gợi ý", info, btns, "", "ok", "actrow cfgact");
