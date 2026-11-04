@@ -1,7 +1,7 @@
 ﻿<#
 Đọc từ bản Vercel và ghi ra tệp JSON: yêu cầu tải HSMT đang chờ (mặc định), yêu cầu Sync,
 yêu cầu Phân tích, hoặc tài liệu của một collection (-Kind docs -Coll <c> [-Id <id>]: mảng {id, data}).
-Thoát mã 1 nếu không lấy được, để worker chuyển sang requests.json trên nhánh hsmt-inbox.
+Thoát mã 1 nếu không lấy được.
 Không in token ra màn hình.
 #>
 param(
