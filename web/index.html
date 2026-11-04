@@ -3227,7 +3227,7 @@ function bidSuggestBox(t) {
   const key = t._key, prev = state.bidprice[key];
   const wait = workerReqPending("bidpricereq", key) ? waitHtml("Đang chờ Agent so cấu hình gói này với các gói đã có kết quả...", state.bidpricereq[key].requestedAt) : "";
   const err = !wait && workerReqError("bidpricereq", key);
-  return h`${raw(quoteHtml(t))}<section class="sec">${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row actrow">
+  return h`${raw(quoteHtml(t))}<section>${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}<div class="row actrow">
       <button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>${prev?.result ? "Gợi ý lại" : "Gợi ý giá đấu"}</button></div>
     ${raw(prev?.result && !wait ? bidPriceHtml(prev, t) : "")}</section>`;
 }
@@ -3257,7 +3257,7 @@ function bidPriceHtml(doc, t) {
     ${raw((r.notes || []).length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}
     <h4 style="margin:12px 0 4px">Gói tương tự (${alike.length})</h4>
     ${raw(alike.length ? table(alike) : '<div class="note">Agent không thấy gói nào giống hoặc gần với gói này.</div>')}
-    ${raw(["different", "unknown"].map((lv) => rest(lv).length ? h`<details><summary class="small">${lv === "different" ? "Khác cấu hình" : "Không đủ thông tin để so"} (${rest(lv).length})</summary>${raw(table(rest(lv)))}</details>` : "").join(""))}
+    ${raw(["different", "unknown"].map((lv) => rest(lv).length ? h`<details style="margin-top:14px"><summary class="small">${lv === "different" ? "Khác cấu hình" : "Không đủ thông tin để so"} (${rest(lv).length})</summary>${raw(table(rest(lv)))}</details>` : "").join(""))}
     ${raw(st.comps.length ? h`<h4 style="margin:12px 0 4px">Nhà thầu hay dự các gói tương tự</h4>
     <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà thầu</th><th>Số lượt</th><th>Trúng</th><th>Giá thường bỏ (trung vị, % giá gói)</th></tr></thead><tbody>${raw(st.comps.map((c) => h`<tr data-bdopen="${c.id}" style="cursor:pointer"><td>${c.name}</td><td class="num" data-l="Số lượt">${c.n}</td><td class="num" data-l="Trúng">${c.wins}</td><td class="num" data-l="Giá thường bỏ">${c.ratio ? bpPct(c.ratio) : "—"}</td></tr>`).join(""))}</tbody></table></div>` : "")}
     <div class="muted small">Ước tính từ dữ liệu quá khứ; gói đánh giá theo kỹ thuật hoặc có nhà thầu bị loại thì giá thấp nhất chưa chắc trúng.</div>`;
