@@ -241,3 +241,30 @@ test("Xuất xứ Trung Quốc keeps a foreign engine that a supplier based in C
   const list = [{ model: "2506C-E15TAG1", makes: [{ name: "Perkins" }], uses: [{ supplierId: "s" }] }, { model: "TAD1641GE", makes: [{ name: "Volvo Penta" }], uses: [{ supplierId: "uk" }] }];
   assert.deepEqual(byOrigin(list, "cn", cnSuppliers(cnSup)).map((e) => e.model), ["2506C-E15TAG1"]);
 });
+
+// Gói nhiều cỡ máy (Khoa, 2026-11-04): the sizes as the analysis writes them (bidhist, 2026-11-04).
+test("sizesOf: several sizes with quantities; prime / standby / kW of one set are one size", async () => {
+  const { sizesOf } = await import("./config-bot.mjs");
+  const read = (t, name = "") => sizesOf([t, name], name).map((s) => `${s.qty ? s.qty + "x" : ""}${s.cap.value} ${s.cap.unit}`);
+  assert.deepEqual(read("3 x 8 kVA (1 pha) và 2 x 40 kVA (3 pha); công suất liên tục ≥ 8,0 kVA và ≥ 40,0 kVA, dự phòng ≥ 8,8 kVA và ≥ 44 kVA"), ["3x8 kVA", "2x40 kVA"]);
+  assert.deepEqual(read("1 x 630 kVA (liên tục ≥ 630KVA, dự phòng ≥ 693KVA) + 1 x 800 kVA (liên tục ≥ 800KVA, dự phòng ≥ 880KVA), kèm vỏ chống ồn"), ["1x630 kVA", "1x800 kVA"]);
+  assert.deepEqual(read("23 x 150 kVA (định mức ≥ 120 kW/150 kVA, dự phòng ≥ 132 kW/165 kVA); 41 x 100 kVA (định mức ≥ 80 kW/100 kVA, dự phòng ≥ 88 kW/110 kVA)"), ["41x100 kVA", "23x150 kVA"]);
+  assert.deepEqual(read("Máy 250 kVA (200 kW) và máy 500 kVA (400 kW), công suất liên tục"), ["250 kVA", "500 kVA"]);
+  assert.deepEqual(read("Tổng 97 máy: 27 x 15 kVA, 36 x 30 kVA"), ["27x15 kVA", "36x30 kVA"]);
+  // One set: prime and standby, kW of a single-phase set, a maximum, the engine's shaft power, a transformer.
+  assert.deepEqual(read("Công suất liên tục (Prime) ≥ 650kVA; công suất dự phòng (Standby) ≥ 700kVA; số lượng 01 tổ máy"), ["650 kVA"]);
+  assert.deepEqual(read("12 kVA (định mức ≥ 12 kW / 12 kVA; dự phòng ≥ 13,2 kW/ 13,2 kVA)"), ["12 kVA"]);
+  assert.deepEqual(read("2000 kVA dự phòng (công suất tối đa 2250 kVA)"), ["2000 kVA"]);
+  assert.deepEqual(read("44 tổ máy phát điện chính (động cơ diesel 91 kW; máy phát 80 kW, 3 pha)"), ["80 kW"]);
+  assert.deepEqual(read("", "Cung cấp UPS 10KVA và máy phát điện 5KVA, 3KVA"), ["3 kVA", "5 kVA"]);
+  assert.deepEqual(read("2500 kVA dự phòng (Standby) theo quy cách kỹ thuật; tên gói ghi 2000 kVA"), ["2500 kVA"]);
+  // Another rating of one set: no quantity, up to 30% below a size with one; or the name's single power.
+  assert.deepEqual(read("4 x 4000 kVA (3 pha, 6,3 kV); dự phòng ≥(4000kVA/3200kW), liên tục ≥(3250kVA/2600kW)"), ["4x4000 kVA"]);
+  assert.deepEqual(read("400 kVA (công suất tối đa ≥ 400 KVA; công suất tối thiểu ≥ 320 KVA)", "Mua sắm 01 Máy phát điện 400KVA"), ["400 kVA"]);
+});
+
+test("Tìm NCC of a tender of several sizes: a line that covers any size fits", () => {
+  const rec = { productLines: [{ power: { unit: "kVA", min: 700, max: 900 } }] };
+  assert.equal(fitsCap(rec, [{ value: 300, unit: "kVA" }, { value: 800, unit: "kVA" }]), true);
+  assert.equal(fitsCap(rec, [{ value: 300, unit: "kVA" }, { value: 100, unit: "kVA" }]), false);
+});

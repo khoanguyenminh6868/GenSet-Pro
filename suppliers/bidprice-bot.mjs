@@ -14,7 +14,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
-import { api, doc, post, technicalPart, hsmtTextOf } from "./config-bot.mjs";
+import { api, doc, post, technicalPart, hsmtTextOf, sizesFor, sizeText, MAX_SIZES } from "./config-bot.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -26,12 +26,14 @@ const fmt = (v) => Number(v).toLocaleString("vi-VN");
 
 // The tender as the web sent it (bidpricereq basis: kva, price, capText, bidForm, investorName read on the page), with what
 // the bot can add: the analysis, the configuration suggested in Cấu hình gợi ý and the HSMT's technical part.
-export async function prep(req, dir, hist) {
+// `size` (a tender of several sizes, attempt): this run's size, its share of the package price being in basis, with the
+// tender's sizes, the whole package price and the configurations Gợi ý cấu hình suggested for this size.
+export async function prep(req, dir, hist, size = null) {
   fs.mkdirSync(dir, { recursive: true });
   const key = req.key || req.notifyNo, b = req.basis || {};
-  const [analysis, cfg, hsmt] = await Promise.all([doc("analysis", key).catch(() => null), doc("configmatch", key).catch(() => null), hsmtTextOf(key).catch(() => null)]);
+  const [analysis, cfg, hsmt] = await Promise.all([doc("analysis", key).catch(() => null), size ? null : doc("configmatch", key).catch(() => null), hsmtTextOf(key).catch(() => null)]);
   const a = analysis?.result, K = Number(b.kva) || null, P = Number(b.price) || null;
-  const top = (cfg?.result?.configs || []).slice(0, 3);
+  const top = ((size ? size.cfg : cfg?.result)?.configs || []).slice(0, 3);
   // What this HSMT asks for, read the way bidhist's config.text was (the analysis' technical lines), else the HSMT's
   // technical part; and the engine of the configuration Gợi ý cấu hình put first (its origin group picks the lots).
   const cfgText = a?.technicalSpecs?.length ? a.technicalSpecs.map((s) => `${s.item}: ${s.requirement}`).join("\n") : hsmt ? technicalPart(hsmt.text).slice(0, 20000) : "";
@@ -40,7 +42,9 @@ export async function prep(req, dir, hist) {
   const { total, group, otherGroup, list } = BP.candidates(t, docs, K, P);
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, `Tên gói: ${t.bidName}`, t.investorName ? `Chủ đầu tư: ${t.investorName}` : "",
-    `Công suất: ${K ? `${fmt(Math.round(K))} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"}`, `Giá gói: ${P ? fmt(P) + " đ" : "không rõ"}`,
+    `Công suất: ${K ? `${fmt(Math.round(K))} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"}`, `Giá gói${size ? " (phần của cỡ máy này, code ước tính)" : ""}: ${P ? fmt(P) + " đ" : "không rõ"}`,
+    ...(size ? ["", `## Gói có nhiều cỡ máy: ${size.sizes.map(sizeText).join("; ")}`,
+      `Lượt này CHỈ so máy ${sizeText(size)}; các cỡ khác có lượt riêng. Xếp mức theo máy cỡ này: so công suất một máy với máy ${size.label}; gói cũ chỉ có máy cỡ này (một hay nhiều máy cùng cỡ) không bị xếp "khác" chỉ vì gói này còn máy cỡ khác. Giá gói ở trên là phần giá của cỡ máy này do code ước tính (chia giá cả gói${size.whole ? ` ${fmt(size.whole)} đ` : ""} theo số lượng và công suất từng cỡ), không phải số trên muasamcong.`, ""] : []),
     `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}`, "",
     ...(a?.keyInfo ? ["## Thông tin chính (phân tích HSMT)", ...Object.entries(a.keyInfo).filter(([, v]) => v).map(([k, v]) => `- ${k}: ${v}`), ""] : []),
     ...(a?.technicalSpecs?.length ? ["## Thông số kỹ thuật (phân tích HSMT)", ...a.technicalSpecs.map((s) => `- ${s.item}: ${s.requirement}`), ""] : []),
@@ -48,7 +52,7 @@ export async function prep(req, dir, hist) {
     hsmt ? "## Phần kỹ thuật của HSMT\n" + technicalPart(hsmt.text).slice(0, 60000) : "Chưa có văn bản HSMT.",
   ].filter((l) => l !== "").join("\n"), "utf8");
   fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"), "utf8");
-  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "" }, total, list }), "utf8");
+  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", ...(size ? { qty: size.qty } : {}) }, total, list }), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "bidprice-prompt.md"), "utf8"), "utf8");
   return { total, group, otherGroup, candidates: list.length, K, P };
 }
@@ -70,7 +74,8 @@ export function check(dir) {
     }
     return out;
   });
-  const stats = BP.suggest(samples, basis.price, basis.kva);
+  // A size of several sets (a tender of several sizes): the price per kVA times all of them.
+  const stats = BP.suggest(samples, basis.price, basis.kva && basis.kva * (basis.qty || 1));
   const result = { basis, total, tender: { summary: String(r.tender?.summary || ""), points: (r.tender?.points || []).map(String).slice(0, 10) }, notes: (r.notes || []).map(String).slice(0, 6), samples, stats };
   fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
   return { result, problems };
@@ -83,16 +88,63 @@ function runClaude(dir) {
       input: "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md và samples.md, chỉ ghi result.json. Chạy không người trông, không ai trả lời câu hỏi." });
 }
 
-async function attempt(req, dir, hist) {
+async function attemptOne(req, dir, hist, size = null, tag = req.key) {
   fs.rmSync(dir, { recursive: true, force: true });
-  const info = await prep(req, dir, hist);
-  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "" }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).`], samples: [], stats: BP.suggest([], info.P, info.K) }, problems: [] };
+  const info = await prep(req, dir, hist, size);
+  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "", ...(size ? { qty: size.qty } : {}) }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).`], samples: [], stats: BP.suggest([], info.P, info.K) }, problems: [] };
   const started = Date.now(), r = runClaude(dir);
-  fs.writeFileSync(path.join(os.tmpdir(), `genbid-bidprice-${req.key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
+  fs.writeFileSync(path.join(os.tmpdir(), `genbid-bidprice-${tag}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
   if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
   const out = check(dir);
   out.result.seconds = Math.round((Date.now() - started) / 1000);
   return out;
+}
+
+// ---------- Gói nhiều cỡ máy (Khoa, 2026-11-04: Gợi ý giá đấu chạy riêng từng cỡ máy như Gợi ý cấu hình) ----------
+// The sizes are those of Gợi ý cấu hình (configmatch result.sizes), else read the same way (config-bot.mjs sizesFor).
+// The package price is shared out by quantity x kVA^0.7: a set of twice the power costs about 1.6 times as much
+// (log-log fit over the 48 won generator sets of bidhist whose goods give a unit price and a power, 2026-11-04:
+// exponent 0.69). Tried on the 6 past tenders whose won goods give each size's unit price: off by 8 points of share at
+// the median, 49 where the quantities are not known (the median winning unit price of each size's similar lots: 12;
+// the package price per set by 51: lots of many sets list no quantity). A size with no quantity counts as one set.
+// Each size then runs as a tender of its own with its share as the package price; the package's levels add them up.
+export const SCALE = 0.7;
+export function sharesOf(sizes) {
+  const w = sizes.map((z) => (z.qty || 1) * z.kva ** SCALE), sum = w.reduce((x, y) => x + y, 0);
+  return sizes.map((z, i) => ({ share: w[i] / sum }));
+}
+async function sizesOfTender(key, req, cfg) {
+  const own = (cfg?.result?.sizes || []).map((x) => ({ cap: x.cap, kva: x.kva, qty: x.qty, label: x.label, quote: x.quote, cfg: x.result || null }));
+  return own.length > 1 ? own : (await sizesFor(key, req.bidName)).slice(0, MAX_SIZES);
+}
+async function attempt(req, dir, hist) {
+  const key = req.key || req.notifyNo, cfg = await doc("configmatch", key).catch(() => null), sizes = await sizesOfTender(key, req, cfg);
+  if (sizes.length < 2) return attemptOne(req, dir, hist);
+  fs.rmSync(dir, { recursive: true, force: true });
+  const docs = hist || Object.fromEntries((await api("kind=docs&coll=bidhist")).map((d) => [d.id, d.data]));
+  const b = req.basis || {}, P = Number(b.price) || null;
+  const shares = sharesOf(sizes);
+  const outs = [], problems = [];
+  for (const [i, z] of sizes.entries()) {
+    const size = { ...z, sizes, whole: P }, part = P ? Math.round((P * shares[i].share) / 1000) * 1000 : null;
+    try {
+      const out = await attemptOne({ ...req, basis: { ...b, kva: z.kva, price: part, capText: sizeText(z) } }, path.join(dir, String(i + 1)), docs, size, `${key}-${i + 1}`);
+      outs.push({ z, sh: shares[i], result: out.result });
+      problems.push(...out.problems.map((x) => `máy ${z.label}: ${x}`));
+    } catch (e) { outs.push({ z, sh: shares[i], error: e.message || String(e) }); }
+  }
+  if (!outs.some((o) => o.result)) throw new Error(outs.map((o) => `Máy ${o.z.label}: ${o.error}`).join(" "));
+  // The package's levels: each size's level added up, when every size has one.
+  const levels = outs.every((o) => o.result?.stats.levels.length) ? outs[0].result.stats.levels.map((l, j) => {
+    const price = outs.reduce((a, o) => a + o.result.stats.levels[j].price, 0);
+    return { id: l.id, label: l.label, price, ratio: P ? price / P : null };
+  }) : [];
+  const result = {
+    basis: { kva: null, price: P, capText: sizes.map(sizeText).join(" + ") }, multi: true, levels,
+    sizes: outs.map((o) => ({ cap: o.z.cap, kva: o.z.kva, qty: o.z.qty, label: o.z.label, quote: o.z.quote, share: o.sh.share, ...(o.result ? { result: o.result } : { error: o.error }) })),
+    notes: [`Gói có ${sizes.length} cỡ máy (${sizes.map(sizeText).join("; ")}): mỗi cỡ được so riêng với các gói đã có kết quả cùng cỡ. Giá gói chia cho từng cỡ theo số lượng x công suất^0,7 (máy công suất gấp đôi giá khoảng gấp 1,6)${sizes.some((z) => !z.qty) ? ", cỡ không ghi số lượng tính 1 máy" : ""}: ${outs.map((o) => `máy ${o.z.label} ${Math.round(100 * o.sh.share)}%`).join(", ")}.`],
+  };
+  return { result, problems };
 }
 
 // bidpricereq keeps the request's own fields and gets doneAt (+ error); bidprice carries the checked result.
@@ -106,7 +158,7 @@ export async function answer(req, hist) {
   try {
     const { result, problems } = await attempt(req, dir, hist);
     await done({ result, error: "" });
-    console.log(`${key}: giá đấu từ ${result.stats.n} gói tương tự (${result.samples.length} ứng viên${problems.length ? `, ${problems.length} điểm chưa khớp` : ""})`);
+    console.log(`${key}: ${result.multi ? result.sizes.map((z) => `máy ${z.label}: ${z.result ? `giá đấu từ ${z.result.stats.n} gói tương tự` : `lỗi ${z.error}`}`).join("; ") : `giá đấu từ ${result.stats.n} gói tương tự (${result.samples.length} ứng viên)`}${problems.length ? `, ${problems.length} điểm chưa khớp` : ""}`);
   } catch (e) {
     await done({ error: e.message || String(e) }).catch(() => {});
     console.log(`${key}: Gợi ý giá đấu lỗi ${e.message}`);
@@ -114,6 +166,15 @@ export async function answer(req, hist) {
 }
 
 function printResult({ result, problems }) {
+  if (result.multi) {
+    for (const z of result.sizes) {
+      console.log(`== Máy ${z.qty ? `${z.qty} x ` : ""}${z.label}: ${Math.round(100 * z.share)}% giá gói`);
+      if (z.result) printResult({ result: z.result, problems: [] }); else console.log(`lỗi ${z.error}`);
+    }
+    console.log(`== Cả gói: ${result.levels.length ? result.levels.map((l) => `${l.label} ${fmt(l.price)}`).join(" · ") : "chưa đủ cỡ máy có giá"}`);
+    if (problems.length) console.log("Chưa khớp:\n" + problems.join("\n"));
+    return;
+  }
   const s = result.stats;
   console.log(`Ứng viên ${result.samples.length}/${result.total}: ${BP.LEVELS.map((l) => `${l} ${result.samples.filter((x) => x.level === l).length}`).join(", ")}`);
   console.log(`Tính từ ${s.n} gói (${s.basis})${s.enough ? "" : " — CHƯA ĐỦ"}: ${s.levels.map((l) => `${l.label} ${fmt(l.price)} (${Math.round(100 * l.ratio)}%, thắng ${Math.round(100 * l.chance)}%)`).join(" · ")}`);

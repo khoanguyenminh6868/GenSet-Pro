@@ -9,7 +9,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 - `input.md`: the tender (name, capacity) and the technical requirements of the HSMT (chapter V or the parts about the
   generator set, engine and alternator), plus the analysis's technicalSpecs as a guide only. Its "Xuất xứ động cơ"
   section says which engine makes may be suggested (Chinese only, makes from a G7 or G20 country, foreign only, or any): follow it in every step,
-  internet search included. catalog.md already lists only engines of that origin; the code drops a configuration
+  internet search included. A "Gói có nhiều cỡ máy" section means the tender buys gensets of several sizes and this run
+  is for ONE of them (Khoa, 2026-11-04): list only the requirements for that size or for every set of the tender, and
+  suggest configurations of that size only; the other sizes have runs of their own. catalog.md already lists only engines of that origin; the code drops a configuration
   whose engine is of the other origin (under Chinese, also one whose make the source does not state), except, under
   Chinese, a foreign engine that a supplier based in China (country CN) offers in a row of its own table: keep it and
   list only those suppliers.

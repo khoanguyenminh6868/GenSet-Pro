@@ -99,3 +99,13 @@ test("suggest: three levels from the alike lots, each with its chance", () => {
   assert.deepEqual(st.levels.map((l) => l.chance), [0.8, 0.6, 0.4]);
   assert.equal(st.perKva.price, 900000000);
 });
+
+test("sharesOf: the package price by quantity x kVA^0.7 (Gói nhiều cỡ máy, Khoa 2026-11-04)", async () => {
+  const { sharesOf } = await import("./bidprice-bot.mjs");
+  const s = sharesOf([{ kva: 20, qty: 2 }, { kva: 60, qty: 2 }]).map((x) => Math.round(100 * x.share));
+  assert.deepEqual(s, [32, 68]);
+  // No quantity counts as one set; the shares add up to the whole.
+  const t = sharesOf([{ kva: 100 }, { kva: 200 }, { kva: 30, qty: 4 }]);
+  assert.ok(Math.abs(t.reduce((a, x) => a + x.share, 0) - 1) < 1e-9);
+  assert.ok(t[1].share > t[0].share);
+});
