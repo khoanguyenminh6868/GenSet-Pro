@@ -172,6 +172,32 @@ test("candidate rows: every supplier of the engine the HSMT names gets a place; 
   assert.equal(new Set(more.match(/supplierId: s\d/g)).size, 3);
 });
 
+test("candidate rows, no origin required: Chinese makes keep their rows beside better-documented foreign engines (Khoa, 2026-11-05)", () => {
+  const table = (n, title, rows) => ({ n, title, header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows });
+  const foreign = ["NTA855-G1B", "NTA855-G2A", "KTA19-G3", "6LTAA8.9-G2", "6CTAA8.3-G2", "QSL9-G2", "QSL9-G3", "MTA11-G2A", "QSZ13-G2", "QSZ13-G3", "QSX15-G8", "KTA19-G4"];
+  const list = Array.from({ length: 12 }, (_, i) => ({ id: `f${i}`, country: "CN", confidence: "high", controllers: [{ brand: "Deep Sea", model: "DSE7320", text: "DSE7320", line: "DSE7320", src: [3001] }],
+    specTables: [table(101, "Cummins gensets 50Hz", foreign.map((e, j) => `| F-${i}-${j} | 275 | 220 | ${e} | HCI444ES |`))] }));
+  list.push({ id: "w", country: "CN", confidence: "low", specTables: [table(101, "Weichai gensets 50Hz", ["| W-1 | 275 | 220 | WP10D264E200 | XY274K |"])] });
+  const hints = hintsOf("Chương V. Yêu cầu kỹ thuật\nTần số 50 Hz");
+  const cap = { value: 250, unit: "kVA" };
+  assert.ok(candidates(C.build(list), cap, hints, { suppliers: list }).top.some((r) => r.u.supplierId === "w"));
+  // G7 asked: no Chinese row.
+  const g7 = { ...C.build(list) }; g7.engines = byOrigin(g7.engines, "g7");
+  assert.ok(!candidates(g7, cap, hints, { suppliers: list, origin: "g7" }).top.some((r) => r.u.supplierId === "w"));
+});
+
+test("configurations meeting the HSMT alike: the one with an engine of a Chinese make first (Khoa, 2026-11-05)", () => {
+  const reqs = [{ item: "E", part: "engine" }];
+  const met = [{ item: "E", part: "engine", status: "met", level: "core" }];
+  const r = { requirements: reqs, configs: [
+    { rank: 1, engine: { model: "NTA855-G1B", make: "Cummins" }, checks: met, suppliers: [{ supplierId: "cummins" }] },
+    { rank: 2, engine: { model: "WP10D264E200", make: "Weichai" }, checks: met, suppliers: [{ supplierId: "weichai" }] },
+    { rank: 3, engine: { model: "YC6MK350L-D20", make: "Yuchai" }, checks: [{ ...met[0], status: "not_met" }], suppliers: [{ supplierId: "yuchai" }] },
+  ] };
+  rankConfigs(r);
+  assert.deepEqual(r.configs.map((c) => c.suppliers[0].supplierId), ["weichai", "cummins", "yuchai"]);
+});
+
 test("candidate rows: an engine whose sources name two makes still counts as the make the HSMT names", () => {
   const t = (title, row) => [{ n: 101, title, header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows: [row] }];
   const list = [
