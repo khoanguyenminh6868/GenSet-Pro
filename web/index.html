@@ -257,12 +257,10 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 #dmeta{margin-bottom:4px}
 /* Đóng like the one on the supplier / catalog screens: yellow edge on hover (Khoa, 2026-11-04). */
 #dclose{--violet:#ffcc00;flex:none}
-.dtabs{padding:4px 16px 0;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
-.dtabs button{border:0;background:none;padding:5px 12px;color:var(--muted);font-weight:500;border-bottom:2px solid transparent;white-space:nowrap}
+.dtabs{padding:0 16px;align-items:center;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
+.dtabs button{border:0;background:none;padding:5px 12px;color:var(--muted);font-weight:500;border-top:2px solid transparent;border-bottom:2px solid transparent;white-space:nowrap}
 .dtabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--violet)}
 .dtabs button:disabled{opacity:.45;cursor:not-allowed}
-/* Centred (Khoa, 2026-11-05); auto-margin end pieces rather than justify-content, so a row wider than the drawer still scrolls from its first tab, and a hidden tab at either end changes nothing. */
-.dtabs::before,.dtabs::after{content:"";margin:auto}
 .dbody{overflow:auto;padding:14px 16px 28px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:0}
 .kv{display:grid;grid-template-columns:minmax(120px,34%) minmax(0,1fr);gap:6px 12px;font-size:13.5px;margin:0}
 .kv.kvo{grid-template-columns:110px minmax(0,1fr)}
