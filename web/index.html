@@ -307,6 +307,7 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .rec{font-size:13px}.rec b{color:var(--violet);font-weight:600}
 .favstar{background:none;border:0;padding:0 4px 0 0;font-size:17px;line-height:1;cursor:pointer;color:var(--muted);vertical-align:-1px}.favstar.on{color:#f5b301}.favstar:hover{color:#f5b301}
 .suptable{width:100%;border-collapse:collapse;font-size:13px}.suptable th,.suptable td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.suptable tbody tr:is([data-supopen],[data-catitem]){cursor:pointer}.suptable tbody tr:is([data-supopen],[data-catitem]):hover{background:var(--panel2)}
+.suplink{background:none;border:0;padding:0;font:inherit;font-weight:inherit;color:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:var(--dim);text-underline-offset:2px}.suplink:hover{color:var(--blue);text-decoration-color:currentColor}
 .supcontact{margin-top:3px;overflow-wrap:anywhere}.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
 /* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
@@ -1486,6 +1487,7 @@ function quoteHtml(t) {
     const up = quoteUp[key]?.row === r.id ? quoteUp[key].text : "";
     return h`<div class="qrow" data-qrow="${r.id}">
       <div class="row qline"><select data-qsup="${r.id}" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">${favN ? "Chọn NCC" : "Chưa có nhà cung cấp yêu thích"}</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
+        ${raw(r.supplierId && state.supplier?.[r.supplierId] ? h`<button class="btn sm" data-supopen="${r.supplierId}" title="Xem thông tin nhà cung cấp">Hồ sơ</button>` : "")}
         ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Upload</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
         ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
       ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
@@ -2952,11 +2954,13 @@ function findResultHtml(f, key) {
     ${raw(r.skipped?.length ? h`<details><summary class="small">Đã xem nhưng bỏ qua (${r.skipped.length})</summary><ul class="suplist">${raw(r.skipped.map((s) => h`<li class="small"><b>${s.name || ""}</b> — ${s.reason || ""}</li>`).join(""))}</ul></details>` : "")}
     ${raw(r.notes?.length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}</div>`;
 }
+// A supplier name in tab Cấu hình gợi ý / Giá gợi ý opens that supplier's page (Khoa, 2026-11-05).
+const supLink = (id, name) => (id && state.supplier?.[id] ? h`<button type="button" class="suplink" data-supopen="${id}" title="Xem thông tin nhà cung cấp">${name || id}</button>` : h`${name || id || ""}`);
 function cfgSrcHtml(src) {
   if (!src) return "";
   if (src.kind === "catalog" || src.kind === "controller") {
     const s = state.supplier?.[src.supplierId], url = s?.sources?.find((x) => x.n === Number(src.n))?.url;
-    return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: ${supName(s) || src.supplierId}${raw(url ? h` · <a href="${url}" target="_blank" rel="noopener">trang [${src.n}]</a>` : "")}${raw(src.line ? h`<div><code>${src.line}</code></div>` : "")}</div>`;
+    return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: ${raw(supLink(src.supplierId, supName(s)))}${raw(url ? h` · <a href="${url}" target="_blank" rel="noopener">trang [${src.n}]</a>` : "")}${raw(src.line ? h`<div><code>${src.line}</code></div>` : "")}</div>`;
   }
   return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: <a href="${src.url}" target="_blank" rel="noopener">${src.url}</a>${raw(src.quote ? h` — <q>${src.quote}</q>` : "")}</div>`;
 }
@@ -2966,7 +2970,7 @@ function cfgSuppliersHtml(c) {
   if (!c.suppliers?.length) return "";
   return h`<div class="small" style="margin-top:6px"><b>Nhà cung cấp đề xuất:</b></div><ol class="suplist">${raw(c.suppliers.map((x) => {
     const s = state.supplier?.[x.supplierId], conf = SUP_CONF[s?.confidence] || ["", "mut"], vn = s?.vietnam?.distributors || [];
-    return h`<li class="small"><b>${supName(s) || x.supplierId}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}${raw(c.controller?.model ? (x.hasController ? h`<span class="chip ok">có bộ điều khiển ${c.controller.model}</span>` : h`<span class="chip mut">trang không ghi bộ điều khiển ${c.controller.model}</span>`) : "")}
+    return h`<li class="small"><b>${raw(supLink(x.supplierId, supName(s)))}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}${raw(c.controller?.model ? (x.hasController ? h`<span class="chip ok">có bộ điều khiển ${c.controller.model}</span>` : h`<span class="chip mut">trang không ghi bộ điều khiển ${c.controller.model}</span>`) : "")}
       <button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ</button>${raw(s?.website ? h` <a href="${s.website}" target="_blank" rel="noopener">website</a>` : "")}
       ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
   }).join(""))}</ol>`;
@@ -3007,7 +3011,7 @@ const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="s
 // Internet finds added to the catalog by config-bot.mjs (each checked with verify.mjs before it is added).
 const cfgAddedHtml = (r) => (r.catalogAdded?.length ? h`<div class="note"><b>Bổ sung vào danh mục nhà cung cấp từ internet</b><ul class="suplist">${raw(r.catalogAdded.map((a) => a.error
   ? h`<li class="small">${a.supplierId || ""}: chưa bổ sung — ${a.error}</li>`
-  : h`<li class="small"><b>${a.name}</b> (${a.isNew ? "nhà cung cấp mới" : "thêm dữ liệu"}, ${a.tables} bảng thông số) <button class="btn sm" data-supopen="${a.supplierId}">Hồ sơ</button>${raw(a.pr ? h` · <a href="${a.pr}" target="_blank" rel="noopener">PR vào repo</a>` : "")}${raw(a.prError ? h`<div class="muted small">${a.prError}</div>` : "")}</li>`).join(""))}</ul></div>` : "");
+  : h`<li class="small"><b>${raw(supLink(a.supplierId, a.name))}</b> (${a.isNew ? "nhà cung cấp mới" : "thêm dữ liệu"}, ${a.tables} bảng thông số) <button class="btn sm" data-supopen="${a.supplierId}">Hồ sơ</button>${raw(a.pr ? h` · <a href="${a.pr}" target="_blank" rel="noopener">PR vào repo</a>` : "")}${raw(a.prError ? h`<div class="muted small">${a.prError}</div>` : "")}</li>`).join(""))}</ul></div>` : "");
 const cfgNotesHtml = (r) => (r.notes?.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy</b><ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul></div>` : "");
 
 // ---------- Đối chiếu TLKT (a supplier's technical proposal against the tender's technical requirements) ----------
