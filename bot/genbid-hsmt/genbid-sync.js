@@ -29,6 +29,8 @@ const API = "https://genset-pro-web.vercel.app/api";
 const LOCK = path.join(ROOT, ".hsmt-worker.lock");
 const SYNC_LAST = path.join(ROOT, ".genbid-sync-last.json");
 const DOWNLOADS = path.join(process.env.USERPROFILE || "C:\\Users\\Khoa", "Downloads", "GenBid-HSMT");
+// The HSDT files of each Đối chiếu, kept on this PC (Khoa, 2026-11-05): <HSDT_DIR>\\<TBMT>\\<requestedAt>\\<file>. Never in git or GitHub.
+const HSDT_DIR = path.join(process.env.USERPROFILE || "C:\\Users\\Khoa", "Downloads", "GenBid-HSDT");
 const SEARCH_URL = "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=search";
 // New "Máy phát điện" tenders Sync sent to Phân tích on its own, waiting to go on to Gợi ý cấu hình (runFinish).
 const AUTO_FILE = path.join(ROOT, ".genbid-auto.json");
@@ -1519,9 +1521,12 @@ async function prepOne(kind, key, requestedAt, dir) {
   }
   if (!ownReq && !full && !notice?.info && !scans.length) input += `\nKHÔNG có chữ HSMT nào trên web: kiểm tra ${local}; nếu cũng không có thì ghi error.txt.\n`;
   if (kind === "compare" || kind === "tlkt") {
-    // The bid (HSDT) is the company's own confidential document, and a supplier's technical proposal (Đối chiếu TLKT)
-    // is the partner's: either stays in this folder, deleted after the round.
-    const { text: sub, unread } = await scratchDocs(req.files, req.text, path.join(dir, kind));
+    // The bid (HSDT) is the company's own confidential document: it is kept on this PC in HSDT_DIR, one folder per
+    // request (Khoa, 2026-11-05), never in git or GitHub. A supplier's technical proposal (Đối chiếu TLKT) is the
+    // partner's: it stays in this folder, deleted after the round.
+    const subDir = kind === "compare" ? path.join(HSDT_DIR, key.replace(/[\\/:*?"<>|]+/g, "_"), String(req.requestedAt || now()).replace(/[^0-9T]/g, "").slice(0, 15)) : path.join(dir, kind);
+    const { text: sub, unread } = await scratchDocs(req.files, req.text, subDir);
+    if (kind === "compare" && [].concat(req.files || []).length) log(`Đối chiếu ${key}: HSDT lưu ở ${subDir}`);
     log(`${KIND_NAME[kind]} ${key}: ${[].concat(req.files || []).length} tệp tải lên, ${(req.text || "").length.toLocaleString("vi-VN")} ký tự chữ gửi kèm`
       + (ownReq ? `; YCKT rút gọn: ${[].concat(req.reqFiles || []).length} tệp, ${(req.reqText || "").length.toLocaleString("vi-VN")} ký tự` : "")
       + (req.uploadError ? `; tải tệp lỗi nên gửi chữ: ${req.uploadError}` : ""));
