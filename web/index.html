@@ -1459,7 +1459,7 @@ function infoHtml(t) {
       ${raw(refetchHtml(t))}
     </div>`;
 }
-// ---------- Báo giá của Nhà Cung Cấp (quote/<key>; the files live on the GitHub Release ncc-<key>, api/quote.js) ----------
+// ---------- Báo giá của Nhà Cung Cấp (quote/<key>; the files live in the private Supabase bucket "quote", api/quote.js) ----------
 // One supplier to start with, Thêm adds another; each supplier takes several files (Khoa, 2026-11-01).
 // Shown at the top of tab Giá gợi ý (Khoa, 2026-11-03; was in Tổng quan).
 const quoteUp = {}; // key -> { row, text } while files upload
@@ -1494,7 +1494,7 @@ async function saveQuote(key, rows) {
   renderDrawer(false);
   return dbSet("quote/" + key, rec);
 }
-// Each file goes to the scratch bucket, then api/quote.js moves it to GitHub; the list is saved after each one.
+// Each file goes to the scratch bucket, then api/quote.js moves it to the "quote" bucket; the list is saved after each one.
 async function addQuoteFiles(key, rowId, list) {
   if (!list.length) return;
   if (state.readOnly || !state.db || !window.genbidScratch) { toast("Đăng nhập để tải tệp lên."); return; }
@@ -1540,7 +1540,7 @@ function askRemoveQuote(key, rowId, i) {
   // A supplier with no files goes without asking.
   if (!f && !files.length) { saveQuote(key, quoteRows(key).filter((x) => x.id !== rowId)); return; }
   modal(h`<div class="row"><h2 style="flex:1">${f ? "Xoá tệp này?" : "Bỏ nhà cung cấp này?"}</h2><button class="btn sm" data-close>Đóng</button></div>
-    <p class="small" style="margin:0;overflow-wrap:anywhere">${f ? `${f.name} của nhà cung cấp ${who} sẽ bị xoá khỏi GitHub.` : `${files.length} tệp báo giá của nhà cung cấp ${who} sẽ bị xoá khỏi GitHub.`}</p>
+    <p class="small" style="margin:0;overflow-wrap:anywhere">${f ? `${f.name} của nhà cung cấp ${who} sẽ bị xoá.` : `${files.length} tệp báo giá của nhà cung cấp ${who} sẽ bị xoá.`}</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="qDelOk" style="color:var(--red)">Xoá</button></div>`, (m, close) => {
     $("#qDelOk", m).addEventListener("click", async () => {
       close();
