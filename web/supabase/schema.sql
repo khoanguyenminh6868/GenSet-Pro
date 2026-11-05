@@ -36,8 +36,8 @@ do $$ begin
 exception when duplicate_object then null; end $$;
 
 -- Files: "blobs" holds the tender documents and fonts (public links, unguessable ids);
--- "scratch" holds images sent to Claude for one request.
-insert into storage.buckets (id, name, public) values ('blobs', 'blobs', true), ('scratch', 'scratch', false)
+-- "scratch" holds images sent to Claude for one request; "quote" the suppliers' quotes (api/quote.js, service key only).
+insert into storage.buckets (id, name, public) values ('blobs', 'blobs', true), ('scratch', 'scratch', false), ('quote', 'quote', false)
 on conflict (id) do nothing;
 
 drop policy if exists blobs_upload on storage.objects;

@@ -1,9 +1,8 @@
 // Tender files (public HSMT documents from muasamcong) live on the GitHub Releases "hsmt-<TBMT>" of the
-// private repo; the worker lists them as /_gh/<asset id>. This streams the file through, because the
+// repo; the worker lists them as /_gh/<asset id>. This streams the file through, because the
 // signed GitHub download link has no CORS headers and the page reads PDFs with fetch().
-// Suppliers' quotes (release "ncc-<TBMT>", api/quote.js) are not public: only a signed-in member gets them.
+// Suppliers' quotes are not here: they are in Supabase (api/quote.js), as the repo is public.
 import { Readable } from "node:stream";
-import { memberFrom } from "./_supabase.js";
 
 const TOKEN = process.env.GITHUB_TOKEN;
 const REPO = process.env.GITHUB_REPO || "khoanguyenminh6868/GenSet-Pro";
@@ -17,10 +16,8 @@ export default async function handler(req, res) {
   const meta = await fetch(API + id, { headers: { ...gh, Accept: "application/vnd.github+json" } });
   if (!meta.ok) return res.status(meta.status === 404 ? 404 : 502).end();
   const a = await meta.json();
-  // Only tender files and quotes: nothing else of the repo is served here.
-  const url = a.browser_download_url || "", quote = /\/releases\/download\/ncc-[A-Za-z0-9_.-]+\//.test(url);
-  if (quote) { if (!(await memberFrom(req))) return res.status(401).end(); }
-  else if (!/\/releases\/download\/hsmt-[A-Z]{2}\d{6,}\//.test(url)) return res.status(404).end();
+  // Only tender files: nothing else of the repo is served here.
+  if (!/\/releases\/download\/hsmt-[A-Z]{2}\d{6,}\//.test(a.browser_download_url || "")) return res.status(404).end();
   const link = await fetch(API + id, { headers: { ...gh, Accept: "application/octet-stream" }, redirect: "manual" });
   const to = link.headers.get("location");
   if (!to) return res.status(502).end();
@@ -30,7 +27,7 @@ export default async function handler(req, res) {
   res.status(r.status);
   res.setHeader("Content-Type", a.content_type || "application/octet-stream");
   res.setHeader("Content-Disposition", `inline; filename*=UTF-8''${encodeURIComponent(a.label || a.name)}`);
-  res.setHeader("Cache-Control", quote ? "private, no-store" : "private, max-age=86400");
+  res.setHeader("Cache-Control", "private, max-age=86400");
   res.setHeader("Accept-Ranges", "bytes");
   for (const h of ["content-length", "content-range"]) if (r.headers.get(h)) res.setHeader(h, r.headers.get(h));
   Readable.fromWeb(r.body).pipe(res);
