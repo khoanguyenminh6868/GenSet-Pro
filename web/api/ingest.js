@@ -85,8 +85,10 @@ export default async function handler(req, res) {
   }
   const joined = await markJoined(keep.filter((r) => r.coll === "bidders")).catch(() => []);
   const reopened = await reopenAmended(keep.find((r) => r.coll === "feed")).catch(() => []);
-  // A comparison answered: its HSDT (or technical proposal) files are no longer needed in the scratch bucket.
-  await Promise.all(keep.filter((r) => (r.coll === "comparereq" || r.coll === "tlktreq") && r.data.doneAt).map((r) => dropScratch(r.coll === "tlktreq" ? "tlkt" : "hsdt", r.id).catch(() => {})));
+  // A comparison or a Tạo HSDT tham khảo answered: its uploaded files (HSDT, technical proposal, template HSDT, supplier
+  // configuration) are no longer needed in the scratch bucket (Khoa, 2026-11-05: also after Tạo HSDT tham khảo).
+  const SCRATCH_DIR = { comparereq: "hsdt", hsdtreq: "hsdt", tlktreq: "tlkt" };
+  await Promise.all(keep.filter((r) => SCRATCH_DIR[r.coll] && r.data.doneAt).map((r) => dropScratch(SCRATCH_DIR[r.coll], r.id, r.coll).catch(() => {})));
   res.json({ written: keep.length, skipped: rows.length - keep.length, ...(joined.length ? { joined } : {}), ...(reopened.length ? { reopened } : {}) });
 }
 
@@ -155,10 +157,21 @@ async function reopenAmended(feed) {
   return w.ok ? out.map((r) => r.id) : [];
 }
 
-// Deletes every HSDT (dir "hsdt") or technical proposal (dir "tlkt") file the page uploaded for a tender (scratch bucket,
-// <dir>/<TBMT>/<time>/<file>). Only called once the latest request was answered, so no file a pending request still needs is removed.
-async function dropScratch(dir0, key) {
+// Deletes every file the page uploaded for a tender under <dir>/<TBMT>/<time>/<file> in the scratch bucket: the HSDT of
+// a Đối chiếu or the template / supplier configuration of a Tạo HSDT tham khảo (dir "hsdt"), the technical proposal of
+// a Đối chiếu TLKT (dir "tlkt"). Only called once the latest request of `coll` was answered. Đối chiếu and Tạo HSDT
+// tham khảo share hsdt/<TBMT>/, so the files the other one still waits for are kept.
+const SHARED_REQ = { comparereq: "hsdtreq", hsdtreq: "comparereq" };
+async function dropScratch(dir0, key, coll) {
   const st = `${SB_URL}/storage/v1/object`;
+  const busy = new Set();
+  if (SHARED_REQ[coll]) {
+    const q = await fetch(`${SB_URL}/rest/v1/docs?select=data&coll=eq.${SHARED_REQ[coll]}&id=eq.${encodeURIComponent(key)}`, { headers: sbHeaders });
+    if (!q.ok) return 0; // unsure what the other request needs: delete nothing now, the next answer cleans up
+    const other = (await q.json())[0]?.data;
+    if (other?.requestedAt && !(other.doneAt && other.doneAt >= other.requestedAt))
+      for (const f of [...(other.files || []), ...(other.templateFiles || []), ...(other.configFiles || [])]) if (f?.path) busy.add(f.path);
+  }
   const list = async (prefix) => {
     const r = await fetch(`${st}/list/scratch`, { method: "POST", headers: sbHeaders, body: JSON.stringify({ prefix, limit: 1000 }) });
     return r.ok ? await r.json() : [];
@@ -168,6 +181,7 @@ async function dropScratch(dir0, key) {
     if (dir.id) { paths.push(`${dir0}/${key}/${dir.name}`); continue; }
     for (const f of await list(`${dir0}/${key}/${dir.name}`)) if (f.id) paths.push(`${dir0}/${key}/${dir.name}/${f.name}`);
   }
-  if (paths.length) await fetch(`${st}/scratch`, { method: "DELETE", headers: sbHeaders, body: JSON.stringify({ prefixes: paths }) });
-  return paths.length;
+  const drop = paths.filter((p) => !busy.has(p));
+  if (drop.length) await fetch(`${st}/scratch`, { method: "DELETE", headers: sbHeaders, body: JSON.stringify({ prefixes: drop }) });
+  return drop.length;
 }
