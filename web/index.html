@@ -184,7 +184,7 @@ td.locc{white-space:normal!important;min-width:90px;max-width:130px}
 .aicon.mut{background:var(--panel2);color:var(--dim);border:1px solid var(--line)}
 .aline{margin-top:5px;display:flex}
 .closed-at{color:var(--rose)!important}
-.pline{color:var(--mint);font-weight:600;margin-top:4px}
+.pline{color:var(--mint);font-weight:600;margin-top:4px}.mprice{display:none}
 .bpline{color:var(--cyan);font-weight:600;margin-top:2px}
 .stepbtns{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
 /* Each move button takes the colour of the stage it moves to (st-* class). */
@@ -410,6 +410,9 @@ details.sec>div{margin-top:10px}
   table.grid .mstage{display:inline-block;margin-left:8px;vertical-align:middle}
   table.grid td.c-no .closed-at,table.grid td.c-no .tleft{display:inline-block}
   table.grid td.c-no .tleft{margin:0 0 0 8px}
+  table.grid td.c-name .dprice{display:none}
+  table.grid td.c-no .mprice{display:block;float:right;text-align:right;margin-left:10px}
+  table.grid td.c-no .mprice>div{margin-top:0}
   table.grid td.c-offerer,table.grid td.c-cap,table.grid td.c-loc{grid-column:1/-1}
   table.grid tr:has(td.c-stage .stepbtns,td.c-stage .aline) td.c-offerer{margin-top:5px}
   /* The labels sit in a column of their own, so the values line up (Khoa, 2026-11-05). */
@@ -962,6 +965,9 @@ function ownBid(key) {
   return p ? { ...r, bidPrice: p, bidPriceSrc: state.bidhist[key].final ? "KQLCNT" : "biên bản mở thầu" } : r;
 }
 const bidLabel = (t) => (stageOf(t) === "won" && ownBid(t._key).bidPriceSrc === "KQLCNT" ? "Giá trúng" : "Giá dự thầu");
+// The tender price: under the name, and on a phone at the right of the Mã số row instead (Khoa, 2026-11-05).
+const priceLine = (t) => (t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}</div>` : "");
+const mPrice = (t) => { const p = priceLine(t); return p ? `<div class="mprice">${p}</div>` : ""; };
 function bidLine(t) {
   const bp = ownBid(t._key).bidPrice;
   if (bp) return h`<div class="bpline num">${bidLabel(t)} ${priceShort(bp)}</div>`;
@@ -1210,9 +1216,9 @@ const COLS = [
   // Mã Số sorts by the posting date (Đăng), then the number: the number alone is not posting order (Khoa, 2026-11-03).
   { k: "no", label: "Mã Số", cls: "noc", val: (t) => `${pubOf(t)}|${isProject(t) ? projectNo(t) : t.notifyNo || ""}`, text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
     cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span>${raw(mStage(t))}<div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
-      const tl = timeLeft(t.bidCloseDate); return h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}
+      const tl = timeLeft(t.bidCloseDate); return h`${raw(mPrice(t))}<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(isCancelled(t) ? '<div class="tleft closed-at">Đã hủy TBMT</div>' : stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
-  { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}${raw(t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}</div>` : "")}${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
+  { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}<div class="dprice">${raw(priceLine(t))}</div>${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
   { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return v ? h`${v}` : '<span class="muted">Chưa có</span>'; } },
   { k: "cap", label: "Công Suất", cls: "capc", num: true, numUnit: "kVA", val: (t) => capacityOf(t)?.n ?? null, text: (t) => capacityOf(t)?.text || "", cell: (t) => { const c = capacityOf(t); return c ? h`<span class="cap">${c.text}</span>` : capScan.pending.has(t._key) ? '<span class="muted small">Đang đọc HSMT...</span>' : '<span class="muted">Chưa rõ</span>'; } },
   { k: "stage", label: "Trạng thái", pick: true, val: (t) => TABS.find((x) => x.key === tabOf(t))?.label, cell: (t) => { const st = stageOf(t), p = stepPrev(t), n = stepNext(t), drop = movesOf(t).includes("dropped");
