@@ -1751,7 +1751,7 @@ function ownBidHtml(t) {
   if (!["submitted", "won", "lost"].includes(stageOf(t))) return "";
   const r = ownBid(t._key);
   // Same grid as the facts above, so the price lines up with their values (Khoa, 2026-11-05).
-  return h`<dl class="kv"><dt>${bidLabel(t)} của mình</dt><dd class="row" style="gap:8px"><span style="flex:1;min-width:0">${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc.replace(/biên bản mở thầu/i, "BBMT") + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></dd></dl>`;
+  return h`<dl class="kv"><dt>${bidLabel(t)}</dt><dd class="row" style="gap:8px"><span style="flex:1;min-width:0">${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc.replace(/biên bản mở thầu/i, "BBMT") + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></dd></dl>`;
 }
 // Other bidders and their prices: the Windows worker reads them from the bid-opening minutes and results pages
 // on muasamcong (bidders/<key>, source "muasamcong ...").
