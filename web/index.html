@@ -2123,12 +2123,12 @@ function hsdtTabHtml(t) {
   // fills the offered equipment; without them the bid is drafted from the HSMT alone.
   const basis = [prev?.basis?.template?.length && "theo template " + prev.basis.template.join(", "), prev?.basis?.config?.length && "cấu hình NCC " + prev.basis.config.join(", ")].filter(Boolean).join(" · ");
   return hsWait + (hsErr ? h`<div class="note warn">Agent chưa soạn được: ${hsErr}</div>` : "") + h`<div class="drop" id="hpDrop">
-      <div class="row"><span class="muted small" style="flex:1"><b>Template HSDT</b> (không bắt buộc). Khi có, hồ sơ soạn theo bố cục, lời văn và bảng của mẫu này.</span><label class="btn sm" for="hpFiles">Chọn tệp</label></div>
+      <div class="row"><span class="muted small" style="flex:1"><b>Template HSDT</b> (không bắt buộc). Khi có, hồ sơ sẽ soạn theo mẫu này.</span><label class="btn sm" for="hpFiles">Chọn tệp</label></div>
       <input type="file" id="hpFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="hpList"></div>
     </div>
     <div class="drop" id="hcDrop">
-      <div class="row"><span class="muted small" style="flex:1"><b>Cấu hình của NCC</b> (không bắt buộc). Khi có, bảng đáp ứng kỹ thuật lấy thông số thiết bị của nhà cung cấp.</span><label class="btn sm" for="hcFiles">Chọn tệp</label></div>
+      <div class="row"><span class="muted small" style="flex:1"><b>Cấu hình của NCC</b> (không bắt buộc). Khi có, sẽ lấy thông số thiết bị của nhà cung cấp.</span><label class="btn sm" for="hcFiles">Chọn tệp</label></div>
       <input type="file" id="hcFiles" multiple accept=".pdf,.docx,.doc,.xlsx,.txt,.md,.csv,.zip,.rar,image/*" hidden>
       <div class="files" id="hcList"></div>
     </div>
