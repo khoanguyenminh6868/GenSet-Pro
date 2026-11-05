@@ -3406,8 +3406,8 @@ function bdView(c) {
   return { ...c, rows, n: rows.length, wins: won.length, decided: rows.filter((r) => r.d.final).length, wonValue: won.reduce((a, r) => a + (Number(r.b.winPrice ?? bdPrice(r.b)) || 0), 0), lastAt: rows.reduce((a, r) => (r.at > a ? r.at : a), "") };
 }
 function renderBdList() {
-  const q = bdFilter.q.trim().toLowerCase(), key = BD_SORT[bdFilter.sort][1];
-  const list = histIndex().map(bdView).filter(Boolean).filter((c) => !q || c.name.toLowerCase().includes(q) || c.tax.includes(q.replace(/\D/g, "") || "~"))
+  const q = fold(bdFilter.q.trim()), key = BD_SORT[bdFilter.sort][1];
+  const list = histIndex().map(bdView).filter(Boolean).filter((c) => !q || fold(c.name).includes(q) || c.tax.includes(q.replace(/\D/g, "") || "~"))
     .sort((a, b) => (key(b) > key(a) ? 1 : key(b) < key(a) ? -1 : a.name.localeCompare(b.name)));
   const nTenders = Object.keys(histDocs()).length;
   $("#bdCount").textContent = `${list.length} nhà thầu · ${nTenders} gói`;
