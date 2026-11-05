@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 93e41953-82a9-4265-a2a5-f081042fd87d
-  modified: 2026-11-04T10:26:49.752Z
+  modified: 2026-11-04T13:20:56.877Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (máy Windows, agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Mọi số/câu trích phải có nguyên văn trong nguồn; sai → "Đạt" thành "Chưa rõ". config-bot chạy tiến trình mới mỗi lượt nên sửa không cần restart bot. Lượt agent ~6–11 phút, ~$3/gói.
@@ -26,7 +26,11 @@ metadata:
 
 **Hồi quy lớn (04/11, PR #311):** tải `bidhist`/`analysis`/`supplier`/`configmatch` qua `api/requests?kind=docs&coll=…` rồi chạy `capacity`/`hintsOf`/`plausible`/`candidates` trên `genbid-work/specs/<K>/text.txt` (~1.240 gói), so với `bidhist.config.text/kvas` (AI đọc). Bộ so tự viết cũng sai (đọc "11.051 L" thành 11051, dự phòng thành Prime) → xem từng ca trước khi kết luận. candidates ~0,6 s/gói (CAT.build 6 s). Sau #311 + #313: công suất 97,8%, dung tích 61%, xi lanh 76%, Prime 59%. #313: `unflatten` (dòng > 300 ký tự tách lại hàng) + `sectionsOf` (số dưới tiêu đề đầu phát/động cơ). Bỏ sót còn lại: AI tính dung sai khác (±0,5 → code lấy số thấp), gói nhiều cỡ máy (code cố ý không đoán), OCR hỏng ký tự (≥ thành 2). Công suất tên gói bỏ số của máy biến áp/TBA/UPS (`capPick` trong web/bidprice.js, dùng chung bot + web + Gợi ý giá đấu). Chỉ có 6 configmatch trên web nên phần agent chưa hồi quy được nhiều.
 
-**Bẫy dữ liệu test (04/11):** chữ HSMT trên web (`hsmttext`) của ~1.490 gói lịch sử CHÍNH LÀ chữ Chương V do specs đăng, không phải HSMT cả bộ; chỉ gói đang mời thầu đã Lấy tệp (~33) có HSMT cả bộ. #315: technicalPart tìm chương theo tên (III/IV/V, "phạm vi cung cấp", "điều khoản tham chiếu"), bỏ mục lục. Chạy agent thật hàng loạt: scratchpad `agents.mjs` (prep → run.mjs → check, 4 song song, không post), `evalruns.mjs` chấm; 22 gói $62,65, ~9 phút/gói. #319: bảng nhãn một model (fdk-energy) là nguồn cả trang; gợi ý "tra được" bớt nhiễu. Khoa 04/11 (#320): yêu cầu origin cn (mặc định/chuỗi tự động) mà HSMT ghi rõ G7/G20 → bot tự chọn G7/G20 (`originOfHsmt`, `result.originAuto` có câu HSMT, web hiện); xuất xứ khác chọn trên web giữ nguyên. ~13% HSMT (202/1.520) đòi G7/G20. Lưu ý: nhóm g20 của mình KHÔNG gồm Trung Quốc, dù TQ là thành viên G20.
+**Bẫy dữ liệu test (04/11):** chữ HSMT trên web (`hsmttext`) của ~1.490 gói lịch sử CHÍNH LÀ chữ Chương V do specs đăng, không phải HSMT cả bộ; chỉ gói đang mời thầu đã Lấy tệp (~33) có HSMT cả bộ. #315: technicalPart tìm chương theo tên (III/IV/V, "phạm vi cung cấp", "điều khoản tham chiếu"), bỏ mục lục. Chạy agent thật hàng loạt: scratchpad `agents.mjs` (prep → run.mjs → check, 4 song song, không post), `evalruns.mjs` chấm; 22 gói $62,65, ~9 phút/gói. #319: bảng nhãn một model (fdk-energy) là nguồn cả trang; gợi ý "tra được" bớt nhiễu. Đợt 2 (04/11): 50 gói nữa, $135,86, 8 phút/gói, không lỗi code mới. Tổng 72 gói: 59 có ≥1 cấu hình không trượt mục chính; "chưa rõ" 63% mục kiểm (thiếu dữ liệu). Trượt còn lại do dữ liệu: HSMT đòi đồng bộ thương hiệu, model cụ thể (Denyo), xuất xứ EU (Khoa 04/11: KHÔNG thêm nhóm EU), máy lớn ≥2.500 kVA thiếu BĐK. Chạy khô không gộp NCC tìm trên internet nên #1 có thể "NCC 0".
+
+Khoa 04/11 (#320): yêu cầu origin cn (mặc định/chuỗi tự động) mà HSMT ghi rõ G7/G20 → bot tự chọn G7/G20 (`originOfHsmt`, `result.originAuto` có câu HSMT, web hiện); xuất xứ khác chọn trên web giữ nguyên. ~13% HSMT (202/1.520) đòi G7/G20. Lưu ý: nhóm g20 của mình KHÔNG gồm Trung Quốc, dù TQ là thành viên G20.
+
+**Gói nhiều cỡ máy (Khoa 04/11, PR #332):** `sizesOf`/`sizesFor` đọc cỡ + số lượng từ `analysis.keyInfo.generatorCapacity` (không có thì tên gói). ≥2 cỡ → mỗi cỡ một agent (tối đa `MAX_SIZES`=4, song song), `input.md` dặn chỉ đọc yêu cầu cỡ đó; `configmatch.result.sizes=[{cap,kva,qty,label,quote,result|error}]` (web `cfgSizesHtml`). Tìm NCC: một lượt cho mọi cỡ (cap là mảng), gộp vào từng cỡ. Thử: `prep --key K --out D --size 2`. Bộ đọc cỡ sai chủ yếu ở gói bảo dưỡng/thuê; ngưỡng gộp 12% (prime/standby không nhãn), kW≈kVA 15% là cùng máy. Thử thật IB2400058723 (630+800): mỗi cỡ đọc đúng ngưỡng riêng.
 
 **Khoa 04/11:** nguồn mâu thuẫn (kể cả 1 nguồn sai rõ ràng, 2 nguồn khác khớp nhau) vẫn để "chưa rõ", KHÔNG lấy đa số.
 
