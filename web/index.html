@@ -1750,7 +1750,7 @@ document.addEventListener("visibilitychange", () => { if (!document.hidden) poll
 function ownBidHtml(t) {
   if (!["submitted", "won", "lost"].includes(stageOf(t))) return "";
   const r = ownBid(t._key);
-  return h`<div class="row"><span class="small" style="flex:1;min-width:200px">${bidLabel(t)} của mình: ${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></div>`;
+  return h`<div class="row"><span class="small" style="flex:1;min-width:200px">${bidLabel(t)} của mình: ${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc.replace(/biên bản mở thầu/i, "BBMT") + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></div>`;
 }
 // Other bidders and their prices: the Windows worker reads them from the bid-opening minutes and results pages
 // on muasamcong (bidders/<key>, source "muasamcong ...").
