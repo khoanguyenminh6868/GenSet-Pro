@@ -1405,7 +1405,7 @@ window.addEventListener("hashchange", () => navHashOk() && openTenderFromUrl());
 let drawerBack = [];
 function openDrawer(key, tab, back) {
   drawerBack = back ? [...drawerBack, back] : []; state.list = null; $("#dtabs").hidden = false;
-  state.open = key; state.dtab = tab || "info";
+  state.open = key; state.dtab = tab || "info"; openSizesReset();
   if (tenderOfUrl() !== key) try { history.replaceState(history.state, "", tenderHref(key)); } catch {}
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
   renderDrawer(); renderGrid();
@@ -2923,13 +2923,16 @@ function configTabHtml(t) {
 // Gói nhiều cỡ máy (Khoa, 2026-11-04): the bot suggests each size on its own (config-bot.mjs sizesOf, result.sizes);
 // each size's result is shown as a tender of one size, under its own heading.
 const sizeTitle = (z) => `Máy ${z.qty ? `${z.qty} x ` : ""}${z.label}`;
-// Each size folds open / closed by its heading (Khoa, 2026-11-05), so the other sizes are easy to reach. What is closed
-// stays closed while the page is open (the tab is drawn again on every change): sizeClosed holds "<tab>|<key>|<label>".
-const sizeClosed = new Set();
-const sizeBox = (id, head, body) => h`<details class="sizebox" data-sizebox="${id}" ${sizeClosed.has(id) ? "" : "open"}><summary class="sizehead" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span>${raw(head)}</summary>${raw(body)}</details>`;
+// Each size folds open / closed by its heading (Khoa, 2026-11-05), so the other sizes are easy to reach. Every size
+// starts closed when the tab is opened (Khoa, 2026-11-05); one opened stays open while the tab is drawn again on a
+// change: sizeOpen holds "<tab>|<key>|<label>" and is emptied when a tender or a tab is opened (openSizesReset).
+// var and a function declaration: a tender opened from the URL at load runs openSizesReset before this line.
+var sizeOpen = new Set();
+function openSizesReset() { sizeOpen?.clear(); }
+const sizeBox = (id, head, body) => h`<details class="sizebox" data-sizebox="${id}" ${sizeOpen?.has(id) ? "open" : ""}><summary class="sizehead" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span>${raw(head)}</summary>${raw(body)}</details>`;
 document.addEventListener("toggle", (e) => {
   const id = e.target.dataset?.sizebox;
-  if (id) e.target.open ? sizeClosed.delete(id) : sizeClosed.add(id);
+  if (id && sizeOpen) e.target.open ? sizeOpen.add(id) : sizeOpen.delete(id);
 }, true);
 function cfgSizesHtml(r, key) {
   return h`<div class="note">Gói có ${r.sizes.length} cỡ máy (${r.sizes.map((z) => sizeTitle(z).slice(4)).join("; ")}): mỗi cỡ được gợi ý cấu hình riêng.${r.skipped?.length ? ` Chưa gợi ý các cỡ: ${r.skipped.join("; ")} (mỗi lượt tối đa ${r.sizes.length} cỡ).` : ""}</div>`
@@ -3697,7 +3700,7 @@ document.addEventListener("click", async (e) => {
   const st = e.target.closest("#stageTabs [data-stage]");
   if (st) { state.stage = st.dataset.stage; saveView(); state.filters.stage = ""; state.limit = pageSize(); renderAll(); return; }
   const dt = e.target.closest("#dtabs [data-dt]");
-  if (dt && !dt.disabled) { state.dtab = dt.dataset.dt; renderDrawer(); return; }
+  if (dt && !dt.disabled) { state.dtab = dt.dataset.dt; openSizesReset(); renderDrawer(); return; }
   if (e.target.closest("#trAddSec")) { const el = $("#trEdit"); el.insertAdjacentHTML("beforeend", "<h3>New section</h3><ul><li></li></ul>"); const h3 = el.lastElementChild.previousElementSibling; h3.focus(); getSelection().selectAllChildren(h3); saveTrEdit(state.open, secsToText(trFromDoc() || [])); histRecord(el); return; }
   if (e.target.id === "trRun") { runTranslate(e.target.dataset.key, +(e.target.dataset.resume || 0)); return; }
   if (e.target.id === "cmRun") { const k = e.target.dataset.key, has = subPick?.files.length || $("#cmText")?.value.trim(); state.compare[k]?.result && has ? askRecompare(k) : runCompare(k); return; }
