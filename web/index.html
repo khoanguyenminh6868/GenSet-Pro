@@ -135,7 +135,9 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .kpi .kv{font:600 26px/1.15 var(--f-mono);font-variant-numeric:tabular-nums}
 .kpi .ks{font-size:12px;color:var(--dim)}
 .kpi{cursor:pointer}
-.sizehead{margin:18px 0 4px;font-size:16px;border-top:1px solid var(--line);padding-top:12px;color:var(--green)}
+.sizehead{margin:18px 0 4px;font-size:16px;font-weight:600;border-top:1px solid var(--line);padding-top:12px;color:var(--green)}
+.sizebox>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.sizebox>summary::-webkit-details-marker{display:none}
+.sizebox .chev{display:inline-block;transition:transform .15s}.sizebox:not([open]) .chev{transform:rotate(-90deg)}
 .kpi.bplev{cursor:default}.kpi.bplev .kv{font-size:20px}
 /* Giá gợi ý: each level its own colour, none violet (Khoa, 2026-11-04). */
 .kpi.bp-low{--kc:var(--mint)}.kpi.bp-mid{--kc:var(--blue)}.kpi.bp-high{--kc:var(--orange)}
@@ -2916,15 +2918,23 @@ function configTabHtml(t) {
       return actBar("Đã gợi ý", info, btns, "", "ok", "actrow cfgact");
     })()
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
-    + (prev?.result && !wait ? (prev.result.sizes ? cfgSizesHtml(prev.result) : cfgResultHtml(prev.result)) : "");
+    + (prev?.result && !wait ? (prev.result.sizes ? cfgSizesHtml(prev.result, key) : cfgResultHtml(prev.result)) : "");
 }
 // Gói nhiều cỡ máy (Khoa, 2026-11-04): the bot suggests each size on its own (config-bot.mjs sizesOf, result.sizes);
 // each size's result is shown as a tender of one size, under its own heading.
 const sizeTitle = (z) => `Máy ${z.qty ? `${z.qty} x ` : ""}${z.label}`;
-function cfgSizesHtml(r) {
+// Each size folds open / closed by its heading (Khoa, 2026-11-05), so the other sizes are easy to reach. What is closed
+// stays closed while the page is open (the tab is drawn again on every change): sizeClosed holds "<tab>|<key>|<label>".
+const sizeClosed = new Set();
+const sizeBox = (id, head, body) => h`<details class="sizebox" data-sizebox="${id}" ${sizeClosed.has(id) ? "" : "open"}><summary class="sizehead" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span>${raw(head)}</summary>${raw(body)}</details>`;
+document.addEventListener("toggle", (e) => {
+  const id = e.target.dataset?.sizebox;
+  if (id) e.target.open ? sizeClosed.delete(id) : sizeClosed.add(id);
+}, true);
+function cfgSizesHtml(r, key) {
   return h`<div class="note">Gói có ${r.sizes.length} cỡ máy (${r.sizes.map((z) => sizeTitle(z).slice(4)).join("; ")}): mỗi cỡ được gợi ý cấu hình riêng.${r.skipped?.length ? ` Chưa gợi ý các cỡ: ${r.skipped.join("; ")} (mỗi lượt tối đa ${r.sizes.length} cỡ).` : ""}</div>`
-    + r.sizes.map((z) => h`<h3 class="sizehead">${sizeTitle(z)}</h3>${raw(z.quote ? h`<div class="muted small">Đọc từ: <q>${z.quote}</q></div>` : "")}`
-      + (z.result ? cfgResultHtml(z.result) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`)).join("");
+    + r.sizes.map((z) => sizeBox(`cfg|${key}|${z.label}`, h`<span>${sizeTitle(z)}</span>`, (z.quote ? h`<div class="muted small">Đọc từ: <q>${z.quote}</q></div>` : "")
+      + (z.result ? cfgResultHtml(z.result) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`))).join("");
 }
 // The note can be closed (Khoa, 2026-11-01); it is kept closed in this browser until the next Tìm NCC result.
 // The suppliers it adds go into the suggested configurations in code, no agent (config-bot.mjs mergeFind, r.configMerge).
@@ -3506,8 +3516,8 @@ function bidPriceMultiHtml(doc, t) {
       : r.levels.length ? h`<h4 style="margin:12px 0 4px">Cả gói (cộng các cỡ máy)</h4><div class="kpis" style="margin:8px 0">${raw(r.levels.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${l.ratio ? bpPct(l.ratio) + " giá gói" : ""}</span></div>`).join(""))}</div>`
       : '<div class="note warn">Chưa đủ gói tương tự cho mọi cỡ máy nên chưa cộng được giá cả gói. Xem từng cỡ bên dưới.</div>')}
     ${raw((r.notes || []).length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}`
-    + r.sizes.map((z) => h`<h3 class="sizehead">${sizeTitle(z)} <span class="muted small">· ${Math.round(100 * z.share)}% giá gói${z.result?.basis.price ? ` ≈ ${fmtVnd(z.result.basis.price)}` : ""}</span></h3>`
-      + (z.result ? bidPriceHtml({ at: doc.at, result: z.result }, t) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`)).join("");
+    + r.sizes.map((z) => sizeBox(`bp|${t._key}|${z.label}`, h`<span>${sizeTitle(z)}</span> <span class="muted small">· ${Math.round(100 * z.share)}% giá gói${z.result?.basis.price ? ` ≈ ${fmtVnd(z.result.basis.price)}` : ""}</span>`,
+      z.result ? bidPriceHtml({ at: doc.at, result: z.result }, t) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`)).join("");
 }
 
 // ---------- Modal ----------
