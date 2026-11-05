@@ -556,7 +556,7 @@ const CONF = { high: 30, medium: 15 };
 // A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
 // Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
-const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4;
+const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12;
 // The minimums of the HSMT that fit the genset of this run: a tender of several sizes gives the fuel of its small one
 // (104 L/h beside 2500 kVA), an OCR slip a prime of 107 kVA for 8.5 kVA, "lưu lượng dầu đến bơm ≤ 450 lít/giờ" a fuel
 // limit for 500 kVA (2026-11-03 scan of 390 HSMT). Such a figure would rank every candidate down: left out.
@@ -630,12 +630,20 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   rows.sort((x, y) => y.score - x.score);
   const perEngine = new Map(), perSupplier = new Map(), seen = new Set(), out = [];
   const add = (m, k) => m.set(k, (m.get(k) || 0) + 1);
-  for (const r of rows) {
-    const k = choiceKey(r);
-    if (seen.has(k) || (perEngine.get(r.e.key) || 0) >= (r.named ? PER_NAMED_ENGINE : PER_ENGINE) || (perSupplier.get(r.u.supplierId) || 0) >= PER_SUPPLIER) continue;
-    seen.add(k); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r);
-    if (out.length >= max) break;
-  }
+  const pick = (list, n) => {
+    for (const r of list) {
+      if (out.length >= n) break;
+      const k = choiceKey(r);
+      if (seen.has(k) || (perEngine.get(r.e.key) || 0) >= (r.named ? PER_NAMED_ENGINE : PER_ENGINE) || (perSupplier.get(r.u.supplierId) || 0) >= PER_SUPPLIER) continue;
+      seen.add(k); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r);
+    }
+  };
+  // No origin required (no G7 / G20 in the HSMT): Chinese makes keep CN_ROWS of the rows (Khoa, 2026-11-05: a Chinese
+  // configuration that meets the HSMT better goes first, so it must be among the suggestions). Foreign engines have
+  // more datasheet figures and would otherwise fill the rows. Not when the HSMT names an engine make or model.
+  if (origin === "all" && !hints.engineMakes.length && !rows.some((r) => r.named)) pick(rows.filter((r) => CAT.originOf(r.e) === "cn"), Math.min(CN_ROWS, max));
+  pick(rows, max);
+  out.sort((x, y) => y.score - x.score);
   return { top: out, all: rows };
 }
 // At most 6 configurations (Khoa 2026-11-03: a run checked 49 requirements × 8 configurations in 11 minutes).
@@ -890,7 +898,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
     origin === "cn" ? `Gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Cấu hình động cơ hãng Trung Quốc đứng trước cấu hình động cơ hãng nước khác (Khoa, 2026-11-03). Động cơ hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}, kể cả loại sản xuất theo giấy phép như Dongfeng Cummins, Chongqing Cummins) chỉ được gợi ý khi có nhà cung cấp đặt tại Trung Quốc (quốc gia CN trong catalog.md) chào động cơ đó trong bảng của mình; khi đó "suppliers" chỉ ghi các nhà cung cấp ở Trung Quốc đó. Khi tìm trên internet cũng vậy: hãng nước ngoài chỉ được tính khi trang của một nhà cung cấp ở Trung Quốc chào nó.`
     : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${origin.toUpperCase()} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...), kể cả loại sản xuất theo giấy phép. Động cơ nguồn không ghi hãng thì không gợi ý.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
-    : "Không giới hạn xuất xứ động cơ.", "",
+    : "Không giới hạn xuất xứ động cơ (HSMT không đòi G7 / G20). Gợi ý cả cấu hình động cơ hãng Trung Quốc (Weichai, Yuchai, SDEC...) lẫn động cơ hãng nước khác; cấu hình động cơ hãng Trung Quốc đáp ứng HSMT tốt hơn hoặc ngang cấu hình động cơ hãng nước khác thì xếp trước (Khoa, 2026-11-05). Code xếp lại theo kết quả kiểm tra.", "",
     // Yêu cầu khác (Khoa, 2026-11-01): typed on the web next to Gợi ý / Tìm NCC, checked like the HSMT's requirements.
     ...(extraOf(reqData) ? ["## Yêu cầu khác (người dùng nhập trên web, bắt buộc kiểm tra như yêu cầu của HSMT)", extraOf(reqData), ""] : []),
     "## Thông số kỹ thuật theo phân tích (chỉ để định hướng, trích dẫn phải lấy từ hsmt.txt)",
@@ -1269,7 +1277,8 @@ function checkDir(dir, suppliers, added = [], origin) {
 // The order of the configurations and of their suppliers, set in code (Khoa, 2026-11-02): the engine and the
 // controller first, then the alternator and the genset as a whole; options (tank, size, noise...) come last. In each
 // group a "not met" weighs more than a supplier that fits, which weighs more than an "unclear"; a core requirement with
-// no check counts as unclear, so a configuration checked on fewer points is not ranked higher. Ties keep the agent's order.
+// no check counts as unclear, so a configuration checked on fewer points is not ranked higher. Ties: an engine of a
+// Chinese make first (Khoa, 2026-11-05), then the agent's order.
 const groupOf = (x) => (x.level === "option" ? 2 : x.part === "engine" || x.part === "controller" ? 0 : 1);
 export function scoreOf(c, reqs = []) {
   const n = [[0, 0], [0, 0], [0, 0]], seen = new Set();
@@ -1303,7 +1312,9 @@ export function rankConfigs(result) {
   for (const c of result.configs || []) noController(c, reqs);
   const cmp = (a, b) => { for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
   const list = (result.configs || []).map((c, i) => ({ c, i, s: scoreOf(c, reqs) }));
-  list.sort((x, y) => cmp(x.s, y.s) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
+  // Same score: an engine of a Chinese make first (Khoa, 2026-11-05). Under G7 / G20 / Khác there is none.
+  const cnOf = (c) => (c.engine?.model && CAT.originIn(`${c.engine.model} ${c.engine.make || ""}`, c.engine.model) === "cn" ? 0 : 1);
+  list.sort((x, y) => cmp(x.s, y.s) || cnOf(x.c) - cnOf(y.c) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
   result.configs = list.map(({ c }, i) => {
     // Suppliers: one offering both the engine (its checked row names it) and the controller first, then one whose
     // row names the engine, then the genset row's own supplier, one whose row names the alternator, then the agent's
