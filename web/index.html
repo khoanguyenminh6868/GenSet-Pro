@@ -2065,6 +2065,28 @@ async function loadTranslation(key) {
 const trState = {};
 // The Windows bot translates (translate-prompt.md) and writes translation/<key> back.
 function runTranslate(key) { return requestWorker("translationreq", key, {}, "dịch"); }
+// File name: only the prime power in kVA, e.g. "500kVA" (Khoa, 2026-11-05: no standby, no kW). Read from the brief
+// ("Prime power ... 500 kVA"), else the tender power text near liên tục / prime, else its first kVA figure.
+function trPrimeKva(secs, t) {
+  const num = (v) => parseFloat(String(v).trim().replace(/[.,\s](?=\d{3}(?!\d))/g, "").replace(",", "."));
+  const NUM = "(\\d[\\d.,\\s]*?)\\s*kVA";
+  const pick = (text, near) => {
+    const out = [];
+    for (const line of String(text || "").split(/\n|;/)) {
+      const re = near ? new RegExp("(?:" + near + ")[^\\d\\n]{0,40}?" + NUM, "gi") : new RegExp(NUM, "gi");
+      for (const m of line.matchAll(re)) {
+        const n = num(m[1]);
+        if (n > 0 && !out.includes(n)) out.push(n);
+        if (!near) break;
+      }
+    }
+    return out;
+  };
+  const brief = secs.flatMap((x) => [x.heading, ...(x.points || []).map((q) => richRuns(q).map((r) => r.text).join(""))]).join("\n");
+  const capText = t ? capacityOf(t)?.text : "";
+  const list = [pick(brief, "prime|PRP|continuous"), pick(capText, "liên tục|prime|PRP"), pick(capText, "").slice(0, 1)].find((l) => l.length);
+  return list ? list.map((n) => String(n) + "kVA").join(", ") : "";
+}
 async function translationPdf(key) {
   const t = findTender(key), secs = trFromDoc() || trState[key] || [];
   const info = $("#trInfo"); info.textContent = "Đang tạo PDF...";
@@ -2121,7 +2143,7 @@ async function translationPdf(key) {
       y += 2;
     }
     // No footer; named by the genset power, e.g. "500kVA - Technical requirements.pdf" (Khoa, 2026-11-04).
-    const cap = t && capFromText(capacityOf(t)?.text)?.text.replace(/ (kVA|kW|MVA|MW)/g, "$1");
+    const cap = trPrimeKva(secs, t);
     const ok = await saveFile(fileSafe(`${cap ? cap + " - " : ""}Technical requirements.pdf`), doc.output("blob"));
     info.textContent = ok ? "Đã tải PDF." : "";
   } catch (e) { info.textContent = e?.message || "Không tạo được PDF."; }
