@@ -16,8 +16,9 @@ const KEY_RE = /^[A-Za-z0-9_.-]{1,100}$/;
 const sb = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` };
 const enc = (p) => p.split("/").map(encodeURIComponent).join("/");
 const fileUrl = (id) => "/api/quote?id=" + encodeURIComponent(id);
-// A file of this tender only: <TBMT>/<one plain name>.
-const okId = (key, id) => KEY_RE.test(key || "") && id.startsWith(key + "/") && /^[A-Za-z0-9._-]{1,200}$/.test(id.slice(key.length + 1));
+// A file of this tender only: <TBMT>/<one plain name>, no "." or ".." that would leave the bucket.
+const okId = (key, id) => KEY_RE.test(key || "") && id.startsWith(key + "/") && /^[A-Za-z0-9._-]{1,200}$/.test(id.slice(key.length + 1))
+  && !id.split("/").some((s) => /^\.+$/.test(s));
 
 export default async function handler(req, res) {
   if (req.method === "GET") return download(req, res);
