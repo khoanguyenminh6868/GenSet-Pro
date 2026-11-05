@@ -265,6 +265,7 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .dtabs::before,.dtabs::after{content:"";margin:auto}
 .dbody{overflow:auto;padding:14px 16px 28px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:0}
 .kv{display:grid;grid-template-columns:minmax(120px,34%) minmax(0,1fr);gap:6px 12px;font-size:13.5px;margin:0}
+.kv.kvo{grid-template-columns:110px minmax(0,1fr)}
 .kv dt{color:var(--muted)}.kv dd{margin:0;overflow-wrap:anywhere}
 .kv dd.hl-price{color:var(--mint);font-weight:600}.kv dd.hl-close{color:var(--orange);font-weight:600}
 .doclist{display:flex;flex-direction:column;gap:6px}
@@ -1450,7 +1451,7 @@ function infoHtml(t) {
   const c = capacityOf(t);
   const facts = [["Chủ đầu tư", t.investorName], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => w.name + (w.price ? ` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
   return h`<div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" rows="2" style="min-height:56px" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
-    <dl class="kv">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${v}</dd>`).join(""))}</dl>
+    <dl class="kv kvo">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${v}</dd>`).join(""))}</dl>
     ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) || state.bidhist?.[t._key] ? biddersHtml(t) : "")}
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
@@ -1751,7 +1752,7 @@ function ownBidHtml(t) {
   if (!["submitted", "won", "lost"].includes(stageOf(t))) return "";
   const r = ownBid(t._key);
   // Same grid as the facts above, so the price lines up with their values (Khoa, 2026-11-05).
-  return h`<dl class="kv"><dt>${bidLabel(t)}</dt><dd class="row" style="gap:8px"><span style="flex:1;min-width:0">${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc.replace(/biên bản mở thầu/i, "BBMT") + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></dd></dl>`;
+  return h`<dl class="kv kvo"><dt>${bidLabel(t)}</dt><dd class="row" style="gap:8px"><span style="flex:1;min-width:0">${raw(r.bidPrice ? h`<b class="bpline num">${fmtVnd(r.bidPrice)}</b>${r.bidPriceSrc ? " (" + r.bidPriceSrc.replace(/biên bản mở thầu/i, "BBMT") + ")" : ""}` : '<span class="muted">chưa có</span>')}</span><button class="btn sm" data-act="bidprice" data-key="${t._key}">${r.bidPrice ? "Sửa" : "Nhập"}</button></dd></dl>`;
 }
 // Other bidders and their prices: the Windows worker reads them from the bid-opening minutes and results pages
 // on muasamcong (bidders/<key>, source "muasamcong ...").
