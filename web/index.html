@@ -2761,7 +2761,7 @@ const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${
 let catFrom = null;
 function openCatalog(kind, key, from = null) {
   needSup();
-  filtOpen = false;
+  filtOpen = true; // Thông số cấu hình: filter rows open by default on phone (Khoa, 2026-11-05)
   catFrom = from;
   catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}) };
   modal(mBanner("cat", "Thông số cấu hình", "Rút từ bảng thông số của các nhà cung cấp", "catTitle", "#" + SCREEN_HASH[kind]) + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
