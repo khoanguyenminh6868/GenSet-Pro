@@ -1797,8 +1797,8 @@ function analysisTabHtml(t) {
       ? h`<div class="note row">${raw(progress(""))}<span style="flex:1;min-width:200px">Đã gửi yêu cầu phân tích</span></div>`
       : waitHtml("Đang chờ Agent phân tích...", state.analysisreq[t._key].requestedAt))
     : s === "error" ? h`<div class="note err row"><span style="flex:1;min-width:200px">Phân tích lần đầu bị lỗi: ${a.error || ""}</span><button class="btn sm primary" data-act="retry" data-key="${t._key}">Retry</button></div>`
-    : s === "nodocs" ? h`<div class="row"><button class="btn primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button><span class="muted small">Gói này chưa có hồ sơ mời thầu.</span></div>`
-    : s === "skip" ? h`<div class="row"><button class="btn primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button></div>`
+    : s === "nodocs" ? h`<div class="row"><span class="muted small">Gói này chưa có hồ sơ mời thầu.</span><div class="spacer"></div><button class="btn primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button></div>`
+    : s === "skip" ? h`<div class="row"><div class="spacer"></div><button class="btn primary" data-act="reanalyze" data-key="${t._key}">Phân tích ngay</button></div>`
     : h`<div class="note">${a?.basis === "notice" ? "Đã có tệp HSMT. Gói này đang chờ đến lượt phân tích lại đầy đủ; bên dưới là bản sơ bộ từ thông báo mời thầu." : "Gói này chưa được phân tích."}</div>`;
   const reqErr = s !== "requested" && analysisReqError(t._key);
   const errNote = reqErr ? h`<div class="note warn">Agent chưa phân tích được: ${reqErr}</div>` : "";
