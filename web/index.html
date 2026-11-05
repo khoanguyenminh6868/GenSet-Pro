@@ -1477,7 +1477,7 @@ function quoteHtml(t) {
         ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Upload</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
         ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
       ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
-        ${raw(ro ? "" : h`${raw(/\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-qopen="${r.id}:${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : h`<button class="btn sm" data-qopen="${r.id}:${i}">Tải về</button>`)}<button class="btn sm" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
+        ${raw(ro ? "" : h`${raw(/\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-qopen="${r.id}:${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : h`<button class="btn sm" data-qopen="${r.id}:${i}" title="Tải về" aria-label="Tải về">${raw(DL_SVG)}</button>`)}<button class="btn sm" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(up ? progress(up) : "")}
     </div>`;
   };
