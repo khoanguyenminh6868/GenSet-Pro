@@ -121,7 +121,8 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 @media (max-width:640px){#count{display:none}.banner{padding:12px 14px;gap:12px}}
 @media (max-width:640px){.navbtns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;width:100%}.navbtns .btn{justify-content:center;padding-inline:2px;gap:3px;min-width:0;font-size:12px}.navbtns .btn svg{flex-shrink:0}}
 /* Sync, new-only and log light up yellow on hover like the banner buttons (Khoa, 2026-11-04). */
-.syncline .ibtn:hover{border-color:var(--violet)}
+/* Hover only with a real mouse: on touch the tapped button kept the hover border after Sync (Khoa, 2026-11-05). */
+@media (hover:hover){.syncline .ibtn:hover{border-color:var(--violet)}}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--dim);display:inline-block}
 .dot.live{background:var(--mint);box-shadow:0 0 0 3px var(--mint-soft)}
 .dot.busy{background:var(--violet);box-shadow:0 0 0 3px var(--violet-soft)}
@@ -2346,7 +2347,7 @@ async function runCompare(key) {
     out.innerHTML = "";
     await requestWorker("comparereq", key, { files, text: $("#cmText").value }, "đối chiếu");
   } catch (e) { out.innerHTML = h`<div class="note err">${e?.message || "Không gửi được yêu cầu đối chiếu."}</div>`; }
-  finally { btn.disabled = false; }
+  finally { btn.disabled = false; btn.blur(); }
 }
 
 // ---------- Nhà cung cấp (suppliers/cn/<id>.json in the repo, posted as supplier/<id> by suppliers/upload.mjs) ----------
@@ -3802,7 +3803,7 @@ async function syncNew() {
   const btn = $("#syncNewBtn"); btn.disabled = true;
   try { await saveRequests("syncreq", [{ key: "current", mode: "new" }]); syncState.note = null; }
   catch (e) { syncState.note = { kind: "err", text: "Không gửi được yêu cầu lấy gói mới: " + (e?.message || "lỗi không rõ") }; }
-  finally { btn.disabled = false; renderAll(); }
+  finally { btn.disabled = false; btn.blur(); renderAll(); }
 }
 async function refreshAll() {
   const btn = $("#refreshBtn"); btn.disabled = true;
