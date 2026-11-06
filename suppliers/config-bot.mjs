@@ -932,7 +932,8 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   if (reuse) fs.writeFileSync(path.join(dir, "requirements.json"), JSON.stringify(prevReq.requirements.map(({ item, requirement, quote, from, part, level }) => ({ item, requirement, quote, ...(from ? { from } : {}), part, level })), null, 1), "utf8");
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
-    ...(multi?.find ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`, `Tìm nhà cung cấp cho mọi cỡ máy này (danh mục trong catalog.md chỉ xếp cho máy ${multi.size.label}).`]
+    ...(multi?.only ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`, `Lượt Tìm NCC này CHỈ tìm cho máy ${sizeText(multi.size)}.`]
+    : multi?.find ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`, `Tìm nhà cung cấp cho mọi cỡ máy này (danh mục trong catalog.md chỉ xếp cho máy ${multi.size.label}).`]
     : multi ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`,
       `Lượt này CHỈ gợi ý cấu hình cho máy ${sizeText(multi.size)} (code đọc từ: "${multi.size.quote}"); các cỡ khác có lượt riêng. Chỉ ghi các yêu cầu của HSMT áp dụng cho máy này hoặc chung cho mọi máy của gói; bỏ yêu cầu chỉ dành cho máy cỡ khác (công suất, tiêu hao nhiên liệu, dung tích, kích thước... của máy khác).`] : []),
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`,
@@ -1708,10 +1709,15 @@ function runGemini(dir, input) {
   });
 }
 // A tender of several sizes: one search for all of them (cap: the list of sizes), merged into each size's suggestion.
-async function findPrep(key, dir, req, suppliers) {
-  const found = await sizesFor(key, req.bidName), sizes = found.slice(0, MAX_SIZES);
-  const info = await prep(key, dir, req, suppliers, sizes.length > 1 ? { size: sizes[0], sizes, find: true } : null);
-  if (sizes.length > 1) info.cap = sizes.map((x) => x.cap);
+// Tìm nhà cung cấp of one suggested configuration that has none (Khoa, 2026-11-06): req.target names it (size label,
+// rank, engine, alternator, controller, genset); the search is for suppliers of that configuration at that size only.
+// The suppliers found join it in code (mergeFind: same engine, and the same alternator when both name one).
+export const targetText = (t) => [t.engine?.model && `động cơ ${t.engine.model}${t.engine.make ? ` (${t.engine.make})` : ""}`, t.alternator?.model && `đầu phát ${t.alternator.model}${t.alternator.make ? ` (${t.alternator.make})` : ""}`, t.controller?.model && `bộ điều khiển ${t.controller.model}${t.controller.make ? ` (${t.controller.make})` : ""}`, t.genset?.model && `tổ máy tham chiếu ${t.genset.model}`].filter(Boolean).join(", ");
+export async function findPrep(key, dir, req, suppliers) {
+  const found = await sizesFor(key, req.bidName), sizes = found.slice(0, MAX_SIZES), t = req.target?.engine?.model ? req.target : null;
+  const one = t && sizes.length > 1 ? sizes.find((x) => x.label === t.size) || null : null;
+  const info = await prep(key, dir, req, suppliers, one ? { size: one, sizes, find: true, only: true } : sizes.length > 1 ? { size: sizes[0], sizes, find: true } : null);
+  if (sizes.length > 1 && !one) info.cap = sizes.map((x) => x.cap);
   // Tìm NCC must see every supplier in the system (not only those of the candidate rows), so as not to suggest them again.
   const cat = fs.readFileSync(path.join(dir, "catalog.md"), "utf8"), cut = cat.indexOf("\n\n# Nhà cung cấp trong hệ thống");
   fs.writeFileSync(path.join(dir, "catalog.md"), (cut >= 0 ? cat.slice(0, cut) : cat) + "\n\n" + suppliersMd(JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8"))), "utf8");
@@ -1720,7 +1726,11 @@ async function findPrep(key, dir, req, suppliers) {
     `# Tìm NCC cho gói ${key}`, "",
     `Lệnh kiểm tra newCatalog.json: node "${SCRIPT}" find-check --dir .`,
     `Lệnh kiểm tra đã có: node "${path.join(ROOT, "discover.mjs")}" check "<tên công ty hoặc website>"`,
-    "", "## Công ty Khoa hay làm việc (tìm riêng theo tên trước)", ...watch.map((w) => `- ${w.name}${w.note ? ` (${w.note})` : ""}`), "", "",
+    "", ...(t ? [`## Tìm nhà cung cấp cho MỘT cấu hình đã gợi ý: #${t.rank || "?"}${t.size ? ` máy ${t.size}` : ""}`,
+      `Cấu hình này chưa có nhà cung cấp nào trong hệ thống: ${targetText(t)}.`,
+      `Chỉ tìm nhà cung cấp (hãng tổ máy, nhà máy lắp ráp, đại lý) chào tổ máy dùng ĐÚNG động cơ ${t.engine.model} ở công suất của gói${t.alternator?.model ? `, tốt nhất cùng đầu phát ${t.alternator.model}` : ""}${t.controller?.model ? ` và bộ điều khiển ${t.controller.model}` : ""}. Không tìm cấu hình khác.`,
+      `Code gắn nhà cung cấp vào cấu hình này khi một dòng specTables của nó ghi cả model động cơ ${t.engine.model} và công suất (đầu phát khác ${t.alternator?.model || "—"} thì thành cấu hình mới). Trong find.json ghi rõ mỗi nhà cung cấp chào đúng những bộ phận nào của cấu hình.`, ""] : []),
+    "## Công ty Khoa hay làm việc (tìm riêng theo tên trước)", ...watch.map((w) => `- ${w.name}${w.note ? ` (${w.note})` : ""}`), "", "",
   ].join("\n");
   const input = path.join(dir, "input.md");
   fs.writeFileSync(input, head + fs.readFileSync(input, "utf8"), "utf8");
@@ -1915,7 +1925,7 @@ async function find(req, suppliers) {
   const key = req.key, tried = [];
   const done = ({ result, error }) => {
     const at = new Date().toISOString();
-    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, extra: req.extra, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
+    const reqData = { notifyNo: req.notifyNo || key, bidName: req.bidName, origin: req.origin, extra: req.extra, ...(req.target ? { target: req.target } : {}), requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" };
     return post([...(result ? [{ coll: "findmatch", id: key, data: { at, result } }] : []), { coll: "findreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
@@ -1939,12 +1949,12 @@ async function find(req, suppliers) {
         if (!added.some((a) => !a.error)) { tried.push({ engine: ENGINE[engine], error: "bản ghi không qua được verify.mjs của repo", dropped: added }); continue; }
         const merged = await mergeFindIntoConfig(key, records, { cap, origin, suppliers }).catch((e) => ({ error: e.message }));
         const configMerge = merged?.error ? `chưa bổ sung được vào cấu hình gợi ý: ${merged.error}` : mergeText(merged);
-        await done({ result: { engine: ENGINE[engine], cap, ...(extraOf(req) ? { extra: extraOf(req) } : {}), summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried, configMerge } });
+        await done({ result: { engine: ENGINE[engine], cap, ...(req.target ? { target: req.target } : {}), ...(extraOf(req) ? { extra: extraOf(req) } : {}), summary: info.summary || "", added: [...added, ...dropped], skipped: info.skipped || [], notes: info.notes || [], tried, configMerge } });
         console.log(`${key}: Tìm NCC (${ENGINE[engine]}) bổ sung ${added.filter((a) => !a.error).length} nhà cung cấp; cấu hình: ${configMerge}`);
         return;
       } finally { fs.rmSync(dir, { recursive: true, force: true }); }
     }
-    await done({ result: { engine: "", ...(extraOf(req) ? { extra: extraOf(req) } : {}), summary: "Không tìm được nhà cung cấp mới nào phù hợp yêu cầu kỹ thuật và qua được kiểm tra nguồn.", added: [], skipped: [], notes: [], tried } });
+    await done({ result: { engine: "", ...(req.target ? { target: req.target } : {}), ...(extraOf(req) ? { extra: extraOf(req) } : {}), summary: "Không tìm được nhà cung cấp mới nào phù hợp yêu cầu kỹ thuật và qua được kiểm tra nguồn.", added: [], skipped: [], notes: [], tried } });
     console.log(`${key}: Tìm NCC không tìm được ai`);
   } catch (e) {
     await done({ error: e.message || String(e) }).catch(() => {});

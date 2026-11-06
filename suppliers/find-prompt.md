@@ -17,6 +17,12 @@ khác" section (typed on the web, Khoa 2026-11-01), the supplier's saved pages m
 supplier already in the system counts only when you add a product line or spec table at the required power that it
 does not have yet (use its id from catalog.md then).
 
+When input.md has a section "Tìm nhà cung cấp cho MỘT cấu hình đã gợi ý" (the button of one configuration with no
+supplier, Khoa 2026-11-06), the goal is only that: suppliers whose own pages offer a genset with that engine model at
+the tender's power (best with the same alternator and controller), at the size it names. Search for the engine model
+with "genset" / "generator" and the power, its maker's genset range, and Chinese assemblers' datasheets. Say in
+`summary` which parts of the configuration each supplier offers.
+
 ## Files
 - `input.md`: the tender, the power read from it, the commands, the watchlist, and the technical part of the HSMT.
 - `catalog.md`: the engines, alternators and suppliers already in the system (do not suggest them again unless you
