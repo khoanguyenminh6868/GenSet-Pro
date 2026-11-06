@@ -492,8 +492,28 @@
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: cells[ai], makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
     });
+    // A one-model datasheet whose table gives the power but not the engine (Rehlko D440: a two-column PDF puts "Engine
+    // ref." and "P158LE" on different lines, so no line names both; IB2600594596, 2026-11-06): the product line of
+    // that source naming one genset model, one engine and one power gives the engine, with the table row that
+    // holds that power, word for word, as its line. Only when that source gave no engine row.
+    for (const p of s.productLines || []) {
+      const pw = p.power, model = (p.engineModels || [])[0];
+      if (p.kind !== "genset" || (p.engineModels || []).length !== 1 || !isCode(model) || !pw || pw.min !== pw.max || !(pw.min > 0) || !/^(kVA|kW)$/.test(pw.unit)) continue;
+      for (const n of p.src || []) {
+        if (out.some((o) => o.n === n && o.kind === "engine")) continue;
+        const ti = (s.specTables || []).findIndex((t) => t.n === n && t.rows.some((r) => numbersOf(r).includes(pw.min)));
+        if (ti < 0) continue;
+        const t = s.specTables[ti], line = t.rows.find((r) => numbersOf(r).includes(pw.min)), kind = pw.rating === "prime" || pw.rating === "standby" ? pw.rating : "rated";
+        const makes = [];
+        for (const m of p.engineMakes || []) for (const b of brandIn(m, ENGINE_BRANDS)) addMake(makes, b, "tên trang");
+        out.push({ supplierId: s.id, n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(line), line, genset: isCode(p.series) ? p.series : null, power: { [kind]: { [pw.unit]: pw.min } },
+          freq: freqIn((p.frequency || []).join(" ")) || freqIn(`${(t.header || []).join(" ")} ${t.title || ""}`), header: t.header || [], specs: [], kind: "engine", model, makes, other: null, fromLine: true });
+        break;
+      }
+    }
     return out;
   }
+  const numbersOf = (s) => (String(s).replace(/(\d),(\d)/g, "$1.$2").match(/\d+(?:\.\d+)?/g) || []).map(Number);
 
   // The make shown: the names given by the strongest kind of evidence (a cell of the row, a column title or the
   // maker itself before a page title, which on dealer sites often lists several brands).

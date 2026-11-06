@@ -52,8 +52,12 @@ does not have yet (use its id from catalog.md then).
      `text` is the name exactly as written in `line`, `model` null when the page gives only the make.
    - `strengths`, `certifications`: only with a quote of a source (`src`); leave them out when unsure.
 6. Run the check command of input.md. It prints, per supplier, what verify.mjs rejects and whether a product line
-   covers the tender's power ("phù hợp công suất"). Fix what it prints (copy quotes exactly, add the power line) and
-   run it again. A supplier that still fails is dropped by the bot; remove it from newCatalog.json.
+   covers the tender's power ("phù hợp công suất"), and the engine rows at that power the bot can put into the
+   suggested configurations ("dòng động cơ đúng công suất"). Fix what it prints (copy quotes exactly, add the power
+   line) and run it again. With no engine row the supplier is added to the catalog but to no configuration: give a
+   `specTables` row naming both the engine model and the power, or, for a one-model datasheet whose lines never name
+   both (a two-column PDF), the genset product line with `series` the genset model, `engineModels` [the one engine],
+   `power` min = max, and a `specTables` row of the same source holding that power figure. A supplier that still fails is dropped by the bot; remove it from newCatalog.json.
 7. Write `find.json`:
 ```json
 {
