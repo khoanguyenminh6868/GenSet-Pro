@@ -86,6 +86,47 @@ export async function api(q) {
   return r.json();
 }
 export const doc = async (coll, id) => (await api(`kind=docs&coll=${coll}&id=${encodeURIComponent(id)}`))[0]?.data;
+// Every document of a collection, [{ id, data }] as api("kind=docs&coll=<c>") gives them. The large ones the bots read
+// again and again (supplier and bidhist, ~10 MB each) are kept on this PC; each call lists (id, updated_at) and reads
+// only the new or changed documents (Supabase egress, 2026-11-06). Any problem: the whole collection, as before.
+const DOC_CACHE = process.env.GENBID_DOC_CACHE || path.join(path.dirname(TOKEN_FILE), "genbid-work", "doc-cache");
+export async function allDocs(coll) {
+  const whole = () => api(`kind=docs&coll=${coll}`);
+  const file = path.join(DOC_CACHE, `${coll}.json`);
+  let stamps;
+  try { stamps = await api(`kind=stamps&coll=${coll}`); } catch { return whole(); }
+  // An older /api/requests answers an unknown kind with the file requests: no updated_at there.
+  if (!Array.isArray(stamps) || !stamps.length || !stamps.every((s) => s && typeof s.id === "string" && s.updated_at)) return whole();
+  let saved = {};
+  try { saved = JSON.parse(fs.readFileSync(file, "utf8")).docs || {}; } catch {}
+  const want = stamps.filter((s) => saved[s.id]?.u !== s.updated_at).map((s) => s.id);
+  const fresh = new Map();
+  try {
+    // Mostly new (the first run): one whole read instead of many small ones.
+    if (want.length > 300) for (const d of await whole()) fresh.set(d.id, d.data);
+    else for (let i = 0; i < want.length; i += 100) {
+      for (const d of await api(`kind=docs&coll=${coll}&ids=${want.slice(i, i + 100).map(encodeURIComponent).join(",")}`)) fresh.set(d.id, d.data);
+    }
+  } catch { return whole(); }
+  // A document listed but not read back (removed meanwhile, or an id the list cannot carry): the whole collection.
+  if (want.some((id) => !fresh.has(id))) return whole();
+  const out = [], next = {};
+  for (const s of stamps) {
+    const data = fresh.has(s.id) ? fresh.get(s.id) : saved[s.id].d;
+    out.push({ id: s.id, data });
+    next[s.id] = { u: s.updated_at, d: data };
+  }
+  // Written whole and renamed, so a run reading it at the same time never sees half a file.
+  if (want.length || stamps.length !== Object.keys(saved).length) {
+    try {
+      fs.mkdirSync(DOC_CACHE, { recursive: true });
+      const tmp = `${file}.${process.pid}.${Date.now()}.tmp`;
+      fs.writeFileSync(tmp, JSON.stringify({ docs: next }));
+      fs.renameSync(tmp, file);
+    } catch {}
+  }
+  return out;
+}
 // A network error (fetch failed) is retried: one lost post used to throw away a whole agent run (2026-10-29).
 export async function post(rows) {
   let r;
@@ -863,7 +904,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   fs.mkdirSync(path.join(dir, "web"), { recursive: true });
   // GENBID_LOCAL_SUPPLIERS=1: the supplier DB of this checkout (cn/*.json) instead of the web's, to try records not yet published.
   const localSuppliers = () => fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => ({ data: JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8")) })).filter((d) => d.data.status !== "incomplete");
-  const [analysis, { hsmt, parts, text }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : given ? given.map((data) => ({ data })) : api("kind=docs&coll=supplier")]);
+  const [analysis, { hsmt, parts, text }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : given ? given.map((data) => ({ data })) : allDocs("supplier")]);
   fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
   const a = analysis?.result;
   const cap = multi ? multi.size.cap : capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
@@ -1834,7 +1875,7 @@ async function runAll(lock) {
     for (const j of late ? [] : jobs) {
       if (busy.has(j.lane)) continue;
       // The supplier DB as it is now: a Tìm NCC that just finished may have added to it.
-      if (j.kind !== "bidprice" && !suppliers) suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data);
+      if (j.kind !== "bidprice" && !suppliers) suppliers = (await allDocs("supplier")).map((d) => d.data);
       started.add(j.sig); busy.add(j.lane); running++; counts[j.kind]++;
       console.log(`${t()} bắt đầu ${{ config: "Gợi ý cấu hình", find: "Tìm NCC", bidprice: "Gợi ý giá đấu" }[j.kind]} ${j.req.key}`);
       const work = j.kind === "config" ? answer(j.req, suppliers) : j.kind === "find" ? find(j.req, suppliers) : bidpriceChild(j.req.key);
@@ -1860,7 +1901,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   else if (cmd === "check") {
     // Offline in a folder made by prep (suppliers.json, meta.json); elsewhere the supplier DB is read from the web.
     const dir = arg("dir", "."), local = (f) => (fs.existsSync(path.join(dir, f)) ? JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) : null);
-    const { problems, result, hints } = checkDir(dir, local("suppliers.json") || (await api("kind=docs&coll=supplier")).map((d) => d.data), [], local("meta.json")?.origin);
+    const { problems, result, hints } = checkDir(dir, local("suppliers.json") || (await allDocs("supplier")).map((d) => d.data), [], local("meta.json")?.origin);
     fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
     console.log(problems.length ? problems.join("\n") : "Không có điểm nào chưa khớp nguồn.");
     // "unclear" checks whose sources have a line about them (config-prompt.md: read each, set met / not_met if it says).
@@ -1872,12 +1913,12 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     for (const c of res) console.log(`${c.id || "?"}: ${c.errors.length ? `KHÔNG QUA — ${c.errors.join("; ")}` : "qua verify.mjs"}${c.errors.length ? "" : c.fits ? ", phù hợp công suất" : `, CHƯA có dòng sản phẩm phù hợp công suất ${capStr(meta.cap)}`}`);
     if (!res.length) console.log("newCatalog.json rỗng.");
   } else if (cmd === "post") {
-    const dir = arg("dir", "."), { result } = checkDir(dir, (await api("kind=docs&coll=supplier")).map((d) => d.data));
+    const dir = arg("dir", "."), { result } = checkDir(dir, (await allDocs("supplier")).map((d) => d.data));
     console.log(await post([{ coll: "configmatch", id: arg("key"), data: { at: new Date().toISOString(), result } }, { coll: "configreq", id: arg("key"), data: { notifyNo: arg("key"), requestedAt: arg("requested-at"), doneAt: new Date().toISOString(), error: "" } }]));
   } else if (cmd === "merge-find") {
     // The suppliers of the stored findmatch/<key>, read again from the web, merged into configmatch/<key>.
     const key = arg("key"), f = await doc("findmatch", key), ids = new Set((f?.result?.added || []).filter((a) => !a.error).map((a) => a.supplierId));
-    const suppliers = (await api("kind=docs&coll=supplier")).map((d) => d.data), records = suppliers.filter((s) => ids.has(s.id));
+    const suppliers = (await allDocs("supplier")).map((d) => d.data), records = suppliers.filter((s) => ids.has(s.id));
     const m = await mergeFindIntoConfig(key, records, { cap: f?.result?.cap, origin: (await doc("findreq", key))?.origin, suppliers });
     if (f?.result) await post([{ coll: "findmatch", id: key, data: { ...f, result: { ...f.result, configMerge: mergeText(m) } } }]);
     console.log(`${key}: ${mergeText(m)}${m ? ` ${JSON.stringify(m)}` : ""}`);

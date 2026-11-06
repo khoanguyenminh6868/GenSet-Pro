@@ -63,6 +63,42 @@ async function apiGet(query) {
 const docs = (coll, id) => apiGet(`?kind=docs&coll=${coll}${id ? `&id=${encodeURIComponent(id)}` : ""}`);
 async function doc(coll, id) { return (await docs(coll, id))[0]?.data; }
 async function ids(coll) { return new Set((await docs(coll)).map((d) => d.id)); }
+// docs(coll) for the large collections read again and again (supplier, bidhist ~10 MB each): kept on this PC in
+// genbid-work\doc-cache (shared with suppliers/config-bot.mjs allDocs), reading only the new or changed documents
+// (Supabase egress, 2026-11-06). Any problem: the whole collection, as before.
+async function allDocs(coll) {
+  const whole = () => docs(coll);
+  const dir = process.env.GENBID_DOC_CACHE || path.join(ROOT, "genbid-work", "doc-cache"), file = path.join(dir, `${coll}.json`);
+  let stamps;
+  try { stamps = await apiGet(`?kind=stamps&coll=${coll}`); } catch { return whole(); }
+  if (!Array.isArray(stamps) || !stamps.length || !stamps.every((s) => s && typeof s.id === "string" && s.updated_at)) return whole();
+  let saved = {};
+  try { saved = JSON.parse(fs.readFileSync(file, "utf8")).docs || {}; } catch {}
+  const want = stamps.filter((s) => saved[s.id]?.u !== s.updated_at).map((s) => s.id);
+  const fresh = new Map();
+  try {
+    if (want.length > 300) for (const d of await whole()) fresh.set(d.id, d.data);
+    else for (let i = 0; i < want.length; i += 100) {
+      for (const d of await apiGet(`?kind=docs&coll=${coll}&ids=${want.slice(i, i + 100).map(encodeURIComponent).join(",")}`)) fresh.set(d.id, d.data);
+    }
+  } catch { return whole(); }
+  if (want.some((id) => !fresh.has(id))) return whole();
+  const out = [], next = {};
+  for (const s of stamps) {
+    const data = fresh.has(s.id) ? fresh.get(s.id) : saved[s.id].d;
+    out.push({ id: s.id, data });
+    next[s.id] = { u: s.updated_at, d: data };
+  }
+  if (want.length || stamps.length !== Object.keys(saved).length) {
+    try {
+      fs.mkdirSync(dir, { recursive: true });
+      const tmp = `${file}.${process.pid}.${Date.now()}.tmp`;
+      fs.writeFileSync(tmp, JSON.stringify({ docs: next }));
+      fs.renameSync(tmp, file);
+    } catch {}
+  }
+  return out;
+}
 // Write documents [{coll, id, data}] to the web (POST /api/ingest, 100 per call).
 async function post(rows) {
   rows = rows.filter(Boolean);
@@ -481,7 +517,7 @@ async function historyConfigRound(page, ctx, { max = 2000 } = {}) {
   const cache = readJson(HISTCFG_FILE, {});
   // --key <TBMT>: that tender only, read again even when done (to check a reading).
   const key = typeof opt("key") === "string" ? opt("key") : "";
-  const all = (await docs("bidhist")).map((x) => x.data)
+  const all = (await allDocs("bidhist")).map((x) => x.data)
     .filter((d) => d?.url && (key ? d.notifyNo === key : !cache[d.notifyNo] && isGenset(d) && histNeedsConfig(d)));
   // Supplies first: their prices are the ones Gợi ý giá đấu compares.
   const svc = (d) => /sửa\s*chữa|bảo\s*dưỡng|bảo\s*trì|đại\s*tu|thuê|phụ\s*tùng|vật\s*tư|tư\s*vấn/i.test(d.bidName);
@@ -871,7 +907,7 @@ async function specsRound(page, ctx, { max = 5000, model = "sonnet" } = {}) {
   for (const t of (await doc("feed", "current"))?.tenders || []) cur.set(t.notifyNo, t);
   for (const x of await docs("seen")) if (x.data?.sourceUrl && !cur.has(x.id)) cur.set(x.id, { ...x.data, notifyNo: x.id });
   for (const x of await docs("tracked")) if (x.data?.tender?.sourceUrl && !cur.has(x.id)) cur.set(x.id, { ...x.data.tender, notifyNo: x.id });
-  const hist = (await docs("bidhist")).map((x) => x.data).filter((d) => d?.url && !cur.has(d.notifyNo))
+  const hist = (await allDocs("bidhist")).map((x) => x.data).filter((d) => d?.url && !cur.has(d.notifyNo))
     .map((d) => ({ notifyNo: d.notifyNo, bidName: d.bidName, sourceUrl: histTbmtUrl(d.url), at: d.openedAt || d.bidCloseDate || "" }))
     .sort((a, b) => String(b.at).localeCompare(String(a.at)));
   const svc = (t) => /sửa\s*chữa|bảo\s*dưỡng|bảo\s*trì|đại\s*tu|thuê|phụ\s*tùng|vật\s*tư|tư\s*vấn/i.test(t.bidName || "");
@@ -1407,7 +1443,7 @@ function supplierShortlist(list, want) {
   return sent;
 }
 async function prepSupplier(req, key, dir) {
-  const [t, notice, analysis, suppliers, full] = await Promise.all([tenderInfo(key), doc("notice", key), doc("analysis", key), docs("supplier"), hsmtText(key)]);
+  const [t, notice, analysis, suppliers, full] = await Promise.all([tenderInfo(key), doc("notice", key), doc("analysis", key), allDocs("supplier"), hsmtText(key)]);
   const all = suppliers.map((d) => d.data).filter((s) => s?.id && s.status !== "incomplete");
   const a = analysis?.result;
   const want = wantedPower(a?.keyInfo?.generatorCapacity);
