@@ -62,7 +62,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .actrow{margin:14px 0 16px}.actrow.cfgact{margin:4px 0 0}.cfgsum{margin:0}#cfgExtra{min-height:0;height:calc(3em + 4px)}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
-.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkCfg,.ro #tyDrop,.ro #tkDel,.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
+.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkCfg,.ro #tyDrop,.ro #tkDel,.ro [data-cfgdel],.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
 .ro #dStage,.ro #dNote{pointer-events:none;opacity:.7}
 .ext [data-openpdf]{display:none!important}
 .btn.green{background:var(--mint);border-color:var(--mint);color:#fff}
@@ -1442,7 +1442,7 @@ function renderDrawer(force = true) {
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   if (state.dtab === "supplier") state.dtab = "info"; // tab Nhà cung cấp đang ẩn
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], state.bidprice[key]?.at, state.bidpricereq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configmatch[key]?.editedAt, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], state.bidprice[key]?.at, state.bidpricereq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -2943,7 +2943,7 @@ function configTabHtml(t) {
       return actBar("Đã gợi ý", info, btns, "", "ok", "actrow cfgact");
     })()
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
-    + (prev?.result && !wait ? (prev.result.sizes ? cfgSizesHtml(prev.result, key) : cfgResultHtml(prev.result)) : "");
+    + (prev?.result && !wait ? (prev.result.sizes ? cfgSizesHtml(prev.result, key) : cfgResultHtml(prev.result, { key })) : "");
 }
 // Gói nhiều cỡ máy (Khoa, 2026-11-04): the bot suggests each size on its own (config-bot.mjs sizesOf, result.sizes);
 // each size's result is shown as a tender of one size, under its own heading.
@@ -2962,7 +2962,7 @@ document.addEventListener("toggle", (e) => {
 function cfgSizesHtml(r, key) {
   return h`<div class="note">Gói có ${r.sizes.length} cỡ máy (${r.sizes.map((z) => sizeTitle(z).slice(4)).join("; ")}): mỗi cỡ được gợi ý cấu hình riêng.${r.skipped?.length ? ` Chưa gợi ý các cỡ: ${r.skipped.join("; ")} (mỗi lượt tối đa ${r.sizes.length} cỡ).` : ""}</div>`
     + r.sizes.map((z) => sizeBox(`cfg|${key}|${z.label}`, h`<span>${sizeTitle(z)}</span>`, (z.quote ? h`<div class="muted small">Đọc từ: <q>${z.quote}</q></div>` : "")
-      + (z.result ? cfgResultHtml(z.result) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`))).join("");
+      + (z.result ? cfgResultHtml(z.result, { key, size: z.label }) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`))).join("");
 }
 // The note can be closed (Khoa, 2026-11-01); it is kept closed in this browser until the next Tìm NCC result.
 // The suppliers it adds go into the suggested configurations in code, no agent (config-bot.mjs mergeFind, r.configMerge).
@@ -2997,7 +2997,7 @@ function cfgSuppliersHtml(c) {
       ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
   }).join(""))}</ol>`;
 }
-function cfgResultHtml(r) {
+function cfgResultHtml(r, { key = "", size = "" } = {}) {
   if (!r.configs?.length) return h`<div class="note warn"><b>Không tìm thấy cấu hình phù hợp.</b> ${r.message || "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT."}</div>`
     + cfgReqHtml(r) + cfgAddedHtml(r) + cfgNotesHtml(r);
   return (r.summary ? h`<p class="cfgsum">${r.summary}</p>` : "") + r.configs.map((c, i) => {
@@ -3009,7 +3009,8 @@ function cfgResultHtml(r) {
     return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${c.rank || i + 1}</b><span class="chip ${fit[1]}">${fit[0]}</span>${raw(c.fromFind ? `<span class="chip mut" title="${c.findChecked ? "Thêm từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, đã đối chiếu với các yêu cầu HSMT" : "Thêm bằng code từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, chưa đối chiếu đủ HSMT"}">Bổ sung từ Tìm NCC</span>` : "")}<span class="spacer"></span>
         ${raw(c.engine?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="engine" data-catkey="${window.GenbidCatalog?.keyOf(c.engine.model) || ""}">Xem động cơ</button>` : "")}
         ${raw(c.alternator?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="alternator" data-catkey="${window.GenbidCatalog?.keyOf(c.alternator.model) || ""}">Xem đầu phát</button>` : "")}
-        ${raw(c.controller?.model ? h`<button class="btn sm" data-catopen="controller" data-catkey="${window.GenbidCatalog?.keyOf(c.controller.model) || ""}">Xem bộ điều khiển</button>` : "")}</div>
+        ${raw(c.controller?.model ? h`<button class="btn sm" data-catopen="controller" data-catkey="${window.GenbidCatalog?.keyOf(c.controller.model) || ""}">Xem bộ điều khiển</button>` : "")}
+        ${raw(key ? h`<button class="btn sm" data-cfgdel="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" title="Xoá cấu hình này khỏi danh sách gợi ý" style="color:var(--red)">${raw(TRASH_SVG)}Xoá</button>` : "")}</div>
       ${raw(part("Động cơ", c.engine))}${raw(part("Đầu phát", c.alternator))}${raw(part("Bộ điều khiển", c.controller))}${raw(c.genset ? h`<div class="small">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
       ${raw(c.checks?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
         const st = CFG_STATUS[x.status] || ["", "mut"];
@@ -3171,6 +3172,32 @@ function tlktCfgOf(key) {
   if (key in d) return d[key];
   const sent = state.tlktreq?.[key]?.text;
   return typeof sent === "string" && sent.startsWith(TLKT_CFG_HEAD) ? sent.slice(TLKT_CFG_HEAD.length) : "";
+}
+// Xoá một cấu hình gợi ý (Khoa, 2026-11-06): it leaves configmatch/<key> (of its size, for a tender of several sizes) and
+// the others are numbered again from #1, so Gợi ý giá đấu (engine of #1) and Tìm NCC (by rank) read the list as shown.
+// Gợi ý lại makes a new list, with no memory of what was deleted.
+function askDeleteCfg(key, size, rank) {
+  const doc = state.configmatch[key], whole = doc?.result, part = size ? whole?.sizes?.find((z) => z.label === size)?.result : whole;
+  const c = part?.configs?.find((x) => String(x.rank) === String(rank));
+  if (!c) return;
+  const name = [c.engine?.model, c.alternator?.model, c.controller?.model].filter(Boolean).join(" + ");
+  modal(h`<div class="row"><h2 style="flex:1">Xoá cấu hình #${rank}?</h2><button class="btn sm" data-close>Đóng</button></div>
+    <p class="small" style="margin:0">Cấu hình ${name}${size ? ` (máy ${size})` : ""} sẽ bị xoá khỏi danh sách gợi ý của mọi người; các cấu hình còn lại được đánh số lại từ #1.</p>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="cfgDelOk" style="color:var(--red)">Xoá</button></div>`, (m, close) => {
+    $("#cfgDelOk", m).addEventListener("click", async () => {
+      close();
+      if (state.readOnly || !state.db) { toast("Bạn chỉ có quyền xem, không xoá được."); return; }
+      const next = JSON.parse(JSON.stringify(doc)), r = size ? next.result.sizes.find((z) => z.label === size).result : next.result;
+      r.configs = r.configs.filter((x) => String(x.rank) !== String(rank));
+      r.configs.forEach((x, i) => { x.rank = i + 1; });
+      r.notes = [...(r.notes || []), `Đã xoá cấu hình ${name} (#${rank}) lúc ${fmtDate(new Date().toISOString())}${window.genbidEmail ? ` (${window.genbidEmail})` : ""}.`];
+      next.editedAt = new Date().toISOString();
+      if (!(await dbSet("configmatch/" + key, next))) { toast("Không xoá được cấu hình."); return; }
+      state.configmatch = { ...state.configmatch, [key]: next };
+      renderDrawer();
+      toast(`Đã xoá cấu hình #${rank}`);
+    });
+  });
 }
 function askDeleteTlkt(key) {
   modal(h`<div class="row"><h2 style="flex:1">Xóa kết quả đối chiếu TLKT?</h2><button class="btn sm" data-close>Đóng</button></div>
@@ -3747,6 +3774,8 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "hfCancel") { requestRefetch(e.target.dataset.key, true); return; }
   if (e.target.id === "cmSubmit") { setStage(e.target.dataset.key, "submitted"); return; }
   if (e.target.closest("#tkPdf")) { const b = e.target.closest("#tkPdf"); tlktPdf(b.dataset.key, b); return; }
+  const cd = e.target.closest("[data-cfgdel]");
+  if (cd) { askDeleteCfg(cd.dataset.cfgdel, cd.dataset.size, cd.dataset.rank); return; }
   if (e.target.closest("#tkDel")) { askDeleteTlkt(e.target.closest("#tkDel").dataset.key); return; }
   if (e.target.closest("#cmDel")) { askDeleteCompare(e.target.closest("#cmDel").dataset.key); return; }
 });
