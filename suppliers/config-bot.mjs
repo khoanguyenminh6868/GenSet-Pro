@@ -1736,6 +1736,12 @@ export function fitsCap(rec, cap) {
   if (!cap) return (rec.productLines || []).some((p) => p.power);
   return (rec.productLines || []).some((p) => p.power?.unit === cap.unit && p.power.min <= cap.value * 1.4 && p.power.max >= cap.value * 0.95);
 }
+// The engine rows of a record at the tender's power (100% to 140%, as mergeFind takes them): a product line alone
+// fits the power but goes into no configuration (IB2600594596, 2026-11-06: Rehlko's tables named no engine).
+export function engineRows(rec, cap) {
+  const caps = (Array.isArray(cap) ? cap : [cap]).filter(Boolean);
+  return CAT.build([rec]).engines.flatMap((e) => e.uses.filter((u) => !caps.length || caps.some((c) => rowPower(u, c) >= c.value && rowPower(u, c) <= c.value * 1.4)).map((u) => `${e.model}${u.genset ? ` (${u.genset})` : ""}`));
+}
 // newCatalog.json checked offline, the way addToCatalog will: records built with catalogRecords, then verify.mjs on a
 // copy in <dir>/_check with the saved pages. For a supplier already in the system only its new parts are checked
 // (its own pages are not here) and only its new product lines count for the power.
@@ -1755,7 +1761,7 @@ export async function findCheck(dir, suppliers, cap) {
     const own = new Set(x.nmap.values()), isOwn = (src) => Array.isArray(src) && src.length && src.every((n) => own.has(n));
     const rec = x.isNew ? x.rec : { ...x.rec, sources: x.rec.sources.filter((s) => own.has(s.n)), productLines: (x.rec.productLines || []).filter((p) => isOwn(p.src)),
       specTables: (x.rec.specTables || []).filter((t) => own.has(t.n)), controllers: (x.rec.controllers || []).filter((c) => isOwn(c.src)), strengths: [], certifications: [], contacts: [], vietnam: undefined, founded: null };
-    out.push({ id: x.id, isNew: x.isNew, errors: checkRecord(rec, path.join(chk, "cn", `${x.id}.json`)).errors, fits: fitsCap(rec, cap) });
+    out.push({ id: x.id, isNew: x.isNew, errors: checkRecord(rec, path.join(chk, "cn", `${x.id}.json`)).errors, fits: fitsCap(rec, cap), rows: engineRows(rec, cap) });
   }
   return out;
 }
@@ -1788,7 +1794,7 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
   // The controllers the supplier's pages name (controllers.mjs) are said too, as recorded.
   const entry = (r, { e, u }) => {
     const ctrls = [...new Set((r.controllers || []).filter((c) => c.model).map((c) => c.model))];
-    return { supplierId: u.supplierId, n: u.n, line: lineOf(u, e.model), fromFind: true, why: `Nhà cung cấp mới tìm được (Tìm NCC): dòng bảng ghi động cơ ${e.model}${u.power ? ` (${powerText(u.power)})` : ""}.${ctrls.length ? ` Bộ điều khiển trên trang của nhà cung cấp: ${ctrls.join(", ")}.` : ""}` };
+    return { supplierId: u.supplierId, n: u.n, line: lineOf(u, e.model), fromFind: true, why: `Nhà cung cấp mới tìm được (Tìm NCC): ${u.fromLine ? `datasheet tổ máy ${u.genset || ""} ghi động cơ ${e.model} (theo dòng sản phẩm của bản ghi; chữ trang tách cột nên không dòng nào ghi cả động cơ và công suất), dòng bảng ghi công suất` : `dòng bảng ghi động cơ ${e.model}`}${u.power ? ` (${powerText(u.power)})` : ""}.${ctrls.length ? ` Bộ điều khiển trên trang của nhà cung cấp: ${ctrls.join(", ")}.` : ""}` };
   };
   // Adds the supplier under every configuration it has a row for; true when there is one. A second run adds nothing twice.
   const join = (r) => {
@@ -2022,7 +2028,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     // Offline in a folder made for Tìm NCC (suppliers.json, meta.json).
     const dir = arg("dir", "."), meta = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
     const res = await findCheck(dir, JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8")), meta.cap);
-    for (const c of res) console.log(`${c.id || "?"}: ${c.errors.length ? `KHÔNG QUA — ${c.errors.join("; ")}` : "qua verify.mjs"}${c.errors.length ? "" : c.fits ? ", phù hợp công suất" : `, CHƯA có dòng sản phẩm phù hợp công suất ${capStr(meta.cap)}`}`);
+    for (const c of res) console.log(`${c.id || "?"}: ${c.errors.length ? `KHÔNG QUA — ${c.errors.join("; ")}` : "qua verify.mjs"}${c.errors.length ? "" : c.fits ? ", phù hợp công suất" : `, CHƯA có dòng sản phẩm phù hợp công suất ${capStr(meta.cap)}`}${c.errors.length ? "" : c.rows?.length ? `; dòng động cơ đúng công suất: ${[...new Set(c.rows)].join(", ")}` : `; CHƯA có dòng bảng nào cho ra động cơ đúng công suất (specTables cần dòng ghi cả model động cơ và công suất, hoặc productLines tổ máy một model có engineModels một động cơ và power min = max, với một dòng specTables cùng nguồn có số công suất đó), nên không vào được cấu hình gợi ý`}`);
     if (!res.length) console.log("newCatalog.json rỗng.");
   } else if (cmd === "post") {
     const dir = arg("dir", "."), { result } = checkDir(dir, (await allDocs("supplier")).map((d) => d.data));

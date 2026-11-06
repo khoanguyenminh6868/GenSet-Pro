@@ -148,3 +148,18 @@ test("a label table listing gensets one after the other is one genset per 'Gense
     "| 机组型号 | | KPC1375 | KPC1500", "| 额定功率 | KW/KVA | 1000/1250 | 1100/1375", "| 动力型号 | | KTA50-G3 | KTA50-G8"] }] };
   assert.deepEqual(C.fromSupplier(kp).filter((x) => x.kind === "engine").map((x) => x.model), ["KTA50-G3", "KTA50-G8"]);
 });
+
+test("a one-model datasheet whose table gives no engine: the product line's one engine, with the table row of its power", () => {
+  const s = { ...rec("genset_oem", [{ n: 2003, title: "Industrial Generator Set - D440 — Generator sets ratings", header: ["Hz  kWe kVA Amps kWe                                            kVA"], rows: ["400/230  50  352 440 635                                       320       400"] }], { en: "Rehlko" }),
+    productLines: [{ kind: "genset", series: "D440", fuel: "diesel", power: { min: 400, max: 400, unit: "kVA", rating: "prime", src: [2003] }, engineMakes: ["DOOSAN / HYUNDAI"], engineModels: ["P158LE"], src: [2003] },
+      { kind: "genset", series: "Diesel Generators", fuel: "diesel", power: { min: 15, max: 4000, unit: "kW", rating: "unspecified", src: [2003] }, engineModels: [], src: [2003] }] };
+  const o = C.fromSupplier(s);
+  assert.equal(o.length, 1);
+  assert.deepEqual([o[0].kind, o[0].model, o[0].genset, o[0].n, o[0].power], ["engine", "P158LE", "D440", 2003, { prime: { kVA: 400 } }]);
+  assert.equal(o[0].line, s.specTables[0].rows[0]);
+  assert.deepEqual(o[0].makes.map((m) => m.name), ["Doosan", "Hyundai"]);
+  // A table row naming the engine wins: nothing from the product line then.
+  const t = { ...s, specTables: [{ n: 2003, title: "D440", rows: ["| Engine ref. | P158LE", "| Prime power (kVA) | 400"] }] };
+  assert.equal(C.fromSupplier(t).filter((x) => x.kind === "engine").length, 1);
+  assert.ok(!C.fromSupplier(t)[0].fromLine);
+});
