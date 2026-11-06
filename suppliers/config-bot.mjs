@@ -1432,6 +1432,14 @@ export function syncCheck(sync, fam, makers = [], models = {}) {
   const byMaker = makers.map((m) => ({ ...m, n: m.fam ? count(m.fam) : 0 })).sort((a, b) => b.n - a.n)[0];
   if (byMaker && byMaker.fam && byMaker.n >= need) return { ...out, status: "met", note: `Code ghi: tổ máy ${byMaker.fam}, ${byMaker.n}/${parts.length} bộ phận cùng hãng ${byMaker.fam}.` };
   if (best + unknown < need) return { ...out, status: "not_met", note: `Code ghi: ${known.length === parts.length ? "các bộ phận thuộc" : "các bộ phận đã rõ hãng thuộc"} ${new Set(known.map((p) => fam[p])).size} hãng khác nhau, không hãng nào làm ra đủ ${need}/${parts.length} bộ phận.` };
+  // A set only of assemblers (no supplier is a make): one may make its alternator, not its engine nor its controller
+  // (they buy SmartGen / Deep Sea…), so an engine of another make leaves it at most 1 part (2026-11-06: a Doosan set of
+  // a Fujian assembler with no alternator or controller named ranked first as "unclear").
+  const ownMax = parts.includes("alternator") && !fam.alternator ? 1 : 0;
+  if (byMaker && !makers.some((m) => m.fam) && fam.engine && ownMax < need) {
+    const who = [...new Set(makers.map((m) => m.name))].slice(0, 3).join(" / ");
+    return { ...out, status: "not_met", note: `Code ghi: tổ máy do xưởng lắp ráp ${who} làm; động cơ ${fam.engine} không phải của xưởng và xưởng lắp ráp không tự làm bộ điều khiển, nên tối đa ${ownMax}/${parts.length} bộ phận là của hãng tổ máy.` };
+  }
   if (byMaker && byMaker.n + unknown < need) {
     const who = [...new Set(makers.map((m) => m.fam || m.name))].slice(0, 3).join(" / ");
     return { ...out, status: "not_met", note: `Code ghi: tổ máy do ${who} làm, chỉ ${byMaker.n}/${parts.length} bộ phận là của hãng tổ máy${best >= need ? `; cần tổ máy do chính ${top} sản xuất` : ""}.` };
