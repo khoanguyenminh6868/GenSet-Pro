@@ -157,7 +157,8 @@
     return { sim: n ? same.length / n : null, same, diff: [...only.map((x) => `chỉ gói này: ${x}`), ...other.map((x) => `chỉ gói kia: ${x}`)] };
   }
 
-  const MAX = 80, POWER_TOL = 0.05, LEVELS = ["same", "close", "different", "unknown"];
+  // A tender that asks for đồng bộ thương hiệu: 10% (Khoa, 2026-11-06), as few past lots asked for an OEM set.
+  const MAX = 80, POWER_TOL = 0.05, SYNC_POWER_TOL = 0.1, LEVELS = ["same", "close", "different", "unknown"];
   const cut = (s, n) => { s = String(s || "").replace(/\s+/g, " ").trim(); return s.length > n ? s.slice(0, n) + "…" : s; };
   // The decided lots most like the tender, for the agent to compare. t: { notifyNo, bidName, investorName, cfgText (what
   // its HSMT asks for), engine ({ make, model } of the configuration Gợi ý cấu hình put first) }, docs: { <TBMT>: bidhist
@@ -172,6 +173,7 @@
   function candidates(t, docs, K, P) {
     const kind = bidKind(t.bidName), out = [], tp = profileOf(`${t.bidName || ""}\n${t.cfgText || ""}`);
     if (t.sync && !tp.tags.includes(SYNC_TAG)) tp.tags.push(SYNC_TAG);
+    const tol = tp.tags.includes(SYNC_TAG) ? SYNC_POWER_TOL : POWER_TOL;
     const eg = t.engine && root.GenbidCatalog ? root.GenbidCatalog.originIn(t.engine.make || "", t.engine.model || "") : null;
     const tGroup = eg === "cn" ? "cn" : eg === "other" ? "foreign" : tp.group;
     let total = 0, otherGroup = 0;
@@ -192,7 +194,7 @@
         const kGoods = Math.max(0, ...goods.map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
         const kName = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)), kCfg = kName || kGoods ? null : cfgKva(d, multi);
         const k = kName || kGoods || kCfg, kSrc = kName ? "tên gói" : kGoods ? "hàng chào" : kCfg ? "HSMT" : "";
-        if (K && !(k && Math.abs(k - K) <= POWER_TOL * K + 1e-9)) continue;
+        if (K && !(k && Math.abs(k - K) <= tol * K + 1e-9)) continue;
         if (!k && !goods.length && !d.config?.text) continue;
         const lp = profileOf([(multi && lot.lotName) || d.bidName, d.config?.text, ...goods.map((g) => [g.name, g.maker, g.code, g.origin, g.desc].join(" "))].join("\n"));
         const group = goodsGroup(goods) || profileOf(d.config?.text).group;
@@ -214,7 +216,7 @@
       }
     }
     out.sort((a, b) => a.dist - b.dist);
-    return { total, group: tGroup, otherGroup, list: out.slice(0, MAX).map((s, i) => ({ id: "S" + (i + 1), ...s })) };
+    return { total, tol, group: tGroup, otherGroup, list: out.slice(0, MAX).map((s, i) => ({ id: "S" + (i + 1), ...s })) };
   }
   // The code's comparison of one lot with the tender, shown to the agent beside the lot. Not part of sampleText: the
   // agent's quote must come from muasamcong's own words.
@@ -262,5 +264,5 @@
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
     return { basis, n: use.length, same: same.length, close: close.length, enough: use.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, comps };
   }
-  root.GenbidBidprice = { SYNC_TAG, brandSyncOf, familyOf, kvaOf, capPick, isGensetName, bidKind, movesOldSet, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL };
+  root.GenbidBidprice = { SYNC_TAG, brandSyncOf, familyOf, kvaOf, capPick, isGensetName, bidKind, movesOldSet, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL };
 })(typeof window !== "undefined" ? window : globalThis);

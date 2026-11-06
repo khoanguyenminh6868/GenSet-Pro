@@ -48,12 +48,13 @@ export async function prep(req, dir, hist, size = null) {
     engine: top.find((c) => !/KHÔNG/.test(syncNote(c)))?.engine || null,
     sync: (hsmt && BP.brandSyncOf(hsmt.text)) || BP.brandSyncOf(cfgText) };
   const docs = hist || Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
-  const { total, group, otherGroup, list } = BP.candidates(t, docs, K, P);
+  const { total, tol, group, otherGroup, list } = BP.candidates(t, docs, K, P);
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, `Tên gói: ${t.bidName}`, t.investorName ? `Chủ đầu tư: ${t.investorName}` : "",
     `Công suất: ${K ? `${fmt(Math.round(K))} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"}`, `Giá gói${size ? " (phần của cỡ máy này, code ước tính)" : ""}: ${P ? fmt(P) + " đ" : "không rõ"}`,
     ...(size ? ["", `## Gói có nhiều cỡ máy: ${size.sizes.map(sizeText).join("; ")}`,
       `Lượt này CHỈ so máy ${sizeText(size)}; các cỡ khác có lượt riêng. Xếp mức theo máy cỡ này: so công suất một máy với máy ${size.label}; gói cũ chỉ có máy cỡ này (một hay nhiều máy cùng cỡ) không bị xếp "khác" chỉ vì gói này còn máy cỡ khác. Giá gói ở trên là phần giá của cỡ máy này do code ước tính (chia giá cả gói${size.whole ? ` ${fmt(size.whole)} đ` : ""} theo số lượng và công suất từng cỡ), không phải số trên muasamcong.`, ""] : []),
+    `Công suất gói cũ được lấy: lệch không quá ${Math.round((tol || BP.POWER_TOL) * 100)}% so với gói này${tol > BP.POWER_TOL ? " (nới vì gói đòi đồng bộ thương hiệu)" : ""}.`,
     `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}`, "",
     // Đồng bộ thương hiệu (Khoa, 2026-11-06): an OEM set, priced far above a set assembled from three makes.
     ...(t.sync ? [`## Đồng bộ thương hiệu: HSMT đòi ít nhất ${t.sync.need}/${t.sync.parts.length} bộ phận chính (động cơ, đầu phát, bộ điều khiển) do chính hãng sản xuất tổ máy làm ra`,
