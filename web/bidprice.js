@@ -59,6 +59,70 @@
     ["trạm biến áp", /trạm\s*biến\s*áp|máy\s*biến\s*áp/i], ["1 pha", /(^|[^\d])1\s*pha\b|một\s*pha/i]];
   const CN_WORD = /trung\s*quốc|\bchina\b|\bPRC\b/i;
   const FOREIGN_WORD = /\bG7\b|\bG20\b|\bmỹ\b|\bUSA\b|vương\s*quốc\s*anh|\bUK\b|nhật\s*bản|\bjapan\b|\bđức\b|\bgermany\b|\bpháp\b|\bfrance\b|\bitaly\b|hàn\s*quốc|\bkorea\b|thụy\s*điển|\bsweden\b|ấn\s*độ|\bindia\b|châu\s*âu/i;
+  // "Đồng bộ thương hiệu" (Khoa, 2026-11-06, IB2600594596): the HSMT asks that the engine, the alternator and / or the
+  // controller be made by the genset's own maker ("Tổ máy phải được đồng bộ 02 trong 03 bộ phận chính (động cơ, đầu
+  // phát, bộ điều khiển) bởi nhà sản xuất máy phát điện", "động cơ, đầu phát, bảng điều khiển ... cùng một nhà sản
+  // xuất", "Tổ máy phát điện, đầu phát điện và động cơ có cùng thương hiệu"). A set assembled from an engine, an
+  // alternator and a controller of three makers fails it, and such a set is priced far above a Chinese-assembled one.
+  // → { need, parts: ["engine", "alternator", "controller"], quote (one line of the text, word for word) } or null.
+  // Not: "hòa đồng bộ", an ATS "đấu nối đồng bộ", "đồng bộ theo tiêu chuẩn của nhà sản xuất" (no maker named), a
+  // battery charger or a tank "cùng thương hiệu với máy phát", "đồng bộ, mới 100%".
+  const SYNC_PARTS = [["engine", /động\s*cơ|\bengine/i], ["alternator", /đầu\s*phát|củ\s*phát|\balternator/i], ["controller", /(bộ|bảng|hệ\s*thống|tủ|màn\s*hình)\s*(giám\s*sát\s*)?(điều\s*khiển|đk)|,\s*điều\s*khiển|\bcontroller|control\s*panel/i]];
+  const SYNC_N = /đồng\s*bộ\s*(0?[123]|hai|ba)\s*(trong|\/|trên)\s*(0?3|ba)\b/i;
+  const SYNC_SAME = /cùng\s*(một\s*)?(hãng|thương\s*hiệu|nhãn\s*hiệu|nhà\s*sản\s*xuất)|(từ|bởi)\s*(cùng\s*)?(một|01|1)\s*(hãng|nhà\s*sản\s*xuất)|đồng\s*bộ\s*(chính\s*hãng|thương\s*hiệu|(từ|bởi)\s*(chính\s*)?(hãng|nhà\s*sản\s*xuất))/i;
+  // "trong đó 2 trong 3 bộ phận ... cùng một hãng", "2 trong 3 bộ phần chính ... cùng thương hiệu": the count without "đồng bộ" before it.
+  const SYNC_COUNT = /(^|[^\d])(0?2|hai)\s*(trong|\/|trên)\s*(0?3|ba)\s*(bộ\s*ph|thành\s*ph|\()/i;
+  const SYNC_NOT = /chịu\s*trách\s*nhiệm|h[oò][àa]\s*đồng\s*bộ|\bATS\b|đấu\s*nối|vật\s*liệu|bộ\s*sạc|sạc\s*ắc|bồn|téc|phụ\s*tùng|hiện\s*hữu/i;
+  const NUM = { hai: 2, ba: 3 };
+  function brandSyncOf(text) {
+    const lines = String(text || "").normalize("NFC").split(/\n/), flat = (a, b) => lines.slice(Math.max(0, a), b).join(" ").replace(/\s+/g, " ");
+    for (let i = 0; i < lines.length; i++) {
+      // A clause may run over the next line (two-column tables of the HSMT): the trigger must start on this one.
+      const here = flat(i, i + 1), two = flat(i, i + 2);
+      for (const re of [SYNC_N, SYNC_SAME]) {
+        const m = two.match(re);
+        if (!m || m.index >= here.length) continue;
+        const win = flat(i - 1, i + 4), at = win.indexOf(m[0]);
+        // The sentence the trigger is in: from the bullet / full stop before it to the full stop after it.
+        const from = Math.max(win.lastIndexOf(". ", at), win.lastIndexOf(" - ", at), win.lastIndexOf(": ", at) - 120, at - 220, 0);
+        const stop = win.indexOf(". ", at + m[0].length), seg = win.slice(from, stop < 0 ? at + 260 : Math.min(stop, at + 260));
+        const near = win.slice(Math.max(0, at - 60), at + m[0].length + 60);
+        if (SYNC_NOT.test(near)) continue;
+        let parts = SYNC_PARTS.filter(([, r]) => r.test(seg)).map(([p]) => p), need;
+        if (re === SYNC_N) {
+          need = Number(NUM[m[1].toLowerCase()] || m[1]);
+          const after = win.slice(at, at + 200), named = SYNC_PARTS.filter(([, r]) => r.test(after)).map(([p]) => p);
+          parts = named.length >= need ? named : ["engine", "alternator", "controller"];
+          if (need < 2) continue;
+        } else {
+          if (parts.length < 2) continue;
+          need = SYNC_COUNT.test(seg) ? 2 : parts.length;
+        }
+        const quote = lines[i].trim();
+        if (quote.length < 8) continue;
+        return { need: Math.min(need, parts.length), parts, quote, text: seg.trim().slice(0, 400) };
+      }
+    }
+    return null;
+  }
+  // The maker family of a make or model named in a text: a genset maker's alternators and controllers carry its own
+  // brand or one of its group (Stamford / AvK and PowerCommand are Cummins; Perkins, FG Wilson, Olympian and EMCP are
+  // Caterpillar; SDMO and Decision-Maker are Kohler / Rehlko). null when no make is named.
+  const FAMILY = [
+    ["Cummins", /cummins|stamford|\bavk\b|power\s*command|\bDCEC\b|\bCCEC\b|康明斯|斯坦福/i], ["Caterpillar", /caterpillar|\bcat\b|perkins|fg\s*wilson|olympian|\bemcp\b|卡特|珀金斯/i],
+    ["Kohler", /kohler|rehlko|\bsdmo\b|decision[\s-]*maker|科勒/i], ["MTU", /\bmtu\b|rolls[\s-]*royce/i], ["Mitsubishi", /mitsubishi|三菱/i],
+    ["Denyo", /denyo/i], ["Doosan", /doosan|斗山/i], ["Volvo Penta", /volvo/i], ["Weichai", /weichai|潍柴/i], ["Yuchai", /yuchai|玉柴/i],
+    ["SDEC", /\bsdec\b|shangchai|上柴/i], ["Leroy-Somer", /leroy[\s-]*somer|\bleroy\b/i], ["Mecc Alte", /mecc[\s-]*alte|meccalte/i],
+    ["Marathon", /marathon/i], ["Engga", /engga/i], ["Nianfeng", /nianfeng|^\s*NFS?\d/i], ["Bobig", /bobig|^\s*BW-?\d/i], ["Jet-Power", /jet[\s-]*power|^\s*JET\d/i],
+    ["Wintpower", /wintpower|^\s*WT\d/i], ["Deep Sea", /deep\s*-?sea|\bDSE\s?\d/i], ["SmartGen", /smart\s*gen|\bHGM\s?\d/i], ["ComAp", /comap|inteli\s?(lite|gen|sys|compact)|\b(AMF|MRS)\s?\d/i],
+    ["DEIF", /\bdeif\b/i], ["Datakom", /datakom|\bDKG/i], ["Woodward", /woodward|easy\s?gen/i], ["Harsen", /harsen/i], ["Mebay", /mebay/i], ["Lixise", /lixise/i], ["Emko", /emko/i],
+  ];
+  const familyOf = (...texts) => {
+    for (const t of texts) { const s = String(t || ""); if (!s.trim()) continue; const f = FAMILY.find(([, re]) => re.test(s)); if (f) return f[0]; }
+    const C = root.GenbidCatalog, s = texts.join(" ");
+    const b = C && [...C.ENGINE_BRANDS, ...C.ALT_BRANDS].find(([re]) => re.test(s));
+    return b ? b[1] : null;
+  };
   function profileOf(text, model = "") {
     const t = String(text || "").normalize("NFC"), C = root.GenbidCatalog, tags = [];
     const named = (list) => (list || []).filter(([re]) => re.test(t)).map(([, n]) => n);
@@ -67,6 +131,8 @@
     if (C) for (const n of named(C.ALT_BRANDS)) tags.push(`đầu phát ${n}`);
     if (C) for (const c of C.CONTROLLERS) if (c.word.test(t)) tags.push(`bộ điều khiển ${c.brand}`);
     for (const [n, re] of SCOPE) if (re.test(t)) tags.push(n);
+    // An HSMT that wants the engine / alternator / controller of the genset's own maker (Khoa, 2026-11-06): an OEM set.
+    if (brandSyncOf(t)) tags.push(SYNC_TAG);
     // A model code with no make named ("WP13D385E200"): its make by catalog.js. Countries count only on the lines about the
     // engine or the set: a cable from Korea or a Deep Sea controller from the UK says nothing of the engine.
     const o = C && model ? C.originIn(t, model) : null, eng = t.split(/\n/).filter((l) => ENGINE_LINE.test(l) && !OTHER_LINE.test(l)).join("\n");
@@ -74,6 +140,7 @@
     const cn = engines.some((n) => !C.FOREIGN_ENGINE.has(n)) || o === "cn" || CN_WORD.test(eng);
     return { group: fr === cn ? null : fr ? "foreign" : "cn", tags };
   }
+  const SYNC_TAG = "đồng bộ thương hiệu";
   const ENGINE_LINE = /động\s*cơ|engine|tổ\s*máy|máy\s*phát|genset/i, OTHER_LINE = /\bcáp\b|dây\s*(cáp|điện|tín)|\bATS\b|\btủ\b|bộ\s*điều\s*khiển|controller|đầu\s*phát|alternator|biến\s*áp/i;
   const GROUP = { cn: "Trung Quốc", foreign: "ngoài Trung Quốc" };
   // The winning generator sets' engine origin, from the make, model and origin muasamcong lists for each (cables, ATS,
@@ -104,6 +171,7 @@
   // cannot set the price).
   function candidates(t, docs, K, P) {
     const kind = bidKind(t.bidName), out = [], tp = profileOf(`${t.bidName || ""}\n${t.cfgText || ""}`);
+    if (t.sync && !tp.tags.includes(SYNC_TAG)) tp.tags.push(SYNC_TAG);
     const eg = t.engine && root.GenbidCatalog ? root.GenbidCatalog.originIn(t.engine.make || "", t.engine.model || "") : null;
     const tGroup = eg === "cn" ? "cn" : eg === "other" ? "foreign" : tp.group;
     let total = 0, otherGroup = 0;
@@ -131,7 +199,10 @@
         if (tGroup && group && group !== tGroup) { otherGroup++; continue; }
         // A lot that names nothing to compare counts as half alike.
         const cfg = compareCfg(tp, lp), dist = (K && k ? Math.abs(Math.log(K / k)) : 0.7) + (P ? 0.5 * Math.abs(Math.log(P / price)) : 0)
-          + (cfg.sim == null ? 0.5 : 1 - cfg.sim) - (tGroup && group === tGroup ? 0.3 : 0) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0);
+          + (cfg.sim == null ? 0.5 : 1 - cfg.sim)
+          // A tender that asks for an OEM set (đồng bộ thương hiệu) is priced from lots that asked for one too (Khoa,
+          // 2026-11-06: a set assembled from three makes wins far lower).
+          + (tp.tags.includes(SYNC_TAG) && !lp.tags.includes(SYNC_TAG) ? 0.6 : 0) - (tGroup && group === tGroup ? 0.3 : 0) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0);
         out.push({
           key, lotNo: lot.lotNo || "", name: d.bidName || "", lotName: multi ? lot.lotName || "" : "", investor: d.investorName || "", location: d.location || "",
           bidForm: d.bidForm || "", at: d.openedAt || d.bidCloseDate || "", url: d.url || "", price, wp, ratio, winner: w.name || "", k, kSrc, dist,
@@ -191,5 +262,5 @@
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
     return { basis, n: use.length, same: same.length, close: close.length, enough: use.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, comps };
   }
-  root.GenbidBidprice = { kvaOf, capPick, isGensetName, bidKind, movesOldSet, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL };
+  root.GenbidBidprice = { SYNC_TAG, brandSyncOf, familyOf, kvaOf, capPick, isGensetName, bidKind, movesOldSet, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL };
 })(typeof window !== "undefined" ? window : globalThis);

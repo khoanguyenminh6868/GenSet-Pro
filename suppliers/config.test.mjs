@@ -268,3 +268,13 @@ test("Tìm NCC of a tender of several sizes: a line that covers any size fits", 
   assert.equal(fitsCap(rec, [{ value: 300, unit: "kVA" }, { value: 800, unit: "kVA" }]), true);
   assert.equal(fitsCap(rec, [{ value: 300, unit: "kVA" }, { value: 100, unit: "kVA" }]), false);
 });
+
+test("syncCheck: three makes fail 2 of 3; an OEM set meets it; an assembler cannot", async () => {
+  const { syncCheck } = await import("./config-bot.mjs");
+  const s = { need: 2, parts: ["engine", "alternator", "controller"], quote: "q" };
+  assert.equal(syncCheck(s, { engine: "Yuchai", alternator: "Nianfeng", controller: "SmartGen" }).status, "not_met");
+  assert.equal(syncCheck(s, { engine: "Cummins", alternator: "Cummins", controller: "SmartGen" }, [{ name: "Cummins", fam: "Cummins" }]).status, "met");
+  assert.equal(syncCheck(s, { engine: "Cummins", alternator: "Cummins", controller: "SmartGen" }, [{ name: "FDK", fam: null }]).status, "not_met");
+  assert.equal(syncCheck(s, { engine: "Cummins", alternator: "Cummins", controller: "SmartGen" }).status, "unclear");
+  assert.equal(syncCheck(s, { engine: "Yuchai", alternator: null, controller: null }).status, "unclear");
+});

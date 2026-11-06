@@ -109,3 +109,23 @@ test("sharesOf: the package price by quantity x kVA^0.7 (Gói nhiều cỡ máy,
   assert.ok(Math.abs(t.reduce((a, x) => a + x.share, 0) - 1) < 1e-9);
   assert.ok(t[1].share > t[0].share);
 });
+
+test("brandSyncOf: đồng bộ 02 trong 03, cùng một nhà sản xuất; not hoà đồng bộ / ATS / chịu trách nhiệm", () => {
+  const two = BP.brandSyncOf("- Tổ máy phải được đồng bộ 02 trong 03\nbộ phận chính (động cơ, đầu phát, bộ điều\nkhiển) bởi nhà sản xuất máy phát điện");
+  assert.deepEqual([two.need, two.parts, two.quote], [2, ["engine", "alternator", "controller"], "- Tổ máy phải được đồng bộ 02 trong 03"]);
+  const all = BP.brandSyncOf("Máy phát điện chạy dầu diesel bao gồm đồng bộ động cơ, đầu phát, bảng điều khiển, ắc quy và vỏ máy chống ồn cùng một nhà sản xuất");
+  assert.deepEqual([all.need, all.parts], [3, ["engine", "alternator", "controller"]]);
+  assert.deepEqual(BP.brandSyncOf("- Động cơ và đầu phát đồng bộ cùng một thương hiệu sản xuất").parts, ["engine", "alternator"]);
+  assert.equal(BP.brandSyncOf("trong đó 2 trong 3 bộ phận động cơ, đầu phát, bộ điều khiển đồng bộ cùng một hãng sản xuất").need, 2);
+  for (const t of ["Tủ hòa đồng bộ cùng một hãng với động cơ và đầu phát", "Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện",
+    "(bao gồm máy phát, động cơ diesel, tủ bảng điều khiển) phải được lắp ráp hoàn chỉnh và được chịu trách nhiệm bởi 1 Nhà sản xuất",
+    "động cơ, đầu phát, bộ điều khiển phải được đồng bộ theo tiêu chuẩn của nhà sản xuất"]) assert.equal(BP.brandSyncOf(t), null, t);
+});
+
+test("candidates: a tender asking for đồng bộ thương hiệu prefers lots that asked for it too", () => {
+  const g = [{ name: "Máy phát điện 400kVA", maker: "Cummins", origin: "Mỹ" }];
+  const d = { A: { bidName: "Mua sắm máy phát điện 400kVA", final: true, config: { text: "Động cơ Cummins" }, lots: [lot(1e9, 8e8, g)] },
+    B: { bidName: "Mua sắm máy phát điện 400kVA", final: true, config: { text: "Động cơ Cummins. Động cơ, đầu phát, bảng điều khiển cùng một hãng sản xuất" }, lots: [lot(1e9, 8e8, g)] } };
+  const { list } = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA", cfgText: "Động cơ Cummins", sync: { need: 2 } }, d, 400, 1e9);
+  assert.deepEqual(list.map((s) => s.key), ["B", "A"]);
+});

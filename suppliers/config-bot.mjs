@@ -926,6 +926,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   // Only the HSMT files count: the notice is fetched again each time and its status changes.
   const reqHash = reqHashOf(parts.join(""), extraOf(reqData)), prevReq = reqData.prevResult;
   const reuse = prevReq?.reqHash === reqHash && prevReq.requirements?.length && prevReq.requirements.every((r) => r.level && r.part && !r.unverified);
+  const sync = BP.brandSyncOf(text);
   if (reuse) fs.writeFileSync(path.join(dir, "requirements.json"), JSON.stringify(prevReq.requirements.map(({ item, requirement, quote, from, part, level }) => ({ item, requirement, quote, ...(from ? { from } : {}), part, level })), null, 1), "utf8");
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
@@ -940,6 +941,10 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
     : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${origin.toUpperCase()} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...), kể cả loại sản xuất theo giấy phép. Động cơ nguồn không ghi hãng thì không gợi ý.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
     : "Không giới hạn xuất xứ động cơ (HSMT không đòi G7 / G20). Gợi ý cả cấu hình động cơ hãng Trung Quốc (Weichai, Yuchai, SDEC...) lẫn động cơ hãng nước khác; cấu hình động cơ hãng Trung Quốc đáp ứng HSMT tốt hơn hoặc ngang cấu hình động cơ hãng nước khác thì xếp trước (Khoa, 2026-11-05). Code xếp lại theo kết quả kiểm tra.", "",
+    // Đồng bộ thương hiệu (Khoa, 2026-11-06): read by code, checked by code from the makes of each configuration.
+    ...(sync ? [`## Đồng bộ thương hiệu: HSMT đòi ít nhất ${sync.need}/${sync.parts.length} bộ phận (${sync.parts.map((p) => SYNC_VI[p]).join(", ")}) do chính hãng sản xuất tổ máy làm ra`,
+      `HSMT ghi: "${sync.text}"`,
+      `Code tự ghi yêu cầu "${SYNC_ITEM}" và kiểm tra nó cho từng cấu hình theo hãng của động cơ, đầu phát, bộ điều khiển và hãng tổ máy (đừng tự viết check này). Ghi "make" của từng bộ phận khi nguồn ghi. Cấu hình lắp ráp từ động cơ, đầu phát, bộ điều khiển của các hãng khác nhau (vd. động cơ Cummins + đầu phát Nianfeng/Stamford + SmartGen do một xưởng Trung Quốc lắp) là KHÔNG ĐẠT. Ưu tiên tổ máy của chính hãng làm ra cả động cơ và đầu phát / bộ điều khiển (Cummins: động cơ Cummins + đầu phát Stamford/Cummins + PowerCommand; Caterpillar/Perkins/FG Wilson/Olympian; Kohler/SDMO; MTU; Mitsubishi; Denyo...). Khi catalog.md không có cấu hình nào đạt yêu cầu này thì làm bước 4 (tìm trên internet) để tìm một tổ máy chính hãng đạt.`, ""] : []),
     // Yêu cầu khác (Khoa, 2026-11-01): typed on the web next to Gợi ý / Tìm NCC, checked like the HSMT's requirements.
     ...(extraOf(reqData) ? ["## Yêu cầu khác (người dùng nhập trên web, bắt buộc kiểm tra như yêu cầu của HSMT)", extraOf(reqData), ""] : []),
     "## Thông số kỹ thuật theo phân tích (chỉ để định hướng, trích dẫn phải lấy từ hsmt.txt)",
@@ -1063,6 +1068,14 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     return !!e?.make && e.make.split(" / ").some((m) => norm(m) === norm(p.make));
   };
   const factsOf = (c, part) => (["engine", "alternator", "controller"].includes(part) && c[part]?.model ? factsFor(facts, part, part === "controller" ? ctlModelOf(c.controller) : c[part].model) : []);
+  // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
+  // any the agent wrote about it; its check is written below from the makes, never by the agent.
+  const sync = BP.brandSyncOf(hsmtText);
+  result.requirements = (result.requirements || []).filter((r) => !isSyncItem(r.item));
+  if (sync) {
+    result.requirements.unshift({ item: SYNC_ITEM, requirement: syncText(sync), quote: sync.quote, part: "genset", level: "core", byCode: true, sync: { need: sync.need, parts: sync.parts } });
+    result.brandSync = { need: sync.need, parts: sync.parts, quote: sync.quote, text: sync.text };
+  } else delete result.brandSync;
   // A requirement's part and level (core: decides the model; option: chosen when ordering), copied to its checks.
   const reqs = new Map((result.requirements || []).map((r) => [norm(r.item), r]));
   for (const r of result.requirements || []) { r.level = r.level === "option" ? "option" : "core"; if (!PARTS.includes(r.part)) r.part = "genset"; }
@@ -1299,6 +1312,26 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       const ck = c.controller?.model && CAT.keyOf(c.controller.model);
       s.hasController = !!ck && (row.includes(squash(c.controller.model)) || (sup.get(s.supplierId).controllers || []).some((x) => x.model && CAT.keyOf(x.model) === ck));
     }
+    c.checks = (c.checks || []).filter((x) => !isSyncItem(x.item));
+    if (sync) {
+      // The make of each part: as the configuration writes it, as the catalog reads the model, or from the model code.
+      const recMake = (list, m) => (list || []).find((x) => x.key === CAT.keyOf(m || ""))?.make || "";
+      const fam = {
+        engine: c.engine && BP.familyOf(c.engine.make, recMake(built.engines, c.engine.model), c.engine.model),
+        alternator: c.alternator && BP.familyOf(c.alternator.make, recMake(built.alternators, c.alternator.model), c.alternator.model),
+        controller: c.controller && BP.familyOf(c.controller.make, c.controller.model, ...CAT.controllersIn(c.controller.model || "").map((x) => x.brand)),
+      };
+      // The genset maker: the make the configuration gives its genset, else a genset maker among its suppliers whose
+      // name is a make (Cummins Power Generation, Weichai Power...). An assembler or a trader is not one.
+      // An assembler (its name is no make) makes at most the parts whose make is not known.
+      const makers = [...(c.genset?.make && BP.familyOf(c.genset.make) ? [{ name: c.genset.make, fam: BP.familyOf(c.genset.make) }] : []),
+        ...(c.suppliers || []).filter((s) => !s.unverified).map((s) => sup.get(s.supplierId)).filter((r) => r && r.role !== "distributor").map((r) => {
+          const f = BP.familyOf(r.names?.en, r.id);
+          // A Chinese company whose name carries a foreign make ("… Cummins Power …") is an assembler, not that maker.
+          return { name: r.names?.en || r.id, fam: f && r.country === "CN" && !CN_FAMILY.has(f) ? null : f };
+        })];
+      c.checks.unshift(syncCheck(sync, fam, makers, { engine: c.engine?.model, alternator: c.alternator?.model, controller: c.controller?.model }));
+    }
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
@@ -1320,7 +1353,8 @@ function checkDir(dir, suppliers, added = [], origin) {
 // group a "not met" weighs more than a supplier that fits, which weighs more than an "unclear"; a core requirement with
 // no check counts as unclear, so a configuration checked on fewer points is not ranked higher. Ties: an engine of a
 // Chinese make first (Khoa, 2026-11-05), then the agent's order.
-const groupOf = (x) => (x.level === "option" ? 2 : x.part === "engine" || x.part === "controller" ? 0 : 1);
+// Đồng bộ thương hiệu weighs with the engine and the controller: it decides their makes (Khoa, 2026-11-06).
+const groupOf = (x) => (x.level === "option" ? 2 : x.part === "engine" || x.part === "controller" || x.item === SYNC_ITEM ? 0 : 1);
 export function scoreOf(c, reqs = []) {
   const n = [[0, 0], [0, 0], [0, 0]], seen = new Set();
   for (const x of c.checks || []) {
@@ -1340,6 +1374,35 @@ export function scoreOf(c, reqs = []) {
 // its controller checks would all be "unclear", which ranked it above configurations that offer one but miss a point
 // elsewhere. The check is written by the code and shown like the others.
 export const NO_CONTROLLER = "Bộ điều khiển của cấu hình";
+// Đồng bộ thương hiệu (Khoa, 2026-11-06, IB2600594596: HSMT "đồng bộ 02 trong 03 bộ phận chính (động cơ, đầu phát, bộ
+// điều khiển) bởi nhà sản xuất máy phát điện", the suggestion gave Cummins + Nianfeng + SmartGen sets of a Chinese
+// assembler). web/bidprice.js brandSyncOf reads it; the check is the code's: how many of the parts named are of the
+// genset maker's family (web/bidprice.js familyOf). Met: the genset maker is known and makes enough of them. Not met:
+// even counting every part whose make is unknown as the maker's, no maker reaches the count (three makes for "2 of 3"),
+// or the genset maker is known and cannot reach it. Otherwise unclear (two parts of one make, but whose set it is is not
+// known, or a make not stated). Ranked with the engine and the controller.
+export const SYNC_ITEM = "Đồng bộ thương hiệu";
+const SYNC_VI = { engine: "động cơ", alternator: "đầu phát", controller: "bộ điều khiển" };
+const CN_FAMILY = new Set(["Weichai", "Yuchai", "SDEC", "Nianfeng", "Bobig", "Jet-Power", "Wintpower", "SmartGen", "Harsen", "Mebay", "Lixise"]);
+const isSyncItem = (s) => norm(s || "") === norm(SYNC_ITEM) || (/đồng\s*bộ|cùng\s*(một\s*)?(hãng|thương\s*hiệu|nhãn\s*hiệu|nhà\s*sản\s*xuất)/i.test(s || "") && !/h[oò][àa]\s*đồng\s*bộ|kiểm\s*định|phiếu/i.test(s || ""));
+const syncText = (s) => `Ít nhất ${s.need}/${s.parts.length} bộ phận (${s.parts.map((p) => SYNC_VI[p]).join(", ")}) do chính hãng sản xuất tổ máy làm ra`;
+export function syncCheck(sync, fam, makers = [], models = {}) {
+  const parts = sync.parts, need = sync.need, known = parts.filter((p) => fam[p]), unknown = parts.length - known.length;
+  const offered = parts.map((p) => `${SYNC_VI[p]} ${models[p] ? `${models[p]} ` : ""}(${fam[p] ? `hãng ${fam[p]}` : "chưa rõ hãng"})`).join(", ");
+  const count = (f) => parts.filter((p) => fam[p] === f).length;
+  const best = Math.max(0, ...known.map((p) => count(fam[p])));
+  const top = known.map((p) => fam[p]).find((f) => count(f) === best);
+  const out = { item: SYNC_ITEM, requirement: syncText(sync), hsmtQuote: sync.quote, offered, part: "genset", level: "core", byCode: true };
+  // makers: [{ name, fam }] the genset may be of (fam null: an assembler, whose own parts can only be the unknown ones).
+  const byMaker = makers.map((m) => ({ ...m, n: m.fam ? count(m.fam) : 0 })).sort((a, b) => b.n - a.n)[0];
+  if (byMaker && byMaker.fam && byMaker.n >= need) return { ...out, status: "met", note: `Code ghi: tổ máy ${byMaker.fam}, ${byMaker.n}/${parts.length} bộ phận cùng hãng ${byMaker.fam}.` };
+  if (best + unknown < need) return { ...out, status: "not_met", note: `Code ghi: ${known.length === parts.length ? "các bộ phận thuộc" : "các bộ phận đã rõ hãng thuộc"} ${new Set(known.map((p) => fam[p])).size} hãng khác nhau, không hãng nào làm ra đủ ${need}/${parts.length} bộ phận.` };
+  if (byMaker && byMaker.n + unknown < need) {
+    const who = [...new Set(makers.map((m) => m.fam || m.name))].slice(0, 3).join(" / ");
+    return { ...out, status: "not_met", note: `Code ghi: tổ máy do ${who} làm, chỉ ${byMaker.n}/${parts.length} bộ phận là của hãng tổ máy${best >= need ? `; cần tổ máy do chính ${top} sản xuất` : ""}.` };
+  }
+  return { ...out, status: "unclear", note: best >= need ? `Code ghi: ${best} bộ phận cùng hãng ${top}; cần tổ máy do chính ${top} sản xuất (nhà cung cấp trong cấu hình không phải ${top}).` : `Code ghi: chưa rõ hãng của ${parts.filter((p) => !fam[p]).map((p) => SYNC_VI[p]).join(", ")}.` };
+}
 function noController(c, reqs) {
   const has = !!c.controller?.model && !c.controller.unverified, mine = (x) => x.byCode && (x.item === NO_CONTROLLER || x.item === "Bảng điều khiển của cấu hình");
   // A controller added later (Tìm NCC's check) takes the code's check away again.
@@ -1906,6 +1969,11 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     console.log(problems.length ? problems.join("\n") : "Không có điểm nào chưa khớp nguồn.");
     // "unclear" checks whose sources have a line about them (config-prompt.md: read each, set met / not_met if it says).
     if (hints.length) console.log(`\nCÓ THỂ TRA ĐƯỢC — ${hints.length} mục chưa rõ mà nguồn có dòng liên quan (đọc dòng đó: nêu đạt / không đạt thì sửa, không nói thì để chưa rõ):\n${hints.join("\n")}`);
+    // Đồng bộ thương hiệu, written by the code: the agent needs it to decide on step 4 (config-prompt.md).
+    if (result.brandSync) {
+      const st = { met: "đạt", not_met: "KHÔNG ĐẠT", unclear: "chưa rõ" }, lines = (result.configs || []).map((c) => { const x = c.checks.find((x) => x.item === SYNC_ITEM); return `#${c.rank} ${st[x?.status] || "?"}: ${x?.offered || ""}. ${x?.note || ""}`; });
+      console.log(`\nĐỒNG BỘ THƯƠNG HIỆU (code kiểm):\n${lines.join("\n")}${lines.some((l) => / đạt:/.test(l)) ? "" : "\nKhông cấu hình nào đạt: làm bước 4 (tìm tổ máy chính hãng trên internet)."}`);
+    }
   } else if (cmd === "find-check") {
     // Offline in a folder made for Tìm NCC (suppliers.json, meta.json).
     const dir = arg("dir", "."), meta = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));

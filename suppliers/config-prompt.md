@@ -129,6 +129,13 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    cấp chào" (HGM6120, HGM6110): keep `model` as the source writes it, and its datasheet in controllers.md counts.
    When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
    (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
+   "Đồng bộ thương hiệu" (Khoa 2026-11-06): when input.md has that section, the HSMT wants at least N of the engine,
+   alternator and controller made by the genset's own maker. The code adds that requirement and writes its check in
+   every configuration from the makes (do not write it yourself; give each part's `make` when a source states it): a set
+   assembled from three makes (Cummins / Yuchai engine + Stamford / Nianfeng alternator + SmartGen / Deep Sea, built by a
+   Chinese assembler) fails it, and it ranks with the engine and the controller. Look first for a genset of a maker that
+   makes the engine and the alternator or controller itself (Cummins with Stamford / PowerCommand, Caterpillar / Perkins /
+   FG Wilson, Kohler / SDMO, MTU, Mitsubishi, Denyo...) with `genset.make` set; when catalog.md has none, do step 4.
    Keep at most 6 configurations, best first: fewest `not_met` on the engine and the controller, then on the
    alternator and the genset, then a supplier that truly fits (step 3), then fewest `unclear` in the same order, then
    the `option` requirements, then power closest above the requirement. The code ranks them again this way. A
@@ -136,7 +143,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    different engines when the catalog has them, not six rows of one engine.
 3. For every configuration, name the suppliers in the system that sell it (`suppliers`, at most 3, best first): only
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
-   this engine and, best, this alternator at the power required. Order (Khoa, 2026-11-02): a supplier that offers both
+   this engine and, best, this alternator at the power required. Under "Đồng bộ thương hiệu", a supplier truly fits only
+   when the configuration meets it too (the code's check is `met`). Order (Khoa, 2026-11-02): a supplier that offers both
    this engine (its row) and the configuration's controller first, then the supplier of the genset row, then a row
    that also names this alternator, then confidence high > medium > low, then role genset_oem. A Vietnam distributor is
    not needed and does not count in the order. `why` states only facts shown in catalog.md (the row, the role, the

@@ -28,6 +28,11 @@ const fmt = (v) => Number(v).toLocaleString("vi-VN");
 // the bot can add: the analysis, the configuration suggested in Cấu hình gợi ý and the HSMT's technical part.
 // `size` (a tender of several sizes, attempt): this run's size, its share of the package price being in basis, with the
 // tender's sizes, the whole package price and the configurations Gợi ý cấu hình suggested for this size.
+// The Đồng bộ thương hiệu check config-bot wrote for a configuration, in a few words after it.
+const syncNote = (c) => {
+  const x = (c.checks || []).find((x) => x.item === "Đồng bộ thương hiệu");
+  return !x ? "" : x.status === "met" ? " (đạt đồng bộ thương hiệu)" : x.status === "not_met" ? " (KHÔNG đạt đồng bộ thương hiệu: tổ máy lắp ráp từ nhiều hãng)" : " (chưa rõ đồng bộ thương hiệu)";
+};
 export async function prep(req, dir, hist, size = null) {
   fs.mkdirSync(dir, { recursive: true });
   const key = req.key || req.notifyNo, b = req.basis || {};
@@ -37,7 +42,11 @@ export async function prep(req, dir, hist, size = null) {
   // What this HSMT asks for, read the way bidhist's config.text was (the analysis' technical lines), else the HSMT's
   // technical part; and the engine of the configuration Gợi ý cấu hình put first (its origin group picks the lots).
   const cfgText = a?.technicalSpecs?.length ? a.technicalSpecs.map((s) => `${s.item}: ${s.requirement}`).join("\n") : hsmt ? technicalPart(hsmt.text).slice(0, 20000) : "";
-  const t = { notifyNo: key, bidName: req.bidName || a?.keyInfo?.bidName || "", investorName: b.investorName || a?.keyInfo?.investor || "", cfgText, engine: top[0]?.engine || null };
+  const t = { notifyNo: key, bidName: req.bidName || a?.keyInfo?.bidName || "", investorName: b.investorName || a?.keyInfo?.investor || "", cfgText,
+    // Not the engine of a configuration that fails Đồng bộ thương hiệu (an assembled set is not what will be offered):
+    // the first one that does not fail it, else what the HSMT asks for (Khoa, 2026-11-06).
+    engine: top.find((c) => !/KHÔNG/.test(syncNote(c)))?.engine || null,
+    sync: (hsmt && BP.brandSyncOf(hsmt.text)) || BP.brandSyncOf(cfgText) };
   const docs = hist || Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
   const { total, group, otherGroup, list } = BP.candidates(t, docs, K, P);
   fs.writeFileSync(path.join(dir, "input.md"), [
@@ -46,9 +55,12 @@ export async function prep(req, dir, hist, size = null) {
     ...(size ? ["", `## Gói có nhiều cỡ máy: ${size.sizes.map(sizeText).join("; ")}`,
       `Lượt này CHỈ so máy ${sizeText(size)}; các cỡ khác có lượt riêng. Xếp mức theo máy cỡ này: so công suất một máy với máy ${size.label}; gói cũ chỉ có máy cỡ này (một hay nhiều máy cùng cỡ) không bị xếp "khác" chỉ vì gói này còn máy cỡ khác. Giá gói ở trên là phần giá của cỡ máy này do code ước tính (chia giá cả gói${size.whole ? ` ${fmt(size.whole)} đ` : ""} theo số lượng và công suất từng cỡ), không phải số trên muasamcong.`, ""] : []),
     `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}`, "",
+    // Đồng bộ thương hiệu (Khoa, 2026-11-06): an OEM set, priced far above a set assembled from three makes.
+    ...(t.sync ? [`## Đồng bộ thương hiệu: HSMT đòi ít nhất ${t.sync.need}/${t.sync.parts.length} bộ phận chính (động cơ, đầu phát, bộ điều khiển) do chính hãng sản xuất tổ máy làm ra`,
+      `HSMT ghi: "${t.sync.text}"`, `Gói cũ HSMT không đòi điều này, hay hàng trúng là tổ máy lắp ráp (động cơ, đầu phát, bộ điều khiển của các hãng khác nhau), thì không xếp "giống".`, ""] : []),
     ...(a?.keyInfo ? ["## Thông tin chính (phân tích HSMT)", ...Object.entries(a.keyInfo).filter(([, v]) => v).map(([k, v]) => `- ${k}: ${v}`), ""] : []),
     ...(a?.technicalSpecs?.length ? ["## Thông số kỹ thuật (phân tích HSMT)", ...a.technicalSpecs.map((s) => `- ${s.item}: ${s.requirement}`), ""] : []),
-    ...(top.length ? ["## Cấu hình dự kiến chào (Gợi ý cấu hình)", ...top.map((c) => `- ${[c.engine && `động cơ ${[c.engine.make, c.engine.model].filter(Boolean).join(" ")}`, c.alternator && `đầu phát ${[c.alternator.make, c.alternator.model].filter(Boolean).join(" ")}`, c.controller && `bộ điều khiển ${[c.controller.make || c.controller.brand, c.controller.model].filter(Boolean).join(" ")}`].filter(Boolean).join(", ")}`), ""] : []),
+    ...(top.length ? ["## Cấu hình dự kiến chào (Gợi ý cấu hình)", ...top.map((c) => `- ${[c.engine && `động cơ ${[c.engine.make, c.engine.model].filter(Boolean).join(" ")}`, c.alternator && `đầu phát ${[c.alternator.make, c.alternator.model].filter(Boolean).join(" ")}`, c.controller && `bộ điều khiển ${[c.controller.make || c.controller.brand, c.controller.model].filter(Boolean).join(" ")}`].filter(Boolean).join(", ")}${syncNote(c)}`), ""] : []),
     hsmt ? "## Phần kỹ thuật của HSMT\n" + technicalPart(hsmt.text).slice(0, 60000) : "Chưa có văn bản HSMT.",
   ].filter((l) => l !== "").join("\n"), "utf8");
   fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"), "utf8");

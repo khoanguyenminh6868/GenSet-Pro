@@ -30,6 +30,11 @@ còn máy cỡ khác; gói cũ nhiều cỡ máy thì xếp "khác" trừ khi c�
      biến áp, UPS, xây dựng, nhiều loại hàng khác chiếm phần lớn giá), khác nhóm xuất xứ (G7 với Trung Quốc), hoặc thực ra
      không phải cung cấp máy phát (sửa chữa, thuê, phụ tùng...).
    - `unknown` — không đủ thông tin: mục không cho biết công suất hay hàng hoá đủ để so.
+   Khi `input.md` có mục "Đồng bộ thương hiệu" (Khoa, 2026-11-06): gói này phải chào tổ máy chính hãng (ít nhất 2 trong
+   3 bộ phận động cơ / đầu phát / bộ điều khiển do hãng tổ máy làm ra), giá cao hơn hẳn tổ máy lắp ráp. Gói cũ chỉ xếp
+   `same` khi HSMT của nó cũng đòi đồng bộ thương hiệu (dòng "So cấu hình" có "đồng bộ thương hiệu" ở cả hai gói, hay câu
+   HSMT nói vậy) hoặc hàng trúng là tổ máy chính hãng; hàng trúng là tổ máy lắp ráp (động cơ, đầu phát, bộ điều khiển của
+   các hãng khác nhau, hay hãng tổ máy là xưởng lắp ráp) thì xếp `different`; không biết thì tối đa `close`.
    Công suất "code đọc từ tên gói" có thể sai (tên gói nhắc công suất trạm biến áp, hay tổng nhiều máy): đọc cả hàng hoá
    và câu trích HSMT. Đơn giá hàng hoá (khi có) cho biết giá riêng của máy, dùng để nhận ra gói có nhiều hạng mục khác.
 3. Mỗi mục ghi `same` (điểm giống) và `diff` (điểm khác) — mỗi điểm vài chữ, ví dụ "400 kVA", "Cummins (G7)",
