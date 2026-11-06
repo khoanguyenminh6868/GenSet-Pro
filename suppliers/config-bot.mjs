@@ -1843,7 +1843,8 @@ async function mergeFindIntoConfig(key, records, { cap, origin, suppliers = reco
   const outs = [];
   for (const part of parts) {
     const result = part.result, out = mergeFind(result, records, { cap: part.cap, origin: result.origin || whole.origin || origin });
-    outs.push({ ...out, label: part.label });
+    // The same object: out.checked is set below, after the push (it was lost in a copy, 2026-11-06).
+    out.label = part.label; outs.push(out);
     if (!out.joined.length && !out.created.length) continue;
     const at = new Date().toISOString().slice(0, 16).replace("T", " ");
     result.notes = [...(result.notes || []), `Tìm NCC lúc ${at} UTC: ${mergeText(out)}, bằng code từ dòng bảng của nhà cung cấp.`];
