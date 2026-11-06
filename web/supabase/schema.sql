@@ -70,9 +70,11 @@ create table if not exists public.activity_log (
   detail jsonb
 );
 create index if not exists activity_log_at on public.activity_log (at desc);
+create index if not exists activity_log_actor_at on public.activity_log (actor, at desc);
 alter table public.activity_log enable row level security;
 drop policy if exists activity_log_read on public.activity_log;
-create policy activity_log_read on public.activity_log for select to authenticated using (public.is_superadmin());
+-- (select ...) so the check runs once per query, not once per row (the log has many rows).
+create policy activity_log_read on public.activity_log for select to authenticated using ((select public.is_superadmin()));
 -- No insert/update/delete policies: rows come only from the trigger, log_activity() and the service role.
 
 -- Who made a docs change: the signed-in member's email; for the /api functions (service role) the
