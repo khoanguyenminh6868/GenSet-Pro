@@ -129,3 +129,11 @@ test("candidates: a tender asking for đồng bộ thương hiệu prefers lots 
   const { list } = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA", cfgText: "Động cơ Cummins", sync: { need: 2 } }, d, 400, 1e9);
   assert.deepEqual(list.map((s) => s.key), ["B", "A"]);
 });
+
+test("candidates: power within 10% when the tender asks for đồng bộ thương hiệu, 5% otherwise", () => {
+  const d = { A: { bidName: "Mua sắm máy phát điện 435kVA", final: true, lots: [lot(1e9, 8e8)] }, B: { bidName: "Mua sắm máy phát điện 450kVA", final: true, lots: [lot(1e9, 8e8)] } };
+  const t = { notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" };
+  assert.deepEqual(BP.candidates(t, d, 400, 1e9).list.map((s) => s.key), []);
+  const r = BP.candidates({ ...t, sync: { need: 2 } }, d, 400, 1e9);
+  assert.deepEqual([r.tol, r.list.map((s) => s.key)], [0.1, ["A"]]);
+});
