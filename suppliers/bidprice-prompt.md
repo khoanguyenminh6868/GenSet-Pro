@@ -8,9 +8,15 @@ Không tìm trên internet.
   Gợi ý cấu hình), phần yêu cầu kỹ thuật của HSMT.
 - `samples.md`: các phần/gói đã có kết quả trên muasamcong mà code thấy gần nhất (cùng là cung cấp máy phát, công suất
   code đọc được xê dịch không quá 5% so với gói này — 10% khi gói này đòi đồng bộ thương hiệu, `input.md` ghi mức áp dụng —, giá gói gần, động cơ không khác nhóm xuất xứ với gói này). Mỗi mục có mã `S1`, `S2`... và chỉ có những gì muasamcong ghi: tên gói, chủ đầu tư,
-  công suất code đọc được, số nhà thầu, hàng hoá trúng thầu (tên, hãng, model, xuất xứ, số lượng, đơn giá), câu trích HSMT.
+  công suất code đọc được (kèm mức liên tục/dự phòng khi dòng đó ghi; "có thể là mức dự phòng của máy … liên tục" khi
+  gói cũ chỉ khớp công suất nếu đọc ở mức kia), số máy code đọc (khi nhiều hơn 1), số nhà thầu, hàng hoá trúng thầu (tên,
+  hãng, model, xuất xứ, số lượng, đơn giá), câu trích HSMT (đoạn đầu, rồi các dòng về hãng, xuất xứ, phạm vi, số lượng).
   Dòng cuối mỗi mục, "So cấu hình (code)", là code so hãng và hạng mục (vỏ cách âm, ATS, bồn dầu ngoài...) hai gói nêu,
-  chỉ để gợi ý chỗ cần đọc: code chỉ dò chữ, có thể sót hay nhầm. Không chép `quote` từ dòng này.
+  chỉ để gợi ý chỗ cần đọc: code chỉ dò chữ, có thể sót hay nhầm. Không chép `quote` từ dòng này, từ dòng "Công suất
+  (code đọc…)" hay "Số máy (code đọc)".
+  Nhóm xuất xứ có ba mức: hãng Trung Quốc; hãng ngoài Trung Quốc sản xuất tại Trung Quốc (Dongfeng/Chongqing Cummins,
+  Perkins Wuxi, MTU Yuchai…); hãng ngoài Trung Quốc sản xuất ở nước ngoài. Máy Cummins sản xuất tại Trung Quốc so với máy
+  Cummins Mỹ/Anh/Ấn Độ là khác nhóm; so với máy hãng Trung Quốc cũng khác nhưng gần giá hơn.
 
 Nếu `input.md` có mục "Gói có nhiều cỡ máy": gói này mua máy nhiều cỡ và lượt này chỉ so MỘT cỡ (Khoa, 2026-11-04).
 Tóm tắt và xếp mức theo máy cỡ đó: gói cũ chỉ có máy cỡ đó là giống/gần như bình thường, không xếp "khác" chỉ vì gói này
@@ -37,6 +43,8 @@ còn máy cỡ khác; gói cũ nhiều cỡ máy thì xếp "khác" trừ khi c�
    các hãng khác nhau, hay hãng tổ máy là xưởng lắp ráp) thì xếp `different`; không biết thì tối đa `close`.
    Công suất "code đọc từ tên gói" có thể sai (tên gói nhắc công suất trạm biến áp, hay tổng nhiều máy): đọc cả hàng hoá
    và câu trích HSMT. Đơn giá hàng hoá (khi có) cho biết giá riêng của máy, dùng để nhận ra gói có nhiều hạng mục khác.
+   Công suất liên tục và dự phòng của cùng một máy lệch khoảng 10% (400 kVA liên tục = 440 kVA dự phòng): gói cũ ghi
+   440 kVA dự phòng là cùng cỡ với gói này 400 kVA liên tục, không xếp "khác" vì con số.
 3. Mỗi mục ghi `same` (điểm giống) và `diff` (điểm khác) — mỗi điểm vài chữ, ví dụ "400 kVA", "Cummins (G7)",
    "kèm ATS", "2 máy", "không ghi hãng". Và `quote`: một đoạn **chép nguyên văn** từ chính mục đó trong `samples.md`
    (không thêm bớt chữ nào, không chép phần "Công suất (code đọc...)") cho thấy điểm quyết định mức — thường là tên hàng

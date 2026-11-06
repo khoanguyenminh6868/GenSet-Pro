@@ -306,3 +306,26 @@ test("Tìm Thông Số: partsOf lists the engines, alternators and controllers t
   assert.deepEqual(p.alternators.map((e) => e.model), ["HCI544C"]);
   assert.deepEqual(p.controllers.map((e) => e.model), ["HGM9320"]);
 });
+
+test("stdChecks: frequency, phases, power factor and voltage read from the table header (2026-11-06 audit)", () => {
+  const sup2 = [{ id: "w", specTables: [{ n: 101, title: "", header: ["| Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | Alternator"], rows: ["| WT400 | 400/320 | 6BTAA5.9-G12 | UCI274E"] }] }];
+  const row2 = { kind: "catalog", supplierId: "w", n: 101, line: "| WT400 | 400/320 | 6BTAA5.9-G12 | UCI274E" };
+  const r = { requirements: [{ item: "Tần số", requirement: "50 Hz", quote: "Tần số 50Hz", part: "genset" }, { item: "Số pha", requirement: "3 pha", quote: "3 pha", part: "genset" },
+      { item: "Hệ số công suất", requirement: "0,8", quote: "cosφ = 0,8", part: "genset" }, { item: "Điện áp", requirement: "380/220 V", quote: "380/220V", part: "genset" }, { item: "Điện áp định mức", requirement: "400/230 V", quote: "400/230V", part: "genset" }],
+    configs: [{ rank: 1, engine: { model: "6BTAA5.9-G12", src: row2 }, alternator: { model: "UCI274E", src: row2 }, genset: { model: "WT400", src: row2 },
+      checks: [{ item: "Tần số", hsmtQuote: "Tần số 50Hz", offered: "", sourceQuote: "", part: "genset", status: "unclear" }] }] };
+  const { result } = check(r, { hsmtText: "Tần số 50Hz\n3 pha\ncosφ = 0,8\n380/220V\n400/230V", suppliers: sup2, readWeb });
+  const st = Object.fromEntries(result.configs[0].checks.map((x) => [x.item, x.status]));
+  // 380/220 V is not what the header says: no check is written for it (left to the agent).
+  assert.deepEqual(st, { "Tần số": "met", "Số pha": "met", "Hệ số công suất": "met", "Điện áp định mức": "met" });
+  assert.ok(result.configs[0].checks.every((x) => x.byCode && /50HZ PF=0.8/.test(x.sourceQuote)));
+});
+
+test("rankConfigs: rows of one engine + alternator merge their suppliers; at most 3 rows per engine (2026-11-06)", async () => {
+  const { rankConfigs } = await import("./config-bot.mjs");
+  const cfg = (alt, sid, ctl) => ({ engine: { model: "6BTAA5.9-G12" }, alternator: { model: alt }, controller: ctl ? { model: ctl } : null, checks: [], suppliers: [{ supplierId: sid, n: 101, line: "x" }] });
+  const r = rankConfigs({ requirements: [], configs: [cfg("UCI274E", "a"), cfg("UCI274E", "b", "DSE6120"), cfg("UCI274F", "c"), cfg("UCI274G", "d"), cfg("UCI274H", "e")] });
+  assert.deepEqual(r.configs.map((c) => c.alternator.model), ["UCI274E", "UCI274F", "UCI274G"]);
+  assert.deepEqual(r.configs[0].suppliers.map((s) => s.supplierId), ["a", "b"]);
+  assert.equal(r.configs[0].controller.model, "DSE6120");
+});

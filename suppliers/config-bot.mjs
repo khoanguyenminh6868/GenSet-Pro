@@ -1318,6 +1318,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       s.hasController = !!ck && (row.includes(squash(c.controller.model)) || (sup.get(s.supplierId).controllers || []).some((x) => x.model && CAT.keyOf(x.model) === ck));
     }
     c.checks = (c.checks || []).filter((x) => !isSyncItem(x.item));
+    stdChecks(c, result.requirements || [], rowOf(c.genset?.src || c.engine?.src));
     if (sync) {
       // The make of each part: as the configuration writes it, as the catalog reads the model, or from the model code.
       const recMake = (list, m) => (list || []).find((x) => x.key === CAT.keyOf(m || ""))?.make || "";
@@ -1457,14 +1458,63 @@ function noController(c, reqs) {
   c.checks = [{ item: NO_CONTROLLER, requirement: "Có bộ điều khiển đáp ứng các yêu cầu bộ điều khiển của HSMT", offered: "Không có bộ điều khiển nào có nguồn trong cấu hình này",
     part: "controller", level: "core", status: "not_met", byCode: true, note: "Code ghi: cấu hình không có bộ điều khiển nên tính là không đạt ở bộ điều khiển." }, ...(c.checks || [])];
 }
+// The requirements a genset table's header or row answers for every set in it: frequency ("50HZ"), phases ("3Phase 4Wire"),
+// power factor ("PF=0.8") and voltage ("400/230V", only when the HSMT's figures are the header's). The agent left them
+// "unclear" in most runs (2026-11-06 audit: Số pha 1 met / 25 unclear, Hệ số công suất 8 / 25, Tần số 22 / 16) though
+// the header states them; the code reads them and marks the check byCode with the header line as its source.
+const STD_ITEMS = [
+  ["freq", /t[ầa]n\s*s[ốo]|frequency|\bHz\b/i, (t) => { const m = t.match(/\b(50|60)\s*Hz/i); return m && { want: `${m[1]} Hz`, re: new RegExp(`\\b${m[1]}\\s*-?\\s*Hz`, "i") }; }],
+  ["phase", /s[ốo]\s*pha|\bpha\b|phase/i, (t) => (/\b3\s*pha|ba\s*pha|3\s*-?\s*ph(ase)?\b|three\s*-?\s*phase|3P\b/i.test(t) ? { want: "3 pha", re: /\b3\s*-?\s*ph(ase)?\b|three\s*-?\s*phase|3P4W|3P\b|三相/i }
+    : /(^|[^\d])1\s*pha|m[ộo]t\s*pha|single\s*-?\s*phase/i.test(t) ? { want: "1 pha", re: /(^|[^\d])1\s*-?\s*ph(ase)?\b|single\s*-?\s*phase|单相/i } : null)],
+  ["pf", /h[ệe]\s*s[ốo]\s*c[ôo]ng\s*su[ấa]t|cos\s*φ|cos\s*phi|cos\s*ϕ|power\s*factor|\bPF\b/i, (t) => (/0[.,]8\b/.test(t) ? { want: "cosφ 0,8", re: /\bPF\s*=?\s*0[.,]8\b|cos\s*[φϕ]?\s*=?\s*0[.,]8\b|0[.,]8\s*PF|power\s*factor\s*:?\s*0[.,]8|功率因数\s*0[.,]8/i } : null)],
+  ["voltage", /đi[ệe]n\s*[áa]p|voltage/i, (t) => { const u = [...new Set((t.match(/(?<!\d)(400|380|415|230|220|240)(?!\d)/g) || []))]; return u.length ? { want: `${u.join("/")} V`, re: new RegExp(u.map((x) => `(?<!\\d)${x}(?!\\d)`).join("[\\s\\S]{0,12}") + "[\\s\\S]{0,6}V", "i") } : null; }],
+];
+const STD_SKIP = /qu[áa]\s*t[ảa]i|bi[ếe]n\s*thi[êe]n|sai\s*s[ốo]|[ổo]n\s*[đd][ịi]nh|đi[ềe]u\s*ch[ỉi]nh|kh[ởo]i\s*[đd][ộo]ng|[ắa]c\s*quy|\bDC\b|k[íi]ch\s*t[ừu]|đ[ộo]ng\s*c[ơo]|engine|đ[ộo]\s*m[éeè]o|THD/i;
+export function stdChecks(c, reqs, row) {
+  if (!row) return;
+  const lines = [...(row.header || []), row.line || "", row.title || ""].filter(Boolean);
+  for (const r of reqs) {
+    if (r.part === "controller" || r.part === "engine" || STD_SKIP.test(`${r.item} ${r.requirement || ""}`)) continue;
+    const items = STD_ITEMS.filter(([, re]) => re.test(r.item || ""));
+    if (!items.length) continue;
+    const t = `${r.item} ${r.requirement || ""} ${r.quote || ""}`;
+    const wants = items.map(([, , f]) => f(t));
+    if (wants.some((w) => !w)) continue;
+    const hit = wants.map((w) => lines.find((l) => w.re.test(l)));
+    if (hit.some((l) => !l)) continue;
+    const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+    if (x && (x.status === "met" || x.status === "not_met") && !x.unverified) continue;
+    const check = { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: wants.map((w) => w.want).join(", "), sourceQuote: [...new Set(hit)].join(" | "), part: r.part || "genset", level: r.level || "core", status: "met", byCode: true,
+      note: "Code đọc từ tiêu đề bảng / dòng tổ máy của cấu hình." };
+    if (x) { delete x.unverified; delete x.hint; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
+  }
+}
 export function rankConfigs(result) {
   const reqs = result.requirements || [];
   for (const c of result.configs || []) noController(c, reqs);
   const cmp = (a, b) => { for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
-  const list = (result.configs || []).map((c, i) => ({ c, i, s: scoreOf(c, reqs) }));
+  let list = (result.configs || []).map((c, i) => ({ c, i, s: scoreOf(c, reqs) }));
   // Same score: an engine of a Chinese make first (Khoa, 2026-11-05). Under G7 / G20 / Khác there is none.
   const cnOf = (c) => (c.engine?.model && CAT.originIn(`${c.engine.model} ${c.engine.make || ""}`, c.engine.model) === "cn" ? 0 : 1);
   list.sort((x, y) => cmp(x.s, y.s) || cnOf(x.c) - cnOf(y.c) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
+  // One configuration per engine + alternator + controller (2026-11-06 audit: a run gave five rows of one 6BTAA5.9-G12,
+  // one supplier each): a later row of the same models (or with no controller of its own) hands its suppliers to the
+  // first and goes; and at most 3 rows per engine, so several engines are shown.
+  const seen = new Map(), perEngine = new Map(), ctlKey = (c) => (c.controller?.model ? CAT.keyOf(ctlModelOf(c.controller) || c.controller.model) : "");
+  list = list.filter(({ c }) => {
+    const ek = CAT.keyOf(c.engine?.model || ""), k = `${ek}|${CAT.keyOf(c.alternator?.model || "")}`;
+    if (!ek) return true;
+    const first = (seen.get(k) || []).find((f) => !ctlKey(c) || !ctlKey(f) || ctlKey(f) === ctlKey(c));
+    if (first) {
+      const ids = new Set((first.suppliers || []).map((s) => s.supplierId));
+      for (const s of c.suppliers || []) if (!ids.has(s.supplierId) && (first.suppliers || []).length < 3) { first.suppliers = [...(first.suppliers || []), s]; ids.add(s.supplierId); }
+      if (!first.controller?.model && c.controller?.model) first.controller = c.controller;
+      return false;
+    }
+    seen.set(k, [...(seen.get(k) || []), c]);
+    perEngine.set(ek, (perEngine.get(ek) || 0) + 1);
+    return perEngine.get(ek) <= 3;
+  });
   result.configs = list.map(({ c }, i) => {
     // Suppliers: one offering both the engine (its checked row names it) and the controller first, then one whose
     // row names the engine, then the genset row's own supplier, one whose row names the alternator, then the agent's
@@ -1597,6 +1647,17 @@ async function answer(req, suppliers) {
     return post([...(result ? [{ coll: "configmatch", id: key, data: { at, result } }] : []), { coll: "configreq", id: key, data: JSON.parse(JSON.stringify(reqData)) }]);
   };
   try {
+    // A request Sync sent on the name alone (2026-11-06 audit: IB2600599817 buys fuel for generators and still got a
+    // configuration and a price run): when neither the name nor the analysis gives a generator power, no agent runs.
+    if (req.auto && req.from === "sync") {
+      const a = (await doc("analysis", key).catch(() => null))?.result;
+      const texts = [req.bidName, a?.keyInfo?.generatorCapacity, ...(a?.technicalSpecs || []).map((x) => `${x.item || ""} ${x.requirement || ""}`)];
+      if (!texts.some((t) => BP.kvaOf(t))) {
+        await done({ result: { summary: "", requirements: [], configs: [], message: "Tự động bỏ qua: tên gói và Phân tích HSMT không nêu công suất máy phát nào (có thể gói không mua máy phát). Bấm Gợi ý để chạy tay.", notes: [] }, error: "" });
+        console.log(`${key}: bỏ qua Gợi ý cấu hình tự động (không thấy công suất máy phát)`);
+        return;
+      }
+    }
     const prev = (await doc("configmatch", key).catch(() => null))?.result;
     const found = await sizesFor(key, req.bidName), sizes = found.length > 1 ? found.slice(0, MAX_SIZES) : [null];
     const runs = await Promise.all(sizes.map(async (size, i) => {
@@ -1655,6 +1716,8 @@ async function autoBidprice(req) {
   const hit = texts.find(([t]) => BP.kvaOf(t)), b = req.basis || {};
   const capText = hit ? `${String(hit[0]).normalize("NFC").match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/i)[0]} (${hit[1]})` : "";
   const basis = { kva: hit ? BP.kvaOf(hit[0]) : null, price: Number(b.price) || null, capText, bidForm: b.bidForm || "", investorName: b.investorName || a?.keyInfo?.investor || "" };
+  // No power: the agent would compare 80 lots of every size for nothing (2026-11-06 audit).
+  if (!basis.kva) { console.log(`${req.key}: không gửi Gợi ý giá đấu tự động (không thấy công suất máy phát)`); return; }
   await post([{ coll: "bidpricereq", id: req.key, data: { notifyNo: req.notifyNo || req.key, bidName: req.bidName || "", basis, requestedAt: new Date().toISOString(), from: "sync", auto: true } }]);
   console.log(`${req.key}: đã gửi Gợi ý giá đấu tự động (${basis.kva ? Math.round(basis.kva) + " kVA" : "công suất không rõ"}, giá gói ${basis.price || "không rõ"})`);
 }

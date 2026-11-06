@@ -459,14 +459,26 @@ function histNeedsConfig(d) {
   return (d.lots || []).some((l) => !histPower(l.lotName).length && (multi || !histPower(d.bidName).length) && !(l.goods || []).some((g) => histPower([g.name, g.code, g.desc].join(" ")).length));
 }
 // Lines of an HSMT that describe the equipment: power, engine, alternator, makes, controller, ATS, quantities.
+// The lines kept for bidhist config.text, within CONFIG_TEXT_MAX characters: the ones that decide a comparison first
+// (make, origin, quantity, power, scope), then the rest in order. 2026-11-06 audit: at 3,000 characters in order, 803 of
+// 1,250 past tenders were cut before their origin / scope lines.
+const CONFIG_TEXT_MAX = 6000;
+const CONFIG_KEY = /h[ãa]ng|xu[ấa]t\s*x[ứu]|origin|\bATS\b|c[áa]ch\s*[âa]m|b[ồo]n|đ[ồo]ng\s*b[ộo]|s[ốo]\s*l[ưu][ợo]ng|li[êe]n\s*t[ụu]c|d[ựu]\s*ph[òo]ng|prime|standby|c[ôo]ng\s*su[ấa]t|bi[ếe]n\s*[áa]p|l[ắa]p\s*đ[ặa]t|\bc[áa]p\b|trung\s*qu[ốo]c|\bG7\b|nh[ậa]p\s*kh[ẩa]u|model|nh[ãa]n\s*hi[ệe]u/i;
+function configText(lines, max = CONFIG_TEXT_MAX) {
+  const uniq = lines.filter((l, i, a) => l && a.indexOf(l) === i), key = uniq.filter((l) => CONFIG_KEY.test(l)), rest = uniq.filter((l) => !CONFIG_KEY.test(l));
+  const out = []; let size = 0;
+  for (const l of [...key, ...rest]) { if (size + l.length + 1 > max) continue; out.push(l); size += l.length + 1; }
+  return out.join("\n");
+}
+// The sets of an analysis as figures (specs / Phân tích "generatorSets"), kept as they are when each is an object.
+const setsOf = (v) => (Array.isArray(v) ? v.filter((s) => s && typeof s === "object").map((s) => ({ qty: Number(s.qty) > 0 ? Number(s.qty) : null, primeKva: Number(s.primeKva) > 0 ? Number(s.primeKva) : null, standbyKva: Number(s.standbyKva) > 0 ? Number(s.standbyKva) : null,
+  primeKw: Number(s.primeKw) > 0 ? Number(s.primeKw) : null, standbyKw: Number(s.standbyKw) > 0 ? Number(s.standbyKw) : null, phases: [1, 3].includes(Number(s.phases)) ? Number(s.phases) : null, quote: s.quote ? String(s.quote).slice(0, 300) : null })).slice(0, 8) : []);
 function histConfigOf(text, src) {
   text = String(text || "").normalize("NFC");
   const kvas = histPower(text).filter((p, i, a) => a.findIndex((q) => q.v === p.v && q.u === p.u) === i).slice(0, 20);
   const want = /kva|kw\b|công suất|động cơ|engine|đầu phát|alternator|bộ điều khiển|controller|ats|xuất xứ|hãng sản xuất|model|tần số|điện áp|vòng tua|nhiên liệu|số lượng/i;
   const lines = text.split(/\r?\n/).map((l) => l.replace(/\s+/g, " ").trim()).filter((l) => l.length > 4 && l.length < 400 && want.test(l));
-  const out = []; let size = 0;
-  for (const l of lines) { if (out.includes(l)) continue; if (size + l.length > 3000) break; out.push(l); size += l.length + 1; }
-  return { kvas, text: out.join("\n"), src, at: now() };
+  return { kvas, text: configText(lines), src, at: now() };
 }
 const histTbmtUrl = (u) => { const x = new URL(u); for (const [k, v] of Object.entries({ stepCode: "notify-contractor-step-1-tbmt", step: "tbmt", inputResultId: "undefined", bidOpenId: "undefined" })) x.searchParams.set(k, v); return x.toString(); };
 const CFG_FILE_RE = /ch(ư|u)(ơ|o)ng[\s_.]*(v|5)(?![ivx\d])|y(ê|e)u\s*c(ầ|a)u\s*(v(ề|e)\s*)?k(ỹ|y)\s*thu(ậ|a)t|yeucau.*kythuat|ph(ạ|a)m\s*vi\s*cung\s*c(ấ|a)p|e-?hsmt|\bhsmt\b|\brfq\b|th(ô|o)ng\s*s(ố|o)\s*k(ỹ|y)\s*thu(ậ|a)t/i;
@@ -875,7 +887,7 @@ async function specsAsk(t, text, src, model) {
   if (r.limit || r.error) return r;
   const v = r.value;
   if (v._error) return { none: String(v._error) };
-  const result = { summary: null, keyInfo: { bidName: t.bidName || null, notifyNo: key, generatorCapacity: v.generatorCapacity || null },
+  const result = { summary: null, keyInfo: { bidName: t.bidName || null, notifyNo: key, generatorCapacity: v.generatorCapacity || null }, generatorSets: setsOf(v.generatorSets),
     technicalSpecs: v.technicalSpecs || [], qualificationRequirements: [], highlights: [], requiredDocuments: [], restrictiveClauses: [], questionsForClarification: [] };
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "genbid-specs-"));
   fs.writeFileSync(path.join(tmp, "src-req.txt"), body, "utf8");
@@ -892,7 +904,7 @@ async function specsAsk(t, text, src, model) {
     const lines = result.technicalSpecs.filter((s) => !s.unverified || s.quote).map((s) => `${s.item}: ${s.requirement}`.replace(/\s+/g, " ").slice(0, 300));
     // OCR can misread the unit ("350EVA", IB2600327742): then the power named in the tender name.
     const kvas = [histPower(result.keyInfo.generatorCapacity), histPower(t.bidName)].find((x) => x.length)?.filter((p, i, a) => a.findIndex((q) => q.v === p.v && q.u === p.u) === i) || [];
-    await post([{ coll: "bidhist", id: key, data: { ...hd, config: { kvas: kvas.length ? kvas : hd.config?.kvas || [], text: lines.join("\n").slice(0, 3000), src: `Chương V (${src}), thông số do AI đọc`, at: now() } } }]);
+    await post([{ coll: "bidhist", id: key, data: { ...hd, config: { kvas: kvas.length ? kvas : hd.config?.kvas || [], sets: result.generatorSets, text: configText(lines), src: `Chương V (${src}), thông số do AI đọc`, at: now() } } }]);
   }
   return { done: result.technicalSpecs.length, cap: result.keyInfo.generatorCapacity, secs: r.secs };
 }
@@ -1103,11 +1115,15 @@ async function autoRequests(fresh) {
 }
 // After the automatic analysis (done or not): Gợi ý cấu hình, Xuất xứ as the HSMT requires (config-bot.mjs: the G7 / G20
 // it names, else all; Khoa 2026-11-04). Its configreq carries auto + basis, and config-bot.mjs sends Gợi ý giá đấu once the configuration is posted.
-function autoConfigRow(meta) {
+// result: the analysis just finished; when neither it nor the name gives a generator power (a tender that buys fuel or
+// parts "cho máy phát điện", 2026-11-06 audit), no Gợi ý cấu hình / giá is sent (each costs an agent run).
+function autoConfigRow(meta, result = null) {
   const auto = readJson(AUTO_FILE, {}), a = auto[meta.key];
   if (!a || a.requestedAt !== meta.requestedAt) return null;
   delete auto[meta.key];
   writeJson(AUTO_FILE, auto);
+  const texts = [a.bidName, result?.keyInfo?.generatorCapacity, ...(result?.generatorSets || []).map((s) => `${s.primeKva || s.standbyKva || 0} kVA ${s.primeKw || s.standbyKw || 0} kW`), ...(result?.technicalSpecs || []).map((x) => `${x.item || ""} ${x.requirement || ""}`)];
+  if (result && !texts.some((t) => histPower(t).length)) { log(`    ${meta.key}: không gửi Gợi ý cấu hình tự động (Phân tích không nêu công suất máy phát)`); return null; }
   return { coll: "configreq", id: meta.key, data: { notifyNo: meta.notifyNo || meta.key, bidName: a.bidName, origin: "all", requestedAt: now(), from: "sync", auto: true,
     basis: JSON.parse(JSON.stringify({ price: a.price, bidForm: a.bidForm, investorName: a.investorName })) } };
 }
@@ -1894,6 +1910,7 @@ async function runFinish() {
         const result = readJson(path.join(dir, "result.json"), null);
         if (!result) throw new Error("result.json không phải JSON hợp lệ");
         const checked = meta.translate || meta.kind === "hsdt" ? [] : checkResult(meta, result, dir);
+        if (meta.kind === "analysis") result.generatorSets = setsOf(result.generatorSets);
         if (meta.kind === "analysis") rows.push({ coll: "analysis", id: meta.key, data: { status: "done", result, notes: [].concat(readJson(path.join(dir, "notes.json"), []) || [], checked), analyzedAt: at, by: "hsmt-worker" } });
         else if (meta.translate) {
           // The English version joins the stored result, unless a new comparison replaced it meanwhile.
@@ -1907,7 +1924,7 @@ async function runFinish() {
       // No result and no error.txt: leave the request waiting; GenBid-Bot.ps1 answers it with the round's error.
       if (rows.length) rows.push(reqDoc(""));
       else if (err) rows.push(reqDoc(err));
-      if (meta.kind === "analysis" && rows.length) rows.push(autoConfigRow(meta));
+      if (meta.kind === "analysis" && rows.length) rows.push(autoConfigRow(meta, rows.find((r) => r.coll === "analysis")?.data?.result || null));
       await post(rows);
       lines.push(`${KIND_NAME[meta.kind]} ${meta.key}: ${rows.length > 1 ? "đã gửi" : err ? "lỗi: " + err : "không có kết quả"}`);
     } catch (e) {

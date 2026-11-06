@@ -17,6 +17,7 @@ Answer with ONLY one JSON object in exactly this shape:
 ```
 {
   "generatorCapacity": string|null (rated power of the generator set(s) with unit and prime/standby as written, e.g. "500 kVA dự phòng"; several sets: "2 x 250 kVA"; null when not stated),
+  "generatorSets": [ { "qty": number|null, "primeKva": number|null, "standbyKva": number|null, "primeKw": number|null, "standbyKw": number|null, "phases": 1|3|null, "quote": string|null } ] (one entry per size of generator set the tender buys, the figures exactly as the text gives them: a figure the text calls liên tục / prime / PRP goes to prime*, dự phòng / standby / ESP to standby*, a figure with no rating word to standby* when the text says "công suất định mức" of a standby set, else to prime*; never convert kW to kVA or prime to standby; a figure not stated is null; [] when no power is stated),
   "technicalSpecs": [ { "item": string, "requirement": string, "quote": string|null, "reference": string|null (clause or table row, e.g. "Chương V, mục 2.1") } ],
   "_notes": [string] (optional: what could not be read, e.g. a scanned page)
 }

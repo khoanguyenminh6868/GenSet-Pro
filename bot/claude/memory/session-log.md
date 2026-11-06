@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 6fa5a3fd-d652-4e83-8fc0-67f86dc39a60
-  modified: 2026-11-05T00:36:16.860Z
+  modified: 2026-11-06T15:53:33.044Z
 ---
 
 Quy tắc (Khoa, 2026-11-03): chỉ ghi thay đổi **quan trọng** — tính năng/luồng mới, đổi kiến trúc dữ liệu, quyết định của Khoa, bẫy, việc còn dở. Không ghi chỉnh UI nhỏ, sửa lỗi lặt vặt, hay điều git log/code đã nói. Trước khi ghi, xem mục đã có thì sửa mục đó chứ không thêm dòng mới. Giữ file ngắn (~6 KB); dài thì gộp mục cũ. Mới nhất ở trên.
@@ -42,6 +42,7 @@ Quy tắc (Khoa, 2026-11-03): chỉ ghi thay đổi **quan trọng** — tính n
 - Thử UI cục bộ: trang cần đăng nhập Supabase → server node tự viết trả `shim.js` rỗng, chèn hook `window.__t={state,...}` trước `})();` cuối file để nạp dữ liệu giả. Máy không có Python/playwright. Khi nạp suppliers chỉ nạp `suppliers/cn/*.json` (specs/ trùng id ghi đè). Browser pane chưa đăng nhập web Vercel.
 
 ## Việc còn dở
+- **Audit dữ liệu 06/11** (Khoa hỏi, chưa chọn gì): bất cập chính chờ Khoa quyết — (1) kVA không gắn rating: tên gói/`bidhist.config.kvas`/`generatorCapacity` lệch nhau ~10% (prime vs standby) ở 144/326 gói → lọc ±5% của Gợi ý giá bỏ sót gói thật sự giống; (2) nhóm xuất xứ theo HÃNG (Cummins = ngoài TQ) nên DCEC/CCEC/Cummins TQ, Perkins Wuxi… bị xếp "ngoài TQ" (agent giá đấu than ở 4/9 gói); (3) `bidhist.config.text` bị cắt đúng 3000 ký tự ở 803/1250 gói; (4) `suggest` không xét số nhà thầu (nb=2 trung vị 0,979 vs nb≥6 0,794), `perKva` chia wp/k không nhân số máy; (5) Gợi ý cấu hình 65% check "chưa rõ", nhiều mục tiêu chuẩn (số pha, cosφ, 50 Hz, khởi động điện) để agent tự điền — nên code điền từ header bảng; (6) chuỗi tự động không có cổng "có phải mua máy phát" (IB2600599817 mua nhiên liệu vẫn chạy cấu hình + giá); (7) 223/431 NCC không có dòng bảng, đầu phát 76% không hãng.
 - Kiểm trên Vercel: các PR web từ #239 trở đi phần lớn chưa kiểm thật.
 - specs (lượt đọc lại xong 04/11 09:51; log `specs-20261103.log.2`). Chưa xử lý: (1) .doc lỗi mã trên web IB2500140418, IB2400095607, IB2300295227 (cần đọc lại bản gốc bằng Word COM); (2) 4 scan OCR ra rác IB2300094137, IB2300018261, IB2200069185, IB2500049415 (thử dpi/psm khác); (3) ~6 gói tên tệp mơ hồ ("Gói 22.pdf", "gói 12.pdf", "Mẫu 17_0001.pdf", "1196-vtsg-…pdf"): có thể tải hết tệp không phải QĐ; (4) chapterV(): Chương V < 3000 ký tự (chỉ là tóm tắt đầu HSMT) thì lấy từ dòng "Phần 2" cuối đến "Phần 3"; IB2600547578 HSMT không có Chương V (nằm tệp khác); (5) gói không đọc được tên có "máy phát điện": `genbid-bot-logs/specs-khong-chuong5-mpd.tsv`. Khoa muốn Sync giữ như cũ, không cào lịch sử, không thêm specs vào Sync.
 - Bot lấy yêu cầu từ Vercel /api/requests (không còn Action); feed/current chỉ do genbid-sync.js ghi. Còn sót nhánh feed-data (không còn ai ghi) — có thể xoá.

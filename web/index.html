@@ -805,6 +805,13 @@ function capacityOf(t) {
   const doc = state.hsmt[t._key];
   if (doc?.capacity) { const c = capFromText(doc.capacity); return { text: doc.capacity, n: c?.n ?? null, src: "HSMT" }; }
   if (capScan.found[t._key]) return { ...capScan.found[t._key], src: "đọc từ tệp HSMT" };
+  // The sets the analysis read in figures (generatorSets, 2026-11-06: qty, primeKva, standbyKva), before its free text.
+  const gs = (analysisOf(t._key)?.result?.generatorSets || []).filter((g) => g && (g.primeKva > 0 || g.standbyKva > 0 || g.primeKw > 0 || g.standbyKw > 0));
+  if (gs.length) {
+    const one = (g) => [g.primeKva > 0 ? `${g.primeKva} kVA liên tục` : g.primeKw > 0 ? `${g.primeKw} kW liên tục` : "", g.standbyKva > 0 ? `${g.standbyKva} kVA dự phòng` : g.standbyKw > 0 ? `${g.standbyKw} kW dự phòng` : ""].filter(Boolean).join(" / ");
+    const text = gs.map((g) => `${g.qty > 1 ? `${g.qty} x ` : ""}${one(g)}`).join("; "), c = capFromText(text);
+    if (c) return { text, n: c.n, src: "phân tích" };
+  }
   const kc = analysisOf(t._key)?.result?.keyInfo?.generatorCapacity;
   if (kc && capFromText(kc)) return { text: kc, n: capFromText(kc).n, src: "phân tích" };
   // Past tenders: the powers the bot read from the HSMT (bidhist config).
@@ -3584,16 +3591,20 @@ function bidPriceHtml(doc, t) {
   const alike = r.samples.filter((s) => s.level === "same" || s.level === "close").sort((x, y) => order[x.level] - order[y.level] || x.dist - y.dist);
   const rest = (lv) => r.samples.filter((s) => s.level === lv);
   const table = (list) => h`<div class="tablewrap"><table class="suptable supcards bprows"><thead><tr><th>#</th><th style="width:40%">Gói đã có kết quả</th><th style="width:34%">Mức giống</th><th style="width:26%">Giá trúng</th></tr></thead><tbody>${raw(list.map((s, i) => bpSampleRow(s, t, i)).join(""))}</tbody></table></div>`;
-  const what = st.basis === "same" ? `${st.n} gói giống` : `${st.n} gói giống hoặc gần (${st.same} giống, ${st.close} gần)`;
+  const what = (st.basis === "same" ? `${st.n} gói giống` : `${st.n} gói giống hoặc gần (${st.same} giống, ${st.close} gần)`)
+    // Under 5 alike lots the competed lots of the same size and origin group back them up (web/bidprice.js suggest).
+    + (st.nPrior ? ` + ${st.nPrior} gói cùng cỡ (±15%) cùng nhóm xuất xứ hoặc chưa rõ, chưa qua Agent so cấu hình` : "");
+  const nbTxt = st.bidders ? `Số nhà thầu ở các gói đó: trung vị ${st.bidders.median}${st.bidders.min !== st.bidders.max ? ` (từ ${st.bidders.min} đến ${st.bidders.max})` : ""}.` : "";
+  const byNb = (st.byBidders || []).filter((x) => x.ratio).map((x) => `${x.label}: trung vị ${bpPct(x.ratio)} giá gói (${x.n} gói)`).join("; ");
   // One size of a tender of several (bidPriceMultiHtml): its package price is the share code worked out.
   const part = "qty" in b;
   return h`<div class="muted small cmprev">Công suất ${b.kva ? `${Math.round(b.kva).toLocaleString("vi-VN")} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"} · ${part ? "phần giá gói ước tính" : "giá gói"} ${P ? fmtVnd(P) : "không rõ"} · Agent xét ${r.samples.length} gói gần nhất trong ${r.total} gói/phần có giá trúng</div>
     ${raw(r.tender?.summary ? h`<p class="small"><b>Gói này:</b> ${r.tender.summary}${r.tender.points?.length ? ` (${r.tender.points.join("; ")})` : ""}</p>` : "")}
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
-      : !st.levels.length ? h`<div class="note warn">Chưa đủ gói tương tự để gợi ý giá: chỉ có ${st.n} gói giống/gần có từ 2 nhà thầu trở lên (cần ít nhất 3). Xem các gói bên dưới để tự cân nhắc.</div>`
-      : h`${raw(st.enough ? "" : h`<div class="note warn">Chỉ có ${st.n} gói tương tự có cạnh tranh (dưới 5): giá dưới đây chỉ để tham khảo.</div>`)}
-        <div class="kpis" style="margin:8px 0">${raw(st.levels.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${bpPct(l.ratio)} giá gói · khả năng thắng giá ${Math.round(100 * l.chance)}%</span></div>`).join(""))}</div>
-        <div class="muted small">Tính từ ${what}, mỗi gói có từ 2 nhà thầu. Khả năng thắng giá: tỉ lệ các gói đó có giá trúng bằng hoặc cao hơn mức này.${st.perKva ? ` Theo giá trúng/kVA (trung vị ${fmtVnd(st.perKva.value)}/kVA, ${st.perKva.n} gói): ${fmtVnd(st.perKva.price)}.` : ""}</div>`)}
+      : !st.levels.length ? h`<div class="note warn">Chưa đủ gói tương tự để gợi ý giá: chỉ có ${st.pool ?? st.n} gói giống/gần hoặc cùng cỡ có từ 2 nhà thầu trở lên (cần ít nhất 3). Xem các gói bên dưới để tự cân nhắc.</div>`
+      : h`${raw(st.enough ? "" : h`<div class="note warn">Chỉ có ${st.pool ?? st.n} gói tương tự có cạnh tranh (dưới 5): giá dưới đây chỉ để tham khảo.</div>`)}
+        <div class="kpis" style="margin:8px 0">${raw(st.levels.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${bpPct(l.ratio)} giá gói · ${Math.round(100 * l.chance)}% gói cũ trúng ≥ mức này</span></div>`).join(""))}</div>
+        <div class="muted small">Tính từ ${what}, mỗi gói có từ 2 nhà thầu. "% gói cũ trúng ≥ mức này" là tỉ lệ các gói đó có giá trúng bằng hoặc cao hơn mức này, không phải xác suất thắng. ${nbTxt}${byNb ? ` Giá trúng theo số nhà thầu — ${byNb}.` : ""}${st.perKva ? ` Theo giá trúng một máy/kVA (trung vị ${fmtVnd(st.perKva.value)}/kVA, ${st.perKva.n} gói): ${fmtVnd(st.perKva.price)}.` : ""}</div>`)}
     ${raw((r.notes || []).length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}
     <h4 style="margin:12px 0 4px">Gói tương tự (${alike.length})</h4>
     ${raw(alike.length ? table(alike) : '<div class="note">Agent không thấy gói nào giống hoặc gần với gói này.</div>')}
