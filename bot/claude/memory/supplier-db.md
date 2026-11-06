@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 7f313dc0-600e-4a66-84f6-b51527698986
-  modified: 2026-11-05T00:36:47.709Z
+  modified: 2026-11-06T10:47:18.173Z
 ---
 
 CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước thật; 429 bản ghi lúc 2026-11-04). Mỗi thông tin có nguồn [n] + câu trích nguyên văn trong `sources/<id>/<n>.md`; `verify.mjs` kiểm bằng code; merge vào main thì workflow Supplier publish tự đăng web.
@@ -22,5 +22,7 @@ CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước th
 - catalog.js đọc thêm: khối GFE "| Engine | Alternator" + dòng hãng + dòng model, "Engine ref.", "Power model" (Koop), "Genset Model:" nối nhau, 油机/动力型号/配套动力.
 - Rà hàng chào trúng thầu (PR #283): dump `api("kind=docs&coll=bidhist")` (import từ config-bot.mjs), goods của lot có bidder won, so label/maker với tên+brands (bỏ từ chung, tên tỉnh). Chưa có nguồn: KUMA, Euenon, Benzen, Dianyou, Foryou, Lingge/CKV, Leega, Orson, Wetech.
 - Nguồn tìm hiệu quả: tiếng Trung theo tỉnh ("<thành phố> 柴油发电机组 有限公司 官网"), tiếng bản địa cho G7. Kém: made-in-china, b2bdata.baidu.com. Rà 03/11 (PR #268): Khoa chốt GIỮ bản ghi không có bảng (danh bạ, tránh Tìm NCC tìm lại).
+
+- **Tìm Thông Số (Khoa 06/11, PR #435):** nút ở chi tiết NCC, chỉ superadmin (`genbidRole`; webreq trả 403 với người khác). `specreq/<id>` → config-bot `specJob` (lane trong `run`) → agent theo skill `bot/claude/skills/tim-thong-so-ncc/SKILL.md` (nguồn duy nhất; Install chép vào ~/.claude/skills) → findCheck + addToCatalog (nhánh `specs/<id>`) → `specmatch/<id>`. Chạy tay: `config-bot.mjs spec --id X` hoặc spec-prep/spec-check/spec-post. Chưa chạy agent thật lần nào.
 
 Gợi ý cấu hình: [[config-suggest]]. Liên quan [[session-log]], [[no-artifact-version]].
