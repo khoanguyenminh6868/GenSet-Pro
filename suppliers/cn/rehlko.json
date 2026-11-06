@@ -105,6 +105,64 @@
       "src": [
         2001
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "D440",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "engineMakes": [
+        "DOOSAN / HYUNDAI"
+      ],
+      "engineModels": [
+        "P158LE"
+      ],
+      "frequency": [
+        "50 Hz"
+      ],
+      "voltage": [
+        "400/230"
+      ],
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "D330",
+      "fuel": "diesel",
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "engineMakes": [
+        "DOOSAN / HYUNDAI"
+      ],
+      "engineModels": [
+        "P126TI-II"
+      ],
+      "frequency": [
+        "50 Hz"
+      ],
+      "voltage": [
+        "400/230"
+      ],
+      "src": [
+        2004
+      ]
     }
   ],
   "certifications": [
@@ -168,6 +226,40 @@
         "GSF-756 11/24 © 2024 by Rehlko"
       ],
       "file": "sources/rehlko/2002.md"
+    },
+    {
+      "n": 2003,
+      "url": "https://www.powersystems.rehlko.com/sea/wp-content/uploads/d-series/d440-0525.pdf",
+      "accessedAt": "2026-11-06",
+      "tier": "A",
+      "quote": [
+        "Industrial Generator Set - D440",
+        "Prime           kW 320",
+        "400/230  50  352 440 635                                       320       400",
+        "Engine Specifications             DOOSAN / HYUNDAI       Consumption with cooling system                  102,9",
+        "Engine ref.                                  8 - V",
+        "3340 x 1496 x 1851",
+        "APM303 APM403",
+        "APM403 controller",
+        "certified to standards ISO9001:2015 & ISO14001:2015",
+        "sets and its components are prototype-tested, factory built and"
+      ],
+      "file": "sources/rehlko/2003.md"
+    },
+    {
+      "n": 2004,
+      "url": "https://www.powersystems.rehlko.com/sea/wp-content/uploads/d-series/d330-0525.pdf",
+      "accessedAt": "2026-11-06",
+      "tier": "A",
+      "quote": [
+        "Industrial Generator Set - D330",
+        "Prime           kW 240",
+        "400/230  50  264 330 476                                       240       300",
+        "Engine ref.                                  6 - L",
+        "2970 x 1346 x 1708",
+        "APM303 APM403"
+      ],
+      "file": "sources/rehlko/2004.md"
     }
   ],
   "confidence": "medium",
@@ -184,6 +276,30 @@
         "• Modern fully certified factories                                   Engine ref.                              P126TI-II",
         "• A cutting edge laboratory                                          Alternator choices                      KH01721T"
       ]
+    },
+    {
+      "n": 2003,
+      "title": "Industrial Generator Set - D440 — Generator sets ratings",
+      "header": [
+        "Hz  kWe kVA Amps kWe                                            kVA"
+      ],
+      "rows": [
+        "400/230  50  352 440 635                                       320       400",
+        "380/220  50  352 440 669                                       320       400",
+        "415/240  50  352 440 612                                       320       400"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Industrial Generator Set - D330 — Generator sets ratings",
+      "header": [
+        "Hz kWe kVA Amps kWe kVA"
+      ],
+      "rows": [
+        "400/230  50  264 330 476                                       240       300",
+        "380/220  50  264 330 501                                       240       300",
+        "415/240  50  264 330 459                                       240       300"
+      ]
     }
   ],
   "controllers": [
@@ -194,6 +310,24 @@
       "line": "APM403 CONTROLLER",
       "src": [
         2002
+      ]
+    },
+    {
+      "brand": "Rehlko",
+      "model": "APM403",
+      "text": "APM403",
+      "line": "APM403 controller",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "Rehlko",
+      "model": "APM303",
+      "text": "APM303",
+      "line": "APM303 controller",
+      "src": [
+        2003
       ]
     }
   ]
