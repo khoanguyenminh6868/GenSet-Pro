@@ -311,13 +311,16 @@ test("stdChecks: frequency, phases, power factor and voltage read from the table
   const sup2 = [{ id: "w", specTables: [{ n: 101, title: "", header: ["| Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | Alternator"], rows: ["| WT400 | 400/320 | 6BTAA5.9-G12 | UCI274E"] }] }];
   const row2 = { kind: "catalog", supplierId: "w", n: 101, line: "| WT400 | 400/320 | 6BTAA5.9-G12 | UCI274E" };
   const r = { requirements: [{ item: "Tần số", requirement: "50 Hz", quote: "Tần số 50Hz", part: "genset" }, { item: "Số pha", requirement: "3 pha", quote: "3 pha", part: "genset" },
-      { item: "Hệ số công suất", requirement: "0,8", quote: "cosφ = 0,8", part: "genset" }, { item: "Điện áp", requirement: "380/220 V", quote: "380/220V", part: "genset" }, { item: "Điện áp định mức", requirement: "400/230 V", quote: "400/230V", part: "genset" }],
+      { item: "Hệ số công suất", requirement: "0,8", quote: "cosφ = 0,8", part: "genset" }, { item: "Điện áp định mức", requirement: "400/230 V", quote: "400/230V", part: "genset" }],
     configs: [{ rank: 1, engine: { model: "6BTAA5.9-G12", src: row2 }, alternator: { model: "UCI274E", src: row2 }, genset: { model: "WT400", src: row2 },
       checks: [{ item: "Tần số", hsmtQuote: "Tần số 50Hz", offered: "", sourceQuote: "", part: "genset", status: "unclear" }] }] };
   const { result } = check(r, { hsmtText: "Tần số 50Hz\n3 pha\ncosφ = 0,8\n380/220V\n400/230V", suppliers: sup2, readWeb });
   const st = Object.fromEntries(result.configs[0].checks.map((x) => [x.item, x.status]));
+  // "Điện áp định mức" takes its code's name (reqcodes.mjs: voltage → "Điện áp").
+  assert.deepEqual(st, { "Tần số": "met", "Số pha": "met", "Hệ số công suất": "met", "Điện áp": "met" });
   // 380/220 V is not what the header says: no check is written for it (left to the agent).
-  assert.deepEqual(st, { "Tần số": "met", "Số pha": "met", "Hệ số công suất": "met", "Điện áp định mức": "met" });
+  const r2 = { requirements: [{ item: "Điện áp", requirement: "380/220 V", quote: "380/220V", part: "genset" }], configs: [{ rank: 1, engine: { model: "6BTAA5.9-G12", src: row2 }, alternator: { model: "UCI274E", src: row2 }, genset: { model: "WT400", src: row2 }, checks: [] }] };
+  assert.equal(check(r2, { hsmtText: "380/220V", suppliers: sup2, readWeb }).result.configs[0].checks.length, 0);
   assert.ok(result.configs[0].checks.every((x) => x.byCode && /50HZ PF=0.8/.test(x.sourceQuote)));
 });
 
