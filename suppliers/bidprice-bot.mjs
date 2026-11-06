@@ -14,7 +14,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
-import { api, doc, post, technicalPart, hsmtTextOf, sizesFor, sizeText, MAX_SIZES } from "./config-bot.mjs";
+import { api, allDocs, doc, post, technicalPart, hsmtTextOf, sizesFor, sizeText, MAX_SIZES } from "./config-bot.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -38,7 +38,7 @@ export async function prep(req, dir, hist, size = null) {
   // technical part; and the engine of the configuration Gợi ý cấu hình put first (its origin group picks the lots).
   const cfgText = a?.technicalSpecs?.length ? a.technicalSpecs.map((s) => `${s.item}: ${s.requirement}`).join("\n") : hsmt ? technicalPart(hsmt.text).slice(0, 20000) : "";
   const t = { notifyNo: key, bidName: req.bidName || a?.keyInfo?.bidName || "", investorName: b.investorName || a?.keyInfo?.investor || "", cfgText, engine: top[0]?.engine || null };
-  const docs = hist || Object.fromEntries((await api("kind=docs&coll=bidhist")).map((d) => [d.id, d.data]));
+  const docs = hist || Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
   const { total, group, otherGroup, list } = BP.candidates(t, docs, K, P);
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, `Tên gói: ${t.bidName}`, t.investorName ? `Chủ đầu tư: ${t.investorName}` : "",
@@ -121,7 +121,7 @@ async function attempt(req, dir, hist) {
   const key = req.key || req.notifyNo, cfg = await doc("configmatch", key).catch(() => null), sizes = await sizesOfTender(key, req, cfg);
   if (sizes.length < 2) return attemptOne(req, dir, hist);
   fs.rmSync(dir, { recursive: true, force: true });
-  const docs = hist || Object.fromEntries((await api("kind=docs&coll=bidhist")).map((d) => [d.id, d.data]));
+  const docs = hist || Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
   const b = req.basis || {}, P = Number(b.price) || null;
   const shares = sharesOf(sizes);
   const outs = [], problems = [];
@@ -192,7 +192,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     // Every pending bidpricereq, or with --key only that tender's (config-bot.mjs run starts one per tender, all at once).
     // Only requests the web wrote (basis).
     const reqs = (await api("kind=bidprice")).filter((r) => r.basis && (!arg("key") || r.key === arg("key")));
-    if (reqs.length) { const hist = Object.fromEntries((await api("kind=docs&coll=bidhist")).map((d) => [d.id, d.data])); for (const r of reqs) await answer(r, hist); }
+    if (reqs.length) { const hist = Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data])); for (const r of reqs) await answer(r, hist); }
   }
   else if (cmd === "try") { const dir = arg("out") || path.join(os.tmpdir(), "genbid-bidprice-try", req.key); printResult(await attempt(req, dir)); console.log(`Thư mục: ${dir}`); }
   else { console.error("usage: bidprice-bot.mjs prep --key K --out D [--kva N --price P] | check --dir D | try --key K [--kva N --price P]"); process.exit(2); }

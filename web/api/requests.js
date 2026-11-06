@@ -10,10 +10,12 @@ const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // tracked travels without notes and bid prices: those stay on the web.
 const READABLE = new Set(["feed", "seen", "manual", "tracked", "deleted", "analysis", "hsmt", "hsmttext", "notice", "analysisreq", "hsmtreq", "bidders", "portalids", "translationreq", "comparereq", "translation", "compare", "hsdtreq", "hsdt", "tlktreq", "tlkt", "supplier", "supplierreq", "suppliermatch", "configreq", "configmatch", "findreq", "findmatch", "bidhist", "bidpricereq", "bidprice"]);
 
-async function docs(coll, id) {
+// ids: only these documents (a list of at most ~100, for a bot that keeps its own copy); cols: e.g. "id,updated_at".
+async function docs(coll, id, { ids, cols = "id,data" } = {}) {
   const out = [];
+  const only = ids ? `&id=in.(${encodeURIComponent(ids.map((x) => `"${x.replace(/["\\]/g, "\\$&")}"`).join(","))})` : "";
   for (let from = 0; ; from += 1000) {
-    const q = `${SB_URL}/rest/v1/docs?coll=eq.${coll}${id ? `&id=eq.${encodeURIComponent(id)}` : ""}&select=id,data&order=id`;
+    const q = `${SB_URL}/rest/v1/docs?coll=eq.${coll}${id ? `&id=eq.${encodeURIComponent(id)}` : ""}${only}&select=${cols}&order=id`;
     const r = await fetch(q, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, Range: `${from}-${from + 999}` } });
     if (!r.ok) throw new Error(`read ${r.status}`);
     const page = await r.json();
@@ -26,14 +28,18 @@ export default async function handler(req, res) {
   if (req.method !== "GET") return res.status(405).end();
   if (!authorized(req)) return res.status(401).json({ error: "unauthorized" });
   res.setHeader("Cache-Control", "no-store");
-  if (req.query?.kind === "docs") {
+  // ?kind=stamps&coll=<c>: [{ id, updated_at }] of every document, so a bot that keeps a copy on disk
+  // (suppliers/doc-cache.mjs) reads only the new or changed ones with ?kind=docs&coll=<c>&ids=a,b (Supabase egress).
+  if (req.query?.kind === "docs" || req.query?.kind === "stamps") {
     const coll = String(req.query.coll || "");
     if (!READABLE.has(coll)) return res.status(400).json({ error: "coll" });
+    const ids = req.query.ids ? String(req.query.ids).split(",").filter(Boolean) : null;
+    if (ids && (!ids.length || ids.length > 100)) return res.status(400).json({ error: "ids" });
     try {
-      let rows = await docs(coll, req.query.id ? String(req.query.id) : "");
+      let rows = req.query.kind === "stamps" ? await docs(coll, "", { cols: "id,updated_at" }) : await docs(coll, req.query.id ? String(req.query.id) : "", { ids });
       // A supplier deleted on the web (supdeleted/<id>) is skipped by every bot too (Khoa, 2026-11-02).
-      if (coll === "supplier") { const gone = new Set((await docs("supdeleted")).map((d) => d.id)); rows = rows.filter((d) => !gone.has(d.id)); }
-      return res.json(coll === "tracked" ? rows.map((d) => ({ id: d.id, data: Object.fromEntries(Object.entries(d.data || {}).filter(([k]) => !["note", "bidPrice"].includes(k))) })) : rows);
+      if (coll === "supplier") { const gone = new Set((await docs("supdeleted", "", { cols: "id" })).map((d) => d.id)); rows = rows.filter((d) => !gone.has(d.id)); }
+      return res.json(coll === "tracked" && req.query.kind === "docs" ? rows.map((d) => ({ id: d.id, data: Object.fromEntries(Object.entries(d.data || {}).filter(([k]) => !["note", "bidPrice"].includes(k))) })) : rows);
     } catch (e) { return res.status(502).json({ error: e.message }); }
   }
   try {
