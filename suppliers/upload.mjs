@@ -17,8 +17,14 @@ if (bad.length) {
   console.error(`Dừng: ${bad.length} bản ghi có lỗi (${bad.map((b) => path.basename(b.file)).join(", ")}). Chạy node suppliers/verify.mjs để xem.`);
   process.exit(1);
 }
-const rows = all.map(({ rec }) => rec).filter((r) => r.status !== "incomplete").map((r) => ({ coll: "supplier", id: r.id, data: r }));
-console.log(`${rows.length} bản ghi sẽ đăng (${all.length - rows.length} incomplete giữ lại).`);
+// --only a.json,b.json: post just these files (the workflow passes the ones the push changed). Re-posting an unchanged
+// record still bumps its updated_at, which makes every open page read the whole supplier set again (Supabase egress).
+const onlyArg = process.argv.indexOf("--only");
+const only = onlyArg > 0 ? new Set((process.argv[onlyArg + 1] || "").split(",").map((f) => path.basename(f.trim())).filter(Boolean)) : null;
+const chosen = only ? all.filter(({ file }) => only.has(path.basename(file))) : all;
+const rows = chosen.map(({ rec }) => rec).filter((r) => r.status !== "incomplete").map((r) => ({ coll: "supplier", id: r.id, data: r }));
+console.log(`${rows.length} bản ghi sẽ đăng (${chosen.length - rows.length} incomplete giữ lại${only ? `, chỉ ${only.size} tệp đã đổi` : ""}).`);
+if (!rows.length) process.exit(0);
 if (dry) process.exit(0);
 
 const SB = process.env.SUPABASE_URL, SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;

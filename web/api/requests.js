@@ -70,21 +70,44 @@ async function heartbeat(running) {
   }).catch(() => {});
 }
 const pendingOf = (d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.requestedAt;
+// The pending requests of a collection, whole. The bot polls every 15 s and nearly every row is already done, so
+// list only the two dates first and read the whole rows of the pending ones (Supabase egress: ~20 KB a poll before).
+async function pendingDocs(coll) {
+  const sb = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` };
+  const marks = [];
+  for (let from = 0; ; from += 1000) {
+    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=eq.${coll}&select=id,requestedAt:data->>requestedAt,doneAt:data->>doneAt&order=id`,
+      { headers: { ...sb, Range: `${from}-${from + 999}` } });
+    if (!r.ok) throw new Error(`read ${r.status}`);
+    const page = await r.json();
+    marks.push(...page);
+    if (page.length < 1000) break;
+  }
+  const ids = marks.filter((m) => pendingOf({ data: m })).map((m) => m.id);
+  const out = [];
+  for (let i = 0; i < ids.length; i += 50) {
+    const list = ids.slice(i, i + 50).map((id) => `"${id.replace(/["\\]/g, "\\$&")}"`).join(",");
+    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=eq.${coll}&id=in.(${encodeURIComponent(list)})&select=id,data&order=id`, { headers: sb });
+    if (!r.ok) throw new Error(`read ${r.status}`);
+    out.push(...await r.json());
+  }
+  return out.filter(pendingOf);
+}
 const byRequested = (a, b) => a.requestedAt.localeCompare(b.requestedAt);
 async function fileReqs() {
-  return (await docs("hsmtreq")).filter(pendingOf)
+  return (await pendingDocs("hsmtreq"))
     .map((d) => ({ notifyNo: d.data.notifyNo || d.id, key: d.id, sourceUrl: d.data.sourceUrl, bidName: d.data.bidName, requestedAt: d.data.requestedAt }))
     .sort(byRequested);
 }
 async function analysisReqs() {
-  return (await docs("analysisreq")).filter(pendingOf)
+  return (await pendingDocs("analysisreq"))
     .map((d) => ({ key: d.id, notifyNo: d.data.notifyNo || d.id, requestedAt: d.data.requestedAt }))
     .sort(byRequested);
 }
 // Translation and comparison requests: [{ key, notifyNo, requestedAt, ...request fields }] (comparereq carries
 // the uploaded HSDT files as scratch paths, and the pasted text).
 async function reqsOf(coll) {
-  return (await docs(coll)).filter(pendingOf).map((d) => ({ ...d.data, key: d.id, notifyNo: d.data.notifyNo || d.id })).sort(byRequested);
+  return (await pendingDocs(coll)).map((d) => ({ ...d.data, key: d.id, notifyNo: d.data.notifyNo || d.id })).sort(byRequested);
 }
 async function syncReq() {
   const d = (await docs("syncreq", "current"))[0]?.data || {};

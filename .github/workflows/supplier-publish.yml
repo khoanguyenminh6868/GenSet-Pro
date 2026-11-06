@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -24,6 +26,15 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          BEFORE: ${{ github.event.before }}
         run: |
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
-          node suppliers/upload.mjs
+          # A push posts only the records it changed: re-posting all of them makes every open page download the
+          # whole supplier set again (~10 MB each time, Supabase egress). A manual run posts everything.
+          if [ "${{ github.event_name }}" = "push" ] && [ -n "$BEFORE" ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            changed=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'suppliers/cn/*.json' | paste -sd, -)
+            if [ -z "$changed" ]; then echo "No supplier record added or changed."; exit 0; fi
+            node suppliers/upload.mjs --only "$changed"
+          else
+            node suppliers/upload.mjs
+          fi
