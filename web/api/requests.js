@@ -8,7 +8,7 @@ import { authorized } from "./ingest.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // tracked travels without notes and bid prices: those stay on the web.
-const READABLE = new Set(["feed", "seen", "manual", "tracked", "deleted", "analysis", "hsmt", "hsmttext", "notice", "analysisreq", "hsmtreq", "bidders", "portalids", "translationreq", "comparereq", "translation", "compare", "hsdtreq", "hsdt", "tlktreq", "tlkt", "supplier", "supplierreq", "suppliermatch", "configreq", "configmatch", "findreq", "findmatch", "bidhist", "bidpricereq", "bidprice"]);
+const READABLE = new Set(["feed", "seen", "manual", "tracked", "deleted", "analysis", "hsmt", "hsmttext", "notice", "analysisreq", "hsmtreq", "bidders", "portalids", "translationreq", "comparereq", "translation", "compare", "hsdtreq", "hsdt", "tlktreq", "tlkt", "supplier", "supplierreq", "suppliermatch", "configreq", "configmatch", "findreq", "findmatch", "specreq", "specmatch", "bidhist", "bidpricereq", "bidprice"]);
 
 // ids: only these documents (a list of at most ~100, for a bot that keeps its own copy); cols: e.g. "id,updated_at".
 async function docs(coll, id, { ids, cols = "id,data" } = {}) {
@@ -48,8 +48,8 @@ export default async function handler(req, res) {
     // ingestion, and this runs every 15 s); only the pending rows are then read whole.
     if (req.query?.kind === "all") {
       const [marks] = await Promise.all([marksOf(ALL_REQ), heartbeat(req.query.running)]);
-      const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks)]);
-      return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice });
+      const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks), reqsOf("specreq", marks)]);
+      return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec });
     }
     // ?kind=analysis: tenders whose "Phân tích" button was pressed on the web (analysisreq/<key>).
     if (req.query?.kind === "analysis") return res.json(await analysisReqs());
@@ -61,6 +61,8 @@ export default async function handler(req, res) {
     if (req.query?.kind === "supplier") return res.json(await reqsOf("supplierreq"));
     if (req.query?.kind === "config") return res.json(await reqsOf("configreq"));
     if (req.query?.kind === "find") return res.json(await reqsOf("findreq"));
+    // ?kind=spec: Tìm Thông Số of a supplier (specreq/<supplier id>, run by config-bot.mjs run).
+    if (req.query?.kind === "spec") return res.json(await reqsOf("specreq"));
     // ?kind=bidprice: "Gợi ý giá đấu" (suppliers/bidprice-bot.mjs, run by config-bot.mjs run).
     if (req.query?.kind === "bidprice") return res.json(await reqsOf("bidpricereq"));
     // ?kind=sync: the page's Sync button asked the worker to search muasamcong (syncreq/current).
@@ -81,7 +83,7 @@ async function heartbeat(running) {
 const pendingOf = (d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.requestedAt;
 // The pending requests of a collection, whole. The bot polls every 15 s and nearly every row is already done, so
 // list only the two dates first and read the whole rows of the pending ones (Supabase egress: ~20 KB a poll before).
-const ALL_REQ = ["hsmtreq", "analysisreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq", "bidpricereq"];
+const ALL_REQ = ["hsmtreq", "analysisreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq", "bidpricereq", "specreq"];
 // { coll: [{ id, requestedAt, doneAt, mode }] } for these collections, in as few requests as the rows allow (1000 a page).
 async function marksOf(colls) {
   const out = Object.fromEntries(colls.map((c) => [c, []]));

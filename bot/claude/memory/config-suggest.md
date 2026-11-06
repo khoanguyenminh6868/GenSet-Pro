@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 93e41953-82a9-4265-a2a5-f081042fd87d
-  modified: 2026-11-05T14:17:19.800Z
+  modified: 2026-11-06T10:17:52.309Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (máy Windows, agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Mọi số/câu trích phải có nguyên văn trong nguồn; sai → "Đạt" thành "Chưa rõ". Lượt agent ~6–11 phút, ~$3/gói.
@@ -18,6 +18,14 @@ metadata:
 - HSMT không đòi G7/G20 (xuất xứ "all", Khoa 05/11, PR #418): cấu hình động cơ hãng TQ đáp ứng tốt hơn → lên đầu (theo scoreOf); cùng điểm → TQ trước (tie-break `cnOf` trong rankConfigs). `candidates` giữ `CN_ROWS`=12/30 dòng cho động cơ TQ khi HSMT không nêu hãng/model động cơ; input.md dặn agent gợi ý cả TQ. Giá đấu theo động cơ hạng 1 nên tự theo.
 - Số trần trong HSMT = mức tối thiểu với thông số càng lớn càng tốt; đường kính/hành trình/kích thước khác số → chưa rõ, không "không đạt". Datasheet đời khác → chưa rõ.
 - Tìm NCC CHỈ Claude (`GENBID_FIND_ENGINES` bật lại Gemini). NCC mới trùng cấu hình có sẵn (cùng động cơ, cùng đầu phát nếu cả hai ghi) → gắn vào; không trùng → cấu hình mới chỉ có NCC đó; agent nhỏ (`check-prompt.md`) đối chiếu HSMT. Không chạy lại cả Gợi ý.
+
+**Đồng bộ thương hiệu (Khoa 06/11, PR #424, gói IB2600594596):** HSMT đòi động cơ/đầu phát/BĐK do chính hãng tổ máy làm ("đồng bộ 02 trong 03 bộ phận chính… bởi nhà sản xuất máy phát", "cùng một nhà sản xuất/nhãn hiệu"; ~6% HSMT). `brandSyncOf` (web/bidprice.js) đọc; check() tự thêm yêu cầu + check "Đồng bộ thương hiệu" (byCode) theo `familyOf` (Stamford/PowerCommand = Cummins, Perkins/FG Wilson = Caterpillar, SDMO = Kohler); hãng tổ máy = NCC không phải distributor, xưởng lắp ráp (tên không phải hãng, hoặc công ty CN mang tên hãng ngoại) chỉ có thể làm bộ phận chưa rõ hãng → hầu hết cấu hình lắp ráp TQ = Không đạt; xếp cùng nhóm động cơ+BĐK; lệnh check in "ĐỒNG BỘ THƯƠNG HIỆU" và dặn bước 4 (internet) khi không cấu hình nào đạt. Trước đó bỏ sót hoàn toàn.
+
+**Bẫy Tìm NCC (06/11, PR #430):** NCC qua findCheck nhờ productLines nhưng mergeFind/candidates chỉ lấy động cơ từ specTables (CAT.build) → PDF hai cột (Rehlko: "Engine ref." và model khác dòng) ra 0 động cơ, configMerge "không có dòng bảng nào đúng công suất". Giờ catalog.js dùng productLine tổ máy một model (1 engineModels, power min = max) + hàng bảng cùng nguồn có số công suất (`fromLine`); findCheck in "dòng động cơ đúng công suất". Lưu ý: `ALT_CODE` coi "P158LE" là mã đầu phát trong bảng cột.
+
+**Nút trên từng cấu hình (Khoa 06/11):** Xoá (PR #432: bỏ khỏi configmatch, đánh số lại từ #1, ghi notes, `editedAt`); "Tìm nhà cung cấp" khi cấu hình không có NCC (PR #433: findreq kèm `target` {size, rank, engine, alternator, controller, genset}; findPrep chỉ tìm cỡ đó, input.md mục "Tìm nhà cung cấp cho MỘT cấu hình"; gộp bằng mergeFind như cũ). Bẫy: `web/api/webreq.js` lọc trường yêu cầu theo danh sách — thêm trường mới phải sửa ở đó (trước #433 xuất xứ g7/g20 bị lưu thành cn).
+
+**Rà sót yêu cầu (06/11, PR #425):** 8 gói có Gợi ý: agent tự lập yêu cầu nên có lượt bỏ cả phần BĐK (IB2600592658), đồng bộ/OEM, prototype, ISO 8528, bồn dầu, độ ồn, kích thước. prep ghi specs.json (technicalSpecs Phân tích) → check in "CÓ THỂ SÓT YÊU CẦU" (`uncoveredSpecs`, theo chủ đề); prompt bước 1 liệt kê loại không được bỏ; REQ_VERSION 3. Chưa chốt với Khoa: đại diện hãng tại VN/MAF, tiêu chuẩn ISO/prototype có tính vào xếp hạng không (hiện là genset core, thường chưa rõ như nhau).
 
 **Cơ chế chính:** code xếp sẵn 30 dòng ứng viên (`candidates`: 1 dòng/NCC+động cơ+đầu phát, 3/động cơ, 8 nếu HSMT nêu, 4/NCC; `engineMins`/`powerMins`/`maxDisp` đọc ngưỡng HSMT, dưới ngưỡng −600/−300; `plausible()` bỏ ngưỡng phi lý). Thông số theo model dùng chung qua `modelFacts`/`factSrc`; nguồn ghi khác nhau → chưa rõ (`disagree` coi chênh ≤3% là làm tròn). `copyModelChecks` chép kiểm tra sang cấu hình trùng model (BĐK theo `ctlModelOf`, DSE7320 = Deepsea 7320). `reqHash` + `REQ_VERSION` dùng lại yêu cầu khi Gợi ý lại. check in `x.hint` "CÓ THỂ TRA ĐƯỢC" cho mục chưa rõ mà nguồn có dòng liên quan (code không tự đổi trạng thái). catalog.js đọc bảng tiêu đề nhiều tầng (`walkedSpecs`), bảng xếp theo cột (`columnOf`). `controllers.md` chứa mọi dòng datasheet BĐK cho agent grep (giới hạn 12 datasheet). BĐK ghi không kèm đời (DSE7320, AMF25, HGM6110, "InteliGen") → datasheet đời hiện hành + "cần xác nhận đời".
 

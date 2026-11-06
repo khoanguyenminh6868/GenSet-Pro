@@ -73,7 +73,7 @@ foreach ($d in $inbox, $Repo) {
 
 Step "Skills Claude -> $env:USERPROFILE\.claude"
 $cl = Join-Path $env:USERPROFILE '.claude'
-foreach ($sub in 'skills\run-hsmt-worker', 'skills\genbid-setup', 'scheduled-tasks\hsmt-worker') {
+foreach ($sub in 'skills\run-hsmt-worker', 'skills\genbid-setup', 'skills\tim-thong-so-ncc', 'scheduled-tasks\hsmt-worker') {
     New-Item -ItemType Directory -Force (Join-Path $cl $sub) | Out-Null
     Copy-Item (Join-Path $PSScriptRoot "claude\$sub\SKILL.md") (Join-Path $cl $sub) -Force
 }

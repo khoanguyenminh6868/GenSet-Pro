@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { check, catalogRecords, byOrigin, cnSuppliers, fitsCap, findCheck, mergeFind } from "./config-bot.mjs";
+import { check, catalogRecords, byOrigin, cnSuppliers, fitsCap, findCheck, mergeFind, partsOf } from "./config-bot.mjs";
 
 const sup = [{ id: "s", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Standby kW/kVA | Prime kW/kVA | Engine | Alternator"], rows: ["| SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | UK"] }] }];
 const hsmt = "Chương V. Yêu cầu kỹ thuật\nCông suất liên tục (Prime): ≥ 450 kVA\nĐầu phát: Stamford hoặc tương đương\nTần số 50Hz";
@@ -295,4 +295,14 @@ test("syncCheck: Kohler codes (APM403, KH alternators); a Doosan set of an assem
   assert.deepEqual(fam, { engine: "Doosan", alternator: "Kohler", controller: "Kohler" });
   assert.equal(syncCheck(s, fam, [{ name: "Rehlko", fam: "Kohler" }]).status, "met");
   assert.equal(syncCheck(s, { engine: "Doosan", alternator: null, controller: null }, [{ name: "Xinhengxin", fam: null }]).status, "not_met");
+});
+
+test("Tìm Thông Số: partsOf lists the engines, alternators and controllers the catalog reads from a record", () => {
+  const rec = { id: "t", role: "genset_oem", status: "partial", names: { en: "Test" }, specTables: [{ n: 2001, title: "Test",
+    header: ["| Genset Model | Standby Power | Prime Power | Engine Model | Alternator Model", "| kW/kVa | kW/kVa | Perkins | Stamford"], rows: ["| KP999D5 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C"] }],
+    controllers: [{ brand: "SmartGen", model: "HGM9320", text: "HGM9320", line: "Controller: SmartGen HGM9320", src: [2001] }] };
+  const p = partsOf(rec);
+  assert.deepEqual(p.engines.map((e) => [e.model, e.make, e.gensets, e.power]), [["2506C-E15TAG1", "Perkins", ["KP999D5"], "450–500 kVA"]]);
+  assert.deepEqual(p.alternators.map((e) => e.model), ["HCI544C"]);
+  assert.deepEqual(p.controllers.map((e) => e.model), ["HGM9320"]);
 });
