@@ -75,7 +75,16 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    requirement the datasheet states, `part: "genset"`, even when the HSMT asks for the certificate as a document;
    the fuel tank, noise, size and weight as `option`; a model the HSMT names for the controller or the alternator.
    One line of the HSMT that holds several of them (a certificate and a make in one sentence) is several requirements.
-   Give every requirement its own `item` name and use the same name in every check.
+   Requirement codes (Khoa, 2026-11-06): input.md has a table "Mã yêu cầu". Every requirement carries a `code` from it,
+   and takes the table's `item`, `part` and `level` (write them as the table gives them; the code enforces them). One
+   requirement per code: when the HSMT states a point in several places (the voltage in the set's table and again under
+   the alternator), write one requirement with the main quote; the fuel consumption at 100 / 75 / 50 % load are three
+   codes; the controller's functions go to their grouped codes (ctl_protection, ctl_measure, ctl_comm, ctl_alarm_log,
+   ctl_start_amf) with `parts`. A point that fits no code gets `code: "other"` and an `item` of your own; use it rarely
+   (check prints every "other" for you to look at the table again). After the check command, read its "MÃ YÊU CẦU CHƯA CÓ"
+   list: codes whose words the HSMT's text holds on a line of its own but no requirement carries; read each line in
+   hsmt.txt and add the requirement (and its checks) when it is one.
+   Use the requirement's `item` in every check of it.
    Group the controller's functions of one kind into ONE requirement (Khoa 2026-11-03): its protections (over / under
    voltage, frequency, overload, oil pressure, coolant temperature...), its measurements and display, its
    communication (RS485, Modbus, USB, Ethernet...), its alarms / event log, its start / stop and AMF functions, with
@@ -188,7 +197,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 ```json
 {
   "summary": "1-2 câu",
-  "requirements": [{ "item": "", "requirement": "", "quote": "", "part": "engine|alternator|genset|controller", "level": "core|option", "parts": [{ "item": "only for a grouped requirement" }] }],
+  "requirements": [{ "code": "a code of input.md's Mã yêu cầu table, or other", "item": "the code's item name (own name only for other)", "requirement": "", "quote": "", "part": "engine|alternator|genset|controller", "level": "core|option", "parts": [{ "item": "only for a grouped requirement" }] }],
   "configs": [{
     "rank": 1,
     "engine": { "model": "", "make": "", "src": { "kind": "catalog", "supplierId": "", "n": 101, "line": "| ... |" } },

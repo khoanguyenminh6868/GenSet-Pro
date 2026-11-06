@@ -29,6 +29,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
+import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd } from "./reqcodes.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -79,7 +80,7 @@ const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
 // The requirements read last time are used again only when the HSMT, Yêu cầu khác and the way they are read are the
 // same: REQ_VERSION goes up when config-prompt.md changes how requirements are written (e.g. the grouped controller
 // functions of 2026-11-03), so older lists are read again once.
-export const REQ_VERSION = 3;
+export const REQ_VERSION = 4; // 4: requirement codes (reqcodes.mjs, Khoa 2026-11-06)
 export const reqHashOf = (text, extra) => createHash("sha1").update(`${text}\n--extra--\n${extra || ""}${REQ_VERSION > 1 ? `\n--v${REQ_VERSION}--` : ""}`).digest("hex").slice(0, 16);
 
 export async function api(q) {
@@ -891,7 +892,9 @@ export async function hsmtTextOf(key) {
   const [hsmt, notice] = await Promise.all([doc("hsmt", key), doc("notice", key)]);
   const parts = [];
   for (let i = 0; i < (hsmt?.textChunks || 0); i++) parts.push((await doc("hsmttext", `${key}_${i}`))?.text || "");
-  const noticeText = notice ? JSON.stringify(notice) : "";
+  // The notice as text (2026-11-06: it was JSON.stringify'd into one line, so its webform chapter V had "\n" escapes, the
+  // agent read it as JSON and no line-by-line reading of it (missingCodes) could work).
+  const noticeText = notice ? [notice.info || "", ...(notice.chapters || []).map((c) => `### ${c.name || ""}\n${c.text || ""}`), notice.goods ? `### Danh mục hàng hóa (tab Thông tin chung)\n${notice.goods}` : ""].filter((s) => s.trim()).join("\n\n") : "";
   const text = parts.join("") + (noticeText ? "\n\n--- Thông báo mời thầu ---\n" + noticeText : "");
   if (!text.trim()) throw new Error("Gói này chưa có văn bản HSMT để đọc yêu cầu kỹ thuật. Cần tải hồ sơ (Lấy lại tệp) trước.");
   return { hsmt, parts, text };
@@ -929,9 +932,9 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   // matches the configurations again. Each quote is checked again by check.
   // Only the HSMT files count: the notice is fetched again each time and its status changes.
   const reqHash = reqHashOf(parts.join(""), extraOf(reqData)), prevReq = reqData.prevResult;
-  const reuse = prevReq?.reqHash === reqHash && prevReq.requirements?.length && prevReq.requirements.every((r) => r.level && r.part && !r.unverified);
+  const reuse = prevReq?.reqHash === reqHash && prevReq.requirements?.length && prevReq.requirements.every((r) => r.level && r.part && r.code && !r.unverified);
   const sync = BP.brandSyncOf(text);
-  if (reuse) fs.writeFileSync(path.join(dir, "requirements.json"), JSON.stringify(prevReq.requirements.map(({ item, requirement, quote, from, part, level }) => ({ item, requirement, quote, ...(from ? { from } : {}), part, level })), null, 1), "utf8");
+  if (reuse) fs.writeFileSync(path.join(dir, "requirements.json"), JSON.stringify(prevReq.requirements.filter((r) => !r.byCode).map(({ code, item, requirement, quote, from, part, level, parts }) => ({ code, item, requirement, quote, ...(from ? { from } : {}), part, level, ...(parts ? { parts: parts.map((p) => ({ item: p.item })) } : {}) })), null, 1), "utf8");
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
     ...(multi?.only ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`, `Lượt Tìm NCC này CHỈ tìm cho máy ${sizeText(multi.size)}.`]
@@ -941,6 +944,8 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`,
     `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`, "",
     reuse ? "## Yêu cầu đã đọc lần trước: requirements.json (HSMT và Yêu cầu khác không đổi) — dùng nguyên danh sách đó, bỏ qua bước 1." : "", "",
+    // The requirement codes (Khoa, 2026-11-06): every requirement names one; the code fixes its item, part and level.
+    "## Mã yêu cầu (bắt buộc: mỗi requirement có `code` từ bảng này; code quyết định `item`, `part`, `level`; không có mã nào hợp thì `other` với item tự đặt)", codesMd(), "",
     `## Xuất xứ động cơ: ${ORIGIN[origin]}`, auto ? `(Bot tự chọn vì HSMT ghi: "${auto.quote}")` : "",
     origin === "cn" ? `Gợi ý động cơ mà nguồn ghi rõ là hãng Trung Quốc (Weichai, Yuchai, SDEC...), ghi "make" của động cơ; động cơ nguồn không ghi hãng thì không gợi ý. Cấu hình động cơ hãng Trung Quốc đứng trước cấu hình động cơ hãng nước khác (Khoa, 2026-11-03). Động cơ hãng nước khác (${[...CAT.FOREIGN_ENGINE].join(", ")}, kể cả loại sản xuất theo giấy phép như Dongfeng Cummins, Chongqing Cummins) chỉ được gợi ý khi có nhà cung cấp đặt tại Trung Quốc (quốc gia CN trong catalog.md) chào động cơ đó trong bảng của mình; khi đó "suppliers" chỉ ghi các nhà cung cấp ở Trung Quốc đó. Khi tìm trên internet cũng vậy: hãng nước ngoài chỉ được tính khi trang của một nhà cung cấp ở Trung Quốc chào nó.`
     : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${origin.toUpperCase()} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...), kể cả loại sản xuất theo giấy phép. Động cơ nguồn không ghi hãng thì không gợi ý.`
@@ -1081,6 +1086,24 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     result.requirements.unshift({ item: SYNC_ITEM, requirement: syncText(sync), quote: sync.quote, part: "genset", level: "core", byCode: true, sync: { need: sync.need, parts: sync.parts } });
     result.brandSync = { need: sync.need, parts: sync.parts, quote: sync.quote, text: sync.text };
   } else delete result.brandSync;
+  // Requirement codes (Khoa, 2026-11-06, reqcodes.mjs): each requirement gets its code (the agent's, else read from its
+  // item), and with it the list's item name, part and level; two requirements of one code become one (texts joined, the
+  // first quote kept); every check and part written under the old item name is renamed to the code's.
+  const rename = new Map(), byCode = new Map();
+  result.requirements = (result.requirements || []).flatMap((r0) => {
+    if (r0.byCode) return [r0];
+    const r = withCode(r0);
+    if (r0.item && norm(r0.item) !== norm(r.item)) rename.set(norm(r0.item), r.item);
+    if (r.code === OTHER_CODE) return [r];
+    const first = byCode.get(r.code);
+    if (!first) { byCode.set(r.code, r); return [r]; }
+    if (r.requirement && !norm(first.requirement || "").includes(norm(r.requirement))) first.requirement = `${first.requirement || ""}; ${r.requirement}`.replace(/^; /, "");
+    if (!first.quote && r.quote) first.quote = r.quote;
+    if (r.parts?.length) first.parts = [...(first.parts || []), ...r.parts.filter((p) => !(first.parts || []).some((q) => norm(q.item) === norm(p.item)))];
+    rename.set(norm(r0.item), first.item);
+    return [];
+  });
+  if (rename.size) for (const c of result.configs || []) for (const x of c.checks || []) { const to = rename.get(norm(x.item)); if (to) { x.itemWas = x.item; x.item = to; } }
   // A requirement's part and level (core: decides the model; option: chosen when ordering), copied to its checks.
   const reqs = new Map((result.requirements || []).map((r) => [norm(r.item), r]));
   for (const r of result.requirements || []) { r.level = r.level === "option" ? "option" : "core"; if (!PARTS.includes(r.part)) r.part = "genset"; }
@@ -1350,11 +1373,14 @@ function checkDir(dir, suppliers, added = [], origin) {
   for (const a of added) if (a.nmap) for (const c of result.configs || []) for (const s of c.suppliers || []) if (s.supplierId === a.supplierId && a.nmap[s.n] != null) s.n = a.nmap[s.n];
   if (added.length) result.catalogAdded = added.map(({ nmap, ...a }) => a);
   const readWeb = (f) => { const p = path.join(dir, f); return p.startsWith(path.join(dir, "web")) && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
-  const out = check(result, { hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), suppliers, readWeb, origin });
+  const hsmtText = fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8");
+  const out = check(result, { hsmtText, suppliers, readWeb, origin });
   rankConfigs(out.result);
   // The analysis' technical lines the requirements may have missed (Khoa, 2026-11-06), for the agent to read again.
   const specs = fs.existsSync(path.join(dir, "specs.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "specs.json"), "utf8")) : [];
   out.uncovered = uncoveredSpecs(specs, out.result.requirements);
+  // Requirement codes the HSMT's technical part names on a line that no requirement carries (reqcodes.mjs).
+  out.missing = missingCodes(technicalPart(hsmtText), out.result.requirements);
   return out;
 }
 // Requirements the agent may leave out (2026-11-06 audit of 8 suggestions against their analysis: the controller's whole
@@ -1467,20 +1493,22 @@ const STD_ITEMS = [
   ["phase", /s[ốo]\s*pha|\bpha\b|phase/i, (t) => (/\b3\s*pha|ba\s*pha|3\s*-?\s*ph(ase)?\b|three\s*-?\s*phase|3P\b/i.test(t) ? { want: "3 pha", re: /\b3\s*-?\s*ph(ase)?\b|three\s*-?\s*phase|3P4W|3P\b|三相/i }
     : /(^|[^\d])1\s*pha|m[ộo]t\s*pha|single\s*-?\s*phase/i.test(t) ? { want: "1 pha", re: /(^|[^\d])1\s*-?\s*ph(ase)?\b|single\s*-?\s*phase|单相/i } : null)],
   ["pf", /h[ệe]\s*s[ốo]\s*c[ôo]ng\s*su[ấa]t|cos\s*φ|cos\s*phi|cos\s*ϕ|power\s*factor|\bPF\b/i, (t) => (/0[.,]8\b/.test(t) ? { want: "cosφ 0,8", re: /\bPF\s*=?\s*0[.,]8\b|cos\s*[φϕ]?\s*=?\s*0[.,]8\b|0[.,]8\s*PF|power\s*factor\s*:?\s*0[.,]8|功率因数\s*0[.,]8/i } : null)],
-  ["voltage", /đi[ệe]n\s*[áa]p|voltage/i, (t) => { const u = [...new Set((t.match(/(?<!\d)(400|380|415|230|220|240)(?!\d)/g) || []))]; return u.length ? { want: `${u.join("/")} V`, re: new RegExp(u.map((x) => `(?<!\\d)${x}(?!\\d)`).join("[\\s\\S]{0,12}") + "[\\s\\S]{0,6}V", "i") } : null; }],
+  // The HSMT's figures in any order on one line that names volts ("230/400V" asked, "400/230V" in the header).
+  ["voltage", /đi[ệe]n\s*[áa]p|voltage/i, (t) => { const u = [...new Set((t.match(/(?<!\d)(400|380|415|230|220|240)(?!\d)/g) || []))]; return u.length ? { want: `${u.join("/")} V`, all: [...u.map((x) => new RegExp(`(?<!\\d)${x}(?!\\d)`)), /\d\s*V\b/i] } : null; }],
 ];
 const STD_SKIP = /qu[áa]\s*t[ảa]i|bi[ếe]n\s*thi[êe]n|sai\s*s[ốo]|[ổo]n\s*[đd][ịi]nh|đi[ềe]u\s*ch[ỉi]nh|kh[ởo]i\s*[đd][ộo]ng|[ắa]c\s*quy|\bDC\b|k[íi]ch\s*t[ừu]|đ[ộo]ng\s*c[ơo]|engine|đ[ộo]\s*m[éeè]o|THD/i;
+const STD_CODE = { freq: "frequency", phase: "phases", pf: "power_factor", voltage: "voltage" };
 export function stdChecks(c, reqs, row) {
   if (!row) return;
   const lines = [...(row.header || []), row.line || "", row.title || ""].filter(Boolean);
   for (const r of reqs) {
     if (r.part === "controller" || r.part === "engine" || STD_SKIP.test(`${r.item} ${r.requirement || ""}`)) continue;
-    const items = STD_ITEMS.filter(([, re]) => re.test(r.item || ""));
+    const items = r.code && r.code !== OTHER_CODE ? STD_ITEMS.filter(([k]) => STD_CODE[k] === r.code) : STD_ITEMS.filter(([, re]) => re.test(r.item || ""));
     if (!items.length) continue;
     const t = `${r.item} ${r.requirement || ""} ${r.quote || ""}`;
     const wants = items.map(([, , f]) => f(t));
     if (wants.some((w) => !w)) continue;
-    const hit = wants.map((w) => lines.find((l) => w.re.test(l)));
+    const hit = wants.map((w) => lines.find((l) => (w.all ? w.all.every((re) => re.test(l)) : w.re.test(l))));
     if (hit.some((l) => !l)) continue;
     const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
     if (x && (x.status === "met" || x.status === "not_met") && !x.unverified) continue;
@@ -2179,9 +2207,12 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   else if (cmd === "check") {
     // Offline in a folder made by prep (suppliers.json, meta.json); elsewhere the supplier DB is read from the web.
     const dir = arg("dir", "."), local = (f) => (fs.existsSync(path.join(dir, f)) ? JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) : null);
-    const { problems, result, hints, uncovered } = checkDir(dir, local("suppliers.json") || (await allDocs("supplier")).map((d) => d.data), [], local("meta.json")?.origin);
+    const { problems, result, hints, uncovered, missing } = checkDir(dir, local("suppliers.json") || (await allDocs("supplier")).map((d) => d.data), [], local("meta.json")?.origin);
     fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
     console.log(problems.length ? problems.join("\n") : "Không có điểm nào chưa khớp nguồn.");
+    const others = (result.requirements || []).filter((r) => r.code === OTHER_CODE);
+    if (others.length) console.log(`\nYÊU CẦU MÃ other (${others.length}; xem lại bảng Mã yêu cầu trong input.md, mã nào hợp thì đổi code): ${others.map((r) => r.item).join("; ")}`);
+    if (missing?.length) console.log(`\nMÃ YÊU CẦU CHƯA CÓ — ${missing.length} mã mà HSMT có dòng nói tới nhưng requirements chưa có (code dò chữ, có thể nhầm: đọc dòng đó trong hsmt.txt; là yêu cầu của tổ máy / động cơ / đầu phát / bộ điều khiển thì thêm requirement với code đó và check cho mọi cấu hình, không phải thì bỏ qua):\n${missing.map((m) => `- ${m.code} (${m.item}, ${m.part}): ${JSON.stringify(m.line.slice(0, 160))}`).join("\n")}`);
     // "unclear" checks whose sources have a line about them (config-prompt.md: read each, set met / not_met if it says).
     if (hints.length) console.log(`\nCÓ THỂ TRA ĐƯỢC — ${hints.length} mục chưa rõ mà nguồn có dòng liên quan (đọc dòng đó: nêu đạt / không đạt thì sửa, không nói thì để chưa rõ):\n${hints.join("\n")}`);
     // Đồng bộ thương hiệu, written by the code: the agent needs it to decide on step 4 (config-prompt.md).
