@@ -1,0 +1,90 @@
+{
+  "country": "LB",
+  "role": "distributor",
+  "status": "partial",
+  "names": {
+    "en": "Younes Bros",
+    "zh": ""
+  },
+  "website": "https://younesbros.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "QSL9G5-50",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSL9-G5"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không ghi model đầu phát Stamford (HC4D hay khác)",
+    "Không ghi bộ điều khiển",
+    "Không ghi model tổ máy Cummins (C330 D5)",
+    "Không có đại diện tại Việt Nam trên trang"
+  ],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://younesbros.com/product/cummins-qsl9g5-50/",
+      "accessedAt": "2026-11-06",
+      "tier": "C",
+      "quote": [
+        "Cummins QSL9G5-50 – Younes Bros",
+        "| Cummins | QSL9G5-50 | – | | 300 kVA | | 50 Hz | Diesel | New | 0",
+        "Generating set KVA Prime 300KVA Standby 330 KVA, equipped with Cummins diesel engine type QSL9-G5 driving at 1500 RPM.",
+        "A single bearing Stamford alternator brushless, self-excited, self-regulated, insulation and temperature class H, PH 0.8, 220/380V, 3 phase, 4 wire regulated at +/- 1%, 50 Hz.",
+        "Our generators are available with CE certification along with the installation Quality Assurance ( IQA ) from Cummins and designed in facilities certified to ISO 9001"
+      ],
+      "file": "sources/younes-bros/2001.md"
+    }
+  ],
+  "confidence": "low",
+  "checkedAt": "2026-11-06",
+  "checkedBy": "config-bot",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Cummins QSL9G5-50",
+      "header": [
+        "| | Manufacturer | Model | Year | Wattage | kVA | Voltage | Frequency | Fuel Type | Condition | Hours"
+      ],
+      "rows": [
+        "| Cummins | QSL9G5-50 | – | | 300 kVA | | 50 Hz | Diesel | New | 0",
+        "Generating set KVA Prime 300KVA Standby 330 KVA, equipped with Cummins diesel engine type QSL9-G5 driving at 1500 RPM.",
+        "A single bearing Stamford alternator brushless, self-excited, self-regulated, insulation and temperature class H, PH 0.8, 220/380V, 3 phase, 4 wire regulated at +/- 1%, 50 Hz."
+      ]
+    }
+  ],
+  "id": "younes-bros"
+}

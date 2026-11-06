@@ -1,0 +1,110 @@
+{
+  "country": "GB",
+  "role": "distributor",
+  "status": "partial",
+  "names": {
+    "en": "ADE Power Ltd",
+    "zh": ""
+  },
+  "website": "https://ade-power.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "C330D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSL9-G5"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không ghi bộ điều khiển PowerCommand 3.3 (chỉ PowerCommand 1.2, có tùy chọn nâng cấp)",
+    "Không có đại diện tại Việt Nam trên trang",
+    "Không có datasheet PDF của hãng"
+  ],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://ade-power.com/generators/cummins/330kva",
+      "accessedAt": "2026-11-06",
+      "tier": "C",
+      "quote": [
+        "330 kVA Cummins C330D5 Silent Diesel Generator | ADE Power",
+        "The Cummins C330D5 is a 330 kVA Three Phase Auto Start 50Hz Silent Diesel Generator featuring the Cummins QSL9-G5 engine & Stamford HC4D alternator.",
+        "| Prime Power Rating | 300 kVA / 240 kW",
+        "| Engine | Cummins QSL9-G5",
+        "| Alternator | Stamford HC4D",
+        "| Control Panel | Cummins PowerCommand 1.2",
+        "14 Langthwaite Business Park, South Kirkby, Pontefract, WF9 3AP, UK"
+      ],
+      "file": "sources/ade-power/2001.md"
+    }
+  ],
+  "confidence": "low",
+  "checkedAt": "2026-11-06",
+  "checkedBy": "config-bot",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Cummins Power Generation C330D5 330 kVA Generator Specification",
+      "header": [],
+      "rows": [
+        "The Cummins C330D5 is a 330 kVA Three Phase Auto Start 50Hz Silent Diesel Generator featuring the Cummins QSL9-G5 engine & Stamford HC4D alternator.",
+        "| Standby Power Rating | 330 kVA / 264 kW",
+        "| Prime Power Rating | 300 kVA / 240 kW",
+        "| Engine | Cummins QSL9-G5",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Stamford HC4D",
+        "| Voltage | 380-415V",
+        "| Frequency | 50Hz",
+        "| Control Panel | Cummins PowerCommand 1.2",
+        "| Base Fuel Tank Capacity | 691 Litres",
+        "| Fuel Consumption | 63 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 4258mm x 1424mm x 2215mm",
+        "| Dry Weight | 4,095kg"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Cummins",
+      "model": "PowerCommand 1.2",
+      "text": "Cummins PowerCommand 1.2",
+      "line": "| Control Panel | Cummins PowerCommand 1.2",
+      "src": [
+        2001
+      ]
+    }
+  ],
+  "id": "ade-power"
+}
