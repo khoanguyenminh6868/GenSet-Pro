@@ -137,3 +137,70 @@ test("candidates: power within 10% when the tender asks for đồng bộ thươn
   const r = BP.candidates({ ...t, sync: { need: 2 } }, d, 400, 1e9);
   assert.deepEqual([r.tol, r.list.map((s) => s.key)], [0.1, ["A"]]);
 });
+
+test("kvaRated / powerMatch: the rating of a figure and the standby factor (2026-11-06 audit)", () => {
+  assert.deepEqual(BP.kvaRated("500 kVA liên tục; 513 kVA - 550kVA dự phòng (phân tích)"), { kva: 500, rating: "prime" });
+  assert.equal(BP.kvaRated("Công suất định mức (Standby) kVA: 2500kVA").rating, "standby");
+  assert.equal(BP.kvaRated("Mua máy phát điện 400 kVA").rating, null);
+  // The tender's 400 kVA prime against a lot named 440 kVA with no rating: the standby reading matches; two bare names do not shift.
+  assert.equal(BP.powerMatch(400, "prime", 440, null, 0.05), true);
+  assert.equal(BP.powerMatch(400, null, 440, null, 0.05), false);
+  assert.equal(BP.powerMatch(400, "prime", 440, "standby", 0.05), true);
+  assert.equal(BP.powerMatch(400, "prime", 440, "prime", 0.05), false);
+  assert.equal(BP.powerMatch(440, "standby", 400, "prime", 0.05), true);
+  assert.deepEqual(BP.cfgPower({ config: { text: "Máy phát điện: Công suất định mức liên tục P ≥ 100,0 kVA ở 50 Hz\nĐộng cơ: Công suất tối đa: Pmax ≥ 99,5 kW" } }), { kva: 100, rating: "prime" });
+  assert.deepEqual(BP.cfgPower({ config: { kvas: [{ u: "kVA", v: 550 }], text: "Công suất 500/550 kVA" } }), { kva: 550, rating: null });
+  assert.deepEqual(BP.cfgPower({ config: { sets: [{ qty: 2, primeKva: 250, standbyKva: 275 }] } }), { kva: 250, rating: "prime" });
+  assert.equal(BP.unitsOf("Mua 20 bộ máy phát điện loại 30kVA nhập kho"), 20);
+  assert.equal(BP.unitsOf("Gói thầu số 03: Mua sắm 01 Máy phát điện 400KVA", [{ name: "Máy phát điện 400kVA", qty: 1 }]), 1);
+  assert.equal(BP.unitsOf("Mua máy phát điện", [{ name: "Máy phát điện 100kVA", qty: 3 }]), 3);
+});
+
+test("candidates: a lot named at the other rating is found and marked, after an exact one; an HSMT prime figure is not shifted", () => {
+  const d = { A: { bidName: "Mua sắm máy phát điện 400kVA", final: true, lots: [lot(1e9, 8e8)] }, B: { bidName: "Mua sắm máy phát điện 440kVA", final: true, lots: [lot(1e9, 8e8)] },
+    C: { bidName: "Mua máy phát điện", final: true, config: { text: "Công suất liên tục ≥ 440 kVA\nCông suất dự phòng ≥ 480 kVA" }, lots: [lot(1e9, 8e8)] } };
+  const r = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA", rating: "prime" }, d, 400, 1e9);
+  assert.deepEqual(r.list.map((s) => s.key), ["A", "B"]);
+  assert.match(r.list[1].kNote, /dự phòng của máy 400 kVA/);
+  assert.match(BP.sampleText(r.list[1]), /có thể là mức dự phòng/);
+  // No rating known for the tender: 440 is another size, and a reference of the wider band (prior).
+  const r2 = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, d, 400, 1e9);
+  assert.deepEqual([r2.list.map((s) => s.key), r2.prior.map((p) => p.key).sort()], [["A"], ["B", "C"]]);
+});
+
+test("profileOf / candidates: a foreign make made in China is its own group, compared with both (2026-11-06)", () => {
+  assert.equal(BP.profileOf("Động cơ Cummins, xuất xứ Trung Quốc").group, "cnmade");
+  assert.equal(BP.profileOf("Động cơ Cummins DCEC").group, "cnmade");
+  assert.equal(BP.profileOf("Động cơ Cummins, xuất xứ Mỹ").group, "foreign");
+  assert.equal(BP.goodsGroup([{ name: "Máy phát điện 500kVA", maker: "Cummins", origin: "Trung Quốc" }]), "cnmade");
+  const g = (maker, origin) => [{ name: "Máy phát điện 400kVA", maker, origin }];
+  const d = { CN: { bidName: "Mua sắm máy phát điện 400kVA", final: true, lots: [lot(1e9, 8e8, g("Weichai", "Trung Quốc"))] },
+    US: { bidName: "Mua sắm máy phát điện 400kVA", final: true, lots: [lot(1e9, 8e8, g("Cummins", "Mỹ"))] },
+    CNM: { bidName: "Mua sắm máy phát điện 400kVA", final: true, lots: [lot(1e9, 8e8, g("Cummins", "Trung Quốc"))] } };
+  // Offering a Cummins from a supplier based in China: nothing dropped, the lot of the same group first.
+  const r = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA", engine: { make: "Cummins", model: "6BTAA5.9-G12" }, place: "cn" }, d, 400, 1e9);
+  assert.deepEqual([r.group, r.otherGroup, r.list[0].key, r.list.length], ["cnmade", 0, "CNM", 3]);
+  // Offering a Cummins made abroad: the Chinese lot goes, the one made in China stays.
+  const r2 = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA", engine: { make: "Cummins", model: "6BTAA5.9-G12" } }, d, 400, 1e9);
+  assert.deepEqual([r2.group, r2.list.map((s) => s.key).sort()], ["foreign", ["CNM", "US"]]);
+});
+
+test("suggest: under 5 alike lots the same-size prior backs them; bidders counted; per kVA divides by the sets", () => {
+  const s = (ratio, level = "same", units = 1) => ({ key: "K" + ratio, lotNo: "", level, ratio, wp: ratio * 1e9 * units, price: 1e9 * units, k: 400, units, bidders: [{ name: "a", price: 1, won: true }, { name: "b", price: 2 }] });
+  const prior = [0.6, 0.7, 0.8].map((r, i) => ({ key: "P" + i, lotNo: "", ratio: r, nb: i + 4, k: 420, wp: r * 1e9, price: 1e9, units: 1 }));
+  const st = BP.suggest([s(0.9), s(0.95)], 1e9, 400, prior);
+  assert.deepEqual([st.n, st.nPrior, st.pool, st.enough], [2, 3, 5, true]);
+  assert.deepEqual(st.levels.map((l) => l.ratio), [0.7, 0.8, 0.9]);
+  assert.equal(st.bidders.median, 4);
+  assert.deepEqual(st.byBidders.map((x) => [x.label, x.n]), [["2–3 nhà thầu", 2], ["từ 4 nhà thầu", 3]]);
+  assert.equal(BP.suggest([s(0.7), s(0.8), s(0.9), s(0.95), s(1)], 1e9, 400, prior).nPrior, 0);
+  assert.equal(BP.suggest([s(0.8), s(0.8, "same", 20), s(0.8)], 1e9, 400).perKva.value, 2000000);
+});
+
+test("keyText: the first part of an HSMT, then its later lines about make, origin and scope", () => {
+  const t = ["a".repeat(100), "Xuất xứ: Trung Quốc", "b".repeat(100), "Kèm tủ ATS 630A", "c".repeat(100)].join("\n");
+  const o = BP.keyText(t, 150);
+  assert.ok(o.startsWith("a".repeat(100) + "\nXuất xứ: Trung Quốc\nKèm tủ ATS 630A"), o);
+  assert.ok(!o.includes("ccc") && o.endsWith("…"));
+  assert.equal(BP.keyText("ngắn", 150), "ngắn");
+});

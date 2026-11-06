@@ -24,6 +24,40 @@
     const v = Number(m[1].replace(/\.(?=\d{3}\b)/, "").replace(",", "."));
     return v > 0 ? (/kw/i.test(m[2]) ? v / 0.8 : v) : null;
   }
+  // The rating a power figure is given at (2026-11-06 audit: the name of a tender gives the prime power, its HSMT often the
+  // standby one too, 10% apart, so 144 of 326 past tenders read 5–15% apart from their own HSMT): the words of prime or
+  // standby in the same clause as the figure ("500 kVA liên tục; 550 kVA dự phòng", "Công suất định mức (Standby) 2500kVA").
+  const PRIME_RE = /li[êe]n\s*t[ụu]c|\bprime\b|\bPRP\b|\bCOP\b|continuous|c[ơo]\s*b[ảa]n/i, STANDBY_RE = /d[ựu]\s*ph[òo]ng|\bstandby\b|\bESP\b|emergency|kh[ẩa]n\s*c[ấa]p/i;
+  const ratingIn = (s) => { const p = PRIME_RE.test(s), b = STANDBY_RE.test(s); return p === b ? null : p ? "prime" : "standby"; };
+  const numOf = (m) => Number(m[1].replace(/\.(?=\d{3}\b)/, "").replace(",", "."));
+  function kvaRated(text) {
+    const t = String(text || "").normalize("NFC"), ms = [...t.matchAll(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/gi)], m = capPick(t, ms);
+    if (!m) return null;
+    const v = numOf(m);
+    if (!(v > 0)) return null;
+    const before = t.slice(Math.max(0, m.index - 60), m.index).split(/[;\n(]|,(?!\d)/).pop(), after = t.slice(m.index + m[0].length, m.index + m[0].length + 40).split(/[;\n)]|,(?!\d)/)[0];
+    return { kva: /kw/i.test(m[2]) ? v / 0.8 : v, rating: ratingIn(`${before} ${after}`) };
+  }
+  const ratingOf = (text) => kvaRated(text)?.rating || null;
+  // Standby is about 10% above prime (ISO 8528: the usual pairs 400/440, 500/550 kVA).
+  const STANDBY_FACTOR = 1.1;
+  // The readings of a lot's power k that may compare with the tender's K: when both ratings are known, k at K's rating;
+  // when only K's is, k itself or k taken as the other rating (a lot named 440 kVA may be the standby figure of this
+  // tender's 400 kVA prime set); when only k's is, k itself or K taken as the other rating (k moved the opposite way);
+  // when neither is (two names), k alone, as names follow one convention.
+  // nearest: the reading closest to K; powerMatch: that reading within tol of K.
+  const toRating = (k, from, to) => (from === to ? k : to === "prime" ? k / STANDBY_FACTOR : k * STANDBY_FACTOR);
+  const readings = (rK, k, rk) => (rK && rk ? [toRating(k, rk, rK)] : rK ? [k, toRating(k, rK === "prime" ? "standby" : "prime", rK)] : rk ? [k, toRating(k, rk, rk === "prime" ? "standby" : "prime")] : [k]);
+  const nearest = (K, rK, k, rk) => readings(rK, k, rk).sort((a, b) => Math.abs(Math.log(a / K)) - Math.abs(Math.log(b / K)))[0];
+  const powerMatch = (K, rK, k, rk, tol) => !!(K > 0 && k > 0) && Math.abs(nearest(K, rK, k, rk) - K) <= tol * K + 1e-9;
+  // How many sets a lot buys: the quantity of its won generator sets, else the name ("Mua 20 bộ máy phát điện", "2 x 250 kVA"), else one.
+  const UNIT_RE = /(\d{1,3})\s*(?:bộ|máy|tổ\s*máy|chiếc|cái)(?!\p{L})/iu, X_RE = /(\d{1,3})\s*[x×]\s*\d/i;
+  function unitsOf(name, goods = []) {
+    const q = Math.max(0, ...goods.filter((g) => isGensetName(g.name)).map((g) => Number(g.qty) || 0));
+    if (q >= 1) return q;
+    const n = String(name || "").normalize("NFC"), m = n.match(UNIT_RE) || n.match(X_RE);
+    return m && Number(m[1]) >= 1 ? Number(m[1]) : 1;
+  }
   // Same name rules as the bot (genbid-sync.js isGenset): a power plant's own generator is not a generator set.
   const GENSET_RE = /m[áa]y\s*ph[áa]t\s*(đi[ệe]n|di[eê]s[eê]l|di[eê]zen|dự\s*phòng)|m[áa]y\s*ph[áa]t[^,;:]{0,30}\d+\s*k[vV]?[aA]\b|\bgenset\b|\bmp[đd]\b/i;
   const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|di[eê]s[eê]l|di[eê]zen|\d\s*kva\b/i;
@@ -46,6 +80,26 @@
     const ps = (d?.config?.kvas || []).map((p) => (p.u === "kW" ? p.v / 0.8 : p.u === "MVA" ? p.v * 1000 : p.v)).filter((v) => v >= 1);
     if (!ps.length) return null;
     return multi ? (new Set(ps).size === 1 ? ps[0] : null) : Math.max(...ps);
+  }
+  // The same with its rating: the sets the specs wrote (config.sets: qty, primeKva, standbyKva...), else the clause of
+  // config.text that names prime (else standby) with a figure, else cfgKva with no rating. → { kva, rating } or null.
+  function cfgPower(d, multi) {
+    const one = (xs) => (xs.length && (!multi || new Set(xs).size === 1) ? Math.max(...xs) : null);
+    const sets = (d?.config?.sets || []).filter((s) => s && typeof s === "object");
+    const sk = (s, u) => (Number(s[u + "Kva"]) > 0 ? Number(s[u + "Kva"]) : Number(s[u + "Kw"]) > 0 ? Number(s[u + "Kw"]) / 0.8 : null);
+    for (const r of ["prime", "standby"]) { const v = one(sets.map((s) => sk(s, r)).filter(Boolean)); if (v) return { kva: v, rating: r }; }
+    const found = { prime: [], standby: [] };
+    for (const l of String(d?.config?.text || "").normalize("NFC").split(/\n/)) {
+      // An engine's own output ("Động cơ: công suất liên tục ≥ 320 kW") is not the set's.
+      if (/động\s*cơ|engine/i.test(l) && !/máy\s*phát|tổ\s*máy|genset/i.test(l)) continue;
+      for (const cl of l.split(/;|,(?!\d)/)) {
+        const m = cl.match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/i), r = m && ratingIn(cl), v = m && numOf(m);
+        if (r && v > 0) found[r].push(/kw/i.test(m[2]) ? v / 0.8 : v);
+      }
+    }
+    for (const r of ["prime", "standby"]) { const v = one(found[r]); if (v) return { kva: v, rating: r }; }
+    const v = cfgKva(d, multi);
+    return v ? { kva: v, rating: null } : null;
   }
   const taxKey = (x) => String(x.taxCode || "").replace(/\D/g, "") || String(x.name || "").trim().toUpperCase();
   const bdPrice = (b) => b.finalPrice ?? b.bidPrice;
@@ -136,13 +190,22 @@
     // A model code with no make named ("WP13D385E200"): its make by catalog.js. Countries count only on the lines about the
     // engine or the set: a cable from Korea or a Deep Sea controller from the UK says nothing of the engine.
     const o = C && model ? C.originIn(t, model) : null, eng = t.split(/\n/).filter((l) => ENGINE_LINE.test(l) && !OTHER_LINE.test(l)).join("\n");
-    const fr = engines.some((n) => C.FOREIGN_ENGINE.has(n)) || o === "other" || FOREIGN_WORD.test(eng);
-    const cn = engines.some((n) => !C.FOREIGN_ENGINE.has(n)) || o === "cn" || CN_WORD.test(eng);
-    return { group: fr === cn ? null : fr ? "foreign" : "cn", tags };
+    // The make's group and the place of manufacture apart (2026-11-06 audit): "Cummins, xuất xứ Trung Quốc" is a foreign
+    // make made in China (cnmade), priced between a Chinese make and a Cummins made abroad; the agent had to say so by
+    // hand in 4 of 9 runs when the code called it foreign.
+    const brFr = engines.some((n) => C.FOREIGN_ENGINE.has(n)) || o === "other", brCn = engines.some((n) => !C.FOREIGN_ENGINE.has(n)) || o === "cn";
+    const place = placeOf(eng);
+    return { group: brFr && brCn ? null : brFr ? (place === "cn" ? "cnmade" : "foreign") : brCn ? "cn" : place, place, tags };
   }
   const SYNC_TAG = "đồng bộ thương hiệu";
   const ENGINE_LINE = /động\s*cơ|engine|tổ\s*máy|máy\s*phát|genset/i, OTHER_LINE = /\bcáp\b|dây\s*(cáp|điện|tín)|\bATS\b|\btủ\b|bộ\s*điều\s*khiển|controller|đầu\s*phát|alternator|biến\s*áp/i;
-  const GROUP = { cn: "Trung Quốc", foreign: "ngoài Trung Quốc" };
+  // Where a set or engine is made, from the words of a text: China (the country, or a Chinese plant of a foreign make:
+  // DCEC / CCEC Cummins, Perkins Wuxi, MTU Yuchai, Shanghai MHI), another country, or not said.
+  const CN_MADE = /\bDCEC\b|\bCCEC\b|dongfeng|chongqing|\bwuxi\b|mtu\s*yuchai|shanghai\s*(diesel|mhi)|lắp\s*ráp\s*tại\s*trung|sản\s*xuất\s*tại\s*trung|made\s*in\s*china/i;
+  const placeOf = (s) => (CN_WORD.test(String(s || "")) || CN_MADE.test(String(s || "")) ? "cn" : FOREIGN_WORD.test(String(s || "")) ? "foreign" : null);
+  const GROUP = { cn: "Trung Quốc", cnmade: "hãng ngoài Trung Quốc, sản xuất tại Trung Quốc", foreign: "ngoài Trung Quốc" };
+  // Groups that cannot price each other: a Chinese make against a foreign make made abroad; cnmade compares with both.
+  const conflict = (a, b) => !!a && !!b && a !== b && a !== "cnmade" && b !== "cnmade";
   // The winning generator sets' engine origin, from the make, model and origin muasamcong lists for each (cables, ATS,
   // transformers left out): one group for all, else none.
   function goodsGroup(goods) {
@@ -158,8 +221,18 @@
   }
 
   // A tender that asks for đồng bộ thương hiệu: 10% (Khoa, 2026-11-06), as few past lots asked for an OEM set.
-  const MAX = 80, POWER_TOL = 0.05, SYNC_POWER_TOL = 0.1, LEVELS = ["same", "close", "different", "unknown"];
+  const MAX = 80, POWER_TOL = 0.05, SYNC_POWER_TOL = 0.1, WIDE_TOL = 0.15, LEVELS = ["same", "close", "different", "unknown"];
   const cut = (s, n) => { s = String(s || "").replace(/\s+/g, " ").trim(); return s.length > n ? s.slice(0, n) + "…" : s; };
+  // The first n characters of an HSMT's lines, then, up to 2n, the later lines that decide the comparison (make, origin,
+  // scope, quantity, power): 803 of 1,250 past tenders' config.text ran past the 3,000 characters the agent was shown.
+  const KEY_LINE = /h[ãa]ng|xu[ấa]t\s*x[ứu]|origin|\bATS\b|c[áa]ch\s*[âa]m|b[ồo]n|đ[ồo]ng\s*b[ộo]|s[ốo]\s*l[ưu][ợo]ng|li[êe]n\s*t[ụu]c|d[ựu]\s*ph[òo]ng|prime|standby|đ[ộo]ng\s*c[ơo]|đ[ầa]u\s*ph[áa]t|đi[ềe]u\s*khi[ểe]n|bi[ếe]n\s*[áa]p|l[ắa]p\s*đ[ặa]t|\bc[áa]p\b|trung\s*qu[ốo]c|\bG7\b|nh[ậa]p\s*kh[ẩa]u/i;
+  function keyText(text, n) {
+    const s = String(text || "").trim();
+    if (s.length <= n) return s;
+    let out = s.slice(0, n).replace(/[^\n]*$/, "").replace(/\n$/, "");
+    for (const l of s.slice(out.length).split("\n")) { if (!KEY_LINE.test(l)) continue; if (out.length + l.length + 1 > 2 * n) break; out += "\n" + l.trim(); }
+    return out + "\n…";
+  }
   // The decided lots most like the tender, for the agent to compare. t: { notifyNo, bidName, investorName, cfgText (what
   // its HSMT asks for), engine ({ make, model } of the configuration Gợi ý cấu hình put first) }, docs: { <TBMT>: bidhist
   // document }, K: kVA, P: package price. Ranked by power, package price and how alike the configuration asked for is
@@ -170,12 +243,16 @@
   // (Khoa, 2026-11-03); when it is not, a lot whose power is not known stays only when it says something about its goods
   // (won goods or the HSMT's lines), so the agent can tell what it was (a lot with nothing about its configuration
   // cannot set the price).
+  // t.rating: the rating K is given at (prime / standby / null); t.place: "cn" when the engine to be offered is made in
+  // China (the configuration's supplier is based there). prior: the competed lots of the same size (±15%) and not of the
+  // other group that are not in the list, for suggest to lean on when few lots are alike.
   function candidates(t, docs, K, P) {
-    const kind = bidKind(t.bidName), out = [], tp = profileOf(`${t.bidName || ""}\n${t.cfgText || ""}`);
+    const kind = bidKind(t.bidName), out = [], prior = [], tp = profileOf(`${t.bidName || ""}\n${t.cfgText || ""}`);
     if (t.sync && !tp.tags.includes(SYNC_TAG)) tp.tags.push(SYNC_TAG);
-    const tol = tp.tags.includes(SYNC_TAG) ? SYNC_POWER_TOL : POWER_TOL;
+    const tol = tp.tags.includes(SYNC_TAG) ? SYNC_POWER_TOL : POWER_TOL, rK = t.rating || null;
     const eg = t.engine && root.GenbidCatalog ? root.GenbidCatalog.originIn(t.engine.make || "", t.engine.model || "") : null;
-    const tGroup = eg === "cn" ? "cn" : eg === "other" ? "foreign" : tp.group;
+    const place = t.place || (t.engine && placeOf(`${t.engine.make || ""} ${t.engine.model || ""}`)) || tp.place || null;
+    const tGroup = eg === "cn" ? "cn" : eg === "other" ? (place === "cn" ? "cnmade" : "foreign") : tp.group;
     let total = 0, otherGroup = 0;
     for (const [key, d] of Object.entries(docs)) {
       if (key === t.notifyNo || !d.final || !isGensetName(d.bidName)) continue;
@@ -192,31 +269,43 @@
         // A name that does not say so, but an HSMT that moves an owned set and no set among the won goods: a move.
         if (kind === "supply" && movesOldSet(d.config?.text) && !goods.some((g) => isGensetName(g.name))) continue;
         const kGoods = Math.max(0, ...goods.map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
-        const kName = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)), kCfg = kName || kGoods ? null : cfgKva(d, multi);
-        const k = kName || kGoods || kCfg, kSrc = kName ? "tên gói" : kGoods ? "hàng chào" : kCfg ? "HSMT" : "";
-        if (K && !(k && Math.abs(k - K) <= tol * K + 1e-9)) continue;
+        const nameOf = (multi && lot.lotName) || (multi ? "" : d.bidName);
+        const kName = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)), kCfg = kName || kGoods ? null : cfgPower(d, multi);
+        const k = kName || kGoods || kCfg?.kva || null, kSrc = kName ? "tên gói" : kGoods ? "hàng chào" : kCfg ? "HSMT" : "";
+        const rk = kName ? ratingOf(nameOf) : kGoods ? null : kCfg?.rating || null, nb = (lot.bidders || []).length;
+        const units = unitsOf(nameOf, goods), group = goodsGroup(goods) || profileOf(d.config?.text).group;
+        // The reading of k that compares with K (k itself when the ratings are known or the same size).
+        const kEq = K && k ? nearest(K, rK, k, rk) : k;
+        if (K && !powerMatch(K, rK, k, rk, tol)) {
+          if (k && nb >= 2 && !conflict(tGroup, group) && Math.abs(Math.log(kEq / K)) <= Math.log(1 + WIDE_TOL)) prior.push({ key, lotNo: lot.lotNo || "", name: d.bidName || "", k, kEq, ratio, nb, price, wp, group, units });
+          continue;
+        }
         if (!k && !goods.length && !d.config?.text) continue;
         const lp = profileOf([(multi && lot.lotName) || d.bidName, d.config?.text, ...goods.map((g) => [g.name, g.maker, g.code, g.origin, g.desc].join(" "))].join("\n"));
-        const group = goodsGroup(goods) || profileOf(d.config?.text).group;
-        if (tGroup && group && group !== tGroup) { otherGroup++; continue; }
+        if (conflict(tGroup, group)) { otherGroup++; continue; }
+        const shifted = k && kEq && Math.abs(kEq - k) > 1e-6;
         // A lot that names nothing to compare counts as half alike.
-        const cfg = compareCfg(tp, lp), dist = (K && k ? Math.abs(Math.log(K / k)) : 0.7) + (P ? 0.5 * Math.abs(Math.log(P / price)) : 0)
+        const cfg = compareCfg(tp, lp), dist = (K && kEq ? Math.abs(Math.log(K / kEq)) : 0.7) + (P ? 0.5 * Math.abs(Math.log(P / price)) : 0)
           + (cfg.sim == null ? 0.5 : 1 - cfg.sim)
           // A tender that asks for an OEM set (đồng bộ thương hiệu) is priced from lots that asked for one too (Khoa,
           // 2026-11-06: a set assembled from three makes wins far lower).
-          + (tp.tags.includes(SYNC_TAG) && !lp.tags.includes(SYNC_TAG) ? 0.6 : 0) - (tGroup && group === tGroup ? 0.3 : 0) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0);
+          + (tp.tags.includes(SYNC_TAG) && !lp.tags.includes(SYNC_TAG) ? 0.6 : 0) - (tGroup && group === tGroup ? 0.3 : 0) - (t.investorName && d.investorName === t.investorName ? 0.3 : 0)
+          // A lot that matches only when read at the other rating ranks after one of the same figure.
+          + (shifted ? 0.25 : 0);
         out.push({
           key, lotNo: lot.lotNo || "", name: d.bidName || "", lotName: multi ? lot.lotName || "" : "", investor: d.investorName || "", location: d.location || "",
-          bidForm: d.bidForm || "", at: d.openedAt || d.bidCloseDate || "", url: d.url || "", price, wp, ratio, winner: w.name || "", k, kSrc, dist,
+          bidForm: d.bidForm || "", at: d.openedAt || d.bidCloseDate || "", url: d.url || "", price, wp, ratio, winner: w.name || "", k, kSrc, kRating: rk, dist, units,
+          kNote: shifted ? (kEq < k ? `có thể là mức dự phòng của máy ${Math.round(kEq)} kVA liên tục` : `có thể là mức liên tục của máy ${Math.round(kEq)} kVA dự phòng`) : "",
           goods: goods.slice(0, 8).map((g) => ({ name: cut(g.name, 300), maker: g.maker || g.label || "", code: g.code || "", origin: g.origin || "", qty: g.qty ?? null, unitPrice: g.unitPrice ?? null, desc: cut(g.desc, 200) })),
-          cfgText: cut(d.config?.text, 3000),
+          cfgText: keyText(d.config?.text, 3000),
           bidders: (lot.bidders || []).map((b) => ({ name: b.name || "", tax: String(b.taxCode || "").replace(/\D/g, ""), price: bdPrice(b) ?? null, won: !!b.won })),
           group, cfg: { sim: cfg.sim == null ? null : Math.round(cfg.sim * 100) / 100, same: cfg.same, diff: cfg.diff },
         });
       }
     }
     out.sort((a, b) => a.dist - b.dist);
-    return { total, tol, group: tGroup, otherGroup, list: out.slice(0, MAX).map((s, i) => ({ id: "S" + (i + 1), ...s })) };
+    prior.sort((a, b) => Math.abs(Math.log(a.kEq / K)) - Math.abs(Math.log(b.kEq / K)));
+    return { total, tol, group: tGroup, rating: rK, place, otherGroup, list: out.slice(0, MAX).map((s, i) => ({ id: "S" + (i + 1), ...s })), prior: prior.slice(0, 150) };
   }
   // The code's comparison of one lot with the tender, shown to the agent beside the lot. Not part of sampleText: the
   // agent's quote must come from muasamcong's own words.
@@ -230,7 +319,8 @@
     const n = (v) => Number(v).toLocaleString("vi-VN");
     return [
       `Tên gói: ${s.name}`, s.lotName ? `Phần: ${s.lotName}` : "", `Chủ đầu tư: ${s.investor}${s.location ? ` (${s.location})` : ""}`,
-      s.k ? `Công suất (code đọc từ ${s.kSrc}): ${Math.round(s.k)} kVA` : "Công suất: không rõ",
+      s.k ? `Công suất (code đọc từ ${s.kSrc}${s.kRating ? `, mức ${s.kRating === "prime" ? "liên tục" : "dự phòng"}` : ""}): ${Math.round(s.k)} kVA${s.kNote ? ` (${s.kNote})` : ""}` : "Công suất: không rõ",
+      s.units > 1 ? `Số máy (code đọc): ${s.units}` : "",
       `Số nhà thầu: ${s.bidders.length}`,
       ...(s.goods.length ? ["Hàng hoá trúng thầu:", ...s.goods.map((g) => `- ${[g.name, g.maker && `hãng ${g.maker}`, g.code && `model ${g.code}`, g.origin && `xuất xứ ${g.origin}`, g.qty != null && `số lượng ${g.qty}`, g.unitPrice && `đơn giá ${n(g.unitPrice)} đ`, g.desc].filter(Boolean).join(" | ")}`)] : ["Hàng hoá trúng thầu: không ghi"]),
       s.cfgText ? `Trích HSMT:\n${s.cfgText}` : "",
@@ -242,17 +332,29 @@
   // competed against (IB2500514971: one bidder, 99,9% of the lot price). "same" alone when there are 5 of them, else
   // "same" and "close"; under 3 lots no price is suggested. Each level's chance is the share of those lots whose
   // winning price was at least that price, over the lot price.
-  function suggest(samples, P, K) {
-    const ok = (s) => !s.unverified && s.bidders.length >= 2;
+  // Under 5 alike lots, the competed lots of the same size and group the agent was not asked about (candidates' prior)
+  // back them up, so three or four lots do not set the price alone (2026-11-06 audit: 3 of 9 runs had too few, the rest
+  // 1–9). The winning share falls with the number of bidders (2 bidders: median 98% of the lot price; 6 or more: 79%),
+  // so the lots' bidder counts and the share at 2–3 against 4+ bidders are given too.
+  const nbOf = (s) => (Array.isArray(s.bidders) ? s.bidders.length : Number(s.nb) || 0);
+  function suggest(samples, P, K, prior = []) {
+    const ok = (s) => !s.unverified && nbOf(s) >= 2;
     const same = samples.filter((s) => s.level === "same" && ok(s)), close = samples.filter((s) => s.level === "close" && ok(s));
     const use = same.length >= 5 ? same : [...same, ...close], basis = same.length >= 5 ? "same" : "same+close";
-    const ratios = use.map((s) => s.ratio), round = (v) => Math.round(v / 1000) * 1000;
-    const chance = (r) => (use.length ? use.filter((s) => s.ratio >= r - 1e-9).length / use.length : 0);
-    const levels = use.length >= 3 && P > 0 ? [["low", "Cạnh tranh", 0.25], ["mid", "Trung vị", 0.5], ["high", "Cao", 0.75]].map(([id, label, p]) => {
+    const have = new Set(use.map((s) => `${s.key}|${s.lotNo}`));
+    const extra = use.length >= 5 ? [] : prior.filter((p) => ok(p) && !have.has(`${p.key}|${p.lotNo}`));
+    const pool = [...use, ...extra];
+    const ratios = pool.map((s) => s.ratio), round = (v) => Math.round(v / 1000) * 1000;
+    const chance = (r) => (pool.length ? pool.filter((s) => s.ratio >= r - 1e-9).length / pool.length : 0);
+    const levels = pool.length >= 3 && P > 0 ? [["low", "Cạnh tranh", 0.25], ["mid", "Trung vị", 0.5], ["high", "Cao", 0.75]].map(([id, label, p]) => {
       const r = quantile(ratios, p);
       return { id, label, ratio: r, price: round(P * r), chance: chance(r) };
     }) : [];
-    const withK = use.filter((s) => s.k), perKva = K && withK.length >= 3 ? median(withK.map((s) => s.wp / s.k)) : null;
+    // The winning price of one set per kVA: a lot of 20 sets is divided by its 20 sets (units).
+    const perSet = (s) => (s.k ? s.wp / (s.k * (s.units || 1)) : null);
+    const withK = pool.filter((s) => perSet(s)), perKva = K && withK.length >= 3 ? median(withK.map(perSet)) : null;
+    const nbs = pool.map(nbOf), bidders = pool.length ? { n: pool.length, median: median(nbs), min: Math.min(...nbs), max: Math.max(...nbs) } : null;
+    const byBidders = [["2–3 nhà thầu", (n) => n <= 3], ["từ 4 nhà thầu", (n) => n >= 4]].map(([label, f]) => { const xs = pool.filter((s) => f(nbOf(s))).map((s) => s.ratio); return { label, n: xs.length, ratio: median(xs) }; }).filter((x) => x.n);
     const comp = new Map();
     for (const s of use) for (const b of s.bidders) {
       const id = b.tax || b.name.trim().toUpperCase();
@@ -262,7 +364,7 @@
       comp.set(id, c);
     }
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
-    return { basis, n: use.length, same: same.length, close: close.length, enough: use.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, comps };
+    return { basis, n: use.length, same: same.length, close: close.length, nPrior: extra.length, pool: pool.length, enough: pool.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, bidders, byBidders, comps };
   }
-  root.GenbidBidprice = { SYNC_TAG, brandSyncOf, familyOf, kvaOf, capPick, isGensetName, bidKind, movesOldSet, cfgKva, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL };
+  root.GenbidBidprice = { SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
 })(typeof window !== "undefined" ? window : globalThis);

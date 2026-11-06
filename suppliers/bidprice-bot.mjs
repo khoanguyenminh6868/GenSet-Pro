@@ -42,20 +42,30 @@ export async function prep(req, dir, hist, size = null) {
   // What this HSMT asks for, read the way bidhist's config.text was (the analysis' technical lines), else the HSMT's
   // technical part; and the engine of the configuration Gợi ý cấu hình put first (its origin group picks the lots).
   const cfgText = a?.technicalSpecs?.length ? a.technicalSpecs.map((s) => `${s.item}: ${s.requirement}`).join("\n") : hsmt ? technicalPart(hsmt.text).slice(0, 20000) : "";
+  const first = top.find((c) => !/KHÔNG/.test(syncNote(c))) || null;
+  // Where the engine to be offered is made (2026-11-06 audit): a foreign make from a supplier based in China (DCEC Cummins,
+  // Perkins Wuxi...) is priced between a Chinese make and the same make made abroad, not as a G7 set.
+  const supIds = (first?.suppliers || []).map((s) => s.supplierId).filter(Boolean);
+  const sups = supIds.length ? (await allDocs("supplier").catch(() => [])).filter((d) => supIds.includes(d.id)) : [];
+  const place = sups.length && sups.every((d) => d.data?.country === "CN") ? "cn" : BP.placeOf(`${first?.engine?.make || ""} ${first?.engine?.model || ""} ${a?.keyInfo?.generatorCapacity || ""}`);
   const t = { notifyNo: key, bidName: req.bidName || a?.keyInfo?.bidName || "", investorName: b.investorName || a?.keyInfo?.investor || "", cfgText,
     // Not the engine of a configuration that fails Đồng bộ thương hiệu (an assembled set is not what will be offered):
     // the first one that does not fail it, else what the HSMT asks for (Khoa, 2026-11-06).
-    engine: top.find((c) => !/KHÔNG/.test(syncNote(c)))?.engine || null,
+    engine: first?.engine || null, place,
+    // The rating K is given at (the web's capText: "500 kVA liên tục; 550 kVA dự phòng (phân tích)"), so a past lot's power
+    // is compared at the same rating (2026-11-06 audit: names give prime, HSMTs often standby, 10% apart).
+    rating: BP.kvaRated(b.capText)?.rating || (K && BP.kvaRated(a?.keyInfo?.generatorCapacity)?.kva === K ? BP.kvaRated(a?.keyInfo?.generatorCapacity)?.rating : null) || null,
     sync: (hsmt && BP.brandSyncOf(hsmt.text)) || BP.brandSyncOf(cfgText) };
   const docs = hist || Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
-  const { total, tol, group, otherGroup, list } = BP.candidates(t, docs, K, P);
+  const { total, tol, group, otherGroup, list, prior } = BP.candidates(t, docs, K, P);
+  const ratingVi = { prime: "liên tục", standby: "dự phòng" };
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, `Tên gói: ${t.bidName}`, t.investorName ? `Chủ đầu tư: ${t.investorName}` : "",
-    `Công suất: ${K ? `${fmt(Math.round(K))} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"}`, `Giá gói${size ? " (phần của cỡ máy này, code ước tính)" : ""}: ${P ? fmt(P) + " đ" : "không rõ"}`,
+    `Công suất: ${K ? `${fmt(Math.round(K))} kVA${t.rating ? ` mức ${ratingVi[t.rating]}` : ""}${b.capText ? ` (${b.capText})` : ""}` : "không rõ"}`, `Giá gói${size ? " (phần của cỡ máy này, code ước tính)" : ""}: ${P ? fmt(P) + " đ" : "không rõ"}`,
     ...(size ? ["", `## Gói có nhiều cỡ máy: ${size.sizes.map(sizeText).join("; ")}`,
       `Lượt này CHỈ so máy ${sizeText(size)}; các cỡ khác có lượt riêng. Xếp mức theo máy cỡ này: so công suất một máy với máy ${size.label}; gói cũ chỉ có máy cỡ này (một hay nhiều máy cùng cỡ) không bị xếp "khác" chỉ vì gói này còn máy cỡ khác. Giá gói ở trên là phần giá của cỡ máy này do code ước tính (chia giá cả gói${size.whole ? ` ${fmt(size.whole)} đ` : ""} theo số lượng và công suất từng cỡ), không phải số trên muasamcong.`, ""] : []),
-    `Công suất gói cũ được lấy: lệch không quá ${Math.round((tol || BP.POWER_TOL) * 100)}% so với gói này${tol > BP.POWER_TOL ? " (nới vì gói đòi đồng bộ thương hiệu)" : ""}.`,
-    `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}`, "",
+    `Công suất gói cũ được lấy: lệch không quá ${Math.round((tol || BP.POWER_TOL) * 100)}% so với gói này${tol > BP.POWER_TOL ? " (nới vì gói đòi đồng bộ thương hiệu)" : ""}, so cùng mức liên tục/dự phòng khi biết; gói cũ chỉ khớp khi đọc ở mức kia thì dòng công suất của nó ghi rõ ("có thể là mức dự phòng của máy … liên tục").`,
+    `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}${group === "cnmade" ? ". Hãng ngoài Trung Quốc nhưng sản xuất tại Trung Quốc (Dongfeng/Chongqing Cummins, Perkins Wuxi…): giá nằm giữa máy hãng Trung Quốc và máy cùng hãng sản xuất ở nước ngoài; gói cũ hai nhóm đó đều được giữ để so, gói cũ cũng là hãng ngoại sản xuất tại Trung Quốc là sát nhất." : ""}`, "",
     // Đồng bộ thương hiệu (Khoa, 2026-11-06): an OEM set, priced far above a set assembled from three makes.
     ...(t.sync ? [`## Đồng bộ thương hiệu: HSMT đòi ít nhất ${t.sync.need}/${t.sync.parts.length} bộ phận chính (động cơ, đầu phát, bộ điều khiển) do chính hãng sản xuất tổ máy làm ra`,
       `HSMT ghi: "${t.sync.text}"`, `Gói cũ HSMT không đòi điều này, hay hàng trúng là tổ máy lắp ráp (động cơ, đầu phát, bộ điều khiển của các hãng khác nhau), thì không xếp "giống".`, ""] : []),
@@ -65,15 +75,15 @@ export async function prep(req, dir, hist, size = null) {
     hsmt ? "## Phần kỹ thuật của HSMT\n" + technicalPart(hsmt.text).slice(0, 60000) : "Chưa có văn bản HSMT.",
   ].filter((l) => l !== "").join("\n"), "utf8");
   fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"), "utf8");
-  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", ...(size ? { qty: size.qty } : {}) }, total, list }), "utf8");
+  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior }), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "bidprice-prompt.md"), "utf8"), "utf8");
-  return { total, group, otherGroup, candidates: list.length, K, P };
+  return { total, group, otherGroup, candidates: list.length, K, P, prior };
 }
 
 // result.json checked against samples.json: every lot gets a level; a lot the agent left out, or whose quote is not in
 // its own text, counts as unknown (unverified). A "same" lot whose power code read is over 1,5 times off becomes "close".
 export function check(dir) {
-  const { basis, total, list } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
+  const { basis, total, list, prior = [] } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
   const r = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8")), problems = [];
   const by = new Map((r.samples || []).map((x) => [x.id, x]));
   const samples = list.map((s) => {
@@ -88,7 +98,7 @@ export function check(dir) {
     return out;
   });
   // A size of several sets (a tender of several sizes): the price per kVA times all of them.
-  const stats = BP.suggest(samples, basis.price, basis.kva && basis.kva * (basis.qty || 1));
+  const stats = BP.suggest(samples, basis.price, basis.kva && basis.kva * (basis.qty || 1), prior);
   const result = { basis, total, tender: { summary: String(r.tender?.summary || ""), points: (r.tender?.points || []).map(String).slice(0, 10) }, notes: (r.notes || []).map(String).slice(0, 6), samples, stats };
   fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
   return { result, problems };
@@ -104,7 +114,7 @@ function runClaude(dir) {
 async function attemptOne(req, dir, hist, size = null, tag = req.key) {
   fs.rmSync(dir, { recursive: true, force: true });
   const info = await prep(req, dir, hist, size);
-  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "", ...(size ? { qty: size.qty } : {}) }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).`], samples: [], stats: BP.suggest([], info.P, info.K) }, problems: [] };
+  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "", ...(size ? { qty: size.qty } : {}) }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).${info.prior?.length ? ` Giá dưới đây tính từ ${info.prior.length} gói cùng cỡ (±15%) có cạnh tranh, chưa qua Agent so cấu hình.` : ""}`], samples: [], stats: BP.suggest([], info.P, info.K && info.K * (size?.qty || 1), info.prior || []) }, problems: [] };
   const started = Date.now(), r = runClaude(dir);
   fs.writeFileSync(path.join(os.tmpdir(), `genbid-bidprice-${tag}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
   if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
