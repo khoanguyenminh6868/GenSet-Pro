@@ -121,7 +121,7 @@
     el.id = "gbLog";
     el.innerHTML = `<style>
       #gbLog{position:fixed;inset:0;z-index:90;background:rgba(5,8,18,.6);display:grid;place-items:center;padding:16px}
-      #gbLog .lp{width:min(1000px,100%);max-height:calc(100dvh - 32px);display:grid;grid-template-rows:auto auto 1fr auto;background:var(--panel,#121a2e);color:var(--fg,#e6eaf5);border:1px solid var(--line,#24304d);border-radius:14px;box-shadow:0 12px 40px #0006;overflow:hidden}
+      #gbLog .lp{width:min(1000px,calc(100vw - 32px));height:calc(100dvh - 32px);display:grid;grid-template-rows:auto auto 1fr auto;background:var(--panel,#121a2e);color:var(--fg,#e6eaf5);border:1px solid var(--line,#24304d);border-radius:14px;box-shadow:0 12px 40px #0006;overflow:hidden}
       #gbLog .lh{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line,#24304d)}
       #gbLog .lh h2{margin:0;font-size:17px;flex:1}
       #gbLog .lf{display:flex;flex-wrap:wrap;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line,#24304d);align-items:center}
@@ -135,7 +135,7 @@
       #gbLog .w b{font-weight:600}#gbLog .w div{color:var(--muted,#8d98b5);overflow-wrap:anywhere}
       #gbLog .lb{display:flex;gap:10px;align-items:center;padding:10px 16px;border-top:1px solid var(--line,#24304d);font-size:13px;color:var(--muted,#8d98b5)}
       #gbLog .lb span{flex:1}
-      @media (max-width:640px){#gbLog{padding:0}#gbLog .lp{max-height:100dvh;height:100dvh;border-radius:0}#gbLog .r{grid-template-columns:64px 1fr}#gbLog .w{grid-column:1/-1}}
+      @media (max-width:640px){#gbLog{padding:0}#gbLog .lp{width:100vw;height:100dvh;border-radius:0}#gbLog .r{grid-template-columns:64px 1fr}#gbLog .w{grid-column:1/-1}}
     </style>
     <div class="lp" role="dialog" aria-modal="true" aria-label="Nhật ký hoạt động">
       <div class="lh"><h2>Nhật ký hoạt động</h2><button class="ibtn" id="lgX" aria-label="Đóng">✕</button></div>
