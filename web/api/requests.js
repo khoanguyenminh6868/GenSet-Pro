@@ -44,8 +44,11 @@ export default async function handler(req, res) {
   }
   try {
     // ?kind=all: everything the local bot polls for, in one call (files, analysis, sync).
+    // The dates of every request type are read in one Supabase request (each request is a line of Supabase's log
+    // ingestion, and this runs every 15 s); only the pending rows are then read whole.
     if (req.query?.kind === "all") {
-      const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, , find, bidprice] = await Promise.all([fileReqs(), analysisReqs(), syncReq(), reqsOf("translationreq"), reqsOf("comparereq"), reqsOf("hsdtreq"), reqsOf("tlktreq"), reqsOf("supplierreq"), reqsOf("configreq"), heartbeat(req.query.running), reqsOf("findreq"), reqsOf("bidpricereq")]);
+      const [marks] = await Promise.all([marksOf(ALL_REQ), heartbeat(req.query.running)]);
+      const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks)]);
       return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice });
     }
     // ?kind=analysis: tenders whose "Phân tích" button was pressed on the web (analysisreq/<key>).
@@ -78,17 +81,23 @@ async function heartbeat(running) {
 const pendingOf = (d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.requestedAt;
 // The pending requests of a collection, whole. The bot polls every 15 s and nearly every row is already done, so
 // list only the two dates first and read the whole rows of the pending ones (Supabase egress: ~20 KB a poll before).
-async function pendingDocs(coll) {
-  const sb = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` };
-  const marks = [];
+const ALL_REQ = ["hsmtreq", "analysisreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq", "bidpricereq"];
+// { coll: [{ id, requestedAt, doneAt, mode }] } for these collections, in as few requests as the rows allow (1000 a page).
+async function marksOf(colls) {
+  const out = Object.fromEntries(colls.map((c) => [c, []]));
   for (let from = 0; ; from += 1000) {
-    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=eq.${coll}&select=id,requestedAt:data->>requestedAt,doneAt:data->>doneAt&order=id`,
-      { headers: { ...sb, Range: `${from}-${from + 999}` } });
+    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=in.(${colls.join(",")})&select=coll,id,requestedAt:data->>requestedAt,doneAt:data->>doneAt,mode:data->>mode&order=coll,id`,
+      { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, Range: `${from}-${from + 999}` } });
     if (!r.ok) throw new Error(`read ${r.status}`);
     const page = await r.json();
-    marks.push(...page);
-    if (page.length < 1000) break;
+    for (const { coll, ...m } of page) out[coll]?.push(m);
+    if (page.length < 1000) return out;
   }
+}
+// all: marksOf() already read for several collections (?kind=all); otherwise this collection's are read here.
+async function pendingDocs(coll, all) {
+  const sb = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` };
+  const marks = (all || await marksOf([coll]))[coll] || [];
   const ids = marks.filter((m) => pendingOf({ data: m })).map((m) => m.id);
   const out = [];
   for (let i = 0; i < ids.length; i += 50) {
@@ -100,22 +109,22 @@ async function pendingDocs(coll) {
   return out.filter(pendingOf);
 }
 const byRequested = (a, b) => a.requestedAt.localeCompare(b.requestedAt);
-async function fileReqs() {
-  return (await pendingDocs("hsmtreq"))
+async function fileReqs(marks) {
+  return (await pendingDocs("hsmtreq", marks))
     .map((d) => ({ notifyNo: d.data.notifyNo || d.id, key: d.id, sourceUrl: d.data.sourceUrl, bidName: d.data.bidName, requestedAt: d.data.requestedAt }))
     .sort(byRequested);
 }
-async function analysisReqs() {
-  return (await pendingDocs("analysisreq"))
+async function analysisReqs(marks) {
+  return (await pendingDocs("analysisreq", marks))
     .map((d) => ({ key: d.id, notifyNo: d.data.notifyNo || d.id, requestedAt: d.data.requestedAt }))
     .sort(byRequested);
 }
 // Translation and comparison requests: [{ key, notifyNo, requestedAt, ...request fields }] (comparereq carries
 // the uploaded HSDT files as scratch paths, and the pasted text).
-async function reqsOf(coll) {
-  return (await pendingDocs(coll)).map((d) => ({ ...d.data, key: d.id, notifyNo: d.data.notifyNo || d.id })).sort(byRequested);
+async function reqsOf(coll, marks) {
+  return (await pendingDocs(coll, marks)).map((d) => ({ ...d.data, key: d.id, notifyNo: d.data.notifyNo || d.id })).sort(byRequested);
 }
-async function syncReq() {
-  const d = (await docs("syncreq", "current"))[0]?.data || {};
+async function syncReq(marks) {
+  const d = marks ? marks.syncreq?.find((m) => m.id === "current") || {} : (await docs("syncreq", "current"))[0]?.data || {};
   return { pending: !!d.requestedAt && (d.doneAt || "") < d.requestedAt, requestedAt: d.requestedAt || null, mode: d.mode || "" };
 }
