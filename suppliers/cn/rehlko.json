@@ -88,6 +88,23 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "D330",
+      "fuel": "diesel",
+      "power": {
+        "min": 240,
+        "max": 240,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [
@@ -127,9 +144,57 @@
         "Enclosures are UL 2200-listed, IBC-certified"
       ],
       "file": "sources/rehlko/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.powersystems.rehlko.com/sea/wp-content/uploads/d-series/d330-0525.pdf",
+      "accessedAt": "2026-11-06",
+      "tier": "A",
+      "quote": [
+        "Industrial Generator Set - D330",
+        "Prime           kW 240",
+        "Manufacturer                              Rehlko",
+        "Alternator choices                      KH01721T"
+      ],
+      "file": "sources/rehlko/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://origin-sea.rehlko.com/sea/wp-content/uploads/controller/apm403-controller.pdf",
+      "accessedAt": "2026-11-06",
+      "tier": "A",
+      "quote": [
+        "APM403 CONTROLLER",
+        "GSF-756 11/24 © 2024 by Rehlko"
+      ],
+      "file": "sources/rehlko/2002.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-06",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Industrial Generator Set - D330",
+      "header": [
+        "Rehlko premium quality                                               Manufacturer                              Rehlko"
+      ],
+      "rows": [
+        "• Modern fully certified factories                                   Engine ref.                              P126TI-II",
+        "• A cutting edge laboratory                                          Alternator choices                      KH01721T"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Rehlko",
+      "model": "APM403",
+      "text": "APM403",
+      "line": "APM403 CONTROLLER",
+      "src": [
+        2002
+      ]
+    }
+  ]
 }
