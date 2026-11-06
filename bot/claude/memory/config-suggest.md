@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 93e41953-82a9-4265-a2a5-f081042fd87d
-  modified: 2026-11-05T00:36:40.636Z
+  modified: 2026-11-05T14:17:19.800Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (máy Windows, agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Mọi số/câu trích phải có nguyên văn trong nguồn; sai → "Đạt" thành "Chưa rõ". Lượt agent ~6–11 phút, ~$3/gói.
@@ -15,6 +15,7 @@ metadata:
 - HSMT có yêu cầu BĐK mà cấu hình không có BĐK → "Bộ điều khiển của cấu hình" = Không đạt. Chức năng BĐK cùng loại gộp 1 yêu cầu có `parts`; nhóm đạt khi mọi phần đạt, phần thiếu = chưa rõ.
 - NCC chào đúng CẢ động cơ và BĐK lên đầu. Đại lý tại VN KHÔNG là tiêu chí.
 - Xuất xứ: web mặc định "Tất cả" (#327); "Tất cả" và yêu cầu từ Sync (`from: "sync"`, gửi origin all) theo HSMT: `originOfHsmt` thấy G7/G20 → nhóm đó, không thì tất cả (Khoa 04/11). Chọn cn/g7/g20/other trên web giữ nguyên; tự chọn thì `result.originAuto` có câu HSMT (web hiện). ~13% HSMT đòi G7/G20. Nhóm g20 của mình KHÔNG gồm Trung Quốc. Với cn: động cơ hãng TQ +250 điểm, đứng trước động cơ ngoại do NCC ở TQ chào (hãng HSMT nêu +300 vẫn thắng). G7/G20 theo `ENGINE_COUNTRY`/`COUNTRY_GROUP` (catalog.js), loại động cơ TQ sản xuất theo giấy phép (Weichai 6M33). Gói G7/G20 hay đòi tổ máy cùng hãng → agent tìm internet.
+- HSMT không đòi G7/G20 (xuất xứ "all", Khoa 05/11, PR #418): cấu hình động cơ hãng TQ đáp ứng tốt hơn → lên đầu (theo scoreOf); cùng điểm → TQ trước (tie-break `cnOf` trong rankConfigs). `candidates` giữ `CN_ROWS`=12/30 dòng cho động cơ TQ khi HSMT không nêu hãng/model động cơ; input.md dặn agent gợi ý cả TQ. Giá đấu theo động cơ hạng 1 nên tự theo.
 - Số trần trong HSMT = mức tối thiểu với thông số càng lớn càng tốt; đường kính/hành trình/kích thước khác số → chưa rõ, không "không đạt". Datasheet đời khác → chưa rõ.
 - Tìm NCC CHỈ Claude (`GENBID_FIND_ENGINES` bật lại Gemini). NCC mới trùng cấu hình có sẵn (cùng động cơ, cùng đầu phát nếu cả hai ghi) → gắn vào; không trùng → cấu hình mới chỉ có NCC đó; agent nhỏ (`check-prompt.md`) đối chiếu HSMT. Không chạy lại cả Gợi ý.
 
