@@ -287,3 +287,12 @@ test("uncoveredSpecs: analysis lines whose topic no requirement mentions", async
   assert.equal(u.length, 2);
   assert.match(u[0], /bộ điều khiển\]/); assert.match(u[1], /đồng bộ thương hiệu \/ OEM, prototype/);
 });
+
+test("syncCheck: Kohler codes (APM403, KH alternators); a Doosan set of an assembler with nothing else named fails", async () => {
+  const { syncCheck } = await import("./config-bot.mjs");
+  const BP = globalThis.GenbidBidprice, s = { need: 2, parts: ["engine", "alternator", "controller"], quote: "q" };
+  const fam = { engine: BP.familyOf("Doosan"), alternator: BP.familyOf("KH01721T"), controller: BP.familyOf("APM403") };
+  assert.deepEqual(fam, { engine: "Doosan", alternator: "Kohler", controller: "Kohler" });
+  assert.equal(syncCheck(s, fam, [{ name: "Rehlko", fam: "Kohler" }]).status, "met");
+  assert.equal(syncCheck(s, { engine: "Doosan", alternator: null, controller: null }, [{ name: "Xinhengxin", fam: null }]).status, "not_met");
+});

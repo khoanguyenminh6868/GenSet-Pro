@@ -110,7 +110,7 @@
   // Caterpillar; SDMO and Decision-Maker are Kohler / Rehlko). null when no make is named.
   const FAMILY = [
     ["Cummins", /cummins|stamford|\bavk\b|power\s*command|\bDCEC\b|\bCCEC\b|康明斯|斯坦福/i], ["Caterpillar", /caterpillar|\bcat\b|perkins|fg\s*wilson|olympian|\bemcp\b|卡特|珀金斯/i],
-    ["Kohler", /kohler|rehlko|\bsdmo\b|decision[\s-]*maker|科勒/i], ["MTU", /\bmtu\b|rolls[\s-]*royce/i], ["Mitsubishi", /mitsubishi|三菱/i],
+    ["Kohler", /kohler|rehlko|\bsdmo\b|decision[\s-]*maker|^\s*APM\s?\d{3}|^\s*KH\d{4,5}|科勒/i], ["MTU", /\bmtu\b|rolls[\s-]*royce/i], ["Mitsubishi", /mitsubishi|三菱/i],
     ["Denyo", /denyo/i], ["Doosan", /doosan|斗山/i], ["Volvo Penta", /volvo/i], ["Weichai", /weichai|潍柴/i], ["Yuchai", /yuchai|玉柴/i],
     ["SDEC", /\bsdec\b|shangchai|上柴/i], ["Leroy-Somer", /leroy[\s-]*somer|\bleroy\b/i], ["Mecc Alte", /mecc[\s-]*alte|meccalte/i],
     ["Marathon", /marathon/i], ["Engga", /engga/i], ["Nianfeng", /nianfeng|^\s*NFS?\d/i], ["Bobig", /bobig|^\s*BW-?\d/i], ["Jet-Power", /jet[\s-]*power|^\s*JET\d/i],
