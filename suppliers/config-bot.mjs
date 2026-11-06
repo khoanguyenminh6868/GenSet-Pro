@@ -5,6 +5,8 @@
 //                                                and bidpricereq/<TBMT> (Gợi ý giá đấu, bidprice-bot.mjs)
 //   node suppliers/config-bot.mjs merge-find --key <TBMT>          do that again from the stored findmatch
 //   node suppliers/config-bot.mjs find-check --dir <dir>          check newCatalog.json of a Tìm NCC folder in code
+//   node suppliers/config-bot.mjs spec --id <supplier>            Tìm Thông Số of one supplier (skill tim-thong-so-ncc);
+//                                                spec-prep --id <s> --out <dir>, spec-check --dir <dir>, spec-post --dir <dir>
 //   node suppliers/config-bot.mjs prep --key <TBMT> --out <dir>
 //   node suppliers/config-bot.mjs save --dir <dir> --url <url>     (used by the agent for internet sources)
 //   node suppliers/config-bot.mjs check --dir <dir>                verify result.json in code (prints what failed)
@@ -1769,9 +1771,10 @@ export async function findCheck(dir, suppliers, cap) {
     if (x.error) { out.push({ id: x.id, errors: [x.error] }); continue; }
     for (const [f, txt] of Object.entries(x.files)) { fs.mkdirSync(path.dirname(path.join(chk, f)), { recursive: true }); fs.writeFileSync(path.join(chk, f), txt, "utf8"); }
     const own = new Set(x.nmap.values()), isOwn = (src) => Array.isArray(src) && src.length && src.every((n) => own.has(n));
-    const rec = x.isNew ? x.rec : { ...x.rec, sources: x.rec.sources.filter((s) => own.has(s.n)), productLines: (x.rec.productLines || []).filter((p) => isOwn(p.src)),
+    // status partial: "verified" asks for things of the whole record (website, a power line), checked again by addToCatalog.
+    const rec = x.isNew ? x.rec : { ...x.rec, status: "partial", sources: x.rec.sources.filter((s) => own.has(s.n)), productLines: (x.rec.productLines || []).filter((p) => isOwn(p.src)),
       specTables: (x.rec.specTables || []).filter((t) => own.has(t.n)), controllers: (x.rec.controllers || []).filter((c) => isOwn(c.src)), strengths: [], certifications: [], contacts: [], vietnam: undefined, founded: null };
-    out.push({ id: x.id, isNew: x.isNew, errors: checkRecord(rec, path.join(chk, "cn", `${x.id}.json`)).errors, fits: fitsCap(rec, cap), rows: engineRows(rec, cap) });
+    out.push({ id: x.id, isNew: x.isNew, errors: checkRecord(rec, path.join(chk, "cn", `${x.id}.json`)).errors, fits: fitsCap(rec, cap), rows: engineRows(rec, cap), rec });
   }
   return out;
 }
@@ -1962,6 +1965,95 @@ async function find(req, suppliers) {
   }
 }
 
+// ---------- Tìm Thông Số (specreq/<id> → specmatch/<id>) ----------
+// The Tìm Thông Số button of a supplier's page, for the superadmin only (Khoa, 2026-11-06): Claude looks on the
+// supplier's own site for the engine, alternator and controller of its gensets, following the skill
+// bot/claude/skills/tim-thong-so-ncc/SKILL.md (copied as prompt.md), and writes the new parts of the record as Tìm NCC
+// does (newCatalog.json: sources, specTables, productLines, controllers). The same checks (findCheck, verify.mjs) and
+// the same way into the catalog (addToCatalog: posted to the web, a PR into the repo).
+const SPEC_SKILL = path.join(ROOT, "..", "bot", "claude", "skills", "tim-thong-so-ncc", "SKILL.md");
+const SPEC_INPUT = "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, tìm trên trang của nhà cung cấp, chỉ ghi newCatalog.json và spec.json (cùng các trang lưu bằng lệnh save). Chạy không người trông, không ai trả lời câu hỏi.";
+// What the catalog reads from a record: engines, alternators and controllers, each with its gensets and power.
+export function partsOf(rec) {
+  const b = CAT.build([rec]), pw = (e) => (e.kva ? `${e.kva[0] === e.kva[1] ? e.kva[0] : e.kva.join("–")} kVA` : e.kw ? `${e.kw[0] === e.kw[1] ? e.kw[0] : e.kw.join("–")} kW` : "");
+  const gs = (e) => [...new Set(e.uses.map((u) => u.genset).filter(Boolean))];
+  return {
+    engines: b.engines.map((e) => ({ model: e.model, make: e.make || "", gensets: gs(e), power: pw(e) })),
+    alternators: b.alternators.map((e) => ({ model: e.model, make: e.make || "", gensets: gs(e), power: pw(e) })),
+    controllers: b.controllers.filter((c) => !c.brandOnly).map((c) => ({ model: c.model, make: c.make || "" })),
+  };
+}
+const partsText = (p) => (!p ? "" : [p.engines.length && `động cơ: ${p.engines.map((e) => `${e.model}${e.power ? ` (${e.power})` : ""}`).join(", ")}`,
+  p.alternators.length && `đầu phát: ${p.alternators.map((e) => e.model).join(", ")}`, p.controllers.length && `bộ điều khiển: ${p.controllers.map((e) => e.model).join(", ")}`].filter(Boolean).join("; ") || "không đọc được động cơ, đầu phát, bộ điều khiển nào");
+export async function specPrep(id, dir, suppliers) {
+  const s = suppliers.find((x) => x.id === id);
+  if (!s) throw new Error(`không có nhà cung cấp ${id}`);
+  fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(path.join(dir, "web"), { recursive: true });
+  fs.writeFileSync(path.join(dir, "supplier.json"), JSON.stringify(s, null, 1), "utf8");
+  fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(suppliers), "utf8");
+  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ mode: "spec", id }), "utf8");
+  fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(SPEC_SKILL, "utf8").replace(/^---[\s\S]*?\n---\s*\n/, ""), "utf8");
+  // Long lists are cut (a big maker has hundreds of tables): enough for the agent to see what is there.
+  const cut = (list, n = 80) => (list.length > n ? [...list.slice(0, n), `- … và ${list.length - n} mục nữa (xem supplier.json)`] : list);
+  const p = partsOf(s), line = (x) => `- ${x.model}${x.make ? ` (${x.make})` : ""}${x.power ? `, ${x.power}` : ""}${x.gensets?.length ? `, tổ máy ${x.gensets.slice(0, 12).join(", ")}${x.gensets.length > 12 ? "…" : ""}` : ""}`;
+  fs.writeFileSync(path.join(dir, "input.md"), [
+    `# Tìm thông số nhà cung cấp ${id}`, "",
+    `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`,
+    `Lệnh kiểm tra newCatalog.json: node "${SCRIPT}" spec-check --dir .`, "",
+    "## Nhà cung cấp",
+    `- id: ${id} (ghi đúng id này trong newCatalog.json)`, `- Tên: ${[s.names?.en, s.names?.zh, s.names?.vi].filter(Boolean).join(" / ")}`,
+    `- Vai trò: ${s.role || ""}; quốc gia: ${s.country || ""}`, `- Website: ${s.website || "(không có)"}`,
+    ...(s.productLines || []).filter((l) => l.power).map((l) => `- Dòng sản phẩm: ${l.kind} ${l.series || ""} ${l.power.min}–${l.power.max} ${l.power.unit} (${l.power.rating})`), "",
+    "## Nguồn đã có", ...cut((s.sources || []).map((x) => `- [${x.n}] ${x.url} (tier ${x.tier || "?"})`)), "",
+    "## Bảng thông số đã có (đừng thêm lại)", ...((s.specTables || []).length ? cut(s.specTables.map((t) => `- [${t.n}] ${t.title || "(không tiêu đề)"}: ${t.rows.length} dòng; dòng đầu: ${String(t.rows[0] || "").slice(0, 160)}`)) : ["(chưa có)"]), "",
+    "## Danh mục đọc được từ hồ sơ hiện tại",
+    "### Động cơ", ...(p.engines.length ? cut(p.engines.map(line)) : ["(chưa có)"]),
+    "### Đầu phát", ...(p.alternators.length ? cut(p.alternators.map(line)) : ["(chưa có)"]),
+    "### Bộ điều khiển", ...(p.controllers.length ? p.controllers.map(line) : ["(chưa có)"]), "",
+  ].join("\n"), "utf8");
+}
+// findCheck for the supplier's new parts, with what the catalog reads from them.
+async function specChecked(dir, suppliers) {
+  const { id } = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
+  const res = await findCheck(dir, suppliers, null);
+  return res.map((c) => ({ ...c, errors: [...c.errors, ...(c.id && c.id !== id ? [`id khác nhà cung cấp cần tìm (${id})`] : [])], parts: c.rec ? partsOf(c.rec) : null }));
+}
+export async function specPost(dir, suppliers, req = {}) {
+  const { id } = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
+  const info = (() => { try { return JSON.parse(fs.readFileSync(path.join(dir, "spec.json"), "utf8")); } catch { return {}; } })();
+  const checked = await specChecked(dir, suppliers);
+  const ok = checked.filter((c) => c.id === id && !c.errors.length && c.rec && (c.rec.specTables?.length || c.rec.controllers?.length || c.rec.productLines?.length));
+  const base = { summary: info.summary || "", skipped: info.skipped || [], notes: info.notes || [] };
+  if (!ok.length) {
+    const why = checked.filter((c) => c.id).length ? checked.map((c) => (c.errors.length ? `${c.id || "?"}: ${c.errors.slice(0, 3).join("; ")}` : `${c.id}: không có gì mới`)).join(" · ") : "không bổ sung được gì mới";
+    return { ...base, added: [], error: why };
+  }
+  fs.writeFileSync(path.join(dir, "newCatalog.json"), JSON.stringify(JSON.parse(fs.readFileSync(path.join(dir, "newCatalog.json"), "utf8")).filter((e) => e?.id === id), null, 1), "utf8");
+  const { added } = await addToCatalog(dir, id, suppliers, { branch: `specs/${id}`, title: `Nhà cung cấp: Tìm thông số ${id}`,
+    body: `Nút Tìm Thông Số ở màn Nhà cung cấp${req.by ? ` (${req.by})` : ""}: Claude tìm trên trang của nhà cung cấp động cơ, đầu phát, bộ điều khiển của các tổ máy (skill tim-thong-so-ncc). Bản ghi đã qua verify.mjs và đã đăng lên web.` });
+  const good = added.find((a) => !a.error);
+  return { ...base, added, ...(good ? { found: ok[0].parts } : { error: added.map((a) => a.error).filter(Boolean).join("; ") || "bản ghi không qua được verify.mjs của repo" }) };
+}
+async function specJob(req, suppliers) {
+  const id = req.key, dir = path.join(os.tmpdir(), "genbid-spec", id);
+  const done = ({ result, error }) => {
+    const at = new Date().toISOString();
+    return post([...(result ? [{ coll: "specmatch", id, data: { at, result } }] : []), { coll: "specreq", id, data: { spec: true, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || result?.error || "" } }]);
+  };
+  try {
+    await specPrep(id, dir, suppliers);
+    const r = await runClaude(dir, SPEC_INPUT);
+    fs.writeFileSync(path.join(os.tmpdir(), `genbid-spec-${id}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
+    if (r.error && !fs.existsSync(path.join(dir, "newCatalog.json"))) throw new Error(`Claude: ${r.error.message || r.error}`);
+    const result = await specPost(dir, suppliers, req);
+    await done({ result });
+    console.log(`${id}: Tìm thông số ${result.error ? `không bổ sung được (${result.error})` : partsText(result.found)}`);
+  } catch (e) {
+    await done({ error: e.message || String(e) }).catch(() => {});
+    console.log(`${id}: Tìm thông số lỗi ${e.message}`);
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+}
+
 // ---------- run: every pending request at once ----------
 // Khoa, 2026-11-03: Gợi ý cấu hình, Tìm NCC and Gợi ý giá đấu of different tenders run at the same time, with no limit.
 // The queue is read again every POLL_MS, so a request sent mid-run starts then instead of after the run. Gợi ý and
@@ -1981,17 +2073,17 @@ function bidpriceChild(key) {
   });
 }
 async function runAll(lock) {
-  const t0 = Date.now(), started = new Set(), busy = new Set(), counts = { config: 0, find: 0, bidprice: 0 };
+  const t0 = Date.now(), started = new Set(), busy = new Set(), counts = { config: 0, find: 0, bidprice: 0, spec: 0 };
   let running = 0, wake = () => {};
   const t = () => `[${Math.round((Date.now() - t0) / 1000)}s]`;
   for (let first = true; ; first = false) {
     let lists;
-    try { lists = await Promise.all([api("kind=config"), api("kind=find"), api("kind=bidprice")]); }
-    catch (e) { if (first) throw e; console.log(`${t()} không đọc được hàng chờ (${e.message}), thử lại sau`); lists = [[], [], []]; }
-    const [pending, finds, prices] = lists;
+    try { lists = await Promise.all([api("kind=config"), api("kind=find"), api("kind=bidprice"), api("kind=spec").catch(() => [])]); }
+    catch (e) { if (first) throw e; console.log(`${t()} không đọc được hàng chờ (${e.message}), thử lại sau`); lists = [[], [], [], []]; }
+    const [pending, finds, prices, specs] = lists;
     // Only Gợi ý giá đấu requests the web wrote (basis): an older API answers an unknown kind with the file requests.
-    const jobs = [...pending.map((r) => ["config", r]), ...finds.map((r) => ["find", r]), ...prices.filter((r) => r.basis).map((r) => ["bidprice", r])]
-      .map(([kind, req]) => ({ kind, req, sig: `${kind}:${req.key}|${req.requestedAt}`, lane: `${kind === "bidprice" ? "bp" : "cfg"}:${req.key}` }))
+    const jobs = [...pending.map((r) => ["config", r]), ...finds.map((r) => ["find", r]), ...prices.filter((r) => r.basis).map((r) => ["bidprice", r]), ...(Array.isArray(specs) ? specs : []).filter((r) => r.spec).map((r) => ["spec", r])]
+      .map(([kind, req]) => ({ kind, req, sig: `${kind}:${req.key}|${req.requestedAt}`, lane: `${kind === "bidprice" ? "bp" : kind === "spec" ? "spec" : "cfg"}:${req.key}` }))
       .filter((j) => !started.has(j.sig));
     const late = Date.now() - t0 > RUN_MAX_MS;
     let suppliers = null;
@@ -2000,8 +2092,8 @@ async function runAll(lock) {
       // The supplier DB as it is now: a Tìm NCC that just finished may have added to it.
       if (j.kind !== "bidprice" && !suppliers) suppliers = (await allDocs("supplier")).map((d) => d.data);
       started.add(j.sig); busy.add(j.lane); running++; counts[j.kind]++;
-      console.log(`${t()} bắt đầu ${{ config: "Gợi ý cấu hình", find: "Tìm NCC", bidprice: "Gợi ý giá đấu" }[j.kind]} ${j.req.key}`);
-      const work = j.kind === "config" ? answer(j.req, suppliers) : j.kind === "find" ? find(j.req, suppliers) : bidpriceChild(j.req.key);
+      console.log(`${t()} bắt đầu ${{ config: "Gợi ý cấu hình", find: "Tìm NCC", bidprice: "Gợi ý giá đấu", spec: "Tìm thông số" }[j.kind]} ${j.req.key}`);
+      const work = j.kind === "config" ? answer(j.req, suppliers) : j.kind === "find" ? find(j.req, suppliers) : j.kind === "spec" ? specJob(j.req, suppliers) : bidpriceChild(j.req.key);
       work.catch((e) => console.log(`${j.req.key}: lỗi ${e.message}`)).finally(() => { busy.delete(j.lane); running--; wake(); });
     }
     if (!running && (late || !jobs.length)) break;
@@ -2009,7 +2101,7 @@ async function runAll(lock) {
     // Next look at the queue after POLL_MS, or as soon as a request is done (its tender's turn may be next).
     await new Promise((ok) => { const timer = setTimeout(ok, POLL_MS); wake = () => { clearTimeout(timer); ok(); }; });
   }
-  return `${counts.config} yêu cầu gợi ý cấu hình, ${counts.find} yêu cầu Tìm NCC, ${counts.bidprice} yêu cầu gợi ý giá đấu (${Math.round((Date.now() - t0) / 60e3)} phút)`;
+  return `${counts.config} yêu cầu gợi ý cấu hình, ${counts.find} yêu cầu Tìm NCC, ${counts.bidprice} yêu cầu gợi ý giá đấu, ${counts.spec} yêu cầu tìm thông số (${Math.round((Date.now() - t0) / 60e3)} phút)`;
 }
 
 const cmd = process.argv[2];
@@ -2035,6 +2127,21 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
       const st = { met: "đạt", not_met: "KHÔNG ĐẠT", unclear: "chưa rõ" }, lines = (result.configs || []).map((c) => { const x = c.checks.find((x) => x.item === SYNC_ITEM); return `#${c.rank} ${st[x?.status] || "?"}: ${x?.offered || ""}. ${x?.note || ""}`; });
       console.log(`\nĐỒNG BỘ THƯƠNG HIỆU (code kiểm):\n${lines.join("\n")}${lines.some((l) => / đạt:/.test(l)) ? "" : "\nKhông cấu hình nào đạt: làm bước 4 (tìm tổ máy chính hãng trên internet)."}`);
     }
+  } else if (cmd === "spec-prep") {
+    const id = arg("id"), out = arg("out") || path.join(os.tmpdir(), "genbid-spec", id);
+    await specPrep(id, out, (await allDocs("supplier")).map((d) => d.data));
+    console.log(`Đã chuẩn bị ${out}`);
+  } else if (cmd === "spec-check") {
+    const dir = arg("dir", "."), res = await specChecked(dir, JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8")));
+    for (const c of res) console.log(`${c.id || "?"}: ${c.errors.length ? `KHÔNG QUA — ${c.errors.join("; ")}` : `qua verify.mjs; phần mới cho ra ${partsText(c.parts)}`}`);
+    if (!res.length) console.log("newCatalog.json rỗng.");
+  } else if (cmd === "spec-post") {
+    const dir = arg("dir", "."), { id } = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
+    const result = await specPost(dir, (await allDocs("supplier")).map((d) => d.data), { by: "Claude Code (chạy tay)" });
+    await post([{ coll: "specmatch", id, data: { at: new Date().toISOString(), result } }]);
+    console.log(result.error ? `Không bổ sung được: ${result.error}` : `Đã bổ sung: ${partsText(result.found)}`);
+  } else if (cmd === "spec") {
+    await specJob({ key: arg("id"), requestedAt: new Date().toISOString(), by: "Claude Code (chạy tay)", from: "cli" }, (await allDocs("supplier")).map((d) => d.data));
   } else if (cmd === "find-check") {
     // Offline in a folder made for Tìm NCC (suppliers.json, meta.json).
     const dir = arg("dir", "."), meta = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));

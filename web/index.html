@@ -575,7 +575,7 @@ const local = {
 // ---------- State ----------
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
@@ -2434,6 +2434,44 @@ function needSup() {
   subscribe("supplier", "supplier", () => setTimeout(supChanged, 0));
   subscribe("supdeleted", "supdeleted", () => setTimeout(supChanged, 0));
   subscribe("supfav", "supfav", () => setTimeout(supChanged, 0));
+  // Tìm Thông Số (superadmin only): its request and result redraw only their own block of the open supplier.
+  if (isSuperadmin()) for (const c of ["specreq", "specmatch"]) subscribe(c, c, () => setTimeout(supSpecRedraw, 0));
+}
+// ---------- Tìm Thông Số (Khoa, 2026-11-06) ----------
+// The superadmin only: Claude looks on the supplier's own site for the engine, alternator and controller of its gensets
+// (skill bot/claude/skills/tim-thong-so-ncc, config-bot.mjs specJob, specreq/<id> → specmatch/<id>); what passes
+// verify.mjs is added to the record (web and a PR into the repo), as Tìm NCC does.
+function isSuperadmin() { return window.genbidRole === "superadmin"; }
+function supSpecHtmlBlock(s) {
+  if (!isSuperadmin()) return "";
+  const id = s.id, wait = workerReqPending("specreq", id), err = !wait && workerReqError("specreq", id), m = state.specmatch?.[id], r = m?.result;
+  const parts = (p) => [p.engines?.length && h`<div><b>Động cơ:</b> ${p.engines.map((e) => `${e.model}${e.power ? ` (${e.power})` : ""}`).join(", ")}</div>`,
+    p.alternators?.length && h`<div><b>Đầu phát:</b> ${p.alternators.map((e) => e.model).join(", ")}</div>`,
+    p.controllers?.length && h`<div><b>Bộ điều khiển:</b> ${p.controllers.map((e) => e.model).join(", ")}</div>`].filter(Boolean).join("") || '<div class="muted">Không đọc được động cơ, đầu phát, bộ điều khiển nào.</div>';
+  const ok = (r?.added || []).filter((a) => !a.error);
+  return h`<div id="supSpecReq" data-id="${id}" style="${wait || err || r ? "margin:-8px 0 14px" : "display:none"}">
+    ${raw(wait ? waitHtml("Đang chờ Agent tìm thông số trên trang của nhà cung cấp (Claude)...", state.specreq[id].requestedAt) : "")}
+    ${raw(err && !r ? h`<div class="note warn">Tìm thông số: ${err}</div>` : "")}
+    ${raw(r && !wait ? h`<div class="note${r.error ? " warn" : ""}"><b>Tìm Thông Số</b> <span class="muted small">lúc ${fmtDate(m.at)}</span>
+      ${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
+      ${raw(r.error ? h`<p class="small">Chưa bổ sung được: ${r.error}</p>` : h`<div class="small">Đã bổ sung vào hồ sơ${ok[0]?.tables ? ` ${ok[0].tables} bảng thông số` : ""}${raw(ok[0]?.pr ? h` · <a href="${ok[0].pr}" target="_blank" rel="noopener">PR vào repo</a>` : "")}:</div><div class="small">${raw(parts(r.found || {}))}</div>${raw(ok[0]?.prError ? h`<div class="muted small">${ok[0].prError}</div>` : "")}`)}
+      ${raw(r.skipped?.length ? h`<details><summary class="small">Đã xem nhưng bỏ qua (${r.skipped.length})</summary><ul class="suplist">${raw(r.skipped.map((x) => h`<li class="small"><b>${x.name || ""}</b> — ${x.reason || ""}</li>`).join(""))}</ul></details>` : "")}
+      ${raw(r.notes?.length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}</div>` : "")}
+  </div>`;
+}
+const supSpecBtn = (s) => (isSuperadmin() && !state.readOnly ? h`<button class="btn green sm" id="supSpecRun" data-id="${s.id}" ${workerReqPending("specreq", s.id) ? "disabled" : ""} title="Tìm trên trang của nhà cung cấp động cơ, đầu phát, bộ điều khiển của các tổ máy và bổ sung vào hồ sơ (chỉ Superadmin)">Tìm Thông Số</button>` : "");
+function supSpecRedraw() {
+  const el = $("#supSpecReq"), s = el && state.supplier?.[el.dataset.id];
+  if (!s) return;
+  el.outerHTML = supSpecHtmlBlock(s);
+  const b = $("#supSpecRun"); if (b) b.disabled = workerReqPending("specreq", s.id);
+}
+async function supSpecRequest(id) {
+  if (!isSuperadmin() || state.readOnly) { toast("Chỉ Superadmin được tìm thông số nhà cung cấp."); return; }
+  try { if (!(await saveRequests("specreq", [{ key: id }])).length) throw new Error(""); }
+  catch (e) { toast(`Không gửi được yêu cầu tìm thông số${e?.message ? ": " + e.message : "."}`, 6000); return; }
+  toast("Đã gửi yêu cầu tìm thông số. Agent sẽ làm và kết quả hiện ở đây.", 4000);
+  supSpecRedraw();
 }
 // Favourite suppliers (Khoa, 2026-11-04): a yellow star on the Nhà cung cấp screen, shared by everyone (supfav/<id> {on});
 // the Báo giá của NCC dropdown in Giá gợi ý lists only these.
@@ -2600,7 +2638,7 @@ function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
   return h`<div class="dethead"><div class="row"><button class="btn sm" id="supBack">← Danh sách</button></div>
-    <div><h3 class="hlname" style="margin:4px 0">${raw(favStar(s))}${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div class="row" style="margin:6px 0 18px"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}</div></div></div>
+    <div><h3 class="hlname" style="margin:4px 0">${raw(favStar(s))}${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div class="row" style="margin:6px 0 18px"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}${raw(supSpecBtn(s))}</div>${raw(supSpecHtmlBlock(s))}</div></div>
     <dl class="kv">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
       <dt>Thương hiệu</dt><dd>${(s.names?.brands || []).join(", ") || "—"}</dd>
@@ -3714,6 +3752,7 @@ document.addEventListener("click", async (e) => {
   const fav = e.target.closest("[data-supfav]");
   if (fav) { e.preventDefault(); toggleFav(fav.dataset.supfav); return; }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
+  if (e.target.id === "supSpecRun" && !e.target.disabled) { supSpecRequest(e.target.dataset.id); return; }
   if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); mScroll().scrollTop = listScroll.sup; return; }
   if (e.target.closest("tr[data-supopen] a[href]")) return; // e-mail / phone link in a list row: no detail
   const supsrc = e.target.closest("[data-supsrc]");

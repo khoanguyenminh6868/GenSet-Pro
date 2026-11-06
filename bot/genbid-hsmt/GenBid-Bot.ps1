@@ -16,7 +16,7 @@ Chạy song song (Khoa, 2026-11-03): vòng quét chỉ điều phối; mỗi lư
 - Trình duyệt (Lấy tệp, Sync, Sync theo lịch): mỗi lúc một lượt, vì chỉ có một hồ sơ Chrome và một tệp khoá.
 - AI (Phân tích, Dịch, Đối chiếu, TLKT, HSDT): không giới hạn số lượt cùng lúc. Yêu cầu của gói đang chờ Lấy tệp
   thì đợi Lấy tệp xong (cần HSMT mới).
-- Cấu hình (Gợi ý cấu hình, Tìm NCC, Giá gợi ý): một lượt config-bot.mjs run, nó tự chạy mọi gói cùng lúc.
+- Cấu hình (Gợi ý cấu hình, Tìm NCC, Giá gợi ý, Tìm Thông Số nhà cung cấp): một lượt config-bot.mjs run, nó tự chạy mọi gói cùng lúc.
 Mỗi lượt có tệp .genbid-bot-jobs<id>.json; bot khởi động lại thì lượt con còn chạy vẫn được tính là bận, lượt con
 đã chết thì một tiến trình con mới theo dõi tiếp và báo lỗi về web cho các yêu cầu của nó.
 
@@ -516,7 +516,7 @@ try {
                 }
 
                 # Cấu hình: config-bot.mjs run tự đọc hàng chờ, chạy mọi gói cùng lúc và tự trả lời web.
-                if (@(@($pend.config) + @($pend.find) + @($pend.bidprice) | Where-Object { $_ }).Count -and -not $busy.config -and $now -ge $script:ConfigWait) {
+                if (@(@($pend.config) + @($pend.find) + @($pend.bidprice) + @($pend.spec) | Where-Object { $_ }).Count -and -not $busy.config -and $now -ge $script:ConfigWait) {
                     Start-Lane 'config' @('config')
                 }
                 [IO.File]::WriteAllText($StateFile, ([pscustomobject]$handed | ConvertTo-Json -Depth 4), $Utf8)

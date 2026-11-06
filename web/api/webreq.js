@@ -6,7 +6,7 @@
 import { SB_URL, memberFrom } from "./_supabase.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq", "bidpricereq"]);
+const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq", "bidpricereq", "specreq"]);
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 const str = (v, n) => (v == null ? undefined : String(v).slice(0, n));
@@ -18,6 +18,8 @@ export default async function handler(req, res) {
   const coll = req.body?.coll;
   const items = Array.isArray(req.body?.items) ? req.body.items : [];
   if (!COLLS.has(coll)) return res.status(400).json({ error: "Loại yêu cầu không hợp lệ." });
+  // Tìm Thông Số of a supplier (specreq/<supplier id>, config-bot.mjs specJob): the superadmin only (Khoa, 2026-11-06).
+  if (coll === "specreq" && member.role !== "superadmin") return res.status(403).json({ error: "Chỉ Superadmin được tìm thông số nhà cung cấp." });
   if (!items.length || items.length > 200 || items.some((i) => !ID_RE.test(i?.key || "") || (coll === "syncreq" && i.key !== "current"))) return res.status(400).json({ error: "Mã gói thầu không hợp lệ." });
   const at = new Date().toISOString();
   // Cancelling keeps the request's fields and marks it done.
@@ -36,6 +38,7 @@ export default async function handler(req, res) {
       ...(coll === "configreq" || coll === "findreq" ? { origin: ["cn", "g7", "g20", "other", "all"].includes(i.origin) ? i.origin : "cn", extra: str(String(i.extra || "").trim(), 2000) || undefined } : {}),
       // Tìm nhà cung cấp of one configuration (Khoa, 2026-11-06): the configuration searched for (config-bot.mjs findPrep).
       ...(coll === "findreq" && i.target?.engine?.model ? { target: findTarget(i.target) } : {}),
+      ...(coll === "specreq" ? { spec: true } : {}),
       // Gợi ý giá đấu: the power and package price the page read for the tender (bidprice-bot.mjs).
       ...(coll === "bidpricereq" ? { basis: bidBasis(i.basis) } : {}),
       ...(coll === "comparereq" ? compareFields(i, "hsdt") : coll === "tlktreq" ? compareFields(i, "tlkt") : coll === "hsdtreq" ? compareFields(i, "hsdt", true) : {}),
