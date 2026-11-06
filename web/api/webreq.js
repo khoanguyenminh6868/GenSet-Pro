@@ -33,7 +33,9 @@ export default async function handler(req, res) {
       notifyNo: coll === "syncreq" ? undefined : str(i.notifyNo || i.key, 200), bidName: str(i.bidName, 1000), sourceUrl: str(i.sourceUrl, 1000),
       auto: i.auto ? true : undefined, mode: coll === "syncreq" && i.mode === "new" ? "new" : undefined, requestedAt: at, by: member.email, from: "web",
       // Gợi ý cấu hình: the engines' origin (Xuất xứ), Trung Quốc unless the page says otherwise, and Yêu cầu khác.
-      ...(coll === "configreq" || coll === "findreq" ? { origin: ["cn", "other", "all"].includes(i.origin) ? i.origin : "cn", extra: str(String(i.extra || "").trim(), 2000) || undefined } : {}),
+      ...(coll === "configreq" || coll === "findreq" ? { origin: ["cn", "g7", "g20", "other", "all"].includes(i.origin) ? i.origin : "cn", extra: str(String(i.extra || "").trim(), 2000) || undefined } : {}),
+      // Tìm nhà cung cấp of one configuration (Khoa, 2026-11-06): the configuration searched for (config-bot.mjs findPrep).
+      ...(coll === "findreq" && i.target?.engine?.model ? { target: findTarget(i.target) } : {}),
       // Gợi ý giá đấu: the power and package price the page read for the tender (bidprice-bot.mjs).
       ...(coll === "bidpricereq" ? { basis: bidBasis(i.basis) } : {}),
       ...(coll === "comparereq" ? compareFields(i, "hsdt") : coll === "tlktreq" ? compareFields(i, "tlkt") : coll === "hsdtreq" ? compareFields(i, "hsdt", true) : {}),
@@ -46,6 +48,11 @@ export default async function handler(req, res) {
   res.json({ saved: rows.map((r) => ({ key: r.id, data: r.data })) });
 }
 
+// Only model / make strings of the configuration, its size label and rank.
+function findTarget(t) {
+  const part = (p) => (p?.model ? { model: str(p.model, 120), make: str(p.make, 120) } : undefined);
+  return { size: str(t.size, 60), rank: Number.isInteger(t.rank) && t.rank > 0 && t.rank < 100 ? t.rank : undefined, engine: part(t.engine), alternator: part(t.alternator), controller: part(t.controller), genset: part(t.genset) };
+}
 const posNum = (v) => (Number(v) > 0 && Number(v) < 1e13 ? Number(v) : null);
 function bidBasis(b = {}) {
   return { kva: posNum(b.kva), price: posNum(b.price), capText: str(b.capText, 300) || "", bidForm: str(b.bidForm, 50) || "", investorName: str(b.investorName, 300) || "" };

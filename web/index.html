@@ -62,7 +62,7 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .actrow{margin:14px 0 16px}.actrow.cfgact{margin:4px 0 0}.cfgsum{margin:0}#cfgExtra{min-height:0;height:calc(3em + 4px)}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
-.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkCfg,.ro #tyDrop,.ro #tkDel,.ro [data-cfgdel],.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
+.ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkCfg,.ro #tyDrop,.ro #tkDel,.ro [data-cfgdel],.ro [data-cfgfind],.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
 .ro #dStage,.ro #dNote{pointer-events:none;opacity:.7}
 .ext [data-openpdf]{display:none!important}
 .btn.green{background:var(--mint);border-color:var(--mint);color:#fff}
@@ -2931,7 +2931,7 @@ function configTabHtml(t) {
   const err = !wait && workerReqError("configreq", key);
   // Tìm NCC (Khoa, 2026-10-31): search the internet for more suppliers that fit the requirements and add them to the
   // catalog (config-bot.mjs, find-prompt.md), by Claude (Khoa, 2026-11-03).
-  const fprev = state.findmatch[key], fwait = workerReqPending("findreq", key) ? waitHtml("Đang chờ Agent tìm nhà cung cấp trên internet (Claude)...", state.findreq[key].requestedAt) : "";
+  const fprev = state.findmatch[key], fwait = workerReqPending("findreq", key) ? waitHtml(`Đang chờ Agent tìm nhà cung cấp trên internet (Claude)${state.findreq[key].target ? ` cho cấu hình #${state.findreq[key].target.rank}${state.findreq[key].target.size ? ` máy ${state.findreq[key].target.size}` : ""}` : ""}...`, state.findreq[key].requestedAt) : "";
   const ferr = !fwait && workerReqError("findreq", key), busy = wait || fwait;
   return wait + fwait + (err ? h`<div class="note warn">${err}</div>` : "") + (ferr ? h`<div class="note warn">Tìm NCC: ${ferr}</div>` : "")
     + h`<div class="row radios" role="radiogroup" aria-label="Xuất xứ động cơ"><b class="small">Xuất xứ</b>${raw(CFG_ORIGIN.map(([k, l]) => h`<label class="small"><input type="radio" name="cfgOrigin" data-key="${key}" value="${k}" ${k === origin ? "checked" : ""} ${busy ? "disabled" : ""}>${l}</label>`).join(""))}</div>`
@@ -2943,7 +2943,7 @@ function configTabHtml(t) {
       return actBar("Đã gợi ý", info, btns, "", "ok", "actrow cfgact");
     })()
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
-    + (prev?.result && !wait ? (prev.result.sizes ? cfgSizesHtml(prev.result, key) : cfgResultHtml(prev.result, { key })) : "");
+    + (prev?.result && !wait ? (prev.result.sizes ? cfgSizesHtml(prev.result, key, busy) : cfgResultHtml(prev.result, { key, busy })) : "");
 }
 // Gói nhiều cỡ máy (Khoa, 2026-11-04): the bot suggests each size on its own (config-bot.mjs sizesOf, result.sizes);
 // each size's result is shown as a tender of one size, under its own heading.
@@ -2959,16 +2959,16 @@ document.addEventListener("toggle", (e) => {
   const id = e.target.dataset?.sizebox;
   if (id && sizeOpen) e.target.open ? sizeOpen.add(id) : sizeOpen.delete(id);
 }, true);
-function cfgSizesHtml(r, key) {
+function cfgSizesHtml(r, key, busy) {
   return h`<div class="note">Gói có ${r.sizes.length} cỡ máy (${r.sizes.map((z) => sizeTitle(z).slice(4)).join("; ")}): mỗi cỡ được gợi ý cấu hình riêng.${r.skipped?.length ? ` Chưa gợi ý các cỡ: ${r.skipped.join("; ")} (mỗi lượt tối đa ${r.sizes.length} cỡ).` : ""}</div>`
     + r.sizes.map((z) => sizeBox(`cfg|${key}|${z.label}`, h`<span>${sizeTitle(z)}</span>`, (z.quote ? h`<div class="muted small">Đọc từ: <q>${z.quote}</q></div>` : "")
-      + (z.result ? cfgResultHtml(z.result, { key, size: z.label }) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`))).join("");
+      + (z.result ? cfgResultHtml(z.result, { key, size: z.label, busy }) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`))).join("");
 }
 // The note can be closed (Khoa, 2026-11-01); it is kept closed in this browser until the next Tìm NCC result.
 // The suppliers it adds go into the suggested configurations in code, no agent (config-bot.mjs mergeFind, r.configMerge).
 function findResultHtml(f, key) {
   const r = f.result, ok = (r.added || []).filter((a) => !a.error);
-  return h`<div class="note${ok.length ? "" : " warn"}"><button class="ibtn" style="float:right" data-findx="${key}" data-at="${f.at}" aria-label="Ẩn thông báo Tìm NCC" title="Ẩn">×</button><b>Tìm NCC</b> <span class="muted small">lúc ${fmtDate(f.at)}${r.engine ? ` · ${r.engine}` : ""}${r.cap ? ` · công suất ${[].concat(r.cap).map((c) => `${c.value} ${c.unit}`).join(", ")}` : ""}${r.extra ? ` · yêu cầu khác: ${r.extra}` : ""}</span>${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
+  return h`<div class="note${ok.length ? "" : " warn"}"><button class="ibtn" style="float:right" data-findx="${key}" data-at="${f.at}" aria-label="Ẩn thông báo Tìm NCC" title="Ẩn">×</button><b>Tìm NCC${r.target ? ` cho cấu hình #${r.target.rank}${r.target.size ? ` máy ${r.target.size}` : ""} (${[r.target.engine?.model, r.target.alternator?.model, r.target.controller?.model].filter(Boolean).join(" + ")})` : ""}</b> <span class="muted small">lúc ${fmtDate(f.at)}${r.engine ? ` · ${r.engine}` : ""}${r.cap ? ` · công suất ${[].concat(r.cap).map((c) => `${c.value} ${c.unit}`).join(", ")}` : ""}${r.extra ? ` · yêu cầu khác: ${r.extra}` : ""}</span>${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
     ${raw(ok.length ? "" : '<p class="small">Chưa bổ sung được nhà cung cấp nào. Bấm Gợi ý lại để dùng danh mục hiện có.</p>')}
     ${raw(cfgAddedHtml({ catalogAdded: r.added }).replace(/^<div class="note">|<\/div>$/g, ""))}
     ${raw(ok.length ? (r.configMerge ? h`<p class="small"><b>Cấu hình gợi ý:</b> ${r.configMerge}.</p>` : '<p class="small muted">Bấm Gợi ý lại để chọn cấu hình với các nhà cung cấp vừa bổ sung.</p>') : "")}
@@ -2997,7 +2997,7 @@ function cfgSuppliersHtml(c) {
       ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
   }).join(""))}</ol>`;
 }
-function cfgResultHtml(r, { key = "", size = "" } = {}) {
+function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
   if (!r.configs?.length) return h`<div class="note warn"><b>Không tìm thấy cấu hình phù hợp.</b> ${r.message || "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT."}</div>`
     + cfgReqHtml(r) + cfgAddedHtml(r) + cfgNotesHtml(r);
   return (r.summary ? h`<p class="cfgsum">${r.summary}</p>` : "") + r.configs.map((c, i) => {
@@ -3020,6 +3020,7 @@ function cfgResultHtml(r, { key = "", size = "" } = {}) {
           <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
       }).join(""))}</tbody></table></div>` : "")}
       ${raw(cfgSuppliersHtml(c))}
+      ${raw(key && !c.suppliers?.length && c.engine?.model ? h`<div class="row" style="margin-top:6px"><span class="small muted">Chưa có nhà cung cấp nào trong hệ thống cho cấu hình này.</span><span class="spacer"></span><button class="btn green sm" data-cfgfind="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp chào tổ máy dùng đúng động cơ${c.alternator?.model ? ", đầu phát" : ""}${c.controller?.model ? ", bộ điều khiển" : ""} của cấu hình này">Tìm nhà cung cấp</button></div>` : "")}
       ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
@@ -3727,6 +3728,18 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "catBack") { catView.open = null; renderCatalog(); mScroll().scrollTop = listScroll.cat; return; }
   if (e.target.id === "catMore") { catView.limit += 100; renderCatList(); return; }
   if (e.target.id === "cfgRun") { requestWorker("configreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "all", extra: cfgExtraOf(e.target.dataset.key).trim() }, "gợi ý cấu hình"); return; }
+  // Tìm nhà cung cấp of one configuration with none (Khoa, 2026-11-06): a findreq with the configuration as its target
+  // (config-bot.mjs findPrep); the suppliers found join it in code.
+  const cf = e.target.closest("[data-cfgfind]");
+  if (cf && !cf.disabled) {
+    const key = cf.dataset.cfgfind, size = cf.dataset.size, whole = state.configmatch[key]?.result, r = size ? whole?.sizes?.find((z) => z.label === size)?.result : whole;
+    const c = r?.configs?.find((x) => String(x.rank) === cf.dataset.rank);
+    if (!c) return;
+    const part = (p) => (p?.model ? { model: p.model, ...(p.make ? { make: p.make } : {}) } : undefined);
+    const target = JSON.parse(JSON.stringify({ size, rank: c.rank, engine: part(c.engine), alternator: part(c.alternator), controller: part(c.controller), genset: part(c.genset) }));
+    requestWorker("findreq", key, { origin: cfgOrigin[key] || "all", extra: cfgExtraOf(key).trim(), target }, `tìm nhà cung cấp cho cấu hình #${c.rank}${size ? ` máy ${size}` : ""}`);
+    return;
+  }
   if (e.target.id === "cfgFind") { requestWorker("findreq", e.target.dataset.key, { origin: cfgOrigin[e.target.dataset.key] || "all", extra: cfgExtraOf(e.target.dataset.key).trim() }, "tìm nhà cung cấp"); return; }
   if (e.target.id === "spRun") { requestWorker("supplierreq", e.target.dataset.key, {}, "gợi ý nhà cung cấp"); return; }
   const fx = e.target.closest("[data-findx]");
