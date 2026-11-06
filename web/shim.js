@@ -158,18 +158,20 @@
     $("#lgX").onclick = close;
     el.addEventListener("click", (e) => { if (e.target === el) close(); });
 
-    const { data: people } = await sb.from("members").select("email").order("email");
-    for (const email of [...(people || []).map((p) => p.email), "worker"]) {
-      const o = document.createElement("option");
-      o.value = email; o.textContent = email === "worker" ? "Máy chủ HSMT (tự động)" : email;
-      $("#lgWho").appendChild(o);
-    }
+    // The people list fills in while the log loads (not before it).
+    sb.from("members").select("email").order("email").then(({ data: people }) => {
+      for (const email of [...(people || []).map((p) => p.email), "worker"]) {
+        const o = document.createElement("option");
+        o.value = email; o.textContent = email === "worker" ? "Máy chủ HSMT (tự động)" : email;
+        $("#lgWho").appendChild(o);
+      }
+    });
 
     const PAGE = 20;
-    let rows = [], total = 0, seq = 0;
-    async function load(more) {
+    let rows = [], more = false, seq = 0;
+    async function load(next) {
       const my = ++seq;
-      let q = sb.from("activity_log").select("*", { count: "exact" }).order("at", { ascending: false }).order("id", { ascending: false });
+      let q = sb.from("activity_log").select("*").order("at", { ascending: false }).order("id", { ascending: false });
       const who = $("#lgWho").value, kind = $("#lgKind").value, day = $("#lgDay").value;
       if (who) q = q.eq("actor", who);
       // Picking the worker in the people filter shows its rows even with the box ticked.
@@ -178,11 +180,15 @@
       else if (kind) q = q.eq("action", kind);
       if (day) { const from = new Date(`${day}T00:00:00+07:00`); q = q.gte("at", from.toISOString()).lt("at", new Date(+from + 864e5).toISOString()); }
       $("#lgInfo").textContent = "Đang tải...";
-      const { data, error, count } = await q.range(more ? rows.length : 0, (more ? rows.length : 0) + PAGE - 1);
+      // No exact count: counting every log row on each open/filter made the panel slow. Read one row past the
+      // page instead to know whether there are more.
+      const from = next ? rows.length : 0;
+      const { data, error } = await q.range(from, from + PAGE);
       if (my !== seq) return;
       if (error) { $("#lgInfo").textContent = /activity_log/.test(error.message) ? "Chưa có bảng nhật ký: cần chạy lại supabase/schema.sql." : "Lỗi: " + error.message; return; }
-      rows = more ? rows.concat(data) : data;
-      total = count ?? rows.length;
+      more = data.length > PAGE;
+      const page = data.slice(0, PAGE);
+      rows = next ? rows.concat(page) : page;
       render();
     }
     function render() {
@@ -198,8 +204,8 @@
           <div class="w"><b>${esc(title)}</b>${sub ? `<div>${esc(sub)}</div>` : ""}</div></div>`;
       }
       $("#lgList").innerHTML = html || '<p class="muted" style="padding:16px 0">Không có hoạt động nào.</p>';
-      $("#lgInfo").textContent = `Hiển thị ${rows.length} / ${total} hoạt động · giờ Việt Nam (GMT+7)`;
-      $("#lgMore").hidden = rows.length >= total;
+      $("#lgInfo").textContent = `Hiển thị ${rows.length}${more ? "+" : ""} hoạt động · giờ Việt Nam (GMT+7)`;
+      $("#lgMore").hidden = !more;
     }
     $("#lgMore").onclick = () => load(true);
     for (const id of ["#lgWho", "#lgKind", "#lgDay", "#lgNoBot"]) $(id).onchange = () => load(false);
