@@ -278,3 +278,12 @@ test("syncCheck: three makes fail 2 of 3; an OEM set meets it; an assembler cann
   assert.equal(syncCheck(s, { engine: "Cummins", alternator: "Cummins", controller: "SmartGen" }).status, "unclear");
   assert.equal(syncCheck(s, { engine: "Yuchai", alternator: null, controller: null }).status, "unclear");
 });
+
+test("uncoveredSpecs: analysis lines whose topic no requirement mentions", async () => {
+  const { uncoveredSpecs } = await import("./config-bot.mjs");
+  const specs = [{ item: "Bộ điều khiển", requirement: "Deepsea DSE7320 MKII" }, { item: "Đồng bộ & prototype test", requirement: "Đồng bộ 02 trong 03 bộ phận chính; chứng nhận prototype tested" },
+    { item: "Bảo hành", requirement: "12 tháng" }, { item: "Độ ồn", requirement: "Không nêu trong tài liệu" }, { item: "Dung tích xy lanh", requirement: "≥ 9 L" }];
+  const u = uncoveredSpecs(specs, [{ item: "Dung tích xy lanh", requirement: "≥ 9 L" }, { item: "Xuất xứ tổ máy", requirement: "G7" }]);
+  assert.equal(u.length, 2);
+  assert.match(u[0], /bộ điều khiển\]/); assert.match(u[1], /đồng bộ thương hiệu \/ OEM, prototype/);
+});

@@ -53,6 +53,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   `unclear` for a figure or function before searching catalog.md and controllers.md for it (2026-11-03: a run left
   the event log of a DSE8610 `unclear` though its datasheet says "The event log records 250 events"). A supplier you add in newCatalog.json is reported missing there; that
   is expected, the bot adds it before its own check.
+  Under "CÓ THỂ SÓT YÊU CẦU" it lists lines of the analysis whose topic no requirement mentions: read the HSMT for each;
+  when it is a requirement on the set, engine, alternator or controller, add it (and its checks); otherwise leave it.
 - Write result.json (or a script that builds it) with the Write tool, never with a shell heredoc, and write it once:
   then change only the parts that need it with Edit.
 - Keep `offered`, `note` and `gaps` short; do not repeat the requirement in them.
@@ -66,6 +68,13 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    consumption...) and `level`: `core` when it decides which engine, alternator, controller or genset model fits, or
    `option` when the supplier sets it when the order is placed without changing those models (fuel tank size,
    dimensions, weight, noise, canopy). Leave out what a model cannot decide (enclosure, ATS, delivery, warranty, documents).
+   Do NOT leave out (2026-11-06 audit: each was missed by some run): the controller's whole section (its make / model,
+   AMF, display, protections, event log, communication) even when the HSMT puts it under its own heading; the origin
+   or make of the set as a whole ("Xuất xứ tổ máy", "nhập khẩu nguyên chiếc", "OEM"); the standards and certificates
+   of the set or its parts (ISO 8528 / ISO 3046 / IEC 60034, performance class G2 / G3, CE, prototype tested) — a
+   requirement the datasheet states, `part: "genset"`, even when the HSMT asks for the certificate as a document;
+   the fuel tank, noise, size and weight as `option`; a model the HSMT names for the controller or the alternator.
+   One line of the HSMT that holds several of them (a certificate and a make in one sentence) is several requirements.
    Give every requirement its own `item` name and use the same name in every check.
    Group the controller's functions of one kind into ONE requirement (Khoa 2026-11-03): its protections (over / under
    voltage, frequency, overload, oil pressure, coolant temperature...), its measurements and display, its

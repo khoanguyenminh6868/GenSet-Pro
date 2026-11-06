@@ -77,7 +77,7 @@ const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
 // The requirements read last time are used again only when the HSMT, Yêu cầu khác and the way they are read are the
 // same: REQ_VERSION goes up when config-prompt.md changes how requirements are written (e.g. the grouped controller
 // functions of 2026-11-03), so older lists are read again once.
-export const REQ_VERSION = 2;
+export const REQ_VERSION = 3;
 export const reqHashOf = (text, extra) => createHash("sha1").update(`${text}\n--extra--\n${extra || ""}${REQ_VERSION > 1 ? `\n--v${REQ_VERSION}--` : ""}`).digest("hex").slice(0, 16);
 
 export async function api(q) {
@@ -921,6 +921,8 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
   fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(all), "utf8");
   fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin }), "utf8");
+  // The analysis' technical lines, for check to list the ones no requirement covers (uncoveredSpecs).
+  fs.writeFileSync(path.join(dir, "specs.json"), JSON.stringify((a?.technicalSpecs || []).map(({ item, requirement }) => ({ item, requirement }))), "utf8");
   // The requirements read last time, when the HSMT and Yêu cầu khác are the same (Khoa, 2026-11-02): Gợi ý lại only
   // matches the configurations again. Each quote is checked again by check.
   // Only the HSMT files count: the notice is fetched again each time and its status changes.
@@ -1346,6 +1348,39 @@ function checkDir(dir, suppliers, added = [], origin) {
   const readWeb = (f) => { const p = path.join(dir, f); return p.startsWith(path.join(dir, "web")) && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
   const out = check(result, { hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), suppliers, readWeb, origin });
   rankConfigs(out.result);
+  // The analysis' technical lines the requirements may have missed (Khoa, 2026-11-06), for the agent to read again.
+  const specs = fs.existsSync(path.join(dir, "specs.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "specs.json"), "utf8")) : [];
+  out.uncovered = uncoveredSpecs(specs, out.result.requirements);
+  return out;
+}
+// Requirements the agent may leave out (2026-11-06 audit of 8 suggestions against their analysis: the controller's whole
+// section, the set's origin, "đồng bộ thương hiệu", ISO 8528 / prototype certificates, tank and noise were missed in
+// some). A line of the analysis' technicalSpecs about the set, engine, alternator or controller whose topic no
+// requirement mentions. Topics by keywords; a line about delivery, warranty, documents, ATS, cables... is not one.
+const SPEC_TOPICS = [
+  ["bộ điều khiển", /điều\s*khiển|controller|\bAMF\b|modbus|RS-?485|nhật\s*ký|event\s*log|hiển\s*thị|bảo\s*vệ/i],
+  ["đồng bộ thương hiệu / OEM", /đồng\s*bộ\s*(0?\d|hai|ba|thương|cùng|bởi|từ|chính)|cùng\s*(một\s*)?(hãng|thương\s*hiệu|nhãn\s*hiệu|nhà\s*sản\s*xuất)|\bOEM\b/i],
+  ["xuất xứ / nhãn hiệu", /xuất\s*xứ|nguyên\s*chiếc|nhãn\s*hiệu|\bhãng\b|thương\s*hiệu|\bmodel\b/i],
+  ["prototype", /prototype|thử\s*nghiệm\s*mẫu|type\s*test/i],
+  ["tiêu chuẩn tổ máy", /ISO\s*(8528|3046)|IEC\s*60034|\bEN\s*\d|\bCE\b|class\s*G\d|cấp\s*vận\s*hành/i],
+  ["bồn nhiên liệu", /(bồn|bình|thùng)\s*(dầu|nhiên\s*liệu)/i], ["độ ồn", /độ\s*ồn|dB\s*\(?A/i], ["kích thước / khối lượng", /kích\s*thước|khối\s*lượng|trọng\s*lượng/i],
+  ["tiêu hao nhiên liệu", /tiêu\s*hao/i], ["công suất", /công\s*suất|\bkVA\b|\bkW\b/i], ["nhận tải / quá tải", /nhận\s*tải|quá\s*tải/i],
+  ["động cơ", /động\s*cơ|xi\s*lanh|xy\s*lanh|tăng\s*áp|turbo|điều\s*tốc|phun|làm\s*mát|tỷ\s*số\s*nén|tỉ\s*số\s*nén|khởi\s*động/i],
+  ["đầu phát", /đầu\s*phát|cách\s*điện|\bIP\s?\d|\bAVR\b|kích\s*từ|sóng\s*hài|THD|ổ\s*đỡ|chổi\s*than/i],
+  ["khí thải", /khí\s*thải|emission|\bTier\b|\bStage\b|Euro/i], ["nhiệt độ môi trường", /nhiệt\s*độ\s*(môi\s*trường|làm\s*việc)|°C/i],
+];
+const SPEC_NOT = /hồ\s*sơ|thông\s*tin|phụ\s*kiện|quản\s*lý\s*chất\s*lượng|bảo\s*hành|bảo\s*trì|đào\s*tạo|vận\s*chuyển|lắp\s*đặt|bàn\s*giao|tài\s*liệu|catalogue|\bCO\b|\bCQ\b|hải\s*quan|\bATS\b|cáp|đầu\s*cốt|ống\s*(luồn|thoát|xả)|tiếp\s*địa|phụ\s*tùng|vật\s*tư|nhân\s*sự|tiến\s*độ|số\s*lượng|năm\s*sản\s*xuất|tình\s*trạng|mới\s*100|thử\s*(tải|nghiệm)|kiểm\s*(tra|định)|nghiệm\s*thu|chạy\s*thử|vỏ\s*(chống|cách|giảm)|sơn|khung|giảm\s*thanh|nạp\s*lần|ắc\s*quy|phạm\s*vi|đại\s*(diện|lý)|ủy\s*quyền|dịch\s*vụ/i;
+export function uncoveredSpecs(specs, reqs) {
+  const have = (reqs || []).map((r) => `${r.item} ${r.requirement || ""} ${(r.parts || []).map((p) => p.item).join(" ")}`).join("\n");
+  const out = [];
+  for (const s of specs || []) {
+    const t = `${s.item || ""}: ${s.requirement || ""}`;
+    // Nor a line the analysis says the HSMT does not state ("Độ ồn: Không nêu trong tài liệu").
+    if (SPEC_NOT.test(s.item || "") || /^\W*không\s*(nêu|có|ghi)/i.test(s.requirement || "")) continue;
+    const topics = SPEC_TOPICS.filter(([, re]) => re.test(t));
+    const miss = topics.filter(([, re]) => !re.test(have));
+    if (miss.length) out.push(`- ${t.slice(0, 220)} [chưa có yêu cầu về: ${miss.map(([n]) => n).join(", ")}]`);
+  }
   return out;
 }
 // The order of the configurations and of their suppliers, set in code (Khoa, 2026-11-02): the engine and the
@@ -1964,12 +1999,13 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
   else if (cmd === "check") {
     // Offline in a folder made by prep (suppliers.json, meta.json); elsewhere the supplier DB is read from the web.
     const dir = arg("dir", "."), local = (f) => (fs.existsSync(path.join(dir, f)) ? JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) : null);
-    const { problems, result, hints } = checkDir(dir, local("suppliers.json") || (await allDocs("supplier")).map((d) => d.data), [], local("meta.json")?.origin);
+    const { problems, result, hints, uncovered } = checkDir(dir, local("suppliers.json") || (await allDocs("supplier")).map((d) => d.data), [], local("meta.json")?.origin);
     fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
     console.log(problems.length ? problems.join("\n") : "Không có điểm nào chưa khớp nguồn.");
     // "unclear" checks whose sources have a line about them (config-prompt.md: read each, set met / not_met if it says).
     if (hints.length) console.log(`\nCÓ THỂ TRA ĐƯỢC — ${hints.length} mục chưa rõ mà nguồn có dòng liên quan (đọc dòng đó: nêu đạt / không đạt thì sửa, không nói thì để chưa rõ):\n${hints.join("\n")}`);
     // Đồng bộ thương hiệu, written by the code: the agent needs it to decide on step 4 (config-prompt.md).
+    if (uncovered?.length) console.log(`\nCÓ THỂ SÓT YÊU CẦU — ${uncovered.length} dòng thông số của phân tích chưa có yêu cầu nào nói tới (đọc HSMT: là yêu cầu về tổ máy / động cơ / đầu phát / bộ điều khiển thì thêm vào requirements và checks, không phải thì bỏ qua):\n${uncovered.join("\n")}`);
     if (result.brandSync) {
       const st = { met: "đạt", not_met: "KHÔNG ĐẠT", unclear: "chưa rõ" }, lines = (result.configs || []).map((c) => { const x = c.checks.find((x) => x.item === SYNC_ITEM); return `#${c.rank} ${st[x?.status] || "?"}: ${x?.offered || ""}. ${x?.note || ""}`; });
       console.log(`\nĐỒNG BỘ THƯƠNG HIỆU (code kiểm):\n${lines.join("\n")}${lines.some((l) => / đạt:/.test(l)) ? "" : "\nKhông cấu hình nào đạt: làm bước 4 (tìm tổ máy chính hãng trên internet)."}`);
