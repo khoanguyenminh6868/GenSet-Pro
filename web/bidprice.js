@@ -233,6 +233,29 @@
     for (const l of s.slice(out.length).split("\n")) { if (!KEY_LINE.test(l)) continue; if (out.length + l.length + 1 > 2 * n) break; out += "\n" + l.trim(); }
     return out + "\n…";
   }
+  // A won generator set's "Cấu hình, tính năng kỹ thuật cơ bản" (bidhist goods.desc, up to 8,000 characters since
+  // 2026-11-07; one line, clauses "* Thông số chung về Động cơ Model: … Hãng sản xuất: …" and "- …"): the clauses that
+  // name the engine, alternator, controller, makes, origin, power and scope, in order, up to n characters (was the
+  // first 200, which left out every component). Other goods: their first 200 characters.
+  const DESC_KEY = new RegExp(KEY_LINE.source + "|model|nh[ãa]n\\s*hi[ệe]u|k[ýy]\\s*(m[ãa]\\s*)?hi[ệe]u|c[ôo]ng\\s*su[ấa]t|kva|\\bkw\\b|ti[êe]u\\s*hao|v[ỏo]\\s*(ch[ốo]ng\\s*[ồo]n|c[áa]ch)|alternator|engine|controller", "i");
+  // A goods row that is a generator set: its name says so, or names a power (an old-form row "- Công suất dài hạn:
+  // 240 kW / 300 kVA ..." under a heading row "Máy phát điện 300 KVA và phụ kiện:").
+  const isSetRow = (g) => isGensetName(g.name) || !!kvaOf(g.name);
+  function goodsDesc(desc, n) {
+    const s = cut(desc, 1e6);
+    if (s.length <= n) return s;
+    const parts = s.split(/\s+(?=\*\s|-\s)/);
+    let out = "";
+    for (const [i, p] of parts.entries()) {
+      if (i && !DESC_KEY.test(p)) continue;
+      // The start of each clause, where its model and make are written; one that no longer fits is skipped, so the
+      // controller after a long engine clause still gets in.
+      const add = cut(p, 450);
+      if (out && out.length + add.length + 1 > n) continue;
+      out += (out ? " " : "") + add;
+    }
+    return cut(out, n) + (out.length < s.length ? " …" : "");
+  }
   // The decided lots most like the tender, for the agent to compare. t: { notifyNo, bidName, investorName, cfgText (what
   // its HSMT asks for), engine ({ make, model } of the configuration Gợi ý cấu hình put first) }, docs: { <TBMT>: bidhist
   // document }, K: kVA, P: package price. Ranked by power, package price and how alike the configuration asked for is
@@ -296,7 +319,12 @@
           key, lotNo: lot.lotNo || "", name: d.bidName || "", lotName: multi ? lot.lotName || "" : "", investor: d.investorName || "", location: d.location || "",
           bidForm: d.bidForm || "", at: d.openedAt || d.bidCloseDate || "", url: d.url || "", price, wp, ratio, winner: w.name || "", k, kSrc, kRating: rk, dist, units,
           kNote: shifted ? (kEq < k ? `có thể là mức dự phòng của máy ${Math.round(kEq)} kVA liên tục` : `có thể là mức liên tục của máy ${Math.round(kEq)} kVA dự phòng`) : "",
-          goods: goods.slice(0, 8).map((g) => ({ name: cut(g.name, 300), maker: g.maker || g.label || "", code: g.code || "", origin: g.origin || "", qty: g.qty ?? null, unitPrice: g.unitPrice ?? null, desc: cut(g.desc, 200) })),
+          // The generator sets first (a heading row or ten cables before them used to push them past the 8 kept), their
+          // name and configuration at length (an old-form row puts the whole configuration in its name).
+          goods: [...goods.filter(isSetRow), ...goods.filter((g) => !isSetRow(g))].slice(0, 10).map((g) => {
+            const set = isSetRow(g);
+            return { name: cut(g.name, set ? 1500 : 300), maker: g.maker || g.label || "", code: g.code || "", origin: g.origin || "", qty: g.qty ?? null, unit: g.unit || "", unitPrice: g.unitPrice ?? null, desc: set ? goodsDesc(g.desc, 2500) : cut(g.desc, 200) };
+          }),
           cfgText: keyText(d.config?.text, 3000),
           bidders: (lot.bidders || []).map((b) => ({ name: b.name || "", tax: String(b.taxCode || "").replace(/\D/g, ""), price: bdPrice(b) ?? null, won: !!b.won })),
           group, cfg: { sim: cfg.sim == null ? null : Math.round(cfg.sim * 100) / 100, same: cfg.same, diff: cfg.diff },
@@ -322,7 +350,7 @@
       s.k ? `Công suất (code đọc từ ${s.kSrc}${s.kRating ? `, mức ${s.kRating === "prime" ? "liên tục" : "dự phòng"}` : ""}): ${Math.round(s.k)} kVA${s.kNote ? ` (${s.kNote})` : ""}` : "Công suất: không rõ",
       s.units > 1 ? `Số máy (code đọc): ${s.units}` : "",
       `Số nhà thầu: ${s.bidders.length}`,
-      ...(s.goods.length ? ["Hàng hoá trúng thầu:", ...s.goods.map((g) => `- ${[g.name, g.maker && `hãng ${g.maker}`, g.code && `model ${g.code}`, g.origin && `xuất xứ ${g.origin}`, g.qty != null && `số lượng ${g.qty}`, g.unitPrice && `đơn giá ${n(g.unitPrice)} đ`, g.desc].filter(Boolean).join(" | ")}`)] : ["Hàng hoá trúng thầu: không ghi"]),
+      ...(s.goods.length ? ["Hàng hoá trúng thầu:", ...s.goods.map((g) => `- ${[g.name, g.maker && `hãng ${g.maker}`, g.code && `model ${g.code}`, g.origin && `xuất xứ ${g.origin}`, g.qty != null && `số lượng ${g.qty}${g.unit ? " " + g.unit : ""}`, g.unitPrice && `đơn giá ${n(g.unitPrice)} đ`, g.desc].filter(Boolean).join(" | ")}`)] : ["Hàng hoá trúng thầu: không ghi"]),
       s.cfgText ? `Trích HSMT:\n${s.cfgText}` : "",
     ].filter(Boolean).join("\n");
   }
