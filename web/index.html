@@ -332,6 +332,8 @@ table.supmain{table-layout:fixed}table.supmain th{white-space:normal}table.supma
 table.bdmain tbody tr{cursor:pointer}table.bdmain tbody tr:hover{background:var(--panel2)}table.bdmain tr.us,table.bdrows tr.us{background:var(--cyan-soft)}
 table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:right;white-space:nowrap}
 @media (max-width:640px){table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:left}}
+.bdgoods{margin-top:6px}.bdgoods ol{margin:2px 0 0;padding-left:20px}.bdgoods li{margin:3px 0}
+.bdgoods details>summary{cursor:pointer;color:var(--violet);width:max-content}.bdgoods .cfgtext{white-space:pre-line;margin:4px 0 6px;padding:6px 8px;background:var(--panel2);border-radius:6px;max-height:360px;overflow:auto}
 @media (max-width:640px){.mbanner .tag{display:none}.mbanner h2{font-size:16px}.mbanner .mark{width:30px;height:30px}}
 /* Phone: the search and filter rows fold behind one button, tap to open (Khoa, 2026-11-02). */
 .filtrows{display:flex;flex-direction:column;gap:10px}.filttg{display:none}.filttg .chev{transition:transform .15s}.filttg[aria-expanded="true"] .chev{transform:rotate(180deg)}
@@ -3527,7 +3529,22 @@ function bdResultHtml(r) {
   if (!r.d.final) return h`<span class="chip mut">Chưa có kết quả</span>`;
   return h`<span class="chip bad">Không trúng</span>${raw(r.b.reason ? h`<div class="muted small">${r.b.reason}</div>` : "")}`;
 }
-const bdGoods = (g) => (g || []).map((x) => [x.name, [x.label || x.maker, x.code].filter(Boolean).join(" "), x.origin && `(${x.origin})`, x.qty && `× ${x.qty}`, x.unitPrice && `đơn giá ${fmtVnd(x.unitPrice)}`].filter(Boolean).join(" ")).join("; ");
+const bdGoods = (g) => (g || []).map((x) => [x.name, [x.label || x.maker, x.code].filter(Boolean).join(" "), x.origin && `(${x.origin})`, x.qty && `× ${x.qty}${x.unit ? " " + x.unit : ""}`, x.unitPrice && `đơn giá ${fmtVnd(x.unitPrice)}`].filter(Boolean).join(" ")).join("; ");
+// The won goods one per line, with the columns muasamcong lists (Khoa, 2026-11-07): Hãng sản xuất, nhãn hiệu, ký mã
+// hiệu, xuất xứ, khối lượng, đơn giá, and "Cấu hình, tính năng kỹ thuật cơ bản" folded (often thousands of characters,
+// naming the engine, alternator and controller with their makes). Group heading rows (no make, quantity or price) stay
+// as plain lines.
+function bdGoodsHtml(goods, label = "Hàng chào") {
+  const cfg = (s) => String(s || "").replace(/\s+\*\s+/g, "\n* ").replace(/\s+-\s+(?=\S)/g, "\n- ").replace(/^\n/, "");
+  const li = (x) => {
+    const name = String(x.name || "").trim(), short = name.length > 220 ? name.slice(0, 220) + "…" : name;
+    const brand = x.label && x.label !== x.maker ? x.label : "";
+    const parts = [x.maker && `Hãng ${x.maker}`, brand && `nhãn hiệu ${brand}`, x.code && `mã ${x.code}`, x.origin && `xuất xứ ${x.origin}`, x.year && `năm ${x.year}`,
+      x.qty && `${Number(x.qty).toLocaleString("vi-VN")} ${x.unit || ""}`.trim(), x.unitPrice && `đơn giá ${fmtVnd(x.unitPrice)}`].filter(Boolean);
+    return h`<li><span title="${name.length > 220 ? name : ""}">${short}</span>${parts.length ? " · " : ""}<span class="muted">${parts.join(" · ")}</span>${raw(x.desc ? h`<details><summary>Cấu hình kỹ thuật</summary><div class="cfgtext">${cfg(x.desc)}</div></details>` : "")}</li>`;
+  };
+  return h`<div class="bdgoods small">${label}:<ol>${raw((goods || []).map(li).join(""))}</ol></div>`;
+}
 // Mã gói in its status colour, linked to muasamcong like the main list (Khoa, 2026-11-04).
 function bdKeyLink(r) {
   const t = findTender(r.key), st = t ? " st-" + shownStage(t).key : "";
@@ -3546,7 +3563,7 @@ function bdDetailHtml(c0) {
       return h`<tr><td data-l="Mở thầu">${fmtDate(r.at, false)}</td>
         <td><div><b>${raw(findTender(r.key) ? h`<a href="#" data-bdtender="${r.key}" title="Mở chi tiết gói thầu">${r.d.bidName || r.key}</a>` : h`${r.d.bidName || r.key}`)}</b></div>${raw(r.multi && r.lot.lotName ? h`<div class="small">${r.lot.lotName}</div>` : "")}
           <div class="muted small" style="margin-top:6px">${raw(bdKeyLink(r))} · ${[r.d.investorName, r.d.location, BID_FORM[r.d.bidForm] || r.d.bidForm].filter(Boolean).join(" · ")}</div>
-          ${raw(r.b.won && r.lot.goods?.length ? h`<div class="small">Hàng chào: ${bdGoods(r.lot.goods)}</div>` : "")}
+          ${raw(r.b.won && r.lot.goods?.length ? bdGoodsHtml(r.lot.goods) : "")}
           ${raw(!r.lot.goods?.length && r.d.config?.kvas?.length ? h`<div class="muted small" title="${r.d.config.text || ""}">Công suất theo HSMT: ${r.d.config.kvas.slice(0, 5).map((p) => p.v.toLocaleString("vi-VN") + " " + p.u).join(", ")}</div>` : "")}
           ${raw(w.length ? h`<div class="muted small">Nhà thầu trúng: ${w.join(", ")}${(() => { const x = r.lot.bidders.find((y) => y.won); return x ? " · " + fmtVnd(x.winPrice ?? bdPrice(x)) : ""; })()}</div>` : "")}</td>
         <td class="num" data-l="Giá gói">${base ? fmtVnd(base) : "—"}</td>
@@ -3582,7 +3599,7 @@ function bpSampleRow(s, t, i) {
   return h`<tr><td class="num">${i + 1}</td>
     <td><div><a href="${url}" data-bptender="${s.key}"><b>${s.lotName || s.name}</b></a></div>
       <div class="muted small">${raw(h`<a href="${url}" data-bptender="${s.key}">${s.key}</a>`)} · ${fmtDate(s.at, false)} · ${s.investor}${s.investor && s.investor === t.investorName ? " (cùng chủ đầu tư)" : ""}</div>
-      ${raw(s.goods.length ? h`<div class="small">Hàng trúng: ${s.goods.slice(0, 3).map((g) => [g.name.slice(0, 80), g.maker, g.code, g.origin && `(${g.origin})`].filter(Boolean).join(" ")).join("; ")}</div>` : "")}</td>
+      ${raw(s.goods.length ? bdGoodsHtml(s.goods, "Hàng trúng") : "")}</td>
     <td class="small" data-l="Mức giống"><span class="chip ${cls}">${lv}</span>${raw(one ? ' <span class="chip mut" title="Chỉ 1 nhà thầu: giá trúng không qua cạnh tranh, không tính vào giá đề xuất">1 nhà thầu</span>' : "")}${raw(s.unverified ? h` <span class="chip warn" title="${s.unverified}">⚠ chưa khớp nguồn</span>` : "")}${raw(s.same.length ? h`<div>✓ ${s.same.join(", ")}</div>` : "")}${raw(s.diff.length ? h`<div class="muted">✗ ${s.diff.join(", ")}</div>` : "")}${raw(s.quote ? h`<div class="muted" style="overflow-wrap:anywhere"><q>${s.quote}</q></div>` : "")}</td>
     <td class="num" data-l="Giá trúng"><b>${fmtVnd(s.wp)}</b><div class="muted small">giá gói ${fmtVnd(s.price)}</div><div class="muted small">${bpPct(s.ratio)} giá gói${s.k ? ` · ${fmtVnd(Math.round(s.wp / s.k))}/kVA` : ""}</div><div class="muted small" style="font-family:inherit;white-space:normal">${s.winner} · ${s.bidders.length} nhà thầu</div></td></tr>`;
 }
