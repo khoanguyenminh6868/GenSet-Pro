@@ -397,6 +397,17 @@ async function histList(page, state, maxPages) {
     return { rows: [...rows.values()], total: last?.totalElements ?? rows.size };
   } finally { page.off("response", onResp); }
 }
+// A result page whose goods table had fields, columns or a shape history-extract.js does not know (r.audit): one line per
+// finding in genbid-bot-logs\history-goods-audit.tsv (Khoa, 2026-11-07: log new forms to handle later), not posted.
+const GOODS_AUDIT = path.join(ROOT, "genbid-bot-logs", "history-goods-audit.tsv");
+function goodsAudit(key, r) {
+  const a = r.audit; delete r.audit;
+  if (!a?.length) return;
+  const clean = (v) => String(v ?? "").replace(/[\t\r\n]+/g, " ");
+  if (!fs.existsSync(GOODS_AUDIT)) fs.writeFileSync(GOODS_AUDIT, "at\tkey\tkind\twhat\tsample\n", "utf8");
+  fs.appendFileSync(GOODS_AUDIT, a.map((x) => [now(), key, x.kind, x.what, x.sample].map(clean).join("\t")).join("\n") + "\n", "utf8");
+  log(`    ${key}: mẫu bảng hàng hoá lạ (${a.map((x) => x.kind + " " + x.what).join("; ")}) → ${path.basename(GOODS_AUDIT)}`);
+}
 async function historyRound(page, { maxPages = 60, maxTenders = 2000 } = {}) {
   const state = readJson(HIST_FILE, null) || { read: {} };
   const { rows, total } = await histList(page, state, maxPages);
@@ -424,6 +435,7 @@ async function historyRound(page, { maxPages = 60, maxTenders = 2000 } = {}) {
         state.read[c.notifyNo] = { step: c.stepCode, final: false, at: now(), error: r.error };
         continue;
       }
+      goodsAudit(c.notifyNo, r);
       const cfg = readJson(HISTCFG_FILE, {})[c.notifyNo];
       const data = { ...histTender(c), ...r, url: histUrl(c), at: now(), ...(cfg ? { config: cfg } : {}) };
       buf.push({ coll: "bidhist", id: c.notifyNo, data });
@@ -590,6 +602,7 @@ async function historyKeys(page, spec) {
         if (await challenged(page)) throw new Captcha("muasamcong yêu cầu xác minh");
         failed++; log(`    ${id}: ${r.error}`); continue;
       }
+      goodsAudit(id, r);
       const data = { ...old, ...r, at: now() };
       buf.push({ coll: "bidhist", id, data });
       if (state.read[id]) state.read[id] = { ...state.read[id], final: !!r.final, at: data.at };
