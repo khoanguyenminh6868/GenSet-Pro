@@ -730,7 +730,7 @@ function histTenders() {
 // Opening and result as the daily feed has them (t.result): bidder count, winners and their prices.
 function histResult(d) {
   const bidders = (d.lots || []).flatMap((l) => l.bidders || []);
-  const winners = bidders.filter((b) => b.won).map((b) => ({ name: b.name, price: b.winPrice ?? b.finalPrice ?? b.bidPrice ?? null }));
+  const winners = bidders.filter((b) => b.won).map((b) => ({ name: b.name, taxCode: b.taxCode || "", price: b.winPrice ?? b.finalPrice ?? b.bidPrice ?? null }));
   return { openedAt: d.openedAt || null, numBidderJoin: new Set(bidders.map(taxKey)).size || null, winners };
 }
 // Our own place in a tender read from muasamcong's results: Đã nộp until the result, then Trúng thầu or Không trúng (as ingest.js markJoined does for bidders/<TBMT>).
@@ -1469,9 +1469,9 @@ function renderDrawer(force = true) {
 function infoHtml(t) {
   const key = t._key, d = state.hsmt[key], files = d?.files || [];
   const c = capacityOf(t);
-  const facts = [["Chủ đầu tư", t.investorName], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => w.name + (w.price ? ` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
+  const facts = [["Chủ đầu tư", t.investorName], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => bdNameLink(w) + (w.price ? h` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
   return h`<div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" rows="2" style="min-height:56px" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
-    <dl class="kv kvo">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${v}</dd>`).join(""))}</dl>
+    <dl class="kv kvo">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${k === "Nhà thầu trúng" ? raw(v) : v}</dd>`).join(""))}</dl>
     ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) || state.bidhist?.[t._key] ? biddersHtml(t) : "")}
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
@@ -1792,13 +1792,15 @@ function histBidders(key) {
   list.sort((a, b) => (b.won ? 1 : 0) - (a.won ? 1 : 0) || price(a) - price(b));
   return { list, source: d.final ? "muasamcong (kết quả lựa chọn nhà thầu)" : "muasamcong (biên bản mở thầu)", at: d.at, final: !!d.final };
 }
+// A bidder's name as a link to its page on the Nhà thầu screen (this system, not muasamcong; Khoa 2026-11-07).
+function bdNameLink(x) { const id = taxKey(x); return id ? h`<a href="#${SCREEN_HASH.bd}" class="bdname" data-bdopen="${id}" title="Xem nhà thầu này: các gói đã dự, giá, kết quả">${x.name}</a>` : h`${x.name}`; }
 function biddersHtml(t) {
   const b = state.bidders[t._key] || histBidders(t._key), list = b?.list || [], n = t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin;
   // A bidders/<key> list (bidders-extract.js) has no goods: the winner's come from the history (bidhist).
   const hb = state.bidders[t._key] ? histBidders(t._key) : null, digits = (v) => String(v || "").replace(/\D/g, "");
   const goodsOf = (x) => x.goods || (x.won && hb?.list.find((y) => y.goods && digits(y.taxCode) === digits(x.taxCode))?.goods) || null;
   const num = (v) => (v == null || isNaN(v) ? "" : Number(v).toLocaleString("vi-VN"));
-  const body = list.length ? h`<div class="tablewrap"><table class="bdtbl"><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num c-rk">${x.rank ?? i + 1}</td><td><span class="rk">${x.rank ?? i + 1}. </span>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${raw(x.note ? h`<div class="src">${x.note}</div>` : "")}${raw(goodsOf(x) ? bdGoodsHtml(goodsOf(x)) : "")}</td><td class="num" data-l="MST">${x.taxCode || ""}</td><td class="num" data-l="Giá dự thầu">${num(x.priceAfterDiscount ?? x.bidPrice)}</td></tr>`).join(""))}</tbody></table></div>
+  const body = list.length ? h`<div class="tablewrap"><table class="bdtbl"><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num c-rk">${x.rank ?? i + 1}</td><td><span class="rk">${x.rank ?? i + 1}. </span>${raw(bdNameLink(x))}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${raw(x.note ? h`<div class="src">${x.note}</div>` : "")}${raw(goodsOf(x) ? bdGoodsHtml(goodsOf(x)) : "")}</td><td class="num" data-l="MST">${x.taxCode || ""}</td><td class="num" data-l="Giá dự thầu">${num(x.priceAfterDiscount ?? x.bidPrice)}</td></tr>`).join(""))}</tbody></table></div>
     <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>`
     : h`<div class="muted small">Chưa có biên bản mở thầu${n ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""}.</div>`;
   return h`<section class="sec"><h4>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : ""}</h4>${raw(body)}</section>`;
@@ -3771,7 +3773,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#supBtn")) { openSuppliers(); return; }
   if (e.target.closest("#bdBtn")) { openBidders(); return; }
   const bdo = e.target.closest("[data-bdopen]");
-  if (bdo && !e.target.closest("a[href]")) { if ($("#bdBody")) { if (!bdOpenId) listScroll.bd = mScroll().scrollTop; bdOpenId = bdo.dataset.bdopen; renderBidders(); mScroll().scrollTop = 0; } else openBidders(bdo.dataset.bdopen); return; }
+  if (bdo && [null, bdo].includes(e.target.closest("a[href]"))) { e.preventDefault(); if ($("#bdBody")) { if (!bdOpenId) listScroll.bd = mScroll().scrollTop; bdOpenId = bdo.dataset.bdopen; renderBidders(); mScroll().scrollTop = 0; } else openBidders(bdo.dataset.bdopen); return; }
   const bdt = e.target.closest("[data-bdtender]");
   if (bdt) { e.preventDefault(); const back = { id: bdOpenId, scroll: mScroll().scrollTop }; $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); openDrawer(bdt.dataset.bdtender, "", back); return; }
   // A tender in Giá gợi ý opens in the drawer; closing it comes back to this tab (a new browser tab keeps the link).
