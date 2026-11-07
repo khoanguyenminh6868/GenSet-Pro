@@ -561,9 +561,52 @@ async function runHistoryConfig() {
   catch (e) { if (e instanceof Captcha) return "Cấu hình lịch sử: dừng, muasamcong yêu cầu xác minh"; throw e; }
   finally { await ctx.close().catch(() => {}); }
 }
+// history --key K1,K2 | --key all [--max N] [--from K]: read again the result pages of tenders already in bidhist (the
+// url kept there), e.g. after history-extract.js learnt new columns (2026-11-07: Hãng sản xuất, Cấu hình kỹ thuật).
+// "all" = every bidhist tender with a final result, oldest key last; the other fields of each document are kept.
+async function historyKeys(page, spec) {
+  const state = readJson(HIST_FILE, null) || { read: {} };
+  let list;
+  if (spec === "all") {
+    list = (await allDocs("bidhist")).filter((d) => d.data?.final && d.data?.url).sort((a, b) => b.id.localeCompare(a.id));
+    if (opt("from")) list = list.filter((d) => d.id <= String(opt("from")));
+    list = list.slice(0, Number(opt("max")) || 1e9);
+  } else {
+    list = [];
+    for (const k of String(spec).split(",").map((s) => s.trim()).filter(Boolean)) { const data = await doc("bidhist", k); if (data?.url) list.push({ id: k, data }); else log(`    ${k}: không có trong bidhist`); }
+  }
+  log(`Đọc lại kết quả: ${list.length} gói`);
+  let done = 0, failed = 0, buf = [];
+  const flush = async () => {
+    if (opt("dry") && buf.length) writeJson(path.join(ROOT, "genbid-work", "bidhist-dry.json"), [...readJson(path.join(ROOT, "genbid-work", "bidhist-dry.json"), []), ...buf]);
+    if (buf.length) { await post(buf); buf = []; }
+    if (!opt("dry")) writeJson(HIST_FILE, state);
+  };
+  for (const { id, data: old } of list) {
+    try {
+      await page.goto(old.url, { waitUntil: "domcontentloaded" });
+      const r = await snippet(page, "history-extract.js");
+      if (r.error) {
+        if (await challenged(page)) throw new Captcha("muasamcong yêu cầu xác minh");
+        failed++; log(`    ${id}: ${r.error}`); continue;
+      }
+      const data = { ...old, ...r, at: now() };
+      buf.push({ coll: "bidhist", id, data });
+      if (state.read[id]) state.read[id] = { ...state.read[id], final: !!r.final, at: data.at };
+      done++;
+      if (buf.length >= 25) await flush();
+    } catch (e) {
+      if (e instanceof Captcha) { await flush(); throw e; }
+      failed++; log(`    ${id}: ${e.message.split("\n")[0]}`);
+    }
+    await page.waitForTimeout(800 + Math.random() * 1200);
+  }
+  await flush();
+  return `${done}/${list.length} gói đã đọc lại${failed ? `, ${failed} gói lỗi` : ""}`;
+}
 async function runHistory() {
   const { ctx, page } = await openBrowser();
-  try { return "Lịch sử: " + (await historyRound(page, { maxPages: Number(opt("pages")) || 60, maxTenders: Number(opt("max")) || 2000 })); }
+  try { return "Lịch sử: " + (await (opt("key") ? historyKeys(page, opt("key")) : historyRound(page, { maxPages: Number(opt("pages")) || 60, maxTenders: Number(opt("max")) || 2000 }))); }
   catch (e) { if (e instanceof Captcha) return "Lịch sử: dừng, muasamcong yêu cầu xác minh"; throw e; }
   finally { await ctx.close().catch(() => {}); }
 }

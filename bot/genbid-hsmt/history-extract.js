@@ -25,11 +25,20 @@ await (async () => {
     let rows = arr.filter((x) => x && !x.formValue);
     // Mẫu cũ lặp bảng của nhà thầu trúng cho mọi nhà thầu: chỉ lấy bảng của nhà thầu trúng.
     for (const x of arr.filter((x) => x?.formValue)) if (!winners.length || winners.includes(x.contractorCode)) rows.push(...(x.formValue?.lotContent?.Table || []));
-    return rows.slice(0, 30).map((r) => ({
-      name: r.name || r.nameGood || r.goodName || "", code: r.code || r.codeGood || "", label: r.lableGood || r.labelGood || "",
-      maker: r.manufacturer || "", origin: r.origin || "", year: r.yearGood || "", qty: num(r.quantity), unit: r.unit || "", unitPrice: num(r.priceUnit ?? r.unitPrice),
-      desc: String(r.description || "").slice(0, 300),
-    })).filter((r) => r.name || r.code || r.label);
+    // Mẫu bảng BD.CG.02.0192 (từ ~2024, Khoa 2026-11-07): Hãng sản xuất = manufacturer, "Cấu hình, tính năng kỹ thuật
+    // cơ bản" = feature (= technique), số lượng qty, đơn vị uom, đơn giá bidPrice; dòng tiêu đề nhóm ghi 0 ở mọi ô.
+    // Trước đây chỉ đọc description/quantity/unit/priceUnit và cắt 300 ký tự, nên mất cấu hình chi tiết (động cơ, đầu
+    // phát, bộ điều khiển kèm hãng) và số lượng, đơn giá của phần lớn gói.
+    const str = (...vs) => { for (const v of vs) { if (v == null || v === 0 || v === "0") continue; const s = String(v).replace(/\s+/g, " ").trim(); if (s) return s; } return ""; };
+    const pos = (...vs) => vs.map(num).find((x) => x > 0) ?? null;
+    return rows.slice(0, 100).map((r) => {
+      const desc = [...new Set([str(r.feature), str(r.technique), str(r.description)].filter(Boolean))].join(" | ");
+      return {
+        name: str(r.name, r.nameGood, r.goodName), code: str(r.codeGood, r.code), label: str(r.lableGood, r.labelGood, r.label),
+        maker: str(r.manufacturer), origin: str(r.origin), year: str(r.yearGood, r.yearManufacture), qty: pos(r.quantity, r.qty), unit: str(r.unit, r.uom),
+        unitPrice: pos(r.priceUnit, r.bidPrice, r.unitPrice), desc: desc.slice(0, 8000),
+      };
+    }).filter((r) => r.name || r.code || r.label);
   };
   if (kq && (kq.lotResultDTO?.length || kq.lotOpenDetails?.length)) {
     const opens = kq.lotOpenDetails || [];
