@@ -1785,15 +1785,20 @@ function histBidders(key) {
   const multi = d.lots.length > 1;
   const list = d.lots.flatMap((l) => (l.bidders || []).map((x) => ({ name: x.name, taxCode: x.taxCode, bidPrice: x.bidPrice, priceAfterDiscount: x.finalPrice, won: !!x.won,
     note: [multi && l.lotName, x.won ? `Trúng thầu${x.winPrice ? ", giá trúng " + Number(x.winPrice).toLocaleString("vi-VN") : ""}` : x.reason && "Không được chọn: " + x.reason,
-      x.won && l.goods?.length && "Hàng chào: " + bdGoods(l.goods)].filter(Boolean).join(" · ") })));
+      ].filter(Boolean).join(" · "),
+    // The won goods, shown as a list under the winner (bdGoodsHtml, Khoa 2026-11-07: hãng and cấu hình kỹ thuật too).
+    goods: x.won && l.goods?.length ? l.goods : null })));
   const price = (x) => x.priceAfterDiscount ?? x.bidPrice ?? 9e15;
   list.sort((a, b) => (b.won ? 1 : 0) - (a.won ? 1 : 0) || price(a) - price(b));
   return { list, source: d.final ? "muasamcong (kết quả lựa chọn nhà thầu)" : "muasamcong (biên bản mở thầu)", at: d.at, final: !!d.final };
 }
 function biddersHtml(t) {
   const b = state.bidders[t._key] || histBidders(t._key), list = b?.list || [], n = t.result?.numBidderJoin || state.portalids?.[t._key]?.numBidderJoin;
+  // A bidders/<key> list (bidders-extract.js) has no goods: the winner's come from the history (bidhist).
+  const hb = state.bidders[t._key] ? histBidders(t._key) : null, digits = (v) => String(v || "").replace(/\D/g, "");
+  const goodsOf = (x) => x.goods || (x.won && hb?.list.find((y) => y.goods && digits(y.taxCode) === digits(x.taxCode))?.goods) || null;
   const num = (v) => (v == null || isNaN(v) ? "" : Number(v).toLocaleString("vi-VN"));
-  const body = list.length ? h`<div class="tablewrap"><table class="bdtbl"><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num c-rk">${x.rank ?? i + 1}</td><td><span class="rk">${x.rank ?? i + 1}. </span>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${raw(x.note ? h`<div class="src">${x.note}</div>` : "")}</td><td class="num" data-l="MST">${x.taxCode || ""}</td><td class="num" data-l="Giá dự thầu">${num(x.priceAfterDiscount ?? x.bidPrice)}</td></tr>`).join(""))}</tbody></table></div>
+  const body = list.length ? h`<div class="tablewrap"><table class="bdtbl"><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num c-rk">${x.rank ?? i + 1}</td><td><span class="rk">${x.rank ?? i + 1}. </span>${x.name}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${raw(x.note ? h`<div class="src">${x.note}</div>` : "")}${raw(goodsOf(x) ? bdGoodsHtml(goodsOf(x)) : "")}</td><td class="num" data-l="MST">${x.taxCode || ""}</td><td class="num" data-l="Giá dự thầu">${num(x.priceAfterDiscount ?? x.bidPrice)}</td></tr>`).join(""))}</tbody></table></div>
     <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>`
     : h`<div class="muted small">Chưa có biên bản mở thầu${n ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""}.</div>`;
   return h`<section class="sec"><h4>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : ""}</h4>${raw(body)}</section>`;
@@ -3529,7 +3534,6 @@ function bdResultHtml(r) {
   if (!r.d.final) return h`<span class="chip mut">Chưa có kết quả</span>`;
   return h`<span class="chip bad">Không trúng</span>${raw(r.b.reason ? h`<div class="muted small">${r.b.reason}</div>` : "")}`;
 }
-const bdGoods = (g) => (g || []).map((x) => [x.name, [x.label || x.maker, x.code].filter(Boolean).join(" "), x.origin && `(${x.origin})`, x.qty && `× ${x.qty}${x.unit ? " " + x.unit : ""}`, x.unitPrice && `đơn giá ${fmtVnd(x.unitPrice)}`].filter(Boolean).join(" ")).join("; ");
 // The won goods one per line, with the columns muasamcong lists (Khoa, 2026-11-07): Hãng sản xuất, nhãn hiệu, ký mã
 // hiệu, xuất xứ, khối lượng, đơn giá, and "Cấu hình, tính năng kỹ thuật cơ bản" folded (often thousands of characters,
 // naming the engine, alternator and controller with their makes). Group heading rows (no make, quantity or price) stay
