@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 93e41953-82a9-4265-a2a5-f081042fd87d
-  modified: 2026-11-06T10:17:52.309Z
+  modified: 2026-11-06T17:06:40.940Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (máy Windows, agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Mọi số/câu trích phải có nguyên văn trong nguồn; sai → "Đạt" thành "Chưa rõ". Lượt agent ~6–11 phút, ~$3/gói.
@@ -24,6 +24,10 @@ metadata:
 **Bẫy Tìm NCC (06/11, PR #430):** NCC qua findCheck nhờ productLines nhưng mergeFind/candidates chỉ lấy động cơ từ specTables (CAT.build) → PDF hai cột (Rehlko: "Engine ref." và model khác dòng) ra 0 động cơ, configMerge "không có dòng bảng nào đúng công suất". Giờ catalog.js dùng productLine tổ máy một model (1 engineModels, power min = max) + hàng bảng cùng nguồn có số công suất (`fromLine`); findCheck in "dòng động cơ đúng công suất". Lưu ý: `ALT_CODE` coi "P158LE" là mã đầu phát trong bảng cột.
 
 **Nút trên từng cấu hình (Khoa 06/11):** Xoá (PR #432: bỏ khỏi configmatch, đánh số lại từ #1, ghi notes, `editedAt`); "Tìm nhà cung cấp" khi cấu hình không có NCC (PR #433: findreq kèm `target` {size, rank, engine, alternator, controller, genset}; findPrep chỉ tìm cỡ đó, input.md mục "Tìm nhà cung cấp cho MỘT cấu hình"; gộp bằng mergeFind như cũ). Bẫy: `web/api/webreq.js` lọc trường yêu cầu theo danh sách — thêm trường mới phải sửa ở đó (trước #433 xuất xứ g7/g20 bị lưu thành cn).
+
+**Audit 06/11 (PR #439):** 10 configmatch có 65% check "chưa rõ" (đầu phát 79%). `stdChecks(c, reqs, row)` trong check(): tần số / số pha / cosφ / điện áp đọc từ header + dòng tổ máy của cấu hình ("50HZ PF=0.8 400/230V 3Phase 4Wire") → met byCode (điện áp chỉ khi đúng số HSMT, 380/220 vs 400/230 để yên); bỏ qua mục có quá tải/biến thiên/khởi động/ắc quy/động cơ. `rankConfigs` gộp cấu hình trùng động cơ+đầu phát (+BĐK giống hoặc thiếu) → chuyển NCC sang cấu hình đầu, tối đa 3 cấu hình một động cơ. `answer()` với `req.auto && from==="sync"`: không thấy kVA ở tên/generatorCapacity/technicalSpecs → đăng configmatch rỗng kèm message, không chạy agent, không gửi giá; `autoBidprice` bỏ qua khi kva null; bot `autoConfigRow(meta, result)` cũng chặn từ trước. Phân tích/specs có `generatorSets` [{qty, primeKva, standbyKva, primeKw, standbyKw, phases, quote}] (setsOf lọc) → `bidhist.config.sets`; web `capacityOf` ưu tiên. Chưa làm: tiêu hao 50/75% tải.
+
+**Bộ mã yêu cầu (Khoa 06/11, PR #440, `suppliers/reqcodes.mjs`):** ~75 mã cố định (power_prime, voltage, phases, cylinders, alt_insulation, ctl_protection… + `other`), mỗi mã quyết định `item`/`part`/`level`; `codeOf` đọc mã từ item khi agent không ghi (ưu tiên mã cùng part; thứ tự danh sách quyết định khi trùng chữ: coolant_capacity trước cooling, alt_vreg/freq_regulation trước voltage/frequency); `check` gộp yêu cầu trùng mã, đổi tên check (`itemWas`); `missingCodes` dò mã trong phần kỹ thuật HSMT (ô bảng > 240 ký tự cắt thành mệnh đề) → lệnh check in "MÃ YÊU CẦU CHƯA CÓ" cho agent đọc lại; `REQ_VERSION` 4. `hsmtTextOf` giờ ghi thông báo mời thầu thành chữ (trước là JSON một dòng). Thêm mã mới: thêm dòng `R(...)` đúng vị trí thứ tự + test `reqcodes.test.mjs`; ánh xạ 10 lượt cũ bằng script codemap (scratchpad, dễ viết lại: configmatch → codeOf). Lượt thật IB2600602880 sau đổi: 47/47 có mã, 30 đạt/23 chưa rõ, 4 cấu hình trùng gộp 1.
 
 **Rà sót yêu cầu (06/11, PR #425):** 8 gói có Gợi ý: agent tự lập yêu cầu nên có lượt bỏ cả phần BĐK (IB2600592658), đồng bộ/OEM, prototype, ISO 8528, bồn dầu, độ ồn, kích thước. prep ghi specs.json (technicalSpecs Phân tích) → check in "CÓ THỂ SÓT YÊU CẦU" (`uncoveredSpecs`, theo chủ đề); prompt bước 1 liệt kê loại không được bỏ; REQ_VERSION 3. Chưa chốt với Khoa: đại diện hãng tại VN/MAF, tiêu chuẩn ISO/prototype có tính vào xếp hạng không (hiện là genset core, thường chưa rõ như nhau).
 
