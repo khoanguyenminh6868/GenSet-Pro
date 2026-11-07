@@ -573,12 +573,14 @@ const local = {
 };
 
 // ---------- State ----------
+const DEFAULT_SORT = { col: "no", dir: -1 };
 const state = {
   db: null,
   feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
-  sort: local.get("gridSort3", { col: "no", dir: -1, v: 3 }),
+  // Every status tab opens on newest posting date first (Khoa 2026-11-07); a header click resorts only until the tab changes.
+  sort: { ...DEFAULT_SORT },
   filters: {},
   open: null, dtab: "info",
 };
@@ -913,8 +915,8 @@ async function dbSet(path, data) {
 // share their own view without changing anyone else's.
 const viewDoc = () => "prefs/view" + (window.genbidEmail ? ":" + window.genbidEmail : "");
 function saveView() {
-  local.set("stage", state.stage); local.set("gridSort3", state.sort);
-  if (state.db) dbSet(viewDoc(), { stage: state.stage, sort: state.sort });
+  local.set("stage", state.stage);
+  if (state.db) dbSet(viewDoc(), { stage: state.stage });
 }
 async function saveTracked(id, rec) {
   if (state.readOnly) { toast("Đăng nhập để chỉnh sửa. Đây là bản chỉ xem."); return; }
@@ -1051,9 +1053,7 @@ async function initDb() {
   db.doc(viewDoc()).onSnapshot((snap) => {
     const v = snap.exists ? snap.data() : null;
     if (!v) return;
-    if (v.stage && v.stage !== state.stage) { state.stage = v.stage; state.limit = pageSize(); }
-    // Sorts saved before Mã Số sorted by the number itself are dropped, so everyone starts on newest Mã Số.
-    if (v.sort?.col && v.sort.v === 3) state.sort = v.sort;
+    if (v.stage && v.stage !== state.stage) { state.stage = v.stage; state.sort = { ...DEFAULT_SORT }; state.limit = pageSize(); }
     renderAll();
   }, () => {});
   subscribe("tracked", "tracked");
@@ -1266,11 +1266,12 @@ function renderGrid() {
   const all = allTenders();
   if (!all.length) { box.innerHTML = h`<div class="empty"><b>Chưa có gói thầu nào</b><br>Danh sách được nạp từ muasamcong mỗi sáng. Bấm Refresh để tải lại.</div>`; $("#count").textContent = ""; return; }
   const col = COLS.find((c) => c.k === state.sort.col) || COLS[0];
+  // Ties and blanks fall back to newest posting date first.
+  const byPub = (a, b) => pubOf(b).localeCompare(pubOf(a)) || String(b.notifyNo || "").localeCompare(String(a.notifyNo || ""));
   const items = all.filter(passFilters).sort((a, b) => {
-    const x = col.val(a), y = col.val(b);
-    if (x == null || x === "") return 1;
-    if (y == null || y === "") return -1;
-    return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "vi", { numeric: true })) * state.sort.dir;
+    const x = col.val(a), y = col.val(b), nx = x == null || x === "", ny = y == null || y === "";
+    if (nx || ny) return nx - ny || byPub(a, b);
+    return ((typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "vi", { numeric: true })) * state.sort.dir) || byPub(a, b);
   });
   $("#count").textContent = `${items.length}/${all.filter(inTab).length} ${state.stage === "project" ? "dự án" : "gói"}`;
   const np = $("#newProject"); np.hidden = state.stage !== "project" || !!state.readOnly;
@@ -3733,7 +3734,7 @@ document.addEventListener("click", async (e) => {
   const th = e.target.closest("[data-sort]");
   if (th) {
     const k = th.dataset.sort;
-    state.sort = state.sort.col === k ? { col: k, dir: -state.sort.dir, v: 3 } : { col: k, dir: k === "no" ? -1 : 1, v: 3 };
+    state.sort = state.sort.col === k ? { col: k, dir: -state.sort.dir } : { col: k, dir: k === "no" ? -1 : 1 };
     state.limit = pageSize(); saveView(); renderGrid(); return;
   }
   if (e.target.closest("#runQueueBtn")) { e.stopPropagation(); requestAnalysis(queue().map((t) => t._key)); return; }
@@ -3815,7 +3816,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "hsRun") { runHsdt(e.target.dataset.key); return; }
   if (e.target.closest("#hsDocx")) { hsdtDocx(e.target.closest("#hsDocx").dataset.key); return; }
   const st = e.target.closest("#stageTabs [data-stage]");
-  if (st) { state.stage = st.dataset.stage; saveView(); state.filters.stage = ""; state.limit = pageSize(); renderAll(); return; }
+  if (st) { state.stage = st.dataset.stage; state.sort = { ...DEFAULT_SORT }; saveView(); state.filters.stage = ""; state.limit = pageSize(); renderAll(); return; }
   const dt = e.target.closest("#dtabs [data-dt]");
   if (dt && !dt.disabled) { state.dtab = dt.dataset.dt; openSizesReset(); renderDrawer(); return; }
   if (e.target.closest("#trAddSec")) { const el = $("#trEdit"); el.insertAdjacentHTML("beforeend", "<h3>New section</h3><ul><li></li></ul>"); const h3 = el.lastElementChild.previousElementSibling; h3.focus(); getSelection().selectAllChildren(h3); saveTrEdit(state.open, secsToText(trFromDoc() || [])); histRecord(el); return; }
