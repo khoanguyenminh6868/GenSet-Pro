@@ -98,11 +98,19 @@ function Find-Claude {
         Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty FullName
 }
 
-# Mỗi lần hỏi cũng là nhịp tim cho bản web (botstatus/current), để web biết máy Windows đang bật.
-function Get-Pending([switch]$Running) {
+# Lần hỏi cũng là nhịp tim cho bản web (botstatus/current), để web biết máy Windows đang bật (web báo tắt sau 3 phút
+# im lặng). Nhịp tim chỉ ghi mỗi ~1 phút hoặc khi đổi running; các lần hỏi khác gửi beat=0 (bớt log Supabase, 2026-11-08).
+# -BeatOnly: chỉ để gửi nhịp tim; chưa tới lúc thì không hỏi gì.
+$script:LastBeat = [datetime]::MinValue
+$script:LastBeatRunning = $null
+function Get-Pending([switch]$Running, [switch]$BeatOnly) {
+    $now = Get-Date
+    $beat = ($now - $script:LastBeat).TotalSeconds -ge 55 -or $script:LastBeatRunning -ne [bool]$Running
+    if ($BeatOnly -and -not $beat) { return $null }
     $token = (Get-Content $IngestTokenFile -TotalCount 1).Trim()
-    $url = $Endpoint + $(if ($Running) { '&running=1' })
+    $url = $Endpoint + $(if ($Running) { '&running=1' }) + $(if (-not $beat) { '&beat=0' })
     $r = Invoke-WebRequest $url -Headers @{ Authorization = "Bearer $token" } -UseBasicParsing -TimeoutSec 60
+    if ($beat) { $script:LastBeat = $now; $script:LastBeatRunning = [bool]$Running }
     [Text.Encoding]::UTF8.GetString($r.RawContentStream.ToArray()) | ConvertFrom-Json
 }
 
@@ -298,7 +306,7 @@ function Wait-Worker($p, [string]$out) {
             Log "Lượt worker quá $RunTimeoutMinutes phút, đã dừng."
             return "Agent chạy quá $RunTimeoutMinutes phút nên đã dừng. Anh thử gửi lại yêu cầu."
         }
-        if (-not $Job) { try { [void](Get-Pending -Running) } catch {} }
+        if (-not $Job) { try { [void](Get-Pending -Running -BeatOnly) } catch {} }
     }
     $code = try { $p.ExitCode } catch { $null }
     Log "Lượt worker xong, mã thoát $code."
