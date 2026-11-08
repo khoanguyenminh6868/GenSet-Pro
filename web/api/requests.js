@@ -47,7 +47,9 @@ export default async function handler(req, res) {
     // The dates of every request type are read in one Supabase request (each request is a line of Supabase's log
     // ingestion, and this runs every 15 s); only the pending rows are then read whole.
     if (req.query?.kind === "all") {
-      const [marks] = await Promise.all([marksOf(ALL_REQ), heartbeat(req.query.running)]);
+      // beat=0: the bot (GenBid-Bot.ps1) wrote the heartbeat less than a minute ago; the page waits 3 minutes before
+      // saying the PC is off. Without beat (an older bot) the heartbeat is written every poll, as before.
+      const [marks] = await Promise.all([marksOf(ALL_REQ), req.query.beat === "0" ? null : heartbeat(req.query.running)]);
       const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks), reqsOf("specreq", marks)]);
       return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec });
     }
