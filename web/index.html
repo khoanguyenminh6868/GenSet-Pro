@@ -147,8 +147,9 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .lrow{display:flex;flex-direction:column;gap:3px;text-align:left;border:1px solid var(--line);background:var(--panel2);border-radius:8px;padding:9px 11px;color:var(--fg)}
 .lrow:hover{border-color:var(--violet)}
 /* Ghi chú nội bộ in the list (Khoa, 2026-11-09): under Hình thức on a desktop, under Địa điểm on a phone. */
-.nline{color:var(--fg);font-size:12.5px;margin-top:4px;white-space:pre-line;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.nline::before{content:"Ghi chú: ";color:var(--dim)}.mnote{display:none}
-a.invlink{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}a.invlink:hover{color:var(--violet);text-decoration-color:currentColor}
+/* Overview: investor in the banner yellow (--brand), close date red like the grid, grid note orange (Khoa, 2026-11-09). */
+.nline{color:var(--orange);font-size:12.5px;margin-top:4px;white-space:pre-line;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.nline::before{content:"Ghi chú: ";color:var(--dim)}.mnote{display:none}
+a.invlink{color:var(--brand);font-weight:600;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px}a.invlink:hover{text-decoration-color:currentColor}
 .invsum{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 
 /* Status tabs */
@@ -272,7 +273,7 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .kv{display:grid;grid-template-columns:minmax(120px,34%) minmax(0,1fr);gap:6px 12px;font-size:13.5px;margin:0}
 .kv.kvo{grid-template-columns:110px minmax(0,1fr)}
 .kv dt{color:var(--muted)}.kv dd{margin:0;overflow-wrap:anywhere}
-.kv dd.hl-price{color:var(--mint);font-weight:600}.kv dd.hl-close{color:var(--orange);font-weight:600}
+.kv dd.hl-price{color:var(--mint);font-weight:600}.kv dd.hl-close{color:var(--rose);font-weight:600}
 .doclist{display:flex;flex-direction:column;gap:6px}
 .docrow{display:flex;gap:10px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;flex-wrap:wrap}
 .docrow .fn{flex:1;min-width:160px;overflow-wrap:anywhere;font-size:13px}
@@ -428,7 +429,7 @@ details.sec>div{margin-top:10px}
   table.grid td.c-offerer::before,table.grid td.c-cap::before,table.grid td.c-loc::before{content:attr(data-l);position:absolute;left:0;top:1px;color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
   table.grid td.c-offerer .mform{display:block;position:relative;margin:6px 0 0 -96px;padding-left:96px}
   table.grid td.c-offerer .mform::before{content:attr(data-l);position:absolute;left:0;top:1px;color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
-  table.grid td.c-loc .mnote{display:block;position:relative;margin:6px 0 0 -96px;padding-left:96px;white-space:pre-line}
+  table.grid td.c-loc .mnote{display:block;position:relative;margin:6px 0 0 -96px;padding-left:96px;white-space:pre-line;color:var(--orange)}
   table.grid td.c-loc .mnote::before{content:attr(data-l);position:absolute;left:0;top:1px;color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
   table.grid td.c-cap .src{display:inline;margin-left:6px}
   table.grid td[colspan]{grid-column:1/-1}
