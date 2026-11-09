@@ -591,7 +591,8 @@ export function powerMins(t) {
   const list = own.length && prime.every(altFits) ? own : prime;
   const unit = list.some((v) => v.kVA != null) ? "kVA" : "kW", same = list.filter((v) => v[unit] != null).sort((a, b) => a[unit] - b[unit]);
   const p = same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
-  return { minPrime: p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)) };
+  // The 75 % and 50 % load limits of the HSMT (2026-11-09: 475 of 1,237 fuel lines of the analyses are at 75 %).
+  return { minPrime: p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(fuel.filter((x) => x.load === 75).map((x) => x.v)), maxFuel50: one(fuel.filter((x) => x.load === 50).map((x) => x.v)) };
 }
 // The displacement (L) and the cylinders of an engine as its facts give them.
 const litres = (v) => { const n = numbersIn(v)[0]; return n == null ? null : n > 100 ? n / 1000 : n; };
@@ -610,6 +611,8 @@ export function plausible(hints, cap) {
   const mpKva = mp ? (mp.kVA ?? (mp.kW != null ? mp.kW / 0.8 : null)) : null;
   if (mpKva != null && (mpKva < kva * 0.5 || mpKva > kva * 1.6)) out.minPrime = null;
   if (hints.maxFuel != null && (hints.maxFuel < kva * 0.12 || hints.maxFuel > kva * 0.6)) out.maxFuel = null;
+  if (hints.maxFuel75 != null && (hints.maxFuel75 < kva * 0.09 || hints.maxFuel75 > kva * 0.45)) out.maxFuel75 = null;
+  if (hints.maxFuel50 != null && (hints.maxFuel50 < kva * 0.06 || hints.maxFuel50 > kva * 0.3)) out.maxFuel50 = null;
   if (hints.minDisp != null && hints.minDisp > Math.max(4, kva * 0.15)) out.minDisp = null;
   if (hints.minCyl != null && kva < 60 && hints.minCyl > 4) out.minCyl = null;
   // A largest displacement below the least one, or too small for this power, is another genset's.
@@ -662,9 +665,11 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const lowPrime = pr && mp && ((mp.kVA && pr.kVA != null && pr.kVA < mp.kVA * 0.995) || (!mp.kVA && mp.kW && pr.kW != null && pr.kW < mp.kW * 0.995));
       if (lowPrime) { score -= 600; why.push(`Prime ${pr.kVA ?? "?"} kVA / ${pr.kW ?? "?"} kW < ${mp.kVA ? `${mp.kVA} kVA` : `${mp.kW} kW`} HSMT yêu cầu`); }
       // Its own fuel consumption in L/h above the most the HSMT allows.
-      const fl = hints.maxFuel && (u.specs || []).find((x) => x.key === "fuel" && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`));
-      const fv = fl ? numbersIn(fl.value)[0] : null;
-      if (fv != null && fv > hints.maxFuel) { score -= 300; why.push(`tiêu hao ${fv} L/h > ${hints.maxFuel} L/h HSMT cho phép`); }
+      for (const [fk, hk, at] of [["fuel", "maxFuel", ""], ["fuel75", "maxFuel75", " ở 75% tải"], ["fuel50", "maxFuel50", " ở 50% tải"]]) {
+        const fl = hints[hk] && (u.specs || []).find((x) => x.key === fk && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`));
+        const fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null;
+        if (fv != null && fv > hints[hk]) { score -= 300; why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
+      }
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
       if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
@@ -997,7 +1002,8 @@ const ITEM_KEYS = [
   [/dung tích(?!\s*(?:của\s*)?(?:nước|chất làm mát|làm mát|nhớt|dầu|nhiên liệu|bình|thùng|két|bồn))|displacement/i, ["disp", "bore"]], [/đường kính|hành trình|\bbore\b|stroke/i, ["bore"]], [/^(?!.*(?:đường kính|hành trình|\bbore\b|stroke)).*(?:xi ?lanh|xy ?lanh|cylinder)/i, ["cyl"]], [/(tiêu chuẩn|mức|cấp) khí thải|emission|\b(euro|tier|stage)\b/i, ["emission"]],
   [/làm mát|cooling/i, ["cooling"]], [/^(?!.*\blọc\b).*(?:dầu bôi trơn|nhớt|lubricat)/i, ["oil"]], [/sóng hài|THD|harmonic/i, ["thd"]],
   [/(ổn định|biến thiên|điều chỉnh|dao động) điện áp|voltage regulation/i, ["vreg"]], [/AVR/i, ["vreg"]], [/kích từ|excit/i, ["excit"]],
-  [/hiệu suất|efficiency/i, ["eff"]], [/tiêu hao nhiên liệu|fuel consumption/i, ["fuel"]], [/độ ồn|noise/i, ["noise"]],
+  [/hiệu suất|efficiency/i, ["eff"]], [/ti[êe]u (hao|th[ụu])[^\n]{0,40}75\s*%|75\s*%[^\n]{0,30}ti[êe]u (hao|th[ụu])/i, ["fuel75"]], [/ti[êe]u (hao|th[ụu])[^\n]{0,40}50\s*%|50\s*%[^\n]{0,30}ti[êe]u (hao|th[ụu])/i, ["fuel50"]],
+  [/tiêu hao nhiên liệu|tiêu thụ nhiên liệu|fuel consumption/i, ["fuel"]], [/độ ồn|noise/i, ["noise"]],
   [/kích thước|dimension/i, ["dims"]], [/khối lượng|trọng lượng|weight/i, ["weight"]], [/bồn dầu|bình (nhiên liệu|dầu)|fuel tank/i, ["tank"]],
   [/(ổn định|biến thiên|dao động) tần số|frequency regulation/i, ["freg"]], [/hệ số công suất|cos\s?[φϕø]/i, ["pf"]],
   [/tốc độ|vòng quay|rpm/i, ["speed"]], [/dòng điện/i, ["current"]],
@@ -1342,6 +1348,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     }
     c.checks = (c.checks || []).filter((x) => !isSyncItem(x.item));
     stdChecks(c, result.requirements || [], rowOf(c.genset?.src || c.engine?.src));
+    fuelChecks(c, result.requirements || [], rowOf(c.genset?.src || c.engine?.src));
     if (sync) {
       // The make of each part: as the configuration writes it, as the catalog reads the model, or from the model code.
       const recMake = (list, m) => (list || []).find((x) => x.key === CAT.keyOf(m || ""))?.make || "";
@@ -1498,6 +1505,35 @@ const STD_ITEMS = [
 ];
 const STD_SKIP = /qu[áa]\s*t[ảa]i|bi[ếe]n\s*thi[êe]n|sai\s*s[ốo]|[ổo]n\s*[đd][ịi]nh|đi[ềe]u\s*ch[ỉi]nh|kh[ởo]i\s*[đd][ộo]ng|[ắa]c\s*quy|\bDC\b|k[íi]ch\s*t[ừu]|đ[ộo]ng\s*c[ơo]|engine|đ[ộo]\s*m[éeè]o|THD/i;
 const STD_CODE = { freq: "frequency", phase: "phases", pf: "power_factor", voltage: "voltage" };
+// Fuel consumption in L/h at 100 / 75 / 50 % load (2026-11-09): when the HSMT gives a limit in L/h and the configuration's
+// own genset row gives the figure at that load in L/h (catalog.js fuel / fuel75 / fuel50), the code compares them; a
+// g/kWh figure or a limit in another unit is left to the agent (conversions).
+const FUEL_CODE = { fuel_consumption: "fuel", fuel_consumption_75: "fuel75", fuel_consumption_50: "fuel50" }, FUEL_LOAD = { fuel: 100, fuel75: 75, fuel50: 50 };
+// The figure of a fuel spec at a load: a label naming two loads ("Fuel L/h @75% / @100%") with two figures gives the one in
+// the load's position; otherwise the first figure.
+export function fuelAt(x, load) {
+  const pcts = [...String(x.label || "").matchAll(/(\d{2,3})\s*%/g)].map((m) => Number(m[1])), nums = numbersIn(x.value);
+  if (pcts.length >= 2 && nums.length >= pcts.length) { const i = pcts.indexOf(load); return i >= 0 ? nums[i] : null; }
+  return nums[0] ?? null;
+}
+const LH_UNIT = /l\s*\/\s*h|l\/hr|lph|l[íi]t\s*\/\s*(gi[ờo]|h)|litres?\s*\/\s*h(our)?/i;
+export function fuelChecks(c, reqs, row) {
+  if (!row) return;
+  for (const r of reqs) {
+    const key = FUEL_CODE[r.code];
+    if (!key) continue;
+    const m = `${r.requirement || ""} ${r.quote || ""}`.match(/(?:≤|<=|<|t[ốo]i\s*đa|kh[ôo]ng\s*(?:l[ớo]n|v[ưư][ợo]t|qu[áa])(?:\s*h[ơo]n)?)\s*:?\s*(\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t|l|L)\s*\/\s*(?:gi[ờo]|h)(?![a-z])/i);
+    if (!m) continue;
+    const max = Number(m[1].replace(",", ".")), s = (row.specs || []).find((x) => x.key === key && LH_UNIT.test(`${x.label} ${x.value}`));
+    const v = s ? fuelAt(s, FUEL_LOAD[key]) : null;
+    if (v == null) continue;
+    const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+    if (x && (x.status === "met" || x.status === "not_met") && !x.unverified) continue;
+    const check = { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `${s.value} (${s.label})`, sourceQuote: row.line, part: "genset", level: r.level || "core", status: v <= max + 1e-9 ? "met" : "not_met", byCode: true,
+      note: `Code so ${v} L/h của dòng tổ máy với mức HSMT ≤ ${max} L/h.` };
+    if (x) { delete x.unverified; delete x.hint; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
+  }
+}
 export function stdChecks(c, reqs, row) {
   if (!row) return;
   const lines = [...(row.header || []), row.line || "", row.title || ""].filter(Boolean);

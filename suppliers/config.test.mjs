@@ -332,3 +332,34 @@ test("rankConfigs: rows of one engine + alternator merge their suppliers; at mos
   assert.deepEqual(r.configs[0].suppliers.map((s) => s.supplierId), ["a", "b"]);
   assert.equal(r.configs[0].controller.model, "DSE6120");
 });
+
+test("fuelChecks: the HSMT's L/h limit at a load against the row's figure at that load (2026-11-09)", async () => {
+  const { engineMins } = await import("./config-bot.mjs");
+  const sup3 = [{ id: "f", specTables: [{ n: 101, title: "", header: ["| Model | Prime kVA | Engine | Fuel 75% load | Fuel Consumption", "| | | | L/h | L/h"], rows: ["| X450 | 450 | 2506C-E15TAG1 | 60 | 80 |"] }] }];
+  const row3 = { kind: "catalog", supplierId: "f", n: 101, line: "| X450 | 450 | 2506C-E15TAG1 | 60 | 80 |" };
+  const hs = "Tiêu hao nhiên liệu ở 75% tải ≤ 65 lít/giờ\nTiêu hao nhiên liệu 100% tải ≤ 75 lít/giờ\nTiêu hao nhiên liệu 50% tải ≤ 40 lít/giờ";
+  const r = { requirements: [{ item: "Tiêu hao nhiên liệu 75% tải", requirement: "≤ 65 lít/giờ", quote: "Tiêu hao nhiên liệu ở 75% tải ≤ 65 lít/giờ", part: "genset" },
+      { item: "Tiêu hao nhiên liệu 100% tải", requirement: "≤ 75 lít/giờ", quote: "Tiêu hao nhiên liệu 100% tải ≤ 75 lít/giờ", part: "genset" }, { item: "Tiêu hao nhiên liệu 50% tải", requirement: "≤ 40 lít/giờ", quote: "Tiêu hao nhiên liệu 50% tải ≤ 40 lít/giờ", part: "genset" }],
+    configs: [{ rank: 1, engine: { model: "2506C-E15TAG1", src: row3 }, genset: { model: "X450", src: row3 }, checks: [{ item: "Tiêu hao nhiên liệu 100% tải", offered: "", sourceQuote: "", part: "genset", status: "unclear" }] }] };
+  const { result } = check(r, { hsmtText: hs, suppliers: sup3, readWeb });
+  const st = Object.fromEntries(result.configs[0].checks.map((x) => [x.item, x.status]));
+  // 60 ≤ 65 at 75 %: met; 80 > 75 at 100 %: not met; no 50 % figure in the row: nothing written.
+  assert.deepEqual(st, { "Tiêu hao nhiên liệu 75% tải": "met", "Tiêu hao nhiên liệu 100% tải": "not_met" });
+  assert.ok(result.configs[0].checks.every((x) => x.byCode));
+  const mins = engineMins(hs);
+  assert.deepEqual([mins.maxFuel, mins.maxFuel75, mins.maxFuel50], [75, 65, 40]);
+});
+
+test("fuelChecks: a column of two loads gives the figure at the load asked (2026-11-09)", async () => {
+  const { fuelAt } = await import("./config-bot.mjs");
+  assert.equal(fuelAt({ label: "Fuel L/h @75% / @100%", value: "188.4 / 251.2" }, 75), 188.4);
+  assert.equal(fuelAt({ label: "Fuel L/h @75% / @100%", value: "188.4 / 251.2" }, 100), 251.2);
+  assert.equal(fuelAt({ label: "Fuel L/h @75% / @100%", value: "188.4 / 251.2" }, 50), null);
+  assert.equal(fuelAt({ label: "Fuel Consumption (L/h)", value: "34" }, 100), 34);
+  const sup4 = [{ id: "g", specTables: [{ n: 101, title: "", header: ["| Model | Prime kVA | Engine | Fuel L/h @75% / @100%"], rows: ["| X450 | 450 | 2506C-E15TAG1 | 60 / 80 |"] }] }];
+  const row4 = { kind: "catalog", supplierId: "g", n: 101, line: "| X450 | 450 | 2506C-E15TAG1 | 60 / 80 |" };
+  const r = { requirements: [{ item: "Tiêu hao nhiên liệu 75% tải", requirement: "≤ 65 lít/giờ", quote: "Tiêu hao 75% tải ≤ 65 lít/giờ", part: "genset" }],
+    configs: [{ rank: 1, engine: { model: "2506C-E15TAG1", src: row4 }, genset: { model: "X450", src: row4 }, checks: [] }] };
+  const { result } = check(r, { hsmtText: "Tiêu hao 75% tải ≤ 65 lít/giờ", suppliers: sup4, readWeb });
+  assert.deepEqual(result.configs[0].checks.map((x) => [x.item, x.status]), [["Tiêu hao nhiên liệu 75% tải", "met"]]);
+});

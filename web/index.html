@@ -2874,7 +2874,7 @@ const catVia = (e) => e.makes.filter((m) => e.make.split(" / ").includes(m.name)
 // Thông số khác (web/catalog.js: nhãn và giá trị chép nguyên văn từ dòng bảng). Giá trị chỉ có số thì ghép đơn vị
 // ghi trong ngoặc ở nhãn cột, không quy đổi.
 const CAT_KEY_SPECS = { engine: ["cyl", "disp", "bore", "speed", "gov", "emission"], alternator: ["eff", "insul", "ip", "excit", "vreg"] };
-const CAT_SET_SPECS = ["fuel", "noise", "dims", "weight", "tank"];
+const CAT_SET_SPECS = ["fuel", "fuel75", "fuel50", "noise", "dims", "weight", "tank"];
 const catSpecUnit = (label) => (String(label).match(/[(（]([^()（）]{1,14})[)）]\s*:?$/) || String(label).match(/,\s*([a-z/.·]{1,10})\s*$/i) || [])[1] || "";
 const catSpecText = (v, key) => (key === "cyl" || /[a-z%％一-鿿]/i.test(v.value) || !catSpecUnit(v.label) ? v.value : `${v.value} ${catSpecUnit(v.label)}`);
 const catSpec = (e, k) => e.specs?.find((g) => g.key === k);

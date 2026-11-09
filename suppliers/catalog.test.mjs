@@ -163,3 +163,14 @@ test("a one-model datasheet whose table gives no engine: the product line's one 
   assert.equal(C.fromSupplier(t).filter((x) => x.kind === "engine").length, 1);
   assert.ok(!C.fromSupplier(t)[0].fromLine);
 });
+
+test("fuel at 75 % and 50 % load: keys of their own; a one-model sheet's two units keep the L/h one; the load named before a figure decides (2026-11-09)", () => {
+  const s = rec("genset_oem", [{ n: 101, title: "GF150", header: [], rows: ["Prime Power: 150KVA/120KW", "| Engine Model: | 6BTAA5.9-G12", "| 75%Prime | 199g/KW.h | 35L/h | GB252 | GB/T2820", "| 100%Prime | 205g/KW.h | 45L/h |", "| Fuel consumption 50% (of the Prime Power) | 24 L / h"] },
+    { n: 102, title: "GF200", header: [], rows: ["Prime Power: 200KVA/160KW", "| Engine Model: | 6CTAA8.3-G2", "| 燃油消耗 CONSUMPTION (L/h) | 75% 功率 | 75% prime power | 31.2 | 50% 功率 | 50% prime power | 22.1"] }]);
+  const [a, b] = C.fromSupplier(s);
+  assert.deepEqual(Object.fromEntries(a.specs.map((x) => [x.key, x.value])), { fuel75: "35L/h", fuel: "45L/h", fuel50: "24 L / h" });
+  assert.deepEqual(Object.fromEntries(b.specs.map((x) => [x.key, x.value])), { fuel75: "31.2", fuel50: "22.1" });
+  // Column titles: "Fuel 75% load" beside the full-load column.
+  const t = rec("genset_oem", [{ n: 103, title: "x", header: ["| Model | Prime kVA | Engine | Fuel 75% load | Fuel Consumption", "| | | | L/h | L/h"], rows: ["| X150 | 150 | 6BTAA5.9-G12 | 25 | 33 |"] }]);
+  assert.deepEqual(Object.fromEntries(C.fromSupplier(t)[0].specs.map((x) => [x.key, x.value])), { fuel75: "25", fuel: "33" });
+});
