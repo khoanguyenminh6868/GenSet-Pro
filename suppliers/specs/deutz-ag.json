@@ -1,1 +1,25 @@
-[]
+[
+ {
+  "n": 101,
+  "url": "https://www.deutz.com/en/products/gas-and-gasoline-engines/",
+  "title": "DEUTZ G 2.2/2.9: Water-cooled gas and gasoline engines : DEUTZ AG",
+  "header": [],
+  "rows": [
+   "| | TECHNICAL DATA | G 2.2 | G 2.9",
+   "| Number of cylindersS | 3 | 4",
+   "| Bore | 92 mm | 92 mm",
+   "| Stroke | 110 mm | 110 mm",
+   "| Displacement | 2.2 l | 2.9 l",
+   "| Maximum nominal speed | 2800 rpm | 2800 rpm",
+   "| Power output * | 41.5 kW | 54 kW",
+   "| at speeds | 2800 rpm | 2800 rpm",
+   "| Max. torque * | 160 Nm | 210 Nm",
+   "| at speeds | 1600 rpm | 1600 rpm",
+   "| Min. idling speed | 900 rpm | 900 rpm",
+   "| Length | 576 mm | 678 mm",
+   "| Width | 647 mm | 572 mm",
+   "| Height | 747 mm | 734 mm",
+   "| Weight | 208 kg | 220 kg"
+  ]
+ }
+]
