@@ -225,7 +225,7 @@ td.r{text-align:right}
 .src{font-size:11px;color:var(--dim)}
 .cap{font:600 13px var(--f-mono);color:var(--fg)}
 .chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:1px 8px;font-size:11.5px;font-weight:600;white-space:nowrap;border:1px solid transparent}
-.chip.ok{background:var(--mint-soft);color:var(--mint)}
+.chip.ok{background:var(--mint-soft);color:var(--mint)}.chip svg{width:12px;height:12px;flex:none}.btn.wonf svg{width:13px;height:13px;vertical-align:-2px}
 .chip.bad{background:var(--rose-soft);color:var(--rose)}
 .chip.warn{background:var(--amber-soft);color:var(--amber)}
 .chip.run{background:var(--violet-soft);color:var(--violet)}
@@ -2467,10 +2467,27 @@ const supMakeName = (m) => m.replace(/\s*\(.*\)$/, "");
 const supAll = () => Object.values(state.supplier || {}).filter((s) => s?.id && s.status !== "incomplete" && !state.supdeleted?.[s.id])
   .sort((a, b) => (a.names?.en || a.id).localeCompare(b.names?.en || b.id));
 const supName = (s) => s?.names?.en || s?.names?.zh || s?.id || "";
+// Hàng trúng thầu của nhà cung cấp (Khoa, 2026-11-09): dòng tổ máy trúng thầu ở gói mua sắm ghi thương hiệu / tên của nó
+// (web/bidprice.js supWon). Cần lịch sử thầu (bidhist, vài MB): chỉ tải khi bật bộ lọc; đã tải ở màn khác thì chip hiện luôn.
+let supWonMemo = { k: null, map: null };
+function supWonMap() {
+  if (!state.bidhist) return null;
+  const k = [state.bidhist, state.bidders, state.supplier, state.supdeleted];
+  if (supWonMemo.k && k.every((x, i) => x === supWonMemo.k[i])) return supWonMemo.map;
+  return (supWonMemo = { k, map: window.GenbidBidprice.supWon(supAll(), histDocs()) }).map;
+}
+const supWonOf = (id) => supWonMap()?.get(id) || [];
+const supWonN = (id) => new Set(supWonOf(id).map((x) => x.key)).size;
+function supWonChip(s) {
+  const a = supWonOf(s.id), n = new Set(a.map((x) => x.key)).size;
+  if (!n) return "";
+  const tip = a.slice(0, 6).map((x) => `${x.key}: ${x.bidder} — ${String(x.item).slice(0, 60)} (${x.where === "set" ? "hãng/nhãn hiệu" : "trong cấu hình"}: ${x.word})`).join("\n") + (a.length > 6 ? `\n… và ${a.length - 6} dòng hàng nữa` : "");
+  return h`<div><span class="chip ok" title="${tip}">${raw(STAGE_ICON.win)} Trúng ${n} gói</span></div>`;
+}
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
-let supFilter = { fav: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
+let supFilter = { fav: false, won: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
 // Sort by founding year or country (Khoa, 2026-11-04): click a header for ▲, again for ▼, a third time back to A–Z; a supplier with no value goes last.
 let supSort = { k: "", dir: 0 };
 const SUP_SORT = { year: (s) => s.founded || null, country: (s) => supCountryName(s) || null };
@@ -2573,6 +2590,7 @@ function supLinesFor(s, f = supFilter) {
 function supMatches(s) {
   const f = supFilter, q = f.q.trim().toLowerCase();
   if (f.fav && !supFav(s.id)) return false;
+  if (f.won && !supWonN(s.id)) return false;
   if (f.role && s.role !== f.role) return false;
   if (f.conf && s.confidence !== f.conf) return false;
   if (f.country && !supCountryIn(s.country, f.country)) return false;
@@ -2640,6 +2658,7 @@ function renderSuppliers() {
       <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="${matchMedia("(max-width:640px)").matches ? "Công suất cần" : "vd. 500"}">
       <select id="supUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
       <button type="button" class="btn sm" id="supFavF" aria-pressed="${String(f.fav)}" style="${f.fav ? "border-color:#f5b301;color:#b07d00" : ""}">${f.fav ? "★" : "☆"} Yêu thích</button>
+      <button type="button" class="btn sm wonf" id="supWonF" aria-pressed="${String(f.won)}" title="Nhà cung cấp có thương hiệu / tên trong hàng tổ máy trúng thầu ở gói mua sắm máy phát (lịch sử thầu muasamcong)" style="${f.won ? "border-color:var(--mint);color:var(--mint)" : ""}">${raw(STAGE_ICON.win)} Có hàng trúng thầu</button>
       <span class="spacer"></span><span class="muted small" id="supCount"></span>
     </div></div>
     <div class="mscroll"><div id="supList"></div></div>`;
@@ -2656,20 +2675,26 @@ function renderSuppliers() {
   $("#supPower").oninput = (e) => set("power", e.target.value);
   $("#supUnit").onchange = (e) => set("unit", e.target.value);
   $("#supFavF").onclick = () => { supFilter = { ...supFilter, fav: !supFilter.fav }; renderSuppliers(); };
+  $("#supWonF").onclick = () => {
+    supFilter = { ...supFilter, won: !supFilter.won };
+    renderSuppliers();
+    if (supFilter.won && !state.bidhist) loadHist().then(() => { if ($("#supList")) renderSupList(); });
+  };
 }
 function renderSupList() {
+  if (supFilter.won && !state.bidhist) { if ($("#supCount")) $("#supCount").textContent = ""; $("#supList").innerHTML = progress("Đang tải lịch sử thầu..."); return; }
   const list = supAll().filter(supMatches), filtered = supLineFiltered();
   if (supSort.k) {
     const v = SUP_SORT[supSort.k];
     list.sort((x, y) => { const a = v(x), b = v(y); return (a == null) - (b == null) || (a == null ? 0 : supSort.dir * (typeof a === "number" ? a - b : a.localeCompare(b, "vi"))); });
   }
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
-  filtNote("supFilt", [supFilter.fav, supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
+  filtNote("supFilt", [supFilter.fav, supFilter.won, supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th>${raw(supSortTh("country", "Quốc gia", "Quốc gia"))}${raw(supSortTh("year", "Năm TL", "Năm thành lập"))}<th>Dòng máy</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
     return h`<tr data-supopen="${s.id}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}</td>
-      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
+      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s))}</td>
       <td data-l="Quốc gia">${supCountryName(s) || "—"}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
       <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
