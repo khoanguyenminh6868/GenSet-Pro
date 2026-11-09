@@ -96,9 +96,15 @@
   // Each entry: key, scope, Vietnamese name, label pattern, labels to leave out, and the shape a value must have
   // (a value of another shape means the column did not line up with its title).
   const N = /\d/, TXT = /[a-z一-鿿]{3}/i, BY = /\d\s*[*×xX/]\s*\d/;
+  // A fuel figure: "35L/h", "199g/KW.h", "0.191", "31,5".
+  const FUEL_OK = /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(%|l\s*\/\s*h(r|our)?|lph|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|kg\/kw\w*[·.-]?h\w*|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h|litres?\/h(our)?|gal\/h)?\s*$/i, NOT_FUEL = /lub|oil\s*consum|air\s*consum|fan/i;
   const SPECS = [
     ["tank", "genset", "Bình nhiên liệu", /fuel\s*tank|fuel\s*capacity|tank\s*capacity|油箱/i, null, N],
-    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃气消耗|tiêu hao/i, /lub|oil\s*consum|air\s*consum|fan/i, /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(%|l\/h|l\/hr|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h)?\s*$/i],
+    // Part loads first: "75%Prime", "75% load(Prime power)", "Fuel consumption75% (of the Prime Power)", "Fuel @75% (L/h)",
+    // "75 % Load" (a column title), "75%负载油耗", "3/4 load" (2026-11-09).
+    ["fuel75", "genset", "Tiêu hao nhiên liệu 75% tải", /(75\s*%|3\/4)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(75\s*%|3\/4\s*(load|prp))|@\s*75\s*%/i, NOT_FUEL, FUEL_OK],
+    ["fuel50", "genset", "Tiêu hao nhiên liệu 50% tải", /(50\s*%|1\/2)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(50\s*%|1\/2\s*(load|prp))|@\s*50\s*%/i, NOT_FUEL, FUEL_OK],
+    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃气消耗|tiêu hao|100\s*%\s*(load|prime|prp|功率|负载)/i, NOT_FUEL, FUEL_OK],
     ["noise", "genset", "Độ ồn", /noise|sound\s*(level|pressure)|噪音|噪声|độ ồn|\bdb\(?a?\)?\b/i, null, /(^|\D)([4-9]\d|1[01]\d)(?!\d)/],
     ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*[wm]\s*[x×*]\s*h|尺寸|kích thước/i, null, BY],
     ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng|^\s*kgs?\s*(\(|$)/i, null, /^[≈~]?\s*\d/],
@@ -141,7 +147,7 @@
   function specKeyOf(L) {
     if (!L || L.length > 70 || /\bmodel\b|型号|brand|make|品牌|厂家/i.test(L)) return null;
     // Genset power is read on its own (powersIn); an engine's own output is kept here.
-    if (/power|output|capacity|rating|功率/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|tank|fuel/i.test(L)) return null;
+    if (/power|output|capacity|rating|功率/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
     for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
     return null;
   }
@@ -267,6 +273,21 @@
       if (bareModel && !part && /^(model|model\s*no\.?|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, ALT_CODE.test(vals[0]) ? "alternator" : "engine", vals[0]); continue; }
       if (part && /^(brand|make|manufacturer|品牌|厂家|制造商)$/.test(bare)) { put(0, part === "engine" ? "engineBrand" : "altBrand", vals[0]); continue; }
       const sk = specKey(label);
+      if (sk && /^fuel/.test(sk) && !W) {
+        const col = (cols[0] = cols[0] || {}), specs = (col.specs = col.specs || []), got = {};
+        let load = sk === "fuel75" ? 75 : sk === "fuel50" ? 50 : 100;
+        for (const v of c.slice(1)) {
+          const pct = String(v).match(/^\D*(\d{2,3})\s*%\s*\D*$/);
+          if (pct && !/^[≤<~≈]?\s*\d[\d.,]*\s*%$/.test(String(v).trim())) { load = Number(pct[1]); continue; }
+          const val = specVal(v), k = load === 75 ? "fuel75" : load === 50 ? "fuel50" : load === 100 ? "fuel" : null;
+          if (!k || !val || !specFits(k, val)) continue;
+          const lh = /l\s*\/\s*h|l\/hr|lph|litres?\/h|lít/i.test(val);
+          if (got[k] && !(lh && !got[k].lh)) continue;
+          got[k] = { key: k, label, value: val, lh };
+        }
+        for (const g of Object.values(got)) { const i = specs.findIndex((x) => x.key === g.key); if (i < 0) specs.push({ key: g.key, label: g.label, value: g.value }); }
+        continue;
+      }
       if (sk) {
         const sv = c.slice(1).filter((v) => v && !UNIT_CELL.test(v));
         sv.forEach((v, j) => { const val = specVal(v); if (val && specFits(sk, val)) { const col = (cols[j] = cols[j] || {}); (col.specs = col.specs || []); if (!col.specs.some((x) => x.key === sk)) col.specs.push({ key: sk, label, value: val }); } });
@@ -375,6 +396,8 @@
       case "speed": return [1000, 1200, 1500, 1800, 3000, 3600].includes(x);
       case "engPower": return !kW || (x >= kW * 0.9 && x <= kW * 1.8);
       case "fuel": return x < 1.5 || (x >= 150 && x <= 260) || (kW ? x >= kW * 0.12 && x <= kW * 0.45 : x <= 800);
+      case "fuel75": return x < 1.5 || (x >= 150 && x <= 260) || (kW ? x >= kW * 0.09 && x <= kW * 0.36 : x <= 650);
+      case "fuel50": return x < 1.5 || (x >= 150 && x <= 280) || (kW ? x >= kW * 0.06 && x <= kW * 0.26 : x <= 450);
       case "noise": return x >= 40 && x <= 120;
       default: return true;
     }

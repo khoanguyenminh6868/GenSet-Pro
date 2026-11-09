@@ -561,8 +561,8 @@ test("factConflicts: one figure rounded two ways or a China level written two wa
 });
 
 test("power minimums of the HSMT: prime by the nearest word, fuel at 100% load; a row below them ranks lower", () => {
-  assert.deepEqual(powerMins("Công suất liên tục\nI.3   ≥ 400 kVA / 320 kW\n(Prime)\nCông suất dự phòng\nI.4   ≥ 440 kVA / 352 kW\n(Standby)"), { minPrime: { kVA: 400, kW: 320 }, maxFuel: null });
-  assert.deepEqual(powerMins("- Công suất liên tục tổ máy phát điện: 500kVA/ 400kW\n- Công suất dự phòng (Standby Power): 550 kVA (440 kW)."), { minPrime: { kVA: 500, kW: 400 }, maxFuel: null });
+  assert.deepEqual(powerMins("Công suất liên tục\nI.3   ≥ 400 kVA / 320 kW\n(Prime)\nCông suất dự phòng\nI.4   ≥ 440 kVA / 352 kW\n(Standby)"), { minPrime: { kVA: 400, kW: 320 }, maxFuel: null, maxFuel75: null, maxFuel50: null });
+  assert.deepEqual(powerMins("- Công suất liên tục tổ máy phát điện: 500kVA/ 400kW\n- Công suất dự phòng (Standby Power): 550 kVA (440 kW)."), { minPrime: { kVA: 500, kW: 400 }, maxFuel: null, maxFuel75: null, maxFuel50: null });
   assert.equal(powerMins("Tiêu hao nhiên liệu\n+ Ở 50% tải nhiên liệu tiêu hao ≤ 49,6 L/h\n+ Ở 75% tải nhiên liệu tiêu hao ≤ 73,2 L/h\n+ Ở 100% tải nhiên liệu tiêu hao ≤ 97,4 L/h").maxFuel, 97.4);
   assert.equal(powerMins("≤ 90 Lít/giờ tại 100% tải liên tục (Prime Power)").maxFuel, null, "the load is after the figure: not read");
   const t = (row) => [{ n: 101, title: "Weichai gensets 50Hz", header: ["| Model | Standby kVA | Standby kW | Prime kVA | Prime kW | Engine | Alternator |"], rows: [row] }];
