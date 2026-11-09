@@ -23,7 +23,8 @@ let text;
 if (type.includes("pdf") || url.toLowerCase().endsWith(".pdf")) {
   const tmp = path.join(dir, `${n}.pdf`);
   fs.writeFileSync(tmp, buf);
-  text = execFileSync("pdftotext", ["-layout", "-enc", "UTF-8", tmp, "-"], { maxBuffer: 64 << 20 }).toString("utf8");
+  try { text = execFileSync("pdftotext", ["-table", "-enc", "UTF-8", tmp, "-"], { maxBuffer: 64 << 20, stdio: ["ignore", "pipe", "ignore"] }).toString("utf8"); } // keeps a table row on one line (config-bot.mjs pdfToText)
+  catch { text = execFileSync("pdftotext", ["-layout", "-enc", "UTF-8", tmp, "-"], { maxBuffer: 64 << 20 }).toString("utf8"); }
   fs.unlinkSync(tmp);
 } else {
   const head = buf.subarray(0, 4000).toString("latin1");

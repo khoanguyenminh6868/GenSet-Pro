@@ -3670,7 +3670,8 @@ function partTables() {
   const C = window.GenbidCatalog, map = Object.create(null);
   for (const s of supAll()) for (const t of s.specTables || []) for (const line of [t.title, ...(t.rows || [])]) for (const cell of String(line || "").split("|")) {
     const w = cell.trim().split(/\s+/);
-    for (const x of [cell, ...w, ...w.slice(1).map((y, i) => w[i] + " " + y)]) { const k = C.keyOf(x.trim()); if (k.length >= 5 && k.length <= 24 && /\d/.test(k) && /[A-Z]/.test(k) && !map[k]) map[k] = s.id; }
+    // FPT writes a rating after the engine: "NEF67TE8P.A263" is the NEF67TE8P a won goods row names.
+    for (const x of [cell, ...w, ...w.map((y) => y.replace(/\.[A-Z]+\d+$/i, "")), ...w.slice(1).map((y, i) => w[i] + " " + y)]) { const k = C.keyOf(x.trim()); if (k.length >= 5 && k.length <= 24 && /\d/.test(k) && /[A-Z]/.test(k) && !map[k]) map[k] = s.id; }
   }
   partTab = { src: state.supplier, map };
   return map;
