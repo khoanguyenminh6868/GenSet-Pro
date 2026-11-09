@@ -971,6 +971,13 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
 }
 
 // ---------- save (agent: internet sources) ----------
+// A table in a PDF (a line-up: model | kWm | kWe | kVA ...) keeps each model and its figures on one line with xpdf's
+// pdftotext -table; -layout (poppler has no -table) can shift a row's figures onto the line of another model, so a
+// row copied from it names the wrong figures (FPT Unregulated Line-up, 2026-11-10).
+export function pdfToText(file) {
+  const run = (mode) => execFileSync("pdftotext", [mode, "-enc", "UTF-8", file, "-"], { maxBuffer: 64 << 20, stdio: ["ignore", "pipe", "ignore"] }).toString("utf8");
+  try { return run("-table"); } catch { return run("-layout"); }
+}
 async function save(dir, url) {
   const r = await fetch(url, { headers: { "User-Agent": UA, "Accept-Language": "en,zh-CN;q=0.8,vi;q=0.7" }, redirect: "follow", signal: AbortSignal.timeout(60000) });
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
@@ -980,7 +987,7 @@ async function save(dir, url) {
   let text;
   if (type.includes("pdf") || /\.pdf($|\?)/i.test(url)) {
     const tmp = path.join(webDir, `${n}.pdf`); fs.writeFileSync(tmp, buf);
-    text = execFileSync("pdftotext", ["-layout", "-enc", "UTF-8", tmp, "-"], { maxBuffer: 64 << 20 }).toString("utf8"); fs.unlinkSync(tmp);
+    text = pdfToText(tmp); fs.unlinkSync(tmp);
   } else {
     const head = buf.subarray(0, 4000).toString("latin1");
     const cs = (type.match(/charset=([\w-]+)/i) || head.match(/charset=["']?([\w-]+)/i) || [, "utf-8"])[1].toLowerCase();
