@@ -2,7 +2,7 @@
   "id": "kachai-hangzhou",
   "country": "CN",
   "role": "genset_oem",
-  "status": "partial",
+  "status": "verified",
   "names": {
     "en": "Zhejiang Kachai Generator Co., Ltd",
     "zh": null,
@@ -10,7 +10,7 @@
       "Kachai"
     ]
   },
-  "website": null,
+  "website": "https://www.kachai.com/",
   "hq": {
     "province": "Zhejiang",
     "city": "Hangzhou"
@@ -22,6 +22,12 @@
       "text": "Theo gian hàng Made-in-China: nhà máy tại Dư Hàng, Hàng Châu; tổ máy diesel dùng động cơ Cummins, Deutz, Doosan, Yuchai, SDEC, FAWDE",
       "src": [
         1
+      ]
+    },
+    {
+      "text": "Nhà máy ở khu công nghiệp Zheli New Journey, Thượng Ngu, Thiệu Hưng; văn phòng ở Lâm Bình, Hàng Châu",
+      "src": [
+        3
       ]
     }
   ],
@@ -40,212 +46,23 @@
       ],
       "engineModels": [],
       "alternatorMakes": [],
-      "power": null,
+      "power": {
+        "min": 9,
+        "max": 3125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
       "frequency": [],
       "voltage": [],
       "types": [],
       "emission": [],
       "standards": [],
       "src": [
-        1
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai C/KCC series (Cummins)",
-      "fuel": "diesel",
-      "engineMakes": [
-        "Cummins"
-      ],
-      "power": {
-        "min": 20,
-        "max": 1688,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2001
-        ]
-      },
-      "src": [
-        2001
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai SYC-K series (Yuchai)",
-      "fuel": "diesel",
-      "engineMakes": [
-        "Yuchai"
-      ],
-      "power": {
-        "min": 20,
-        "max": 2750,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2002
-        ]
-      },
-      "src": [
-        2002
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai SCD-K series (Cummins)",
-      "fuel": "diesel",
-      "engineMakes": [
-        "Cummins"
-      ],
-      "power": {
-        "min": 20,
-        "max": 200,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2003
-        ]
-      },
-      "src": [
-        2003
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai SDK series (Doosan)",
-      "fuel": "diesel",
-      "engineMakes": [
-        "Doosan"
-      ],
-      "power": {
-        "min": 150,
-        "max": 750,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2004
-        ]
-      },
-      "src": [
-        2004
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai SPC/SPU/SPI series (Perkins)",
-      "fuel": "diesel",
-      "engineMakes": [
-        "Perkins"
-      ],
-      "power": {
-        "min": 13,
-        "max": 2250,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2005
-        ]
-      },
-      "src": [
-        2005
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai SDD/SDH series (Deutz)",
-      "fuel": "diesel",
-      "engineMakes": [
-        "Deutz"
-      ],
-      "power": {
-        "min": 20,
-        "max": 750,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2006
-        ]
-      },
-      "src": [
-        2006
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai SSM series (Mitsubishi)",
-      "fuel": "diesel",
-      "engineMakes": [
-        "Mitsubishi"
-      ],
-      "power": {
-        "min": 625,
-        "max": 2000,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2007
-        ]
-      },
-      "src": [
-        2007
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai SFW/FW series (4JB1)",
-      "fuel": "diesel",
-      "engineMakes": [],
-      "power": {
-        "min": 25,
-        "max": 45,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2008
-        ]
-      },
-      "src": [
-        2008
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai S series (SDEC)",
-      "fuel": "diesel",
-      "engineMakes": [
-        "SDEC"
-      ],
-      "power": {
-        "min": 50,
-        "max": 1000,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2009
-        ]
-      },
-      "src": [
-        2009
-      ]
-    },
-    {
-      "kind": "genset",
-      "series": "Kachai SWF series (Weifang)",
-      "fuel": "diesel",
-      "engineMakes": [
-        "Weichai"
-      ],
-      "power": {
-        "min": 30,
-        "max": 187.5,
-        "unit": "kVA",
-        "rating": "prime",
-        "src": [
-          2010
-        ]
-      },
-      "src": [
-        2010
+        1,
+        2
       ]
     }
   ],
@@ -255,11 +72,29 @@
       "src": [
         1
       ]
+    },
+    {
+      "name": "BV",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "SGS",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO",
+      "src": [
+        2
+      ]
     }
   ],
   "exportMarkets": [],
   "missing": [
-    "Chỉ có gian hàng Made-in-China; chưa có website chính thức và dải công suất",
+    "Datasheet PDF ở trang Technical Specification (download.html) đòi mật khẩu mới tải được (thử 09/11)",
     "Hàng chào trúng thầu: Kachai K33S5, C33 (gói IB2600245437, IB2600354007, IB2600437361)"
   ],
   "sources": [
@@ -275,6 +110,30 @@
         "The company's products have passed CE, BV, SGS and other international authority certification."
       ],
       "file": "sources/kachai-hangzhou/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.kachai.com/",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "We are delighted to announce that Zhejiang Kachai Generator will take part in the Middle East Energy Exhibition",
+        "9-100kVA",
+        "1125-3125kVA",
+        "Kachai brand generator set which have passed ISO"
+      ],
+      "file": "sources/kachai-hangzhou/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.kachai.com/contactus.html",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "Factory Address: Building 5, Zheli New Journey Venture Capital Industrial Park, Shangyu District, Shaoxing City, Zhejiang Province",
+        "Office Address: Building 8, No. 505, Xingguo Road, Linping District, Hangzhou City, Zhejiang Province"
+      ],
+      "file": "sources/kachai-hangzhou/3.md"
     },
     {
       "n": 2001,
@@ -397,12 +256,148 @@
         "| SWF150M | 187.5 | 200 | 150 | 160 | R6113ZLD | | TZH2-150 | K274H | 2550*900*1600 | 1500 | 3200*1130*1700 | 1900"
       ],
       "file": "sources/kachai-hangzhou/2010.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.kachai.com/1125-3125kVA-Diesel-Generator-pl45776157.html",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "Power（KW）: 1000KW"
+      ],
+      "file": "sources/kachai-hangzhou/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.kachai.com/500-800kVA-Diesel-Generator-pl44776157.html",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "Power（KW）: 600KW"
+      ],
+      "file": "sources/kachai-hangzhou/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.kachai.com/110-500kVA-Diesel-Generator-pl43776157.html",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "Power（KW）: 160KW -180KW"
+      ],
+      "file": "sources/kachai-hangzhou/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.kachai.com/9-100kVA-Diesel-Generator-pl42776157.html",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "Power（KW）: 48KW-52KW"
+      ],
+      "file": "sources/kachai-hangzhou/104.md"
     }
   ],
-  "confidence": "low",
+  "confidence": "medium",
   "checkedAt": "2026-11-09",
   "checkedBy": "claude (rà hàng chào trúng thầu 04/11)",
   "specTables": [
+    {
+      "n": 101,
+      "title": "Diesel Generator Solutions for Heavy-Duty Needs-KACHAI",
+      "header": [],
+      "rows": [
+        "Power（KW）: 1000KW",
+        "Power（KVA）: 1250KVA",
+        "Power（KW）: 1600KW",
+        "Power（KVA）: 2000KVA",
+        "Power（KW）: 1800KW",
+        "Power（KVA）: 2250KVA",
+        "Power（KW）: 1200KW",
+        "Power（KVA）: 1500KVA",
+        "Power（KW）: 900KW",
+        "Power（KVA）: 1125KVA",
+        "Power（KW）: 1500KW",
+        "Power（KVA）: 1875KVA",
+        "Power（KW）: 1100KW",
+        "Power（KVA）: 1375KVA",
+        "Power（KW）: 1340KW-1360KW",
+        "Power（KVA）: 1675KVA-1700KVA",
+        "Power（KW）: 2000KW-2400KW",
+        "Power（KVA）: 2500KVA-3000KVA"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Dependable Diesel Generators for Power Needs-KACHAI",
+      "header": [],
+      "rows": [
+        "Power（KW）: 600KW",
+        "Power（KVA）: 750KVA",
+        "Power（KW）: 800KW",
+        "Power（KVA）: 1000KVA",
+        "Power（KW）: 640KW",
+        "Power（KVA）: 800KVA",
+        "Power（KW）: 500KW-540KW",
+        "Power（KVA）: 625KVA-675KVA",
+        "Power（KW）: 450KW-460KW",
+        "Power（KVA）: 562KVA-575KVA",
+        "Power（KW）: 728KW",
+        "Power（KVA）: 910KVA"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Versatile Diesel Generators from 110kVA to 500kVA - KACHAI",
+      "header": [],
+      "rows": [
+        "Power（KW）: 160KW -180KW",
+        "Power（KVA）: 200KVA -225KVA",
+        "Power（KW）: 96KW-108KW",
+        "Power（KVA）: 120KVA-135KVA",
+        "Power（KW）: 360KW-400KW",
+        "Power（KVA）: 450KVA",
+        "Power（KW）: 200KW-220KW",
+        "Power（KVA）: 250KVA-275KVA",
+        "Power（KW）: 280KW",
+        "Power（KVA）: 350KVA",
+        "Power（KW）: 300KW-320KW",
+        "Power（KVA）: 375KVA-400KVA",
+        "Power（KW）: 120KW -144KW",
+        "Power（KVA）: 135KVA -180KVA",
+        "Power（KW）: 250KW",
+        "Power（KVA）: 312.5KVA"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Diesel Generators from 9kVA to 100kVA-KACHAI",
+      "header": [],
+      "rows": [
+        "Power（KW）: 48KW-52KW",
+        "Power（KVA）: 60KVA-65KVA",
+        "Power（KW）: 7.2KW-8KW",
+        "Power（KVA）: 9KVA-10KVA",
+        "Power（KW）: 40KW",
+        "Power（KVA）: 50KVA",
+        "Power（KW）: 32KW",
+        "Power（KVA）: 40KVA",
+        "Power（KW）: 24KW",
+        "Power（KVA）: 30KVA",
+        "Power（KW）: 20KW",
+        "Power（KVA）: 25KVA",
+        "Power（KW）: 16KW",
+        "Power（KVA）: 20KVA",
+        "Power（KW）: 12KW",
+        "Power（KVA）: 15KVA",
+        "Power（KW）: 64KW",
+        "Power（KVA）: 80KVA",
+        "Power（KW）: 80KW",
+        "Power（KVA）: 100KVA",
+        "Power（KW）: 10KW",
+        "Power（KVA）: 12.5KVA"
+      ]
+    },
     {
       "n": 2001,
       "title": "Genset (Cummins) 50HZ 3-Phase",
@@ -1135,53 +1130,6 @@
         "| SWF100M | 125 | 137.5 | 100 | 110 | R6105IZLD | | TZH2-100 | K274C | 2280*850*1450 | 1342 | 2900*1130*1650 | 1700",
         "| SWF120M | 150 | 165 | 120 | 132 | R6108IZLD | | TZH2-120 | K274E | 2380*890*1450 | 1360 | 2900*1130*1650 | 1750",
         "| SWF150M | 187.5 | 200 | 150 | 160 | R6113ZLD | | TZH2-150 | K274H | 2550*900*1600 | 1500 | 3200*1130*1700 | 1900"
-      ]
-    }
-  ],
-  "controllers": [
-    {
-      "brand": "Deep Sea",
-      "model": null,
-      "text": "Deepsea",
-      "line": "Controller Brand: Deepsea , ComAp, Smartgen , Kachai",
-      "src": [
-        2002
-      ]
-    },
-    {
-      "brand": "ComAp",
-      "model": null,
-      "text": "ComAp",
-      "line": "Controller Brand: Deepsea , ComAp, Smartgen , Kachai",
-      "src": [
-        2002
-      ]
-    },
-    {
-      "brand": "SmartGen",
-      "model": null,
-      "text": "Smartgen",
-      "line": "Controller Brand: Deepsea , ComAp, Smartgen , Kachai",
-      "src": [
-        2002
-      ]
-    },
-    {
-      "brand": "Kachai",
-      "model": null,
-      "text": "Kachai",
-      "line": "Controller Brand: Deepsea , ComAp, Smartgen , Kachai",
-      "src": [
-        2002
-      ]
-    },
-    {
-      "brand": "ComAp",
-      "model": "InteliLite",
-      "text": "Intelilite",
-      "line": "Intelilite/Deepsee/Smartgen",
-      "src": [
-        2004
       ]
     }
   ]

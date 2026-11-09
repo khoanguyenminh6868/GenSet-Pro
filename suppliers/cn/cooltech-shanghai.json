@@ -11,7 +11,7 @@
       "Cooltech"
     ]
   },
-  "website": null,
+  "website": "https://www.cooltechsh.com/",
   "hq": {
     "province": "Shanghai",
     "city": "Shanghai"
@@ -50,14 +50,15 @@
       "emission": [],
       "standards": [],
       "src": [
-        1
+        1,
+        2
       ]
     }
   ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa lưu website riêng, chưa có dải công suất"
+    "Trang chủ không ghi dải công suất"
   ],
   "sources": [
     {
@@ -69,9 +70,20 @@
         "上海科泰电源股份有限公司 于2002年在青浦工业园成立，于2008年完成股份制改造，并于2010年在深圳证券交易所上市(股票代码：300153)。位于上海青浦的总部园区占地面积88亩"
       ],
       "file": "sources/cooltech-shanghai/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.cooltechsh.com/",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "上海科泰电源股份有限公司于2002年在青浦工业园成立。公司立足于发电设备制造，逐步向集团化、多元化产业发展。",
+        "KU高压系列智能环保集成电站"
+      ],
+      "file": "sources/cooltech-shanghai/2.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-09",
   "checkedBy": "discover-bot (Claude)"
 }

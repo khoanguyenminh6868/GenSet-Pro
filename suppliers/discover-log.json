@@ -2243,15 +2243,6 @@
  {
   "at": "2026-11-01",
   "result": "added",
-  "id": "cooltech-shanghai",
-  "name": "上海科泰电源股份有限公司",
-  "url": null,
-  "tables": 0,
-  "rows": 0
- },
- {
-  "at": "2026-11-01",
-  "result": "added",
   "id": "falande-jiangsu",
   "name": "江苏法兰德电机科技有限公司",
   "url": null,
@@ -2315,15 +2306,6 @@
  {
   "at": "2026-11-01",
   "result": "added",
-  "id": "gb-power",
-  "name": "GB POWER CO.,LTD",
-  "url": null,
-  "tables": 0,
-  "rows": 0
- },
- {
-  "at": "2026-11-01",
-  "result": "added",
   "id": "zt-power",
   "name": "ZT Power Equipment Co.,Ltd",
   "url": null,
@@ -2353,15 +2335,6 @@
   "result": "added",
   "id": "yaohu-chongqing",
   "name": "CHONGQING YAOHU POWER MACHINE CO.,LTD.",
-  "url": null,
-  "tables": 0,
-  "rows": 0
- },
- {
-  "at": "2026-11-01",
-  "result": "added",
-  "id": "kusing-guangzhou",
-  "name": "GUANGZHOU KUSING GENERATOR CO.,LTD.",
   "url": null,
   "tables": 0,
   "rows": 0
@@ -2881,15 +2854,6 @@
  },
  {
   "at": "2026-11-03",
-  "result": "added",
-  "id": "kachai-hangzhou",
-  "name": "Zhejiang Kachai Generator Co., Ltd",
-  "url": null,
-  "tables": 0,
-  "rows": 0
- },
- {
-  "at": "2026-11-03",
   "result": "skip",
   "name": "Wetech",
   "reason": "chỉ có gian hàng Alibaba (đòi đăng nhập), không có website (rà hàng chào trúng thầu 04/11)"
@@ -3122,6 +3086,42 @@
   "id": "cps-generators",
   "name": "Constant Power Solutions",
   "url": "https://www.cps-generators.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-09",
+  "result": "added",
+  "id": "kachai-hangzhou",
+  "name": "Zhejiang Kachai Generator Co., Ltd",
+  "url": "https://www.kachai.com/",
+  "tables": 27,
+  "rows": 545
+ },
+ {
+  "at": "2026-11-09",
+  "result": "added",
+  "id": "cooltech-shanghai",
+  "name": "上海科泰电源股份有限公司",
+  "url": "https://www.cooltechsh.com/",
+  "tables": 0,
+  "rows": 0
+ },
+ {
+  "at": "2026-11-09",
+  "result": "added",
+  "id": "gb-power",
+  "name": "GB POWER CO.,LTD",
+  "url": "https://www.gbpower.net/",
+  "tables": 48,
+  "rows": 2221
+ },
+ {
+  "at": "2026-11-09",
+  "result": "added",
+  "id": "kusing-guangzhou",
+  "name": "GUANGZHOU KUSING GENERATOR CO.,LTD.",
+  "url": "https://www.cnkusing.net/",
   "tables": 0,
   "rows": 0
  }
