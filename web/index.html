@@ -3361,6 +3361,21 @@ function cfgSuppliersHtml(c) {
       ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
   }).join(""))}</ol>`;
 }
+// Hàng trúng thầu đứng sau một cấu hình (web/bidprice.js wonEvidence, 2026-11-10): các phần mua sắm đã có kết quả mà hàng
+// trúng ghi đúng model động cơ, đúng mã hiệu tổ máy, hoặc hãng động cơ này ở cỡ máy này (±20%). Đọc trực tiếp từ lịch sử
+// đang có, nên kết quả Gợi ý cũ cũng hiện. Không có dòng nào thì không hiện gì: phần lớn hàng trúng không ghi cấu hình.
+const WON_BY = { model: "đúng model động cơ", genset: "đúng mã hiệu tổ máy", make: "cùng hãng động cơ, cùng cỡ máy" };
+function cfgWonHtml(c, key, size) {
+  const BP = window.GenbidBidprice;
+  if (!state.bidhist || !BP?.wonEvidence || !key) return "";
+  const t = findTender(key), kva = kvaOf(size) || kvaOf(capacityOf(t || {})?.text) || null;
+  const e = BP.wonEvidence(state.bidhist, c, { kva, investorName: t?.investorName || "", self: key });
+  if (!e.lots.length) return "";
+  const head = [e.model && `${e.model} gói ${WON_BY.model}`, e.genset && `${e.genset} gói ${WON_BY.genset}`, e.make && `${e.make} gói ${WON_BY.make}`].filter(Boolean).join("; ");
+  const row = (x) => h`<li class="small"><a href="${tenderHref(x.key)}" data-bptender="${x.key}">${x.key}</a> · ${fmtDate(x.at, false)} · ${x.bidName.slice(0, 90)}${x.k ? ` · ${Math.round(x.k)} kVA` : ""}
+    <div class="muted">${WON_BY[x.by]}${x.same ? " · cùng chủ đầu tư" : ""} · trúng: ${raw(bdNameLink({ name: x.bidder, taxCode: x.bidderId }))}${[x.maker, x.code].filter(Boolean).length ? ` · hàng: ${[x.maker, x.code].filter(Boolean).join(" ")}` : ""}${x.engine?.model ? ` · động cơ ${[x.engine.make, x.engine.model].filter(Boolean).join(" ")}` : ""}</div></li>`;
+  return h`<details class="cfgwon"><summary class="small"><span class="chip ok">Đã trúng thầu</span> ${head}${e.sameInvestor ? ` (${e.sameInvestor} gói của chính chủ đầu tư này)` : ""}</summary><ul class="suplist">${raw(e.lots.slice(0, 12).map(row).join(""))}</ul>${raw(e.lots.length > 12 ? h`<div class="muted small">và ${e.lots.length - 12} gói khác</div>` : "")}</details>`;
+}
 function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
   if (!r.configs?.length) return h`<div class="note warn"><b>Không tìm thấy cấu hình phù hợp.</b> ${r.message || "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT."}</div>`
     + cfgReqHtml(r) + cfgAddedHtml(r) + cfgNotesHtml(r);
@@ -3376,6 +3391,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
         ${raw(c.controller?.model ? h`<button class="btn sm" data-catopen="controller" data-catkey="${window.GenbidCatalog?.keyOf(c.controller.model) || ""}">Xem bộ điều khiển</button>` : "")}
         ${raw(key ? h`<button class="btn sm" data-cfgdel="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" title="Xoá cấu hình này khỏi danh sách gợi ý" style="color:var(--red)">${raw(TRASH_SVG)}Xoá</button>` : "")}</div>
       ${raw(part("Động cơ", c.engine))}${raw(part("Đầu phát", c.alternator))}${raw(part("Bộ điều khiển", c.controller))}${raw(c.genset ? h`<div class="small">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
+      ${raw(cfgWonHtml(c, key, size))}
       ${raw(c.checks?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
         const st = CFG_STATUS[x.status] || ["", "mut"];
         // factSrc: a figure of this engine / alternator model from another supplier's row or datasheet (config-bot.mjs modelFacts).

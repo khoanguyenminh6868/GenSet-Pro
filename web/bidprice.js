@@ -609,5 +609,61 @@
     }
     return out.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
   }
-  root.GenbidBidprice = { nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
+  // ---------- Hàng trúng thầu làm bằng chứng cho cấu hình (2026-11-10) ----------
+  // Một cấu hình đã từng trúng thầu ở gói cùng cỡ là cấu hình đã qua chấm kỹ thuật ít nhất một lần. wonSets: mỗi dòng tổ
+  // máy của hàng trúng ở gói mua sắm, với những gì dòng đó ghi được: công suất, hãng + mã hiệu tổ máy (cột Hãng sản xuất,
+  // Ký mã hiệu, có từ mẫu 2024), model động cơ / đầu phát / bộ điều khiển (catalog.js partsIn), các hãng động cơ được
+  // nhắc tới (bỏ mệnh đề "hoặc tương đương": đó là chữ chép từ HSMT, không phải hàng chào).
+  // Dữ liệu mỏng (đo 10/11/2026 trên 1.097 dòng tổ máy trúng thầu): 5% ghi model động cơ, 15% ghi hãng động cơ, 56% ghi
+  // hãng tổ máy, nên phần lớn cấu hình sẽ không có bằng chứng nào: không có bằng chứng không có nghĩa là cấu hình kém.
+  const brandsIn = (text, list) => { const hit = []; for (const [re, name] of list || []) if (re.test(text) && !hit.includes(name)) hit.push(name); return hit; };
+  const setsMemo = new WeakMap();
+  function wonSets(docs) {
+    if (!docs || typeof docs !== "object") return [];
+    if (setsMemo.has(docs)) return setsMemo.get(docs);
+    const CAT = root.GenbidCatalog, out = [];
+    for (const [key, d] of Object.entries(docs)) {
+      if (!isGensetName(d.bidName) || bidKind(d.bidName) !== "supply") continue;
+      const multi = (d.lots || []).length > 1;
+      for (const lot of d.lots || []) {
+        const w = (lot.bidders || []).find((b) => b.won);
+        if (!w) continue;
+        for (const g of lot.goods || []) {
+          if (!wonSetRow(g)) continue;
+          const own = [g.name, g.maker, g.label, g.code, g.desc].filter(Boolean).join(" | ").normalize("NFC").replace(/[^.;|\n]*tương\s*đương[^.;|\n]*/gi, " ");
+          const parts = CAT?.partsIn ? CAT.partsIn([g.code, g.desc].filter(Boolean).join(" | ")) : [], part = (k) => { const p = parts.find((x) => x.kind === k); return p ? { make: p.make || "", model: p.model } : null; };
+          out.push({ key, lotNo: lot.lotNo || "", at: d.openedAt || d.bidCloseDate || "", inv: invKeyOf(d.investorName), investor: d.investorName || "", bidName: (multi && lot.lotName) || d.bidName || "", bidder: w.name || "", bidderId: taxKey(w),
+            k: kvaOf([g.name, g.code, g.desc].join(" ")) || kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)), maker: String(g.maker || g.label || "").trim(), code: String(g.code || "").trim(),
+            engine: part("engine"), alternator: part("alternator"), controller: part("controller"), engineMakes: CAT ? brandsIn(own, CAT.ENGINE_BRANDS) : [] });
+        }
+      }
+    }
+    setsMemo.set(docs, out);
+    return out;
+  }
+  // Hàng trúng khớp một cấu hình c ({ engine, alternator, controller, genset }) của gói công suất kva:
+  // - model: dòng ghi đúng model động cơ (một bên là phần đầu của bên kia, từ 5 ký tự: "NEF67TE8P" và "NEF67TE8P.A263");
+  // - genset: dòng ghi đúng mã hiệu tổ máy tham chiếu của cấu hình;
+  // - make: dòng nhắc hãng động cơ của cấu hình và công suất trong ±20%.
+  // Mỗi phần của một gói tính một lần, ở mức mạnh nhất. sameInvestor: số phần trong đó của chính chủ đầu tư này.
+  // score: để xếp các cấu hình bằng điểm nhau (model / tổ máy 3, cùng chủ đầu tư thêm 2, hãng 1, tối đa 5 phần mức hãng).
+  const MAKE_TOL = 0.2;
+  const sameModel = (a, b) => { if (!a || !b) return false; return a === b || (Math.min(a.length, b.length) >= 5 && (a.startsWith(b) || b.startsWith(a))); };
+  function wonEvidence(docs, c, { kva = null, investorName = "", self = "" } = {}) {
+    const CAT = root.GenbidCatalog, key = (m) => (m && CAT ? CAT.keyOf(m) : "");
+    const ek = key(c?.engine?.model), gk = key(c?.genset?.model), makes = String(c?.engine?.make || "").split(" / ").map((x) => x.trim()).filter(Boolean), inv = invKeyOf(investorName);
+    const best = new Map(), rank = { model: 3, genset: 2, make: 1 };
+    for (const r of wonSets(docs)) {
+      if (r.key === self) continue;
+      const by = ek && r.engine && sameModel(key(r.engine.model), ek) ? "model" : gk && gk.length >= 4 && key(r.code) === gk ? "genset"
+        : kva && r.k && makes.some((m) => r.engineMakes.includes(m)) && Math.abs(Math.log(r.k / kva)) <= Math.log(1 + MAKE_TOL) ? "make" : null;
+      if (!by) continue;
+      const id = `${r.key}|${r.lotNo}`, prev = best.get(id);
+      if (!prev || rank[by] > rank[prev.by]) best.set(id, { by, key: r.key, lotNo: r.lotNo, at: r.at, bidName: r.bidName, bidder: r.bidder, bidderId: r.bidderId, investor: r.investor, same: !!inv && r.inv === inv, k: r.k, maker: r.maker, code: r.code, engine: r.engine });
+    }
+    const lots = [...best.values()].sort((a, b) => rank[b.by] - rank[a.by] || Number(b.same) - Number(a.same) || String(b.at).localeCompare(String(a.at)));
+    const n = (by) => lots.filter((x) => x.by === by).length, sameInvestor = lots.filter((x) => x.same).length;
+    return { model: n("model"), genset: n("genset"), make: n("make"), sameInvestor, score: 3 * (n("model") + n("genset")) + 2 * sameInvestor + Math.min(5, n("make")), lots };
+  }
+  root.GenbidBidprice = { wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
 })(typeof window !== "undefined" ? window : globalThis);

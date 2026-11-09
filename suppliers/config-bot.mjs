@@ -1560,6 +1560,16 @@ export function stdChecks(c, reqs, row) {
     if (x) { delete x.unverified; delete x.hint; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
   }
 }
+// Won goods behind each configuration (web/bidprice.js wonEvidence): lots of supply tenders whose won generator set
+// names this engine model, this genset model, or this engine make at about this power. docs: { <TBMT>: bidhist }.
+// Written on the configuration as counts (c.won), for rankConfigs' tie-break; the web reads the lots themselves live.
+export function attachWon(result, docs, { kva = null, investorName = "", self = "" } = {}) {
+  for (const c of result?.configs || []) {
+    const e = BP.wonEvidence(docs, c, { kva, investorName, self });
+    if (e.score) c.won = { model: e.model, genset: e.genset, make: e.make, sameInvestor: e.sameInvestor, score: e.score }; else delete c.won;
+  }
+  return result;
+}
 export function rankConfigs(result) {
   const reqs = result.requirements || [];
   for (const c of result.configs || []) noController(c, reqs);
@@ -1567,7 +1577,10 @@ export function rankConfigs(result) {
   let list = (result.configs || []).map((c, i) => ({ c, i, s: scoreOf(c, reqs) }));
   // Same score: an engine of a Chinese make first (Khoa, 2026-11-05). Under G7 / G20 / Khác there is none.
   const cnOf = (c) => (c.engine?.model && CAT.originIn(`${c.engine.model} ${c.engine.make || ""}`, c.engine.model) === "cn" ? 0 : 1);
-  list.sort((x, y) => cmp(x.s, y.s) || cnOf(x.c) - cnOf(y.c) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
+  // Still equal: the configuration with more won lots behind it first (attachWon, 2026-11-10). Only a tie-break: the
+  // requirement checks and Khoa's order above decide first, and most configurations have no won lot at all.
+  const wonOf = (c) => c.won?.score || 0;
+  list.sort((x, y) => cmp(x.s, y.s) || cnOf(x.c) - cnOf(y.c) || wonOf(y.c) - wonOf(x.c) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
   // One configuration per engine + alternator + controller (2026-11-06 audit: a run gave five rows of one 6BTAA5.9-G12,
   // one supplier each): a later row of the same models (or with no controller of its own) hands its suppliers to the
   // first and goes; and at most 3 rows per engine, so several engines are shown.
@@ -1741,7 +1754,7 @@ async function answer(req, suppliers) {
 ${r.stderr || ""}`, "utf8");
       return { dir, info, r, size, i };
     }));
-    let all = suppliers;
+    let all = suppliers, hist = null, investor = null;
     const outs = [];
     for (const { dir, info, r, size, i } of runs) {
       try {
@@ -1751,6 +1764,14 @@ ${r.stderr || ""}`, "utf8");
         const { added, records } = await addToCatalog(dir, key, all, opts).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
         all = [...all.filter((s) => !records.some((x) => x.id === s.id)), ...records];
         const { result, problems } = checkDir(dir, all, added, info.origin);
+        // Won goods as a tie-break between configurations the checks rank alike. No history, no tie-break.
+        try {
+          hist ||= Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
+          investor ??= req.basis?.investorName || (await doc("analysis", key).catch(() => null))?.result?.keyInfo?.investor || "";
+          const kva = info.cap ? (info.cap.unit === "kW" ? info.cap.value / 0.8 : info.cap.value) : null;
+          attachWon(result, hist, { kva, investorName: investor, self: key });
+          if ((result.configs || []).some((c) => c.won)) rankConfigs(result);
+        } catch (e) { console.log(`${key}: chưa đọc được hàng trúng thầu (${e.message})`); }
         if (info.originAuto) result.originAuto = info.originAuto;
         if (extraOf(req)) result.extra = extraOf(req);
         // Read again next time only when the HSMT or Yêu cầu khác changed (prep, requirements.json).
