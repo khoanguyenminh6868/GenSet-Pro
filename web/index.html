@@ -225,7 +225,7 @@ td.r{text-align:right}
 .src{font-size:11px;color:var(--dim)}
 .cap{font:600 13px var(--f-mono);color:var(--fg)}
 .chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:1px 8px;font-size:11.5px;font-weight:600;white-space:nowrap;border:1px solid transparent}
-.chip.ok{background:var(--mint-soft);color:var(--mint)}
+.chip.ok{background:var(--mint-soft);color:var(--mint)}.chip svg{width:12px;height:12px;flex:none}.btn.wonf svg{width:13px;height:13px;vertical-align:-2px}
 .chip.bad{background:var(--rose-soft);color:var(--rose)}
 .chip.warn{background:var(--amber-soft);color:var(--amber)}
 .chip.run{background:var(--violet-soft);color:var(--violet)}
@@ -337,7 +337,7 @@ table.supmain{table-layout:fixed}table.supmain th{white-space:normal}table.supma
 table.bdmain tbody tr{cursor:pointer}table.bdmain tbody tr:hover{background:var(--panel2)}table.bdmain tr.us,table.bdrows tr.us{background:var(--cyan-soft)}
 table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:right;white-space:nowrap}
 @media (max-width:640px){table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:left}}
-.bdgoods{margin-top:6px}.bdgoods ol{margin:2px 0 0;padding-left:20px}.bdgoods li{margin:3px 0}
+.wparts{margin:3px 0 2px}.wparts>div{margin:1px 0}.bdgoods{margin-top:6px}.bdgoods ol{margin:2px 0 0;padding-left:20px}.bdgoods li{margin:3px 0}
 .bdgoods details>summary{cursor:pointer;color:var(--violet);width:max-content}.bdgoods .cfgtext{white-space:pre-line;margin:4px 0 6px;padding:6px 8px;background:var(--panel2);border-radius:6px;max-height:360px;overflow:auto}
 @media (max-width:640px){.mbanner .tag{display:none}.mbanner h2{font-size:16px}.mbanner .mark{width:30px;height:30px}}
 /* Phone: the search and filter rows fold behind one button, tap to open (Khoa, 2026-11-02). */
@@ -2467,10 +2467,46 @@ const supMakeName = (m) => m.replace(/\s*\(.*\)$/, "");
 const supAll = () => Object.values(state.supplier || {}).filter((s) => s?.id && s.status !== "incomplete" && !state.supdeleted?.[s.id])
   .sort((a, b) => (a.names?.en || a.id).localeCompare(b.names?.en || b.id));
 const supName = (s) => s?.names?.en || s?.names?.zh || s?.id || "";
+// Hàng trúng thầu của nhà cung cấp (Khoa, 2026-11-09): dòng tổ máy trúng thầu ở gói mua sắm ghi thương hiệu / tên của nó
+// (web/bidprice.js supWon). Cần lịch sử thầu (bidhist, vài MB): chỉ tải khi bật bộ lọc; đã tải ở màn khác thì chip hiện luôn.
+let supWonMemo = { k: null, map: null };
+function supWonMap() {
+  if (!state.bidhist) return null;
+  const k = [state.bidhist, state.bidders, state.supplier, state.supdeleted];
+  if (supWonMemo.k && k.every((x, i) => x === supWonMemo.k[i])) return supWonMemo.map;
+  return (supWonMemo = { k, map: window.GenbidBidprice.supWon(supAll(), histDocs()) }).map;
+}
+const supWonOf = (id) => supWonMap()?.get(id) || [];
+const supWonN = (id) => new Set(supWonOf(id).map((x) => x.key)).size;
+// Mục "Hàng trúng thầu" ở chi tiết nhà cung cấp (Khoa, 2026-11-09): cùng nguồn với chip (supWon), mỗi gói một dòng.
+// Lịch sử thầu chưa tải thì có nút tải (vài MB), không tự tải mỗi lần mở chi tiết.
+function supWonHtml(s) {
+  const head = h`<h4>Hàng trúng thầu</h4>`;
+  if (!state.bidhist) return h`<div id="supWon" data-id="${s.id}">${raw(head)}<button type="button" class="btn sm" data-supwonload="${s.id}">${raw(STAGE_ICON.win)} Xem gói có hàng trúng thầu</button> <span class="muted small">tải lịch sử thầu muasamcong</span></div>`;
+  const a = supWonOf(s.id);
+  if (!a.length) return h`<div id="supWon">${raw(head)}<div class="muted small">Chưa thấy thương hiệu / tên của nhà cung cấp này trong hàng tổ máy trúng thầu ở các gói mua sắm máy phát đã có kết quả.</div></div>`;
+  const by = new Map();
+  for (const x of a) { const k = x.key + "|" + x.lotNo; (by.get(k) || by.set(k, []).get(k)).push(x); }
+  const rows = [...by.values()].sort((p, q) => (q[0].at > p[0].at ? 1 : -1));
+  return h`<div id="supWon">${raw(head)}<div class="muted small">${rows.length} phần / ${new Set(a.map((x) => x.key)).size} gói mua sắm máy phát có hàng tổ máy ghi ${[...new Set(a.map((x) => x.word))].join(", ")}. "Hãng / nhãn hiệu": ghi ở hãng, nhãn hiệu, tên hoặc mã tổ máy; "Trong cấu hình": động cơ, đầu phát hoặc bộ điều khiển của tổ máy.</div>
+    <div class="tablewrap" style="margin-top:8px"><table class="suptable supcards"><thead><tr><th>Mở thầu</th><th>Gói thầu</th><th>Nhà thầu trúng</th><th>Hàng trúng</th></tr></thead><tbody>${raw(rows.map((xs) => {
+      const x = xs[0], url = x.url || portalSearch(x.key.split("-")[0]);
+      return h`<tr><td data-l="Mở thầu">${x.at ? fmtDate(x.at, false) : "—"}</td>
+        <td data-l="Gói thầu"><div><b>${x.bidName || x.key}</b></div>${raw(x.lotName && x.lotName.trim() !== String(x.bidName).trim() ? h`<div class="small">${x.lotName}</div>` : "")}<div class="small"><a class="tlink" href="${url}" target="_blank" rel="noopener" title="Mở trên muasamcong">${x.key} ↗</a></div></td>
+        <td data-l="Nhà thầu trúng" class="small">${x.bidder || "—"}</td>
+        <td data-l="Hàng trúng" class="small">${raw(xs.map((y) => h`<div style="margin-bottom:4px"><span class="chip ${y.where === "set" ? "ok" : "mut"}">${y.where === "set" ? "Hãng / nhãn hiệu" : "Trong cấu hình"}: ${y.word}</span> ${String(y.item).slice(0, 160)}${raw(y.maker ? h` <span class="muted">· hãng ${y.maker}</span>` : "")}<div class="muted" title="${y.text}">…${y.text.slice(0, 140)}…</div></div>`).join(""))}</td></tr>`;
+    }).join(""))}</tbody></table></div></div>`;
+}
+function supWonChip(s) {
+  const a = supWonOf(s.id), n = new Set(a.map((x) => x.key)).size;
+  if (!n) return "";
+  const tip = a.slice(0, 6).map((x) => `${x.key}: ${x.bidder} — ${String(x.item).slice(0, 60)} (${x.where === "set" ? "hãng/nhãn hiệu" : "trong cấu hình"}: ${x.word})`).join("\n") + (a.length > 6 ? `\n… và ${a.length - 6} dòng hàng nữa` : "");
+  return h`<div><span class="chip ok" title="${tip}">${raw(STAGE_ICON.win)} Trúng ${n} gói</span></div>`;
+}
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
-let supFilter = { fav: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
+let supFilter = { fav: false, won: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
 // Sort by founding year or country (Khoa, 2026-11-04): click a header for ▲, again for ▼, a third time back to A–Z; a supplier with no value goes last.
 let supSort = { k: "", dir: 0 };
 const SUP_SORT = { year: (s) => s.founded || null, country: (s) => supCountryName(s) || null };
@@ -2508,21 +2544,28 @@ function needSup() {
 // (skill bot/claude/skills/tim-thong-so-ncc, config-bot.mjs specJob, specreq/<id> → specmatch/<id>); what passes
 // verify.mjs is added to the record (web and a PR into the repo), as Tìm NCC does.
 function isSuperadmin() { return window.genbidRole === "superadmin"; }
+const supSpecHidden = (id) => { try { return localStorage.getItem("genbid:specHide:" + id) || ""; } catch { return ""; } };
 function supSpecHtmlBlock(s) {
   if (!isSuperadmin()) return "";
   const id = s.id, wait = workerReqPending("specreq", id), err = !wait && workerReqError("specreq", id), m = state.specmatch?.[id], r = m?.result;
-  const parts = (p) => [p.engines?.length && h`<div><b>Động cơ:</b> ${p.engines.map((e) => `${e.model}${e.power ? ` (${e.power})` : ""}`).join(", ")}</div>`,
-    p.alternators?.length && h`<div><b>Đầu phát:</b> ${p.alternators.map((e) => e.model).join(", ")}</div>`,
-    p.controllers?.length && h`<div><b>Bộ điều khiển:</b> ${p.controllers.map((e) => e.model).join(", ")}</div>`].filter(Boolean).join("") || '<div class="muted">Không đọc được động cơ, đầu phát, bộ điều khiển nào.</div>';
+  // Each list folded under its count (Khoa, 2026-11-09: a big maker reads as hundreds of models, which filled the phone
+  // screen above the supplier's own tables).
+  const fold = (label, list) => (list.length ? h`<details><summary><b>${label}:</b> ${list.length} model</summary><div>${list.join(", ")}</div></details>` : "");
+  const parts = (p) => [fold("Động cơ", (p.engines || []).map((e) => `${e.model}${e.power ? ` (${e.power})` : ""}`)),
+    fold("Đầu phát", (p.alternators || []).map((e) => e.model)), fold("Bộ điều khiển", (p.controllers || []).map((e) => e.model))].filter(Boolean).join("")
+    || '<div class="muted">Không đọc được động cơ, đầu phát, bộ điều khiển nào.</div>';
   const ok = (r?.added || []).filter((a) => !a.error);
+  // "Ẩn" hides this result on this device until the next one (a new specmatch time).
+  const hidden = r && !wait && supSpecHidden(id) === m.at;
+  if (hidden && !err) return h`<div id="supSpecReq" data-id="${id}" style="display:none"></div>`;
   return h`<div id="supSpecReq" data-id="${id}" style="${wait || err || r ? "margin:-8px 0 14px" : "display:none"}">
     ${raw(wait ? waitHtml("Đang chờ Agent tìm thông số trên trang của nhà cung cấp (Claude)...", state.specreq[id].requestedAt) : "")}
     ${raw(err && !r ? h`<div class="note warn">Tìm thông số: ${err}</div>` : "")}
-    ${raw(r && !wait ? h`<div class="note${r.error ? " warn" : ""}"><b>Tìm Thông Số</b> <span class="muted small">lúc ${fmtDate(m.at)}</span>
+    ${raw(r && !wait ? h`<div class="note${r.error ? " warn" : ""}"><div class="row" style="gap:8px"><span style="flex:1"><b>Tìm Thông Số</b> <span class="muted small">lúc ${fmtDate(m.at)}</span></span><button class="btn sm" id="supSpecHide" data-id="${id}" data-at="${m.at}" title="Ẩn kết quả này trên máy này đến lần Tìm Thông Số sau">Ẩn</button></div>
       ${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
       ${raw(r.error ? h`<p class="small">Chưa bổ sung được: ${r.error}</p>` : h`<div class="small">Đã bổ sung vào hồ sơ${ok[0]?.tables ? ` ${ok[0].tables} bảng thông số` : ""}${raw(ok[0]?.pr ? h` · <a href="${ok[0].pr}" target="_blank" rel="noopener">PR vào repo</a>` : "")}:</div><div class="small">${raw(parts(r.found || {}))}</div>${raw(ok[0]?.prError ? h`<div class="muted small">${ok[0].prError}</div>` : "")}`)}
       ${raw(r.skipped?.length ? h`<details><summary class="small">Đã xem nhưng bỏ qua (${r.skipped.length})</summary><ul class="suplist">${raw(r.skipped.map((x) => h`<li class="small"><b>${x.name || ""}</b> — ${x.reason || ""}</li>`).join(""))}</ul></details>` : "")}
-      ${raw(r.notes?.length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}</div>` : "")}
+      ${raw(r.notes?.length ? h`<details><summary class="small">Ghi chú (${r.notes.length})</summary><ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul></details>` : "")}</div>` : "")}
   </div>`;
 }
 const supSpecBtn = (s) => (isSuperadmin() && !state.readOnly ? h`<button class="btn green sm" id="supSpecRun" data-id="${s.id}" ${workerReqPending("specreq", s.id) ? "disabled" : ""} title="Tìm trên trang của nhà cung cấp động cơ, đầu phát, bộ điều khiển của các tổ máy và bổ sung vào hồ sơ (chỉ Superadmin)">Tìm Thông Số</button>` : "");
@@ -2552,7 +2595,7 @@ async function toggleFav(id) {
   if (!(await dbSet("supfav/" + id, rec))) toast("Không lưu được nhà cung cấp yêu thích.");
 }
 const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
-const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); };
+const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
   <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a><button class="btn sm" data-close>Đóng</button></header>`;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
@@ -2566,6 +2609,7 @@ function supLinesFor(s, f = supFilter) {
 function supMatches(s) {
   const f = supFilter, q = f.q.trim().toLowerCase();
   if (f.fav && !supFav(s.id)) return false;
+  if (f.won && !supWonN(s.id)) return false;
   if (f.role && s.role !== f.role) return false;
   if (f.conf && s.confidence !== f.conf) return false;
   if (f.country && !supCountryIn(s.country, f.country)) return false;
@@ -2633,6 +2677,7 @@ function renderSuppliers() {
       <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="${matchMedia("(max-width:640px)").matches ? "Công suất cần" : "vd. 500"}">
       <select id="supUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
       <button type="button" class="btn sm" id="supFavF" aria-pressed="${String(f.fav)}" style="${f.fav ? "border-color:#f5b301;color:#b07d00" : ""}">${f.fav ? "★" : "☆"} Yêu thích</button>
+      <button type="button" class="btn sm wonf" id="supWonF" aria-pressed="${String(f.won)}" title="Nhà cung cấp có thương hiệu / tên trong hàng tổ máy trúng thầu ở gói mua sắm máy phát (lịch sử thầu muasamcong)" style="${f.won ? "border-color:var(--mint);color:var(--mint)" : ""}">${raw(STAGE_ICON.win)} Có hàng trúng thầu</button>
       <span class="spacer"></span><span class="muted small" id="supCount"></span>
     </div></div>
     <div class="mscroll"><div id="supList"></div></div>`;
@@ -2649,20 +2694,26 @@ function renderSuppliers() {
   $("#supPower").oninput = (e) => set("power", e.target.value);
   $("#supUnit").onchange = (e) => set("unit", e.target.value);
   $("#supFavF").onclick = () => { supFilter = { ...supFilter, fav: !supFilter.fav }; renderSuppliers(); };
+  $("#supWonF").onclick = () => {
+    supFilter = { ...supFilter, won: !supFilter.won };
+    renderSuppliers();
+    if (supFilter.won && !state.bidhist) loadHist().then(() => { if ($("#supList")) renderSupList(); });
+  };
 }
 function renderSupList() {
+  if (supFilter.won && !state.bidhist) { if ($("#supCount")) $("#supCount").textContent = ""; $("#supList").innerHTML = progress("Đang tải lịch sử thầu..."); return; }
   const list = supAll().filter(supMatches), filtered = supLineFiltered();
   if (supSort.k) {
     const v = SUP_SORT[supSort.k];
     list.sort((x, y) => { const a = v(x), b = v(y); return (a == null) - (b == null) || (a == null ? 0 : supSort.dir * (typeof a === "number" ? a - b : a.localeCompare(b, "vi"))); });
   }
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
-  filtNote("supFilt", [supFilter.fav, supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
+  filtNote("supFilt", [supFilter.fav, supFilter.won, supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th>${raw(supSortTh("country", "Quốc gia", "Quốc gia"))}${raw(supSortTh("year", "Năm TL", "Năm thành lập"))}<th>Dòng máy</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
     return h`<tr data-supopen="${s.id}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}</td>
-      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}</td>
+      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s))}</td>
       <td data-l="Quốc gia">${supCountryName(s) || "—"}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
       <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
@@ -2722,6 +2773,7 @@ function supDetailHtml(s) {
       <td class="small" data-l="Khác">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div>` : '<div class="muted small">Chưa có dữ liệu.</div>')}
     ${raw(supModelsHtml(s))}
     ${raw(supSpecHtml(s))}
+    ${raw(supWonHtml(s))}
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
     ${raw(s.missing?.length ? h`<h4>Chưa tìm thấy / lưu ý</h4>${raw(list(s.missing, (m) => h`<li>${m}</li>`))}` : "")}
     <h4>Nguồn</h4><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${x.url}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
@@ -2855,6 +2907,7 @@ function catWarm() {
     if (!catBuild.b.step(() => d.timeRemaining())) return idle(make);
     catMemo = { src, del, cat: catBuild.b.result() };
     stop();
+    partsFill();
   };
   idle(read);
 }
@@ -2888,11 +2941,11 @@ function catSpecsCell(e) {
 const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${catVia(e)}</div>` : '<span class="muted">Nguồn không ghi hãng</span>');
 // The supplier whose page an engine / alternator / controller was opened from: its detail gets a button back there (Khoa, 2026-11-02).
 let catFrom = null;
-function openCatalog(kind, key, from = null) {
+function openCatalog(kind, key, from = null, q = null) {
   needSup();
   filtOpen = true; // Thông số cấu hình: filter rows open by default on phone (Khoa, 2026-11-05)
   catFrom = from;
-  catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}) };
+  catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}), ...(q ? { q, make: "", spec: "", power: "" } : {}) };
   modal(mBanner("cat", "Thông số cấu hình", "Rút từ bảng thông số của các nhà cung cấp", "catTitle", "#" + SCREEN_HASH[kind]) + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
 }
 function catMatches(e, f = catView) {
@@ -3589,6 +3642,61 @@ function bdResultHtml(r) {
 // hiệu, xuất xứ, khối lượng, đơn giá, and "Cấu hình, tính năng kỹ thuật cơ bản" folded (often thousands of characters,
 // naming the engine, alternator and controller with their makes). Group heading rows (no make, quantity or price) stay
 // as plain lines.
+// Động cơ, đầu phát, bộ điều khiển of a won goods row (Khoa, 2026-11-09): each model read from its "Cấu hình" (web/
+// catalog.js partsIn) and looked up in Thông số cấu hình: the same model → "Xem thông số" opens it; a model several
+// catalog models start with (ECP34 → ECP34-1L/4, ECP34-2M/4...) → the catalog list searched for it; none → "chưa có
+// thông tin". The catalog is built from every supplier table (seconds): until it is ready the row says so, and
+// partsFill() writes the result into the page once catWarm() has built it.
+const PART_VI = { engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển" };
+let partIdx = { cat: null, keys: null };
+function partFind(kind, model) {
+  const cat = catalog(), C = window.GenbidCatalog;
+  if (partIdx.cat !== cat) partIdx = { cat, keys: Object.fromEntries(Object.entries(CAT_KIND).map(([k, x]) => [k, cat[x.list].map((e) => e.key)])) };
+  const key = C.keyOf(model), keys = partIdx.keys[kind] || [];
+  // A short code (184G, 4520) names many things: only as a search, never as the one model.
+  if (key.length >= 5 && keys.includes(key)) return { key };
+  const pre = key.length >= 4 ? keys.filter((k) => k.startsWith(key)) : [];
+  if (pre.length === 1 && key.length >= 5) return { key: pre[0] };
+  if (pre.length) return { q: model, n: pre.length };
+  // Not a catalog model, but written in a supplier's table (a maker's datasheet, a table the catalog does not read as
+  // gensets): its supplier page.
+  const sid = key.length >= 5 ? partTables()[key] : null;
+  return sid ? { sup: sid } : null;
+}
+// Every code written in the suppliers' tables (each cell, each word, each two words) → the first supplier with it.
+let partTab = { src: null, map: null };
+function partTables() {
+  if (partTab.src === state.supplier) return partTab.map;
+  const C = window.GenbidCatalog, map = Object.create(null);
+  for (const s of supAll()) for (const t of s.specTables || []) for (const line of [t.title, ...(t.rows || [])]) for (const cell of String(line || "").split("|")) {
+    const w = cell.trim().split(/\s+/);
+    for (const x of [cell, ...w, ...w.slice(1).map((y, i) => w[i] + " " + y)]) { const k = C.keyOf(x.trim()); if (k.length >= 5 && k.length <= 24 && /\d/.test(k) && /[A-Z]/.test(k) && !map[k]) map[k] = s.id; }
+  }
+  partTab = { src: state.supplier, map };
+  return map;
+}
+function partStatusHtml(kind, model) {
+  if (!catReady()) return '<span class="muted">đang tra danh mục...</span>';
+  const f = partFind(kind, model);
+  if (!f) return '<span class="chip mut" title="Model này chưa có trong Thông số cấu hình (bảng thông số của các nhà cung cấp)">chưa có thông tin</span>';
+  if (f.sup) { const s = state.supplier?.[f.sup]; return h`<a href="#" data-supopen="${f.sup}" title="Model này có trong bảng thông số của nhà cung cấp, chưa có trong Thông số cấu hình">Xem ở ${supName(s) || f.sup}</a>`; }
+  return f.key ? h`<a href="#" data-catopen="${kind}" data-catkey="${f.key}">Xem thông số</a>`
+    : h`<a href="#" data-catopen="${kind}" data-catq="${f.q}" title="Danh mục có ${f.n} model bắt đầu bằng ${model}; hàng trúng không ghi đủ đời model">${f.n} model gần giống</a>`;
+}
+function partsHtml(x) {
+  // Only a generator set row: an ATS, a cable or a controller sold on its own names no set's parts.
+  if (!window.GenbidCatalog?.partsIn || !/máy\s*phát|tổ\s*máy|genset|generator|máy\s*nổ/i.test([x.name, x.code].join(" "))) return "";
+  const ps = window.GenbidCatalog.partsIn([x.code, x.desc].filter(Boolean).join(" | "));
+  if (!ps.length) return "";
+  if (!catReady()) setTimeout(partsFill, 0);
+  return h`<div class="wparts">${raw(ps.map((p) => h`<div title="${p.text}">${PART_VI[p.kind]}: <b>${[p.make, p.model].filter(Boolean).join(" ")}</b> · <span class="wpart" data-pkind="${p.kind}" data-pmodel="${p.model}">${raw(partStatusHtml(p.kind, p.model))}</span></div>`).join(""))}</div>`;
+}
+function partsFill() {
+  const spans = [...document.querySelectorAll(".wpart")];
+  if (!spans.length) return;
+  if (!catReady()) { needSup(); catWarm(); return; }
+  for (const s of spans) s.innerHTML = partStatusHtml(s.dataset.pkind, s.dataset.pmodel);
+}
 function bdGoodsHtml(goods, label = "Hàng chào") {
   const cfg = (s) => String(s || "").replace(/\s+\*\s+/g, "\n* ").replace(/\s+-\s+(?=\S)/g, "\n- ").replace(/^\n/, "");
   const li = (x) => {
@@ -3596,7 +3704,7 @@ function bdGoodsHtml(goods, label = "Hàng chào") {
     const brand = x.label && x.label !== x.maker ? x.label : "";
     const parts = [x.maker && `Hãng ${x.maker}`, brand && `nhãn hiệu ${brand}`, x.code && `mã ${x.code}`, x.origin && `xuất xứ ${x.origin}`, x.year && `năm ${x.year}`,
       x.qty && `${Number(x.qty).toLocaleString("vi-VN")} ${x.unit || ""}`.trim(), x.unitPrice && `đơn giá ${fmtVnd(x.unitPrice)}`].filter(Boolean);
-    return h`<li><span title="${name.length > 220 ? name : ""}">${short}</span>${parts.length ? " · " : ""}<span class="muted">${parts.join(" · ")}</span>${raw(x.desc ? h`<details><summary>Cấu hình kỹ thuật</summary><div class="cfgtext">${cfg(x.desc)}</div></details>` : "")}</li>`;
+    return h`<li><span title="${name.length > 220 ? name : ""}">${short}</span>${parts.length ? " · " : ""}<span class="muted">${parts.join(" · ")}</span>${raw(partsHtml(x))}${raw(x.desc ? h`<details><summary>Cấu hình kỹ thuật</summary><div class="cfgtext">${cfg(x.desc)}</div></details>` : "")}</li>`;
   };
   return h`<div class="bdgoods small">${label}:<ol>${raw((goods || []).map(li).join(""))}</ol></div>`;
 }
@@ -3837,8 +3945,16 @@ document.addEventListener("click", async (e) => {
   if (home) { e.preventDefault(); setScreenUrl(Object.keys(SCREEN_HASH).find((k) => home.getAttribute("href") === "#" + SCREEN_HASH[k])); openScreenFromUrl(); return; }
   const fav = e.target.closest("[data-supfav]");
   if (fav) { e.preventDefault(); toggleFav(fav.dataset.supfav); return; }
+  const wl = e.target.closest("[data-supwonload]");
+  if (wl) {
+    e.preventDefault(); const id = wl.dataset.supwonload;
+    wl.outerHTML = progress("Đang tải lịch sử thầu...");
+    loadHist().then(() => { const el = $("#supWon"), s = state.supplier?.[id]; if (el && s) el.outerHTML = supWonHtml(s); });
+    return;
+  }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
   if (e.target.id === "supSpecRun" && !e.target.disabled) { supSpecRequest(e.target.dataset.id); return; }
+  if (e.target.id === "supSpecHide") { try { localStorage.setItem("genbid:specHide:" + e.target.dataset.id, e.target.dataset.at); } catch {} supSpecRedraw(); return; }
   if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); mScroll().scrollTop = listScroll.sup; return; }
   if (e.target.closest("tr[data-supopen] a[href]")) return; // e-mail / phone link in a list row: no detail
   const supsrc = e.target.closest("[data-supsrc]");
@@ -3846,7 +3962,7 @@ document.addEventListener("click", async (e) => {
   const supo = e.target.closest("[data-supopen]");
   if (supo) { if ($("#supBody")) { if (!supOpenId) listScroll.sup = mScroll().scrollTop; supOpenId = supo.dataset.supopen || null; renderSuppliers(); } else openSuppliers(supo.dataset.supopen); return; }
   const cko = e.target.closest("[data-catopen]");
-  if (cko) { const from = cko.closest("#supBody") ? supOpenId : null; if (from) listScroll.supDetail = mScroll().scrollTop; openCatalog(cko.dataset.catopen, cko.dataset.catkey, from); return; }
+  if (cko) { const from = cko.closest("#supBody") ? supOpenId : null; if (from) listScroll.supDetail = mScroll().scrollTop; openCatalog(cko.dataset.catopen, cko.dataset.catkey, from, cko.dataset.catq || null); return; }
   if (e.target.closest("#catToSup")) { const id = catFrom; catFrom = null; openSuppliers(id); mScroll().scrollTop = listScroll.supDetail || 0; return; }
   const cki = e.target.closest("#catList [data-catitem]");
   if (cki) { listScroll.cat = mScroll().scrollTop; catView.open = cki.dataset.catitem; renderCatalog(); return; }

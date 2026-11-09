@@ -1,5 +1,67 @@
-{"id":"kusing-guangzhou","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"GUANGZHOU KUSING GENERATOR CO.,LTD.","zh":null,"brands":["Kusing"],"web":null,"prov":"Guangdong","city":"Guangzhou","founded":null,"fsrc":[],"related":[],
-"src":{"1":["B","GUANGZHOU KUSING GENERATOR CO.,LTD.","Address:NO.10#OF JUNMINLU,TAIHE TOWN,BAIYUN DISTRICT,GUANGZHOU,CHINA.","plant area of ​​5000 square meters"]},
-"str":[["Tổ máy xăng, diesel và phụ tùng; xưởng 5.000 m² tại Quảng Châu",1]],"cert":[],
-"lines":[{"k":"genset","s":"Gasoline / diesel generator sets","src":[1]}],
-"miss":["Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"],"by":"discover-bot (Claude)"}
+{
+  "id": "kusing-guangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "GUANGZHOU KUSING GENERATOR CO.,LTD.",
+  "zh": "广州市固升发电设备有限公司",
+  "brands": [
+    "Kusing"
+  ],
+  "web": "https://www.cnkusing.net/",
+  "prov": "Guangdong",
+  "city": "Guangzhou",
+  "founded": 2007,
+  "fsrc": [
+    2
+  ],
+  "related": [],
+  "src": {
+    "1": [
+      "B",
+      "GUANGZHOU KUSING GENERATOR CO.,LTD.",
+      "Address:NO.10#OF JUNMINLU,TAIHE TOWN,BAIYUN DISTRICT,GUANGZHOU,CHINA.",
+      "plant area of ​​5000 square meters"
+    ],
+    "2": [
+      "A",
+      "广州市固升发电设备有限公司",
+      "专门从事 10KVA 至 2000KVA 柴油发电机组的生产制 造",
+      "Kusing成立于2007年"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy xăng, diesel và phụ tùng; xưởng 5.000 m² tại Quảng Châu",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Gasoline / diesel generator sets",
+      "src": [
+        1
+      ]
+    },
+    {
+      "k": "genset",
+      "s": "柴油发电机组",
+      "fuel": "diesel",
+      "p": [
+        10,
+        2000,
+        "kVA",
+        "unspecified",
+        2
+      ],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "miss": [],
+  "by": "discover-bot (Claude)"
+}

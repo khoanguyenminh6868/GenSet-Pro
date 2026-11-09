@@ -394,5 +394,64 @@
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
     return { basis, n: use.length, same: same.length, close: close.length, nPrior: extra.length, pool: pool.length, enough: pool.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, bidders, byBidders, comps };
   }
-  root.GenbidBidprice = { SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
+  // Hàng trúng thầu của nhà cung cấp (Khoa, 2026-11-09: lọc "Có hàng trúng thầu" ở màn Nhà cung cấp). Chỉ gói mua sắm
+  // (bidKind supply) đã có nhà thầu trúng, chỉ dòng hàng là tổ máy (không phải lọc, phụ tùng, tủ ATS bán riêng). Một nhà
+  // cung cấp khớp khi dòng hàng ghi:
+  // - thương hiệu của nó (names.brands; đại lý không tính thương hiệu hãng họ bán), hoặc
+  // - từ đặc trưng đầu tiên trong tên tiếng Anh (bỏ tên tỉnh / thành phố, từ chung như Power, Generator, Co):
+  //   "Zhejiang Kachai Generator Co., Ltd" → Kachai; chỉ khi không nhà cung cấp nào nhận từ đó là thương hiệu.
+  // Từ ≤ 3 ký tự phải viết hoa đúng như thế (MTU, AGG, FPT; không lấy "man" trong "Auto - Off - Man").
+  // where: "set" = hãng / nhãn hiệu / tên / mã của tổ máy; "cfg" = trong cấu hình (động cơ, đầu phát, bộ điều khiển).
+  const WON_STOP = new Set(("co ltd limited company corp corporation inc group holdings holding the and of china chinese power powers generator generators generating generation genset gensets electric electrical electro electronics electromechanical mechanical machinery machine machines technology technologies tech equipment equipments engine engines diesel motor motors industry industrial industries international energy new trading import export system systems science products product petroleum kinetic innovation development city province engineering works plant joint venture investment dealer parts component components sets set solutions solution services service manufacturing manufacture factory branch excel perfect house global general standard smart green blue gold golden star great king top best united asia pacific world heavy intelligent plus multi union supply alternator alternators gmbh construction precision automation control controls sales m&e").split(" "));
+  const WON_PLACE = new Set(("beijing shanghai tianjin chongqing guangdong guangzhou shenzhen fujian fuzhou xiamen jiangsu zhejiang shandong weifang hubei hunan sichuan anhui henan hebei shaanxi shanxi yunnan guizhou guangxi hainan jiangxi liaoning jilin heilongjiang xinjiang tibet ningxia qinghai gansu inner mongolia hong kong taiwan wuxi suzhou nanjing yangzhou changzhou taizhou ningbo hangzhou fuan ningde quanzhou jinan qingdao yantai xian wuhan changsha hefei nanning liuzhou zhengzhou yinchuan zhanjiang foshan dongguan zhenjiang nantong xuzhou yulin lanxi jiangyin urumqi xining guiyang chengdu shaoxing wenzhou jinhua linyi zibo taian").split(" "));
+  const SET_ROW = /m[áa]y\s*ph[áa]t|t[ổo]\s*m[áa]y|genset|generat(or|ing\s*set)|m[áa]y\s*n[ổo]/i;
+  const PART_ROW = /l[ọo]c|phin|b[ơo]m|ecu|[ắa]c\s*quy|b[ìi]nh|d[ầa]u\b|m[ỡo]|gio[ăa]ng|ph[ụu]\s*t[ùu]ng|v[ậa]t\s*t[ưu]|đ[ầa]u\s*n[ốo]i|c[áa]p\b|t[ủu]\s*(ats|đi[ệe]n|h[òo]a)|b[ộo]\s*(đi[ềe]u\s*khi[ểe]n|s[ạa]c|n[ạa]p)|h[ộo]p\s*đi[ềe]u|c[ảa]m\s*bi[ếe]n|r[ơo]\s*le|s[ửu]a\s*ch[ữu]a|b[ảa]o\s*d[ưu][ỡo]ng|thay\s*th[ếe]|v[ỏo]\s*(b[ảa]o\s*v[ệe]|c[áa]ch\s*[âa]m|ch[ốo]ng\s*[ồo]n)|canopy/i;
+  const WON_ACC = /[ắa]c\s*quy|acquy|battery|b[ìi]nh\b|s[ạa]c|aptomat|mccb|acb|c[áa]p\b|l[ọo]c|d[ầa]u\s*nh[ớo]t|ats\b|công\s*tắc|cầu\s*dao/i;
+  const wonSetRow = (g) => { const t = String([g.name, g.code].filter(Boolean).join(" ")).normalize("NFC"), m = t.match(SET_ROW); return !!m && !PART_ROW.test(t.slice(0, m.index)); };
+  function wonTokens(sups) {
+    const tok = new Map(), owned = new Set(), add = (k, id) => { const a = tok.get(k) || []; if (!a.includes(id)) a.push(id); tok.set(k, a); };
+    const ok = (w) => w.length >= 3 && /[a-z]/i.test(w) && !WON_STOP.has(w.toLowerCase()) && !WON_PLACE.has(w.toLowerCase());
+    for (const s of sups) if (s.role !== "distributor") for (const b of s.names?.brands || []) { const w = String(b).replace(/\(.*?\)/g, "").trim(); if (ok(w)) { add(w.toLowerCase(), s.id); owned.add(w.toLowerCase()); } }
+    for (const s of sups) {
+      const w = String(s.names?.en || "").normalize("NFC").replace(/\(.*?\)/g, " ").split(/[^\p{L}\p{N}&]+/u).find((x) => x.length >= 4 && ok(x));
+      if (w && !owned.has(w.toLowerCase())) add(w.toLowerCase(), s.id);
+    }
+    return tok;
+  }
+  function supWon(sups, docs) {
+    const tok = wonTokens(sups || []), out = new Map();
+    if (!tok.size) return out;
+    const esc = (k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const rx = new RegExp(`(?<![\\p{L}\\p{N}])(${[...tok.keys()].sort((a, b) => b.length - a.length).map(esc).join("|")})(?![\\p{L}\\p{N}])`, "giu");
+    for (const [key, d] of Object.entries(docs || {})) {
+      if (!isGensetName(d.bidName) || bidKind(d.bidName) !== "supply") continue;
+      for (const lot of d.lots || []) {
+        const w = (lot.bidders || []).find((b) => b.won);
+        if (!w) continue;
+        for (const g of lot.goods || []) {
+          if (!wonSetRow(g)) continue;
+          for (const [where, txt, own] of [["set", [g.maker, g.label], true], ["set", [g.name, g.code], false], ["cfg", [g.desc], false]]) {
+            const t = txt.filter(Boolean).join(" | ").normalize("NFC");
+            for (const m of t.matchAll(rx)) {
+              if (m[1].length <= 3 && m[1] !== m[1].toUpperCase()) continue;
+              // Tên hàng / cấu hình chép từ HSMT ("hiệu Cummins … hoặc tương đương", "tương đương máy phát HONDA"): không phải
+              // hàng nhà thầu chào. Hãng của phụ kiện trong cấu hình ("Bình ắc quy hiệu Camel") cũng không tính.
+              const before = t.slice(Math.max(0, m.index - 60), m.index).split(/[;|\n]/).pop(), after = t.slice(m.index, m.index + 90).split(/[;|\n]/)[0];
+              if (!own && /t[ưu][ơo]ng\s*đ[ưu][ơo]ng/i.test(before + after)) continue;
+              if (where === "cfg" && WON_ACC.test(before.slice(-35))) continue;
+              for (const id of tok.get(m[1].toLowerCase()) || []) {
+                const a = out.get(id) || [];
+                if (!a.some((x) => x.key === key && x.lotNo === (lot.lotNo || "") && x.item === g.name)) {
+                  a.push({ key, url: d.url || "", lotNo: lot.lotNo || "", lotName: lot.lotName || "", bidName: d.bidName || "", at: d.openedAt || d.bidCloseDate || "", bidder: w.name || "", item: g.name || "", maker: g.maker || "", where, word: m[1], text: t.slice(Math.max(0, m.index - 60), m.index + m[1].length + 60).replace(/\s+/g, " ").trim() });
+                  out.set(id, a);
+                } else if (where === "set") a.find((x) => x.key === key && x.lotNo === (lot.lotNo || "") && x.item === g.name).where = "set";
+              }
+            }
+          }
+        }
+      }
+    }
+    return out;
+  }
+  root.GenbidBidprice = { supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
 })(typeof window !== "undefined" ? window : globalThis);

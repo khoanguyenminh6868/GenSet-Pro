@@ -61,6 +61,8 @@ node suppliers/discover.mjs check "<tên công ty>" <url website>
 - `trong nhật ký ... đã bỏ qua` → không làm lại trừ khi có nguồn mới.
 - Tìm chung chung (“diesel generator manufacturer China”) chủ yếu ra sàn B2B và trang SEO, rất dễ sót công ty thật. Trước khi kết luận "chỉ có sàn B2B", luôn tìm lại theo đúng tên công ty (như trên). Nhiều công ty có vài website cùng tên: chọn trang có "Company Profile / About" ghi tên pháp nhân, ghi các website còn lại vào `miss`.
 - `sàn B2B` → tìm website riêng của công ty. Không có thì chỉ làm khi Khoa yêu cầu, với `conf: "low"`, `status: "partial"`, `web: null`.
+- **Trước khi để `web: null`** (Khoa, 2026-11-09: Kachai bị ghi `web: null` dù có kachai.com, nên không bao giờ được cào): tìm thêm theo **tên thương hiệu** (không chỉ tên pháp nhân): `"<thương hiệu> generator"`, `"<thương hiệu>.com"`, `"<thương hiệu> 官网"`, tên tiếng Trung (thường có ở alt logo, ảnh bìa gian hàng). Đọc kỹ gian hàng B2B: ảnh sản phẩm / vỏ máy / catalogue hay in tên miền (ảnh Kachai trên Made-in-China in "WWW.KACHAI.COM"), mục Company Profile hay có "Website". Tên miền lấy từ thư mục doanh nghiệp (ExportHub, TradeKey, Brandfetch…) chỉ là manh mối: mở trang đó, thấy đúng tên pháp nhân (trang Contact / About / chân trang) mới dùng. Trang của tập đoàn mẹ (yanmar-china.com, mtu-solutions.com, cummins.com…) không phải website của pháp nhân con.
+- Website có trang tải tài liệu (Technical Specification, Download) mà đòi mật khẩu / đăng ký: ghi vào `miss` ("datasheet cần mật khẩu"), không thử đoán mật khẩu.
 
 ### Bước 3 — Lưu trang nguồn
 Đặt `id` là slug a-z 0-9 - theo tên tiếng Anh, ví dụ `kofo-fujian`, `mitsubishi-sme-shanghai`. Lưu 2–5 trang của chính hãng:

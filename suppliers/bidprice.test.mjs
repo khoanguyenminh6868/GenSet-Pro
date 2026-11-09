@@ -204,3 +204,25 @@ test("keyText: the first part of an HSMT, then its later lines about make, origi
   assert.ok(!o.includes("ccc") && o.endsWith("…"));
   assert.equal(BP.keyText("ngắn", 150), "ngắn");
 });
+
+test("supWon: brand or first distinctive name word in won genset rows of supply tenders only", () => {
+  const sups = [
+    { id: "kachai", role: "genset_oem", names: { en: "Zhejiang Kachai Generator Co., Ltd", brands: ["Kachai"] } },
+    { id: "cummins", role: "engine_maker", names: { en: "Cummins Inc.", brands: ["Cummins"] } },
+    { id: "dealer", role: "distributor", names: { en: "Chongfa Cummins Shenzhen", brands: ["Cummins"] } },
+    { id: "man", role: "engine_maker", names: { en: "MAN Engines", brands: ["MAN"] } },
+    { id: "camel", role: "genset_oem", names: { en: "Camel Power", brands: ["Camel"] } },
+  ];
+  const won = (goods) => ({ lotNo: "", lotName: "", goods, bidders: [{ name: "NT", taxCode: "1", won: true }] });
+  const docs = {
+    A: { bidName: "Mua sắm máy phát điện 33kVA", lots: [won([{ name: "Máy phát điện chạy dầu 33kVA", maker: "Kachai", label: "Kachai", desc: "Động cơ Cummins; bộ chuyển mạch Auto - Off - Man; Bình ắc quy hiệu Camel" }])] },
+    B: { bidName: "Bảo dưỡng máy phát điện", lots: [won([{ name: "Máy phát điện Kachai", maker: "Kachai" }])] },
+    C: { bidName: "Mua sắm máy phát điện", lots: [won([{ name: "Lọc dầu máy phát điện Cummins" }])] },
+    D: { bidName: "Mua sắm máy phát điện", lots: [won([{ name: "Máy phát điện hiệu Cummins (Model C62.5D5P) hoặc tương đương" }])] },
+    E: { bidName: "Mua sắm máy phát điện", lots: [{ ...won([{ name: "Máy phát điện", maker: "Kachai" }]), bidders: [{ name: "NT", won: false }] }] },
+  };
+  const m = BP.supWon(sups, docs);
+  assert.deepEqual([...m.keys()].sort(), ["cummins", "kachai"]);
+  assert.deepEqual(m.get("kachai").map((x) => [x.key, x.where]), [["A", "set"]]);
+  assert.deepEqual(m.get("cummins").map((x) => [x.key, x.where]), [["A", "cfg"]]);
+});

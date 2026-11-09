@@ -1,13 +1,100 @@
 {
-  "id": "kachai-hangzhou", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "low",
-  "en": "Zhejiang Kachai Generator Co., Ltd", "zh": null, "brands": ["Kachai"],
-  "web": null, "prov": "Zhejiang", "city": "Hangzhou", "founded": null, "fsrc": [], "related": [],
+  "id": "kachai-hangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "Zhejiang Kachai Generator Co., Ltd",
+  "zh": null,
+  "brands": [
+    "Kachai"
+  ],
+  "web": "https://www.kachai.com/",
+  "prov": "Zhejiang",
+  "city": "Hangzhou",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
   "src": {
-    "1": ["C", "Zhejiang Kachai Generator Co., Ltd", "Our factory located in Hangzhou Yuhang Economic-technological Develpment Area, Hangzhou, Zhejiang Province.", "We have entered into strategic partnerships or OEMs with world-renowned engine and alternators manufacturers, such as US Cummins, Germany Deutz, Korea Doosan, UK Stanford, China Yuchai, SDEC and FAWDE.", "The company's products have passed CE, BV, SGS and other international authority certification."]
+    "1": [
+      "C",
+      "Zhejiang Kachai Generator Co., Ltd",
+      "Our factory located in Hangzhou Yuhang Economic-technological Develpment Area, Hangzhou, Zhejiang Province.",
+      "We have entered into strategic partnerships or OEMs with world-renowned engine and alternators manufacturers, such as US Cummins, Germany Deutz, Korea Doosan, UK Stanford, China Yuchai, SDEC and FAWDE.",
+      "The company's products have passed CE, BV, SGS and other international authority certification."
+    ],
+    "2": [
+      "A",
+      "We are delighted to announce that Zhejiang Kachai Generator will take part in the Middle East Energy Exhibition",
+      "9-100kVA",
+      "1125-3125kVA",
+      "Kachai brand generator set which have passed ISO"
+    ],
+    "3": [
+      "A",
+      "Factory Address: Building 5, Zheli New Journey Venture Capital Industrial Park, Shangyu District, Shaoxing City, Zhejiang Province",
+      "Office Address: Building 8, No. 505, Xingguo Road, Linping District, Hangzhou City, Zhejiang Province"
+    ]
   },
-  "str": [["Theo gian hàng Made-in-China: nhà máy tại Dư Hàng, Hàng Châu; tổ máy diesel dùng động cơ Cummins, Deutz, Doosan, Yuchai, SDEC, FAWDE", 1]],
-  "cert": [["CE", 1]],
-  "lines": [ { "k": "genset", "s": "diesel generators", "fuel": "diesel", "eng": ["Cummins", "Deutz", "Doosan", "Yuchai", "SDEC", "FAWDE"], "models": [], "alt": [], "src": [1] } ],
-  "miss": ["Chỉ có gian hàng Made-in-China; chưa có website chính thức và dải công suất", "Hàng chào trúng thầu: Kachai K33S5, C33 (gói IB2600245437, IB2600354007, IB2600437361)"],
+  "str": [
+    [
+      "Theo gian hàng Made-in-China: nhà máy tại Dư Hàng, Hàng Châu; tổ máy diesel dùng động cơ Cummins, Deutz, Doosan, Yuchai, SDEC, FAWDE",
+      1
+    ],
+    [
+      "Nhà máy ở khu công nghiệp Zheli New Journey, Thượng Ngu, Thiệu Hưng; văn phòng ở Lâm Bình, Hàng Châu",
+      3
+    ]
+  ],
+  "cert": [
+    [
+      "CE",
+      1
+    ],
+    [
+      "BV",
+      1
+    ],
+    [
+      "SGS",
+      1
+    ],
+    [
+      "ISO",
+      2
+    ]
+  ],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "diesel generators",
+      "fuel": "diesel",
+      "eng": [
+        "Cummins",
+        "Deutz",
+        "Doosan",
+        "Yuchai",
+        "SDEC",
+        "FAWDE"
+      ],
+      "models": [],
+      "alt": [],
+      "src": [
+        1,
+        2
+      ],
+      "p": [
+        9,
+        3125,
+        "kVA",
+        "unspecified",
+        2
+      ]
+    }
+  ],
+  "miss": [
+    "Datasheet PDF ở trang Technical Specification (download.html) đòi mật khẩu mới tải được (thử 09/11)",
+    "Hàng chào trúng thầu: Kachai K33S5, C33 (gói IB2600245437, IB2600354007, IB2600437361)"
+  ],
   "by": "claude (rà hàng chào trúng thầu 04/11)"
 }

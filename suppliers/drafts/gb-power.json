@@ -1,5 +1,76 @@
-{"id":"gb-power","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":"GB POWER CO.,LTD","zh":null,"brands":["GB"],"web":null,"prov":"Shanghai","city":"Shanghai","founded":null,"fsrc":[],"related":[],
-"src":{"1":["B","GB POWER CO.,LTD as a manufacturer for generator and diesel generator set, focus on generator field over 6years","GB brushless alternator from 6.5kw to 2000KW (Insulation Class H and IP22) be used for land generator set and marine type","approved ISO9001 quality system certification, product approved CE certification.","Address:NO 18 INDUSTRY ROAD,HUQIAO DISTRICT,SHANGHAI,CHINA"]},
-"str":[["Đầu phát không chổi than 6,5–2000 kW (cấp H, IP22) cho tổ máy trên bộ và tàu thủy, kèm tổ máy diesel",1]],"cert":[["ISO9001",1],["CE",1]],
-"lines":[{"k":"alternator","s":"GB brushless alternator","p":[6.5,2000,"kW","unspecified",1],"src":[1]},{"k":"genset","s":"Diesel generator set","fuel":"diesel","src":[1]}],
-"miss":["Nguồn là gian hàng CCCME (hạng B); chưa có website riêng, năm thành lập"],"by":"discover-bot (Claude)"}
+{
+  "id": "gb-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "GB POWER CO.,LTD",
+  "zh": null,
+  "brands": [
+    "GB"
+  ],
+  "web": "https://www.gbpower.net/",
+  "prov": "Shanghai",
+  "city": "Shanghai",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "B",
+      "GB POWER CO.,LTD as a manufacturer for generator and diesel generator set, focus on generator field over 6years",
+      "GB brushless alternator from 6.5kw to 2000KW (Insulation Class H and IP22) be used for land generator set and marine type",
+      "approved ISO9001 quality system certification, product approved CE certification.",
+      "Address:NO 18 INDUSTRY ROAD,HUQIAO DISTRICT,SHANGHAI,CHINA"
+    ],
+    "3": [
+      "A",
+      "COMPANY: GB POWER CO.,LTD",
+      "ADD：No. 18 Industry Road, Huqiao, Fengxian District, Shanghai, China"
+    ]
+  },
+  "str": [
+    [
+      "Đầu phát không chổi than 6,5–2000 kW (cấp H, IP22) cho tổ máy trên bộ và tàu thủy, kèm tổ máy diesel",
+      1
+    ]
+  ],
+  "cert": [
+    [
+      "ISO9001",
+      1
+    ],
+    [
+      "CE",
+      1
+    ]
+  ],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Diesel generator set",
+      "fuel": "diesel",
+      "src": [
+        1
+      ]
+    },
+    {
+      "k": "alternator",
+      "s": "GB brushless alternator",
+      "p": [
+        6.5,
+        2000,
+        "kW",
+        "unspecified",
+        1
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Website không ghi năm thành lập"
+  ],
+  "by": "discover-bot (Claude)"
+}
