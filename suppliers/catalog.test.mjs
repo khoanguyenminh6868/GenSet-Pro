@@ -174,3 +174,20 @@ test("fuel at 75 % and 50 % load: keys of their own; a one-model sheet's two uni
   const t = rec("genset_oem", [{ n: 103, title: "x", header: ["| Model | Prime kVA | Engine | Fuel 75% load | Fuel Consumption", "| | | | L/h | L/h"], rows: ["| X150 | 150 | 6BTAA5.9-G12 | 25 | 33 |"] }]);
   assert.deepEqual(Object.fromEntries(C.fromSupplier(t)[0].specs.map((x) => [x.key, x.value])), { fuel75: "25", fuel: "33" });
 });
+
+test("partsIn reads the engine, alternator and controller a won goods row names", () => {
+  const p = (t) => C.partsIn(t).map((x) => `${x.kind}:${x.make || "-"}:${x.model}`);
+  assert.deepEqual(p("POWERED BY MITSUBISHI - Model: MS825L - Ðộng cơ: Mitsubishi - Model: S6R2-PTAA-C - Thương hiệu Nhât/Sx China - Ðầu phát: Leroy Somer - Model TAL-A49-B - Bộ điều khiển: Deepsea DSE7320 MKII - UK"),
+    ["engine:Mitsubishi:S6R2-PTAA-C", "alternator:Leroy-Somer:TAL-A49-B", "controller:Deep Sea:DSE7320 MKII"]);
+  assert.deepEqual(p("Động cơ Weichai WP10D264E200, Đầu phát Weichai WHA-250-4/0.4, Điện áp ra 3P-4W- 220/380VAC"), ["engine:Weichai:WP10D264E200", "alternator:-:WHA-250-4/0.4"]);
+  // A series word apart from its code, a make after "Nhãn hiệu".
+  assert.deepEqual(p("Đầu phát : LEROYSOMER; + Model : TAL A44K + Xuất xứ : China"), ["alternator:Leroy-Somer:TAL A44K"]);
+  assert.deepEqual(p("Đầu Phát: • Model: KR274FS • Nhãn hiệu: Kokuro • Xuất xứ: Trung Quốc"), ["alternator:Kokuro:KR274FS"]);
+  // "Đầu máy phát" is the alternator, not part of the engine before it.
+  assert.deepEqual(p("Động cơ Diesel Perkins 1106A-70TG1 (đồng bộ theo tổ máy) Đầu máy phát điện Mecc Alte ECP34-2M/4"), ["engine:Perkins:1106A-70TG1", "alternator:Mecc Alte:ECP34-2M/4"]);
+  // No code: voltages, powers, sizes, I/O counts and pipes are not models.
+  assert.deepEqual(p("Đầu phát điện: + Công suất 250ekW + Điện áp: 400V/50HZ/3 pha"), []);
+  assert.deepEqual(p("Bộ điều khiển: + Tích hợp 9DI/8DO và 4AI, cài đặt tùy chọn"), []);
+  assert.deepEqual(p("động cơ (kW/rpm): 17kW/1.500rpm - Điều chỉnh tốc độ: Điện tử - 12VDC"), []);
+  assert.deepEqual(p("Tủ điều khiển bơm dầu - Ống tiếp dầu DN50 dài 10m"), []);
+});

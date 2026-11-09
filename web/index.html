@@ -337,7 +337,7 @@ table.supmain{table-layout:fixed}table.supmain th{white-space:normal}table.supma
 table.bdmain tbody tr{cursor:pointer}table.bdmain tbody tr:hover{background:var(--panel2)}table.bdmain tr.us,table.bdrows tr.us{background:var(--cyan-soft)}
 table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:right;white-space:nowrap}
 @media (max-width:640px){table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:left}}
-.bdgoods{margin-top:6px}.bdgoods ol{margin:2px 0 0;padding-left:20px}.bdgoods li{margin:3px 0}
+.wparts{margin:3px 0 2px}.wparts>div{margin:1px 0}.bdgoods{margin-top:6px}.bdgoods ol{margin:2px 0 0;padding-left:20px}.bdgoods li{margin:3px 0}
 .bdgoods details>summary{cursor:pointer;color:var(--violet);width:max-content}.bdgoods .cfgtext{white-space:pre-line;margin:4px 0 6px;padding:6px 8px;background:var(--panel2);border-radius:6px;max-height:360px;overflow:auto}
 @media (max-width:640px){.mbanner .tag{display:none}.mbanner h2{font-size:16px}.mbanner .mark{width:30px;height:30px}}
 /* Phone: the search and filter rows fold behind one button, tap to open (Khoa, 2026-11-02). */
@@ -2552,7 +2552,7 @@ async function toggleFav(id) {
   if (!(await dbSet("supfav/" + id, rec))) toast("Không lưu được nhà cung cấp yêu thích.");
 }
 const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
-const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); };
+const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
   <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a><button class="btn sm" data-close>Đóng</button></header>`;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
@@ -2855,6 +2855,7 @@ function catWarm() {
     if (!catBuild.b.step(() => d.timeRemaining())) return idle(make);
     catMemo = { src, del, cat: catBuild.b.result() };
     stop();
+    partsFill();
   };
   idle(read);
 }
@@ -2888,11 +2889,11 @@ function catSpecsCell(e) {
 const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${catVia(e)}</div>` : '<span class="muted">Nguồn không ghi hãng</span>');
 // The supplier whose page an engine / alternator / controller was opened from: its detail gets a button back there (Khoa, 2026-11-02).
 let catFrom = null;
-function openCatalog(kind, key, from = null) {
+function openCatalog(kind, key, from = null, q = null) {
   needSup();
   filtOpen = true; // Thông số cấu hình: filter rows open by default on phone (Khoa, 2026-11-05)
   catFrom = from;
-  catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}) };
+  catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}), ...(q ? { q, make: "", spec: "", power: "" } : {}) };
   modal(mBanner("cat", "Thông số cấu hình", "Rút từ bảng thông số của các nhà cung cấp", "catTitle", "#" + SCREEN_HASH[kind]) + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
 }
 function catMatches(e, f = catView) {
@@ -3589,6 +3590,44 @@ function bdResultHtml(r) {
 // hiệu, xuất xứ, khối lượng, đơn giá, and "Cấu hình, tính năng kỹ thuật cơ bản" folded (often thousands of characters,
 // naming the engine, alternator and controller with their makes). Group heading rows (no make, quantity or price) stay
 // as plain lines.
+// Động cơ, đầu phát, bộ điều khiển of a won goods row (Khoa, 2026-11-09): each model read from its "Cấu hình" (web/
+// catalog.js partsIn) and looked up in Thông số cấu hình: the same model → "Xem thông số" opens it; a model several
+// catalog models start with (ECP34 → ECP34-1L/4, ECP34-2M/4...) → the catalog list searched for it; none → "chưa có
+// thông tin". The catalog is built from every supplier table (seconds): until it is ready the row says so, and
+// partsFill() writes the result into the page once catWarm() has built it.
+const PART_VI = { engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển" };
+let partIdx = { cat: null, keys: null };
+function partFind(kind, model) {
+  const cat = catalog(), C = window.GenbidCatalog;
+  if (partIdx.cat !== cat) partIdx = { cat, keys: Object.fromEntries(Object.entries(CAT_KIND).map(([k, x]) => [k, cat[x.list].map((e) => e.key)])) };
+  const key = C.keyOf(model), keys = partIdx.keys[kind] || [];
+  // A short code (184G, 4520) names many things: only as a search, never as the one model.
+  if (key.length >= 5 && keys.includes(key)) return { key };
+  const pre = key.length >= 4 ? keys.filter((k) => k.startsWith(key)) : [];
+  if (pre.length === 1 && key.length >= 5) return { key: pre[0] };
+  return pre.length ? { q: model, n: pre.length } : null;
+}
+function partStatusHtml(kind, model) {
+  if (!catReady()) return '<span class="muted">đang tra danh mục...</span>';
+  const f = partFind(kind, model);
+  if (!f) return '<span class="chip mut" title="Model này chưa có trong Thông số cấu hình (bảng thông số của các nhà cung cấp)">chưa có thông tin</span>';
+  return f.key ? h`<a href="#" data-catopen="${kind}" data-catkey="${f.key}">Xem thông số</a>`
+    : h`<a href="#" data-catopen="${kind}" data-catq="${f.q}" title="Danh mục có ${f.n} model bắt đầu bằng ${model}; hàng trúng không ghi đủ đời model">${f.n} model gần giống</a>`;
+}
+function partsHtml(x) {
+  // Only a generator set row: an ATS, a cable or a controller sold on its own names no set's parts.
+  if (!window.GenbidCatalog?.partsIn || !/máy\s*phát|tổ\s*máy|genset|generator|máy\s*nổ/i.test([x.name, x.code].join(" "))) return "";
+  const ps = window.GenbidCatalog.partsIn([x.code, x.desc].filter(Boolean).join(" | "));
+  if (!ps.length) return "";
+  if (!catReady()) setTimeout(partsFill, 0);
+  return h`<div class="wparts">${raw(ps.map((p) => h`<div title="${p.text}">${PART_VI[p.kind]}: <b>${[p.make, p.model].filter(Boolean).join(" ")}</b> · <span class="wpart" data-pkind="${p.kind}" data-pmodel="${p.model}">${raw(partStatusHtml(p.kind, p.model))}</span></div>`).join(""))}</div>`;
+}
+function partsFill() {
+  const spans = [...document.querySelectorAll(".wpart")];
+  if (!spans.length) return;
+  if (!catReady()) { needSup(); catWarm(); return; }
+  for (const s of spans) s.innerHTML = partStatusHtml(s.dataset.pkind, s.dataset.pmodel);
+}
 function bdGoodsHtml(goods, label = "Hàng chào") {
   const cfg = (s) => String(s || "").replace(/\s+\*\s+/g, "\n* ").replace(/\s+-\s+(?=\S)/g, "\n- ").replace(/^\n/, "");
   const li = (x) => {
@@ -3596,7 +3635,7 @@ function bdGoodsHtml(goods, label = "Hàng chào") {
     const brand = x.label && x.label !== x.maker ? x.label : "";
     const parts = [x.maker && `Hãng ${x.maker}`, brand && `nhãn hiệu ${brand}`, x.code && `mã ${x.code}`, x.origin && `xuất xứ ${x.origin}`, x.year && `năm ${x.year}`,
       x.qty && `${Number(x.qty).toLocaleString("vi-VN")} ${x.unit || ""}`.trim(), x.unitPrice && `đơn giá ${fmtVnd(x.unitPrice)}`].filter(Boolean);
-    return h`<li><span title="${name.length > 220 ? name : ""}">${short}</span>${parts.length ? " · " : ""}<span class="muted">${parts.join(" · ")}</span>${raw(x.desc ? h`<details><summary>Cấu hình kỹ thuật</summary><div class="cfgtext">${cfg(x.desc)}</div></details>` : "")}</li>`;
+    return h`<li><span title="${name.length > 220 ? name : ""}">${short}</span>${parts.length ? " · " : ""}<span class="muted">${parts.join(" · ")}</span>${raw(partsHtml(x))}${raw(x.desc ? h`<details><summary>Cấu hình kỹ thuật</summary><div class="cfgtext">${cfg(x.desc)}</div></details>` : "")}</li>`;
   };
   return h`<div class="bdgoods small">${label}:<ol>${raw((goods || []).map(li).join(""))}</ol></div>`;
 }
@@ -3846,7 +3885,7 @@ document.addEventListener("click", async (e) => {
   const supo = e.target.closest("[data-supopen]");
   if (supo) { if ($("#supBody")) { if (!supOpenId) listScroll.sup = mScroll().scrollTop; supOpenId = supo.dataset.supopen || null; renderSuppliers(); } else openSuppliers(supo.dataset.supopen); return; }
   const cko = e.target.closest("[data-catopen]");
-  if (cko) { const from = cko.closest("#supBody") ? supOpenId : null; if (from) listScroll.supDetail = mScroll().scrollTop; openCatalog(cko.dataset.catopen, cko.dataset.catkey, from); return; }
+  if (cko) { const from = cko.closest("#supBody") ? supOpenId : null; if (from) listScroll.supDetail = mScroll().scrollTop; openCatalog(cko.dataset.catopen, cko.dataset.catkey, from, cko.dataset.catq || null); return; }
   if (e.target.closest("#catToSup")) { const id = catFrom; catFrom = null; openSuppliers(id); mScroll().scrollTop = listScroll.supDetail || 0; return; }
   const cki = e.target.closest("#catList [data-catitem]");
   if (cki) { listScroll.cat = mScroll().scrollTop; catView.open = cki.dataset.catitem; renderCatalog(); return; }
