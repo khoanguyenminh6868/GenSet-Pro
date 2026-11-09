@@ -49,6 +49,204 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai C/KCC series (Cummins)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 20,
+        "max": 1688,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai SYC-K series (Yuchai)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "power": {
+        "min": 20,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai SCD-K series (Cummins)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 20,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai SDK series (Doosan)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "power": {
+        "min": 150,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai SPC/SPU/SPI series (Perkins)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 13,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai SDD/SDH series (Deutz)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 20,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai SSM series (Mitsubishi)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "power": {
+        "min": 625,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai SFW/FW series (4JB1)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "power": {
+        "min": 25,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai S series (SDEC)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "power": {
+        "min": 50,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kachai SWF series (Weifang)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "power": {
+        "min": 30,
+        "max": 187.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
     }
   ],
   "certifications": [
@@ -77,9 +275,914 @@
         "The company's products have passed CE, BV, SGS and other international authority certification."
       ],
       "file": "sources/kachai-hangzhou/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://jcpower.en.made-in-china.com/product/bwCTazJMCjct/China-Sdec-Shanghai-Diesel-Engine-Powered-Generator-Set.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "Sdec Shanghai Diesel Engine Powered Generator Set - Sdec Generator and Sdec Diesel Generator",
+        "| C20M5 | 16 | 20 | 17.6 | 22 | 2280*950*1400 | 4B3.9-G11 | 20/22 | SG184E",
+        "| C1688D5 | 1350 | 1688 | 1500 | 1875 | ISO 40HQ | KTA50-G15 | 1491/1656 | SG454D"
+      ],
+      "file": "sources/kachai-hangzhou/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://jcpower.en.made-in-china.com/product/FvgJOiLGYntV/China-375kVA-2750kVA-Electric-Open-Type-Industrial-Power-Diesel-Generator-with-Cummins-Yuchai-Weifang-Engine.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "375kVA-2750kVA Electric Open Type Industrial Power Diesel Generator with Cummins/Yuchai/Weifang Engine - 2026 Diesel Generators, Power L Generator price | Made-in-china.com",
+        "| SYC16D-K | 16 | 20 | 18 | 23 | 4D24G4/A | 18.5/20.4 | K184A",
+        "| SYC2750E-K | 2200 | 2750 | 2400 | 3000 | YC16VC3600-D31 | 2405/2646 | FD7H",
+        "Controller Brand: Deepsea , ComAp, Smartgen , Kachai"
+      ],
+      "file": "sources/kachai-hangzhou/2002.md"
+    },
+    {
+      "n": 2003,
+      "url": "https://jcpower.en.made-in-china.com/product/WSNnAxJusHry/China-Silent-Open-Type-30kVA-60kVA-125kVA-200kVA-Power-Electric-Diesel-Engine-Generator-with-Perkins-Doosan-Deutz-Engine.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "Silent Open Type 30kVA 60kVA 125kVA 200kVA Power Electric Diesel Engine Generator with Perkins/Doosan/Deutz Engine - 2026 Diesel Generator, Soundproof Diesel Generator price | Made-in-china.com",
+        "| SCD16M-K | 16 | 20 | 18 | 22.5 | 4B3.9-G11 | 20/22 | K184A",
+        "| SCD160D-K | 160 | 200 | 180 | 225 | 6CTAA8.3-G2 | 183/203 | K274I"
+      ],
+      "file": "sources/kachai-hangzhou/2003.md"
+    },
+    {
+      "n": 2004,
+      "url": "https://jcpower.en.made-in-china.com/product/EKjJGVUohkWM/China-400kw-500kVA-3-Phase-4-Wires-Doosan-Engine-Diesel-Generator-Set.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "400kw/500kVA 3 Phase 4 Wires Doosan Engine Diesel Generator Set - Doosan Diesel Generator and Doosan Open Type Generator",
+        "| SDK120D | 150 | 165 | 120 | 132 | DP086TA | | K274E | UCI274F | 2930×1050×1560 | 1620 | 3500x1250x1850 | 2550",
+        "| SDK600D | 750 | 825 | 600 | 660 | DP222LC | | K354J | S6L1D-C4 | 3650×1550×1930 | 4100 | 4900x1800x2350 | 6000",
+        "Intelilite/Deepsee/Smartgen"
+      ],
+      "file": "sources/kachai-hangzhou/2004.md"
+    },
+    {
+      "n": 2005,
+      "url": "https://jcpower.en.made-in-china.com/product/HKhxrcvSXVWn/China-320kw-Diesel-Generator-with-Perkins-Engine-2206c-E13tag3.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "320kw Diesel Generator with Perkins Engine 2206c-E13tag3 - Diesel Generator and Generator",
+        "| SPC10M | 13 | 14 | 10 | 11 | 403A-15G1 | M | K164C | S0L1-L1 | 1400x760x930 | 390 | 1650*780*950 | 580",
+        "| SPI/U1800D | 2250 | 2500 | 1800 | 2000 | 4016-61TRG3 | E | K454F | PI734H | 6240x2590x2860 | 13900 | 40HQ | 22000"
+      ],
+      "file": "sources/kachai-hangzhou/2005.md"
+    },
+    {
+      "n": 2006,
+      "url": "https://jcpower.en.made-in-china.com/product/SKEQgzsdAXWr/China-300kw-China-Assembled-Deutz-Trailer-Diesel-Generator.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "300kw China Assembled Deutz Trailer Diesel Generator - 2026 Deutz Generator, Cummins Generator price | Made-in-china.com",
+        "| SDD16D | 20 | 22 | 16 | 18 | BFM3 G1 | | K184A | S0L2-G1 | 1580*800*1050 | 610 | 2280*950*1252 | 890",
+        "| SDH600D | 750 | 825 | 600 | 660 | HC12V132ZL-LAG2A | | K354J | S6L1D-C4 | 4150*1780*2250 | 4500 | 5200*1900*2350 | 6300"
+      ],
+      "file": "sources/kachai-hangzhou/2006.md"
+    },
+    {
+      "n": 2007,
+      "url": "https://jcpower.en.made-in-china.com/product/NSDmcvUHfqhW/China-675-2250kVA-Mitsubishi-Engine-Diesel-Generator-Open-Type.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "675-2250kVA Mitsubishi Engine Diesel Generator Open Type - 2026 Mitsubishi Generator, Mitsubishi Diesel Generator price | Made-in-china.com",
+        "| SSM500D | 625 | 700 | 500 | 560 | S6R2-PTA-C | | K354F | HCI544FS | 3440*1615*2090 | 4880 | 4900*1800*2350 | 6500",
+        "| SSM1600D | 2000 | 2200 | 1600 | 1760 | S16R-PTAA2-C | | K454E | PI734F | 5870*2210*2930 | 17500 | 40HQ | 26500"
+      ],
+      "file": "sources/kachai-hangzhou/2007.md"
+    },
+    {
+      "n": 2008,
+      "url": "https://jcpower.en.made-in-china.com/product/QvkJWOuxHhVc/China-Open-Type-Power-Electric-Smart-FAW-Yto-Chinese-Engine-Diesel-Generator.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "Open Type Power Electric Smart FAW/Yto Chinese Engine Diesel Generator - 2026 Chinese Generator, Chinese Engine price | Made-in-china.com",
+        "| SFW20D | 25.0 | 30.0 | 20.0 | 24.0 | 4JB1 | | K184C | S0L2-M1 | 1800*750*1100 | 700 | 2000*850*1150 | 820",
+        "| FW50D | 45.0 | 50.0 | 36.0 | 40.0 | 4JB1TA | | K184G | S1L2-N1 | 1800*750*1100 | 790 | 2000*850*1150 | 920"
+      ],
+      "file": "sources/kachai-hangzhou/2008.md"
+    },
+    {
+      "n": 2009,
+      "url": "https://jcpower.en.made-in-china.com/product/ZFjGbXtOcyVl/China-Sdec-Shanghai-Diesel-Generator-Mobile-Trailer-Type.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "Sdec Shanghai Diesel Generator Mobile Trailer Type - 2026 Mobile Generator, Trailer Generator price | Made-in-china.com",
+        "| S50E5-T3 | 40 | 50 | 44 | 55 | 2500*1050*1400 | 4HTAA4.3-G31 | 51/56 | SG224D | 72.2 | 80A",
+        "| S10000E5-T3 | 800 | 1000 | 880 | 1100 | 5850*2200*2800 | 6WTAA35-G31 | 882/970 | SG404E | 1443.2 | 1600A"
+      ],
+      "file": "sources/kachai-hangzhou/2009.md"
+    },
+    {
+      "n": 2010,
+      "url": "https://jcpower.en.made-in-china.com/product/kXynJBvxXIRS/China-Prime-Output-25kVA-20kw-Portable-Diesel-Generator-Price-with-Brushless-Alternator-Weichai-Engine.html",
+      "accessedAt": "2026-11-09",
+      "tier": "C",
+      "quote": [
+        "Prime Output 25kVA 20kw Portable Diesel Generator Price with Brushless Alternator Weichai Engine - 2026 Diesel Generator, Diesel Generator Set price | Made-in-china.com",
+        "| SWF24M | 30 | 35 | 24 | 28 | ZH4100D | | STC-24 | K184E | 1650*650*1050 | 630 | 2280*950*1252 | 950",
+        "| SWF150M | 187.5 | 200 | 150 | 160 | R6113ZLD | | TZH2-150 | K274H | 2550*900*1600 | 1500 | 3200*1130*1700 | 1900"
+      ],
+      "file": "sources/kachai-hangzhou/2010.md"
     }
   ],
   "confidence": "low",
-  "checkedAt": "2026-11-03",
-  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+  "checkedAt": "2026-11-09",
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Genset (Cummins) 50HZ 3-Phase",
+      "header": [
+        "| Genset (Cummins) | Engine | Alternator",
+        "| Unit Model | Rated Power | Standby Power | Silent type | Model | Power KW |",
+        "| KW | KVA | KW | KVA | Dimension mm | Rated / Standby | Model"
+      ],
+      "rows": [
+        "| C20M5 | 16 | 20 | 17.6 | 22 | 2280*950*1400 | 4B3.9-G11 | 20/22 | SG184E",
+        "| C25M5 | 20 | 25 | 22 | 27.5 | 2280*950*1400 | 4B3.9-G1 | 24/27 | SG184FS",
+        "| C25D5 | 20 | 25 | 22 | 27.5 | 2280*950*1400 | 4B3.9-G2 | 24/27 | SG184FS",
+        "| C30D5 | 24 | 30 | 26.4 | 33 | 2280*950*1400 | 4B3.9-G12 | 27/30 | SG184G",
+        "| C40M5 | 32 | 40 | 36 | 45 | 2280*950*1400 | 4BT3.9-G1 | 36/40 | SG184J",
+        "| C40D5 | 32 | 40 | 36 | 45 | 2280*950*1400 | 4BT3.9-G2 | 36/40 | SG184J",
+        "| C60D5 | 48 | 60 | 52 | 65 | 2500*1050*1500 | 4BTA3.9-G2 | 50/55 | SG224E",
+        "| C63D5 | 50 | 62.5 | 55 | 68.8 | 2500*1050*1500 | 4BTA3.9-G2 | 58/64 | SG224E",
+        "| C63D5A | 50 | 62.5 | 55 | 68.8 | 2500*1050*1500 | 4BTA3.9-G11 | 70/80 | SG224E",
+        "| C80D5 | 64 | 80 | 70.4 | 88 | 2500*1050*1500 | 4BTA3.9-G11 | 70/80 | SG224GS",
+        "| C95D5 | 75 | 94 | 84 | 105 | 2700*1100*1650 | 4BTA3.9-G13 | 87/97 | SG274C",
+        "| C95M5 | 75 | 94 | 84 | 105 | 2900*1130*1600 | 6BT5.9-G1 | 86/92 | SG274C",
+        "| C95D5A | 75 | 94 | 84 | 105 | 2900*1130*1600 | 6BT5.9-G2 | 86/92 | SG274C",
+        "| C100D5 | 80 | 100 | 88 | 110 | 2900*1130*1600 | 6BT5.9-G2 | 96/106 | SG274C",
+        "| C115D5 | 92 | 115 | 100 | 125 | 2900*1130*1600 | 6BTA5.9-G2 | 106/116 | SG274D",
+        "| C125D5 | 100 | 125 | 108 | 135 | 2900*1130*1600 | 6BTA5.9-G2 | 106/116 | SG274D",
+        "| C135D5 | 108 | 135 | 120 | 150 | 3250*1130*1700 | 6BTAA5.9-G2 | 120/130 | SG274E",
+        "| C150D5 | 120 | 150 | 132 | 165 | 3250*1130*1700 | 6BTAA5.9-G12 | 140/150 | SG274EL",
+        "| C180M5 | 144 | 180 | 160 | 200 | 3250*1130*1700 | 6CTA8.3-G1 | 163/180 | SG274HS",
+        "| C180D5 | 144 | 180 | 160 | 200 | 3250*1130*1700 | 6CTA8.3-G2 | 163/180 | SG274HS",
+        "| C200D5 | 160 | 200 | 176 | 220 | 3600*1350*1750 | 6CTAA8.3-G2 | 183/190 | SG274H",
+        "| C250D5 | 200 | 250 | 220 | 275 | 3600*1350*1750 | 6LTAA8.9-G2 | 220/240 | SG274K",
+        "| C260D5 | 208 | 260 | 232 | 290 | 3600*1350*1750 | 6LTAA8.9-G3 | 230/250 | SG314CL",
+        "| C275D5 | 220 | 275 | 240 | 300 | 3800*1350*1800 | 6LTAA9.5-G3 | 250/280 | SG314CL",
+        "| C313D5 | 250 | 313 | 280 | 350 | 3800*1350*1750 | 6LTAA9.5-G1 | 290/320 | SG314DL",
+        "| C375D5 | 300 | 375 | 330 | 413 | 4350*1600*2300 | 6ZTAA13-G3 | 340/380 | SG314F",
+        "| C450D5 | 360 | 450 | 400 | 500 | 4350*1600*2300 | 6ZTAA13-G4 | 400/415 | SG314G",
+        "| C450E5 | 360 | 450 | 400 | 500 | 4350*1600*2300 | QSZ13-G2 | 400/440 | SG314G",
+        "| C500E5 | 400 | 500 | 440 | 550 | 4350*1600*2300 | QSZ13-G3 | 450/470 | SG354D",
+        "| C550E5 | 440 | 550 | 500 | 625 | 4600*1600*2300 | QSZ13-G10 | 463/509 | SG354ES"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Genset (Cummins) 50HZ (T3, QSB/QSL/QSZ)",
+      "header": [
+        "| Genset (Cummins) | Engine | Alternator",
+        "| Unit Model | Rated Power | Standby Power | Silent type | Model | Power KW |",
+        "| KW | KVA | KW | KVA | Dimension mm | Rated / Standby | Model"
+      ],
+      "rows": [
+        "| C70E5-T3 | 56 | 70 | 64 | 80 | 2500*1050*1500 | QSB3.9-G2 | 63/70 | SG224F",
+        "| C85E5-T3 | 68 | 85 | 75 | 94 | 2500*1050*1500 | QSB3.9-G3 | 79/88 | SG224G",
+        "| C100E5-T3 | 80 | 100 | 88 | 110 | 2900*1130*1700 | QSB5.9-G2 | 96/106 | SG274C",
+        "| C135E5-T3 | 108 | 135 | 120 | 150 | 2900*1130*1700 | QSB5.9-G3 | 120/132 | SG274E",
+        "| C175E5-T3 | 140 | 175 | 154 | 192.5 | 3250*1130*1750 | QSB6.7-G3 | 151/166 | SG274G",
+        "| C188E5-T3 | 150 | 188 | 165 | 206.25 | 3250*1130*1750 | QSB6.7-G4 | 168/185 | SG274HS",
+        "| C225E5-T3 | 180 | 225 | 200 | 250 | 3600*1350*1850 | QSL8.9-G2 | 206/226 | SG274J",
+        "| C250E5-T3 | 200 | 250 | 220 | 275 | 3600*1350*1850 | QSL8.9-G3 | 220/242 | SG274K",
+        "| C275E5-T3 | 220 | 275 | 240 | 300 | 3600*1350*1850 | QSL8.9-G4 | 235/258 | SG314CL",
+        "| C375E5-T3 | 300 | 375 | 330 | 412.5 | 4350*1600*2300 | QSZ13-G6 | 328/374 | SG314F",
+        "| C400E5-T3 | 320 | 400 | 360 | 450 | 4350*1600*2300 | QSZ13-G7 | 367/419 | SG314FS"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Genset (Cummins) 60HZ 3-Phase",
+      "header": [
+        "| Genset (Cummins) | Engine | Alternator",
+        "| Unit Model | Rated Power | Standby Power | Silent type | Model | Power KW |",
+        "| KW | KVA | KW | KVA | Dimension mm | Rated / Standby | Model"
+      ],
+      "rows": [
+        "| C30M6 | 20.8 | 26 | 24 | 30 | 2280*950*1250 | 4B3.9-G11 | 23/26 | SG184E",
+        "| C35D6 | 24 | 30 | 28 | 35 | 2280*950*1250 | 4B3.9-G2 | 30/33 | SG184FS",
+        "| C40D6 | 28 | 35 | 32 | 40 | 2280*950*1250 | 4B3.9-G12 | 33/36 | SG184G",
+        "| C50D6 | 36 | 45 | 40 | 50 | 2280*950*1250 | 4BT3.9-G2 | 40/44 | SG184H",
+        "| C75D6 | 52 | 65 | 60 | 75 | 2500*1050*1400 | 4BTA3.9-G2 | 60/66 | SG224DL",
+        "| C85D6 | 60 | 75 | 68 | 85 | 2500*1050*1400 | 4BTA3.9-G2 | 67/74 | SG224E",
+        "| C100D6 | 72 | 90 | 80 | 100 | 2500*1050*1400 | 4BTA3.9-G11 | 80/90 | SG224GS",
+        "| C125D6 | 88 | 110 | 100 | 125 | 2900*1130*1600 | 6BT5.9-G2 | 100/110 | SG274C",
+        "| C140D6 | 104 | 130 | 112 | 140 | 2900*1130*1600 | 6BT5.9-G2 | 115/127 | SG274DS",
+        "| C150D6 | 108 | 135 | 120 | 150 | 2900*1130*1600 | 6BTA5.9-G2 | 120/132 | SG274DS",
+        "| C165D6 | 120 | 150 | 132 | 165 | 3200*1130*1700 | 6BTAA5.9-G2 | 132/145 | SG274D",
+        "| C180D6 | 132 | 165 | 144 | 180 | 3200*1130*1700 | 6BTAA5.9-G12 | 150/165 | SG274E",
+        "| C210D6 | 152 | 190 | 168 | 210 | 3200*1130*1700 | 6CTA8.3-G2 | 170/187 | SG274F",
+        "| C240D6 | 176 | 220 | 192 | 240 | 3500*1350*1750 | 6CTAA8.3-G2 | 190/210 | SG274G",
+        "| C280D6 | 208 | 260 | 224 | 280 | 3600*1350*1750 | 6LTAA8.9-G2 | 235/258 | SG274J",
+        "| C300D6 | 220 | 275 | 240 | 300 | 3600*1350*1750 | 6LTAA8.9-G3 | 255/282 | SG274J",
+        "| C330D6 | 240 | 300 | 264 | 330 | 3800*1350*1800 | 6LTAA9.5-G3 | 265/290 | SG274K",
+        "| C350D6 | 256 | 320 | 280 | 350 | 3800*1350*1750 | 6LTAA9.5-G1 | 280/310 | SG314CL",
+        "| C420D6 | 300 | 375 | 336 | 420 | 4350*1500*2300 | 6ZTAA13-G3 | 340/380 | SG314DL",
+        "| C500D6 | 360 | 450 | 400 | 500 | 4350*1500*2300 | 6ZTAA13-G4 | 400/415 | SG314FS",
+        "| C500E6 | 360 | 450 | 400 | 500 | 4350*1500*2300 | QSZ13-G2 | 400/440 | SG314FS",
+        "| C550E6 | 400 | 500 | 440 | 550 | 4350*1500*2300 | QSZ13-G3 | 450/500 | SG314FL"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Genset (Cummins) 60HZ 1-Phase",
+      "header": [
+        "| Genset (Cummins) | Engine | Alternator",
+        "| Unit Model | Rated Power | Standby Power | Silent type | Model | Power KW |",
+        "| KW | KVA | KW | KVA | Dimension mm | Rated / Standby | Model"
+      ],
+      "rows": [
+        "| C24M6-1P | 20.8 | 20.8 | 24 | 24 | 2280*950*1250 | 4B3.9-G11 | 23/26 | SG184E",
+        "| C28D6-1P | 24 | 24 | 28 | 28 | 2280*950*1250 | 4B3.9-G2 | 30/33 | SG184FS",
+        "| C32D6-1P | 28 | 28 | 32 | 32 | 2280*950*1250 | 4B3.9-G12 | 33/36 | SG184G",
+        "| C40D6-1P | 36 | 36 | 40 | 40 | 2280*950*1250 | 4BT3.9-G2 | 40/44 | SG184H",
+        "| C60D6-1P | 52 | 52 | 60 | 60 | 2500*1050*1400 | 4BTA3.9-G2 | 60/66 | SG224DL"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Genset (high power Cummins) 50HZ 3-Phase",
+      "header": [
+        "| Genset (high power Cummins) | Engine | Alternator",
+        "| Unit Model | Rated Power | Standby Power | Silent type | Model | Power KW |",
+        "| KW | KVA | KW | KVA | Dimension mm | Rated / Standby | Model"
+      ],
+      "rows": [
+        "| C250D5A | 200 | 250 | 220 | 275 | 3800*1350*1800 | MTA11-G2 | 224/246 | SG274K",
+        "| C250D5B | 200 | 250 | 220 | 275 | 3800*1350*1800 | NTA855-GA | 231/254 | SG274K",
+        "| C275D5A | 220 | 275 | 250 | 313 | 4150*1500*2250 | NTA855-G1A | 264/291 | SG314CL",
+        "| C313D5A | 250 | 313 | 280 | 350 | 4150*1500*2250 | NTA855-G1B | 284/321 | SG314DL",
+        "| C313D5B | 250 | 313 | 275 | 344 | 3800*1350*1800 | MTAA11-G3 | 282/310 | SG314DL",
+        "| C350D5 | 280 | 350 | 300 | 375 | 4150*1500*2250 | NTA855-G2A | 312/343 | SG314E",
+        "| C350D5A | 280 | 350 | 310 | 387.5 | 4150*1500*2250 | NTA855-G4 | 317/351 | SG314E",
+        "| C375D5A | 300 | 375 | 330 | 412.5 | 4350*1500*2200 | NTAA855-G7 | 343/377 | SG314FS",
+        "| C375E5 | 300 | 375 | 330 | 412.5 | 4350*1500*2200 | QSNT-G3 | 358/392 | SG314FS",
+        "| C400E5 | 320 | 400 | 352 | 440 | 4350*1500*2200 | QSNT-G3 | 358/392 | SG314F",
+        "| C400D5 | 320 | 400 | 352 | 440 | 4350*1500*2200 | NTAA855-G7A | NA/407 | SG314F",
+        "| C450E5A | 360 | 450 | 400 | 500 | 4350*1500*2200 | QSNT-4X | 407/448 | SG314FL",
+        "| C450D5A | 360 | 450 | 400 | 500 | 4900*1700*2400 | KTA19-G3 | 403/448 | SG314FL",
+        "| C500D5 | 400 | 500 | 440 | 550 | 4900*1700*2400 | KTA19-G3A | 448/504 | SG354C",
+        "| C525D5 | 420 | 525 | 500 | 625 | 5200*1700*2500 | KTAA19-G5 | 470/555 | SG354CL",
+        "| C575D5 | 460 | 575 | 520 | 650 | 5200*1700*2500 | KTAA19-G6 | 520/570 | SG354E",
+        "| C575D5A | 460 | 575 | 520 | 650 | 5200*1700*2500 | KTA19-G8 | NA/575 | SG354E",
+        "| C625D5 | 500 | 625 | 550 | 687.5 | 5200*1700*2500 | KTAA19-G6A | NA/610 | SG354EL",
+        "| C650E5 | 520 | 650 | 580 | 725 | 5200*1700*2500 | QSK19-G4 | 575/634 | SG354FS",
+        "| C688E5 | 550 | 688 | 600 | 750 | 5200*1700*2500 | QSK19-G11 | 606/667 | SG354GS",
+        "| C725D5 | 580 | 725 | 640 | 800 | 5850*2200*2550 | KT38-GA | 647/711 | SG354G",
+        "| C750D5 | 600 | 750 | 660 | 825 | 5850*2200*2550 | KTA38-G2 | 664/731 | SG404B",
+        "| C800D5 | 640 | 800 | 704 | 880 | 5850*2200*2550 | KTA38-G2B | 711/789 | SG404C",
+        "| C910D5 | 728 | 910 | 800 | 1000 | 5850*2200*2550 | KTA38-G2A | 813/895 | SG404D",
+        "| C1000D5 | 800 | 1000 | 880 | 1100 | 5850*2200*2550 | KTA38-G5 | 880/970 | SG404E",
+        "| C1125D5 | 900 | 1125 | 1000 | 1250 | 5850*2200*2550 | KTA38-G9 | NA/1089 | SG404F",
+        "| C1250D5 | 1000 | 1250 | 1100 | 1375 | ISO 20HQ | KTA50-G3 | 1097/1227 | SG404G",
+        "| C1375D5 | 1100 | 1375 | 1200 | 1500 | ISO 40HQ | KTA50-G8 | 1200/1429 | SG454B",
+        "| C1500D5 | 1200 | 1500 | 1320 | 1650 | ISO 40HQ | KTA50-GS8 | 1287/1429 | SG454C",
+        "| C1688D5 | 1350 | 1688 | 1500 | 1875 | ISO 40HQ | KTA50-G15 | 1491/1656 | SG454D"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Genset (high power Cummins) 60HZ 3-Phase",
+      "header": [
+        "| Genset (high power Cummins) | Engine | Alternator",
+        "| Unit Model | Rated Power | Standby Power | Silent type | Model | Power KW |",
+        "| KW | KVA | KW | KVA | Dimension mm | Rated / Standby | Model"
+      ],
+      "rows": [
+        "| KCC250E6 | 200 | 250 | 220 | 275 | 3800*1350*1800 | NT855-GA | NA/257 | SG274J",
+        "| KCC313E6 | 250 | 312.5 | 280 | 350 | 4100*1500*2100 | NTA855-G1 | 287/317 | SG314CL",
+        "| KCC350E6 | 280 | 350 | 300 | 375 | 4100*1500*2100 | NTA855-G1B | 313/347 | SG314D",
+        "| KCC400E6 | 320 | 400 | 352 | 440 | 4350*1500*2200 | NTA855-G3 | 358/399 | SG314E",
+        "| KCC450-E6 | 360 | 450 | 400 | 500 | 4900*1700*2400 | KTA19-G2 | 392/448 | SG314FS",
+        "| KCC500E6 | 400 | 500 | 440 | 550 | 4900*1700*2400 | KTA19-G3 | 463/511 | SG314FL",
+        "| KCC575E6 | 460 | 575 | 500 | 625 | 4900*1700*2400 | KTA19-G3A | 507/563 | SG354C",
+        "| KCC600E6 | 480 | 600 | 528 | 660 | 5200*1700*2400 | KTAA19-G5 | 533/605 | SG354C",
+        "| KCC688E6 | 550 | 687.5 | 600 | 750 | 5200*1700*2400 | KTAA19-G6A | NA/664 | SG354E",
+        "| KCC775E6 | 620 | 775 | 680 | 850 | 5850*2200*2550 | KT38-G | 679/747 | SG354FS",
+        "| KCC875E6 | 700 | 875 | 780 | 975 | 5850*2200*2550 | KTA38-G1 | 768/847 | SG404B",
+        "| KCC900E6 | 720 | 900 | 800 | 1000 | 5850*2200*2550 | KTA38-G2 | 809/895 | SG404C",
+        "| KCC950E6 | 760 | 950 | 836 | 1045 | 5850*2200*2550 | KTA38-G2B | 830/920 | SG404D",
+        "| KCC1000E6 | 800 | 1000 | 900 | 1125 | 5850*2200*2550 | KTA38-G2A | 915/1007 | SG404D",
+        "| KCC1125E6 | 900 | 1125 | 1000 | 1250 | 5850*2200*2550 | KTA38-G4 | 1007/1112 | SG404E",
+        "| KCC1250E6 | 1000 | 1250 | 1100 | 1375 | ISO 20HQ | KTA38-G9 | NA/1220 | SG404F",
+        "| KCC1375E6 | 1100 | 1375 | 1260 | 1575 | ISO 40HQ | KTA50-G3 | 1220/1380 | SG404G",
+        "| KCC1500E5 | 1200 | 1500 | 1320 | 1650 | ISO 40HQ | KTA50-G9 | 1384/1657 | SG454B"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "SCC300D (Cummins KTA19-G2, Kachai K314G)",
+      "header": [
+        "| SPECIFICATION OF DIESEL GENERATOR",
+        "| SCC300D",
+        "| Powered by CUMMINS diesel Engine"
+      ],
+      "rows": [
+        "| Prime Power (50HZ) | 300kw/375kva",
+        "| Standby Power (50HZ) | 330kw/413KVA",
+        "| Power Factor | 0.8 (Lagging)",
+        "| Phase Wires | 3-phases 4-Wires",
+        "| Start Model | Electric",
+        "| Engine Model | CUMMINS KTA19-G2",
+        "| Cylinders | 6",
+        "| Bore x Stroke(mm) | 159*159",
+        "| Compression Ratio | 14.5:1",
+        "| Speed | 1500rpm",
+        "| Cooling Method | Water - cooled",
+        "| Starting Method | 24V DC electrical start",
+        "| Full Load Diesel Consumption (L/H) | 35L",
+        "| Engine Displacement (L) | 12L",
+        "| Inspiration (L) | Turbocharged , Aftercooled",
+        "| Lube Volume (L) | 50L",
+        "| Coolant Volume (L) | 30.3L",
+        "| Noise (Db) | ≤ 75",
+        "| Governor Type | Electrical Governing",
+        "| Alternator Model | Kachai K314G",
+        "| Voltage | 400V",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±4%",
+        "| Insulation Class | H",
+        "| Voltage Control | AVR"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "More related generator model (Yuchai, Kachai alternator)",
+      "header": [
+        "| Genset model | Prime power | STandby power | Diesel engine | Alternator mod el",
+        "| KW | KVA | KW | KVA | Model | Power"
+      ],
+      "rows": [
+        "| SYC16D-K | 16 | 20 | 18 | 23 | 4D24G4/A | 18.5/20.4 | K184A",
+        "| SYC20D-K | 20 | 25 | 22 | 28 | 4D24G2/A | 23/25.3 | K184C",
+        "| SYC24D-K | 24 | 30 | 26 | 33 | 4D24TG2/A | 28/30.8 | K184E",
+        "| SYC30D-K | 30 | 38 | 33 | 41 | YC4D60-D21 | 40/44 | K184G",
+        "| SYC32D-K | 32 | 40 | 36 | 45 | 4D24TG0/A | 36/39.6 | K184H",
+        "| SYC50D-K | 50 | 63 | 56 | 70 | YC4D90Z-D21 | 60/66 | K224E",
+        "| SYC58D-K | 58 | 73 | 64 | 80 | YC4A100Z-D20 | 70/73.5 | K224G",
+        "| SYC80D-K | 80 | 100 | 88 | 110 | YC6B135Z-D20 | 90/99 | K274A",
+        "| SYC90D-K | 90 | 113 | 100 | 125 | YC6B155L-D21 | 103/113 | K274B",
+        "| SYC100D-K | 100 | 125 | 110 | 138 | YC6B180L-D20 | 120/132 | K274C",
+        "| SYC120D-K | 120 | 150 | 132 | 165 | YC6B205L-D20 | 138/152 | K274E",
+        "| SYC140D-K | 140 | 175 | 150 | 188 | YC6B230L-D20 | 155/170.5 | K274G",
+        "| SYC150D-K | 150 | 188 | 165 | 206 | YC6A245L-D21 | 165/181.5 | K274H",
+        "| SYC160E-K | 160 | 200 | 176 | 220 | YC6A275-D30 | 185/203 | K274I",
+        "| SYC200E-K | 200 | 250 | 220 | 275 | YC6MK350L-D20 | 235/258.5 | K274K",
+        "| SYC250D-K | 250 | 313 | 280 | 350 | YC6MK420L-D20 | 281/309 | K314D",
+        "| SYC280D-K | 280 | 350 | 300 | 375 | YC6MJ480L-D20 | 321/352 | K314F",
+        "| SYC300D-K | 300 | 375 | 330 | 413 | YC6MJ500-D21 | 335/370 | K314G",
+        "| SYC300E-K | 300 | 375 | 330 | 413 | YC6K500-D31 | 335/370 | K314G",
+        "| SYC300E-K | 300 | 375 | 330 | 413 | YC6K500-D30 | 335/370 | K314G",
+        "| SYC320E-K | 320 | 400 | 350 | 438 | YC6K520-D30 | 356/382 | K314H",
+        "| SYC360E-K | 360 | 450 | 385 | 481 | YC6K600-D30 | 401/441 | K314I",
+        "| SYC400D-K | 400 | 500 | 440 | 550 | YC6T660L-D20 | 441/485 | K354B",
+        "| SYC450E-K | 450 | 563 | 500 | 625 | YC6TD780-D31 | 520/572 | K354D",
+        "| SYC500E-K | 500 | 625 | 550 | 688 | YC6TD840-D31 | 560/616 | K354F",
+        "| SYC550E-K | 550 | 688 | 600 | 750 | YC6TD900-D31 | 605/665 | K354I",
+        "| SYC600E-K | 600 | 750 | 660 | 825 | YC6TD1000-D30 | 668/735 | K354J",
+        "| SYC640D-K | 640 | 800 | 700 | 875 | YC6C1070-D31 | 715/787 | K404B",
+        "| SYC910E-K | 728 | 910 | 800 | 1000 | YC6C1220-D31 | 815/897 | K404C",
+        "| SYC1000E-K | 800 | 1000 | 900 | 1125 | YC6C1320-D31 | 880/968 | K404D",
+        "| SYC1125E-K | 900 | 1125 | 1000 | 1250 | YC6C1520-D31 | 1016/1118 | K404E",
+        "| SYC1250E-K | 1000 | 1250 | 1100 | 1375 | YC6C1660-D30 | 1110/1221 | K404F",
+        "| SYC1250E-K | 1000 | 1250 | 1100 | 1375 | YC12VC1680-D31 | 1120/1230 | K404F",
+        "| SYC1500E-K | 1200 | 1500 | 1350 | 1688 | YC12VC2070-D31 | 1380/1520 | K404H",
+        "| SYC1650E-K | 1320 | 1650 | 1500 | 1875 | YC12VC2270-D31 | 1520/1670 | K454C",
+        "| SYC1875E-K | 1500 | 1875 | 1600 | 2000 | YC12VC2510-D31 | 1680/1850 | K454D",
+        "| SYC2125E-K | 1700 | 2125 | 1800 | 2250 | YC12VC2700-D31 | 1805/1985 | K454F",
+        "| SYC2250E-K | 1800 | 2250 | 2000 | 2500 | YC16VC3000-D31 | 2005/2206 | K454F",
+        "| SYC2500E-K | 2000 | 2500 | 2200 | 2750 | YC16VC3300-D31 | 2205/2426 | FD7G",
+        "| SYC2750E-K | 2200 | 2750 | 2400 | 3000 | YC16VC3600-D31 | 2405/2646 | FD7H"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "SCD160D (Cummins 6CTAA8.3-G2, Kachai K274I)",
+      "header": [
+        "| SPECIFICATION OF DIESEL GENERATOR",
+        "| SCD160D",
+        "| Powered by CUMMINS diesel Engine"
+      ],
+      "rows": [
+        "| Prime Power (50HZ) | 160kw/200kva",
+        "| Standby Power (50HZ) | 180kw/225KVA",
+        "| Power Factor | 0.8 (Lagging)",
+        "| Phase Wires | 3-phases 4-Wires",
+        "| Start Model | Electric",
+        "| Engine Model | Cummins 6CTAA8.3-G2",
+        "| Cylinders | 6",
+        "| Bore x Stroke(mm) | 114*135",
+        "| Compression Ratio | 18.0:1",
+        "| Speed | 1500rpm",
+        "| Cooling Method | Water - cooled",
+        "| Starting Method | 24V DC electrical start",
+        "| Full Load Diesel Consumption (L/H) | 45L",
+        "| Engine Displacement (L) | 8.3",
+        "| Inspiration (L) | Turbocharged , Air-Air cooled",
+        "| Lube Volume (L) | 23.8L",
+        "| Coolant Volume (L) | 12.3L",
+        "| Noise (Db) | ≤ 75",
+        "| Governor Type | Electrical Governing",
+        "| Alternator Model | Kachai K274I",
+        "| Voltage | 400V",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±4%",
+        "| Insulation Class | H",
+        "| Voltage Control | AVR",
+        "| Net Weigh (KGS) | 2430",
+        "| Dimensions (L x W x H) mm | 3500*1250*1850 SILENT"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "More related generator model (Cummins, Kachai alternator)",
+      "header": [
+        "| Genset model | Rated power | Standby power | Diesel engine | Alternator model",
+        "| KW | KVA | KW | KVA | Model | Power (KW)"
+      ],
+      "rows": [
+        "| SCD16M-K | 16 | 20 | 18 | 22.5 | 4B3.9-G11 | 20/22 | K184A",
+        "| SCD20D-K | 20 | 25 | 22 | 28 | 4B3.9-G1 | 24/27 | K184C",
+        "| SCD20D-K | 20 | 25 | 22 | 27.5 | 4B3.9-G2 | 24/27 | K184C",
+        "| SCD24D-K | 24 | 30 | 28 | 35 | 4B3.9-G12 | 27/30 | K184E",
+        "| SCD32M-K | 32 | 40 | 36 | 45 | 4BT3.9-G1 | 36/40 | K184H",
+        "| SCD32D-K | 32 | 40 | 36 | 45 | 4BT3.9-G2 | 36/40 | K184H",
+        "| SCD48D-K | 48 | 60 | 52 | 65 | 4BTA3.9-G2 | 50/55 | K224E",
+        "| SCD50D-K | 50 | 63 | 56 | 70 | 4BTA3.9-G2 | 58/64 | K224E",
+        "| SCD50D-K | 50 | 63 | 56 | 70 | 4BTA3.9-G11 | 70/80 | K224E",
+        "| SCD64D-K | 64 | 80 | 72 | 90 | 4BTA3.9-G11 | 70/80 | K224H",
+        "| SCD75M-K | 75 | 94 | 88 | 110 | 6BT5.9-G1 | 86/92 | K224J",
+        "| SCD75D-K | 75 | 94 | 88 | 110 | 6BT5.9-G2 | 86/92 | K224J",
+        "| SCD80D-K | 80 | 100 | 90 | 112.5 | 6BT5.9-G2 | 96/106 | K274A",
+        "| SCD96D-K | 96 | 120 | 108 | 135 | 6BTA5.9-G2 | 106/116 | K274C",
+        "| SCD100D-K | 100 | 125 | 108 | 135 | 6BTA5.9-G2 | 106/116 | K274C",
+        "| SCD100D-K | 108 | 140 | 120 | 150 | 6BTAA5.9-G2 | 120/130 | K274D",
+        "| SCD120D-K | 120 | 150 | 132 | 165 | 6BTAA5.9-G12 | 140/155 | K274E",
+        "| SCD140M-K | 140 | 175 | 160 | 200 | 6CTA8.3-G1 | 163/180 | K274G",
+        "| SCD140D-K | 140 | 175 | 160 | 200 | 6CTA8.3-G2 | 163/180 | K274G",
+        "| SCD150M-K | 150 | 188 | 160 | 200 | 6CTA8.3-G1 | 163/180 | K274H",
+        "| SCD150D-K | 150 | 188 | 160 | 200 | 6CTA8.3-G2 | 163/180 | K274H",
+        "| SCD160D-K | 160 | 200 | 180 | 225 | 6CTAA8.3-G2 | 183/203 | K274I"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Doosan Diesel Generator Model",
+      "header": [
+        "| Doosan Diesel Generator Model | Generator Specification | Engine Specifcation | Alternator Specifcation | Open Type | Silent Type",
+        "| Power(KVA) ( KVA) | Power(KW) ( KW) | Engine | | KACHAI | Stamford | Dimension | Weight | Dimension | Weight",
+        "| Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm) | (kg) | L×W×H(mm) * * ( mm) | (kg)"
+      ],
+      "rows": [
+        "| SDK120D | 150 | 165 | 120 | 132 | DP086TA | | K274E | UCI274F | 2930×1050×1560 | 1620 | 3500x1250x1850 | 2550",
+        "| SDK160D | 200 | 225 | 160 | 180 | P086TI | | K274I | UCI274H | 2950×1050×1560 | 1680 | 3500x1250x1850 | 2600",
+        "| SDK180D | 225 | 250 | 180 | 200 | DP086LA | | K274J | UCDI274J | 2970×1050×1600 | 1800 | 3500x1250x1850 | 2650",
+        "| SDK220D | 275 | 313 | 220 | 250 | P126TI | | K314B | S4L1D-D41 | 3090×1015×1600 | 1950 | 4200x1350x2150 | 3280",
+        "| SDK240D | 300 | 330 | 240 | 264 | P126TI- | | K314C | S4L1D-D41 | 3100×1015×1650 | 2000 | 4200x1350x2150 | 3300",
+        "| SDK300D | 375 | 413 | 300 | 330 | DP126LB | | K314G | HCI444FS | 3120×1015×1660 | 2050 | 4200x1350x2150 | 3350",
+        "| SDK360D | 450 | 500 | 360 | 400 | DP158LC | | K314I | S4L1D-G41 | 3200×1320×1720 | 2700 | 4200x1600x2150 | 4300",
+        "| SDK450D | 563 | 625 | 450 | 500 | DP180LA | | K354D | HCI544E | 3475×1413×1820 | 3000 | 4600x1600x2100 | 5200",
+        "| SDK500D | 625 | 688 | 500 | 550 | DP180LB | | K354F | HCI544FS | 3475×1413×1820 | 3100 | 4600x1600x2100 | 5250",
+        "| SDK550D | 688 | 750 | 550 | 600 | DP222LB | | K354I | S6L1D-C4 | 3650×1550×1920 | 4020 | 4900x1800x2350 | 5900",
+        "| SDK600D | 750 | 825 | 600 | 660 | DP222LC | | K354J | S6L1D-C4 | 3650×1550×1930 | 4100 | 4900x1800x2350 | 6000"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Perkins Diesel Generator Model",
+      "header": [
+        "| Diesel Generator Model | Generator Specification | Engine Specifcation | Alternator Specifcation | Open Type | Silent Type",
+        "| Power(KVA) ( KVA ) | Power(KW) ( KW ) | Engine | Fuel System | KACHAI | Stamford | Dimension | Weight | Dimension | Weight",
+        "| Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm ) | (kg) | L×W×H(mm) * * ( mm ) | (kg)"
+      ],
+      "rows": [
+        "| SPC10M | 13 | 14 | 10 | 11 | 403A-15G1 | M | K164C | S0L1-L1 | 1400x760x930 | 390 | 1650*780*950 | 580",
+        "| SPC12M | 15 | 17 | 12 | 13 | 403A-15G2 | M | K164D | S0L1-P1 | 1400x760x930 | 390 | 1650*780*950 | 600",
+        "| SPC16M | 20 | 22 | 16 | 18 | 404A-22G1 | M | K184A | S0L2-G1 | 1630x750x1350 | 560 | 1800*780*1060 | 900",
+        "| SPI/U24M | 30 | 33 | 24 | 26 | 1103A-33G | M | K184E | S0L2-P1 | 1730x900x1190 | 750 | 2280*950*1250 | 10000",
+        "| SPI/U36M | 45 | 50 | 36 | 40 | 1103A-33TG1 | M | K244C | S0L2-N1 | 1730x900x1190 | 800 | 2280*950*1250 | 1300",
+        "| SPC52M | 65 | 72 | 52 | 57 | 1104A-44TG1 | M | K224F | UCI224F | 1780*750*1450 | 1000 | 2500*950*1400 | 1500",
+        "| SPC64M | 80 | 88 | 64 | 70 | 1104A-44TG2 | M | K224H | UCI224G | 1860x900x1290 | 1020 | 2500*950*1400 | 1560",
+        "| SPC80D | 100 | 110 | 80 | 88 | 1104C-44TAG2 | E | K274A | UCI274C | 1860x900x1290 | 1020 | 2500*950*1400 | 1730",
+        "| SPC108M | 135 | 149 | 108 | 119 | 1106A-70TG1 | M | K274D | UCI274E | 2300x1100x1540 | 1600 | 3200*1130*1700 | 2320",
+        "| SPC120M | 150 | 165 | 120 | 132 | 1106A-70TAG2 | M | K274E | UCI274F | 2300x1100x1650 | 1880 | 3200*1130*1700 | 2600",
+        "| SPC144M | 180 | 198 | 144 | 158 | 1106A-70TAG3 | M | K274H | UCI274G | 2350x1100x1650 | 1950 | 3200*1130*1700 | 2700",
+        "| SPC160D | 200 | 220 | 160 | 176 | 1106A-70TAG4 | E | K274I | UCI274H | 2600x1250x1620 | 2050 | 3200*1130*1700 | 2700",
+        "| SPU200E | 250 | 275 | 200 | 220 | 1506A-E88TAG3 | ECM | K274K | UCDI274K | 2600x1250x1830 | 2250 | 3500*1250*1850 | 2800",
+        "| SPU250E | 313 | 344 | 250 | 275 | 1506A-E88TAG5 | ECM | K314D | S4L1D-E41 | 2790x1230x1710 | 2510 | 3500*1250*1850 | 2900",
+        "| SPU320E | 400 | 440 | 320 | 352 | 2206C-E13TAG3 | ECM | K314H | S4L1D-F41 | 3190x1400x2010 | 3500 | 4600*1600*2100 | 4250",
+        "| SPU360E | 450 | 495 | 360 | 396 | 2506C-E15TAG1 | ECM | K314I | S4L1D-G41 | 3460x1420x2190 | 3900 | 4900*1800*2350 | 4900",
+        "| SPU400E | 500 | 550 | 400 | 440 | 2506C-E15TAG2 | ECM | K354B | HCI544C | 3460x1420x2190 | 3900 | 4900*1800*2350 | 4900",
+        "| SPU480E | 600 | 660 | 480 | 528 | 2806C-E18TAG1A | ECM | K354E | HCI544E | 3580x1700x2190 | 4600 | 4900*1800*2350 | 5700",
+        "| SPU520E | 650 | 715 | 520 | 572 | 2806A-E18TAG2 | ECM | K354G | HCI544F | 3580x1700x2190 | 4600 | 4900*1800*2250 | 5700",
+        "| SPI/U600D | 750 | 825 | 600 | 660 | 4006-23TAG2A | E | K354J | S6L1D-C4 | 4320x1760x2200 | 6130 | 5800*2100*2450 | 8200",
+        "| SPI/U640D | 800 | 880 | 640 | 704 | 4006-23TAG3A | E | K404B | S6L1D-C4 | 4050x2000x2200 | 6500 | 5800*2100*2450 | 8500",
+        "| SPI/U800D | 1000 | 1100 | 800 | 880 | 4008TAG2 | E | K404D | S6L1D-E4 | 4680x2050x2400 | 8200 | 20HQ | 12500",
+        "| SPI/U1000D | 1250 | 1375 | 1000 | 1100 | 4012-46TWG2A | E | K404F | S6L1D-G4 | 4750x1870x2350 | 8500 | 20HQ | 13000",
+        "| SPI/U1200D | 1500 | 1650 | 1200 | 1320 | 4012-46TAG2A | E | K404H | PI734C | 5070x2200x2470 | 9000 | 40HQ | 19000",
+        "| SPI/U1500D | 1875 | 2063 | 1500 | 1650 | 4016TAG1A | E | K454D | PI734E | 6000x2200x2560 | 12230 | 40HQ | 21230",
+        "| SPI/U1600D | 2000 | 2250 | 1600 | 1800 | 4016TAG2A | E | K454E | PI734F | 5730x2780x3050 | 13500 | 40HQ | 21500",
+        "| SPI/U1800D | 2250 | 2500 | 1800 | 2000 | 4016-61TRG3 | E | K454F | PI734H | 6240x2590x2860 | 13900 | 40HQ | 22000"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Deutz Diesel Generator Model",
+      "header": [
+        "| Diesel Generator Model | Generator Specification | Engine Specifcation | Alternator Specifcation | Open Type | Silent Type",
+        "| Power(KVA) ( KVA) | Power(KW) ( KW) | Engine | | KACHAI | Stamford | Dimension | Weight | Dimension | Weight",
+        "| Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm) | (kg) | L×W×H(mm) * * ( mm) | (kg)"
+      ],
+      "rows": [
+        "| SDD16D | 20 | 22 | 16 | 18 | BFM3 G1 | | K184A | S0L2-G1 | 1580*800*1050 | 610 | 2280*950*1252 | 890",
+        "| SDD24D | 30 | 33 | 24 | 26 | BFM3 G1 | | K184E | S0L2-P1 | 1600*800*1050 | 630 | 2280*950*1252 | 910",
+        "| SDD32D | 40 | 45 | 32 | 36 | BFM3T | | K184H | S1L2-K1 | 1860*850*1050 | 750 | 2280*950*1252 | 1050",
+        "| SDD40D | 50 | 55 | 40 | 44 | BFM3C | | K224C | S1L2-R1 | 1890*880*1100 | 800 | 2280*950*1252 | 1100",
+        "| SDD48M | 60 | 66 | 48 | 53 | BF4M2012 | | K224E | S1L2-Y1 | 2050*880*1100 | 1200 | 2500*950*1400 | 1750",
+        "| SDD58M | 73 | 80 | 58 | 64 | BF4M2012C G1 | | K224G | UCI224F | 2050*880*1100 | 1200 | 2500*950*1400 | 1750",
+        "| SDD75D | 94 | 103 | 75 | 83 | BF4M2012C G2 | | K274A | UCI274C | 2050*880*1100 | 1250 | 2500*950*1400 | 1750",
+        "| SDD80M | 100 | 110 | 80 | 88 | BF4M1013EC G1 | | K274A | UCI274C | 2100*900*1500 | 1380 | 2900*1130*1650 | 1850",
+        "| SDD90D | 113 | 125 | 90 | 100 | BF4M1013EC G2 | | K274B | UCI274D | 2100*900*1500 | 1390 | 2900*1130*1650 | 1850",
+        "| SDD100D | 125 | 138 | 100 | 110 | BF4M1013FC | | K274C | UCI274ES | 2100*900*1500 | 1420 | 2900*1130*1650 | 1850",
+        "| SDD120M | 150 | 165 | 120 | 132 | BF6M1013EC G1 | | K274E | UCI274F | 2500*1000*1500 | 1750 | 3500*1350*1850 | 2320",
+        "| SDD140D | 175 | 200 | 140 | 160 | BF6M1013EC G2 | | K274G | UCI274G | 2500*1000*1500 | 1750 | 3500*1350*1850 | 2550",
+        "| SDD150D | 188 | 206 | 150 | 165 | BF6M1013FC G2 | | K274H | UCI274H | 2500*1000*1500 | 1800 | 3500*1350*1850 | 2600",
+        "| SDD160D | 200 | 220 | 160 | 176 | BF6M1013FC G3 | | K274I | UCI274H | 2500*1000*1500 | 1850 | 3500*1350*1850 | 2650",
+        "| SDH180D | 225 | 250 | 180 | 200 | BF6M1015-LA GA | | K274J | UCDI274J | 2500*1250*2150 | 2193 | 4000*1600*2150 | 3600",
+        "| SDH200D | 250 | 275 | 200 | 220 | BF6M1015C-LA G1A | | K274K | UCDI274K | 2630*1410*2150 | 2228 | 4000*1600*2150 | 3800",
+        "| SDH250D | 313 | 350 | 250 | 280 | BF6M1015C-LA G3A | | K314D | S4L1D-E41 | 2730*1410*2150 | 2503 | 4000*1600*2150 | 3950",
+        "| SDH300D | 375 | 413 | 300 | 330 | BF6M1015CP-LA G | | K314G | HCI444FS | 2830*1410*2230 | 2679 | 4000*1600*2150 | 4000",
+        "| SDH360D | 450 | 500 | 360 | 400 | BF8M1015C-LA G2 | | K314I | S4L1D-G41 | 3100*1560*2150 | 3263 | 4600*1600*2100 | 4800",
+        "| SDH400D | 500 | 550 | 400 | 440 | BF8M1015CP-LA G2 | | K354B | HCI544C | 3120*1560*2150 | 3263 | 4600*1600*2100 | 4800",
+        "| SDH450D | 562 | 625 | 450 | 500 | BF8M1015CP-LA G4 | | K354D | HCI544E | 3150*1560*2150 | 3263 | 4600*1600*2100 | 4800",
+        "| SDH480D | 600 | 650 | 480 | 520 | BF8M1015CP-LA G5 | | K354E | HCI544E | 3150*1560*2150 | 3263 | 4600*1600*2100 | 4800",
+        "| SDH550D | 688 | 750 | 550 | 600 | HC12V132ZL-LAG1A | | K354I | S6L1D-C4 | 4150*1780*2250 | 4500 | 5200*1900*2350 | 6300",
+        "| SDH600D | 750 | 825 | 600 | 660 | HC12V132ZL-LAG2A | | K354J | S6L1D-C4 | 4150*1780*2250 | 4500 | 5200*1900*2350 | 6300"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Mitsubishi Genset Model",
+      "header": [
+        "| Genset Model | Genset Specification | Engine Specifcation | Alternator Specifcation | Open Type | Sound Proof",
+        "| Power(KVA) ( KVA) | Power(KW) ( KW) | Engine | | KACHAI | Stamford | Dimension | Weight | Dimension | Weight",
+        "| Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm) | (kg) | L×W×H(mm) * * ( mm) | (kg)"
+      ],
+      "rows": [
+        "| SSM500D | 625 | 700 | 500 | 560 | S6R2-PTA-C | | K354F | HCI544FS | 3440*1615*2090 | 4880 | 4900*1800*2350 | 6500",
+        "| SSM600D | 750 | 825 | 600 | 660 | S6R2-PTAA-C | | K354J | S6L1D-C4 | 3975*1530*2025 | 6040 | 5200*1900*2350 | 8300",
+        "| SSM1000D | 1250 | 1375 | 1000 | 1100 | S12R-PTA-C | | K404F | S6L1D-G4 | 4590*2200*2510 | 10800 | 20HQ | 15000",
+        "| SSM1100D | 1375 | 1500 | 1100 | 1200 | S12R-PTA2-C | | K404G | S6L1D-H4 | 4590*2200*2510 | 11000 | 20HQ | 15500",
+        "| SSM1200D | 1500 | 1650 | 1200 | 1320 | S12R-PTAA2-C | | K404H | PI734C | 5110*2205*2740 | 11300 | 40HQ | 20800",
+        "| SSM1360D | 1700 | 1875 | 1360 | 1500 | S16R-PTA-C | | K454C | PI734ES | 5520*2200*2650 | 13000 | 40HQ | 22000",
+        "| SSM1500D | 1875 | 2100 | 1500 | 1680 | S16R-PTA2-C | | K454D | PI734E | 5540*2210*2930 | 15500 | 40HQ | 25000",
+        "| SSM1600D | 2000 | 2200 | 1600 | 1760 | S16R-PTAA2-C | | K454E | PI734F | 5870*2210*2930 | 17500 | 40HQ | 26500"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Genset 50HZ (4JB1 series)",
+      "header": [
+        "| Genset Model | Genset Specification | Engine Specifcation | Alternator Specifcation | Open Type | Sound Proof",
+        "| Power(KVA) ( KVA ) | Power(KW) ( KW ) | Engine | | KACHAI | Stamford | Dimension | Weight | Dimension | Weight",
+        "| Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm ) | (kg) | L×W×H(mm) * * ( mm ) | (kg)"
+      ],
+      "rows": [
+        "| SFW20D | 25.0 | 30.0 | 20.0 | 24.0 | 4JB1 | | K184C | S0L2-M1 | 1800*750*1100 | 700 | 2000*850*1150 | 820",
+        "| SFW24D | 30.0 | 35.0 | 24.0 | 28.0 | 4JB1T | | K184E | S0L2-P1 | 1800*750*1100 | 735 | 2000*850*1150 | 860",
+        "| SFW32D | 40.0 | 45.0 | 32.0 | 36.0 | 4JB1TA | | K184H | S1L2-K1 | 1800*750*1100 | 790 | 2000*850*1150 | 920"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Genset 60HZ/1800RPM (4JB1 series)",
+      "header": [
+        "| Genset Model | Genset Specification | Engine Specifcation | Alternator Specifcation | Open Type | Sound Proof",
+        "| Power(KVA) ( KVA ) | Power(KW) ( KW ) | Engine | | KACHAI | Stamford | Dimension | Weight | Dimension | Weight",
+        "| Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm ) | (kg) | L×W×H(mm) * * ( mm ) | (kg)"
+      ],
+      "rows": [
+        "| FW30D | 25.0 | 30.0 | 20.0 | 24.0 | 4JB1 | | K184B | SOL2-M1 | 1800*750*1100 | 700 | 2000*850*1150 | 820",
+        "| FW35D | 30.0 | 35.0 | 24.0 | 28.0 | 4JB1T | | K184C | S0L2-P1 | 1800*750*1100 | 735 | 2000*850*1150 | 860",
+        "| FW50D | 45.0 | 50.0 | 36.0 | 40.0 | 4JB1TA | | K184G | S1L2-N1 | 1800*750*1100 | 790 | 2000*850*1150 | 920"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SDEC T2+Genlent brushless alternator(50HZ;400V,3 phase,P.F=0.8)",
+      "header": [
+        "| SDEC T2+Genlent brushless alternator(50HZ;400V,3 phase,P.F=0.8)",
+        "| Genset | Engine | Alternator | Controller cabinet",
+        "| Model | Prime power | Standby power | Silent type | Model | Power( KW ) | Genlent | Max | Output",
+        "| KW | KVA | KW | KVA | dimension mm | Prime/Standby | Model | Current (A) | Breaker"
+      ],
+      "rows": [
+        "| S63D5 | 50 | 62.5 | 56 | 70 | 2500*1050*1500 | SC4H95D2 | 62/68 | SG224E | 90 | 100A",
+        "| S85D5 | 68 | 85 | 75 | 94 | 2500*1050*1500 | SC4H115D2 | 78/86 | SG224G | 123 | 160A",
+        "| S100D5 | 80 | 100 | 88 | 110 | 2700*1100*1650 | SC4H160D2 | 105/116 | SG274C | 144 | 160A",
+        "| S113D5 | 90 | 113 | 100 | 125 | 2700*1100*1650 | SC4H160D2 | 105/116 | SC274DS | 162 | 225A",
+        "| S125D5 | 100 | 125 | 110 | 138 | 2700*1100*1650 | SC4H180D2 | 120/132 | SG274D | 180 | 225A",
+        "| S150D5 | 120 | 150 | 132 | 165 | 2900*1130*1700 | SC7H220D2 | 150/165 | SG274EL | 216 | 225A",
+        "| S175D5 | 140 | 175 | 150 | 188 | 3250*1130*1700 | SC7H230D2 | 154/170 | SG274GS | 253 | 315A",
+        "| S188D5 | 150 | 188 | 165 | 206 | 3250*1130*1700 | SC7H250D2 | 168/185 | SG274G | 271 | 315A",
+        "| S200D5 | 160 | 200 | 176 | 220 | 3600*1350*1750 | SC8D280D2 | 185/204 | SG274H | 289 | 315A",
+        "| S225D5 | 180 | 225 | 200 | 250 | 3600*1350*1750 | SC9D310D2 | 208/228 | SG274J | 325 | 400A",
+        "| S250D5 | 200 | 250 | 220 | 275 | 3600*1350*1750 | SC9D340D2 | 228/255 | SG274K | 361 | 400A",
+        "| S275D5 | 220 | 275 | 250 | 313 | 3800*1400*2000 | SC10E380D2 | 255/280 | SG314CL | 397 | 400A",
+        "| S313D5 | 250 | 313 | 280 | 350 | 4150*1500*2250 | SC13G420D2 | 280/308 | SG314DL | 451 | 500A",
+        "| S313D5A | 250 | 313 | 280 | 350 | 4150*1500*2250 | SC12E420D2 | 280/308 | SG314DL | 451 | 500A",
+        "| S350D5 | 280 | 350 | 300 | 375 | 4150*1500*2250 | SC12E460D2 | 307/338 | SG314E | 505 | 630A",
+        "| S375D5 | 300 | 375 | 330 | 413 | 4350*1500*2300 | SC15G500D2 | 339/373 | SG314FS | 541 | 630A",
+        "| S450D5 | 360 | 450 | 400 | 500 | 4900*1800*2500 | SC25G610D2 | 405/445 | SG314FL | 649 | 800A",
+        "| S500D5 | 400 | 500 | 440 | 550 | 4900*1800*2500 | SC25G690D2 | 459/505 | SG354C | 722 | 800A",
+        "| S563D5 | 450 | 563 | 500 | 625 | 4900*1800*2500 | SC27G755D2 | 505/560 | SG354D | 812 | 1000A",
+        "| S625D5 | 500 | 625 | 550 | 688 | 4900*1800*2500 | SC27G830D2 | 561/610 | SG354EL | 902 | 1000A",
+        "| S688D5 | 550 | 688 | 600 | 750 | 4900*1800*2500 | SC27G900D2 | 602/662 | SG354GS | 992 | 1000A",
+        "| S750D5 | 600 | 750 | 660 | 825 | 5850*2200*2800 | SC33W990D2 | 660/726 | SG354G | 1082 | 1250A",
+        "| S900D5 | 720 | 900 | 800 | 1000 | 5850*2200*2800 | SC33W1150D2 | 782/860 | SG404D | 1299 | 1600A"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SDEC T2+ MARATHON alternator(50HZ;400V,3 phase,P.F=0.8)",
+      "header": [
+        "| SDEC T2+ MARATHON alternator(50HZ;400V,3 phase,P.F=0.8)",
+        "| Genset | Engine | Alternator | Controller cabinet",
+        "| Model | Prime power | Standby power | Silent type | Model | Power( KW ) | MARATHON | Max | Output",
+        "| KW | KVA | KW | KVA | dimension mm | Prime/Standby | Model | Current (A) | Breaker"
+      ],
+      "rows": [
+        "| S63D5 | 50 | 62.5 | 56 | 70 | 2500*1050*1500 | SC4H95D2 | 62/68 | MP-50-4 | 90 | 100A",
+        "| S85D5 | 68 | 85 | 75 | 94 | 2500*1050*1500 | SC4H115D2 | 78/86 | MP-70-4 | 123 | 160A",
+        "| S100D5 | 80 | 100 | 88 | 110 | 2700*1100*1650 | SC4H160D2 | 105/116 | MP-80-4 | 144 | 160A",
+        "| S113D5 | 90 | 113 | 100 | 125 | 2700*1100*1650 | SC4H160D2 | 105/116 | MP-90-4 | 162 | 225A",
+        "| S125D5 | 100 | 125 | 110 | 138 | 2700*1100*1650 | SC4H180D2 | 120/132 | MP-104-4 | 180 | 225A",
+        "| S150D5 | 120 | 150 | 132 | 165 | 2900*1130*1700 | SC7H220D2 | 150/165 | MP-120-4 | 216 | 225A",
+        "| S175D5 | 140 | 175 | 150 | 188 | 3250*1130*1700 | SC7H230D2 | 154/170 | MP-140-4 | 253 | 315A",
+        "| S188D5 | 150 | 188 | 165 | 206 | 3250*1130*1700 | SC7H250D2 | 168/185 | MP-160-4A | 271 | 315A",
+        "| S200D5 | 160 | 200 | 176 | 220 | 3600*1350*1750 | SC8D280D2 | 185/204 | MP-160-4A | 289 | 315A",
+        "| S225D5 | 180 | 225 | 200 | 250 | 3600*1350*1750 | SC9D310D2 | 208/228 | MP-180-4A | 325 | 400A",
+        "| S250D5 | 200 | 250 | 220 | 275 | 3600*1350*1750 | SC9D340D2 | 228/255 | MP-200-4A | 361 | 400A",
+        "| S275D5 | 220 | 275 | 250 | 313 | 3800*1400*2000 | SC10E380D2 | 255/280 | MP-220-4A | 397 | 400A",
+        "| S313D5 | 250 | 313 | 280 | 350 | 4150*1500*2250 | SC13G420D2 | 280/308 | MP-250-4A | 451 | 500A",
+        "| S313D5A | 250 | 313 | 280 | 350 | 4150*1500*2250 | SC12E420D2 | 280/308 | MP-250-4A | 451 | 500A",
+        "| S350D5 | 280 | 350 | 300 | 375 | 4150*1500*2250 | SC12E460D2 | 307/338 | MP-280-4A | 505 | 630A",
+        "| S375D5 | 300 | 375 | 330 | 413 | 4350*1500*2300 | SC15G500D2 | 339/373 | MP-300-4A | 541 | 630A",
+        "| S450D5 | 360 | 450 | 400 | 500 | 4900*1800*2500 | SC25G610D2 | 405/445 | MP-360-4 | 649 | 800A",
+        "| S500D5 | 400 | 500 | 440 | 550 | 4900*1800*2500 | SC25G690D2 | 459/505 | MP-400-4 | 722 | 800A",
+        "| S563D5 | 450 | 563 | 500 | 625 | 4900*1800*2500 | SC27G755D2 | 505/560 | MP-480-4 | 812 | 1000A",
+        "| S625D5 | 500 | 625 | 550 | 688 | 4900*1800*2500 | SC27G830D2 | 561/610 | MP-500-4 | 902 | 1000A",
+        "| S688D5 | 550 | 688 | 600 | 750 | 4900*1800*2500 | SC27G900D2 | 602/662 | MX-560-4 | 992 | 1000A",
+        "| S750D5 | 600 | 750 | 660 | 825 | 5850*2200*2800 | SC33W990D2 | 660/726 | MX-600-4 | 1082 | 1250A",
+        "| S900D5 | 720 | 900 | 800 | 1000 | 5850*2200*2800 | SC33W1150D2 | 782/860 | MX-750-4 | 1299 | 1600A"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SDEC T3+ Genlent brushless alternator(50HZ;400V,3 phase,P.F=0.8)",
+      "header": [
+        "| SDEC T3+ Genlent brushless alternator(50HZ;400V,3 phase,P.F=0.8)",
+        "| Genset | Engine | Alternator | Controller cabinet",
+        "| Model | Prime power | Standby power | Silent type | Model | Power( KW ) | Genlent | Max | Output",
+        "| KW | KVA | KW | KVA | dimension mm | Prime/Standby | Model | Current (A) | Breaker"
+      ],
+      "rows": [
+        "| S50E5-T3 | 40 | 50 | 44 | 55 | 2500*1050*1400 | 4HTAA4.3-G31 | 51/56 | SG224D | 72.2 | 80A",
+        "| S63E5-T3 | 50 | 62.5 | 55 | 68.8 | 2500*1050*1400 | 4HTAA4.3-G32 | 62/68 | SG224E | 90.2 | 100A",
+        "| S85E5-T3 | 68 | 85 | 75 | 93.8 | 2500*1050*1400 | 4HTAA4.3-G33 | 78/86 | SG224G | 122.7 | 125A",
+        "| S100E5-T3 | 80 | 100 | 88 | 110 | 2700*1100*1650 | 4HTAA4.3-G34 | 95/105 | SG274C | 144.3 | 160A",
+        "| S113E5-T3 | 90 | 113 | 100 | 125 | 2700*1100*1650 | 4HTAA4.3-G35 | 106/117 | SG274DS | 162.4 | 225A",
+        "| S125E5-T3 | 100 | 125 | 110 | 137.5 | 2700*1100*1650 | 4HTAA4.3-G36 | 125/140 | SG274D | 180.4 | 225A",
+        "| S135E5-T3 | 108 | 135 | 120 | 150 | 2900*1130*1700 | 6HTAA6.5-G31 | 128/141 | SG274E | 194.8 | 225A",
+        "| S150E5-T3 | 120 | 150 | 132 | 165 | 2900*1130*1700 | 6HTAA6.5-G32 | 140/155 | SG274EL | 216.5 | 225A",
+        "| S175E5-T3 | 140 | 175 | 156 | 195 | 3250*1130*1750 | 6HTAA6.5-G35 | 155/170 | SG274GS | 252.6 | 250A",
+        "| S188E5-T3 | 150 | 188 | 165 | 206.25 | 3250*1130*1750 | 6HTAA6.5-G33 | 168/185 | SG274G | 270.6 | 315A",
+        "| S200E5-T3 | 160 | 200 | 176 | 220 | 3250*1130*1750 | 6HTAA6.5-G34 | 186/205 | SG274H | 288.6 | 315A",
+        "| S200E5A-T3 | 160 | 200 | 176 | 220 | 3600*1350*1850 | 6DTAA8.9-G31 | 185/204 | SG274H | 288.6 | 315A",
+        "| S225E5-T3 | 180 | 225 | 200 | 250 | 3600*1350*1850 | 6DTAA8.9-G32 | 208/228 | SG274J | 324.7 | 400A",
+        "| S250E5-T3 | 200 | 250 | 220 | 275 | 3600*1350*1850 | 6DTAA8.9-G33 | 230/253 | SG274K | 360.8 | 400A",
+        "| S275E5-T3 | 220 | 275 | 240 | 300 | 3600*1350*1850 | 6DTAA8.9-G34 | 255/280 | SG314CL | 396.9 | 400A",
+        "| S313E5-T3 | 250 | 313 | 275 | 343.8 | 4150*1500*2250 | 6ETAA11.8-G32 | 280/308 | SG314DL | 451.0 | 500A",
+        "| S350E5-T3 | 280 | 350 | 308 | 385 | 4150*1500*2250 | 6ETAA11.8-G33 | 307/338 | SG314E | 505.1 | 630A",
+        "| S375E5-T3 | 300 | 375 | 330 | 412.5 | 4150*1500*2250 | 6ETAA11.8-G31 | 340/380 | SG314FS | 541.2 | 630A",
+        "| S400E5-T3 | 320 | 400 | 360 | 450 | 4350*1500*2300 | 6ETAA12.8-G32 | 360/400 | SG314F | 577.3 | 630A",
+        "| S450E5-T3 | 360 | 450 | 400 | 500 | 4350*1500*2300 | 6ETAA12.8-G31 | 401/441 | SG314FL | 649.4 | 700A",
+        "| S500E5-T3 | 400 | 500 | 440 | 550 | 4900*1800*2500 | 12GTAA27-G34 | 459/505 | SG354C | 721.6 | 800A",
+        "| S500S5-T3 | 400 | 500 | 440 | 550 | 4900*1800*2500 | 6KTAA25-G311 | 460/506 | SG354C | 721.6 | 800A",
+        "| S500E5A-T3 | 400 | 500 | 440 | 550 | 4900*1800*2500 | 6KTAA25-G36 | 460/506 | SG354C | 721.6 | 800A",
+        "| S5633E5-T3 | 450 | 563 | 500 | 625 | 4900*1800*2500 | 12GTAA27-G33 | 505/555 | SG354D | 811.8 | 1000A",
+        "| S563S5-T3 | 450 | 563 | 500 | 625 | 4900*1800*2500 | 6KTAA25-G310 | 520/572 | SG354D | 811.8 | 1000A",
+        "| S563E5A-T3 | 450 | 563 | 500 | 625 | 4900*1800*2500 | 6KTAA25-G35 | 520/572 | SG354D | 811.8 | 1000A",
+        "| S625E5-T3 | 500 | 625 | 550 | 687.5 | 4900*1800*2500 | 12GTAA27-G32 | 565/610 | SG354EL | 902.0 | 1000A",
+        "| S625S5-T3 | 500 | 625 | 550 | 687.5 | 4900*1800*2500 | 6KTAA25-G39 | 572/629 | SG354EL | 902.0 | 1000A",
+        "| S625E5-T3 | 500 | 625 | 550 | 687.5 | 4900*1800*2500 | 6KTAA25-G34 | 572/629 | SG354EL | 902.0 | 1000A",
+        "| S688E5-T3 | 550 | 688 | 600 | 750 | 4900*1800*2500 | 12GTAA27-G31 | 622/684 | SG354GS | 992.2 | 1000A",
+        "| S688S5-T3 | 550 | 688 | 600 | 750 | 4900*1800*2500 | 6KTAA25-G38 | 622/684 | SG354GS | 992.2 | 1000A",
+        "| S688E5-T3 | 550 | 688 | 600 | 750 | 4900*1800*2500 | 6KTAA25-G33 | 622/684 | SG354GS | 992.2 | 1000A",
+        "| S750E5-T3 | 600 | 750 | 660 | 825 | 5200*1900*2500 | 6KTAA25-G32 | 685/754 | SG354G | 1082.4 | 1250A",
+        "| S800E5-T3 | 640 | 800 | 704 | 880 | 5200*1900*2500 | 6KTAA25-G31 | 728/800 | SG404C | 1154.6 | 1250A",
+        "| S910E5-T3 | 728 | 910 | 800 | 1000 | 5850*2200*2800 | 6WTAA35-G32 | 818/900 | SG404D | 1313.3 | 1600A",
+        "| S10000E5-T3 | 800 | 1000 | 880 | 1100 | 5850*2200*2800 | 6WTAA35-G31 | 882/970 | SG404E | 1443.2 | 1600A"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SDEC T3+ MARATHON alternator(50HZ;400V,3 phase,P.F=0.8)",
+      "header": [
+        "| SDEC T3+ MARATHON alternator(50HZ;400V,3 phase,P.F=0.8)",
+        "| Genset | Engine | Alternator | Controller cabinet",
+        "| Model | Prime power | Standby power | Silent type | Model | Power( KW ) | MARATHON | Max | Output",
+        "| KW | KVA | KW | KVA | dimension mm | Prime/Standby | Model | Current (A) | Breaker"
+      ],
+      "rows": [
+        "| S50E5-T3 | 40 | 50 | 44 | 55 | 2500*1050*1400 | 4HTAA4.3-G31 | 51/56 | MP-40-4 | 72.2 | 80A",
+        "| S63E5-T3 | 50 | 62.5 | 55 | 68.8 | 2500*1050*1400 | 4HTAA4.3-G32 | 62/68 | MP-50-4 | 90.2 | 100A",
+        "| S85E5-T3 | 68 | 85 | 75 | 93.8 | 2500*1050*1400 | 4HTAA4.3-G33 | 78/86 | MP-70-4 | 122.7 | 125A",
+        "| S100E5-T3 | 80 | 100 | 88 | 110 | 2700*1100*1650 | 4HTAA4.3-G34 | 95/105 | MP-80-4 | 144.3 | 160A",
+        "| S113E5-T3 | 90 | 113 | 100 | 125 | 2700*1100*1650 | 4HTAA4.3-G35 | 106/117 | MP-90-4 | 162.4 | 225A",
+        "| S125E5-T3 | 100 | 125 | 110 | 137.5 | 2700*1100*1650 | 4HTAA4.3-G36 | 125/140 | MP-104-4 | 180.4 | 225A",
+        "| S135E5-T3 | 108 | 135 | 120 | 150 | 2900*1130*1700 | 6HTAA6.5-G31 | 128/141 | MP-120-4 | 194.8 | 225A",
+        "| S150E5-T3 | 120 | 150 | 132 | 165 | 2900*1130*1700 | 6HTAA6.5-G32 | 140/155 | MP-120-4 | 216.5 | 225A",
+        "| S175E5-T3 | 140 | 175 | 156 | 195 | 3250*1130*1750 | 6HTAA6.5-G35 | 155/170 | MP-140-4A | 252.6 | 250A",
+        "| S188E5-T3 | 150 | 188 | 165 | 206.25 | 3250*1130*1750 | 6HTAA6.5-G33 | 168/185 | MP-160-4A | 270.6 | 315A",
+        "| S200E5-T3 | 160 | 200 | 176 | 220 | 3250*1130*1750 | 6HTAA6.5-G34 | 186/205 | MP-160-4A | 288.6 | 315A",
+        "| S200E5A-T3 | 160 | 200 | 176 | 220 | 3600*1350*1850 | 6DTAA8.9-G31 | 185/204 | MP-160-4A | 288.6 | 315A",
+        "| S225E5-T3 | 180 | 225 | 200 | 250 | 3600*1350*1850 | 6DTAA8.9-G32 | 208/228 | MP-180-4A | 324.7 | 400A",
+        "| S250E5-T3 | 200 | 250 | 220 | 275 | 3600*1350*1850 | 6DTAA8.9-G33 | 230/253 | MP-200-4A | 360.8 | 400A",
+        "| S275E5-T3 | 220 | 275 | 240 | 300 | 3600*1350*1850 | 6DTAA8.9-G34 | 255/280 | MP-220-4A | 396.9 | 400A",
+        "| S313E5-T3 | 250 | 313 | 275 | 343.8 | 4150*1500*2250 | 6ETAA11.8-G32 | 280/308 | MP-250-4A | 451.0 | 500A",
+        "| S350E5-T3 | 280 | 350 | 308 | 385 | 4150*1500*2250 | 6ETAA11.8-G33 | 307/338 | MP-280-4A | 505.1 | 630A",
+        "| S375E5-T3 | 300 | 375 | 330 | 412.5 | 4150*1500*2250 | 6ETAA11.8-G31 | 340/380 | MP-300-4A | 541.2 | 630A",
+        "| S400E5-T3 | 320 | 400 | 360 | 450 | 4350*1500*2300 | 6ETAA12.8-G32 | 360/400 | MP-320-4A | 577.3 | 630A",
+        "| S450E5-T3 | 360 | 450 | 400 | 500 | 4350*1500*2300 | 6ETAA12.8-G31 | 401/441 | MP-360-4 | 649.4 | 700A",
+        "| S500E5-T3 | 400 | 500 | 440 | 550 | 4900*1800*2500 | 12GTAA27-G34 | 459/505 | MP-400-4 | 721.6 | 800A",
+        "| S500S5-T3 | 400 | 500 | 440 | 550 | 4900*1800*2500 | 6KTAA25-G311 | 460/506 | MP-400-4 | 721.6 | 800A",
+        "| S500E5A-T3 | 400 | 500 | 440 | 550 | 4900*1800*2500 | 6KTAA25-G36 | 460/506 | MP-400-4 | 721.6 | 800A",
+        "| S5633E5-T3 | 450 | 563 | 500 | 625 | 4900*1800*2500 | 12GTAA27-G33 | 505/555 | MP-480-4 | 811.8 | 1000A",
+        "| S563S5-T3 | 450 | 563 | 500 | 625 | 4900*1800*2500 | 6KTAA25-G310 | 520/572 | MP-480-4 | 811.8 | 1000A",
+        "| S563E5A-T3 | 450 | 563 | 500 | 625 | 4900*1800*2500 | 6KTAA25-G35 | 520/572 | MP-480-4 | 811.8 | 1000A",
+        "| S625E5-T3 | 500 | 625 | 550 | 687.5 | 4900*1800*2500 | 12GTAA27-G32 | 565/610 | MP-500-4 | 902.0 | 1000A",
+        "| S625S5-T3 | 500 | 625 | 550 | 687.5 | 4900*1800*2500 | 6KTAA25-G39 | 572/629 | MP-500-4 | 902.0 | 1000A",
+        "| S625E5-T3 | 500 | 625 | 550 | 687.5 | 4900*1800*2500 | 6KTAA25-G34 | 572/629 | MP-500-4 | 902.0 | 1000A",
+        "| S688E5-T3 | 550 | 688 | 600 | 750 | 4900*1800*2500 | 12GTAA27-G31 | 622/684 | MX-560-4 | 992.2 | 1000A",
+        "| S688S5-T3 | 550 | 688 | 600 | 750 | 4900*1800*2500 | 6KTAA25-G38 | 622/684 | MX-560-4 | 992.2 | 1000A",
+        "| S688E5-T3 | 550 | 688 | 600 | 750 | 4900*1800*2500 | 6KTAA25-G33 | 622/684 | MX-560-4 | 992.2 | 1000A",
+        "| S750E5-T3 | 600 | 750 | 660 | 825 | 5200*1900*2500 | 6KTAA25-G32 | 685/754 | MX-600-4 | 1082.4 | 1250A",
+        "| S800E5-T3 | 640 | 800 | 704 | 880 | 5200*1900*2500 | 6KTAA25-G31 | 728/800 | MX-640-4 | 1154.6 | 1250A",
+        "| S910E5-T3 | 728 | 910 | 800 | 1000 | 5850*2200*2800 | 6WTAA35-G32 | 818/900 | MX-750-4 | 1313.3 | 1600A",
+        "| S10000E5-T3 | 800 | 1000 | 880 | 1100 | 5850*2200*2800 | 6WTAA35-G31 | 882/970 | MX-850-4 | 1443.2 | 1600A"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SDEC + Genlent Brushless alternator(60HZ;220V,3 phase,P.F=0.8)",
+      "header": [
+        "| SDEC + Genlent Brushless alternator(60HZ;220V,3 phase,P.F=0.8)",
+        "| Genset | Engine | Alternator | Controller cabinet",
+        "| Model | Prime power | Standby power | Silent type | Model | Power( KW ) | Genlent | Max | Output",
+        "| KW | KVA | KW | KVA | dimension mm | Prime/Standby | Model | Current (A) | Breaker"
+      ],
+      "rows": [
+        "| S75D6 | 52 | 65 | 60 | 75 | 2500*1050*1500 | 4HT4.3-G21 | 62/68 | SG224DL | 198 | 225A",
+        "| S85D6 | 60 | 75 | 68 | 85 | 2500*1050*1500 | 4HT4.3-G22 | 67/74 | SG224E | 224.4 | 250A",
+        "| S100D6 | 72 | 90 | 80 | 100 | 2500*1050*1500 | 4HT4.3-G23 | 86/95 | SG224GS | 264 | 315A",
+        "| S130D6 | 96 | 120 | 104 | 130 | 2700*1100*1650 | 4HTAA4.3-G21 | 105/116 | SG274C | 343.2 | 400A",
+        "| S150D6 | 108 | 135 | 120 | 150 | 2700*1100*1650 | 4HTAA4.3-G23 | 120/132 | SG274DS | 396 | 400A",
+        "| S165D6 | 120 | 150 | 132 | 165 | 2900*1130*1700 | 6HTAA6.5-G21 | 136/150 | SG274D | 435.6 | 500A",
+        "| S180D6 | 132 | 165 | 144 | 180 | 2900*1130*1700 | 6HTAA6.5-G22 | 150/165 | SG274E | 475.2 | 500A",
+        "| S220D6 | 160 | 200 | 176 | 220 | 3250*1130*1750 | 6HTAA6.5-G23 | 180/198 | SG274GS | 580.8 | 630A",
+        "| S250D6 | 180 | 225 | 200 | 250 | 3600*1350*1850 | 6DTAA8.9-G21 | 205/226 | SG274G | 660 | 700A",
+        "| S275D6 | 200 | 250 | 220 | 275 | 3600*1350*1850 | 6DTAA8.9-G24 | 228/250 | SG274J | 726 | 800A",
+        "| S300D6 | 220 | 275 | 240 | 300 | 3600*1350*1850 | 6DTAA8.9-G22 | 235/259 | SG274K | 792 | 800A",
+        "| S330D6 | 240 | 300 | 264 | 330 | 3600*1350*1850 | 6DTAA8.9-G23 | 255/282 | SG274K | 871.2 | 1000A",
+        "| S385D6 | 280 | 350 | 308 | 385 | 4150*1500*2250 | 6ETAA11.8-G21 | 307/338 | SG314D | 1016.4 | 1250A",
+        "| S415E6 | 300 | 375 | 332 | 415 | 4150*1500*2250 | 6ETAA11.8-G31 | 340/380 | SG314DL | 1095.6 | 1250A",
+        "| S450E6 | 320 | 400 | 360 | 450 | 4150*1500*2250 | 6ETAA12.8-G32.1 | 360/400 | SG314E | 1188 | 1250A",
+        "| S500E6 | 360 | 450 | 400 | 500 | 4150*1500*2250 | 6ETAA12.8-G31.1 | 401/440 | SG314FS | 1320 | 1600A",
+        "| S580E6 | 420 | 525 | 464 | 580 | 4900*1800*2500 | 6KTAA25-36.1 | 460/506 | SG314FL | 1531.2 | 1600A",
+        "| S650E6 | 480 | 600 | 520 | 650 | 4900*1800*2500 | 6KTAA25-35.1 | 520/572 | SG354C | 1716 | 2000A",
+        "| S725E6 | 520 | 650 | 580 | 725 | 4900*1800*2500 | 6KTAA25-34.1 | 572/629 | SG354D | 1914 | 2000A",
+        "| S775E6 | 560 | 700 | 620 | 775 | 4900*1800*2500 | 6KTAA25-33.1 | 622/684 | SG354E | 2046 | 2500A",
+        "| S850E6 | 620 | 775 | 680 | 850 | 5200*1900*2500 | 6KTAA25-32.1 | 685/754 | SG354FS | 2244 | 2500A",
+        "| S900E6 | 640 | 800 | 720 | 900 | 5200*1900*2500 | 6KTAA25-31.1 | 728/800 | SG354F | 2376 | 2500A"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SDEC + Stamford alternator(60HZ;220V,3 phase,P.F=0.8)",
+      "header": [
+        "| SDEC + Stamford alternator(60HZ;220V,3 phase,P.F=0.8)",
+        "| Genset | Engine | Alternator | Controller cabinet",
+        "| Model | Prime power | Standby power | Silent type | Model | Power( KW ) | Stamford | Max | Output",
+        "| KW | KVA | KW | KVA | dimension mm | Prime/Standby | Model | Current (A) | Breaker"
+      ],
+      "rows": [
+        "| S75D6 | 52 | 65 | 60 | 75 | 2500*1050*1500 | 4HT4.3-G21 | 62/68 | S1L2-Y | 198 | 225A",
+        "| S85D6 | 60 | 75 | 68 | 85 | 2500*1050*1500 | 4HT4.3-G22 | 67/74 | UCI224F | 224 | 250A",
+        "| S100D6 | 72 | 90 | 80 | 100 | 2500*1050*1500 | 4HT4.3-G23 | 86/95 | UCI224G | 264 | 315A",
+        "| S130D6 | 96 | 120 | 104 | 130 | 2700*1100*1650 | 4HTAA4.3-G21 | 105/116 | UCI274D | 343 | 400A",
+        "| S150D6 | 108 | 135 | 120 | 150 | 2700*1100*1650 | 4HTAA4.3-G23 | 120/132 | UCI274D | 396 | 400A",
+        "| S165D6 | 120 | 150 | 132 | 165 | 2900*1130*1700 | 6HTAA6.5-G21 | 136/150 | UCI274E | 436 | 500A",
+        "| S180D6 | 132 | 165 | 144 | 180 | 2900*1130*1700 | 6HTAA6.5-G22 | 150/165 | UCI274E | 475 | 500A",
+        "| S220D6 | 160 | 200 | 176 | 220 | 3250*1130*1750 | 6HTAA6.5-G23 | 180/198 | UCI274G | 581 | 630A",
+        "| S250D6 | 180 | 225 | 200 | 250 | 3600*1350*1850 | 6DTAA8.9-G21 | 205/226 | UCI274H | 660 | 700A",
+        "| S275D6 | 200 | 250 | 220 | 275 | 3600*1350*1850 | 6DTAA8.9-G24 | 228/250 | UCDI274J | 726 | 800A",
+        "| S300D6 | 220 | 275 | 240 | 300 | 3600*1350*1850 | 6DTAA8.9-G22 | 235/259 | UCDI274J | 792 | 800A",
+        "| S330D6 | 240 | 300 | 264 | 330 | 3600*1350*1850 | 6DTAA8.9-G23 | 255/282 | S4L1D-C | 871 | 1000A",
+        "| S385D6 | 280 | 350 | 308 | 385 | 4150*1500*2250 | 6ETAA11.8-G21 | 307/338 | S4L1D-D | 1016 | 1250A",
+        "| S415E6 | 300 | 375 | 332 | 415 | 4150*1500*2250 | 6ETAA11.8-G31 | 340/380 | S4L1D-E | 1096 | 1250A",
+        "| S450E6 | 320 | 400 | 360 | 450 | 4150*1500*2250 | 6ETAA12.8-G32.1 | 360/400 | S4L1D-E | 1188 | 1250A",
+        "| S500E6 | 360 | 450 | 400 | 500 | 4150*1500*2250 | 6ETAA12.8-G31.1 | 401/440 | S4L1D-F | 1320 | 1600A",
+        "| S580E6 | 420 | 525 | 464 | 580 | 4900*1800*2500 | 6KTAA25-36.1 | 460/506 | S4L1D-G | 1531 | 1600A",
+        "| S650E6 | 480 | 600 | 520 | 650 | 4900*1800*2500 | 6KTAA25-35.1 | 520/572 | S5L1D-E | 1716 | 2000A",
+        "| S725E6 | 520 | 650 | 580 | 725 | 4900*1800*2500 | 6KTAA25-34.1 | 572/629 | S5L1D-E | 1914 | 2000A",
+        "| S775E6 | 560 | 700 | 620 | 775 | 4900*1800*2500 | 6KTAA25-33.1 | 622/684 | S5L1D-E | 2046 | 2500A",
+        "| S850E6 | 620 | 775 | 680 | 850 | 5200*1900*2500 | 6KTAA25-32.1 | 685/754 | S5L1D-F | 2244 | 2500A",
+        "| S900E6 | 640 | 800 | 720 | 900 | 5200*1900*2500 | 6KTAA25-31.1 | 728/800 | S5L1D-H | 2376 | 2500A"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Weifang Diesel Generator Model",
+      "header": [
+        "| Diesel Generator Model | Generator Specification | Engine Specifcation | Alternator Specifcation | Open Type | Silent Type",
+        "| Power(KVA) ( KVA) | Power(KW) ( KW) | Engine | | KACHAI | Stamford | Dimension | Weight | Dimension | Weight",
+        "| Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm) | (kg) | L×W×H(mm) * * ( mm) | (kg)"
+      ],
+      "rows": [
+        "| SWF24M | 30 | 35 | 24 | 28 | ZH4100D | | STC-24 | K184E | 1650*650*1050 | 630 | 2280*950*1252 | 950",
+        "| SWF32M | 40 | 45 | 32 | 36 | ZH4100ZD | | STC-32 | K184H | 1650*680*1050 | 680 | 2280*950*1252 | 1100",
+        "| SWF40M | 50 | 55 | 40 | 44 | ZH4105ZD | | STC-40 | K224C | 1720*750*1100 | 790 | 2500*950*1400 | 1300",
+        "| SWF50M | 62.5 | 70 | 50 | 56 | R4105ZD | | STC-50 | K224E | 1750*750*1100 | 840 | 2500*950*1400 | 1350",
+        "| SWF72M | 90 | 100 | 72 | 80 | R6105ZD | | TZH2-75 | K274A | 2200*850*1450 | 1200 | 2900*1130*1650 | 1560",
+        "| SWF80M | 100 | 110 | 80 | 88 | R6105AZLD | | TZH2-100 | K274A | 2250*850*1450 | 1250 | 2900*1130*1650 | 1650",
+        "| SWF100M | 125 | 137.5 | 100 | 110 | R6105IZLD | | TZH2-100 | K274C | 2280*850*1450 | 1342 | 2900*1130*1650 | 1700",
+        "| SWF120M | 150 | 165 | 120 | 132 | R6108IZLD | | TZH2-120 | K274E | 2380*890*1450 | 1360 | 2900*1130*1650 | 1750",
+        "| SWF150M | 187.5 | 200 | 150 | 160 | R6113ZLD | | TZH2-150 | K274H | 2550*900*1600 | 1500 | 3200*1130*1700 | 1900"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "Controller Brand: Deepsea , ComAp, Smartgen , Kachai",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "Controller Brand: Deepsea , ComAp, Smartgen , Kachai",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "Controller Brand: Deepsea , ComAp, Smartgen , Kachai",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Kachai",
+      "model": null,
+      "text": "Kachai",
+      "line": "Controller Brand: Deepsea , ComAp, Smartgen , Kachai",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliLite",
+      "text": "Intelilite",
+      "line": "Intelilite/Deepsee/Smartgen",
+      "src": [
+        2004
+      ]
+    }
+  ]
 }
