@@ -1,1 +1,12 @@
-[]
+[
+ {
+  "n": 101,
+  "url": "https://www.fptindustrial.com/en/engines/Power-Generation/G-Drive/R38",
+  "title": "R38 | FPT",
+  "header": [],
+  "rows": [
+   "Prime Power [ kWm kVA ] @ 1500 rpm:",
+   "Prime Power [ kWm kVA ] @ 1800 rpm:"
+  ]
+ }
+]

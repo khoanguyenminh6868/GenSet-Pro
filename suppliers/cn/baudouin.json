@@ -129,9 +129,189 @@
         "Baudouin gas engines offer a power range from 63 to 1750 kVA."
       ],
       "file": "sources/baudouin/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://baudouin.com/engine_product/6m11-heat-exchanger/",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated Power | Peak Torque | Displacement | Aspiration | Coupling FWH | FW | Throttle"
+      ],
+      "file": "sources/baudouin/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://baudouin.com/engine_product/non-road-mobile-wp36n/",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated Power - kW | Rated Power - HP | Rated Speed - RPM | Peak Torque Speed - RPM | Peak Torque Nm- RPM | Displacement - l"
+      ],
+      "file": "sources/baudouin/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://baudouin.com/engine_product/20m55-generator-set",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "| | | Gross Engine Output"
+      ],
+      "file": "sources/baudouin/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://baudouin.com/engine_product/6f21/",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "| Duty | HP | kW | RPM | Certifications"
+      ],
+      "file": "sources/baudouin/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://baudouin.com/engine_product/8f21/",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "| Duty | HP | kW | RPM | Certifications"
+      ],
+      "file": "sources/baudouin/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://baudouin.com/engine_product/6m33-stage-v/",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "| Model | Gross Engine Output | Typical engine output | |"
+      ],
+      "file": "sources/baudouin/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://baudouin.com/engine_product/12m33-stagev/",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "| Model | Gross Engine Output | Typical engine output | |"
+      ],
+      "file": "sources/baudouin/107.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "6M11 Heat Exchanger - Baudouin",
+      "header": [
+        "| Model | Rated Power | Peak Torque | Displacement | Aspiration | Coupling FWH | FW | Throttle"
+      ],
+      "rows": [
+        "| 6M11V0D0 | 115 kW @ 2100 rpm | 746 Nm @ 1100 rpm | 6,75 | TCA | SAE3 - 11.5 | M",
+        "| 6M11V1D0 | 136 kW @ 2100 rpm | 1030 Nm @ 1100 rpm | 6,75 | TCA | SAE3 - 11.5 | M"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Mobile WP3.6N - Baudouin Non Road mobile engines",
+      "header": [
+        "| Model | Rated Power - kW | Rated Power - HP | Rated Speed - RPM | Peak Torque Speed - RPM | Peak Torque Nm- RPM | Displacement - l"
+      ],
+      "rows": [
+        "| WP3.6NG75E645 | 56 | 74 | 2200 | 330 | 1600 | 3,6",
+        "| WP3.6NG112E680 | 82 | 110 | 2200 | 500 | 1500 | 3,6",
+        "| WP3.6NG143E680 | 105 | 141 | 2300 | 580 | 1400-1600 | 3,6",
+        "| WP3.6NG175E680 | 129 | 173 | 2200 | 610 | 1800 | 3,6"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "20M55 Generator Set - Baudouin Generator Sets",
+      "header": [
+        "| | | Gross Engine Output",
+        "| Engines Models | DCR | DCR | DCP | DCP",
+        "| kVA | kWe | kVA | kWe",
+        "| 50Hz | | | |"
+      ],
+      "rows": [
+        "| 20M55G 4500/5 | 4500 | 3600 | 4125 | 3300",
+        "| 20M55G5000/5 | 4750 | 3800 | 4375 | 3500",
+        "| 20M55G5250/5 | 5250 | 4200 | 4750 | 3800",
+        "| 60Hz | | | |",
+        "| 20M55G3600 | / | / | 4125 | 3300",
+        "| 20M55G4000 | 5000 | 4000 | 4500 | 3600",
+        "| 20M55G4250 | / | / | 4750 | 3800"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "6F21 - Baudouin Marine Propulsion Engines",
+      "header": [
+        "| Duty | HP | kW | RPM | Certifications"
+      ],
+      "rows": [
+        "| P3 | 815 | 599 | 2300 | IMO II | EPA 3 (REC)",
+        "| P4 | 900 | 662 | 2300 | IMO II | EPA 3 (REC)",
+        "| P5 | 1000 | 735 | 2300 | IMO II | EPA 3 (REC)"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "8F21 - Baudouin Marine Propulsion Engines",
+      "header": [
+        "| Duty | HP | kW | RPM | Certifications"
+      ],
+      "rows": [
+        "| P3 | 1100 | 809 | 2300 | IMO II",
+        "| P4 | 1250 | 919 | 2300 | IMO II",
+        "| P5 | 1360 | 1000 | 2300 | IMO II"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "6M33 StageV - Baudouin PowerKit Diesel Engines",
+      "header": [
+        "| Model | Gross Engine Output | Typical engine output | |",
+        "| PRP | ESP | PRP | PRP | PRP | PRP",
+        "| 50Hz | kWm | kWm | kWe | kVA | kWe | kVA"
+      ],
+      "rows": [
+        "| 6M33G2D5/S | 575 | 633 | 500 | 625 | 550 | 688",
+        "| 6M33G4D5/S | 660 | 725 | 600 | 750 | 660 | 825",
+        "| 6M33G6D2/5 | 575 | 633 | 500 | 625 | 580 | 725",
+        "| 6M33G8D2/5 | 610 | 680 | 544 | 680 | 600 | 750",
+        "| 60Hz | | | | | |",
+        "| 6M33G2D5/S | 575 | 633 | 500 | 625 | 550 | 688",
+        "| 6M33G4D5/S | 600 | 660 | 520 | 650 | 580 | 725",
+        "| 6M33G8D2/6 | 610 | 670 | 550 | 688 | 600 | 750",
+        "| 6M33G10D2/6 | 670 | 715 | 600 | 750 | 633 | 791",
+        "| 6M33G12D2/6 | 670 | 726 | 600 | 750 | 644 | 805"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "12M33 StageV - Baudouin PowerKit Diesel Engines",
+      "header": [
+        "| Model | Gross Engine Output | Typical engine output | |",
+        "| PRP | ESP | PRP | PRP | PRP | PRP",
+        "| 50Hz | kWm | kWm | kWe | kVA | kWe | kVA"
+      ],
+      "rows": [
+        "| 12M33G8D5/S | 1130 | 1240 | 1000 | 1250 | 1100 | 1375",
+        "| 12M33G4D2/5 | 1108 | 1108 | 920 | 1150 | 1000 | 1250",
+        "| 12M33G6D2/5 | 1130 | 1240 | 1024 | 1275 | 1120 | 1400",
+        "| 12M33G8D2/5 | 1200 | 1320 | 1100 | 1375 | 1200 | 1500",
+        "| 12M33G4D3/5 | 880 | 968 | 800 | 1000 | 880 | 1100",
+        "| 60Hz | | | | | |",
+        "| 12M33G8D5/S | 1130 | 1240 | 1000 | 1375 | 1100 | 1375",
+        "| 12M33G8D2/6 | 1007 | 1120 | 900 | 1125 | 1000 | 1250",
+        "| 12M33G12D2/6 | 1290 | 1420 | 1100 | 1375 | 1300 | 1625"
+      ]
+    }
+  ]
 }
