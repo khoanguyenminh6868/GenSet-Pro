@@ -187,7 +187,7 @@ td.locc{white-space:normal!important;min-width:90px;max-width:130px}
 .aicon.mut{background:var(--panel2);color:var(--dim);border:1px solid var(--line)}
 .aline{margin-top:5px;display:flex}
 .closed-at{color:var(--rose)!important}
-.pline{color:var(--mint);font-weight:600;margin-top:4px}.mprice{display:none}
+.pline{color:var(--mint);font-weight:600;margin-top:4px}.mprice{display:none}.fline{color:var(--dim);font-size:12.5px;margin-top:2px}.mform{display:none}
 .bpline{color:var(--cyan);font-weight:600;margin-top:2px}
 .stepbtns{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
 /* Each move button takes the colour of the stage it moves to (st-* class). */
@@ -422,6 +422,8 @@ details.sec>div{margin-top:10px}
   /* The labels sit in a column of their own, so the values line up (Khoa, 2026-11-05). */
   table.grid td.c-offerer,table.grid td.c-cap,table.grid td.c-loc{position:relative;padding-left:96px}
   table.grid td.c-offerer::before,table.grid td.c-cap::before,table.grid td.c-loc::before{content:attr(data-l);position:absolute;left:0;top:1px;color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+  table.grid td.c-offerer .mform{display:block;position:relative;margin:6px 0 0 -96px;padding-left:96px}
+  table.grid td.c-offerer .mform::before{content:attr(data-l);position:absolute;left:0;top:1px;color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
   table.grid td.c-cap .src{display:inline;margin-left:6px}
   table.grid td[colspan]{grid-column:1/-1}
 }
@@ -516,7 +518,7 @@ const stageLabel = (k) => STAGES.find((s) => s.key === k)?.label ?? k;
 const SEV = { critical: "Quan trọng", warning: "Cần lưu ý", info: "Thông tin" };
 const CAT = { deadline: "Thời hạn", eligibility: "Tư cách hợp lệ", technical: "Kỹ thuật", financial: "Tài chính", documents: "Hồ sơ", contract: "Hợp đồng", risk: "Rủi ro", qualification: "Năng lực - kinh nghiệm", commercial: "Thương mại", other: "Khác" };
 const STATUS = { met: "Đạt", partial: "Đạt một phần", not_met: "Không đạt", missing: "Thiếu", unclear: "Chưa rõ" };
-const BID_FORM = { DTRR: "Đấu thầu rộng rãi", DTHC: "Đấu thầu hạn chế", CHCT: "Chào hàng cạnh tranh", CHCTRG: "Chào hàng cạnh tranh rút gọn", CDT: "Chỉ định thầu", CDTRG: "Chỉ định thầu rút gọn", MSTT: "Mua sắm trực tiếp", TTH: "Tự thực hiện", DPCT: "Đàm phán giá" };
+const BID_FORM = { DTRR: "Đấu thầu rộng rãi", DTHC: "Đấu thầu hạn chế", CHCT: "Chào hàng cạnh tranh", CHCTRG: "Chào hàng cạnh tranh rút gọn", CDT: "Chỉ định thầu", CDTRG: "Chỉ định thầu rút gọn", MSTT: "Mua sắm trực tiếp", TTH: "Tự thực hiện", DPCT: "Đàm phán giá", CGTT: "Chào giá trực tuyến", CGTTRG: "Chào giá trực tuyến" };
 const VERDICT = { pass: ["Có khả năng đạt", "var(--green)"], at_risk: ["Có rủi ro, sửa được", "var(--amber)"], fail: ["Có lỗi có thể bị loại", "var(--red)"] };
 
 // The AI prompts and JSON shapes live in the Windows bot's kit (genbid-hsmt/*-prompt.md).
@@ -980,6 +982,10 @@ function ownBid(key) {
 const bidLabel = (t) => (stageOf(t) === "won" && ownBid(t._key).bidPriceSrc === "KQLCNT" ? "Giá trúng" : "Giá dự thầu");
 // The tender price: under the name, and on a phone at the right of the Mã số row instead (Khoa, 2026-11-05).
 const priceLine = (t) => (t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}</div>` : "");
+// The way of choosing the contractor: under the price, and on a phone a row of its own under Chủ đầu tư (Khoa, 2026-11-09).
+const formOf = (t) => BID_FORM[t.bidForm] || t.bidForm || "";
+const formLine = (t) => (formOf(t) ? h`<div class="fline">${formOf(t)}</div>` : "");
+const mForm = (t) => (formOf(t) ? h`<div class="mform" data-l="Hình thức">${formOf(t)}</div>` : "");
 const mPrice = (t) => { const p = priceLine(t); return p ? `<div class="mprice">${p}</div>` : ""; };
 function bidLine(t) {
   const bp = ownBid(t._key).bidPrice;
@@ -1229,8 +1235,8 @@ const COLS = [
     cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span>${raw(mStage(t))}<div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
       const tl = timeLeft(t.bidCloseDate); return h`${raw(mPrice(t))}<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(isCancelled(t) ? '<div class="tleft closed-at">Đã hủy TBMT</div>' : stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
-  { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}<div class="dprice">${raw(priceLine(t))}</div>${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
-  { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return v ? h`${v}` : '<span class="muted">Chưa có</span>'; } },
+  { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)} ${formOf(t)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}<div class="dprice">${raw(priceLine(t))}${raw(formLine(t))}</div>${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
+  { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return (v ? h`${v}` : '<span class="muted">Chưa có</span>') + mForm(t); } },
   { k: "cap", label: "Công Suất", cls: "capc", num: true, numUnit: "kVA", val: (t) => capacityOf(t)?.n ?? null, text: (t) => capacityOf(t)?.text || "", cell: (t) => { const c = capacityOf(t); return c ? h`<span class="cap">${c.text}</span>` : capScan.pending.has(t._key) ? '<span class="muted small">Đang đọc HSMT...</span>' : '<span class="muted">Chưa rõ</span>'; } },
   { k: "stage", label: "Trạng thái", pick: true, val: (t) => TABS.find((x) => x.key === tabOf(t))?.label, cell: (t) => { const st = stageOf(t), p = stepPrev(t), n = stepNext(t), drop = movesOf(t).includes("dropped");
     // Only moves that are allowed get a button.
