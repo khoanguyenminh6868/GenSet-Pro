@@ -3605,12 +3605,29 @@ function partFind(kind, model) {
   if (key.length >= 5 && keys.includes(key)) return { key };
   const pre = key.length >= 4 ? keys.filter((k) => k.startsWith(key)) : [];
   if (pre.length === 1 && key.length >= 5) return { key: pre[0] };
-  return pre.length ? { q: model, n: pre.length } : null;
+  if (pre.length) return { q: model, n: pre.length };
+  // Not a catalog model, but written in a supplier's table (a maker's datasheet, a table the catalog does not read as
+  // gensets): its supplier page.
+  const sid = key.length >= 5 ? partTables()[key] : null;
+  return sid ? { sup: sid } : null;
+}
+// Every code written in the suppliers' tables (each cell, each word, each two words) → the first supplier with it.
+let partTab = { src: null, map: null };
+function partTables() {
+  if (partTab.src === state.supplier) return partTab.map;
+  const C = window.GenbidCatalog, map = Object.create(null);
+  for (const s of supAll()) for (const t of s.specTables || []) for (const line of [t.title, ...(t.rows || [])]) for (const cell of String(line || "").split("|")) {
+    const w = cell.trim().split(/\s+/);
+    for (const x of [cell, ...w, ...w.slice(1).map((y, i) => w[i] + " " + y)]) { const k = C.keyOf(x.trim()); if (k.length >= 5 && k.length <= 24 && /\d/.test(k) && /[A-Z]/.test(k) && !map[k]) map[k] = s.id; }
+  }
+  partTab = { src: state.supplier, map };
+  return map;
 }
 function partStatusHtml(kind, model) {
   if (!catReady()) return '<span class="muted">đang tra danh mục...</span>';
   const f = partFind(kind, model);
   if (!f) return '<span class="chip mut" title="Model này chưa có trong Thông số cấu hình (bảng thông số của các nhà cung cấp)">chưa có thông tin</span>';
+  if (f.sup) { const s = state.supplier?.[f.sup]; return h`<a href="#" data-supopen="${f.sup}" title="Model này có trong bảng thông số của nhà cung cấp, chưa có trong Thông số cấu hình">Xem ở ${supName(s) || f.sup}</a>`; }
   return f.key ? h`<a href="#" data-catopen="${kind}" data-catkey="${f.key}">Xem thông số</a>`
     : h`<a href="#" data-catopen="${kind}" data-catq="${f.q}" title="Danh mục có ${f.n} model bắt đầu bằng ${model}; hàng trúng không ghi đủ đời model">${f.n} model gần giống</a>`;
 }
