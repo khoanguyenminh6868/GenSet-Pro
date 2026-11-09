@@ -453,5 +453,161 @@
     }
     return out;
   }
-  root.GenbidBidprice = { supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
+  // ---------- Cạnh tranh dự báo (2026-11-10): số nhà thầu, nhà thầu quen của chủ đầu tư, xác suất thắng theo giá ----------
+  // Đo trên 1.627 phần đã có kết quả (2022 → 11/2026): giá trúng / giá gói chủ yếu do số nhà thầu quyết định (1 nhà thầu:
+  // trung vị 99%; từ 7: 78%), nên mức giá nên bỏ phụ thuộc trước hết vào việc gói sẽ có mấy nhà thầu.
+  // nbForecast: phân bố số nhà thầu (1 / 2–3 / 4–5 / từ 6) = tỉ lệ chung × độ lệch của chủ đầu tư × của tỉnh × của lĩnh vực,
+  // mỗi độ lệch kéo về tỉ lệ chung khi ít gói (K_INV, K_SEG) và giảm nửa cho tỉnh / lĩnh vực (ALPHA) vì hai thứ trùng nhau
+  // một phần. Hệ số chọn bằng kiểm thử tiến dần theo thời gian (dự báo mỗi phần chỉ từ các phần đóng trước nó, 1.125 phần):
+  // log loss 1,317 → 1,217, Brier 0,712 → 0,669. Giá gói, hình thức, công suất, yêu cầu G7 không giúp thêm nên không dùng.
+  // Dự báo "1 nhà thầu" đúng 44% (tỉ lệ chung 32%), "từ 6" đúng 47% (tỉ lệ chung 11%): chỉ là xu hướng, không chắc chắn.
+  const NB_LABELS = ["1 nhà thầu", "2–3 nhà thầu", "4–5 nhà thầu", "từ 6 nhà thầu"];
+  const nbBucket = (n) => (n <= 1 ? 0 : n <= 3 ? 1 : n <= 5 ? 2 : 3);
+  const K_INV = 5, K_SEG = 20, ALPHA = 0.5;
+  const foldVi = (v) => String(v ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase();
+  const invKeyOf = (v) => foldVi(v).replace(/[^a-z0-9]+/g, " ").trim();
+  // "Thành phố Hồ Chí Minh" = "TP. Hồ Chí Minh"; "Xã A, Huyện B, Tỉnh C" → C; nhiều tỉnh → tỉnh đầu.
+  const PROV_RE = /^(tinh|thanh pho|tp\.?)\s+/;
+  function provinceOf(loc) {
+    const parts = String(loc || "").split(/\s*[,;]\s*/).map((x) => foldVi(x).trim()).filter(Boolean);
+    const p = parts.find((x) => PROV_RE.test(x)) || parts[parts.length - 1] || "";
+    return p.replace(PROV_RE, "").replace(/[^a-z0-9]+/g, " ").trim();
+  }
+  const timeOf = (v) => { const t = v ? Date.parse(v) : NaN; return Number.isFinite(t) ? t : null; };
+  // Mỗi phần đã mở thầu của bidhist thành một dòng. Nhớ theo đối tượng docs (trang web thay cả state.bidhist khi đổi).
+  const rowsMemo = new WeakMap();
+  function compRows(docs) {
+    if (!docs || typeof docs !== "object") return [];
+    if (rowsMemo.has(docs)) return rowsMemo.get(docs);
+    const out = [];
+    for (const [key, d] of Object.entries(docs)) {
+      if (!d?.lots?.length) continue;
+      const multi = d.lots.length > 1, at = timeOf(d.bidCloseDate) ?? timeOf(d.openedAt) ?? timeOf(d.publicDate) ?? (/^IB\d\d/.test(key) ? Date.UTC(2000 + Number(key.slice(2, 4)), 0, 1) : 0);
+      const inv = invKeyOf(d.investorName), prov = provinceOf(d.location), genset = isGensetName(d.bidName);
+      for (const lot of d.lots) {
+        const bs = lot.bidders || [];
+        if (!bs.length) continue;
+        const w = bs.find((b) => b.won), price = lot.price ?? (multi ? null : d.estimatedPrice), wp = w && Number(w.winPrice ?? bdPrice(w));
+        const ratio = price > 0 && wp > 0 ? wp / price : null;
+        out.push({ key, lotNo: lot.lotNo || "", at, nb: bs.length, b: nbBucket(bs.length), inv, investor: d.investorName || "", prov, field: d.field || "",
+          win: w ? taxKey(w) : "", winName: w?.name || "", taxes: bs.map(taxKey), final: !!d.final,
+          // Giá trúng so với giá gói, chỉ ở phần mua sắm máy phát (như candidates): dùng cho đường xác suất thắng.
+          ratio: ratio && ratio >= 0.3 && ratio <= 1.02 && genset && bidKind((multi && lot.lotName) || d.bidName) === "supply" ? ratio : null });
+      }
+    }
+    out.sort((a, b) => a.at - b.at);
+    rowsMemo.set(docs, out);
+    return out;
+  }
+  // Các phần dùng để dự báo cho gói t: không phải chính nó, và đóng trước khi nó đóng (gói đã đóng xem lại thì không
+  // nhìn thấy tương lai của chính nó).
+  function rowsBefore(t, docs) {
+    const self = t.notifyNo || t._key || "", cut = timeOf(t.bidCloseDate);
+    return compRows(docs).filter((r) => r.key !== self && (cut == null || r.at < cut));
+  }
+  const hist4 = (rows) => { const c = [0, 0, 0, 0]; for (const r of rows) c[r.b]++; return c; };
+  function nbForecast(t, docs) {
+    const rows = rowsBefore(t, docs), n = rows.length;
+    if (n < 50) return null;
+    const g = hist4(rows).map((c) => (c + 1) / (n + 4)), lp = g.map(Math.log);
+    const inv = invKeyOf(t.investorName), prov = provinceOf(t.location), field = t.field || "";
+    const lean = (list, k, a) => { const c = hist4(list), m = list.length; if (m) for (let j = 0; j < 4; j++) lp[j] += a * (Math.log((c[j] + k * g[j]) / (m + k)) - Math.log(g[j])); return { n: m, hist: c }; };
+    const ofInv = inv ? rows.filter((r) => r.inv === inv) : [], ofProv = prov ? rows.filter((r) => r.prov === prov) : [], ofField = field ? rows.filter((r) => r.field === field) : [];
+    const parts = { investor: lean(ofInv, K_INV, 1), province: { name: prov, ...lean(ofProv, K_SEG, ALPHA) }, field: { name: field, ...lean(ofField, K_SEG, ALPHA) } };
+    const mx = Math.max(...lp), e = lp.map((x) => Math.exp(x - mx)), s = e.reduce((a, x) => a + x, 0), p = e.map((x) => x / s);
+    return { p, base: g, top: p.indexOf(Math.max(...p)), n, parts, labels: NB_LABELS, lock: lockOf(ofInv, docs) };
+  }
+  // Dấu hiệu gói có thể đã có chủ, đọc từ các gói trước của cùng chủ đầu tư:
+  // - quen: một nhà thầu đã trúng ≥ 2 gói và ≥ nửa số gói trước của chủ đầu tư;
+  // - single: chủ đầu tư có ≥ 2 gói trước và ≥ 2/3 trong đó chỉ có 1 nhà thầu.
+  // Kiểm trên lịch sử (mỗi phần chỉ nhìn các phần trước nó): gói có dấu hiệu "quen" thì nhà thầu đó trúng lại 44% (mọi gói
+  // có lịch sử: 25%), có "single" thì 56% chỉ 1 nhà thầu (mọi gói: 32%); gói của chủ đầu tư có ≥ 2 gói trước mà không có
+  // dấu hiệu nào chỉ 21% có 1 nhà thầu. lockStats tính lại các tỉ lệ này từ dữ liệu đang có để lời ghi trên web luôn
+  // đúng với dữ liệu.
+  function lockSigns(prev) {
+    const n = prev.length, wins = new Map();
+    for (const r of prev) if (r.win) { const w = wins.get(r.win) || { id: r.win, name: r.winName, wins: 0, bids: 0 }; w.wins++; wins.set(r.win, w); }
+    for (const r of prev) for (const tx of r.taxes) if (wins.has(tx)) wins.get(tx).bids++;
+    const winners = [...wins.values()].sort((a, b) => b.wins - a.wins || b.bids - a.bids), top = winners[0] || null, one = prev.filter((r) => r.nb === 1).length;
+    return { n, one, winners, top, quen: n >= 2 && !!top && top.wins >= 2 && top.wins / n >= 0.5, single: n >= 2 && one / n >= 2 / 3 };
+  }
+  const statsMemo = new WeakMap();
+  function lockStats(docs) {
+    if (!docs || typeof docs !== "object") return null;
+    if (statsMemo.has(docs)) return statsMemo.get(docs);
+    const by = new Map(), mk = () => ({ n: 0, one: 0, again: 0 }), st = { all: mk(), quen: mk(), single: mk(), none: mk() };
+    const add = (x, r, top) => { x.n++; if (r.nb === 1) x.one++; if (top && r.win === top.id) x.again++; };
+    for (const r of compRows(docs)) {
+      const prev = r.inv ? by.get(r.inv) || [] : [];
+      if (r.final) {
+        const s = lockSigns(prev);
+        add(st.all, r, s.top);
+        if (s.quen) add(st.quen, r, s.top);
+        if (s.single) add(st.single, r, s.top);
+        if (s.n >= 2 && !s.quen && !s.single) add(st.none, r, s.top);
+      }
+      if (r.inv) { prev.push(r); by.set(r.inv, prev); }
+    }
+    statsMemo.set(docs, st);
+    return st;
+  }
+  function lockOf(ofInv, docs) {
+    const s = lockSigns(ofInv);
+    return { ...s, winners: s.winners.slice(0, 5), level: s.quen && s.single ? "high" : s.quen || s.single ? "some" : s.n >= 2 ? "open" : "unknown", stats: lockStats(docs) };
+  }
+  // Xác suất thắng ở mức giá r (so với giá gói) khi hồ sơ đạt kỹ thuật: tỉ lệ các phần mua sắm máy phát đã có kết quả mà
+  // giá trúng cao hơn r, tức bỏ r thì thấp hơn người đã trúng. Tính riêng theo số nhà thầu của phần đó rồi trộn theo dự báo
+  // số nhà thầu (fc.p). Kiểm thử tiến dần (712 phần): Brier ở mức 90% giá gói 0,249 (không chia theo số nhà thầu) → 0,230
+  // (trộn theo dự báo); biết đúng số nhà thầu thì 0,167, nên chọn tay kịch bản khi biết gói đông hay vắng sẽ sát hơn.
+  // → { grid: [r], byNb: [{ n, w: [..] }], mix: [..], all: [..], n }.
+  const WIN_GRID = Array.from({ length: 41 }, (_, i) => Math.round((0.6 + i * 0.01) * 100) / 100);
+  function winCurve(t, docs, fc) {
+    const rows = rowsBefore(t, docs).filter((r) => r.ratio), by = [[], [], [], []];
+    for (const r of rows) by[r.b].push(r.ratio);
+    const share = (xs, r) => (xs.length ? xs.filter((x) => x > r + 1e-9).length / xs.length : null);
+    const all = rows.map((r) => r.ratio), byNb = by.map((xs) => ({ n: xs.length, w: WIN_GRID.map((r) => share(xs, r)) }));
+    const p = fc?.p || null;
+    // Nhóm số nhà thầu có dưới 15 phần thì dùng đường chung cho nhóm đó.
+    const mix = WIN_GRID.map((r, i) => (p ? p.reduce((a, pj, j) => a + pj * (byNb[j].n >= 15 ? byNb[j].w[i] : share(all, r) ?? 0), 0) : share(all, r)));
+    return { grid: WIN_GRID, byNb, mix, all: WIN_GRID.map((r) => share(all, r)), n: all.length, labels: NB_LABELS };
+  }
+  // Lợi nhuận kỳ vọng ở từng mức giá: xác suất thắng × (giá bỏ − giá vốn). P: giá gói, cost: giá vốn (đồng, cùng cơ sở
+  // thuế với giá dự thầu), w: một đường của winCurve (mix, all hoặc byNb[i].w). best: mức có lợi nhuận kỳ vọng cao nhất
+  // trong các mức không lỗ; không có mức nào (giá vốn ≥ giá gói) thì null.
+  function profitTable(P, cost, curve, w = curve.mix) {
+    if (!(P > 0) || !(cost > 0)) return { rows: [], best: null, breakEven: null };
+    const rows = curve.grid.map((r, i) => ({ r, price: Math.round((P * r) / 1000) * 1000, w: w[i], margin: P * r - cost, ev: w[i] == null ? null : w[i] * (P * r - cost) }));
+    const ok = rows.filter((x) => x.margin > 0 && x.ev != null);
+    const best = ok.length ? ok.reduce((a, x) => (x.ev > a.ev ? x : a)) : null;
+    return { rows, best, breakEven: cost / P };
+  }
+  // ---------- Sổ báo giá nhà cung cấp (quote/<TBMT>.rows[].items[], 2026-11-10) ----------
+  // Một dòng giá: { id, desc, kva, engine, alternator, controller, qty, unitPrice, currency, terms, date, note }.
+  // Giá vốn của một nhà cung cấp = Σ số lượng × đơn giá × tỷ giá + các khoản thêm (cost.extras: { label, kind: "vnd" |
+  // "pct", value }; pct tính trên tiền hàng đã quy đổi). Thiếu tỷ giá của một đồng tiền có trong dòng giá thì chưa tính
+  // được (missing), không đoán tỷ giá.
+  const CURRENCIES = ["VND", "USD", "CNY", "EUR", "JPY"];
+  function quoteCost(row, cost = {}) {
+    const fx = { ...(cost.fx || {}), VND: 1 }, items = (row?.items || []).filter((x) => Number(x.unitPrice) > 0), missing = [];
+    let goods = 0;
+    for (const x of items) {
+      const cur = x.currency || "VND", rate = Number(fx[cur]);
+      if (!(rate > 0)) { if (!missing.includes(cur)) missing.push(cur); continue; }
+      goods += (Number(x.qty) > 0 ? Number(x.qty) : 1) * Number(x.unitPrice) * rate;
+    }
+    if (!items.length || missing.length) return { goods: null, extras: null, total: null, missing, n: items.length };
+    const extras = (cost.extras || []).reduce((a, e) => a + (e.kind === "pct" ? (goods * (Number(e.value) || 0)) / 100 : Number(e.value) || 0), 0);
+    return { goods, extras, total: goods + extras, missing, n: items.length };
+  }
+  // Mọi dòng giá của mọi gói thành một sổ: { key, rowId, supplierId, ...item, kvaNum }, mới nhất trước. kvaNum: công
+  // suất ghi ở dòng, không có thì đọc từ mô tả.
+  function quoteLedger(quotes) {
+    const out = [];
+    for (const [key, q] of Object.entries(quotes || {})) for (const row of q?.rows || []) for (const x of row.items || []) {
+      if (!(Number(x.unitPrice) > 0)) continue;
+      out.push({ key, rowId: row.id, supplierId: row.supplierId || "", ...x, kvaNum: Number(x.kva) > 0 ? Number(x.kva) : kvaOf(x.desc) });
+    }
+    return out.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+  }
+  root.GenbidBidprice = { nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
 })(typeof window !== "undefined" ? window : globalThis);

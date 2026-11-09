@@ -226,3 +226,70 @@ test("supWon: brand or first distinctive name word in won genset rows of supply 
   assert.deepEqual(m.get("kachai").map((x) => [x.key, x.where]), [["A", "set"]]);
   assert.deepEqual(m.get("cummins").map((x) => [x.key, x.where]), [["A", "cfg"]]);
 });
+
+// ---------- Cạnh tranh dự báo, xác suất thắng, giá vốn ----------
+// 60 phần thường (3 nhà thầu, trúng 85% giá gói) ở Hà Nội + 4 phần của một chủ đầu tư ở Quảng Ninh, đều 1 nhà thầu, cùng
+// một người trúng ở 99% giá gói.
+const histDocs = () => {
+  const d = {}, day = (i) => new Date(Date.UTC(2024, 0, 1 + i)).toISOString();
+  const bidders = (n, wp, win = "900") => Array.from({ length: n }, (_, i) => ({ name: i ? `NT${i}` : `Trúng ${win}`, taxCode: i ? String(100 + i) : win, won: !i, winPrice: i ? null : wp, bidPrice: i ? wp * 1.1 : wp }));
+  for (let i = 0; i < 60; i++) d["N" + i] = { bidName: "Mua sắm máy phát điện 100kVA", final: true, field: "HH", investorName: "CĐT " + i, location: "Thành phố Hà Nội", bidCloseDate: day(i), lots: [{ lotNo: "", price: 1e9, bidders: bidders(3, 8.5e8, String(500 + i)) }] };
+  for (let i = 0; i < 4; i++) d["Q" + i] = { bidName: "Mua sắm máy phát điện 100kVA", final: true, field: "HH", investorName: "Công ty Than Quảng Ninh", location: "Phường A, Tỉnh Quảng Ninh", bidCloseDate: day(70 + i), lots: [{ lotNo: "", price: 1e9, bidders: bidders(1, 9.9e8) }] };
+  return d;
+};
+
+test("provinceOf / invKeyOf: one key for the ways muasamcong writes a place and a name", () => {
+  assert.equal(BP.provinceOf("TP. Hồ Chí Minh"), BP.provinceOf("Thành phố Hồ Chí Minh"));
+  assert.equal(BP.provinceOf("Xã A, Huyện B, Tỉnh Thanh Hoá"), BP.provinceOf("Tỉnh Thanh Hóa"));
+  assert.equal(BP.provinceOf("Tỉnh Quảng Ninh, Thành phố Hải Phòng"), "quang ninh");
+  assert.equal(BP.invKeyOf("CÔNG TY  Than - Quảng Ninh."), BP.invKeyOf("Công ty Than Quảng Ninh"));
+});
+
+test("nbForecast: an owner whose lots drew one bidder leans to one; the same winner is the usual contractor", () => {
+  const docs = histDocs();
+  const fc = BP.nbForecast({ notifyNo: "X", investorName: "CÔNG TY THAN QUẢNG NINH", location: "Tỉnh Quảng Ninh", field: "HH" }, docs);
+  assert.equal(fc.parts.investor.n, 4);
+  assert.equal(fc.top, 0);
+  assert.ok(Math.abs(fc.p.reduce((a, x) => a + x, 0) - 1) < 1e-9);
+  assert.equal(fc.lock.level, "high");
+  assert.deepEqual([fc.lock.top.id, fc.lock.top.wins, fc.lock.one], ["900", 4, 4]);
+  // Walk-forward check of the sign: Q2 and Q3 had it (two earlier lots, same winner), and the winner won again.
+  assert.deepEqual(fc.lock.stats.quen, { n: 2, one: 2, again: 2 });
+  // An owner never seen, in the place where every lot drew three bidders.
+  const other = BP.nbForecast({ notifyNo: "X", investorName: "Chưa có gói nào", location: "Thành phố Hà Nội", field: "HH" }, docs);
+  assert.equal(other.top, 1);
+  assert.equal(other.lock.level, "unknown");
+  // A tender sees only lots closed before it, and never itself.
+  const past = BP.nbForecast({ notifyNo: "Q3", investorName: "Công ty Than Quảng Ninh", location: "Tỉnh Quảng Ninh", field: "HH", bidCloseDate: docs.Q3.bidCloseDate }, docs);
+  assert.equal(past.parts.investor.n, 3);
+  assert.equal(BP.nbForecast({ notifyNo: "X" }, { A: docs.N0 }), null);
+});
+
+test("winCurve / profitTable: chance of bidding under the past winners, by bidder count; best expected profit", () => {
+  const docs = histDocs(), t = { notifyNo: "X", investorName: "Chưa có gói nào", location: "Thành phố Hà Nội", field: "HH" };
+  const c = BP.winCurve(t, docs, BP.nbForecast(t, docs));
+  assert.deepEqual(c.byNb.map((b) => b.n), [4, 60, 0, 0]);
+  const at = (r) => c.grid.indexOf(r);
+  // 3-bidder lots were won at 85%: under it always wins, at it or over it never.
+  assert.deepEqual([c.byNb[1].w[at(0.84)], c.byNb[1].w[at(0.85)], c.byNb[1].w[at(0.9)]], [1, 0, 0]);
+  assert.ok(c.mix[at(0.84)] > 0.9 && c.mix[at(0.9)] < 0.5);
+  const p = BP.profitTable(1e9, 7e8, c, c.byNb[1].w);
+  assert.equal(p.best.r, 0.84);
+  assert.equal(p.best.margin, 1.4e8);
+  assert.equal(p.breakEven, 0.7);
+  // Cost above every price: nothing to suggest.
+  assert.equal(BP.profitTable(1e9, 1.2e9, c).best, null);
+  assert.equal(BP.profitTable(1e9, 0, c).best, null);
+});
+
+test("quoteCost / quoteLedger: price lines in their currency, extras in đồng or percent of the goods", () => {
+  const row = { id: "r1", supplierId: "s1", items: [{ id: "a", desc: "Tổ máy 500kVA", qty: 2, unitPrice: 100000, currency: "CNY" }, { id: "b", desc: "ATS", unitPrice: 5e7, currency: "VND" }, { id: "c", desc: "chưa có giá" }] };
+  assert.deepEqual(BP.quoteCost(row, {}).missing, ["CNY"]);
+  assert.equal(BP.quoteCost(row, {}).total, null);
+  const c = BP.quoteCost(row, { fx: { CNY: 3600 }, extras: [{ label: "Vận chuyển", kind: "vnd", value: 3e7 }, { label: "Thuế", kind: "pct", value: 10 }] });
+  assert.equal(c.goods, 2 * 100000 * 3600 + 5e7);
+  assert.equal(c.total, c.goods + 3e7 + c.goods * 0.1);
+  assert.equal(BP.quoteCost({ items: [] }, {}).total, null);
+  const led = BP.quoteLedger({ K1: { rows: [{ ...row, items: [{ ...row.items[0], date: "2026-10-01" }, row.items[2]] }] }, K2: { rows: [{ id: "r1", supplierId: "s2", items: [{ desc: "Máy", kva: 250, unitPrice: 9e8, date: "2026-11-01" }] }] } });
+  assert.deepEqual(led.map((x) => [x.key, x.supplierId, x.kvaNum]), [["K2", "s2", 250], ["K1", "s1", 500]]);
+});
