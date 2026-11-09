@@ -164,8 +164,17 @@ async function crawl(id) {
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const ids = only.length ? only : fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5));
+  // A site can hold a page (or Chromium) for hours (2026-11-09: the render pass of crawl/g7-2026-11 ran past 2 h): each
+  // supplier gets CRAWL_SUPPLIER_MIN minutes (default 20), then the worker moves on and the supplier keeps its old
+  // tables. Each supplier writes its specs/<id>.json as soon as it is done, so a run stopped from outside (the workflow's
+  // `timeout`) still leaves the suppliers done before it for merge-specs.mjs.
+  const PER_MS = (Number(process.env.CRAWL_SUPPLIER_MIN) || 20) * 60e3;
+  const limit = (p, ms, what) => { let t; return Promise.race([p, new Promise((_, no) => { t = setTimeout(() => no(new Error(what)), ms); })]).finally(() => clearTimeout(t)); };
   let next = 0;
-  const work = async () => { while (next < ids.length) { const id = ids[next++]; try { const r = await crawl(id); console.log(`${r.id}: ${r.fetched ?? 0} trang đọc, ${r.pages} trang có bảng, ${r.rows} dòng${r.kept != null ? ` (ít hơn lần trước, giữ ${r.kept} dòng cũ)` : ""}`); } catch (e) { console.log(`${id}: lỗi ${e.message}`); } } };
+  const work = async () => { while (next < ids.length) { const id = ids[next++]; try { const r = await limit(crawl(id), PER_MS, `quá ${PER_MS / 60e3} phút, bỏ qua (giữ bảng cũ)`); console.log(`${r.id}: ${r.fetched ?? 0} trang đọc, ${r.pages} trang có bảng, ${r.rows} dòng${r.kept != null ? ` (ít hơn lần trước, giữ ${r.kept} dòng cũ)` : ""}`); } catch (e) { console.log(`${id}: lỗi ${e.message}`); } } };
   await Promise.all(Array.from({ length: RENDER ? 4 : 6 }, work));
-  if (browser) await browser.close();
+  // Closing Chromium has hung before: a minute at most, then the process ends anyway (a crawl still running after its
+  // time limit would otherwise keep it alive).
+  if (browser) await limit(browser.close(), 60e3, "close").catch(() => {});
+  process.exit(0);
 }

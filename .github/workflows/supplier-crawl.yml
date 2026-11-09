@@ -19,6 +19,10 @@ on:
         description: 'Also run a pass in headless Chromium (slower, for sites built with JavaScript)'
         type: boolean
         default: true
+      plain:
+        description: 'Run the plain-request pass (off: only the Chromium pass, e.g. to redo a render pass that was cut)'
+        type: boolean
+        default: true
   push:
     branches: ['crawl/**']
     paths: ['.github/workflows/supplier-crawl.yml', 'suppliers/crawl-specs.mjs']
@@ -65,14 +69,17 @@ jobs:
           for i in 1 2 3; do git pull -q --rebase origin "$GITHUB_REF_NAME" && git push -q origin "HEAD:$GITHUB_REF_NAME" && exit 0; sleep 5; done
           exit 1
           EOF
+      # Each pass: at most 20 minutes a supplier (crawl-specs.mjs) and 150 minutes in all (`timeout`), then the suppliers
+      # done so far are merged and committed all the same, so a site that hangs costs only its own tables.
       - name: Pass 1, plain requests
+        if: github.event_name == 'push' || github.event.inputs.plain != 'false'
         run: |
-          node suppliers/crawl-specs.mjs $IDS --max "$MAX" | tee "$RUNNER_TEMP/pass1.txt"
+          timeout -k 60 150m node suppliers/crawl-specs.mjs $IDS --max "$MAX" | tee "$RUNNER_TEMP/pass1.txt" || echo "Pass 1 dừng sau 150 phút: ghi các hãng đã xong." | tee -a "$RUNNER_TEMP/pass1.txt"
           bash "$RUNNER_TEMP/commit.sh" "Nhà cung cấp: cào lại bảng thông số (đọc thường, tối đa $MAX trang mỗi hãng)"
       - name: Pass 2, headless Chromium
         if: env.RENDER == 'true'
         run: |
-          node suppliers/crawl-specs.mjs $IDS --max 60 --render | tee "$RUNNER_TEMP/pass2.txt"
+          timeout -k 60 150m node suppliers/crawl-specs.mjs $IDS --max 60 --render | tee "$RUNNER_TEMP/pass2.txt" || echo "Pass 2 dừng sau 150 phút: ghi các hãng đã xong." | tee -a "$RUNNER_TEMP/pass2.txt"
           bash "$RUNNER_TEMP/commit.sh" "Nhà cung cấp: cào lại bảng thông số (Chromium, tối đa 60 trang mỗi hãng)"
       - name: Summary
         if: always()
