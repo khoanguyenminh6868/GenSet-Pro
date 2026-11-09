@@ -3110,19 +3110,19 @@
  {
   "at": "2026-11-09",
   "result": "added",
-  "id": "gb-power",
-  "name": "GB POWER CO.,LTD",
-  "url": "https://www.gbpower.net/",
-  "tables": 48,
-  "rows": 2221
- },
- {
-  "at": "2026-11-09",
-  "result": "added",
   "id": "kusing-guangzhou",
   "name": "GUANGZHOU KUSING GENERATOR CO.,LTD.",
   "url": "https://www.cnkusing.net/",
   "tables": 0,
   "rows": 0
+ },
+ {
+  "at": "2026-11-09",
+  "result": "added",
+  "id": "gb-power",
+  "name": "GB POWER CO.,LTD",
+  "url": "https://www.gbpower.net/",
+  "tables": 48,
+  "rows": 2221
  }
 ]
