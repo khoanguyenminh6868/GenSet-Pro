@@ -146,6 +146,10 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .kpi .kref{position:absolute;top:10px;right:10px;width:30px;height:30px}
 .lrow{display:flex;flex-direction:column;gap:3px;text-align:left;border:1px solid var(--line);background:var(--panel2);border-radius:8px;padding:9px 11px;color:var(--fg)}
 .lrow:hover{border-color:var(--violet)}
+/* Ghi chú nội bộ in the list (Khoa, 2026-11-09): under Hình thức on a desktop, under Địa điểm on a phone. */
+.nline{color:var(--fg);font-size:12.5px;margin-top:4px;white-space:pre-line;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.nline::before{content:"Ghi chú: ";color:var(--dim)}.mnote{display:none}
+a.invlink{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}a.invlink:hover{color:var(--violet);text-decoration-color:currentColor}
+.invsum{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 
 /* Status tabs */
 .tabsbar{padding:12px 16px;display:flex;flex-direction:column;gap:10px}
@@ -424,6 +428,8 @@ details.sec>div{margin-top:10px}
   table.grid td.c-offerer::before,table.grid td.c-cap::before,table.grid td.c-loc::before{content:attr(data-l);position:absolute;left:0;top:1px;color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
   table.grid td.c-offerer .mform{display:block;position:relative;margin:6px 0 0 -96px;padding-left:96px}
   table.grid td.c-offerer .mform::before{content:attr(data-l);position:absolute;left:0;top:1px;color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+  table.grid td.c-loc .mnote{display:block;position:relative;margin:6px 0 0 -96px;padding-left:96px;white-space:pre-line}
+  table.grid td.c-loc .mnote::before{content:attr(data-l);position:absolute;left:0;top:1px;color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
   table.grid td.c-cap .src{display:inline;margin-left:6px}
   table.grid td[colspan]{grid-column:1/-1}
 }
@@ -986,6 +992,9 @@ const priceLine = (t) => (t.estimatedPrice != null ? h`<div class="pline num">Gi
 const formOf = (t) => BID_FORM[t.bidForm] || t.bidForm || "";
 const formLine = (t) => (formOf(t) ? h`<div class="fline">${formOf(t)}</div>` : "");
 const mForm = (t) => (formOf(t) ? h`<div class="mform" data-l="Hình thức">${formOf(t)}</div>` : "");
+const noteOf = (t) => String(state.tracked[t._key]?.note || "").trim();
+const noteLine = (t) => (noteOf(t) ? h`<div class="nline">${noteOf(t)}</div>` : "");
+const mNote = (t) => (noteOf(t) ? h`<div class="mnote" data-l="Ghi chú">${noteOf(t)}</div>` : "");
 const mPrice = (t) => { const p = priceLine(t); return p ? `<div class="mprice">${p}</div>` : ""; };
 function bidLine(t) {
   const bp = ownBid(t._key).bidPrice;
@@ -1235,7 +1244,7 @@ const COLS = [
     cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span>${raw(mStage(t))}<div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
       const tl = timeLeft(t.bidCloseDate); return h`${raw(mPrice(t))}<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(isCancelled(t) ? '<div class="tleft closed-at">Đã hủy TBMT</div>' : stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
-  { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)} ${formOf(t)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}<div class="dprice">${raw(priceLine(t))}${raw(formLine(t))}</div>${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
+  { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)} ${formOf(t)} ${noteOf(t)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}<div class="dprice">${raw(priceLine(t))}${raw(formLine(t))}${raw(noteLine(t))}</div>${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
   { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return (v ? h`${v}` : '<span class="muted">Chưa có</span>') + mForm(t); } },
   { k: "cap", label: "Công Suất", cls: "capc", num: true, numUnit: "kVA", val: (t) => capacityOf(t)?.n ?? null, text: (t) => capacityOf(t)?.text || "", cell: (t) => { const c = capacityOf(t); return c ? h`<span class="cap">${c.text}</span>` : capScan.pending.has(t._key) ? '<span class="muted small">Đang đọc HSMT...</span>' : '<span class="muted">Chưa rõ</span>'; } },
   { k: "stage", label: "Trạng thái", pick: true, val: (t) => TABS.find((x) => x.key === tabOf(t))?.label, cell: (t) => { const st = stageOf(t), p = stepPrev(t), n = stepNext(t), drop = movesOf(t).includes("dropped");
@@ -1246,7 +1255,7 @@ const COLS = [
       + (drop ? stepBtn(t, "dropped", "x", "Bỏ qua gói này") : "");
     const ai = anaIcon(t);
     return h`<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(btns ? `<div class="stepbtns">${btns}</div>` : "")}${raw(ai ? `<div class="aline">${ai}</div>` : "")}`; } },
-  { k: "loc", label: "Địa điểm", pick: true, cls: "locc", val: (t) => locOf(t), cell: (t) => h`${locOf(t) || "—"}` },
+  { k: "loc", label: "Địa điểm", pick: true, cls: "locc", val: (t) => locOf(t), cell: (t) => h`${locOf(t) || "—"}` + mNote(t) },
 ];
 const COLW = { no: "13%", name: "33%", offerer: "18%", cap: "13%", stage: "12%", loc: "11%" };
 const colText = (c, t) => (c.text ? c.text(t) : String(c.val(t) ?? ""));
@@ -1269,6 +1278,7 @@ const FUNNEL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strok
 const listReady = () => state.loaded.feed && state.loaded.deleted && state.loaded.seen && state.loaded.tracked && state.loaded.hist;
 function renderGrid() {
   if (urlTender && findTender(urlTender)) { const k = urlTender; urlTender = null; openDrawer(k); return; }
+  if (urlInvestor && listReady()) { const n = urlInvestor; urlInvestor = null; drawerBack = []; openInvestor(n); }
   const box = $("#grid");
   if (!listReady()) { box.innerHTML = `<div class="loading">${progress("Đang tải danh sách gói thầu...")}</div>`; $("#count").textContent = ""; return; }
   const all = allTenders();
@@ -1395,6 +1405,7 @@ async function scanCapacities() {
 
 // ---------- Drawer ----------
 function openList(k) {
+  if (k.startsWith("inv:")) { openInvestor(k.slice(4)); return; }
   state.list = k; state.open = null;
   const kp = KPIS.find((x) => x.key === k);
   const items = allTenders().filter((t) => !isProject(t) && kp.f(t)).sort((a, b) => (a.bidCloseDate || "9").localeCompare(b.bidCloseDate || "9"));
@@ -1407,6 +1418,37 @@ function openList(k) {
       <span>${t.bidName}</span><span class="src">${[capacityOf(t)?.text, priceShort(t.estimatedPrice), locOf(t)].filter(Boolean).join(" · ")}</span></button>`; }).join("") : '<div class="empty">Không có gói nào.</div>';
   renderTop();
 }
+// ---------- Chủ đầu tư (Khoa, 2026-11-09) ----------
+// Tapping Chủ đầu tư in Tổng quan opens a page of every tender that investor posted (open, closed and past ones from the
+// history), newest first; its own URL /#cdt/<tên>. It is a drawer list like the KPI lists (state.list = "inv:<tên>"),
+// so a tender opened from it comes back to it, and Back works the same.
+const invOf = (t) => t.investorName || offererOf(t)?.text || "";
+const invKey = (v) => fold(v).replace(/[^a-z0-9]+/g, " ").trim();
+const invHref = (name) => "#cdt/" + encodeURIComponent(name);
+const invOfUrl = () => (location.hash.startsWith("#cdt/") ? decodeURIComponent(location.hash.slice(5)) : null);
+let urlInvestor = null; // the investor of the URL, until the list is loaded (renderGrid)
+function openInvestor(name) {
+  state.list = "inv:" + name; state.open = null;
+  if (invOfUrl() !== name) try { history.replaceState(history.state, "", invHref(name)); } catch {}
+  const k = invKey(name);
+  const items = allTenders().filter((t) => !isProject(t) && invKey(invOf(t)) === k).sort((a, b) => (pubOf(b) || "").localeCompare(pubOf(a) || "") || String(b.notifyNo || "").localeCompare(String(a.notifyNo || "")));
+  $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
+  $("#dtabs").hidden = true;
+  $("#dmeta").innerHTML = h`<span class="eyebrow">Chủ đầu tư · ${items.length} gói</span>`;
+  $("#dtitle").textContent = name;
+  const by = {}; for (const t of items) { const s = shownStage(t); (by[s.key] ||= { label: s.label, n: 0 }).n++; }
+  $("#dbody").innerHTML = items.length ? h`<div class="invsum">${raw(Object.entries(by).map(([k2, v]) => h`<span class="stage st-${k2} small">${v.label}: ${v.n}</span>`).join(""))}</div>` + items.map((t) => { const tl = isClosed(t) ? null : timeLeft(t.bidCloseDate), c = capacityOf(t); return h`<button class="lrow" data-openkey="${t._key}">
+      <span class="row" style="gap:8px"><span class="kcell st-${shownStage(t).key}">${t.notifyNo || t._key}</span><span class="stage st-${shownStage(t).key} small">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}" style="margin:0">${tl.text}</span>` : "")}<span class="muted small num">Đăng ${fmtDate(pubOf(t), false) || "—"}</span></span>
+      <span>${t.bidName}</span><span class="src">${[c?.text, priceShort(t.estimatedPrice), formOf(t), locOf(t)].filter(Boolean).join(" · ")}</span>${raw((t.result?.winners || []).length ? h`<span class="src">Trúng: ${t.result.winners.map((w) => w.name + (w.price ? " · " + priceShort(w.price) : "")).join("; ")}</span>` : "")}${raw(noteOf(t) ? h`<span class="nline">${noteOf(t)}</span>` : "")}</button>`; }).join("")
+    : '<div class="empty">Không có gói nào của chủ đầu tư này.</div>';
+  renderTop();
+}
+function openInvestorFromUrl() {
+  const name = invOfUrl();
+  if (!name || state.list === "inv:" + name) return;
+  if (listReady()) { urlInvestor = null; drawerBack = []; openInvestor(name); } else urlInvestor = name;
+}
+window.addEventListener("hashchange", () => navHashOk() && openInvestorFromUrl());
 // Each tender has its own URL in the app (Khoa, 2026-11-03): /#goi/<TBMT> opens its drawer, once the data has it.
 const tenderHref = (key) => "#goi/" + encodeURIComponent(key);
 const tenderOfUrl = () => (location.hash.startsWith("#goi/") ? decodeURIComponent(location.hash.slice(5)) : null);
@@ -1431,8 +1473,8 @@ function openDrawer(key, tab, back) {
 function closeDrawer() {
   const r = drawerBack.pop(), rest = drawerBack;
   if (r?.key && findTender(r.key)) { openDrawer(r.key, r.tab); drawerBack = rest; $("#dbody").scrollTop = r.scroll || 0; return; }
-  if (r?.list) { openList(r.list); drawerBack = rest; $("#dbody").scrollTop = r.scroll || 0; if (tenderOfUrl()) try { history.replaceState(history.state, "", location.pathname + location.search); } catch {} return; }
-  if (tenderOfUrl()) try { history.replaceState(history.state, "", location.pathname + location.search); } catch {}
+  if (r?.list) { openList(r.list); drawerBack = rest; $("#dbody").scrollTop = r.scroll || 0; if (tenderOfUrl() && !r.list.startsWith("inv:")) try { history.replaceState(history.state, "", location.pathname + location.search); } catch {} return; }
+  if (tenderOfUrl() || invOfUrl()) try { history.replaceState(history.state, "", location.pathname + location.search); } catch {}
   state.open = null; state.list = null; $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true"); $("#scrim").hidden = true; renderGrid();
   drawerBack = [];
   if (r && "id" in r) openBidders(r.id, r.scroll);
@@ -1475,9 +1517,9 @@ function renderDrawer(force = true) {
 function infoHtml(t) {
   const key = t._key, d = state.hsmt[key], files = d?.files || [];
   const c = capacityOf(t);
-  const facts = [["Chủ đầu tư", t.investorName], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => bdNameLink(w) + (w.price ? h` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
+  const facts = [["Chủ đầu tư", t.investorName && h`<a href="${invHref(t.investorName)}" class="invlink" data-invopen="${t.investorName}" title="Xem mọi gói thầu của chủ đầu tư này">${t.investorName}</a>`], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => bdNameLink(w) + (w.price ? h` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
   return h`<div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" rows="2" style="min-height:56px" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
-    <dl class="kv kvo">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${k === "Nhà thầu trúng" ? raw(v) : v}</dd>`).join(""))}</dl>
+    <dl class="kv kvo">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${k === "Nhà thầu trúng" || k === "Chủ đầu tư" ? raw(v) : v}</dd>`).join(""))}</dl>
     ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) || state.bidhist?.[t._key] ? biddersHtml(t) : "")}
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
@@ -3780,6 +3822,8 @@ document.addEventListener("click", async (e) => {
   if (e.target.closest("#bdBtn")) { openBidders(); return; }
   const bdo = e.target.closest("[data-bdopen]");
   if (bdo && [null, bdo].includes(e.target.closest("a[href]"))) { e.preventDefault(); if ($("#bdBody")) { if (!bdOpenId) listScroll.bd = mScroll().scrollTop; bdOpenId = bdo.dataset.bdopen; renderBidders(); mScroll().scrollTop = 0; } else openBidders(bdo.dataset.bdopen); return; }
+  const inv = e.target.closest("[data-invopen]");
+  if (inv && !(e.ctrlKey || e.metaKey || e.shiftKey || e.button)) { e.preventDefault(); if (state.open) drawerBack = [...drawerBack, { key: state.open, tab: state.dtab, scroll: $("#dbody").scrollTop }]; openInvestor(inv.dataset.invopen); $("#dbody").scrollTop = 0; return; }
   const bdt = e.target.closest("[data-bdtender]");
   if (bdt) { e.preventDefault(); const back = { id: bdOpenId, scroll: mScroll().scrollTop }; $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); openDrawer(bdt.dataset.bdtender, "", back); return; }
   // A tender in Giá gợi ý opens in the drawer; closing it comes back to this tab (a new browser tab keeps the link).
@@ -3987,6 +4031,7 @@ setInterval(() => { renderTop(); renderGrid(); }, 60000);
 initDb();
 openScreenFromUrl();
 openTenderFromUrl();
+openInvestorFromUrl();
 })();
 </script>
 

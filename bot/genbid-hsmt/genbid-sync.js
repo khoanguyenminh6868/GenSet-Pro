@@ -272,6 +272,11 @@ async function readNotice(ctx, page, t, chapters = /^Chương\s+(II|III|V|VII)\b
 
 // Fetch a tender's HSMT files through the VNeGP Agent and publish them (GitHub Release + web), as files-fast.md did.
 let agentStarted = false;
+const isDecisionFile = (name) => {
+  const nm = String(name || "").normalize("NFC");
+  if (/y(ê|e)u\s*c(ầ|a)u\s*(v(ề|e)\s*)?k(ỹ|y|i)?\s*thu(ậ|a)t|(^|[^a-z])yckt([^a-z]|$)|ch(ư|u)?(ơ|o|ô)ng[\s_.-]*(v|5)(?![ivx\d])/i.test(nm) && !/^[\d\s._-]*(q(đ|d)|quy(ế|e)t[\s_]*(đ|d)(ị|i)nh|quyetdinh)/i.test(nm)) return false;
+  return /^[\d\s._-]*(q(đ|d)|quy(ế|e)t[\s_]*(đ|d)(ị|i)nh|quyetdinh|ph(ê|e)[\s_]*duy(ệ|e)t)|(q(đ|d)|quy(ế|e)t[\s_]*(đ|d)(ị|i)nh)[\s_.-]*(p(đ|d)|ph(ê|e)[\s_]*duy(ệ|e)t)/i.test(nm);
+};
 async function fetchFiles(page, req) {
   const tag = `${req.key}`;
   if (opt("dry")) {
@@ -286,9 +291,20 @@ async function fetchFiles(page, req) {
       ps("Publish-GenBidHsmt.ps1", ["-Key", req.key, "-RequestedAt", req.requestedAt, "-Reason", r.error]);
       return `${tag}: lỗi (${r.error})`;
     }
+    // The approval decision of the HSMT ("QĐ phê duyệt E-HSMT.pdf", "Quyết định số …", "…_QDPD_….pdf") is not fetched
+    // (Khoa, 2026-11-09); a name that says chapter V or the technical requirements is kept ("Yêu cầu kỹ thuật (phê duyệt).doc").
+    const skipped = r.files.filter((f) => isDecisionFile(f.name));
+    r.files = r.files.filter((f) => !skipped.includes(f));
+    if (!r.files.length) {
+      ps("Publish-GenBidHsmt.ps1", ["-Key", req.key, "-RequestedAt", req.requestedAt, "-Reason", "Trang gói thầu chỉ có tệp quyết định phê duyệt."]);
+      return `${tag}: chỉ có quyết định phê duyệt (${skipped.map((f) => f.name).join(", ")})`;
+    }
     if (!agentStarted) { ps("GenBid-HSMT.ps1", ["-StartOnly"], 5); agentStarted = true; }
     // An amended notice: the files of the old version must not be published again with the new ones.
     if (req.fresh) fs.rmSync(path.join(DOWNLOADS, req.key), { recursive: true, force: true });
+    // A decision fetched before this rule is not published again.
+    const kdir = path.join(DOWNLOADS, req.key);
+    if (fs.existsSync(kdir)) for (const f of fs.readdirSync(kdir)) if (isDecisionFile(f)) fs.rmSync(path.join(kdir, f), { force: true });
     const list = path.join(ROOT, "genbid-work", `files-${req.key}.txt`);
     fs.mkdirSync(path.dirname(list), { recursive: true });
     fs.writeFileSync(list, [`# ${req.key}`, ...r.files.map((f) => `${f.id},${f.name}`)].join("\r\n"), "utf8");
