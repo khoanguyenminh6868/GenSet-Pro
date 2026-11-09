@@ -782,7 +782,67 @@
   const groupOf = (e, g) => { const names = (e.makes || []).map((m) => m.name); return !cnMade(names) && engineCountries(names, e.model).some((c) => COUNTRY_GROUP[g].includes(c)); };
   const groupIn = (text, model, g) => engineCountries(brandIn(String(text || ""), ENGINE_BRANDS), model).some((c) => COUNTRY_GROUP[g].includes(c));
 
-  const api = { build, builder, fromSupplier, prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, COUNTRY_GROUP, CONTROLLERS };
+  // Động cơ, đầu phát, bộ điều khiển named in a won goods row (bidhist goods: "Cấu hình, tính năng kỹ thuật cơ bản",
+  // Khoa 2026-11-09): after each label ("Động cơ:", "Đầu phát:", "Bộ điều khiển:", "Engine", "Alternator"...) up to the
+  // next label, the make (ENGINE_BRANDS / ALT_BRANDS, or any word after "hãng" / "thương hiệu" / "nhà sản xuất") and the
+  // model, as written: the code after "model" / "mã hiệu" / "kiểu", else the first code of the part. A controller is
+  // read by controllersIn, else the same way. Only codes (isCode) count, never voltages, powers, ratings or sizes, so a
+  // part that names no code is left out. `text` is the part of the row it was read from.
+  const PART_LBL = [
+    ["engine", /(?:động|đông|dộng)\s*cơ(?!\s*(?:và|\+|,|\/)\s*(?:đầu|máy))|\bengine\b(?!\s*(?:speed|oil|and))|发动机|柴油机/gi],
+    ["alternator", /(?:đầu|củ|phần)\s*(?:máy\s*)?phát(?:\s*điện)?|\balternator\b|generator\s*end|máy\s*phát\s*điện\s*xoay\s*chiều|发电机/gi],
+    ["controller", /(?:bộ|bảng|tủ|màn\s*hình)\s*điều\s*khiển(?:\s*(?:tự\s*động|kỹ\s*thuật\s*số|trung\s*tâm))?|\bcontroll?er\b|control\s*(?:panel|module)|控制器/gi],
+  ];
+  const PART_STOP = /^(?:DC|AC)\d|^\d+(?:v|mm|db|kg)(?![a-z\d])|^\d+(?:m|cm3|lits?|ma|kwm|bkw|ekw|vdc|vac|ai|ao)$|^DN\d|kwm\/|\d+-\d+ma$|^\d+D[IO]\b|^\d+P-|^\d+x\d|\d(?:k?w|kva|v|vac|hz|rpm|a|ah|l|mm|kg|db|%)$|\d(?:kw|kva|hz|rpm)\b|\/\d*(?:hz|v|pha|ph)\b|^(?:IP|IEC|ISO|TCVN|EN|BS|EURO|TIER|STAGE|CLASS|G7|G20|MKI*|MK\d|RS\d{3}|USB\d?|CAN|J1939|AVR|ATS|ACB|MCCB|SX\d{3}|AS\d{3}|MX\d{3}|R\d{3}|DVR\d*)$/i;
+  // Series prefixes written apart from the code ("TAL A44K", "UCI 274", "ECP 34"): taken together with the next word.
+  const PART_PREFIX = /^(TAL|LSA|UC[DIM]{0,2}|HC[IKM]?|PI|PE|S\d?|LL|ECP|ECO|NPE|MP|MX|LV[ISM]?|DSE|HGM|AMF|DKG|QS[BKLMNTXZ]|KTA?A?|NTA?A?|VTA?|TAD|TWD|BF\d?M|SY\d+)$/i;
+  const partCode = (w) => isCode(w) && w.split(" ").every((x) => !PART_STOP.test(x) && /^[A-Z0-9][A-Z0-9.\-/+]*$/i.test(x)) && !/^cm\d$/i.test(w);
+  function partModel(seg) {
+    const words = seg.replace(/[,;()"“”|]/g, " ").split(/\s+/).map((w) => w.replace(/^[:：\-–.]+|[:：.,\-–]+$/g, "")).filter(Boolean);
+    // A series word written apart ("KYO 164D", "SMF 180E", "TAL A44K") goes with the code after it. A bare short code
+    // (digits and one or two letters: "184G") counts only right after "model", never met in passing.
+    const at = (i, named) => {
+      const w = words[i] || "", n = words[i + 1] || "";
+      if (n.length >= 3 && /\d/.test(n) && (PART_PREFIX.test(w) || (/^[A-Z]{2,5}$/.test(w) && /^\d/.test(n) && !/^(AC|DC|IP|ISO)$/.test(w)
+        && !brandIn(w, [...ENGINE_BRANDS, ...ALT_BRANDS]).length)) && partCode(`${w} ${n}`)) return `${w} ${n}`;
+      return partCode(w) && (named || !/^\d+[A-Z]{1,2}$/i.test(w)) ? w : null;
+    };
+    // "Model: X", "model X", "Mã hiệu: X", "kiểu X", "type X" first.
+    for (let i = 0; i < words.length - 1; i++) if (/^(model|mã|mã\s*hiệu|hiệu|kiểu|type|loại)$/i.test(words[i]) || /^model[:：]/i.test(words[i])) {
+      const inl = words[i].match(/^model[:：](.+)$/i);
+      if (inl && partCode(inl[1])) return inl[1];
+      for (let j = i + 1; j < Math.min(words.length, i + 3); j++) { const m = at(j, true); if (m) return m; }
+    }
+    for (let i = 0; i < words.length; i++) { const m = at(i); if (m) return m; }
+    return null;
+  }
+  function partsIn(text) {
+    // "Ðộng cơ" written with the Icelandic Ð (U+00D0) on some rows.
+    const s = String(text || "").normalize("NFC").replace(/Ð/g, "Đ").replace(/ð/g, "đ"), hits = [];
+    for (const [kind, re] of PART_LBL) for (const m of s.matchAll(re)) hits.push({ kind, at: m.index, end: m.index + m[0].length });
+    hits.sort((a, b) => a.at - b.at);
+    const out = [];
+    hits.forEach((h, i) => {
+      if (i && hits[i - 1].end > h.at) return;
+      const stop = hits.slice(i + 1).find((x) => x.at >= h.end);
+      const seg = s.slice(h.end, Math.min(stop ? stop.at : s.length, h.end + 200));
+      let make = null, model = null;
+      if (h.kind === "controller") {
+        const c = controllersIn(seg)[0] || controllersIn(s.slice(h.at, h.end) + seg)[0];
+        if (c) { make = c.brand; model = c.model; }
+      }
+      if (!model) model = partModel(seg);
+      if (!model) return;
+      if (!make) make = brandIn(seg, h.kind === "engine" ? ENGINE_BRANDS : h.kind === "alternator" ? ALT_BRANDS : CONTROLLERS.map((c) => [c.word, c.brand]))[0]
+        || (seg.match(/(?:hãng|thương\s*hiệu|nhãn\s*hiệu|nhà\s*sản\s*xuất|hiệu)\s*[:：]?\s*([A-Za-zÀ-ỹ][\wÀ-ỹ&.\- ]{1,24}?)(?=\s*[-,;+|(•]|\s+(?:model|mã|ký|xuất|sản|hãng|nhà|-)|$)/i) || [])[1]?.trim() || null;
+      const k = keyOf(model);
+      if (out.some((o) => o.kind === h.kind && keyOf(o.model) === k)) return;
+      out.push({ kind: h.kind, make, model, text: (s.slice(h.at, h.end) + seg).replace(/\s+/g, " ").trim().slice(0, 160) });
+    });
+    return out;
+  }
+
+  const api = { build, builder, partsIn, fromSupplier, prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
