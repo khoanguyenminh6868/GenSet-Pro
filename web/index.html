@@ -2478,6 +2478,25 @@ function supWonMap() {
 }
 const supWonOf = (id) => supWonMap()?.get(id) || [];
 const supWonN = (id) => new Set(supWonOf(id).map((x) => x.key)).size;
+// Mục "Hàng trúng thầu" ở chi tiết nhà cung cấp (Khoa, 2026-11-09): cùng nguồn với chip (supWon), mỗi gói một dòng.
+// Lịch sử thầu chưa tải thì có nút tải (vài MB), không tự tải mỗi lần mở chi tiết.
+function supWonHtml(s) {
+  const head = h`<h4>Hàng trúng thầu</h4>`;
+  if (!state.bidhist) return h`<div id="supWon" data-id="${s.id}">${raw(head)}<button type="button" class="btn sm" data-supwonload="${s.id}">${raw(STAGE_ICON.win)} Xem gói có hàng trúng thầu</button> <span class="muted small">tải lịch sử thầu muasamcong</span></div>`;
+  const a = supWonOf(s.id);
+  if (!a.length) return h`<div id="supWon">${raw(head)}<div class="muted small">Chưa thấy thương hiệu / tên của nhà cung cấp này trong hàng tổ máy trúng thầu ở các gói mua sắm máy phát đã có kết quả.</div></div>`;
+  const by = new Map();
+  for (const x of a) { const k = x.key + "|" + x.lotNo; (by.get(k) || by.set(k, []).get(k)).push(x); }
+  const rows = [...by.values()].sort((p, q) => (q[0].at > p[0].at ? 1 : -1));
+  return h`<div id="supWon">${raw(head)}<div class="muted small">${rows.length} phần / ${new Set(a.map((x) => x.key)).size} gói mua sắm máy phát có hàng tổ máy ghi ${[...new Set(a.map((x) => x.word))].join(", ")}. "Hãng / nhãn hiệu": ghi ở hãng, nhãn hiệu, tên hoặc mã tổ máy; "Trong cấu hình": động cơ, đầu phát hoặc bộ điều khiển của tổ máy.</div>
+    <div class="tablewrap" style="margin-top:8px"><table class="suptable supcards"><thead><tr><th>Mở thầu</th><th>Gói thầu</th><th>Nhà thầu trúng</th><th>Hàng trúng</th></tr></thead><tbody>${raw(rows.map((xs) => {
+      const x = xs[0], url = x.url || portalSearch(x.key.split("-")[0]);
+      return h`<tr><td data-l="Mở thầu">${x.at ? fmtDate(x.at, false) : "—"}</td>
+        <td data-l="Gói thầu"><div><b>${x.bidName || x.key}</b></div>${raw(x.lotName && x.lotName.trim() !== String(x.bidName).trim() ? h`<div class="small">${x.lotName}</div>` : "")}<div class="small"><a class="tlink" href="${url}" target="_blank" rel="noopener" title="Mở trên muasamcong">${x.key} ↗</a></div></td>
+        <td data-l="Nhà thầu trúng" class="small">${x.bidder || "—"}</td>
+        <td data-l="Hàng trúng" class="small">${raw(xs.map((y) => h`<div style="margin-bottom:4px"><span class="chip ${y.where === "set" ? "ok" : "mut"}">${y.where === "set" ? "Hãng / nhãn hiệu" : "Trong cấu hình"}: ${y.word}</span> ${String(y.item).slice(0, 160)}${raw(y.maker ? h` <span class="muted">· hãng ${y.maker}</span>` : "")}<div class="muted" title="${y.text}">…${y.text.slice(0, 140)}…</div></div>`).join(""))}</td></tr>`;
+    }).join(""))}</tbody></table></div></div>`;
+}
 function supWonChip(s) {
   const a = supWonOf(s.id), n = new Set(a.map((x) => x.key)).size;
   if (!n) return "";
@@ -2754,6 +2773,7 @@ function supDetailHtml(s) {
       <td class="small" data-l="Khác">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div>` : '<div class="muted small">Chưa có dữ liệu.</div>')}
     ${raw(supModelsHtml(s))}
     ${raw(supSpecHtml(s))}
+    ${raw(supWonHtml(s))}
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
     ${raw(s.missing?.length ? h`<h4>Chưa tìm thấy / lưu ý</h4>${raw(list(s.missing, (m) => h`<li>${m}</li>`))}` : "")}
     <h4>Nguồn</h4><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${x.url}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
@@ -3925,6 +3945,13 @@ document.addEventListener("click", async (e) => {
   if (home) { e.preventDefault(); setScreenUrl(Object.keys(SCREEN_HASH).find((k) => home.getAttribute("href") === "#" + SCREEN_HASH[k])); openScreenFromUrl(); return; }
   const fav = e.target.closest("[data-supfav]");
   if (fav) { e.preventDefault(); toggleFav(fav.dataset.supfav); return; }
+  const wl = e.target.closest("[data-supwonload]");
+  if (wl) {
+    e.preventDefault(); const id = wl.dataset.supwonload;
+    wl.outerHTML = progress("Đang tải lịch sử thầu...");
+    loadHist().then(() => { const el = $("#supWon"), s = state.supplier?.[id]; if (el && s) el.outerHTML = supWonHtml(s); });
+    return;
+  }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
   if (e.target.id === "supSpecRun" && !e.target.disabled) { supSpecRequest(e.target.dataset.id); return; }
   if (e.target.id === "supSpecHide") { try { localStorage.setItem("genbid:specHide:" + e.target.dataset.id, e.target.dataset.at); } catch {} supSpecRedraw(); return; }
