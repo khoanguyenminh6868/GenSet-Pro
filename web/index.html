@@ -272,6 +272,7 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .dbody{overflow:auto;padding:14px 16px 28px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:0}
 .kv{display:grid;grid-template-columns:minmax(120px,34%) minmax(0,1fr);gap:6px 12px;font-size:13.5px;margin:0}
 .kv.kvo{grid-template-columns:110px minmax(0,1fr)}
+.kv.kvw{grid-template-columns:fit-content(260px) minmax(0,1fr);column-gap:20px}
 .kv dt{color:var(--muted)}.kv dd{margin:0;overflow-wrap:anywhere}
 .kv dd.hl-price{color:var(--mint);font-weight:600}.kv dd.hl-close{color:var(--rose);font-weight:600}
 .doclist{display:flex;flex-direction:column;gap:6px}
@@ -3677,7 +3678,7 @@ function analysisHtml(a) {
         <div class="rec"><b>Nên làm:</b> ${x.recommendation}</div>
       </div>`).join("") || '<p class="muted">Không có điểm nào được đánh dấu.</p>')}
     </div>
-    <details class="sec" open><summary>Thông tin chính</summary><div><dl class="kv">${raw(KI.filter(([k]) => ki[k]).map(([k, l]) => h`<dt>${l}</dt><dd>${ki[k]}</dd>`).join(""))}</dl></div></details>
+    <details class="sec" open><summary>Thông tin chính</summary><div><dl class="kv kvw">${raw(KI.filter(([k]) => ki[k]).map(([k, l]) => h`<dt>${l}</dt><dd>${ki[k]}</dd>`).join(""))}</dl></div></details>
     ${raw(specsTableHtml(a))}
     ${raw(contractTermsHtml(a))}
     <details class="sec"><summary>Yêu cầu năng lực, kinh nghiệm (${(a.qualificationRequirements || []).length})</summary><div>${raw(list((a.qualificationRequirements || []).map((q) => q.requirement + (q.reference ? ` (${q.reference})` : ""))))}</div></details>
@@ -3691,7 +3692,7 @@ function analysisHtml(a) {
 function contractTermsHtml(a) {
   const t = a.contractTerms || [];
   if (!t.length) return "";
-  return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
+  return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv kvw">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
 }
 function comparisonHtml(c) {
   const v = VERDICT[c.verdict] || ["", "var(--yellow)"];
