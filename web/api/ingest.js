@@ -66,6 +66,9 @@ export default async function handler(req, res) {
     if (!q.ok) return res.status(502).json({ error: `read ${q.status}` });
     for (const d of await q.json()) have.set(d.id, d.data);
   }
+  // The first scheduled Sync of the day (Vietnam time) clears activity log rows older than one day (Khoa 09/11:
+  // keep at most one day). Checked before this synclog is written, so its own log row does not count.
+  if (rows.some((r) => r.coll === "synclog")) await pruneLog().catch((e) => console.error("prune activity_log:", e.message));
   const keep = rows.filter((r) => {
     if (r.coll === "syncreq") return !newerSync;
     if (REQS.has(r.coll)) return !newerReq.has(r.coll + "/" + r.id);
@@ -184,4 +187,15 @@ async function dropScratch(dir0, key, coll) {
   const drop = paths.filter((p) => !busy.has(p));
   if (drop.length) await fetch(`${st}/scratch`, { method: "DELETE", headers: sbHeaders, body: JSON.stringify({ prefixes: drop }) });
   return drop.length;
+}
+
+async function pruneLog() {
+  const vnDay = new Date(Date.now() + 7 * 36e5).toISOString().slice(0, 10);
+  const dayStart = new Date(`${vnDay}T00:00:00+07:00`).toISOString();
+  const q = await fetch(`${SB_URL}/rest/v1/activity_log?select=id&coll=eq.synclog&at=gte.${encodeURIComponent(dayStart)}&limit=1`, { headers: sbHeaders });
+  if (!q.ok) throw new Error(`read ${q.status}`);
+  if ((await q.json()).length) return;
+  const cut = new Date(Date.now() - 864e5).toISOString();
+  const d = await fetch(`${SB_URL}/rest/v1/activity_log?at=lt.${encodeURIComponent(cut)}`, { method: "DELETE", headers: { ...sbHeaders, Prefer: "return=minimal" } });
+  if (!d.ok) throw new Error(`delete ${d.status}`);
 }
