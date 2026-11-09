@@ -293,3 +293,27 @@ test("quoteCost / quoteLedger: price lines in their currency, extras in đồng 
   const led = BP.quoteLedger({ K1: { rows: [{ ...row, items: [{ ...row.items[0], date: "2026-10-01" }, row.items[2]] }] }, K2: { rows: [{ id: "r1", supplierId: "s2", items: [{ desc: "Máy", kva: 250, unitPrice: 9e8, date: "2026-11-01" }] }] } });
   assert.deepEqual(led.map((x) => [x.key, x.supplierId, x.kvaNum]), [["K2", "s2", 250], ["K1", "s1", 500]]);
 });
+
+test("wonEvidence: won lots that name the engine model, the genset model, or the engine make at this power", () => {
+  const won = (goods) => ({ lotNo: "", lotName: "", goods, bidders: [{ name: "NT trúng", taxCode: "77", won: true }] });
+  const docs = {
+    M: { bidName: "Mua sắm máy phát điện 500kVA", investorName: "Bệnh viện A", openedAt: "2025-03-01", lots: [won([{ name: "Máy phát điện 500kVA", maker: "Kim Bình", code: "KB550", desc: "Động cơ: Cummins KTA19-G4; Đầu phát: Stamford HCI544D" }])] },
+    G: { bidName: "Mua sắm máy phát điện 2500kVA", investorName: "Bệnh viện B", openedAt: "2025-04-01", lots: [won([{ name: "Máy phát điện 2500kVA", maker: "Cummins Ltd", code: "C2500 D5A", desc: "Chi tiết tại bảng cam kết" }])] },
+    B: { bidName: "Mua sắm máy phát điện 520kVA", investorName: "BỆNH VIỆN A", openedAt: "2025-05-01", lots: [won([{ name: "Máy phát điện 520kVA động cơ Cummins", maker: "Hữu Toàn" }])] },
+    // Chữ chép từ HSMT, gói sửa chữa, phụ tùng và cỡ máy khác: không tính.
+    E: { bidName: "Mua sắm máy phát điện 500kVA", lots: [won([{ name: "Máy phát điện 500kVA hiệu Cummins hoặc tương đương" }])] },
+    S: { bidName: "Sửa chữa máy phát điện 500kVA", lots: [won([{ name: "Máy phát điện 500kVA", desc: "Động cơ: Cummins KTA19-G4" }])] },
+    P: { bidName: "Mua sắm máy phát điện", lots: [won([{ name: "Lọc dầu máy phát điện Cummins 500kVA" }])] },
+    F: { bidName: "Mua sắm máy phát điện 100kVA", lots: [won([{ name: "Máy phát điện 100kVA động cơ Cummins" }])] },
+  };
+  assert.deepEqual(BP.wonSets(docs).map((r) => r.key).sort(), ["B", "E", "F", "G", "M"]);
+  const c = { engine: { make: "Cummins", model: "KTA19G4" }, genset: { model: "KB-550" } };
+  const e = BP.wonEvidence(docs, c, { kva: 500, investorName: "Bệnh viện A" });
+  assert.deepEqual(e.lots.map((x) => [x.key, x.by, x.same]), [["M", "model", true], ["B", "make", true]]);
+  assert.deepEqual([e.model, e.genset, e.make, e.sameInvestor, e.score], [1, 0, 1, 2, 3 + 4 + 1]);
+  // The tender itself is never its own evidence; no power → no make-level match.
+  assert.deepEqual(BP.wonEvidence(docs, c, { kva: 500, self: "M" }).lots.map((x) => x.key), ["B"]);
+  assert.deepEqual(BP.wonEvidence(docs, c, {}).lots.map((x) => x.key), ["M"]);
+  assert.deepEqual(BP.wonEvidence(docs, { engine: { make: "Cummins", model: "QSK60-G4" }, genset: { model: "C2500D5A" } }, { kva: 2500 }).lots.map((x) => [x.key, x.by]), [["G", "genset"]]);
+  assert.equal(BP.wonEvidence(docs, { engine: { make: "Weichai", model: "WP13D405E200" } }, { kva: 500 }).score, 0);
+});

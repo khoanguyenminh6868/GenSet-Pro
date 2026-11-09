@@ -3,7 +3,7 @@
 // candidate rows written to catalog.md, the requirements kept between runs and the check of Tìm NCC configurations.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { check, modelFacts, factConflicts, factsFor, rankConfigs, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins, powerMins, capacity, plausible, unflatten } from "./config-bot.mjs";
+import { check, modelFacts, factConflicts, factsFor, rankConfigs, attachWon, scoreOf, candidates, hintsOf, catalogMd, mergeChecked, reqHashOf, NO_CONTROLLER, byOrigin, cnSuppliers, engineMins, powerMins, capacity, plausible, unflatten } from "./config-bot.mjs";
 import { makerSheet, controllerSheet } from "./maker-datasheets.mjs";
 
 const C = globalThis.GenbidCatalog;
@@ -832,4 +832,22 @@ test("the G7 / G20 origin the HSMT requires of the genset, not an example, a pre
     "- Bảng điều khiển xuất xứ G7",
     "Xuất xứ: Trung Quốc",
   ]) assert.equal(o(t), null, t);
+});
+
+test("won goods break a tie between configurations the checks rank alike, and never outrank a better check result", () => {
+  const ck = (status) => [{ item: "E", part: "engine", status, level: "core" }];
+  const won = (goods) => ({ lotNo: "", lotName: "", goods, bidders: [{ name: "NT", taxCode: "1", won: true }] });
+  const docs = { A: { bidName: "Mua sắm máy phát điện 500kVA", investorName: "CĐT", lots: [won([{ name: "Máy phát điện 500kVA", desc: "Động cơ: Weichai WP13D405E200" }])] } };
+  const r = { requirements: [{ item: "E", part: "engine", level: "core" }], configs: [
+    { rank: 1, engine: { make: "Yuchai", model: "YC6K500-D30" }, checks: ck("met"), suppliers: [{ supplierId: "no-won" }] },
+    { rank: 2, engine: { make: "Weichai", model: "WP13D405E200" }, checks: ck("met"), suppliers: [{ supplierId: "won" }] },
+    { rank: 3, engine: { make: "Weichai", model: "WP13D405E200" }, alternator: { model: "X1" }, checks: ck("not_met"), suppliers: [{ supplierId: "won-bad" }] },
+  ] };
+  attachWon(r, docs, { kva: 500, investorName: "CĐT", self: "X" });
+  assert.deepEqual(r.configs.map((c) => c.won?.score || 0), [0, 5, 5]);
+  rankConfigs(r);
+  assert.deepEqual(r.configs.map((c) => c.suppliers[0].supplierId), ["won", "no-won", "won-bad"]);
+  // The tender's own result is not evidence for itself; counts left by an earlier run go.
+  attachWon(r, docs, { kva: 500, self: "A" });
+  assert.ok(r.configs.every((c) => !c.won));
 });
