@@ -24,7 +24,7 @@ test("codeOf: the agent's item names (as past runs wrote them) map to one code e
   assert.equal(codeOf({ item: "Làm mát", part: "engine" }), "cooling");
   assert.equal(codeOf({ item: "Màu sơn vỏ máy" }), "other");
   assert.equal(codeOf({ code: "cylinders", item: "gì cũng được" }), "cylinders");
-  assert.deepEqual(withCode({ item: "Số xy lanh", requirement: "≥ 6", part: "genset", level: "option" }), { item: "Số xi lanh", requirement: "≥ 6", part: "engine", level: "core", code: "cylinders" });
+  assert.deepEqual(withCode({ item: "Số xy lanh", requirement: "≥ 6", part: "genset", level: "option" }), { item: "Số xi lanh", requirement: "≥ 6", part: "engine", level: "core", code: "cylinders", kind: "model" });
   assert.ok(REQ_CODES.every((c) => c.code && c.item && c.part && c.level && c.words instanceof RegExp));
   assert.equal(new Set(REQ_CODES.map((c) => c.code)).size, REQ_CODES.length);
 });

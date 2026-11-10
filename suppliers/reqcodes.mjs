@@ -92,8 +92,69 @@ export const REQ_CODES = [
   R("ctl_parallel", "Hoà đồng bộ, chia tải", "controller", "core", /h[oò][àa]\s*đ[ồo]ng\s*b[ộo]|song\s*song|parallel|synchroni[sz]|chia\s*t[ảa]i|load\s*shar/i),
   R("ctl_display_lang", "Ngôn ngữ, màn hình bộ điều khiển", "controller", "option", /ng[ôo]n\s*ng[ữu]|ti[ếe]ng\s*(Vi[ệe]t|Anh)|language/i),
 ];
+// Loại yêu cầu (`kind`, 2026-11-10, rà soát chuyên môn máy phát). Nói nguồn không ghi điểm này thì thiếu gì:
+//   model    cố hữu của model động cơ / đầu phát / BĐK / tổ máy: kiểm bằng datasheet; nguồn không ghi → "chưa rõ".
+//   order    chọn khi đặt hàng mà không đổi model: nguồn không ghi → "xác nhận khi đặt hàng" (config-bot.mjs confirm).
+//   document chứng từ / cam kết (chứng nhận, CO, thử nghiệm mẫu): nguồn không ghi → "cần chứng từ" (confirm).
+//   site     phụ thuộc hiện trường (nhiệt độ, độ cao, độ ồn ở khoảng cách): vẫn "chưa rõ", câu hỏi riêng cho NCC.
+// Mã lưỡng lự để `model` (an toàn: vẫn là "chưa rõ", vẫn bị phạt khi xếp hạng); các mã đó ghi "lưỡng lự" ở dưới.
+const KIND = {
+  // genset
+  power_prime: "model", power_standby: "model", // định mức công suất của tổ máy (datasheet)
+  fuel_consumption_75: "model", fuel_consumption_50: "model", fuel_consumption: "model", // theo động cơ + tải (datasheet)
+  overload: "model", // 10% quá tải 1 h / 12 h là thuộc tính của định mức Prime theo ISO 8528-1, datasheet ghi
+  load_step: "model", // nhận tải một bước do động cơ (BMEP, tăng áp) quyết định
+  iso8528_class: "model", // lưỡng lự: G2/G3 là đặc tính của model nhưng thường chỉ có bằng tuyên bố / biên bản của NSX
+  standards: "document", // ISO 3046 / IEC 60034 / CE / ISO 9001: chứng nhận, NCC gửi bản sao
+  prototype: "document", // biên bản thử nghiệm mẫu của NSX
+  genset_make: "model", genset_model: "model", // chính là cấu hình được chọn
+  genset_origin: "document", // nơi lắp ráp tổ máy: chứng minh bằng CO, không có trong datasheet
+  brand_sync: "model", // code kiểm (byCode) theo hãng các bộ phận
+  alt_vreg: "model", // ±0,5% / ±1% do đầu phát + AVR của model, datasheet đầu phát ghi
+  freq_regulation: "model", // do bộ điều tốc của động cơ (isochronous / droop), datasheet ghi
+  voltage: "order", // 380/400/415 V đặt bằng đấu dây / chỉnh AVR khi đặt hàng, không đổi model
+  frequency: "model", // lưỡng lự: 50/60 Hz đổi tốc độ và định mức của động cơ, nhiều model chỉ có một tần số
+  phases: "order", // 3 pha 4 dây / 1 pha: đầu phát 12 đầu dây đấu lại khi đặt hàng
+  current: "model", // lưỡng lự: tính từ kVA và điện áp (điện áp là order) — để model
+  power_factor: "model", // định mức ở cosφ 0,8 là quy ước của datasheet
+  ambient: "site", // nhiệt độ môi trường / độ cao: giảm công suất theo hiện trường
+  fuel: "model", // diesel
+  fuel_tank: "order", // bồn tích hợp / rời, dung tích chọn khi đặt hàng
+  noise: "site", // dB(A) ở khoảng cách đo, phụ thuộc vỏ và hiện trường
+  dimensions: "model", weight: "model", // lưỡng lự: theo model + vỏ (vỏ là order) — để model
+  genset_type: "order", // trần / vỏ cách âm, cố định / di động
+  breaker: "order", canopy: "order", battery: "order", // phụ kiện chọn khi đặt hàng
+  exhaust: "model", // lưỡng lự: bộ giảm thanh chọn khi đặt hàng nhưng lưu lượng / nhiệt độ khí xả là của động cơ
+  // engine
+  engine_make: "model", engine_model: "model",
+  engine_origin: "model", // lưỡng lự: nước sản xuất động cơ theo model (DCEC / CCEC…), CO chứng minh khi giao hàng
+  engine_type: "model", cylinders: "model", displacement: "model", bore_stroke: "model", aspiration: "model",
+  governor: "model", coolant_capacity: "model", oil_capacity: "model", cooling: "model", engine_power: "model",
+  speed: "model", emission: "model", compression: "model", fuel_system: "model",
+  starting: "model", // lưỡng lự: đề 12/24 V có khi chọn khi đặt hàng — để model
+  air_filter: "order", // lọc gió / lọc dầu loại nặng chọn khi đặt hàng
+  // alternator
+  alt_make: "model", alt_model: "model",
+  alt_origin: "model", // lưỡng lự như engine_origin
+  alt_type: "model", // không chổi than, tự kích (PMG / AREP là tùy chọn của nhiều đầu phát — lưỡng lự, để model)
+  alt_power: "model", alt_insulation: "model", alt_poles: "model", alt_bearing: "model", alt_pitch: "model",
+  alt_winding: "model", alt_efficiency: "model", alt_thd: "model", alt_cooling: "model",
+  alt_ip: "order", // IP21 tiêu chuẩn, IP23 / IP44 là tùy chọn khi đặt hàng
+  alt_avr: "order", // model AVR (SX460 / AS440 / MX341…) chọn khi đặt hàng cùng đầu phát
+  alt_standard: "document", // tuân IEC 60034 / BS 5000 / NEMA MG1: tuyên bố của NSX
+  // controller
+  ctl_make: "model", ctl_model: "model",
+  ctl_origin: "model", // lưỡng lự như engine_origin
+  ctl_type: "model", ctl_start_amf: "model", ctl_protection: "model", ctl_measure: "model", ctl_comm: "model",
+  ctl_alarm_log: "model", ctl_parallel: "model",
+  ctl_display_lang: "order", // ngôn ngữ hiển thị đặt khi cấu hình BĐK
+};
+for (const c of REQ_CODES) c.kind = KIND[c.code] || "model";
+export const KINDS = ["model", "order", "document", "site"];
 export const CODE_BY = new Map(REQ_CODES.map((c) => [c.code, c]));
 export const OTHER = "other";
+// The kind of a requirement (or check) by its code; "other" and unknown codes are "model" (stay "unclear").
+export const kindOf = (r) => CODE_BY.get(r?.code)?.kind || "model";
 const normTxt = (s) => String(s || "").normalize("NFC").replace(/\s+/g, " ").trim();
 // Which codes (not byCode) a free text names, in list order. Not a text that says the HSMT does not state the point.
 // A code whose words are a part of another's (alt_cooling: "làm mát") is named only when that one is not.
@@ -117,7 +178,7 @@ export function codeOf(r) {
 export function withCode(r) {
   const code = codeOf(r), def = CODE_BY.get(code);
   if (!def) return { ...r, code: OTHER };
-  return { ...r, code, item: def.item, part: def.part, level: def.level };
+  return { ...r, code, item: def.item, part: def.part, level: def.level, kind: def.kind };
 }
 // The codes an HSMT text (its technical part) names on a line of its own that no requirement carries: for the agent to
 // read again (check prints them). A line counts when it is short (a table cell or a bullet, not a paragraph) and holds a
@@ -138,6 +199,6 @@ export function missingCodes(text, reqs, max = 15) {
   return [...out].map(([code, line]) => ({ code, item: CODE_BY.get(code).item, part: CODE_BY.get(code).part, line }));
 }
 // The list as input.md shows it to the agent.
-export const codesMd = () => ["| code | item (tên dùng trong result.json) | part | level |", "|---|---|---|---|",
-  ...REQ_CODES.filter((c) => !c.byCode).map((c) => `| ${c.code} | ${c.item} | ${c.part} | ${c.level}${c.group ? " (nhóm, có parts)" : ""} |`),
-  `| ${OTHER} | (tên tự đặt) | theo HSMT | theo HSMT |`].join("\n");
+export const codesMd = () => ["| code | item (tên dùng trong result.json) | part | level | kind |", "|---|---|---|---|---|",
+  ...REQ_CODES.filter((c) => !c.byCode).map((c) => `| ${c.code} | ${c.item} | ${c.part} | ${c.level}${c.group ? " (nhóm, có parts)" : ""} | ${c.kind} |`),
+  `| ${OTHER} | (tên tự đặt) | theo HSMT | theo HSMT | model |`].join("\n");

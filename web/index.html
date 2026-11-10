@@ -238,6 +238,7 @@ td.r{text-align:right}
 .chip.warn{background:var(--amber-soft);color:var(--amber)}
 .chip.run{background:var(--violet-soft);color:var(--violet)}
 .chip.mut{background:var(--panel2);color:var(--muted);border-color:var(--line)}
+.chip.cfm{background:var(--panel2);color:var(--muted);border:1px dashed var(--muted)}
 .mstage{display:none}
 .tleft{font:600 11.5px var(--f-mono);margin-top:2px;color:var(--muted)}
 .tleft.urgent{color:var(--orange)}
@@ -3557,7 +3558,10 @@ function catDetailHtml(e) {
 // tìm thấy". suppliers/config-check.mjs kiểm bằng code trước khi đăng configmatch/<key>: mỗi câu trích HSMT phải có
 // nguyên văn trong HSMT, mỗi thông số chào phải có nguyên văn trong dòng bảng của danh mục hoặc trang web đã lưu, hoặc là kết
 // quả một công thức quy đổi của web/conversions.js mà code đã tính lại. Mỗi cấu hình kèm nhà cung cấp trong hệ thống bán nó.
-const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], unclear: ["Chưa rõ", "warn"] };
+const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], unclear: ["Chưa rõ", "warn"], confirm: ["Cần NCC xác nhận", "cfm"] };
+// "confirm" (config-bot.mjs confirmChecks, 2026-11-10): nguồn không ghi một điểm chọn khi đặt hàng (điện áp, IP, AVR,
+// MCCB, bồn...) hay một chứng từ (ISO, CE, prototype, CO): không phải nghi ngờ về model, màu trung tính, đếm riêng.
+const cfgStOf = (x) => (x.status === "confirm" ? [x.confirm === "document" ? "Cần chứng từ" : "Xác nhận khi đặt hàng", "cfm"] : CFG_STATUS[x.status] || ["", "mut"]);
 const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet", controller: "Trang của nhà cung cấp" };
 // Xuất xứ (Khoa, 2026-10-29): Trung Quốc leaves out engines of foreign makes (Perkins, Cummins, Volvo Penta,
 // Baudouin, Kubota, Yanmar...) and engines whose source gives no make; Khác keeps only foreign makes. The list is web/catalog.js FOREIGN_ENGINE.
@@ -3662,8 +3666,8 @@ function cfgWonHtml(c, key, size) {
 // Lưới kiểm tra của mỗi cấu hình thu gọn sẵn (Khoa, 2026-11-10): tiêu đề đếm Đạt / Không đạt / Chưa rõ; mở ra thì giữ
 // mở khi tab vẽ lại (sizeOpen, xoá khi mở gói / tab khác).
 function cfgGridBox(id, checks, body) {
-  const of = (x) => (x.status === "not_met" ? "not_met" : x.status === "met" && !x.unverified ? "met" : "unclear");
-  const cnt = [["met", "ok"], ["not_met", "bad"], ["unclear", "warn"]].map(([k, c]) => [checks.filter((x) => of(x) === k).length, c, CFG_STATUS[k][0]])
+  const of = (x) => (x.status === "not_met" ? "not_met" : x.status === "confirm" ? "confirm" : x.status === "met" && !x.unverified ? "met" : "unclear");
+  const cnt = [["met", "ok"], ["not_met", "bad"], ["unclear", "warn"], ["confirm", "cfm"]].map(([k, c]) => [checks.filter((x) => of(x) === k).length, c, CFG_STATUS[k][0]])
     .filter(([v]) => v).map(([v, c, l]) => h`<span class="chip ${c}">${l} ${v}</span>`).join("");
   return h`<details class="sizebox cfggrid" data-sizebox="${id}" ${sizeOpen?.has(id) ? "open" : ""}><summary class="small" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b>Đối chiếu yêu cầu HSMT (${checks.length})</b>${raw(cnt)}</summary>${raw(body)}</details>`;
 }
@@ -3671,8 +3675,9 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
   if (!r.configs?.length) return h`<div class="note warn"><b>Không tìm thấy cấu hình phù hợp.</b> ${r.message || "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT."}</div>`
     + cfgReqHtml(r) + cfgAddedHtml(r) + cfgNotesHtml(r);
   return (r.summary ? h`<p class="cfgsum">${r.summary}</p>` : "") + r.configs.map((c, i) => {
-    const bad = (c.checks || []).some((x) => x.status === "not_met"), unclear = (c.checks || []).some((x) => x.status !== "met" || x.unverified);
-    const fit = bad ? ["Không đạt đủ", "bad"] : unclear ? ["Còn điểm chưa rõ", "warn"] : ["Đạt mọi yêu cầu đã đọc", "ok"];
+    const bad = (c.checks || []).some((x) => x.status === "not_met"), unclear = (c.checks || []).some((x) => (x.status !== "met" && x.status !== "confirm") || x.unverified);
+    const cfm = (c.checks || []).some((x) => x.status === "confirm");
+    const fit = bad ? ["Không đạt đủ", "bad"] : unclear ? ["Còn điểm chưa rõ", "warn"] : cfm ? ["Đạt, còn điểm cần NCC xác nhận", "cfm"] : ["Đạt mọi yêu cầu đã đọc", "ok"];
     // An engine and alternator read from the genset's own row show that row once, under the genset.
     const sameRow = (p) => c.genset?.src?.line && p.src?.line === c.genset.src.line;
     // Tên model mở bảng thông số (Khoa, 2026-11-10: thay các nút Xem động cơ / đầu phát / bộ điều khiển).
@@ -3685,7 +3690,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
       ${raw(part("Động cơ", c.engine, "engine", c.engine?.src?.kind === "catalog"))}${raw(part("Đầu phát", c.alternator, "alternator", c.alternator?.src?.kind === "catalog"))}${raw(part("Bộ điều khiển", c.controller, "controller", !!c.controller?.model))}${raw(c.genset ? h`<div class="small cfgblk">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
       ${raw(cfgWonHtml(c, key, size))}
       ${raw(c.checks?.length ? cfgGridBox(`cfggrid|${key}|${size}|${c.rank || i + 1}`, c.checks, h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
-        const st = CFG_STATUS[x.status] || ["", "mut"];
+        const st = cfgStOf(x);
         // factSrc: a figure of this engine / alternator model from another supplier's row or datasheet (config-bot.mjs modelFacts).
         return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bộ điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(SHOW_SRC && x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
           <td data-l="Chào" class="small">${x.offered || "—"}${raw(SHOW_SRC && x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}${raw(cfgPartsHtml(x))}${raw(cfgHintHtml(x))}</td>
@@ -3693,9 +3698,33 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
       }).join(""))}</tbody></table></div>`) : "")}
       ${raw(cfgSuppliersHtml(c))}
       ${raw(key && !c.suppliers?.length && c.engine?.model ? h`<div class="row" style="margin-top:6px"><span class="small muted">Chưa có nhà cung cấp nào trong hệ thống cho cấu hình này.</span><span class="spacer"></span><button class="btn green sm" data-cfgfind="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp chào tổ máy dùng đúng động cơ${c.alternator?.model ? ", đầu phát" : ""}${c.controller?.model ? ", bộ điều khiển" : ""} của cấu hình này">Tìm nhà cung cấp</button></div>` : "")}
-      ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</details>`;
+      ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}
+      ${raw(cfgRfqHtml(c, key, size, rk))}</details>`;
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
+// Bảng câu hỏi gửi nhà cung cấp (config-bot.mjs rfqOf, 2026-11-10): mỗi điểm "chưa rõ" / "cần xác nhận" của cấu hình, code
+// sinh sẵn trong c.rfq; nút chép thành chữ để dán vào email / Zalo gửi NCC.
+const RFQ_KIND = { order: "chọn khi đặt hàng", document: "chứng từ", site: "hiện trường", model: "thông số model" };
+function cfgRfqText(c, key, size) {
+  const parts = [c.engine && `động cơ ${c.engine.model}${c.engine.make ? ` (${c.engine.make})` : ""}`, c.alternator && `đầu phát ${c.alternator.model}`, c.controller && `bộ điều khiển ${c.controller.model}`].filter(Boolean).join(", ");
+  return [`Gói ${key}${size ? ` — máy ${size}` : ""} — cấu hình #${c.rank}${parts ? `: ${parts}` : ""}`,
+    "Đề nghị Quý công ty xác nhận / cung cấp các nội dung sau:",
+    ...c.rfq.map((q, i) => `${i + 1}. [${q.of}] ${q.item}${q.requirement ? ` — HSMT yêu cầu: ${q.requirement}` : ""}. Cần: ${q.ask}.`)].join("\n");
+}
+const cfgRfqHtml = (c, key, size, rk) => (c.rfq?.length ? h`<details class="cfgblk"><summary class="small"><b>Câu hỏi gửi nhà cung cấp (${c.rfq.length})</b> <span class="muted">${["confirm", "unclear"].map((s) => [s, c.rfq.filter((q) => q.status === s).length]).filter(([, n]) => n).map(([s, n]) => `${n} ${s === "confirm" ? "cần xác nhận / chứng từ" : "chưa rõ"}`).join(", ")}</span></summary>
+  ${raw(key ? h`<div class="row" style="margin:4px 0"><span class="spacer"></span><button class="btn sm" data-cfgrfq="${key}" data-size="${size}" data-rank="${rk}" title="Chép bảng câu hỏi thành chữ để gửi nhà cung cấp">Chép bảng câu hỏi</button></div>` : "")}
+  <ol class="suplist">${raw(c.rfq.map((q) => h`<li class="small"><span class="muted">[${q.of}]</span> <b>${q.item}</b>${q.requirement ? ` — ${q.requirement}` : ""} <span class="chip ${q.status === "confirm" ? "cfm" : "warn"}">${RFQ_KIND[q.kind] || ""}</span><div class="muted">Cần: ${q.ask}.</div></li>`).join(""))}</ol></details>` : "");
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest?.("[data-cfgrfq]");
+  if (!b) return;
+  e.preventDefault();
+  const key = b.dataset.cfgrfq, size = b.dataset.size, whole = state.configmatch[key]?.result, r = size ? whole?.sizes?.find((z) => z.label === size)?.result : whole;
+  const c = r?.configs?.find((x) => String(x.rank) === b.dataset.rank);
+  if (!c?.rfq?.length) return;
+  const text = cfgRfqText(c, key, size);
+  try { await navigator.clipboard.writeText(text); toast(`Đã chép ${c.rfq.length} câu hỏi của cấu hình #${c.rank}`); }
+  catch { const ta = document.createElement("textarea"); ta.value = text; document.body.append(ta); ta.select(); const ok = document.execCommand("copy"); ta.remove(); toast(ok ? `Đã chép ${c.rfq.length} câu hỏi của cấu hình #${c.rank}` : "Không chép được"); }
+});
 // A grouped requirement (the controller's protections, measurements...): each function with its result and source.
 // An "unclear" whose source has a line about it (config-bot.mjs check hints): shown so it can be read, not counted as met.
 const cfgHintHtml = (x) => (SHOW_SRC && x.hint?.line ? h`<div class="small" style="color:var(--amber)">Nguồn có dòng liên quan (${x.hint.where || ""}), cần xem: <q>${x.hint.line}</q></div>` : "");

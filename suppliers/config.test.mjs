@@ -369,9 +369,10 @@ test("stdChecks: frequency, phases, power factor and voltage read from the table
   const st = Object.fromEntries(result.configs[0].checks.map((x) => [x.item, x.status]));
   // "Điện áp định mức" takes its code's name (reqcodes.mjs: voltage → "Điện áp").
   assert.deepEqual(st, { "Tần số": "met", "Số pha": "met", "Hệ số công suất": "met", "Điện áp": "met" });
-  // 380/220 V is not what the header says: no check is written for it (left to the agent).
+  // 380/220 V is not what the header says: no "met" is written for it; voltage is chosen when ordering (reqcodes.mjs kind
+  // order), so the code writes "confirm" (2026-11-10), never met / not met.
   const r2 = { requirements: [{ item: "Điện áp", requirement: "380/220 V", quote: "380/220V", part: "genset" }], configs: [{ rank: 1, engine: { model: "6BTAA5.9-G12", src: row2 }, alternator: { model: "UCI274E", src: row2 }, genset: { model: "WT400", src: row2 }, checks: [] }] };
-  assert.equal(check(r2, { hsmtText: "380/220V", suppliers: sup2, readWeb }).result.configs[0].checks.length, 0);
+  assert.deepEqual(check(r2, { hsmtText: "380/220V", suppliers: sup2, readWeb }).result.configs[0].checks.map((x) => [x.item, x.status, x.confirm]), [["Điện áp", "confirm", "order"]]);
   assert.ok(result.configs[0].checks.every((x) => x.byCode && /50HZ PF=0.8/.test(x.sourceQuote)));
 });
 
