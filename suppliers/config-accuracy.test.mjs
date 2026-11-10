@@ -821,7 +821,22 @@ test("the G7 / G20 origin the HSMT requires of the genset, not an example, a pre
   // EU beside the group opens it to the EU members (Khoa, 2026-11-10): on the line, or on the cell's next / previous line.
   assert.equal(o("1.2\nXuất xứ\nCác nước thuộc: nhóm G7 hoặc Liên minh Châu Âu (EU) hoặc Việt Nam"), "g7eu");
   const cell = originOfHsmt("1     Nước sản xuất                         Nêu cụ thể\n2     Nhà sản xuất/ nhãn hiệu         Nhóm các nước khối G7,\n                                               EU\n3     Model                                 Nêu cụ thể");
-  assert.deepEqual(cell, { origin: "g7eu", quote: "2 Nhà sản xuất/ nhãn hiệu Nhóm các nước khối G7, EU" });
+  assert.deepEqual(cell, { origin: "g7eu", quote: "2 Nhà sản xuất/ nhãn hiệu Nhóm các nước khối G7, EU", scope: "genset" });
+  // What the line is about (Khoa, 2026-11-10, IB2600603983): only the engine / alternator / controller → "parts", and
+  // the suppliers are then the ones based in China; the genset, the goods, or nothing told → "genset".
+  const s = (t) => originOfHsmt(t)?.scope ?? null;
+  const part = (no, name) => `Thông số kỹ thuật\n${no}\n${name}\n1     Nước sản xuất        Nêu cụ thể\n2     Nhà sản xuất/ nhãn hiệu         Nhóm các nước khối G7,\n          EU\n3     Mã hiệu     Nêu cụ thể\n`;
+  assert.equal(s(part("II.", "động cơ") + "Thông số kỹ thuật đầu\nIII\nphát điện\n" + part("", "").split("\n").slice(3).join("\n") + part("IV", "điều khiển")), "parts");
+  assert.equal(s("II Yêu cầu đối với động cơ\n1 Xuất xứ EU – G7"), "parts");
+  assert.equal(s("- Động cơ : Xuất xứ nhóm G7"), "parts");
+  assert.equal(s("2 Xuất xứ tổ máy: G7"), "genset");
+  assert.equal(s("Xuất xứ hàng hóa: G7"), "genset");
+  assert.equal(s("II Yêu cầu đối với động cơ\n1 Xuất xứ EU – G7\nI Yêu cầu chung tổ máy phát điện\n1 Xuất xứ: G7"), "genset");
+  const { groupSuppliers, partsOnlyOf } = await import("./config-bot.mjs");
+  const two = [{ id: "cn", country: "CN" }, { id: "uk", country: "GB" }];
+  assert.deepEqual(groupSuppliers(two, "g7", false, partsOnlyOf("g7", "- Động cơ : Xuất xứ nhóm G7")), new Set(["cn"]));
+  assert.deepEqual(groupSuppliers(two, "g7", false, partsOnlyOf("g7", "2 Xuất xứ tổ máy: G7")), new Set(["uk"]));
+  assert.deepEqual(groupSuppliers(two, "g7", false, partsOnlyOf("g7", "")), new Set(["uk"]));
   assert.equal(o("Xuất xứ: các nước thuộc Châu Âu hoặc\nnhóm G20"), "g20eu");
   assert.equal(o("Xuất xứ hàng hóa: G7\nhoặc Liên minh Châu Âu (EU)."), "g7eu");
   // The next row of the table is not the rest of the cell; a preference for EU is not a rule.
