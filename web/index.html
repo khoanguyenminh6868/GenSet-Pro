@@ -3796,8 +3796,10 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
 // Kiểm tra tổ hợp (config-bot.mjs comboChecks, 2026-11-10): cảnh báo cân bằng công suất (c.warnings) và thông tin tham
-// khảo (cân bằng công suất đã / chưa kiểm được, BMEP). Không đổi kết quả kiểm nào.
-const cfgComboHtml = (c) => (c.warnings?.length || c.combo?.power || c.combo?.bmep ? h`<div class="cfgblk">${raw((c.warnings || []).map((w) => h`<div class="note warn small" style="margin:4px 0">${w}</div>`).join(""))}${raw(c.combo?.power && c.combo.power.status !== "low" ? h`<div class="muted small">Cân bằng công suất: ${c.combo.power.text}</div>` : "")}${raw(c.combo?.bmep ? h`<div class="muted small">${c.combo.bmep.text}</div>` : "")}</div>` : "");
+// khảo (cân bằng công suất tính được, BMEP). Không đổi kết quả kiểm nào. "Chưa kiểm được" không hiện (dữ liệu vẫn trong
+// c.combo): gần như mọi cấu hình thiếu số nên dòng đó chỉ là nhiễu (điều phối 10/11).
+const cfgPowerShown = (p) => !!p && p.status !== "low" && p.status !== "missing";
+const cfgComboHtml = (c) => (c.warnings?.length || cfgPowerShown(c.combo?.power) || c.combo?.bmep ? h`<div class="cfgblk">${raw((c.warnings || []).map((w) => h`<div class="note warn small" style="margin:4px 0">${w}</div>`).join(""))}${raw(cfgPowerShown(c.combo?.power) ? h`<div class="muted small">Cân bằng công suất: ${c.combo.power.text}</div>` : "")}${raw(c.combo?.bmep ? h`<div class="muted small">${c.combo.bmep.text}</div>` : "")}</div>` : "");
 // Bảng câu hỏi gửi nhà cung cấp (config-bot.mjs rfqOf, 2026-11-10): mỗi điểm "chưa rõ" / "cần xác nhận" của cấu hình, code
 // sinh sẵn trong c.rfq; nút chép thành chữ để dán vào email / Zalo gửi NCC.
 const RFQ_KIND = { order: "chọn khi đặt hàng", document: "chứng từ", site: "hiện trường", model: "thông số model" };

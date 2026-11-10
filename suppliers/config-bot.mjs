@@ -343,6 +343,27 @@ const disagree = (a, b) => { const x = sigOf(a), y = sigOf(b); if (x.nums && y.n
 // Engine figures that depend on the genset they are in, so they stay with their own row: the output (prime / standby,
 // 50 / 60 Hz), the speed (1500 / 1800 rpm) and the coolant volume (the radiator is the genset's).
 const ROW_ONLY = new Set(["engPower", "speed", "coolant"]);
+// Except an engine output whose source names its rating ("Engine Prime Power (kW) = 441", "Prime power / Speed (KW/RPM) =
+// 284/1500", a maker's "Engine Prime Power (PRP)"): that is the engine model's (2026-11-10, kiểm tra cân bằng công suất).
+// Kept under keys of their own, one per rating, so a prime and a standby figure are not two sources that disagree; two
+// sources of one rating more than 3% apart are (factConflicts, comboChecks).
+export const RATED_KEY = { prime: "engPrime", standby: "engStandby" };
+const RATED_VI = { engPrime: "Công suất động cơ (prime)", engStandby: "Công suất động cơ (standby)" };
+// Which figures are the engine's (điều phối 2026-11-10, after fdk-energy "Prime power / Speed = 144kw/1500" on a set of
+// 144 kWe prime turned out to be the set's kWe): a figure of the engine's maker (role engine_maker); from a genset
+// maker / assembler only a label that names the engine ("Engine Prime Power (kW)", 发动机…), and only when it is above
+// the set's own kWe of that rating on that row (an engine giving no more than the set it drives is not its output).
+// An engine maker's figure is dropped too when it is not above the set's kWe beside it.
+const ENGINE_WORD = /engine|đ[ộo]ng\s*c[ơo]|发动机|柴油机/i;
+export function ratedFacts(label, value, { maker = false, setPower = null } = {}) {
+  const p = ratedPower(label, value);
+  if (!p) return [];
+  return ["prime", "standby"].filter((r) => p[r] != null).filter((r) => {
+    const kWe = setPower?.[r]?.kW;
+    if (kWe != null && p[r] <= kWe) return false;
+    return maker || (ENGINE_WORD.test(String(label)) && kWe != null);
+  }).map((r) => ({ key: RATED_KEY[r], label: String(label), value: String(value), kW: p[r], rpm: p.rpm || null, maker: !!maker }));
+}
 // A maker's datasheet that names its model only in the title (maker-datasheets.mjs: "Datasheet: UCI274F - Winding
 // 311") gives that model's figures too, when the title names exactly one model of the catalog of the maker's part.
 const MAKER_PART = { engine_maker: "engine", alternator_maker: "alternator" };
@@ -401,7 +422,7 @@ export function controllerSheetFacts(s, t) {
 // A model of a frame: TAL-A46 + "C", LSA 44.3 + "S2" … "VL14" (the frame and its size and winding).
 const FRAME_SUFFIX = /^([A-Z]{1,2}|[A-Z]{0,2}\d{1,2})$/;
 export function modelFacts(cat, suppliers = []) {
-  const facts = new Map(), single = new Map();
+  const facts = new Map(), single = new Map(), roleOf = new Map((suppliers || []).map((s) => [s?.id, s?.role]));
   const add = (k, f) => { const out = facts.get(k) || []; if (!out.some((g) => g.key === f.key && g.supplierId === f.supplierId && g.line === f.line)) out.push(f); facts.set(k, out); };
   for (const s of suppliers) {
     if (s?.role === "controller_maker") {
@@ -426,6 +447,7 @@ export function modelFacts(cat, suppliers = []) {
         : [...new Set(t.rows.flatMap((l) => CAT.cellsOf(l)).filter((c) => CAT.isCode(c)).map((c) => CAT.keyOf(c)))].filter((k) => k !== models[0] && k.startsWith(models[0]) && FRAME_SUFFIX.test(k.slice(models[0].length)) && known.has(k));
       for (const line of t.rows) {
         const c = CAT.cellsOf(line), key = c.length >= 2 ? CAT.specKey(c[0]) : null;
+        if (key === "engPower" && kind === "engine") { for (const f of ratedFacts(c[0], c.slice(1).join(" | "), { maker: s.role === "engine_maker" })) for (const m of covered) add(`${kind}:${m}`, { ...f, supplierId: s.id, n: t.n, line, text: line }); continue; }
         if (!key || CAT.SPEC[key]?.scope !== kind || ROW_ONLY.has(key)) continue;
         const value = c.slice(1).find((v) => CAT.SPEC[key].ok.test(v));
         if (value) for (const m of covered) add(`${kind}:${m}`, { key, label: c[0], value, supplierId: s.id, n: t.n, line, text: line });
@@ -439,7 +461,8 @@ export function modelFacts(cat, suppliers = []) {
   for (const [kind, list] of parts) for (const e of list) {
     const out = facts.get(`${kind}:${e.key}`) || [];
     for (const u of e.uses) for (const s of u.specs || []) {
-      if (CAT.SPEC[s.key]?.scope !== kind || ROW_ONLY.has(s.key)) continue;
+      const rated = kind === "engine" && s.key === "engPower" ? ratedFacts(s.label, s.value, { maker: roleOf.get(u.supplierId) === "engine_maker", setPower: u.power }) : [];
+      if (!rated.length && (CAT.SPEC[s.key]?.scope !== kind || ROW_ONLY.has(s.key))) continue;
       let line, text;
       if (u.line) { line = u.line; text = [...(u.header || []), u.line, u.title || ""].join(" \n "); }
       else {
@@ -448,7 +471,7 @@ export function modelFacts(cat, suppliers = []) {
         if (!line) continue;
         text = line;
       }
-      if (!out.some((f) => f.key === s.key && f.supplierId === u.supplierId && f.line === line)) out.push({ key: s.key, label: s.label, value: s.value, supplierId: u.supplierId, n: u.n, line, text });
+      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) out.push({ ...f, supplierId: u.supplierId, n: u.n, line, text });
     }
     if (out.length) facts.set(`${kind}:${e.key}`, out);
   }
@@ -486,9 +509,11 @@ export function factsFor(facts, part, model) {
 export function factConflicts(list) {
   const out = new Map(), src = (f) => `${f.supplierId}#${f.n}`;
   for (const f of list || []) {
-    if (!CAT.SPEC[f.key]) continue;
+    if (!CAT.SPEC[f.key] && !RATED_VI[f.key]) continue;
     const same = list.filter((g) => g.key === f.key);
-    if (same.some((g) => src(g) !== src(f) && disagree(f.value, g.value))) out.set(f.key, [...new Set(same.map((g) => g.value))]);
+    // A rated engine output: its kW of that rating, 3% apart (the value may also hold the speed or the other rating).
+    const off = (g) => (f.kW != null && g.kW != null ? !near(f.kW, g.kW) : disagree(f.value, g.value));
+    if (same.some((g) => src(g) !== src(f) && off(g))) out.set(f.key, [...new Set(same.map((g) => (g.kW != null ? `${g.kW} kW` : g.value)))]);
   }
   return out;
 }
@@ -751,7 +776,7 @@ export function copyModelChecks(configs, textOf = () => "") {
     }
   }
 }
-const factLine = (f) => `${CAT.SPEC[f.key]?.vi || f.key}: ${f.value} — factSrc: { "supplierId": "${f.supplierId}", "n": ${f.n}, "line": ${JSON.stringify(f.line)} }`;
+const factLine = (f) => `${CAT.SPEC[f.key]?.vi || RATED_VI[f.key] || f.key}: ${f.value} — factSrc: { "supplierId": "${f.supplierId}", "n": ${f.n}, "line": ${JSON.stringify(f.line)} }`;
 export function catalogMd(cat, cap, hints, opts = {}) {
   const facts = opts.facts || modelFacts(cat, opts.suppliers || []), { top, all } = candidates(cat, cap, hints, { ...opts, facts });
   const sup = new Map((opts.suppliers || []).map((s) => [s.id, s])), shown = new Set(), headers = new Map();
@@ -795,7 +820,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     out.push(`### ${kind === "engine" ? "Động cơ" : "Đầu phát"} ${x.model}${x.make ? ` — hãng: ${x.make}` : ""}`);
     if (!list.length) out.push("- (chưa có thông số nào có nguồn)");
     for (const key of [...new Set(list.map((f) => f.key))]) {
-      if (bad.has(key)) out.push(`- ⚠ ${CAT.SPEC[key]?.vi || key}: các nguồn ghi khác nhau (${bad.get(key).join(" / ")}) — không dùng làm "met"`);
+      if (bad.has(key)) out.push(`- ⚠ ${CAT.SPEC[key]?.vi || RATED_VI[key] || key}: các nguồn ghi khác nhau (${bad.get(key).join(" / ")}) — không dùng làm "met"`);
       // Two sources a figure, the shortest lines first (a datasheet line before a whole row); all of them when they disagree.
       const same = list.filter((g) => g.key === key).sort((a, b) => a.line.length - b.line.length);
       for (const f of bad.has(key) ? same.slice(0, 4) : same.slice(0, 2)) out.push(`- ${factLine(f)}`);
@@ -1080,7 +1105,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
   // Figures of a model from any supplier's row or datasheet (modelFacts); a check may quote one with factSrc.
-  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers);
+  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built);
   // A genset row as web/catalog.js reads it (its power per rating), by the src that names it.
   const rows = new Map();
   for (const e of built.engines || []) for (const u of e.uses) if (u.line) rows.set(`${u.supplierId}|${u.n}|${CAT.keyOf(u.line)}`, u);
@@ -1373,7 +1398,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
         const hit = line ? [...new Set(list.filter((f) => norm(f.line) === line && q.includes(norm(f.value)) && offers(f) && bad.has(f.key)).map((f) => f.key))] : [];
         if (hit.length && x.status === "met") {
           x.status = "unclear"; x.conflict = true;
-          x.note = [x.note, `Các nguồn ghi khác nhau: ${hit.map((k) => `${CAT.SPEC[k]?.vi || k} ${bad.get(k).join(" / ")}`).join("; ")}. Cần nhà cung cấp xác nhận.`].filter(Boolean).join(" ");
+          x.note = [x.note, `Các nguồn ghi khác nhau: ${hit.map((k) => `${CAT.SPEC[k]?.vi || RATED_VI[k] || k} ${bad.get(k).join(" / ")}`).join("; ")}. Cần nhà cung cấp xác nhận.`].filter(Boolean).join(" ");
         }
       }
       if (!src && x.status !== "unclear") reasons.push("nguồn");
@@ -1446,7 +1471,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       c.checks.unshift(syncCheck(sync, fam, makers, { engine: c.engine?.model, alternator: c.alternator?.model, controller: c.controller?.model }));
     }
     confirmChecks(c, result.requirements || []);
-    comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: factsOf(c, "engine"), altFacts: factsOf(c, "alternator"), reqs: result.requirements || [] });
+    comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: factsOf(c, "engine"), altFacts: factsOf(c, "alternator"), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
@@ -1651,8 +1676,18 @@ export function hsmtCombo(text, reqs = []) {
 export function enginePowerOf(row) {
   for (const s of row?.specs || []) {
     if (s.key !== "engPower") continue;
+    const p = ratedPower(s.label, s.value);
+    if (p) return { ...p, line: row.line };
+  }
+  return null;
+}
+// One engine power figure (label, value) by rating: { prime?, standby?, rpm, gross, net, label, value } or null when the
+// source does not name the rating or the unit is not kW. Shared by the genset row and the model's facts (modelFacts).
+export function ratedPower(label, value) {
+  {
+    const s = { label: String(label ?? ""), value: String(value ?? "") };
     const t = `${s.label} ${s.value}`;
-    if (!/kw/i.test(t)) continue;
+    if (!/kw/i.test(t) || /\b(hp|ps|bhp)\b/i.test(s.label) && !/kw/i.test(s.label)) return null;
     const out = {};
     for (const m of String(s.value).matchAll(/(\d+(?:[.,]\d+)?)\s*kw[^;,\d]*/gi)) {
       const seg = m[0], r = RATE_SB.test(seg) ? "standby" : RATE_PRIME.test(seg) ? "prime" : null;
@@ -1670,7 +1705,7 @@ export function enginePowerOf(row) {
     }
     // "kW/rpm" in the label: the second figure is the speed.
     const rpm = /rpm|r\/min/i.test(s.label) ? numbersIn(s.value).find((v) => v >= 1000 && v <= 3600) : null;
-    if (Object.keys(out).length) return { ...out, rpm, gross: /gross/i.test(t), net: /\bnet\b/i.test(t), label: s.label, value: s.value, line: row.line };
+    if (Object.keys(out).length) return { ...out, rpm, gross: /gross/i.test(t), net: /\bnet\b/i.test(t), label: s.label, value: s.value };
   }
   return null;
 }
@@ -1683,42 +1718,144 @@ const oneFact = (list, key, ok, skip) => {
   return { value: vals[0].v, label: vals[0].f.label, line: vals[0].f.line, supplierId: vals[0].f.supplierId };
 };
 const fmt = (v) => Number(v).toLocaleString("vi-VN", { maximumFractionDigits: 1 });
+// The engine's kWm at one rating (prime first): the genset row's rated figure, else the model's rated facts. { rating,
+// min, max, rpm, gross, src } / { conflict: [...] } / null. Facts of one rating more than 3% apart are not used.
+// The output of an engine depends on its speed: a model figure is used only at the row's frequency. The speed it is
+// given at tells the frequency (n = 120 f / p, 4-pole 1500 ↔ 50 Hz, 1800 ↔ 60 Hz; 2-pole 3000 / 3600). A row of a 60 Hz
+// table (jet-power "60Hz Cummins …") does not take a 1500 rpm figure; a figure with no speed is used only on a row whose
+// frequency is not 60 Hz. A row that gives no frequency (most Chinese tables) takes it, and the text says so (unknownHz).
+const hzOfRpm = (rpm) => ([1500, 3000, 1000, 750].includes(rpm) ? 50 : [1800, 3600, 1200, 900].includes(rpm) ? 60 : null);
+// Điều phối 2026-11-10: nothing is concluded unless the set's row (or its table title / header: row.freq) states its
+// frequency, or its own engine figure states the speed. The row's own engine figure: as ratedFacts accepts it (names the
+// engine, above the row's kWe). A model figure: given at a speed of that frequency, and from the engine's maker or from
+// at least two suppliers that agree within 3%.
+export function kwmOf(row, engFacts = []) {
+  const ep = enginePowerOf(row);
+  const own = ep && ratedFacts(ep.label, ep.value, { setPower: row?.power });
+  const freq = Number(row?.freq) || hzOfRpm(own?.[0]?.rpm) || null;
+  if (!freq) return null;
+  if (own?.length) {
+    const f = own.find((x) => x.key === RATED_KEY.prime) || own[0], rating = f.key === RATED_KEY.prime ? "prime" : "standby";
+    if (!f.rpm || hzOfRpm(f.rpm) === freq) return { rating, min: f.kW, max: f.kW, rpm: f.rpm, freq, gross: /gross/i.test(f.label), src: { from: "row", label: ep.label, value: ep.value, line: ep.line } };
+  }
+  for (const rating of ["prime", "standby"]) {
+    const list = (engFacts || []).filter((f) => f.key === RATED_KEY[rating] && f.kW > 0 && f.rpm && hzOfRpm(f.rpm) === freq);
+    if (!list.length) continue;
+    const v = list.map((f) => f.kW), lo = Math.min(...v), hi = Math.max(...v);
+    if (!near(lo, hi)) return { conflict: [...new Set(v)] };
+    if (!list.some((f) => f.maker) && new Set(list.map((f) => f.supplierId)).size < 2) continue;
+    return { rating, min: lo, max: hi, rpm: list.find((f) => f.rpm)?.rpm || null, freq, gross: list.some((f) => /gross/i.test(f.label)),
+      src: { from: "model", lines: list.slice(0, 4).map((f) => ({ supplierId: f.supplierId, n: f.n, label: f.label, value: f.value, line: f.line })) } };
+  }
+  return null;
+}
+// The alternator's efficiency as the range of every figure on its "Efficiency" lines (not "Mechanical Efficiency": the
+// engine's, ~38%, misfiled under the alternator), 80–99.9%. Sources whose ranges do not overlap → { conflict }.
+export function effRange(altFacts = []) {
+  const by = new Map();
+  for (const f of altFacts || []) {
+    if (f.key !== "eff" || /mech/i.test(f.label)) continue;
+    // Every figure of the line after its label (a fact keeps only the first: "| Efficiency (%) | 90.7 | 91.1 | 91.3").
+    const cells = CAT.cellsOf(f.line || ""), own = cells.length > 1 && norm(cells[0]) === norm(f.label) ? cells.slice(1).join(" | ") : f.value;
+    const v = numbersIn(own).filter((x) => x >= 80 && x < 100);
+    if (!v.length) continue;
+    const k = `${f.supplierId}#${f.n}`, o = by.get(k) || { min: Infinity, max: -Infinity, lines: [] };
+    o.min = Math.min(o.min, ...v); o.max = Math.max(o.max, ...v); o.lines.push({ supplierId: f.supplierId, n: f.n, label: f.label, value: f.value, line: f.line });
+    by.set(k, o);
+  }
+  const s = [...by.values()];
+  if (!s.length) return null;
+  if (s.some((a) => s.some((b) => a.max < b.min || b.max < a.min))) return { conflict: s.map((a) => `${a.min}–${a.max}%`) };
+  return { min: Math.min(...s.map((a) => a.min)), max: Math.max(...s.map((a) => a.max)), src: { lines: s.flatMap((a) => a.lines).slice(0, 4) } };
+}
+// The kVA lines of alternator datasheets, by model key: "| TAL-A42-C | kVA | 29 | 30 | …" (Leroy-Somer), "| FD2A-4 |
+// 额定容量（KVA） | 42.5 | …", "| TAL-A42-C kVA | 28 | 31 | …", "| BTP3 S/2 | 2 | 13kVA | 15.6kVA" (Mecc Alte). Only a row
+// that names a known alternator model; every figure after the kVA label (or with kVA on it). Read from the stored tables
+// only. The columns (voltage, phases, frequency, temperature class) are not known, so a row is a set of ratings.
+const KVA_LABEL = /^(?:rated\s*)?(?:capacity|power|output|额定容量|容量)?\s*[(（[]?\s*k\s*v\s*a\s*[)）\]]?$|^[^\d]{0,30}[(（[]\s*k\s*v\s*a\s*[)）\]]$/i;
+export function altKvaOf(suppliers, built) {
+  const known = new Set((built?.alternators || []).map((a) => a.key)), out = new Map();
+  for (const s of suppliers || []) for (const t of s.specTables || []) for (const line of t.rows || []) {
+    const cells = CAT.cellsOf(line);
+    if (cells.length < 2) continue;
+    let j = cells.findIndex((x) => KVA_LABEL.test(x.trim())), model = null, vals = [];
+    const first = cells[0].replace(/\s+k\s*va$/i, "");
+    if (j > 0) model = cells.slice(0, j).find((x) => CAT.isCode(x) && known.has(CAT.keyOf(x)));
+    else if (j < 0 && /\sk\s*va$/i.test(cells[0]) && CAT.isCode(first) && known.has(CAT.keyOf(first))) { model = first; j = 0; }
+    else if (j < 0 && CAT.isCode(cells[0]) && known.has(CAT.keyOf(cells[0])) && cells.slice(1).some((x) => /^\d+(?:[.,]\d+)?\s*k\s*va$/i.test(x.trim()))) {
+      model = cells[0]; vals = cells.slice(1).filter((x) => /^\d+(?:[.,]\d+)?\s*k\s*va$/i.test(x.trim())).flatMap((x) => numbersIn(x));
+    }
+    if (!model) continue;
+    if (!vals.length) vals = numbersIn(cells.slice(j + 1).join(" | "));
+    vals = vals.filter((v) => v > 0.5 && v < 5000);
+    if (!vals.length) continue;
+    const k = CAT.keyOf(model);
+    out.set(k, [...(out.get(k) || []), { supplierId: s.id, n: t.n, line, values: vals }]);
+  }
+  return out;
+}
+// The highest kVA of the model per source; sources more than 3% apart → { conflict }.
+export function altKvaRange(list = []) {
+  const by = new Map();
+  for (const x of list) { const k = `${x.supplierId}#${x.n}`, o = by.get(k) || { max: 0, lines: [] }; o.max = Math.max(o.max, ...x.values); o.lines.push(x); by.set(k, o); }
+  const m = [...by.values()].map((o) => o.max);
+  if (!m.length) return null;
+  if (!near(Math.min(...m), Math.max(...m))) return { conflict: m };
+  return { max: Math.max(...m), src: { lines: [...by.values()].flatMap((o) => o.lines).slice(0, 3).map(({ supplierId, n, line }) => ({ supplierId, n, line })) } };
+}
 // The kW of a power requirement of the HSMT at a rating ("≥ 160 kVA / 128 kW").
 const hsmtKw = (reqs, rating) => {
   const r = (reqs || []).find((q) => q.code === (rating === "prime" ? "power_prime" : "power_standby"));
   const n = r ? [...flat(`${r.requirement || ""}`).matchAll(/(\d+(?:[.,]\d+)?)\s*kWe?\b/gi)].map((m) => Number(m[1].replace(",", "."))) : [];
   return n.length ? Math.max(...n) : null;
 };
-export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], reqs = [] }) {
+export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKva = [], reqs = [] }) {
   const out = {}, asks = [], warnings = [];
-  // 1. Power balance: the engine's kWm at a rating × the alternator's efficiency ≥ the set's kWe at that rating (row) and
-  // the HSMT's. kVA of the alternator: the catalog has no alternator rating per model, so it is not checked.
-  const ep = enginePowerOf(row), eff = oneFact(altFacts, "eff", (v) => v >= 80 && v < 100, /mech/i);
-  const miss = [!ep && "công suất động cơ có ghi mức prime / standby trên dòng tổ máy", !eff ? "hiệu suất đầu phát theo model" : eff.conflict && `hiệu suất đầu phát (nguồn ghi khác nhau: ${eff.conflict.join(" / ")}%)`].filter(Boolean);
+  // 1. Power balance (2026-11-10, PR 3): the engine's kWm at a rating × the alternator's efficiency against the set's kWe at
+  // that rating (its row) and the HSMT's. Every figure is a RANGE of what the sources give: the stored datasheets lost
+  // their column titles (which voltage, load, temperature class a figure is of), so the code does not pick one. Met
+  // ("ok") when even the lowest product reaches the need, "low" (a warning) when even the highest does not, otherwise
+  // not concluded. The engine's kWm: kwmOf (the row states its frequency; a maker's figure or two agreeing sources; never
+  // an assembler's "Prime power / Speed" that is the set's own kWe). Efficiency: the alternator model's "Efficiency"
+  // lines (not "Mechanical Efficiency"), 80–99.9%, sources whose ranges do not overlap are not used.
+  const kw = kwmOf(row, engFacts), eff = effRange(altFacts);
+  const miss = [!kw ? "công suất động cơ có ghi mức prime / standby ở tần số mà dòng tổ máy ghi" : kw.conflict && `công suất động cơ (các nguồn lệch > 3%: ${kw.conflict.join(" / ")} kW)`,
+    !eff ? "hiệu suất đầu phát theo model" : eff.conflict && `hiệu suất đầu phát (các nguồn không trùng khoảng: ${eff.conflict.join(" / ")})`].filter(Boolean);
   if (!miss.length) {
-    const rating = ep.prime != null ? "prime" : "standby", kWm = ep[rating];
-    const cv = CONV.compute({ formula: "kwe_from_kwm", inputs: [{ name: "P_kWm", value: kWm }, { name: "eff_pct", value: eff.value }] });
-    const set = row?.power?.[rating]?.kW ?? null, req = hsmtKw(reqs, rating), need = Math.max(set ?? 0, req ?? 0) || null;
-    const head = `Động cơ ${fmt(kWm)} kWm (${rating === "prime" ? "prime" : "standby"}${ep.gross ? ", gross" : ep.net ? ", net" : ""}) × hiệu suất đầu phát ${fmt(eff.value)}% = ${fmt(cv.value)} kWe`;
-    if (!need) out.power = { status: "missing", text: `${head}; không có số kWe ${rating} của tổ máy hay HSMT để so.` };
+    const lo = CONV.compute({ formula: "kwe_from_kwm", inputs: [{ name: "P_kWm", value: kw.min }, { name: "eff_pct", value: eff.min }] }).value;
+    const hi = CONV.compute({ formula: "kwe_from_kwm", inputs: [{ name: "P_kWm", value: kw.max }, { name: "eff_pct", value: eff.max }] }).value;
+    const set = row?.power?.[kw.rating]?.kW ?? null, req = hsmtKw(reqs, kw.rating), need = Math.max(set ?? 0, req ?? 0) || null;
+    const rg = (a, b, u) => (Math.abs(a - b) < 0.05 ? `${fmt(a)}${u}` : `${fmt(a)}–${fmt(b)}${u}`);
+    const head = `Động cơ ${rg(kw.min, kw.max, " kWm")} (${kw.rating}${kw.gross ? ", gross" : ""}, ${kw.freq} Hz${kw.rpm ? ` / ${kw.rpm} v/p` : ""}) × hiệu suất đầu phát ${rg(eff.min, eff.max, "%")} = ${rg(lo, hi, " kWe")}`;
+    const inputs = { engine: kw.src, eff: eff.src };
+    if (!need) out.power = { status: "missing", text: `${head}; không có số kWe ${kw.rating} của tổ máy hay HSMT để so.`, inputs };
     else {
-      const who = need === req ? "HSMT" : "dòng tổ máy";
-      const low = cv.value < need - 0.5;
-      out.power = { status: low ? "low" : "ok", value: cv.value, need, rating, text: `${head} ${low ? "<" : "≥"} ${fmt(need)} kWe ${rating} (${who})${ep.gross && !low ? "; công suất gross chưa trừ quạt két nước" : ""}.`,
-        inputs: { engine: { label: ep.label, value: ep.value, line: ep.line }, eff: { label: eff.label, value: eff.value, line: eff.line, supplierId: eff.supplierId } }, basis: CONV.FORMULAS.kwe_from_kwm.basis };
-      if (low) warnings.push(`Cân bằng công suất: ${out.power.text} Động cơ hoặc đầu phát có thể không đủ cho mức công suất này; cần NCC xác nhận.`);
+      const who = need === req ? "HSMT" : "dòng tổ máy", status = lo >= need - 0.5 ? "ok" : hi < need - 0.5 ? "low" : "unsure";
+      out.power = { status, value: [lo, hi], need, rating: kw.rating, inputs, basis: CONV.FORMULAS.kwe_from_kwm.basis,
+        text: `${head} ${status === "ok" ? "≥" : status === "low" ? "<" : "so với"} ${fmt(need)} kWe ${kw.rating} (${who})${status === "unsure" ? ": chưa kết luận được (khoảng số của nguồn chứa mức yêu cầu)" : ""}${kw.gross && status === "ok" ? "; công suất gross chưa trừ quạt két nước" : ""}.` };
+      // A warning that asks, not one that says the set is short (điều phối 2026-11-10).
+      if (status === "low") warnings.push(`Cân bằng công suất: ${out.power.text.replace(/\.$/, "")} — cần NCC xác nhận công suất động cơ (gross/net) và hiệu suất đầu phát.`);
     }
   } else out.power = { status: "missing", text: `chưa kiểm được, thiếu ${miss.join("; ")}.` };
+  // kVA of the alternator: its datasheet's kVA lines (altKvaOf) give ratings of the model with the column titles lost,
+  // and the stored Leroy-Somer sheets miss columns (60 Hz / higher class), so no warning: when even the highest is
+  // below the set's prime kVA on a row that states 50 Hz, a question for the supplier; nothing otherwise.
+  const ak = altKva && altKva.length ? altKvaRange(altKva) : null, setKva = row?.power?.prime?.kVA ?? row?.power?.rated?.kVA ?? null;
+  if (ak && !ak.conflict && setKva) {
+    out.altKva = { max: ak.max, need: setKva, status: ak.max < setKva - 0.5 ? "below" : "any", src: ak.src };
+    if (out.altKva.status === "below" && Number(row?.freq) === 50) asks.push({ part: "alternator", item: "Công suất định mức đầu phát", requirement: `≥ ${fmt(setKva)} kVA (prime của tổ máy)`, kind: "model", status: "unclear",
+      ask: `Xác nhận kVA định mức đầu phát ở cấp nhiệt chào (datasheet đã lưu ghi lớn nhất ${fmt(ak.max)} kVA)` });
+  }
   // 4. Load step / G2–G3: BMEP for reference only (Khoa's rule: no met / not met from it).
   if (combo?.loadStep) {
     const disp = (row?.specs || []).find((s) => s.key === "disp") || (() => { const f = oneFact(engFacts, "disp", (v) => v > 0.3 && v < 200); return f?.value != null ? { value: `${f.value}`, label: f.label } : null; })();
     let V = disp ? numbersIn(disp.value)[0] : null;
     if (V && /cc|ml/i.test(`${disp.value}`)) V = V / 1000;
-    const spd = ep?.rpm || numbersIn((row?.specs || []).find((s) => s.key === "speed")?.value || "").find((v) => v >= 1000 && v <= 3600) || null;
-    const rating = ep?.prime != null ? "prime" : ep?.standby != null ? "standby" : null;
+    const spd = (kw && !kw.conflict && kw.rpm) || numbersIn((row?.specs || []).find((s) => s.key === "speed")?.value || "").find((v) => v >= 1000 && v <= 3600) || null;
+    const rating = kw && !kw.conflict && kw.min === kw.max ? kw.rating : null, P = rating ? kw.min : null;
     if (rating && V && spd) {
-      const cv = CONV.compute({ formula: "bmep_4s", inputs: [{ name: "P_kW", value: ep[rating] }, { name: "V_L", value: V }, { name: "n_rpm", value: spd }] });
-      out.bmep = { value: cv.value, rating, text: `BMEP ≈ ${fmt(cv.value)} bar ở công suất ${rating} (${fmt(ep[rating])} kWm, ${fmt(V)} L, ${spd} v/p) — chỉ để tham khảo khả năng nhận tải, không dùng để kết luận.`, basis: CONV.FORMULAS.bmep_4s.basis };
+      const cv = CONV.compute({ formula: "bmep_4s", inputs: [{ name: "P_kW", value: P }, { name: "V_L", value: V }, { name: "n_rpm", value: spd }] });
+      out.bmep = { value: cv.value, rating, text: `BMEP ≈ ${fmt(cv.value)} bar ở công suất ${rating} (${fmt(P)} kWm, ${fmt(V)} L, ${spd} v/p) — chỉ để tham khảo khả năng nhận tải, không dùng để kết luận.`, basis: CONV.FORMULAS.bmep_4s.basis };
     }
     // A load step requirement of the HSMT already has its line (rfqOf asks for the test report there).
     if (!reqs.some((r) => r.code === "load_step")) asks.push({ part: "genset", item: "Nhận tải một bước / ISO 8528-5", requirement: combo.loadStep.quote.slice(0, 160), kind: "model", status: "unclear",
