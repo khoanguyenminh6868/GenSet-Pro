@@ -262,6 +262,7 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .dhead{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:flex-start}
 .dhead .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
 .dhead .t h2{font-size:16px;overflow-wrap:anywhere}
+.dtrow{display:flex;align-items:flex-start;gap:8px}.dtrow h2{margin:0;min-width:0}.dtrow .ibtn{width:26px;height:26px;flex:none;margin-top:-2px}
 #dmeta{margin-bottom:4px}
 /* Đóng like the one on the supplier / catalog screens: yellow edge on hover (Khoa, 2026-11-04). */
 #dclose{--violet:#ffcc00;flex:none}
@@ -308,6 +309,7 @@ table.spec1 thead{display:none}table.spec1,table.spec1 tbody,table.spec1 tr,tabl
 table.qitems td.num,table.ptable td.num,table.ptable th{white-space:nowrap}table.ptable td.num,table.ptable th:not(:first-child){text-align:right}table.ptable td:first-child,table.ptable th:first-child{text-align:left}
 table.ptable tr.pbest td{background:var(--mint-soft)}table.ptable tr.ploss td{color:var(--muted)}
 @media (max-width:640px){table.ptable td.num{text-align:left}}
+.profit .kpi .kv{font-size:20px;white-space:nowrap}
 .compete,.profit{display:flex;flex-direction:column;gap:8px;margin:14px 0}.profit{border:1px solid var(--line);border-radius:10px;padding:12px}
 .nbbars{display:flex;flex-direction:column;gap:5px}.nbbar{display:grid;grid-template-columns:110px 1fr 44px;gap:8px;align-items:center;font-size:13px}.nbbar .nt{height:10px;border-radius:5px;background:var(--panel2);overflow:hidden}.nbbar .nt i{display:block;height:100%;background:var(--blue);opacity:.45;border-radius:5px}.nbbar.top .nt i{opacity:1}.nbbar.top .nl,.nbbar.top .np{font-weight:600}.nbbar .np{text-align:right}
 .files{display:flex;flex-direction:column;gap:6px}
@@ -496,7 +498,7 @@ details.sec>div{margin-top:10px}
 <div id="scrim" hidden></div>
 <aside id="drawer" aria-hidden="true" aria-label="Chi tiết gói thầu">
   <div class="dhead">
-    <div class="t"><div class="row" id="dmeta"></div><h2 id="dtitle"></h2></div>
+    <div class="t"><div class="row" id="dmeta"></div><div class="dtrow"><h2 id="dtitle"></h2><button class="ibtn" id="dcopy" type="button" hidden title="Copy tên gói thầu" aria-label="Copy tên gói thầu"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div></div>
     <button class="btn sm" id="dclose">Đóng</button>
   </div>
   <div class="dtabs" role="tablist" id="dtabs">
@@ -563,8 +565,8 @@ function fmtBannerDate(iso) {
 }
 function fmtVnd(n) {
   if (n == null || isNaN(n)) return "";
-  if (n >= 1e9) return (n / 1e9).toLocaleString("vi-VN", { maximumFractionDigits: 2 }) + " tỷ";
-  if (n >= 1e6) return (n / 1e6).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + " triệu";
+  if (n >= 1e9) return (n / 1e9).toLocaleString("vi-VN", { maximumFractionDigits: 2 }) + " tỷ";
+  if (n >= 1e6) return (n / 1e6).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + " triệu";
   return n.toLocaleString("vi-VN");
 }
 function timeLeft(iso) {
@@ -586,6 +588,13 @@ function minutesLink(t, kq = false) {
   return "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?" + Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v ?? "undefined")}`).join("&");
 }
 const tenderLink = (t) => t.sourceUrl || (t.notifyNo ? portalSearch(t.notifyNo) : "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=index");
+// Copy tên gói thầu, the button beside the tender name (Khoa, 2026-11-10).
+document.addEventListener("click", async (e) => {
+  if (!e.target.closest?.("#dcopy")) return;
+  const name = $("#dtitle").textContent.trim();
+  try { await navigator.clipboard.writeText(name); toast("Đã copy tên gói thầu"); }
+  catch { const ta = document.createElement("textarea"); ta.value = name; document.body.append(ta); ta.select(); const ok = document.execCommand("copy"); ta.remove(); toast(ok ? "Đã copy tên gói thầu" : "Không copy được"); }
+});
 function toast(msg, ms = 2600) {
   const el = document.createElement("div");
   el.className = "toast"; el.textContent = msg; el.setAttribute("role", "status");
@@ -1429,7 +1438,7 @@ function openList(k) {
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
   $("#dtabs").hidden = true;
   $("#dmeta").innerHTML = h`<span class="eyebrow">${items.length} gói</span>`;
-  $("#dtitle").textContent = kp.l;
+  $("#dtitle").textContent = kp.l; $("#dcopy").hidden = true;
   $("#dbody").innerHTML = items.length ? items.map((t) => { const tl = timeLeft(t.bidCloseDate); return h`<button class="lrow" data-openkey="${t._key}">
       <span class="row" style="gap:8px"><span class="kcell st-${shownStage(t).key}">${t.notifyNo || ""}</span><span class="stage st-${shownStage(t).key} small">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}" style="margin:0">${tl.text}</span>` : "")}</span>
       <span>${t.bidName}</span><span class="src">${[capacityOf(t)?.text, priceShort(t.estimatedPrice), locOf(t)].filter(Boolean).join(" · ")}</span></button>`; }).join("") : '<div class="empty">Không có gói nào.</div>';
@@ -1452,7 +1461,7 @@ function openInvestor(name) {
   $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#scrim").hidden = false;
   $("#dtabs").hidden = true;
   $("#dmeta").innerHTML = h`<span class="eyebrow">Chủ đầu tư · ${items.length} gói</span>`;
-  $("#dtitle").textContent = name;
+  $("#dtitle").textContent = name; $("#dcopy").hidden = true;
   const by = {}; for (const t of items) { const s = shownStage(t); (by[s.key] ||= { label: s.label, n: 0 }).n++; }
   $("#dbody").innerHTML = items.length ? h`<div class="invsum">${raw(Object.entries(by).map(([k2, v]) => h`<span class="stage st-${k2} small">${v.label}: ${v.n}</span>`).join(""))}</div>` + items.map((t) => { const tl = isClosed(t) ? null : timeLeft(t.bidCloseDate), c = capacityOf(t); return h`<button class="lrow" data-openkey="${t._key}">
       <span class="row" style="gap:8px"><span class="kcell st-${shownStage(t).key}">${t.notifyNo || t._key}</span><span class="stage st-${shownStage(t).key} small">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}" style="margin:0">${tl.text}</span>` : "")}<span class="muted small num">Đăng ${fmtDate(pubOf(t), false) || "—"}</span></span>
@@ -1510,7 +1519,7 @@ function renderDrawer(force = true) {
   const stg = stageOf(t), canCompare = stg === "preparing" || isProject(t);
   const tl = timeLeft(t.bidCloseDate);
   $("#dmeta").innerHTML = h`${raw(isProject(t) ? h`<span class="kcell">${projectNo(t)}</span>` : t.notifyNo ? h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo} ↗</a>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
-  $("#dtitle").textContent = t.bidName || "";
+  $("#dtitle").textContent = t.bidName || ""; $("#dcopy").hidden = !t.bidName;
   $$("#dtabs button").forEach((b) => {
     b.setAttribute("aria-selected", String(b.dataset.dt === state.dtab));
     if (b.dataset.dt === "compare") { b.disabled = !canCompare; b.title = !canCompare ? "Chuyển gói sang Chuẩn bị HSDT để đối chiếu" : ""; }
