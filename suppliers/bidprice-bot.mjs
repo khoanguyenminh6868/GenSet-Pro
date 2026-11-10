@@ -78,7 +78,10 @@ export async function prep(req, dir, hist, size = null) {
     hsmt ? "## Phần kỹ thuật của HSMT\n" + technicalPart(hsmt.text).slice(0, 60000) : "Chưa có văn bản HSMT.",
   ].filter((l) => l !== "").join("\n"), "utf8");
   fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"), "utf8");
-  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior, byConfig }), "utf8");
+  // Ba mức hiệu chỉnh theo cạnh tranh dự báo (web/bidprice.js CALIB): thử nghiệm, chỉ khi GENBID_BIDPRICE_CALIB=1 (Khoa
+  // quyết có bật không). Tắt thì samples.json và kết quả y như cũ.
+  const fc = process.env.GENBID_BIDPRICE_CALIB === "1" ? BP.nbForecast({ notifyNo: key, investorName: t.investorName, location: b.location || "", field: b.field || "", bidCloseDate: b.bidCloseDate || "" }, docs) : null;
+  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior, byConfig, ...(fc ? { fc: { p: fc.p } } : {}) }), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "bidprice-prompt.md"), "utf8"), "utf8");
   return { total, group, otherGroup, candidates: list.length, K, P, prior, byConfig };
 }
@@ -107,7 +110,7 @@ export async function configPrices(configs, first, group, t, docs, Kmult, P, K =
 // result.json checked against samples.json: every lot gets a level; a lot the agent left out, or whose quote is not in
 // its own text, counts as unknown (unverified). A "same" lot whose power code read is over 1,5 times off becomes "close".
 export function check(dir) {
-  const { basis, total, list, prior = [], byConfig = [] } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
+  const { basis, total, list, prior = [], byConfig = [], fc = null } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
   const r = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8")), problems = [];
   const by = new Map((r.samples || []).map((x) => [x.id, x]));
   const samples = list.map((s) => {
@@ -122,7 +125,7 @@ export function check(dir) {
     return out;
   });
   // A size of several sets (a tender of several sizes): the price per kVA times all of them.
-  const stats = BP.suggest(samples, basis.price, basis.kva && basis.kva * (basis.qty || 1), prior);
+  const stats = BP.suggest(samples, basis.price, basis.kva && basis.kva * (basis.qty || 1), prior, fc ? { fc } : {});
   const result = { basis, total, tender: { summary: String(r.tender?.summary || ""), points: (r.tender?.points || []).map(String).slice(0, 10) }, notes: (r.notes || []).map(String).slice(0, 6), samples, stats, ...(byConfig.length ? { byConfig } : {}) };
   fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
   return { result, problems };

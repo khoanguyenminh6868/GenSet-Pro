@@ -366,7 +366,30 @@
   // 1–9). The winning share falls with the number of bidders (2 bidders: median 98% of the lot price; 6 or more: 79%),
   // so the lots' bidder counts and the share at 2–3 against 4+ bidders are given too.
   const nbOf = (s) => (Array.isArray(s.bidders) ? s.bidders.length : Number(s.nb) || 0);
-  function suggest(samples, P, K, prior = []) {
+  // ---------- Ba mức hiệu chỉnh theo cạnh tranh dự báo (2026-11-10, thử nghiệm, TẮT mặc định) ----------
+  // Hậu kiểm (bidprice-backtest.mjs --calib, chỉ dữ liệu trước ngày đóng thầu, 671 phần): khoảng [Cạnh tranh, Cao] =
+  // phân vị 25/75 chỉ chứa 36% giá trúng thật, mức giữa lệch theo số nhà thầu (1 NT −4,4 điểm; ≥6 NT +11,3). Cách này cho
+  // mỗi gói cũ trong pool trọng số theo xác suất nhóm số nhà thầu của gói đó ở dự báo nbForecast (bỏ nhóm 1 nhà thầu vì
+  // pool chỉ có gói ≥2 nhà thầu, rồi chia lại), kéo về 1 với CALIB.lam, và lấy phân vị có trọng số CALIB.q / 0,5 / 1−q.
+  // Hai tham số (lam 0,5; q 0,2), chọn trên cả giai đoạn; nửa sau (đóng sau 13/09/2024, 338 phần): phủ 38,2% → 56,8%, sai
+  // số mức giữa 6,5 → 5,3 điểm, khoảng rộng 14,2 → 16,4 điểm. Không sửa được lệch của gói ≥6 nhà thầu (dự báo hiếm khi
+  // thấy trước) và lệch nhóm động cơ Trung Quốc. suggest chỉ tính khi được truyền opts.fc; levels giữ nguyên.
+  const CALIB = { lam: 0.5, q: 0.2 };
+  function wQuantile(xs, ws, p) {
+    const o = xs.map((x, i) => [x, ws[i]]).sort((a, b) => a[0] - b[0]), tot = o.reduce((s, x) => s + x[1], 0);
+    let c = 0;
+    for (const [x, w] of o) { if ((c + w / 2) / tot >= p) return x; c += w; }
+    return o.length ? o[o.length - 1][0] : null;
+  }
+  function calibLevels(pool, P, fc, { lam = CALIB.lam, q = CALIB.q } = {}) {
+    if (!(pool.length >= 3 && P > 0) || !fc?.p) return [];
+    const p = fc.p.slice(1), sp = p.reduce((a, b) => a + b, 0), share = [0, 0, 0];
+    for (const s of pool) share[Math.max(1, nbBucket(nbOf(s))) - 1]++;
+    const ws = pool.map((s) => { const b = Math.max(1, nbBucket(nbOf(s))) - 1; return 1 - lam + (lam * (p[b] / sp)) / (share[b] / pool.length); });
+    const rs = pool.map((s) => s.ratio), round = (v) => Math.round(v / 1000) * 1000;
+    return [["low", "Cạnh tranh", q], ["mid", "Trung vị", 0.5], ["high", "Cao", 1 - q]].map(([id, label, pq]) => { const r = wQuantile(rs, ws, pq); return { id, label, ratio: r, price: round(P * r) }; });
+  }
+  function suggest(samples, P, K, prior = [], opts = {}) {
     const ok = (s) => !s.unverified && nbOf(s) >= 2;
     const same = samples.filter((s) => s.level === "same" && ok(s)), close = samples.filter((s) => s.level === "close" && ok(s));
     const use = same.length >= 5 ? same : [...same, ...close], basis = same.length >= 5 ? "same" : "same+close";
@@ -393,7 +416,8 @@
       comp.set(id, c);
     }
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
-    return { basis, n: use.length, same: same.length, close: close.length, nPrior: extra.length, pool: pool.length, enough: pool.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, bidders, byBidders, comps };
+    const calib = opts.fc ? calibLevels(pool, P, opts.fc) : null;
+    return { basis, n: use.length, same: same.length, close: close.length, nPrior: extra.length, pool: pool.length, enough: pool.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, bidders, byBidders, comps, ...(calib?.length ? { calib: { levels: calib, ...CALIB } } : {}) };
   }
   // Hàng trúng thầu của nhà cung cấp (Khoa, 2026-11-09: lọc "Có hàng trúng thầu" ở màn Nhà cung cấp). Chỉ gói mua sắm
   // (bidKind supply) đã có nhà thầu trúng, chỉ dòng hàng là tổ máy (không phải lọc, phụ tùng, tủ ATS bán riêng). Một nhà
@@ -868,6 +892,9 @@
   // Nhà thầu đã dự các phần mua sắm máy phát (đóng trước gói này) cùng chủ đầu tư, cùng tỉnh hoặc cùng cỡ (±15% kVA): số
   // lần dự, số lần trúng, tỉ lệ giá dự / giá gói (trung vị + khoảng, chỉ khi ≥ 3 lượt có giá), hãng động cơ hay chào (từ hàng
   // trúng), số lần bị loại kỹ thuật. Chỉ thống kê mô tả. t: { notifyNo, investorName, location, kva, bidCloseDate }.
+  const engineWords = (goods) => (goods || []).filter(wonSetRow)
+    .map((g) => [g.name, g.desc].filter(Boolean).join(" ").normalize("NFC").replace(/[^.;|\n]*tương\s*đương[^.;|\n]*/gi, " "))
+    .flatMap((s) => [...s.matchAll(/động\s*cơ|\bengine\b/gi)].map((m) => s.slice(m.index, m.index + 70))).join(" | ");
   const TECH_OUT = /kỹ\s*thuật|E-?HSĐXKT|\bYCKT\b/i, RIVAL_TOL = 0.15, RIVAL_MIN = 3;
   function rivalsOf(t, docs, { ownTax = "", limit = 12 } = {}) {
     // Phân tích ghi chủ đầu tư kèm "(MST …; địa chỉ)": chỉ lấy tên.
@@ -885,7 +912,9 @@
         const why = { investor: !!inv && invKeyOf(d.investorName) === inv, province: !!prov && provinceOf(d.location) === prov, size: !!(K && k) && Math.abs(Math.log(k / K)) <= Math.log(1 + RIVAL_TOL) };
         if (!why.investor && !why.province && !why.size) continue;
         const price = lot.price ?? (multi ? null : d.estimatedPrice);
-        const makes = CAT ? brandsIn((lot.goods || []).filter(wonSetRow).map((g) => [g.name, g.maker, g.label, g.code, g.desc].filter(Boolean).join(" ")).join(" | ").replace(/[^.;|\n]*tương\s*đương[^.;|\n]*/gi, " "), CAT.ENGINE_BRANDS) : [];
+        // Hãng động cơ: chỉ chữ ngay sau "động cơ" / "engine" trong dòng hàng là tổ máy (không lấy hãng tổ máy hay tên
+        // công ty như "Viễn thông FPT"; điều phối 2026-11-10).
+        const makes = CAT ? brandsIn(engineWords(lot.goods), CAT.ENGINE_BRANDS) : [];
         for (const b of lot.bidders) {
           const id = taxKey(b);
           if (!id) continue;
@@ -911,5 +940,5 @@
     return { list: list.slice(0, limit), total: list.length, basis: { investor: !!inv, province: prov || "", kva: K, tol: RIVAL_TOL, min: RIVAL_MIN } };
   }
 
-  root.GenbidBidprice = { engineGroup, groupPrices, costHints, COST_HINTS, monthsIn, readTerms, financeCost, feasibility, rivalsOf, STALE_DAYS, quoteStale, conflict, wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
+  root.GenbidBidprice = { CALIB, calibLevels, wQuantile, engineWords, engineGroup, groupPrices, costHints, COST_HINTS, monthsIn, readTerms, financeCost, feasibility, rivalsOf, STALE_DAYS, quoteStale, conflict, wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
 })(typeof window !== "undefined" ? window : globalThis);

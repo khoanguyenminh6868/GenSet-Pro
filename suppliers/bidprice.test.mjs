@@ -442,7 +442,7 @@ test("rivalsOf: bidders of lots of the same investor, province or size before th
   const b = (name, tax, price, won = false, reason = "") => ({ name, taxCode: tax, finalPrice: price, won, winPrice: won ? price : null, reason });
   const L = (bidders, goods = []) => ({ lotNo: "", lotName: "", price: 1e9, goods, bidders });
   const docs = {
-    A: { bidName: "Mua sắm máy phát điện 400kVA", investorName: "Bệnh viện A", location: "Tỉnh Quảng Ngãi", bidCloseDate: "2025-01-01", lots: [L([b("Alpha", "1", 8e8, true), b("Beta", "2", 9e8)], [{ name: "Máy phát điện 400kVA", maker: "Cummins" }])] },
+    A: { bidName: "Mua sắm máy phát điện 400kVA", investorName: "Bệnh viện A", location: "Tỉnh Quảng Ngãi", bidCloseDate: "2025-01-01", lots: [L([b("Alpha", "1", 8e8, true), b("Beta", "2", 9e8)], [{ name: "Máy phát điện 400kVA", maker: "FPT", desc: "Tổ máy lắp tại Viễn thông FPT; Động cơ: Cummins KTA19-G4; đầu phát Stamford" }])] },
     B: { bidName: "Mua sắm máy phát điện 1000kVA", investorName: "BỆNH VIỆN A", location: "Hà Nội", bidCloseDate: "2025-02-01", lots: [L([b("Alpha", "1", 8.5e8, true), b("Beta", "2", 0, false, "Không đáp ứng yêu cầu về kỹ thuật")])] },
     C: { bidName: "Mua sắm máy phát điện 410kVA", investorName: "Sở Y tế", location: "Hà Nội", bidCloseDate: "2025-03-01", lots: [L([b("Alpha", "1", 9e8, true), b("Gamma", "3", 9.5e8)])] },
     D: { bidName: "Mua sắm máy phát điện 100kVA", investorName: "Sở khác", location: "Cần Thơ", bidCloseDate: "2025-03-01", lots: [L([b("Delta", "4", 9e8, true)])] },
@@ -457,6 +457,23 @@ test("rivalsOf: bidders of lots of the same investor, province or size before th
   assert.deepEqual(a.makes, [{ make: "Cummins", n: 1 }]);
   const beta = r.list[1];
   assert.deepEqual([beta.self, beta.techOut, beta.ratio], [true, 1, null]);
+});
+
+test("suggest / calibLevels: levels unchanged; with a forecast, weighted levels by bidder group (off by default)", () => {
+  const s = (ratio, nb) => ({ level: "close", ratio, wp: ratio * 1e9, price: 1e9, k: 400, bidders: Array.from({ length: nb }, (_, i) => ({ name: "b" + i, price: 1, won: !i })) });
+  const pool = [s(0.97, 2), s(0.98, 2), s(0.96, 3), s(0.95, 3), s(0.8, 6), s(0.78, 7), s(0.82, 6)];
+  const plain = BP.suggest(pool, 1e9, 400);
+  assert.equal(plain.calib, undefined);
+  const fc = { p: [0.1, 0.1, 0.1, 0.7] };
+  const withFc = BP.suggest(pool, 1e9, 400, [], { fc });
+  assert.deepEqual(withFc.levels, plain.levels);
+  assert.deepEqual([withFc.calib.lam, withFc.calib.q], [0.5, 0.2]);
+  // Most of the forecast on 6+ bidders: the weighted middle falls to the crowded lots' prices.
+  assert.ok(withFc.calib.levels[1].ratio < plain.levels[1].ratio);
+  assert.equal(withFc.calib.levels[1].ratio, 0.82);
+  // A forecast of few bidders keeps it high.
+  assert.ok(BP.suggest(pool, 1e9, 400, [], { fc: { p: [0.3, 0.6, 0.05, 0.05] } }).calib.levels[1].ratio >= 0.95);
+  assert.equal(BP.wQuantile([1, 2, 3], [1, 1, 1], 0.5), 2);
 });
 
 test("quoteCost / quoteLedger: a price line older than 180 days or with no date is flagged; finance adds to the cost", () => {
