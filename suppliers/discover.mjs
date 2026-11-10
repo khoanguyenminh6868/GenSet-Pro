@@ -23,8 +23,6 @@ const REPO = path.join(ROOT, "..");
 const LOG = path.join(ROOT, "discover-log.json");
 // Companies Khoa works with: checked first on every run (seeds), each by a search on its own name.
 const WATCH = path.join(ROOT, "discover-watchlist.json");
-const WEB = process.env.GENBID_WEB || "https://genset-pro-web.vercel.app";
-const TOKEN_FILE = process.env.GENBID_INGEST_TOKEN_FILE || "C:/Projects/GenSet Pro/.genbid-ingest-token";
 const ROLES = new Set(["genset_oem", "engine_maker", "alternator_maker", "controller_maker", "distributor"]);
 const KINDS = new Set(["genset", "engine", "alternator"]);
 const FUELS = new Set(["diesel", "gas", "dual", "hfo", "gasoline", "other"]);
@@ -208,12 +206,13 @@ async function seeds() {
     console.log(`${kind} (hãng ghi trong bảng thông số của các tổ máy; CHƯA CÓ = chưa có bản ghi ${role}):\n${out.join("\n")}`);
   }
   if (args.includes("--genbid")) {
-    const token = fs.readFileSync(TOKEN_FILE, "utf8").trim();
-    const r = await fetch(`${WEB}/api/requests?kind=docs&coll=analysis`, { headers: { Authorization: `Bearer ${token}` } });
-    if (!r.ok) die(`GenBid: HTTP ${r.status}`);
+    // Every analysis (~25 MB) through config-bot's allDocs: kept on this PC (genbid-work\doc-cache), each run reads only
+    // the analyses that changed (Supabase egress, 2026-11-10).
+    let analyses;
+    try { analyses = await (await import("./config-bot.mjs")).allDocs("analysis"); } catch (e) { die(`GenBid: ${e.message}`); }
     const BRANDY = /(hãng|thương hiệu|xuất xứ|nguồn gốc|động cơ|đầu phát|nhà sản xuất|nhà cung cấp|engine|alternator|brand|origin|g7|tương đương)/i;
     const lines = [];
-    for (const { id, data } of await r.json()) for (const x of [...(data?.result?.technicalSpecs || []), ...(data?.result?.restrictiveClauses || [])]) {
+    for (const { id, data } of analyses) for (const x of [...(data?.result?.technicalSpecs || []), ...(data?.result?.restrictiveClauses || [])]) {
       const t = [x.item, x.requirement, x.clause, x.text, x.reason].filter(Boolean).join(": ");
       if (BRANDY.test(t)) lines.push(`- [${id}] ${t.replace(/\s+/g, " ").slice(0, 400)}`);
     }
