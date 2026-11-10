@@ -49,7 +49,7 @@ export default async function handler(req, res) {
     if (req.query?.kind === "all") {
       // beat=0: the bot (GenBid-Bot.ps1) wrote the heartbeat less than a minute ago; the page waits 3 minutes before
       // saying the PC is off. Without beat (an older bot) the heartbeat is written every poll, as before.
-      const [marks] = await Promise.all([marksOf(ALL_REQ), req.query.beat === "0" ? null : heartbeat(req.query.running)]);
+      const [marks] = await Promise.all([marksOf(ALL_REQ, recentSince(req.query.full === "1")), req.query.beat === "0" ? null : heartbeat(req.query.running)]);
       const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks), reqsOf("specreq", marks)]);
       return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec });
     }
@@ -86,11 +86,21 @@ const pendingOf = (d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.r
 // The pending requests of a collection, whole. The bot polls every 15 s and nearly every row is already done, so
 // list only the two dates first and read the whole rows of the pending ones (Supabase egress: ~20 KB a poll before).
 const ALL_REQ = ["hsmtreq", "analysisreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq", "bidpricereq", "specreq"];
-// { coll: [{ id, requestedAt, doneAt, mode }] } for these collections, in as few requests as the rows allow (1000 a page).
-async function marksOf(colls) {
+// The bot's poll (every 15 s) lists only the request rows written in the last RECENT_H hours: a new request, or one
+// pressed again, is written then (every write sets updated_at), and listing every row of the 12 collections each poll
+// was ~12 KB, ~2 GB a month of Supabase egress, growing with the tenders. Requests left pending longer than that (the
+// PC was off) are found by the whole listing, done in the first minute of every hour (~4 polls) or with &full=1.
+const RECENT_H = 6;
+function recentSince(full) {
+  const now = new Date();
+  return full || now.getUTCMinutes() === 0 ? "" : new Date(now.getTime() - RECENT_H * 3600e3).toISOString();
+}
+// { coll: [{ id, requestedAt, doneAt, mode }] } for these collections, in as few requests as the rows allow (1000 a page);
+// since: only the rows whose updated_at is at or after it.
+async function marksOf(colls, since = "") {
   const out = Object.fromEntries(colls.map((c) => [c, []]));
   for (let from = 0; ; from += 1000) {
-    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=in.(${colls.join(",")})&select=coll,id,requestedAt:data->>requestedAt,doneAt:data->>doneAt,mode:data->>mode&order=coll,id`,
+    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=in.(${colls.join(",")})${since ? `&updated_at=gte.${encodeURIComponent(since)}` : ""}&select=coll,id,requestedAt:data->>requestedAt,doneAt:data->>doneAt,mode:data->>mode&order=coll,id`,
       { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, Range: `${from}-${from + 999}` } });
     if (!r.ok) throw new Error(`read ${r.status}`);
     const page = await r.json();
