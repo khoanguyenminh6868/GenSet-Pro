@@ -58,6 +58,190 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "P550-3",
+      "fuel": "diesel",
+      "engineModels": [
+        "2506A-E15TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P165-6",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106D-E70TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P330-5",
+      "fuel": "diesel",
+      "engineModels": [
+        "1506A-E88TAG5"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P780-1",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806A-E18TTAG4"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 706,
+        "max": 706,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P900-1M / P900-1",
+      "fuel": "diesel",
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P2500-1D",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-61TRG3X"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P450-2",
+      "fuel": "diesel",
+      "engineModels": [
+        "2206D-E13TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P16.5-6S",
+      "fuel": "diesel",
+      "engineModels": [
+        "404D-22G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
     }
   ],
   "certifications": [],
@@ -80,9 +264,300 @@
         "now with over 60 years in the power generation business"
       ],
       "file": "sources/fg-wilson/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.fgwilson.com/en_GB/products/new/fg-wilson/diesel-generators/medium-range-225-938-kva/1000012496.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for P550-3",
+        "| 50 Hz Prime | 500 kVA / 400 kW 500 kVA / 400 kW",
+        "| 50 Hz Standby | 550 kVA / 440 kW 550 kVA / 440 kW",
+        "| Engine Model | Perkins 2506A-E15TAG2 Perkins 2506A-E15TAG2"
+      ],
+      "file": "sources/fg-wilson/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.fgwilson.com/en_GB/products/new/fg-wilson/diesel-generators/small-range-220-kva/1000029049.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for P165-6",
+        "| 50 Hz Prime | 150 kVA / 120 kW 150 kVA / 120 kW",
+        "| 50 Hz Standby | 165 kVA / 132 kW 165 kVA / 132 kW",
+        "| Engine Model | Perkins® 1106D-E70TAG2 Perkins® 1106D-E70TAG2"
+      ],
+      "file": "sources/fg-wilson/2002.md"
+    },
+    {
+      "n": 2003,
+      "url": "https://www.fgwilson.com/en_GB/products/new/fg-wilson/diesel-generators/medium-range-225-938-kva/227227255580952.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for P330-5",
+        "| 50 Hz Prime | 300 kVA / 240 kW 300 kVA / 240 kW",
+        "| 50 Hz Standby | 330 kVA / 264 kW 330 kVA / 264 kW",
+        "| Engine Model | Perkins® 1506A-E88TAG5 Perkins® 1506A-E88TAG5"
+      ],
+      "file": "sources/fg-wilson/2003.md"
+    },
+    {
+      "n": 2004,
+      "url": "https://www.fgwilson.com/en_GB/products/new/fg-wilson/diesel-generators/medium-range-225-938-kva/15970153.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for P780-1",
+        "| 50 Hz Prime | 706 kVA / 565 kW 706 kVA / 565 kW",
+        "| 50 Hz Standby | 780 kVA / 624 kW 780 kVA / 624 kW",
+        "| Engine Model | Perkins® 2806A-E18TTAG4 Perkins® 2806A-E18TTAG4"
+      ],
+      "file": "sources/fg-wilson/2004.md"
+    },
+    {
+      "n": 2005,
+      "url": "https://www.fgwilson.com/en_GB/products/new/fg-wilson/diesel-generators/large-range-800-kva/127260.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for P900-1M / P900-1",
+        "| 50 Hz Prime | 800 kVA / 640 kW 800 kVA / 640 kW",
+        "| 50 Hz Standby | 900 kVA / 720 kW 900 kVA / 720 kW",
+        "| Engine Model | Perkins® 4006-23TAG3A Perkins® 4006-23TAG3A"
+      ],
+      "file": "sources/fg-wilson/2005.md"
+    },
+    {
+      "n": 2006,
+      "url": "https://www.fgwilson.com/en_GB/products/new/fg-wilson/diesel-generators/large-range-800-kva/131540.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for P2500-1D",
+        "| 50 Hz Standby | 2500 kVA / 2000 kW DCC 2500 kVA / 2000 kW DCC",
+        "| Engine Model | Perkins® 4016-61TRG3X Perkins® 4016-61TRG3X"
+      ],
+      "file": "sources/fg-wilson/2006.md"
+    },
+    {
+      "n": 2007,
+      "url": "https://www.fgwilson.com/en_GB/products/new/fg-wilson/diesel-generators/medium-range-225-938-kva/1000007500.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for P450-2",
+        "| 50 Hz Prime | 400 kVA / 320 kW 400 kVA / 320 kW",
+        "| 50 Hz Standby | 450 kVA / 360 kW 450 kVA / 360 kW",
+        "| Engine Model | Perkins®2206D-E13TAG3A Perkins®2206D-E13TAG3A"
+      ],
+      "file": "sources/fg-wilson/2007.md"
+    },
+    {
+      "n": 2008,
+      "url": "https://www.fgwilson.com/en_GB/products/new/fg-wilson/diesel-generators/small-range-220-kva/1000004409.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for P16.5-6S",
+        "| 50 Hz Prime | 15 kVA / 15 kW 15 kVA / 15 kW",
+        "| 50 Hz Standby | 16.5 kVA / 16.5 kW 16.5 kVA / 16.5 kW",
+        "| Engine Model | Perkins® 404D-22G Perkins® 404D-22G"
+      ],
+      "file": "sources/fg-wilson/2008.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-10",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "P550-3 — Product Specifications",
+      "header": [
+        "Product Specifications for P550-3"
+      ],
+      "rows": [
+        "| Minimum Rating | 500 kVA / 400 kW 500 kVA / 400 kW",
+        "| Maximum Rating | 550 kVA / 440 kW 550 kVA / 440 kW",
+        "| Emissions/Fuel Strategy | Fuel Optimised Fuel Optimised",
+        "| 50 Hz Prime | 500 kVA / 400 kW 500 kVA / 400 kW",
+        "| 50 Hz Standby | 550 kVA / 440 kW 550 kVA / 440 kW",
+        "| Frequency | 50 Hz 50 Hz",
+        "| Speed | 1500 RPM 1500 RPM",
+        "| Voltage | 220-415 Volts 220-415 Volts",
+        "| Engine Model | Perkins 2506A-E15TAG2 Perkins 2506A-E15TAG2",
+        "| Bore | 137 mm (5.4 in) 137 mm (5.4 in)",
+        "| Stroke | 171.0mm (6.7 in) 171.0mm (6.7 in)",
+        "| Governor Type | Electronic Electronic",
+        "| Displacement | 15.2l (927.6 cu. in) 15.2l (927.6 cu. in)",
+        "| Compression Ratio | 16.0:1 16.0:1"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "P165-6 — Product Specifications",
+      "header": [
+        "Product Specifications for P165-6"
+      ],
+      "rows": [
+        "| Minimum Rating | 150 kVA / 120 kW 150 kVA / 120 kW",
+        "| Maximum Rating | 165 kVA / 132 kW 165 kVA / 132 kW",
+        "| Emissions/Fuel Strategy | EU Stage IIIA emissions compliant. EU Stage IIIA emissions compliant.",
+        "| 50 Hz Prime | 150 kVA / 120 kW 150 kVA / 120 kW",
+        "| 50 Hz Standby | 165 kVA / 132 kW 165 kVA / 132 kW",
+        "| 60 Hz Prime | - / - - / -",
+        "| 60 Hz Standby | — —",
+        "| Frequency | 50 Hz 50 Hz",
+        "| Speed | 1500 RPM 1500 RPM",
+        "| Voltage | 220-415 Volts 220-415 Volts",
+        "| Engine Model | Perkins® 1106D-E70TAG2 Perkins® 1106D-E70TAG2",
+        "| Bore | 105 mm (4.1 in) 105 mm (4.1 in)",
+        "| Stroke | 135 mm (5.3 in) 135 mm (5.3 in)",
+        "| Governor Type | Electronic Electronic",
+        "| Displacement | 7.0l (427.8 cu. in) 7.0l (427.8 cu. in)",
+        "| Compression Ratio | 16.8:1 16.8:1"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "P330-5 — Product Specifications",
+      "header": [
+        "Product Specifications for P330-5"
+      ],
+      "rows": [
+        "| Minimum Rating | 300 kVA / 240 kW 300 kVA / 240 kW",
+        "| Maximum Rating | 330 kVA / 264 kW 330 kVA / 264 kW",
+        "| Emissions/Fuel Strategy | Fuel Optimised Fuel Optimised",
+        "| 50 Hz Prime | 300 kVA / 240 kW 300 kVA / 240 kW",
+        "| 50 Hz Standby | 330 kVA / 264 kW 330 kVA / 264 kW",
+        "| Frequency | 50 Hz 50 Hz",
+        "| Speed | 1500 RPM 1500 RPM",
+        "| Voltage | 115-415 Volts 115-415 Volts",
+        "| Engine Model | Perkins® 1506A-E88TAG5 Perkins® 1506A-E88TAG5",
+        "| Bore | 112 mm (4.4 in) 112 mm (4.4 in)",
+        "| Stroke | 149 mm (5.9 in) 149 mm (5.9 in)",
+        "| Governor Type | Electronic Electronic",
+        "| Displacement | 8.8l (537 cu. in) 8.8l (537 cu. in)",
+        "| Compression Ratio | 16.1:1 16.1:1"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "P780-1 — Product Specifications",
+      "header": [
+        "Product Specifications for P780-1"
+      ],
+      "rows": [
+        "| Minimum Rating | 706 kVA / 565 kW 706 kVA / 565 kW",
+        "| Maximum Rating | 780 kVA / 624 kW 780 kVA / 624 kW",
+        "| Emissions/Fuel Strategy | Fuel Optimised Fuel Optimised",
+        "| 50 Hz Prime | 706 kVA / 565 kW 706 kVA / 565 kW",
+        "| 50 Hz Standby | 780 kVA / 624 kW 780 kVA / 624 kW",
+        "| Frequency | 50 Hz 50 Hz",
+        "| Speed | 1500 RPM 1500 RPM",
+        "| Voltage | 230-400 Volts 230-400 Volts",
+        "| Engine Model | Perkins® 2806A-E18TTAG4 Perkins® 2806A-E18TTAG4",
+        "| Bore | 145 mm (5.7 in) 145 mm (5.7 in)",
+        "| Stroke | 183.0mm (7.2 in) 183.0mm (7.2 in)",
+        "| Governor Type | Electronic Electronic",
+        "| Displacement | 18.1l (1104.5 cu. in) 18.1l (1104.5 cu. in)",
+        "| Compression Ratio | 14.0:1 14.0:1"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "P900-1M / P900-1 — Product Specifications",
+      "header": [
+        "Product Specifications for P900-1M / P900-1"
+      ],
+      "rows": [
+        "| Minimum Rating | 800 kVA / 640 kW 800 kVA / 640 kW",
+        "| Maximum Rating | 900 kVA / 720 kW 900 kVA / 720 kW",
+        "| Emissions/Fuel Strategy | Fuel Optimised Fuel Optimised",
+        "| 50 Hz Prime | 800 kVA / 640 kW 800 kVA / 640 kW",
+        "| 50 Hz Standby | 900 kVA / 720 kW 900 kVA / 720 kW",
+        "| Frequency | 50 Hz 50 Hz",
+        "| Speed | 1500 RPM 1500 RPM",
+        "| Voltage | 220-415 Volts 220-415 Volts",
+        "| Engine Model | Perkins® 4006-23TAG3A Perkins® 4006-23TAG3A",
+        "| Bore | 160 mm (6.3 in) 160 mm (6.3 in)",
+        "| Stroke | 190 mm (7.5 in) 190 mm (7.5 in)",
+        "| Governor Type | Electronic Electronic",
+        "| Displacement | 22.9l (1398.7 cu. in) 22.9l (1398.7 cu. in)",
+        "| Compression Ratio | 13.6:1 13.6:1"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "P2500-1D — Product Specifications",
+      "header": [
+        "Product Specifications for P2500-1D"
+      ],
+      "rows": [
+        "| Maximum Rating | 2500 kVA / 2000 kW 2500 kVA / 2000 kW",
+        "| Emissions/Fuel Strategy | Fuel Optimised Fuel Optimised",
+        "| 50 Hz Standby | 2500 kVA / 2000 kW DCC 2500 kVA / 2000 kW DCC",
+        "| Frequency | 50 Hz 50 Hz",
+        "| Speed | 1500 RPM 1500 RPM",
+        "| Voltage | 220-415 Volts 220-415 Volts",
+        "| Engine Model | Perkins® 4016-61TRG3X Perkins® 4016-61TRG3X",
+        "| Bore | 160 mm (6.3 in) 160 mm (6.3 in)",
+        "| Stroke | 190 mm (7.5 in) 190 mm (7.5 in)",
+        "| Governor Type | Electronic Electronic",
+        "| Displacement | 61.1l (3730 cu. in) 61.1l (3730 cu. in)",
+        "| Compression Ratio | 13.0:1 13.0:1"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "P450-2 — Product Specifications",
+      "header": [
+        "Product Specifications for P450-2"
+      ],
+      "rows": [
+        "| Minimum Rating | 400 kVA / 320 kW 400 kVA / 320 kW",
+        "| Maximum Rating | 450 kVA / 360 kW 450 kVA / 360 kW",
+        "| Emissions/Fuel Strategy | EUIIIa Emissions Compliant EUIIIa Emissions Compliant",
+        "| 50 Hz Prime | 400 kVA / 320 kW 400 kVA / 320 kW",
+        "| 50 Hz Standby | 450 kVA / 360 kW 450 kVA / 360 kW",
+        "| Frequency | 50 Hz 50 Hz",
+        "| Speed | 1500 RPM 1500 RPM",
+        "| Voltage | 220-415 Volts 220-415 Volts",
+        "| Engine Model | Perkins®2206D-E13TAG3A Perkins®2206D-E13TAG3A",
+        "| Bore | 130 mm (5.1 in) 130 mm (5.1 in)",
+        "| Stroke | 157 mm (6.2 in) 157 mm (6.2 in)",
+        "| Governor Type | Electronic Electronic",
+        "| Displacement | 12.5l (762.8 cu. in) 12.5l (762.8 cu. in)",
+        "| Compression Ratio | 15.8:1 15.8:1"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "P16.5-6S — Product Specifications",
+      "header": [
+        "Product Specifications for P16.5-6S"
+      ],
+      "rows": [
+        "| Minimum Rating | 15 kVA / 15 kW 15 kVA / 15 kW",
+        "| Maximum Rating | 19.4 kVA / 19.4 kW 19.4 kVA / 19.4 kW",
+        "| Emissions/Fuel Strategy | EU3a Emissions Compliant EU3a Emissions Compliant",
+        "| 50 Hz Prime | 15 kVA / 15 kW 15 kVA / 15 kW",
+        "| 50 Hz Standby | 16.5 kVA / 16.5 kW 16.5 kVA / 16.5 kW",
+        "| 60 Hz Prime | 17.6 kVA / 17.6 kW 17.6 kVA / 17.6 kW",
+        "| 60 Hz Standby | 19.4 kVA / 19.4 kW 19.4 kVA / 19.4 kW",
+        "| Frequency | 50 / 60 Hz 50 / 60 Hz",
+        "| Speed | 1500 or 1800 RPM 1500 or 1800 RPM",
+        "| Voltage | 220-240 Volts 220-240 Volts",
+        "| Engine Model | Perkins® 404D-22G Perkins® 404D-22G",
+        "| Bore | 84 mm (3.3 in) 84 mm (3.3 in)",
+        "| Stroke | 100 mm (3.9 in) 100 mm (3.9 in)",
+        "| Governor Type | Mechanical Mechanical",
+        "| Displacement | 2.2l (135.2 cu. in) 2.2l (135.2 cu. in)",
+        "| Compression Ratio | 23.3:1 23.3:1"
+      ]
+    }
+  ]
 }
