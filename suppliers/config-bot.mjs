@@ -96,7 +96,7 @@ const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
 // The requirements read last time are used again only when the HSMT, Yêu cầu khác and the way they are read are the
 // same: REQ_VERSION goes up when config-prompt.md changes how requirements are written (e.g. the grouped controller
 // functions of 2026-11-03), so older lists are read again once.
-export const REQ_VERSION = 4; // 4: requirement codes (reqcodes.mjs, Khoa 2026-11-06)
+export const REQ_VERSION = 5; // 4: requirement codes (reqcodes.mjs, Khoa 2026-11-06); 5: alt_excitation, alt_short_circuit (2026-11-10)
 export const reqHashOf = (text, extra) => createHash("sha1").update(`${text}\n--extra--\n${extra || ""}${REQ_VERSION > 1 ? `\n--v${REQ_VERSION}--` : ""}`).digest("hex").slice(0, 16);
 
 export async function api(q) {
@@ -1243,6 +1243,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   }
   result.configs = (result.configs || []).slice(0, MAX_CONFIGS);
   copyModelChecks(result.configs, sourceText);
+  // Kiểm tra tổ hợp (2026-11-10): what the HSMT says about site, overload, load step and load types, read once.
+  const combo = hsmtCombo(hsmtText, result.requirements || []);
+  comboNotes(result, combo);
   for (const c of result.configs) {
     const texts = {};
     for (const part of ["engine", "alternator", "genset", "controller"]) {
@@ -1432,6 +1435,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       c.checks.unshift(syncCheck(sync, fam, makers, { engine: c.engine?.model, alternator: c.alternator?.model, controller: c.controller?.model }));
     }
     confirmChecks(c, result.requirements || []);
+    comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: factsOf(c, "engine"), altFacts: factsOf(c, "alternator"), reqs: result.requirements || [] });
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
@@ -1540,10 +1544,12 @@ export function confirmChecks(c, reqs = []) {
 // send. Written by the code from the checks; the web copies it as text.
 const PART_VI = { engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển", genset: "Tổ máy" };
 export function rfqOf(c, reqs = []) {
-  const kinds = new Map(reqs.map((r) => [norm(r.item), kindOf(r)]));
+  const kinds = new Map(reqs.map((r) => [norm(r.item), kindOf(r)])), codes = new Map(reqs.map((r) => [norm(r.item), r.code]));
   const what = (part) => [PART_VI[part] || "Tổ máy", (part === "genset" ? c.genset?.model : c[part]?.model) || ""].filter(Boolean).join(" ");
   const ask = (x, k) => {
     if (x.status === "confirm") return x.confirm === "document" || k === "document" ? "Gửi chứng từ / bản cam kết đáp ứng" : "Xác nhận cấu hình đặt hàng đáp ứng";
+    // Load step: a test report, not a datasheet line (comboChecks: BMEP for reference).
+    if (codes.get(norm(x.item)) === "load_step") return `Gửi kết quả thử nhận tải một bước theo ISO 8528-5 (% tải nhận được, cấp G2 / G3) của tổ máy${c.combo?.bmep ? ` (BMEP tham khảo ${fmt(c.combo.bmep.value)} bar)` : ""}`;
     if (k === "site") return "Xác nhận tổ máy làm việc được ở điều kiện này; gửi đường giảm công suất của nhà sản xuất";
     if (x.conflict) return "Các nguồn ghi khác nhau: xác nhận giá trị đúng, gửi datasheet";
     if (x.version) return "Xác nhận đời (MK) bộ điều khiển chào, gửi datasheet đúng đời";
@@ -1566,8 +1572,170 @@ export function rfqOf(c, reqs = []) {
     const k = kindOf(r), ck = confirmKindOf(r), x = { status: ck ? "confirm" : "unclear", confirm: ck };
     out.push({ part: r.part || "genset", of: what(r.part), item: r.item, requirement: r.requirement || "", kind: k, status: x.status, ask: ask(x, k) });
   }
+  // Questions of the combination checks (comboChecks): site, load types, load step.
+  for (const q of c.comboAsk || []) out.push({ ...q, of: what(q.part) });
   const order = { engine: 0, controller: 1, alternator: 2, genset: 3 };
   return out.sort((a, b) => (order[a.part] ?? 4) - (order[b.part] ?? 4));
+}
+
+// ---------- Kiểm tra tổ hợp (2026-11-10) ----------
+// What the parts give together, not each against the HSMT. Every figure comes from the configuration's genset row, its
+// model's facts, or the HSMT; a formula only from web/conversions.js; a figure missing → nothing concluded. No check's
+// status is changed here: power balance writes a warning, the rest notes and questions for the supplier (rfq).
+const flat = (t) => String(t || "").normalize("NFC").replace(/\s+/g, " ");
+const RATE_PRIME = /prime|\bPRP\b|\bCOP\b|continuous|li[êe]n\s*t[ụu]c|c[ơo]\s*b[ảa]n|常用|主用/i;
+const RATE_SB = /stand\s*-?\s*by|\bESP\b|d[ựu]\s*ph[òo]ng|备用/i;
+const TEMP_RE = /(nhi[ệe]t\s*đ[ộo]\s*(?:m[ôo]i\s*tr[ưu][ờo]ng|l[àa]m\s*vi[ệe]c|v[ậa]n\s*h[àa]nh)|ambient\s*temperature)([^.;]{0,60}?)(\d{2})(?:[.,]\d)?\s*(?:°|º|o|độ\s*)?\s*C\b/gi;
+const ALT_RE = /(?<!c[ưu][ờo]ng\s)(đ[ộo]\s*cao(?:\s*(?:l[ắa]p\s*đ[ặa]t|so\s*v[ớo]i\s*m[ặa]t\s*n[ưu][ớo]c\s*bi[ểe]n|n[ơo]i\s*l[ắa]p\s*đ[ặa]t))?|altitude)([^.;]{0,50}?)(\d{1,2}[.,]\d{3}|\d{3,4})\s*m\b/gi;
+const OVL_RE = /(qu[áa]\s*t[ảa]i|overload)[^.;]{0,60}?(?:\b10\s*%|\b110\s*%)[^.;]{0,120}/gi;
+const STEP_RE = /nh[ậa]n\s*t[ảa]i\s*(?:m[ộo]t\s*b[ưu][ớo]c|b[ưu][ớo]c\s*(?:m[ộo]t|1|đ[ầa]u)|1\s*b[ưu][ớo]c|100\s*%)|single\s*-?\s*step|load\s*acceptance|8528\s*-\s*5|class\s*G\s?[23]\b|\bG2\s*\/\s*G3\b/i;
+// Loads that ask more of the alternator than a share of kW (ISO 8528-1 §7, the makers' application guides).
+const LOAD_TYPES = [
+  { type: "fire_pump", label: "Bơm chữa cháy", re: /b[ơo]m\s*(?:n[ưu][ớo]c\s*)?ch[ữu]a\s*ch[áa]y|fire\s*-?\s*pump/i, part: "genset",
+    ask: "Xác nhận tổ máy khởi động được bơm chữa cháy (kW, cách khởi động của bơm), gửi tính toán sụt áp khi khởi động" },
+  { type: "dol", label: "Động cơ khởi động trực tiếp (DOL)", re: /kh[ởo]i\s*đ[ộo]ng\s*tr[ựu]c\s*ti[ếe]p|\bDOL\b|direct\s*-?\s*on\s*-?\s*line/i, part: "alternator",
+    ask: "Gửi khả năng khởi động động cơ của đầu phát (kVA khởi động ở mức sụt áp cho phép)" },
+  { type: "ups", label: "UPS", re: /\bUPS\b/, part: "alternator", ask: "Xác nhận tổ máy làm việc với tải UPS (tải phi tuyến): méo sóng hài, kiểu kích từ, AVR" },
+  { type: "vfd", label: "Biến tần", re: /bi[ếe]n\s*t[ầa]n|\bVFD\b|variable\s*(?:frequency|speed)\s*drive/i, part: "alternator", ask: "Xác nhận tổ máy làm việc với tải biến tần (tải phi tuyến): méo sóng hài, kiểu kích từ, AVR" },
+  { type: "short300", label: "Dòng ngắn mạch duy trì 300% / 10 s", code: "alt_short_circuit", re: /ng[ắa]n\s*m[ạa]ch\s*duy\s*tr[ìi]|sustained\s*short|(?:300\s*%|\b3\s*x?\s*I\s*[nN]\b)[^.;]{0,40}?\b10\s*%?\s*(?:s\b|gi[âa]y|sec)/i, part: "alternator",
+    ask: "Xác nhận đầu phát duy trì dòng ngắn mạch 300% trong 10 s (thường cần kích từ PMG / AREP), gửi đường cong suy giảm ngắn mạch" },
+  { type: "excitation", label: "Kích từ PMG / AREP", code: "alt_excitation", re: /\bPMG\b|\bAREP\b|nam\s*ch[âa]m\s*v[ĩi]nh\s*c[ửu]u|permanent\s*magnet/i, part: "alternator",
+    ask: "Xác nhận kiểu kích từ của đầu phát chào (PMG / AREP hay tự kích), gửi datasheet" },
+];
+// What the HSMT says that the combination checks need: site, overload on the standby rating, load step, load types.
+export function hsmtCombo(text, reqs = []) {
+  const T = flat(text), out = { site: null, overloadEsp: null, loadStep: null, loadTypes: [] };
+  // The quote of a match: the HSMT line that holds it (a table's columns run together once the text is flattened), else
+  // the match itself when it spans lines.
+  const lines = String(text || "").normalize("NFC").split("\n").map((l) => l.replace(/\s+/g, " ").trim());
+  const lineOf = (re) => lines.find((l) => l.length <= 240 && re.test(l));
+  const around = (i, len, b = 40, a = 40) => T.slice(Math.max(0, i - b), i + len + a).trim();
+  let temp = null, alt = null;
+  for (const m of T.matchAll(TEMP_RE)) {
+    if (/nh[ỏo]\s*nh[ấa]t|t[ốo]i\s*thi[ểe]u|\bmin/i.test(m[2])) continue;
+    const v = Number(m[3]);
+    if (v > 40 && v <= 60 && (!temp || v > temp.value)) temp = { value: v, quote: m[0].trim() };
+  }
+  for (const m of T.matchAll(ALT_RE)) {
+    const v = Number(m[3].replace(/[.,]/g, ""));
+    if (v > 1000 && v < 6000 && (!alt || v > alt.value)) alt = { value: v, quote: m[0].trim() };
+  }
+  if (temp || alt) out.site = { temp: temp?.value ?? null, alt: alt?.value ?? null, quote: [temp?.quote, alt?.quote].filter(Boolean).join(" … ") };
+  // Overload asked on the standby (ESP) rating: ISO 8528-1 gives ESP no overload (10% / 1 h in 12 h is of the prime rating).
+  for (const m of T.matchAll(OVL_RE)) {
+    const q = around(m.index, m[0].length, 60, 0);
+    if (RATE_SB.test(q) && !RATE_PRIME.test(q)) { out.overloadEsp = { quote: q }; break; }
+  }
+  // A requirement of load step, or of ISO 8528 that names a class / part 5 (not a bare "ISO 8528": that is compliance).
+  const step = (reqs || []).find((r) => r.code === "load_step" || (r.code === "iso8528_class" && STEP_RE.test(flat(`${r.requirement || ""} ${r.quote || ""}`))));
+  const sm = !step && T.match(STEP_RE);
+  if (step) out.loadStep = { quote: step.quote || step.requirement || step.item };
+  else if (sm) out.loadStep = { quote: lineOf(STEP_RE) || around(sm.index, sm[0].length, 0, 0) };
+  for (const l of LOAD_TYPES) { const m = T.match(l.re); if (m) out.loadTypes.push({ type: l.type, label: l.label, quote: lineOf(l.re) || around(m.index, m[0].length, 0, 0) }); }
+  return out;
+}
+// The engine's power on the genset row ("Prime power / Speed (KW/RPM) = 284/1500", "Rated Engine Output = 571kW prp ;
+// 625kW standby"), by rating; a figure whose rating the row does not name ("Engine power (kW) = 264") is not used:
+// the engine's prime and standby differ by ~10%, so guessing would decide the balance.
+export function enginePowerOf(row) {
+  for (const s of row?.specs || []) {
+    if (s.key !== "engPower") continue;
+    const t = `${s.label} ${s.value}`;
+    if (!/kw/i.test(t)) continue;
+    const out = {};
+    for (const m of String(s.value).matchAll(/(\d+(?:[.,]\d+)?)\s*kw[^;,\d]*/gi)) {
+      const seg = m[0], r = RATE_SB.test(seg) ? "standby" : RATE_PRIME.test(seg) ? "prime" : null;
+      if (r && out[r] == null) out[r] = Number(m[1].replace(",", "."));
+    }
+    // "Engine Power(kw) (prime/standby) | 40/44": the label gives the order of the two figures.
+    const pair = String(s.label).match(/(prime|standby)\s*\/\s*(prime|standby)/i), nums = numbersIn(s.value);
+    if (!Object.keys(out).length && pair && pair[1].toLowerCase() !== pair[2].toLowerCase() && /^\s*\d+(?:[.,]\d+)?\s*\/\s*\d+(?:[.,]\d+)?\s*(kw)?\s*$/i.test(s.value) && nums.length === 2) {
+      out[pair[1].toLowerCase()] = nums[0]; out[pair[2].toLowerCase()] = nums[1];
+    }
+    if (!Object.keys(out).length) {
+      const r = RATE_SB.test(s.label) && !RATE_PRIME.test(s.label) ? "standby" : RATE_PRIME.test(s.label) && !RATE_SB.test(s.label) ? "prime" : null;
+      const n = numbersIn(s.value)[0];
+      if (r && n) out[r] = n;
+    }
+    // "kW/rpm" in the label: the second figure is the speed.
+    const rpm = /rpm|r\/min/i.test(s.label) ? numbersIn(s.value).find((v) => v >= 1000 && v <= 3600) : null;
+    if (Object.keys(out).length) return { ...out, rpm, gross: /gross/i.test(t), net: /\bnet\b/i.test(t), label: s.label, value: s.value, line: row.line };
+  }
+  return null;
+}
+// One sourced figure of the model's facts: the same value in every source (within 0.5), else none.
+const oneFact = (list, key, ok, skip) => {
+  const fs2 = (list || []).filter((f) => f.key === key && !(skip && skip.test(f.label)));
+  const vals = fs2.map((f) => ({ f, v: numbersIn(f.value).find(ok) })).filter((x) => x.v != null);
+  if (!vals.length) return null;
+  if (vals.some((x) => Math.abs(x.v - vals[0].v) > 0.5)) return { conflict: vals.map((x) => x.v) };
+  return { value: vals[0].v, label: vals[0].f.label, line: vals[0].f.line, supplierId: vals[0].f.supplierId };
+};
+const fmt = (v) => Number(v).toLocaleString("vi-VN", { maximumFractionDigits: 1 });
+// The kW of a power requirement of the HSMT at a rating ("≥ 160 kVA / 128 kW").
+const hsmtKw = (reqs, rating) => {
+  const r = (reqs || []).find((q) => q.code === (rating === "prime" ? "power_prime" : "power_standby"));
+  const n = r ? [...flat(`${r.requirement || ""}`).matchAll(/(\d+(?:[.,]\d+)?)\s*kWe?\b/gi)].map((m) => Number(m[1].replace(",", "."))) : [];
+  return n.length ? Math.max(...n) : null;
+};
+export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], reqs = [] }) {
+  const out = {}, asks = [], warnings = [];
+  // 1. Power balance: the engine's kWm at a rating × the alternator's efficiency ≥ the set's kWe at that rating (row) and
+  // the HSMT's. kVA of the alternator: the catalog has no alternator rating per model, so it is not checked.
+  const ep = enginePowerOf(row), eff = oneFact(altFacts, "eff", (v) => v >= 80 && v < 100, /mech/i);
+  const miss = [!ep && "công suất động cơ có ghi mức prime / standby trên dòng tổ máy", !eff ? "hiệu suất đầu phát theo model" : eff.conflict && `hiệu suất đầu phát (nguồn ghi khác nhau: ${eff.conflict.join(" / ")}%)`].filter(Boolean);
+  if (!miss.length) {
+    const rating = ep.prime != null ? "prime" : "standby", kWm = ep[rating];
+    const cv = CONV.compute({ formula: "kwe_from_kwm", inputs: [{ name: "P_kWm", value: kWm }, { name: "eff_pct", value: eff.value }] });
+    const set = row?.power?.[rating]?.kW ?? null, req = hsmtKw(reqs, rating), need = Math.max(set ?? 0, req ?? 0) || null;
+    const head = `Động cơ ${fmt(kWm)} kWm (${rating === "prime" ? "prime" : "standby"}${ep.gross ? ", gross" : ep.net ? ", net" : ""}) × hiệu suất đầu phát ${fmt(eff.value)}% = ${fmt(cv.value)} kWe`;
+    if (!need) out.power = { status: "missing", text: `${head}; không có số kWe ${rating} của tổ máy hay HSMT để so.` };
+    else {
+      const who = need === req ? "HSMT" : "dòng tổ máy";
+      const low = cv.value < need - 0.5;
+      out.power = { status: low ? "low" : "ok", value: cv.value, need, rating, text: `${head} ${low ? "<" : "≥"} ${fmt(need)} kWe ${rating} (${who})${ep.gross && !low ? "; công suất gross chưa trừ quạt két nước" : ""}.`,
+        inputs: { engine: { label: ep.label, value: ep.value, line: ep.line }, eff: { label: eff.label, value: eff.value, line: eff.line, supplierId: eff.supplierId } }, basis: CONV.FORMULAS.kwe_from_kwm.basis };
+      if (low) warnings.push(`Cân bằng công suất: ${out.power.text} Động cơ hoặc đầu phát có thể không đủ cho mức công suất này; cần NCC xác nhận.`);
+    }
+  } else out.power = { status: "missing", text: `chưa kiểm được, thiếu ${miss.join("; ")}.` };
+  // 4. Load step / G2–G3: BMEP for reference only (Khoa's rule: no met / not met from it).
+  if (combo?.loadStep) {
+    const disp = (row?.specs || []).find((s) => s.key === "disp") || (() => { const f = oneFact(engFacts, "disp", (v) => v > 0.3 && v < 200); return f?.value != null ? { value: `${f.value}`, label: f.label } : null; })();
+    let V = disp ? numbersIn(disp.value)[0] : null;
+    if (V && /cc|ml/i.test(`${disp.value}`)) V = V / 1000;
+    const spd = ep?.rpm || numbersIn((row?.specs || []).find((s) => s.key === "speed")?.value || "").find((v) => v >= 1000 && v <= 3600) || null;
+    const rating = ep?.prime != null ? "prime" : ep?.standby != null ? "standby" : null;
+    if (rating && V && spd) {
+      const cv = CONV.compute({ formula: "bmep_4s", inputs: [{ name: "P_kW", value: ep[rating] }, { name: "V_L", value: V }, { name: "n_rpm", value: spd }] });
+      out.bmep = { value: cv.value, rating, text: `BMEP ≈ ${fmt(cv.value)} bar ở công suất ${rating} (${fmt(ep[rating])} kWm, ${fmt(V)} L, ${spd} v/p) — chỉ để tham khảo khả năng nhận tải, không dùng để kết luận.`, basis: CONV.FORMULAS.bmep_4s.basis };
+    }
+    // A load step requirement of the HSMT already has its line (rfqOf asks for the test report there).
+    if (!reqs.some((r) => r.code === "load_step")) asks.push({ part: "genset", item: "Nhận tải một bước / ISO 8528-5", requirement: combo.loadStep.quote.slice(0, 160), kind: "model", status: "unclear",
+      ask: `Gửi kết quả thử nhận tải một bước theo ISO 8528-5 (% tải nhận được ở cấp G2 / G3) của tổ máy${out.bmep ? ` (BMEP tham khảo ${fmt(out.bmep.value)} bar)` : ""}` });
+  }
+  // 3. Site above 40 °C or 1 000 m: the maker's derating curve. No figure is computed: the sources give no factor.
+  if (combo?.site && !reqs.some((r) => r.code === "ambient")) {
+    const what = [combo.site.temp && `nhiệt độ môi trường ${combo.site.temp} °C`, combo.site.alt && `độ cao ${fmt(combo.site.alt)} m`].filter(Boolean).join(", ");
+    asks.push({ part: "genset", item: "Điều kiện hiện trường", requirement: what, kind: "site", status: "unclear", ask: "Gửi đường giảm công suất của nhà sản xuất ở điều kiện này; xác nhận công suất còn lại vẫn ≥ yêu cầu" });
+  }
+  // 5. Load types: a question each, unless a check of its code is met.
+  const metCode = (code) => (c.checks || []).some((x) => x.status === "met" && reqs.find((r) => norm(r.item) === norm(x.item))?.code === code);
+  for (const lt of combo?.loadTypes || []) {
+    const l = LOAD_TYPES.find((x) => x.type === lt.type);
+    if (l.code && metCode(l.code)) continue;
+    asks.push({ part: l.part, item: `Loại tải: ${l.label}`, requirement: lt.quote.slice(0, 160), kind: "model", status: "unclear", ask: l.ask });
+  }
+  c.combo = out; c.comboAsk = asks;
+  if (warnings.length) c.warnings = warnings; else delete c.warnings;
+  return c;
+}
+// The notes of the whole result: overload on the standby rating (the HSMT to be clarified, no status changed).
+export function comboNotes(result, combo) {
+  const note = combo?.overloadEsp && `Cần làm rõ HSMT: HSMT đòi quá tải 10% trên công suất dự phòng (ESP) ("${combo.overloadEsp.quote.slice(0, 160)}"), nhưng theo ISO 8528-1 mức ESP không có quá tải (quá tải 10% trong 1 giờ / 12 giờ là của mức prime). Kiểm tra theo mức prime, chưa đổi kết quả kiểm.`;
+  result.notes = (result.notes || []).filter((n) => !/^Cần làm rõ HSMT: HSMT đòi quá tải 10%/.test(n));
+  if (note) result.notes.push(note);
+  result.combo = combo;
+  return result;
 }
 // A configuration with no controller, when the HSMT asks for one, is "not met" on the controller (Khoa, 2026-11-02):
 // its controller checks would all be "unclear", which ranked it above configurations that offer one but miss a point

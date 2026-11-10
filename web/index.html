@@ -3699,9 +3699,12 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
       ${raw(cfgSuppliersHtml(c))}
       ${raw(key && !c.suppliers?.length && c.engine?.model ? h`<div class="row" style="margin-top:6px"><span class="small muted">Chưa có nhà cung cấp nào trong hệ thống cho cấu hình này.</span><span class="spacer"></span><button class="btn green sm" data-cfgfind="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp chào tổ máy dùng đúng động cơ${c.alternator?.model ? ", đầu phát" : ""}${c.controller?.model ? ", bộ điều khiển" : ""} của cấu hình này">Tìm nhà cung cấp</button></div>` : "")}
       ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}
-      ${raw(cfgRfqHtml(c, key, size, rk))}</details>`;
+      ${raw(cfgComboHtml(c))}${raw(cfgRfqHtml(c, key, size, rk))}</details>`;
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
+// Kiểm tra tổ hợp (config-bot.mjs comboChecks, 2026-11-10): cảnh báo cân bằng công suất (c.warnings) và thông tin tham
+// khảo (cân bằng công suất đã / chưa kiểm được, BMEP). Không đổi kết quả kiểm nào.
+const cfgComboHtml = (c) => (c.warnings?.length || c.combo?.power || c.combo?.bmep ? h`<div class="cfgblk">${raw((c.warnings || []).map((w) => h`<div class="note warn small" style="margin:4px 0">${w}</div>`).join(""))}${raw(c.combo?.power && c.combo.power.status !== "low" ? h`<div class="muted small">Cân bằng công suất: ${c.combo.power.text}</div>` : "")}${raw(c.combo?.bmep ? h`<div class="muted small">${c.combo.bmep.text}</div>` : "")}</div>` : "");
 // Bảng câu hỏi gửi nhà cung cấp (config-bot.mjs rfqOf, 2026-11-10): mỗi điểm "chưa rõ" / "cần xác nhận" của cấu hình, code
 // sinh sẵn trong c.rfq; nút chép thành chữ để dán vào email / Zalo gửi NCC.
 const RFQ_KIND = { order: "chọn khi đặt hàng", document: "chứng từ", site: "hiện trường", model: "thông số model" };
