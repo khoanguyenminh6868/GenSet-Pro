@@ -199,10 +199,21 @@
         "| Model | Gross Engine Output | Typical engine output | |"
       ],
       "file": "sources/baudouin/107.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://baudouinindia.com/wp-content/uploads/2023/07/Baudouin_Genset_Engines.pdf",
+      "accessedAt": "2026-11-10",
+      "tier": "B",
+      "quote": [
+        "Engine basic data Engine model 6M12G6D2/5 6M16G4D2/5 6M21G440/5E3 6M21G500/5E3 6M21G6D2/5 8M21G688/5E3 6M33D660E310 8M33G5D2/5 12M26D968E200",
+        "Suitable kVA rating 250 320 400 500 520 625 750 910 1010"
+      ],
+      "file": "sources/baudouin/2001.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
+  "checkedAt": "2026-11-10",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {
@@ -311,6 +322,18 @@
         "| 12M33G8D5/S | 1130 | 1240 | 1000 | 1375 | 1100 | 1375",
         "| 12M33G8D2/6 | 1007 | 1120 | 900 | 1125 | 1000 | 1250",
         "| 12M33G12D2/6 | 1290 | 1420 | 1100 | 1375 | 1300 | 1625"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Baudouin Genset Engines (Baudouin India) — engine basic data",
+      "header": [
+        "\fEngine basic data  Engine model                             6M12G6D2/5          6M16G4D2/5    6M21G440/5E3           6M21G500/5E3 6M21G6D2/5                    8M21G688/5E3        6M33D660E310  8M33G5D2/5  12M26D968E200"
+      ],
+      "rows": [
+        "\fEngine basic data  Engine model                             6M12G6D2/5          6M16G4D2/5    6M21G440/5E3           6M21G500/5E3 6M21G6D2/5                    8M21G688/5E3        6M33D660E310  8M33G5D2/5  12M26D968E200",
+        "                   Suitable kVA rating                         250                320                 400                  500                   520             625                750           910           1010",
+        "                   Engine power* (kWm)                         235                290                 368                  409                   450             550                660           795           889"
       ]
     }
   ]

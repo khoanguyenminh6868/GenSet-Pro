@@ -186,10 +186,33 @@
         "-             Wye, 3 Phase            degrees C              S/P           HC4D                      380-415V"
       ],
       "file": "sources/cummins-inc/2002.md"
+    },
+    {
+      "n": 2003,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0032900.pdf",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "QSB7-DM 98 134 132 1800 (60 Hz) Prime Power 28.1 (7.4) 15.0 (4.0) — 3 — —",
+        "QSB7-DM 122 166 164 1500 (50 Hz) Prime Power 33.4 (8.8) 17.2 (4.6) — 3 3a —",
+        "QSB7-DM 164 223 220 1500 (50 Hz) Prime Power 46.0 (12.2) 22.7 (6.0) 2 3 3a —"
+      ],
+      "file": "sources/cummins-inc/2003.md"
+    },
+    {
+      "n": 2004,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0064386.pdf",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "B4.5-DM 91 122 1500 Prime – 50 Hz 24.6 (6.5) 12.2 (3.2) — — 5",
+        "B4.5-DM 112 150 1500 Prime – 50 Hz 29.9 (7.9) 14.7 (3.9) — — 5"
+      ],
+      "file": "sources/cummins-inc/2004.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-10",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {
@@ -211,6 +234,38 @@
         "Ratings                                  264 (330)                       240 (300)",
         "Configuration                                            QSL9G5",
         "-             Wye, 3 Phase            degrees C              S/P           HC4D                      380-415V"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Cummins QSB6.7/QSB7 marine bulletin — QSB7-DM ratings",
+      "header": [
+        "                    Model           kW                            MHP        BHP       Speed                    Definition                Rated Speed      ISO*                 IMO            EPA EU       RCD"
+      ],
+      "rows": [
+        "                    QSB7-DM         98                            134        132       1800  (60  Hz)           Prime  Power              28.1 (7.4)       15.0  (4.0)                  —      3        —   —",
+        "                    QSB7-DM         112                           152        150       1800  (60  Hz)           Prime  Power              31.7 (8.4)       16.6  (4.4)                  —      3        —   —",
+        "                    QSB7-DM         122                           166        164       1500  (50  Hz)           Prime  Power              33.4 (8.8)       17.2  (4.6)                  —      3        3a  —",
+        "                    QSB7-DM         130                           176        174       1800  (60  Hz)           Prime  Power              36.0 (9.5)       18.4  (4.9)                  —      3        —   —",
+        "                    QSB7-DM         142                           193        190       1800  (60  Hz)           Prime  Power              39.2 (10.4)      19.8  (5.2)                  2      3        —   —",
+        "                    QSB7-DM         164                           223        220       1500  (50  Hz)           Prime  Power              46.0 (12.2)      22.7  (6.0)                  2      3        3a  —",
+        "                    QSB7-DM         186                           254        250       1800  (60  Hz)           Prime  Power              51.8 (13.7)      25.2  (6.7)                  2      3        —   —",
+        "                    QSB7-DM         210                           286        282       1800  (60  Hz)           Prime  Power              58.1 (15.4)      28.2  (7.4)                  2      3        —   —"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Cummins B4.5 marine bulletin — B4.5-DM ratings",
+      "header": [
+        "Model          kW   BHP         Speed              Definition    Rated Speed    ISO*                IMO                        EPA      EU"
+      ],
+      "rows": [
+        "B4.5-DM        91   122         1500           Prime – 50 Hz     24.6 (6.5)     12.2 (3.2)          —                          —        5",
+        "B4.5-DM        112  150         1500           Prime – 50 Hz     29.9 (7.9)     14.7 (3.9)          —                          —        5",
+        "B4.5-DM        76   102         1800           Prime – 60 Hz     21.9 (5.8)     11.1 (2.9)          —                          3        —",
+        "B4.5-DM        91   122         1800           Prime – 60 Hz     26.9 (7.1)     12.9 (3.4)          —                          3        —",
+        "B4.5-DM        112  150         1800           Prime – 60 Hz     29.9 (7.9)     14.7 (3.9)          —                          3        —",
+        "B4.5-DM        129  173         1800           Prime – 60 Hz     33.7 (8.9)     16.7 (4.4)          —                          3        —"
       ]
     }
   ]
