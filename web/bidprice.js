@@ -275,7 +275,8 @@
     const tol = tp.tags.includes(SYNC_TAG) ? SYNC_POWER_TOL : POWER_TOL, rK = t.rating || null;
     const eg = t.engine && root.GenbidCatalog ? root.GenbidCatalog.originIn(t.engine.make || "", t.engine.model || "") : null;
     const place = t.place || (t.engine && placeOf(`${t.engine.make || ""} ${t.engine.model || ""}`)) || tp.place || null;
-    const tGroup = eg === "cn" ? "cn" : eg === "other" ? (place === "cn" ? "cnmade" : "foreign") : tp.group;
+    // t.group: the group asked for outright (groupPrices: the price of a configuration of another origin group).
+    const tGroup = t.group || (eg === "cn" ? "cn" : eg === "other" ? (place === "cn" ? "cnmade" : "foreign") : tp.group);
     let total = 0, otherGroup = 0;
     for (const [key, d] of Object.entries(docs)) {
       if (key === t.notifyNo || !d.final || !isGensetName(d.bidName)) continue;
@@ -589,9 +590,25 @@
   // Thuế GTGT (cost.vat, %; Khoa 10/11: tỷ giá và thuế GTGT lưu một lần cho mọi gói, quote/_cost): tính trên tiền hàng
   // của các dòng chưa gồm thuế (dòng có vatIncl thì đơn giá đã gồm) cộng các khoản thêm.
   const CURRENCIES = ["VND", "USD", "CNY", "EUR", "JPY"];
-  function quoteCost(row, cost = {}) {
+  // Báo giá cũ (2026-11-10): dòng giá không ghi ngày, hay ngày cách hôm nay quá STALE_DAYS, có thể đã đổi giá.
+  // → null (còn dùng được) | "nodate" | "old" (kèm số ngày ở quoteCost.stale).
+  const STALE_DAYS = 180;
+  const dateOfQuote = (v) => {
+    const s = String(v || "").trim(), m = s.match(/^(\d{1,2})[/.-](\d{1,2})[/.-](\d{4})/);
+    const t = m ? Date.UTC(Number(m[3]), Number(m[2]) - 1, Number(m[1])) : Date.parse(s);
+    return Number.isFinite(t) ? t : null;
+  };
+  function quoteStale(item, now = Date.now()) {
+    const t = dateOfQuote(item?.date);
+    if (t == null) return { why: "nodate", days: null };
+    const days = Math.floor((now - t) / 864e5);
+    return days > STALE_DAYS ? { why: "old", days } : null;
+  }
+  // cost.finance: chi phí vốn (financeCost.total), cộng vào giá vốn, không tính thuế GTGT. stale: các dòng giá cũ / không ngày.
+  function quoteCost(row, cost = {}, now = Date.now()) {
     const fx = { ...(cost.fx || {}), VND: 1 }, items = (row?.items || []).filter((x) => Number(x.unitPrice) > 0), missing = [];
-    const vatRate = Number(cost.vat) > 0 ? Number(cost.vat) : 0;
+    const vatRate = Number(cost.vat) > 0 ? Number(cost.vat) : 0, finance = Number(cost.finance) > 0 ? Number(cost.finance) : 0;
+    const stale = items.map((x) => { const s = quoteStale(x, now); return s && { id: x.id || "", desc: x.desc || "", date: x.date || "", ...s }; }).filter(Boolean);
     let goods = 0, taxed = 0;
     for (const x of items) {
       const cur = x.currency || "VND", rate = Number(fx[cur]);
@@ -599,20 +616,20 @@
       const v = (Number(x.qty) > 0 ? Number(x.qty) : 1) * Number(x.unitPrice) * rate;
       goods += v; if (x.vatIncl) taxed += v;
     }
-    if (!items.length || missing.length) return { goods: null, extras: null, vat: null, vatRate, total: null, missing, n: items.length };
+    if (!items.length || missing.length) return { goods: null, extras: null, vat: null, vatRate, finance: null, total: null, missing, n: items.length, stale };
     const extras = (cost.extras || []).reduce((a, e) => a + (e.kind === "pct" ? (goods * (Number(e.value) || 0)) / 100 : Number(e.value) || 0), 0);
     const vat = ((goods - taxed + extras) * vatRate) / 100;
-    return { goods, extras, vat, vatRate, total: goods + extras + vat, missing, n: items.length };
+    return { goods, extras, vat, vatRate, finance, total: goods + extras + vat + finance, missing, n: items.length, stale };
   }
   // Mọi dòng giá của mọi gói thành một sổ: { key, rowId, supplierId, ...item, kvaNum }, mới nhất trước. kvaNum: công
   // suất ghi ở dòng, không có thì đọc từ mô tả. engineMake (để lọc theo động cơ): hãng nhận ra trong ô Động cơ
   // (catalog.js ENGINE_BRANDS), không nhận ra thì giữ nguyên chữ đã nhập, ô trống thì "".
-  function quoteLedger(quotes) {
+  function quoteLedger(quotes, now = Date.now()) {
     const out = [], CAT = root.GenbidCatalog;
     for (const [key, q] of Object.entries(quotes || {})) for (const row of key.startsWith("_") ? [] : q?.rows || []) for (const x of row.items || []) {
       if (!(Number(x.unitPrice) > 0)) continue;
       const eng = String(x.engine || "").trim();
-      out.push({ key, rowId: row.id, supplierId: row.supplierId || "", ...x, kvaNum: Number(x.kva) > 0 ? Number(x.kva) : kvaOf(x.desc), engineMake: (CAT && brandsIn(eng, CAT.ENGINE_BRANDS)[0]) || eng });
+      out.push({ key, rowId: row.id, supplierId: row.supplierId || "", ...x, kvaNum: Number(x.kva) > 0 ? Number(x.kva) : kvaOf(x.desc), engineMake: (CAT && brandsIn(eng, CAT.ENGINE_BRANDS)[0]) || eng, stale: quoteStale(x, now) });
     }
     return out.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
   }
@@ -672,5 +689,223 @@
     const n = (by) => lots.filter((x) => x.by === by).length, sameInvestor = lots.filter((x) => x.same).length;
     return { model: n("model"), genset: n("genset"), make: n("make"), sameInvestor, score: 3 * (n("model") + n("genset")) + 2 * sameInvestor + Math.min(5, n("make")), lots };
   }
-  root.GenbidBidprice = { wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
+  // ---------- Giá theo từng cấu hình / nhóm xuất xứ (2026-11-10) ----------
+  // Nhóm xuất xứ động cơ của một cấu hình, như candidates đọc cho cấu hình hạng 1: hãng Trung Quốc → cn; hãng ngoài Trung
+  // Quốc → foreign, hay cnmade khi sản xuất tại Trung Quốc (place "cn": nhà cung cấp ở Trung Quốc, hay chữ DCEC, Wuxi...).
+  // Không nhận ra hãng → null.
+  function engineGroup(engine, place = null) {
+    const C = root.GenbidCatalog;
+    if (!engine || !C) return null;
+    const eg = C.originIn(engine.make || "", engine.model || ""), pl = place || placeOf(`${engine.make || ""} ${engine.model || ""}`);
+    return eg === "cn" ? "cn" : eg === "other" ? (pl === "cn" ? "cnmade" : "foreign") : null;
+  }
+  // Ba mức giá cho một cấu hình nhóm `group` khác cấu hình hạng 1: chỉ gói cũ BIẾT nhóm và không khác nhóm (conflict) —
+  // không vay gói không rõ nhóm hay nhóm khác. Agent chỉ xếp mức các gói của cấu hình hạng 1 (prompt bảo khác nhóm là
+  // "khác"), nên ở đây mọi gói code chọn đều tính là "gần" (basis "code", chưa qua Agent so cấu hình); quy tắc ≥ 2 nhà
+  // thầu, ≥ 3 gói của suggest giữ nguyên, không đủ thì không có mức nào. Giá của cấu hình hạng 1 vẫn là suggest như cũ.
+  // Kall: kVA × số máy cho giá theo kVA (một cỡ nhiều máy), mặc định K.
+  function groupPrices({ t, docs, K, P, group, Kall = K, strict = true }) {
+    const cand = candidates({ ...t, group }, docs, K, P), fits = (s) => (strict ? !!s.group : true) && !conflict(group, s.group);
+    const list = cand.list.filter(fits).map((s) => ({ ...s, level: "close" })), prior = cand.prior.filter(fits);
+    const stats = suggest(list, P, Kall, prior);
+    return { group, basis: "code", stats, n: list.length, nPrior: prior.length,
+      note: stats.levels.length ? "" : `Không đủ gói cũ nhóm ${GROUP[group] || group} có cạnh tranh (cần ít nhất 3, có ${stats.pool}).` };
+  }
+
+  // ---------- Khoản chi có thể phát sinh, đọc từ Phân tích (2026-11-10) ----------
+  // Mỗi khoản chỉ có nhãn, loại (vnd: số tiền; pct: % tiền hàng) và câu trích nơi Phân tích nhắc tới; KHÔNG đoán giá trị —
+  // người dùng điền số vào Chi phí phát sinh (quote/<key>.cost.extras). have: đã có khoản cùng tên trong extras.
+  const NEG_BEFORE = /(không|ko)\s*(yêu\s*cầu|bao\s*gồm|cần|có|kèm|phải)?\s*[:\-]?\s*$/i;
+  // "ATS: Không có trong tài liệu được cung cấp", "Vỏ cách âm: không yêu cầu".
+  const NEG_AFTER = /^[^;.\n]{0,4}?\s*[:\-]\s*(không|ko)\b/i;
+  const COST_HINTS = [
+    ["ats", "ATS", "vnd", /\bATS\b|chuyển\s*(đổi\s*)?nguồn\s*tự\s*động/i],
+    ["sync", "Tủ hoà đồng bộ", "vnd", /h(oà|òa)\s*đồng\s*bộ|synchroni[sz]|h(oà|òa)\s*song\s*song/i],
+    ["tank", "Bồn dầu ngoài", "vnd", /(bồn|bể|téc)\s*(chứa\s*)?(dầu|nhiên\s*liệu)\s*(ngoài|rời|ngầm|riêng)/i],
+    ["exhaust", "Ống khói, giảm thanh", "vnd", /ống\s*(khói|xả)|giảm\s*thanh|silencer|muffler/i],
+    ["canopy", "Vỏ cách âm", "vnd", /cách\s*âm|chống\s*ồn|soundproof|canopy/i],
+    ["cable", "Cáp lực", "vnd", /cáp\s*(lực|động\s*lực|điện\s*lực|đồng|nhôm|ngầm)|\bCXV\b|\bCVV\b|\bXLPE\b|cáp\s*\d+\s*[x×]\s*\d/i],
+    // A factory test report ("Biên bản thử tải xuất xưởng") is the maker's, not a load bank on site.
+    ["loadtest", "Thử tải giả", "vnd", /tải\s*giả|load\s*bank|thử\s*(nghiệm\s*)?(có\s*)?tải|chạy\s*thử[^.;]{0,40}(tải|Pđm)/i, (l) => l.replace(/thử\s*(nghiệm\s*)?tải\s*(tại\s*)?(nhà\s*máy\s*|xuất\s*xưởng)|xuất\s*xưởng[^;.]*/gi, " ")],
+    // Not the manuals that come with the set ("Tài liệu kỹ thuật + hướng dẫn sử dụng").
+    ["training", "Đào tạo, chuyển giao", "vnd", /đào\s*tạo|chuyển\s*giao\s*(công\s*nghệ|kỹ\s*thuật)|hướng\s*dẫn\s*vận\s*hành/i, (l) => l.replace(/(tài\s*liệu|sách|catalog)[^;,.]{0,40}hướng\s*dẫn[^;,.]*/gi, " ")],
+    ["upkeep", "Bảo trì định kỳ", "vnd", /bảo\s*(trì|dưỡng)\s*(định\s*kỳ|miễn\s*phí)|bảo\s*(trì|dưỡng)\s*\d+\s*lần|\d+\s*lần\s*bảo\s*(trì|dưỡng)/i],
+    // Not the set's own base frame ("Khung bệ máy").
+    ["install", "Lắp đặt, xây móng", "vnd", /lắp\s*đặt|xây\s*(dựng\s*)?(móng|bệ)|móng\s*(máy|bê\s*tông)|bệ\s*bê\s*tông|đổ\s*bê\s*tông/i, (l) => l.replace(/(nơi|vị\s*trí|địa\s*điểm|tại|đã)\s*lắp\s*đặt/gi, " ")],
+    ["remote", "Vận chuyển tới địa điểm xa", "vnd", /hải\s*đảo|(huyện|xã|thị\s*trấn|đặc\s*khu|quần)\s*đảo|trên\s*đảo|Trường\s*Sa|Hoàng\s*Sa|Côn\s*Đảo|Phú\s*Quốc|Lý\s*Sơn|Cô\s*Tô|Bạch\s*Long\s*Vĩ|Cồn\s*Cỏ|Phú\s*Quý|Vân\s*Đồn|Cát\s*Hải|Kiên\s*Hải|miền\s*núi|vùng\s*(sâu|cao)|vùng\s*xa|biên\s*giới|biên\s*phòng|nhà\s*giàn/i],
+    ["inspect", "Kiểm định", "vnd", /kiểm\s*định|QUATEST|thử\s*nghiệm\s*tại\s*(đơn\s*vị|cơ\s*quan|phòng)/i],
+  ];
+  // Months of a warranty clause: "24 tháng", "tối thiểu 730 ngày", "02 năm" (the first figure with a unit).
+  function monthsIn(s) {
+    const m = String(s || "").match(/(\d+(?:[.,]\d+)?)\s*(tháng|năm|ngày)/i);
+    if (!m) return null;
+    const v = Number(m[1].replace(",", "."));
+    return /năm/i.test(m[2]) ? v * 12 : /ngày/i.test(m[2]) ? Math.round(v / 30.4) : v;
+  }
+  const WARRANTY_TERM = /bảo\s*hành/i, NOT_WARRANTY_TIME = /bảo\s*(đảm|lãnh)|giữ\s*lại|khắc\s*phục|sửa\s*chữa|thay\s*thế|thời\s*hạn\s*sửa/i;
+  // The lines of an analysis to read, each with where it is from.
+  function analysisLines(a) {
+    const r = a?.result || a || {}, out = [];
+    for (const s of r.technicalSpecs || []) out.push({ from: "Thông số kỹ thuật", head: String(s.item || ""), text: `${s.item || ""}: ${s.requirement || ""}` });
+    for (const [k, v] of Object.entries(r.keyInfo || {})) if (v && typeof v === "string") out.push({ from: "Thông tin chính", head: k, text: v });
+    for (const c of r.contractTerms || []) out.push({ from: "Điều khoản hợp đồng", head: String(c.term || ""), text: `${c.term || ""}: ${c.requirement || ""}`, quote: c.quote || "" });
+    return out.map((x) => ({ ...x, text: String(x.text).normalize("NFC") }));
+  }
+  function costHints(analysis, extras = [], { location = "" } = {}) {
+    const lines = analysisLines(analysis), out = [];
+    if (location) lines.push({ from: "Địa điểm", head: "location", text: String(location).normalize("NFC") });
+    const have = (label, re) => (extras || []).some((e) => e && e.label && (foldVi(e.label) === foldVi(label) || re.test(String(e.label).normalize("NFC"))));
+    for (const [id, label, kind, re, clean] of COST_HINTS) {
+      for (const l of lines) {
+        const s = clean ? clean(l.text) : l.text, m = s.match(re);
+        if (!m || NEG_BEFORE.test(s.slice(Math.max(0, m.index - 30), m.index)) || NEG_AFTER.test(s.slice(m.index + m[0].length, m.index + m[0].length + 50))) continue;
+        out.push({ id, label, kind, quote: cut(l.text, 220), from: l.from, have: have(label, re) });
+        break;
+      }
+    }
+    // Warranty longer than 12 months: the clause that gives its length (not the guarantee, not the repair time).
+    const w = lines.find((l) => WARRANTY_TERM.test(l.head || l.text) && !NOT_WARRANTY_TIME.test(l.head) && monthsIn(l.text) != null) || lines.find((l) => l.head === "warranty" && monthsIn(l.text) != null);
+    const months = w ? monthsIn(w.text) : null;
+    if (months > 12) out.push({ id: "warranty", label: `Bảo hành ${months} tháng (dài hơn 12 tháng)`, kind: "pct", quote: cut(w.text, 220), from: w.from, months, have: have("Bảo hành", /bảo\s*hành/i) });
+    return out;
+  }
+
+  // ---------- Chi phí vốn từ điều khoản hợp đồng (2026-11-10) ----------
+  // Đọc contractTerms của Phân tích: % tạm ứng, hạn thanh toán (ngày), % bảo đảm thực hiện hợp đồng, % giữ lại / bảo lãnh
+  // bảo hành + thời hạn bảo hành, phạt chậm (%/ngày; %/tuần chia 7) và mức phạt tối đa — chỉ khi câu ghi số. Lãi suất năm
+  // (rate, %) và số ngày thực hiện (days) do người dùng nhập (quote/_cost), không có thì không tính và nói thiếu gì.
+  // p: { price: giá dự thầu (cơ sở của bảo đảm, phạt), base: giá vốn (cơ sở vốn lưu động; không có thì dùng price), rate, days }.
+  // Dòng: { id, label, basis (câu trích), formula, amount (đồng, null khi thiếu số), risk (không cộng vào giá vốn) }.
+  const PCT_RE = /(\d+(?:[.,]\d+)?)\s*%/;
+  const pctOf = (s) => { const m = String(s || "").match(PCT_RE); return m ? Number(m[1].replace(",", ".")) : null; };
+  const termText = (c) => `${c.requirement || ""} ${c.quote || ""}`.normalize("NFC");
+  function readTerms(terms) {
+    const T = (re, not) => (terms || []).filter((c) => re.test(String(c.term || "")) && !(not && not.test(String(c.term || ""))));
+    const out = { manual: [] }, manual = (c, why) => out.manual.push({ term: c.term || "", requirement: c.requirement || "", why });
+    const adv = T(/tạm\s*ứng/i)[0];
+    if (adv) {
+      const v = pctOf(termText(adv));
+      if (v != null) out.advance = { pct: v, term: adv };
+      else if (/^\s*(không|ko)\b|không\s*(có\s*)?tạm\s*ứng|:\s*không\b/i.test(termText(adv))) out.advance = { pct: 0, term: adv };
+      else manual(adv, "không ghi tỷ lệ tạm ứng");
+    }
+    const pay = T(/thanh\s*toán/i, /chứng\s*từ|hồ\s*sơ/i)[0];
+    if (pay) {
+      const s = termText(pay), stages = s.match(/(\d+|hai|ba|bốn)\s*đợt/i), nSt = stages ? ({ hai: 2, ba: 3, "bốn": 4 }[stages[1].toLowerCase()] || Number(stages[1])) : 1;
+      const d = s.match(/(?:trong(?:\s*vòng)?|không\s*quá|chậm\s*nhất|tối\s*đa|sau)\s*(\d+)\s*ngày/i);
+      if (nSt > 1) manual(pay, `thanh toán ${nSt} đợt`);
+      else if (d) out.pay = { days: Number(d[1]), term: pay };
+      else manual(pay, "không ghi số ngày thanh toán");
+    }
+    const sec = T(/bảo\s*đảm\s*thực\s*hiện/i, /hiệu\s*lực|tịch\s*thu|hoàn\s*trả/i)[0];
+    if (sec) { const v = pctOf(termText(sec)); if (v != null) out.security = { pct: v, term: sec }; else manual(sec, "không ghi % bảo đảm"); }
+    const ret = T(/bảo\s*(đảm|lãnh)\s*bảo\s*hành|giữ\s*lại/i)[0];
+    if (ret) { const v = pctOf(termText(ret)); if (v != null) out.retention = { pct: v, term: ret }; else manual(ret, "không ghi % bảo đảm bảo hành"); }
+    const war = T(/thời\s*(gian|hạn)\s*bảo\s*hành|^bảo\s*hành$/i)[0];
+    if (war) { const m = monthsIn(war.requirement) ?? monthsIn(war.quote); if (m != null) out.warranty = { months: m, term: war }; else if (ret) manual(war, "không ghi thời hạn bảo hành"); }
+    const pen = T(/phạt/i, /tối\s*đa/i)[0];
+    if (pen) {
+      const m = termText(pen).match(/(\d+(?:[.,]\d+)?)\s*%\s*\/?\s*(?:mỗi\s*|một\s*|01\s*)?(ngày|tuần)/i);
+      if (m) out.penalty = { perDay: Number(m[1].replace(",", ".")) / (/tuần/i.test(m[2]) ? 7 : 1), unit: m[2], raw: Number(m[1].replace(",", ".")), term: pen };
+      else manual(pen, "không ghi mức phạt theo ngày/tuần");
+    }
+    const pmax = T(/tối\s*đa/i).find((c) => /phạt|khấu\s*trừ/i.test(`${c.term} ${termText(c)}`)) || T(/phạt/i).find((c) => /tối\s*đa/i.test(termText(c)) && PCT_RE.test(termText(c).split(/tối\s*đa/i)[1] || ""));
+    if (pmax) { const s = termText(pmax), v = pctOf(/tối\s*đa/i.test(pmax.term) ? s : s.split(/tối\s*đa/i)[1]); if (v != null) out.penaltyMax = { pct: v, term: pmax }; }
+    const del = T(/thời\s*(hạn|gian)\s*(giao\s*hàng|thực\s*hiện)/i)[0];
+    if (del) { const m = termText(del).match(/(\d+)\s*ngày/i); if (m) out.daysHint = Number(m[1]); }
+    return out;
+  }
+  const vnd = (v) => Math.round(v).toLocaleString("vi-VN");
+  function financeCost(terms, p = {}) {
+    const r = readTerms(terms), rate = Number(p.rate) > 0 ? Number(p.rate) : null, days = Number(p.days) > 0 ? Number(p.days) : null;
+    const price = Number(p.price) > 0 ? Number(p.price) : null, base = Number(p.base) > 0 ? Number(p.base) : price, baseName = Number(p.base) > 0 ? "giá vốn" : "giá dự thầu";
+    const missing = [];
+    if (!rate) missing.push("lãi suất vay vốn (%/năm)");
+    if (!days) missing.push(`số ngày thực hiện hợp đồng${r.daysHint ? ` (điều khoản ghi ${r.daysHint} ngày)` : ""}`);
+    if (!price) missing.push("giá dự thầu");
+    const ok = rate && days && price, i = (rate || 0) / 100 / 365, lines = [];
+    const q = (x) => x?.term ? String(x.term.quote || x.term.requirement || "") : "";
+    // Vốn lưu động: phần chưa được tạm ứng nằm trong hàng từ khi ký tới khi được trả (thực hiện + hạn thanh toán).
+    if (r.pay || r.advance || r.manual.some((m) => /tạm\s*ứng|thanh\s*toán/i.test(m.term))) {
+      const adv = r.advance ? r.advance.pct : null, pay = r.pay ? r.pay.days : null;
+      const can = ok && adv != null && pay != null;
+      lines.push({ id: "capital", label: "Vốn lưu động (chờ thanh toán)", basis: [q(r.advance), q(r.pay)].filter(Boolean).join(" · "),
+        formula: `${baseName} × (1 − tạm ứng ${adv ?? "?"}%) × lãi ${rate ?? "?"}%/năm × (thực hiện ${days ?? "?"} + thanh toán ${pay ?? "?"} ngày) / 365`,
+        amount: can ? base * (1 - adv / 100) * i * (days + pay) : null, ...(can ? {} : { lack: [adv == null && "% tạm ứng", pay == null && "hạn thanh toán"].filter(Boolean) }) });
+    }
+    if (r.security) lines.push({ id: "security", label: "Bảo đảm thực hiện hợp đồng", basis: q(r.security),
+      formula: `giá dự thầu × ${r.security.pct}% × lãi ${rate ?? "?"}%/năm × ${days ?? "?"} ngày / 365`, amount: ok ? price * (r.security.pct / 100) * i * days : null });
+    if (r.retention) {
+      const wd = r.warranty ? Math.round(r.warranty.months * 30.4) : null;
+      lines.push({ id: "retention", label: "Bảo đảm bảo hành", basis: [q(r.retention), q(r.warranty)].filter(Boolean).join(" · "),
+        formula: `giá dự thầu × ${r.retention.pct}% × lãi ${rate ?? "?"}%/năm × bảo hành ${r.warranty ? `${r.warranty.months} tháng ≈ ${wd} ngày` : "?"} / 365`,
+        amount: rate && price && wd ? price * (r.retention.pct / 100) * i * wd : null, ...(wd ? {} : { lack: ["thời hạn bảo hành"] }) });
+    }
+    // Phạt chậm: rủi ro, không cộng vào giá vốn.
+    if (r.penalty || r.penaltyMax) lines.push({ id: "penalty", risk: true, label: "Phạt chậm giao hàng (rủi ro, không cộng vào giá vốn)", basis: [q(r.penalty), q(r.penaltyMax)].filter(Boolean).join(" · "),
+      formula: `${r.penalty ? `${r.penalty.raw}%/${r.penalty.unit}${r.penalty.unit === "tuần" ? ` (≈ ${(+r.penalty.perDay.toFixed(3))}%/ngày)` : ""}` : "?"}${r.penaltyMax ? `, tối đa ${r.penaltyMax.pct}% giá hợp đồng` : ""}${r.penalty && price ? `: mỗi ngày trễ ≈ ${vnd((price * r.penalty.perDay) / 100)} đ` : ""}`,
+      amount: r.penaltyMax && price ? (price * r.penaltyMax.pct) / 100 : null });
+    const total = lines.filter((x) => !x.risk && x.amount != null).reduce((a, x) => a + x.amount, 0);
+    return { lines, total: lines.some((x) => !x.risk && x.amount != null) ? total : null, missing, manual: r.manual, read: { advance: r.advance?.pct ?? null, payDays: r.pay?.days ?? null, security: r.security?.pct ?? null, retention: r.retention?.pct ?? null, warrantyMonths: r.warranty?.months ?? null, penaltyPerDay: r.penalty?.perDay ?? null, penaltyMax: r.penaltyMax?.pct ?? null, daysHint: r.daysHint ?? null } };
+  }
+
+  // ---------- Cảnh báo giá gói không khả thi (2026-11-10) ----------
+  // cost: giá vốn từ quoteCost (chỉ khi đủ báo giá khớp, do nơi gọi chọn), finance: chi phí vốn (financeCost.total).
+  function feasibility({ P, cost, finance = 0, levels = [] }) {
+    if (!(cost > 0)) return { flags: [], total: null };
+    const total = cost + (Number(finance) || 0), flags = [], hi = (levels || []).reduce((a, l) => (l.price > (a?.price || 0) ? l : a), null);
+    const fin = finance > 0 ? ` (giá vốn ${vnd(cost)} đ + chi phí vốn ${vnd(finance)} đ)` : "";
+    if (P > 0 && total >= P) flags.push({ id: "over-package", text: `Giá vốn ${vnd(total)} đ${fin} bằng ${(100 * total / P).toFixed(1)}% giá gói ${vnd(P)} đ: không thể bỏ giá dưới giá gói mà có lãi.` });
+    else if (hi && total >= hi.price) flags.push({ id: "over-levels", text: `Giá vốn ${vnd(total)} đ${fin} cao hơn mức ${hi.label} ${vnd(hi.price)} đ (${Math.round(100 * hi.ratio)}% giá gói): gói cũ tương tự hiếm khi trúng ở giá có lãi.` });
+    return { flags, total };
+  }
+
+  // ---------- Hồ sơ đối thủ (2026-11-10) ----------
+  // Nhà thầu đã dự các phần mua sắm máy phát (đóng trước gói này) cùng chủ đầu tư, cùng tỉnh hoặc cùng cỡ (±15% kVA): số
+  // lần dự, số lần trúng, tỉ lệ giá dự / giá gói (trung vị + khoảng, chỉ khi ≥ 3 lượt có giá), hãng động cơ hay chào (từ hàng
+  // trúng), số lần bị loại kỹ thuật. Chỉ thống kê mô tả. t: { notifyNo, investorName, location, kva, bidCloseDate }.
+  const TECH_OUT = /kỹ\s*thuật|E-?HSĐXKT|\bYCKT\b/i, RIVAL_TOL = 0.15, RIVAL_MIN = 3;
+  function rivalsOf(t, docs, { ownTax = "", limit = 12 } = {}) {
+    // Phân tích ghi chủ đầu tư kèm "(MST …; địa chỉ)": chỉ lấy tên.
+    const inv = invKeyOf(String(t.investorName || "").replace(/\s*\(.*$/, "")), prov = provinceOf(t.location), K = Number(t.kva) || null, cutAt = timeOf(t.bidCloseDate), self = t.notifyNo || "";
+    const CAT = root.GenbidCatalog, by = new Map();
+    for (const [key, d] of Object.entries(docs || {})) {
+      if (key === self || !isGensetName(d.bidName)) continue;
+      const at = timeOf(d.bidCloseDate) ?? timeOf(d.openedAt);
+      if (cutAt != null && at != null && at >= cutAt) continue;
+      const multi = (d.lots || []).length > 1;
+      for (const lot of d.lots || []) {
+        const name = (multi && lot.lotName) || d.bidName;
+        if (bidKind(name) !== "supply" || !(lot.bidders || []).length) continue;
+        const k = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName));
+        const why = { investor: !!inv && invKeyOf(d.investorName) === inv, province: !!prov && provinceOf(d.location) === prov, size: !!(K && k) && Math.abs(Math.log(k / K)) <= Math.log(1 + RIVAL_TOL) };
+        if (!why.investor && !why.province && !why.size) continue;
+        const price = lot.price ?? (multi ? null : d.estimatedPrice);
+        const makes = CAT ? brandsIn((lot.goods || []).filter(wonSetRow).map((g) => [g.name, g.maker, g.label, g.code, g.desc].filter(Boolean).join(" ")).join(" | ").replace(/[^.;|\n]*tương\s*đương[^.;|\n]*/gi, " "), CAT.ENGINE_BRANDS) : [];
+        for (const b of lot.bidders) {
+          const id = taxKey(b);
+          if (!id) continue;
+          const r = by.get(id) || { id, name: b.name || "", n: 0, wins: 0, techOut: 0, ratios: [], makes: new Map(), investor: 0, province: 0, size: 0, last: "" };
+          r.n++; if (b.won) r.wins++; if (TECH_OUT.test(String(b.reason || ""))) r.techOut++;
+          for (const w of ["investor", "province", "size"]) if (why[w]) r[w]++;
+          const bp = Number(bdPrice(b));
+          if (price > 0 && bp > 0 && bp / price >= 0.3 && bp / price <= 1.2) r.ratios.push(bp / price);
+          if (b.won) for (const m of makes) r.makes.set(m, (r.makes.get(m) || 0) + 1);
+          const ds = d.bidCloseDate || d.openedAt || "";
+          if (ds > r.last) r.last = ds;
+          by.set(id, r);
+        }
+      }
+    }
+    const own = String(ownTax || "").replace(/\D/g, "");
+    const list = [...by.values()].map((r) => {
+      const a = [...r.ratios].sort((x, y) => x - y);
+      return { id: r.id, name: r.name, self: !!own && r.id === own, n: r.n, wins: r.wins, techOut: r.techOut, investor: r.investor, province: r.province, size: r.size, last: r.last,
+        priced: a.length, ratio: a.length >= RIVAL_MIN ? { median: median(a), min: a[0], max: a[a.length - 1] } : null,
+        makes: [...r.makes.entries()].sort((x, y) => y[1] - x[1]).map(([make, n]) => ({ make, n })) };
+    }).sort((a, b) => b.investor - a.investor || b.n - a.n || b.wins - a.wins);
+    return { list: list.slice(0, limit), total: list.length, basis: { investor: !!inv, province: prov || "", kva: K, tol: RIVAL_TOL, min: RIVAL_MIN } };
+  }
+
+  root.GenbidBidprice = { engineGroup, groupPrices, costHints, COST_HINTS, monthsIn, readTerms, financeCost, feasibility, rivalsOf, STALE_DAYS, quoteStale, conflict, wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
 })(typeof window !== "undefined" ? window : globalThis);
