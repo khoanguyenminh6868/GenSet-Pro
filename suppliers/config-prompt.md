@@ -14,7 +14,10 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   suggest configurations of that size only; the other sizes have runs of their own. catalog.md already lists only engines of that origin; the code drops a configuration
   whose engine is of the other origin (under Chinese, also one whose make the source does not state), except, under
   Chinese, a foreign engine that a supplier based in China (country CN) offers in a row of its own table: keep it and
-  list only those suppliers.
+  list only those suppliers. Under G7 / G20 (Khoa, 2026-11-10) the suppliers are of the group too: catalog.md lists only
+  rows of suppliers based in a country of the group, and the code drops any other supplier and a configuration taken
+  from its row (an assembler in China offering a Cummins engine, a Stamford alternator and a Deep Sea controller is NOT
+  a suggestion for a tender that asks for G7).
 - `hsmt.txt`: the tender's own text. Every requirement quote must be copied from here.
 - `catalog.md`, prepared and ranked by code (Khoa, 2026-11-02):
   - "Ứng viên": the best genset rows of the system for this tender, best first (power 95–140%, the HSMT's frequency,
@@ -169,7 +172,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    confidence, the controller). A supplier truly fits when its row names this engine and the configuration has no
    `not_met` on power, frequency, a named make or origin.
 4. Only when no configuration of step 2 has a supplier that truly fits: search the internet (WebSearch) for the ONE
-   best configuration and the supplier that sells it. Official pages first: a genset maker's page or datasheet that
+   best configuration and the supplier that sells it. Under G7 / G20 that supplier is a genset maker based in a country
+   of the group (its `country` in newCatalog.json), never an assembler in China. Official pages first: a genset maker's page or datasheet that
    lists a genset with its engine and alternator, then the engine and alternator makers' datasheets. Save every page
    you rely on with `node "<script>" save --dir . --url "<url>"` (the command is in input.md); it prints the saved
    file. Quotes for internet sources must be copied from those saved files. Never use a page you did not save.
