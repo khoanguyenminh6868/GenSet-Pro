@@ -32,7 +32,11 @@ with "genset" / "generator" and the power, its maker's genset range, and Chinese
 ## Steps
 1. Read input.md and the first lines of catalog.md. Note the power, frequency, voltage and any named make.
 2. Search the internet (web search). Search the watchlist companies of input.md by their own name first, then
-   searches such as "<power> kVA diesel generator set manufacturer China datasheet". Before you work on a company,
+   searches such as "<power> kVA diesel generator set manufacturer China datasheet". When the "Xuất xứ động cơ" section of
+   input.md asks for G7 or G20 (Khoa, 2026-11-10), search only for genset makers based in a country of that group
+   ("<power> kVA diesel generator set manufacturer UK / Italy / Germany / Japan / USA datasheet", the makers named
+   there) and write their true `country`: a supplier based in China or another country outside the group joins no
+   configuration of this tender, even with a Cummins or Perkins engine. Before you work on a company,
    run the "kiểm tra đã có" command of input.md with its name or website: it says if it is already in the system,
    a dealer site or a B2B platform.
 3. Official pages first: the maker's own website or datasheet (PDF) that lists a genset (or engine, alternator) at

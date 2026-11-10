@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { check, catalogRecords, byOrigin, cnSuppliers, fitsCap, findCheck, mergeFind, partsOf } from "./config-bot.mjs";
+import { check, catalogRecords, byOrigin, cnSuppliers, groupSuppliers, fitsCap, findCheck, mergeFind, partsOf } from "./config-bot.mjs";
 
 const sup = [{ id: "s", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Standby kW/kVA | Prime kW/kVA | Engine | Alternator"], rows: ["| SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | UK"] }] }];
 const hsmt = "Chương V. Yêu cầu kỹ thuật\nCông suất liên tục (Prime): ≥ 450 kVA\nĐầu phát: Stamford hoặc tương đương\nTần số 50Hz";
@@ -137,9 +137,45 @@ test("Xuất xứ Trung Quốc drops a foreign engine, Khác keeps only foreign 
   assert.ok(cn.problems.some((p) => p.includes("không phải hãng Trung Quốc")));
   assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "other" }).result.configs.length, 1);
   assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "all" }).result.configs.length, 1);
-  // Perkins is British: kept under G7 and G20.
-  assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "g7" }).result.configs.length, 1);
-  assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "g20" }).result.configs.length, 1);
+  // Perkins is British: kept under G7 and G20, from a supplier based in a country of the group.
+  const uk = [{ ...sup[0], country: "GB" }];
+  assert.equal(check(base(), { hsmtText: hsmt, suppliers: uk, readWeb, origin: "g7" }).result.configs.length, 1);
+  assert.equal(check(base(), { hsmtText: hsmt, suppliers: uk, readWeb, origin: "g20" }).result.configs.length, 1);
+});
+
+test("Xuất xứ G7 / G20: only suppliers based in a country of the group (Khoa, 2026-11-10, IB2600603983)", () => {
+  const C = globalThis.GenbidCatalog;
+  // The same Perkins row from an assembler in China, a maker in the UK and one in Türkiye (G20, not G7).
+  const list = [{ ...sup[0], country: "CN" }, { ...sup[0], id: "uk", country: "GB" }, { ...sup[0], id: "tr", country: "TR" }, { ...sup[0], id: "none" }];
+  const at = (id) => ({ ...row, supplierId: id });
+  const of = (id, others = []) => { const r = base(), c = r.configs[0]; c.engine.src = c.alternator.src = c.genset.src = at(id); c.suppliers = [id, ...others].map((x) => ({ supplierId: x, n: 101, line: row.line })); return r; };
+  // The configuration of the Chinese assembler's row goes, with a reason.
+  const cn = check(of("s", ["uk"]), { hsmtText: hsmt, suppliers: list, readWeb, origin: "g7" });
+  assert.equal(cn.result.configs.length, 0);
+  assert.ok(cn.problems.some((p) => /đặt tại Trung Quốc, ngoài nhóm G7/.test(p)));
+  assert.ok(cn.result.notes.some((n) => /chỉ gợi ý nhà cung cấp đặt tại nước G7/.test(n)));
+  // The UK maker's row stays; the suppliers outside the group (China, Türkiye, country unknown) leave its list.
+  const uk = check(of("uk", ["s", "tr", "none"]), { hsmtText: hsmt, suppliers: list, readWeb, origin: "g7" });
+  assert.deepEqual(uk.result.configs.map((c) => c.suppliers.map((x) => x.supplierId)), [["uk"]]);
+  // G20 has Türkiye, never China.
+  const g20 = check(of("tr", ["s", "uk"]), { hsmtText: hsmt, suppliers: list, readWeb, origin: "g20" });
+  assert.deepEqual(g20.result.configs.map((c) => c.suppliers.map((x) => x.supplierId)), [["tr", "uk"]]);
+  // No origin asked, or "Khác": the suppliers are as before.
+  for (const origin of ["all", "other"]) assert.deepEqual(check(of("s", ["uk"]), { hsmtText: hsmt, suppliers: list, readWeb, origin }).result.configs[0].suppliers.map((x) => x.supplierId), ["s", "uk"]);
+  // The catalog the agent reads: only the rows of the group's suppliers; an engine none of them offers is not listed.
+  const engines = C.build(list).engines;
+  assert.deepEqual(groupSuppliers(list, "g7"), new Set(["uk"]));
+  assert.equal(groupSuppliers(list, "all"), null);
+  assert.deepEqual(byOrigin(engines, "g7", new Set(), groupSuppliers(list, "g7")).flatMap((e) => e.uses.map((u) => u.supplierId)), ["uk"]);
+  assert.deepEqual(byOrigin(engines, "g20", new Set(), groupSuppliers(list, "g20")).flatMap((e) => e.uses.map((u) => u.supplierId)).sort(), ["tr", "uk"]);
+  assert.deepEqual(byOrigin(engines, "g7", new Set(), groupSuppliers([list[0]], "g7")), []);
+  assert.equal(engines.flatMap((e) => e.uses).length, 4);
+  // Tìm NCC: a supplier found in China joins no configuration of a G7 tender; one in the UK does.
+  const found = { origin: "g7", configs: [] };
+  mergeFind(found, [list[0]], { cap: { value: 450, unit: "kVA" }, origin: "g7" });
+  assert.equal(found.configs.length, 0);
+  mergeFind(found, [list[1]], { cap: { value: 450, unit: "kVA" }, origin: "g7" });
+  assert.deepEqual(found.configs.map((c) => c.suppliers.map((x) => x.supplierId)), [["uk"]]);
 });
 
 test("engines are split by origin from their make or model code", () => {
