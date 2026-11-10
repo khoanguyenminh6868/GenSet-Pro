@@ -234,31 +234,39 @@
     stamps.get(coll)?.delete(id);
     local.del(coll, [id]);
   }
+  // Realtime sends every subscriber each written row, data included. hsmttext (the HSMT's text, ~32 KB a part, 1,650
+  // parts on one day of the specs run) is only read once with doc().get(), never watched, so this handler dropped it
+  // anyway: insert/update events skip it on the server (Supabase egress, 2026-11-10). Deletes cannot be filtered and
+  // carry only the key, so they come unfiltered. To listen to everything again: RT_FILTER = "".
+  const RT_FILTER = "coll=neq.hsmttext";
   function ensureChannel() {
     if (channel) return;
-    channel = sb.channel("docs").on("postgres_changes", { event: "*", schema: "public", table: "docs" }, async (p) => {
-      const row = p.eventType === "DELETE" ? p.old : p.new;
-      const c = row && cache.get(row.coll);
-      if (!c) return;
-      touched.add(row.coll + "/" + row.id);
-      if (p.eventType === "DELETE") { drop(row.coll, row.id); notify(row.coll); return; }
-      // A light collection reads its light copy again, unless this page holds the whole document.
-      if (LITE.has(row.coll) && (!c.has(row.id) || c.get(row.id)?._lite)) {
-        const [r] = await liteRows(row.coll, [row.id]).catch(() => []);
-        if (r) { keep(row.coll, r.id, r.data, r.updated_at); notify(row.coll); }
-        return;
-      }
-      // Realtime can deliver a row without its data (large or unchanged values are left out of the payload):
-      // read the row again instead of overwriting the cached document with nothing.
-      let data = row.data, at = row.updated_at;
-      if (!data || typeof data !== "object" || (p.errors && p.errors.length)) {
-        const { data: rows, error } = await sb.from("docs").select("data,updated_at").eq("coll", row.coll).eq("id", row.id).limit(1);
-        if (error || !rows?.length) return;
-        ({ data, updated_at: at } = rows[0]);
-      }
-      keep(row.coll, row.id, data, at);
-      notify(row.coll);
-    }).subscribe();
+    const on = (ch, event, filter) => ch.on("postgres_changes", { event, schema: "public", table: "docs", ...(filter ? { filter } : {}) }, onChange);
+    channel = RT_FILTER ? on(on(on(sb.channel("docs"), "INSERT", RT_FILTER), "UPDATE", RT_FILTER), "DELETE") : on(sb.channel("docs"), "*");
+    channel.subscribe();
+  }
+  async function onChange(p) {
+    const row = p.eventType === "DELETE" ? p.old : p.new;
+    const c = row && cache.get(row.coll);
+    if (!c) return;
+    touched.add(row.coll + "/" + row.id);
+    if (p.eventType === "DELETE") { drop(row.coll, row.id); notify(row.coll); return; }
+    // A light collection reads its light copy again, unless this page holds the whole document.
+    if (LITE.has(row.coll) && (!c.has(row.id) || c.get(row.id)?._lite)) {
+      const [r] = await liteRows(row.coll, [row.id]).catch(() => []);
+      if (r) { keep(row.coll, r.id, r.data, r.updated_at); notify(row.coll); }
+      return;
+    }
+    // Realtime can deliver a row without its data (large or unchanged values are left out of the payload):
+    // read the row again instead of overwriting the cached document with nothing.
+    let data = row.data, at = row.updated_at;
+    if (!data || typeof data !== "object" || (p.errors && p.errors.length)) {
+      const { data: rows, error } = await sb.from("docs").select("data,updated_at").eq("coll", row.coll).eq("id", row.id).limit(1);
+      if (error || !rows?.length) return;
+      ({ data, updated_at: at } = rows[0]);
+    }
+    keep(row.coll, row.id, data, at);
+    notify(row.coll);
   }
 
   // This device's copy of the documents (IndexedDB), so a reload shows the list at once and then reads only the
