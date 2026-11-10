@@ -84,6 +84,1041 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE9.5E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C1.1"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 8.5,
+        "max": 8.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE13.5E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C1.5"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 12.5,
+        "max": 12.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE16E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C1.5"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 14.5,
+        "max": 14.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE18E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C2.2"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 16.5,
+        "max": 16.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE22E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C2.2"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE33E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C3.3"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE33E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C3.3"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE50E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C3.3"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE50E2",
+      "fuel": "diesel",
+      "engineModels": [
+        "C3.3"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE55E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C3.3"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE55E2",
+      "fuel": "diesel",
+      "engineModels": [
+        "C4.4"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE65E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C3.3"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE65E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C4.4"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE88E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C4.4"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE88E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C4.4"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE110E2",
+      "fuel": "diesel",
+      "engineModels": [
+        "C4.4"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE110E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C4.4"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE150E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C7.1"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE165E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C7.1"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE165E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C7.1"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE175E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C7.1"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 160,
+        "max": 160,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE200E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C7.1"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE200E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C7.1"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE250E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C9"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 230,
+        "max": 230,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE275E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C9"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE275E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C9"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE300E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C9"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE300E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C9"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE330E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C9"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE350C3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C13"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE400C3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C13"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE400E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C13"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE450E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C13"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE450E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C13"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE450C3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C15"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE500C3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C15"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE500E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C15"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 455,
+        "max": 455,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE550E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C15"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE550E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C15"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE605E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C18"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE600C3",
+      "fuel": "diesel",
+      "engineModels": [
+        "C18"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE660E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C18"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE715E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C18"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE780E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C18"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 706,
+        "max": 706,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE850E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C18"
+      ],
+      "engineMakes": [
+        "Caterpillar"
+      ],
+      "power": {
+        "min": 770,
+        "max": 770,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -112,9 +1147,134 @@
         "With models ranging from 100 to 4,500 ekW (100 to 4,500 kVA), these systems operate on pipeline natural gas as well as a wide range of alternative gaseous fuels"
       ],
       "file": "sources/caterpillar/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://emc.cat.com/n/api/pubdirect?media_string_id=LEXE7582-09_1.pdf",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "9.5 8.5 DE9.5E3 C1.1 R96/EU Stage IIIA Equivalent",
+        "13.5 12.5 DE13.5E3 C1.5 R96/EU Stage IIIA Equivalent",
+        "16 14.5 DE16E0 C1.5 Low BSFC",
+        "18 16.5 DE18E3 C2.2 R96/EU Stage IIIA Equivalent",
+        "22 20 DE22E3 C2.2 R96/EU Stage IIIA Equivalent",
+        "33 30 DE33E0 C3.3 Low BSFC",
+        "33 30 DE33E3 C3.3 R96/EU Stage IIIA Equivalent",
+        "50 45 DE50E0 C3.3 Low BSFC",
+        "50 45 DE50E2 C3.3 R96/EU Stage II Equivalent",
+        "55 50 DE55E0 C3.3 Low BSFC",
+        "55 50 DE55E2 C4.4 R96/EU Stage II Equivalent",
+        "65 60 DE65E0 C3.3 Low BSFC",
+        "65 60 DE65E3 C4.4 EU Stage IIIA",
+        "88 80 DE88E0 C4.4 Low BSFC",
+        "88 80 DE88E3 C4.4 EU Stage IIIA",
+        "110 100 DE110E2 C4.4 R96/EUII Equivalent",
+        "110 100 DE110E3 C4.4 EU Stage IIIA",
+        "150 135 DE150E0 C7.1 Low BSFC",
+        "165 150 DE165E0 C7.1 Low BSFC",
+        "165 150 DE165E3 C7.1 R96/EU Stage IIIA Equivalent",
+        "175 160 DE175E3 C7.1 R96/EU Stage IIIA Equivalent",
+        "200 180 DE200E0 C7.1 Low BSFC",
+        "200 180 DE200E3 C7.1 R96/EU Stage IIIA Equivalent",
+        "250 230 DE250E0 C9 Low BSFC",
+        "275 250 DE275E0 C9 Low BSFC",
+        "275 250 DE275E3 C9 R96/EU Stage IIIA Equivalent",
+        "300 275 DE300E0 C9 Low BSFC",
+        "300 275 DE300E3 C9 R96/EU Stage IIIA Equivalent",
+        "330 300 DE330E0 C9 Low BSFC",
+        "— 350 DE350C3 C13 China Non-Road Stage III",
+        "— 400 DE400C3 C13 China Non-Road Stage III",
+        "400 350 DE400E0 C13 Low BSFC",
+        "450 400 DE450E0 C13 Low BSFC",
+        "450 400 DE450E3 C13 R96/EU Stage IIIA Equivalent",
+        "450 400 — C15 Low BSFC",
+        "— 450 DE450C3 C15 China Non-Road Stage III",
+        "— 500 DE500C3 C15 China Non-Road Stage III",
+        "500 455 DE500E0 C15 Low BSFC",
+        "550 500 DE550E0 C15 Low BSFC",
+        "550 500 DE550E3 C15 R96/EU Stage IIIA Equivalent",
+        "605 550 DE605E0 C18 Low BSFC",
+        "— 600 DE600C3 C18 China Non-Road Stage III",
+        "660 600 DE660E0 C18 Low BSFC",
+        "700 635 — C18 Low BSFC",
+        "715 650 DE715E0 C18 Low BSFC",
+        "780 706 DE780E0 C18 Low BSFC",
+        "850 770 DE850E0 C18 Low BSFC"
+      ],
+      "file": "sources/caterpillar/2001.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-10",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Cat diesel generator sets 50 Hz, 6.8 – 250 kVA ratings (three phase, 1500 rpm)",
+      "header": [
+        "            kVA         Generator Set",
+        "   Standby       Prime  Model                       Engine  Configuration"
+      ],
+      "rows": [
+        "   9.5           8.5    DE9.5E3                     C1.1    R96/EU Stage IIIA Equivalent",
+        "   13.5          12.5   DE13.5E3                    C1.5    R96/EU Stage IIIA Equivalent",
+        "   16            14.5   DE16E0                      C1.5    Low BSFC",
+        "   18            16.5   DE18E3                      C2.2    R96/EU Stage IIIA Equivalent",
+        "   22            20     DE22E3                      C2.2    R96/EU Stage IIIA Equivalent",
+        "   33            30     DE33E0                      C3.3    Low BSFC",
+        "   33            30     DE33E3                      C3.3    R96/EU Stage IIIA Equivalent",
+        "   50            45     DE50E0                      C3.3    Low BSFC",
+        "   50            45     DE50E2                      C3.3    R96/EU Stage II Equivalent",
+        "   55            50     DE55E0                      C3.3    Low BSFC",
+        "   55            50     DE55E2                      C4.4    R96/EU Stage II Equivalent",
+        "   65            60     DE65E0                      C3.3    Low BSFC",
+        "   65            60     DE65E3                      C4.4    EU Stage IIIA",
+        "   88            80     DE88E0                      C4.4    Low BSFC",
+        "   88            80     DE88E3                      C4.4    EU Stage IIIA",
+        "   110           100    DE110E2                     C4.4    R96/EUII Equivalent",
+        "   110           100    DE110E3                     C4.4    EU Stage IIIA",
+        "   150           135    DE150E0                     C7.1    Low BSFC",
+        "   165           150    DE165E0                     C7.1    Low BSFC",
+        "   165           150    DE165E3                     C7.1    R96/EU Stage IIIA Equivalent",
+        "   175           160    DE175E3                     C7.1    R96/EU Stage IIIA Equivalent",
+        "   200           180    DE200E0                     C7.1    Low BSFC",
+        "   200           180    DE200E3                     C7.1    R96/EU Stage IIIA Equivalent",
+        "   250           230    DE250E0                     C9      Low BSFC"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cat diesel generator sets 50 Hz, 250 – 850 kVA ratings (1500 rpm)",
+      "header": [
+        "         kVA              Generator Set",
+        "Standby       Prime             Model          Engine          Configuration"
+      ],
+      "rows": [
+        "275           250         DE275E0                   C9         Low BSFC",
+        "275           250         DE275E3                   C9         R96/EU Stage IIIA Equivalent",
+        "300           275         DE300E0                   C9         Low BSFC",
+        "300           275         DE300E3                   C9         R96/EU Stage IIIA Equivalent",
+        "330           300         DE330E0                   C9         Low BSFC",
+        "—             350         DE350C3              C13             China Non-Road Stage III",
+        "—             400         DE400C3              C13             China Non-Road Stage III",
+        "400           350         DE400E0              C13             Low BSFC",
+        "450           400         DE450E0              C13             Low BSFC",
+        "450           400         DE450E3              C13             R96/EU Stage IIIA Equivalent",
+        "450           400               —              C15             Low BSFC",
+        "—             450         DE450C3              C15             China Non-Road Stage III",
+        "—             500         DE500C3              C15             China Non-Road Stage III",
+        "500           455         DE500E0              C15             Low BSFC",
+        "550           500         DE550E0              C15             Low BSFC",
+        "550           500         DE550E3              C15             R96/EU Stage IIIA Equivalent",
+        "605           550         DE605E0              C18             Low BSFC",
+        "—             600         DE600C3              C18             China Non-Road Stage III",
+        "660           600         DE660E0              C18             Low BSFC",
+        "700           635               —              C18             Low BSFC",
+        "715           650         DE715E0              C18             Low BSFC",
+        "780           706         DE780E0              C18             Low BSFC",
+        "850           770         DE850E0              C18             Low BSFC"
+      ]
+    }
+  ]
 }
