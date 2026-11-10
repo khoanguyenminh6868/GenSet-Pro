@@ -273,6 +273,9 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .kv{display:grid;grid-template-columns:minmax(120px,34%) minmax(0,1fr);gap:6px 12px;font-size:13.5px;margin:0}
 .kv.kvo{grid-template-columns:110px minmax(0,1fr)}
 .kv.kvw{grid-template-columns:fit-content(260px) minmax(0,1fr);column-gap:20px}
+/* Phone: Thông số kỹ thuật and Điều khoản hợp đồng of the analysis tab stack into one column (Khoa, 2026-11-10). */
+@media (max-width:640px){.kv.kv1m{grid-template-columns:minmax(0,1fr);row-gap:0}.kv.kv1m dt{color:var(--fg);font-weight:600;padding-top:10px;border-top:1px solid var(--line)}.kv.kv1m dt:first-child{padding-top:0;border-top:0}.kv.kv1m dd{padding:2px 0 10px}
+table.spec1 thead{display:none}table.spec1,table.spec1 tbody,table.spec1 tr,table.spec1 td{display:block;width:auto}table.spec1 tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.spec1 tr:last-child{border-bottom:0}table.spec1 td{border:0;padding:2px 0}table.spec1 td.s-item{font-weight:600}table.spec1 td.s-ref:empty{display:none}table.spec1 td.s-ref:not(:empty)::before{content:"Nguồn: "}}
 .kv dt{color:var(--muted)}.kv dd{margin:0;overflow-wrap:anywhere}
 .kv dd.hl-price{color:var(--mint);font-weight:600}.kv dd.hl-close{color:var(--rose);font-weight:600}
 .doclist{display:flex;flex-direction:column;gap:6px}
@@ -3684,7 +3687,7 @@ function tlktHtml(c) {
 }
 
 // ---------- Analysis rendering ----------
-const specsTableHtml = (a) => h`<details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table><thead><tr><th>Hạng mục</th><th>Yêu cầu</th><th>Nguồn</th></tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td>${s.item}</td><td>${s.requirement}${raw(s.quote ? h`<div class="muted small">"${s.quote}"</div>` : "")}</td><td class="muted">${s.reference || ""}${raw(s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td></tr>`).join(""))}</tbody></table></div></details>`;
+const specsTableHtml = (a) => h`<details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table class="spec1"><thead><tr><th>Hạng mục</th><th>Yêu cầu</th><th>Nguồn</th></tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td class="s-item">${s.item}</td><td>${s.requirement}${raw(s.quote ? h`<div class="muted small">"${s.quote}"</div>` : "")}</td><td class="muted s-ref">${s.reference || ""}${raw(s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td></tr>`).join(""))}</tbody></table></div></details>`;
 // basis "specs": the bot read only the technical specs of Chương V (genbid-sync.js specs, Khoa 2026-11-03).
 function specsOnlyHtml(a) {
   const cap = a.keyInfo?.generatorCapacity;
@@ -3731,7 +3734,7 @@ function analysisHtml(a) {
 function contractTermsHtml(a) {
   const t = a.contractTerms || [];
   if (!t.length) return "";
-  return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv kvw">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
+  return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv kvw kv1m">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
 }
 function comparisonHtml(c) {
   const v = VERDICT[c.verdict] || ["", "var(--yellow)"];
