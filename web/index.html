@@ -343,6 +343,10 @@ html:has(#ov:not([hidden])),html:has(#scrim:not([hidden])){overflow:hidden}
 .mbanner h2{margin:0;font-size:18px}.mbanner h2 span{color:var(--violet)}
 .mbanner .btn{margin-left:auto;position:relative}
 .hlname{color:var(--green)}
+/* Supplier page: name, Độ tin cậy, Xóa and Tìm Thông Số on one line on desktop; stacked on a phone (Khoa, 2026-11-10). */
+.supnamerow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+@media (max-width:640px){.supnamerow{flex-direction:column;align-items:flex-start}}
+.qgrp{margin:8px 0 12px}table.qgtbl{table-layout:fixed}.qgrph{margin:0 0 4px}
 /* Supplier list columns: Năm thành lập and Độ tin cậy narrow, Vai trò and Động cơ wider (Khoa, 2026-11-01). */
 table.supmain{table-layout:fixed}table.supmain th{white-space:normal}table.supmain th:nth-child(1){width:28%}table.supmain th:nth-child(2){width:14%}table.supmain th:nth-child(3){width:9%}table.supmain th:nth-child(4){width:7%}table.supmain th:nth-child(5){width:19%}table.supmain th:nth-child(6){width:14%}table.supmain th:nth-child(7){width:9%}table.supmain td{overflow-wrap:anywhere}table.supmain .chip{white-space:normal}
 /* Nhà thầu: list rows open the bidder; our company stands out. */
@@ -1788,13 +1792,28 @@ function supQuotesOf(id) {
   }
   return out.sort((a, b) => b.at.localeCompare(a.at));
 }
+// Grouped by genset power and engine (Khoa, 2026-11-10): one group per kVA + engine, its price lines from every tender.
 function supQuotesHtml(s) {
   const a = supQuotesOf(s.id), n = a.reduce((x, y) => x + y.items.length, 0);
   if (!a.length) return h`<h4>Báo giá đã có</h4><div class="muted small">Chưa có báo giá nào của nhà cung cấp này trong sổ báo giá. Báo giá nhập ở tab Giá gợi ý của từng gói, mục Báo giá của NCC.</div>`;
-  return h`<h4>Báo giá đã có (${a.length} gói${n ? `, ${n} dòng giá` : ""})</h4><div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Gói thầu</th><th>Dòng giá</th><th>Tệp</th></tr></thead><tbody>${raw(a.map((x) => h`<tr>
-    <td class="small">${raw(quoteTenderLink(x.key))}</td>
-    <td data-l="Dòng giá">${raw(x.items.length ? x.items.map((i) => h`<div style="margin-bottom:4px"><b>${i.desc || "—"}</b>: <b class="num">${qNum(i.unitPrice)} ${i.currency || "VND"}</b>${(i.qty || 1) > 1 ? ` × ${qNum(i.qty)}` : ""}${i.date ? ` · ${fmtDate(i.date, false)}` : ""}<div class="muted small">${quoteItemBits(i)}</div></div>`).join("") : '<span class="muted small">chưa nhập dòng giá</span>')}</td>
-    <td class="small" data-l="Tệp">${x.files.length ? `${x.files.length} tệp` : "—"}</td></tr>`).join(""))}</tbody></table></div>`;
+  const kvaN = (i) => { const v = Number(i.kvaNum || String(i.kva ?? "").replace(",", ".")); return v > 0 ? v : 0; };
+  const groups = new Map();
+  for (const x of a) for (const i of x.items) {
+    const kva = kvaN(i), eng = String(i.engine || "").trim(), k = kva + "|" + eng.toLowerCase();
+    if (!groups.has(k)) groups.set(k, { kva, eng, rows: [] });
+    const g = groups.get(k), up = (t) => (t.match(/[A-Z]/g) || []).length;
+    if (up(eng) > up(g.eng)) g.eng = eng; // "Cummins QSZ13" over "cummins qsz13"
+    g.rows.push({ key: x.key, files: x.files.length, i });
+  }
+  const list = [...groups.values()].sort((x, y) => (x.kva || 1e9) - (y.kva || 1e9) || x.eng.localeCompare(y.eng));
+  const title = (g) => [g.kva ? `${qNum(g.kva)} kVA` : "Chưa ghi công suất", g.eng ? `động cơ ${g.eng}` : "chưa ghi động cơ"].join(" · ");
+  const bits = (i) => [i.alternator && `đầu phát ${i.alternator}`, i.controller && `BĐK ${i.controller}`, i.terms, i.vatIncl && "đã gồm thuế GTGT", i.note].filter(Boolean).join(" · ");
+  const fileOnly = a.filter((x) => !x.items.length);
+  return h`<h4>Báo giá đã có (${a.length} gói${n ? `, ${n} dòng giá` : ""})</h4>${raw(list.map((g) => h`<div class="qgrp"><div class="qgrph"><b>${title(g)}</b> <span class="muted small">${g.rows.length} dòng giá</span></div><div class="tablewrap"><table class="suptable supcards qgtbl"><colgroup><col style="width:40%"><col style="width:22%"><col style="width:14%"><col style="width:24%"></colgroup><thead><tr><th>Hàng báo giá</th><th>Đơn giá</th><th>Ngày</th><th>Gói thầu</th></tr></thead><tbody>${raw(g.rows.sort((x, y) => String(y.i.date || "").localeCompare(String(x.i.date || ""))).map((r) => h`<tr>
+    <td><b>${r.i.desc || "—"}</b>${raw(bits(r.i) ? h`<div class="muted small">${bits(r.i)}</div>` : "")}</td>
+    <td class="num" data-l="Đơn giá"><b>${qNum(r.i.unitPrice)} ${r.i.currency || "VND"}</b>${(r.i.qty || 1) > 1 ? ` × ${qNum(r.i.qty)}` : ""}</td>
+    <td class="small" data-l="Ngày">${r.i.date ? fmtDate(r.i.date, false) : "—"}</td>
+    <td class="small" data-l="Gói thầu">${raw(quoteTenderLink(r.key))}${r.files ? ` · ${r.files} tệp` : ""}</td></tr>`).join(""))}</tbody></table></div></div>`).join(""))}${raw(fileOnly.length ? h`<div class="qgrp"><div class="qgrph"><b>Chỉ có tệp, chưa nhập dòng giá</b></div><ul class="suplist">${raw(fileOnly.map((x) => h`<li class="small">${raw(quoteTenderLink(x.key))} · ${x.files.length} tệp</li>`).join(""))}</ul></div>` : "")}`;
 }
 function supQuoteChip(s) {
   const n = supQuotesOf(s.id).length;
@@ -3037,8 +3056,8 @@ function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
   return h`<div class="dethead"><div class="row"><button class="btn sm" id="supBack">← Danh sách</button></div>
-    <div><h3 class="hlname" style="margin:4px 0">${raw(favStar(s))}${supName(s)}</h3>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div class="row" style="margin:6px 0 18px"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}${raw(supSpecBtn(s))}</div>${raw(supSpecHtmlBlock(s))}</div></div>
-    <dl class="kv">
+    <div><div class="supnamerow"><h3 class="hlname" style="margin:4px 0">${raw(favStar(s))}${supName(s)}</h3><div class="row"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}${raw(supSpecBtn(s))}</div></div>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div style="height:14px"></div>${raw(supSpecHtmlBlock(s))}</div></div>
+    <dl class="kv kvw">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
       <dt>Thương hiệu</dt><dd>${(s.names?.brands || []).join(", ") || "—"}</dd>
       <dt>Website</dt><dd>${raw(s.website ? h`<a href="${s.website}" target="_blank" rel="noopener">${s.website}</a>` : "—")}</dd>
@@ -3081,7 +3100,8 @@ function supModelsHtml(s) {
     if (!ms.length) return "";
     const makes = Object.entries(ms.reduce((m, x) => { for (const k of (x.e.make || "").split(" / ").filter(Boolean)) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1]);
     const summary = h`<b>${K.one.replace(/^./, (c) => c.toUpperCase())}</b> · ${ms.length} model${raw(makes.length ? h` · <span class="muted">${makes.map(([m, n]) => `${m} (${n})`).join(", ")}</span>` : "")}`;
-    const open = ms.length <= 15, lazy = open ? "" : "m" + supLazy.push("");
+    // Bộ điều khiển starts closed (Khoa, 2026-11-10).
+    const open = kind !== "controller" && ms.length <= 15, lazy = open ? "" : "m" + supLazy.push("");
     const table = h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>Số dòng</th></tr></thead><tbody>${raw(ms.map((x) => h`<tr data-catitem="${x.e.key}" data-catopen="${kind}" data-catkey="${x.e.key}">
         <td><b class="hlname">${x.e.model}</b></td>
         <td data-l="Hãng">${raw(catMakeHtml(x.e))}</td>
