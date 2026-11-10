@@ -170,6 +170,17 @@ test("Xuất xứ G7 / G20: only suppliers based in a country of the group (Khoa
   assert.deepEqual(byOrigin(engines, "g20", new Set(), groupSuppliers(list, "g20")).flatMap((e) => e.uses.map((u) => u.supplierId)).sort(), ["tr", "uk"]);
   assert.deepEqual(byOrigin(engines, "g7", new Set(), groupSuppliers([list[0]], "g7")), []);
   assert.equal(engines.flatMap((e) => e.uses).length, 4);
+  // "G7, EU" in the HSMT (Khoa, 2026-11-10): the EU members too, for the suppliers and the engine makes; never China.
+  const eu = [...list, { ...sup[0], id: "es", country: "ES" }];
+  assert.deepEqual([...groupSuppliers(eu, "g7eu")].sort(), ["es", "uk"]);
+  assert.deepEqual([...groupSuppliers(eu, "g20eu")].sort(), ["es", "tr", "uk"]);
+  assert.deepEqual(check(of("es", ["s", "uk", "tr"]), { hsmtText: hsmt, suppliers: eu, readWeb, origin: "g7eu" }).result.configs.map((c) => c.suppliers.map((x) => x.supplierId)), [["es", "uk"]]);
+  assert.equal(check(of("es", ["uk"]), { hsmtText: hsmt, suppliers: eu, readWeb, origin: "g7" }).result.configs.length, 0);
+  const makes = [{ model: "TAD1641GE", makes: [{ name: "Volvo Penta" }] }, { model: "6BTA5.9-G2", makes: [] }, { model: "DP158LC", makes: [{ name: "Doosan" }] }, { model: "WP13D440E310", makes: [{ name: "Weichai" }] }];
+  assert.deepEqual(byOrigin(makes, "g7eu").map((e) => e.model), ["TAD1641GE", "6BTA5.9-G2"]);
+  assert.deepEqual(byOrigin(makes, "g20eu").map((e) => e.model), ["TAD1641GE", "6BTA5.9-G2", "DP158LC"]);
+  assert.deepEqual(byOrigin(makes, "g7").map((e) => e.model), ["6BTA5.9-G2"]);
+  assert.ok(!C.COUNTRY_GROUP.g7eu.includes("CN") && !C.COUNTRY_GROUP.g20eu.includes("CN") && C.COUNTRY_GROUP.g7.length === 7);
   // Tìm NCC: a supplier found in China joins no configuration of a G7 tender; one in the UK does.
   const found = { origin: "g7", configs: [] };
   mergeFind(found, [list[0]], { cap: { value: 450, unit: "kVA" }, origin: "g7" });

@@ -818,7 +818,15 @@ test("a label table of one genset (one page per model) is that genset's source, 
 test("the G7 / G20 origin the HSMT requires of the genset, not an example, a preference, a score or a part (Khoa 2026-11-04)", async () => {
   const { originOfHsmt } = await import("./config-bot.mjs");
   const o = (t) => originOfHsmt(t)?.origin ?? null;
-  assert.equal(o("1.2\nXuất xứ\nCác nước thuộc: nhóm G7 hoặc Liên minh Châu Âu (EU) hoặc Việt Nam"), "g7");
+  // EU beside the group opens it to the EU members (Khoa, 2026-11-10): on the line, or on the cell's next / previous line.
+  assert.equal(o("1.2\nXuất xứ\nCác nước thuộc: nhóm G7 hoặc Liên minh Châu Âu (EU) hoặc Việt Nam"), "g7eu");
+  const cell = originOfHsmt("1     Nước sản xuất                         Nêu cụ thể\n2     Nhà sản xuất/ nhãn hiệu         Nhóm các nước khối G7,\n                                               EU\n3     Model                                 Nêu cụ thể");
+  assert.deepEqual(cell, { origin: "g7eu", quote: "2 Nhà sản xuất/ nhãn hiệu Nhóm các nước khối G7, EU" });
+  assert.equal(o("Xuất xứ: các nước thuộc Châu Âu hoặc\nnhóm G20"), "g20eu");
+  assert.equal(o("Xuất xứ hàng hóa: G7\nhoặc Liên minh Châu Âu (EU)."), "g7eu");
+  // The next row of the table is not the rest of the cell; a preference for EU is not a rule.
+  assert.equal(o("2 Xuất xứ tổ máy: G7\n3 Bảng điều khiển: Châu Âu"), "g7");
+  assert.equal(o("Hãng sản xuất thuộc các nước G7,\nưu tiên hàng hóa có xuất xứ EU"), "g7");
   assert.equal(o("1.3. Đối với máy phát điện nhập khẩu: Máy phát điện có xuất xứ một trong\ncác nước thuộc khối G7."), "g7");
   assert.equal(o("2 Nước sản xuất, lắp ráp - Thuộc nhóm các nước G20"), "g20");
   assert.equal(o("- Hãng sản xuất máy phát điện thuộc các nước khối G7."), "g7");

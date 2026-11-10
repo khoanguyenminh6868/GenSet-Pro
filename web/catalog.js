@@ -82,6 +82,11 @@
     Kohler: "US", "Lister Petter": "GB", Honda: "JP", Caterpillar: "US", FPT: "IT", MAN: "DE", "Detroit Diesel": "US" };
   const COUNTRY_GROUP = { g7: ["US", "GB", "DE", "FR", "IT", "JP", "CA"],
     g20: ["AR", "AU", "BR", "CA", "FR", "DE", "IN", "ID", "IT", "JP", "MX", "RU", "SA", "ZA", "KR", "TR", "GB", "US"] };
+  // "G7, EU" / "G20 hoặc EU" in the HSMT (Khoa, 2026-11-10: "mở luôn cho EU nếu yêu cầu cho phép EU"): the group and
+  // the 27 EU members (Volvo Penta, Scania; Himoinsa in Spain, ComAp in Czechia). Only read from the HSMT, never a
+  // choice on the web.
+  const EU = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"];
+  for (const g of ["g7", "g20"]) COUNTRY_GROUP[g + "eu"] = [...new Set([...COUNTRY_GROUP[g], ...EU])];
   // "other" (a foreign make), "cn" (only Chinese makes) or null (the sources do not say).
   function engineOrigin(names, model) {
     const m = String(model || "").trim(), foreign = FOREIGN_MODEL.filter(([re]) => re.test(m)).map(([, n]) => n);
