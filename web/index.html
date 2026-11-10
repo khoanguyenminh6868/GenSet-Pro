@@ -2334,8 +2334,9 @@ function analysisTabHtml(t) {
   // quotes found: shown, so a partial analysis does not look complete (Khoa, 2026-10-27).
   const notes = [].concat(a?.notes || []).filter(Boolean);
   const notesNote = s === "done" && notes.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy:</b><ul class="clean">${raw(notes.map((x) => h`<li>${x}</li>`).join(""))}</ul></div>` : "";
-  if (a?._lite && a.status === "done") return head + errNote + notesNote + progress("Đang tải kết quả phân tích...");
-  return head + errNote + notesNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? (a.basis === "specs" ? specsOnlyHtml(a.result) : analysisHtml(a.result)) : "");
+  // The reliability note sits at the very bottom, after the result (Khoa, 2026-11-10).
+  if (a?._lite && a.status === "done") return head + errNote + progress("Đang tải kết quả phân tích...") + notesNote;
+  return head + errNote + ((s === "done" || s === "queued" || s === "requested") && a?.status === "done" && a.result ? (a.basis === "specs" ? specsOnlyHtml(a.result) : analysisHtml(a.result)) : "") + notesNote;
 }
 
 // ---------- Libraries and files on demand ----------
