@@ -96,7 +96,7 @@ test("confirmChecks: a confirm written on a model point goes back to unclear (th
 
 test("check(): an agent's confirm is unclear before the code decides; an order point the row does not state is confirm", () => {
   const row = { kind: "catalog", supplierId: "s", n: 101, line: "| SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | UK" };
-  const sup = [{ id: "s", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Standby kW/kVA | Prime kW/kVA | Engine | Alternator"], rows: [row.line] }] }];
+  const sup = [{ id: "s", country: "CN", specTables: [{ n: 101, title: "Perkins gensets", header: ["| Model | Standby kW/kVA | Prime kW/kVA | Engine | Alternator"], rows: [row.line] }] }];
   const hsmt = "Chương V\nCông suất liên tục (Prime): ≥ 450 kVA\nĐiện áp 400/230 V\nSố xi lanh ≥ 6\nCấp bảo vệ IP23";
   const r = { requirements: [{ item: "Điện áp", requirement: "400/230 V", quote: "Điện áp 400/230 V" }, { item: "Số xi lanh", requirement: "≥ 6", quote: "Số xi lanh ≥ 6" }, { item: "Cấp bảo vệ đầu phát (IP)", requirement: "IP23", quote: "Cấp bảo vệ IP23" }],
     configs: [{ rank: 1, engine: { model: "2506C-E15TAG1", src: row }, alternator: { model: "HCI544C", src: row }, genset: { model: "SQP500", src: row },
