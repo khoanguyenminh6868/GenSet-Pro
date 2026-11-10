@@ -166,7 +166,12 @@ export const cnSuppliers = (suppliers) => new Set(suppliers.filter((s) => s?.cou
 // controller of a G7 / EU maker, and every supplier suggested was an assembler in China offering a Cummins or Perkins
 // engine; the engine's make was all the origin looked at). The ids of the suppliers based in a country of the group;
 // null for an origin that is no group. A supplier whose country is not recorded is not one of them.
-export const groupSuppliers = (suppliers, origin) => (GROUP_ORIGIN.has(origin) ? new Set((suppliers || []).filter((s) => CAT.COUNTRY_GROUP[origin].includes(s?.country)).map((s) => s.id)) : null);
+// No G7 / G20 asked ("all"; Khoa, 2026-11-10): the suppliers suggested are the ones based in China that offer a
+// fitting engine, alternator and controller, whatever the make of those parts. `open` lifts that: the HSMT asks for
+// parts of the genset maker's own brand (brandSyncOf), which an assembler in China seldom meets.
+export const groupSuppliers = (suppliers, origin, open = false) => (GROUP_ORIGIN.has(origin) ? new Set((suppliers || []).filter((s) => CAT.COUNTRY_GROUP[origin].includes(s?.country)).map((s) => s.id))
+  : origin === "all" && !open ? cnSuppliers(suppliers || []) : null);
+const groupName = (origin) => GROUP_NAME[origin] || "Trung Quốc";
 const COUNTRY_VI = { CN: "Trung Quốc", TR: "Thổ Nhĩ Kỳ", IN: "Ấn Độ", KR: "Hàn Quốc", ES: "Tây Ban Nha", SE: "Thụy Điển", AE: "UAE", SG: "Singapore", VN: "Việt Nam" };
 const countryVi = (c) => (c ? COUNTRY_VI[c] || c : "chưa ghi nước");
 // `grp` (groupSuppliers): under G7 / G20 only the rows of those suppliers stay, and an engine none of them offers goes.
@@ -178,6 +183,8 @@ export function byOrigin(engines, origin, cn = new Set(), grp = null) {
     const own = engines.filter((e) => CAT.groupOf(e, origin));
     return grp ? own.map((e) => ({ ...e, uses: (e.uses || []).filter((u) => grp.has(u.supplierId)) })).filter((e) => e.uses.length) : own;
   }
+  // "all": every make, in the rows of the suppliers based in China.
+  if (grp) return engines.map((e) => ({ ...e, uses: (e.uses || []).filter((u) => grp.has(u.supplierId)) })).filter((e) => e.uses.length);
   return engines;
 }
 
@@ -950,7 +957,8 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   // origin (Khoa, 2026-11-04). Trung Quốc, G7, G20 or Khác chosen on the web stays.
   const fromHsmt = reqData.from === "sync" || originOfReq(reqData.origin) === "all", asked = fromHsmt ? "all" : originOfReq(reqData.origin);
   const auto = fromHsmt ? originOfHsmt(parts.join("")) : null;
-  const origin = auto?.origin || asked, full = CAT.build(all), cn = cnSuppliers(all), grp = groupSuppliers(all, origin);
+  const sync = BP.brandSyncOf(text);
+  const origin = auto?.origin || asked, full = CAT.build(all), cn = cnSuppliers(all), grp = groupSuppliers(all, origin, !!sync);
   const cat = { ...full, engines: byOrigin(full.engines, origin, cn, grp) };
   // The figures of a model still come from every supplier's row or datasheet that names it (a Perkins 4006-23TAG3A is
   // the same engine in a Chinese table); only the rows offered as configurations are those of the group's suppliers.
@@ -969,8 +977,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   // Only the HSMT files count: the notice is fetched again each time and its status changes.
   const reqHash = reqHashOf(parts.join(""), extraOf(reqData)), prevReq = reqData.prevResult;
   const reuse = prevReq?.reqHash === reqHash && prevReq.requirements?.length && prevReq.requirements.every((r) => r.level && r.part && r.code && !r.unverified);
-  const sync = BP.brandSyncOf(text);
-  if (reuse) fs.writeFileSync(path.join(dir, "requirements.json"), JSON.stringify(prevReq.requirements.filter((r) => !r.byCode).map(({ code, item, requirement, quote, from, part, level, parts }) => ({ code, item, requirement, quote, ...(from ? { from } : {}), part, level, ...(parts ? { parts: parts.map((p) => ({ item: p.item })) } : {}) })), null, 1), "utf8");
+  if (reuse)fs.writeFileSync(path.join(dir, "requirements.json"), JSON.stringify(prevReq.requirements.filter((r) => !r.byCode).map(({ code, item, requirement, quote, from, part, level, parts }) => ({ code, item, requirement, quote, ...(from ? { from } : {}), part, level, ...(parts ? { parts: parts.map((p) => ({ item: p.item })) } : {}) })), null, 1), "utf8");
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
     ...(multi?.only ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`, `Lượt Tìm NCC này CHỈ tìm cho máy ${sizeText(multi.size)}.`]
@@ -987,7 +994,8 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
     : GROUP_ORIGIN.has(origin) ? `Chỉ gợi ý động cơ của hãng thuộc một nước ${GROUP_NAME[origin]} (${CAT.COUNTRY_GROUP[origin].join(", ")}; hãng nước ngoài: ${Object.entries(CAT.ENGINE_COUNTRY).filter(([, c]) => CAT.COUNTRY_GROUP[origin].includes(c)).map(([n, c]) => `${n} ${c}`).join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...), kể cả loại sản xuất theo giấy phép. Động cơ nguồn không ghi hãng thì không gợi ý.\n`
       + `Nhà cung cấp (Khoa, 2026-11-10): chỉ gợi ý nhà cung cấp / hãng tổ máy ĐẶT TẠI một nước ${GROUP_NAME[origin]} (quốc gia ${CAT.COUNTRY_GROUP[origin].join(", ")} trong catalog.md). Nhà lắp ráp ở Trung Quốc hay nước khác ngoài nhóm KHÔNG được gợi ý, kể cả khi chào động cơ Cummins / Perkins / đầu phát Stamford / bộ điều khiển Deep Sea: code đã bỏ dòng của ${offGroup} nhà cung cấp như vậy khỏi catalog.md và sẽ bỏ họ (cùng cấu hình lấy từ dòng bảng của họ) khỏi kết quả. Khi tìm trên internet (bước 4) cũng chỉ lấy tổ máy của hãng đặt tại các nước này (Cummins, Caterpillar, FG Wilson, Kohler / SDMO, MTU, Mitsubishi, Denyo, Pramac, Visa${origin.endsWith("eu") ? ", Himoinsa, Volvo Penta, Scania" : ""}...), ghi đúng \`country\` của họ trong newCatalog.json; không lấy trang của nhà lắp ráp Trung Quốc. catalog.md có ít hoặc không có ứng viên nào đáp ứng thì làm bước 4.`
     : origin === "other" ? `Chỉ gợi ý động cơ của hãng ngoài Trung Quốc (${[...CAT.FOREIGN_ENGINE].join(", ")}), kể cả khi tìm trên internet; ghi "make" của động cơ. Không gợi ý động cơ của hãng Trung Quốc (Weichai, Yuchai, SDEC...).`
-    : "Không giới hạn xuất xứ động cơ (HSMT không đòi G7 / G20). Gợi ý cả cấu hình động cơ hãng Trung Quốc (Weichai, Yuchai, SDEC...) lẫn động cơ hãng nước khác; cấu hình động cơ hãng Trung Quốc đáp ứng HSMT tốt hơn hoặc ngang cấu hình động cơ hãng nước khác thì xếp trước (Khoa, 2026-11-05). Code xếp lại theo kết quả kiểm tra.", "",
+    : "Không giới hạn xuất xứ động cơ (HSMT không đòi G7 / G20). Gợi ý cả cấu hình động cơ hãng Trung Quốc (Weichai, Yuchai, SDEC...) lẫn động cơ hãng nước khác; cấu hình động cơ hãng Trung Quốc đáp ứng HSMT tốt hơn hoặc ngang cấu hình động cơ hãng nước khác thì xếp trước (Khoa, 2026-11-05). Code xếp lại theo kết quả kiểm tra."
+      + (grp ? `\nNhà cung cấp (Khoa, 2026-11-10): HSMT không đòi G7 / G20 nên chỉ gợi ý nhà cung cấp ĐẶT TẠI TRUNG QUỐC (quốc gia CN trong catalog.md) có động cơ, đầu phát, bộ điều khiển phù hợp với HSMT; các bộ phận đó có thể là hãng Trung Quốc hoặc hãng nước khác (Cummins, Perkins, Stamford, Leroy-Somer, Deep Sea, ComAp, SmartGen...) do nhà cung cấp Trung Quốc chào. Code đã bỏ dòng của ${offGroup} nhà cung cấp ngoài Trung Quốc khỏi catalog.md và sẽ bỏ họ (cùng cấu hình lấy từ dòng bảng của họ) khỏi kết quả. Khi tìm trên internet (bước 4) cũng chỉ lấy nhà cung cấp / nhà máy tổ máy ở Trung Quốc, ghi \`country\` "CN" trong newCatalog.json.` : ""), "",
     // Đồng bộ thương hiệu (Khoa, 2026-11-06): read by code, checked by code from the makes of each configuration.
     ...(sync ? [`## Đồng bộ thương hiệu: HSMT đòi ít nhất ${sync.need}/${sync.parts.length} bộ phận (${sync.parts.map((p) => SYNC_VI[p]).join(", ")}) do chính hãng sản xuất tổ máy làm ra`,
       `HSMT ghi: "${sync.text}"`,
@@ -1200,8 +1208,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
   // (Khoa, 2026-10-29). Under "cn" a foreign engine stays when a supplier based in China offers it in a row of its own
   // table that names the engine; that configuration then lists only such suppliers (Khoa, 2026-11-02). The make counts only as the source states it: the catalog row (header, title), or for an
   // internet source the quote, plus the make the agent wrote when the saved page has it.
-  if (origin === "cn" || origin === "other" || GROUP_ORIGIN.has(origin)) {
-    result.configs = (result.configs || []).filter((c) => {
+  const limited = origin === "cn" || origin === "other" || GROUP_ORIGIN.has(origin);
+  if (limited || origin === "all") {
+    if (limited) result.configs = (result.configs || []).filter((c) => {
       const e = c.engine;
       if (!e) return true;
       const page = e.src?.kind === "internet" && e.src.file ? norm(readWeb(e.src.file) || "") : "";
@@ -1221,9 +1230,11 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
     // G7 / G20: the suppliers too (Khoa, 2026-11-10). A supplier based outside the group is not suggested, and neither
     // is a configuration taken from such a supplier's table row or left with none of its suppliers: an assembler in
     // China offering a Cummins engine is not what a tender asking for G7 is to be answered with.
-    const grp = groupSuppliers(suppliers, origin);
+    // No G7 / G20 asked: the suppliers based in China, in the same way (Khoa, 2026-11-10), unless the HSMT wants
+    // parts of the genset maker's own brand.
+    const grp = groupSuppliers(suppliers, origin, !!sync);
     if (grp) {
-      const G = GROUP_NAME[origin], off = (id) => !!id && sup.has(id) && !grp.has(id), where = (id) => countryVi(sup.get(id)?.country);
+      const G = groupName(origin), off = (id) => !!id && sup.has(id) && !grp.has(id), where = (id) => countryVi(sup.get(id)?.country);
       result.configs = result.configs.filter((c) => {
         const from = [c.genset?.src, c.engine?.src].find((s) => s?.kind === "catalog" && off(s.supplierId));
         if (from) { problems.push(`#${c.rank}: cấu hình lấy từ dòng bảng của ${from.supplierId} (đặt tại ${where(from.supplierId)}, ngoài nhóm ${G}), đã bỏ`); return false; }
@@ -1236,10 +1247,10 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
         if (had && !c.suppliers.length) { problems.push(`#${c.rank}: không còn nhà cung cấp nào đặt tại nước ${G}, đã bỏ cấu hình`); return false; }
         return true;
       });
-      const note = `HSMT đòi xuất xứ ${G}: chỉ gợi ý nhà cung cấp đặt tại nước ${G}; nhà lắp ráp ở Trung Quốc hay nước khác ngoài nhóm không được gợi ý dù chào động cơ, đầu phát, bộ điều khiển hãng ${G}.`;
+      const note = origin === "all" ? "HSMT không đòi xuất xứ G7 / G20: chỉ gợi ý nhà cung cấp đặt tại Trung Quốc có động cơ, đầu phát, bộ điều khiển phù hợp (Khoa, 2026-11-10)." : `HSMT đòi xuất xứ ${G}: chỉ gợi ý nhà cung cấp đặt tại nước ${G}; nhà lắp ráp ở Trung Quốc hay nước khác ngoài nhóm không được gợi ý dù chào động cơ, đầu phát, bộ điều khiển hãng ${G}.`;
       if (!(result.notes || []).includes(note)) result.notes = [...(result.notes || []), note];
     }
-    result.origin = origin;
+    if (limited) result.origin = origin;
   }
   result.configs = (result.configs || []).slice(0, MAX_CONFIGS);
   copyModelChecks(result.configs, sourceText);
@@ -2071,7 +2082,7 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
   const configs = result.configs || (result.configs = []), out = { joined: [], created: [] };
   const o = originOfReq(origin), cn = cnSuppliers(records), rows = new Map();
   // G7 / G20: a supplier found outside the group joins no configuration (it stays in the supplier DB).
-  for (const e of byOrigin(CAT.build(records).engines, o, cn, groupSuppliers(records, o))) {
+  for (const e of byOrigin(CAT.build(records).engines, o, cn, groupSuppliers(records, o, (result.requirements || []).some((r) => r.sync)))) {
     // Under "cn" a foreign engine comes only with the suppliers based in China that offer it.
     const viaCn = o === "cn" && CAT.originOf(e) === "other";
     for (const u of e.uses) {

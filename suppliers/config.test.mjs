@@ -136,7 +136,7 @@ test("Xuất xứ Trung Quốc drops a foreign engine, Khác keeps only foreign 
   assert.equal(cn.result.origin, "cn");
   assert.ok(cn.problems.some((p) => p.includes("không phải hãng Trung Quốc")));
   assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "other" }).result.configs.length, 1);
-  assert.equal(check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "all" }).result.configs.length, 1);
+  assert.equal(check(base(), { hsmtText: hsmt, suppliers: [{ ...sup[0], country: "CN" }], readWeb, origin: "all" }).result.configs.length, 1);
   // Perkins is British: kept under G7 and G20, from a supplier based in a country of the group.
   const uk = [{ ...sup[0], country: "GB" }];
   assert.equal(check(base(), { hsmtText: hsmt, suppliers: uk, readWeb, origin: "g7" }).result.configs.length, 1);
@@ -160,12 +160,21 @@ test("Xuất xứ G7 / G20: only suppliers based in a country of the group (Khoa
   // G20 has Türkiye, never China.
   const g20 = check(of("tr", ["s", "uk"]), { hsmtText: hsmt, suppliers: list, readWeb, origin: "g20" });
   assert.deepEqual(g20.result.configs.map((c) => c.suppliers.map((x) => x.supplierId)), [["tr", "uk"]]);
-  // No origin asked, or "Khác": the suppliers are as before.
-  for (const origin of ["all", "other"]) assert.deepEqual(check(of("s", ["uk"]), { hsmtText: hsmt, suppliers: list, readWeb, origin }).result.configs[0].suppliers.map((x) => x.supplierId), ["s", "uk"]);
+  // "Khác": the suppliers are as before.
+  assert.deepEqual(check(of("s", ["uk"]), { hsmtText: hsmt, suppliers: list, readWeb, origin: "other" }).result.configs[0].suppliers.map((x) => x.supplierId), ["s", "uk"]);
+  // No G7 / G20 asked (Khoa, 2026-11-10): the suppliers based in China only; the row of a maker elsewhere goes.
+  const all = check(of("s", ["uk", "tr", "none"]), { hsmtText: hsmt, suppliers: list, readWeb, origin: "all" });
+  assert.deepEqual(all.result.configs.map((c) => c.suppliers.map((x) => x.supplierId)), [["s"]]);
+  assert.ok(all.result.notes.some((n) => /chỉ gợi ý nhà cung cấp đặt tại Trung Quốc/.test(n)));
+  assert.equal(check(of("uk", ["s"]), { hsmtText: hsmt, suppliers: list, readWeb, origin: "all" }).result.configs.length, 0);
+  // Unless the HSMT wants parts of the genset maker's own brand.
+  assert.equal(groupSuppliers(list, "all", true), null);
   // The catalog the agent reads: only the rows of the group's suppliers; an engine none of them offers is not listed.
   const engines = C.build(list).engines;
   assert.deepEqual(groupSuppliers(list, "g7"), new Set(["uk"]));
-  assert.equal(groupSuppliers(list, "all"), null);
+  assert.deepEqual(groupSuppliers(list, "all"), new Set(["s"]));
+  assert.equal(groupSuppliers(list, "other"), null);
+  assert.deepEqual(byOrigin(engines, "all", new Set(), groupSuppliers(list, "all")).flatMap((e) => e.uses.map((u) => u.supplierId)), ["s"]);
   assert.deepEqual(byOrigin(engines, "g7", new Set(), groupSuppliers(list, "g7")).flatMap((e) => e.uses.map((u) => u.supplierId)), ["uk"]);
   assert.deepEqual(byOrigin(engines, "g20", new Set(), groupSuppliers(list, "g20")).flatMap((e) => e.uses.map((u) => u.supplierId)).sort(), ["tr", "uk"]);
   assert.deepEqual(byOrigin(engines, "g7", new Set(), groupSuppliers([list[0]], "g7")), []);

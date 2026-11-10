@@ -17,7 +17,10 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   list only those suppliers. Under G7 / G20 (Khoa, 2026-11-10) the suppliers are of the group too: catalog.md lists only
   rows of suppliers based in a country of the group, and the code drops any other supplier and a configuration taken
   from its row (an assembler in China offering a Cummins engine, a Stamford alternator and a Deep Sea controller is NOT
-  a suggestion for a tender that asks for G7).
+  a suggestion for a tender that asks for G7). When the HSMT asks for no G7 / G20 ("Tất cả"; Khoa, 2026-11-10) it is
+  the other way round: suggest the suppliers based in China (country CN) that offer a fitting engine, alternator and
+  controller, of a Chinese or a foreign make; catalog.md lists only their rows and the code drops a supplier based
+  elsewhere, unless input.md has a "Đồng bộ thương hiệu" section (then suppliers of every country stay).
 - `hsmt.txt`: the tender's own text. Every requirement quote must be copied from here.
 - `catalog.md`, prepared and ranked by code (Khoa, 2026-11-02):
   - "Ứng viên": the best genset rows of the system for this tender, best first (power 95–140%, the HSMT's frequency,
