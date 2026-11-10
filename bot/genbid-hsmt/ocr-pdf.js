@@ -39,6 +39,32 @@ function garbled(t) {
   const s = t.replace(/\s/g, "").normalize("NFD");
   return s.length >= 300 && (s.match(ODD) || []).length / s.length > 0.05;
 }
+// A page scanned sideways or upside down (2026-11-10, specs still open in session-log: IB2300094137, IB2300018261, IB2200069185, IB2500049415, tables
+// printed landscape and scanned in portrait) comes out of OCR as short scraps ("œ | |g", "2 3 Š |2"). Such a page is
+// rendered again as a greyscale PGM, its orientation read with Tesseract OSD (--psm 0, osd.traineddata of the install),
+// rotated and read again; the better of the two readings is kept.
+const OSD_DIR = NATIVE && [path.join(path.dirname(NATIVE), "tessdata"), TESSDATA].find((d) => fs.existsSync(path.join(d, "osd.traineddata")));
+// Share of the characters that sit in words of 3+ letters: a readable page has most, a sideways one very few.
+function legible(t) {
+  const s = t.replace(/\s/g, "");
+  if (!s.length) return 0;
+  return (t.match(/\p{L}{3,}/gu) || []).join("").length / s.length;
+}
+const BAD_PAGE = 0.5;
+// Binary PGM (P5, 8 bit) turned clockwise by deg (90, 180, 270).
+function rotatePgm(file, out, deg) {
+  const b = fs.readFileSync(file);
+  let p = 0; const tok = () => { while (b[p] <= 32 || b[p] === 35) { if (b[p] === 35) while (b[p] !== 10) p++; p++; } let s = p; while (b[p] > 32) p++; return b.toString("latin1", s, p); };
+  if (tok() !== "P5") throw new Error("not a P5 PGM");
+  const w = +tok(), h = +tok(); tok(); p++;
+  const src = b.subarray(p, p + w * h), dst = Buffer.alloc(w * h);
+  const [nw, nh] = deg === 180 ? [w, h] : [h, w];
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const nx = deg === 90 ? h - 1 - y : deg === 270 ? y : w - 1 - x, ny = deg === 90 ? x : deg === 270 ? w - 1 - x : h - 1 - y;
+    dst[ny * nw + nx] = src[y * w + x];
+  }
+  fs.writeFileSync(out, Buffer.concat([Buffer.from(`P5\n${nw} ${nh}\n255\n`, "latin1"), dst]));
+}
 // find: with more scanned pages than this, only chapter V is read (0: every scanned page).
 async function ocrFile(file, max = 300, find = 0) {
   const bin = popplerBin(), exe = (n) => (bin ? path.join(bin, n + ".exe") : n);
@@ -102,13 +128,38 @@ async function ocrFile(file, max = 300, find = 0) {
         if (from) { to ||= pages.length; scanned = scanned.filter((n) => n >= from && n <= to); process.stderr.write(`CHUONG5 ${from}-${to}\n`); }
       }
       scanned = scanned.slice(0, max);
+      let osdTries = 0, osdRotated = 0;
       for (const n of scanned) {
         cp.spawnSync(exe("pdftoppm"), ["-r", "250", "-gray", "-png", "-f", String(n), "-l", String(n), plain, path.join(tmp, "p")], { timeout: 120e3 });
         const img = fs.readdirSync(tmp).find((x) => x.startsWith("p") && x.endsWith(".png"));
         if (!img) continue;
-        pages[n - 1] = await ocr(path.join(tmp, img));
+        let text = await ocr(path.join(tmp, img));
         fs.rmSync(path.join(tmp, img));
+        // At most 60 tries per file, and none after 8 tries that found no rotation (an upright table of figures also reads
+        // as "not legible": it must not cost a second render and an OSD run on every page).
+        if (OSD_DIR && osdTries < 60 && !(osdTries >= 8 && !osdRotated) && text.replace(/\s/g, "").length > 20 && legible(text) < BAD_PAGE) {
+          osdTries++;
+          try {
+            cp.spawnSync(exe("pdftoppm"), ["-r", "250", "-gray", "-f", String(n), "-l", String(n), plain, path.join(tmp, "o")], { timeout: 120e3 });
+            const pgm = fs.readdirSync(tmp).find((x) => x.startsWith("o") && x.endsWith(".pgm"));
+            if (pgm) {
+              const src = path.join(tmp, pgm);
+              const osd = cp.spawnSync(NATIVE, [src, "stdout", "--psm", "0", "--tessdata-dir", OSD_DIR], { encoding: "utf8", timeout: 60e3, windowsHide: true }).stdout || "";
+              const deg = Number((osd.match(/Rotate:\s*(\d+)/) || [])[1] || 0);
+              if (deg) {
+                const rot = path.join(tmp, "r.pgm");
+                rotatePgm(src, rot, deg);
+                const t2 = await ocr(rot);
+                fs.rmSync(rot, { force: true });
+                if (legible(t2) > legible(text)) { text = t2; osdRotated++; process.stderr.write(`ROTATE ${n} ${deg}\n`); }
+              }
+              fs.rmSync(src, { force: true });
+            }
+          } catch (e) { process.stderr.write(`ROTATE lỗi trang ${n}: ${e.message}\n`); }
+        }
+        pages[n - 1] = text;
       }
+      if (osdTries) process.stderr.write(`OSD ${osdTries} rotated ${osdRotated}\n`);
     } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
     return { text: pages.join("\f"), ocr: scanned.length, pages: pages.length };
   } finally { await worker?.terminate(); }
