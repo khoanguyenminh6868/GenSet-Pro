@@ -272,6 +272,10 @@ test("G7 / G20 origin keeps engines whose make is from a country of the group", 
   assert.equal(C.groupIn("Weichai", "WP13D440E310", "g20"), false);
   assert.equal(C.groupIn("Perkins", "1106A-70TG1", "g7"), true);
   assert.equal(C.groupIn("Volvo Penta", "TAD1641GE", "g20"), false);
+  // A Volvo Penta TWD code names its make by itself (IB2600603983: CGM's 760VO row was dropped); a Chinese "WD" does not.
+  assert.equal(C.groupIn("| 760VO | 760 | TWD1744GE |", "TWD1744GE", "g7eu"), true);
+  assert.equal(C.groupIn("| 760VO | 760 | TWD1744GE |", "TWD1744GE", "g7"), false);
+  for (const m of ["WD615", "WD305TAD68", "WD10D264E200"]) assert.notEqual(C.originIn(m, m), "other", m);
   for (const n of C.FOREIGN_ENGINE) assert.ok(C.ENGINE_COUNTRY[n], n);
 });
 

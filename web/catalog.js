@@ -58,7 +58,8 @@
     // Deutz / MWM designs (BF..M1015, TBD234 / 604 / 620) count as foreign even when built under licence in China.
     [/^(BF\d?[46LM]\d{3,4}|F[2-8]L\d{3}|TCD\d|TBD(234|604|620|62O|314))/i, "Deutz"],
     [/^S\d{1,2}R\d?-/i, "Mitsubishi"], [/^\d?TNV\d/i, "Yanmar"], [/^(D(1005|1105|1305|1703|2203|2403)|V(1505|2003|2203|2403|3300|3600|3800))\b/i, "Kubota"],
-    [/^T?AD\d{3,4}/i, "Volvo Penta"], [/^\d{1,2}V\d{4}/i, "MTU"], [/^\d{1,2}M\d{2}/i, "Baudouin"],
+    // TWD too (TWD1645GE, TWD1744GE: Volvo Penta's twin-turbo gensets engines), never a bare "WD" (Weichai WD615, Wudong).
+    [/^(T?AD|TWD)\d{3,4}/i, "Volvo Penta"], [/^\d{1,2}V\d{4}/i, "MTU"], [/^\d{1,2}M\d{2}/i, "Baudouin"],
     [/^D?(E|D)(08|26|28|32)\d{2}[A-Z]/, "MAN"], [/^(NEF\d|CURSOR|C(87|10|13|16)\s?TE|N(45|67)\s?[A-Z])/i, "FPT"],
     [/^(CAT\s?C\d|35(08|12|16)\b|3412\b|C(15|18|27|32)\b)/i, "Caterpillar"], [/^(DB58|P0?86TI|P1(26|58|80)|P222|DP(086|126|158|180|222))/i, "Doosan"],
     [/^(6|8|12|16)V(71|92|149)\b/i, "Detroit Diesel"],
