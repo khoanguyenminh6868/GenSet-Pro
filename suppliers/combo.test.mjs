@@ -2,7 +2,8 @@
 // comboNotes, web/conversions.js kwe_from_kwm / bmep_4s, mã alt_excitation / alt_short_circuit), 2026-11-10.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { hsmtCombo, enginePowerOf, comboChecks, comboNotes, rfqOf } from "./config-bot.mjs";
+import { hsmtCombo, enginePowerOf, comboChecks, comboNotes, rfqOf, effRange, kwmOf, ratedFacts, factConflicts, altKvaOf, altKvaRange } from "./config-bot.mjs";
+const CAT = globalThis.GenbidCatalog;
 import { codeOf, codesIn } from "./reqcodes.mjs";
 const CONV = globalThis.GenbidConversions;
 
@@ -61,7 +62,53 @@ test("comboChecks: power balance ok / low / not checked; nothing changes a check
   // Missing figures: not concluded. A "Mechanical Efficiency" (the engine's) is not the alternator's.
   assert.equal(comboChecks(cfg(), { combo: {}, row: row(), altFacts: eff(38.2, "Mechanical Efficiency (%)") }).combo.power.status, "missing");
   assert.match(comboChecks(cfg(), { combo: {}, row: { ...row(), specs: [{ key: "engPower", label: "Engine power (kW)", value: "264" }] }, altFacts: eff(92.3) }).combo.power.text, /thiếu công suất động cơ có ghi mức/);
-  assert.match(comboChecks(cfg(), { combo: {}, row: row(), altFacts: [...eff(92.3), ...eff(94.5)] }).combo.power.text, /nguồn ghi khác nhau: 92.3 \/ 94.5/);
+  // Two sources whose efficiency ranges do not overlap: not used.
+  const other = eff(94.5).map((f) => ({ ...f, supplierId: "reseller" }));
+  assert.match(comboChecks(cfg(), { combo: {}, row: row(), altFacts: [...eff(92.3), ...other] }).combo.power.text, /không trùng khoảng: 92.3–92.3% \/ 94.5–94.5%/);
+});
+
+test("PR 3: ranges — one source's several efficiency figures; concluded only when the whole range is on one side", () => {
+  // A Stamford sheet: "Efficiency (%) | 90.7 | 91.1 | 91.3" (columns: voltages / loads, titles lost) → 90.7–91.3%.
+  const st = [{ key: "eff", label: "Efficiency (%)", value: "90.7 | 91.1 | 91.3", line: "| Efficiency (%) | 90.7 | 91.1 | 91.3", supplierId: "stamford-avk-china", n: 2002 }];
+  assert.deepEqual((({ min, max }) => [min, max])(effRange(st)), [90.7, 91.3]);
+  // 284 × 90.7% = 257.6 ≥ 250: ok. 275 kW asked: 284 × 91.3% = 259.3 < 275: low. 259 asked: inside the range: not concluded.
+  assert.equal(comboChecks(cfg(), { combo: {}, row: row(), altFacts: st }).combo.power.status, "ok");
+  const r2 = (kw) => ({ ...row(), power: { prime: { kVA: kw / 0.8, kW: kw } } });
+  assert.equal(comboChecks(cfg(), { combo: {}, row: r2(275), altFacts: st }).combo.power.status, "low");
+  const un = comboChecks(cfg(), { combo: {}, row: r2(259), altFacts: st });
+  assert.equal(un.combo.power.status, "unsure"); assert.equal(un.warnings, undefined); assert.match(un.combo.power.text, /257,6–259,3 kWe so với 259 kWe prime/);
+});
+
+test("PR 3: the engine's rated kWm from the model's facts (engPrime / engStandby), 3% rule", () => {
+  assert.deepEqual(ratedFacts("Engine Prime Power (kW)", "441").map((f) => [f.key, f.kW]), [["engPrime", 441]]);
+  assert.deepEqual(ratedFacts("Rated Engine Output", "571kW prp ; 625kW standby").map((f) => [f.key, f.kW]), [["engPrime", 571], ["engStandby", 625]]);
+  assert.deepEqual(ratedFacts("Engine power (kW)", "264"), []);
+  const fact = (kW, sid) => ({ key: "engPrime", label: "Engine Prime Power (kW)", value: `${kW}`, kW, supplierId: sid, n: 101, line: `| Engine Prime Power (kW) | ${kW}` });
+  const noRow = { line: "| WT250 |", specs: [], power: { prime: { kVA: 312, kW: 250 } } };
+  const ok = comboChecks(cfg(), { combo: {}, row: noRow, engFacts: [fact(284, "a"), fact(290, "b")], altFacts: eff(92.3) });
+  assert.equal(ok.combo.power.status, "ok"); assert.match(ok.combo.power.text, /284–290 kWm \(prime\)/);
+  assert.match(comboChecks(cfg(), { combo: {}, row: noRow, engFacts: [fact(284, "a"), fact(320, "b")], altFacts: eff(92.3) }).combo.power.text, /lệch > 3%: 284 \/ 320 kW/);
+  assert.deepEqual(kwmOf(null, [fact(284, "a")]).rating, "prime");
+  // factConflicts: a prime and a standby figure are not two sources that disagree; two primes 13% apart are.
+  assert.equal(factConflicts([fact(284, "a"), { ...fact(313, "b"), key: "engStandby" }]).size, 0);
+  assert.equal(factConflicts([fact(284, "a"), fact(320, "b")]).size, 1);
+});
+
+test("PR 3: alternator kVA lines and the 'highest kVA below the set' warning", () => {
+  const built = { alternators: [{ key: CAT.keyOf("TAL-A42-C") }, { key: CAT.keyOf("FD2A-4") }, { key: CAT.keyOf("BTP3 S/2") }] };
+  const sup = [{ id: "ls", specTables: [{ n: 2001, rows: ["| TAL-A42-C | kVA | 29 | 30 | 30 | 18 | 26", "| TAL-A42-C kVA | 28 | 31 | 32.5 | 36", "| Phase | 3ph. | 1ph."] }] },
+    { id: "fd", specTables: [{ n: 2001, rows: ["| FD2A-4 | 额定容量（KVA） | 42.5 | 42.5 | 52.5 | 55.0"] }] },
+    { id: "ma", specTables: [{ n: 2001, rows: ["| BTP3 S/2 | 2 | 13kVA | 15.6kVA"] }] }];
+  const m = altKvaOf(sup, built);
+  assert.deepEqual(m.get(CAT.keyOf("TAL-A42-C")).map((x) => Math.max(...x.values)), [30, 36]);
+  assert.deepEqual(m.get(CAT.keyOf("FD2A-4"))[0].values, [42.5, 42.5, 52.5, 55]);
+  assert.deepEqual(m.get(CAT.keyOf("BTP3 S/2"))[0].values, [13, 15.6]);
+  assert.equal(altKvaRange(m.get(CAT.keyOf("TAL-A42-C"))).max, 36);
+  const c = comboChecks(cfg(), { combo: {}, row: { line: "| x |", specs: [], power: { prime: { kVA: 50, kW: 40 } } }, altKva: m.get(CAT.keyOf("TAL-A42-C")) });
+  assert.equal(c.combo.altKva.status, "low"); assert.match(c.warnings[0], /36 kVA < 50 kVA prime/);
+  assert.equal(comboChecks(cfg(), { combo: {}, row: { line: "| x |", specs: [], power: { prime: { kVA: 30, kW: 24 } } }, altKva: m.get(CAT.keyOf("TAL-A42-C")) }).combo.altKva.status, "any");
+  // Two sources whose highest kVA are more than 3% apart: not used.
+  assert.equal(altKvaRange([{ supplierId: "a", n: 1, values: [30] }, { supplierId: "b", n: 1, values: [40] }]).conflict.length, 2);
 });
 
 test("comboChecks: BMEP for reference and questions for the supplier (load step, site, load types)", () => {
