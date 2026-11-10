@@ -605,12 +605,14 @@
     return { goods, extras, vat, vatRate, total: goods + extras + vat, missing, n: items.length };
   }
   // Mọi dòng giá của mọi gói thành một sổ: { key, rowId, supplierId, ...item, kvaNum }, mới nhất trước. kvaNum: công
-  // suất ghi ở dòng, không có thì đọc từ mô tả.
+  // suất ghi ở dòng, không có thì đọc từ mô tả. engineMake (để lọc theo động cơ): hãng nhận ra trong ô Động cơ
+  // (catalog.js ENGINE_BRANDS), không nhận ra thì giữ nguyên chữ đã nhập, ô trống thì "".
   function quoteLedger(quotes) {
-    const out = [];
+    const out = [], CAT = root.GenbidCatalog;
     for (const [key, q] of Object.entries(quotes || {})) for (const row of key.startsWith("_") ? [] : q?.rows || []) for (const x of row.items || []) {
       if (!(Number(x.unitPrice) > 0)) continue;
-      out.push({ key, rowId: row.id, supplierId: row.supplierId || "", ...x, kvaNum: Number(x.kva) > 0 ? Number(x.kva) : kvaOf(x.desc) });
+      const eng = String(x.engine || "").trim();
+      out.push({ key, rowId: row.id, supplierId: row.supplierId || "", ...x, kvaNum: Number(x.kva) > 0 ? Number(x.kva) : kvaOf(x.desc), engineMake: (CAT && brandsIn(eng, CAT.ENGINE_BRANDS)[0]) || eng });
     }
     return out.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
   }

@@ -299,6 +299,9 @@ test("quoteCost / quoteLedger: price lines in their currency, extras in đồng 
   assert.equal(c.vat, 0);
   const led = BP.quoteLedger({ _cost: { fx: { USD: 26000 }, vat: 10 }, K1: { rows: [{ ...row, items: [{ ...row.items[0], date: "2026-10-01" }, row.items[2]] }] }, K2: { rows: [{ id: "r1", supplierId: "s2", items: [{ desc: "Máy", kva: 250, unitPrice: 9e8, date: "2026-11-01" }] }] } });
   assert.deepEqual(led.map((x) => [x.key, x.supplierId, x.kvaNum]), [["K2", "s2", 250], ["K1", "s1", 500]]);
+  // engineMake, for the ledger's engine filter: a known make from the engine cell, else the cell as written, else "".
+  const eng = (engine) => BP.quoteLedger({ K: { rows: [{ id: "r", supplierId: "s", items: [{ desc: "Máy", unitPrice: 1, engine }] }] } })[0].engineMake;
+  assert.deepEqual([eng("cummins KTA19-G4"), eng("Động cơ Yuchai YC6MK420"), eng(" Hãng Lạ X1 "), eng(""), eng(undefined)], ["Cummins", "Yuchai", "Hãng Lạ X1", "", ""]);
 });
 
 test("wonEvidence: won lots that name the engine model, the genset model, or the engine make at this power", () => {
