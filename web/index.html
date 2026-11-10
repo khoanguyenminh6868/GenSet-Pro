@@ -563,9 +563,9 @@ function fmtBannerDate(iso) {
 }
 function fmtVnd(n) {
   if (n == null || isNaN(n)) return "";
-  if (n >= 1e9) return (n / 1e9).toLocaleString("vi-VN", { maximumFractionDigits: 2 }) + " tỷ đ";
-  if (n >= 1e6) return (n / 1e6).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + " triệu đ";
-  return n.toLocaleString("vi-VN") + " đ";
+  if (n >= 1e9) return (n / 1e9).toLocaleString("vi-VN", { maximumFractionDigits: 2 }) + " tỷ";
+  if (n >= 1e6) return (n / 1e6).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + " triệu";
+  return n.toLocaleString("vi-VN");
 }
 function timeLeft(iso) {
   if (!iso) return null;
@@ -1680,7 +1680,7 @@ function quoteItemsHtml(key, r, ro) {
 }
 function quoteCostHtml(key, ro) {
   const c = quoteCostCfg(key), fx = Object.entries(c.fx || {}).filter(([, v]) => v > 0), ex = c.extras || [];
-  return h`<div class="qcost"><div class="small"><b>Dùng cho mọi gói:</b> ${fx.length ? fx.map(([k, v]) => `1 ${k} = ${qNum(v)} đ`).join(" · ") : "chưa nhập tỷ giá"} · thuế GTGT ${c.vat > 0 ? qNum(c.vat) + "%" : "chưa nhập"}</div>
+  return h`<div class="qcost"><div class="small"><b>Dùng cho mọi gói:</b> ${fx.length ? fx.map(([k, v]) => `1 ${k} = ${qNum(v)}`).join(" · ") : "chưa nhập tỷ giá"} · thuế GTGT ${c.vat > 0 ? qNum(c.vat) + "%" : "chưa nhập"}</div>
     <div class="small"><b>Khoản thêm của gói này:</b> ${ex.length ? ex.map((e) => `${e.label || "khác"} ${e.kind === "pct" ? qNum(e.value) + "% tiền hàng" : fmtVnd(Number(e.value))}`).join("; ") : "chưa có"}</div>
     <div class="row" style="gap:8px;flex-wrap:wrap">${raw(ro ? "" : '<button class="btn sm" id="qAll" title="Lưu một lần, dùng cho mọi gói">Tỷ giá, thuế GTGT</button><button class="btn sm" id="qCost">Khoản thêm</button>')}<button class="btn sm" id="qLedger" title="Mọi dòng giá đã nhập ở mọi gói">Sổ báo giá</button></div></div>`;
 }
@@ -1889,7 +1889,7 @@ function profitHtml(t) {
   const rows = [...idx].sort((a, b) => a - b).map((i) => {
     const r = curve.grid[i], price = P ? Math.round((P * r) / 1000) * 1000 : null, m = cost != null && P ? P * r - cost : null, best = pt.best && at(pt.best.r) === i;
     return h`<tr class="${best ? "pbest" : ""}${m != null && m <= 0 ? " ploss" : ""}"><td class="num"><b>${bpPct(r)}</b>${raw(best ? ' <span class="chip ok">kỳ vọng cao nhất</span>' : "")}${raw(mark.has(i) ? h` <span class="chip mut">${mark.get(i)}</span>` : "")}</td>
-      <td class="num" data-l="Giá bỏ">${price ? price.toLocaleString("vi-VN") + " đ" : "—"}</td><td class="num" data-l="Xác suất thắng">${w[i] == null ? "—" : pct0(w[i])}</td>
+      <td class="num" data-l="Giá bỏ">${price ? price.toLocaleString("vi-VN") : "—"}</td><td class="num" data-l="Xác suất thắng">${w[i] == null ? "—" : pct0(w[i])}</td>
       ${raw(cost != null ? h`<td class="num" data-l="Lãi nếu trúng">${m == null ? "—" : (m < 0 ? "−" : "") + fmtVnd(Math.abs(Math.round(m)))}${raw(m != null && price ? h`<div class="muted small">${bpPct(m / price)} giá bỏ</div>` : "")}</td><td class="num" data-l="Lợi nhuận kỳ vọng">${m == null || w[i] == null || m <= 0 ? "—" : fmtVnd(Math.round(w[i] * m))}</td>` : "")}</tr>`;
   });
   const scenBtn = (id, label, p) => h`<button class="btn sm${scen === id ? " primary" : ""}" data-pscen="${id}">${label}${p != null ? ` · ${pct0(p)}` : ""}</button>`;
