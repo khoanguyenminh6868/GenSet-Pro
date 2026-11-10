@@ -327,3 +327,142 @@ test("wonEvidence: won lots that name the engine model, the genset model, or the
   assert.deepEqual(BP.wonEvidence(docs, { engine: { make: "Cummins", model: "QSK60-G4" }, genset: { model: "C2500D5A" } }, { kva: 2500 }).lots.map((x) => [x.key, x.by]), [["G", "genset"]]);
   assert.equal(BP.wonEvidence(docs, { engine: { make: "Weichai", model: "WP13D405E200" } }, { kva: 500 }).score, 0);
 });
+
+// ---------- 2026-11-10: giá theo cấu hình, khoản chi gợi ý, chi phí vốn, cảnh báo, đối thủ, báo giá cũ ----------
+const grpDocs = () => {
+  const g = (maker, origin) => [{ name: "Máy phát điện 400kVA", maker, origin }];
+  const mk = (ratio, goods, n = 3) => ({ bidName: "Mua sắm máy phát điện 400kVA", final: true, lots: [lot(1e9, ratio * 1e9, goods, n)] });
+  return { CN1: mk(0.8, g("Weichai", "Trung Quốc")), CN2: mk(0.82, g("Yuchai", "Trung Quốc")), CN3: mk(0.84, g("Weichai", "Trung Quốc")),
+    US1: mk(0.95, g("Cummins", "Mỹ")), US2: mk(0.96, g("Cummins", "Anh")), UK1: mk(0.97, g("Perkins", "Anh")),
+    NO: mk(0.5, [{ name: "Máy phát điện 400kVA" }]) };
+};
+test("groupPrices: three levels from the lots of that origin group only; unknown-group lots are not borrowed", () => {
+  const t = { notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" };
+  const f = BP.groupPrices({ t, docs: grpDocs(), K: 400, P: 1e9, group: "foreign" });
+  assert.equal(f.basis, "code");
+  assert.deepEqual(f.stats.levels.map((l) => l.ratio), [0.95, 0.96, 0.96]);
+  const c = BP.groupPrices({ t, docs: grpDocs(), K: 400, P: 1e9, group: "cn" });
+  assert.deepEqual(c.stats.levels.map((l) => l.ratio), [0.8, 0.82, 0.82]);
+  // Two foreign lots only: no levels, a note says how many.
+  const d = grpDocs(); delete d.UK1;
+  const g = BP.groupPrices({ t, docs: d, K: 400, P: 1e9, group: "foreign" });
+  assert.equal(g.stats.levels.length, 0);
+  assert.match(g.note, /cần ít nhất 3, có 2/);
+});
+
+test("candidates / check: the first configuration's result is unchanged by groups and byConfig (regression)", () => {
+  const t = { notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA", engine: { make: "Weichai", model: "WP13D385E200" } };
+  const a = BP.candidates(t, grpDocs(), 400, 1e9), b = BP.candidates({ ...t, group: undefined }, grpDocs(), 400, 1e9);
+  assert.deepEqual(a, b);
+  assert.equal(a.group, "cn");
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "bp-test-"));
+  fs.writeFileSync(path.join(dir, "result.json"), JSON.stringify({ samples: a.list.map((s) => ({ id: s.id, level: "close", quote: "Mua sắm máy phát điện 400kVA" })) }));
+  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: 400, price: 1e9 }, total: 7, list: a.list, prior: a.prior }));
+  const before = check(dir).result.stats;
+  const alt = BP.groupPrices({ t, docs: grpDocs(), K: 400, P: 1e9, group: "foreign" });
+  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: 400, price: 1e9 }, total: 7, list: a.list, prior: a.prior, byConfig: [{ rank: 1, main: true, group: "cn" }, { rank: 2, group: "foreign", ...alt }] }));
+  const after = check(dir).result;
+  assert.deepEqual(after.stats, before);
+  assert.equal(after.byConfig[1].stats.levels.length, 3);
+});
+
+test("configPrices: the first configuration plus the nearest one of another engine group", async () => {
+  const { configPrices } = await import("./bidprice-bot.mjs");
+  const t = { notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" };
+  const cfgs = [{ rank: 1, engine: { make: "Weichai", model: "WP13D385E200" } }, { rank: 2, engine: { make: "Yuchai", model: "YC6MK420" } }, { rank: 3, engine: { make: "Cummins", model: "KTA19-G4" } }];
+  const r = await configPrices(cfgs, cfgs[0], "cn", t, grpDocs(), 400, 1e9);
+  assert.deepEqual(r.map((x) => [x.rank, x.group, !!x.main]), [[1, "cn", true], [3, "foreign", false]]);
+  assert.deepEqual(r[1].stats.levels.map((l) => l.ratio), [0.95, 0.96, 0.96]);
+  assert.equal((await configPrices([cfgs[0], cfgs[1]], cfgs[0], "cn", t, grpDocs(), 400, 1e9)).length, 1);
+});
+
+test("costHints: costs that may arise, with the words of the analysis; none guessed, those in extras marked", () => {
+  const a = { result: {
+    keyInfo: { deliveryLocation: "Trạm ra đa, huyện đảo Lý Sơn, Quảng Ngãi", warranty: "24 tháng" },
+    technicalSpecs: [{ item: "Tủ ATS", requirement: "4P 800A" }, { item: "Vỏ chống ồn", requirement: "Vỏ cách âm 75 dB(A)@7m" }, { item: "Khung bệ máy", requirement: "Thép sơn tĩnh điện" },
+      { item: "Phụ kiện", requirement: "Tài liệu kỹ thuật + hướng dẫn sử dụng; Ống xả" }, { item: "Hoà đồng bộ", requirement: "Không yêu cầu" }, { item: "Biên bản thử tải xuất xưởng", requirement: "Test report" }],
+    contractTerms: [{ term: "Nghiệm thu", requirement: "Chạy thử liên tục 2 giờ đến Pđm tại công trình", quote: "chạy thử" }],
+  } };
+  const h = BP.costHints(a, [{ label: "ats", kind: "vnd", value: 1 }]);
+  assert.deepEqual(h.map((x) => x.id), ["ats", "exhaust", "canopy", "loadtest", "remote", "warranty"]);
+  assert.equal(h.find((x) => x.id === "ats").have, true);
+  assert.equal(h.find((x) => x.id === "canopy").have, false);
+  assert.match(h.find((x) => x.id === "remote").quote, /Lý Sơn/);
+  assert.equal(h.find((x) => x.id === "warranty").kind, "pct");
+  assert.equal(h.find((x) => x.id === "warranty").months, 24);
+  assert.ok(h.every((x) => !("value" in x)));
+  assert.deepEqual(BP.costHints({ result: { technicalSpecs: [{ item: "ATS", requirement: "Không có trong tài liệu được cung cấp" }], keyInfo: { warranty: "12 tháng" } } }), []);
+  assert.deepEqual([BP.monthsIn("tối thiểu 730 ngày"), BP.monthsIn("02 năm"), BP.monthsIn("không ghi")], [24, 24, null]);
+});
+
+test("financeCost: advance, payment, guarantees from the contract terms; rate and days from the user, else nothing", () => {
+  const terms = [
+    { term: "Tạm ứng", requirement: "Không tạm ứng", quote: "Tạm ứng: Không" },
+    { term: "Thanh toán", requirement: "01 lần; thời hạn không quá 15 ngày từ khi xuất trình đủ chứng từ", quote: "Thời hạn thanh toán không quá 15 ngày" },
+    { term: "Bảo đảm thực hiện hợp đồng", requirement: "3% giá hợp đồng", quote: "Giá trị bảo đảm thực hiện hợp đồng: 3 % giá hợp đồng" },
+    { term: "Bảo đảm bảo hành", requirement: "Giữ lại 5% giá trị", quote: "giữ lại 5%" },
+    { term: "Thời gian bảo hành", requirement: "Tối thiểu 730 ngày", quote: "730 ngày" },
+    { term: "Phạt chậm giao hàng", requirement: "1%/tuần", quote: "1%/ tuần" },
+    { term: "Mức phạt tối đa", requirement: "12%", quote: "khấu trừ đến 12%." },
+    { term: "Thời hạn giao hàng", requirement: "≤ 90 ngày", quote: "≤ 90 ngày" },
+  ];
+  const none = BP.financeCost(terms, { price: 1e9 });
+  assert.equal(none.total, null);
+  assert.deepEqual(none.missing, ["lãi suất vay vốn (%/năm)", "số ngày thực hiện hợp đồng (điều khoản ghi 90 ngày)"]);
+  const f = BP.financeCost(terms, { price: 1e9, base: 8e8, rate: 9, days: 90 }), by = (id) => f.lines.find((x) => x.id === id);
+  assert.equal(Math.round(by("capital").amount), Math.round((8e8 * 0.09 * (90 + 15)) / 365));
+  assert.equal(Math.round(by("security").amount), Math.round((1e9 * 0.03 * 0.09 * 90) / 365));
+  assert.equal(Math.round(by("retention").amount), Math.round((1e9 * 0.05 * 0.09 * Math.round(24 * 30.4)) / 365));
+  assert.equal(by("penalty").risk, true);
+  assert.equal(by("penalty").amount, 1.2e8);
+  assert.equal(Math.round(f.total), Math.round(by("capital").amount + by("security").amount + by("retention").amount));
+  assert.match(by("security").basis, /3 % giá hợp đồng/);
+  // A payment in two stages, an advance with no rate: listed to read by hand.
+  const g = BP.financeCost([{ term: "Tạm ứng", requirement: "Theo thỏa thuận (không nêu tỷ lệ)" }, { term: "Thanh toán", requirement: "02 đợt: đợt 1 80% trong 07 ngày" }], { price: 1e9, rate: 9, days: 60 });
+  assert.deepEqual(g.manual.map((x) => x.term), ["Tạm ứng", "Thanh toán"]);
+  assert.equal(g.lines[0].amount, null);
+  assert.deepEqual(g.lines[0].lack, ["% tạm ứng", "hạn thanh toán"]);
+});
+
+test("feasibility: cost and capital cost at or over the package price, or over the highest level", () => {
+  const levels = [{ id: "low", label: "Cạnh tranh", price: 8e8, ratio: 0.8 }, { id: "high", label: "Cao", price: 9e8, ratio: 0.9 }];
+  assert.deepEqual(BP.feasibility({ P: 1e9, cost: 7e8, levels }).flags, []);
+  assert.equal(BP.feasibility({ P: 1e9, cost: 8.9e8, finance: 2e7, levels }).flags[0].id, "over-levels");
+  const f = BP.feasibility({ P: 1e9, cost: 9.9e8, finance: 2e7, levels }).flags[0];
+  assert.equal(f.id, "over-package");
+  assert.match(f.text, /1\.010\.000\.000 đ.*101\.0% giá gói/);
+  assert.deepEqual(BP.feasibility({ P: 1e9, cost: null, levels }).flags, []);
+});
+
+test("rivalsOf: bidders of lots of the same investor, province or size before the tender; ratio only from 3 bids", () => {
+  const b = (name, tax, price, won = false, reason = "") => ({ name, taxCode: tax, finalPrice: price, won, winPrice: won ? price : null, reason });
+  const L = (bidders, goods = []) => ({ lotNo: "", lotName: "", price: 1e9, goods, bidders });
+  const docs = {
+    A: { bidName: "Mua sắm máy phát điện 400kVA", investorName: "Bệnh viện A", location: "Tỉnh Quảng Ngãi", bidCloseDate: "2025-01-01", lots: [L([b("Alpha", "1", 8e8, true), b("Beta", "2", 9e8)], [{ name: "Máy phát điện 400kVA", maker: "Cummins" }])] },
+    B: { bidName: "Mua sắm máy phát điện 1000kVA", investorName: "BỆNH VIỆN A", location: "Hà Nội", bidCloseDate: "2025-02-01", lots: [L([b("Alpha", "1", 8.5e8, true), b("Beta", "2", 0, false, "Không đáp ứng yêu cầu về kỹ thuật")])] },
+    C: { bidName: "Mua sắm máy phát điện 410kVA", investorName: "Sở Y tế", location: "Hà Nội", bidCloseDate: "2025-03-01", lots: [L([b("Alpha", "1", 9e8, true), b("Gamma", "3", 9.5e8)])] },
+    D: { bidName: "Mua sắm máy phát điện 100kVA", investorName: "Sở khác", location: "Cần Thơ", bidCloseDate: "2025-03-01", lots: [L([b("Delta", "4", 9e8, true)])] },
+    E: { bidName: "Sửa chữa máy phát điện 400kVA", investorName: "Bệnh viện A", location: "Quảng Ngãi", bidCloseDate: "2025-03-01", lots: [L([b("Eps", "5", 9e8, true)])] },
+    LATE: { bidName: "Mua sắm máy phát điện 400kVA", investorName: "Bệnh viện A", bidCloseDate: "2027-01-01", lots: [L([b("Late", "6", 9e8, true)])] },
+  };
+  const r = BP.rivalsOf({ notifyNo: "X", investorName: "Bệnh viện A", location: "Quảng Ngãi", kva: 400, bidCloseDate: "2026-11-10" }, docs, { ownTax: "2" });
+  assert.deepEqual(r.list.map((x) => x.id), ["1", "2", "3"]);
+  const a = r.list[0];
+  assert.deepEqual([a.n, a.wins, a.investor, a.size, a.priced], [3, 3, 2, 2, 3]);
+  assert.deepEqual(a.ratio, { median: 0.85, min: 0.8, max: 0.9 });
+  assert.deepEqual(a.makes, [{ make: "Cummins", n: 1 }]);
+  const beta = r.list[1];
+  assert.deepEqual([beta.self, beta.techOut, beta.ratio], [true, 1, null]);
+});
+
+test("quoteCost / quoteLedger: a price line older than 180 days or with no date is flagged; finance adds to the cost", () => {
+  const now = Date.UTC(2026, 10, 10);
+  const row = { items: [{ id: "a", desc: "Tổ máy", unitPrice: 1e9, date: "2026-10-01" }, { id: "b", desc: "ATS", unitPrice: 5e7, date: "01/03/2026" }, { id: "c", desc: "Cáp", unitPrice: 1e7 }] };
+  const c = BP.quoteCost(row, { finance: 2e7 }, now);
+  assert.deepEqual(c.stale.map((x) => [x.id, x.why]), [["b", "old"], ["c", "nodate"]]);
+  assert.equal(c.stale[0].days, 254);
+  assert.equal(c.total, 1e9 + 5e7 + 1e7 + 2e7);
+  assert.equal(c.finance, 2e7);
+  assert.equal(BP.quoteCost(row, { finance: 2e7, vat: 10 }, now).vat, (1e9 + 5e7 + 1e7) * 0.1);
+  assert.deepEqual(BP.quoteLedger({ K: { rows: [{ id: "r", items: row.items }] } }, now).map((x) => x.stale && x.stale.why), [null, "old", "nodate"]);
+});

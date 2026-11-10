@@ -58,6 +58,9 @@ export async function prep(req, dir, hist, size = null) {
     sync: (hsmt && BP.brandSyncOf(hsmt.text)) || BP.brandSyncOf(cfgText) };
   const docs = hist || Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
   const { total, tol, group, otherGroup, list, prior } = BP.candidates(t, docs, K, P);
+  // Giá theo cấu hình (2026-11-10): cấu hình hạng 1 dùng giá của agent như cũ; cấu hình gần nhất có động cơ khác nhóm xuất
+  // xứ được ba mức riêng từ gói cũ cùng nhóm, chọn bằng code (groupPrices), không vay gói nhóm khác.
+  const byConfig = await configPrices((size ? size.cfg : cfg?.result)?.configs || [], first, group, t, docs, K && K * (size?.qty || 1), P, K);
   const ratingVi = { prime: "liên tục", standby: "dự phòng" };
   fs.writeFileSync(path.join(dir, "input.md"), [
     `# Gói thầu ${key}`, `Tên gói: ${t.bidName}`, t.investorName ? `Chủ đầu tư: ${t.investorName}` : "",
@@ -75,15 +78,36 @@ export async function prep(req, dir, hist, size = null) {
     hsmt ? "## Phần kỹ thuật của HSMT\n" + technicalPart(hsmt.text).slice(0, 60000) : "Chưa có văn bản HSMT.",
   ].filter((l) => l !== "").join("\n"), "utf8");
   fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"), "utf8");
-  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior }), "utf8");
+  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior, byConfig }), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "bidprice-prompt.md"), "utf8"), "utf8");
-  return { total, group, otherGroup, candidates: list.length, K, P, prior };
+  return { total, group, otherGroup, candidates: list.length, K, P, prior, byConfig };
+}
+
+// The configuration in a few words, for the web.
+const cfgLabel = (c) => [c.engine && `động cơ ${[c.engine.make, c.engine.model].filter(Boolean).join(" ")}`, c.alternator && `đầu phát ${[c.alternator.make, c.alternator.model].filter(Boolean).join(" ")}`].filter(Boolean).join(", ");
+// [hạng 1 (giá = result.stats của agent), cấu hình gần nhất có nhóm xuất xứ động cơ khác (giá riêng, code)]. Nhóm của một
+// cấu hình: hãng động cơ (catalog.js), sản xuất tại Trung Quốc khi mọi NCC của nó ở Trung Quốc. Kmult: kVA × số máy.
+export async function configPrices(configs, first, group, t, docs, Kmult, P, K = Kmult) {
+  if (!configs.length) return [];
+  const ids = [...new Set(configs.flatMap((c) => (c.suppliers || []).map((s) => s.supplierId)).filter(Boolean))];
+  const sups = ids.length ? await allDocs("supplier").catch(() => []) : [];
+  const placeOf = (c) => { const s = (c.suppliers || []).map((x) => sups.find((d) => d.id === x.supplierId)).filter(Boolean); return s.length && s.every((d) => d.data?.country === "CN") ? "cn" : null; };
+  const out = [];
+  const main = first || configs[0];
+  out.push({ rank: main.rank ?? 1, label: cfgLabel(main), group, main: true });
+  const alt = configs.find((c) => c !== main && !/KHÔNG/.test(syncNote(c)) && (() => { const g = BP.engineGroup(c.engine, placeOf(c)); return g && g !== group; })());
+  if (alt) {
+    // A size of several sets: the price per kVA times all of them (Kall), as check does for the main one.
+    const g = BP.engineGroup(alt.engine, placeOf(alt)), r = BP.groupPrices({ t: { ...t, engine: alt.engine }, docs, K, P, group: g, Kall: Kmult });
+    out.push({ rank: alt.rank ?? null, label: cfgLabel(alt), group: g, ...r });
+  }
+  return out;
 }
 
 // result.json checked against samples.json: every lot gets a level; a lot the agent left out, or whose quote is not in
 // its own text, counts as unknown (unverified). A "same" lot whose power code read is over 1,5 times off becomes "close".
 export function check(dir) {
-  const { basis, total, list, prior = [] } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
+  const { basis, total, list, prior = [], byConfig = [] } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
   const r = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8")), problems = [];
   const by = new Map((r.samples || []).map((x) => [x.id, x]));
   const samples = list.map((s) => {
@@ -99,7 +123,7 @@ export function check(dir) {
   });
   // A size of several sets (a tender of several sizes): the price per kVA times all of them.
   const stats = BP.suggest(samples, basis.price, basis.kva && basis.kva * (basis.qty || 1), prior);
-  const result = { basis, total, tender: { summary: String(r.tender?.summary || ""), points: (r.tender?.points || []).map(String).slice(0, 10) }, notes: (r.notes || []).map(String).slice(0, 6), samples, stats };
+  const result = { basis, total, tender: { summary: String(r.tender?.summary || ""), points: (r.tender?.points || []).map(String).slice(0, 10) }, notes: (r.notes || []).map(String).slice(0, 6), samples, stats, ...(byConfig.length ? { byConfig } : {}) };
   fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
   return { result, problems };
 }
@@ -114,7 +138,7 @@ function runClaude(dir) {
 async function attemptOne(req, dir, hist, size = null, tag = req.key) {
   fs.rmSync(dir, { recursive: true, force: true });
   const info = await prep(req, dir, hist, size);
-  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "", ...(size ? { qty: size.qty } : {}) }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).${info.prior?.length ? ` Giá dưới đây tính từ ${info.prior.length} gói cùng cỡ (±15%) có cạnh tranh, chưa qua Agent so cấu hình.` : ""}`], samples: [], stats: BP.suggest([], info.P, info.K && info.K * (size?.qty || 1), info.prior || []) }, problems: [] };
+  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "", ...(size ? { qty: size.qty } : {}) }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).${info.prior?.length ? ` Giá dưới đây tính từ ${info.prior.length} gói cùng cỡ (±15%) có cạnh tranh, chưa qua Agent so cấu hình.` : ""}`], samples: [], stats: BP.suggest([], info.P, info.K && info.K * (size?.qty || 1), info.prior || []), ...(info.byConfig?.length ? { byConfig: info.byConfig } : {}) }, problems: [] };
   const started = Date.now(), r = runClaude(dir);
   fs.writeFileSync(path.join(os.tmpdir(), `genbid-bidprice-${tag}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
   if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
@@ -202,6 +226,7 @@ function printResult({ result, problems }) {
   console.log(`Ứng viên ${result.samples.length}/${result.total}: ${BP.LEVELS.map((l) => `${l} ${result.samples.filter((x) => x.level === l).length}`).join(", ")}`);
   console.log(`Tính từ ${s.n} gói (${s.basis})${s.enough ? "" : " — CHƯA ĐỦ"}: ${s.levels.map((l) => `${l.label} ${fmt(l.price)} (${Math.round(100 * l.ratio)}%, thắng ${Math.round(100 * l.chance)}%)`).join(" · ")}`);
   if (s.perKva) console.log(`Theo đ/kVA: ${fmt(s.perKva.value)} đ/kVA → ${fmt(s.perKva.price)} (${s.perKva.n} gói)`);
+  for (const c of (result.byConfig || []).filter((c) => !c.main)) console.log(`Cấu hình #${c.rank ?? "?"} ${c.label} (nhóm ${BP.GROUP[c.group] || c.group}, code chọn gói): ${c.stats.levels.length ? c.stats.levels.map((l) => `${l.label} ${fmt(l.price)} (${Math.round(100 * l.ratio)}%)`).join(" · ") + ` từ ${c.stats.pool} gói` : c.note}`);
   for (const x of result.samples.filter((x) => x.level === "same" || x.level === "close")) console.log(`  ${x.id} ${x.level} ${x.key} ${Math.round(100 * x.ratio)}% ${x.bidders.length}NT — ${x.same.join(", ")} / khác: ${x.diff.join(", ")}`);
   if (problems.length) console.log("Chưa khớp:\n" + problems.join("\n"));
 }
