@@ -49,7 +49,7 @@ export default async function handler(req, res) {
     if (req.query?.kind === "all") {
       // beat=0: the bot (GenBid-Bot.ps1) wrote the heartbeat less than a minute ago; the page waits 3 minutes before
       // saying the PC is off. Without beat (an older bot) the heartbeat is written every poll, as before.
-      const [marks] = await Promise.all([marksOf(ALL_REQ), req.query.beat === "0" ? null : heartbeat(req.query.running)]);
+      const [marks] = await Promise.all([pendingMarks(), req.query.beat === "0" ? null : heartbeat(req.query.running)]);
       const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks), reqsOf("specreq", marks)]);
       return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec });
     }
@@ -97,6 +97,31 @@ async function marksOf(colls) {
     for (const { coll, ...m } of page) out[coll]?.push(m);
     if (page.length < 1000) return out;
   }
+}
+// The bot's poll (every 15 s) needs only the pending requests, but listing the dates of every request row was ~13 KB
+// (2 KB gzipped) a poll, growing with the tenders: up to ~2.2 GB a month of Supabase egress. The view
+// public.pending_requests (web/supabase/pending-requests.sql, run once in the SQL editor) returns only the pending rows,
+// and syncreq/current always, in the shape marksOf() gives. Until it exists (PostgREST answers 404), the poll lists every
+// row as before. Anything else than a list from the view (missing, no right, an error, a network failure) must not stop
+// the bot either: the poll lists every row, and the view is left alone for 10 minutes so a poll stays one request.
+let viewSkipUntil = 0;
+async function pendingMarks() {
+  if (Date.now() >= viewSkipUntil) {
+    let why;
+    try {
+      const r = await fetch(`${SB_URL}/rest/v1/pending_requests?select=coll,id,requestedAt,doneAt,mode&order=coll,id`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
+      const rows = r.ok ? await r.json() : null;
+      if (Array.isArray(rows) && rows.every((m) => m && typeof m.coll === "string" && typeof m.id === "string")) {
+        const out = Object.fromEntries(ALL_REQ.map((c) => [c, []]));
+        for (const { coll, ...m } of rows) out[coll]?.push(m);
+        return out;
+      }
+      why = r.ok ? "not a list" : `HTTP ${r.status}`;
+    } catch (e) { why = e.message; }
+    viewSkipUntil = Date.now() + 10 * 60e3;
+    console.warn(`pending_requests: ${why}; listing every request for 10 minutes`);
+  }
+  return marksOf(ALL_REQ);
 }
 // all: marksOf() already read for several collections (?kind=all); otherwise this collection's are read here.
 async function pendingDocs(coll, all) {
