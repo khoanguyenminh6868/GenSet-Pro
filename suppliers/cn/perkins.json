@@ -53,17 +53,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "1106A-70TAG",
       "fuel": "diesel",
-      "engineModels": [
-        "1106A-70TAG"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 220,
+        "min": 150,
         "max": 220,
         "unit": "kVA",
         "rating": "unspecified",
@@ -76,17 +73,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "404J-22G",
       "fuel": "diesel",
-      "engineModels": [
-        "404J-22G"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 22.3,
+        "min": 20.1,
         "max": 22.3,
         "unit": "kVA",
         "rating": "unspecified",
@@ -99,17 +93,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "2606C-E13TAG",
       "fuel": "diesel",
-      "engineModels": [
-        "2606C-E13TAG"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 563,
+        "min": 350,
         "max": 563,
         "unit": "kVA",
         "rating": "unspecified",
@@ -122,17 +113,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "1103A-33TG",
       "fuel": "diesel",
-      "engineModels": [
-        "1103A-33TG"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 75,
+        "min": 45,
         "max": 75,
         "unit": "kVA",
         "rating": "unspecified",
@@ -145,17 +133,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "4016-61TRG",
       "fuel": "diesel",
-      "engineModels": [
-        "4016-61TRG"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 2500,
+        "min": 1400,
         "max": 2500,
         "unit": "kVA",
         "rating": "unspecified",
@@ -168,17 +153,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "2806J-E18TAG1",
       "fuel": "diesel",
-      "engineModels": [
-        "2806J-E18TAG1"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 625,
+        "min": 554,
         "max": 625,
         "unit": "kVA",
         "rating": "unspecified",
@@ -191,17 +173,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "1104C-44TAG",
       "fuel": "diesel",
-      "engineModels": [
-        "1104C-44TAG"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 126.5,
+        "min": 80,
         "max": 126.5,
         "unit": "kVA",
         "rating": "unspecified",
@@ -214,17 +193,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "404A-22G",
       "fuel": "diesel",
-      "engineModels": [
-        "404A-22G"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 22,
+        "min": 20,
         "max": 22,
         "unit": "kVA",
         "rating": "unspecified",
@@ -237,17 +213,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "403D-11G",
       "fuel": "diesel",
-      "engineModels": [
-        "403D-11G"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 12.4,
+        "min": 9,
         "max": 12.4,
         "unit": "kVA",
         "rating": "unspecified",
@@ -260,17 +233,14 @@
       ]
     },
     {
-      "kind": "genset",
+      "kind": "engine",
       "series": "2406J-E13TAG3",
       "fuel": "diesel",
-      "engineModels": [
-        "2406J-E13TAG3"
-      ],
       "engineMakes": [
         "Perkins"
       ],
       "power": {
-        "min": 474,
+        "min": 410,
         "max": 474,
         "unit": "kVA",
         "rating": "unspecified",
