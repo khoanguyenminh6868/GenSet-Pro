@@ -1727,7 +1727,9 @@ export function effRange(altFacts = []) {
   const by = new Map();
   for (const f of altFacts || []) {
     if (f.key !== "eff" || /mech/i.test(f.label)) continue;
-    const v = numbersIn(f.value).filter((x) => x >= 80 && x < 100);
+    // Every figure of the line after its label (a fact keeps only the first: "| Efficiency (%) | 90.7 | 91.1 | 91.3").
+    const cells = CAT.cellsOf(f.line || ""), own = cells.length > 1 && norm(cells[0]) === norm(f.label) ? cells.slice(1).join(" | ") : f.value;
+    const v = numbersIn(own).filter((x) => x >= 80 && x < 100);
     if (!v.length) continue;
     const k = `${f.supplierId}#${f.n}`, o = by.get(k) || { min: Infinity, max: -Infinity, lines: [] };
     o.min = Math.min(o.min, ...v); o.max = Math.max(o.max, ...v); o.lines.push({ supplierId: f.supplierId, n: f.n, label: f.label, value: f.value, line: f.line });
