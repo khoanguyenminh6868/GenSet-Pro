@@ -1,0 +1,590 @@
+{
+  "id": "perkins",
+  "country": "GB",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Perkins Engines Company Limited",
+    "zh": null,
+    "brands": [
+      "Perkins"
+    ]
+  },
+  "website": "https://www.perkins.com/",
+  "hq": {
+    "province": null,
+    "city": "Peterborough"
+  },
+  "founded": 1932,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Thành lập 1932 tại Peterborough (Anh), thuộc Caterpillar từ 1997",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Nhà cung cấp động cơ diesel off-highway dải 4–2000 kW",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Perkins diesel and gas engines 4-2000 kW",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1106A-70TAG",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TAG"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "404J-22G",
+      "fuel": "diesel",
+      "engineModels": [
+        "404J-22G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 22.3,
+        "max": 22.3,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2606C-E13TAG",
+      "fuel": "diesel",
+      "engineModels": [
+        "2606C-E13TAG"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 563,
+        "max": 563,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1103A-33TG",
+      "fuel": "diesel",
+      "engineModels": [
+        "1103A-33TG"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 75,
+        "max": 75,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4016-61TRG",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-61TRG"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2806J-E18TAG1",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806J-E18TAG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104C-44TAG",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104C-44TAG"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 126.5,
+        "max": 126.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "404A-22G",
+      "fuel": "diesel",
+      "engineModels": [
+        "404A-22G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 22,
+        "max": 22,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "403D-11G",
+      "fuel": "diesel",
+      "engineModels": [
+        "403D-11G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 12.4,
+        "max": 12.4,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2406J-E13TAG3",
+      "fuel": "diesel",
+      "engineModels": [
+        "2406J-E13TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 474,
+        "max": 474,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang lịch sử và tuyển dụng không ghi địa chỉ chi tiết, chứng nhận"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.perkins.com/en_GB/company/heritage/the-perkins-story.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "The company was founded in a small office in Peterborough, UK, in 1932",
+        "Caterpillar’s acquisition of Perkins in December 1997"
+      ],
+      "file": "sources/perkins/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.perkins.com/en_GB/campaigns/careers/peterborough/apprenticeships.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Perkins is a world-leading supplier of off-highway diesel engines in the 4-2000 kW (5-2800 hp) market",
+        "Since 1997 Perkins has been owned by Caterpillar."
+      ],
+      "file": "sources/perkins/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002183.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1106A-70TAG",
+        "| Typical Electrical Output | 150-220 kVA (120-176 kWe) 150-220 kVA (120-176 kWe)"
+      ],
+      "file": "sources/perkins/2001.md"
+    },
+    {
+      "n": 2002,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/15969541.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 404J-22G",
+        "| Typical Electrical Output | 20.1-22.3 kVA (16.1-17.8 kWe) 20.1-22.3 kVA (16.1-17.8 kWe)"
+      ],
+      "file": "sources/perkins/2002.md"
+    },
+    {
+      "n": 2003,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/126320.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 2606C-E13TAG",
+        "| Typical Electrical Output | 350-563 kVA (280-450 kWe) 350-563 kVA (280-450 kWe)"
+      ],
+      "file": "sources/perkins/2003.md"
+    },
+    {
+      "n": 2004,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002507.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1103A-33TG",
+        "| Typical Electrical Output | 45-75 kVA (36-60 kWe) 45-75 kVA (36-60 kWe)"
+      ],
+      "file": "sources/perkins/2004.md"
+    },
+    {
+      "n": 2005,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002720.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 4016-61TRG",
+        "| Typical Electrical Output | 1400-2500 kVA (1120-2000 kWe) 1400-2500 kVA (1120-2000 kWe)"
+      ],
+      "file": "sources/perkins/2005.md"
+    },
+    {
+      "n": 2006,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/119460.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 2806J-E18TAG1",
+        "| Typical Electrical Output | 554-625 kVA (444-500 kWe) 554-625 kVA (444-500 kWe)"
+      ],
+      "file": "sources/perkins/2006.md"
+    },
+    {
+      "n": 2007,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002449.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1104C-44TAG",
+        "| Typical Electrical Output | 80-126.5 kVA (64-101 kWe) 80-126.5 kVA (64-101 kWe)"
+      ],
+      "file": "sources/perkins/2007.md"
+    },
+    {
+      "n": 2008,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002663.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 404A-22G",
+        "| Typical Electrical Output | 20-22 kVA (16-18 kWe) 20-22 kVA (16-18 kWe)"
+      ],
+      "file": "sources/perkins/2008.md"
+    },
+    {
+      "n": 2009,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002666.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 403D-11G",
+        "| Typical Electrical Output | 9-12.4 kVA (7.2-9.9 kWe) 9-12.4 kVA (7.2-9.9 kWe)"
+      ],
+      "file": "sources/perkins/2009.md"
+    },
+    {
+      "n": 2010,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/117540.html",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 2406J-E13TAG3",
+        "| Typical Electrical Output | 410-474 kVA (328-379 kWe) 410-474 kVA (328-379 kWe)"
+      ],
+      "file": "sources/perkins/2010.md"
+    }
+  ],
+  "confidence": "high",
+  "checkedAt": "2026-11-10",
+  "checkedBy": "Claude Code (Tìm Thông Số đợt 1 G7)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "1106A-70TAG — Product Specifications",
+      "header": [
+        "Product Specifications for 1106A-70TAG"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 140-204 kWm 140-204 kWm",
+        "| Typical Electrical Output | 150-220 kVA (120-176 kWe) 150-220 kVA (120-176 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | Fuel Optimised Fuel Optimised",
+        "| Number of Cylinders | 6 vertical inline 6 vertical inline",
+        "| Displacement | 428 in³ 7.01 l",
+        "| Aspiration | Turbocharged aftercooled Turbocharged aftercooled"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "404J-22G — Product Specifications",
+      "header": [
+        "Product Specifications for 404J-22G"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 18.6-20.6 kWm 18.6-20.6 kWm",
+        "| Typical Electrical Output | 20.1-22.3 kVA (16.1-17.8 kWe) 20.1-22.3 kVA (16.1-17.8 kWe)",
+        "| Rated Speed | 1500 rpm 1500 rpm",
+        "| Emissions | EU Stage V EU Stage V",
+        "| Number of Cylinders | 4 4",
+        "| Displacement | 135 in³ 2.2 l",
+        "| Aspiration | Naturally aspirated Naturally aspirated"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "2606C-E13TAG — Product Specifications",
+      "header": [
+        "Product Specifications for 2606C-E13TAG"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 321-518 kW 321-518 kW",
+        "| Typical Electrical Output | 350-563 kVA (280-450 kWe) 350-563 kVA (280-450 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | Emits equivalent to EU Stage II Emits equivalent to EU Stage II",
+        "| Number of Cylinders | 6 vertical inline 6 vertical inline",
+        "| Displacement | 787.2 in³ 12.9 l",
+        "| Aspiration | Turbocharged aftercooled Turbocharged aftercooled"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1103A-33TG — Product Specifications",
+      "header": [
+        "Product Specifications for 1103A-33TG"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 42 - 70 kWm 42 - 70 kWm",
+        "| Typical Electrical Output | 45-75 kVA (36-60 kWe) 45-75 kVA (36-60 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | Fuel Optimised Fuel Optimised",
+        "| Number of Cylinders | 3 vertical inline 3 vertical inline",
+        "| Displacement | 201 in³ 3.3 l",
+        "| Aspiration | Turbocharged Turbocharged"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "4016-61TRG — Product Specifications",
+      "header": [
+        "Product Specifications for 4016-61TRG"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 1269-2183 kWm 1269-2183 kWm",
+        "| Typical Electrical Output | 1400-2500 kVA (1120-2000 kWe) 1400-2500 kVA (1120-2000 kWe)",
+        "| Rated Speed | 1500 rpm 1500 rpm",
+        "| Emissions | Fuel Optimised Fuel Optimised",
+        "| Number of Cylinders | 16 Vee 16 Vee",
+        "| Displacement | 3730 in³ 61.1 l",
+        "| Aspiration | Quad turbocharged and air-to-water charge cooled Quad turbocharged and air-to-water charge cooled"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "2806J-E18TAG1 — Product Specifications",
+      "header": [
+        "Product Specifications for 2806J-E18TAG1"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 559 kWm 559 kWm",
+        "| Typical Electrical Output | 554-625 kVA (444-500 kWe) 554-625 kVA (444-500 kWe)",
+        "| Rated Speed | 1500 rpm 1500 rpm",
+        "| Emissions | EU Stage V EU Stage V",
+        "| Number of Cylinders | 6 vertical inline 6 vertical inline",
+        "| Displacement | 1106 in³ 18.1 l",
+        "| Aspiration | Turbocharged aftercooled Turbocharged aftercooled"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "1104C-44TAG — Product Specifications",
+      "header": [
+        "Product Specifications for 1104C-44TAG"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 75-117.5 kWm 75-117.5 kWm",
+        "| Typical Electrical Output | 80-126.5 kVA (64-101 kWe) 80-126.5 kVA (64-101 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | EU Stage II/U.S. EPA Tier 2 EU Stage II/U.S. EPA Tier 2",
+        "| Number of Cylinders | 4 inline 4 inline",
+        "| Displacement | 269 in³ 4.4 l",
+        "| Aspiration | Turbocharged air-to-air charge cooled Turbocharged air-to-air charge cooled"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "404A-22G — Product Specifications",
+      "header": [
+        "Product Specifications for 404A-22G"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 18-20 kWm 18-20 kWm",
+        "| Typical Electrical Output | 20-22 kVA (16-18 kWe) 20-22 kVA (16-18 kWe)",
+        "| Rated Speed | 1500 rpm 1500 rpm",
+        "| Emissions | Fuel Optimised Fuel Optimised",
+        "| Number of Cylinders | 4 inline 4 inline",
+        "| Displacement | 135.2 in³ 2.2 l",
+        "| Aspiration | Naturally aspirated Naturally aspirated"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "403D-11G — Product Specifications",
+      "header": [
+        "Product Specifications for 403D-11G"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 8.6 -11.8 kWm 8.6 -11.8 kWm",
+        "| Typical Electrical Output | 9-12.4 kVA (7.2-9.9 kWe) 9-12.4 kVA (7.2-9.9 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine",
+        "| Number of Cylinders | 3 inline 3 inline",
+        "| Displacement | 69 in³ 1.1 l",
+        "| Aspiration | Naturally aspirated Naturally aspirated"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "2406J-E13TAG3 — Product Specifications",
+      "header": [
+        "Product Specifications for 2406J-E13TAG3"
+      ],
+      "rows": [
+        "| Gross Mechanical Output | 362-426 kWm 362-426 kWm",
+        "| Typical Electrical Output | 410-474 kVA (328-379 kWe) 410-474 kVA (328-379 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | EU Stage V/U.S. EPA Tier 4 Final EU Stage V/U.S. EPA Tier 4 Final",
+        "| Number of Cylinders | 6 vertical inline 6 vertical inline",
+        "| Displacement | 762.8 in³ 12.5 l",
+        "| Aspiration | Turbocharged aftercooled Turbocharged aftercooled"
+      ]
+    }
+  ]
+}

@@ -163,6 +163,75 @@
       "src": [
         2004
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "J220",
+      "fuel": "diesel",
+      "engineModels": [
+        "6068HFG20-202"
+      ],
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "J250",
+      "fuel": "diesel",
+      "engineModels": [
+        "6068HFS55-228"
+      ],
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 227,
+        "max": 227,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "J66",
+      "fuel": "diesel",
+      "engineModels": [
+        "4045TSG20"
+      ],
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
     }
   ],
   "certifications": [
@@ -260,10 +329,49 @@
         "APM303 APM403"
       ],
       "file": "sources/rehlko/2004.md"
+    },
+    {
+      "n": 2005,
+      "url": "https://www.powersystems.rehlko.com/sea/wp-content/uploads/j-series/j220-1023.pdf",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Industrial Diesel Generator Set – J220",
+        "Engine ref. 6068HFG20-202 * Min. oil pressure (bar) 1",
+        "Standby kVA 220",
+        "Prime kVA 200"
+      ],
+      "file": "sources/rehlko/2005.md"
+    },
+    {
+      "n": 2006,
+      "url": "https://www.powersystems.rehlko.com/sea/wp-content/uploads/j-series/j250-1023.pdf",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Industrial Diesel Generator Set – J250",
+        "Engine ref. 6068HFS55-228 * Min. oil pressure (bar)",
+        "Standby kVA 250",
+        "Prime kVA 227"
+      ],
+      "file": "sources/rehlko/2006.md"
+    },
+    {
+      "n": 2007,
+      "url": "https://www.powersystems.rehlko.com/sea/wp-content/uploads/j-series/j66-1023.pdf",
+      "accessedAt": "2026-11-10",
+      "tier": "A",
+      "quote": [
+        "Industrial Diesel Generator Set – J66",
+        "Engine ref. 4045TSG20 * Min. oil pressure (bar) 1",
+        "Standby kVA 66",
+        "Prime kVA 60"
+      ],
+      "file": "sources/rehlko/2007.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-10",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {
@@ -299,6 +407,48 @@
         "400/230  50  264 330 476                                       240       300",
         "380/220  50  264 330 501                                       240       300",
         "415/240  50  264 330 459                                       240       300"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Industrial Diesel Generator Set – J220 50 Hz",
+      "header": [
+        "\f                                                                               Industrial Diesel Generator Set – J220"
+      ],
+      "rows": [
+        "Engine brand                               JOHN DEERE                         Oil system capacity including filters (l)                                32",
+        "Engine ref.                                6068HFG20-202 *                    Min. oil pressure (bar)                                                  1",
+        "                                                                               Standby                     kVA         220",
+        "                                                                               Prime                       kVA         200",
+        "           Low temperature starting capability                                                  415/240        3      50          176  220  306          160    200"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Industrial Diesel Generator Set – J250 50 Hz",
+      "header": [
+        "\f                                                                               Industrial Diesel Generator Set – J250"
+      ],
+      "rows": [
+        "Engine brand                               JOHN DEERE                         Oil system capacity including filters (l)                                32.50",
+        "Engine ref.                                6068HFS55-228 *                    Min. oil pressure (bar)",
+        "                                                                               Standby                     kVA         250",
+        "                                                                               Prime                       kVA         227",
+        "           Low temperature starting capability                                                  415/240        3      50          200  250  348          182    227"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Industrial Diesel Generator Set – J66 50 Hz",
+      "header": [
+        "\f                                                                               Industrial Diesel Generator Set – J66"
+      ],
+      "rows": [
+        "Engine brand                               JOHN DEERE                         Oil system capacity including filters (l)                                13.50",
+        "Engine ref.                                4045TSG20 *                        Min. oil pressure (bar)                                                  1",
+        "                                                                                  Standby                     kVA         66",
+        "                                                                                  Prime                       kVA         60",
+        "           Low temperature starting capability                                                     415/240        3      50        53   66   92             48  60"
       ]
     }
   ],
