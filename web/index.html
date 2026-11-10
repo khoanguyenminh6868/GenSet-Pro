@@ -61,6 +61,9 @@ h3{font:600 14px/1.3 var(--f-body);margin:0}
 .cmprev{justify-content:space-between}.actbar .btn{padding:4px 9px;font-size:12.5px}
 .actrow{margin:14px 0 16px}.actrow.cfgact{margin:4px 0 0}.cfgsum{margin:0}#cfgExtra{min-height:0;height:calc(3em + 4px)}.cmprev .btn{display:inline-flex;align-items:center;gap:5px}
 .btn.danger{color:var(--rose)}
+/* Tab Giá gợi ý and Sổ báo giá: each kind of button its own colour (Khoa, 2026-11-10): thêm xanh lá, xem xanh dương, sửa tím, tỷ giá vàng, xoá đỏ. */
+.btn.tint{color:var(--tc);border-color:color-mix(in srgb,var(--tc) 55%,transparent);background:color-mix(in srgb,var(--tc) 12%,var(--panel))}.btn.tint:hover{border-color:var(--tc);background:color-mix(in srgb,var(--tc) 20%,var(--panel))}
+.tint.c-mint{--tc:var(--mint)}.tint.c-blue{--tc:var(--blue)}.tint.c-cyan{--tc:var(--cyan)}.tint.c-amber{--tc:var(--amber)}.tint.c-violet{--tc:var(--violet)}.tint.c-rose{--tc:var(--rose)}.tint.c-orange{--tc:var(--orange)}
 /* Read-only view for people not signed in to Claude: no controls that change data. */
 .ro .stepbtns,.ro .selbox,.ro #bulkBar,.ro #refreshBtn,.ro #syncNewBtn,.ro [data-act],.ro #cmRun,.ro #cmDel,.ro #cmSide,.ro #hsRun,.ro #hpDrop,.ro #hcDrop,.ro #cmDrop,.ro #cmText,.ro #tkRun,.ro #tkDrop,.ro #tkCfg,.ro #tyDrop,.ro #tkDel,.ro [data-cfgdel],.ro [data-cfgfind],.ro #tkPdf,.ro #spRun,.ro #runQueueBtn{display:none!important}
 .ro #dStage,.ro #dNote{pointer-events:none;opacity:.7}
@@ -338,14 +341,14 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
 /* Supplier / catalog window: small banner on top, the filters and the table header stay put, only the rows scroll (Khoa, 2026-11-01). */
 .modal.pane{height:calc(100vh - 32px);height:calc(100dvh - 32px);overflow:hidden}
-#supBody,#catBody,#bdBody{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}
+#supBody,#catBody,#bdBody,#qlScr{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}
 .mscroll{flex:1;min-height:0;overflow:auto}
 /* A popup or the tender panel open: the page behind does not scroll, and a scroll reaching the end of a popup list stops there (Khoa, 2026-11-04: on a phone, dragging a popup sometimes dragged the page). */
 html:has(#ov:not([hidden])),html:has(#scrim:not([hidden])){overflow:hidden}
 #ov,.modal,.mscroll,.dbody,#drawer{overscroll-behavior:contain}
 .mscroll>.dethead{position:sticky;top:0;z-index:2;background:var(--panel);padding:2px 0 8px}
-:is(#supList,#catList,#bdList)>.tablewrap{overflow:visible}
-:is(#supList,#catList,#bdList) thead th{position:sticky;top:0;z-index:1;background:var(--panel2);box-shadow:inset 0 -1px var(--line)}
+:is(#supList,#catList,#bdList,#qlBody)>.tablewrap{overflow:visible}
+:is(#supList,#catList,#bdList,#qlBody) thead th{position:sticky;top:0;z-index:1;background:var(--panel2);box-shadow:inset 0 -1px var(--line)}
 .mbanner{padding:10px 14px;gap:12px;flex-wrap:nowrap;flex:none}
 .mbanner .mark{width:36px;height:36px;border-radius:10px}.mbanner .mark svg{width:20px;height:20px}
 .mbanner h2{margin:0;font-size:18px}.mbanner h2 span{color:var(--violet)}
@@ -1580,18 +1583,18 @@ function quoteHtml(t) {
     const up = quoteUp[key]?.row === r.id ? quoteUp[key].text : "";
     return h`<div class="qrow" data-qrow="${r.id}">
       <div class="row qline"><select data-qsup="${r.id}" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">${favN ? "Chọn NCC" : "Chưa có nhà cung cấp yêu thích"}</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
-        ${raw(r.supplierId && state.supplier?.[r.supplierId] ? h`<button class="btn sm" data-supopen="${r.supplierId}" title="Xem thông tin nhà cung cấp">Hồ sơ</button>` : "")}
+        ${raw(r.supplierId && state.supplier?.[r.supplierId] ? h`<button class="btn sm tint c-cyan" data-supopen="${r.supplierId}" title="Xem thông tin nhà cung cấp">Hồ sơ</button>` : "")}
         ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Upload</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
-        ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
+        ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm tint c-rose" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
       ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
-        ${raw(ro ? "" : h`${raw(/\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-qopen="${r.id}:${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : h`<button class="btn sm" data-qopen="${r.id}:${i}" title="Tải về" aria-label="Tải về">${raw(DL_SVG)}</button>`)}<button class="btn sm" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
+        ${raw(ro ? "" : h`${raw(/\.pdf$/i.test(f.name) ? h`<button class="btn sm tint c-blue" data-qopen="${r.id}:${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : h`<button class="btn sm tint c-blue" data-qopen="${r.id}:${i}" title="Tải về" aria-label="Tải về">${raw(DL_SVG)}</button>`)}<button class="btn sm tint c-rose" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(up ? progress(up) : "")}
       ${raw(quoteItemsHtml(key, r, ro))}
     </div>`;
   };
   // One box: the heading, the count and Thêm sit with the suppliers (Khoa, 2026-11-04).
   return h`<div class="drop">
-      <div class="row"><h2 style="flex:1">Báo giá của NCC</h2><span class="muted small">${n ? `${n} tệp` : "Chưa có tệp nào"}</span>${raw(ro ? "" : h`<button class="btn sm" id="qAdd" ${quoteUp[key] ? "disabled" : ""}>+ Thêm</button>`)}</div>
+      <div class="row"><h2 style="flex:1">Báo giá của NCC</h2><span class="muted small">${n ? `${n} tệp` : "Chưa có tệp nào"}</span>${raw(ro ? "" : h`<button class="btn sm tint c-mint" id="qAdd" ${quoteUp[key] ? "disabled" : ""}>+ Thêm</button>`)}</div>
       ${raw(quoteAllHtml(ro))}
       ${raw(rows.map(row).join(""))}
       ${raw(quoteCostHtml(key, ro))}
@@ -1689,23 +1692,23 @@ function quoteItemsHtml(key, r, ro) {
       <div class="muted small">${[x.kva && `${qNum(x.kva)} kVA`, x.terms, x.date && fmtDate(x.date, false), x.vatIncl && "đã gồm thuế GTGT", x.note].filter(Boolean).join(" · ")}</div></td>
     <td class="num" data-l="Số lượng">${qNum(x.qty || 1)}</td>
     <td class="num" data-l="Đơn giá">${x.unitPrice ? `${qNum(x.unitPrice)} ${x.currency || "VND"}` : "—"}</td>
-    <td class="num">${raw(ro ? "" : h`<button class="btn sm" data-qitem="${r.id}:${x.id}">Sửa</button>`)}</td></tr>`;
+    <td class="num">${raw(ro ? "" : h`<button class="btn sm tint c-violet" data-qitem="${r.id}:${x.id}">Sửa</button>`)}</td></tr>`;
   return h`${raw(items.length ? h`<div class="tablewrap"><table class="suptable supcards qitems"><thead><tr><th>Hàng báo giá</th><th>SL</th><th>Đơn giá</th><th></th></tr></thead><tbody>${raw(items.map(line).join(""))}</tbody></table></div>` : "")}
     <div class="row" style="gap:8px;flex-wrap:wrap"><span class="small" style="flex:1;min-width:0">${raw(c.total != null ? h`Tiền hàng <b class="num">${fmtVnd(Math.round(c.goods))}</b>${c.extras ? ` + chi phí phát sinh ${fmtVnd(Math.round(c.extras))}` : ""}${c.vat ? ` + thuế GTGT ${qNum(c.vatRate)}% ${fmtVnd(Math.round(c.vat))}` : ""} = giá vốn <b class="num">${fmtVnd(Math.round(c.total))}</b>`
       : c.missing.length ? h`<span class="chip warn">Chưa có tỷ giá ${c.missing.join(", ")}</span>` : '<span class="muted">Chưa có dòng giá</span>')}</span>
-      ${raw(ro ? "" : h`<button class="btn sm" data-qitem="${r.id}">+ Dòng giá</button>`)}</div>`;
+      ${raw(ro ? "" : h`<button class="btn sm tint c-mint" data-qitem="${r.id}">+ Dòng giá</button>`)}</div>`;
 }
 // Ngay dưới tiêu đề Báo giá của NCC (Khoa, 2026-11-10): tỷ giá và thuế GTGT dùng cho mọi gói, nút sửa và nút Sổ báo giá.
 function quoteAllHtml(ro) {
   const g = quoteAll(), fx = Object.entries(g.fx || {}).filter(([, v]) => v > 0);
   return h`<div class="qall"><div class="small"><b>Dùng cho mọi gói:</b> ${fx.length ? fx.map(([k, v]) => `1 ${k} = ${qNum(v)}`).join(" · ") : "chưa nhập tỷ giá"} · thuế GTGT ${g.vat > 0 ? qNum(g.vat) + "%" : "chưa nhập"}</div>
-    <div class="row" style="gap:8px;flex-wrap:wrap">${raw(ro ? "" : '<button class="btn sm" id="qAll" title="Lưu một lần, dùng cho mọi gói">Tỷ giá, thuế GTGT</button>')}<button class="btn sm" id="qLedger" title="Mọi dòng giá đã nhập ở mọi gói">Sổ báo giá</button></div></div>`;
+    <div class="row" style="gap:8px;flex-wrap:wrap">${raw(ro ? "" : '<button class="btn sm tint c-amber" id="qAll" title="Lưu một lần, dùng cho mọi gói">Tỷ giá, thuế GTGT</button>')}<button class="btn sm tint c-blue" id="qLedger" title="Mọi dòng giá đã nhập ở mọi gói">Sổ báo giá</button></div></div>`;
 }
 // Cuối khung: chi phí phát sinh của riêng gói này.
 function quoteCostHtml(key, ro) {
   const ex = quoteCostCfg(key).extras || [];
   return h`<div class="qcost"><div class="small"><b>Chi phí phát sinh của gói này:</b> ${ex.length ? ex.map((e) => `${e.label || "khác"} ${e.kind === "pct" ? qNum(e.value) + "% tiền hàng" : fmtVnd(Number(e.value))}`).join("; ") : "chưa có"}</div>
-    ${raw(ro ? "" : '<button class="btn sm" id="qCost">Thêm chi phí</button>')}</div>`;
+    ${raw(ro ? "" : '<button class="btn sm tint c-orange" id="qCost">Thêm chi phí</button>')}</div>`;
 }
 function askQuoteItem(key, rowId, itemId) {
   const row = quoteRows(key).find((r) => r.id === rowId); if (!row) return;
@@ -1851,16 +1854,16 @@ function openQuoteLedger(kva) {
   const tally = (keyOf, labelOf) => [...all.reduce((mp, x) => { const k = keyOf(x); if (k) mp.set(k, { k, l: mp.get(k)?.l || labelOf(x), n: (mp.get(k)?.n || 0) + 1 }); return mp; }, new Map()).values()].sort((x, y) => x.l.localeCompare(y.l, "vi"));
   const sups = tally((x) => x.supplierId, supOf), engs = tally((x) => fold(x.engineMake), (x) => x.engineMake), noEng = all.filter((x) => !x.engineMake).length;
   const opt = (o) => h`<option value="${o.k}">${o.l} (${o.n})</option>`;
-  modal(h`<div class="row"><h2 style="flex:1">Sổ báo giá</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(mBanner("quote", "Sổ báo giá", "Mọi dòng giá đã nhập ở mọi gói, mới nhất trước", "", "#") + h`<div id="qlScr">
     <div class="qlfilt">
       <input type="search" id="qlFind" placeholder="Tìm tên hàng, model, mã gói, ghi chú..." aria-label="Tìm trong sổ báo giá">
       <select id="qlSup" aria-label="Lọc theo nhà cung cấp"><option value="">Nhà cung cấp</option>${raw(sups.map(opt).join(""))}</select>
       <select id="qlEng" aria-label="Lọc theo động cơ"><option value="">Động cơ</option>${raw(engs.map(opt).join(""))}${raw(noEng ? h`<option value="${QL_NONE}">Chưa ghi động cơ (${noEng})</option>` : "")}</select>
       <input type="number" id="qlKva" min="0" step="any" inputmode="decimal" value="${kva ? Math.round(kva) : ""}" placeholder="Công suất kVA" title="Dòng giá có công suất trong ±${Math.round(QL_KVA_TOL * 100)}% số này" aria-label="Lọc theo công suất (kVA), ±${Math.round(QL_KVA_TOL * 100)}%">
-      <button type="button" class="btn sm" id="qlClear" hidden>Bỏ lọc</button>
+      <button type="button" class="btn sm tint c-rose" id="qlClear" hidden>Bỏ lọc</button>
       <span class="muted small" id="qlCount"></span>
     </div>
-    <div id="qlBody" class="mscroll"></div>`, (m) => {
+    <div id="qlBody" class="mscroll"></div></div>`, (m) => {
     const hay = all.map((x) => fold([supOf(x), x.supplierId, x.desc, x.engine, x.alternator, x.controller, x.kvaNum && `${Math.round(x.kvaNum)} kva`, x.key, findTender(x.key)?.bidName, x.terms, x.note].join(" ")));
     let limit = QL_PAGE;
     const val = (id) => $("#" + id, m).value;
@@ -1871,7 +1874,7 @@ function openQuoteLedger(kva) {
       const shown = list.slice(0, limit), left = list.length - shown.length, on = q.length || sup || eng || K;
       $("#qlClear", m).hidden = !on;
       $("#qlCount", m).textContent = on ? `${list.length} / ${all.length} dòng giá` : `${all.length} dòng giá`;
-      $("#qlBody", m).innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards qledger"><thead><tr><th>Hàng báo giá</th><th>Nhà cung cấp</th><th>Đơn giá</th><th>Ngày</th><th>Gói thầu</th></tr></thead><tbody>${raw(shown.map(row).join(""))}</tbody></table></div>${raw(left ? h`<div class="more"><button class="btn" id="qlMore">Xem thêm ${Math.min(QL_PAGE, left)} dòng (còn ${left})</button></div>` : "")}`
+      $("#qlBody", m).innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards qledger"><thead><tr><th>Hàng báo giá</th><th>Nhà cung cấp</th><th>Đơn giá</th><th>Ngày</th><th>Gói thầu</th></tr></thead><tbody>${raw(shown.map(row).join(""))}</tbody></table></div>${raw(left ? h`<div class="more"><button class="btn tint c-blue" id="qlMore">Xem thêm ${Math.min(QL_PAGE, left)} dòng (còn ${left})</button></div>` : "")}`
         : h`<div class="note">${all.length ? "Không có dòng giá nào khớp bộ lọc." : "Chưa có dòng giá nào. Dòng giá nhập ở mục Báo giá của NCC của từng gói."}</div>`;
     };
     const again = () => { limit = QL_PAGE; draw(); $("#qlBody", m).scrollTop = 0; };
@@ -1880,7 +1883,7 @@ function openQuoteLedger(kva) {
     $("#qlClear", m).addEventListener("click", () => { for (const id of ["qlFind", "qlSup", "qlEng", "qlKva"]) $("#" + id, m).value = ""; again(); });
     $("#qlBody", m).addEventListener("click", (e) => { if (e.target.id === "qlMore") { limit += QL_PAGE; draw(); } });
     draw();
-  }, "wide");
+  }, "wide pane");
 }
 // Các báo giá của một nhà cung cấp, theo gói: dòng giá và số tệp (màn Nhà cung cấp, Khoa 2026-11-10).
 function supQuotesOf(id) {
@@ -1991,7 +1994,7 @@ function profitHtml(t) {
       <td class="num" data-l="Giá bỏ">${price ? price.toLocaleString("vi-VN") : "—"}</td><td class="num" data-l="Xác suất thắng">${w[i] == null ? "—" : pct0(w[i])}</td>
       ${raw(cost != null ? h`<td class="num" data-l="Lãi nếu trúng">${m == null ? "—" : (m < 0 ? "−" : "") + fmtVnd(Math.abs(Math.round(m)))}${raw(m != null && price ? h`<div class="muted small">${bpPct(m / price)} giá bỏ</div>` : "")}</td><td class="num" data-l="Lợi nhuận kỳ vọng">${m == null || w[i] == null || m <= 0 ? "—" : fmtVnd(Math.round(w[i] * m))}</td>` : "")}</tr>`;
   });
-  const scenBtn = (id, label, p) => h`<button class="btn sm${scen === id ? " primary" : ""}" data-pscen="${id}">${label}${p != null ? ` · ${pct0(p)}` : ""}</button>`;
+  const scenBtn = (id, label, p) => h`<button class="btn sm${scen === id ? " primary" : " tint c-violet"}" data-pscen="${id}">${label}${p != null ? ` · ${pct0(p)}` : ""}</button>`;
   const near = (() => { const K = kvaOf(capacityOf(t)?.text); if (!K) return []; return BP.quoteLedger(state.quote).filter((x) => x.key !== key && x.kvaNum && Math.abs(Math.log(x.kvaNum / K)) <= Math.log(1.15)); })();
   return h`<section class="profit"><div class="row"><h2 style="flex:1">Giá vốn và lợi nhuận kỳ vọng</h2></div>
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được.</div>' : h`
@@ -2897,7 +2900,7 @@ let supOpenId = null;
 // Where the supplier / catalog list was scrolled when a detail opened, so "← Danh sách" comes back to the same row (Khoa, 2026-10-29).
 const listScroll = { sup: 0, cat: 0 };
 const mScroll = () => $("#mdl .mscroll") || $("#mdl");
-const MB_ICON = { bd: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5\"/><path d=\"M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.7.8 2.7 2.6 3 5.2\"/></svg>", sup: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 21h18\"/><path d=\"M4 21V11l5 3v-3l5 3V5h5v16\"/><path d=\"M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1\"/></svg>", cat: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 4h6M12 4v3\"/><path d=\"M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z\"/><path d=\"M1 11v4\"/></svg>" };
+const MB_ICON = { quote: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 4.5A1.5 1.5 0 0 1 5.5 3H19v16H5.5A1.5 1.5 0 0 0 4 20.5z\"/><path d=\"M4 20.5A1.5 1.5 0 0 0 5.5 22H19v-3\"/><path d=\"M9 7h6M9 11h6M9 15h3\"/></svg>", bd: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5\"/><path d=\"M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.7.8 2.7 2.6 3 5.2\"/></svg>", sup: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 21h18\"/><path d=\"M4 21V11l5 3v-3l5 3V5h5v16\"/><path d=\"M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1\"/></svg>", cat: "<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 4h6M12 4v3\"/><path d=\"M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z\"/><path d=\"M1 11v4\"/></svg>" };
 // Each screen has its own URL (Khoa, 2026-11-02): /#nha-cung-cap, /#dong-co, /#dau-phat, /#bo-dieu-khien; its logo links there.
 const SCREEN_HASH = { sup: "nha-cung-cap", engine: "dong-co", alternator: "dau-phat", controller: "bo-dieu-khien", bd: "nha-thau" };
 const screenOfUrl = () => Object.keys(SCREEN_HASH).find((k) => location.hash === "#" + SCREEN_HASH[k]);
