@@ -142,6 +142,7 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .sizehead{margin:0;font-size:16px;font-weight:600;border-top:1px solid var(--line);padding:8px 0;color:var(--green)}.sizebox[open]>.sizehead{margin-bottom:4px}.sizebox[open]+.sizebox{margin-top:12px}
 .sizebox>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.sizebox>summary::-webkit-details-marker{display:none}
 .sizebox .chev{display:inline-block;transition:transform .15s}.sizebox:not([open]) .chev{transform:rotate(-90deg)}
+.cfggrid{margin:6px 0}.cfggrid>summary{padding:4px 0;align-items:center}.cfggrid[open]>summary{margin-bottom:4px}
 .kpi.bplev{cursor:default}.kpi.bplev .kv{font-size:20px}
 /* Giá gợi ý: each level its own colour, none violet (Khoa, 2026-11-04). */
 .kpi.bp-low{--kc:var(--mint)}.kpi.bp-mid{--kc:var(--blue)}.kpi.bp-high{--kc:var(--orange)}
@@ -3575,6 +3576,14 @@ function cfgWonHtml(c, key, size) {
     <div class="muted">${WON_BY[x.by]}${x.same ? " · cùng chủ đầu tư" : ""} · trúng: ${raw(bdNameLink({ name: x.bidder, taxCode: x.bidderId }))}${[x.maker, x.code].filter(Boolean).length ? ` · hàng: ${[x.maker, x.code].filter(Boolean).join(" ")}` : ""}${x.engine?.model ? ` · động cơ ${[x.engine.make, x.engine.model].filter(Boolean).join(" ")}` : ""}</div></li>`;
   return h`<details class="cfgwon"><summary class="small"><span class="chip ok">Đã trúng thầu</span> ${head}${e.sameInvestor ? ` (${e.sameInvestor} gói của chính chủ đầu tư này)` : ""}</summary><ul class="suplist">${raw(e.lots.slice(0, 12).map(row).join(""))}</ul>${raw(e.lots.length > 12 ? h`<div class="muted small">và ${e.lots.length - 12} gói khác</div>` : "")}</details>`;
 }
+// Lưới kiểm tra của mỗi cấu hình thu gọn sẵn (Khoa, 2026-11-10): tiêu đề đếm Đạt / Không đạt / Chưa rõ; mở ra thì giữ
+// mở khi tab vẽ lại (sizeOpen, xoá khi mở gói / tab khác).
+function cfgGridBox(id, checks, body) {
+  const of = (x) => (x.status === "not_met" ? "not_met" : x.status === "met" && !x.unverified ? "met" : "unclear");
+  const cnt = [["met", "ok"], ["not_met", "bad"], ["unclear", "warn"]].map(([k, c]) => [checks.filter((x) => of(x) === k).length, c, CFG_STATUS[k][0]])
+    .filter(([v]) => v).map(([v, c, l]) => h`<span class="chip ${c}">${l} ${v}</span>`).join("");
+  return h`<details class="sizebox cfggrid" data-sizebox="${id}" ${sizeOpen?.has(id) ? "open" : ""}><summary class="small" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b>Đối chiếu yêu cầu HSMT (${checks.length})</b>${raw(cnt)}</summary>${raw(body)}</details>`;
+}
 function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
   if (!r.configs?.length) return h`<div class="note warn"><b>Không tìm thấy cấu hình phù hợp.</b> ${r.message || "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT."}</div>`
     + cfgReqHtml(r) + cfgAddedHtml(r) + cfgNotesHtml(r);
@@ -3591,13 +3600,13 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
         ${raw(key ? h`<button class="btn sm" data-cfgdel="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" title="Xoá cấu hình này khỏi danh sách gợi ý" style="color:var(--red)">${raw(TRASH_SVG)}Xoá</button>` : "")}</div>
       ${raw(part("Động cơ", c.engine))}${raw(part("Đầu phát", c.alternator))}${raw(part("Bộ điều khiển", c.controller))}${raw(c.genset ? h`<div class="small">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
       ${raw(cfgWonHtml(c, key, size))}
-      ${raw(c.checks?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
+      ${raw(c.checks?.length ? cfgGridBox(`cfggrid|${key}|${size}|${c.rank || i + 1}`, c.checks, h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
         const st = CFG_STATUS[x.status] || ["", "mut"];
         // factSrc: a figure of this engine / alternator model from another supplier's row or datasheet (config-bot.mjs modelFacts).
         return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bộ điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
           <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}${raw(cfgPartsHtml(x))}${raw(cfgHintHtml(x))}</td>
           <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
-      }).join(""))}</tbody></table></div>` : "")}
+      }).join(""))}</tbody></table></div>`) : "")}
       ${raw(cfgSuppliersHtml(c))}
       ${raw(key && !c.suppliers?.length && c.engine?.model ? h`<div class="row" style="margin-top:6px"><span class="small muted">Chưa có nhà cung cấp nào trong hệ thống cho cấu hình này.</span><span class="spacer"></span><button class="btn green sm" data-cfgfind="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp chào tổ máy dùng đúng động cơ${c.alternator?.model ? ", đầu phát" : ""}${c.controller?.model ? ", bộ điều khiển" : ""} của cấu hình này">Tìm nhà cung cấp</button></div>` : "")}
       ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
