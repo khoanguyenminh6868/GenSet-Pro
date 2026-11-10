@@ -2743,6 +2743,7 @@ function needSup() {
   subscribe("supplier", "supplier", () => setTimeout(supChanged, 0));
   subscribe("supdeleted", "supdeleted", () => setTimeout(supChanged, 0));
   subscribe("supfav", "supfav", () => setTimeout(supChanged, 0));
+  subscribe("gaps", "gaps", () => setTimeout(supGapsRedraw, 0));
   // Tìm Thông Số (superadmin only): its request and result redraw only their own block of the open supplier.
   if (isSuperadmin()) for (const c of ["specreq", "specmatch"]) subscribe(c, c, () => setTimeout(supSpecRedraw, 0));
 }
@@ -2750,6 +2751,28 @@ function needSup() {
 // The superadmin only: Claude looks on the supplier's own site for the engine, alternator and controller of its gensets
 // (skill bot/claude/skills/tim-thong-so-ncc, config-bot.mjs specJob, specreq/<id> → specmatch/<id>); what passes
 // verify.mjs is added to the record (web and a PR into the repo), as Tìm NCC does.
+// ---------- Việc cần thu thập (gaps/current, suppliers/gaps.mjs chạy hằng tuần, 2026-11-10) ----------
+// Thông số nào thiếu trong danh mục đang chặn nhiều gói nhất (số gói nêu yêu cầu × phần model chưa có thông số) và nên
+// tìm ở hãng nào trước; ba hãng đứng đầu được tự gửi Tìm Thông Số mỗi tuần. Gập sẵn, ở đầu danh sách nhà cung cấp.
+function supGapsHtml() {
+  const g = state.gaps?.current;
+  if (!g?.fields) return "";
+  const pct = (x) => Math.round(100 * x) + "%", kind = { engine: "Hãng động cơ", alternator: "Hãng đầu phát", supplier: "Nhà cung cấp" };
+  const sup = (id) => (state.supplier?.[id] ? h`<a href="#" data-supopen="${id}">${id}</a>` : h`${id}`);
+  const queued = (g.queued || []).map((q) => q.name).join(", ");
+  return h`<details class="sec supgaps"><summary><b>Việc cần thu thập</b> <span class="muted small">cập nhật ${fmtDate(g.at, false)} · ${g.tenders.toLocaleString("vi-VN")} gói có Chương V · ${g.engines.toLocaleString("vi-VN")} động cơ trong danh mục${queued ? ` · tuần này tự tìm: ${queued}` : ""}</span></summary><div>
+    <p class="small muted" style="margin:0 0 6px">Điểm = số gói mua sắm máy phát nêu yêu cầu đó × phần model động cơ cùng dải công suất chưa có thông số trong danh mục. Điểm cao là thông số đang làm nhiều cấu hình ra "Chưa rõ" nhất.</p>
+    <h4 style="margin:8px 0 4px">Thông số thiếu nhiều nhất</h4>
+    <div class="tablewrap"><table class="suptable"><thead><tr><th>Thông số</th><th>Dải công suất</th><th>Số gói nêu</th><th>Model đã có</th><th>Điểm</th></tr></thead><tbody>${raw(g.fields.slice(0, 20).map((f) => h`<tr><td>${f.item}</td><td>${f.band}</td><td class="num">${f.demand}</td><td class="num">${f.have}/${f.total} (${pct(f.fill)})</td><td class="num"><b>${f.score}</b></td></tr>`).join(""))}</tbody></table></div>
+    <h4 style="margin:12px 0 4px">Nên tìm ở đâu trước</h4>
+    <div class="tablewrap"><table class="suptable"><thead><tr><th>Nguồn</th><th>Bản ghi</th><th>Thiếu (số model)</th><th>Điểm</th></tr></thead><tbody>${raw((g.targets || []).slice(0, 15).map((t) => h`<tr><td><b>${t.name}</b><div class="muted small">${kind[t.kind] || ""}</div></td>
+      <td class="small">${raw(t.supplierIds.length ? t.supplierIds.map(sup).join(", ") : '<span class="chip warn">chưa có bản ghi hãng</span>')}${raw(t.lastSpecAt ? h`<div class="muted">đã tìm ${fmtDate(t.lastSpecAt, false)}</div>` : "")}</td>
+      <td class="small">${t.missing.map((m) => `${m.item} (${m.models})`).join(", ")}</td><td class="num"><b>${t.score}</b></td></tr>`).join(""))}</tbody></table></div>
+    ${raw(g.noKey?.length ? h`<h4 style="margin:12px 0 4px">Yêu cầu hay gặp mà bảng thông số không có cột</h4><p class="small" style="margin:0">Phải đọc từ datasheet hoặc brochure của hãng: ${g.noKey.slice(0, 12).map((x) => `${x.item} (${x.demand} gói)`).join("; ")}.</p>` : "")}
+    ${raw(g.unclear?.length ? h`<h4 style="margin:12px 0 4px">"Chưa rõ" ở các lượt Gợi ý cấu hình đã chạy</h4><p class="small" style="margin:0">${g.unclear.slice(0, 12).map((u) => `${u.item} (${u.unclear}/${u.total})`).join("; ")}.</p>` : "")}
+  </div></details>`;
+}
+function supGapsRedraw() { const el = $("#supGaps"); if (el) el.innerHTML = supGapsHtml(); }
 function isSuperadmin() { return window.genbidRole === "superadmin"; }
 const supSpecHidden = (id) => { try { return localStorage.getItem("genbid:specHide:" + id) || ""; } catch { return ""; } };
 function supSpecHtmlBlock(s) {
@@ -2887,7 +2910,7 @@ function renderSuppliers() {
       <button type="button" class="btn sm wonf" id="supWonF" aria-pressed="${String(f.won)}" title="Nhà cung cấp có thương hiệu / tên trong hàng tổ máy trúng thầu ở gói mua sắm máy phát (lịch sử thầu muasamcong)" style="${f.won ? "border-color:var(--mint);color:var(--mint)" : ""}">${raw(STAGE_ICON.win)} Có hàng trúng thầu</button>
       <span class="spacer"></span><span class="muted small" id="supCount"></span>
     </div></div>
-    <div class="mscroll"><div id="supList"></div></div>`;
+    <div class="mscroll"><div id="supGaps">${raw(supGapsHtml())}</div><div id="supList"></div></div>`;
   renderSupList();
   bindFilt("supFilt");
   const set = (k, v) => { supFilter = { ...supFilter, [k]: v }; renderSupList(); };

@@ -1,0 +1,36 @@
+name: Supplier gaps
+
+# Việc cần thu thập, hằng tuần: tính thông số nào thiếu trong danh mục đang chặn nhiều gói nhất (suppliers/gaps.mjs),
+# đăng gaps/current cho màn Nhà cung cấp, và gửi Tìm Thông Số (specreq) cho vài hãng đứng đầu chưa tìm trong 8 tuần;
+# bot Windows nhận các yêu cầu đó như khi bấm nút Tìm Thông Số. Số hãng mỗi tuần: biến GAPS_QUEUE của repo (mặc định 3,
+# đặt 0 để chỉ tính và đăng danh sách).
+on:
+  workflow_dispatch:
+    inputs:
+      queue:
+        description: Số hãng gửi Tìm Thông Số lượt này (để trống = theo GAPS_QUEUE)
+        required: false
+  schedule:
+    # Thứ hai 08:17 giờ Việt Nam.
+    - cron: '17 1 * * 1'
+
+concurrency:
+  group: supplier-gaps
+  cancel-in-progress: false
+
+jobs:
+  gaps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Report and queue
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          QUEUE: ${{ inputs.queue || vars.GAPS_QUEUE || '3' }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
+          node suppliers/gaps.mjs --post --queue "$QUEUE"
