@@ -735,6 +735,7 @@
     ["remote", "Vận chuyển tới địa điểm xa", "vnd", /hải\s*đảo|(huyện|xã|thị\s*trấn|đặc\s*khu|quần)\s*đảo|trên\s*đảo|Trường\s*Sa|Hoàng\s*Sa|Côn\s*Đảo|Phú\s*Quốc|Lý\s*Sơn|Cô\s*Tô|Bạch\s*Long\s*Vĩ|Cồn\s*Cỏ|Phú\s*Quý|Vân\s*Đồn|Cát\s*Hải|Kiên\s*Hải|miền\s*núi|vùng\s*(sâu|cao)|vùng\s*xa|biên\s*giới|biên\s*phòng|nhà\s*giàn/i],
     ["inspect", "Kiểm định", "vnd", /kiểm\s*định|QUATEST|thử\s*nghiệm\s*tại\s*(đơn\s*vị|cơ\s*quan|phòng)/i],
   ];
+  const OWN_ITEM = new Set(["exhaust", "install"]);
   // Months of a warranty clause: "24 tháng", "tối thiểu 730 ngày", "02 năm" (the first figure with a unit).
   function monthsIn(s) {
     const m = String(s || "").match(/(\d+(?:[.,]\d+)?)\s*(tháng|năm|ngày)/i);
@@ -757,6 +758,9 @@
     const have = (label, re) => (extras || []).some((e) => e && e.label && (foldVi(e.label) === foldVi(label) || re.test(String(e.label).normalize("NFC"))));
     for (const [id, label, kind, re, clean] of COST_HINTS) {
       for (const l of lines) {
+        // Lắp đặt, ống xả: only when the HSMT makes it an item of its own (điều phối 2026-11-10: "Phạm vi công việc: …
+        // lắp đặt" and "Phụ kiện đi kèm: … Ống xả" come with almost every set).
+        if (OWN_ITEM.has(id) && !(l.from === "Thông số kỹ thuật" && re.test(clean ? clean(l.head) : l.head))) continue;
         const s = clean ? clean(l.text) : l.text, m = s.match(re);
         if (!m || NEG_BEFORE.test(s.slice(Math.max(0, m.index - 30), m.index)) || NEG_AFTER.test(s.slice(m.index + m[0].length, m.index + m[0].length + 50))) continue;
         out.push({ id, label, kind, quote: cut(l.text, 220), from: l.from, have: have(label, re) });
@@ -815,7 +819,7 @@
     if (del) { const m = termText(del).match(/(\d+)\s*ngày/i); if (m) out.daysHint = Number(m[1]); }
     return out;
   }
-  const vnd = (v) => Math.round(v).toLocaleString("vi-VN");
+  const vnd = (v) => Math.round(v).toLocaleString("vi-VN"), num = (v) => Number(v).toLocaleString("vi-VN", { maximumFractionDigits: 3 }), pct1 = (r) => (100 * r).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + "%";
   function financeCost(terms, p = {}) {
     const r = readTerms(terms), rate = Number(p.rate) > 0 ? Number(p.rate) : null, days = Number(p.days) > 0 ? Number(p.days) : null;
     const price = Number(p.price) > 0 ? Number(p.price) : null, base = Number(p.base) > 0 ? Number(p.base) : price, baseName = Number(p.base) > 0 ? "giá vốn" : "giá dự thầu";
@@ -830,20 +834,20 @@
       const adv = r.advance ? r.advance.pct : null, pay = r.pay ? r.pay.days : null;
       const can = ok && adv != null && pay != null;
       lines.push({ id: "capital", label: "Vốn lưu động (chờ thanh toán)", basis: [q(r.advance), q(r.pay)].filter(Boolean).join(" · "),
-        formula: `${baseName} × (1 − tạm ứng ${adv ?? "?"}%) × lãi ${rate ?? "?"}%/năm × (thực hiện ${days ?? "?"} + thanh toán ${pay ?? "?"} ngày) / 365`,
+        formula: `${baseName} × (1 − tạm ứng ${adv == null ? "?" : num(adv)}%) × lãi ${rate == null ? "?" : num(rate)}%/năm × (thực hiện ${days ?? "?"} + thanh toán ${pay ?? "?"} ngày) / 365`,
         amount: can ? base * (1 - adv / 100) * i * (days + pay) : null, ...(can ? {} : { lack: [adv == null && "% tạm ứng", pay == null && "hạn thanh toán"].filter(Boolean) }) });
     }
     if (r.security) lines.push({ id: "security", label: "Bảo đảm thực hiện hợp đồng", basis: q(r.security),
-      formula: `giá dự thầu × ${r.security.pct}% × lãi ${rate ?? "?"}%/năm × ${days ?? "?"} ngày / 365`, amount: ok ? price * (r.security.pct / 100) * i * days : null });
+      formula: `giá dự thầu × ${num(r.security.pct)}% × lãi ${rate == null ? "?" : num(rate)}%/năm × ${days ?? "?"} ngày / 365`, amount: ok ? price * (r.security.pct / 100) * i * days : null });
     if (r.retention) {
       const wd = r.warranty ? Math.round(r.warranty.months * 30.4) : null;
       lines.push({ id: "retention", label: "Bảo đảm bảo hành", basis: [q(r.retention), q(r.warranty)].filter(Boolean).join(" · "),
-        formula: `giá dự thầu × ${r.retention.pct}% × lãi ${rate ?? "?"}%/năm × bảo hành ${r.warranty ? `${r.warranty.months} tháng ≈ ${wd} ngày` : "?"} / 365`,
+        formula: `giá dự thầu × ${num(r.retention.pct)}% × lãi ${rate == null ? "?" : num(rate)}%/năm × bảo hành ${r.warranty ? `${r.warranty.months} tháng ≈ ${wd} ngày` : "?"} / 365`,
         amount: rate && price && wd ? price * (r.retention.pct / 100) * i * wd : null, ...(wd ? {} : { lack: ["thời hạn bảo hành"] }) });
     }
     // Phạt chậm: rủi ro, không cộng vào giá vốn.
     if (r.penalty || r.penaltyMax) lines.push({ id: "penalty", risk: true, label: "Phạt chậm giao hàng (rủi ro, không cộng vào giá vốn)", basis: [q(r.penalty), q(r.penaltyMax)].filter(Boolean).join(" · "),
-      formula: `${r.penalty ? `${r.penalty.raw}%/${r.penalty.unit}${r.penalty.unit === "tuần" ? ` (≈ ${(+r.penalty.perDay.toFixed(3))}%/ngày)` : ""}` : "?"}${r.penaltyMax ? `, tối đa ${r.penaltyMax.pct}% giá hợp đồng` : ""}${r.penalty && price ? `: mỗi ngày trễ ≈ ${vnd((price * r.penalty.perDay) / 100)} đ` : ""}`,
+      formula: `${r.penalty ? `${num(r.penalty.raw)}%/${r.penalty.unit}${r.penalty.unit === "tuần" ? ` (≈ ${num(r.penalty.perDay)}%/ngày)` : ""}` : "?"}${r.penaltyMax ? `, tối đa ${num(r.penaltyMax.pct)}% giá hợp đồng` : ""}${r.penalty && price ? `: mỗi ngày trễ ≈ ${vnd((price * r.penalty.perDay) / 100)} đ` : ""}`,
       amount: r.penaltyMax && price ? (price * r.penaltyMax.pct) / 100 : null });
     const total = lines.filter((x) => !x.risk && x.amount != null).reduce((a, x) => a + x.amount, 0);
     return { lines, total: lines.some((x) => !x.risk && x.amount != null) ? total : null, missing, manual: r.manual, read: { advance: r.advance?.pct ?? null, payDays: r.pay?.days ?? null, security: r.security?.pct ?? null, retention: r.retention?.pct ?? null, warrantyMonths: r.warranty?.months ?? null, penaltyPerDay: r.penalty?.perDay ?? null, penaltyMax: r.penaltyMax?.pct ?? null, daysHint: r.daysHint ?? null } };
@@ -855,8 +859,8 @@
     if (!(cost > 0)) return { flags: [], total: null };
     const total = cost + (Number(finance) || 0), flags = [], hi = (levels || []).reduce((a, l) => (l.price > (a?.price || 0) ? l : a), null);
     const fin = finance > 0 ? ` (giá vốn ${vnd(cost)} đ + chi phí vốn ${vnd(finance)} đ)` : "";
-    if (P > 0 && total >= P) flags.push({ id: "over-package", text: `Giá vốn ${vnd(total)} đ${fin} bằng ${(100 * total / P).toFixed(1)}% giá gói ${vnd(P)} đ: không thể bỏ giá dưới giá gói mà có lãi.` });
-    else if (hi && total >= hi.price) flags.push({ id: "over-levels", text: `Giá vốn ${vnd(total)} đ${fin} cao hơn mức ${hi.label} ${vnd(hi.price)} đ (${Math.round(100 * hi.ratio)}% giá gói): gói cũ tương tự hiếm khi trúng ở giá có lãi.` });
+    if (P > 0 && total >= P) flags.push({ id: "over-package", text: `${finance > 0 ? "Giá vốn cộng chi phí vốn" : "Giá vốn"} ${vnd(total)} đ${fin} bằng ${pct1(total / P)} giá gói ${vnd(P)} đ: không thể bỏ giá dưới giá gói mà có lãi.` });
+    else if (hi && total >= hi.price) flags.push({ id: "over-levels", text: `${finance > 0 ? "Giá vốn cộng chi phí vốn" : "Giá vốn"} ${vnd(total)} đ${fin} cao hơn mức ${hi.label} ${vnd(hi.price)} đ (${Math.round(100 * hi.ratio)}% giá gói): gói cũ tương tự hiếm khi trúng ở giá có lãi.` });
     return { flags, total };
   }
 
