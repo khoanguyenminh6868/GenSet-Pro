@@ -127,7 +127,7 @@ export function gapReport({ docs, suppliers, modelFacts, configmatch = [], specs
     const r = m?.result || m?.data?.result; if (!r) continue;
     for (const res of r.sizes ? r.sizes.map((z) => z.result).filter(Boolean) : [r]) for (const c of res.configs || []) for (const x of c.checks || []) {
       const code = x.code || codeOf(x), def = CODE_BY.get(code), u = unclear.get(code) || { code, item: def?.item || x.item || code, part: def?.part || x.part || "", unclear: 0, total: 0 };
-      u.total++; if (x.status !== "met" && x.status !== "not_met") u.unclear++;
+      u.total++; if (x.status !== "met" && x.status !== "not_met" && x.status !== "confirm") u.unclear++; // confirm: chọn khi đặt hàng / chứng từ, không phải thiếu thông số
       unclear.set(code, u);
     }
   }

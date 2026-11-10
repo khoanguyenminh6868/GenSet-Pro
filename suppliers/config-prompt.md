@@ -114,6 +114,10 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    - `not_met` when the source states a value that does not;
    - `unclear` when the source does not say. Never guess a value, never take it from the model name, never assume
      prime when the row does not say prime (prime and standby are ratings, not a conversion).
+   Write only these three. Column `kind` of the code table says what a point is: `order` (chosen when ordering: voltage,
+   IP, AVR, breaker, tank...) and `document` (certificates, prototype, the set's origin) left `unclear` are turned by
+   the code into "xác nhận khi đặt hàng" / "cần chứng từ" and put in the questions to the supplier; still look them up
+   in the sources first (a source that states them makes them `met` / `not_met`), and never write `confirm` yourself.
    A bare figure of the HSMT (no ≥ / ≤ / "tối thiểu" / "tối đa", e.g. "Dung tích xi lanh 11.051 L") (Khoa, 2026-11-03):
    for a figure where more is better (power, displacement, cylinders, tank, battery Ah, insulation class, IP, hours...)
    it is the least accepted: a value at or above it is `met`, below it `not_met`. For a figure with no better side (bore,

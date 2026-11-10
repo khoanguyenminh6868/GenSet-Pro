@@ -29,7 +29,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
-import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd } from "./reqcodes.mjs";
+import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf } from "./reqcodes.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -1273,6 +1273,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
       return x.parts.map((p) => ({ ...p, item: `${x.item}: ${p.item}`, part: x.part, level: x.level, hsmtQuote: "", group: x, name: p.item }));
     });
     for (const x of c.checks) {
+      // "confirm" is the code's (confirmChecks below), never the agent's: one written by the agent, or by an earlier check
+      // of this result, is "unclear" again until confirmChecks decides.
+      if (x.status === "confirm") { x.status = "unclear"; delete x.confirm; }
       const reasons = [], rq = reqs.get(norm(x.group ? x.group.item : x.item));
       x.level = (rq?.level || x.level) === "option" ? "option" : "core";
       if (!PARTS.includes(x.part)) x.part = rq?.part || "genset";
@@ -1428,6 +1431,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin }) {
         })];
       c.checks.unshift(syncCheck(sync, fam, makers, { engine: c.engine?.model, alternator: c.alternator?.model, controller: c.controller?.model }));
     }
+    confirmChecks(c, result.requirements || []);
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
@@ -1494,13 +1498,76 @@ export function scoreOf(c, reqs = []) {
     const g = groupOf(x);
     // A group of controller functions counts each function (2026-11-03 regression run: a controller meeting 4 of 30
     // ranked above one meeting 26 of 30, both being one "unclear" group).
+    // "confirm" (chosen when ordering / a document to send: confirmChecks) is not an "unclear": the model is not in doubt.
     for (const p of x.parts?.length ? x.parts.map((q) => ({ ...q, unverified: q.unverified || x.unverified })) : [x]) {
-      if (p.status === "not_met") n[g][0]++; else if (p.status !== "met" || p.unverified) n[g][1]++;
+      if (p.status === "not_met") n[g][0]++; else if (p.status !== "confirm" && (p.status !== "met" || p.unverified)) n[g][1]++;
     }
   }
-  for (const r of reqs) if (!seen.has(norm(r.item))) n[groupOf(r)][1] += r.parts?.length || 1;
+  for (const r of reqs) if (!seen.has(norm(r.item)) && !confirmKindOf(r)) n[groupOf(r)][1] += r.parts?.length || 1;
   const fits = (c.suppliers || []).some((s) => !s.unverified) ? 0 : 1;
   return [n[0][0], n[1][0], fits, n[0][1], n[1][1], n[2][0], n[2][1]];
+}
+// Bốn loại yêu cầu (reqcodes.mjs kind, 2026-11-10): a point the sources do not state is not in doubt the same way for
+// every kind. A voltage of 400/230 V, an IP23 alternator, an MCCB, a tank (`order`) are chosen when ordering without
+// changing the model; an ISO 9001 certificate, a prototype report, the set's CO (`document`) are papers the supplier
+// sends. Such a check the sources leave "unclear" becomes "confirm" ("xác nhận khi đặt hàng" / "cần chứng từ"), which
+// rankConfigs does not count as unclear. Not a check whose quote the code could not find (unverified), whose sources
+// disagree (conflict), of a controller generation to confirm (version), or a group. A `hint` does not keep it unclear:
+// the agent has read the hinted line by then (check prints it), and the hint of an order point is mostly a near miss
+// (IB2600586587: "Voltage regulation NL-FL ≤±1%" hinted for "AVR tự động" on 3 configurations, none on a 4th with the
+// same alternator, which then ranked above them). A requirement of those kinds with no check of the
+// configuration gets one, written by the code. A met / not met stays as it is. Decided here, never by the agent.
+// Which kind a requirement is confirmed as (order / document, with the conditions of reqcodes.mjs confirmKindOf), or null.
+export function confirmChecks(c, reqs = []) {
+  const kinds = new Map(reqs.map((r) => [norm(r.item), confirmKindOf(r)]));
+  for (const x of c.checks || []) {
+    if (x.status === "confirm") { x.status = "unclear"; delete x.confirm; }
+    const k = kinds.get(norm(x.item));
+    if (x.status !== "unclear" || !k || x.unverified || x.conflict || x.version || x.parts?.length) continue;
+    x.status = "confirm"; x.confirm = k;
+  }
+  const have = new Set((c.checks || []).map((x) => norm(x.item)));
+  for (const r of reqs) {
+    const k = confirmKindOf(r);
+    if (have.has(norm(r.item)) || !k || r.byCode) continue;
+    c.checks = [...(c.checks || []), { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: "", part: r.part || "genset", level: r.level === "option" ? "option" : "core",
+      status: "confirm", confirm: k, byCode: true, note: "Code ghi: nguồn của cấu hình không nói tới điểm này." }];
+  }
+  return c;
+}
+// Bảng câu hỏi gửi nhà cung cấp (rfq, 2026-11-10): one line per "confirm" or "unclear" point of a configuration (and per
+// requirement with no check), in the configuration's order: what the HSMT asks and what the supplier is to confirm or
+// send. Written by the code from the checks; the web copies it as text.
+const PART_VI = { engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển", genset: "Tổ máy" };
+export function rfqOf(c, reqs = []) {
+  const kinds = new Map(reqs.map((r) => [norm(r.item), kindOf(r)]));
+  const what = (part) => [PART_VI[part] || "Tổ máy", (part === "genset" ? c.genset?.model : c[part]?.model) || ""].filter(Boolean).join(" ");
+  const ask = (x, k) => {
+    if (x.status === "confirm") return x.confirm === "document" || k === "document" ? "Gửi chứng từ / bản cam kết đáp ứng" : "Xác nhận cấu hình đặt hàng đáp ứng";
+    if (k === "site") return "Xác nhận tổ máy làm việc được ở điều kiện này; gửi đường giảm công suất của nhà sản xuất";
+    if (x.conflict) return "Các nguồn ghi khác nhau: xác nhận giá trị đúng, gửi datasheet";
+    if (x.version) return "Xác nhận đời (MK) bộ điều khiển chào, gửi datasheet đúng đời";
+    if (x.parts?.length) {
+      const open = x.parts.filter((p) => p.status !== "met" && p.status !== "not_met").map((p) => p.item);
+      return `Xác nhận có các chức năng: ${open.join(", ")}; gửi datasheet`;
+    }
+    return "Xác nhận thông số, gửi datasheet / catalog có ghi";
+  };
+  const out = [], seen = new Set();
+  for (const x of c.checks || []) {
+    seen.add(norm(x.item));
+    const unsure = x.status === "unclear" || (x.status === "met" && x.unverified) || (x.parts?.length && x.status !== "met" && x.status !== "not_met");
+    if (x.status !== "confirm" && !unsure) continue;
+    const k = kinds.get(norm(x.item)) || "model";
+    out.push({ part: x.part || "genset", of: what(x.part), item: x.item, requirement: x.requirement || "", kind: k, status: x.status === "confirm" ? "confirm" : "unclear", ask: ask(x, k) });
+  }
+  for (const r of reqs) {
+    if (seen.has(norm(r.item)) || r.byCode) continue;
+    const k = kindOf(r), ck = confirmKindOf(r), x = { status: ck ? "confirm" : "unclear", confirm: ck };
+    out.push({ part: r.part || "genset", of: what(r.part), item: r.item, requirement: r.requirement || "", kind: k, status: x.status, ask: ask(x, k) });
+  }
+  const order = { engine: 0, controller: 1, alternator: 2, genset: 3 };
+  return out.sort((a, b) => (order[a.part] ?? 4) - (order[b.part] ?? 4));
 }
 // A configuration with no controller, when the HSMT asks for one, is "not met" on the controller (Khoa, 2026-11-02):
 // its controller checks would all be "unclear", which ranked it above configurations that offer one but miss a point
@@ -1658,7 +1725,9 @@ export function rankConfigs(result) {
     // order (confidence, role).
     const sup = (c.suppliers || []).map((s, j) => ({ s, k: [!s.unverified && s.hasController ? 0 : 1, s.unverified ? 1 : 0, c.genset?.src?.supplierId === s.supplierId ? 0 : 1, s.hasAlternator ? 0 : 1, j] }));
     sup.sort((x, y) => cmp(x.k, y.k));
-    return { ...c, rank: i + 1, suppliers: sup.map((x) => x.s) };
+    const out = { ...c, rank: i + 1, suppliers: sup.map((x) => x.s) };
+    out.rfq = rfqOf(out, reqs);
+    return out;
   });
   return result;
 }
