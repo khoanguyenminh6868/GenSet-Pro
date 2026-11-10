@@ -86,9 +86,16 @@ test("PR 3: the engine's rated kWm from the model's facts (engPrime / engStandby
   const fact = (kW, sid) => ({ key: "engPrime", label: "Engine Prime Power (kW)", value: `${kW}`, kW, supplierId: sid, n: 101, line: `| Engine Prime Power (kW) | ${kW}` });
   const noRow = { line: "| WT250 |", specs: [], power: { prime: { kVA: 312, kW: 250 } } };
   const ok = comboChecks(cfg(), { combo: {}, row: noRow, engFacts: [fact(284, "a"), fact(290, "b")], altFacts: eff(92.3) });
-  assert.equal(ok.combo.power.status, "ok"); assert.match(ok.combo.power.text, /284–290 kWm \(prime\)/);
+  assert.equal(ok.combo.power.status, "ok"); assert.match(ok.combo.power.text, /284–290 kWm \(prime, thông số theo model không ghi tốc độ; dòng tổ máy không ghi tần số\)/);
   assert.match(comboChecks(cfg(), { combo: {}, row: noRow, engFacts: [fact(284, "a"), fact(320, "b")], altFacts: eff(92.3) }).combo.power.text, /lệch > 3%: 284 \/ 320 kW/);
   assert.deepEqual(kwmOf(null, [fact(284, "a")]).rating, "prime");
+  // Speed: a 1500 rpm figure is the 50 Hz output; not used on a 60 Hz row; a figure with no speed not on a 60 Hz row.
+  const at = (rpm) => ({ ...fact(163, "fdk"), rpm });
+  assert.equal(kwmOf(null, [at(1500)], 60), null);
+  assert.equal(kwmOf(null, [at(1500)], 50).min, 163);
+  assert.equal(kwmOf(null, [at(1800)], 60).min, 163);
+  assert.equal(kwmOf(null, [at(null)], 60), null);
+  assert.match(comboChecks(cfg(), { combo: {}, row: noRow, engFacts: [at(1500)], altFacts: eff(92.3) }).combo.power.text, /thông số theo model ở 1500 v\/p; dòng tổ máy không ghi tần số/);
   // factConflicts: a prime and a standby figure are not two sources that disagree; two primes 13% apart are.
   assert.equal(factConflicts([fact(284, "a"), { ...fact(313, "b"), key: "engStandby" }]).size, 0);
   assert.equal(factConflicts([fact(284, "a"), fact(320, "b")]).size, 1);

@@ -1709,10 +1709,16 @@ const oneFact = (list, key, ok, skip) => {
 const fmt = (v) => Number(v).toLocaleString("vi-VN", { maximumFractionDigits: 1 });
 // The engine's kWm at one rating (prime first): the genset row's rated figure, else the model's rated facts. { rating,
 // min, max, rpm, gross, src } / { conflict: [...] } / null. Facts of one rating more than 3% apart are not used.
-export function kwmOf(ep, engFacts = []) {
+// The output of an engine depends on its speed: a model figure is used only at the row's frequency. The speed it is
+// given at tells the frequency (n = 120 f / p, 4-pole 1500 ↔ 50 Hz, 1800 ↔ 60 Hz; 2-pole 3000 / 3600). A row of a 60 Hz
+// table (jet-power "60Hz Cummins …") does not take a 1500 rpm figure; a figure with no speed is used only on a row whose
+// frequency is not 60 Hz. A row that gives no frequency (most Chinese tables) takes it, and the text says so (unknownHz).
+const hzOfRpm = (rpm) => ([1500, 3000, 1000, 750].includes(rpm) ? 50 : [1800, 3600, 1200, 900].includes(rpm) ? 60 : null);
+export function kwmOf(ep, engFacts = [], freq = null) {
   if (ep) { const rating = ep.prime != null ? "prime" : "standby"; return { rating, min: ep[rating], max: ep[rating], rpm: ep.rpm || null, gross: ep.gross, src: { from: "row", label: ep.label, value: ep.value, line: ep.line } }; }
+  const speedOk = (f) => (f.rpm ? !freq || hzOfRpm(f.rpm) === Number(freq) : Number(freq) !== 60);
   for (const rating of ["prime", "standby"]) {
-    const list = (engFacts || []).filter((f) => f.key === RATED_KEY[rating] && f.kW > 0);
+    const list = (engFacts || []).filter((f) => f.key === RATED_KEY[rating] && f.kW > 0 && speedOk(f));
     if (!list.length) continue;
     const v = list.map((f) => f.kW), lo = Math.min(...v), hi = Math.max(...v);
     if (!near(lo, hi)) return { conflict: [...new Set(v)] };
@@ -1790,7 +1796,7 @@ export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKv
   // not concluded. The engine's kWm: the row's rated figure, else the model's rated facts (engPrime / engStandby) of
   // every source within 3% of each other; a figure with no rating is not used. Efficiency: the alternator model's
   // "Efficiency" lines (not "Mechanical Efficiency"), 80–99.9%, sources whose ranges do not overlap are not used.
-  const ep = enginePowerOf(row), kw = kwmOf(ep, engFacts), eff = effRange(altFacts);
+  const ep = enginePowerOf(row), kw = kwmOf(ep, engFacts, row?.freq ?? null), eff = effRange(altFacts);
   const miss = [!kw ? "công suất động cơ có ghi mức prime / standby" : kw.conflict && `công suất động cơ (các nguồn lệch > 3%: ${kw.conflict.join(" / ")} kW)`,
     !eff ? "hiệu suất đầu phát theo model" : eff.conflict && `hiệu suất đầu phát (các nguồn không trùng khoảng: ${eff.conflict.join(" / ")})`].filter(Boolean);
   if (!miss.length) {
@@ -1798,7 +1804,7 @@ export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKv
     const hi = CONV.compute({ formula: "kwe_from_kwm", inputs: [{ name: "P_kWm", value: kw.max }, { name: "eff_pct", value: eff.max }] }).value;
     const set = row?.power?.[kw.rating]?.kW ?? null, req = hsmtKw(reqs, kw.rating), need = Math.max(set ?? 0, req ?? 0) || null;
     const rg = (a, b, u) => (Math.abs(a - b) < 0.05 ? `${fmt(a)}${u}` : `${fmt(a)}–${fmt(b)}${u}`);
-    const head = `Động cơ ${rg(kw.min, kw.max, " kWm")} (${kw.rating}${kw.gross ? ", gross" : ""}) × hiệu suất đầu phát ${rg(eff.min, eff.max, "%")} = ${rg(lo, hi, " kWe")}`;
+    const head = `Động cơ ${rg(kw.min, kw.max, " kWm")} (${kw.rating}${kw.gross ? ", gross" : ""}${kw.src?.from === "model" && !row?.freq ? `, thông số theo model ${kw.rpm ? `ở ${kw.rpm} v/p` : "không ghi tốc độ"}; dòng tổ máy không ghi tần số` : ""}) × hiệu suất đầu phát ${rg(eff.min, eff.max, "%")} = ${rg(lo, hi, " kWe")}`;
     const inputs = { engine: kw.src, eff: eff.src };
     if (!need) out.power = { status: "missing", text: `${head}; không có số kWe ${kw.rating} của tổ máy hay HSMT để so.`, inputs };
     else {
