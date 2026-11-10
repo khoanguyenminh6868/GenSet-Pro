@@ -2,7 +2,8 @@
 // chỉ bằng dữ liệu đã có TRƯỚC ngày đóng thầu của gói đó (phần khác có kết quả công bố trước ngày đóng thầu), rồi so với
 // giá trúng thật: tỉ lệ giá trúng rơi trong [Cạnh tranh, Cao], sai số trung vị của mức Trung vị (điểm % giá gói), tách
 // theo số nhà thầu và nhóm xuất xứ động cơ của hàng trúng. Chỉ đọc doc-cache, không gọi agent, không ghi gì lên web.
-//   node suppliers/bidprice-backtest.mjs [--cache <thư mục doc-cache>] [--json <tệp ra>] [--limit N] [--loose]
+//   node suppliers/bidprice-backtest.mjs [--cache <thư mục doc-cache>] [--json <tệp ra>] [--limit N] [--loose] [--calib]
+// --calib: thêm ba mức hiệu chỉnh theo cạnh tranh dự báo (suggest opts.fc, web/bidprice.js CALIB), so trên cùng phần.
 // --loose: cách "theonhom" nhận cả gói cũ không rõ nhóm (chỉ bỏ gói khác nhóm), để so với cách chặt mặc định.
 // GIỚI HẠN: bot thật cho agent xếp từng gói ứng viên giống/gần/khác; ở đây mọi ứng viên code chọn (candidates) đều được
 // coi là "gần" (bỏ bước agent), nên số đo là của lượt chọn bằng code, không phải của kết quả bot đăng lên web.
@@ -49,7 +50,7 @@ export function cases(docs) {
       const K = kName || kCfg?.kva || null;
       if (!K) continue;
       out.push({ key, lotNo: lot.lotNo || "", name, K, rating: kName ? BP.kvaRated(name)?.rating || null : kCfg?.rating || null, P: price, ratio, nb: (lot.bidders || []).length,
-        group: BP.goodsGroup(goods), close, investorName: d.investorName || "", cfgText: d.config?.text || "" });
+        group: BP.goodsGroup(goods), close, investorName: d.investorName || "", cfgText: d.config?.text || "", location: d.location || "", field: d.field || "", bidCloseDate: d.bidCloseDate || d.openedAt || "" });
     }
   }
   return out.sort((a, b) => a.close - b.close);
@@ -57,7 +58,7 @@ export function cases(docs) {
 
 // Every candidate the code picked counts as "close" (no agent).
 const asClose = (list) => list.map((s) => ({ ...s, level: "close" }));
-export function run(docs, { limit = 0 } = {}) {
+export function run(docs, { limit = 0, calib = false } = {}) {
   const all = cases(docs), byKnown = Object.entries(docs).map(([k, d]) => [k, d, knownAt(d)]).filter(([, , t]) => t != null).sort((a, b) => a[2] - b[2]);
   const rows = [];
   let j = 0, before = {};
@@ -68,8 +69,10 @@ export function run(docs, { limit = 0 } = {}) {
     delete docsBefore[c.key];
     const t = { notifyNo: c.key, bidName: c.name, investorName: c.investorName, cfgText: c.cfgText, rating: c.rating };
     const cand = BP.candidates(t, docsBefore, c.K, c.P);
-    const st = BP.suggest(asClose(cand.list), c.P, c.K, cand.prior);
-    const row = { key: c.key, lotNo: c.lotNo, nb: c.nb, group: c.group, ratio: c.ratio, base: lv(st, c) };
+    // --calib: the competition forecast from the same data (nbForecast), for suggest's weighted levels (stats.calib).
+    const fc = calib ? BP.nbForecast({ notifyNo: c.key, investorName: c.investorName, location: c.location, field: c.field, bidCloseDate: c.bidCloseDate }, docsBefore) : null;
+    const st = BP.suggest(asClose(cand.list), c.P, c.K, cand.prior, fc ? { fc } : {});
+    const row = { key: c.key, lotNo: c.lotNo, nb: c.nb, group: c.group, ratio: c.ratio, close: c.close, base: lv(st, c), ...(calib ? { cal: st.calib ? lv(st.calib, c) : null } : {}) };
     if (BP.groupPrices && c.group) {
       const g = BP.groupPrices({ t, docs: docsBefore, K: c.K, P: c.P, group: c.group, strict: !process.argv.includes("--loose") });
       row.grp = lv(g.stats, c);
@@ -102,12 +105,22 @@ function print(title, sm, total) {
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const dir = arg("cache", path.join(ROOT, "..", "..", "genbid-work", "doc-cache"));
-  const started = Date.now(), docs = loadDocs(dir), rows = run(docs, { limit: Number(arg("limit")) || 0 });
+  const calib = process.argv.includes("--calib");
+  const started = Date.now(), docs = loadDocs(dir), rows = run(docs, { limit: Number(arg("limit")) || 0, calib });
   console.log(`Hậu kiểm Gợi ý giá đấu — ${Object.keys(docs).length} gói bidhist, ${rows.length} phần đo, ${Math.round((Date.now() - started) / 1000)} s`);
   console.log("Giới hạn: mọi ứng viên code chọn coi là \"gần\" (không có bước agent xếp mức); chỉ dùng phần có kết quả công bố trước ngày đóng thầu.");
   print("Chung (như hạng 1 hiện nay)", summarize(rows, "base"), rows.length);
   const withG = rows.filter((r) => r.group);
   print("Chung, chỉ phần biết nhóm hàng trúng", summarize(withG, "base"), withG.length);
   if (BP.groupPrices) print("Theo nhóm xuất xứ của hàng trúng (mục 3)", summarize(withG, "grp"), withG.length);
+  if (calib) {
+    // Same lots for both: those where both give levels; then the later half alone (no tuning on it is claimed).
+    const both = rows.filter((r) => r.base && r.cal), half = both.length ? both[Math.floor(both.length / 2)].close : 0;
+    print(`Hiệu chỉnh theo cạnh tranh dự báo (CALIB lam ${BP.CALIB.lam}, q ${BP.CALIB.q}) — cùng phần`, summarize(both, "cal"), both.length);
+    print("  so với: chung, cùng phần", summarize(both, "base"), both.length);
+    const late = both.filter((r) => r.close >= half);
+    print(`Nửa sau (đóng từ ${new Date(half).toISOString().slice(0, 10)}): hiệu chỉnh`, summarize(late, "cal"), late.length);
+    print("  so với: chung, nửa sau", summarize(late, "base"), late.length);
+  }
   if (arg("json")) fs.writeFileSync(arg("json"), JSON.stringify(rows));
 }

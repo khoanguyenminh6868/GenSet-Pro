@@ -2119,7 +2119,8 @@ function askFinance(key) {
       <div class="muted small">Từ ký hợp đồng tới nghiệm thu bàn giao, chưa gồm thời hạn thanh toán.</div></div>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="fnOk">Lưu</button></div>`, (m, close) => {
     $("#fnOk", m).addEventListener("click", async () => {
-      const rate = numIn($("#fnRate", m).value), days = numIn($("#fnDays", m).value);
+      // Lãi suất: "9.5" và "9,5" đều là 9,5% (numIn coi dấu chấm là phân cách nghìn).
+      const rv = $("#fnRate", m).value.trim().replace(/\s|%/g, "").replace(",", "."), rate = /^\d+(\.\d+)?$/.test(rv) && Number(rv) > 0 ? Number(rv) : null, days = numIn($("#fnDays", m).value);
       if (rate > 50) { toast("Lãi suất tính bằng %/năm, vd 9."); return; }
       close();
       const all = { ...quoteAll(), rate: rate || null, updatedAt: new Date().toISOString(), by: window.genbidEmail || "" };
@@ -4385,7 +4386,8 @@ function bdDetailHtml(c0) {
 function bidBasis(t) {
   const cap = capacityOf(t), K = kvaOf(cap?.text) || null;
   const P = t.estimatedPrice ?? state.bidhist?.[t._key]?.estimatedPrice ?? null;
-  return { kva: K, price: P, capText: K ? `${cap.text} (${cap.src})` : "", bidForm: t.bidForm || "", investorName: t.investorName || "" };
+  // location, field, bidCloseDate: cho dự báo số nhà thầu của bot (ba mức hiệu chỉnh, chỉ khi bật GENBID_BIDPRICE_CALIB).
+  return { kva: K, price: P, capText: K ? `${cap.text} (${cap.src})` : "", bidForm: t.bidForm || "", investorName: t.investorName || "", location: t.location || "", field: t.field || "", bidCloseDate: t.bidCloseDate || "" };
 }
 const BP_LEVEL = { same: ["Giống", "ok"], close: ["Gần", "warn"], different: ["Khác", "mut"], unknown: ["Không đủ thông tin", "mut"] };
 const bpPct = (r) => (100 * r).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + "%";
