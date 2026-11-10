@@ -290,7 +290,14 @@ test("quoteCost / quoteLedger: price lines in their currency, extras in đồng 
   assert.equal(c.goods, 2 * 100000 * 3600 + 5e7);
   assert.equal(c.total, c.goods + 3e7 + c.goods * 0.1);
   assert.equal(BP.quoteCost({ items: [] }, {}).total, null);
-  const led = BP.quoteLedger({ K1: { rows: [{ ...row, items: [{ ...row.items[0], date: "2026-10-01" }, row.items[2]] }] }, K2: { rows: [{ id: "r1", supplierId: "s2", items: [{ desc: "Máy", kva: 250, unitPrice: 9e8, date: "2026-11-01" }] }] } });
+  // VAT: on the goods not yet taxed plus the extras; a line whose price already holds the tax is left out.
+  const v = BP.quoteCost(row, { fx: { CNY: 3600 }, vat: 10, extras: [{ kind: "vnd", value: 3e7 }] });
+  assert.equal(v.vat, (v.goods + 3e7) * 0.1);
+  assert.equal(v.total, v.goods + 3e7 + v.vat);
+  const w = BP.quoteCost({ items: [row.items[0], { ...row.items[1], vatIncl: true }] }, { fx: { CNY: 3600 }, vat: 10 });
+  assert.equal(w.vat, 2 * 100000 * 3600 * 0.1);
+  assert.equal(c.vat, 0);
+  const led = BP.quoteLedger({ _cost: { fx: { USD: 26000 }, vat: 10 }, K1: { rows: [{ ...row, items: [{ ...row.items[0], date: "2026-10-01" }, row.items[2]] }] }, K2: { rows: [{ id: "r1", supplierId: "s2", items: [{ desc: "Máy", kva: 250, unitPrice: 9e8, date: "2026-11-01" }] }] } });
   assert.deepEqual(led.map((x) => [x.key, x.supplierId, x.kvaNum]), [["K2", "s2", 250], ["K1", "s1", 500]]);
 });
 

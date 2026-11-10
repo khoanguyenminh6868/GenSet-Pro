@@ -586,24 +586,29 @@
   // Giá vốn của một nhà cung cấp = Σ số lượng × đơn giá × tỷ giá + các khoản thêm (cost.extras: { label, kind: "vnd" |
   // "pct", value }; pct tính trên tiền hàng đã quy đổi). Thiếu tỷ giá của một đồng tiền có trong dòng giá thì chưa tính
   // được (missing), không đoán tỷ giá.
+  // Thuế GTGT (cost.vat, %; Khoa 10/11: tỷ giá và thuế GTGT lưu một lần cho mọi gói, quote/_cost): tính trên tiền hàng
+  // của các dòng chưa gồm thuế (dòng có vatIncl thì đơn giá đã gồm) cộng các khoản thêm.
   const CURRENCIES = ["VND", "USD", "CNY", "EUR", "JPY"];
   function quoteCost(row, cost = {}) {
     const fx = { ...(cost.fx || {}), VND: 1 }, items = (row?.items || []).filter((x) => Number(x.unitPrice) > 0), missing = [];
-    let goods = 0;
+    const vatRate = Number(cost.vat) > 0 ? Number(cost.vat) : 0;
+    let goods = 0, taxed = 0;
     for (const x of items) {
       const cur = x.currency || "VND", rate = Number(fx[cur]);
       if (!(rate > 0)) { if (!missing.includes(cur)) missing.push(cur); continue; }
-      goods += (Number(x.qty) > 0 ? Number(x.qty) : 1) * Number(x.unitPrice) * rate;
+      const v = (Number(x.qty) > 0 ? Number(x.qty) : 1) * Number(x.unitPrice) * rate;
+      goods += v; if (x.vatIncl) taxed += v;
     }
-    if (!items.length || missing.length) return { goods: null, extras: null, total: null, missing, n: items.length };
+    if (!items.length || missing.length) return { goods: null, extras: null, vat: null, vatRate, total: null, missing, n: items.length };
     const extras = (cost.extras || []).reduce((a, e) => a + (e.kind === "pct" ? (goods * (Number(e.value) || 0)) / 100 : Number(e.value) || 0), 0);
-    return { goods, extras, total: goods + extras, missing, n: items.length };
+    const vat = ((goods - taxed + extras) * vatRate) / 100;
+    return { goods, extras, vat, vatRate, total: goods + extras + vat, missing, n: items.length };
   }
   // Mọi dòng giá của mọi gói thành một sổ: { key, rowId, supplierId, ...item, kvaNum }, mới nhất trước. kvaNum: công
   // suất ghi ở dòng, không có thì đọc từ mô tả.
   function quoteLedger(quotes) {
     const out = [];
-    for (const [key, q] of Object.entries(quotes || {})) for (const row of q?.rows || []) for (const x of row.items || []) {
+    for (const [key, q] of Object.entries(quotes || {})) for (const row of key.startsWith("_") ? [] : q?.rows || []) for (const x of row.items || []) {
       if (!(Number(x.unitPrice) > 0)) continue;
       out.push({ key, rowId: row.id, supplierId: row.supplierId || "", ...x, kvaNum: Number(x.kva) > 0 ? Number(x.kva) : kvaOf(x.desc) });
     }
