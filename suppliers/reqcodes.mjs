@@ -108,7 +108,7 @@ const KIND = {
   standards: "document", // ISO 3046 / IEC 60034 / CE / ISO 9001: chứng nhận, NCC gửi bản sao
   prototype: "document", // biên bản thử nghiệm mẫu của NSX
   genset_make: "model", genset_model: "model", // chính là cấu hình được chọn
-  genset_origin: "document", // nơi lắp ráp tổ máy: chứng minh bằng CO, không có trong datasheet
+  genset_origin: "model", // nơi lắp ráp tổ máy là nước của NCC, hệ thống đã biết; xử lý cùng thương hiệu / xuất xứ G7 (điều phối 10/11)
   brand_sync: "model", // code kiểm (byCode) theo hãng các bộ phận
   alt_vreg: "model", // ±0,5% / ±1% do đầu phát + AVR của model, datasheet đầu phát ghi
   freq_regulation: "model", // do bộ điều tốc của động cơ (isochronous / droop), datasheet ghi
@@ -155,6 +155,31 @@ export const CODE_BY = new Map(REQ_CODES.map((c) => [c.code, c]));
 export const OTHER = "other";
 // The kind of a requirement (or check) by its code; "other" and unknown codes are "model" (stay "unclear").
 export const kindOf = (r) => CODE_BY.get(r?.code)?.kind || "model";
+// Some order points are an order option only for the usual values (điều phối 2026-11-10): `confirm` must not hide a
+// different model. Read from the requirement's own text (requirement + quote); a figure not read keeps it "unclear".
+// - voltage: low voltage only (every figure ≤ 1.000 V). 3,3 / 6,3 / 11 / 22 kV is another alternator.
+// - phases: three phases only. A 1-phase set from a 3-phase alternator loses power or needs its own winding.
+// - alt_ip: IP23 or below (IP21, IP22, IP23). IP44 / IP54 is not a usual order option.
+export function voltsIn(text) {
+  const out = [];
+  const re = /((?:\d+(?:[.,]\d+)?\s*\/\s*)*\d+(?:[.,]\d+)?)\s*(kV|V)(?=AC|[^a-zA-Z]|$)/gi;
+  for (const m of String(text || "").matchAll(re)) for (const n of m[1].split("/")) out.push(Number(n.trim().replace(",", ".")) * (/^k/i.test(m[2]) ? 1000 : 1));
+  return out.filter((v) => Number.isFinite(v) && v > 0);
+}
+const THREE = /(^|[^\d])3\s*-?\s*(pha|phase|ph)\b|ba\s*pha|three\s*-?\s*phase|\b3P4W\b/i, ONE = /(^|[^\d])1\s*-?\s*(pha|phase|ph)\b|m[ộo]t\s*pha|single\s*-?\s*phase/i;
+const WHEN = {
+  voltage: (t) => { const v = voltsIn(t); return v.length > 0 && v.every((x) => x <= 1000); },
+  phases: (t) => THREE.test(t) && !ONE.test(t),
+  alt_ip: (t) => { const ip = [...t.matchAll(/\bIP\s?(\d)(\d)\b/gi)].map((m) => [Number(m[1]), Number(m[2])]); return ip.length > 0 && ip.every(([a, b]) => a <= 2 && b <= 3); },
+};
+const CONFIRMABLE = new Set(["order", "document"]);
+// The kind a requirement is confirmed as when the sources do not state it ("order" / "document"), or null (stays unclear).
+export function confirmKindOf(r) {
+  const code = r?.code || codeOf(r), k = CODE_BY.get(code)?.kind;
+  if (!CONFIRMABLE.has(k)) return null;
+  const when = WHEN[code];
+  return !when || when(normTxt(`${r?.requirement || ""} ${r?.quote || ""}`)) ? k : null;
+}
 const normTxt = (s) => String(s || "").normalize("NFC").replace(/\s+/g, " ").trim();
 // Which codes (not byCode) a free text names, in list order. Not a text that says the HSMT does not state the point.
 // A code whose words are a part of another's (alt_cooling: "làm mát") is named only when that one is not.

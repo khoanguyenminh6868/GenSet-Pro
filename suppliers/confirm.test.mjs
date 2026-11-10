@@ -2,18 +2,52 @@
 // (config-bot.mjs confirmChecks / rfqOf / scoreOf), 2026-11-10.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { REQ_CODES, KINDS, kindOf, withCode } from "./reqcodes.mjs";
+import { REQ_CODES, KINDS, kindOf, withCode, confirmKindOf, voltsIn } from "./reqcodes.mjs";
 import { check, confirmChecks, rfqOf, scoreOf, rankConfigs } from "./config-bot.mjs";
 
 test("every requirement code has a kind; order / document / site as decided", () => {
   for (const c of REQ_CODES) assert.ok(KINDS.includes(c.kind), c.code);
   const k = (code) => kindOf({ code });
   assert.deepEqual(["voltage", "phases", "alt_ip", "alt_avr", "breaker", "battery", "fuel_tank", "canopy", "genset_type", "ctl_display_lang"].map(k), Array(10).fill("order"));
-  assert.deepEqual(["standards", "prototype", "genset_origin", "alt_standard"].map(k), Array(4).fill("document"));
+  assert.deepEqual(["standards", "prototype", "alt_standard"].map(k), Array(3).fill("document"));
+  assert.equal(k("genset_origin"), "model"); // điều phối 10/11: nước lắp ráp = nước của NCC, xử lý ở PR 2
   assert.deepEqual(["ambient", "noise"].map(k), ["site", "site"]);
   assert.deepEqual(["cylinders", "engine_type", "fuel_system", "overload", "load_step", "alt_vreg", "frequency"].map(k), Array(7).fill("model"));
   assert.equal(kindOf({ code: "other" }), "model");
   assert.equal(withCode({ item: "Điện áp", requirement: "400/230 V" }).kind, "order");
+});
+
+test("confirmKindOf: voltage low only, phases three only, IP23 or below; a figure not read stays unclear (điều phối 10/11)", () => {
+  const ck = (code, requirement, quote = "") => confirmKindOf({ code, requirement, quote });
+  assert.deepEqual(voltsIn("380V - 415V / 50Hz"), [380, 415]);
+  assert.deepEqual(voltsIn("400/230 V"), [400, 230]);
+  assert.deepEqual(voltsIn("0,4 kV"), [400]);
+  assert.equal(ck("voltage", "400/230 V"), "order");
+  assert.equal(ck("voltage", "380/220VAC"), "order");
+  assert.equal(ck("voltage", "0,4 kV"), "order");
+  assert.equal(ck("voltage", "6,3 kV"), null);
+  assert.equal(ck("voltage", "22kV / 0,4 kV"), null);
+  assert.equal(ck("voltage", "Theo lưới điện tại công trình"), null);
+  assert.equal(ck("phases", "3 pha – 4 dây"), "order");
+  assert.equal(ck("phases", "", "380V / 50Hz / 3 pha - 4 dây"), "order");
+  assert.equal(ck("phases", "1 pha 220 V"), null);
+  assert.equal(ck("phases", "Một pha"), null);
+  assert.equal(ck("phases", "3 pha hoặc 1 pha"), null);
+  assert.equal(ck("phases", "Theo HSMT"), null);
+  assert.equal(ck("alt_ip", "IP23"), "order");
+  assert.equal(ck("alt_ip", "≥ IP21"), "order");
+  assert.equal(ck("alt_ip", "IP44"), null);
+  assert.equal(ck("alt_ip", "IP 54"), null);
+  assert.equal(ck("alt_ip", "Cấp bảo vệ phù hợp"), null);
+  assert.equal(ck("breaker", "MCCB 400A"), "order");
+  assert.equal(ck("genset_origin", "G7"), null);
+});
+
+test("confirmChecks: a medium-voltage, 1-phase or IP54 requirement stays unclear", () => {
+  const rq = [{ item: "Điện áp", code: "voltage", requirement: "6,3 kV" }, { item: "Số pha", code: "phases", requirement: "1 pha" }, { item: "Cấp bảo vệ đầu phát (IP)", code: "alt_ip", requirement: "IP54" }];
+  const c = confirmChecks({ rank: 1, checks: rq.map((r) => ({ item: r.item, part: "genset", status: "unclear" })) }, rq);
+  assert.deepEqual(c.checks.map((x) => x.status), ["unclear", "unclear", "unclear"]);
+  assert.ok(rfqOf(c, rq).every((q) => q.status === "unclear" && /datasheet/.test(q.ask)));
 });
 
 const reqs = [

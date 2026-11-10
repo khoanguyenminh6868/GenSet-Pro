@@ -29,7 +29,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
-import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf } from "./reqcodes.mjs";
+import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf } from "./reqcodes.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -1503,7 +1503,7 @@ export function scoreOf(c, reqs = []) {
       if (p.status === "not_met") n[g][0]++; else if (p.status !== "confirm" && (p.status !== "met" || p.unverified)) n[g][1]++;
     }
   }
-  for (const r of reqs) if (!seen.has(norm(r.item)) && !CONFIRM_KINDS.has(kindOf(r))) n[groupOf(r)][1] += r.parts?.length || 1;
+  for (const r of reqs) if (!seen.has(norm(r.item)) && !confirmKindOf(r)) n[groupOf(r)][1] += r.parts?.length || 1;
   const fits = (c.suppliers || []).some((s) => !s.unverified) ? 0 : 1;
   return [n[0][0], n[1][0], fits, n[0][1], n[1][1], n[2][0], n[2][1]];
 }
@@ -1517,19 +1517,19 @@ export function scoreOf(c, reqs = []) {
 // (IB2600586587: "Voltage regulation NL-FL ≤±1%" hinted for "AVR tự động" on 3 configurations, none on a 4th with the
 // same alternator, which then ranked above them). A requirement of those kinds with no check of the
 // configuration gets one, written by the code. A met / not met stays as it is. Decided here, never by the agent.
-const CONFIRM_KINDS = new Set(["order", "document"]);
+// Which kind a requirement is confirmed as (order / document, with the conditions of reqcodes.mjs confirmKindOf), or null.
 export function confirmChecks(c, reqs = []) {
-  const kinds = new Map(reqs.map((r) => [norm(r.item), r.kind || kindOf(r)]));
+  const kinds = new Map(reqs.map((r) => [norm(r.item), confirmKindOf(r)]));
   for (const x of c.checks || []) {
     if (x.status === "confirm") { x.status = "unclear"; delete x.confirm; }
     const k = kinds.get(norm(x.item));
-    if (x.status !== "unclear" || !CONFIRM_KINDS.has(k) || x.unverified || x.conflict || x.version || x.parts?.length) continue;
+    if (x.status !== "unclear" || !k || x.unverified || x.conflict || x.version || x.parts?.length) continue;
     x.status = "confirm"; x.confirm = k;
   }
   const have = new Set((c.checks || []).map((x) => norm(x.item)));
   for (const r of reqs) {
-    const k = r.kind || kindOf(r);
-    if (have.has(norm(r.item)) || !CONFIRM_KINDS.has(k) || r.byCode) continue;
+    const k = confirmKindOf(r);
+    if (have.has(norm(r.item)) || !k || r.byCode) continue;
     c.checks = [...(c.checks || []), { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: "", part: r.part || "genset", level: r.level === "option" ? "option" : "core",
       status: "confirm", confirm: k, byCode: true, note: "Code ghi: nguồn của cấu hình không nói tới điểm này." }];
   }
@@ -1540,7 +1540,7 @@ export function confirmChecks(c, reqs = []) {
 // send. Written by the code from the checks; the web copies it as text.
 const PART_VI = { engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển", genset: "Tổ máy" };
 export function rfqOf(c, reqs = []) {
-  const kinds = new Map(reqs.map((r) => [norm(r.item), r.kind || kindOf(r)]));
+  const kinds = new Map(reqs.map((r) => [norm(r.item), kindOf(r)]));
   const what = (part) => [PART_VI[part] || "Tổ máy", (part === "genset" ? c.genset?.model : c[part]?.model) || ""].filter(Boolean).join(" ");
   const ask = (x, k) => {
     if (x.status === "confirm") return x.confirm === "document" || k === "document" ? "Gửi chứng từ / bản cam kết đáp ứng" : "Xác nhận cấu hình đặt hàng đáp ứng";
@@ -1563,7 +1563,7 @@ export function rfqOf(c, reqs = []) {
   }
   for (const r of reqs) {
     if (seen.has(norm(r.item)) || r.byCode) continue;
-    const k = r.kind || kindOf(r), x = { status: CONFIRM_KINDS.has(k) ? "confirm" : "unclear", confirm: k };
+    const k = kindOf(r), ck = confirmKindOf(r), x = { status: ck ? "confirm" : "unclear", confirm: ck };
     out.push({ part: r.part || "genset", of: what(r.part), item: r.item, requirement: r.requirement || "", kind: k, status: x.status, ask: ask(x, k) });
   }
   const order = { engine: 0, controller: 1, alternator: 2, genset: 3 };
