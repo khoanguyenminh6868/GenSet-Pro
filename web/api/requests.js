@@ -102,18 +102,24 @@ async function marksOf(colls) {
 // (2 KB gzipped) a poll, growing with the tenders: up to ~2.2 GB a month of Supabase egress. The view
 // public.pending_requests (web/supabase/pending-requests.sql, run once in the SQL editor) returns only the pending rows,
 // and syncreq/current always, in the shape marksOf() gives. Until it exists (PostgREST answers 404), the poll lists every
-// row as before; a missing view is remembered for 10 minutes so the poll stays one Supabase request.
-let viewMissingUntil = 0;
+// row as before. Anything else than a list from the view (missing, no right, an error, a network failure) must not stop
+// the bot either: the poll lists every row, and the view is left alone for 10 minutes so a poll stays one request.
+let viewSkipUntil = 0;
 async function pendingMarks() {
-  if (Date.now() >= viewMissingUntil) {
-    const r = await fetch(`${SB_URL}/rest/v1/pending_requests?select=coll,id,requestedAt,doneAt,mode&order=coll,id`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
-    if (r.ok) {
-      const out = Object.fromEntries(ALL_REQ.map((c) => [c, []]));
-      for (const { coll, ...m } of await r.json()) out[coll]?.push(m);
-      return out;
-    }
-    if (r.status !== 404) throw new Error(`read ${r.status}`);
-    viewMissingUntil = Date.now() + 10 * 60e3;
+  if (Date.now() >= viewSkipUntil) {
+    let why;
+    try {
+      const r = await fetch(`${SB_URL}/rest/v1/pending_requests?select=coll,id,requestedAt,doneAt,mode&order=coll,id`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
+      const rows = r.ok ? await r.json() : null;
+      if (Array.isArray(rows) && rows.every((m) => m && typeof m.coll === "string" && typeof m.id === "string")) {
+        const out = Object.fromEntries(ALL_REQ.map((c) => [c, []]));
+        for (const { coll, ...m } of rows) out[coll]?.push(m);
+        return out;
+      }
+      why = r.ok ? "not a list" : `HTTP ${r.status}`;
+    } catch (e) { why = e.message; }
+    viewSkipUntil = Date.now() + 10 * 60e3;
+    console.warn(`pending_requests: ${why}; listing every request for 10 minutes`);
   }
   return marksOf(ALL_REQ);
 }
