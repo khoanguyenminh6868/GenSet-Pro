@@ -73,7 +73,7 @@ table.bdtbl .rk{display:none}
 @media (max-width:640px){table.bdtbl thead,table.bdtbl td.c-rk{display:none}table.bdtbl,table.bdtbl tbody,table.bdtbl tr,table.bdtbl td{display:block;width:auto}table.bdtbl tr{padding:8px 10px;border-bottom:1px solid var(--line)}table.bdtbl tr.us{background:var(--cyan-soft)}table.bdtbl td{border:0;padding:2px 0;text-align:left;background:none!important}table.bdtbl .rk{display:inline}table.bdtbl td[data-l]::before{content:attr(data-l) ": ";color:var(--dim)}}
 .ibtn{border:1px solid var(--line);background:var(--panel);border-radius:8px;width:34px;height:34px;display:inline-grid;place-items:center;padding:0;color:var(--fg)}
 .ibtn svg{width:17px;height:17px}
-input[type=search],input[type=text],input[type=datetime-local],input[type=url],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:0}
+input[type=search],input[type=text],input[type=number],input[type=date],input[type=datetime-local],input[type=url],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:0}
 textarea{width:100%;resize:vertical;min-height:90px;line-height:1.5}
 .tkcfg{display:flex;flex-direction:column;gap:6px}
 /* Đối chiếu TLKT and Tạo HSDT: lower file boxes, result set off from its PDF/Xóa row (Khoa, 2026-11-04). */
@@ -302,6 +302,7 @@ table.spec1 thead{display:none}table.spec1,table.spec1 tbody,table.spec1 tr,tabl
 .qline{flex-wrap:nowrap}.qline>select{flex:1 1 auto;min-width:0;width:0}.qline>.muted{flex:0 1 auto;min-width:0;max-width:40%}.qline>.btn{flex:none}
 .qrow+.qrow{border-top:1px solid var(--line);padding-top:8px}
 .qrow.over{outline:1.5px dashed var(--violet);outline-offset:4px}
+.qcost{display:flex;flex-direction:column;gap:6px;overflow-wrap:anywhere}table.qledger td.num{white-space:nowrap}details.supsec{margin:14px 0 6px}details.supsec>summary{cursor:pointer;font-weight:600;font-size:14px;padding:2px 0}
 .qgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.qgrid.q3{grid-template-columns:minmax(0,1fr) 110px 120px auto;gap:6px;align-items:center}.qgrid input,.qgrid select{min-width:0;width:100%}
 @media (max-width:640px){.qgrid.q3{grid-template-columns:1fr 1fr}}
 table.qitems td.num,table.ptable td.num,table.ptable th{white-space:nowrap}table.ptable td.num,table.ptable th:not(:first-child){text-align:right}table.ptable td:first-child,table.ptable th:first-child{text-align:left}
@@ -1490,6 +1491,7 @@ function closeDrawer() {
   state.open = null; state.list = null; $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true"); $("#scrim").hidden = true; renderGrid();
   drawerBack = [];
   if (r && "id" in r) openBidders(r.id, r.scroll);
+  if (r?.sup) { openSuppliers(r.sup); mScroll().scrollTop = r.scroll || 0; }
 }
 let drawerSig = "";
 function renderDrawer(force = true) {
@@ -1512,7 +1514,7 @@ function renderDrawer(force = true) {
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   if (state.dtab === "supplier") state.dtab = "info"; // tab Nhà cung cấp đang ẩn
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configmatch[key]?.editedAt, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], state.bidprice[key]?.at, state.bidpricereq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note, profitScen[key], profitRow[key], !!state.loaded.hist, Object.keys(state.bidhist || {}).length]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, state.quote[QUOTE_ALL]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configmatch[key]?.editedAt, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], state.bidprice[key]?.at, state.bidpricereq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note, profitScen[key], profitRow[key], !!state.loaded.hist, Object.keys(state.bidhist || {}).length]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1644,42 +1646,45 @@ function askRemoveQuote(key, rowId, i) {
 }
 // ---------- Sổ báo giá: dòng giá của từng nhà cung cấp, tỷ giá và khoản thêm (2026-11-10) ----------
 // quote/<key>.rows[].items[]: { id, desc, kva, engine, alternator, controller, qty, unitPrice, currency, terms, date, note };
-// quote/<key>.cost: { fx: { USD, CNY, ... } (đồng cho 1 đơn vị), extras: [{ label, kind: "vnd" | "pct", value }], row }.
+// quote/<key>.cost: { extras: [{ label, kind: "vnd" | "pct", value }] } là khoản thêm riêng của gói.
+// quote/_cost: { fx: { USD, CNY, ... } (đồng cho 1 đơn vị), vat (%) }: tỷ giá và thuế GTGT lưu một lần, dùng cho mọi
+// gói (Khoa, 2026-11-10); đổi ở đây thì giá vốn của mọi gói tính lại theo.
 // Giá vốn do web/bidprice.js quoteCost tính; không có tỷ giá thì không tính, không đoán.
 const numIn = (v) => { const n = Number(String(v ?? "").replace(/\./g, "").replace(",", ".").replace(/[^\d.]/g, "")); return n > 0 ? n : null; };
 const qNum = (n, d = 2) => (n == null ? "" : Number(n).toLocaleString("vi-VN", { maximumFractionDigits: d }));
-const quoteCostCfg = (key) => state.quote[key]?.cost || {};
-// Tỷ giá dùng gần nhất ở gói khác: điền sẵn vào ô nhập để người dùng xem lại, không tự áp vào giá vốn.
+const QUOTE_ALL = "_cost";
+const quoteAll = () => state.quote?.[QUOTE_ALL] || {};
+const quoteCostCfg = (key) => ({ fx: quoteAll().fx || {}, vat: quoteAll().vat, extras: state.quote[key]?.cost?.extras || [] });
+// Tỷ giá đã nhập theo từng gói trước khi có tỷ giá chung: chỉ gợi ý trong ô nhập, không tự áp vào giá vốn.
 function lastFx() {
-  const q = Object.values(state.quote || {}).filter((x) => x?.cost?.fx && Object.keys(x.cost.fx).length).sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")))[0];
+  const q = Object.entries(state.quote || {}).filter(([k, x]) => k !== QUOTE_ALL && x?.cost?.fx && Object.keys(x.cost.fx).length).map(([, x]) => x).sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")))[0];
   return q ? { fx: q.cost.fx, at: q.updatedAt } : null;
 }
+const quoteItemBits = (x) => [x.kvaNum || x.kva ? `${qNum(x.kvaNum || x.kva)} kVA` : "", x.engine && `động cơ ${x.engine}`, x.alternator && `đầu phát ${x.alternator}`, x.controller && `BĐK ${x.controller}`, x.terms, x.vatIncl && "đã gồm thuế GTGT", x.note].filter(Boolean).join(" · ");
 function quoteItemsHtml(key, r, ro) {
   const BP = window.GenbidBidprice, items = r.items || [], c = BP.quoteCost(r, quoteCostCfg(key));
   if (!r.supplierId) return "";
   const line = (x) => h`<tr><td><b>${x.desc || "—"}</b>${raw([x.engine && `động cơ ${x.engine}`, x.alternator && `đầu phát ${x.alternator}`, x.controller && `BĐK ${x.controller}`].filter(Boolean).length ? h`<div class="muted small">${[x.engine && `động cơ ${x.engine}`, x.alternator && `đầu phát ${x.alternator}`, x.controller && `BĐK ${x.controller}`].filter(Boolean).join(" · ")}</div>` : "")}
-      <div class="muted small">${[x.kva && `${qNum(x.kva)} kVA`, x.terms, x.date && fmtDate(x.date, false), x.note].filter(Boolean).join(" · ")}</div></td>
+      <div class="muted small">${[x.kva && `${qNum(x.kva)} kVA`, x.terms, x.date && fmtDate(x.date, false), x.vatIncl && "đã gồm thuế GTGT", x.note].filter(Boolean).join(" · ")}</div></td>
     <td class="num" data-l="Số lượng">${qNum(x.qty || 1)}</td>
     <td class="num" data-l="Đơn giá">${x.unitPrice ? `${qNum(x.unitPrice)} ${x.currency || "VND"}` : "—"}</td>
     <td class="num">${raw(ro ? "" : h`<button class="btn sm" data-qitem="${r.id}:${x.id}">Sửa</button>`)}</td></tr>`;
   return h`${raw(items.length ? h`<div class="tablewrap"><table class="suptable supcards qitems"><thead><tr><th>Hàng báo giá</th><th>SL</th><th>Đơn giá</th><th></th></tr></thead><tbody>${raw(items.map(line).join(""))}</tbody></table></div>` : "")}
-    <div class="row" style="gap:8px;flex-wrap:wrap"><span class="small" style="flex:1;min-width:0">${raw(c.total != null ? h`Tiền hàng <b class="num">${fmtVnd(Math.round(c.goods))}</b>${c.extras ? h` + khoản thêm ${fmtVnd(Math.round(c.extras))}` : ""} = giá vốn <b class="num">${fmtVnd(Math.round(c.total))}</b>`
+    <div class="row" style="gap:8px;flex-wrap:wrap"><span class="small" style="flex:1;min-width:0">${raw(c.total != null ? h`Tiền hàng <b class="num">${fmtVnd(Math.round(c.goods))}</b>${c.extras ? ` + khoản thêm ${fmtVnd(Math.round(c.extras))}` : ""}${c.vat ? ` + thuế GTGT ${qNum(c.vatRate)}% ${fmtVnd(Math.round(c.vat))}` : ""} = giá vốn <b class="num">${fmtVnd(Math.round(c.total))}</b>`
       : c.missing.length ? h`<span class="chip warn">Chưa có tỷ giá ${c.missing.join(", ")}</span>` : '<span class="muted">Chưa có dòng giá</span>')}</span>
       ${raw(ro ? "" : h`<button class="btn sm" data-qitem="${r.id}">+ Dòng giá</button>`)}</div>`;
 }
 function quoteCostHtml(key, ro) {
   const c = quoteCostCfg(key), fx = Object.entries(c.fx || {}).filter(([, v]) => v > 0), ex = c.extras || [];
-  const has = quoteRows(key).some((r) => r.items?.length);
-  if (!has && !fx.length && !ex.length) return "";
-  return h`<div class="row qcost" style="gap:8px;flex-wrap:wrap"><span class="small" style="flex:1;min-width:0"><b>Tỷ giá:</b> ${fx.length ? fx.map(([k, v]) => `1 ${k} = ${qNum(v)} đ`).join(" · ") : "chưa nhập"}
-    · <b>Khoản thêm:</b> ${ex.length ? ex.map((e) => `${e.label || "khác"} ${e.kind === "pct" ? qNum(e.value) + "% tiền hàng" : fmtVnd(Number(e.value))}`).join("; ") : "chưa có"}</span>
-    ${raw(ro ? "" : '<button class="btn sm" id="qCost">Tỷ giá và khoản thêm</button>')}<button class="btn sm" id="qLedger" title="Mọi dòng giá đã nhập ở mọi gói">Sổ báo giá</button></div>`;
+  return h`<div class="qcost"><div class="small"><b>Dùng cho mọi gói:</b> ${fx.length ? fx.map(([k, v]) => `1 ${k} = ${qNum(v)} đ`).join(" · ") : "chưa nhập tỷ giá"} · thuế GTGT ${c.vat > 0 ? qNum(c.vat) + "%" : "chưa nhập"}</div>
+    <div class="small"><b>Khoản thêm của gói này:</b> ${ex.length ? ex.map((e) => `${e.label || "khác"} ${e.kind === "pct" ? qNum(e.value) + "% tiền hàng" : fmtVnd(Number(e.value))}`).join("; ") : "chưa có"}</div>
+    <div class="row" style="gap:8px;flex-wrap:wrap">${raw(ro ? "" : '<button class="btn sm" id="qAll" title="Lưu một lần, dùng cho mọi gói">Tỷ giá, thuế GTGT</button><button class="btn sm" id="qCost">Khoản thêm</button>')}<button class="btn sm" id="qLedger" title="Mọi dòng giá đã nhập ở mọi gói">Sổ báo giá</button></div></div>`;
 }
 function askQuoteItem(key, rowId, itemId) {
   const row = quoteRows(key).find((r) => r.id === rowId); if (!row) return;
   const x = (row.items || []).find((i) => i.id === itemId) || { qty: 1, currency: "VND", date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10) };
   const t = findTender(key), cap = t && capacityOf(t);
-  const f = (id, label, val, attrs = "") => h`<div class="field"><label for="${id}">${label}</label><input id="${id}" value="${val ?? ""}" autocomplete="off" ${raw(attrs)}></div>`;
+  const f = (id, label, val, attrs = "") => h`<div class="field"><label for="${id}">${label}</label><input ${raw(/type=/.test(attrs) ? "" : 'type="text"')} id="${id}" value="${val ?? ""}" autocomplete="off" ${raw(attrs)}></div>`;
   modal(h`<div class="row"><h2 style="flex:1">${itemId ? "Sửa dòng giá" : "Thêm dòng giá"}</h2><button class="btn sm" data-close>Đóng</button></div>
     <p class="muted small" style="margin:0">${supName(state.supplier?.[row.supplierId]) || row.supplierId}${cap ? ` · gói cần ${cap.text}` : ""}</p>
     ${raw(f("qiDesc", "Hàng báo giá (tên / model tổ máy hoặc hạng mục)", x.desc, 'placeholder="vd Tổ máy 500 kVA có vỏ cách âm"'))}
@@ -1688,6 +1693,7 @@ function askQuoteItem(key, rowId, itemId) {
     ${raw(f("qiCtl", "Bộ điều khiển", x.controller, 'placeholder="hãng + model"'))}
     <div class="qgrid">${raw(f("qiPrice", "Đơn giá", x.unitPrice ? qNum(x.unitPrice) : "", 'inputmode="decimal" placeholder="vd 185.000"'))}
       <div class="field"><label for="qiCur">Tiền tệ</label><select id="qiCur">${raw(window.GenbidBidprice.CURRENCIES.map((c) => h`<option ${c === (x.currency || "VND") ? "selected" : ""}>${c}</option>`).join(""))}</select></div></div>
+    <label class="small" style="display:flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="qiVat" ${x.vatIncl ? "checked" : ""}> Đơn giá đã gồm thuế GTGT${quoteAll().vat > 0 ? ` (không cộng thêm ${qNum(quoteAll().vat)}%)` : ""}</label>
     <div class="qgrid">${raw(f("qiTerms", "Điều kiện giao hàng", x.terms, 'list="qiTermsList" placeholder="EXW, FOB, CIF, tại công trình..."'))}<datalist id="qiTermsList"><option>EXW</option><option>FOB</option><option>CIF</option><option>DAP</option><option>Tại kho Việt Nam</option><option>Tại công trình</option></datalist>
       ${raw(f("qiDate", "Ngày báo giá", x.date, 'type="date"'))}</div>
     ${raw(f("qiNote", "Ghi chú", x.note, 'placeholder="hiệu lực, thời gian giao hàng, phạm vi..."'))}
@@ -1698,7 +1704,7 @@ function askQuoteItem(key, rowId, itemId) {
       const price = numIn(v("qiPrice"));
       if (!v("qiDesc")) { toast("Nhập tên hàng báo giá."); return; }
       if (!price) { toast("Nhập đơn giá."); return; }
-      const it = { id: itemId || Date.now().toString(36), desc: v("qiDesc"), kva: numIn(v("qiKva")), engine: v("qiEng"), alternator: v("qiAlt"), controller: v("qiCtl"), qty: numIn(v("qiQty")) || 1, unitPrice: price, currency: v("qiCur") || "VND", terms: v("qiTerms"), date: v("qiDate"), note: v("qiNote"), by: window.genbidEmail || "" };
+      const it = { id: itemId || Date.now().toString(36), desc: v("qiDesc"), kva: numIn(v("qiKva")), engine: v("qiEng"), alternator: v("qiAlt"), controller: v("qiCtl"), qty: numIn(v("qiQty")) || 1, unitPrice: price, currency: v("qiCur") || "VND", vatIncl: $("#qiVat", m).checked, terms: v("qiTerms"), date: v("qiDate"), note: v("qiNote"), by: window.genbidEmail || "" };
       const cur = quoteRows(key).find((r) => r.id === rowId)?.items || [];
       save(itemId ? cur.map((i) => (i.id === itemId ? it : i)) : [...cur, it]);
     });
@@ -1706,50 +1712,93 @@ function askQuoteItem(key, rowId, itemId) {
     $("#qiDesc", m).focus();
   });
 }
-const COST_LABELS = ["Vận chuyển quốc tế, thông quan", "Thuế nhập khẩu", "Thuế GTGT", "Vận chuyển nội địa, lắp đặt", "Vỏ cách âm, ATS, phụ kiện mua trong nước", "Bảo hành, bảo trì", "Bảo lãnh, chi phí vốn", "Chi phí khác"];
+const COST_LABELS = ["Vận chuyển quốc tế, thông quan", "Thuế nhập khẩu", "Vận chuyển nội địa, lắp đặt", "Vỏ cách âm, ATS, phụ kiện mua trong nước", "Bảo hành, bảo trì", "Bảo lãnh, chi phí vốn", "Chi phí khác"];
+// Tỷ giá và thuế GTGT: một bản cho mọi gói (quote/_cost).
+function askQuoteAll() {
+  const BP = window.GenbidBidprice, g = quoteAll(), last = lastFx();
+  modal(h`<div class="row"><h2 style="flex:1">Tỷ giá và thuế GTGT</h2><button class="btn sm" data-close>Đóng</button></div>
+    <p class="muted small" style="margin:0">Lưu một lần, dùng cho mọi gói: đổi ở đây thì giá vốn của mọi gói tính lại theo.${g.updatedAt ? ` Lưu gần nhất ${fmtDate(g.updatedAt)}${g.by ? `, ${g.by}` : ""}.` : ""}</p>
+    <div class="qgrid">${raw(BP.CURRENCIES.filter((k) => k !== "VND").map((k) => h`<div class="field"><label for="fx-${k}">1 ${k} = ? đồng</label><input type="text" id="fx-${k}" data-fx="${k}" inputmode="decimal" autocomplete="off" value="${g.fx?.[k] ? qNum(g.fx[k]) : ""}" placeholder="${last?.fx?.[k] ? `gói trước: ${qNum(last.fx[k])}` : ""}"></div>`).join(""))}</div>
+    <div class="field"><label for="qaVat">Thuế GTGT (%)</label><input type="text" id="qaVat" inputmode="decimal" autocomplete="off" value="${g.vat > 0 ? qNum(g.vat) : ""}" placeholder="vd 10 hoặc 8; để trống: không cộng thuế">
+      <div class="muted small">Tính trên tiền hàng và các khoản thêm. Dòng giá đánh dấu "Đơn giá đã gồm thuế GTGT" thì không cộng thêm. Giá gói và giá dự thầu đã gồm thuế, nên giá vốn cũng tính gồm thuế.</div></div>
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="qaOk">Lưu</button></div>`, (m, close) => {
+    $("#qaOk", m).addEventListener("click", async () => {
+      const fx = {}, vat = numIn($("#qaVat", m).value);
+      for (const i of m.querySelectorAll("[data-fx]")) { const n = numIn(i.value); if (n) fx[i.dataset.fx] = n; }
+      if (vat > 100) { toast("Thuế GTGT tính bằng %, vd 10."); return; }
+      close();
+      const rec = { fx, vat, updatedAt: new Date().toISOString(), by: window.genbidEmail || "" };
+      state.quote = { ...state.quote, [QUOTE_ALL]: rec };
+      renderDrawer(false);
+      if (!(await dbSet("quote/" + QUOTE_ALL, rec))) toast("Không lưu được", 6000);
+    });
+  });
+}
+// Khoản thêm của riêng một gói (quote/<key>.cost.extras).
 function askQuoteCost(key) {
-  const BP = window.GenbidBidprice, c = quoteCostCfg(key), used = new Set(quoteRows(key).flatMap((r) => (r.items || []).map((i) => i.currency || "VND")));
-  const curs = BP.CURRENCIES.filter((k) => k !== "VND" && (used.has(k) || c.fx?.[k])), last = lastFx();
-  const show = curs.length ? curs : ["USD", "CNY"];
+  const c = quoteCostCfg(key);
   let extras = (c.extras || []).map((e) => ({ ...e }));
-  const exRow = (e, i) => h`<div class="qgrid q3" data-ex="${i}"><input data-exl="${i}" value="${e.label || ""}" list="qcLabels" placeholder="Khoản thêm" aria-label="Tên khoản thêm"><input data-exv="${i}" value="${e.value ? qNum(e.value) : ""}" inputmode="decimal" placeholder="Số" aria-label="Giá trị"><select data-exk="${i}" aria-label="Cách tính"><option value="vnd" ${e.kind !== "pct" ? "selected" : ""}>đồng</option><option value="pct" ${e.kind === "pct" ? "selected" : ""}>% tiền hàng</option></select><button class="btn sm" data-exdel="${i}" aria-label="Bỏ khoản này">${raw(TRASH_SVG)}</button></div>`;
-  modal(h`<div class="row"><h2 style="flex:1">Tỷ giá và khoản thêm</h2><button class="btn sm" data-close>Đóng</button></div>
-    <p class="muted small" style="margin:0">Giá vốn = tiền hàng theo dòng giá (quy ra đồng) + các khoản thêm. Nhập cùng cơ sở thuế với giá dự thầu (giá dự thầu đã gồm thuế thì giá vốn cũng gồm thuế).</p>
-    <div class="qgrid">${raw(show.map((k) => h`<div class="field"><label for="fx-${k}">1 ${k} = ? đồng</label><input id="fx-${k}" data-fx="${k}" inputmode="decimal" autocomplete="off" value="${c.fx?.[k] ? qNum(c.fx[k]) : ""}" placeholder="${last?.fx?.[k] ? `gói gần nhất: ${qNum(last.fx[k])}` : ""}"></div>`).join(""))}</div>
-    <div class="field"><label>Khoản thêm</label><div id="qcExtras" style="display:flex;flex-direction:column;gap:6px"></div><datalist id="qcLabels">${raw(COST_LABELS.map((l) => h`<option>${l}</option>`).join(""))}</datalist>
+  const exRow = (e, i) => h`<div class="qgrid q3" data-ex="${i}"><input type="text" data-exl="${i}" value="${e.label || ""}" list="qcLabels" placeholder="Khoản thêm" aria-label="Tên khoản thêm"><input type="text" data-exv="${i}" value="${e.value ? qNum(e.value) : ""}" inputmode="decimal" placeholder="Số" aria-label="Giá trị"><select data-exk="${i}" aria-label="Cách tính"><option value="vnd" ${e.kind !== "pct" ? "selected" : ""}>đồng</option><option value="pct" ${e.kind === "pct" ? "selected" : ""}>% tiền hàng</option></select><button class="btn sm" data-exdel="${i}" aria-label="Bỏ khoản này">${raw(TRASH_SVG)}</button></div>`;
+  modal(h`<div class="row"><h2 style="flex:1">Khoản thêm của gói này</h2><button class="btn sm" data-close>Đóng</button></div>
+    <p class="muted small" style="margin:0">Giá vốn = tiền hàng theo dòng giá (quy ra đồng) + các khoản thêm + thuế GTGT. Nhập khoản thêm chưa gồm thuế GTGT${c.vat > 0 ? ` (thuế ${qNum(c.vat)}% được cộng sau)` : ""}; tỷ giá và thuế GTGT nhập ở nút "Tỷ giá, thuế GTGT", dùng cho mọi gói.</p>
+    <div class="field"><div id="qcExtras" style="display:flex;flex-direction:column;gap:6px"></div><datalist id="qcLabels">${raw(COST_LABELS.map((l) => h`<option>${l}</option>`).join(""))}</datalist>
       <div><button class="btn sm" id="qcAdd">+ Khoản thêm</button></div></div>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="qcOk">Lưu</button></div>`, (m, close) => {
     const box = $("#qcExtras", m);
     const read = () => { extras = [...box.querySelectorAll("[data-ex]")].map((d) => ({ label: d.querySelector("[data-exl]").value.trim(), kind: d.querySelector("[data-exk]").value, value: numIn(d.querySelector("[data-exv]").value) })); };
     const draw = () => { box.innerHTML = extras.map(exRow).join(""); };
+    if (!extras.length) extras.push({ label: "", kind: "vnd", value: null });
     draw();
     $("#qcAdd", m).addEventListener("click", () => { read(); extras.push({ label: "", kind: "vnd", value: null }); draw(); box.querySelector("[data-ex]:last-child [data-exl]")?.focus(); });
     box.addEventListener("click", (e) => { const d = e.target.closest("[data-exdel]"); if (d) { read(); extras.splice(+d.dataset.exdel, 1); draw(); } });
     $("#qcOk", m).addEventListener("click", async () => {
       read();
-      const fx = {};
-      for (const i of m.querySelectorAll("[data-fx]")) { const n = numIn(i.value); if (n) fx[i.dataset.fx] = n; }
       close();
-      if (!(await saveQuote(key, quoteRows(key), { cost: { ...c, fx, extras: extras.filter((e) => e.value) } }))) toast("Không lưu được", 6000);
+      if (!(await saveQuote(key, quoteRows(key), { cost: { extras: extras.filter((e) => e.value) } }))) toast("Không lưu được", 6000);
     });
   });
 }
-// Mọi dòng giá đã nhập ở mọi gói (Sổ báo giá): tìm theo chữ, mới nhất trước.
+// Mọi dòng giá đã nhập ở mọi gói (Sổ báo giá): tìm theo chữ, mới nhất trước. Điện thoại: mỗi dòng giá một thẻ, một cột
+// (Khoa, 2026-11-10); tên nhà cung cấp mở hồ sơ nhà cung cấp, mã gói mở gói thầu ở tab Giá gợi ý.
+const quoteTenderLink = (key) => { const t = findTender(key); return h`${raw(t ? h`<a href="${tenderHref(key)}" data-qtender="${key}" title="Mở gói thầu">${key}</a>` : h`${key}`)}${raw(t?.bidName ? h`<div class="muted">${t.bidName.slice(0, 90)}</div>` : "")}`; };
 function openQuoteLedger(kva) {
   const all = window.GenbidBidprice.quoteLedger(state.quote);
-  const row = (x) => { const t = findTender(x.key); return h`<tr><td class="num small">${x.date ? fmtDate(x.date, false) : ""}</td><td><b>${supName(state.supplier?.[x.supplierId]) || x.supplierId || "—"}</b></td>
-    <td>${x.desc || ""}<div class="muted small">${[x.kvaNum && `${qNum(x.kvaNum)} kVA`, x.engine && `động cơ ${x.engine}`, x.alternator && `đầu phát ${x.alternator}`, x.controller && `BĐK ${x.controller}`, x.terms, x.note].filter(Boolean).join(" · ")}</div></td>
-    <td class="num">${qNum(x.unitPrice)} ${x.currency || "VND"}</td><td class="small"><a href="${tenderHref(x.key)}" data-bptender="${x.key}">${x.key}</a><div class="muted">${(t?.bidName || "").slice(0, 60)}</div></td></tr>`; };
+  const row = (x) => h`<tr><td><b>${x.desc || "—"}</b><div class="muted small">${quoteItemBits(x)}</div></td>
+    <td data-l="Nhà cung cấp">${raw(supLink(x.supplierId, supName(state.supplier?.[x.supplierId]) || x.supplierId || "—"))}</td>
+    <td class="num" data-l="Đơn giá"><b>${qNum(x.unitPrice)} ${x.currency || "VND"}</b>${(x.qty || 1) > 1 ? ` × ${qNum(x.qty)}` : ""}</td>
+    <td class="num small" data-l="Ngày báo giá">${x.date ? fmtDate(x.date, false) : "—"}</td>
+    <td class="small" data-l="Gói thầu">${raw(quoteTenderLink(x.key))}</td></tr>`;
   modal(h`<div class="row"><h2 style="flex:1">Sổ báo giá (${all.length} dòng)</h2><button class="btn sm" data-close>Đóng</button></div>
-    <div class="field"><input id="qlFind" placeholder="Tìm theo nhà cung cấp, model, công suất..." value="${kva ? Math.round(kva) + " kVA" : ""}" aria-label="Tìm trong sổ báo giá"></div>
+    <div class="field"><input type="search" id="qlFind" placeholder="Tìm theo nhà cung cấp, model, công suất..." value="${kva ? Math.round(kva) + " kVA" : ""}" aria-label="Tìm trong sổ báo giá"></div>
     <div id="qlBody" class="mscroll"></div>`, (m) => {
     const hay = all.map((x) => fold([supName(state.supplier?.[x.supplierId]), x.supplierId, x.desc, x.engine, x.alternator, x.controller, x.kvaNum && `${Math.round(x.kvaNum)} kva`, x.key, x.note].join(" ")));
     const draw = () => {
       const q = fold($("#qlFind", m).value).split(/\s+/).filter(Boolean), list = all.filter((_, i) => q.every((w) => hay[i].includes(w)));
-      $("#qlBody", m).innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable"><thead><tr><th>Ngày</th><th>Nhà cung cấp</th><th>Hàng báo giá</th><th>Đơn giá</th><th>Gói</th></tr></thead><tbody>${raw(list.slice(0, 200).map(row).join(""))}</tbody></table></div>` : '<div class="note">Chưa có dòng giá nào khớp. Dòng giá nhập ở mục Báo giá của NCC của từng gói.</div>';
+      $("#qlBody", m).innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards qledger"><thead><tr><th>Hàng báo giá</th><th>Nhà cung cấp</th><th>Đơn giá</th><th>Ngày</th><th>Gói thầu</th></tr></thead><tbody>${raw(list.slice(0, 200).map(row).join(""))}</tbody></table></div>` : '<div class="note">Chưa có dòng giá nào khớp. Dòng giá nhập ở mục Báo giá của NCC của từng gói.</div>';
     };
     $("#qlFind", m).addEventListener("input", draw); draw();
   }, "wide");
+}
+// Các báo giá của một nhà cung cấp, theo gói: dòng giá và số tệp (màn Nhà cung cấp, Khoa 2026-11-10).
+function supQuotesOf(id) {
+  const out = [];
+  for (const [key, q] of Object.entries(state.quote || {})) {
+    if (key === QUOTE_ALL) continue;
+    for (const r of q?.rows || []) if (r.supplierId === id && (r.files?.length || r.items?.length)) out.push({ key, files: r.files || [], items: (r.items || []).filter((x) => Number(x.unitPrice) > 0), at: [...(r.items || []).map((x) => x.date), ...(r.files || []).map((f) => String(f.at || "").slice(0, 10))].filter(Boolean).sort().pop() || "" });
+  }
+  return out.sort((a, b) => b.at.localeCompare(a.at));
+}
+function supQuotesHtml(s) {
+  const a = supQuotesOf(s.id), n = a.reduce((x, y) => x + y.items.length, 0);
+  if (!a.length) return h`<h4>Báo giá đã có</h4><div class="muted small">Chưa có báo giá nào của nhà cung cấp này trong sổ báo giá. Báo giá nhập ở tab Giá gợi ý của từng gói, mục Báo giá của NCC.</div>`;
+  return h`<h4>Báo giá đã có (${a.length} gói${n ? `, ${n} dòng giá` : ""})</h4><div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Gói thầu</th><th>Dòng giá</th><th>Tệp</th></tr></thead><tbody>${raw(a.map((x) => h`<tr>
+    <td class="small">${raw(quoteTenderLink(x.key))}</td>
+    <td data-l="Dòng giá">${raw(x.items.length ? x.items.map((i) => h`<div style="margin-bottom:4px"><b>${i.desc || "—"}</b>: <b class="num">${qNum(i.unitPrice)} ${i.currency || "VND"}</b>${(i.qty || 1) > 1 ? ` × ${qNum(i.qty)}` : ""}${i.date ? ` · ${fmtDate(i.date, false)}` : ""}<div class="muted small">${quoteItemBits(i)}</div></div>`).join("") : '<span class="muted small">chưa nhập dòng giá</span>')}</td>
+    <td class="small" data-l="Tệp">${x.files.length ? `${x.files.length} tệp` : "—"}</td></tr>`).join(""))}</tbody></table></div>`;
+}
+function supQuoteChip(s) {
+  const n = supQuotesOf(s.id).length;
+  return n ? h`<div><span class="chip mut" title="Có báo giá trong sổ báo giá">Báo giá ở ${n} gói</span></div>` : "";
 }
 // ---------- Cạnh tranh dự báo (web/bidprice.js nbForecast, winCurve) ----------
 // Số nhà thầu dự báo từ lịch sử của chủ đầu tư, tỉnh và lĩnh vực; dấu hiệu chủ đầu tư có nhà thầu quen; với Gợi ý cấu
@@ -2876,7 +2925,7 @@ const filtNote = (id, n, total) => { if ($(`#${id}N`)) $(`#${id}N`).textContent 
 function openSuppliers(id) {
   needSup();
   supOpenId = id || null;
-  filtOpen = false;
+  filtOpen = true; // the search and filter rows show when the screen opens, on a phone too (Khoa, 2026-11-10)
   modal(mBanner("sup", "Nhà cung cấp", "Mỗi thông tin đều có nguồn kèm theo", "", "#" + SCREEN_HASH.sup) + '<div id="supBody"></div>', () => renderSuppliers(), "wide pane");
   setScreenUrl("sup");
 }
@@ -2946,7 +2995,7 @@ function renderSupList() {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
     return h`<tr data-supopen="${s.id}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}</td>
-      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s))}</td>
+      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s))}${raw(supQuoteChip(s))}</td>
       <td data-l="Quốc gia">${supCountryName(s) || "—"}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
       <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
@@ -2997,6 +3046,7 @@ function supDetailHtml(s) {
       <dt>Năm thành lập</dt><dd>${raw(s.founded ? h`${s.founded} ${raw(supRefs(s.foundedSrc))}` : "—")}</dd>
       ${raw(s.contacts?.length ? h`<dt>Liên hệ</dt><dd>${raw(supContactsHtml(s.contacts))}</dd>` : "")}
     </dl>
+    ${raw(supQuotesHtml(s))}
     <h4>Thế mạnh</h4>${raw(list(s.strengths, (x) => h`<li>${x.text} ${raw(supRefs(x.src))}</li>`))}
     <h4>Dòng máy phân phối</h4>${raw(s.productLines?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Loại</th><th>Dòng máy</th><th>Công suất</th><th>Động cơ</th><th>Đầu phát</th><th>Khác</th></tr></thead><tbody>${raw(s.productLines.map((p) => h`<tr>
       <td data-l="Loại">${SUP_KIND[p.kind] || p.kind}</td><td data-l="Dòng máy">${p.series} ${raw(supRefs(p.src))}</td>
@@ -3009,8 +3059,8 @@ function supDetailHtml(s) {
     ${raw(supWonHtml(s))}
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
     ${raw(s.missing?.length ? h`<h4>Chưa tìm thấy / lưu ý</h4>${raw(list(s.missing, (m) => h`<li>${m}</li>`))}` : "")}
-    <h4>Nguồn</h4><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${x.url}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
-      <ul>${raw((Array.isArray(x.quote) ? x.quote : [x.quote]).map((q) => h`<li class="small"><q>${q}</q></li>`).join(""))}</ul></li>`).join(""))}</ol>`;
+    <details class="supsec" id="supSrcBox"><summary>Nguồn (${(s.sources || []).length})</summary><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${x.url}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
+      <ul>${raw((Array.isArray(x.quote) ? x.quote : [x.quote]).map((q) => h`<li class="small"><q>${q}</q></li>`).join(""))}</ul></li>`).join(""))}</ol></details>`;
 }
 // The supplier list (button "Nhà cung cấp") is open to every member (Khoa, 2026-10-28).
 // Engines and alternators a supplier offers: the catalog models (web/catalog.js) whose rows come from this supplier's
@@ -3060,7 +3110,8 @@ function supSpecHtml(s) {
   const t = s.specTables || [];
   if (!t.length) return "";
   const rows = t.reduce((a, x) => a + x.rows.length, 0);
-  return h`<h4>Cấu hình các model (${rows} dòng, ${t.length} bảng)</h4><div class="muted small">Chép nguyên văn từ bảng thông số trên website của hãng; tiêu đề cột giữ như nguồn.</div>${raw(t.map((x, i) => h`<details class="supspec" data-spect="${s.id}|${i}"><summary>${x.title || "Bảng thông số"} · ${x.rows.length} dòng ${raw(supRefs([x.n]))}</summary></details>`).join(""))}`;
+  // Closed when the supplier opens (Khoa, 2026-11-10): a supplier can have a hundred tables.
+  return h`<details class="supsec"><summary>Cấu hình các model (${rows} dòng, ${t.length} bảng)</summary><div class="muted small">Chép nguyên văn từ bảng thông số trên website của hãng; tiêu đề cột giữ như nguồn.</div>${raw(t.map((x, i) => h`<details class="supspec" data-spect="${s.id}|${i}"><summary>${x.title || "Bảng thông số"} · ${x.rows.length} dòng ${raw(supRefs([x.n]))}</summary></details>`).join(""))}</details>`;
 }
 // A model table is drawn when it is opened (a supplier can have 10,000 rows in closed tables).
 function supSpecTable(x) {
@@ -4186,6 +4237,16 @@ document.addEventListener("click", async (e) => {
   const bdt = e.target.closest("[data-bdtender]");
   if (bdt) { e.preventDefault(); const back = { id: bdOpenId, scroll: mScroll().scrollTop }; $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); openDrawer(bdt.dataset.bdtender, "", back); return; }
   // A tender in Giá gợi ý opens in the drawer; closing it comes back to this tab (a new browser tab keeps the link).
+  // A tender named in Sổ báo giá or on a supplier's page: the window closes and the tender opens at Giá gợi ý, where its
+  // quotes are; closing it comes back to the supplier (or to the tender the ledger was opened from).
+  const qt = e.target.closest("a[data-qtender]");
+  if (qt && !(e.ctrlKey || e.metaKey || e.shiftKey || e.button)) {
+    e.preventDefault(); const key = qt.dataset.qtender;
+    const back = $("#supBody") && supOpenId ? { sup: supOpenId, scroll: mScroll().scrollTop } : state.open && state.open !== key ? { key: state.open, tab: state.dtab, scroll: $("#dbody").scrollTop } : null;
+    $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl();
+    if (state.open === key) { if (state.dtab !== "price") { state.dtab = "price"; renderDrawer(); } } else openDrawer(key, "price", back);
+    return;
+  }
   const bpt = e.target.closest("a[data-bptender]");
   if (bpt && !(e.ctrlKey || e.metaKey || e.shiftKey || e.button)) { e.preventDefault(); openDrawer(bpt.dataset.bptender, "", { key: state.open, tab: state.dtab, scroll: $("#dbody").scrollTop }); return; }
   if (e.target.id === "bdBack") { bdOpenId = null; renderBidders(); mScroll().scrollTop = listScroll.bd || 0; return; }
@@ -4208,7 +4269,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "supBack") { supOpenId = null; renderSuppliers(); mScroll().scrollTop = listScroll.sup; return; }
   if (e.target.closest("tr[data-supopen] a[href]")) return; // e-mail / phone link in a list row: no detail
   const supsrc = e.target.closest("[data-supsrc]");
-  if (supsrc) { e.preventDefault(); $("#sup-src-" + supsrc.dataset.supsrc)?.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+  if (supsrc) { e.preventDefault(); const box = $("#supSrcBox"); if (box) box.open = true; $("#sup-src-" + supsrc.dataset.supsrc)?.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
   const supo = e.target.closest("[data-supopen]");
   if (supo) { if ($("#supBody")) { if (!supOpenId) listScroll.sup = mScroll().scrollTop; supOpenId = supo.dataset.supopen || null; renderSuppliers(); } else openSuppliers(supo.dataset.supopen); return; }
   const cko = e.target.closest("[data-catopen]");
@@ -4272,6 +4333,7 @@ document.addEventListener("click", async (e) => {
   const qi = e.target.closest("[data-qitem]");
   if (qi && state.open) { const [r, i] = qi.dataset.qitem.split(":"); askQuoteItem(state.open, r, i); return; }
   if (e.target.id === "qCost" && state.open) { askQuoteCost(state.open); return; }
+  if (e.target.id === "qAll") { askQuoteAll(); return; }
   if (e.target.id === "qLedger") { openQuoteLedger(); return; }
   if (e.target.id === "qNear" && state.open) { e.preventDefault(); const t = findTender(state.open); openQuoteLedger(t && kvaOf(capacityOf(t)?.text)); return; }
   const ps = e.target.closest("[data-pscen]");
