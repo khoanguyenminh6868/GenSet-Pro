@@ -304,9 +304,13 @@ table.spec1 thead{display:none}table.spec1,table.spec1 tbody,table.spec1 tr,tabl
 .textview{white-space:pre-wrap;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13px;max-height:55vh;overflow:auto;overflow-wrap:anywhere}
 .drop{border:1.5px dashed var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px}
 .drop.over{border-color:var(--violet)}
-.qrow{display:flex;flex-direction:column;gap:8px;border-radius:6px}
+.qrow{--sc:var(--line);display:flex;flex-direction:column;gap:8px;border-radius:6px;border-left:4px solid var(--sc);padding:8px 8px 8px 10px;background:color-mix(in srgb,var(--sc) 7%,transparent)}
 .qline{flex-wrap:nowrap}.qline>select{flex:1 1 auto;min-width:0;width:0}.qline>.muted{flex:0 1 auto;min-width:0;max-width:40%}.qline>.btn{flex:none}
-.qrow+.qrow{border-top:1px solid var(--line);padding-top:8px}
+.qrow+.qrow{margin-top:8px}
+.qrow .qline>select{font-weight:600;border-color:color-mix(in srgb,var(--sc) 60%,var(--line))}
+.qrow .qitems th{color:var(--sc)}
+.supdot{--sc:var(--muted);display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--sc);flex:none;vertical-align:middle;margin-right:5px}
+.qneed{border-left:3px solid var(--amber);padding:4px 8px;background:color-mix(in srgb,var(--amber) 10%,transparent);border-radius:4px}
 .qrow.over{outline:1.5px dashed var(--violet);outline-offset:4px}
 .qall,.qcost{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;overflow-wrap:anywhere}.qall>.small,.qcost>.small{flex:1 1 260px;min-width:0}.qall{border-bottom:1px solid var(--line);padding-bottom:8px}.qcost{border-top:1px solid var(--line);padding-top:8px}table.qledger td.num{white-space:nowrap}details.supsec{margin:14px 0 6px}details.supsec>summary{cursor:pointer;font-weight:600;font-size:14px;padding:2px 0}
 .qgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.qgrid input,.qgrid select{min-width:0;width:100%}
@@ -1578,29 +1582,84 @@ function infoHtml(t) {
 // Shown at the top of tab Giá gợi ý (Khoa, 2026-11-03; was in Tổng quan).
 const quoteUp = {}; // key -> { row, text } while files upload
 const quoteRows = (key) => { const r = state.quote[key]?.rows; return r?.length ? r : [{ id: "r1", supplierId: "", files: [] }]; };
+// Màu riêng cho từng nhà cung cấp (Khoa, 2026-11-10: dễ phân biệt các NCC có báo giá). Màu theo mã NCC nên một NCC giữ
+// một màu ở mọi gói và ở Sổ báo giá; trong một gói, NCC trùng màu với NCC phía trên thì lấy màu kế tiếp còn trống.
+// Không dùng đỏ hồng (nút xoá, lỗi) và vàng hổ phách (nhãn cảnh báo, dòng HSMT chỉ định) để màu NCC không bị đọc thành cảnh báo.
+const SUP_HUES = ["--blue", "--mint", "--violet", "--orange", "--cyan", "--tan", "--sky"];
+const supHue = (id) => { let n = 0; for (const ch of String(id || "")) n = (n * 31 + ch.charCodeAt(0)) >>> 0; return n % SUP_HUES.length; };
+function supHues(rows) {
+  const used = new Set(), out = {};
+  for (const r of rows) {
+    if (!r.supplierId) continue;
+    let i = supHue(r.supplierId);
+    for (let k = 0; k < SUP_HUES.length && used.has(i); k++) i = (i + 1) % SUP_HUES.length;
+    used.add(i); out[r.id] = `var(${SUP_HUES[i]})`;
+  }
+  return out;
+}
+const supDot = (id, color) => id ? h`<span class="supdot" style="--sc:${color || `var(${SUP_HUES[supHue(id)]})`}" aria-hidden="true"></span>` : "";
+// Hãng động cơ / đầu phát / bộ điều khiển HSMT chỉ định đích danh (Khoa, 2026-11-10: khi đó chỉ gợi ý báo giá đúng hãng
+// đó). Đọc technicalSpecs của Phân tích; mệnh đề "hoặc tương đương" không phải chỉ định nên bỏ (như bidprice.js wonSets).
+function quoteNeedOf(t) {
+  const C = window.GenbidCatalog, need = { engine: [], alternator: [], controller: [] };
+  if (!C || !t) return need;
+  const add = (k, n) => { if (n && !need[k].includes(n)) need[k].push(n); };
+  for (const x of analysisOf(t._key)?.result?.technicalSpecs || []) {
+    const item = String(x.item || ""), s = String(x.requirement || "").normalize("NFC").replace(/[^.;|\n]*tương\s*đương[^.;|\n]*/gi, " ");
+    if (!s.trim()) continue;
+    const isCtl = /bộ\s*điều\s*khiển|controller/i.test(item), isAlt = /đầu\s*phát|alternator|phần\s*phát/i.test(item), isEng = /động\s*cơ|engine/i.test(item);
+    const any = !isCtl && !isAlt && !isEng;
+    if (isEng || (any && /động\s*cơ|engine/i.test(s))) for (const [re, n] of C.ENGINE_BRANDS) if (re.test(s)) add("engine", n);
+    if (isAlt || (any && /đầu\s*phát|alternator/i.test(s))) for (const [re, n] of C.ALT_BRANDS) if (re.test(s)) add("alternator", n);
+    if (isCtl || (any && /bộ\s*điều\s*khiển|controller/i.test(s))) { for (const c of C.CONTROLLERS) if (c.word.test(s)) add("controller", c.brand); for (const c of C.controllersIn(s)) add("controller", c.brand); }
+  }
+  return need;
+}
+const QN_LABEL = { engine: "động cơ", alternator: "đầu phát", controller: "BĐK" };
+const quoteNeedText = (need) => Object.keys(QN_LABEL).filter((k) => need[k].length).map((k) => `${QN_LABEL[k]} ${need[k].join(" / ")}`).join(" · ");
+// Dòng giá có đúng hãng HSMT chỉ định không: so ô Động cơ / Đầu phát / BĐK của dòng (trống thì đọc tên hàng). Trả các phần
+// không khớp (rỗng = khớp hoặc HSMT không chỉ định gì).
+function quoteMisfits(x, need) {
+  const C = window.GenbidCatalog, out = [];
+  if (!C) return out;
+  // Dòng không phải tổ máy (tủ ATS, cáp, vận chuyển...) không có động cơ để so.
+  // Dòng tổ máy (có động cơ, công suất, hay tên là máy phát) so cả ba; dòng riêng đầu phát / bộ điều khiển chỉ so phần đó.
+  const d = String(x.desc || ""), isSet = x.engine || x.kva || /máy\s*phát|tổ\s*máy|genset|generator|động\s*cơ|engine|\d\s*k(va|w)\b/i.test(d);
+  const part = { engine: isSet, alternator: isSet || x.alternator || /đầu\s*phát|alternator/i.test(d), controller: isSet || x.controller || /bộ\s*điều\s*khiển|controller/i.test(d) };
+  for (const k of Object.keys(QN_LABEL)) {
+    if (!need[k].length || !part[k]) continue;
+    const s = String(x[k] || x.desc || "").normalize("NFC");
+    const has = k === "controller" ? [...C.CONTROLLERS.filter((c) => c.word.test(s)).map((c) => c.brand), ...C.controllersIn(s).map((c) => c.brand)]
+      : (k === "engine" ? C.ENGINE_BRANDS : C.ALT_BRANDS).filter(([re]) => re.test(s)).map(([, n]) => n);
+    if (!has.some((n) => need[k].includes(n)) && !need[k].some((n) => fold(s).includes(fold(n)))) out.push(k);
+  }
+  return out;
+}
+const quoteFits = (x, need) => !quoteMisfits(x, need).length;
 function quoteHtml(t) {
-  const key = t._key, rows = quoteRows(key), ro = state.readOnly, sups = supAll();
+  const key = t._key, rows = quoteRows(key), ro = state.readOnly, sups = supAll(), hues = supHues(rows), need = quoteNeedOf(t), needTxt = quoteNeedText(need);
   const n = rows.reduce((s, r) => s + (r.files?.length || 0), 0), favN = sups.filter((s) => supFav(s.id)).length;
   const row = (r) => {
     const taken = new Set(rows.filter((x) => x !== r && x.supplierId).map((x) => x.supplierId));
     const opts = sups.filter((s) => supFav(s.id) && !taken.has(s.id));
     if (r.supplierId && !opts.some((s) => s.id === r.supplierId)) opts.unshift(state.supplier?.[r.supplierId] || { id: r.supplierId });
     const up = quoteUp[key]?.row === r.id ? quoteUp[key].text : "";
-    return h`<div class="qrow" data-qrow="${r.id}">
-      <div class="row qline"><select data-qsup="${r.id}" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">${favN ? "Chọn NCC" : "Chưa có nhà cung cấp yêu thích"}</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
+    return h`<div class="qrow" data-qrow="${r.id}" ${raw(hues[r.id] ? h`style="--sc:${hues[r.id]}"` : "")}>
+      <div class="row qline">${raw(supDot(r.supplierId, hues[r.id]))}<select data-qsup="${r.id}" aria-label="Nhà cung cấp" ${raw(ro || up ? "disabled" : "")}><option value="">${favN ? "Chọn NCC" : "Chưa có nhà cung cấp yêu thích"}</option>${raw(opts.map((s) => h`<option value="${s.id}" ${s.id === r.supplierId ? "selected" : ""}>${supName(s)}</option>`).join(""))}</select>
         ${raw(r.supplierId && state.supplier?.[r.supplierId] ? h`<button class="btn sm tint c-cyan" data-supopen="${r.supplierId}" title="Xem thông tin nhà cung cấp">Hồ sơ</button>` : "")}
         ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Upload</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
         ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm tint c-rose" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
       ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
         ${raw(ro ? "" : h`${raw(/\.pdf$/i.test(f.name) ? h`<button class="btn sm tint c-blue" data-qopen="${r.id}:${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : h`<button class="btn sm tint c-blue" data-qopen="${r.id}:${i}" title="Tải về" aria-label="Tải về">${raw(DL_SVG)}</button>`)}<button class="btn sm tint c-rose" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(up ? progress(up) : "")}
-      ${raw(quoteItemsHtml(key, r, ro))}
+      ${raw(quoteItemsHtml(key, r, ro, need))}
     </div>`;
   };
   // One box: the heading, the count and Thêm sit with the suppliers (Khoa, 2026-11-04).
   return h`<div class="drop">
       <div class="row"><h2 style="flex:1">Báo giá của NCC</h2><span class="muted small">${n ? `${n} tệp` : "Chưa có tệp nào"}</span>${raw(ro ? "" : h`<button class="btn sm tint c-mint" id="qAdd" ${quoteUp[key] ? "disabled" : ""}>+ Thêm</button>`)}</div>
       ${raw(quoteAllHtml(ro))}
+      ${raw(needTxt ? h`<div class="qneed small"><b>HSMT chỉ định:</b> ${needTxt}. Giá vốn và gợi ý báo giá chỉ lấy dòng giá đúng hãng này.</div>` : "")}
       ${raw(rows.map(row).join(""))}
       ${raw(quoteCostHtml(key, ro))}
       ${raw(ro || favN || !state.loaded.supplier ? "" : '<div class="muted small">Danh sách chỉ hiện nhà cung cấp yêu thích: bấm ☆ cạnh tên ở màn <a href="#nha-cung-cap">Nhà cung cấp</a> để thêm.</div>')}
@@ -1690,10 +1749,12 @@ function lastFx() {
   return q ? { fx: q.cost.fx, at: q.updatedAt } : null;
 }
 const quoteItemBits = (x) => [x.kvaNum || x.kva ? `${qNum(x.kvaNum || x.kva)} kVA` : "", x.engine && `động cơ ${x.engine}`, x.alternator && `đầu phát ${x.alternator}`, x.controller && `BĐK ${x.controller}`, x.terms, x.vatIncl && "đã gồm thuế GTGT", x.note].filter(Boolean).join(" · ");
-function quoteItemsHtml(key, r, ro) {
+function quoteItemsHtml(key, r, ro, need = quoteNeedOf(findTender(key))) {
   const BP = window.GenbidBidprice, items = r.items || [], c = BP.quoteCost(r, quoteCostCfg(key));
   if (!r.supplierId) return "";
-  const line = (x) => h`<tr><td><b>${x.desc || "—"}</b>${raw([x.engine && `động cơ ${x.engine}`, x.alternator && `đầu phát ${x.alternator}`, x.controller && `BĐK ${x.controller}`].filter(Boolean).length ? h`<div class="muted small">${[x.engine && `động cơ ${x.engine}`, x.alternator && `đầu phát ${x.alternator}`, x.controller && `BĐK ${x.controller}`].filter(Boolean).join(" · ")}</div>` : "")}
+  // Ô trống (và tên hàng không nêu hãng) thì nhắc ghi vào, có hãng khác thì báo không đúng; cả hai đều không vào giá vốn.
+  const miss = (x) => { const m = quoteMisfits(x, need); return m.length ? h`<div>${raw(m.map((k) => h`<span class="chip warn">${x[k] ? "Không đúng" : "Chưa ghi"} ${QN_LABEL[k]} ${need[k].join(" / ")} HSMT chỉ định</span>`).join(" "))}</div>` : ""; };
+  const line = (x) => h`<tr><td><b>${x.desc || "—"}</b>${raw(miss(x))}${raw([x.engine && `động cơ ${x.engine}`, x.alternator && `đầu phát ${x.alternator}`, x.controller && `BĐK ${x.controller}`].filter(Boolean).length ? h`<div class="muted small">${[x.engine && `động cơ ${x.engine}`, x.alternator && `đầu phát ${x.alternator}`, x.controller && `BĐK ${x.controller}`].filter(Boolean).join(" · ")}</div>` : "")}
       <div class="muted small">${[x.kva && `${qNum(x.kva)} kVA`, x.terms, x.date && fmtDate(x.date, false), x.vatIncl && "đã gồm thuế GTGT", x.note].filter(Boolean).join(" · ")}</div></td>
     <td class="num" data-l="Số lượng">${qNum(x.qty || 1)}</td>
     <td class="num" data-l="Đơn giá">${x.unitPrice ? `${qNum(x.unitPrice)} ${x.currency || "VND"}` : "—"}</td>
@@ -1848,10 +1909,12 @@ function askQuoteCost(key) {
 // (±15%, dòng không ghi công suất thì không khớp). Hiện 20 dòng đầu, Xem thêm mỗi lần 20 dòng; đổi bộ lọc thì về 20.
 const quoteTenderLink = (key) => { const t = findTender(key); return h`${raw(t ? h`<a href="${tenderHref(key)}" data-qtender="${key}" title="Mở gói thầu">${key}</a>` : h`${key}`)}${raw(t?.bidName ? h`<div class="muted">${t.bidName.slice(0, 90)}</div>` : "")}`; };
 const QL_PAGE = 20, QL_KVA_TOL = 0.15, QL_NONE = "-";
-function openQuoteLedger(kva) {
+// need (mở từ "xem" ở gói có HSMT chỉ định hãng): ô "Đúng hãng HSMT chỉ định" bật sẵn, bỏ chọn thì xem mọi dòng.
+function openQuoteLedger(kva, need = null) {
   const all = window.GenbidBidprice.quoteLedger(state.quote), supOf = (x) => supName(state.supplier?.[x.supplierId]) || x.supplierId || "";
+  const needTxt = need ? quoteNeedText(need) : "";
   const row = (x) => h`<tr><td><b>${x.desc || "—"}</b><div class="muted small">${quoteItemBits(x)}</div></td>
-    <td data-l="Nhà cung cấp">${raw(supLink(x.supplierId, supOf(x) || "—"))}</td>
+    <td data-l="Nhà cung cấp">${raw(supDot(x.supplierId))}${raw(supLink(x.supplierId, supOf(x) || "—"))}</td>
     <td class="num" data-l="Đơn giá"><b>${qNum(x.unitPrice)} ${x.currency || "VND"}</b>${(x.qty || 1) > 1 ? ` × ${qNum(x.qty)}` : ""}</td>
     <td class="num small" data-l="Ngày báo giá">${x.date ? fmtDate(x.date, false) : "—"}</td>
     <td class="small" data-l="Gói thầu">${raw(quoteTenderLink(x.key))}</td></tr>`;
@@ -1865,6 +1928,7 @@ function openQuoteLedger(kva) {
       <select id="qlSup" aria-label="Lọc theo nhà cung cấp"><option value="">Nhà cung cấp</option>${raw(sups.map(opt).join(""))}</select>
       <select id="qlEng" aria-label="Lọc theo động cơ"><option value="">Động cơ</option>${raw(engs.map(opt).join(""))}${raw(noEng ? h`<option value="${QL_NONE}">Chưa ghi động cơ (${noEng})</option>` : "")}</select>
       <input type="number" id="qlKva" min="0" step="any" inputmode="decimal" value="${kva ? Math.round(kva) : ""}" placeholder="Công suất kVA" title="Dòng giá có công suất trong ±${Math.round(QL_KVA_TOL * 100)}% số này" aria-label="Lọc theo công suất (kVA), ±${Math.round(QL_KVA_TOL * 100)}%">
+      ${raw(needTxt ? h`<label class="small" title="Chỉ dòng giá đúng hãng HSMT của gói này chỉ định"><input type="checkbox" id="qlNeed" checked> Đúng ${needTxt}</label>` : "")}
       <button type="button" class="btn sm tint c-rose" id="qlClear" hidden>Bỏ lọc</button>
       <span class="muted small" id="qlCount"></span>
     </div>
@@ -1873,10 +1937,10 @@ function openQuoteLedger(kva) {
     let limit = QL_PAGE;
     const val = (id) => $("#" + id, m).value;
     const draw = () => {
-      const q = fold(val("qlFind")).split(/\s+/).filter(Boolean), sup = val("qlSup"), eng = val("qlEng"), K = Number(val("qlKva")) > 0 ? Number(val("qlKva")) : null;
+      const q = fold(val("qlFind")).split(/\s+/).filter(Boolean), sup = val("qlSup"), eng = val("qlEng"), K = Number(val("qlKva")) > 0 ? Number(val("qlKva")) : null, nd = !!$("#qlNeed", m)?.checked;
       const list = all.filter((x, i) => q.every((w) => hay[i].includes(w)) && (!sup || x.supplierId === sup) && (!eng || (eng === QL_NONE ? !x.engineMake : fold(x.engineMake) === eng))
-        && (!K || (x.kvaNum > 0 && Math.abs(Math.log(x.kvaNum / K)) <= Math.log(1 + QL_KVA_TOL))));
-      const shown = list.slice(0, limit), left = list.length - shown.length, on = q.length || sup || eng || K;
+        && (!K || (x.kvaNum > 0 && Math.abs(Math.log(x.kvaNum / K)) <= Math.log(1 + QL_KVA_TOL))) && (!nd || quoteFits(x, need)));
+      const shown = list.slice(0, limit), left = list.length - shown.length, on = q.length || sup || eng || K || nd;
       $("#qlClear", m).hidden = !on;
       $("#qlCount", m).textContent = on ? `${list.length} / ${all.length} dòng giá` : `${all.length} dòng giá`;
       $("#qlBody", m).innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards qledger"><thead><tr><th>Hàng báo giá</th><th>Nhà cung cấp</th><th>Đơn giá</th><th>Ngày</th><th>Gói thầu</th></tr></thead><tbody>${raw(shown.map(row).join(""))}</tbody></table></div>${raw(left ? h`<div class="more"><button class="btn tint c-blue" id="qlMore">Xem thêm ${Math.min(QL_PAGE, left)} dòng (còn ${left})</button></div>` : "")}`
@@ -1884,8 +1948,8 @@ function openQuoteLedger(kva) {
     };
     const again = () => { limit = QL_PAGE; draw(); $("#qlBody", m).scrollTop = 0; };
     for (const id of ["qlFind", "qlKva"]) $("#" + id, m).addEventListener("input", again);
-    for (const id of ["qlSup", "qlEng"]) $("#" + id, m).addEventListener("change", again);
-    $("#qlClear", m).addEventListener("click", () => { for (const id of ["qlFind", "qlSup", "qlEng", "qlKva"]) $("#" + id, m).value = ""; again(); });
+    for (const id of ["qlSup", "qlEng", "qlNeed"]) $("#" + id, m)?.addEventListener("change", again);
+    $("#qlClear", m).addEventListener("click", () => { for (const id of ["qlFind", "qlSup", "qlEng", "qlKva"]) $("#" + id, m).value = ""; if ($("#qlNeed", m)) $("#qlNeed", m).checked = false; again(); });
     $("#qlBody", m).addEventListener("click", (e) => { if (e.target.id === "qlMore") { limit += QL_PAGE; draw(); } });
     draw();
   }, "wide pane");
@@ -1980,7 +2044,10 @@ function profitHtml(t) {
   const BP = window.GenbidBidprice, key = t._key, c = competeOf(t), P = t.estimatedPrice ?? state.bidhist?.[key]?.estimatedPrice ?? null;
   if (!c) return "";
   const { fc, curve } = c, cfg = quoteCostCfg(key);
-  const costs = quoteRows(key).map((r) => ({ r, c: BP.quoteCost(r, cfg) })).filter((x) => x.c.total != null);
+  // HSMT chỉ định hãng: giá vốn chỉ tính từ báo giá mà mọi dòng giá đều đúng hãng đó (Khoa, 2026-11-10).
+  const need = quoteNeedOf(t), needTxt = quoteNeedText(need);
+  const costs = quoteRows(key).filter((r) => (r.items || []).every((x) => quoteFits(x, need))).map((r) => ({ r, c: BP.quoteCost(r, cfg) })).filter((x) => x.c.total != null);
+  const offNeed = needTxt ? quoteRows(key).filter((r) => r.items?.length && !r.items.every((x) => quoteFits(x, need))).length : 0;
   const pick = costs.find((x) => x.r.id === profitRow[key]) || costs.slice().sort((a, b) => a.c.total - b.c.total)[0] || null, cost = pick?.c.total ?? null;
   const scen = profitScen[key] ?? "mix", w = scen === "mix" ? curve.mix : curve.byNb[+scen].n >= 15 ? curve.byNb[+scen].w : curve.all;
   const pt = BP.profitTable(P, cost, curve, w), levels = state.bidprice[key]?.result?.levels || state.bidprice[key]?.result?.stats?.levels || [];
@@ -2000,13 +2067,14 @@ function profitHtml(t) {
       ${raw(cost != null ? h`<td class="num" data-l="Lãi nếu trúng">${m == null ? "—" : (m < 0 ? "−" : "") + fmtVnd(Math.abs(Math.round(m)))}${raw(m != null && price ? h`<div class="muted small">${bpPct(m / price)} giá bỏ</div>` : "")}</td><td class="num" data-l="Lợi nhuận kỳ vọng">${m == null || w[i] == null || m <= 0 ? "—" : fmtVnd(Math.round(w[i] * m))}</td>` : "")}</tr>`;
   });
   const scenBtn = (id, label, p) => h`<button class="btn sm${scen === id ? " primary" : " tint c-violet"}" data-pscen="${id}">${label}${p != null ? ` · ${pct0(p)}` : ""}</button>`;
-  const near = (() => { const K = kvaOf(capacityOf(t)?.text); if (!K) return []; return BP.quoteLedger(state.quote).filter((x) => x.key !== key && x.kvaNum && Math.abs(Math.log(x.kvaNum / K)) <= Math.log(1.15)); })();
+  const near = (() => { const K = kvaOf(capacityOf(t)?.text); if (!K) return []; return BP.quoteLedger(state.quote).filter((x) => x.key !== key && x.kvaNum && Math.abs(Math.log(x.kvaNum / K)) <= Math.log(1.15) && quoteFits(x, need)); })();
   return h`<section class="profit"><div class="row"><h2 style="flex:1">Giá vốn và lợi nhuận kỳ vọng</h2></div>
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được.</div>' : h`
-    ${raw(cost == null ? h`<div class="note">Chưa có giá vốn: thêm dòng giá ở mục Báo giá của NCC phía trên (và tỷ giá nếu báo giá bằng ngoại tệ) để tính lãi ở từng mức giá. Bảng dưới mới có xác suất thắng.${raw(near.length ? h` Sổ báo giá có ${near.length} dòng giá máy cùng cỡ (±15%) ở gói khác: <a href="#" id="qNear">xem</a>.` : "")}</div>`
+    ${raw(cost == null ? h`<div class="note">Chưa có giá vốn: thêm dòng giá ở mục Báo giá của NCC phía trên (và tỷ giá nếu báo giá bằng ngoại tệ) để tính lãi ở từng mức giá. Bảng dưới mới có xác suất thắng.${raw(offNeed ? h` ${offNeed} báo giá có dòng giá chưa ghi hoặc không đúng hãng HSMT chỉ định (${needTxt}) nên không tính.` : "")}${raw(near.length ? h` Sổ báo giá có ${near.length} dòng giá máy cùng cỡ (±15%)${needTxt ? ` đúng ${needTxt}` : ""} ở gói khác: <a href="#" id="qNear">xem</a>.` : "")}</div>`
       : h`<div class="kpis" style="margin:8px 0"><div class="kpi"><span class="kl">Giá vốn</span><span class="kv">${fmtVnd(Math.round(cost))}</span><span class="ks">${bpPct(cost / P)} giá gói · ${supName(state.supplier?.[pick.r.supplierId]) || pick.r.supplierId}</span></div>
         ${raw(pt.best ? h`<div class="kpi bplev bp-low"><span class="kl">Giá có lợi nhuận kỳ vọng cao nhất</span><span class="kv">${fmtVnd(pt.best.price)}</span><span class="ks">${bpPct(pt.best.r)} giá gói · thắng khoảng ${pct0(pt.best.w)} · lãi nếu trúng ${fmtVnd(Math.round(pt.best.margin))}</span></div>`
           : '<div class="kpi"><span class="kl">Giá đề xuất</span><span class="kv">—</span><span class="ks">Giá vốn không thấp hơn giá gói: không mức giá nào có lãi</span></div>')}</div>
+        ${raw(offNeed ? h`<div class="muted small" style="margin-bottom:6px">${offNeed} báo giá có dòng giá chưa ghi hoặc không đúng hãng HSMT chỉ định (${needTxt}) nên không tính giá vốn.</div>` : "")}
         ${raw(costs.length > 1 ? h`<div class="row small" style="gap:8px;margin-bottom:6px"><label for="profitRowSel">Tính theo báo giá của</label><select id="profitRowSel">${raw(costs.map((x) => h`<option value="${x.r.id}" ${x === pick ? "selected" : ""}>${supName(state.supplier?.[x.r.supplierId]) || x.r.supplierId} — ${fmtVnd(Math.round(x.c.total))}</option>`).join(""))}</select></div>` : "")}`)}
     <details class="sizebox pfold" data-sizebox="bp|${key}|pscen" ${sizeOpen?.has(`bp|${key}|pscen`) ? "open" : ""}><summary class="small" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b>Số nhà thầu và xác suất thắng ở từng mức giá</b> <span class="muted">· ${scen === "mix" ? "theo dự báo" : fc.labels[+scen]}</span></summary>
     <div class="row pscen" style="gap:6px;flex-wrap:wrap;margin-top:6px"><b class="small">Số nhà thầu</b>${raw(scenBtn("mix", "Theo dự báo"))}${raw(fc.labels.map((l, i) => scenBtn(String(i), l.replace(" nhà thầu", ""), fc.p[i])).join(""))}</div>
@@ -4479,7 +4547,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "qCost" && state.open) { askQuoteCost(state.open); return; }
   if (e.target.id === "qAll") { askQuoteAll(); return; }
   if (e.target.id === "qLedger") { openQuoteLedger(); return; }
-  if (e.target.id === "qNear" && state.open) { e.preventDefault(); const t = findTender(state.open); openQuoteLedger(t && kvaOf(capacityOf(t)?.text)); return; }
+  if (e.target.id === "qNear" && state.open) { e.preventDefault(); const t = findTender(state.open); openQuoteLedger(t && kvaOf(capacityOf(t)?.text), t && quoteNeedOf(t)); return; }
   const ps = e.target.closest("[data-pscen]");
   if (ps && state.open) { profitScen[state.open] = ps.dataset.pscen; renderDrawer(false); return; }
   const qo = e.target.closest("[data-qopen]");
