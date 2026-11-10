@@ -667,6 +667,11 @@ function chapterV(text) {
     const rest = text.slice(p2.index), p3 = rest.slice(500).search(/^[\s\W]{0,40}ph\S{0,3}n\s*(3|th\S{0,3}\s*ba)(?!\d)/im);
     return rest.slice(0, p3 > 0 ? p3 + 500 : 150000);
   }
+  // No chapter headings at all (the bilingual HSMT of Vietsovpetro, IB2600547578: 490,000 characters, the first 150,000
+  // are instructions and contract): the technical requirements are a block titled "YÊU CẦU KỸ THUẬT" in capitals on a
+  // line of its own, well after the table of contents.
+  const yc = [...text.matchAll(/^[^\S\n]*\|?[^\S\n]*Y[ÊE]U C[ẦA]U K[ỸY] THU[ẬA]T[^\S\n]*$/gm)].find((m) => m.index > text.length * 0.2);
+  if (yc) return text.slice(Math.max(0, yc.index - 200), yc.index + 150000);
   return text;
 }
 // A PDF or picture read with OCR in a child process that does not block, so the Claude answers of the tenders before
@@ -749,6 +754,7 @@ async function specsArchive(f, tmp, depth = 0) {
   fs.mkdirSync(out, { recursive: true }); fs.copyFileSync(f, src);
   if (path.extname(src) === ".rar" && fs.existsSync(UNRAR)) cp.spawnSync(UNRAR, ["x", "-y", "-inul", src, out + path.sep], { timeout: 300e3 });
   else cp.spawnSync(TAR, ["-xf", src, "-C", out], { encoding: "utf8", timeout: 300e3 });
+  if (path.extname(src) === ".zip" && !fs.readdirSync(out).length) unzipPlain(src, out);
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
   const tech = (x) => CFG_FILE_RE.test(path.basename(x).normalize("NFC")) ? 1 : 0;
   const docsIn = walk(out).filter((x) => /\.(pdf|docx|doc|xlsx|txt|zip|rar|7z|jpe?g|png|tiff?)$/i.test(x)).sort((a, b) => tech(b) - tech(a)).slice(0, 8);
@@ -832,9 +838,11 @@ async function specsSource(ctx, page, t, webText, release = () => {}) {
   if (hsmt?.files?.length && !/chỉ Chương V \(bot\)/.test(hsmt.source || "")) {
     // Files already on the web (a tender fetched by Sync): read them, OCR the scanned ones first.
     text = (await Promise.all(Array.from({ length: hsmt.textChunks || 0 }, (_, i) => doc("hsmttext", `${key}_${i}`).catch(() => null)))).map((d) => d?.text || "").join("");
-    if (text.replace(/\s/g, "").length < 200 && hsmt.files.some((f) => f.hasText === false && !f.ocrTried)) {
+    // --key K reads the files again whatever an earlier try (ocrTried) found, e.g. after a fix of the archive reader.
+    const again = !!opt("key"), hs = again ? { ...hsmt, files: hsmt.files.map(({ ocrTried, ...f }) => f) } : hsmt;
+    if (text.replace(/\s/g, "").length < 200 && hs.files.some((f) => f.hasText === false && !f.ocrTried)) {
       // In the same slots as the other OCR runs.
-      await ocrSlot(() => ocrHsmt(key, hsmt, SPECS_SCAN_MAX_MB * 1048576, SPECS_FIND));
+      await ocrSlot(() => ocrHsmt(key, hs, SPECS_SCAN_MAX_MB * 1048576, SPECS_FIND));
       text = await hsmtText(key);
     }
     // Files this command downloaded before (an OCR that failed then marks them ocrTried on the web): read the local copies.
@@ -878,9 +886,14 @@ async function specsSource(ctx, page, t, webText, release = () => {}) {
     // "Chương IV.pdf" = draft contract, "QĐ ….pdf"; IB2200044785, IB2300393435 and a dozen more).
     const ch3 = (f.files || []).filter((x) => { const nm = x.name.normalize("NFC"); return /ch(ư|u)?(ơ|o|ô)ng[\s_.-]*(iii|3)(?![ivx\d])/i.test(nm) && !DECISION.test(nm) && !/h(ợ|o)p\s*(đ|d)(ồ|o)ng|tc(đ|d)g|ti(ê|e)u\s*chu(ẩ|a)n\s*(đ|d)(á|a)nh/i.test(nm); });
     const pick = (own.length ? own : cand.length ? cand : ch3).slice(0, 3);
+    // Last resort (2026-11-10, specs still open in session-log): no file is recognised as the technical requirements ("Gói 22.pdf", "gói 12.pdf",
+    // "Mẫu 17_0001.pdf", "1196-vtsg-dmtx.pdf"): every file that is not an approval decision, up to 4, is downloaded and read.
+    const APPROVAL = /(^|[^a-z])q(đ|d)([^a-z]|$)|quy(ế|e)t\s*(đ|d)(ị|i)nh|quyetdinh|ph(ê|e)\s*duy(ệ|e)t|pheduyet|(^|[^a-z])pd(hs|yc)/i;
+    const loose = (f.files || []).filter((x) => !APPROVAL.test(x.name.normalize("NFC")) && /\.(pdf|docx?|xlsx?|rar|zip|7z|jpe?g|png|tiff?)$/i.test(x.name)).slice(0, 4);
     // No technical document at all: the goods list of the notice (tab Thông tin chung, "Danh mục hàng hóa", with its
     // Thông số kỹ thuật column; Khoa, 2026-11-03), published as a .txt like the webform chapter.
     const goods = !web && !pick.length ? await specsGoods(page) : "";
+    if (!web && !pick.length && !goods && loose.length) { pick.push(...loose); log(`    ${key}: không tệp nào nhận ra là yêu cầu kỹ thuật, đọc ${loose.length} tệp không phải quyết định phê duyệt: ${loose.map((x) => x.name).join(", ")}`); }
     if (!web && !pick.length && !goods) return { text: "", src: (f.files || []).length ? "HSMT không có Chương V webform, không có tệp yêu cầu kỹ thuật, không có danh mục hàng hóa (tệp: " + f.files.map((x) => x.name).slice(0, 8).join(", ") + ")" : "không có tệp HSMT, không có danh mục hàng hóa" };
     if (goods) web = `--- Tệp: Danh mục hàng hóa (Thông tin chung) ---\n${goods}`;
     const up = path.join(dir, "files"), WEBFORM = goods ? "Danh mục hàng hóa (Thông tin chung).txt" : "Chương V. Yêu cầu về kỹ thuật (webform).txt";
@@ -1370,6 +1383,19 @@ try { $d = $w.Documents.Open(${q(src)}, $false, $true); $d.SaveAs2(${q(out)}, 2,
 // .zip / .rar / .7z: unpacked with Windows tar.exe (libarchive), the documents inside read one by one (two levels deep).
 const ARCHIVE_EXT = [".zip", ".rar", ".7z"];
 const UNRAR = path.join(process.env.ProgramFiles || "C:\\Program Files", "WinRAR", "UnRAR.exe");
+// A .zip whose entry names are not UTF-8 (IB2500143599 "Chương V - Yêu cầu kỹ thuật.zip", IB2600279956, IB2600035196): tar.exe
+// answers "Archive entry has empty or unreadable filename" and extracts nothing. .NET reads the entries; each is saved as
+// e<n>-<ASCII part of its name><ext>.
+function unzipPlain(src, out) {
+  const q = (s) => "'" + s.replace(/'/g, "''") + "'";
+  const script = `Add-Type -AssemblyName System.IO.Compression.FileSystem
+$z = [IO.Compression.ZipFile]::OpenRead(${q(src)}); $i = 0
+try { foreach ($e in $z.Entries) { if (-not $e.Name) { continue }
+  $ext = [IO.Path]::GetExtension($e.Name); $b = [IO.Path]::GetFileNameWithoutExtension($e.Name) -replace '[^\\x20-\\x7E]', '' -replace '[\\\\/:*?"<>|]', '_'
+  if ($b.Length -gt 50) { $b = $b.Substring(0, 50) }
+  [IO.Compression.ZipFileExtensions]::ExtractToFile($e, (Join-Path ${q(out)} ('e{0}-{1}{2}' -f $i, $b.Trim(), $ext)), $true); $i++ } } finally { $z.Dispose() }`;
+  cp.spawnSync("powershell", ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", script], { encoding: "utf8", timeout: 300e3 });
+}
 function archiveText(f, depth = 0) {
   if (depth > 1) return "";
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "genbid-arc-"));
@@ -1379,6 +1405,7 @@ function archiveText(f, depth = 0) {
     // tar.exe skips RAR5 entries with Vietnamese names: .rar goes through WinRAR's UnRAR when the PC has it.
     if (path.extname(src) === ".rar" && fs.existsSync(UNRAR)) cp.spawnSync(UNRAR, ["x", "-y", "-inul", src, out + path.sep], { timeout: 300e3 });
     else cp.spawnSync(TAR, ["-xf", src, "-C", out], { encoding: "utf8", timeout: 300e3 });
+    if (path.extname(src) === ".zip" && !fs.readdirSync(out).length) unzipPlain(src, out);
     const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
     return walk(out).slice(0, 30).map((x) => {
       const t = ARCHIVE_EXT.includes(path.extname(x).toLowerCase()) ? archiveText(x, depth + 1) : fileText(x);
