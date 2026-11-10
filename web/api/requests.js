@@ -43,33 +43,35 @@ export default async function handler(req, res) {
     } catch (e) { return res.status(502).json({ error: e.message }); }
   }
   try {
+    // The request rows written in the last RECENT_H hours, or all of them (see recentSince).
+    const since = recentSince(req.query?.full === "1"), one = (coll) => marksOf([coll], since);
     // ?kind=all: everything the local bot polls for, in one call (files, analysis, sync).
     // The dates of every request type are read in one Supabase request (each request is a line of Supabase's log
     // ingestion, and this runs every 15 s); only the pending rows are then read whole.
     if (req.query?.kind === "all") {
       // beat=0: the bot (GenBid-Bot.ps1) wrote the heartbeat less than a minute ago; the page waits 3 minutes before
       // saying the PC is off. Without beat (an older bot) the heartbeat is written every poll, as before.
-      const [marks] = await Promise.all([marksOf(ALL_REQ, recentSince(req.query.full === "1")), req.query.beat === "0" ? null : heartbeat(req.query.running)]);
+      const [marks] = await Promise.all([marksOf(ALL_REQ, since), req.query.beat === "0" ? null : heartbeat(req.query.running)]);
       const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks), reqsOf("specreq", marks)]);
       return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec });
     }
     // ?kind=analysis: tenders whose "Phân tích" button was pressed on the web (analysisreq/<key>).
-    if (req.query?.kind === "analysis") return res.json(await analysisReqs());
+    if (req.query?.kind === "analysis") return res.json(await analysisReqs(await one("analysisreq")));
     // ?kind=translation / ?kind=compare: "Tạo bản tiếng Anh" and "Đối chiếu" pressed on the web.
-    if (req.query?.kind === "translation") return res.json(await reqsOf("translationreq"));
-    if (req.query?.kind === "compare") return res.json(await reqsOf("comparereq"));
-    if (req.query?.kind === "hsdt") return res.json(await reqsOf("hsdtreq"));
-    if (req.query?.kind === "tlkt") return res.json(await reqsOf("tlktreq"));
-    if (req.query?.kind === "supplier") return res.json(await reqsOf("supplierreq"));
-    if (req.query?.kind === "config") return res.json(await reqsOf("configreq"));
-    if (req.query?.kind === "find") return res.json(await reqsOf("findreq"));
+    if (req.query?.kind === "translation") return res.json(await reqsOf("translationreq", await one("translationreq")));
+    if (req.query?.kind === "compare") return res.json(await reqsOf("comparereq", await one("comparereq")));
+    if (req.query?.kind === "hsdt") return res.json(await reqsOf("hsdtreq", await one("hsdtreq")));
+    if (req.query?.kind === "tlkt") return res.json(await reqsOf("tlktreq", await one("tlktreq")));
+    if (req.query?.kind === "supplier") return res.json(await reqsOf("supplierreq", await one("supplierreq")));
+    if (req.query?.kind === "config") return res.json(await reqsOf("configreq", await one("configreq")));
+    if (req.query?.kind === "find") return res.json(await reqsOf("findreq", await one("findreq")));
     // ?kind=spec: Tìm Thông Số of a supplier (specreq/<supplier id>, run by config-bot.mjs run).
-    if (req.query?.kind === "spec") return res.json(await reqsOf("specreq"));
+    if (req.query?.kind === "spec") return res.json(await reqsOf("specreq", await one("specreq")));
     // ?kind=bidprice: "Gợi ý giá đấu" (suppliers/bidprice-bot.mjs, run by config-bot.mjs run).
-    if (req.query?.kind === "bidprice") return res.json(await reqsOf("bidpricereq"));
+    if (req.query?.kind === "bidprice") return res.json(await reqsOf("bidpricereq", await one("bidpricereq")));
     // ?kind=sync: the page's Sync button asked the worker to search muasamcong (syncreq/current).
     if (req.query?.kind === "sync") return res.json(await syncReq());
-    res.json(await fileReqs());
+    res.json(await fileReqs(await one("hsmtreq")));
   } catch (e) { res.status(502).json({ error: e.message }); }
 }
 
@@ -86,14 +88,15 @@ const pendingOf = (d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.r
 // The pending requests of a collection, whole. The bot polls every 15 s and nearly every row is already done, so
 // list only the two dates first and read the whole rows of the pending ones (Supabase egress: ~20 KB a poll before).
 const ALL_REQ = ["hsmtreq", "analysisreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq", "bidpricereq", "specreq"];
-// The bot's poll (every 15 s) lists only the request rows written in the last RECENT_H hours: a new request, or one
-// pressed again, is written then (every write sets updated_at), and listing every row of the 12 collections each poll
-// was ~12 KB, ~2 GB a month of Supabase egress, growing with the tenders. Requests left pending longer than that (the
-// PC was off) are found by the whole listing, done in the first minute of every hour (~4 polls) or with &full=1.
-const RECENT_H = 6;
+// The bot's poll (every 15 s; config-bot's every 20 s while it runs) lists only the request rows written in the last
+// RECENT_H hours: a new request, or one pressed again, is written then (every write of docs sets updated_at), and
+// listing every row of the 12 collections each poll was ~13 KB (2 KB gzipped), up to ~2.2 GB a month of Supabase
+// egress, growing with the tenders. Requests left pending longer than that (the PC was off) are found by the whole
+// listing, done in the first 30 seconds of every hour (UTC; 1-2 polls) or with &full=1.
+const RECENT_H = 24;
 function recentSince(full) {
   const now = new Date();
-  return full || now.getUTCMinutes() === 0 ? "" : new Date(now.getTime() - RECENT_H * 3600e3).toISOString();
+  return full || (now.getUTCMinutes() === 0 && now.getUTCSeconds() < 30) ? "" : new Date(now.getTime() - RECENT_H * 3600e3).toISOString();
 }
 // { coll: [{ id, requestedAt, doneAt, mode }] } for these collections, in as few requests as the rows allow (1000 a page);
 // since: only the rows whose updated_at is at or after it.
