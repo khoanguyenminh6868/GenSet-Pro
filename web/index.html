@@ -142,6 +142,7 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .sizehead{margin:0;font-size:16px;font-weight:600;border-top:1px solid var(--line);padding:8px 0;color:var(--green)}.sizebox[open]>.sizehead{margin-bottom:4px}.sizebox[open]+.sizebox{margin-top:12px}
 .sizebox>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.sizebox>summary::-webkit-details-marker{display:none}
 .sizebox .chev{display:inline-block;transition:transform .15s}.sizebox:not([open]) .chev{transform:rotate(-90deg)}
+.cfgcard>summary{align-items:center}.cfgcard[open]>summary{margin-bottom:6px}.cfgcard .cfgparts{font-weight:400}
 .cfggrid{margin:6px 0}.cfggrid>summary{padding:4px 0;align-items:center}.cfggrid[open]>summary{margin-bottom:4px}
 .kpi.bplev{cursor:default}.kpi.bplev .kv{font-size:20px}
 /* Giá gợi ý: each level its own colour, none violet (Khoa, 2026-11-04). */
@@ -621,6 +622,9 @@ const local = {
 
 // ---------- State ----------
 const DEFAULT_SORT = { col: "no", dir: -1 };
+// Trích nguồn (Khoa, 2026-11-10): mỗi kết quả agent vẫn ghi nguyên văn nguồn và code vẫn kiểm (config-check, verify),
+// nhưng web không in câu trích / dòng nguồn / đường dẫn nguồn ra màn hình. SHOW_SRC = true để hiện lại.
+const SHOW_SRC = false;
 const state = {
   db: null,
   feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
@@ -3272,12 +3276,12 @@ function supMatchHtml(r) {
     const s = state.supplier?.[x.supplierId], fit = SUP_FIT[x.fit] || ["", "mut"];
     return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${x.rank || ""} ${s ? supName(s) : x.supplierId}</b><span class="chip ${fit[1]}">${fit[0]}</span>${raw(s ? h`<span class="muted small">${SUP_ROLE[s.role] || ""}</span>` : "")}<span class="spacer"></span><button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ nhà cung cấp</button></div>
       ${raw(x.productLine ? h`<div class="small">Dòng máy đề xuất: <b>${x.productLine}</b></div>` : "")}
-      ${raw(x.model ? h`<div class="small">Model đề xuất: <b>${x.model}</b>${raw(x.modelRow ? h`<div class="muted small" style="overflow-wrap:anywhere">Dòng trong bảng của hãng: ${x.modelRow}</div>` : "")}</div>` : "")}
+      ${raw(x.model ? h`<div class="small">Model đề xuất: <b>${x.model}</b>${raw(SHOW_SRC && x.modelRow ? h`<div class="muted small" style="overflow-wrap:anywhere">Dòng trong bảng của hãng: ${x.modelRow}</div>` : "")}</div>` : "")}
       <ul class="suplist">${raw((x.reasons || []).map((y) => h`<li>${y.text} ${raw(refs(x.supplierId, y.supplierSrc))}${raw(y.unverified ? '<span class="chip warn" title="Code không tìm thấy trích dẫn hoặc số liệu này trong nguồn">⚠ chưa khớp nguồn</span>' : "")}
-        ${raw(y.requirementQuote ? h`<div class="muted small">HSMT: <q>${y.requirementQuote}</q></div>` : "")}</li>`).join(""))}</ul>
+        ${raw(SHOW_SRC && y.requirementQuote ? h`<div class="muted small">HSMT: <q>${y.requirementQuote}</q></div>` : "")}</li>`).join(""))}</ul>
       ${raw(x.gaps?.length ? h`<div class="small"><b>Còn thiếu / cần làm rõ:</b></div><ul class="suplist">${raw(x.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
   }).join("") : h`<div class="note warn">Không có nhà cung cấp nào trong dữ liệu đủ phù hợp với gói này.</div>`)
-    + (r.requirementsUsed?.length ? h`<details><summary class="small">Yêu cầu của gói đã dùng để so (${r.requirementsUsed.length})</summary><ul class="suplist">${raw(r.requirementsUsed.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "")
+    + (r.requirementsUsed?.length ? h`<details><summary class="small">Yêu cầu của gói đã dùng để so (${r.requirementsUsed.length})</summary><ul class="suplist">${raw(r.requirementsUsed.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(SHOW_SRC && q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "")
     + (r.notes?.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy</b><ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul></div>` : "");
 }
 
@@ -3517,16 +3521,20 @@ const sizeTitle = (z) => `Máy ${z.qty ? `${z.qty} x ` : ""}${z.label}`;
 // starts closed when the tab is opened (Khoa, 2026-11-05); one opened stays open while the tab is drawn again on a
 // change: sizeOpen holds "<tab>|<key>|<label>" and is emptied when a tender or a tab is opened (openSizesReset).
 // var and a function declaration: a tender opened from the URL at load runs openSizesReset before this line.
-var sizeOpen = new Set();
-function openSizesReset() { sizeOpen?.clear(); }
+var sizeOpen = new Set(), sizeShut = new Set();
+function openSizesReset() { sizeOpen?.clear(); sizeShut?.clear(); }
+// A box drawn open by default (data-def="open", cấu hình #1) remembers being closed instead (sizeShut).
+const boxOpen = (id, def) => (def ? !sizeShut?.has(id) : !!sizeOpen?.has(id));
 const sizeBox = (id, head, body) => h`<details class="sizebox" data-sizebox="${id}" ${sizeOpen?.has(id) ? "open" : ""}><summary class="sizehead" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span>${raw(head)}</summary>${raw(body)}</details>`;
 document.addEventListener("toggle", (e) => {
   const id = e.target.dataset?.sizebox;
-  if (id && sizeOpen) e.target.open ? sizeOpen.add(id) : sizeOpen.delete(id);
+  if (!id || !sizeOpen) return;
+  if (e.target.dataset.def === "open") e.target.open ? sizeShut.delete(id) : sizeShut.add(id);
+  else e.target.open ? sizeOpen.add(id) : sizeOpen.delete(id);
 }, true);
 function cfgSizesHtml(r, key, busy) {
   return h`<div class="note">Gói có ${r.sizes.length} cỡ máy (${r.sizes.map((z) => sizeTitle(z).slice(4)).join("; ")}): mỗi cỡ được gợi ý cấu hình riêng.${r.skipped?.length ? ` Chưa gợi ý các cỡ: ${r.skipped.join("; ")} (mỗi lượt tối đa ${r.sizes.length} cỡ).` : ""}</div>`
-    + r.sizes.map((z) => sizeBox(`cfg|${key}|${z.label}`, h`<span>${sizeTitle(z)}</span>`, (z.quote ? h`<div class="muted small">Đọc từ: <q>${z.quote}</q></div>` : "")
+    + r.sizes.map((z) => sizeBox(`cfg|${key}|${z.label}`, h`<span>${sizeTitle(z)}</span>`, (SHOW_SRC && z.quote ? h`<div class="muted small">Đọc từ: <q>${z.quote}</q></div>` : "")
       + (z.result ? cfgResultHtml(z.result, { key, size: z.label, busy }) : h`<div class="note warn">Chưa gợi ý được: ${z.error || ""}</div>`))).join("");
 }
 // The note can be closed (Khoa, 2026-11-01); it is kept closed in this browser until the next Tìm NCC result.
@@ -3544,7 +3552,7 @@ function findResultHtml(f, key) {
 // A supplier name in tab Cấu hình gợi ý / Giá gợi ý opens that supplier's page (Khoa, 2026-11-05).
 const supLink = (id, name) => (id && state.supplier?.[id] ? h`<button type="button" class="suplink" data-supopen="${id}" title="Xem thông tin nhà cung cấp">${name || id}</button>` : h`${name || id || ""}`);
 function cfgSrcHtml(src) {
-  if (!src) return "";
+  if (!src || !SHOW_SRC) return "";
   if (src.kind === "catalog" || src.kind === "controller") {
     const s = state.supplier?.[src.supplierId], url = s?.sources?.find((x) => x.n === Number(src.n))?.url;
     return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: ${raw(supLink(src.supplierId, supName(s)))}${raw(url ? h` · <a href="${url}" target="_blank" rel="noopener">trang [${src.n}]</a>` : "")}${raw(src.line ? h`<div><code>${src.line}</code></div>` : "")}</div>`;
@@ -3559,7 +3567,7 @@ function cfgSuppliersHtml(c) {
     const s = state.supplier?.[x.supplierId], conf = SUP_CONF[s?.confidence] || ["", "mut"], vn = s?.vietnam?.distributors || [];
     return h`<li class="small"><b>${raw(supLink(x.supplierId, supName(s)))}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}${raw(c.controller?.model ? (x.hasController ? h`<span class="chip ok">có bộ điều khiển ${c.controller.model}</span>` : h`<span class="chip mut">trang không ghi bộ điều khiển ${c.controller.model}</span>`) : "")}
       <button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ</button>${raw(s?.website ? h` <a href="${s.website}" target="_blank" rel="noopener">website</a>` : "")}
-      ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
+      ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(SHOW_SRC && x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
   }).join(""))}</ol>`;
 }
 // Hàng trúng thầu đứng sau một cấu hình (web/bidprice.js wonEvidence, 2026-11-10): các phần mua sắm đã có kết quả mà hàng
@@ -3594,7 +3602,11 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
     // An engine and alternator read from the genset's own row show that row once, under the genset.
     const sameRow = (p) => c.genset?.src?.line && p.src?.line === c.genset.src.line;
     const part = (label, p) => (p ? h`<div><b>${label}:</b> ${p.model}${raw(p.make ? h` <span class="muted">(${p.make})</span>` : "")} <span class="chip mut">${CFG_SRC[p.src?.kind] || ""}</span>${raw(p.unverified ? '<span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(sameRow(p) ? "" : cfgSrcHtml(p.src))}</div>` : "");
-    return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${c.rank || i + 1}</b><span class="chip ${fit[1]}">${fit[0]}</span>${raw(c.fromFind ? `<span class="chip mut" title="${c.findChecked ? "Thêm từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, đã đối chiếu với các yêu cầu HSMT" : "Thêm bằng code từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, chưa đối chiếu đủ HSMT"}">Bổ sung từ Tìm NCC</span>` : "")}<span class="spacer"></span>
+    // Mỗi cấu hình thu gọn / mở rộng được (Khoa, 2026-11-10): #1 mở sẵn, các cấu hình sau thu gọn, tiêu đề vẫn đọc được
+    // hạng, kết quả, động cơ + đầu phát + bộ điều khiển và nhà cung cấp đầu (+ số còn lại).
+    const rk = c.rank || i + 1, cid = `cfgcard|${key}|${size}|${rk}`, first = i === 0;
+    const parts = [c.engine?.model, c.alternator?.model, c.controller?.model].filter(Boolean).join(" + ");
+    return h`<details class="card supcard sizebox cfgcard" data-sizebox="${cid}" data-def="${first ? "open" : ""}" ${boxOpen(cid, first) ? "open" : ""}><summary title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b style="font-size:15px">#${rk}</b><span class="chip ${fit[1]}">${fit[0]}</span><span class="small cfgparts">${parts}</span>${raw(c.suppliers?.length ? h`<span class="muted small">· ${supName(state.supplier?.[c.suppliers[0].supplierId]) || c.suppliers[0].supplierId}${c.suppliers.length > 1 ? ` +${c.suppliers.length - 1}` : ""}</span>` : "")}</summary><div class="row">${raw(c.fromFind ? `<span class="chip mut" title="${c.findChecked ? "Thêm từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, đã đối chiếu với các yêu cầu HSMT" : "Thêm bằng code từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, chưa đối chiếu đủ HSMT"}">Bổ sung từ Tìm NCC</span>` : "")}<span class="spacer"></span>
         ${raw(c.engine?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="engine" data-catkey="${window.GenbidCatalog?.keyOf(c.engine.model) || ""}">Xem động cơ</button>` : "")}
         ${raw(c.alternator?.src?.kind === "catalog" ? h`<button class="btn sm" data-catopen="alternator" data-catkey="${window.GenbidCatalog?.keyOf(c.alternator.model) || ""}">Xem đầu phát</button>` : "")}
         ${raw(c.controller?.model ? h`<button class="btn sm" data-catopen="controller" data-catkey="${window.GenbidCatalog?.keyOf(c.controller.model) || ""}">Xem bộ điều khiển</button>` : "")}
@@ -3604,23 +3616,23 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
       ${raw(c.checks?.length ? cfgGridBox(`cfggrid|${key}|${size}|${c.rank || i + 1}`, c.checks, h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
         const st = CFG_STATUS[x.status] || ["", "mut"];
         // factSrc: a figure of this engine / alternator model from another supplier's row or datasheet (config-bot.mjs modelFacts).
-        return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bộ điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
-          <td data-l="Chào" class="small">${x.offered || "—"}${raw(x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}${raw(cfgPartsHtml(x))}${raw(cfgHintHtml(x))}</td>
+        return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bộ điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(SHOW_SRC && x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
+          <td data-l="Chào" class="small">${x.offered || "—"}${raw(SHOW_SRC && x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}${raw(cfgPartsHtml(x))}${raw(cfgHintHtml(x))}</td>
           <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
       }).join(""))}</tbody></table></div>`) : "")}
       ${raw(cfgSuppliersHtml(c))}
       ${raw(key && !c.suppliers?.length && c.engine?.model ? h`<div class="row" style="margin-top:6px"><span class="small muted">Chưa có nhà cung cấp nào trong hệ thống cho cấu hình này.</span><span class="spacer"></span><button class="btn green sm" data-cfgfind="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp chào tổ máy dùng đúng động cơ${c.alternator?.model ? ", đầu phát" : ""}${c.controller?.model ? ", bộ điều khiển" : ""} của cấu hình này">Tìm nhà cung cấp</button></div>` : "")}
-      ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</div>`;
+      ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}</details>`;
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
 // A grouped requirement (the controller's protections, measurements...): each function with its result and source.
 // An "unclear" whose source has a line about it (config-bot.mjs check hints): shown so it can be read, not counted as met.
-const cfgHintHtml = (x) => (x.hint?.line ? h`<div class="small" style="color:var(--amber)">Nguồn có dòng liên quan (${x.hint.where || ""}), cần xem: <q>${x.hint.line}</q></div>` : "");
+const cfgHintHtml = (x) => (SHOW_SRC && x.hint?.line ? h`<div class="small" style="color:var(--amber)">Nguồn có dòng liên quan (${x.hint.where || ""}), cần xem: <q>${x.hint.line}</q></div>` : "");
 const cfgPartsHtml = (x) => (x.parts?.length ? h`<ul class="suplist">${raw(x.parts.map((p) => {
   const st = CFG_STATUS[p.status] || ["", "mut"];
-  return h`<li class="small"><span class="chip ${st[1]}">${st[0]}</span> <b>${p.item || ""}</b>${p.offered ? `: ${p.offered}` : ""}${raw(cfgHintHtml(p))}${raw(p.unverified ? ' <span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(p.sourceQuote ? h`<div class="muted small">Nguồn${p.factSrc ? ` (trên trang ${p.factSrc.supplierId})` : ""}: <q>${p.sourceQuote}</q></div>` : "")}${raw(p.note ? h`<div class="muted small">${p.note}</div>` : "")}</li>`;
+  return h`<li class="small"><span class="chip ${st[1]}">${st[0]}</span> <b>${p.item || ""}</b>${p.offered ? `: ${p.offered}` : ""}${raw(cfgHintHtml(p))}${raw(p.unverified ? ' <span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(SHOW_SRC && p.sourceQuote ? h`<div class="muted small">Nguồn${p.factSrc ? ` (trên trang ${p.factSrc.supplierId})` : ""}: <q>${p.sourceQuote}</q></div>` : "")}${raw(p.note ? h`<div class="muted small">${p.note}</div>` : "")}</li>`;
 }).join(""))}</ul>` : "");
-const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="small">Yêu cầu đọc từ HSMT (${r.requirements.length})</summary><ul class="suplist">${raw(r.requirements.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.from === "user" ? ' <span class="chip mut">Yêu cầu khác</span>' : "")}${raw(q.level === "option" ? ' <span class="chip mut">Tùy chọn khi đặt hàng</span>' : "")}${raw(q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "");
+const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="small">Yêu cầu đọc từ HSMT (${r.requirements.length})</summary><ul class="suplist">${raw(r.requirements.map((q) => h`<li class="small"><b>${q.item || ""}</b> ${q.requirement || ""}${raw(q.from === "user" ? ' <span class="chip mut">Yêu cầu khác</span>' : "")}${raw(q.level === "option" ? ' <span class="chip mut">Tùy chọn khi đặt hàng</span>' : "")}${raw(SHOW_SRC && q.quote ? h` <span class="muted">— <q>${q.quote}</q></span>` : "")}</li>`).join(""))}</ul></details>` : "");
 // Internet finds added to the catalog by config-bot.mjs (each checked with verify.mjs before it is added).
 const cfgAddedHtml = (r) => (r.catalogAdded?.length ? h`<div class="note"><b>Bổ sung vào danh mục nhà cung cấp từ internet</b><ul class="suplist">${raw(r.catalogAdded.map((a) => a.error
   ? h`<li class="small">${a.supplierId || ""}: chưa bổ sung — ${a.error}</li>`
@@ -3859,8 +3871,8 @@ function tlktHtml(c) {
     <div class="tablewrap"><table>
       <thead><tr><th>Yêu cầu kỹ thuật</th><th>Đề xuất của nhà cung cấp</th><th>Kết quả</th><th>Ghi chú</th></tr></thead>
       <tbody>${raw(items.map((i) => h`<tr>
-        <td>${raw(i.group ? h`<div class="muted small">${i.group}</div>` : "")}${raw(i.critical ? '<span class="badge" style="color:var(--red);border-color:transparent;margin-bottom:4px">Bắt buộc</span><br>' : "")}${i.requirement}${raw(i.requirementRef ? h`<div class="muted small">${i.requirementRef}</div>` : "")}</td>
-        <td>${i.offered || "—"}${raw(i.offeredRef ? h`<div class="muted small">${i.offeredRef}</div>` : "")}</td>
+        <td>${raw(i.group ? h`<div class="muted small">${i.group}</div>` : "")}${raw(i.critical ? '<span class="badge" style="color:var(--red);border-color:transparent;margin-bottom:4px">Bắt buộc</span><br>' : "")}${i.requirement}${raw(SHOW_SRC && i.requirementRef ? h`<div class="muted small">${i.requirementRef}</div>` : "")}</td>
+        <td>${i.offered || "—"}${raw(SHOW_SRC && i.offeredRef ? h`<div class="muted small">${i.offeredRef}</div>` : "")}</td>
         <td><span class="st ${i.status}">${STATUS[i.status] || i.status}</span></td>
         <td class="small">${i.note || ""}</td></tr>`).join(""))}</tbody>
     </table></div>
@@ -3896,10 +3908,10 @@ function analysisHtml(a) {
     <div style="display:flex;flex-direction:column;gap:10px">
       <h2>Điểm cần lưu ý</h2>
       ${raw(hl.map((x) => h`<div class="sev ${x.severity}">
-        <div class="row" style="gap:8px"><span class="tag">${SEV[x.severity] || x.severity}</span><span class="muted small">${CAT[x.category] || x.category || ""}${x.reference ? " · " + x.reference : ""}</span></div>
+        <div class="row" style="gap:8px"><span class="tag">${SEV[x.severity] || x.severity}</span><span class="muted small">${CAT[x.category] || x.category || ""}${SHOW_SRC && x.reference ? " · " + x.reference : ""}</span></div>
         <h3>${x.title}</h3>
         <div class="small">${x.detail}</div>
-        ${raw(x.quote ? h`<blockquote>"${x.quote}"</blockquote>` : "")}
+        ${raw(SHOW_SRC && x.quote ? h`<blockquote>"${x.quote}"</blockquote>` : "")}
         <div class="rec"><b>Nên làm:</b> ${x.recommendation}</div>
       </div>`).join("") || '<p class="muted">Không có điểm nào được đánh dấu.</p>')}
     </div>
@@ -3935,8 +3947,8 @@ function comparisonHtml(c) {
     <div class="tablewrap"><table>
       <thead><tr><th>Yêu cầu</th><th>Hồ sơ đáp ứng</th><th>Kết quả</th><th>Ghi chú</th></tr></thead>
       <tbody>${raw(items.map((i) => h`<tr>
-        <td>${raw(i.critical ? '<span class="badge" style="color:var(--red);border-color:transparent;margin-bottom:4px">Bắt buộc</span><br>' : "")}${i.requirement}${raw(i.requirementRef ? h`<div class="muted small">${i.requirementRef}</div>` : "")}</td>
-        <td>${i.offered || "—"}${raw(i.offeredRef ? h`<div class="muted small">${i.offeredRef}</div>` : "")}</td>
+        <td>${raw(i.critical ? '<span class="badge" style="color:var(--red);border-color:transparent;margin-bottom:4px">Bắt buộc</span><br>' : "")}${i.requirement}${raw(SHOW_SRC && i.requirementRef ? h`<div class="muted small">${i.requirementRef}</div>` : "")}</td>
+        <td>${i.offered || "—"}${raw(SHOW_SRC && i.offeredRef ? h`<div class="muted small">${i.offeredRef}</div>` : "")}</td>
         <td><span class="st ${i.status}">${STATUS[i.status] || i.status}</span></td>
         <td class="small">${i.note}</td></tr>`).join(""))}</tbody>
     </table></div>
