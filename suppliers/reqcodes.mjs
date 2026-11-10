@@ -66,6 +66,11 @@ export const REQ_CODES = [
   R("alt_make", "Hãng đầu phát", "alternator", "core", /^(đ[ầa]u|c[ủu])\s*ph[áa]t$|(h[ãa]ng|nh[àa]\s*s[ảa]n\s*xu[ấa]t|th[ưư][ơo]ng\s*hi[ệe]u|nh[ãa]n\s*hi[ệe]u)[^\n]{0,15}(đ[ầa]u|c[ủu])\s*ph[áa]t|(đ[ầa]u|c[ủu])\s*ph[áa]t[^\n]{0,30}(h[ãa]ng|th[ưư][ơo]ng\s*hi[ệe]u|nh[ãa]n\s*hi[ệe]u|nh[àa]\s*s[ảa]n\s*xu[ấa]t)|\b(Stamford|Leroy|Mecc\s*Alte|Marathon)\b/i),
   R("alt_model", "Model đầu phát", "alternator", "core", /(model|m[ãa]\s*hi[ệe]u)[^\n]{0,10}(đ[ầa]u|c[ủu])\s*ph[áa]t|(đ[ầa]u|c[ủu])\s*ph[áa]t[^\n]{0,30}\b(model|m[ãa]\s*hi[ệe]u)\b/i),
   R("alt_origin", "Xuất xứ đầu phát", "alternator", "core", /(xu[ấa]t\s*x[ứu]|n[ơo]i\s*s[ảa]n\s*xu[ấa]t)[^\n]{0,20}(đ[ầa]u|c[ủu])\s*ph[áa]t|(đ[ầa]u|c[ủu])\s*ph[áa]t[^\n]{0,40}(xu[ấa]t\s*x[ứu]|n[ơo]i\s*s[ảa]n\s*xu[ấa]t)/i),
+  // Loại tải (2026-11-10): kích từ riêng (PMG / AREP) và dòng ngắn mạch duy trì (300% / 10 s) quyết định đầu phát chịu
+  // được động cơ khởi động trực tiếp, bơm chữa cháy, UPS / biến tần, và cho bảo vệ chọn lọc làm việc. Trước alt_type,
+  // whose words also take "PMG" / "excit".
+  R("alt_excitation", "Kích từ đầu phát (PMG / AREP)", "alternator", "core", /\bPMG\b|\bAREP\b|nam\s*ch[âa]m\s*v[ĩi]nh\s*c[ửu]u|permanent\s*magnet|k[íi]ch\s*t[ừu]\s*(ph[ụu]|ri[êe]ng|đ[ộo]c\s*l[ậa]p|b[ằa]ng\s*m[áa]y\s*ph[áa]t\s*ph[ụu])/i),
+  R("alt_short_circuit", "Dòng ngắn mạch duy trì (300% / 10 s)", "alternator", "core", /ng[ắa]n\s*m[ạa]ch\s*(duy\s*tr[ìi]|b[ềe]n\s*v[ữu]ng)|sustained\s*short|short\s*-?\s*circuit\s*(current\s*)?(sustain|capab|capacity|withstand)|(300\s*%|\b3\s*x?\s*I\s*[nN]\b)[^\n]{0,40}?\b10\s*%?\s*(s\b|gi[âa]y|sec)/i),
   R("alt_type", "Kiểu đầu phát (không chổi than, tự kích)", "alternator", "core", /ki[ểe]u\s*(đ[ầa]u|c[ủu])\s*ph[áa]t|lo[ạa]i\s*(đ[ầa]u|c[ủu])\s*ph[áa]t|ch[ổo]i\s*than|brushless|t[ựu]\s*k[íi]ch|k[íi]ch\s*t[ừu]|\bPMG\b|excit|đ[ồo]ng\s*b[ộo]\s*3\s*pha|synchronous/i),
   R("alt_power", "Công suất đầu phát", "alternator", "core", /(?<!h[ệe]\s*s[ốo]\s*)c[ôo]ng\s*su[ấa]t[^\n]{0,20}(đ[ầa]u|c[ủu])\s*ph[áa]t|(đ[ầa]u|c[ủu])\s*ph[áa]t[^\n]{0,30}c[ôo]ng\s*su[ấa]t|alternator\s*(output|rating|power)/i),
   R("alt_insulation", "Cấp cách điện", "alternator", "core", /c[ấa]p\s*c[áa]ch\s*đi[ệe]n|c[áa]ch\s*đi[ệe]n\s*(c[ấa]p|lo[ạa]i|class)?\s*[FH]\b|insulation|đ[ộo]\s*t[ăa]ng\s*nhi[ệe]t|temperature\s*rise/i),
@@ -136,6 +141,8 @@ const KIND = {
   // alternator
   alt_make: "model", alt_model: "model",
   alt_origin: "model", // lưỡng lự như engine_origin
+  alt_excitation: "model", // PMG / AREP đổi bộ kích từ của đầu phát; có đầu phát cho chọn khi đặt hàng — lưỡng lự, để model
+  alt_short_circuit: "model", // khả năng của đầu phát + kích từ, datasheet ghi (đường cong suy giảm ngắn mạch)
   alt_type: "model", // không chổi than, tự kích (PMG / AREP là tùy chọn của nhiều đầu phát — lưỡng lự, để model)
   alt_power: "model", alt_insulation: "model", alt_poles: "model", alt_bearing: "model", alt_pitch: "model",
   alt_winding: "model", alt_efficiency: "model", alt_thd: "model", alt_cooling: "model",
