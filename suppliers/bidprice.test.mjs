@@ -384,7 +384,7 @@ test("costHints: costs that may arise, with the words of the analysis; none gues
     contractTerms: [{ term: "Nghiệm thu", requirement: "Chạy thử liên tục 2 giờ đến Pđm tại công trình", quote: "chạy thử" }],
   } };
   const h = BP.costHints(a, [{ label: "ats", kind: "vnd", value: 1 }]);
-  assert.deepEqual(h.map((x) => x.id), ["ats", "exhaust", "canopy", "loadtest", "remote", "warranty"]);
+  assert.deepEqual(h.map((x) => x.id), ["ats", "canopy", "loadtest", "remote", "warranty"]);
   assert.equal(h.find((x) => x.id === "ats").have, true);
   assert.equal(h.find((x) => x.id === "canopy").have, false);
   assert.match(h.find((x) => x.id === "remote").quote, /Lý Sơn/);
@@ -393,6 +393,10 @@ test("costHints: costs that may arise, with the words of the analysis; none gues
   assert.ok(h.every((x) => !("value" in x)));
   assert.deepEqual(BP.costHints({ result: { technicalSpecs: [{ item: "ATS", requirement: "Không có trong tài liệu được cung cấp" }], keyInfo: { warranty: "12 tháng" } } }), []);
   assert.deepEqual([BP.monthsIn("tối thiểu 730 ngày"), BP.monthsIn("02 năm"), BP.monthsIn("không ghi")], [24, 24, null]);
+  // Lắp đặt and the exhaust only when the HSMT makes them an item of their own, not in a scope or accessory list.
+  const own = (specs) => BP.costHints({ result: { technicalSpecs: specs } }).map((x) => x.id);
+  assert.deepEqual(own([{ item: "Phạm vi công việc", requirement: "Cung cấp, vận chuyển; lắp đặt, nghiệm thu" }, { item: "Phụ kiện đi kèm", requirement: "Ắc quy; Ống xả" }]), []);
+  assert.deepEqual(own([{ item: "Lắp đặt, chạy thử", requirement: "Bởi kỹ sư hãng" }, { item: "Ống thoát gió nóng, ống khói", requirement: "Tôn kẽm 0,75mm" }]), ["exhaust", "install"]);
 });
 
 test("financeCost: advance, payment, guarantees from the contract terms; rate and days from the user, else nothing", () => {
@@ -430,7 +434,7 @@ test("feasibility: cost and capital cost at or over the package price, or over t
   assert.equal(BP.feasibility({ P: 1e9, cost: 8.9e8, finance: 2e7, levels }).flags[0].id, "over-levels");
   const f = BP.feasibility({ P: 1e9, cost: 9.9e8, finance: 2e7, levels }).flags[0];
   assert.equal(f.id, "over-package");
-  assert.match(f.text, /1\.010\.000\.000 đ.*101\.0% giá gói/);
+  assert.match(f.text, /1\.010\.000\.000 đ.*bằng 101% giá gói/);
   assert.deepEqual(BP.feasibility({ P: 1e9, cost: null, levels }).flags, []);
 });
 
