@@ -1765,7 +1765,12 @@ function claudeExe() {
   if (fs.existsSync(base)) walk(base, 0);
   return found.sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs)[0] || "claude";
 }
-const LIMIT = /hit your [a-z ]*limit|usage limit|rate limit|session limit/i;
+const LIMIT = /hit your [a-z ]*limit|usage limit|rate limit|session limit|credit balance is too low/i;
+// Khoa 11/11/2026: gọi Claude trả bằng API key (tệp .anthropic-api-key) thay vì hạn mức tháng; cả khi chạy tay (specs,
+// history-config). Bot đã đặt sẵn biến này cho lượt AI; không có tệp thì như cũ (đăng nhập /login).
+if (!process.env.ANTHROPIC_API_KEY) {
+  try { const k = fs.readFileSync(path.join(ROOT, ".anthropic-api-key"), "utf8").trim().split(/\r?\n/)[0]; if (k) process.env.ANTHROPIC_API_KEY = k; } catch {}
+}
 function askOnce(prompt, model) {
   return new Promise((resolve) => {
     const p = cp.spawn(claudeExe(), ["-p", "--output-format", "json", "--model", model, "--tools", "", "--strict-mcp-config", "--disable-slash-commands"], { windowsHide: true });
