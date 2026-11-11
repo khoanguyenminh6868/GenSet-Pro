@@ -411,7 +411,18 @@ const sigOf = (v) => { const n = numbersIn(v); return n.length ? { nums: n } : {
 // "14" / "10.8" do not.
 // Two numbers within 3% are one figure rounded two ways (37.8 / 38 L, 135 / 136 L of oil), not a disagreement.
 const near = (v, w) => Math.abs(v - w) <= Math.max(Math.abs(v), Math.abs(w)) * 0.03;
-const disagree = (a, b) => { const x = sigOf(a), y = sigOf(b); if (x.nums && y.nums) return !x.nums.some((v) => y.nums.some((w) => near(v, w))); if (x.words && y.words) return !x.words.some((w) => y.words.includes(w)); return false; };
+// An insulation class written alone ("H", "CLASS H", "cấp H", "loại F"): the letter is the value; `sigOf` keeps no word
+// of one letter, so "H" and "H" used to disagree (điều phối 2026-11-11, cfg-r4). Only a value that is that and nothing else.
+const classOf = (v) => (String(v ?? "").trim().match(/^(?:(?:class|c[ấa]p|lo[ạa]i)\s*)?([BFHC])\.?$/i) || [])[1]?.toUpperCase() || null;
+// A ratio "x:1" (compression): the figure x itself, no rounding allowance — 16.8:1 and 17.3:1 differ, 17:1 and 17.0:1 do
+// not (the shared "1" made them agree). A bare figure against a ratio is read as that ratio's x.
+const ratioOf = (v) => { const m = String(v ?? "").trim().replace(/(\d),(\d)/g, "$1.$2").match(/^(\d{1,2}(?:\.\d+)?)\s*(:\s*1)?$/); return m ? { x: Number(m[1]), ratio: !!m[2] } : null; };
+const disagree = (a, b) => {
+  const ca = classOf(a), cb = classOf(b);
+  if (ca && cb) return ca !== cb;
+  const ra = ratioOf(a), rb = ratioOf(b);
+  if (ra && rb && (ra.ratio || rb.ratio)) return ra.x !== rb.x;
+  const x = sigOf(a), y = sigOf(b); if (x.nums && y.nums) return !x.nums.some((v) => y.nums.some((w) => near(v, w))); if (x.words && y.words) return !x.words.some((w) => y.words.includes(w)); return false; };
 // Engine figures that depend on the genset they are in, so they stay with their own row: the output (prime / standby,
 // 50 / 60 Hz), the speed (1500 / 1800 rpm) and the coolant volume (the radiator is the genset's).
 const ROW_ONLY = new Set(["engPower", "speed", "coolant"]);
@@ -2605,16 +2616,25 @@ export function makerSheetChecks(c, reqs, facts = {}) {
     const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
     if (x && (x.status !== "unclear" || x.version || x.parts?.length)) continue;
     const list = (facts[part] || []).filter((f) => f.key === key);
-    // Two values differ by the figure the code compares: the class letter ("CLASS H" and "H" are one value; `disagree`
-    // sees no word of one letter in either), the ratio itself ("16.8:1" / "17.3:1" share the "1", and are within the
-    // 3% `disagree` takes for rounding), else as factConflicts reads them.
-    const differ = (a, b) => (r.code === "alt_insulation" ? SHEET_CLASS(a) !== SHEET_CLASS(b) : r.code === "compression" ? figsOf(a)[0] !== figsOf(b)[0] : norm(a) !== norm(b) && disagree(a, b));
+    // Two values differ as factConflicts reads them (`disagree`: a class letter, a ratio x:1 by x); an insulation value
+    // with more words than the class ("CLASS H, 125 °C rise") by its letter.
+    const differ = (a, b) => (r.code === "alt_insulation" ? SHEET_CLASS(a) !== SHEET_CLASS(b) : norm(a) !== norm(b) && disagree(a, b));
     const sheets = list.filter((f) => f.sheet);
     if (!sheets.length || sheets.some((f) => sheets.some((g) => differ(f.value, g.value)))) continue;
     const others = list.filter((f) => !f.sheet && sheets.some((g) => differ(f.value, g.value)));
     if (!others.length) continue;
     const v = sheets.map((f) => SHEET_CMP[r.code](f.value, r.requirement || ""));
     if (v.some((b) => b == null) || new Set(v).size !== 1) continue;
+    // A supplier of this very configuration (its rows' src, or among its suppliers) is one that writes otherwise: what it
+    // delivers may be that other build (acepow-fuan offers WP10D320E200 both "Mechanically" and "Electronic"), so the
+    // maker's sheet does not decide (điều phối 2026-11-11). Kept "unclear", with why.
+    const own = new Set([...["engine", "alternator", "genset"].map((p) => c[p]?.src?.kind === "catalog" ? c[p].src.supplierId : null), ...(c.suppliers || []).map((s) => s.supplierId)].filter(Boolean));
+    const mine = [...new Set(others.map((g) => g.supplierId).filter((id) => own.has(id)))];
+    if (mine.length) {
+      const why = `Code ghi: tờ thông số hãng (${sheets[0].supplierId} [${sheets[0].n}]) ghi khác nguồn của chính nhà cung cấp ${mine.join(", ")} trong cấu hình; nhà cung cấp có thể giao bản khác nên chưa theo tờ hãng, cần xác nhận.`;
+      if (x) { x.makerBlocked = mine; if (!String(x.note || "").includes(why)) x.note = [x.note, why].filter(Boolean).join(" "); }
+      continue;
+    }
     const f = sheets[0], ids = [...new Set(others.map((g) => g.supplierId))];
     putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: f.value, sourceQuote: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line },
       part, level: r.level === "option" ? "option" : "core", status: v[0] ? "met" : "not_met", byCode: true, rule: "to-hang", makerOver: ids,

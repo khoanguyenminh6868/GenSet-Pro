@@ -130,10 +130,11 @@ test("B: modelFacts marks only the part maker's own sheet of the exact model (no
   assert.deepEqual(of("compr"), ["aosif:17.3:1:false", "cummins-inc:16.8:1:true", "gm:17.0:1:false"]);
 });
 
-test("B through check(): a conflicting displacement follows the engine maker's sheet", () => {
-  const lineA = "| A-1 | 275 | 220 | NTA855-G1B | UCI274G | 6 | 10.8 |";
+test("B through check(): a conflicting displacement follows the engine maker's sheet (another assembler differs, not the configuration's)", () => {
+  const lineA = "| A-1 | 275 | 220 | NTA855-G1B | UCI274G | 6 |";
   const sups = [
-    { id: "a", country: "CN", role: "genset_oem", specTables: [{ n: 101, title: "Cummins gensets 50Hz", header: ["| Model | Prime kVA | Prime kW | Engine | Alternator | Cylinders | Displacement (L) |"], rows: [lineA] }] },
+    { id: "a", country: "CN", role: "genset_oem", specTables: [{ n: 101, title: "Cummins gensets 50Hz", header: ["| Model | Prime kVA | Prime kW | Engine | Alternator | Cylinders |"], rows: [lineA] }] },
+    { id: "c", country: "CN", role: "genset_oem", specTables: [{ n: 1001, title: "NTA855-G1B datasheet", header: [], rows: ["| Engine Model | NTA855-G1B", "| Displacement | 10.8 L"] }] },
     { id: "cummins-inc", country: "US", role: "engine_maker", specTables: [{ n: 2005, title: "Datasheet: NTA855-G1B", header: [], rows: ["| Displacement | 14 L", "| Governor | Electronic"] }] },
   ];
   const src = { kind: "catalog", supplierId: "a", n: 101, line: lineA };
@@ -142,5 +143,36 @@ test("B through check(): a conflicting displacement follows the engine maker's s
       checks: [{ item: "Dung tích xi lanh", part: "engine", status: "unclear", offered: "10.8 / 14 L (nguồn khác nhau)", hsmtQuote: "Dung tích xi lanh ≥ 11 lít" }] }] };
   const { result } = check(r, { hsmtText: "Chương V. Yêu cầu kỹ thuật\nDung tích xi lanh ≥ 11 lít\nCông suất prime ≥ 250 kVA", suppliers: sups, readWeb: () => null, origin: "all" });
   const x = result.configs[0].checks.find((y) => y.item === "Dung tích xi lanh");
-  assert.deepEqual([x.status, x.rule, x.offered, x.makerOver], ["met", "to-hang", "14 L", ["a"]]);
+  assert.deepEqual([x.status, x.rule, x.offered, x.makerOver], ["met", "to-hang", "14 L", ["c"]]);
+});
+
+// ---------- Sửa theo điều phối (2026-11-11) ----------
+test("B blocked: a supplier of this configuration writes otherwise → unclear, with why; not one of its own → met", () => {
+  const G = R("governor", "Bộ điều tốc", "Điện tử");
+  const facts = { engine: [F("gov", "Electronic Governor", "weichai-power", true, 113), F("gov", "Mechanically", "acepow-fuan", false, 104)] };
+  const un = () => ({ ...cfg([{ item: G.item, part: "engine", status: "unclear", offered: "" }]), engine: { model: "WP10D320E200", src: { kind: "catalog", supplierId: "uleengen", n: 101, line: "x" } } });
+  // In c.suppliers.
+  const a = makerSheetChecks({ ...un(), suppliers: [{ supplierId: "acepow-fuan" }] }, [G], facts).checks[0];
+  assert.deepEqual([a.status, a.makerBlocked], ["unclear", ["acepow-fuan"]]);
+  assert.match(a.note, /nguồn của chính nhà cung cấp acepow-fuan trong cấu hình/);
+  // As the row (src) of the configuration.
+  const b = { ...un(), suppliers: [] }; b.engine.src.supplierId = "acepow-fuan";
+  assert.equal(makerSheetChecks(b, [G], facts).checks[0].status, "unclear");
+  // Run twice: the note once.
+  const twice = makerSheetChecks(makerSheetChecks({ ...un(), suppliers: [{ supplierId: "acepow-fuan" }] }, [G], facts), [G], facts).checks[0];
+  assert.equal(twice.note.match(/chưa theo tờ hãng/g).length, 1);
+  // The configuration's supplier is not among those that differ (IB2600594596 #3: uleengen): met.
+  assert.equal(makerSheetChecks({ ...un(), suppliers: [{ supplierId: "uleengen" }] }, [G], facts).checks[0].status, "met");
+});
+
+test("disagree: an insulation class alone agrees by its letter; a ratio x:1 by x, without the 3% rounding", async () => {
+  const { factConflicts } = await import("./config-bot.mjs");
+  const f = (key, value, n) => ({ key, value, supplierId: `s${n}`, n });
+  assert.equal(factConflicts([f("insul", "H", 1), f("insul", "H", 2), f("insul", "CLASS H", 3), f("insul", "cấp H", 4)]).size, 0);
+  assert.equal(factConflicts([f("insul", "H", 1), f("insul", "F", 2)]).size, 1);
+  assert.equal(factConflicts([f("compr", "16.8:1", 1), f("compr", "17.3:1", 2)]).size, 1);
+  assert.equal(factConflicts([f("compr", "17:1", 1), f("compr", "17.0:1", 2)]).size, 0);
+  assert.equal(factConflicts([f("compr", "17.3", 1), f("compr", "16.8:1", 2)]).size, 1);
+  // Other figures keep the 3% rounding (12.5 / 12.54 L).
+  assert.equal(factConflicts([f("disp", "12.5", 1), f("disp", "12.54", 2)]).size, 0);
 });
