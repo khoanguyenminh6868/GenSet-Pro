@@ -1201,6 +1201,12 @@ const CTL_MEASURE = new Set(CTL_WORDS.filter(([re]) => ["điện áp", "dòng đ
 
 // ---------- check ----------
 // Returns { result, problems } with result fixed in place: unverified marks, "met" without proof → "unclear".
+// A supplier's `why` on screen without the internal labels input.md gives the agent (Khoa 2026-11-11, gói IB2600603983:
+// "genset_oem, độ tin cậy medium" showed under each supplier). The row itself stays in `line` (SHOW_SRC).
+export const plainWhy = (s) => String(s || "")
+  .replace(/[;,]?\s*(?:vai trò:?\s*)?\b(?:genset_oem|engine_maker|alternator_maker|controller_maker|distributor)\b/gi, "")
+  .replace(/[;,]?\s*độ tin cậy:?\s*(?:high|medium|low|cao|trung bình|thấp)\b/gi, "")
+  .replace(/\s*[;,]\s*(?=[;,]|$)/g, "").replace(/^\s*[;,]\s*/, "").replace(/\s{2,}/g, " ").trim();
 export function check(result, { hsmtText, suppliers, readWeb, origin, basis, sized = false }) {
   const problems = [], H = norm(hsmtText);
   const sup = new Map(suppliers.map((s) => [s.id, s]));
@@ -1408,6 +1414,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     });
   }
   result.configs = (result.configs || []).slice(0, MAX_CONFIGS);
+  for (const c of result.configs) for (const s of c.suppliers || []) if (s.why) s.why = plainWhy(s.why);
   copyModelChecks(result.configs, sourceText);
   // Kiểm tra tổ hợp (2026-11-10): what the HSMT says about site, overload, load step and load types, read once.
   const combo = hsmtCombo(hsmtText, result.requirements || []);
@@ -1757,8 +1764,9 @@ export function vregChecks(c, reqs = [], facts = []) {
   const lines = [x.sourceQuote, ...facts.filter((f) => VREG_LINE.test(`${f.label || ""} ${f.line || ""}`)).map((f) => f.line)].filter((l) => l && !TRANSIENT.test(l));
   const got = [...new Set(lines.flatMap(pctsIn))].filter((v) => v > 0 && v < 10).sort((a, b) => a - b);
   if (!got.length || got.some((v) => v <= y)) return c;
-  const avr = `phụ thuộc AVR chọn khi đặt hàng: nguồn ghi ±${got.map(pctVi).join(" / ±")}%, HSMT đòi ±${pctVi(y)}%`;
-  x.was = x.status; x.status = "confirm"; x.confirm = "order"; x.avr = avr;
+  // What the sources say stays in avrSrc (no citation on screen, Khoa 2026-11-11); the note says only what to confirm.
+  const avr = `phụ thuộc AVR chọn khi đặt hàng, cần AVR đạt ±${pctVi(y)}%`;
+  x.was = x.status; x.status = "confirm"; x.confirm = "order"; x.avr = avr; x.avrSrc = `±${got.map(pctVi).join(" / ±")}%`;
   x.note = [String(x.note || "").replace(/\s*Code ghi: phụ thuộc AVR[^.]*\.$/, ""), `Code ghi: ${avr}.`].filter(Boolean).join(" ");
   return c;
 }
@@ -2161,7 +2169,7 @@ export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKv
       out.bmep = { value: cv.value, rating, text: `BMEP ≈ ${fmt(cv.value)} bar ở công suất ${rating} (${fmt(P)} kWm, ${fmt(V)} L, ${spd} v/p) — chỉ để tham khảo khả năng nhận tải, không dùng để kết luận.`, basis: CONV.FORMULAS.bmep_4s.basis };
     }
     // A load step requirement of the HSMT already has its line (rfqOf asks for the test report there).
-    if (!reqs.some((r) => r.code === "load_step")) asks.push({ part: "genset", item: "Nhận tải một bước / ISO 8528-5", requirement: combo.loadStep.quote.slice(0, 160), kind: "model", status: "unclear",
+    if (!reqs.some((r) => r.code === "load_step")) asks.push({ part: "genset", item: "Nhận tải một bước / ISO 8528-5", requirement: "", quote: combo.loadStep.quote.slice(0, 160), kind: "model", status: "unclear",
       ask: `Gửi kết quả thử nhận tải một bước theo ISO 8528-5 (% tải nhận được ở cấp G2 / G3) của tổ máy${out.bmep ? ` (BMEP tham khảo ${fmt(out.bmep.value)} bar)` : ""}` });
   }
   // 3. Site above 40 °C or 1 000 m: the maker's derating curve. No figure is computed: the sources give no factor.
@@ -2174,7 +2182,9 @@ export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKv
   for (const lt of combo?.loadTypes || []) {
     const l = LOAD_TYPES.find((x) => x.type === lt.type);
     if (l.code && metCode(l.code)) continue;
-    asks.push({ part: l.part, item: `Loại tải: ${l.label}`, requirement: lt.quote.slice(0, 160), kind: "model", status: "unclear", ask: l.ask });
+    // The HSMT's own line stays in quote (shown only with SHOW_SRC); the screen and the copied text show the requirement
+    // as read (Khoa 2026-11-11: no citations on screen; "300% (3 IN) trong 10 % giây" was the HSMT's line, typo and all).
+    asks.push({ part: l.part, item: `Loại tải: ${l.label}`, requirement: reqs.find((r) => l.code && r.code === l.code)?.requirement || "", quote: lt.quote.slice(0, 160), kind: "model", status: "unclear", ask: l.ask });
   }
   c.combo = out; c.comboAsk = asks;
   if (warnings.length) c.warnings = warnings; else delete c.warnings;

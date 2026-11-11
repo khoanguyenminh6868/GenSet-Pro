@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { vregChecks, pctsIn, clarifyOf, rebidOf, rfqOf, rfqPoints, RFQ_TIERS, confirmChecks, scoreOf, rankConfigs } from "./config-bot.mjs";
+import { plainWhy, vregChecks, pctsIn, clarifyOf, rebidOf, rfqOf, rfqPoints, RFQ_TIERS, confirmChecks, scoreOf, rankConfigs } from "./config-bot.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const VREG = { code: "alt_vreg", item: "Ổn định điện áp", part: "alternator", level: "core", requirement: "Dao động điện áp ≤ ±0,5% Udm", quote: "15   Dao động điện áp                          ≤ ± 0,5% Udm" };
@@ -23,13 +23,15 @@ test("A: alt_vreg not met / unclear with a looser band in the source → confirm
   const c = vregChecks(vcfg({ status: "not_met", offered: "≤ ±1%", sourceQuote: "| Voltage regulation NL-FL | ≤±1%" }), [VREG]);
   const x = c.checks[0];
   assert.equal(x.status, "confirm"); assert.equal(x.confirm, "order"); assert.equal(x.was, "not_met");
-  assert.match(x.note, /phụ thuộc AVR chọn khi đặt hàng: nguồn ghi ±1%, HSMT đòi ±0,5%/);
+  assert.match(x.note, /phụ thuộc AVR chọn khi đặt hàng, cần AVR đạt ±0,5%/);
+  assert.doesNotMatch(x.note, /nguồn ghi/);
+  assert.equal(x.avrSrc, "±1%");
   // From a line of the alternator model's sources when the check has no quote.
   const u = vregChecks(vcfg({ status: "unclear" }), [VREG], [{ label: "Voltage Regulation", value: "±1%", line: "| Voltage Regulation, | ≤±1%" }]);
   assert.equal(u.checks[0].status, "confirm");
   // The strictest band the HSMT states is the one asked (0,5 of 0,5 and 1,5).
   const two = { ...VREG, requirement: "≤ ±0,5% Udm; ≤ ±1,5% Udm" };
-  assert.match(vregChecks(vcfg({ status: "not_met", sourceQuote: "≤±1%" }), [two]).checks[0].note, /HSMT đòi ±0,5%/);
+  assert.match(vregChecks(vcfg({ status: "not_met", sourceQuote: "≤±1%" }), [two]).checks[0].note, /cần AVR đạt ±0,5%/);
   // No longer counted against the configuration.
   assert.deepEqual(scoreOf(c, [VREG]), scoreOf(vcfg({ status: "met", sourceQuote: "x" }), [VREG]));
 });
@@ -190,4 +192,9 @@ test("D: rfq texts — noise at the HSMT's distance, origin asks for the CO; joi
   assert.ok(q.length <= 12, `${q.length} lines`);
   // rankConfigs writes the new form.
   assert.ok(rankConfigs({ requirements: RQ, configs: [rcfg()] }).configs[0].rfq.every((x) => Number.isInteger(x.tier)));
+});
+test("plainWhy bỏ nhãn nội bộ khỏi lý do chọn nhà cung cấp (Khoa 11/11)", () => {
+  assert.equal(plainWhy("Chính dòng UP750GF (4006-23TAG2A + S5L1D-H41); genset_oem, độ tin cậy medium; có chào DSE8610"), "Chính dòng UP750GF (4006-23TAG2A + S5L1D-H41); có chào DSE8610");
+  assert.equal(plainWhy("Dòng KP750D5 ghi 4006-23TAG2A, prime 750 kVA; genset_oem"), "Dòng KP750D5 ghi 4006-23TAG2A, prime 750 kVA");
+  assert.equal(plainWhy("Chào đúng động cơ"), "Chào đúng động cơ");
 });
