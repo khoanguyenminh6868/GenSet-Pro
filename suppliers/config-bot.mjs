@@ -853,7 +853,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   return { top: out, all: rows };
 }
 // At most 6 configurations (Khoa 2026-11-03: a run checked 49 requirements × 8 configurations in 11 minutes).
-export const MAX_CONFIGS = 6;
+export const MAX_CONFIGS = 6, PER_MAKE_CONFIGS = 2;
 // A configuration whose controller (engine, alternator) is that of an earlier one may leave out the checks of that
 // part: the code copies them: a check read from the model's figures (factSrc), one whose quote is also in this
 // configuration's own source of that part, and a controller function no source states. Each copy is then checked
@@ -2666,7 +2666,7 @@ export function rankConfigs(result) {
   // One configuration per engine + alternator + controller (2026-11-06 audit: a run gave five rows of one 6BTAA5.9-G12,
   // one supplier each): a later row of the same models (or with no controller of its own) hands its suppliers to the
   // first and goes; and at most 3 rows per engine, so several engines are shown.
-  const seen = new Map(), perEngine = new Map(), ctlKey = (c) => (c.controller?.model ? CAT.keyOf(ctlModelOf(c.controller) || c.controller.model) : "");
+  const seen = new Map(), perEngine = new Map(), perMake = new Map(), ctlKey = (c) => (c.controller?.model ? CAT.keyOf(ctlModelOf(c.controller) || c.controller.model) : "");
   list = list.filter(({ c }) => {
     const ek = CAT.keyOf(c.engine?.model || ""), k = `${ek}|${CAT.keyOf(c.alternator?.model || "")}`;
     if (!ek) return true;
@@ -2677,9 +2677,14 @@ export function rankConfigs(result) {
       if (!first.controller?.model && c.controller?.model) first.controller = c.controller;
       return false;
     }
+    // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third.
+    const mk = String(c.engine?.make || "").split("/")[0].trim().toLowerCase();
+    if (mk && (perMake.get(mk) || 0) >= PER_MAKE_CONFIGS) return false;
     seen.set(k, [...(seen.get(k) || []), c]);
     perEngine.set(ek, (perEngine.get(ek) || 0) + 1);
-    return perEngine.get(ek) <= 3;
+    if (perEngine.get(ek) > 3) return false;
+    if (mk) perMake.set(mk, (perMake.get(mk) || 0) + 1);
+    return true;
   });
   result.configs = list.map(({ c }, i) => {
     // Suppliers: one offering both the engine (its checked row names it) and the controller first, then one whose
