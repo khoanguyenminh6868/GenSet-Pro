@@ -1915,7 +1915,7 @@ export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
       const file = path.join(dir, String(s.id), `${src.n}.md`);
       if (!fs.existsSync(file)) continue;
       const text = fs.readFileSync(file, "utf8");
-      if (!/RATINGS|^Ratings (50|60) Hz|rpm \((50|60) Hz Ratings\)/m.test(text)) continue;
+      if (!/RATINGS|TEMPERATURE RISE|^Ratings (50|60) Hz|rpm \((50|60) Hz Ratings\)/im.test(text)) continue;
       const fam = BP.familyOf(s.names?.en, ...(s.names?.brands || []), s.id);
       for (const r of ratingsOf(text)) {
         const x = { ...r, supplierId: s.id, n: src.n, url: src.url };
@@ -1936,7 +1936,8 @@ export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
 export function altColumns(list, { hz, rating = "prime", reqs = [] } = {}) {
   if (!hz || !list?.length) return null;
   const duty = rating === "standby" ? "Standby" : "Cont.";
-  let sel = list.filter((x) => x.hz === hz && x.duty === duty && x.phase === 3);
+  // Continuous: class F 105/40 and H 125/40 (a ratings book also lists B 80/40, which no set is rated on here).
+  let sel = list.filter((x) => x.hz === hz && x.duty === duty && x.phase === 3 && (duty !== "Cont." || /^(105|125)\/|^[FH]:/.test(x.rise)));
   if (!sel.length) return null;
   const vr = (reqs || []).find((r) => r.code === "voltage"), want = vr ? voltsIn(`${vr.requirement || ""} ${vr.quote || ""}`).filter((v) => v >= 300 && v <= 500) : [];
   const atV = sel.filter((x) => want.includes(x.volt));
