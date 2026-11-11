@@ -1,0 +1,888 @@
+[
+ {
+  "n": 101,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-ii/",
+  "title": "Technical data - D8-EU STAGE II",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-ii/",
+  "header": [
+   "| | TAD840GE-B | TAD841GE | TAD842GE | TAD843GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 176 kWm / 203 kVA / 162 kWe | 220 kWm / 253 kVA / 202 kWe | 261 kWm / 303 kVA / 243 kWe | 280 kWm / 326 kVA / 260 kWe",
+   "| Standby power | 194 kWm / 223 kVA / 178 kWe | 242 kWm / 278 kVA / 223 kWe | 287 kWm / 334 kVA / 267 kWe | 308 kWm / 359 kVA / 286 kWe",
+   "| 60 Hz power",
+   "| Prime power | 194 kWm / 223 kVA / 178 kWe | 225 kWm / 259 kVA / 207 kWe | 261 kWm / 303 kVA / 243 kWe | 274 kWm / 318 kVA / 254 kWe",
+   "| Standby power | 213 kWm / 245 kVA / 196 kWe | 248 kWm / 285 kVA / 228 kWe | 287 kWm / 334 kVA / 267 kWe | 301 kWm / 350 kVA / 280 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO | Diesel/HVO | Diesel/HVO | Diesel/HVO",
+   "| Number of cylinders | 6 | 6 | 6 | 6",
+   "| High-pressure fuel injection | Common-rail fuel injection | Common-rail fuel injection | Common-rail fuel injection | Common-rail fuel injection"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-iiia-epa-tier-3/",
+  "title": "Technical data - D8 - EU Stage IIIA/EPA Tier 3",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-iiia-epa-tier-3/",
+  "header": [
+   "| | TAD851GE | TAD852GE | TAD853GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 220 kWm / 253 kVA / 202 kWe | 248 kWm / 289 kVA / 231 kWe | 248 kWm / 291 kVA / 233 kWe",
+   "| Standby power | 242 kWm / 278 kVA / 223 kWe | 273 kWm / 317 kVA / 254 kWe | 273 kWm / 321 kVA / 257 kWe",
+   "| 60 Hz power",
+   "| Prime power | 225 kWm / 259 kVA / 207 kWe | 247 kWm / 287 kVA / 230 kWe | 266 kWm / 313 kVA / 250 kWe",
+   "| Standby power | 248 kWm / 285 kVA / 228 kWe | 272 kWm / 316 kVA / 253 kWe | 293 kWm / 344 kVA / 275 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO | Diesel/HVO | Diesel/HVO",
+   "| Number of cylinders | 6 | 6 | 6",
+   "| High-pressure fuel injection | Common-rail fuel injection | Common-rail fuel injection | Common-rail fuel injection"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-v/",
+  "title": "Technical data - D8 - EU Stage V",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-v/",
+  "header": [
+   "| | TAD880GE | TAD881GE | TAD882GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 129 kWm / 150 kVA / 120 kWe | 172 kWm / 200 kVA / 160 kWe | 215 kWm / 250 kVA / 200 kWe",
+   "| Standby power | 142 kWm / 165 kVA / 132 kWe | 189 kWm / 220 kVA / 176 kWe | 240 kWm / 279 kVA / 224 kWe",
+   "| 60 Hz power",
+   "| Prime power | 151 kWm / 175 kVA / 140 kWe | 198 kWm / 230 kVA / 184 kWe | 218 kWm / 254 kVA / 203 kWe",
+   "| Standby power | 166 kWm / 193 kVA / 154 kWe | 218 kWm / 253 kVA / 202 kWe | 240 kWm / 279 kVA / 224 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO | Diesel/HVO | Diesel/HVO",
+   "| Number of cylinders | 6 | 6 | 6"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/df-d8-eu-stage-v/",
+  "title": "Technical data - Dual fuel ready D8 - EU Stage V",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/df-d8-eu-stage-v/",
+  "header": [
+   "| | TADH880GE | TADH881GE | TADH882GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 129 kWm / 150 kVA / 120 kWe | 172 kWm / 200 kVA / 160 kWe | 215 kWm / 250 kVA / 200 kWe",
+   "| Standby power | 142 kWm / 165 kVA / 132 kWe | 189 kWm / 220 kVA / 176 kWe | 240 kWm / 279 kVA / 224 kWe",
+   "| 60 Hz power",
+   "| Prime power | 151 kWm / 175 kVA / 140 kWe | 198 kWm / 230 kVA / 184 kWe | 218 kWm / 254 kVA / 203 kWe",
+   "| Standby power | 166 kWm / 193 kVA / 154 kWe | 218 kWm / 253 kVA / 202 kWe | 240 kWm / 279 kVA / 224 kWe"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-ii-epa-tier-2/",
+  "title": "Technical data - D13 - EU Stage II/Epa Tier 2",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-ii-epa-tier-2/",
+  "header": [
+   "| | TAD1341GE-B | TAD1342GE-B | TAD1343GE-B | TAD1344GE-B | TAD1345GE-B | TAD1346GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 271 kWm / 315 kVA / 252 kWe | 303 kWm / 352 kVA / 282 kWe | 325 kWm / 378 kVA / 302 kWe | 354 kWm / 412 kVA / 329 kWe | 388 kWm / 451 kVA / 361 kWe | 427 kWm / 502 kVA / 402 kWe",
+   "| Standby power | 298 kWm / 346 kVA / 277 kWe | 333 kWm / 387 kVA / 310 kWe | 356 kWm / 414 kVA / 331 kWe | 389 kWm / 452 kVA / 362 kWe | 431 kWm / 501 kVA / 401 kWe | 470 kWm / 552 kVA / 442 kWe",
+   "| 60 Hz power",
+   "| Prime power | 287 kWm / 334 kVA / 266 kWe | 345 kWm / 401 kVA / 321 kWe | 353 kWm / 410 kVA / 328 kWe | 392 kWm / 456 kVA / 365 kWe | 392 kWm / 456 kVA / 365 kWe | 436 kWm / 512 kVA / 409 kWe",
+   "| Standby power | 317 kWm / 369 kVA / 295 kWe | 377 kWm / 438 kVA / 351 kWe | 388 kWm / 451 kVA / 361 kWe | 431 kWm / 501 kVA / 401 kWe | 431 kWm / 501 kVA / 401 kWe | 479 kWm / 563 kVA / 450 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO | Diesel/HVO | Diesel/HVO | Diesel/HVO | Diesel/HVO | Diesel/HVO",
+   "| Number of cylinders | 6 | 6 | 6 | 6 | 6 | 6",
+   "| High-pressure fuel injection | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors | "
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-iiia-epa-tier-3/",
+  "title": "Technical data - D13 - EU Stage IIIA/Epa Tier 3",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-iiia-epa-tier-3/",
+  "header": [
+   "| | TAD1350GE 60 Hz | TAD1351GE | TAD1352GE | TAD1353GE 60 Hz | TAD1354GE | TAD1355GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | N/A kWm / N/A kVA / N/A kWe | 279 kWm / 324 kVA / 259 kWe | 314 kWm / 365 kVA / 292 kWe | N/A kWm / N/A kVA / N/A kWe | 328 kWm / 381 kVA / 305 kWe | 355 kWm / 413 kVA / 330 kWe",
+   "| Standby power | N/A kWm / N/A kVA / N/A kWe | 306 kWm / 356 kVA / 285 kWe | 345 kWm / 401 kVA / 321 kWe | N/A kWm / N/A kVA / N/A kWe | 361 kWm / 420 kVA / 336 kWe | 390 kWm / 453 kVA / 363 kWe",
+   "| 60 Hz power",
+   "| Prime power | 245 kWm / 285 kVA / 228 kWe | 294 kWm / 342 kVA / 273 kWe | 344 kWm / 400 kVA / 320 kWe | 391 kWm / 455 kVA / 364 kWe | 344 kWm / 400 kVA / 320 kWe | 344 kWm / 400 kVA / 320 kWe",
+   "| Standby power | 269 kWm / 313 kVA / 250 kWe | 323 kWm / 375 kVA / 300 kWe | 376 kWm / 437 kVA / 350 kWe | 430 kWm / 500 kVA / 400 kWe | 376 kWm / 437 kVA / 350 kWe | 376 kWm / 437 kVA / 350 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO | Diesel/HVO | Diesel/HVO | Diesel/HVO | Diesel/HVO | Diesel/HVO",
+   "| Number of cylinders | 6 | 6 | 6 | 6 | 6 | 6",
+   "| High-pressure fuel injection | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-v/",
+  "title": "Technical data - D13 - EU Stage V",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-v/",
+  "header": [
+   "| | TAD1380GE | TAD1381GE | TAD1382GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 260 kWm / 302 kVA / 242 kWe | 303 kWm / 352 kVA / 282 kWe | 345 kWm / 401 kVA / 320 kWe",
+   "| Standby power | 286 kWm / 332 kVA / 266 kWe | 333 kWm / 387 kVA / 310 kWe | 379 kWm / 441 kVA / 352 kWe",
+   "| 60 Hz power",
+   "| Prime power | 274 kWm / 318 kVA / 254 kWe | 315 kWm / 367 kVA / 283 kWe | 355 kWm / 412 kVA / 330 kWe",
+   "| Standby power | 301 kWm / 350 kVA / 280 kWe | 347 kWm / 403 kVA / 323 kWe | 390 kWm / 453 kVA / 363 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO | Diesel/HVO | Diesel/HVO",
+   "| Number of cylinders | 6 | 6 | 6"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-ii-epa-tier-2/",
+  "title": "Technical data - D16 - EU Stage II/Epa Tier 2",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-ii-epa-tier-2/",
+  "header": [
+   "| | TAD1641GE | TAD1642GE | TWD1644GE | TWD1645GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 430 kWm / 505 kVA / 404 kWe | 503 kWm / 591 kVA / 473 kWe | 555 kWm / 652 kVA / 521 kWe | 595 kWm / 700 kVA / 560 kWe",
+   "| Standby power | 473 kWm / 556 kVA / 445 kWe | 554 kWm / 651 kVA / 521 kWe | 610 kWm / 717 kVA / 573 kWe | 655 kWm / 770 kVA / 616 kWe",
+   "| 60 Hz power",
+   "| Prime power | 485 kWm / 570 kVA / 456 kWe | 532 kWm / 625 kVA / 500 kWe | 582 kWm / 684 kVA / 574 kWe | 619 kWm / 727 kVA / 582 kWe",
+   "| Standby power | 546 kWm / 642 kVA / 513 kWe | 585 kWm / 687 kVA / 550 kWe | 640 kWm / 752 kVA / 602 kWe | 681 kWm / 800 kVA / 640 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO | Diesel/HVO | Diesel/HVO | Diesel/HVO",
+   "| Number of cylinders | 6 | 6 | 6 | 6",
+   "| High-pressure fuel injection | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-iiia-epa-tier-3/",
+  "title": "Technical data - D16 - EU Stage IIIA/Epa Tier 3",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-iiia-epa-tier-3/",
+  "header": [
+   "| | TAD1650GE | TAD1651GE | TWD1652GE 50 Hz | TWD1653GE 50 Hz"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 393 kWm / 462 kVA / 369 kWe | 430 kWm / 505 kVA / 404 kWe | 505 kWm / 600 kVA / 480 kWe | 547 kWm / 650 kVA / 520 kWe",
+   "| Standby power | 433 kWm / 509 kVA / 407 kWe | 473 kWm / 556 kVA / 445 kWe | 557 kWm / 661 kVA / 529 kWe | 603 kWm / 716 kVA / 573 kWe",
+   "| 60 Hz power",
+   "| Prime power | 439 kWm / 516 kVA / 413 kWe | 494 kWm / 580 kVA / 464 kWe | N/A kWm / N/A kVA / N/A kWe | N/A kWm / N/A kVA / N/A kWe",
+   "| Standby power | 483 kWm / 568 kVA / 454 kWe | 546 kWm / 642 kVA / 513 kWe | N/A kWm / N/A kVA / N/A kWe | N/A kWm / N/A kVA / N/A kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO | Diesel/HVO | Diesel/HVO | Diesel/HVO",
+   "| Number of cylinders | 6 | 6 | 6 | 6",
+   "| High-pressure fuel injection | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors | Electronic unit injectors"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-stage-iv-epa-tier-4f/",
+  "title": "Technical data - D16 - EU Stage IV/EPA Tier 4f",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-stage-iv-epa-tier-4f/",
+  "header": [
+   "| | TWD1682GE 60 Hz | TWD1683GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | N/A kWm / N/A kVA / N/A kWe | 660 kVA / 528 kWe",
+   "| Standby power | N/A kWm / N/A kVA / N/A kWe | N/A kWm / 726 kVA / 581 kWe",
+   "| 60 Hz power",
+   "| Prime power | 541 kWm / 635 kVA / 508 kWe | 596 kWm / 700 kVA / 560 kWe",
+   "| Standby power | 595 kWm / 700 kVA / 560 kWe | 770 kVA / 616 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO | Diesel/HVO",
+   "| Number of cylinders | 6 | 6",
+   "| High-pressure fuel injection | Electronic unit injectors | Electronic unit injectors"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-v/",
+  "title": "Technical data - D16 - EU Stage V/EPA Tier 4f",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-v/",
+  "header": [
+   "| | TWD1683GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 660 kVA / 528 kWe",
+   "| Standby power | 726 kVA / 581 kWe",
+   "| 60 Hz power",
+   "| Prime power | 700 kVA / 560 kWe",
+   "| Standby power | 770 kVA / 616 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO",
+   "| Number of cylinders | 6",
+   "| High-pressure fuel injection | Electronic unit injectors"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d17-eu-stage-ii/",
+  "title": "Technical data - D17 - EU Stage II/Epa Tier 2",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d17-eu-stage-ii/",
+  "header": [
+   "| | TWD1744GE"
+  ],
+  "rows": [
+   "| 50 Hz power",
+   "| Prime power | 645 kWm / 758 kVA / 606 kWe",
+   "| Standby power | 709 kWm / 833 kVA / 666 kWe",
+   "| 60 Hz power",
+   "| Prime power | 682 kWm / 801 kVA / 641 kWe",
+   "| Standby power | 750 kWm / 881 kVA / 705 kWe",
+   "| Details",
+   "| Fuel type | Diesel/HVO",
+   "| Number of cylinders | 6",
+   "| High-pressure fuel injection | Electronic unit injectors"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/g17/",
+  "title": "Technical data - G17",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/g17/",
+  "header": [
+   "| | TWG1781GE"
+  ],
+  "rows": [
+   "| 60 Hz power",
+   "| Prime power | 441 kWm / 518 kVA / 414 kWe",
+   "| Standby power | 485 kWm / 570 kVA / 456 kWe",
+   "| Details",
+   "| Fuel type | Natural gas",
+   "| Number of cylinders | 6"
+  ]
+ },
+ {
+  "n": 1001,
+  "url": "https://pubs.volvopenta.com/publications/47709011",
+  "title": "Datasheet: TAD1354GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-iiia-epa-tier-3/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 328 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 361 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 344 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 376 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 18.1:1",
+   "| Dry weight, engine only, kg | 1295",
+   "| Dry weight with Gen Pac, kg | 1715"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://pubs.volvopenta.com/publications/47709012",
+  "title": "Datasheet: TAD1355GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-iiia-epa-tier-3/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 355 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 390 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 344 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 376 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 18.1:1",
+   "| Dry weight, engine only, kg | 1295",
+   "| Dry weight with Gen Pac, kg | 1715"
+  ]
+ },
+ {
+  "n": 1003,
+  "url": "https://pubs.volvopenta.com/publications/47709013",
+  "title": "Datasheet: TAD1650GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-iiia-epa-tier-3/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 393 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 433 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 439 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 483 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 144 × 165",
+   "| Displacement, l | 16.12",
+   "| Compression ratio | 16.5:1",
+   "| Dry weight, engine only, kg | 1480",
+   "| Dry weight with Gen Pac, kg | 1910"
+  ]
+ },
+ {
+  "n": 1004,
+  "url": "https://pubs.volvopenta.com/publications/47709014",
+  "title": "Datasheet: TAD1651GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-iiia-epa-tier-3/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 430 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 473 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 494 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 546 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 144 × 165",
+   "| Displacement, l | 16.12",
+   "| Compression ratio | 16.5:1",
+   "| Dry weight, engine only, kg | 1480",
+   "| Dry weight with Gen Pac, kg | 1910"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://pubs.volvopenta.com/publications/47709296",
+  "title": "Datasheet: TAD1351GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-iiia-epa-tier-3/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 279 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 306 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 294 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 323 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 18.1:1",
+   "| Dry weight, engine only, kg | 1295",
+   "| Dry weight with Gen Pac, kg | 1715"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://pubs.volvopenta.com/publications/47709297",
+  "title": "Datasheet: TAD1352GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-iiia-epa-tier-3/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 314 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 345 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 344 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 376 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 18.1:1",
+   "| Dry weight, engine only, kg | 1295",
+   "| Dry weight with Gen Pac, kg | 1715"
+  ]
+ },
+ {
+  "n": 1007,
+  "url": "https://pubs.volvopenta.com/publications/47709680",
+  "title": "Datasheet: TWD1644GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-ii-epa-tier-2/",
+  "header": [],
+  "rows": [
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 640 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 144 × 165",
+   "| Displacement, l | 16.12",
+   "| Compression ratio | 16.8:1",
+   "| Wet weight, engine only, kg | 1810"
+  ]
+ },
+ {
+  "n": 1008,
+  "url": "https://pubs.volvopenta.com/publications/47709682",
+  "title": "Datasheet: TWD1645GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-eu-stage-ii-epa-tier-2/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 595 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 619 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 681 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 144 × 165",
+   "| Displacement, l | 16.12",
+   "| Compression ratio | 16.8:1",
+   "| Wet weight, engine only, kg | 1810"
+  ]
+ },
+ {
+  "n": 1009,
+  "url": "https://pubs.volvopenta.com/publications/47711591",
+  "title": "Datasheet: TWD1683GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-stage-iv-epa-tier-4f/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 596 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 144 × 165",
+   "| Displacement, l | 16.12",
+   "| Compression ratio | 16.8:1",
+   "| Wet weight, engine only, kg | 1810"
+  ]
+ },
+ {
+  "n": 1010,
+  "url": "https://pubs.volvopenta.com/publications/47711616",
+  "title": "Datasheet: TAD1341GE-B — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-ii-epa-tier-2/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 271 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 298 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 287 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 317 kWm / 1800 rpm",
+   "| Fuel consumption, prime power, 25% load, 1500 rpm | 235 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1500 rpm | 202 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1500 rpm | 194 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1500 rpm | 192 g/kWh",
+   "| Fuel consumption, prime power, 25% load, 1800 rpm | 254 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1800 rpm | 210 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1800 rpm | 201 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1800 rpm | 201 g/kWh",
+   "| Fuel consumption, standby power, 25% load, 1500 rpm | 228 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1500 rpm | 199 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1500 rpm | 193 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1500 rpm | 194 g/kWh",
+   "| Fuel consumption, standby power, 25% load, 1800 rpm | 245 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1800 rpm | 207 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1800 rpm | 201 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1800 rpm | 204 g/kWh",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 18.1:1",
+   "| Wet weight, kg | 1325",
+   "| Wet weight with Gen Pac, kg | 1790"
+  ]
+ },
+ {
+  "n": 1010,
+  "url": "https://pubs.volvopenta.com/publications/47711616",
+  "title": "Datasheet: TAD1342GE-B — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-ii-epa-tier-2/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 303 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 333 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 345 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 377 kWm / 1800 rpm",
+   "| Fuel consumption, prime power, 25% load, 1500 rpm | 228 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1500 rpm | 199 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1500 rpm | 193 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1500 rpm | 192 g/kWh",
+   "| Fuel consumption, prime power, 25% load, 1800 rpm | 240 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1800 rpm | 206 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1800 rpm | 200 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1800 rpm | 204 g/kWh",
+   "| Fuel consumption, standby power, 25% load, 1500 rpm | 222 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1500 rpm | 196 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1500 rpm | 193 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1500 rpm | 193 g/kWh",
+   "| Fuel consumption, standby power, 25% load, 1800 rpm | 233 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1800 rpm | 203 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1800 rpm | 202 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1800 rpm | 207 g/kWh",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 18.1:1",
+   "| Wet weight, kg | 1325",
+   "| Wet weight with Gen Pac, kg | 1790"
+  ]
+ },
+ {
+  "n": 1010,
+  "url": "https://pubs.volvopenta.com/publications/47711616",
+  "title": "Datasheet: TAD1343GE-B — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-ii-epa-tier-2/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 325 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 356 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 353 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 388 kWm / 1800 rpm",
+   "| Fuel consumption, prime power, 25% load, 1500 rpm | 224 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1500 rpm | 198 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1500 rpm | 193 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1500 rpm | 192 g/kWh",
+   "| Fuel consumption, prime power, 25% load, 1800 rpm | 239 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1800 rpm | 205 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1800 rpm | 200 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1800 rpm | 205 g/kWh",
+   "| Fuel consumption, standby power, 25% load, 1500 rpm | 219 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1500 rpm | 196 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1500 rpm | 193 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, standby power, 25% load, 1800 rpm | 232 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1800 rpm | 202 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1800 rpm | 202 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1800 rpm | 207 g/kWh",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 18.1:1",
+   "| Wet weight, kg | 1325",
+   "| Wet weight with Gen Pac, kg | 1790"
+  ]
+ },
+ {
+  "n": 1011,
+  "url": "https://pubs.volvopenta.com/publications/47711618",
+  "title": "Datasheet: TAD1344GE-B — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-ii-epa-tier-2/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 354 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 389 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 392 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 431 kWm / 1800 rpm",
+   "| Fuel consumption, standby power, 25% load, 1500 rpm | 220 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1500 rpm | 197 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1500 rpm | 193 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1500 rpm | 193 g/kWh",
+   "| Fuel consumption, standby power, 25% load, 1800 rpm | 229 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1800 rpm | 200 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1800 rpm | 199 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1800 rpm | 199 g/kWh",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 18.1:1",
+   "| Wet weight, kg | 1325",
+   "| Wet weight with Gen Pac, kg | 1790"
+  ]
+ },
+ {
+  "n": 1011,
+  "url": "https://pubs.volvopenta.com/publications/47711618",
+  "title": "Datasheet: TAD1345GE-B — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-ii-epa-tier-2/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 388 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 431 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 392 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 431 kWm / 1800 rpm",
+   "| Fuel consumption, standby power, 25% load, 1500 rpm | 215 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1500 rpm | 196 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, standby power, 25% load, 1800 rpm | 230 g/kWh",
+   "| Fuel consumption, standby power, 50% load, 1800 rpm | 200 g/kWh",
+   "| Fuel consumption, standby power, 75% load, 1800 rpm | 198 g/kWh",
+   "| Fuel consumption, standby power, 100% load, 1800 rpm | 198 g/kWh",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 18.1:1",
+   "| Wet weight, kg | 1325",
+   "| Wet weight with Gen Pac, kg | 1790"
+  ]
+ },
+ {
+  "n": 1012,
+  "url": "https://pubs.volvopenta.com/publications/47712910",
+  "title": "Datasheet: TAD880GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-v/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 129 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 142 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 151 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 166 kWm / 1800 rpm",
+   "| Fuel consumption, prime power, 25% load, 1500 rpm | 237 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1500 rpm | 206 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1500 rpm | 197 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, prime power, 25% load, 1800 rpm | 247 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1800 rpm | 213 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1800 rpm | 203 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1800 rpm | 200 g/kWh",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 723"
+  ]
+ },
+ {
+  "n": 1012,
+  "url": "https://pubs.volvopenta.com/publications/47712910",
+  "title": "Datasheet: TAD881GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-v/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 172 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 189 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 198 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 218 kWm / 1800 rpm",
+   "| Fuel consumption, prime power, 25% load, 1500 rpm | 221 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1500 rpm | 199 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, prime power, 25% load, 1800 rpm | 239 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1800 rpm | 206 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1800 rpm | 200 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1800 rpm | 198 g/kWh",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 723"
+  ]
+ },
+ {
+  "n": 1012,
+  "url": "https://pubs.volvopenta.com/publications/47712910",
+  "title": "Datasheet: TAD882GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-v/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 215 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 218 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 240 kWm / 1800 rpm",
+   "| Fuel consumption, prime power, 25% load, 1500 rpm | 212 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1500 rpm | 196 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1500 rpm | 198 g/kWh",
+   "| Fuel consumption, prime power, 25% load, 1800 rpm | 234 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1800 rpm | 205 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1800 rpm | 199 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1800 rpm | 198 g/kWh",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 723"
+  ]
+ },
+ {
+  "n": 1013,
+  "url": "https://pubs.volvopenta.com/publications/47713334",
+  "title": "Datasheet: TAD840GE-B — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-ii/",
+  "header": [],
+  "rows": [
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 194 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 194 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 213 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 737"
+  ]
+ },
+ {
+  "n": 1013,
+  "url": "https://pubs.volvopenta.com/publications/47713334",
+  "title": "Datasheet: TAD841GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-ii/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 220 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 242 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 225 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 248 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 737"
+  ]
+ },
+ {
+  "n": 1013,
+  "url": "https://pubs.volvopenta.com/publications/47713334",
+  "title": "Datasheet: TAD842GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-ii/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 261 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 287 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 261 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 287 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 737"
+  ]
+ },
+ {
+  "n": 1013,
+  "url": "https://pubs.volvopenta.com/publications/47713334",
+  "title": "Datasheet: TAD843GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-ii/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 280 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 308 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 274 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 301 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 737"
+  ]
+ },
+ {
+  "n": 1014,
+  "url": "https://pubs.volvopenta.com/publications/47713385",
+  "title": "Datasheet: TAD851GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-iiia-epa-tier-3/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 220 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 242 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 225 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 248 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 737"
+  ]
+ },
+ {
+  "n": 1014,
+  "url": "https://pubs.volvopenta.com/publications/47713385",
+  "title": "Datasheet: TAD852GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-iiia-epa-tier-3/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 248 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 273 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 247 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 272 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 737"
+  ]
+ },
+ {
+  "n": 1014,
+  "url": "https://pubs.volvopenta.com/publications/47713385",
+  "title": "Datasheet: TAD853GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d8-eu-stage-iiia-epa-tier-3/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 248 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 273 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 266 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 293 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 737"
+  ]
+ },
+ {
+  "n": 1015,
+  "url": "https://pubs.volvopenta.com/publications/47714298",
+  "title": "Datasheet: TAD1346GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-ii-epa-tier-2/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 427 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 470 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 436 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 479 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 131 × 158",
+   "| Displacement, l | 12.78",
+   "| Compression ratio | 17.8:1",
+   "| Wet weight, kg | 1243",
+   "| Wet weight with Gen Pac, kg | 1455"
+  ]
+ },
+ {
+  "n": 1016,
+  "url": "https://pubs.volvopenta.com/publications/47715495",
+  "title": "Datasheet: TWD1744GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d17-eu-stage-ii/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 645 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 682 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 750 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 149 × 165",
+   "| Displacement, l | 17.26",
+   "| Compression ratio | 16.5:1",
+   "| Wet weight, engine only, kg | 1900",
+   "| Wet weight, Genpac (engine, cooling system, air filtration system kg | 2200"
+  ]
+ },
+ {
+  "n": 1017,
+  "url": "https://pubs.volvopenta.com/publications/47716122",
+  "title": "Datasheet: TWD1683GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d16-stage-iv-epa-tier-4f/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 596 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 144 × 165",
+   "| Displacement, l | 16.12",
+   "| Compression ratio | 16.8:1",
+   "| Wet weight, engine only, kg | 1810"
+  ]
+ },
+ {
+  "n": 1018,
+  "url": "https://pubs.volvopenta.com/publications/47717348",
+  "title": "Datasheet: TADH880GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/df-d8-eu-stage-v/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 129 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 142 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 151 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 166 kWm / 1800 rpm",
+   "| Fuel consumption, prime power, 25% load, 1500 rpm | 237 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1500 rpm | 206 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1500 rpm | 197 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, prime power, 25% load, 1800 rpm | 247 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1800 rpm | 213 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1800 rpm | 203 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1800 rpm | 200 g/kWh",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 723"
+  ]
+ },
+ {
+  "n": 1018,
+  "url": "https://pubs.volvopenta.com/publications/47717348",
+  "title": "Datasheet: TADH881GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/df-d8-eu-stage-v/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 172 kWm / 1500 rpm",
+   "| Net engine standby power kWm, 50 Hz / 1500 rpm | 189 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 198 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 218 kWm / 1800 rpm",
+   "| Fuel consumption, prime power, 25% load, 1500 rpm | 221 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1500 rpm | 199 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, prime power, 25% load, 1800 rpm | 239 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1800 rpm | 206 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1800 rpm | 200 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1800 rpm | 198 g/kWh",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 723"
+  ]
+ },
+ {
+  "n": 1018,
+  "url": "https://pubs.volvopenta.com/publications/47717348",
+  "title": "Datasheet: TADH882GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/df-d8-eu-stage-v/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 50 Hz / 1500 rpm | 215 kWm / 1500 rpm",
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 218 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 240 kWm / 1800 rpm",
+   "| Fuel consumption, prime power, 25% load, 1500 rpm | 212 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1500 rpm | 196 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1500 rpm | 195 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1500 rpm | 198 g/kWh",
+   "| Fuel consumption, prime power, 25% load, 1800 rpm | 234 g/kWh",
+   "| Fuel consumption, prime power, 50% load, 1800 rpm | 205 g/kWh",
+   "| Fuel consumption, prime power, 75% load, 1800 rpm | 199 g/kWh",
+   "| Fuel consumption, prime power, 100% load, 1800 rpm | 198 g/kWh",
+   "| Bore × Stroke, mm | 110 × 135",
+   "| Displacement, l | 7.7",
+   "| Wet weight, engine only, kg | 723"
+  ]
+ },
+ {
+  "n": 1019,
+  "url": "https://pubs.volvopenta.com/publications/47717684",
+  "title": "Datasheet: TWG1781GE — Volvo Penta product bulletin",
+  "from": "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/g17/",
+  "header": [],
+  "rows": [
+   "| Net engine prime power kWm, 60 Hz / 1800 rpm | 441 kWm / 1800 rpm",
+   "| Net engine standby power kWm, 60 Hz / 1800 rpm | 485 kWm / 1800 rpm",
+   "| Bore × Stroke, mm | 149 × 165",
+   "| Displacement, l | 17.26",
+   "| Compression ratio | 13.5:1",
+   "| Wet weight, engine only, kg | 1900"
+  ]
+ }
+]
