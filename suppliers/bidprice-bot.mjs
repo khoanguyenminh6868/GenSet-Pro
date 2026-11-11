@@ -78,14 +78,16 @@ export async function prep(req, dir, hist, size = null) {
     hsmt ? "## Phần kỹ thuật của HSMT\n" + technicalPart(hsmt.text).slice(0, 60000) : "Chưa có văn bản HSMT.",
   ].filter((l) => l !== "").join("\n"), "utf8");
   fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"), "utf8");
-  // Ba mức hiệu chỉnh theo cạnh tranh dự báo (web/bidprice.js CALIB): thử nghiệm, chỉ khi GENBID_BIDPRICE_CALIB=1 (Khoa
-  // quyết có bật không). Tắt thì samples.json và kết quả y như cũ.
-  const fc = process.env.GENBID_BIDPRICE_CALIB === "1" ? BP.nbForecast({ notifyNo: key, investorName: t.investorName, location: b.location || "", field: b.field || "", bidCloseDate: b.bidCloseDate || "" }, docs) : null;
+  // Ba mức hiệu chỉnh theo cạnh tranh dự báo (web/bidprice.js CALIB): bật mặc định (Khoa duyệt 11/11); GENBID_BIDPRICE_CALIB=0
+  // tắt (samples.json và kết quả y như trước, không có stats.calib).
+  const fc = calibOn() ? BP.nbForecast({ notifyNo: key, investorName: t.investorName, location: b.location || "", field: b.field || "", bidCloseDate: b.bidCloseDate || "" }, docs) : null;
   fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior, byConfig, ...(fc ? { fc: { p: fc.p } } : {}) }), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "bidprice-prompt.md"), "utf8"), "utf8");
-  return { total, group, otherGroup, candidates: list.length, K, P, prior, byConfig };
+  return { total, group, otherGroup, candidates: list.length, K, P, prior, byConfig, fc };
 }
 
+// Hiệu chỉnh khoảng giá theo cạnh tranh dự báo: bật trừ khi GENBID_BIDPRICE_CALIB=0.
+export const calibOn = () => process.env.GENBID_BIDPRICE_CALIB !== "0";
 // The configuration in a few words, for the web.
 const cfgLabel = (c) => [c.engine && `động cơ ${[c.engine.make, c.engine.model].filter(Boolean).join(" ")}`, c.alternator && `đầu phát ${[c.alternator.make, c.alternator.model].filter(Boolean).join(" ")}`].filter(Boolean).join(", ");
 // [hạng 1 (giá = result.stats của agent), cấu hình gần nhất có nhóm xuất xứ động cơ khác (giá riêng, code)]. Nhóm của một
@@ -141,7 +143,7 @@ function runClaude(dir) {
 async function attemptOne(req, dir, hist, size = null, tag = req.key) {
   fs.rmSync(dir, { recursive: true, force: true });
   const info = await prep(req, dir, hist, size);
-  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "", ...(size ? { qty: size.qty } : {}) }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).${info.prior?.length ? ` Giá dưới đây tính từ ${info.prior.length} gói cùng cỡ (±15%) có cạnh tranh, chưa qua Agent so cấu hình.` : ""}`], samples: [], stats: BP.suggest([], info.P, info.K && info.K * (size?.qty || 1), info.prior || []), ...(info.byConfig?.length ? { byConfig: info.byConfig } : {}) }, problems: [] };
+  if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "", ...(size ? { qty: size.qty } : {}) }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).${info.prior?.length ? ` Giá dưới đây tính từ ${info.prior.length} gói cùng cỡ (±15%) có cạnh tranh, chưa qua Agent so cấu hình.` : ""}`], samples: [], stats: BP.suggest([], info.P, info.K && info.K * (size?.qty || 1), info.prior || [], info.fc ? { fc: info.fc } : {}), ...(info.byConfig?.length ? { byConfig: info.byConfig } : {}) }, problems: [] };
   const started = Date.now(), r = runClaude(dir);
   fs.writeFileSync(path.join(os.tmpdir(), `genbid-bidprice-${tag}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
   if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
@@ -189,8 +191,13 @@ async function attempt(req, dir, hist) {
     const price = outs.reduce((a, o) => a + o.result.stats.levels[j].price, 0);
     return { id: l.id, label: l.label, price, ratio: P ? price / P : null };
   }) : [];
+  // Ba mức hiệu chỉnh của cả gói: tổng từng cỡ, khi cỡ nào cũng có (cùng cách với levels).
+  const calibSum = outs.every((o) => o.result?.stats.calib?.levels?.length) ? outs[0].result.stats.calib.levels.map((l, j) => {
+    const price = outs.reduce((a, o) => a + o.result.stats.calib.levels[j].price, 0);
+    return { id: l.id, label: l.label, price, ratio: P ? price / P : null };
+  }) : [];
   const result = {
-    basis: { kva: null, price: P, capText: sizes.map(sizeText).join(" + ") }, multi: true, levels,
+    basis: { kva: null, price: P, capText: sizes.map(sizeText).join(" + ") }, multi: true, levels, ...(calibSum.length ? { calib: { levels: calibSum, ...BP.CALIB } } : {}),
     sizes: outs.map((o) => ({ cap: o.z.cap, kva: o.z.kva, qty: o.z.qty, label: o.z.label, quote: o.z.quote, share: o.sh.share, ...(o.result ? { result: o.result } : { error: o.error }) })),
     notes: [`Gói có ${sizes.length} cỡ máy (${sizes.map(sizeText).join("; ")}): mỗi cỡ được so riêng với các gói đã có kết quả cùng cỡ. Giá gói chia cho từng cỡ theo số lượng x công suất^0,7 (máy công suất gấp đôi giá khoảng gấp 1,6)${sizes.some((z) => !z.qty) ? ", cỡ không ghi số lượng tính 1 máy" : ""}: ${outs.map((o) => `máy ${o.z.label} ${Math.round(100 * o.sh.share)}%`).join(", ")}.`],
   };
@@ -221,6 +228,7 @@ function printResult({ result, problems }) {
       console.log(`== Máy ${z.qty ? `${z.qty} x ` : ""}${z.label}: ${Math.round(100 * z.share)}% giá gói`);
       if (z.result) printResult({ result: z.result, problems: [] }); else console.log(`lỗi ${z.error}`);
     }
+    if (result.calib) console.log(`== Cả gói, hiệu chỉnh: ${result.calib.levels.map((l) => `${l.label} ${fmt(l.price)}`).join(" · ")}`);
     console.log(`== Cả gói: ${result.levels.length ? result.levels.map((l) => `${l.label} ${fmt(l.price)}`).join(" · ") : "chưa đủ cỡ máy có giá"}`);
     if (problems.length) console.log("Chưa khớp:\n" + problems.join("\n"));
     return;
@@ -228,6 +236,7 @@ function printResult({ result, problems }) {
   const s = result.stats;
   console.log(`Ứng viên ${result.samples.length}/${result.total}: ${BP.LEVELS.map((l) => `${l} ${result.samples.filter((x) => x.level === l).length}`).join(", ")}`);
   console.log(`Tính từ ${s.n} gói (${s.basis})${s.enough ? "" : " — CHƯA ĐỦ"}: ${s.levels.map((l) => `${l.label} ${fmt(l.price)} (${Math.round(100 * l.ratio)}%, thắng ${Math.round(100 * l.chance)}%)`).join(" · ")}`);
+  if (s.calib) console.log(`Hiệu chỉnh theo cạnh tranh dự báo: ${s.calib.levels.map((l) => `${l.label} ${fmt(l.price)} (${Math.round(100 * l.ratio)}%)`).join(" · ")}`);
   if (s.perKva) console.log(`Theo đ/kVA: ${fmt(s.perKva.value)} đ/kVA → ${fmt(s.perKva.price)} (${s.perKva.n} gói)`);
   for (const c of (result.byConfig || []).filter((c) => !c.main)) console.log(`Cấu hình #${c.rank ?? "?"} ${c.label} (nhóm ${BP.GROUP[c.group] || c.group}, code chọn gói): ${c.stats.levels.length ? c.stats.levels.map((l) => `${l.label} ${fmt(l.price)} (${Math.round(100 * l.ratio)}%)`).join(" · ") + ` từ ${c.stats.pool} gói` : c.note}`);
   for (const x of result.samples.filter((x) => x.level === "same" || x.level === "close")) console.log(`  ${x.id} ${x.level} ${x.key} ${Math.round(100 * x.ratio)}% ${x.bidders.length}NT — ${x.same.join(", ")} / khác: ${x.diff.join(", ")}`);

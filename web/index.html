@@ -2151,7 +2151,7 @@ function profitHtml(t) {
   // Chi phí vốn (điều khoản hợp đồng × lãi suất người nhập) cộng vào giá vốn khi tính được.
   const fin = financeOf(t, goodsCost), finTotal = fin.f?.total || 0, cost = goodsCost != null ? goodsCost + finTotal : null;
   const scen = profitScen[key] ?? "mix", w = scen === "mix" ? curve.mix : curve.byNb[+scen].n >= 15 ? curve.byNb[+scen].w : curve.all;
-  const pt = BP.profitTable(P, cost, curve, w), levels = state.bidprice[key]?.result?.levels || state.bidprice[key]?.result?.stats?.levels || [];
+  const pt = BP.profitTable(P, cost, curve, w), levels = bpLevelsOf(state.bidprice[key]?.result);
   const feas = BP.feasibility({ P, cost: goodsCost, finance: finTotal, levels }).flags;
   const at = (r) => curve.grid.reduce((b, g, i) => (Math.abs(g - r) < Math.abs(curve.grid[b] - r) ? i : b), 0);
   const lo = cost && P && cost < P ? Math.max(0.6, Math.floor((cost / P) * 50) / 50 - 0.02) : 0.7;
@@ -4394,18 +4394,35 @@ function bdDetailHtml(c0) {
 function bidBasis(t) {
   const cap = capacityOf(t), K = kvaOf(cap?.text) || null;
   const P = t.estimatedPrice ?? state.bidhist?.[t._key]?.estimatedPrice ?? null;
-  // location, field, bidCloseDate: cho dự báo số nhà thầu của bot (ba mức hiệu chỉnh, chỉ khi bật GENBID_BIDPRICE_CALIB).
+  // location, field, bidCloseDate: cho dự báo số nhà thầu của bot (ba mức hiệu chỉnh; bot bật mặc định, GENBID_BIDPRICE_CALIB=0 tắt).
   return { kva: K, price: P, capText: K ? `${cap.text} (${cap.src})` : "", bidForm: t.bidForm || "", investorName: t.investorName || "", location: t.location || "", field: t.field || "", bidCloseDate: t.bidCloseDate || "" };
 }
 const BP_LEVEL = { same: ["Giống", "ok"], close: ["Gần", "warn"], different: ["Khác", "mut"], unknown: ["Không đủ thông tin", "mut"] };
 const bpPct = (r) => (100 * r).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + "%";
+// Ba mức giá của một kết quả Gợi ý giá: bản hiệu chỉnh theo số nhà thầu dự báo (stats.calib; gói nhiều cỡ: result.calib)
+// khi có, không thì ba mức cũ (levels, vẫn lưu trong dữ liệu). Mọi chỗ dùng ba mức đều đi qua hàm này.
+function bpLevelsOf(r) {
+  if (!r) return [];
+  const c = r.multi ? r.calib : r.stats?.calib;
+  return c?.levels?.length ? c.levels : r.multi ? r.levels || [] : r.stats?.levels || [];
+}
+const bpHasCalib = (r) => !!(r && (r.multi ? r.calib : r.stats?.calib)?.levels?.length);
+const BP_CALIB_NOTE = "Khoảng thấp–cao chứa khoảng một nửa giá trúng của các gói cũ; đã tính theo số nhà thầu dự báo.";
+// Lưu ý (không tự trừ vào số): dự báo nghiêng về gói từ 6 nhà thầu, hoặc cấu hình hạng 1 là động cơ Trung Quốc — hậu kiểm
+// (nghiệm thu gia-chuyen-mon-3) cho thấy hai loại này trúng thấp hơn mức giữa gợi ý (≥6 nhà thầu +11 điểm, Trung Quốc +6 điểm).
+function bpCrowdNote(t, doc) {
+  const r = doc?.result; if (!r) return "";
+  const c = competeOf(t), many = c?.fc && c.fc.top === 3;
+  const cn = r.multi ? (r.sizes || []).some((z) => z.result?.basis?.group === "cn") : r.basis?.group === "cn";
+  return many || cn ? h`<div class="note warn small">Lưu ý: gói đông nhà thầu / động cơ Trung Quốc thường trúng thấp hơn mức giữa.${raw(many && cn ? " Dự báo nghiêng về từ 6 nhà thầu và cấu hình hạng 1 là động cơ Trung Quốc." : many ? " Dự báo nghiêng về từ 6 nhà thầu." : " Cấu hình hạng 1 là động cơ Trung Quốc.")}</div>` : "";
+}
 function bidSuggestBox(t) {
   const key = t._key, prev = state.bidprice[key];
   const wait = workerReqPending("bidpricereq", key) ? waitHtml("Đang chờ Agent so cấu hình gói này với các gói đã có kết quả...", state.bidpricereq[key].requestedAt) : "";
   const err = !wait && workerReqError("bidpricereq", key);
   return h`${raw(quoteHtml(t))}${raw(profitHtml(t))}<section>${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}${raw(prev?.result && !wait ? actBar("Đã gợi ý giá", `lúc ${fmtDate(prev.at)}`, h`<button class="btn primary" id="bpRun" data-key="${key}">Gợi ý lại</button>`, "", "ok", "actrow")
       : h`<div class="row actrow"><div class="spacer"></div><button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>Gợi ý giá đấu</button></div>`)}
-    ${raw(prev?.result && !wait ? (prev.result.multi ? bidPriceMultiHtml(prev, t) : bidPriceHtml(prev, t)) : "")}</section>`;
+    ${raw(prev?.result && !wait ? bpCrowdNote(t, prev) + (prev.result.multi ? bidPriceMultiHtml(prev, t) : bidPriceHtml(prev, t)) : "")}</section>`;
 }
 function bpSampleRow(s, t, i) {
   const [lv, cls] = BP_LEVEL[s.level] || BP_LEVEL.unknown, one = s.bidders.length < 2, url = tenderHref(s.key);
@@ -4438,14 +4455,15 @@ function bidPriceHtml(doc, t) {
   const nbTxt = st.bidders ? `Số nhà thầu ở các gói đó: trung vị ${st.bidders.median}${st.bidders.min !== st.bidders.max ? ` (từ ${st.bidders.min} đến ${st.bidders.max})` : ""}.` : "";
   const byNb = (st.byBidders || []).filter((x) => x.ratio).map((x) => `${x.label}: trung vị ${bpPct(x.ratio)} giá gói (${x.n} gói)`).join("; ");
   // One size of a tender of several (bidPriceMultiHtml): its package price is the share code worked out.
-  const part = "qty" in b;
+  const part = "qty" in b, lv = bpLevelsOf(r), cal = bpHasCalib(r);
   return h`<div class="muted small cmprev">Công suất ${b.kva ? `${Math.round(b.kva).toLocaleString("vi-VN")} kVA${b.capText ? ` (${b.capText})` : ""}` : "không rõ"} · ${part ? "phần giá gói ước tính" : "giá gói"} ${P ? fmtVnd(P) : "không rõ"} · Agent xét ${r.samples.length} gói gần nhất trong ${r.total} gói/phần có giá trúng</div>
     ${raw(r.tender?.summary ? h`<p class="small"><b>Gói này:</b> ${r.tender.summary}${r.tender.points?.length ? ` (${r.tender.points.join("; ")})` : ""}</p>` : "")}
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
-      : !st.levels.length ? h`<div class="note warn">Chưa đủ gói tương tự để gợi ý giá: chỉ có ${st.pool ?? st.n} gói giống/gần hoặc cùng cỡ có từ 2 nhà thầu trở lên (cần ít nhất 3). Xem các gói bên dưới để tự cân nhắc.</div>`
+      : !lv.length ? h`<div class="note warn">Chưa đủ gói tương tự để gợi ý giá: chỉ có ${st.pool ?? st.n} gói giống/gần hoặc cùng cỡ có từ 2 nhà thầu trở lên (cần ít nhất 3). Xem các gói bên dưới để tự cân nhắc.</div>`
       : h`${raw(st.enough ? "" : h`<div class="note warn">Chỉ có ${st.pool ?? st.n} gói tương tự có cạnh tranh (dưới 5): giá dưới đây chỉ để tham khảo.</div>`)}
-        <div class="kpis" style="margin:8px 0">${raw(st.levels.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${bpPct(l.ratio)} giá gói · ${Math.round(100 * l.chance)}% gói cũ trúng ≥ mức này</span></div>`).join(""))}</div>
-        <div class="muted small">Tính từ ${what}, mỗi gói có từ 2 nhà thầu. "% gói cũ trúng ≥ mức này" là tỉ lệ các gói đó có giá trúng bằng hoặc cao hơn mức này, không phải xác suất thắng. ${nbTxt}${byNb ? ` Giá trúng theo số nhà thầu — ${byNb}.` : ""}${st.perKva ? ` Theo giá trúng một máy/kVA (trung vị ${fmtVnd(st.perKva.value)}/kVA, ${st.perKva.n} gói): ${fmtVnd(st.perKva.price)}.` : ""}</div>`)}
+        <div class="kpis" style="margin:8px 0">${raw(lv.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${bpPct(l.ratio)} giá gói${l.chance != null ? ` · ${Math.round(100 * l.chance)}% gói cũ trúng ≥ mức này` : ""}</span></div>`).join(""))}</div>
+        ${raw(cal && !part ? h`<div class="muted small">${BP_CALIB_NOTE}</div>` : "")}
+        <div class="muted small">Tính từ ${what}, mỗi gói có từ 2 nhà thầu. ${cal ? "" : `"% gói cũ trúng ≥ mức này" là tỉ lệ các gói đó có giá trúng bằng hoặc cao hơn mức này, không phải xác suất thắng. `}${nbTxt}${byNb ? ` Giá trúng theo số nhà thầu — ${byNb}.` : ""}${st.perKva ? ` Theo giá trúng một máy/kVA (trung vị ${fmtVnd(st.perKva.value)}/kVA, ${st.perKva.n} gói): ${fmtVnd(st.perKva.price)}.` : ""}</div>`)}
     ${raw((r.notes || []).length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}
     ${raw(P ? bpConfigHtml(r) : "")}
     <h4 style="margin:12px 0 4px">Gói tương tự (${alike.length})</h4>
@@ -4459,10 +4477,10 @@ function bidPriceHtml(doc, t) {
 // Gói nhiều cỡ máy (Khoa, 2026-11-04): bidprice-bot.mjs prices each size on its own, with the share of the package
 // price it worked out for it (result.sizes); the package's levels add the sizes' up (result.levels).
 function bidPriceMultiHtml(doc, t) {
-  const r = doc.result, P = r.basis.price;
+  const r = doc.result, P = r.basis.price, lv = bpLevelsOf(r);
   return h`<div class="muted small cmprev">${r.basis.capText} · giá gói ${P ? fmtVnd(P) : "không rõ"}</div>
     ${raw(!P ? '<div class="note warn">Gói này chưa có giá gói nên chưa tính được giá đề xuất.</div>'
-      : r.levels.length ? h`<h4 style="margin:12px 0 4px">Cả gói (cộng các cỡ máy)</h4><div class="kpis" style="margin:8px 0">${raw(r.levels.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${l.ratio ? bpPct(l.ratio) + " giá gói" : ""}</span></div>`).join(""))}</div>`
+      : lv.length ? h`<h4 style="margin:12px 0 4px">Cả gói (cộng các cỡ máy)</h4><div class="kpis" style="margin:8px 0">${raw(lv.map((l) => h`<div class="kpi bplev bp-${l.id}"><span class="kl">${l.label}</span><span class="kv">${fmtVnd(l.price)}</span><span class="ks">${l.ratio ? bpPct(l.ratio) + " giá gói" : ""}</span></div>`).join(""))}</div>${raw(bpHasCalib(r) ? h`<div class="muted small">${BP_CALIB_NOTE}</div>` : "")}`
       : '<div class="note warn">Chưa đủ gói tương tự cho mọi cỡ máy nên chưa cộng được giá cả gói. Xem từng cỡ bên dưới.</div>')}
     ${raw((r.notes || []).length ? h`<ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul>` : "")}`
     + r.sizes.map((z) => sizeBox(`bp|${t._key}|${z.label}`, h`<span>${sizeTitle(z)}</span> <span class="muted small">· ${Math.round(100 * z.share)}% giá gói${z.result?.basis.price ? ` ≈ ${fmtVnd(z.result.basis.price)}` : ""}</span>`,
