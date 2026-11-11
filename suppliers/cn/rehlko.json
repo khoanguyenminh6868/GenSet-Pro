@@ -232,6 +232,23 @@
       "src": [
         2007
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "D440",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
     }
   ],
   "certifications": [
@@ -368,10 +385,47 @@
         "Prime kVA 60"
       ],
       "file": "sources/rehlko/2007.md"
+    },
+    {
+      "n": 2008,
+      "url": "https://www.powersystems.rehlko.com/sea/wp-content/uploads/d-series/d440-0525.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "Industrial Generator Set - D440",
+        "Manufacturer                                           Rehlko",
+        "Engine ref.                                            P158LE",
+        "Alternator choices                                     KH01484T",
+        "Controllers                                            APM303 APM403",
+        "400/230       50      352  440          635     320         400"
+      ],
+      "file": "sources/rehlko/2008.md"
+    },
+    {
+      "n": 2009,
+      "url": "https://origin-sea.rehlko.com/sea/wp-content/uploads/2023/03/kohler-controller-APM403.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "Kohler APM403 Controller"
+      ],
+      "file": "sources/rehlko/2009.md"
+    },
+    {
+      "n": 2010,
+      "url": "https://cdn.shopify.com/s/files/1/0531/1715/7528/files/D440.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "C",
+      "quote": [
+        "Alternator commercial brand                               KOHLER",
+        "Alternator ref.                                       KH01483TO4D",
+        "Standard Control Panel                                    APM403"
+      ],
+      "file": "sources/rehlko/2010.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-10",
+  "checkedAt": "2026-11-11",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {
@@ -450,6 +504,20 @@
         "                                                                                  Prime                       kVA         60",
         "           Low temperature starting capability                                                     415/240        3      50        53   66   92             48  60"
       ]
+    },
+    {
+      "n": 2008,
+      "title": "Industrial Generator Set - D440",
+      "header": [
+        "                                                                                              Industrial Generator Set - D440",
+        "                                                            Hz      kWe  kVA      Amps        kWe         kVA"
+      ],
+      "rows": [
+        "• Design offices using the latest technical innovations                  Engine ref.                                            P158LE",
+        "• Modern fully certified factories                                       Alternator choices                                     KH01484T",
+        "• Best quality of electricity, high starting and loading capacity,       Controllers                                            APM303 APM403",
+        "                                              400/230       50      352  440          635     320         400"
+      ]
     }
   ],
   "controllers": [
@@ -478,6 +546,15 @@
       "line": "APM303 controller",
       "src": [
         2003
+      ]
+    },
+    {
+      "brand": "Kohler",
+      "model": "APM403",
+      "text": "APM403",
+      "line": "• Best quality of electricity, high starting and loading capacity,       Controllers                                            APM303 APM403",
+      "src": [
+        2008
       ]
     }
   ]
