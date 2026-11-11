@@ -487,3 +487,30 @@ test("quoteCost / quoteLedger: a price line older than 180 days or with no date 
   assert.equal(BP.quoteCost(row, { finance: 2e7, vat: 10 }, now).vat, (1e9 + 5e7 + 1e7) * 0.1);
   assert.deepEqual(BP.quoteLedger({ K: { rows: [{ id: "r", items: row.items }] } }, now).map((x) => x.stale && x.stale.why), [null, "old", "nodate"]);
 });
+
+test("calibOn: bật mặc định, GENBID_BIDPRICE_CALIB=0 tắt; check giữ levels cũ, calib chỉ khi samples.json có fc", async () => {
+  const { calibOn } = await import("./bidprice-bot.mjs");
+  const old = process.env.GENBID_BIDPRICE_CALIB;
+  try {
+    delete process.env.GENBID_BIDPRICE_CALIB; assert.equal(calibOn(), true);
+    process.env.GENBID_BIDPRICE_CALIB = "1"; assert.equal(calibOn(), true);
+    process.env.GENBID_BIDPRICE_CALIB = "0"; assert.equal(calibOn(), false);
+  } finally { if (old === undefined) delete process.env.GENBID_BIDPRICE_CALIB; else process.env.GENBID_BIDPRICE_CALIB = old; }
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "bp-test-"));
+  const s = (ratio, nb, k) => ({ id: "S" + k, key: "K" + k, lotNo: 1, ratio, wp: ratio * 1e9, price: 1e9, k: 400, bidders: Array.from({ length: nb }, (_, i) => ({ name: "b" + i, price: 1, won: !i })) });
+  const list = [s(0.97, 2, 1), s(0.98, 2, 2), s(0.96, 3, 3), s(0.95, 3, 4), s(0.8, 6, 5), s(0.78, 7, 6), s(0.82, 6, 7)];
+  fs.writeFileSync(path.join(dir, "result.json"), JSON.stringify({ samples: list.map((x) => ({ id: x.id, level: "same", quote: "Mua sắm" })) }));
+  const orig = BP.sampleText;
+  BP.sampleText = () => "Mua sắm";
+  try {
+    fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: 400, price: 1e9 }, total: 7, list }));
+    const off = check(dir).result.stats;
+    assert.equal(off.calib, undefined);
+    assert.equal(off.levels.length, 3);
+    fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: 400, price: 1e9 }, total: 7, list, fc: { p: [0.1, 0.1, 0.1, 0.7] } }));
+    const on = check(dir).result.stats;
+    assert.deepEqual(on.levels, off.levels);
+    assert.equal(on.calib.levels.length, 3);
+    assert.ok(on.calib.levels[1].ratio < on.levels[1].ratio);
+  } finally { BP.sampleText = orig; }
+});
