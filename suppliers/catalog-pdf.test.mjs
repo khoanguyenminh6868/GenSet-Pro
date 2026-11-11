@@ -32,6 +32,12 @@ test("a row needs two kW / kVA pairs, a known engine and a model figure that fit
   assert.equal(keptRow("KCC-25GF 30 24 27 22 4B39-G9".split(" "), engines, alternators), null);
 });
 
+test("the Z of a 4Z engine read as 7 or 2 is put back only when that engine is known", () => {
+  const e = new Map([...engines, [C.keyOf("4Z2.3-G11"), "4Z2.3-G11"]]);
+  assert.equal(keptRow("APP-16GF 472.3-G11 12 15 13.6 17".split(" "), e, alternators), "| APP-16GF | 12 | 15 | 13.6 | 17 | 4Z2.3-G11 |");
+  assert.equal(keptRow("APP-16GF 472.9-G11 12 15 13.6 17".split(" "), e, alternators), null);
+});
+
 test("an alternator code that is an engine model is not taken as the alternator", () => {
   assert.equal(keptRow("KCC-560GF 625 500 563 450 KTA19-G3 QSK19-G4".split(" "), engines, alternators), "| KCC-560GF | 450 | 563 | 500 | 625 | KTA19-G3 |");
 });

@@ -56,7 +56,13 @@ export function segments(line) {
 // loose (--rows, the PDF's own text, no OCR misreads): an engine model the catalog does not know yet is taken too, as
 // the first code (letters and digits, not "3.L") after the model.
 const ENGINE_CODE = /^(?=.*[A-Z])(?=.*\d)[A-Z0-9][A-Z0-9.\-/]{3,}$/;
+// OCR reads the Z of SDEC's 4Z / 4ZT engines as 7 or 2 ("472.3-G11", "422.7-G11" for 4Z2.3-G11, 4Z2.7-G11): that
+// one letter is put back only when the result is an engine the catalog already has (APP catalog, 2026-11-11).
+export function zFix(t, engines) {
+  return t.map((x, i) => (i >= 1 && !engines.has(C.keyOf(x)) && /^\d[72]/.test(x) && engines.has(C.keyOf(x[0] + "Z" + x.slice(2))) ? x[0] + "Z" + x.slice(2) : x));
+}
 export function keptRow(t, engines, alternators, single = false, loose = false) {
+  if (!loose) t = zFix(t, engines);
   let eAt = t.findIndex((x, i) => i >= 1 && i <= 8 && engines.has(C.keyOf(x)));
   if (eAt < 0 && loose) eAt = t.findIndex((x, i) => i >= 1 && i <= 8 && ENGINE_CODE.test(x) && !/^\d+(\.\d+)?[A-Z]?$/.test(x));
   if (eAt < 0) return null;
