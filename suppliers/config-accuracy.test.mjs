@@ -186,6 +186,25 @@ test("candidate rows, no origin required: Chinese makes keep their rows beside b
   assert.ok(!candidates(g7, cap, hints, { suppliers: list, origin: "g7" }).top.some((r) => r.u.supplierId === "w"));
 });
 
+test("candidate rows, G7 / EU asked and no make named: each make of the group keeps rows, nearest size first (Khoa, 2026-11-11)", () => {
+  const table = (n, title, rows) => ({ n, title, header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows });
+  const foreign = ["NTA855-G1B", "NTA855-G2A", "KTA19-G3", "6LTAA8.9-G2", "6CTAA8.3-G2", "QSL9-G2", "QSL9-G3", "MTA11-G2A", "QSZ13-G2", "QSZ13-G3", "QSX15-G8", "KTA19-G4"];
+  const list = Array.from({ length: 12 }, (_, i) => ({ id: `f${i}`, country: "CN", confidence: "high", controllers: [{ brand: "Deep Sea", model: "DSE7320", text: "DSE7320", line: "DSE7320", src: [3001] }],
+    specTables: [table(101, "Cummins gensets 50Hz", foreign.map((e, j) => `| F-${i}-${j} | 275 | 220 | ${e} | HCI444ES |`))] }));
+  // Baudouin, few figures, no controller: the 260 kVA one (nearest 250) before a 340 kVA one.
+  list.push({ id: "b", country: "CN", confidence: "low", specTables: [table(101, "Baudouin gensets 50Hz", ["| B-1 | 340 | 272 | 6M11G340/5 | |", "| B-2 | 260 | 208 | 6M11G260/5 | |"])] });
+  const cap = { value: 250, unit: "kVA" }, hints = hintsOf("Chương V. Yêu cầu kỹ thuật\nTần số 50 Hz");
+  const g7 = { ...C.build(list) }; g7.engines = byOrigin(g7.engines, "g7eu");
+  const top = candidates(g7, cap, hints, { suppliers: list, origin: "g7eu" }).top.filter((r) => r.u.supplierId === "b").map((r) => r.e.model);
+  assert.deepEqual(top.slice(0, 1), ["6M11G260/5"]);
+});
+
+test("prime from a table row with the unit before the figure (IB2600603983)", () => {
+  assert.deepEqual({ ...powerMins("5    Công suất liên tục           kVA               ≥ 700\n6    Công suất tối đa             kVA               ≥ 770").minPrime }, { kVA: 700 });
+  // The engine's shaft power stays out.
+  assert.equal(powerMins("7     Công suất liên tục          kWm                ≥ 600").minPrime, null);
+});
+
 test("configurations meeting the HSMT alike: the one with an engine of a Chinese make first (Khoa, 2026-11-05)", () => {
   const reqs = [{ item: "E", part: "engine" }];
   const met = [{ item: "E", part: "engine", status: "met", level: "core" }];

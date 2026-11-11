@@ -695,7 +695,10 @@ export function powerMins(t) {
   const tidy = (l) => l.replace(/\(\s*\d{2,3}\s*%[^)]{0,12}\)/g, " ").replace(/\(\s*kVA\s*[\/\\]\s*kW\s*\)([^\d\n]{0,20})(\d+(?:[.,]\d+)*)\s*\/\s*(\d+(?:[.,]\d+)*)(?![\d.,]*\s*(?:kva|kw))/i, "$1$2 kVA / $3 kW")
     .replace(/\(\s*kW\s*[\/\\]\s*kVA\s*\)([^\d\n]{0,20})(\d+(?:[.,]\d+)*)\s*\/\s*(\d+(?:[.,]\d+)*)(?![\d.,]*\s*(?:kva|kw))/i, "$1$2 kW / $3 kVA")
     .replace(/(\d+(?:[.,]\d+)*)\s*\/\s*(\d+(?:[.,]\d+)*)\s*\(\s*kVA\s*[\/\\]\s*kW\s*\)/i, "$1 kVA / $2 kW")
-    .replace(/(li[êe]n t[ụu]c)\s*\/\s*(d[ựu] ph[òo]ng)\s*:?\s*(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)\s*(kVA|kW)\b/i, "$1 $3 $5, $2 $4 $5");
+    .replace(/(li[êe]n t[ụu]c)\s*\/\s*(d[ựu] ph[òo]ng)\s*:?\s*(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)\s*(kVA|kW)\b/i, "$1 $3 $5, $2 $4 $5")
+    // A table row with the unit column before the figure: "5  Công suất liên tục   kVA   ≥ 700" (IB2600603983, 2026-11-11).
+    // Not "kWm" (the engine's shaft power).
+    .replace(/(c[ôo]ng su[ấa]t\s+li[êe]n t[ụu]c|prime(?:\s+power)?|continuous(?:\s+power)?)\s+\(?(kVA|kW)\)?\s+(?:≥|>=|>)?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)(?![\d.,]*\s*(?:kva|kw))/i, "$1 $3 $2");
   const L = text.split("\n");
   for (let i = 0, off = 0; i < L.length; off += L[i].length + 1, i++) {
     let line = tidy(L[i]);
@@ -732,7 +735,7 @@ const CONF = { high: 30, medium: 15 };
 // A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
 // Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
-const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12;
+const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12, MAKE_ROWS = 3;
 // The minimums of the HSMT that fit the genset of this run: a tender of several sizes gives the fuel of its small one
 // (104 L/h beside 2500 kVA), an OCR slip a prime of 107 kVA for 8.5 kVA, "lưu lượng dầu đến bơm ≤ 450 lít/giờ" a fuel
 // limit for 500 kVA (2026-11-03 scan of 390 HSMT). Such a figure would rank every candidate down: left out.
@@ -822,6 +825,29 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // configuration that meets the HSMT better goes first, so it must be among the suggestions). Foreign engines have
   // more datasheet figures and would otherwise fill the rows. Not when the HSMT names an engine make or model.
   if (origin === "all" && !hints.engineMakes.length && !rows.some((r) => r.named)) pick(rows.filter((r) => CAT.originOf(r.e) === "cn"), Math.min(CN_ROWS, max));
+  // G7 / G20 asked, no make named (Khoa, 2026-11-11, IB2600603983): every make of the group with a fitting row keeps
+  // MAKE_ROWS rows of different engines, best make first. Cummins and Perkins have the most datasheet figures and filled
+  // the 30 rows; Baudouin 6M31G825/5 (750 kVA prime, offered by four suppliers) stood 361st. A row the HSMT rules out
+  // (score below 0: prime, displacement, cylinders) keeps no place.
+  if (GROUP_ORIGIN.has(origin) && !hints.engineMakes.length && !rows.some((r) => r.named)) {
+    const byMake = new Map();
+    for (const r of rows) {
+      const m = (r.e.make || "").split(" / ")[0];
+      if (m && r.score > 0) byMake.set(m, [...(byMake.get(m) || []), r]);
+    }
+    // Within a make, the size nearest the HSMT's first (in steps of 5%), then the score: Baudouin's 12M26G900/5 (815 kVA)
+    // had more figures than 6M31G825/5 (750 kVA) for 700 kVA.
+    // The prime output (standby ÷ 1.1 when only that is given); a row below the HSMT's size, or that gives neither, last.
+    const gap = (r) => {
+      const p = r.u.power || {}, pr = p.prime?.[cap?.unit] ?? (p.standby?.[cap?.unit] != null ? p.standby[cap.unit] / 1.1 : null);
+      return !cap ? 0 : pr == null ? 50 : pr < cap.value * 0.995 ? 99 : Math.round(20 * (pr / cap.value - 1));
+    };
+    for (const list of [...byMake.values()].sort((a, b) => b[0].score - a[0].score)) {
+      const engines = new Set();
+      const mine = [...list].sort((x, y) => gap(x) - gap(y) || y.score - x.score).filter((r) => !engines.has(r.e.key) && engines.add(r.e.key));
+      pick(mine, Math.min(max, out.length + MAKE_ROWS));
+    }
+  }
   pick(rows, max);
   out.sort((x, y) => y.score - x.score);
   return { top: out, all: rows };
