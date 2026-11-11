@@ -8,5 +8,6 @@
 - [Khoa's company](company-thao-nguyen.md) — Thảo Nguyên, MST 4101623015 (vn4101623015 trên muasamcong)
 - [No artifact version](no-artifact-version.md) — chỉ dùng web Vercel + bot Windows, bỏ qua nhánh claude.ai
 - [Bot kit trong git](bot-kit-in-git.md) — sửa genbid-hsmt xong chạy bot\Backup-GenBidBot.ps1 + PR; máy mới dùng Install-GenBidBot.ps1
-- [Làm trong worktree](work-in-worktree.md) — checkout chính là RepoDir của bot, luôn để main; sửa code ở wt-*
+- [Làm trong worktree](work-in-worktree.md) — checkout chính là RepoDir của bot, luôn để main; sửa code ở wt-*; PR merge xong tự xoá wt của mình
+- [Phân tích: bỏ cảnh báo thủ tục](phan-tich-bo-canh-bao.md) — không cảnh báo đóng thầu, bảo đảm dự thầu, hiệu lực E-HSDT
 - [Điều phối, giao task theo model](orchestrator-delegate-by-model.md) — phiên chính là kỹ sư trưởng; phân loại task, giao session Haiku/Sonnet/Opus theo độ khó; đầu phiên đọc sổ `genbid-work\dieu-phoi\so-dieu-phoi.md`
