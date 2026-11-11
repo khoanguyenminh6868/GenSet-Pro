@@ -76,12 +76,54 @@ test("kết quả cũ không có selfChecks vẫn chạy; một tệp thì ghi c
   assert.equal(result.selfChecks.length, 0);
   assert.match(result.selfCheckNote, /một tệp/);
 });
-test("selfChecks không đổi điểm và kết luận", () => {
-  const items = [{ requirement: "Thời gian khắc phục sự cố không quá 24 giờ", requirementQuote: "Thời gian khắc phục sự cố không quá 24 giờ", offered: null, status: "missing", critical: false, note: "" }];
-  const a = run([]).result, dir = fs.mkdtempSync(path.join(os.tmpdir(), "selfck-"));
+// ---- tính vào điểm và kết luận (Khoa, 2026-11-12) ----
+const E = [ev("bang-chao.pdf", "gói thầu Đập tràn Đơn Dương")];
+const mk = (kind, status = "problem", evidence = E) => ({ kind, status, finding: "f", evidence });
+const mkItems = () => [
+  { requirement: "a", requirementQuote: "Thời gian khắc phục sự cố không quá 24 giờ", offered: "Bảng chào hàng: máy phát điện công suất 180 kVA", status: "met", critical: true, note: "" },
+  { requirement: "b", requirementQuote: "Thời gian khắc phục sự cố không quá 24 giờ", offered: "Bảng chào hàng: máy phát điện công suất 180 kVA", status: "met", critical: false, note: "" },
+];
+function score(selfChecks) {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "selfck-"));
   fs.writeFileSync(path.join(dir, "src-req.txt"), REQ); fs.writeFileSync(path.join(dir, "src-sub.txt"), SUB);
-  const r1 = { summary: "x", items: structuredClone(items), selfChecks: [] }, r2 = { summary: "x", items: structuredClone(items), selfChecks: [{ kind: "package_identity", status: "problem", finding: "f", evidence: [ev("bang-chao.pdf", "gói thầu Đập tràn Đơn Dương")] }] };
-  checkResult({ kind: "compare" }, r1, dir); checkResult({ kind: "compare" }, r2, dir);
+  const r = { summary: "x", items: mkItems() };
+  if (selfChecks) r.selfChecks = selfChecks;
+  checkResult({ kind: "compare" }, r, dir);
   fs.rmSync(dir, { recursive: true, force: true });
-  assert.equal(r1.overallScore, r2.overallScore); assert.equal(r1.verdict, r2.verdict); assert.ok(a);
+  return r;
+}
+test("không có selfChecks (kết quả cũ): điểm cũ 100, pass, không có selfCheckImpact", () => {
+  const r = score(null);
+  assert.equal(r.overallScore, 100); assert.equal(r.verdict, "pass"); assert.equal(r.selfCheckImpact, undefined);
+});
+test("ok và unclear không ảnh hưởng", () => {
+  const r = score([mk("package_identity", "ok"), mk("model_consistency", "unclear")]);
+  assert.equal(r.overallScore, 100); assert.equal(r.verdict, "pass"); assert.equal(r.selfCheckImpact, undefined);
+});
+test("problem bị bỏ vì không có bằng chứng thật thì không tính", () => {
+  const r = score([mk("package_identity", "problem", [ev("bang-chao.pdf", "câu này không hề có trong hồ sơ dự thầu")])]);
+  assert.equal(r.overallScore, 100); assert.equal(r.verdict, "pass");
+});
+for (const k of ["package_identity", "model_consistency", "catalogue_vs_offer", "row_match"]) {
+  test(k + ": như mục critical not_met: 3/5 → 60, fail", () => {
+    const r = score([mk(k)]);
+    assert.equal(r.overallScore, 60); assert.equal(r.verdict, "fail"); assert.match(r.selfCheckImpact, /1 lỗi nghiêm trọng/);
+    assert.equal(r.items.length, 2);
+  });
+}
+test("supporting_docs: như mục missing không critical: 3/4 → 75, at_risk", () => {
+  const r = score([mk("supporting_docs")]);
+  assert.equal(r.overallScore, 75); assert.equal(r.verdict, "at_risk");
+});
+test("adverse_wording: như mục partial không critical: 3.5/4 → 88, at_risk", () => {
+  const r = score([mk("adverse_wording")]);
+  assert.equal(r.overallScore, 88); assert.equal(r.verdict, "at_risk"); assert.match(r.selfCheckImpact, /Nếu không tính tự kiểm: 100/);
+});
+test("commitment_vs_hsmt: không cộng điểm nhưng không cho pass", () => {
+  const r = score([mk("commitment_vs_hsmt")]);
+  assert.equal(r.overallScore, 100); assert.equal(r.verdict, "at_risk"); assert.match(r.selfCheckImpact, /cam kết/);
+});
+test("commitment_vs_hsmt không hạ kết luận đang fail xuống at_risk", () => {
+  const r = score([mk("commitment_vs_hsmt"), mk("package_identity")]);
+  assert.equal(r.verdict, "fail");
 });

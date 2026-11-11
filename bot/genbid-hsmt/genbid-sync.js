@@ -1892,8 +1892,10 @@ function nearby(w, norm) {
 }
 // Score and verdict follow from the item statuses, not from the model's own estimate: critical items count twice,
 // partial counts half; a critical not_met fails, any other gap is at risk.
-function scoreItems(items) {
+// extra: virtual items from the bid's self-check (selfCheckItems), counted the same way but never put in result.items.
+function scoreItems(items, extra = []) {
   let got = 0, all = 0;
+  items = [...items, ...extra];
   for (const i of items) { const w = i.critical ? 2 : 1; all += w; got += w * (i.status === "met" ? 1 : i.status === "partial" ? 0.5 : 0); }
   const verdict = items.some((i) => i.critical && i.status === "not_met") ? "fail" : items.some((i) => i.status !== "met") ? "at_risk" : "pass";
   return { overallScore: all ? Math.round((100 * got) / all) : 0, verdict };
@@ -1947,6 +1949,13 @@ const SELF_STATUS = ["ok", "problem", "unclear"];
 function subSections(text) {
   const ms = [...String(text || "").matchAll(/^--- Tệp: (.+?) ---$/gm)];
   return ms.map((m, i) => ({ name: m[1], norm: sourceOf(text.slice(m.index + m[0].length, i + 1 < ms.length ? ms[i + 1].index : undefined)) }));
+}
+// A verified "problem" of the self-check counts like an item (Khoa, 2026-11-12): identity/model/catalogue/row = critical not_met,
+// supporting_docs = missing, adverse_wording = partial. commitment_vs_hsmt is already an item of the table: no score, but no "pass".
+const SELF_AS = { package_identity: ["not_met", true], model_consistency: ["not_met", true], catalogue_vs_offer: ["not_met", true], row_match: ["not_met", true], supporting_docs: ["missing", false], adverse_wording: ["partial", false] };
+function selfCheckItems(result) {
+  const probs = (result.selfChecks || []).filter((c) => c.status === "problem" && c.evidence?.length);
+  return { extra: probs.filter((c) => SELF_AS[c.kind]).map((c) => ({ status: SELF_AS[c.kind][0], critical: SELF_AS[c.kind][1], self: c.kind })), commit: probs.some((c) => c.kind === "commitment_vs_hsmt") };
 }
 function checkSelfChecks(result, req, sub, subText) {
   const notes = [], secs = subSections(subText), kept = [];
@@ -2019,8 +2028,16 @@ function checkResult(meta, result, dir) {
     }
     if (flags.length) i.note = `⚠ ${flags.join(" ")}${i.note ? " " + i.note : ""}`;
   }
-  Object.assign(result, scoreItems(items));
-  if (kind === "compare") notes.push(...checkSelfChecks(result, req, sub, read("src-sub.txt")));
+  let sc = { extra: [], commit: false };
+  if (kind === "compare") { notes.push(...checkSelfChecks(result, req, sub, read("src-sub.txt"))); sc = selfCheckItems(result); }
+  const base = scoreItems(items);
+  Object.assign(result, scoreItems(items, sc.extra));
+  if (sc.commit && result.verdict === "pass") result.verdict = "at_risk";
+  delete result.selfCheckImpact;
+  if (sc.extra.length || sc.commit) {
+    const crit = sc.extra.filter((x) => x.critical).length, other = sc.extra.length - crit;
+    result.selfCheckImpact = `Tự kiểm hồ sơ: ${[crit && `${crit} lỗi nghiêm trọng (tính như mục bắt buộc không đạt)`, other && `${other} vấn đề khác (tính như mục chưa đạt)`, sc.commit && "cam kết lệch HSMT (đã nằm trong bảng, kết luận không ở mức đạt)"].filter(Boolean).join("; ")}.` + (result.verdict !== base.verdict || result.overallScore !== base.overallScore ? ` Nếu không tính tự kiểm: ${base.overallScore} điểm.` : "");
+  }
   const parts = [req.usable ? `${reqOk}/${items.length} yêu cầu thấy nguyên văn trong ${where}` : `phía yêu cầu không kiểm được (${where} là bản scan)`];
   if (sub.usable) parts.push(`${subOk}/${subN} nội dung chào thấy nguyên văn trong tài liệu đã nộp`);
   else parts.push("phía tài liệu chào không kiểm được (không có chữ)");
