@@ -1362,6 +1362,25 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     }
     if (limited) result.origin = origin;
   }
+  // Việt Nam (Khoa, 2026-11-11): no supplier based in Việt Nam and no set made or assembled there is suggested, whatever
+  // the origin asked: a configuration taken from such a supplier's row, of a genset whose make / origin says Việt Nam,
+  // or left with none of its suppliers is dropped.
+  {
+    const vnSup = (id) => !!id && sup.get(id)?.country === "VN";
+    result.configs = (result.configs || []).filter((c) => {
+      const from = [c.genset?.src, c.engine?.src].find((s) => s?.kind === "catalog" && vnSup(s.supplierId));
+      if (from) { problems.push(`#${c.rank}: cấu hình lấy từ dòng bảng của ${from.supplierId} (đặt tại Việt Nam), đã bỏ`); return false; }
+      if (BP.VN_WORD.test([c.genset?.make, c.genset?.maker, c.genset?.origin].filter(Boolean).join(" "))) { problems.push(`#${c.rank}: tổ máy hãng / xuất xứ Việt Nam, đã bỏ`); return false; }
+      const had = (c.suppliers || []).length;
+      c.suppliers = (c.suppliers || []).filter((s) => {
+        if (!vnSup(s.supplierId)) return true;
+        problems.push(`#${c.rank}: nhà cung cấp ${s.supplierId} đặt tại Việt Nam, đã bỏ`);
+        return false;
+      });
+      if (had && !c.suppliers.length) { problems.push(`#${c.rank}: không còn nhà cung cấp nào ngoài Việt Nam, đã bỏ cấu hình`); return false; }
+      return true;
+    });
+  }
   result.configs = (result.configs || []).slice(0, MAX_CONFIGS);
   copyModelChecks(result.configs, sourceText);
   // Kiểm tra tổ hợp (2026-11-10): what the HSMT says about site, overload, load step and load types, read once.

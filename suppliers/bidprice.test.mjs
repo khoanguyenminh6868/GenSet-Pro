@@ -514,3 +514,16 @@ test("calibOn: bật mặc định, GENBID_BIDPRICE_CALIB=0 tắt; check giữ l
     assert.ok(on.calib.levels[1].ratio < on.levels[1].ratio);
   } finally { BP.sampleText = orig; }
 });
+
+test("candidates: a lot whose won set is made or assembled in Việt Nam prices nothing (Khoa, 2026-11-11)", () => {
+  const vn = {
+    V1: { bidName: "Mua sắm máy phát điện 750kVA", final: true, lots: [lot(1.8e9, 1.3e9, [{ name: "Máy phát điện Công suất 750kVA/3P", maker: "Công ty Cổ phần máy phát điện Việt Nhật", origin: "Việt Nam" }])] },
+    V2: { bidName: "Mua sắm máy phát điện 750kVA", final: true, lots: [lot(1.9e9, 1.5e9, [{ name: "Tổ máy phát điện 750kVA", maker: "Trường Lộc", origin: "Viet Nam" }])] },
+    V3: { bidName: "Mua sắm máy phát điện 800kVA", final: true, lots: [lot(2e9, 1.6e9, [{ name: "Tổ máy phát điện 800kVA", maker: "Trường Lộc", origin: "Việt Nam" }])] },
+    F1: { bidName: "Mua sắm máy phát điện 750kVA", final: true, lots: [lot(2.5e9, 2.3e9, [{ name: "Máy phát điện 750kVA", maker: "Cummins", origin: "Anh" }, { name: "Tủ ATS 1250A", maker: "Công ty Việt Nam", origin: "Việt Nam" }])] },
+  };
+  const r = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 750kVA" }, vn, 750, 2e9);
+  assert.deepEqual(r.list.map((s) => s.key), ["F1"]);
+  assert.equal(r.vnMade, 3);
+  assert.ok(!r.prior.some((p) => p.key.startsWith("V")));
+});
