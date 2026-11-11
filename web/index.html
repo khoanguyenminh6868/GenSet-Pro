@@ -1582,7 +1582,6 @@ function infoHtml(t) {
   return h`<div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" rows="2" style="min-height:56px" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
     <dl class="kv kvo">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${k === "Nhà thầu trúng" || k === "Chủ đầu tư" ? raw(v) : v}</dd>`).join(""))}</dl>
     ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) || state.bidhist?.[t._key] || state.bidders?.[t._key]?.list?.length ? biddersHtml(t) : "")}
-    ${raw(competeHtml(t))}${raw(rivalsHtml(t))}
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
@@ -1590,7 +1589,8 @@ function infoHtml(t) {
         ${raw(!f.hasText && f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t))}
-    </div>`;
+    </div>
+    ${raw(competeHtml(t))}${raw(rivalsHtml(t))}`;
 }
 // ---------- Báo giá của Nhà Cung Cấp (quote/<key>; the files live in the private Supabase bucket "quote", api/quote.js) ----------
 // One supplier to start with, Thêm adds another; each supplier takes several files (Khoa, 2026-11-01).
@@ -2092,7 +2092,7 @@ function rivalsHtml(t) {
     <td class="num" data-l="Dự / trúng">${x.n} / ${x.wins}</td><td class="num" data-l="Bị loại kỹ thuật">${x.techOut || "—"}</td>
     <td class="num" data-l="Giá dự (% giá gói)">${raw(x.ratio ? h`${bpPct(x.ratio.median)}${raw(x.ratio.min !== x.ratio.max ? h`<div class="muted small">${bpPct(x.ratio.min)} – ${bpPct(x.ratio.max)}</div>` : "")}` : h`<span class="muted small">${x.priced ? `chỉ ${x.priced} lượt có giá` : "—"}</span>`)}</td>
     <td class="small" data-l="Động cơ khi trúng">${x.makes.length ? x.makes.map((m) => `${m.make}${m.n > 1 ? ` ×${m.n}` : ""}`).join(", ") : "—"}</td></tr>`;
-  return h`<div class="compete rivals"><div class="row"><h2 style="flex:1">Đối thủ</h2><span class="muted small">${r.total} nhà thầu</span></div>
+  return h`<div class="compete rivals"><div class="row"><h2 style="flex:1">Đối thủ</h2></div>
     <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà thầu</th><th>Dự / trúng</th><th>Bị loại kỹ thuật</th><th>Giá dự (% giá gói)</th><th>Động cơ khi trúng</th></tr></thead><tbody>${raw(r.list.map(row).join(""))}</tbody></table></div>
     <div class="muted small">Nhà thầu đã dự gói mua sắm máy phát ${[r.basis.investor && "cùng chủ đầu tư", r.basis.province && "cùng tỉnh", r.basis.kva && "cùng cỡ (±15%)"].filter(Boolean).join(", ")} đóng thầu trước gói này. Giá dự là trung vị và khoảng, chỉ khi có từ 3 lượt có giá. Chỉ mô tả lịch sử, không biết ai sẽ dự gói này.</div></div>`;
 }
