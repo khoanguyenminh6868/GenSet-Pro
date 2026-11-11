@@ -390,6 +390,16 @@
         "| Typical Electrical Output | 410-474 kVA (328-379 kWe) 410-474 kVA (328-379 kWe)"
       ],
       "file": "sources/perkins/2010.md"
+    },
+    {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/perkins-power-selector.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "| 403J-07G | 5 | 6 | 5 | 6 | 5 | 6"
+      ],
+      "file": "sources/perkins/5001.md"
     }
   ],
   "confidence": "high",
@@ -554,6 +564,431 @@
         "| Number of Cylinders | 6 vertical inline 6 vertical inline",
         "| Displacement | 762.8 in³ 12.5 l",
         "| Aspiration | Turbocharged aftercooled Turbocharged aftercooled"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 5 — Highly regulated (50Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 403J-07G | 5 | 6 | 5 | 6 | 5 | 6",
+        "| 403J-11G | 8 | 9 | 7 | 9 | 8 | 10",
+        "| 404J-22G | 19 | 21 | 16 | 20 | 18 | 22",
+        "| 404J-E22TAG | 38 | 41 | 32 | 40 | 35 | 44",
+        "| 904J-E36TAG1 | 48 | 53 | 43 | 54 | 48 | 60",
+        "| 904J-E36TAG3 | 53 | 58 | 48 | 60 | 53 | 66",
+        "| 1204J-E44TTAG2 | 109 | 121 | 101 | 126 | 111 | 139",
+        "| 1206J-E70TTAG3 | 172 | 191 | 159 | 198 | 175 | 219",
+        "| 1706J-E93TAG1 | 221 | 244 | 210 | 263 | 232 | 290",
+        "| 1706J-E93TAG2 | 265 | 292 | 249 | 312 | 275 | 343",
+        "| 2406J-E13TAG3 | 349 | 385 | 328 | 410 | 362 | 453",
+        "| 2806J-E18TAG1 | 479 | 530 | 444 | 554 | 488 | 610",
+        "| 2806FA-E18TAG2 | 547 | 602 | 520 | 650 | 572 | 715"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 6 — Highly regulated (60Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 403F-15G | 12 | 14 | 11 | 14 | 12 | 15",
+        "| 404J-E22TAG | 43 | 48 | 36 | 45 | 40 | 50",
+        "| 904J-E36TAG1 | 46 | 51 | 42 | 52 | 46 | 58",
+        "| 1204J-E44TTAG2 | 110 | 122 | 101 | 126 | 112 | 140",
+        "| 1206J-E70TTAG3 | 151 | 168 | 135 | 169 | 150 | 188",
+        "| 1206J-E70TTAG4 | 200 | 222 | 180 | 225 | 200 | 250",
+        "| 1706J-E93TAG2 | 291 | 321 | 273 | 341 | 302 | 377",
+        "| 2406J-E13TAG3 | 364 | 403 | 342 | 428 | 379 | 474",
+        "| 2806F-E18TAG1 | 475 | 529 | 455 | 569 | 500 | 625"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 7 — Less regulated (50Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 403D-11G | 8 | 9 | 7 | 9 | 8 | 10",
+        "| 404D-22G | 18 | 20 | 16 | 20 | 18 | 22",
+        "| 1103D-33G2 | 29 | 32 | 25 | 32 | 28 | 35",
+        "| 1103D-33G3 | 29 | 32 | 25 | 32 | 28 | 35",
+        "| 1103C-33TG2 | 41 | 46 | 37 | 46 | 41 | 51",
+        "| 1104C-44TG2 | 54 | 59 | 48 | 60 | 53 | 67",
+        "| 1104C-44TG3 | 54 | 59 | 48 | 60 | 53 | 67",
+        "| 1104D-44TG2 | 54 | 59 | 48 | 60 | 53 | 66",
+        "| 1104D-44TG3 | 54 | 59 | 48 | 60 | 53 | 66",
+        "| 1104C-44TAG1 | 72 | 79 | 64 | 80 | 71 | 89",
+        "| 1104D-E44TAG1 | 74 | 81 | 64 | 80 | 70 | 88",
+        "| 1104C-44TAG2 | 90 | 100 | 81 | 101 | 90 | 112",
+        "| 1104D-E44TAG2 | 91 | 101 | 80 | 100 | 88 | 110"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 8 — Less regulated (50Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 1106D-E70TAG2 | 129 | 143 | 117 | 147 | 130 | 163",
+        "| 1106D-E70TAG3 | 141 | 156 | 129 | 161 | 142 | 177",
+        "| 1106D-E70TAG4 | 165 | 182 | 144 | 180 | 160 | 200",
+        "| 1206D-E70TTAG3 | 218 | 240 | 200 | 250 | 220 | 275",
+        "| 2206C-E13TAG2 | 305 | 349 | 280 | 350 | 320 | 400",
+        "| 2206C-E13TAG3 | 349 | 392 | 320 | 400 | 360 | 450",
+        "| 2606C-E13TAG1 | 304 | 348 | 280 | 350 | 320 | 400",
+        "| 2606C-E13TAG2 | 348 | 391 | 320 | 400 | 360 | 450",
+        "| 2606C-E13TAG3 | 396 | 435 | 364 | 455 | 400 | 500",
+        "| 2606C-E13TAG4 | 435 | 478 | 400 | 500 | 440 | 550"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 9 — Less regulated (50Hz)",
+      "header": [
+        "| Engine model | COP kWm | Prime kWm | Standby kWm | COP kWe | COP kVA | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 5006AC-E23TAG1 | 511 | 638 | 702 | 480 | 600 | 600 | 750 | 660 | 825",
+        "| 5006AC-E23TAG2 | 545 | 681 | 766 | 512 | 640 | 640 | 800 | 720 | 900",
+        "| 5008AC-E30TAG1 | 620 | 774 | 851 | 582 | 728 | 728 | 910 | 800 | 1000",
+        "| 5008AC-E30TAG2 | 688 | 860 | 957 | 646 | 808 | 808 | 1010 | 900 | 1125",
+        "| 5008AC-E30TAG3 | 766 | 957 | 1064 | 720 | 900 | 900 | 1124 | 1000 | 1250"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 9 — Less regulated (50Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 2506C-E15TAG1 | 396 | 435 | 364 | 455 | 400 | 500",
+        "| 2506C-E15TAG2 | 435 | 478 | 400 | 500 | 440 | 550",
+        "| 2806C-E18TAG1A | 514 | 565 | 473 | 591 | 520 | 650"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 10 — Less regulated (50Hz)",
+      "header": [
+        "| Engine model | COP kWm | Prime kWm | Standby kWm | COP kWe | COP kVA | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 5012AC-E46TAG1 | 859 | 1074 | 1179 | 816 | 1020 | 1020 | 1275 | 1120 | 1400",
+        "| 5012AC-E46TAG2 | 909 | 1137 | 1263 | 864 | 1080 | 1080 | 1350 | 1200 | 1500",
+        "| 5012AC-E46TAG3 | 1011 | 1263 | 1389 | 960 | 1200 | 1200 | 1500 | 1320 | 1650",
+        "| 5012AC-E46TAG4 | 1152 | 1440 | 1579 | 1094 | 1368 | 1368 | 1710 | 1500 | 1875",
+        "| 5016AC-E61TRG0 | 1179 | 1474 | 1621 | 1120 | 1400 | 1400 | 1750 | 1540 | 1925",
+        "| 5016AC-E61TRG1 | 1246 | 1558 | 1684 | 1184 | 1480 | 1480 | 1850 | 1600 | 2000",
+        "| 5016AC-E61TRG2 | 1347 | 1684 | 1895 | 1280 | 1600 | 1600 | 2000 | 1800 | 2250",
+        "| 5016AC-E61TRG3 | 1516 | 1895 | 2105 | 1440 | 1800 | 1800 | 2250 | 2000 | 2500"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 11 — Less regulated (60Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 403D-11G | 10 | 11 | 9 | 11 | 10 | 12",
+        "| 403D-15G | 14 | 16 | 13 | 16 | 14 | 18",
+        "| 404D-22G | 22 | 24 | 19 | 24 | 21 | 27",
+        "| 404D-22TG | 30 | 33 | 26 | 33 | 29 | 36",
+        "| 404D-22TAG | 32 | 36 | 29 | 36 | 32 | 40",
+        "| 1104C-44G2 | 47 | 52 | 43 | 53 | 47 | 59",
+        "| 1104C-44TG1 | 60 | 67 | 54 | 68 | 60 | 75",
+        "| 1104C-44TG2 | 60 | 67 | 54 | 68 | 60 | 75",
+        "| 1104C-44TAG2 | 102 | 112 | 92 | 114 | 101 | 127",
+        "| 1104D-E44TAG1 | 85 | 93 | 73 | 91 | 80 | 100",
+        "| 1104D-E44TAG2 | 104 | 115 | 91 | 114 | 100 | 125"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 12 — Less regulated (60Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 1106D-E70TAG2 | 145 | 161 | 132 | 165 | 147 | 183",
+        "| 1106D-E70TAG3 | 157 | 173 | 143 | 178 | 158 | 197",
+        "| 1106D-E70TAG4 | 180 | 199 | 160 | 200 | 175 | 219",
+        "| 1206D-E70TTAG1 | 202 | 224 | 180 | 225 | 200 | 250",
+        "| 1206D-E70TTAG2 | 202 | 224 | 180 | 225 | 200 | 250",
+        "| 1206D-E70TTAG3 | 202 | 224 | 180 | 225 | 200 | 250",
+        "| 1706D-E93TAG1 | 254 | 281 | 237 | 296 | 261 | 327",
+        "| 1706D-E93TAG2 | 309 | 341 | 288 | 359 | 318 | 397",
+        "| 2206D-E13TAG2 | 349 | 381 | 320 | 400 | 350 | 438",
+        "| 2206D-E13TAG3 | 381 | 435 | 350 | 438 | 400 | 500",
+        "| 2606C-E13TAG2 | 348 | 381 | 320 | 400 | 350 | 438",
+        "| 2606C-E13TAG3 | 397 | 435 | 365 | 456 | 400 | 500",
+        "| 2606C-E13TAG4 | 446 | 489 | 410 | 513 | 450 | 563"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 13 — Less regulated (60Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 2506D-E15TAG1 | 435 | 490 | 400 | 500 | 450 | 563",
+        "| 2506C-E15TAG3 | 509 | 562 | 468 | 585 | 517 | 646",
+        "| 2806C-E18TAG3 | 592 | 652 | 545 | 681 | 600 | 750",
+        "| 2806C-E18TTAG6 | 685 | 754 | 650 | 813 | 716 | 895",
+        "| 2806C-E18TTAG7 | 716 | 790 | 680 | 850 | 750 | 938",
+        "| 5008C-E30TAG4 | 853 | 947 | 810 | 1013 | 900 | 1125",
+        "| 5008C-E30TAG5 | 947 | 1053 | 900 | 1125 | 1000 | 1250",
+        "| 5012C-E46TAG5 | 1184 | 1316 | 1125 | 1406 | 1250 | 1563",
+        "| 5012C-E46TAG6 | 1421 | 1579 | 1350 | 1687 | 1500 | 1875",
+        "| 5016C-E61TRG6 | 1658 | 1842 | 1575 | 1969 | 1750 | 2188",
+        "| 5016C-E61TRG7 | 1895 | 2105 | 1800 | 2250 | 2000 | 2500"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 14 — ESE (60Hz)",
+      "header": [
+        "| Engine model | Prime kWm | ESP kWm | Prime kWe | Prime kVA | ESP kWe | ESP kVA"
+      ],
+      "rows": [
+        "| 403D-11G | 10 | 11 | 9 | 11 | 10 | 12",
+        "| 403D-15G | 14 | 16 | 13 | 16 | 14 | 18",
+        "| 404D-22G | 22 | 24 | 19 | 24 | 21 | 27",
+        "| 404D-22TG | 30 | 33 | 26 | 33 | 29 | 36",
+        "| 404D-22TAG | 32 | 36 | 29 | 36 | 32 | 40",
+        "| 1104D-E44TAG1 | 85 | 93 | 73 | 91 | 80 | 100",
+        "| 1104D-E44TAG2 | 104 | 115 | 91 | 114 | 100 | 125",
+        "| 1106D-E70TAG2 | 145 | 161 | 132 | 165 | 147 | 183",
+        "| 1106D-E70TAG3 | 157 | 173 | 143 | 178 | 158 | 197",
+        "| 1106D-E70TAG4 | 180 | 199 | 160 | 200 | 175 | 219",
+        "| 1706D-E93TAG1 | 254 | 281 | 237 | 296 | 261 | 327",
+        "| 1706D-E93TAG2 | 309 | 341 | 288 | 359 | 318 | 397"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 15 — ESE (60Hz)",
+      "header": [
+        "| Engine model | Prime kWm | ESP kWm | Prime kWe | Prime kVA | ESP kWe | ESP kVA"
+      ],
+      "rows": [
+        "| 2206D-E13TAG2 | 349 | 381 | 320 | 400 | 350 | 438",
+        "| 2206D-E13TAG3 | 381 | 435 | 350 | 438 | 400 | 500",
+        "| 2506D-E15TAG1 | 435 | 490 | 400 | 500 | 450 | 563",
+        "| 2506C-E15TAG3 | 509 | 562 | 468 | 585 | 517 | 646",
+        "| 2806C-E18TAG3 | 592 | 652 | 545 | 681 | 600 | 750",
+        "| 2806C-E18TTAG6 | 685 | 754 | 650 | 813 | 716 | 895",
+        "| 2806C-E18TTAG7 | 716 | 790 | 680 | 850 | 750 | 938",
+        "| 5008C-E30TAG4 | 853 | 947 | 810 | 1013 | 900 | 1125",
+        "| 5008C-E30TAG5 | 947 | 1053 | 900 | 1125 | 1000 | 1250"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 16 — Fuel optimised (50Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 403A-11G1 | 8 | 9 | 7 | 9 | 8 | 10",
+        "| 403A-15G1 | 12 | 13 | 10 | 13 | 12 | 15",
+        "| 403A-15G2 | 14 | 15 | 12 | 15 | 13 | 16",
+        "| 404A-22G1 | 18 | 20 | 16 | 20 | 18 | 22",
+        "| 1103A-33G | 28 | 30 | 24 | 30 | 26 | 33",
+        "| 1103A-33TG1 | 41 | 46 | 36 | 45 | 40 | 50",
+        "| 1103A-33TG2 | 54 | 59 | 48 | 60 | 53 | 66",
+        "| 1104A-44TG1 | 58 | 65 | 52 | 65 | 57 | 72",
+        "| 1104A-44TG2 | 72 | 79 | 64 | 80 | 70 | 88",
+        "| 1106A-70TAG2 | 131 | 144 | 120 | 150 | 132 | 165",
+        "| 1106A-70TAG3 | 158 | 175 | 144 | 180 | 160 | 200",
+        "| 1106A-70TAG4 | 174 | 191 | 160 | 200 | 176 | 220",
+        "| 1206A-E70TTAG3 | 218 | 240 | 200 | 250 | 220 | 275"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 17 — Fuel optimised (50Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 1506A-E88TAG1 | 180 | 198 | 166 | 207 | 182 | 228",
+        "| 1506A-E88TAG2 | 201 | 223 | 185 | 231 | 206 | 257",
+        "| 1506A-E88TAG3 | 223 | 245 | 206 | 257 | 226 | 282",
+        "| 1506A-E88TAG4 | 245 | 268 | 226 | 282 | 246 | 308",
+        "| 1506A-E88TAG5 | 268 | 293 | 246 | 308 | 270 | 337",
+        "| 1706A-E93TAG1 | 267 | 295 | 249 | 311 | 275 | 343",
+        "| 1706A-E93TAG2 | 302 | 334 | 281 | 352 | 310 | 388",
+        "| 2206A-E13TAG2 | 305 | 349 | 280 | 350 | 320 | 400",
+        "| 2206A-E13TAG3 | 349 | 392 | 320 | 400 | 360 | 450",
+        "| 2606A-E13TAG1 | 304 | 348 | 280 | 350 | 320 | 400",
+        "| 2606A-E13TAG2 | 348 | 391 | 320 | 400 | 360 | 450",
+        "| 2606A-E13TAG3 | 396 | 435 | 364 | 455 | 400 | 500",
+        "| 2606A-E13TAG4 | 435 | 478 | 400 | 500 | 440 | 550",
+        "| 2506A-E15TAG1 | 396 | 434 | 364 | 455 | 400 | 500",
+        "| 2506A-E15TAG2 | 435 | 478 | 400 | 500 | 440 | 550"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 18 — Fuel optimised (50Hz)",
+      "header": [
+        "| Engine model | COP kWm | Prime kWm | Standby kWm | COP kWe | COP kVA | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 4006-23TAG2A | 501 | 628 | 691 | 476 | 595 | 597 | 746 | 656 | 821",
+        "| 5006A-E23TAG1 | 511 | 638 | 702 | 480 | 600 | 600 | 750 | 660 | 825",
+        "| 5006A-E23TAG2 | 545 | 681 | 766 | 512 | 640 | 640 | 800 | 720 | 900",
+        "| 4006-23TAG3A | 536 | 675 | 756 | 509 | 637 | 641 | 802 | 718 | 898",
+        "| 5008A-E30TAG1 | 620 | 774 | 851 | 582 | 728 | 728 | 910 | 800 | 1000",
+        "| 4008-30TAG1 | 632 | 758 | 842 | 600 | 750 | 720 | 900 | 800 | 1000",
+        "| 4008-30TAG2 | 674 | 851 | 947 | 640 | 800 | 808 | 1010 | 900 | 1125",
+        "| 5008A-E30TAG2 | 688 | 860 | 957 | 646 | 808 | 808 | 1010 | 900 | 1125",
+        "| 5008A-E30TAG3 | 766 | 957 | 1064 | 720 | 900 | 900 | 1124 | 1000 | 1250"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 18 — Fuel optimised (50Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 2806A-E18TAG1A | 522 | 574 | 480 | 600 | 528 | 660",
+        "| 2806A-E18TAG2 | 565 | 609 | 520 | 650 | 560 | 700",
+        "| 2806A-E18TTAG4 | 595 | 657 | 565 | 706 | 624 | 780",
+        "| 2806A-E18TTAG5 | 648 | 714 | 616 | 770 | 680 | 850"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 19 — Fuel optimised (50Hz)",
+      "header": [
+        "| Engine model | COP kWm | Prime kWm | Standby kWm | COP kWe | COP kVA | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 4012-46TAG0A | 842 | 1053 | 1158 | 800 | 1000 | 1000 | 1250 | 1100 | 1375",
+        "| 4012-46TWG2A | 833 | 1055 | 1166 | 791 | 989 | 1002 | 1253 | 1108 | 1385",
+        "| 4012-46TAG1A | 909 | 1148 | 1263 | 864 | 1079 | 1091 | 1363 | 1200 | 1500",
+        "| 4012-46TWG3A | 909 | 1149 | 1263 | 864 | 1079 | 1092 | 1364 | 1200 | 1500",
+        "| 4012-46TAG2A | 1005 | 1267 | 1395 | 955 | 1193 | 1204 | 1505 | 1325 | 1657",
+        "| 4012-46TAG4A | 1219 | 1459 | 1602 | 1170 | 1463 | 1401 | 1751 | 1538 | 1922",
+        "| 5012A-E46TAG1 | 859 | 1074 | 1179 | 816 | 1020 | 1020 | 1275 | 1120 | 1400",
+        "| 5012A-E46TAG2 | 909 | 1137 | 1263 | 864 | 1080 | 1080 | 1350 | 1200 | 1500",
+        "| 5012A-E46TAG3 | 1011 | 1263 | 1389 | 960 | 1200 | 1200 | 1500 | 1320 | 1650",
+        "| 5012A-E46TAG4 | 1152 | 1440 | 1579 | 1094 | 1368 | 1368 | 1710 | 1500 | 1875"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 19 — Fuel optimised (50Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 4012-46TWG4A | 1254 | 1342 | 1204 | 1505 | 1288 | 1610"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 20 — Fuel optimised (50Hz)",
+      "header": [
+        "| Engine model | COP kWm | Prime kWm | Standby kWm | COP kWe | COP kVA | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 4016-61TRG1 | 1179 | 1558 | 1648 | 1120 | 1400 | 1480 | 1850 | 1600 | 2000",
+        "| 4016-61TRG2 | 1347 | 1684 | 1895 | 1280 | 1600 | 1600 | 2000 | 1800 | 2250",
+        "| 5016A-E61TRG0 | 1179 | 1474 | 1621 | 1120 | 1400 | 1400 | 1750 | 1540 | 1925",
+        "| 5016A-E61TRG1 | 1246 | 1558 | 1684 | 1184 | 1480 | 1480 | 1850 | 1600 | 2000",
+        "| 5016A-E61TRG2 | 1347 | 1684 | 1895 | 1280 | 1600 | 1600 | 2000 | 1800 | 2250",
+        "| 5016A-E61TRG3 | 1516 | 1895 | 2105 | 1440 | 1800 | 1800 | 2250 | 2000 | 2500"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 21 — Fuel optimised (60Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 1103A-33G | 32 | 35 | 28 | 35 | 31 | 38",
+        "| 1103A-33TG1 | 49 | 54 | 43 | 53 | 47 | 59",
+        "| 1103A-33TG2 | 61 | 68 | 55 | 68 | 60 | 75",
+        "| 1104A-44TG1 | 69 | 76 | 61 | 76 | 67 | 84",
+        "| 1104A-44TG2 | 82 | 90 | 73 | 91 | 80 | 100",
+        "| 1106A-70TAG2 | 147 | 164 | 135 | 169 | 150 | 188",
+        "| 1106A-70TAG3 | 173 | 192 | 158 | 197 | 175 | 219",
+        "| 1206A-E70TTAG1 | 202 | 224 | 180 | 225 | 200 | 250",
+        "| 1206A-E70TTAG2 | 202 | 224 | 180 | 225 | 200 | 250",
+        "| 1206A-E70TTAG3 | 202 | 224 | 180 | 225 | 200 | 250",
+        "| 1506A-E88TAG2 | 216 | 237 | 198 | 248 | 218 | 273",
+        "| 1506A-E88TAG3 | 252 | 279 | 232 | 290 | 256 | 320",
+        "| 1506A-E88TAG4 | 274 | 301 | 252 | 315 | 277 | 346",
+        "| 1506A-E88TAG5 | 306 | 339 | 282 | 352 | 312 | 389",
+        "| 1706A-E93TAG2 | 311 | 343 | 289 | 361 | 319 | 399"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 22 — Fuel optimised (60Hz)",
+      "header": [
+        "| Engine model | COP kWm | Prime kWm | Standby kWm | COP kWe | COP kVA | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 4006-23TAG2A | 511 | 638 | 702 | 480 | 600 | 600 | 750 | 660 | 825",
+        "| 4006-23TAG3A | 570 | 715 | 795 | 542 | 677 | 679 | 849 | 755 | 944"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 22 — Fuel optimised (60Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 2206A-E13TAG2 | 344 | 381 | 320 | 400 | 350 | 438",
+        "| 2206A-E13TAG3 | 349 | 381 | 320 | 400 | 350 | 438",
+        "| 2206A-E13TAG5 | 349 | 381 | 320 | 400 | 350 | 438",
+        "| 2206A-E13TAG6 | 381 | 435 | 350 | 438 | 400 | 500",
+        "| 2606A-E13TAG2 | 348 | 381 | 320 | 400 | 350 | 438",
+        "| 2606A-E13TAG3 | 397 | 435 | 365 | 456 | 400 | 500",
+        "| 2606A-E13TAG4 | 446 | 489 | 410 | 513 | 450 | 563",
+        "| 2506A-E15TAG3 | 446 | 490 | 410 | 513 | 450 | 563",
+        "| 2506A-E15TAG4 | 495 | 543 | 455 | 569 | 500 | 624",
+        "| 2806A-E18TAG3 | 592 | 652 | 545 | 681 | 600 | 750",
+        "| 2806A-E18TTAG6 | 685 | 754 | 650 | 813 | 716 | 895",
+        "| 2806A-E18TTAG7 | 716 | 790 | 680 | 850 | 750 | 938"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 23 — Fuel optimised (60Hz)",
+      "header": [
+        "| Engine model | COP kWm | Prime kWm | Standby kWm | COP kWe | COP kVA | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 4012-46TWG2A | 833 | 1055 | 1166 | 791 | 989 | 1002 | 1253 | 1108 | 1385",
+        "| 4012-46TWG3A | 909 | 1149 | 1263 | 864 | 1079 | 1092 | 1364 | 1200 | 1500",
+        "| 4012-46TAG2A | 993 | 1272 | 1399 | 943 | 1179 | 1208 | 1511 | 1329 | 1661",
+        "| 4012-46TAG3A | 1200 | 1440 | 1583 | 1140 | 1425 | 1368 | 1710 | 1504 | 1880"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog perkins-power-selector — trang 23 — Fuel optimised (60Hz)",
+      "header": [
+        "| Engine model | Prime kWm | Standby kWm | Prime kWe | Prime kVA | Standby kWe | Standby kVA"
+      ],
+      "rows": [
+        "| 4012-46TWG4A | 1254 | 1342 | 1204 | 1505 | 1288 | 1610"
       ]
     }
   ]

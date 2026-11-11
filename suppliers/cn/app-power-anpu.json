@@ -1,0 +1,279 @@
+{
+  "id": "app-power-anpu",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Anpu Heavy Industry (Shandong) Co., Ltd.",
+    "zh": "安普重工（山东）有限公司",
+    "brands": [
+      "APP POWER",
+      "APP"
+    ]
+  },
+  "website": "https://www.appfdj.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Hơn 10 năm sản xuất tổ máy phát; sản phẩm chính là tổ máy phát diesel, máy phát, tủ điều khiển phân phối",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Thông số tổ máy lấy từ catalog PDF Khoa tải lên (nguồn 5001+, suppliers/catalog-pdf.mjs)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.appfdj.com/aboutus.html",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "Anpu Heavy Industry (Shandong) Co., Ltd.",
+        "with over 10 years of experience in generator set production",
+        "Main products include diesel generator sets, generators, electrical accessories, power distribution control panels, and construction machinery.",
+        "No. 1800, Cuifang Street, Fangzi District",
+        "Weifang City, Shandong Province, China"
+      ],
+      "file": "sources/app-power-anpu/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.appfdj.com/",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "APP Heavy Industry (Shandong) Co., Ltd. is a backbone enterprise in the national machinery industry"
+      ],
+      "file": "sources/app-power-anpu/2.md"
+    },
+    {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/app-power-anpu-catalog.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "| APP-27GF | 20 | 25 | 22 | 28 | 4Z3.0-G11 |"
+      ],
+      "file": "sources/app-power-anpu/5001.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-11",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 5001,
+      "title": "Catalog app-power-anpu-catalog — trang 5 phải",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| APP-27GF | 20 | 25 | 22 | 28 | 4Z3.0-G11 |",
+        "| APP-27GF | 20 | 25 | 22 | 28 | 4Z3.0-G21 |",
+        "| APP-60GF | 50 | 63 | 55 | 69 | 4ZT4.1-G21 |",
+        "| APP-64GF | 55 | 69 | 60 | 75 | 4ZTAA4.1-G21 |",
+        "| APP-74GF | 64 | 80 | 70 | 88 | 4ZTAA4.1-G22 |",
+        "| APP-62GF | 50 | 63 | 55 | 69 | SC4H95D2 |",
+        "| APP-78GF | 64 | 80 | 70 | 88 | SC4H115D2 |",
+        "| APP-95GF | 80 | 100 | 90 | 113 | SC4H140D2 |",
+        "| APP-105GF | 90 | 113 | 100 | 125 | SC4H160D2 |",
+        "| APP-120GF | 100 | 125 | 110 | 138 | SC4H180D2 |",
+        "| APP-120GF | 100 | 125 | 110 | 138 | SC7H180D2 |",
+        "| APP-138GF | 120 | 150 | 132 | 165 | SC7H205D2 |",
+        "| APP-150GF | 130 | 163 | 145 | 181 | SC7H220D2 |",
+        "| APP-154GF | 135 | 169 | 150 | 188 | SC7H230D2 |",
+        "| APP-168GF | 150 | 188 | 165 | 206 | SC7H250D2 |",
+        "| APP-185GF | 160 | 200 | 180 | 225 | SC8D280D2 |",
+        "| APP-208GF | 180 | 225 | 200 | 250 | SC9D310D2 |",
+        "| APP-228GF | 200 | 250 | 220 | 275 | SC9D340D2 |",
+        "| APP-255GF | 220 | 275 | 250 | 313 | SC10E380D2 |",
+        "| APP-280GF | 250 | 313 | 280 | 350 | SC10E420D2 |",
+        "| APP-307GF | 280 | 350 | 300 | 375 | SC10E460D2 |",
+        "| APP-323GF | 290 | 363 | 320 | 400 | SC10E480D2 |",
+        "| APP-280GF | 250 | 313 | 280 | 350 | SC12E420D2 |",
+        "| APP-307GF | 280 | 350 | 300 | 375 | SC12E460D2 |",
+        "| APP-323GF | 290 | 363 | 320 | 400 | SC12E480D2 |",
+        "| APP-339GF | 300 | 375 | 330 | 413 | SC13E500D2 |",
+        "| APP-368GF | 320 | 400 | 360 | 450 | SC13E550D2 |",
+        "| APP-280GF | 250 | 313 | 280 | 350 | SC13G420D2 |",
+        "| APP-330GF | 300 | 375 | 330 | 413 | SC15G500D2 |",
+        "| APP-505GF | 450 | 563 | 500 | 625 | SC27G755D2 |",
+        "| APP-561GF | 500 | 625 | 550 | 688 | SC27G830D2 |",
+        "| APP-602GF | 550 | 688 | 600 | 750 | SC27G900D2 |",
+        "| APP-572GF | 500 | 625 | 550 | 688 | SC25K855D2 |",
+        "| APP-622GF | 560 | 700 | 600 | 750 | SC25K930D2 |",
+        "| APP-660GF | 600 | 750 | 660 | 825 | SC25K990D2 |",
+        "| APP-39GF | 32 | 40 | 35 | 44 | 4ZTAA3.2-G33 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog app-power-anpu-catalog — trang 6 trái",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| APP-49GF | 40 | 50 | 44 | 55 | 4ZTAA3.2-G32 |",
+        "| APP-64GF | 55 | 69 | 60 | 75 | 4ZTAA3.2-G31 |",
+        "| APP-74GF | 60 | 75 | 66 | 83 | 4ZTAA3.5-G31 |",
+        "| APP-51GF | 40 | 50 | 44 | 55 | 4HTAA4.3-G31 |",
+        "| APP-62GF | 50 | 63 | 55 | 69 | 4HTAA4.3-G32 |",
+        "| APP-78GF | 64 | 80 | 70 | 88 | 4HTAA4.3-G33 |",
+        "| APP-95GF | 80 | 100 | 90 | 113 | 4HTAA4.3-G34 |",
+        "| APP-125GF | 110 | 138 | 120 | 150 | 4HTAA4.3-G36 |",
+        "| APP-280GF | 250 | 313 | 280 | 350 | 6ETAA11.8-G32 |",
+        "| APP-307GF | 280 | 350 | 300 | 375 | 6ETAA11.8-G33 |",
+        "| APP-340GF | 300 | 375 | 330 | 413 | 6ETAA11.8-G31 |",
+        "| APP-360GF | 320 | 400 | 360 | 450 | 6ETAA12.8-G32 |",
+        "| APP-401GF | 360 | 450 | 400 | 500 | 6ETAA12.8-G31 |",
+        "| APP-450GF | 400 | 500 | 440 | 550 | 6ETAA12.8-G310 |",
+        "| APP-459GF | 400 | 500 | 450 | 563 | 12GTAA27-G34 |",
+        "| APP-505GF | 450 | 563 | 500 | 625 | 12GTAA27-G33 |",
+        "| APP-565GF | 500 | 625 | 550 | 688 | 12GTAA27-G32 |",
+        "| APP-622GF | 560 | 700 | 620 | 775 | 12GTAA27-G31 |",
+        "| APP-460GF | 400 | 500 | 450 | 563 | 6KTAA25-G311 |",
+        "| APP-520GF | 450 | 563 | 500 | 625 | 6KTAA25-G310 |",
+        "| APP-572GF | 500 | 625 | 550 | 688 | 6KTAA25-G39 |",
+        "| APP-622GF | 560 | 700 | 600 | 750 | 6KTAA25-G38 |",
+        "| APP-460GF | 400 | 500 | 450 | 563 | 6KTAA25-G36 |",
+        "| APP-520GF | 450 | 563 | 500 | 625 | 6KTAA25-G35 |",
+        "| APP-572GF | 500 | 625 | 550 | 688 | 6KTAA25-G34 |",
+        "| APP-622GF | 560 | 700 | 600 | 750 | 6KTAA25-G33 |",
+        "| APP-685GF | 600 | 750 | 660 | 825 | 6KTAA25-G32 |",
+        "| APP-728GF | 660 | 825 | 720 | 900 | 6KTAA25-G31 |",
+        "| APP-820GF | 720 | 900 | 800 | 1000 | 6KTAA25-G320 |",
+        "| APP-880GF | 800 | 1000 | 900 | 1125 | 6KTAA25-G321 |",
+        "| APP-882GF | 800 | 1000 | 900 | 1125 | 6WTAA35-G31 |",
+        "| APP-1018GF | 900 | 1125 | 1000 | 1250 | 6WTAA35-G310 |",
+        "| APP-1018GF | 900 | 1125 | 1000 | 1250 | 16XTAA38-G34 |",
+        "| APP-1130GF | 1000 | 1250 | 1100 | 1375 | 16XTAA38-G33 |",
+        "| APP-1225GF | 1100 | 1375 | 1200 | 1500 | 16XTAA38-G32 |",
+        "| APP-1350GF | 1200 | 1500 | 1350 | 1688 | 16XTAA38-G31 |",
+        "| APP-1280GF | 1100 | 1375 | 1200 | 1500 | 12KTA58-G36 |",
+        "| APP-1420GF | 1250 | 1563 | 1350 | 1688 | 12KTA58-G35 |",
+        "| APP-1560GF | 1350 | 1688 | 1500 | 1875 | 12KTA58-G34 |",
+        "| APP-1720GF | 1500 | 1875 | 1650 | 2063 | 12KTA58-G33 |",
+        "| APP-1850GF | 1600 | 2000 | 1800 | 2250 | 12KTA58-G32 |",
+        "| APP-2010GF | 1800 | 2250 | 2000 | 2500 | 12KTA58-G31 |",
+        "| APP-2010GF | 1800 | 2250 | 2000 | 2500 | 16KTA76-G34 |",
+        "| APP-2250GF | 2000 | 2500 | 2200 | 2750 | 16KTA76-G33 |",
+        "| APP-2510GF | 2200 | 2750 | 2400 | 3000 | 16KTA76-G32 |",
+        "| APP-2680GF | 2400 | 3000 | 2600 | 3250 | 16KTA76-G31 |",
+        "| APP-2773GF | 2500 | 3125 | 2800 | 3500 | 16KTA76-G310 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog app-power-anpu-catalog — trang 7 trái",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| APP-100GF | 80 | 100 | 110 | 138 | YC4A140L-D25 |",
+        "| APP-120GF | 100 | 125 | 132 | 165 | YC4A180L-D20 |",
+        "| APP-120GF | 100 | 125 | 132 | 165 | YC6B180L-D20 |",
+        "| APP-150GF | 120 | 150 | 165 | 206 | YC6B205L-D20 |",
+        "| APP-180GF | 150 | 188 | 198 | 248 | YC6A245L-D21 |",
+        "| APP-350GF | 300 | 375 | 385 | 481 | YC6MJ500L-D21 |",
+        "| APP-400GF | 360 | 450 | 440 | 550 | YC6T600L-D22 |",
+        "| APP-450GF | 400 | 500 | 495 | 619 | YC6T660L-D20 |",
+        "| APP-50GF | 45 | 56 | 50 | 63 | YC4D80-D34 |",
+        "| APP-60GF | 50 | 63 | 55 | 69 | YC4D90-D34 |",
+        "| APP-90GF | 80 | 100 | 90 | 113 | YC4D140-D31 |",
+        "| APP-100GF | 90 | 113 | 100 | 125 | YC4D155-D31 |",
+        "| APP-90GF | 80 | 100 | 90 | 113 | YC4A140-D30 |",
+        "| APP-100GF | 90 | 113 | 100 | 125 | YC4A155-D30 |",
+        "| APP-110GF | 90 | 113 | 100 | 125 | YC4A165-D30 |",
+        "| APP-120GF | 110 | 138 | 120 | 150 | YC4A190-D30 |",
+        "| APP-130GF | 120 | 150 | 132 | 165 | YC6A205-D30 |",
+        "| APP-150GF | 140 | 175 | 150 | 188 | YC6A230-D30 |",
+        "| APP-160GF | 150 | 188 | 160 | 200 | YC6A245-D30 |",
+        "| APP-180GF | 160 | 200 | 180 | 225 | YCD6Q33H6-260 |",
+        "| APP-180GF | 160 | 200 | 180 | 225 | YC6A275-D30 |",
+        "| APP-220GF | 200 | 250 | 220 | 275 | YCA08350-D30 |",
+        "| APP-220GF | 200 | 250 | 220 | 275 | YC6MK350-D30 |",
+        "| APP-280GF | 250 | 313 | 280 | 350 | YC6MK420-D30 |",
+        "| APP-360GF | 320 | 400 | 360 | 450 | YC6MJ540-D30 |",
+        "| APP-400GF | 360 | 450 | 400 | 500 | YC6MJ600-D30 |",
+        "| APP-320GF | 300 | 375 | 320 | 400 | YC6K500-D30 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog app-power-anpu-catalog — trang 7 phải",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| APP-320GF | 300 | 375 | 320 | 400 | YC6K500-D31 |",
+        "| APP-340GF | 320 | 400 | 340 | 425 | YC6K520-D30 |",
+        "| APP-450GF | 400 | 500 | 440 | 550 | YC6T660-D31 |",
+        "| APP-500GF | 450 | 563 | 500 | 625 | YC6TD780-D31 |",
+        "| APP-550GF | 450 | 563 | 500 | 625 | YC6TD840-D31 |",
+        "| APP-600GF | 500 | 625 | 550 | 688 | YC6TD900-D31 |",
+        "| APP-600GF | 550 | 688 | 600 | 750 | YC6TD900-D30 |",
+        "| APP-660GF | 600 | 750 | 660 | 825 | YC6C1020-D31 |",
+        "| APP-700GF | 650 | 813 | 710 | 888 | YC6C1070-D31 |",
+        "| APP-800GF | 730 | 913 | 800 | 1000 | YC6C1220-D31 |",
+        "| APP-900GF | 800 | 1000 | 900 | 1125 | YC6C1320-D31 |",
+        "| APP-1000GF | 900 | 1125 | 1000 | 1250 | YC6C1520-D31 |",
+        "| APP-1100GF | 1000 | 1250 | 1100 | 1375 | YC6C1660-D31 |",
+        "| APP-1100GF | 1000 | 1250 | 1100 | 1375 | YC6C1660-D30 |",
+        "| APP-1200GF | 1100 | 1375 | 1200 | 1500 | YC12VTD1830-D30 |",
+        "| APP-1500GF | 1350 | 1688 | 1500 | 1875 | YC16VTD2270-D30 |",
+        "| APP-3300GF | 3000 | 3750 | 3300 | 4125 | YC16VC4900-D30 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog app-power-anpu-catalog — trang 11 phải",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| APP-17GF | 17 | 21 | 19 | 24 | 4B3.9-G11 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog app-power-anpu-catalog — trang 13 phải",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| APP-7GF | 7 | 9 | 8 | 10 | 403A-11G1 |",
+        "| APP-12GF | 12 | 15 | 13 | 16 | 403A-15G2 |",
+        "| APP-16GF | 16 | 20 | 18 | 23 | 404A-22G1 |"
+      ]
+    }
+  ]
+}

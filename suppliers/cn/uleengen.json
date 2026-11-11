@@ -350,6 +350,16 @@
         "| Genset Model | 50HZ | Diesel Engine | Alternator | Overall Size(mm) | Gross Weight(kg)"
       ],
       "file": "sources/uleengen/120.md"
+    },
+    {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/uleen-generator-catalog-2026.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "| UP2250GF | 1800 | 2250 | 4016-61TRG3 | S7L1D-H41"
+      ],
+      "file": "sources/uleengen/5001.md"
     }
   ],
   "confidence": "medium",
@@ -1411,6 +1421,265 @@
         "| UC1250GF | 900 | 1125 | KTA38-G4 | 1007 | 12.V | 159*159 | 37.9 | 234 | HCI634J | 4260x1500x2400 | 6100",
         "| UC1500GF | 1100 | 1375 | KTA50-G3 | 1220 | 16.V | 159*159 | 50.3 | 280 | S6L1D-G41 | 5000x2020x2500 | 9420",
         "| UC1500GF | 1260 | 1575 | KTA50-G9 | 1383 | 16.V | 159*159 | 50.3 | 280 | S6L1D-H41 | 5000x2020x2500 | 9600"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 2 (50Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UP2250GF | 1800 | 2250 | 4016-61TRG3 | S7L1D-H41",
+        "| UP2500GF | 2000 | 2500 | 4016-61TRG3X | S7L1D-J41"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 3 (60Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UP288GF | 230 | 288 | 1506A-E88TAG3 | UCDI274K",
+        "| UP350GF | 280 | 350 | 1506A-E88TAG5 | HCI444D",
+        "| UP560GF | 448 | 560 | 2506C-E15TAG3 | S5L1D-C41",
+        "| UP625GF | 500 | 625 | 2806A-E18TAG2 | S5L1D-D41",
+        "| UP688GF | 550 | 688 | 2806A-E18TAG3 | S5L1D-E41"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 5 (50Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UC180GF | 144 | 180 | 6CTA8.3-G2 | 274G"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 8 (50Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UD120GF | 120 | 150 | 132 | 165 | DP086TA | 274FS",
+        "| UD150GF | 150 | 188 | 170 | 213 | P086TI | 274G",
+        "| UD160GF | 160 | 200 | 176 | 220 | P086TI |",
+        "| UD200GF | 200 | 250 | 220 | 275 | P126TI | 274K",
+        "| UD250GF | 250 | 313 | 275 | 344 | P126TI-II |",
+        "| UD300GF | 300 | 375 | 330 | 413 | P158LE-1 |",
+        "| UD360GF | 360 | 450 | 400 | 500 | DP158LC |",
+        "| UD400GF | 400 | 500 | 450 | 563 | DP158LD |",
+        "| UD500GF | 500 | 625 | 550 | 688 | DP180LB |",
+        "| UD600GF | 600 | 750 | 660 | 825 | DP222LC |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 10 (50Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UY38GF | 30 | 38 | YC4D60-D21 |",
+        "| UY1250GF | 1000 | 1250 | YC6C1660-D30 |",
+        "| UY1500GF | 1200 | 1500 | YC12VTD2000-D30 |",
+        "| UY1650GF | 1320 | 1650 | YC16VTD2270-D30 |",
+        "| UY1875GF | 1500 | 1875 | YC16VTD2510-D30 |",
+        "| UY2500GF | 2000 | 2500 | YC16VC3300-D31 |",
+        "| UY3000GF | 2400 | 3000 | YC16VC4000-D31 |",
+        "| UY3750GF | 3000 | 3750 | YC16VC4900-D30 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 16 (50Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UD38GF | 30 | 38 | BFM3T |",
+        "| UD225GF | 180 | 225 | BF6M1015-LA |",
+        "| UD250GF | 200 | 250 | BF6M1015C-LA | 274K",
+        "| UD300GF | 240 | 300 | BF6M1015C-LA |",
+        "| UD350GF | 280 | 350 | BF6M1015C-LA |",
+        "| UD375GF | 300 | 375 | BF6M1015CP-LA |",
+        "| UD400GF | 320 | 400 | BF8M1015C-LA |",
+        "| UD450GF | 360 | 450 | BF8M1015C-LA |",
+        "| UD500GF | 400 | 500 | BF8M1015CP-LA |",
+        "| UD562GF | 450 | 562 | BF8M1015CP-LA |",
+        "| UD700GF | 560 | 700 | HC12V132ZL-LAG1A |",
+        "| UD750GF | 600 | 750 | HC12V132ZL-LAG2A |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 17 (50Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UD15GF | 12 | 15 | F2L912 | 164D",
+        "| UD20GF | 16 | 20 | F3L912 | 184ES",
+        "| UD25GF | 20 | 25 | F3L912 |",
+        "| UD30GF | 24 | 30 | F4L912 | 184G",
+        "| UD38GF | 30 | 37.5 | F4L913 |",
+        "| UD50GF | 40 | 50 | F6L912 | 224D",
+        "| UD60GF | 48 | 60 | F6L912T | 224E",
+        "| UD100GF | 80 | 100 | BF6L913 | 274C"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 18 (60Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UD225GF | 180 | 225 | BF6M1013FCG3 | UCI274G",
+        "| UD250GF | 200 | 250 | BF6M1015-LA | UCI274H",
+        "| UD300GF | 240 | 300 | BF6M1015C-LA | UCDI274J",
+        "| UD400GF | 320 | 400 | BF6M1015CP-LA | HCI444ES",
+        "| UD450GF | 360 | 450 | BF8M1015C-LA | HCI444E",
+        "| UD500GF | 400 | 500 | BF8M1015CP-LA | HCI444F"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 22 (50Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UX15GF | 12 | 15 | 4DW81-23D | 164D",
+        "| UX20GF | 16 | 20 | 4DW91-29D | 184ES",
+        "| UX25GF | 20 | 25 | 4DW92-35D |",
+        "| UX30GF | 24 | 30 | 4DW93-42D | 184G",
+        "| UX38GF | 30 | 38 | 4DX22-50D |",
+        "| UX50GF | 40 | 50 | 4DX22-65D | 224D",
+        "| UX60GF | 48 | 60 | 4DX23-78D | 224E",
+        "| UX75GF | 60 | 75 | CA4DF2-12D | 224F",
+        "| UX85GF | 68 | 85 | CA4DF2-12D | 224G",
+        "| UX100GF | 80 | 100 | CA6DF2D-14D | 274C",
+        "| UX125GF | 100 | 125 | CA6DF2-17D |",
+        "| UX150GF | 120 | 150 | CA6DF2-19D | 274E",
+        "| UX188GF | 150 | 188 | CA6DL1-24D | 274G",
+        "| UX250GF | 200 | 250 | CA6DL2-30 | 274K",
+        "| UX300GF | 240 | 300 | CA6DM2J-39D |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 23 (60Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UX25GF | 20 | 25 | 4DW91-38D | 184ES",
+        "| UX30GF | 24 | 30 | 4DW92-42D | 184E",
+        "| UX35GF | 28 | 35 | 4DW93-50D |",
+        "| UX50GF | 40 | 50 | 4DX22-75D |",
+        "| UX60GF | 48 | 60 | 4DX23-82D | 224D",
+        "| UX75GF | 60 | 75 | 4DX23-90D | 224E",
+        "| UX100GF | 80 | 100 | CA4DF2-14D | 224G",
+        "| UX125GF | 100 | 125 | CA6DF2D-16D | 274C",
+        "| UX150GF | 120 | 150 | CA6DF2-21D |",
+        "| UX200GF | 160 | 200 | CA6DL1-27D | 274F",
+        "| UX250GF | 200 | 250 | CA6DL2-32D |",
+        "| UX300GF | 240 | 300 | CA6DM2J-42D | 274K",
+        "| UX400GF | 320 | 400 | CA6DM3J-49D |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 25 (50Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| US50GF | 50 | 63 | SC4H95D2 | 224E",
+        "| US80GF | 80 | 100 | SC4H140D2 | 274C",
+        "| US100GF | 100 | 125 | SC4H180D2 |",
+        "| US120GF | 120 | 150 | SC7H205D2 | 274F",
+        "| US150GF | 150 | 188 | SC7H250D2 | 274G",
+        "| US200GF | 200 | 250 | SC9D340D2 | 274K",
+        "| US250GF | 250 | 313 | SC12E420D2 |",
+        "| US300GF | 300 | 375 | SC12E480D2 |",
+        "| US360GF | 360 | 450 | SC25G610D2 |",
+        "| US1000GF | 1000 | 1250 | 6WTAA35-G311 |",
+        "| US1200GF | 1200 | 1500 | 12KTA58-G35 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 27 (50Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UY10GFS | 8 | 10 | YD380D | 164B",
+        "| UY12GFS | 10 | 12.5 | YD385D | 164C",
+        "| UY15GFS | 12 | 15 | YD480G | 164D",
+        "| UY20GFS | 16 | 20 | YSD490D | 164D",
+        "| UY25GFS | 20 | 25 | Y490D |",
+        "| UY30GFS | 24 | 30 | Y495D | 184G",
+        "| UY38GFS | 30 | 37.5 | Y4102D |",
+        "| UY50GFS | 40 | 50 | Y4102ZLD | 224D",
+        "| UY62GFS | 50 | 62.5 | Y4105ZLD | 224E"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 28 (60Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UY10GFS | 8 | 10 | YD380D |",
+        "| UY12GFS | 10 | 12.5 | YD380D | 164B",
+        "| UY15GFS | 12 | 15 | YD480G | 164C",
+        "| UY20GFS | 16 | 20 | YND485D | 164D",
+        "| UY25GFS | 20 | 25 | YSD490D | 184ES",
+        "| UY30GFS | 24 | 30 | Y490D | 184E",
+        "| UY38GFS | 30 | 37.5 | Y4100D | 184G",
+        "| UY50GFS | 40 | 50 | Y4105D |",
+        "| UY62GFS | 50 | 62.5 | Y4105ZLD | 224D"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 30 (50Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UH25GF | 20 | 25 | K4100D |",
+        "| UH30GF | 24 | 30 | K4100D | 184G",
+        "| UH38GF | 30 | 38 | K4100ZD |",
+        "| UH50GF | 40 | 50 | K4102ZD | 224D",
+        "| UH60GF | 48 | 60 | 4105ZD | 224E",
+        "| UH75GF | 60 | 75 | 4105ZLD | 224F",
+        "| UH100GF | 80 | 100 | R6105ZD | 274C",
+        "| UH125GF | 100 | 125 | R6105AZLD |",
+        "| UH150GF | 120 | 150 | R6105IZLD | 274E",
+        "| UH188GF | 150 | 188 | R6110ZLD | 274G",
+        "| UH200GF | 160 | 200 | 6D10D182A |",
+        "| UH250GF | 200 | 250 | 6D10D235A | 274K",
+        "| UH300GF | 240 | 300 | 6D10D315A |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog uleen-generator-catalog-2026 — trang 31 (60Hz)",
+      "header": [
+        "| Genset model | Power kW | Power kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| UH25GF | 20 | 25 | K490D |",
+        "| UH200GF | 160 | 200 | R6110ZLD | 274G"
       ]
     }
   ],

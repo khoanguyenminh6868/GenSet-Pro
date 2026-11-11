@@ -1,0 +1,6 @@
+{"id":"app-power-anpu","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"Anpu Heavy Industry (Shandong) Co., Ltd.","zh":"安普重工（山东）有限公司","brands":["APP POWER","APP"],"web":"https://www.appfdj.com/","prov":"Shandong","city":"Weifang","founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Anpu Heavy Industry (Shandong) Co., Ltd.","with over 10 years of experience in generator set production","Main products include diesel generator sets, generators, electrical accessories, power distribution control panels, and construction machinery.","No. 1800, Cuifang Street, Fangzi District","Weifang City, Shandong Province, China"],
+"2":["A","APP Heavy Industry (Shandong) Co., Ltd. is a backbone enterprise in the national machinery industry"]},
+"str":[["Hơn 10 năm sản xuất tổ máy phát; sản phẩm chính là tổ máy phát diesel, máy phát, tủ điều khiển phân phối",1]],"cert":[],
+"lines":[{"k":"genset","s":"Diesel generator sets","fuel":"diesel","src":[1]}],
+"miss":["Thông số tổ máy lấy từ catalog PDF Khoa tải lên (nguồn 5001+, suppliers/catalog-pdf.mjs)"],"by":"discover-bot (Claude)"}
