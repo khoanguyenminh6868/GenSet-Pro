@@ -821,7 +821,7 @@ test("the G7 / G20 origin the HSMT requires of the genset, not an example, a pre
   // EU beside the group opens it to the EU members (Khoa, 2026-11-10): on the line, or on the cell's next / previous line.
   assert.equal(o("1.2\nXuất xứ\nCác nước thuộc: nhóm G7 hoặc Liên minh Châu Âu (EU) hoặc Việt Nam"), "g7eu");
   const cell = originOfHsmt("1     Nước sản xuất                         Nêu cụ thể\n2     Nhà sản xuất/ nhãn hiệu         Nhóm các nước khối G7,\n                                               EU\n3     Model                                 Nêu cụ thể");
-  assert.deepEqual(cell, { origin: "g7eu", quote: "2 Nhà sản xuất/ nhãn hiệu Nhóm các nước khối G7, EU", scope: "genset" });
+  assert.deepEqual(cell, { origin: "g7eu", quote: "2 Nhà sản xuất/ nhãn hiệu Nhóm các nước khối G7, EU", scope: "genset", basis: "brand" });
   // What the line is about (Khoa, 2026-11-10, IB2600603983): only the engine / alternator / controller → "parts", and
   // the suppliers are then the ones based in China; the genset, the goods, or nothing told → "genset".
   const s = (t) => originOfHsmt(t)?.scope ?? null;
