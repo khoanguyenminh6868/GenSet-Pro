@@ -2412,7 +2412,11 @@ function biddersHtml(t) {
   const body = list.length ? h`<div class="tablewrap"><table class="bdtbl"><thead><tr><th>#</th><th>Nhà thầu</th><th>MST</th><th>Giá dự thầu</th></tr></thead><tbody>${raw(list.map((x, i) => h`<tr class="${OUR_RE.test(x.name || "") ? "us" : ""}"><td class="num c-rk">${x.rank ?? i + 1}</td><td><span class="rk">${x.rank ?? i + 1}. </span>${raw(bdNameLink(x))}${raw(x.won ? ' <span class="chip ok">Trúng thầu</span>' : "")}${raw(x.note ? h`<div class="src">${x.note}</div>` : "")}${raw(goodsOf(x) ? bdGoodsHtml(goodsOf(x)) : "")}</td><td class="num" data-l="MST">${x.taxCode || ""}</td><td class="num" data-l="Giá dự thầu">${num(x.priceAfterDiscount ?? x.bidPrice)}</td></tr>`).join(""))}</tbody></table></div>
     <div class="muted small">${list.length} nhà thầu${n && n !== list.length ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""} · đọc từ ${b.source || "biên bản mở thầu"} lúc ${fmtDate(b.at)}</div>`
     : h`<div class="muted small">Chưa có biên bản mở thầu${n ? ` (muasamcong ghi ${n} nhà thầu dự thầu)` : ""}.</div>`;
-  return h`<section class="sec"><h4>Nhà thầu tham dự và giá dự thầu${list.length ? ` (${list.length})` : ""}</h4>${raw(body)}</section>`;
+  // Before muasamcong posts the result the list is only the bid-opening minutes: say so, so the lowest price is not read as
+  // the winner (Khoa, 2026-11-11).
+  const head = !list.length ? "Nhà thầu tham dự và giá dự thầu" : list.some((x) => x.won) ? `Kết quả: nhà thầu và giá dự thầu (${list.length})` : `Biên bản mở thầu: nhà thầu và giá dự thầu (${list.length})`;
+  const pend = list.length && !list.some((x) => x.won) ? ' <span class="chip warn">Chưa có kết quả</span>' : "";
+  return h`<section class="sec"><h4>${head}${raw(pend)}</h4>${raw(body)}</section>`;
 }
 // The action row of a tab once its work is done, laid out like Phân tích (Khoa, 2026-11-05): what was done, when, then the
 // buttons on the right. `id` names the time span, which some tabs reuse for a status line (Đang tạo PDF...).
