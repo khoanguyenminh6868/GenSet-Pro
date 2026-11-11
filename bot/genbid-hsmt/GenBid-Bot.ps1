@@ -54,6 +54,7 @@ $ErrorActionPreference = 'Stop'
 try { [Console]::OutputEncoding = [Text.Encoding]::UTF8 } catch {}
 $IngestTokenFile = Join-Path $Root '.genbid-ingest-token'
 $ClaudeTokenFile = Join-Path $Root '.claude-bot-token'
+$ApiKeyFile = Join-Path $Root '.anthropic-api-key'
 $StateFile = Join-Path $Root '.genbid-bot-state.json'
 $WorkerState = Join-Path $Root '.hsmt-worker-state.json'
 $LockFile = Join-Path $Root '.hsmt-worker.lock'
@@ -158,6 +159,19 @@ function Send-Unanswered($handedReqs, [string]$reason) {
 
 function Test-ClaudeLogin { Test-Path (Join-Path $env:USERPROFILE '.claude\.credentials.json') }
 
+# Khoa 11/11/2026: Phân tích, Gợi ý cấu hình, Giá gợi ý trả tiền theo API key thay vì hạn mức tháng của gói Claude.
+# Có tệp .anthropic-api-key thì đặt ANTHROPIC_API_KEY (claude -p ưu tiên nó hơn đăng nhập /login); không có thì như cũ.
+# Không quay về hạn mức tháng khi API lỗi (hết tiền nạp...) — lượt báo lỗi để Khoa thấy.
+function Set-ClaudeAuth {
+    if (Test-Path $ApiKeyFile) {
+        $k = (Get-Content $ApiKeyFile -TotalCount 1).Trim()
+        if ($k) { $env:ANTHROPIC_API_KEY = $k; Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN -ErrorAction SilentlyContinue; return 'api' }
+    }
+    if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
+    return 'plan'
+}
+function Clear-ClaudeAuth { Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:ANTHROPIC_API_KEY -ErrorAction SilentlyContinue }
+
 function Test-WorkerRunning {
     if (-not (Test-Path $LockFile)) { return $false }
     $age = (Get-Date) - (Get-Item $LockFile).LastWriteTime
@@ -221,18 +235,18 @@ function Invoke-Worker([string[]]$sigs) {
     if (-not $dirs.Count) { return 'Không chuẩn bị được dữ liệu cho yêu cầu này (không đọc được bản web).' }
     # Ưu tiên đăng nhập đầy đủ của Claude Code (/login). Token setup-token chỉ dùng khi chưa đăng nhập; nó chỉ nằm
     # trong biến môi trường của các tiến trình con, bỏ ngay sau lượt.
-    if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
+    $auth = Set-ClaudeAuth
     $env:GENBID_CLAUDE = $claude
     try {
         # 1. Mỗi yêu cầu một lần gọi (dữ liệu + prompt vào, JSON ra, không công cụ), tối đa 3 yêu cầu cùng lúc.
-        Log "Gọi Claude một lần cho mỗi yêu cầu ($DeepModel; dịch: $LightModel): $($sigs -join ', ')  (log: $out)"
+        Log "Gọi Claude một lần cho mỗi yêu cầu ($DeepModel; dịch: $LightModel; trả bằng $auth): $($sigs -join ', ')  (log: $out)"
         $reason = Start-Run $node @("`"$SyncJs`"", 'ask', '--dir', "`"$work`"", '--model', $DeepModel, '--light', $LightModel) $null $sigs $out
         (Get-Content $out -Encoding UTF8 -ErrorAction SilentlyContinue) | Where-Object { $_ -match '^\s+\S' } | ForEach-Object { Log $_ }
         # 2. Agent chỉ cho các yêu cầu cần xem trang (PDF scan, HSDT chưa đọc được chữ) hoặc trả lời một lần không được.
         $dirs = @($dirs | Where-Object { Test-Path (Join-Path $_ 'AGENT') })
         if ($dirs.Count -and -not ($script:PauseUntil -gt (Get-Date))) { $reason = Invoke-Agent $claude $dirs $sigs $stamp }
     } finally {
-        Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:GENBID_CLAUDE -ErrorAction SilentlyContinue
+        Clear-ClaudeAuth; Remove-Item Env:GENBID_CLAUDE -ErrorAction SilentlyContinue
         # Gửi kết quả (hoặc lỗi trong error.txt) lên web và xoá thư mục (HSDT là tài liệu riêng của công ty).
         Invoke-Node finish --dir $work | ForEach-Object { Log "  $_" }
     }
@@ -282,12 +296,12 @@ function Invoke-Config {
     $claude = Find-Claude; $node = Find-Node
     if (-not $claude -or -not $node) { Log 'Thiếu Claude Code hoặc Node.js cho Gợi ý cấu hình.'; return }
     Update-Repo
-    if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
+    $auth = Set-ClaudeAuth
     $env:GENBID_CLAUDE = $claude; $env:GENBID_INGEST_TOKEN_FILE = $IngestTokenFile
     $out = Join-Path $LogDir "config-$(Stamp).log"
-    Log "Gợi ý cấu hình, Tìm NCC và Gợi ý giá đấu, mọi gói cùng lúc (Claude $DeepModel)  (log: $out)"
+    Log "Gợi ý cấu hình, Tìm NCC và Gợi ý giá đấu, mọi gói cùng lúc (Claude $DeepModel; trả bằng $auth)  (log: $out)"
     try { [void](Start-Run $node @("`"$cfgJs`"", 'run') $null @('config') $out) }
-    finally { Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:GENBID_CLAUDE, Env:GENBID_INGEST_TOKEN_FILE -ErrorAction SilentlyContinue }
+    finally { Clear-ClaudeAuth; Remove-Item Env:GENBID_CLAUDE, Env:GENBID_INGEST_TOKEN_FILE -ErrorAction SilentlyContinue }
     $lines = @(Get-Content $out -Encoding UTF8 -ErrorAction SilentlyContinue | Where-Object { $_ })
     $lines | ForEach-Object { Log "  $_" }
     # Lượt config-bot khác (vd. chạy tay) đang giữ khoá của nó: báo vòng quét chờ một lúc rồi mới thử lại.
@@ -320,6 +334,9 @@ function Wait-Worker($p, [string]$out) {
     }
     # Hết hạn mức Claude (dùng chung gói với Khoa): báo rõ giờ làm mới và tạm dừng gọi Agent.
     $text = (Get-Content $out -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) + (Get-Content "$out.err" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue)
+    # Trả bằng API key (.anthropic-api-key): hết tiền nạp hoặc khoá sai thì báo rõ, không tạm dừng theo giờ.
+    if ($code -ne 0 -and $text -match '(?i)credit balance is too low') { return 'Tài khoản API Anthropic hết tiền nạp (console.anthropic.com → Billing). Anh nạp thêm rồi gửi lại yêu cầu.' }
+    if ($code -ne 0 -and $text -match '(?i)invalid api key|authentication_error') { return 'API key Anthropic không hợp lệ (tệp .anthropic-api-key). Anh kiểm lại khoá rồi gửi lại yêu cầu.' }
     if ($code -ne 0 -and $text -match '(?i)(hit your [a-z ]*limit|usage limit|rate limit|session limit)') {
         $reset = if ($text -match '(?i)resets ([^\r\n·]+)') { $Matches[1].Trim() } else { '' }
         # Tạm dừng tới giờ làm mới (vd. "1:30pm"), không đoán được thì $LimitPauseMinutes phút.
@@ -469,7 +486,7 @@ try {
     while ($true) {
         try {
             if (-not (Test-Path $IngestTokenFile)) { if (-not $warned.ingest) { Log 'Thiếu .genbid-ingest-token, chờ.'; $warned.ingest = 1 } }
-            elseif (-not (Test-ClaudeLogin) -and -not (Test-Path $ClaudeTokenFile)) { if (-not $warned.claude) { Log 'Thiếu .claude-bot-token (chạy `claude setup-token`), chờ.'; $warned.claude = 1 } }
+            elseif (-not (Test-ClaudeLogin) -and -not (Test-Path $ClaudeTokenFile) -and -not (Test-Path $ApiKeyFile)) { if (-not $warned.claude) { Log 'Thiếu .claude-bot-token (chạy `claude setup-token`), chờ.'; $warned.claude = 1 } }
             else {
                 $warned = @{}
                 Read-Pause
