@@ -29,7 +29,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
-import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn } from "./reqcodes.mjs";
+import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn, clausesOf } from "./reqcodes.mjs";
 import { ratingsOf } from "./ratings.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -1066,7 +1066,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   if (ctlMd) fs.writeFileSync(path.join(dir, "controllers.md"), ctlMd, "utf8");
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
   fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(all), "utf8");
-  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin, ...(auto && GROUP_ORIGIN.has(origin) ? { basis: brand ? "brand" : "origin" } : {}) }), "utf8");
+  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin, ...(auto && GROUP_ORIGIN.has(origin) ? { basis: brand ? "brand" : "origin" } : {}), ...(multi ? { sized: true } : {}) }), "utf8");
   // The analysis' technical lines, for check to list the ones no requirement covers (uncoveredSpecs).
   fs.writeFileSync(path.join(dir, "specs.json"), JSON.stringify((a?.technicalSpecs || []).map(({ item, requirement }) => ({ item, requirement }))), "utf8");
   // The requirements read last time, when the HSMT and Yêu cầu khác are the same (Khoa, 2026-11-02): Gợi ý lại only
@@ -1175,7 +1175,7 @@ const CTL_MEASURE = new Set(CTL_WORDS.filter(([re]) => ["điện áp", "dòng đ
 
 // ---------- check ----------
 // Returns { result, problems } with result fixed in place: unverified marks, "met" without proof → "unclear".
-export function check(result, { hsmtText, suppliers, readWeb, origin, basis }) {
+export function check(result, { hsmtText, suppliers, readWeb, origin, basis, sized = false }) {
   const problems = [], H = norm(hsmtText);
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
@@ -1252,6 +1252,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis }) {
     if (!first) { byCode.set(r.code, r); return [r]; }
     if (r.requirement && !norm(first.requirement || "").includes(norm(r.requirement))) first.requirement = `${first.requirement || ""}; ${r.requirement}`.replace(/^; /, "");
     if (!first.quote && r.quote) first.quote = r.quote;
+    // Every quote of the code is kept (clarifyOf: one point the HSMT states twice with different figures).
+    else if (r.quote && norm(r.quote) !== norm(first.quote) && !(first.quotes || []).some((q) => norm(q) === norm(r.quote))) first.quotes = [...(first.quotes || []), r.quote];
     if (r.parts?.length) first.parts = [...(first.parts || []), ...r.parts.filter((p) => !(first.parts || []).some((q) => norm(q.item) === norm(p.item)))];
     rename.set(norm(r0.item), first.item);
     return [];
@@ -1554,10 +1556,12 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis }) {
       c.checks.unshift(syncCheck(sync, fam, makers, { engine: c.engine?.model, alternator: c.alternator?.model, controller: c.controller?.model }));
     }
     confirmChecks(c, result.requirements || []);
+    vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
     originChecks(c, result, origin, sup);
     comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
+  clarifyOf(result, hsmtText, combo, problems, { scan: !sized });
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
   if (!result.configs.length && !result.message) result.message = "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT.";
   return { result, problems, hints };
@@ -1570,7 +1574,7 @@ function checkDir(dir, suppliers, added = [], origin) {
   if (added.length) result.catalogAdded = added.map(({ nmap, ...a }) => a);
   const readWeb = (f) => { const p = path.join(dir, f); return p.startsWith(path.join(dir, "web")) && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
   const hsmtText = fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8");
-  const out = check(result, { hsmtText, suppliers, readWeb, origin, basis: meta.basis });
+  const out = check(result, { hsmtText, suppliers, readWeb, origin, basis: meta.basis, sized: !!meta.sized });
   rankConfigs(out.result);
   // The analysis' technical lines the requirements may have missed (Khoa, 2026-11-06), for the agent to read again.
   const specs = fs.existsSync(path.join(dir, "specs.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "specs.json"), "utf8")) : [];
@@ -1680,44 +1684,112 @@ export function confirmChecks(c, reqs = []) {
   }
   return c;
 }
-// Bảng câu hỏi gửi nhà cung cấp (rfq, 2026-11-10): one line per "confirm" or "unclear" point of a configuration (and per
-// requirement with no check), in the configuration's order: what the HSMT asks and what the supplier is to confirm or
-// send. Written by the code from the checks; the web copies it as text.
+// Ổn định điện áp (alt_vreg, điều phối 2026-11-11, gói IB2600603983): the steady-state voltage band depends on the AVR
+// chosen when ordering (SX460 ±1%, AS440 / MX341 ±1%, MX321 / DM110 ±0,5%...), not only on the alternator model. A check
+// "not met" or "unclear" whose sources state a band (± x%) looser than the HSMT's (± y%, the strictest it states) becomes
+// "confirm" (order): the supplier confirms the AVR that gives ± y%. A band the sources state that meets ± y% leaves the
+// check as it is; no band in the sources keeps it "unclear". The band is read from the check's own source quote (not
+// one the code could not find) or from a line of the alternator model's sources about voltage regulation, never from a
+// transient line (dip / recovery). Decided here, never by the agent; not for the frequency band (the governor's).
+const PCT_RE = /(?:±|\+\s*\/\s*-|\+\s*-)\s*(\d+(?:[.,]\d+)?)\s*%/g;
+export const pctsIn = (s) => [...String(s ?? "").normalize("NFKC").matchAll(PCT_RE)].map((m) => Number(m[1].replace(",", "."))).filter((v) => Number.isFinite(v));
+const VREG_LINE = /voltage\s*regulation|voltage\s*accuracy|steady\s*-?\s*state\s*voltage|[ổo]n\s*đ[ịi]nh\s*đi[ệe]n\s*[áa]p|đi[ềe]u\s*ch[ỉi]nh\s*đi[ệe]n\s*[áa]p|dao\s*đ[ộo]ng\s*đi[ệe]n\s*[áa]p|稳压|电压调整/i;
+const TRANSIENT = /transient|qu[áa]\s*đ[ộo]|đ[ộo]t\s*bi[ếe]n|t[ứu]c\s*th[ờo]i|\bdip\b|recovery|s[ụu]t\s*[áa]p|瞬态/i;
+const pctVi = (v) => String(v).replace(".", ",");
+export function vregChecks(c, reqs = [], facts = []) {
+  const r = reqs.find((q) => q.code === "alt_vreg");
+  const want = r ? pctsIn(`${r.requirement || ""} ${r.quote || ""}`).filter((v) => v > 0) : [];
+  const x = r && (c.checks || []).find((k) => norm(k.item) === norm(r.item));
+  if (!want.length || !x || (x.status !== "not_met" && x.status !== "unclear") || x.unverified || x.parts?.length) return c;
+  const y = Math.min(...want);
+  const lines = [x.sourceQuote, ...facts.filter((f) => VREG_LINE.test(`${f.label || ""} ${f.line || ""}`)).map((f) => f.line)].filter((l) => l && !TRANSIENT.test(l));
+  const got = [...new Set(lines.flatMap(pctsIn))].filter((v) => v > 0 && v < 10).sort((a, b) => a - b);
+  if (!got.length || got.some((v) => v <= y)) return c;
+  const avr = `phụ thuộc AVR chọn khi đặt hàng: nguồn ghi ±${got.map(pctVi).join(" / ±")}%, HSMT đòi ±${pctVi(y)}%`;
+  x.was = x.status; x.status = "confirm"; x.confirm = "order"; x.avr = avr;
+  x.note = [String(x.note || "").replace(/\s*Code ghi: phụ thuộc AVR[^.]*\.$/, ""), `Code ghi: ${avr}.`].filter(Boolean).join(" ");
+  return c;
+}
+// Bảng câu hỏi gửi nhà cung cấp (rfq, 2026-11-10; thứ tự và gộp: điều phối 2026-11-11). One entry per point to ask, in
+// the order that decides first: (0) power prime / standby, (1) the make / model / origin the HSMT names, (2) the other
+// core points of the model (each part's datasheet points in one line, the controller's functions in one line, a point
+// with its own question on a line of its own), (3) site, (4) points to confirm in the order (one line), (5) documents
+// (one line), (6) options (an option to confirm in the order is in line 4). Every point a line lists keeps its item and what the HSMT asks (`items`), so nothing is lost
+// when lines are joined. Written by the code from the checks; the web shows and copies it (an old rfq without `items` /
+// `tier` still shows as before).
 const PART_VI = { engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển", genset: "Tổ máy" };
+const IDENT = new Set(["genset_make", "genset_model", "engine_make", "engine_model", "alt_make", "alt_model", "ctl_make", "ctl_model", "brand_sync"]);
+const ORIGINS = new Set(["genset_origin", "engine_origin", "alt_origin", "ctl_origin"]);
+const POWER = new Set(["power_prime", "power_standby"]);
+const ASK_SPEC = "Xác nhận thông số, gửi datasheet / catalog có ghi";
+const ASK_ORIGIN = "Nêu nước sản xuất, gửi CO / CQ";
+const ASK_NOISE = "Xác nhận độ ồn ở khoảng cách HSMT nêu, gửi kết quả đo / datasheet vỏ cách âm";
+export const RFQ_TIERS = ["Công suất", "Hãng / model / xuất xứ", "Thông số model", "Điều kiện hiện trường", "Xác nhận khi đặt hàng", "Chứng từ", "Tùy chọn"];
 export function rfqOf(c, reqs = []) {
-  const kinds = new Map(reqs.map((r) => [norm(r.item), kindOf(r)])), codes = new Map(reqs.map((r) => [norm(r.item), r.code]));
+  const byItem = new Map(reqs.map((r) => [norm(r.item), r]));
   const what = (part) => [PART_VI[part] || "Tổ máy", (part === "genset" ? c.genset?.model : c[part]?.model) || ""].filter(Boolean).join(" ");
-  const ask = (x, k) => {
+  const ask = (x, k, code) => {
     if (x.status === "confirm") return x.confirm === "document" || k === "document" ? "Gửi chứng từ / bản cam kết đáp ứng" : "Xác nhận cấu hình đặt hàng đáp ứng";
+    if (ORIGINS.has(code)) return ASK_ORIGIN;
+    if (code === "noise") return ASK_NOISE;
     // Load step: a test report, not a datasheet line (comboChecks: BMEP for reference).
-    if (codes.get(norm(x.item)) === "load_step") return `Gửi kết quả thử nhận tải một bước theo ISO 8528-5 (% tải nhận được, cấp G2 / G3) của tổ máy${c.combo?.bmep ? ` (BMEP tham khảo ${fmt(c.combo.bmep.value)} bar)` : ""}`;
+    if (code === "load_step") return `Gửi kết quả thử nhận tải một bước theo ISO 8528-5 (% tải nhận được, cấp G2 / G3) của tổ máy${c.combo?.bmep ? ` (BMEP tham khảo ${fmt(c.combo.bmep.value)} bar)` : ""}`;
     if (k === "site") return "Xác nhận tổ máy làm việc được ở điều kiện này; gửi đường giảm công suất của nhà sản xuất";
     if (x.conflict) return "Các nguồn ghi khác nhau: xác nhận giá trị đúng, gửi datasheet";
     if (x.version) return "Xác nhận đời (MK) bộ điều khiển chào, gửi datasheet đúng đời";
-    if (x.parts?.length) {
-      const open = x.parts.filter((p) => p.status !== "met" && p.status !== "not_met").map((p) => p.item);
-      return `Xác nhận có các chức năng: ${open.join(", ")}; gửi datasheet`;
-    }
-    return "Xác nhận thông số, gửi datasheet / catalog có ghi";
+    if (x.parts?.length) return `Xác nhận có các chức năng: ${x.parts.filter((p) => p.status !== "met" && p.status !== "not_met").map((p) => p.item).join(", ")}; gửi datasheet`;
+    return ASK_SPEC;
   };
-  const out = [], seen = new Set();
+  const tierOf = (q) => (POWER.has(q.code) && q.status !== "confirm" ? 0 : (IDENT.has(q.code) || ORIGINS.has(q.code)) && q.status !== "confirm" ? 1
+    : q.status === "confirm" ? (q.confirm === "document" || q.kind === "document" ? 5 : 4) : q.level === "option" ? 6 : q.kind === "site" ? 3 : 2);
+  const pts = [], seen = new Set();
+  const add = (x, r, extra = {}) => {
+    const code = r?.code || x.code || "", k = x.kind || r?.kind || kindOf(r || {}), status = x.status === "confirm" ? "confirm" : "unclear";
+    const q = { part: x.part || r?.part || "genset", item: x.item, requirement: x.requirement || r?.requirement || "", kind: k, status, code, level: (r?.level || x.level) === "option" ? "option" : "core",
+      ask: x.ask || ask(x, k, code), ...(x.confirm ? { confirm: x.confirm } : {}), ...(x.avr ? { note: x.avr } : {}), ...(x.parts?.length ? { fn: x.parts.filter((p) => p.status !== "met" && p.status !== "not_met").map((p) => p.item) } : {}), ...(x.conflict ? { conflict: true } : {}), ...(x.version ? { version: x.version } : {}), ...extra };
+    q.tier = tierOf(q);
+    pts.push(q);
+  };
   for (const x of c.checks || []) {
     seen.add(norm(x.item));
     const unsure = x.status === "unclear" || (x.status === "met" && x.unverified) || (x.parts?.length && x.status !== "met" && x.status !== "not_met");
-    if (x.status !== "confirm" && !unsure) continue;
-    const k = kinds.get(norm(x.item)) || "model";
-    out.push({ part: x.part || "genset", of: what(x.part), item: x.item, requirement: x.requirement || "", kind: k, status: x.status === "confirm" ? "confirm" : "unclear", ask: ask(x, k) });
+    if (x.status === "confirm" || unsure) add(x, byItem.get(norm(x.item)));
   }
   for (const r of reqs) {
     if (seen.has(norm(r.item)) || r.byCode) continue;
-    const k = kindOf(r), ck = confirmKindOf(r), x = { status: ck ? "confirm" : "unclear", confirm: ck };
-    out.push({ part: r.part || "genset", of: what(r.part), item: r.item, requirement: r.requirement || "", kind: k, status: x.status, ask: ask(x, k) });
+    const ck = confirmKindOf(r);
+    add({ item: r.item, requirement: r.requirement || "", part: r.part, status: ck ? "confirm" : "unclear", confirm: ck }, r);
   }
-  // Questions of the combination checks (comboChecks): site, load types, load step.
-  for (const q of [...(c.comboAsk || []), ...(c.originAsk || [])]) out.push({ ...q, of: what(q.part) });
-  const order = { engine: 0, controller: 1, alternator: 2, genset: 3 };
-  return out.sort((a, b) => (order[a.part] ?? 4) - (order[b.part] ?? 4));
+  // Questions of the combination checks (comboChecks: site, load types, load step) and of the origin (originChecks).
+  for (const q of [...(c.comboAsk || []), ...(c.originAsk || [])]) add({ ...q, status: q.status === "confirm" ? "confirm" : "unclear", confirm: q.kind === "document" ? "document" : undefined }, null, { code: "" });
+  const order = { engine: 0, controller: 1, alternator: 2, genset: 3 }, po = (p) => order[p] ?? 4;
+  const line = (q) => `${q.item}${q.requirement ? `: ${q.requirement}` : ""}${q.note ? ` (${q.note})` : ""}`;
+  const out = [];
+  const one = (q) => out.push({ tier: q.tier, part: q.part, of: what(q.part), item: q.item, requirement: q.requirement, kind: q.kind, status: q.status, ask: q.ask, ...(q.note ? { note: q.note } : {}) });
+  const joined = (tier, part, item, list, askText, kind, status) => out.push({ tier, part, of: part ? what(part) : "", item, requirement: list.map(line).join("; "), kind, status, ask: askText, items: list.map((q) => ({ item: q.item, requirement: q.requirement, ...(q.note ? { note: q.note } : {}) })) });
+  for (let t = 0; t <= 6; t++) {
+    const tq = pts.filter((q) => q.tier === t).sort((a, b) => po(a.part) - po(b.part));
+    if (t === 4 || t === 5) {
+      // One line: the points to confirm in the order / the documents to send, each with what the HSMT asks.
+      if (tq.length === 1) one(tq[0]);
+      else if (tq.length) joined(t, "", t === 4 ? "Cấu hình đặt hàng" : "Chứng từ", tq, t === 4 ? `Xác nhận cấu hình đặt hàng đáp ứng: ${tq.map((q) => `${q.item}${q.requirement ? ` (${q.requirement})` : ""}${q.note ? ` — ${q.note}` : ""}`).join("; ")}` : `Gửi chứng từ / bản cam kết đáp ứng: ${tq.map((q) => q.item).join("; ")}`, t === 4 ? "order" : "document", "confirm");
+      continue;
+    }
+    if (t !== 2 && t !== 6) { tq.forEach(one); continue; }
+    // Tier 2 / 6: per part, the datasheet points in one line, the controller's functions in one line, the rest alone.
+    for (const part of [...new Set(tq.map((q) => q.part))]) {
+      const pq = tq.filter((q) => q.part === part), spec = pq.filter((q) => q.ask === ASK_SPEC), fns = pq.filter((q) => q.fn && !q.conflict && !q.version);
+      for (const q of pq) if (!spec.includes(q) && !fns.includes(q)) one(q);
+      if (fns.length === 1) one(fns[0]);
+      else if (fns.length) joined(t, part, "Chức năng bộ điều khiển", fns.map((q) => ({ ...q, requirement: q.fn.join(", ") })), `Xác nhận có các chức năng: ${fns.map((q) => `${q.item} (${q.fn.join(", ")})`).join("; ")}; gửi datasheet`, "model", "unclear");
+      if (spec.length === 1) one(spec[0]);
+      else if (spec.length) joined(t, part, `Thông số ${(PART_VI[part] || "tổ máy").toLowerCase()}`, spec, `${ASK_SPEC}: ${spec.map((q) => q.item).join("; ")}`, spec.every((q) => q.kind === "site") ? "site" : "model", "unclear");
+    }
+  }
+  return out;
 }
+// Each point an rfq asks, a joined line counted by its items (the measure of "nothing lost").
+export const rfqPoints = (rfq = []) => rfq.reduce((n, q) => n + (q.items?.length || 1), 0);
 
 // ---------- Kiểm tra tổ hợp (2026-11-10) ----------
 // What the parts give together, not each against the HSMT. Every figure comes from the configuration's genset row, its
@@ -2057,6 +2129,79 @@ export function comboNotes(result, combo) {
   result.combo = combo;
   return result;
 }
+// Câu hỏi làm rõ HSMT (result.clarify, điều phối 2026-11-11): points to ask the investor about, not the supplier. Each
+// {item, quoteA, quoteB?, why, by} with quotes word for word from the HSMT. From the code:
+//  (1) one point stated at two places with different figures: the quotes of a requirement code joined from several
+//      requirements (check, `quotes`), and for a tolerance band (voltage / frequency regulation) the other lines of the
+//      HSMT about it (IB2600603983: "≤ ± 0,5% Udm" in the table, "≤ ±1,5%Udm" in section II.1.3). Compared only by the
+//      figure of the code (% band, V, Hz, kVA, rpm), so "Pmax = 1,1Pdm" and "10% tải" are not taken for a conflict;
+//  (2) overload 10% asked on the standby rating (comboNotes);
+//  (3) a design figure (compression ratio, bore x stroke) no configuration's model meets, when the agent wrote so in
+//      the notes. From the agent: `clarify` in result.json, kept only when its quotes are in the HSMT.
+const CMP_FIG = {
+  alt_vreg: pctsIn, freq_regulation: pctsIn,
+  voltage: (t) => voltsIn(t),
+  frequency: (t) => [...String(t || "").matchAll(/(\d{2})\s*Hz/gi)].map((m) => Number(m[1])),
+  power_prime: (t) => [...String(t || "").matchAll(/(\d[\d.,]*)\s*kVA/gi)].map((m) => Number(m[1].replace(/[.,](?=\d{3}\b)/g, "").replace(",", "."))),
+  power_standby: (t) => [...String(t || "").matchAll(/(\d[\d.,]*)\s*kVA/gi)].map((m) => Number(m[1].replace(/[.,](?=\d{3}\b)/g, "").replace(",", "."))),
+  speed: (t) => [...String(t || "").matchAll(/(\d[\d.,]{2,})\s*(?:v[òo]ng|v\s*\/\s*p|rpm)/gi)].map((m) => Number(m[1].replace(/[.,]/g, ""))),
+};
+// The HSMT lines scanned for a tolerance band: the words of the point itself (not reqcodes.mjs words, whose bare "±0,x%"
+// would take a frequency line for the voltage one), and not the other band's words.
+const BAND = /([ổo]n\s*đ[ịi]nh|bi[ếe]n\s*thi[êe]n|dao\s*đ[ộo]ng|sai\s*s[ốo]|đ[ộo]\s*ch[íi]nh\s*x[áa]c)\s*(c[ủu]a\s*)?/;
+const SCAN = {
+  alt_vreg: { is: new RegExp(BAND.source + String.raw`đi[ệe]n\s*[áa]p|voltage\s*(regulation|variation|stability|accuracy)`, "i"), not: /t[ầa]n\s*s[ốo]|frequency/i },
+  freq_regulation: { is: new RegExp(BAND.source + String.raw`t[ầa]n\s*s[ốo]|frequency\s*(regulation|variation|stability)`, "i"), not: /đi[ệe]n\s*[áa]p|voltage/i },
+};
+const DESIGN = { compression: /t[ỉỷiy]\s*s[ốo]\s*n[ée]n|compression/i, bore_stroke: /đ[ưu][ờo]ng\s*k[íi]nh|h[àa]nh\s*tr[ìi]nh|\bbore\b|\bstroke\b/i };
+const figText = (v) => Number(v).toLocaleString("vi-VN", { maximumFractionDigits: 2 });
+const disjoint = (a, b) => a.length > 0 && b.length > 0 && !a.some((v) => b.some((w) => Math.abs(v - w) < 1e-9));
+const rowNoOff = (q) => String(q || "").replace(/^\s*\d{1,3}[.)]?\s+/, "");
+// `scan`: false for one size of a tender of several sizes, whose HSMT has a section per size (each its own bands).
+export function clarifyOf(result, hsmtText, combo, problems = [], { scan = true } = {}) {
+  const H = norm(hsmtText), inH = (q) => !!q && H.includes(norm(q));
+  const out = [], key = (x) => `${norm(x.quoteA)}|${norm(x.quoteB || "")}`;
+  const push = (x) => { if (!out.some((y) => key(y) === key(x) || (x.quoteB && key(y) === `${norm(x.quoteB)}|${norm(x.quoteA)}`))) out.push(x); };
+  const lines = String(hsmtText || "").split(/\r?\n/);
+  for (const r of result.requirements || []) {
+    const fig = CMP_FIG[r.code];
+    if (!fig || !r.quote || !inH(r.quote)) continue;
+    const a = fig(rowNoOff(r.quote));
+    if (!a.length) continue;
+    // Other quotes of the same code (requirements joined by code), then the HSMT's other lines about a tolerance band.
+    const others = (r.quotes || []).filter(inH).map((q) => ({ q, v: fig(rowNoOff(q)) }));
+    if (scan && SCAN[r.code]) {
+      const { is, not } = SCAN[r.code];
+      lines.forEach((l, i) => {
+        if (!is.test(l) || not.test(l) || TRANSIENT.test(l)) return;
+        let q = l.trim(), v = fig(q);
+        if (!v.length && lines[i + 1]) { q = `${q} ${lines[i + 1].trim()}`; v = fig(q); }
+        if (v.length && inH(q)) others.push({ q, v });
+      });
+    }
+    const b = others.find((o) => disjoint(a, o.v));
+    if (!b) continue;
+    const unit = fig === pctsIn ? "%" : "";
+    push({ item: r.item, code: r.code, quoteA: r.quote, quoteB: b.q, why: `HSMT ghi hai mức khác nhau cho cùng một yêu cầu (${[...new Set(a)].map((v) => `${fig === pctsIn ? "±" : ""}${figText(v)}${unit}`).join(", ")} và ${[...new Set(b.v)].map((v) => `${fig === pctsIn ? "±" : ""}${figText(v)}${unit}`).join(", ")}).`, by: "code" });
+  }
+  if (combo?.overloadEsp?.quote && inH(combo.overloadEsp.quote)) push({ item: "Quá tải trên công suất dự phòng", code: "overload", quoteA: combo.overloadEsp.quote, why: "HSMT đòi quá tải 10% trên công suất dự phòng (ESP); theo ISO 8528-1 mức dự phòng không có quá tải, quá tải 10% trong 1 giờ / 12 giờ là của công suất liên tục (prime).", by: "code" });
+  for (const r of result.requirements || []) {
+    const re = DESIGN[r.code];
+    if (!re || !r.quote || !inH(r.quote) || !(result.configs || []).length) continue;
+    const figs = numbersLoose(rowNoOff(r.requirement || r.quote)).filter((v) => v > 1);
+    const met = (result.configs || []).some((c) => (c.checks || []).some((x) => norm(x.item) === norm(r.item) && x.status === "met"));
+    const said = (result.notes || []).some((n) => re.test(n) && figs.some((v) => numbersLoose(n).includes(v)));
+    if (!met && said && figs.length) push({ item: r.item, code: r.code, quoteA: r.quote, why: `${r.item} là giá trị thiết kế của từng model động cơ; không động cơ nào trong các cấu hình gợi ý ghi đúng ${r.requirement || figText(figs[0])}. Đề nghị cho phép dải giá trị hoặc giá trị tương đương.`, by: "code" });
+  }
+  // The agent's: each quote word for word in the HSMT, else dropped (like any quote of the result).
+  for (const x of result.clarify || []) {
+    if (!x || x.by === "code") continue;
+    if (!x.item || !inH(x.quoteA) || (x.quoteB && !inH(x.quoteB))) { problems.push(`Câu hỏi làm rõ HSMT "${String(x.item || "").slice(0, 60)}": câu trích không có trong HSMT, đã bỏ`); continue; }
+    push({ item: String(x.item), quoteA: x.quoteA, ...(x.quoteB ? { quoteB: x.quoteB } : {}), why: String(x.why || ""), by: "agent" });
+  }
+  if (out.length) result.clarify = out; else delete result.clarify;
+  return result;
+}
 // A configuration with no controller, when the HSMT asks for one, is "not met" on the controller (Khoa, 2026-11-02):
 // its controller checks would all be "unclear", which ranked it above configurations that offer one but miss a point
 // elsewhere. The check is written by the code and shown like the others.
@@ -2334,6 +2479,7 @@ const AGENT_INPUT = "Đọc prompt.md trong thư mục này và làm đúng như
 async function answer(req, suppliers) {
   const key = req.key, base = path.join(os.tmpdir(), "genbid-config", key);
   fs.rmSync(base, { recursive: true, force: true });
+  let posted = null;
   // configreq keeps the request's own fields and gets doneAt (+ error); configmatch carries the verified result.
   const done = ({ result, error }) => {
     const at = new Date().toISOString();
@@ -2401,12 +2547,36 @@ ${r.stderr || ""}`, "utf8");
       if (!outs.some((o) => o.result)) throw new Error(outs.map((o) => `Máy ${o.size.label}: ${o.error}`).join(" "));
     } else result = outs[0].result;
     await done({ result, error: "" });
+    posted = result;
     console.log(`${key}: ${outs.map((o) => `${o.size ? `máy ${o.size.label}: ` : ""}${o.result ? `${o.result.configs.length} cấu hình${o.problems.length ? `, ${o.problems.length} điểm chưa khớp nguồn` : ""}` : `lỗi ${o.error}`}`).join("; ")}`);
   } catch (e) {
     await done({ error: e.message || String(e) }).catch(() => {});
     console.log(`${key}: lỗi ${e.message}`);
   } finally { fs.rmSync(base, { recursive: true, force: true }); }
-  if (req.auto) await autoBidprice(req).catch((e) => console.log(`${key}: chưa gửi được Gợi ý giá đấu (${e.message})`));
+  // Giá chạy lại sau Gợi ý lại (điều phối 2026-11-11): a tender that already has a price run gets it again on the new
+  // configuration, with the basis of last time; otherwise a Sync request gets its first one (autoBidprice).
+  const again = posted ? await rebidAfterConfig(key, posted).catch((e) => { console.log(`${key}: chưa gửi lại được Gợi ý giá đấu (${e.message})`); return null; }) : null;
+  if (!again && req.auto) await autoBidprice(req).catch((e) => console.log(`${key}: chưa gửi được Gợi ý giá đấu (${e.message})`));
+}
+// The price request to send again after a new configmatch, or null: only for a tender that had one (bidpricereq, or a
+// bidprice whose request is gone), with the same basis (power, package price...) as last time; none when that basis has
+// no power (as autoBidprice) or the new result has no configuration. Pure: the caller posts it. The price run never
+// asks for a configuration (bidprice-bot.mjs posts bidprice / bidpricereq only), so this cannot loop.
+export function rebidOf({ prior = null, price = null, result = null, key = "", now = new Date().toISOString() } = {}) {
+  if (!prior && !price) return null;
+  const configs = result?.sizes ? result.sizes.flatMap((z) => z.result?.configs || []) : result?.configs || [];
+  if (!configs.length) return null;
+  const basis = prior?.basis || price?.result?.basis || null;
+  if (!basis?.kva) return null;
+  return JSON.parse(JSON.stringify({ notifyNo: prior?.notifyNo || key, bidName: prior?.bidName || "", basis, requestedAt: now, by: prior?.by, from: prior?.from || "web", auto: true, after: "configmatch" }));
+}
+async function rebidAfterConfig(key, result) {
+  const [prior, price] = await Promise.all([doc("bidpricereq", key).catch(() => null), doc("bidprice", key).catch(() => null)]);
+  const data = rebidOf({ prior, price, result, key });
+  if (!data) return null;
+  await post([{ coll: "bidpricereq", id: key, data }]);
+  console.log(`${key}: đã gửi lại Gợi ý giá đấu theo cấu hình mới (${Math.round(data.basis.kva)} kVA, giá gói ${data.basis.price || "không rõ"})`);
+  return data;
 }
 // A new "Máy phát điện" tender from Sync (configreq auto, genbid-sync.js; Khoa, 2026-11-03): Gợi ý giá đấu follows Gợi ý
 // cấu hình, so it reads that configuration. The basis as the web's bidBasis: package price etc. from the feed (req.basis),

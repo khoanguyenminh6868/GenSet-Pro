@@ -126,7 +126,8 @@ test("scoreOf / rankConfigs: a confirm is not counted as unclear; everything els
 
 test("rfqOf: one line per confirm / unclear point, with what to confirm or send", () => {
   const c = confirmChecks(cfg(), reqs), q = rfqOf(c, reqs);
-  const by = Object.fromEntries(q.map((x) => [x.item, x]));
+  // A line joining several points (điều phối 2026-11-11) counts as each of its items.
+  const by = Object.fromEntries(q.flatMap((x) => (x.items || [x]).map((i) => [i.item, x])));
   assert.equal(by["Điện áp"].status, "confirm");
   assert.match(by["Điện áp"].ask, /đặt hàng/);
   assert.match(by["Tiêu chuẩn, chứng nhận tổ máy (ISO 3046, IEC 60034, CE, ISO 9001)"].ask, /chứng từ/);
