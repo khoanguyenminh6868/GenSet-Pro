@@ -271,7 +271,9 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .dhead{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:flex-start}
 .dhead .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
 .dhead .t h2{font-size:16px;overflow-wrap:anywhere}
-#dmeta .ibtn.dcopy{width:24px;height:24px;flex:none}
+.ccopy{display:inline-grid;place-items:center;width:18px;height:18px;padding:0;margin-left:4px;vertical-align:middle;border:1px solid var(--line);border-radius:5px;background:transparent;color:var(--dim);cursor:pointer;flex:none}.ccopy:hover{color:var(--fg);border-color:var(--violet)}
+.ccopy.cc-m{display:none}
+@media (max-width:640px){.ccopy.cc-d{display:none}.ccopy.cc-m{display:inline-grid}}
 #dmeta{margin-bottom:4px}
 /* Đóng like the one on the supplier / catalog screens: yellow edge on hover (Khoa, 2026-11-04). */
 #dclose{--violet:#ffcc00;flex:none}
@@ -1289,12 +1291,16 @@ function anaInline(t) {
   return "";
 }
 // Mobile shows the stage next to the number (Khoa, 2026-11-05); the Trạng thái cell keeps only its buttons there.
+// Copy mã gói (Khoa, 2026-11-11): a small button the size of the code. In the list, beside the code on a desktop
+// (cc-d) and beside the stage on a phone (cc-m); in a tender, after its stage.
+const CC_ICON = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+const copyCodeBtn = (code, cls = "") => (code ? h`<button class="ccopy ${cls}" type="button" data-copycode="${code}" title="Copy mã gói ${code}" aria-label="Copy mã gói">${raw(CC_ICON)}</button>` : "");
 const mStage = (t) => h`<span class="stage mstage st-${shownStage(t).key}">${shownStage(t).label}</span>`;
 const COLS = [
   // Mã Số sorts by the posting date (Đăng), then the number: the number alone is not posting order (Khoa, 2026-11-03).
   { k: "no", label: "Mã Số", cls: "noc", val: (t) => `${pubOf(t)}|${isProject(t) ? projectNo(t) : t.notifyNo || ""}`, text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
-    cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span>${raw(mStage(t))}<div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
-      const tl = timeLeft(t.bidCloseDate); return h`${raw(mPrice(t))}<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}
+    cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span>${raw(copyCodeBtn(projectNo(t), "cc-d"))}${raw(mStage(t))}${raw(copyCodeBtn(projectNo(t), "cc-m"))}<div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
+      const tl = timeLeft(t.bidCloseDate); return h`${raw(mPrice(t))}<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(copyCodeBtn(t.notifyNo, "cc-d"))}${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}${raw(copyCodeBtn(t.notifyNo, "cc-m"))}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(isCancelled(t) ? '<div class="tleft closed-at">Đã hủy TBMT</div>' : stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
   { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)} ${formOf(t)} ${noteOf(t)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}<div class="dprice">${raw(priceLine(t))}${raw(formLine(t))}${raw(noteLine(t))}</div>${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
   { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return (v ? h`${v}` : '<span class="muted">Chưa có</span>') + mForm(t); } },
@@ -1544,7 +1550,7 @@ function renderDrawer(force = true) {
   if (!t) { closeDrawer(); return; }
   const stg = stageOf(t), canCompare = stg === "preparing" || isProject(t);
   const tl = timeLeft(t.bidCloseDate);
-  $("#dmeta").innerHTML = h`${raw(isProject(t) ? h`<span class="kcell">${projectNo(t)}</span>` : t.notifyNo ? h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo} ↗</a>` : "")}${raw(isProject(t) || t.notifyNo ? h`<button class="ibtn dcopy" type="button" data-copycode="${isProject(t) ? projectNo(t) : t.notifyNo}" title="Copy mã gói" aria-label="Copy mã gói"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
+  $("#dmeta").innerHTML = h`${raw(isProject(t) ? h`<span class="kcell">${projectNo(t)}</span>` : t.notifyNo ? h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo} ↗</a>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(copyCodeBtn(isProject(t) ? projectNo(t) : t.notifyNo))}${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
   $("#dtitle").textContent = t.bidName || "";
   $$("#dtabs button").forEach((b) => {
     b.setAttribute("aria-selected", String(b.dataset.dt === state.dtab));
