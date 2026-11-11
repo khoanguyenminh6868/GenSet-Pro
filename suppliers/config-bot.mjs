@@ -2799,11 +2799,12 @@ export function rankConfigs(result) {
     }
     // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third.
     const mk = String(c.engine?.make || "").split("/")[0].trim().toLowerCase();
-    if (mk && (perMake.get(mk) || 0) >= PER_MAKE_CONFIGS) return false;
+    // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
+    if (mk && !c.keptFind && (perMake.get(mk) || 0) >= PER_MAKE_CONFIGS) return false;
     seen.set(k, [...(seen.get(k) || []), c]);
     perEngine.set(ek, (perEngine.get(ek) || 0) + 1);
     if (perEngine.get(ek) > 3) return false;
-    if (mk) perMake.set(mk, (perMake.get(mk) || 0) + 1);
+    if (mk && !c.keptFind) perMake.set(mk, (perMake.get(mk) || 0) + 1);
     return true;
   });
   result.configs = list.map(({ c }, i) => {
@@ -2962,11 +2963,11 @@ async function answer(req, suppliers) {
       const r = await runClaude(dir, AGENT_INPUT);
       fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${tag}.log`), `${r.stdout || ""}
 ${r.stderr || ""}`, "utf8");
-      return { dir, info, r, size, i };
+      return { dir, info, r, size, i, prevResult };
     }));
     let all = suppliers, hist = null, investor = null;
     const outs = [];
-    for (const { dir, info, r, size, i } of runs) {
+    for (const { dir, info, r, size, i, prevResult } of runs) {
       try {
         if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
         // Internet finds that pass verify.mjs join the catalog first, so the configuration's suppliers can point at them.
@@ -2974,6 +2975,13 @@ ${r.stderr || ""}`, "utf8");
         const { added, records } = await addToCatalog(dir, key, all, opts).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
         all = [...all.filter((s) => !records.some((x) => x.id === s.id)), ...records];
         const { result, problems } = checkDir(dir, all, added, info.origin);
+        // What Tìm NCC added to the last result of this size comes back (Khoa, 2026-11-12), with no agent.
+        try {
+          const meta = fs.existsSync(path.join(dir, "meta.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")) : {};
+          const kept = keepFound(result, prevResult, { suppliers: all, origin: info.origin, hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), basis: meta.basis, sized: !!meta.sized, readWeb: () => null,
+            reqHash: (result.requirements || []).some((x) => x.unverified) ? "" : info.reqHash });
+          if (kept.configs || kept.suppliers) console.log(`${key}${size ? ` máy ${size.label}` : ""}: giữ lại từ Tìm NCC ${kept.configs} cấu hình, ${kept.suppliers} nhà cung cấp`);
+        } catch (e) { console.log(`${key}: chưa giữ lại được kết quả Tìm NCC trước (${e.message})`); }
         // Won goods as a tie-break between configurations the checks rank alike. No history, no tie-break.
         try {
           hist ||= Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
@@ -3311,6 +3319,92 @@ export function mergeChecked(result, got, { hsmtText, suppliers, origin }) {
     checked++;
   }
   return { checked, problems: problems.length };
+}
+// Gợi ý lại must not lose what Tìm NCC added (Khoa, 2026-11-12: IB2600594596 lost a configuration and a supplier found
+// that way). After the run's result is checked, what the last result of the same size got from Tìm NCC (fromFind) is
+// put back in code, with no agent: (1) a supplier found, under a configuration the new result has too (the same engine,
+// and the same alternator when both name one, as mergeFind), joins it; (2) a configuration found that the new result
+// has no equal of is kept whole, its suppliers and checks, then checked again by check() like every configuration of the
+// run, so it meets the same rules (origin, G7 / G20 group, Việt Nam, sources); (3) nothing comes back for a supplier no
+// longer in `suppliers` (a supplier excluded on the web is not in it), out of the origin group, or whose table row is
+// gone, nor for a configuration left with no supplier or whose engine / genset table row is gone. A configuration kept is
+// marked keptFind and is outside the 2-per-make limit of rankConfigs. When the requirements differ from the last run's,
+// the kept configuration says its checks are of the last reading of the HSMT; none is made "met" for it. A second run
+// adds nothing twice. Returns { configs, suppliers, dropped } and changes `result` only when something comes back.
+export function keepFound(result, prevResult, { suppliers = [], origin, hsmtText = "", readWeb = () => null, basis, sized = false, reqHash = "" } = {}) {
+  const out = { configs: 0, suppliers: 0, dropped: [] };
+  const oldCfgs = (prevResult?.configs || []).filter((c) => c && c.engine?.model);
+  if (!oldCfgs.some((c) => c.fromFind || (c.suppliers || []).some((s) => s.fromFind))) return out;
+  const configs = result.configs || (result.configs = []), sup = new Map(suppliers.map((s) => [s.id, s])), keyOf = CAT.keyOf;
+  const o = originOfReq(result.origin || origin), cn = cnSuppliers(suppliers);
+  const grp = groupSuppliers(suppliers, o, (result.requirements || []).some((r) => r.sync), result.originScope === "parts", result.originBasis === "brand");
+  const squash = (x) => norm(x).replace(/\s/g, "");
+  const sameCfg = (a, b) => a.engine?.model && b.engine?.model && keyOf(a.engine.model) === keyOf(b.engine.model) && (!a.alternator?.model || !b.alternator?.model || keyOf(a.alternator.model) === keyOf(b.alternator.model));
+  // The same HSMT reading: the same reqHash when both have one (the agent words the requirements anew each run, so the
+  // texts are not compared), else the same requirement codes.
+  const reqKey = (r) => r.code || norm(r.item || "");
+  const mine = new Set((result.requirements || []).map(reqKey)), was = new Set((prevResult.requirements || []).map(reqKey));
+  const sameReq = prevResult.reqHash && reqHash ? prevResult.reqHash === reqHash : mine.size === was.size && [...mine].every((k) => was.has(k));
+  // A supplier entry the new run can still stand behind: in the system, in the origin group, not in Việt Nam, its table
+  // row still there. (A row that does not name the engine is mergeFind's too, from the product line; check() flags it.)
+  // Its flags are written again the way check() writes them.
+  const entryFor = (c, s) => {
+    const r = sup.get(s.supplierId);
+    if (!r || (grp && !grp.has(r.id)) || r.country === "VN") return null;
+    if (o === "cn" && CAT.originIn(`${c.engine.model} ${c.engine.make || ""}`, c.engine.model) === "other" && !cn.has(r.id)) return null;
+    const t = (r.specTables || []).find((x) => x.n === Number(s.n) && x.rows.some((l) => norm(l) === norm(s.line)));
+    if (!t) return null;
+    const row = squash([...(t.header || []), s.line, t.title].join(" "));
+    const e = { ...JSON.parse(JSON.stringify(s)), fromFind: true };
+    delete e.unverified;
+    e.hasAlternator = !!c.alternator?.model && row.includes(squash(c.alternator.model));
+    const ck = c.controller?.model && keyOf(c.controller.model);
+    e.hasController = !!ck && (row.includes(squash(c.controller.model)) || (r.controllers || []).some((x) => x.model && keyOf(x.model) === ck));
+    return e;
+  };
+  // (1) suppliers found, under a configuration the new result has too.
+  const sups = [];
+  for (const old of oldCfgs) for (const s of old.suppliers || []) {
+    if (!s.fromFind) continue;
+    for (const c of configs) {
+      if (!sameCfg(c, old) || (c.suppliers || []).some((x) => x.supplierId === s.supplierId)) continue;
+      const e = entryFor(c, s);
+      if (!e) { out.dropped.push(`${s.supplierId}: dòng bảng hoặc nhóm xuất xứ không còn`); continue; }
+      (c.suppliers = c.suppliers || []).push(e); sups.push(`${s.supplierId} vào ${c.engine.model}`);
+    }
+  }
+  out.suppliers = sups.length;
+  // (2) configurations found that the new result has no equal of: checked again as a sub-result with the run's own requirements.
+  const keep = [];
+  for (const old of oldCfgs.filter((x) => x.fromFind && !configs.some((c) => sameCfg(c, x)))) {
+    const c = JSON.parse(JSON.stringify(old));
+    c.rank = Math.max(0, ...configs.map((x) => x.rank || 0), ...keep.map((x) => x.rank)) + 1;
+    c.fromFind = true; c.keptFind = true;
+    // The table rows its engine and genset were taken from must still be there (a page of an internet find is not kept).
+    const rowThere = (x) => !x || (x.kind === "catalog" && (sup.get(x.supplierId)?.specTables || []).some((t) => t.n === Number(x.n) && t.rows.some((l) => norm(l) === norm(x.line))));
+    if (!rowThere(c.engine.src) || !rowThere(c.genset?.src) || !c.engine.src) { out.dropped.push(`cấu hình ${c.engine.model}: dòng bảng nguồn không còn`); continue; }
+    c.suppliers = (c.suppliers || []).map((s) => entryFor(c, s) || (out.dropped.push(`${s.supplierId}: không giữ cho cấu hình ${c.engine.model}`), null)).filter(Boolean);
+    if (!c.suppliers.length) { out.dropped.push(`cấu hình ${c.engine.model}: không còn nhà cung cấp`); continue; }
+    if (!keep.some((x) => sameCfg(x, c))) keep.push(c);
+  }
+  const names = [];
+  if (keep.length) {
+    const sub = { requirements: JSON.parse(JSON.stringify(result.requirements || [])), configs: keep };
+    const { result: done } = check(sub, { hsmtText, suppliers, readWeb, origin, basis, sized });
+    for (const k of keep) if (!done.configs.some((c) => c.rank === k.rank)) out.dropped.push(`cấu hình ${k.engine.model}: bị bỏ khi kiểm lại theo luật của lượt này`);
+    for (const c of done.configs) {
+      if (!c.suppliers?.length) { out.dropped.push(`cấu hình ${c.engine?.model}: không còn nhà cung cấp`); continue; }
+      c.fromFind = true; c.keptFind = true;
+      if (!sameReq) c.gaps = [...(c.gaps || []), "Các điểm đối chiếu của cấu hình này là của lần đọc HSMT trước (yêu cầu lượt này khác): bấm Tìm NCC lại để đối chiếu."];
+      configs.push(c); names.push(`${c.engine.model}`);
+    }
+    out.configs = names.length;
+  }
+  if (out.configs || out.suppliers) {
+    result.notes = [...(result.notes || []), `Giữ lại từ Tìm NCC lần trước (không chạy lại agent): ${[out.configs && `${out.configs} cấu hình (${names.join(", ")})`, out.suppliers && `${out.suppliers} nhà cung cấp (${sups.join(", ")})`].filter(Boolean).join("; ")}.${out.configs && !sameReq ? " Yêu cầu lượt này khác lượt trước nên điểm đối chiếu của cấu hình giữ lại là của lần đọc trước." : ""}`];
+    rankConfigs(result);
+  }
+  return out;
 }
 const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.joined.length && !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : [m.joined.length && `bổ sung ${m.joined.map((j) => `${j.supplierId} vào cấu hình #${j.rank}${j.label ? ` máy ${j.label}` : ""}`).join(", ")}`, m.created.length && `thêm ${m.created.length} cấu hình mới${m.checked?.checked ? ` (đã đối chiếu HSMT ${m.checked.checked} cấu hình)` : " (chưa đối chiếu đủ HSMT)"}, mỗi cấu hình chỉ có nhà cung cấp vừa tìm được (${m.created.map((c) => c.supplierId).join(", ")})`].filter(Boolean).join("; "));
 
