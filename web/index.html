@@ -4154,6 +4154,7 @@ function tlktHtml(c) {
         <div style="font-family:var(--f-display);font-size:24px;font-weight:700;text-transform:uppercase;color:${raw(v[1])}">${v[0]}</div>
         ${raw(c.supplier || c.offer ? h`<div class="small" style="margin-top:4px"><b>${c.supplier || ""}</b>${c.supplier && c.offer ? " · " : ""}${c.offer || ""}</div>` : "")}
         <p style="margin:4px 0 0" class="small">${c.summary || ""}</p>
+        ${raw(c.selfCheckImpact ? h`<p style="margin:4px 0 0" class="small" id="selfImpact"><b>${c.selfCheckImpact}</b></p>` : "")}
       </div>
     </div>
     <div class="row small">${raw(Object.entries(STATUS).map(([k, l]) => h`<span class="st ${k}">${cnt(k)} ${l}</span>`).join('<span class="muted">·</span>'))}</div>
