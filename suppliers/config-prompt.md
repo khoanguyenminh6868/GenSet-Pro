@@ -227,9 +227,16 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     "gaps": ["what to confirm with the supplier"]
   }],
   "message": "only when configs is empty",
-  "notes": []
+  "notes": [],
+  "clarify": [{ "item": "Ổn định điện áp", "quoteA": "a line of hsmt.txt, word for word", "quoteB": "the other line, word for word (optional)", "why": "1 câu tiếng Việt" }]
 }
 ```
+- `clarify`: questions for the investor (câu hỏi làm rõ HSMT), not for the supplier: the HSMT states one point at two
+  places with different values (±0,5% in a table, ±1,5% in a section), a value no model can meet as written (a design
+  figure such as a compression ratio of exactly 14:1 that no engine in catalog.md has), a requirement that contradicts
+  a standard (10% overload on the standby rating). `quoteA` / `quoteB` are copied word for word from hsmt.txt (the code
+  drops an item whose quote is not found); `why` says in one sentence what differs. Leave it out when nothing needs
+  asking. The code adds questions of its own too; do not change any check's status because of them.
 - `make`: only when a source states it (catalog.md shows the make and where it comes from); otherwise leave it empty.
 - `line` is the catalog row exactly as in catalog.md. `genset` only when the engine and alternator come from one row.
 - `conversions`: only when a value is converted; leave it out otherwise.

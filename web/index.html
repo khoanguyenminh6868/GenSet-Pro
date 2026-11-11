@@ -3710,8 +3710,50 @@ function configTabHtml(t) {
       return actBar("Đã gợi ý", info, btns, "", "ok", "actrow cfgact");
     })()
     + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
-    + (prev?.result && !wait ? (prev.result.sizes ? cfgSizesHtml(prev.result, key, busy) : cfgResultHtml(prev.result, { key, busy })) : "");
+    + (prev?.result && !wait ? cfgClarifyHtml(prev.result, key) + (prev.result.sizes ? cfgSizesHtml(prev.result, key, busy) : cfgResultHtml(prev.result, { key, busy })) : "");
 }
+// Câu hỏi làm rõ HSMT (config-bot.mjs clarifyOf, điều phối 2026-11-11): điểm HSMT ghi hai giá trị khác nhau, giá trị thiết
+// kế không model nào ghi đúng, yêu cầu trái tiêu chuẩn — hỏi chủ đầu tư, không hỏi NCC. Gói nhiều cỡ: gộp các cỡ, bỏ trùng.
+// Trên màn hình chỉ hiện điểm và lý do (câu trích HSMT theo SHOW_SRC); văn bản chép ra thì nêu nguyên văn hai chỗ.
+const cfgSquish = (s) => String(s || "").replace(/\s+/g, " ").trim();
+function cfgClarifyOf(r) {
+  const out = [], seen = new Set();
+  for (const x of [...(r?.clarify || []), ...(r?.sizes || []).flatMap((z) => z.result?.clarify || [])]) {
+    const k = [cfgSquish(x.quoteA), cfgSquish(x.quoteB)].sort().join("|").toLowerCase();
+    if (!x?.item || seen.has(k)) continue;
+    seen.add(k); out.push(x);
+  }
+  return out;
+}
+function cfgClarifyText(list, key) {
+  const t = findTender(key), to = t?.procuringEntityName || t?.investorName || "Bên mời thầu";
+  return [`Kính gửi: ${to}`, "",
+    `Về việc: đề nghị làm rõ hồ sơ mời thầu gói thầu ${t?.bidName ? `"${cfgSquish(t.bidName)}" ` : ""}(số TBMT ${t?.notifyNo || key}).`, "",
+    "Sau khi nghiên cứu hồ sơ mời thầu, chúng tôi nhận thấy một số nội dung cần được làm rõ. Kính đề nghị Quý Bên mời thầu xem xét và trả lời các nội dung sau:", "",
+    ...list.map((x, i) => {
+      // The quote as written, without the table's row number in front ("15   Dao động điện áp ...").
+      const q = (s) => `"${cfgSquish(s).replace(/^\d{1,3}[.)]?\s+(?=\D)/, "").replace(/^[-+•]\s+/, "")}"`, why = cfgSquish(x.why);
+      return `${i + 1}. Về "${x.item}": HSMT ghi ${q(x.quoteA)}${x.quoteB ? ` và ở chỗ khác ghi ${q(x.quoteB)}` : ""}.${why ? ` ${why}${/[.!?]$/.test(why) ? "" : "."}` : ""}${/đề nghị/i.test(why) ? "" : " Đề nghị Quý Bên mời thầu xác nhận giá trị áp dụng."}`.replace(/\."\./g, '."');
+    }),
+    "", "Trân trọng cảm ơn."].join("\n");
+}
+function cfgClarifyHtml(r, key) {
+  const list = cfgClarifyOf(r);
+  if (!list.length) return "";
+  return h`<details class="note cfgclarify" open><summary class="small"><b>Câu hỏi làm rõ HSMT (${list.length})</b> <span class="muted">gửi chủ đầu tư, không phải nhà cung cấp</span></summary>
+    <div class="row" style="margin:4px 0"><span class="spacer"></span><button class="btn sm" data-cfgclar="${key}" title="Chép thành văn bản đề nghị làm rõ HSMT gửi chủ đầu tư">Chép văn bản gửi chủ đầu tư</button></div>
+    <ol class="suplist">${raw(list.map((x) => h`<li class="small"><b>${x.item}</b>${x.why ? ` — ${x.why}` : ""}${raw(SHOW_SRC ? h`<div class="muted">HSMT: <q>${cfgSquish(x.quoteA)}</q>${raw(x.quoteB ? h` · <q>${cfgSquish(x.quoteB)}</q>` : "")}</div>` : "")}</li>`).join(""))}</ol></details>`;
+}
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest?.("[data-cfgclar]");
+  if (!b) return;
+  e.preventDefault();
+  const key = b.dataset.cfgclar, list = cfgClarifyOf(state.configmatch[key]?.result);
+  if (!list.length) return;
+  const text = cfgClarifyText(list, key), msg = `Đã chép ${list.length} câu hỏi làm rõ HSMT`;
+  try { await navigator.clipboard.writeText(text); toast(msg); }
+  catch { const ta = document.createElement("textarea"); ta.value = text; document.body.append(ta); ta.select(); const ok = document.execCommand("copy"); ta.remove(); toast(ok ? msg : "Không chép được"); }
+});
 // Gói nhiều cỡ máy (Khoa, 2026-11-04): the bot suggests each size on its own (config-bot.mjs sizesOf, result.sizes);
 // each size's result is shown as a tender of one size, under its own heading.
 const sizeTitle = (z) => `Máy ${z.qty ? `${z.qty} x ` : ""}${z.label}`;
@@ -3832,15 +3874,30 @@ const cfgComboHtml = (c) => (c.warnings?.length || cfgPowerShown(c.combo?.power)
 // Bảng câu hỏi gửi nhà cung cấp (config-bot.mjs rfqOf, 2026-11-10): mỗi điểm "chưa rõ" / "cần xác nhận" của cấu hình, code
 // sinh sẵn trong c.rfq; nút chép thành chữ để dán vào email / Zalo gửi NCC.
 const RFQ_KIND = { order: "chọn khi đặt hàng", document: "chứng từ", site: "hiện trường", model: "thông số model" };
+// Thứ tự + gộp (điều phối 2026-11-11, config-bot.mjs rfqOf): mỗi dòng có `tier` (công suất → hãng / model / xuất xứ →
+// thông số model → hiện trường → xác nhận khi đặt hàng → chứng từ → tùy chọn); dòng gộp có `items` (mỗi điểm + HSMT yêu
+// cầu). Kết quả cũ (không có tier / items) vẫn hiện và chép như trước.
+const RFQ_TIER_VI = ["Công suất", "Hãng / model / xuất xứ", "Thông số model", "Điều kiện hiện trường", "Xác nhận khi đặt hàng", "Chứng từ", "Tùy chọn"];
+const rfqAskHead = (q) => (q.items?.length ? q.ask.split(":")[0] : q.ask);
+const rfqItemText = (i) => `${i.item}${i.requirement ? `: ${i.requirement}` : ""}${i.note ? ` (${i.note})` : ""}`;
 function cfgRfqText(c, key, size) {
   const parts = [c.engine && `động cơ ${c.engine.model}${c.engine.make ? ` (${c.engine.make})` : ""}`, c.alternator && `đầu phát ${c.alternator.model}`, c.controller && `bộ điều khiển ${c.controller.model}`].filter(Boolean).join(", ");
   return [`Gói ${key}${size ? ` — máy ${size}` : ""} — cấu hình #${c.rank}${parts ? `: ${parts}` : ""}`,
     "Đề nghị Quý công ty xác nhận / cung cấp các nội dung sau:",
-    ...c.rfq.map((q, i) => `${i + 1}. [${q.of}] ${q.item}${q.requirement ? ` — HSMT yêu cầu: ${q.requirement}` : ""}. Cần: ${q.ask}.`)].join("\n");
+    ...c.rfq.map((q, i) => (q.items?.length
+      ? [`${i + 1}. ${q.of ? `[${q.of}] ` : ""}${q.item}. Cần: ${rfqAskHead(q)}:`, ...q.items.map((x) => `   - ${rfqItemText(x)}`)].join("\n")
+      : `${i + 1}. ${q.of ? `[${q.of}] ` : ""}${q.item}${q.requirement ? ` — HSMT yêu cầu: ${q.requirement}` : ""}${q.note ? ` (${q.note})` : ""}. Cần: ${q.ask}.`))].join("\n");
 }
-const cfgRfqHtml = (c, key, size, rk) => (c.rfq?.length ? h`<details class="cfgblk"><summary class="small"><b>Câu hỏi gửi nhà cung cấp (${c.rfq.length})</b> <span class="muted">${["confirm", "unclear"].map((s) => [s, c.rfq.filter((q) => q.status === s).length]).filter(([, n]) => n).map(([s, n]) => `${n} ${s === "confirm" ? "cần xác nhận / chứng từ" : "chưa rõ"}`).join(", ")}</span></summary>
+const cfgRfqPoints = (rfq) => rfq.reduce((n, q) => n + (q.items?.length || 1), 0);
+function cfgRfqLi(q, prev) {
+  const head = Number.isInteger(q.tier) && q.tier !== prev?.tier ? h`<div class="muted rfqtier"><b>${RFQ_TIER_VI[q.tier] || ""}</b></div>` : "";
+  const chip = h`<span class="chip ${q.status === "confirm" ? "cfm" : "warn"}">${RFQ_KIND[q.kind] || ""}</span>`;
+  if (q.items?.length) return h`<li class="small">${raw(head)}${raw(q.of ? h`<span class="muted">[${q.of}]</span> ` : "")}<b>${q.item}</b> ${raw(chip)}<div class="muted">Cần: ${rfqAskHead(q)}:</div><ul class="suplist">${raw(q.items.map((x) => h`<li>${x.item}${x.requirement ? ` — ${x.requirement}` : ""}${x.note ? ` (${x.note})` : ""}</li>`).join(""))}</ul></li>`;
+  return h`<li class="small">${raw(head)}${raw(q.of ? h`<span class="muted">[${q.of}]</span> ` : "")}<b>${q.item}</b>${q.requirement ? ` — ${q.requirement}` : ""}${q.note ? ` (${q.note})` : ""} ${raw(chip)}<div class="muted">Cần: ${q.ask}.</div></li>`;
+}
+const cfgRfqHtml = (c, key, size, rk) => (c.rfq?.length ? h`<details class="cfgblk"><summary class="small"><b>Câu hỏi gửi nhà cung cấp (${c.rfq.length})</b> <span class="muted">${cfgRfqPoints(c.rfq) > c.rfq.length ? `${cfgRfqPoints(c.rfq)} điểm · ` : ""}${["confirm", "unclear"].map((s) => [s, c.rfq.filter((q) => q.status === s).reduce((n, q) => n + (q.items?.length || 1), 0)]).filter(([, n]) => n).map(([s, n]) => `${n} ${s === "confirm" ? "cần xác nhận / chứng từ" : "chưa rõ"}`).join(", ")}</span></summary>
   ${raw(key ? h`<div class="row" style="margin:4px 0"><span class="spacer"></span><button class="btn sm" data-cfgrfq="${key}" data-size="${size}" data-rank="${rk}" title="Chép bảng câu hỏi thành chữ để gửi nhà cung cấp">Chép bảng câu hỏi</button></div>` : "")}
-  <ol class="suplist">${raw(c.rfq.map((q) => h`<li class="small"><span class="muted">[${q.of}]</span> <b>${q.item}</b>${q.requirement ? ` — ${q.requirement}` : ""} <span class="chip ${q.status === "confirm" ? "cfm" : "warn"}">${RFQ_KIND[q.kind] || ""}</span><div class="muted">Cần: ${q.ask}.</div></li>`).join(""))}</ol></details>` : "");
+  <ol class="suplist">${raw(c.rfq.map((q, i) => cfgRfqLi(q, c.rfq[i - 1])).join(""))}</ol></details>` : "");
 document.addEventListener("click", async (e) => {
   const b = e.target.closest?.("[data-cfgrfq]");
   if (!b) return;
@@ -3849,8 +3906,8 @@ document.addEventListener("click", async (e) => {
   const c = r?.configs?.find((x) => String(x.rank) === b.dataset.rank);
   if (!c?.rfq?.length) return;
   const text = cfgRfqText(c, key, size);
-  try { await navigator.clipboard.writeText(text); toast(`Đã chép ${c.rfq.length} câu hỏi của cấu hình #${c.rank}`); }
-  catch { const ta = document.createElement("textarea"); ta.value = text; document.body.append(ta); ta.select(); const ok = document.execCommand("copy"); ta.remove(); toast(ok ? `Đã chép ${c.rfq.length} câu hỏi của cấu hình #${c.rank}` : "Không chép được"); }
+  try { await navigator.clipboard.writeText(text); toast(`Đã chép ${c.rfq.length} dòng câu hỏi của cấu hình #${c.rank}`); }
+  catch { const ta = document.createElement("textarea"); ta.value = text; document.body.append(ta); ta.select(); const ok = document.execCommand("copy"); ta.remove(); toast(ok ? `Đã chép ${c.rfq.length} dòng câu hỏi của cấu hình #${c.rank}` : "Không chép được"); }
 });
 // A grouped requirement (the controller's protections, measurements...): each function with its result and source.
 // An "unclear" whose source has a line about it (config-bot.mjs check hints): shown so it can be read, not counted as met.
@@ -4451,11 +4508,18 @@ function bpCrowdNote(t, doc) {
   const cn = r.multi ? (r.sizes || []).some((z) => z.result?.basis?.group === "cn") : r.basis?.group === "cn";
   return many || cn ? h`<div class="note warn small">Lưu ý: gói đông nhà thầu / động cơ Trung Quốc thường trúng thấp hơn mức giữa.${raw(many && cn ? " Dự báo nghiêng về từ 6 nhà thầu và cấu hình hạng 1 là động cơ Trung Quốc." : many ? " Dự báo nghiêng về từ 6 nhà thầu." : " Cấu hình hạng 1 là động cơ Trung Quốc.")}</div>` : "";
 }
+// Giá tính trên cấu hình gợi ý cũ (điều phối 2026-11-11): bot gửi lại yêu cầu giá sau mỗi lượt Gợi ý cấu hình mới
+// (config-bot.mjs rebidOf); tới khi có giá mới, nói rõ giá đang hiện là theo cấu hình trước thời điểm đó.
+function bpStaleHtml(key, wait) {
+  const p = state.bidprice[key], m = state.configmatch[key];
+  if (!p?.at || !m?.at || p.at >= m.at) return "";
+  return h`<div class="note warn small">Giá tính theo cấu hình gợi ý cũ (trước ${fmtDate(m.at)}) — ${wait ? "đang tính lại" : "chưa tính lại"}.</div>`;
+}
 function bidSuggestBox(t) {
   const key = t._key, prev = state.bidprice[key];
   const wait = workerReqPending("bidpricereq", key) ? waitHtml("Đang chờ Agent so cấu hình gói này với các gói đã có kết quả...", state.bidpricereq[key].requestedAt) : "";
   const err = !wait && workerReqError("bidpricereq", key);
-  return h`${raw(quoteHtml(t))}${raw(profitHtml(t))}<section>${raw(wait)}${raw(err ? h`<div class="note warn">${err}</div>` : "")}${raw(prev?.result && !wait ? actBar("Đã gợi ý giá", `lúc ${fmtDate(prev.at)}`, h`<button class="btn primary" id="bpRun" data-key="${key}">Gợi ý lại</button>`, "", "ok", "actrow")
+  return h`${raw(quoteHtml(t))}${raw(profitHtml(t))}<section>${raw(wait)}${raw(bpStaleHtml(key, !!wait))}${raw(err ? h`<div class="note warn">${err}</div>` : "")}${raw(prev?.result && !wait ? actBar("Đã gợi ý giá", `lúc ${fmtDate(prev.at)}`, h`<button class="btn primary" id="bpRun" data-key="${key}">Gợi ý lại</button>`, "", "ok", "actrow")
       : h`<div class="row actrow"><div class="spacer"></div><button class="btn primary" id="bpRun" data-key="${key}" ${wait ? "disabled" : ""}>Gợi ý giá đấu</button></div>`)}
     ${raw(prev?.result && !wait ? bpCrowdNote(t, prev) + (prev.result.multi ? bidPriceMultiHtml(prev, t) : bidPriceHtml(prev, t)) : "")}</section>`;
 }
