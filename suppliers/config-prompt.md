@@ -173,6 +173,10 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    the `option` requirements, then power closest above the requirement. The code ranks them again this way. A
    configuration with a `not_met` on power, frequency, a named make or origin is not a suggestion. Give several
    different engines when the catalog has them, not six rows of one engine.
+   Two configurations per engine make (Khoa, 2026-11-11): when the catalog has two different engine models of one make
+   that fit (Baudouin 6M33G825/5 and 6M31G825/5, Perkins 4006-23TAG2A and 4006-23TAG3A), give both, each as its own
+   configuration; never more than 2 of one make (the code drops a third). Leave the second out only to make room for
+   another make that meets the HSMT better.
 3. For every configuration, name the suppliers in the system that sell it (`suppliers`, at most 3, best first): only
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
    this engine and, best, this alternator at the power required. Under "Đồng bộ thương hiệu", a supplier truly fits only

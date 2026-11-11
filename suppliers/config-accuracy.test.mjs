@@ -900,3 +900,10 @@ test("Deutz is not of G7 / G20 / EU (Khoa, 2026-11-11)", () => {
     assert.equal(C.groupIn("MTU 12V2000G65", "12V2000G65", g), true);
   }
 });
+
+test("at most 2 configurations per engine make (Khoa, 2026-11-11)", () => {
+  const mk = (rank, make, model) => ({ rank, engine: { make, model }, alternator: { model: `A${rank}` }, controller: { model: "DSE7320" }, suppliers: [{ supplierId: `s${rank}` }], checks: [] });
+  const r = { requirements: [], configs: [mk(1, "Perkins", "4006-23TAG2A"), mk(2, "Perkins", "4006-23TAG3A"), mk(3, "Perkins", "4008TAG2"), mk(4, "Baudouin", "6M33G825/5"), mk(5, "Baudouin", "6M31G825/5")] };
+  rankConfigs(r);
+  assert.deepEqual(r.configs.map((c) => c.engine.model), ["4006-23TAG2A", "4006-23TAG3A", "6M33G825/5", "6M31G825/5"]);
+});
