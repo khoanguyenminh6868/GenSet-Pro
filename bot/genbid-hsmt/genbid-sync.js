@@ -1939,6 +1939,42 @@ function checkSupplier(result, dir) {
   result.notes = [...[].concat(result.notes || []), ...notes];
   return [];
 }
+// Tự kiểm chéo HSDT (Đối chiếu): findings about the bid's own consistency. Each needs a quote that is really in the
+// bid's text, in the file it names when that file is one of the "--- Tệp: <name> ---" sections; a "problem" without a
+// verified quote is dropped (never guessed). hsmtQuote, when given, must be in the tender's text. Does not change score.
+const SELF_KINDS = ["package_identity", "model_consistency", "commitment_vs_hsmt", "row_match", "catalogue_vs_offer", "supporting_docs", "adverse_wording"];
+const SELF_STATUS = ["ok", "problem", "unclear"];
+function subSections(text) {
+  const ms = [...String(text || "").matchAll(/^--- Tệp: (.+?) ---$/gm)];
+  return ms.map((m, i) => ({ name: m[1], norm: sourceOf(text.slice(m.index + m[0].length, i + 1 < ms.length ? ms[i + 1].index : undefined)) }));
+}
+function checkSelfChecks(result, req, sub, subText) {
+  const notes = [], secs = subSections(subText), kept = [];
+  const nameKey = (n) => normTxt(String(n || "").replace(/^.*[\\/]/, ""));
+  let dropped = 0;
+  for (const c of [].concat(result.selfChecks || [])) {
+    if (!c || !SELF_KINDS.includes(c.kind) || !SELF_STATUS.includes(c.status) || !String(c.finding || "").trim()) { dropped++; continue; }
+    const ev = [];
+    for (const e of [].concat(c.evidence || [])) {
+      if (!e || !String(e.quote || "").trim() || !sub.usable) continue;
+      const sec = secs.find((x) => nameKey(x.name) === nameKey(e.file));
+      if (sec && sec.norm.usable && found(e.quote, sec.norm)) ev.push({ file: sec.name, quote: e.quote });
+      else if (found(e.quote, sub)) ev.push({ file: sec ? sec.name : "", quote: e.quote });
+    }
+    c.evidence = ev;
+    if (c.hsmtQuote && req.usable && !found(c.hsmtQuote, req)) c.hsmtQuote = null;
+    if (!ev.length) {
+      if (c.status === "problem") { dropped++; continue; }
+      if (c.status === "ok") { c.status = "unclear"; c.finding = `Chưa có trích dẫn kiểm được. ${c.finding}`; }
+    }
+    c.fix = String(c.fix || "");
+    kept.push(c);
+  }
+  result.selfChecks = kept;
+  if (dropped) notes.push(`Kiểm tra tự động: bỏ ${dropped} phát hiện của mục Tự kiểm hồ sơ vì không thấy câu trích nguyên văn trong HSDT.`);
+  if (secs.length < 2 && !result.selfCheckNote) result.selfCheckNote = "Chỉ có một tệp HSDT (hoặc chữ dán): chưa kiểm chéo được giữa các tệp.";
+  return notes;
+}
 function checkResult(meta, result, dir) {
   if (meta.kind === "supplier") return checkSupplier(result, dir);
   const kind = meta.kind;
@@ -1984,6 +2020,7 @@ function checkResult(meta, result, dir) {
     if (flags.length) i.note = `⚠ ${flags.join(" ")}${i.note ? " " + i.note : ""}`;
   }
   Object.assign(result, scoreItems(items));
+  if (kind === "compare") notes.push(...checkSelfChecks(result, req, sub, read("src-sub.txt")));
   const parts = [req.usable ? `${reqOk}/${items.length} yêu cầu thấy nguyên văn trong ${where}` : `phía yêu cầu không kiểm được (${where} là bản scan)`];
   if (sub.usable) parts.push(`${subOk}/${subN} nội dung chào thấy nguyên văn trong tài liệu đã nộp`);
   else parts.push("phía tài liệu chào không kiểm được (không có chữ)");

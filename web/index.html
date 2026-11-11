@@ -435,7 +435,7 @@ details.sec>div{margin-top:10px}
 .dial{width:86px;height:86px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--c,var(--violet)) calc(var(--p)*1%),var(--panel2) 0);flex:none}
 .dial span{width:66px;height:66px;border-radius:50%;background:var(--panel);display:grid;place-items:center;font:600 24px var(--f-mono)}
 .st{font-size:12px;font-weight:700;white-space:nowrap}
-.st.met{color:var(--mint)}.st.partial{color:var(--amber)}.st.not_met,.st.missing{color:var(--rose)}.st.unclear{color:var(--blue)}
+.st.met{color:var(--mint)}.st.ok{color:var(--mint)}.st.problem{color:var(--rose)}.st.partial{color:var(--amber)}.st.not_met,.st.missing{color:var(--rose)}.st.unclear{color:var(--blue)}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 14px;box-shadow:var(--shadow);z-index:70;font-size:13px}
 .field{display:flex;flex-direction:column;gap:5px;min-width:0}
 .field label{font-size:12px;color:var(--muted)}
@@ -4220,6 +4220,18 @@ function contractTermsHtml(a) {
   if (!t.length) return "";
   return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv kvw kv1m">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
 }
+// "Tự kiểm hồ sơ dự thầu": the bid against itself (other package's files, model mix-ups, catalogue vs offer, missing proof,
+// adverse wording). Problems first; older results have no selfChecks and show nothing. Quotes and file names follow SHOW_SRC.
+const SELF_LABEL = { package_identity: "Tên gói, địa điểm, công suất", model_consistency: "Hãng, model, xuất xứ", commitment_vs_hsmt: "Cam kết so với HSMT", row_match: "Dòng bảng đáp ứng", catalogue_vs_offer: "Thông số so với catalogue", supporting_docs: "Tài liệu chứng minh", adverse_wording: "Câu bất lợi" };
+const SELF_ST = { problem: "Có vấn đề", unclear: "Chưa rõ", ok: "Khớp" };
+function selfChecksHtml(c) {
+  const list = [...(c.selfChecks || [])].sort((a, b) => ["problem", "unclear", "ok"].indexOf(a.status) - ["problem", "unclear", "ok"].indexOf(b.status));
+  if (!list.length && !c.selfCheckNote) return "";
+  const nProb = list.filter((x) => x.status === "problem").length;
+  return h`<details class="sec" open><summary>Tự kiểm hồ sơ dự thầu (${nProb ? nProb + " vấn đề" : "không thấy vấn đề"})</summary><div>
+    ${raw(c.selfCheckNote ? h`<div class="muted small">${c.selfCheckNote}</div>` : "")}
+    <ul class="clean">${raw(list.map((x) => h`<li class="small"><span class="st ${x.status}">${SELF_ST[x.status] || x.status}</span> <b>${SELF_LABEL[x.kind] || x.kind}</b>: ${x.finding}${raw(x.fix ? h`<div>Cần sửa: ${x.fix}</div>` : "")}${raw(SHOW_SRC ? (x.evidence || []).map((e) => h`<div class="muted small">${e.file ? e.file + ": " : ""}<q>${e.quote}</q></div>`).join("") + (x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "") : "")}</li>`).join(""))}</ul></div></details>`;
+}
 function comparisonHtml(c) {
   const v = VERDICT[c.verdict] || ["", "var(--yellow)"];
   const items = [...(c.items || [])].sort((a, b) => (b.critical - a.critical) || (["not_met", "missing", "partial", "unclear", "met"].indexOf(a.status) - ["not_met", "missing", "partial", "unclear", "met"].indexOf(b.status)));
@@ -4233,6 +4245,7 @@ function comparisonHtml(c) {
       </div>
     </div>
     <div class="row small">${raw(Object.entries(STATUS).map(([k, l]) => h`<span class="st ${k}">${cnt(k)} ${l}</span>`).join('<span class="muted">·</span>'))}</div>
+    ${raw(selfChecksHtml(c))}
     <div class="tablewrap"><table>
       <thead><tr><th>Yêu cầu</th><th>Hồ sơ đáp ứng</th><th>Kết quả</th><th>Ghi chú</th></tr></thead>
       <tbody>${raw(items.map((i) => h`<tr>
