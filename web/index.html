@@ -1578,9 +1578,10 @@ function infoHtml(t) {
   const key = t._key, d = state.hsmt[key], files = d?.files || [];
   const c = capacityOf(t);
   const facts = [["Chủ đầu tư", t.investorName && h`<a href="${invHref(t.investorName)}" class="invlink" data-invopen="${t.investorName}" title="Xem mọi gói thầu của chủ đầu tư này">${t.investorName}</a>`], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => bdNameLink(w) + (w.price ? h` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
+  // bidders/<key> is read for closed tenders we did not submit too (Get-GenBidBidderTargets.ps1): show it whatever the stage (Khoa, 2026-11-12).
   return h`<div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" rows="2" style="min-height:56px" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
     <dl class="kv kvo">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${k === "Nhà thầu trúng" || k === "Chủ đầu tư" ? raw(v) : v}</dd>`).join(""))}</dl>
-    ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) || state.bidhist?.[t._key] ? biddersHtml(t) : "")}
+    ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) || state.bidhist?.[t._key] || state.bidders?.[t._key]?.list?.length ? biddersHtml(t) : "")}
     ${raw(competeHtml(t))}${raw(rivalsHtml(t))}
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
