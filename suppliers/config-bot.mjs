@@ -1189,11 +1189,11 @@ const CTL_WORDS = [
   [/dừng khẩn/i, /emergency stop/i], [/ắc ?quy|accu|bình điện/i, /battery (voltage|under|over|low|high)|plant supply|(low|high) battery/i], [/sạc/i, /charg(e|ing)\s*(alternator\s*)?(fail|alarm|warning|fault)|D\+\s*(fail|fault)/i],
   [/nhật ký|lịch sử|event log|sự kiện/i, /event log|events/i], [/giờ (chạy|máy|vận hành)|đếm giờ/i, /engine hours|hours run|running hours|run time|hour meter/i],
   [/hệ số công suất|\bPF\b|cos/i, /power factor|\bpf\b/i], [/công suất|\bkW\b|\bkVA\b/i, /\bkW\b|\bkVA\b|\bkvar\b/i],
-  [/điện áp/i, /voltage (measurement|range|sensing)|(generator|mains|bus|phase).{0,20}voltage|Vs?(L-?L|L-?N|ph-?ph|ph-?n)/i], [/dòng điện/i, /current (measurement|sensing|range)|CT|(generator|phase|load).{0,15}current/i], [/tần số|\bHz\b/i, /frequency/i],
+  [/điện áp/i, /voltage (measurement|range|sensing)|(generator|mains|bus|phase).{0,20}voltage|\bVs?(L-?L|L-?N|ph-?ph|ph-?n)\b/i], [/dòng điện/i, /current (measurement|sensing|range)|\bCT\b|(generator|phase|load).{0,15}current/i], [/tần số|\bHz\b/i, /frequency/i],
   [/RS-?485/i, /RS-?485/i], [/RS-?232/i, /RS-?232/i], [/modbus/i, /modbus/i], [/USB/i, /USB/i], [/ethernet|TCP|mạng LAN/i, /ethernet|TCP/i],
   [/CAN|J1939|ECU/i, /J1939|CAN/i], [/GSM|SMS|GPRS/i, /GSM|SMS|GPRS/i], [/SNMP/i, /SNMP/i],
   [/AMF|mất (điện )?lưới|ATS/i, /AMF|mains (\(utility\) )?fail|automatic mains/i], [/tự (động )?khởi động|auto start|(khởi động|start|dừng|stop) từ xa/i, /auto start|remote start/i],
-  [/mật khẩu|password|PIN/i, /password|PIN\b|security/i], [/LCD|màn hình/i, /LCD|graphic display|display (size|type|resolution)/i], [/hòa đồng bộ|song song|paralle|đồng bộ/i, /synchron|load ?shar|parallel/i],
+  [/mật khẩu|password|PIN/i, /password|PIN\b|security/i], [/LCD|màn hình/i, /\bLCD\b|graphic display|display (size|type|resolution)/i], [/hòa đồng bộ|song song|paralle|đồng bộ/i, /synchron|load ?shar|parallel/i],
   [/(mức|thấp) nhiên liệu|nhiên liệu (thấp|mức)/i, /fuel level|low fuel/i], [/chế độ (hoạt động|vận hành|làm việc|điều khiển)|auto\s*\/\s*manual|manual\s*\/\s*auto|start\s*\/\s*stop/i, /\bmanual\b|\bauto\b mode|stop\/reset/i],
 ];
 // The measured quantities (a controller measures them; a protection or another function that names one is about more).
