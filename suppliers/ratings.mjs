@@ -19,7 +19,9 @@ export function stamfordRatings(text) {
   const L = String(text).split("\n"), out = [];
   const model = (L.find((l, i) => i > 1 && l.trim()) || "").trim().split(/\s+/)[0];
   L.forEach((l, i) => {
-    if (l.trim() !== "RATINGS") return;
+    // "RATINGS" alone, or "| 60Hz | RATINGS" (Winding 14 sheets: the frequency of the whole block on that line).
+    if (!/^(\|\s*(50|60)\s*Hz\s*\|\s*)?RATINGS\s*$/.test(l.trim())) return;
+    const hzHead = Number((l.match(/(50|60)\s*Hz/) || [])[1]) || null;
     // Rises in the order the header gives them, and the duty written before each (Cont. / Standby; "C | nt. H" in a
     // Wintpower sheet the PDF cut).
     let j = i + 1, head = "";
@@ -36,7 +38,7 @@ export function stamfordRatings(text) {
     for (let k = j; k < L.length && k < j + 60; k++) {
       const m = L[k].match(/Series Star \(V\)/);
       if (!m) { if (/^DIMENSIONS/.test(L[k])) break; continue; }
-      const hz = Number((`${L[k]} ${L[k + 1] || ""} ${L[k - 1] || ""}`.match(/\|\s*(50|60)\s*\|/) || [])[1]);
+      const hz = Number((`${L[k]} ${L[k + 1] || ""} ${L[k - 1] || ""}`.match(/\|\s*(50|60)\s*\|/) || [])[1]) || hzHead;
       const volts = cells(L[k].slice(L[k].indexOf("Series Star (V)") + 15)).map(num);
       if (!hz || !volts.length || volts.length % groups.length) continue;
       const per = volts.length / groups.length, rows = {}, used = { volts: L[k] };

@@ -34,6 +34,13 @@ test("Stamford / Wintpower: each figure with its frequency, duty, temperature ri
   const cut = STAMFORD.replace("| Class - Temp Rise | Cont. F - | 105/40°C | Cont. H - 125/40°C\n| Standby - | 150/40°C\n| Standby - | 163/27°C",
     "| Class - Temp Rise | Cont. F | 105/40°C\n| C | nt. H 125/40°C\n| St | andb | 150/40°C\n| St | andb | 163/27°C\n| y | y");
   assert.deepEqual([...new Set(stamfordRatings(cut).map((x) => `${x.rise}:${x.duty}`))], ["105/40°C:Cont.", "125/40°C:Cont.", "150/40°C:Standby", "163/27°C:Standby"]);
+  // A "Winding 14" sheet: the frequency is on the RATINGS line, the voltage line has no "| 50 |" cell.
+  const w14 = ["UCI224F - Winding 14", "", "UCI224F", "| 60Hz | RATINGS", "| Class - Temp Rise | Cont. | F - 105/40°C", "| Cont. | H - 125/40°C | Standby - 150/40°C | Standby - 163/27°C",
+    "| Series Star (V) | 380 | 400 | 416 | 380 | 400 | 416 | 380 | 400 | 416 | 380 | 400 | 416",
+    "| kVA | 75.0 | 75.0 | 75.0 | 85.0 | 85.0 | 85.0 | 89.4 | 89.4 | 89.4 | 92.0 | 92.0 | 92.0",
+    "| Efficiency (%) | 91.0 | 91.2 | 91.3 | 90.6 | 90.9 | 91.0 | 90.4 | 90.7 | 90.9 | 90.3 | 90.7 | 90.8"].join("\n");
+  const r14 = stamfordRatings(w14);
+  assert.deepEqual(r14.filter((x) => x.volt === 400).map((x) => [x.hz, x.duty, x.rise, x.kVA, x.eff]), [[60, "Cont.", "105/40°C", 75, 91.2], [60, "Cont.", "125/40°C", 85, 90.9], [60, "Standby", "150/40°C", 89.4, 90.7], [60, "Standby", "163/27°C", 92, 90.7]]);
   // A row whose cells the PDF dropped (8 figures for 16 columns): that row is not used.
   const lost = STAMFORD.replace(/\| 60 \| Series Star[\s\S]*DIMENSIONS/, "| 60 | Series Star (V) | 416 | 440 | 460 | 480 | 416 | 440 | 460 | 480 | 416 | 440 | 460 | 480 | 416 | 440 | 460 | 480\n| kVA | 12.0 | 13.3 | 13.3 | 14.1 | 13.5 | 14.8 | 14.8 | 15.0\nDIMENSIONS");
   assert.equal(stamfordRatings(lost).filter((x) => x.hz === 60).length, 0);
