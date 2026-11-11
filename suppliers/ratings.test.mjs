@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { stamfordRatings, lsRatings, cumminsRatings } from "./ratings.mjs";
+import { stamfordRatings, stamfordBookRatings, lsRatings, cumminsRatings } from "./ratings.mjs";
 import { altColumns, sourceRatings, comboChecks } from "./config-bot.mjs";
 
 // Lines as the saved Stamford UCI274C sheet has them (sources/stamford-avk-china/1002.md): the 50 Hz block runs each
@@ -98,4 +98,42 @@ test("sourceRatings: only the saved sources a supplier lists; the maker's engine
   const e = RT.eng.get("QSL9G5");
   assert.deepEqual(e.map((f) => [f.key, f.kW, f.rpm, f.maker]), [["engStandby", 296, 1500, true], ["engPrime", 257, 1500, true]]);
   fs.rmSync(dir, { recursive: true, force: true });
+});
+
+// PR 6 (2026-11-11): the Stamford Industrial Ratings Book, S-range sheets, Cummins sheets saved with pdftotext -table.
+const BOOK = ["              4 POLE Three Phase", "", "Star          400V       50Hz/1500rpm", "                         0.8 Power Factor", "Parallel Star 200V", "",
+  "                                                    TEMPERATURE RISE", "", "      Winding", "",
+  "    311/312/12           Standby           Standby                Continuous             Continuous      Continuous", "",
+  "                           163/27                     150/40      125/40 (H)             105/40 (F)      80/40 (B)", "",
+  "       Model          kVA          kW    kVA                  kW  kVA      kW            kVA     kW      kVA     kW", "",
+  "HCI544D              590.0       472.0   575.0        460.0       550.0    440.0         495.0   396.0   429.0   343.2", "",
+  "S4L1D-D         1    340.0       272.0   330.0        264.0       310.0    248.0         285.0   228.0   245.0   196.0", "",
+  "HCI544X              590.0       472.0   575.0", "", "1. Available with single bearing only"].join("\n");
+
+test("Ratings Book: three-phase tables by star voltage and frequency; a footnote after the model; short rows left out", () => {
+  const r = stamfordBookRatings(BOOK), at = (m, rise) => r.find((x) => x.model === m && x.rise === rise);
+  assert.deepEqual((({ hz, volt, duty, kVA, kW }) => ({ hz, volt, duty, kVA, kW }))(at("HCI544D", "125/40°C")), { hz: 50, volt: 400, duty: "Cont.", kVA: 550, kW: 440 });
+  assert.equal(at("HCI544D", "163/27°C").duty, "Standby");
+  assert.equal(at("S4L1D-D", "105/40°C").kVA, 285);
+  assert.equal(r.filter((x) => x.model === "HCI544X").length, 0);
+  assert.equal(stamfordBookRatings(BOOK.replace("Three Phase", "Single Phase")).length, 0);
+  // Class B 80/40 is read but not used for a prime set (altColumns keeps F and H).
+  assert.deepEqual(altColumns(r.filter((x) => x.model === "HCI544D"), { hz: 50, rating: "prime" }).kVA, { min: 495, max: 550 });
+});
+
+test("S-range sheet: 'RATINGS AT 0.8 POWER FACTOR', standby columns first, model from the 'Wdg.311' line; HCI title with a space", () => {
+  const S = ["| Page | 8 | S4L1D-D41_A056E878 Rev.D_24.08.2020", "S4L1D-D41 Wdg.311", "RATINGS AT 0.8 POWER FACTOR",
+    "| Class - Temp Rise | Standby - | 163/27°C", "| Standby | - | 150/40°C", "| Cont. H | - | 125/40°C", "| Cont. F - | 105/40°C",
+    "| 50 | Series Star (V) | 380 | 400 | 415 | 440 | 380 | 400 | 415 | 440 | 380 | 400 | 415 | 440 | 380 | 400 | 415 | 440",
+    "| kVA | 330 | 340 | 340 | 320 | 320 | 330 | 330 | 310 | 300 | 310 | 310 | 290 | 280 | 285 | 285 | 270",
+    "| Efficiency (%) | 92.1 | 92.3 | 92.6 | 93.2 | 92.3 92.5 | 92.7 | 93.3 | 92.7 | 92.9 | 93.1 | 93.6 | 93.1 | 93.3 | 93.4 | 93.8"].join("\n");
+  const r = stamfordRatings(S), at = (rise) => r.find((x) => x.volt === 400 && x.rise === rise);
+  assert.equal(r[0].model, "S4L1D-D41");
+  assert.deepEqual([at("163/27°C").duty, at("163/27°C").kVA, at("125/40°C").duty, at("125/40°C").kVA, at("125/40°C").eff], ["Standby", 340, "Cont.", 310, 92.9]);
+  assert.equal(stamfordRatings(STAMFORD.replace("UCI274C - Winding 311", "HCI 534D/544D - Winding 311"))[0].model, "HCI534D/544D");
+});
+
+test("Cummins sheet saved with pdftotext -table: any spacing in the headings", () => {
+  const r = cumminsRatings(CUMMINS.replace("Net engine output", "Net  engine output").replace("Gross engine output", "Gross engine  output"));
+  assert.deepEqual(r.filter((x) => x.rating === "prime").map((x) => [x.gross, x.net]), [[268, 257]]);
 });

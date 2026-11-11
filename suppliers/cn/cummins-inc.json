@@ -209,6 +209,162 @@
         "B4.5-DM 112 150 1500 Prime – 50 Hz 29.9 (7.9) 14.7 (3.9) — — 5"
       ],
       "file": "sources/cummins-inc/2004.md"
+    },
+    {
+      "n": 2005,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0070366.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "KTA50-G3\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "1227/1645       1097/1470    900/1206        1188/1593       1071/1436  874/1172         1141     1426   1028           1285         839       1048\r"
+      ],
+      "file": "sources/cummins-inc/2005.md"
+    },
+    {
+      "n": 2006,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0070362.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "KTA38-G3\r",
+        "\f1500 rpm (50 Hz ratings)\r",
+        "895/1200        806/1080  656/880           864/1159   784/1051      634/850       816              1020        741       926    600           750\r"
+      ],
+      "file": "sources/cummins-inc/2006.md"
+    },
+    {
+      "n": 2007,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0064182.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "KTA19-G4\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "504/675      448/600     355/475            481/645  430/583       337/452  450            562       402       503            315       394\r"
+      ],
+      "file": "sources/cummins-inc/2007.md"
+    },
+    {
+      "n": 2008,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0070367.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "KTA50-G8\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "1429/1915       1200/1608    1100/1475       1388/1861       1174/1574   1074/1440     1340     1675   1133   1416         1036            1295\r"
+      ],
+      "file": "sources/cummins-inc/2008.md"
+    },
+    {
+      "n": 2009,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0070815.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "6BTA5.9-G5\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "102/137        93/125    82/110           96/129   88/118        77/103    88           110        80         100            70    88\r"
+      ],
+      "file": "sources/cummins-inc/2009.md"
+    },
+    {
+      "n": 2010,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0070818.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "6BTAA5.9-G7\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "160/215      145/194     101/135           147/197  134/180       90/121    136          170        124        155            83    104\r"
+      ],
+      "file": "sources/cummins-inc/2010.md"
+    },
+    {
+      "n": 2011,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0070371.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "QSL9-G2\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "239/320        206/276   186/249           226/303  196/262  176/236           208        260        180            225          162        202\r"
+      ],
+      "file": "sources/cummins-inc/2011.md"
+    },
+    {
+      "n": 2012,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0070372.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "QSL9-G3\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "257/345        227/305   193/259           243/326  216/290  182/244           226       283         201            251          169        211\r"
+      ],
+      "file": "sources/cummins-inc/2012.md"
+    },
+    {
+      "n": 2013,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0064181.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "6LTAA9.5-G3\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "280/375        250/335   200/268          263/353  236/316       186/249  242            302        217        271           171       214\r"
+      ],
+      "file": "sources/cummins-inc/2013.md"
+    },
+    {
+      "n": 2014,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0064187.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "QSZ13-G5\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "469/629      410/550     369/495       445/597  390/523       349/468   416         520         365             456          327        408\r"
+      ],
+      "file": "sources/cummins-inc/2014.md"
+    },
+    {
+      "n": 2015,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0064195.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "QSK38-G2\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "1096/1470       989/1326     893/1197  1047/1404  951/1275  855/1147   1000           1250       908   1135       816     1020\r"
+      ],
+      "file": "sources/cummins-inc/2015.md"
+    },
+    {
+      "n": 2016,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0070621.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "QST30-G3\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "895/1200        806/1081  634/850      864/1159   784/1051  612/821       816              1020         741       926         578    722\r"
+      ],
+      "file": "sources/cummins-inc/2016.md"
+    },
+    {
+      "n": 2017,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0070822.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "QSK50-G3\r",
+        "\f1500 rpm (50 Hz Ratings)\r",
+        "1400/1877       1210/1623    1100/1475       1308/1754       1173/1573   1063/1426       1249     1562         1120  1400         1015  1268\r"
+      ],
+      "file": "sources/cummins-inc/2017.md"
     }
   ],
   "confidence": "medium",

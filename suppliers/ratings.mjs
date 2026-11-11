@@ -17,10 +17,19 @@ const cells = (l) => String(l).split("|").map((c) => c.trim()).filter(Boolean);
 const ST_LABEL = { "kVA": "kVA", "kW": "kW", "Efficiency (%)": "eff" };
 export function stamfordRatings(text) {
   const L = String(text).split("\n"), out = [];
-  const model = (L.find((l, i) => i > 1 && l.trim()) || "").trim().split(/\s+/)[0];
+  const first = (L.find((l, i) => i > 1 && l.trim()) || "").trim().split(/\s+/)[0];
+  // The model: the nearest "<model> - Winding 311" / "<model> Wdg.311" line above the block ("HCI 534D/544D - Winding 311"
+  // → "HCI534D/544D", "S4L1D-D41 Wdg.311"), else the sheet's first line.
+  const modelAt = (i) => {
+    for (let j = i - 1; j >= 0 && j >= i - 4; j--) { const m = L[j].replace(/^\|\s*/, "").match(/^(.+?)\s*(?:-\s*Winding|Wdg\.)\s*\d+/i); if (m) return m[1].replace(/\s+/g, ""); }
+    const t = L.find((l, k) => k > 1 && /(?:-\s*Winding|Wdg\.)\s*\d+/i.test(l));
+    return t ? t.replace(/^\|\s*/, "").match(/^(.+?)\s*(?:-\s*Winding|Wdg\.)/i)[1].replace(/\s+/g, "") : first;
+  };
   L.forEach((l, i) => {
-    // "RATINGS" alone, or "| 60Hz | RATINGS" (Winding 14 sheets: the frequency of the whole block on that line).
-    if (!/^(\|\s*(50|60)\s*Hz\s*\|\s*)?RATINGS\s*$/.test(l.trim())) return;
+    // "RATINGS" alone, "| 60Hz | RATINGS" (Winding 14 sheets: the frequency of the whole block on that line), or
+    // "RATINGS AT 0.8 POWER FACTOR" (S-range sheets).
+    if (!/^(\|\s*(50|60)\s*Hz\s*\|\s*)?RATINGS(\s+AT\s+0\.8\s+POWER\s+FACTOR)?\s*$/i.test(l.trim())) return;
+    const model = modelAt(i);
     const hzHead = Number((l.match(/(50|60)\s*Hz/) || [])[1]) || null;
     // Rises in the order the header gives them, and the duty written before each (Cont. / Standby; "C | nt. H" in a
     // Wintpower sheet the PDF cut).
@@ -58,6 +67,43 @@ export function stamfordRatings(text) {
         if (val("kVA") == null) return;
         out.push({ part: "alternator", model, hz, duty: g.duty, rise: g.rise, phase: 3, volt: v, kVA: val("kVA"), kW: val("kW"), eff: val("eff"), pf: 0.8,
           lines: [...headLines, used.volts, ...(used.kVA || []), ...(used.kW || []), ...(used.eff || [])] });
+      });
+    }
+  });
+  return out;
+}
+
+// ---------- Stamford Industrial Ratings Book (PR 6) ----------
+// One table per pole count × phase × voltage × frequency: "4 POLE Three Phase", "Star 400V", "50Hz/1500rpm", "0.8 Power
+// Factor", "TEMPERATURE RISE", "Standby Standby Continuous Continuous Continuous", "163/27 150/40 125/40 (H) 105/40 (F)
+// 80/40 (B)", "Model kVA kW …", then one row per model ("HCI544C  631.0 504.8 613.0 490.4 …"; a footnote number may
+// follow the model). Three-phase tables only; a row whose figures are not two per rise is left out; no efficiency here.
+export function stamfordBookRatings(text) {
+  const L = String(text).split("\n"), out = [];
+  L.forEach((l, i) => {
+    if (!/TEMPERATURE RISE/.test(l)) return;
+    const back = L.slice(Math.max(0, i - 25), i);
+    const sec = [...back].reverse().find((x) => /\b(Three|3|Single|1)\s+Phase\b/i.test(x)) || "";
+    if (!/\b(Three|3)\s+Phase\b/i.test(sec)) return;
+    const hzL = [...back].reverse().find((x) => /\b(50|60)Hz\/\d{4}\s*rpm/i.test(x)), starL = [...back].reverse().find((x) => /^\s*Star\s+\d{3}V\b/.test(x));
+    if (!hzL || !starL) return;
+    const hz = Number(hzL.match(/\b(50|60)Hz/)[1]), volt = Number(starL.match(/Star\s+(\d{3})V/)[1]);
+    const mi = L.slice(i + 1, i + 14).findIndex((x) => /^\s*Model\s+kVA\s+kW/.test(x));
+    if (mi < 0) return;
+    const head = L.slice(i, i + 1 + mi + 1), between = L.slice(i + 1, i + 1 + mi).join(" ");
+    const duty = [...between.matchAll(/\b(Standby|Continuous)\b/g)].map((m) => (m[1] === "Standby" ? "Standby" : "Cont."));
+    const rises = [...between.matchAll(/\b(\d{2,3})\/(27|40)\b/g)].map((m) => `${m[1]}/${m[2]}°C`);
+    if (!rises.length || duty.length !== rises.length) return;
+    for (let r = i + 2 + mi; r < L.length && r < i + mi + 60; r++) {
+      if (/TEMPERATURE RISE|^\s*1\.\s|Ratings Book/.test(L[r])) break;
+      const m = L[r].match(/^([A-Z][A-Z0-9-]*\d[A-Z0-9-]*)\s+(?:(\d(?:,\d)*)\s+)?((?:[\d.]+|N\/A)(?:\s+(?:[\d.]+|N\/A))*)\s*$/);
+      if (!m) continue;
+      const t = m[3].trim().split(/\s+/);
+      if (t.length !== rises.length * 2) continue;
+      rises.forEach((rise, k) => {
+        const kva = t[2 * k] === "N/A" ? null : Number(t[2 * k]), kw = t[2 * k + 1] === "N/A" ? null : Number(t[2 * k + 1]);
+        if (kva == null) return;
+        out.push({ part: "alternator", model: m[1], hz, duty: duty[k], rise, phase: 3, volt, kVA: kva, kW: kw, eff: null, pf: 0.8, lines: [sec, hzL, starL, ...head, L[r]] });
       });
     }
   });
@@ -107,10 +153,11 @@ export function cumminsRatings(text) {
   const model = si >= 0 ? (L.slice(si + 1).find((l) => l.trim()) || "").trim() : "";
   L.forEach((l, i) => {
     // A page break (form feed) may start the line ("\f1500 rpm (50 Hz Ratings)").
-    const m = l.replace(/^\f/, "").match(/^(\d{4}) rpm \((50|60) Hz Ratings\)/);
+    const m = l.replace(/^\f/, "").match(/^(\d{4}) rpm \((50|60) Hz Ratings\)/i); // "Hz ratings" in some sheets (KTA38-G3)
     if (!m || !model) return;
     const head = L.slice(i, i + 8).join("\n");
-    if (!/Gross engine output/.test(head) || !/Net engine output/.test(head) || !/Standby\s+Prime\s+Base/.test(head)) return;
+    // Any spacing between the words ("Net  engine output" in pdftotext -table).
+    if (!/Gross\s+engine\s+output/.test(head) || !/Net\s+engine\s+output/.test(head) || !/Standby\s+Prime\s+Base/.test(head)) return;
     const vi = L.slice(i + 1, i + 10).findIndex((x) => /^\s*\d+\/\d+\s+\d+\/\d+\s+\d+\/\d+\s+\d+\/\d+/.test(x));
     if (vi < 0) return;
     const line = L[i + 1 + vi], pairs = [...line.matchAll(/(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)/g)].map((p) => num(p[1]));
@@ -121,4 +168,4 @@ export function cumminsRatings(text) {
   return out;
 }
 
-export const ratingsOf = (text) => [...stamfordRatings(text), ...lsRatings(text), ...cumminsRatings(text)];
+export const ratingsOf = (text) => [...stamfordRatings(text), ...stamfordBookRatings(text), ...lsRatings(text), ...cumminsRatings(text)];
