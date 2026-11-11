@@ -29,7 +29,8 @@ import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
-import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf } from "./reqcodes.mjs";
+import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn } from "./reqcodes.mjs";
+import { ratingsOf } from "./ratings.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -1179,7 +1180,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis }) {
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
   // Figures of a model from any supplier's row or datasheet (modelFacts); a check may quote one with factSrc.
-  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built);
+  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built), RT = sourceRatings(suppliers);
   // A genset row as web/catalog.js reads it (its power per rating), by the src that names it.
   const rows = new Map();
   for (const e of built.engines || []) for (const u of e.uses) if (u.line) rows.set(`${u.supplierId}|${u.n}|${CAT.keyOf(u.line)}`, u);
@@ -1554,7 +1555,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis }) {
     }
     confirmChecks(c, result.requirements || []);
     originChecks(c, result, origin, sup);
-    comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: factsOf(c, "engine"), altFacts: factsOf(c, "alternator"), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
+    comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...(c.engine?.model ? RT.eng.get(CAT.keyOf(c.engine.model)) || [] : [])], altFacts: factsOf(c, "alternator"), altRatings: c.alternator?.model ? RT.alt.get(CAT.keyOf(c.alternator.model)) || [] : [], altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
@@ -1899,6 +1900,54 @@ export function altKvaOf(suppliers, built) {
   return out;
 }
 // The highest kVA of the model per source; sources more than 3% apart → { conflict }.
+// ---------- Định mức có nhãn cột, đọc lại từ datasheet đã lưu (PR 5, ratings.mjs) ----------
+// Every saved source (sources/<id>/<n>.md) of a supplier in the list, for a source n its record lists: the labeled
+// alternator ratings by model key, and the maker's engine outputs as rated facts (engPrime / engStandby, net kWm at the
+// sheet's speed; maker when the supplier is of the engine's family — the Cummins sheet of cummins-inc). Read once a run.
+let RT_CACHE = null;
+const keysOfModel = (m) => { const parts = String(m).split("/"), pre = (parts[0].match(/^[A-Za-z]+/) || [""])[0]; return parts.map((p, i) => CAT.keyOf(i && /^\d/.test(p) ? pre + p : p)); };
+export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
+  const ids = (suppliers || []).map((s) => s?.id).join(",");
+  if (RT_CACHE?.ids === ids && RT_CACHE.dir === dir) return RT_CACHE;
+  const alt = new Map(), eng = new Map(), add = (m, k, x) => m.set(k, [...(m.get(k) || []), x]);
+  for (const s of suppliers || []) {
+    for (const src of s?.sources || []) {
+      const file = path.join(dir, String(s.id), `${src.n}.md`);
+      if (!fs.existsSync(file)) continue;
+      const text = fs.readFileSync(file, "utf8");
+      if (!/RATINGS|^Ratings (50|60) Hz|rpm \((50|60) Hz Ratings\)/m.test(text)) continue;
+      const fam = BP.familyOf(s.names?.en, ...(s.names?.brands || []), s.id);
+      for (const r of ratingsOf(text)) {
+        const x = { ...r, supplierId: s.id, n: src.n, url: src.url };
+        if (r.part === "alternator") for (const k of keysOfModel(r.model)) add(alt, k, x);
+        else if (r.rating !== "base" && r.net) for (const k of keysOfModel(r.model)) add(eng, k, {
+          key: RATED_KEY[r.rating], kW: r.net, rpm: r.rpm, maker: s.role === "engine_maker" || (!!fam && new RegExp(`\\b${fam}\\b`, "i").test(text.slice(0, 3000))),
+          label: `Net engine output ${r.rating === "prime" ? "Prime" : "Standby"} kWm (${r.rpm} rpm, ${r.hz} Hz)`, value: `${r.net}`, line: r.lines[r.lines.length - 1], lines: r.lines, supplierId: s.id, n: src.n });
+      }
+    }
+  }
+  RT_CACHE = { ids, dir, alt, eng };
+  return RT_CACHE;
+}
+// The columns of an alternator's ratings that fit the set (PR 5): the row's frequency (required), the duty of the rating
+// (prime → "Cont.", standby → "Standby"), three-phase, and the HSMT's voltage when the sheet has that column (else every
+// voltage of the sheet). Efficiency and kVA as the range over the classes left (F 105/40 and H 125/40 for Cont.). null
+// when nothing is labeled for that frequency.
+export function altColumns(list, { hz, rating = "prime", reqs = [] } = {}) {
+  if (!hz || !list?.length) return null;
+  const duty = rating === "standby" ? "Standby" : "Cont.";
+  let sel = list.filter((x) => x.hz === hz && x.duty === duty && x.phase === 3);
+  if (!sel.length) return null;
+  const vr = (reqs || []).find((r) => r.code === "voltage"), want = vr ? voltsIn(`${vr.requirement || ""} ${vr.quote || ""}`).filter((v) => v >= 300 && v <= 500) : [];
+  const atV = sel.filter((x) => want.includes(x.volt));
+  if (atV.length) sel = atV;
+  const vs = [...new Set(sel.map((x) => x.volt))], rises = [...new Set(sel.map((x) => x.rise))];
+  const label = `${duty} ${rises.join(" / ")}, ${hz} Hz, ${vs.length === 1 ? `${vs[0]} V` : `${Math.min(...vs)}–${Math.max(...vs)} V`}`;
+  const range = (k) => { const v = sel.map((x) => x[k]).filter((y) => y != null); return v.length ? { min: Math.min(...v), max: Math.max(...v) } : null; };
+  const e = range("eff"), kv = range("kVA");
+  const src = { lines: [...new Set(sel.flatMap((x) => x.lines))].slice(0, 12), supplierId: sel[0].supplierId, n: sel[0].n, url: sel[0].url };
+  return { label, src, kVA: kv, eff: e ? { ...e, label: `datasheet ${sel[0].model}: ${label}`, src } : null };
+}
 export function altKvaRange(list = []) {
   const by = new Map();
   for (const x of list) { const k = `${x.supplierId}#${x.n}`, o = by.get(k) || { max: 0, lines: [] }; o.max = Math.max(o.max, ...x.values); o.lines.push(x); by.set(k, o); }
@@ -1913,7 +1962,7 @@ const hsmtKw = (reqs, rating) => {
   const n = r ? [...flat(`${r.requirement || ""}`).matchAll(/(\d+(?:[.,]\d+)?)\s*kWe?\b/gi)].map((m) => Number(m[1].replace(",", "."))) : [];
   return n.length ? Math.max(...n) : null;
 };
-export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKva = [], reqs = [] }) {
+export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKva = [], altRatings = [], reqs = [] }) {
   const out = {}, asks = [], warnings = [];
   // 1. Power balance (2026-11-10, PR 3): the engine's kWm at a rating × the alternator's efficiency against the set's kWe at
   // that rating (its row) and the HSMT's. Every figure is a RANGE of what the sources give: the stored datasheets lost
@@ -1922,7 +1971,7 @@ export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKv
   // not concluded. The engine's kWm: kwmOf (the row states its frequency; a maker's figure or two agreeing sources; never
   // an assembler's "Prime power / Speed" that is the set's own kWe). Efficiency: the alternator model's "Efficiency"
   // lines (not "Mechanical Efficiency"), 80–99.9%, sources whose ranges do not overlap are not used.
-  const kw = kwmOf(row, engFacts), eff = effRange(altFacts);
+  const kw = kwmOf(row, engFacts), lab = altColumns(altRatings, { hz: Number(row?.freq) || null, rating: kw && !kw.conflict ? kw.rating : "prime", reqs }), eff = lab?.eff || effRange(altFacts);
   const miss = [!kw ? "công suất động cơ có ghi mức prime / standby ở tần số mà dòng tổ máy ghi" : kw.conflict && `công suất động cơ (các nguồn lệch > 3%: ${kw.conflict.join(" / ")} kW)`,
     !eff ? "hiệu suất đầu phát theo model" : eff.conflict && `hiệu suất đầu phát (các nguồn không trùng khoảng: ${eff.conflict.join(" / ")})`].filter(Boolean);
   if (!miss.length) {
@@ -1930,7 +1979,7 @@ export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKv
     const hi = CONV.compute({ formula: "kwe_from_kwm", inputs: [{ name: "P_kWm", value: kw.max }, { name: "eff_pct", value: eff.max }] }).value;
     const set = row?.power?.[kw.rating]?.kW ?? null, req = hsmtKw(reqs, kw.rating), need = Math.max(set ?? 0, req ?? 0) || null;
     const rg = (a, b, u) => (Math.abs(a - b) < 0.05 ? `${fmt(a)}${u}` : `${fmt(a)}–${fmt(b)}${u}`);
-    const head = `Động cơ ${rg(kw.min, kw.max, " kWm")} (${kw.rating}${kw.gross ? ", gross" : ""}, ${kw.freq} Hz${kw.rpm ? ` / ${kw.rpm} v/p` : ""}) × hiệu suất đầu phát ${rg(eff.min, eff.max, "%")} = ${rg(lo, hi, " kWe")}`;
+    const head = `Động cơ ${rg(kw.min, kw.max, " kWm")} (${kw.rating}${kw.gross ? ", gross" : ""}, ${kw.freq} Hz${kw.rpm ? ` / ${kw.rpm} v/p` : ""}) × hiệu suất đầu phát ${rg(eff.min, eff.max, "%")}${eff.label ? ` (${eff.label})` : ""} = ${rg(lo, hi, " kWe")}`;
     const inputs = { engine: kw.src, eff: eff.src };
     if (!need) out.power = { status: "missing", text: `${head}; không có số kWe ${kw.rating} của tổ máy hay HSMT để so.`, inputs };
     else {
@@ -1944,7 +1993,16 @@ export function comboChecks(c, { combo, row, engFacts = [], altFacts = [], altKv
   // kVA of the alternator: its datasheet's kVA lines (altKvaOf) give ratings of the model with the column titles lost,
   // and the stored Leroy-Somer sheets miss columns (60 Hz / higher class), so no warning: when even the highest is
   // below the set's prime kVA on a row that states 50 Hz, a question for the supplier; nothing otherwise.
-  const ak = altKva && altKva.length ? altKvaRange(altKva) : null, setKva = row?.power?.prime?.kVA ?? row?.power?.rated?.kVA ?? null;
+  const setKva = row?.power?.prime?.kVA ?? row?.power?.rated?.kVA ?? null;
+  // With the columns read from the sheet (altColumns, PR 5): the kVA of the continuous duty at the row's frequency and the
+  // HSMT's voltage. Still a question, never a warning (điều phối 2026-11-10).
+  const labP = altColumns(altRatings, { hz: Number(row?.freq) || null, rating: "prime", reqs });
+  if (labP?.kVA && setKva) {
+    out.altKva = { min: labP.kVA.min, max: labP.kVA.max, need: setKva, status: labP.kVA.max < setKva - 0.5 ? "below" : "any", labeled: labP.label, src: labP.src };
+    if (out.altKva.status === "below") asks.push({ part: "alternator", item: "Công suất định mức đầu phát", requirement: `≥ ${fmt(setKva)} kVA (prime của tổ máy)`, kind: "model", status: "unclear",
+      ask: `Xác nhận kVA định mức đầu phát ở cấp nhiệt chào (datasheet ghi ${labP.label}: lớn nhất ${fmt(labP.kVA.max)} kVA)` });
+  }
+  const ak = !labP?.kVA && altKva && altKva.length ? altKvaRange(altKva) : null;
   if (ak && !ak.conflict && setKva) {
     out.altKva = { max: ak.max, need: setKva, status: ak.max < setKva - 0.5 ? "below" : "any", src: ak.src };
     if (out.altKva.status === "below" && Number(row?.freq) === 50) asks.push({ part: "alternator", item: "Công suất định mức đầu phát", requirement: `≥ ${fmt(setKva)} kVA (prime của tổ máy)`, kind: "model", status: "unclear",
