@@ -8,6 +8,7 @@
   const F = {
     kva_from_kw: { label: "S (kVA) = P (kW) / cosφ", basis: "Định nghĩa hệ số công suất cosφ = P / S (IEC 60050-131)", inputs: ["P_kW", "pf"], unit: "kVA", calc: (x) => x.P_kW / x.pf },
     kw_from_kva: { label: "P (kW) = S (kVA) × cosφ", basis: "Định nghĩa hệ số công suất cosφ = P / S (IEC 60050-131)", inputs: ["S_kVA", "pf"], unit: "kW", calc: (x) => x.S_kVA * x.pf },
+    pf_from_kw_kva: { label: "cosφ = P (kW) / S (kVA)", basis: "Định nghĩa hệ số công suất cosφ = P / S (IEC 60050-131)", inputs: ["P_kW", "S_kVA"], unit: "", calc: (x) => x.P_kW / x.S_kVA },
     current_3ph: { label: "I (A) = S (kVA) × 1000 / (√3 × U (V))", basis: "Công suất biểu kiến ba pha S = √3 · U_dây · I", inputs: ["S_kVA", "U_V"], unit: "A", calc: (x) => (x.S_kVA * 1000) / (Math.sqrt(3) * x.U_V) },
     kva_from_current_3ph: { label: "S (kVA) = √3 × U (V) × I (A) / 1000", basis: "Công suất biểu kiến ba pha S = √3 · U_dây · I", inputs: ["U_V", "I_A"], unit: "kVA", calc: (x) => (Math.sqrt(3) * x.U_V * x.I_A) / 1000 },
     lph_from_gkwh: { label: "Q (L/h) = b (g/kWh) × P (kW) / ρ (g/L)", basis: "Lưu lượng khối lượng = suất tiêu hao × công suất; thể tích = khối lượng / khối lượng riêng", inputs: ["b_gkWh", "P_kW", "rho_gL"], unit: "L/h", calc: (x) => (x.b_gkWh * x.P_kW) / x.rho_gL, standard: { rho_gL: DIESEL } },

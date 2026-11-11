@@ -30,7 +30,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
 import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn, clausesOf } from "./reqcodes.mjs";
-import { ratingsOf } from "./ratings.mjs";
+import { ratingsOf, stamfordRatings, altSheetAttrs } from "./ratings.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -1553,8 +1553,13 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       s.hasController = !!ck && (row.includes(squash(c.controller.model)) || (sup.get(s.supplierId).controllers || []).some((x) => x.model && CAT.keyOf(x.model) === ck));
     }
     c.checks = (c.checks || []).filter((x) => !isSyncItem(x.item));
-    stdChecks(c, result.requirements || [], rowOf(c.genset?.src || c.engine?.src));
-    fuelChecks(c, result.requirements || [], rowOf(c.genset?.src || c.engine?.src));
+    const row = rowOf(c.genset?.src || c.engine?.src), altAttrs = ratingsFor(RT.attr, c.alternator?.model);
+    stdChecks(c, result.requirements || [], row);
+    fuelChecks(c, result.requirements || [], row);
+    powerChecks(c, result.requirements || [], row);
+    pfChecks(c, result.requirements || [], row);
+    currentChecks(c, result.requirements || [], row);
+    freqChecks(c, result.requirements || [], row, [...altAttrs.filter((a) => a.key === "poles"), ...factsOf(c, "alternator").filter((f) => /poles?|số cực|极数/i.test(f.label || ""))]);
     if (sync) {
       // The make of each part: as the configuration writes it, as the catalog reads the model, or from the model code.
       const recMake = (list, m) => (list || []).find((x) => x.key === CAT.keyOf(m || ""))?.make || "";
@@ -1576,6 +1581,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     }
     confirmChecks(c, result.requirements || []);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
+    altAttrChecks(c, result.requirements || [], altAttrs, factsOf(c, "alternator"));
     originChecks(c, result, origin, sup);
     comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
@@ -2009,7 +2015,7 @@ export const ratingsFor = (map, model) => {
 export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
   const ids = (suppliers || []).map((s) => s?.id).join(",");
   if (RT_CACHE?.ids === ids && RT_CACHE.dir === dir) return RT_CACHE;
-  const alt = new Map(), eng = new Map(), add = (m, k, x) => m.set(k, [...(m.get(k) || []), x]);
+  const alt = new Map(), eng = new Map(), attr = new Map(), add = (m, k, x) => m.set(k, [...(m.get(k) || []), x]);
   for (const s of suppliers || []) {
     for (const src of s?.sources || []) {
       const file = path.join(dir, String(s.id), `${src.n}.md`);
@@ -2017,7 +2023,14 @@ export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
       const text = fs.readFileSync(file, "utf8");
       if (!/RATINGS|TEMPERATURE RISE|^Ratings (50|60) Hz|rpm \((50|60) Hz Ratings\)/im.test(text)) continue;
       const fam = BP.familyOf(s.names?.en, ...(s.names?.brands || []), s.id);
-      for (const r of ratingsOf(text)) {
+      const rs = ratingsOf(text);
+      // A technical data sheet of one alternator model (cfg-r3): its attributes (insulation, poles, THD...) by that model.
+      const one = [...new Set(stamfordRatings(text).map((r) => r.model))];
+      if (one.length === 1 && !rs.some((r) => r.part === "alternator" && r.model !== one[0])) {
+        const at = altSheetAttrs(text).map((a) => ({ ...a, model: one[0], supplierId: s.id, n: src.n, url: src.url }));
+        for (const k of keysOfModel(one[0])) for (const a of at) add(attr, k, a);
+      }
+      for (const r of rs) {
         const x = { ...r, supplierId: s.id, n: src.n, url: src.url };
         if (r.part === "alternator") for (const k of keysOfModel(r.model)) add(alt, k, x);
         else if (r.rating !== "base" && r.net) for (const k of keysOfModel(r.model)) add(eng, k, {
@@ -2026,7 +2039,7 @@ export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
       }
     }
   }
-  RT_CACHE = { ids, dir, alt, eng };
+  RT_CACHE = { ids, dir, alt, eng, attr };
   return RT_CACHE;
 }
 // The columns of an alternator's ratings that fit the set (PR 5): the row's frequency (required), the duty of the rating
@@ -2331,6 +2344,186 @@ export function stdChecks(c, reqs, row) {
       note: "Code đọc từ tiêu đề bảng / dòng tổ máy của cấu hình." };
     if (x) { delete x.unverified; delete x.hint; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
   }
+}
+// ---------- Điểm tính được từ dòng nguồn của cấu hình (cfg-r3, điều phối 2026-11-11) ----------
+// The code, not the agent, decides these from the configuration's own genset row (rowOf: the catalog row with the power
+// web/catalog.js reads per labeled column) and the HSMT's requirement. Each conclusion is "met" only: a figure that falls
+// short, a row the code cannot read, or a check already met / not met (by the agent, verified) is left as it is. Every
+// figure comes from the row line word for word, every computation from web/conversions.js, and the formula with its inputs
+// is written in `offered`.
+const figVi = (v, d = 2) => Number(v).toLocaleString("vi-VN", { maximumFractionDigits: d });
+// The check a code-written result replaces: none, or one left "unclear" (not a conflict of the model's sources).
+const openCheck = (c, r) => {
+  const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+  return !x ? { x: null } : x.status === "unclear" && !x.conflict && !x.version && !x.parts?.length ? { x } : null;
+};
+const putCheck = (c, x, check) => {
+  if (x) { delete x.unverified; delete x.hint; x.was = x.was || x.status; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
+};
+const ROW_RATING = { prime: /prime|\bPRP\b|continuous|li[êe]n\s*t[ụu]c|主用|常用/i, standby: /standby|\bESP\b|d[ựu]\s*ph[òo]ng|备用/i };
+// The row's power of a rating as two figures of its own line, under a column the header names for that rating; null when
+// the header does not name it, a figure is not in the line, or a "a/b" cell is written against the header's unit order
+// ("KVA/KW" over 350/438: IB2600574589, the agent read it as a contradiction of the source, and so does the code).
+export function ratedRowPower(row, rating) {
+  const p = row?.power?.[rating], head = [...(row?.header || []), row?.title || ""].join(" ");
+  if (!p?.kVA || !p?.kW || !ROW_RATING[rating]?.test(head)) return null;
+  const nums = numbersIn(row.line || "");
+  if (!nums.includes(p.kVA) || !nums.includes(p.kW)) return null;
+  const kvaFirst = /kva\s*\/\s*kw(?!h)/i.test(head), kwFirst = /kw[e]?\s*\/\s*kva/i.test(head);
+  for (const m of String(row.line).matchAll(/(\d+(?:\.\d+)?)\s*(?:k[vV][aA]|kw|KW|KVA)?\s*\/\s*(\d+(?:\.\d+)?)/g)) {
+    const a = Number(m[1]), b = Number(m[2]);
+    if (![a, b].includes(p.kVA) || ![a, b].includes(p.kW)) continue;
+    if ((kvaFirst && !kwFirst && a < b) || (kwFirst && !kvaFirst && a > b)) return null;
+  }
+  return p;
+}
+// The one figure of a unit a requirement asks (e.g. "≥ 400 kVA / 320 kW"), null when it gives none or several, or a ceiling.
+const oneFig = (t, re) => { const v = [...new Set([...String(t || "").matchAll(re)].map((m) => Number(m[1].replace(/\.(?=\d{3}\b)/g, "").replace(",", "."))))]; return v.length === 1 ? v[0] : null; };
+const KVA_RE = /(\d[\d.,]*)\s*kVA\b/gi, KW_RE = /(\d[\d.,]*)\s*kWe?\b(?!\s*h)/gi;
+const CEIL = /≤|<=|<|t[ốo]i\s*đa|kh[ôo]ng\s*(l[ớo]n|v[ưượ]t|qu[áa])/i;
+// (d) Công suất prime / standby: the row's labeled column against the HSMT's minimum (a figure without ≥ is the minimum:
+// Khoa 2026-11-01). An alternator's kVA is not this (alt_power stays a question to the supplier: #507).
+export function powerChecks(c, reqs, row) {
+  if (!row) return c;
+  for (const r of reqs) {
+    const rating = r.code === "power_prime" ? "prime" : r.code === "power_standby" ? "standby" : null;
+    if (!rating || r.part !== "genset" || r.byCode) continue;
+    const t = r.requirement || "", o = openCheck(c, r), p = o && ratedRowPower(row, rating);
+    if (!p || CEIL.test(t)) continue;
+    const kva = oneFig(t, KVA_RE), kw = oneFig(t, KW_RE);
+    if (kva == null && kw == null) continue;
+    if ((kva != null && p.kVA < kva) || (kw != null && p.kW < kw)) continue;
+    putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `${figVi(p.kVA)} kVA / ${figVi(p.kW)} kW (cột ${rating === "prime" ? "Prime" : "Standby"} của dòng tổ máy)`, sourceQuote: row.line, part: "genset", level: r.level || "core", status: "met", byCode: true,
+      note: `Code đọc cột ${rating === "prime" ? "Prime" : "Standby"} theo tiêu đề bảng (${figVi(p.kVA)} kVA / ${figVi(p.kW)} kW) và so với mức HSMT${kva != null ? ` ${figVi(kva)} kVA` : ""}${kw != null ? ` ${figVi(kw)} kW` : ""}.` });
+  }
+  return c;
+}
+// (a) Hệ số công suất: cosφ = P / S of one rating of the row (both figures in the line, the header naming the rating).
+export function pfChecks(c, reqs, row) {
+  if (!row) return c;
+  const r = reqs.find((q) => q.code === "power_factor" && q.part === "genset" && !q.byCode), o = r && openCheck(c, r);
+  if (!o) return c;
+  const t = `${r.requirement || ""} ${r.quote || ""}`, m = t.match(/(≥|>=|tối\s*thiểu|min)?\s*(0[.,]\d{1,2})\b/i);
+  if (!m || CEIL.test(r.requirement || "")) return c;
+  const want = Number(m[2].replace(",", ".")), atLeast = !!m[1];
+  for (const rating of ["prime", "standby"]) {
+    const p = ratedRowPower(row, rating);
+    if (!p) continue;
+    const conv = { formula: "pf_from_kw_kva", inputs: [{ name: "P_kW", value: p.kW, from: "source" }, { name: "S_kVA", value: p.kVA, from: "source" }] }, v = CONV.compute(conv).value;
+    if (!Number.isFinite(v) || !(atLeast ? v >= want - 0.005 : Math.abs(v - want) <= 0.005)) continue;
+    const f = CONV.FORMULAS.pf_from_kw_kva;
+    putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `cosφ = ${figVi(p.kW)} kW / ${figVi(p.kVA)} kVA = ${figVi(v, 3)} (${rating === "prime" ? "Prime" : "Standby"})`, sourceQuote: row.line, part: "genset", level: r.level || "core", status: "met", byCode: true,
+      conversions: [{ ...conv, value: v, unit: f.unit, label: f.label, basis: f.basis }], note: `Code tính ${f.label} từ cột ${rating === "prime" ? "Prime" : "Standby"} của dòng tổ máy.${Math.abs(v - want) > 1e-9 ? ` ${figVi(v, 3)} khác ${figVi(want)} trong mức làm tròn số kVA của bảng (±0,005).` : ""}` });
+    break;
+  }
+  return c;
+}
+// (b) Dòng điện định mức: I = S × 1000 / (√3 × U), S the row's prime kVA (standby when the requirement says so), U the
+// line voltage the requirement or the HSMT's voltage requirement gives (one value, 300–500 V).
+export function currentChecks(c, reqs, row) {
+  if (!row) return c;
+  const r = reqs.find((q) => q.code === "current" && q.part === "genset" && !q.byCode), o = r && openCheck(c, r);
+  if (!o) return c;
+  const t = r.requirement || "";
+  if (CEIL.test(t)) return c;
+  const amps = oneFig(t, /(\d[\d.,]*)\s*A\b/g);
+  const vOf = (s) => [...new Set(voltsIn(s).filter((v) => v >= 300 && v <= 500))];
+  let us = vOf(t);
+  if (!us.length) { const vr = reqs.find((q) => q.code === "voltage"); us = vr ? vOf(`${vr.requirement || ""} ${vr.quote || ""}`) : []; }
+  if (amps == null || us.length !== 1) return c;
+  const rating = /standby|d[ựu]\s*ph[òo]ng/i.test(t) ? "standby" : "prime", p = ratedRowPower(row, rating);
+  if (!p) return c;
+  const conv = { formula: "current_3ph", inputs: [{ name: "S_kVA", value: p.kVA, from: "source" }, { name: "U_V", value: us[0], from: "hsmt" }] }, v = CONV.compute(conv).value;
+  if (!Number.isFinite(v) || v < amps) return c;
+  const f = CONV.FORMULAS.current_3ph;
+  putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `I = ${figVi(p.kVA)} kVA × 1000 / (√3 × ${us[0]} V) = ${figVi(v, 1)} A`, sourceQuote: row.line, part: "genset", level: r.level || "core", status: "met", byCode: true,
+    conversions: [{ ...conv, value: v, unit: f.unit, label: f.label, basis: f.basis }], note: `Code tính ${f.label} từ kVA ${rating === "prime" ? "Prime" : "Standby"} của dòng tổ máy và điện áp ${us[0]} V của HSMT, so với ${figVi(amps)} A.` });
+  return c;
+}
+// (c) Tần số: the row / header / title writes 50 (60) Hz (stdChecks), or 1500 (1800) rpm and the alternator model's sheet
+// (or its facts) gives 4 poles: n = 120 f / p (conversions rpm_from_poles). Not from a model name.
+export function freqChecks(c, reqs, row, poles = []) {
+  if (!row) return c;
+  const r = reqs.find((q) => q.code === "frequency" && q.part === "genset" && !q.byCode), o = r && openCheck(c, r);
+  if (!o) return c;
+  const hz = Number((`${r.requirement || ""} ${r.quote || ""}`.match(/\b(50|60)\s*Hz/i) || [])[1]);
+  const lines = [...(row.header || []), row.line || "", row.title || ""], all = lines.join(" ");
+  if (!hz || /\b(50|60)\s*-?\s*Hz/i.test(all)) return c; // a row that writes its frequency is stdChecks'
+  const rpm = hz === 50 ? 1500 : 1800, rl = lines.find((l) => new RegExp(`\\b${rpm}\\s*(rpm|r\\/min|rev\\/min|v\\/p|vòng)`, "i").test(l));
+  const four = poles.filter((p) => Number(p.value) === 4), other = poles.filter((p) => Number(p.value) !== 4);
+  if (!rl || !four.length || other.length) return c;
+  const conv = { formula: "rpm_from_poles", inputs: [{ name: "f_Hz", value: hz, from: "hsmt" }, { name: "poles", value: 4, from: "source" }] }, v = CONV.compute(conv).value;
+  if (Math.abs(v - rpm) > 0.5) return c;
+  const f = CONV.FORMULAS.rpm_from_poles;
+  putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `${hz} Hz: n = 120 × ${hz} / 4 cực = ${rpm} v/p`, sourceQuote: [rl, four[0].lines?.[0] || four[0].line].filter(Boolean).join(" | "), part: "genset", level: r.level || "core", status: "met", byCode: true,
+    conversions: [{ ...conv, value: v, unit: f.unit, label: f.label, basis: f.basis }], note: `Code: dòng tổ máy ghi ${rpm} v/p, tờ hãng đầu phát ghi 4 cực; ${f.label}.` });
+  return c;
+}
+// ---------- Thuộc tính đầu phát theo model (cfg-r3) ----------
+// From the maker's technical data sheet of the configuration's own alternator model (RT.attr, by ratingsFor: the model as
+// written, or its code with a make in front dropped; never a near name). Two sheets of the model that differ, or another
+// source of the model giving the attribute differently (modelFacts), leave the check as it is. The sheet's line is the
+// source quote. A point a sheet offers in two builds (1 / 2 bearings) or with one excitation system (the 300% short
+// circuit of the S range: curves drawn for PMG) is "confirm" (order), with the build to choose.
+const INS = "BFHC"; // IEC 60085 thermal classes in order: B 130 °C, F 155 °C, H 180 °C, C > 180 °C
+const one = (attrs, key) => { const l = attrs.filter((a) => a.key === key); return l.length && new Set(l.map((a) => JSON.stringify(a.value))).size === 1 ? l[0] : null; };
+const quoteOf = (a) => a.lines.join(" ");
+export function altAttrChecks(c, reqs, attrs = [], facts = []) {
+  if (!attrs.length) return c;
+  const model = c.alternator?.model || "";
+  const sheet = (a) => `tờ thông số ${a.model} của hãng (${a.supplierId} [${a.n}])`;
+  const met = (r, o, a, offered, extra = "") => putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered, sourceQuote: quoteOf(a), part: "alternator", level: r.level || "core", status: "met", byCode: true,
+    sheetSrc: { supplierId: a.supplierId, n: a.n, url: a.url, lines: a.lines }, note: `Code đọc từ ${sheet(a)}.${extra}` });
+  const confirm = (r, o, a, offered, why) => putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered, sourceQuote: quoteOf(a), part: "alternator", level: r.level || "core", status: "confirm", confirm: "order", byCode: true,
+    sheetSrc: { supplierId: a.supplierId, n: a.n, url: a.url, lines: a.lines }, note: `Code đọc từ ${sheet(a)}: ${why}` });
+  const factsSay = (re) => facts.filter((f) => re.test(`${f.label || ""} ${f.key || ""}`));
+  for (const r of reqs) {
+    if (r.part !== "alternator" || r.byCode) continue;
+    const o = openCheck(c, r);
+    if (!o) continue;
+    const t = `${r.item} ${r.requirement || ""}`, req = r.requirement || "";
+    if (r.code === "alt_insulation") {
+      const a = one(attrs, "insulation"), ls = [...req.matchAll(/(?:class|c[ấa]p|lo[ạa]i|c[áa]ch\s*đi[ệe]n)\s*([BFHC])\b/gi)].map((m) => m[1].toUpperCase());
+      if (!a || !ls.length) continue;
+      if (factsSay(/insul|cách điện|绝缘/i).some((f) => !new RegExp(`\\b${a.value}\\b`, "i").test(String(f.value).replace(/class/i, "")))) continue;
+      const min = /t[ốo]i\s*thi[ểe]u|≥|tr[ởo]\s*l[êe]n|\bmin/i.test(req), ok = min ? INS.indexOf(a.value) >= Math.min(...ls.map((l) => INS.indexOf(l))) : ls.includes(a.value);
+      if (ok) met(r, o, a, `Cấp ${a.value}`);
+    } else if (r.code === "alt_thd") {
+      const a = one(attrs, "thd"), m = req.match(/(?:≤|<=|<|t[ốo]i\s*đa|kh[ôo]ng\s*qu[áa])\s*(\d+(?:[.,]\d+)?)\s*%/i);
+      if (!a || !m) continue;
+      if (factsSay(/harmonic|thd|谐波/i).some((f) => !numbersIn(f.value).includes(a.value))) continue;
+      if (a.value <= Number(m[1].replace(",", "."))) met(r, o, a, `< ${figVi(a.value, 1)}% (tải tuyến tính cân bằng)`);
+    } else if (r.code === "alt_poles") {
+      const a = one(attrs, "poles"), m = req.match(/\b(\d)\s*c[ựu]c\b/i);
+      // Only a requirement that asks the pole count alone ("4 cực"; not "4 cực, 3 pha, 6 dây", not "từ trường quay").
+      const rest = req.replace(/\b\d\s*c[ựu]c\b|s[ốo]\s*c[ựu]c|[:;,.()\s]/gi, "");
+      if (a && m && !rest && a.value === Number(m[1])) met(r, o, a, `${a.value} cực`);
+    } else if (r.code === "alt_bearing") {
+      const a = one(attrs, "bearings"), n = /m[ộo]t\s*[ổo]|\b1\s*[ổo]|single\s*bearing/i.test(req) ? 1 : /hai\s*[ổo]|\b2\s*[ổo]|two\s*bearing|double\s*bearing/i.test(req) ? 2 : null;
+      const rest = req.replace(/m[ộo]t|hai|\b[12]\b|[ổo]\s*(đ[ỡo]|bi)|single|two|double|bearings?|[:;,.()\s]/gi, "");
+      if (a && n && !rest && a.value.includes(n)) confirm(r, o, a, `Có bản ${n} ổ đỡ (tờ hãng có cả 1 và 2 ổ đỡ)`, `model có cả bản 1 và 2 ổ đỡ, chọn bản ${n} ổ đỡ khi đặt hàng.`);
+    } else if ((r.code === "other" || r.code === "alt_short_circuit") && /300\s*%/.test(t) && /\b10\s*(gi[âa]y|s\b|sec)/i.test(t) && !/qu[áa]\s*t[ốo]c/i.test(t)) {
+      const a = one(attrs, "sc300");
+      if (a) confirm(r, o, a, "300% trong 10 giây (tờ hãng)", "tờ hãng ghi đạt ngắn mạch duy trì 300% trong 10 giây, đường cong ngắn mạch vẽ cho kích từ riêng (PMG); chọn hệ kích từ PMG khi đặt hàng.");
+    } else if (r.code === "other" && /qu[áa]\s*t[ốo]c\s*đ[ộo]|overspeed/i.test(t)) {
+      const a = one(attrs, "overspeed"), want = oneFig(req, /(\d[\d.,]{2,})\s*(?:v\/p|vòng|rpm|rev)?/gi);
+      // Only the same figure: the HSMT's "≤ 2250" reads as the sheet's "MAXIMUM OVERSPEED 2250" in either sense.
+      if (a && want === a.value) met(r, o, a, `Quá tốc độ tối đa ${figVi(a.value, 0)} v/p`);
+    } else if (r.code === "alt_type") {
+      // Each term of the requirement must be written on the sheet: self excited ("SELF EXCITED"), PMG, brushless
+      // ("brushless"); "A hoặc B" is met by either. A term the code does not know (AREP, "từ trường quay", "xoay chiều") stops it.
+      const T = [["brushless", /kh[ôo]ng\s*ch[ổo]i\s*than|\(?brushless\)?/gi], ["self_excited", /t[ựu]\s*k[íi]ch\s*t[ừu]|self[\s-]*excit\w*/gi], ["pmg", /\bPMG\b/gi]];
+      let rest = req, alts = [];
+      for (const part of req.split(/,|;|\bv[àa]\b/)) { const has = T.filter(([, re]) => new RegExp(re.source, "i").test(part)).map(([k]) => k); if (has.length) alts.push({ has, or: /ho[ặa]c|\bor\b/i.test(part) }); }
+      for (const [, re] of T) rest = rest.replace(re, "");
+      rest = rest.replace(/ho[ặa]c|\bor\b|\bv[àa]\b|[:;,.()/\s]/gi, "");
+      if (rest || !alts.length) continue;
+      const as = alts.map((g) => g.has.map((k) => one(attrs, k)).filter(Boolean)), ok = alts.every((g, i) => (g.or ? as[i].length > 0 : as[i].length === g.has.length));
+      if (ok) { const a = as.flat()[0]; putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: [...new Set(as.flat().map((x) => x.lines[0].replace(/^\|\s*|\s*\|\s*$/g, "").replace(/\s*\|\s*/g, ": ")))].join("; "), sourceQuote: [...new Set(as.flat().map(quoteOf))].join(" | "), part: "alternator", level: r.level || "core", status: "met", byCode: true,
+        sheetSrc: { supplierId: a.supplierId, n: a.n, url: a.url, lines: a.lines }, note: `Code đọc từ ${sheet(a)}.` }); }
+    }
+  }
+  return c;
 }
 // Won goods behind each configuration (web/bidprice.js wonEvidence): lots of supply tenders whose won generator set
 // names this engine model, this genset model, or this engine make at about this power. docs: { <TBMT>: bidhist }.

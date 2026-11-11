@@ -168,4 +168,49 @@ export function cumminsRatings(text) {
   return out;
 }
 
-export const ratingsOf = (text) => [...stamfordRatings(text), ...stamfordBookRatings(text), ...lsRatings(text), ...cumminsRatings(text)];
+// ---------- Thuộc tính đầu phát trên tờ TD một model (cfg-r3, điều phối 2026-11-11) ----------
+// A Stamford / Wintpower technical data sheet of ONE model (the same sheets stamfordRatings reads: "UCI274H - Winding 311",
+// "S5L1D-H4 Wdg.311") states, besides its ratings, the alternator's insulation class, poles, waveform distortion, maximum
+// overspeed, its control systems (self excited / PMG), the bearing builds and, in the newer sheets, the 300% sustained
+// short circuit. Each attribute with the line(s) of the sheet it is read from, word for word. Nothing is inferred: a sheet
+// that does not write "brushless" gives no brushless, an "air flow" gives no fan. A sheet whose model is not one model
+// (a ratings book, a TAL range sheet) is not read here.
+export function altSheetAttrs(text) {
+  const L = String(text).split("\n"), out = [];
+  const add = (key, value, ...lines) => out.push({ key, value, lines: lines.filter(Boolean) });
+  const label = (re) => L.find((l) => re.test(l));
+  // "| INSULATION SYSTEM | CLASS H" (old sheets), "| Insulation System | H" (S-range).
+  const ins = label(/^\|\s*insulation system\s*\|/i);
+  const insM = ins && ins.match(/^\|\s*insulation system\s*\|\s*(?:class\s*)?([BFHC])\s*(?:\||$)/i);
+  if (insM) add("insulation", insM[1].toUpperCase(), ins);
+  const poles = label(/^\|\s*number of poles\s*\|/i);
+  const pM = poles && poles.match(/\|\s*(\d{1,2})\s*$/);
+  if (pM) add("poles", Number(pM[1]), poles);
+  // "| WAVEFORM DISTORTION | NO LOAD < 1.5% NON-DISTORTING BALANCED LINEAR LOAD < 5.0%": the figure at linear load.
+  const wd = label(/^\|\s*waveform distortion\s*\|/i);
+  const wM = wd && wd.match(/LINEAR\s+LOAD\s*<\s*(\d+(?:\.\d+)?)\s*%/i);
+  if (wM) add("thd", Number(wM[1]), wd);
+  const os = label(/^\|\s*maximum overspeed\s*\|/i);
+  const oM = os && os.match(/\|\s*(\d{3,5})\s*Rev\/Min/i);
+  if (oM) add("overspeed", Number(oM[1]), os);
+  // The control systems the sheet offers (old sheets: "| CONTROL SYSTEM | SELF EXCITED" / "| CONTROL SYSTEM | SEPARATELY
+  // EXCITED BY P.M.G."; S-range: "| AVR Power | Self-Excited" then "| PMG | PMG").
+  const ctl = L.filter((l) => /^\|\s*control system\s*\|/i.test(l) || /^\|\s*AVR Power\s*\|/i.test(l));
+  for (const l of ctl) {
+    if (/self[\s-]*excited/i.test(l)) add("self_excited", true, l);
+    if (/P\.?M\.?G\.?/i.test(l)) add("pmg", true, l);
+  }
+  const bl = L.find((l) => /\bbrushless\b/i.test(l));
+  if (bl) add("brushless", true, bl);
+  const pmgRow = L.find((l) => /^\|\s*PMG\s*\|\s*PMG\s*$/i.test(l.trim()));
+  if (pmgRow && ctl.some((l) => /AVR Power/i.test(l))) add("pmg", true, pmgRow);
+  // "| 1 BEARING | 2 BEARING": both builds; "| 1 Bearing | 2" then "Bearing" (S-range, cut by the PDF).
+  const br = L.findIndex((l) => /^\|\s*1\s*BEARING\s*\|\s*2(\s*BEARING)?\s*$/i.test(l.trim()));
+  if (br >= 0) add("bearings", [1, 2], L[br], /^\s*bearing\s*$/i.test(L[br + 1] || "") ? L[br + 1] : null);
+  // "This alternator is capable of achieving a balanced 300% sustained short circuit for up to 10 | seconds." (S-range).
+  const sc = L.findIndex((l) => /300%\s*sustained\s*short\s*circuit\s*for\s*up\s*to\s*10\b/i.test(l));
+  if (sc >= 0 && /capable of achieving a\b/i.test(L[sc - 1] || "") && /^\|?\s*seconds\b/i.test((L[sc + 1] || "").trim())) add("sc300", { pct: 300, s: 10 }, L[sc - 1], L[sc], L[sc + 1]);
+  return out;
+}
+
+export const ratingsOf = (text) =>[...stamfordRatings(text), ...stamfordBookRatings(text), ...lsRatings(text), ...cumminsRatings(text)];

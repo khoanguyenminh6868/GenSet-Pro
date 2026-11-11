@@ -24,9 +24,18 @@ test("a configuration copied from a catalog row passes", () => {
 
 test("a number not in the source quote makes 'met' unclear", () => {
   const r = base(); r.configs[0].checks[0].offered = "500 kVA prime";
+  r.configs[0].checks.push({ item: "Tỷ số nén", hsmtQuote: "", offered: "17:1", sourceQuote: "360/450", part: "engine", status: "met" });
   const { result } = check(r, { hsmtText: hsmt, suppliers: sup, readWeb });
-  assert.equal(result.configs[0].checks[0].status, "unclear");
-  assert.ok(result.configs[0].checks[0].unverified);
+  const x = result.configs[0].checks.find((y) => y.item === "Tỷ số nén");
+  assert.equal(x.status, "unclear");
+  assert.ok(x.unverified);
+  // The power check: the agent's figure (500 kVA, the standby column) is not kept; the code reads the Prime column of
+  // the row itself (cfg-r3 powerChecks): 450 kVA ≥ 450 kVA.
+  const p = result.configs[0].checks[0];
+  assert.equal(p.status, "met");
+  assert.ok(p.byCode);
+  assert.match(p.offered, /450 kVA \/ 360 kW \(cột Prime/);
+  assert.equal(p.was, "unclear");
 });
 
 test("an invented catalog row or HSMT quote is flagged", () => {
