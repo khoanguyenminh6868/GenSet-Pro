@@ -348,7 +348,7 @@ table.ptable tr.pbest td{background:var(--mint-soft)}table.ptable tr.ploss td{co
 .sev.critical .tag{color:var(--rose)}.sev.warning .tag{color:var(--amber)}.sev.info .tag{color:var(--blue)}
 blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var(--muted);font-style:italic;font-size:13px}
 .rec{font-size:13px}.rec b{color:var(--violet);font-weight:600}
-.favstar{background:none;border:0;padding:0 4px 0 0;font-size:17px;line-height:1;cursor:pointer;color:var(--muted);vertical-align:-1px}.favstar.on{color:#f5b301}.favstar:hover{color:#f5b301}
+.favstar{background:none;border:0;padding:0 4px 0 0;font-size:17px;line-height:1;cursor:pointer;color:var(--muted);vertical-align:-1px}.favstar.on{color:#f5b301}.favstar:hover{color:#f5b301}tr.supexcl>td,.supexcl .hlname{opacity:.5}tr.supexcl>td:first-child{opacity:.75}.supexclnote{margin:4px 0}
 .suptable{width:100%;border-collapse:collapse;font-size:13px}.suptable th,.suptable td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.suptable tbody tr:is([data-supopen],[data-catitem]){cursor:pointer}.suptable tbody tr:is([data-supopen],[data-catitem]):hover{background:var(--panel2)}
 .suplink{background:none;border:0;padding:0;font:inherit;font-weight:inherit;color:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:var(--dim);text-underline-offset:2px}.suplink:hover{color:var(--blue);text-decoration-color:currentColor}
 .supcontact{margin-top:3px;overflow-wrap:anywhere}.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
@@ -640,7 +640,7 @@ const DEFAULT_SORT = { col: "no", dir: -1 };
 const SHOW_SRC = false;
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, supexcl: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   // Every status tab opens on newest posting date first (Khoa 2026-11-07); a header click resorts only until the tab changes.
@@ -1559,7 +1559,7 @@ function renderDrawer(force = true) {
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   if (state.dtab === "supplier") state.dtab = "info"; // tab Nhà cung cấp đang ẩn
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, state.quote[QUOTE_ALL]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configmatch[key]?.editedAt, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], state.bidprice[key]?.at, state.bidpricereq?.[key], Object.keys(state.supplier || {}).length, Date.now() < areqNoteUntil, state.tracked[key]?.note, profitScen[key], profitRow[key], !!state.loaded.hist, Object.keys(state.bidhist || {}).length]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, state.quote[QUOTE_ALL]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configmatch[key]?.editedAt, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], state.bidprice[key]?.at, state.bidpricereq?.[key], Object.keys(state.supplier || {}).length, Object.keys(state.supexcl || {}).filter(supExcl).join(), Date.now() < areqNoteUntil, state.tracked[key]?.note, profitScen[key], profitRow[key], !!state.loaded.hist, Object.keys(state.bidhist || {}).length]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -1651,10 +1651,10 @@ function quoteMisfits(x, need) {
 const quoteFits = (x, need) => !quoteMisfits(x, need).length;
 function quoteHtml(t) {
   const key = t._key, rows = quoteRows(key), ro = state.readOnly, sups = supAll(), hues = supHues(rows), need = quoteNeedOf(t), needTxt = quoteNeedText(need);
-  const n = rows.reduce((s, r) => s + (r.files?.length || 0), 0), favN = sups.filter((s) => supFav(s.id)).length;
+  const n = rows.reduce((s, r) => s + (r.files?.length || 0), 0), favN = sups.filter((s) => supFav(s.id) && !supExcl(s.id)).length;
   const row = (r) => {
     const taken = new Set(rows.filter((x) => x !== r && x.supplierId).map((x) => x.supplierId));
-    const opts = sups.filter((s) => supFav(s.id) && !taken.has(s.id));
+    const opts = sups.filter((s) => supFav(s.id) && !supExcl(s.id) && !taken.has(s.id));
     if (r.supplierId && !opts.some((s) => s.id === r.supplierId)) opts.unshift(state.supplier?.[r.supplierId] || { id: r.supplierId });
     const up = quoteUp[key]?.row === r.id ? quoteUp[key].text : "";
     return h`<div class="qrow" data-qrow="${r.id}" ${raw(hues[r.id] ? h`style="--sc:${hues[r.id]}"` : "")}>
@@ -3066,7 +3066,7 @@ function supWonChip(s) {
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
-let supFilter = { fav: false, won: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
+let supFilter = { excl: false, fav: false, won: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
 // Sort by founding year or country (Khoa, 2026-11-04): click a header for ▲, again for ▼, a third time back to A–Z; a supplier with no value goes last.
 let supSort = { k: "", dir: 0 };
 const SUP_SORT = { year: (s) => s.founded || null, country: (s) => supCountryName(s) || null };
@@ -3096,6 +3096,7 @@ function needSup() {
   subscribe("supplier", "supplier", () => setTimeout(supChanged, 0));
   subscribe("supdeleted", "supdeleted", () => setTimeout(supChanged, 0));
   subscribe("supfav", "supfav", () => setTimeout(supChanged, 0));
+  subscribe("supexcl", "supexcl", () => setTimeout(supChanged, 0));
   subscribe("gaps", "gaps", () => setTimeout(supGapsRedraw, 0));
   // Tìm Thông Số (superadmin only): its request and result redraw only their own block of the open supplier.
   if (isSuperadmin()) for (const c of ["specreq", "specmatch"]) subscribe(c, c, () => setTimeout(supSpecRedraw, 0));
@@ -3177,6 +3178,18 @@ async function toggleFav(id) {
   if (state.open) renderDrawer(false);
   if (!(await dbSet("supfav/" + id, rec))) toast("Không lưu được nhà cung cấp yêu thích.");
 }
+// Excluded suppliers (Khoa, 2026-11-11): supexcl/<id> {on,by,at,name}, shared by everyone like supfav. They stay in the Nhà cung cấp list
+// (dimmed, with a label); every suggestion hides them (the bots skip them in /api/requests, results already saved are hidden here).
+const supExcl = (id) => state.supexcl?.[id]?.on === true;
+const supExclNote = (n) => (n ? h`<div class="muted small supexclnote">Đã ẩn ${n} mục của nhà cung cấp bị loại trừ.</div>` : "");
+async function toggleExcl(id) {
+  if (state.readOnly || !state.db) { toast("Đăng nhập để loại trừ nhà cung cấp."); return; }
+  const rec = { on: !supExcl(id), at: new Date().toISOString(), by: window.genbidEmail || "", name: supName(state.supplier?.[id]) || id };
+  state.supexcl = { ...state.supexcl, [id]: rec };
+  if ($("#supBody")) { if (supOpenId) renderSuppliers(); else renderSupList(); }
+  if (state.open) renderDrawer(false);
+  if (!(await dbSet("supexcl/" + id, rec))) toast("Không lưu được việc loại trừ nhà cung cấp.");
+}
 const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
 const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
@@ -3191,6 +3204,7 @@ function supLinesFor(s, f = supFilter) {
 }
 function supMatches(s) {
   const f = supFilter, q = f.q.trim().toLowerCase();
+  if (f.excl ? !supExcl(s.id) : false) return false;
   if (f.fav && !supFav(s.id)) return false;
   if (f.won && !supWonN(s.id)) return false;
   if (f.role && s.role !== f.role) return false;
@@ -3259,6 +3273,7 @@ function renderSuppliers() {
       <label class="muted small" for="supPower">Công suất cần</label>
       <input type="number" id="supPower" min="0" step="any" value="${f.power}" style="width:110px" placeholder="${matchMedia("(max-width:640px)").matches ? "Công suất cần" : "vd. 500"}">
       <select id="supUnit">${raw(["kVA", "kW"].map((u) => opt(u, u, f.unit)).join(""))}</select>
+      <button type="button" class="btn sm" id="supExclF" aria-pressed="${String(f.excl)}" title="Chỉ xem nhà cung cấp đã loại trừ (không xuất hiện trong các kết quả gợi ý)" style="${f.excl ? "border-color:var(--rose);color:var(--rose)" : ""}">⊘ Đã loại trừ</button>
       <button type="button" class="btn sm" id="supFavF" aria-pressed="${String(f.fav)}" style="${f.fav ? "border-color:#f5b301;color:#b07d00" : ""}">${f.fav ? "★" : "☆"} Yêu thích</button>
       <button type="button" class="btn sm wonf" id="supWonF" aria-pressed="${String(f.won)}" title="Nhà cung cấp có thương hiệu / tên trong hàng tổ máy trúng thầu ở gói mua sắm máy phát (lịch sử thầu muasamcong)" style="${f.won ? "border-color:var(--mint);color:var(--mint)" : ""}">${raw(STAGE_ICON.win)} Có hàng trúng thầu</button>
       <span class="spacer"></span><span class="muted small" id="supCount"></span>
@@ -3276,6 +3291,7 @@ function renderSuppliers() {
   $("#supFuel").onchange = (e) => set("fuel", e.target.value);
   $("#supPower").oninput = (e) => set("power", e.target.value);
   $("#supUnit").onchange = (e) => set("unit", e.target.value);
+  $("#supExclF").onclick = () => { supFilter = { ...supFilter, excl: !supFilter.excl }; renderSuppliers(); };
   $("#supFavF").onclick = () => { supFilter = { ...supFilter, fav: !supFilter.fav }; renderSuppliers(); };
   $("#supWonF").onclick = () => {
     supFilter = { ...supFilter, won: !supFilter.won };
@@ -3291,11 +3307,11 @@ function renderSupList() {
     list.sort((x, y) => { const a = v(x), b = v(y); return (a == null) - (b == null) || (a == null ? 0 : supSort.dir * (typeof a === "number" ? a - b : a.localeCompare(b, "vi"))); });
   }
   if ($("#supCount")) $("#supCount").textContent = `${list.length} nhà cung cấp`;
-  filtNote("supFilt", [supFilter.fav, supFilter.won, supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
+  filtNote("supFilt", [supFilter.excl, supFilter.fav, supFilter.won, supFilter.q.trim(), supFilter.role, supFilter.conf, supFilter.make, supFilter.country, supFilter.year, supFilter.fuel, Number(supFilter.power) > 0].filter(Boolean).length, `${list.length} nhà cung cấp`);
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th>${raw(supSortTh("country", "Quốc gia", "Quốc gia"))}${raw(supSortTh("year", "Năm TL", "Năm thành lập"))}<th>Dòng máy</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
-    return h`<tr data-supopen="${s.id}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}</td>
+    return h`<tr data-supopen="${s.id}" class="${supExcl(s.id) ? "supexcl" : ""}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(supExcl(s.id) ? ' <span class="chip bad">Đã loại trừ</span>' : "")}${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}</td>
       <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s))}${raw(supQuoteChip(s))}</td>
       <td data-l="Quốc gia">${supCountryName(s) || "—"}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
@@ -3338,7 +3354,7 @@ function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
   return h`<div class="dethead"><div class="row"><button class="btn sm" id="supBack">← Danh sách</button></div>
-    <div><div class="supnamerow"><h3 class="hlname" style="margin:4px 0">${raw(favStar(s))}${supName(s)}</h3><div class="row"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}${raw(supSpecBtn(s))}</div></div>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div style="height:14px"></div>${raw(supSpecHtmlBlock(s))}</div></div>
+    <div><div class="supnamerow"><h3 class="hlname" style="margin:4px 0">${raw(favStar(s))}${supName(s)}</h3><div class="row"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supExcl" data-id="${s.id}" title="${supExcl(s.id) ? "Cho nhà cung cấp này xuất hiện lại trong các kết quả gợi ý" : "Nhà cung cấp này sẽ không xuất hiện trong các kết quả gợi ý"}">${supExcl(s.id) ? "Bỏ loại trừ" : "Loại trừ"}</button>${raw(supExcl(s.id) ? '<span class="chip bad">Đã loại trừ</span>' : "")}<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}${raw(supSpecBtn(s))}</div></div>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div style="height:14px"></div>${raw(supSpecHtmlBlock(s))}</div></div>
     <dl class="kv kvw">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
       <dt>Thương hiệu</dt><dd>${(s.names?.brands || []).join(", ") || "—"}</dd>
@@ -3444,9 +3460,9 @@ function supplierTabHtml(t) {
     <div id="spOut">${raw(prev?.result ? h`<div class="muted small cmprev">Kết quả lúc ${fmtDate(prev.at)}${prev.candidates ? ` · chọn trong ${prev.candidates} nhà cung cấp` : ""}</div>` + supMatchHtml(prev.result) : "")}</div>`;
 }
 function supMatchHtml(r) {
-  const top = (r.top || []).slice().sort((a, b) => (a.rank || 9) - (b.rank || 9));
+  const all = (r.top || []).slice().sort((a, b) => (a.rank || 9) - (b.rank || 9)), top = all.filter((x) => !supExcl(x.supplierId)), hid = all.length - top.length;
   const refs = (id, src) => (src || []).map((n) => h`<button class="supref" data-supopen="${id}" title="Mở nguồn [${n}] của nhà cung cấp">[${n}]</button>`).join("");
-  return (r.summary ? h`<p>${r.summary}</p>` : "") + (top.length ? top.map((x) => {
+  return (r.summary ? h`<p>${r.summary}</p>` : "") + supExclNote(hid) + (top.length ? top.map((x) => {
     const s = state.supplier?.[x.supplierId], fit = SUP_FIT[x.fit] || ["", "mut"];
     return h`<div class="card supcard"><div class="row"><b style="font-size:15px">#${x.rank || ""} ${s ? supName(s) : x.supplierId}</b><span class="chip ${fit[1]}">${fit[0]}</span>${raw(s ? h`<span class="muted small">${SUP_ROLE[s.role] || ""}</span>` : "")}<span class="spacer"></span><button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ nhà cung cấp</button></div>
       ${raw(x.productLine ? h`<div class="small">Dòng máy đề xuất: <b>${x.productLine}</b></div>` : "")}
@@ -3738,9 +3754,11 @@ function cfgSrcHtml(src) {
 }
 const cfgNum = (v) => (Array.isArray(v) ? v.map(cfgNum).join("–") : Number(v).toLocaleString("vi-VN", { maximumFractionDigits: 2 }));
 const cfgConvHtml = (x) => (x.conversions || []).map((cv) => h`<div class="muted small">Quy đổi: ${cv.label || cv.formula}${raw(cv.value != null && !cv.invalid ? h` → <b>${cfgNum(cv.value)} ${cv.unit || ""}</b>` : "")}${raw(cv.basis ? h` <span title="${cv.basis}">ⓘ</span>` : "")} <span class="muted">(${(cv.inputs || []).map((i) => `${i.name} = ${i.from === "standard" ? "giá trị chuẩn" : i.value}`).join(", ")})</span></div>`).join("");
+const cfgSups = (c) => (c.suppliers || []).filter((x) => !supExcl(x.supplierId));
 function cfgSuppliersHtml(c) {
   if (!c.suppliers?.length) return "";
-  return h`<div class="small" style="margin-top:6px"><b>Nhà cung cấp đề xuất:</b></div><ol class="suplist">${raw(c.suppliers.map((x) => {
+  const shown = cfgSups(c), hid = c.suppliers.length - shown.length;
+  return h`<div class="small" style="margin-top:6px"><b>Nhà cung cấp đề xuất:</b></div>${raw(supExclNote(hid))}<ol class="suplist">${raw(shown.map((x) => {
     const s = state.supplier?.[x.supplierId], conf = SUP_CONF[s?.confidence] || ["", "mut"], vn = s?.vietnam?.distributors || [];
     return h`<li class="small"><b>${raw(supLink(x.supplierId, supName(s)))}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}${raw(c.controller?.model ? (x.hasController ? h`<span class="chip ok">có bộ điều khiển ${c.controller.model}</span>` : h`<span class="chip mut">trang không ghi bộ điều khiển ${c.controller.model}</span>`) : "")}
       <button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ</button>${raw(s?.website ? h` <a href="${s.website}" target="_blank" rel="noopener">website</a>` : "")}
@@ -3785,7 +3803,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
     // hạng, kết quả, động cơ + đầu phát + bộ điều khiển và nhà cung cấp đầu (+ số còn lại).
     const rk = c.rank || i + 1, cid = `cfgcard|${key}|${size}|${rk}`, first = i === 0;
     const parts = [c.engine?.model, c.alternator?.model, c.controller?.model].filter(Boolean).join(" + ");
-    return h`<details class="card supcard sizebox cfgcard" data-sizebox="${cid}" data-def="${first ? "open" : ""}" ${boxOpen(cid, first) ? "open" : ""}><summary title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b style="font-size:15px">#${rk}</b><span class="chip ${fit[1]}">${fit[0]}</span><span class="small cfgparts">${parts}</span><span class="cfgsupdel">${raw(c.suppliers?.length ? h`<span class="muted small">· ${supName(state.supplier?.[c.suppliers[0].supplierId]) || c.suppliers[0].supplierId}${c.suppliers.length > 1 ? ` +${c.suppliers.length - 1}` : ""}</span>` : "")}${raw(key ? h`<button class="btn sm cfgdelbtn" data-cfgdel="${key}" data-size="${size}" data-rank="${rk}" title="Xoá cấu hình này khỏi danh sách gợi ý" aria-label="Xoá cấu hình">${raw(TRASH_SVG)}</button>` : "")}</span></summary>${raw(c.fromFind ? h`<div class="row">${raw(c.fromFind ? `<span class="chip mut" title="${c.findChecked ? "Thêm từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, đã đối chiếu với các yêu cầu HSMT" : "Thêm bằng code từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, chưa đối chiếu đủ HSMT"}">Bổ sung từ Tìm NCC</span>` : "")}</div>` : "")}
+    return h`<details class="card supcard sizebox cfgcard" data-sizebox="${cid}" data-def="${first ? "open" : ""}" ${boxOpen(cid, first) ? "open" : ""}><summary title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b style="font-size:15px">#${rk}</b><span class="chip ${fit[1]}">${fit[0]}</span><span class="small cfgparts">${parts}</span><span class="cfgsupdel">${raw(cfgSups(c).length ? h`<span class="muted small">· ${supName(state.supplier?.[cfgSups(c)[0].supplierId]) || cfgSups(c)[0].supplierId}${cfgSups(c).length > 1 ? ` +${cfgSups(c).length - 1}` : ""}</span>` : "")}${raw(key ? h`<button class="btn sm cfgdelbtn" data-cfgdel="${key}" data-size="${size}" data-rank="${rk}" title="Xoá cấu hình này khỏi danh sách gợi ý" aria-label="Xoá cấu hình">${raw(TRASH_SVG)}</button>` : "")}</span></summary>${raw(c.fromFind ? h`<div class="row">${raw(c.fromFind ? `<span class="chip mut" title="${c.findChecked ? "Thêm từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, đã đối chiếu với các yêu cầu HSMT" : "Thêm bằng code từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, chưa đối chiếu đủ HSMT"}">Bổ sung từ Tìm NCC</span>` : "")}</div>` : "")}
       ${raw(part("Động cơ", c.engine, "engine", c.engine?.src?.kind === "catalog"))}${raw(part("Đầu phát", c.alternator, "alternator", c.alternator?.src?.kind === "catalog"))}${raw(part("Bộ điều khiển", c.controller, "controller", !!c.controller?.model))}${raw(c.genset ? h`<div class="small cfgblk">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
       ${raw(cfgWonHtml(c, key, size))}
       ${raw(c.checks?.length ? cfgGridBox(`cfggrid|${key}|${size}|${c.rank || i + 1}`, c.checks, h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
@@ -3796,7 +3814,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
           <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
       }).join(""))}</tbody></table></div>`) : "")}
       ${raw(cfgSuppliersHtml(c))}
-      ${raw(key && !c.suppliers?.length && c.engine?.model ? h`<div class="row" style="margin-top:6px"><span class="small muted">Chưa có nhà cung cấp nào trong hệ thống cho cấu hình này.</span><span class="spacer"></span><button class="btn green sm" data-cfgfind="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp chào tổ máy dùng đúng động cơ${c.alternator?.model ? ", đầu phát" : ""}${c.controller?.model ? ", bộ điều khiển" : ""} của cấu hình này">Tìm nhà cung cấp</button></div>` : "")}
+      ${raw(key && !cfgSups(c).length && c.engine?.model ? h`<div class="row" style="margin-top:6px"><span class="small muted">Chưa có nhà cung cấp nào trong hệ thống cho cấu hình này.</span><span class="spacer"></span><button class="btn green sm" data-cfgfind="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp chào tổ máy dùng đúng động cơ${c.alternator?.model ? ", đầu phát" : ""}${c.controller?.model ? ", bộ điều khiển" : ""} của cấu hình này">Tìm nhà cung cấp</button></div>` : "")}
       ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}
       ${raw(cfgComboHtml(c))}${raw(cfgRfqHtml(c, key, size, rk))}</details>`;
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
@@ -4641,6 +4659,7 @@ document.addEventListener("click", async (e) => {
     loadHist().then(() => { const el = $("#supWon"), s = state.supplier?.[id]; if (el && s) el.outerHTML = supWonHtml(s); });
     return;
   }
+  if (e.target.id === "supExcl") { toggleExcl(e.target.dataset.id); return; }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
   if (e.target.id === "supSpecRun" && !e.target.disabled) { supSpecRequest(e.target.dataset.id); return; }
   if (e.target.id === "supSpecHide") { try { localStorage.setItem("genbid:specHide:" + e.target.dataset.id, e.target.dataset.at); } catch {} supSpecRedraw(); return; }
