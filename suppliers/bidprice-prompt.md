@@ -29,12 +29,14 @@ còn máy cỡ khác; gói cũ nhiều cỡ máy thì xếp "khác" trừ khi c�
 2. Với **mọi** mục trong `samples.md`, xếp một mức:
    - `same` — giống: cùng là cung cấp tổ máy phát; công suất một máy và số máy tương đương;
      phạm vi tương đương (không kèm hạng mục lớn mà gói kia không có); và khi cả hai cùng có thông tin hãng/xuất xứ thì
-     cùng nhóm (G7 với G7, Trung Quốc với Trung Quốc, lắp ráp Việt Nam với lắp ráp Việt Nam).
+     cùng nhóm (G7 với G7, Trung Quốc với Trung Quốc).
    - `close` — gần: cùng loại, công suất và số máy tương đương, chỉ khác một điểm phụ (một hạng mục đi kèm), hoặc không ghi hãng/xuất xứ nên
      không biết có cùng nhóm không.
    - `different` — khác: công suất hay số máy khác hẳn (gói nhiều máy, công suất tổng khác), phạm vi khác hẳn (kèm trạm
      biến áp, UPS, xây dựng, nhiều loại hàng khác chiếm phần lớn giá), khác nhóm xuất xứ (G7 với Trung Quốc), hoặc thực ra
      không phải cung cấp máy phát (sửa chữa, thuê, phụ tùng...).
+     Gói cũ mà tổ máy trúng có hãng, nhà sản xuất hay xuất xứ Việt Nam (lắp ráp Việt Nam) luôn là `different`, dù
+     các điểm khác giống (Khoa, 2026-11-11): code đã bỏ những gói hàng trúng ghi vậy, mục nào còn lọt thì xếp `different`.
    - `unknown` — không đủ thông tin: mục không cho biết công suất hay hàng hoá đủ để so.
    Khi `input.md` có mục "Đồng bộ thương hiệu" (Khoa, 2026-11-06): gói này phải chào tổ máy chính hãng (ít nhất 2 trong
    3 bộ phận động cơ / đầu phát / bộ điều khiển do hãng tổ máy làm ra), giá cao hơn hẳn tổ máy lắp ráp. Gói cũ chỉ xếp

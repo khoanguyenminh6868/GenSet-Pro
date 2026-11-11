@@ -57,7 +57,7 @@ export async function prep(req, dir, hist, size = null) {
     rating: BP.kvaRated(b.capText)?.rating || (K && BP.kvaRated(a?.keyInfo?.generatorCapacity)?.kva === K ? BP.kvaRated(a?.keyInfo?.generatorCapacity)?.rating : null) || null,
     sync: (hsmt && BP.brandSyncOf(hsmt.text)) || BP.brandSyncOf(cfgText) };
   const docs = hist || Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
-  const { total, tol, group, otherGroup, list, prior } = BP.candidates(t, docs, K, P);
+  const { total, tol, group, otherGroup, vnMade, list, prior } = BP.candidates(t, docs, K, P);
   // Giá theo cấu hình (2026-11-10): cấu hình hạng 1 dùng giá của agent như cũ; cấu hình gần nhất có động cơ khác nhóm xuất
   // xứ được ba mức riêng từ gói cũ cùng nhóm, chọn bằng code (groupPrices), không vay gói nhóm khác.
   const byConfig = await configPrices((size ? size.cfg : cfg?.result)?.configs || [], first, group, t, docs, K && K * (size?.qty || 1), P, K);
@@ -68,7 +68,7 @@ export async function prep(req, dir, hist, size = null) {
     ...(size ? ["", `## Gói có nhiều cỡ máy: ${size.sizes.map(sizeText).join("; ")}`,
       `Lượt này CHỈ so máy ${sizeText(size)}; các cỡ khác có lượt riêng. Xếp mức theo máy cỡ này: so công suất một máy với máy ${size.label}; gói cũ chỉ có máy cỡ này (một hay nhiều máy cùng cỡ) không bị xếp "khác" chỉ vì gói này còn máy cỡ khác. Giá gói ở trên là phần giá của cỡ máy này do code ước tính (chia giá cả gói${size.whole ? ` ${fmt(size.whole)} đ` : ""} theo số lượng và công suất từng cỡ), không phải số trên muasamcong.`, ""] : []),
     `Công suất gói cũ được lấy: lệch không quá ${Math.round((tol || BP.POWER_TOL) * 100)}% so với gói này${tol > BP.POWER_TOL ? " (nới vì gói đòi đồng bộ thương hiệu)" : ""}, so cùng mức liên tục/dự phòng khi biết; gói cũ chỉ khớp khi đọc ở mức kia thì dòng công suất của nó ghi rõ ("có thể là mức dự phòng của máy … liên tục").`,
-    `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}${group === "cnmade" ? ". Hãng ngoài Trung Quốc nhưng sản xuất tại Trung Quốc (Dongfeng/Chongqing Cummins, Perkins Wuxi…): giá nằm giữa máy hãng Trung Quốc và máy cùng hãng sản xuất ở nước ngoài; gói cũ hai nhóm đó đều được giữ để so, gói cũ cũng là hãng ngoại sản xuất tại Trung Quốc là sát nhất." : ""}`, "",
+    `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}${vnMade ? `; đã bỏ ${vnMade} gói có tổ máy hãng / xuất xứ Việt Nam` : ""}${group === "cnmade" ? ". Hãng ngoài Trung Quốc nhưng sản xuất tại Trung Quốc (Dongfeng/Chongqing Cummins, Perkins Wuxi…): giá nằm giữa máy hãng Trung Quốc và máy cùng hãng sản xuất ở nước ngoài; gói cũ hai nhóm đó đều được giữ để so, gói cũ cũng là hãng ngoại sản xuất tại Trung Quốc là sát nhất." : ""}`, "",
     // Đồng bộ thương hiệu (Khoa, 2026-11-06): an OEM set, priced far above a set assembled from three makes.
     ...(t.sync ? [`## Đồng bộ thương hiệu: HSMT đòi ít nhất ${t.sync.need}/${t.sync.parts.length} bộ phận chính (động cơ, đầu phát, bộ điều khiển) do chính hãng sản xuất tổ máy làm ra`,
       `HSMT ghi: "${t.sync.text}"`, `Gói cũ HSMT không đòi điều này, hay hàng trúng là tổ máy lắp ráp (động cơ, đầu phát, bộ điều khiển của các hãng khác nhau), thì không xếp "giống".`, ""] : []),
@@ -83,7 +83,7 @@ export async function prep(req, dir, hist, size = null) {
   const fc = calibOn() ? BP.nbForecast({ notifyNo: key, investorName: t.investorName, location: b.location || "", field: b.field || "", bidCloseDate: b.bidCloseDate || "" }, docs) : null;
   fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior, byConfig, ...(fc ? { fc: { p: fc.p } } : {}) }), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "bidprice-prompt.md"), "utf8"), "utf8");
-  return { total, group, otherGroup, candidates: list.length, K, P, prior, byConfig, fc };
+  return { total, group, otherGroup, vnMade, candidates: list.length, K, P, prior, byConfig, fc };
 }
 
 // Hiệu chỉnh khoảng giá theo cạnh tranh dự báo: bật trừ khi GENBID_BIDPRICE_CALIB=0.

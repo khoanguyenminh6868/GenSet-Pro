@@ -241,6 +241,11 @@
   // A goods row that is a generator set: its name says so, or names a power (an old-form row "- Công suất dài hạn:
   // 240 kW / 300 kVA ..." under a heading row "Máy phát điện 300 KVA và phụ kiện:").
   const isSetRow = (g) => isGensetName(g.name) || !!kvaOf(g.name);
+  // A generator set made or assembled in Việt Nam among the won goods: its maker or origin says Việt Nam (Khoa,
+  // 2026-11-11, IB2600603983: the 750 kVA sets of Việt Nhật and Trường Lộc won at 56-72% of the price and pulled the
+  // suggestion down). Such a lot prices nothing: not alike, not in the prior pool.
+  const VN_WORD = /vi[eệ]t\s*nam/i;
+  const vnMadeSet = (goods) => (goods || []).some((g) => isSetRow(g) && VN_WORD.test(`${g.maker || g.label || ""} ${g.origin || ""}`));
   function goodsDesc(desc, n) {
     const s = cut(desc, 1e6);
     if (s.length <= n) return s;
@@ -277,7 +282,7 @@
     const place = t.place || (t.engine && placeOf(`${t.engine.make || ""} ${t.engine.model || ""}`)) || tp.place || null;
     // t.group: the group asked for outright (groupPrices: the price of a configuration of another origin group).
     const tGroup = t.group || (eg === "cn" ? "cn" : eg === "other" ? (place === "cn" ? "cnmade" : "foreign") : tp.group);
-    let total = 0, otherGroup = 0;
+    let total = 0, otherGroup = 0, vnMade = 0;
     for (const [key, d] of Object.entries(docs)) {
       if (key === t.notifyNo || !d.final || !isGensetName(d.bidName)) continue;
       const multi = (d.lots || []).length > 1;
@@ -292,6 +297,7 @@
         const goods = (lot.goods || []).filter((g) => g.name || g.code || g.maker || g.label);
         // A name that does not say so, but an HSMT that moves an owned set and no set among the won goods: a move.
         if (kind === "supply" && movesOldSet(d.config?.text) && !goods.some((g) => isGensetName(g.name))) continue;
+        if (vnMadeSet(goods)) { vnMade++; continue; }
         const kGoods = Math.max(0, ...goods.map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
         const nameOf = (multi && lot.lotName) || (multi ? "" : d.bidName);
         const kName = kvaOf(lot.lotName) || (multi ? null : kvaOf(d.bidName)), kCfg = kName || kGoods ? null : cfgPower(d, multi);
@@ -334,7 +340,7 @@
     }
     out.sort((a, b) => a.dist - b.dist);
     prior.sort((a, b) => Math.abs(Math.log(a.kEq / K)) - Math.abs(Math.log(b.kEq / K)));
-    return { total, tol, group: tGroup, rating: rK, place, otherGroup, list: out.slice(0, MAX).map((s, i) => ({ id: "S" + (i + 1), ...s })), prior: prior.slice(0, 150) };
+    return { total, tol, group: tGroup, rating: rK, place, otherGroup, vnMade, list: out.slice(0, MAX).map((s, i) => ({ id: "S" + (i + 1), ...s })), prior: prior.slice(0, 150) };
   }
   // The code's comparison of one lot with the tender, shown to the agent beside the lot. Not part of sampleText: the
   // agent's quote must come from muasamcong's own words.
@@ -940,5 +946,5 @@
     return { list: list.slice(0, limit), total: list.length, basis: { investor: !!inv, province: prov || "", kva: K, tol: RIVAL_TOL, min: RIVAL_MIN } };
   }
 
-  root.GenbidBidprice = { CALIB, calibLevels, wQuantile, engineWords, engineGroup, groupPrices, costHints, COST_HINTS, monthsIn, readTerms, financeCost, feasibility, rivalsOf, STALE_DAYS, quoteStale, conflict, wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
+  root.GenbidBidprice = { CALIB, calibLevels, wQuantile, engineWords, engineGroup, groupPrices, costHints, COST_HINTS, monthsIn, readTerms, financeCost, feasibility, rivalsOf, STALE_DAYS, quoteStale, conflict, wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, VN_WORD, vnMadeSet, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
 })(typeof window !== "undefined" ? window : globalThis);
