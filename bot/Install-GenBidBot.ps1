@@ -99,7 +99,7 @@ $missing.Add('Skill /hsmt trên claude.ai: Settings > Skills > Upload bot\claude
 Step "Token và khoá (không có trong git)"
 if (-not (Test-Path (Join-Path $Root '.genbid-ingest-token'))) { $missing.Add("$Root\.genbid-ingest-token: token Vercel (biến INGEST_TOKEN của project genset-pro-web), một dòng") }
 if (-not (Test-Path (Join-Path $Root '.claude-bot-token'))) { $missing.Add("$Root\.claude-bot-token: chạy claude setup-token rồi lưu token (không cần nếu claude đã đăng nhập)") }
-if (-not (Test-Path (Join-Path $Root '.anthropic-api-key'))) { $missing.Add("$Root.anthropic-api-key: API key Anthropic (console.anthropic.com) để Phân tích, Gợi ý cấu hình, Giá gợi ý trả theo API thay vì hạn mức tháng; không có thì dùng gói tháng") }
+if (-not (Test-Path (Join-Path $Root '.anthropic-api-key'))) { $missing.Add("$Root\.anthropic-api-key: API key Anthropic (console.anthropic.com) để Phân tích, Gợi ý cấu hình, Giá gợi ý trả theo API thay vì hạn mức tháng; không có thì dùng gói tháng") }
 if (-not (Test-Path (Join-Path $Kit '.firecrawl-key'))) { $missing.Add("$Kit\.firecrawl-key: khoá Firecrawl cho Tìm NCC (suppliers\discover.mjs)") }
 
 if (-not $NoTask) {
