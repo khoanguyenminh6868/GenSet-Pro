@@ -1555,7 +1555,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis }) {
     }
     confirmChecks(c, result.requirements || []);
     originChecks(c, result, origin, sup);
-    comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...(c.engine?.model ? RT.eng.get(CAT.keyOf(c.engine.model)) || [] : [])], altFacts: factsOf(c, "alternator"), altRatings: c.alternator?.model ? RT.alt.get(CAT.keyOf(c.alternator.model)) || [] : [], altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
+    comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
@@ -1906,6 +1906,15 @@ export function altKvaOf(suppliers, built) {
 // sheet's speed; maker when the supplier is of the engine's family — the Cummins sheet of cummins-inc). Read once a run.
 let RT_CACHE = null;
 const keysOfModel = (m) => { const parts = String(m).split("/"), pre = (parts[0].match(/^[A-Za-z]+/) || [""])[0]; return parts.map((p, i) => CAT.keyOf(i && /^\d/.test(p) ? pre + p : p)); };
+// The ratings of a catalog model by key: the model as written, else the same code with the make written before it
+// dropped ("Stamford S4L1D-C41" → S4L1D-C41). Only leading words that are not model codes go; no near-name match.
+export const ratingsFor = (map, model) => {
+  if (!model || !map) return [];
+  const hit = map.get(CAT.keyOf(model));
+  if (hit) return hit;
+  const w = String(model).trim().split(/\s+/), i = w.findIndex((x) => CAT.isCode(x));
+  return i > 0 ? map.get(CAT.keyOf(w.slice(i).join(" "))) || [] : [];
+};
 export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
   const ids = (suppliers || []).map((s) => s?.id).join(",");
   if (RT_CACHE?.ids === ids && RT_CACHE.dir === dir) return RT_CACHE;
