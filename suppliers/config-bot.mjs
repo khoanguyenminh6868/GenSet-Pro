@@ -517,12 +517,15 @@ export function modelFacts(cat, suppliers = []) {
       // its own lines name ("TAL-A46-C ... TAL-A46-H" in its ratings table), each a model of the catalog.
       const covered = known.has(models[0]) ? [models[0]]
         : [...new Set(t.rows.flatMap((l) => CAT.cellsOf(l)).filter((c) => CAT.isCode(c)).map((c) => CAT.keyOf(c)))].filter((k) => k !== models[0] && k.startsWith(models[0]) && FRAME_SUFFIX.test(k.slice(models[0].length)) && known.has(k));
+      // The part maker's own sheet of exactly this model (not a frame's sheet given to its models, not a genset maker's
+      // "Datasheet:"): `sheet`, the source makerSheetChecks follows when the sources disagree (cfg-r4, quy tắc B).
+      const sheet = !!own && covered.length === 1 && covered[0] === models[0];
       for (const line of t.rows) {
         const c = CAT.cellsOf(line), key = c.length >= 2 ? CAT.specKey(c[0]) : null;
         if (key === "engPower" && kind === "engine") { for (const f of ratedFacts(c[0], c.slice(1).join(" | "), { maker: s.role === "engine_maker" })) for (const m of covered) add(`${kind}:${m}`, { ...f, supplierId: s.id, n: t.n, line, text: line }); continue; }
         if (!key || CAT.SPEC[key]?.scope !== kind || ROW_ONLY.has(key)) continue;
         const value = c.slice(1).find((v) => CAT.SPEC[key].ok.test(v));
-        if (value) for (const m of covered) add(`${kind}:${m}`, { key, label: c[0], value, supplierId: s.id, n: t.n, line, text: line });
+        if (value) for (const m of covered) add(`${kind}:${m}`, { key, label: c[0], value, supplierId: s.id, n: t.n, line, text: line, ...(sheet ? { sheet: true } : {}) });
       }
     }
   }
@@ -543,7 +546,9 @@ export function modelFacts(cat, suppliers = []) {
         if (!line) continue;
         text = line;
       }
-      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) out.push({ ...f, supplierId: u.supplierId, n: u.n, line, text });
+      // A row of the part maker's own table (role engine_maker / alternator_maker) names the model by its catalog key.
+      const sheet = !rated.length && roleOf.get(u.supplierId) === `${kind}_maker`;
+      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) out.push({ ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) });
     }
     if (out.length) facts.set(`${kind}:${e.key}`, out);
   }
@@ -1615,6 +1620,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     confirmChecks(c, result.requirements || []);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
     altAttrChecks(c, result.requirements || [], altAttrs, factsOf(c, "alternator"));
+    makerSheetChecks(c, result.requirements || [], { engine: factsOf(c, "engine"), alternator: factsOf(c, "alternator") });
     khoaRules(c, result.requirements || [], row, { origin });
     originChecks(c, result, origin, sup);
     comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
@@ -2562,6 +2568,61 @@ export function altAttrChecks(c, reqs, attrs = [], facts = []) {
   }
   return c;
 }
+// ---------- Quy tắc B (cfg-r4, Khoa duyệt 11/11 "ok làm đi"): nguồn ghi khác nhau → theo tờ thông số chính hãng ----------
+// A figure of the engine / alternator model that its sources give differently stays "unclear" (Khoa 04/11: never the
+// majority), unless exactly one of the values comes from the part maker's own sheet of exactly that model (modelFacts
+// `sheet`: a table of an engine_maker / alternator_maker supplier naming the model by its exact code; not a genset
+// maker's or assembler's page, not a frame's sheet, never a name close to it). Then that value is compared with the
+// HSMT: met / not met, with a note naming the sheet and the assemblers whose pages say otherwise (ids, no quote: #527).
+// Two maker sheets that disagree, or no maker sheet, leave it "unclear". Only a check "unclear" (or none yet) changes;
+// one met / not met stays. Only the codes whose comparison is plain (SHEET_CMP); others stay as they are.
+const SHEET_KEY = { compression: "compr", displacement: "disp", cylinders: "cyl", governor: "gov", aspiration: "asp", alt_insulation: "insul", alt_efficiency: "eff" };
+const SHEET_CLASS = (v) => (String(v).replace(/class/i, " ").match(/\b([BFHC])\b/i) || [])[1]?.toUpperCase() || null;
+const figsOf = (t) => numbersIn(String(t || "").replace(/(\d),(\d{1,2})(?!\d)/g, "$1.$2"));
+const limOf = (req, drop = null) => { const v = [...new Set(figsOf(drop ? String(req).replace(drop, " ") : req))]; return v.length === 1 ? v[0] : null; };
+const bound = (v, lim, req, bigger = true) => (v == null || lim == null ? null : ceilOf(req) ? v <= lim : floorOf(req) || bigger ? v >= lim : null);
+// Each: (the maker's value, the HSMT requirement) → true met, false not met, null not compared.
+const SHEET_CMP = {
+  // A design value (not "the more the better"): compared only under ≤ / ≥.
+  compression: (v, req) => (ceilOf(req) || floorOf(req) ? bound(figsOf(v)[0], limOf(req, /:\s*1\b/g), req, false) : null),
+  displacement: (v, req) => { const n = figsOf(v)[0], cc = /cc|ml|cm3|cm³/i.test(v); return bound(n == null ? null : cc ? n / 1000 : n, limOf(req), req); },
+  // The count only: a requirement that also asks the arrangement (thẳng hàng, chữ V) is not compared.
+  cylinders: (v, req) => (/th[ẳa]ng\s*h[àa]ng|ch[ữu]\s*V|in-?\s*line|\bV\s?-?\d|\bL\s?\d/i.test(req) ? null : bound(figsOf(v)[0], limOf(req), req)),
+  governor: (v, req) => { const el = /đi[ệe]n\s*t[ửu]|electr/i, me = /c[ơo]\s*kh[íi]|mechan/i, ve = /electr|\bECU\b|电子|电喷/i, vm = /mechan|机械/i;
+    const want = el.test(req) && !me.test(req) ? "e" : me.test(req) && !el.test(req) ? "m" : null, got = ve.test(v) && !vm.test(v) ? "e" : vm.test(v) && !ve.test(v) ? "m" : null;
+    return want && got ? want === got : null; },
+  aspiration: (v, req) => { const want = /t[ăa]ng\s*[áa]p|turbo/i.test(req) && !/h[úu]t\s*kh[íi]\s*t[ựu]\s*nhi[êe]n|natural/i.test(req);
+    const got = /turbo|增压|charged/i.test(v) ? true : /natural|自然|\bNA\b/i.test(v) ? false : null; return want && got != null ? got : null; },
+  alt_insulation: (v, req) => { const ls = [...req.matchAll(/(?:class|c[ấa]p|lo[ạa]i|c[áa]ch\s*đi[ệe]n)\s*([BFHC])\b/gi)].map((m) => m[1].toUpperCase()), got = SHEET_CLASS(v);
+    if (!ls.length || !got) return null; return /t[ốo]i\s*thi[ểe]u|≥|tr[ởo]\s*l[êe]n|\bmin/i.test(req) ? INS.indexOf(got) >= Math.min(...ls.map((l) => INS.indexOf(l))) : ls.includes(got); },
+  alt_efficiency: (v, req) => (/%/.test(req) ? bound(figsOf(v)[0], limOf(req), req) : null),
+};
+const PART_OF_CODE = (code) => (code.startsWith("alt_") ? "alternator" : "engine");
+export function makerSheetChecks(c, reqs, facts = {}) {
+  for (const r of reqs) {
+    const key = SHEET_KEY[r.code], part = key && PART_OF_CODE(r.code);
+    if (!key || r.byCode || (r.part && r.part !== part) || !c[part]?.model) continue;
+    const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+    if (x && (x.status !== "unclear" || x.version || x.parts?.length)) continue;
+    const list = (facts[part] || []).filter((f) => f.key === key);
+    // Two values differ by the figure the code compares: the class letter ("CLASS H" and "H" are one value; `disagree`
+    // sees no word of one letter in either), the ratio itself ("16.8:1" / "17.3:1" share the "1", and are within the
+    // 3% `disagree` takes for rounding), else as factConflicts reads them.
+    const differ = (a, b) => (r.code === "alt_insulation" ? SHEET_CLASS(a) !== SHEET_CLASS(b) : r.code === "compression" ? figsOf(a)[0] !== figsOf(b)[0] : norm(a) !== norm(b) && disagree(a, b));
+    const sheets = list.filter((f) => f.sheet);
+    if (!sheets.length || sheets.some((f) => sheets.some((g) => differ(f.value, g.value)))) continue;
+    const others = list.filter((f) => !f.sheet && sheets.some((g) => differ(f.value, g.value)));
+    if (!others.length) continue;
+    const v = sheets.map((f) => SHEET_CMP[r.code](f.value, r.requirement || ""));
+    if (v.some((b) => b == null) || new Set(v).size !== 1) continue;
+    const f = sheets[0], ids = [...new Set(others.map((g) => g.supplierId))];
+    putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: f.value, sourceQuote: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line },
+      part, level: r.level === "option" ? "option" : "core", status: v[0] ? "met" : "not_met", byCode: true, rule: "to-hang", makerOver: ids,
+      note: `Code ghi: các nguồn ghi khác nhau; theo tờ thông số hãng (${f.supplierId} [${f.n}]); trang nhà lắp ráp ${ids.join(", ")} ghi khác.` });
+    if (x) delete x.conflict;
+  }
+  return c;
+}
 // ---------- Quy tắc Khoa duyệt 2026-11-11 ("ok, em làm 4 ý trên đi", qua điều phối) ----------
 // (3) Kê khai: an HSMT requirement that only asks the bidder to state a point ("nêu cụ thể", "ghi rõ"...) with no threshold
 //     (no sign, no figure) is answered by the supplier's papers: "cần chứng từ" (confirm, document). Not for the iso8528
@@ -2585,7 +2646,19 @@ const RULE_NOTE = {
   order: "Code ghi: nguồn của cấu hình không ghi số này; kích thước, khối lượng, độ ồn, nhiệt độ làm việc phụ thuộc vỏ cách âm / két nước do nhà lắp ráp chọn khi đặt hàng (Khoa 11/11).",
   decl: "Code ghi: HSMT chỉ yêu cầu kê khai, không nêu ngưỡng; nhà cung cấp kê khai kèm chứng từ (Khoa 11/11).",
   prp: "Căn cứ ISO 8528-1: định mức Prime (PRP) cho phép quá tải 10% trong 1 giờ mỗi 12 giờ vận hành.",
+  startCool: "Code ghi: nguồn của cấu hình không ghi điểm này; ắc quy, bộ sạc, két nước và quạt do nhà lắp ráp chọn theo đơn hàng (Khoa 11/11).",
+  startCoolWhy: "ắc quy, bộ sạc, két nước, quạt chọn theo đơn hàng",
 };
+// (A, cfg-r4, Khoa 11/11) Khởi động / làm mát: the starting system (12 / 24 V DC starter, battery, charger) and the cooling
+// (radiator, fan, water cooled) are chosen by the assembler for the order: a check "unclear" whose sources do not state
+// it is "xác nhận khi đặt hàng". The row's figure key (web/catalog.js SPECS) and the words that state it on the row.
+const START_COOL = {
+  starting: ["start", /start|kh[ởo]i\s*đ[ộo]ng|đ[ềe]\s*(đi[ệe]n|\d)|ắc\s*quy|battery|charger|b[ộo]\s*s[ạa]c|启动|起动|蓄电池|\b(12|24)\s*V\s*(DC|D\.C)|\bDC\s*(12|24)\s*V/i],
+  cooling: ["cooling", /cool|radiator|l[àa]m\s*m[áa]t|k[ée]t\s*n[ưư][ớo]c|qu[ạa]t|\bfan\b|冷却|水冷|风冷|水箱|散热/i],
+};
+// What an agent writes when its source says nothing: "Nguồn không ghi", "Chưa rõ", "Không có nguồn ghi", "" …
+const NOT_STATED = /^$|^(ngu[ồo]n\s*)?(kh[ôo]ng|ch[ưu]a)\s*(c[óo]\s*(ngu[ồo]n\s*)?)?ghi[.\s]*$|^(ch[ưu]a|kh[ôo]ng)\s*r[õo][.\s]*$/i;
+const AMBIENT_ROW = /ambient|nhi[ệe]t\s*đ[ộo]\s*m[ôo]i|°C|℃|环境/i;
 const PRP_HEAD = /prime|\bPRP\b|主用|常用/i;
 const ceilOf = (t) => /≤|<=|<|t[ốo]i\s*đa|kh[ôo]ng\s*(l[ớo]n|v[ưượ]t|qu[áa])|max/i.test(t);
 const floorOf = (t) => /≥|>=|>|t[ốo]i\s*thi[ểe]u|kh[ôo]ng\s*(nh[ỏo]|th[ấa]p)|min|đ[ếe]n\s*\d/i.test(t);
@@ -2605,6 +2678,23 @@ export function khoaRules(c, reqs, row, { origin } = {}) {
     }
     if (!row) continue;
     const head = [...(row.header || []), row.title || ""].join(" "), all = `${head} ${row.line || ""}`;
+    // (A, cfg-r4) khởi động / làm mát
+    if (code in START_COOL) {
+      const [key, words] = START_COOL[code];
+      // The source states it: the row (a figure of its own, or a word of it on the row, its header or the table title),
+      // or the check already offers something (a quote, a figure, or words other than "the source does not say").
+      const rowSays = (row.specs || []).some((s) => s.key === key) || words.test(all);
+      const agentSays = !!o.x?.sourceQuote || /\d/.test(String(o.x?.offered || "")) || !NOT_STATED.test(String(o.x?.offered || "").trim());
+      // A cooling requirement with the site temperature ("két nước 50 °C"): that part is the ambient rule's. Another
+      // requirement asks it: there it is decided. None does: the row giving a temperature keeps this one as it is
+      // (the ambient rule does not compare it), none given is confirmed with the radiator, as the ambient rule would.
+      const temp = code === "cooling" && /°\s*C|℃|nhi[ệe]t\s*đ[ộo]|ambient/i.test(t);
+      const ownTemp = temp && !reqs.some((q) => q !== r && q.code === "ambient");
+      if (rowSays || agentSays || (ownTemp && AMBIENT_ROW.test(all))) continue;
+      set(r, o.x, "confirm", { confirm: "order", rule: "khoi-dong-lam-mat", why: RULE_NOTE.startCoolWhy,
+        note: `${RULE_NOTE.startCool}${temp ? (ownTemp ? " Nhiệt độ môi trường HSMT nêu cũng không có trên dòng tổ máy: xác nhận cùng két nước khi đặt hàng." : " Phần nhiệt độ môi trường xét ở mục nhiệt độ môi trường.") : ""}` });
+      continue;
+    }
     // (2) quá tải
     if (code === "overload") {
       if (/standby|d[ựu]\s*ph[òo]ng|\bESP\b/i.test(t)) continue;
