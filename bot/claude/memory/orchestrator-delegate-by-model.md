@@ -1,0 +1,24 @@
+---
+name: orchestrator-delegate-by-model
+description: "Khoa muốn phiên chính làm kỹ sư trưởng/điều phối (business, sales, kỹ thuật), giao task cho session khác với model theo độ khó để tiết kiệm token"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 0fa9fd03-4665-4031-8f7d-4e49cd341fdb
+  modified: 2026-11-11T23:24:30.965Z
+---
+
+Phiên chính đóng vai kỹ sư trưởng + điều phối chính (business, sales, technical) của GenSet-Pro. Mọi task Khoa giao: phân loại độ khó rồi giao cho session khác với model tương ứng, phiên chính chỉ giữ việc phân rã, viết brief, kiểm kết quả, quyết định.
+
+**Why:** Khoa (10/11/2026) muốn tiết kiệm token — không để model đắt làm việc đơn giản.
+
+**How to apply:**
+- Haiku: tra cứu/đọc, chạy lệnh có sẵn (worker, sync, publish), cào/nhập dữ liệu theo mẫu, đo đếm.
+- Sonnet: sửa lỗi rõ nguyên nhân, tính năng web/bot phạm vi hẹp, Tìm Thông Số NCC, viết nội dung sales theo mẫu.
+- Opus/Fable: đổi kiến trúc dữ liệu, thuật toán [[bidprice-suggest]] / [[config-suggest]], phân tích HSMT khó, chiến lược giá/kinh doanh.
+- Việc vài lệnh (một câu hỏi, một lần đọc, một edit) làm ngay tại phiên chính — mở session còn tốn hơn.
+- Brief phải tự đủ (context "fresh"): tệp/khu vực, bẫy liên quan từ [[session-log]], thế nào là xong; session ghi code làm trong worktree ([[work-in-worktree]]), hai session không đụng cùng tệp (index.html là một script lớn).
+- Khoa hay điều khiển qua Remote Control (điện thoại): khi đó `mcp__ccd_session__start_session` bị từ chối. Dùng `mcp__claude-code-remote__create_session` (bỏ `environment_id` → kế thừa môi trường bridge "KhoaMiniPC:C:\Projects\GenSet Pro", đặt `model`, `prompt` = bối cảnh + brief, `tags` "genset-pro:dieu-phoi") — đã thử 10/11/2026, session chạy thật trên máy sau ~1 phút. Session kiểu này có thể không tự báo khi xong: ghi trong brief "gửi tóm tắt về phiên điều phối bằng send_message tới <session id phiên này>" và đặt `send_later` kiểm lại. Khoa KHÔNG muốn dùng subagent cho các việc này.
+- **Giữ context phiên điều phối nhỏ (Khoa hỏi 10/11/2026):** trạng thái nằm trong tệp, không nằm trong hội thoại. Đầu phiên đọc `C:\Projects\GenSet Pro\genbid-work\dieu-phoi\so-dieu-phoi.md` (sổ: việc đang chạy, session id, chờ gì, chờ Khoa gì) và cập nhật sau mỗi cổng duyệt. Brief chỉ ghi phần riêng của việc + trỏ tới `genbid-work\dieu-phoi\quy-trinh-session-con.md` (quy tắc chung, cổng duyệt, mẫu báo cáo) — không chép lại quy tắc. Session con ghi bản nghiệm thu đầy đủ vào `genbid-work\dieu-phoi\nghiem-thu\`, chỉ nhắn ≤5 dòng, chỉ nhắn ở cổng duyệt / khi bị chặn / khi xong (mỗi tin đánh thức phiên điều phối = đọc lại cả context). Khi kiểm, lọc đầu ra lệnh (chỉ dòng đổi, `head`, `cut`), không đổ cả diff. Mỗi ngày (hoặc mỗi đợt việc) một phiên điều phối mới: sổ đã cập nhật thì bảo Khoa mở phiên mới thay vì kéo dài phiên cũ.
+- **Brief ngắn (Khoa hỏi 12/11/2026 vì brief "compare-selfcheck" dài ~1.000 chữ, lặp lại quy tắc worktree/không merge đã có trong quy-trinh-session-con.md):** kết quả phân tích dùng làm đầu vào cho việc khác thì ghi MỘT lần vào tệp (vd `genbid-work\dieu-phoi\dau-vao\<việc>.md`), câu trả lời cho Khoa tóm tắt từ đó, brief chỉ trỏ đường dẫn. Brief ≤ ~15 dòng: mục tiêu, tệp đầu vào, phạm vi tệp code, thế nào là xong; `background` chỉ 2–3 câu + trỏ quy trình. (Diễn giải của em: Khoa chưa ra lệnh, chỉ hỏi cách tối ưu.) Việc đọc/OCR/trích tài liệu số lượng lớn giao Haiku trả về bảng kết quả, phiên chính không tự đọc.
+- **Bước kiểm tra bắt buộc (Khoa 10/11/2026: việc giao session con phải được kiểm tính đúng đắn và hiệu quả):** session con KHÔNG tự merge PR và không tự thay tệp bot đang chạy (`genbid-hsmt\`); mở PR / giữ ở bản chép rồi gửi bản nghiệm thu về phiên điều phối: link PR, lệnh kiểm + đầu ra thật, số đo trước/sau, mẫu để đối chiếu, rủi ro + cách quay lui. Phiên điều phối kiểm ĐỘC LẬP (không tin báo cáo): CI, diff đúng phạm vi tệp, chạy lại lệnh kiểm chính (`verify.mjs`, so md5/số dòng), đối chiếu ngẫu nhiên vài mẫu với nguồn gốc, kiểm quy tắc trong bộ nhớ (updated_at, không bịa, không trùng tên hàm…), và đo hiệu quả bằng chỉ số của việc (model hàng trúng còn thiếu, GB egress/tháng, số gói đọc được). PR code lớn hoặc rủi ro cao: mở thêm một session review độc lập (model khác tác giả, chỉ đọc) trước khi quyết. Bản chép để thử script bot phải đặt NGOÀI `genbid-hsmt\` (dùng `C:\Projects\GenSet Pro\genbid-test\`): tệp lạ trong `genbid-hsmt\` làm Stop hook "bot differs from GitHub" chen vào cả `claude -p` của bot → Claude trả chữ không phải JSON, lượt bot lỗi (gặp 10/11/2026). Đạt mới merge (phiên điều phối merge theo [[merge-prs-without-asking]]) rồi kiểm lại sau merge (CI/publish, web/bot còn chạy); không đạt thì gửi lại yêu cầu sửa cụ thể.

@@ -20,7 +20,7 @@ Evidence rules (Khoa, 2026-10-27: every result must rest on the documents given,
 
 ## Nhiệm vụ
 ```
-Task: read the tender documents below and produce a structured brief for the bid team. Flag anything that can cause rejection (missing documents, technical non-conformity, deadlines, bid security amount/validity, experience thresholds) as critical. Viết toàn bộ nội dung các trường bằng tiếng Việt.
+Task: read the tender documents below and produce a structured brief for the bid team. Flag anything that can cause rejection (missing documents, technical non-conformity, experience thresholds) as critical. Do not write a highlight, a recommendation or a clarification question about the bid closing time (thời điểm đóng thầu), the bid security (bảo đảm dự thầu: amount, form, validity) or the bid validity period (hiệu lực E-HSDT) (Khoa, 2026-11-12: no warnings on these three); still record their values in keyInfo. Viết toàn bộ nội dung các trường bằng tiếng Việt.
 Answer with ONLY one JSON object in exactly this shape:
 ```
 
