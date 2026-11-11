@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 7f313dc0-600e-4a66-84f6-b51527698986
-  modified: 2026-11-06T10:47:18.173Z
+  modified: 2026-11-09T16:09:38.890Z
 ---
 
 CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước thật; 429 bản ghi lúc 2026-11-04). Mỗi thông tin có nguồn [n] + câu trích nguyên văn trong `sources/<id>/<n>.md`; `verify.mjs` kiểm bằng code; merge vào main thì workflow Supplier publish tự đăng web.
@@ -24,5 +24,12 @@ CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước th
 - Nguồn tìm hiệu quả: tiếng Trung theo tỉnh ("<thành phố> 柴油发电机组 有限公司 官网"), tiếng bản địa cho G7. Kém: made-in-china, b2bdata.baidu.com. Rà 03/11 (PR #268): Khoa chốt GIỮ bản ghi không có bảng (danh bạ, tránh Tìm NCC tìm lại).
 
 - **Tìm Thông Số (Khoa 06/11, PR #435):** nút ở chi tiết NCC, chỉ superadmin (`genbidRole`; webreq trả 403 với người khác). `specreq/<id>` → config-bot `specJob` (lane trong `run`) → agent theo skill `bot/claude/skills/tim-thong-so-ncc/SKILL.md` (nguồn duy nhất; Install chép vào ~/.claude/skills) → findCheck + addToCatalog (nhánh `specs/<id>`) → `specmatch/<id>`. Chạy tay: `config-bot.mjs spec --id X` hoặc spec-prep/spec-check/spec-post. Chưa chạy agent thật lần nào.
+
+- **Rà website null (09/11, PR #461):** crawl-specs/datasheets/controllers bỏ qua bản ghi `website: null`, nên NCC chỉ có gian hàng B2B không bao giờ được cào (Kachai có kachai.com mà bị null). Đã rà 84 bản ghi: tìm được kachai.com, gbpower.net (+2221 dòng), cooltechsh.com, cnkusing.net; 35 đại lý Cummins (từ dealer locator) chưa tìm. Còn lại không có web riêng (chỉ B2B) hoặc liên doanh nước ngoài chỉ có trang tập đoàn mẹ. Datasheet Kachai (download.html, nền Globalso `accessauth`) đòi mật khẩu → hỏi Kachai/đại lý VINRGENSET. Cập nhật bản ghi cũ: sửa `drafts/<id>.json` + `discover.mjs finish` (build.mjs giữ specTables và nguồn ≥101). WebSearch tiếng Trung cho công ty nhỏ gần như vô dụng.
+
+- **Lọc "Có hàng trúng thầu" (Khoa 09/11, PR #464):** `supWon` trong web/bidprice.js (ghép thương hiệu / từ đầu tên với dòng tổ máy trúng ở gói mua sắm; bỏ "tương đương", phụ kiện). 81 NCC khớp lúc làm. Web tải bidhist khi bật lọc. Kiểm web tại máy khi không đăng nhập: server tĩnh chèn `window.__t` vào IIFE của index.html rồi nạp `suppliers/cn` + dump bidhist (preview Vercel bị "Ignored Build Step", MCP Vercel 403).
+
+- **Việc cần thu thập (10/11, PR #473):** `suppliers/gaps.mjs` (điểm = số gói nêu mã yêu cầu × phần model động cơ cùng dải công suất chưa có thông số; chia cho hãng động cơ / đầu phát / NCC cần tìm), workflow `supplier-gaps.yml` thứ hai 08:17 VN đăng `gaps/current` + tự gửi `specreq` cho các hãng đứng đầu chưa tìm trong 8 tuần (biến repo `GAPS_QUEUE`, mặc định 3, 0 = tắt; lượt tay 10/11 chạy queue=0). Web: mục gập ở đầu màn Nhà cung cấp. Kết quả đầu: thiếu nhất là thông số "hiển nhiên" bảng không ghi (hệ số công suất, điện áp, số pha, khởi động, làm mát, bồn dầu, kiểu động cơ), khớp danh sách "chưa rõ" thật của configmatch; hãng đứng đầu Cummins, Perkins, Yuchai, SDEC, Weichai. HSMT nêu đích danh hãng động cơ rất ít (Cummins 37, Hyundai 16, Perkins 13 / 923 gói; phải lọc theo dòng: "Mitsubishi" là hãng CB, "MAN" là chế độ tay).
+- **EPA / Trung Quốc (kiểm 10/11, KHÔNG nhập):** tệp EPA nonroad CI 2011–nay (epa.gov, sheet Model Info: xi lanh, đường kính × hành trình, dung tích, nạp khí, kW @ rpm) trùng đúng model + hãng chỉ 61/5.213 động cơ danh mục (Volvo Penta 28, Cummins 21, Perkins 6), thêm 328 nếu suy theo nền máy (QSK60 → QSK60-G4: là suy ra, trái quy tắc không suy); các trường đó không nằm trong nhóm thiếu nhiều. Nền tảng công khai thông tin môi trường TQ (vecc.org.cn) tra từng bản ghi, không có bộ dữ liệu tải về.
 
 Gợi ý cấu hình: [[config-suggest]]. Liên quan [[session-log]], [[no-artifact-version]].
