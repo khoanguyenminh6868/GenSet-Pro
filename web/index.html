@@ -3527,8 +3527,11 @@ function catSpecsCell(e) {
 const catMakeHtml = (e) => (e.make ? h`${e.make}<div class="muted small">theo ${catVia(e)}</div>` : '<span class="muted">Nguồn không ghi hãng</span>');
 // The supplier whose page an engine / alternator / controller was opened from: its detail gets a button back there (Khoa, 2026-11-02).
 let catFrom = null;
-function openCatalog(kind, key, from = null, q = null) {
+// The model a suggested config's link asked for when the catalog lacks it (cfgCtlHtml): a note on the list, once.
+let catMissing = null;
+function openCatalog(kind, key, from = null, q = null, name = null) {
   needSup();
+  catMissing = key && name ? { key, name } : null;
   filtOpen = true; // Thông số cấu hình: filter rows open by default on phone (Khoa, 2026-11-05)
   catFrom = from;
   catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}), ...(q ? { q, make: "", spec: "", power: "" } : {}) };
@@ -3559,7 +3562,8 @@ function renderCatalog() {
   const cat = catalog(), K = CAT_KIND[catView.kind], all = cat[K.list];
   $("#mdl a.home")?.setAttribute("href", "#" + SCREEN_HASH[catView.kind]);
   setScreenUrl(catView.kind);
-  if (catView.open) { const e = all.find((x) => x.key === catView.open); if (e) { body.innerHTML = h`<div class="mscroll">${raw(catDetailHtml(e))}</div>`; return; } catView.open = null; }
+  if (catView.open) { const e = all.find((x) => x.key === catView.open); if (e) { catMissing = null; body.innerHTML = h`<div class="mscroll">${raw(catDetailHtml(e))}</div>`; return; } catView.open = null; }
+  const miss = catMissing; catMissing = null;
   if (!all.length) { body.innerHTML = h`<div class="note">Chưa có dữ liệu ${K.one}: danh mục được rút từ bảng thông số của các nhà cung cấp.</div>`; return; }
   const makes = Object.entries(all.reduce((m, e) => { for (const k of (e.make || "—").split(" / ")) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => (a[0] === "—") - (b[0] === "—") || b[1] - a[1]);
   const specOpts = Object.entries(all.reduce((m, e) => { for (const g of e.specs || []) m[g.key] = [g.vi, ((m[g.key] || [])[1] || 0) + 1]; return m; }, {})).map(([k, [vi, n]]) => [k, vi, n]).sort((a, b) => b[2] - a[2]);
@@ -3580,7 +3584,7 @@ function renderCatalog() {
       <select id="catSort">${raw([["sup", "Nhiều nhà cung cấp nhất"], ["power", "Công suất tổ máy tăng dần"], ["model", "Model A–Z"]].map(([k, l]) => opt(k, l, f.sort)).join(""))}</select>
       <span class="spacer"></span><span class="muted small" id="catCount"></span>
     </div></div>
-    <div class="mscroll"><div id="catList"></div>
+    <div class="mscroll">${raw(miss ? h`<div class="note warn">Danh mục chưa có <b>${miss.name}</b>: model này không có trong bảng chào của nhà cung cấp nào trong hệ thống.</div>` : "")}<div id="catList"></div>
     <div class="muted small" style="margin-top:10px">Rút từ bảng thông số trên website của các nhà cung cấp (mỗi dòng giữ nguyên văn, có link nguồn). Công suất là của tổ máy dùng model đó, không phải công suất trục của động cơ. Hãng chỉ ghi khi nguồn ghi rõ. Thông số khác (xi lanh, tiêu hao nhiên liệu, độ ồn...) chép nguyên văn theo nhãn cột của nguồn; tiêu hao nhiên liệu, độ ồn, kích thước, khối lượng là của tổ máy.</div></div>`;
   renderCatList();
   bindFilt("catFilt");
@@ -3780,7 +3784,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
     // An engine and alternator read from the genset's own row show that row once, under the genset.
     const sameRow = (p) => c.genset?.src?.line && p.src?.line === c.genset.src.line;
     // Tên model mở bảng thông số (Khoa, 2026-11-10: thay các nút Xem động cơ / đầu phát / bộ điều khiển).
-    const part = (label, p, kind, link) => (p ? h`<div class="cfgblk"><b>${label}:</b> ${raw(link ? h`<a href="#" data-catopen="${kind}" data-catkey="${window.GenbidCatalog?.keyOf(p.model) || ""}" title="Xem thông số">${p.model}</a>` : h`${p.model}`)}${raw(p.make ? h` <span class="muted">(${p.make})</span>` : "")} <span class="chip mut">${CFG_SRC[p.src?.kind] || ""}</span>${raw(p.unverified ? '<span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(sameRow(p) ? "" : cfgSrcHtml(p.src))}</div>` : "");
+    const part = (label, p, kind, link) => (p ? h`<div class="cfgblk"><b>${label}:</b> ${raw(kind === "controller" ? cfgCtlHtml(p.model) : link ? h`<a href="#" data-catopen="${kind}" data-catkey="${window.GenbidCatalog?.keyOf(p.model) || ""}" title="Xem thông số">${p.model}</a>` : h`${p.model}`)}${raw(p.make ? h` <span class="muted">(${p.make})</span>` : "")} <span class="chip mut">${CFG_SRC[p.src?.kind] || ""}</span>${raw(p.unverified ? '<span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(sameRow(p) ? "" : cfgSrcHtml(p.src))}</div>` : "");
     // Mỗi cấu hình thu gọn / mở rộng được (Khoa, 2026-11-10): #1 mở sẵn, các cấu hình sau thu gọn, tiêu đề vẫn đọc được
     // hạng, kết quả, động cơ + đầu phát + bộ điều khiển và nhà cung cấp đầu (+ số còn lại).
     const rk = c.rank || i + 1, cid = `cfgcard|${key}|${size}|${rk}`, first = i === 0;
@@ -4340,11 +4344,23 @@ function partsHtml(x) {
   if (!catReady()) setTimeout(partsFill, 0);
   return h`<div class="wparts">${raw(ps.map((p) => h`<div title="${p.text}">${PART_VI[p.kind]}: <b>${[p.make, p.model].filter(Boolean).join(" ")}</b> · <span class="wpart" data-pkind="${p.kind}" data-pmodel="${p.model}">${raw(partStatusHtml(p.kind, p.model))}</span></div>`).join(""))}</div>`;
 }
+// The controller of a suggested config (Khoa, 2026-11-11: gói IB2600601812, "ComAp AMF9" found on the internet opened
+// the plain list): a link to its specs only when the catalog has that model, else the name and "chưa có trong danh mục".
+// Before the catalog is built: a link (.cfgctl) that partsFill() replaces once it is; a model the catalog lacks then
+// opens the list with a note saying so (catMissing).
+function cfgCtlHtml(model) {
+  if (!model) return "";
+  const key = window.GenbidCatalog?.keyOf(model) || "";
+  if (!catReady()) { setTimeout(partsFill, 0); return h`<a href="#" class="cfgctl" data-pmodel="${model}" data-catopen="controller" data-catkey="${key}" data-catname="${model}" title="Xem thông số">${model}</a>`; }
+  return catalog().controllers?.some((e) => e.key === key) ? h`<a href="#" data-catopen="controller" data-catkey="${key}" title="Xem thông số">${model}</a>`
+    : h`${model} <span class="muted small">(chưa có trong danh mục)</span>`;
+}
 function partsFill() {
-  const spans = [...document.querySelectorAll(".wpart")];
-  if (!spans.length) return;
+  const spans = [...document.querySelectorAll(".wpart")], ctls = [...document.querySelectorAll(".cfgctl")];
+  if (!spans.length && !ctls.length) return;
   if (!catReady()) { needSup(); catWarm(); return; }
   for (const s of spans) s.innerHTML = partStatusHtml(s.dataset.pkind, s.dataset.pmodel);
+  for (const s of ctls) s.outerHTML = cfgCtlHtml(s.dataset.pmodel);
 }
 function bdGoodsHtml(goods, label = "Hàng chào") {
   const cfg = (s) => String(s || "").replace(/\s+\*\s+/g, "\n* ").replace(/\s+-\s+(?=\S)/g, "\n- ").replace(/^\n/, "");
@@ -4651,7 +4667,7 @@ document.addEventListener("click", async (e) => {
   const supo = e.target.closest("[data-supopen]");
   if (supo) { if ($("#supBody")) { if (!supOpenId) listScroll.sup = mScroll().scrollTop; supOpenId = supo.dataset.supopen || null; renderSuppliers(); } else openSuppliers(supo.dataset.supopen); return; }
   const cko = e.target.closest("[data-catopen]");
-  if (cko) { e.preventDefault(); const from = cko.closest("#supBody") ? supOpenId : null; if (from) listScroll.supDetail = mScroll().scrollTop; openCatalog(cko.dataset.catopen, cko.dataset.catkey, from, cko.dataset.catq || null); return; }
+  if (cko) { e.preventDefault(); const from = cko.closest("#supBody") ? supOpenId : null; if (from) listScroll.supDetail = mScroll().scrollTop; openCatalog(cko.dataset.catopen, cko.dataset.catkey, from, cko.dataset.catq || null, cko.dataset.catname || null); return; }
   if (e.target.closest("#catToSup")) { const id = catFrom; catFrom = null; openSuppliers(id); mScroll().scrollTop = listScroll.supDetail || 0; return; }
   const cki = e.target.closest("#catList [data-catitem]");
   if (cki) { listScroll.cat = mScroll().scrollTop; catView.open = cki.dataset.catitem; renderCatalog(); return; }
