@@ -38,7 +38,12 @@ export default async function handler(req, res) {
     try {
       let rows = req.query.kind === "stamps" ? await docs(coll, "", { cols: "id,updated_at" }) : await docs(coll, req.query.id ? String(req.query.id) : "", { ids });
       // A supplier deleted on the web (supdeleted/<id>) is skipped by every bot too (Khoa, 2026-11-02).
-      if (coll === "supplier") { const gone = new Set((await docs("supdeleted", "", { cols: "id" })).map((d) => d.id)); rows = rows.filter((d) => !gone.has(d.id)); }
+      // A supplier excluded on the web (supexcl/<id> {on:true}) is skipped by every bot too (Khoa, 2026-11-11).
+      if (coll === "supplier") {
+        const [del, exc] = await Promise.all([docs("supdeleted", "", { cols: "id" }), docs("supexcl", "", { cols: "id,data" })]);
+        const gone = new Set([...del.map((d) => d.id), ...exc.filter((d) => d.data?.on === true).map((d) => d.id)]);
+        rows = rows.filter((d) => !gone.has(d.id));
+      }
       return res.json(coll === "tracked" && req.query.kind === "docs" ? rows.map((d) => ({ id: d.id, data: Object.fromEntries(Object.entries(d.data || {}).filter(([k]) => !["note", "bidPrice"].includes(k))) })) : rows);
     } catch (e) { return res.status(502).json({ error: e.message }); }
   }
