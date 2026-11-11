@@ -1559,7 +1559,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     powerChecks(c, result.requirements || [], row);
     pfChecks(c, result.requirements || [], row);
     currentChecks(c, result.requirements || [], row);
-    freqChecks(c, result.requirements || [], row, [...altAttrs.filter((a) => a.key === "poles"), ...factsOf(c, "alternator").filter((f) => /poles?|số cực|极数/i.test(f.label || ""))]);
+    freqChecks(c, result.requirements || [], row, [...altAttrs.filter((a) => a.key === "poles"), ...factsOf(c, "alternator").filter((f) => /\bpoles?\b|số cực|极数/i.test(f.label || ""))]);
     if (sync) {
       // The make of each part: as the configuration writes it, as the catalog reads the model, or from the model code.
       const recMake = (list, m) => (list || []).find((x) => x.key === CAT.keyOf(m || ""))?.make || "";
@@ -1582,6 +1582,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     confirmChecks(c, result.requirements || []);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
     altAttrChecks(c, result.requirements || [], altAttrs, factsOf(c, "alternator"));
+    khoaRules(c, result.requirements || [], row, { origin });
     originChecks(c, result, origin, sup);
     comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
@@ -1771,7 +1772,7 @@ export function rfqOf(c, reqs = []) {
   const add = (x, r, extra = {}) => {
     const code = r?.code || x.code || "", k = x.kind || r?.kind || kindOf(r || {}), status = x.status === "confirm" ? "confirm" : "unclear";
     const q = { part: x.part || r?.part || "genset", item: x.item, requirement: x.requirement || r?.requirement || "", kind: k, status, code, level: (r?.level || x.level) === "option" ? "option" : "core",
-      ask: x.ask || ask(x, k, code), ...(x.confirm ? { confirm: x.confirm } : {}), ...(x.avr ? { note: x.avr } : {}), ...(x.parts?.length ? { fn: x.parts.filter((p) => p.status !== "met" && p.status !== "not_met").map((p) => p.item) } : {}), ...(x.conflict ? { conflict: true } : {}), ...(x.version ? { version: x.version } : {}), ...extra };
+      ask: x.ask || ask(x, k, code), ...(x.confirm ? { confirm: x.confirm } : {}), ...(x.avr || x.why ? { note: x.avr || x.why } : {}), ...(x.parts?.length ? { fn: x.parts.filter((p) => p.status !== "met" && p.status !== "not_met").map((p) => p.item) } : {}), ...(x.conflict ? { conflict: true } : {}), ...(x.version ? { version: x.version } : {}), ...extra };
     q.tier = tierOf(q);
     pts.push(q);
   };
@@ -2522,6 +2523,90 @@ export function altAttrChecks(c, reqs, attrs = [], facts = []) {
       if (ok) { const a = as.flat()[0]; putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: [...new Set(as.flat().map((x) => x.lines[0].replace(/^\|\s*|\s*\|\s*$/g, "").replace(/\s*\|\s*/g, ": ")))].join("; "), sourceQuote: [...new Set(as.flat().map(quoteOf))].join(" | "), part: "alternator", level: r.level || "core", status: "met", byCode: true,
         sheetSrc: { supplierId: a.supplierId, n: a.n, url: a.url, lines: a.lines }, note: `Code đọc từ ${sheet(a)}.` }); }
     }
+  }
+  return c;
+}
+// ---------- Quy tắc Khoa duyệt 2026-11-11 ("ok, em làm 4 ý trên đi", qua điều phối) ----------
+// (3) Kê khai: an HSMT requirement that only asks the bidder to state a point ("nêu cụ thể", "ghi rõ"...) with no threshold
+//     (no sign, no figure) is answered by the supplier's papers: "cần chứng từ" (confirm, document). Not for the iso8528
+//     class, the load step, the make / brand sync, nor an origin in a package filtered to G7 / G20 (rule 4).
+// (1) Kích thước / khối lượng / độ ồn / nhiệt độ môi trường: when the configuration's own genset row gives no figure of
+//     it, "xác nhận khi đặt hàng" (confirm, order): the canopy and the radiator are the assembler's choice. When the row
+//     gives one: met when it meets the HSMT's limit, not met when it exceeds it, else (two builds on the row, another
+//     distance, a ± band) unchanged. An HSMT figure with no ≤ / ≥ (copied from one model) is confirmed, with a note.
+// (2) Quá tải 10%: met only when the row's header names its Prime (PRP) column and the HSMT asks no more than 10% for
+//     1 hour in 12 (ISO 8528-1 defines the prime rating with that overload); anything else "xác nhận khi đặt hàng".
+//     Not an overload the HSMT asks of the standby rating (clarifyOf asks the investor about it).
+// A check met / not met (verified), a conflict of sources, or a configuration with no row of its own is left as it is.
+const DECL = /n[êe]u\s*(r[õo]|c[ụu]\s*th[ểe])|ghi\s*r[õo]|k[êe]\s*khai|(nh[àa]\s*th[ầa]u|NCC)\s*(t[ựu]\s*)?(ghi|n[êe]u|đi[ềe]n)/i;
+const DECL_SKIP = new Set(["iso8528_class", "load_step", "genset_make", "brand_sync", "power_prime", "power_standby"]);
+const declOf = (r) => {
+  const q = rowNoOff(r.quote || "").replace(/\((kg|mm|m|dB\s*\(?A\)?|°C|kW|kVA|L|lít)\)/gi, ""), t = `${r.requirement || ""} ${q}`;
+  return DECL.test(t) && !/[≥≤<>±]|\d/.test(t.replace(DECL, "").replace(/\b(LxWxH|DxRxC|L\s*x\s*W\s*x\s*H|D\s*x\s*R\s*x\s*C)\b/gi, ""));
+};
+const SITE_CODES = { dimensions: "dims", weight: "weight", noise: "noise", ambient: null };
+const RULE_NOTE = {
+  order: "Code ghi: nguồn của cấu hình không ghi số này; kích thước, khối lượng, độ ồn, nhiệt độ làm việc phụ thuộc vỏ cách âm / két nước do nhà lắp ráp chọn khi đặt hàng (Khoa 11/11).",
+  decl: "Code ghi: HSMT chỉ yêu cầu kê khai, không nêu ngưỡng; nhà cung cấp kê khai kèm chứng từ (Khoa 11/11).",
+  prp: "Căn cứ ISO 8528-1: định mức Prime (PRP) cho phép quá tải 10% trong 1 giờ mỗi 12 giờ vận hành.",
+};
+const ceilOf = (t) => /≤|<=|<|t[ốo]i\s*đa|kh[ôo]ng\s*(l[ớo]n|v[ưượ]t|qu[áa])|max/i.test(t);
+const floorOf = (t) => /≥|>=|>|t[ốo]i\s*thi[ểe]u|kh[ôo]ng\s*(nh[ỏo]|th[ấa]p)|min|đ[ếe]n\s*\d/i.test(t);
+const mmOf = (t) => { const n = numbersIn(String(t).replace(/(\d)\.(\d{3})\b/g, "$1$2")); return n.length >= 3 ? n.slice(0, 3).map((v) => (v < 20 ? v * 1000 : v)) : null; };
+export function khoaRules(c, reqs, row, { origin } = {}) {
+  const set = (r, x, status, extra) => putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: "", part: r.part || "genset", level: r.level === "option" ? "option" : "core", status, byCode: true, ...extra });
+  for (const r of reqs) {
+    if (r.byCode) continue;
+    const o = openCheck(c, r);
+    if (!o) continue;
+    const code = r.code || OTHER_CODE, req = r.requirement || "", t = `${req} ${r.quote || ""}`;
+    // (3) kê khai
+    if (!DECL_SKIP.has(code) && !(ORIGINS.has(code) && GROUP_ORIGIN.has(origin)) && declOf(r)) {
+      set(r, o.x, "confirm", { confirm: "document", rule: "ke-khai", why: "HSMT yêu cầu kê khai", note: RULE_NOTE.decl });
+      continue;
+    }
+    if (!row) continue;
+    const head = [...(row.header || []), row.title || ""].join(" "), all = `${head} ${row.line || ""}`;
+    // (2) quá tải
+    if (code === "overload") {
+      if (/standby|d[ựu]\s*ph[òo]ng|\bESP\b/i.test(t)) continue;
+      const pct = /\b110\s*%/.test(t) ? 10 : Number((t.match(/\b(\d{1,2})\s*%/) || [])[1]) || null;
+      const dur = Number((t.match(/(\d{1,2})\s*(gi[ờo]|h\b|hour)/i) || [])[1]) || null;
+      const per = Number((t.match(/m[ỗo]i\s*(?:chu\s*k[ỳy]\s*)?(\d{1,2})\s*(gi[ờo]|h\b)|(?:every|per|in)\s*(\d{1,2})\s*(h|hours?)\b/i) || []).slice(1).find((v) => /^\d+$/.test(v || ""))) || null;
+      const prime = ratedRowPower(row, "prime");
+      const ok = prime && pct != null && pct <= 10 && dur != null && dur <= 1 && per != null && per >= 12;
+      if (ok) set(r, o.x, "met", { offered: `Định mức Prime ${figVi(prime.kVA)} kVA / ${figVi(prime.kW)} kW: quá tải 10% trong 1 giờ mỗi 12 giờ theo định nghĩa PRP`, sourceQuote: [row.header?.find((l) => ROW_RATING.prime.test(l)), row.line].filter(Boolean).join(" | "), rule: "qua-tai", note: `Code ghi: dòng tổ máy ghi rõ cột Prime; HSMT đòi ${pct}% trong ${dur} giờ mỗi ${per} giờ. ${RULE_NOTE.prp}` });
+      else set(r, o.x, "confirm", { confirm: "order", rule: "qua-tai", why: "quá tải theo định mức Prime", note: `Code ghi: ${prime ? "HSMT đòi mức quá tải khác 10% trong 1 giờ / 12 giờ (hoặc code chưa đọc được)" : "dòng tổ máy không ghi rõ cột Prime"}; nhà cung cấp xác nhận khả năng quá tải khi đặt hàng. ${RULE_NOTE.prp}` });
+      continue;
+    }
+    // (1) kích thước / khối lượng / độ ồn / nhiệt độ môi trường
+    if (!(code in SITE_CODES)) continue;
+    const key = SITE_CODES[code], specs = key ? (row.specs || []).filter((s) => s.key === key) : [];
+    const has = specs.length > 0 || (code === "ambient" && /ambient|nhi[ệe]t\s*đ[ộo]\s*m[ôo]i|°C|℃|环境/i.test(all));
+    const fixed = (code === "dimensions" || code === "weight") && !ceilOf(t) && !floorOf(t) && /\d/.test(req);
+    const fixNote = fixed ? ` HSMT ghi ${code === "weight" ? "khối lượng" : "kích thước"} là số cố định (không có ≤ / ≥), có thể chép từ một model cụ thể.` : "";
+    if (!has || fixed) {
+      set(r, o.x, "confirm", { confirm: "order", rule: "vo-may", why: fixed ? "HSMT ghi số cố định" : "phụ thuộc vỏ / két nước chọn khi đặt hàng", note: `${has ? `Code ghi: dòng tổ máy có số (${specs.map((s) => `${s.label} ${s.value}`).join("; ")}) nhưng HSMT ghi số cố định nên không so được.` : RULE_NOTE.order}${fixNote}` });
+      continue;
+    }
+    // The row gives a figure: compare when it is one build (no open / canopy pair) and the HSMT gives a ceiling.
+    if (specs.length !== 1 || /open|soundproof|silent|canopy|开架|静音|防音/i.test(head) || !ceilOf(t) || /±/.test(t)) continue;
+    // The HSMT asks the canopied set ("có vỏ giảm âm") and the row does not say which build its figure is: unchanged.
+    if (code !== "noise" && /v[ỏo]\s*(gi[ảa]m|c[áa]ch)\s*[âa]m|canopy|silent|soundproof|c[áa]ch\s*[âa]m/i.test(t) && !/silent|canopy|soundproof|enclos|静音|防音/i.test(`${all} ${specs[0].label}`)) continue;
+    const s = specs[0];
+    let ok = null, off = "";
+    if (code === "weight") {
+      const lim = oneFig(req, /(\d[\d.,]*)\s*kg\b/gi), v = numbersIn(s.value)[0];
+      if (lim != null && v != null && /kg/i.test(`${s.label} ${s.value}`)) { ok = v <= lim; off = `${figVi(v)} kg (${s.label})`; }
+    } else if (code === "dimensions") {
+      const lim = mmOf(req), v = mmOf(s.value);
+      if (lim && v && /mm/i.test(`${s.label} ${s.value} ${req}`)) { ok = v.every((x, i) => x <= lim[i]) ? true : v.some((x, i) => x > lim[i]) ? false : null; off = `${s.value} mm (${s.label})`; }
+    } else if (code === "noise") {
+      const lim = oneFig(req, /(\d{2,3}(?:[.,]\d)?)\s*dB/gi), dist = (req.match(/(\d{1,2})\s*m\b/) || [])[1], v = numbersIn(s.value)[0];
+      if (lim != null && v != null && dist && new RegExp(`\\b${dist}\\s*m\\b`, "i").test(`${s.label} ${s.value}`)) { ok = v <= lim; off = `${figVi(v)} dB(A) (${s.label})`; }
+    }
+    if (ok == null) continue;
+    set(r, o.x, ok ? "met" : "not_met", { offered: off, sourceQuote: row.line, rule: "vo-may", note: `Code so số của dòng tổ máy với mức HSMT.` });
   }
   return c;
 }

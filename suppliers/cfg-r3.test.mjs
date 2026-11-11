@@ -6,7 +6,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { powerChecks, pfChecks, currentChecks, freqChecks, altAttrChecks, ratedRowPower } from "./config-bot.mjs";
+import { powerChecks, pfChecks, currentChecks, freqChecks, altAttrChecks, ratedRowPower, khoaRules, rfqOf, rfqPoints } from "./config-bot.mjs";
 import { altSheetAttrs } from "./ratings.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -109,4 +109,66 @@ test("altAttrChecks: met only on the sheet's words; conflicting facts, unknown t
   assert.equal(altAttrChecks(cfg(), [Q("alt_type", "Kiểu", "AREP")], A).checks.length, 0);
   // Two sheets of the model that differ: unchanged.
   assert.equal(altAttrChecks(cfg(), [reqs[0]], [...A, at("insulation", "F", "| INSULATION SYSTEM | CLASS F")]).checks.length, 0);
+});
+
+// ---------- Quy tắc Khoa duyệt 2026-11-11 (khoaRules) ----------
+test("khoaRules (1): no figure on the row → confirm order; a figure → compare; fixed HSMT figure → confirm with a note", () => {
+  const D = R("dimensions", "Kích thước", "≤ 3500 x 1500 x 2200 mm"), W = R("weight", "Khối lượng", "≤ 3000 kg"), N = R("noise", "Độ ồn", "≤ 75 dB(A) tại 7 m"), A = R("ambient", "Nhiệt độ môi trường", "≥ 40 °C");
+  const c = khoaRules(cfg(), [D, W, N, A], ROW);
+  assert.deepEqual(c.checks.map((x) => [x.item, x.status, x.confirm]), [["Kích thước", "confirm", "order"], ["Khối lượng", "confirm", "order"], ["Độ ồn", "confirm", "order"], ["Nhiệt độ môi trường", "confirm", "order"]]);
+  const withSpecs = { ...ROW, line: `${ROW.line} | 3300x1460x2100 | 3550`, specs: [{ key: "dims", label: "Overall Size(mm)", value: "3300x1460x2100" }, { key: "weight", label: "Gross Weight(kg)", value: "3550" }] };
+  const d = khoaRules(cfg(), [D, W], withSpecs);
+  assert.equal(d.checks[0].status, "met");
+  assert.equal(d.checks[1].status, "not_met"); // 3550 kg > 3000 kg
+  // The HSMT asks the canopied set and the row does not say which build: unchanged.
+  assert.equal(khoaRules(cfg(), [R("dimensions", "Kích thước", "≤ 3500 x 1500 x 2000 mm (có vỏ giảm âm)")], withSpecs).checks.length, 0);
+  // Fixed figures (no ≤ / ≥): confirm, with the note.
+  const f = khoaRules(cfg(), [R("weight", "Khối lượng", "4.200 kg")], withSpecs).checks[0];
+  assert.equal(f.status, "confirm");
+  assert.match(f.note, /số cố định/);
+  // A not met / a conflict stays.
+  assert.equal(khoaRules(cfg([{ item: "Kích thước", part: "genset", status: "not_met" }]), [D], ROW).checks[0].status, "not_met");
+  assert.equal(khoaRules(cfg([{ item: "Kích thước", part: "genset", status: "unclear", conflict: true }]), [D], ROW).checks[0].status, "unclear");
+  // No row of its own: unchanged.
+  assert.equal(khoaRules(cfg(), [D], null).checks.length, 0);
+});
+
+test("khoaRules (2): overload 10% / 1 h / 12 h on a labeled Prime row → met (ISO 8528-1); else confirm order", () => {
+  const O = R("overload", "Khả năng quá tải", "110% công suất Prime trong 1 giờ mỗi 12 giờ");
+  const m = khoaRules(cfg(), [O], ROW).checks[0];
+  assert.equal(m.status, "met");
+  assert.match(m.note, /ISO 8528-1/);
+  // 10% in 1 h every 24 h is no more than PRP allows: met.
+  assert.equal(khoaRules(cfg(), [R("overload", "Khả năng quá tải", "10% trong 01 giờ mỗi 24 giờ")], ROW).checks[0].status, "met");
+  // 20%, or a row with no Prime column: confirm order.
+  assert.equal(khoaRules(cfg(), [R("overload", "Khả năng quá tải", "120% trong 1 giờ mỗi 12 giờ")], ROW).checks[0].status, "confirm");
+  const un = khoaRules(cfg(), [O], { ...ROW, header: ["| Model | Power(kW) | Power(kVA)"], power: { rated: { kVA: 400, kW: 320 } } }).checks[0];
+  assert.deepEqual([un.status, un.confirm], ["confirm", "order"]);
+  // Overload asked of the standby rating: unchanged (a question to the investor).
+  assert.equal(khoaRules(cfg(), [R("overload", "Khả năng quá tải", "110% công suất dự phòng trong 1 giờ")], ROW).checks.length, 0);
+});
+
+test("khoaRules (3): 'nêu cụ thể' with no threshold → document; with a threshold → not this rule; origin in G7 / make / class untouched", () => {
+  const P = (code, item, requirement, quote, part = "engine") => R(code, item, requirement, { quote, part });
+  const s = khoaRules(cfg(), [P("bore_stroke", "Đường kính × hành trình piston", "Hành trình xi lanh: nêu cụ thể", "14 Hành trình xilanh Nêu cụ thể")], null).checks[0];
+  assert.deepEqual([s.status, s.confirm], ["confirm", "document"]);
+  // A threshold with the word "nêu": not a declaration.
+  assert.equal(khoaRules(cfg(), [P("weight", "Khối lượng", "≤ 3000 kg (nêu cụ thể)", "Khối lượng ≤ 3000 kg, nêu cụ thể", "genset")], null).checks.length, 0);
+  assert.equal(khoaRules(cfg(), [P("displacement", "Dung tích", "≥ 12 L, ghi rõ", "Dung tích xi lanh ≥ 12 L (ghi rõ)")], null).checks.length, 0);
+  // Origin: declared in a package with no G7 / G20 filter, untouched in one with it.
+  const O = P("genset_origin", "Xuất xứ tổ máy", "Nêu cụ thể nước lắp ráp", "2 Nước sản xuất Nêu cụ thể", "genset");
+  assert.equal(khoaRules(cfg(), [O], null, { origin: "all" }).checks[0].confirm, "document");
+  assert.equal(khoaRules(cfg(), [O], null, { origin: "g7" }).checks.length, 0);
+  assert.equal(khoaRules(cfg(), [P("genset_make", "Hãng", "Nêu cụ thể nhà sản xuất", "3 Nhà sản xuất Nêu cụ thể", "genset")], null).checks.length, 0);
+  assert.equal(khoaRules(cfg(), [P("iso8528_class", "Cấp ISO 8528", "Nêu cụ thể", "Nêu cụ thể", "genset")], null).checks.length, 0);
+});
+
+test("khoaRules confirm points stay in the supplier questionnaire (rfqOf)", () => {
+  const D = R("dimensions", "Kích thước", "≤ 3500 x 1500 x 2000 mm"), O = R("overload", "Khả năng quá tải", "120% trong 1 giờ mỗi 12 giờ");
+  const reqs = [D, O];
+  const before = rfqPoints(rfqOf(cfg([{ item: D.item, part: "genset", status: "unclear" }, { item: O.item, part: "genset", status: "unclear" }]), reqs));
+  const c = khoaRules(cfg([{ item: D.item, part: "genset", status: "unclear" }, { item: O.item, part: "genset", status: "unclear" }]), reqs, ROW);
+  const q = rfqOf(c, reqs);
+  assert.equal(rfqPoints(q), before);
+  assert.ok(q.some((x) => x.tier === 4));
 });
