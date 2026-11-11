@@ -68,6 +68,13 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 - Write result.json (or a script that builds it) with the Write tool, never with a shell heredoc, and write it once:
   then change only the parts that need it with Edit.
 - Keep `offered`, `note` and `gaps` short; do not repeat the requirement in them.
+- No citations outside the quote fields (Khoa, 2026-11-11: the screen hides quotes, so a citation written in prose
+  still shows). The exact words go only in `quote`, `hsmtQuote`, `sourceQuote`, `line`, `src.quote`, `quoteA`/`quoteB`.
+  `offered` gives the value offered (e.g. "13,6:1"), not the source line. `note`, `gaps`, `why`, `summary` and `notes`
+  give the conclusion or what to confirm, in plain Vietnamese: never "HSMT ghi …", "nguồn ghi …", "dòng … ghi …",
+  "bảng III.15 / mục B.II.1", a model row's text, a file, page or datasheet name, nor internal labels (genset_oem,
+  độ tin cậy medium / high / low, supplierId, n). E.g. note "Khác 14:1 của HSMT, cần xác nhận", not "HSMT ghi 14:1,
+  nguồn ghi 13,6:1"; note "Các nguồn ghi khác nhau, cần xác nhận", not "Nguồn ghi khác nhau: EU Stage II / T2".
 
 ## Steps
 1. List the requirements for the engine, the alternator and the genset as a whole that a model can meet or fail:
@@ -129,12 +136,12 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    for a figure where more is better (power, displacement, cylinders, tank, battery Ah, insulation class, IP, hours...)
    it is the least accepted: a value at or above it is `met`, below it `not_met`. For a figure with no better side (bore,
    stroke, dimensions, weight, compression ratio, a speed or voltage of a design) a different value is `unclear`, with
-   both values in `note`, never `not_met`; the same value is `met`.
+   the offered value in `offered` and a `note` saying it differs from the HSMT, never `not_met`; the same value is `met`.
    An engine or alternator figure (cylinders, displacement, bore, governor, aspiration, emission, insulation, IP, AVR...)
    that the configuration's own row does not give may be taken from "Thông số theo model" of that same model: copy its
    `factSrc` into the check, set `part` to `engine` or `alternator`, and quote `sourceQuote` from that factSrc line.
    Only figures of the engine or alternator itself, never a genset figure (fuel consumption, size, tank, noise) of
-   another supplier's row. A figure marked ⚠ (sources disagree) is `unclear`, with the values in `note`; the code
+   another supplier's row. A figure marked ⚠ (sources disagree) is `unclear`, with the values in `offered`; the code
    also turns such a "met" into "unclear".
    A value may be converted only with a formula from "Công thức được phép" at the end of this file (kW ↔ kVA,
    current, L/h ↔ g/kWh, hp/PS → kW, speed from poles, displacement from bore × stroke, in³ → L, °F → °C). Put it in
@@ -183,8 +190,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    when the configuration meets it too (the code's check is `met`). Order (Khoa, 2026-11-02): a supplier that offers both
    this engine (its row) and the configuration's controller first, then the supplier of the genset row, then a row
    that also names this alternator, then confidence high > medium > low, then role genset_oem. A Vietnam distributor is
-   not needed and does not count in the order. `why` states only facts shown in catalog.md (the row, the role, the
-   confidence, the controller). A supplier truly fits when its row names this engine and the configuration has no
+   not needed and does not count in the order. `why` states only facts shown in catalog.md, in one short Vietnamese
+   phrase about what the supplier offers (e.g. "Chào đúng động cơ, đầu phát và bộ điều khiển của cấu hình", "Chào đúng
+   động cơ, chưa ghi đầu phát"); the row itself goes only in `line`, and the role / confidence labels never appear. A supplier truly fits when its row names this engine and the configuration has no
    `not_met` on power, frequency, a named make or origin.
 4. Only when no configuration of step 2 has a supplier that truly fits: search the internet (WebSearch) for the ONE
    best configuration and the supplier that sells it. Under G7 / G20 that supplier is a genset maker based in a country
