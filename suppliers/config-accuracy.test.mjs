@@ -893,3 +893,10 @@ test("won goods break a tie between configurations the checks rank alike, and ne
   attachWon(r, docs, { kva: 500, self: "A" });
   assert.ok(r.configs.every((c) => !c.won));
 });
+
+test("Deutz is not of G7 / G20 / EU (Khoa, 2026-11-11)", () => {
+  for (const g of ["g7", "g7eu", "g20", "g20eu"]) {
+    assert.equal(C.groupIn("Deutz TBD620L6", "TBD620L6", g), false);
+    assert.equal(C.groupIn("MTU 12V2000G65", "12V2000G65", g), true);
+  }
+});

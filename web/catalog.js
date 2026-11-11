@@ -76,6 +76,9 @@
     [/^[A-Z]{0,3}[46]1(00|02|05|08|10|13)[A-Z]/i, "Trung Quốc"], [/^[A-Z]{0,3}[34](80|85|90|93|95|98)[A-Z]/i, "Trung Quốc"],
     [/^[A-Z]{0,3}1[1789]\d{1,2}F/i, "Trung Quốc"], [/^[A-Z]{0,3}2V(80|88|92F|95|100)/i, "Trung Quốc"],
   ];
+  // Makes never counted in a group (G7 / G20 / EU), whatever their country (Khoa, 2026-11-11: "loại Deutz ra khỏi G7";
+  // the Deutz engines the suppliers offer are licence builds in China: HC12V132, TBD234, TBD620).
+  const NO_GROUP = new Set(["Deutz"]);
   // Country of each foreign engine make, for Xuất xứ G7 / G20 in Gợi ý cấu hình and the supplier country filter
   // (Khoa, 2026-11-02). G20 here is its member countries other than China (Khoa: "trừ Trung Quốc"), not the EU.
   const ENGINE_COUNTRY = { Cummins: "US", Perkins: "GB", Baudouin: "FR", Deutz: "DE", "Volvo Penta": "SE", MTU: "DE", Mitsubishi: "JP",
@@ -779,7 +782,7 @@
   function engineCountries(names, model) {
     const o = engineOrigin(names, model), m = String(model || "").trim();
     if (o !== "other") return o === "cn" ? ["CN"] : [];
-    return [...new Set([...names, ...FOREIGN_MODEL.filter(([re]) => re.test(m)).map(([, n]) => n)].filter((n) => FOREIGN_ENGINE.has(n)).map((n) => ENGINE_COUNTRY[n]))];
+    return [...new Set([...names, ...FOREIGN_MODEL.filter(([re]) => re.test(m)).map(([, n]) => n)].filter((n) => FOREIGN_ENGINE.has(n) && !NO_GROUP.has(n)).map((n) => ENGINE_COUNTRY[n]))];
   }
   // Whether an engine (catalog entry, or one named in a text) is of a make from a country of the group ("g7" / "g20").
   // A Chinese make the sources name is a licence build ("6M33D670E200 | WEICHAI (China)", a Baudouin design): not of the
@@ -848,7 +851,7 @@
     return out;
   }
 
-  const api = { build, builder, partsIn, fromSupplier, prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, partsIn, fromSupplier, prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
