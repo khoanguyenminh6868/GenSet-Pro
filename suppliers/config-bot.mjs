@@ -2550,11 +2550,13 @@ const RULE_NOTE = {
   decl: "Code ghi: HSMT chỉ yêu cầu kê khai, không nêu ngưỡng; nhà cung cấp kê khai kèm chứng từ (Khoa 11/11).",
   prp: "Căn cứ ISO 8528-1: định mức Prime (PRP) cho phép quá tải 10% trong 1 giờ mỗi 12 giờ vận hành.",
 };
+const PRP_HEAD = /prime|\bPRP\b|主用|常用/i;
 const ceilOf = (t) => /≤|<=|<|t[ốo]i\s*đa|kh[ôo]ng\s*(l[ớo]n|v[ưượ]t|qu[áa])|max/i.test(t);
 const floorOf = (t) => /≥|>=|>|t[ốo]i\s*thi[ểe]u|kh[ôo]ng\s*(nh[ỏo]|th[ấa]p)|min|đ[ếe]n\s*\d/i.test(t);
 const mmOf = (t) => { const n = numbersIn(String(t).replace(/(\d)\.(\d{3})\b/g, "$1$2")); return n.length >= 3 ? n.slice(0, 3).map((v) => (v < 20 ? v * 1000 : v)) : null; };
 export function khoaRules(c, reqs, row, { origin } = {}) {
-  const set = (r, x, status, extra) => putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: "", part: r.part || "genset", level: r.level === "option" ? "option" : "core", status, byCode: true, ...extra });
+  // A confirm keeps what the check already offered and quoted (điều phối 2026-11-11: "3550 kg" of the agent was wiped).
+  const set = (r, x, status, extra) => putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: x?.offered || "", ...(x?.sourceQuote ? { sourceQuote: x.sourceQuote } : {}), part: r.part || "genset", level: r.level === "option" ? "option" : "core", status, byCode: true, ...extra });
   for (const r of reqs) {
     if (r.byCode) continue;
     const o = openCheck(c, r);
@@ -2573,10 +2575,11 @@ export function khoaRules(c, reqs, row, { origin } = {}) {
       const pct = /\b110\s*%/.test(t) ? 10 : Number((t.match(/\b(\d{1,2})\s*%/) || [])[1]) || null;
       const dur = Number((t.match(/(\d{1,2})\s*(gi[ờo]|h\b|hour)/i) || [])[1]) || null;
       const per = Number((t.match(/m[ỗo]i\s*(?:chu\s*k[ỳy]\s*)?(\d{1,2})\s*(gi[ờo]|h\b)|(?:every|per|in)\s*(\d{1,2})\s*(h|hours?)\b/i) || []).slice(1).find((v) => /^\d+$/.test(v || ""))) || null;
-      const prime = ratedRowPower(row, "prime");
-      const ok = prime && pct != null && pct <= 10 && dur != null && dur <= 1 && per != null && per >= 12;
-      if (ok) set(r, o.x, "met", { offered: `Định mức Prime ${figVi(prime.kVA)} kVA / ${figVi(prime.kW)} kW: quá tải 10% trong 1 giờ mỗi 12 giờ theo định nghĩa PRP`, sourceQuote: [row.header?.find((l) => ROW_RATING.prime.test(l)), row.line].filter(Boolean).join(" | "), rule: "qua-tai", note: `Code ghi: dòng tổ máy ghi rõ cột Prime; HSMT đòi ${pct}% trong ${dur} giờ mỗi ${per} giờ. ${RULE_NOTE.prp}` });
-      else set(r, o.x, "confirm", { confirm: "order", rule: "qua-tai", why: "quá tải theo định mức Prime", note: `Code ghi: ${prime ? "HSMT đòi mức quá tải khác 10% trong 1 giờ / 12 giờ (hoặc code chưa đọc được)" : "dòng tổ máy không ghi rõ cột Prime"}; nhà cung cấp xác nhận khả năng quá tải khi đặt hàng. ${RULE_NOTE.prp}` });
+      // Continuous (COP) allows no overload (ISO 8528-1): only a column the header names Prime / PRP (điều phối 2026-11-11).
+      const prime = ratedRowPower(row, "prime"), prpHead = [...(row.header || []), row.title || ""].find((l) => PRP_HEAD.test(l)), cop = !!prime && !prpHead;
+      const ok = prime && prpHead && pct != null && pct <= 10 && dur != null && dur <= 1 && per != null && per >= 12;
+      if (ok) set(r, o.x, "met", { offered: `Định mức Prime ${figVi(prime.kVA)} kVA / ${figVi(prime.kW)} kW: quá tải 10% trong 1 giờ mỗi 12 giờ theo định nghĩa PRP`, sourceQuote: [prpHead, row.line].filter(Boolean).join(" | "), rule: "qua-tai", note: `Code ghi: dòng tổ máy ghi rõ cột Prime; HSMT đòi ${pct}% trong ${dur} giờ mỗi ${per} giờ. ${RULE_NOTE.prp}` });
+      else set(r, o.x, "confirm", { confirm: "order", rule: "qua-tai", why: "quá tải theo định mức Prime", note: `Code ghi: ${cop ? "tiêu đề cột chỉ ghi Continuous / liên tục, không ghi Prime / PRP (định mức Continuous không cho quá tải theo ISO 8528-1)" : prime ? "HSMT đòi mức quá tải khác 10% trong 1 giờ / 12 giờ (hoặc code chưa đọc được)" : "dòng tổ máy không ghi rõ cột Prime"}; nhà cung cấp xác nhận khả năng quá tải khi đặt hàng. ${RULE_NOTE.prp}` });
       continue;
     }
     // (1) kích thước / khối lượng / độ ồn / nhiệt độ môi trường
@@ -2585,8 +2588,11 @@ export function khoaRules(c, reqs, row, { origin } = {}) {
     const has = specs.length > 0 || (code === "ambient" && /ambient|nhi[ệe]t\s*đ[ộo]\s*m[ôo]i|°C|℃|环境/i.test(all));
     const fixed = (code === "dimensions" || code === "weight") && !ceilOf(t) && !floorOf(t) && /\d/.test(req);
     const fixNote = fixed ? ` HSMT ghi ${code === "weight" ? "khối lượng" : "kích thước"} là số cố định (không có ≤ / ≥), có thể chép từ một model cụ thể.` : "";
+    // The check already offers a figure (found in another source of the configuration): under a limit it stays "unclear".
+    const agentFig = /\d/.test(String(o.x?.offered || ""));
+    if (!fixed && !has && agentFig) continue;
     if (!has || fixed) {
-      set(r, o.x, "confirm", { confirm: "order", rule: "vo-may", why: fixed ? "HSMT ghi số cố định" : "phụ thuộc vỏ / két nước chọn khi đặt hàng", note: `${has ? `Code ghi: dòng tổ máy có số (${specs.map((s) => `${s.label} ${s.value}`).join("; ")}) nhưng HSMT ghi số cố định nên không so được.` : RULE_NOTE.order}${fixNote}` });
+      set(r, o.x, "confirm", { confirm: "order", rule: "vo-may", why: fixed ? "HSMT ghi số cố định" : "phụ thuộc vỏ / két nước chọn khi đặt hàng", note: `${has ? `Code ghi: dòng tổ máy có số (${specs.map((s) => `${s.label} ${s.value}`).join("; ")}) nhưng HSMT ghi số cố định nên không so được.` : fixed && agentFig ? "Code ghi:" : RULE_NOTE.order}${fixNote}` });
       continue;
     }
     // The row gives a figure: compare when it is one build (no open / canopy pair) and the HSMT gives a ceiling.

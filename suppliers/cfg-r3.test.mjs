@@ -172,3 +172,35 @@ test("khoaRules confirm points stay in the supplier questionnaire (rfqOf)", () =
   assert.equal(rfqPoints(q), before);
   assert.ok(q.some((x) => x.tier === 4));
 });
+
+test("khoaRules (2) sửa điều phối: a Continuous column is not Prime for the overload (ISO 8528-1 COP has none)", () => {
+  const O = R("overload", "Khả năng quá tải", "110% công suất liên tục trong 1 giờ mỗi 12 giờ");
+  const cop = { ...ROW, header: ["| Model | 400V / 1500RPM | Engine", "| Standby Power | Continuous Power | Model", "| KVA | KW | KVA | KW"] };
+  const x = khoaRules(cfg(), [O], cop).checks[0];
+  assert.deepEqual([x.status, x.confirm], ["confirm", "order"]);
+  assert.match(x.note, /Continuous/);
+  // Power / cosφ still read a Continuous column as the prime rating.
+  assert.deepEqual(ratedRowPower(cop, "prime"), { kVA: 400, kW: 320 });
+  // "PRP" in the header: met.
+  assert.equal(khoaRules(cfg(), [O], { ...ROW, header: ["| Generator Model | PRP KW/KVA | EPS KW/KVA"] }).checks[0].status, "met");
+});
+
+test("khoaRules (1)/(3) sửa điều phối: a confirm keeps the agent's offered; a figure the agent found under a limit stays unclear", () => {
+  const W = R("weight", "Khối lượng", "≤ 3000 kg");
+  // The agent found 2352 kg in another source: unchanged.
+  const a = khoaRules(cfg([{ item: W.item, part: "genset", status: "unclear", offered: "Máy trần HC4D: 2352 kg khô" }]), [W], ROW).checks[0];
+  assert.equal(a.status, "unclear");
+  assert.equal(a.offered, "Máy trần HC4D: 2352 kg khô");
+  // No figure from the agent: confirm, its words kept.
+  const b = khoaRules(cfg([{ item: W.item, part: "genset", status: "unclear", offered: "Nguồn không ghi", sourceQuote: "| X |" }]), [W], ROW).checks[0];
+  assert.deepEqual([b.status, b.offered, b.sourceQuote], ["confirm", "Nguồn không ghi", "| X |"]);
+  // Fixed HSMT figure: confirm, the agent's figure kept, no "nguồn không ghi số" note.
+  const f = khoaRules(cfg([{ item: "Kích thước", part: "genset", status: "unclear", offered: "Bản cách âm 2388 × 1000 × 1450 mm" }]), [R("dimensions", "Kích thước", "2.250 × 950 × 1.250 mm")], ROW).checks[0];
+  assert.equal(f.status, "confirm");
+  assert.equal(f.offered, "Bản cách âm 2388 × 1000 × 1450 mm");
+  assert.doesNotMatch(f.note, /không ghi số/);
+  assert.match(f.note, /số cố định/);
+  // Kê khai: confirm document, offered kept.
+  const d = khoaRules(cfg([{ item: "Khối lượng", part: "genset", status: "unclear", offered: "1570 kg" }]), [R("weight", "Khối lượng", "Nêu cụ thể", { quote: "21 Trọng lượng tổ hợp máy phát điện (kg) Nêu cụ thể" })], null).checks[0];
+  assert.deepEqual([d.status, d.confirm, d.offered], ["confirm", "document", "1570 kg"]);
+});
