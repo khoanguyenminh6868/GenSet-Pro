@@ -432,5 +432,52 @@
    "| Efficiency (%) | 94.2 | 94.2 | 94.4 | 94.8 | 94.4 | 94.4 | 94.5 | 94.9 | 94.6 | 94.6 | 94.7 | 95.0 | 94.9 | 94.9 | 95.0 | 95.2",
    "| Efficiency (%) | 94.3 | 94.4 | 94.5 | 94.5 | 94.5 | 94.6 | 94.6 | 94.6 | 94.6 | 94.7 | 94.8 | 94.8 | 94.8 | 94.9 | 94.9 | 95.0"
   ]
+ },
+ {
+  "n": 1019,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/A056E876-S4L1D-C4-F-W311.pdf",
+  "title": "Datasheet: S4L1D-C41 Wdg.311 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/A056E876-S4L1D-C4-F-W311.pdf",
+  "header": [],
+  "rows": [
+   "S4L1D-C41 Wdg.311 - Technical Data Sheet",
+   "| Voltage Regulation ± 1% | ± 1% | ± 0.5% | ± 0.5% | with 4% Engine",
+   "| Insulation System | Class H",
+   "| Voltage Series Star | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Voltage Parallel Star | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+   "| Voltage Series Delta | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+   "| Weight Wound Stator | 370kg",
+   "| Weight Wound Rotor | 324kg",
+   "| Weight Complete Alternator | 850kg",
+   "| Shipping weight in a Crate | 920kg",
+   "| Packing Crate Size | 155 x 87 x 107 (cm)",
+   "| Maximum Over Speed | 2250",
+   "| Efficiency (%) | 91.3 | 91.4 | 91.7 | 92.1 | 91.5 | 91.5 | 91.8 | 92.2 | 91.9 | 92.0 | 92.2 | 92.5 | 92.3 | 92.4 | 92.6 | 92.8",
+   "| Efficiency (%) | 91.7 | 91.4 | 91.7 | 91.8 | 91.9 | 91.7 | 91.9 | 91.9 | 92.1 | 92.1 | 92.2 | 92.3 | 92.5 | 92.5 | 92.6 | 92.7"
+  ]
+ },
+ {
+  "n": 1020,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/A056E881-S4L1D-G4-G-W311.pdf",
+  "title": "Datasheet: S4L1D-G4 Wdg.311 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/A056E881-S4L1D-G4-G-W311.pdf",
+  "header": [],
+  "rows": [
+   "S4L1D-G4 Wdg.311 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 1% | ± 0.5% | ± 0.5%",
+   "| Insulation System | H",
+   "| Voltage Series Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Voltage Parallel Star (V) | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+   "| Voltage Series Delta (V) | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+   "| Weight Wound Stator | 561kg",
+   "| Weight Wound Rotor | 482kg",
+   "| Weight Complete Alternator | 1190kg",
+   "| Shipping weight in a Crate | 1260kg",
+   "| Packing Crate Size | 155 x 87 x 107(cm)",
+   "| Maximum Over Speed | 2250 RPM for two minutes",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 92.8 | 92.8 | 93.0 | 93.4 | 93.1 | 93.0 | 93.2 | 93.6 | 93.3 | 93.3 | 93.5 | 93.7 | 93.7 | 93.7 | 93.8 | 94.0",
+   "| Efficiency (%) | 92.9 | 92.9 | 93.1 | 93.2 | 93.2 | 93.1 | 93.3 | 93.3 | 93.4 | 93.4 | 93.6 | 93.6 | 93.7 | 93.8 | 93.9 | 93.9"
+  ]
  }
 ]

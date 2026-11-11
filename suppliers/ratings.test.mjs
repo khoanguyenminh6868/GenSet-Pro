@@ -5,7 +5,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { stamfordRatings, stamfordBookRatings, lsRatings, cumminsRatings } from "./ratings.mjs";
-import { altColumns, sourceRatings, comboChecks } from "./config-bot.mjs";
+import { altColumns, sourceRatings, comboChecks, ratingsFor } from "./config-bot.mjs";
 
 // Lines as the saved Stamford UCI274C sheet has them (sources/stamford-avk-china/1002.md): the 50 Hz block runs each
 // class on its own line with N/A for 440 V, the 60 Hz block is one row of 16.
@@ -136,4 +136,14 @@ test("S-range sheet: 'RATINGS AT 0.8 POWER FACTOR', standby columns first, model
 test("Cummins sheet saved with pdftotext -table: any spacing in the headings", () => {
   const r = cumminsRatings(CUMMINS.replace("Net engine output", "Net  engine output").replace("Gross engine output", "Gross engine  output"));
   assert.deepEqual(r.filter((x) => x.rating === "prime").map((x) => [x.gross, x.net]), [[268, 257]]);
+});
+
+test("ratings of a catalog model written with its make before the code (PR 7)", () => {
+  const m = new Map([["S4L1DC41", [{ model: "S4L1D-C41" }]], ["S4L1DG4", [{ model: "S4L1D-G4" }]]]);
+  assert.equal(ratingsFor(m, "Stamford S4L1D-C41").length, 1);
+  assert.equal(ratingsFor(m, "S4L1D-C41").length, 1);
+  // Same code only: no near name (S4L1D-G41 is not S4L1D-G4), no make alone.
+  assert.equal(ratingsFor(m, "Stamford S4L1D-G41").length, 0);
+  assert.equal(ratingsFor(m, "Stamford").length, 0);
+  assert.equal(ratingsFor(m, "").length, 0);
 });
