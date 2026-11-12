@@ -1125,7 +1125,9 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     if (e.model && !withSheet.has(e.model) && hasSheet(e.model)) { sheetMd(e.model); withSheet.add(e.model); }
   }
   out.push("", controllersMd(cat.controllers || [], shown, withSheet));
-  return { md: out.join("\n"), ctlMd: ctlOut.join("\n"), shown, top };
+  // The controller functions the HSMT names × the datasheets above (ctl-lookup.md), when prep gives the HSMT.
+  const ctlLookup = opts.hsmtText ? ctlLookupMd(ctls, (m) => factsFor(facts, "controller", m), opts.hsmtText) : "";
+  return { md: out.join("\n"), ctlMd: ctlOut.join("\n"), shown, top, ctlLookup };
 }
 // Bộ điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
 // names it; a configuration's controller and its "Bộ điều khiển" check quote one of these lines.
@@ -1223,10 +1225,12 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   // the same engine in a Chinese table); only the rows offered as configurations are those of the group's suppliers.
   const facts = grp ? modelFacts({ ...full, engines: byOrigin(full.engines, origin, cn) }, all) : undefined;
   const offGroup = grp ? new Set(byOrigin(full.engines, origin, cn).flatMap((e) => (e.uses || []).map((u) => u.supplierId)).filter((id) => !grp.has(id))).size : 0;
-  const { md, ctlMd, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, keep: keepOf(reqData.prevResult), ...(facts ? { facts } : {}) });
+  const { md, ctlMd, shown, top, ctlLookup } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, keep: keepOf(reqData.prevResult), hsmtText: text, ...(facts ? { facts } : {}) });
   // What earlier runs searched on the internet and did not find, for the models of this run (web-memo.mjs, Khoa 2026-11-12).
   const runList = runModels(top), negMd = MEMO.negativesMd(MEMO.loadNeg(WEB_MEMO_DIR), runList, new Date().toISOString().slice(0, 10));
-  fs.writeFileSync(path.join(dir, "catalog.md"), md + (negMd ? "\n\n" + negMd : "") + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))), "utf8");
+  // catalog.md whole for the code and grep; parts under the Read limit for the agent (writeForRead, read-order.json).
+  const catFiles = writeForRead(dir, "catalog.md", md + (negMd ? "\n\n" + negMd : "") + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))));
+  const lookFiles = ctlLookup ? writeForRead(dir, "ctl-lookup.md", ctlLookup) : [];
   fs.writeFileSync(path.join(dir, "models.json"), JSON.stringify(runList), "utf8");
   if (ctlMd) fs.writeFileSync(path.join(dir, "controllers.md"), ctlMd, "utf8");
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
@@ -1240,7 +1244,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   const reqHash = reqHashOf(parts.join(""), extraOf(reqData)), prevReq = reqData.prevResult;
   const reuse = prevReq?.reqHash === reqHash && prevReq.requirements?.length && prevReq.requirements.every((r) => r.level && r.part && r.code && !r.unverified);
   if (reuse)fs.writeFileSync(path.join(dir, "requirements.json"), JSON.stringify(prevReq.requirements.filter((r) => !r.byCode).map(({ code, item, requirement, quote, from, part, level, parts }) => ({ code, item, requirement, quote, ...(from ? { from } : {}), part, level, ...(parts ? { parts: parts.map((p) => ({ item: p.item })) } : {}) })), null, 1), "utf8");
-  fs.writeFileSync(path.join(dir, "input.md"), [
+  const inputFiles = writeForRead(dir, "input.md", [
     `# Gói thầu ${key}`, reqData.bidName ? `Tên gói: ${reqData.bidName}` : "", cap ? `Công suất đọc được: ${cap.value} ${cap.unit} (chỉ để lọc danh mục; yêu cầu thật lấy từ HSMT)` : "Chưa đọc được công suất từ tên gói / phân tích.",
     ...(multi?.only ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`, `Lượt Tìm NCC này CHỈ tìm cho máy ${sizeText(multi.size)}.`]
     : multi?.find ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`, `Tìm nhà cung cấp cho mọi cỡ máy này (danh mục trong catalog.md chỉ xếp cho máy ${multi.size.label}).`]
@@ -1270,9 +1274,41 @@ HSMT đòi THƯƠNG HIỆU ${GROUP_NAME[origin]}, không nói nơi sản xuất 
     "## Thông số kỹ thuật theo phân tích (chỉ để định hướng, trích dẫn phải lấy từ hsmt.txt)",
     ...(a?.technicalSpecs || []).map((s) => `- ${s.item}: ${s.requirement}${s.reference ? ` (${s.reference})` : ""}`), "",
     "## Phần kỹ thuật của HSMT", technicalPart(text),
-  ].filter((l) => l !== null).join("\n"), "utf8");
+  ].filter((l) => l !== null).join("\n"));
+  // What the agent reads, in order, each file whole (agentInput): no file over the Read limit, none read twice.
+  fs.writeFileSync(path.join(dir, "read-order.json"), JSON.stringify([...inputFiles, ...catFiles, ...lookFiles]), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "config-prompt.md"), "utf8") + formulasMd(), "utf8");
   return { cap, size: multi?.size || null, origin, originAuto: auto ? { from: asked, origin: auto.origin, quote: auto.quote, ...(GROUP_ORIGIN.has(auto.origin) && !partsOnly ? { basis: brand ? "brand" : "origin" } : {}) } : null, reqHash, reused: !!reuse, candidates: top.length, engines: cat.engines.length, alternators: cat.alternators.length };
+}
+
+// How to fix what check printed (2026-11-12, token-do.md: runs went 2–5 rounds through "số 11.05", "câu trích nguồn"...,
+// rebuilding their script after each). Printed once by `check --dir .`, after the list; only words, check is unchanged.
+const FIX = [
+  [/: số [\d.]+/, "số trong `offered` không có trong `sourceQuote` (với factSrc: trong số liệu của dòng đó), cũng không phải đầu vào / kết quả của `conversions`: chỉ ghi trong offered các số có trong câu trích, hoặc thêm phép quy đổi (web/conversions.js); bên dưới có các số của từng câu trích."],
+  [/số công suất không phải cột/, "check công suất Prime / Standby phải ghi số của đúng cột đó trong dòng bảng (tiêu đề cột ở mục \"Tiêu đề bảng\"); không phân biệt được cột thì để unclear."],
+  [/câu trích nguồn(?!.*thiếu)/, "`sourceQuote` không có nguyên văn trong nguồn của bộ phận đó (dòng bảng + tiêu đề bảng, trang đã lưu, hoặc dòng factSrc): chép đúng từng ký tự (kể cả `|` và khoảng trắng) từ catalog.md / controllers.md / web/N.txt."],
+  [/thiếu câu trích nguồn/, "met / not_met phải có `sourceQuote`; không có thì để unclear."],
+  [/câu trích HSMT|Câu trích yêu cầu không có trong HSMT/, "`hsmtQuote` / `quote` phải chép nguyên văn một đoạn của hsmt.txt (thử bằng grep -F)."],
+  [/factSrc không phải dòng ghi thông số/, "`factSrc` phải là { supplierId, n, line } của một dòng ở \"Thông số theo model\" (hoặc ctl-lookup.md / controllers.md với bộ điều khiển) của ĐÚNG model của cấu hình, chép nguyên dòng."],
+  [/không tìm thấy nguồn/, "`src` của bộ phận phải là một dòng của catalog.md (catalog), một dòng bộ điều khiển (controller) hay trang đã lưu (internet); bộ phận nguồn không ghi thì để null, đừng để object rỗng."],
+  [/model .* không có trong nguồn/, "`model` phải viết như dòng nguồn của bộ phận đó ghi."],
+  [/hãng .* không ghi trong nguồn/, "`make` chỉ ghi khi nguồn ghi (catalog.md cho biết hãng lấy từ đâu); không thì để trống."],
+  [/câu trích web không có trong trang đã lưu/, "`src.quote` phải chép từ đúng tệp web/N.txt đã lưu bằng lệnh save."],
+];
+export function fixNotes(problems = [], result = {}) {
+  const kinds = FIX.filter(([re]) => problems.some((p) => re.test(p)));
+  if (!kinds.length) return "";
+  const out = ["", `CÁCH SỬA — ${kinds.length} loại lỗi ở trên (sửa hết một lượt rồi chạy lại check một lần):`, ...kinds.map(([, how]) => `- ${how}`)];
+  // The numbers each quote of a "số …" problem has, so the fix is read here and not searched for.
+  const nums = [];
+  for (const p of problems) {
+    const m = p.match(/^#(\d+) (.+?): .*\bsố [\d.]+/);
+    if (!m) continue;
+    const c = (result.configs || []).find((c) => c.rank === Number(m[1]));
+    const x = (c?.checks || []).find((x) => x.item === m[2]) || (c?.checks || []).flatMap((x) => (x.parts || []).map((q) => ({ ...q, item: `${x.item}: ${q.item}` }))).find((x) => x.item === m[2]);
+    if (x?.sourceQuote) nums.push(`- #${m[1]} ${m[2]}: câu trích ${JSON.stringify(String(x.sourceQuote).slice(0, 160))} có các số ${JSON.stringify([...new Set(numbersLoose(x.sourceQuote))])}; offered: ${JSON.stringify(x.offered ?? "")}`);
+  }
+  return [...out, ...(nums.length ? ["Số trong từng câu trích:", ...nums] : [])].join("\n");
 }
 
 // ---------- save (agent: internet sources) ----------
@@ -1337,6 +1373,76 @@ const CTL_WORDS = [
 ];
 // The measured quantities (a controller measures them; a protection or another function that names one is about more).
 const CTL_MEASURE = new Set(CTL_WORDS.filter(([re]) => ["điện áp", "dòng điện", "tần số", "công suất", "hệ số công suất"].some((w) => re.test(w))));
+// Not the module's own specification (its supply voltage, current, test standards, clock battery).
+const CTL_OWN = /BS EN|IEC 600|Operating Current|Continuous Voltage|Cranking|Standby Current|Humidity|Vibration|Shock|RTC|Temperature Range|Cut[- ]?out|Dimensions/i;
+// The first datasheet line of a controller (its facts) that one of `words` (English regexes of CTL_WORDS) matches, in the
+// order of `words`: what check's hint names for an "unclear" controller function, and ctlLookupMd lists before the run.
+export const ctlLineFor = (list, words) => {
+  const lines = (list || []).filter((f) => f.line.length <= 240 && !CTL_OWN.test(f.line));
+  return words.map((en) => lines.find((f) => en.test(f.line))).find(Boolean) || null;
+};
+// ctl-lookup.md (2026-11-12, token-do.md: one run grepped controllers.md 11 times, one function after another): for each
+// function of CTL_WORDS the HSMT's technical part names (its Vietnamese words on one of its lines), each controller of
+// catalog.md that has its maker's datasheet → the line check's hint would name (ctlLineFor), word for word with its
+// factSrc, or that no line has the function's words. A guide only: the agent still decides and check() checks the quote.
+export function ctlLookupMd(models, factsOfModel, hsmtText) {
+  const tech = technicalPart(hsmtText || "").split("\n").map((l) => l.trim()).filter(Boolean);
+  const named = CTL_WORDS.map(([vi, en]) => ({ vi, en, at: tech.find((l) => vi.test(l)) })).filter((w) => w.at);
+  if (!named.length || !models.length) return "";
+  const out = ["# Tra cứu sẵn: chức năng bộ điều khiển HSMT nêu × datasheet", "",
+    "Code dò trước bằng đúng bộ từ khoá mà lệnh check dùng để gợi ý dòng (CÓ THỂ TRA ĐƯỢC). Đây chỉ là chỉ dẫn tìm: đọc dòng, tự kết luận đạt / không đạt / chưa rõ; \"không thấy dòng nào\" chỉ nghĩa là không dòng nào có các từ khoá đó — muốn chắc thì grep controllers.md bằng từ khác. Câu trích và factSrc vẫn được check kiểm như cũ.", "",
+    "## Chức năng HSMT nêu (dòng HSMT đầu tiên có chữ đó)", "",
+    ...named.map((w, i) => `- F${i + 1}: ${JSON.stringify(w.at.slice(0, 160))} — từ khoá datasheet: ${w.en.source}`), ""];
+  for (const m of models) {
+    const list = factsOfModel(m);
+    if (!list.length) continue;
+    // Each line once, as its factSrc (the line is the quote); the functions found on no line in one row.
+    const none = [];
+    out.push(`## ${m}`);
+    for (const [i, w] of named.entries()) {
+      const f = ctlLineFor(list, [w.en]);
+      if (f) out.push(`- F${i + 1}: { "supplierId": "${f.supplierId}", "n": ${f.n}, "line": ${JSON.stringify(f.line)} }${f.version ? ` (datasheet ${f.version}: cần xác nhận đời)` : ""}`);
+      else none.push(`F${i + 1}`);
+    }
+    if (none.length) out.push(`- không thấy dòng nào: ${none.join(", ")}`);
+    out.push("");
+  }
+  return out.join("\n");
+}
+// The Read tool refuses a file of more than 25000 tokens (2026-11-12 logs: catalog.md parts of 29666, 32783, 37081
+// tokens were refused and read again; input.md of ~26000 was cut at line 644 without a word). Measured ≈ 2 characters a
+// token for these files, 1.5 at worst: READ_MAX characters stays under 20000 tokens.
+export const READ_MAX = 30000;
+// Text cut into parts of at most `max` characters: at "## " headings first, then "### ", then lines.
+export function splitForRead(text, max = READ_MAX) {
+  const parts = [];
+  const cut = (t, levels) => {
+    if (t.length <= max) return [t];
+    const [re, ...rest] = levels;
+    const pieces = re ? t.split(re).filter((p) => p.length) : t.split(/(?<=\n)/);
+    const out = [];
+    let cur = "";
+    for (const p of pieces) {
+      if (p.length > max) { if (cur) out.push(cur); cur = ""; out.push(...(re ? cut(p, rest) : [p.slice(0, max), ...cut(p.slice(max), [])])); continue; }
+      if (cur.length + p.length > max) { out.push(cur); cur = ""; }
+      cur += p;
+    }
+    if (cur) out.push(cur);
+    return out;
+  };
+  parts.push(...cut(String(text || ""), [/(?=^## )/m, /(?=^### )/m]));
+  return parts;
+}
+// Writes `name` whole (the code and grep use it) and, when it is longer than READ_MAX, its parts <base>-1.md ... for the
+// agent to Read one after another. Returns the files the agent reads, in order.
+export function writeForRead(dir, name, text) {
+  const base = name.replace(/\.md$/, "");
+  for (const f of fs.readdirSync(dir)) if (new RegExp(`^${base}-\\d+\\.md$`).test(f)) fs.rmSync(path.join(dir, f));
+  fs.writeFileSync(path.join(dir, name), text, "utf8");
+  const parts = splitForRead(text);
+  if (parts.length < 2) return [name];
+  return parts.map((p, i) => { const f = `${base}-${i + 1}.md`; fs.writeFileSync(path.join(dir, f), p, "utf8"); return f; });
+}
 
 // ---------- check ----------
 // Returns { result, problems } with result fixed in place: unverified marks, "met" without proof → "unclear".
@@ -1371,10 +1477,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       const trip = /bảo vệ|cảnh báo|dừng máy|báo động|ngắt|alarm|shutdown|protect|trip/i.test(`${x.item} ${what}`);
       const TRIP = [[/điện áp/i, /over\s?-?voltage|under\s?-?voltage|(high|low) voltage/i], [/tần số|\bHz\b/i, /(over|under)\s?-?frequency|(high|low) frequency/i], [/dòng điện|công suất|\bkW\b/i, /over\s?-?current|overload|over\s?-?power|reverse power/i]];
       const words = named.length ? named.map(([, en]) => en) : trip ? TRIP.filter(([re]) => re.test(what)).map(([, en]) => en) : all.map(([, en]) => en);
-      // Not the module's own specification (its supply voltage, current, test standards, clock battery).
-      const own = /BS EN|IEC 600|Operating Current|Continuous Voltage|Cranking|Standby Current|Humidity|Vibration|Shock|RTC|Temperature Range|Cut[- ]?out|Dimensions/i;
-      const lines = factsOf(c, "controller").filter((f) => f.line.length <= 240 && !own.test(f.line));
-      const f = words.map((en) => lines.find((f) => en.test(f.line))).find(Boolean);
+      const f = ctlLineFor(factsOf(c, "controller"), words);
       return f ? { where: `datasheet ${f.sheetModel || c.controller.model}`, line: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line } } : null;
     }
     const keys = ITEM_KEYS.filter(([re]) => re.test(what)).flatMap(([, k]) => k);
@@ -3058,6 +3161,22 @@ export async function addToCatalog(dir, key, suppliers, opts = {}) {
 
 // ---------- run ----------
 const AGENT_INPUT = "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md, hsmt.txt, catalog.md, chỉ ghi result.json (và newCatalog.json khi prompt.md yêu cầu). Chạy không người trông, không ai trả lời câu hỏi.";
+// The agent's first message (2026-11-12, token-do.md): the instructions themselves, not "read prompt.md" — 4 of 6 runs
+// opened with `ls; cat prompt.md`, whose 30 KB went past the shell's output limit, came back as a 2 KB preview and was
+// read a second time — then the files to read, each under the Read limit, in order (read-order.json, prep).
+export function agentInput(dir) {
+  const p = (f) => path.join(dir, f);
+  if (!fs.existsSync(p("prompt.md")) || !fs.existsSync(p("read-order.json"))) return AGENT_INPUT;
+  const order = JSON.parse(fs.readFileSync(p("read-order.json"), "utf8"));
+  fs.mkdirSync(p("scripts"), { recursive: true });
+  return [fs.readFileSync(p("prompt.md"), "utf8").trim(), "", "---", "",
+    "Các hướng dẫn ở trên chính là prompt.md của thư mục này (không cần mở lại). Chạy không người trông, không ai trả lời câu hỏi; chỉ ghi result.json (và newCatalog.json khi hướng dẫn yêu cầu).",
+    `Đọc bằng Read, theo thứ tự, mỗi tệp một lần, trọn tệp (không cần offset / limit — code đã cắt mỗi tệp dưới giới hạn của Read): ${order.join(", ")}.`
+      + (order.some((f) => /^(catalog|input)-\d+\.md$/.test(f)) ? " Các tệp catalog-N.md / input-N.md là catalog.md / input.md cắt theo mục, chữ y hệt; catalog.md, input.md vẫn để nguyên để grep, không Read lại chúng." : ""),
+    "hsmt.txt và controllers.md: chỉ grep / sed theo dòng, không đọc trọn.",
+    "Script tự viết (dựng result.json, newCatalog.json...) để trong thư mục scripts/ của thư mục này, chạy bằng node (máy không có python); đừng dùng thư mục tạm ngoài thư mục này: lượt khác (cỡ máy khác chạy song song, lượt cũ) có thể đang dùng tên đó.",
+  ].join("\n");
+}
 // A tender of several sizes (sizesOf, Khoa 2026-11-04): one agent per size, at most MAX_SIZES, all at once; their
 // internet finds join the catalog one size after another (each its own branch), then each is checked like a tender
 // of one size. configmatch/<key> then holds result.sizes = [{ cap, kva, qty, label, quote, result | error }], each
@@ -3091,7 +3210,7 @@ async function answer(req, suppliers) {
       // Gợi ý lại reuses the requirements read last time for the same size (prep, requirements.json).
       const prevResult = size ? prev?.sizes?.find((x) => sameSize(x, size))?.result : prev?.sizes ? null : prev;
       const info = await prep(key, dir, { ...req, prevResult }, suppliers, size && { size, sizes: found });
-      const r = await runClaude(dir, AGENT_INPUT);
+      const r = await runClaude(dir, agentInput(dir));
       fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${tag}.log`), `${r.stdout || ""}
 ${r.stderr || ""}`, "utf8");
       return { dir, info, r, size, i, prevResult };
@@ -3885,6 +4004,8 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     const { problems, result, hints, uncovered, missing } = checkDir(dir, local("suppliers.json") || (await allDocs("supplier")).map((d) => d.data), [], local("meta.json")?.origin);
     fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
     console.log(problems.length ? problems.join("\n") : "Không có điểm nào chưa khớp nguồn.");
+    const fix = fixNotes(problems, result);
+    if (fix) console.log(fix);
     const others = (result.requirements || []).filter((r) => r.code === OTHER_CODE);
     if (others.length) console.log(`\nYÊU CẦU MÃ other (${others.length}; xem lại bảng Mã yêu cầu trong input.md, mã nào hợp thì đổi code): ${others.map((r) => r.item).join("; ")}`);
     if (missing?.length) console.log(`\nMÃ YÊU CẦU CHƯA CÓ — ${missing.length} mã mà HSMT có dòng nói tới nhưng requirements chưa có (code dò chữ, có thể nhầm: đọc dòng đó trong hsmt.txt; là yêu cầu của tổ máy / động cơ / đầu phát / bộ điều khiển thì thêm requirement với code đó và check cho mọi cấu hình, không phải thì bỏ qua):\n${missing.map((m) => `- ${m.code} (${m.item}, ${m.part}): ${JSON.stringify(m.line.slice(0, 160))}`).join("\n")}`);

@@ -38,7 +38,10 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     each line of the controller of its heading, with the `supplierId` / `n` to quote it (Deep Sea, SmartGen, ComAp). ALL the lines are in
     `controllers.md` (a datasheet runs to 250 lines, a SmartGen manual to 700): for every controller requirement
     (event log, protections, emergency stop, measurements, AMF, RS485...) search controllers.md with grep under that
-    controller's heading before writing `unclear`.
+    controller's heading before writing `unclear`. `ctl-lookup.md` (when the message lists it) has done the first
+    search for you: for each controller function the HSMT names (F1, F2...) and each controller with a datasheet, the
+    line the check's hints would name, with its factSrc, or "không thấy dòng nào". Read the line and decide yourself;
+    grep controllers.md only for a function it does not find or a line that does not settle it.
     A controller of "Bộ điều khiển" marked "có datasheet hãng" has its datasheet only in controllers.md: before
     giving a configuration that controller, or writing `unclear` on its functions, grep controllers.md for its model.
   - "Nhà cung cấp khác có dòng ghi cùng động cơ": more rows naming those engines, to pick `suppliers` from.
@@ -51,7 +54,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
 - `suppliers.json`, `meta.json`: what the check command reads; do not open them.
 
 ## Working fast (a run used to take 10 minutes, Khoa 2026-10-29)
-- Read input.md and catalog.md once each, in large parts; search hsmt.txt with grep for the quotes.
+- Read the files the message lists, in that order, each once and whole (the code keeps each under the Read limit;
+  catalog-N.md / input-N.md are catalog.md / input.md cut at their headings, word for word, and a `line` copied from
+  them is a line of catalog.md); search hsmt.txt with grep for the quotes.
 - Do not read the repo's source code (config-bot.mjs, verify.mjs, web/catalog.js, suppliers/) and do not write your
   own checker: run the check command in input.md once when result.json is written. It works offline, prints every
   point that does not match its source (or that none fails) and writes `result.checked.json`. Fix what it prints and
