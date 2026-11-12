@@ -175,8 +175,9 @@ export const forget = (entries, model) => { const k = keyOf(model); return { ent
 export const negativesFor = (entries, part, model, today) => entries.filter((e) => e.part === part && e.modelKey === keyOf(model) && isLive(e, today));
 const PART_VI = { engine: "Động cơ", alternator: "Đầu phát", controller: "Bộ điều khiển", genset: "Tổ máy" };
 export function negLine(e) {
-  const where = e.where.map((w) => (isUrl(w) ? `${w}${e.statuses?.[cleanUrl(w)] ? ` (HTTP ${e.statuses[cleanUrl(w)]})` : ""}` : `tìm "${w}"`)).join("; ");
-  const what = e.what === "datasheet" ? `datasheet trên ${e.hosts.length ? e.hosts.join(", ") : "các nguồn đã tìm"} (phủ mọi thông số của model trên ${e.hosts.length > 1 ? "các" : ""} tên miền đó, không phủ tên miền khác)` : e.what;
+  const all = e.where.map((w) => (isUrl(w) ? `${w}${e.statuses?.[cleanUrl(w)] ? ` (HTTP ${e.statuses[cleanUrl(w)]})` : ""}` : `tìm "${w}"`));
+  const where = all.slice(0, 4).join("; ") + (all.length > 4 ? `; và ${all.length - 4} chỗ khác` : "");
+  const what = e.what === "datasheet" ? `datasheet trên ${e.hosts.length ? e.hosts.join(", ") : "các nguồn đã tìm"} (phủ mọi thông số của model trên ${e.hosts.length > 1 ? "các " : ""}tên miền đó, không phủ tên miền khác)` : e.what;
   return e.outcome === "blocked"
     ? `- ${what}: đã tra ngày ${e.date} — trang hãng chặn tải tự động (${where}). KHÔNG thử lại, không đổi User-Agent, không tìm bản sao để lách.`
     : `- ${what}: đã tra ngày ${e.date}, không tìm thấy (${where}) — đừng tra lại; ghi trạng thái như khi nguồn không ghi.`;
