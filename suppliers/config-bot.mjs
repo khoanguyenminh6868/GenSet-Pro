@@ -33,6 +33,7 @@ import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes
 import { ratingsOf, stamfordRatings, altSheetAttrs } from "./ratings.mjs";
 import { viaApi, noteApiSpend, costOf, switchToPlan } from "./api-budget.mjs";
 import * as MEMO from "./web-memo.mjs";
+import * as RG from "./read-guard.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -1489,19 +1490,26 @@ export function ctlLookupMd(models, factsOfModel, hsmtText) {
 // tokens were refused and read again; input.md of ~26000 was cut at line 644 without a word). Measured ≈ 2 characters a
 // token for these files, 1.5 at worst: READ_MAX characters stays under 20000 tokens.
 export const READ_MAX = 30000;
-// Text cut into parts of at most `max` characters: at "## " headings first, then "### ", then lines.
+// The size of a text against READ_MAX: a character counts 1, a Chinese / Japanese / Korean one 1.5 (about a token
+// each: catalog.md quotes Chinese tables; 30000 of them would be ~30000 tokens, over the Read limit). read guard 2026-11-12.
+const CJK = /[⺀-鿿가-힯豈-﫿＀-￯]/g;
+export const readSize = (t) => { const s = String(t || ""); return s.length + 0.5 * (s.match(CJK) || []).length; };
+// Text cut into parts of at most `max` (readSize): at "## " headings first, then "### ", then lines; a single line
+// longer than that is cut inside, every character kept (the parts joined give the text back).
 export function splitForRead(text, max = READ_MAX) {
   const parts = [];
+  const head = (p) => { let n = Math.min(p.length, max), s = readSize(p.slice(0, n)); while (s > max && n > 1) { n = Math.max(1, Math.floor(n * max / s) - 1); s = readSize(p.slice(0, n)); } return n; };
   const cut = (t, levels) => {
-    if (t.length <= max) return [t];
+    if (readSize(t) <= max) return [t];
     const [re, ...rest] = levels;
     const pieces = re ? t.split(re).filter((p) => p.length) : t.split(/(?<=\n)/);
     const out = [];
-    let cur = "";
+    let cur = "", size = 0;
     for (const p of pieces) {
-      if (p.length > max) { if (cur) out.push(cur); cur = ""; out.push(...(re ? cut(p, rest) : [p.slice(0, max), ...cut(p.slice(max), [])])); continue; }
-      if (cur.length + p.length > max) { out.push(cur); cur = ""; }
-      cur += p;
+      const ps = readSize(p);
+      if (ps > max) { if (cur) out.push(cur); cur = ""; size = 0; if (re) out.push(...cut(p, rest)); else { const n = head(p); out.push(p.slice(0, n), ...cut(p.slice(n), [])); } continue; }
+      if (size + ps > max) { out.push(cur); cur = ""; size = 0; }
+      cur += p; size += ps;
     }
     if (cur) out.push(cur);
     return out;
@@ -1980,6 +1988,24 @@ const SPEC_TOPICS = [
   ["khí thải", /khí\s*thải|emission|\bTier\b|\bStage\b|Euro/i], ["nhiệt độ môi trường", /nhiệt\s*độ\s*(môi\s*trường|làm\s*việc)|°C/i],
 ];
 const SPEC_NOT = /hồ\s*sơ|thông\s*tin|phụ\s*kiện|quản\s*lý\s*chất\s*lượng|bảo\s*hành|bảo\s*trì|đào\s*tạo|vận\s*chuyển|lắp\s*đặt|bàn\s*giao|tài\s*liệu|catalogue|\bCO\b|\bCQ\b|hải\s*quan|\bATS\b|cáp|đầu\s*cốt|ống\s*(luồn|thoát|xả)|tiếp\s*địa|phụ\s*tùng|vật\s*tư|nhân\s*sự|tiến\s*độ|số\s*lượng|năm\s*sản\s*xuất|tình\s*trạng|mới\s*100|thử\s*(tải|nghiệm)|kiểm\s*(tra|định)|nghiệm\s*thu|chạy\s*thử|vỏ\s*(chống|cách|giảm)|sơn|khung|giảm\s*thanh|nạp\s*lần|ắc\s*quy|phạm\s*vi|đại\s*(diện|lý)|ủy\s*quyền|dịch\s*vụ/i;
+// The coverage of the HSMT in code, apart from what the agent read (read guard, điều phối 2026-11-12): checkDir's
+// `missing` (a requirement code a line of the HSMT's technical part names that no requirement carries) and `uncovered`
+// (an analysis line whose topic no requirement mentions) went only to the CLI; and a requirement some configuration has
+// no check of. Notes only: no status is changed (rankConfigs already counts a core requirement without a check as unclear).
+export function coverNotes(result, { missing = [], uncovered = [] } = {}) {
+  const notes = [];
+  if (missing.length) notes.push(`Phần kỹ thuật HSMT có dòng nói tới ${missing.length} điểm chưa có trong danh sách yêu cầu (code dò chữ, có thể nhầm): ${missing.map((m) => `${m.item} — "${m.line.slice(0, 120)}"`).join("; ")}. Các cấu hình chưa được đối chiếu với các điểm này — bấm Gợi ý lại hoặc kiểm tay.`);
+  if (uncovered.length) notes.push(`Phân tích HSMT có ${uncovered.length} dòng thông số chưa có yêu cầu tương ứng: ${uncovered.map((u) => u.replace(/^- /, "")).join("; ")}.`);
+  const reqs = (result?.requirements || []).filter((r) => r.item && !r.byCode && !r.unverified);
+  const lack = [];
+  for (const c of result?.configs || []) {
+    const have = new Set((c.checks || []).map((x) => norm(x.item)));
+    const miss = reqs.filter((r) => r.level !== "option" && !have.has(norm(r.item))).map((r) => r.item);
+    if (miss.length) lack.push(`#${c.rank ?? "?"} (${miss.join(", ")})`);
+  }
+  if (lack.length) notes.push(`Có cấu hình chưa có điểm đối chiếu cho một số yêu cầu chính của HSMT (tính là chưa rõ): ${lack.join("; ")}.`);
+  return notes;
+}
 export function uncoveredSpecs(specs, reqs) {
   const have = (reqs || []).map((r) => `${r.item} ${r.requirement || ""} ${(r.parts || []).map((p) => p.item).join(" ")}`).join("\n");
   const out = [];
@@ -3240,15 +3266,16 @@ const AGENT_INPUT = "Đọc prompt.md trong thư mục này và làm đúng như
 // The agent's first message (2026-11-12, token-do.md): the instructions themselves, not "read prompt.md" — 4 of 6 runs
 // opened with `ls; cat prompt.md`, whose 30 KB went past the shell's output limit, came back as a 2 KB preview and was
 // read a second time — then the files to read, each under the Read limit, in order (read-order.json, prep).
-export function agentInput(dir) {
+export function agentInput(dir, task = "") {
   const p = (f) => path.join(dir, f);
   if (!fs.existsSync(p("prompt.md")) || !fs.existsSync(p("read-order.json"))) return AGENT_INPUT;
   const order = JSON.parse(fs.readFileSync(p("read-order.json"), "utf8"));
   fs.mkdirSync(p("scripts"), { recursive: true });
   return [fs.readFileSync(p("prompt.md"), "utf8").trim(), "", "---", "",
-    "Các hướng dẫn ở trên chính là prompt.md của thư mục này (không cần mở lại). Chạy không người trông, không ai trả lời câu hỏi; chỉ ghi result.json (và newCatalog.json khi hướng dẫn yêu cầu).",
+    `Các hướng dẫn ở trên chính là prompt.md của thư mục này (không cần mở lại). Chạy không người trông, không ai trả lời câu hỏi; ${task || "chỉ ghi result.json (và newCatalog.json khi hướng dẫn yêu cầu)"}.`,
     `Đọc bằng Read, theo thứ tự, mỗi tệp một lần, trọn tệp (không cần offset / limit — code đã cắt mỗi tệp dưới giới hạn của Read): ${order.join(", ")}.`
       + (order.some((f) => /^(catalog|input)-\d+\.md$/.test(f)) ? " Các tệp catalog-N.md / input-N.md là catalog.md / input.md cắt theo mục, chữ y hệt; catalog.md, input.md vẫn để nguyên để grep, không Read lại chúng." : ""),
+    "Các tệp trong danh sách trên KHÔNG được đọc bằng Bash (cat, head, tail, sed, cut, head -c / tail -c, | cut -c…): đầu ra shell bị cắt và cut bỏ chữ cuối dòng. Code kiểm trong log của lượt này mọi dòng của các tệp đó đã qua Read; thiếu dòng nào thì kết quả bị ghi là chưa đọc hết.",
     "hsmt.txt và controllers.md: chỉ grep / sed theo dòng, không đọc trọn.",
     "Script tự viết (dựng result.json, newCatalog.json...) để trong thư mục scripts/ của thư mục này, chạy bằng node (máy không có python); đừng dùng thư mục tạm ngoài thư mục này: lượt khác (cỡ máy khác chạy song song, lượt cũ) có thể đang dùng tên đó.",
   ].join("\n");
@@ -3296,11 +3323,32 @@ ${r.stderr || ""}`, "utf8");
     for (const { dir, info, r, size, i, prevResult } of runs) {
       try {
         if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
+        // A run stopped half-way (timeout, killed, an error end) may have left a result.json half written: it is not
+        // taken as a full answer. The last result of this size stays, with a note; none → the half result, with the note.
+        const stopped = RG.stoppedNote(RG.readTrace(r.stdout || "").end, r.error?.message || "");
+        if (stopped && prevResult?.configs) {
+          const kept = JSON.parse(JSON.stringify(prevResult));
+          kept.notes = [...(kept.notes || []).filter((n) => !/^Lượt Gợi ý lại lúc .* bị dừng giữa chừng/.test(n)), `Lượt Gợi ý lại lúc ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC bị dừng giữa chừng (${stopped}); đang hiển thị kết quả lần trước — bấm Gợi ý lại.`];
+          console.log(`${key}${size ? ` máy ${size.label}` : ""}: lượt agent bị dừng giữa chừng (${stopped}) — giữ kết quả lần trước`);
+          outs.push({ size, result: kept, problems: [] });
+          continue;
+        }
         // Internet finds that pass verify.mjs join the catalog first, so the configuration's suppliers can point at them.
         const opts = size ? { branch: `catalog/${key.toLowerCase()}-${i + 1}`, title: `Danh mục: bổ sung từ Gợi ý cấu hình ${key} (máy ${size.label})` } : {};
         const { added, records } = await addToCatalog(dir, key, all, opts).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
         all = [...all.filter((s) => !records.some((x) => x.id === s.id)), ...records];
-        const { result, problems } = checkDir(dir, all, added, info.origin);
+        const { result, problems, missing, uncovered } = checkDir(dir, all, added, info.origin);
+        // Read guard (điều phối 2026-11-12): what the agent really read, from its log, and what of the HSMT no check
+        // covers — notes on the result, never trusted from the agent.
+        try {
+          const label = size ? `máy ${size.label}` : "";
+          const g = RG.guardRun(dir, r.stdout || "", { label });
+          const cov = coverNotes(result, { missing, uncovered });
+          result.notes = [...(result.notes || []), ...g.notes, ...cov];
+          if (g.notes.length) console.log(`${key}${size ? ` máy ${size.label}` : ""}: CHỐT ĐỌC — ${g.notes.join(" | ")}`);
+          if (cov.length) console.log(`${key}${size ? ` máy ${size.label}` : ""}: độ phủ yêu cầu — ${cov.length} ghi chú`);
+          if (g.notes.length) result.readIncomplete = true;
+        } catch (e) { console.log(`${key}: chưa kiểm được việc đọc đầu vào (${e.message})`); }
         // Searches the agent says found nothing, kept when this run's log shows them (web-memo.mjs, Khoa 2026-11-12).
         try {
           const listed = fs.existsSync(path.join(dir, "models.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "models.json"), "utf8")) : [];
@@ -3464,6 +3512,9 @@ export async function findPrep(key, dir, req, suppliers) {
   // Tìm NCC must see every supplier in the system (not only those of the candidate rows), so as not to suggest them again.
   const cat = fs.readFileSync(path.join(dir, "catalog.md"), "utf8"), cut = cat.indexOf("\n\n# Nhà cung cấp trong hệ thống");
   fs.writeFileSync(path.join(dir, "catalog.md"), (cut >= 0 ? cat.slice(0, cut) : cat) + "\n\n" + suppliersMd(JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8"))), "utf8");
+  // The parts prep cut for Gợi ý no longer match catalog.md / input.md rewritten here (read guard 2026-11-12): gone, so
+  // the agent cannot read a stale one. find-prompt.md reads input.md and the first lines of catalog.md.
+  for (const f of fs.readdirSync(dir)) if (/^(catalog|input|ctl-lookup)-\d+\.md$|^read-order\.json$/.test(f)) fs.rmSync(path.join(dir, f));
   const watch = fs.existsSync(path.join(ROOT, "discover-watchlist.json")) ? JSON.parse(fs.readFileSync(path.join(ROOT, "discover-watchlist.json"), "utf8")) : [];
   const head = [
     `# Tìm NCC cho gói ${key}`, "",
@@ -3612,6 +3663,8 @@ async function mergeFindIntoConfig(key, records, { cap, origin, suppliers = reco
       const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
       out.checked = await checkNewConfigs(key, result, out.created.map((c) => c.rank), all, part.cap).catch((e) => ({ error: e.message }));
       result.notes.push(out.checked.error ? `Chưa đối chiếu được cấu hình mới với HSMT: ${out.checked.error}` : `Đã đối chiếu ${out.checked.checked} cấu hình mới với ${result.requirements.length} yêu cầu của HSMT${out.checked.problems ? `, ${out.checked.problems} điểm chưa khớp nguồn` : ""}.`);
+      // Read guard of the check run (catalog parts read whole, a run stopped half-way).
+      for (const n of out.checked.readNotes || []) result.notes.push(`Đối chiếu cấu hình Tìm NCC: ${n}`);
     }
     rankConfigs(result);
   }
@@ -3634,16 +3687,23 @@ async function checkNewConfigs(key, result, ranks, suppliers, cap) {
     fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
     const cat = CAT.build(suppliers), focus = new Set(mine.map((c) => CAT.keyOf(c.engine.model)));
     const { md, ctlMd, shown } = catalogMd(cat, cap, hintsOf(text, result.extra || ""), { suppliers, origin: "all", focus });
-    fs.writeFileSync(path.join(dir, "catalog.md"), md + "\n\n" + suppliersMd(suppliers.filter((s) => shown.has(s.id))), "utf8");
+    // Parts under the Read limit and the order to read them, as for Gợi ý (read guard 2026-11-12: this catalog.md was
+    // written whole, 100–150 thousand characters, over the limit).
+    const catFiles = writeForRead(dir, "catalog.md", md + "\n\n" + suppliersMd(suppliers.filter((s) => shown.has(s.id))));
+    fs.writeFileSync(path.join(dir, "read-order.json"), JSON.stringify(catFiles), "utf8");
     if (ctlMd) fs.writeFileSync(path.join(dir, "controllers.md"), ctlMd, "utf8");
     fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(suppliers), "utf8");
     fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin: result.origin || "all", ...(result.originBasis ? { basis: result.originBasis } : {}) }), "utf8");
     fs.writeFileSync(path.join(dir, "result.json"), JSON.stringify({ requirements: result.requirements, configs: mine.map(({ checks, ...c }) => ({ ...c, checks: [] })) }, null, 1), "utf8");
     fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "check-prompt.md"), "utf8").replace("<check>", `node "${SCRIPT}" check --dir .`) + formulasMd(), "utf8");
-    const r = await runClaude(dir, "Đọc prompt.md trong thư mục này và làm đúng như vậy: điền checks cho các cấu hình trong result.json, chỉ sửa result.json. Chạy không người trông, không ai trả lời câu hỏi.");
+    const r = await runClaude(dir, agentInput(dir, "điền checks cho các cấu hình trong result.json, chỉ sửa result.json"));
     fs.writeFileSync(path.join(os.tmpdir(), `genbid-findcheck-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
+    const g = RG.guardRun(dir, r.stdout || "");
+    if (g.notes.length) console.log(`${key}: CHỐT ĐỌC (đối chiếu Tìm NCC) — ${g.notes.join(" | ")}`);
+    // A run stopped half-way: its checks are not taken (the configurations stay "chưa đối chiếu").
+    if (RG.stoppedNote(g.end, r.error?.message || "")) return { checked: 0, problems: 0, readNotes: g.notes };
     const got = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8"));
-    return mergeChecked(result, got, { hsmtText: text, suppliers, origin: result.origin });
+    return { ...mergeChecked(result, got, { hsmtText: text, suppliers, origin: result.origin }), readNotes: g.notes };
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }
 // The agent's checks (and controller) for the configurations of `got`, verified by check() and put back by rank.
