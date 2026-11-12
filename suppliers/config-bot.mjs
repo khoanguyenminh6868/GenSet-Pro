@@ -2091,7 +2091,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     for (const x of c.checks) {
       // "confirm" is the code's (confirmChecks below), never the agent's: one written by the agent, or by an earlier check
       // of this result, is "unclear" again until confirmChecks decides.
-      if (x.status === "confirm") { x.status = "unclear"; delete x.confirm; }
+      if (x.status === "confirm") { x.status = "unclear"; delete x.confirm; if (x.licensed) { delete x.licensed; delete x.licensedNote; delete x.ask; } }
       const reasons = [], rq = reqs.get(norm(x.group ? x.group.item : x.item));
       x.level = (rq?.level || x.level) === "option" ? "option" : "core";
       if (!PARTS.includes(x.part)) x.part = rq?.part || "genset";
@@ -2255,6 +2255,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     makerSheetChecks(c, result.requirements || [], { engine: factsOf(c, "engine"), alternator: factsOf(c, "alternator") });
     khoaRules(c, result.requirements || [], row, { origin });
     originChecks(c, result, origin, sup);
+    if (namedHere) NG.brandLicensedChecks(c, result.requirements || [], namedHere, NG.namedHit(c, namedHere, namedCtx), (id) => sup.get(id));
     comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
@@ -2469,13 +2470,13 @@ export function rfqOf(c, reqs = []) {
     if (x.parts?.length) return `Xác nhận có các chức năng: ${x.parts.filter((p) => p.status !== "met" && p.status !== "not_met").map((p) => p.item).join(", ")}; gửi datasheet`;
     return ASK_SPEC;
   };
-  const tierOf = (q) => (POWER.has(q.code) && q.status !== "confirm" ? 0 : (IDENT.has(q.code) || ORIGINS.has(q.code)) && q.status !== "confirm" ? 1
+  const tierOf = (q) => (POWER.has(q.code) && q.status !== "confirm" ? 0 : q.licensed || ((IDENT.has(q.code) || ORIGINS.has(q.code)) && q.status !== "confirm") ? 1
     : q.status === "confirm" ? (q.confirm === "document" || q.kind === "document" ? 5 : 4) : q.level === "option" ? 6 : q.kind === "site" ? 3 : 2);
   const pts = [], seen = new Set();
   const add = (x, r, extra = {}) => {
     const code = r?.code || x.code || "", k = x.kind || r?.kind || kindOf(r || {}), status = x.status === "confirm" ? "confirm" : "unclear";
     const q = { part: x.part || r?.part || "genset", item: x.item, requirement: x.requirement || r?.requirement || "", kind: k, status, code, level: (r?.level || x.level) === "option" ? "option" : "core",
-      ask: x.ask || ask(x, k, code), ...(x.confirm ? { confirm: x.confirm } : {}), ...(x.avr || x.why ? { note: x.avr || x.why } : {}), ...(x.parts?.length ? { fn: x.parts.filter((p) => p.status !== "met" && p.status !== "not_met").map((p) => p.item) } : {}), ...(x.conflict ? { conflict: true } : {}), ...(x.version ? { version: x.version } : {}), ...extra };
+      ask: x.ask || ask(x, k, code), ...(x.confirm ? { confirm: x.confirm } : {}), ...(x.avr || x.why || x.licensedNote ? { note: x.avr || x.why || x.licensedNote } : {}), ...(x.licensed ? { licensed: true } : {}), ...(x.parts?.length ? { fn: x.parts.filter((p) => p.status !== "met" && p.status !== "not_met").map((p) => p.item) } : {}), ...(x.conflict ? { conflict: true } : {}), ...(x.version ? { version: x.version } : {}), ...extra };
     q.tier = tierOf(q);
     pts.push(q);
   };
