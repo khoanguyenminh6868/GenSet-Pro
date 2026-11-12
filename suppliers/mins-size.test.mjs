@@ -85,3 +85,30 @@ test("a tender with no statement of power: the whole text as before; the extra r
   const extra = mins([block(300), block(400)].join("\n"), 300, two, "Số xy lanh ≥ 5 xy lanh");
   assert.equal(extra.mins.minCyl, 5);
 });
+
+test("a minimum every other block repeats, one value, goes to the size whose own text gave none (IB2300245556)", () => {
+  const ss = sizes(8.5, 10, 12), pick = (text, kva) => minsForSize(technicalPart(head + text), ss.find((s) => s.kva === kva), ss, "");
+  // The 12 kVA section states no power the code takes: its engine lines stay in the block of 10 kVA.
+  const text = [block(8.5, { cyl: 4, disp: 2.3 }), block(10, { cyl: 4, disp: 2.3 }), "II. Yêu cầu đối với động cơ", "- Số xy lanh: ≥ 4 xy lanh"].join("\n");
+  const r = pick(text, 12);
+  assert.deepEqual([r.mins.minCyl, r.mins.minDisp, r.how.minCyl], [4, 2.3, "agreed"]);
+  assert.equal(pick(text, 12).mins.minPrime, null);
+  assert.equal(pick(text, 8.5).how.minCyl, "own");
+  // Two values: none. One block alone: none.
+  const differ = [block(8.5, { cyl: 4 }), block(10, { cyl: 3 })].join("\n");
+  assert.equal(pick(differ, 12).mins.minCyl, null);
+  assert.equal(pick([block(8.5, { cyl: 4 }), block(10)].join("\n"), 12).mins.minCyl, null);
+  // The statements of the other blocks are not at least half of the blocks: none (a machine whose figure shows twice).
+  assert.equal(pick([block(8.5, { cyl: 4 }), block(10), block(12), block(8.5, { cyl: 4 })].join("\n"), 10).mins.minCyl, null);
+});
+
+test("a list of items with the power right after its label, no sign: the block of each (IB2300363623, 15 kVA and 5 kW)", () => {
+  const ss = sizesOf(["Hàng mục 1: 15 kVA/12 kW liên tục; Hàng mục 2: 5 kW liên tục"]);
+  assert.equal(ss.length, 2);
+  const text = ["* Thông số tổ máy", "- Công suất liên tục: 15kVA/ 12kW", "- Công suất dự phòng: 16.5kVA /13.2 kW", "* Động cơ", "- Dung tích xy lanh: > 1.758 lit",
+    "* Thông số tổ máy", "- Công suất dự phòng: 5.8kW", "* Động cơ", "- Công suất động cơ: 11HP"].join("\n");
+  const big = ss.find((s) => s.cap.unit === "kVA"), small = ss.find((s) => s.cap.unit === "kW");
+  assert.equal(minsForSize(technicalPart(head + text), big, ss, "").mins.minDisp, 1.758);
+  assert.equal(minsForSize(technicalPart(head + text), small, ss, "").mins.minDisp, null);
+  assert.equal(minsForSize(technicalPart(head + text), big, ss, "").mins.minPrime?.kVA, 15);
+});
