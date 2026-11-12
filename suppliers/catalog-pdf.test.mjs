@@ -76,3 +76,10 @@ test("unGrid: black and white, long rules wiped, short marks kept", () => {
   assert.equal(data[15 * w + 20], 0);
   assert.equal(data[15 * w + 21], 255);
 });
+
+test("LEES 60 Hz models end in -6 / -6E, and keep it when S3 is put back", () => {
+  const eng = new Map([...engines, ...["403D-15G", "TAD1351GE"].map((m) => [C.keyOf(m), m])]);
+  assert.deepEqual(segments("LSP1753-6 17 16 14 13 403D-15G").map((s) => s[0]), ["LSP1753-6"]);
+  assert.equal(keptRow("LSP1753-6 17 16 14 13 403D-15G".split(" "), eng, alternators), "| LSP17S3-6 | 13 | 16 | 14 | 17 | 403D-15G |");
+  assert.equal(keptRow("LSV375S3-6E 380 345 304 276 TAD1351GE".split(" "), eng, alternators), "| LSV375S3-6E | 276 | 345 | 304 | 380 | TAD1351GE |");
+});
