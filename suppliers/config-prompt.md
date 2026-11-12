@@ -194,6 +194,12 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    the `option` requirements, then power closest above the requirement. The code ranks them again this way. A
    configuration with a `not_met` on power, frequency, a named make or origin is not a suggestion. Give several
    different engines when the catalog has them, not six rows of one engine.
+   A genset the HSMT names (Khoa 2026-11-12; input.md "Tổ máy HSMT nêu đích danh", e.g. "Nhà sản xuất Huyndai", "Mã hiệu
+   DHY110K SE"): the configuration of that model (its catalog.md row says "tổ máy đúng model HSMT nêu đích danh") comes first,
+   with `genset.model` / `genset.make` as its source writes them; a configuration of another genset make / model is an
+   equivalent. Still suggest equivalents as usual: the code labels each configuration (named model, named make,
+   equivalent), puts the named one first and warns when the HSMT allows no equivalent; do not label them yourself, and do
+   not write `not_met` on the make / model check of an equivalent only for being another make (leave it `unclear`).
    Two configurations per engine make (Khoa, 2026-11-11): when the catalog has two different engine models of one make
    that fit (Baudouin 6M33G825/5 and 6M31G825/5, Perkins 4006-23TAG2A and 4006-23TAG3A), give both, each as its own
    configuration; never more than 2 of one make (the code drops a third). Leave the second out only to make room for
@@ -208,7 +214,14 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    phrase about what the supplier offers (e.g. "Chào đúng động cơ, đầu phát và bộ điều khiển của cấu hình", "Chào đúng
    động cơ, chưa ghi đầu phát"); the row itself goes only in `line`, and the role / confidence labels never appear. A supplier truly fits when its row names this engine and the configuration has no
    `not_met` on power, frequency, a named make or origin.
-4. Only when no configuration of step 2 has a supplier that truly fits: search the internet (WebSearch) for the ONE
+4. A genset the HSMT names that catalog.md does not have: search for THAT model first, on its own brand's pages (the maker's
+   site, or the company licensed to sell under that brand: both count as the maker's source, tier A / B), save them, and
+   write the configuration from them with `src.tier` on every internet `src`. The rule "only suppliers based in China" of a
+   tender with no G7 / G20 does not apply to this one configuration (the code keeps its supplier wherever it is based);
+   the origin the HSMT asks of the set is still checked (a source that does not state it leaves the check `unclear`).
+   input.md says whether a seller's page (dealer, marketplace) may stand in for it; when it may not, and the brand has no
+   page, declare the search in `searched` (`what: "source"`) and the code shows "chưa có nguồn thông số" for the model.
+   Then, only when no configuration of step 2 has a supplier that truly fits: search the internet (WebSearch) for the ONE
    best configuration and the supplier that sells it. Under G7 / G20 that supplier is a genset maker based in a country
    of the group (its `country` in newCatalog.json), never an assembler in China. Official pages first: a genset maker's page or datasheet that
    lists a genset with its engine and alternator, then the engine and alternator makers' datasheets. Save every page
@@ -254,8 +267,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
      run of the same origin skips it.
      The code keeps an entry only when every `where` is in this run's log, so the next runs skip it for 90 days; write
      nothing there for a search that found what it looked for, or that you did not run.
-5. When neither the system nor the internet gives a configuration that meets the power, frequency and any named
-   make or origin, answer with `"configs": []` and a `message` saying what was searched and what is missing.
+5. When neither the system nor the internet gives a configuration that meets the power and frequency, answer with
+   `"configs": []` and a `message` saying what was searched and what is missing. A genset make / model the HSMT names
+   that no source gives is no reason for `configs: []`: give the equivalents (the code labels them).
 
 ## result.json
 ```json
@@ -265,7 +279,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   "configs": [{
     "rank": 1,
     "engine": { "model": "", "make": "", "src": { "kind": "catalog", "supplierId": "", "n": 101, "line": "| ... |" } },
-    "alternator": { "model": "", "make": "", "src": { "kind": "internet", "url": "https://...", "file": "web/1.txt", "quote": "" } },
+    "alternator": { "model": "", "make": "", "src": { "kind": "internet", "url": "https://...", "file": "web/1.txt", "quote": "", "tier": "A|B|C (as in newCatalog.json sources)" } },
     "genset": { "model": "", "src": { "kind": "catalog", "supplierId": "", "n": 101, "line": "| ... |" } },
     "controller": { "model": "DSE7320", "make": "Deep Sea", "src": { "kind": "controller", "supplierId": "", "n": 3001, "line": "..." } },
     "checks": [{ "item": "", "requirement": "", "hsmtQuote": "", "offered": "", "sourceQuote": "", "part": "engine|alternator|genset|controller", "status": "met|not_met|unclear", "note": "",

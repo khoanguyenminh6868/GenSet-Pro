@@ -34,6 +34,7 @@ import { ratingsOf, stamfordRatings, altSheetAttrs } from "./ratings.mjs";
 import { viaApi, noteApiSpend, costOf, switchToPlan } from "./api-budget.mjs";
 import * as MEMO from "./web-memo.mjs";
 import * as RG from "./read-guard.mjs";
+import * as NG from "./named-genset.mjs";
 import { skippedOf, dropSkipped, UNFILTERED_WARNING } from "./sup-skip.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -1041,15 +1042,21 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     const viaCn = origin === "cn" && CAT.originOf(e) === "other";
     const ef = facts.get(`engine:${e.key}`) || [], eKeys = new Set(ef.map((f) => f.key));
     for (const u of e.uses) {
-      if ((!u.line && !u.lines) || !near(u) || (hints.freq && u.freq && u.freq !== hints.freq) || (viaCn && !cn.has(u.supplierId))) continue;
+      // The genset model the HSMT names (Khoa 2026-11-12, IB2600601812 "Mã hiệu DHY110K SE"): its row stays whatever its
+      // power reads (Hyundai's DHY110KSE table gives the engine's 100 kW only, no kVA) and goes first.
+      const gNamed = !!hints.named?.models?.length && !!(u.line || u.lines) && hints.named.models.some((m) => NG.namesModel([u.title, u.genset, u.line, ...(u.lines?.rows || [])].filter(Boolean).join("\n"), m));
+      if (!(gNamed && hints.named.strict) && ((!u.line && !u.lines) || !near(u) || (hints.freq && u.freq && u.freq !== hints.freq) || (viaCn && !cn.has(u.supplierId)))) continue;
       const a = u.other ? alts.get(CAT.keyOf(u.other)) : null, af = a ? facts.get(`alternator:${a.key}`) || [] : [];
       const s = sup.get(u.supplierId), rowCtrl = CAT.controllersIn(u.line || (u.lines?.rows || []).join(" "));
       const offers = [...rowCtrl, ...(s?.controllers || [])];
       const ctrlNamed = offers.some((c) => hints.ctrlModels.includes(CAT.keyOf(c.model || "")) || hints.ctrlMakes.includes(c.brand));
       const why = [];
       let score = 0;
-      const isNamed = named(hints, e.model);
-      if (isNamed) { score += 1000; why.push("HSMT ghi model động cơ này"); }
+      const isNamed = named(hints, e.model) || gNamed;
+      if (gNamed) { score += 2000; why.push("tổ máy đúng model HSMT nêu đích danh"); }
+      else if (isNamed) { score += 1000; why.push("HSMT ghi model động cơ này"); }
+      // The genset make the HSMT names: a row of that maker (its record's name / brands), not of an assembler.
+      if (!gNamed && hints.named?.make && NG.makerOf(sup.get(u.supplierId), hints.named.make)) { score += 300; why.push(`tổ máy hãng ${hints.named.make} HSMT nêu`); }
       // Sources that name two makes ("Cummins / Doosan"): either one is the HSMT's.
       const makeNamed = (e.make || "").split(" / ").find((m) => hints.engineMakes.includes(m));
       if (makeNamed) { score += 300; why.push(`hãng động cơ ${makeNamed} HSMT nêu`); }
@@ -1100,7 +1107,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       }
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
-      if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
+      // Not for the named genset model: its table may give no figure in the HSMT's unit (rowPower is then huge).
+      if (cap && !gNamed) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
       const maker = sync && s?.role === "genset_oem" ? gensetMakerOf(s) : null;
       if (maker) why.push(`tổ máy của chính hãng ${maker} (HSMT đòi đồng bộ thương hiệu)`);
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf }); continue; }
@@ -1251,7 +1259,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     const { e, u, a } = r, s = sup.get(u.supplierId);
     shown.add(u.supplierId);
     if (u.header?.length) headers.set(`${u.supplierId} n ${u.n}`, u.header.join(" "));
-    out.push(`### ${i + 1}. ${u.genset || "(không ghi model tổ máy)"} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
+    out.push(`### ${i + 1}. ${u.genset || (r.why.some((w) => w.startsWith("tổ máy đúng model")) && u.title ? `bảng "${u.title}" (tổ máy HSMT nêu)` : "(không ghi model tổ máy)")} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
       `- supplierId: ${u.supplierId}, n: ${u.n}${s ? `, quốc gia: ${s.country || "?"}, độ tin cậy: ${s.confidence}, vai trò: ${s.role}` : ""}`, rowText(u));
     if (u.specs?.length) out.push(`  thông số trong dòng: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
     if (r.rowCtrl.length) out.push(`  bộ điều khiển trong dòng: ${r.rowCtrl.map((c) => c.model || c.brand).join(", ")}`);
@@ -1501,7 +1509,14 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   const fromHsmt = reqData.from === "sync" || originOfReq(reqData.origin) === "all", asked = fromHsmt ? "all" : originOfReq(reqData.origin);
   const auto = fromHsmt ? originOfHsmt(parts.join("")) : null;
   const sync = BP.brandSyncOf(text);
+  // The genset make / model the HSMT names (named-genset.mjs): the analysis' lines checked against the HSMT, else the
+  // HSMT's own rows. A tender of several sizes with a model each: the rows of those models are scored, not let past the
+  // power band (the model of the other size would come in).
+  const namedG = NG.namedGensetOf(text, { reqs: NG.specsAsReqs(a?.technicalSpecs) }) || NG.namedGensetOf(text);
+  if (namedG) hints.named = { ...namedG, strict: !(multi && namedG.models.length > 1) };
   const origin = auto?.origin || asked, full = CAT.build(all), cn = cnSuppliers(all), partsOnly = partsOnlyOf(origin, parts.join("")), brand = auto?.basis === "brand" && !partsOnly, grp = groupSuppliers(all, origin, !!sync, partsOnly, brand);
+  // Its sellers stay whatever the origin rule keeps (Khoa 2026-11-12: "chỉ NCC đặt tại Trung Quốc" never drops the named genset).
+  if (grp && namedG) for (const id of NG.namedSuppliers(all, namedG)) grp.add(id);
   const cat = { ...full, engines: byOrigin(full.engines, origin, cn, grp) };
   // The figures of a model still come from every supplier's row or datasheet that names it (a Perkins 4006-23TAG3A is
   // the same engine in a Chinese table); only the rows offered as configurations are those of the group's suppliers.
@@ -1553,6 +1568,14 @@ HSMT đòi THƯƠNG HIỆU ${GROUP_NAME[origin]}, không nói nơi sản xuất 
     ...(sync ? [`## Đồng bộ thương hiệu: HSMT đòi ít nhất ${sync.need}/${sync.parts.length} bộ phận (${sync.parts.map((p) => SYNC_VI[p]).join(", ")}) do chính hãng sản xuất tổ máy làm ra`,
       `HSMT ghi: "${sync.text}"`,
       `Code tự ghi yêu cầu "${SYNC_ITEM}" và kiểm tra nó cho từng cấu hình theo hãng của động cơ, đầu phát, bộ điều khiển và hãng tổ máy (đừng tự viết check này). Ghi "make" của từng bộ phận khi nguồn ghi. Cấu hình lắp ráp từ động cơ, đầu phát, bộ điều khiển của các hãng khác nhau (vd. động cơ Cummins + đầu phát Nianfeng/Stamford + SmartGen do một xưởng Trung Quốc lắp) là KHÔNG ĐẠT. Ưu tiên tổ máy của chính hãng làm ra cả động cơ và đầu phát / bộ điều khiển (Cummins: động cơ Cummins + đầu phát Stamford/Cummins + PowerCommand; Caterpillar/Perkins/FG Wilson/Olympian; Kohler/SDMO; MTU; Mitsubishi; Denyo...). Khi catalog.md không có cấu hình nào đạt yêu cầu này thì làm bước 4 (tìm trên internet) để tìm một tổ máy chính hãng đạt.`, ""] : []),
+    // Tổ máy HSMT nêu đích danh (Khoa 2026-11-12, named-genset.mjs): the named model first, the others equivalents.
+    ...(namedG ? [`## Tổ máy HSMT nêu đích danh: ${[namedG.makeRaw || namedG.make, namedG.models.join(" / ")].filter(Boolean).join(" ")}${namedG.makeRaw && namedG.make && namedG.makeRaw !== namedG.make ? ` (hãng ${namedG.make})` : ""}`,
+      [namedG.quoteMake && `HSMT ghi: "${namedG.quoteMake}"`, namedG.quoteModel && namedG.quoteModel !== namedG.quoteMake && `"${namedG.quoteModel}"`].filter(Boolean).join(", "),
+      `- Dòng catalog.md có lý do "tổ máy đúng model HSMT nêu đích danh" (hoặc "tổ máy hãng … HSMT nêu") là cấu hình phải gợi ý trước tiên; ghi \`genset.model\` / \`genset.make\` đúng như nguồn ghi.`,
+      `- catalog.md không có model đó: làm bước 4 cho RIÊNG model này trước: tra trang của chính thương hiệu (trang hãng, hoặc đơn vị được cấp phép thương hiệu — tính là nguồn hãng, tier A/B), lưu trang, ghi \`src.tier\` của nguồn internet. Quy tắc "chỉ nhà cung cấp đặt tại Trung Quốc" KHÔNG áp cho riêng dòng model này; xuất xứ vẫn kiểm theo yêu cầu xuất xứ của HSMT (nguồn không ghi thì để chưa rõ, code chuyển thành cần chứng từ).`,
+      NG.sellerAllowed() ? `- Không có trang hãng / đơn vị cấp phép: được dùng tạm trang bên bán cho riêng model này (\`src.tier\` "C"); code gắn "chưa xác minh", mọi mục tối đa chưa rõ, không đưa vào danh mục.`
+        : `- Trang bên bán (đại lý, sàn) KHÔNG được dùng làm nguồn cho model này; không có trang hãng thì khai \`searched\` (\`what: "source"\`) và để code ghi "chưa có nguồn thông số".`,
+      `- Cấu hình hãng / model khác vẫn gợi ý như thường (hàng tương đương; code gắn nhãn và cảnh báo khi HSMT không cho tương đương). Không trả \`configs: []\` chỉ vì không tìm được hãng / model HSMT nêu.`, ""] : []),
     // Yêu cầu khác (Khoa, 2026-11-01): typed on the web next to Gợi ý / Tìm NCC, checked like the HSMT's requirements.
     ...(extraOf(reqData) ? ["## Yêu cầu khác (người dùng nhập trên web, bắt buộc kiểm tra như yêu cầu của HSMT)", extraOf(reqData), ""] : []),
     "## Thông số kỹ thuật theo phân tích (chỉ để định hướng, trích dẫn phải lấy từ hsmt.txt)",
@@ -1878,6 +1901,10 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     }
     return null;
   };
+  // The genset make / model the HSMT names (named-genset.mjs): from the requirements the agent read (quotes found in the
+  // HSMT), else from the HSMT's rows. null for a tender that names none: nothing below changes then.
+  const namedHere = NG.namedGensetOf(hsmtText, { reqs: result.requirements }) || NG.namedGensetOf(hsmtText);
+  const namedCtx = { supOf: (id) => sup.get(id), srcText: (src) => (src?.kind === "catalog" ? sourceText(src) : null) };
   // An engine of the other origin is not a suggestion, nor, under "cn", one whose make the source does not give
   // (Khoa, 2026-10-29). Under "cn" a foreign engine stays when a supplier based in China offers it in a row of its own
   // table that names the engine; that configuration then lists only such suppliers (Khoa, 2026-11-02). The make counts only as the source states it: the catalog row (header, title), or for an
@@ -1915,6 +1942,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     if (grp) {
       const G = partsOnly ? "Trung Quốc" : groupName(origin), off = (id) => !!id && sup.has(id) && !grp.has(id), where = (id) => countryVi(sup.get(id)?.country);
       result.configs = result.configs.filter((c) => {
+        // The genset the HSMT names (Khoa 2026-11-12): its sellers stay wherever they are based; the origin the HSMT asks
+        // of it is checked as of any configuration (genset_origin).
+        if (namedHere && NG.namedHit(c, namedHere, namedCtx)) return true;
         const from = [c.genset?.src, c.engine?.src].find((s) => s?.kind === "catalog" && off(s.supplierId));
         if (from) { problems.push(`#${c.rank}: cấu hình lấy từ dòng bảng của ${from.supplierId} (đặt tại ${where(from.supplierId)}, ngoài nhóm ${G}), đã bỏ`); return false; }
         const had = (c.suppliers || []).length;
@@ -1953,6 +1983,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       return true;
     });
   }
+  // The genset the HSMT names is never the one cut by the limit: it goes before the equivalents (stable order otherwise).
+  if (namedHere) { const nr = (c) => { const h = NG.namedHit(c, namedHere, namedCtx); return h === "model" ? 0 : h === "make" ? 1 : 2; }; result.configs = (result.configs || []).map((c, i) => [c, nr(c), i]).sort((x, y) => x[1] - y[1] || x[2] - y[2]).map(([c]) => c); }
   result.configs = (result.configs || []).slice(0, MAX_CONFIGS);
   for (const c of result.configs) for (const s of c.suppliers || []) if (s.why) s.why = plainWhy(s.why);
   copyModelChecks(result.configs, sourceText);
@@ -2158,6 +2190,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
   clarifyOf(result, hsmtText, combo, problems, { scan: !sized });
+  // Tổ máy HSMT nêu đích danh: c.named / c.equivalent, result.named, result.namedWarn and its question (after clarifyOf,
+  // which rebuilds the code's questions).
+  NG.markNamed(result, namedHere, { ...namedCtx, problems });
   if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
   if (!result.configs.length && !result.message) result.message = "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT.";
   return { result, problems, hints };
@@ -3371,7 +3406,10 @@ export function rankConfigs(result) {
   // Still equal: the configuration with more won lots behind it first (attachWon, 2026-11-10). Only a tie-break: the
   // requirement checks and Khoa's order above decide first, and most configurations have no won lot at all.
   const wonOf = (c) => c.won?.score || 0;
-  list.sort((x, y) => cmp(x.s, y.s) || cnOf(x.c) - cnOf(y.c) || wonOf(y.c) - wonOf(x.c) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
+  // The genset the HSMT names first (named-genset.mjs: its model, then its make), then the equivalents; nothing changes
+  // for a tender that names none (no result.named).
+  const nr = (c) => (result.named ? NG.namedRank(c) : 0);
+  list.sort((x, y) => nr(x.c) - nr(y.c) || cmp(x.s, y.s) || cnOf(x.c) - cnOf(y.c) || wonOf(y.c) - wonOf(x.c) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
   // One configuration per engine + alternator + controller (2026-11-06 audit: a run gave five rows of one 6BTAA5.9-G12,
   // one supplier each): a later row of the same models (or with no controller of its own) hands its suppliers to the
   // first and goes; and at most 3 rows per engine, so several engines are shown.
@@ -3389,7 +3427,7 @@ export function rankConfigs(result) {
     // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third.
     const mk = String(c.engine?.make || "").split("/")[0].trim().toLowerCase();
     // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
-    if (mk && !c.keptFind && (perMake.get(mk) || 0) >= PER_MAKE_CONFIGS) return false;
+    if (mk && !c.keptFind && !c.named && (perMake.get(mk) || 0) >= PER_MAKE_CONFIGS) return false;
     seen.set(k, [...(seen.get(k) || []), c]);
     perEngine.set(ek, (perEngine.get(ek) || 0) + 1);
     if (perEngine.get(ek) > 3) return false;
