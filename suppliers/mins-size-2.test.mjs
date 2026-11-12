@@ -63,6 +63,9 @@ test("a heading naming two sizes, a statement of the engine, a maximum: open no 
   assert.deepEqual(runs("Máy phát điện 30, 42kVA"), []);
   assert.deepEqual(runs("Máy phát điện 30 kVA và 42 kVA"), [-1]);
   assert.deepEqual(runs("2. Máy phát điện 10,5kVA"), [-1]);
+  // A count in a list (IB2400125924) is no heading.
+  assert.deepEqual(runs("6 máy phát điện 42KVA - 1pha (có vỏ chống ồn, ATS)"), []);
+  assert.deepEqual(runs("- Tổ máy phát điện 42kVA bao gồm:"), [1]);
   // Its prime and standby (IB2400427929): the size of the prime.
   assert.deepEqual(runs("Máy phát điện chạy dầu công suất liên tục/dự phòng 30kVA/33kVA 3 pha"), [0]);
   assert.deepEqual(runs("Máy phát điện chạy dầu công suất 30kVA/60kVA"), [-1]);

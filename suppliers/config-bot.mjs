@@ -786,7 +786,9 @@ const CAP_NUM = String.raw`(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW
 // "Máy phát điện 10,5kVA"). A heading is a short line that starts (after its number) with "máy phát" and names one size.
 const CAP_SIGNED = new RegExp(String.raw`(?:≥|>=|>|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*` + CAP_NUM, "gi");
 const CAP_LABELED = new RegExp(String.raw`(c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n|d[ựu] ph[òo]ng)|prime(?:\s+power)?|standby(?:\s+power)?|continuous(?:\s+power)?)([^\n\d≥≤<>=]{0,30}?)` + CAP_NUM, "gi");
-const CAP_HEAD = /^\s*(?:(?:\d{1,2}(?:\.\d{1,2})*\.?|[IVX]{1,4}\.?|[a-hA-H][.)])\s*)?[-–:|*•+]?\s*(?:[^\d\n]{0,25}?\s)?(?:t[ổo]\s+)?m[áa]y\s+ph[áa]t\b/i;
+// Its first word is capitalised ("Máy phát", "Tổ máy", "Điều chuyển Máy"): "6 máy phát điện 12,5KVA" is a count in a list.
+const CAP_HEAD = /^\s*(?:(?:\d{1,2}(?:\.\d{1,2})*\.?|[IVX]{1,4}\.?|[a-hA-H][.)])\s*)?[-–:|*•+]?\s*((?:[^\d\n]{0,25}?\s)?(?:t[ổo]\s+)?m[áa]y\s+ph[áa]t\b)/i;
+const isHead = (line) => { const m = line.match(CAP_HEAD); return !!m && /^\p{Lu}/u.test(m[1]); };
 export function sizeBlocks(t, sizes) {
   const text = withoutOtherEquipment(unflatten(t)), L = text.split("\n"), ments = [], kwSizes = sizes.some((s) => s.cap?.unit === "kW");
   const engineBefore = (at) => ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "));
@@ -811,7 +813,7 @@ export function sizeBlocks(t, sizes) {
     }
     // The heading of one genset: the size it names (one size, else none: "MAYPHATDIEN 30, 42kVA" names two).
     // A list of sizes ("30, 42kVA", "12 và 40 kVA") is no genset's heading.
-    if (line.length <= 120 && CAP_HEAD.test(line) && !/\d\s*(?:,\s+|\s+và\s+|\s*[&;]\s*)\d[\d.,]*\s*(?:kVA|kW)\b/i.test(line)) {
+    if (line.length <= 120 && isHead(line) &&!/\d\s*(?:,\s+|\s+và\s+|\s*[&;]\s*)\d[\d.,]*\s*(?:kVA|kW)\b/i.test(line)) {
       const figs = [...line.matchAll(new RegExp(CAP_NUM, "gi"))].filter((m) => m[2].toLowerCase() === "kva" || kwSizes);
       if (figs.length) ments.push({ line: i, kind: "head", figs: figs.map((m) => ({ kva: numOf(m[1]), unit: m[2].toLowerCase() })) });
     }
