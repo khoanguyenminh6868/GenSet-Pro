@@ -127,7 +127,15 @@ const isUrl = (w) => /^https?:\/\//i.test(String(w || "").trim());
 export const inTrace = (w, trace) => (isUrl(w) ? trace.fetched.has(cleanUrl(w)) : trace.searches.has(cleanQuery(w)));
 
 // ---------- kho âm ----------
-export const negKey = (e) => `${e.part}|${e.modelKey}|${e.what}`;
+// "source" depends on the run's origin condition (a find among Chinese suppliers says nothing of the G7): the origin is in the key.
+export const negKey = (e) => `${e.part}|${e.modelKey}|${e.what}${e.what === "source" ? `|${e.origin || ""}` : ""}`;
+// The model names a text writes (tokens with a letter and a digit, 4+ characters), as CAT.keyOf keys: the models an HSMT names.
+export function modelKeysOf(text) {
+  const out = new Set();
+  for (const m of String(text || "").normalize("NFC").match(/[A-Za-z0-9][A-Za-z0-9\-_./]{2,}[A-Za-z0-9]/g) || []) if (/[A-Za-z]/.test(m) && /\d/.test(m)) out.add(keyOf(m));
+  return out;
+}
+const ORIGIN_VI = { all: "mọi xuất xứ", cn: "nhà cung cấp đặt tại Trung Quốc", g7: "nhóm G7", g20: "nhóm G20", g7eu: "nhóm G7 + EU", g20eu: "nhóm G20 + EU", other: "xuất xứ khác" };
 const dayMs = 864e5;
 export const isLive = (e, today) => (Date.parse(today) - Date.parse(e.date)) / dayMs < NEG_DAYS;
 export function loadNeg(root = WEB_MEMO) {
@@ -147,14 +155,18 @@ export function saveNeg(entries, root = WEB_MEMO, today = new Date().toISOString
 //  - the model one of this run's models (`models`: part → Set of CAT.keyOf), compared key to key, never "near";
 //  - every `where` in the run's trace; "blocked" also needs one of its URLs answered 401 / 403 / 429.
 // Returns { entries (the new list), added, refused: [why] }.
-export function recordNegatives(entries, searched, { trace, models, today, tender = "", size = "", suppliers = [] }) {
+//  - what "source" = no usable source (the maker's page, a supplier fit for this run's origin) for a model the HSMT names:
+//    the model may be one of `hsmtKeys` (modelKeysOf of the HSMT) too; the entry keeps `origin`, only a run of that origin reuses it.
+export function recordNegatives(entries, searched, { trace, models, today, tender = "", size = "", suppliers = [], origin = "", hsmtKeys = new Set() }) {
   const out = [...entries], added = [], refused = [];
   for (const s of Array.isArray(searched) ? searched : []) {
     const label = `${s?.part || "?"} ${s?.model || "?"} / ${s?.what || "?"}`;
     const where = (Array.isArray(s?.where) ? s.where : []).map((w) => String(w || "").trim()).filter(Boolean);
     const mk = keyOf(s?.model);
     if (!PARTS.includes(s?.part) || !OUTCOMES.includes(s?.outcome) || !s?.what) { refused.push(`${label}: thiếu part / what / outcome hợp lệ`); continue; }
-    if (!mk || !models?.[s.part]?.has(mk)) { refused.push(`${label}: model không phải model của lượt này (so đúng khoá)`); continue; }
+    const named = s?.what === "source" && hsmtKeys.has(mk);
+    if (s?.what === "source" && s.outcome !== "not_found") { refused.push(`${label}: "source" chỉ ghi được với not_found`); continue; }
+    if (!mk || !(models?.[s.part]?.has(mk) || named)) { refused.push(`${label}: model không phải model của lượt này (so đúng khoá)`); continue; }
     if (!where.length) { refused.push(`${label}: không ghi đã tìm ở đâu`); continue; }
     const missing = where.filter((w) => !inTrace(w, trace));
     if (missing.length) { refused.push(`${label}: không có dấu vết trong log: ${missing.slice(0, 3).join(" ; ")}`); continue; }
@@ -162,7 +174,7 @@ export function recordNegatives(entries, searched, { trace, models, today, tende
     if (s.outcome === "blocked" && !urls.some((u) => [401, 403, 429].includes(statuses[u]))) { refused.push(`${label}: ghi "blocked" mà log không có mã 401/403/429`); continue; }
     if (s.outcome === "not_found" && urls.some((u) => trace.fetched.get(u)?.saved) && s.what === "datasheet") { refused.push(`${label}: đã lưu được trang ở ${urls.find((u) => trace.fetched.get(u)?.saved)} nên không phải "không có datasheet"`); continue; }
     const hosts = [...new Set(urls.map(domainOf))];
-    const e = { part: s.part, model: String(s.model), modelKey: mk, what: String(s.what), outcome: s.outcome, where, statuses, hosts,
+    const e = { part: s.part, model: String(s.model), modelKey: mk, what: String(s.what), outcome: s.outcome, where, statuses, hosts, ...(s.what === "source" ? { origin: String(origin || "all") } : {}),
       official: urls.length ? urls.some((u) => officialForMake(u, s.make || "", suppliers)) : false, date: today, tender, ...(size ? { size } : {}), ...(s.note ? { note: String(s.note).slice(0, 300) } : {}) };
     const i = out.findIndex((x) => negKey(x) === negKey(e));
     if (i >= 0) out.splice(i, 1);
@@ -177,19 +189,23 @@ const PART_VI = { engine: "Động cơ", alternator: "Đầu phát", controller:
 export function negLine(e) {
   const all = e.where.map((w) => (isUrl(w) ? `${w}${e.statuses?.[cleanUrl(w)] ? ` (HTTP ${e.statuses[cleanUrl(w)]})` : ""}` : `tìm "${w}"`));
   const where = all.slice(0, 4).join("; ") + (all.length > 4 ? `; và ${all.length - 4} chỗ khác` : "");
+  if (e.what === "source") return `- nguồn dùng được (trang hãng / nhà cung cấp đủ điều kiện) của ${e.model}: đã tra ngày ${e.date} với điều kiện ${ORIGIN_VI[e.origin] || e.origin}, không thấy (${where}) — đừng tra lại với cùng điều kiện; điều kiện khác (xuất xứ khác) thì được tra.`;
   const what = e.what === "datasheet" ? `datasheet trên ${e.hosts.length ? e.hosts.join(", ") : "các nguồn đã tìm"} (phủ mọi thông số của model trên ${e.hosts.length > 1 ? "các " : ""}tên miền đó, không phủ tên miền khác)` : e.what;
   return e.outcome === "blocked"
     ? `- ${what}: đã tra ngày ${e.date} — trang hãng chặn tải tự động (${where}). KHÔNG thử lại, không đổi User-Agent, không tìm bản sao để lách.`
     : `- ${what}: đã tra ngày ${e.date}, không tìm thấy (${where}) — đừng tra lại; ghi trạng thái như khi nguồn không ghi.`;
 }
 // catalog.md: the section of searches already done for the models of this run (models: [{ part, model }]).
-export function negativesMd(entries, models, today) {
-  const out = [], seen = new Set();
+export function negativesMd(entries, models, today, { origin = "", hsmtText = "" } = {}) {
+  const out = [], seen = new Set(), keys = modelKeysOf(hsmtText);
+  // "source" entries of a model the HSMT names, of this run's origin, even when it is not among the candidates.
+  models = [...models];
+  for (const e of entries) if (e.what === "source" && e.origin === (origin || "all") && keys.has(e.modelKey) && isLive(e, today) && !models.some((m) => m.part === e.part && keyOf(m.model) === e.modelKey)) models.push({ part: e.part, model: e.model });
   for (const { part, model } of models) {
     const k = `${part}|${keyOf(model)}`;
     if (seen.has(k)) continue;
     seen.add(k);
-    const list = negativesFor(entries, part, model, today);
+    const list = negativesFor(entries, part, model, today).filter((e) => e.what !== "source" || e.origin === (origin || "all"));
     if (list.length) out.push(`### ${PART_VI[part]} ${model}`, ...list.map(negLine), "");
   }
   return out.length ? ["## Đã tra trên mạng ở lượt trước (đừng tra lại)", "",

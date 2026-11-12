@@ -171,3 +171,41 @@ test("a later run reads the saved page again through check(): an internet figure
   const x = out.configs[0].checks.find((c) => /Dung tích/.test(c.item));
   assert.equal(x.status, "met", JSON.stringify(x));
 });
+
+// Run IB2600601812 (2026-11-12): two WebSearch about the Hyundai DHY110KSE the HSMT names, nothing fetched, no source fit.
+const LOG_SRC = [
+  use("s1", "WebSearch", { query: "hyundai dhy110kse diesel generator 100kva datasheet engine alternator" }), res("s1", "results"),
+  use("s2", "WebSearch", { query: "hyundai diesel generator dhy series manufacturer china factory oem hyundai power equipment generator made in china" }), res("s2", "results"),
+].join("\n");
+const HSMT = "Tổ máy phát điện Hyundai model DHY110KSE, công suất 100 kVA, 50 Hz";
+const SRC = { part: "genset", model: "DHY110KSE", make: "Hyundai", what: "source", outcome: "not_found",
+  where: ["hyundai dhy110kse diesel generator 100kva datasheet engine alternator", "hyundai diesel generator dhy series manufacturer china factory oem hyundai power equipment generator made in china"] };
+
+test('what "source": a model the HSMT names (not a candidate) is kept with the run origin; same origin only', () => {
+  const dir = tmp();
+  const none = recordSearched({ configs: [], searched: [SRC] }, { logText: LOG_SRC, listed: [], root: dir, today: TODAY, origin: "cn" });
+  assert.equal(none.added.length, 0, "no HSMT text → not a model of the run");
+  const r = recordSearched({ configs: [], searched: [SRC] }, { logText: LOG_SRC, listed: [], root: dir, today: TODAY, tender: "IB2600601812", origin: "cn", hsmtText: HSMT });
+  assert.equal(r.added.length, 1, r.refused.join(";"));
+  const e = M.loadNeg(dir)[0];
+  assert.equal(e.what, "source"); assert.equal(e.origin, "cn"); assert.equal(e.modelKey, "DHY110KSE");
+  const neg = M.loadNeg(dir), pick = (origin) => M.negativesMd(neg, [], TODAY, { origin, hsmtText: HSMT });
+  assert.match(pick("cn"), /### Tổ máy DHY110KSE\n- nguồn dùng được .*điều kiện nhà cung cấp đặt tại Trung Quốc.*đừng tra lại/);
+  assert.equal(pick("g7"), "", "another origin is searched anew");
+  assert.equal(M.negativesMd(neg, [], TODAY, { origin: "cn", hsmtText: "Hyundai khác" }), "", "model not in this HSMT");
+  // Another origin is another entry, the same origin replaces.
+  const g = M.recordNegatives(neg, [SRC], { trace: M.traceOf(LOG_SRC), models: models(), today: TODAY, origin: "g7", hsmtKeys: M.modelKeysOf(HSMT) });
+  assert.equal(g.entries.length, 2);
+  const c = M.recordNegatives(g.entries, [SRC], { trace: M.traceOf(LOG_SRC), models: models(), today: "2026-11-20", origin: "cn", hsmtKeys: M.modelKeysOf(HSMT) });
+  assert.equal(c.entries.length, 2);
+});
+
+test('what "source": still needs the trace, not_found only, and a model the HSMT names', () => {
+  const k = M.modelKeysOf(HSMT), t = M.traceOf(LOG_SRC);
+  assert.ok(k.has("DHY110KSE"));
+  assert.equal(M.recordNegatives([], [{ ...SRC, where: ["a query never run"] }], { trace: t, models: models(), today: TODAY, origin: "cn", hsmtKeys: k }).added.length, 0);
+  assert.equal(M.recordNegatives([], [{ ...SRC, outcome: "blocked" }], { trace: t, models: models(), today: TODAY, origin: "cn", hsmtKeys: k }).added.length, 0);
+  assert.equal(M.recordNegatives([], [{ ...SRC, model: "XYZ999" }], { trace: t, models: models(), today: TODAY, origin: "cn", hsmtKeys: k }).added.length, 0);
+  // "datasheet" is not widened to HSMT models.
+  assert.equal(M.recordNegatives([], [{ ...SRC, what: "datasheet" }], { trace: t, models: models(), today: TODAY, origin: "cn", hsmtKeys: k }).added.length, 0);
+});
