@@ -225,7 +225,68 @@
         "| Excitation mode | Self-excitation",
         "| Insulation class | H",
         "| Protection class | IP23",
-        "| AVR Model | AS440"
+        "| AVR Model | AS440",
+        "| Benefits and Feature | HYUNDAI high quality and performance brushless alternator, with AVR"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "DHY110KSE Control panel measurement, displayment",
+      "header": [],
+      "rows": [
+        "| Genset prime power Kw | ● standard",
+        "| Power factor | ● standard",
+        "| engine speed | ● standard",
+        "| Phase to neutral voltage | ● standard",
+        "| Phase to phase voltage | ● standard",
+        "| Genset frequency | ● standard",
+        "| Genset current | ● standard",
+        "| Mains Phase to neutral voltage | ○ optional",
+        "| Mains Phase to phase voltage | ○ optional",
+        "| Mains frequency | ○ optional",
+        "| engine oil pressure | ● standard",
+        "| engine water temperature | ● standard",
+        "| fuel level | ● standard",
+        "| battery voltage | ● standard",
+        "| genset power KVA | ● standard",
+        "| Genset running time | ● standard",
+        "| Genset output KWh | ● standard",
+        "| History file | ● standard"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "DHY110KSE Control panel alarm, shutdown function",
+      "header": [],
+      "rows": [
+        "| Low oil pressure warning,shutdown | ● standard",
+        "| High water temperature warning,shutdown | ● standard",
+        "| Engine over and under speed shutdown | ● standard",
+        "| Low fuel level warning,shutdown | ● standard",
+        "| battery low and high voltage warning | ● standard",
+        "| battery chargering failure | ● standard",
+        "| Genset low and high voltage warning, shut down | ● standard",
+        "| Alternator 3 phase voltage unbalance shut down | ● standard",
+        "| Alternator low and high frequency warning,shut down | ● standard",
+        "| Genset over load shutdown | ● standard",
+        "| Alternator 3 phase current unbalance shutdown | ● standard",
+        "| Mains low and high voltage warning | ○ optional",
+        "| Mains low and high frequency warning | ○ optional"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "DHY110KSE Control panel other functions",
+      "header": [],
+      "rows": [
+        "| Remote start and stop | ● standard",
+        "| RS232 card | ○ optional",
+        "| USB card | ● standard",
+        "| RS485 card | ○ optional",
+        "| Multi language display | ● standard",
+        "| GPRS communication | ○ optional",
+        "| GPS communication | ○ optional",
+        "| CAN communication | ● standard"
       ]
     }
   ],
