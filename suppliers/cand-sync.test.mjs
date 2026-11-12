@@ -3,7 +3,7 @@
 // IB2600594596).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { candidates, catalogMd, hintsOf, check, gensetMakerOf, keepOf } from "./config-bot.mjs";
+import { candidates, catalogMd, hintsOf, check, gensetMakerOf, supplierFamily, keepOf } from "./config-bot.mjs";
 
 const C = globalThis.GenbidCatalog;
 const table = (n, title, rows) => ({ n, title, header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows });
@@ -95,4 +95,20 @@ test("đồng bộ asked: a row of a configuration the last run chose is not pus
   assert.ok(now.some((x) => x.u.supplierId === "rehlko"));
   // No last run: as before.
   assert.deepEqual(candidates(cat, cap, hints, { suppliers: list, sync, keep: new Set() }).top.map(key), held.map(key));
+});
+
+test("an abbreviation that clashes is no make: Saudi Diesel Equipment Co (SDEC) is not the Shanghai SDEC", () => {
+  const saudi = { id: "saudi-diesel", country: "SA", role: "genset_oem", names: { en: "Saudi Diesel Equipment Co (SDEC)", brands: ["SDEC"] } };
+  assert.equal(gensetMakerOf(saudi), null);
+  assert.equal(supplierFamily(saudi, true), null);
+  // The same name in China, and makers of Chinese makes in China, keep their make.
+  assert.equal(gensetMakerOf({ ...saudi, country: "CN" }), "SDEC");
+  assert.equal(gensetMakerOf({ id: "jet-power", country: "CN", role: "genset_oem", names: { en: "Jet-Power" } }), "Jet-Power");
+  assert.equal(gensetMakerOf({ id: "weichai-heavy-machinery", country: "CN", role: "genset_oem", names: { en: "Weichai Heavy Machinery" } }), "Weichai");
+  // Foreign makes of foreign suppliers stay.
+  assert.equal(gensetMakerOf(rehlko()), "Kohler");
+  // It gets no reserved place under Đồng bộ thương hiệu.
+  const list = [...assemblers(), { ...saudi, confidence: "medium", specTables: [table(101, "Gensets 50Hz", ["| S-1 | 410 | 328 | S6A3-PTAR | |"])] }];
+  const ids = candidates(C.build(list), cap, hints, { suppliers: list, sync }).top.map((r) => r.u.supplierId);
+  assert.ok(!ids.includes("saudi-diesel"));
 });
