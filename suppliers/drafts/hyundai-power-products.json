@@ -1,0 +1,39 @@
+{
+  "id": "hyundai-power-products",
+  "country": "ES",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "GRV POWER PRODUCTS, S.L.",
+  "zh": null,
+  "brands": ["HYUNDAI"],
+  "web": "https://www.hyundaipower-de.com/",
+  "prov": null,
+  "city": "Sta. Llogaia Alguema",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": ["A", "GRV POWER PRODUCTS, S.L.", "Licensed by Hyundai Corporation, Korea", "core products of HYUNDAI Power Equipment"],
+    "2": ["A", "Hersteller: GRV POWER PRODUCTS SL", "Licensed by HYUNDAI Corporation Holdings, Korea", "Diesel Notstromaggregat DHY110KSE"],
+    "3": ["A", "HPP Pro GmbH", "Licensed by HYUNDAI Corporation Holdings, Korea"],
+    "4": ["A", "50Hz Standby 110KVA", "Use Chinese High quality vehicle engine", "HY4A140Z-D25", "DHY110KSE"]
+  },
+  "str": [
+    ["Thương hiệu Hyundai Power Products do GRV Power Products S.L. (Tây Ban Nha) sản xuất theo giấy phép của Hyundai Corporation Holdings (Hàn Quốc), theo trang hãng", 2],
+    ["Datasheet chính hãng DHY110KE / DHY110KSE: 50 Hz, 110 kVA dự phòng", 4],
+    ["Theo hãng: dùng động cơ ô tô chất lượng cao của Trung Quốc, model HY4A140Z-D25", 4]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "DHY110KSE", "fuel": "diesel", "eng": [], "models": ["HY4A140Z-D25"], "alt": [],
+      "p": [110, 110, "kVA", "standby", 4], "freq": ["50Hz"], "src": [4] }
+  ],
+  "miss": [
+    "Nguồn không ghi nơi sản xuất tổ máy (chỉ ghi nhà sản xuất GRV Power Products S.L., Tây Ban Nha, trang bán DE; datasheet ghi động cơ là 'Chinese ... vehicle engine')",
+    "Trang hyundaipower.shop (GRV) có trang DHY110KSE nhưng chặn tải (trang trống)",
+    "Datasheet không ghi hãng động cơ, hãng đầu phát (chỉ model 274C, AS440) và tổ máy dùng bộ điều khiển COMAP AMF9",
+    "Số xi lanh / dung tích / mức tiêu hao khác nhau giữa datasheet (4 xi lanh, 4,75 L, 24,6 L/h @100%) và trang hyundaipower-de.com (4 xi lanh, 6.870 cm³, 23,8 L/h)"
+  ],
+  "by": "discover-bot (Claude)"
+}

@@ -1,0 +1,222 @@
+{
+  "id": "hyundai-power-products",
+  "country": "ES",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "GRV POWER PRODUCTS, S.L.",
+    "zh": null,
+    "brands": [
+      "HYUNDAI"
+    ]
+  },
+  "website": "https://www.hyundaipower-de.com/",
+  "hq": {
+    "province": null,
+    "city": "Sta. Llogaia Alguema"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Thương hiệu Hyundai Power Products do GRV Power Products S.L. (Tây Ban Nha) sản xuất theo giấy phép của Hyundai Corporation Holdings (Hàn Quốc), theo trang hãng",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Datasheet chính hãng DHY110KE / DHY110KSE: 50 Hz, 110 kVA dự phòng",
+      "src": [
+        4
+      ]
+    },
+    {
+      "text": "Theo hãng: dùng động cơ ô tô chất lượng cao của Trung Quốc, model HY4A140Z-D25",
+      "src": [
+        4
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "DHY110KSE",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [
+        "HY4A140Z-D25"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          4
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        4
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn không ghi nơi sản xuất tổ máy (chỉ ghi nhà sản xuất GRV Power Products S.L., Tây Ban Nha, trang bán DE; datasheet ghi động cơ là 'Chinese ... vehicle engine')",
+    "Trang hyundaipower.shop (GRV) có trang DHY110KSE nhưng chặn tải (trang trống)",
+    "Datasheet không ghi hãng động cơ, hãng đầu phát (chỉ model 274C, AS440) và tổ máy dùng bộ điều khiển COMAP AMF9",
+    "Số xi lanh / dung tích / mức tiêu hao khác nhau giữa datasheet (4 xi lanh, 4,75 L, 24,6 L/h @100%) và trang hyundaipower-de.com (4 xi lanh, 6.870 cm³, 23,8 L/h)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.hyundaipower-de.com/mediafiles/Anleitungen/Generatoren/Diesel/HYUNDAI%20User%20Manual%20Diesel%201500%20-%202019%20EN.pdf",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "GRV POWER PRODUCTS, S.L.",
+        "Licensed by Hyundai Corporation, Korea",
+        "core products of HYUNDAI Power Equipment"
+      ],
+      "file": "sources/hyundai-power-products/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.hyundaipower-de.com/hyundai-diesel-generator-dhy110kse",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "Hersteller: GRV POWER PRODUCTS SL",
+        "Licensed by HYUNDAI Corporation Holdings, Korea",
+        "Diesel Notstromaggregat DHY110KSE"
+      ],
+      "file": "sources/hyundai-power-products/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.hyundaipower-de.com/Impressum",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "HPP Pro GmbH",
+        "Licensed by HYUNDAI Corporation Holdings, Korea"
+      ],
+      "file": "sources/hyundai-power-products/3.md"
+    },
+    {
+      "n": 4,
+      "url": "https://www.hyundaipower-de.com/mediafiles/Anleitungen/Generatoren/Diesel/Datenblatt/DHY110K(S)E.pdf",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "50Hz Standby 110KVA",
+        "Use Chinese High quality vehicle engine",
+        "HY4A140Z-D25",
+        "DHY110KSE"
+      ],
+      "file": "sources/hyundai-power-products/4.md"
+    },
+    {
+      "n": 5001,
+      "url": "https://www.hyundaipower-de.com/mediafiles/Anleitungen/Generatoren/Diesel/Datenblatt/DHY110K(S)E.pdf",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "| Prime Power | KVA / KW | 100 / 80"
+      ],
+      "file": "sources/hyundai-power-products/5001.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-12",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 5001,
+      "title": "DHY110KSE",
+      "header": [],
+      "rows": [
+        "| Prime Power | KVA / KW | 100 / 80",
+        "| Standby Power | KVA / KW | 110 / 88",
+        "| Power Factor | 0.8",
+        "| Frequency | Hz | 50",
+        "| Rate Voltage | V | 400/230",
+        "| Rate Current | A | 144.3",
+        "| Controller | AMF9",
+        "| Control Voltage | DC / V | 24",
+        "| Battery Capacity | Ah | 60×2",
+        "| Coolant Capacity | L | 34",
+        "| Fuel Tank Capacity(Base frame) | L | 245",
+        "| Fuel consumption @25/50/75/100% load | L / hour | 8.25/13.2/18.7/24.6",
+        "| Running Time | Hour | 9.3",
+        "| Length | mm | 2700",
+        "| Width | mm | 1000",
+        "| Height | mm | 1600",
+        "| Weight net | Kg | 1476",
+        "| Sound Level (7m, 75% load) | dB | 72"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "DHY110KSE Voltage",
+      "header": [],
+      "rows": [
+        "| Steady state regulation | % | ≤±0.5",
+        "| Dynamic voltage renewal | % | ≤+20~-15",
+        "| Stable time | Sec | 2.0",
+        "| Waveform distortion | % | ≤3"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "DHY110KSE Frequency",
+      "header": [],
+      "rows": [
+        "| Steady state regulation | % | ≤±1",
+        "| Dynamic frequency renewal | % | ≤+10~-7",
+        "| Stable time | Sec | ≤3"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "DHY110KSE Diesel engine",
+      "header": [],
+      "rows": [
+        "| Engine Model | HY4A140Z-D25",
+        "| Prime power | Kw | 100",
+        "| Structure | 4 cylinder,inline",
+        "| Fuel type | Diesel",
+        "| Fuel consumption @25/50/75/100% load | L/Hour | 8.25/13.2/18.7/24.6",
+        "| Governor | Electrical",
+        "| Coolling | Water",
+        "| Aspiration | Turbocharging intercooled",
+        "| Bore | mm | 108",
+        "| Stroke | 132",
+        "| Displacement | L | 4.75"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "DHY110KSE Alternator",
+      "header": [],
+      "rows": [
+        "| Alternator Model | 274C",
+        "| Prime power | kVA | 100",
+        "| Structure | 1 bearing",
+        "| Excitation mode | Self-excitation",
+        "| Insulation class | H",
+        "| Protection class | IP23",
+        "| AVR Model | AS440"
+      ]
+    }
+  ]
+}
