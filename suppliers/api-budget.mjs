@@ -22,9 +22,16 @@ export function noteApiSpend(usd, src, api) {
 }
 
 // The total_cost_usd of a --output-format json / stream-json run ({"type":"result",...} line), or null.
+// The CLI's key order is not fixed (2026-11-12: a newer one writes {"duration_api_ms":...,"type":"result",...}), so the
+// line is found by parsing it, not by what it starts with; config-bot prefixes each line with "[Ns] ". The last result wins.
 export function costOf(stdout) {
-  const m = String(stdout || "").match(/\{"type":"result".*$/m);
-  try { return JSON.parse(m ? m[0] : stdout).total_cost_usd ?? null; } catch { return null; }
+  const s = String(stdout || "");
+  for (const l of s.split(/\r?\n/).reverse()) {
+    if (!l.includes('"type":"result"')) continue;
+    const i = l.indexOf("{");
+    try { const j = JSON.parse(l.slice(i)); if (j?.type === "result" && Number.isFinite(Number(j.total_cost_usd))) return Number(j.total_cost_usd); } catch {}
+  }
+  try { return JSON.parse(s).total_cost_usd ?? null; } catch { return null; }
 }
 
 // True when the run failed because the API money ran out and later runs now go on the monthly plan.
