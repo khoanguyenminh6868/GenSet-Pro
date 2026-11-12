@@ -13,6 +13,9 @@
 //   kept under a header that says no prime / standby. Without it a line needs two pairs.
 // - --spread: every landscape page is two pages side by side (Kaichen, APP, MECCA: 50 Hz on the left, 60 Hz on the
 //   right): each half is read on its own, so a 60 Hz row never lands in the 50 Hz table. Not for slides (Uleen).
+// - --ocr: read with Tesseract although the PDF has text (LEES brochure 2026: titles are text, the tables drawn as
+//   outlines). The page is made black and white and the table's rules are wiped first (unGrid): with them Tesseract
+//   read almost none of the figures.
 // The frequency a page (half) names goes in its table title (catalog.js reads it there); a page naming both, none.
 // The PDF's text is saved as sources/<id>/<n>.md (n from 5001: crawl-specs, crawl-datasheets, merge-specs and
 // ocr-specs keep it) and its rows go to specTables; a new run with the same URL replaces them.
@@ -35,7 +38,8 @@ const HEADER1 = "| Genset model | Power kW | Power kVA | Engine model | Alternat
 
 const num = (s) => (/^\d+(\.\d+)?$/.test(s) ? Number(s) : null);
 const isPair = (kw, kva) => kw != null && kva != null && kva > kw && Math.abs(kva * 0.8 - kw) <= (Number.isInteger(kw) ? 0.5 : 0.05);
-const MODEL = /^[A-Z]+(-[A-Z]+)?-?\d+([A-Z]+\d*)?(\([A-Z]\))?$/;
+// LEES "LSP10S3-E": one letter after a dash at the end.
+const MODEL = /^[A-Z]+(-[A-Z]+)?-?\d+([A-Z]+\d*)?(-[A-Z])?(\([A-Z]\))?$/;
 const prefixOf = (m) => m.match(/^[A-Z]+(-[A-Z]+)?-?/)[0];
 
 // The parts of one line that start with a genset model (of the first model's prefix).
@@ -75,7 +79,7 @@ export function keptRow(t, engines, alternators, single = false, loose = false) 
   // Slashed figures are kW kW kVA kVA.
   if (found.some((p) => !p) && four.length === 4) found = [pairOf(four[0], four[2]), pairOf(four[1], four[3])];
   // KCC-25GF: 27 / 30 kVA; APP-16GF: 15 / 17 kVA. An OCR misread of the model ("KCC-60GF" for 80) is dropped.
-  const named = Number(t[0].match(/\d+/)[0]);
+  let named = Number(t[0].match(/\d+/)[0]);
   // Or it is one of the kW figures (Uleen UD120GF: 120 kW prime).
   const fits = (lo, hi) => (named >= lo * 0.85 - 1 && named <= hi * 1.15 + 1) || [four[0], four[1], four[2], four[3]].some((v) => v != null && v < lo && Math.abs(v - named) <= 0.5);
   if (found.some((p) => !p)) {
@@ -86,7 +90,16 @@ export function keptRow(t, engines, alternators, single = false, loose = false) 
     return `| ${t[0]} | ${one.kW} | ${one.kVA} | ${tidy(engines.get(C.keyOf(t[eAt])))} | ${altTok ? tidy(alternators.get(C.keyOf(altTok))) : ""}`.replace(/ \| $/, " |");
   }
   const [prime, standby] = found[0].kVA <= found[1].kVA ? found : [found[1], found[0]];
-  if (prime.kVA === standby.kVA || !fits(prime.kVA, standby.kVA)) return null;
+  if (prime.kVA === standby.kVA) return null;
+  // OCR reads LEES "S3" at the end of a model as "83", "53", "S83" or "S53" ("LSP1483", "LSP1650S83", "LSSC375S53"
+  // for LSP14S3, LSP1650S3, LSSC375S3): put back when the model then fits the power, and for a bare "83" / "53" only
+  // when it did not fit before (an "S" before it is never a figure).
+  if (!loose && /\dS?[58]3$/.test(t[0]) && (/S[58]3$/.test(t[0]) || !fits(prime.kVA, standby.kVA))) {
+    const was = named, m = t[0].replace(/S?[58]3$/, "S3");
+    named = Number(m.match(/\d+/)[0]);
+    if (fits(prime.kVA, standby.kVA)) t = [m, ...t.slice(1)]; else named = was;
+  }
+  if (!fits(prime.kVA, standby.kVA)) return null;
   // An alternator code that is also an engine model (QSK19-G4 is in the alternator list from a mixed-up table) is not one.
   const altTok = t.slice(eAt + 1).find((x) => alternators.has(C.keyOf(x)) && !engines.has(C.keyOf(x)));
   const tidy = (s) => String(s).replace(/\s+/g, "");
@@ -127,10 +140,35 @@ export function engineRow(line) {
   return null;
 }
 
+// A grey PGM (P5, 8 bit, from pdftoppm -gray) in black and white, without the long lines of a table: a run of dark
+// pixels across or down longer than `long` (300 dpi: a figure is ~30 px high, a dash in a cell ~80 px wide).
+export function unGrid(buf, long = 160) {
+  const head = buf.toString("latin1", 0, 64).match(/^P5\s+(\d+)\s+(\d+)\s+(\d+)\s/);
+  if (!head) throw new Error("not a P5 PGM");
+  const w = Number(head[1]), h = Number(head[2]), at = head[0].length;
+  const px = Uint8Array.from(buf.subarray(at, at + w * h), (v) => (v < 140 ? 1 : 0));
+  const out = new Uint8Array(w * h).fill(255);
+  for (let i = 0; i < w * h; i++) if (px[i]) out[i] = 0;
+  const wipe = (len, step, count, base) => {
+    for (let k = 0; k < count; k++) {
+      let run = 0;
+      for (let j = 0; j <= len; j++) {
+        const i = base(k) + j * step;
+        if (j < len && px[i]) { run++; continue; }
+        if (run > long) for (let b = j - run; b < j; b++) out[base(k) + b * step] = 255;
+        run = 0;
+      }
+    }
+  };
+  wipe(w, 1, h, (y) => y * w);
+  wipe(h, w, w, (x) => x);
+  return Buffer.concat([Buffer.from(`P5\n${w} ${h}\n255\n`, "latin1"), Buffer.from(out)]);
+}
+
 const freqOf = (text) => { const f = new Set([...text.matchAll(/\b(50|60)\s*HZ\b/gi)].map((m) => m[1])); return f.size === 1 ? `${[...f][0]}Hz` : ""; };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const args = process.argv.slice(2), single = args.includes("--single"), spread = args.includes("--spread"), byEngines = args.includes("--engines");
+  const args = process.argv.slice(2), single = args.includes("--single"), spread = args.includes("--spread"), forceOcr = args.includes("--ocr"), byEngines = args.includes("--engines");
   const byRows = args.includes("--rows") || byEngines;
   const [id, url, pdf] = args.filter((a) => !a.startsWith("--"));
   if (!id || !/^https?:\/\//.test(url || "") || !pdf || !fs.existsSync(pdf)) { console.error("node suppliers/catalog-pdf.mjs <id> <url> <pdf> [--rows] [--single] [--spread]"); process.exit(2); }
@@ -150,7 +188,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const sizes = [...run("pdfinfo", ["-f", "1", "-l", "9999", pdf]).matchAll(/Page\s+(\d+)\s+size:\s+([\d.]+)\s+x\s+([\d.]+)/g)].map((m) => ({ w: Number(m[2]), h: Number(m[3]) }));
   const tables = [];
   let body, via;
-  if (!byRows && raw.replace(/\s/g, "").length > sizes.length * 100) {
+  if (!byRows && !forceOcr && raw.replace(/\s/g, "").length > sizes.length * 100) {
     via = "pdftotext -table";
     body = pdfText(run("pdftotext", ["-table", "-enc", "UTF-8", pdf, "-"]));
     for (const t of tablesOf(body)) {
@@ -178,8 +216,13 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
           const W = Math.round(w / 72 * 300), H = Math.round(h / 72 * 300);
           const crop = k == null ? [] : ["-x", String(k * Math.floor(W / 2)), "-y", "0", "-W", String(Math.ceil(W / 2)), "-H", String(H)];
           const png = path.join(tmp, `p${p}${side ? "-" + k : ""}`);
-          execFileSync("pdftoppm", ["-r", "300", "-gray", "-png", "-singlefile", "-f", p, "-l", p, ...crop, pdf, png]);
-          text = run(TESSERACT, [png + ".png", "stdout", "-l", "eng", "--oem", "1", "--psm", "6", "--tessdata-dir", TESSDATA]);
+          let img = png + ".png";
+          if (forceOcr) {
+            execFileSync("pdftoppm", ["-r", "300", "-gray", "-singlefile", "-f", p, "-l", p, ...crop, pdf, png], { stdio: "ignore" });
+            img = png + ".pgm";
+            fs.writeFileSync(img, unGrid(fs.readFileSync(img)));
+          } else execFileSync("pdftoppm", ["-r", "300", "-gray", "-png", "-singlefile", "-f", p, "-l", p, ...crop, pdf, png]);
+          text = run(TESSERACT, [img, "stdout", "-l", "eng", "--oem", "1", "--psm", "6", "--tessdata-dir", TESSDATA]);
         }
         parts.push({ label: `trang ${p}${side ? " " + side : ""}`, text });
       }
