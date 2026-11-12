@@ -433,6 +433,8 @@ details.sec summary{cursor:pointer;font-weight:600;list-style:none;display:flex;
 details.sec summary::before{content:"+";font-family:var(--f-mono);color:var(--violet);width:14px}
 details.sec[open] summary::before{content:"–"}
 details.sec>div{margin-top:10px}
+/* Mobile: dòng "cập nhật …" của Việc cần thu thập xuống dưới tiêu đề, thẳng hàng với chữ (Khoa, 2026-11-12). */
+@media (max-width:640px){details.supgaps>summary{flex-wrap:wrap;row-gap:2px}details.supgaps .gapsub{flex-basis:100%;padding-left:22px;font-weight:400}}
 .score{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 .dial{width:86px;height:86px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--c,var(--violet)) calc(var(--p)*1%),var(--panel2) 0);flex:none}
 .dial span{width:66px;height:66px;border-radius:50%;background:var(--panel);display:grid;place-items:center;font:600 24px var(--f-mono)}
@@ -3122,7 +3124,7 @@ function supGapsHtml() {
   const pct = (x) => Math.round(100 * x) + "%", kind = { engine: "Hãng động cơ", alternator: "Hãng đầu phát", supplier: "Nhà cung cấp" };
   const sup = (id) => (state.supplier?.[id] ? h`<a href="#" data-supopen="${id}">${id}</a>` : h`${id}`);
   const queued = (g.queued || []).map((q) => q.name).join(", ");
-  return h`<details class="sec supgaps"><summary><b>Việc cần thu thập</b> <span class="muted small">cập nhật ${fmtDate(g.at, false)} · ${g.tenders.toLocaleString("vi-VN")} gói có Chương V · ${g.engines.toLocaleString("vi-VN")} động cơ trong danh mục${queued ? ` · tuần này tự tìm: ${queued}` : ""}</span></summary><div>
+  return h`<details class="sec supgaps"><summary><b>Việc cần thu thập</b> <span class="muted small gapsub">cập nhật ${fmtDate(g.at, false)} · ${g.tenders.toLocaleString("vi-VN")} gói có Chương V · ${g.engines.toLocaleString("vi-VN")} động cơ trong danh mục${queued ? ` · tuần này tự tìm: ${queued}` : ""}</span></summary><div>
     <p class="small muted" style="margin:0 0 6px">Điểm = số gói mua sắm máy phát nêu yêu cầu đó × phần model động cơ cùng dải công suất chưa có thông số trong danh mục. Điểm cao là thông số đang làm nhiều cấu hình ra "Chưa rõ" nhất.</p>
     <h4 style="margin:8px 0 4px">Thông số thiếu nhiều nhất</h4>
     <div class="tablewrap"><table class="suptable"><thead><tr><th>Thông số</th><th>Dải công suất</th><th>Số gói nêu</th><th>Model đã có</th><th>Điểm</th></tr></thead><tbody>${raw(g.fields.slice(0, 20).map((f) => h`<tr><td>${f.item}</td><td>${f.band}</td><td class="num">${f.demand}</td><td class="num">${f.have}/${f.total} (${pct(f.fill)})</td><td class="num"><b>${f.score}</b></td></tr>`).join(""))}</tbody></table></div>
