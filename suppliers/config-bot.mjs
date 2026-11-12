@@ -752,8 +752,12 @@ export function engineLists(t) {
       // Not a cell that also gives the cylinders ("Số xi lanh, dung tích ≥ 3 xi lanh").
       || (/dung t[íi]ch\s*(?:xi|xy)\s?lanh|displacement/i.test(cell) && !/s[ốo]\s*(?:xi|xy)\s?lanh|\d\s*(?:xi|xy)\s?lanh/i.test(cell)
         && cell.match(/dung t[íi]ch[^\d\n]{0,40}?(?:≥|>=|tối thiểu)\s*:?\s*(\d{1,2}(?:[.,]\d{1,3})?)(?![\d.,]|\s*(?:mm|cc|cm|kg|%|kw|kva|l\b|lít|lit|v\b|vòng|rpm|:))/i)));
-    if (d) disp.push(Number(d[1].replace(",", ".")));
-    else if (du) disp.push(/cc|cm/i.test(du[0]) ? Number(du[1].replace(/[.,]/, "")) / 1000 : Number(du[1].replace(",", ".")));
+    // "12,9 L (± 3%)" / "≥ 1,3 (lít) ± 5%": the HSMT accepts a figure that much below the one it gives (2026-11-12 soát ngưỡng:
+    // IB2300087393's 12,9 L (± 3%) left out the 12,78 L engines). A plus-or-minus after the figure lowers the minimum by it.
+    const tolOf = (m) => { const t = cell.slice(m.index + m[0].length, m.index + m[0].length + 24).match(/^[^\d±+]{0,12}(?:±|\+\s?\/\s?-|\+-)\s*(\d{1,2}(?:[.,]\d+)?)\s*%/); return t ? Number(t[1].replace(",", ".")) / 100 : 0; };
+    const lowered = (v, m) => Math.round(v * (1 - tolOf(m)) * 1000) / 1000;
+    if (d) disp.push(lowered(Number(d[1].replace(",", ".")), d));
+    else if (du) disp.push(lowered(/cc|cm/i.test(du[0]) ? Number(du[1].replace(/[.,]/, "")) / 1000 : Number(du[1].replace(",", ".")), du));
     const c = cell.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i) || cell.match(/s[ốo]\s*(?:xi|xy)\s?lanh[^\d\n]{0,30}?\b0?(\d{1,2})\s*(?:xi|xy)?\s?(?:lanh)?\b/i)
       || line.match(/^\s*[-+•]?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
     if (c && Number(c[1]) >= 1 && Number(c[1]) <= 20) cyl.push(Number(c[1]));
