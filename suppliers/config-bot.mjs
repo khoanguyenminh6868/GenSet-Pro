@@ -795,6 +795,23 @@ export function sizeBlocks(t, sizes) {
       if (kind) ments.push({ line: i, kind, kva: numOf(m[1]), unit: m[2].toLowerCase() });
     }
   }
+  // "Công suất định mức 250KVA/200KW" (no sign, no colon: IB2500114642) is the genset's rating, as prime.
+  for (let i = 0, o = 0; i < L.length; o += L[i].length + 1, i++) {
+    for (const m of L[i].matchAll(/^\s*(?:[-•*+]|\d{1,2}[.)])?\s*c[ôo]ng su[ấa]t\s+[đd][ịi]nh m[ứư]c\s*:?\s*(?=\d)(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b/gi)) {
+      if (m[2].toLowerCase() === "kw" && !kwSizes) continue;
+      if (ENGINE_W.test(L[i].slice(0, m.index)) || ments.some((x) => x.line === i && x.kva === numOf(m[1]))) continue;
+      ments.push({ line: i, kind: "prime", kva: numOf(m[1]), unit: m[2].toLowerCase() });
+    }
+  }
+  ments.sort((a, b) => a.line - b.line);
+  // A heading of a section of one size ("A. Yêu cầu kỹ thuật đối với máy phát điện 10 kVA", "b. Yêu cầu kỹ thuật máy phát điện 13.5KVA",
+  // "I. / 1. / Phần II ..."): the text after it is that size's up to the next heading, whatever statements of power it holds (an
+  // alternator's "≥ 12 KVA" opened a block of its own, and a section's end fell into the block before: 2026-11-12).
+  const heads = [];
+  L.forEach((l, i) => {
+    const h = l.length < 200 && l.match(/(?:^|["”.])\s*(?:[*•-]\s*)?(?:[A-Za-z]|[IVXivx]{1,4}|\d{1,2}(?:\.\d{1,2})*|Phần\s+\S{1,4})\s*[.):]?\s+(?:Yêu cầu|Thông số)\s+kỹ thuật\s+(?:kỹ thuật\s+)?[^\n]*?m[áa]y ph[áa]t [đd]i[ệe]n[^\n]*?(\d{1,4}(?:[.,]\d+)?)\s*kVA\b/i);
+    if (h) heads.push({ line: i, head: true, kind: "prime", kva: numOf(h[1]), unit: "kva" });
+  });
   const belongs = (m) => {
     // A statement in kW is read only when a size of the tender is in kW (IB2300363623: 15 kVA and 5 kW), at 0.8 (5 kW = 6.25 kVA): in
 // a tender in kVA the kW statements (the alternator's, the shaft's) opened blocks of no size inside the block of a size.
@@ -802,9 +819,10 @@ export function sizeBlocks(t, sizes) {
     return hit.length === 1 ? hit[0][1] : -1;
   };
   const runs = [];
-  for (const m of ments) {
+  let inHead = false;
+  for (const m of [...ments, ...heads].sort((a, b) => a.line - b.line || (b.head ? 1 : 0) - (a.head ? 1 : 0))) {
     const size = belongs(m), r = runs.at(-1);
-    if (r && r.size === size && size >= 0) r.end = m.line; else runs.push({ size, start: m.line, end: m.line });
+    if (m.head) { runs.push({ size, start: m.line, end: m.line }); inHead = true; } else if (!inHead) { if (r && r.size === size && size >= 0) r.end = m.line; else runs.push({ size, start: m.line, end: m.line }); }
   }
   runs.forEach((r, i) => (r.to = i + 1 < runs.length ? runs[i + 1].start : L.length));
   return { L, runs };

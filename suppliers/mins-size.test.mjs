@@ -112,3 +112,28 @@ test("a list of items with the power right after its label, no sign: the block o
   assert.equal(minsForSize(technicalPart(head + text), small, ss, "").mins.minDisp, null);
   assert.equal(minsForSize(technicalPart(head + text), big, ss, "").mins.minPrime?.kVA, 15);
 });
+
+test("a heading of a section of one size is the boundary of its block, whatever statements of power the section holds", () => {
+  const text = ["A. Yêu cầu kỹ thuật đối với máy phát điện 300 kVA", "- Công suất liên tục ≥ 300 kVA", "II. Đầu phát", "- Công suất ≥ 400 KVA", "- Số xy lanh: ≥ 6 xy lanh",
+    "B. Yêu cầu kỹ thuật đối với máy phát điện 400 kVA", "- Dung tích xy lanh ≥ 14,5 L", "- Số xy lanh: ≥ 8 xy lanh"].join("\n");
+  const a = mins(text, 300), b = mins(text, 400);
+  assert.equal(a.mins.minCyl, 6);
+  assert.equal(b.mins.minCyl, 8);
+  assert.equal(b.mins.minDisp, 14.5);
+  assert.equal(a.mins.minDisp, null);
+  // A heading of a size the tender does not have closes the block before it (no minimum of the next section goes to 300).
+  const odd = [text.split("\n").slice(0, 5).join("\n"), "C. Yêu cầu kỹ thuật đối với máy phát điện 500 kVA", "- Số xy lanh: ≥ 12 xy lanh"].join("\n");
+  assert.equal(mins(odd, 300).mins.minCyl, 6);
+  assert.equal(mins(odd, 400).mins.minCyl, null);
+  // Not a heading: the same words inside a sentence.
+  assert.equal(sizeBlocks(head + "Theo yêu cầu kỹ thuật đối với máy phát điện 300 kVA nêu ở trên\n- Công suất liên tục ≥ 400 kVA", two).runs.length, 1);
+});
+
+test("'Công suất định mức 250KVA/200KW' at the start of a line opens the block of that size; one in a sentence does not", () => {
+  const ss = sizes(10.4, 250);
+  const text = ["- Công suất định mức: 10,4 kVA", "- Số xy lanh: ≥ 1 xy lanh", "- Công suất định mức 250KVA/200KW", "- Số xylanh: 6"].join("\n");
+  assert.equal(mins(text, 250, ss).mins.minCyl, 6);
+  assert.equal(mins(text, 10.4, ss).mins.minCyl, 1);
+  const inline = "VD: Công suất định mức 250 kVA (hãng A) khác hãng B\n- Số xylanh: 6";
+  assert.equal(sizeBlocks(head + inline, ss).runs.length, 0);
+});
