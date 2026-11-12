@@ -58,7 +58,8 @@
           "accessedAt": { "type": "string" },
           "tier": { "enum": ["A", "B", "C"] },
           "quote": { "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }] },
-          "file": { "type": "string" }
+          "file": { "type": "string" },
+          "official": { "type": "boolean", "description": "Code tính (web-memo.mjs isOfficial): trang thuộc tên miền của hãng bản ghi; agent không ghi" }
         }
       }
     },
