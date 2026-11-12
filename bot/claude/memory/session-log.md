@@ -85,3 +85,7 @@ Model hàng trúng còn thiếu sau đó: 57/133. FPT NEF67TE8P: đã lưu (PR #
 **10/11 PR #493 (Khoa):** Cấu hình gợi ý: mỗi cấu hình là `<details class="cfgcard">` (#1 mở sẵn qua `data-def="open"` + `sizeShut`, còn lại thu gọn). Quy tắc toàn hệ thống: trích nguồn vẫn bắt buộc trong dữ liệu/agent/code kiểm, nhưng web KHÔNG in ra (`SHOW_SRC = false` ở đầu script web/index.html — mọi chỗ hiện câu trích/dòng nguồn/link nguồn/tham chiếu mới phải gate bằng nó). Bẫy: trong h`` chuỗi thuộc tính như 'data-x="y"' bị escape — viết `data-x="${...}"`. Thử web cục bộ: launch.json ở `C:\Projects\GenSet Pro\.claude\` + serve.js (shim DB, có configmatch thật).
 
 **11/11 cfg-r4 (PR #532 merge 3bb5085):** Gợi ý cấu hình — khởi động/làm mát nguồn không ghi → xác nhận khi đặt hàng; nguồn khác nhau → theo tờ hãng đúng mã (trừ khi NCC của cấu hình ghi khác); `disagree` sửa cấp cách điện + tỉ số x:1. Chi tiết [[config-suggest]], nghiệm thu `genbid-work\dieu-phoi\nghiem-thu\cfg-r4.md`.
+
+**12/11 keepFound (PR #538, 33362dd):** Gợi ý lại giữ kết quả Tìm NCC: `keepFound(result, prevResult, opts)` trong config-bot.mjs, gọi trong `answer()` sau `checkDir`; xem `config-suggest.md`. Bẫy: bản trước/sau của IB2600594596 không có cờ fromFind nên kiểm bằng dựng lại qua mergeFind.
+
+**12/11 cand-line + keep-web (PR #543, #547):** Gợi ý cấu hình — HSMT đòi đồng bộ thì giữ 6 chỗ ứng viên cho hãng tổ máy (keepOf không đẩy dòng lượt trước); lưu trang internet (config-web) và giữ cấu hình internet khi trang động cơ đọc lại được; lệnh restore-web chỉ đọc. Chi tiết [[config-suggest]].

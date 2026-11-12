@@ -1202,6 +1202,16 @@ async function autoRequests(fresh) {
 // it names, else all; Khoa 2026-11-04). Its configreq carries auto + basis, and config-bot.mjs sends Gợi ý giá đấu once the configuration is posted.
 // result: the analysis just finished; when neither it nor the name gives a generator power (a tender that buys fuel or
 // parts "cho máy phát điện", 2026-11-06 audit), no Gợi ý cấu hình / giá is sent (each costs an agent run).
+// A tender that services sets already there (bảo dưỡng, sửa chữa, thuê, vật tư, nhiên liệu...) buys no generator set,
+// though its analysis names their powers (IB2600604739 "Bảo dưỡng, sửa chữa hệ thống máy phát điện", Khoa 2026-11-12):
+// no Gợi ý cấu hình / giá. A name that also buys a set ("Mua máy phát điện dự phòng và vật tư...") still gets them.
+const SERVICE_RE = /b[ảa]o\s*d[ưu][ỡo]ng|b[ảa]o\s*tr[ìi]|s[ửu]a\s*ch[ữu]a|đ[ạa]i\s*tu|\bthu[êe]\b|di\s*d[ờo]i|v[ậa]t\s*t[ưu]|ph[ụu]\s*t[ùu]ng|nhi[êe]n\s*li[ệe]u|d[ầa]u\s*nh[ờo]n/i;
+const BUY_SET_RE = /(\bmua(\s*s[ắa]m)?|trang\s*b[ịi](\s*m[ớo]i)?|l[ắa]p\s*đ[ặa]t|cung\s*c[ấa]p((\s*(và|,)\s*|\s*)l[ắa]p\s*đ[ặa]t)?)\s*(\d+\s*)?(\(\d+\)\s*)?(t[ổo]\s*|b[ộo]\s*|chi[ếe]c\s*)?m[áa]y\s*ph[áa]t|\bmua(\s*s[ắa]m)?\s+(?!v[ậa]t|vttb|ph[ụu]|thi[ếe]t)[^,;]{0,15},\s*m[áa]y\s*ph[áa]t/i;
+function isServiceTender(name, result) {
+  const n = String(name || "").normalize("NFC");
+  if (/kh[ôo]ng\s*mua\s*(t[ổo]\s*)?m[áa]y/i.test(String(result?.keyInfo?.generatorCapacity || "").normalize("NFC"))) return true;
+  return SERVICE_RE.test(n) && !BUY_SET_RE.test(n);
+}
 function autoConfigRow(meta, result = null) {
   const auto = readJson(AUTO_FILE, {}), a = auto[meta.key];
   if (!a || a.requestedAt !== meta.requestedAt) return null;
@@ -1209,6 +1219,7 @@ function autoConfigRow(meta, result = null) {
   writeJson(AUTO_FILE, auto);
   const texts = [a.bidName, result?.keyInfo?.generatorCapacity, ...(result?.generatorSets || []).map((s) => `${s.primeKva || s.standbyKva || 0} kVA ${s.primeKw || s.standbyKw || 0} kW`), ...(result?.technicalSpecs || []).map((x) => `${x.item || ""} ${x.requirement || ""}`)];
   if (result && !texts.some((t) => histPower(t).length)) { log(`    ${meta.key}: không gửi Gợi ý cấu hình tự động (Phân tích không nêu công suất máy phát)`); return null; }
+  if (isServiceTender(a.bidName, result)) { log(`    ${meta.key}: không gửi Gợi ý cấu hình tự động (gói bảo dưỡng / sửa chữa / thuê / vật tư, không mua máy)`); return null; }
   return { coll: "configreq", id: meta.key, data: { notifyNo: meta.notifyNo || meta.key, bidName: a.bidName, origin: "all", requestedAt: now(), from: "sync", auto: true,
     basis: JSON.parse(JSON.stringify({ price: a.price, bidForm: a.bidForm, investorName: a.investorName })) } };
 }
