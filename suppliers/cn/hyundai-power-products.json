@@ -3,6 +3,7 @@
   "country": "ES",
   "role": "genset_oem",
   "status": "verified",
+  "brandLicensed": true,
   "names": {
     "en": "GRV POWER PRODUCTS, S.L.",
     "zh": null,

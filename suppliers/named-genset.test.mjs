@@ -160,3 +160,24 @@ test("gói không nêu hãng / model tổ máy: không có trường nào mới"
   const r = { configs: [{ rank: 1 }] };
   assert.deepEqual(markNamed(r, null), { configs: [{ rank: 1 }] });
 });
+
+// brandLicensed (Khoa 2026-11-13): a supplier that carries the brand → the make check is "confirm", rank untouched.
+const makeStatus = (res, lic) => {
+  const sup = [{ ...hyundai(), ...(lic ? { brandLicensed: true } : {}) }, ...assemblers()];
+  const c = named1(); c.checks = [{ item: "Hãng sản xuất tổ máy", requirement: "Huyndai", hsmtQuote: "3 Nhà sản xuất Huyndai", offered: "Hyundai", part: "genset", status: "met" }];
+  const { result } = check({ requirements: REQS.map((r) => ({ ...r })), configs: [equiv(0), c] }, { hsmtText: HSMT, suppliers: sup, readWeb: () => null, origin: "all" });
+  rankConfigs(result);
+  return result;
+};
+test("brandLicensed: có cờ → dòng hãng tổ máy confirm, vẫn named model, hạng 1", () => {
+  const r = makeStatus(null, true), c = r.configs[0], x = c.checks.find((k) => k.item === "Hãng sản xuất tổ máy");
+  assert.equal(c.named, "model");
+  assert.equal(x.status, "confirm");
+  assert.match(x.note, /thương hiệu Hyundai do GRV POWER PRODUCTS, S\.L\. chào, cần giấy tờ của nhà sản xuất \(CO, CQ, thư uỷ quyền\)/);
+  assert.ok((c.rfq || []).some((q) => q.item === "Hãng sản xuất tổ máy" && q.status === "confirm" && /CO, CQ/.test(q.ask)));
+});
+test("brandLicensed: không có cờ → dòng không thành confirm (code không đổi trạng thái)", () => {
+  const c = makeStatus(null, false).configs[0];
+  assert.equal(c.named, "model");
+  const x = c.checks.find((k) => k.item === "Hãng sản xuất tổ máy"); assert.notEqual(x.status, "confirm"); assert.ok(!x.licensed);
+});

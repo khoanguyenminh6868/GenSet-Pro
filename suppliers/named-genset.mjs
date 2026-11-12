@@ -265,6 +265,31 @@ export function namedHit(c, named, { supOf = () => null, srcText = () => null } 
   if (makers.some((r) => [r.names?.en, ...(r.names?.brands || []), r.id].some((x) => normMake(x) === named.make))) return "make";
   return null;
 }
+// A supplier that only CARRIES the make (Khoa 2026-11-13: GRV Power Products S.L. sells Hyundai-brand sets under licence;
+// the record says `brandLicensed: true`, its legal entity is names.en). A configuration the HSMT's named make reaches only through
+// such a supplier does not meet "hãng sản xuất tổ máy" by the name alone: the code turns the check into "confirm" (documents of
+// the maker: CO, CQ, authorisation letter). The configuration stays `named`, so its rank is not touched.
+export function brandLicensedSeller(c, named, supOf = () => null) {
+  if (!named?.make || !c) return null;
+  const ids = [c.genset?.src?.supplierId, c.engine?.src?.supplierId, ...(c.suppliers || []).map((s) => s.supplierId)].filter(Boolean);
+  const makers = [...new Set(ids)].map((id) => supOf(id)).filter((r) => makerOf(r, named.make));
+  const lic = makers.find((r) => r.brandLicensed === true);
+  return lic && makers.every((r) => r.brandLicensed === true) ? lic : null;
+}
+export const BRAND_ASK = (make) => `Gửi giấy tờ của nhà sản xuất thương hiệu ${make} (CO, CQ, thư uỷ quyền bán thương hiệu)`;
+export function brandLicensedChecks(c, reqs = [], named, hit, supOf = () => null) {
+  const seller = hit ? brandLicensedSeller(c, named, supOf) : null;
+  if (!seller) return c;
+  const r = (reqs || []).find((q) => q.code === "genset_make");
+  const x = r && (c.checks || []).find((k) => norm(k.item) === norm(r.item));
+  if (!x || (x.status !== "met" && x.status !== "unclear") || x.conflict) return c;
+  const who = seller.names?.en || seller.id;
+  x.was = x.status; x.status = "confirm"; x.confirm = "document"; x.licensed = true;
+  x.ask = BRAND_ASK(named.make);
+  x.licensedNote = `thương hiệu ${named.make} do ${who} chào, cần giấy tờ của nhà sản xuất (CO, CQ, thư uỷ quyền)`;
+  x.note = [String(x.note || "").replace(/\s*Code ghi: thương hiệu [^.]*\(CO, CQ, thư uỷ quyền\)\./g, "").trim(), `Code ghi: ${x.licensedNote}.`].filter(Boolean).join(" ");
+  return c;
+}
 // An internet source of the named configuration that is a seller's page: tier C as the agent wrote it, or no tier at all.
 // With no tier written, a page on a host that carries the make (hyundaipower-de.com for Hyundai) is the brand's; any other is not.
 const hostOf = (u) => { try { return new URL(String(u)).hostname.toLowerCase(); } catch { return ""; } };

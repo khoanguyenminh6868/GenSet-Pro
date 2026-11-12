@@ -207,6 +207,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    equivalent. Still suggest equivalents as usual: the code labels each configuration (named model, named make,
    equivalent), puts the named one first and warns when the HSMT allows no equivalent; do not label them yourself, and do
    not write `not_met` on the make / model check of an equivalent only for being another make (leave it `unclear`).
+   A supplier whose record says `brandLicensed: true` only CARRIES the brand (a company licensed to sell it, not the maker;
+   Khoa 2026-11-13, e.g. GRV Power Products for Hyundai): its configuration is still the named make / model and ranks
+   as before, but the code turns the make check ("hãng sản xuất tổ máy") into `confirm` ("thương hiệu Hyundai do <pháp nhân>
+   chào, cần giấy tờ của nhà sản xuất (CO, CQ, thư uỷ quyền)") and asks the supplier for those papers; never write `met`
+   on that check for it yourself.
    Two configurations per engine make (Khoa, 2026-11-11): when the catalog has two different engine models of one make
    that fit (Baudouin 6M33G825/5 and 6M31G825/5, Perkins 4006-23TAG2A and 4006-23TAG3A), give both, each as its own
    configuration; never more than 2 of one make (the code drops a third). Leave the second out only to make room for
