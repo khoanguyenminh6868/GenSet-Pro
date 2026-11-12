@@ -3391,12 +3391,12 @@ function supDetailHtml(s) {
     </dl>
     ${raw(supQuotesHtml(s))}
     <h4>Thế mạnh</h4>${raw(list(s.strengths, (x) => h`<li>${x.text} ${raw(supRefs(x.src))}</li>`))}
-    <h4>Dòng máy phân phối</h4>${raw(s.productLines?.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Loại</th><th>Dòng máy</th><th>Công suất</th><th>Động cơ</th><th>Đầu phát</th><th>Khác</th></tr></thead><tbody>${raw(s.productLines.map((p) => h`<tr>
+    ${raw(s.productLines?.length ? h`<details class="supsec"><summary>Dòng máy phân phối (${s.productLines.length})</summary><div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Loại</th><th>Dòng máy</th><th>Công suất</th><th>Động cơ</th><th>Đầu phát</th><th>Khác</th></tr></thead><tbody>${raw(s.productLines.map((p) => h`<tr>
       <td data-l="Loại">${SUP_KIND[p.kind] || p.kind}</td><td data-l="Dòng máy">${p.series} ${raw(supRefs(p.src))}</td>
       <td data-l="Công suất">${raw(p.power ? h`<b>${fmtPower(p.power)}</b> ${raw(supRefs(p.power.src))}${raw(p.power.rating === "unspecified" ? '<div class="muted small">nguồn không ghi prime/standby</div>' : "")}` : '<span class="muted">chưa có</span>')}</td>
       <td class="small" data-l="Động cơ">${[...(p.engineMakes || []), ...(p.engineModels?.length ? ["(" + p.engineModels.join(", ") + ")"] : [])].join(" ") || "—"}</td>
       <td class="small" data-l="Đầu phát">${(p.alternatorMakes || []).join(", ") || "—"}</td>
-      <td class="small" data-l="Khác">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div>` : '<div class="muted small">Chưa có dữ liệu.</div>')}
+      <td class="small" data-l="Khác">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div></details>` : '<h4>Dòng máy phân phối</h4><div class="muted small">Chưa có dữ liệu.</div>')}
     ${raw(supModelsHtml(s))}
     ${raw(supSpecHtml(s))}
     ${raw(supWonHtml(s))}
