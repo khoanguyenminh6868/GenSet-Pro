@@ -214,6 +214,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
      `status` (`partial`), `confidence` (`low` when every source is tier C), `missing` (what the pages do not say).
    - `sources`: `{ "n": 1, "file": "web/1.txt", "tier": "A|B|C", "quote": ["exact words from that page, 8+ characters"] }`
      (A: the maker's own site or datasheet, B: fair or association, C: self-description, dealer, B2B platform).
+     A tier C page that is not on the maker's own domain is not added to the catalog by the code (Khoa, 2026-11-12): what rests on it alone is dropped
+     from the record and the reason is in `catalogAdded`; the suggestion of this run may still show it.
    - `productLines`: `{ "kind": "genset", "series": "", "fuel": "diesel", "power": { "min": 400, "max": 400, "unit": "kVA",
      "rating": "prime|standby|unspecified", "src": [1] }, "src": [1] }` — min and max must be numbers in the quote of that source.
    - `specTables`: `{ "n": 1, "title": "", "header": ["| ... |"], "rows": ["| ... |"] }` — the header and each row are whole
