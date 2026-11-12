@@ -626,6 +626,57 @@ const GENERATION = [
   // "InteliGen" written alone: every InteliGen generation with a datasheet (NT, NTC, 500, 1000...), to be confirmed.
   (key, k) => key === "INTELIGEN" && /^INTELIGEN(NTC?|\d{1,4})$/.test(k),
 ];
+// ---------- Datasheet một model của tổ máy, dạng dọc (2026-11-13, IB2600601812) ----------
+// A genset maker's datasheet of one genset, written as label tables, one per block of the sheet ("DHY110KSE",
+// "DHY110KSE Voltage", "DHY110KSE Diesel engine", "DHY110KSE Alternator": label | unit | value). Every line of every
+// block is that genset's, but the code used to take only the table its row was in (the Voltage and Alternator blocks of
+// the named model were "Nguồn chưa ghi"). The sheet: the header-less tables of one source of the supplier whose title
+// names exactly one model, the configuration's genset; only from a source the record marks tier A (the maker's own
+// page). Also the quotes the record keeps of its tier A pages that name that model (the brand line of its own page).
+const titleCodes = (t) => [...new Set(String(t?.title || "").split(/[\s:–—|,/()]+/).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+const tierA = (x) => String(x?.tier || "").toUpperCase() === "A";
+export function gensetSheetOf(s, n, model) {
+  const k = CAT.keyOf(model || "");
+  if (!s || !k || n == null || !tierA((s.sources || []).find((x) => Number(x.n) === Number(n)))) return null;
+  const tables = (s.specTables || []).filter((t) => Number(t.n) === Number(n) && !(t.header || []).length && (t.rows || []).length && titleCodes(t).length === 1 && titleCodes(t)[0] === k);
+  if (!tables.length) return null;
+  const quotes = (s.sources || []).filter((x) => tierA(x) && (x.quote || []).some((q) => NG.namesModel(q, model))).flatMap((x) => (x.quote || []).map((q) => ({ n: Number(x.n), line: String(q) })));
+  return { supplierId: s.id, n: Number(n), model, tables, quotes };
+}
+// The sheet of a configuration: from the source of its genset row (else its engine's), its genset model.
+export function sheetOfConfig(c, supOf) {
+  const m = c?.genset?.model;
+  if (!m) return null;
+  for (const src of [c.genset?.src, c.engine?.src, c.alternator?.src]) {
+    if (src?.kind !== "catalog") continue;
+    const sh = gensetSheetOf(supOf(src.supplierId), src.n, m);
+    if (sh) return sh;
+  }
+  return null;
+}
+export const sheetText = (sh) => (sh ? [...sh.tables.flatMap((t) => [t.title, ...t.rows]), ...sh.quotes.map((q) => q.line)].join(" \n ") : "");
+// Each line of the sheet as a figure: { key (web/catalog.js SPECS, or "altKva" / "altKw"), part, label, value, line, block }.
+// The block names the part (catalog.js headingOf: "Diesel engine", "Alternator") or the quantity ("Voltage": its "Steady
+// state regulation" is the voltage regulation).
+export function sheetFacts(sh) {
+  const out = [];
+  for (const t of sh?.tables || []) {
+    const block = String(t.title || "").split(/\s+/).filter((w) => !CAT.isCode(w) && !/^\d+\s*hz$/i.test(w)).join(" ").trim();
+    const head = block ? CAT.headingOf(block) : undefined, part = head === "engine" || head === "alternator" ? head : null;
+    for (const line of t.rows) {
+      const cs = CAT.cellsOf(line);
+      if (cs.length < 2) continue;
+      const label = cs[0], value = cs[cs.length - 1], unit = cs.length > 2 ? cs.slice(1, -1).join(" ") : "";
+      let key = CAT.specKey(label) || (block && head === "keep" ? CAT.specKey(`${block} ${label}`) : null);
+      // A value of another shape than its kind ("Stable time | Sec | 2.0" read as a voltage) is no figure of it.
+      if (key && CAT.SPEC[key] && !CAT.SPEC[key].ok.test(`${value} ${unit}`.trim())) key = null;
+      // An alternator's own output in its block ("Prime power | kVA | 100"): catalog.js reads no power by label.
+      if (!key && part === "alternator" && /power|output|c[ôo]ng\s*su[ấa]t/i.test(label)) key = /kva/i.test(`${unit} ${value}`) ? "altKva" : /\bkw/i.test(`${unit} ${value}`) ? "altKw" : null;
+      out.push({ key, part: part || (key && CAT.SPEC[key]?.scope) || "genset", label, unit, value, line, block, supplierId: sh.supplierId, n: sh.n });
+    }
+  }
+  return out;
+}
 // A controller as the agent wrote it ("6120" made by SmartGen, "Smartgen 6120") → the model web/catalog.js reads from the
 // same words (HGM6120), whose datasheet then counts (2026-11-03 regression run: such controllers checked 0 functions).
 export function ctlModelOf(p) {
@@ -1235,7 +1286,7 @@ export function copyModelChecks(configs, textOf = () => "") {
 const factLine = (f) => `${CAT.SPEC[f.key]?.vi || RATED_VI[f.key] || f.key}: ${f.value} — factSrc: { "supplierId": "${f.supplierId}", "n": ${f.n}, "line": ${JSON.stringify(f.line)} }`;
 export function catalogMd(cat, cap, hints, opts = {}) {
   const facts = opts.facts || modelFacts(cat, opts.suppliers || []), { top, all } = candidates(cat, cap, hints, { ...opts, facts });
-  const sup = new Map((opts.suppliers || []).map((s) => [s.id, s])), shown = new Set(), headers = new Map();
+  const sup = new Map((opts.suppliers || []).map((s) => [s.id, s])), shown = new Set(), headers = new Map(), sheetShown = new Map();
   // A table whose models run across: each row with this model's own cell after it, so no other column is taken; the
   // row is quoted whole (check takes the figure from that column).
   const rowText = (u) => {
@@ -1262,6 +1313,18 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     out.push(`### ${i + 1}. ${u.genset || (r.why.some((w) => w.startsWith("tổ máy đúng model")) && u.title ? `bảng "${u.title}" (tổ máy HSMT nêu)` : "(không ghi model tổ máy)")} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
       `- supplierId: ${u.supplierId}, n: ${u.n}${s ? `, quốc gia: ${s.country || "?"}, độ tin cậy: ${s.confidence}, vai trò: ${s.role}` : ""}`, rowText(u));
     if (u.specs?.length) out.push(`  thông số trong dòng: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
+    // The genset's one-model datasheet (gensetSheetOf), every block, once per source.
+    const gm = u.genset || (titleCodes({ title: u.title }).length === 1 ? titleCodes({ title: u.title })[0] : null), sh = gm && gensetSheetOf(s, u.n, gm);
+    if (sh && sh.tables.length > 1) {
+      const key = `${u.supplierId}|${u.n}`;
+      if (sheetShown.has(key)) out.push(`  datasheet tổ máy ${gm}: như ứng viên ${sheetShown.get(key)} ở trên`);
+      else {
+        sheetShown.set(key, i + 1);
+        out.push(`  datasheet tổ máy ${gm} (nguồn tier A, một model, nhãn | đơn vị | giá trị; mọi dòng của mọi khối là của tổ máy này, trích nguyên dòng làm sourceQuote cho cả động cơ / đầu phát / tổ máy):`,
+          ...sh.tables.map((t) => `    [${t.title}] ${t.rows.join(" ; ")}`),
+          ...(sh.quotes.length ? [`    [trang của hãng ghi model này] ${sh.quotes.map((q) => q.line).join(" ; ")}`] : []));
+      }
+    }
     if (r.rowCtrl.length) out.push(`  bộ điều khiển trong dòng: ${r.rowCtrl.map((c) => c.model || c.brand).join(", ")}`);
     const sc = [...new Set((s?.controllers || []).map((c) => c.model || `${c.brand} (không ghi model)`))];
     if (sc.length) out.push(`  bộ điều khiển nhà cung cấp chào (mục Bộ điều khiển): ${sc.join(", ")}`);
@@ -1802,10 +1865,12 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     const first = (list) => keys.map((k) => list.find((v) => v.key === k)).find(Boolean);
     const s = first((row?.specs || []).filter((s) => x.part === "genset" || CAT.SPEC[s.key]?.scope === x.part));
     if (s) return { where: `dòng bảng của cấu hình (${s.label} = ${s.value})`, line: row.line };
-    if (x.part !== "engine" && x.part !== "alternator") return null;
     // Not a figure the model's sources give differently: it stays unclear anyway (2026-11-03: 11.76 / 10.3 L).
-    const own = factsOf(c, x.part), bad = factConflicts(own), f = first(own.filter((g) => !bad.has(g.key)));
-    return f ? { where: `thông số theo model ${c[x.part].model} (${f.label} = ${f.value})`, line: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line } } : null;
+    const own = ["engine", "alternator"].includes(x.part) ? factsOf(c, x.part) : [], bad = factConflicts(own), f = first(own.filter((g) => !bad.has(g.key)));
+    if (f) return { where: `thông số theo model ${c[x.part].model} (${f.label} = ${f.value})`, line: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line } };
+    // Else a line of the genset's own one-model datasheet (gensetSheetOf), in the block of that part (2026-11-13).
+    const g = first(sheetFacts(sheetOfConfig(c, (id) => sup.get(id))).filter((s) => s.key && (x.part === "genset" || s.part === x.part)));
+    return g ? { where: `datasheet tổ máy ${c.genset.model} (khối ${g.block || "chung"}: ${g.label} = ${g.value})`, line: g.line } : null;
   };
   // The rating a power check is about: its name says power and one of prime / standby (not "quá tải ... liên tục").
   const ratingOf = (x) => {
@@ -2004,6 +2069,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       const makeOfCode = part === "controller" && CAT.controllersIn(p.model).some((x) => x.model && x.brand === p.make);
       if (p.make && !makeOfCode && !sourcedMake(part, p) && !texts[part].includes(norm(p.make).split(/[\s-]/)[0])) { problems.push(`#${c.rank} ${part}: hãng ${p.make} không ghi trong nguồn`); p.makeUnverified = true; }
     }
+    // The configuration's genset sheet (gensetSheetOf): every block of it may be quoted, for any part of that genset.
+    const sheet = sheetOfConfig(c, (id) => sup.get(id)), sf = sheetFacts(sheet);
+    if (sheet) texts.sheet = norm(sheetText(sheet));
     // A grouped requirement (the controller's protections, measurements...: Khoa 2026-11-03) has one part per function;
     // each part is checked here like a check of its own, then the group is put back together.
     const groups = new Set();
@@ -2165,6 +2233,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     pfChecks(c, result.requirements || [], row);
     currentChecks(c, result.requirements || [], row);
     freqChecks(c, result.requirements || [], row, [...altAttrs.filter((a) => a.key === "poles"), ...factsOf(c, "alternator").filter((f) => /\bpoles?\b|số cực|极数/i.test(f.label || ""))]);
+    sheetChecks(c, result.requirements || [], { sheet, facts: sf, named: namedHere, hit: namedHere ? NG.namedHit(c, namedHere, namedCtx) : null, supOf: (id) => sup.get(id) });
     if (sync) {
       // The make of each part: as the configuration writes it, as the catalog reads the model, or from the model code.
       const recMake = (list, m) => (list || []).find((x) => x.key === CAT.keyOf(m || ""))?.make || "";
@@ -3157,6 +3226,50 @@ export function altAttrChecks(c, reqs, attrs = [], facts = []) {
       const as = alts.map((g) => g.has.map((k) => one(attrs, k)).filter(Boolean)), ok = alts.every((g, i) => (g.or ? as[i].length > 0 : as[i].length === g.has.length));
       if (ok) { const a = as.flat()[0]; putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: [...new Set(as.flat().map((x) => x.lines[0].replace(/^\|\s*|\s*\|\s*$/g, "").replace(/\s*\|\s*/g, ": ")))].join("; "), sourceQuote: [...new Set(as.flat().map(quoteOf))].join(" | "), part: "alternator", level: r.level || "core", status: "met", byCode: true,
         sheetSrc: { supplierId: a.supplierId, n: a.n, url: a.url, lines: a.lines }, note: `Code đọc từ ${sheet(a)}.` }); }
+    }
+  }
+  return c;
+}
+// ---------- Datasheet một model của tổ máy (2026-11-13, IB2600601812) ----------
+// From the configuration's own genset sheet (gensetSheetOf: tier A, one model, its genset), the code decides three points
+// whose comparison is plain, each "met" only (a figure that falls short, or a check already met / not met, is left as it
+// is, as the row checks above):
+// - alt_vreg: every voltage regulation of the sheet (not a transient one) within the HSMT's ±y%;
+// - alt_power: the alternator block's own output of the rating the HSMT asks (prime unless it says standby / tối đa) at
+//   or above the HSMT's kVA;
+// - genset_make: the configuration is the genset the HSMT names (named-genset.mjs namedHit), its sheet's supplier is a
+//   genset maker of that make (NG.makerOf: name / brands of the record), and a line the record keeps of its own tier A
+//   page names the make (the page that names the model). Nothing is read from the model name.
+export function sheetChecks(c, reqs = [], { sheet = null, facts = [], named = null, hit = null, supOf = () => null } = {}) {
+  if (!sheet) return c;
+  const where = `datasheet tổ máy ${sheet.model} của hãng (${sheet.supplierId} [${sheet.n}])`;
+  const put = (r, o, f, offered, part, extra = "") => putCheck(c, o.x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered, sourceQuote: f.line, part, level: r.level === "option" ? "option" : "core", status: "met", byCode: true, rule: "sheet",
+    sheetSrc: { supplierId: sheet.supplierId, n: f.n ?? sheet.n, line: f.line }, note: `Code đọc từ ${f.n != null && f.n !== sheet.n ? `trang của hãng (${sheet.supplierId} [${f.n}])` : where}${f.block ? `, khối "${f.block}"` : ""}.${extra}` });
+  for (const r of reqs) {
+    if (r.byCode || r.unverified) continue;
+    const req = `${r.requirement || ""} ${r.quote || ""}`;
+    if (r.code === "alt_vreg") {
+      const o = openCheck(c, r), want = pctsIn(req).filter((v) => v > 0);
+      if (!o || !want.length || !(ceilOf(req) || /±/.test(req))) continue;
+      const y = Math.min(...want), fs = facts.filter((f) => f.key === "vreg" && !TRANSIENT.test(`${f.label} ${f.line}`));
+      const got = fs.map((f) => pctsIn(`${f.value} ${f.unit}`));
+      if (!fs.length || got.some((g) => !g.length) || got.flat().some((v) => v > y)) continue;
+      put(r, o, fs[0], `${fs[0].value} ${fs[0].unit}`.trim() + ` (${fs[0].label})`, "alternator");
+    } else if (r.code === "alt_power") {
+      const o = openCheck(c, r), m = req.match(/(\d+(?:[.,]\d+)?)\s*kVA/i);
+      if (!o || !m || ceilOf(r.requirement || "")) continue;
+      const lim = Number(m[1].replace(",", ".")), sb = /d[ựu]\s*ph[òo]ng|standby|t[ốo]i\s*đa/i.test(r.requirement || "");
+      const fs = facts.filter((f) => f.key === "altKva" && (sb ? /standby|d[ựu]\s*ph[òo]ng/i.test(f.label) : /prime|continuous|li[êe]n\s*t[ụu]c/i.test(f.label)));
+      const v = fs.map((f) => numbersIn(f.value)[0]).filter((x) => x != null);
+      if (!v.length || v.length !== fs.length || new Set(v).size !== 1 || v[0] < lim) continue;
+      put(r, o, fs[0], `${figVi(v[0])} kVA (${fs[0].label}, khối đầu phát)`, "alternator");
+    } else if (r.code === "genset_make") {
+      const o = openCheck(c, r), maker = supOf(sheet.supplierId);
+      if (!o || !hit || !named?.make || !NG.makerOf(maker, named.make)) continue;
+      const q = sheet.quotes.find((x) => NG.makesIn(x.line).some((y) => y.make === named.make));
+      if (!q) continue;
+      put(r, o, q, `${named.make} (tổ máy ${sheet.model}; nhà cung cấp ${maker.names?.en || maker.id} mang thương hiệu ${named.make})`, "genset",
+        ` Hồ sơ nhà cung cấp là thương hiệu ${named.make}; trang đó ghi model ${sheet.model}.`);
     }
   }
   return c;
