@@ -553,7 +553,7 @@ test("check hints: an unclear controller function names its datasheet line; the 
   assert.equal(hints.length, 2);
 });
 
-test("engine minimums of the HSMT: read once each; an engine a source shows below them ranks lower", () => {
+test("engine minimums of the HSMT: read once each; an engine a source shows below them is left out", () => {
   const mins = (t) => { const { minDisp, minCyl } = engineMins(t); return { minDisp, minCyl }; };
   assert.deepEqual(mins("Dung tích ước tính ≥ 615 lít\nDung tích xy lanh ≥ 11,05 L\nSố xy lanh: ≥ 6 xy lanh\nTiêu hao ≤ 90 L/h"), { minDisp: 11.05, minCyl: 6 });
   // A bare figure is the least the HSMT accepts (Khoa, 2026-11-03); the label may sit on the line above.
@@ -566,9 +566,9 @@ test("engine minimums of the HSMT: read once each; an engine a source shows belo
     { id: "b", country: "CN", confidence: "low", specTables: t("Weichai gensets 50Hz", "| Model | Prime kVA | Prime kW | Engine | Alternator |", "| B-1 | 275 | 220 | WP13D385E200 | XY274K |") },
   ];
   const hints = hintsOf("Chương V. Yêu cầu kỹ thuật\nDung tích xy lanh ≥ 11,05 L\n50 Hz");
-  const { top } = candidates(C.build(list), { value: 250, unit: "kVA" }, hints, { suppliers: list });
-  assert.deepEqual(top.map((r) => r.u.supplierId), ["b", "s"]);
-  assert.match(top[1].why.join(" "), /dung tích 9.7 L < 11.05 L/);
+  const { top, dropped } = candidates(C.build(list), { value: 250, unit: "kVA" }, hints, { suppliers: list });
+  assert.deepEqual(top.map((r) => r.u.supplierId), ["b"]);
+  assert.deepEqual(dropped.map((r) => [r.u.supplierId, r.ruled]), [["s", ["disp"]]]);
 });
 
 test("factConflicts: one figure rounded two ways or a China level written two ways is no disagreement", () => {
@@ -579,7 +579,7 @@ test("factConflicts: one figure rounded two ways or a China level written two wa
   assert.deepEqual([...factConflicts([f("emission", "国Ⅱ", "a"), f("emission", "国Ⅲ", "b")]).keys()], ["emission"]);
 });
 
-test("power minimums of the HSMT: prime by the nearest word, fuel at 100% load; a row below them ranks lower", () => {
+test("power minimums of the HSMT: prime by the nearest word, fuel at 100% load; a row below them is left out", () => {
   assert.deepEqual(powerMins("Công suất liên tục\nI.3   ≥ 400 kVA / 320 kW\n(Prime)\nCông suất dự phòng\nI.4   ≥ 440 kVA / 352 kW\n(Standby)"), { minPrime: { kVA: 400, kW: 320 }, maxFuel: null, maxFuel75: null, maxFuel50: null });
   assert.deepEqual(powerMins("- Công suất liên tục tổ máy phát điện: 500kVA/ 400kW\n- Công suất dự phòng (Standby Power): 550 kVA (440 kW)."), { minPrime: { kVA: 500, kW: 400 }, maxFuel: null, maxFuel75: null, maxFuel50: null });
   assert.equal(powerMins("Tiêu hao nhiên liệu\n+ Ở 50% tải nhiên liệu tiêu hao ≤ 49,6 L/h\n+ Ở 75% tải nhiên liệu tiêu hao ≤ 73,2 L/h\n+ Ở 100% tải nhiên liệu tiêu hao ≤ 97,4 L/h").maxFuel, 97.4);
@@ -590,9 +590,9 @@ test("power minimums of the HSMT: prime by the nearest word, fuel at 100% load; 
     { id: "ok", country: "CN", confidence: "low", specTables: t("| O-1 | 450 | 360 | 413 | 330 | WP13D405E200 | XY444 |") },
   ];
   const hints = hintsOf("Chương V. Yêu cầu kỹ thuật\nCông suất liên tục ≥ 400 kVA (Prime)\n50 Hz");
-  const { top } = candidates(C.build(list), { value: 400, unit: "kVA" }, hints, { suppliers: list });
-  assert.deepEqual(top.map((r) => r.u.supplierId), ["ok", "lo"]);
-  assert.match(top[1].why.join(" "), /Prime 375 kVA/);
+  const { top, dropped } = candidates(C.build(list), { value: 400, unit: "kVA" }, hints, { suppliers: list });
+  assert.deepEqual(top.map((r) => r.u.supplierId), ["ok"]);
+  assert.deepEqual(dropped.map((r) => [r.u.supplierId, r.ruled]), [["lo", ["prime"]]]);
 });
 
 test("controller datasheets: 'DSE6010/20 MKII' is two models; 'HGM6110' takes the HGM6110N datasheet, to be confirmed", () => {
@@ -691,7 +691,7 @@ test("a table whose models run across: any row may be quoted, each figure from t
   assert.equal(wrong.result.configs[0].checks[0].status, "unclear");
 });
 
-test("a largest displacement of the HSMT ('≤ 15,2 L') ranks larger engines lower", () => {
+test("a largest displacement of the HSMT ('≤ 15,2 L') leaves larger engines out", () => {
   assert.equal(engineMins("Dung tích xi lanh ≤ 15,2 L\nDung tích bình nhiên liệu ≤ 500 lít").maxDisp, 15.2);
   const t = (row) => [{ n: 101, title: "Gensets 50Hz", header: ["| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (L) |"], rows: [row] }];
   const list = [
@@ -699,9 +699,9 @@ test("a largest displacement of the HSMT ('≤ 15,2 L') ranks larger engines low
     { id: "fit", country: "CN", confidence: "low", specTables: t("| G-2 | 700 | 560 | YC6C1020-D31 | NFS5-F | 14.9 |") },
   ];
   const cat = C.build(list), hints = { ...hintsOf("Dung tích xi lanh ≤ 15,2 L"), engineMakes: [], altMakes: [], ctrlMakes: [], ctrlModels: [] };
-  const { top } = candidates(cat, { value: 700, unit: "kVA" }, hints, { suppliers: list, origin: "cn", cn: cnSuppliers(list) });
-  assert.deepEqual(top.map((r) => r.e.model), ["YC6C1020-D31", "YC6TD840-D31"]);
-  assert.match(top[1].why.join(" "), /19.6 L > 15.2 L/);
+  const { top, dropped } = candidates(cat, { value: 700, unit: "kVA" }, hints, { suppliers: list, origin: "cn", cn: cnSuppliers(list) });
+  assert.deepEqual(top.map((r) => r.e.model), ["YC6C1020-D31"]);
+  assert.deepEqual(dropped.map((r) => [r.e.model, r.ruled]), [["YC6TD840-D31", ["maxDisp"]]]);
 });
 
 test("a largest displacement below the least one, or too small for the power, is left out", () => {
