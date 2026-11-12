@@ -157,6 +157,13 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    Only figures of the engine or alternator itself, never a genset figure (fuel consumption, size, tank, noise) of
    another supplier's row. A figure marked ⚠ (sources disagree) is `unclear`, with the values in `offered`; the code
    also turns such a "met" into "unclear".
+   A candidate with "datasheet tổ máy <model>" (the maker's own sheet of that one genset, written as blocks of
+   label | unit | value: general, Voltage, Frequency, Diesel engine, Alternator, and lines of its own page): every line of
+   every block is that genset's. For a configuration of that genset, read every requirement against those blocks
+   (voltage regulation in the Voltage block, the alternator's own kVA in the Alternator block, cooling, fuel type,
+   governor...) and quote the whole line as `sourceQuote` (no factSrc needed); keep `src.line` as the candidate's `line`.
+   Mind which block a label is in ("Steady state regulation" is in both Voltage and Frequency). What no line states
+   (speed, emission, origin, a function the sheet does not list) stays `unclear`.
    A value may be converted only with a formula from "Công thức được phép" at the end of this file (kW ↔ kVA,
    current, L/h ↔ g/kWh, hp/PS → kW, speed from poles, displacement from bore × stroke, in³ → L, °F → °C). Put it in
    the check's `conversions` (see result.json): the formula id, every input with `from`:
