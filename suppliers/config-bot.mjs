@@ -753,6 +753,10 @@ const CONF = { high: 30, medium: 15 };
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
 // Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
 const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12, MAKE_ROWS = 3, SYNC_ROWS = 6, SYNC_PER_SUPPLIER = 2;
+// A ceiling per engine make among the rows (Khoa, 2026-11-12): Cummins and Perkins, with the most datasheet figures, took 30
+// of 30 rows (IB2600592658, 2880: 30 Cummins). When the HSMT names no engine make or model, a make has at most MAKE_CAP
+// of the rows; what the ceiling leaves empty is filled with the best-scored rows left, whatever their make.
+export const MAKE_CAP = 10;
 // The make of a genset maker for Đồng bộ thương hiệu (syncCheck): a supplier that is no distributor, whose name or id is
 // of a make (web/bidprice.js familyOf). A Chinese company whose name carries a foreign make ("… Cummins Power …") is an
 // assembler, not that maker: null, as is an assembler whose name is no make (cgm-italia).
@@ -789,7 +793,7 @@ export function plausible(hints, cap) {
 // The candidates' power band (Khoa, 2026-11-12): a row whose rating is from 100% (less the 0.5% of rounding the checks
 // allow: 0.995, as `gap` and the prime check) to 120% of the HSMT's size. It was 95% to 140%.
 export const NEAR_LOW = 0.995, NEAR_HIGH = 1.2;
-export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, patches = true } = {}) {
+export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a]));
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * NEAR_LOW && p[cap.unit] <= cap.value * NEAR_HIGH + 1e-9);
   // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
@@ -805,25 +809,21 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const offers = [...rowCtrl, ...(s?.controllers || [])];
       const ctrlNamed = offers.some((c) => hints.ctrlModels.includes(CAT.keyOf(c.model || "")) || hints.ctrlMakes.includes(c.brand));
       const why = [];
-      // Two numbers (Khoa, 2026-11-12): `fit` is how well the row meets the HSMT; `data` is how much data the system has
-      // for it (figures, alternator, controller, datasheets, confidence). Which engines enter the list goes by `fit`, then
-      // the size, then `data`; `data` is only for which supplier shows an engine and for ties. `score` = fit + data less
-      // the power over the size: the sum the places held for makes (sync, MAKE_ROWS, CN_ROWS) still read.
-      let fit = 0, data = 0;
+      let score = 0;
       const isNamed = named(hints, e.model);
-      if (isNamed) { fit += 1000; why.push("HSMT ghi model động cơ này"); }
+      if (isNamed) { score += 1000; why.push("HSMT ghi model động cơ này"); }
       // Sources that name two makes ("Cummins / Doosan"): either one is the HSMT's.
       const makeNamed = (e.make || "").split(" / ").find((m) => hints.engineMakes.includes(m));
-      if (makeNamed) { fit += 300; why.push(`hãng động cơ ${makeNamed} HSMT nêu`); }
-      if (ctrlNamed) { fit += 200; why.push("có bộ điều khiển hãng HSMT nêu"); }
-      if (e.make) data += 60;
+      if (makeNamed) { score += 300; why.push(`hãng động cơ ${makeNamed} HSMT nêu`); }
+      if (ctrlNamed) { score += 200; why.push("có bộ điều khiển hãng HSMT nêu"); }
+      if (e.make) score += 60;
       // Xuất xứ Trung Quốc (Khoa, 2026-11-03): an engine of a Chinese make before a foreign one a supplier in China
       // offers. Those had more datasheet figures and filled 20 of the 30 rows; the make the HSMT names (300) still wins.
-      if (origin === "cn" && !viaCn) { fit += 250; why.push("động cơ hãng Trung Quốc"); }
-      if (offers.length) data += 50;
+      if (origin === "cn" && !viaCn) { score += 250; why.push("động cơ hãng Trung Quốc"); }
+      if (offers.length) score += 50;
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
-      if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { data += 40; why.push("bộ điều khiển có datasheet hãng"); }
-      data += 8 * Math.min(eKeys.size, 8);
+      if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
+      score += 8 * Math.min(eKeys.size, 8);
       // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
       const below = (key, min, read) => { const v = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => read(f.value)).filter((x) => x != null); return min && v.length && v.every((x) => x < min) ? v[0] : null; };
       // No displacement given: bore × stroke × cylinders (web/conversions.js displacement), when the sources give them.
@@ -835,38 +835,45 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // unless the HSMT names its engine model (`named`): then its sources disagree with the HSMT's own choice, and it
       // stays with 600 points off and the reason, for the agent to see.
       const ruled = [];
-      if (dl != null) { fit -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
+      if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
       const dh = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => litres(f.value)).filter((x) => x != null) : [];
-      if (dh.length && dh.every((x) => x > hints.maxDisp * 1.005)) { fit -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
-      if (cl != null) { fit -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
+      if (dh.length && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
+      if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
       const pr = u.power?.prime, mp = hints.minPrime;
       const lowPrime = pr && mp && ((mp.kVA && pr.kVA != null && pr.kVA < mp.kVA * 0.995) || (!mp.kVA && mp.kW && pr.kW != null && pr.kW < mp.kW * 0.995));
-      if (lowPrime) { fit -= 600; ruled.push("prime"); why.push(`Prime ${pr.kVA ?? "?"} kVA / ${pr.kW ?? "?"} kW < ${mp.kVA ? `${mp.kVA} kVA` : `${mp.kW} kW`} HSMT yêu cầu`); }
+      if (lowPrime) { score -= 600; ruled.push("prime"); why.push(`Prime ${pr.kVA ?? "?"} kVA / ${pr.kW ?? "?"} kW < ${mp.kVA ? `${mp.kVA} kVA` : `${mp.kW} kW`} HSMT yêu cầu`); }
       // Its own fuel consumption in L/h above the most the HSMT allows.
       let fuelOver = false;
       for (const [fk, hk, at] of [["fuel", "maxFuel", ""], ["fuel75", "maxFuel75", " ở 75% tải"], ["fuel50", "maxFuel50", " ở 50% tải"]]) {
         const fl = hints[hk] && (u.specs || []).find((x) => x.key === fk && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`));
         const fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null;
-        if (fv != null && fv > hints[hk]) { fit -= 300; fuelOver = true; why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
+        if (fv != null && fv > hints[hk]) { score -= 300; fuelOver = true; why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
       }
-      if (a) { data += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { fit += 80; why.push("đầu phát HSMT nêu"); } data += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
-      data += CONF[s?.confidence] || 0;
-      const score = fit + data - (cap ? Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1)) : 0);
+      if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
+      score += CONF[s?.confidence] || 0;
+      if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
       const maker = sync && s?.role === "genset_oem" ? gensetMakerOf(s) : null;
       if (maker) why.push(`tổ máy của chính hãng ${maker} (HSMT đòi đồng bộ thương hiệu)`);
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled }); continue; }
-      rows.push({ e, u, a, score, fit, data, nKeys: eKeys.size, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver });
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver });
     }
   }
   rows.sort((x, y) => y.score - x.score);
   const perEngine = new Map(), perSupplier = new Map(), seen = new Set(), out = [];
   const add = (m, k) => m.set(k, (m.get(k) || 0) + 1);
-  const pick = (list, n) => {
+  // The ceiling per make: not when the HSMT names an engine make or model; a make "A / B" counts for A, a row of no make
+  // for "?". `exempt` rows (the places held for the genset makers of Đồng bộ) do not count and are never stopped;
+  // `free` ignores the ceiling (the last fill).
+  const capOn = makeCap > 0 && !hints.engineMakes.length && !rows.some((r) => r.named), perMake = new Map();
+  const makeOf = (r) => (r.e.make || "?").split(" / ")[0];
+  const pick = (list, n, { exempt = false, free = false } = {}) => {
     for (const r of list) {
       if (out.length >= n) break;
       const k = choiceKey(r);
       if (seen.has(k) || (perEngine.get(r.e.key) || 0) >= (r.named ? PER_NAMED_ENGINE : PER_ENGINE) || (perSupplier.get(r.u.supplierId) || 0) >= PER_SUPPLIER) continue;
+      if (capOn && !exempt && !free && (perMake.get(makeOf(r)) || 0) >= makeCap) continue;
+      if (!exempt) add(perMake, makeOf(r));
       seen.add(k); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r);
     }
   };
@@ -891,7 +898,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (list.length < SYNC_PER_SUPPLIER && !list.some((x) => x.e.key === r.e.key)) bySup.set(r.u.supplierId, [...list, r]);
     }
     const rounds = Array.from({ length: SYNC_PER_SUPPLIER }, (_, i) => [...bySup.values()].map((l) => l[i]).filter(Boolean).sort(order));
-    pick(rounds.flat(), Math.min(max, out.length + SYNC_ROWS));
+    pick(rounds.flat(), Math.min(max, out.length + SYNC_ROWS), { exempt: true });
   }
   const held = new Set(out);
   // No origin required (no G7 / G20 in the HSMT): Chinese makes keep CN_ROWS of the rows (Khoa, 2026-11-05: a Chinese
@@ -916,44 +923,23 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       pick(mine, Math.min(max, out.length + MAKE_ROWS));
     }
   }
-  // The rest by ENGINE first, rows after (Khoa, 2026-11-12): each engine's best row (fit, size gap in steps of 5%, then
-  // data) stands for it; engines go in the order fit (high first), gap, data, and engines of equal fit take turns by
-  // make (round 1: the best engine of each make, round 2: the second...). Only when every engine has a row does an
-  // engine get a second and third (a supplier other than the first's), in the same order. PER_ENGINE, PER_NAMED_ENGINE
-  // and PER_SUPPLIER hold. Cummins and Perkins, with the most datasheets, no longer take the places of the other makes.
-  const rank = (x, y) => y.fit - x.fit || gap(x) - gap(y) || y.data - x.data || y.score - x.score;
-  const byEngine = new Map();
-  for (const r of rows) byEngine.set(r.e.key, [...(byEngine.get(r.e.key) || []), r]);
-  const engines = [...byEngine.values()].map((l) => l.sort(rank)).sort((a, b) => rank(a[0], b[0]));
-  const makeOf = (l) => (l[0].e.make || "?").split(" / ")[0];
-  const order = [];
-  for (const fit of [...new Set(engines.map((l) => l[0].fit))].sort((a, b) => b - a)) {
-    const byMake = new Map();
-    for (const l of engines.filter((l) => l[0].fit === fit)) byMake.set(makeOf(l), [...(byMake.get(makeOf(l)) || []), l]);
-    for (let i = 0; [...byMake.values()].some((l) => l.length > i); i++) order.push(...[...byMake.values()].map((l) => l[i]).filter(Boolean).sort((a, b) => rank(a[0], b[0])));
-  }
-  for (let d = 0; d < PER_NAMED_ENGINE && out.length < max; d++) {
-    for (const list of order) {
-      if (out.length >= max) break;
-      const key = list[0].e.key;
-      if ((perEngine.get(key) || 0) > d) continue;
-      const r = list.find((r) => !seen.has(choiceKey(r)) && (perEngine.get(key) || 0) < (r.named ? PER_NAMED_ENGINE : PER_ENGINE) && (perSupplier.get(r.u.supplierId) || 0) < PER_SUPPLIER);
-      if (r) { seen.add(choiceKey(r)); add(perEngine, key); add(perSupplier, r.u.supplierId); out.push(r); }
-    }
-  }
-  // The places held for genset makers push no row of a configuration the last run chose (Khoa 2026-11-12: `keep`, the
-  // supplierId + engine key of each, from prevResult): such a row the list would have had without them comes back in
-  // place of the lowest-scored row that is neither held nor of the last run.
-  if (sync && keep?.size) {
-    const kept = (r) => keep.has(`${r.u.supplierId}\n${r.e.key}`);
-    const plain = candidates(cat, cap, hints0, { suppliers, origin, cn, facts, focus, max }).top;
-    for (const r of plain.filter((r) => kept(r) && !out.some((x) => choiceKey(x) === choiceKey(r)))) {
-      const gone = out.filter((x) => !held.has(x) && !kept(x)).sort((x, y) => rank(y, x))[0];
+  pick(rows, max);
+  if (out.length < max) pick(rows, max, { free: true });
+  // The rows of the configurations the last run chose (Khoa 2026-11-12: `keep`, the supplierId + engine key of each, from
+  // prevResult) stay among the rows for every tender, not only for Đồng bộ: a configuration that still passes the hard
+  // filters (the power band, the HSMT's minimums: its rows are in `rows`) keeps its best row, in place of the
+  // lowest-scored row that is neither held nor of the last run. Neither the ceiling per make nor the limits per engine /
+  // supplier stop it.
+  if (keep?.size) {
+    const pairOf = (r) => `${r.u.supplierId}\n${r.e.key}`, kept = (r) => keep.has(pairOf(r)), have = new Set(out.map(pairOf));
+    for (const r of rows.filter(kept)) {
+      if (have.has(pairOf(r))) continue;
+      const gone = out.filter((x) => !held.has(x) && !kept(x)).sort((x, y) => x.score - y.score)[0];
       if (!gone) break;
-      out.splice(out.indexOf(gone), 1, r);
+      out.splice(out.indexOf(gone), 1, r); have.add(pairOf(r));
     }
   }
-  out.sort(rank);
+  out.sort((x, y) => y.score - x.score);
   return { top: out, all: rows, dropped };
 }
 // The rows of the configurations a result chose (candidates `keep`): supplierId + engine key of each supplier and of
@@ -1010,7 +996,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     return `  bảng nhiều model theo cột (${u.model} là cột thứ ${off} từ phải; sourceQuote là nguyên dòng, src.line là dòng "${rows[cells.indexOf(at)]}"): ${rows.map((r, i) => `${r} → ${cell(cells[i])}`).join(" ; ")}`;
   };
   const out = [`# Danh mục trong hệ thống${cap ? ` (tổ máy ${cap.value} ${cap.unit}, từ 100% đến 120%)` : ""}${hints.freq ? `, ${hints.freq} Hz` : ""} — code đã xếp sẵn`, "",
-    "Thứ tự ưu tiên khi xếp: chọn theo ĐỘNG CƠ trước: model / hãng động cơ HSMT nêu, bộ điều khiển và đầu phát HSMT nêu, rồi công suất càng sát càng tốt; các động cơ ngang nhau thì lần lượt mỗi hãng một động cơ. Mỗi động cơ có một dòng trước khi động cơ nào có dòng thứ hai (nhà cung cấp khác). Nhiều hay ít thông số có nguồn không quyết định động cơ nào vào danh sách, chỉ chọn nhà cung cấp nào hiện dòng của động cơ đó.", "",
+    "Thứ tự ưu tiên khi xếp: model động cơ / hãng động cơ HSMT nêu, bộ điều khiển HSMT nêu, động cơ có nhiều thông số có nguồn, rồi mới tới đầu phát; công suất càng sát càng tốt.", "",
     `## Ứng viên (${top.length} dòng tổ máy, tốt nhất trước)`, ""];
   top.forEach((r, i) => {
     const { e, u, a } = r, s = sup.get(u.supplierId);

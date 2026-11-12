@@ -22,8 +22,8 @@ const others = () => [
   { id: "x-cummins", country: "CN", confidence: "medium", role: "genset_oem", names: { en: "Fujian Cummins Power Co" }, specTables: [table(101, "Gensets 50Hz", ["| XC-1 | 410 | 328 | QSG12-G4 | |"])] },
 ];
 const cap = { value: 400, unit: "kVA" };
-const H0 = hintsOf("Chương V. Yêu cầu kỹ thuật\nTần số 50 Hz\nTổ máy phải được đồng bộ 02 trong 03 bộ phận chính (động cơ, đầu phát, bộ điều khiển) bởi nhà sản xuất máy phát điện");
-const hints = H0;
+const hints = hintsOf("Chương V. Yêu cầu kỹ thuật\nTần số 50 Hz\nTổ máy phải được đồng bộ 02 trong 03 bộ phận chính (động cơ, đầu phát, bộ điều khiển) bởi nhà sản xuất máy phát điện");
+// makeCap: 0 = no ceiling per make: these tests are about the places held and `keep`, not the ceiling (cand-cap.test.mjs).
 // The HSMT asks for Đồng bộ (suppliers of every country are kept then).
 const HSMT = "Chương V. Yêu cầu kỹ thuật\nTần số 50 Hz\n- Tổ máy phải được đồng bộ 02 trong 03 bộ phận chính (động cơ, đầu phát, bộ điều khiển) bởi nhà sản xuất máy phát điện";
 const sync = { need: 2, parts: ["engine", "alternator", "controller"] };
@@ -36,16 +36,15 @@ test("genset makers: the same reading as Đồng bộ thương hiệu (no distri
 
 test("đồng bộ asked: a genset maker's power row (fromLine) keeps a place among the 30 rows; assemblers do not", () => {
   const list = [...assemblers(), rehlko(), ...others()], cat = C.build(list);
-  const ids = (o) => candidates(cat, cap, hints, { suppliers: list, ...o }).top.map((r) => `${r.u.supplierId} ${r.e.model}`);
-  // (Engine first: the maker's engine P158LE, of another make than the assemblers' engines, has a place in either case; the
-  // places held are what keeps it when the list is tight.)
-  const withSync = candidates(cat, cap, hints, { suppliers: list, sync }).top;
+  const ids = (o) => candidates(cat, cap, hints, { makeCap: 0, suppliers: list, ...o }).top.map((r) => `${r.u.supplierId} ${r.e.model}`);
+  // Before: 30 rows of assemblers, the maker's row (no alternator, controller without datasheet) left out.
+  assert.ok(!ids({}).some((x) => x.startsWith("rehlko")));
+  const withSync = candidates(cat, cap, hints, { makeCap: 0, suppliers: list, sync }).top;
   assert.equal(withSync.length, 30);
   const r = withSync.find((x) => x.u.supplierId === "rehlko");
   assert.ok(r && r.u.fromLine && r.e.model === "P158LE");
   assert.ok(r.why.some((w) => /chính hãng Kohler/.test(w)));
-  // The places held are for genset makers only (not the Italian or the Chinese assembler with a foreign make's name).
-  assert.deepEqual([...new Set(withSync.filter((x) => x.maker).map((x) => x.u.supplierId))], ["rehlko"]);
+  assert.ok(!withSync.some((x) => ["cgm-italia", "x-cummins"].includes(x.u.supplierId)));
   // No đồng bộ: nothing changes, the same rows in the same order.
   assert.deepEqual(ids({ sync: null }), ids({}));
 });
@@ -53,11 +52,11 @@ test("đồng bộ asked: a genset maker's power row (fromLine) keeps a place am
 test("đồng bộ asked: at most 2 engines a maker, the size nearest the HSMT's first; a row the HSMT rules out keeps no place", () => {
   const maker = { ...rehlko(), specTables: [...rehlko().specTables, table(101, "Rehlko gensets 50Hz", ["| K-560 | 560 | 448 | DP180LB | |", "| K-500 | 500 | 400 | DP158LD | |", "| K-450 | 450 | 360 | DP126LB | |"])] };
   const list = [...assemblers(), maker], cat = C.build(list);
-  const mine = candidates(cat, cap, hints, { suppliers: list, sync }).top.filter((x) => x.u.supplierId === "rehlko").map((x) => x.e.model).sort();
+  const mine = candidates(cat, cap, hints, { makeCap: 0, suppliers: list, sync }).top.filter((x) => x.u.supplierId === "rehlko").map((x) => x.e.model).sort();
   assert.deepEqual(mine, ["DP126LB", "P158LE"]);
   // Prime below the HSMT's minimum (−600): no place.
   const low = hintsOf("Chương V. Yêu cầu kỹ thuật\nTần số 50 Hz\nCông suất liên tục (Prime) ≥ 420 kVA");
-  assert.ok(!candidates(cat, cap, low, { suppliers: list, sync }).top.some((x) => x.u.supplierId === "rehlko" && x.e.model === "P158LE"));
+  assert.ok(!candidates(cat, cap, low, { makeCap: 0, suppliers: list, sync }).top.some((x) => x.u.supplierId === "rehlko" && x.e.model === "P158LE"));
 });
 
 test("catalog.md: a fromLine row says its engine comes from the product line", () => {
@@ -82,22 +81,21 @@ test("check: a configuration from a fromLine row keeps its engine and supplier v
 });
 
 test("đồng bộ asked: a row of a configuration the last run chose is not pushed out by the places held", () => {
-  const list = [...assemblers(), rehlko(), ...others()], cat = C.build(list), hints = { ...H0, ctrlMakes: ["Deep Sea"] }, key = (r) => `${r.u.supplierId} ${r.e.model} ${r.u.other}`;
-  // Ten places: more engines than places, so the places held push rows out.
-  const plain = candidates(cat, cap, hints, { suppliers: list, max: 10 }).top, held = candidates(cat, cap, hints, { suppliers: list, sync, max: 10 }).top;
+  const list = [...assemblers(), rehlko(), ...others()], cat = C.build(list), key = (r) => `${r.u.supplierId} ${r.e.model} ${r.u.other}`;
+  const plain = candidates(cat, cap, hints, { suppliers: list }).top, held = candidates(cat, cap, hints, { makeCap: 0, suppliers: list, sync }).top;
   const pushed = plain.filter((r) => !held.some((x) => key(x) === key(r)));
   assert.ok(pushed.length > 0);
   const last = pushed[pushed.length - 1];
   const prev = { configs: [{ engine: { model: last.e.model, src: { kind: "catalog", supplierId: last.u.supplierId, n: last.u.n, line: last.u.line } }, suppliers: [{ supplierId: last.u.supplierId }] }] };
   const keep = keepOf(prev);
   assert.ok(keep.has(`${last.u.supplierId}\n${last.e.key}`));
-  const now = candidates(cat, cap, hints, { suppliers: list, sync, keep, max: 10 }).top;
-  assert.equal(now.length, 10);
+  const now = candidates(cat, cap, hints, { makeCap: 0, suppliers: list, sync, keep }).top;
+  assert.equal(now.length, 30);
   assert.ok(now.some((x) => key(x) === key(last)));
   // The maker's held row stays; the row given up is another one.
   assert.ok(now.some((x) => x.u.supplierId === "rehlko"));
   // No last run: as before.
-  assert.deepEqual(candidates(cat, cap, hints, { suppliers: list, sync, keep: new Set(), max: 10 }).top.map(key), held.map(key));
+  assert.deepEqual(candidates(cat, cap, hints, { makeCap: 0, suppliers: list, sync, keep: new Set() }).top.map(key), held.map(key));
 });
 
 test("an abbreviation that clashes is no make: Saudi Diesel Equipment Co (SDEC) is not the Shanghai SDEC", () => {
@@ -112,7 +110,14 @@ test("an abbreviation that clashes is no make: Saudi Diesel Equipment Co (SDEC) 
   assert.equal(gensetMakerOf(rehlko()), "Kohler");
   // It gets no reserved place under Đồng bộ thương hiệu.
   const list = [...assemblers(), { ...saudi, confidence: "medium", specTables: [table(101, "Gensets 50Hz", ["| S-1 | 410 | 328 | S6A3-PTAR | |"])] }];
-  // Its row is no held one: the list is the same as without Đồng bộ (no genset maker is held for).
-  const ids = (o) => candidates(C.build(list), cap, hints, { suppliers: list, ...o }).top.map((r) => `${r.u.supplierId} ${r.e.model}`).sort();
-  assert.deepEqual(ids({ sync }), ids({ sync: null }));
+  const ids = candidates(C.build(list), cap, hints, { makeCap: 0, suppliers: list, sync }).top.map((r) => r.u.supplierId);
+  assert.ok(!ids.includes("saudi-diesel"));
+});
+
+test("the ceiling per make does not stop or count the places held for genset makers", () => {
+  const list = [...assemblers(), rehlko(), ...others()], cat = C.build(list);
+  const top = candidates(cat, cap, hints, { suppliers: list, sync, makeCap: 1 }).top;
+  assert.equal(top.length, 30);
+  const r = top.find((x) => x.u.supplierId === "rehlko");
+  assert.ok(r && r.maker === "Kohler");
 });
