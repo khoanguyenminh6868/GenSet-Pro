@@ -355,6 +355,8 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .supcontact{margin-top:3px;overflow-wrap:anywhere}.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
 /* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
+/* Chip "Trúng N gói" ở lưới nhà cung cấp: desktop ở ô Vai trò, mobile dưới tên (Khoa, 2026-11-12). */
+table.supmain .wonm{display:none}@media (max-width:640px){table.supmain .wonm{display:block;margin-top:4px}table.supmain .wond{display:none}}
 /* Supplier / catalog window: small banner on top, the filters and the table header stay put, only the rows scroll (Khoa, 2026-11-01). */
 .modal.pane{height:calc(100vh - 32px);height:calc(100dvh - 32px);overflow:hidden}
 #supBody,#catBody,#bdBody,#qlScr{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}
@@ -3063,11 +3065,11 @@ function supWonHtml(s) {
         <td data-l="Hàng trúng" class="small">${raw(xs.map((y) => h`<div style="margin-bottom:4px"><span class="chip ${y.where === "set" ? "ok" : "mut"}">${y.where === "set" ? "Hãng / nhãn hiệu" : "Trong cấu hình"}: ${y.word}</span> ${String(y.item).slice(0, 160)}${raw(y.maker ? h` <span class="muted">· hãng ${y.maker}</span>` : "")}<div class="muted" title="${y.text}">…${y.text.slice(0, 140)}…</div></div>`).join(""))}</td></tr>`;
     }).join(""))}</tbody></table></div></div>`;
 }
-function supWonChip(s) {
+function supWonChip(s, cls = "") {
   const a = supWonOf(s.id), n = new Set(a.map((x) => x.key)).size;
   if (!n) return "";
   const tip = a.slice(0, 6).map((x) => `${x.key}: ${x.bidder} — ${String(x.item).slice(0, 60)} (${x.where === "set" ? "hãng/nhãn hiệu" : "trong cấu hình"}: ${x.word})`).join("\n") + (a.length > 6 ? `\n… và ${a.length - 6} dòng hàng nữa` : "");
-  return h`<div><span class="chip ok" title="${tip}">${raw(STAGE_ICON.win)} Trúng ${n} gói</span></div>`;
+  return h`<div class="${cls}"><span class="chip ok" title="${tip}">${raw(STAGE_ICON.win)} Trúng ${n} gói</span></div>`;
 }
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
 const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
@@ -3317,8 +3319,8 @@ function renderSupList() {
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th>${raw(supSortTh("country", "Quốc gia", "Quốc gia"))}${raw(supSortTh("year", "Năm TL", "Năm thành lập"))}<th>Dòng máy</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
-    return h`<tr data-supopen="${s.id}" class="${supExcl(s.id) ? "supexcl" : ""}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(supExcl(s.id) ? ' <span class="chip bad">Đã loại trừ</span>' : "")}${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}</td>
-      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s))}${raw(supQuoteChip(s))}</td>
+    return h`<tr data-supopen="${s.id}" class="${supExcl(s.id) ? "supexcl" : ""}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(supExcl(s.id) ? ' <span class="chip bad">Đã loại trừ</span>' : "")}${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}${raw(supWonChip(s, "wonm"))}</td>
+      <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s, "wond"))}${raw(supQuoteChip(s))}</td>
       <td data-l="Quốc gia">${supCountryName(s) || "—"}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
       <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
