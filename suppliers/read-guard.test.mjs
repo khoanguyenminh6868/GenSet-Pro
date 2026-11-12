@@ -93,7 +93,9 @@ test("coverNotes: missing codes, uncovered lines, a requirement with no check in
     configs: [{ rank: 1, checks: [{ item: "Công suất liên tục" }] }, { rank: 2, checks: [] }] };
   const n = coverNotes(result, { missing: [{ code: "noise", item: "Độ ồn", line: "Độ ồn ≤ 75 dB(A)" }], uncovered: ["- Độ ồn: 75 dB [chưa có yêu cầu về: độ ồn]"] });
   assert.equal(n.length, 3);
-  assert.match(n[0], /Độ ồn — "Độ ồn ≤ 75 dB\(A\)"/);
+  assert.match(n[0], /HSMT có 1 điểm .*: Độ ồn\./);
+  assert.match(n[1], /1 dòng thông số chưa có yêu cầu: Độ ồn\./);
+  assert.ok(n.every((x) => x.length <= 300));
   assert.match(n[2], /#2 \(Công suất liên tục\)/);
   assert.doesNotMatch(n[2], /#1|Bồn dầu|Xuất xứ/);
   assert.deepEqual(coverNotes({ requirements: [], configs: [] }), []);
