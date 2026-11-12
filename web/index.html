@@ -2441,7 +2441,7 @@ function bcdgHtml(key) {
   if (!d) return "";
   const mb = (n) => (n >= 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB");
   // The file name is a source: only its size and number are shown, the name goes with SHOW_SRC.
-  const rows = files.map((f, i) => h`<button class="btn sm" data-bcdg="${f.path}" data-name="${f.name}" ${raw(SHOW_SRC ? h`title="${f.name}"` : "")}>Tải báo cáo đánh giá${files.length > 1 ? " " + (i + 1) : ""} · ${mb(f.size || 0)}</button>`).join(" ");
+  const rows = files.map((f, i) => h`<button class="btn sm" data-bcdg="${f.path}" data-name="${f.name}" ${raw(SHOW_SRC ? h`title="${f.name}"` : "")} style="display:inline-flex;align-items:center;gap:6px">${raw(/\.pdf$/i.test(f.name || "") ? PDF_SVG : "")}Tải báo cáo đánh giá${files.length > 1 ? " " + (i + 1) : ""} · ${mb(f.size || 0)}</button>`).join(" ");
   const big = all.filter((f) => f.skipped).map((f) => h`<span class="muted small">${SHOW_SRC ? f.name + ": " : ""}${f.skipped}</span>`).join(" ");
   // Nothing in the store: the worker is still trying, or gave up.
   if (!files.length && !big) return d.error ? h`<div class="muted small" style="margin-top:10px">${d.giveUp ? "Chưa lấy được báo cáo đánh giá E-HSDT (đã thử nhiều lần, mở trên muasamcong để xem)." : "Đang lấy báo cáo đánh giá E-HSDT."}</div>` : "";
@@ -2458,13 +2458,12 @@ function bcdgHtml(key) {
 }
 async function openBcdgFile(path, name) {
   if (!window.genbidFetch) return;
-  const pdf = /\.pdf$/i.test(name), w = pdf ? window.open("", "_blank") : null;
+  // Saved straight to the device, no new tab (Khoa, 2026-11-12).
   try {
-    const blob = await window.genbidFetch("/api/bcdg?id=" + encodeURIComponent(path)), u = URL.createObjectURL(pdf ? new Blob([blob], { type: "application/pdf" }) : blob);
-    if (w) w.location.href = u;
-    else { const a = document.createElement("a"); a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove(); }
+    const blob = await window.genbidFetch("/api/bcdg?id=" + encodeURIComponent(path)), u = URL.createObjectURL(blob);
+    const a = document.createElement("a"); a.href = u; a.download = name || path.split("/").pop(); document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(u), 60000);
-  } catch (e) { w?.close(); toast("Không mở được tệp: " + (e?.message || "lỗi không rõ"), 6000); }
+  } catch (e) { toast("Không tải được tệp: " + (e?.message || "lỗi không rõ"), 6000); }
 }
 // The action row of a tab once its work is done, laid out like Phân tích (Khoa, 2026-11-05): what was done, when, then the
 // buttons on the right. `id` names the time span, which some tabs reuse for a status line (Đang tạo PDF...).
