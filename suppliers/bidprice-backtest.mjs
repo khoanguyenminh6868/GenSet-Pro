@@ -3,7 +3,8 @@
 // giá trúng thật: tỉ lệ giá trúng rơi trong [Cạnh tranh, Cao], sai số trung vị của mức Trung vị (điểm % giá gói), tách
 // theo số nhà thầu và nhóm xuất xứ động cơ của hàng trúng. Chỉ đọc doc-cache, không gọi agent, không ghi gì lên web.
 //   node suppliers/bidprice-backtest.mjs [--cache <thư mục doc-cache>] [--json <tệp ra>] [--limit N] [--loose] [--calib]
-// --calib: thêm ba mức hiệu chỉnh theo cạnh tranh dự báo (suggest opts.fc, web/bidprice.js CALIB), so trên cùng phần.
+// --calib: thêm ba mức hiệu chỉnh theo cạnh tranh dự báo (suggest opts.fc, web/bidprice.js CALIB lam/q/s), so trên cùng
+// phần; in thêm nửa sớm (nửa dùng để chọn CALIB.s) và nửa muộn (kiểm ngoài mẫu). GENBID_BIDPRICE_S=1 để đo không giãn.
 // --loose: cách "theonhom" nhận cả gói cũ không rõ nhóm (chỉ bỏ gói khác nhóm), để so với cách chặt mặc định.
 // GIỚI HẠN: bot thật cho agent xếp từng gói ứng viên giống/gần/khác; ở đây mọi ứng viên code chọn (candidates) đều được
 // coi là "gần" (bỏ bước agent), nên số đo là của lượt chọn bằng code, không phải của kết quả bot đăng lên web.
@@ -20,6 +21,7 @@ const ROOT = path.dirname(fileURLToPath(import.meta.url));
 await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
 await import(pathToFileURL(path.join(ROOT, "..", "web", "bidprice.js")).href);
 const BP = globalThis.GenbidBidprice;
+if (Number(process.env.GENBID_BIDPRICE_S) > 0) BP.CALIB.s = Number(process.env.GENBID_BIDPRICE_S);
 const arg = (k, d = "") => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : d; };
 
 export function loadDocs(dir) {
@@ -116,9 +118,11 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   if (calib) {
     // Same lots for both: those where both give levels; then the later half alone (no tuning on it is claimed).
     const both = rows.filter((r) => r.base && r.cal), half = both.length ? both[Math.floor(both.length / 2)].close : 0;
-    print(`Hiệu chỉnh theo cạnh tranh dự báo (CALIB lam ${BP.CALIB.lam}, q ${BP.CALIB.q}) — cùng phần`, summarize(both, "cal"), both.length);
+    print(`Hiệu chỉnh theo cạnh tranh dự báo (CALIB lam ${BP.CALIB.lam}, q ${BP.CALIB.q}, giãn s ${BP.CALIB.s}) — cùng phần`, summarize(both, "cal"), both.length);
     print("  so với: chung, cùng phần", summarize(both, "base"), both.length);
-    const late = both.filter((r) => r.close >= half);
+    const late = both.filter((r) => r.close >= half), early = both.filter((r) => r.close < half);
+    print(`Nửa sớm (đóng trước ${new Date(half).toISOString().slice(0, 10)}, nửa chọn s): hiệu chỉnh`, summarize(early, "cal"), early.length);
+    print("  so với: chung, nửa sớm", summarize(early, "base"), early.length);
     print(`Nửa sau (đóng từ ${new Date(half).toISOString().slice(0, 10)}): hiệu chỉnh`, summarize(late, "cal"), late.length);
     print("  so với: chung, nửa sau", summarize(late, "base"), late.length);
   }

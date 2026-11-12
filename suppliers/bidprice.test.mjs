@@ -476,6 +476,44 @@ test("suggest / calibLevels: levels unchanged; with a forecast, weighted levels 
   assert.equal(BP.wQuantile([1, 2, 3], [1, 1, 1], 0.5), 2);
 });
 
+test("calibLevels: khoảng giãn quanh mức giữa ×CALIB.s (bp-bias), mức giữa không đổi, cao ≤ 100% giá gói; fc ghi kèm", () => {
+  const s = (ratio, nb) => ({ ratio, bidders: Array.from({ length: nb }, (_, i) => ({ name: "b" + i, price: 1, won: !i })) });
+  const pool = [s(0.8, 2), s(0.85, 2), s(0.9, 2), s(0.95, 2), s(0.97, 2)];
+  const fc = { p: [0.25, 0.25, 0.25, 0.25] };
+  const raw = BP.calibLevels(pool, 1e9, fc, { s: 1 }), wide = BP.calibLevels(pool, 1e9, fc);
+  assert.equal(BP.CALIB.s, 1.1);
+  assert.equal(wide[1].ratio, raw[1].ratio);
+  assert.ok(Math.abs((raw[1].ratio - wide[0].ratio) - 1.1 * (raw[1].ratio - raw[0].ratio)) < 1e-12);
+  assert.ok(Math.abs((wide[2].ratio - raw[1].ratio) - 1.1 * (raw[2].ratio - raw[1].ratio)) < 1e-12);
+  assert.equal(wide[0].price, Math.round((1e9 * wide[0].ratio) / 1000) * 1000);
+  // Near the package price, the high level stops at 100%.
+  const top = BP.calibLevels([s(0.97, 2), s(0.99, 2), s(1, 2), s(1, 2), s(1.01, 2)], 1e9, fc, { s: 3 });
+  assert.equal(top[2].ratio, 1);
+  const st = BP.suggest(pool.map((x) => ({ ...x, level: "close", price: 1e9, wp: x.ratio * 1e9 })), 1e9, 400, [], { fc: { p: [0.1234, 0.5, 0.2, 0.1766] } });
+  assert.deepEqual(st.calib.fc, [0.123, 0.5, 0.2, 0.177]);
+  assert.equal(st.calib.s, 1.1);
+});
+
+test("historyOf: lần tính trước vào bidprice.history (≤ HIST_MAX, mới nhất cuối)", async () => {
+  const { historyOf, HIST_MAX } = await import("./bidprice-bot.mjs");
+  assert.deepEqual(historyOf(null), []);
+  assert.deepEqual(historyOf({ result: { stats: {} } }), []);
+  const lv = (r) => [{ id: "low", label: "x", ratio: r - 0.05, price: 1, chance: 0.7 }, { id: "mid", ratio: r, price: 2 }, { id: "high", ratio: r + 0.03, price: 3 }];
+  const prev = { at: "2026-11-01T00:00:00Z", result: { basis: { price: 1e9, kva: 400, group: "cn" }, stats: { levels: lv(0.9), calib: { levels: lv(0.88), lam: 0.5, q: 0.2, fc: [0.1, 0.5, 0.3, 0.1] } } } };
+  const h = historyOf(prev);
+  assert.equal(h.length, 1);
+  assert.deepEqual(h[0], { at: "2026-11-01T00:00:00Z", price: 1e9, kva: 400, group: "cn", levels: lv(0.9).map(({ id, ratio, price }) => ({ id, ratio, price })),
+    calib: { levels: lv(0.88).map(({ id, ratio, price }) => ({ id, ratio, price })), lam: 0.5, q: 0.2, s: 1, fc: [0.1, 0.5, 0.3, 0.1] } });
+  const many = historyOf({ ...prev, history: Array.from({ length: HIST_MAX }, (_, i) => ({ at: String(i) })) });
+  assert.equal(many.length, HIST_MAX);
+  assert.equal(many[0].at, "1");
+  assert.equal(many.at(-1).at, prev.at);
+  // Gói nhiều cỡ: mức của cả gói (result.levels / result.calib).
+  const multi = historyOf({ at: "t", result: { multi: true, basis: { price: 2e9 }, levels: lv(0.9), calib: { levels: lv(0.87), lam: 0.5, q: 0.2, s: 1.1 } } });
+  assert.equal(multi[0].calib.levels[1].ratio, 0.87);
+  assert.equal(multi[0].calib.s, 1.1);
+});
+
 test("quoteCost / quoteLedger: a price line older than 180 days or with no date is flagged; finance adds to the cost", () => {
   const now = Date.UTC(2026, 10, 10);
   const row = { items: [{ id: "a", desc: "Tổ máy", unitPrice: 1e9, date: "2026-10-01" }, { id: "b", desc: "ATS", unitPrice: 5e7, date: "01/03/2026" }, { id: "c", desc: "Cáp", unitPrice: 1e7 }] };
