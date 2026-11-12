@@ -1,7 +1,7 @@
 // node --test suppliers/*.test.mjs — catalogs Khoa uploads (catalog-pdf.mjs).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { segments, keptRow, known, engineRow } from "./catalog-pdf.mjs";
+import { segments, keptRow, known, engineRow, unGrid } from "./catalog-pdf.mjs";
 
 test("an engine power selector line: figures from the end, pf 0.8 pairs, engine above the set", () => {
   assert.deepEqual(engineRow("0.76        403J-07G        EU     Stage  V  -               5      6           5           6    5                 6    -    -"), { cop: false, row: "| 403J-07G | 5 | 6 | 5 | 6 | 5 | 6" });
@@ -54,4 +54,25 @@ test("a row the record has (same model and codes) is not added again", () => {
   const have = ["| MC66C | 66 | 53 | 60 | 48 | 4BTA3.9-G2 | CN"].map((r) => new Set(C.cellsOf(r).map((c) => C.keyOf(c.trim()))));
   assert.equal(known("| MC66C | 48 | 60 | 53 | 66 | 4BTA3.9-G2 |", have), true);
   assert.equal(known("| MC66C | 48 | 60 | 53 | 66 | 4BTAA3.3G14 |", have), false);
+});
+
+test("LEES brochure: standby kVA, prime kVA, standby kW, prime kW; '-E' end; OCR's S3 read as 83 / 53 / S53", () => {
+  const eng = new Map([...engines, ...["403D-11G", "403A-15G1", "6ETAA11.8-G21"].map((m) => [C.keyOf(m), m])]);
+  assert.deepEqual(segments("LSP10S3-E 10 9 8 7 403D-11G 1300x690x1000").map((s) => s[0]), ["LSP10S3-E"]);
+  assert.equal(keptRow("LSP10S3-E 10 9 8 7 403D-11G".split(" "), eng, alternators), "| LSP10S3-E | 7 | 9 | 8 | 10 | 403D-11G |");
+  assert.equal(keptRow("LSP1483 14 13 11 10 403A-15G1".split(" "), eng, alternators), "| LSP14S3 | 10 | 13 | 11 | 14 | 403A-15G1 |");
+  assert.equal(keptRow("LSSC375S53 375 341 300 273 6ETAA11.8-G21".split(" "), eng, alternators), "| LSSC375S3 | 273 | 341 | 300 | 375 | 6ETAA11.8-G21 |");
+  // A misread figure (640 → 840) is still dropped.
+  assert.equal(keptRow("LSP1483 14 13 11 18 403A-15G1".split(" "), eng, alternators), null);
+});
+
+test("unGrid: black and white, long rules wiped, short marks kept", () => {
+  const w = 300, h = 40, px = Buffer.alloc(w * h, 230);
+  for (let x = 0; x < w; x++) px[5 * w + x] = 0; // a rule across
+  for (let y = 10; y < 30; y++) px[y * w + 20] = 0; // a stroke of a figure
+  const out = unGrid(Buffer.concat([Buffer.from(`P5\n${w} ${h}\n255\n`, "latin1"), px]));
+  const data = out.subarray(out.length - w * h);
+  assert.equal(data[5 * w + 100], 255);
+  assert.equal(data[15 * w + 20], 0);
+  assert.equal(data[15 * w + 21], 255);
 });

@@ -2227,6 +2227,16 @@
         "| MODEL | LSDS350S3-6"
       ],
       "file": "sources/lees-power/1200.md"
+    },
+    {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/lees-diesel-brochure-2026.pdf",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "| LSP10S | 7 | 9 | 8 | 10 | 403D-11G |"
+      ],
+      "file": "sources/lees-power/5001.md"
     }
   ],
   "confidence": "medium",
@@ -11782,6 +11792,51 @@
         "| Voltage regulation, no-load to | with±0.25% no-load to full-load regulation.",
         "Standard and Optional Features",
         "| Engine | Overview Dimension & Weight"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog lees-diesel-brochure-2026 — trang 10 trái",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| LSP10S | 7 | 9 | 8 | 10 | 403D-11G |",
+        "| LSP22S | 16 | 20 | 18 | 22 | 404D-22G |",
+        "| LSP33S | 24 | 30 | 26 | 33 | 1103A-33G |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog lees-diesel-brochure-2026 — trang 10 phải (50Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| LSP10S3-E | 7 | 9 | 8 | 10 | 403D-11G |",
+        "| LSP22S3 | 16 | 20 | 18 | 22 | 404A-22G1 |",
+        "| LSP30S3-E | 22 | 27 | 24 | 30 | 404D-22TG |",
+        "| LSP33S3 | 24 | 30 | 26 | 33 | 1103A-33G |",
+        "| LSP50S3 | 36 | 45 | 40 | 50 | 1103A-33TG1 |",
+        "| LSP66S3 | 47 | 59 | 52 | 65 | 1103A-33TG2 |",
+        "| LSP88S3 | 64 | 80 | 70 | 88 | 1104A-44TG2 |",
+        "| LSP110S3 | 80 | 100 | 88 | 110 | 1104C-44TAG2 |",
+        "| LSP150S3 | 108 | 135 | 118 | 148 | 1106A-70TG1 |",
+        "| LSP165S3 | 120 | 150 | 132 | 165 | 1106A-70TAG2 |",
+        "| LSP220S3 | 160 | 200 | 176 | 220 | 1106A-70TAG4 |",
+        "| LSP275S3 | 200 | 250 | 220 | 275 | 1206A-E70TTAG3 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog lees-diesel-brochure-2026 — trang 12 phải",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| LSSC110S3 | 82 | 102 | 90 | 113 | 4ZTAA4.1-G32 |",
+        "| LSSC110S3 | 82 | 102 | 90 | 113 | 4HTAA4.3-G21 |",
+        "| LSSC560S3 | 409 | 511 | 450 | 563 | 6KTAA25-G36 |"
       ]
     }
   ]
