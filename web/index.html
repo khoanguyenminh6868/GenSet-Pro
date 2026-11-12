@@ -1692,7 +1692,7 @@ function quoteHtml(t) {
   };
   // One box: the heading, the count and Thêm sit with the suppliers (Khoa, 2026-11-04).
   return h`<div class="drop">
-      <div class="row"><h2 style="flex:1">Báo giá của NCC</h2><span class="muted small">${n ? `${n} tệp` : "Chưa có tệp nào"}</span>${raw(ro ? "" : h`<button class="btn sm tint c-mint" id="qAdd" ${quoteUp[key] ? "disabled" : ""}>+ Thêm</button>`)}</div>
+      <div class="row"><h2>Báo giá của NCC</h2>${raw(ro ? "" : h`<button class="btn sm tint c-mint" id="qAdd" ${quoteUp[key] ? "disabled" : ""}>+ Thêm</button>`)}${raw(n ? h`<span class="muted small" style="margin-left:auto">${n} tệp</span>` : "")}</div>
       ${raw(quoteAllHtml(ro))}
       ${raw(needTxt ? h`<div class="qneed small"><b>HSMT chỉ định:</b> ${needTxt}. Giá vốn và gợi ý báo giá chỉ lấy dòng giá đúng hãng này.</div>` : "")}
       ${raw(rows.map(row).join(""))}
