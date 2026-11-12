@@ -1879,16 +1879,18 @@ function switchToPlan(text, src) {
   console.log("  Hạn mức API key đã hết (" + src + "); chuyển sang gói tháng.");
   return true;
 }
-// Why a one-call answer (claude -p --output-format json) is not whole, or "": stopped at the output limit, a run that did
-// not complete, or more than one turn (a continuation after max_tokens; there are no tools to take turns otherwise).
+// Why a one-call answer (claude -p --output-format json) is not whole, or "": stopped at the output limit, or a run that
+// did not complete. More than one turn (maybe a continuation after max_tokens) is only logged for now (điều phối
+// 2026-11-12: no real ask run has shown num_turns yet; blocking on it could send every Phân tích to the agent).
 function askCut(j) {
   if (!j) return "";
   if (j.stop_reason === "max_tokens") return "stop_reason max_tokens";
   if (j.terminal_reason && j.terminal_reason !== "completed") return `terminal_reason ${j.terminal_reason}`;
   if (j.subtype && j.subtype !== "success") return j.subtype;
-  if (Number(j.num_turns) > 1) return `${j.num_turns} lượt`;
   return "";
 }
+// One short line per ask run (indented: GenBid-Bot.ps1 copies such lines into the bot log), to decide later on num_turns.
+const askTrace = (j) => `  [ask] num_turns=${j?.num_turns ?? "?"} stop_reason=${j?.stop_reason ?? "?"} terminal_reason=${j?.terminal_reason ?? "?"}${Number(j?.num_turns) > 1 ? ` — ${j.num_turns} lượt, kiểm tra` : ""}`;
 function askOnce(prompt, model) {
   const api = !!process.env.ANTHROPIC_API_KEY;
   return new Promise((resolve) => {
@@ -1903,6 +1905,7 @@ function askOnce(prompt, model) {
       noteApiSpend(j?.total_cost_usd, "ask", api);
       if (api && (code !== 0 || j?.is_error) && switchToPlan(text + err + out, "ask")) return resolve(askOnce(prompt, model));
       if (LIMIT.test(text + err + out) && (code !== 0 || j?.is_error)) return resolve({ limit: (text || err || out).trim().slice(0, 300) });
+      if (j) log(askTrace(j));
       if (!j || j.is_error) return resolve({ error: (text || err || out || `mã thoát ${code}`).trim().slice(0, 300) });
       // An answer cut at the output limit (128,000 tokens for Opus, modelUsage.maxOutputTokens) is not taken, even when
       // what is left parses: Claude Code goes on after max_tokens in a new turn, and `result` is then only the last part.
