@@ -148,3 +148,69 @@ test("specsFinish: a joined set's quote that is not in the text is dropped", () 
   assert.equal(f.result.generatorSets[0].quote, null);
   assert.ok(f.checked.some((n) => /trích dẫn của máy/.test(n)));
 });
+
+// ---------- 12/11 (2): capacity by figures, entries repeated under other words ----------
+const cap = (a, b) => X.specsMerge([{ i: 1, v: { generatorCapacity: a } }, { i: 2, v: { generatorCapacity: b } }]);
+
+test("specsMerge: generatorCapacity by figures — other words, same figures: no conflict, the fuller text kept as written", () => {
+  const a = "Máy phát điện sửa chữa gồm hai nhóm: ≤ 10 kVA và 10–30 kVA", b = "Công suất máy từ 5 kVA đến 30 kVA";
+  for (const r of [cap(a, b), cap(b, a)]) { assert.equal(r.generatorCapacity, a); assert.equal(r.conflicts.length, 0); }
+  assert.equal(cap("1.000 kVA", "1000 kVA liên tục").generatorCapacity, "1000 kVA liên tục");
+  assert.equal(cap(null, "100 kVA").generatorCapacity, "100 kVA");
+  assert.equal(cap("500 kVA", "2 x 500 kVA dự phòng").generatorCapacity, "2 x 500 kVA dự phòng");
+});
+
+test("specsMerge: generatorCapacity — two values for one quantity are not known (kind, count, size)", () => {
+  for (const [a, b] of [["500 kVA dự phòng", "500 kVA liên tục"], ["2 x 500 kVA", "3 x 500 kVA"], ["500 kVA", "250 kVA"], ["từ 5 kVA đến 30 kVA", "từ 40 kVA đến 60 kVA"]]) {
+    const r = cap(a, b);
+    assert.equal(r.generatorCapacity, null, `${a} / ${b}`);
+    assert.match(r.conflicts[0], /chưa rõ/);
+  }
+  // different quantities (kVA and kW) are not a contradiction; the fuller one is kept, the other said in the notes
+  const r = cap("500 kVA", "500 kVA và 400 kW");
+  assert.equal(r.generatorCapacity, "500 kVA và 400 kW");
+  assert.equal(r.conflicts.length, 0);
+});
+
+const dup = (r) => r.technicalSpecs.length;
+test("specsMerge: the same entry under other words (the longer quote kept)", () => {
+  const eng = (item, quote) => spec(item, "Ký hiệu do nhà thầu đề xuất; nước sản xuất G20; thương hiệu G7", quote);
+  const r = X.specsMerge([
+    { i: 1, v: { technicalSpecs: [eng("Tổ máy 1000 kVA: Động cơ - ký hiệu, nước sản xuất, thương hiệu", "Nhà thầu cung cấp đường link website")] } },
+    { i: 2, v: { technicalSpecs: [eng("Tổ máy - Động cơ: Ký hiệu, nước sản xuất, thương hiệu", "Nhà thầu cung cấp đường link website hoặc tài liệu chứng minh")] } },
+  ]);
+  assert.equal(dup(r), 1);
+  assert.equal(r.technicalSpecs[0].quote, "Nhà thầu cung cấp đường link website hoặc tài liệu chứng minh");
+  assert.equal(r.conflicts.length, 0);
+  // the same quote whole in the other (case, spaces, NFC)
+  const r2 = X.specsMerge([
+    { i: 1, v: { technicalSpecs: [spec("Vỏ", "Vỏ chống ồn thép dày 2 mm", "Vỏ cách âm  bằng thép dày 2 mm, sơn tĩnh điện")] } },
+    { i: 2, v: { technicalSpecs: [spec("Tủ vỏ", "Vỏ chống ồn thép dày 2 mm", "VỎ CÁCH ÂM bằng thép dày 2 mm")] } },
+  ]);
+  assert.equal(dup(r2), 1);
+});
+
+test("specsMerge: the same entry, same figures, almost the same requirement, other parts; same item without the size", () => {
+  const r = X.specsMerge([
+    { i: 1, v: { technicalSpecs: [spec("Tổ máy 1000 kVA: Tình trạng máy", "Máy mới 100%, sản xuất năm 2024 trở về sau", "Máy mới 100%, sản xuất năm 2024"), spec("Tổ máy 1000 kVA: Xuất xứ", "G20", "G20")] } },
+    { i: 2, v: { technicalSpecs: [spec("Tổ máy: Tình trạng máy", "Máy mới 100%, sản xuất năm 2024 trở về sau.", "Tình trạng | Máy mới 100%"), spec("Tổ máy: Xuất xứ", "G20.", "Xuất xứ | G20")] } },
+  ]);
+  assert.equal(dup(r), 2);
+});
+
+test("specsMerge: not merged when in doubt — machine sizes, engine vs alternator, same part, other figures", () => {
+  const req = "Ký hiệu do nhà thầu đề xuất; nước sản xuất G20; thương hiệu G7";
+  const keep = (a, b, parts = [1, 2]) => dup(X.specsMerge([{ i: parts[0], v: { technicalSpecs: [a] } }, { i: parts[1], v: { technicalSpecs: [b] } }]));
+  assert.equal(keep(spec("Tổ máy 500 kVA: Xuất xứ", req, "Xuất xứ G20 thương hiệu G7 nhà thầu đề xuất"), spec("Tổ máy 1000 kVA: Xuất xứ", req, "Xuất xứ G20 thương hiệu G7 nhà thầu đề xuất")), 2, "two sizes");
+  assert.equal(keep(spec("Tổ máy: Động cơ - ký hiệu, nước sản xuất", req, "Động cơ ký hiệu nước sản xuất thương hiệu G7"), spec("Tổ máy: Đầu phát - ký hiệu, nước sản xuất", req, "Đầu phát ký hiệu nước sản xuất thương hiệu G7")), 2, "engine vs alternator");
+  assert.equal(keep(spec("Tổ máy: Động cơ - ký hiệu", req, "Động cơ ký hiệu nước sản xuất thương hiệu G7"), spec("Tổ máy: Động cơ - ký hiệu khác", req, "Động cơ ký hiệu nước sản xuất thương hiệu G7 và hơn"), [1, 1]), 2, "same part");
+  assert.equal(keep(spec("Bảo hành", "Bảo hành 12 tháng không giới hạn số giờ vận hành", "Bảo hành 12 tháng không giới hạn số giờ"), spec("Bảo hành tổ máy", "Bảo hành 24 tháng không giới hạn số giờ vận hành", "Bảo hành 24 tháng không giới hạn số giờ")), 2, "other figures");
+  // a heading that holds the short quote of another entry is not the same entry
+  assert.equal(keep(spec("Máy phát: Công suất", "Công suất 100 kVA, 3 pha, 220-380V", "Máy phát điện 100KVA | Công suất: 100KVA\nSố pha: 3 pha"), spec("Máy phát: Số lượng", "01 tổ máy, ký hiệu G", "MÁY PHÁT ĐIỆN 100KVA")), 2, "heading");
+  // two machine sizes in the chapter: the item without the size is not matched to one of them
+  const two = X.specsMerge([
+    { i: 1, v: { generatorSets: [set({ primeKva: 500 }), set({ primeKva: 1000 })], technicalSpecs: [spec("Tổ máy 500 kVA: Xuất xứ", "G20", "G20")] } },
+    { i: 2, v: { technicalSpecs: [spec("Tổ máy: Xuất xứ", "G20.", "Xuất xứ | G20")] } },
+  ]);
+  assert.equal(dup(two), 2);
+});
