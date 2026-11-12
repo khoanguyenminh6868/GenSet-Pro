@@ -55,3 +55,19 @@ test("technicalPart: a technical chapter longer than MAX_TP keeps its window wit
   assert.equal(CB.technicalPart(small), small.slice(0, small.indexOf("Chương VI")));
   assert.equal(CB.tpCut, false);
 });
+
+test("webMissing: only engine / alternator / genset codes on a line with a measured figure reach the web", async () => {
+  const { webMissing, coverNotes } = await import("./config-bot.mjs");
+  const m = [
+    { code: "ctl_measure", item: "Đo lường, hiển thị", part: "controller", line: "Thời gian bảo hành: ≥ 24 tháng hoặc ≥ 1000 giờ chạy" },
+    { code: "origin", item: "Xuất xứ tổ máy", part: "genset", line: "Tình trạng: nhập khẩu nguyên chiếc, mới 100%" },
+    { code: "cooling", item: "Hệ thống làm mát động cơ", part: "engine", line: "+ Hệ thống làm mát: Két nước kết hợp quạt gió" },
+    { code: "oil_capacity", item: "Dung tích dầu bôi trơn", part: "engine", line: "+ Dung tích dầu bôi trơn: 10,9L" },
+    { code: "frequency", item: "Tần số", part: "genset", line: "Tần số định mức: 50 Hz" },
+  ];
+  assert.deepEqual(webMissing(m).map((x) => x.code), ["oil_capacity", "frequency"]);
+  const n = coverNotes({ requirements: [], configs: [] }, { missing: m });
+  assert.equal(n.length, 1);
+  assert.match(n[0], /HSMT có 2 điểm .*Dung tích dầu bôi trơn; Tần số\./);
+  assert.deepEqual(coverNotes({ requirements: [], configs: [] }, { missing: m.slice(0, 3) }), []);
+});

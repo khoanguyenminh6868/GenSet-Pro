@@ -2054,8 +2054,14 @@ const SPEC_NOT = /hồ\s*sơ|thông\s*tin|phụ\s*kiện|quản\s*lý\s*chất\s
 export const NOTE_MAX = 300;
 const few = (names) => { const n = [...new Set(names.map((x) => String(x).replace(/\s*\(.*?\)\s*/g, " ").replace(/\s+/g, " ").trim()))]; return n.slice(0, 3).join("; ") + (n.length > 3 ? ` và ${n.length - 3} điểm khác` : ""); };
 const capNote = (s) => (s.length <= NOTE_MAX ? s : s.slice(0, NOTE_MAX - 1).replace(/\s+\S*$/, "") + "…");
-export function coverNotes(result, { missing = [], uncovered = [] } = {}) {
-  const notes = [];
+// A missing code worth the web (điều phối 2026-11-12, IB2600592684: "bảo hành ≥ 1000 giờ chạy" read as "Đo lường,
+// hiển thị"): of the engine, alternator or genset, on an HSMT line with a measured figure (a number and its unit). The
+// rest goes to the console only.
+const MEASURE = /\d\s*(?:kva|kw|kvar|v\b|vac|vdc|hz|a\b|vòng|v\/p|rpm|l\b|lít|lit\b|dm3|cm3|cc\b|db|°\s*c|độ\s*c|mm|cm\b|m3|kg|tấn|bar|kpa|mpa|%|xi\s*lanh|xy\s*lanh|cyl|g\/kwh|l\/h|lít\/giờ)/i;
+// "mới 100%" (new goods) is no measurement.
+export const webMissing = (missing = []) => missing.filter((m) => { const l = String(m.line || "").normalize("NFC").replace(/mới\s*100\s*%/gi, ""); return ["engine", "alternator", "genset"].includes(m.part) && MEASURE.test(l); });
+export function coverNotes(result, { missing: all = [], uncovered = [] } = {}) {
+  const notes = [], missing = webMissing(all);
   if (missing.length) notes.push(`HSMT có ${missing.length} điểm code dò thấy mà danh sách yêu cầu chưa có (có thể nhầm): ${few(missing.map((m) => m.item))}.`);
   if (uncovered.length) notes.push(`Phân tích HSMT có ${uncovered.length} dòng thông số chưa có yêu cầu: ${few(uncovered.map((u) => u.replace(/^- /, "").split(":")[0]))}.`);
   const reqs = (result?.requirements || []).filter((r) => r.item && !r.byCode && !r.unverified);
@@ -3406,6 +3412,8 @@ ${r.stderr || ""}`, "utf8");
           const label = size ? `máy ${size.label}` : "";
           const g = RG.guardRun(dir, r.stdout || "", { label });
           const cov = coverNotes(result, { missing, uncovered });
+          const quiet = missing.filter((m) => !webMissing([m]).length);
+          if (quiet.length) console.log(`${key}${size ? ` máy ${size.label}` : ""}: mã yêu cầu code dò thấy, không lên web: ${quiet.map((m) => `${m.code} "${m.line.slice(0, 80)}"`).join("; ")}`);
           // What of the HSMT text may be missing before the agent read it (prep, hsmtGaps).
           const hm = fs.existsSync(path.join(dir, "meta.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")).hsmtGaps || [] : [];
           for (const why of hm) cov.unshift(capNote(`Văn bản HSMT có thể thiếu: ${why}.`));

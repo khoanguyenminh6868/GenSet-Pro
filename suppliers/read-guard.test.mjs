@@ -91,7 +91,7 @@ test("splitForRead: no character lost, a single line longer than the limit is cu
 test("coverNotes: missing codes, uncovered lines, a requirement with no check in a configuration", () => {
   const result = { requirements: [{ item: "Công suất liên tục", level: "core" }, { item: "Bồn dầu", level: "option" }, { item: "Xuất xứ", byCode: true }],
     configs: [{ rank: 1, checks: [{ item: "Công suất liên tục" }] }, { rank: 2, checks: [] }] };
-  const n = coverNotes(result, { missing: [{ code: "noise", item: "Độ ồn", line: "Độ ồn ≤ 75 dB(A)" }], uncovered: ["- Độ ồn: 75 dB [chưa có yêu cầu về: độ ồn]"] });
+  const n = coverNotes(result, { missing: [{ code: "noise", item: "Độ ồn", part: "genset", line: "Độ ồn ≤ 75 dB(A)" }], uncovered: ["- Độ ồn: 75 dB [chưa có yêu cầu về: độ ồn]"] });
   assert.equal(n.length, 3);
   assert.match(n[0], /HSMT có 1 điểm .*: Độ ồn\./);
   assert.match(n[1], /1 dòng thông số chưa có yêu cầu: Độ ồn\./);
