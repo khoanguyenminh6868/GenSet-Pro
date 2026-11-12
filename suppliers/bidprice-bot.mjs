@@ -23,6 +23,8 @@ const SCRIPT = fileURLToPath(import.meta.url);
 const CLAUDE = process.env.GENBID_CLAUDE || "claude";
 await import(pathToFileURL(path.join(ROOT, "..", "web", "bidprice.js")).href);
 const BP = globalThis.GenbidBidprice;
+// GENBID_BIDPRICE_S: mức giãn khoảng hiệu chỉnh (web/bidprice.js CALIB.s, mặc định 1,1); =1 để quay về khoảng trước bp-bias.
+if (Number(process.env.GENBID_BIDPRICE_S) > 0) BP.CALIB.s = Number(process.env.GENBID_BIDPRICE_S);
 const arg = (k, d = "") => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : d; };
 const fmt = (v) => Number(v).toLocaleString("vi-VN");
 // The HSMT's technical part in input.md (cut guard, điều phối 2026-11-12): at most TP_MAX characters, the window with the
@@ -236,16 +238,31 @@ async function attempt(req, dir, hist, prev = null) {
   return { result, problems };
 }
 
+// Hậu kiểm tiến dần (2026-11-12): mỗi lần tính lại, giá của lần trước vào bidprice.history (tối đa HIST_MAX lần, mới nhất
+// cuối), để sau ngày mở thầu so được giá gợi ý LÚC TRƯỚC đóng thầu với giá trúng thật kể cả khi gói đã được tính lại sau đó.
+// Mỗi mục: at, giá gói, kVA, nhóm xuất xứ, 3 mức cũ, 3 mức hiệu chỉnh + tham số + dự báo số nhà thầu.
+export const HIST_MAX = 10;
+const lv3 = (ls) => (ls || []).map((l) => ({ id: l.id, ratio: l.ratio, price: l.price }));
+export function historyOf(prevDoc) {
+  const r = prevDoc?.result;
+  if (!r || !prevDoc.at) return [];
+  const c = r.multi ? r.calib : r.stats?.calib;
+  const entry = { at: prevDoc.at, price: r.basis?.price ?? null, kva: r.basis?.kva ?? null, group: r.basis?.group ?? null, levels: lv3(r.multi ? r.levels : r.stats?.levels),
+    ...(c?.levels?.length ? { calib: { levels: lv3(c.levels), lam: c.lam, q: c.q, s: c.s ?? 1, ...(c.fc ? { fc: c.fc } : {}) } } : {}) };
+  return [...(prevDoc.history || []), entry].slice(-HIST_MAX);
+}
 // bidpricereq keeps the request's own fields and gets doneAt (+ error); bidprice carries the checked result.
 export async function answer(req, hist) {
   const key = req.key, dir = path.join(os.tmpdir(), "genbid-bidprice", key);
   const done = ({ result, error }) => {
     const at = new Date().toISOString();
     const reqData = JSON.parse(JSON.stringify({ notifyNo: req.notifyNo || key, bidName: req.bidName, basis: req.basis, requestedAt: req.requestedAt, by: req.by, from: req.from, doneAt: at, error: error || "" }));
-    return post([...(result ? [{ coll: "bidprice", id: key, data: { at, result } }] : []), { coll: "bidpricereq", id: key, data: reqData }]);
+    return post([...(result ? [{ coll: "bidprice", id: key, data: { at, result, ...(history.length ? { history } : {}) } }] : []), { coll: "bidpricereq", id: key, data: reqData }]);
   };
+  let history = [];
   try {
-    const prev = (await doc("bidprice", key).catch(() => null))?.result || null;
+    const prevDoc = await doc("bidprice", key).catch(() => null), prev = prevDoc?.result || null;
+    history = historyOf(prevDoc);
     const { result, problems } = await attempt(req, dir, hist, prev);
     await done({ result, error: "" });
     console.log(`${key}: ${result.multi ? result.sizes.map((z) => `máy ${z.label}: ${z.result ? `giá đấu từ ${z.result.stats.n} gói tương tự` : `lỗi ${z.error}`}`).join("; ") : `giá đấu từ ${result.stats.n} gói tương tự (${result.samples.length} ứng viên)`}${problems.length ? `, ${problems.length} điểm chưa khớp` : ""}`);

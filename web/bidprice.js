@@ -380,20 +380,28 @@
   // Hai tham số (lam 0,5; q 0,2), chọn trên cả giai đoạn; nửa sau (đóng sau 13/09/2024, 338 phần): phủ 38,2% → 56,8%, sai
   // số mức giữa 6,5 → 5,3 điểm, khoảng rộng 14,2 → 16,4 điểm. Không sửa được lệch của gói ≥6 nhà thầu (dự báo hiếm khi
   // thấy trước) và lệch nhóm động cơ Trung Quốc. suggest chỉ tính khi được truyền opts.fc; levels giữ nguyên.
-  const CALIB = { lam: 0.5, q: 0.2 };
+  // Giãn s (2026-11-12, bp-bias): khoảng [thấp, cao] giãn quanh mức giữa ×s (mức giữa không đổi), cao không quá 100% giá
+  // gói. Hậu kiểm 635 phần (dữ liệu 12/11): s 1,1 là mức giãn cho nhiều độ phủ nhất trên mỗi điểm độ rộng ở nửa sớm (đóng
+  // trước 30/09/2024; chọn trên nửa này); nửa muộn: phủ 60,7% → ~72%, rộng 14,8 → ~16,3 điểm. Lệch mức giữa của gói từ 6
+  // nhà thầu (+12,5) và gói hàng trúng động cơ Trung Quốc (+7,0) không sửa được bằng dữ liệu có trước ngày đóng thầu (đã
+  // thử: trọng số dự báo mạnh hơn, lệch theo chủ đầu tư / tỉnh, trọng số cùng nhóm xuất xứ, kể cả biết nhóm hàng trúng, độ
+  // mới gói cũ) — nghiệm thu genbid-work\dieu-phoi\nghiem-thu\bp-bias.md.
+  const CALIB = { lam: 0.5, q: 0.2, s: 1.1 };
   function wQuantile(xs, ws, p) {
     const o = xs.map((x, i) => [x, ws[i]]).sort((a, b) => a[0] - b[0]), tot = o.reduce((s, x) => s + x[1], 0);
     let c = 0;
     for (const [x, w] of o) { if ((c + w / 2) / tot >= p) return x; c += w; }
     return o.length ? o[o.length - 1][0] : null;
   }
-  function calibLevels(pool, P, fc, { lam = CALIB.lam, q = CALIB.q } = {}) {
+  function calibLevels(pool, P, fc, { lam = CALIB.lam, q = CALIB.q, s: st = CALIB.s } = {}) {
     if (!(pool.length >= 3 && P > 0) || !fc?.p) return [];
     const p = fc.p.slice(1), sp = p.reduce((a, b) => a + b, 0), share = [0, 0, 0];
     for (const s of pool) share[Math.max(1, nbBucket(nbOf(s))) - 1]++;
     const ws = pool.map((s) => { const b = Math.max(1, nbBucket(nbOf(s))) - 1; return 1 - lam + (lam * (p[b] / sp)) / (share[b] / pool.length); });
     const rs = pool.map((s) => s.ratio), round = (v) => Math.round(v / 1000) * 1000;
-    return [["low", "Cạnh tranh", q], ["mid", "Trung vị", 0.5], ["high", "Cao", 1 - q]].map(([id, label, pq]) => { const r = wQuantile(rs, ws, pq); return { id, label, ratio: r, price: round(P * r) }; });
+    const [lo, mid, hi] = [q, 0.5, 1 - q].map((pq) => wQuantile(rs, ws, pq));
+    const r3 = [mid - st * (mid - lo), mid, Math.max(mid, Math.min(1, mid + st * (hi - mid)))];
+    return [["low", "Cạnh tranh"], ["mid", "Trung vị"], ["high", "Cao"]].map(([id, label], i) => ({ id, label, ratio: r3[i], price: round(P * r3[i]) }));
   }
   function suggest(samples, P, K, prior = [], opts = {}) {
     const ok = (s) => !s.unverified && nbOf(s) >= 2;
@@ -423,7 +431,7 @@
     }
     const comps = [...comp.values()].sort((a, b) => b.n - a.n || b.wins - a.wins).slice(0, 8).map((c) => ({ id: c.id, name: c.name, n: c.n, wins: c.wins, ratio: median(c.ratios) }));
     const calib = opts.fc ? calibLevels(pool, P, opts.fc) : null;
-    return { basis, n: use.length, same: same.length, close: close.length, nPrior: extra.length, pool: pool.length, enough: pool.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, bidders, byBidders, comps, ...(calib?.length ? { calib: { levels: calib, ...CALIB } } : {}) };
+    return { basis, n: use.length, same: same.length, close: close.length, nPrior: extra.length, pool: pool.length, enough: pool.length >= 5, levels, perKva: perKva && { value: round(perKva), price: round(perKva * K), n: withK.length }, bidders, byBidders, comps, ...(calib?.length ? { calib: { levels: calib, ...CALIB, fc: opts.fc.p.map((x) => Math.round(x * 1000) / 1000) } } : {}) };
   }
   // Hàng trúng thầu của nhà cung cấp (Khoa, 2026-11-09: lọc "Có hàng trúng thầu" ở màn Nhà cung cấp). Chỉ gói mua sắm
   // (bidKind supply) đã có nhà thầu trúng, chỉ dòng hàng là tổ máy (không phải lọc, phụ tùng, tủ ATS bán riêng). Một nhà
