@@ -3,13 +3,14 @@
 //   node suppliers/bidprice-bot.mjs prep --key <TBMT> --out <dir> [--kva 400 --price 1230000000]
 //   node suppliers/bidprice-bot.mjs check --dir <dir>          check result.json in code, print the prices
 //   node suppliers/bidprice-bot.mjs run [--key <TBMT>]              answer every pending bidpricereq (or that tender's)
-//   node suppliers/bidprice-bot.mjs try --key <TBMT> [--kva .. --price ..]   prep + agent + check, nothing posted
+//   node suppliers/bidprice-bot.mjs try --key <TBMT> [--kva .. --price ..] [--rerate]   prep + agent + check, nothing posted
 // Code picks the decided lots most like the tender from bidhist (web/bidprice.js candidates); the agent (claude -p,
 // bidprice-prompt.md) reads this tender's configuration and each lot's (won goods, HSMT lines) and puts each lot in a
 // level (same / close / different / unknown) with a quote; check drops a lot whose quote is not word for word in what it
 // was given; code computes the prices from the alike lots (suggest) and posts bidprice/<TBMT>.
 import fs from "node:fs";
 import os from "node:os";
+import crypto from "node:crypto";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -44,7 +45,31 @@ const syncNote = (c) => {
   const x = (c.checks || []).find((x) => x.item === "Đồng bộ thương hiệu");
   return !x ? "" : x.status === "met" ? " (đạt đồng bộ thương hiệu)" : x.status === "not_met" ? " (KHÔNG đạt đồng bộ thương hiệu: tổ máy lắp ráp từ nhiều hãng)" : " (chưa rõ đồng bộ thương hiệu)";
 };
-export async function prep(req, dir, hist, size = null) {
+// ---------- Giữ mức xếp cũ của agent (bp-sticky, Khoa đồng ý 13/11/2026) ----------
+// Agent có thể lật một gói ranh giới giữa hai lượt cùng đầu vào (IB2600601812: IB2600089010 "gần" rồi không, mức thấp
+// 296 ↔ 239 triệu; nghiem-thu\bp-low-dao-dong.md). Mỗi lượt lưu mức agent xếp từng ứng viên vào bidprice.result.ratings;
+// lượt sau ứng viên đã có mức thì dùng lại, agent chỉ xếp ứng viên MỚI (không có ứng viên mới thì không gọi agent).
+// Xếp lại toàn bộ khi khoá so sánh (ratingSig) đổi, hoặc buộc bằng tay: GENBID_BIDPRICE_RERATE=1, hay trường
+// `rerate: true` trong bidpricereq (hoặc basis.rerate), hay `try --rerate`. Một gói cũ mà chữ agent đọc về nó (sampleText)
+// đổi (bidhist đọc lại hàng hoá...) thì chỉ gói đó được xếp lại.
+const sha = (v) => crypto.createHash("sha1").update(typeof v === "string" ? v : JSON.stringify(v)).digest("hex").slice(0, 16);
+const mk = (x) => (x ? [x.make || x.brand || "", x.model || ""].map((v) => norm(String(v))).join(" ").trim() : "");
+// Khoá so sánh: cấu hình hạng 1 (hãng + model động cơ, đầu phát) + nhóm xuất xứ động cơ + yêu cầu của gói (công suất, mức
+// liên tục/dự phòng, đồng bộ thương hiệu, chữ yêu cầu kỹ thuật code đọc) + cỡ máy (gói nhiều cỡ). Không gồm giá gói.
+export const RATING_V = 1;
+export const ratingSig = ({ first, group, K, rating, sync, cfgText, size }) => sha({ v: RATING_V, engine: mk(first?.engine), alternator: mk(first?.alternator), group: group || null,
+  K: K ? Math.round(K) : null, rating: rating || null, sync: sync ? sync.need : null, req: sha(norm(String(cfgText || ""))), size: size ? `${size.label}|${size.qty || 1}` : null });
+export const lotKey = (s) => `${s.key}|${s.lotNo || ""}`;
+export const lotHash = (s) => sha(BP.sampleText(s));
+export const rerateOn = (req) => process.env.GENBID_BIDPRICE_RERATE === "1" || req?.rerate === true || req?.basis?.rerate === true;
+// Ứng viên nào dùng lại mức cũ (kept: lotKey → mức đã lưu), ứng viên nào agent phải xếp (fresh).
+export function stickyPlan(list, prevRatings, sig, force = false) {
+  const items = !force && prevRatings?.sig === sig ? prevRatings.items || {} : {}, kept = {}, fresh = [];
+  for (const s of list) { const x = items[lotKey(s)]; if (x && x.h === lotHash(s)) kept[lotKey(s)] = x; else fresh.push(s); }
+  return { kept, fresh, reused: prevRatings?.sig === sig && !force, why: force ? "buộc xếp lại" : !prevRatings ? "chưa có mức cũ" : prevRatings.sig !== sig ? "cấu hình hạng 1 hoặc yêu cầu gói đổi" : "" };
+}
+
+export async function prep(req, dir, hist, size = null, prev = null) {
   fs.mkdirSync(dir, { recursive: true });
   const key = req.key || req.notifyNo, b = req.basis || {};
   const [analysis, cfg, hsmt] = await Promise.all([doc("analysis", key).catch(() => null), size ? null : doc("configmatch", key).catch(() => null), hsmtTextOf(key).catch(() => null)]);
@@ -69,6 +94,8 @@ export async function prep(req, dir, hist, size = null) {
     sync: (hsmt && BP.brandSyncOf(hsmt.text)) || BP.brandSyncOf(cfgText) };
   const docs = hist || Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
   const { total, tol, group, otherGroup, vnMade, list, prior } = BP.candidates(t, docs, K, P);
+  const sig = ratingSig({ first, group, K, rating: t.rating, sync: t.sync, cfgText, size });
+  const plan = stickyPlan(list, prev?.ratings, sig, rerateOn(req));
   // Giá theo cấu hình (2026-11-10): cấu hình hạng 1 dùng giá của agent như cũ; cấu hình gần nhất có động cơ khác nhóm xuất
   // xứ được ba mức riêng từ gói cũ cùng nhóm, chọn bằng code (groupPrices), không vay gói nhóm khác.
   const byConfig = await configPrices((size ? size.cfg : cfg?.result)?.configs || [], first, group, t, docs, K && K * (size?.qty || 1), P, K);
@@ -82,7 +109,8 @@ export async function prep(req, dir, hist, size = null) {
     ...(size ? ["", `## Gói có nhiều cỡ máy: ${size.sizes.map(sizeText).join("; ")}`,
       `Lượt này CHỈ so máy ${sizeText(size)}; các cỡ khác có lượt riêng. Xếp mức theo máy cỡ này: so công suất một máy với máy ${size.label}; gói cũ chỉ có máy cỡ này (một hay nhiều máy cùng cỡ) không bị xếp "khác" chỉ vì gói này còn máy cỡ khác. Giá gói ở trên là phần giá của cỡ máy này do code ước tính (chia giá cả gói${size.whole ? ` ${fmt(size.whole)} đ` : ""} theo số lượng và công suất từng cỡ), không phải số trên muasamcong.`, ""] : []),
     `Công suất gói cũ được lấy: lệch không quá ${Math.round((tol || BP.POWER_TOL) * 100)}% so với gói này${tol > BP.POWER_TOL ? " (nới vì gói đòi đồng bộ thương hiệu)" : ""}, so cùng mức liên tục/dự phòng khi biết; gói cũ chỉ khớp khi đọc ở mức kia thì dòng công suất của nó ghi rõ ("có thể là mức dự phòng của máy … liên tục").`,
-    `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT): ${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}${vnMade ? `; đã bỏ ${vnMade} gói có tổ máy hãng / xuất xứ Việt Nam` : ""}${group === "cnmade" ? ". Hãng ngoài Trung Quốc nhưng sản xuất tại Trung Quốc (Dongfeng/Chongqing Cummins, Perkins Wuxi…): giá nằm giữa máy hãng Trung Quốc và máy cùng hãng sản xuất ở nước ngoài; gói cũ hai nhóm đó đều được giữ để so, gói cũ cũng là hãng ngoại sản xuất tại Trung Quốc là sát nhất." : ""}`, "",
+    ...(plan.fresh.length < list.length ? [`samples.md chỉ có ${plan.fresh.length}/${list.length} gói cũ MỚI: các gói còn lại đã được xếp mức ở lượt trước với cùng cấu hình và yêu cầu, code giữ nguyên mức đó.`] : []),
+    `Nhóm xuất xứ động cơ (code đọc từ cấu hình dự kiến chào, nếu chưa có thì từ HSMT):${group ? BP.GROUP[group] : "không rõ"}${otherGroup ? ` — đã bỏ ${otherGroup} gói khác nhóm` : ""}${vnMade ? `; đã bỏ ${vnMade} gói có tổ máy hãng / xuất xứ Việt Nam` : ""}${group === "cnmade" ? ". Hãng ngoài Trung Quốc nhưng sản xuất tại Trung Quốc (Dongfeng/Chongqing Cummins, Perkins Wuxi…): giá nằm giữa máy hãng Trung Quốc và máy cùng hãng sản xuất ở nước ngoài; gói cũ hai nhóm đó đều được giữ để so, gói cũ cũng là hãng ngoại sản xuất tại Trung Quốc là sát nhất." : ""}`, "",
     // Đồng bộ thương hiệu (Khoa, 2026-11-06): an OEM set, priced far above a set assembled from three makes.
     ...(t.sync ? [`## Đồng bộ thương hiệu: HSMT đòi ít nhất ${t.sync.need}/${t.sync.parts.length} bộ phận chính (động cơ, đầu phát, bộ điều khiển) do chính hãng sản xuất tổ máy làm ra`,
       `HSMT ghi: "${t.sync.text}"`, `Gói cũ HSMT không đòi điều này, hay hàng trúng là tổ máy lắp ráp (động cơ, đầu phát, bộ điều khiển của các hãng khác nhau), thì không xếp "giống".`, ""] : []),
@@ -93,14 +121,15 @@ export async function prep(req, dir, hist, size = null) {
   ].filter((l) => l !== "").join("\n")),
   // samples.md was 52,000–271,000 characters on all 12 tenders priced so far, over what Read takes at once: cut at its
   // "## S<n>" headings, read part after part, checked in the run's log (read-guard).
-  ...writeForRead(dir, "samples.md", list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"))];
+  ...(plan.fresh.length ? writeForRead(dir, "samples.md", plan.fresh.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n")) : [])];
   fs.writeFileSync(path.join(dir, "read-order.json"), JSON.stringify(order), "utf8");
   // Ba mức hiệu chỉnh theo cạnh tranh dự báo (web/bidprice.js CALIB): bật mặc định (Khoa duyệt 11/11); GENBID_BIDPRICE_CALIB=0
   // tắt (samples.json và kết quả y như trước, không có stats.calib).
   const fc = calibOn() ? BP.nbForecast({ notifyNo: key, investorName: t.investorName, location: b.location || "", field: b.field || "", bidCloseDate: b.bidCloseDate || "" }, docs) : null;
-  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior, byConfig, cutNotes, ...(fc ? { fc: { p: fc.p } } : {}) }), "utf8");
+  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior, byConfig, cutNotes, ...(fc ? { fc: { p: fc.p } } : {}),
+    sticky: { sig, kept: plan.kept, why: plan.why, ...(plan.reused ? { tender: prev.ratings.tender || null, notes: prev.ratings.notes || [] } : {}) } }), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "bidprice-prompt.md"), "utf8"), "utf8");
-  return { total, group, otherGroup, vnMade, candidates: list.length, K, P, prior, byConfig, fc };
+  return { total, group, otherGroup, vnMade, candidates: list.length, fresh: plan.fresh.length, kept: Object.keys(plan.kept).length, keptKeys: Object.keys(plan.kept), why: plan.why, K, P, prior, byConfig, fc };
 }
 
 // Hiệu chỉnh khoảng giá theo cạnh tranh dự báo: bật trừ khi GENBID_BIDPRICE_CALIB=0.
@@ -129,11 +158,20 @@ export async function configPrices(configs, first, group, t, docs, Kmult, P, K =
 // result.json checked against samples.json: every lot gets a level; a lot the agent left out, or whose quote is not in
 // its own text, counts as unknown (unverified). A "same" lot whose power code read is over 1,5 times off becomes "close".
 export function check(dir) {
-  const { basis, total, list, prior = [], byConfig = [], fc = null, cutNotes = [] } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
-  const r = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8")), problems = [];
+  const { basis, total, list, prior = [], byConfig = [], fc = null, cutNotes = [], sticky = null } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
+  // No new lot (all kept): the agent was not run, result.json may be missing.
+  const rf = path.join(dir, "result.json"), r = fs.existsSync(rf) ? JSON.parse(fs.readFileSync(rf, "utf8")) : {}, problems = [];
   const by = new Map((r.samples || []).map((x) => [x.id, x]));
+  const kept = sticky?.kept || {}, items = {};
   const samples = list.map((s) => {
-    const x = by.get(s.id), level = BP.LEVELS.includes(x?.level) ? x.level : "unknown";
+    // A level kept from the run before wins over whatever the agent says about the lot this time.
+    const old = kept[lotKey(s)], x = old || by.get(s.id), level = BP.LEVELS.includes(x?.level) ? x.level : "unknown";
+    // What is saved for the next run: the agent's own level (before the power check below), once its quote checked.
+    const keep = () => { items[lotKey(s)] = old || { level, same: (x.same || []).map(String).slice(0, 8), diff: (x.diff || []).map(String).slice(0, 8), quote: String(x.quote || ""), h: lotHash(s) }; };
+    if (x && BP.LEVELS.includes(x.level)) {
+      const q = norm(String(x.quote || "")).replace(/…$/, "");
+      if (!(level === "same" || level === "close") || (q && norm(BP.sampleText(s)).includes(q))) keep();
+    }
     const out = { ...s, level, same: (x?.same || []).map(String).slice(0, 8), diff: (x?.diff || []).map(String).slice(0, 8), quote: String(x?.quote || "") };
     if (!x) { problems.push(`${s.id}: agent không xếp mức`); return { ...out, unverified: "agent không xếp mức" }; }
     if (level === "same" || level === "close") {
@@ -145,7 +183,12 @@ export function check(dir) {
   });
   // A size of several sets (a tender of several sizes): the price per kVA times all of them.
   const stats = BP.suggest(samples, basis.price, basis.kva && basis.kva * (basis.qty || 1), prior, fc ? { fc } : {});
-  const result = { basis, total, tender: { summary: String(r.tender?.summary || ""), points: (r.tender?.points || []).map(String).slice(0, 10) }, notes: [...(r.notes || []).map(String).slice(0, 6), ...cutNotes], samples, stats, ...(byConfig.length ? { byConfig } : {}) };
+  // The agent's summary of the tender and its notes: this run's, or kept with the levels when the agent was not run.
+  const ran = fs.existsSync(rf), rt = ran ? r.tender : sticky?.tender, rn = ran ? r.notes : sticky?.notes;
+  const tender = { summary: String(rt?.summary || ""), points: (rt?.points || []).map(String).slice(0, 10) }, agentNotes = (rn || []).map(String).slice(0, 6);
+  const nKept = Object.keys(kept).length;
+  const result = { basis, total, tender, notes: [...agentNotes, ...cutNotes], samples, stats, ...(byConfig.length ? { byConfig } : {}),
+    ...(sticky ? { ratings: { sig: sticky.sig, tender, notes: agentNotes, items }, rated: { kept: nKept, fresh: list.length - nKept, ...(sticky.why ? { why: sticky.why } : {}) } } : {}) };
   fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
   return { result, problems };
 }
@@ -165,8 +208,11 @@ function runClaude(dir) {
 // prev: this tender's (this size's) result posted before, kept when the run stops half way (read guard, as Gợi ý cấu hình).
 async function attemptOne(req, dir, hist, size = null, tag = req.key, prev = null) {
   fs.rmSync(dir, { recursive: true, force: true });
-  const info = await prep(req, dir, hist, size);
+  const info = await prep(req, dir, hist, size, prev);
   if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "", ...(size ? { qty: size.qty } : {}) }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).${info.prior?.length ? ` Giá dưới đây tính từ ${info.prior.length} gói cùng cỡ (±15%) có cạnh tranh, chưa qua Agent so cấu hình.` : ""}`], samples: [], stats: BP.suggest([], info.P, info.K && info.K * (size?.qty || 1), info.prior || [], info.fc ? { fc: info.fc } : {}), ...(info.byConfig?.length ? { byConfig: info.byConfig } : {}) }, problems: [] };
+  console.log(`${tag}: ${info.candidates} ứng viên — giữ mức cũ ${info.kept}, agent xếp ${info.fresh}${info.why ? ` (${info.why})` : ""}`);
+  // Every candidate kept its level from the run before: no agent run, the prices come from the kept levels.
+  if (!info.fresh) { const out = check(dir); out.result.seconds = 0; return out; }
   const started = Date.now(), r = runClaude(dir);
   fs.writeFileSync(path.join(os.tmpdir(), `genbid-bidprice-${tag}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
   if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
@@ -183,6 +229,8 @@ async function attemptOne(req, dir, hist, size = null, tag = req.key, prev = nul
   out.result.seconds = Math.round((Date.now() - started) / 1000);
   if (stopped && !g.notes.some((n) => /bị dừng giữa chừng/.test(n))) g.notes.push(`Lượt agent${label ? ` (${label})` : ""} bị dừng giữa chừng (${stopped}): result.json có thể là bản dở — ${GUARD.again}.`);
   if (g.notes.length) { out.result.notes.push(...g.notes.map(capNote)); out.result.readIncomplete = true; }
+  // A run that did not read all it was given: its new levels are not kept for the next run (asked again then).
+  if (g.notes.length && out.result.ratings) out.result.ratings.items = Object.fromEntries(Object.entries(out.result.ratings.items).filter(([k]) => info.keptKeys.includes(k)));
   return out;
 }
 
@@ -304,6 +352,6 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     const reqs = (await api("kind=bidprice")).filter((r) => r.basis && (!arg("key") || r.key === arg("key")));
     if (reqs.length) { const hist = Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data])); for (const r of reqs) await answer(r, hist); }
   }
-  else if (cmd === "try") { const dir = arg("out") || path.join(os.tmpdir(), "genbid-bidprice-try", req.key); printResult(await attempt(req, dir)); console.log(`Thư mục: ${dir}`); }
-  else { console.error("usage: bidprice-bot.mjs prep --key K --out D [--kva N --price P] | check --dir D | try --key K [--kva N --price P]"); process.exit(2); }
+  else if (cmd === "try") { if (process.argv.includes("--rerate")) req.rerate = true; const dir = arg("out") || path.join(os.tmpdir(), "genbid-bidprice-try", req.key), prevDoc = await doc("bidprice", req.key).catch(() => null); printResult(await attempt(req, dir, null, prevDoc?.result || null)); console.log(`Thư mục: ${dir}`); }
+  else { console.error("usage: bidprice-bot.mjs prep --key K --out D [--kva N --price P] | check --dir D | try --key K [--kva N --price P] [--rerate]"); process.exit(2); }
 }
