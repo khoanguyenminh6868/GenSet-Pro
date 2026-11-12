@@ -241,7 +241,11 @@ async function sig(o) {
 
 // A tender's notice: "Thông tin cơ bản" up to "Nộp hồ sơ", the HSMT chapter list, and the text of the webform
 // chapters II, III, V and VII (the ones that are not attached files), read in muasamcong's viewer.
+// The page of a tender is opened only at https://muasamcong.{mof,mpi}.gov.vn (a request written into the database could
+// carry any address); the portal answers on the .mof host today, the old .mpi host stays accepted.
+const okTenderUrl = (u) => { try { const x = new URL(String(u)); return x.protocol === "https:" && /^muasamcong\.(mof|mpi)\.gov\.vn$/.test(x.hostname); } catch { return false; } };
 async function readNotice(ctx, page, t, chapters = /^Chương\s+(II|III|V|VII)\b/i) {
+  if (!okTenderUrl(t.sourceUrl)) throw new Error("Địa chỉ gói thầu không phải trang muasamcong (https://muasamcong.mof.gov.vn), không mở.");
   await page.goto(t.sourceUrl, { waitUntil: "domcontentloaded" });
   await page.waitForFunction(() => /Mã (E-)?TBMT\s*\n\s*IB\d+/.test(document.body.innerText) && document.body.innerText.includes("Nộp hồ sơ"), null, { timeout: 40000 }).catch(() => {});
   if (await challenged(page)) throw new Captcha("muasamcong yêu cầu xác minh");
@@ -296,6 +300,11 @@ const isDecisionFile = (name) => {
 };
 async function fetchFiles(page, req) {
   const tag = `${req.key}`;
+  if (!okTenderUrl(req.sourceUrl)) {
+    const why = "Địa chỉ gói thầu không phải trang muasamcong (https://muasamcong.mof.gov.vn), không mở.";
+    if (!opt("dry")) ps("Publish-GenBidHsmt.ps1", ["-Key", req.key, "-RequestedAt", req.requestedAt, "-Reason", why]);
+    return `${tag}: lỗi (${why})`;
+  }
   if (opt("dry")) {
     await page.goto(req.sourceUrl, { waitUntil: "domcontentloaded" });
     const r = await snippet(page, "files-extract.js");
@@ -1773,6 +1782,7 @@ function wordText(f) {
     fs.copyFileSync(f, src);
     const q = (s) => "'" + s.replace(/'/g, "''") + "'";
     const script = `$w = New-Object -ComObject Word.Application; $w.Visible = $false; $w.DisplayAlerts = 0
+$w.AutomationSecurity = 3
 try { $d = $w.Documents.Open(${q(src)}, $false, $true); $d.SaveAs2(${q(out)}, 2, $false, '', $false, '', $false, $false, $false, $false, $false, 65001); $d.Close($false) } finally { $w.Quit() }`;
     // Plain text in UTF-8 (format 2, encoding 65001): "Unicode text" (format 7) came out as ANSI with "?" for every
     // Vietnamese letter on some .doc files (IB2400577020), read back as UTF-16 garbage.
