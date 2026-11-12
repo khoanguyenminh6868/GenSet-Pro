@@ -161,8 +161,11 @@ export function guardRun(dir, logText, opts = {}) {
 // ctl-lookup.md and their parts as Read counted them (totalLines); a file never opened shows as such only when the
 // log names it elsewhere (read-order in the first message).
 export function logFiles(logText, trace = readTrace(logText)) {
-  const first = String(logText).match(/Đọc bằng Read, theo thứ tự[^:]*:\s*([^\n]+?)\.(?:\s|\\n|$)/);
-  const order = first ? first[1].split(/,\s*/).map((s) => s.trim()).filter((s) => /\.md$/.test(s)) : ["input.md", "catalog.md"];
+  // The first message goes in through stdin, not into the log: the parts are those the run read (x-N.md), in order.
+  const parts = [...new Set(trace.reads.map((r) => r.name).filter((n) => /^(input|catalog|ctl-lookup)-\d+\.md$/.test(n)))]
+    .sort((a, b) => { const [, x, i] = a.match(/^(.+)-(\d+)\.md$/), [, y, j] = b.match(/^(.+)-(\d+)\.md$/); return x === y ? i - j : ["input", "catalog", "ctl-lookup"].indexOf(x) - ["input", "catalog", "ctl-lookup"].indexOf(y); });
+  const order = [...new Set(["input.md", "catalog.md", ...parts, ...(trace.reads.some((r) => r.name === "ctl-lookup.md") ? ["ctl-lookup.md"] : [])])]
+    .filter((n) => !parts.some((p) => p.startsWith(n.replace(/\.md$/, "-")))); // a file read by parts: its parts
   const totals = new Map();
   for (const r of trace.reads) if (r.total != null) totals.set(r.name, Math.max(totals.get(r.name) || 0, r.total));
   const out = [];
