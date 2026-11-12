@@ -3957,7 +3957,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
     const parts = [c.engine?.model, c.alternator?.model, c.controller?.model].filter(Boolean).join(" + ");
     return h`<details class="card supcard sizebox cfgcard" data-sizebox="${cid}" data-def="${first ? "open" : ""}" ${boxOpen(cid, first) ? "open" : ""}><summary title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b style="font-size:15px">#${rk}</b><span class="chip ${fit[1]}">${fit[0]}</span><span class="small cfgparts">${parts}</span><span class="cfgsupdel">${raw(cfgSups(c).length ? h`<span class="muted small">· ${supName(state.supplier?.[cfgSups(c)[0].supplierId]) || cfgSups(c)[0].supplierId}${cfgSups(c).length > 1 ? ` +${cfgSups(c).length - 1}` : ""}</span>` : "")}${raw(key ? h`<button class="btn sm cfgdelbtn" data-cfgdel="${key}" data-size="${size}" data-rank="${rk}" title="Xoá cấu hình này khỏi danh sách gợi ý" aria-label="Xoá cấu hình">${raw(TRASH_SVG)}</button>` : "")}</span></summary>${raw(c.fromFind ? h`<div class="row">${raw(c.fromFind ? `<span class="chip mut" title="${c.findChecked ? "Thêm từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, đã đối chiếu với các yêu cầu HSMT" : "Thêm bằng code từ dòng bảng của nhà cung cấp Tìm NCC vừa bổ sung, chưa đối chiếu đủ HSMT"}">Bổ sung từ Tìm NCC</span>` : "")}</div>` : "")}
       ${raw(part("Động cơ", c.engine, "engine", c.engine?.src?.kind === "catalog"))}${raw(part("Đầu phát", c.alternator, "alternator", c.alternator?.src?.kind === "catalog"))}${raw(part("Bộ điều khiển", c.controller, "controller", !!c.controller?.model))}${raw(c.genset ? h`<div class="small cfgblk">Tổ máy tham chiếu: <b>${c.genset.model}</b>${raw(cfgSrcHtml(c.genset.src))}</div>` : "")}
-      ${raw(cfgWonHtml(c, key, size))}
+      ${raw(cfgWonHtml(c, key, size))}${raw(cfgLossHtml(c))}
       ${raw(c.checks?.length ? cfgGridBox(`cfggrid|${key}|${size}|${c.rank || i + 1}`, c.checks, h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
         const st = cfgStOf(x);
         // factSrc: a figure of this engine / alternator model from another supplier's row or datasheet (config-bot.mjs modelFacts).
@@ -3971,6 +3971,10 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
       ${raw(cfgComboHtml(c))}${raw(cfgRfqHtml(c, key, size, rk))}</details>`;
   }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
+// Chỉ tiêu từng làm công ty bị loại (config-bot.mjs lossWarnOf, Khoa 2026-11-12, cfg-bcdg): chỉ đọc c.lossWarn đã lưu
+// (kết quả cũ không có trường thì không hiện), không tự tính lại; không câu trích nên không cần SHOW_SRC.
+const CFG_LOSS_CHIP = { not_met: "bad", unclear: "warn", missing: "warn", order: "cfm", document: "cfm" };
+const cfgLossHtml = (c) => (c.lossWarn?.length ? h`<div class="note err small cfgblk" style="margin:6px 0"><b>Chỉ tiêu từng làm công ty bị loại (${c.lossWarn.length}):</b><ul class="suplist">${raw(c.lossWarn.map((w) => h`<li>${w.item} <span class="chip ${CFG_LOSS_CHIP[w.status] || "warn"}">${w.label || w.status}</span> <span class="muted" title="${w.why || ""}">từng bị loại ở gói ${w.tender}</span></li>`).join(""))}</ul></div>` : "");
 // Kiểm tra tổ hợp (config-bot.mjs comboChecks, 2026-11-10): cảnh báo cân bằng công suất (c.warnings) và thông tin tham
 // khảo (cân bằng công suất tính được, BMEP). Không đổi kết quả kiểm nào. "Chưa kiểm được" không hiện (dữ liệu vẫn trong
 // c.combo): gần như mọi cấu hình thiếu số nên dòng đó chỉ là nhiễu (điều phối 10/11).

@@ -3319,6 +3319,48 @@ export function attachWon(result, docs, { kva = null, investorName = "", self = 
   }
   return result;
 }
+// Chỉ tiêu từng làm công ty bị loại kỹ thuật (Khoa duyệt 2026-11-12, cfg-bcdg): đọc từ các Báo cáo đánh giá E-HSDT, chỉ
+// lý do về THÔNG SỐ linh kiện (lỗi soạn hồ sơ không thuộc đây). Cấu hình hạng 1–LOSS_RANKS mà HSMT có yêu cầu mã đó và
+// check của mã đó chưa "đạt" (chưa rõ, không đạt, cần xác nhận / chứng từ, hoặc chưa có check) → `c.lossWarn`, một dòng
+// mỗi chỉ tiêu, để web hiện riêng, không lẫn trong đống "chưa rõ". Không đổi status, không đổi điểm hay thứ hạng.
+// `when(text)`: HSMT text of the requirement (item + requirement + quote + parts) that makes it this point.
+// `sub`: the point is one function inside a grouped check (ngắn mạch in ctl_protection): only a part (or a check with no
+// parts) that names it counts; the group's own status says nothing about it.
+const SC_RE = /ng[ắa]n\s*m[ạa]ch|short\s*-?\s*circuit/i;
+export const LOSS_RANKS = 3;
+export const LOSS_CHECKS = [
+  { code: "ctl_protection", item: "Bộ điều khiển: bảo vệ ngắn mạch", tender: "IB2500261097", why: "bộ điều khiển SmartGen HGM6120 không có cảnh báo, bảo vệ ngắn mạch", when: (t) => SC_RE.test(t), sub: SC_RE },
+  { code: "alt_efficiency", item: "Hiệu suất đầu phát", tender: "IB2500438703", why: "đầu phát Stamford UCDI274K hiệu suất 92,8% < 93% ở 380/220 V" },
+  { code: "fuel_consumption_50", item: "Tiêu hao nhiên liệu 50% tải", tender: "IB2600483082", why: "tiêu hao nhiên liệu Prime ở 50% tải không đáp ứng" },
+  // Not "lưu lượng / nhiệt độ khí thải" (exhaust) that an old result coded emission.
+  { code: "emission", item: "Tiêu chuẩn khí thải", tender: "IB2600365013", why: "không đáp ứng khí thải ≥ Euro 4 / Stage IV / Tier 4", when: (t) => /euro|tier|stage|qcvn|tcvn|\bEPA\b|emission|ti[êe]u\s*chu[ẩa]n/i.test(t) && !/l[ưư]u\s*l[ưư][ợo]ng|nhi[ệe]t\s*đ[ộo]\s*kh[íi]/i.test(t) },
+  { code: "alt_standard", item: "Tiêu chuẩn đầu phát", tender: "IB2400104800", why: "đầu phát theo VDE 0530, HSMT đòi VDE 0875" },
+  { code: "alt_power", item: "Công suất đầu phát", tender: "IB2500211376", why: "đầu phát Marelli MJB160 SA4 tối đa 16,2 kVA < 20 kVA Prime" },
+  { code: "ctl_display_lang", item: "Bộ điều khiển hiển thị tiếng Việt", tender: "IB2500371475", why: "bộ điều khiển không thể hiện cài đặt tiếng Việt", when: (t) => /ti[ếe]ng\s*vi[ệe]t|vietnam/i.test(t) },
+];
+const LOSS_LABEL = { not_met: "Không đạt", unclear: "Chưa rõ", missing: "Chưa kiểm", order: "Cần xác nhận khi đặt hàng", document: "Cần chứng từ khi nộp" };
+const reqTextOf = (r) => [r.item, r.requirement, r.quote, ...(r.parts || []).map((p) => `${p.item || ""} ${p.requirement || ""}`)].filter(Boolean).join(" ");
+export function lossWarnOf(c, reqs = []) {
+  const out = [];
+  for (const L of LOSS_CHECKS) {
+    const want = (reqs || []).filter((r) => !r.byCode && codeOf(r) === L.code && (!L.when || L.when(reqTextOf(r))));
+    if (!want.length) continue;
+    // A check by its own code, else by the item of the requirement (as confirmChecks): a check rarely carries its code,
+    // and codeOf of an item alone can differ ("Ngôn ngữ, màn hình bộ điều khiển" reads ctl_measure).
+    const items = new Set(want.map((r) => norm(r.item)));
+    const xs = (c.checks || []).filter((x) => (x.code ? x.code === L.code : items.has(norm(x.item)) || codeOf(x) === L.code));
+    let pts = xs;
+    if (L.sub) pts = xs.flatMap((x) => (x.parts?.length ? x.parts.filter((p) => L.sub.test(`${p.item || ""} ${p.requirement || ""}`)) : L.sub.test(`${x.item || ""} ${x.requirement || ""}`) ? [x] : []));
+    let status;
+    if (!pts.length) status = (c.checks || []).some((x) => x.byCode && x.item === NO_CONTROLLER && x.status === "not_met") && L.code.startsWith("ctl_") ? "not_met" : "missing";
+    else if (pts.some((p) => p.status === "not_met")) status = "not_met";
+    else if (pts.every((p) => p.status === "met" && !p.unverified)) continue;
+    else if (pts.some((p) => p.status !== "confirm")) status = "unclear";
+    else status = pts.some((p) => p.confirm === "document") ? "document" : "order";
+    out.push({ code: L.code, item: L.item, status, label: LOSS_LABEL[status], tender: L.tender, why: L.why });
+  }
+  return out;
+}
 export function rankConfigs(result) {
   const reqs = result.requirements || [];
   for (const c of result.configs || []) noController(c, reqs);
@@ -3362,6 +3404,8 @@ export function rankConfigs(result) {
     sup.sort((x, y) => cmp(x.k, y.k));
     const out = { ...c, rank: i + 1, suppliers: sup.map((x) => x.s) };
     out.rfq = rfqOf(out, reqs);
+    const warn = out.rank <= LOSS_RANKS ? lossWarnOf(out, reqs) : [];
+    if (warn.length) out.lossWarn = warn; else delete out.lossWarn;
     return out;
   });
   return result;
