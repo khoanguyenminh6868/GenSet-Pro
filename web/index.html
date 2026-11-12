@@ -145,7 +145,7 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 /* Động cơ / Đầu phát / Bộ điều khiển / Tổ máy tham chiếu / Đã trúng thầu cách nhau (Khoa, 2026-11-10). */
 .cfgblk+.cfgblk{margin-top:12px}
 .cfgsupdel{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.cfgdelbtn{padding:3px 6px;color:var(--red);flex-shrink:0}
-.cfgcard>summary{align-items:center}.cfgcard[open]>summary{margin-bottom:6px}.cfgcard .cfgparts{font-weight:400}
+.cfglist{display:flex;flex-direction:column;gap:6px;margin:8px 0}.cfglist>.cfgcard,.cfglist>.cfgcard[open]+.cfgcard{margin:0}.cfgcard>summary{align-items:center}.cfgcard[open]>summary{margin-bottom:6px}.cfgcard .cfgparts{font-weight:400}
 .cfggrid{margin:6px 0}.cfggrid>summary{padding:4px 0;align-items:center}.cfggrid[open]>summary{margin-bottom:4px}
 .kpi.bplev{cursor:default}.kpi.bplev .kv{font-size:20px}
 /* Giá gợi ý: each level its own colour, none violet (Khoa, 2026-11-04). */
@@ -3953,7 +3953,7 @@ const cfgNamedChip = (c) => (c.named === "model" ? `<span class="chip ok" title=
 function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
   if (!r.configs?.length) return cfgNamedHtml(r) + h`<div class="note warn"><b>Không tìm thấy cấu hình phù hợp.</b> ${r.message || "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT."}</div>`
     + cfgReqHtml(r) + cfgAddedHtml(r) + cfgNotesHtml(r);
-  return cfgNamedHtml(r) + (r.summary ? h`<p class="cfgsum">${r.summary}</p>` : "") + r.configs.map((c, i) => {
+  return cfgNamedHtml(r) + (r.summary ? h`<p class="cfgsum">${r.summary}</p>` : "") + '<div class="cfglist">' + r.configs.map((c, i) => {
     const bad = (c.checks || []).some((x) => x.status === "not_met"), unclear = (c.checks || []).some((x) => (x.status !== "met" && x.status !== "confirm") || x.unverified);
     const cfm = (c.checks || []).some((x) => x.status === "confirm");
     const fit = bad ? ["Không đạt đủ", "bad"] : unclear ? ["Còn điểm chưa rõ", "warn"] : cfm ? ["Đạt, còn điểm cần NCC xác nhận", "cfm"] : ["Đạt mọi yêu cầu đã đọc", "ok"];
@@ -3979,7 +3979,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
       ${raw(key && !cfgSups(c).length && c.engine?.model ? h`<div class="row" style="margin-top:6px"><span class="small muted">Chưa có nhà cung cấp nào trong hệ thống cho cấu hình này.</span><span class="spacer"></span><button class="btn green sm" data-cfgfind="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp chào tổ máy dùng đúng động cơ${c.alternator?.model ? ", đầu phát" : ""}${c.controller?.model ? ", bộ điều khiển" : ""} của cấu hình này">Tìm nhà cung cấp</button></div>` : "")}
       ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}
       ${raw(cfgComboHtml(c))}${raw(cfgRfqHtml(c, key, size, rk))}</details>`;
-  }).join("") + cfgAddedHtml(r) + cfgNotesHtml(r);
+  }).join("") + "</div>" + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
 // Chỉ tiêu từng làm công ty bị loại (config-bot.mjs lossWarnOf, Khoa 2026-11-12, cfg-bcdg): chỉ đọc c.lossWarn đã lưu
 // (kết quả cũ không có trường thì không hiện), không tự tính lại; không câu trích nên không cần SHOW_SRC.
