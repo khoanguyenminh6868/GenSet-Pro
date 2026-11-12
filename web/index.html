@@ -4003,7 +4003,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
       }).join(""))}</tbody></table></div>`) : "")}
       ${raw(cfgSuppliersHtml(c))}
       ${raw(key && !cfgSups(c).length && c.engine?.model ? h`<div class="row" style="margin-top:6px"><span class="small muted">Chưa có nhà cung cấp nào trong hệ thống cho cấu hình này.</span><span class="spacer"></span><button class="btn green sm" data-cfgfind="${key}" data-size="${size}" data-rank="${c.rank || i + 1}" ${busy ? "disabled" : ""} title="Tìm trên internet nhà cung cấp chào tổ máy dùng đúng động cơ${c.alternator?.model ? ", đầu phát" : ""}${c.controller?.model ? ", bộ điều khiển" : ""} của cấu hình này">Tìm nhà cung cấp</button></div>` : "")}
-      ${raw(c.gaps?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}
+      ${raw(c.gaps?.length && !c.rfq?.length ? h`<div class="small"><b>Cần làm rõ với nhà cung cấp:</b></div><ul class="suplist">${raw(c.gaps.map((g) => h`<li class="small">${g}</li>`).join(""))}</ul>` : "")}
       ${raw(cfgComboHtml(c))}${raw(cfgRfqHtml(c, key, size, rk))}</details>`;
   }).join("") + "</div>" + cfgAddedHtml(r) + cfgNotesHtml(r);
 }
