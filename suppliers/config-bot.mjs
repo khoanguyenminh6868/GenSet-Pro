@@ -373,7 +373,7 @@ const HEADING = /^(?!\s*---)[ \t>*-]*(ch(?:uo|u)ng|phan)[ \t]+([ivx]+|\d+)\b[ \t
 const TECH_TITLE = /yeu\s*ca?u\s*(ve\s*)?(ky\s*thuat|pham\s*vi|ke\s*hoach)|pham\s*vi\s*cung\s*cap|thong\s*so\s*ky\s*thuat|chi\s*dan\s*ky\s*thuat|dac\s*tinh\s*ky\s*thuat|tieu\s*chuan\s*ky\s*thuat|dieu\s*khoan\s*tham\s*chieu/i;
 const SPEC_HIT = /kva|xi\s?lanh|xy\s?lanh|dau\s*phat|cong\s*suat\s*(lien\s*tuc|du\s*phong)|prime|standby/gi;
 export function technicalPart(text) {
-  text = String(text ?? "");
+  text = String(text ?? "").normalize("NFC");
   const f = foldSame(text), heads = [...f.matchAll(HEADING)].map((m) => {
     // "Chương IV." alone is a wrapped sentence ("…theo mẫu tại" / "Chương IV.") unless the next line is a title in capitals.
     const after = f.slice(m.index + m[0].length).match(/^\s*\n\s*([^\n]{3,80})/)?.[1] || "", caps = after.replace(/[^a-z]/gi, "");
@@ -615,7 +615,7 @@ export function factConflicts(list) {
 const squashOf = (s) => norm(s).replace(/[^a-z0-9]/g, "");
 // `sizing` ({ size, sizes }, sizesOf): the run of one size of a tender of several sizes: the minimums of that size's own block.
 export function hintsOf(text, extra = "", sizing = null) {
-  const t = `${technicalPart(text)}\n${extra}`;
+  const t = `${technicalPart(text)}\n${String(extra ?? "").normalize("NFC")}`;
   const names = (list) => list.filter(([re]) => re.test(t)).map(([, n]) => n);
   const ctrl = CAT.CONTROLLERS.filter((c) => c.word.test(t)).map((c) => c.brand);
   for (const c of CAT.controllersIn(t)) if (!ctrl.includes(c.brand)) ctrl.push(c.brand);
@@ -633,7 +633,9 @@ export function hintsOf(text, extra = "", sizing = null) {
 // is kVA / kW.
 const UNIT_WORD = /^(?:l[íi]t|lit|kw|kva|kg|hz|v[òo]ng|gi[ờo]|ph[úu]t|n[ăa]m|th[áa]ng|ng[àa]y|m[ée]t|b[ộo]|c[áa]i|chi[ếe]c|m[áa]y|pha|d[âa]y|xi|xy|t[ấa]n|l[ầa]n|c[ấa]p|ampe|volt|độ)$/i;
 export function unflatten(t) {
-  return String(t ?? "").replace(/(\d)\s*([kK])\s+(VA|W)\b/g, "$1 $2$3").split("\n").map((l) => (l.length <= 300 ? l
+  // Vietnamese text of a PDF or a web page is often decomposed (NFD: "a" + a combining mark): every pattern here is of the
+  // composed letters (2026-11-12 audit: a decomposed tender gave no or wrong minimums).
+  return String(t ?? "").normalize("NFC").replace(/(\d)\s*([kK])\s+(VA|W)\b/g, "$1 $2$3").split("\n").map((l) => (l.length <= 300 ? l
     : l.replace(/\s(?=(?:[IVX]{1,4}|[A-H])\s+\p{Lu}\p{Ll})/gu, "\n").replace(/\s(?=-\s+\p{Lu})/gu, "\n")
       .replace(/(?<![≥≤<>=:±~\/×]\s*)\s(\d{1,2}(?:\.\d{1,2})*\.?)\s+(?=(\p{Lu}\p{Ll}+))/gu, (all, n, w) => (UNIT_WORD.test(w) ? all : `\n${n} `)))).join("\n");
 }
@@ -652,8 +654,11 @@ export function sectionsOf(text) {
   });
   return (i) => { let k = "genset"; for (const s of out) { if (s.at > i) break; k = s.kind; } return k; };
 }
-const AT_LEAST = /≥|>=|tối thiểu|ít nhất|không (nhỏ|thấp|bé) hơn|trở lên/i, MAXIMUM = /≤|<=|tối đa|không (lớn|vượt|quá)/i;
-const DISP_W = /dung t[íi]ch|displacement/i, TANK_W = /bình|bồn|thùng|két|nhớt|nước|nhiên liệu|tank|dầu|ắc quy/i;
+const AT_LEAST = /≥|>=|tối thiểu|ít nhất|không (nhỏ|thấp|bé) hơn|trở lên/i, MAXIMUM = /≤|<=|<(?!=)\s*\d|tối đa|không (lớn|vượt|quá)|(?<!không\s)(?:nhỏ hơn|dưới)\s*:?\s*\d/i;
+const DISP_W = /dung t[íi]ch|displacement/i, TANK_W = /bình|bồn|thùng|két|nhớt|nước|nhiên liệu|tank|dầu|ắc quy|làm mát|\bmát\b|bôi trơn|coolant|lubric|\boil\b/i;
+// The displacement of the engine, by its label (2026-11-12 audit: "Tổng dung tích làm mát ≥ 55 L" was read as the cylinders').
+// A label of a displacement that names neither the cylinders nor the engine is not read.
+const DISP_LABEL = /dung t[íi]ch\s*(?:t[ổo]ng\s*)?(?:c[ủu]a\s*)?(?:c[áa]c\s*)?(?:xi|xy|x)\s?lanh|dung t[íi]ch[^\n]{0,30}?(?:xi|xy)\s?lanh\b|dung t[íi]ch\s+(?:c[ủu]a\s+)?[đd][ộo]ng c[ơo]|displacement|swept volume/i;
 export function engineMins(t) {
   const { disp, dmax, cyl } = engineLists(t), one = (list) => (new Set(list).size === 1 ? list[0] : null);
   return { minDisp: one(disp), maxDisp: one(dmax), minCyl: one(cyl), ...powerMins(t) };
@@ -667,16 +672,17 @@ export function engineLists(t) {
     // A table cell often puts the label on one line and the figure on the next ("Dung tích xi lanh" / "11.051 L").
     // Only a figure with its sign or unit: a number alone is often the row number of the next item ("Số xy lanh: Nêu rõ" / "7").
     const prev = lines[i - 1] || "", alone = !/[a-zà-ỹ]{3}/i.test(line.replace(/l[íi]t|xi|xy|lanh|mm|cc/gi, "")) && /[≥>]|l[íi]t|\bL\b|lanh/i.test(line);
-    const cell = alone ? prev + " " + line : line;
+    // "Tổng dung tích" / "8 ≥ 0.79 lít" / "xilanh": the label goes on to the line after the figure.
+    const cell = alone ? prev + " " + line + (/^\s*(?:xi|xy)\s?lanh\b/i.test(lines[i + 1] || "") ? " " + lines[i + 1] : "") : line;
     // A largest displacement ("Dung tích xi lanh ≤ 15,2 L", an HSMT written around one engine): 2026-11-03, the best
     // candidates were 19.6 L engines that the agent then marked not met.
     if (MAXIMUM.test(cell)) {
-      const m = DISP_W.test(cell) && !TANK_W.test(cell) && cell.match(/(?:≤|<=|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)\s*:?\s*(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
+      const m = DISP_LABEL.test(cell) && !TANK_W.test(cell) && cell.match(/(?:≤|<=|<(?!=)|tối đa|không (?:lớn|vượt|quá)(?: hơn)?|(?<!không\s)(?:nhỏ hơn|dưới))\s*:?\s*(\d{1,3}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
       if (m) dmax.push(Number(m[1].replace(",", ".")));
       return;
     }
     // A bare figure is the least the HSMT accepts (Khoa, 2026-11-03), for the engine's displacement and cylinders.
-    const dl = DISP_W.test(cell) && !TANK_W.test(cell) && (AT_LEAST.test(cell) || /dung t[íi]ch\s*(xi|xy)\s?lanh|displacement/i.test(cell));
+    const dl = DISP_LABEL.test(cell) && !TANK_W.test(cell) && (AT_LEAST.test(cell) || /dung t[íi]ch\s*(xi|xy)\s?lanh|displacement/i.test(cell));
     const d = dl && cell.match(/(?<![\d.,])(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
     // The unit in the label ("Dung tích xy lanh (L) ≥ 4.45") or in cc ("≥ 2.197 cc", "4087 cm3"): 2026-11-04 regression.
     const du = !d && dl && (cell.match(/\((?:l[íi]t|L)\)[^\d\n<≤]{0,20}?(?:≥|>=|>|tối thiểu|:)?\s*(\d{1,2}(?:[.,]\d{1,3})?)(?![\d.,]*\s*(?:mm|cc|cm|kg|%))/i)
@@ -799,7 +805,10 @@ export function powerRead(t) {
     const at = line.search(PRIME_LABEL);
     if (at >= 0 && !/\d/.test(line.slice(at)) && L[i + 1] && /^\s*[≥>=:]*\s*\d[\d.,\s]*(kva|kw)/i.test(tidy(L[i + 1]))) line += " " + tidy(L[i + 1]);
     const m = line.match(/(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n)|prime(?:\s+power)?|continuous(?:\s+power)?)[^\n\d≥≤]{0,60}?(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*[\/(]\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/i);
-    if (m && !STANDBY_W.test(line.slice(0, m.index + 20)) && !ENGINE_W.test(m[0])) prime.push(pair(m[1], m[2], m[3], m[4], off));
+    // "163kVA liên tục Prime/180kVA dự phòng Standby": the labels follow their figures; the 180 is the standby's, and a figure
+    // after a label that follows its own figure is none's (2026-11-12 audit).
+    const suffixed = m && /\d\s*(?:kVA|kW)\s*(?:li[êe]n t[ụu]c\s*|continuous\s*|c[ơo] b[ảa]n\s*)?$/i.test(line.slice(0, m.index));
+    if (m && !suffixed && !STANDBY_W.test(line.slice(0, m.index + 20)) && !ENGINE_W.test(m[0])) prime.push(pair(m[1], m[2], m[3], m[4], off));
     STANDBY_W.lastIndex = 0;
   }
   for (const m of text.matchAll(/(?:≤|<=|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t\s*\/\s*gi[ờo]|l\/h|lph|l\/hr)/gi)) {
@@ -823,7 +832,20 @@ export function powerRead(t) {
   return { prime, fuel, mins: { minPrime: p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(fuel.filter((x) => x.load === 75).map((x) => x.v)), maxFuel50: one(fuel.filter((x) => x.load === 50).map((x) => x.v)) } };
 }
 // The displacement (L) and the cylinders of an engine as its facts give them.
-const litres = (v) => { const n = numbersIn(v)[0]; return n == null ? null : n > 100 ? n / 1000 : n; };
+// The displacement of an engine in litres as a source gives it: a figure with its unit is taken as it is (litres, or cc /
+// cm³ / ml divided by 1000: "105,56 L" of a Yuchai YC16VC was read as 0.1 L); with no unit up to 100 it is litres, over 130
+// cc, in between none (it may be either).
+// The unit may be in the label of the figure ("Displacement (L)" | "105.56").
+const DISP_UNIT_L = /\(\s*(?:l|lít|lit)\s*\)|\b(?:litres?|liters?)\b/i, DISP_UNIT_CC = /\(\s*(?:cc|cm\s?[3³]|ml)\s*\)/i;
+const dispLitres = (f) => litres(DISP_UNIT_L.test(f.label || "") && !/\d\s*(?:cc|cm|ml)/i.test(f.value) ? `${f.value} L` : DISP_UNIT_CC.test(f.label || "") ? `${f.value} cc` : f.value);
+export const litres = (v) => {
+  const s = String(v ?? ""), m = s.match(/\d{1,3}(?:[.,]\d{3})+(?!\d)|\d+(?:[.,]\d+)?/);
+  if (!m) return null;
+  const n = numOf(m[0]), unit = s.slice(m.index + m[0].length).match(/^\s*(cc|cm\s?[3³]|ml|l[íi]t|lit|liter|litre|ltr|L)\b/i)?.[1] || "";
+  if (/^(cc|cm|ml)/i.test(unit)) return n / 1000;
+  if (unit) return n;
+  return n <= 100 ? n : n > 130 ? n / 1000 : null;
+};
 const named = (hints, model) => { const k = squashOf(model); return k.length >= 5 && hints.text.includes(k); };
 const CONF = { high: 30, medium: 15 };
 // A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
@@ -902,18 +924,18 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
       // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
-      const below = (key, min, read) => { const v = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => read(f.value)).filter((x) => x != null); return min && v.length && v.every((x) => x < min) ? v[0] : null; };
+      const below = (key, min, read) => { const v = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => read(f.value, f)).filter((x) => x != null); return min && v.length && v.every((x) => x < min) ? v[0] : null; };
       // No displacement given: bore × stroke × cylinders (web/conversions.js displacement), when the sources give them.
       const given = [...ef, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
       const [b, st] = bs ? numbersIn(bs.value) : [], n = z ? numbersIn(z.value)[0] : null;
       const calcL = !given.some((f) => f.key === "disp") && b > 50 && st > 50 && n ? Math.round(Math.PI / 4 * b * b * st * n / 1e4) / 100 : null;
-      const dl = below("disp", hints.minDisp, litres) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = below("cyl", hints.minCyl, (v) => numbersIn(v)[0] ?? null);
+      const dl = below("disp", hints.minDisp, (v, f) => dispLitres(f)) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = below("cyl", hints.minCyl, (v) => numbersIn(v)[0] ?? null);
       // Below a minimum of the HSMT (displacement, cylinders, prime) or past its largest displacement: the row is left out,
       // unless the HSMT names its engine model (`named`): then its sources disagree with the HSMT's own choice, and it
       // stays with 600 points off and the reason, for the agent to see.
       const ruled = [];
       if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
-      const dh = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => litres(f.value)).filter((x) => x != null) : [];
+      const dh = hints.maxDisp ? given.filter((f) => f.key === "disp").map(dispLitres).filter((x) => x != null) : [];
       if (dh.length && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
       if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
