@@ -779,7 +779,10 @@ export function sizeBlocks(t, sizes) {
   let off = 0;
   for (let i = 0; i < L.length; off += L[i].length + 1, i++) {
     // The figure is on this line; its label may be on the lines around it.
-    for (const m of text.slice(off, off + L[i].length).matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b/gi)) {
+    // Also a figure with no sign right after its label ("- Công suất liên tục: 15kVA/ 12kW", "- Công suất dự phòng: 5.8kW": a list of
+    // items, IB2300363623), the figure of each unit on its own.
+    for (const m of text.slice(off, off + L[i].length).matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b|(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|d[ựu] ph[òo]ng|c[ơo] b[ảa]n)|prime|standby)\s*:\s*(?=\d)(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*\/\s*(\d{1,3}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/gi)) {
+      if (m[3] != null) { m[1] = m[3]; m[2] = m[4]; }
       if (m[2].toLowerCase() === "kw" && !kwSizes) continue;
       const at = off + m.index, around = text.slice(Math.max(0, at - 160), at + 160), pos = Math.min(at, 160);
       const p = nearest(around, pos, CAP_PRIME_W), sb = nearest(around, pos, CAP_STANDBY_W);
@@ -818,8 +821,20 @@ export function minsForSize(t, size, sizes, extra = "") {
   const join = (pick) => L.filter((_, i) => pick(runs.findIndex((r) => i >= r.start && i < r.to), i)).join("\n");
   const own = join((r) => r >= 0 && runs[r].size === j), foreign = join((r) => r >= 0 && runs[r].size !== j), pre = join((r) => r < 0) + (extra ? `\n${extra}` : "");
   const a = minsRead(own), b = minsRead(foreign), c = minsRead(pre), mins = {}, how = {};
+  // The engine minimums a tender repeats in the section of each size ("A / B / C Yêu cầu kỹ thuật đối với máy 8.5 / 10 / 12 kVA",
+  // each with "Dung tích xilanh ≥ 2.3 lít", "Số xilanh ≥ 4"): a block whose statement of power the code did not take (the alternator's
+  // "≥ 12 KVA" opened a block of no size, 2026-11-12: IB2300245556, IB2300245748, IB2400125924) leaves the text of that size in the block
+  // before. The size's own blocks give none; when at least two of the other blocks give the one same value and they are at least
+  // half of the other blocks, it is the tender's common one ("agreed"). Not for a prime or a fuel limit (a figure of each size).
+  // The blocks of one size count once (a figure shown twice for one machine is one statement, not an agreement).
+  const others = runs.map((r, i) => ({ id: r.size >= 0 ? `s${r.size}` : `b${i}`, r })).filter(({ r }) => r.size !== j).map(({ id, r }) => ({ id, m: minsRead(L.slice(r.start, r.to).join("\n")) }));
+  const agreed = (k) => {
+    const got = others.filter((o) => o.m[k].has), ids = (list) => new Set(list.map((o) => o.id)).size;
+    return ids(got) >= 2 && ids(got) * 2 >= ids(others) && got.every((o) => o.m[k].v != null && o.m[k].v === got[0].m[k].v) ? got[0].m[k].v : null;
+  };
   for (const k of MIN_KEYS) {
     if (a[k].has) { mins[k] = a[k].v; how[k] = a[k].v == null ? "own: disagree" : "own"; }
+    else if (["minDisp", "maxDisp", "minCyl"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
     else if (!b[k].has && c[k].has) { mins[k] = c[k].v; how[k] = "common"; }
     else { mins[k] = null; how[k] = b[k].has ? "of another size" : "none"; }
   }
@@ -3831,7 +3846,7 @@ async function mergeFindIntoConfig(key, records, { cap, origin, suppliers = reco
   if (!prev?.result) return null;
   const whole = JSON.parse(JSON.stringify(prev.result));
   // A tender of several sizes: each size's suggestion with its own power (Gợi ý nhiều cỡ máy).
-  const parts = whole.sizes ? whole.sizes.filter((x) => x.result).map((x) => ({ result: x.result, cap: x.cap, label: x.label })) : [{ result: whole, cap: Array.isArray(cap) ? null : cap }];
+  const parts = whole.sizes ? whole.sizes.filter((x) => x.result).map((x) => ({ result: x.result, cap: x.cap, label: x.label, size: x })) : [{ result: whole, cap: Array.isArray(cap) ? null : cap }];
   const outs = [];
   for (const part of parts) {
     const result = part.result, out = mergeFind(result, records, { cap: part.cap, origin: result.origin || whole.origin || origin });
@@ -3843,7 +3858,7 @@ async function mergeFindIntoConfig(key, records, { cap, origin, suppliers = reco
     // The new configurations are checked against the stored requirements by a small agent (Khoa, 2026-11-02).
     if (out.created.length) {
       const all = [...suppliers.filter((s) => !records.some((r) => r.id === s.id)), ...records];
-      out.checked = await checkNewConfigs(key, result, out.created.map((c) => c.rank), all, part.cap).catch((e) => ({ error: e.message }));
+      out.checked = await checkNewConfigs(key, result, out.created.map((c) => c.rank), all, part.cap, part.size && whole.sizes.length > 1 ? { size: part.size, sizes: whole.sizes } : null).catch((e) => ({ error: e.message }));
       result.notes.push(out.checked.error ? `Chưa đối chiếu được cấu hình mới với HSMT: ${out.checked.error}` : `Đã đối chiếu ${out.checked.checked} cấu hình mới với ${result.requirements.length} yêu cầu của HSMT${out.checked.problems ? `, ${out.checked.problems} điểm chưa khớp nguồn` : ""}.`);
       // Read guard of the check run (catalog parts read whole, a run stopped half-way).
       for (const n of out.checked.readNotes || []) result.notes.push(`Đối chiếu cấu hình Tìm NCC: ${n}`);
@@ -3858,7 +3873,7 @@ async function mergeFindIntoConfig(key, records, { cap, origin, suppliers = reco
 // Tìm NCC: the configurations made in code for the suppliers found have only their power read. A small agent
 // (check-prompt.md) checks each against the requirements stored with the suggestion, reading only those
 // configurations and the figures of their models; check() verifies its answer as for Gợi ý.
-async function checkNewConfigs(key, result, ranks, suppliers, cap) {
+async function checkNewConfigs(key, result, ranks, suppliers, cap, sizing = null) {
   const mine = (result.configs || []).filter((c) => ranks.includes(c.rank) && c.engine?.model);
   if (!mine.length) return { checked: 0 };
   if (!result.requirements?.length) throw new Error("gợi ý trước không có danh sách yêu cầu");
@@ -3868,7 +3883,7 @@ async function checkNewConfigs(key, result, ranks, suppliers, cap) {
     const { text } = await hsmtTextOf(key);
     fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
     const cat = CAT.build(suppliers), focus = new Set(mine.map((c) => CAT.keyOf(c.engine.model)));
-    const { md, ctlMd, shown } = catalogMd(cat, cap, hintsOf(text, result.extra || ""), { suppliers, origin: "all", focus });
+    const { md, ctlMd, shown } = catalogMd(cat, cap, hintsOf(text, result.extra || "", sizing), { suppliers, origin: "all", focus });
     // Parts under the Read limit and the order to read them, as for Gợi ý (read guard 2026-11-12: this catalog.md was
     // written whole, 100–150 thousand characters, over the limit).
     const catFiles = writeForRead(dir, "catalog.md", md + "\n\n" + suppliersMd(suppliers.filter((s) => shown.has(s.id))));
