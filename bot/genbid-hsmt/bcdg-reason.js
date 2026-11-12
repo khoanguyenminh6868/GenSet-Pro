@@ -14,7 +14,7 @@ const NAME_TAIL = /th.{0,3}o\s*nguy.{0,3}n/i;
 const NEG = /không\s+(đáp\s*ứng|đạt|hợp\s*lệ|phù\s*hợp|đủ)|chưa\s+(có|đáp\s*ứng|đủ|hợp\s*lệ|được)|thiếu|bị\s+loại|không\s+có\s+(tài\s*liệu|giấy|xác\s*nhận|ủy\s*quyền)|vi\s*phạm|sai\s+khác/i;
 // Dòng mở phần của nhà thầu khác (hoặc mục mới): đoạn của mình dừng ở đó.
 const NAME_WORD = "(?:nhà\\s*thầu|công\\s*ty|cty|liên\\s*danh|tnhh|ctcp|doanh\\s*nghiệp|hợp\\s*tác\\s*xã|tổng\\s*công\\s*ty|chi\\s*nhánh)";
-const OTHER = new RegExp("^(?:[a-zđ]\\d{0,2}[.)]\\s*|[-•+*]\\s*|\\d+(?:\\.\\d+)*[.)]?\\s*)?" + NAME_WORD + "\\s+(?!không\\b|chưa\\b|đã\\b|có\\b|đề\\s*xuất|chào|này|phải|cần|bị\\b|đáp|kê\\b|nêu|cung\\s*cấp|trên|theo)", "i");
+const OTHER = new RegExp("^(?:[a-zđ](?:\\.?\\d{1,2})?[.)]\\s*|[-•+*]\\s*|\\d+(?:\\.\\d+)*[.)]?\\s*)?" + NAME_WORD + "\\s+(?!không\\b|chưa\\b|đã\\b|có\\b|đề\\s*xuất|chào|này|phải|cần|bị\\b|đáp|kê\\b|nêu|cung\\s*cấp|trên|theo)", "i");
 const SECTION = /^(?:\d+\.\s+[A-ZĐÀ-Ỹ]|[IVX]+\.\s+[A-ZĐÀ-Ỹ]|(?:phần|chương|mục)\s+[ivx\d]+\b|bảng\s+(?:số\s+)?\d+\b|[a-d][.)]\s+[A-ZĐÀ-Ỹ])/i;
 // Dòng bảng xếp hạng của mình: "2 Công ty ... Thảo Nguyên Đạt" (không có "không/chưa" trước "đạt/hợp lệ").
 const PASS = /\s(?:đạt|hợp\s*lệ)\.?$/i, FAIL_END = /(?:không|chưa)\s+(?:đạt|hợp\s*lệ)\.?$/i;

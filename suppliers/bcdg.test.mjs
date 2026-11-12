@@ -160,3 +160,37 @@ test("đã đủ tệp và không có lỗi: không ghi lại", async () => {
   const again = await run({ deps, prev: first.doc });
   assert.equal(again.doc, null);
 });
+
+// ---------- vòng 2 của review ----------
+test("mục kiểu 'b.2.' (và 'b.2)', 'b2.') cắt đoạn của mình, dòng thật của IB2400577658", () => {
+  for (const head of ["b.2. Công ty TNHH Thương mại Dịch vụ Võ Gia", "b.2) Công ty TNHH Võ Gia", "b2. Công ty TNHH Võ Gia"]) {
+    const r = bcdgReason("b.1. Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên: hồ sơ hợp lệ, đáp ứng.\n" + head + ":\n- Tờ khai thuế thể hiện số thuế còn phải nộp, không đáp ứng.\n- Thiếu catalogue.");
+    assert.equal(r, "", head);
+  }
+  const mine = bcdgReason("b.1. Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:\n- Thiếu bảo đảm dự thầu.\nb.2. Công ty TNHH Thương mại Dịch vụ Võ Gia\n* Về thực hiện nghĩa vụ thuế:\n- Thiếu tờ khai.");
+  assert.match(mine, /bảo đảm dự thầu/);
+  assert.doesNotMatch(mine, /Võ Gia|tờ khai/);
+});
+test("OCR quá giờ: tệp giữ lại với noText, có error và tries, thử lại rồi giveUp (không để reason rỗng vĩnh viễn)", async () => {
+  const { deps } = mk({ text: () => ({ text: "", ocr: 10, timedOut: true }) });
+  let prev = null, last;
+  for (let i = 1; i <= MAX_TRIES; i++) {
+    last = (await run({ deps, prev })).doc;
+    assert.equal(last.tries, i);
+    assert.match(last.error, /OCR quá giờ/);
+    assert.equal(!!last.giveUp, i === MAX_TRIES);
+    assert.ok(last.files.every((f) => f.path));
+    prev = last;
+  }
+  assert.ok(last.files.every((f) => !f.noText));
+});
+test("OCR quá giờ rồi lần sau đọc được: hết error, có lý do", async () => {
+  let slow = true;
+  const { deps } = mk({ text: () => (slow ? { text: "", ocr: 5, timedOut: true } : { text: "b3. Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:\n- Thiếu tài liệu thuế", ocr: 5, timedOut: false }) });
+  const r1 = await run({ deps });
+  assert.equal(r1.doc.reason, "");
+  slow = false;
+  const r2 = await run({ deps, prev: r1.doc });
+  assert.equal(r2.doc.error, undefined);
+  assert.match(r2.doc.reason, /Thiếu tài liệu thuế/);
+});

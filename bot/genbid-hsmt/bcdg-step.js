@@ -56,7 +56,8 @@ async function bcdgStep({ key, b, prev, deps, deadline = Infinity, maxBytes = MA
     if (left() < 30e3) { out.push({ ...rec, noText: true }); anyNoText = true; continue; }
     const t = deps.text(m.file, Math.min(OCR_MAX_MS, left()));
     if (t.ocr) scan = true;
-    if (t.timedOut) { ocrOut = true; rec.ocrTimeout = true; }
+    // OCR quá giờ: giữ tệp đã lên kho nhưng coi là chưa đọc chữ và tính một lần thử (không để reason "" vĩnh viễn; giveUp sau MAX_TRIES).
+    if (t.timedOut) { ocrOut = true; rec.ocrTimeout = true; rec.noText = true; out.push(rec); continue; }
     out.push(rec);
     texts.push(t.text || "");
   }
@@ -67,6 +68,10 @@ async function bcdgStep({ key, b, prev, deps, deadline = Infinity, maxBytes = MA
     doc.error = `${out.filter((f) => f.error).length}/${files.length} tệp chưa lên kho (${out.find((f) => f.error).error})`.slice(0, 200);
     doc.tries = t;
     if (giveUp) doc.giveUp = true;
+  } else if (ocrOut) {
+    const t = tries + 1;
+    doc.error = "OCR quá giờ, chưa đọc được chữ"; doc.tries = t;
+    if (t >= MAX_TRIES) { doc.giveUp = true; doc.files = out.map((f) => ({ ...f, noText: undefined })); } // bỏ: tệp vẫn tải được, chỉ thiếu đoạn trích
   } else if (anyNoText) { doc.error = "chưa đọc chữ (hết giờ), để lượt sau"; doc.tries = tries; }
   const okN = out.filter((f) => f.path).length;
   return { line: `${key}: BCĐG ${okN}/${files.length} tệp${reason ? ", có lý do" : ", chưa trích được lý do"}${scan ? " (OCR)" : ""}${ocrOut ? ", OCR quá giờ" : ""}${doc.error ? "; " + doc.error : ""}`, doc };
