@@ -13,6 +13,9 @@ await (async () => {
     kq = root?.$data.dtlKqlcnt?.bideContractorInputResultDTO;
     mt = root?.$data.dtlRoundMngRes?.bidSubmissionByContractorViewResponse;
     if ((kq && (kq.lotResultDTO?.length || kq.lotOpenDetails?.length)) || mt?.bidSubmissionDTOList?.length) break;
+    // Gói chào giá trực tuyến rút gọn: trang mở ở tab TBMT, KQLCNT chỉ tải khi bấm tab "Kết quả lựa chọn nhà thầu".
+    if (i === 4 && root && root.$data.isLoadedKqlcnt === false && /step=kqlcnt/.test(location.search))
+      [...document.querySelectorAll("a")].find((a) => a.textContent.trim() === "Kết quả lựa chọn nhà thầu")?.click();
     await sleep(500);
   }
   const notifyNo = new URLSearchParams(location.search).get("notifyNo") || "";

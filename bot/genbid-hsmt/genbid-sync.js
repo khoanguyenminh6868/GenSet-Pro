@@ -402,7 +402,7 @@ async function histList(page, state, maxPages) {
     for (let n = 1; last; n++) {
       // Newest first: once a whole page is tenders already read with the same step, the older pages hold nothing new.
       const content = last.content || [];
-      const fresh = content.filter((c) => has(c.bidOpenId) && isGenset(c)).filter((c) => { const s = state.read[c.notifyNo]; return !s || s.step !== c.stepCode || !s.final; });
+      const fresh = content.filter((c) => (has(c.bidOpenId) || has(c.inputResultId)) && isGenset(c)).filter((c) => { const s = state.read[c.notifyNo]; return !s || s.step !== c.stepCode || !s.final; });
       log(`  Trang ${Number(last.currentPage) + 1}/${last.totalPages}: ${content.length} gói, ${fresh.length} cần đọc`);
       if (last.last || Number(last.currentPage) + 1 >= last.totalPages || n >= maxPages || (!opt("full") && content.length && !fresh.length)) break;
       const resp = page.waitForResponse((x) => x.url().includes("/smart/search"), { timeout: 60000 });
@@ -428,8 +428,8 @@ async function historyRound(page, { maxPages = 60, maxTenders = 2000 } = {}) {
   const state = readJson(HIST_FILE, null) || { read: {} };
   const { rows, total } = await histList(page, state, maxPages);
   const dayAgo = Date.now() - 24 * 3600e3;
-  // Opened tenders only (bidOpenId): before the bid opening there are no bidders yet.
-  const todo = rows.filter((c) => has(c.bidOpenId) && c.type === "es-notify-contractor" && isGenset(c)).filter((c) => {
+  // Opened tenders only (bidOpenId), or with a result (inputResultId: chào giá trực tuyến rút gọn has no bid opening).
+  const todo = rows.filter((c) => (has(c.bidOpenId) || has(c.inputResultId)) && c.type === "es-notify-contractor" && isGenset(c)).filter((c) => {
     const s = state.read[c.notifyNo];
     return !s || (!s.final && (s.step !== c.stepCode || Date.parse(s.at) < dayAgo)) || (s.final && s.step !== c.stepCode);
   }).slice(0, maxTenders);
