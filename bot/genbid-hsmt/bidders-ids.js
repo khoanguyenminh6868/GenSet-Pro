@@ -37,6 +37,8 @@ await (async () => {
       processApply: portal.processApply, bidMode: portal.bidMode, notifyNo: NOTIFY, planNo: portal.planNo, pno: "undefined", step: kq ? "kqlcnt" : "kqmt", isInternet: portal.isInternet, caseKHKQ: "undefined", bidForm: portal.bidForm };
     return "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?" + Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v ?? "undefined")}`).join("&");
   };
-  const url = portal.inputResultId && portal.bidOpenId ? link(true) : portal.bidOpenId ? link(false) : null;
+  // Chào giá trực tuyến rút gọn (bidForm CGTTRG) không có bước mở thầu (bidOpenId rỗng) mà vẫn có KQLCNT
+  // (IB2600595853, IB2600581344, IB2600554711 12/11): có inputResultId là mở trang KQLCNT.
+  const url = portal.inputResultId ? link(true) : portal.bidOpenId ? link(false) : null;
   return { notifyNo: NOTIFY, found: true, portal, url };
 })()
