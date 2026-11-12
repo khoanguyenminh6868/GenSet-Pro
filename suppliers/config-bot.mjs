@@ -373,8 +373,29 @@ const foldSame = (s) => s.replace(/[^\x00-\x7f]/g, (c) => (c === "đ" ? "d" : c 
 const HEADING = /^(?!\s*---)[ \t>*-]*(ch(?:uo|u)ng|phan)[ \t]+([ivx]+|\d+)\b[ \t]*(?:[.:\-–—][ \t]*(.{0,120})|$)/gim;
 const TECH_TITLE = /yeu\s*ca?u\s*(ve\s*)?(ky\s*thuat|pham\s*vi|ke\s*hoach)|pham\s*vi\s*cung\s*cap|thong\s*so\s*ky\s*thuat|chi\s*dan\s*ky\s*thuat|dac\s*tinh\s*ky\s*thuat|tieu\s*chuan\s*ky\s*thuat|dieu\s*khoan\s*tham\s*chieu/i;
 const SPEC_HIT = /kva|xi\s?lanh|xy\s?lanh|dau\s*phat|cong\s*suat\s*(lien\s*tuc|du\s*phong)|prime|standby/gi;
+// The MAX_TP characters of text[from, to) with the most SPEC_HIT figures (f: foldSame(text)), whole lines only.
+function densest(text, f, from, to) {
+  const hits = [...f.slice(from, to).matchAll(SPEC_HIT)].map((m) => from + m.index);
+  let start = from, most = -1;
+  for (let i = 0, j = 0; i < hits.length; i++) {
+    while (hits[i] - hits[j] > MAX_TP * 0.9) j++;
+    if (i - j + 1 > most) { most = i - j + 1; start = hits[j]; }
+  }
+  // A little before the first figure (its heading), not past the chapter's end, then back to a line start.
+  start = Math.max(from, Math.min(start - MAX_TP * 0.05, to - MAX_TP));
+  // Forward to the next line start, so the window still reaches the chapter's end when it was placed there.
+  if (start > from) { const nl = text.indexOf("\n", start - 1); start = nl < 0 || nl + 1 >= to ? from : nl + 1; }
+  const win = (s) => { let e = Math.min(to, s + MAX_TP); if (e < to) { const nl = text.lastIndexOf("\n", e - 1); if (nl > s) e = nl + 1; } return [s, e]; };
+  const count = ([s, e]) => hits.filter((h) => h >= s && h < e).length;
+  // Never fewer figures than the chapter's first MAX_TP characters (what was kept before).
+  const a = win(start), b = win(from), [s, e] = count(a) > count(b) ? a : b;
+  return text.slice(s, e);
+}
+// Whether the last technicalPart kept only a window of a longer text (hsmtGaps reads it right after the call).
+export let tpCut = false;
 export function technicalPart(text) {
   text = String(text ?? "");
+  tpCut = false;
   const f = foldSame(text), heads = [...f.matchAll(HEADING)].map((m) => {
     // "Chương IV." alone is a wrapped sentence ("…theo mẫu tại" / "Chương IV.") unless the next line is a title in capitals.
     const after = f.slice(m.index + m[0].length).match(/^\s*\n\s*([^\n]{3,80})/)?.[1] || "", caps = after.replace(/[^a-z]/gi, "");
@@ -389,9 +410,13 @@ export function technicalPart(text) {
     const end = next ? next.at : text.length, len = end - h.at;
     if (!best || len > best.len) best = { at: h.at, end, len };
   });
-  if (best && best.len >= 1500) return text.slice(best.at, Math.min(best.end, best.at + MAX_TP));
+  // A technical chapter longer than MAX_TP (IB2600341462, 871,549 characters: its first 250,000 held 3 figures, the
+  // rest 108): the window of the chapter with the most figures, from a line start to a line end (điều phối 2026-11-12).
+  if (best && best.len > MAX_TP) { tpCut = true; return densest(text, f, best.at, best.end); }
+  if (best && best.len >= 1500) return text.slice(best.at, best.end);
   if (text.length <= MAX_TP) return text;
   const hits = [...f.matchAll(SPEC_HIT)].map((m) => m.index);
+  tpCut = true;
   if (!hits.length) return text.slice(0, MAX_TP);
   let from = 0, most = 0;
   for (let i = 0, j = 0; i < hits.length; i++) { while (hits[j] < hits[i] - MAX_TP * 0.9) j++; if (i - j + 1 > most) { most = i - j + 1; from = hits[j]; } }
@@ -1249,7 +1274,37 @@ export async function hsmtTextOf(key) {
   const noticeText = notice ? [notice.info || "", ...(notice.chapters || []).map((c) => `### ${c.name || ""}\n${c.text || ""}`), notice.goods ? `### Danh mục hàng hóa (tab Thông tin chung)\n${notice.goods}` : ""].filter((s) => s.trim()).join("\n\n") : "";
   const text = parts.join("") + (noticeText ? "\n\n--- Thông báo mời thầu ---\n" + noticeText : "");
   if (!text.trim()) throw new Error("Gói này chưa có văn bản HSMT để đọc yêu cầu kỹ thuật. Cần tải hồ sơ (Lấy lại tệp) trước.");
-  return { hsmt, parts, text };
+  return { hsmt, parts, text, notice };
+}
+// What may be missing from the HSMT text the agent gets (read guard, part 2; điều phối 2026-11-12): a hsmttext chunk
+// empty or gone, a file with no text (scan the OCR could not read), a webform chapter as long as the bot's cut
+// (genbid-sync.js keeps 50,000 characters of each), no file text at all, and technical figures outside the part of the
+// HSMT technicalPart gives input.md (one chapter, at most MAX_TP). Each [{ why, lines? }]; lines: where in hsmt.txt
+// (1-based) figures are outside that part, for the agent to read with sed. Pure.
+export const WEBFORM_CUT = 50000;
+export function hsmtGaps({ hsmt = null, parts = [], notice = null, text = "" } = {}) {
+  const out = [];
+  const empty = parts.map((p, i) => (String(p || "").trim() ? null : i)).filter((i) => i !== null);
+  if (empty.length && empty.length < parts.length) out.push({ why: `thiếu ${empty.length}/${parts.length} phần văn bản HSMT trên web (phần ${empty.map((i) => i + 1).join(", ")} rỗng)` });
+  if (parts.length && empty.length === parts.length) out.push({ why: "không có chữ của tệp HSMT nào, chỉ có thông báo mời thầu" });
+  const scans = (hsmt?.files || []).filter((f) => f.hasText === false);
+  if (scans.length) out.push({ why: `${scans.length} tệp HSMT chưa đọc được chữ (bản scan${scans.some((f) => f.ocrTried) ? ", OCR không ra" : ""}): ${scans.map((f) => f.name).join("; ")}` });
+  const atCap = (notice?.chapters || []).filter((c) => String(c.text || "").length >= WEBFORM_CUT - 10);
+  if (atCap.length) out.push({ why: `chương webform ${atCap.map((c) => `"${c.name}"`).join(", ")} dài đúng mức bot cắt (${WEBFORM_CUT.toLocaleString("vi-VN")} ký tự): phần cuối có thể bị cắt` });
+  const tp = technicalPart(text), cut = tpCut, at = tp.length < text.length ? text.indexOf(tp) : -1;
+  if (at >= 0) {
+    const f = foldSame(text), lines = [];
+    let line = 1, pos = 0;
+    for (const m of f.matchAll(SPEC_HIT)) {
+      if (m.index >= at && m.index < at + tp.length) continue;
+      for (; pos < m.index; pos++) if (text.charCodeAt(pos) === 10) line++;
+      if (lines[lines.length - 1] !== line) lines.push(line);
+    }
+    const hits = [...f.slice(0, at).matchAll(SPEC_HIT), ...f.slice(at + tp.length).matchAll(SPEC_HIT)].length;
+    if (cut) { const a = text.slice(0, at).split("\n").length; out.push({ why: `phần kỹ thuật dài hơn ${MAX_TP.toLocaleString("vi-VN")} ký tự; input.md chỉ có đoạn nhiều thông số nhất (dòng ${a}–${a + tp.split("\n").length - 1} của hsmt.txt)` }); }
+    if (hits >= 10) out.push({ why: `ngoài phần kỹ thuật đưa vào input.md, văn bản HSMT còn ${hits} chỗ nói tới công suất / động cơ / đầu phát`, lines: lines.slice(0, 40) });
+  }
+  return out;
 }
 // The allowed formulas, written from web/conversions.js so the prompt and the check use the same list.
 const formulasMd = () => "\n## Công thức được phép\n"
@@ -1286,7 +1341,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   fs.mkdirSync(path.join(dir, "web"), { recursive: true });
   // GENBID_LOCAL_SUPPLIERS=1: the supplier DB of this checkout (cn/*.json) instead of the web's, to try records not yet published.
   const localSuppliers = () => fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => ({ data: JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8")) })).filter((d) => d.data.status !== "incomplete");
-  const [analysis, { hsmt, parts, text }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : given ? given.map((data) => ({ data })) : allDocs("supplier")]);
+  const [analysis, { hsmt, parts, text, notice }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : given ? given.map((data) => ({ data })) : allDocs("supplier")]);
   fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
   const a = analysis?.result;
   const cap = multi ? multi.size.cap : capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
@@ -1312,7 +1367,9 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   if (ctlMd) fs.writeFileSync(path.join(dir, "controllers.md"), ctlMd, "utf8");
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
   fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(all), "utf8");
-  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin, ...(auto && GROUP_ORIGIN.has(origin) ? { basis: brand ? "brand" : "origin" } : {}), ...(multi ? { sized: true } : {}) }), "utf8");
+  // What of the HSMT text may be missing (hsmtGaps): a section of input.md and, after the run, the result's notes.
+  const gaps = hsmtGaps({ hsmt, parts, notice, text });
+  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin, ...(auto && GROUP_ORIGIN.has(origin) ? { basis: brand ? "brand" : "origin" } : {}), ...(multi ? { sized: true } : {}), ...(gaps.length ? { hsmtGaps: gaps.map((g) => g.why) } : {}) }), "utf8");
   // The analysis' technical lines, for check to list the ones no requirement covers (uncoveredSpecs).
   fs.writeFileSync(path.join(dir, "specs.json"), JSON.stringify((a?.technicalSpecs || []).map(({ item, requirement }) => ({ item, requirement }))), "utf8");
   // The requirements read last time, when the HSMT and Yêu cầu khác are the same (Khoa, 2026-11-02): Gợi ý lại only
@@ -1350,6 +1407,7 @@ HSMT đòi THƯƠNG HIỆU ${GROUP_NAME[origin]}, không nói nơi sản xuất 
     ...(extraOf(reqData) ? ["## Yêu cầu khác (người dùng nhập trên web, bắt buộc kiểm tra như yêu cầu của HSMT)", extraOf(reqData), ""] : []),
     "## Thông số kỹ thuật theo phân tích (chỉ để định hướng, trích dẫn phải lấy từ hsmt.txt)",
     ...(a?.technicalSpecs || []).map((s) => `- ${s.item}: ${s.requirement}${s.reference ? ` (${s.reference})` : ""}`), "",
+    ...(gaps.length ? ["## Văn bản HSMT có thể thiếu (code dò; kết quả sẽ mang ghi chú này)", ...gaps.map((g) => `- ${g.why}${g.lines?.length ? `. Các dòng đó trong hsmt.txt: ${g.lines.join(", ")} — đọc bằng sed -n từng đoạn quanh các dòng này; yêu cầu nào của máy phát ở đó cũng phải vào requirements.` : "."}`), ""] : []),
     "## Phần kỹ thuật của HSMT", technicalPart(text),
   ].filter((l) => l !== null).join("\n"));
   // What the agent reads, in order, each file whole (agentInput): no file over the Read limit, none read twice.
@@ -1992,10 +2050,20 @@ const SPEC_NOT = /hồ\s*sơ|thông\s*tin|phụ\s*kiện|quản\s*lý\s*chất\s
 // `missing` (a requirement code a line of the HSMT's technical part names that no requirement carries) and `uncovered`
 // (an analysis line whose topic no requirement mentions) went only to the CLI; and a requirement some configuration has
 // no check of. Notes only: no status is changed (rankConfigs already counts a core requirement without a check as unclear).
-export function coverNotes(result, { missing = [], uncovered = [] } = {}) {
-  const notes = [];
-  if (missing.length) notes.push(`Phần kỹ thuật HSMT có dòng nói tới ${missing.length} điểm chưa có trong danh sách yêu cầu (code dò chữ, có thể nhầm): ${missing.map((m) => `${m.item} — "${m.line.slice(0, 120)}"`).join("; ")}. Các cấu hình chưa được đối chiếu với các điểm này — bấm Gợi ý lại hoặc kiểm tay.`);
-  if (uncovered.length) notes.push(`Phân tích HSMT có ${uncovered.length} dòng thông số chưa có yêu cầu tương ứng: ${uncovered.map((u) => u.replace(/^- /, "")).join("; ")}.`);
+// Short on the web (điều phối 2026-11-12: Khoa dislikes long warnings): a count and the first 3 names, ≤ NOTE_MAX.
+export const NOTE_MAX = 300;
+const few = (names) => { const n = [...new Set(names.map((x) => String(x).replace(/\s*\(.*?\)\s*/g, " ").replace(/\s+/g, " ").trim()))]; return n.slice(0, 3).join("; ") + (n.length > 3 ? ` và ${n.length - 3} điểm khác` : ""); };
+const capNote = (s) => (s.length <= NOTE_MAX ? s : s.slice(0, NOTE_MAX - 1).replace(/\s+\S*$/, "") + "…");
+// A missing code worth the web (điều phối 2026-11-12, IB2600592684: "bảo hành ≥ 1000 giờ chạy" read as "Đo lường,
+// hiển thị"): of the engine, alternator or genset, on an HSMT line with a measured figure (a number and its unit). The
+// rest goes to the console only.
+const MEASURE = /\d\s*(?:kva|kw|kvar|v\b|vac|vdc|hz|a\b|vòng|v\/p|rpm|l\b|lít|lit\b|dm3|cm3|cc\b|db|°\s*c|độ\s*c|mm|cm\b|m3|kg|tấn|bar|kpa|mpa|%|xi\s*lanh|xy\s*lanh|cyl|g\/kwh|l\/h|lít\/giờ)/i;
+// "mới 100%" (new goods) is no measurement.
+export const webMissing = (missing = []) => missing.filter((m) => { const l = String(m.line || "").normalize("NFC").replace(/mới\s*100\s*%/gi, ""); return ["engine", "alternator", "genset"].includes(m.part) && MEASURE.test(l); });
+export function coverNotes(result, { missing: all = [], uncovered = [] } = {}) {
+  const notes = [], missing = webMissing(all);
+  if (missing.length) notes.push(`HSMT có ${missing.length} điểm code dò thấy mà danh sách yêu cầu chưa có (có thể nhầm): ${few(missing.map((m) => m.item))}.`);
+  if (uncovered.length) notes.push(`Phân tích HSMT có ${uncovered.length} dòng thông số chưa có yêu cầu: ${few(uncovered.map((u) => u.replace(/^- /, "").split(":")[0]))}.`);
   const reqs = (result?.requirements || []).filter((r) => r.item && !r.byCode && !r.unverified);
   const lack = [];
   for (const c of result?.configs || []) {
@@ -2003,8 +2071,8 @@ export function coverNotes(result, { missing = [], uncovered = [] } = {}) {
     const miss = reqs.filter((r) => r.level !== "option" && !have.has(norm(r.item))).map((r) => r.item);
     if (miss.length) lack.push(`#${c.rank ?? "?"} (${miss.join(", ")})`);
   }
-  if (lack.length) notes.push(`Có cấu hình chưa có điểm đối chiếu cho một số yêu cầu chính của HSMT (tính là chưa rõ): ${lack.join("; ")}.`);
-  return notes;
+  if (lack.length) notes.push(`${lack.length} cấu hình chưa có điểm đối chiếu cho yêu cầu chính (tính là chưa rõ): ${lack.slice(0, 3).join("; ")}${lack.length > 3 ? "…" : ""}.`);
+  return notes.map(capNote);
 }
 export function uncoveredSpecs(specs, reqs) {
   const have = (reqs || []).map((r) => `${r.item} ${r.requirement || ""} ${(r.parts || []).map((p) => p.item).join(" ")}`).join("\n");
@@ -3344,6 +3412,11 @@ ${r.stderr || ""}`, "utf8");
           const label = size ? `máy ${size.label}` : "";
           const g = RG.guardRun(dir, r.stdout || "", { label });
           const cov = coverNotes(result, { missing, uncovered });
+          const quiet = missing.filter((m) => !webMissing([m]).length);
+          if (quiet.length) console.log(`${key}${size ? ` máy ${size.label}` : ""}: mã yêu cầu code dò thấy, không lên web: ${quiet.map((m) => `${m.code} "${m.line.slice(0, 80)}"`).join("; ")}`);
+          // What of the HSMT text may be missing before the agent read it (prep, hsmtGaps).
+          const hm = fs.existsSync(path.join(dir, "meta.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")).hsmtGaps || [] : [];
+          for (const why of hm) cov.unshift(capNote(`Văn bản HSMT có thể thiếu: ${why}.`));
           result.notes = [...(result.notes || []), ...g.notes, ...cov];
           if (g.notes.length) console.log(`${key}${size ? ` máy ${size.label}` : ""}: CHỐT ĐỌC — ${g.notes.join(" | ")}`);
           if (cov.length) console.log(`${key}${size ? ` máy ${size.label}` : ""}: độ phủ yêu cầu — ${cov.length} ghi chú`);
