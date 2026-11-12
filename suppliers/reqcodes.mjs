@@ -58,7 +58,8 @@ export const REQ_CODES = [
   R("starting", "Hệ thống khởi động", "engine", "core", /(h[ệe]\s*th[ốo]ng\s*)?kh[ởo]i\s*đ[ộo]ng(?![^\n]{0,15}(t[ựu]\s*đ[ộo]ng|t[ừu]\s*xa|th[ấa]t\s*b[ạa]i|kh[ôo]ng\s*th[àa]nh|l[ỗo]i))|đ[ềe]\s*(đi[ệe]n\s*)?(12|24)\s*V|starting\s*(system|motor)|đi[ệe]n\s*[áa]p\s*(đ[ềe]|kh[ởo]i\s*đ[ộo]ng)/i),
   R("engine_power", "Công suất động cơ", "engine", "core", /c[ôo]ng\s*su[ấa]t[^\n]{0,20}đ[ộo]ng\s*c[ơo]|đ[ộo]ng\s*c[ơo][^\n]{0,30}c[ôo]ng\s*su[ấa]t|engine\s*(power|output)|\bbhp\b/i),
   R("speed", "Tốc độ quay", "engine", "core", /t[ốo]c\s*đ[ộo]\s*(quay|đ[ịi]nh\s*m[ứu]c|v[òo]ng)|v[òo]ng\s*(quay|tua|\/\s*ph[úu]t)|\brpm\b|\b1500\s*(v|r)/i),
-  R("emission", "Tiêu chuẩn khí thải", "engine", "core", /kh[íi]\s*th[ảa]i|emission|\bTier\s*\d|\bStage\s*[IV]|Euro\s*[0-9IV]|\bEPA\b/i),
+  // "Lưu lượng / nhiệt độ khí thải" is the exhaust flow (code exhaust), not the emission standard (IB2600581977, 2026-11-12).
+  R("emission", "Tiêu chuẩn khí thải", "engine", "core", /(?<!(l[ưư]u\s*l[ưư][ợo]ng|nhi[ệe]t\s*đ[ộo])\s*)kh[íi]\s*th[ảa]i|emission|\bTier\s*\d|\bStage\s*[IV]|Euro\s*[0-9IV]|\bEPA\b/i),
   R("compression", "Tỷ số nén", "engine", "core", /t[ỉỷ]\s*s[ốo]\s*n[ée]n|compression\s*ratio/i),
   R("fuel_system", "Hệ thống nhiên liệu (phun)", "engine", "core", /(h[ệe]\s*th[ốo]ng\s*)?phun\s*(nhi[êe]n\s*li[ệe]u|d[ầa]u|đi[ệe]n\s*t[ửu]|tr[ựu]c\s*ti[ếe]p)|common\s*rail|fuel\s*(injection|system)|b[ơo]m\s*cao\s*[áa]p|\bECU\b|\bEFI\b/i),
   R("air_filter", "Lọc gió, lọc dầu, lọc nhiên liệu", "engine", "option", /l[ọo]c\s*(gi[óo]|kh[íi]|d[ầa]u|nh[ớo]t|nhi[êe]n\s*li[ệe]u)|air\s*(filter|cleaner)|oil\s*filter|fuel\s*filter/i),

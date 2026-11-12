@@ -114,6 +114,15 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    `parts`, each with its own `status`, `offered`, `sourceQuote` and `factSrc` exactly as a check of its own; the
    code checks every part, and the group is met only when every part is. A requirement of a single value (make, model,
    origin) stays on its own.
+   Points that lost the company a tender (Khoa 2026-11-12, from the evaluation reports): when the HSMT asks for one of
+   these, write it as its own requirement with its code, and in the configurations you rank 1–3 look it up in the
+   sources (catalog.md, controllers.md, datasheets) before leaving it `unclear`: the controller's short-circuit
+   protection (ctl_protection, "Ngắn mạch" as a part of its own, never folded into "Quá dòng"), the alternator
+   efficiency (alt_efficiency), the fuel consumption at 50 % load (fuel_consumption_50), the emission standard
+   (emission: Euro / Tier / Stage / QCVN, not the exhaust flow or temperature, which is `exhaust`), the alternator
+   standard (alt_standard), the alternator power (alt_power) and a Vietnamese display of the controller
+   (ctl_display_lang). The code warns on every top-3 configuration where one of them is not `met`. Never write a
+   figure the source does not state to make one `met`.
    When input.md has a "Yêu cầu khác" section (typed on the web, Khoa 2026-11-01), add each of its requirements too,
    with `"from": "user"`, `quote` empty, and treat it exactly like one of the HSMT: a check in every configuration
    (`hsmtQuote` empty), counted in the ranking of step 2, searched for in step 4. When it names a make or model
