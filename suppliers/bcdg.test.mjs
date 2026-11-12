@@ -391,3 +391,35 @@ test("verdict: một ô 'Đạt' lẻ (bảng một bước, dòng Không đạt
   const t = ["Bảng số 02", "3 | CÔNG TY TNHH THIET BỊ KỸ THUẬT THẢO NGUYÊN Đạt", "4 | CÔNG TY CỔ PHẦN SÁNG BAN MAI Đạt", "Bảng số 03", "TNHH THU - Ngoài ra không đáp ứng", "THIẾT BỊ KỸ Không Đạt"].join("\n");
   assert.equal(bcdgReasonEx(t).verdict, "");
 });
+
+// ---------- liên danh: chọn trang (IB2600483082) ----------
+const { jvNames, mentionsJv } = require("../bot/genbid-hsmt/bcdg-reason.js");
+const jvPages = () => {
+  const pg = {};
+  for (let n = 1; n <= 12; n++) pg[n] = `Trang ${n}\nNội dung khác không nhắc ai.`;
+  pg[5] = "BIÊN BẢN MỞ THẦU\n3 vn0103677788 ] CÔNG TY CÔ PHÁN CÔNG NGHỆ VIỆT THANH. 6.098.000.000. 90\n4 vn4101623015 | Liên danh TN-HA 4.305.000.000. 0 4.305.000.000. 90\nHì vn0107337285 | CÔNG TY TNHH XUẤT NHẬP KHẨU THIẾT BỊ";
+  pg[8] = "b) Thuyết minh:\n- Liên danh TN-HA: Không đáp ứng về kỹ thuật do không đạt điểm tối thiểu";
+  pg[10] = "- Liên danh TN—HA: không đáp ứng";
+  pg[12] = "Liên danh ABC-XYZ: Không đạt";
+  return pg;
+};
+test("liên danh: tên liên danh lấy từ dòng có MST của mình", () => {
+  assert.deepEqual(jvNames(jvPages()[5].split("\n")), ["tn-ha"]);
+});
+test("liên danh: lượt nhanh chọn thêm trang nhắc tên liên danh ± 1 (so khớp chịu lỗi OCR)", () => {
+  const pg = jvPages();
+  const want = [...pagesToRead([5], (n) => pg[n] || "", 12)].sort((a, b) => a - b);
+  assert.deepEqual(want, [4, 5, 6, 7, 8, 9, 10, 11]); // 8 và 10 nhắc TN-HA; 12 là liên danh khác
+});
+test("liên danh: gói không liên danh không chọn thêm trang", () => {
+  const pg = jvPages();
+  pg[5] = "4 vn4101623015 | CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN 4.305.000.000\n5 vn0107337285 | Liên danh TN-HA 5.500.000.000";
+  assert.deepEqual(jvNames(pg[5].split("\n")), []); // liên danh ở dòng của nhà thầu khác
+  assert.deepEqual([...pagesToRead([5], (n) => pg[n] || "", 12)].sort((a, b) => a - b), [4, 5, 6]);
+});
+test("liên danh: tên dài chịu sai một ký tự, tên ngắn phải khớp nguyên", () => {
+  assert.equal(mentionsJv("Liên danh Hoang Anh Thao Nguyen: loai", ["hoang anh thao nguyen"]), true);
+  assert.equal(mentionsJv("Liên danh Hoang Anh Thao Nguyan: loai", ["hoang anh thao nguyen"]), true);
+  assert.equal(mentionsJv("TNHA", ["tn-ha"]), true);
+  assert.equal(mentionsJv("MINH HANH", ["tn-ha"]), false);
+});

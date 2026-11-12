@@ -227,6 +227,49 @@ function mentionsUs(text, tax = OUR_TAX) {
 // Trang cần OCR kỹ cho --locate: trang nhắc mình ± 1, và khi trang đó mở khối thuyết minh của mình (tiêu đề "1) Công ty ...:") mà
 // khối chạy qua nhiều trang thì thêm các trang kế tiếp tới trang có tiêu đề nhà thầu khác / mục lớn kế tiếp (trang đó cũng lấy; tối đa
 // EXTEND_MAX trang thêm cho mỗi chỗ). qOf(n) = chữ OCR nhanh của trang n ("" nếu không có); chỉ trang chạy trong total.
+// Liên danh: when a page that names us shows us as a member of a joint venture (the venture's name on the same line as our name / MST,
+// or on the next line when that line is not another bidder's row: "vn4101623015 | Liên danh TN-HA"), the later pages name only the
+// venture ("Liên danh TN-HA: Không đáp ứng về kỹ thuật ..."), so they are read too. Names: plain text, tolerant to OCR: a short name
+// ("tnha") must match whole with loose separators; a longer one may differ by one character. Returns the names found ([] = not a JV).
+const JV_BAD = /^(?:danh|nha\s*thau|cong\s*ty|tnhh|lien)\b|^\d+$/;
+function jvNames(lineList, tax = OUR_TAX) {
+  const names = new Set();
+  for (let i = 0; i < lineList.length; i++) {
+    const l = lineList[i];
+    if (!mentionsUs(l, tax)) continue;
+    const cand = [l];
+    const nx = lineList[i + 1];
+    if (nx && !/^\s*\d{1,3}\s+\S*vn\d{6}|vn\d{6,}/i.test(nx) && !/^\s*\d{1,2}\s*[|\]!]/.test(nx)) cand.push(nx);
+    for (const c of cand) {
+      for (const m of plainVi(c).matchAll(/li[eê]n\s*danh\s+([^|]{2,40})/g)) {
+        let nm = m[1].split(/\s\d[\d.,\s]{5,}|\s{3,}| [-–:(]\s/)[0].trim().replace(/[\s.:;,]+$/, "");
+        nm = nm.split(/\s+/).slice(0, 4).join(" ");
+        const al = nm.replace(/[^a-z0-9]/g, "");
+        if (al.length >= 3 && al.length <= 30 && !JV_BAD.test(nm)) names.add(nm);
+      }
+    }
+  }
+  return [...names];
+}
+function mentionsJv(text, names) {
+  if (!names.length) return false;
+  const p = plainVi(text), flat = p.replace(/[^a-z0-9]/g, "");
+  for (const nm of names) {
+    const al = nm.replace(/[^a-z0-9]/g, "");
+    if (al.length < 7) {
+      const re = new RegExp("(?<![a-z0-9])" + al.split("").join("[\\s\\-–—.|_~]{0,3}") + "(?![a-z0-9])");
+      if (re.test(p)) return true;
+    } else {
+      if (flat.includes(al)) return true;
+      for (let i = 0; i + al.length <= flat.length; i++) {
+        let bad = 0;
+        for (let k = 0; k < al.length && bad < 2; k++) if (flat[i + k] !== al[k]) bad++;
+        if (bad < 2) return true;
+      }
+    }
+  }
+  return false;
+}
 const EXTEND_MAX = 8;
 const OPENER = new RegExp("^(?:" + MARK + "|nhà\\s*thầu\\s*:\\s*)?(?:công\\s*ty|cty|liên\\s*danh|tnhh)", "i");
 const ENDS_PASS = /(?:đạt|dat)\.?$/i, HEADY = /:\s*$|^\S{1,5}[.)]\s/;
@@ -242,9 +285,15 @@ function pagesToRead(hits, qOf, total, tax = OUR_TAX) {
       if (ls(p).some((l) => (OPENER.test(l) && !mentionsUs(l, tax) && l.length < 160 && HEADY.test(l)) || MAJOR.test(l))) break;
     }
   }
+  // Joint venture: the other pages that name the venture, ±1 (only when a page naming us shows a venture; none → nothing added).
+  const jv = [...new Set(hits.flatMap((n) => jvNames(ls(n), tax)))];
+  if (jv.length) for (let n = 1; n <= total; n++) {
+    if (hits.includes(n) || !mentionsJv(qOf(n) || "", jv)) continue;
+    for (const d of [-1, 0, 1]) if (n + d >= 1 && n + d <= total) want.add(n + d);
+  }
   return want;
 }
-module.exports = { bcdgReason, bcdgReasonEx, mentionsUs, pagesToRead, OUR_TAX };
+module.exports = { bcdgReason, bcdgReasonEx, mentionsUs, pagesToRead, jvNames, mentionsJv, OUR_TAX };
 
 if (require.main === module) {
   const fs = require("fs");

@@ -101,15 +101,31 @@ async function allDocs(coll) {
   return out;
 }
 // Write documents [{coll, id, data}] to the web (POST /api/ingest, 100 per call).
-async function post(rows) {
+// `retry` (bcdg): a network error (undici "fetch failed": reset / stale socket after the 10 minutes of OCR before the write) or HTTP
+// 429/5xx is tried again up to `retry` times, after 3 s then 10 s. The ingest writes whole documents by id, so a repeat is harmless.
+// The cause of "fetch failed" (e.cause: ECONNRESET, UND_ERR_*, ...) goes to the log: the bare message says nothing.
+const causeOf = (e) => { const c = e?.cause; return c ? ` [${c.code || c.name || ""} ${String(c.message || c).slice(0, 120)}]` : ""; };
+async function post(rows, { retry = 0, delays = [3000, 10000] } = {}) {
   rows = rows.filter(Boolean);
   // --dry: show what would be written, write nothing (and fetch no files).
   if (opt("dry")) { if (rows.length) log(`  [dry] sẽ gửi: ${rows.map((r) => `${r.coll}/${r.id} (${JSON.stringify(r.data).length} B)`).join(", ")}`); return; }
   for (let i = 0; i < rows.length; i += 100) {
-    const r = await fetch(`${API}/ingest`, {
-      method: "POST", headers: { Authorization: `Bearer ${token()}`, "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify({ rows: rows.slice(i, i + 100) }),
-    });
+    const body = JSON.stringify({ rows: rows.slice(i, i + 100) });
+    let r;
+    for (let a = 0; ; a++) {
+      let err = null;
+      try {
+        r = await fetch(`${API}/ingest`, {
+          method: "POST", headers: { Authorization: `Bearer ${token()}`, "Content-Type": "application/json; charset=utf-8" }, body,
+          ...(retry ? { signal: AbortSignal.timeout(90e3) } : {}),
+        });
+        if (r.ok || !(retry && (r.status === 429 || r.status >= 500))) break;
+        err = new Error(`HTTP ${r.status}`);
+      } catch (e) { err = e; r = null; if (!retry) throw e; }
+      if (a >= retry) { if (!r) throw new Error(`${err.message}${causeOf(err)} (${body.length} B, thử ${a + 1} lần)`); break; } // a 5xx falls to the HTTP error below
+      log(`  ghi web lỗi (${err.message}${causeOf(err)}, ${body.length} B), thử lại sau ${(delays[a] ?? 10000) / 1000} s`);
+      await new Promise((res) => setTimeout(res, delays[a] ?? 10000));
+    }
     if (!r.ok) throw new Error(`Vercel /api/ingest trả HTTP ${r.status}: ${(await r.text()).slice(0, 200)}`);
     const j = await r.json().catch(() => ({}));
     if (j.reopened?.length) log(`  Đưa lại về Mới (gói Bỏ qua có bản sửa đổi): ${j.reopened.join(", ")}`);
@@ -423,7 +439,7 @@ async function bcdgStep(key, b, deadline, { reread = false } = {}) {
     text: (file, ms, m) => bcdgText(file, ms, path.join(BCDG_OCR_CACHE, key, String(m?.md5 || path.basename(file)).replace(/[^A-Za-z0-9._-]/g, "_"))) };
   try {
     const { line, doc: d } = await bcdgRun({ key, b, prev, deps, deadline, reread });
-    if (d) await (opt("local") ? async (rows) => log(`  [local] bcdg/${key}: ${JSON.stringify(rows[0].data).slice(0, 1500)}`) : post)([{ coll: "bcdg", id: key, data: d }]);
+    if (d) await (opt("local") ? async (rows) => log(`  [local] bcdg/${key}: ${JSON.stringify(rows[0].data).slice(0, 1500)}`) : (rows) => post(rows, { retry: 2 }))([{ coll: "bcdg", id: key, data: d }]);
     return line;
   } finally { bcdgCleanup(key); }
 }
@@ -2598,12 +2614,14 @@ async function runFinish() {
       try {
         const out = [];
         for (const key of String(opt("keys") || "").split(",").filter(Boolean)) {
-          await search(page, key, false);
-          const r = await snippet(page, "bidders-ids.js", { __NOTIFY__: JSON.stringify(key) });
-          if (!r.url) { out.push(`${key}: ${r.error || "không có trang kết quả"}`); continue; }
-          await page.goto(r.url, { waitUntil: "domcontentloaded" });
-          const b = await snippet(page, "bidders-extract.js");
-          out.push(b.final && isMine(b) ? await bcdgStep(key, b, Date.now() + BCDG_BUDGET_MS, { reread: !!opt("reread") }) : `${key}: ${b.error || "chưa có kết quả hoặc không có MST mình"}`);
+          try { // one tender's error must not stop the others (12/11: a 6-tender run died at the 6th)
+            await search(page, key, false);
+            const r = await snippet(page, "bidders-ids.js", { __NOTIFY__: JSON.stringify(key) });
+            if (!r.url) { out.push(`${key}: ${r.error || "không có trang kết quả"}`); continue; }
+            await page.goto(r.url, { waitUntil: "domcontentloaded" });
+            const b = await snippet(page, "bidders-extract.js");
+            out.push(b.final && isMine(b) ? await bcdgStep(key, b, Date.now() + BCDG_BUDGET_MS, { reread: !!opt("reread") }) : `${key}: ${b.error || "chưa có kết quả hoặc không có MST mình"}`);
+          } catch (e) { const m = `${key}: BCĐG lỗi (${String(e.message).split("\n")[0].slice(0, 200)}${causeOf(e)})`; log("  " + m); out.push(m); }
         }
         summary = out.join("; ");
       } finally { await ctx.close().catch(() => {}); }
