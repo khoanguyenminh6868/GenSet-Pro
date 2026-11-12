@@ -819,10 +819,11 @@ export function sizeBlocks(t, sizes) {
   const belongs = (m) => {
     // A statement in kW is read only when a size of the tender is in kW (IB2300363623: 15 kVA and 5 kW), at 0.8 (5 kW = 6.25 kVA): in
 // a tender in kVA the kW statements (the alternator's, the shaft's) opened blocks of no size inside the block of a size.
-    // A heading's figures (its kVA and kW, "40 kVA / 32 kW") all name the same size: else it is of no size.
+    // A heading's figures (its kVA and kW, "40 kVA / 32 kW", its prime and standby "30kVA/33kVA") all name the same size: else it
+    // is of no size.
     const hit = m.kind === "head" ? [...new Set(m.figs.flatMap((f) => sizes.map((s, j) => (fits({ ...f, kind: "prime" }, s) ? j : -1)).filter((j) => j >= 0)))].map((j) => [sizes[j], j])
       : sizes.map((s, j) => [s, j]).filter(([s]) => fits(m, s));
-    if (m.kind === "head" && hit.length === 1 && m.figs.some((f) => !fits({ ...f, kind: "prime" }, hit[0][0]))) return -1;
+    if (m.kind === "head" && hit.length === 1 && m.figs.some((f) => !fits({ ...f, kind: "prime" }, hit[0][0]) && !fits({ ...f, kind: "standby" }, hit[0][0]))) return -1;
     return hit.length === 1 ? hit[0][1] : -1;
   };
   const runs = [];
