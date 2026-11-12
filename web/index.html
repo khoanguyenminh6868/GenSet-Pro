@@ -4622,7 +4622,7 @@ function bpLevelsOf(r) {
   return c?.levels?.length ? c.levels : r.multi ? r.levels || [] : r.stats?.levels || [];
 }
 const bpHasCalib = (r) => !!(r && (r.multi ? r.calib : r.stats?.calib)?.levels?.length);
-const BP_CALIB_NOTE = "Khoảng thấp–cao chứa khoảng một nửa giá trúng của các gói cũ; đã tính theo số nhà thầu dự báo.";
+const BP_CALIB_NOTE = "Khoảng thấp–cao chứa khoảng 6 trên 10 giá trúng của các gói cũ; đã tính theo số nhà thầu dự báo.";
 // Lưu ý (không tự trừ vào số): dự báo nghiêng về gói từ 6 nhà thầu, hoặc cấu hình hạng 1 là động cơ Trung Quốc — hậu kiểm
 // (nghiệm thu gia-chuyen-mon-3) cho thấy hai loại này trúng thấp hơn mức giữa gợi ý (≥6 nhà thầu +11 điểm, Trung Quốc +6 điểm).
 function bpCrowdNote(t, doc) {
