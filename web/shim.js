@@ -79,7 +79,7 @@
     notice: "thông báo mời thầu", analysis: "kết quả phân tích", analysisreq: "yêu cầu phân tích", hsmtreq: "yêu cầu tải HSMT", hsmt: "tệp HSMT",
     hsmttext: "nội dung HSMT", syncreq: "yêu cầu đồng bộ muasamcong", translationreq: "yêu cầu tạo YCKT tiếng Anh", translation: "YCKT tiếng Anh",
     comparereq: "yêu cầu đối chiếu HSDT", compare: "kết quả đối chiếu HSDT", hsdtreq: "yêu cầu tạo HSDT tham khảo", hsdt: "HSDT tham khảo",
-    tlktreq: "yêu cầu đối chiếu TLKT", tlkt: "kết quả đối chiếu TLKT", quote: "báo giá nhà cung cấp",
+    tlktreq: "yêu cầu đối chiếu TLKT", tlkt: "kết quả đối chiếu TLKT", quote: "báo giá nhà cung cấp", bcdg: "báo cáo đánh giá E-HSDT",
     bidders: "nhà thầu tham dự", portalids: "mã gói trên cổng", supdeleted: "nhà cung cấp đã xoá", supfav: "nhà cung cấp yêu thích", supalias: "tên gọi nhà cung cấp", supexcl: "nhà cung cấp bị loại trừ", synclog: "Sync theo lịch", bidpricereq: "yêu cầu gợi ý giá đấu", bidprice: "gợi ý giá đấu",
   };
   const LOG_OP = { insert: "Tạo", update: "Cập nhật", delete: "Xoá" };

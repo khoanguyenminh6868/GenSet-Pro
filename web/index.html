@@ -653,7 +653,7 @@ const DEFAULT_SORT = { col: "no", dir: -1 };
 const SHOW_SRC = false;
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, supalias: {}, supexcl: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, supalias: {}, supexcl: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, bcdg: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   // Every status tab opens on newest posting date first (Khoa 2026-11-07); a header click resorts only until the tab changes.
@@ -1150,6 +1150,7 @@ async function initDb() {
   subscribe("quote", "quote");
   subscribe("bidders", "bidders");
   subscribe("portalids", "portalids");
+  subscribe("bcdg", "bcdg");
   subscribe("deleted", "deleted");
   subscribe("hsmtreq", "hsmtreq");
   subscribe("analysisreq", "analysisreq");
@@ -1572,7 +1573,7 @@ function renderDrawer(force = true) {
   if (state.dtab === "compare" && !canCompare) state.dtab = "info";
   if (state.dtab === "supplier") state.dtab = "info"; // tab Nhà cung cấp đang ẩn
   // Re-render the body only when what it shows has changed, so typing is not interrupted.
-  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, state.quote[QUOTE_ALL]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configmatch[key]?.editedAt, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], state.bidprice[key]?.at, state.bidpricereq?.[key], Object.keys(state.supplier || {}).length, Object.keys(state.supexcl || {}).filter(supExcl).join(), Date.now() < areqNoteUntil, state.tracked[key]?.note, profitScen[key], profitRow[key], !!state.loaded.hist, Object.keys(state.bidhist || {}).length]);
+  const sig = JSON.stringify([key, state.dtab, stg, projUp[key], state.quote[key]?.updatedAt, state.quote[QUOTE_ALL]?.updatedAt, quoteUp[key],  state.analysis[key], state.compare[key]?.at, state.bidders[key]?.at, state.bcdg[key]?.at, state.tracked[key]?.bidPrice, state.hsdt[key]?.at, state.hsmt[key]?.updatedAt, state.hsmtreq?.[key], state.analysisreq?.[key], state.translationreq?.[key], state.comparereq?.[key], state.hsdtreq?.[key], state.tlkt[key]?.at, state.tlkt[key]?.resultEnAt, state.tlktreq?.[key], state.suppliermatch[key]?.at, state.supplierreq?.[key], state.configmatch[key]?.at, state.configmatch[key]?.editedAt, state.configreq?.[key], state.findmatch[key]?.at, state.findreq?.[key], state.bidprice[key]?.at, state.bidpricereq?.[key], Object.keys(state.supplier || {}).length, Object.keys(state.supexcl || {}).filter(supExcl).join(), Date.now() < areqNoteUntil, state.tracked[key]?.note, profitScen[key], profitRow[key], !!state.loaded.hist, Object.keys(state.bidhist || {}).length]);
   if (!force && sig === drawerSig) return;
   drawerSig = sig;
   const body = $("#dbody");
@@ -2431,7 +2432,33 @@ function biddersHtml(t) {
   // the winner (Khoa, 2026-11-11).
   const head = !list.length ? "Nhà thầu tham dự và giá dự thầu" : list.some((x) => x.won) ? `Kết quả: nhà thầu và giá dự thầu (${list.length})` : `Biên bản mở thầu: nhà thầu và giá dự thầu (${list.length})`;
   const pend = list.length && !list.some((x) => x.won) ? ' <span class="chip warn">Chưa có kết quả</span>' : "";
-  return h`<section class="sec"><h4>${head}${raw(pend)}</h4>${raw(body)}</section>`;
+  return h`<section class="sec"><h4>${head}${raw(pend)}</h4>${raw(body)}${raw(bcdgHtml(t._key))}</section>`;
+}
+// Báo cáo đánh giá E-HSDT (BCĐG) of a tender we bid on: the worker keeps the file in the private bucket "bcdg" (api/bcdg.js) and
+// bcdg/<TBMT> holds the list and `reason`, the lines of the report around our name ("" when none was found; no AI, Khoa 2026-11-12).
+function bcdgHtml(key) {
+  const d = state.bcdg?.[key], all = d?.files || [], files = all.filter((f) => f.path);
+  if (!d) return "";
+  const mb = (n) => (n >= 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB");
+  // The file name is a source: only its size and number are shown, the name goes with SHOW_SRC.
+  const rows = files.map((f, i) => h`<button class="btn sm" data-bcdg="${f.path}" data-name="${f.name}" ${raw(SHOW_SRC ? h`title="${f.name}"` : "")}>Tải báo cáo đánh giá${files.length > 1 ? " " + (i + 1) : ""} · ${mb(f.size || 0)}</button>`).join(" ");
+  const big = all.filter((f) => f.skipped).map((f) => h`<span class="muted small">${SHOW_SRC ? f.name + ": " : ""}${f.skipped}</span>`).join(" ");
+  // Nothing in the store: the worker is still trying, or gave up.
+  if (!files.length && !big) return d.error ? h`<div class="muted small" style="margin-top:10px">${d.giveUp ? "Chưa lấy được báo cáo đánh giá E-HSDT (đã thử nhiều lần, mở trên muasamcong để xem)." : "Đang lấy báo cáo đánh giá E-HSDT."}</div>` : "";
+  const part = d.error && !d.giveUp ? h`<div class="muted small">Còn tệp chưa lấy được, bot sẽ thử lại.</div>` : "";
+  const why = d.reason ? h`<details class="bcdgwhy" open><summary class="small">Trích báo cáo đánh giá${d.scan ? " (đọc từ bản scan, có thể sai chữ)" : ""}</summary><div class="small" style="white-space:pre-wrap;overflow-wrap:anywhere">${d.reason}</div></details>`
+    : files.length ? h`<div class="muted small">Chưa trích được lý do từ báo cáo${d.scan ? " (bản scan)" : ""}, mở tệp để xem.</div>` : "";
+  return h`<div class="bcdg" style="margin-top:10px"><div class="row" style="flex-wrap:wrap;gap:6px;align-items:center"><b class="small">Báo cáo đánh giá E-HSDT</b> ${raw(rows)} ${raw(big)}</div>${raw(part)}${raw(why)}</div>`;
+}
+async function openBcdgFile(path, name) {
+  if (!window.genbidFetch) return;
+  const pdf = /\.pdf$/i.test(name), w = pdf ? window.open("", "_blank") : null;
+  try {
+    const blob = await window.genbidFetch("/api/bcdg?id=" + encodeURIComponent(path)), u = URL.createObjectURL(pdf ? new Blob([blob], { type: "application/pdf" }) : blob);
+    if (w) w.location.href = u;
+    else { const a = document.createElement("a"); a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove(); }
+    setTimeout(() => URL.revokeObjectURL(u), 60000);
+  } catch (e) { w?.close(); toast("Không mở được tệp: " + (e?.message || "lỗi không rõ"), 6000); }
 }
 // The action row of a tab once its work is done, laid out like Phân tích (Khoa, 2026-11-05): what was done, when, then the
 // buttons on the right. `id` names the time span, which some tabs reuse for a status line (Đang tạo PDF...).
@@ -4896,6 +4923,8 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "qNear" && state.open) { e.preventDefault(); const t = findTender(state.open); openQuoteLedger(t && kvaOf(capacityOf(t)?.text), t && quoteNeedOf(t)); return; }
   const ps = e.target.closest("[data-pscen]");
   if (ps && state.open) { profitScen[state.open] = ps.dataset.pscen; renderDrawer(false); return; }
+  const bo = e.target.closest("[data-bcdg]");
+  if (bo) { openBcdgFile(bo.dataset.bcdg, bo.dataset.name || ""); return; }
   const qo = e.target.closest("[data-qopen]");
   if (qo && state.open) { const [r, i] = qo.dataset.qopen.split(":"); openQuoteFile(state.open, r, +i); return; }
   const qd = e.target.closest("[data-qdel]");

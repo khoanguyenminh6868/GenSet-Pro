@@ -321,21 +321,112 @@ async function fetchFiles(page, req) {
   }
 }
 
+// ---------- Báo cáo đánh giá E-HSDT (BCĐG) of a tender we bid on (Khoa, 2026-11-12) ----------
+// KQLCNT lists the report (bidders-extract.js reportFiles). The file is downloaded through the VNeGP Agent (GenBid-HSMT.ps1),
+// uploaded to the private Supabase bucket "bcdg" (never GitHub: the repo is public) with a signed upload URL from
+// /api/bcdg, and bcdg/<TBMT> holds {files, reason, scan}. `reason` is the lines of the report around our name (bcdg-reason.js,
+// no AI), "" when none is found. Files over 50 MB are not uploaded; the reason is written in the metadata.
+const OUR_TAX = require("./bcdg-reason.js").OUR_TAX;
+const BCDG_DIR = process.env.GENBID_BCDG_DIR || path.join(process.env.USERPROFILE || "C:\\Users\\Khoa", "Downloads", "GenBid-BCDG");
+const BCDG_OCR_PAGES = 60, BCDG_BUDGET_MS = 10 * 60e3;
+const { bcdgStep: bcdgRun, failDoc } = require("./bcdg-step.js");
+const isMine = (b) => (b?.list || []).some((x) => String(x.taxCode || "").replace(/\D/g, "") === OUR_TAX);
+const plainName = (s) => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").replace(/[^A-Za-z0-9._-]+/g, "_").slice(-80) || "file";
+// manifest.csv of GenBid-HSMT.ps1: "NotifyNo","FileId","File","Bytes","MD5"
+function readManifest(dir) {
+  const f = path.join(dir, "manifest.csv");
+  if (!fs.existsSync(f)) return [];
+  return fs.readFileSync(f, "utf8").replace(/^\uFEFF/, "").split(/\r?\n/).slice(1).filter(Boolean).map((l) => (l.match(/"((?:[^"]|"")*)"/g) || []).map((x) => x.slice(1, -1).replace(/""/g, '"')))
+    .filter((c) => c.length >= 5).map((c) => ({ id: c[1].toLowerCase(), file: c[2], bytes: Number(c[3]), md5: c[4] }));
+}
+async function bcdgSign(key, name) {
+  const r = await fetch(`${API}/bcdg`, { method: "POST", headers: { Authorization: `Bearer ${token()}`, "Content-Type": "application/json" }, body: JSON.stringify({ action: "sign", key, name }) });
+  if (!r.ok) throw new Error(`/api/bcdg trả HTTP ${r.status}: ${(await r.text()).slice(0, 200)}`);
+  return r.json(); // { path, url }
+}
+async function bcdgUpload(key, file, name) {
+  const s = await bcdgSign(key, name);
+  const form = new FormData();
+  form.append("cacheControl", "3600");
+  form.append("", new Blob([fs.readFileSync(file)], { type: "application/octet-stream" }));
+  const r = await fetch(s.url, { method: "PUT", body: form });
+  if (!r.ok) throw new Error(`tải lên kho HTTP ${r.status}: ${(await r.text()).slice(0, 160)}`);
+  return s.path;
+}
+
+function bcdgText(file, timeoutMs) {
+  const ext = path.extname(file).toLowerCase();
+  if (ext === ".pdf" || IMG_EXT.includes(ext)) {
+    const r = cp.spawnSync(process.execPath, [path.join(KIT, "ocr-pdf.js"), file, "--max", String(BCDG_OCR_PAGES)], { encoding: "utf8", maxBuffer: 256 << 20, timeout: timeoutMs });
+    const n = Number(((r.stderr || "").match(/OCR (\d+)\//) || [])[1] || 0);
+    return { text: r.status === 0 ? r.stdout || "" : "", ocr: n, timedOut: !!(r.error && /ETIMEDOUT/.test(r.error.code || "")) };
+  }
+  return { text: histFileText(file, path.join(os.tmpdir(), "genbid-bcdg-" + process.pid)), ocr: 0, timedOut: false };
+}
+// A PDF the Agent handed back cut short has no %%EOF at its end (IB2500371475 12/11: 450 KB of 759 KB).
+const pdfComplete = (f) => { if (!/\.pdf$/i.test(f)) return true; try { const b = fs.readFileSync(f); return b.subarray(Math.max(0, b.length - 2048)).includes("%%EOF"); } catch { return false; } };
+// Download the given report files (the VNeGP Agent through GenBid-HSMT.ps1), again up to twice when one is cut short, while
+// the deadline allows. Returns the complete ones as [{id, file, bytes, md5}].
+function bcdgDownload(key, todo, deadline) {
+  if (!agentStarted) { ps("GenBid-HSMT.ps1", ["-StartOnly"], 5); agentStarted = true; }
+  const dir = path.join(BCDG_DIR, key), list = path.join(BCDG_DIR, `files-${key}.txt`);
+  fs.mkdirSync(BCDG_DIR, { recursive: true });
+  fs.rmSync(dir, { recursive: true, force: true });
+  let got = [];
+  try {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const bad = todo.filter((x) => !got.some((m) => m.id === x.id.toLowerCase()));
+      if (!bad.length || deadline - Date.now() < 60e3) break;
+      if (attempt) log(`    tải lại ${bad.length} tệp BCĐG bị cắt ngắn hoặc chưa tải được`);
+      fs.writeFileSync(list, [`# ${key}`, ...bad.map((x) => `${x.id},${x.name}`)].join("\r\n"), "utf8");
+      ps("GenBid-HSMT.ps1", ["-List", list, "-OutDir", BCDG_DIR], Math.max(1, Math.min(10, Math.floor((deadline - Date.now()) / 60e3))));
+      const byId = new Map(got.map((m) => [m.id, m]));
+      for (const m of readManifest(dir)) if (fs.existsSync(m.file) && pdfComplete(m.file)) byId.set(m.id, m);
+      got = [...byId.values()];
+    }
+    // Keep the files until bcdgStep has uploaded and read them: they are removed by bcdgCleanup.
+    return got;
+  } finally { fs.rmSync(list, { force: true }); }
+}
+const bcdgCleanup = (key) => { if (!opt("keep")) fs.rmSync(path.join(BCDG_DIR, key), { recursive: true, force: true }); };
+// One tender's BCĐG: bcdgRun (bcdg-step.js) with this PC's download, upload and OCR. Posts bcdg/<TBMT> unless nothing is to be
+// written; `deadline` is the round's time budget for all BCĐG work (10 minutes, then the rest wait for the next round).
+async function bcdgStep(key, b, deadline) {
+  if (opt("dry")) { log(`  [dry] sẽ tải BCĐG ${key}: ${(b.reportFiles || []).map((f) => f.name).join(", ")}`); return `${key}: [dry] ${(b.reportFiles || []).length} tệp BCĐG`; }
+  let prev = null;
+  if (!opt("local")) { try { prev = await doc("bcdg", key); } catch {} }
+  if (prev?.giveUp) return `${key}: BCĐG đã bỏ sau nhiều lần lỗi`;
+  const deps = { now, log, download: (todo) => bcdgDownload(key, todo, deadline), stored: (m) => `${m.id.slice(0, 8)}-${plainName(path.basename(m.file))}`,
+    upload: async (file, name) => (opt("local") ? "(local)" : bcdgUpload(key, file, name)), text: bcdgText };
+  try {
+    const { line, doc: d } = await bcdgRun({ key, b, prev, deps, deadline });
+    if (d) await (opt("local") ? async (rows) => log(`  [local] bcdg/${key}: ${JSON.stringify(rows[0].data).slice(0, 1500)}`) : post)([{ coll: "bcdg", id: key, data: d }]);
+    return line;
+  } finally { bcdgCleanup(key); }
+}
+
+async function bcdgMarkFail(key, why) {
+  if (opt("dry") || opt("local")) return;
+  try { const p = await doc("bcdg", key).catch(() => null); await post([{ coll: "bcdg", id: key, data: failDoc(key, why, p, now()).doc }]); } catch {}
+}
 // Bidders and bid prices of closed tenders (Get-GenBidBidderTargets.ps1 picks them), with bidders-ids.js / bidders-extract.js.
+// A target with bcdgOnly is a tender whose result is already on the web but whose BCĐG is not (at most 5 a round): only
+// bcdg/<TBMT> is written for it.
 async function bidders(page) {
   const f = path.join(ROOT, "genbid-work", "bidder-targets.json");
   fs.mkdirSync(path.dirname(f), { recursive: true });
   if (ps("Get-GenBidBidderTargets.ps1", ["-Out", f], 10) !== 0) return ["không chọn được gói cần lấy nhà thầu"];
   const targets = [].concat(readJson(f, []) || []);
   fs.rmSync(f, { force: true });
-  const lines = [];
+  const lines = [], queue = [];
   for (const t of targets) {
     await search(page, t.notifyNo, false);
     const r = await snippet(page, "bidders-ids.js", { __NOTIFY__: JSON.stringify(t.notifyNo) });
-    if (r.error) { if (await challenged(page)) throw new Captcha("muasamcong yêu cầu xác minh"); lines.push(`${t.key}: ${r.error}`); continue; }
-    if (!r.found) { lines.push(`${t.key}: không tìm thấy`); continue; }
+    const unusable = async (why) => { lines.push(`${t.key}: ${why}`); if (t.bcdgOnly) await bcdgMarkFail(t.key, why); };
+    if (r.error) { if (await challenged(page)) throw new Captcha("muasamcong yêu cầu xác minh"); await unusable(r.error); continue; }
+    if (!r.found) { await unusable("không tìm thấy"); continue; }
     const rows = [{ coll: "portalids", id: t.key, data: r.portal }];
-    let line = `${t.key}: chưa có biên bản mở thầu`;
+    let line = `${t.key}: chưa có biên bản mở thầu`, bcdgOf = null;
     if (r.url) {
       await page.goto(r.url, { waitUntil: "domcontentloaded" });
       const b = await snippet(page, "bidders-extract.js");
@@ -343,10 +434,22 @@ async function bidders(page) {
         rows.push({ coll: "bidders", id: t.key, data: b });
         const win = b.final && b.list.find((x) => x.won);
         line = `${t.key}: ${b.list.length} nhà thầu` + (win ? `, trúng: ${win.name} ${Number(win.priceAfterDiscount ?? win.bidPrice ?? 0).toLocaleString("vi-VN")}` : b.final ? "" : " (chưa có kết quả)");
+        if (b.final && isMine(b)) bcdgOf = b;
       } else if (b.error) line = `${t.key}: ${b.error}`;
     }
-    await post(rows);
-    lines.push(line);
+    // bcdgOnly: the result is on the web already, only the report is missing: nothing else is written.
+    if (!t.bcdgOnly) await post(rows);
+    if (!t.bcdgOnly || !bcdgOf) lines.push(line);
+    // Page gave nothing usable for a bcdgOnly target: a failed try (tries+1, given up after three), so the same five are not picked every round.
+    if (t.bcdgOnly && !bcdgOf) await bcdgMarkFail(t.key, line.replace(`${t.key}: `, ""));
+    if (bcdgOf) queue.push({ key: t.key, b: bcdgOf });
+  }
+  // BCĐG after the bidders of every tender, within one time budget for the round (10 minutes); the rest wait for the next round.
+  const deadline = Date.now() + BCDG_BUDGET_MS;
+  for (const q of queue) {
+    if (Date.now() >= deadline) { lines.push(`${q.key}: BCĐG để lượt sau (hết giờ)`); continue; }
+    try { lines.push(await bcdgStep(q.key, q.b, deadline)); }
+    catch (e) { lines.push(`${q.key}: BCĐG lỗi (${String(e.message).split("\n")[0].slice(0, 120)})`); }
   }
   return lines;
 }
@@ -2467,6 +2570,21 @@ async function runFinish() {
     else if (cmd === "prep") summary = await runPrep();
     else if (cmd === "finish") summary = await runFinish();
     else if (cmd === "ask") summary = await runAsk();
+    else if (cmd === "bcdg") { // check: BCĐG of the given tenders (--keys K1,K2 [--local: no upload, nothing posted] [--keep]); needs --profile
+      const { ctx, page } = await openBrowser();
+      try {
+        const out = [];
+        for (const key of String(opt("keys") || "").split(",").filter(Boolean)) {
+          await search(page, key, false);
+          const r = await snippet(page, "bidders-ids.js", { __NOTIFY__: JSON.stringify(key) });
+          if (!r.url) { out.push(`${key}: ${r.error || "không có trang kết quả"}`); continue; }
+          await page.goto(r.url, { waitUntil: "domcontentloaded" });
+          const b = await snippet(page, "bidders-extract.js");
+          out.push(b.final && isMine(b) ? await bcdgStep(key, b, Date.now() + BCDG_BUDGET_MS) : `${key}: ${b.error || "chưa có kết quả hoặc không có MST mình"}`);
+        }
+        summary = out.join("; ");
+      } finally { await ctx.close().catch(() => {}); }
+    }
     else if (cmd === "notice") { // check: read one tender's notice from feed/current and print its size, post nothing
       const t = ((await doc("feed", "current"))?.tenders || []).find((x) => x.notifyNo === opt("key"));
       if (!t) throw new Error("không có gói này trong feed");
