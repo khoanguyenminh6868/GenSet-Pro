@@ -262,7 +262,7 @@ async function readNotice(ctx, page, t, chapters = /^Chương\s+(II|III|V|VII)\b
         last = text.length;
       }
       const i = text.indexOf("Tải về");
-      text = (i >= 0 ? text.slice(i + 6) : text).replace(/ \n/g, " ").trim().slice(0, 50000);
+      text = (i >= 0 ? text.slice(i + 6) : text).replace(/ \n/g, " ").trim().slice(0, WEBFORM_MAX);
       if (text.length > 200) out.chapters.push({ name: r.name, text });
     } catch (e) { log(`    Không đọc được ${r.name} của ${t.notifyNo}: ${e.message.split("\n")[0]}`); }
     finally { await viewer?.close().catch(() => {}); }
@@ -784,6 +784,8 @@ function specsOcr(f, ext, max = SPECS_OCR_MAX) {
   });
 }
 const SPECS_MAX_MB = 20;
+// What specsAsk sends of chapter V (one call).
+const SPECS_BODY_MAX = 150000;
 const SPECS_SKIPPED = path.join(ROOT, "genbid-bot-logs", "specs-skipped-20MB.txt");
 // A kit script in a child process that does not block, so OCR, publishing and Claude answers of other tenders go on.
 function psAsync(script, psArgs, timeoutMin = 60) {
@@ -814,7 +816,10 @@ async function specsGoods(page) {
     const s = document.body.innerText, i = s.search(/STT\s*\t\s*(Danh mục hàng h(ó|o)a|Tên hàng h(ó|o)a)/i);
     if (i < 0) return "";
     const rest = s.slice(i), z = rest.search(/\n\s*\n\s*(Thời điểm|Thông tin|Quay trở lại)/);
-    return (z > 0 ? rest.slice(0, z) : rest.slice(0, 30000)).trim();
+    // No end found: the first 30,000 characters at a line end, and a line saying so (cut guard 2026-11-12).
+    if (z > 0) return rest.slice(0, z).trim();
+    const e = rest.length > 30000 ? Math.max(rest.lastIndexOf("\n", 30000), 15000) : rest.length;
+    return rest.slice(0, e).trim() + (e < rest.length ? "\n(danh mục dài hơn 30.000 ký tự, phần sau không đọc)" : "");
   }).catch(() => "");
 }
 // The goods of the winning bids, as history-extract.js read them from the result page, one line per item.
@@ -963,8 +968,11 @@ async function specsSource(ctx, page, t, webText, release = () => {}) {
   return { text, src };
 }
 async function specsAsk(t, text, src, model) {
-  const key = t.notifyNo, body = chapterV(text).slice(0, 150000);
-  const prompt = `${fs.readFileSync(path.join(KIT, "specs-prompt.md"), "utf8")}\n\n=== GÓI THẦU ===\n${key}: ${t.bidName}\n\n=== CHƯƠNG V (${src}) ===\n${body}`;
+  // At most SPECS_BODY_MAX characters: the window with the most figures, whole lines (was the first 150,000: 7 of 1,499
+  // texts lost figures, IB2400101857 kept 11 and left out 37). The lines left out go in the notes when they hold figures.
+  const key = t.notifyNo, cut = densestCut(chapterV(text), SPECS_BODY_MAX), body = cut.text;
+  const cutNote = cut.hits ? `Chương V dài hơn ${SPECS_BODY_MAX.toLocaleString("vi-VN")} ký tự: ${cut.note}.` : "";
+  const prompt = `${fs.readFileSync(path.join(KIT, "specs-prompt.md"), "utf8")}\n\n=== GÓI THẦU ===\n${key}: ${t.bidName}\n\n=== CHƯƠNG V (${src}) ===\n${cut.note ? `(${cut.note})\n` : ""}${body}`;
   let r = await askOnce(prompt, model);
   // A very long chapter V gave an answer cut off before the JSON closed (IB2500102600, IB2300119789): ask once more
   // for a shorter list.
@@ -982,7 +990,7 @@ async function specsAsk(t, text, src, model) {
   const cur = await doc("analysis", key);
   if (cur?.status === "done" && cur.result && cur.basis !== "notice" && cur.basis !== "specs") return { skipped: true };
   await post([{ coll: "analysis", id: key, data: { status: "done", basis: "specs", result,
-    notes: [`Chỉ đọc thông số kỹ thuật ở Chương V (${src}), chưa phân tích cả HSMT.`, ...[].concat(v._notes || []), ...checked], analyzedAt: now(), by: "specs" } }]);
+    notes: [`Chỉ đọc thông số kỹ thuật ở Chương V (${src}), chưa phân tích cả HSMT.`, ...(cutNote ? [cutNote] : []), ...[].concat(v._notes || []), ...checked], analyzedAt: now(), by: "specs" } }]);
   // A past tender: Gợi ý giá đấu (web/bidprice.js) compares lots by bidhist config (kvas, text), so the specs go there too.
   const hd = (await docs("bidhist", key))[0]?.data;
   if (hd) {
@@ -1251,6 +1259,9 @@ async function runFiles() {
 // ---------- AI requests: prepare the input, then post what Claude wrote ----------
 // Chapters each request needs; the rest (Chỉ dẫn nhà thầu, Điều kiện chung, biểu mẫu hợp đồng, ...) is standard
 // boilerplate that only costs tokens. The full text stays next to it (hsmt-full.txt) in case something is missing.
+// What prep keeps of the notice and its goods list, and what readNotice keeps of a webform chapter (cut guard 2026-11-12:
+// of 16 notices the longest info was 11,276, goods 9,432, a chapter 15,181).
+const NOTICE_MAX = 20000, GOODS_MAX = 30000, WEBFORM_MAX = 50000;
 const KEEP = { analysis: ["II", "III", "V", "VII"], compare: ["II", "III", "V", "VII"], hsdt: ["II", "III", "IV", "V", "VII"], translation: ["V"], tlkt: ["III", "V"] };
 function splitSections(text) {
   const out = []; let cur = { file: "", chap: "", title: "(đầu)", lines: [] };
@@ -1318,6 +1329,41 @@ function compact(s) {
   const seen = new Set();
   return lines.filter((l) => { if ((count.get(l) || 0) < 5) return true; if (seen.has(l)) return false; seen.add(l); return true; })
     .join("\n").replace(/\n{3,}/g, "\n\n");
+}
+// No silent cut (cut guard, điều phối 2026-11-12). A text kept to its first `max` characters, at a line end; what was left
+// out named by its lines: { text, note } with note "" when it fits. The tail of a notice page (muasamcong's footer, from
+// "Quay trở lại") is dropped first: links and addresses only.
+const lineOf = (t, pos) => { let n = 1; for (let i = t.indexOf("\n"); i >= 0 && i < pos; i = t.indexOf("\n", i + 1)) n++; return n; };
+const linesIn = (t) => lineOf(t, t.length - (t.endsWith("\n") ? 1 : 0));
+function headCut(t, max) {
+  t = String(t || "");
+  if (t.length <= max) return { text: t, note: "" };
+  let e = t.lastIndexOf("\n", max);
+  if (e < max * 0.5) e = max;
+  const all = linesIn(t), from = lineOf(t, e + 1);
+  return { text: t.slice(0, e), note: `(dài ${t.length.toLocaleString("vi-VN")} ký tự: đã lược dòng ${from}–${all} / ${all}, phần sau không gửi kèm)`, from, all };
+}
+const noticeBody = (info) => String(info || "").replace(/\n[^\S\n]*Quay trở lại[^\S\n]*\n[^]*$/, "").trimEnd();
+// Technical figures, read without accents (SPEC_HIT of suppliers/config-bot.mjs).
+const SPEC_HIT = /kva|xi\s?lanh|xy\s?lanh|dau\s*phat|cong\s*suat\s*(lien\s*tuc|du\s*phong)|prime|standby/g;
+// The `max` characters of t with the most figures, whole lines, never fewer figures than its first `max` (as densest of
+// config-bot.mjs): { text, note, hits } — note names the lines left out and their figures, "" when t fits.
+function densestCut(t, max) {
+  t = String(t || "");
+  if (t.length <= max) return { text: t, note: "", hits: 0 };
+  const f = plainVi(t), hits = [...f.matchAll(SPEC_HIT)].map((m) => m.index);
+  let start = 0, most = -1;
+  for (let i = 0, j = 0; i < hits.length; i++) { while (hits[i] - hits[j] > max * 0.9) j++; if (i - j + 1 > most) { most = i - j + 1; start = hits[j]; } }
+  start = Math.max(0, Math.min(start - max * 0.05, t.length - max));
+  if (start > 0) { const nl = t.indexOf("\n", start - 1); start = nl < 0 || nl + 1 >= t.length ? 0 : nl + 1; }
+  const win = (a) => { let e = Math.min(t.length, a + max); if (e < t.length) { const nl = t.lastIndexOf("\n", e - 1); if (nl > a) e = nl + 1; } return [a, e]; };
+  const count = ([a, e]) => hits.filter((h) => h >= a && h < e).length;
+  const w1 = win(start), w0 = win(0), [a, e] = count(w1) > count(w0) ? w1 : w0;
+  const all = linesIn(t), la = lineOf(t, a), lb = lineOf(t, e - (t[e - 1] === "\n" ? 1 : 0));
+  const dropped = [...(la > 1 ? [[1, la - 1]] : []), ...(lb < all ? [[lb + 1, all]] : [])];
+  const lost = hits.length - count([a, e]);
+  return { text: t.slice(a, e), hits: lost, dropped, all,
+    note: `đã lược dòng ${dropped.map(([x, y]) => (x === y ? `${x}` : `${x}–${y}`)).join(", ")} / ${all} (giữ ${(e - a).toLocaleString("vi-VN")} ký tự liền nhau nhiều thông số nhất; phần lược có ${lost} chỗ thông số)` };
 }
 const pdftotext = () => [path.join(process.env.LOCALAPPDATA || "", "Microsoft", "WinGet", "Links", "pdftotext.exe"), "C:\\Program Files\\Git\\mingw64\\bin\\pdftotext.exe"].find((f) => fs.existsSync(f)) || "pdftotext";
 // Windows' own tar (bsdtar) reads zip; the tar of Git Bash, first on PATH there, does not.
@@ -1634,17 +1680,29 @@ async function prepOne(kind, key, requestedAt, dir) {
   // What finish checks the result's quotes against: the tender's own text (never an earlier AI analysis), and whether
   // part of it is only in scanned files, which the check cannot see.
   let reqSrc = ownReq ? "" : [full, notice?.info || "", ...(notice?.chapters || []).map((c) => c.text)].join("\n"), reqUnread = !ownReq && scans.length > 0;
+  // Cuts made here that may leave something out: in input.md where they are, and (Phân tích) in the result's notes.
+  const cuts = [];
   let input =`# ${KIND_NAME[kind]}: ${key}\n\nThông tin gói thầu đã biết: ${t.bidName || "?"}; số TBMT ${key}; chủ đầu tư ${t.investorName || "?"}; bên mời thầu ${t.procuringEntityName || t.investorName || "?"}; đóng thầu ${close}; giá gói thầu ${price}.\n`;
   if (notice?.info) {
     // The notice and the chapter list say nothing technical: Đối chiếu TLKT leaves them out.
-    if (kind !== "tlkt") input += `\n## Thông báo mời thầu (muasamcong)\n${notice.info.slice(0, 8000)}${notice.info.length > 8000 ? "\n(thông báo dài hơn, phần sau đã cắt bớt)" : ""}\n\n### Danh sách chương HSMT\n${notice.hsmtList || ""}\n`;
-    input += webform.map((c) => `\n### ${c.name} (biểu mẫu webform)\n${compact(kind === "tlkt" && chapOf(c) === "III" ? technicalOfIII(c.text) : c.text)}\n`).join("");
+    // The notice up to NOTICE_MAX characters at a line end (was its first 8,000: IB2600602880's payment and warranty were
+    // past them), muasamcong's page footer left out; the lines left out named.
+    if (kind !== "tlkt") {
+      const n = headCut(noticeBody(notice.info), NOTICE_MAX);
+      if (n.note) cuts.push(`Thông báo mời thầu ${n.note.replace(/^\(|\)$/g, "")}.`);
+      input += `\n## Thông báo mời thầu (muasamcong)\n${n.text}${n.note ? `\n${n.note}` : ""}\n\n### Danh sách chương HSMT\n${notice.hsmtList || ""}\n`;
+    }
+    // A chapter as long as readNotice keeps (WEBFORM_MAX) may have lost its end on the page.
+    input += webform.map((c) => `\n### ${c.name} (biểu mẫu webform)\n${compact(kind === "tlkt" && chapOf(c) === "III" ? technicalOfIII(c.text) : c.text)}\n${c.text.length >= WEBFORM_MAX - 10 ? `(chương này dài đúng mức bot đọc trên trang, ${WEBFORM_MAX.toLocaleString("vi-VN")} ký tự: phần cuối có thể thiếu)\n` : ""}`).join("");
+    for (const c of webform) if (c.text.length >= WEBFORM_MAX - 10) cuts.push(`Chương webform "${c.name}" dài đúng mức bot đọc trên trang (${WEBFORM_MAX.toLocaleString("vi-VN")} ký tự): phần cuối có thể thiếu.`);
   }
   // Goods lists (Khoa, 2026-11-04, as in specs): tab Thông tin chung of the notice, and the goods of the winning bids of
   // the contractor selection result (bidhist). Often the only technical data of a tender whose files are decisions.
   if (!ownReq && kind !== "translation") {
     const bidGoods = await specsBidGoods(key).catch(() => "");
-    const goods = [notice?.goods && `### Danh mục hàng hóa (tab Thông tin chung của TBMT)\n${compact(notice.goods).slice(0, 30000)}`,
+    const g = notice?.goods ? headCut(compact(notice.goods), GOODS_MAX) : null;
+    if (g?.note) cuts.push(`Danh mục hàng hóa ${g.note.replace(/^\(|\)$/g, "")}.`);
+    const goods = [g && `### Danh mục hàng hóa (tab Thông tin chung của TBMT)\n${g.text}${g.note ? `\n${g.note}` : ""}`,
       bidGoods && `### Danh mục hàng hóa trúng thầu (kết quả lựa chọn nhà thầu)\n${bidGoods.replace(/^--- Tệp:.*\n/, "")}`].filter(Boolean).join("\n\n");
     if (goods) { input += `\n## Danh mục hàng hóa (muasamcong)\n${goods}\n`; reqSrc += "\n" + goods; }
   }
@@ -1723,6 +1781,7 @@ async function prepOne(kind, key, requestedAt, dir) {
     log(`${KIND_NAME[kind]} ${key}: template ${basis.template ? basis.template.join(", ") : "không"}; cấu hình NCC ${basis.config ? basis.config.join(", ") : "không"}`);
   }
   fs.writeFileSync(path.join(dir, "input.md"), input, "utf8");
+  if (cuts.length) writeJson(path.join(dir, "cuts.json"), cuts);
   fs.writeFileSync(path.join(dir, "src-req.txt"), reqSrc, "utf8");
   if (reqUnread) writeJson(path.join(dir, "src-unread.json"), { ...readJson(path.join(dir, "src-unread.json"), {}), req: true });
   // Requests that need to look at pages (mostly scanned HSMT, unreadable HSDT files) or are too large for one call
@@ -1820,6 +1879,16 @@ function switchToPlan(text, src) {
   console.log("  Hạn mức API key đã hết (" + src + "); chuyển sang gói tháng.");
   return true;
 }
+// Why a one-call answer (claude -p --output-format json) is not whole, or "": stopped at the output limit, a run that did
+// not complete, or more than one turn (a continuation after max_tokens; there are no tools to take turns otherwise).
+function askCut(j) {
+  if (!j) return "";
+  if (j.stop_reason === "max_tokens") return "stop_reason max_tokens";
+  if (j.terminal_reason && j.terminal_reason !== "completed") return `terminal_reason ${j.terminal_reason}`;
+  if (j.subtype && j.subtype !== "success") return j.subtype;
+  if (Number(j.num_turns) > 1) return `${j.num_turns} lượt`;
+  return "";
+}
 function askOnce(prompt, model) {
   const api = !!process.env.ANTHROPIC_API_KEY;
   return new Promise((resolve) => {
@@ -1835,6 +1904,10 @@ function askOnce(prompt, model) {
       if (api && (code !== 0 || j?.is_error) && switchToPlan(text + err + out, "ask")) return resolve(askOnce(prompt, model));
       if (LIMIT.test(text + err + out) && (code !== 0 || j?.is_error)) return resolve({ limit: (text || err || out).trim().slice(0, 300) });
       if (!j || j.is_error) return resolve({ error: (text || err || out || `mã thoát ${code}`).trim().slice(0, 300) });
+      // An answer cut at the output limit (128,000 tokens for Opus, modelUsage.maxOutputTokens) is not taken, even when
+      // what is left parses: Claude Code goes on after max_tokens in a new turn, and `result` is then only the last part.
+      const cut = askCut(j);
+      if (cut) return resolve({ error: `câu trả lời bị cắt trước khi JSON đóng (${cut})` });
       const s = text.replace(/^\s*```(?:json)?\s*/, "").replace(/\s*```\s*$/, "");
       let value = null; try { value = JSON.parse(s.slice(s.indexOf("{"), s.lastIndexOf("}") + 1)); } catch {}
       resolve(value ? { value, cost: j.total_cost_usd, secs: Math.round((j.duration_ms || 0) / 1000) } : { error: "câu trả lời không phải JSON hợp lệ" });
@@ -2121,7 +2194,7 @@ async function runFinish() {
         if (!result) throw new Error("result.json không phải JSON hợp lệ");
         const checked = meta.translate || meta.kind === "hsdt" ? [] : checkResult(meta, result, dir);
         if (meta.kind === "analysis") result.generatorSets = setsOf(result.generatorSets);
-        if (meta.kind === "analysis") rows.push({ coll: "analysis", id: meta.key, data: { status: "done", result, notes: [].concat(readJson(path.join(dir, "notes.json"), []) || [], checked), analyzedAt: at, by: "hsmt-worker" } });
+        if (meta.kind === "analysis") rows.push({ coll: "analysis", id: meta.key, data: { status: "done", result, notes: [].concat(readJson(path.join(dir, "notes.json"), []) || [], checked, readJson(path.join(dir, "cuts.json"), []) || []), analyzedAt: at, by: "hsmt-worker" } });
         else if (meta.translate) {
           // The English version joins the stored result, unless a new comparison replaced it meanwhile.
           const cur = await doc("tlkt", meta.key);
