@@ -1,4 +1,4 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><meta name="theme-color" content="#14171c"><script src="/busy.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="/shim.js"></script><script src="/catalog.js"></script><script src="/conversions.js"></script><script src="/bidprice.js"></script></head><body><title>GenBid Pro</title>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><meta name="theme-color" content="#14171c"><script src="/busy.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js" integrity="sha384-0w2KAL2YHP6wKOkUDzkCDGgVvfmHnj02DHeQ6XcHOgTfFsGyonKOpShMH1x6nk9o" crossorigin="anonymous"></script><script src="/shim.js"></script><script src="/catalog.js"></script><script src="/conversions.js"></script><script src="/bidprice.js"></script></head><body><title>GenBid Pro</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -561,6 +561,9 @@ details.sec>div{margin-top:10px}
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+// A link from stored data (supplier website, source url, tender link...) is opened only when it is http(s) or a path of this
+// site; anything else (javascript:, data:, ...) becomes "#".
+const safeUrl = (u) => { const s = String(u ?? "").trim(); return /^https?:\/\/[^\s]/i.test(s) || /^\/(?![\/\\])/.test(s) ? s : "#"; };
 const h = (strings, ...vals) => strings.reduce((a, s, i) => a + s + (i < vals.length ? (vals[i] && vals[i].__html !== undefined ? vals[i].__html : esc(vals[i])) : ""), "");
 const raw = (s) => ({ __html: s });
 const TAB_ID = "t" + Math.random().toString(36).slice(2, 10);
@@ -624,7 +627,7 @@ function minutesLink(t, kq = false) {
     processApply: p.processApply, bidMode: p.bidMode, notifyNo: t.notifyNo, planNo: p.planNo, pno: "undefined", step: kq ? "kqlcnt" : "kqmt", isInternet: p.isInternet, caseKHKQ: "undefined", bidForm: p.bidForm };
   return "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?" + Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v ?? "undefined")}`).join("&");
 }
-const tenderLink = (t) => t.sourceUrl || (t.notifyNo ? portalSearch(t.notifyNo) : "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=index");
+const tenderLink = (t) => (safeUrl(t.sourceUrl) !== "#" && t.sourceUrl) || (t.notifyNo ? portalSearch(t.notifyNo) : "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=index");
 // Copy mã gói, the button beside the tender code at the top of a tender (Khoa, 2026-11-10).
 document.addEventListener("click", async (e) => {
   const b = e.target.closest?.("[data-copycode]");
@@ -1598,7 +1601,7 @@ function infoHtml(t) {
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
-        ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}" title="${f.converted ? "Xem (bản PDF chuyển từ tệp gốc)" : "Xem tệp"}" aria-label="${f.converted ? "Xem bản PDF" : "Xem tệp"}">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener" title="Tải tệp" aria-label="Tải tệp ${f.name}">${raw(DL_SVG)}</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
+        ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}" title="${f.converted ? "Xem (bản PDF chuyển từ tệp gốc)" : "Xem tệp"}" aria-label="${f.converted ? "Xem bản PDF" : "Xem tệp"}">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="#" role="button" data-dlfile="${i}" title="Tải tệp" aria-label="Tải tệp ${f.name}">${raw(DL_SVG)}</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
         ${raw(!f.hasText && f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t))}
@@ -2217,7 +2220,7 @@ function projectInfoHtml(t) {
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Tệp hồ sơ</h2><span class="muted small">${files.length ? `${files.length} tệp${d?.updatedAt ? " · cập nhật " + fmtDate(d.updatedAt) : ""}` : "Chưa có tệp nào"}</span></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
-        ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="${f.url}" target="_blank" rel="noopener" title="Tải tệp" aria-label="Tải tệp ${f.name}">${raw(DL_SVG)}</a>` : "")}
+        ${raw(f.url && /\.pdf$/i.test(f.name) ? h`<button class="btn sm" data-openpdf="${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="#" role="button" data-dlfile="${i}" title="Tải tệp" aria-label="Tải tệp ${f.name}">${raw(DL_SVG)}</a>` : "")}
         ${raw(f.hasText ? "" : '<span class="chip mut">Không đọc được chữ</span>')}
         ${raw(state.readOnly ? "" : h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(state.readOnly ? "" : projUp[key] ? `<div class="note">${progress(projUp[key])}</div>` : h`<div class="drop" id="pDrop">
@@ -2493,18 +2496,19 @@ function analysisTabHtml(t) {
 
 // ---------- Libraries and files on demand ----------
 const LIBS = {
-  jspdf: ["https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js", () => window.jspdf],
-  docx: ["https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js", () => window.docx],
-  xlsx: ["https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js", () => window.XLSX],
-  pdfjs: ["https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js", () => window.pdfjsLib],
-  mammoth: ["https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js", () => window.mammoth],
+  // [url, getter, SRI sha384 of exactly that file]: the browser refuses a file that changed.
+  jspdf: ["https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js", () => window.jspdf, "sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk"],
+  docx: ["https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js", () => window.docx, "sha384-4xaIisuLEy2lo2HkB2C4rEf7v8jbTb2kuogX6TkuEt9feTWKBSFSOzsqNNbV+sKh"],
+  xlsx: ["https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js", () => window.XLSX, "sha384-vtjasyidUo0kW94K5MXDXntzOJpQgBKXmE7e2Ga4LG0skTTLeBi97eFAXsqewJjw"],
+  pdfjs: ["https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js", () => window.pdfjsLib, "sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e"],
+  mammoth: ["https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js", () => window.mammoth, "sha384-/cXAMbzovUIKbBERjPmR3SnPTh8siWr5lsvFYj1Uq4XP0yaJUZJmsh0YXyGv5P0y"],
 };
 const libCache = {};
 function loadLib(name) {
-  const [src, get] = LIBS[name];
+  const [src, get, sri] = LIBS[name];
   if (get()) return Promise.resolve(get());
   return libCache[name] ||= window.genbidBusy(new Promise((res, rej) => {
-    const s = document.createElement("script"); s.src = src;
+    const s = document.createElement("script"); s.crossOrigin = "anonymous"; s.integrity = sri; s.src = src;
     s.onload = () => (get() ? res(get()) : rej(new Error("Không tải được thư viện " + name)));
     s.onerror = () => { delete libCache[name]; rej(new Error("Không tải được thư viện " + name)); };
     document.head.appendChild(s);
@@ -2611,6 +2615,17 @@ async function saveFile(filename, data) {
 }
 const fileSafe = (s) => String(s).replace(/[\\/:*?"<>|]+/g, " ").replace(/\s+/g, " ").trim().slice(0, 120);
 
+// A tender file (/_gh/<id>) needs the member's token, so it is fetched with it, never opened as a plain link.
+const fetchSiteFile = (u) => !/^\/(?![\/\\])/.test(String(u)) ? Promise.reject(new Error("địa chỉ tệp không hợp lệ")) : window.genbidFetch ? window.genbidFetch(u) : fetch(u).then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.blob(); });
+async function downloadHsmtFile(key, i) {
+  const f = state.hsmt[key]?.files?.[i];
+  if (!f?.url) return;
+  try {
+    const u = URL.createObjectURL(await fetchSiteFile(f.url)), a = document.createElement("a");
+    a.href = u; a.download = f.name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(u), 60000);
+  } catch (e) { toast("Không tải được tệp: " + (e?.message || "lỗi không rõ"), 6000); }
+}
 // In-page PDF viewer: attachments are fetched from the artifact's own storage and drawn with pdf.js.
 async function openPdf(key, i) {
   const f = state.hsmt[key].files[i];
@@ -2618,9 +2633,7 @@ async function openPdf(key, i) {
     <div id="pvBody" class="pv"><div class="loading">${raw(progress("Đang mở tệp..."))}</div></div>`, null, "wide");
   let blob;
   try {
-    const r = await fetch(f.url);
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    blob = await r.blob();
+    blob = await fetchSiteFile(f.url);
   } catch (e) { $("#pvBody").innerHTML = h`<div class="note err">Không tải được tệp từ kho lưu trữ (${e.message}). Hãy thử lại.</div>`; return; }
   const pdfName = /\.pdf$/i.test(f.name) ? f.name : f.name.replace(/\.[^.]+$/, "") + ".pdf";
   $("#pvSave").onclick = () => saveFile(fileSafe(pdfName), blob);
@@ -3142,7 +3155,7 @@ function supWonHtml(s) {
   const rows = [...by.values()].sort((p, q) => (q[0].at > p[0].at ? 1 : -1));
   return h`<div id="supWon">${raw(head)}<div class="muted small">${rows.length} phần / ${new Set(a.map((x) => x.key)).size} gói mua sắm máy phát có hàng tổ máy ghi ${[...new Set(a.map((x) => x.word))].join(", ")}. "Hãng / nhãn hiệu": ghi ở hãng, nhãn hiệu, tên hoặc mã tổ máy; "Trong cấu hình": động cơ, đầu phát hoặc bộ điều khiển của tổ máy.</div>
     <div class="tablewrap" style="margin-top:8px"><table class="suptable supcards"><thead><tr><th>Mở thầu</th><th>Gói thầu</th><th>Nhà thầu trúng</th><th>Hàng trúng</th></tr></thead><tbody>${raw(rows.map((xs) => {
-      const x = xs[0], url = x.url || portalSearch(x.key.split("-")[0]);
+      const x = xs[0], url = (safeUrl(x.url) !== "#" && x.url) || portalSearch(x.key.split("-")[0]);
       return h`<tr><td data-l="Mở thầu">${x.at ? fmtDate(x.at, false) : "—"}</td>
         <td data-l="Gói thầu"><div><b>${x.bidName || x.key}</b></div>${raw(x.lotName && x.lotName.trim() !== String(x.bidName).trim() ? h`<div class="small">${x.lotName}</div>` : "")}<div class="small"><a class="tlink" href="${url}" target="_blank" rel="noopener" title="Mở trên muasamcong">${x.key} ↗</a></div></td>
         <td data-l="Nhà thầu trúng" class="small">${x.bidder || "—"}</td>
@@ -3240,7 +3253,7 @@ function supSpecHtmlBlock(s) {
     ${raw(err && !r ? h`<div class="note warn">Tìm thông số: ${err}</div>` : "")}
     ${raw(r && !wait ? h`<div class="note${r.error ? " warn" : ""}"><div class="row" style="gap:8px"><span style="flex:1"><b>Tìm Thông Số</b> <span class="muted small">lúc ${fmtDate(m.at)}</span></span><button class="btn sm" id="supSpecHide" data-id="${id}" data-at="${m.at}" title="Ẩn kết quả này trên máy này đến lần Tìm Thông Số sau">Ẩn</button></div>
       ${raw(r.summary ? h`<p class="small">${r.summary}</p>` : "")}
-      ${raw(r.error ? h`<p class="small">Chưa bổ sung được: ${r.error}</p>` : h`<div class="small">Đã bổ sung vào hồ sơ${ok[0]?.tables ? ` ${ok[0].tables} bảng thông số` : ""}${raw(ok[0]?.pr ? h` · <a href="${ok[0].pr}" target="_blank" rel="noopener">PR vào repo</a>` : "")}:</div><div class="small">${raw(parts(r.found || {}))}</div>${raw(ok[0]?.prError ? h`<div class="muted small">${ok[0].prError}</div>` : "")}`)}
+      ${raw(r.error ? h`<p class="small">Chưa bổ sung được: ${r.error}</p>` : h`<div class="small">Đã bổ sung vào hồ sơ${ok[0]?.tables ? ` ${ok[0].tables} bảng thông số` : ""}${raw(ok[0]?.pr ? h` · <a href="${safeUrl(ok[0].pr)}" target="_blank" rel="noopener">PR vào repo</a>` : "")}:</div><div class="small">${raw(parts(r.found || {}))}</div>${raw(ok[0]?.prError ? h`<div class="muted small">${ok[0].prError}</div>` : "")}`)}
       ${raw(r.skipped?.length ? h`<details><summary class="small">Đã xem nhưng bỏ qua (${r.skipped.length})</summary><ul class="suplist">${raw(r.skipped.map((x) => h`<li class="small"><b>${x.name || ""}</b> — ${x.reason || ""}</li>`).join(""))}</ul></details>` : "")}
       ${raw(r.notes?.length ? h`<details><summary class="small">Ghi chú (${r.notes.length})</summary><ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul></details>` : "")}</div>` : "")}
   </div>`;
@@ -3451,7 +3464,7 @@ function supDetailHtml(s) {
     <dl class="kv kvw">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
       <dt>Thương hiệu</dt><dd>${(s.names?.brands || []).join(", ") || "—"}</dd>
-      <dt>Website</dt><dd>${raw(s.website ? h`<a href="${s.website}" target="_blank" rel="noopener">${s.website}</a>` : "—")}</dd>
+      <dt>Website</dt><dd>${raw(s.website ? h`<a href="${safeUrl(s.website)}" target="_blank" rel="noopener">${s.website}</a>` : "—")}</dd>
       <dt>Trụ sở</dt><dd>${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ") || "—"}</dd>
       <dt>Năm thành lập</dt><dd>${raw(s.founded ? h`${s.founded} ${raw(supRefs(s.foundedSrc))}` : "—")}</dd>
       ${raw(s.contacts?.length ? h`<dt>Liên hệ</dt><dd>${raw(supContactsHtml(s.contacts))}</dd>` : "")}
@@ -3469,7 +3482,7 @@ function supDetailHtml(s) {
     ${raw(supWonHtml(s))}
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
     ${raw(s.missing?.length ? h`<h4>Chưa tìm thấy / lưu ý</h4>${raw(list(s.missing, (m) => h`<li>${m}</li>`))}` : "")}
-    <details class="supsec" id="supSrcBox"><summary>Nguồn (${(s.sources || []).length})</summary><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${x.url}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
+    <details class="supsec" id="supSrcBox"><summary>Nguồn (${(s.sources || []).length})</summary><ol class="supsrc">${raw((s.sources || []).map((x) => h`<li id="sup-src-${x.n}" value="${x.n}"><a href="${safeUrl(x.url)}" target="_blank" rel="noopener">${x.url}</a> <span class="chip mut" title="${SUP_TIER[x.tier] || ""}">Nguồn ${x.tier}: ${SUP_TIER[x.tier] || ""}</span> <span class="muted small">đọc ngày ${x.accessedAt}</span>
       <ul>${raw((Array.isArray(x.quote) ? x.quote : [x.quote]).map((q) => h`<li class="small"><q>${q}</q></li>`).join(""))}</ul></li>`).join(""))}</ol></details>`;
 }
 // The supplier list (button "Nhà cung cấp") is open to every member (Khoa, 2026-10-28).
@@ -3740,7 +3753,7 @@ function catDetailHtml(e) {
   const bySup = {};
   for (const u of e.uses) (bySup[u.supplierId] = bySup[u.supplierId] || []).push(u);
   const others = Object.entries(e.uses.reduce((m, u) => (u.other ? ((m[u.other] = (m[u.other] || 0) + 1), m) : m), {})).sort((a, b) => b[1] - a[1]).slice(0, 12);
-  const src = (u) => { const url = catSrcUrl(u.supplierId, u.n); return url ? h`<a href="${url}" target="_blank" rel="noopener" title="${url}">Nguồn [${u.n}]</a>` : h`Nguồn [${u.n}]`; };
+  const src = (u) => { const url = catSrcUrl(u.supplierId, u.n); return url ? h`<a href="${safeUrl(url)}" target="_blank" rel="noopener" title="${url}">Nguồn [${u.n}]</a>` : h`Nguồn [${u.n}]`; };
   const from = catFrom && state.supplier?.[catFrom];
   return h`<div class="dethead"><div class="row">${raw(from ? h`<button class="btn sm" id="catToSup">← ${supName(from)}</button>` : "")}<button class="btn sm" id="catBack">← Danh sách</button><span class="spacer"></span><span class="muted small">${e.suppliers.length} nhà cung cấp · ${e.uses.length} dòng bảng</span></div>
     <div><h3 class="hlname" style="margin:4px 0">${e.model}</h3>${raw(e.names.length > 1 ? h`<div class="muted small">Cách ghi khác: ${e.names.filter((x) => x !== e.model).join(", ")}</div>` : "")}</div></div>
@@ -3887,9 +3900,9 @@ function cfgSrcHtml(src) {
   if (!src || !SHOW_SRC) return "";
   if (src.kind === "catalog" || src.kind === "controller") {
     const s = state.supplier?.[src.supplierId], url = s?.sources?.find((x) => x.n === Number(src.n))?.url;
-    return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: ${raw(supLink(src.supplierId, supName(s)))}${raw(url ? h` · <a href="${url}" target="_blank" rel="noopener">trang [${src.n}]</a>` : "")}${raw(src.line ? h`<div><code>${src.line}</code></div>` : "")}</div>`;
+    return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: ${raw(supLink(src.supplierId, supName(s)))}${raw(url ? h` · <a href="${safeUrl(url)}" target="_blank" rel="noopener">trang [${src.n}]</a>` : "")}${raw(src.line ? h`<div><code>${src.line}</code></div>` : "")}</div>`;
   }
-  return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: <a href="${src.url}" target="_blank" rel="noopener">${src.url}</a>${raw(src.quote ? h` — <q>${src.quote}</q>` : "")}</div>`;
+  return h`<div class="muted small" style="overflow-wrap:anywhere">Nguồn: <a href="${safeUrl(src.url)}" target="_blank" rel="noopener">${src.url}</a>${raw(src.quote ? h` — <q>${src.quote}</q>` : "")}</div>`;
 }
 const cfgNum = (v) => (Array.isArray(v) ? v.map(cfgNum).join("–") : Number(v).toLocaleString("vi-VN", { maximumFractionDigits: 2 }));
 const cfgConvHtml = (x) => (x.conversions || []).map((cv) => h`<div class="muted small">Quy đổi: ${cv.label || cv.formula}${raw(cv.value != null && !cv.invalid ? h` → <b>${cfgNum(cv.value)} ${cv.unit || ""}</b>` : "")}${raw(cv.basis ? h` <span title="${cv.basis}">ⓘ</span>` : "")} <span class="muted">(${(cv.inputs || []).map((i) => `${i.name} = ${i.from === "standard" ? "giá trị chuẩn" : i.value}`).join(", ")})</span></div>`).join("");
@@ -3900,7 +3913,7 @@ function cfgSuppliersHtml(c) {
   return h`<div class="small" style="margin-top:6px"><b>Nhà cung cấp đề xuất:</b></div>${raw(supExclNote(hid))}<ol class="suplist">${raw(shown.map((x) => {
     const s = state.supplier?.[x.supplierId], conf = SUP_CONF[s?.confidence] || ["", "mut"], vn = s?.vietnam?.distributors || [];
     return h`<li class="small"><b>${raw(supLink(x.supplierId, supName(s)))}</b> <span class="muted">${SUP_ROLE[s?.role] || ""}</span> ${raw(conf[0] ? h`<span class="chip ${conf[1]}">${conf[0]}</span>` : "")}${raw(x.fromFind ? '<span class="chip mut">mới từ Tìm NCC</span>' : "")}${raw(x.unverified ? '<span class="chip warn" title="Code không tìm thấy dòng bảng này trong dữ liệu của nhà cung cấp">⚠ chưa khớp nguồn</span>' : "")}${raw(!x.unverified && !x.hasAlternator && c.alternator?.model ? h`<span class="chip mut">dòng bảng không ghi đầu phát ${c.alternator.model}</span>` : "")}${raw(c.controller?.model ? (x.hasController ? h`<span class="chip ok">có bộ điều khiển ${c.controller.model}</span>` : h`<span class="chip mut">trang không ghi bộ điều khiển ${c.controller.model}</span>`) : "")}
-      <button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ</button>${raw(s?.website ? h` <a href="${s.website}" target="_blank" rel="noopener">website</a>` : "")}
+      <button class="btn sm" data-supopen="${x.supplierId}">Hồ sơ</button>${raw(s?.website ? h` <a href="${safeUrl(s.website)}" target="_blank" rel="noopener">website</a>` : "")}
       ${raw(vn.length ? h`<div class="muted small">Đại lý tại Việt Nam: ${vn.map((d) => d.name).join("; ")}</div>` : "")}${raw(x.why ? h`<div class="muted small">${x.why}</div>` : "")}${raw(SHOW_SRC && x.line ? h`<div class="muted small" style="overflow-wrap:anywhere"><code>${x.line}</code></div>` : "")}</li>`;
   }).join(""))}</ol>`;
 }
@@ -4012,7 +4025,7 @@ const cfgReqHtml = (r) => (r.requirements?.length ? h`<details><summary class="s
 // Internet finds added to the catalog by config-bot.mjs (each checked with verify.mjs before it is added).
 const cfgAddedHtml = (r) => (r.catalogAdded?.length ? h`<div class="note"><b>Bổ sung vào danh mục nhà cung cấp từ internet</b><ul class="suplist">${raw(r.catalogAdded.map((a) => a.error
   ? h`<li class="small">${a.supplierId || ""}: chưa bổ sung — ${a.error}</li>`
-  : h`<li class="small"><b>${raw(supLink(a.supplierId, a.name))}</b> (${a.isNew ? "nhà cung cấp mới" : "thêm dữ liệu"}, ${a.tables} bảng thông số) <button class="btn sm" data-supopen="${a.supplierId}">Hồ sơ</button>${raw(a.pr ? h` · <a href="${a.pr}" target="_blank" rel="noopener">PR vào repo</a>` : "")}${raw(a.prError ? h`<div class="muted small">${a.prError}</div>` : "")}</li>`).join(""))}</ul></div>` : "");
+  : h`<li class="small"><b>${raw(supLink(a.supplierId, a.name))}</b> (${a.isNew ? "nhà cung cấp mới" : "thêm dữ liệu"}, ${a.tables} bảng thông số) <button class="btn sm" data-supopen="${a.supplierId}">Hồ sơ</button>${raw(a.pr ? h` · <a href="${safeUrl(a.pr)}" target="_blank" rel="noopener">PR vào repo</a>` : "")}${raw(a.prError ? h`<div class="muted small">${a.prError}</div>` : "")}</li>`).join(""))}</ul></div>` : "");
 const cfgNotesHtml = (r) => (r.notes?.length ? h`<div class="note warn"><b>Lưu ý về độ tin cậy</b><ul class="suplist">${raw(r.notes.map((n) => h`<li class="small">${n}</li>`).join(""))}</ul></div>` : "");
 
 // ---------- Đối chiếu TLKT (a supplier's technical proposal against the tender's technical requirements) ----------
@@ -4558,7 +4571,7 @@ function bdGoodsHtml(goods, label = "Hàng chào") {
 // Mã gói in its status colour, linked to muasamcong like the main list (Khoa, 2026-11-04).
 function bdKeyLink(r) {
   const t = findTender(r.key), st = t ? " st-" + shownStage(t).key : "";
-  const url = r.d.url || (t ? tenderLink(t) : portalSearch(r.key.split("-")[0]));
+  const url = (safeUrl(r.d.url) !== "#" && r.d.url) || (t ? tenderLink(t) : portalSearch(r.key.split("-")[0]));
   return h`<a class="kcell tlink${st}" href="${url}" target="_blank" rel="noopener" title="Mở trên muasamcong">${r.key} ↗</a>`;
 }
 function bdDetailHtml(c0) {
@@ -4900,6 +4913,8 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "moreBtn") { state.limit += pageSize(); renderGrid(); return; }
   const op = e.target.closest("[data-openpdf]");
   if (op) { openPdf(state.open, +op.dataset.openpdf); return; }
+  const dl = e.target.closest("[data-dlfile]");
+  if (dl) { e.preventDefault(); downloadHsmtFile(state.open, +dl.dataset.dlfile); return; }
   if (e.target.closest("#trPdf")) { translationPdf(e.target.closest("#trPdf").dataset.key); return; }
   if (e.target.id === "hsRun") { runHsdt(e.target.dataset.key); return; }
   if (e.target.closest("#hsDocx")) { hsdtDocx(e.target.closest("#hsDocx").dataset.key); return; }

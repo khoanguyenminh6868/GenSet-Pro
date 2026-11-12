@@ -10,6 +10,8 @@ const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "c
 const ID_RE = /^[A-Za-z0-9_\-.~:@+]{1,200}$/;
 const sbHeaders = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json" };
 const str = (v, n) => (v == null ? undefined : String(v).slice(0, n));
+// The worker opens sourceUrl in its browser: only https at the portal's host (.mof today, the old .mpi too); else the field is dropped.
+const tenderUrl = (u) => { try { const x = new URL(String(u)); return x.protocol === "https:" && /^muasamcong\.(mof|mpi)\.gov\.vn$/.test(x.hostname) ? str(x.href, 1000) : undefined; } catch { return undefined; } };
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
@@ -32,7 +34,7 @@ export default async function handler(req, res) {
   }
   const rows = items.map((i) => {
     const data = i.cancel ? { ...(cur.get(i.key) || {}), doneAt: at, error: "" } : JSON.parse(JSON.stringify({
-      notifyNo: coll === "syncreq" ? undefined : str(i.notifyNo || i.key, 200), bidName: str(i.bidName, 1000), sourceUrl: str(i.sourceUrl, 1000),
+      notifyNo: coll === "syncreq" ? undefined : str(i.notifyNo || i.key, 200), bidName: str(i.bidName, 1000), sourceUrl: tenderUrl(i.sourceUrl),
       auto: i.auto ? true : undefined, mode: coll === "syncreq" && i.mode === "new" ? "new" : undefined, requestedAt: at, by: member.email, from: "web",
       // Gợi ý cấu hình: the engines' origin (Xuất xứ), Trung Quốc unless the page says otherwise, and Yêu cầu khác.
       ...(coll === "configreq" || coll === "findreq" ? { origin: ["cn", "g7", "g20", "other", "all"].includes(i.origin) ? i.origin : "cn", extra: str(String(i.extra || "").trim(), 2000) || undefined } : {}),

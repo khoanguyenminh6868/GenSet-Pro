@@ -2,13 +2,18 @@
 // repo; the worker lists them as /_gh/<asset id>. This streams the file through, because the
 // signed GitHub download link has no CORS headers and the page reads PDFs with fetch().
 // Suppliers' quotes are not here: they are in Supabase (api/quote.js), as the repo is public.
+// Members only (Bearer token of a signed-in member, as api/quote.js), or the ingest token for the bot.
 import { Readable } from "node:stream";
+import { memberFrom } from "./_supabase.js";
+import { authorized } from "./ingest.js";
 
 const TOKEN = process.env.GITHUB_TOKEN;
 const REPO = process.env.GITHUB_REPO || "khoanguyenminh6868/GenSet-Pro";
 const API = `https://api.github.com/repos/${REPO}/releases/assets/`;
 
 export default async function handler(req, res) {
+  try { if (!authorized(req) && !(await memberFrom(req))) return res.status(401).json({ error: "Chưa đăng nhập hoặc chưa được cấp quyền." }); }
+  catch { return res.status(502).end(); }
   const id = String(req.query.id || "");
   if (!/^\d{1,15}$/.test(id)) return res.status(400).end();
   if (!TOKEN) return res.status(503).json({ error: "GITHUB_TOKEN chưa được cấu hình" });
