@@ -368,14 +368,16 @@ function bcdgText(file, timeoutMs, cacheDir) {
     const err = r.stderr || "";
     const n = Number((err.match(/OCR (\d+)\//) || [])[1] || 0), scanPages = Number((err.match(/SCAN (\d+)\//) || [])[1] || 0);
     const timedOut = !!(r.error && /ETIMEDOUT/.test(r.error.code || "")) || /^PARTIAL/m.test(err);
-    if (!timedOut && !opt("keep")) fs.rmSync(cacheDir, { recursive: true, force: true }); // read completely: the cache is not needed any more
+    // The page cache is kept after a complete read too (a later --reread goes on from it, not from page 1); bcdgSweepCache removes it by age.
     return { text: r.status === 0 ? r.stdout || "" : "", ocr: n, scan: scanPages > 0 || n > 0, timedOut };
   }
   return { text: histFileText(file, path.join(os.tmpdir(), "genbid-bcdg-" + process.pid)), ocr: 0, scan: false, timedOut: false };
 }
-// OCR caches of files nobody came back to (a tender given up) are removed after two weeks.
+// OCR page caches are kept 14 days (age of the newest page file of a tender's folder), then removed.
+const BCDG_CACHE_DAYS = 14;
+const newestMtime = (p) => { let m = 0; try { const st = fs.statSync(p); m = st.mtimeMs; if (st.isDirectory()) for (const e of fs.readdirSync(p)) m = Math.max(m, newestMtime(path.join(p, e))); } catch {} return m; };
 function bcdgSweepCache() {
-  try { for (const d of fs.readdirSync(BCDG_OCR_CACHE)) { const p = path.join(BCDG_OCR_CACHE, d); if (Date.now() - fs.statSync(p).mtimeMs > 14 * 864e5) fs.rmSync(p, { recursive: true, force: true }); } } catch {}
+  try { for (const d of fs.readdirSync(BCDG_OCR_CACHE)) { const p = path.join(BCDG_OCR_CACHE, d); if (Date.now() - newestMtime(p) > BCDG_CACHE_DAYS * 864e5) fs.rmSync(p, { recursive: true, force: true }); } } catch {}
 }
 // A PDF the Agent handed back cut short has no %%EOF at its end (IB2500371475 12/11: 450 KB of 759 KB).
 const pdfComplete = (f) => { if (!/\.pdf$/i.test(f)) return true; try { const b = fs.readFileSync(f); return b.subarray(Math.max(0, b.length - 2048)).includes("%%EOF"); } catch { return false; } };

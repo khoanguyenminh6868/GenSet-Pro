@@ -2446,7 +2446,13 @@ function bcdgHtml(key) {
   // Nothing in the store: the worker is still trying, or gave up.
   if (!files.length && !big) return d.error ? h`<div class="muted small" style="margin-top:10px">${d.giveUp ? "Chưa lấy được báo cáo đánh giá E-HSDT (đã thử nhiều lần, mở trên muasamcong để xem)." : "Đang lấy báo cáo đánh giá E-HSDT."}</div>` : "";
   const part = d.error && !d.giveUp ? h`<div class="muted small">Còn tệp chưa lấy được, bot sẽ thử lại.</div>` : "";
-  const why = d.reason ? h`<details class="bcdgwhy" open><summary class="small">Trích báo cáo đánh giá${d.scan ? " (đọc từ bản scan, có thể sai chữ)" : ""}</summary><div class="small" style="white-space:pre-wrap;overflow-wrap:anywhere">${d.reason}</div></details>`
+  // d.verdict (bot, Khoa 2026-11-12): "fail" = our part of the report says we did not pass, "pass" = we passed every step (then the
+  // text is only the clarification of the E-HSDT, if any), "" or missing (old documents) = not known: shown as before.
+  const scanNote = d.scan ? " (đọc từ bản scan, có thể sai chữ)" : "";
+  const body = (txt) => h`<div class="small" style="white-space:pre-wrap;overflow-wrap:anywhere">${txt}</div>`;
+  const why = d.verdict === "pass"
+    ? h`<div class="small" style="margin-top:6px">Đạt các bước đánh giá</div>${raw(d.reason ? h`<details class="bcdgwhy"><summary class="small">Nội dung làm rõ E-HSDT${scanNote}</summary>${raw(body(d.reason))}</details>` : "")}`
+    : d.reason ? h`<details class="bcdgwhy" open><summary class="small">${d.verdict === "fail" ? "Lý do không đạt (trích báo cáo đánh giá)" : "Trích báo cáo đánh giá"}${scanNote}</summary>${raw(body(d.reason))}</details>`
     : files.length ? h`<div class="muted small">Chưa trích được lý do từ báo cáo${d.scan ? " (bản scan)" : ""}, mở tệp để xem.</div>` : "";
   return h`<div class="bcdg" style="margin-top:10px"><div class="row" style="flex-wrap:wrap;gap:6px;align-items:center"><b class="small">Báo cáo đánh giá E-HSDT</b> ${raw(rows)} ${raw(big)}</div>${raw(part)}${raw(why)}</div>`;
 }
