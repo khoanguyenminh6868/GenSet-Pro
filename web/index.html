@@ -295,7 +295,7 @@ table.spec1 thead{display:none}table.spec1,table.spec1 tbody,table.spec1 tr,tabl
 .docrow .fn{flex:1;min-width:160px;overflow-wrap:anywhere;font-size:13px}
 .docrow [data-openpdf],.docrow a.btn{min-width:46px;justify-content:center}
 /* PDF / Tải tệp: no frame, raised 3D badge that presses down on tap (Khoa, 2026-11-05) */
-.docrow [data-openpdf],.docrow a.btn{border:0;background:none;padding:0;-webkit-tap-highlight-color:transparent}
+.docrow [data-openpdf],.docrow a.btn,.docrow .btn.qpdf{border:0;background:none;padding:0;-webkit-tap-highlight-color:transparent}
 .docrow [data-openpdf] svg,.docrow a.btn svg{transition:transform .08s,filter .08s;filter:drop-shadow(0 2px 0 rgba(0,0,0,.35)) drop-shadow(0 3px 3px rgba(0,0,0,.25))}
 .docrow [data-openpdf]:hover svg,.docrow a.btn:hover svg{transform:translateY(-1px);filter:drop-shadow(0 3px 0 rgba(0,0,0,.35)) drop-shadow(0 4px 4px rgba(0,0,0,.25))}
 .docrow [data-openpdf]:active svg,.docrow a.btn:active svg{transform:translateY(2px);filter:drop-shadow(0 0 0 rgba(0,0,0,.35)) drop-shadow(0 1px 1px rgba(0,0,0,.25))}
@@ -1675,7 +1675,7 @@ function quoteHtml(t) {
         ${raw(ro || up ? "" : r.supplierId ? h`<label class="btn sm primary" for="qf-${r.id}">Upload</label><input type="file" id="qf-${r.id}" data-qfiles="${r.id}" multiple hidden>` : '<span class="muted small">Chọn nhà cung cấp để tải tệp</span>')}
         ${raw(ro || up || rows.length < 2 ? "" : h`<button class="btn sm tint c-rose" data-qrowdel="${r.id}" title="Bỏ nhà cung cấp này" aria-label="Bỏ nhà cung cấp này">${raw(TRASH_SVG)}</button>`)}</div>
       ${raw(r.files?.length ? `<div class="doclist">${r.files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span><span class="muted small">${f.at ? fmtDate(f.at) : ""}</span>
-        ${raw(ro ? "" : h`${raw(/\.pdf$/i.test(f.name) ? h`<button class="btn sm tint c-blue" data-qopen="${r.id}:${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : h`<button class="btn sm tint c-blue" data-qopen="${r.id}:${i}" title="Tải về" aria-label="Tải về">${raw(DL_SVG)}</button>`)}<button class="btn sm tint c-rose" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
+        ${raw(ro ? "" : h`${raw(/\.pdf$/i.test(f.name) ? h`<button class="btn sm qpdf" data-qopen="${r.id}:${i}" title="Xem tệp" aria-label="Xem tệp">${raw(PDF_SVG)}</button>` : h`<button class="btn sm tint c-blue" data-qopen="${r.id}:${i}" title="Tải về" aria-label="Tải về">${raw(DL_SVG)}</button>`)}<button class="btn sm tint c-rose" data-qdel="${r.id}:${i}" title="Xoá tệp này" aria-label="Xoá tệp ${f.name}">${raw(TRASH_SVG)}</button>`)}</div>`).join("")}</div>` : "")}
       ${raw(up ? progress(up) : "")}
       ${raw(quoteItemsHtml(key, r, ro, need))}
     </div>`;
