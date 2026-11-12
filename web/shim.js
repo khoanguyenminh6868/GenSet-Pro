@@ -381,6 +381,7 @@
     if (changed) notify(coll);
   }
   function watch(coll, fn, onErr) {
+    if (RT_FILTER && coll === "hsmttext") console.warn("hsmttext is not sent by realtime (RT_FILTER in shim.js): this listener will not hear changes");
     ensureChannel();
     if (!listeners.has(coll)) listeners.set(coll, new Set());
     listeners.get(coll).add(fn);
