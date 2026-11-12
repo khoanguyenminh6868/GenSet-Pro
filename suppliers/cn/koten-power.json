@@ -1169,6 +1169,16 @@
         "Generator"
       ],
       "file": "sources/koten-power/1027.md"
+    },
+    {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/koten-catalog-2025.pdf",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "| KF70D5 | 56 | 70 | 62 | 77 | 4110/125Z-09D |"
+      ],
+      "file": "sources/koten-power/5001.md"
     }
   ],
   "confidence": "medium",
@@ -3926,6 +3936,307 @@
         "| KP200D6 | 160 | 200 | 176 | 220 | 1106A-70TAG3 | 274G",
         "| KP225D6 | 180 | 225 | 200 | 250 | 1206A-E70TTAG1 | 274G",
         "| KP245D6 | 196 | 245 | 216 | 270 | 1206A-E70TTAG2 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 5",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KF70D5 | 56 | 70 | 62 | 77 | 4110/125Z-09D |",
+        "| KF85D5 | 68 | 85 | 75 | 94 | CA4F2-12D |",
+        "| KF100D5 | 80 | 100 | 88 | 110 | CA6DF2D-14D |",
+        "| KF125D5 | 100 | 125 | 110 | 138 | CA6DF2-17D |",
+        "| KF150D5 | 120 | 150 | 132 | 165 | CA6DF2-19D |",
+        "| KF188D5 | 150 | 188 | 165 | 206 | CA6DL1-24D |",
+        "| KF225D5 | 180 | 225 | 198 | 248 | CA6DL2-27D |",
+        "| KF250D5 | 200 | 250 | 220 | 275 | CA6DL2-30D |",
+        "| KF313D5 | 250 | 313 | 275 | 344 | CA6DM2J-39D |",
+        "| KF338D5 | 270 | 338 | 297 | 371 | CA6DM2J-41D |",
+        "| KF375D5 | 300 | 375 | 330 | 413 | CA6DN1J-45D |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 6",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KF25D6 | 16 | 20 | 18 | 22 | 4DW81-28D |",
+        "| KF28D6 | 22 | 28 | 24 | 30 | 4DW91-38D |",
+        "| KF30D6 | 24 | 30 | 26 | 33 | 4DW92-42D |",
+        "| KF33D6 | 26 | 33 | 29 | 36 | 4DW92-45D |",
+        "| KF38D6 | 30 | 38 | 32 | 40 | 4DW93-50D |",
+        "| KF40D6 | 32 | 40 | 35 | 44 | 4DX21-53D |",
+        "| KF45D6 | 36 | 45 | 40 | 50 | 4DX21-61D |",
+        "| KF55D6 | 44 | 55 | 48 | 60 | 4DX22-75D |",
+        "| KF60D6 | 48 | 60 | 53 | 66 | 4DX23-82D |",
+        "| KF70D6 | 56 | 70 | 62 | 77 | 4DX23-90D |",
+        "| KF80D6 | 64 | 80 | 70 | 88 | 4110/125Z-11D |",
+        "| KF106D6 | 85 | 106 | 94 | 117 | CA4DF2-14D |",
+        "| KF120D6 | 96 | 120 | 106 | 132 | CA6DF2D-16D |",
+        "| KF145D6 | 116 | 145 | 128 | 160 | CA6DF2-18D |",
+        "| KF206D6 | 165 | 206 | 182 | 227 | CA6DL1-27D |",
+        "| KF250D6 | 200 | 250 | 220 | 275 | CA6DL2-32D |",
+        "| KF340D6 | 272 | 340 | 299 | 374 | CA6DM2J-42D |",
+        "| KF400D6 | 320 | 400 | 352 | 440 | CA6DM3J-49D |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 8",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KI20D5 | 16 | 20 | 18 | 22 | JE493DB-04 |",
+        "| KI25D5 | 20 | 25 | 22 | 28 | JE493DB-02 |",
+        "| KI30D5 | 24 | 30 | 26 | 33 | JE493ZDB-04 |",
+        "| KI40D5 | 32 | 40 | 35 | 44 | JE493ZLDB-02 |",
+        "| KI25D6 | 20 | 25 | 22 | 28 | JE493DB-03 |",
+        "| KI30D6 | 24 | 30 | 26 | 33 | JE493DB-01 |",
+        "| KI35D6 | 28 | 35 | 31 | 39 | JE493ZDB-03 |",
+        "| KI45D6 | 36 | 45 | 40 | 50 | JE493ZLDB-01 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 10",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KDI-30S | 24 | 30 | 26 | 33 | JE493ZDB-04 |",
+        "| KR40D5 | 32 | 40 | 35 | 44 | N4100ZDS-42 |",
+        "| KR55D5 | 44 | 55 | 48 | 60 | N4105ZDS |",
+        "| KR60D5 | 48 | 60 | 53 | 66 | N4105ZLDS |",
+        "| KR100D5 | 80 | 100 | 88 | 110 | 4RT55-110D |",
+        "| KR125D5 | 100 | 125 | 110 | 138 | 6RT80-132D |",
+        "| KR160D5 | 128 | 160 | 140 | 175 | 6RT80-176DE |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 11",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KR38D6 | 30 | 38 | 33 | 41 | N4105DS-38 |",
+        "| KR45D6 | 36 | 45 | 40 | 50 | N4100ZDS-42 |",
+        "| KR60D6 | 48 | 60 | 53 | 66 | N4105ZDS |",
+        "| KR70D6 | 56 | 70 | 62 | 77 | N4105ZLDS |",
+        "| KR90D6 | 72 | 90 | 80 | 100 | 4RT55-88D |",
+        "| KR115D6 | 92 | 115 | 100 | 125 | 4RT55-110D |",
+        "| KR140D6 | 112 | 140 | 120 | 150 | 6RT80-132D |",
+        "| KR175D6 | 140 | 175 | 152 | 190 | 6RT80-176DE |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 13",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KY9D5 | 7 | 9 | 8 | 10 | YD380D |",
+        "| KY10D5 | 8 | 10 | 9 | 11 | YD385D |",
+        "| KY45D5 | 36 | 45 | 40 | 50 | Y4102ZLD |",
+        "| KY60D5 | 48 | 60 | 53 | 66 | YD4EZLD |",
+        "| KY75D5 | 60 | 75 | 66 | 83 | Y4110ZLD |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 14",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KY13D6 | 10 | 13 | 11 | 14 | YD385D |",
+        "| KY56D6 | 45 | 56 | 50 | 63 | Y4105ZLD |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 17",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC20D5 | 16 | 20 | 18 | 22 | 4B3.9-G11 |",
+        "| KC25D5 | 20 | 25 | 22 | 28 | 4B3.9-G2 |",
+        "| KC56D5 | 45 | 56 | 48 | 60 | 4BTA3.9-G2 | UCI 224E",
+        "| KC73D5 | 58 | 73 | 64 | 80 | 4BTA3.9-G11 | UCI 224F",
+        "| KC80D5 | 64 | 80 | 70 | 88 | 4BTA3.9-G11 | UCI 224G",
+        "| KC100D5 | 80 | 100 | 88 | 110 | 6BT5.9-G2 | UCI 274C",
+        "| KC138D5 | 110 | 138 | 120 | 150 | 6BTAA5.9-G2 | UCI 274E",
+        "| KC180D5 | 144 | 180 | 160 | 200 | 6CTA8.3-G2 |",
+        "| KC200D5 | 160 | 200 | 176 | 220 | 6CTAA8.3-G2 |",
+        "| KC250D5 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2 |",
+        "| KC300D5 | 240 | 300 | 264 | 330 | 6LTAA9.5-G1 |",
+        "| KC318D5 | 254 | 318 | 280 | 350 | 6LTAA9.5-G1 |",
+        "| KC375D5 | 300 | 375 | 330 | 413 | 6ZTAA13-G3 | HCI 444FS",
+        "| KC400D5 | 320 | 400 | 360 | 450 | 6ZTAA13-G2 | HCI 444F",
+        "| KC425D5 | 340 | 425 | 374 | 467.5 | 6ZTAA13-G2 | HCI 544C",
+        "| KC438D5 | 350 | 438 | 384 | 480 | 6ZTAA13-G4 | HCI 544C",
+        "| KC450D5 | 360 | 450 | 400 | 500 | QSZ13-G5 | HCI 544C",
+        "| KC500D5 | 400 | 500 | 440 | 550 | QSZ13-G3 | HCI 544C",
+        "| KC50D5 | 40 | 50 | 44 | 55 | 4BTA3.9-G2 | UCI 224D",
+        "| KC60D5 | 48 | 60 | 53 | 66 | 4BTA3.9-G2 | UCI 224E",
+        "| KC150D5 | 120 | 150 | 132 | 165 | 6BTAA5.9-G12 | UCI 274F"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 18",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC313D5 | 250 | 313 | 280 | 350 | NTA855-G1B |",
+        "| KC400D5 | 320 | 400 | 360 | 450 | NTAA855-G7A |",
+        "| KC450D5 | 360 | 450 | 400 | 500 | KTA19-G3 |",
+        "| KC500D5 | 400 | 500 | 440 | 550 | KTA19-G4 |",
+        "| KC525D5 | 420 | 525 | 480 | 600 | KTAA19-G5 |",
+        "| KC550D5 | 440 | 550 | 500 | 625 | KTA19-G8 |",
+        "| KC625D5 | 500 | 625 | 550 | 688 | KTAA19-G6A |",
+        "| KC800D5 | 640 | 800 | 704 | 880 | KTA38-G2B |",
+        "| KC1000D5 | 800 | 1000 | 880 | 1100 | KTA38-G5 |",
+        "| KC1125D5 | 900 | 1125 | 1000 | 1250 | KTA38-G9 |",
+        "| KC1500D5 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 |",
+        "| KC1320D5 | 1320 | 1650 | 1440 | 1800 | KTA50-G15 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 19",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC34D6 | 27 | 34 | 30 | 37 | 4B3.9-G2 |",
+        "| KC138D6 | 110 | 138 | 120 | 150 | 6BTA5.9-G2 |",
+        "| KC190D6 | 152 | 190 | 168 | 210 | 6CTA8.3-G2 |",
+        "| KC280D6 | 224 | 280 | 246 | 308 | 6LTAA8.9-G3 |",
+        "| KC315D6 | 252 | 315 | 276 | 345 | 6LTAA9.5-G1 |",
+        "| KC375D6 | 300 | 375 | 330 | 413 | 6ZTAA13-G3 |",
+        "| KC438D6 | 350 | 438 | 384 | 480 | 6ZTAA13-G2 |",
+        "| KC450D6 | 360 | 450 | 400 | 500 | 6ZTAA13-G4 |",
+        "| KC25D6 | 20 | 25 | 22 | 28 | 4B3.9-G11 |",
+        "| KC38D6 | 30 | 38 | 32 | 40 | 4B3.9-G12 |",
+        "| KC45D6 | 36 | 45 | 40 | 50 | 4BT3.9-G2 |",
+        "| KC210D6 | 168 | 210 | 184 | 230 | 6CTAA8.3-G2 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 20",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC323D6 | 258 | 323 | 284 | 355 | NTA855-G1 |",
+        "| KC550D6 | 440 | 550 | 480 | 600 | KTA19-G3A |",
+        "| KC563D6 | 450 | 563 | 500 | 625 | KTA19-G4 |",
+        "| KC594D6 | 475 | 594 | 520 | 650 | KTAA19-G5 |",
+        "| KC675D6 | 540 | 675 | 600 | 750 | KTAA19-G6A |",
+        "| KC350D6 | 280 | 350 | 308 | 385 | NTA855-G1B |",
+        "| KC520D6 | 416 | 520 | 456 | 570 | KTA19-G3 |",
+        "| KC906D6 | 725 | 906 | 800 | 1000 | KTA38-G2 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 21",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KW230D5 | 184 | 230 | 202 | 253 | WP10D238E200 |",
+        "| KW313D5 | 250 | 313 | 275 | 344 | WP10D320E200 |",
+        "| KW375D5 | 300 | 375 | 330 | 413 | WP13D385E200 |",
+        "| KW400D5 | 320 | 400 | 360 | 450 | WP13D405E200 |",
+        "| KW500D5 | 400 | 500 | 440 | 550 | WP13D490E310 |",
+        "| KW575D5 | 460 | 575 | 506 | 633 | 6M33D572E200 |",
+        "| KW675D5 | 540 | 675 | 594 | 743 | 6M33D670E200 |",
+        "| KW800D5 | 640 | 800 | 704 | 880 | 12M26D792E200 |",
+        "| KW900D5 | 720 | 900 | 792 | 990 | 12M26D902E200 |",
+        "| KW1000D5 | 800 | 1000 | 880 | 1100 | 12M26D968E200 |",
+        "| KW1375D5 | 1100 | 1375 | 1210 | 1513 | 12M33D1320E200 |",
+        "| KW170D5 | 136 | 170 | 150 | 187 | WP6D167E200 |",
+        "| KW650D5 | 520 | 650 | 572 | 715 | 6M33D633E200 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 22",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KW170D6 | 136 | 170 | 150 | 187 | WP6D180E201 |",
+        "| KW225D6 | 180 | 225 | 200 | 250 | WP10D238E201 |",
+        "| KW375D6 | 300 | 375 | 330 | 413 | WP13D385E201 |",
+        "| KW650D6 | 520 | 650 | 572 | 715 | 6M33D633E201 |",
+        "| KW900D6 | 720 | 900 | 792 | 990 | 12M26D902E201 |",
+        "| KW1000D6 | 800 | 1000 | 880 | 1100 | 12M26D1012E201 |",
+        "| KW1250D6 | 1000 | 1250 | 1100 | 1375 | 12M33D1265E201 |",
+        "| KW1750D6 | 1400 | 1750 | 1540 | 1925 | 16M33D1680E311 |",
+        "| KW1875D6 | 1500 | 1875 | 1650 | 2063 | 16M33D1785E311 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 23",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KS100D5 | 80 | 100 | 88 | 110 | 4HTAA4.3-G21 |",
+        "| KS313D5 | 250 | 313 | 275 | 344 | 6ETAA11.8-G22 |",
+        "| KS438D5 | 350 | 438 | 385 | 481 | 6ETAA12.8-G31 |",
+        "| KS110D6 | 88 | 110 | 96 | 120 | 4HTAA4.3-G21 |",
+        "| KS125D6 | 100 | 125 | 110 | 138 | 4HTAA4.3-G23 |",
+        "| KS150D6 | 120 | 150 | 132 | 165 | 6HTAA6.5-G21 |",
+        "| KS200D6 | 160 | 200 | 176 | 220 | 6HTAA6.5-G23 |",
+        "| KS228D6 | 182 | 228 | 200 | 250 | 6DTAA8.9-G21 |",
+        "| KS350D6 | 280 | 350 | 308 | 385 | 6ETAA11.8-G22 |",
+        "| KS375D6 | 300 | 375 | 330 | 413 | 6ETAA12.8-G22 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 24",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KY90D5 | 72 | 90 | 80 | 100 | LR4M3L-D |",
+        "| KY100D5 | 80 | 100 | 88 | 110 | LR6A3Z-D |",
+        "| KY125D5 | 100 | 125 | 110 | 138 | LR6A3L-D |",
+        "| KY150D5 | 120 | 150 | 132 | 165 | LR6B3L-D |",
+        "| KY170D5 | 136 | 170 | 150 | 187 | LR6M3L-D |",
+        "| KY200D5 | 160 | 200 | 176 | 220 | YM6H4L-D |",
+        "| KY225D5 | 180 | 225 | 200 | 250 | YM6H4LF-D |",
+        "| KY250D5 | 200 | 250 | 220 | 275 | YM6S4L-D |",
+        "| KY313D5 | 250 | 313 | 275 | 344 | YM6S9L-D |",
+        "| KY375D5 | 300 | 375 | 330 | 413 | YM6S9LF-D |",
+        "| KY400D5 | 320 | 400 | 360 | 450 | YM6S9LF-D |",
+        "| KY100D6 | 80 | 100 | 88 | 110 | LR4M3L-D |",
+        "| KY110D6 | 88 | 110 | 96 | 120 | LR4M3L-DA |",
+        "| KY135D6 | 108 | 135 | 120 | 150 | LR6A3L-D |",
+        "| KY160D6 | 128 | 160 | 140 | 175 | LR6B3L-D |",
+        "| KY175D6 | 140 | 175 | 152 | 190 | LR6M3L-D |",
+        "| KY220D6 | 176 | 220 | 192 | 240 | YM6H4L-D |",
+        "| KY240D6 | 192 | 240 | 212 | 265 | YM6H4LF-D |",
+        "| KY270D6 | 216 | 270 | 240 | 300 | YM6S4L-D |",
+        "| KY300D6 | 240 | 300 | 264 | 330 | YM6S4LF-D |",
+        "| KY350D6 | 280 | 350 | 308 | 385 | YM6S9L-D |",
+        "| KY375D6 | 300 | 375 | 330 | 413 | YM6S9L-DB |"
       ]
     }
   ],
