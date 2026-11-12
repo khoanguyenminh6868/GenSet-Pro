@@ -132,7 +132,14 @@ export const negKey = (e) => `${e.part}|${e.modelKey}|${e.what}${e.what === "sou
 // The model names a text writes (tokens with a letter and a digit, 4+ characters), as CAT.keyOf keys: the models an HSMT names.
 export function modelKeysOf(text) {
   const out = new Set();
-  for (const m of String(text || "").normalize("NFC").match(/[A-Za-z0-9][A-Za-z0-9\-_./]{2,}[A-Za-z0-9]/g) || []) if (/[A-Za-z]/.test(m) && /\d/.test(m)) out.add(keyOf(m));
+  const t = String(text || "").normalize("NFC");
+  for (const m of t.match(/[A-Za-z0-9][A-Za-z0-9\-_./]{2,}[A-Za-z0-9]/g) || []) if (/[A-Za-z]/.test(m) && /\d/.test(m)) out.add(keyOf(m));
+  // A model written with a space before its last part ("DHY110K SE", "QES 30"): its key without the space too
+  // (2026-11-12: the HSMT's "DHY110K SE" was refused as "model không phải model của lượt này").
+  for (const m of t.matchAll(/(?<![A-Za-z0-9])([A-Za-z0-9][A-Za-z0-9\-_./]{1,}[A-Za-z0-9])\s+([A-Za-z0-9]{1,4})(?![A-Za-z0-9])/g)) {
+    const all = `${m[1]}${m[2]}`;
+    if (/[A-Za-z]/.test(all) && /\d/.test(all) && /\d/.test(m[1])) out.add(keyOf(all));
+  }
   return out;
 }
 const ORIGIN_VI = { all: "mọi xuất xứ", cn: "nhà cung cấp đặt tại Trung Quốc", g7: "nhóm G7", g20: "nhóm G20", g7eu: "nhóm G7 + EU", g20eu: "nhóm G20 + EU", other: "xuất xứ khác" };
