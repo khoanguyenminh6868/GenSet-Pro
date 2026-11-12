@@ -2183,6 +2183,8 @@ async function runFinish() {
     const at = now(), rows = [];
     const reqDoc = (error) => ({ coll: KIND_REQ[meta.kind], id: meta.key, data: { notifyNo: meta.notifyNo, requestedAt: meta.requestedAt, doneAt: at, error } });
     const err = fs.existsSync(path.join(dir, "error.txt")) ? fs.readFileSync(path.join(dir, "error.txt"), "utf8").trim().slice(0, 300) : "";
+    // read-guard.json: the agent run's read check (suppliers/agent-read.mjs guard); none for runs without an agent.
+    const guard = readJson(path.join(dir, "read-guard.json"), {}) || {};
     try {
       if (meta.kind === "translation") {
         const parts = fs.readdirSync(dir).filter((f) => /^result-\d+\.json$/.test(f)).sort((a, b) => a.match(/\d+/)[0] - b.match(/\d+/)[0]);
@@ -2192,12 +2194,17 @@ async function runFinish() {
           rows.push({ coll: "translation", id: `${meta.key}_${i}`, data: { sections: Array.isArray(j) ? j : j.sections || [] } });
         });
         if (parts.length) rows.push({ coll: "translation", id: meta.key, data: { v2: true, parts: parts.length, total: parts.length, done: true, at } }, { coll: "translation", id: `${meta.key}_edit`, data: { text: null } });
+      } else if (guard.incomplete && fs.existsSync(path.join(dir, "result.json"))) {
+        // The agent did not read every line of what it had to (suppliers/agent-read.mjs guard, from the run's log): the
+        // result may miss something. Nothing is posted over the earlier result; the request gets a short error.
+        rows.push(reqDoc(String(guard.error || "Agent chưa đọc hết hồ sơ; giữ kết quả cũ, bấm gửi lại yêu cầu.").slice(0, 300)));
+        lines.push(`${KIND_NAME[meta.kind]} ${meta.key}: agent đọc thiếu, giữ kết quả cũ`);
       } else if (fs.existsSync(path.join(dir, "result.json"))) {
         const result = readJson(path.join(dir, "result.json"), null);
         if (!result) throw new Error("result.json không phải JSON hợp lệ");
         const checked = meta.translate || meta.kind === "hsdt" ? [] : checkResult(meta, result, dir);
         if (meta.kind === "analysis") result.generatorSets = setsOf(result.generatorSets);
-        if (meta.kind === "analysis") rows.push({ coll: "analysis", id: meta.key, data: { status: "done", result, notes: [].concat(readJson(path.join(dir, "notes.json"), []) || [], checked, readJson(path.join(dir, "cuts.json"), []) || []), analyzedAt: at, by: "hsmt-worker" } });
+        if (meta.kind === "analysis") rows.push({ coll: "analysis", id: meta.key, data: { status: "done", result, notes: [].concat(readJson(path.join(dir, "notes.json"), []) || [], checked, readJson(path.join(dir, "cuts.json"), []) || [], guard.notes || []), analyzedAt: at, by: "hsmt-worker" } });
         else if (meta.translate) {
           // The English version joins the stored result, unless a new comparison replaced it meanwhile.
           const cur = await doc("tlkt", meta.key);

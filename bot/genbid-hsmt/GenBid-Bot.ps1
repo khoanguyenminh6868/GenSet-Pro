@@ -257,6 +257,12 @@ function Invoke-Node {
     try { & (Find-Node) $SyncJs @args 2>&1 | ForEach-Object { "$_" } } finally { $ErrorActionPreference = $eap }
 }
 
+# Chạy một tệp node với tham số, trả các dòng nó in ra (lỗi của node không dừng bot).
+function Invoke-Node-File([string]$node, [string]$file, [string[]]$argList) {
+    $eap = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+    try { & $node $file @argList 2>&1 | ForEach-Object { "$_" } } finally { $ErrorActionPreference = $eap }
+}
+
 # Phân tích, Đối chiếu, Tạo bản tiếng Anh, Tạo HSDT tham khảo: chuẩn bị dữ liệu bằng code, Claude chỉ đọc và ghi kết quả,
 # rồi bot gửi kết quả lên web bằng code.
 function Invoke-Worker([string[]]$sigs) {
@@ -305,11 +311,24 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
     $model = if (@($dirs | Where-Object { (Split-Path $_ -Leaf) -notlike 'translation-*' }).Count) { $DeepModel } else { $LightModel }
     Log "Gọi Claude agent ($model) cho: $(($dirs | ForEach-Object { Split-Path $_ -Leaf }) -join ', ')  (log: $out)"
     # Bộ công cụ tối thiểu: không MCP, không skill/plugin, không Chrome (giảm phần nền mỗi lượt từ ~55k xuống ~9k token).
-    # json để đọc total_cost_usd ghi vào sổ chi tiêu API (khi lượt trả bằng API key).
-    $cliArgs = @('-p', '--permission-mode', 'auto', '--output-format', 'json', '--model', $model, '--strict-mcp-config', '--disable-slash-commands', '--tools', 'Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep')
+    # Chốt đọc (Khoa 12/11/2026): input.md chia phần ≤ mức Read đọc trọn + read-order.json (suppliers\agent-read.mjs prep),
+    # agent chạy stream-json (log có từng lần Read) để guard biết mỗi thư mục đã đọc đủ chưa. Không có repo thì chạy như cũ.
+    $readJs = Join-Path $RepoDir 'suppliers\agent-read.mjs'; $node = Find-Node
+    $guard = $node -and (Test-Path $readJs)
+    if ($guard) { Invoke-Node-File $node $readJs (@('prep') + $dirs) | ForEach-Object { Log "  đọc: $_" } }
+    # stream-json (--verbose) để code đọc được từng lần Read; dòng result cuối có total_cost_usd (sổ chi tiêu API).
+    $cliArgs = @('-p', '--permission-mode', 'auto', '--output-format', 'stream-json', '--verbose', '--model', $model, '--strict-mcp-config', '--disable-slash-commands', '--tools', 'Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep')
     $api = [bool]$env:ANTHROPIC_API_KEY
     $reason = Start-Run $claude $cliArgs $promptFile $sigs $out
-    if ($api) { try { $c = (Get-Content $out -Raw -Encoding UTF8 | ConvertFrom-Json).total_cost_usd; if ($c) { Add-ApiSpend ([double]$c) 'agent' } } catch {} }
+    if ($api) {
+        try {
+            $last = Get-Content $out -Encoding UTF8 | Where-Object { $_ -like '*"type":"result"*' } | Select-Object -Last 1
+            $c = ($last | ConvertFrom-Json).total_cost_usd
+            if ($c) { Add-ApiSpend ([double]$c) 'agent' }
+        } catch {}
+    }
+    # Đọc thiếu thì read-guard.json trong thư mục báo; genbid-sync.js finish không ghi đè kết quả cũ bằng kết quả đó.
+    if ($guard) { Invoke-Node-File $node $readJs (@('guard', '--log', $out, '--cwd', $Root) + $dirs) | ForEach-Object { Log "  $_" } }
     return $reason
 }
 
@@ -376,7 +395,12 @@ function Wait-Worker($p, [string]$out) {
         Log 'Đã xoá tệp khoá mà lượt worker để lại.'
     }
     # Hết hạn mức Claude (dùng chung gói với Khoa): báo rõ giờ làm mới và tạm dừng gọi Agent.
-    $text = (Get-Content $out -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) + (Get-Content "$out.err" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue)
+    # Log stream-json của agent có cả nội dung tệp agent đọc và các dòng sự kiện: chỉ dò trên các dòng không phải JSON
+    # và dòng "result" cuối (chữ "rate limit" trong một tệp HSMT không được coi là hết hạn mức), cộng tệp .err.
+    $lines = @(Get-Content $out -Encoding UTF8 -ErrorAction SilentlyContinue)
+    $keep = @($lines | Where-Object { $_ -notmatch '^\s*\{' })
+    $lastResult = $lines | Where-Object { $_ -match '^\s*\{.*"type"\s*:\s*"result"' } | Select-Object -Last 1
+    $text = ((@($keep) + @($lastResult)) -join "`n") + (Get-Content "$out.err" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue)
     # Trả bằng API key (.anthropic-api-key): hết tiền nạp hoặc khoá sai thì báo rõ, không tạm dừng theo giờ.
     # Hết hạn mức API tháng (Khoa 12/11/2026): ghi "exhausted" để các lượt sau dùng gói tháng tới kỳ làm mới.
     if ($code -ne 0 -and $env:ANTHROPIC_API_KEY -and $text -match '(?i)credit balance is too low|reached your specified api usage limits') {
