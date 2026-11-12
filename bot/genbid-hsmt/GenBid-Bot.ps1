@@ -257,6 +257,12 @@ function Invoke-Node {
     try { & (Find-Node) $SyncJs @args 2>&1 | ForEach-Object { "$_" } } finally { $ErrorActionPreference = $eap }
 }
 
+# Chạy một tệp node với tham số, trả các dòng nó in ra (lỗi của node không dừng bot).
+function Invoke-Node-File([string]$node, [string]$file, [string[]]$argList) {
+    $eap = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+    try { & $node $file @argList 2>&1 | ForEach-Object { "$_" } } finally { $ErrorActionPreference = $eap }
+}
+
 # Phân tích, Đối chiếu, Tạo bản tiếng Anh, Tạo HSDT tham khảo: chuẩn bị dữ liệu bằng code, Claude chỉ đọc và ghi kết quả,
 # rồi bot gửi kết quả lên web bằng code.
 function Invoke-Worker([string[]]$sigs) {
@@ -305,11 +311,24 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
     $model = if (@($dirs | Where-Object { (Split-Path $_ -Leaf) -notlike 'translation-*' }).Count) { $DeepModel } else { $LightModel }
     Log "Gọi Claude agent ($model) cho: $(($dirs | ForEach-Object { Split-Path $_ -Leaf }) -join ', ')  (log: $out)"
     # Bộ công cụ tối thiểu: không MCP, không skill/plugin, không Chrome (giảm phần nền mỗi lượt từ ~55k xuống ~9k token).
-    # json để đọc total_cost_usd ghi vào sổ chi tiêu API (khi lượt trả bằng API key).
-    $cliArgs = @('-p', '--permission-mode', 'auto', '--output-format', 'json', '--model', $model, '--strict-mcp-config', '--disable-slash-commands', '--tools', 'Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep')
+    # Chốt đọc (Khoa 12/11/2026): input.md chia phần ≤ mức Read đọc trọn + read-order.json (suppliers\agent-read.mjs prep),
+    # agent chạy stream-json (log có từng lần Read) để guard biết mỗi thư mục đã đọc đủ chưa. Không có repo thì chạy như cũ.
+    $readJs = Join-Path $RepoDir 'suppliers\agent-read.mjs'; $node = Find-Node
+    $guard = $node -and (Test-Path $readJs)
+    if ($guard) { Invoke-Node-File $node $readJs (@('prep') + $dirs) | ForEach-Object { Log "  đọc: $_" } }
+    # stream-json (--verbose) để code đọc được từng lần Read; dòng result cuối có total_cost_usd (sổ chi tiêu API).
+    $cliArgs = @('-p', '--permission-mode', 'auto', '--output-format', 'stream-json', '--verbose', '--model', $model, '--strict-mcp-config', '--disable-slash-commands', '--tools', 'Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep')
     $api = [bool]$env:ANTHROPIC_API_KEY
     $reason = Start-Run $claude $cliArgs $promptFile $sigs $out
-    if ($api) { try { $c = (Get-Content $out -Raw -Encoding UTF8 | ConvertFrom-Json).total_cost_usd; if ($c) { Add-ApiSpend ([double]$c) 'agent' } } catch {} }
+    if ($api) {
+        try {
+            $last = Get-Content $out -Encoding UTF8 | Where-Object { $_ -like '*"type":"result"*' } | Select-Object -Last 1
+            $c = ($last | ConvertFrom-Json).total_cost_usd
+            if ($c) { Add-ApiSpend ([double]$c) 'agent' }
+        } catch {}
+    }
+    # Đọc thiếu thì read-guard.json trong thư mục báo; genbid-sync.js finish không ghi đè kết quả cũ bằng kết quả đó.
+    if ($guard) { Invoke-Node-File $node $readJs (@('guard', '--log', $out) + $dirs) | ForEach-Object { Log "  $_" } }
     return $reason
 }
 

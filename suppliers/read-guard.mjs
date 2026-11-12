@@ -150,9 +150,20 @@ export function stoppedNote(end, error = "") {
   return "";
 }
 // One run folder + its log → { cov, end, notes }. Nothing when the folder has no read-order.json (an old run).
-export function guardRun(dir, logText, opts = {}) {
+export function guardRun(dir, logText, opts = {}) { return guardTrace(dir, readTrace(logText), opts); }
+// The reads and shell reads of a trace that are inside `dir`: one agent run works on several folders (Phân tích HSMT),
+// and input.md of one is not input.md of another. A path that is not under dir (relative, other folder) does not count.
+const slash = (p) => String(p || "").replace(/\\/g, "/").toLowerCase();
+export function traceUnder(trace, dir) {
+  const d = slash(dir).replace(/\/+$/, "") + "/", under = (x) => slash(x.file).startsWith(d);
+  return { ...trace, reads: trace.reads.filter(under), shell: trace.shell.filter(under) };
+}
+// guardRun for one folder of a run on several: `under` = the folder the reads must be in.
+export function guardTrace(dir, trace, opts = {}) {
+  const { under, ...o } = opts;
+  if (under) trace = traceUnder(trace, dir);
+  opts = o;
   const files = partsMap(dir);
-  const trace = readTrace(logText);
   if (!files.length) return { cov: [], end: trace.end, notes: readNotes([], trace.end, opts), trace };
   const cov = coverage(trace, files);
   return { cov, end: trace.end, notes: readNotes(cov, trace.end, opts), trace };
