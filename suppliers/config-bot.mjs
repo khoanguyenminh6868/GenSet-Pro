@@ -788,7 +788,7 @@ const CAP_SIGNED = new RegExp(String.raw`(?:≥|>=|>|tối thiểu|không (?:nh�
 const CAP_LABELED = new RegExp(String.raw`(c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n|d[ựu] ph[òo]ng)|prime(?:\s+power)?|standby(?:\s+power)?|continuous(?:\s+power)?)([^\n\d≥≤<>=]{0,30}?)` + CAP_NUM, "gi");
 // Its first word is capitalised ("Máy phát", "Tổ máy", "Điều chuyển Máy"): "6 máy phát điện 12,5KVA" is a count in a list.
 const CAP_HEAD = /^\s*(?:(?:\d{1,2}(?:\.\d{1,2})*\.?|[IVX]{1,4}\.?|[a-hA-H][.)])\s*)?[-–:|*•+]?\s*((?:[^\d\n]{0,25}?\s)?(?:t[ổo]\s+)?m[áa]y\s+ph[áa]t\b)/i;
-const isHead = (line) => { const m = line.match(CAP_HEAD); return !!m && /^\p{Lu}/u.test(m[1]); };
+const isHead = (line) => { const m = line.match(CAP_HEAD); return !!m && /^[^\p{L}\d]*\p{Lu}/u.test(m[1]); };
 export function sizeBlocks(t, sizes) {
   const text = withoutOtherEquipment(unflatten(t)), L = text.split("\n"), ments = [], kwSizes = sizes.some((s) => s.cap?.unit === "kW");
   const engineBefore = (at) => ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "));
