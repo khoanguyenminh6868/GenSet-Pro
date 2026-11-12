@@ -373,24 +373,41 @@ const foldSame = (s) => s.replace(/[^\x00-\x7f]/g, (c) => (c === "đ" ? "d" : c 
 const HEADING = /^(?!\s*---)[ \t>*-]*(ch(?:uo|u)ng|phan)[ \t]+([ivx]+|\d+)\b[ \t]*(?:[.:\-–—][ \t]*(.{0,120})|$)/gim;
 const TECH_TITLE = /yeu\s*ca?u\s*(ve\s*)?(ky\s*thuat|pham\s*vi|ke\s*hoach)|pham\s*vi\s*cung\s*cap|thong\s*so\s*ky\s*thuat|chi\s*dan\s*ky\s*thuat|dac\s*tinh\s*ky\s*thuat|tieu\s*chuan\s*ky\s*thuat|dieu\s*khoan\s*tham\s*chieu/i;
 const SPEC_HIT = /kva|xi\s?lanh|xy\s?lanh|dau\s*phat|cong\s*suat\s*(lien\s*tuc|du\s*phong)|prime|standby/gi;
-// The MAX_TP characters of text[from, to) with the most SPEC_HIT figures (f: foldSame(text)), whole lines only.
-function densest(text, f, from, to) {
+// The `max` (MAX_TP) characters of text[from, to) with the most SPEC_HIT figures (f: foldSame(text)), whole lines only.
+function densest(text, f, from, to, max = MAX_TP) {
   const hits = [...f.slice(from, to).matchAll(SPEC_HIT)].map((m) => from + m.index);
   let start = from, most = -1;
   for (let i = 0, j = 0; i < hits.length; i++) {
-    while (hits[i] - hits[j] > MAX_TP * 0.9) j++;
+    while (hits[i] - hits[j] > max * 0.9) j++;
     if (i - j + 1 > most) { most = i - j + 1; start = hits[j]; }
   }
   // A little before the first figure (its heading), not past the chapter's end, then back to a line start.
-  start = Math.max(from, Math.min(start - MAX_TP * 0.05, to - MAX_TP));
+  start = Math.max(from, Math.min(start - max * 0.05, to - max));
   // Forward to the next line start, so the window still reaches the chapter's end when it was placed there.
   if (start > from) { const nl = text.indexOf("\n", start - 1); start = nl < 0 || nl + 1 >= to ? from : nl + 1; }
-  const win = (s) => { let e = Math.min(to, s + MAX_TP); if (e < to) { const nl = text.lastIndexOf("\n", e - 1); if (nl > s) e = nl + 1; } return [s, e]; };
+  const win = (s) => { let e = Math.min(to, s + max); if (e < to) { const nl = text.lastIndexOf("\n", e - 1); if (nl > s) e = nl + 1; } return [s, e]; };
   const count = ([s, e]) => hits.filter((h) => h >= s && h < e).length;
-  // Never fewer figures than the chapter's first MAX_TP characters (what was kept before).
+  // Never fewer figures than the chapter's first `max` characters (what was kept before).
   const a = win(start), b = win(from), [s, e] = count(a) > count(b) ? a : b;
   return text.slice(s, e);
 }
+// A text cut to at most `max` characters for an agent (cut guard, điều phối 2026-11-12): the window with the most
+// technical figures (densest), whole lines, never fewer figures than its first `max` characters. Returns the window,
+// the lines left out (1-based ranges of `text`), the figures in them and a line for the agent; a text that fits comes
+// back whole with no note.
+export function fitPart(text, max) {
+  text = String(text ?? "");
+  if (text.length <= max) return { text, dropped: [], hits: 0, lines: lineNo(text, text.length), note: "" };
+  const f = foldSame(text), kept = densest(text, f, 0, text.length, max), at = text.indexOf(kept);
+  const end = (s) => (s.endsWith("\n") ? 1 : 0);
+  const all = lineNo(text, text.length - end(text)), a = lineNo(text, at), b = lineNo(text, at + kept.length - end(kept));
+  const dropped = [...(a > 1 ? [[1, a - 1]] : []), ...(b < all ? [[b + 1, all]] : [])];
+  const hits = (f.slice(0, at).match(SPEC_HIT) || []).length + (f.slice(at + kept.length).match(SPEC_HIT) || []).length;
+  return { text: kept, dropped, hits, lines: all,
+    note: `(đã lược: dòng ${dropped.map(([x, y]) => (x === y ? `${x}` : `${x}–${y}`)).join(", ")} / ${all} của phần này — giữ ${kept.length.toLocaleString("vi-VN")} ký tự liền nhau có nhiều thông số nhất; phần lược có ${hits} chỗ thông số)` };
+}
+// The line (1-based) of character `pos` of `text`.
+const lineNo = (text, pos) => { let n = 1; for (let i = text.indexOf("\n"); i >= 0 && i < pos; i = text.indexOf("\n", i + 1)) n++; return n; };
 // Whether the last technicalPart kept only a window of a longer text (hsmtGaps reads it right after the call).
 export let tpCut = false;
 export function technicalPart(text) {
@@ -2113,7 +2130,7 @@ const SPEC_NOT = /hồ\s*sơ|thông\s*tin|phụ\s*kiện|quản\s*lý\s*chất\s
 // Short on the web (điều phối 2026-11-12: Khoa dislikes long warnings): a count and the first 3 names, ≤ NOTE_MAX.
 export const NOTE_MAX = 300;
 const few = (names) => { const n = [...new Set(names.map((x) => String(x).replace(/\s*\(.*?\)\s*/g, " ").replace(/\s+/g, " ").trim()))]; return n.slice(0, 3).join("; ") + (n.length > 3 ? ` và ${n.length - 3} điểm khác` : ""); };
-const capNote = (s) => (s.length <= NOTE_MAX ? s : s.slice(0, NOTE_MAX - 1).replace(/\s+\S*$/, "") + "…");
+export const capNote = (s) => (s.length <= NOTE_MAX ? s : s.slice(0, NOTE_MAX - 1).replace(/\s+\S*$/, "") + "…");
 // A missing code worth the web (điều phối 2026-11-12, IB2600592684: "bảo hành ≥ 1000 giờ chạy" read as "Đo lường,
 // hiển thị"): of the engine, alternator or genset, on an HSMT line with a measured figure (a number and its unit). The
 // rest goes to the console only.
@@ -3394,18 +3411,21 @@ const AGENT_INPUT = "Đọc prompt.md trong thư mục này và làm đúng như
 // The agent's first message (2026-11-12, token-do.md): the instructions themselves, not "read prompt.md" — 4 of 6 runs
 // opened with `ls; cat prompt.md`, whose 30 KB went past the shell's output limit, came back as a 2 KB preview and was
 // read a second time — then the files to read, each under the Read limit, in order (read-order.json, prep).
-export function agentInput(dir, task = "") {
+// scripts: false for a run without Bash (Gợi ý giá đấu): no scripts/ folder, no line about it; the hsmt.txt line only
+// where there is one.
+export function agentInput(dir, task = "", { scripts = true } = {}) {
   const p = (f) => path.join(dir, f);
   if (!fs.existsSync(p("prompt.md")) || !fs.existsSync(p("read-order.json"))) return AGENT_INPUT;
   const order = JSON.parse(fs.readFileSync(p("read-order.json"), "utf8"));
-  fs.mkdirSync(p("scripts"), { recursive: true });
+  if (scripts) fs.mkdirSync(p("scripts"), { recursive: true });
+  const split = order.map((f) => f.match(/^(.+)-\d+\.md$/)?.[1]).filter((b, i, a) => b && a.indexOf(b) === i);
   return [fs.readFileSync(p("prompt.md"), "utf8").trim(), "", "---", "",
     `Các hướng dẫn ở trên chính là prompt.md của thư mục này (không cần mở lại). Chạy không người trông, không ai trả lời câu hỏi; ${task || "chỉ ghi result.json (và newCatalog.json khi hướng dẫn yêu cầu)"}.`,
     `Đọc bằng Read, theo thứ tự, mỗi tệp một lần, trọn tệp (không cần offset / limit — code đã cắt mỗi tệp dưới giới hạn của Read): ${order.join(", ")}.`
-      + (order.some((f) => /^(catalog|input)-\d+\.md$/.test(f)) ? " Các tệp catalog-N.md / input-N.md là catalog.md / input.md cắt theo mục, chữ y hệt; catalog.md, input.md vẫn để nguyên để grep, không Read lại chúng." : ""),
+      + (split.length ? ` Các tệp ${split.map((b) => `${b}-N.md`).join(" / ")} là ${split.map((b) => `${b}.md`).join(" / ")} cắt theo mục, chữ y hệt; ${split.map((b) => `${b}.md`).join(", ")} vẫn để nguyên để grep, không Read lại chúng.` : ""),
     "Các tệp trong danh sách trên KHÔNG được đọc bằng Bash (cat, head, tail, sed, cut, head -c / tail -c, | cut -c…): đầu ra shell bị cắt và cut bỏ chữ cuối dòng. Code kiểm trong log của lượt này mọi dòng của các tệp đó đã qua Read; thiếu dòng nào thì kết quả bị ghi là chưa đọc hết.",
-    "hsmt.txt và controllers.md: chỉ grep / sed theo dòng, không đọc trọn.",
-    "Script tự viết (dựng result.json, newCatalog.json...) để trong thư mục scripts/ của thư mục này, chạy bằng node (máy không có python); đừng dùng thư mục tạm ngoài thư mục này: lượt khác (cỡ máy khác chạy song song, lượt cũ) có thể đang dùng tên đó.",
+    ...(fs.existsSync(p("hsmt.txt")) ? ["hsmt.txt và controllers.md: chỉ grep / sed theo dòng, không đọc trọn."] : []),
+    ...(scripts ? ["Script tự viết (dựng result.json, newCatalog.json...) để trong thư mục scripts/ của thư mục này, chạy bằng node (máy không có python); đừng dùng thư mục tạm ngoài thư mục này: lượt khác (cỡ máy khác chạy song song, lượt cũ) có thể đang dùng tên đó."] : []),
   ].join("\n");
 }
 // A tender of several sizes (sizesOf, Khoa 2026-11-04): one agent per size, at most MAX_SIZES, all at once; their
