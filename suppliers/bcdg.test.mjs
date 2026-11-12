@@ -53,6 +53,64 @@ test("19 gói thật: trích được ≥16 gói, đoạn nào cũng nhắc côn
   assert.ok(got >= 16, "chỉ trích được " + got);
 });
 
+// ---------- khối thuyết minh (bcdg-why, 2026-11-12) ----------
+const { bcdgReasonEx, pagesToRead } = require("../bot/genbid-hsmt/bcdg-reason.js");
+const BCDG_1203 = [
+  "Stt Tên nhà thầu Kết luận",
+  "1 Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên. Không đạt",
+  "2 Công ty Cổ phần Sáng Ban Mai. Đạt",
+  "b) Thuyết minh các trường hợp nhà thầu không đáp ứng yêu cầu về kỹ thuật nêu",
+  "trong E-HSMT (kể cả khi đã làm rõ E-HSDT (nếu có)).",
+  "Qua đánh giá về kỹ thuật có 02 nhà không đạt yêu cầu về kỹ thuật đó là:",
+  "- Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên.",
+  "- Công ty Cổ phần Tấn Đức.",
+  "1) Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:",
+  "Theo HSMT và nhận xét đánh giá HSDT nhà thầu:",
+  "4. Bảo hành, sửa chữa hư hỏng:",
+  "Không | - Thời gian bảo hành > 12 tháng kể từ ngày bàn giao",
+  "+ Thuyết minh Biện pháp thi công: 2-3 ngày.",
+  "Chương V, của E-HSMT: bảo hành chưa đủ.",
+  "2) Công ty Cổ phần Thương mại Tấn Đức.:",
+  "Hàng hóa của Tấn Đức không đáp ứng yêu cầu về CO.",
+  "c) Các nội dung lưu ý trong quá trình đánh giá: Không có.",
+].join("\n");
+test("khối thuyết minh: lấy tiêu đề mục của mình tới nhà thầu kế tiếp, không lấy dòng bảng/đoạn nhà thầu khác", () => {
+  const x = bcdgReasonEx(BCDG_1203);
+  assert.equal(x.source, "thuyet-minh");
+  assert.match(x.text, /^1\) Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:/);
+  assert.match(x.text, /Thời gian bảo hành/);
+  assert.match(x.text, /Chương V, của E-HSMT/, "dòng bắt đầu 'Chương' không phải mục lớn mới");
+  assert.doesNotMatch(x.text, /Tấn Đức|Sáng Ban Mai|Qua đánh giá/);
+});
+test("khối thuyết minh: tiêu đề kiểu 'b.1. Công ty ...' không có dấu hai chấm, 'Nhà thầu: Công ty ...'", () => {
+  const a = bcdgReasonEx("b) Thuyết minh các trường hợp nhà thầu không đáp ứng yêu cầu về kỹ thuật nêu trong E-HSMT\nb.1. Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên\nHàng hoá có ký mã hiệu GM96, catalogue GR-96 không giống.\nb.2. Công ty TNHH Minh Phú\nCO thiếu.\nc) Lưu ý");
+  assert.match(a.text, /GM96/); assert.doesNotMatch(a.text, /Minh Phú|CO thiếu/);
+  const b = bcdgReasonEx("b) Thuyết minh các trường hợp nhà thầu không đáp ứng yêu cầu về kỹ thuật nêu trong E-HSMT\nNhà thầu: Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên\n• Nhà thầu không có catalogue động cơ.\nNhà thầu: Công ty Hưng Phát\n• Thiếu CO.");
+  assert.match(b.text, /catalogue động cơ/); assert.doesNotMatch(b.text, /Hưng Phát|Thiếu CO/);
+});
+test("khối thuyết minh: không có khối của mình thì giữ cách cũ (dự phòng); mình chỉ được nhắc ở mục khác thì không lấy", () => {
+  const x = bcdgReasonEx("1 Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên Không đạt\nb) Thuyết minh các trường hợp nhà thầu không đáp ứng yêu cầu về kỹ thuật:\n1) Công ty Hưng Phát:\n- Thiếu CO.");
+  assert.equal(x.source, "doan"); assert.doesNotMatch(x.text, /Hưng Phát|CO/);
+});
+test("khối thuyết minh: mục tự nêu tên mình ngay ở tiêu đề (chỉ mình) → cả mục; tiêu đề nêu cả nhà thầu khác thì không coi là khối của mình", () => {
+  const x = bcdgReasonEx("b) Thuyết minh các trường hợp nhà thầu không đáp ứng yêu cầu về kỹ thuật nêu trong E-HSMT: Có (Nhà thầu Công ty TNHH Thiết bị Kỹ thuật Thảo\nNguyên không đạt yêu cầu)\n- Không cung cấp được model động cơ.\n4. Kết quả đánh giá về tài chính");
+  assert.match(x.text, /model động cơ/); assert.doesNotMatch(x.text, /tài chính/);
+  assert.notEqual(bcdgReasonEx("b) Thuyết minh các trường hợp nhà thầu không đáp ứng yêu cầu: Công ty Hưng Phát và Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên không đạt\n- Thiếu CO.").source, "thuyet-minh");
+});
+test("khối thuyết minh: trần 3.000 ký tự, cắt trọn dòng", () => {
+  const body = Array.from({ length: 120 }, (_, i) => `- Dòng nhận xét số ${i} của chuyên gia: không đáp ứng yêu cầu.`).join("\n");
+  const x = bcdgReasonEx("b) Thuyết minh các trường hợp nhà thầu không đáp ứng yêu cầu về kỹ thuật:\n1) Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:\n" + body);
+  assert.ok(x.text.length <= 3000 && x.text.length > 2500);
+  assert.match(x.text, /\.$/);
+});
+test("--locate: khối thuyết minh nhiều trang → thêm các trang tới trang có tiêu đề nhà thầu kế tiếp", () => {
+  const pg = { 10: "1 Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên Không đạt", 20: "b) Thuyết minh ... không đáp ứng\n1) Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:\nBảng nhận xét", 21: "tiếp bảng nhận xét", 22: "tiếp nữa", 23: "bảo hành\n2) Công ty Cổ phần Tấn Đức.:", 24: "của Tấn Đức" };
+  const want = pagesToRead([10, 20], (n) => pg[n] || "", 30);
+  assert.deepEqual([...want].sort((a, b) => a - b), [9, 10, 11, 19, 20, 21, 22, 23]);
+  // trang xếp hạng (dòng bảng kết bằng 'Không đạt') không mở khối: chỉ ±1
+  assert.deepEqual([...pagesToRead([10], (n) => pg[n] || "", 30)].sort((a, b) => a - b), [9, 10, 11]);
+});
+
 // ---------- bcdg-step.js ----------
 const FILES = [{ id: "AAAAAAAA-0000-0000-0000-000000000001", name: "bc1.pdf" }, { id: "BBBBBBBB-0000-0000-0000-000000000002", name: "bc2.pdf" }];
 const mk = (over = {}) => {

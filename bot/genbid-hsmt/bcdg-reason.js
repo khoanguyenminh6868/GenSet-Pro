@@ -28,7 +28,72 @@ function lines(text) {
 // MST ghi liền hoặc cách nhóm số ("4101 623 015", "4101.623.015"), không dính số khác hai đầu.
 const taxRe = (tax) => new RegExp("(?<!\\d)" + String(tax).split("").join("[\\s.]?") + "(?!\\d)");
 
-function bcdgReason(text, { tax = OUR_TAX } = {}) {
+// Khối "Thuyết minh các trường hợp nhà thầu không đáp ứng / không đạt / không hợp lệ ..." (Khoa, 2026-11-12, IB2400120387: bảng tổng
+// hợp chỉ có "Không đạt", nội dung thật nằm ở phần thuyết minh: "1) Công ty ...:" + bảng nhận xét của chuyên gia). Tiêu đề mục mang
+// tên mình → lấy tới tiêu đề nhà thầu kế tiếp hoặc mục lớn kế tiếp. Trần 3.000 ký tự, cắt trọn dòng.
+const EXPL_MAX = 3000;
+const EXPL_HEAD = /^(?:[-•+*]\s*|\(?[a-z]\)\s*|[a-z]\d{0,2}[.)]\s*|\d{1,2}[.)]\s*)?thuy.{1,3}t\s*m.{1,2}nh\b/i;
+const EXPL_FAIL = /kh[ôo]ng\s*(?:đ[áa]p\s*[ứu]ng|đ[ạa]t|h[ợo]p\s*l[ệe])|b[ịi]\s*lo[ạa]i/i;
+const MARK = "(?:[-•+*]\\s*|\\(?[a-z](?:\\.?\\d{1,2})?[.)]\\s*|\\d{1,2}[.)]\\s*)";
+// Tiêu đề nhà thầu: "1) Công ty ...:", "b.2) Công ty ...: <lý do>", "- Công ty ...:", "Nhà thầu: Công ty ...".
+const BIDDER_HEAD = new RegExp("^(?:" + MARK + NAME_WORD + "|(?:công\\s*ty|cty|liên\\s*danh)\\b)[^:]{0,170}:|^nhà\\s*thầu\\s*:\\s*\\S", "i");
+// Tiêu đề không dấu ":" ("4. CÔNG TY ...", "b.1. Công ty ..."): có số/chữ đánh mục, ngắn, không kết bằng dấu câu và không phải câu có lý do.
+const BIDDER_HEAD2 = new RegExp("^" + MARK + NAME_WORD + "\\s+[^.;:]{0,120}$", "i");
+const HEAD2_NOT = /không|chưa|thiếu|đã\s|đề\s*xuất|có\s/i;
+// Mục lớn kế tiếp: "c) ...", "c. ...", "4. Kết quả...", "IV. ...", "Bảng số", "Phần/Chương".
+const MAJOR = /^(?:\(?[c-z][.)]\s+(?!công\s*ty|nhà\s*thầu|liên\s*danh)\S|\d{1,2}\.\s+(?:kết\s*quả|đánh\s*giá|xếp\s*hạng|nhận\s*xét|bảng)|[IVX]{1,4}\.\s+\S|bảng\s+số\s+\d+\b)/i;
+
+function explanationBlocks(L, startOf) {
+  const blocks = [];
+  let sec = false, cur = null;
+  const close = () => { if (cur && cur.lines.length > 1) blocks.push(cur); cur = null; };
+  for (let i = 0; i < L.length; i++) {
+    const l = L[i];
+    // Trong mục, dòng gạch đầu dòng "- / + Thuyết minh Biện pháp thi công..." là nội dung, không phải tiêu đề mục mới.
+    const failHere = EXPL_FAIL.test(L.slice(i, i + 3).join(" ").slice(0, 320));
+    const isHead = EXPL_HEAD.test(l) && !(sec && /^[-•+*]/.test(l) && !failHere);
+    if (isHead && failHere) {
+      close(); sec = true;
+      // Tiêu đề mục tự nêu tên mình và chỉ mình ("... Có (Nhà thầu Công ty ... Thảo Nguyên không đạt ...)"): cả mục là của mình.
+      const hl = [l]; for (let k = i + 1; k < Math.min(L.length, i + 3) && !EXPL_HEAD.test(L[k]) && !BIDDER_HEAD.test(L[k]) && !new RegExp("^(?:" + MARK + "|nhà\\s*thầu\\s*:\\s*)" + NAME_WORD, "i").test(L[k]); k++) hl.push(L[k]);
+      const h = hl.join(" ");
+      if ((FULL.test(h) || SHORT.test(h)) && (h.match(/c[ôo]ng\s*ty|cty|li[êe]n\s*danh/gi) || []).length <= 1) cur = { i, lines: [l], end: i + 1 };
+      // "Thuyết minh ... không hợp lệ: Không có." → mục rỗng, tiếp tục (mục kế tiếp có thể có).
+      continue;
+    }
+    if (isHead) { close(); sec = false; continue; }
+    if (!sec) continue;
+    // Tên nhà thầu dài bị ngắt dòng: ghép với dòng kế để thấy dấu ":".
+    let head = BIDDER_HEAD.test(l) || (BIDDER_HEAD2.test(l) && !HEAD2_NOT.test(l) && /^(?:\(?[a-z](?:\.?\d{1,2})?[.)]|\d{1,2}[.)])\s/i.test(l)) ? l
+      : (i + 1 < L.length && new RegExp("^" + MARK + "(?:công|cty|liên|nhà)", "i").test(l) && !/[.;]$/.test(l) && BIDDER_HEAD.test(l + " " + L[i + 1]) ? l + " " + L[i + 1] : "");
+    if (head) {
+      close();
+      if (startOf(i) >= 0 || /4101623015/.test(head) || (head.indexOf(":") > 0 && startOf(i + 1) >= 0 && head.length > l.length)) cur = { i, lines: [l], end: i + 1 };
+      continue;
+    }
+    if (MAJOR.test(l)) { close(); sec = false; continue; }
+    if (cur) { cur.lines.push(l); cur.end = i + 1; }
+  }
+  close();
+  return blocks;
+}
+// Nối các khối, cắt trọn dòng ở trần EXPL_MAX.
+function joinCapped(parts, max) {
+  let out = "";
+  for (const p of parts) {
+    for (const ln of p) {
+      const next = out ? out + "\n" + ln : ln;
+      if (next.length > max) return out || ln.slice(0, max);
+      out = next;
+    }
+    out += "\n…";
+  }
+  return out.replace(/\n…$/, "");
+}
+
+const bcdgReason = (text, o) => bcdgReasonEx(text, o).text;
+// { text, source }: source = "thuyet-minh" (khối thuyết minh), "doan" (dự phòng: dòng bảng / đoạn lẻ), "" (không có).
+function bcdgReasonEx(text, { tax = OUR_TAX } = {}) {
   const L = lines(text), tre = tax ? taxRe(tax) : null;
   // Chỉ số dòng bắt đầu đoạn của mình nếu dòng i nhắc đúng công ty, không thì -1. Tên bị ngắt dòng
   // ("... Thiết bị Kỹ thuật" / "Thảo Nguyên") thì đoạn bắt đầu ở dòng trước.
@@ -42,6 +107,9 @@ function bcdgReason(text, { tax = OUR_TAX } = {}) {
     if (i > 0 && NAME_TAIL.test(L[i]) && (FULL.test(L[i - 1] + " " + L[i]) || SHORT.test(L[i - 1] + " " + L[i]))) return i - 1;
     return -1;
   };
+  // Ưu tiên khối thuyết minh; dòng bảng "Không đạt" / đoạn lẻ phía dưới chỉ là dự phòng khi báo cáo không có khối này.
+  const expl = explanationBlocks(L, startOf);
+  if (expl.length) return { text: joinCapped(expl.map((b) => b.lines), EXPL_MAX), source: "thuyet-minh" };
   const blocks = [];
   for (let i = 0; i < L.length; i++) {
     const s = startOf(i);
@@ -65,7 +133,7 @@ function bcdgReason(text, { tax = OUR_TAX } = {}) {
     if (next.length > MAX_CHARS) { out = out || b.text.slice(0, MAX_CHARS); break; }
     out = next;
   }
-  return out;
+  return { text: out, source: out ? "doan" : "" };
 }
 // Trang (chữ OCR nhanh, chất lượng thấp) có nhắc công ty mình không: so khớp chịu lỗi OCR, bỏ dấu. Dùng để chọn trang cần OCR kỹ
 // (ocr-pdf.js --locate); thà thừa trang còn hơn sót. "Thảo Nguyên" (lệch tối đa vài ký tự), "kỹ thuật Thảo", hoặc MST (cho phép
@@ -83,7 +151,27 @@ function mentionsUs(text, tax = OUR_TAX) {
   }
   return false;
 }
-module.exports = { bcdgReason, mentionsUs, OUR_TAX };
+// Trang cần OCR kỹ cho --locate: trang nhắc mình ± 1, và khi trang đó mở khối thuyết minh của mình (tiêu đề "1) Công ty ...:") mà
+// khối chạy qua nhiều trang thì thêm các trang kế tiếp tới trang có tiêu đề nhà thầu khác / mục lớn kế tiếp (trang đó cũng lấy; tối đa
+// EXTEND_MAX trang thêm cho mỗi chỗ). qOf(n) = chữ OCR nhanh của trang n ("" nếu không có); chỉ trang chạy trong total.
+const EXTEND_MAX = 8;
+const OPENER = new RegExp("^(?:" + MARK + "|nhà\\s*thầu\\s*:\\s*)?(?:công\\s*ty|cty|liên\\s*danh|tnhh)", "i");
+const ENDS_PASS = /(?:đạt|dat)\.?$/i, HEADY = /:\s*$|^\S{1,5}[.)]\s/;
+function pagesToRead(hits, qOf, total, tax = OUR_TAX) {
+  const want = new Set();
+  const ls = (n) => lines(qOf(n) || "");
+  for (const n of hits) {
+    for (const d of [-1, 0, 1]) if (n + d >= 1 && n + d <= total) want.add(n + d);
+    // Trang n có dòng tiêu đề/nhắc công ty mình (không phải dòng bảng xếp hạng kết bằng Đạt / Không đạt)?
+    if (!ls(n).some((l) => OPENER.test(l) && mentionsUs(l, tax) && !ENDS_PASS.test(l))) continue;
+    for (let p = n + 1, k = 0; p <= total && k < EXTEND_MAX; p++, k++) {
+      want.add(p);
+      if (ls(p).some((l) => (OPENER.test(l) && !mentionsUs(l, tax) && l.length < 160 && HEADY.test(l)) || MAJOR.test(l))) break;
+    }
+  }
+  return want;
+}
+module.exports = { bcdgReason, bcdgReasonEx, mentionsUs, pagesToRead, OUR_TAX };
 
 if (require.main === module) {
   const fs = require("fs");

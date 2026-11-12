@@ -140,8 +140,8 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
       const store = (pre, n, t) => { const f = cacheF(pre, n); if (f) { fs.mkdirSync(opts.cache, { recursive: true }); fs.writeFileSync(f, t, "utf8"); } };
       const late = () => opts.deadline && Date.now() > opts.deadline;
       if (opts.locate && NATIVE && scanned.length > 3) {
-        const { mentionsUs } = require("./bcdg-reason.js");
-        const hits = [];
+        const { mentionsUs, pagesToRead } = require("./bcdg-reason.js");
+        const hits = [], qs = {};
         for (const n of scanned) {
           let q = cached("f", n);
           if (q === null) {
@@ -156,10 +156,11 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
             fs.rmSync(path.join(tmp, img));
             store("f", n, q);
           }
+          qs[n] = q;
           if (mentionsUs(q)) hits.push(n);
         }
-        const want = new Set();
-        for (const n of hits) for (const d of [-1, 0, 1]) want.add(n + d);
+        // Pages with our name ±1, plus the following pages of a multi-page "Thuyết minh ... không đáp ứng" block of ours.
+        const want = pagesToRead(hits, (n) => qs[n] || pages[n - 1] || "", pages.length);
         process.stderr.write(`LOCATE ${hits.join(",") || "-"}${partial ? " (chưa xong)" : ""}\n`);
         scanned = scanned.filter((n) => want.has(n)).slice(0, max);
         for (const n of scanned) pages[n - 1] = "";
