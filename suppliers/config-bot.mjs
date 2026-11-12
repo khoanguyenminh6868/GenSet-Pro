@@ -3225,19 +3225,23 @@ export async function findPrep(key, dir, req, suppliers) {
   fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin: info.origin, cap: info.cap }), "utf8");
   return info;
 }
-// A product line of the record that covers the tender's power, in the tender's unit (95% to 140%; the candidates of catalog.md are 100% to 120% since 2026-11-12, this one is Tìm NCC's and stays: Khoa decides).
+// The power band of Tìm NCC (Khoa, 2026-11-12): the same as the candidates of catalog.md, NEAR_LOW (100% less the 0.5% of
+// rounding) to NEAR_HIGH (120%) of the tender's power; it was 95% to 140% (fitsCap) and 100% to 140% (rows).
+const inBand = (x, value) => x >= value * NEAR_LOW && x <= value * NEAR_HIGH + 1e-9;
+// A product line of the record that covers the tender's power, in the tender's unit (the band above: a line whose range
+// reaches into it).
 const capStr = (c) => (Array.isArray(c) ? c : c ? [c] : []).map((x) => `${x.value} ${x.unit}`).join(", ");
 // cap may be a list (a tender of several sizes): a line that covers any of them.
 export function fitsCap(rec, cap) {
   if (Array.isArray(cap)) return cap.some((c) => fitsCap(rec, c));
   if (!cap) return (rec.productLines || []).some((p) => p.power);
-  return (rec.productLines || []).some((p) => p.power?.unit === cap.unit && p.power.min <= cap.value * 1.4 && p.power.max >= cap.value * 0.95);
+  return (rec.productLines || []).some((p) => p.power?.unit === cap.unit && p.power.min <= cap.value * NEAR_HIGH + 1e-9 && p.power.max >= cap.value * NEAR_LOW);
 }
-// The engine rows of a record at the tender's power (100% to 140%, as mergeFind takes them): a product line alone
+// The engine rows of a record at the tender's power (the band above, as mergeFind takes them): a product line alone
 // fits the power but goes into no configuration (IB2600594596, 2026-11-06: Rehlko's tables named no engine).
 export function engineRows(rec, cap) {
   const caps = (Array.isArray(cap) ? cap : [cap]).filter(Boolean);
-  return CAT.build([rec]).engines.flatMap((e) => e.uses.filter((u) => !caps.length || caps.some((c) => rowPower(u, c) >= c.value && rowPower(u, c) <= c.value * 1.4)).map((u) => `${e.model}${u.genset ? ` (${u.genset})` : ""}`));
+  return CAT.build([rec]).engines.flatMap((e) => e.uses.filter((u) => !caps.length || caps.some((c) => inBand(rowPower(u, c), c.value))).map((u) => `${e.model}${u.genset ? ` (${u.genset})` : ""}`));
 }
 // newCatalog.json checked offline, the way addToCatalog will: records built with catalogRecords, then verify.mjs on a
 // copy in <dir>/_check with the saved pages. For a supplier already in the system only its new parts are checked
@@ -3265,7 +3269,7 @@ export async function findCheck(dir, suppliers, cap) {
 }
 // Suppliers Tìm NCC added go into the suggested configurations in code, with no agent and no tokens (Khoa,
 // 2026-11-01), from its table rows (web/catalog.js) for an engine of the origin asked for whose smallest rating is 100%
-// to 140% of the tender's power (Khoa, 2026-11-02): a row with the engine (and, when both name one, the alternator) of
+// to 120% of the tender's power (Khoa, 2026-11-02, band of 2026-11-12): a row with the engine (and, when both name one, the alternator) of
 // a configuration already suggested adds the supplier under it; a supplier that joins none becomes a new configuration,
 // marked fromFind, from its row closest to the power, with that supplier alone. The new one's only check is the power
 // read from that row, left "unclear", since nothing else of the HSMT was compared with it. Every model and line is the
@@ -3273,8 +3277,8 @@ export async function findCheck(dir, suppliers, cap) {
 const powerText = (p) => Object.entries(p || {}).map(([k, v]) => `${{ prime: "Prime", standby: "Standby", rated: "Định mức" }[k] || k} ${[v.kVA && `${v.kVA} kVA`, v.kW && `${v.kW} kW`].filter(Boolean).join(" / ")}`).join(", ");
 export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
   const ids = new Set(records.map((r) => r.id)), keyOf = CAT.keyOf;
-  // The row's smallest rating (prime when it gives both) is at least the tender's power, and not past 140% of it.
-  const near = (u) => !cap || (rowPower(u, cap) >= cap.value && rowPower(u, cap) <= cap.value * 1.4);
+  // The row's smallest rating (prime when it gives both) is in the band: from 100% (less the rounding) to 120% of the tender's power.
+  const near = (u) => !cap || inBand(rowPower(u, cap), cap.value);
   const lineOf = (u, model) => u.line || (u.lines?.rows || []).find((l) => keyOf(l).includes(keyOf(model))) || null;
   const configs = result.configs || (result.configs = []), out = { joined: [], created: [] };
   const o = originOfReq(origin), cn = cnSuppliers(records), rows = new Map();
@@ -3321,7 +3325,7 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
       ...(u.genset ? { genset: { model: u.genset, src } } : {}),
       ...((ctl) => (ctl ? { controller: { model: ctl.model, make: ctl.brand, src } } : {}))(CAT.controllersIn(line).find((x) => x.model)),
       checks: [{ item: "Công suất", part: "genset", requirement: cap ? `khoảng ${cap.value} ${cap.unit}` : "", offered: powerText(u.power) || "—", sourceQuote: line, status: "unclear",
-        note: "Bổ sung tự động từ Tìm NCC, không dùng AI: công suất nhỏ nhất ghi trong dòng bảng từ 100% đến 140% công suất của gói. Các yêu cầu khác của HSMT chưa được đối chiếu (bấm Gợi ý lại nếu cần)." }],
+        note: "Bổ sung tự động từ Tìm NCC, không dùng AI: công suất nhỏ nhất ghi trong dòng bảng từ 100% đến 120% công suất của gói. Các yêu cầu khác của HSMT chưa được đối chiếu (bấm Gợi ý lại nếu cần)." }],
       suppliers: [entry(r, mine[0])],
       gaps: ["Cấu hình bổ sung từ Tìm NCC: chưa đối chiếu từng yêu cầu kỹ thuật của HSMT.", ...(result.extra ? [`Chưa đối chiếu Yêu cầu khác: ${result.extra}`] : [])],
     };
