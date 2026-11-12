@@ -481,7 +481,7 @@
               for (const id of tok.get(m[1].toLowerCase()) || []) {
                 const a = out.get(id) || [];
                 if (!a.some((x) => x.key === key && x.lotNo === (lot.lotNo || "") && x.item === g.name)) {
-                  a.push({ key, url: d.url || "", lotNo: lot.lotNo || "", lotName: lot.lotName || "", bidName: d.bidName || "", at: d.openedAt || d.bidCloseDate || "", bidder: w.name || "", item: g.name || "", maker: g.maker || "", where, word: m[1], text: t.slice(Math.max(0, m.index - 60), m.index + m[1].length + 60).replace(/\s+/g, " ").trim() });
+                  a.push({ key, url: d.url || "", lotNo: lot.lotNo || "", lotName: lot.lotName || "", bidName: d.bidName || "", at: d.openedAt || d.bidCloseDate || "", bidder: w.name || "", bidderId: taxKey(w), item: g.name || "", maker: g.maker || "", where, word: m[1], text: t.slice(Math.max(0, m.index - 60), m.index + m[1].length + 60).replace(/\s+/g, " ").trim() });
                   out.set(id, a);
                 } else if (where === "set") a.find((x) => x.key === key && x.lotNo === (lot.lotNo || "") && x.item === g.name).where = "set";
               }

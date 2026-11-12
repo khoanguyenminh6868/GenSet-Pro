@@ -3157,8 +3157,8 @@ function supWonHtml(s) {
     <div class="tablewrap" style="margin-top:8px"><table class="suptable supcards"><thead><tr><th>Mở thầu</th><th>Gói thầu</th><th>Nhà thầu trúng</th><th>Hàng trúng</th></tr></thead><tbody>${raw(rows.map((xs) => {
       const x = xs[0], url = (safeUrl(x.url) !== "#" && x.url) || portalSearch(x.key.split("-")[0]);
       return h`<tr><td data-l="Mở thầu">${x.at ? fmtDate(x.at, false) : "—"}</td>
-        <td data-l="Gói thầu"><div><b>${x.bidName || x.key}</b></div>${raw(x.lotName && x.lotName.trim() !== String(x.bidName).trim() ? h`<div class="small">${x.lotName}</div>` : "")}<div class="small"><a class="tlink" href="${url}" target="_blank" rel="noopener" title="Mở trên muasamcong">${x.key} ↗</a></div></td>
-        <td data-l="Nhà thầu trúng" class="small">${x.bidder || "—"}</td>
+        <td data-l="Gói thầu"><div><b>${raw(findTender(x.key) ? h`<a href="${tenderHref(x.key)}" data-suptender="${x.key}" title="Mở chi tiết gói thầu">${x.bidName || x.key}</a>` : h`${x.bidName || x.key}`)}</b></div>${raw(x.lotName && x.lotName.trim() !== String(x.bidName).trim() ? h`<div class="small">${x.lotName}</div>` : "")}<div class="small"><a class="tlink" href="${url}" target="_blank" rel="noopener" title="Mở trên muasamcong">${x.key} ↗</a></div></td>
+        <td data-l="Nhà thầu trúng" class="small">${raw(x.bidder ? bdNameLink({ name: x.bidder, taxCode: x.bidderId }) : "—")}</td>
         <td data-l="Hàng trúng" class="small">${raw(xs.map((y) => h`<div style="margin-bottom:4px"><span class="chip ${y.where === "set" ? "ok" : "mut"}">${y.where === "set" ? "Hãng / nhãn hiệu" : "Trong cấu hình"}: ${y.word}</span> ${String(y.item).slice(0, 160)}${raw(y.maker ? h` <span class="muted">· hãng ${y.maker}</span>` : "")}<div class="muted" title="${y.text}">…${y.text.slice(0, 140)}…</div></div>`).join(""))}</td></tr>`;
     }).join(""))}</tbody></table></div></div>`;
 }
@@ -4856,6 +4856,12 @@ document.addEventListener("click", async (e) => {
     $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl();
     if (state.open === key) { if (state.dtab !== "price") { state.dtab = "price"; renderDrawer(); } } else openDrawer(key, "price", back);
     return;
+  }
+  // Gói thầu trong lưới Hàng trúng thầu của nhà cung cấp (Khoa, 2026-11-13): mở chi tiết gói, đóng lại thì về nhà cung cấp.
+  const spt = e.target.closest("a[data-suptender]");
+  if (spt && !(e.ctrlKey || e.metaKey || e.shiftKey || e.button)) {
+    e.preventDefault(); const back = $("#supBody") && supOpenId ? { sup: supOpenId, scroll: mScroll().scrollTop } : null;
+    $("#ov").hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); openDrawer(spt.dataset.suptender, "", back); return;
   }
   const bpt = e.target.closest("a[data-bptender]");
   if (bpt && !(e.ctrlKey || e.metaKey || e.shiftKey || e.button)) { e.preventDefault(); openDrawer(bpt.dataset.bptender, "", { key: state.open, tab: state.dtab, scroll: $("#dbody").scrollTop }); return; }
