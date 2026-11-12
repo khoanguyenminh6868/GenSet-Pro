@@ -127,16 +127,18 @@ export function partsMap(dir) {
 const rng = (r) => r.map(([a, b]) => (a === b ? `${a}` : `${a}–${b}`)).join(", ");
 // The notes for the result (shown under "Lưu ý về độ tin cậy") and the console: a file of read-order.json not read
 // whole, a refused Read, a run that did not end normally. [] when nothing is wrong.
-export function readNotes(cov, end, { label = "" } = {}) {
+// risk / again: what a missing part may change and the button to press (Gợi ý cấu hình by default; Gợi ý giá đấu
+// passes its own).
+export function readNotes(cov, end, { label = "", risk = "kết quả có thể thiếu yêu cầu", again = "bấm Gợi ý lại" } = {}) {
   const notes = [], who = label ? ` (${label})` : "";
   for (const c of cov) {
     if (!c.missing.length) continue;
     notes.push(c.read
-      ? `Agent chưa đọc hết ${c.name}${who} (thiếu dòng ${rng(c.missing)} / ${c.lines}): kết quả có thể thiếu yêu cầu — bấm Gợi ý lại.`
-      : `Agent không đọc ${c.name}${who} (${c.lines} dòng)${c.refused.length ? `: Read bị từ chối (${c.refused.join(", ")})` : ""}: kết quả có thể thiếu yêu cầu — bấm Gợi ý lại.`);
+      ? `Agent chưa đọc hết ${c.name}${who} (thiếu dòng ${rng(c.missing)} / ${c.lines}): ${risk} — ${again}.`
+      : `Agent không đọc ${c.name}${who} (${c.lines} dòng)${c.refused.length ? `: Read bị từ chối (${c.refused.join(", ")})` : ""}: ${risk} — ${again}.`);
   }
   const stopped = stoppedNote(end);
-  if (stopped) notes.push(`Lượt agent${who} bị dừng giữa chừng (${stopped}): result.json có thể là bản dở — bấm Gợi ý lại.`);
+  if (stopped) notes.push(`Lượt agent${who} bị dừng giữa chừng (${stopped}): result.json có thể là bản dở — ${again}.`);
   return notes;
 }
 // Why a run did not end normally, or "": no result line in its log (killed, timeout, crash), or an error end

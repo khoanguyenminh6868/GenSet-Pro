@@ -15,7 +15,8 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { viaApi, noteApiSpend, costOf, switchToPlan } from "./api-budget.mjs";
-import { api, allDocs, doc, post, technicalPart, hsmtTextOf, sizesFor, sizeText, MAX_SIZES } from "./config-bot.mjs";
+import { api, allDocs, doc, post, technicalPart, hsmtTextOf, sizesFor, sizeText, MAX_SIZES, fitPart, writeForRead, agentInput, capNote } from "./config-bot.mjs";
+import * as RG from "./read-guard.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -24,6 +25,13 @@ await import(pathToFileURL(path.join(ROOT, "..", "web", "bidprice.js")).href);
 const BP = globalThis.GenbidBidprice;
 const arg = (k, d = "") => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : d; };
 const fmt = (v) => Number(v).toLocaleString("vi-VN");
+// The HSMT's technical part in input.md (cut guard, điều phối 2026-11-12): at most TP_MAX characters, the window with the
+// most figures, whole lines, the lines left out named for the agent and, when they hold figures, in the result's notes.
+// Measured on the 12 tenders priced so far: 1 over (IB2600574589, 63,154; the 3,154 left out held 8 figures).
+export const TP_MAX = 60000;
+// What a part the agent did not read may change, and the button (read-guard notes).
+const GUARD = { risk: "mức giống/gần của gói cũ có thể sai", again: "bấm Gợi ý giá đấu lại" };
+const TASK = "chỉ ghi result.json";
 
 // The tender as the web sent it (bidpricereq basis: kva, price, capText, bidForm, investorName read on the page), with what
 // the bot can add: the analysis, the configuration suggested in Cấu hình gợi ý and the HSMT's technical part.
@@ -42,7 +50,7 @@ export async function prep(req, dir, hist, size = null) {
   const top = ((size ? size.cfg : cfg?.result)?.configs || []).slice(0, 3);
   // What this HSMT asks for, read the way bidhist's config.text was (the analysis' technical lines), else the HSMT's
   // technical part; and the engine of the configuration Gợi ý cấu hình put first (its origin group picks the lots).
-  const cfgText = a?.technicalSpecs?.length ? a.technicalSpecs.map((s) => `${s.item}: ${s.requirement}`).join("\n") : hsmt ? technicalPart(hsmt.text).slice(0, 20000) : "";
+  const cfgText = a?.technicalSpecs?.length ? a.technicalSpecs.map((s) => `${s.item}: ${s.requirement}`).join("\n") : hsmt ? technicalPart(hsmt.text) : "";
   const first = top.find((c) => !/KHÔNG/.test(syncNote(c))) || null;
   // Where the engine to be offered is made (2026-11-06 audit): a foreign make from a supplier based in China (DCEC Cummins,
   // Perkins Wuxi...) is priced between a Chinese make and the same make made abroad, not as a G7 set.
@@ -63,7 +71,10 @@ export async function prep(req, dir, hist, size = null) {
   // xứ được ba mức riêng từ gói cũ cùng nhóm, chọn bằng code (groupPrices), không vay gói nhóm khác.
   const byConfig = await configPrices((size ? size.cfg : cfg?.result)?.configs || [], first, group, t, docs, K && K * (size?.qty || 1), P, K);
   const ratingVi = { prime: "liên tục", standby: "dự phòng" };
-  fs.writeFileSync(path.join(dir, "input.md"), [
+  // cfgText is read whole by code (profileOf, regex: was its first 20,000); the agent gets at most TP_MAX (was the first 60,000).
+  const fit = hsmt ? fitPart(technicalPart(hsmt.text), TP_MAX) : null;
+  const cutNotes = fit?.hits ? [capNote(`Phần kỹ thuật HSMT dài hơn ${fmt(TP_MAX)} ký tự: agent không được đọc dòng ${fit.dropped.map(([a, z]) => (a === z ? a : `${a}–${z}`)).join(", ")} / ${fit.lines} của phần đó (${fit.hits} chỗ thông số).`)] : [];
+  const order = [...writeForRead(dir, "input.md", [
     `# Gói thầu ${key}`, `Tên gói: ${t.bidName}`, t.investorName ? `Chủ đầu tư: ${t.investorName}` : "",
     `Công suất: ${K ? `${fmt(Math.round(K))} kVA${t.rating ? ` mức ${ratingVi[t.rating]}` : ""}${b.capText ? ` (${b.capText})` : ""}` : "không rõ"}`, `Giá gói${size ? " (phần của cỡ máy này, code ước tính)" : ""}: ${P ? fmt(P) + " đ" : "không rõ"}`,
     ...(size ? ["", `## Gói có nhiều cỡ máy: ${size.sizes.map(sizeText).join("; ")}`,
@@ -76,13 +87,16 @@ export async function prep(req, dir, hist, size = null) {
     ...(a?.keyInfo ? ["## Thông tin chính (phân tích HSMT)", ...Object.entries(a.keyInfo).filter(([, v]) => v).map(([k, v]) => `- ${k}: ${v}`), ""] : []),
     ...(a?.technicalSpecs?.length ? ["## Thông số kỹ thuật (phân tích HSMT)", ...a.technicalSpecs.map((s) => `- ${s.item}: ${s.requirement}`), ""] : []),
     ...(top.length ? ["## Cấu hình dự kiến chào (Gợi ý cấu hình)", ...top.map((c) => `- ${[c.engine && `động cơ ${[c.engine.make, c.engine.model].filter(Boolean).join(" ")}`, c.alternator && `đầu phát ${[c.alternator.make, c.alternator.model].filter(Boolean).join(" ")}`, c.controller && `bộ điều khiển ${[c.controller.make || c.controller.brand, c.controller.model].filter(Boolean).join(" ")}`].filter(Boolean).join(", ")}${syncNote(c)}`), ""] : []),
-    hsmt ? "## Phần kỹ thuật của HSMT\n" + technicalPart(hsmt.text).slice(0, 60000) : "Chưa có văn bản HSMT.",
-  ].filter((l) => l !== "").join("\n"), "utf8");
-  fs.writeFileSync(path.join(dir, "samples.md"), list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"), "utf8");
+    hsmt ? "## Phần kỹ thuật của HSMT\n" + (fit.note ? fit.note + "\n" : "") + fit.text : "Chưa có văn bản HSMT.",
+  ].filter((l) => l !== "").join("\n")),
+  // samples.md was 52,000–271,000 characters on all 12 tenders priced so far, over what Read takes at once: cut at its
+  // "## S<n>" headings, read part after part, checked in the run's log (read-guard).
+  ...writeForRead(dir, "samples.md", list.map((s) => `## ${s.id}\n${BP.sampleText(s)}\n${BP.cfgLine(s)}`).join("\n\n"))];
+  fs.writeFileSync(path.join(dir, "read-order.json"), JSON.stringify(order), "utf8");
   // Ba mức hiệu chỉnh theo cạnh tranh dự báo (web/bidprice.js CALIB): bật mặc định (Khoa duyệt 11/11); GENBID_BIDPRICE_CALIB=0
   // tắt (samples.json và kết quả y như trước, không có stats.calib).
   const fc = calibOn() ? BP.nbForecast({ notifyNo: key, investorName: t.investorName, location: b.location || "", field: b.field || "", bidCloseDate: b.bidCloseDate || "" }, docs) : null;
-  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior, byConfig, ...(fc ? { fc: { p: fc.p } } : {}) }), "utf8");
+  fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: K, price: P, capText: b.capText || "", rating: t.rating, group, ...(size ? { qty: size.qty } : {}) }, total, list, prior, byConfig, cutNotes, ...(fc ? { fc: { p: fc.p } } : {}) }), "utf8");
   fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "bidprice-prompt.md"), "utf8"), "utf8");
   return { total, group, otherGroup, vnMade, candidates: list.length, K, P, prior, byConfig, fc };
 }
@@ -113,7 +127,7 @@ export async function configPrices(configs, first, group, t, docs, Kmult, P, K =
 // result.json checked against samples.json: every lot gets a level; a lot the agent left out, or whose quote is not in
 // its own text, counts as unknown (unverified). A "same" lot whose power code read is over 1,5 times off becomes "close".
 export function check(dir) {
-  const { basis, total, list, prior = [], byConfig = [], fc = null } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
+  const { basis, total, list, prior = [], byConfig = [], fc = null, cutNotes = [] } = JSON.parse(fs.readFileSync(path.join(dir, "samples.json"), "utf8"));
   const r = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8")), problems = [];
   const by = new Map((r.samples || []).map((x) => [x.id, x]));
   const samples = list.map((s) => {
@@ -129,30 +143,44 @@ export function check(dir) {
   });
   // A size of several sets (a tender of several sizes): the price per kVA times all of them.
   const stats = BP.suggest(samples, basis.price, basis.kva && basis.kva * (basis.qty || 1), prior, fc ? { fc } : {});
-  const result = { basis, total, tender: { summary: String(r.tender?.summary || ""), points: (r.tender?.points || []).map(String).slice(0, 10) }, notes: (r.notes || []).map(String).slice(0, 6), samples, stats, ...(byConfig.length ? { byConfig } : {}) };
+  const result = { basis, total, tender: { summary: String(r.tender?.summary || ""), points: (r.tender?.points || []).map(String).slice(0, 10) }, notes: [...(r.notes || []).map(String).slice(0, 6), ...cutNotes], samples, stats, ...(byConfig.length ? { byConfig } : {}) };
   fs.writeFileSync(path.join(dir, "result.checked.json"), JSON.stringify(result, null, 1));
   return { result, problems };
 }
 
+const CLAUDE_MIN = 25;
 function runClaude(dir) {
   const api = viaApi();
-  const r = spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "json", "--model", process.env.GENBID_BIDPRICE_MODEL || "opus",
+  // stream-json: every Read is in the log, so read-guard can tell whether input.md and samples.md were read whole; the
+  // first message is the instructions and the files to read in order (agentInput).
+  const r = spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "stream-json", "--verbose", "--model", process.env.GENBID_BIDPRICE_MODEL || "opus",
     "--strict-mcp-config", "--disable-slash-commands", "--tools", "Read", "Write", "Grep", "Glob"],
-    { cwd: dir, encoding: "utf8", timeout: 25 * 60e3, maxBuffer: 64 << 20, windowsHide: true,
-      input: "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md và samples.md, chỉ ghi result.json. Chạy không người trông, không ai trả lời câu hỏi." });
+    { cwd: dir, encoding: "utf8", timeout: CLAUDE_MIN * 60e3, maxBuffer: 256 << 20, windowsHide: true, input: agentInput(dir, TASK, { scripts: false }) });
   noteApiSpend(costOf(r.stdout), "bidprice", api);
   return api && switchToPlan(`${r.stdout || ""}${r.stderr || ""}`, "bidprice") ? runClaude(dir) : r;
 }
 
-async function attemptOne(req, dir, hist, size = null, tag = req.key) {
+// prev: this tender's (this size's) result posted before, kept when the run stops half way (read guard, as Gợi ý cấu hình).
+async function attemptOne(req, dir, hist, size = null, tag = req.key, prev = null) {
   fs.rmSync(dir, { recursive: true, force: true });
   const info = await prep(req, dir, hist, size);
   if (!info.candidates) return { result: { basis: { kva: info.K, price: info.P, capText: req.basis?.capText || "", ...(size ? { qty: size.qty } : {}) }, total: info.total, tender: { summary: "", points: [] }, notes: [`Chưa có gói đã có kết quả nào gần với gói này (cùng là cung cấp máy phát, công suất xê dịch không quá 5%${info.group ? `, động cơ cùng nhóm ${BP.GROUP[info.group]}` : ""}).${info.prior?.length ? ` Giá dưới đây tính từ ${info.prior.length} gói cùng cỡ (±15%) có cạnh tranh, chưa qua Agent so cấu hình.` : ""}`], samples: [], stats: BP.suggest([], info.P, info.K && info.K * (size?.qty || 1), info.prior || [], info.fc ? { fc: info.fc } : {}), ...(info.byConfig?.length ? { byConfig: info.byConfig } : {}) }, problems: [] };
   const started = Date.now(), r = runClaude(dir);
   fs.writeFileSync(path.join(os.tmpdir(), `genbid-bidprice-${tag}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
   if (!fs.existsSync(path.join(dir, "result.json"))) throw new Error(`Agent không trả kết quả${r.error ? `: ${r.error.message}` : r.status ? ` (mã ${r.status})` : ""}.`);
+  const label = size ? `máy ${size.label}` : "", g = RG.guardRun(dir, r.stdout || "", { label, ...GUARD });
+  const stopped = RG.stoppedNote(g.end, r.error ? (r.error.code === "ETIMEDOUT" ? `quá ${CLAUDE_MIN} phút` : r.error.message) : "");
+  if (g.notes.length || stopped) console.log(`${tag}: CHỐT ĐỌC — ${[...g.notes, ...(stopped && !g.notes.some((n) => n.includes(stopped)) ? [stopped] : [])].join(" | ")}`);
+  // A run stopped half way (killed, timeout, error_max_turns): its result.json may be a draft. The earlier result stays,
+  // with a note; with none, the draft is used with readNotes' note.
+  if (stopped && prev) {
+    const note = capNote(`Lượt Gợi ý giá đấu${label ? ` (${label})` : ""} lúc ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC bị dừng giữa chừng (${stopped}); đang hiển thị kết quả lần trước — ${GUARD.again}.`);
+    return { result: { ...prev, notes: [...(prev.notes || []).filter((n) => !/bị dừng giữa chừng/.test(n)), note] }, problems: [], stopped: true };
+  }
   const out = check(dir);
   out.result.seconds = Math.round((Date.now() - started) / 1000);
+  if (stopped && !g.notes.some((n) => /bị dừng giữa chừng/.test(n))) g.notes.push(`Lượt agent${label ? ` (${label})` : ""} bị dừng giữa chừng (${stopped}): result.json có thể là bản dở — ${GUARD.again}.`);
+  if (g.notes.length) { out.result.notes.push(...g.notes.map(capNote)); out.result.readIncomplete = true; }
   return out;
 }
 
@@ -173,9 +201,9 @@ async function sizesOfTender(key, req, cfg) {
   const own = (cfg?.result?.sizes || []).map((x) => ({ cap: x.cap, kva: x.kva, qty: x.qty, label: x.label, quote: x.quote, cfg: x.result || null }));
   return own.length > 1 ? own : (await sizesFor(key, req.bidName)).slice(0, MAX_SIZES);
 }
-async function attempt(req, dir, hist) {
+async function attempt(req, dir, hist, prev = null) {
   const key = req.key || req.notifyNo, cfg = await doc("configmatch", key).catch(() => null), sizes = await sizesOfTender(key, req, cfg);
-  if (sizes.length < 2) return attemptOne(req, dir, hist);
+  if (sizes.length < 2) return attemptOne(req, dir, hist, null, req.key, prev && !prev.multi ? prev : null);
   fs.rmSync(dir, { recursive: true, force: true });
   const docs = hist || Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
   const b = req.basis || {}, P = Number(b.price) || null;
@@ -184,7 +212,7 @@ async function attempt(req, dir, hist) {
   for (const [i, z] of sizes.entries()) {
     const size = { ...z, sizes, whole: P }, part = P ? Math.round((P * shares[i].share) / 1000) * 1000 : null;
     try {
-      const out = await attemptOne({ ...req, basis: { ...b, kva: z.kva, price: part, capText: sizeText(z) } }, path.join(dir, String(i + 1)), docs, size, `${key}-${i + 1}`);
+      const out = await attemptOne({ ...req, basis: { ...b, kva: z.kva, price: part, capText: sizeText(z) } }, path.join(dir, String(i + 1)), docs, size, `${key}-${i + 1}`, prev?.multi ? prev.sizes?.find((x) => x.label === z.label)?.result || null : null);
       outs.push({ z, sh: shares[i], result: out.result });
       problems.push(...out.problems.map((x) => `máy ${z.label}: ${x}`));
     } catch (e) { outs.push({ z, sh: shares[i], error: e.message || String(e) }); }
@@ -217,7 +245,8 @@ export async function answer(req, hist) {
     return post([...(result ? [{ coll: "bidprice", id: key, data: { at, result } }] : []), { coll: "bidpricereq", id: key, data: reqData }]);
   };
   try {
-    const { result, problems } = await attempt(req, dir, hist);
+    const prev = (await doc("bidprice", key).catch(() => null))?.result || null;
+    const { result, problems } = await attempt(req, dir, hist, prev);
     await done({ result, error: "" });
     console.log(`${key}: ${result.multi ? result.sizes.map((z) => `máy ${z.label}: ${z.result ? `giá đấu từ ${z.result.stats.n} gói tương tự` : `lỗi ${z.error}`}`).join("; ") : `giá đấu từ ${result.stats.n} gói tương tự (${result.samples.length} ứng viên)`}${problems.length ? `, ${problems.length} điểm chưa khớp` : ""}`);
   } catch (e) {
