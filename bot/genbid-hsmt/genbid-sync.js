@@ -1439,6 +1439,63 @@ const SET_FIELDS = { qty: "số lượng", primeKva: "công suất liên tục k
 const SET_POWER = ["primeKva", "standbyKva", "primeKw", "standbyKw"];
 const setLabel = (s) => { const f = SET_POWER.find((k) => s[k] != null); return f ? `${s[f]} ${/Kva$/.test(f) ? "kVA" : "kW"} ${/^prime/.test(f) ? "liên tục" : "dự phòng"}` : "không rõ cỡ"; };
 const numSet = (s) => [...new Set(numsOf(s))].sort().join(",");
+// generatorCapacity is free text, so two parts write the same capacity in other words. Compared by FIGURES: each number with
+// its unit (kVA / kW) and kind (liên tục / dự phòng); "a – b" and "từ a đến b" are ranges that cover the figures inside.
+// capFig(text) -> { pts: [{ v, u, k }], ranges: [{ lo, hi, u, k }] }.
+function capFig(text) {
+  const t = String(text || "").normalize("NFC"), low = t.toLowerCase();
+  const prime = /liên\s*tục|prime|continuous/.test(low), stand = /dự\s*phòng|standby/.test(low), kind = prime && !stand ? "p" : stand && !prime ? "s" : "";
+  const toks = [...t.matchAll(/(\d+(?:[.,]\d+)*)\s*(kva|kw|mva)?/gi)].map((m) => {
+    const raw = m[1], v = /^\d{1,3}([.,]\d{3})+$/.test(raw) ? Number(raw.replace(/[.,]/g, "")) : Number(raw.replace(",", "."));
+    return { v, u: (m[2] || "").toLowerCase(), at: m.index, end: m.index + m[0].length };
+  });
+  const link = (a, b) => /^\s*(?:-|–|—|~|đến|tới)\s*$/i.test(t.slice(a.end, b.at));
+  const ranges = [];
+  for (let i = toks.length - 2; i >= 0; i--) if (link(toks[i], toks[i + 1])) { if (!toks[i].u) toks[i].u = toks[i + 1].u; ranges.push({ lo: toks[i].v, hi: toks[i + 1].v, u: toks[i].u, k: kind }); }
+  return { pts: toks.map((x) => ({ v: x.v, u: x.u, k: kind })), ranges };
+}
+const capCovers = (b, p) => b.pts.some((q) => q.v === p.v && q.u === p.u && (!q.k || !p.k || q.k === p.k)) || b.ranges.some((r) => r.u === p.u && p.v >= r.lo && p.v <= r.hi && (!r.k || !p.k || r.k === p.k));
+// a: text of one part, b: text of another. same: a's figures are all in b (or b's all in a); fuller: the one to keep;
+// clash: both state a figure the other does not, in the same unit (two values for one quantity: not known).
+function capCompare(a, b) {
+  const A = capFig(a), B = capFig(b), na = A.pts.length, nb = B.pts.length;
+  if (!na || !nb) return na === nb ? { clash: normTxt(a) !== normTxt(b) } : { fuller: na ? a : b };
+  const ua = A.pts.filter((p) => !capCovers(B, p)), ub = B.pts.filter((p) => !capCovers(A, p));
+  if (ua.length && ub.length && ua.some((p) => ub.some((q) => q.u === p.u))) return { clash: true };
+  const fuller = na !== nb ? (na > nb ? a : b) : String(a).length >= String(b).length ? a : b;
+  return { fuller, partial: !!(ua.length && ub.length) };
+}
+// A technicalSpecs entry read in two parts under other words. The same entry when the items do not tell different things
+// apart (other machine size, engine vs alternator) and with the same figures in the requirement, EITHER the quotes (one holds the other, whole words, long enough to be
+// specific) OR an almost identical requirement of a few words, OR the same requirement under the same item with the size left out;
+// from other parts. Doubtful: kept twice.
+const SPEC_COMP = [/động cơ/, /đầu phát/, /điều khiển/, /\bats\b/, /\bmdb\b/, /hòa đồng bộ/, /ống khói/, /cách âm/, /bồn/, /ắc quy/];
+const specComp = (item) => SPEC_COMP.map((r, k) => (r.test(item) ? k : "")).join("");
+const sameItems = (a, b) => {
+  const ca = specComp(a.item), cb = specComp(b.item);
+  if (ca && cb && ca !== cb) return false;
+  const na = new Set(numsOf(a.s.item)), nb = new Set(numsOf(b.s.item));
+  return !(na.size && nb.size && ![...na].every((x) => nb.has(x)) && ![...nb].every((x) => na.has(x)));
+};
+const reqNear = (a, b) => {
+  if (a.length < 25 || b.length < 25) return false;
+  const ta = new Set(a.split(" ")), tb = new Set(b.split(" ")), both = [...ta].filter((x) => tb.has(x)).length;
+  return both / new Set([...ta, ...tb]).size >= 0.85;
+};
+const itemBare = (s) => normTxt(String(s).replace(/\d[\d.,/]*\s*(?:kva|kw)?/gi, " "));
+function specTwin(list, c, multi) {
+  for (const e of list) {
+    if (e.i === c.i || !sameItems(e, c)) continue;
+    const sameNum = numSet(e.s.requirement) === numSet(c.s.requirement);
+    if (!sameNum) continue; // other figures: not decided here (kept twice)
+    if (e.q.length >= 25 && c.q.length >= 25 && ((" " + e.q + " ").includes(" " + c.q + " ") || (" " + c.q + " ").includes(" " + e.q + " "))) return e;
+    if (reqNear(e.req, c.req)) { if (!multi || (numsOf(e.s.item).length && numsOf(e.s.item).join() === numsOf(c.s.item).join())) return e; }
+    // the same item once the machine size is left out (one part names it, the other does not) and the same short requirement:
+    // only in a chapter with ONE machine size, else the part that does not name it may be about another size
+    if (!multi && e.req === c.req && itemBare(e.s.item) === itemBare(c.s.item)) return e;
+  }
+  return null;
+}
 // The answers of the parts joined: vals = [{ i, v }] (i the part number, v the parsed answer of Claude).
 // technicalSpecs: joined, an entry read twice (same quote, or same item and requirement: the overlap) kept once; two entries
 //   of the same item with other figures are both kept and marked unverified, and said in the notes.
@@ -1447,16 +1504,20 @@ const numSet = (s) => [...new Set(numsOf(s))].sort().join(",");
 // generatorCapacity: the text the parts all give; else made from the joined sets; else null with a note.
 function specsMerge(vals) {
   const notes = [], specs = [], byQuote = new Map(), byIR = new Map(), byItem = new Map(), sets = [], caps = [], pn = [];
+  const multi = new Set(vals.flatMap(({ v }) => setsOf(v.generatorSets || []).map(setLabel))).size > 1; // more than one machine size in the chapter
   for (const { i, v } of vals) {
     for (const s of Array.isArray(v.technicalSpecs) ? v.technicalSpecs : []) {
       if (!s || typeof s !== "object") continue;
       const q = s.quote ? normTxt(s.quote) : "", item = normTxt(s.item), req = normTxt(s.requirement);
-      const same = (q && byQuote.get(q)) || byIR.get(`${item}|${req}`);
+      const c = { s, i, q, item, req };
+      const ok = (e) => e && sameItems(e, c) ? e : null; // the same quote under another machine size or component is another entry
+      const same = ok(q && byQuote.get(q)) || byIR.get(`${item}|${req}`) || specTwin(specs, c, multi);
       if (same) {
         if (same.i !== i && !same.diff && numSet(same.s.requirement) !== numSet(s.requirement)) { same.s.unverified = true; same.diff = true; notes.push(`Mục "${String(same.s.item).slice(0, 60)}": phần ${same.i} và phần ${i} đọc khác nhau ở cùng một trích dẫn, chưa rõ.`); }
+        if (q.length > same.q.length) { same.s = { ...s, ...(same.s.unverified ? { unverified: true } : {}) }; same.q = q; same.req = req; same.item = item; if (q) byQuote.set(q, same); byIR.set(`${item}|${req}`, same); } // the longer quote is kept
         continue;
       }
-      const e = { s: { ...s }, i };
+      const e = { s: { ...s }, i, q, item, req };
       specs.push(e);
       if (q) byQuote.set(q, e);
       byIR.set(`${item}|${req}`, e);
@@ -1483,12 +1544,21 @@ function specsMerge(vals) {
     for (const n of [].concat(v._notes || [])) if (n && !pn.includes(String(n))) pn.push(String(n));
   }
   const generatorSets = setsOf(sets.map((g) => g.s));
-  const distinct = caps.filter((c, k, a) => a.findIndex((d) => normTxt(d.c) === normTxt(c.c)) === k);
-  let generatorCapacity = null;
-  if (distinct.length === 1) generatorCapacity = distinct[0].c;
-  else if (distinct.length > 1) {
+  // By figures (capCompare), not by words: a part whose figures are all in another part's text adds nothing, and the fuller
+  // text is kept as written. Only two values for one quantity (same unit) are not known.
+  let generatorCapacity = null, clash = null;
+  for (const c of caps) {
+    if (!generatorCapacity) { generatorCapacity = c.c; continue; }
+    if (normTxt(c.c) === normTxt(generatorCapacity)) continue;
+    const r = capCompare(generatorCapacity, c.c);
+    if (r.clash) { clash = c; break; }
+    if (r.partial) notes.push(`Công suất tổ máy: phần ${c.i} ghi thêm "${c.c.slice(0, 60)}" (khác đại lượng), giữ câu đầy đủ hơn.`);
+    generatorCapacity = r.fuller;
+  }
+  if (clash) {
+    generatorCapacity = null;
     if (generatorSets.length) generatorCapacity = generatorSets.map((s) => `${s.qty > 1 ? `${s.qty} x ` : ""}${setLabel(s)}`).join(" + ");
-    else notes.push(`Công suất tổ máy: các phần ghi khác nhau (${distinct.map((c) => `phần ${c.i}: ${c.c.slice(0, 40)}`).join("; ")}), chưa rõ.`);
+    else notes.push(`Công suất tổ máy: các phần ghi khác nhau (${caps.map((c) => `phần ${c.i}: ${c.c.slice(0, 40)}`).join("; ")}), chưa rõ.`);
   }
   return { technicalSpecs: specs.map((e) => e.s), generatorSets, generatorCapacity, _notes: pn, conflicts: notes };
 }
