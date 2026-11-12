@@ -76,17 +76,27 @@ test("keepFound: a configuration found on the internet (1st–3rd) comes back, c
   assert.equal(again.configs[0].webRank, 1);
 });
 
-test("keepFound: no saved page leaves its checks unclear; 4th or later, or chosen again, is not kept; at most 2 a size", () => {
+test("keepFound: the engine's page saved nowhere: not kept; 4th or later, or chosen again, is not kept; at most 2 a size", () => {
   const root = tmp(), sourcesDir = tmp();
   const prev = { requirements: reqs(), configs: [webCfg(1)] };
   const fresh = { requirements: reqs(), configs: [] };
-  keepFound(fresh, prev, opts(root, sourcesDir));
-  assert.equal(fresh.configs[0].checks.find((x) => x.item === "Số xi lanh").status, "unclear");
+  const k = keepFound(fresh, prev, opts(root, sourcesDir));
+  assert.equal(fresh.configs.length, 0);
+  assert.ok(!fresh.notes);
+  assert.ok(k.dropped.some((d) => /trang nguồn của động cơ/.test(d)));
+  savePages(prev, runDir(), { key: "IB1", root, sourcesDir });
+  // Only the alternator's (here the genset's) page missing: kept, those checks unclear as ever.
+  const half = JSON.parse(JSON.stringify(prev)); half.configs[0].genset.src.saved = "IB1/all/none.txt";
+  const fh = { requirements: reqs(), configs: [] };
+  keepFound(fh, half, opts(root, sourcesDir));
+  assert.equal(fh.configs.length, 1);
+  assert.ok(fh.configs[0].genset.unverified && !fh.configs[0].engine.unverified);
   const four = { requirements: reqs(), configs: [webCfg(4)] }, f2 = { requirements: reqs(), configs: [] };
   assert.equal(keepFound(f2, four, opts(root, sourcesDir)).web || 0, 0);
   const same = { requirements: reqs(), configs: [webCfg(1)] };
   assert.equal(keepFound(same, prev, opts(root, sourcesDir)).web || 0, 0);
   const many = { requirements: reqs(), configs: [webCfg(1, "A1"), webCfg(2, "B2"), webCfg(3, "C3")] }, f3 = { requirements: reqs(), configs: [] };
+  savePages(many, runDir(), { key: "IB1", size: { kva: 1, cap: { value: 1, unit: "kVA" } }, root, sourcesDir });
   assert.equal(keepFound(f3, many, opts(root, sourcesDir)).web, 2);
   assert.deepEqual(f3.configs.map((c) => c.engine.model).sort(), ["A1", "B2"]);
 });
@@ -94,6 +104,7 @@ test("keepFound: no saved page leaves its checks unclear; 4th or later, or chose
 test("keepFound: the HSMT read otherwise than last time: kept with a gap", () => {
   const root = tmp(), sourcesDir = tmp();
   const prev = { requirements: reqs(), reqHash: "a", configs: [webCfg(1)] }, fresh = { requirements: reqs(), configs: [] };
+  savePages(prev, runDir(), { key: "IB1", root, sourcesDir });
   keepFound(fresh, prev, opts(root, sourcesDir, { reqHash: "b" }));
   assert.ok(fresh.configs[0].gaps.some((g) => /lần đọc HSMT trước/.test(g)));
 });

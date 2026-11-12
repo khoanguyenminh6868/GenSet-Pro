@@ -3462,6 +3462,10 @@ export function keepFound(result, prevResult, { suppliers = [], origin, hsmtText
     c.rank = Math.max(0, ...configs.map((x) => x.rank || 0), ...keep.map((x) => x.rank), ...webKeep.map((x) => x.rank)) + 1;
     c.keptWeb = true;
     for (const part of PARTS) if (c[part]?.src?.kind === "internet") c[part].src = savedSrc(c[part].src, suppliers);
+    // Only when the engine's page can be read again (Khoa / điều phối 2026-11-12): a configuration of a run before pages
+    // were saved would come back all "unclear" and could rank above ones with a "not met". The alternator's or the
+    // controller's page missing leaves those checks unclear, as ever.
+    if (c.engine.src?.kind === "internet" && !readWeb(c.engine.src.file)) { out.dropped.push(`cấu hình ${c.engine.model}: trang nguồn của động cơ không còn bản lưu`); continue; }
     c.suppliers = (c.suppliers || []).map((s) => entryFor(c, s) || (out.dropped.push(`${s.supplierId}: không giữ cho cấu hình ${c.engine.model}`), null)).filter(Boolean).map((s) => { if (!old.suppliers?.find((x) => x.supplierId === s.supplierId)?.fromFind) delete s.fromFind; return s; });
     // None left (its row was read again since): the supplier whose saved page it was, with a table row of this engine
     // (a fromLine row too), as mergeFind would join it.
