@@ -306,3 +306,84 @@ test("liên danh: tên liên danh lấy từ dòng có MST, rồi tìm lý do th
   assert.doesNotMatch(r, /Khác/);
   assert.match(bcdgReason("4. CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN\n- Thông số kỹ thuật không đồng bộ từ một nhà sản xuất."), /không đồng bộ/);
 });
+
+// ---------- bcdg-3 (2026-11-12): verdict, reread không xoá lý do, hàng bảng / đầu mục OCR hỏng ----------
+const PASS_ROW = ["Công ty TNHH thiết bị kỹ thuật Đạt Đạt Đạt", "Thảo Nguyên"];
+test("verdict: có khối thuyết minh của mình → fail; mình đạt mọi bước → pass (dòng bảng không là lý do)", () => {
+  const f = bcdgReasonEx(BCDG_1203);
+  assert.equal(f.verdict, "fail");
+  assert.equal(f.source, "thuyet-minh");
+  const p = bcdgReasonEx([...PASS_ROW, "- Thuyết minh trong trường hợp E-HSDT không hợp lệ: Không có", "Nhà thầu: CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN", "Stt Nội dung Đạt Không đạt Đạt | Không đạt", "1 | Bảo đảm dự thầu X"].join("\n"));
+  assert.equal(p.verdict, "pass");
+  assert.equal(p.text, "");
+});
+test("verdict pass: phần nội dung bổ sung, làm rõ (có công văn) là text; 'nếu có: Không có' thì không", () => {
+  const withClar = [...PASS_ROW, "- Thuyết minh trong trường hợp E-HSDT không hợp lệ: Không có", "- Các nội dung bd sung, làm rõ E-HSDT nhằm chứng minh tư cách hợp lệ của nhà", "thâu:", "+ Công văn của Bên mời thầu số 6337/CV gửi nhà thầu Công ty TNHH thiết bị kỹ thuật Thảo Nguyên về việc làm rõ hóa đơn.", "+ Công văn trả lời của Nhà thầu số 199/CVLR ngày 18/08/2026.", "Nhà thầu: CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN", "Kết quả đánh giá tự động"].join("\n");
+  const a = bcdgReasonEx(withClar);
+  assert.equal(a.verdict, "pass");
+  assert.match(a.text, /^\+ Công văn của Bên mời thầu/);
+  assert.match(a.text, /199\/CVLR/);
+  assert.doesNotMatch(a.text, /Nhà thầu: CÔNG TY|Đạt Đạt/);
+  const none = bcdgReasonEx(["CONG TY TNHH THIET BỊ KỸ THUẬT Đạt Đạt Đạt", "THAO NGUYEN", "- Thuyết minh trong trường hợp E-HSDT không hợp lệ (kể cả sau khi nhà", "thầu bổ sung, làm rõ (nếu có)): Không có.", "- Các nội dung bổ sung, làm rõ E-HSDT nhằm chứng minh tư cách hợp lệ", "của nhà thầu (nếu có). Chủ đầu tư và văn bản bổ sung, làm rõ E-HSDT của nhà thầu (nếu có): Không", "có."].join("\n"));
+  assert.equal(none.verdict, "pass");
+  assert.equal(none.text, "");
+});
+test("verdict '' khi không rõ: không có dòng bảng của mình, hoặc dòng bảng lẫn Không đạt / chữ không đạt khác", () => {
+  assert.equal(bcdgReasonEx("Tổ chuyên gia họp ngày 5/8.\nCông ty TNHH Minh Phú Đạt Đạt Đạt").verdict, "");
+  assert.equal(bcdgReasonEx("Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên Đạt Đạt Không đạt").verdict, "fail");
+  assert.equal(bcdgReasonEx("Công ty TNHH Thiết bị Kỹ thuật Thảo Thông tin khác").verdict, "");
+});
+test("đầu mục OCR hỏng ('eo Công ty ...' không số) và hàng bảng '1 Công ty ... | lý do' với tên kéo xuống dòng sau", () => {
+  const a = bcdgReasonEx(["b. Thuyết minh về các trường hợp không đáp ứng về tính hợp lệ, năng lực, kinh", "nghiệm và kỹ thuật (kể cả sau khi làm rõ):", "", "eo Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên", "- Tính hợp lệ của thiết bị thay thế: nhà thầu chào màu RAL 7036 không đúng yêu cầu RAL 7035.", "- Tổ chuyên gia nêu các ý kiến nhận xét (nếu có): Không có.", "HL KẾT LUẬN VÀ KIẾN NGHỊ", "- Tên nhà thầu được mời đối chiếu: Công ty TNHH Kuta."].join("\n"));
+  assert.equal(a.verdict, "fail");
+  assert.match(a.text, /RAL 7036/);
+  assert.doesNotMatch(a.text, /Kuta|KIẾN NGHỊ/);
+  const b = bcdgReasonEx(["b) Thuyết minh về các trường hợp E-HSDT không đạt:", "STT Tên nhà thầu Lý do không đạt", "1 Công ty TNHH thiết bi | + Hồ sơ mời thầu yêu cầu công suất > 405", "kỹ thuật Thảo Nguyen | kVA, nhà thầu chào 180kVA.", "+ Thông số không thể hiện giám sát từ xa.", "c) Các nội dung bổ sung, làm rõ E-HSDT (nếu có): Không có"].join("\n"));
+  assert.equal(b.verdict, "fail");
+  assert.match(b.text, /180kVA/);
+  assert.match(b.text, /giám sát từ xa/);
+  assert.doesNotMatch(b.text, /Các nội dung bổ sung/);
+  // dòng gạch đầu "- Công ty ..." (danh sách) không phải đầu mục OCR hỏng
+  assert.doesNotMatch(bcdgReasonEx(BCDG_1203).text, /^- Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên\.$/m);
+});
+const DOC_OLD = { notifyNo: "K", files: FILES.map((f) => ({ id: f.id, name: f.name, path: "K/old-" + f.id.slice(0, 8) })), reason: "1) Công ty Thảo Nguyên: bảo hành 48 giờ", verdict: "fail", scan: true, at: "x" };
+test("reread: OCR quá giờ / lỗi KHÔNG xoá reason và verdict đang có; chữ đọc dở không thay lý do cũ", async () => {
+  const slow = mk({ text: () => ({ text: "", ocr: 0, scan: true, timedOut: true }) });
+  const a = (await run({ deps: slow.deps, prev: DOC_OLD, reread: true })).doc;
+  assert.equal(a.reason, DOC_OLD.reason); assert.equal(a.verdict, "fail");
+  assert.match(a.error, /OCR quá giờ/);
+  const part = mk({ text: () => ({ text: "b3. Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:\n- Thiếu bảo đảm dự thầu", ocr: 2, scan: true, timedOut: true }) });
+  const b = (await run({ deps: part.deps, prev: DOC_OLD, reread: true })).doc;
+  assert.equal(b.reason, DOC_OLD.reason); // chưa đọc hết: không thay
+  // lượt thường (không reread) bị lỗi tải lên: giữ reason/verdict
+  const up = mk({ upload: async () => { throw new Error("HTTP 500"); } });
+  const c = (await run({ deps: up.deps, prev: { ...DOC_OLD, files: [] } })).doc;
+  assert.equal(c.reason, DOC_OLD.reason); assert.equal(c.verdict, "fail");
+});
+test("reread đọc hết: lý do mới thay cũ; đọc hết mà không thấy gì thì xoá (lý do cũ từ lần đọc tệ hơn); chưa đọc hết thì giữ", async () => {
+  const good = mk({ text: () => ({ text: "b3. Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:\n- Thiếu bảo đảm dự thầu", ocr: 2, scan: true, timedOut: false }) });
+  const a = (await run({ deps: good.deps, prev: DOC_OLD, reread: true })).doc;
+  assert.match(a.reason, /bảo đảm dự thầu/); assert.equal(a.verdict, "");
+  const empty = mk({ text: () => ({ text: "Báo cáo không nhắc ai.", ocr: 0, scan: false, timedOut: false }) });
+  const b = (await run({ deps: empty.deps, prev: DOC_OLD, reread: true })).doc;
+  assert.equal(b.reason, ""); assert.equal(b.verdict, "");
+  const c = (await run({ deps: empty.deps, prev: { ...DOC_OLD, files: DOC_OLD.files.map((f) => ({ ...f, noText: true })) } })).doc; // lượt thường: không xoá
+  assert.equal(c.reason, DOC_OLD.reason);
+});
+test("doc không có verdict (cũ) vẫn qua bước: verdict '' khi chưa đọc lại; gói đạt: verdict pass, reason ''", async () => {
+  const { deps } = mk({ text: () => ({ text: [...PASS_ROW, "- Thuyết minh trong trường hợp E-HSDT không hợp lệ: Không có"].join("\n"), ocr: 0, scan: false, timedOut: false }) });
+  const { doc, line } = await run({ deps });
+  assert.equal(doc.verdict, "pass"); assert.equal(doc.reason, "");
+  assert.match(line, /mình đạt/);
+  const old = (await run({ deps: mk().deps, prev: { notifyNo: "K", files: [], reason: "x" } })).doc;
+  assert.equal(typeof old.verdict, "string");
+});
+test("19 gói thật: gói nào cũng verdict fail trừ IB2400564384 (rỗng); IB2400393199 và IB2600374560 trích được, không nhà thầu khác", { skip: !fs.existsSync(CORPUS) }, () => {
+  const v = {};
+  for (const f of fs.readdirSync(CORPUS).filter((x) => x.endsWith(".txt"))) v[f.slice(0, -4)] = bcdgReasonEx(fs.readFileSync(CORPUS + f, "utf8"));
+  for (const [k, r] of Object.entries(v)) if (k !== "IB2400564384") assert.equal(r.verdict, "fail", k);
+  assert.equal(v.IB2400564384.verdict, "");
+  assert.match(v.IB2400393199.text, /Thảo Nguyên[\s\S]*RAL 7036/);
+  assert.match(v.IB2600374560.text, /180kVA/);
+  for (const k of ["IB2400393199", "IB2600374560"]) assert.doesNotMatch(v[k].text, /Kuta|Hữu Toàn|Forz/i, k);
+});

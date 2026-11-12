@@ -1,7 +1,7 @@
 // Một gói: tải báo cáo đánh giá E-HSDT (BCĐG), đưa lên kho, đọc chữ, trả tài liệu bcdg/<TBMT> cần ghi (Khoa, 2026-11-12).
 // Tách khỏi genbid-sync.js để kiểm bằng test đơn vị (deps giả). Không tự ghi gì: trả { line, doc } (doc null = chưa có gì để ghi).
 //
-// Trạng thái trong bcdg/<TBMT>: { notifyNo, files:[{id,name,size,md5,path?,error?,skipped?,noText?}], reason, scan, at,
+// Trạng thái trong bcdg/<TBMT>: { notifyNo, files:[{id,name,size,md5,path?,error?,skipped?,noText?}], reason, verdict ("fail" | "pass" | ""), scan, at,
 //   error?, tries, giveUp? }.
 //  - tải / tải lên lỗi, không thấy tệp, tệp cắt ngắn: `error` ở cấp gói, tries+1; sau MAX_TRIES lần thì giveUp = true (không chọn nữa).
 //    Get-GenBidBidderTargets.ps1 chọn lại gói có `error` khi `at` đã quá BACKOFF_HOURS[tries-1] giờ (1 giờ, rồi 6 giờ).
@@ -9,7 +9,7 @@
 //    (lượt sau tải lại để đọc chữ, không tải lên lại).
 //  - tệp quá lớn: không tải lên, ghi `skipped`; không phải lỗi.
 "use strict";
-const { bcdgReason } = require("./bcdg-reason.js");
+const { bcdgReasonEx } = require("./bcdg-reason.js");
 const MAX_TRIES = 3, BACKOFF_HOURS = [1, 6], MAX_BYTES = 50 * 1048576, OCR_MAX_MS = 10 * 60e3;
 
 // deps: now(), download(todo[{id,name}]) -> [{id,file,bytes,md5}] (chỉ tệp đủ), upload(file, storedName) -> path,
@@ -19,7 +19,7 @@ const MAX_TRIES = 3, BACKOFF_HOURS = [1, 6], MAX_BYTES = 50 * 1048576, OCR_MAX_M
 function failDoc(key, why, prev, at, files) {
   const t = (prev?.tries || 0) + 1, giveUp = t >= MAX_TRIES;
   return { line: `${key}: BCĐG lỗi (${why})${giveUp ? ", bỏ sau " + t + " lần" : ""}`,
-    doc: { notifyNo: key, files: files || prev?.files || [], ...(prev?.reason ? { reason: prev.reason } : {}), error: String(why).slice(0, 200), tries: t, ...(giveUp ? { giveUp: true } : {}), at } };
+    doc: { notifyNo: key, files: files || prev?.files || [], ...(prev?.reason ? { reason: prev.reason } : {}), ...(prev?.verdict ? { verdict: prev.verdict } : {}), error: String(why).slice(0, 200), tries: t, ...(giveUp ? { giveUp: true } : {}), at } };
 }
 // reread: only read the text again and take the reason, for a tender whose files are in the store already (path): the files are
 // downloaded again for reading, never uploaded again; error / tries / giveUp are cleared. Files without a path are left as they are.
@@ -66,9 +66,16 @@ async function bcdgStep({ key, b, prev: prev0, deps, deadline = Infinity, maxByt
     out.push(rec);
     texts.push(t.text || "");
   }
-  const oldReason = reread ? "" : prev?.reason || ""; // reread replaces the reason (the old one may come from a worse reading)
-  const reason = texts.length ? bcdgReason(texts.join("\n")) || oldReason : oldReason;
-  const doc = { notifyNo: key, files: out, reason, scan, at };
+  // A reason / verdict already in the document is only replaced by a new reading that finds something. A read that gave nothing keeps
+  // them, unless this is a --reread that read every file completely (then the old one came from a worse reading and is cleared):
+  // OCR out of time or an error must never empty a reason (Khoa, 2026-11-12: IB2400120387).
+  const complete = !ocrOut && !anyErr && !anyNoText && texts.length > 0 && !out.some((f) => f.error || f.noText);
+  const r = texts.length ? bcdgReasonEx(texts.join("\n")) : { text: "", verdict: "" };
+  const had = !!(prev?.reason || prev?.verdict);
+  // Nothing found: keep the old (clear only on a complete --reread). Something found by an unfinished read: it does not replace an old one.
+  const keepOld = r.text || r.verdict ? !complete && had : !(reread && complete);
+  const reason = keepOld ? prev?.reason || "" : r.text, verdict = keepOld ? prev?.verdict || "" : r.verdict || "";
+  const doc = { notifyNo: key, files: out, reason, verdict, scan, at };
   if (anyErr) {
     const t = tries + 1, giveUp = t >= MAX_TRIES;
     doc.error = `${out.filter((f) => f.error).length}/${files.length} tệp chưa lên kho (${out.find((f) => f.error).error})`.slice(0, 200);
@@ -82,6 +89,6 @@ async function bcdgStep({ key, b, prev: prev0, deps, deadline = Infinity, maxByt
     doc.error = String(out.find((f) => f.error).error).slice(0, 200); doc.tries = prev0?.tries || 1;
   } else if (anyNoText) { doc.error = "chưa đọc chữ (hết giờ), để lượt sau"; doc.tries = tries; }
   const okN = out.filter((f) => f.path).length;
-  return { line: `${key}: BCĐG ${okN}/${files.length} tệp${reason ? ", có lý do" : ", chưa trích được lý do"}${scan ? " (OCR)" : ""}${ocrOut ? ", OCR quá giờ" : ""}${doc.error ? "; " + doc.error : ""}`, doc };
+  return { line: `${key}: BCĐG ${okN}/${files.length} tệp${verdict === "pass" ? ", mình đạt" : reason ? ", có lý do" : ", chưa trích được lý do"}${scan ? " (OCR)" : ""}${ocrOut ? ", OCR quá giờ" : ""}${doc.error ? "; " + doc.error : ""}`, doc };
 }
 module.exports = { bcdgStep, failDoc, MAX_TRIES, BACKOFF_HOURS, MAX_BYTES, OCR_MAX_MS };

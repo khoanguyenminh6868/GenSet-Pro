@@ -34,14 +34,19 @@ const taxRe = (tax) => new RegExp("(?<!\\d)" + String(tax).split("").join("[\\s.
 const EXPL_MAX = 3000;
 const EXPL_HEAD = /^(?:[-•+*]\s*|\(?[a-z]\)\s*|[a-z]\d{0,2}[.)]\s*|\d{1,2}[.)]\s*)?thuy.{1,3}t\s*m.{1,2}nh\b/i;
 const EXPL_FAIL = /kh[ôo]ng\s*(?:đ[áa]p\s*[ứu]ng|đ[ạa]t|h[ợo]p\s*l[ệe])|b[ịi]\s*lo[ạa]i/i;
-const MARK = "(?:[-•+*]\\s*|\\(?[a-z](?:\\.?\\d{1,2})?[.)]\\s*|\\d{1,2}[.)]\\s*)";
+const EMPTY_END = /:\s*kh[ôo]ng\s*c[óo]\s*\.?$/i;
+const MARK ="(?:[-•+*]\\s*|\\(?[a-z](?:\\.?\\d{1,2})?[.)]\\s*|\\d{1,2}[.)]\\s*)";
 // Tiêu đề nhà thầu: "1) Công ty ...:", "b.2) Công ty ...: <lý do>", "- Công ty ...:", "Nhà thầu: Công ty ...".
 const BIDDER_HEAD = new RegExp("^(?:" + MARK + NAME_WORD + "|(?:công\\s*ty|cty|liên\\s*danh)\\b)[^:]{0,170}:|^nhà\\s*thầu\\s*:\\s*\\S", "i");
 // Tiêu đề không dấu ":" ("4. CÔNG TY ...", "b.1. Công ty ..."): có số/chữ đánh mục, ngắn, không kết bằng dấu câu và không phải câu có lý do.
 const BIDDER_HEAD2 = new RegExp("^" + MARK + NAME_WORD + "\\s+[^.;:]{0,120}$", "i");
 const HEAD2_NOT = /không|chưa|thiếu|đã\s|đề\s*xuất|có\s/i;
 // Mục lớn kế tiếp: "c) ...", "c. ...", "4. Kết quả...", "IV. ...", "Bảng số", "Phần/Chương".
-const MAJOR = /^(?:\(?[c-z][.)]\s+(?!công\s*ty|nhà\s*thầu|liên\s*danh)\S|\d{1,2}\.\s+(?:kết\s*quả|đánh\s*giá|xếp\s*hạng|nhận\s*xét|bảng)|[IVX]{1,4}\.\s+\S|bảng\s+số\s+\d+\b)/i;
+const MAJOR = /^(?:\(?[c-z][.)]\s+(?!công\s*ty|nhà\s*thầu|liên\s*danh)\S|\d{1,2}\.\s+(?:kết\s*quả|đánh\s*giá|xếp\s*hạng|nhận\s*xét|bảng)|[IVX]{1,4}\.\s+\S|bảng\s+số\s+\d+\b|(?:[-•+*]\s*)?(?:hl\s+|[IVX]{1,4}\.?\s+)?k[ếe]t\s*lu[ậa]n\s*v[àa]\s*ki[ếe]n|(?:[-•+*]\s*)?t[ổo]\s*chuy[êe]n\s*gia\s*n[êe]u)/i;
+// Dòng bảng "lý do không đạt": "1 Công ty ...", đánh số bằng chữ số không có dấu chấm (số kèm tên công ty) và dòng đầu mục bị OCR thêm
+// 1–3 ký tự rác ("eo Công ty ..."): chỉ coi là tiêu đề mục của MÌNH khi nhắc đúng tên mình (Khoa, 2026-11-12: IB2400393199, IB2600374560).
+const ROWHEAD = /^\d{1,2}\s*\|?\s*(?:công\s*ty|cty|liên\s*danh)\b/i;
+const OCRHEAD = /^(?:\p{L}{1,2}|[^\p{L}\d\s\-•+*]{1,2})\s+(?:c[ôo]ng\s*ty|cty)\s/iu;
 
 function explanationBlocks(L, startOf) {
   const blocks = [];
@@ -54,6 +59,8 @@ function explanationBlocks(L, startOf) {
     const isHead = EXPL_HEAD.test(l) && !(sec && /^[-•+*]/.test(l) && !failHere);
     if (isHead && failHere) {
       close(); sec = true;
+      // "Thuyết minh … không hợp lệ: Không có." (cả khi dòng tiêu đề bị ngắt xuống dòng kế): mục rỗng, các dòng sau không phải của mục này.
+      if (EMPTY_END.test(l) || (i + 1 < L.length && EMPTY_END.test(l + " " + L[i + 1]))) { sec = false; continue; }
       // Tiêu đề mục tự nêu tên mình và chỉ mình ("... Có (Nhà thầu Công ty ... Thảo Nguyên không đạt ...)"): cả mục là của mình.
       const hl = [l]; for (let k = i + 1; k < Math.min(L.length, i + 3) && !EXPL_HEAD.test(L[k]) && !BIDDER_HEAD.test(L[k]) && !new RegExp("^(?:" + MARK + "|nhà\\s*thầu\\s*:\\s*)" + NAME_WORD, "i").test(L[k]); k++) hl.push(L[k]);
       const h = hl.join(" ");
@@ -71,6 +78,14 @@ function explanationBlocks(L, startOf) {
       if (startOf(i) >= 0 || /4101623015/.test(head) || (head.indexOf(":") > 0 && startOf(i + 1) >= 0 && head.length > l.length)) cur = { i, lines: [l], end: i + 1 };
       continue;
     }
+    // Hàng bảng "1 Công ty TNHH thiết bị | lý do ..." với phần tên kéo sang dòng sau ("kỹ thuật Thảo Nguyên | ...").
+    if (ROWHEAD.test(l)) {
+      close();
+      if (startOf(i) >= 0 || (i + 1 < L.length && NAME_TAIL.test(L[i + 1]) && /thu.{0,2}t/i.test(L[i + 1]))) cur = { i, lines: [l], end: i + 1 };
+      continue;
+    }
+    // Cũng đóng khối của mình ở đầu mục OCR hỏng của nhà thầu khác ("© Cong ty TNHH Hữu Toàn Group").
+    if (OCRHEAD.test(l) && l.length < 140 && !HEAD2_NOT.test(l)) { close(); if (startOf(i) >= 0) cur = { i, lines: [l], end: i + 1 }; continue; }
     if (MAJOR.test(l)) { close(); sec = false; continue; }
     if (cur) { cur.lines.push(l); cur.end = i + 1; }
   }
@@ -92,8 +107,8 @@ function joinCapped(parts, max) {
 }
 
 const bcdgReason = (text, o) => bcdgReasonEx(text, o).text;
-// { text, source }: source = "thuyet-minh" (khối thuyết minh), "doan" (dự phòng: dòng bảng / đoạn lẻ), "" (không có).
-function bcdgReasonEx(text, { tax = OUR_TAX } = {}) {
+// Lõi trích: { text, source, L, startOf }; source = "thuyet-minh" (khối thuyết minh), "doan" (dự phòng: dòng bảng / đoạn lẻ), "" (không có).
+function reasonCore(text, { tax = OUR_TAX } = {}) {
   const L = lines(text), tre = tax ? taxRe(tax) : null;
   // Chỉ số dòng bắt đầu đoạn của mình nếu dòng i nhắc đúng công ty, không thì -1. Tên bị ngắt dòng
   // ("... Thiết bị Kỹ thuật" / "Thảo Nguyên") thì đoạn bắt đầu ở dòng trước.
@@ -109,7 +124,7 @@ function bcdgReasonEx(text, { tax = OUR_TAX } = {}) {
   };
   // Ưu tiên khối thuyết minh; dòng bảng "Không đạt" / đoạn lẻ phía dưới chỉ là dự phòng khi báo cáo không có khối này.
   const expl = explanationBlocks(L, startOf);
-  if (expl.length) return { text: joinCapped(expl.map((b) => b.lines), EXPL_MAX), source: "thuyet-minh" };
+  if (expl.length) return { text: joinCapped(expl.map((b) => b.lines), EXPL_MAX), source: "thuyet-minh", L, startOf };
   const blocks = [];
   for (let i = 0; i < L.length; i++) {
     const s = startOf(i);
@@ -133,7 +148,63 @@ function bcdgReasonEx(text, { tax = OUR_TAX } = {}) {
     if (next.length > MAX_CHARS) { out = out || b.text.slice(0, MAX_CHARS); break; }
     out = next;
   }
-  return { text: out, source: out ? "doan" : "" };
+  return { text: out, source: out ? "doan" : "", L, startOf };
+}
+
+// Kết luận của báo cáo về MÌNH (Khoa, 2026-11-12): "fail" = có đoạn không đạt / bị loại của mình, "pass" = mình đạt mọi bước (dòng bảng
+// "… Thảo Nguyên Đạt Đạt Đạt" và không có chữ không đạt nào của mình), "" = không rõ. Gói đạt: text chỉ là phần "nội dung bổ sung, làm
+// rõ E-HSDT" (nếu có nội dung thật), không lấy dòng bảng.
+const TOK = "(?:đạt|đat|dat|pat|không\\s*đạt|khong\\s*dat|không\\s*dat)";
+const TOKS2 = new RegExp(TOK + "(?:[\\s|xX]*" + TOK + ")+", "gi"); // dãy từ 2 ô kết quả trở lên ("Đạt Không đạt Đạt"): tiêu đề / dòng bảng, không phải lý do
+const TOKONLY = new RegExp("^[\\s|xX.\\-–]*(?:" + TOK + "[\\s|xX.]*)+$", "i");
+const NOTPASS = /kh[ôo]ng\s*[đd][ạa]t/i;
+const EXPL_EMPTY = /:\s*kh[ôo]ng\s*c[óo](?![a-zà-ỹ])/i; // không dùng \b: nó không tính "ó" là chữ
+const CLAR_HEAD = /n[ộo]i\s*dung\s*b.{0,2}\s*sung.{0,12}l[àa]m\s*r[õo]/i;
+const CLAR_STOP = /^(?:nhà\s*thầu\s*:|e-?hsdt\s*của|kết\s*quả\s*đánh\s*giá|stt\b)/i;
+// Dòng của báo cáo có chữ "không đạt/không đáp ứng/bị loại" thật (đã bỏ tiêu đề bảng và câu "Thuyết minh …: Không có").
+function strongFail(lines) {
+  for (let k = 0; k < lines.length; k++) {
+    const l = lines[k];
+    if (TOKONLY.test(l)) continue;
+    if (EXPL_HEAD.test(l) && EXPL_EMPTY.test(lines.slice(k, k + 4).join(" "))) { while (k < lines.length - 1 && !EXPL_EMPTY.test(lines[k])) k++; continue; }
+    if (EXPL_FAIL.test(l.replace(TOKS2, " ").replace(/:?\s*kh[ôo]ng\s*c[óo]\.?$/i, ""))) return true;
+  }
+  return false;
+}
+function clarification(L, s, startOf) {
+  for (let i = s; i < Math.min(L.length, s + 40); i++) {
+    if (i > s && OTHER.test(L[i]) && startOf(i) < 0 && !/^[-•+*]/.test(L[i])) break;
+    if (!CLAR_HEAD.test(L[i])) continue;
+    const out = [];
+    for (let j = i + 1; j < Math.min(L.length, i + 25); j++) {
+      if (CLAR_STOP.test(L[j]) || (SECTION.test(L[j]) && out.length)) break;
+      out.push(L[j]);
+    }
+    if (out.length > 1 && out[0].length < 25 && /^[a-zà-ỹ]/.test(out[0]) && !/:\s*$/.test(L[i])) out.shift(); // đuôi của dòng tiêu đề bị ngắt ("thầu:")
+    // Mục chỉ có hướng dẫn mẫu + "(nếu có): Không có" thì không có nội dung làm rõ; có công văn / văn bản cụ thể thì có.
+    const all = (L[i] + " " + out.join(" ")).trim();
+    if (!out.length || (/kh[ôo]ng\s*c[óo]\.?$/i.test(all) && !/c[ôo]ng\s*v[ăa]n\s*(?:c[ủu]a|tr[ảa]|s[ốo])/i.test(all))) return "";
+    return joinCapped([out], EXPL_MAX);
+  }
+  return "";
+}
+const PASS_END = /(?:^|[\s|])(?:đạt|đat|pat)(?:[\s|xX]+(?:đạt|đat|pat))*[\s|.]*$/i;
+// { text, source, verdict }. Không chắc → verdict "" (và text như trước).
+function bcdgReasonEx(text, o = {}) {
+  const r = reasonCore(text, o), { L, startOf } = r;
+  let verdict = "", out = r.text;
+  const rows = []; // các dòng báo cáo có tên mình (kèm dòng kế, nơi tên bị ngắt)
+  for (let i = 0; i < L.length; i++) {
+    const s = startOf(i);
+    if (s < 0 || rows.some((m) => m.s === s)) continue;
+    const row = (L[s] + (s + 1 < L.length && startOf(s + 1) === s ? " " + L[s + 1] : "")).trim(), one = L[s].trim(); // tên bị ngắt dòng: nối dòng đuôi
+    rows.push({ s, failEnd: FAIL_END.test(row) || FAIL_END.test(one), pass: !NOTPASS.test(row) && (PASS_END.test(one) || PASS_END.test(row)) });
+  }
+  const failRow = rows.some((m) => m.failEnd);
+  if (r.source === "thuyet-minh") verdict = "fail";
+  else if (failRow || (r.source === "doan" && strongFail(r.text.split("\n")))) verdict = "fail";
+  else if (rows.some((m) => m.pass)) { verdict = "pass"; out = clarification(L, rows.find((m) => m.pass).s, startOf); }
+  return { text: out, source: verdict === "pass" ? "dat" : r.source, verdict };
 }
 // Trang (chữ OCR nhanh, chất lượng thấp) có nhắc công ty mình không: so khớp chịu lỗi OCR, bỏ dấu. Dùng để chọn trang cần OCR kỹ
 // (ocr-pdf.js --locate); thà thừa trang còn hơn sót. "Thảo Nguyên" (lệch tối đa vài ký tự), "kỹ thuật Thảo", hoặc MST (cho phép
