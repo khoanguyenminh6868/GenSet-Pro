@@ -3,7 +3,7 @@
 //
 //   node suppliers/agent-read.mjs prep <thư mục>...             input.md chia phần ≤ mức Read đọc trọn (writeForRead),
 //                                                               read-order.json, và đoạn "Cách đọc" nối vào TASK.md
-//   node suppliers/agent-read.mjs guard --log <log> <thư mục>... đọc log stream-json của lượt (một lượt nhiều thư mục:
+//   node suppliers/agent-read.mjs guard --log <log> [--cwd <thư mục chạy>] <thư mục>... đọc log stream-json của lượt (một lượt nhiều thư mục:
 //                                                               chỉ tính Read trong thư mục của gói), ghi read-guard.json
 //
 // read-guard.json: { incomplete, notes[], error } — genbid-sync.js finish: incomplete thì KHÔNG ghi đè kết quả cũ
@@ -46,8 +46,8 @@ export function prepDir(dir) {
 // One folder of a run: { incomplete, notes, error }. incomplete = a file of read-order.json read with lines missing
 // (or not at all). A run that stopped (no result line, error end) but read everything: the notes say so, the result
 // stays (it is whole when result.json exists).
-export function guardDir(dir, trace) {
-  const g = guardTrace(dir, trace, { under: true, risk: "kết quả có thể thiếu", again: "bấm gửi lại yêu cầu" });
+export function guardDir(dir, trace, cwd = "") {
+  const g = guardTrace(dir, trace, { under: true, cwd, risk: "kết quả có thể thiếu", again: "bấm gửi lại yêu cầu" });
   const incomplete = g.cov.some((c) => c.missing.length);
   const notes = g.notes.map((n) => n.slice(0, NOTE_MAX));
   const stopped = stoppedNote(g.end);
@@ -55,11 +55,11 @@ export function guardDir(dir, trace) {
   return { incomplete, notes, stopped, error };
 }
 
-export function guardDirs(dirs, logText) {
+export function guardDirs(dirs, logText, cwd = "") {
   const trace = readTrace(logText), out = [];
   for (const dir of dirs) {
     if (!fs.existsSync(path.join(dir, "read-order.json"))) continue;
-    const r = guardDir(dir, trace);
+    const r = guardDir(dir, trace, cwd);
     fs.writeFileSync(path.join(dir, "read-guard.json"), JSON.stringify(r, null, 1), "utf8");
     out.push({ dir, ...r });
   }
@@ -71,8 +71,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   if (cmd === "prep") {
     for (const d of rest) { const f = prepDir(d); console.log(`${path.basename(d)}: ${f.join(", ") || "không có input.md"}`); }
   } else if (cmd === "guard") {
-    const i = rest.indexOf("--log"), log = rest[i + 1], dirs = rest.filter((_, j) => j !== i && j !== i + 1);
-    for (const r of guardDirs(dirs, fs.existsSync(log) ? fs.readFileSync(log, "utf8") : "")) {
+    const i = rest.indexOf("--log"), log = rest[i + 1], c = rest.indexOf("--cwd"), cwd = c >= 0 ? rest[c + 1] : "";
+    const dirs = rest.filter((_, j) => j !== i && j !== i + 1 && (c < 0 || (j !== c && j !== c + 1)));
+    for (const r of guardDirs(dirs, fs.existsSync(log) ? fs.readFileSync(log, "utf8") : "", cwd)) {
       console.log(`CHỐT ĐỌC ${path.basename(r.dir)}: ${r.incomplete ? "ĐỌC THIẾU — " + r.error : r.notes.length ? r.notes.join(" ") : "đọc đủ"}`);
     }
   } else { console.error("usage: agent-read.mjs prep <dir>... | guard --log <log> <dir>..."); process.exit(2); }

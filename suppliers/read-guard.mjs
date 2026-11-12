@@ -25,10 +25,11 @@ const REFUSED = /exceeds maximum allowed (tokens|size)|too large|file content \(
 // result line (subtype, turns, cost) or null when there is none (killed, timeout, crash).
 export function readTrace(logText) {
   const uses = new Map(), reads = [], shell = [];
-  let end = null;
+  let end = null, cwd = "";
   for (const l of String(logText || "").split("\n")) {
     const j = jsonOf(l);
     if (!j) continue;
+    if (j.type === "system" && j.subtype === "init" && j.cwd) cwd = String(j.cwd);
     if (j.type === "result") { end = { subtype: j.subtype || "", isError: !!j.is_error, turns: j.num_turns ?? null, cost: j.total_cost_usd ?? null, stop: j.stop_reason ?? null, text: String(j.result || "").slice(0, 300) }; continue; }
     const content = Array.isArray(j?.message?.content) ? j.message.content : [];
     for (const c of content) {
@@ -64,7 +65,7 @@ export function readTrace(logText) {
     }
   }
   const turns = end?.turns ?? null;
-  return { reads, shell, end, turns };
+  return { reads, shell, end, turns, cwd };
 }
 
 // Line ranges [a, b] merged.
@@ -154,14 +155,18 @@ export function guardRun(dir, logText, opts = {}) { return guardTrace(dir, readT
 // The reads and shell reads of a trace that are inside `dir`: one agent run works on several folders (Phân tích HSMT),
 // and input.md of one is not input.md of another. A path that is not under dir (relative, other folder) does not count.
 const slash = (p) => String(p || "").replace(/\\/g, "/").toLowerCase();
-export function traceUnder(trace, dir) {
-  const d = slash(dir).replace(/\/+$/, "") + "/", under = (x) => slash(x.file).startsWith(d);
+// A relative path is the run's working directory + the path (`cwd`: the runner's, else the init line's of the log).
+export function traceUnder(trace, dir, cwd = "") {
+  const d = slash(dir).replace(/\/+$/, "") + "/", base = slash(cwd || trace.cwd).replace(/\/+$/, "");
+  const full = (f) => { const s = slash(f); return /^([a-z]:)?\//.test(s) || !base ? s : `${base}/${s.replace(/^\.\//, "")}`; };
+  const under = (x) => full(x.file).startsWith(d);
   return { ...trace, reads: trace.reads.filter(under), shell: trace.shell.filter(under) };
 }
-// guardRun for one folder of a run on several: `under` = the folder the reads must be in.
+// guardRun for one folder of a run on several: `under` = the folder the reads must be in; `cwd` = the run's working
+// directory (for relative paths).
 export function guardTrace(dir, trace, opts = {}) {
-  const { under, ...o } = opts;
-  if (under) trace = traceUnder(trace, dir);
+  const { under, cwd, ...o } = opts;
+  if (under) trace = traceUnder(trace, dir, cwd);
   opts = o;
   const files = partsMap(dir);
   if (!files.length) return { cov: [], end: trace.end, notes: readNotes([], trace.end, opts), trace };

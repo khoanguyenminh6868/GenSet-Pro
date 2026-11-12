@@ -81,3 +81,21 @@ test("guardDirs: thư mục không có read-order.json (lượt cũ) bị bỏ q
   assert.deepEqual(guardDirs([d], END), []);
   assert.equal(fs.existsSync(path.join(d, "read-guard.json")), false);
 });
+
+test("guardDirs: đường dẫn tương đối nối với thư mục chạy (--cwd, hoặc dòng init của log)", () => {
+  const a = mk(1);
+  prepDir(a);
+  const n = lines(path.join(a, "input.md")), root = path.dirname(a), rel = `${path.basename(a)}/input.md`;
+  const log = [...read(rel, n, n), END].join("\n");
+  const [byCwd] = guardDirs([a], log, root);
+  assert.equal(byCwd.incomplete, false);
+  const init = L({ type: "system", subtype: "init", cwd: root.replace(/\//g, "\\") });
+  const [byInit] = guardDirs([a], [init, ...read(rel, n, n), END].join("\n"));
+  assert.equal(byInit.incomplete, false);
+  // No cwd known: a relative path cannot be placed, so it does not count (reported as missing, the safe side).
+  const [none] = guardDirs([a], log);
+  assert.equal(none.incomplete, true);
+  // A relative path of another folder does not count.
+  const [other] = guardDirs([a], [...read("zzz/input.md", n, n), END].join("\n"), root);
+  assert.equal(other.incomplete, true);
+});

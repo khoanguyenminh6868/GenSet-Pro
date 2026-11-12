@@ -328,7 +328,7 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
         } catch {}
     }
     # Đọc thiếu thì read-guard.json trong thư mục báo; genbid-sync.js finish không ghi đè kết quả cũ bằng kết quả đó.
-    if ($guard) { Invoke-Node-File $node $readJs (@('guard', '--log', $out) + $dirs) | ForEach-Object { Log "  $_" } }
+    if ($guard) { Invoke-Node-File $node $readJs (@('guard', '--log', $out, '--cwd', $Root) + $dirs) | ForEach-Object { Log "  $_" } }
     return $reason
 }
 
@@ -395,7 +395,12 @@ function Wait-Worker($p, [string]$out) {
         Log 'Đã xoá tệp khoá mà lượt worker để lại.'
     }
     # Hết hạn mức Claude (dùng chung gói với Khoa): báo rõ giờ làm mới và tạm dừng gọi Agent.
-    $text = (Get-Content $out -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) + (Get-Content "$out.err" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue)
+    # Log stream-json của agent có cả nội dung tệp agent đọc và các dòng sự kiện: chỉ dò trên các dòng không phải JSON
+    # và dòng "result" cuối (chữ "rate limit" trong một tệp HSMT không được coi là hết hạn mức), cộng tệp .err.
+    $lines = @(Get-Content $out -Encoding UTF8 -ErrorAction SilentlyContinue)
+    $keep = @($lines | Where-Object { $_ -notmatch '^\s*\{' })
+    $lastResult = $lines | Where-Object { $_ -match '^\s*\{.*"type"\s*:\s*"result"' } | Select-Object -Last 1
+    $text = ((@($keep) + @($lastResult)) -join "`n") + (Get-Content "$out.err" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue)
     # Trả bằng API key (.anthropic-api-key): hết tiền nạp hoặc khoá sai thì báo rõ, không tạm dừng theo giờ.
     # Hết hạn mức API tháng (Khoa 12/11/2026): ghi "exhausted" để các lượt sau dùng gói tháng tới kỳ làm mới.
     if ($code -ne 0 -and $env:ANTHROPIC_API_KEY -and $text -match '(?i)credit balance is too low|reached your specified api usage limits') {
