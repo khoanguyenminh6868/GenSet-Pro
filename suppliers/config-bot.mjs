@@ -786,10 +786,14 @@ export function plausible(hints, cap) {
   if (hints.maxDisp != null && ((out.minDisp != null && hints.maxDisp < out.minDisp) || hints.maxDisp < kva * 0.01)) out.maxDisp = null;
   return out;
 }
+// The candidates' power band (Khoa, 2026-11-12): a row whose rating is from 100% (less the 0.5% of rounding the checks
+// allow: 0.995, as `gap` and the prime check) to 120% of the HSMT's size. It was 95% to 140%.
+export const NEAR_LOW = 0.995, NEAR_HIGH = 1.2;
 export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a]));
-  const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4);
-  const rows = [];
+  const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * NEAR_LOW && p[cap.unit] <= cap.value * NEAR_HIGH + 1e-9);
+  // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
+  const rows = [], dropped = [];
   for (const e of cat.engines || []) {
     if (focus && !focus.has(e.key)) continue;
     const viaCn = origin === "cn" && CAT.originOf(e) === "other";
@@ -823,26 +827,32 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const [b, st] = bs ? numbersIn(bs.value) : [], n = z ? numbersIn(z.value)[0] : null;
       const calcL = !given.some((f) => f.key === "disp") && b > 50 && st > 50 && n ? Math.round(Math.PI / 4 * b * b * st * n / 1e4) / 100 : null;
       const dl = below("disp", hints.minDisp, litres) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = below("cyl", hints.minCyl, (v) => numbersIn(v)[0] ?? null);
-      if (dl != null) { score -= 600; why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
+      // Below a minimum of the HSMT (displacement, cylinders, prime) or past its largest displacement: the row is left out,
+      // unless the HSMT names its engine model (`named`): then its sources disagree with the HSMT's own choice, and it
+      // stays with 600 points off and the reason, for the agent to see.
+      const ruled = [];
+      if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
       const dh = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => litres(f.value)).filter((x) => x != null) : [];
-      if (dh.length && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
-      if (cl != null) { score -= 600; why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
+      if (dh.length && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
+      if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
       const pr = u.power?.prime, mp = hints.minPrime;
       const lowPrime = pr && mp && ((mp.kVA && pr.kVA != null && pr.kVA < mp.kVA * 0.995) || (!mp.kVA && mp.kW && pr.kW != null && pr.kW < mp.kW * 0.995));
-      if (lowPrime) { score -= 600; why.push(`Prime ${pr.kVA ?? "?"} kVA / ${pr.kW ?? "?"} kW < ${mp.kVA ? `${mp.kVA} kVA` : `${mp.kW} kW`} HSMT yêu cầu`); }
+      if (lowPrime) { score -= 600; ruled.push("prime"); why.push(`Prime ${pr.kVA ?? "?"} kVA / ${pr.kW ?? "?"} kW < ${mp.kVA ? `${mp.kVA} kVA` : `${mp.kW} kW`} HSMT yêu cầu`); }
       // Its own fuel consumption in L/h above the most the HSMT allows.
+      let fuelOver = false;
       for (const [fk, hk, at] of [["fuel", "maxFuel", ""], ["fuel75", "maxFuel75", " ở 75% tải"], ["fuel50", "maxFuel50", " ở 50% tải"]]) {
         const fl = hints[hk] && (u.specs || []).find((x) => x.key === fk && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`));
         const fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null;
-        if (fv != null && fv > hints[hk]) { score -= 300; why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
+        if (fv != null && fv > hints[hk]) { score -= 300; fuelOver = true; why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
       }
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
       if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
       const maker = sync && s?.role === "genset_oem" ? gensetMakerOf(s) : null;
       if (maker) why.push(`tổ máy của chính hãng ${maker} (HSMT đòi đồng bộ thương hiệu)`);
-      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker });
+      if (ruled.length && !isNamed) { dropped.push({ e, u, ruled }); continue; }
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver });
     }
   }
   rows.sort((x, y) => y.score - x.score);
@@ -865,8 +875,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // Đồng bộ thương hiệu asked (Khoa, 2026-11-12, IB2600594596): the rows of genset makers (gensetMakerOf, as syncCheck
   // reads them) keep SYNC_ROWS places, SYNC_PER_SUPPLIER engines a maker, the size nearest the HSMT's first. Their rows
   // name no alternator or controller datasheet and scored below every assembler's (Rehlko D440 / P158LE 165, the 30th
-  // row 248), so the 30 rows were all assemblers' whose sets syncCheck then marks not met. A row the HSMT rules out
-  // (score 0 or below) keeps no place.
+  // row 248), so the 30 rows were all assemblers' whose sets syncCheck then marks not met. A row under a minimum of the
+  // HSMT is no row of `rows` (only a `named` one stays, with its 600 points off); a score of 0 or below (a fuel
+  // consumption over the limit takes 300) still keeps no place.
   // One row of each maker first, then a second engine of each: the first measure gave all 6 places to three makers in
   // China with two rows each (Jet-Power, Bobig, Wintpower) and none to Rehlko, FG Wilson or Cummins at 300 kVA.
   if (sync) {
@@ -886,7 +897,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // G7 / G20 asked, no make named (Khoa, 2026-11-11, IB2600603983): every make of the group with a fitting row keeps
   // MAKE_ROWS rows of different engines, best make first. Cummins and Perkins have the most datasheet figures and filled
   // the 30 rows; Baudouin 6M31G825/5 (750 kVA prime, offered by four suppliers) stood 361st. A row the HSMT rules out
-  // (score below 0: prime, displacement, cylinders) keeps no place.
+  // (score 0 or below: a fuel consumption over the limit; a row under a minimum is not here at all) keeps no place.
   if (GROUP_ORIGIN.has(origin) && !hints.engineMakes.length && !rows.some((r) => r.named)) {
     const byMake = new Map();
     for (const r of rows) {
@@ -915,7 +926,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     }
   }
   out.sort((x, y) => y.score - x.score);
-  return { top: out, all: rows };
+  return { top: out, all: rows, dropped };
 }
 // The rows of the configurations a result chose (candidates `keep`): supplierId + engine key of each supplier and of
 // the engine's catalog source.
@@ -970,7 +981,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     const off = at.length - j, cell = (cs) => (cs.length - off >= 1 ? cs[cs.length - off] : "?");
     return `  bảng nhiều model theo cột (${u.model} là cột thứ ${off} từ phải; sourceQuote là nguyên dòng, src.line là dòng "${rows[cells.indexOf(at)]}"): ${rows.map((r, i) => `${r} → ${cell(cells[i])}`).join(" ; ")}`;
   };
-  const out = [`# Danh mục trong hệ thống${cap ? ` (tổ máy ${cap.value} ${cap.unit}, từ 95% đến 140%)` : ""}${hints.freq ? `, ${hints.freq} Hz` : ""} — code đã xếp sẵn`, "",
+  const out = [`# Danh mục trong hệ thống${cap ? ` (tổ máy ${cap.value} ${cap.unit}, từ 100% đến 120%)` : ""}${hints.freq ? `, ${hints.freq} Hz` : ""} — code đã xếp sẵn`, "",
     "Thứ tự ưu tiên khi xếp: model động cơ / hãng động cơ HSMT nêu, bộ điều khiển HSMT nêu, động cơ có nhiều thông số có nguồn, rồi mới tới đầu phát; công suất càng sát càng tốt.", "",
     `## Ứng viên (${top.length} dòng tổ máy, tốt nhất trước)`, ""];
   top.forEach((r, i) => {
@@ -3214,7 +3225,7 @@ export async function findPrep(key, dir, req, suppliers) {
   fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin: info.origin, cap: info.cap }), "utf8");
   return info;
 }
-// A product line of the record that covers the tender's power, in the tender's unit (95% to 140%, as catalog.md).
+// A product line of the record that covers the tender's power, in the tender's unit (95% to 140%; the candidates of catalog.md are 100% to 120% since 2026-11-12, this one is Tìm NCC's and stays: Khoa decides).
 const capStr = (c) => (Array.isArray(c) ? c : c ? [c] : []).map((x) => `${x.value} ${x.unit}`).join(", ");
 // cap may be a list (a tender of several sizes): a line that covers any of them.
 export function fitsCap(rec, cap) {
