@@ -14,6 +14,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
+import { viaApi, noteApiSpend, costOf, switchToPlan } from "./api-budget.mjs";
 import { api, allDocs, doc, post, technicalPart, hsmtTextOf, sizesFor, sizeText, MAX_SIZES } from "./config-bot.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -134,10 +135,13 @@ export function check(dir) {
 }
 
 function runClaude(dir) {
-  return spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "text", "--model", process.env.GENBID_BIDPRICE_MODEL || "opus",
+  const api = viaApi();
+  const r = spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "json", "--model", process.env.GENBID_BIDPRICE_MODEL || "opus",
     "--strict-mcp-config", "--disable-slash-commands", "--tools", "Read", "Write", "Grep", "Glob"],
     { cwd: dir, encoding: "utf8", timeout: 25 * 60e3, maxBuffer: 64 << 20, windowsHide: true,
       input: "Đọc prompt.md trong thư mục này và làm đúng như vậy: đọc input.md và samples.md, chỉ ghi result.json. Chạy không người trông, không ai trả lời câu hỏi." });
+  noteApiSpend(costOf(r.stdout), "bidprice", api);
+  return api && switchToPlan(`${r.stdout || ""}${r.stderr || ""}`, "bidprice") ? runClaude(dir) : r;
 }
 
 async function attemptOne(req, dir, hist, size = null, tag = req.key) {

@@ -55,6 +55,8 @@ try { [Console]::OutputEncoding = [Text.Encoding]::UTF8 } catch {}
 $IngestTokenFile = Join-Path $Root '.genbid-ingest-token'
 $ClaudeTokenFile = Join-Path $Root '.claude-bot-token'
 $ApiKeyFile = Join-Path $Root '.anthropic-api-key'
+$ApiSpendFile = Join-Path $Root '.anthropic-api-spend.jsonl'
+$ApiBudgetFile = Join-Path $Root '.anthropic-api-budget.json'
 $StateFile = Join-Path $Root '.genbid-bot-state.json'
 $WorkerState = Join-Path $Root '.hsmt-worker-state.json'
 $LockFile = Join-Path $Root '.hsmt-worker.lock'
@@ -161,16 +163,53 @@ function Test-ClaudeLogin { Test-Path (Join-Path $env:USERPROFILE '.claude\.cred
 
 # Khoa 11/11/2026: Phân tích, Gợi ý cấu hình, Giá gợi ý trả tiền theo API key thay vì hạn mức tháng của gói Claude.
 # Có tệp .anthropic-api-key thì đặt ANTHROPIC_API_KEY (claude -p ưu tiên nó hơn đăng nhập /login); không có thì như cũ.
-# Không quay về hạn mức tháng khi API lỗi (hết tiền nạp...) — lượt báo lỗi để Khoa thấy.
+# Khoa 12/11/2026: API key được 100 USD/tháng, làm mới ngày 2. Mỗi lần gọi bằng API key ghi chi phí (total_cost_usd)
+# vào .anthropic-api-spend.jsonl (genbid-sync.js, suppliers/api-budget.mjs, Invoke-Agent). Tiêu tới ngưỡng (mặc định
+# 90 USD) hoặc API báo hết tiền ("exhausted") thì dùng hạn mức gói tháng tới kỳ sau. Hạn mức, ngày làm mới, ngưỡng:
+# .anthropic-api-budget.json {monthlyUsd, resetDay, switchAtUsd}.
+function Get-ApiBudget {
+    $b = [ordered]@{ monthlyUsd = 100.0; resetDay = 2; switchAtUsd = 90.0 }
+    try { $j = Get-Content $ApiBudgetFile -Raw -Encoding UTF8 -ErrorAction Stop | ConvertFrom-Json; foreach ($n in @($b.Keys)) { if ($null -ne $j.$n) { $b[$n] = [double]$j.$n } } } catch {}
+    $now = Get-Date
+    $since = (Get-Date -Year $now.Year -Month $now.Month -Day 1).Date.AddDays([int]$b.resetDay - 1)
+    if ($now -lt $since) { $since = $since.AddMonths(-1) }
+    $spent = 0.0; $exhausted = $false
+    if (Test-Path $ApiSpendFile) {
+        foreach ($l in [IO.File]::ReadAllLines($ApiSpendFile)) {
+            if (-not $l.Trim()) { continue }
+            try { $e = $l | ConvertFrom-Json; $t = [datetime]::Parse([string]$e.t, [Globalization.CultureInfo]::InvariantCulture) } catch { continue }
+            if ($t -lt $since) { continue }
+            if ($e.usd) { $spent += [double]$e.usd }
+            if ($e.exhausted) { $exhausted = $true }
+        }
+    }
+    [pscustomobject]@{ Spent = [math]::Round($spent, 2); Limit = $b.monthlyUsd; SwitchAt = $b.switchAtUsd; Since = $since; Exhausted = $exhausted }
+}
+function Add-ApiSpend([double]$usd, [string]$src, [switch]$Exhausted) {
+    $rec = [ordered]@{ t = (Get-Date).ToUniversalTime().ToString('o'); usd = [math]::Round($usd, 4); src = $src }
+    if ($Exhausted) { $rec.exhausted = $true }
+    try { [IO.File]::AppendAllText($ApiSpendFile, (($rec | ConvertTo-Json -Compress) + "`n"), $Utf8) } catch {}
+}
 function Set-ClaudeAuth {
     if (Test-Path $ApiKeyFile) {
         $k = (Get-Content $ApiKeyFile -TotalCount 1).Trim()
-        if ($k) { $env:ANTHROPIC_API_KEY = $k; Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN -ErrorAction SilentlyContinue; return 'api' }
+        if ($k) {
+            $bud = Get-ApiBudget
+            $use = "$($bud.Spent)/$($bud.Limit) USD từ $($bud.Since.ToString('dd/MM'))"
+            if (-not $bud.Exhausted -and $bud.Spent -lt $bud.SwitchAt) {
+                $env:ANTHROPIC_API_KEY = $k; Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN -ErrorAction SilentlyContinue
+                $env:GENBID_API_SPEND_FILE = $ApiSpendFile; $env:GENBID_CLAUDE_TOKEN_FILE = $ClaudeTokenFile
+                return "api, đã dùng $use"
+            }
+            $why = if ($bud.Exhausted) { 'API báo hết tiền' } else { "đã dùng $use, tới ngưỡng $($bud.SwitchAt) USD" }
+            if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
+            return "plan ($why)"
+        }
     }
     if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
     return 'plan'
 }
-function Clear-ClaudeAuth { Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:ANTHROPIC_API_KEY -ErrorAction SilentlyContinue }
+function Clear-ClaudeAuth { Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:ANTHROPIC_API_KEY, Env:GENBID_API_SPEND_FILE, Env:GENBID_CLAUDE_TOKEN_FILE -ErrorAction SilentlyContinue }
 
 function Test-WorkerRunning {
     if (-not (Test-Path $LockFile)) { return $false }
@@ -266,8 +305,12 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
     $model = if (@($dirs | Where-Object { (Split-Path $_ -Leaf) -notlike 'translation-*' }).Count) { $DeepModel } else { $LightModel }
     Log "Gọi Claude agent ($model) cho: $(($dirs | ForEach-Object { Split-Path $_ -Leaf }) -join ', ')  (log: $out)"
     # Bộ công cụ tối thiểu: không MCP, không skill/plugin, không Chrome (giảm phần nền mỗi lượt từ ~55k xuống ~9k token).
-    $cliArgs = @('-p', '--permission-mode', 'auto', '--output-format', 'text', '--model', $model, '--strict-mcp-config', '--disable-slash-commands', '--tools', 'Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep')
-    return Start-Run $claude $cliArgs $promptFile $sigs $out
+    # json để đọc total_cost_usd ghi vào sổ chi tiêu API (khi lượt trả bằng API key).
+    $cliArgs = @('-p', '--permission-mode', 'auto', '--output-format', 'json', '--model', $model, '--strict-mcp-config', '--disable-slash-commands', '--tools', 'Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep')
+    $api = [bool]$env:ANTHROPIC_API_KEY
+    $reason = Start-Run $claude $cliArgs $promptFile $sigs $out
+    if ($api) { try { $c = (Get-Content $out -Raw -Encoding UTF8 | ConvertFrom-Json).total_cost_usd; if ($c) { Add-ApiSpend ([double]$c) 'agent' } } catch {} }
+    return $reason
 }
 
 # Cập nhật repo GenSet-Pro lên origin/main. Không dùng git pull: pull hợp nhất theo FETCH_HEAD, nên khi có lượt fetch
@@ -335,7 +378,12 @@ function Wait-Worker($p, [string]$out) {
     # Hết hạn mức Claude (dùng chung gói với Khoa): báo rõ giờ làm mới và tạm dừng gọi Agent.
     $text = (Get-Content $out -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) + (Get-Content "$out.err" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue)
     # Trả bằng API key (.anthropic-api-key): hết tiền nạp hoặc khoá sai thì báo rõ, không tạm dừng theo giờ.
-    if ($code -ne 0 -and $text -match '(?i)credit balance is too low') { return 'Tài khoản API Anthropic hết tiền nạp (console.anthropic.com → Billing). Anh nạp thêm rồi gửi lại yêu cầu.' }
+    # Hết hạn mức API tháng (Khoa 12/11/2026): ghi "exhausted" để các lượt sau dùng gói tháng tới kỳ làm mới.
+    if ($code -ne 0 -and $env:ANTHROPIC_API_KEY -and $text -match '(?i)credit balance is too low|reached your specified api usage limits') {
+        Add-ApiSpend 0 'agent' -Exhausted
+        Log 'Hạn mức API key đã hết; các lượt sau dùng gói tháng.'
+        return 'Hạn mức API Anthropic tháng này đã hết; bot đã chuyển sang gói tháng. Anh gửi lại yêu cầu.'
+    }
     if ($code -ne 0 -and $text -match '(?i)invalid api key|authentication_error') { return 'API key Anthropic không hợp lệ (tệp .anthropic-api-key). Anh kiểm lại khoá rồi gửi lại yêu cầu.' }
     if ($code -ne 0 -and $text -match '(?i)(hit your [a-z ]*limit|usage limit|rate limit|session limit)') {
         $reset = if ($text -match '(?i)resets ([^\r\n·]+)') { $Matches[1].Trim() } else { '' }

@@ -1779,10 +1779,49 @@ function claudeExe() {
 const LIMIT = /hit your [a-z ]*limit|usage limit|rate limit|session limit|credit balance is too low/i;
 // Khoa 11/11/2026: gọi Claude trả bằng API key (tệp .anthropic-api-key) thay vì hạn mức tháng; cả khi chạy tay (specs,
 // history-config). Bot đã đặt sẵn biến này cho lượt AI; không có tệp thì như cũ (đăng nhập /login).
-if (!process.env.ANTHROPIC_API_KEY) {
-  try { const k = fs.readFileSync(path.join(ROOT, ".anthropic-api-key"), "utf8").trim().split(/\r?\n/)[0]; if (k) process.env.ANTHROPIC_API_KEY = k; } catch {}
+// Khoa 12/11/2026: API key được 100 USD/tháng, làm mới ngày 2. Mỗi lần gọi bằng API key ghi chi phí (total_cost_usd)
+// vào .anthropic-api-spend.jsonl; tiêu tới ngưỡng (mặc định 90 USD) hoặc API báo hết tiền thì dùng gói tháng tới kỳ sau.
+// Hạn mức, ngày làm mới, ngưỡng: .anthropic-api-budget.json {monthlyUsd, resetDay, switchAtUsd}. Cùng cách tính với
+// Get-ApiBudget trong GenBid-Bot.ps1; suppliers/api-budget.mjs (config-bot, bidprice-bot) ghi cùng sổ.
+const API_SPEND = path.join(ROOT, ".anthropic-api-spend.jsonl");
+const API_OUT = /credit balance is too low|reached your specified api usage limits/i;
+function apiBudget() {
+  let b = { monthlyUsd: 100, resetDay: 2, switchAtUsd: 90 };
+  try { b = { ...b, ...JSON.parse(fs.readFileSync(path.join(ROOT, ".anthropic-api-budget.json"), "utf8").replace(/^\uFEFF/, "")) }; } catch {}
+  const now = new Date();
+  let since = new Date(now.getFullYear(), now.getMonth(), b.resetDay);
+  if (now < since) since = new Date(now.getFullYear(), now.getMonth() - 1, b.resetDay);
+  let spent = 0, exhausted = false;
+  try {
+    for (const l of fs.readFileSync(API_SPEND, "utf8").split(/\r?\n/)) {
+      let e; try { e = JSON.parse(l); } catch { continue; }
+      if (!(new Date(e.t) >= since)) continue;
+      spent += Number(e.usd) || 0; if (e.exhausted) exhausted = true;
+    }
+  } catch {}
+  return { ...b, since, spent: Math.round(spent * 100) / 100, exhausted, ok: !exhausted && spent < b.switchAtUsd };
+}
+if (!process.env.ANTHROPIC_API_KEY && apiBudget().ok) {
+  try { const k = fs.readFileSync(path.join(ROOT, ".anthropic-api-key"), "utf8").trim().split(/\r?\n/)[0]; if (k) { process.env.ANTHROPIC_API_KEY = k; process.env.GENBID_API_SPEND_FILE ||= API_SPEND; } } catch {}
+}
+function noteApiSpend(usd, src, api) {
+  const f = process.env.GENBID_API_SPEND_FILE;
+  if (api && f && Number(usd) > 0) try { fs.appendFileSync(f, JSON.stringify({ t: new Date().toISOString(), usd: Math.round(Number(usd) * 1e4) / 1e4, src }) + "\n"); } catch {}
+}
+// API hết tiền / chạm hạn mức: ghi "exhausted", bỏ API key khỏi tiến trình này (các lần gọi sau dùng gói tháng).
+function switchToPlan(text, src) {
+  if (!process.env.ANTHROPIC_API_KEY || !API_OUT.test(text)) return false;
+  try { fs.appendFileSync(process.env.GENBID_API_SPEND_FILE || API_SPEND, JSON.stringify({ t: new Date().toISOString(), usd: 0, exhausted: true, src }) + "\n"); } catch {}
+  delete process.env.ANTHROPIC_API_KEY;
+  const tok = process.env.GENBID_CLAUDE_TOKEN_FILE;
+  if (tok && !fs.existsSync(path.join(require("os").homedir(), ".claude", ".credentials.json"))) {
+    try { process.env.CLAUDE_CODE_OAUTH_TOKEN = fs.readFileSync(tok, "utf8").trim().split(/\r?\n/)[0]; } catch {}
+  }
+  console.log("  Hạn mức API key đã hết (" + src + "); chuyển sang gói tháng.");
+  return true;
 }
 function askOnce(prompt, model) {
+  const api = !!process.env.ANTHROPIC_API_KEY;
   return new Promise((resolve) => {
     const p = cp.spawn(claudeExe(), ["-p", "--output-format", "json", "--model", model, "--tools", "", "--strict-mcp-config", "--disable-slash-commands"], { windowsHide: true });
     let out = "", err = "";
@@ -1792,6 +1831,8 @@ function askOnce(prompt, model) {
       clearTimeout(timer);
       let j = null; try { j = JSON.parse(out); } catch {}
       const text = j?.result || "";
+      noteApiSpend(j?.total_cost_usd, "ask", api);
+      if (api && (code !== 0 || j?.is_error) && switchToPlan(text + err + out, "ask")) return resolve(askOnce(prompt, model));
       if (LIMIT.test(text + err + out) && (code !== 0 || j?.is_error)) return resolve({ limit: (text || err || out).trim().slice(0, 300) });
       if (!j || j.is_error) return resolve({ error: (text || err || out || `mã thoát ${code}`).trim().slice(0, 300) });
       const s = text.replace(/^\s*```(?:json)?\s*/, "").replace(/\s*```\s*$/, "");

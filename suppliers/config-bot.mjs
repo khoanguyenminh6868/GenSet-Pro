@@ -31,6 +31,7 @@ import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
 import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn, clausesOf } from "./reqcodes.mjs";
 import { ratingsOf, stamfordRatings, altSheetAttrs } from "./ratings.mjs";
+import { viaApi, noteApiSpend, costOf, switchToPlan } from "./api-budget.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -3129,6 +3130,13 @@ async function autoBidprice(req) {
 // (every tool call and its result); nothing else reads stdout.
 const CLAUDE_TIMEOUT = 40 * 60e3;
 function runClaude(dir, input) {
+  const api = viaApi();
+  return runClaudeOnce(dir, input).then((r) => {
+    noteApiSpend(costOf(r.stdout), "config", api);
+    return api && switchToPlan(r.stdout + r.stderr, "config") ? runClaude(dir, input) : r;
+  });
+}
+function runClaudeOnce(dir, input) {
   const t0 = Date.now(), args = ["-p", "--permission-mode", "auto", "--output-format", "stream-json", "--verbose", "--model", process.env.GENBID_CONFIG_MODEL || "opus",
     "--strict-mcp-config", "--disable-slash-commands", "--tools", "Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"];
   return new Promise((ok) => {
