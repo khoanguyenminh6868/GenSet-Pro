@@ -8,6 +8,7 @@
 //   node genbid-sync.js history [--max N] [--pages N] [--full] [--profile hist]   every "máy phát điện" tender with its
 //                                                      bidders and prices into bidhist/<TBMT> (by hand only, not part of Sync)
 //   node genbid-sync.js history-config [--max N] [--profile x]   read the HSMT of past tenders that name no power (config)
+//   node genbid-sync.js specs-plan (--key K | --file F) [--fake answers.json]   check only: Chương V in parts (and the join of fake answers)
 //   node genbid-sync.js specs [--max N] [--key K] [--model sonnet] [--profile x]   tenders without an analysis: Chương V to the
 //                                                      file list (tab Tổng quan) and its technical specs to analysis/<TBMT>
 //   node genbid-sync.js prep --sigs "<sig>,<sig>" --out <dir>   prepare one folder per AI request (TASK.md, input.md)
@@ -970,27 +971,44 @@ async function specsSource(ctx, page, t, webText, release = () => {}) {
 async function specsAsk(t, text, src, model) {
   // At most SPECS_BODY_MAX characters: the window with the most figures, whole lines (was the first 150,000: 7 of 1,499
   // texts lost figures, IB2400101857 kept 11 and left out 37). The lines left out go in the notes when they hold figures.
-  const key = t.notifyNo, cut = densestCut(chapterV(text), SPECS_BODY_MAX), body = cut.text;
-  const cutNote = cut.hits ? `Chương V dài hơn ${SPECS_BODY_MAX.toLocaleString("vi-VN")} ký tự: ${cut.note}.` : "";
-  const prompt = `${fs.readFileSync(path.join(KIT, "specs-prompt.md"), "utf8")}\n\n=== GÓI THẦU ===\n${key}: ${t.bidName}\n\n=== CHƯƠNG V (${src}) ===\n${cut.note ? `(${cut.note})\n` : ""}${body}`;
-  let r = await askOnce(prompt, model);
-  // A very long chapter V gave an answer cut off before the JSON closed (IB2500102600, IB2300119789): ask once more
-  // for a shorter list.
-  if (r.error && /JSON/.test(r.error)) r = await askOnce(prompt + "\n\nGiới hạn: tối đa 60 mục technicalSpecs (gộp các mục nhỏ cùng hạng mục), mỗi \"quote\" tối đa 150 ký tự.", model);
-  if (r.limit || r.error) return r;
-  const v = r.value;
-  if (v._error) return { none: String(v._error) };
-  const result = { summary: null, keyInfo: { bidName: t.bidName || null, notifyNo: key, generatorCapacity: v.generatorCapacity || null }, generatorSets: setsOf(v.generatorSets),
-    technicalSpecs: v.technicalSpecs || [], qualificationRequirements: [], highlights: [], requiredDocuments: [], restrictiveClauses: [], questionsForClarification: [] };
-  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "genbid-specs-"));
-  fs.writeFileSync(path.join(tmp, "src-req.txt"), body, "utf8");
-  const checked = checkResult({ kind: "analysis" }, result, tmp);
-  fs.rmSync(tmp, { recursive: true, force: true });
+  // Longer than SPECS_BODY_MAX: read in parts (partsOf), each in its own call, the answers joined by specsMerge. Any part
+  // failing (error, limit) leaves the whole tender undone: nothing is posted from some of the parts. The answers of the
+  // parts done are kept in genbid-work/specs/<TBMT>/parts, so the next run asks only for the rest.
+  const key = t.notifyNo, room = SPECS_PARTS_MAX * (SPECS_BODY_MAX - SPECS_PART_OVERLAP), chap = chapterV(text);
+  const cut = densestCut(chap, room), body = cut.text, parts = partsOf(body, SPECS_BODY_MAX), n = parts.length;
+  const capNote = cut.note ? `Chương V dài ${chap.length.toLocaleString("vi-VN")} ký tự, quá ${SPECS_PARTS_MAX} phần: ${cut.note}.` : "";
+  const cutNote = cut.hits ? capNote : "";
+  const base = `${fs.readFileSync(path.join(KIT, "specs-prompt.md"), "utf8")}\n\n=== GÓI THẦU ===\n${key}: ${t.bidName}\n\n=== CHƯƠNG V (${src}) ===\n${cut.note ? `(${cut.note})\n` : ""}`;
+  const dir = path.join(SPECS_DIR, key, "parts");
+  const askPart = async (i) => {
+    const prompt = n > 1 ? `${base}${partHead(parts[i], i + 1, n)}\n${parts[i].text}` : `${base}${parts[i].text}`;
+    const f = path.join(dir, `${i + 1}of${n}-${require("crypto").createHash("md5").update(prompt).digest("hex").slice(0, 12)}.json`);
+    if (n > 1) { const c = readJson(f, null); if (c?.value) return { value: c.value, secs: c.secs || 0, cached: true }; }
+    let r = await askOnce(prompt, model);
+    // A very long chapter V gave an answer cut off before the JSON closed (IB2500102600, IB2300119789): ask once more
+    // for a shorter list.
+    if (r.error && /JSON/.test(r.error)) r = await askOnce(prompt + "\n\nGiới hạn: tối đa 60 mục technicalSpecs (gộp các mục nhỏ cùng hạng mục), mỗi \"quote\" tối đa 150 ký tự.", model);
+    if (!r.limit && !r.error && n > 1 && !opt("dry")) { fs.mkdirSync(dir, { recursive: true }); fs.writeFileSync(f, JSON.stringify({ value: r.value, secs: r.secs }), "utf8"); }
+    return r;
+  };
+  const vals = []; let secs = 0;
+  for (let i = 0; i < n; i++) {
+    const r = await askPart(i);
+    if (r.limit) return r;
+    if (r.error) return { error: n > 1 ? `phần ${i + 1}/${n}: ${r.error}` : r.error };
+    secs += r.secs || 0;
+    if (n > 1) log(`    ${key}: phần ${i + 1}/${n} (dòng ${parts[i].from}–${parts[i].to}) ${specsEmpty(r.value) ? "không có thông số" : `${(r.value.technicalSpecs || []).length} thông số`}${r.cached ? " (đã có từ lần trước)" : ""}`);
+    vals.push({ i: i + 1, v: r.value });
+  }
+  const fin = specsFinish(t, vals, body, n > 1 ? { n, len: chap.length } : null);
+  if (fin.none) { fs.rmSync(dir, { recursive: true, force: true }); return { none: fin.none }; }
+  const { result, v, checked } = fin;
   // An analysis finished meanwhile (Phân tích pressed on the web) wins.
   const cur = await doc("analysis", key);
-  if (cur?.status === "done" && cur.result && cur.basis !== "notice" && cur.basis !== "specs") return { skipped: true };
+  if (cur?.status === "done" && cur.result && cur.basis !== "notice" && cur.basis !== "specs") { fs.rmSync(dir, { recursive: true, force: true }); return { skipped: true }; }
   await post([{ coll: "analysis", id: key, data: { status: "done", basis: "specs", result,
     notes: [`Chỉ đọc thông số kỹ thuật ở Chương V (${src}), chưa phân tích cả HSMT.`, ...(cutNote ? [cutNote] : []), ...[].concat(v._notes || []), ...checked], analyzedAt: now(), by: "specs" } }]);
+  if (!opt("dry")) fs.rmSync(dir, { recursive: true, force: true });
   // A past tender: Gợi ý giá đấu (web/bidprice.js) compares lots by bidhist config (kvas, text), so the specs go there too.
   const hd = (await docs("bidhist", key))[0]?.data;
   if (hd) {
@@ -999,7 +1017,27 @@ async function specsAsk(t, text, src, model) {
     const kvas = [histPower(result.keyInfo.generatorCapacity), histPower(t.bidName)].find((x) => x.length)?.filter((p, i, a) => a.findIndex((q) => q.v === p.v && q.u === p.u) === i) || [];
     await post([{ coll: "bidhist", id: key, data: { ...hd, config: { kvas: kvas.length ? kvas : hd.config?.kvas || [], sets: result.generatorSets, text: configText(lines), src: `Chương V (${src}), thông số do AI đọc`, at: now() } } }]);
   }
-  return { done: result.technicalSpecs.length, cap: result.keyInfo.generatorCapacity, secs: r.secs };
+  return { done: result.technicalSpecs.length, cap: result.keyInfo.generatorCapacity, secs };
+}
+// The answers of the parts (vals = [{ i, v }]) as the analysis result, every figure checked against the whole text read
+// (checkResult), a set's quote too. { none } when no part has anything about a generator set. info = { n, len } when
+// the chapter was read in n > 1 parts: the notes then say so and name what the parts stated differently.
+function specsFinish(t, vals, body, info) {
+  const key = t.notifyNo, live = vals.filter((x) => !specsEmpty(x.v));
+  if (!live.length) return { none: String(vals.find((x) => x.v?._error)?.v._error || "không có thông số kỹ thuật máy phát") + (info ? ` (cả ${info.n} phần)` : "") };
+  const v = info ? specsMerge(live) : live[0].v, notes = [];
+  if (info) notes.push(`Chương V dài ${info.len.toLocaleString("vi-VN")} ký tự: đọc hết bằng ${info.n} lần gọi, ghép bằng mã (mỗi phần lặp lại ${SPECS_PART_OVERLAP.toLocaleString("vi-VN")} ký tự cuối phần trước).`, ...v.conflicts.slice(0, 12), ...(v.conflicts.length > 12 ? [`Còn ${v.conflicts.length - 12} chỗ các phần đọc khác nhau (chưa rõ).`] : []));
+  const result = { summary: null, keyInfo: { bidName: t.bidName || null, notifyNo: key, generatorCapacity: v.generatorCapacity || null }, generatorSets: setsOf(v.generatorSets),
+    technicalSpecs: v.technicalSpecs || [], qualificationRequirements: [], highlights: [], requiredDocuments: [], restrictiveClauses: [], questionsForClarification: [] };
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "genbid-specs-"));
+  fs.writeFileSync(path.join(tmp, "src-req.txt"), body, "utf8");
+  const checked = checkResult({ kind: "analysis" }, result, tmp);
+  fs.rmSync(tmp, { recursive: true, force: true });
+  if (info) { // a set's quote is not in checkResult: every quote of a joined set is looked for in the whole text
+    const req = sourceOf(body);
+    for (const s of result.generatorSets) if (s.quote && req.usable && !found(s.quote, req)) { checked.push(`Kiểm tra tự động: trích dẫn của máy ${setLabel(s)} không thấy nguyên văn trong Chương V nên đã bỏ.`); s.quote = null; }
+  }
+  return { result, v: { ...v, _notes: [...notes, ...[].concat(v._notes || [])] }, checked };
 }
 async function specsRound(page, ctx, { max = 5000, model = "sonnet" } = {}) {
   const cache = readJson(SPECS_FILE, {});
@@ -1365,6 +1403,99 @@ function densestCut(t, max) {
   return { text: t.slice(a, e), hits: lost, dropped, all,
     note: `đã lược dòng ${dropped.map(([x, y]) => (x === y ? `${x}` : `${x}–${y}`)).join(", ")} / ${all} (giữ ${(e - a).toLocaleString("vi-VN")} ký tự liền nhau nhiều thông số nhất; phần lược có ${lost} chỗ thông số)` };
 }
+// ---------- specs: a Chương V longer than one call is read in parts and joined by code (Khoa, 2026-11-12) ----------
+// "Sửa triệt để, cho bot đọc chương V dài nhiều lần rồi ghép lại": the parts are whole lines of about the same size, each
+// at most SPECS_BODY_MAX characters, the next one starting with the last lines of the one before (SPECS_PART_OVERLAP) so a
+// table row is not split. A chapter that needs more than SPECS_PARTS_MAX parts is cut to the densest window of that
+// size (densestCut, the lines left out named in the notes).
+const SPECS_PART_OVERLAP = 3000, SPECS_PARTS_MAX = 25;
+// t in parts: [{ text, from, to, all }] (lines, 1-based, inclusive). A line longer than half of `max` is cut in pieces.
+function partsOf(t, max, overlap = SPECS_PART_OVERLAP) {
+  t = String(t || "");
+  const all = linesIn(t);
+  if (t.length <= max) return [{ text: t, from: 1, to: all, all }];
+  const L = [];
+  for (const l of (t.endsWith("\n") ? t.slice(0, -1) : t).split("\n")) for (let i = 0; i < Math.max(1, l.length); i += max >> 1) L.push(l.slice(i, i + (max >> 1)));
+  const len = L.map((l) => l.length + 1), total = len.reduce((a, b) => a + b, 0);
+  const split = (target) => {
+    const out = [];
+    for (let a = 0; a < L.length;) {
+      let e = a, size = 0;
+      while (e < L.length && (e === a || size + len[e] <= target)) size += len[e++];
+      out.push([a, e]);
+      if (e >= L.length) break;
+      let b = e, ov = 0;
+      while (b > a + 1 && ov + len[b - 1] <= overlap) ov += len[--b];
+      a = b;
+    }
+    return out;
+  };
+  const n = Math.ceil((total - overlap) / (max - overlap));
+  let target = Math.min(max, Math.ceil((total + (n - 1) * overlap) / n) + 200), cuts = split(target);
+  while (cuts.length > n && target < max) { target = Math.min(max, Math.ceil(target * 1.02)); cuts = split(target); }
+  return cuts.map(([a, e]) => ({ text: L.slice(a, e).join("\n") + (e < L.length || t.endsWith("\n") ? "\n" : ""), from: a + 1, to: e, all: L.length }));
+}
+const SET_FIELDS = { qty: "số lượng", primeKva: "công suất liên tục kVA", standbyKva: "công suất dự phòng kVA", primeKw: "công suất liên tục kW", standbyKw: "công suất dự phòng kW", phases: "số pha" };
+const SET_POWER = ["primeKva", "standbyKva", "primeKw", "standbyKw"];
+const setLabel = (s) => { const f = SET_POWER.find((k) => s[k] != null); return f ? `${s[f]} ${/Kva$/.test(f) ? "kVA" : "kW"} ${/^prime/.test(f) ? "liên tục" : "dự phòng"}` : "không rõ cỡ"; };
+const numSet = (s) => [...new Set(numsOf(s))].sort().join(",");
+// The answers of the parts joined: vals = [{ i, v }] (i the part number, v the parsed answer of Claude).
+// technicalSpecs: joined, an entry read twice (same quote, or same item and requirement: the overlap) kept once; two entries
+//   of the same item with other figures are both kept and marked unverified, and said in the notes.
+// generatorSets: joined by size (a power both name equal, in the same field); a field the parts state differently
+//   (qty, kVA, kW, phases) is left null and said in the notes, never one of the two chosen.
+// generatorCapacity: the text the parts all give; else made from the joined sets; else null with a note.
+function specsMerge(vals) {
+  const notes = [], specs = [], byQuote = new Map(), byIR = new Map(), byItem = new Map(), sets = [], caps = [], pn = [];
+  for (const { i, v } of vals) {
+    for (const s of Array.isArray(v.technicalSpecs) ? v.technicalSpecs : []) {
+      if (!s || typeof s !== "object") continue;
+      const q = s.quote ? normTxt(s.quote) : "", item = normTxt(s.item), req = normTxt(s.requirement);
+      const same = (q && byQuote.get(q)) || byIR.get(`${item}|${req}`);
+      if (same) {
+        if (same.i !== i && !same.diff && numSet(same.s.requirement) !== numSet(s.requirement)) { same.s.unverified = true; same.diff = true; notes.push(`Mục "${String(same.s.item).slice(0, 60)}": phần ${same.i} và phần ${i} đọc khác nhau ở cùng một trích dẫn, chưa rõ.`); }
+        continue;
+      }
+      const e = { s: { ...s }, i };
+      specs.push(e);
+      if (q) byQuote.set(q, e);
+      byIR.set(`${item}|${req}`, e);
+      const o = byItem.get(item);
+      if (o && o.i !== i && numSet(o.s.requirement) !== numSet(s.requirement)) {
+        o.s.unverified = e.s.unverified = true;
+        notes.push(`Mục "${String(s.item).slice(0, 60)}": phần ${o.i} và phần ${i} nêu khác nhau (${String(o.s.requirement).slice(0, 50)} / ${String(s.requirement).slice(0, 50)}), chưa rõ.`);
+      } else if (!o) byItem.set(item, e);
+    }
+    for (const x of Array.isArray(v.generatorSets) ? setsOf(v.generatorSets) : []) {
+      const g = sets.find((y) => SET_POWER.some((k) => x[k] != null && x[k] === y.s[k]));
+      if (!g) { sets.push({ s: { ...x }, from: Object.fromEntries(Object.keys(SET_FIELDS).filter((k) => x[k] != null).map((k) => [k, i])), bad: new Set() }); continue; }
+      for (const k of Object.keys(SET_FIELDS)) {
+        if (x[k] == null || g.bad.has(k)) continue;
+        if (g.s[k] == null) { g.s[k] = x[k]; g.from[k] = i; }
+        else if (g.s[k] !== x[k]) {
+          notes.push(`Máy ${setLabel(g.s)}: ${SET_FIELDS[k]} ${g.s[k]} (phần ${g.from[k]}) khác ${x[k]} (phần ${i}), chưa rõ.`);
+          g.s[k] = null; g.bad.add(k);
+        }
+      }
+      if (!g.s.quote && x.quote) g.s.quote = x.quote;
+    }
+    if (v.generatorCapacity) caps.push({ i, c: String(v.generatorCapacity) });
+    for (const n of [].concat(v._notes || [])) if (n && !pn.includes(String(n))) pn.push(String(n));
+  }
+  const generatorSets = setsOf(sets.map((g) => g.s));
+  const distinct = caps.filter((c, k, a) => a.findIndex((d) => normTxt(d.c) === normTxt(c.c)) === k);
+  let generatorCapacity = null;
+  if (distinct.length === 1) generatorCapacity = distinct[0].c;
+  else if (distinct.length > 1) {
+    if (generatorSets.length) generatorCapacity = generatorSets.map((s) => `${s.qty > 1 ? `${s.qty} x ` : ""}${setLabel(s)}`).join(" + ");
+    else notes.push(`Công suất tổ máy: các phần ghi khác nhau (${distinct.map((c) => `phần ${c.i}: ${c.c.slice(0, 40)}`).join("; ")}), chưa rõ.`);
+  }
+  return { technicalSpecs: specs.map((e) => e.s), generatorSets, generatorCapacity, _notes: pn, conflicts: notes };
+}
+// A part with no technical specification, no set and no capacity (its answer is { _error }) adds nothing.
+const specsEmpty = (v) => !v || v._error || (!(v.technicalSpecs || []).length && !(v.generatorSets || []).length && !v.generatorCapacity);
+// What one part of a long Chương V asks for (the one-call prompt has none).
+const partHead = (p, i, n) => `(Phần ${i}/${n} của Chương V, dòng ${p.from}–${p.to} / ${p.all}${i > 1 ? "; các dòng đầu lặp lại cuối phần trước" : ""}. Chỉ liệt kê thông số, tổ máy và công suất có trong phần này, không suy từ phần khác; "quote" chép từ phần này. Phần này không có thông số máy phát thì trả {"_error": "..."}.)`;
 const pdftotext = () => [path.join(process.env.LOCALAPPDATA || "", "Microsoft", "WinGet", "Links", "pdftotext.exe"), "C:\\Program Files\\Git\\mingw64\\bin\\pdftotext.exe"].find((f) => fs.existsSync(f)) || "pdftotext";
 // Windows' own tar (bsdtar) reads zip; the tar of Git Bash, first on PATH there, does not.
 const TAR = [path.join(process.env.SystemRoot || "C:\\Windows", "System32", "tar.exe")].find((f) => fs.existsSync(f)) || "tar";
@@ -2240,6 +2371,18 @@ async function runFinish() {
     else if (cmd === "history") summary = await runHistory();
     else if (cmd === "history-config") summary = await runHistoryConfig();
     else if (cmd === "specs") summary = await runSpecs();
+    else if (cmd === "specs-plan") { // check, no Claude, nothing posted: how Chương V is split in parts (--key K | --file F); --fake F.json = answers of the parts (array) to join
+      const f = typeof opt("file") === "string" ? opt("file") : path.join(SPECS_DIR, String(opt("key")), "text.txt");
+      const chap = chapterV(fs.readFileSync(f, "utf8")), room = SPECS_PARTS_MAX * (SPECS_BODY_MAX - SPECS_PART_OVERLAP), cut = densestCut(chap, room), parts = partsOf(cut.text, SPECS_BODY_MAX);
+      console.log(`Chương V ${chap.length} ký tự, ${parts.length} phần${cut.note ? `; ${cut.note}` : ""}`);
+      parts.forEach((p, i) => console.log(`  phần ${i + 1}/${parts.length}: dòng ${p.from}–${p.to} / ${p.all}, ${p.text.length} ký tự`));
+      if (typeof opt("fake") === "string") {
+        const fake = JSON.parse(fs.readFileSync(String(opt("fake")), "utf8")), vals = parts.map((_, i) => ({ i: i + 1, v: Array.isArray(fake) ? fake[i] || { _error: "không có" } : fake }));
+        const fin = specsFinish({ notifyNo: String(opt("key") || "TEST"), bidName: "thử" }, vals, cut.text, parts.length > 1 ? { n: parts.length, len: chap.length } : null);
+        console.log(JSON.stringify(fin.none ? { none: fin.none } : { generatorCapacity: fin.result.keyInfo.generatorCapacity, generatorSets: fin.result.generatorSets, specs: fin.result.technicalSpecs.length, notes: [...fin.v._notes, ...fin.checked] }, null, 1));
+      }
+      summary = `${parts.length} phần`;
+    }
     else if (cmd === "text") { // check: print the text the bot reads from a local file (OCR, .doc, archives included)
       const t = fileText(String(opt("file")));
       console.log(t);
