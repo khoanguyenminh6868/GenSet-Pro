@@ -41,16 +41,16 @@ test("tên bị ngắt dòng vẫn nhận; gói trúng (không có cụm loại)
 
 // Chữ thật của 19 gói đã tải tay (chỉ chạy khi có thư mục này trên máy của Khoa).
 const CORPUS = "C:/Projects/GenSet Pro/genbid-test/bcdg/text/";
-test("19 gói thật: trích được ≥14 gói, đoạn nào cũng nhắc công ty mình, không có tên người khác", { skip: !fs.existsSync(CORPUS) }, () => {
+test("19 gói thật: trích được ≥16 gói, đoạn nào cũng nhắc công ty mình, không có tên người khác", { skip: !fs.existsSync(CORPUS) }, () => {
   let got = 0;
   for (const f of fs.readdirSync(CORPUS).filter((x) => x.endsWith(".txt"))) {
     const r = bcdgReason(fs.readFileSync(CORPUS + f, "utf8"));
     if (!r) continue;
     got++;
-    assert.match(r.normalize("NFC"), /th.{0,3}o\s*nguy.{0,3}n|4101623015/i, f);
+    assert.match(r.normalize("NFC"), /th.{0,3}o\s*nguy.{0,3}n|4101623015|Liên danh TN-HA/i, f);
     assert.doesNotMatch(r, /Nguyễn Thị Thảo Nguyên/i, f);
   }
-  assert.ok(got >= 14, "chỉ trích được " + got);
+  assert.ok(got >= 16, "chỉ trích được " + got);
 });
 
 // ---------- bcdg-step.js ----------
@@ -241,4 +241,10 @@ test("reread: tệp chưa lên kho (không path) giữ nguyên lỗi, không t�
   assert.match(doc.error, /HTTP 500/);
   const none = await run({ deps: mk().deps, prev: { notifyNo: "K", files: [{ id: FILES[0].id, name: "bc1.pdf", error: "e" }, { id: FILES[1].id, name: "bc2.pdf", error: "e" }] }, reread: true });
   assert.equal(none.doc, null);
+});
+test("liên danh: tên liên danh lấy từ dòng có MST, rồi tìm lý do theo tên đó; 'không đồng bộ' là cụm lý do", () => {
+  const r = bcdgReason("Bảng mở thầu\n4 vn4101623015 | Liên danh TN-HA 4205.000.000\n...\n- Liên danh TN-HA: Không đáp ứng về kỹ thuật do không đạt điểm tối thiểu.\n- Công ty TNHH Khác: đạt");
+  assert.match(r, /Liên danh TN-HA: Không đáp ứng/);
+  assert.doesNotMatch(r, /Khác/);
+  assert.match(bcdgReason("4. CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN\n- Thông số kỹ thuật không đồng bộ từ một nhà sản xuất."), /không đồng bộ/);
 });
