@@ -2107,6 +2107,8 @@ function rivalsHtml(t) {
     <div class="muted small">Nhà thầu đã dự gói mua sắm máy phát ${[r.basis.investor && "cùng chủ đầu tư", r.basis.province && "cùng tỉnh", r.basis.kva && "cùng cỡ (±15%)"].filter(Boolean).join(", ")} đóng thầu trước gói này. Giá dự là trung vị và khoảng, chỉ khi có từ 3 lượt có giá. Chỉ mô tả lịch sử, không biết ai sẽ dự gói này.</div></div>`;
 }
 // ---------- Chi phí vốn (web/bidprice.js financeCost, 2026-11-10) ----------
+// Tạm ẩn (Khoa, 2026-11-12): không hiện mục Chi phí vốn và không cộng vào giá vốn. Bật lại: SHOW_FINANCE = true.
+const SHOW_FINANCE = false;
 // Đọc điều khoản hợp đồng của Phân tích (contractTerms). Lãi suất vay (%/năm) lưu một lần cho mọi gói ở quote/_cost.rate,
 // số ngày thực hiện hợp đồng lưu theo gói ở quote/<key>.cost.days; chưa nhập thì không tính, nói thiếu gì. Bảo đảm và
 // phạt tính trên giá gói (giá dự thầu chưa biết; giá gói là mức cao nhất).
@@ -2161,7 +2163,7 @@ function profitHtml(t) {
   const offNeed = needTxt ? quoteRows(key).filter((r) => r.items?.length && !r.items.every((x) => quoteFits(x, need))).length : 0;
   const pick = costs.find((x) => x.r.id === profitRow[key]) || costs.slice().sort((a, b) => a.c.total - b.c.total)[0] || null, goodsCost = pick?.c.total ?? null;
   // Chi phí vốn (điều khoản hợp đồng × lãi suất người nhập) cộng vào giá vốn khi tính được.
-  const fin = financeOf(t, goodsCost), finTotal = fin.f?.total || 0, cost = goodsCost != null ? goodsCost + finTotal : null;
+  const fin = SHOW_FINANCE ? financeOf(t, goodsCost) : { terms: false, f: null }, finTotal = fin.f?.total || 0, cost = goodsCost != null ? goodsCost + finTotal : null;
   const scen = profitScen[key] ?? "mix", w = scen === "mix" ? curve.mix : curve.byNb[+scen].n >= 15 ? curve.byNb[+scen].w : curve.all;
   const pt = BP.profitTable(P, cost, curve, w), levels = bpLevelsOf(state.bidprice[key]?.result);
   const feas = BP.feasibility({ P, cost: goodsCost, finance: finTotal, levels }).flags;
@@ -2192,7 +2194,7 @@ function profitHtml(t) {
         ${raw(costs.length > 1 ? h`<div class="row small" style="gap:8px;margin-bottom:6px"><label for="profitRowSel">Tính theo báo giá của</label><select id="profitRowSel">${raw(costs.map((x) => h`<option value="${x.r.id}" ${x === pick ? "selected" : ""}>${supName(state.supplier?.[x.r.supplierId]) || x.r.supplierId} — ${fmtVnd(Math.round(x.c.total))}</option>`).join(""))}</select></div>` : "")}
         ${raw(pick?.c.stale?.length ? h`<div class="note warn">Báo giá đang dùng có ${pick.c.stale.length} dòng giá cũ hơn 180 ngày hoặc chưa ghi ngày: giá vốn có thể đã đổi, nên hỏi lại nhà cung cấp.</div>` : "")}`)}
     ${raw(feas.map((f) => h`<div class="note warn"><b>Giá gói khó khả thi.</b> ${f.text}</div>`).join(""))}
-    ${raw(financeHtml(t, fin, state.readOnly))}
+    ${raw(SHOW_FINANCE ? financeHtml(t, fin, state.readOnly) : "")}
     <details class="sizebox pfold" data-sizebox="bp|${key}|pscen" ${sizeOpen?.has(`bp|${key}|pscen`) ? "open" : ""}><summary class="small" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b>Số nhà thầu và xác suất thắng ở từng mức giá</b> <span class="muted">· ${scen === "mix" ? "theo dự báo" : fc.labels[+scen]}</span></summary>
     <div class="row pscen" style="gap:6px;flex-wrap:wrap;margin-top:6px"><b class="small">Số nhà thầu</b>${raw(scenBtn("mix", "Theo dự báo"))}${raw(fc.labels.map((l, i) => scenBtn(String(i), l.replace(" nhà thầu", ""), fc.p[i])).join(""))}</div>
     <div class="tablewrap" style="margin-top:8px"><table class="suptable supcards bprows ptable"><thead><tr><th>% giá gói</th><th>Giá bỏ</th><th>Xác suất thắng</th>${raw(cost != null ? "<th>Lãi nếu trúng</th><th>Lợi nhuận kỳ vọng</th>" : "")}</tr></thead><tbody>${raw(rows.join(""))}</tbody></table></div>
