@@ -56,3 +56,13 @@ test("not judged: a bound (\"< 100\") and a figure no genset of this size burns 
   assert.deepEqual(ids(r), ["bound", "pair"]);
   assert.deepEqual(r.dropped.map((x) => x.u.supplierId), ["over"]);
 });
+
+test("a heading that names no load is filed under 100% by the catalog but is not left out: the old 300 points off stay", () => {
+  const H2 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Fuel Consumption (L/h) |";
+  const list = [sup("nl", ["| n-1 | 420 | 336 | WP13D405E200 | XY1 | 99 |"], H2), sup("fl", ["| f-1 | 420 | 336 | YC6K520-D30 | XY1 | 99 |"], H.replace("100% load", "Full-Load"))];
+  const r = run(list, free("Tiêu hao nhiên liệu ở 100% tải ≤ 90 L/h\n50 Hz"));
+  assert.deepEqual(ids(r), ["nl"]);
+  const x = r.top[0];
+  assert.equal(x.fuelOver, true); assert.equal(x.fuelNoLoad, true); assert.deepEqual(x.ruled, []);
+  assert.deepEqual(r.dropped.map((d) => d.u.supplierId), ["fl"]);
+});
