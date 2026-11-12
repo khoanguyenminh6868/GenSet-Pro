@@ -249,6 +249,23 @@
       "src": [
         2008
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "D440",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
     }
   ],
   "certifications": [
@@ -422,10 +439,24 @@
         "Standard Control Panel                                    APM403"
       ],
       "file": "sources/rehlko/2010.md"
+    },
+    {
+      "n": 2011,
+      "url": "https://cdn.shopify.com/s/files/1/0531/1715/7528/files/D440.pdf",
+      "accessedAt": "2026-11-12",
+      "tier": "C",
+      "quote": [
+        "Industrial Diesel                          Generator      Set          –  D440",
+        "KOHLER SDMO premium quality",
+        "Prime                              kVA     400",
+        "Standard Control Panel                                    APM403",
+        "Alternator ref.                                       KH01483TO4D"
+      ],
+      "file": "sources/rehlko/2011.md"
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-11",
+  "checkedAt": "2026-11-12",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {
@@ -518,6 +549,19 @@
         "• Best quality of electricity, high starting and loading capacity,       Controllers                                            APM303 APM403",
         "                                              400/230       50      352  440          635     320         400"
       ]
+    },
+    {
+      "n": 2011,
+      "title": "D440 50 Hz",
+      "header": [
+        "           Low temperature starting capability                                                         Voltage       PH  Hz   kWe  kVA  Amps            kWe    kVA"
+      ],
+      "rows": [
+        "           Long maintenance interval                                          D440                     415/240        3  50   352  440  612             320    400",
+        "Alternator                                                                                              400/230        3  50   352  440  635             320    400",
+        "Engine ref.                                    P158LE *                       Min. oil pressure (bar)                                                  0,50",
+        "Alternator ref.                                       KH01483TO4D"
+      ]
     }
   ],
   "controllers": [
@@ -555,6 +599,15 @@
       "line": "• Best quality of electricity, high starting and loading capacity,       Controllers                                            APM303 APM403",
       "src": [
         2008
+      ]
+    },
+    {
+      "brand": "Kohler",
+      "model": "APM403",
+      "text": "APM403",
+      "line": "           A cutting edge laboratory                                          Standard Control Panel                                    APM403",
+      "src": [
+        2011
       ]
     }
   ]
