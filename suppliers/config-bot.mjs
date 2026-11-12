@@ -234,7 +234,7 @@ export const groupSuppliers = (suppliers, origin, open = false, partsOnly = fals
 // carrying a foreign make in its name with no such link is an assembler (as in Đồng bộ thương hiệu) and stays out.
 export function brandMakers(suppliers, origin) {
   const list = suppliers || [], by = new Map(list.map((s) => [s?.id, s])), inGroup = (s) => CAT.COUNTRY_GROUP[origin]?.includes(s?.country);
-  const famOf = (s) => BP.familyOf(s?.names?.en, ...(s?.names?.brands || []), s?.id);
+  const famOf = (s) => supplierFamily(s, true);
   return list.filter((s) => {
     if (!s || s.role !== "genset_oem" || inGroup(s)) return false;
     const f = famOf(s);
@@ -756,9 +756,16 @@ const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12, MAKE
 // of a make (web/bidprice.js familyOf). A Chinese company whose name carries a foreign make ("… Cummins Power …") is an
 // assembler, not that maker: null, as is an assembler whose name is no make (cgm-italia).
 const CN_FAMILY = new Set(["Weichai", "Yuchai", "SDEC", "Nianfeng", "Bobig", "Jet-Power", "Wintpower", "SmartGen", "Harsen", "Mebay", "Lixise"]);
+// The make a supplier's record gives (web/bidprice.js familyOf of its name / brands / id). A make of Chinese makers
+// (CN_FAMILY) read from a supplier based in another country is an abbreviation that clashes, not that make: Saudi Diesel
+// Equipment Co (SA) writes itself "(SDEC)", which is no Shanghai Diesel (SDEC). Such a supplier has no make (2026-11-12).
+export function supplierFamily(r, withBrands = false) {
+  const f = BP.familyOf(r?.names?.en, ...(withBrands ? r?.names?.brands || [] : []), r?.id);
+  return f && CN_FAMILY.has(f) && r?.country && r.country !== "CN" ? null : f;
+}
 export function gensetMakerOf(r) {
   if (!r || r.role === "distributor") return null;
-  const f = BP.familyOf(r.names?.en, r.id);
+  const f = supplierFamily(r);
   return f && r.country === "CN" && !CN_FAMILY.has(f) ? null : f || null;
 }
 // The minimums of the HSMT that fit the genset of this run: a tender of several sizes gives the fuel of its small one
@@ -2132,7 +2139,7 @@ export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
       if (!fs.existsSync(file)) continue;
       const text = fs.readFileSync(file, "utf8");
       if (!/RATINGS|TEMPERATURE RISE|^Ratings (50|60) Hz|rpm \((50|60) Hz Ratings\)/im.test(text)) continue;
-      const fam = BP.familyOf(s.names?.en, ...(s.names?.brands || []), s.id);
+      const fam = supplierFamily(s, true);
       const rs = ratingsOf(text);
       // A technical data sheet of one alternator model (cfg-r3): its attributes (insulation, poles, THD...) by that model.
       const one = [...new Set(stamfordRatings(text).map((r) => r.model))];
