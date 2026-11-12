@@ -319,6 +319,9 @@ table.spec1 thead{display:none}table.spec1,table.spec1 tbody,table.spec1 tr,tabl
 /* Điện thoại (Khoa, 2026-11-10): tên nhà cung cấp một dòng đủ rộng, các nút xuống dòng dưới. */
 @media (max-width:640px){.qline{flex-wrap:wrap;row-gap:8px}.qline>select{flex:1 1 calc(100% - 24px);width:auto}.qline>.muted{max-width:none;flex:1 1 100%}}
 .qrow .qitems th{color:var(--sc)}
+/* Nút Sửa thẳng mép phải với nút + Dòng giá bên dưới (viền .tablewrap 1px + padding 10px = padding-right 11px của .row). */
+table.qitems td:last-child{text-align:right}
+@media (min-width:641px){table.qitems td:last-child,table.qitems th:last-child{width:1%;padding-right:10px}}
 .supdot{--sc:var(--muted);display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--sc);flex:none;vertical-align:middle;margin-right:5px}
 .qneed{border-left:3px solid var(--amber);padding:4px 8px;background:color-mix(in srgb,var(--amber) 10%,transparent);border-radius:4px}
 .qrow.over{outline:1.5px dashed var(--violet);outline-offset:4px}
