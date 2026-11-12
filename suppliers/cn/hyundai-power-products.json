@@ -142,6 +142,16 @@
   "specTables": [
     {
       "n": 5001,
+      "title": "DHY110KSE 50Hz",
+      "header": [
+        "| Genset Model | Prime Power | Standby Power | Engine Model | Alternator Model | Control System"
+      ],
+      "rows": [
+        "| DHY110KSE | 100KVA/ 80KW | 110KVA/ 88KW | HY4A140Z-D25 | 274C | COMAP AMF9"
+      ]
+    },
+    {
+      "n": 5001,
       "title": "DHY110KSE",
       "header": [],
       "rows": [
@@ -216,6 +226,17 @@
         "| Insulation class | H",
         "| Protection class | IP23",
         "| AVR Model | AS440"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF9",
+      "text": "COMAP AMF9",
+      "line": "High quality controller of COMAP AMF9",
+      "src": [
+        5001
       ]
     }
   ]
