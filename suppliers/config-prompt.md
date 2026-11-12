@@ -30,8 +30,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   - "Ứng viên": the best genset rows of the system for this tender, best first (power 100–120%, the HSMT's frequency,
     the engine origin asked for), each exactly as on the supplier's website with `supplierId` / `n` / `line`, the
     figures read from it, the controllers named in the row or offered by that supplier, and why it ranks there.
-    The code ranks the engine model / make and the controller the HSMT names first, then engines with more sourced
-    figures, then the alternator.
+    The code picks by ENGINE: the engine model / make, the controller and the alternator the HSMT names first, then the
+    size nearest the HSMT's; engines that tie take turns by make; each engine gets a row before any gets a second one.
+    How many sourced figures a row has does not decide which engines enter (only which supplier shows an engine).
   - "Thông số theo model": every figure of each engine and alternator above, from ANY supplier's row or datasheet that
     names that model, each with its `factSrc`. A figure marked ⚠ is given differently by its sources.
   - "Thông số bộ điều khiển": the first lines of the maker's datasheet of the controllers above (Deep Sea, SmartGen),
