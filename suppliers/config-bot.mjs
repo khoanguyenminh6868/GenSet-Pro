@@ -1126,7 +1126,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   }
   out.push("", controllersMd(cat.controllers || [], shown, withSheet));
   // The controller functions the HSMT names × the datasheets above (ctl-lookup.md), when prep gives the HSMT.
-  const ctlLookup = opts.hsmtText ? ctlLookupMd([...withSheet], (m) => factsFor(facts, "controller", m), opts.hsmtText) : "";
+  const ctlLookup = opts.hsmtText ? ctlLookupMd(ctls, (m) => factsFor(facts, "controller", m), opts.hsmtText) : "";
   return { md: out.join("\n"), ctlMd: ctlOut.join("\n"), shown, top, ctlLookup };
 }
 // Bộ điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
@@ -1396,12 +1396,15 @@ export function ctlLookupMd(models, factsOfModel, hsmtText) {
   for (const m of models) {
     const list = factsOfModel(m);
     if (!list.length) continue;
+    // Each line once, as its factSrc (the line is the quote); the functions found on no line in one row.
+    const none = [];
     out.push(`## ${m}`);
     for (const [i, w] of named.entries()) {
       const f = ctlLineFor(list, [w.en]);
-      out.push(f ? `- F${i + 1} → ${JSON.stringify(f.line)} — factSrc: { "supplierId": "${f.supplierId}", "n": ${f.n}, "line": ${JSON.stringify(f.line)} }${f.version ? ` (datasheet ${f.version}: cần xác nhận đời)` : ""}`
-        : `- F${i + 1} → không thấy dòng nào`);
+      if (f) out.push(`- F${i + 1}: { "supplierId": "${f.supplierId}", "n": ${f.n}, "line": ${JSON.stringify(f.line)} }${f.version ? ` (datasheet ${f.version}: cần xác nhận đời)` : ""}`);
+      else none.push(`F${i + 1}`);
     }
+    if (none.length) out.push(`- không thấy dòng nào: ${none.join(", ")}`);
     out.push("");
   }
   return out.join("\n");

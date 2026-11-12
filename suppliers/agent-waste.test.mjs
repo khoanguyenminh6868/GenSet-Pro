@@ -68,9 +68,9 @@ test("ctlLookupMd: the HSMT's controller functions × each datasheet, the line w
   const md = ctlLookupMd(["DSE7320"], () => DSE, HSMT);
   assert.match(md, /F\d: "- Nhật ký sự kiện: lưu tối thiểu 50 sự kiện"/);
   assert.match(md, /## DSE7320/);
-  assert.match(md, /→ "The event log records 250 events" — factSrc: \{ "supplierId": "deep-sea-electronics", "n": 1002, "line": "The event log records 250 events" \}/);
-  assert.match(md, /→ "Emergency stop"/);
-  assert.match(md, /→ không thấy dòng nào/, "SNMP is in no line");
+  assert.match(md, /- F\d: \{ "supplierId": "deep-sea-electronics", "n": 1002, "line": "The event log records 250 events" \}/);
+  assert.match(md, /"line": "Emergency stop" \}/);
+  assert.match(md, /- không thấy dòng nào: F\d/, "SNMP is in no line");
   assert.equal(ctlLookupMd(["DSE7320"], () => DSE, "Chương V. Yêu cầu kỹ thuật\nĐường kính xi lanh 128 mm"), "");
   assert.equal(ctlLookupMd([], () => DSE, HSMT), "");
 });
