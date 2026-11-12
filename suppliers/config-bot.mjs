@@ -34,6 +34,7 @@ import { ratingsOf, stamfordRatings, altSheetAttrs } from "./ratings.mjs";
 import { viaApi, noteApiSpend, costOf, switchToPlan } from "./api-budget.mjs";
 import * as MEMO from "./web-memo.mjs";
 import * as RG from "./read-guard.mjs";
+import { skippedOf, dropSkipped, UNFILTERED_WARNING } from "./sup-skip.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -1417,7 +1418,11 @@ export function recordSearched(result, { logText = "", listed = [], root = WEB_M
 async function prep(key, dir, reqData = {}, given = null, multi = null) {
   fs.mkdirSync(path.join(dir, "web"), { recursive: true });
   // GENBID_LOCAL_SUPPLIERS=1: the supplier DB of this checkout (cn/*.json) instead of the web's, to try records not yet published.
-  const localSuppliers = () => fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => ({ data: JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8")) })).filter((d) => d.data.status !== "incomplete");
+  const localSuppliers = async () => {
+    const skip = await skippedOf(allDocs); // NCC loại trừ / xoá mềm trên web (sup-skip.mjs); không đọc được thì chỉ cảnh báo, đây là đường thử
+    if (!skip.ok) console.error(`CẢNH BÁO: ${UNFILTERED_WARNING} (GENBID_LOCAL_SUPPLIERS)`);
+    return dropSkipped(fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => ({ id: f.slice(0, -5), data: JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8")) })).filter((d) => d.data.status !== "incomplete"), skip.ids);
+  };
   const [analysis, { hsmt, parts, text, notice }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : given ? given.map((data) => ({ data })) : allDocs("supplier")]);
   fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
   const a = analysis?.result;
