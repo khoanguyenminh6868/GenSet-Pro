@@ -78,10 +78,12 @@ test("prime within 0.5% and standby from 100% to 120% of the size belong to it; 
   assert.deepEqual(run("- Công suất dự phòng ≥ 481 kVA"), [-1]);
 });
 
-test("a tender with no statement of power: the whole text as before; the extra requests are outside the blocks", () => {
+// 2026-11-12 (mins-size-2): with no block of the size its minimum cannot be placed: none, and a note (was: the whole text).
+test("a tender with no statement of power: no size takes the minimum; the extra requests are outside the blocks", () => {
   const text = "- Dung tích xy lanh ≥ 4 L";
-  assert.equal(mins(text, 300).mins.minDisp, 4);
-  assert.equal(mins(text, 400).mins.minDisp, 4);
+  assert.equal(mins(text, 300).mins.minDisp, null);
+  assert.equal(mins(text, 400).mins.minDisp, null);
+  assert.match(mins(text, 300).note, /dung tích xi lanh tối thiểu/);
   const extra = mins([block(300), block(400)].join("\n"), 300, two, "Số xy lanh ≥ 5 xy lanh");
   assert.equal(extra.mins.minCyl, 5);
 });

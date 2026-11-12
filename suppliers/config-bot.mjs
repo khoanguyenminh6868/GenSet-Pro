@@ -664,8 +664,9 @@ export function hintsOf(text, extra = "", sizing = null) {
   const ctrl = CAT.CONTROLLERS.filter((c) => c.word.test(t)).map((c) => c.brand);
   for (const c of CAT.controllersIn(t)) if (!ctrl.includes(c.brand)) ctrl.push(c.brand);
   const f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
+  const sized = sizing?.sizes?.length > 1 ? minsForSize(technicalPart(text), sizing.size, sizing.sizes, extra) : null;
   return { engineMakes: names(CAT.ENGINE_BRANDS), altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, text: squashOf(t), ...engineMins(t), ...(sizing?.sizes?.length > 1 ? minsForSize(technicalPart(text), sizing.size, sizing.sizes, extra).mins : {}) };
+    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, text: squashOf(t), ...engineMins(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -778,27 +779,50 @@ export function engineLists(t) {
 //     that (the HSMT's common minimum, as before);
 //  3. otherwise none (null: no filter), also when the blocks of the size disagree.
 const CAP_PRIME_W = /prime|li[êe]n t[ụu]c|continuous|c[ơo] b[ảa]n|th[ưư][ờo]ng xuy[êe]n/gi, CAP_STANDBY_W = /standby|d[ựu] ph[òo]ng|emergency|kh[ẩa]n c[ấa]p/gi;
+const CAP_NUM = String.raw`(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b`;
+// 2026-11-12 (soát ngưỡng, nhóm "ngưỡng của cỡ khác"): the statements of 4 tenders were missed and their minimums went to
+// every size: "> 42,0 kVA" (">" as the sign), "Công suất liên tục: 15kVA/ 12kW" and "Công suất liên tục (Min) 40 kVA"
+// (the label and the figure, no sign), and a size named only in its heading ("1.3.2. Điều chuyển Máy phát điện 22kVA",
+// "Máy phát điện 10,5kVA"). A heading is a short line that starts (after its number) with "máy phát" and names one size.
+const CAP_SIGNED = new RegExp(String.raw`(?:≥|>=|>|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*` + CAP_NUM, "gi");
+const CAP_LABELED = new RegExp(String.raw`(c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n|d[ựu] ph[òo]ng)|prime(?:\s+power)?|standby(?:\s+power)?|continuous(?:\s+power)?)([^\n\d≥≤<>=]{0,30}?)` + CAP_NUM, "gi");
+const CAP_HEAD = /^\s*(?:(?:\d{1,2}(?:\.\d{1,2})*\.?|[IVX]{1,4}\.?|[a-hA-H][.)])\s*)?[-–:|*•+]?\s*(?:[^\d\n]{0,25}?\s)?(?:t[ổo]\s+)?m[áa]y\s+ph[áa]t\b/i;
 export function sizeBlocks(t, sizes) {
   const text = withoutOtherEquipment(unflatten(t)), L = text.split("\n"), ments = [], kwSizes = sizes.some((s) => s.cap?.unit === "kW");
+  const engineBefore = (at) => ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "));
   let off = 0;
   for (let i = 0; i < L.length; off += L[i].length + 1, i++) {
+    const line = text.slice(off, off + L[i].length), seen = new Set();
     // The figure is on this line; its label may be on the lines around it.
-    // Also a figure with no sign right after its label ("- Công suất liên tục: 15kVA/ 12kW", "- Công suất dự phòng: 5.8kW": a list of
-    // items, IB2300363623), the figure of each unit on its own.
-    for (const m of text.slice(off, off + L[i].length).matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b|(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|d[ựu] ph[òo]ng|c[ơo] b[ảa]n)|prime|standby)\s*:\s*(?=\d)(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*\/\s*(\d{1,3}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/gi)) {
-      if (m[3] != null) { m[1] = m[3]; m[2] = m[4]; }
+    for (const m of line.matchAll(CAP_SIGNED)) {
       if (m[2].toLowerCase() === "kw" && !kwSizes) continue;
       const at = off + m.index, around = text.slice(Math.max(0, at - 160), at + 160), pos = Math.min(at, 160);
       const p = nearest(around, pos, CAP_PRIME_W), sb = nearest(around, pos, CAP_STANDBY_W);
-      if (ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "))) continue;
+      if (engineBefore(at)) continue;
       const kind = p < sb && p <= 120 ? "prime" : sb < p && sb <= 120 ? "standby" : null;
-      if (kind) ments.push({ line: i, kind, kva: numOf(m[1]), unit: m[2].toLowerCase() });
+      if (kind) { ments.push({ line: i, kind, kva: numOf(m[1]), unit: m[2].toLowerCase() }); seen.add(m.index + m[0].length); }
+    }
+    // The label then its figure without a sign; the label says which.
+    for (const m of line.matchAll(CAP_LABELED)) {
+      if (seen.has(m.index + m[0].length) || (m[4].toLowerCase() === "kw" && !kwSizes)) continue;
+      if (ENGINE_W.test(m[2]) || /tối đa|max/i.test(m[2]) || engineBefore(off + m.index + m[1].length)) continue;
+      ments.push({ line: i, kind: /d[ựu] ph[òo]ng|standby/i.test(m[1]) ? "standby" : "prime", kva: numOf(m[3]), unit: m[4].toLowerCase() });
+    }
+    // The heading of one genset: the size it names (one size, else none: "MAYPHATDIEN 30, 42kVA" names two).
+    // A list of sizes ("30, 42kVA", "12 và 40 kVA") is no genset's heading.
+    if (line.length <= 120 && CAP_HEAD.test(line) && !/\d\s*(?:,\s+|\s+và\s+|\s*[&;]\s*)\d[\d.,]*\s*(?:kVA|kW)\b/i.test(line)) {
+      const figs = [...line.matchAll(new RegExp(CAP_NUM, "gi"))].filter((m) => m[2].toLowerCase() === "kva" || kwSizes);
+      if (figs.length) ments.push({ line: i, kind: "head", figs: figs.map((m) => ({ kva: numOf(m[1]), unit: m[2].toLowerCase() })) });
     }
   }
+  const fits = (m, s) => { const v = m.unit === "kw" ? s.kva * 0.8 : s.kva; return m.kind === "standby" ? m.kva >= v * NEAR_LOW && m.kva <= v * NEAR_HIGH + 1e-9 : m.kva >= v * NEAR_LOW && m.kva <= v / NEAR_LOW; };
   const belongs = (m) => {
     // A statement in kW is read only when a size of the tender is in kW (IB2300363623: 15 kVA and 5 kW), at 0.8 (5 kW = 6.25 kVA): in
 // a tender in kVA the kW statements (the alternator's, the shaft's) opened blocks of no size inside the block of a size.
-    const hit = sizes.map((s, j) => [s, j]).filter(([s]) => { const v = m.unit === "kw" ? s.kva * 0.8 : s.kva; return m.kind === "prime" ? m.kva >= v * NEAR_LOW && m.kva <= v / NEAR_LOW : m.kva >= v * NEAR_LOW && m.kva <= v * NEAR_HIGH + 1e-9; });
+    // A heading's figures (its kVA and kW, "40 kVA / 32 kW") all name the same size: else it is of no size.
+    const hit = m.kind === "head" ? [...new Set(m.figs.flatMap((f) => sizes.map((s, j) => (fits({ ...f, kind: "prime" }, s) ? j : -1)).filter((j) => j >= 0)))].map((j) => [sizes[j], j])
+      : sizes.map((s, j) => [s, j]).filter(([s]) => fits(m, s));
+    if (m.kind === "head" && hit.length === 1 && m.figs.some((f) => !fits({ ...f, kind: "prime" }, hit[0][0]))) return -1;
     return hit.length === 1 ? hit[0][1] : -1;
   };
   const runs = [];
@@ -836,11 +860,15 @@ export function minsForSize(t, size, sizes, extra = "") {
     const got = others.filter((o) => o.m[k].has), ids = (list) => new Set(list.map((o) => o.id)).size;
     return ids(got) >= 2 && ids(got) * 2 >= ids(others) && got.every((o) => o.m[k].v != null && o.m[k].v === got[0].m[k].v) ? got[0].m[k].v : null;
   };
+  // The text outside the blocks is common to every size only when the block of every size was found; else it may hold the
+  // text of a size whose block was not found (2026-11-12: with no block at all, the one minimum of a tender of two sizes,
+  // stated under one of them, went to both). Then it is not used to rule a row out (the prime: below, it must be the size).
+  const allFound = sizes.every((_, k) => runs.some((r) => r.size === k));
   for (const k of MIN_KEYS) {
     if (a[k].has) { mins[k] = a[k].v; how[k] = a[k].v == null ? "own: disagree" : "own"; }
     else if (["minDisp", "maxDisp", "minCyl"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
-    else if (!b[k].has && c[k].has) { mins[k] = c[k].v; how[k] = "common"; }
-    else { mins[k] = null; how[k] = b[k].has ? "of another size" : "none"; }
+    else if (!b[k].has && c[k].has && (allFound || k === "minPrime")) { mins[k] = c[k].v; how[k] = "common"; }
+    else { mins[k] = null; how[k] = b[k].has ? "of another size" : c[k].has ? "size unknown" : "none"; }
   }
   // The prime a size asks for is the size itself: a block whose text gives another (the prime of the next genset read in
   // it, 20 kVA's block giving 30) is a misreading, not a minimum.
@@ -848,7 +876,11 @@ export function minsForSize(t, size, sizes, extra = "") {
     const mp = mins.minPrime, v = size.cap.unit === "kW" ? mp.kW ?? (mp.kVA != null ? mp.kVA * 0.8 : null) : mp.kVA ?? (mp.kW != null ? mp.kW / 0.8 : null);
     if (v == null || Math.abs(v / size.cap.value - 1) > 0.006) { mins.minPrime = null; how.minPrime = "not the size"; }
   }
-  return { mins, how, blocks: runs.map((r) => ({ size: r.size, from: r.start + 1, to: r.to })) };
+  // A short note (≤ 300 characters) for the agent: the minimums the HSMT gives that the code could not place in this size.
+  const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
+  const unsure = MIN_KEYS.filter((k) => how[k] === "size unknown" || how[k] === "own: disagree").map((k) => LABEL[k]);
+  const note = unsure.length ? `Gói nhiều cỡ: code không xác định được ngưỡng ${[...new Set(unsure)].join(", ")} của HSMT thuộc máy ${size.label || `${size.cap?.value} ${size.cap?.unit}`} nên không dùng để loại dòng; tự đối chiếu với phần HSMT của máy này.`.slice(0, 300) : null;
+  return { mins, how, note, blocks: runs.map((r) => ({ size: r.size, from: r.start + 1, to: r.to })) };
 }
 // "Công suất liên tục (Prime) ≥ 400 kVA / 320 kW" and "Tiêu hao nhiên liệu ≤ 90 Lít/giờ": a table cell of the HSMT
 // often puts the words on the lines around the figure, so each figure goes to the nearest word naming prime or standby
@@ -1209,6 +1241,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   };
   const out = [`# Danh mục trong hệ thống${cap ? ` (tổ máy ${cap.value} ${cap.unit}, từ ${bandOf(cap).text})` : ""}${hints.freq ? `, ${hints.freq} Hz` : ""} — code đã xếp sẵn`, "",
     "Thứ tự ưu tiên khi xếp: model động cơ / hãng động cơ HSMT nêu, bộ điều khiển HSMT nêu, động cơ có nhiều thông số có nguồn, rồi mới tới đầu phát; công suất càng sát càng tốt.", "",
+    ...(hints.sizeNote ? [hints.sizeNote, ""] : []),
     `## Ứng viên (${top.length} dòng tổ máy, tốt nhất trước)`, ""];
   top.forEach((r, i) => {
     const { e, u, a } = r, s = sup.get(u.supplierId);
