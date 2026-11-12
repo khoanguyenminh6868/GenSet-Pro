@@ -217,6 +217,19 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
      — only when a saved page names the controller; `text` is the name as written in `line`, `model` null for a make alone.
    The code checks it with verify.mjs, adds what passes to the catalog (web and a pull request in the repo) and drops
    what fails; nothing you write there is shown unless it is found word for word in the saved pages.
+   - A page that answers 401 / 403 / 429 or a bot check is closed to automated download (Khoa's rule: never get
+     around a block): do not try it again, do not change the User-Agent or any header, do not use another tool, a cache,
+     an archive or a copy on another site to reach that same file. Declare it in `searched` (`outcome: "blocked"`)
+     and use a different source you can save, if one exists.
+   - Before searching, read "Đã tra trên mạng ở lượt trước" in catalog.md: a search listed there (not found, or blocked)
+     is not done again at the same place; a check it was about is written as when the source is silent (`unclear`).
+   - `searched` in result.json: every search of this run that did NOT find what it looked for, one entry per part,
+     model and what: `{ "part": "engine|alternator|genset|controller", "model": "the model exactly as catalog.md or
+     your configuration writes it", "make": "", "what": "datasheet" or a figure key of input.md's list (e.g. "fuel75"),
+     "where": ["each URL you fetched or saved for it, exactly as you used it", "each WebSearch query, word for word"],
+     "outcome": "not_found|blocked", "note": "1 câu" }`. `datasheet` means no datasheet of that model on those sites.
+     The code keeps an entry only when every `where` is in this run's log, so the next runs skip it for 90 days; write
+     nothing there for a search that found what it looked for, or that you did not run.
 5. When neither the system nor the internet gives a configuration that meets the power, frequency and any named
    make or origin, answer with `"configs": []` and a `message` saying what was searched and what is missing.
 
@@ -239,6 +252,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     "gaps": ["what to confirm with the supplier"]
   }],
   "message": "only when configs is empty",
+  "searched": [{ "part": "genset", "model": "D440", "make": "Rehlko", "what": "datasheet", "where": ["https://...", "query"], "outcome": "not_found|blocked", "note": "" }],
   "notes": [],
   "clarify": [{ "item": "Ổn định điện áp", "quoteA": "a line of hsmt.txt, word for word", "quoteB": "the other line, word for word (optional)", "why": "1 câu tiếng Việt" }]
 }

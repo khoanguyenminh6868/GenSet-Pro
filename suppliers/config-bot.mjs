@@ -32,6 +32,7 @@ import { htmlToText } from "./crawl-specs.mjs";
 import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn, clausesOf } from "./reqcodes.mjs";
 import { ratingsOf, stamfordRatings, altSheetAttrs } from "./ratings.mjs";
 import { viaApi, noteApiSpend, costOf, switchToPlan } from "./api-budget.mjs";
+import * as MEMO from "./web-memo.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -1013,6 +1014,11 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   });
   // Every figure of the models above, from any supplier's row or datasheet, with the factSrc to quote.
   out.push("## Thông số theo model (dùng cho mọi cấu hình có model đó; ghi factSrc như dưới)", "");
+  // A figure an earlier run found on the internet (source n 2001–2999): whether its page is on the maker's own domain
+  // (web-memo.mjs isOfficial, computed by code). Only shown; the figure counts as before (Khoa 2026-11-12, phương án B).
+  const official = MEMO.officialOfSource(opts.suppliers || []);
+  const webTag = (f) => (Number(f.n) > 2000 && Number(f.n) < 3000 && official.has(`${f.supplierId}#${f.n}`)
+    ? official.get(`${f.supplierId}#${f.n}`) ? " (tìm trên internet, trang chính hãng)" : " (tìm trên internet, trang không phải của hãng)" : "");
   const models = [];
   for (const r of top) {
     if (!models.some((m) => m.kind === "engine" && m.x.key === r.e.key)) models.push({ kind: "engine", x: r.e });
@@ -1026,7 +1032,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
       if (bad.has(key)) out.push(`- ⚠ ${CAT.SPEC[key]?.vi || RATED_VI[key] || key}: các nguồn ghi khác nhau (${bad.get(key).join(" / ")}) — không dùng làm "met"`);
       // Two sources a figure, the shortest lines first (a datasheet line before a whole row); all of them when they disagree.
       const same = list.filter((g) => g.key === key).sort((a, b) => a.line.length - b.line.length);
-      for (const f of bad.has(key) ? same.slice(0, 4) : same.slice(0, 2)) out.push(`- ${factLine(f)}`);
+      for (const f of bad.has(key) ? same.slice(0, 4) : same.slice(0, 2)) out.push(`- ${factLine(f)}${webTag(f)}`);
     }
     out.push("");
   }
@@ -1172,6 +1178,31 @@ const formulasMd = () => "\n## Công thức được phép\n"
 
 // `given`: the supplier DB the run already read (run reads it once; check() then uses the same records the agent saw).
 // `multi` ({ size, sizes }, sizesOf): a tender of several sizes, this run for one of them.
+// ---------- searches already done (web-memo.mjs) ----------
+const WEB_MEMO_DIR = MEMO.WEB_MEMO;
+// The models of a run: the candidate rows' engines, alternators, gensets and controllers ([{ part, model }]).
+export function runModels(top = []) {
+  const list = [], add = (part, model) => { if (model && !list.some((m) => m.part === part && CAT.keyOf(m.model) === CAT.keyOf(model))) list.push({ part, model }); };
+  for (const r of top) {
+    add("engine", r.e?.model); add("alternator", r.a?.model); add("genset", r.u?.genset);
+    for (const c of r.rowCtrl || []) add("controller", c.model);
+  }
+  return list;
+}
+// What an agent declared it searched and did not find (result.searched) joins the store when the run's log shows it
+// (MEMO.recordNegatives). The run's models: those of catalog.md and of the configurations it gave (an internet find).
+export function recordSearched(result, { logText = "", listed = [], root = WEB_MEMO_DIR, today = new Date().toISOString().slice(0, 10), tender = "", size = "", suppliers = [] } = {}) {
+  const searched = result?.searched;
+  delete result?.searched;
+  if (!Array.isArray(searched) || !searched.length) return { added: [], refused: [] };
+  const models = Object.fromEntries(MEMO.PARTS.map((p) => [p, new Set()]));
+  for (const m of listed) models[m.part]?.add(CAT.keyOf(m.model));
+  for (const c of result?.configs || []) for (const p of MEMO.PARTS) if (c[p]?.model) models[p].add(CAT.keyOf(c[p].model));
+  const r = MEMO.recordNegatives(MEMO.loadNeg(root), searched, { trace: MEMO.traceOf(logText), models, today, tender, size, suppliers });
+  if (r.added.length) MEMO.saveNeg(r.entries, root, today);
+  return r;
+}
+
 async function prep(key, dir, reqData = {}, given = null, multi = null) {
   fs.mkdirSync(path.join(dir, "web"), { recursive: true });
   // GENBID_LOCAL_SUPPLIERS=1: the supplier DB of this checkout (cn/*.json) instead of the web's, to try records not yet published.
@@ -1193,7 +1224,10 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   const facts = grp ? modelFacts({ ...full, engines: byOrigin(full.engines, origin, cn) }, all) : undefined;
   const offGroup = grp ? new Set(byOrigin(full.engines, origin, cn).flatMap((e) => (e.uses || []).map((u) => u.supplierId)).filter((id) => !grp.has(id))).size : 0;
   const { md, ctlMd, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, keep: keepOf(reqData.prevResult), ...(facts ? { facts } : {}) });
-  fs.writeFileSync(path.join(dir, "catalog.md"), md + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))), "utf8");
+  // What earlier runs searched on the internet and did not find, for the models of this run (web-memo.mjs, Khoa 2026-11-12).
+  const runList = runModels(top), negMd = MEMO.negativesMd(MEMO.loadNeg(WEB_MEMO_DIR), runList, new Date().toISOString().slice(0, 10));
+  fs.writeFileSync(path.join(dir, "catalog.md"), md + (negMd ? "\n\n" + negMd : "") + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))), "utf8");
+  fs.writeFileSync(path.join(dir, "models.json"), JSON.stringify(runList), "utf8");
   if (ctlMd) fs.writeFileSync(path.join(dir, "controllers.md"), ctlMd, "utf8");
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
   fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(all), "utf8");
@@ -2931,6 +2965,13 @@ export function catalogRecords(entries, { existing, readWeb, today }) {
       nmap.set(Number(s.n), n); files[file] = txt;
       sources.push({ n, url, accessedAt: accessed, tier: s.tier, quote: s.quote, file });
     }
+    // `official` (Khoa 2026-11-12): the page is on the domain of this record's make (web-memo.mjs), computed by code,
+    // never the agent's; written for the record, not yet used to weigh the source.
+    if (!error) {
+      const self = old || { id, role: e.role, website: e.website || null, names: e.names || {}, sources: [] };
+      const pool = [...existing.values(), ...(old ? [] : [self])];
+      for (const s of sources) s.official = MEMO.isOfficial(s.url, self, pool);
+    }
     if (error) { out.push({ id, error }); continue; }
     const re = (src) => (Array.isArray(src) ? src.map((n) => nmap.get(Number(n)) ?? -1) : src);
     const lines = (e.productLines || []).map((p) => ({ ...p, src: re(p.src), ...(p.power ? { power: { ...p.power, src: re(p.power.src) } } : {}) }));
@@ -3065,6 +3106,12 @@ ${r.stderr || ""}`, "utf8");
         const { added, records } = await addToCatalog(dir, key, all, opts).catch((e) => ({ added: [{ error: `Chưa bổ sung được vào danh mục: ${e.message}` }], records: [] }));
         all = [...all.filter((s) => !records.some((x) => x.id === s.id)), ...records];
         const { result, problems } = checkDir(dir, all, added, info.origin);
+        // Searches the agent says found nothing, kept when this run's log shows them (web-memo.mjs, Khoa 2026-11-12).
+        try {
+          const listed = fs.existsSync(path.join(dir, "models.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "models.json"), "utf8")) : [];
+          const neg = recordSearched(result, { logText: r.stdout || "", listed, tender: key, size: size?.label || "", suppliers: all });
+          if (neg.added.length || neg.refused.length) console.log(`${key}${size ? ` máy ${size.label}` : ""}: ghi ${neg.added.length} kết quả tra không thấy${neg.refused.length ? `; không ghi: ${neg.refused.join("; ")}` : ""}`);
+        } catch (e) { console.log(`${key}: chưa ghi được kết quả tra không thấy (${e.message})`); }
         // What Tìm NCC added to the last result of this size comes back (Khoa, 2026-11-12), with no agent.
         try {
           const meta = fs.existsSync(path.join(dir, "meta.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")) : {};
@@ -3239,19 +3286,23 @@ export async function findPrep(key, dir, req, suppliers) {
   fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin: info.origin, cap: info.cap }), "utf8");
   return info;
 }
-// A product line of the record that covers the tender's power, in the tender's unit (95% to 140%; the candidates of catalog.md are 100% to 120% since 2026-11-12, this one is Tìm NCC's and stays: Khoa decides).
+// The power band of Tìm NCC (Khoa, 2026-11-12): the same as the candidates of catalog.md, NEAR_LOW (100% less the 0.5% of
+// rounding) to NEAR_HIGH (120%) of the tender's power; it was 95% to 140% (fitsCap) and 100% to 140% (rows).
+const inBand = (x, value) => x >= value * NEAR_LOW && x <= value * NEAR_HIGH + 1e-9;
+// A product line of the record that covers the tender's power, in the tender's unit (the band above: a line whose range
+// reaches into it).
 const capStr = (c) => (Array.isArray(c) ? c : c ? [c] : []).map((x) => `${x.value} ${x.unit}`).join(", ");
 // cap may be a list (a tender of several sizes): a line that covers any of them.
 export function fitsCap(rec, cap) {
   if (Array.isArray(cap)) return cap.some((c) => fitsCap(rec, c));
   if (!cap) return (rec.productLines || []).some((p) => p.power);
-  return (rec.productLines || []).some((p) => p.power?.unit === cap.unit && p.power.min <= cap.value * 1.4 && p.power.max >= cap.value * 0.95);
+  return (rec.productLines || []).some((p) => p.power?.unit === cap.unit && p.power.min <= cap.value * NEAR_HIGH + 1e-9 && p.power.max >= cap.value * NEAR_LOW);
 }
-// The engine rows of a record at the tender's power (100% to 140%, as mergeFind takes them): a product line alone
+// The engine rows of a record at the tender's power (the band above, as mergeFind takes them): a product line alone
 // fits the power but goes into no configuration (IB2600594596, 2026-11-06: Rehlko's tables named no engine).
 export function engineRows(rec, cap) {
   const caps = (Array.isArray(cap) ? cap : [cap]).filter(Boolean);
-  return CAT.build([rec]).engines.flatMap((e) => e.uses.filter((u) => !caps.length || caps.some((c) => rowPower(u, c) >= c.value && rowPower(u, c) <= c.value * 1.4)).map((u) => `${e.model}${u.genset ? ` (${u.genset})` : ""}`));
+  return CAT.build([rec]).engines.flatMap((e) => e.uses.filter((u) => !caps.length || caps.some((c) => inBand(rowPower(u, c), c.value))).map((u) => `${e.model}${u.genset ? ` (${u.genset})` : ""}`));
 }
 // newCatalog.json checked offline, the way addToCatalog will: records built with catalogRecords, then verify.mjs on a
 // copy in <dir>/_check with the saved pages. For a supplier already in the system only its new parts are checked
@@ -3279,7 +3330,7 @@ export async function findCheck(dir, suppliers, cap) {
 }
 // Suppliers Tìm NCC added go into the suggested configurations in code, with no agent and no tokens (Khoa,
 // 2026-11-01), from its table rows (web/catalog.js) for an engine of the origin asked for whose smallest rating is 100%
-// to 140% of the tender's power (Khoa, 2026-11-02): a row with the engine (and, when both name one, the alternator) of
+// to 120% of the tender's power (Khoa, 2026-11-02, band of 2026-11-12): a row with the engine (and, when both name one, the alternator) of
 // a configuration already suggested adds the supplier under it; a supplier that joins none becomes a new configuration,
 // marked fromFind, from its row closest to the power, with that supplier alone. The new one's only check is the power
 // read from that row, left "unclear", since nothing else of the HSMT was compared with it. Every model and line is the
@@ -3287,8 +3338,8 @@ export async function findCheck(dir, suppliers, cap) {
 const powerText = (p) => Object.entries(p || {}).map(([k, v]) => `${{ prime: "Prime", standby: "Standby", rated: "Định mức" }[k] || k} ${[v.kVA && `${v.kVA} kVA`, v.kW && `${v.kW} kW`].filter(Boolean).join(" / ")}`).join(", ");
 export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
   const ids = new Set(records.map((r) => r.id)), keyOf = CAT.keyOf;
-  // The row's smallest rating (prime when it gives both) is at least the tender's power, and not past 140% of it.
-  const near = (u) => !cap || (rowPower(u, cap) >= cap.value && rowPower(u, cap) <= cap.value * 1.4);
+  // The row's smallest rating (prime when it gives both) is in the band: from 100% (less the rounding) to 120% of the tender's power.
+  const near = (u) => !cap || inBand(rowPower(u, cap), cap.value);
   const lineOf = (u, model) => u.line || (u.lines?.rows || []).find((l) => keyOf(l).includes(keyOf(model))) || null;
   const configs = result.configs || (result.configs = []), out = { joined: [], created: [] };
   const o = originOfReq(origin), cn = cnSuppliers(records), rows = new Map();
@@ -3335,7 +3386,7 @@ export function mergeFind(result, records, { cap, origin, max = 5 } = {}) {
       ...(u.genset ? { genset: { model: u.genset, src } } : {}),
       ...((ctl) => (ctl ? { controller: { model: ctl.model, make: ctl.brand, src } } : {}))(CAT.controllersIn(line).find((x) => x.model)),
       checks: [{ item: "Công suất", part: "genset", requirement: cap ? `khoảng ${cap.value} ${cap.unit}` : "", offered: powerText(u.power) || "—", sourceQuote: line, status: "unclear",
-        note: "Bổ sung tự động từ Tìm NCC, không dùng AI: công suất nhỏ nhất ghi trong dòng bảng từ 100% đến 140% công suất của gói. Các yêu cầu khác của HSMT chưa được đối chiếu (bấm Gợi ý lại nếu cần)." }],
+        note: "Bổ sung tự động từ Tìm NCC, không dùng AI: công suất nhỏ nhất ghi trong dòng bảng từ 100% đến 120% công suất của gói. Các yêu cầu khác của HSMT chưa được đối chiếu (bấm Gợi ý lại nếu cần)." }],
       suppliers: [entry(r, mine[0])],
       gaps: ["Cấu hình bổ sung từ Tìm NCC: chưa đối chiếu từng yêu cầu kỹ thuật của HSMT.", ...(result.extra ? [`Chưa đối chiếu Yêu cầu khác: ${result.extra}`] : [])],
     };
