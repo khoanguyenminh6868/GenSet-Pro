@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
-const { bcdgReason } = require("../bot/genbid-hsmt/bcdg-reason.js");
+const { bcdgReason, mentionsUs } = require("../bot/genbid-hsmt/bcdg-reason.js");
 const { bcdgStep, MAX_TRIES } = require("../bot/genbid-hsmt/bcdg-step.js");
 
 // ---------- bcdg-reason.js ----------
@@ -41,16 +41,16 @@ test("tên bị ngắt dòng vẫn nhận; gói trúng (không có cụm loại)
 
 // Chữ thật của 19 gói đã tải tay (chỉ chạy khi có thư mục này trên máy của Khoa).
 const CORPUS = "C:/Projects/GenSet Pro/genbid-test/bcdg/text/";
-test("19 gói thật: trích được ≥14 gói, đoạn nào cũng nhắc công ty mình, không có tên người khác", { skip: !fs.existsSync(CORPUS) }, () => {
+test("19 gói thật: trích được ≥16 gói, đoạn nào cũng nhắc công ty mình, không có tên người khác", { skip: !fs.existsSync(CORPUS) }, () => {
   let got = 0;
   for (const f of fs.readdirSync(CORPUS).filter((x) => x.endsWith(".txt"))) {
     const r = bcdgReason(fs.readFileSync(CORPUS + f, "utf8"));
     if (!r) continue;
     got++;
-    assert.match(r.normalize("NFC"), /th.{0,3}o\s*nguy.{0,3}n|4101623015/i, f);
+    assert.match(r.normalize("NFC"), /th.{0,3}o\s*nguy.{0,3}n|4101623015|Liên danh TN-HA/i, f);
     assert.doesNotMatch(r, /Nguyễn Thị Thảo Nguyên/i, f);
   }
-  assert.ok(got >= 14, "chỉ trích được " + got);
+  assert.ok(got >= 16, "chỉ trích được " + got);
 });
 
 // ---------- bcdg-step.js ----------
@@ -193,4 +193,58 @@ test("OCR quá giờ rồi lần sau đọc được: hết error, có lý do", 
   const r2 = await run({ deps, prev: r1.doc });
   assert.equal(r2.doc.error, undefined);
   assert.match(r2.doc.reason, /Thiếu tài liệu thuế/);
+});
+
+// ---------- OCR hai bước (ocr-pdf.js --locate), cờ scan, --reread ----------
+test("mentionsUs: chọn trang theo tên/MST chịu lỗi OCR, bỏ dấu; trang không nhắc thì không chọn", () => {
+  assert.ok(mentionsUs("Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên: Không đạt"));
+  assert.ok(mentionsUs("CONG TY TNHH THIET BI KY THUAT THAO NGUYEN"));
+  assert.ok(mentionsUs("Cong ty Thao Nguyén Dat"));      // dấu lạ sau OCR
+  assert.ok(mentionsUs("kỹ thuật Thá0 Nguyen"));
+  assert.ok(mentionsUs("MST: 4101 623 015"));
+  assert.ok(mentionsUs("MST 4101623O15".replace("O", "0")));
+  assert.ok(mentionsUs("MST 4101623915"), "sai một chữ số vẫn chọn");
+  assert.ok(!mentionsUs("Công ty TNHH Minh Phú: thiếu CO, không đạt"));
+  assert.ok(!mentionsUs("Mã số 4101999999 và 12345678901234"));
+});
+test("scan: OCR quá giờ trước khi in 'OCR n/m' (ocr 0) nhưng ocr-pdf đã báo là scan → scan = true; chữ đọc dở vẫn cho lý do", async () => {
+  const { deps } = mk({ text: () => ({ text: "b3. Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:\n- Thiếu tài liệu thuế", ocr: 0, scan: true, timedOut: true }) });
+  const { doc } = await run({ deps });
+  assert.equal(doc.scan, true);
+  assert.match(doc.reason, /Thiếu tài liệu thuế/);
+  assert.match(doc.error, /OCR quá giờ/);
+  assert.ok(doc.files.every((f) => f.path && f.noText));
+});
+test("tệp không scan (ocr 0, scan false) → scan false", async () => {
+  const { deps } = mk({ text: () => ({ text: "", ocr: 0, scan: false, timedOut: false }) });
+  assert.equal((await run({ deps })).doc.scan, false);
+});
+test("reread: tải lại để đọc chữ, KHÔNG tải lên lại, xoá error/tries/giveUp, thay lý do cũ", async () => {
+  const { deps, calls } = mk({ text: () => ({ text: "b3. Công ty TNHH Thiết bị Kỹ thuật Thảo Nguyên:\n- Thiếu bảo đảm dự thầu", ocr: 3, scan: true, timedOut: false }) });
+  const prev = { notifyNo: "K", files: FILES.map((f) => ({ id: f.id, name: f.name, path: "K/old-" + f.id.slice(0, 8), noText: true })), reason: "", scan: false, error: "OCR quá giờ, chưa đọc được chữ", tries: 3, giveUp: true, at: "x" };
+  const { doc } = await run({ deps, prev, reread: true });
+  assert.equal(calls.upload.length, 0);
+  assert.equal(calls.download[0].length, 2);
+  assert.match(doc.reason, /bảo đảm dự thầu/);
+  assert.equal(doc.error, undefined); assert.equal(doc.tries, undefined); assert.equal(doc.giveUp, undefined);
+  assert.equal(doc.scan, true);
+  assert.deepEqual(doc.files.map((f) => f.path), prev.files.map((f) => f.path)); // đường dẫn trên kho giữ nguyên
+  assert.ok(doc.files.every((f) => !f.noText));
+});
+test("reread: tệp chưa lên kho (không path) giữ nguyên lỗi, không tải lên; không có tệp nào trên kho → không ghi", async () => {
+  const { deps, calls } = mk();
+  const prev = { notifyNo: "K", files: [{ id: FILES[0].id, name: "bc1.pdf", path: "K/a" }, { id: FILES[1].id, name: "bc2.pdf", error: "tải lên: HTTP 500" }], error: "x", tries: 1, at: "x" };
+  const { doc } = await run({ deps, prev, reread: true });
+  assert.equal(calls.upload.length, 0);
+  assert.deepEqual(calls.download[0], [FILES[0].id]);
+  assert.equal(doc.files[1].error, "tải lên: HTTP 500");
+  assert.match(doc.error, /HTTP 500/);
+  const none = await run({ deps: mk().deps, prev: { notifyNo: "K", files: [{ id: FILES[0].id, name: "bc1.pdf", error: "e" }, { id: FILES[1].id, name: "bc2.pdf", error: "e" }] }, reread: true });
+  assert.equal(none.doc, null);
+});
+test("liên danh: tên liên danh lấy từ dòng có MST, rồi tìm lý do theo tên đó; 'không đồng bộ' là cụm lý do", () => {
+  const r = bcdgReason("Bảng mở thầu\n4 vn4101623015 | Liên danh TN-HA 4205.000.000\n...\n- Liên danh TN-HA: Không đáp ứng về kỹ thuật do không đạt điểm tối thiểu.\n- Công ty TNHH Khác: đạt");
+  assert.match(r, /Liên danh TN-HA: Không đáp ứng/);
+  assert.doesNotMatch(r, /Khác/);
+  assert.match(bcdgReason("4. CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN\n- Thông số kỹ thuật không đồng bộ từ một nhà sản xuất."), /không đồng bộ/);
 });

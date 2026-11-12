@@ -11,7 +11,7 @@ const FULL = /thi.{0,3}t\s*b.{0,3}\s*k.{0,3}\s*thu.{0,3}t\s*th.{0,3}o\s*nguy.{0,
 const SHORT = /(?:c[ôo]ng\s*ty|cty|tnhh|nh[àa]\s*th[ầa]u)[^.:;\n]{0,50}th.{0,3}o\s*nguy.{0,3}n/i;
 const NAME_TAIL = /th.{0,3}o\s*nguy.{0,3}n/i;
 // Cụm báo hiệu lý do loại.
-const NEG = /không\s+(đáp\s*ứng|đạt|hợp\s*lệ|phù\s*hợp|đủ)|chưa\s+(có|đáp\s*ứng|đủ|hợp\s*lệ|được)|thiếu|bị\s+loại|không\s+có\s+(tài\s*liệu|giấy|xác\s*nhận|ủy\s*quyền)|vi\s*phạm|sai\s+khác/i;
+const NEG = /không\s+(đáp\s*ứng|đạt|hợp\s*lệ|phù\s*hợp|đủ)|chưa\s+(có|đáp\s*ứng|đủ|hợp\s*lệ|được)|thiếu|bị\s+loại|không\s+có\s+(tài\s*liệu|giấy|xác\s*nhận|ủy\s*quyền)|vi\s*phạm|sai\s+khác|không\s+đồng\s*(?:bộ|độ)/i;
 // Dòng mở phần của nhà thầu khác (hoặc mục mới): đoạn của mình dừng ở đó.
 const NAME_WORD = "(?:nhà\\s*thầu|công\\s*ty|cty|liên\\s*danh|tnhh|ctcp|doanh\\s*nghiệp|hợp\\s*tác\\s*xã|tổng\\s*công\\s*ty|chi\\s*nhánh)";
 const OTHER = new RegExp("^(?:[a-zđ](?:\\.?\\d{1,2})?[.)]\\s*|[-•+*]\\s*|\\d+(?:\\.\\d+)*[.)]?\\s*)?" + NAME_WORD + "\\s+(?!không\\b|chưa\\b|đã\\b|có\\b|đề\\s*xuất|chào|này|phải|cần|bị\\b|đáp|kê\\b|nêu|cung\\s*cấp|trên|theo)", "i");
@@ -32,8 +32,13 @@ function bcdgReason(text, { tax = OUR_TAX } = {}) {
   const L = lines(text), tre = tax ? taxRe(tax) : null;
   // Chỉ số dòng bắt đầu đoạn của mình nếu dòng i nhắc đúng công ty, không thì -1. Tên bị ngắt dòng
   // ("... Thiết bị Kỹ thuật" / "Thảo Nguyên") thì đoạn bắt đầu ở dòng trước.
+  // Mình dự thầu trong liên danh (IB2600483082: MST chỉ ở bảng mở thầu, "vn4101623015 | Liên danh TN-HA"): tên liên danh trên dòng
+  // có MST cũng là tên mình ở các dòng khác của báo cáo.
+  const aliases = new Set();
+  if (tre) for (const l of L) if (tre.test(l)) { const m = /li[êe]n\s*danh\s+[\p{L}\d]+(?:[-–][\p{L}\d]+)*/iu.exec(l.slice(l.search(tre))); if (m) aliases.add(m[0].toLowerCase().replace(/\s+/g, " ")); }
+  const isAlias = (l) => aliases.size > 0 && [...aliases].some((a) => l.toLowerCase().replace(/\s+/g, " ").includes(a));
   const startOf = (i) => {
-    if (FULL.test(L[i]) || SHORT.test(L[i]) || (tre && tre.test(L[i]))) return i;
+    if (FULL.test(L[i]) || SHORT.test(L[i]) || (tre && tre.test(L[i])) || isAlias(L[i])) return i;
     if (i > 0 && NAME_TAIL.test(L[i]) && (FULL.test(L[i - 1] + " " + L[i]) || SHORT.test(L[i - 1] + " " + L[i]))) return i - 1;
     return -1;
   };
@@ -53,7 +58,7 @@ function bcdgReason(text, { tax = OUR_TAX } = {}) {
   }
   // Đoạn chồng nhau: giữ đoạn nhiều cụm lý do hơn.
   const kept = [];
-  for (const b of blocks.sort((a, c) => c.score - a.score || a.i - c.i)) if (!kept.some((k) => b.i < k.end && k.i < b.end)) kept.push(b);
+  for (const b of blocks.sort((a, c) => c.score - a.score || a.i - c.i)) if (!kept.some((k) => (b.i < k.end && k.i < b.end) || k.text.replace(/\W+/g, "").toLowerCase() === b.text.replace(/\W+/g, "").toLowerCase())) kept.push(b);
   let out = "";
   for (const b of kept.slice(0, MAX_BLOCKS).sort((a, c) => a.i - c.i)) {
     const next = (out ? out + "\n…\n" : "") + b.text;
@@ -62,7 +67,23 @@ function bcdgReason(text, { tax = OUR_TAX } = {}) {
   }
   return out;
 }
-module.exports = { bcdgReason, OUR_TAX };
+// Trang (chữ OCR nhanh, chất lượng thấp) có nhắc công ty mình không: so khớp chịu lỗi OCR, bỏ dấu. Dùng để chọn trang cần OCR kỹ
+// (ocr-pdf.js --locate); thà thừa trang còn hơn sót. "Thảo Nguyên" (lệch tối đa vài ký tự), "kỹ thuật Thảo", hoặc MST (cho phép
+// một ký tự lạ giữa các nhóm số, hoặc thiếu/sai một chữ số).
+const plainVi = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[đĐ]/g, "d").toLowerCase();
+function mentionsUs(text, tax = OUR_TAX) {
+  const p = plainVi(text);
+  if (/th.{0,2}[o0]\s{0,2}ngu.{0,2}n\b/.test(p) || /thao\s*ng/.test(p) || /ky\s*thuat\s*th.{0,2}[o0]/.test(p)) return true;
+  const t = String(tax);
+  // MST: nhóm 4101 623 015, mỗi nhóm cách nhau tối đa 2 ký tự lạ; hoặc 10 chữ số liền sai một chữ số.
+  if (new RegExp(t.slice(0, 4) + "\\D{0,2}" + t.slice(4, 7) + "\\D{0,2}" + t.slice(7)).test(p)) return true;
+  for (const m of p.matchAll(/(?<!\d)\d[\d\s.]{8,13}\d(?!\d)/g)) {
+    const d = m[0].replace(/\D/g, "");
+    if (d.length === t.length && [...d].filter((c, i) => c !== t[i]).length <= 1) return true;
+  }
+  return false;
+}
+module.exports = { bcdgReason, mentionsUs, OUR_TAX };
 
 if (require.main === module) {
   const fs = require("fs");
