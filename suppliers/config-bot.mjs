@@ -792,7 +792,8 @@ export function sizeBlocks(t, sizes) {
   const engineBefore = (at) => ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "));
   let off = 0;
   for (let i = 0; i < L.length; off += L[i].length + 1, i++) {
-    const line = text.slice(off, off + L[i].length), seen = new Set();
+    // "12,5 ±0,5 KVA" is 12,5 kVA (IB2600477305): the tolerance is blanked, the same length (positions stay).
+    const line = text.slice(off, off + L[i].length).replace(/(\d)(\s*±\s*\d{1,3}(?:[.,]\d+)?\s*)(?=(?:kVA|kW)\b)/gi, (all, d, tol) => d + " ".repeat(tol.length)), seen = new Set();
     // The figure is on this line; its label may be on the lines around it.
     for (const m of line.matchAll(CAP_SIGNED)) {
       if (m[2].toLowerCase() === "kw" && !kwSizes) continue;

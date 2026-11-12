@@ -66,6 +66,10 @@ test("a heading naming two sizes, a statement of the engine, a maximum: open no 
   // Its prime and standby (IB2400427929): the size of the prime.
   assert.deepEqual(runs("Máy phát điện chạy dầu công suất liên tục/dự phòng 30kVA/33kVA 3 pha"), [0]);
   assert.deepEqual(runs("Máy phát điện chạy dầu công suất 30kVA/60kVA"), [-1]);
+  // "12,5 ±0,5 KVA" (IB2600477305) is 12,5 kVA, in a heading and in a statement.
+  const ts = sizesOf(["12,5 kVA; 15 kVA"]), tr = (l) => sizeBlocks(technicalPart(head + l), ts).runs.map((r) => r.size);
+  assert.deepEqual(tr("A Yêu cầu đối với tổ máy phát điện 12,5 ±0,5 KVA"), [0]);
+  assert.deepEqual(tr("3 Công suất liên tục ≥ 12.5 ±0.5KVA Đạt Không đạt"), [0]);
   assert.deepEqual(sizeBlocks(technicalPart(head + "2. Máy phát điện 10,5kVA"), sizesOf(["10,5 kVA; 20 kVA"])).runs.map((r) => r.size), [0]);
   assert.deepEqual(runs("II Yêu cầu về động cơ\n3 Công suất liên tục của động cơ 30 kVA"), []);
   assert.deepEqual(runs("Công suất dự phòng tối đa 42 kVA"), []);
