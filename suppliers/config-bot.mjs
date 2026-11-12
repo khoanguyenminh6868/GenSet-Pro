@@ -1402,14 +1402,14 @@ export function runModels(top = []) {
 }
 // What an agent declared it searched and did not find (result.searched) joins the store when the run's log shows it
 // (MEMO.recordNegatives). The run's models: those of catalog.md and of the configurations it gave (an internet find).
-export function recordSearched(result, { logText = "", listed = [], root = WEB_MEMO_DIR, today = new Date().toISOString().slice(0, 10), tender = "", size = "", suppliers = [] } = {}) {
+export function recordSearched(result, { logText = "", listed = [], root = WEB_MEMO_DIR, today = new Date().toISOString().slice(0, 10), tender = "", size = "", suppliers = [], origin = "", hsmtText = "" } = {}) {
   const searched = result?.searched;
   delete result?.searched;
   if (!Array.isArray(searched) || !searched.length) return { added: [], refused: [] };
   const models = Object.fromEntries(MEMO.PARTS.map((p) => [p, new Set()]));
   for (const m of listed) models[m.part]?.add(CAT.keyOf(m.model));
   for (const c of result?.configs || []) for (const p of MEMO.PARTS) if (c[p]?.model) models[p].add(CAT.keyOf(c[p].model));
-  const r = MEMO.recordNegatives(MEMO.loadNeg(root), searched, { trace: MEMO.traceOf(logText), models, today, tender, size, suppliers });
+  const r = MEMO.recordNegatives(MEMO.loadNeg(root), searched, { trace: MEMO.traceOf(logText), models, today, tender, size, suppliers, origin, hsmtKeys: MEMO.modelKeysOf(hsmtText) });
   if (r.added.length) MEMO.saveNeg(r.entries, root, today);
   return r;
 }
@@ -1436,7 +1436,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   const offGroup = grp ? new Set(byOrigin(full.engines, origin, cn).flatMap((e) => (e.uses || []).map((u) => u.supplierId)).filter((id) => !grp.has(id))).size : 0;
   const { md, ctlMd, shown, top, ctlLookup } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, keep: keepOf(reqData.prevResult), hsmtText: text, ...(facts ? { facts } : {}) });
   // What earlier runs searched on the internet and did not find, for the models of this run (web-memo.mjs, Khoa 2026-11-12).
-  const runList = runModels(top), negMd = MEMO.negativesMd(MEMO.loadNeg(WEB_MEMO_DIR), runList, new Date().toISOString().slice(0, 10));
+  const runList = runModels(top), negMd = MEMO.negativesMd(MEMO.loadNeg(WEB_MEMO_DIR), runList, new Date().toISOString().slice(0, 10), { origin, hsmtText: text });
   // catalog.md whole for the code and grep; parts under the Read limit for the agent (writeForRead, read-order.json).
   const catFiles = writeForRead(dir, "catalog.md", md + (negMd ? "\n\n" + negMd : "") + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))));
   const lookFiles = ctlLookup ? writeForRead(dir, "ctl-lookup.md", ctlLookup) : [];
@@ -3505,7 +3505,8 @@ ${r.stderr || ""}`, "utf8");
         // Searches the agent says found nothing, kept when this run's log shows them (web-memo.mjs, Khoa 2026-11-12).
         try {
           const listed = fs.existsSync(path.join(dir, "models.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "models.json"), "utf8")) : [];
-          const neg = recordSearched(result, { logText: r.stdout || "", listed, tender: key, size: size?.label || "", suppliers: all });
+          const nm = fs.existsSync(path.join(dir, "meta.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")) : {};
+          const neg = recordSearched(result, { logText: r.stdout || "", listed, tender: key, size: size?.label || "", suppliers: all, origin: nm.origin || "", hsmtText: fs.existsSync(path.join(dir, "hsmt.txt")) ? fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8") : "" });
           if (neg.added.length || neg.refused.length) console.log(`${key}${size ? ` máy ${size.label}` : ""}: ghi ${neg.added.length} kết quả tra không thấy${neg.refused.length ? `; không ghi: ${neg.refused.join("; ")}` : ""}`);
         } catch (e) { console.log(`${key}: chưa ghi được kết quả tra không thấy (${e.message})`); }
         // What Tìm NCC added to the last result of this size comes back (Khoa, 2026-11-12), with no agent.

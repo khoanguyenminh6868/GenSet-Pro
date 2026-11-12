@@ -233,6 +233,10 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
      your configuration writes it", "make": "", "what": "datasheet" or a figure key of input.md's list (e.g. "fuel75"),
      "where": ["each URL you fetched or saved for it, exactly as you used it", "each WebSearch query, word for word"],
      "outcome": "not_found|blocked", "note": "1 câu" }`. `datasheet` means no datasheet of that model on those sites.
+     `what: "source"` (outcome `not_found`) = you looked for a usable source (the maker's page, or a supplier that fits
+     this run's origin) of a genset / engine / alternator / controller model the HSMT names and catalog.md lacks, and
+     found none: declare it too (`where` = your WebSearch queries / URLs). It is kept with this run's origin and only a
+     run of the same origin skips it.
      The code keeps an entry only when every `where` is in this run's log, so the next runs skip it for 90 days; write
      nothing there for a search that found what it looked for, or that you did not run.
 5. When neither the system nor the internet gives a configuration that meets the power, frequency and any named
