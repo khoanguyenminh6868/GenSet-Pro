@@ -321,7 +321,95 @@ async function fetchFiles(page, req) {
   }
 }
 
+// ---------- Báo cáo đánh giá E-HSDT (BCĐG) of a tender we bid on (Khoa, 2026-11-12) ----------
+// KQLCNT lists the report (bidders-extract.js reportFiles). The file is downloaded through the VNeGP Agent (GenBid-HSMT.ps1),
+// uploaded to the private Supabase bucket "bcdg" (never GitHub: the repo is public) with a signed upload URL from
+// /api/bcdg, and bcdg/<TBMT> holds {files, reason, scan}. `reason` is the lines of the report around our name (bcdg-reason.js,
+// no AI), "" when none is found. Files over 50 MB are not uploaded; the reason is written in the metadata.
+const OUR_TAX = "4101623015";
+const BCDG_DIR = process.env.GENBID_BCDG_DIR || path.join(process.env.USERPROFILE || "C:\\Users\\Khoa", "Downloads", "GenBid-BCDG");
+const BCDG_MAX_BYTES = 50 * 1048576, BCDG_OCR_PAGES = 60;
+const { bcdgReason } = require("./bcdg-reason.js");
+const isMine = (b) => (b?.list || []).some((x) => String(x.taxCode || "").replace(/\D/g, "") === OUR_TAX);
+const plainName = (s) => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").replace(/[^A-Za-z0-9._-]+/g, "_").slice(-80) || "file";
+// manifest.csv of GenBid-HSMT.ps1: "NotifyNo","FileId","File","Bytes","MD5"
+function readManifest(dir) {
+  const f = path.join(dir, "manifest.csv");
+  if (!fs.existsSync(f)) return [];
+  return fs.readFileSync(f, "utf8").replace(/^\uFEFF/, "").split(/\r?\n/).slice(1).filter(Boolean).map((l) => (l.match(/"((?:[^"]|"")*)"/g) || []).map((x) => x.slice(1, -1).replace(/""/g, '"')))
+    .filter((c) => c.length >= 5).map((c) => ({ id: c[1].toLowerCase(), file: c[2], bytes: Number(c[3]), md5: c[4] }));
+}
+async function bcdgSign(key, name) {
+  const r = await fetch(`${API}/bcdg`, { method: "POST", headers: { Authorization: `Bearer ${token()}`, "Content-Type": "application/json" }, body: JSON.stringify({ action: "sign", key, name }) });
+  if (!r.ok) throw new Error(`/api/bcdg trả HTTP ${r.status}: ${(await r.text()).slice(0, 200)}`);
+  return r.json(); // { path, url }
+}
+async function bcdgUpload(key, file, name) {
+  const s = await bcdgSign(key, name);
+  const form = new FormData();
+  form.append("cacheControl", "3600");
+  form.append("", new Blob([fs.readFileSync(file)], { type: "application/octet-stream" }));
+  const r = await fetch(s.url, { method: "PUT", body: form });
+  if (!r.ok) throw new Error(`tải lên kho HTTP ${r.status}: ${(await r.text()).slice(0, 160)}`);
+  return s.path;
+}
+function bcdgText(file) {
+  const ext = path.extname(file).toLowerCase();
+  if (ext === ".pdf" || IMG_EXT.includes(ext)) {
+    const r = cp.spawnSync(process.execPath, [path.join(KIT, "ocr-pdf.js"), file, "--max", String(BCDG_OCR_PAGES)], { encoding: "utf8", maxBuffer: 256 << 20, timeout: 90 * 60e3 });
+    const n = Number(((r.stderr || "").match(/OCR (\d+)\//) || [])[1] || 0);
+    return { text: r.status === 0 ? r.stdout || "" : "", ocr: n };
+  }
+  return { text: histFileText(file, path.join(os.tmpdir(), "genbid-bcdg-" + process.pid)), ocr: 0 };
+}
+// Download, upload and read one tender's BCĐG; posts bcdg/<key>. `b` is the bidders doc (final, with our MST).
+// A download that fails writes nothing (tried again by a later round), a tender with no report file is marked so.
+async function bcdgStep(key, b) {
+  const files = b.reportFiles || [];
+  const at = now();
+  if (!files.length) { if (!opt("local")) await post([{ coll: "bcdg", id: key, data: { notifyNo: key, files: [], note: "muasamcong không có tệp báo cáo đánh giá", at } }]); return `${key}: không có tệp BCĐG`; }
+  if (opt("dry")) { log(`  [dry] sẽ tải BCĐG ${key}: ${files.map((f) => f.name).join(", ")}`); return `${key}: [dry] ${files.length} tệp BCĐG`; }
+  if (!agentStarted) { ps("GenBid-HSMT.ps1", ["-StartOnly"], 5); agentStarted = true; }
+  const dir = path.join(BCDG_DIR, key), list = path.join(BCDG_DIR, `files-${key}.txt`);
+  fs.mkdirSync(BCDG_DIR, { recursive: true });
+  fs.rmSync(dir, { recursive: true, force: true });
+  fs.writeFileSync(list, [`# ${key}`, ...files.map((x) => `${x.id},${x.name}`)].join("\r\n"), "utf8");
+  try {
+    // The Agent sometimes hands back a PDF cut short (IB2500371475 12/11: 450 KB of 759 KB, no %%EOF): such a file is downloaded
+    // again, twice at most; a PDF still cut short after that is not kept.
+    const complete = (m) => !/\.pdf$/i.test(m.file) || (() => { try { const b = fs.readFileSync(m.file); return b.subarray(Math.max(0, b.length - 2048)).includes("%%EOF"); } catch { return false; } })();
+    const load = () => { const byId = new Map(); for (const m of readManifest(dir)) if (fs.existsSync(m.file)) byId.set(m.id, m); return [...byId.values()]; };
+    let got = [];
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const bad = new Set(files.filter((x) => !got.some((m) => m.id === x.id.toLowerCase() && complete(m))).map((x) => x.id));
+      if (!bad.size) break;
+      if (attempt) { fs.writeFileSync(list, [`# ${key}`, ...files.filter((x) => bad.has(x.id)).map((x) => `${x.id},${x.name}`)].join("\r\n"), "utf8"); log(`    tải lại ${bad.size} tệp BCĐG bị cắt ngắn`); }
+      ps("GenBid-HSMT.ps1", ["-List", list, "-OutDir", BCDG_DIR], 30);
+      got = load();
+    }
+    got = got.filter(complete);
+    if (!got.length) return `${key}: không tải được BCĐG`;
+    const out = [], texts = [];
+    let scan = false;
+    for (const m of got) {
+      const name = path.basename(m.file), rec = { id: m.id, name, size: m.bytes, md5: m.md5 };
+      if (m.bytes > BCDG_MAX_BYTES) { out.push({ ...rec, skipped: `tệp lớn hơn ${BCDG_MAX_BYTES / 1048576} MB, không lưu` }); continue; }
+      try { rec.path = opt("local") ? "(local)" : await bcdgUpload(key, m.file, `${m.id.slice(0, 8)}-${plainName(name)}`); } catch (e) { rec.error = String(e.message).slice(0, 200); }
+      out.push(rec);
+      const t = bcdgText(m.file);
+      if (t.ocr) scan = true;
+      texts.push(t.text);
+    }
+    if (!out.some((x) => x.path) && !out.some((x) => x.skipped)) return `${key}: tải lên kho lỗi (${out.map((x) => x.error).filter(Boolean)[0] || "?"})`;
+    const reason = bcdgReason(texts.join("\n"));
+    await (opt("local") ? (rows) => log(`  [local] bcdg/${key}: ${JSON.stringify(rows[0].data).slice(0, 1500)}`) : post)([{ coll: "bcdg", id: key, data: { notifyNo: key, files: out, reason, scan, at } }]);
+    return `${key}: BCĐG ${out.filter((x) => x.path).length}/${out.length} tệp${reason ? ", có lý do" : ", chưa trích được lý do"}${scan ? " (OCR)" : ""}`;
+  } finally { if (!opt("keep")) fs.rmSync(dir, { recursive: true, force: true }); fs.rmSync(list, { force: true }); }
+}
+
 // Bidders and bid prices of closed tenders (Get-GenBidBidderTargets.ps1 picks them), with bidders-ids.js / bidders-extract.js.
+// A target with bcdgOnly is a tender whose result is already on the web but whose BCĐG is not (at most 5 a round): only
+// bcdg/<TBMT> is written for it.
 async function bidders(page) {
   const f = path.join(ROOT, "genbid-work", "bidder-targets.json");
   fs.mkdirSync(path.dirname(f), { recursive: true });
@@ -332,10 +420,11 @@ async function bidders(page) {
   for (const t of targets) {
     await search(page, t.notifyNo, false);
     const r = await snippet(page, "bidders-ids.js", { __NOTIFY__: JSON.stringify(t.notifyNo) });
-    if (r.error) { if (await challenged(page)) throw new Captcha("muasamcong yêu cầu xác minh"); lines.push(`${t.key}: ${r.error}`); continue; }
-    if (!r.found) { lines.push(`${t.key}: không tìm thấy`); continue; }
+    const unusable = async (why) => { lines.push(`${t.key}: ${why}`); if (t.bcdgOnly && !opt("dry")) await post([{ coll: "bcdg", id: t.key, data: { notifyNo: t.key, files: [], error: why.slice(0, 200), at: now() } }]); };
+    if (r.error) { if (await challenged(page)) throw new Captcha("muasamcong yêu cầu xác minh"); await unusable(r.error); continue; }
+    if (!r.found) { await unusable("không tìm thấy"); continue; }
     const rows = [{ coll: "portalids", id: t.key, data: r.portal }];
-    let line = `${t.key}: chưa có biên bản mở thầu`;
+    let line = `${t.key}: chưa có biên bản mở thầu`, bcdgOf = null;
     if (r.url) {
       await page.goto(r.url, { waitUntil: "domcontentloaded" });
       const b = await snippet(page, "bidders-extract.js");
@@ -343,10 +432,18 @@ async function bidders(page) {
         rows.push({ coll: "bidders", id: t.key, data: b });
         const win = b.final && b.list.find((x) => x.won);
         line = `${t.key}: ${b.list.length} nhà thầu` + (win ? `, trúng: ${win.name} ${Number(win.priceAfterDiscount ?? win.bidPrice ?? 0).toLocaleString("vi-VN")}` : b.final ? "" : " (chưa có kết quả)");
+        if (b.final && isMine(b)) bcdgOf = b;
       } else if (b.error) line = `${t.key}: ${b.error}`;
     }
-    await post(rows);
-    lines.push(line);
+    // bcdgOnly: the result is on the web already, only the report is missing: nothing else is written.
+    if (!t.bcdgOnly) await post(rows);
+    if (!t.bcdgOnly || !bcdgOf) lines.push(line);
+    // Page gave nothing usable for a bcdgOnly target: marked, so the same five are not picked every round (retried after 24 h).
+    if (t.bcdgOnly && !bcdgOf && !opt("dry")) await post([{ coll: "bcdg", id: t.key, data: { notifyNo: t.key, files: [], error: line.replace(`${t.key}: `, "").slice(0, 200), at: now() } }]);
+    if (bcdgOf) {
+      try { lines.push(await bcdgStep(t.key, bcdgOf)); }
+      catch (e) { if (e instanceof Captcha) throw e; lines.push(`${t.key}: BCĐG lỗi (${String(e.message).split("\n")[0].slice(0, 120)})`); }
+    }
   }
   return lines;
 }
@@ -2467,6 +2564,21 @@ async function runFinish() {
     else if (cmd === "prep") summary = await runPrep();
     else if (cmd === "finish") summary = await runFinish();
     else if (cmd === "ask") summary = await runAsk();
+    else if (cmd === "bcdg") { // check: BCĐG of the given tenders (--keys K1,K2 [--local: no upload, nothing posted] [--keep]); needs --profile
+      const { ctx, page } = await openBrowser();
+      try {
+        const out = [];
+        for (const key of String(opt("keys") || "").split(",").filter(Boolean)) {
+          await search(page, key, false);
+          const r = await snippet(page, "bidders-ids.js", { __NOTIFY__: JSON.stringify(key) });
+          if (!r.url) { out.push(`${key}: ${r.error || "không có trang kết quả"}`); continue; }
+          await page.goto(r.url, { waitUntil: "domcontentloaded" });
+          const b = await snippet(page, "bidders-extract.js");
+          out.push(b.final && isMine(b) ? await bcdgStep(key, b) : `${key}: ${b.error || "chưa có kết quả hoặc không có MST mình"}`);
+        }
+        summary = out.join("; ");
+      } finally { await ctx.close().catch(() => {}); }
+    }
     else if (cmd === "notice") { // check: read one tender's notice from feed/current and print its size, post nothing
       const t = ((await doc("feed", "current"))?.tenders || []).find((x) => x.notifyNo === opt("key"));
       if (!t) throw new Error("không có gói này trong feed");

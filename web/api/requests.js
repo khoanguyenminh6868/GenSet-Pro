@@ -8,7 +8,7 @@ import { authorized } from "./ingest.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // tracked travels without notes and bid prices: those stay on the web.
-const READABLE = new Set(["feed", "seen", "manual", "tracked", "deleted", "analysis", "hsmt", "hsmttext", "notice", "analysisreq", "hsmtreq", "bidders", "portalids", "translationreq", "comparereq", "translation", "compare", "hsdtreq", "hsdt", "tlktreq", "tlkt", "supplier", "supexcl", "supdeleted", "supplierreq", "suppliermatch", "configreq", "configmatch", "findreq", "findmatch", "specreq", "specmatch", "bidhist", "bidpricereq", "bidprice"]);
+const READABLE = new Set(["feed", "seen", "manual", "tracked", "deleted", "analysis", "hsmt", "hsmttext", "notice", "analysisreq", "hsmtreq", "bidders", "portalids", "translationreq", "comparereq", "translation", "compare", "hsdtreq", "hsdt", "tlktreq", "tlkt", "supplier", "supexcl", "supdeleted", "supplierreq", "suppliermatch", "configreq", "configmatch", "findreq", "findmatch", "specreq", "specmatch", "bidhist", "bidpricereq", "bidprice", "bcdg"]);
 
 // ids: only these documents (a list of at most ~100, for a bot that keeps its own copy); cols: e.g. "id,updated_at".
 async function docs(coll, id, { ids, cols = "id,data" } = {}) {

@@ -13,7 +13,8 @@ Ghi ra -Out mảng [{key, notifyNo, bidName, bidCloseDate, tracked, stage, joine
 param(
     [Parameter(Mandatory)][string]$Out,
     [int]$Max = 15,
-    [int]$Days = 180
+    [int]$Days = 180,
+    [int]$BcdgMax = 5
 )
 $ErrorActionPreference = 'Stop'
 $utf8 = New-Object Text.UTF8Encoding $false
@@ -67,6 +68,24 @@ try {
         [pscustomobject]@{ key = $key; notifyNo = $key; bidName = $t.bidName; bidCloseDate = $t.bidCloseDate; tracked = [bool]$stage; stage = $stage; joined = $stage -in 'submitted', 'won', 'lost'; close = $close }
     }
     $pick = @($list | Sort-Object @{ e = { $_.close }; Descending = $true } | Select-Object -First $Max | Select-Object key, notifyNo, bidName, bidCloseDate, tracked, stage, joined)
+    # Báo cáo đánh giá E-HSDT (Khoa 2026-11-12): gói đã có kết quả (final) mà MST công ty có trong danh sách nhà thầu và chưa có
+    # bcdg/<TBMT> (hoặc lần trước lỗi, quá 24 giờ) thì lấy báo cáo, tối đa -BcdgMax gói một lượt; chỉ ghi bcdg/<TBMT>.
+    $bcdg = @()
+    if ($BcdgMax -gt 0) {
+        try {
+            $have = @{}; foreach ($d in (Get-Coll 'bcdg')) { $have[$d.id] = $d.data }
+            $bcdg = @($bidders.Keys | Where-Object {
+                $b = $bidders[$_]
+                if (-not $b.final -or $deleted[$_]) { return $false }
+                if (-not (@($b.list) | Where-Object { ([string]$_.taxCode -replace '\D', '') -eq '4101623015' })) { return $false }
+                $h = $have[$_]
+                -not $h -or ($h.error -and (-not $h.at -or ([datetime]$h.at).ToUniversalTime() -lt $now.AddHours(-24)))
+            } | Sort-Object | Select-Object -First $BcdgMax | ForEach-Object {
+                [pscustomobject]@{ key = $_; notifyNo = $_; bidName = ''; bidCloseDate = $null; tracked = [bool]$tracked[$_]; stage = $tracked[$_]; joined = $true; bcdgOnly = $true }
+            })
+        } catch { Write-Host "Không đọc được bcdg từ bản web, bỏ qua bước lấy báo cáo đánh giá: $($_.Exception.Message)" }
+    }
+    $pick = @($pick) + @($bcdg)
     [IO.File]::WriteAllText($Out, (ConvertTo-Json @($pick) -Depth 4), $utf8)
-    Write-Host "$(@($list).Count) gói cần lấy nhà thầu, lượt này lấy $($pick.Count): $(($pick | ForEach-Object { $_.key }) -join ', ')"
+    Write-Host "$(@($list).Count) gói cần lấy nhà thầu, lượt này lấy $($pick.Count - $bcdg.Count)$(if ($bcdg.Count) { " + $($bcdg.Count) gói lấy báo cáo đánh giá" }): $(($pick | ForEach-Object { $_.key }) -join ', ')"
 } finally { Remove-Item -Recurse -Force $tmp }

@@ -18,6 +18,20 @@ await (async () => {
       [...document.querySelectorAll("a")].find((a) => a.textContent.trim() === "Kết quả lựa chọn nhà thầu")?.click();
     await sleep(500);
   }
+  // Báo cáo đánh giá E-HSDT (BCĐG): tệp ở kq.reportFileId hoặc evalReportFileInfo[].fileId (nằm ở root hoặc một component con).
+  const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  const reportFiles = (() => {
+    const out = [], add = (id, name) => { if (typeof id === "string" && UUID.test(id) && !out.some((x) => x.id === id)) out.push({ id, name: String(name || "") }); };
+    add(kq?.reportFileId, kq?.reportFileName);
+    const seen = new Set(), walk = (vm, d) => {
+      if (!vm || seen.has(vm) || d > 12) return; seen.add(vm);
+      const e = vm.$data?.evalReportFileInfo;
+      if (Array.isArray(e)) e.forEach((x) => add(x?.fileId, x?.fileName || x?.name));
+      (vm.$children || []).forEach((c) => walk(c, d + 1));
+    };
+    walk(root, 0);
+    return out;
+  })();
   const notifyNo = new URLSearchParams(location.search).get("notifyNo") || "";
   const at = new Date().toISOString();
   const ranked = (list) => list
@@ -55,7 +69,7 @@ await (async () => {
     // Kết quả chưa có danh sách nhà thầu: dùng giá mở thầu.
     if (!list.length) for (const o of opens) list.push({ name: o.contractorName, taxCode: tax(o.contractorCode), bidPrice: o.lotPrice ?? null, discount: o.discountPercent ? `${o.discountPercent}%` : "", priceAfterDiscount: o.lotFinalPrice ?? null, won: false, note: "" });
     return { notifyNo, list: ranked(list), at, source: "muasamcong (kết quả lựa chọn nhà thầu)", auto: true, final: true,
-      packagePrice: kq.bidPrice ?? null, decisionNo: kq.decisionNo || "", decisionDate: kq.decisionDate || "", url: location.href };
+      packagePrice: kq.bidPrice ?? null, decisionNo: kq.decisionNo || "", decisionDate: kq.decisionDate || "", url: location.href, reportFiles };
   }
   if (mt?.bidSubmissionDTOList?.length) {
     const list = [];
