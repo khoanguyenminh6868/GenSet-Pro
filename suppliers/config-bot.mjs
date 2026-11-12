@@ -3304,41 +3304,51 @@ export function rankConfigs(result) {
 // point at pages saved with `save` (web/<k>.txt). For a supplier already in the system only its new sources,
 // productLines and specTables are added. Sources are renumbered after the record's own (from 2001) and the saved
 // page becomes sources/<id>/<n>.md, the way fetch-source.mjs writes it (Khoa, 2026-10-29).
-export function catalogRecords(entries, { existing, readWeb, today }) {
+// A page of a seller (tier C and not on its make's own domain, Khoa 2026-11-12: a reseller, a marketplace) is no source of the
+// catalog: it is left out here with its reason, and what rests on it alone (tables, lines, controllers, strengths) with it.
+// `keepSeller` lets the caller keep them (nothing passes it today).
+export const sellerPage = (s) => s.tier === "C" && !s.official;
+export function catalogRecords(entries, { existing, readWeb, today, keepSeller = false }) {
   const out = [];
   for (const e of Array.isArray(entries) ? entries : []) {
     const id = String(e?.id || "");
     if (!/^[a-z0-9-]+$/.test(id)) { out.push({ id, error: "id không hợp lệ" }); continue; }
-    const old = existing.get(id) || null, files = {}, nmap = new Map(), sources = [];
+    const old = existing.get(id) || null, files = {}, nmap = new Map(), sources = [], skippedSources = [], gone = new Set();
+    const self = old || { id, role: e.role, website: e.website || null, names: e.names || {}, sources: [] };
+    const pool = [...existing.values(), ...(old ? [] : [self])];
     // 2001–2999: pages of internet finds; 3001–3999 belong to controllers.mjs --crawl.
     let next = Math.max(2000, ...(old?.sources || []).map((s) => s.n).filter((n) => n < 3000)) + 1, error = "";
     for (const s of e.sources || []) {
       const txt = /^web\/\d+\.txt$/.test(s.file || "") ? readWeb(s.file) : null;
       if (!txt) { error = `nguồn ${s.n}: không có trang đã lưu ${s.file}`; break; }
       const [, url = "", accessed = ""] = txt.match(/^URL:\s*(\S+)\s*\nAccessed:\s*(\S+)/) || [];
+      const official = MEMO.isOfficial(url, self, pool);
+      if (!keepSeller && sellerPage({ tier: s.tier, official })) { gone.add(Number(s.n)); skippedSources.push({ url, why: "trang bên bán / không chính hãng (tier C), không đưa vào danh mục" }); continue; }
       const n = next++, file = `sources/${id}/${n}.md`;
       nmap.set(Number(s.n), n); files[file] = txt;
       sources.push({ n, url, accessedAt: accessed, tier: s.tier, quote: s.quote, file });
     }
     // `official` (Khoa 2026-11-12): the page is on the domain of this record's make (web-memo.mjs), computed by code,
     // never the agent's; written for the record, not yet used to weigh the source.
-    if (!error) {
-      const self = old || { id, role: e.role, website: e.website || null, names: e.names || {}, sources: [] };
-      const pool = [...existing.values(), ...(old ? [] : [self])];
-      for (const s of sources) s.official = MEMO.isOfficial(s.url, self, pool);
-    }
+    if (!error) for (const s of sources) s.official = MEMO.isOfficial(s.url, self, pool);
     if (error) { out.push({ id, error }); continue; }
-    const re = (src) => (Array.isArray(src) ? src.map((n) => nmap.get(Number(n)) ?? -1) : src);
-    const lines = (e.productLines || []).map((p) => ({ ...p, src: re(p.src), ...(p.power ? { power: { ...p.power, src: re(p.power.src) } } : {}) }));
-    const tables = (e.specTables || []).map((t) => ({ ...t, n: nmap.get(Number(t.n)) ?? -1 }));
-    const ctrls = (e.controllers || []).map((c) => ({ brand: c.brand, model: c.model || null, text: c.text, line: c.line, src: re(c.src) }));
+    if (skippedSources.length && !sources.length) { out.push({ id, error: `không đưa vào danh mục: mọi nguồn là trang bên bán / không chính hãng (tier C): ${skippedSources.map((x) => x.url).join(", ")}`, skippedSources }); continue; }
+    // What rests only on a page left out goes with it; a reference to a page that was never saved stays -1 for verify.mjs.
+    const onlyGone = (src) => { const l = Array.isArray(src) ? src : src == null ? [] : [src]; return l.length > 0 && l.every((n) => gone.has(Number(n))); };
+    const re = (src) => (Array.isArray(src) ? src.filter((n) => !gone.has(Number(n))).map((n) => nmap.get(Number(n)) ?? -1) : src);
+    const keepRef = (x) => !onlyGone(x?.src);
+    let droppedParts = 0;
+    const fil = (list, pred) => (list || []).filter((x) => (pred(x) ? true : (droppedParts++, false)));
+    const lines = fil(e.productLines, (p) => keepRef(p) && !onlyGone(p.power?.src)).map((p) => ({ ...p, src: re(p.src), ...(p.power ? { power: { ...p.power, src: re(p.power.src) } } : {}) }));
+    const tables = fil(e.specTables, (t) => !gone.has(Number(t.n))).map((t) => ({ ...t, n: nmap.get(Number(t.n)) ?? -1 }));
+    const ctrls = fil(e.controllers, keepRef).map((c) => ({ brand: c.brand, model: c.model || null, text: c.text, line: c.line, src: re(c.src) }));
     const rec = old
       ? { ...old, sources: [...old.sources, ...sources], productLines: [...(old.productLines || []), ...lines], specTables: [...(old.specTables || []), ...tables], ...(ctrls.length ? { controllers: [...(old.controllers || []), ...ctrls] } : {}), checkedAt: today }
       : { country: e.country, role: e.role, status: "partial", names: e.names || {}, website: e.website || null, hq: e.hq || { province: null, city: null },
-        founded: null, relatedIds: [], strengths: (e.strengths || []).map((x) => ({ ...x, src: re(x.src) })), productLines: lines,
-        certifications: (e.certifications || []).map((x) => ({ ...x, src: re(x.src) })), exportMarkets: [], missing: e.missing || [],
+        founded: null, relatedIds: [], strengths: fil(e.strengths, keepRef).map((x) => ({ ...x, src: re(x.src) })), productLines: lines,
+        certifications: fil(e.certifications, keepRef).map((x) => ({ ...x, src: re(x.src) })), exportMarkets: [], missing: e.missing || [],
         sources, confidence: e.confidence, checkedAt: today, checkedBy: "config-bot", specTables: tables, ...(ctrls.length ? { controllers: ctrls } : {}), id };
-    out.push({ id, rec, files, nmap, isNew: !old, tables: tables.length });
+    out.push({ id, rec, files, nmap, isNew: !old, tables: tables.length, ...(skippedSources.length ? { skippedSources, droppedParts } : {}) });
   }
   return out;
 }
@@ -3377,8 +3387,8 @@ export async function addToCatalog(dir, key, suppliers, opts = {}) {
     const existing = new Map(suppliers.map((s) => [s.id, s])), cnDir = path.join(wt, "suppliers", "cn");
     for (const f of fs.readdirSync(cnDir).filter((f) => f.endsWith(".json"))) existing.set(f.slice(0, -5), JSON.parse(fs.readFileSync(path.join(cnDir, f), "utf8")));
     const readWeb = (f) => { const p = path.join(dir, f); return fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
-    for (const x of catalogRecords(JSON.parse(fs.readFileSync(file, "utf8")), { existing, readWeb, today: new Date().toISOString().slice(0, 10) })) {
-      if (x.error) { added.push({ supplierId: x.id, error: x.error }); continue; }
+    for (const x of catalogRecords(JSON.parse(fs.readFileSync(file, "utf8")), { existing, readWeb, today: new Date().toISOString().slice(0, 10), keepSeller: !!opts.keepSeller })) {
+      if (x.error) { added.push({ supplierId: x.id, error: x.error, ...(x.skippedSources ? { skippedSources: x.skippedSources } : {}) }); continue; }
       for (const [f, txt] of Object.entries(x.files)) { fs.mkdirSync(path.dirname(path.join(wt, "suppliers", f)), { recursive: true }); fs.writeFileSync(path.join(wt, "suppliers", f), txt, "utf8"); }
       const recFile = path.join(wt, "suppliers", "cn", `${x.id}.json`);
       const { errors } = checkRecord(x.rec, recFile);
@@ -3389,7 +3399,7 @@ export async function addToCatalog(dir, key, suppliers, opts = {}) {
       }
       fs.writeFileSync(recFile, JSON.stringify(x.rec, null, 2) + "\n", "utf8");
       records.push(x.rec);
-      added.push({ supplierId: x.id, name: x.rec.names?.en || x.rec.names?.zh || x.id, isNew: x.isNew, tables: x.tables, nmap: Object.fromEntries(x.nmap) });
+      added.push({ supplierId: x.id, name: x.rec.names?.en || x.rec.names?.zh || x.id, isNew: x.isNew, tables: x.tables, nmap: Object.fromEntries(x.nmap), ...(x.skippedSources ? { skippedSources: x.skippedSources, droppedParts: x.droppedParts } : {}) });
     }
     // GENBID_CATALOG_DRY=1: check only, nothing is posted or pushed.
     if (records.length && !process.env.GENBID_CATALOG_DRY) {

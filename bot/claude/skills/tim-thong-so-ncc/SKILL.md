@@ -39,7 +39,7 @@ bằng lệnh save; code kiểm bằng verify.mjs và bỏ những gì không t�
 2. Tìm trên trang chính thức của nhà cung cấp (website trong input.md): trang sản phẩm từng tổ máy, bảng tổng hợp
    các model, catalogue / datasheet PDF, trang tải tài liệu. Dùng WebSearch với `site:<tên miền>` và tên model,
    "datasheet", "catalogue", "pdf", "spec sheet", "technical data". Trang Trung Quốc: thêm 参数, 技术参数, 机组型号.
-   Chỉ khi trang chính thức không có: trang B2B của chính nhà cung cấp (made-in-china.com, alibaba.com: tier C).
+   Trang B2B / bên bán (made-in-china.com, alibaba.com: tier C) KHÔNG được đưa vào danh mục (Khoa 12/11): đừng tốn một lượt lưu cho nó, chỉ nêu trong ghi chú kết quả. Tờ tài liệu của chính hãng tải từ link trên trang hãng thì khai tier A/B theo CHỦ tài liệu dù tên miền là CDN.
    Không dùng wikipedia, baike, zhihu, mạng xã hội, trang đại lý của hãng khác.
 3. Ưu tiên một bảng nhiều model (model tổ máy | công suất | động cơ | đầu phát | bộ điều khiển) hơn nhiều trang lẻ.
    Tối đa khoảng 15 trang lưu; công suất 10–3000 kVA; tập trung các dải công suất hay gặp trong thầu (20–1500 kVA).

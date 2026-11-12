@@ -214,6 +214,12 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
      `status` (`partial`), `confidence` (`low` when every source is tier C), `missing` (what the pages do not say).
    - `sources`: `{ "n": 1, "file": "web/1.txt", "tier": "A|B|C", "quote": ["exact words from that page, 8+ characters"] }`
      (A: the maker's own site or datasheet, B: fair or association, C: self-description, dealer, B2B platform).
+     Tier is by WHO OWNS THE DOCUMENT, not by the domain: a sheet of the maker itself, downloaded from a link on the maker's own page,
+     is A (or B) even when the file sits on a CDN (cdn.shopify.com, a cloud bucket); say in the notes of the result which page of the maker links to it.
+     A page of a seller (a dealer, a reseller, a B2B platform) is tier C. The code does not add a tier C page that is not on the maker's own
+     domain to the catalog (Khoa, 2026-11-12), and what rests on it alone with it: do not spend a save on one just for the catalog, mention it only in
+     the notes of the result; a supplier whose only pages are of sellers is not added.
+     The suggestion of this run may still use a tier C page you saved (config-web); only the catalog leaves it out, with the reason in `catalogAdded`.
    - `productLines`: `{ "kind": "genset", "series": "", "fuel": "diesel", "power": { "min": 400, "max": 400, "unit": "kVA",
      "rating": "prime|standby|unspecified", "src": [1] }, "src": [1] }` — min and max must be numbers in the quote of that source.
    - `specTables`: `{ "n": 1, "title": "", "header": ["| ... |"], "rows": ["| ... |"] }` — the header and each row are whole
