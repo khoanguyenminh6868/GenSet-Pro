@@ -778,7 +778,7 @@ export function plausible(hints, cap) {
   if (hints.maxDisp != null && ((out.minDisp != null && hints.maxDisp < out.minDisp) || hints.maxDisp < kva * 0.01)) out.maxDisp = null;
   return out;
 }
-export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null } = {}) {
+export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a]));
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4);
   const rows = [];
@@ -870,6 +870,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     const rounds = Array.from({ length: SYNC_PER_SUPPLIER }, (_, i) => [...bySup.values()].map((l) => l[i]).filter(Boolean).sort(order));
     pick(rounds.flat(), Math.min(max, out.length + SYNC_ROWS));
   }
+  const held = new Set(out);
   // No origin required (no G7 / G20 in the HSMT): Chinese makes keep CN_ROWS of the rows (Khoa, 2026-11-05: a Chinese
   // configuration that meets the HSMT better goes first, so it must be among the suggestions). Foreign engines have
   // more datasheet figures and would otherwise fill the rows. Not when the HSMT names an engine make or model.
@@ -893,8 +894,32 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     }
   }
   pick(rows, max);
+  // The places held for genset makers push no row of a configuration the last run chose (Khoa 2026-11-12: `keep`, the
+  // supplierId + engine key of each, from prevResult): such a row the list would have had without them comes back in
+  // place of the lowest-scored row that is neither held nor of the last run.
+  if (sync && keep?.size) {
+    const kept = (r) => keep.has(`${r.u.supplierId}\n${r.e.key}`);
+    const plain = candidates(cat, cap, hints0, { suppliers, origin, cn, facts, focus, max }).top;
+    for (const r of plain.filter((r) => kept(r) && !out.some((x) => choiceKey(x) === choiceKey(r)))) {
+      const gone = out.filter((x) => !held.has(x) && !kept(x)).sort((x, y) => x.score - y.score)[0];
+      if (!gone) break;
+      out.splice(out.indexOf(gone), 1, r);
+    }
+  }
   out.sort((x, y) => y.score - x.score);
   return { top: out, all: rows };
+}
+// The rows of the configurations a result chose (candidates `keep`): supplierId + engine key of each supplier and of
+// the engine's catalog source.
+export function keepOf(result) {
+  const out = new Set();
+  for (const c of result?.configs || []) {
+    const k = c.engine?.model && CAT.keyOf(c.engine.model);
+    if (!k) continue;
+    for (const s of c.suppliers || []) if (s.supplierId) out.add(`${s.supplierId}\n${k}`);
+    if (c.engine.src?.kind === "catalog" && c.engine.src.supplierId) out.add(`${c.engine.src.supplierId}\n${k}`);
+  }
+  return out;
 }
 // At most 6 configurations (Khoa 2026-11-03: a run checked 49 requirements × 8 configurations in 11 minutes).
 export const MAX_CONFIGS = 6, PER_MAKE_CONFIGS = 2;
@@ -1134,7 +1159,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   // the same engine in a Chinese table); only the rows offered as configurations are those of the group's suppliers.
   const facts = grp ? modelFacts({ ...full, engines: byOrigin(full.engines, origin, cn) }, all) : undefined;
   const offGroup = grp ? new Set(byOrigin(full.engines, origin, cn).flatMap((e) => (e.uses || []).map((u) => u.supplierId)).filter((id) => !grp.has(id))).size : 0;
-  const { md, ctlMd, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, ...(facts ? { facts } : {}) });
+  const { md, ctlMd, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, keep: keepOf(reqData.prevResult), ...(facts ? { facts } : {}) });
   fs.writeFileSync(path.join(dir, "catalog.md"), md + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))), "utf8");
   if (ctlMd) fs.writeFileSync(path.join(dir, "controllers.md"), ctlMd, "utf8");
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.

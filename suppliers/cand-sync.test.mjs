@@ -3,7 +3,7 @@
 // IB2600594596).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { candidates, catalogMd, hintsOf, check, gensetMakerOf } from "./config-bot.mjs";
+import { candidates, catalogMd, hintsOf, check, gensetMakerOf, keepOf } from "./config-bot.mjs";
 
 const C = globalThis.GenbidCatalog;
 const table = (n, title, rows) => ({ n, title, header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows });
@@ -77,4 +77,22 @@ test("check: a configuration from a fromLine row keeps its engine and supplier v
   const r2 = { requirements: [], configs: [{ rank: 1, engine: { model: "DP158LD", src }, checks: [], suppliers: [{ supplierId: "rehlko", n: 2003, line: D440 }] }] };
   const c2 = check(r2, { hsmtText: HSMT, suppliers: [rehlko()], readWeb: () => null, origin: "all" }).result.configs[0];
   assert.ok(c2.engine.unverified);
+});
+
+test("đồng bộ asked: a row of a configuration the last run chose is not pushed out by the places held", () => {
+  const list = [...assemblers(), rehlko(), ...others()], cat = C.build(list), key = (r) => `${r.u.supplierId} ${r.e.model} ${r.u.other}`;
+  const plain = candidates(cat, cap, hints, { suppliers: list }).top, held = candidates(cat, cap, hints, { suppliers: list, sync }).top;
+  const pushed = plain.filter((r) => !held.some((x) => key(x) === key(r)));
+  assert.ok(pushed.length > 0);
+  const last = pushed[pushed.length - 1];
+  const prev = { configs: [{ engine: { model: last.e.model, src: { kind: "catalog", supplierId: last.u.supplierId, n: last.u.n, line: last.u.line } }, suppliers: [{ supplierId: last.u.supplierId }] }] };
+  const keep = keepOf(prev);
+  assert.ok(keep.has(`${last.u.supplierId}\n${last.e.key}`));
+  const now = candidates(cat, cap, hints, { suppliers: list, sync, keep }).top;
+  assert.equal(now.length, 30);
+  assert.ok(now.some((x) => key(x) === key(last)));
+  // The maker's held row stays; the row given up is another one.
+  assert.ok(now.some((x) => x.u.supplierId === "rehlko"));
+  // No last run: as before.
+  assert.deepEqual(candidates(cat, cap, hints, { suppliers: list, sync, keep: new Set() }).top.map(key), held.map(key));
 });
