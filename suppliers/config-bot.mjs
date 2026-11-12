@@ -1028,12 +1028,16 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const pr = u.power?.prime, mp = hints.minPrime;
       const lowPrime = pr && mp && ((mp.kVA && pr.kVA != null && pr.kVA < mp.kVA * 0.995) || (!mp.kVA && mp.kW && pr.kW != null && pr.kW < mp.kW * 0.995));
       if (lowPrime) { score -= 600; ruled.push("prime"); why.push(`Prime ${pr.kVA ?? "?"} kVA / ${pr.kW ?? "?"} kW < ${mp.kVA ? `${mp.kVA} kVA` : `${mp.kW} kW`} HSMT yêu cầu`); }
-      // Its own fuel consumption in L/h above the most the HSMT allows.
+      // Its own fuel consumption in L/h above the most the HSMT allows (Khoa, 2026-11-12): the row is left out like one under
+      // a minimum (same exception: `named` stays, with 300 points off). A row with no L/h figure at that load is kept.
       let fuelOver = false;
       for (const [fk, hk, at] of [["fuel", "maxFuel", ""], ["fuel75", "maxFuel75", " ở 75% tải"], ["fuel50", "maxFuel50", " ở 50% tải"]]) {
-        const fl = hints[hk] && (u.specs || []).find((x) => x.key === fk && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`));
+        const fl = hints[hk] && (u.specs || []).find((x) => x.key === fk && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`) && !/g\s*\/\s*(k?w|hp|ps)/i.test(String(x.value)));
         const fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null;
-        if (fv != null && fv > hints[hk]) { score -= 300; fuelOver = true; why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
+        // Not judged: a bound ("< 10": only says it is under 10) and a figure no genset of this size burns (> 0.6 L/h per kVA: a
+        // kW / kVA pair or a g/kWh figure under a wrong heading, "Cons 100% (L/H) 220/275" for 242 kVA).
+        const unsure = fl && (/^\s*[<≤]|<=/.test(String(fl.value)) || (cap && fv != null && fv > (cap.unit === "kVA" ? cap.value : cap.value / 0.8) * 0.6));
+        if (fv != null && !unsure && fv > hints[hk]) { score -= 300; fuelOver = true; ruled.push(fk); why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
       }
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
