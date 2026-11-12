@@ -38,8 +38,8 @@ const HEADER1 = "| Genset model | Power kW | Power kVA | Engine model | Alternat
 
 const num = (s) => (/^\d+(\.\d+)?$/.test(s) ? Number(s) : null);
 const isPair = (kw, kva) => kw != null && kva != null && kva > kw && Math.abs(kva * 0.8 - kw) <= (Number.isInteger(kw) ? 0.5 : 0.05);
-// LEES "LSP10S3-E": one letter after a dash at the end.
-const MODEL = /^[A-Z]+(-[A-Z]+)?-?\d+([A-Z]+\d*)?(-[A-Z])?(\([A-Z]\))?$/;
+// LEES "LSP10S3-E", 60 Hz "LSP13S3-6", "LSV375S3-6E": a dash and one letter, or one figure and maybe a letter, at the end.
+const MODEL = /^[A-Z]+(-[A-Z]+)?-?\d+([A-Z]+\d*)?(-[A-Z]|-\d[A-Z]?)?(\([A-Z]\))?$/;
 const prefixOf = (m) => m.match(/^[A-Z]+(-[A-Z]+)?-?/)[0];
 
 // The parts of one line that start with a genset model (of the first model's prefix).
@@ -94,8 +94,9 @@ export function keptRow(t, engines, alternators, single = false, loose = false) 
   // OCR reads LEES "S3" at the end of a model as "83", "53", "S83" or "S53" ("LSP1483", "LSP1650S83", "LSSC375S53"
   // for LSP14S3, LSP1650S3, LSSC375S3): put back when the model then fits the power, and for a bare "83" / "53" only
   // when it did not fit before (an "S" before it is never a figure).
-  if (!loose && /\dS?[58]3$/.test(t[0]) && (/S[58]3$/.test(t[0]) || !fits(prime.kVA, standby.kVA))) {
-    const was = named, m = t[0].replace(/S?[58]3$/, "S3");
+  // The 60 Hz end ("LSP1753-6") stays.
+  if (!loose && /\dS?[58]3(-\d[A-Z]?)?$/.test(t[0]) && (/S[58]3(-\d[A-Z]?)?$/.test(t[0]) || !fits(prime.kVA, standby.kVA))) {
+    const was = named, m = t[0].replace(/S?[58]3(-\d[A-Z]?)?$/, "S3$1");
     named = Number(m.match(/\d+/)[0]);
     if (fits(prime.kVA, standby.kVA)) t = [m, ...t.slice(1)]; else named = was;
   }
