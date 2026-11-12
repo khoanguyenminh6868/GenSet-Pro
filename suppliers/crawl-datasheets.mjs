@@ -54,7 +54,7 @@ export function pdfText(table) {
     const groups = [];
     for (const p of parts) {
       const g = groups[groups.length - 1];
-      if (g && (g.length === 1 || /\d/.test(p))) g.push(p); else groups.push([p]);
+      if (g && (g.length === 1 || /\d/.test(p) || (g.length >= 2 && p === g[g.length - 1]))) g.push(p); else groups.push([p]); // the same text again is the next model's column ("Aspiration  Turbocharged  Turbocharged")
     }
     for (const g of groups) out.push(g.length >= 2 ? "| " + g.join(" | ") : g[0]);
   }
