@@ -645,7 +645,7 @@ const DEFAULT_SORT = { col: "no", dir: -1 };
 const SHOW_SRC = false;
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, supexcl: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, supalias: {}, supexcl: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   // Every status tab opens on newest posting date first (Khoa 2026-11-07); a header click resorts only until the tab changes.
@@ -3035,8 +3035,23 @@ const SUP_YEARS = [["-1989", "Trước 1990"], ["1990-1999", "1990–1999"], ["2
 const supMakeName = (m) => m.replace(/\s*\(.*\)$/, "");
 // A supplier deleted on the web is only hidden (supdeleted/<id>); its file in suppliers/cn/ stays.
 const supAll = () => Object.values(state.supplier || {}).filter((s) => s?.id && s.status !== "incomplete" && !state.supdeleted?.[s.id])
-  .sort((a, b) => (a.names?.en || a.id).localeCompare(b.names?.en || b.id));
-const supName = (s) => s?.names?.en || s?.names?.zh || s?.id || "";
+  .sort((a, b) => supName(a).localeCompare(supName(b)));
+// Tên gọi (alias) của nhà cung cấp (Khoa, 2026-11-12): supalias/<id> {alias,by,at}, dùng chung; có thì hiện thay cho tên.
+const supAlias = (s) => String(state.supalias?.[s?.id]?.alias || "").trim();
+const supRealName = (s) => s?.names?.en || s?.names?.zh || s?.id || "";
+const supName = (s) => supAlias(s) || supRealName(s);
+async function setAlias(id) {
+  const s = state.supplier?.[id];
+  if (!s) return;
+  if (state.readOnly || !state.db) { toast("Đăng nhập để đặt tên gọi."); return; }
+  const v = prompt(`Tên gọi cho "${supRealName(s)}" (để trống để bỏ tên gọi):`, supAlias(s));
+  if (v == null) return;
+  const rec = { alias: v.trim(), at: new Date().toISOString(), by: window.genbidEmail || "" };
+  state.supalias = { ...state.supalias, [id]: rec };
+  supChanged();
+  if (state.open) renderDrawer(false);
+  toast((await dbSet("supalias/" + id, rec)) ? (rec.alias ? `Đã đặt tên gọi "${rec.alias}"` : "Đã bỏ tên gọi") : "Không lưu được tên gọi.");
+}
 // Hàng trúng thầu của nhà cung cấp (Khoa, 2026-11-09): dòng tổ máy trúng thầu ở gói mua sắm ghi thương hiệu / tên của nó
 // (web/bidprice.js supWon). Cần lịch sử thầu (bidhist, vài MB): chỉ tải khi bật bộ lọc; đã tải ở màn khác thì chip hiện luôn.
 let supWonMemo = { k: null, map: null };
@@ -3106,6 +3121,7 @@ function needSup() {
   subscribe("supplier", "supplier", () => setTimeout(supChanged, 0));
   subscribe("supdeleted", "supdeleted", () => setTimeout(supChanged, 0));
   subscribe("supfav", "supfav", () => setTimeout(supChanged, 0));
+  subscribe("supalias", "supalias", () => setTimeout(supChanged, 0));
   subscribe("supexcl", "supexcl", () => setTimeout(supChanged, 0));
   subscribe("gaps", "gaps", () => setTimeout(supGapsRedraw, 0));
   // Tìm Thông Số (superadmin only): its request and result redraw only their own block of the open supplier.
@@ -3227,7 +3243,7 @@ function supMatches(s) {
   const [mk, mv] = supMake(f);
   if (mk === "engine" && mv === SUP_NONE && (s.productLines || []).some((p) => p.engineMakes?.length)) return false;
   if (mk === "ctrl" && !(s.controllers || []).some((c) => c.brand.toLowerCase() === mv)) return false;
-  if (q && ![s.id, s.names?.en, s.names?.zh, ...(s.names?.brands || []), s.hq?.province, s.hq?.city].some((x) => String(x || "").toLowerCase().includes(q))) return false;
+  if (q && ![s.id, supAlias(s), s.names?.en, s.names?.zh, ...(s.names?.brands || []), s.hq?.province, s.hq?.city].some((x) => String(x || "").toLowerCase().includes(q))) return false;
   return !supLineFiltered(f) || supLinesFor(s).length > 0;
 }
 // Phone: the filter rows of the supplier / catalog window fold behind one button (CSS .filttg); closed each time the window opens, kept across re-renders.
@@ -3364,7 +3380,7 @@ function supDetailHtml(s) {
   const conf = SUP_CONF[s.confidence] || ["", "mut"];
   const list = (arr, fn) => (arr?.length ? `<ul class="suplist">${arr.map(fn).join("")}</ul>` : '<div class="muted small">Chưa có dữ liệu.</div>');
   return h`<div class="dethead"><div class="row"><button class="btn sm" id="supBack">← Danh sách</button></div>
-    <div><div class="supnamerow"><h3 class="hlname" style="margin:4px 0">${raw(favStar(s))}${supName(s)}</h3><div class="row"><span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supExcl" data-id="${s.id}" title="${supExcl(s.id) ? "Cho nhà cung cấp này xuất hiện lại trong các kết quả gợi ý" : "Nhà cung cấp này sẽ không xuất hiện trong các kết quả gợi ý"}">${supExcl(s.id) ? "Bỏ loại trừ" : "Loại trừ"}</button>${raw(supExcl(s.id) ? '<span class="chip bad">Đã loại trừ</span>' : "")}<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}${raw(supSpecBtn(s))}</div></div>${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div style="height:14px"></div>${raw(supSpecHtmlBlock(s))}</div></div>
+    <div><div class="supnamerow"><h3 class="hlname" style="margin:4px 0">${raw(favStar(s))}${supName(s)}</h3><div class="row">${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supAlias" data-id="${s.id}" title="Tên gọi hiện thay cho tên nhà cung cấp ở mọi màn hình">${supAlias(s) ? "Sửa tên gọi" : "Đặt tên gọi"}</button>`)}<span class="chip ${conf[1]}">${conf[0]}</span>${raw(s.status === "partial" ? '<span class="chip mut">Thiếu dữ liệu</span>' : "")}${raw(state.readOnly || !state.db ? "" : h`<button class="btn sm" id="supExcl" data-id="${s.id}" title="${supExcl(s.id) ? "Cho nhà cung cấp này xuất hiện lại trong các kết quả gợi ý" : "Nhà cung cấp này sẽ không xuất hiện trong các kết quả gợi ý"}">${supExcl(s.id) ? "Bỏ loại trừ" : "Loại trừ"}</button>${raw(supExcl(s.id) ? '<span class="chip bad">Đã loại trừ</span>' : "")}<button class="btn sm" id="supDel" data-id="${s.id}" style="color:var(--rose);border-color:var(--rose)">Xóa</button>`)}${raw(supSpecBtn(s))}</div></div>${raw(supAlias(s) ? h`<div class="muted">Tên gốc: ${supRealName(s)}</div>` : "")}${raw(s.names?.zh ? h`<div class="muted">${s.names.zh}</div>` : "")}<div style="height:14px"></div>${raw(supSpecHtmlBlock(s))}</div></div>
     <dl class="kv kvw">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
       <dt>Thương hiệu</dt><dd>${(s.names?.brands || []).join(", ") || "—"}</dd>
@@ -3419,7 +3435,7 @@ function supModelsHtml(s) {
     return h`<details class="supspec" ${open ? "open" : ""} data-lazy="${lazy}"><summary>${raw(summary)}</summary>${raw(open ? table : "")}</details>`;
   };
   const body = part("engine") + part("alternator") + part("controller");
-  return h`<div id="supModels"><h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(body ? h`<div class="muted small">Rút từ các bảng thông số của nhà cung cấp này (mục "Cấu hình các model" bên dưới); công suất là của tổ máy trong các dòng đó. Bấm một model để xem trong danh mục.</div>${raw(body)}` : '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}</div>`;
+  return h`<div id="supModels"><h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(body || '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}</div>`;
 }
 function supModelsLater() {
   const el = $("#supModels[data-id]");
@@ -3439,7 +3455,7 @@ function supSpecHtml(s) {
   if (!t.length) return "";
   const rows = t.reduce((a, x) => a + x.rows.length, 0);
   // Closed when the supplier opens (Khoa, 2026-11-10): a supplier can have a hundred tables.
-  return h`<details class="supsec"><summary>Cấu hình các model (${rows} dòng, ${t.length} bảng)</summary><div class="muted small">Chép nguyên văn từ bảng thông số trên website của hãng; tiêu đề cột giữ như nguồn.</div>${raw(t.map((x, i) => h`<details class="supspec" data-spect="${s.id}|${i}"><summary>${x.title || "Bảng thông số"} · ${x.rows.length} dòng ${raw(supRefs([x.n]))}</summary></details>`).join(""))}</details>`;
+  return h`<details class="supspec"><summary><b>Cấu hình các model</b> · ${rows} dòng · <span class="muted">${t.length} bảng</span></summary><div class="muted small">Chép nguyên văn từ bảng thông số trên website của hãng; tiêu đề cột giữ như nguồn.</div>${raw(t.map((x, i) => h`<details class="supspec" data-spect="${s.id}|${i}"><summary>${x.title || "Bảng thông số"} · ${x.rows.length} dòng ${raw(supRefs([x.n]))}</summary></details>`).join(""))}</details>`;
 }
 // A model table is drawn when it is opened (a supplier can have 10,000 rows in closed tables).
 function supSpecTable(x) {
@@ -4763,6 +4779,7 @@ document.addEventListener("click", async (e) => {
     loadHist().then(() => { const el = $("#supWon"), s = state.supplier?.[id]; if (el && s) el.outerHTML = supWonHtml(s); });
     return;
   }
+  if (e.target.id === "supAlias") { setAlias(e.target.dataset.id); return; }
   if (e.target.id === "supExcl") { toggleExcl(e.target.dataset.id); return; }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
   if (e.target.id === "supSpecRun" && !e.target.disabled) { supSpecRequest(e.target.dataset.id); return; }
