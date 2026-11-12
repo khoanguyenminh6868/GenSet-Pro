@@ -238,7 +238,9 @@
   }
   // bareModel: a bare "Model: X" with no part heading above it is the engine, or the alternator when X is an
   // alternator code (a page listing gensets one after the other: "Model: KTAA19-G6A" ... "Model: HC534FS").
-  function fromLabelTable(lines, { bareModel = false } = {}) {
+  // engineModel: an engine maker's table (a datasheet that lists its engines side by side: "| Model | NEF45TM2A | NEF67TM3A"):
+  // the bare "Model" row names the engines, one per column, not gensets.
+  function fromLabelTable(lines, { bareModel = false, engineModel = false } = {}) {
     const cols = [];
     // The first line naming a value wins: single-model pages often list related models further down.
     const put = (j, k, v) => { const c = (cols[j] = cols[j] || {}); if (c[k] == null) c[k] = v; };
@@ -257,6 +259,10 @@
     const all = lines.map((l) => cellsOf(l).length - 1).filter((n) => n >= 1), widths = all.filter((n) => n >= 2), count = new Map();
     for (const n of widths) count.set(n, (count.get(n) || 0) + 1);
     const W = widths.length >= all.length * 0.6 ? [...count].sort((a, b) => b[1] - a[1] || a[0] - b[0])[0]?.[0] : null;
+    // Engines side by side: a row that does not have exactly one value per model (cells merged over several models in
+    // the source) cannot be laid over the columns, so none of it is used.
+    const MODEL_ROW = /^(model|model\s*series|models?|型号)$/;
+    const M = engineModel ? (lines.map((l) => cellsOf(l)).find((c) => c.length > 2 && MODEL_ROW.test(c[0].replace(/[:：\s]+$/, "").toLowerCase())) || []).slice(1).filter(Boolean).length : 0;
     for (const l of lines) {
       let c = cellsOf(l);
       // Only label words are joined; numbers there are a second figure per model (50 / 60 Hz columns).
@@ -278,6 +284,7 @@
       if (!vals.length) continue;
       const L = label.toLowerCase();
       const bare = L.replace(/[:：\s]+$/, "");
+      if (M && !MODEL_ROW.test(bare) && c.slice(1).filter((v) => v && !UNIT_CELL.test(v)).length !== M) continue;
       if (part && /^(model|model\s*no\.?|type\s*model|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, part === "engine" ? "engine" : "alternator", vals[0]); continue; }
       if (bareModel && !part && /^(model|model\s*no\.?|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, ALT_CODE.test(vals[0]) ? "alternator" : "engine", vals[0]); continue; }
       if (part && /^(brand|make|manufacturer|品牌|厂家|制造商)$/.test(bare)) { put(0, part === "engine" ? "engineBrand" : "altBrand", vals[0]); continue; }
@@ -334,7 +341,8 @@
           }
           if (pair) { const p = pairOf(+pair[1], +pair[2]); if (p) merge(j, kind, p); }
         });
-      } else if (/^(genset\s*)?model|机组型号|型号$/i.test(L) && !ENGINE_LBL.test(L) && !ALT_LBL.test(L)) vals.forEach((v, j) => isCode(v) && put(j, "genset", v));
+      } else if (engineModel && /^(model|model\s*series|models?|型号)$/.test(bare)) vals.forEach((v, j) => isCode(v) && put(j, "engine", v));
+      else if (/^(genset\s*)?model|机组型号|型号$/i.test(L) && !ENGINE_LBL.test(L) && !ALT_LBL.test(L)) vals.forEach((v, j) => isCode(v) && put(j, "genset", v));
     }
     return cols.filter(Boolean);
   }
@@ -484,7 +492,7 @@
         // supermaly): each "Genset Model" line starts a genset of its own.
         const starts = t.header?.length ? [] : t.rows.map((r, i) => (/^\|?\s*genset\s*model\s*[:：]/i.test(r) ? i : -1)).filter((i) => i >= 0);
         const blocks = starts.length >= 2 ? starts.map((i, k) => t.rows.slice(i, starts[k + 1] ?? t.rows.length)) : [[...(t.header || []), ...t.rows]];
-        for (const block of blocks) for (const c of fromLabelTable(block, { bareModel: blocks.length > 1 })) {
+        for (const block of blocks) for (const c of fromLabelTable(block, { bareModel: blocks.length > 1, engineModel: s.role === "engine_maker" && !block.some((l) => /^(engine|alternator|发动机|柴油机|发电机)\s*(model|type|ref\.?|型号)|^power\s*model|动力型号|^(diesel\s*)?engine$|^(发动机|柴油机)$|^(generator|alternator)$|power factor|excitation|voltage regulat|发电机/i.test(cellsOf(l)[0] || "")) })) {
           const power = c.prime || c.standby || c.rated ? { ...(c.prime ? { prime: c.prime } : {}), ...(c.standby ? { standby: c.standby } : {}), ...(c.rated ? { rated: c.rated } : {}) } : null;
           const rowText = [c.genset, c.engine, c.alternator].filter(Boolean).join(" ");
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
