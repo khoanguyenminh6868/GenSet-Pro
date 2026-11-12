@@ -188,7 +188,9 @@ function clarification(L, s, startOf) {
   }
   return "";
 }
-const PASS_END = /(?:^|[\s|])(?:đạt|đat|pat)(?:[\s|xX]+(?:đạt|đat|pat))*[\s|.]*$/i;
+// Pass chỉ khi dòng của mình có đủ ≥3 ô "Đạt" liền nhau (hợp lệ / năng lực / kỹ thuật). Một ô "Đạt" lẻ là bảng của MỘT bước
+// (IB2400564384: bảng tính hợp lệ "Đạt", còn dòng "Không đạt" ở bảng năng lực bị OCR xé tên nên không nhận ra) → không rõ.
+const PASS_END = /(?:^|[\s|])(?:đạt|đat|pat)(?:[\s|xX]+(?:đạt|đat|pat)){2,}[\s|.]*$/i;
 // { text, source, verdict }. Không chắc → verdict "" (và text như trước).
 function bcdgReasonEx(text, o = {}) {
   const r = reasonCore(text, o), { L, startOf } = r;

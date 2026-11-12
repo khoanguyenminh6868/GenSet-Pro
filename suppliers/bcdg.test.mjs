@@ -387,3 +387,7 @@ test("19 gói thật: gói nào cũng verdict fail trừ IB2400564384 (rỗng); 
   assert.match(v.IB2600374560.text, /180kVA/);
   for (const k of ["IB2400393199", "IB2600374560"]) assert.doesNotMatch(v[k].text, /Kuta|Hữu Toàn|Forz/i, k);
 });
+test("verdict: một ô 'Đạt' lẻ (bảng một bước, dòng Không đạt của mình bị OCR xé tên) KHÔNG là pass (IB2400564384)", () => {
+  const t = ["Bảng số 02", "3 | CÔNG TY TNHH THIET BỊ KỸ THUẬT THẢO NGUYÊN Đạt", "4 | CÔNG TY CỔ PHẦN SÁNG BAN MAI Đạt", "Bảng số 03", "TNHH THU - Ngoài ra không đáp ứng", "THIẾT BỊ KỸ Không Đạt"].join("\n");
+  assert.equal(bcdgReasonEx(t).verdict, "");
+});
