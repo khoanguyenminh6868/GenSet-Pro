@@ -22,7 +22,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { REQ_CODES, CODE_BY, codesIn, codeOf, clausesOf } from "./reqcodes.mjs";
+import { skippedOf, dropSkipped, UNFILTERED_WARNING } from "./sup-skip.mjs";
+import { REQ_CODES,CODE_BY, codesIn, codeOf, clausesOf } from "./reqcodes.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
@@ -181,7 +182,11 @@ async function main() {
   const bot = await import("./config-bot.mjs");
   const fromFile = (f) => { const j = JSON.parse(fs.readFileSync(f, "utf8")); return j.docs ? Object.entries(j.docs).map(([id, v]) => ({ id, data: v.d })) : j; };
   const read = async (coll, file) => (file ? fromFile(file) : SB && SERVICE ? await sbDocs(coll) : coll === "bidhist" ? await bot.allDocs(coll) : await bot.api(`kind=docs&coll=${coll}`));
-  const suppliers = fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8"))).filter((s) => s.status !== "incomplete");
+  const all = fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8"))).filter((s) => s.status !== "incomplete");
+  // NCC loại trừ / xoá mềm trên web không vào báo cáo và không nhận specreq. Không đọc được danh sách → báo cáo vẫn ra
+  // nhưng có cảnh báo và KHÔNG gửi specreq lượt này (điều phối 2026-11-12). --skipfile {supexcl:[..],supdeleted:[..]} để thử.
+  const skip = await skippedOf((coll) => (arg("skipfile") ? JSON.parse(fs.readFileSync(arg("skipfile"), "utf8"))[coll] : SB && SERVICE ? sbDocs(coll) : bot.allDocs(coll)));
+  const suppliers = dropSkipped(all, skip.ids);
   const [hist, cms, sms, sreq] = await Promise.all([read("bidhist", arg("bidhist")), read("configmatch", arg("configmatch")).catch(() => []), read("specmatch").catch(() => []), read("specreq").catch(() => [])]);
   const docs = Object.fromEntries(hist.map((d) => [d.id, d.data]));
   // Một hãng coi như vừa tìm khi có kết quả (specmatch.at) hoặc đang có yêu cầu chờ (specreq chưa doneAt).
@@ -189,10 +194,11 @@ async function main() {
   for (const d of sms) if (d.data?.at) specs[d.id] = d.data.at;
   for (const d of sreq) if (d.data?.requestedAt && !(d.data.doneAt >= d.data.requestedAt)) specs[d.id] = d.data.requestedAt;
   const report = gapReport({ docs, suppliers, modelFacts: bot.modelFacts, configmatch: cms.map((d) => d.data), specs });
-  console.log(reportText(report));
+  if (!skip.ok) report.warning = UNFILTERED_WARNING;
+  console.log((skip.ok ? "" : `CẢNH BÁO: ${UNFILTERED_WARNING} (không đọc được supexcl/supdeleted); không gửi specreq lượt này.\n`) + reportText(report));
   const rows = [];
   if (has("post")) rows.push({ coll: "gaps", id: "current", data: report });
-  const n = Number(arg("queue") || 0);
+  const n = skip.ok ? Number(arg("queue") || 0) : 0;
   if (n > 0) {
     const at = new Date().toISOString(), picked = report.queue.slice(0, n);
     for (const q of picked) rows.push({ coll: "specreq", id: q.supplierId, data: { spec: true, requestedAt: at, by: "Việc cần thu thập (hằng tuần)", from: "gaps" } });

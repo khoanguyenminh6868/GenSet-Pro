@@ -26,6 +26,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # Secret cần có sẵn: SUPABASE_URL và SUPABASE_SERVICE_ROLE_KEY (đọc bidhist/configmatch/specmatch/specreq và
+      # supexcl/supdeleted để bỏ NCC loại trừ / xoá mềm; ghi gaps/current). Khoá chỉ nằm trong env, script không in ra
+      # log và bước chạy không bật `set -x`. Thiếu khoá → bỏ qua lượt. Có khoá mà không đọc được supexcl/supdeleted →
+      # báo cáo vẫn đăng, kèm cảnh báo "chưa lọc NCC loại trừ", và KHÔNG gửi specreq lượt đó.
       - name: Report and queue
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
