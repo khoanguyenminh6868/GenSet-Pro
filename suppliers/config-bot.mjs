@@ -613,14 +613,15 @@ export function factConflicts(list) {
 // code ranks the genset rows first and the agent reads the best ones with every figure gathered. Engine and controller
 // weigh more than the alternator (Khoa, 2026-11-02).
 const squashOf = (s) => norm(s).replace(/[^a-z0-9]/g, "");
-export function hintsOf(text, extra = "") {
+// `sizing` ({ size, sizes }, sizesOf): the run of one size of a tender of several sizes: the minimums of that size's own block.
+export function hintsOf(text, extra = "", sizing = null) {
   const t = `${technicalPart(text)}\n${extra}`;
   const names = (list) => list.filter(([re]) => re.test(t)).map(([, n]) => n);
   const ctrl = CAT.CONTROLLERS.filter((c) => c.word.test(t)).map((c) => c.brand);
   for (const c of CAT.controllersIn(t)) if (!ctrl.includes(c.brand)) ctrl.push(c.brand);
   const f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   return { engineMakes: names(CAT.ENGINE_BRANDS), altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, text: squashOf(t), ...engineMins(t) };
+    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, text: squashOf(t), ...engineMins(t), ...(sizing?.sizes?.length > 1 ? minsForSize(technicalPart(text), sizing.size, sizing.sizes, extra).mins : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -654,9 +655,14 @@ export function sectionsOf(text) {
 const AT_LEAST = /≥|>=|tối thiểu|ít nhất|không (nhỏ|thấp|bé) hơn|trở lên/i, MAXIMUM = /≤|<=|tối đa|không (lớn|vượt|quá)/i;
 const DISP_W = /dung t[íi]ch|displacement/i, TANK_W = /bình|bồn|thùng|két|nhớt|nước|nhiên liệu|tank|dầu|ắc quy/i;
 export function engineMins(t) {
+  const { disp, dmax, cyl } = engineLists(t), one = (list) => (new Set(list).size === 1 ? list[0] : null);
+  return { minDisp: one(disp), maxDisp: one(dmax), minCyl: one(cyl), ...powerMins(t) };
+}
+// Every figure of the minimums of the engine the text gives (engineMins takes the one value of each).
+export function engineLists(t) {
   // A table laid out in columns puts 40+ spaces between the label and its figure ("Số xilanh      ...      04"): one space.
   t = unflatten(t);
-  const one = (list) => (new Set(list).size === 1 ? list[0] : null), disp = [], dmax = [], cyl = [], lines = t.split("\n").map((l) => l.replace(/[ \t ]{2,}/g, " "));
+  const disp = [], dmax = [], cyl = [], lines = t.split("\n").map((l) => l.replace(/[ \t ]{2,}/g, " "));
   lines.forEach((line, i) => {
     // A table cell often puts the label on one line and the figure on the next ("Dung tích xi lanh" / "11.051 L").
     // Only a figure with its sign or unit: a number alone is often the row number of the next item ("Số xy lanh: Nêu rõ" / "7").
@@ -685,7 +691,75 @@ export function engineMins(t) {
       || line.match(/^\s*[-+•]?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
     if (c && Number(c[1]) >= 1 && Number(c[1]) <= 20) cyl.push(Number(c[1]));
   });
-  return { minDisp: one(disp), maxDisp: one(dmax), minCyl: one(cyl), ...powerMins(t) };
+  return { disp, dmax, cyl };
+}
+// ---------- Ngưỡng của HSMT theo từng cỡ máy (Khoa, 2026-11-12) ----------
+// A tender of several sizes has the minimums of each genset in the text of that genset (IB2600594596: "≥ 8 xy lanh,
+// ≥ 14,5 L" under 400 kVA and "≥ 6 xy lanh, ≥ 9 L" under 300 kVA); read over the whole text they are two values and none
+// is given. The run of one size reads the text of its own block. A block starts at a statement of the genset's power
+// (prime or standby, "≥ N kVA", the label nearest to the figure; in any section: a heading we do not know would leave
+// the engine's or the alternator's section on and let the text of the next size run on into this block) that belongs to a size, and
+// lasts up to the statement of another size. A statement belongs to a size when its prime is within NEAR_LOW (0.5%) of it,
+// or its standby is from 100% (less the rounding) to 120% of it; one that fits two sizes or none belongs to no size (and
+// opens a block of no size). Never a minimum of another size is used:
+//  1. the block of the size gives the figure (one value) → it;
+//  2. the blocks of the size give none, and no block of another size gives it, and the text outside the blocks does →
+//     that (the HSMT's common minimum, as before);
+//  3. otherwise none (null: no filter), also when the blocks of the size disagree.
+const CAP_PRIME_W = /prime|li[êe]n t[ụu]c|continuous|c[ơo] b[ảa]n|th[ưư][ờo]ng xuy[êe]n/gi, CAP_STANDBY_W = /standby|d[ựu] ph[òo]ng|emergency|kh[ẩa]n c[ấa]p/gi;
+export function sizeBlocks(t, sizes) {
+  const text = unflatten(t), L = text.split("\n"), ments = [];
+  let off = 0;
+  for (let i = 0; i < L.length; off += L[i].length + 1, i++) {
+    // The figure is on this line; its label may be on the lines around it.
+    for (const m of text.slice(off, off + L[i].length).matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*kVA\b/gi)) {
+      const at = off + m.index, around = text.slice(Math.max(0, at - 160), at + 160), pos = Math.min(at, 160);
+      const p = nearest(around, pos, CAP_PRIME_W), sb = nearest(around, pos, CAP_STANDBY_W);
+      if (ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "))) continue;
+      const kind = p < sb && p <= 120 ? "prime" : sb < p && sb <= 120 ? "standby" : null;
+      if (kind) ments.push({ line: i, kind, kva: numOf(m[1]) });
+    }
+  }
+  const belongs = (m) => {
+    const hit = sizes.map((s, j) => [s, j]).filter(([s]) => (m.kind === "prime" ? m.kva >= s.kva * NEAR_LOW && m.kva <= s.kva / NEAR_LOW : m.kva >= s.kva * NEAR_LOW && m.kva <= s.kva * NEAR_HIGH + 1e-9));
+    return hit.length === 1 ? hit[0][1] : -1;
+  };
+  const runs = [];
+  for (const m of ments) {
+    const size = belongs(m), r = runs.at(-1);
+    if (r && r.size === size && size >= 0) r.end = m.line; else runs.push({ size, start: m.line, end: m.line });
+  }
+  runs.forEach((r, i) => (r.to = i + 1 < runs.length ? runs[i + 1].start : L.length));
+  return { L, runs };
+}
+const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
+// What a text gives: for each key whether it names the figure at all and the one value (null when it differs).
+function minsRead(t) {
+  const e = engineLists(t), p = powerRead(t), has = {
+    minDisp: e.disp.length > 0, maxDisp: e.dmax.length > 0, minCyl: e.cyl.length > 0, minPrime: p.prime.length > 0,
+    maxFuel: p.fuel.some((x) => x.load === 100 || x.load == null), maxFuel75: p.fuel.some((x) => x.load === 75), maxFuel50: p.fuel.some((x) => x.load === 50) };
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl) };
+  return Object.fromEntries(MIN_KEYS.map((k) => [k, { has: has[k], v: m[k] }]));
+}
+// The minimums of the run of `size` among `sizes` (sizesOf) in the HSMT text `t`; `extra` (the requests added on the web)
+// is outside every block. `how` says per key where the figure came from: own, common, none (and why).
+export function minsForSize(t, size, sizes, extra = "") {
+  const { L, runs } = sizeBlocks(t, sizes), j = sizes.findIndex((s) => s === size || (s.cap?.unit === size.cap?.unit && s.cap?.value === size.cap?.value));
+  const join = (pick) => L.filter((_, i) => pick(runs.findIndex((r) => i >= r.start && i < r.to), i)).join("\n");
+  const own = join((r) => r >= 0 && runs[r].size === j), foreign = join((r) => r >= 0 && runs[r].size !== j), pre = join((r) => r < 0) + (extra ? `\n${extra}` : "");
+  const a = minsRead(own), b = minsRead(foreign), c = minsRead(pre), mins = {}, how = {};
+  for (const k of MIN_KEYS) {
+    if (a[k].has) { mins[k] = a[k].v; how[k] = a[k].v == null ? "own: disagree" : "own"; }
+    else if (!b[k].has && c[k].has) { mins[k] = c[k].v; how[k] = "common"; }
+    else { mins[k] = null; how[k] = b[k].has ? "of another size" : "none"; }
+  }
+  // The prime a size asks for is the size itself: a block whose text gives another (the prime of the next genset read in
+  // it, 20 kVA's block giving 30) is a misreading, not a minimum.
+  if (mins.minPrime && size.cap) {
+    const mp = mins.minPrime, v = size.cap.unit === "kW" ? mp.kW ?? (mp.kVA != null ? mp.kVA * 0.8 : null) : mp.kVA ?? (mp.kW != null ? mp.kW / 0.8 : null);
+    if (v == null || Math.abs(v / size.cap.value - 1) > 0.006) { mins.minPrime = null; how.minPrime = "not the size"; }
+  }
+  return { mins, how, blocks: runs.map((r) => ({ size: r.size, from: r.start + 1, to: r.to })) };
 }
 // "Công suất liên tục (Prime) ≥ 400 kVA / 320 kW" and "Tiêu hao nhiên liệu ≤ 90 Lít/giờ": a table cell of the HSMT
 // often puts the words on the lines around the figure, so each figure goes to the nearest word naming prime or standby
@@ -697,7 +771,9 @@ export function engineMins(t) {
 const PRIME_W = /prime|li[êe]n t[ụu]c|continuous|c[ơo] b[ảa]n|th[ưư][ờo]ng xuy[êe]n/gi, STANDBY_W = /standby|d[ựu] ph[òo]ng|emergency|kh[ẩa]n c[ấa]p/gi;
 const ENGINE_W = /đ[ộo]ng c[ơo]|engine|t[ốo]i [đd]a|max/i, KVA_FIG = /c[ôo]ng su[ấa]t[^\n]{0,60}\n?\s*(?:≥|>=)?\s*\d[\d.,]*\s*kVA/i;
 const nearest = (t, i, re) => { let best = Infinity; for (const m of t.matchAll(re)) best = Math.min(best, Math.abs(m.index - i)); return best; };
-export function powerMins(t) {
+export const powerMins = (t) => powerRead(t).mins;
+// The prime figures and the fuel limits the text gives, and the minimums taken from them.
+export function powerRead(t) {
   const text = lowest(unflatten(t)), prime = [], fuel = [], secAt = sectionsOf(text);
   const pair = (a, ua, b, ub, at) => { const v = { [ua.toLowerCase() === "kva" ? "kVA" : "kW"]: numOf(a) }; Object.defineProperty(v, "sec", { value: secAt(at) }); if (b && ub.toLowerCase() !== ua.toLowerCase()) v[ub.toLowerCase() === "kva" ? "kVA" : "kW"] = numOf(b); return v; };
   for (const m of text.matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*\/\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/gi)) {
@@ -744,7 +820,7 @@ export function powerMins(t) {
   const unit = list.some((v) => v.kVA != null) ? "kVA" : "kW", same = list.filter((v) => v[unit] != null).sort((a, b) => a[unit] - b[unit]);
   const p = same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
   // The 75 % and 50 % load limits of the HSMT (2026-11-09: 475 of 1,237 fuel lines of the analyses are at 75 %).
-  return { minPrime: p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(fuel.filter((x) => x.load === 75).map((x) => x.v)), maxFuel50: one(fuel.filter((x) => x.load === 50).map((x) => x.v)) };
+  return { prime, fuel, mins: { minPrime: p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(fuel.filter((x) => x.load === 75).map((x) => x.v)), maxFuel50: one(fuel.filter((x) => x.load === 50).map((x) => x.v)) } };
 }
 // The displacement (L) and the cylinders of an engine as its facts give them.
 const litres = (v) => { const n = numbersIn(v)[0]; return n == null ? null : n > 100 ? n / 1000 : n; };
@@ -1211,7 +1287,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
   const a = analysis?.result;
   const cap = multi ? multi.size.cap : capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
-  const all = suppliers.map((d) => d.data), hints = hintsOf(text, extraOf(reqData));
+  const all = suppliers.map((d) => d.data), hints = hintsOf(text, extraOf(reqData), multi && { size: multi.size, sizes: multi.sizes });
   // Xuất xứ: "Tất cả" (the web's default) and a request from Sync follow the HSMT: the G7 / G20 it requires, else every
   // origin (Khoa, 2026-11-04). Trung Quốc, G7, G20 or Khác chosen on the web stays.
   const fromHsmt = reqData.from === "sync" || originOfReq(reqData.origin) === "all", asked = fromHsmt ? "all" : originOfReq(reqData.origin);
