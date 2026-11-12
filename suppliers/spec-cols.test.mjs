@@ -40,3 +40,11 @@ test("a maker that also names the engine in a row keeps its Model row as the gen
   const occ = read("engine_maker", t).filter((o) => o.kind === "engine");
   assert.deepEqual(occ.map((o) => [o.model, o.genset]), [["6CTAA8.3-G2", "C165D5"], ["6CTAA8.3-G3", "C200D5"]]);
 });
+
+test("engines side by side: a column with a rated speed outside 1000-1800/3000/3600 is not read, 1500 and no speed stay", () => {
+  const t = (rows) => read("engine_maker", `Model                    AA100      BB200      CC300\n${rows}\nPrime power kWm          100        150        200`).filter((o) => o.kind === "engine").map((o) => o.model);
+  assert.deepEqual(t("Rated power/Speed (kW/rpm)  100/2200  150/1500  200/1800"), ["BB200", "CC300"]);
+  assert.deepEqual(t("Displacement l           4.2        6.7        8.9"), ["AA100", "BB200", "CC300"]);
+  assert.deepEqual(t("Rated speed rpm          2500       1500       1500"), ["BB200", "CC300"]);
+  assert.deepEqual(t("Max torque/speed         900/1200   950/1200   990/1200"), ["AA100", "BB200", "CC300"]);
+});

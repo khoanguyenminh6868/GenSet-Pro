@@ -263,6 +263,16 @@
     // the source) cannot be laid over the columns, so none of it is used.
     const MODEL_ROW = /^(model|model\s*series|models?|型号)$/;
     const M = engineModel ? (lines.map((l) => cellsOf(l)).find((c) => c.length > 2 && MODEL_ROW.test(c[0].replace(/[:：\s]+$/, "").toLowerCase())) || []).slice(1).filter(Boolean).length : 0;
+    // A generating set runs at 1000-1800 rpm (3000 / 3600 for two poles): a column whose rated speed is written and is another
+    // (Yuchai "Rated power/Speed | 176/2200": a vehicle engine) is not read; a column with no rated speed stays.
+    const badCol = new Set();
+    if (M) for (const l of lines) {
+      const c = cellsOf(l), lb = (c[0] || "").toLowerCase();
+      if (!/(rated|power|kw)[^|]*(speed|rpm|r\/min)|rated\s*(speed|rpm)|额定转速/.test(lb) || /over|idle|max|torque/.test(lb)) continue;
+      const v = c.slice(1).filter((x) => x && !UNIT_CELL.test(x));
+      if (v.length !== M) continue;
+      v.forEach((x, j) => { const r = Number(((/power|kw/.test(lb) && x.includes("/") ? x.split("/")[1] : x).match(/\d{3,4}/) || [])[0]); if (r && ![1000, 1200, 1500, 1800, 3000, 3600].includes(r)) badCol.add(j); });
+    }
     for (const l of lines) {
       let c = cellsOf(l);
       // Only label words are joined; numbers there are a second figure per model (50 / 60 Hz columns).
@@ -341,7 +351,7 @@
           }
           if (pair) { const p = pairOf(+pair[1], +pair[2]); if (p) merge(j, kind, p); }
         });
-      } else if (engineModel && /^(model|model\s*series|models?|型号)$/.test(bare)) vals.forEach((v, j) => isCode(v) && put(j, "engine", v));
+      } else if (engineModel && /^(model|model\s*series|models?|型号)$/.test(bare)) vals.forEach((v, j) => isCode(v) && !badCol.has(j) && put(j, "engine", v));
       else if (/^(genset\s*)?model|机组型号|型号$/i.test(L) && !ENGINE_LBL.test(L) && !ALT_LBL.test(L)) vals.forEach((v, j) => isCode(v) && put(j, "genset", v));
     }
     return cols.filter(Boolean);
