@@ -21,7 +21,10 @@ function failDoc(key, why, prev, at, files) {
   return { line: `${key}: BCĐG lỗi (${why})${giveUp ? ", bỏ sau " + t + " lần" : ""}`,
     doc: { notifyNo: key, files: files || prev?.files || [], ...(prev?.reason ? { reason: prev.reason } : {}), error: String(why).slice(0, 200), tries: t, ...(giveUp ? { giveUp: true } : {}), at } };
 }
-async function bcdgStep({ key, b, prev, deps, deadline = Infinity, maxBytes = MAX_BYTES }) {
+// reread: only read the text again and take the reason, for a tender whose files are in the store already (path): the files are
+// downloaded again for reading, never uploaded again; error / tries / giveUp are cleared. Files without a path are left as they are.
+async function bcdgStep({ key, b, prev: prev0, deps, deadline = Infinity, maxBytes = MAX_BYTES, reread = false }) {
+  const prev = reread && prev0 ? { ...prev0, error: undefined, tries: 0, giveUp: undefined } : prev0;
   const at = deps.now(), tries = prev?.tries || 0, left = () => deadline - Date.now();
   const fail = (why, files) => failDoc(key, why, prev, at, files);
   const files = b.reportFiles || [];
@@ -30,8 +33,9 @@ async function bcdgStep({ key, b, prev, deps, deadline = Infinity, maxBytes = MA
 
   // Tệp đã lên kho từ lượt trước giữ nguyên; chỉ làm lại tệp chưa lên hoặc chưa đọc chữ.
   const old = new Map((prev?.files || []).map((f) => [String(f.id).toLowerCase(), f]));
-  const keep = (f) => { const o = old.get(f.id.toLowerCase()); return o && (o.skipped || (o.path && !o.noText)) ? o : null; };
+  const keep = (f) => { const o = old.get(f.id.toLowerCase()); return o && (o.skipped || (o.path && !o.noText && !reread) || (reread && !o.path)) ? o : null; };
   const todo = files.filter((f) => !keep(f));
+  if (reread && !todo.length) return { line: `${key}: BCĐG không có tệp nào trên kho để đọc lại`, doc: null };
   if (!todo.length && prev && !prev.error) return { line: `${key}: BCĐG đã có`, doc: null };
 
   let got = [];
@@ -54,14 +58,16 @@ async function bcdgStep({ key, b, prev, deps, deadline = Infinity, maxBytes = MA
       catch (e) { out.push({ ...rec, error: ("tải lên: " + String(e.message || e).split("\n")[0]).slice(0, 200) }); anyErr = true; continue; } // lỗi tải lên: không đọc chữ
     }
     if (left() < 30e3) { out.push({ ...rec, noText: true }); anyNoText = true; continue; }
-    const t = deps.text(m.file, Math.min(OCR_MAX_MS, left()));
-    if (t.ocr) scan = true;
+    const t = deps.text(m.file, Math.min(OCR_MAX_MS, left()), m);
+    // A scan is told by ocr-pdf.js (its SCAN line comes before the first page is read), so it is also known when OCR timed out.
+    if (t.ocr || t.scan) scan = true;
     // OCR quá giờ: giữ tệp đã lên kho nhưng coi là chưa đọc chữ và tính một lần thử (không để reason "" vĩnh viễn; giveUp sau MAX_TRIES).
-    if (t.timedOut) { ocrOut = true; rec.ocrTimeout = true; rec.noText = true; out.push(rec); continue; }
+    if (t.timedOut) { ocrOut = true; rec.ocrTimeout = true; rec.noText = true; out.push(rec); if (t.text) texts.push(t.text); continue; } // the pages read so far still give a reason
     out.push(rec);
     texts.push(t.text || "");
   }
-  const reason = texts.length ? bcdgReason(texts.join("\n")) || prev?.reason || "" : prev?.reason || "";
+  const oldReason = reread ? "" : prev?.reason || ""; // reread replaces the reason (the old one may come from a worse reading)
+  const reason = texts.length ? bcdgReason(texts.join("\n")) || oldReason : oldReason;
   const doc = { notifyNo: key, files: out, reason, scan, at };
   if (anyErr) {
     const t = tries + 1, giveUp = t >= MAX_TRIES;
@@ -72,6 +78,8 @@ async function bcdgStep({ key, b, prev, deps, deadline = Infinity, maxBytes = MA
     const t = tries + 1;
     doc.error = "OCR quá giờ, chưa đọc được chữ"; doc.tries = t;
     if (t >= MAX_TRIES) { doc.giveUp = true; doc.files = out.map((f) => ({ ...f, noText: undefined })); } // bỏ: tệp vẫn tải được, chỉ thiếu đoạn trích
+  } else if (reread && out.some((f) => f.error)) { // a file that never reached the store (reread does not upload): keep its error, the normal run retries it
+    doc.error = String(out.find((f) => f.error).error).slice(0, 200); doc.tries = prev0?.tries || 1;
   } else if (anyNoText) { doc.error = "chưa đọc chữ (hết giờ), để lượt sau"; doc.tries = tries; }
   const okN = out.filter((f) => f.path).length;
   return { line: `${key}: BCĐG ${okN}/${files.length} tệp${reason ? ", có lý do" : ", chưa trích được lý do"}${scan ? " (OCR)" : ""}${ocrOut ? ", OCR quá giờ" : ""}${doc.error ? "; " + doc.error : ""}`, doc };

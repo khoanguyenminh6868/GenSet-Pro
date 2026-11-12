@@ -354,20 +354,35 @@ async function bcdgUpload(key, file, name) {
   return s.path;
 }
 
-function bcdgText(file, timeoutMs) {
+// Text of one report file. A scanned PDF is read in two steps (ocr-pdf.js --locate): a quick pass over every scanned page to find
+// the ones that name us, then full OCR of those ±1 page only; the OCR of each page is kept in cacheDir (outside the tender's
+// download folder, which bcdgCleanup removes) so a later try goes on where a timed-out one stopped. ocr-pdf.js stops by itself a
+// little before timeoutMs and prints PARTIAL.
+const BCDG_OCR_CACHE = path.join(BCDG_DIR, "_ocr");
+function bcdgText(file, timeoutMs, cacheDir) {
   const ext = path.extname(file).toLowerCase();
   if (ext === ".pdf" || IMG_EXT.includes(ext)) {
-    const r = cp.spawnSync(process.execPath, [path.join(KIT, "ocr-pdf.js"), file, "--max", String(BCDG_OCR_PAGES)], { encoding: "utf8", maxBuffer: 256 << 20, timeout: timeoutMs });
-    const n = Number(((r.stderr || "").match(/OCR (\d+)\//) || [])[1] || 0);
-    return { text: r.status === 0 ? r.stdout || "" : "", ocr: n, timedOut: !!(r.error && /ETIMEDOUT/.test(r.error.code || "")) };
+    const stop = Date.now() + (timeoutMs > 90e3 ? timeoutMs - 45e3 : Math.floor(timeoutMs * 0.6));
+    const r = cp.spawnSync(process.execPath, [path.join(KIT, "ocr-pdf.js"), file, "--max", String(BCDG_OCR_PAGES), "--locate", "--cache", cacheDir, "--deadline", String(stop)],
+      { encoding: "utf8", maxBuffer: 256 << 20, timeout: timeoutMs });
+    const err = r.stderr || "";
+    const n = Number((err.match(/OCR (\d+)\//) || [])[1] || 0), scanPages = Number((err.match(/SCAN (\d+)\//) || [])[1] || 0);
+    const timedOut = !!(r.error && /ETIMEDOUT/.test(r.error.code || "")) || /^PARTIAL/m.test(err);
+    if (!timedOut && !opt("keep")) fs.rmSync(cacheDir, { recursive: true, force: true }); // read completely: the cache is not needed any more
+    return { text: r.status === 0 ? r.stdout || "" : "", ocr: n, scan: scanPages > 0 || n > 0, timedOut };
   }
-  return { text: histFileText(file, path.join(os.tmpdir(), "genbid-bcdg-" + process.pid)), ocr: 0, timedOut: false };
+  return { text: histFileText(file, path.join(os.tmpdir(), "genbid-bcdg-" + process.pid)), ocr: 0, scan: false, timedOut: false };
+}
+// OCR caches of files nobody came back to (a tender given up) are removed after two weeks.
+function bcdgSweepCache() {
+  try { for (const d of fs.readdirSync(BCDG_OCR_CACHE)) { const p = path.join(BCDG_OCR_CACHE, d); if (Date.now() - fs.statSync(p).mtimeMs > 14 * 864e5) fs.rmSync(p, { recursive: true, force: true }); } } catch {}
 }
 // A PDF the Agent handed back cut short has no %%EOF at its end (IB2500371475 12/11: 450 KB of 759 KB).
 const pdfComplete = (f) => { if (!/\.pdf$/i.test(f)) return true; try { const b = fs.readFileSync(f); return b.subarray(Math.max(0, b.length - 2048)).includes("%%EOF"); } catch { return false; } };
 // Download the given report files (the VNeGP Agent through GenBid-HSMT.ps1), again up to twice when one is cut short, while
 // the deadline allows. Returns the complete ones as [{id, file, bytes, md5}].
 function bcdgDownload(key, todo, deadline) {
+  bcdgSweepCache();
   if (!agentStarted) { ps("GenBid-HSMT.ps1", ["-StartOnly"], 5); agentStarted = true; }
   const dir = path.join(BCDG_DIR, key), list = path.join(BCDG_DIR, `files-${key}.txt`);
   fs.mkdirSync(BCDG_DIR, { recursive: true });
@@ -391,15 +406,21 @@ function bcdgDownload(key, todo, deadline) {
 const bcdgCleanup = (key) => { if (!opt("keep")) fs.rmSync(path.join(BCDG_DIR, key), { recursive: true, force: true }); };
 // One tender's BCĐG: bcdgRun (bcdg-step.js) with this PC's download, upload and OCR. Posts bcdg/<TBMT> unless nothing is to be
 // written; `deadline` is the round's time budget for all BCĐG work (10 minutes, then the rest wait for the next round).
-async function bcdgStep(key, b, deadline) {
+async function bcdgStep(key, b, deadline, { reread = false } = {}) {
   if (opt("dry")) { log(`  [dry] sẽ tải BCĐG ${key}: ${(b.reportFiles || []).map((f) => f.name).join(", ")}`); return `${key}: [dry] ${(b.reportFiles || []).length} tệp BCĐG`; }
   let prev = null;
-  if (!opt("local")) { try { prev = await doc("bcdg", key); } catch {} }
-  if (prev?.giveUp) return `${key}: BCĐG đã bỏ sau nhiều lần lỗi`;
+  if (!opt("local") || reread) { try { prev = await doc("bcdg", key); } catch {} }
+  // --reread: only the text and the reason are read again for files already in the store (nothing is uploaded again; error / tries / giveUp are cleared).
+  if (reread && !prev) {
+    if (!opt("local")) return `${key}: chưa có bcdg/${key} trên web, không có gì để đọc lại`;
+    prev = { notifyNo: key, files: (b.reportFiles || []).map((f) => ({ id: f.id, name: f.name, path: "(local)" })) }; // --local with no document yet: pretend every file is in the store
+  }
+  if (!reread && prev?.giveUp) return `${key}: BCĐG đã bỏ sau nhiều lần lỗi`;
   const deps = { now, log, download: (todo) => bcdgDownload(key, todo, deadline), stored: (m) => `${m.id.slice(0, 8)}-${plainName(path.basename(m.file))}`,
-    upload: async (file, name) => (opt("local") ? "(local)" : bcdgUpload(key, file, name)), text: bcdgText };
+    upload: async (file, name) => { if (reread) throw new Error("--reread không tải lên"); return opt("local") ? "(local)" : bcdgUpload(key, file, name); },
+    text: (file, ms, m) => bcdgText(file, ms, path.join(BCDG_OCR_CACHE, key, String(m?.md5 || path.basename(file)).replace(/[^A-Za-z0-9._-]/g, "_"))) };
   try {
-    const { line, doc: d } = await bcdgRun({ key, b, prev, deps, deadline });
+    const { line, doc: d } = await bcdgRun({ key, b, prev, deps, deadline, reread });
     if (d) await (opt("local") ? async (rows) => log(`  [local] bcdg/${key}: ${JSON.stringify(rows[0].data).slice(0, 1500)}`) : post)([{ coll: "bcdg", id: key, data: d }]);
     return line;
   } finally { bcdgCleanup(key); }
@@ -2570,7 +2591,7 @@ async function runFinish() {
     else if (cmd === "prep") summary = await runPrep();
     else if (cmd === "finish") summary = await runFinish();
     else if (cmd === "ask") summary = await runAsk();
-    else if (cmd === "bcdg") { // check: BCĐG of the given tenders (--keys K1,K2 [--local: no upload, nothing posted] [--keep]); needs --profile
+    else if (cmd === "bcdg") { // check: BCĐG of the given tenders (--keys K1,K2 [--local: no upload, nothing posted] [--keep] [--reread: only read the text again and take the reason for files already in the store, no upload, clears error/tries/giveUp]); needs --profile
       const { ctx, page } = await openBrowser();
       try {
         const out = [];
@@ -2580,7 +2601,7 @@ async function runFinish() {
           if (!r.url) { out.push(`${key}: ${r.error || "không có trang kết quả"}`); continue; }
           await page.goto(r.url, { waitUntil: "domcontentloaded" });
           const b = await snippet(page, "bidders-extract.js");
-          out.push(b.final && isMine(b) ? await bcdgStep(key, b, Date.now() + BCDG_BUDGET_MS) : `${key}: ${b.error || "chưa có kết quả hoặc không có MST mình"}`);
+          out.push(b.final && isMine(b) ? await bcdgStep(key, b, Date.now() + BCDG_BUDGET_MS, { reread: !!opt("reread") }) : `${key}: ${b.error || "chưa có kết quả hoặc không có MST mình"}`);
         }
         summary = out.join("; ");
       } finally { await ctx.close().catch(() => {}); }

@@ -62,7 +62,23 @@ function bcdgReason(text, { tax = OUR_TAX } = {}) {
   }
   return out;
 }
-module.exports = { bcdgReason, OUR_TAX };
+// Trang (chữ OCR nhanh, chất lượng thấp) có nhắc công ty mình không: so khớp chịu lỗi OCR, bỏ dấu. Dùng để chọn trang cần OCR kỹ
+// (ocr-pdf.js --locate); thà thừa trang còn hơn sót. "Thảo Nguyên" (lệch tối đa vài ký tự), "kỹ thuật Thảo", hoặc MST (cho phép
+// một ký tự lạ giữa các nhóm số, hoặc thiếu/sai một chữ số).
+const plainVi = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[đĐ]/g, "d").toLowerCase();
+function mentionsUs(text, tax = OUR_TAX) {
+  const p = plainVi(text);
+  if (/th.{0,2}[o0]\s{0,2}ngu.{0,2}n\b/.test(p) || /thao\s*ng/.test(p) || /ky\s*thuat\s*th.{0,2}[o0]/.test(p)) return true;
+  const t = String(tax);
+  // MST: nhóm 4101 623 015, mỗi nhóm cách nhau tối đa 2 ký tự lạ; hoặc 10 chữ số liền sai một chữ số.
+  if (new RegExp(t.slice(0, 4) + "\\D{0,2}" + t.slice(4, 7) + "\\D{0,2}" + t.slice(7)).test(p)) return true;
+  for (const m of p.matchAll(/(?<!\d)\d[\d\s.]{8,13}\d(?!\d)/g)) {
+    const d = m[0].replace(/\D/g, "");
+    if (d.length === t.length && [...d].filter((c, i) => c !== t[i]).length <= 1) return true;
+  }
+  return false;
+}
+module.exports = { bcdgReason, mentionsUs, OUR_TAX };
 
 if (require.main === module) {
   const fs = require("fs");

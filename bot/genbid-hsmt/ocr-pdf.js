@@ -66,7 +66,12 @@ function rotatePgm(file, out, deg) {
   fs.writeFileSync(out, Buffer.concat([Buffer.from(`P5\n${nw} ${nh}\n255\n`, "latin1"), dst]));
 }
 // find: with more scanned pages than this, only chapter V is read (0: every scanned page).
-async function ocrFile(file, max = 300, find = 0) {
+// opts (only the BCĐG flow, bcdg-step.js; every other caller passes none and gets the old behaviour):
+//   locate: more than 3 scanned pages → every scanned page is read quickly (150 dpi, ~2 s) and only the pages that name our company
+//           (bcdg-reason.js mentionsUs) ±1 are read in full; none found → those pages stay empty.
+//   cache:  directory with one file per page (f<n>.txt quick, p<n>.txt full) so a later run goes on where this one stopped.
+//   deadline: epoch ms; when reached the pages read so far are returned with partial = true.
+async function ocrFile(file, max = 300, find = 0, opts = {}) {
   const bin = popplerBin(), exe = (n) => (bin ? path.join(bin, n + ".exe") : n);
   const ext = path.extname(file).toLowerCase();
   const { createWorker } = require(path.join(__dirname, "node_modules", "tesseract.js"));
@@ -91,6 +96,7 @@ async function ocrFile(file, max = 300, find = 0) {
     const pages = (cp.spawnSync(exe("pdftotext"), ["-layout", "-enc", "UTF-8", file, "-"], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "").split("\f");
     if (pages.length && !pages[pages.length - 1].trim()) pages.pop();
     let scanned = pages.map((t, i) => (t.replace(/\s/g, "").length < MIN_CHARS || garbled(t) ? i + 1 : 0)).filter(Boolean);
+    let partial = false;
     const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "genbid-ocr-"));
     try {
       // Windows tools cannot always open a path with Vietnamese letters: work on a copy under a plain name.
@@ -127,9 +133,42 @@ async function ocrFile(file, max = 300, find = 0) {
         }
         if (from) { to ||= pages.length; scanned = scanned.filter((n) => n >= from && n <= to); process.stderr.write(`CHUONG5 ${from}-${to}\n`); }
       }
-      scanned = scanned.slice(0, max);
+      scanned = scanned.slice(0, find || !opts.locate ? max : scanned.length);
+      process.stderr.write(`SCAN ${scanned.length}/${pages.length}\n`); // early: a killed run still tells it is a scan
+      const cacheF = (pre, n) => (opts.cache ? path.join(opts.cache, `${pre}${n}.txt`) : "");
+      const cached = (pre, n) => { const f = cacheF(pre, n); return f && fs.existsSync(f) ? fs.readFileSync(f, "utf8") : null; };
+      const store = (pre, n, t) => { const f = cacheF(pre, n); if (f) { fs.mkdirSync(opts.cache, { recursive: true }); fs.writeFileSync(f, t, "utf8"); } };
+      const late = () => opts.deadline && Date.now() > opts.deadline;
+      if (opts.locate && NATIVE && scanned.length > 3) {
+        const { mentionsUs } = require("./bcdg-reason.js");
+        const hits = [];
+        for (const n of scanned) {
+          let q = cached("f", n);
+          if (q === null) {
+            if (late()) { partial = true; break; }
+            // Pages are rendered 6 at a time: a big scan costs seconds to open for every pdftoppm call.
+            const imgOf = () => fs.readdirSync(tmp).find((x) => new RegExp(`^q-0*${n}\\.png$`).test(x));
+            if (!imgOf()) cp.spawnSync(exe("pdftoppm"), ["-r", "150", "-gray", "-png", "-f", String(n), "-l", String(Math.min(n + 5, pages.length)), plain, path.join(tmp, "q")], { timeout: 180e3 });
+            const img = imgOf();
+            if (!img) continue;
+            q = cp.spawnSync(NATIVE, [path.join(tmp, img), "stdout", "-l", "vie", "--oem", "1", "--psm", "4", "--tessdata-dir", TESSDATA],
+              { encoding: "utf8", maxBuffer: 64 << 20, timeout: 60e3, env: { ...process.env, OMP_THREAD_LIMIT: "2" }, windowsHide: true }).stdout || "";
+            fs.rmSync(path.join(tmp, img));
+            store("f", n, q);
+          }
+          if (mentionsUs(q)) hits.push(n);
+        }
+        const want = new Set();
+        for (const n of hits) for (const d of [-1, 0, 1]) want.add(n + d);
+        process.stderr.write(`LOCATE ${hits.join(",") || "-"}${partial ? " (chưa xong)" : ""}\n`);
+        scanned = scanned.filter((n) => want.has(n)).slice(0, max);
+        for (const n of scanned) pages[n - 1] = "";
+      }
       let osdTries = 0, osdRotated = 0;
       for (const n of scanned) {
+        const c = cached("p", n);
+        if (c !== null) { pages[n - 1] = c; continue; }
+        if (late()) { partial = true; break; }
         cp.spawnSync(exe("pdftoppm"), ["-r", "250", "-gray", "-png", "-f", String(n), "-l", String(n), plain, path.join(tmp, "p")], { timeout: 120e3 });
         const img = fs.readdirSync(tmp).find((x) => x.startsWith("p") && x.endsWith(".png"));
         if (!img) continue;
@@ -158,18 +197,21 @@ async function ocrFile(file, max = 300, find = 0) {
           } catch (e) { process.stderr.write(`ROTATE lỗi trang ${n}: ${e.message}\n`); }
         }
         pages[n - 1] = text;
+        store("p", n, text);
       }
       if (osdTries) process.stderr.write(`OSD ${osdTries} rotated ${osdRotated}\n`);
     } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
-    return { text: pages.join("\f"), ocr: scanned.length, pages: pages.length };
+    return { text: pages.join("\f"), ocr: scanned.length, pages: pages.length, partial };
   } finally { await worker?.terminate(); }
 }
 module.exports = { ocrFile };
 
 if (require.main === module) {
-  const args = process.argv.slice(2), i = args.indexOf("--max"), j = args.indexOf("--find");
-  ocrFile(args[0], i >= 0 ? Number(args[i + 1]) : 300, j >= 0 ? Number(args[j + 1]) : 0).then((r) => {
+  const args = process.argv.slice(2), val = (k) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : undefined; };
+  const opts = args.includes("--locate") ? { locate: true, cache: val("--cache"), deadline: val("--deadline") ? Number(val("--deadline")) : 0 } : {};
+  ocrFile(args[0], val("--max") ? Number(val("--max")) : 300, val("--find") ? Number(val("--find")) : 0, opts).then((r) => {
     process.stdout.write(r.text);
+    if (r.partial) process.stderr.write("PARTIAL\n");
     process.stderr.write(`OCR ${r.ocr}/${r.pages}\n`);
   }, (e) => { process.stderr.write(String(e?.message || e) + "\n"); process.exit(1); });
 }
