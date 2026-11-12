@@ -654,11 +654,27 @@ export function sectionsOf(text) {
   });
   return (i) => { let k = "genset"; for (const s of out) { if (s.at > i) break; k = s.kind; } return k; };
 }
+// The sections of a tender that is also for a forklift, a crane...: a heading "3.2.1. Yêu cầu về kỹ thuật cụ thể cho xe nâng"
+// opens the text of that equipment up to the next heading of the same kind ("3.2.2. ... cho máy phát điện"). Its lines are
+// blanked (the same number of lines): its cylinders and displacement ("≥ 4/3318cm3" of a forklift) are not the genset's.
+const EQ_HEAD = /^\s*(?:\d+(?:\.\d+)*\.?|[IVX]+\.|[A-H]\.)\s*(?:yêu cầu|thông số|đặc tính)[^\n]{0,60}?\b(?:cho|của|đối với)\s+(.{3,80})$/i;
+const EQ_OTHER = /xe nâng|cầu trục|forklift|\bcrane\b|xe cẩu|xe tải|ô tô|thang máy|máy xúc|máy ủi|máy nén khí|máy bơm|xe chuyên dùng/i;
+export function withoutOtherEquipment(t) {
+  let other = false;
+  return String(t ?? "").split("\n").map((l) => {
+    const h = l.length <= 160 && l.match(EQ_HEAD);
+    if (h) other = EQ_OTHER.test(h[1]) && !/máy phát|tổ máy|genset|generator/i.test(h[1]);
+    return other ? "" : l;
+  }).join("\n");
+}
 const AT_LEAST = /≥|>=|tối thiểu|ít nhất|không (nhỏ|thấp|bé) hơn|trở lên/i, MAXIMUM = /≤|<=|<(?!=)\s*\d|tối đa|không (lớn|vượt|quá)|(?<!không\s)(?:nhỏ hơn|dưới)\s*:?\s*\d/i;
 const DISP_W = /dung t[íi]ch|displacement/i, TANK_W = /bình|bồn|thùng|két|nhớt|nước|nhiên liệu|tank|dầu|ắc quy|làm mát|\bmát\b|bôi trơn|coolant|lubric|\boil\b/i;
 // The displacement of the engine, by its label (2026-11-12 audit: "Tổng dung tích làm mát ≥ 55 L" was read as the cylinders').
 // A label of a displacement that names neither the cylinders nor the engine is not read.
-const DISP_LABEL = /dung t[íi]ch\s*(?:t[ổo]ng\s*)?(?:c[ủu]a\s*)?(?:c[áa]c\s*)?(?:xi|xy|x)\s?lanh|dung t[íi]ch[^\n]{0,30}?(?:xi|xy)\s?lanh\b|dung t[íi]ch\s+(?:c[ủu]a\s+)?[đd][ộo]ng c[ơo]|displacement|swept volume/i;
+const DISP_LABEL = /dung t[íi]ch\s*(?:t[ổo]ng\s*)?(?:c[ủu]a\s*)?(?:c[áa]c\s*)?(?:xi|xy|x)(?:[\s-]?lanh|-)|dung t[íi]ch[^\n]{0,30}?(?:xi|xy)[\s-]?lanh\b|dung t[íi]ch\s+(?:c[ủu]a\s+)?(?:[đd][ộo]ng c[ơo]|bu[ồo]ng [đd][ốo]t)|dung t[íi]ch\s*(?:piston|pit\s?t[ôo]ng)|dung t[íi]ch\s*x\s*l\s*nh|displacement|swept volume/i;
+const tankNear = (cell) => { const m = cell.match(DISP_LABEL) || cell.match(/(?:t[ổo]ng\s+)?dung t[íi]ch/i); return !!m && TANK_W.test(cell.slice(Math.max(0, m.index - 25), m.index + m[0].length + 25)); };
+// "Tổng dung tích ≥ 19.6 lít" among the lines of the cylinders (bore, stroke, piston, compression ratio) is the engine's.
+const DISP_BARE = /^(?:.*\s)?(?:t[ổo]ng\s+)?dung t[íi]ch\s*(?::|≥|≤|<|>|\d|$)/i, ENGINE_LINES = /(?:xi|xy)[\s-]?lanh|piston|h[àa]nh tr[ìi]nh|đ[ườu]*ng k[ií]nh|t[ỷy] s[ốo] n[ée]n|compression|\bbore\b|\bstroke\b/i;
 export function engineMins(t) {
   const { disp, dmax, cyl } = engineLists(t), one = (list) => (new Set(list).size === 1 ? list[0] : null);
   return { minDisp: one(disp), maxDisp: one(dmax), minCyl: one(cyl), ...powerMins(t) };
@@ -666,23 +682,24 @@ export function engineMins(t) {
 // Every figure of the minimums of the engine the text gives (engineMins takes the one value of each).
 export function engineLists(t) {
   // A table laid out in columns puts 40+ spaces between the label and its figure ("Số xilanh      ...      04"): one space.
-  t = unflatten(t);
+  t = withoutOtherEquipment(unflatten(t));
   const disp = [], dmax = [], cyl = [], lines = t.split("\n").map((l) => l.replace(/[ \t ]{2,}/g, " "));
   lines.forEach((line, i) => {
     // A table cell often puts the label on one line and the figure on the next ("Dung tích xi lanh" / "11.051 L").
     // Only a figure with its sign or unit: a number alone is often the row number of the next item ("Số xy lanh: Nêu rõ" / "7").
     const prev = lines[i - 1] || "", alone = !/[a-zà-ỹ]{3}/i.test(line.replace(/l[íi]t|xi|xy|lanh|mm|cc/gi, "")) && /[≥>]|l[íi]t|\bL\b|lanh/i.test(line);
     // "Tổng dung tích" / "8 ≥ 0.79 lít" / "xilanh": the label goes on to the line after the figure.
-    const cell = alone ? prev + " " + line + (/^\s*(?:xi|xy)\s?lanh\b/i.test(lines[i + 1] || "") ? " " + lines[i + 1] : "") : line;
+    const cell = alone ? prev + " " + line + (/^\s*(?:xi|xy)[\s-]?lanh\b/i.test(lines[i + 1] || "") ? " " + lines[i + 1] : "") : line;
     // A largest displacement ("Dung tích xi lanh ≤ 15,2 L", an HSMT written around one engine): 2026-11-03, the best
     // candidates were 19.6 L engines that the agent then marked not met.
     if (MAXIMUM.test(cell)) {
-      const m = DISP_LABEL.test(cell) && !TANK_W.test(cell) && cell.match(/(?:≤|<=|<(?!=)|tối đa|không (?:lớn|vượt|quá)(?: hơn)?|(?<!không\s)(?:nhỏ hơn|dưới))\s*:?\s*(\d{1,3}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
+      const m = (DISP_LABEL.test(cell) || (DISP_BARE.test(cell) && ENGINE_LINES.test(lines.slice(Math.max(0, i - 3), i + 4).join(" ")))) && !tankNear(cell) && cell.match(/(?:≤|<=|<(?!=)|tối đa|không (?:lớn|vượt|quá)(?: hơn)?|(?<!không\s)(?:nhỏ hơn|dưới))\s*:?\s*(\d{1,3}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
       if (m) dmax.push(Number(m[1].replace(",", ".")));
       return;
     }
     // A bare figure is the least the HSMT accepts (Khoa, 2026-11-03), for the engine's displacement and cylinders.
-    const dl = DISP_LABEL.test(cell) && !TANK_W.test(cell) && (AT_LEAST.test(cell) || /dung t[íi]ch\s*(xi|xy)\s?lanh|displacement/i.test(cell));
+    const near4 = lines.slice(Math.max(0, i - 3), i + 4).join(" "), bare = !DISP_LABEL.test(cell) && DISP_BARE.test(cell) && ENGINE_LINES.test(near4);
+    const dl = (DISP_LABEL.test(cell) || bare) && !tankNear(cell) && (AT_LEAST.test(cell) || /dung t[íi]ch\s*(xi|xy)\s?lanh|displacement/i.test(cell));
     const d = dl && cell.match(/(?<![\d.,])(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
     // The unit in the label ("Dung tích xy lanh (L) ≥ 4.45") or in cc ("≥ 2.197 cc", "4087 cm3"): 2026-11-04 regression.
     const du = !d && dl && (cell.match(/\((?:l[íi]t|L)\)[^\d\n<≤]{0,20}?(?:≥|>=|>|tối thiểu|:)?\s*(\d{1,2}(?:[.,]\d{1,3})?)(?![\d.,]*\s*(?:mm|cc|cm|kg|%))/i)
@@ -714,20 +731,23 @@ export function engineLists(t) {
 //  3. otherwise none (null: no filter), also when the blocks of the size disagree.
 const CAP_PRIME_W = /prime|li[êe]n t[ụu]c|continuous|c[ơo] b[ảa]n|th[ưư][ờo]ng xuy[êe]n/gi, CAP_STANDBY_W = /standby|d[ựu] ph[òo]ng|emergency|kh[ẩa]n c[ấa]p/gi;
 export function sizeBlocks(t, sizes) {
-  const text = unflatten(t), L = text.split("\n"), ments = [];
+  const text = withoutOtherEquipment(unflatten(t)), L = text.split("\n"), ments = [], kwSizes = sizes.some((s) => s.cap?.unit === "kW");
   let off = 0;
   for (let i = 0; i < L.length; off += L[i].length + 1, i++) {
     // The figure is on this line; its label may be on the lines around it.
-    for (const m of text.slice(off, off + L[i].length).matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*kVA\b/gi)) {
+    for (const m of text.slice(off, off + L[i].length).matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b/gi)) {
+      if (m[2].toLowerCase() === "kw" && !kwSizes) continue;
       const at = off + m.index, around = text.slice(Math.max(0, at - 160), at + 160), pos = Math.min(at, 160);
       const p = nearest(around, pos, CAP_PRIME_W), sb = nearest(around, pos, CAP_STANDBY_W);
       if (ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "))) continue;
       const kind = p < sb && p <= 120 ? "prime" : sb < p && sb <= 120 ? "standby" : null;
-      if (kind) ments.push({ line: i, kind, kva: numOf(m[1]) });
+      if (kind) ments.push({ line: i, kind, kva: numOf(m[1]), unit: m[2].toLowerCase() });
     }
   }
   const belongs = (m) => {
-    const hit = sizes.map((s, j) => [s, j]).filter(([s]) => (m.kind === "prime" ? m.kva >= s.kva * NEAR_LOW && m.kva <= s.kva / NEAR_LOW : m.kva >= s.kva * NEAR_LOW && m.kva <= s.kva * NEAR_HIGH + 1e-9));
+    // A statement in kW is read only when a size of the tender is in kW (IB2300363623: 15 kVA and 5 kW), at 0.8 (5 kW = 6.25 kVA): in
+// a tender in kVA the kW statements (the alternator's, the shaft's) opened blocks of no size inside the block of a size.
+    const hit = sizes.map((s, j) => [s, j]).filter(([s]) => { const v = m.unit === "kw" ? s.kva * 0.8 : s.kva; return m.kind === "prime" ? m.kva >= v * NEAR_LOW && m.kva <= v / NEAR_LOW : m.kva >= v * NEAR_LOW && m.kva <= v * NEAR_HIGH + 1e-9; });
     return hit.length === 1 ? hit[0][1] : -1;
   };
   const runs = [];
@@ -780,7 +800,7 @@ const nearest = (t, i, re) => { let best = Infinity; for (const m of t.matchAll(
 export const powerMins = (t) => powerRead(t).mins;
 // The prime figures and the fuel limits the text gives, and the minimums taken from them.
 export function powerRead(t) {
-  const text = lowest(unflatten(t)), prime = [], fuel = [], secAt = sectionsOf(text);
+  const text = lowest(withoutOtherEquipment(unflatten(t))), prime = [], fuel = [], secAt = sectionsOf(text);
   const pair = (a, ua, b, ub, at) => { const v = { [ua.toLowerCase() === "kva" ? "kVA" : "kW"]: numOf(a) }; Object.defineProperty(v, "sec", { value: secAt(at) }); if (b && ub.toLowerCase() !== ua.toLowerCase()) v[ub.toLowerCase() === "kva" ? "kVA" : "kW"] = numOf(b); return v; };
   for (const m of text.matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*\/\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/gi)) {
     const around = text.slice(Math.max(0, m.index - 160), m.index + 160), at = Math.min(m.index, 160);
@@ -807,7 +827,7 @@ export function powerRead(t) {
     const m = line.match(/(?:c[ôo]ng su[ấa]t\s+(?:li[êe]n t[ụu]c|c[ơo] b[ảa]n)|prime(?:\s+power)?|continuous(?:\s+power)?)[^\n\d≥≤]{0,60}?(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*[\/(]\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/i);
     // "163kVA liên tục Prime/180kVA dự phòng Standby": the labels follow their figures; the 180 is the standby's, and a figure
     // after a label that follows its own figure is none's (2026-11-12 audit).
-    const suffixed = m && /\d\s*(?:kVA|kW)\s*(?:li[êe]n t[ụu]c\s*|continuous\s*|c[ơo] b[ảa]n\s*)?$/i.test(line.slice(0, m.index));
+    const suffixed = m && /^(?:prime|continuous)(?:\s+power)?\s*\/\s*$/i.test(m[0].replace(/\d[\d.,]*\s*(?:kVA|kW)[\s\S]*$/i, "")) && /\d\s*(?:kVA|kW)\s*(?:li[êe]n t[ụu]c\s*|continuous\s*|c[ơo] b[ảa]n\s*)?$/i.test(line.slice(0, m.index));
     if (m && !suffixed && !STANDBY_W.test(line.slice(0, m.index + 20)) && !ENGINE_W.test(m[0])) prime.push(pair(m[1], m[2], m[3], m[4], off));
     STANDBY_W.lastIndex = 0;
   }
@@ -825,11 +845,14 @@ export function powerRead(t) {
   const own = prime.filter((v) => v.sec === "genset"), low = (u) => Math.min(...own.filter((v) => v[u] != null).map((v) => v[u]));
   // In the engine's section only a kW figure (shaft power) is the engine's: a kVA one is a genset's (300, 400, 450 kVA).
   const altFits = (v) => (v.sec === "engine" ? v.kVA == null : v.sec !== "alt" || ["kVA", "kW"].some((u) => v[u] != null && v[u] >= low(u) * 0.995 && v[u] <= low(u) * 1.4));
-  const list = own.length && prime.every(altFits) ? own : prime;
+  // A statement of power in the engine's or the alternator's section is the genset's prime only when no other is given, and then
+  // only if it is the size of the tender (plausible: 2026-11-12, 9 of 30 tenders that had only such statements asked a prime of
+  // another size, 42 kVA for 40): marked `fromOther`.
+  const list = own.length && prime.every(altFits) ? own : prime, viaOther = !own.length;
   const unit = list.some((v) => v.kVA != null) ? "kVA" : "kW", same = list.filter((v) => v[unit] != null).sort((a, b) => a[unit] - b[unit]);
   const p = same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
   // The 75 % and 50 % load limits of the HSMT (2026-11-09: 475 of 1,237 fuel lines of the analyses are at 75 %).
-  return { prime, fuel, mins: { minPrime: p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(fuel.filter((x) => x.load === 75).map((x) => x.v)), maxFuel50: one(fuel.filter((x) => x.load === 50).map((x) => x.v)) } };
+  return { prime, fuel, mins: { minPrime: p && viaOther ? { ...p, fromOther: true } : p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(fuel.filter((x) => x.load === 75).map((x) => x.v)), maxFuel50: one(fuel.filter((x) => x.load === 50).map((x) => x.v)) } };
 }
 // The displacement (L) and the cylinders of an engine as its facts give them.
 // The displacement of an engine in litres as a source gives it: a figure with its unit is taken as it is (litres, or cc /
@@ -880,6 +903,8 @@ export function plausible(hints, cap) {
   const kva = cap.unit === "kVA" ? cap.value : cap.value / 0.8, out = { ...hints }, mp = hints.minPrime;
   const mpKva = mp ? (mp.kVA ?? (mp.kW != null ? mp.kW / 0.8 : null)) : null;
   if (mpKva != null && (mpKva < kva * 0.5 || mpKva > kva * 1.6)) out.minPrime = null;
+  // From the section of the engine or of the alternator: a prime of the genset only if it is the size (±1.2%).
+  else if (mp?.fromOther && mpKva != null && Math.abs(mpKva / kva - 1) > 0.012) out.minPrime = null;
   if (hints.maxFuel != null && (hints.maxFuel < kva * 0.12 || hints.maxFuel > kva * 0.6)) out.maxFuel = null;
   if (hints.maxFuel75 != null && (hints.maxFuel75 < kva * 0.09 || hints.maxFuel75 > kva * 0.45)) out.maxFuel75 = null;
   if (hints.maxFuel50 != null && (hints.maxFuel50 < kva * 0.06 || hints.maxFuel50 > kva * 0.3)) out.maxFuel50 = null;
@@ -934,7 +959,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
       // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
-      const below = (key, min, read) => { const v = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => read(f.value, f)).filter((x) => x != null); return min && v.length && v.every((x) => x < min) ? v[0] : null; };
+      const srcOf = {};
+      const below = (key, min, read) => { const fs = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]).filter(([, x]) => x != null), v = fs.map(([, x]) => x);
+        const hit = min && v.length && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
+        return hit ? v[0] : null; };
       // No displacement given: bore × stroke × cylinders (web/conversions.js displacement), when the sources give them.
       const given = [...ef, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
       const [b, st] = bs ? numbersIn(bs.value) : [], n = z ? numbersIn(z.value)[0] : null;
@@ -964,7 +992,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
       const maker = sync && s?.role === "genset_oem" ? gensetMakerOf(s) : null;
       if (maker) why.push(`tổ máy của chính hãng ${maker} (HSMT đòi đồng bộ thương hiệu)`);
-      if (ruled.length && !isNamed) { dropped.push({ e, u, ruled }); continue; }
+      if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver });
     }
   }
