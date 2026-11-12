@@ -3035,10 +3035,15 @@ ${r.stderr || ""}`, "utf8");
         // What Tìm NCC added to the last result of this size comes back (Khoa, 2026-11-12), with no agent.
         try {
           const meta = fs.existsSync(path.join(dir, "meta.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")) : {};
-          const kept = keepFound(result, prevResult, { suppliers: all, origin: info.origin, hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), basis: meta.basis, sized: !!meta.sized, readWeb: () => null,
+          const kept = keepFound(result, prevResult, { suppliers: all, origin: info.origin, hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), basis: meta.basis, sized: !!meta.sized, readWeb: savedReader(),
             reqHash: (result.requirements || []).some((x) => x.unverified) ? "" : info.reqHash });
-          if (kept.configs || kept.suppliers) console.log(`${key}${size ? ` máy ${size.label}` : ""}: giữ lại từ Tìm NCC ${kept.configs} cấu hình, ${kept.suppliers} nhà cung cấp`);
+          if (kept.configs || kept.suppliers || kept.web) console.log(`${key}${size ? ` máy ${size.label}` : ""}: giữ lại từ Tìm NCC ${kept.configs} cấu hình, ${kept.suppliers} nhà cung cấp; từ internet ${kept.web || 0} cấu hình`);
         } catch (e) { console.log(`${key}: chưa giữ lại được kết quả Tìm NCC trước (${e.message})`); }
+        // The internet pages of the configurations chosen, for the next run to check a kept one against (savePages).
+        try {
+          const sp = savePages(result, dir, { key, size, suppliers: all });
+          if (sp.saved || sp.catalog || sp.skipped.length) console.log(`${key}${size ? ` máy ${size.label}` : ""}: lưu trang internet ${sp.saved} tệp, ${sp.catalog} trang đã có trong danh mục${sp.skipped.length ? `; chưa lưu: ${sp.skipped.join("; ")}` : ""}`);
+        } catch (e) { console.log(`${key}: chưa lưu được trang internet (${e.message})`); }
         // Won goods as a tie-break between configurations the checks rank alike. No history, no tie-break.
         try {
           hist ||= Object.fromEntries((await allDocs("bidhist")).map((d) => [d.id, d.data]));
@@ -3391,7 +3396,7 @@ export function mergeChecked(result, got, { hsmtText, suppliers, origin }) {
 export function keepFound(result, prevResult, { suppliers = [], origin, hsmtText = "", readWeb = () => null, basis, sized = false, reqHash = "" } = {}) {
   const out = { configs: 0, suppliers: 0, dropped: [] };
   const oldCfgs = (prevResult?.configs || []).filter((c) => c && c.engine?.model);
-  if (!oldCfgs.some((c) => c.fromFind || (c.suppliers || []).some((s) => s.fromFind))) return out;
+  if (!oldCfgs.some((c) => c.fromFind || isWebCfg(c) || (c.suppliers || []).some((s) => s.fromFind))) return out;
   const configs = result.configs || (result.configs = []), sup = new Map(suppliers.map((s) => [s.id, s])), keyOf = CAT.keyOf;
   const o = originOfReq(result.origin || origin), cn = cnSuppliers(suppliers);
   const grp = groupSuppliers(suppliers, o, (result.requirements || []).some((r) => r.sync), result.originScope === "parts", result.originBasis === "brand");
@@ -3444,23 +3449,148 @@ export function keepFound(result, prevResult, { suppliers = [], origin, hsmtText
     if (!c.suppliers.length) { out.dropped.push(`cấu hình ${c.engine.model}: không còn nhà cung cấp`); continue; }
     if (!keep.some((x) => sameCfg(x, c))) keep.push(c);
   }
-  const names = [];
-  if (keep.length) {
-    const sub = { requirements: JSON.parse(JSON.stringify(result.requirements || [])), configs: keep };
+  // (4) configurations the agent took from internet pages (Khoa, 2026-11-12, IB2600594596: Rehlko D440, 1st at 05:05Z,
+  // gone at 13:00Z as the agent searched anew): one that stood 1st–3rd when found (webRank) and the new result has no
+  // equal of is kept, at most WEB_KEEP a size, its pages read from where they were saved (savePages: the supplier DB's
+  // source of the same URL, else genbid-work/config-web); a page saved nowhere leaves its checks unclear, as before.
+  // It need not have a supplier (the agent's find may name none). Kept again on every later run that does not choose it.
+  const webKeep = [];
+  for (const old of oldCfgs.filter((x) => isWebCfg(x) && !x.fromFind && (x.webRank ?? x.rank) <= 3 && !configs.some((c) => sameCfg(c, x))).sort((a, b) => (a.webRank ?? a.rank) - (b.webRank ?? b.rank))) {
+    if (webKeep.length >= WEB_KEEP || [...keep, ...webKeep].some((x) => sameCfg(x, old))) continue;
+    const c = JSON.parse(JSON.stringify(old));
+    c.webRank = old.webRank ?? old.rank;
+    c.rank = Math.max(0, ...configs.map((x) => x.rank || 0), ...keep.map((x) => x.rank), ...webKeep.map((x) => x.rank)) + 1;
+    c.keptWeb = true;
+    for (const part of PARTS) if (c[part]?.src?.kind === "internet") c[part].src = savedSrc(c[part].src, suppliers);
+    c.suppliers = (c.suppliers || []).map((s) => entryFor(c, s) || (out.dropped.push(`${s.supplierId}: không giữ cho cấu hình ${c.engine.model}`), null)).filter(Boolean).map((s) => { if (!old.suppliers?.find((x) => x.supplierId === s.supplierId)?.fromFind) delete s.fromFind; return s; });
+    // None left (its row was read again since): the supplier whose saved page it was, with a table row of this engine
+    // (a fromLine row too), as mergeFind would join it.
+    if (!c.suppliers.length) {
+      for (const id of new Set(PARTS.map((p) => c[p]?.src?.saved?.supplierId).filter(Boolean))) {
+        const rec = sup.get(id), u = rec && CAT.build([rec]).engines.find((e) => e.key === keyOf(c.engine.model))?.uses.find((x) => x.line);
+        const e = u && entryFor(c, { supplierId: id, n: u.n, line: u.line });
+        if (e) { delete e.fromFind; c.suppliers.push(e); }
+      }
+    }
+    webKeep.push(c);
+  }
+  const names = [], webNames = [];
+  if (keep.length || webKeep.length) {
+    const all = [...keep, ...webKeep], web = new Set(webKeep.map((x) => x.rank));
+    const sub = { requirements: JSON.parse(JSON.stringify(result.requirements || [])), configs: all };
     const { result: done } = check(sub, { hsmtText, suppliers, readWeb, origin, basis, sized });
-    for (const k of keep) if (!done.configs.some((c) => c.rank === k.rank)) out.dropped.push(`cấu hình ${k.engine.model}: bị bỏ khi kiểm lại theo luật của lượt này`);
+    for (const k of all) if (!done.configs.some((c) => c.rank === k.rank)) out.dropped.push(`cấu hình ${k.engine.model}: bị bỏ khi kiểm lại theo luật của lượt này`);
     for (const c of done.configs) {
+      if (web.has(c.rank)) {
+        c.keptWeb = true; c.webRank = webKeep.find((x) => x.rank === c.rank).webRank;
+        if (!sameReq) c.gaps = [...(c.gaps || []), "Các điểm đối chiếu của cấu hình này là của lần đọc HSMT trước (yêu cầu lượt này khác): bấm Gợi ý lại hoặc Tìm NCC để đối chiếu."];
+        configs.push(c); webNames.push(`${c.engine.model}`);
+        continue;
+      }
       if (!c.suppliers?.length) { out.dropped.push(`cấu hình ${c.engine?.model}: không còn nhà cung cấp`); continue; }
       c.fromFind = true; c.keptFind = true;
       if (!sameReq) c.gaps = [...(c.gaps || []), "Các điểm đối chiếu của cấu hình này là của lần đọc HSMT trước (yêu cầu lượt này khác): bấm Tìm NCC lại để đối chiếu."];
       configs.push(c); names.push(`${c.engine.model}`);
     }
     out.configs = names.length;
+    out.web = webNames.length;
   }
   if (out.configs || out.suppliers) {
     result.notes = [...(result.notes || []), `Giữ lại từ Tìm NCC lần trước (không chạy lại agent): ${[out.configs && `${out.configs} cấu hình (${names.join(", ")})`, out.suppliers && `${out.suppliers} nhà cung cấp (${sups.join(", ")})`].filter(Boolean).join("; ")}.${out.configs && !sameReq ? " Yêu cầu lượt này khác lượt trước nên điểm đối chiếu của cấu hình giữ lại là của lần đọc trước." : ""}`];
-    rankConfigs(result);
   }
+  if (out.web) {
+    result.notes = [...(result.notes || []), `Giữ lại cấu hình tìm trên internet ở lượt trước (không chạy lại agent, đối chiếu lại với trang đã lưu): ${webNames.join(", ")}.${!sameReq ? " Yêu cầu lượt này khác lượt trước nên điểm đối chiếu của cấu hình giữ lại là của lần đọc trước." : ""}`];
+  }
+  if (out.configs || out.suppliers || out.web) rankConfigs(result);
+  return out;
+}
+// ---------- pages of internet finds kept for the next run (Khoa 2026-11-12, "làm thêm phần lưu trang") ----------
+// A configuration the agent took from an internet page names it as src { kind: "internet", url, file: "web/N.txt" } of
+// the run's folder, which the next run deletes. savePages keeps each page of the configurations chosen: a page whose URL
+// is a source of a supplier record (addToCatalog put it there, suppliers/sources/<id>/<n>.md) is that source; any other
+// is copied to genbid-work/config-web/<key>/<size>/<sha1 of URL>.txt (outside git; at most WEB_PAGES a size and
+// WEB_MAX_BYTES a page). src.saved records where (a few bytes in configmatch, never the page itself: egress).
+export const WEB_KEEP = 2, WEB_PAGES = 12, WEB_MAX_BYTES = 2 * 1024 * 1024;
+const CONFIG_WEB = process.env.GENBID_CONFIG_WEB || path.join(path.dirname(TOKEN_FILE), "genbid-work", "config-web");
+const isWebCfg = (c) => PARTS.some((p) => c?.[p]?.src?.kind === "internet");
+const urlKey = (u) => String(u || "").trim().replace(/^https?:\/\//i, "").replace(/\/$/, "").toLowerCase();
+const pageUrl = (txt) => ((txt || "").split("\n", 1)[0] || "").replace(/^URL:\s*/, "").trim();
+// The supplier record's source of this URL with its page saved in the repo. One URL may be saved twice, read apart
+// differently (Rehlko d440-0525.pdf: n 2003 and 2008): the one holding `quote` first.
+export function catalogPageOf(suppliers, url, sourcesDir = path.join(ROOT, "sources"), quote = "") {
+  const k = urlKey(url), found = [];
+  if (!k) return null;
+  for (const s of suppliers || []) for (const x of s?.sources || []) {
+    const f = path.join(sourcesDir, String(s.id), `${x.n}.md`);
+    if (urlKey(x.url) === k && fs.existsSync(f)) found.push({ supplierId: s.id, n: x.n, f });
+  }
+  const q = quote ? norm(quote) : "", hit = (q && found.find((x) => norm(fs.readFileSync(x.f, "utf8")).includes(q))) || found[0];
+  return hit ? { supplierId: hit.supplierId, n: hit.n } : null;
+}
+// A kept configuration's src: the file name check() reads through savedReader.
+export function savedSrc(src, suppliers, sourcesDir) {
+  const out = { ...src }, at = src.saved && typeof src.saved === "object" ? src.saved : !src.saved ? catalogPageOf(suppliers, src.url, sourcesDir, src.quote) : null;
+  if (at) { out.saved = at; out.file = `catalog:${at.supplierId}/${at.n}`; }
+  else if (typeof src.saved === "string") out.file = `saved:${src.saved}`;
+  return out;
+}
+// readWeb for kept configurations: "saved:<key>/<size>/<hash>.txt" under config-web, "catalog:<id>/<n>" a supplier
+// source; nothing outside those folders.
+export function savedReader({ root = CONFIG_WEB, sourcesDir = path.join(ROOT, "sources") } = {}) {
+  const inside = (base, rel) => { const p = path.resolve(base, rel); return p.startsWith(path.resolve(base) + path.sep) ? p : null; };
+  return (f) => {
+    const m = /^(saved|catalog):(.+)$/.exec(String(f || ""));
+    if (!m) return null;
+    const p = m[1] === "saved" ? inside(root, m[2]) : (/^[\w.-]+\/\d+$/.test(m[2]) ? inside(sourcesDir, `${m[2]}.md`) : null);
+    return p && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null;
+  };
+}
+// keepFound of an older result into a copy of the current one, size by size (restore-web): { result, lines }.
+export function restoreWeb(current, older, { suppliers = [], hsmtText = "", root, sourcesDir, origin = "all" } = {}) {
+  const result = JSON.parse(JSON.stringify(current || {})), lines = [], readWeb = savedReader({ ...(root ? { root } : {}), ...(sourcesDir ? { sourcesDir } : {}) });
+  const pairs = result.sizes ? result.sizes.map((s) => [s, s.result, older?.sizes?.find((x) => sameSize(x, s))?.result]) : [[null, result, older?.sizes ? null : older]];
+  for (const [s, cur, prev] of pairs) {
+    if (!cur || !prev) continue;
+    const before = (cur.configs || []).length;
+    const k = keepFound(cur, prev, { suppliers, origin: cur.originAuto?.origin || result.originAuto?.origin || cur.origin || result.origin || origin, hsmtText, readWeb, basis: cur.originBasis, sized: !!result.sizes, reqHash: cur.reqHash || "" });
+    const label = s ? `máy ${s.label}: ` : "";
+    if (!k.web && !k.configs && !k.suppliers) { lines.push(`${label}không có gì để khôi phục${k.dropped.length ? ` (${k.dropped.join("; ")})` : ""}`); continue; }
+    for (const c of (cur.configs || []).filter((c) => c.keptWeb || c.keptFind)) {
+      const st = {}; for (const x of c.checks || []) st[x.status] = (st[x.status] || 0) + 1;
+      const unread = PARTS.filter((p) => c[p]?.unverified).map((p) => `${p} ${c[p].model}`);
+      lines.push(`${label}#${c.rank} ${c.engine?.model}${c.genset?.model ? ` / ${c.genset.model}` : ""} (${c.keptWeb ? "internet" : "Tìm NCC"}; nguồn: ${PARTS.filter((p) => c[p]?.src?.file).map((p) => `${p} ${c[p].src.file}`).join(", ")}) — ${JSON.stringify(st)}; NCC: ${(c.suppliers || []).map((x) => x.supplierId).join(", ") || "không"}${unread.length ? `; chưa đối chiếu được nguồn: ${unread.join(", ")}` : ""}`);
+    }
+    lines.push(`${label}${before} → ${(cur.configs || []).length} cấu hình${k.dropped.length ? `; bỏ: ${k.dropped.join("; ")}` : ""}`);
+  }
+  return { result, lines };
+}
+export const sizeTag = (size) => (size ? `${size.kva ?? size.cap?.value}${size.kva != null ? "kVA" : size.cap?.unit || ""}`.replace(/[^\w.-]/g, "") : "all");
+// Keeps the pages of the configurations in `result` (src.saved), webRank on each configuration the agent took from the
+// internet, and removes the pages of that size no configuration points at any more. Returns { catalog, saved, skipped }.
+export function savePages(result, dir, { key, size = null, suppliers = [], root = CONFIG_WEB, sourcesDir = path.join(ROOT, "sources") } = {}) {
+  const out = { catalog: 0, saved: 0, skipped: [] }, rel = `${String(key).replace(/[^\w-]/g, "")}/${sizeTag(size)}`, folder = path.join(root, rel), used = new Set();
+  for (const c of result.configs || []) {
+    if (isWebCfg(c) && c.webRank == null) c.webRank = c.rank;
+    for (const part of PARTS) {
+      const src = c[part]?.src;
+      if (src?.kind !== "internet") continue;
+      if (typeof src.saved === "string") { used.add(path.basename(src.saved)); continue; }
+      if (src.saved) continue;
+      const txt = src.file && /^web\/\d+\.txt$/.test(src.file) && fs.existsSync(path.join(dir, src.file)) ? fs.readFileSync(path.join(dir, src.file), "utf8") : null;
+      // The supplier DB's copy only when it holds the quote (the run's own page may be read apart otherwise).
+      const url = src.url || pageUrl(txt), cat = catalogPageOf(suppliers, url, sourcesDir, src.quote);
+      const holds = cat && (!src.quote || norm(fs.readFileSync(path.join(sourcesDir, String(cat.supplierId), `${cat.n}.md`), "utf8")).includes(norm(src.quote)));
+      if (cat && (holds || !txt)) { src.saved = cat; out.catalog++; continue; }
+      if (!txt) { out.skipped.push(`${part} ${c[part].model}: không có trang`); continue; }
+      if (Buffer.byteLength(txt) > WEB_MAX_BYTES) { out.skipped.push(`${part} ${c[part].model}: trang quá lớn`); continue; }
+      const name = `${createHash("sha1").update(urlKey(url) || txt).digest("hex").slice(0, 12)}.txt`;
+      if (!used.has(name) && used.size >= WEB_PAGES) { out.skipped.push(`${part} ${c[part].model}: quá ${WEB_PAGES} trang`); continue; }
+      fs.mkdirSync(folder, { recursive: true });
+      if (!used.has(name)) { fs.writeFileSync(path.join(folder, name), txt, "utf8"); out.saved++; }
+      used.add(name); src.saved = `${rel}/${name}`;
+    }
+  }
+  if (fs.existsSync(folder)) for (const f of fs.readdirSync(folder)) if (!used.has(f)) fs.rmSync(path.join(folder, f), { force: true });
   return out;
 }
 const mergeText = (m) => (!m ? "chưa có cấu hình gợi ý để bổ sung (bấm Gợi ý)" : !m.joined.length && !m.created.length ? "không có dòng bảng nào đúng công suất và xuất xứ để bổ sung vào cấu hình" : [m.joined.length && `bổ sung ${m.joined.map((j) => `${j.supplierId} vào cấu hình #${j.rank}${j.label ? ` máy ${j.label}` : ""}`).join(", ")}`, m.created.length && `thêm ${m.created.length} cấu hình mới${m.checked?.checked ? ` (đã đối chiếu HSMT ${m.checked.checked} cấu hình)` : " (chưa đối chiếu đủ HSMT)"}, mỗi cấu hình chỉ có nhà cung cấp vừa tìm được (${m.created.map((c) => c.supplierId).join(", ")})`].filter(Boolean).join("; "));
@@ -3702,6 +3832,19 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     const m = await mergeFindIntoConfig(key, records, { cap: f?.result?.cap, origin: (await doc("findreq", key))?.origin, suppliers });
     if (f?.result) await post([{ coll: "findmatch", id: key, data: { ...f, result: { ...f.result, configMerge: mergeText(m) } } }]);
     console.log(`${key}: ${mergeText(m)}${m ? ` ${JSON.stringify(m)}` : ""}`);
+  } else if (cmd === "restore-web") {
+    // Read-only: what keepFound would put back into configmatch/<key> from an older result (--from, a configmatch.json
+    // of doc-cache, a configmatch document or a result). Prints it and, with --out, writes the whole result there;
+    // nothing is posted (whoever reviews it posts it).
+    const key = arg("key"), read = (f) => JSON.parse(fs.readFileSync(f, "utf8"));
+    const resultOf = (j) => j?.docs?.[key]?.d?.result || j?.[key]?.d?.result || j?.result || j;
+    const old = resultOf(read(arg("from"))), cur = arg("current") ? resultOf(read(arg("current"))) : (await doc("configmatch", key))?.result;
+    const suppliers = arg("suppliers") ? Object.values(read(arg("suppliers")).docs || {}).map((x) => x.d).filter(Boolean) : (await api("kind=docs&coll=supplier")).map((d) => d.data);
+    const hsmtText = arg("hsmt") ? fs.readFileSync(arg("hsmt"), "utf8") : (await hsmtTextOf(key)).text;
+    const origin = arg("origin") || (await doc("configreq", key).catch(() => null))?.origin || "all";
+    const { result, lines } = restoreWeb(cur, old, { suppliers: suppliers.filter((s) => s && s.status !== "incomplete"), hsmtText, origin: ORIGIN[origin] ? origin : "all" });
+    console.log(lines.join("\n") || "Không có gì để khôi phục.");
+    if (arg("out")) { fs.writeFileSync(arg("out"), JSON.stringify(result, null, 1), "utf8"); console.log(`Đã ghi ${arg("out")} (chưa gửi lên web).`); }
   } else if (cmd === "run") {
     const lock = path.join(os.tmpdir(), "genbid-config.lock");
     // A lock left by a run that died (killed, node exit 13) used to hold every request for an hour (2026-11-03): it counts
