@@ -909,6 +909,10 @@ export const litres = (v) => {
   if (!m) return null;
   const n = numOf(m[0]), unit = s.slice(m.index + m[0].length).match(/^\s*(cc|cm\s?[3³]|ml|l[íi]t|lit|liter|litre|ltr|L)\b/i)?.[1] || "";
   if (/^(cc|cm|ml)/i.test(unit)) return n / 1000;
+  // In litres a figure written with three decimals ("9.726L", "1,116 L") is no thousand: an engine of 9726 L is none
+  // (westinpower "Displacement | 9.726L" was read 9726 L, 2026-11-12). One separator: the decimal point; more: no figure.
+  // Over 100 L in plain decimals stays (Yuchai YC16VC "105,56 L", Weichai 8WH32 257 L).
+  if (unit && n > 100 && /[.,]/.test(m[0]) && /^\d{1,3}(?:[.,]\d{3})+$/.test(m[0])) return /^\d{1,3}[.,]\d{3}$/.test(m[0]) ? Number(m[0].replace(",", ".")) : null;
   if (unit) return n;
   return n <= 100 ? n : n > 130 ? n / 1000 : null;
 };
