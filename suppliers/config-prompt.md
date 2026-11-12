@@ -27,7 +27,7 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   elsewhere, unless input.md has a "Đồng bộ thương hiệu" section (then suppliers of every country stay).
 - `hsmt.txt`: the tender's own text. Every requirement quote must be copied from here.
 - `catalog.md`, prepared and ranked by code (Khoa, 2026-11-02):
-  - "Ứng viên": the best genset rows of the system for this tender, best first (power 100–120%, the HSMT's frequency,
+  - "Ứng viên": the best genset rows of the system for this tender, best first (power 100–120%, or 100–140% for a genset of 30 kVA or less, the HSMT's frequency,
     the engine origin asked for), each exactly as on the supplier's website with `supplierId` / `n` / `line`, the
     figures read from it, the controllers named in the row or offered by that supplier, and why it ranks there.
     The code ranks the engine model / make and the controller the HSMT names first, then engines with more sourced
