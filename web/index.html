@@ -146,7 +146,8 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .cfgblk+.cfgblk{margin-top:12px}
 .cfgsupdel{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.cfgdelbtn{padding:3px 6px;color:var(--red);flex-shrink:0}
 .cfglist{display:flex;flex-direction:column;gap:6px;margin:8px 0}.cfglist>.cfgcard,.cfglist>.cfgcard[open]+.cfgcard{margin:0}.cfgcard>summary{align-items:center}.cfgcard[open]>summary{margin-bottom:6px}.cfgcard .cfgparts{font-weight:400}
-.cfggrid{margin:6px 0}.cfggrid>summary{padding:4px 0;align-items:center}.cfggrid[open]>summary{margin-bottom:4px}
+.cfggrid{margin:6px 0}.gfilt{cursor:pointer;font-family:inherit}.gfilt:hover{filter:brightness(1.2)}.gfilt.on{outline:2px solid currentColor;outline-offset:1px}
+.cfggrid[data-filt="met"] tr[data-st]:not([data-st="met"]),.cfggrid[data-filt="not_met"] tr[data-st]:not([data-st="not_met"]),.cfggrid[data-filt="unclear"] tr[data-st]:not([data-st="unclear"]),.cfggrid[data-filt="confirm"] tr[data-st]:not([data-st="confirm"]){display:none}.cfggrid>summary{padding:4px 0;align-items:center}.cfggrid[open]>summary{margin-bottom:4px}
 .kpi.bplev{cursor:default}.kpi.bplev .kv{font-size:20px}
 /* Giá gợi ý: each level its own colour, none violet (Khoa, 2026-11-04). */
 .kpi.bp-low{--kc:var(--mint)}.kpi.bp-mid{--kc:var(--blue)}.kpi.bp-high{--kc:var(--orange)}
@@ -3892,11 +3893,21 @@ const sizeTitle = (z) => `Máy ${z.qty ? `${z.qty} x ` : ""}${z.label}`;
 // starts closed when the tab is opened (Khoa, 2026-11-05); one opened stays open while the tab is drawn again on a
 // change: sizeOpen holds "<tab>|<key>|<label>" and is emptied when a tender or a tab is opened (openSizesReset).
 // var and a function declaration: a tender opened from the URL at load runs openSizesReset before this line.
-var sizeOpen = new Set(), sizeShut = new Set();
-function openSizesReset() { sizeOpen?.clear(); sizeShut?.clear(); }
+var sizeOpen = new Set(), sizeShut = new Set(), gridFilt = new Map();
+function openSizesReset() { sizeOpen?.clear(); sizeShut?.clear(); gridFilt?.clear(); }
 // A box drawn open by default (data-def="open", cấu hình #1) remembers being closed instead (sizeShut).
 const boxOpen = (id, def) => (def ? !sizeShut?.has(id) : !!sizeOpen?.has(id));
 const sizeBox = (id, head, body) => h`<details class="sizebox" data-sizebox="${id}" ${sizeOpen?.has(id) ? "open" : ""}><summary class="sizehead" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span>${raw(head)}</summary>${raw(body)}</details>`;
+document.addEventListener("click", (e) => {
+  const b = e.target.closest?.("[data-gfilt]"), d = b?.closest("details.cfggrid");
+  if (!d) return;
+  e.preventDefault(); // bấm chip nằm trong <summary>: không thu gọn lưới
+  const id = d.dataset.sizebox, k = d.dataset.filt === b.dataset.gfilt ? "" : b.dataset.gfilt;
+  k ? gridFilt.set(id, k) : gridFilt.delete(id);
+  d.dataset.filt = k;
+  d.querySelectorAll("[data-gfilt]").forEach((x) => { const on = x.dataset.gfilt === k; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); x.title = gfiltTitle(on, x.dataset.l); });
+  if (k && !d.open) d.open = true;
+});
 document.addEventListener("toggle", (e) => {
   const id = e.target.dataset?.sizebox;
   if (!id || !sizeOpen) return;
@@ -3960,11 +3971,15 @@ function cfgWonHtml(c, key, size) {
 }
 // Lưới kiểm tra của mỗi cấu hình thu gọn sẵn (Khoa, 2026-11-10): tiêu đề đếm Đạt / Không đạt / Chưa rõ; mở ra thì giữ
 // mở khi tab vẽ lại (sizeOpen, xoá khi mở gói / tab khác).
+// Bấm một chip đếm (Đạt / Chưa rõ / Cần NCC xác nhận...) thì lưới chỉ hiện các dòng có kết quả đó; bấm lại để bỏ lọc
+// (Khoa, 2026-11-13). Lọc bằng CSS theo data-filt trên <details> và data-st trên mỗi dòng; giữ qua lần vẽ lại (gridFilt).
+const cfgGridSt = (x) => (x.status === "not_met" ? "not_met" : x.status === "confirm" ? "confirm" : x.status === "met" && !x.unverified ? "met" : "unclear");
+const gfiltTitle = (on, l) => (on ? "Bấm để hiện lại tất cả yêu cầu" : `Chỉ hiện các yêu cầu ${l}`);
 function cfgGridBox(id, checks, body) {
-  const of = (x) => (x.status === "not_met" ? "not_met" : x.status === "confirm" ? "confirm" : x.status === "met" && !x.unverified ? "met" : "unclear");
-  const cnt = [["met", "ok"], ["not_met", "bad"], ["unclear", "warn"], ["confirm", "cfm"]].map(([k, c]) => [checks.filter((x) => of(x) === k).length, c, CFG_STATUS[k][0]])
-    .filter(([v]) => v).map(([v, c, l]) => h`<span class="chip ${c}">${l} ${v}</span>`).join("");
-  return h`<details class="sizebox cfggrid" data-sizebox="${id}" ${sizeOpen?.has(id) ? "open" : ""}><summary class="small" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b>Đối chiếu yêu cầu HSMT (${checks.length})</b>${raw(cnt)}</summary>${raw(body)}</details>`;
+  const f = gridFilt?.get(id) || "";
+  const cnt = [["met", "ok"], ["not_met", "bad"], ["unclear", "warn"], ["confirm", "cfm"]].map(([k, c]) => [k, checks.filter((x) => cfgGridSt(x) === k).length, c, CFG_STATUS[k][0]])
+    .filter(([, v]) => v).map(([k, v, c, l]) => h`<button type="button" class="chip ${c} gfilt${f === k ? " on" : ""}" data-gfilt="${k}" data-l="${l}" aria-pressed="${f === k}" title="${gfiltTitle(f === k, l)}">${l} ${v}</button>`).join("");
+  return h`<details class="sizebox cfggrid" data-sizebox="${id}" data-filt="${f}" ${sizeOpen?.has(id) || f ? "open" : ""}><summary class="small" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b>Đối chiếu yêu cầu HSMT (${checks.length})</b>${raw(cnt)}</summary>${raw(body)}</details>`;
 }
 // Tổ máy HSMT nêu đích danh (config-bot.mjs + named-genset.mjs, Khoa 2026-11-12, IB2600601812): đầu kết quả ghi hãng / model
 // HSMT nêu, dòng "chưa có nguồn thông số" khi không cấu hình nào đúng model, và cảnh báo khi HSMT không cho hàng tương đương.
@@ -3997,7 +4012,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
       ${raw(c.checks?.length ? cfgGridBox(`cfggrid|${key}|${size}|${c.rank || i + 1}`, c.checks, h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Yêu cầu HSMT</th><th>Cấu hình chào</th><th>Kết quả</th></tr></thead><tbody>${raw(c.checks.map((x) => {
         const st = cfgStOf(x);
         // factSrc: a figure of this engine / alternator model from another supplier's row or datasheet (config-bot.mjs modelFacts).
-        return h`<tr><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bộ điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(SHOW_SRC && x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
+        return h`<tr data-st="${cfgGridSt(x)}"><td data-l="Yêu cầu"><b>${x.item || ""}</b> ${x.requirement || ""}${raw(x.level === "option" ? ' <span class="chip mut" title="Nhà cung cấp chọn khi đặt hàng, không đổi model động cơ / đầu phát / bộ điều khiển">Tùy chọn khi đặt hàng</span>' : "")}${raw(SHOW_SRC && x.hsmtQuote ? h`<div class="muted small">HSMT: <q>${x.hsmtQuote}</q></div>` : "")}</td>
           <td data-l="Chào" class="small">${x.offered || "—"}${raw(SHOW_SRC && x.sourceQuote ? h`<div class="muted small">Nguồn${x.factSrc ? ` (thông số của model, trên trang ${x.factSrc.supplierId})` : ""}: <q>${x.sourceQuote}</q></div>` : "")}${raw(cfgConvHtml(x))}${raw(cfgPartsHtml(x))}${raw(cfgHintHtml(x))}</td>
           <td data-l="Kết quả"><span class="chip ${st[1]}">${st[0]}</span>${raw(x.unverified ? '<div><span class="chip warn" title="Code không tìm thấy nguyên văn trích dẫn trong HSMT hoặc trong nguồn">⚠ chưa khớp nguồn</span></div>' : "")}${raw(x.note ? h`<div class="muted small">${x.note}</div>` : "")}</td></tr>`;
       }).join(""))}</tbody></table></div>`) : "")}
