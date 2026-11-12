@@ -751,7 +751,16 @@ const CONF = { high: 30, medium: 15 };
 // A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
 // Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
-const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12, MAKE_ROWS = 3;
+const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12, MAKE_ROWS = 3, SYNC_ROWS = 6, SYNC_PER_SUPPLIER = 2;
+// The make of a genset maker for Đồng bộ thương hiệu (syncCheck): a supplier that is no distributor, whose name or id is
+// of a make (web/bidprice.js familyOf). A Chinese company whose name carries a foreign make ("… Cummins Power …") is an
+// assembler, not that maker: null, as is an assembler whose name is no make (cgm-italia).
+const CN_FAMILY = new Set(["Weichai", "Yuchai", "SDEC", "Nianfeng", "Bobig", "Jet-Power", "Wintpower", "SmartGen", "Harsen", "Mebay", "Lixise"]);
+export function gensetMakerOf(r) {
+  if (!r || r.role === "distributor") return null;
+  const f = BP.familyOf(r.names?.en, r.id);
+  return f && r.country === "CN" && !CN_FAMILY.has(f) ? null : f || null;
+}
 // The minimums of the HSMT that fit the genset of this run: a tender of several sizes gives the fuel of its small one
 // (104 L/h beside 2500 kVA), an OCR slip a prime of 107 kVA for 8.5 kVA, "lưu lượng dầu đến bơm ≤ 450 lít/giờ" a fuel
 // limit for 500 kVA (2026-11-03 scan of 390 HSMT). Such a figure would rank every candidate down: left out.
@@ -769,7 +778,7 @@ export function plausible(hints, cap) {
   if (hints.maxDisp != null && ((out.minDisp != null && hints.maxDisp < out.minDisp) || hints.maxDisp < kva * 0.01)) out.maxDisp = null;
   return out;
 }
-export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30 } = {}) {
+export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a]));
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * 0.95 && p[cap.unit] <= cap.value * 1.4);
   const rows = [];
@@ -823,7 +832,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
       if (cap) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
-      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed });
+      const maker = sync && s?.role === "genset_oem" ? gensetMakerOf(s) : null;
+      if (maker) why.push(`tổ máy của chính hãng ${maker} (HSMT đòi đồng bộ thương hiệu)`);
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker });
     }
   }
   rows.sort((x, y) => y.score - x.score);
@@ -837,6 +848,29 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       seen.add(k); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r);
     }
   };
+  // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
+  // size, or that gives neither, last.
+  const gap = (r) => {
+    const p = r.u.power || {}, pr = p.prime?.[cap?.unit] ?? (p.standby?.[cap?.unit] != null ? p.standby[cap.unit] / 1.1 : null);
+    return !cap ? 0 : pr == null ? 50 : pr < cap.value * 0.995 ? 99 : Math.round(20 * (pr / cap.value - 1));
+  };
+  // Đồng bộ thương hiệu asked (Khoa, 2026-11-12, IB2600594596): the rows of genset makers (gensetMakerOf, as syncCheck
+  // reads them) keep SYNC_ROWS places, SYNC_PER_SUPPLIER engines a maker, the size nearest the HSMT's first. Their rows
+  // name no alternator or controller datasheet and scored below every assembler's (Rehlko D440 / P158LE 165, the 30th
+  // row 248), so the 30 rows were all assemblers' whose sets syncCheck then marks not met. A row the HSMT rules out
+  // (score 0 or below) keeps no place.
+  // One row of each maker first, then a second engine of each: the first measure gave all 6 places to three makers in
+  // China with two rows each (Jet-Power, Bobig, Wintpower) and none to Rehlko, FG Wilson or Cummins at 300 kVA.
+  if (sync) {
+    const order = (x, y) => gap(x) - gap(y) || y.score - x.score, bySup = new Map();
+    for (const r of rows.filter((r) => r.maker && r.score > 0).sort(order)) {
+      const list = bySup.get(r.u.supplierId) || [];
+      if (list.length < SYNC_PER_SUPPLIER && !list.some((x) => x.e.key === r.e.key)) bySup.set(r.u.supplierId, [...list, r]);
+    }
+    const rounds = Array.from({ length: SYNC_PER_SUPPLIER }, (_, i) => [...bySup.values()].map((l) => l[i]).filter(Boolean).sort(order));
+    pick(rounds.flat(), Math.min(max, out.length + SYNC_ROWS));
+  }
+  const held = new Set(out);
   // No origin required (no G7 / G20 in the HSMT): Chinese makes keep CN_ROWS of the rows (Khoa, 2026-11-05: a Chinese
   // configuration that meets the HSMT better goes first, so it must be among the suggestions). Foreign engines have
   // more datasheet figures and would otherwise fill the rows. Not when the HSMT names an engine make or model.
@@ -851,13 +885,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const m = (r.e.make || "").split(" / ")[0];
       if (m && r.score > 0) byMake.set(m, [...(byMake.get(m) || []), r]);
     }
-    // Within a make, the size nearest the HSMT's first (in steps of 5%), then the score: Baudouin's 12M26G900/5 (815 kVA)
-    // had more figures than 6M31G825/5 (750 kVA) for 700 kVA.
-    // The prime output (standby ÷ 1.1 when only that is given); a row below the HSMT's size, or that gives neither, last.
-    const gap = (r) => {
-      const p = r.u.power || {}, pr = p.prime?.[cap?.unit] ?? (p.standby?.[cap?.unit] != null ? p.standby[cap.unit] / 1.1 : null);
-      return !cap ? 0 : pr == null ? 50 : pr < cap.value * 0.995 ? 99 : Math.round(20 * (pr / cap.value - 1));
-    };
+    // Within a make, the size nearest the HSMT's first (gap, in steps of 5%), then the score: Baudouin's 12M26G900/5
+    // (815 kVA) had more figures than 6M31G825/5 (750 kVA) for 700 kVA.
     for (const list of [...byMake.values()].sort((a, b) => b[0].score - a[0].score)) {
       const engines = new Set();
       const mine = [...list].sort((x, y) => gap(x) - gap(y) || y.score - x.score).filter((r) => !engines.has(r.e.key) && engines.add(r.e.key));
@@ -865,8 +894,32 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     }
   }
   pick(rows, max);
+  // The places held for genset makers push no row of a configuration the last run chose (Khoa 2026-11-12: `keep`, the
+  // supplierId + engine key of each, from prevResult): such a row the list would have had without them comes back in
+  // place of the lowest-scored row that is neither held nor of the last run.
+  if (sync && keep?.size) {
+    const kept = (r) => keep.has(`${r.u.supplierId}\n${r.e.key}`);
+    const plain = candidates(cat, cap, hints0, { suppliers, origin, cn, facts, focus, max }).top;
+    for (const r of plain.filter((r) => kept(r) && !out.some((x) => choiceKey(x) === choiceKey(r)))) {
+      const gone = out.filter((x) => !held.has(x) && !kept(x)).sort((x, y) => x.score - y.score)[0];
+      if (!gone) break;
+      out.splice(out.indexOf(gone), 1, r);
+    }
+  }
   out.sort((x, y) => y.score - x.score);
   return { top: out, all: rows };
+}
+// The rows of the configurations a result chose (candidates `keep`): supplierId + engine key of each supplier and of
+// the engine's catalog source.
+export function keepOf(result) {
+  const out = new Set();
+  for (const c of result?.configs || []) {
+    const k = c.engine?.model && CAT.keyOf(c.engine.model);
+    if (!k) continue;
+    for (const s of c.suppliers || []) if (s.supplierId) out.add(`${s.supplierId}\n${k}`);
+    if (c.engine.src?.kind === "catalog" && c.engine.src.supplierId) out.add(`${c.engine.src.supplierId}\n${k}`);
+  }
+  return out;
 }
 // At most 6 configurations (Khoa 2026-11-03: a run checked 49 requirements × 8 configurations in 11 minutes).
 export const MAX_CONFIGS = 6, PER_MAKE_CONFIGS = 2;
@@ -897,6 +950,9 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   // A table whose models run across: each row with this model's own cell after it, so no other column is taken; the
   // row is quoted whole (check takes the figure from that column).
   const rowText = (u) => {
+    // A one-model genset datasheet whose power row names no engine (catalog.js fromLine): the engine is the record's
+    // product line of that source, as mergeFind says; src.line is the power row, word for word.
+    if (u.fromLine) return `  line: ${u.line}\n  (động cơ ${u.model || ""} theo dòng sản phẩm của bản ghi: datasheet tổ máy${u.genset ? ` ${u.genset}` : ""} một model, chữ trang tách cột nên không dòng nào ghi cả động cơ và công suất; dòng trên là dòng bảng ghi công suất, dùng làm src.line / suppliers[].line)`;
     if (u.line) return `  line: ${u.line}`;
     const rows = u.lines?.rows || [], k = CAT.keyOf(u.model || ""), cells = rows.map(CAT.cellsOf);
     const at = cells.find((cs) => cs.length >= 3 && cs.slice(1).some((x) => CAT.keyOf(x) === k));
@@ -1103,7 +1159,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   // the same engine in a Chinese table); only the rows offered as configurations are those of the group's suppliers.
   const facts = grp ? modelFacts({ ...full, engines: byOrigin(full.engines, origin, cn) }, all) : undefined;
   const offGroup = grp ? new Set(byOrigin(full.engines, origin, cn).flatMap((e) => (e.uses || []).map((u) => u.supplierId)).filter((id) => !grp.has(id))).size : 0;
-  const { md, ctlMd, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, ...(facts ? { facts } : {}) });
+  const { md, ctlMd, shown, top } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, keep: keepOf(reqData.prevResult), ...(facts ? { facts } : {}) });
   fs.writeFileSync(path.join(dir, "catalog.md"), md + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))), "utf8");
   if (ctlMd) fs.writeFileSync(path.join(dir, "controllers.md"), ctlMd, "utf8");
   // Lets the agent run `check --dir .` itself, offline, instead of reading this script to check by hand.
@@ -1324,6 +1380,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     return t ? { off: cells.length - j, t } : null;
   };
   // The text a part's facts must come from: its catalog row (and table header), or its saved web page.
+  // The fromLine row (web/catalog.js) a catalog source is, when its engine is this model.
+  const fromLineOf = (src, model) => src?.kind === "catalog" && model ? (built.engines || []).flatMap((e) => (e.key === CAT.keyOf(model) ? e.uses : []))
+    .find((u) => u.fromLine && u.supplierId === src.supplierId && Number(u.n) === Number(src.n) && norm(u.line) === norm(src.line)) || null : null;
   const sourceText = (src, model) => {
     const col = columnOf(src, model);
     if (col) return norm([...(col.t.header || []), ...col.t.rows, col.t.title].join(" \n "));
@@ -1338,7 +1397,10 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       // quoted those rows and were all turned down).
       const one = new Set((built.engines || []).filter((e) => e.uses.some((u) => u.lines && u.supplierId === src.supplierId && Number(u.n) === Number(src.n))).map((e) => e.key));
       if (one.size === 1) return norm([...(t.header || []), ...t.rows, t.title].join(" \n "));
-      return norm([...(t.header || []), src.line, t.title].join(" \n "));
+      // A power row of a one-model genset datasheet (catalog.js fromLine): its engine is the product line of that source
+      // (verify.mjs read it from the page), named once; every figure is still the row's.
+      const fl = fromLineOf(src, model);
+      return norm([...(t.header || []), src.line, t.title, ...(fl ? [fl.model] : [])].join(" \n "));
     }
     // A controller (Khoa, 2026-11-01): one of the lines the supplier's `controllers` were read from (controllers.mjs).
     if (src.kind === "controller") {
@@ -1596,7 +1658,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       const t = (sup.get(s.supplierId).specTables || []).find((x) => x.n === Number(s.n) && x.rows.some((l) => norm(l) === norm(s.line)));
       const row = t ? squash([...(t.header || []), s.line, t.title].join(" ")) : "";
       if (!t) { s.unverified = true; problems.push(`#${c.rank}: dòng bảng của ${s.supplierId} không có trong CSDL`); continue; }
-      if (c.engine?.model && !row.includes(squash(c.engine.model))) { s.unverified = true; problems.push(`#${c.rank}: dòng của ${s.supplierId} không ghi động cơ ${c.engine.model}`); }
+      if (c.engine?.model && !row.includes(squash(c.engine.model)) && !fromLineOf({ kind: "catalog", supplierId: s.supplierId, n: s.n, line: s.line }, c.engine.model)) { s.unverified = true; problems.push(`#${c.rank}: dòng của ${s.supplierId} không ghi động cơ ${c.engine.model}`); }
       s.hasAlternator = !!c.alternator?.model && row.includes(squash(c.alternator.model));
       const ck = c.controller?.model && CAT.keyOf(c.controller.model);
       s.hasController = !!ck && (row.includes(squash(c.controller.model)) || (sup.get(s.supplierId).controllers || []).some((x) => x.model && CAT.keyOf(x.model) === ck));
@@ -1621,11 +1683,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       // name is a make (Cummins Power Generation, Weichai Power...). An assembler or a trader is not one.
       // An assembler (its name is no make) makes at most the parts whose make is not known.
       const makers = [...(c.genset?.make && BP.familyOf(c.genset.make) ? [{ name: c.genset.make, fam: BP.familyOf(c.genset.make) }] : []),
-        ...(c.suppliers || []).filter((s) => !s.unverified).map((s) => sup.get(s.supplierId)).filter((r) => r && r.role !== "distributor").map((r) => {
-          const f = BP.familyOf(r.names?.en, r.id);
-          // A Chinese company whose name carries a foreign make ("… Cummins Power …") is an assembler, not that maker.
-          return { name: r.names?.en || r.id, fam: f && r.country === "CN" && !CN_FAMILY.has(f) ? null : f };
-        })];
+        ...(c.suppliers || []).filter((s) => !s.unverified).map((s) => sup.get(s.supplierId)).filter((r) => r && r.role !== "distributor").map((r) => ({ name: r.names?.en || r.id, fam: gensetMakerOf(r) }))];
       c.checks.unshift(syncCheck(sync, fam, makers, { engine: c.engine?.model, alternator: c.alternator?.model, controller: c.controller?.model }));
     }
     confirmChecks(c, result.requirements || []);
@@ -2301,7 +2359,6 @@ export const NO_CONTROLLER = "Bộ điều khiển của cấu hình";
 // known, or a make not stated). Ranked with the engine and the controller.
 export const SYNC_ITEM = "Đồng bộ thương hiệu";
 const SYNC_VI = { engine: "động cơ", alternator: "đầu phát", controller: "bộ điều khiển" };
-const CN_FAMILY = new Set(["Weichai", "Yuchai", "SDEC", "Nianfeng", "Bobig", "Jet-Power", "Wintpower", "SmartGen", "Harsen", "Mebay", "Lixise"]);
 const isSyncItem = (s) => norm(s || "") === norm(SYNC_ITEM) || (/đồng\s*bộ|cùng\s*(một\s*)?(hãng|thương\s*hiệu|nhãn\s*hiệu|nhà\s*sản\s*xuất)/i.test(s || "") && !/h[oò][àa]\s*đồng\s*bộ|kiểm\s*định|phiếu/i.test(s || ""));
 const syncText = (s) => `Ít nhất ${s.need}/${s.parts.length} bộ phận (${s.parts.map((p) => SYNC_VI[p]).join(", ")}) do chính hãng sản xuất tổ máy làm ra`;
 export function syncCheck(sync, fam, makers = [], models = {}) {
