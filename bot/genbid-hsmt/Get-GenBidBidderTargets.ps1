@@ -79,7 +79,11 @@ try {
                 if (-not $b.final -or $deleted[$_]) { return $false }
                 if (-not (@($b.list) | Where-Object { ([string]$_.taxCode -replace '\D', '') -eq '4101623015' })) { return $false }
                 $h = $have[$_]
-                -not $h -or ($h.error -and (-not $h.at -or ([datetime]$h.at).ToUniversalTime() -lt $now.AddHours(-24)))
+                # Lần lấy trước lỗi (bcdg-step.js): thử lại sau 1 giờ (lần lỗi thứ 1), 6 giờ (thứ 2); đã bỏ (giveUp) sau 3 lần thì thôi.
+                if (-not $h) { return $true }
+                if (-not $h.error -or $h.giveUp) { return $false }
+                $wait = if ([int]$h.tries -ge 2) { 6 } else { 1 }
+                (-not $h.at) -or (([datetime]$h.at).ToUniversalTime() -lt $now.AddHours(-$wait))
             } | Sort-Object | Select-Object -First $BcdgMax | ForEach-Object {
                 [pscustomobject]@{ key = $_; notifyNo = $_; bidName = ''; bidCloseDate = $null; tracked = [bool]$tracked[$_]; stage = $tracked[$_]; joined = $true; bcdgOnly = $true }
             })

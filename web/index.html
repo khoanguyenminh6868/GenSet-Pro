@@ -2437,15 +2437,18 @@ function biddersHtml(t) {
 // Báo cáo đánh giá E-HSDT (BCĐG) of a tender we bid on: the worker keeps the file in the private bucket "bcdg" (api/bcdg.js) and
 // bcdg/<TBMT> holds the list and `reason`, the lines of the report around our name ("" when none was found; no AI, Khoa 2026-11-12).
 function bcdgHtml(key) {
-  const d = state.bcdg?.[key], files = (d?.files || []).filter((f) => f.path);
-  if (!d || (!files.length && !(d.files || []).some((f) => f.skipped))) return "";
+  const d = state.bcdg?.[key], all = d?.files || [], files = all.filter((f) => f.path);
+  if (!d) return "";
   const mb = (n) => (n >= 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB");
-  const rows = (d.files || []).map((f) => f.path
-    ? h`<button class="btn sm" data-bcdg="${f.path}" data-name="${f.name}" title="Tải báo cáo đánh giá E-HSDT">${f.name} · ${mb(f.size || 0)}</button>`
-    : f.skipped ? h`<span class="muted small">${f.name}: ${f.skipped}</span>` : "").join(" ");
-  const why = d.reason ? h`<details class="bcdgwhy" open><summary class="small">Lý do trong báo cáo (đoạn trích nguyên văn quanh tên công ty${d.scan ? ", đọc từ bản scan nên có thể sai chữ" : ""})</summary><div class="small" style="white-space:pre-wrap;overflow-wrap:anywhere">${d.reason}</div></details>`
+  // The file name is a source: only its size and number are shown, the name goes with SHOW_SRC.
+  const rows = files.map((f, i) => h`<button class="btn sm" data-bcdg="${f.path}" data-name="${f.name}" ${raw(SHOW_SRC ? h`title="${f.name}"` : "")}>Tải báo cáo đánh giá${files.length > 1 ? " " + (i + 1) : ""} · ${mb(f.size || 0)}</button>`).join(" ");
+  const big = all.filter((f) => f.skipped).map((f) => h`<span class="muted small">${SHOW_SRC ? f.name + ": " : ""}${f.skipped}</span>`).join(" ");
+  // Nothing in the store: the worker is still trying, or gave up.
+  if (!files.length && !big) return d.error ? h`<div class="muted small" style="margin-top:10px">${d.giveUp ? "Chưa lấy được báo cáo đánh giá E-HSDT (đã thử nhiều lần, mở trên muasamcong để xem)." : "Đang lấy báo cáo đánh giá E-HSDT."}</div>` : "";
+  const part = d.error && !d.giveUp ? h`<div class="muted small">Còn tệp chưa lấy được, bot sẽ thử lại.</div>` : "";
+  const why = d.reason ? h`<details class="bcdgwhy" open><summary class="small">Trích báo cáo đánh giá${d.scan ? " (đọc từ bản scan, có thể sai chữ)" : ""}</summary><div class="small" style="white-space:pre-wrap;overflow-wrap:anywhere">${d.reason}</div></details>`
     : files.length ? h`<div class="muted small">Chưa trích được lý do từ báo cáo${d.scan ? " (bản scan)" : ""}, mở tệp để xem.</div>` : "";
-  return h`<div class="bcdg" style="margin-top:10px"><div class="row" style="flex-wrap:wrap;gap:6px;align-items:center"><b class="small">Báo cáo đánh giá E-HSDT</b> ${raw(rows)}</div>${raw(why)}</div>`;
+  return h`<div class="bcdg" style="margin-top:10px"><div class="row" style="flex-wrap:wrap;gap:6px;align-items:center"><b class="small">Báo cáo đánh giá E-HSDT</b> ${raw(rows)} ${raw(big)}</div>${raw(part)}${raw(why)}</div>`;
 }
 async function openBcdgFile(path, name) {
   if (!window.genbidFetch) return;
