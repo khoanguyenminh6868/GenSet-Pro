@@ -96,6 +96,454 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins 50/60Hz 20-1800kVA",
+      "fuel": "diesel",
+      "engineMakes": [
+        "CUMMINS"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 20,
+        "max": 1800,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PERKINS 50Hz 10-2500kVA",
+      "fuel": "diesel",
+      "engineMakes": [
+        "PERKINS"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 10,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Baudouin 18kVA-2750kVA",
+      "fuel": "diesel",
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 18,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MITSUBISHI VMAN 50Hz 560-2500kVA",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MITSUBISHI"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 560,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Weichai 23-2750kva",
+      "fuel": "diesel",
+      "engineMakes": [
+        "WEICHAI"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 23,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SDEC 15kVA-2750kVA",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 15,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins 4B3.9-G11 50Hz/20kVA Cummins Diesel Generator Set",
+      "fuel": "diesel",
+      "engineMakes": [
+        "CUMMINS"
+      ],
+      "engineModels": [
+        "4B3.9-G11"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins 6LTAA9.5-G1 50/60Hz 320kVA Cummins engine generator set",
+      "fuel": "diesel",
+      "engineMakes": [
+        "CUMMINS"
+      ],
+      "engineModels": [
+        "6LTAA9.5-G1"
+      ],
+      "power": {
+        "min": 320,
+        "max": 320,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CumminsKTA38-G2B 50° 50Hz 800kVA Cummins onan industrial genset",
+      "fuel": "diesel",
+      "engineMakes": [
+        "CUMMINS"
+      ],
+      "engineModels": [
+        "KTA38-G2B"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "UK PERKINS 403A-15G2 50Hz 15kVA 17kVA Power UK Perkins generator for sale",
+      "fuel": "diesel",
+      "engineMakes": [
+        "PERKINS"
+      ],
+      "engineModels": [
+        "403A-15G2"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "UK PERKINS 2506C-E15TAG1 50Hz 450kVA 500kVA Power UK Perkins generator for sale",
+      "fuel": "diesel",
+      "engineMakes": [
+        "PERKINS"
+      ],
+      "engineModels": [
+        "2506C-E15TAG1"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Baudouin 4M06G20/5 50Hz/18kVA Baudouin Diesel Silent Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "4M06G20/5"
+      ],
+      "power": {
+        "min": 18,
+        "max": 18,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Baudouin 6M21G500/5 50Hz/450kVA Baudouin Diesel Silent Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "6M21G500/5"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VMAN D22A2 50Hz 550kVA/600kVA Diesel generator set",
+      "fuel": "diesel",
+      "engineMakes": [
+        "VMAN"
+      ],
+      "engineModels": [
+        "D22A2"
+      ],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Weichai/Baudouin WP2.3D25E200 50Hz/23kVA Weichai/Baudouin Diesel Silent Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "WEICHAI"
+      ],
+      "engineModels": [
+        "WP2.3D25E200"
+      ],
+      "power": {
+        "min": 23,
+        "max": 23,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SDEC 4Z2.3-G11/G21 50Hz/15kVA Diesel Generator Set",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "engineModels": [
+        "4Z2.3-G11/G21"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SDEC SC12E420D2 50Hz 313kVA Diesel Genrator Set",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "engineModels": [
+        "SC12E420D2"
+      ],
+      "power": {
+        "min": 313,
+        "max": 313,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PC66/PC70",
+      "fuel": "diesel",
+      "engineMakes": [
+        "CUMMINS"
+      ],
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P385",
+      "fuel": "diesel",
+      "engineMakes": [
+        "PERKINS"
+      ],
+      "engineModels": [
+        "2206C-E13TAG2"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PBD275",
+      "fuel": "diesel",
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "6M16G275/5"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
     }
   ],
   "certifications": [
@@ -161,10 +609,199 @@
         "DEEPSEA 4620/HGM6120"
       ],
       "file": "sources/plus-power/3003.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.pluspowergenerator.com/cummins-50-60hz-20-1800kva_c5",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Cummins 50/60Hz 20-1800kVA",
+        "Cummins 4B3.9-G11 50Hz/20kVA Cummins Diesel Generator Set",
+        "Cummins 4B3.9-G11 50Hz/23kVA Cummins Super Silent Diesel Generator Set"
+      ],
+      "file": "sources/plus-power/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.pluspowergenerator.com/cummins-50-60hz-20-1800kva_c5_2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Cummins 50/60Hz 20-1800kVA",
+        "Cummins 6LTAA9.5-G1 50/60Hz 320kVA Cummins engine generator set",
+        "Cummins NTA855-G2A/G1B 50/60Hz 350kVA/350kVA Cummins Generator sound proof"
+      ],
+      "file": "sources/plus-power/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.pluspowergenerator.com/cummins-50-60hz-20-1800kva_c5_3",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Cummins 50/60Hz 20-1800kVA",
+        "Cummins KTA50-GS8/QSK19-G32 50° 50Hz 1600kVA Cummins onan engine generator price",
+        "CumminsKTA38-G2B 50° 50Hz 800kVA Cummins onan industrial genset"
+      ],
+      "file": "sources/plus-power/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.pluspowergenerator.com/perkins-50hz-10-2500kva_c6",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "PERKINS 50Hz 10-2500kVA",
+        "UK PERKINS 403D-11G 50Hz 9kVA 10kVA Power UK Perkins diesel generator manufacturing",
+        "UK PERKINS 403A-15G1/403D-15G 50Hz 13kVA 15kVA Power UK Perkins generator catalogue",
+        "UK PERKINS 403A-15G2 50Hz 15kVA 17kVA Power UK Perkins generator for sale"
+      ],
+      "file": "sources/plus-power/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.pluspowergenerator.com/perkins-50hz-10-2500kva_c6_2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "PERKINS 50Hz 10-2500kVA",
+        "UK PERKINS 2506C-E15TAG1 50Hz 450kVA 500kVA Power UK Perkins generator for sale",
+        "UK PERKINS 2506C-E15TAG2 50Hz 500kVA 550kVA Power UK Perkins generator catalogue"
+      ],
+      "file": "sources/plus-power/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.pluspowergenerator.com/baudouin-18kva-2750kva_c20",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Baudouin 18kVA-2750kVA",
+        "Baudouin 4M06G20/5 50Hz/18kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M06G25/5 50Hz/23kVA Baudouin Diesel Silent Generator"
+      ],
+      "file": "sources/plus-power/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.pluspowergenerator.com/baudouin-18kva-2750kva_c20_2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Baudouin 18kVA-2750kVA",
+        "Baudouin 6M21G500/5 50Hz/450kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M21G550/5 50Hz/500kVA Baudouin Diesel Silent Generator"
+      ],
+      "file": "sources/plus-power/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.pluspowergenerator.com/mitsubishi-vman-50hz-560-2500kva_c17",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "MITSUBISHI VMAN 50Hz 560-2500kVA",
+        "VMAN D22A2 50Hz 550kVA/600kVA Diesel generator set",
+        "VMAN D22A 50Hz 625kVA/700kVA Diesel generator Soundproof type"
+      ],
+      "file": "sources/plus-power/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.pluspowergenerator.com/weichai-23-2750kva_c19",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Weichai 23-2750kva",
+        "Weichai/Baudouin WP2.3D25E200 50Hz/23kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP2.3D33E200 50Hz/30kVA Weichai/Baudouin Diesel Silent Generator"
+      ],
+      "file": "sources/plus-power/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.pluspowergenerator.com/sdec-15kva-2750kva_c22",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "SDEC 15kVA-2750kVA",
+        "SDEC 4Z2.3-G11/G21 50Hz/15kVA Diesel Generator Set",
+        "SDEC 4Z2.7-G11/G21 50Hz/20kVA Diesel Generator Set"
+      ],
+      "file": "sources/plus-power/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.pluspowergenerator.com/sdec-15kva-2750kva_c22_2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "SDEC 15kVA-2750kVA",
+        "SDEC SC12E420D2 50Hz 313kVA Diesel Genrator Set",
+        "SDEC SC12E460D2 50Hz 350kVA Diesel Genrator Set"
+      ],
+      "file": "sources/plus-power/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.pluspowergenerator.com/cummins-4bta3-9-g2-50hz-60kva-60hz-65kva-heavry-duty-inductrial-generator_p11.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Cummins 4BTA3.9-G2 50Hz/60kVA 60Hz/65kVA heavry duty Inductrial Generator",
+        "PC66/PC70",
+        "48/53kW 60/66kVA",
+        "52/56kW 65/70kVA",
+        "4×102×120mm/3.9L"
+      ],
+      "file": "sources/plus-power/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://www.pluspowergenerator.com/uk-perkins-2206c-e13tag2-50hz-350kva-385kva-power-uk-perkins-generator-parts_p178.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "UK PERKINS 2206C-E13TAG2 50Hz 350kVA 385kVA Power UK Perkins generator parts",
+        "280/308kW 350/385kVA",
+        "6×130×157mm/12.5L",
+        "Stamford/SURIRELLA 314E",
+        "DEEPSEA/PLUS POWER 6120"
+      ],
+      "file": "sources/plus-power/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://www.pluspowergenerator.com/baudouin-6m16g275-5-50hz-250kva-baudouin-diesel-silent-generator_p345.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Baudouin 6M16G275/5 50Hz/250kVA Baudouin Diesel Silent Generator",
+        "200/220kW 250/275kVA",
+        "6×126×130mm/9.7L",
+        "Stamford/SURIRELLA 274K",
+        "DEEPSEA/Smartgen 6120"
+      ],
+      "file": "sources/plus-power/2014.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-13",
   "checkedBy": "discover-bot",
   "controllers": [
     {
@@ -184,6 +821,415 @@
       "src": [
         3001,
         3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "DEEPSEA",
+      "line": "DEEPSEA/PLUS POWER 6120",
+      "src": [
+        2013
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen 6120",
+      "line": "DEEPSEA/Smartgen 6120",
+      "src": [
+        2014
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "DEEPSEA",
+      "line": "DEEPSEA/Smartgen 6120",
+      "src": [
+        2014
+      ]
+    }
+  ],
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Cummins 50/60Hz 20-1800kVA (cummins-50-60hz-20-1800kva_c5)",
+      "header": [
+        "Cummins 50/60Hz 20-1800kVA"
+      ],
+      "rows": [
+        "Cummins 4B3.9-G11 50Hz/20kVA Cummins Diesel Generator Set",
+        "Cummins 4B3.9-G11 50Hz/23kVA Cummins Super Silent Diesel Generator Set",
+        "Cummins 4B3.9-G1/G2 50Hz/28kVA 60Hz/31kVA Cummins generator for sale",
+        "Cummins 4B3.9-G12 50Hz/31kVA 60Hz/35kVA Generator with 2 yesrs warranty",
+        "Cummins 4BT3.9-G1/G2 50Hz/40kVA Diesel Generator Set with DeepSea panel",
+        "Cummins 4BTA3.9-G2 50Hz/50kVA 60Hz/50kVA powerica Diesel Generator Set",
+        "Cummins 4BTA3.9-G2 50Hz/60kVA 60Hz/65kVA heavry duty Inductrial Generator",
+        "Cummins 4BTA3.9-G11 50Hz/80kVA 60Hz/90kVA Diesel Generator diagram",
+        "Cummins 4BTA3.9-G13 50Hz/100kVA China Cummins generator catalogue",
+        "Cummins 6BT5.9-G1/G2 50Hz/100kVA 60Hz/110kVA canopy type generator",
+        "Cummins 4BTAA3.9-G3 50Hz/110kVA genset online for sale",
+        "Cummins 6BT5.9-G2 50/60Hz 110kVA/125kVA Diesel set fuel consumption",
+        "Cummins 6BTA5.9-G2 50/60Hz 120kVA/135kVA Sound proof Generator drawing",
+        "Cummins 6BTAA5.9-G2 50/60Hz 138kVA/150kVA Cummins generator diesel engine",
+        "Cummins 6BTAA5.9-G12 50/60Hz 150kVA/170kVA Cummins Diesel Silent Generator",
+        "Cummins 6CTA8.3-G1/G2 50/60Hz 180/190kVA Cummins Generator Sound proof type",
+        "Cummins 6CTAA8.3-G2 50/60Hz 200/210kVA Cummins engine generator with fuel tank",
+        "Cummins 6CTAA8.3-G9 50/60Hz 230/275kVA Cummins diesel fuel generator",
+        "Cummins 6LTAA8.9-G2/G3 50Hz/250kVA 60Hz/285kVA Cummins Generator Sound proof price",
+        "Cummins 6LTAA9.5-G3 50Hz/275kVA 60Hz/300kVA NTA855-G3/60Hz 230kVA Cummins Generator enclosure specification"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Cummins 50/60Hz 20-1800kVA (cummins-50-60hz-20-1800kva_c5_2)",
+      "header": [
+        "Cummins 50/60Hz 20-1800kVA"
+      ],
+      "rows": [
+        "Cummins 6LTAA9.5-G1 50/60Hz 320kVA Cummins engine generator set",
+        "Cummins NTA855-G2A/G1B 50/60Hz 350kVA/350kVA Cummins Generator sound proof",
+        "Cummins QSZ10-G12 50Hz 350kVA Cummins industrial genset drawing",
+        "Cummins NTA855-G2A 50/60Hz 350kVA/350kVA Cummins Generator sound proof",
+        "Cummins QSZ10-G11 50Hz 375kVA Cummins sound proof catalogue",
+        "SDEC SC27G755D2 50Hz 563kVA Diesel Generator Set",
+        "Cummins 6ZTAA13-G3 50Hz 388kVA Cummins onan generator diagram",
+        "Cummins NTA855-G3 60Hz 400kVA Cummins onan Generator Sound proof price",
+        "Cummins QSG12-G4 50Hz/60Hz 415/475kVA Cummins onan diesel fuel generator",
+        "Cummins 6ZTAA13-G2 50Hz 438kVA Cummins onan Generator Sound proof price",
+        "Cummins QSZ13-G2 50Hz 450kVA Cummins onan Generator Sound proof price",
+        "Cummins QSZ13-G3 50Hz/60Hz 500kVA/500kVA Cummins Onan Generator fuel consumption",
+        "Cummins QSZ13-G10/G11 50Hz 500kVA Cummins onan Generator",
+        "Cummins KTA19-G2 60Hz 450kVA Cummins onan engine generator set",
+        "CumminsKTAA19-G5 50° 50Hz 525kVA Cummins onan industrial genset",
+        "Cummins KTA19-G3A 50° 50Hz/60Hz 500/563kVA Cummins onan industrial genset",
+        "Cummins KTAA19-G5 50° 50/60Hz 525kVA/600kVA Cummins onan sound proof drawing",
+        "Cummins KTA19-G8 50° 50/60Hz 600kVA Cummins onan generator sound proof",
+        "Cummins KTA19-G6 50° 50Hz 575kVA Cummins onan industrial generator set",
+        "Cummins KTAA19-G6A 50° 50Hz/60Hz 625/675kVA Generator"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Cummins 50/60Hz 20-1800kVA (cummins-50-60hz-20-1800kva_c5_3)",
+      "header": [
+        "Cummins 50/60Hz 20-1800kVA"
+      ],
+      "rows": [
+        "Cummins KTA50-GS8/QSK19-G32 50° 50Hz 1600kVA Cummins onan engine generator price",
+        "CumminsKTA38-G2B 50° 50Hz 800kVA Cummins onan industrial genset",
+        "Cummins QSK19-G34 50°50Hz 820kVA Cummins onan industrial genset",
+        "Cummins KTA38-G2A 50° 50Hz 910kVA Cummins onan industrial genset"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "PERKINS 50Hz 10-2500kVA (perkins-50hz-10-2500kva_c6)",
+      "header": [
+        "PERKINS 50Hz 10-2500kVA"
+      ],
+      "rows": [
+        "UK PERKINS 403D-11G 50Hz 9kVA 10kVA Power UK Perkins diesel generator manufacturing",
+        "UK PERKINS 403A-15G1/403D-15G 50Hz 13kVA 15kVA Power UK Perkins generator catalogue",
+        "UK PERKINS 403A-15G2 50Hz 15kVA 17kVA Power UK Perkins generator for sale",
+        "UK PERKINS 404A-22G1/404D-22G 50Hz 20kVA Power Perkins UK generator specifications",
+        "UK PERKINS 404D-22TD 50Hz 25kVA 30kVA Power UK Perkins generator parts",
+        "UK PERKINS 1103A-33G 50Hz 30kVA 33kVA Power UK Perkins generator diesel",
+        "UK PERKINS 1103A-33TG1 50Hz 45kVA 50kVA Power UK Perkins generator diesel silent type",
+        "UK PERKINS 1103A-33TG2 50Hz 60kVA 66kVA Power UK Perkins generator diesel Soundproof type",
+        "UK PERKINS 1104A-44TG1 50Hz 65kVA 70kVA Power UK Perkins generator silent type",
+        "UK PERKINS 1104A-44TG2 50Hz 80kVA 88kVA Power UK Perkins generator Soundproof type",
+        "UK PERKINS 1104C-44TAG2 50Hz 100kVA 110kVA Power UK Perkins generator south africa",
+        "UK PERKINS 1106A-70TG1 135kVA 150kVA Power UK Perkins generator manual pdf",
+        "UK PERKINS 1106A-70TG2 50Hz 150kVA 165kVA Power UK Perkins generator manual pdf",
+        "UK PERKINS 1106A-70TG3 50Hz 180kVA 200kVA Power UK Perkins Diesel genset",
+        "UK PERKINS 1106A-70TG4/1206A-E70TTAG1 50Hz 200kVA 220kVA Power UK Perkins Diesel genset",
+        "UK PERKINS 1206A-E70TTAG2 50Hz 225kVA 250kVA Power UK Perkins generator silent type",
+        "UK PERKINS 1206A-E70TTAG3 50Hz 250kVA 275kVA Power UK Perkins generator silent type",
+        "UK PERKINS 1506A-E88TAG5 50Hz 300kVA 330kVA Power UK Perkins generator diesel silent type",
+        "UK PERKINS 2206C-E13TAG2 50Hz 350kVA 385kVA Power UK Perkins generator parts",
+        "UK PERKINS 2206C-E13TAG3 50Hz 400kVA 450kVA Power Perkins UK generator specifications"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "PERKINS 50Hz 10-2500kVA (perkins-50hz-10-2500kva_c6_2)",
+      "header": [
+        "PERKINS 50Hz 10-2500kVA"
+      ],
+      "rows": [
+        "UK PERKINS 2506C-E15TAG1 50Hz 450kVA 500kVA Power UK Perkins generator for sale",
+        "UK PERKINS 2506C-E15TAG2 50Hz 500kVA 550kVA Power UK Perkins generator catalogue",
+        "UK PERKINS 2806C-E18TAG1A 50Hz 600kVA 650kVA Power UK Perkins generator price list",
+        "UK PERKINS 2806A-E18TAG2A 50Hz 650kVA 750kVA Power UK Perkins generator diesel Soundproof type",
+        "UK PERKINS 4006-23TAG2A 50Hz 750kVA 850kVA Power UK Perkins generator Soundproof type",
+        "UK PERKINS 4006-23TAG3A 50Hz 800kVA 880kVA Power UK Perkins generator manual pdf",
+        "UK PERKINS 4008TAG1A 50Hz 900kVA 1000kVA Power UK Perkins diesel generator manufacturing",
+        "UK PERKINS 4008TAG2A 50Hz 1000kVA 1100kVA Power UK Perkins generator price list",
+        "UK PERKINS 4008-30TAG3 50Hz 1100kVA 1250kVA Power UK Perkins generator catalogue",
+        "UK PERKINS 4012-46TWG2A 50Hz 1250kVA 1400kVA Power UK Perkins generator for sale",
+        "UK PERKINS 4012-46TWG3A 50Hz 1350kVA 1500kVA Power Perkins UK generator specifications",
+        "UK PERKINS 4012-46TAG2A 50Hz 1500kVA 1650kVA Power UK Perkins generator parts",
+        "UK PERKINS 4012-46TAG3A 50Hz 1700kVA 1900kVA Power UK Perkins generator diesel",
+        "UK PERKINS 4016-61TRG1 50Hz 1850kVA 2000kVA Power UK Perkins generator diesel container design",
+        "UK PERKINS 4016-61TRG2 50Hz 2000kVA 2250kVA Power UK Perkins generator diesel container design",
+        "UK PERKINS 4016-61TRG3 50Hz 2250kVA 2500kVA Power UK Perkins generator diesel container design"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Baudouin 18kVA-2750kVA (baudouin-18kva-2750kva_c20)",
+      "header": [
+        "Baudouin 18kVA-2750kVA"
+      ],
+      "rows": [
+        "Baudouin 4M06G20/5 50Hz/18kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M06G25/5 50Hz/23kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M06G35/5 50Hz/32kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M06G44/5 50Hz/40kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M06G50/5 50Hz/45kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M06G55/5 50Hz/50kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M10G70/5 50Hz/65kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M10G88/5 50Hz/80kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M10G110/5 50Hz/100kVA Baudouin Diesel Silent Generator",
+        "Baudouin 4M10G125/5 50Hz/115kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M11G150/5 50Hz/135kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M11G165/5 50Hz/150kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M11G188/5 50Hz/170kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M16G220/5 50Hz/200kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M16G250/5 50Hz/230kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M16G275/5 50Hz/250kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M16G300/5 50Hz/275kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M16G350/5 50Hz/320kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M21G400/5 50Hz/375kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M21G440/5 50Hz/400kVA Baudouin Diesel Silent Generator"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Baudouin 18kVA-2750kVA (baudouin-18kva-2750kva_c20_2)",
+      "header": [
+        "Baudouin 18kVA-2750kVA"
+      ],
+      "rows": [
+        "Baudouin 6M21G500/5 50Hz/450kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M21G550/5 50Hz/500kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M33G660/5 50Hz/600kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M33G715/5 50Hz/650kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M33G750/5 50Hz/650kVA Baudouin Diesel Silent Generator",
+        "Baudouin 6M33G825/5 50Hz/750kVA Baudouin Diesel Silent Generator",
+        "Baudouin 8M33G900/5 50Hz/800kVA Baudouin Diesel Silent Generator",
+        "Baudouin 8M33G1000/5 50Hz/900kVA Baudouin Diesel Silent Generator",
+        "Baudouin 8M33G1100/5 50Hz/1000kVA Baudouin Diesel Silent Generator",
+        "Baudouin 12M33G1250/5 50Hz/1150kVA Baudouin Diesel Silent Generator",
+        "Baudouin 12M33G1400/5 50Hz/1250kVA Baudouin Diesel Silent Generator",
+        "Baudouin 12M33G1500/5 50Hz/1375kVA Baudouin Diesel Silent Generator",
+        "Baudouin 12M33G1650/5 50Hz/1500kVA Baudouin Diesel Silent Generator",
+        "Baudouin 16M33G1900/5 50Hz/1750kVA Baudouin Diesel Silent Generator",
+        "Baudouin 16M33G2000/5 50Hz/1900kVA Baudouin Diesel Silent Generator",
+        "Baudouin 16M33G2250/5 50Hz/2050kVA Baudouin Diesel Silent Generator",
+        "Baudouin 20M33G2500/5 50Hz/2250kVA Baudouin Diesel Silent Generator",
+        "Baudouin 12M55G2750/5 50Hz/2500kVA Baudouin Diesel Silent Generator"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "MITSUBISHI VMAN 50Hz 560-2500kVA (mitsubishi-vman-50hz-560-2500kva_c17)",
+      "header": [
+        "MITSUBISHI VMAN 50Hz 560-2500kVA"
+      ],
+      "rows": [
+        "VMAN D22A2 50Hz 550kVA/600kVA Diesel generator set",
+        "VMAN D22A 50Hz 625kVA/700kVA Diesel generator Soundproof type",
+        "VMAN D22 50Hz 688kVA/750kVA Diesel generator Soundproof type",
+        "VMAN D22Z 50Hz 750kVA/825kVA Industrial generator",
+        "VMAN D30A3 50Hz 800kVA/880kVA VMAN silent generator for sale",
+        "VMAN D30A3 50Hz 900kVA/1000kVA VMAN electric generator",
+        "VMAN D30A1 50Hz 1000kVA/1100kVA VMAN diesel generators prices",
+        "Wandi 327TAD100 50Hz 1100kVA/1250kVA WuDong diesel generators prices",
+        "Wandi 360TAD110 50Hz 1250kVA/1375kVA WuDong diesel generators set",
+        "Wandi 360TAD120 50Hz 1400kVA/1500kVA WuDong Soundproof diesel generators set",
+        "MITSUBISHI S6R2-PTA-C 50Hz 675kVA/750kVA Diesel generator Soundproof type",
+        "MITSUBISHI S6R2-PTAA-C 50Hz 750kVA/825kVA industrial generator",
+        "MITSUBISHI S12H-PTA 50Hz 1000kVA/1100kVA silent generator",
+        "MITSUBISHI S12R-PTA-C 50Hz 1250kVA/1375kVA silent generator",
+        "MITSUBISHI S12R-PTA2-C 50Hz 1375kVA/1500kVA silent generator",
+        "MITSUBISHI S12R-PTAA2-C 50Hz 1500kVA/1650kVA diesel generators prices",
+        "MITSUBISHI S16R-PTA-C 50Hz 1700kVA/1900kVA industrial generator",
+        "MITSUBISHI S16R-PTA2-C 50Hz 1900kVA/2000kVA Container generator",
+        "MITSUBISHI S16R-PTAA2-C 50Hz 2000kVA/2250kVA Container generator",
+        "MITSUBISHI S16R-PTAW-C 50Hz 2250kVA/2500kVA Container generator"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "Weichai 23-2750kva (weichai-23-2750kva_c19)",
+      "header": [
+        "Weichai 23-2750kva"
+      ],
+      "rows": [
+        "Weichai/Baudouin WP2.3D25E200 50Hz/23kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP2.3D33E200 50Hz/30kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP2.3D40E200 50Hz/37kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP2.3D48E200 50Hz/45kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP4.1D66E200 50Hz/65kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP4.1D80E200 50Hz/80kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP4.1D100E200 50Hz/100kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP4.1D113E200 50Hz/115kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP6D132E200 50Hz/135kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP6D152E200 50Hz/150kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP6D167E200 50Hz/170kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP10D200E200 50Hz/200kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP10D238E200 50Hz/230kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP10D264E200 50Hz/250kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP10D320E200 50Hz/320kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP12D353E200 50Hz/375kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP13D385E200 50Hz/400kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP13D440E310 50Hz/450kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin WP13D490E310 50Hz/500kVA Weichai/Baudouin Diesel Silent Generator",
+        "Weichai/Baudouin 6M33D572E200 50Hz/600kVA Weichai/Baudouin Diesel Silent Generator"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "SDEC 15kVA-2750kVA (sdec-15kva-2750kva_c22)",
+      "header": [
+        "SDEC 15kVA-2750kVA"
+      ],
+      "rows": [
+        "SDEC 4Z2.3-G11/G21 50Hz/15kVA Diesel Generator Set",
+        "SDEC 4Z2.7-G11/G21 50Hz/20kVA Diesel Generator Set",
+        "SDEC 4Z3.0-G11/G21 50Hz/25kVA Diesel Generator Set",
+        "SDEC 4Z3.2-G11/G21 50Hz/31kVA Diesel Generator Set",
+        "SDEC 4ZT3.2-G11/G21 50Hz/40kVA Diesel Generator Set",
+        "SDEC 4ZT3.5-G21 50Hz/50kVA Diesel Generator Set",
+        "SDEC 4ZT4.1-G21 50Hz/63kVA Diesel Generator Set",
+        "SDEC 4ZTAA4.1-G21 50Hz/70kVA Diesel Generator Set",
+        "SDEC 4ZTAA4.1-G31 50Hz/80kVA SDEC generator set",
+        "SDEC SC4H140D2 50Hz/100kVA SDEC generator set",
+        "SDEC SC4H160D2 50Hz/115kVA SDEC generator set",
+        "SDEC SC4H180D2 50Hz/125kVA SDEC generator set",
+        "SDEC SC7H180D2 50Hz 138kVA Diesel Generator Sound proof type",
+        "SDEC SC7H205D2 50Hz 150kVA Diesel Generator Sound proof type",
+        "SDEC SC7H220D2 50Hz 163kVA Diesel Generator Sound proof type",
+        "SDEC SC7H250D2 50Hz 190kVA Diesel Generator Sound proof type",
+        "SDEC SC8D280D2 50Hz 200kVA Diesel Generator Set",
+        "SDEC SC9D310D2 50Hz 225kVA Diesel Generator Set",
+        "SDEC SC9D340D2 50Hz 250kVA Diesel Generator Set",
+        "SDEC SC10E380D2 50Hz 275kVA Diesel Generator Set"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "SDEC 15kVA-2750kVA (sdec-15kva-2750kva_c22_2)",
+      "header": [
+        "SDEC 15kVA-2750kVA"
+      ],
+      "rows": [
+        "SDEC SC12E420D2 50Hz 313kVA Diesel Genrator Set",
+        "SDEC SC12E460D2 50Hz 350kVA Diesel Genrator Set",
+        "SDEC SC12E480D2 50Hz 375kVA Diesel Genrator Set",
+        "SDEC SC13E550D2 50Hz 410kVA Diesel Genrator Set",
+        "SDEC SC27G755D2 50Hz/563kVA SDEC generator set",
+        "SDEC SC27G830D2 50Hz/625kVA SDEC generator set",
+        "SDEC SC27G900D2 50Hz/688kVA SDEC generator set",
+        "SDEC 3Z1.1-G42 50Hz/10kVA SDEC generator set",
+        "SDEC 3ZT1.1-G42 50Hz/13kVA SDEC Diesel Generator Set",
+        "SDEC 4Z2.9-G430 50Hz/15kVA SDEC Diesel Generator Set",
+        "SDEC 4Z2.9-G420 50Hz/20kVA SDEC Diesel Generator Set",
+        "SDEC 4Z2.9-G410 50Hz/25kVA SDEC Diesel Generator Set",
+        "SDEC 4Z3.2-G42 50Hz/31kVA Diesel Generator Set",
+        "SDEC 4Z3.2-G41 50Hz/38kVA Diesel Generator Set",
+        "SDEC 4ZTAA3.2-G33 50Hz/40kVA Diesel Generator Set",
+        "SDEC 4ZTAA3.2-G32 50Hz/50kVA Diesel Generator Set",
+        "SDEC 4ZTAA3.2-G34 50Hz/63kVA Diesel Genrator Set",
+        "SDEC 4ZTAA3.2-G31 50Hz/70kVA Diesel Genrator Set",
+        "SDEC 4ZTAA3.5-G31 50Hz/75kVA Diesel Genrator Set",
+        "SDEC 4HTAA4.3-G34 50Hz/105kVA Diesel Genrator Set"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "Cummins 4BTA3.9-G2 50Hz/60kVA 60Hz/65kVA heavry duty Inductrial Generator",
+      "header": [
+        "Cummins 4BTA3.9-G2 50Hz/60kVA 60Hz/65kVA heavry duty Inductrial Generator"
+      ],
+      "rows": [
+        "Genset Model:",
+        "PC66/PC70",
+        "Prime/Standby Power@50Hz:",
+        "48/53kW 60/66kVA",
+        "Prime/Standby Power@60Hz:",
+        "52/56kW 65/70kVA",
+        "Cylinder *Bore*Stroke/Displacement:",
+        "4×102×120mm/3.9L",
+        "Alternator Style/Model:",
+        "Stamford/SURIRELLA 224E",
+        "Controller Brand/Model:",
+        "DEEPSEA 4620/HGM6120",
+        "Fuel Consumption(50/60Hz):",
+        "14.5/17.3L/h @ 100% load",
+        "Coolant/Lubrication/Fuel tank Capacity:",
+        "19/10.9/145L",
+        "Open type size/Weight:",
+        "1800*780*1330/900KGS",
+        "Sound proof size/Weight:",
+        "2350*1000*1250/1332KGS"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "UK PERKINS 2206C-E13TAG2 50Hz 350kVA 385kVA Power UK Perkins generator parts",
+      "header": [
+        "UK PERKINS 2206C-E13TAG2 50Hz 350kVA 385kVA Power UK Perkins generator parts"
+      ],
+      "rows": [
+        "Genset Model:",
+        "P385",
+        "Prime/Standby Power@50Hz:",
+        "280/308kW 350/385kVA",
+        "Cylinder *Bore*Stroke/Displacement:",
+        "6×130×157mm/12.5L",
+        "Alternator Style/Model:",
+        "Stamford/SURIRELLA 314E",
+        "Controller Brand/Model:",
+        "DEEPSEA/PLUS POWER 6120",
+        "Fuel Consumption(50/60Hz):",
+        "75L/h @ 100% load",
+        "Coolant/Lubrication/Fuel tank Capacity:",
+        "51/40/750L",
+        "Open type size/Weight:",
+        "3100*1150*2050mm/2790KGS",
+        "Sound proof size/Weight:",
+        "4200*1600*2200mm/3950KGS"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "Baudouin 6M16G275/5 50Hz/250kVA Baudouin Diesel Silent Generator",
+      "header": [
+        "Baudouin 6M16G275/5 50Hz/250kVA Baudouin Diesel Silent Generator"
+      ],
+      "rows": [
+        "Genset Model:",
+        "PBD275",
+        "Prime/Standby Power@50Hz:",
+        "200/220kW 250/275kVA",
+        "Cylinder *Bore*Stroke/Displacement:",
+        "6×126×130mm/9.7L",
+        "Alternator Style/Model:",
+        "Stamford/SURIRELLA 274K",
+        "Controller Brand/Model:",
+        "DEEPSEA/Smartgen 6120",
+        "Fuel Consumption(50/60Hz):",
+        "56.9L/h @ 100% load",
+        "Coolant/Lubrication/Fuel tank Capacity:",
+        "35/22/455L",
+        "Open type size/Weight:",
+        "3030*1050*1750mm/2330KGS",
+        "Sound proof size/Weight:",
+        "3700*1500*2000mm/3120KGS"
       ]
     }
   ]
