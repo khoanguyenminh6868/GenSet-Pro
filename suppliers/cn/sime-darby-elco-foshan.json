@@ -42,6 +42,328 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "1103A-33TG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG1"
+      ],
+      "power": {
+        "min": 75,
+        "max": 75,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104A-44TG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG1"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104C-44TAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TAG1"
+      ],
+      "power": {
+        "min": 126.5,
+        "max": 126.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1106A-70TAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG2"
+      ],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1206A-E70TTAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG1"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1506A-E88TAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG1"
+      ],
+      "power": {
+        "min": 389,
+        "max": 389,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1706A-E93TAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1706A-E93TAG1"
+      ],
+      "power": {
+        "min": 399,
+        "max": 399,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2206A-E13TAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206A-E13TAG2"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2506A-E15TAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506A-E15TAG1"
+      ],
+      "power": {
+        "min": 624,
+        "max": 624,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2806A-E18TAG1A",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG1A"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2806A-E18TTAG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TTAG"
+      ],
+      "power": {
+        "min": 938,
+        "max": 938,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4006-23TAG2A",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG2A"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4008TAG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG"
+      ],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4012-46TWG2A",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "power": {
+        "min": 1600,
+        "max": 1600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
     }
   ],
   "certifications": [],
@@ -75,10 +397,191 @@
         "Foshan Sime Darby Elco Power Equipment Ltd. is the first Perkins authorized Engine Power distributorwhich now has over 30 years’ experience in China."
       ],
       "file": "sources/sime-darby-elco-foshan/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://en.elco-sime.com/ProductDetail/394.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "1103A-33TG1",
+        "42 - 70 kWm",
+        "45-75 kVA (36-60 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://en.elco-sime.com/ProductDetail/397.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "1104A-44TG1",
+        "59.6 - 94.5 kWm",
+        "65-100 kVA (52-80 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://en.elco-sime.com/ProductDetail/399.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "1104C-44TAG1",
+        "75-117.5 kWm",
+        "80-126.5 kVA (64-101 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://en.elco-sime.com/ProductDetail/404.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "1106A-70TAG2",
+        "140-204 kWm",
+        "150-220 kVA (120-176 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://en.elco-sime.com/ProductDetail/408.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "1206A-E70TTAG1",
+        "186-248.5 kWm",
+        "200-275 kVA (160-220 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://en.elco-sime.com/ProductDetail/411.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "1506A-E88TAG1",
+        "192-358 kWm",
+        "207-389 kVA (166-312 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://en.elco-sime.com/ProductDetail/412.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "1706A-E93TAG1",
+        "276-358 kWm",
+        "311-399 kVA (249-319 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://en.elco-sime.com/ProductDetail/415.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "2206A-E13TAG2",
+        "324-461 kWm",
+        "350-500 kVA (280-400 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://en.elco-sime.com/ProductDetail/419.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "2506A-E15TAG1",
+        "412-568 kWm",
+        "455-624 kVA (364-500 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://en.elco-sime.com/ProductDetail/422.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "2806A-E18TAG1A",
+        "540-678 kWm",
+        "600-750 kVA (480-600 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://en.elco-sime.com/ProductDetail/423.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "2806A-E18TTAG",
+        "623-821 kWm",
+        "706 - 938 kVA (565 - 750 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://en.elco-sime.com/ProductDetail/429.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "4006-23TAG2A",
+        "531-886 kWm",
+        "595-1000 kVA (476-800 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://en.elco-sime.com/ProductDetail/431.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "644-997 kWm",
+        "720-1125 kVA (576-900 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://en.elco-sime.com/ProductDetail/433.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "4012-46TWG2A",
+        "884-1396 kWm",
+        "989-1600 kVA (791-1280 kWe)"
+      ],
+      "file": "sources/sime-darby-elco-foshan/2014.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-13",
   "checkedBy": "discover-bot",
   "contacts": [
     {
@@ -93,6 +596,218 @@
       "value": "0731-85255301",
       "src": [
         1
+      ]
+    }
+  ],
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Perkins 1103A-33TG1 (Electric Power engine)",
+      "header": [
+        "1103A-33TG1"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "42 - 70 kWm",
+        "Typical Power Output",
+        "45-75 kVA (36-60 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Perkins 1104A-44TG1 (Electric Power engine)",
+      "header": [
+        "1104A-44TG1"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "59.6 - 94.5 kWm",
+        "Typical Electrical Output",
+        "65-100 kVA (52-80 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Perkins 1104C-44TAG1 (Electric Power engine)",
+      "header": [
+        "1104C-44TAG1"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "75-117.5 kWm",
+        "Typical Power Output",
+        "80-126.5 kVA (64-101 kWe)",
+        "Emissions",
+        "EU Stage II / US EPA Tier 2"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Perkins 1106A-70TAG2 (Electric Power engine)",
+      "header": [
+        "1106A-70TAG2"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "140-204 kWm",
+        "Typical Power Output",
+        "150-220 kVA (120-176 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Perkins 1206A-E70TTAG1 (Electric Power engine)",
+      "header": [
+        "1206A-E70TTAG1"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "186-248.5 kWm",
+        "Typical Power Output",
+        "200-275 kVA (160-220 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Perkins 1506A-E88TAG1 (Electric Power engine)",
+      "header": [
+        "1506A-E88TAG1"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "192-358 kWm",
+        "Typical Power Output",
+        "207-389 kVA (166-312 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Perkins 1706A-E93TAG1 (Electric Power engine)",
+      "header": [
+        "1706A-E93TAG1"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "276-358 kWm",
+        "Typical Power Output",
+        "311-399 kVA (249-319 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Perkins 2206A-E13TAG2 (Electric Power engine)",
+      "header": [
+        "2206A-E13TAG2"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "324-461 kWm",
+        "Typical Electrical Output",
+        "350-500 kVA (280-400 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "Perkins 2506A-E15TAG1 (Electric Power engine)",
+      "header": [
+        "2506A-E15TAG1"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "412-568 kWm",
+        "Typical Power Output",
+        "455-624 kVA (364-500 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Perkins 2806A-E18TAG1A (Electric Power engine)",
+      "header": [
+        "2806A-E18TAG1A"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "540-678 kWm",
+        "Typical Power Output",
+        "600-750 kVA (480-600 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "Perkins 2806A-E18TTAG (Electric Power engine)",
+      "header": [
+        "2806A-E18TTAG"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "623-821 kWm",
+        "Typical Power Output",
+        "706 - 938 kVA (565 - 750 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "Perkins 4006-23TAG2A (Electric Power engine)",
+      "header": [
+        "4006-23TAG2A"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "531-886 kWm",
+        "Typical Power Output",
+        "595-1000 kVA (476-800 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "Perkins 4008TAG (Electric Power engine)",
+      "header": [
+        "4008TAG"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "644-997 kWm",
+        "Typical Power Output",
+        "720-1125 kVA (576-900 kWe)",
+        "Emissions",
+        "Fuel Optimized"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "Perkins 4012-46TWG2A (Electric Power engine)",
+      "header": [
+        "4012-46TWG2A"
+      ],
+      "rows": [
+        "Mechanical Total Output",
+        "884-1396 kWm",
+        "Typical Power Output",
+        "989-1600 kVA (791-1280 kWe)",
+        "Emissions",
+        "Fuel Optimized"
       ]
     }
   ]
