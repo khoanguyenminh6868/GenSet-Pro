@@ -53,6 +53,370 @@
         2,
         3
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-30P",
+      "fuel": "diesel",
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "engineModels": [
+        "Perkins 1103A-33G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Linz"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-60P",
+      "fuel": "diesel",
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "engineModels": [
+        "Perkins 1103A-33TG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Linz"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-100F",
+      "fuel": "diesel",
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "engineModels": [
+        "NEF45 TM2A"
+      ],
+      "engineMakes": [
+        "FPT Iveco"
+      ],
+      "alternatorMakes": [
+        "Linz"
+      ],
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-150P",
+      "fuel": "diesel",
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "engineModels": [
+        "1106A 70TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Linz"
+      ],
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-200P",
+      "fuel": "diesel",
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "engineModels": [
+        "1106A 70TAG4"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Linz"
+      ],
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-250S",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "engineModels": [
+        "DC09 072A"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "alternatorMakes": [
+        "Linz"
+      ],
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-350VO",
+      "fuel": "diesel",
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "engineModels": [
+        "TAD 1342GE-B"
+      ],
+      "engineMakes": [
+        "Volvo"
+      ],
+      "alternatorMakes": [
+        "Linz"
+      ],
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-450P",
+      "fuel": "diesel",
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "engineModels": [
+        "2506A-E15TAG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-500P",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "engineModels": [
+        "2506C-E15TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-625S",
+      "fuel": "diesel",
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "engineModels": [
+        "DC16 093A"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-700P",
+      "fuel": "diesel",
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "engineModels": [
+        "2806A-E18TTAG4"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-900P",
+      "fuel": "diesel",
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "engineModels": [
+        "Perkins 4008-TAG1A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-1000B",
+      "fuel": "diesel",
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "engineModels": [
+        "Baudouin 8M33G1100/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EY-1500B",
+      "fuel": "diesel",
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "engineModels": [
+        "12M33G1650/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2014
+      ]
     }
   ],
   "certifications": [],
@@ -92,9 +456,796 @@
         "The Industrial generator sets ranging from 1000 to 1850 kVA"
       ],
       "file": "sources/energy-gruppi/3.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-30p-24kw-30kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-perkins-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "30 kVA, 24 kW",
+        "Perkins 1103A-33G",
+        "Linz PRO18S C/4",
+        "30 kVA - 24 kW",
+        "33 kVA - 26.4 kW"
+      ],
+      "file": "sources/energy-gruppi/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-60p-48kw-60kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-perkins-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "60 kVA, 48 kW",
+        "Perkins 1103A-33TG2",
+        "Linz PRO18L G/4",
+        "60 kVA - 48 kW",
+        "66 kVA - 52.8 kW"
+      ],
+      "file": "sources/energy-gruppi/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-100f-80kw-100kva-stage2-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-fpt-iveco-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "100 kVA, 80 kW",
+        "FPT NEF45 TM2A",
+        "Linz PRO22S D/4",
+        "100 kVA - 80 kW",
+        "110 kVA - 88 kW"
+      ],
+      "file": "sources/energy-gruppi/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-150p-120kw-150kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-perkins-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "150 kVA, 120 kW",
+        "Perkins 1106A 70TAG2",
+        "Linz PRO22M F/4",
+        "150 kVA - 120 kW",
+        "165 kVA - 132 kW"
+      ],
+      "file": "sources/energy-gruppi/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-200p-160kw-200kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-perkins-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "200 kVA, 160 kW",
+        "Perkins 1106A 70TAG4",
+        "Linz PRO28S B/4",
+        "200 kVA - 160 kW",
+        "220 kVA - 176 kW"
+      ],
+      "file": "sources/energy-gruppi/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-250s-200kw-250kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-scania-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "250 kVA, 200 kW",
+        "Scania DC09 072A 02 11",
+        "Linz PRO28S D/4",
+        "250 kVA - 200 kW",
+        "275 kVA - 220 kW"
+      ],
+      "file": "sources/energy-gruppi/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-350vo-280kw-350kva-stage2-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-volvo-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "350 kVA, 280 kW",
+        "Volvo TAD 1342GE-B",
+        "Linz PRO28M F/4",
+        "350 kVA - 280 kW",
+        "385 kVA - 308 kW"
+      ],
+      "file": "sources/energy-gruppi/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-450p-360kw-450kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-perkins-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "450 kVA, 360 kW",
+        "2506A-E15TAG1",
+        "Mecc Alte ECO40-2S/4 C",
+        "450 kVA - 360 kW",
+        "495 kVA - 396 kW"
+      ],
+      "file": "sources/energy-gruppi/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-500p-400kw-500kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-perkins-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "500 kVA, 400 kW",
+        "2506C-E15TAG2",
+        "Mecc Alte ECO40-3S/4 C",
+        "500 kVA - 400 kW",
+        "550 kVA - 440 kW"
+      ],
+      "file": "sources/energy-gruppi/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-625s-500kw-625kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-scania-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "625 kVA, 500 kW",
+        "Scania DC16 093A 02 54",
+        "Mecc Alte ECO40-2L/4 C",
+        "625 kVA - 500 kW",
+        "687 kVA - 549 kW"
+      ],
+      "file": "sources/energy-gruppi/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-700p-560kw-700kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-perkins-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "700 kVA, 560 kW",
+        "2806A-E18TTAG4",
+        "Mecc Alte ECO40-VL/4 C",
+        "700 kVA - 560 kW",
+        "770 kVA - 616 kW"
+      ],
+      "file": "sources/energy-gruppi/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-900p-720kw-900kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-perkins-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "900 kVA, 720 kW",
+        "Perkins 4008-TAG1A",
+        "Mecc Alte ECO43-2S/4",
+        "900 kVA - 720 kW",
+        "990 kVA - 792 kW"
+      ],
+      "file": "sources/energy-gruppi/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-1000b-800kw-1000kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-baudouin-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "1000 kVA, 800 kW",
+        "Baudouin 8M33G1100/5",
+        "Mecc Alte",
+        "1000 kVA - 800 kW",
+        "1,100 kVA - 880 kW"
+      ],
+      "file": "sources/energy-gruppi/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://www.energy-gruppi.it/en/prodotti/genaratore-diesel-silenziato-aperto-trifase-gamma-industrial-ey-1500b-1200kw-1500kva-stage0-raffreddato-acqua-1500rpm-settore-industriale-civile-agricolo-motore-baudouin-gruppi-elettrogeni-energy",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "1500 kVA, 1200 kW",
+        "12M33G1650/5",
+        "Mecc Alte",
+        "1,500 kVA - 1,200 kW",
+        "1650 kVA - 1320 kW"
+      ],
+      "file": "sources/energy-gruppi/2014.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "EY-30P - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-30P",
+        "30 kVA, 24 kW",
+        "CONTINUOUS POWER:",
+        "30 kVA - 24 kW",
+        "STANDBY POWER:",
+        "33 kVA - 26.4 kW",
+        "CURRENT:",
+        "43 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "Perkins 1103A-33G",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1,500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "5.4 liters/hour",
+        "TANK:",
+        "100 liters",
+        "ALTERNATOR:",
+        "Linz PRO18S C/4",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EY-60P - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-60P",
+        "60 kVA, 48 kW",
+        "CONTINUOUS POWER:",
+        "60 kVA - 48 kW",
+        "STANDBY POWER:",
+        "66 kVA - 52.8 kW",
+        "CURRENT:",
+        "87 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "Perkins 1103A-33TG2",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "10.8 L/h",
+        "TANK:",
+        "100 liters",
+        "ALTERNATOR:",
+        "Linz PRO18L G/4",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "EY-100F - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-100F",
+        "100 kVA, 80 kW",
+        "CONTINUOUS POWER:",
+        "100 kVA - 80 kW",
+        "STANDBY POWER:",
+        "110 kVA - 88 kW",
+        "CURRENT:",
+        "144 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "FPT NEF45 TM2A",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE II",
+        "RPM:",
+        "1500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "16.2 L/h",
+        "TANK:",
+        "120 liters",
+        "ALTERNATOR:",
+        "Linz PRO22S D/4",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "EY-150P - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-150P",
+        "150 kVA, 120 kW",
+        "CONTINUOUS POWER:",
+        "150 kVA - 120 kW",
+        "STANDBY POWER:",
+        "165 kVA - 132 kW",
+        "CURRENT:",
+        "217 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "Perkins 1106A 70TAG2",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1,500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "24.2 L/h",
+        "TANK:",
+        "250 liters",
+        "ALTERNATOR:",
+        "Linz PRO22M F/4",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "EY-200P - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-200P",
+        "200 kVA, 160 kW",
+        "CONTINUOUS POWER:",
+        "200 kVA - 160 kW",
+        "STANDBY POWER:",
+        "220 kVA - 176 kW",
+        "AMPERAGE:",
+        "289 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "Perkins 1106A 70TAG4",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1,500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "34.7 L/h",
+        "TANK:",
+        "250 liters",
+        "ALTERNATOR:",
+        "Linz PRO28S B/4",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "EY-250S - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-250S",
+        "250 kVA, 200 kW",
+        "CONTINUOUS POWER:",
+        "250 kVA - 200 kW",
+        "STANDBY POWER:",
+        "275 kVA - 220 kW",
+        "CURRENT:",
+        "361 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "Scania DC09 072A 02 11",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "38.4 liters/hour",
+        "TANK:",
+        "250 liters",
+        "ALTERNATOR:",
+        "Linz PRO28S D/4",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "EY-350VO - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-350VO",
+        "350 kVA, 280 kW",
+        "CONTINUOUS POWER:",
+        "350 kVA - 280 kW",
+        "STANDBY POWER:",
+        "385 kVA - 308 kW",
+        "AMPERAGE:",
+        "505 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "Volvo TAD 1342GE-B",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE II",
+        "RPM:",
+        "1,500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "52.5 liters/hour",
+        "TANK:",
+        "400 liters",
+        "ALTERNATOR:",
+        "Linz PRO28M F/4",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "EY-450P - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-450P",
+        "450 kVA, 360 kW",
+        "CONTINUOUS POWER:",
+        "450 kVA - 360 kW",
+        "STANDBY POWER:",
+        "495 kVA - 396 kW",
+        "CURRENT:",
+        "650 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "2506A-E15TAG1",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "72 liters/hour",
+        "TANK:",
+        "400 liters",
+        "ALTERNATOR:",
+        "Mecc Alte ECO40-2S/4 C",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "EY-500P - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-500P",
+        "500 kVA, 400 kW",
+        "CONTINUOUS POWER:",
+        "500 kVA - 400 kW",
+        "STANDBY POWER:",
+        "550 kVA - 440 kW",
+        "CURRENT:",
+        "722 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "2506C-E15TAG2",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1,500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "76 liters/hour",
+        "TANK:",
+        "400 liters",
+        "ALTERNATOR:",
+        "Mecc Alte ECO40-3S/4 C",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "EY-625S - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-625S",
+        "625 kVA, 500 kW",
+        "CONTINUOUS POWER:",
+        "625 kVA - 500 kW",
+        "STANDBY POWER:",
+        "687 kVA - 549 kW",
+        "AMPERAGE:",
+        "902 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "Scania DC16 093A 02 54",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "94.7 liters/hour",
+        "TANK:",
+        "400 liters",
+        "ALTERNATOR:",
+        "Mecc Alte ECO40-2L/4 C",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "EY-700P - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-700P",
+        "700 kVA, 560 kW",
+        "CONTINUOUS POWER:",
+        "700 kVA - 560 kW",
+        "STANDBY POWER:",
+        "770 kVA - 616 kW",
+        "AMPERAGE:",
+        "1010 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "2806A-E18TTAG4",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1,500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "109 liters/hour",
+        "TANK:",
+        "400 liters",
+        "ALTERNATOR:",
+        "Mecc Alte ECO40-VL/4 C",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "EY-900P - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-900P",
+        "900 kVA, 720 kW",
+        "CONTINUOUS POWER:",
+        "900 kVA - 720 kW",
+        "STANDBY POWER:",
+        "990 kVA - 792 kW",
+        "AMPERAGE:",
+        "1299 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "Perkins 4008-TAG1A",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1,500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "142 liters/hour",
+        "TANK:",
+        "400 liters",
+        "ALTERNATOR:",
+        "Mecc Alte ECO43-2S/4",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "EY-1000B - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-1000B",
+        "1000 kVA, 800 kW",
+        "CONTINUOUS POWER:",
+        "1000 kVA - 800 kW",
+        "STANDBY POWER:",
+        "1,100 kVA - 880 kW",
+        "CURRENT:",
+        "N/A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "Baudouin 8M33G1100/5",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "N/A",
+        "TANK:",
+        "400 liters",
+        "ALTERNATOR:",
+        "Mecc Alte",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "EY-1500B - technical specifications",
+      "header": [
+        "TECHNICAL SPECIFICATIONS"
+      ],
+      "rows": [
+        "EY-1500B",
+        "1500 kVA, 1200 kW",
+        "CONTINUOUS POWER:",
+        "1,500 kVA - 1,200 kW",
+        "STANDBY POWER:",
+        "1650 kVA - 1320 kW",
+        "CURRENT:",
+        "2165 A",
+        "VOLTAGE:",
+        "400/230 V",
+        "FREQUENCY:",
+        "50 Hz",
+        "ENGINE:",
+        "12M33G1650/5",
+        "FUEL:",
+        "Diesel",
+        "EMISSIONS:",
+        "STAGE 0",
+        "RPM:",
+        "1,500 rpm",
+        "COOLING:",
+        "Water",
+        "FUEL CONS. 75%",
+        "N/A",
+        "TANK:",
+        "400 liters",
+        "ALTERNATOR:",
+        "Mecc Alte",
+        "VOLTAGE REGULATION:",
+        "AVR"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Lovato",
+      "model": "RGK420SA",
+      "text": "LOVATO RGK420SA",
+      "line": "LOVATO RGK420SA",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AMF8",
+      "text": "COMAP AMF8",
+      "line": "COMAP AMF8",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AMF25",
+      "text": "COMAP AMF25",
+      "line": "COMAP AMF25",
+      "src": [
+        2007
+      ]
+    }
+  ]
 }
