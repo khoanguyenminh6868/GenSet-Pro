@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-13T00:28:45.570Z
+  modified: 2026-11-13T00:39:22.536Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -32,7 +32,7 @@ metadata:
 - Tiêu hao nhiên liệu vượt mức HSMT → loại hẳn khỏi ứng viên, KHÔNG dung sai; chỉ khi nguồn ghi rõ mức tải trùng mức HSMT; dòng không có số thì giữ.
 - Trang bên bán / không chính hãng (tier C) không đưa vào danh mục NCC (kết quả gợi ý của lượt vẫn hiện).
 - 7 chỉ tiêu Thảo Nguyên từng bị loại → cảnh báo trên cấu hình hạng 1–3, không đổi thứ hạng.
-- Web không in câu trích ([[session-log]]). Có nút "Chép bảng câu hỏi" (RFQ cho NCC) và khối "Câu hỏi làm rõ HSMT".
+- Web không in câu trích. Có nút "Chép bảng câu hỏi" (RFQ cho NCC) và khối "Câu hỏi làm rõ HSMT".
 
 **Tìm NCC:** CHỈ Claude. NCC mới trùng cấu hình có sẵn → gắn vào; không trùng → cấu hình mới. Không chạy lại cả Gợi ý. Gợi ý lại giữ kết quả Tìm NCC và cấu hình tìm trên internet (trang lưu ở `genbid-work\config-web\`). Nút trên từng cấu hình: Xoá, Tìm nhà cung cấp.
 
@@ -42,27 +42,13 @@ metadata:
 **Chưa chốt với Khoa:** đại diện hãng tại VN/MAF, ISO/prototype có tính vào xếp hạng không; hàng trúng có nên đưa lên trên không.
 
 ## Nguồn datasheet hãng
-`maker-datasheets.mjs <id> <pdf...>` → `merge-specs.mjs <id>` → `verify.mjs`.
 - Wintpower: wintpower.com/uploads/<model>.pdf. Stamford: stamford-avk.com/alternators/stamford/<frame> (PDF INDUSTRIAL; HCI4xx đời mới ≠ HCI444), Ratings Book Ed4.
 - Leroy-Somer: leroy-somer.com/documentation_pdf/6608–6613_en.pdf (TAL); LSA hiện hành ở moen.nidec.com.
 - Deep Sea: <trang model>/downloads/datasheet (sổ tay 403). SmartGen: smartgen.cn/yun/data/download/<tên>_en.pdf. ComAp: /productfile/<id> (InteliLite NT không còn).
 - Cummins: mart.cummins.com có spec sheet; cummins.com và perkins.com trả 403 → không lách (prompt cấm đổi User-Agent sau 403), hỏi Khoa tải tay.
 - Không có datasheet theo model: Jet-Power, Bobig, Acepow, Nianfeng.
 
-## Thử / kiểm
-- Dry-run: `GENBID_LOCAL_SUPPLIERS=1`, prep → claude → check. Kiểm nhanh không tốn agent: chạy `check --dir` bằng code mới trên thư mục lượt cũ. Log agent `%TEMP%\genbid-config-<TBMT>.log`. `restore-web` chỉ đọc (cần `--origin`).
-- Gửi lại Gợi ý từ máy: `post([{coll:"configreq", id, data:{by, from:"web", origin:"all", bidName, notifyNo, requestedAt: now, error:""}}])` (import từ config-bot.mjs).
-- Bản nghiệm thu từng đợt: `genbid-work\dieu-phoi\nghiem-thu\`.
-
-## Bẫy
-- `web/api/webreq.js` lọc trường yêu cầu theo danh sách → trường mới phải thêm ở đó.
-- Script import config-bot.mjs không được bị config-bot import ngược (node thoát 13, kẹt `genbid-config.lock`).
-- `check` cắt MAX_CONFIGS TRƯỚC `rankConfigs` → cấu hình cần giữ phải đưa lên trước khi cắt. Kết quả lưu không ghi origin → mặc định "cn".
-- Check hiếm khi mang `code` → khớp theo item của yêu cầu. Từ khoá mã `alt_vreg` bắt cả dòng tần số, đừng dùng để quét HSMT.
-- Dữ liệu: fdk-energy "Prime power / Speed (KW/RPM)" là kWe tổ máy; đuôi "-6" (sanq-power, LEES) là máy 60 Hz; mã `TWD…` là Volvo Penta; "P158LE" bị coi là mã đầu phát; saudi-diesel bị đọc thành SDEC; PDF chính hãng trên CDN riêng (shopify, ldycdn…) bị coi không chính thức.
-- Chữ HSMT trên web của ~1.490 gói lịch sử chỉ là Chương V do specs đăng; chỉ gói đang mời thầu đã Lấy tệp mới có HSMT cả bộ. `analysis.generatorSets` hầu như luôn rỗng. Bộ so tự viết khi hồi quy cũng hay sai → xem từng ca.
-
 ## Còn dở
 "Chưa rõ" còn lại chủ yếu do thiếu dữ liệu (đầu phát TQ, tiêu hao/quá tải tổ máy TQ, số pha, kWm hãng động cơ theo tốc độ — Perkins và Cummins đuôi -G2 thiếu) → muốn hơn phải xin catalog NCC ([[supplier-db]]). Dữ liệu NCC ở nước G7 mỏng, agent phải tìm internet. LSA đời ngừng, InteliLite NT AMF20/25, MRS10 chưa có datasheet. Kho ghi nhớ "đã tìm không ra": `genbid-work\web-memo\negative.json` (90 ngày).
 
-Liên quan [[bidprice-suggest]].
+Cách thử, lệnh và bẫy code: `suppliers/CLAUDE.md` trong repo; bản nghiệm thu từng đợt: `genbid-work\dieu-phoi\nghiem-thu\`. Liên quan [[bidprice-suggest]], [[quy-tac-luong]].
