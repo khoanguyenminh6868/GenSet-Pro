@@ -98,10 +98,7 @@ async function srcLeaks(page, tab) {
   }
 }
 test("SHOW_SRC=false: Cấu hình gợi ý không in câu trích / dòng / link nguồn nào", async ({ page }) => { await srcLeaks(page, "config"); });
-test.fixme("SHOW_SRC=false: Phân tích không in câu trích HSMT / chỗ dẫn chiếu", async ({ page }) => {
-  // Lỗi tìm thấy 13/11/2026 (cần Khoa xác nhận đây là "nguồn"): mục Điểm cần lưu ý gate quote + reference bằng SHOW_SRC,
-  // nhưng bảng Thông số kỹ thuật (specsTableHtml: s.quote, cột "Nguồn" = s.reference), Điều khoản hợp đồng (x.quote,
-  // x.reference) và Yêu cầu năng lực (q.reference) in ra không gate. Gói IB2600586587: ~60 câu / chỗ dẫn chiếu.
+test("SHOW_SRC=false: Phân tích không in câu trích HSMT / chỗ dẫn chiếu (thông số, điều khoản, năng lực)", async ({ page }) => {
   await srcLeaks(page, "analysis");
 });
 

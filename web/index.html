@@ -4342,7 +4342,7 @@ function tlktHtml(c) {
 }
 
 // ---------- Analysis rendering ----------
-const specsTableHtml = (a) => h`<details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table class="spec1"><thead><tr><th>Hạng mục</th><th>Yêu cầu</th><th>Nguồn</th></tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td class="s-item">${s.item}</td><td>${s.requirement}${raw(s.quote ? h`<div class="muted small">"${s.quote}"</div>` : "")}</td><td class="muted s-ref">${s.reference || ""}${raw(s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td></tr>`).join(""))}</tbody></table></div></details>`;
+const specsTableHtml = (a) => h`<details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table class="spec1"><thead><tr><th>Hạng mục</th><th>Yêu cầu</th>${raw(SHOW_SRC ? "<th>Nguồn</th>" : "")}</tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td class="s-item">${s.item}</td><td>${s.requirement}${raw(SHOW_SRC && s.quote ? h`<div class="muted small">"${s.quote}"</div>` : "")}${raw(!SHOW_SRC && s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td>${raw(SHOW_SRC ? h`<td class="muted s-ref">${s.reference || ""}${raw(s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td>` : "")}</tr>`).join(""))}</tbody></table></div></details>`;
 // basis "specs": the bot read only the technical specs of Chương V (genbid-sync.js specs, Khoa 2026-11-03).
 function specsOnlyHtml(a) {
   const cap = a.keyInfo?.generatorCapacity;
@@ -4378,7 +4378,7 @@ function analysisHtml(a) {
     <details class="sec" open><summary>Thông tin chính</summary><div><dl class="kv kvw">${raw(KI.filter(([k]) => ki[k]).map(([k, l]) => h`<dt>${l}</dt><dd>${ki[k]}</dd>`).join(""))}</dl></div></details>
     ${raw(specsTableHtml(a))}
     ${raw(contractTermsHtml(a))}
-    <details class="sec"><summary>Yêu cầu năng lực, kinh nghiệm (${(a.qualificationRequirements || []).length})</summary><div>${raw(list((a.qualificationRequirements || []).map((q) => q.requirement + (q.reference ? ` (${q.reference})` : ""))))}</div></details>
+    <details class="sec"><summary>Yêu cầu năng lực, kinh nghiệm (${(a.qualificationRequirements || []).length})</summary><div>${raw(list((a.qualificationRequirements || []).map((q) => q.requirement + (SHOW_SRC && q.reference ? ` (${q.reference})` : ""))))}</div></details>
     <details class="sec"><summary>Tài liệu phải nộp (${(a.requiredDocuments || []).length})</summary><div>${raw(list(a.requiredDocuments))}</div></details>
     <details class="sec"><summary>Điều khoản có dấu hiệu hạn chế (${(a.restrictiveClauses || []).length})</summary><div>${raw(list(a.restrictiveClauses))}</div></details>
     <details class="sec"><summary>Câu hỏi nên gửi làm rõ (${(a.questionsForClarification || []).length})</summary><div>${raw(list(a.questionsForClarification))}</div></details>
@@ -4389,7 +4389,7 @@ function analysisHtml(a) {
 function contractTermsHtml(a) {
   const t = a.contractTerms || [];
   if (!t.length) return "";
-  return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv kvw kv1m">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
+  return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv kvw kv1m">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(SHOW_SRC && x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(SHOW_SRC && x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
 }
 // "Tự kiểm hồ sơ dự thầu": the bid against itself (other package's files, model mix-ups, catalogue vs offer, missing proof,
 // adverse wording). Problems first; older results have no selfChecks and show nothing. Quotes and file names follow SHOW_SRC.
