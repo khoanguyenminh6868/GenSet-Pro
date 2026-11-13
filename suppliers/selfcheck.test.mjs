@@ -1,18 +1,13 @@
 // Đối chiếu: "Tự kiểm hồ sơ dự thầu" (selfChecks) as checked by checkResult in bot/genbid-hsmt/genbid-sync.js.
-// The bot script is not a module, so the checking code is cut out of it and run in a vm.
+// checkResult lives in bot/genbid-hsmt/sync-pure.js (moved there from genbid-sync.js by T5, 2026-11-13).
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import vm from "node:vm";
-import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 
-const src = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "bot", "genbid-hsmt", "genbid-sync.js"), "utf8");
-const from = src.indexOf("const normTxt"), to = src.indexOf("async function runFinish");
-assert.ok(from > 0 && to > from, "không tìm thấy phần kiểm kết quả trong genbid-sync.js");
-const readJson = (f, d) => { try { return JSON.parse(fs.readFileSync(f, "utf8")); } catch { return d; } };
-const { checkResult } = vm.runInNewContext(src.slice(from, to) + "\n({ checkResult })", { fs, path, readJson, console });
+const { checkResult } = createRequire(import.meta.url)("../bot/genbid-hsmt/sync-pure.js");
 
 const pad = " Quy định chung về thực hiện hợp đồng và nghiệm thu thiết bị theo hồ sơ mời thầu của gói thầu này.".repeat(5);
 const REQ = `Gói thầu: Mua sắm máy phát điện 405 kVA tại Trạm bơm Đức Trọng. Thời gian khắc phục sự cố không quá 24 giờ.${pad}`;

@@ -1,0 +1,22 @@
+name: Test bot
+
+# The Node part of the Windows bot (bot/genbid-hsmt): the pure functions of genbid-sync.js (sync-pure.js), the browser
+# snippets on faked page data, the pure part of ocr-pdf.js. No Chrome, no Tesseract, no network, no npm install
+# (the tests only require files of the kit; playwright-core / tesseract.js are loaded lazily by the bot itself).
+on:
+  pull_request:
+    paths: ['bot/**', '.github/workflows/test-bot.yml']
+  push:
+    branches: [main]
+    paths: ['bot/**', '.github/workflows/test-bot.yml']
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: for f in bot/genbid-hsmt/*.js; do node --check "$f" || exit 1; done
+      - run: node --test bot/test/*.test.mjs
