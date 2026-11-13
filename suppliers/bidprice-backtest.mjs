@@ -47,7 +47,7 @@ export function cases(docs) {
       const ratio = wp / price;
       if (ratio < 0.3 || ratio > 1.02) continue;
       const goods = lot.goods || [];
-      if (BP.movesOldSet(d.config?.text) && !goods.some((g) => BP.isGensetName(g.name))) continue;
+      if (BP.movesOldSet(d.config?.text) && !goods.some((g) => BP.isGensetRow(g.name))) continue;
       const kName = BP.kvaOf(lot.lotName) || (multi ? null : BP.kvaOf(d.bidName)), kCfg = kName ? null : BP.cfgPower(d, multi);
       const K = kName || kCfg?.kva || null;
       if (!K) continue;

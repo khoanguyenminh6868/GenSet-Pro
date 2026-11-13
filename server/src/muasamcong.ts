@@ -99,9 +99,18 @@ export function stripAccents(s: string): string {
     .toLowerCase();
 }
 
+// Same tender-name rule as isGensetName (web/bidprice.js) and isGenset (bot sync-pure.js): keep the three alike. This one
+// stays the loosest (accent-free, "phat dien" alone keeps), as the feed prefers a surplus to a missed generator tender.
+// "MPĐ" alone is a set; wind / solar generators are not, unless the name also says diesel, standby or kVA.
+const MPD_RE = /(?<![a-z])mpd(?![a-z])/;
+const RENEW_RE =
+  /may\s*phat\s*(dien\s*)?(gio|mat\s*troi|nang\s*luong)|phat\s*dien\s*(gio|mat\s*troi|nang\s*luong)|dien\s*gio|nang\s*luong\s*gio|tua\s*-?\s*bin\s*gio|pin\s*(nang\s*luong\s*)?mat\s*troi|quang\s*dien|\bsolar\b|\bwind\b/;
+const SET_RE = /du\s*phong|diesel|diezen|\d\s*kva\b/;
+
 export function isGeneratorTender(bidName: string): boolean {
   const n = stripAccents(bidName);
-  return RELEVANCE_TERMS.some((t) => n.includes(t));
+  if (!(RELEVANCE_TERMS.some((t) => n.includes(t)) || MPD_RE.test(n))) return false;
+  return !RENEW_RE.test(n) || SET_RE.test(n);
 }
 
 export function buildDetailUrl(

@@ -200,16 +200,28 @@ test("isGensetName / bidKind: mua tổ máy, dịch vụ, di dời, tổ máy c�
   for (const [name, genset, kind] of cases) { assert.equal(BP.isGensetName(name), genset, name); assert.equal(BP.bidKind(name), kind, name); }
 });
 
-// Thử sửa 13/11 rồi hoàn lại: 0 tên gói thật được lợi, nhưng 126 dòng hàng hoá / vật tư "MPĐ diesel - Dây curoa…" thành
-// "tổ máy" (unitsOf, isSetRow đếm theo isGensetName). Muốn sửa phải tách luật cho tên gói và cho dòng hàng hoá.
-test("isGensetName nhận chữ viết tắt MPĐ", { todo: "\\b sau chữ Đ không khớp; sửa thẳng làm dòng vật tư MPĐ thành tổ máy" }, () => {
+// Tách luật 13/11: isGensetName là luật TÊN GÓI; dòng hàng hoá / vật tư dùng isGensetRow (không đọc "MPĐ": sửa thẳng làm
+// 126 dòng "MPĐ diesel - Dây curoa…" thành "tổ máy" trong unitsOf, isSetRow).
+test("isGensetName nhận chữ viết tắt MPĐ (tên gói)", () => {
   assert.equal(BP.isGensetName("Cung cấp MPĐ 100kVA"), true);
   assert.equal(BP.isGensetName("Mua sắm MPĐ dự phòng cho trạm BTS"), true);
+  assert.equal(BP.isGensetName("Mua sắm mpđ"), true);
+  assert.equal(BP.isGensetName("Cung cấp MPD 100kVA"), true);
+  assert.equal(BP.isGensetName("Cung cấp TMPĐX"), false, "chữ khác dính liền không phải MPĐ");
 });
 
-test("isGensetName không nhận máy phát điện gió / điện mặt trời (không phải tổ máy diesel)", { todo: "tên có 'máy phát điện' là nhận" }, () => {
+test("isGensetRow giữ luật cũ cho dòng hàng hoá: 'MPĐ diesel - Dây curoa' không là tổ máy", () => {
+  assert.equal(BP.isGensetRow("MPĐ diesel - Dây curoa"), false);
+  assert.equal(BP.isGensetRow("Máy phát điện diesel 500kVA"), true);
+  assert.equal(BP.unitsOf("Cung cấp vật tư", [{ name: "MPĐ diesel - Dây curoa", qty: 8 }]), 1);
+});
+
+test("isGensetName không nhận máy phát điện gió / điện mặt trời / tua-bin gió (không phải tổ máy diesel)", () => {
   assert.equal(BP.isGensetName("Cung cấp máy phát điện gió 5kW"), false);
   assert.equal(BP.isGensetName("Hệ thống máy phát điện năng lượng mặt trời"), false);
+  assert.equal(BP.isGensetName("Bảo dưỡng tua-bin gió"), false);
+  assert.equal(BP.isGensetName("Pin mặt trời và máy phát điện áp mái"), false);
+  assert.equal(BP.isGensetName("Hệ thống điện mặt trời và máy phát điện diesel dự phòng 250kVA"), true, "có diesel / dự phòng / kVA thì vẫn là gói máy phát");
 });
 
 test("movesOldSet: dòng HSMT về máy cũ cần di dời; máy mới có bánh xe để di chuyển thì không", () => {

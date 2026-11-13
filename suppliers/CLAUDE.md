@@ -24,7 +24,7 @@
 - Check hiếm khi mang `code` → khớp theo item của yêu cầu. Từ khoá của mã `alt_vreg` bắt cả dòng tần số, đừng dùng để quét HSMT.
 - Thêm mã yêu cầu (`reqcodes.mjs`): dòng `R(...)` đúng vị trí thứ tự + test, tăng `REQ_VERSION`.
 - Đổi từ khoá của một mã: đo `codeOf` trước/sau trên `technicalSpecs` của `doc-cache\analysis.json` (48.580 dòng). `codeOf` thử tên mục trước, cả câu sau, theo thứ tự danh sách → từ khoá rộng ở tên mục cướp dòng của mã khác ("hệ thống nhiên liệu" kéo dòng bồn dầu khỏi `fuel_tank`).
-- `domain.test.mjs` là bộ ca chuyên môn (số tính tay); ca `todo` là lỗi biết mà chưa sửa. `BP.isGensetName` dùng cho cả tên gói lẫn dòng hàng hoá (`unitsOf`, `isSetRow`): nới cho tên gói (vd. nhận "MPĐ") thì dòng vật tư "MPĐ diesel - Dây curoa" thành tổ máy.
+- `domain.test.mjs` là bộ ca chuyên môn (số tính tay); ca `todo` là lỗi biết mà chưa sửa. Hai luật tách (13/11): `BP.isGensetName` là luật TÊN GÓI (nhận "MPĐ", loại máy phát điện gió / mặt trời), `BP.isGensetRow` là luật DÒNG HÀNG HOÁ (`unitsOf`, `isSetRow`, `goodsGroup`, `candidates`: không đọc "MPĐ", vì "MPĐ diesel - Dây curoa" là vật tư). Luật tên gói còn ở `bot/genbid-hsmt/sync-pure.js` (`isGenset`) và `server/src/muasamcong.ts` (`isGeneratorTender`): sửa một nơi phải sửa cả ba; `bot/test/sync-rules.test.mjs` so ba nơi trên một danh sách.
 - Fixture test phải có `country: "CN"`. `analysis.generatorSets` hầu như luôn rỗng, đừng dựa vào.
 - Dữ liệu dễ đọc nhầm: fdk-energy "Prime power / Speed (KW/RPM)" là kWe tổ máy; đuôi "-6" là máy 60 Hz; mã `TWD…` là Volvo Penta; "P158LE" bị coi là mã đầu phát; saudi-diesel bị đọc thành SDEC; Continuous (COP) ≠ Prime (PRP) khi xét quá tải.
 

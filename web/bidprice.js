@@ -54,7 +54,7 @@
   // How many sets a lot buys: the quantity of its won generator sets, else the name ("Mua 20 bộ máy phát điện", "2 x 250 kVA"), else one.
   const UNIT_RE = /(\d{1,3})\s*(?:bộ|máy|tổ\s*máy|chiếc|cái)(?!\p{L})/iu, X_RE = /(\d{1,3})\s*[x×]\s*\d/i;
   function unitsOf(name, goods = []) {
-    const q = Math.max(0, ...goods.filter((g) => isGensetName(g.name)).map((g) => Number(g.qty) || 0));
+    const q = Math.max(0, ...goods.filter((g) => isGensetRow(g.name)).map((g) => Number(g.qty) || 0));
     if (q >= 1) return q;
     const n = String(name || "").normalize("NFC"), m = n.match(UNIT_RE) || n.match(X_RE);
     return m && Number(m[1]) >= 1 ? Number(m[1]) : 1;
@@ -62,7 +62,16 @@
   // Same name rules as the bot (genbid-sync.js isGenset): a power plant's own generator is not a generator set.
   const GENSET_RE = /m[áa]y\s*ph[áa]t\s*(đi[ệe]n|di[eê]s[eê]l|di[eê]zen|dự\s*phòng)|m[áa]y\s*ph[áa]t[^,;:]{0,30}\d+\s*k[vV]?[aA]\b|\bgenset\b|\bmp[đd]\b/i;
   const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|di[eê]s[eê]l|di[eê]zen|\d\s*kva\b/i;
-  const isGensetName = (n) => { n = String(n || "").normalize("NFC"); return GENSET_RE.test(n) && (!PLANT_RE.test(n) || SET_RE.test(n)); };
+  // Goods / section lines ("MPĐ diesel - Dây curoa" is a part, not a set): the rule as it was, "MPĐ" not read.
+  const isGensetRow = (n) => { n = String(n || "").normalize("NFC"); return GENSET_RE.test(n) && (!PLANT_RE.test(n) || SET_RE.test(n)); };
+  // Tender names: same rule in bot/genbid-hsmt/sync-pure.js (isGenset) and server/src/muasamcong.ts (isGeneratorTender),
+  // keep the three alike. A name saying only "MPĐ" is a set (JS \b does not see Đ as a letter, hence the lookarounds);
+  // wind / solar generators are not, unless the name also says diesel, standby or kVA.
+  const MPD_RE = /(?<!\p{L})mp[đd](?!\p{L})/iu;
+  // Narrow on purpose: the renewable word must touch the generator ("máy phát điện gió"), so a mixed building package
+  // ("điện năng lượng mặt trời, Máy phát điện; Điều hòa…") that also buys a set stays a generator tender.
+  const RENEW_RE = /máy\s*phát\s*(?:điện\s*)?(?:gió|mặt\s*trời|năng\s*lượng)|phát\s*điện\s*(?:gió|mặt\s*trời|năng\s*lượng)|điện\s*gió|năng\s*lượng\s*gió|tua\s*-?\s*bin\s*gió|pin\s*(?:năng\s*lượng\s*)?mặt\s*trời|quang\s*điện|\bsolar\b|\bwind\b/i;
+  const isGensetName = (n) => { n = String(n || "").normalize("NFC"); return (GENSET_RE.test(n) || MPD_RE.test(n)) && (!PLANT_RE.test(n) || SET_RE.test(n)) && (!RENEW_RE.test(n) || SET_RE.test(n)); };
   // Repair, upkeep, rental, parts and studies are priced differently from supplying a generator set.
   const SVC_RE = /sửa\s*chữa|bảo\s*dưỡng|bảo\s*trì|đại\s*tu|trung\s*tu|giám\s*sát\s*(thi\s*công|lắp\s*đặt)|thuê|phụ\s*tùng|vật\s*tư|chổi\s*than|thí\s*nghiệm|kiểm\s*định|tư\s*vấn|dầu\s*(nhớt|bôi\s*trơn)/i;
   // Moving or re-installing a set already owned (Khoa, 2026-11-03) is not supplying one either: "Di dời, lắp đặt máy phát
@@ -215,7 +224,7 @@
   // The winning generator sets' engine origin, from the make, model and origin muasamcong lists for each (cables, ATS,
   // transformers left out): one group for all, else none.
   function goodsGroup(goods) {
-    const gs = goods.filter((g) => isGensetName(g.name) && !OTHER_LINE.test(g.name)).map((g) => profileOf(`máy phát ${[g.maker, g.origin].join(" ").replace(/\s+/g, " ")}`, g.code).group).filter(Boolean);
+    const gs = goods.filter((g) => isGensetRow(g.name) && !OTHER_LINE.test(g.name)).map((g) => profileOf(`máy phát ${[g.maker, g.origin].join(" ").replace(/\s+/g, " ")}`, g.code).group).filter(Boolean);
     return gs.length && gs.every((g) => g === gs[0]) ? gs[0] : null;
   }
   // How alike the configurations two texts ask for are: what both name, what only one names; sim 0..1, null when neither
@@ -246,7 +255,7 @@
   const DESC_KEY = new RegExp(KEY_LINE.source + "|model|nh[ãa]n\\s*hi[ệe]u|k[ýy]\\s*(m[ãa]\\s*)?hi[ệe]u|c[ôo]ng\\s*su[ấa]t|kva|\\bkw\\b|ti[êe]u\\s*hao|v[ỏo]\\s*(ch[ốo]ng\\s*[ồo]n|c[áa]ch)|alternator|engine|controller", "i");
   // A goods row that is a generator set: its name says so, or names a power (an old-form row "- Công suất dài hạn:
   // 240 kW / 300 kVA ..." under a heading row "Máy phát điện 300 KVA và phụ kiện:").
-  const isSetRow = (g) => isGensetName(g.name) || !!kvaOf(g.name);
+  const isSetRow = (g) => isGensetRow(g.name) || !!kvaOf(g.name);
   // A generator set made or assembled in Việt Nam among the won goods: its maker or origin says Việt Nam (Khoa,
   // 2026-11-11, IB2600603983: the 750 kVA sets of Việt Nhật and Trường Lộc won at 56-72% of the price and pulled the
   // suggestion down). Such a lot prices nothing: not alike, not in the prior pool.
@@ -302,7 +311,7 @@
         if (bidKind((multi && lot.lotName) || d.bidName) !== kind) continue;
         const goods = (lot.goods || []).filter((g) => g.name || g.code || g.maker || g.label);
         // A name that does not say so, but an HSMT that moves an owned set and no set among the won goods: a move.
-        if (kind === "supply" && movesOldSet(d.config?.text) && !goods.some((g) => isGensetName(g.name))) continue;
+        if (kind === "supply" && movesOldSet(d.config?.text) && !goods.some((g) => isGensetRow(g.name))) continue;
         if (vnMadeSet(goods)) { vnMade++; continue; }
         const kGoods = Math.max(0, ...goods.map((g) => kvaOf([g.name, g.code, g.desc].join(" ")) || 0)) || null;
         const nameOf = (multi && lot.lotName) || (multi ? "" : d.bidName);
@@ -960,5 +969,5 @@
     return { list: list.slice(0, limit), total: list.length, basis: { investor: !!inv, province: prov || "", kva: K, tol: RIVAL_TOL, min: RIVAL_MIN } };
   }
 
-  root.GenbidBidprice = { CALIB, calibLevels, wQuantile, engineWords, engineGroup, groupPrices, costHints, COST_HINTS, monthsIn, readTerms, financeCost, feasibility, rivalsOf, STALE_DAYS, quoteStale, conflict, wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, VN_WORD, vnMadeSet, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
+  root.GenbidBidprice = { CALIB, calibLevels, wQuantile, engineWords, engineGroup, groupPrices, costHints, COST_HINTS, monthsIn, readTerms, financeCost, feasibility, rivalsOf, STALE_DAYS, quoteStale, conflict, wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, VN_WORD, vnMadeSet, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, isGensetRow, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
 })(typeof window !== "undefined" ? window : globalThis);

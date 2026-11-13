@@ -28,7 +28,13 @@ const GENSET_RE = /m[áa]y\s*ph[áa]t\s*(đi[ệe]n|di[eê]s[eê]l|di[eê]zen|d�
 // A power plant's own generator (turbine, "tổ máy số 2", thuỷ điện / nhiệt điện) is not a generator set, unless the name
 // says standby, diesel or kVA.
 const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|di[eê]s[eê]l|di[eê]zen|\d\s*kva\b/i;
-const isGenset = (c) => { const n = String([].concat(c.bidName || c.pname || "")[0]).normalize("NFC"); return GENSET_RE.test(n) && (!PLANT_RE.test(n) || SET_RE.test(n)); };
+// Tender-name rule, the same as isGensetName in web/bidprice.js and isGeneratorTender in server/src/muasamcong.ts (keep the
+// three alike; bot/test/sync-rules.test.mjs compares them on one list). "MPĐ" alone is a set (JS \b does not see Đ as a
+// letter, hence the lookarounds); wind / solar generators are not, unless the name also says diesel, standby or kVA.
+const MPD_RE = /(?<!\p{L})mp[đd](?!\p{L})/iu;
+// Narrow on purpose: the renewable word must touch the generator, so a mixed package that also buys a set stays in.
+const RENEW_RE = /máy\s*phát\s*(?:điện\s*)?(?:gió|mặt\s*trời|năng\s*lượng)|phát\s*điện\s*(?:gió|mặt\s*trời|năng\s*lượng)|điện\s*gió|năng\s*lượng\s*gió|tua\s*-?\s*bin\s*gió|pin\s*(?:năng\s*lượng\s*)?mặt\s*trời|quang\s*điện|\bsolar\b|\bwind\b/i;
+const isGenset = (c) => { const n = String([].concat(c.bidName || c.pname || "")[0]).normalize("NFC"); return (GENSET_RE.test(n) || MPD_RE.test(n)) && (!PLANT_RE.test(n) || SET_RE.test(n)) && (!RENEW_RE.test(n) || SET_RE.test(n)); };
 const vnTime = (s) => (s ? new Date(/[zZ]|[+-]\d\d:?\d\d$/.test(s) ? s : s + "+07:00").toISOString() : null);
 function histUrl(t) {
   const kq = has(t.inputResultId), P = HIST_PREFIX;

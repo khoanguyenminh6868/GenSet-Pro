@@ -43,7 +43,12 @@ test('bỏ dấu tiếng Việt: đ/Đ thành d, chữ hoa thành thường', ()
 test('gói tên "Tổ máy phát điện" / "Genset" / "Generator" giữ lại; thiết bị khác bị loại', () => {
   assert.ok(isGeneratorTender('Gói thầu số 3: Tổ máy phát điện diesel 1000kVA'));
   assert.ok(isGeneratorTender('Cung cấp Generator 250kVA'));
-  assert.ok(isGeneratorTender('Phát điện mặt trời áp mái')); // khoá hành vi: "phat dien" trùng cả điện mặt trời
+  assert.equal(isGeneratorTender('Phát điện mặt trời áp mái'), false); // điện mặt trời / gió không phải tổ máy
+  assert.equal(isGeneratorTender('Cung cấp máy phát điện gió 5kW'), false);
+  assert.equal(isGeneratorTender('Bảo dưỡng tua-bin gió'), false);
+  assert.ok(isGeneratorTender('Hệ thống điện mặt trời và máy phát điện diesel dự phòng 250kVA')); // có diesel / dự phòng / kVA thì giữ
+  assert.ok(isGeneratorTender('Cung cấp MPĐ 100kVA'));
+  assert.ok(isGeneratorTender('Mua sắm MPĐ dự phòng cho trạm BTS'));
   assert.equal(isGeneratorTender('Mua sắm xe ô tô 7 chỗ'), false);
   assert.equal(isGeneratorTender(''), false);
 });
