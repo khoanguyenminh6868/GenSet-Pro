@@ -287,6 +287,19 @@ test("đổi trạng thái gói (Mới → Chuẩn bị HSDT) ghi tracked/<TBMT>
   await expect.poll(() => gridKeys(page)).toEqual(byPubDesc([...TAB.preparing, G.new2]));
 });
 
+test.describe("đổi trạng thái khi DB không ghi được", () => {
+  test.use({ patch: { failSet: ["tracked"] } });
+  test("gói về lại tab cũ, báo chưa lưu được, không báo Đã chuyển sang (Argon review 13/11)", async ({ page }) => {
+    await openApp(page);
+    await page.locator('#stageTabs [data-stage="new"]').click();
+    await page.locator(`#grid tr[data-key="${G.new2}"] [data-step="preparing"]`).click();
+    await expect(page.locator(".toast", { hasText: "Chưa lưu được" })).toBeVisible();
+    await expect(page.locator(".toast", { hasText: "Đã chuyển sang" })).toHaveCount(0);
+    await expect.poll(() => gridKeys(page)).toEqual(byPubDesc(TAB.new));
+    expect(await writesOf(page, "tracked/" + G.new2)).toHaveLength(0);
+  });
+});
+
 test("lưu ghi chú nội bộ của gói ghi tracked/<TBMT> (giữ trạng thái) với updated_at mới", async ({ page }) => {
   await openApp(page, "#goi/" + G.prep);
   const note = page.locator("#dNote");

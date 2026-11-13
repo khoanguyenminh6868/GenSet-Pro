@@ -6,6 +6,7 @@
 //   colls: { coll: { id: doc | null } } trộn vào dữ liệu mẫu (null = bỏ tài liệu);
 //   full: { "coll/id": doc } bản đầy đủ của tài liệu rút gọn (_lite, như api/lite.js): db.full(path) thay vào như shim.js;
 //   scratch: "fail" → genbidScratch ném lỗi (trang đọc chữ trong tệp bằng thư viện); mặc định trả danh sách tệp giả.
+//   failSet: ["tracked", ...] → set() của các collection này ném lỗi mất kết nối, không ghi (ca "DB không ghi được").
 (() => {
   const patch = window.__gbPatch || {};
   const gb = (window.__gb = { writes: [], api: [], colls: null, stamps: {}, fulls: [], scratch: [] });
@@ -52,6 +53,7 @@
         async get() { await seeded; await db.full(path); return snapDoc(id, gb.colls[c]?.[id]); },
         async set(data) {
           await seeded;
+          if ((patch.failSet || []).includes(c)) throw { code: "unavailable", message: "Mất kết nối (server thử)" };
           const at = now();
           gb.colls[c] = { ...(gb.colls[c] || {}), [id]: clone(data) };
           (gb.stamps[c] ||= {})[id] = at;

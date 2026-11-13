@@ -724,7 +724,7 @@ async function readFile(file) {
     return { text: sheets.join("\n\n") };
   }
   // Archives are read by the Windows bot once uploaded; the browser cannot read them.
-  if (/.(zip|rar|7z)$/.test(name)) throw new Error(`"${file.name}" là tệp nén: trang chỉ gửi được khi tải tệp lên thành công. Hãy thử lại, hoặc giải nén rồi chọn các tệp bên trong.`);
+  if (/\.(zip|rar|7z)$/.test(name)) throw new Error(`"${file.name}" là tệp nén: trang chỉ gửi được khi tải tệp lên thành công. Hãy thử lại, hoặc giải nén rồi chọn các tệp bên trong.`);
   if (name.endsWith(".doc")) throw new Error(`"${file.name}" là định dạng .doc cũ. Hãy lưu lại thành .docx hoặc PDF.`);
   return { text: await file.text() };
 }
@@ -1013,12 +1013,27 @@ function saveView() {
   local.set("stage", state.stage);
   if (state.db) dbSet(viewDoc(), { stage: state.stage });
 }
-async function saveTracked(id, rec) {
-  if (state.readOnly) { toast("Đăng nhập để chỉnh sửa. Đây là bản chỉ xem."); return; }
-  const clean = JSON.parse(JSON.stringify(rec));
+// Returns true when the record is saved. When the database refuses it (network, permission) the screen goes back to what
+// is stored and a toast says so, so no caller reports a change that a reload would lose (Argon review, 2026-11-13).
+// opts.revert false keeps the edit on screen (a note being typed); opts.quiet skips the toast (an automatic mark).
+async function saveTracked(id, rec, opts = {}) {
+  if (state.readOnly) { toast("Đăng nhập để chỉnh sửa. Đây là bản chỉ xem."); return false; }
+  const clean = JSON.parse(JSON.stringify(rec)), before = state.tracked[id];
   state.tracked = { ...state.tracked, [id]: clean };
-  if (state.db) await dbSet("tracked/" + id, clean); else local.set("tracked", state.tracked);
+  if (state.db) {
+    if (!(await dbSet("tracked/" + id, clean))) {
+      if (opts.revert !== false && state.tracked[id] === clean) {
+        const back = { ...state.tracked };
+        if (before === undefined) delete back[id]; else back[id] = before;
+        state.tracked = back;
+        renderAll();
+      }
+      if (!opts.quiet) toast("Chưa lưu được thay đổi. Kiểm tra kết nối rồi thử lại.", 4200);
+      return false;
+    }
+  } else local.set("tracked", state.tracked);
   renderAll();
+  return true;
 }
 // Moving to Đã nộp needs a bid that the comparison found complete and compliant.
 function submitBlockers(key) {
@@ -1050,7 +1065,7 @@ async function setStage(key, stage, extra = {}) {
     }
     if (extra.bidPrice == null) { askBidPrice(key); return; }
   }
-  await saveTracked(key, { ...prev, ...extra, stage, prevStage: stage === "dropped" ? stageOf(t) : prev.prevStage, note: prev.note || "", tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() });
+  if (!(await saveTracked(key, { ...prev, ...extra, stage, prevStage: stage === "dropped" ? stageOf(t) : prev.prevStage, note: prev.note || "", tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() }))) return;
   toast("Đã chuyển sang " + stageLabel(stage));
 }
 // Public outcome of a closed tender: bidder count from the opening, winner and price once results are out.
@@ -1099,7 +1114,7 @@ function askBidPrice(key, edit = false) {
     inp.addEventListener("input", () => { const n = val(); inp.value = n ? n.toLocaleString("vi-VN") : ""; ok.disabled = !n; view.textContent = n ? fmtVnd(n) + (t?.estimatedPrice ? ` · ${(n / t.estimatedPrice * 100).toFixed(1).replace(".", ",")}% giá gói` : "") : ""; });
     inp.addEventListener("keydown", (e) => { if (e.key === "Enter" && !ok.disabled) ok.click(); });
     ok.addEventListener("click", async () => { const n = val(); if (!n) return; close();
-      if (edit) { await saveTracked(key, { ...state.tracked[key], bidPrice: n, bidPriceSrc: "nhập tay", updatedAt: new Date().toISOString() }); toast("Đã lưu giá dự thầu"); }
+      if (edit) { if (await saveTracked(key, { ...state.tracked[key], bidPrice: n, bidPriceSrc: "nhập tay", updatedAt: new Date().toISOString() })) toast("Đã lưu giá dự thầu"); }
       else await setStage(key, "submitted", { bidPrice: n }); });
     const cur = state.tracked[key]?.bidPrice; if (edit && cur) { inp.value = String(cur); inp.dispatchEvent(new Event("input")); }
     inp.focus();
@@ -1436,7 +1451,17 @@ function askDelete() {
       state.deleted = next; state.sel.clear();
       if (state.open && next[state.open]) closeDrawer?.();
       renderAll();
-      for (const t of list) await dbSet("deleted/" + t._key, next[t._key]);
+      const failed = [];
+      for (const t of list) if (!(await dbSet("deleted/" + t._key, next[t._key]))) failed.push(t._key);
+      if (failed.length) {
+        // Not stored: bring those tenders back, or they would reappear after a reload under a "deleted" toast.
+        const back = { ...state.deleted };
+        for (const k of failed) delete back[k];
+        state.deleted = back;
+        renderAll();
+        toast(failed.length === list.length ? "Chưa xoá được. Kiểm tra kết nối rồi thử lại." : `Đã xoá ${list.length - failed.length} gói, ${failed.length} gói chưa xoá được.`, 4200);
+        return;
+      }
       toast(`Đã xoá ${list.length} gói`);
     });
   });
@@ -3574,7 +3599,7 @@ function supFocusRow(body) {
   const f = supFocus, s = f && state.supplier?.[f.id];
   if (!s || supOpenId !== f.id) return;
   supFocus = null;
-  const norm = (x) => String(x || "").replace(/s+/g, " ").trim().toLowerCase(), line = norm(f.line), model = norm(f.model);
+  const norm = (x) => String(x || "").replace(/\s+/g, " ").trim().toLowerCase(), line = norm(f.line), model = norm(f.model);
   let ti = -1, ri = -1;
   const find = (hit) => (s.specTables || []).some((x, i) => { const r = x.rows.findIndex(hit); if (r >= 0) { ti = i; ri = r; } return r >= 0; });
   if (!(line && find((l) => norm(l) === line)) && model) find((l) => supCells(l).some((c) => norm(c) === model));
@@ -5014,7 +5039,7 @@ document.addEventListener("click", async (e) => {
   if (wx) {
     const id = wx.dataset.wonx, r = state.tracked[id], seen = { ...r, wonSeenAt: new Date().toISOString() };
     // Read-only viewers can't save: hide it for this page only.
-    if (state.readOnly) { state.tracked = { ...state.tracked, [id]: seen }; renderTop(); } else saveTracked(id, seen);
+    if (state.readOnly) { state.tracked = { ...state.tracked, [id]: seen }; renderTop(); } else saveTracked(id, seen, { revert: false, quiet: true });
     return;
   }
   const sb = e.target.closest("[data-step]");
@@ -5102,7 +5127,7 @@ document.addEventListener("change", (e) => {
   if (e.target.dataset?.qfiles && state.open) { const list = [...e.target.files]; e.target.value = ""; addQuoteFiles(state.open, e.target.dataset.qfiles, list); }
   if (e.target.id === "dNote" && state.open) {
     const key = state.open, t = findTender(key), prev = state.tracked[key] || {};
-    if ((prev.note || "") !== e.target.value) saveTracked(key, { ...prev, stage: prev.stage || "new", note: e.target.value, tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() });
+    if ((prev.note || "") !== e.target.value) saveTracked(key, { ...prev, stage: prev.stage || "new", note: e.target.value, tender: prev.tender || stripTender(t), updatedAt: new Date().toISOString() }, { revert: false });
   }
 });
 // Dropping files on a project's upload box.

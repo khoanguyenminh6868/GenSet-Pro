@@ -34,7 +34,8 @@ $env:PW_PORT="4391"            # cổng khác khi 4317 đang bận (worktree kh�
   (repo công khai). Câu trích nguồn được gắn tiền tố `SRCQ_` để test `SHOW_SRC` phát hiện nếu lộ ra. Gói đang mở là gói giả
   `IB2699…`, ngày đóng thầu 2030 để test không phụ thuộc giờ hệ thống. Đổi gói mẫu thì sửa bảng `TAB` ở đầu `smoke.spec.mjs`.
 - Dữ liệu riêng của một ca: `test.use({ patch: { colls, full, scratch } })` (xem đầu `fake-shim.js`): trộn tài liệu vào seed
-  (null = bỏ), bản đầy đủ cho `db.full` của tài liệu `_lite`, `scratch: "fail"` để trang tự đọc chữ trong tệp.
+  (null = bỏ), bản đầy đủ cho `db.full` của tài liệu `_lite`, `scratch: "fail"` để trang tự đọc chữ trong tệp,
+  `failSet: ["tracked", "deleted"]` để `set()` của các collection này ném lỗi mất kết nối.
 - `fixtures/fake-data.mjs` — dữ liệu BỊA: báo giá, tỷ giá, chi phí, 60 gói lịch sử (giá trúng 0,80 / 0,90 / 0,98 giá gói)
   để đường xác suất thắng tính được bằng tay. Số mong đợi tính từ công thức của `web/bidprice.js`.
 - `fixtures/real-api.mjs` — cho yêu cầu trang gửi đi qua handler thật `web/api/webreq.js` (Supabase giả của
