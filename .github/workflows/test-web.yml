@@ -1,0 +1,39 @@
+name: test-web
+
+on:
+  pull_request:
+    paths:
+      - "web/**"
+      - ".github/workflows/test-web.yml"
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - ".github/workflows/test-web.yml"
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: web/test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/test/package-lock.json
+      # Kiểm tĩnh index.html (hàm trùng tên, navSnap/navRestore): không cần trình duyệt.
+      - run: node --test static.test.mjs
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      # Test khói: web/index.html thật + DB giả (fake-shim.js, fixtures/seed.json), không mạng ngoài.
+      - run: npx playwright test
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: web/test/test-results
+          retention-days: 7
