@@ -14,6 +14,7 @@ import path from "node:path";
 import os from "node:os";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { imageExt, psQuote } from "./ps-safe.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
@@ -47,7 +48,7 @@ function ocr(img) {
   // System.Drawing cannot open WebP (Made-in-China pictures): Tesseract reads it as it is.
   if (/\.webp$/i.test(img)) return tess(img);
   const big = img.replace(/\.\w+$/, "-x2.png");
-  execFileSync("powershell", ["-NoProfile", "-Command", `Add-Type -AssemblyName System.Drawing; $s=[System.Drawing.Image]::FromFile('${img}'); $b=New-Object System.Drawing.Bitmap ($s.Width*2),($s.Height*2); $g=[System.Drawing.Graphics]::FromImage($b); $g.InterpolationMode='HighQualityBicubic'; $g.DrawImage($s,0,0,$b.Width,$b.Height); $b.Save('${big}',[System.Drawing.Imaging.ImageFormat]::Png); $g.Dispose(); $b.Dispose(); $s.Dispose()`]);
+  execFileSync("powershell", ["-NoProfile", "-Command", `Add-Type -AssemblyName System.Drawing; $s=[System.Drawing.Image]::FromFile('${psQuote(img)}'); $b=New-Object System.Drawing.Bitmap ($s.Width*2),($s.Height*2); $g=[System.Drawing.Graphics]::FromImage($b); $g.InterpolationMode='HighQualityBicubic'; $g.DrawImage($s,0,0,$b.Width,$b.Height); $b.Save('${psQuote(big)}',[System.Drawing.Imaging.ImageFormat]::Png); $g.Dispose(); $b.Dispose(); $s.Dispose()`]);
   return tess(big);
 }
 
@@ -103,7 +104,7 @@ for (let i = 0; i < pairs.length; i += 2) {
     catch (e) { if (k === 2) console.log(`${url}: ${e.message}`); }
   }
   if (!buf) continue;
-  const img = path.join(tmp, `${n}${path.extname(new URL(url).pathname) || ".png"}`);
+  const img = path.join(tmp, `${n}${imageExt(url)}`);
   fs.writeFileSync(img, buf);
   const text = ocr(img);
   const rows = [...new Set(text.split(/\r?\n/).map(keptLine).filter(Boolean))];
