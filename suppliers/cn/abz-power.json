@@ -42,6 +42,29 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mobiles Aggregat 1440 kVA (Sattelauflieger, Referenz Finnland)",
+      "fuel": "diesel",
+      "engineModels": [
+        "12V4000"
+      ],
+      "engineMakes": [
+        "MTU"
+      ],
+      "power": {
+        "min": 1440,
+        "max": 1440,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -60,9 +83,34 @@
         "Seit 40 Jahren vertrauen uns Kunden aus mehr als 70 L&auml;ndern"
       ],
       "file": "sources/abz-power/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.abz-power.com/_files/ugd/56dfbf_62ea3b52bfe844749a93ea564e23d8c2.pdf?lang=en",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Mobiles Aggregat auf Sattelauflieger montiert, 1440 kVA mit einem MTU-",
+        "Motor 12V4000 für einen Steinbruch in Finnland."
+      ],
+      "file": "sources/abz-power/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "ABZ-Imagebroschüre – Mobiles Aggregat 1440 kVA mit MTU 12V4000",
+      "header": [
+        "Mobiles Aggregat auf Sattelauflieger montiert, 1440 kVA mit einem MTU-"
+      ],
+      "rows": [
+        "Mobiles Aggregat auf Sattelauflieger montiert, 1440 kVA mit einem MTU-",
+        "Motor 12V4000 für einen Steinbruch in Finnland."
+      ]
+    }
+  ]
 }
