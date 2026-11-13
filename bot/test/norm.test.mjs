@@ -1,6 +1,6 @@
 // Noise and fuel limits of an HSMT against what diesel sets can do (Khoa, 2026-11-13: thresholds per size, approved the
-// same day): a limit tighter than the best a set of that size reaches is a critical highlight of Phân tích, one between
-// the usual and the best figure is a note, a looser one says nothing. Figures below are worked by hand from NORM_BANDS.
+// same day): a limit tighter than the usual figure of a set of that size is a critical highlight of Phân tích (Khoa: "Quan
+// Trọng chứ không phải Thông Tin"), titled by whether the best sets still reach it; a looser one says nothing. Figures by hand.
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
@@ -24,13 +24,13 @@ test("noise: 250 kVA is usual 72 / best 66 at 7 m, 81 / 75 at 1 m", () => {
   const one = (req) => got(res([["Độ ồn", req]], { cap: "250 kVA liên tục" }));
   assert.deepEqual(one("≤ 75 dB(A) tại 7m"), []);
   assert.deepEqual(one("≤ 72 dB(A) tại 7m"), []);
-  assert.deepEqual(one("≤ 70 dB(A) tại 7m"), [["info", "Độ ồn yêu cầu (70 dB(A) tại 7 m) thấp hơn mức bình quân"]]);
-  assert.deepEqual(one("≤ 66 dB(A) tại 7m"), [["info", "Độ ồn yêu cầu (66 dB(A) tại 7 m) thấp hơn mức bình quân"]]);
+  assert.deepEqual(one("≤ 70 dB(A) tại 7m"), [["critical", "Độ ồn yêu cầu (70 dB(A) tại 7 m) thấp hơn mức bình quân"]]);
+  assert.deepEqual(one("≤ 66 dB(A) tại 7m"), [["critical", "Độ ồn yêu cầu (66 dB(A) tại 7 m) thấp hơn mức bình quân"]]);
   assert.deepEqual(one("≤ 65 dB(A) tại 7m"), [["critical", "Độ ồn yêu cầu (65 dB(A) tại 7 m) chặt hơn mức máy đạt được"]]);
   assert.deepEqual(one("68 dBA @ khoảng cách 1m"), [["critical", "Độ ồn yêu cầu (68 dB(A) tại 1 m) chặt hơn mức máy đạt được"]]);
-  assert.deepEqual(one("≤ 76 dB(A) tại 1m"), [["info", "Độ ồn yêu cầu (76 dB(A) tại 1 m) thấp hơn mức bình quân"]]);
+  assert.deepEqual(one("≤ 76 dB(A) tại 1m"), [["critical", "Độ ồn yêu cầu (76 dB(A) tại 1 m) thấp hơn mức bình quân"]]);
   // Running without load a set is 2 dB quieter: best 64.
-  assert.deepEqual(one("≤ 65 dB(A) tại 7m, chạy không tải"), [["info", "Độ ồn yêu cầu (65 dB(A) tại 7 m) thấp hơn mức bình quân"]]);
+  assert.deepEqual(one("≤ 65 dB(A) tại 7m, chạy không tải"), [["critical", "Độ ồn yêu cầu (65 dB(A) tại 7 m) thấp hơn mức bình quân"]]);
 });
 
 test("fuel limits of a row: one figure, or as many as loads; a row naming its own kW is left", () => {
@@ -46,22 +46,22 @@ test("fuel limits of a row: one figure, or as many as loads; a row naming its ow
 test("fuel: 200 kVA prime is 160 kW: usual 0.265 → 42.4 L/h, best 0.24 → 38.4 L/h at 100 %", () => {
   const one = (req, o = { cap: "200 kVA liên tục" }) => got(res([["Tiêu hao nhiên liệu", req]], o));
   assert.deepEqual(one("Tại 100% tải không quá 45 lít/h"), []);
-  assert.deepEqual(one("Tại 100% tải không quá 40 lít/h"), [["info", "Tiêu hao nhiên liệu yêu cầu (40 L/h ở 100% tải) thấp hơn mức bình quân"]]);
+  assert.deepEqual(one("Tại 100% tải không quá 40 lít/h"), [["critical", "Tiêu hao nhiên liệu yêu cầu (40 L/h ở 100% tải) thấp hơn mức bình quân"]]);
   assert.deepEqual(one("Tại 100% tải không quá 29 lít/h"), [["critical", "Tiêu hao nhiên liệu yêu cầu (29 L/h ở 100% tải) thấp hơn mức máy đạt được"]]);
   // 75 %: 120 kW × 0.24 × 0.98 = 28.2 L/h best; 50 %: 80 kW × 0.24 × 1.03 = 19.8 L/h best.
-  assert.equal(one("≤ 28 L/h ở 75% tải")[0][0], "critical");
-  assert.equal(one("≤ 29 L/h ở 75% tải")[0][0], "info");
-  assert.equal(one("≤ 19,5 L/h ở 50% tải")[0][0], "critical");
-  assert.equal(one("≤ 20 L/h ở 50% tải")[0][0], "info");
+  assert.equal(one("≤ 28 L/h ở 75% tải")[0][1].includes("đạt được"), true);
+  assert.equal(one("≤ 29 L/h ở 75% tải")[0][1].includes("bình quân"), true);
+  assert.equal(one("≤ 19,5 L/h ở 50% tải")[0][1].includes("đạt được"), true);
+  assert.equal(one("≤ 20 L/h ở 50% tải")[0][1].includes("bình quân"), true);
   // A standby figure is 200 / 1.1 = 182 kVA prime (145 kW): best 34.9 L/h. A bare "200 kVA" is read the same way.
-  assert.deepEqual(one("≤ 36 L/h ở 100% tải", { cap: "200 kVA dự phòng" }), [["info", "Tiêu hao nhiên liệu yêu cầu (36 L/h ở 100% tải) thấp hơn mức bình quân"]]);
-  assert.equal(one("≤ 36 L/h ở 100% tải")[0][0], "critical");
-  assert.equal(one("≤ 36 L/h ở 100% tải", { cap: "200 kVA" })[0][0], "info");
+  assert.deepEqual(one("≤ 36 L/h ở 100% tải", { cap: "200 kVA dự phòng" }), [["critical", "Tiêu hao nhiên liệu yêu cầu (36 L/h ở 100% tải) thấp hơn mức bình quân"]]);
+  assert.equal(one("≤ 36 L/h ở 100% tải")[0][1].includes("đạt được"), true);
+  assert.equal(one("≤ 36 L/h ở 100% tải", { cap: "200 kVA" })[0][1].includes("bình quân"), true);
   // generatorSets wins over the text of keyInfo.
-  assert.equal(one("≤ 36 L/h ở 100% tải", { cap: "200 kVA", sets: [{ primeKva: 200 }] })[0][0], "critical");
+  assert.equal(one("≤ 36 L/h ở 100% tải", { cap: "200 kVA", sets: [{ primeKva: 200 }] })[0][1].includes("đạt được"), true);
   // Engine figure in g/kWh: usual 205, best 190.
-  assert.equal(one("≤ 185 g/kWh ở 100% tải")[0][0], "critical");
-  assert.equal(one("≤ 195 g/kWh")[0][0], "info");
+  assert.equal(one("≤ 185 g/kWh ở 100% tải")[0][1].includes("đạt được"), true);
+  assert.equal(one("≤ 195 g/kWh")[0][1].includes("bình quân"), true);
   assert.deepEqual(one("≤ 210 g/kWh"), []);
 });
 
@@ -69,7 +69,7 @@ test("which size a row is about: the size in its item, else the package's one si
   const two = { cap: "100 kVA và 500 kVA", sets: [{ primeKva: 100 }, { primeKva: 500 }] };
   assert.deepEqual(got(res([["Độ ồn", "≤ 65 dB(A) tại 7m"]], two)), []);
   // 65 dB(A) at 7 m: fine for 100 kVA (usual 70, best 64 → note), out of reach for 500 kVA (best 70).
-  assert.deepEqual(got(res([["Máy 100 kVA: Độ ồn", "≤ 65 dB(A) tại 7m"], ["Máy 500 kVA: Độ ồn", "≤ 65 dB(A) tại 7m"]], two)).map((x) => x[0]), ["info", "critical"]);
+  assert.deepEqual(got(res([["Máy 100 kVA: Độ ồn", "≤ 65 dB(A) tại 7m"], ["Máy 500 kVA: Độ ồn", "≤ 65 dB(A) tại 7m"]], two)).map((x) => x[1].includes("bình quân")), [true, false]);
   assert.deepEqual(got(res([["Độ ồn", "≤ 65 dB(A) tại 7m"]])), []);
   assert.deepEqual(P.normPower(res([], { cap: "500 kVA liên tục / 550 kVA dự phòng" }), { item: "Độ ồn" }), { kva: 500, sure: true });
   assert.deepEqual(P.normPower(res([], { cap: "400 kW" }), { item: "Độ ồn" }), { kva: 500, sure: false });
