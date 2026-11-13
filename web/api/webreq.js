@@ -88,7 +88,9 @@ function findTarget(t) {
 }
 const posNum = (v) => (Number(v) > 0 && Number(v) < 1e13 ? Number(v) : null);
 function bidBasis(b = {}) {
-  return { kva: posNum(b.kva), price: posNum(b.price), capText: str(b.capText, 300) || "", bidForm: str(b.bidForm, 50) || "", investorName: str(b.investorName, 300) || "" };
+  return { kva: posNum(b.kva), price: posNum(b.price), capText: str(b.capText, 300) || "", bidForm: str(b.bidForm, 50) || "", investorName: str(b.investorName, 300) || "",
+    // Tỉnh, lĩnh vực, ngày đóng thầu: bidprice-bot.mjs đọc cho nbForecast (dự báo số nhà thầu, cắt dữ liệu theo ngày đóng thầu).
+    location: str(b.location, 300) || "", field: str(b.field, 100) || "", bidCloseDate: str(b.bidCloseDate, 40) || "" };
 }
 
 // The HSDT of a comparison (or the technical proposal of a TLKT one): files already uploaded under <dir>/<TBMT>/ in the
