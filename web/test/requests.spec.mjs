@@ -80,10 +80,8 @@ test.describe("gói có tệp HSMT, bot đang chạy", () => {
     await expect(page.locator("#bpRun")).toBeDisabled();
   });
 
-  // LỖI (H2): index.html bidBasis gửi location, field, bidCloseDate "cho dự báo số nhà thầu của bot" và
-  // suppliers/bidprice-bot.mjs đọc b.location / b.field / b.bidCloseDate cho nbForecast, nhưng api/webreq.js bidBasis chỉ
-  // giữ kva, price, capText, bidForm, investorName → yêu cầu Gợi ý giá từ web mất tỉnh, lĩnh vực, ngày đóng thầu.
-  test.fixme("Gợi ý giá: location, field, bidCloseDate đi qua webreq.js tới bot", async ({ page }) => {
+  // Đã sửa (W1): api/webreq.js bidBasis giữ thêm location, field, bidCloseDate cho nbForecast của bot.
+  test("Gợi ý giá: location, field, bidCloseDate đi qua webreq.js tới bot", async ({ page }) => {
     await openApp(page, "#goi/" + RICH);
     await openTab(page, "price");
     await page.locator("#bpRun").click();

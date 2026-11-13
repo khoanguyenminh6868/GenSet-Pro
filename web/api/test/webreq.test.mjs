@@ -153,14 +153,16 @@ test("Tìm NCC: rank phải là số nguyên 1..99 (biên 0, 99, 100, 1.5, chu�
 });
 
 test("Gợi ý giá đấu: basis kva/price dương < 1e13, ngoài ra null; capText cắt 300; mặc định rỗng", async () => {
-  const b = (await one("bidpricereq", { key: "K", basis: { kva: "500", price: 1.2e9, capText: "c".repeat(400), bidForm: "Đấu thầu rộng rãi", investorName: "Chủ đầu tư", rogue: 1 } })).basis;
-  assert.deepEqual(b, { kva: 500, price: 1.2e9, capText: "c".repeat(300), bidForm: "Đấu thầu rộng rãi", investorName: "Chủ đầu tư" });
+  const b = (await one("bidpricereq", { key: "K", basis: { kva: "500", price: 1.2e9, capText: "c".repeat(400), bidForm: "Đấu thầu rộng rãi", investorName: "Chủ đầu tư", location: "Hà Nội, Hải Phòng", field: "Hàng hóa", bidCloseDate: "2026-11-20T03:00:00", rogue: 1 } })).basis;
+  assert.deepEqual(b, { kva: 500, price: 1.2e9, capText: "c".repeat(300), bidForm: "Đấu thầu rộng rãi", investorName: "Chủ đầu tư", location: "Hà Nội, Hải Phòng", field: "Hàng hóa", bidCloseDate: "2026-11-20T03:00:00" });
+  const long = (await one("bidpricereq", { key: "K", basis: { location: "x".repeat(400), field: "y".repeat(200), bidCloseDate: "2026-11-20T03:00:00".repeat(5) } })).basis;
+  assert.deepEqual([long.location.length, long.field.length, long.bidCloseDate.length], [300, 100, 40]);
   const bad = (await one("bidpricereq", { key: "K", basis: { kva: 0, price: -5 } })).basis;
-  assert.deepEqual(bad, { kva: null, price: null, capText: "", bidForm: "", investorName: "" });
+  assert.deepEqual(bad, { kva: null, price: null, capText: "", bidForm: "", investorName: "", location: "", field: "", bidCloseDate: "" });
   assert.equal((await one("bidpricereq", { key: "K", basis: { kva: 1e13 } })).basis.kva, null, "đúng 1e13 bị loại (biên)");
   assert.equal((await one("bidpricereq", { key: "K", basis: { kva: 9.99e12 } })).basis.kva, 9.99e12);
   assert.equal((await one("bidpricereq", { key: "K", basis: { kva: "abc" } })).basis.kva, null);
-  assert.deepEqual((await one("bidpricereq", { key: "K" })).basis, { kva: null, price: null, capText: "", bidForm: "", investorName: "" });
+  assert.deepEqual((await one("bidpricereq", { key: "K" })).basis, { kva: null, price: null, capText: "", bidForm: "", investorName: "", location: "", field: "", bidCloseDate: "" });
   assert.ok(!("basis" in await one("hsmtreq", { key: "K", basis: { kva: 5 } })));
 });
 

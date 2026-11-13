@@ -24,6 +24,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { skippedOf, dropSkipped, UNFILTERED_WARNING } from "./sup-skip.mjs";
 import { specNone } from "./spec-todo.mjs";
+import { specSkip } from "./spec-skip.mjs";
 import { REQ_CODES,CODE_BY, codesIn, codeOf, clausesOf } from "./reqcodes.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -135,13 +136,18 @@ export function gapReport({ docs, suppliers, modelFacts, configmatch = [], specs
     }
   }
   const stale = (t) => !t.lastSpecAt || now - new Date(t.lastSpecAt) > QUEUE_GAP_DAYS * 864e5;
+  // Hàng chờ: hãng chưa tìm gần đây, chưa có kết quả "không ra" (spec-none) và có website; hãng thiếu website bị bỏ để chỗ cho hãng kế tiếp.
+  const asked = list.map((t) => { const open = t.supplierIds.filter((id) => !none[id]), noSite = open.filter((id) => specSkip(byId.get(id))); return { ...t, ask: open.filter((id) => !noSite.includes(id)), noSite }; }).filter((t) => (t.ask.length || t.noSite.length) && stale(t));
+  const lastQ = asked.filter((t) => t.ask.length)[9] || null;
   return {
     at: now.toISOString(), tenders: dem.n, noPower: dem.noPower, engines: cat.engines.length, alternators: cat.alternators.length,
     bands: BANDS.map(([, , label], i) => ({ label, tenders: dem.bands[i].tenders, models: cov[i].length })),
     fields: fields.filter((f) => f.score >= 1).slice(0, 40).map((f) => ({ ...f, fill: Math.round(f.fill * 100) / 100, score: Math.round(f.score * 10) / 10 })),
     noKey: [...noKey.values()].sort((a, b) => b.demand - a.demand).slice(0, 20),
     targets: list.slice(0, 30),
-    queue: list.map((t) => ({ ...t, ask: t.supplierIds.filter((id) => !none[id]) })).filter((t) => t.ask.length && stale(t)).slice(0, 10).map((t) => ({ name: t.name, kind: t.kind, supplierId: t.ask[0], score: t.score })),
+    queue: asked.filter((t) => t.ask.length).slice(0, 10).map((t) => ({ name: t.name, kind: t.kind, supplierId: t.ask[0], score: t.score })),
+    // Hãng đứng trên hàng chờ nhưng bị bỏ vì hồ sơ chưa có website (specSkip): việc Khoa cần bổ sung website.
+    noWebsite: asked.filter((t) => !t.ask.length).filter((t) => !lastQ || t.score >= lastQ.score).slice(0, 20).map((t) => ({ name: t.name, kind: t.kind, supplierIds: t.noSite, score: t.score })),
     unclear: [...unclear.values()].filter((u) => u.unclear).sort((a, b) => b.unclear - a.unclear).slice(0, 20),
   };
 }
@@ -157,6 +163,7 @@ export function reportText(r) {
   for (const t of r.targets.slice(0, 20)) L.push(`  ${String(t.score).padStart(6)}  ${t.kind === "engine" ? "hãng động cơ" : t.kind === "alternator" ? "hãng đầu phát" : "nhà cung cấp"} ${t.name}${t.supplierIds.length ? ` [${t.supplierIds.join(", ")}]` : " [chưa có bản ghi hãng]"}${t.lastSpecAt ? ` · đã tìm ${t.lastSpecAt.slice(0, 10)}` : ""} · thiếu: ${t.missing.map((m) => `${m.item} (${m.models})`).join(", ")}`);
   if (r.unclear.length) { L.push("", "CHƯA RÕ Ở CÁC LƯỢT GỢI Ý CẤU HÌNH ĐÃ CHẠY:"); for (const u of r.unclear.slice(0, 15)) L.push(`  ${String(u.unclear).padStart(4)}/${u.total}  ${u.item}`); }
   L.push("", "Hàng chờ Tìm Thông Số: " + (r.queue.map((q) => `${q.name} (${q.supplierId})`).join("; ") || "không có"));
+  if (r.noWebsite?.length) L.push("", "BỎ QUA VÌ HỒ SƠ CHƯA CÓ WEBSITE (cần bổ sung website rồi mới tìm được thông số): " + r.noWebsite.map((q) => `${q.name} (${q.supplierIds.join(", ")})`).join("; "));
   return L.join("\n");
 }
 
