@@ -65,6 +65,29 @@ function rotatePgm(file, out, deg) {
   }
   fs.writeFileSync(out, Buffer.concat([Buffer.from(`P5\n${nw} ${nh}\n255\n`, "latin1"), dst]));
 }
+// The pages of a PDF's text layer (split at form feeds) to read with OCR, numbered from 1: almost no letters (a scan) or
+// a broken font (garbled).
+const scanPages = (pages) => pages.map((t, i) => (t.replace(/\s/g, "").length < MIN_CHARS || garbled(t) ? i + 1 : 0)).filter(Boolean);
+// Chapter V in a whole scanned HSMT, from the top of each scanned page read quickly (head(n): its first 300 characters,
+// plainOcr): { from, to } (page numbers; from 0 = not found, to 0 = up to the last page). Cut out of ocrFile unchanged (T5,
+// 2026-11-13) so it can be tested without Tesseract.
+const plainOcr = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[đĐ]/g, "d").toLowerCase().replace(/\s+/g, " ");
+const START = /chuong\s*v(?![ivx])|chuong\s*[ivx]+\W{0,3}\s*(yeu cau (ve )?(ky thuat|pham vi)|pham vi cung cap)|phan\s*(2|thu hai)\W{0,3}\s*yeu cau/;
+const END = /chuong\s*(vi|vii|viii)(?![ivx])|phan\s*(3|thu ba)\b|bieu mau hop dong/;
+function chapterRange(scanned, head) {
+  let from = 0, to = 0;
+  for (const n of scanned) {
+    const h = head(n);
+    // The table of contents and the summary page name every chapter.
+    if (/muc luc/.test(h) || (h.match(/chuong/g) || []).length >= 3) continue;
+    // A heading starts the page; "... mô tả trong Phần 2 - Yêu cầu về phạm vi cung cấp" in Chương I does not (page 5
+    // of IB2400056128).
+    const at = (re) => { const m = re.exec(h); return m && m.index < 80; };
+    if (!from) { if (at(START)) from = n; continue; }
+    if (at(END)) { to = n - 1; break; }
+  }
+  return { from, to };
+}
 // find: with more scanned pages than this, only chapter V is read (0: every scanned page).
 // opts (only the BCĐG flow, bcdg-step.js; every other caller passes none and gets the old behaviour):
 //   locate: more than 3 scanned pages → every scanned page is read quickly (150 dpi, ~2 s) and only the pages that name our company
@@ -95,7 +118,7 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
     }
     const pages = (cp.spawnSync(exe("pdftotext"), ["-layout", "-enc", "UTF-8", file, "-"], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "").split("\f");
     if (pages.length && !pages[pages.length - 1].trim()) pages.pop();
-    let scanned = pages.map((t, i) => (t.replace(/\s/g, "").length < MIN_CHARS || garbled(t) ? i + 1 : 0)).filter(Boolean);
+    let scanned = scanPages(pages);
     let partial = false;
     const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "genbid-ocr-"));
     try {
@@ -108,9 +131,6 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
       // of 114, which the first 40 pages missed. The chapter is read whole, however long (Khoa, 2026-11-04: no 40-page
       // limit); not found: every scanned page (up to max).
       if (find && scanned.length > find) {
-        const plainVi = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[đĐ]/g, "d").toLowerCase().replace(/\s+/g, " ");
-        const START = /chuong\s*v(?![ivx])|chuong\s*[ivx]+\W{0,3}\s*(yeu cau (ve )?(ky thuat|pham vi)|pham vi cung cap)|phan\s*(2|thu hai)\W{0,3}\s*yeu cau/;
-        const END = /chuong\s*(vi|vii|viii)(?![ivx])|phan\s*(3|thu ba)\b|bieu mau hop dong/;
         const head = (n) => {
           cp.spawnSync(exe("pdftoppm"), ["-r", "150", "-gray", "-png", "-f", String(n), "-l", String(n), "-x", "0", "-y", "0", "-W", "1400", "-H", "560", plain, path.join(tmp, "h")], { timeout: 60e3 });
           const img = fs.readdirSync(tmp).find((x) => x.startsWith("h") && x.endsWith(".png"));
@@ -118,19 +138,9 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
           const r = NATIVE ? cp.spawnSync(NATIVE, [path.join(tmp, img), "stdout", "-l", "vie", "--oem", "1", "--psm", "4", "--tessdata-dir", TESSDATA],
             { encoding: "utf8", timeout: 60e3, env: { ...process.env, OMP_THREAD_LIMIT: "2" }, windowsHide: true }).stdout || "" : "";
           fs.rmSync(path.join(tmp, img));
-          return plainVi(r).slice(0, 300);
+          return plainOcr(r).slice(0, 300);
         };
-        let from = 0, to = 0;
-        if (NATIVE) for (const n of scanned) {
-          const h = head(n);
-          // The table of contents and the summary page name every chapter.
-          if (/muc luc/.test(h) || (h.match(/chuong/g) || []).length >= 3) continue;
-          // A heading starts the page; "... mô tả trong Phần 2 - Yêu cầu về phạm vi cung cấp" in Chương I does not (page 5
-          // of IB2400056128).
-          const at = (re) => { const m = re.exec(h); return m && m.index < 80; };
-          if (!from) { if (at(START)) from = n; continue; }
-          if (at(END)) { to = n - 1; break; }
-        }
+        let { from, to } = NATIVE ? chapterRange(scanned, head) : { from: 0, to: 0 };
         if (from) { to ||= pages.length; scanned = scanned.filter((n) => n >= from && n <= to); process.stderr.write(`CHUONG5 ${from}-${to}\n`); }
       }
       scanned = scanned.slice(0, find || !opts.locate ? max : scanned.length);
@@ -205,7 +215,7 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
     return { text: pages.join("\f"), ocr: scanned.length, pages: pages.length, partial };
   } finally { await worker?.terminate(); }
 }
-module.exports = { ocrFile };
+module.exports = { ocrFile, garbled, legible, rotatePgm, scanPages, chapterRange, plainOcr, MIN_CHARS };
 
 if (require.main === module) {
   const args = process.argv.slice(2), val = (k) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : undefined; };
