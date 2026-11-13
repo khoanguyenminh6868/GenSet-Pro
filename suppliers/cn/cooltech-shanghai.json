@@ -53,6 +53,441 @@
         1,
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPC110E",
+      "fuel": "diesel",
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "DCEC"
+      ],
+      "engineModels": [
+        "6BT5.9-G2"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPC200E",
+      "fuel": "diesel",
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "DCEC"
+      ],
+      "engineModels": [
+        "6CTA8.3-G2"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPC550E",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "engineMakes": [
+        "Cummins（CCEC）"
+      ],
+      "engineModels": [
+        "KTA19-G3A"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPC825E",
+      "fuel": "diesel",
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "engineMakes": [
+        "Cummins（CCEC）"
+      ],
+      "engineModels": [
+        "KTA38-G2"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPC1100E",
+      "fuel": "diesel",
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "engineMakes": [
+        "Cummins（CCEC）"
+      ],
+      "engineModels": [
+        "KTA38-G5"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPC330E",
+      "fuel": "diesel",
+      "power": {
+        "min": 330,
+        "max": 330,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSL9-G5"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPC880E",
+      "fuel": "diesel",
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK23-G3"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPP250E",
+      "fuel": "diesel",
+      "power": {
+        "min": 230,
+        "max": 230,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG2"
+      ],
+      "alternatorMakes": [
+        "STAMFORD"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPP550E",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506C-E15TAG2"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPP880E",
+      "fuel": "diesel",
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPV110E",
+      "fuel": "diesel",
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "engineMakes": [
+        "VOLVO"
+      ],
+      "engineModels": [
+        "TAD531GE"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPV410E",
+      "fuel": "diesel",
+      "power": {
+        "min": 365,
+        "max": 365,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "engineMakes": [
+        "VOLVO"
+      ],
+      "engineModels": [
+        "TAD1343GE"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPM825E",
+      "fuel": "diesel",
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2013
+        ]
+      },
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S6R2-PTAA"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPU1650",
+      "fuel": "diesel",
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2014
+        ]
+      },
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V4000G23"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2014
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPJ357/CPJ395",
+      "fuel": "diesel",
+      "power": {
+        "min": 357,
+        "max": 357,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2015
+        ]
+      },
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6135HF475(C)"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        "50Hz"
+      ],
+      "src": [
+        2015
+      ]
     }
   ],
   "certifications": [],
@@ -81,9 +516,430 @@
         "KU高压系列智能环保集成电站"
       ],
       "file": "sources/cooltech-shanghai/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPC110E.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPC110E",
+        "Prime power                    80kW /  100kVA",
+        "Engine model                                                                               6BT5.9-G2"
+      ],
+      "file": "sources/cooltech-shanghai/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPC200E-6CTA8_3-G2.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPC200E",
+        "Prime power                    144kW /                180kVA",
+        "Engine model                                                                                     6CTA8.3-G2"
+      ],
+      "file": "sources/cooltech-shanghai/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPC550EKTA19-G3A2.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPC550E",
+        "Prime power                    400kW /                500kVA",
+        "Engine model                                                                                     KTA19-G3A"
+      ],
+      "file": "sources/cooltech-shanghai/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPC825EKTA38-G22.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPC825E",
+        "Prime power                    720 kW / 750 kVA",
+        "Engine model                                                                               KTA38-G2"
+      ],
+      "file": "sources/cooltech-shanghai/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPC1100EKTA38-G5HCI634J.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPC1100E",
+        "Prime power                    800 kW / 1000 kVA",
+        "Engine model                                                                                     KTA38-G5"
+      ],
+      "file": "sources/cooltech-shanghai/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPC330EQSL9-G51.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPC330E",
+        "Prime power                    264 kW / 330 kVA",
+        "Engine model                                                                                     QSL9-G5"
+      ],
+      "file": "sources/cooltech-shanghai/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPC880EQSK23-G3HCI634H.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPC880E",
+        "Prime power                    640 kW / 800 kVA",
+        "Engine model                                                                                     QSK23-G3"
+      ],
+      "file": "sources/cooltech-shanghai/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPP250EC.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPP250E",
+        "Prime power                    184 kW / 230 KVA",
+        "Engine model                                                                                     1506A-E88TAG2"
+      ],
+      "file": "sources/cooltech-shanghai/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPP550E1.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPP550E",
+        "Prime       power              400 KW / 500 KVA",
+        "Engine model                                                                                     2506C-E15TAG2"
+      ],
+      "file": "sources/cooltech-shanghai/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPP880E4006-23TAG3AHCI634H.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPP880E",
+        "Prime       power              640 KW / 800 KVA",
+        "Engine model                                                                                     4006-23TAG3A"
+      ],
+      "file": "sources/cooltech-shanghai/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPV110ETAD531GEUCI274C-50HZ-400-230V1.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPV110E",
+        "Prime power                    80kW /                 100kVA",
+        "Engine model                                                                                     TAD531GE"
+      ],
+      "file": "sources/cooltech-shanghai/2011.md",
+      "official": false
+    },
+    {
+      "n": 2012,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPV410ETAD1343GEHCI444F-50HZ-400-230V1.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPV410E",
+        "Prime power                    292kW / 365kVA",
+        "Engine model                                                                                     TAD1343GE"
+      ],
+      "file": "sources/cooltech-shanghai/2012.md",
+      "official": false
+    },
+    {
+      "n": 2013,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPM825ES6R2-PTAAHCI634G.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPM825E",
+        "Prime power                    600 kW / 750 KVA",
+        "Engine model                                                                                     S6R2-PTAA"
+      ],
+      "file": "sources/cooltech-shanghai/2013.md",
+      "official": false
+    },
+    {
+      "n": 2014,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPU165012V4000G23PI734D.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPU1650",
+        "Prime power                    1320kW / 1650KVA",
+        "Engine model                                                                                     12V4000G23"
+      ],
+      "file": "sources/cooltech-shanghai/2014.md",
+      "official": false
+    },
+    {
+      "n": 2015,
+      "url": "https://coolpower.com.sg/wp-content/uploads/2023/11/CPJ395E-50HZ-400-230V.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "B",
+      "quote": [
+        "Model                          CPJ357/CPJ395",
+        "Prime power                    286kW /                357kVA",
+        "Engine model                                                                                     6135HF475(C)"
+      ],
+      "file": "sources/cooltech-shanghai/2015.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-09",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "CPC110E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPC110E"
+      ],
+      "rows": [
+        "Standby power                  88kW /  110kVA",
+        "Prime power                    80kW /  100kVA",
+        "Engine manufacturer                                                                        DCEC",
+        "Engine model                                                                               6BT5.9-G2",
+        "Alternator manufacturer                                                                      Stamford",
+        "Alternator model                                                                             UCI274C"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "CPC200E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPC200E"
+      ],
+      "rows": [
+        "Standby power                  169kW /                199kVA",
+        "Prime power                    144kW /                180kVA",
+        "Engine manufacturer                                                                              DCEC",
+        "Engine model                                                                                     6CTA8.3-G2",
+        "Alternator manufacturer                                                                      Stamford",
+        "Alternator model                                                                             UCI274G"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "CPC550E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPC550E"
+      ],
+      "rows": [
+        "Standby power                  440kW /                550kVA",
+        "Prime power                    400kW /                500kVA",
+        "Engine manufacturer                                                                              Cummins（CCEC）",
+        "Engine model                                                                                     KTA19-G3A",
+        "Alternator manufacturer                                                                        Stamford",
+        "Alternator model                                                                               HCI544D"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "CPC825E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPC825E"
+      ],
+      "rows": [
+        "Standby power                  764 kW / 825 kVA",
+        "Prime power                    720 kW / 750 kVA",
+        "Engine manufacturer                                                                        Cummins（CCEC）",
+        "Engine model                                                                               KTA38-G2",
+        "Alternator manufacturer                                                 Stamford",
+        "Alternator model                                                        HCI 634G"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "CPC1100E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPC1100E"
+      ],
+      "rows": [
+        "Standby power                  880 kW / 1100 kVA",
+        "Prime power                    800 kW / 1000 kVA",
+        "Engine manufacturer                                                                              Cummins（CCEC）",
+        "Engine model                                                                                     KTA38-G5",
+        "Alternator manufacturer                                                                        Stamford",
+        "Alternator model                                                                               HCI 634J"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "CPC330E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPC330E"
+      ],
+      "rows": [
+        "Standby power                  240 kW / 300 kVA",
+        "Prime power                    264 kW / 330 kVA",
+        "Engine manufacturer                                                                              Cummins",
+        "Engine model                                                                                     QSL9-G5",
+        "Alternator manufacturer                                                                        Stamford",
+        "Alternator model                                                                               HCI444D"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "CPC880E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPC880E"
+      ],
+      "rows": [
+        "Standby power                  704 kW / 880kVA",
+        "Prime power                    640 kW / 800 kVA",
+        "Engine manufacturer                                                                              Cummins",
+        "Engine model                                                                                     QSK23-G3",
+        "Alternator manufacturer                                                                        Stamford",
+        "Alternator model                                                                               HCI 634H"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "CPP250E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPP250E"
+      ],
+      "rows": [
+        "Standby power                  200 kW / 250kVA",
+        "Prime power                    184 kW / 230 KVA",
+        "Engine manufacturer                                                                              Perkins",
+        "Engine model                                                                                     1506A-E88TAG2",
+        "Alternator manufacturer                                                                            STAMFORD",
+        "Alternator model                                                                                   UCDI274J"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "CPP550E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPP550E"
+      ],
+      "rows": [
+        "Standby power                  440 KW / 550 KVA",
+        "Prime       power              400 KW / 500 KVA",
+        "Engine manufacturer                                                                              Perkins",
+        "Engine model                                                                                     2506C-E15TAG2",
+        "Alternator manufacturer                                                                        Stamford",
+        "Alternator model                                                                               HCI544D"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "CPP880E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPP880E"
+      ],
+      "rows": [
+        "Standby power                  704 KW / 880KVA",
+        "Prime       power              640 KW / 800 KVA",
+        "Engine manufacturer                                                                              Perkins",
+        "Engine model                                                                                     4006-23TAG3A",
+        "Alternator manufacturer                                                                            Stamford",
+        "Alternator model                                                                                   HCI634H"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "CPV110E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPV110E"
+      ],
+      "rows": [
+        "Standby power                  88kW /                 110kVA",
+        "Prime power                    80kW /                 100kVA",
+        "Engine manufacturer                                                                              VOLVO",
+        "Engine model                                                                                     TAD531GE",
+        "Alternator manufacturer                                                                            Stamford",
+        "Alternator model                                                                                   UCI274C"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "CPV410E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPV410E"
+      ],
+      "rows": [
+        "Standby power                  328kW / 410kVA",
+        "Prime power                    292kW / 365kVA",
+        "Engine manufacturer                                                                              VOLVO",
+        "Engine model                                                                                     TAD1343GE",
+        "Alternator manufacturer                                                                            Stamford",
+        "Alternator model                                                                                   HCI444F"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "CPM825E – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPM825E"
+      ],
+      "rows": [
+        "Standby power                  660 kW / 825 kVA",
+        "Prime power                    600 kW / 750 KVA",
+        "Engine manufacturer                                                                              Mitsubishi",
+        "Engine model                                                                                     S6R2-PTAA",
+        "Alternator manufacturer                                                                        Stamford",
+        "Alternator model                                                                               HCI634G"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "CPU1650 – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPU1650"
+      ],
+      "rows": [
+        "Prime power                    1320kW / 1650KVA",
+        "Engine manufacturer                                                                              MTU",
+        "Engine model                                                                                     12V4000G23",
+        "Alternator manufacturer                                                                            Stamford",
+        "Alternator model                                                                                   PI734D"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "CPJ357/CPJ395 – Cool Power genset technical data (50Hz)",
+      "header": [
+        "Model                          CPJ357/CPJ395"
+      ],
+      "rows": [
+        "Standby power                  316kW / 395kVA",
+        "Prime power                    286kW /                357kVA",
+        "Engine manufacturer                                                                              John Deere",
+        "Engine model                                                                                     6135HF475(C)",
+        "Alternator manufacturer                                                                            Stamford",
+        "Alternator model                                                                                   HCI444FS"
+      ]
+    }
+  ]
 }
