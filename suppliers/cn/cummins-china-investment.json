@@ -42,6 +42,1058 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins diesel generator sets 50 Hz – China range (C150D5B–C2500D5A)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 150,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins diesel generator sets 50 Hz – International range (C33D5–C275D5B)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 33,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C150D5B",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9-G15"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C175D5B",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9-G15"
+      ],
+      "power": {
+        "min": 175,
+        "max": 175,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C220D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6CTAA8.3-G7"
+      ],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C250D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6CTAA8.3-G9"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C275D5B",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6LTAA9.5-G3"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C300D5B",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6LTAA9.5-G3"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C330D5B",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6LTAA9.5-G1"
+      ],
+      "power": {
+        "min": 330,
+        "max": 330,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C350D5B",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6LTAA9.5-G1"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C400D5eB",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSZ13-G7"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C450D5eB",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSZ13-G7"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C500D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSZ13-G5"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C500D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSX15-G8"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C550D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSX15-G8"
+      ],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C640D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTAA19-G6"
+      ],
+      "power": {
+        "min": 631,
+        "max": 631,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C700D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "VTA28-G5"
+      ],
+      "power": {
+        "min": 706,
+        "max": 706,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C825D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "VTA28-G6"
+      ],
+      "power": {
+        "min": 825,
+        "max": 825,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C900D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK23-G3"
+      ],
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C1000D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38-G5"
+      ],
+      "power": {
+        "min": 1062,
+        "max": 1062,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C1100D5B",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38-G5"
+      ],
+      "power": {
+        "min": 1132,
+        "max": 1132,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C1250D5A",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38-G9"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C1400D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50-G3"
+      ],
+      "power": {
+        "min": 1400,
+        "max": 1400,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C1675D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50-G8"
+      ],
+      "power": {
+        "min": 1675,
+        "max": 1675,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C1675D5A",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50-GS8"
+      ],
+      "power": {
+        "min": 1675,
+        "max": 1675,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C2000D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK60-G3"
+      ],
+      "power": {
+        "min": 2063,
+        "max": 2063,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C2250D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK60-G4"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C2500D5A",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK60-G8"
+      ],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C33D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "X3.3-G1"
+      ],
+      "power": {
+        "min": 33,
+        "max": 33,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C38D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "X3.3-G1"
+      ],
+      "power": {
+        "min": 38,
+        "max": 38,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C44D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "B3.3-G14"
+      ],
+      "power": {
+        "min": 44,
+        "max": 44,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C44D5L",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "B3.3-G14"
+      ],
+      "power": {
+        "min": 44,
+        "max": 44,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C55D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "B3.3-G14"
+      ],
+      "power": {
+        "min": 55,
+        "max": 55,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C55D5L",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "B3.3-G13"
+      ],
+      "power": {
+        "min": 55,
+        "max": 55,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C66D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "B3.3-G14"
+      ],
+      "power": {
+        "min": 66,
+        "max": 66,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C66D5L",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "B3.3-G13"
+      ],
+      "power": {
+        "min": 66,
+        "max": 66,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C90D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTA5.9-G5"
+      ],
+      "power": {
+        "min": 90,
+        "max": 90,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C110D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTA5.9-G5"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C150D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9-G6"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C170D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9-G7"
+      ],
+      "power": {
+        "min": 170,
+        "max": 170,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C175D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSB7-G5"
+      ],
+      "power": {
+        "min": 175,
+        "max": 175,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C200D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSB7-G5"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C220D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSB7-G5"
+      ],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C250D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSL9-G7"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C275D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSL9-G5"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C275D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSL9-G7"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -143,10 +1195,66 @@
         "© 1990-2025康明斯（中国）投资有限公司 公司京ICP备06027042号"
       ],
       "file": "sources/cummins-china-investment/7.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0058677.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "50 Hz MODEL RANGE – CHINA",
+        "50 Hz MODEL RANGE – INTERNATIONAL",
+        "C150D5B          150   120   138   110           6BTAA5.9-G15          —                      UCI274E                  PC        1.2      •",
+        "C2500D5A         2500  2000  2250  1800          QSK60-G8              —                      LVSI804R                 PC        3.3      —",
+        "C33D5        33    26   30   24   X3.3-G1            —                            S0L2-P1               PS0600             •",
+        "C275D5B          275   220   250   200           6LTAA9.5-G3           —                      UCDI274K                 PC        1.2      •",
+        "C175D5B          175   140   160   128           6BTAA5.9-G15          —                      UCI274F                  PC        1.2      •",
+        "C220D5           220   176   200   160           6CTAA8.3-G7           —                      UCI274H                  PC        1.2      •",
+        "C250D5           250   200   227   182           6CTAA8.3-G9           —                      UCDI274J                 PC        1.2      •",
+        "C300D5B          300   240   275   220           6LTAA9.5-G3           —                      HCI4D                    PC        1.2      •",
+        "C330D5B          330   264   300   240           6LTAA9.5-G1           —                      HCI4D                    PC        1.2      •",
+        "C350D5B          350   280   320   256           6LTAA9.5-G1           —                      HCI444ES                 PC        1.2      •",
+        "C400D5eB         400   320   360   288           QSZ13-G7              EU Stage               HCI544C                  PC        2.2      •",
+        "C450D5eB         450   360   409   327           QSZ13-G7              EU Stage               HCI544C                  PC        2.2      •",
+        "C500D5           500   400   455   364           QSZ13-G5              EU Stage II            HCI544D                  PC        2.2      •",
+        "C500D5e          500   400   450   360           QSX15-G8              EU Stage II            HCI544C                  PC        2.2      •",
+        "C550D5e          550   440   500   400           QSX15-G8              EU Stage II            HCI544D                  PC        2.2      •",
+        "C640D5           631   505   575   460           KTAA19-G6             —                      HCI544E                  PC        1.2      —",
+        "C700D5           706   565   640   512           VTA28-G5              —                      HCI544F                  PC        1.2      —",
+        "C825D5           825   660   750   600           VTA28-G6              —                      HCI544G                  PC        1.2      —",
+        "C900D5           900   720   820   656           QSK23-G3              —                      HCI634H                  PC        3.3      —",
+        "C1000D5          1062  850   1012  810           KTA38-G5              —                      HCI634J                  PC        3.3      —",
+        "C1100D5B         1132  906   1029  823           KTA38-G5              —                      HCI634K                  PC        3.3      —",
+        "C1250D5A         1250  1000  1125  900           KTA38-G9              —                      PI734A                   PC        3.3      —",
+        "C1400D5          1400  1120  1250  1000          KTA50-G3              —                      PI734B                   PC        3.3      —",
+        "C1675D5          1675  1340  1400  1120          KTA50-G8              —                      PI734D                   PC        3.3      —",
+        "C1675D5A         1675  1340  1500  1200          KTA50-GS8             —                      PI734D                   PC        3.3      —",
+        "C2000D5          2063  1650  1875  1500          QSK60-G3              —                      PI734F                   PC        3.3      —",
+        "C2250D5          2250  1800  2000  1600          QSK60-G4              —                      PI734G                   PC        3.3      —",
+        "C38D5        38    30   35   28   X3.3-G1            —                            S1L2-J1               PS0600             •",
+        "C44D5e       44    35   40   32   B3.3-G14       EU  Stage                  IIIA  UCI224C               PS0600             •",
+        "C44D5L       44    35   40   32   B3.3-G14           —                            UCI224C               PS0600             •",
+        "C55D5e       55    44   50   40   B3.3-G14       EU  Stage                  IIIA  UCI224D               PS0600             •",
+        "C55D5L       55    44   50   40   B3.3-G13           —                            UCI224D               PS0600             •",
+        "C66D5e       66    53   60   48   B3.3-G14           —                            UCI224F               PS0600             •",
+        "C66D5L       66    53   60   48   B3.3-G13           —                            UCI224F               PS0600             •",
+        "C90D5        90    72   82   65   6BTA5.9-G5         —                            UCI224G               PC 1.2             •",
+        "C110D5       110   88   100  80   6BTA5.9-G5         —                            UCI274C               PC 1.2             •",
+        "C150D5       150   120  136  109  6BTAA5.9-G6        —                            UCI274E               PC 1.2             •",
+        "C170D5       170   136  155  124  6BTAA5.9-G7        —                            UCI274F               PC 1.2             •",
+        "C175D5e      175   140  160  128  QSB7-G5        EU  Stage                  IIIA  UCI274F               PC 1.2             •",
+        "C200D5e      200   160  182  146  QSB7-G5        EU  Stage                  IIIA  UCI274H               PC 1.2             •",
+        "C220D5e      220   176  200  160  QSB7-G5        EU  Stage                  IIIA  UCI274H               PC 1.2             •",
+        "C250D5e      250   200  230  184  QSL9-G7        EU  Stage                  IIIA  UCDI274K              PC 1.2             •",
+        "C275D5       275   220  250  200  QSL9-G5            —                            UCDI274K              PC 1.2             •",
+        "C275D5e      275   220  250  200  QSL9-G7        EU  Stage                  IIIA  HCI4D                 PC 1.2             •"
+      ],
+      "file": "sources/cummins-china-investment/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-13",
   "checkedBy": "discover-bot",
   "contacts": [
     {
@@ -189,6 +1297,477 @@
       "value": "029-83217576",
       "src": [
         6
+      ]
+    }
+  ],
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C150D5B",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C150D5B          150   120   138   110           6BTAA5.9-G15          —                      UCI274E                  PC        1.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C175D5B",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C175D5B          175   140   160   128           6BTAA5.9-G15          —                      UCI274F                  PC        1.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C220D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C220D5           220   176   200   160           6CTAA8.3-G7           —                      UCI274H                  PC        1.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C250D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C250D5           250   200   227   182           6CTAA8.3-G9           —                      UCDI274J                 PC        1.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C275D5B",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C275D5B          275   220   250   200           6LTAA9.5-G3           —                      UCDI274K                 PC        1.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C300D5B",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C300D5B          300   240   275   220           6LTAA9.5-G3           —                      HCI4D                    PC        1.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C330D5B",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C330D5B          330   264   300   240           6LTAA9.5-G1           —                      HCI4D                    PC        1.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C350D5B",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C350D5B          350   280   320   256           6LTAA9.5-G1           —                      HCI444ES                 PC        1.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C400D5eB",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C400D5eB         400   320   360   288           QSZ13-G7              EU Stage               HCI544C                  PC        2.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C450D5eB",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C450D5eB         450   360   409   327           QSZ13-G7              EU Stage               HCI544C                  PC        2.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C500D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C500D5           500   400   455   364           QSZ13-G5              EU Stage II            HCI544D                  PC        2.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C500D5e",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C500D5e          500   400   450   360           QSX15-G8              EU Stage II            HCI544C                  PC        2.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C550D5e",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C550D5e          550   440   500   400           QSX15-G8              EU Stage II            HCI544D                  PC        2.2      •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C640D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C640D5           631   505   575   460           KTAA19-G6             —                      HCI544E                  PC        1.2      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C700D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C700D5           706   565   640   512           VTA28-G5              —                      HCI544F                  PC        1.2      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C825D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C825D5           825   660   750   600           VTA28-G6              —                      HCI544G                  PC        1.2      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C900D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C900D5           900   720   820   656           QSK23-G3              —                      HCI634H                  PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C1000D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C1000D5          1062  850   1012  810           KTA38-G5              —                      HCI634J                  PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C1100D5B",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C1100D5B         1132  906   1029  823           KTA38-G5              —                      HCI634K                  PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C1250D5A",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C1250D5A         1250  1000  1125  900           KTA38-G9              —                      PI734A                   PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C1400D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C1400D5          1400  1120  1250  1000          KTA50-G3              —                      PI734B                   PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C1675D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C1675D5          1675  1340  1400  1120          KTA50-G8              —                      PI734D                   PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C1675D5A",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C1675D5A         1675  1340  1500  1200          KTA50-GS8             —                      PI734D                   PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C2000D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C2000D5          2063  1650  1875  1500          QSK60-G3              —                      PI734F                   PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C2250D5",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C2250D5          2250  1800  2000  1600          QSK60-G4              —                      PI734G                   PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – China – C2500D5A",
+      "header": [
+        "    Model  Name      Standby     Prime               Engine  Model         Emissions  Compliance  Standard  Alternator     Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C2500D5A         2500  2000  2250  1800          QSK60-G8              —                      LVSI804R                 PC        3.3      —"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C33D5",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C33D5        33    26   30   24   X3.3-G1            —                            S0L2-P1               PS0600             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C38D5",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C38D5        38    30   35   28   X3.3-G1            —                            S1L2-J1               PS0600             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C44D5e",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C44D5e       44    35   40   32   B3.3-G14       EU  Stage                  IIIA  UCI224C               PS0600             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C44D5L",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C44D5L       44    35   40   32   B3.3-G14           —                            UCI224C               PS0600             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C55D5e",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C55D5e       55    44   50   40   B3.3-G14       EU  Stage                  IIIA  UCI224D               PS0600             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C55D5L",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C55D5L       55    44   50   40   B3.3-G13           —                            UCI224D               PS0600             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C66D5e",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C66D5e       66    53   60   48   B3.3-G14           —                            UCI224F               PS0600             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C66D5L",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C66D5L       66    53   60   48   B3.3-G13           —                            UCI224F               PS0600             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C90D5",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C90D5        90    72   82   65   6BTA5.9-G5         —                            UCI224G               PC 1.2             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C110D5",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C110D5       110   88   100  80   6BTA5.9-G5         —                            UCI274C               PC 1.2             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C150D5",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C150D5       150   120  136  109  6BTAA5.9-G6        —                            UCI274E               PC 1.2             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C170D5",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C170D5       170   136  155  124  6BTAA5.9-G7        —                            UCI274F               PC 1.2             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C175D5e",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C175D5e      175   140  160  128  QSB7-G5        EU  Stage                  IIIA  UCI274F               PC 1.2             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C200D5e",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C200D5e      200   160  182  146  QSB7-G5        EU  Stage                  IIIA  UCI274H               PC 1.2             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C220D5e",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C220D5e      220   176  200  160  QSB7-G5        EU  Stage                  IIIA  UCI274H               PC 1.2             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C250D5e",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C250D5e      250   200  230  184  QSL9-G7        EU  Stage                  IIIA  UCDI274K              PC 1.2             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C275D5",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C275D5       275   220  250  200  QSL9-G5            —                            UCDI274K              PC 1.2             •"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Cummins Global Product Guide – 50 Hz model range – International – C275D5e",
+      "header": [
+        "    Model  Name  Standby    Prime     Engine  Model      Emissions  Compliance        Standard  Alternator  Standard  Control  Sound  Enclosure"
+      ],
+      "rows": [
+        "    C275D5e      275   220  250  200  QSL9-G7        EU  Stage                  IIIA  HCI4D                 PC 1.2             •"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Cummins",
+      "model": "PC 1.2",
+      "text": "PC 1.2",
+      "line": "    C275D5B      275   220  250  200  6LTAA9.5-G3        —                            UCDI274K              PC 1.2             •",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Cummins",
+      "model": "PS0600",
+      "text": "PS0600",
+      "line": "    C33D5        33    26   30   24   X3.3-G1            —                            S0L2-P1               PS0600             •",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Cummins",
+      "model": "PowerCommand 3.3",
+      "text": "PowerCommand 3.3",
+      "line": "    PowerCommand 3.3                    •  •       •                        •                     •                        •                     •                        •                     •                        •                     •                        •",
+      "src": [
+        2001
       ]
     }
   ]
