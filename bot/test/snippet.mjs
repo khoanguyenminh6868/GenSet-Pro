@@ -19,6 +19,7 @@ export function vueRoot(data, children = []) {
 export async function runSnippet(file, page = {}, repl = {}) {
   let code = fs.readFileSync(path.join(KIT, file), "utf8");
   for (const [k, v] of Object.entries(repl)) code = code.split(k).join(v);
+  code = code.replace(/^[ \t]*\/\/@include\s+(\S+)[ \t]*$/gm, (_, f) => fs.readFileSync(path.join(KIT, f), "utf8")); // as genbid-sync.js snippet()
   code = code.replace(/^await\s+\(async/m, "(async");
   const ids = page.root ? [{ __vue__: page.root }] : [];
   const document = {
