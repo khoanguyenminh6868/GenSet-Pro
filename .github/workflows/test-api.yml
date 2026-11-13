@@ -1,0 +1,26 @@
+name: test-api
+
+on:
+  pull_request:
+    paths:
+      - "web/api/**"
+      - ".github/workflows/test-api.yml"
+  push:
+    branches: [main]
+    paths:
+      - "web/api/**"
+      - ".github/workflows/test-api.yml"
+
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Supabase giả trong bộ nhớ (web/api/test/harness.mjs): không mạng, không biến môi trường thật.
+      - run: node --test api/test/*.test.mjs
