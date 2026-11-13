@@ -387,8 +387,15 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
     # stream-json (--verbose) để code đọc được từng lần Read; dòng result cuối có total_cost_usd (sổ chi tiêu API).
     $cliArgs = @('-p', '--permission-mode', 'auto', '--output-format', 'stream-json', '--verbose', '--model', $model, '--strict-mcp-config', '--disable-slash-commands', '--tools', 'Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep')
     $api = [bool]$env:ANTHROPIC_API_KEY; $t0 = Get-Date
-    $reason = Start-Run $claude $cliArgs $promptFile $sigs $out
-    if ($api) {
+    # Sổ chi API theo lượt đang chạy (Khoa 13/11/2026: "cần cập nhật mỗi khi sử dụng"): Wait-Worker đọc log mỗi phút,
+    # suppliers\api-budget.mjs meter ghi phần tăng thêm; lượt bị dừng giữa chừng vẫn được tính.
+    $meterJs = Join-Path $RepoDir 'suppliers\api-budget.mjs'
+    $script:SpendMeter = if ($api -and $node -and (Test-Path $meterJs)) {
+        @{ Node = $node; Js = $meterJs; Log = $out; State = "$out.spend"; Start = $t0.ToUniversalTime().ToString('o'); Last = Get-Date }
+    } else { $null }
+    $metered = [bool]$script:SpendMeter
+    try { $reason = Start-Run $claude $cliArgs $promptFile $sigs $out } finally { Update-ApiSpendMeter -Final; $script:SpendMeter = $null }
+    if ($api -and -not $metered) {
         try {
             $last = Get-Content $out -Encoding UTF8 | Where-Object { $_ -like '*"type":"result"*' } | Select-Object -Last 1
             $c = ($last | ConvertFrom-Json).total_cost_usd
@@ -441,6 +448,18 @@ function Invoke-Config {
 
 # Chờ một lượt worker kết thúc rồi đọc kết quả: trả lý do để báo về web cho các yêu cầu chưa được trả lời.
 # $p có thể là tiến trình do lần chạy bot trước khởi động (khi đó không đọc được mã thoát, chỉ dựa vào log).
+# Lượt agent trả bằng API key ($script:SpendMeter do Invoke-Agent đặt): ghi phần chi tăng thêm vào sổ, mỗi phút một lần
+# trong lúc chạy và một lần cuối (-Final, ghi cả phần chênh với total_cost_usd).
+$script:SpendMeter = $null
+function Update-ApiSpendMeter([switch]$Final) {
+    $m = $script:SpendMeter
+    if (-not $m) { return }
+    if (-not $Final -and ((Get-Date) - $m.Last).TotalSeconds -lt 60) { return }
+    $m.Last = Get-Date
+    $a = @('meter', '--log', $m.Log, '--state', $m.State, '--src', 'agent', '--start', $m.Start)
+    if ($Final) { $a += '--final' }
+    try { Invoke-Node-File $m.Node $m.Js $a | ForEach-Object { Log "  $_" } } catch {}
+}
 function Wait-Worker($p, [string]$out) {
     # Trong lúc worker chạy vẫn gửi nhịp tim mỗi lần quét, để web không báo máy Windows đang tắt.
     $deadline = (Get-Date).AddMinutes($RunTimeoutMinutes)
@@ -451,6 +470,7 @@ function Wait-Worker($p, [string]$out) {
             return "Agent chạy quá $RunTimeoutMinutes phút nên đã dừng. Anh thử gửi lại yêu cầu."
         }
         if (-not $Job) { try { [void](Get-Pending -Running -BeatOnly) } catch {} }
+        Update-ApiSpendMeter
     }
     $code = try { $p.ExitCode } catch { $null }
     Log "Lượt worker xong, mã thoát $code."

@@ -51,7 +51,7 @@ const {
   histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, plainVi, chapterV, specsPick, specsFinish, isServiceTender, NOTICE_MAX,
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
-  checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF,
+  checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -1780,11 +1780,6 @@ function taskEnv(task) {
 if (!process.env.ANTHROPIC_API_KEY && apiBudget().ok) {
   try { const k = fs.readFileSync(path.join(ROOT, ".anthropic-api-key"), "utf8").trim().split(/\r?\n/)[0]; if (k) { process.env.ANTHROPIC_API_KEY = k; process.env.GENBID_API_SPEND_FILE ||= API_SPEND; } } catch {}
 }
-// t0 (ms): lúc bắt đầu lần gọi; số tiền Khoa sửa tay giữa chừng một lần gọi thì chỉ tính phần sau lúc sửa (apiBudgetOf).
-function noteApiSpend(usd, src, api, t0) {
-  const f = process.env.GENBID_API_SPEND_FILE;
-  if (api && f && Number(usd) > 0) try { fs.appendFileSync(f, JSON.stringify({ t: new Date().toISOString(), usd: Math.round(Number(usd) * 1e4) / 1e4, src, ...(t0 ? { t0: new Date(t0).toISOString() } : {}) }) + "\n"); } catch {}
-}
 // API hết tiền / chạm hạn mức: ghi "exhausted", bỏ API key khỏi tiến trình này (các lần gọi sau dùng gói tháng).
 function switchToPlan(text, src) {
   if (!process.env.ANTHROPIC_API_KEY || !API_OUT.test(text)) return false;
@@ -1800,17 +1795,22 @@ function switchToPlan(text, src) {
 
 // task: the Cấu hình hệ thống task of this call (AI_TASK_OF), "" for none.
 function askOnce(prompt, model, task = "") {
-  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY, t0 = Date.now();
+  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY;
+  // stream-json (Khoa 2026-11-13): the spend book follows the call as it goes (spendMeter), and a call killed at 25 minutes
+  // is still counted; its last "result" line is what --output-format json printed.
+  const f = process.env.GENBID_API_SPEND_FILE;
+  const meter = spendMeter((rec, t) => { if (api && f) try { fs.appendFileSync(f, JSON.stringify({ t: t.toISOString(), usd: rec.usd, src: "ask", t0: rec.t0 }) + "\n"); } catch {} });
   return new Promise((resolve) => {
-    const p = cp.spawn(claudeExe(), ["-p", "--output-format", "json", "--model", model, "--tools", "", "--strict-mcp-config", "--disable-slash-commands"], { windowsHide: true, env });
+    const p = cp.spawn(claudeExe(), ["-p", "--output-format", "stream-json", "--verbose", "--model", model, "--tools", "", "--strict-mcp-config", "--disable-slash-commands"], { windowsHide: true, env });
     let out = "", err = "";
     const timer = setTimeout(() => p.kill(), 25 * 60e3);
-    p.stdout.on("data", (d) => (out += d)); p.stderr.on("data", (d) => (err += d));
+    p.stdout.setEncoding("utf8").on("data", (d) => { out += d; meter.data(d); }); p.stderr.on("data", (d) => (err += d));
     p.on("close", (code) => {
       clearTimeout(timer);
-      let j = null; try { j = JSON.parse(out); } catch {}
+      meter.finish();
+      let j = null;
+      for (const l of out.split(/\r?\n/).reverse()) { if (!l.includes('"type":"result"')) continue; try { j = JSON.parse(l); break; } catch {} }
       const text = j?.result || "";
-      noteApiSpend(j?.total_cost_usd, "ask", api, t0);
       if (api && (code !== 0 || j?.is_error) && switchToPlan(text + err + out, "ask")) return resolve(askOnce(prompt, model, task));
       if (LIMIT.test(text + err + out) && (code !== 0 || j?.is_error)) return resolve({ limit: (text || err || out).trim().slice(0, 300) });
       if (j) log(askTrace(j));

@@ -5,6 +5,10 @@
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
+
+const { spendMeter } = createRequire(import.meta.url)("../bot/genbid-hsmt/sync-pure.js");
 
 export const API_OUT = /credit balance is too low|reached your specified api usage limits/i;
 
@@ -41,6 +45,16 @@ export function noteApiSpend(usd, src, api, t0) {
   if (api && Number(usd) > 0) append({ usd: Math.round(Number(usd) * 1e4) / 1e4, src, ...(t0 ? { t0: new Date(t0).toISOString() } : {}) });
 }
 
+// The spend book while a stream-json run goes (spendMeter in sync-pure.js): feed it stdout with .data(), call .finish()
+// once the run ends (killed or not). Writes nothing when the run is not on the API key. start (Date): when the run began,
+// when the meter is made after it (bidprice-bot's spawnSync).
+export function apiMeter(src, api, { file = process.env.GENBID_API_SPEND_FILE, start } = {}) {
+  return spendMeter((rec, t) => {
+    if (!api || !file) return;
+    try { fs.appendFileSync(file, JSON.stringify({ t: t.toISOString(), usd: rec.usd, src, t0: rec.t0 }) + "\n"); } catch {}
+  }, start ? { start } : {});
+}
+
 // The total_cost_usd of a --output-format json / stream-json run ({"type":"result",...} line), or null.
 // The CLI's key order is not fixed (2026-11-12: a newer one writes {"duration_api_ms":...,"type":"result",...}), so the
 // line is found by parsing it, not by what it starts with; config-bot prefixes each line with "[Ns] ". The last result wins.
@@ -65,4 +79,31 @@ export function switchToPlan(text, src) {
   }
   console.log(`Hạn mức API key đã hết (${src}); chuyển sang gói tháng.`);
   return true;
+}
+
+// The spend of a whole stream-json log so far: total_cost_usd when the run has ended, else the token estimate.
+export function logUsd(text) {
+  return spendMeter(() => {}, { step: Infinity }).finish(String(text || "")).usd;
+}
+
+// GenBid-Bot.ps1 Invoke-Agent (its claude -p writes a log file, not a pipe), every minute while the run goes and once at
+// the end with --final:
+//   node suppliers/api-budget.mjs meter --log <log> --state <tệp trạng thái> --src agent --start <ISO lúc bắt đầu> [--final]
+// The state file keeps what was written {usd, at}; a new line is written once the log is 0.05 USD above it (any
+// difference with --final), so the book follows the run. Writes to GENBID_API_SPEND_FILE (unset: not on the API key).
+export function meterLog({ log, state, src = "agent", final = false, start = null, file = process.env.GENBID_API_SPEND_FILE, now = new Date() }) {
+  let st = { usd: 0, at: start };
+  try { st = { ...st, ...JSON.parse(fs.readFileSync(state, "utf8")) }; } catch {}
+  let text = ""; try { text = fs.readFileSync(log, "utf8"); } catch {}
+  const usd = logUsd(text), d = Math.round((usd - st.usd) * 1e4) / 1e4;
+  if (!file || !(final ? Math.abs(d) >= 1e-4 : d >= 0.05)) return 0;
+  try { fs.appendFileSync(file, JSON.stringify({ t: now.toISOString(), usd: d, src, ...(st.at ? { t0: st.at } : {}) }) + "\n"); } catch { return 0; }
+  fs.writeFileSync(state, JSON.stringify({ usd: st.usd + d, at: now.toISOString() }));
+  return d;
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url) && process.argv[2] === "meter") {
+  const a = process.argv.slice(3), arg = (n) => { const i = a.indexOf(n); return i >= 0 ? a[i + 1] : undefined; };
+  const d = meterLog({ log: arg("--log"), state: arg("--state"), src: arg("--src") || "agent", start: arg("--start") || null, final: a.includes("--final") });
+  if (d) console.log(`ghi sổ chi API ${d} USD`);
 }
