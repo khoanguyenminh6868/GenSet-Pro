@@ -49,6 +49,86 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "RLHP",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 7.5,
+        "max": 58.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHP",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 82.5,
+        "max": 160,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MHP",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 180,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HHP",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 650,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -67,9 +147,25 @@
         "In 1979, we started manufacturing gensets, partnered with Cummins in 1982, and pioneered acoustic enclosures in 1998"
       ],
       "file": "sources/jakson/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://jaksongenset.com/industrial-genset/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Jakson, an authorised OEM partner of Cummins India, manufactures CPCB IV+ compliant silent diesel gensets from 7.5 kVA to 3750 kVA, built to keep your plant, hospital, data centre, or infrastructure running without interruption.",
+        "| RLHP | 7.5–58.5 kVA | Workshops, labs, small commercial units",
+        "| LHP | 82.5–160 kVA | SME plants, IT offices, small process units",
+        "| MHP | 180–650 kVA | Factories, hospitals, data centres, and hotels",
+        "| HHP | 650–3750 kVA | Steel, cement, mining, refineries, and large campuses"
+      ],
+      "file": "sources/jakson/2001.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": []
 }
