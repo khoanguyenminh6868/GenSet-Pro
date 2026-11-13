@@ -9,6 +9,12 @@
     "e2e": "playwright test"
   },
   "devDependencies": {
-    "@playwright/test": "1.64.1"
+    "@playwright/test": "1.64.1",
+    "dejavu-fonts-ttf": "2.37.3",
+    "docx": "8.5.0",
+    "jspdf": "2.5.1",
+    "mammoth": "1.8.0",
+    "pdfjs-dist": "3.11.174",
+    "xlsx": "0.18.5"
   }
 }

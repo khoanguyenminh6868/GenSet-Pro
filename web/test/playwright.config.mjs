@@ -2,7 +2,7 @@
 // Cục bộ trên Windows không tải được trình duyệt của Playwright: PW_CHANNEL=msedge dùng Edge có sẵn.
 import { defineConfig } from "@playwright/test";
 
-const PORT = 4317;
+const PORT = +(process.env.PW_PORT || 4317); // PW_PORT: cổng khác khi 4317 đang bận (nhiều worktree)
 export default defineConfig({
   testDir: ".",
   testMatch: /.*\.spec\.mjs$/,
@@ -20,5 +20,5 @@ export default defineConfig({
     trace: "retain-on-failure",
     ...(process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {}),
   },
-  webServer: { command: `node serve.mjs ${PORT}`, url: `http://127.0.0.1:${PORT}/`, reuseExistingServer: !process.env.CI, timeout: 20000 },
+  webServer: { command: `node serve.mjs ${PORT}`, url: `http://127.0.0.1:${PORT}/`, reuseExistingServer: false, timeout: 20000 },
 });
