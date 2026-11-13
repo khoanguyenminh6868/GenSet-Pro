@@ -88,7 +88,7 @@
     {
       "n": 101,
       "url": "https://www.hensingpower.com/air-cooled-generator-5kw-6kw-7kw-8kw-10kw-silent-diesel-generator.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | D6500 | D7000 | D7500 | D8000 | D8500 | D9000 | D9500"
@@ -98,7 +98,7 @@
     {
       "n": 102,
       "url": "https://www.hensingpower.com/3%E2%80%9316kWOpen-FrameDieselGeneratorSets-diesel-generator.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | D2500C | D4000C | D6500C | D7500C | D8000CC"
@@ -108,7 +108,7 @@
     {
       "n": 103,
       "url": "https://www.hensingpower.com/15kw14kWAir-CooledDieselGeneratorSets-silent-diesel-generator.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | | DG12000SE | | DG15000SE | | DG18000SE"
@@ -118,7 +118,7 @@
     {
       "n": 104,
       "url": "https://www.hensingpower.com/6%E2%80%938kWSoundproofDieselGeneratorSet%E2%80%93LowNoise,Portable&EasytoMaintain.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | DG8500SE | DG9500SE"
@@ -128,7 +128,7 @@
     {
       "n": 105,
       "url": "https://www.hensingpower.com/cummins-genset-60hz.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set Performance | Generator Set Performance | Dimension/Weight | Tech Data"
@@ -138,7 +138,7 @@
     {
       "n": 106,
       "url": "https://www.hensingpower.com/cummins-genset-50HZ.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set Performance | Generator Set Performance | Dimension"
@@ -148,7 +148,7 @@
     {
       "n": 107,
       "url": "https://www.hensingpower.com/perkins-series-genset.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set Performance | Generator Set Performance | Dimension"
@@ -158,7 +158,7 @@
     {
       "n": 108,
       "url": "https://www.hensingpower.com/Hensing-Brand-Brushless-Alternator-pd49181215.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| MODEL | Rate Power （KW） | Rate Capacity （KW） | Fre. (Hz) | Voltage (V)"
@@ -168,7 +168,7 @@
     {
       "n": 109,
       "url": "https://www.hensingpower.com/Ricardo-series-genset.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set Performance | Generator Set Performance | Dimension"
@@ -178,7 +178,7 @@
     {
       "n": 110,
       "url": "https://www.hensingpower.com/Hengsing-Brand-Brush-Alternator-ST-series-pd47403264.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Output | Current(A) | Voltage(V) | Rated P.F | No.of poles | Speed(r.p.m) | Volt.regulation"
@@ -188,7 +188,7 @@
     {
       "n": 111,
       "url": "https://www.hensingpower.com/Isuzu-series-genset.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set Performance | Generator Set Performance | Dimension"
@@ -198,12 +198,102 @@
     {
       "n": 112,
       "url": "https://www.hensingpower.com/doosan-series-genset.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set Performance | Generator Set Performance | Dimension /weight"
       ],
       "file": "sources/xinhengxin-fujian/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.hensingpower.com/Quanchai-series-genset.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Generator Set Performance | Generator Set Performance | Dimension"
+      ],
+      "file": "sources/xinhengxin-fujian/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.hensingpower.com/yuchai-series-genset.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Generator Set Performance | Generator Set Performance | Dimension"
+      ],
+      "file": "sources/xinhengxin-fujian/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.hensingpower.com/lovol-series-genset.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Generator Set Performance | Generator Set Performance | Dimension"
+      ],
+      "file": "sources/xinhengxin-fujian/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.hensingpower.com/yto-series-genset.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Generator Set Performance | Generator Set Performance | Dimension"
+      ],
+      "file": "sources/xinhengxin-fujian/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.hensingpower.com/deutz-series-genset.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Generator Set Performance | Generator Set Performance | Dimension"
+      ],
+      "file": "sources/xinhengxin-fujian/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.hensingpower.com/Hengsing-Brand-Brush-Alternator-STC-series-pd41168135.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Prime | Voltage | Current | No.of pole | Speed | Volt.regulation"
+      ],
+      "file": "sources/xinhengxin-fujian/118.md"
+    },
+    {
+      "n": 119,
+      "url": "https://www.hensingpower.com/yangdong-series-genset.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Generator Set Performance | Generator Set Performance | Dimension"
+      ],
+      "file": "sources/xinhengxin-fujian/119.md"
+    },
+    {
+      "n": 120,
+      "url": "https://www.hensingpower.com/Xichai-series-genset.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Generator Set Performance | Generator Set Performance | Dimension"
+      ],
+      "file": "sources/xinhengxin-fujian/120.md"
+    },
+    {
+      "n": 121,
+      "url": "https://www.hensingpower.com/deutz-air-genset.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Generator Set Performance | Generator Set Performance | Dimension"
+      ],
+      "file": "sources/xinhengxin-fujian/121.md"
     },
     {
       "n": 1001,
@@ -651,6 +741,269 @@
         "| XHX-D500 | 509/636 | 560/700 | 50 | DP180LB | 556 | 136.4 | 10 | 3600x1550x2100/3500 | 4900x1800x2500/4570 | XHX-D500",
         "| XHX-D540 | 551/689 | 606/758 | 50 | DP222LB | 604 | 147.1 | 12 | 3650x1550x2100/3800 | 4900x1800x2500/4870 | XHX-D540",
         "| XHX-D600 | 601/751 | 661/826 | 50 | DP222LC | 657 | 161 | 12 | 3660x1550x2100/3800 | 4900x1800x2500/4870 | XHX-D600"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Quanchai Series Diesel Generator - Buy Power Generator Product on Fujian Xinhengxin Motor Co.,ltd.",
+      "header": [
+        "| Generator Set Performance | Generator Set Performance | Dimension",
+        "| Model | OUTPUT POWER | Fre. Hz | ENGINE | Power | Fuel Comsumption | Cylinder | Open type /weight | Soundproof type /weight",
+        "| PRIME OUTPUT (KW/KVA) | STANDBY Power (KW/KVA)",
+        "| MODEL | KW | L/H | NO. | mm /kg | mm/ kg"
+      ],
+      "rows": [
+        "| XHX-X10 | 8/10 | 9/10 | 50 | QC380D | 17 | 2.9 | 3 | 1350x800x1000/450 | 1700x740x1000/600",
+        "| XHX-X10 | 8/10 | 9/10 | 50 | QC385D | 21 | 3.6 | 3 | 1350x800x1000/450 | 1700x740x1000/600",
+        "| XHX-X12.5 | 10/12.5 | 11/12 | 50 | QC480D | 26 | 4.6 | 4 | 1350x800x1000/480 | 1850x740x1000/680",
+        "| XHX-X15 | 12/15 | 14/15 | 50 | N485D | 31 | 5.2 | 4 | 1400x800x1000/530 | 1850x740x1000/730",
+        "| XHX-X20 | 16/20 | 18/20 | 50 | N490D | 33 | 6.9 | 4 | 1400x800x1000/570 | 1850x740x1000/760",
+        "| XHX-X20 | 16/20 | 18/20 | 50 | QC490D | 37 | 6.6 | 4 | 1400x800x1000/570 | 1850x740x1000/760",
+        "| XHX-X25 | 20/25 | 22/24 | 50 | QC498D | 48 | 8.6 | 4 | 1500x800x1000/600 | 1850x740x1000/800",
+        "| XHX-X30 | 24/30 | 27/30 | 50 | QC4102D | 65 | 10.8 | 4 | 1500x800x1000/600 | 1850x740x1000/800",
+        "| XHX-X37.5 | 30/37.5 | 33/36 | 50 | QC4105D | 84 | 15.4 | 4 | 1650x800x1100/675 | 2050x850x1150/900"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Yuchai Series Diesel Generator - Buy Power Generator Product on Fujian Xinhengxin Motor Co.,ltd.",
+      "header": [
+        "| Generator Set Performance | Generator Set Performance | Dimension",
+        "| Model | OUTPUT POWER | Fre. Hz | ENGINE | Power | Fuel Comsumption | Cylinder | Open type /weight | Soundproof type /weight",
+        "| PRIME OUTPUT (KW/KVA) | STANDBY Power (KW/KVA)",
+        "| MODEL | KW | L/H | NO. | mm /kg | mm/ kg"
+      ],
+      "rows": [
+        "| XHX-Y18 | 18/23 | 20/25 | 50 | YC4F35-D21 | 21 | 4.3 | 4 | 1500x660x1100/620 | 2000x900x1250/880",
+        "| XHX-Y24 | 24/30 | 26/33 | 50 | YC4FA40Z-D20 | 28 | 5.5 | 4 | 1550x660x1150/620 | 2000x900x1250/880",
+        "| XHX-Y30 | 30/38 | 33/41 | 50 | YC4FA55Z-D20 | 36.8 | 6.9 | 4 | 1700x660x1150/640 | 2100x900x1250/900",
+        "| XHX-Y34 | 34/43 | 37/47 | 50 | YC4D60-D21 | 40 | 8.2 | 4 | 1850x800x1200/780 | 2300x1000x1300/1080",
+        "| XHX-Y50 | 50/63 | 55/69 | 50 | YC4D85Z-D20 | 55 | 11.5 | 4 | 1950x800x1200/840 | 2400x1000x1300/1160",
+        "| XHX-Y50 | 50/63 | 55/69 | 50 | YC4D90Z-D20 | 60 | 11.5 | 4 | 1950x800x1200/840 | 2400x1000x1300/1160",
+        "| XHX-Y60 | 60/75 | 66/83 | 50 | YC4A100Z-D20 | 70 | 12.3 | 4 | 1950x800x1300/1080 | 2400x1000x1300/1380",
+        "| XHX-Y80 | 80/100 | 88/124 | 50 | YC6B135Z-D20 | 90 | 15.8 | 6 | 2200x800x1300/1300 | 2800x1100x1550/1720",
+        "| XHX-Y90 | 90/113 | 99/124 | 50 | YC6B155L-D21 | 103 | 17.6 | 6 | 2350x900x1400/1380 | 2800x1100x1550/1780",
+        "| XHX-Y108 | 108/135 | 119/149 | 50 | YC6B180L-D20 | 120 | 21.2 | 6 | 2450x900x1400/1430 | 3000x1100x1700/1860",
+        "| XHX-Y128 | 128/160 | 141/176 | 50 | YC6B205L-D20 | 138 | 25.0 | 6 | 2450x900x1400/1480 | 3000x1100x1700/1900",
+        "| XHX-Y140 | 140/175 | 154/193 | 50 | YC6A230L-D20 | 155 | 27.3 | 6 | 2550x900x1400/1620 | 3200x1300x1830/2060",
+        "| XHX-Y150 | 150/188 | 165/203 | 50 | YC6A245L-D21 | 165 | 29.3 | 6 | 2550x900x1400/1640 | 3200x1100x1600/2080",
+        "| XHX-Y160 | 160/200 | 176/220 | 50 | YC6G270L-D20 | 180 | 34.4 | 6 | 2600x980x1450/1660 | 3500x1200x2030/2280",
+        "| XHX-Y170 | 170/213 | 187/234 | 50 | YC6MK285L-D20 | 192 | 33.2 | 6 | 2850x1060x1700/2050 | 3500x1200x2030/2740",
+        "| XHX-Y220 | 220/275 | 242/303 | 50 | YC6MK350L-D20 | 235 | 42.9 | 6 | 2920x1060x1700/2480 | 3700x1250x2000/3070",
+        "| XHX-Y250 | 250/313 | 275/344 | 50 | YC6MK420L-D20 | 281 | 48.8 | 6 | 2920x1060x1700/2600 | 3800x1450x2000/3180",
+        "| XHX-Y300 | 300/375 | 330/413 | 50 | YC6MJ480L-D20 | 321 | 63.0 | 6 | 3000x1060x1700/2720 | 3800x1450x2000/3460",
+        "| XHX-Y340 | 340/425 | 374/468 | 50 | YC6T550L-D21 | 368 | 65.3 | 6 | 3550x1380x2050/4180 | 4300x1700x2200/5480",
+        "| XHX-Y360 | 360/450 | 396/495 | 50 | YC6T600L-D22 | 401 | 70.1 | 6 | 3550x1380x2050/4180 | 4300x1700x2200/5480",
+        "| XHX-Y400 | 400/500 | 440/550 | 50 | YC6T660L-D20 | 441 | 76.8 | 6 | 3550x1380x2050/4280 | 4300x1700x2200/5580",
+        "| XHX-Y420 | 420/525 | 462/578 | 50 | YC6T700L-D20 | 468 | 80.6 | 6 | 3550x1380x2050/4280 | 4300x1700x2200/5580",
+        "| XHX-Y480 | 480/600 | 528/660 | 50 | YC6TD780L-D20 | 520 | 108.0 | 6 | 3600x1380x2100/4700 | 4500x1800x2350/5950",
+        "| XHX-Y500 | 500/625 | 550/688 | 50 | YC6TD840L-D20 | 560 | 112.5 | 6 | 3600x1380x2100/4700 | 4500x1800x2350/5950",
+        "| XHX-Y540 | 540/675 | 594/743 | 50 | YC6TD900-D31 | 605 | 118.8 | 6 | 3600x1380x2100/4850 | 4500x1800x2350/6100",
+        "| XHX-Y600 | 600/750 | 660/825 | 50 | YC6C1020L-D20 | 680 | 117.0 | 6 | 4500x1700x2500/7500 | 6058x2438x2896/10000",
+        "| XHX-Y650 | 650/813 | 715/894 | 50 | YC6C1070L-D20 | 715 | 126.8 | 6 | 4500x1700x2500/7500 | 6058x2438x2896/10000",
+        "| XHX-Y720 | 720/900 | 792/990 | 50 | YC6C1220L-D20 | 815 | 140.4 | 6 | 4500x1700x2500/7500 | 6058x2438x2896/10000",
+        "| XHX-Y800 | 800/1000 | 880/1100 | 50 | YC6C1320L-D20 | 880 | 156.0 | 6 | 4500x1700x2500/7500 | 6058x2438x2896/10000",
+        "| XHX-Y900 | 900/1125 | 990/1238 | 50 | YC6C1520-D31 | 1016 | 189.0 | 6 | 4700x1800x2500/7800 | 6058x2438x2896/10500",
+        "| XHX-Y1000 | 1000/1250 | 1100/1375 | 50 | YC12VC1680L-D20 | 1120 | 210.0 | 12 | 5000x2000x2500/12300 | 12192x2438x2896/16300",
+        "| XHX-Y1250 | 1250/1563 | 1375/1719 | 50 | YC12VC2070L-D20 | 1380 | 262.5 | 12 | 5300x2080x2500/12300 | 12192x2438x2896/16300",
+        "| XHX-Y1370 | 1370/1713 | 1507/1884 | 50 | YC12VC2270L-D20 | 1520 | 287.7 | 12 | 5500x2180x2550/12400 | 12192x2438x2896/16400",
+        "| XHX-Y1500 | 1500/1875 | 1650/2063 | 50 | YC12VC2510L-D20 | 1680 | 315.0 | 12 | 5600x2280x2600/12400 | 12192x2438x2896/16400",
+        "| XHX-Y1650 | 1650/2063 | 1815/2263 | 50 | YC12VC2700-D31 | 1805 | 335.0 | 12 | 5700x2280x2600/12500 | 12192x2438x2896/16500"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "LOVOL Diesel Generator Set- Buy Power Generator Product on Fujian Xinhengxin Motor Co.,ltd.",
+      "header": [
+        "| Generator Set Performance | Generator Set Performance | Dimension",
+        "| Model | OUTPUT POWER | Fre. Hz | ENGINE | Power | Fuel Comsumption | Cylinder | Open type /weight | Soundproof type /weight",
+        "| PRIME OUTPUT (KW/KVA) | STANDBY Power (KW/KVA)",
+        "| MODEL | KW | L/H | NO. | mm /kg | mm/ kg"
+      ],
+      "rows": [
+        "| XHX-L25 | 25/31.25 | 27.5/34.3 | 50 | 1003G | 28 | 6 | 3 | 1600x850x1200/700 | 2300x1000x1300/1000",
+        "| XHX-L30 | 30/37.5 | 33/41.2 | 50 | 1004G | 40 | 9.8 | 4 | 1700x850x1200/750 | 2300x1000x1300/1050",
+        "| XHX-L34 | 34/42.5 | 37.4/46.8 | 50 | 1003TG1A | 38 | 9 | 3 | 1700x850x1200/750 | 2300x1000x1300/1050",
+        "| XHX-L40 | 40/50 | 44/55 | 50 | 1003TG | 44 | 10.7 | 3 | 1800x850x1200/850 | 2300x1000x1300/1150",
+        "| XHX-L40 | 40/50 | 44/55 | 50 | 1004TG1A | 52 | 12.4 | 4 | 1800x850x1200/1000 | 2500x1000x1300/1250",
+        "| XHX-L50 | 50/62.5 | 55/68.8 | 50 | 1004TG | 65.7 | 15.7 | 4 | 1900x850x1200/1200 | 2500x1000x1300/1630",
+        "| XHX-L75 | 75/94 | 82.5/103.5 | 50 | 1006TG1A | 84 | 20 | 6 | 2150x900x1400/1200 | 2800x1100x1550/1630",
+        "| XHX-L75 | 75/94 | 82.5/103.5 | 50 | 1006TG3 | 86 | 20.5 | 6 | 2150x900x1400/1200 | 2800x1100x1550/1630",
+        "| XHX-L80 | 80/100 | 88/110 | 50 | 1006TG2A | 92 | 21.9 | 6 | 2150x900x1400/1200 | 2800x1100x1550/1630",
+        "| XHX-L100 | 100/125 | 110/138 | 50 | 1006TAG1A | 106 | 25.3 | 6 | 2150x900x1400/1200 | 2800x1100x1550/1630",
+        "| XHX-L100 | 100/125 | 110/138 | 50 | 1006TAG | 12 | 28.8 | 6 | 2150x900x1400/1200 | 2800x1100x1550/1630",
+        "| XHX-L120 | 120/150 | 132/165 | 50 | 1106C-P6TAG2 | 130 | 31 | 6 | 2200x900x1400/1250 | 3000x1100x1700/1670",
+        "| XHX-L120 | 120/150 | 132/165 | 50 | 1106C-P6TAG3 | 141 | 33.6 | 6 | 2200x950x1400/1250 | 3000x1100x1700/1670",
+        "| XHX-L140 | 140/175 | 154/192.5 | 50 | 1106C-P6TAG4 | 158 | 37.6 | 6 | 2600x1000x1600/1650 | 3200x1300x1780/2080"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "YTO Series Genset- Buy Power Generator Product on Fujian Xinhengxin Motor Co.,ltd.",
+      "header": [
+        "| Generator Set Performance | Generator Set Performance | Dimension",
+        "| Model | OUTPUT POWER | Fre. Hz | ENGINE | Power | Fuel Comsumption | Cylinder | Open type /weight | Soundproof type /weight",
+        "| PRIME OUTPUT (KW/KVA) | STANDBY Power (KW/KVA)",
+        "| MODEL | KW | L/H | NO. | mm /kg | mm/ kg"
+      ],
+      "rows": [
+        "| XHX-DF24 | 24/30 | 26/33 | 50 | YT3B2-D | 30 | 5.0 | 3 | 1850x850x1260/690 | 2300x950x1300/930",
+        "| XHX-DF30 | 30/38 | 33/41 | 50 | YT3A2Z-D | 33 | 6.3 | 3 | 1950x850x1260/750 | 2300x950x1300/990",
+        "| XHX-DF40 | 40/50 | 44/55 | 50 | LR4B5-D | 42 | 8.4 | 4 | 1950x850x1260/900 | 2300x950x1300/1100",
+        "| XHX-DF50 | 50/63 | 55/69 | 50 | LR4B3Z-D | 62 | 10.5 | 4 | 1950x850x1260/1000 | 2300x950x1300/1150",
+        "| XHX-DF68 | 68/85 | 75/110 | 50 | LR4M3L-D | 82 | 14.3 | 4 | 1950x850x1260/1050 | 2300x950x1300/1200",
+        "| XHX-DF80 | 80/100 | 88/124 | 50 | LR6A3Z-D | 90 | 16.4 | 6 | 2250x860x1300/1150 | 2800x1100x1550/1400",
+        "| XHX-DF100 | 100/125 | 110/137 | 50 | LR6A3L-D | 112 | 20.5 | 6 | 2300x860x1350/1300 | 2800x1100x1550/1420",
+        "| XHX-DF120 | 120/150 | 132/165 | 50 | LR6B3L-D | 132 | 24.6 | 6 | 2300x860x1350/1330 | 3000x1100x1700/1450",
+        "| XHX-DF130 | 130/163 | 143/180 | 50 | LR6M3L-D | 142 | 26.7 | 6 | 2300x860x1350/1360 | 3000x1100x1700/1480",
+        "| XHX-DF160 | 160/200 | 176/220 | 50 | YM6H4L-D | 186 | 32.8 | 6 | 2500x980x1550/1600 | 3200x1300x1830/2200",
+        "| XHX-DF180 | 180/225 | 198/248 | 50 | YM6H4LF-D | 206 | 36.9 | 6 | 2600x980x1550/1650 | 3200x1300x1830/2250",
+        "| XHX-DF200 | 200/250 | 220/275 | 50 | YM6S4L-D | 220 | 41.0 | 6 | 2600x980x1550/1750 | 3500x1200x2030/2350",
+        "| XHX-DF220 | 220/275 | 242/303 | 50 | YM6S4LF-D | 255 | 45.1 | 6 | 2600x980x1550/1800 | 3500x1200x2030/2400",
+        "| XHX-DF250 | 250/313 | 275/344 | 50 | YM6S9L-D | 290 | 51.3 | 6 | 3000x1000x1700/2500 | 3800x1450x2000/3000",
+        "| XHX-DF280 | 280/350 | 308/385 | 50 | YM6S9L-D | 320 | 57.4 | 6 | 3000x1000x1700/2600 | 3800x1450x2000/3100",
+        "| XHX-DF300 | 300/375 | 330/413 | 50 | YM6S9LF-D | 350 | 61.5 | 6 | 3300x1150x1700/3800 | 4000x1450x2000/5000",
+        "| XHX-DF340 | 340/425 | 374/468 | 50 | YM6S9LF-DA | 370 | 69.7 | 6 | 3350x1150x1700/4200 | 4000x1450x2000/5600"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "Deutz Series Diesel Generator - Buy Power Generator Product on Fujian Xinhengxin Motor Co.,ltd.",
+      "header": [
+        "| Generator Set Performance | Generator Set Performance | Dimension",
+        "| Model | OUTPUT POWER | Fre. Hz | ENGINE | Power | Fuel Comsumption | Cylinder | Open type /weight | Soundproof type /weight",
+        "| PRIME OUTPUT (KW/KVA) | STANDBY Power (KW/KVA)",
+        "| MODEL | KW | L/H | NO. | mm /kg | mm/ kg"
+      ],
+      "rows": [
+        "| XHX-D50 | 50/63 | 55/69 | 50 | BF4M2012 | 54 | 16.9 | 4 | 1900x800x1200/860 | 2400x1000x1300/1130",
+        "| XHX-D64 | 64/80 | 70/88 | 50 | BF4M2012C | 71 | 19.3 | 4 | 2000x850x1250/1000 | 2500x1000x1350/1360",
+        "| XHX-D80 | 80/100 | 88/110 | 50 | BF4M1013EC | 97 | 25.8 | 4 | 2150x850x1500/1150 | 2800x1100x1550/1570",
+        "| XHX-D100 | 100/125 | 110/138 | 50 | BF4M1013FC | 117 | 32.3 | 4 | 2250x850x1500/1230 | 2800x1100x1550/1570",
+        "| XHX-D120 | 120/150 | 132/165 | 50 | BF6M1013EC | 146 | 38.5 | 6 | 2500x1050x1650/1480 | 3000x1100x1700/2100",
+        "| XHX-D150 | 145/181 | 160/200 | 50 | BF6M1013FCG2 | 166 | 45.9 | 6 | 2600x1050x1650/1570 | 3300x1300x1830/2200",
+        "| XHX-D160 | 160/200 | 176/220 | 50 | BF6M1013FCG3 | 182 | 50.8 | 6 | 2650x1050x1650/1630 | 3300x1300x1830/2250",
+        "| XHX-D180 | 180/225 | 198/248 | 50 | BF6M1015-LAGA | 208 | 47.4 | 6 | 2650x1150x1950/2300 | 3300x1300x1830/3000",
+        "| XHX-D200 | 200/250 | 220/275 | 50 | BF6M1015C-LAG1A | 228 | 52 | 6 | 2650x1150x1950/2400 | 3300x1300x1830/3100",
+        "| XHX-D200 | 230/288 | 253/317 | 50 | BF6M1015C-LAG2A | 256 | 58.3 | 6 | 2800x1350x2000/3000 | 3700x1250x2000/3650",
+        "| XHX-D250 | 250/313 | 275/344 | 50 | BF6M1015C-LAG3A | 282 | 64.3 | 6 | 2800x1350x2000/3050 | 3700x1250x2000/3700",
+        "| XHX-D300 | 280/350 | 308/385 | 50 | BF6M1015C-LAG4 | 310 | 70.7 | 6 | 2900x1350x2000/3400 | 3700x1250x2000/4250",
+        "| XHX-D300 | 300/375 | 330/413 | 50 | BF6M1015CP-LAG | 328 | 74.8 | 6 | 2900x1350x2000/3400 | 3800x1450x2000/4250",
+        "| XHX-D350 | 350/438 | 385/481 | 50 | BF8M1015C-LAG1A | 388 | 88.4 | 8 | 3100x1500x2050/4380 | 4000x1700x2200/5580",
+        "| XHX-D400 | 3801475 | 418/523 | 50 | BF8M1015CP-LAG1A | 413 | 94.1 | 8 | 3100x1500x2050/4500 | 4300x1700x2200/5720",
+        "| XHX-D400 | 400/500 | 440/550 | 50 | BF8M1015CP-LAG2 | 448 | 102.1 | 8 | 3100x1500x2050/4500 | 4300x1700x2200/5720",
+        "| XHX-D450 | 450/563 | 495/619 | 50 | BF8M1015CP-LAG4 | 480 | 109.4 | 8 | 3100x1500x2050/4800 | 4500x1800x2350/6000",
+        "| XHX-D500 | 500/625 | 550/688 | 50 | BF8M1015CP-LAG5 | 509 | 116 | 8 | 3100x1500x2050/5000 | 4500x1800x2350/6200",
+        "| XHX-D550 | 550/688 | 605/756 | 50 | |HC12V132ZL-LAG1A | 600 | 137.4 | 12 | 4700x1800x2100/6000 | 4900x1800x2500/8000",
+        "| XHX-D600 | 600/750 | 660/825 | 50 | IHC12V132ZL-LAG2A | 666 | 152.6 | 12 | 4700x1800x2100/6000 | 4900x1800x2500/8000"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "Stc- Buy STC Brush Alternator on Fujian Xinhengxin Motor Co.,ltd.",
+      "header": [
+        "| Model | Prime | Voltage | Current | No.of pole | Speed | Volt.regulation",
+        "| (kW) | (kVA) | (V) | (A) | (r.p.m) | (%)"
+      ],
+      "rows": [
+        "| STC-3 | 3 | 3.8 | 230/400 | 5.4 | 4 | 1500 | ±5",
+        "| STC-5 | 5 | 6.3 | 9 | 4 | 1500",
+        "| STC-7.5 | 7.5 | 9.4 | 13.5 | 4 | 1500",
+        "| STC-10 | 10 | 12.5 | 18.1 | 4 | 1500",
+        "| STC-12 | 12 | 15 | 21.7 | 4 | 1500",
+        "| STC-15 | 15 | 18.8 | 27.1 | 4 | 1500",
+        "| STC-20 | 20 | 25 | 36.1 | 4 | 1500",
+        "| STC-30 | 30 | 37.5 | 54.1 | 4 | 1500",
+        "| STC-40 | 40 | 50 | 72.2 | 4 | 1500",
+        "| STC-50 | 50 | 62.5 | 90.2 | 4 | 1500"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "Yangdong Series Diesel Generator - Buy Power Generator on Fujian Xinhengxin Motor Co.,ltd.",
+      "header": [
+        "| Generator Set Performance | Generator Set Performance | Dimension",
+        "| Model | OUTPUT POWER | Fre. Hz | ENGINE | Power | Fuel Comsumption | Cylinder | Open type /weight | Soundproof type /weight",
+        "| PRIME OUTPUT (KW/KVA) | STANDBY Power (KW/KVA)",
+        "| MODEL | KW | L/H | NO. | mm /kg | mm/ kg"
+      ],
+      "rows": [
+        "| XHX-YD8 | 8/10 | 8.8/11 | 50 | YD380D | 10 | 1.4 | 3 | 1350x800x1000/450 | 1700x740x1000/600",
+        "| XHX-YD8 | 8/10 | 8.8/11 | 50 | YD385D | 11 | 1.5 | 3 | 1350x800x1000/450 | 1700x740x1000/600",
+        "| XHX-YD10 | 10/13 | 11/14.5 | 50 | YD480D | 14 | 1.8 | 4 | 1350x800x1000/480 | 1850x740x1000/680",
+        "| XHX-YD12 | 12/15 | 13.2/16.5 | 50 | YND485D | 17 | 2.2 | 4 | 1400x800x1000/530 | 1850x740x1000/730",
+        "| XHX-YD18 | 18/23 | 20/25 | 50 | YND490D | 20 | 2.4 | 4 | 1400x800x1000/570 | 1850x740x1000/760",
+        "| XHX-YD18 | 18/23 | 20/25 | 50 | YSD490D | 21 | 2.5 | 4 | 1400x800x1000/570 | 1850x740x1000/760",
+        "| XHX-YD20 | 20/25 | 22/27.5 | 50 | Y490PD | 24 | 2.7 | 4 | 1500x800x1000/600 | 1850x740x1000/800",
+        "| XHX-YD20 | 20/25 | 22/27.5 | 50 | Y495D | 27 | 3.0 | 4 | 1500x800x1000/600 | 1850x740x1000/800",
+        "| XHX-YD24 | 24/30 | 26/33 | 50 | Y4100D | 32 | 3.7 | 4 | 1500x800x1000/650 | 1950x850x1100/850",
+        "| XHX-YD24 | 24/30 | 26/33 | 50 | Y4102D | 33 | 3.9 | 4 | 1500x800x1000/650 | 1950x850x1100/850",
+        "| XHX-YD30 | 30/38 | 33/42 | 50 | Y4105D | 38 | 4.1 | 4 | 1650x800x1100/675 | 2050x850x1150/900",
+        "| XHX-YD30 | 30/38 | 33/42 | 50 | Y4102ZD | 40 | 3.9 | 4 | 1650x800x1100/680 | 2250x950x1260/900",
+        "| XHX-YD40 | 40/50 | 44/55 | 50 | Y4102ZLD | 48 | 3.9 | 4 | 1800x800x1100/780 | 2250x950x1260/1030",
+        "| XHX-YD40 | 40/50 | 44/55 | 50 | Y4105ZLD | 55 | 4.1 | 4 | 1800x800x1100/780 | 2400x980x1300/1030",
+        "| XHX-YD50 | 50/60 | 55/66 | 50 | YD4EZLD | 63 | 4.1 | 4 | 1900x800x1100/830 | 2400x980x1300/1100"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "Xichai Series Diesel Generator Set- Buy Power Generator Product on Fujian Xinhengxin Motor Co.,ltd.",
+      "header": [
+        "| Generator Set Performance | Generator Set Performance | Dimension",
+        "| Model | OUTPUT POWER | Fre. Hz | ENGINE | Power | Fuel Comsumption | Cylinder | Open type /weight | Soundproof type /weight",
+        "| PRIME OUTPUT (KW/KVA) | STANDBY Power (KW/KVA)",
+        "| MODEL | KW | L/H | NO. | mm /kg | mm/ kg"
+      ],
+      "rows": [
+        "| XHX-X12 | 12/15 | 13/17 | 50 | 4DW81-23D | 17 | 2.9 | 4 | 1400x800x1000/530 | 1850x850x1100/730",
+        "| XHX-X15 | 15/19 | 17/21 | 50 | 4DW91-29D | 21 | 3.6 | 4 | 1400x800x1000/570 | 1850x850x1100/760",
+        "| XHX-X20 | 20/25 | 22/28 | 50 | 4DW92-35D | 26 | 4.6 | 4 | 1500x800x1000/600 | 1950x850x1100/800",
+        "| XHX-X24 | 24/30 | 26/33 | 50 | 4DW93-42D | 31 | 5.2 | 4 | 1500x800x1000/650 | 1950x850x1100/850",
+        "| XHX-X30 | 30/38 | 33/41 | 50 | 4DX21-45D | 33 | 6.9 | 4 | 1650x850x1160/750 | 2100x950x1250/990",
+        "| XHX-X30 | 30/38 | 33/41 | 50 | 4DX22-50D | 37 | 6.6 | 4 | 1650x850x1160/750 | 2100x950x1250/990",
+        "| XHX-X40 | 40/50 | 44/55 | 50 | 4DX23-65D | 48 | 8.6 | 4 | 1950x850x1260/900 | 2300x1000x1300/1100",
+        "| XHX-X50 | 50/63 | 55/69 | 50 | 4110/125Z-09D | 65 | 10.8 | 4 | 1950x850x1260/1000 | 2300x1000x1300/1150",
+        "| XHX-X75 | 75/93 | 83/103 | 50 | CA4DF2-12D | 84 | 15.4 | 4 | 2200x860x1300/1150 | 2600x1050x1430/1300",
+        "| XHX-X80 | 80/100 | 88/124 | 50 | CA6DF2D-14D | 96 | 16.2 | 6 | 2250x860x1300/1200 | 2800x1100x1550/1560",
+        "| XHX-X100 | 100/125 | 110/137 | 50 | CA6DF2-17D | 125 | 20.2 | 6 | 2300x860x1350/1300 | 2800x1100x1550/1560",
+        "| XHX-X120 | 120/150 | 132/165 | 50 | CA6DF2-19D | 140 | 24.0 | 6 | 2300x860x1350/1330 | 2800x1100x1550/1610",
+        "| XHX-X130 | 130/163 | 143/180 | 50 | CA6DL1-24D | 176 | 25.5 | 6 | 2300x860x1350/1360 | 3000x1100x1700/1830",
+        "| XHX-X150 | 150/188 | 165/203 | 50 | CA6DL2-27D | 205 | 29.3 | 6 | 2400x980x1550/1600 | 3000x1100x1700/2200",
+        "| XHX-X200 | 200/250 | 220/275 | 50 | CA6DL2-30D | 227 | 39.0 | 6 | 2600x980x1550/1750 | 3200x1300x1750/2350",
+        "| XHX-X250 | 250/313 | 275/344 | 50 | CA6DM2J-39D | 287 | 48.8 | 6 | 3000x1000x1700/2500 | 3800x1450x2000/3000",
+        "| XHX-X250 | 250/313 | 275/344 | 50 | CA6DM2-39D | 287 | 47.3 | 6 | 3000x1000x1700/2500 | 3800x1450x2000/3000",
+        "| XHX-X280 | 280/350 | 308/385 | 50 | CA6DM2J-41D | 300 | 54.6 | 6 | 3000x1000x1700/2600 | 3800x1450x2000/3100",
+        "| XHX-X280 | 280/350 | 308/385 | 50 | CA6DM2-41D | 300 | 52.9 | 6 | 3000x1000x1700/2600 | 3800x1450x2000/3100",
+        "| XHX-X300 | 300/375 | 330/413 | 50 | CA6DN1J-45D | 332 | 58.5 | 6 | 3300x1150x1700/3800 | 4000x1450x2000/5000",
+        "| XHX-X300 | 300/375 | 330/413 | 50 | CA6DN1-45D | 332 | 57.3 | 6 | 3300x1150x1700/3800 | 4000x1450x2000/5000"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "Deutz Series Air Cooling Diesel Genset- Buy Power Generator Product on Fujian Xinhengxin Motor Co.,ltd.",
+      "header": [
+        "| Generator Set Performance | Generator Set Performance | Dimension",
+        "| Model | OUTPUT POWER | Fre. Hz | ENGINE | Power | Fuel Comsumption | Cylinder | Open type /weight | Soundproof type /weight",
+        "| PRIME OUTPUT (KW/KVA) | STANDBY Power (KW/KVA)",
+        "| MODEL | KW | L/H | NO. | mm /kg | mm/ kg"
+      ],
+      "rows": [
+        "| XHX-DA10 | 10/12.5 | 11/13.8 | 50 | F2L912 | 14 | 2.4 | 2 | 1200x750x1100/500 | 1850x1000x1200/700",
+        "| XHX-DA12 | 12/15 | 13/17 | 50 | F2L912 | 14 | 2.9 | 2 | 1200x750x1100/500 | 1850x1000x1200/700",
+        "| XHX-DA15 | 15/19 | 17/21 | 50 | F3L912 | 24 | 3.5 | 3 | 1400x750x1150/700 | 1900x1100x1250/900",
+        "| XHX-DA18 | 18/23 | 20/25 | 50 | F3L912 | 24 | 4.2 | 3 | 1400x750x1150/700 | 1900x1100x12500/900",
+        "| XHX-DA20 | 20/25 | 22/28 | 50 | F3L912 | 24 | 4.6 | 3 | 1400x750x1150/700 | 1900x1100x12500/900",
+        "| XHX-DA24 | 24/30 | 26/33 | 50 | F4L912 | 32 | 5.5 | 4 | 1500x750x1150/750 | 2100x1100x1300/950",
+        "| XHX-DA30 | 30/38 | 33/41 | 50 | F4L913 | 34 | 6.8 | 4 | 1600x750x1150/800 | 2100x1100x1300/1000",
+        "| XHX-DA32 | 32/40 | 36/45 | 50 | F4L912T | 41 | 7.0 | 4 | 1600x750x1150/800 | 2100x1100x1300/1000",
+        "| XHX-DA40 | 40/50 | 44/55 | 50 | F6L912 | 48 | 9.1 | 6 | 1800x800x1200/950 | 2300x1100x1300/1150",
+        "| XHX-DA44 | 44/55 | 48/60 | 50 | F6L913 | 51 | 10.0 | 6 | 1800x800x1200/950 | 2300x1100x1300/1150",
+        "| XHX-DA45 | 45/56 | 50/62 | 50 | BF4L913 | 57 | 10.5 | 4 | 1800x800x1200/950 | 2300x1100x1300/1150",
+        "| XHX-DA50 | 50/63 | 55/69 | 50 | F6L912T | 61 | 11.4 | 6 | 2050x850x1400/1200 | 2500x1100x1500/1450",
+        "| XHX-DA60 | 60/75 | 66/83 | 50 | BF6L913 | 88 | 13.7 | 6 | 2050x850x1400/1200 | 2500x1100x1500/1450",
+        "| XHX-DA75 | 75/93 | 83/103 | 50 | BF6L913 | 88 | 17.1 | 6 | 2050x850x1400/1200 | 2500x1100x1500/1450",
+        "| XHX-DA90 | 90/113 | 99/124 | 50 | BF6L913C | 114 | 20.5 | 6 | 2100x850x1400/1250 | 2500x1100x1500/1500",
+        "| XHX-DA100 | 100/125 | 110/137 | 50 | BF6L913C | 114 | 22.8 | 6 | 2100x850x1400/1250 | 2500x1100x1500/1500"
       ]
     },
     {

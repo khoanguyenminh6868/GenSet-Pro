@@ -54,7 +54,7 @@
     {
       "n": 101,
       "url": "https://www.cameopower.com/diesel-generator/open-frame-diesel-generator/5-kva-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | CM8000C-DE | CM15000CE | CM8000C"
@@ -64,7 +64,7 @@
     {
       "n": 102,
       "url": "https://www.cameopower.com/diesel-generator/open-frame-diesel-generator/5kva-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | CM8000C-DE | CM10000C-DE | CM12000C-DE"
@@ -74,7 +74,7 @@
     {
       "n": 103,
       "url": "https://www.cameopower.com/diesel-generator/open-frame-diesel-generator/6kva-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | CM10000C-DE | CM12000C-DE | CM13000C-DE"
@@ -84,7 +84,7 @@
     {
       "n": 104,
       "url": "https://www.cameopower.com/diesel-generator/open-frame-diesel-generator/5kw-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | CM8000C-DE | CM10000C-DE | CM12000C-DE"
@@ -94,7 +94,7 @@
     {
       "n": 105,
       "url": "https://www.cameopower.com/diesel-generator/open-frame-diesel-generator/10kw-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | CM14000C-DE | CM15000C-DE | CM12000C-DE"
@@ -104,7 +104,7 @@
     {
       "n": 106,
       "url": "https://www.cameopower.com/diesel-generator/industrial-diesel-generator/50kva-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | SC-44YC | SC-55YC | SC-60YC"
@@ -114,7 +114,7 @@
     {
       "n": 107,
       "url": "https://www.cameopower.com/diesel-generator/industrial-diesel-generator/50kw-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | SC-55YC | SC-60YC | SC-70YC"
@@ -124,7 +124,7 @@
     {
       "n": 108,
       "url": "https://www.cameopower.com/diesel-generator/industrial-diesel-generator/30-kva-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | SC-28WC | SC-33WC | SC-44WC"
@@ -134,7 +134,7 @@
     {
       "n": 109,
       "url": "https://www.cameopower.com/diesel-generator/industrial-diesel-generator/125-kva-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | SC-110YC | SC-120YC | SC-130YC"
@@ -144,7 +144,7 @@
     {
       "n": 110,
       "url": "https://www.cameopower.com/diesel-generator/industrial-diesel-generator/20kva-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | SC20JS | SC14JS | SC30JS"
@@ -154,7 +154,7 @@
     {
       "n": 111,
       "url": "https://www.cameopower.com/diesel-generator/industrial-diesel-generator/20kw-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | SC-C20KMS | SC-C28KMS | SC-C32KMS"
@@ -164,7 +164,7 @@
     {
       "n": 112,
       "url": "https://www.cameopower.com/diesel-generator/silent-diesel-generator/silent-generator-for-home.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Image | ​ | ​"
@@ -174,7 +174,7 @@
     {
       "n": 117,
       "url": "https://www.cameopower.com/diesel-generator/silent-diesel-generator/5kva-silent-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | CF5500S | CF6500S | CF7500S | CF8500S"
@@ -184,12 +184,42 @@
     {
       "n": 122,
       "url": "https://www.cameopower.com/diesel-generator/silent-diesel-generator/7kw-silent-inverter-diesel-generator-cf7500is.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Power series | 5kW | 6kW | 7kW | 8kW"
       ],
       "file": "sources/cameo-power/122.md"
+    },
+    {
+      "n": 124,
+      "url": "https://www.cameopower.com/diesel-generator/silent-diesel-generator/8kw-16kw-20kva-silent-diesel-generator.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Power series | 8kW | 10kW | 11kW | 12kW | 15kW"
+      ],
+      "file": "sources/cameo-power/124.md"
+    },
+    {
+      "n": 126,
+      "url": "https://www.cameopower.com/diesel-generator/open-frame-diesel-generator/7-5-kva-diesel-generator.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | CP8000C/E | CP10000C/E | CP12000CE"
+      ],
+      "file": "sources/cameo-power/126.md"
+    },
+    {
+      "n": 127,
+      "url": "https://www.cameopower.com/gasoline-generator/10kw-gasoline-generator.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | CMG7000S-B | CMG9000S-B | CMG13000SDE-B"
+      ],
+      "file": "sources/cameo-power/127.md"
     }
   ],
   "confidence": "medium",
@@ -465,6 +495,78 @@
         "| Product Dimensions(L×W×H)mm | 850*600*740 | 850*600*740 | 850*600*740 | 895*600*785",
         "| Loading Qty(20GP/40HQ) | 72/156 | 72/156 | 72/156 | 63/135",
         "| N.w/G.w(kg) | 153/169 | 160/176 | 166/195 | 189/202"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "China Best 8kw - 16kw 20kva Silent Diesel Generator Manufacturers Suppliers Factory",
+      "header": [],
+      "rows": [
+        "| Power series | 8kW | 10kW | 11kW | 12kW | 15kW",
+        "| Model | CD10000S | CD12000S | CD14000S | CD15000S | CD18000S",
+        "| Generator | Frequency | 50 | 60 | 50 | 60 | 50 | 60 | 50 | 60 | 50 | 60",
+        "| Rated power (kW) | 8.0/8.5 | 10.0/11.0 | 11.0/12.0 | 12.0/13.0 | 15.0",
+        "| Maximum power(kW) | 8.5/9.0 | 11.0/12.0 | 12.0/13.0 | 13.0/14.0 | 16.0",
+        "| Noise Level(@1/4 load,7m ) (dBA) | 75 | 75 | 75 | 75 | 75",
+        "| THD | ≤5% | ≤5% | ≤5% | ≤5% | ≤5%",
+        "| Reated speed(r/min) | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600 | 3000/3600",
+        "| Engine | Engine model | CP1103FE | 2V88B | 292FE | 294FE | 2V98FE",
+        "| Cylinder bore x stroke (mm) | 103*88 | 2-88*72 | 2-92*75 | 2-94*77 | 2-98*88",
+        "| Displacement (cc) | 733 | 870 | 997 | 1069 | 1326",
+        "| Compression ratio | 20:1 | 20:1 | 20:1 | 20:1 | 20:1",
+        "| Rated speed(r/min) | 3000 | 3000 | 3000 | 3000 | 3000",
+        "| Rated power(kW) | 11.2 | 12.5 | 13 | 14 | 14 | 15 | 16 | 17 | 20 | 20",
+        "| Start type | Electric start | Electric start | Electric start | Electric start | Electric start",
+        "| GENERATOE SET | Fuel tank capacity (L) | 26L | 26L | 26L | 26L | 26L",
+        "| Full load durability(H) | 500 | 500 | 500 | 500 | 500",
+        "| Fuel consumption (L/h) | ≤2.8 | ≤3.1 | ≤3.5 | ≤4.2 | ≤3.8 | ≤4.5 | ≤4.0 | ≤4.7 | ≤5.1 | ≤5.8",
+        "| Runtime(H) | 9.3 | 8.4 | 7.9 | 6.5 | 6.8 | 5.6 | 6.5 | 5.5 | 5.1 | 4.5",
+        "| Product Dimensions(L×W×H)mm | | 1250*650*765 | 1250*650*765 | 1250*650*765 | 1250*650*770",
+        "| Packing Size(L×W×H)mm | 1050*690*890 | 1330*730*925 | 1330*730*925 | 1330*730*925 | 1250*660*780",
+        "| Loading Qty(20GP/40HQ) | 32/102 | 23/52 | 23/52 | 23/52 | 22/44",
+        "| N.w/G.w(kg) | 211/228 | 276/300 | 298/320 | 305/330 | 325/355"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "7.5 Kva Diesel Generator - China 7.5 Kva Diesel Generator Manufacturers Suppliers Factory",
+      "header": [
+        "| Model | CP8000C/E | CP10000C/E | CP12000CE"
+      ],
+      "rows": [
+        "| Voltage(V) | 230 | 230 | 230",
+        "| Rated Frequency(Hz) | 50/60 | 50/60 | 50/60",
+        "| Rated Power(kw) | 5.0/5.5 | 6.0/6.5 | 7.0/7.5",
+        "| Maximum Power(kw) | 5.5/6.0 | 6.5/7.0 | 7.5/8.0",
+        "| Engine | CP188F | CP192F | CP195F",
+        "| Displacement(CC) | 456 | 499 | 531",
+        "| Start System | Recoil | Recoil | Recoil",
+        "| Tank Capacity(L) | 12.5 | 12.5 | 12.5",
+        "| N.W/G.W(KG) | 86/90 | 96/100 | 110/115",
+        "| Loading QTY (20GP/40HQ) | 99/274 | 99/274 | 99/274"
+      ]
+    },
+    {
+      "n": 127,
+      "title": "10kw Gasoline Generator - China 10kw Gasoline Generator Manufacturers Suppliers Factory",
+      "header": [
+        "| Model | CMG7000S-B | CMG9000S-B | CMG13000SDE-B"
+      ],
+      "rows": [
+        "| Frequency(Hz) | 50 | 50 | 50",
+        "| Rated Power(kW) | 5.0 | 7.0 | 10.0",
+        "| Max. power(kW) | 5.5 | 7.5 | 11",
+        "| Voltage(V) | 230 | 230 | 230",
+        "| Fuel capacity(L) | 25 | 25 | 25",
+        "| Engine Model | CP190F | CP460 | CP690",
+        "| Oil capacity(L) | 1.1 | 1.1 | 1.65",
+        "| Displacement(CC) | 420 | 460 | 690",
+        "| Start way | Electric | Electric | Electric",
+        "| Fuel Type | Gasoline | Gasoline | Gasoline",
+        "| Noise(dB @ 7m) | 75-80 | 75-80 | 75-80",
+        "| Package Size(mm) | 1020*555*785 | 1020*555*785 | 1217*650*933",
+        "| N.W/G.W(kg) | 125/146 | 131/151 | 236/283",
+        "| Loading Qty(20GP/40HQ) | 40/84 | 40/84 | 26/54"
       ]
     }
   ]

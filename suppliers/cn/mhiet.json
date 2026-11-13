@@ -87,7 +87,7 @@
     {
       "n": 101,
       "url": "https://www.mhi.com/group/mhiesme/products/mgs/series",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| MGS MODEL | ENGINE MODEL | Stand-by | Prime"
@@ -97,7 +97,7 @@
     {
       "n": 102,
       "url": "https://www.mhi.com/group/mhiesme/products/mgs/data_center",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| MGS MODEL | ENGINE MODEL | Data Center Continuous Power | Critical Poer Operation"
@@ -107,7 +107,7 @@
     {
       "n": 103,
       "url": "https://www.mhi.com/group/mhiesme/products/mgs/mu-g_series",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model Name | Engine Model | Stand-by (kVA) | Prime (kVA)"
@@ -117,7 +117,7 @@
     {
       "n": 104,
       "url": "https://www.mhi.com/group/mhiesme/products/mgs-g",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Unit | GS6R2-PTK | GS16R2-PTK | GS16R2-PTK"
@@ -127,7 +127,7 @@
     {
       "n": 105,
       "url": "https://www.mhi.com/group/mhiesme/products/sep",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Unit | SEP475 | SEP570 | SEP730 | SEP1000"

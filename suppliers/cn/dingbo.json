@@ -218,7 +218,7 @@
     {
       "n": 101,
       "url": "https://www.dieselgeneratortech.com/volvo-generators/600kw-emergency-diesel-generator-750kva.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Prime Power: 600KW/750KVA"
@@ -228,7 +228,7 @@
     {
       "n": 102,
       "url": "https://www.dieselgeneratortech.com/volvo-generators/150kw-volvo-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Genset Model: DB-329GF"
@@ -238,7 +238,7 @@
     {
       "n": 103,
       "url": "https://www.dieselgeneratortech.com/applications/Cummins-containerized-silent-generator-set.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Rated power: 700KW/875KVA"
@@ -247,73 +247,203 @@
     },
     {
       "n": 104,
-      "url": "https://www.dieselgeneratortech.com/cummins/32kw-40kva-diesel-generator-with-cummins-engine-4bt3.9-g1.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.dieselgeneratortech.com/weichai/438kva-350kw-weichai-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "Output Power: 32KW/40KVA"
+        "Genset Model: DB-350GF"
       ],
       "file": "sources/dingbo/104.md"
     },
     {
       "n": 105,
-      "url": "https://www.dieselgeneratortech.com/silent-genset/32kw-40kva-silent-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.dieselgeneratortech.com/weichai/500kva-400kw-weichai-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "Model: DB-32GF"
+        "Genset Model: DB-400GF"
       ],
       "file": "sources/dingbo/105.md"
     },
     {
       "n": 106,
-      "url": "https://www.dieselgeneratortech.com/genset/",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.dieselgeneratortech.com/weichai/575kva-460kw-weichai-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+        "Genset Model: DB-460GF"
       ],
       "file": "sources/dingbo/106.md"
     },
     {
       "n": 107,
-      "url": "https://www.dieselgeneratortech.com/cummins/",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.dieselgeneratortech.com/weichai/650kva-520kw-weichai-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "| | Engine family | Listed set ratings | Go to the model"
+        "Genset Model: DB-520GF"
       ],
       "file": "sources/dingbo/107.md"
     },
     {
       "n": 108,
-      "url": "https://www.dieselgeneratortech.com/cummins/heavy-duty-diesel-generator-set.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.dieselgeneratortech.com/genset/",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "Prime Power: 2000KW/2500KVA"
+        "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
       ],
       "file": "sources/dingbo/108.md"
     },
     {
       "n": 109,
-      "url": "https://www.dieselgeneratortech.com/cummins/550kw-cummins-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.dieselgeneratortech.com/cummins/",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "Prime Power: 550KW/687.5KVA"
+        "| | Engine family | Listed set ratings | Go to the model"
       ],
       "file": "sources/dingbo/109.md"
     },
     {
       "n": 110,
+      "url": "https://www.dieselgeneratortech.com/cummins/heavy-duty-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Prime Power: 2000KW/2500KVA"
+      ],
+      "file": "sources/dingbo/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.dieselgeneratortech.com/cummins/550kw-cummins-diesel-generator.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Prime Power: 550KW/687.5KVA"
+      ],
+      "file": "sources/dingbo/111.md"
+    },
+    {
+      "n": 112,
       "url": "https://www.dieselgeneratortech.com/perkins/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Dingbo listing | Perkins engine | What the code suggests | Ask before ordering"
       ],
-      "file": "sources/dingbo/110.md"
+      "file": "sources/dingbo/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.dieselgeneratortech.com/perkins/large-power-generator.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Prime Output: 1650KW/2062.5KVA"
+      ],
+      "file": "sources/dingbo/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.dieselgeneratortech.com/perkins/1250kva-perkins-silent-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Prime Output: 1000KW/1250KVA"
+      ],
+      "file": "sources/dingbo/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.dieselgeneratortech.com/perkins/genset-perkins-500kva-generator-price.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Prime Output: 400KW/500KVA"
+      ],
+      "file": "sources/dingbo/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.dieselgeneratortech.com/perkins/250kva-200kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Genset Model: DB-200GF"
+      ],
+      "file": "sources/dingbo/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.dieselgeneratortech.com/perkins/150kva-120kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Genset Model: DB-120GF"
+      ],
+      "file": "sources/dingbo/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.dieselgeneratortech.com/perkins/101kva-81kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Genset Model: DB-81GF"
+      ],
+      "file": "sources/dingbo/118.md"
+    },
+    {
+      "n": 119,
+      "url": "https://www.dieselgeneratortech.com/perkins/63kva-50kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Genset Model: DB-50GF"
+      ],
+      "file": "sources/dingbo/119.md"
+    },
+    {
+      "n": 120,
+      "url": "https://www.dieselgeneratortech.com/perkins/30kva-24kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Genset Model: DB-24GF"
+      ],
+      "file": "sources/dingbo/120.md"
+    },
+    {
+      "n": 121,
+      "url": "https://www.dieselgeneratortech.com/perkins/27kva-22kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Genset Model: DB-22GF"
+      ],
+      "file": "sources/dingbo/121.md"
+    },
+    {
+      "n": 122,
+      "url": "https://www.dieselgeneratortech.com/perkins/20kva-16kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Genset Model: DB-16GF"
+      ],
+      "file": "sources/dingbo/122.md"
+    },
+    {
+      "n": 123,
+      "url": "https://www.dieselgeneratortech.com/perkins/9kva-7kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Genset Model: DB-7GF"
+      ],
+      "file": "sources/dingbo/123.md"
     }
   ],
   "confidence": "medium",
@@ -413,46 +543,23 @@
     },
     {
       "n": 104,
-      "title": "40 kva Cummins Generator | Cummins Genset",
+      "title": "Custom 438kVA/350kW Weichai Diesel Generator Set",
       "header": [],
       "rows": [
-        "Output Power: 32KW/40KVA",
-        "Rated Current: 57.6(A)",
+        "Genset Model: DB-350GF",
+        "Rated Power: 350kW/438kVA",
+        "Rated Current: 630A",
         "Rated Frequency: 50(Hz)",
         "Power Factor: 0.8(Lag)",
-        "Rated Voltage: 400/230(V)",
-        "| Generator Set Model | DB-32GF",
-        "| Rated Generator Output | 32kW / 40kVA",
-        "| Engine Model | 4BT3.9-G1",
-        "| Engine Prime Power | 36kW (engine mechanical rating)",
-        "| Engine Standby Power | 40kW (engine mechanical rating)",
-        "| Rated Frequency | 50Hz",
-        "| Rated Speed | 1500rpm",
-        "| Rated Voltage | 400/230V",
-        "| Rated Current | 57.6A",
-        "| Power Factor | 0.8 Lagging",
-        "| Engine Configuration | 4-cylinder inline, four-stroke, turbocharged",
-        "| Displacement | 3.9L",
-        "| Starting System | 24V DC",
-        "| Voltage and Frequency | Required voltage, 50Hz/60Hz and phase | Confirm compatibility with the electrical equipment and destination market.",
-        "| Generator Model | DB-32GF | DB-32GF",
-        "| Dimensions (L × W × H) | 1600 × 750 × 1200mm | 1860 × 760 × 1300mm",
-        "| Weight | 700kg | 900kg",
-        "| Fuel Consumption at 100% Prime Load | 10L/h | Use as a published reference for full-load fuel budgeting.",
-        "| Fuel Consumption at 50% Prime Load | 5.9L/h | Use when estimating consumption at partial load.",
-        "| Starting Voltage | 24V DC | Confirm battery and charging arrangements.",
-        "| Generator Output | 32kW / 40kVA | Alternative engine or genset selection | Capacity matched to actual load; another engine or rating requires a separate configuration",
-        "| Frequency | 50Hz | 60Hz | Compatible engine speed, alternator and output rating selected for the required frequency",
-        "| Voltage | 400/230V | 380/220V, 415/240V, 440/254V | Other compatible voltage configurations according to the project electrical specification",
-        "| Model: | 4BT3.9-G1",
-        "| Prime Power: | 36KW",
-        "| Standby Power: | 40KW",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | WP13D440E310",
+        "| Prime Power: | 392kW",
+        "| Standby Power: | 440kW",
         "| Rated Speed: | 1500（r/min）",
-        "| Cylinder Arrangement: | 4 in line",
-        "| Displacement: | 3.9L",
-        "| Bore and Stroke: | 102*120（mm）",
-        "| Engine Oil Tank Capacity: | 8.5-9.5L",
-        "| Alternator Capacity: | 40KVA",
+        "| Cylinder Arrangement: | 6, in-line",
+        "| Displacement: | 12.54L",
+        "| Bore and Stroke: | 127*165（mm）",
+        "| Alternator Capacity: | 350KW/438kVA",
         "| Alternator Efficiencies: | 95％",
         "| Protection Level: | IP22-IP23",
         "| Voltage Regulation, Steady State: | ≤±1%",
@@ -462,35 +569,108 @@
         "| Voltage Stable Time (Sudden Increase): | ≤6S",
         "| Frequency Regulation, Stead State: | ≤5%",
         "| Frequency Waving: | ≤1.5%",
-        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
-        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+        "| Frequency Recovery Time (100% Sudden Reduce): | ≤5S",
+        "| Frequency Recovery Time (Sudden Increase): | ≤5S"
       ]
     },
     {
       "n": 105,
-      "title": "Export 32kW 40kVA Silent Diesel Generator",
+      "title": "ODM. 500kVA/400kW Weichai Diesel Generator Set",
       "header": [],
       "rows": [
-        "Model: DB-32GF",
-        "Prime power: 32KW/40KVA",
-        "Rated current: 58A",
-        "Rated frequency: 50Hz/60Hz",
-        "Power factor: 0.8lag",
-        "Rated voltage: 380~480V",
-        "| Rated Power | 32 kW / 40 kVA",
-        "| Voltage | 220V / 380V / 400V / 415V (customizable)",
-        "| Frequency | 50Hz / 60Hz",
-        "| Phase | 3 Phase",
-        "| Noise Level | ≤ 70 dB(A) at 7 meters",
-        "| Fuel Tank | 8–12 hours running",
-        "Prime Power: 32KW / 40KVA, providing reliable power to keep your operations running smoothly.",
-        "Rated Current: 58A, designed to meet your heavy-duty electrical needs.",
-        "Power Factor: 0.8 lag, ensuring consistent and reliable performance.",
-        "Rated Voltage: 380~480V, perfect for a variety of power setups."
+        "Genset Model: DB-400GF",
+        "Rated Power: 400kW/500kVA",
+        "Rated Current: 720A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | WP13D490E310",
+        "| Prime Power: | 450kW",
+        "| Standby Power: | 490kW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 6, in-line",
+        "| Displacement: | 12.54L",
+        "| Bore and Stroke: | 127*165（mm）",
+        "| Alternator Capacity: | 400KW/500kVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| Frequency Recovery Time (100% Sudden Reduce): | ≤5S",
+        "| Frequency Recovery Time (Sudden Increase): | ≤5S"
       ]
     },
     {
       "n": 106,
+      "title": "High Quality 575kVA/460kW Weichai Diesel Generator Set",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-460GF",
+        "Rated Power: 460kW/575kVA",
+        "Rated Current: 828A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | 6M33D572E200",
+        "| Prime Power: | 520kW",
+        "| Standby Power: | 572kW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 6, L-type",
+        "| Displacement: | 19.6L",
+        "| Bore and Stroke: | 150*185（mm）",
+        "| Alternator Capacity: | 460KW/575kVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| Frequency Recovery Time (100% Sudden Reduce): | ≤5S",
+        "| Frequency Recovery Time (Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Manufacture 650kVA/520kW Weichai Diesel Generator Set",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-520GF",
+        "Rated Power: 520kW/650kVA",
+        "Rated Current: 936A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | 6M33D633E200",
+        "| Prime Power: | 575kW",
+        "| Standby Power: | 633kW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 6, L-type",
+        "| Displacement: | 19.6L",
+        "| Bore and Stroke: | 150*185（mm）",
+        "| Alternator Capacity: | 520KW/650kVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| Frequency Recovery Time (100% Sudden Reduce): | ≤5S",
+        "| Frequency Recovery Time (Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 108,
       "title": "Diesel Genset Generator Price | Starlight Generator",
       "header": [
         "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
@@ -513,7 +693,7 @@
       ]
     },
     {
-      "n": 106,
+      "n": 108,
       "title": "Diesel Genset Generator Price | Starlight Generator",
       "header": [
         "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
@@ -544,7 +724,7 @@
       ]
     },
     {
-      "n": 106,
+      "n": 108,
       "title": "Diesel Genset Generator Price | Starlight Generator",
       "header": [
         "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
@@ -574,7 +754,7 @@
       ]
     },
     {
-      "n": 106,
+      "n": 108,
       "title": "Diesel Genset Generator Price | Starlight Generator",
       "header": [
         "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
@@ -612,7 +792,7 @@
       ]
     },
     {
-      "n": 106,
+      "n": 108,
       "title": "Diesel Genset Generator Price | Starlight Generator",
       "header": [
         "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
@@ -641,7 +821,7 @@
       ]
     },
     {
-      "n": 106,
+      "n": 108,
       "title": "Diesel Genset Generator Price | Starlight Generator",
       "header": [
         "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
@@ -680,7 +860,7 @@
       ]
     },
     {
-      "n": 106,
+      "n": 108,
       "title": "Diesel Genset Generator Price | Starlight Generator",
       "header": [
         "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
@@ -698,7 +878,7 @@
       ]
     },
     {
-      "n": 106,
+      "n": 108,
       "title": "Diesel Genset Generator Price | Starlight Generator",
       "header": [
         "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
@@ -714,7 +894,7 @@
       ]
     },
     {
-      "n": 107,
+      "n": 109,
       "title": "Cummins Generators | 25KVA - 3000KVA Cummings Generator",
       "header": [
         "| | Engine family | Listed set ratings | Go to the model"
@@ -729,7 +909,7 @@
       ]
     },
     {
-      "n": 108,
+      "n": 110,
       "title": "2000 KW Cummins Generator | 2750 KVA Prime Generator",
       "header": [],
       "rows": [
@@ -761,7 +941,7 @@
       ]
     },
     {
-      "n": 109,
+      "n": 111,
       "title": "550KW Cummins Diesel Generator Set | Emergency Generator",
       "header": [],
       "rows": [
@@ -792,7 +972,7 @@
       ]
     },
     {
-      "n": 110,
+      "n": 112,
       "title": "Perkins Diesel Generators For Sale | Perkins Generator | Buy from Dingbo",
       "header": [
         "| | Dingbo listing | Perkins engine | What the code suggests | Ask before ordering"
@@ -801,6 +981,360 @@
         "| 30 kVA / 24 kW | 1103A-33G | Three-cylinder, 3.3 L, no turbo | Motor starting margin, available floor space",
         "| 250 kVA / 200 kW | 1206A-E70TTAG3 | Six-cylinder, 7.0 L, twin-turbo | Ambient temperature and altitude derating",
         "| 400 kW / 500 kVA | 2506C-E15TAG1 | Six-cylinder, 15 L, turbocharged | Whether the set label is a prime or standby figure, and the engine's own rating at the same duty"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Perkins 1650kw Large Power Diesel Generator for Sale",
+      "header": [],
+      "rows": [
+        "Prime Output: 1650KW/2062.5KVA",
+        "Rated Current: 2700(A)",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Rated Voltage: 400/230(V)",
+        "| Model: | 4016TAG2A",
+        "| Standby/prime Power: | 1942.6KW/1766KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 16in line",
+        "| Displacement: | 61.12L",
+        "| Bore and Stroke: | 160*190（mm）",
+        "| Alternator Capacity: | 1875KVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "1000KW Perkins Diesel Generator | Worldwide Shipment",
+      "header": [],
+      "rows": [
+        "Prime Output: 1000KW/1250KVA",
+        "Rated Current: 1800(A)",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Rated Voltage: 400/230(V)",
+        "| Model: | 4012-46TWG2A",
+        "| Standby/Prime Power: | 1224KW/1113KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 12in line",
+        "| Displacement: | 45.84L",
+        "| Bore and Stroke: | 160*190（mm）",
+        "| Alternator Capacity: | 1250KVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Genset Perkins 500 Kva - Perkins Diesel Generator Set Manufacturer",
+      "header": [],
+      "rows": [
+        "Prime Output: 400KW/500KVA",
+        "Rated Current: 655(A)",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Rated Voltage: 400/230(V)",
+        "| Model: | 2506C-E15TAG1",
+        "| Standby/Prime Power: | 436KW/396KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 6 in line",
+        "| Displacement: | 15L",
+        "| Bore and Stroke: | 137*171（mm）",
+        "| Alternator Capacity: | 500KVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "250kVA/200kW Perkins Diesel Generator Set Manufacturer China",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-200GF",
+        "Rated Power: 200kW/250kVA",
+        "Rated Current: 360A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Phase & Wire: 3 phase 4 wire",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | 1206A-E70TTAG3",
+        "| Prime Power: | 217kW",
+        "| Standby Power: | 238kW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 6 vertical in-line",
+        "| Displacement: | 7.01L",
+        "| Bore and Stroke: | 105*135（mm）",
+        "| Alternator Capacity: | 200KW/250kVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| Frequency Recovery Time (100% Sudden Reduce): | ≤5S",
+        "| Frequency Recovery Time (Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "150kVA/120kW Perkins Diesel Generator Set Wholesaler",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-120GF",
+        "Rated Power: 120kW/150kVA",
+        "Rated Current: 216A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Phase & Wire: 3 phase 4 wire",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | 1106A-70TAG2",
+        "| Prime Power: | 131kW",
+        "| Standby Power: | 144kW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 6 in-line",
+        "| Displacement: | 7.01L",
+        "| Bore and Stroke: | 105*135（mm）",
+        "| Alternator Capacity: | 120KW/150kVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| Frequency Recovery Time (100% Sudden Reduce): | ≤5S",
+        "| Frequency Recovery Time (Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "High Quality 101kVA/81kW Perkins Diesel Generator Set",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-81GF",
+        "Rated Power: 81kW/101kVA",
+        "Rated Current: 146A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Phase & Wire: 3 phase 4 wire",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | 1104C-44TAG2",
+        "| Prime Power: | 90KW",
+        "| Standby Power: | 100KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 4, vertical in-line",
+        "| Displacement: | 4.4L",
+        "| Bore and Stroke: | 105*127（mm）",
+        "| Alternator Capacity: | 101KVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "Manufacture 63kVA/50kW Perkins Diesel Generator Set",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-50GF",
+        "Rated Power: 50kW/63kVA",
+        "Rated Current: 90A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Phase & Wire: 3 phase 4 wire",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | 1104A-44TG1",
+        "| Prime Power: | 58KW",
+        "| Standby Power: | 64KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 4, vertical in-line",
+        "| Displacement: | 4.4L",
+        "| Bore and Stroke: | 105*127（mm）",
+        "| Alternator Capacity: | 63KVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "30kVA/24kW Perkins Diesel Generator Set Exporter China",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-24GF",
+        "Rated Power: 24kW/30kVA",
+        "Rated Current: 43A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Phase & Wire: 3 phase 4 wire",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | 1103A-33G",
+        "| Prime Power: | 28KW",
+        "| Standby Power: | 30KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 3, vertical in-line",
+        "| Displacement: | 3.3L",
+        "| Bore and Stroke: | 105*127（mm）",
+        "| Alternator Capacity: | 30KVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "Export 27kVA/22kW Perkins Diesel Generator Set",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-22GF",
+        "Rated Power: 22kW/27kVA",
+        "Rated Current: 40A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Phase & Wire: 3 phase 4 wire",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | 404D-22TG",
+        "| Prime Power: | 25KW",
+        "| Standby Power: | 27KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 4, vertical in-line",
+        "| Displacement: | 2.216L",
+        "| Bore and Stroke: | 84*100（mm）",
+        "| Alternator Capacity: | 27KVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "China 20kVA/16kW Perkins Diesel Generator Set",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-16GF",
+        "Rated Power: 16kW/20kVA",
+        "Rated Current: 29A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Phase & Wire: 3 phase 4 wire",
+        "Rated Voltage: 400/230V(customizable)",
+        "| Model: | 404A-22G1",
+        "| Prime Power: | 18KW",
+        "| Standby Power: | 20KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 4, vertical in-line",
+        "| Displacement: | 2.216L",
+        "| Bore and Stroke: | 84*100（mm）",
+        "| Alternator Capacity: | 20KVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "9kVA/7kW Perkins Diesel Generator Set Supplier",
+      "header": [],
+      "rows": [
+        "Genset Model: DB-7GF",
+        "Rated Power: 7kW/9kVA",
+        "Rated Current: 13A",
+        "Rated Frequency: 50(Hz)",
+        "Power Factor: 0.8(Lag)",
+        "Phase & Wire: 3 phase 4 wire",
+        "Rated Voltage: 400/230(V)",
+        "| Model: | 403A-11G1",
+        "| Prime Power: | 8KW",
+        "| Standby Power: | 9KW",
+        "| Rated Speed: | 1500（r/min）",
+        "| Cylinder Arrangement: | 3, vertical in-line",
+        "| Displacement: | 1.131L",
+        "| Bore and Stroke: | 77*81（mm）",
+        "| Alternator Capacity: | 9KVA",
+        "| Alternator Efficiencies: | 95％",
+        "| Protection Level: | IP22-IP23",
+        "| Voltage Regulation, Steady State: | ≤±1%",
+        "| Voltage Regulation: | ≥±5%",
+        "| Voltage Regulation, Stead State: | ≤±1%",
+        "| Voltage Stable Time (100% Sudden Reduce): | ≤6S",
+        "| Voltage Stable Time (Sudden Increase): | ≤6S",
+        "| Frequency Regulation, Stead State: | ≤5%",
+        "| Frequency Waving: | ≤1.5%",
+        "| FrequencyRecoveryTime(100%SuddenReduce): | ≤5S",
+        "| FrequencyRecoveryTime(Sudden Increase): | ≤5S"
       ]
     }
   ],

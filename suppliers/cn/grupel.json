@@ -64,7 +64,7 @@
     {
       "n": 101,
       "url": "https://grupel.eu/en/products/portable-generator-gr3000/?_post_id=8337",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | | kVA | kW"
@@ -74,7 +74,7 @@
     {
       "n": 103,
       "url": "https://grupel.eu/en/products/portable-generator-gr6500/?_post_id=8338",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | | kVA | kW"
@@ -84,7 +84,7 @@
     {
       "n": 105,
       "url": "https://grupel.eu/en/products/portable-inverter-generator-gr2500/?_post_id=8336",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | | kVA | kW"
@@ -94,7 +94,7 @@
     {
       "n": 107,
       "url": "https://grupel.eu/en/products/portable-generator-gr12000/?_post_id=33744",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | | kVA | kW"
@@ -103,8 +103,8 @@
     },
     {
       "n": 108,
-      "url": "https://grupel.eu/en/products/perkins-genset-st-o-60hz-10kva/?_post_id=8101",
-      "accessedAt": "2026-11-03",
+      "url": "https://grupel.eu/en/products/perkins-genset-ls-sp-50hz-9kva/?_post_id=8015",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | | kVA | kW"
@@ -113,8 +113,8 @@
     },
     {
       "n": 111,
-      "url": "https://grupel.eu/en/products/perkins-genset-st-o-50hz-9kva/?_post_id=8100",
-      "accessedAt": "2026-11-03",
+      "url": "https://grupel.eu/en/products/perkins-genset-st-o-60hz-10kva/?_post_id=8101",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | | kVA | kW"
@@ -122,9 +122,19 @@
       "file": "sources/grupel/111.md"
     },
     {
+      "n": 114,
+      "url": "https://grupel.eu/en/products/perkins-genset-st-o-50hz-9kva/?_post_id=8100",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | | kVA | kW"
+      ],
+      "file": "sources/grupel/114.md"
+    },
+    {
       "n": 117,
-      "url": "https://grupel.eu/en/products/grupel-genset-st-o-50hz-8kva/?_post_id=7230",
-      "accessedAt": "2026-11-03",
+      "url": "https://grupel.eu/en/products/perkins-genset-st-o-50hz-8kva/?_post_id=8099",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | | kVA | kW"
@@ -182,6 +192,17 @@
     },
     {
       "n": 108,
+      "title": "Perkins + Leroy Somer Soundproof Genset 9kVA, 50hz | Grupel",
+      "header": [
+        "| | | kVA | kW"
+      ],
+      "rows": [
+        "| Stand-by Power (STP) | 9 | 8",
+        "| Prime Power (PRP) | 9 | 7"
+      ]
+    },
+    {
+      "n": 111,
       "title": "Perkins + Stamford Open Genset 10kVA, 60hz | Grupel",
       "header": [
         "| | | kVA | kW"
@@ -192,7 +213,7 @@
       ]
     },
     {
-      "n": 111,
+      "n": 114,
       "title": "Perkins + Stamford Open Genset 9kVA, 50hz | Grupel",
       "header": [
         "| | | kVA | kW"
@@ -204,7 +225,7 @@
     },
     {
       "n": 117,
-      "title": "Grupel + Stamford Open Genset 8kVA, 50hz | Grupel",
+      "title": "Perkins + Stamford Open Genset 8kVA, 50hz | Grupel",
       "header": [
         "| | | kVA | kW"
       ],

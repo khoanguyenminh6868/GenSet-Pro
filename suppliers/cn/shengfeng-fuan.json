@@ -148,7 +148,7 @@
     {
       "n": 101,
       "url": "http://www.sf-motor.com/product_view_en.asp?id=116",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| generator set performance | WUDONG Engine Performance | Dim.L*W*H"
@@ -158,7 +158,7 @@
     {
       "n": 102,
       "url": "http://sf-motor.com/product_view.asp?id=130",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Engine Rated Speed | rpm | 1500 | 1800"
@@ -168,7 +168,7 @@
     {
       "n": 104,
       "url": "http://sf-motor.com/product_view.asp?id=101",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号 | 额定功率 (kW) | 额定容量 (kVA) | 额定电流 (A) | 功率因数 (cos&Phi;) | 额定转速 (r/min)"
@@ -178,7 +178,7 @@
     {
       "n": 105,
       "url": "http://sf-motor.com/product_view.asp?id=100",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | 三相H级温升(125℃) | 一相H级温升 (125℃)"
@@ -188,12 +188,42 @@
     {
       "n": 106,
       "url": "http://sf-motor.com/product_view.asp?id=99",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号 | 额定功率 (KW) | 额定功率 (KVA) | 频率 (HZ) | 电压 (v)"
       ],
       "file": "sources/shengfeng-fuan/106.md"
+    },
+    {
+      "n": 108,
+      "url": "http://sf-motor.com/product_view_en.asp?id=122",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset moodel | Genset Power(Kw/Kva) | PERKINS | STAMFORD | Governor"
+      ],
+      "file": "sources/shengfeng-fuan/108.md"
+    },
+    {
+      "n": 110,
+      "url": "http://sf-motor.com/product_view_en.asp?id=100",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | 3-Phase Class H Temperature Rise (125℃) | 1-Phase Class H Temperature Rise (125℃)"
+      ],
+      "file": "sources/shengfeng-fuan/110.md"
+    },
+    {
+      "n": 111,
+      "url": "http://sf-motor.com/product_view_en.asp?id=99",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated Power (KW) | Rated Capacity (KVA) | Fre. (HZ) | Voltage (v)"
+      ],
+      "file": "sources/shengfeng-fuan/111.md"
     }
   ],
   "confidence": "medium",
@@ -331,6 +361,117 @@
         "| TFW2-180 | 180 | 225 | 50/60 | 400V",
         "| TFW2-200 | 200 | 250 | 50/60 | 400V",
         "| 型号 | 额定功率 (KW) | 额定功率 (KVA) | 频率 (HZ) | 电压 (v)",
+        "| TFW2-220 | 220 | 275 | 50/60 | 400V",
+        "| TFW2-250 | 250 | 312.5 | 50/60 | 400V",
+        "| TFW2-280 | 280 | 350 | 50/60 | 400V",
+        "| TFW2-300 | 300 | 375 | 50/60 | 400V",
+        "| TFW2-320 | 320 | 400 | 50/60 | 400V",
+        "| TFW2-350 | 350 | 437.5 | 50/60 | 400V",
+        "| TFW2-400 | 400 | 500 | 50/60 | 400V",
+        "| TFW2-420 | 420 | 525 | 50/60 | 400V",
+        "| TFW2-450 | 450 | 562.5 | 50/60 | 400V",
+        "| TFW2-500 | 500 | 625 | 50/60 | 400V",
+        "| TFW2-520 | 520 | 650 | 50/60 | 400V",
+        "| TFW2-550 | 550 | 687.5 | 50/60 | 400V",
+        "| TFW2-600 | 600 | 750 | 50/60 | 400V",
+        "| TFW2-720 | 720 | 900 | 50/60 | 400V",
+        "| TFW2-750 | 750 | 937.5 | 50/60 | 400V",
+        "| TFW2-800 | 800 | 1000 | 50/60 | 400V",
+        "| TFW2-1000 | 1000 | 1250 | 50/60 | 400V"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "UK-ENGINE Series Diesel Generator Sets-Fuan shengfeng electric machinery Co,Ltd.",
+      "header": [
+        "| Genset moodel | Genset Power(Kw/Kva) | PERKINS | STAMFORD | Governor",
+        "| Prime | | Prime | Standby | Model | Model | M/E"
+      ],
+      "rows": [
+        "| YH-P7.2KW | 50HZ | 7/9 | 7/9 | 403A-11G1 | PI044G | Mech.",
+        "| YH-P10KW | 50HZ | 10/13 | 10/13 | 403A-15G1 | PI144D | Mech.",
+        "| YH-P12KW | 50HZ | 12/15 | 12/15 | 403A-15G2 | PI144E | Mech.",
+        "| YH-P16KW | 50HZ | 16/20 | 16/20 | 404A-22G1 | PI144G | Mech.",
+        "| YH-P7.2KW | 50HZ | 7.2/9 | 8/10 | 403D-11G | PT044E | Mech.",
+        "| YH-P10.4KW | 50HZ | 10.4/13 | 11.2/14 | 403D-15G | PT044F | Mech.",
+        "| YH-P16KW | 50HZ | 16/20 | 17.6/22 | 404D-22G | PT144D | Mech.",
+        "| YH-P21KW | 50HZ | 21/26 | 23/29 | 404D-22TG | PT144F | Mech.",
+        "| YH-P52KW | 50HZ | 52/65 | 57.2/71.5 | 1104A-44TG1 | UCI224F | Mech.",
+        "| YH-P64KW | 50HZ | 64/80 | 70.4/88 | 1104A-44TG2 | UCI224G | Mech.",
+        "| YH-P64KW | 50HZ | 64/80 | 70.4/88 | 1104C-44TAG1 | UCI224G | Elec",
+        "| YH-P80KW | 50HZ | 80/100 | 88/110 | 1104C-44TAG2 | UCI274C | Elec",
+        "| YH-P120KW | 50HZ | 120/150 | 132/165 | 1106A-70TAG2 | UCI274F | Mech.",
+        "| YH-P144KW | 50HZ | 144/180 | 160/2020 | 1106A-70TAG3 | UCI274G | Mech.",
+        "| YH-P160KW | 50HZ | 160/200 | 176/220 | 1106A-70TAG4 | UCI274H | Mech."
+      ]
+    },
+    {
+      "n": 110,
+      "title": "YHG Series Brushless Three-phase A.C.Sychronous Generators-Fuan shengfeng electric machinery Co,Ltd.",
+      "header": [
+        "| | 3-Phase Class H Temperature Rise (125℃) | 1-Phase Class H Temperature Rise (125℃)"
+      ],
+      "rows": [
+        "| Voltage | 50Hz 1500rpm | 60Hz 1800rpm | 50Hz 1500rpm | 60Hz 1800rpm",
+        "| Series Star | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480 | 600 | 220 | 230 | 240 | 220 | 230 | 240",
+        "| Parallel Star | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240 | 300 | 110 | 115 | 120 | 110 | 115 | 120",
+        "| Series Delta | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277 | 346 | | | | | |",
+        "| Rated Volume (KVA) | 22.5 | 22.5 | 22.5 | 22.5 | 27.5 | 28.8 | 28.8 | 30 | 30 | 15 | 15 | 15 | 18.4 | 18.4 | 18.4",
+        "| Power (KW) | 18 | 18 | 18 | 18 | 22 | 23 | 23 | 24 | 24 | 12 | 12 | 12 | 14.7 | 14.7 | 14.7",
+        "| Efficiency (%) | 84.3 | 84.9 | 85.3 | 85.8 | 83.8 | 84.3 | 84.9 | 85.2 | 85.6 | 81.3 | 81.7 | 81.9 | 79.9 | 80.6 | 81.1",
+        "| Input Power (KW) | 21.4 | 21.2 | 21.1 | 21 | 26.2 | 27.1 | 27.1 | 28.2 | 28 | 14.8 | 14.7 | 14.6 | 18.4 | 18.3 | 18.1",
+        "| Rated Volume (KVA) | 27.5 | 27.5 | 27.5 | 27.5 | 32.5 | 34.4 | 34.4 | 35 | 35 | 18.5 | 18.5 | 18.5 | 21.9 | 21.9 | 21.9",
+        "| Power (KW) | 22 | 22 | 22 | 22 | 26 | 27.5 | 27.5 | 28 | 28 | 14.8 | 14.8 | 14.8 | 17.5 | 17.5 | 17.5",
+        "| Efficiency (%) | 85.7 | 86.2 | 86.5 | 87 | 85.5 | 85.9 | 86.4 | 86.7 | 87 | 82.7 | 83 | 83.3 | 81.9 | 81.9 | 82.8",
+        "| Input Power (KW) | 25.7 | 25.5 | 25.4 | 25.3 | 30.4 | 32 | 31.9 | 32.3 | 32.2 | 17.9 | 17.8 | 17.8 | 21.4 | 21.4 | 21.2",
+        "| Rated Volume (KVA) | 31.3 | 31.3 | 31.3 | 31.3 | 35 | 37.5 | 37.5 | 37.5 | 37.5 | 21 | 21 | 21 | 25 | 25 | 25",
+        "| Power (KW) | 25 | 25 | 25 | 25 | 28 | 30 | 30 | 30 | 30 | 16.8 | 16.8 | 16.8 | 20 | 20 | 20",
+        "| Efficiency (%) | 86.6 | 87 | 87.3 | 87.6 | 86.7 | 87 | 87.3 | 87.6 | 87.8 | 83.7 | 83.9 | 83.9 | 83 | 83 | 83.8",
+        "| Input Power (KW) | 28.9 | 28.8 | 28.7 | 28.6 | 32.3 | 34.5 | 34.4 | 34.2 | 34.2 | 20.1 | 20 | 20 | 24.1 | 24.1 | 23.9",
+        "| Rated Volume (KVA) | 37.5 | 37.5 | 37.5 | 37.5 | 44.3 | 46.9 | 46.9 | 46.9 | 46.8 | 25 | 25 | 25 | 31.3 | 31.3 | 31.3",
+        "| Power (KW) | 30 | 30 | 30 | 30 | 35.4 | 37.5 | 37.5 | 37.5 | 37.4 | 20 | 20 | 20 | 25 | 25 | 25",
+        "| Efficiency (%) | 86.2 | 86.6 | 86.9 | 87.2 | 85.4 | 85.3 | 85.6 | 85.9 | 85.9 | 82.9 | 82.9 | 82.9 | 82.8 | 82.8 | 82.8",
+        "| Input Power (KW) | 34.8 | 34.7 | 34.6 | 34.5 | 41.5 | 44 | 43.9 | 43.7 | 43.7 | 24.2 | 24.2 | 24.2 | 30.2 | 30.2 | 30.2",
+        "| Rated Volume (KVA) | 40 | 42.5 | 40 | 40 | 47.3 | 50 | 50 | 50 | 55 | 28 | 28 | 28 | 35 | 35 | 35",
+        "| Power (KW) | 32 | 34 | 32 | 32 | 37.8 | 40 | 40 | 40 | 44 | 22.4 | 22.4 | 22.4 | 28 | 28 | 28",
+        "| Efficiency (%) | 87.6 | 86.6 | 87.1 | 87.5 | 85.9 | 85.8 | 86.1 | 86.4 | 86.4 | 83 | 83 | 83 | 82.9 | 83 | 83",
+        "| Input Power (KW) | 37 | 39.3 | 36.7 | 36.6 | 44 | 46.7 | 46.5 | 46.3 | 46.3 | 27 | 27 | 27 | 33.8 | 33.8 | 33.8",
+        "| | 50Hz 1500rpm | 60Hz 1800rpm | 50Hz 1500rpm | 60Hz 1800rpm",
+        "| Voltage | H(125K) | H(125K) | H(115K) | H(115K)",
+        "| Series Star | 380 | 400 | 415 | 440 | 416 | 440 | 450 | 460 | 480 | 380 | 400 | 415 | 440 | 416 | 440 | 450 | 460 | 480",
+        "| Parallel Star | 190 | 200 | 208 | 220 | 208 | 220 | 225 | 230 | 240 | 190 | 200 | 208 | 220 | 208 | 220 | 225 | 230 | 240",
+        "| Series Delta | 220 | 230 | 240 | 254 | 240 | 254 | 260 | 266 | 277 | 220 | 230 | 240 | 254 | 240 | 254 | 260 | 266 | 277",
+        "| Rated Volume (KVA) | 42.5 | 42.5 | 42.5 | 40 | 50 | 52.5 | 52.5 | 52.5 | 55 | 37.5 | 37.5 | 37.5 | 35 | 43.8 | 43.8 | 43.8 | 43.8 | 43.8",
+        "| Power (KW) | 34 | 34 | 34 | 32 | 40 | 42 | 42 | 42 | 44 | 30 | 30 | 30 | 28 | 35 | 35 | 35 | 35 | 35",
+        "| Efficiency (%) | 86.5 | 87.1 | 87.4 | 88.2 | 86.8 | 87.2 | 87.5 | 87.7 | 87.9 | 87.1 | 87.6 | 87.8 | 88.5 | 87.6 | 88 | 88.2 | 88.4 | 88.6",
+        "| Input Power (KW) | 39.3 | 39 | 38.9 | 36.3 | 46.1 | 48.2 | 48 | 47.9 | 50.1 | 34.4 | 34.2 | 34.2 | 31.6 | 40 | 39.8 | 39.7 | 39.6 | 39.5"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "TFW2 Series Brushless Three-phase A.C.Sychronous Generators-Fuan shengfeng electric machinery Co,Ltd.",
+      "header": [
+        "| Model | Rated Power (KW) | Rated Capacity (KVA) | Fre. (HZ) | Voltage (v)"
+      ],
+      "rows": [
+        "| TFW2-10 | 10 | 12.5 | 50/60 | 400V",
+        "| TFW2-12 | 12 | 15 | 50/60 | 400V",
+        "| TFW2-16 | 16 | 20 | 50/60 | 400V",
+        "| TFW2-20 | 20 | 25 | 50/60 | 400V",
+        "| TFW2-24 | 24 | 30 | 50/60 | 400V",
+        "| TFW2-30 | 30 | 37.5 | 50/60 | 400V",
+        "| TFW2-40 | 40 | 50 | 50/60 | 400V",
+        "| TFW2-50 | 50 | 62.5 | 50/60 | 400V",
+        "| TFW2-64 | 64 | 80 | 50/60 | 400V",
+        "| TFW2-75 | 75 | 93.75 | 50/60 | 400V",
+        "| TFW2-90 | 90 | 112.5 | 50/60 | 400V",
+        "| TFW2-100 | 100 | 125 | 50/60 | 400V",
+        "| TFW2-120 | 120 | 150 | 50/60 | 400V",
+        "| TFW2-150 | 150 | 187.5 | 50/60 | 400V",
+        "| TFW2-160 | 160 | 200 | 50/60 | 400V",
+        "| TFW2-180 | 180 | 225 | 50/60 | 400V",
+        "| TFW2-200 | 200 | 250 | 50/60 | 400V",
+        "| Model | Rated Power (KW) | Rated Capacity (KVA) | Fre. (HZ) | Voltage (v)",
         "| TFW2-220 | 220 | 275 | 50/60 | 400V",
         "| TFW2-250 | 250 | 312.5 | 50/60 | 400V",
         "| TFW2-280 | 280 | 350 | 50/60 | 400V",

@@ -103,7 +103,7 @@
     {
       "n": 101,
       "url": "https://www.man.eu/engines/en/products/power-generation/diesel/power-generation-diesel.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Output in kW | Output in kVA | Engine model | Cylinders | Model | Displacement in litres"
@@ -113,7 +113,7 @@
     {
       "n": 102,
       "url": "https://www.man.eu/engines/en/products/marine/yacht-engines/yacht.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
@@ -123,7 +123,7 @@
     {
       "n": 103,
       "url": "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/commercial-shipping.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Output in kW | Output in HP | Engine type | Cylinders | Type | Displacement in litres"
@@ -133,7 +133,7 @@
     {
       "n": 104,
       "url": "https://www.man.eu/engines/en/products/marine/auxiliary-motors/auxiliary-motors.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres"
@@ -143,7 +143,7 @@
     {
       "n": 105,
       "url": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Output in kW | Air/fuel ratio λ | Engine model | Cylinders | Model | Displacement in litres"
@@ -153,7 +153,7 @@
     {
       "n": 106,
       "url": "https://www.man.eu/engines/en/products/off-road/construction-and-special-machinery/construction-and-special-machinery.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
@@ -163,7 +163,7 @@
     {
       "n": 107,
       "url": "https://www.man.eu/engines/en/products/off-road/agricultural-machinery/agricultural-machinery.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
@@ -173,7 +173,7 @@
     {
       "n": 108,
       "url": "https://www.man.eu/engines/en/products/off-road/railway/railway.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Output in kW | Output in HP | Engine model | Cylinders | Model | Displacement in litres"
@@ -183,7 +183,7 @@
     {
       "n": 109,
       "url": "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/man-d3872.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Power in kW | Power in hp | Torque | Emission standards"
@@ -193,7 +193,7 @@
     {
       "n": 110,
       "url": "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/man-in-line-six-cylinder-motor.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | | D2676 LE4x6 (light duty) | D2676 LE43x / 42x (medium duty) | D2676 LE4xx (heavy duty)"
@@ -203,7 +203,7 @@
     {
       "n": 111,
       "url": "https://www.man.eu/engines/en/products/power-generation/gas/man-motor-e3262.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | | MAN E3262 E302 | MAN E3262 E302"

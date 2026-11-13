@@ -99,7 +99,7 @@
     {
       "n": 101,
       "url": "https://comappower.com/product/ricardo-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -109,7 +109,7 @@
     {
       "n": 102,
       "url": "https://comappower.com/product/cummins-powered-genset/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -119,7 +119,7 @@
     {
       "n": 103,
       "url": "https://comappower.com/product/perkins-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -129,7 +129,7 @@
     {
       "n": 104,
       "url": "https://comappower.com/product/yanmar-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -139,7 +139,7 @@
     {
       "n": 105,
       "url": "https://comappower.com/product/baudouin-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -149,7 +149,7 @@
     {
       "n": 106,
       "url": "https://comappower.com/product/mtu-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -159,7 +159,7 @@
     {
       "n": 107,
       "url": "https://comappower.com/product/deutz-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -169,7 +169,7 @@
     {
       "n": 108,
       "url": "https://comappower.com/product/volvo-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -179,7 +179,7 @@
     {
       "n": 109,
       "url": "https://comappower.com/product/kubota-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -189,7 +189,7 @@
     {
       "n": 110,
       "url": "https://comappower.com/product/doosan-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
@@ -199,7 +199,7 @@
     {
       "n": 111,
       "url": "https://comappower.com/product/mitsubishi-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | Engine origin | NO. of Cylinder | Detail Data"
@@ -209,22 +209,12 @@
     {
       "n": 113,
       "url": "https://comappower.com/product/yangdong-generator-set/",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
       ],
       "file": "sources/comappower/113.md"
-    },
-    {
-      "n": 114,
-      "url": "https://comappower.com/grupos-eletrogenos-a-diesel-tecnologia-aplicacoes-e-vantagens/",
-      "accessedAt": "2026-10-28",
-      "tier": "A",
-      "quote": [
-        "| | kVA | kW (FP 0.8) | Aplicação Típica"
-      ],
-      "file": "sources/comappower/114.md"
     }
   ],
   "confidence": "medium",
@@ -399,6 +389,7 @@
         "| COM165C | 165kVA | 132kW | 150kVA | 120kW | 6BTAA5.9-G12 | 6 | COM165C",
         "| COM200C | 200kVA | 160kW | 180kVA | 144kW | 6CTA8.3-G2 | 6 | COM200C",
         "| COM220C | 220kVA | 176kW | 200kVA | 160kW | 6CTAA8.3-G2 | 6 | COM220C",
+        "| COM250C | 250kVA | 200kW | N/A | N/A | 6CTAA8.3-G9 | 6 | COM250C",
         "| COM275C | 275kVA | 220kW | 250kVA | 200kW | 6LTAA8.9-G2 | 6 | COM275C",
         "| COM275C | 275kVA | 220kW | 250kVA | 200kW | MTA11-G2 | 6 | COM275C",
         "| COM275C | 275kVA | 220kW | 250kVA | 200kW | NT855-GA | 6 | COM275C",
@@ -411,26 +402,31 @@
         "| COM375C | 375kVA | 300kW | 350kVA | 280kW | NTA855-G2A | 6 | COM375C",
         "| COM412C | 412kVA | 330kW | 375kVA | 300kW | NTAA855-G7 | 6 | COM412C",
         "| COM418C | 418kVA | 334kW | 380kVA | 304kW | 6ZTAA13-G3 | 6 | COM418C",
+        "| COM450C | 450kVA | 360kW | N/A | N/A | NTAA855-G7A | 6 | COM450C",
         "| COM468C | 468kVA | 374kW | 425kVA | 340kW | 6ZTAA13-G2 | 6 | COM468C",
         "| COM475C | 475kVA | 380kW | 438kVA | 350kW | 6ZTAA13-G4 | 6 | COM475C",
         "| COM500C | 500kVA | 400kW | 450kVA | 360kW | KTA19-G3 | 6 | COM500C",
         "| COM550C | 550kVA | 440kW | 500kVA | 400kW | KTA19-G3A | 6 | COM550C",
         "| COM550C | 550kVA | 440kW | 500kVA | 400kW | KTA19-G4 | 6 | COM550C",
         "| COM650C | 650kVA | 520kW | 575kVA | 460kW | KTAA19-G6 | 6 | COM650C",
+        "| COM688C | 688kVA | 550kW | N/A | N/A | KTAA19-G6A | 6 | COM688C",
         "| COM788C | 788kVA | 630kW | 713kVA | 570kW | KTA38-G1 | 12 | COM788C",
         "| COM825C | 825kVA | 660kW | 750kVA | 600kW | KTA38-G2 | 12 | COM825C",
         "| COM888C | 888kVA | 710kW | 800kVA | 640kW | KTA38-G2B | 12 | COM888C",
         "| COM1000C | 1000kVA | 800kW | 910kVA | 728kW | KTA38-G2A | 12 | COM1000C",
         "| COM1100C | 1100kVA | 880kW | 1000kVA | 800kW | KTA38-G5 | 12 | COM1100C",
+        "| COM1250C | 1250kVA | 1000kW | N/A | N/A | KTA38-G9 | 12 | COM1250C",
         "| COM1375C | 1375kVA | 1100kW | 1250kVA | 1000kW | KTA50-G3 | 16 | COM1375C",
         "| COM1650C | 1650kVA | 1320kW | 1375kVA | 1100kW | KTA50-G8 | 16 | COM1650C",
         "| COM1650C | 1650kVA | 1320kW | 1500kVA | 1200kW | KTA50-GS8 | 16 | COM1650C",
+        "| COM1875C | 1875kVA | 1500kW | N/A | N/A | KTA50-G15 | 16 | COM1875C",
         "| COM275C | 275kVA | 220kW | 250kVA | 200kW | QSNT-G6 | 6 | COM275C",
         "| COM313C | 313kVA | 250kW | 275kVA | 220kW | QSNT-G7 | 6 | COM313C",
         "| COM350C | 350kVA | 280kW | 313kVA | 250kW | QSNT-G1 | 6 | COM350C",
         "| COM388C | 388kVA | 310kW | 350kVA | 280kW | QSNT-G2 | 6 | COM388C",
         "| COM440C | 440kVA | 352kW | 400kVA | 320kW | QSNT-G3 | 6 | COM440C",
         "| COM500C | 500kVA | 400kW | 450kVA | 360kW | QSK19-G14 | 6 | COM500C",
+        "| COM500C | 500kVA | 400kW | N/A | N/A | QSNT-G4X | 6 | COM500C",
         "| COM550C | 550kVA | 440kW | 500kVA | 400kW | QSK19-G13 | 6 | COM550C",
         "| COM550C | 550kVA | 440kW | 500kVA | 400kW | QSZ13-G10 | 6 | COM550C",
         "| COM625C | 625kVA | 500kW | 575kVA | 460kW | QSK19-G12 | 6 | COM625C",
@@ -438,6 +434,7 @@
         "| COM688C | 688kVA | 550kW | 625kVA | 500kW | QSK19-G7 | 6 | COM688C",
         "| COM715C | 715kVA | 572kW | 650kVA | 520kW | QSK19-G4 | 6 | COM715C",
         "| COM750C | 750kVA | 600kW | 688kVA | 550kW | QSK19-G11 | 6 | COM750C",
+        "| COM750C | 750kVA | 600kW | N/A | N/A | QSK19-G11X | 6 | COM750C",
         "| COM825C | 825kVA | 660kW | 750kVA | 600kW | QSK38-G8 | 12 | COM825C",
         "| COM888C | 888kVA | 710kW | 800kVA | 640kW | QSK38-G7 | 12 | COM888C",
         "| COM1000C | 1000kVA | 800kW | 910kVA | 728kW | QSK38-G6 | 12 | COM1000C",
@@ -467,6 +464,7 @@
         "| COM185C | 185kVA | 148kW | 168kVA | 134kW | 6CTA8.3-G2 | 6 | COM185C",
         "| COM210C | 210kVA | 168kW | 190kVA | 152kW | 6CTA8.3-G2 | 6 | COM210C",
         "| COM230C | 230kVA | 184kW | 210kVA | 168kW | 6CTAA8.3-G2 | 6 | COM230C",
+        "| COM275C | 275kVA | 220kW | N/A | N/A | 6CTAA8.3-G9 | 6 | COM275C",
         "| COM275C | 275kVA | 220kW | 250kVA | 200kW | 6LTAA8.9-G2 | 6 | COM275C",
         "| COM275C | 275kVA | 220kW | N/A | N/A | NT855-GA | 6 | COM275C",
         "| COM313C | 313kVA | 250kW | 280kVA | 224kW | 6LTAA8.9-G3 | 6 | COM313C",
@@ -482,12 +480,14 @@
         "| COM563C | 563kVA | 450kW | 513kVA | 410kW | KTA19-G3 | 6 | COM563C",
         "| COM625C | 625kVA | 500kW | 563kVA | 450kW | KTA19-G3A | 6 | COM625C",
         "| COM625C | 625kVA | 500kW | 563kVA | 450kW | KTA19-G4 | 6 | COM625C",
+        "| COM750C | 750kVA | 600kW | N/A | N/A | KTAA19-G6A | 6 | COM750C",
         "| COM850C | 850kVA | 680kW | 775kVA | 620kW | KT38-G | 12 | COM850C",
         "| COM850C | 963kVA | 770kW | 875kVA | 700kW | KT38-G1 | 12 | COM850C",
         "| COM1000C | 1000kVA | 800kW | 906kVA | 725kW | KTA38-G2 | 12 | COM1000C",
         "| COM1038C | 1038kVA | 830kW | 938kVA | 750kW | KTA38-G2B | 12 | COM1038C",
         "| COM1125C | 1125kVA | 900kW | 1000kVA | 800kW | KTA38-G2A | 12 | COM1125C",
         "| COM1250C | 1250kVA | 1000kW | 1125kVA | 900kW | KTA38-G4 | 12 | COM1250C",
+        "| COM1375C | 1375kVA | 1100kW | N/A | N/A | KTA38-G9 | 12 | COM1375C",
         "| COM1575C | 1575kVA | 1260kW | 1375kVA | 1100kW | KTA50-G3 | 12 | COM1575C",
         "| COM1875C | 1875kVA | 1500kW | 1575kVA | 1260kW | KTA50-G9 | 12 | COM1875C",
         "| COM438C | 438kVA | 350kW | 400kVA | 320kW | QSNT-G3 | 6 | COM438C",
@@ -509,6 +509,7 @@
         "| COM185C | 185kVA | 148kW | 168kVA | 134kW | 6CTA8.3-G2 | 6 | COM185C",
         "| COM210C | 210kVA | 168kW | 190kVA | 152kW | 6CTA8.3-G2 | 6 | COM210C",
         "| COM230C | 230kVA | 184kW | 210kVA | 168kW | 6CTAA8.3-G2 | 6 | COM230C",
+        "| COM275C | 275kVA | 220kW | N/A | N/A | 6CTAA8.3-G9 | 6 | COM275C",
         "| COM275C | 275kVA | 220kW | 250kVA | 200kW | 6LTAA8.9-G2 | 6 | COM275C",
         "| COM275C | 275kVA | 220kW | N/A | N/A | NT855-GA | 6 | COM275C",
         "| COM313C | 313kVA | 250kW | 280kVA | 224kW | 6LTAA8.9-G3 | 6 | COM313C",
@@ -524,12 +525,14 @@
         "| COM563C | 563kVA | 450kW | 513kVA | 410kW | KTA19-G3 | 6 | COM563C",
         "| COM625C | 625kVA | 500kW | 563kVA | 450kW | KTA19-G3A | 6 | COM625C",
         "| COM625C | 625kVA | 500kW | 563kVA | 450kW | KTA19-G4 | 6 | COM625C",
+        "| COM750C | 750kVA | 600kW | N/A | N/A | KTAA19-G6A | 6 | COM750C",
         "| COM850C | 850kVA | 680kW | 775kVA | 620kW | KT38-G | 12 | COM850C",
         "| COM850C | 963kVA | 770kW | 875kVA | 700kW | KT38-G1 | 12 | COM850C",
         "| COM1000C | 1000kVA | 800kW | 906kVA | 725kW | KTA38-G2 | 12 | COM1000C",
         "| COM1038C | 1038kVA | 830kW | 938kVA | 750kW | KTA38-G2B | 12 | COM1038C",
         "| COM1125C | 1125kVA | 900kW | 1000kVA | 800kW | KTA38-G2A | 12 | COM1125C",
         "| COM1250C | 1250kVA | 1000kW | 1125kVA | 900kW | KTA38-G4 | 12 | COM1250C",
+        "| COM1375C | 1375kVA | 1100kW | N/A | N/A | KTA38-G9 | 12 | COM1375C",
         "| COM1575C | 1575kVA | 1260kW | 1375kVA | 1100kW | KTA50-G3 | 12 | COM1575C",
         "| COM1875C | 1875kVA | 1500kW | 1575kVA | 1260kW | KTA50-G9 | 12 | COM1875C",
         "| COM438C | 438kVA | 350kW | 400kVA | 320kW | QSNT-G3 | 6 | COM438C",
@@ -1322,6 +1325,7 @@
         "| COM2024SL | 2024kVA | 1619kW | 1840kVA | 1472kW | S16R-PTA | JAPAN | 16 | COM2024SL",
         "| COM2255SL | 2255kVA | 1804kW | 2050kVA | 1640kW | S16R-PTA2 | JAPAN | 16 | COM2255SL",
         "| COM2475SL | 2475kVA | 1980kW | 2250kVA | 1800kW | S16R-PTAA2 | JAPAN | 16 | COM2475SL",
+        "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data",
         "| COM275SL | 275kVA | 220kW | 250kVA | 200kW | S6B-PTA | JAPAN | 6 | COM275SL",
         "| COM325SL | 325kVA | 260kW | 295kVA | 236kW | S6B-PTA2 | JAPAN | 6 | COM325SL",
         "| COM413SL | 413kVA | 330kW | 375kVA | 300kW | S6B3-PTA | JAPAN | 6 | COM413SL",
@@ -1415,19 +1419,6 @@
         "| COM375 | 375kVA | 300kW | 350kVA | 280kW | YC6MJ480L-D21 | 6 | COM375",
         "| COM413 | 413kVA | 330kW | 375kVA | 300kW | YC6MJ500-D22 | 6 | COM413",
         "| COM550 | 550kVA | 440kW | 500kVA | 400kW | YC6T660L-D21 | 6 | COM550"
-      ]
-    },
-    {
-      "n": 114,
-      "title": "Grupos Eletrógenos a Diesel: Tecnologia, Aplicações e Vantagens - Comappower",
-      "header": [
-        "| | kVA | kW (FP 0.8) | Aplicação Típica"
-      ],
-      "rows": [
-        "| 10-50 kVA | 8-40 kW | Pequenos comércios, residências",
-        "| 50-200 kVA | 40-160 kW | Indústrias médias, hospitais",
-        "| 200-500 kVA | 160-400 kW | Grandes indústrias, data centers",
-        "| 500+ kVA | 400+ kW | Aplicações industriais críticas"
       ]
     }
   ],

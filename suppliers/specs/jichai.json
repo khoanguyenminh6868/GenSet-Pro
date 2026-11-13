@@ -1,25 +1,6 @@
 [
  {
   "n": 101,
-  "url": "https://www.jichai.com/product/140_series_300kw457kw/140_series_300kw457kw.html",
-  "title": "140 Series (300KW-457KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
-  "header": [
-   "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
-  ],
-  "rows": [
-   "| JC15C-3 | Four stroke, supercharged intercooling, water cooling, high pressure common rail ECU electronic control jet | 6 cylinders, in-line | 140 | 165 | 450/612 | 1800 | 15.2 | ≤ 189 | ≤ 0.35 | 1935×1160×1600 | 1850",
-   "| JC15C | 457/622 | 1500",
-   "| JC15C-4 | 300/408 | 1200",
-   "| JC15C-5 | 336/457 | 1350",
-   "| JC15CD | 457 | 1500",
-   "| JC15CG-3 | 450 | 1800",
-   "| JC15CG | 375 | 1500",
-   "| JC15CG-5 | 336 | 1350",
-   "| JC15CG-4 | 300 | 1200"
-  ]
- },
- {
-  "n": 102,
   "url": "https://www.jichai.com/product/2000_series_330kw2200kw/2000_series_330kw2200kw.html",
   "title": "2000 Series (330KW-2200KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
   "header": [
@@ -69,7 +50,7 @@
   ]
  },
  {
-  "n": 103,
+  "n": 102,
   "url": "https://www.jichai.com/product/3000_series_810kw1200kw/3000_series_810kw1200kw.html",
   "title": "3000 Series (810KW-1200KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
   "header": [
@@ -83,7 +64,7 @@
   ]
  },
  {
-  "n": 104,
+  "n": 103,
   "url": "https://www.jichai.com/product/4000_series_540kw1200kw/4000_series_540kw1200kw.html",
   "title": "4000 Series (540KW-1200KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
   "header": [
@@ -101,53 +82,183 @@
   ]
  },
  {
+  "n": 104,
+  "url": "https://www.jichai.com/product/6000_series_700kw2400kw/6000_series_330kw2200kw.html",
+  "title": "6000 Series (330KW-2200KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [
+   "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+  ],
+  "rows": [
+   "| H8L190ZLC | Four-stroke, pressurized intercooler, water-cooled, direct-injection combustor | 8 cylinders , in-line | 190 | 215 | 1000/1361 | 1450 | 48.77 | ≤ 200 | ≤ 1.0 | 3349×1416×2225 | 8200",
+   "| H8L190ZLC-1 | 830/1129 | 1200",
+   "| H8L190ZLC-2 | 700/952 | 1000",
+   "| H8L190ZLC-3 | 900/1245 | 1300",
+   "| H12V190ZLC | 12 cylinders V type | 1680/2286 | 1450 | 73.15 | ≤ 196 | ≤ 0.8 | 3212×1597×2211 | 9500",
+   "| H12V190ZLC-2 | 1160/1578 | 1000",
+   "| H12V190ZLC-1 | 1390/1891 | 1200",
+   "| H12V190ZLC-3 | 1500/2041 | 1300",
+   "| H16V190ZLC | 16 cylinders V type | 2200/2993 | 1500 | 97.53 | ≤ 196 | ≤ 0.8 | 3530×1880×2150 | 13000",
+   "| H16V190ZLC-1 | 1820/2476 | 1200",
+   "| H16V190ZLC-2 | 1520/2068 | 1000",
+   "| H16V190ZLC-3 | 1980/2694 | 1300"
+  ]
+ },
+ {
   "n": 105,
-  "url": "https://www.jichai.com/product/t_series_lighting_tower/t_series_lighting_tower.html.html",
-  "title": "“T” series lighting tower CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "url": "https://www.jichai.com/product/i_series_lighting_tower/i_series_lighting_tower.html.html",
+  "title": "I Series Lighting Tower CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
   "header": [],
   "rows": [
-   "| Basic Model | 4TN4000 | 4TN1200 | 4TN1600",
-   "| Dimensions | Length | 4360mm | 4360mm | 4360mm",
-   "| Width | 1430mm | 1430mm | 1430mm",
-   "| Height | 1450mm | 1450mm | 1450mm",
-   "| Loading container Height | 8.8 m | 8.8 m | 8.8 m",
-   "| Full extending Heigh | 6/7.5 | 3/3.5 | 3/3.5",
-   "| Genset power(1500/1800rpm-KW) | 960kg | 910KG | 910KG",
-   "| Engine model | 1500/1800 | 1500/1800 | 1500/1800",
-   "| Speed(rpm) | 3 | 2 | 2",
-   "| Number of cylinders | Vertical, 4-cycle, Water-cooled, diesel engine | Vertical, 4-cycle, Water-cooled, diesel engine | Vertical, 4-cycle, Water-cooled, diesel engine",
-   "| Engine characters | E-TVCS | Direct injection | Direct injection",
-   "| Combustion System | Naturally aspirated | Naturally aspirated | Naturally aspirated",
-   "| Engine aspiration | Regular | Regular | Regular",
-   "| Alternator Model | 50/60 | 50/60 | 50/60",
-   "| Frequency (HZ) | 230V (50HZ), 240V (60HZ) AC | 230V (50HZ), 240V (60HZ) AC | 230V (50HZ), 240V (60HZ) AC",
-   "| Rating voltage ( 50/60Hz) | Class H | Class H | Class H",
-   "| Alternator insulation | IP23 | IP23 | IP23",
+   "| Basic Model | I9T4000 | I9T1200 | I9T1600",
+   "| Dimensions | Length | 2420mm | 2420mm | 2420mm",
+   "| Width | 1360mm | 1360mm | 1360mm",
+   "| Height | 3050mm | 3050mm | 3050mm",
+   "| Loading container Height | 2570mm | 2570mm | 2570mm",
+   "| Full extending Heigh | 8.8m | 8.8m | 8.8m",
+   "| Genset power(1500/1800rpm-KW) | 6.0/7.5 | 3.0 /3.5 | 3.0 /3.5",
+   "| Gross weight | 850kg | 840kg | 840kg",
+   "| Speed(rpm) | 1500/1800 | 1500/1800 | 1500/1800",
+   "| Number of cylinders | 3 | 2 | 2",
+   "| Engine characters | Vertical, 4-cycle, Water-cooled, diesel engine | Vertical, 4-cycle, Water-cooled, diesel engine | Vertical, 4-cycle, Water-cooled, diesel engine",
+   "| Combustion System | E-TVCS | Direct injection | Direct injection",
+   "| Engine aspiration | Naturally aspirated | Naturally aspirated | Naturally aspirated",
+   "| Emission level (50/60Hz) | Regular | Regular | Regular",
+   "| Frequency (HZ) | 50/60 | 50/60 | 50/60",
+   "| Rating voltage ( 50/60Hz) | 230V (50HZ), 240V (60HZ) AC | 230V (50HZ), 240V (60HZ) AC | 230V (50HZ), 240V (60HZ) AC",
+   "| Alternator insulation | Class H | Class H | Class H",
+   "| Alternator protection grade | IP23 | IP23 | IP23",
    "| Light's fixture | Oval | Rectangle | Rectangle",
-   "| Luminous flux | 440000(4×110000)LM | 156000(4*39000)LM | 208000(4*52000)LM",
+   "| Luminous flux (LM) | 440000(4×110000)LM | 156000(4*39000)LM | 208000(4*52000)LM",
    "| Number & power of lights | 4×1000W | 4×300W | 4×400W",
-   "| Number of mast sections | 3 | 3 | 3",
-   "| Mast lifting | Manually | Manually | Manually",
-   "| Mast extension | Manually | Manually | Manually",
+   "| Number of mast sections | 6 | 6 | 6",
+   "| Mast extension | Electrical | Electrical | Electrical",
    "| Mast rotation | 359° Manually | 359° Manually | 359° Manually",
    "| Light tilt | Manually | Manually | Manually",
-   "| Tow bar | Retractable & adjustable supporting wheel tow bar | Retractable & adjustable supporting wheel tow bar | Retractable & adjustable supporting wheel tow bar",
+   "| Tow bar | A style frame with a supporting jack | A style frame with a supporting jack | A style frame with a supporting jack",
    "| Stabilizing legs & number | 4pcs drawable bar with manual jacks | 4pcs drawable bar with manual jacks | 4pcs drawable bar with manual jacks",
    "| Wheel's rim size & tires | 14\" rim with regular tires | 14\" rim with regular tires | 14\" rim with regular tires",
    "| Tow adapter | 2\" ball coupler or 3\" pintle ring | 2\" ball coupler or 3\" pintle ring | 2\" ball coupler or 3\" pintle ring",
    "| Tail lights | Tail reflector | Tail reflector | Tail reflector",
-   "| Max towing speed | 80km/h ( 62 mph) | 80km/h ( 62 mph) | 80km/h ( 62 mph)",
-   "| Fuel tank capacity | 170 liters | 170 liters | 170 liters",
-   "| Operating hours with full load | 70/58 hours | 132/118 hours | 132/118 hours",
-   "| lighting hours with full fue | 120/108 hours | 310/298 hours | 280/268 hours",
-   "| Wires & electric components | Regular | Regular | Regular",
-   "| Generator starting type or controller | HGM1790N (SMARTGEN) | HGM1790N (SMARTGEN) | HGM1790N (SMARTGEN)",
-   "| Power outlet sockets | 2 | 2 | 2",
-   "| Tool box with the maintenance tools | 1 | 1 | 1",
-   "| Max. against wind when fully extended | 20 m/s | 20 m/s | 20 m/s",
+   "| Max towing speed | 80km/h | 80km/h | 80km/h",
+   "| Fuel tank capacity | 100 liters | 100 liters | 100 liters",
+   "| Operating hours with full load | 36/30 hours | 68/59 hours | 68/59 hours",
+   "| Lighting hours with full fuel | 65/57 hours | 160/148 hours | 140/136 hours",
+   "| Generator starting type or controller | HGM1790N（SMARTGEN） | HGM1790N（SMARTGEN） | HGM1790N（SMARTGEN）",
+   "| Power outlet sockets | 1 unit Euro standard 16A single phase socket | 1 unit Euro standard 16A single phase socket | 1 unit Euro standard 16A single phase socket",
+   "| Max. against wind when fully extended | 17.5m/s | 17.5m/s | 17.5m/s",
    "| Acoustic pressure | 72dB(A) at 7 meters away | 72dB(A) at 7 meters away | 72dB(A) at 7 meters away",
-   "| Standard colour | Any colour for canopy with Black chassis, fenders, tow bar & mast base/ Galvanized masts & drawable bar of legs, etc | Any colour for canopy with Black chassis, fenders, tow bar & mast base/ Galvanized masts & drawable bar of legs, etc | Any colour for canopy with Black chassis, fenders, tow bar & mast base/ Galvanized masts & drawable bar of legs, etc",
-   "| Max. # of units loading in 40' high container (Some components would be detached) | 12 | 12 | 12"
+   "| Max. # of units loading in 40' high container (Some components would be detached) | 16 | 16 | 16"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.jichai.com/product/2632_series_2085kw4170kw/2632_series_2085kw4170kw.html",
+  "title": "2632 Series (2085KW-4170KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [
+   "| Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consumption rate,g/kW.h | Lub. oil consumption rate,kW.h | Dimension mm | Weight kg"
+  ],
+  "rows": [
+   "| 6L2632 | Four-stroke, supercharged intercooler, water cooling, high-pressure common rail ECU electronic control jet | 6 cylinders, in-line | 260 | 320 | 2085/2837 | 1000 | 102 | ≤ 184 | ≤ 0.6 | 5050×2160×3450 | 19700",
+   "| 8L2632 | 8 cylinders, in-line | 2780/3782 | 136 | 5950×2160×3450 | 26000",
+   "| 9L2632 | 9 cylinders, in-line | 3130/4259 | 153 | 6400×2160×3450 | 29500",
+   "| 12V2632 | 12 cylinders V type | 4170/5673 | 204 | 5830×2240×3355 | 39400"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.jichai.com/product/190_series_800kw2000kw/6000_series_1200kw2000kw.html",
+  "title": "6000 Series (1200KW-2000KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [
+   "| Genset model | Rated power kw | Rotate speed r/min | Frequency Hz | Voltage V | Engine model | Power factor"
+  ],
+  "rows": [
+   "| 1200GF | 1200 | 1000 | 50 | 600 | H16V190ZL-2 | 0.7",
+   "| 1500GF | 1500 | 1200 | 60 | 600 | H16V190ZL-1 | 0.7",
+   "| 2000GF | 2000 | 1500 | 50 | 600 | H16V190ZL | 0.7"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.jichai.com/product/190_series_800kw2000kw/4000_series_1000kw1100kw.html",
+  "title": "4000 Series (1000KW-1100KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [
+   "| Genset model | Rated power kw | Rotate speed r/min | Frequency Hz | Voltage V | Engine model | Power factor"
+  ],
+  "rows": [
+   "| 1000GF6 | 1000 | 1000 | 50 | 600 | L12V190ZL-2 | 0.7",
+   "| 1100GF8 | 1100 | 1000 | 50 | 600 | BL12V190ZL-2 | 0.7",
+   "| 1100GF | 1100 | 1200 | 60 | 600 | L12V190ZL-1 | 0.7"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://www.jichai.com/product/175_series_1097kw/175_series_1097kw.html",
+  "title": "175 Series (1097KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [
+   "| Description | Engine model | Injection system | Speed adjustment mode | Cylinders & Arrangement | Cylinders Bore,mm | Piston Stroke,mm"
+  ],
+  "rows": [
+   "| Engine with fan and radiator | 12V175PZL-1/0 | ECU electric monoblock pump | Electronic Speed Governor | 12 cylinders, V type | 175 | 190",
+   "| Description | Gensets Model | Rated power kw | Rotation speed r/min | Engine model | Hydraulic transmission coupler / Torque Converter Model | Height of center",
+   "| Hydraulic transmission coupling set | 12V175PZL-1/0 | 1097 | 1200 | 12V175PZL-1 | YOZJ750 | 930"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://www.jichai.com/product/175_series_1200kw1400kw/175_series_1200kw1400kw.html_0",
+  "title": "175 Series (1200KW-1400KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [
+   "| Genset model | Rated power kw | Rotate speed r/min | Frequency Hz | Voltage V | Engine model | Power factor"
+  ],
+  "rows": [
+   "| 1250GF | 1200 | 1500 | 50 | 600 | 12V175ZL | 0.7",
+   "| 1400GF | 1400 | 1800 | 60 | 600 | 12V175ZL | 0.7"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://www.jichai.com/product/190_series_450kw2200kw/2000_series_450kw640kw.html",
+  "title": "2000 Series (450KW-640KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [
+   "| Engine model | Cylinders & Arrangement | Cylinder Bore,mm | Piston stroke,mm | Rated power,kW | RPM,r/min | Total piston displacement,L | Heat consumption rate kJ/kW.h | Lub. oil consumption rate g/kW.h | Start method"
+  ],
+  "rows": [
+   "| G12V190ZLDT-2 | 12 cylinders V type | 190 | 210 | 550 | 1000 | 71.5 | ≤11000 | ≤1.0 | Electric start",
+   "| G12V190ZLDT-1 | 640 | 1200",
+   "| Genset Model | Engine model | Alternator Model | Power kW | voltage | RPM,r/min | Frequency Hz | Power factor | Dimension mm | Weight kg",
+   "| 500GF-T3 | G12V190ZLDT-2 | 1FC | 500 | 400 | 1000 | 50 | 0.8 | 5925×2184×2870 | 13800",
+   "| 500GF-T4 | G12V190ZLDT-1 | 500 | 480 | 1200 | 60 | 5925×2184×2870 | 13800"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://www.jichai.com/product/190_series_450kw2200kw/6000_series_1320kw1680kw.html",
+  "title": "6000 Series (1320KW-1680KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [
+   "| Engine model | Cylinders & Arrangement | Cylinder bbore,mm | Piston stroke,mm | Rated power ,kW | RPM,r/min | Total piston displacement,L | Heat consumption ratekJ/kW.h | Lub. oil consumption rate g/kW.h | Start method"
+  ],
+  "rows": [
+   "| H16V190ZLT-2 | 16 cylinders V type | 190 | 215 | 1320 | 1000 | 97.53 | ≤9500 | ≤1.0 | Gas/Electric start",
+   "| H16V190ZLT-1 | 1680 | 1200",
+   "| Genset Model | Engine model | Alternator model | Power kW | voltage | RPM,r/min | Frequency Hz | Power factor | Dimension mm | Weight kg",
+   "| 1100GF-T | H16V190ZLT-2 | | 1100 | 400 | 1000 | 50 | 0.8 | 6520×2180×2540 | 19800",
+   "| 1100GF1-T | H16V190ZLT-2 | JFG Series | 1100 | 10500 | 1000 | 6520×2180×2540 | 20500",
+   "| 1500GF-T | H16V190ZLT-1 | 1FC Series | 1500 | 480 | 1200 | 60 | | 5998×2180×2540 | 19800"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://www.jichai.com/product/190_series_450kw2200kw/4000_series_2200kw.html",
+  "title": "4000 Series (1320-2200KW) CNPC JICHAI_inquiry_detail-CNPC JICHAI POWER COMPANY LIMITED",
+  "header": [
+   "| Engine model | Cylinders & Arrangement | Cylinder Bore,mm | Piston stroke,mm | Rated power,kW | RPM,r/min | Total piston displacement,L | Heat consumption ratekJ/kW.h | Lub. oil consumption rate g/kW.h | Start method"
+  ],
+  "rows": [
+   "| L12V200ZLT-2 | 12 cylinders V type | 200 | 255 | 1320 | 1000 | 96.1 | ≤8850 | ≤0.6 | DC24V Electric",
+   "| L20V190ZLT-2 | 20 cylinders V type | 190 | 255 | 2200 | 1000 | 144.6 | ≤8600 | ≤0.6 | Gas",
+   "| Genset Model | Engine model | Alternator Model | Power kW | voltage | RPM,r/min | Frequency Hz | Power factor | Dimension mm | Weight kg",
+   "| 1200GF-T | L12V200ZLT-2 | GPL1200 | 1200 | 400/480/6300/10500/13800 | 1000 | 50/60 | 0.8 | 7900×2300×2800 | 20600",
+   "| 2000GF10-T | L20V190ZL | JFG Series | 2000 | 6300 | 1000 | 50 | 0.8 | 9093×3786×2786 | 28000"
   ]
  }
 ]

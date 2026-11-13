@@ -82,7 +82,7 @@
     {
       "n": 101,
       "url": "https://www.visa.it/en/second-hand-gensets",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
@@ -92,12 +92,42 @@
     {
       "n": 102,
       "url": "https://www.visa.it/en/second-hand-gensets/power_range/0",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
       ],
       "file": "sources/visa-gensets/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.visa.it/en/products/mobile-generating-sets-Stage-V-engines/VM_Custom_Range",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| KVA PRP | ENGINE BRAND | ENGINE FAMILY | MODEL | GENSET RANGE | ENGINE DATA"
+      ],
+      "file": "sources/visa-gensets/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.visa.it/en/products/Data_Centers_DCP_Power_Range/DCP_Generators_Rating",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| MODEL | DCP kVA (kW) | ENGINE | DCP ENG."
+      ],
+      "file": "sources/visa-gensets/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.visa.it/en/second-hand-gensets/power_range/0/version/Open",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
+      ],
+      "file": "sources/visa-gensets/105.md"
     }
   ],
   "confidence": "medium",
@@ -124,7 +154,7 @@
         "| GSK66TWI | 60 | Soundproof | Kohler | undefined | 2021 | Automatic version | Stand-By",
         "| GSP66TWIS3 | 60 | Soundproof | Fpt Iveco | Mecc Alte | 2017 | Automatic version | Stand-By",
         "| JD80S | 80 | Soundproof | John Deere | Mecc Alte | 2018 | DSE-4520 AMF | Stand-By",
-        "| F105S | 105 | Soundproof | Fpt Iveco | Marelli | 2018 | Automatic version | Stand-By",
+        "| BD80CK | 80 | ONIS VISA CRICKET | Baudouin | Stamford | 2025 | DSE-4520 AMF | Stand-By",
         "| GSA130TWI | 125 | Soundproof | Fpt Iveco | Mecc Alte | 2018 | Automatic version | Stand-By",
         "| VM150U | 150 | Open | Vm | undefined | | Guard Evolution AMF | Stand-By",
         "| F201GX | 200 | ONIS VISA GALAXY GX | Fpt Iveco | Stamford | 2026 | Guard REvolution AMF | Stand-By",
@@ -162,10 +192,154 @@
         "| GSK66TWI | 60 | Soundproof | Kohler | undefined | 2021 | Automatic version | Stand-By",
         "| GSP66TWIS3 | 60 | Soundproof | Fpt Iveco | Mecc Alte | 2017 | Automatic version | Stand-By",
         "| JD80S | 80 | Soundproof | John Deere | Mecc Alte | 2018 | DSE-4520 AMF | Stand-By",
-        "| F105S | 105 | Soundproof | Fpt Iveco | Marelli | 2018 | Automatic version | Stand-By",
+        "| BD80CK | 80 | ONIS VISA CRICKET | Baudouin | Stamford | 2025 | DSE-4520 AMF | Stand-By",
         "| GSA130TWI | 125 | Soundproof | Fpt Iveco | Mecc Alte | 2018 | Automatic version | Stand-By",
         "| VM150U | 150 | Open | Vm | undefined | | Guard Evolution AMF | Stand-By",
         "| F201GX | 200 | ONIS VISA GALAXY GX | Fpt Iveco | Stamford | 2026 | Guard REvolution AMF | Stand-By"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "VM Tailor Made Generators – Custom Power Solutions | Onis Visa",
+      "header": [
+        "| KVA PRP | ENGINE BRAND | ENGINE FAMILY | MODEL | GENSET RANGE | ENGINE DATA"
+      ],
+      "rows": [
+        "| 300,0 | Scania | S355 | DC09 320A 02-63 | T.B.D. | &dArr;",
+        "| 400,0 | Scania | S405 | DC13 320A 02-62 | T.B.D. | &dArr;",
+        "| 450,0 | Scania | S455 | DC13 320A 02-63 | T.B.D. | &dArr;",
+        "| 500,0 | Scania | S505 | DC16 320A 02-62 | T.B.D. | &dArr;",
+        "| 550,0 | Scania | S555 | DC16 320A 02-63 | T.B.D. | &dArr;",
+        "| 650,0 | Volvo | V655 | TWD1683GE | T.B.D. | &dArr;"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "VM Tailor Made Generators – Custom Power Solutions | Onis Visa",
+      "header": [
+        "| KVA PRP | ENGINE BRAND | MODEL | GENSET RANGE | ENGINE DATA"
+      ],
+      "rows": [
+        "| 300,0 | Scania | DC09 320A 02-63 | T.B.D. | &dArr;",
+        "| 400,0 | Scania | DC13 320A 02-62 | T.B.D. | &dArr;",
+        "| 450,0 | Scania | DC13 320A 02-63 | T.B.D. | &dArr;",
+        "| 500,0 | Scania | DC16 320A 02-62 | T.B.D. | &dArr;",
+        "| 550,0 | Scania | DC16 320A 02-63 | T.B.D. | &dArr;",
+        "| 650,0 | Volvo | TWD1683GE | T.B.D. | &dArr;"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "DCP Generators Rating | visa.it",
+      "header": [
+        "| MODEL | DCP kVA (kW) | ENGINE | DCP ENG."
+      ],
+      "rows": [
+        "| P301 | 300 (240) | 1506A-E88TAG5 | 273",
+        "| P350 | 350 (280) | 2206A-E13TAG2 | 324",
+        "| P400 | 400 (320) | 2206A-E13TAG3 | 368",
+        "| P450 | 455 (364) | 2506A-E15TAG1 | 412",
+        "| P500 | 500 (400) | 2506A-E15TAG2 | 451",
+        "| P600 | 600 (480) | 2806A-E18TAG1A | 540",
+        "| P650 | 670 (536) | 2806A-E18TAG2 | 584",
+        "| P730 | 750 (600) | 4006-23TAG2A | 658",
+        "| P805 | 800 (640) | 4006-23TAG3A | 705",
+        "| P1050 | 1030 (824) | 4008-TAG2A | 899",
+        "| P1150 | 1130 (904) | 4008-30TAG3 | 997",
+        "| P1260 | 1253 (1002) | 4012-46TWG2A | 1113",
+        "| P1500 | 1505 (1204) | 4012-46TAG2A | 1331",
+        "| P1700 | 1705 (1364) | 4012-46TAG3A | 1500",
+        "| P2000 | 2000 (1600) | 4016-61TRG2 | 1774",
+        "| P2250 | 2135 (1708) | 4016-61TRG3 | 1975"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "DCP Generators Rating | visa.it",
+      "header": [
+        "| MODEL | DCP kVA (kW) | ENGINE | DCP ENG."
+      ],
+      "rows": [
+        "| C810 | 750 (600) | QSK23-G3 | -",
+        "| C1000 | 1029 (823) | KTA38-G5 | -",
+        "| C1250 | 1250 (1000) | KTA50-G3 | -"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "DCP Generators Rating | visa.it",
+      "header": [
+        "| MODEL | DCP kVA (kW) | ENGINE | DCP ENG."
+      ],
+      "rows": [
+        "| DS300 | 308 (246) | DP086CE | 267",
+        "| DS455 | 460 (368) | DP158LC | 408",
+        "| DS505 | 500 (400) | DP158LD | 464",
+        "| DS640 | 640 (512) | DP158CD | 556",
+        "| DS745 | 750 (600) | DP222LC | 657"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "DCP Generators Rating | visa.it",
+      "header": [
+        "| MODEL | DCP kVA (kW) | ENGINE | DCP ENG."
+      ],
+      "rows": [
+        "| YC1250 | 1250 (1000) | YC12VTD1680-D30 | 1120",
+        "| YC1500 | 1500 (1200) | YC12VTD2000-D30 | 1345",
+        "| YC1850 | 1850 (1500) | YC16VTD2510-D30 | 1680",
+        "| YC2000 | 2000 (1600) | YC16VTD2700-D30 | 1805"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "DCP Generators Rating | visa.it",
+      "header": [
+        "| MODEL | DCP kVA (kW) | ENGINE | DCP ENG."
+      ],
+      "rows": [
+        "| V250 | 250 (200) | TAD841GE | 220",
+        "| V300 | 300 (240) | TAD842GE | 261",
+        "| V330 | 330 (264) | TAD843GE | 280",
+        "| V350 | 350 (280) | TAD1342GE-B | 303",
+        "| V380 | 380 (304) | TAD1343GE-B | 325",
+        "| V415 | 415 (332) | TAD1344GE-B | 354",
+        "| V450 | 450 (360) | TAD1345GE-B | 388",
+        "| V500 | 500 (400) | TAD1346GE | 427",
+        "| V590 | 590 (472) | TAD1642GE-B | 505",
+        "| V650 | 650 (520) | TWD1644GE | 554",
+        "| V700 | 700 (560) | TWD1645GE | 595",
+        "| V750 | 750 (600) | TWD1744GE | 645"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "DCP Generators Rating | visa.it",
+      "header": [
+        "| MODEL | DCP kVA (kW) | ENGINE | DCP ENG."
+      ],
+      "rows": [
+        "| BD650 | 650 (520) | 6M33G715/5 | 575",
+        "| BD750 | 750 (600) | 6M33G825/5 | 675",
+        "| BD1250 | 1250 (1000) | 12M33G1410/5 | 1130",
+        "| BD1500 | 1500 (1200) | 12M33G1650/5 | 1350",
+        "| BD1700 | 1700 (1360) | 16M33G1900/5 | 1530",
+        "| BD2000 | 2000 (1600) | 20M33G2250/5 | 1850",
+        "| BD2280 | 2280 (1824) | 20M33G2500/5 | 2010"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Second hand | visa.it",
+      "header": [
+        "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE",
+        "| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By",
+        "| L 12 OPEN | 12 | Open | Lombardini | Nuova Saccardo | 2020 | Guard Evolution AMF | Stand-By"
+      ],
+      "rows": [
+        "| BD20B | 20 | Open | Baudouin | | 2023 | Guard REvolution AMF | Stand-By",
+        "| VM150U | 150 | Open | Vm | undefined | | Guard Evolution AMF | Stand-By"
       ]
     }
   ]

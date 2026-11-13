@@ -123,12 +123,22 @@
     {
       "n": 101,
       "url": "https://www.ffdlpower.com/cummins-marine-series897",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Genset model | Output power | Engine model | Bore*Stroke | CYL | Displacement | C/R | Fuel consumption | Dimension | Weight"
       ],
       "file": "sources/fengfa-taizhou/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.ffdlpower.com/weichai-marine-genset546",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset model | Output power | Engine model | Bore*Stroke | CYL | Displacement | C/R | Fuel consumption | Dimension | Weight"
+      ],
+      "file": "sources/fengfa-taizhou/102.md"
     }
   ],
   "confidence": "medium",
@@ -172,6 +182,30 @@
         "| CCFJ800JW | 800 | 1000 | KTA38-DM | 159×159 | 12 | 38 | 13.9:1 | 109.4 | 4100*1500*2500 | 7000",
         "| CCFJ800JW | 800 | 1000 | K38-DM | 159×159 | 12 | 38 | 13.9:1 | 109.4 | 4100*1500*2500 | 7000",
         "| CCFJ1000JW | 1000 | 1250 | K50-DM | 159×159 | 12 | 38 | 15.0:1 | 141.7 | 4250*1500*2500 | 7500"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Weichai Marine Genset, China Weichai Marine Genset Manufacturers, Suppliers, Factory - Taizhou Fengfa Power Equipment Co., Ltd.",
+      "header": [
+        "| Genset model | Output power | Engine model | Bore*Stroke | CYL | Displacement | C/R | Fuel consumption | Dimension | Weight",
+        "| KW | KVA | (mm) | （L） | L/h | (mm) | (Kg)"
+      ],
+      "rows": [
+        "| CCFJ24JW | 24 | 30 | D226B-3CD | 105*120 | 3 | 3.12 | 16.4:1 | 5.5 | 1580*1200*1180 | 1130",
+        "| CCFJ30JW | 30 | 37.5 | TD226B-3CD | 105*120 | 3 | 3.12 | 16.4:1 | 6.9 | 1590*1200*1180 | 1150",
+        "| CCFJ40JW | 40 | 50 | WP4CD66E200 | 105*130 | 4 | 4.5 | 18:01 | 8.2 | 1775*1200*1180 | 1250",
+        "| CCFJ50JW | 50 | 62.5 | WP4CD66E200 | 105*130 | 4 | 4.5 | 18:01 | 10.3 | 1775*1200*1180 | 1290",
+        "| CCFJ64JW | 64 | 80 | WP4CD100E200 | 105*130 | 4 | 4.5 | 18:01 | 13.1 | 1775*1250*1210 | 1330",
+        "| CCFJ75JW | 75 | 93.8 | WP4CD100E200 | 105*130 | 4 | 4.5 | 18:01 | 15.4 | 1775*1250*1210 | 1350",
+        "| CCFJ90JW | 90 | 112.5 | WP6CD132E200 | 105*130 | 6 | 6.75 | 18:01 | 18.9 | 2205*1250*1270 | 1640",
+        "| CCFJ100JW | 100 | 125 | WP6CD132E200 | 105*130 | 6 | 6.75 | 18:01 | 21 | 2205*1250*1270 | 1640",
+        "| CCFJ120JW | 120 | 150 | WP6CD152E200 | 105*130 | 6 | 6.75 | 18:01 | 25.2 | 2260*1250*1270 | 1650",
+        "| CCFJ150JW | 150 | 187.5 | WP10CD200E200 | 126*130 | 6 | 9.73 | 17:01 | 29.2 | 2600*1250*1530 | 1950",
+        "| CCFJ180JW | 180 | 225 | WP10CD238E200 | 126*130 | 6 | 9.73 | 17:01 | 35.7 | 2600*1250*1550 | 1980",
+        "| CCFJ200JW | 200 | 250 | WP10CD264E200 | 126*130 | 6 | 9.73 | 17:01 | 40.1 | 2700*1250*1620 | 2100",
+        "| CCFJ250JW | 250 | 312.5 | WP12CD317E200 | 126*155 | 6 | 11.6 | 17:01 | 52.5 | 2730*1250*1660 | 2180",
+        "| CCFJ300JW | 300 | 375 | WP13CD385E200 | 127*165 | 6 | 12.54 | 17:01 | 63 | 2840*1250*1660 | 2300"
       ]
     }
   ],

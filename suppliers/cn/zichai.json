@@ -66,7 +66,7 @@
     {
       "n": 101,
       "url": "https://www.zichai.net/products",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Cylinder Bore: 160mm"
@@ -76,7 +76,7 @@
     {
       "n": 102,
       "url": "https://www.zichai.net/marine-diesel-engine-1",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Cylinder Bore: 160mm"
@@ -86,7 +86,7 @@
     {
       "n": 103,
       "url": "https://m.zichai.net/marine-medium-speed-diesel-engine-z210",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Name | Unit | Technical specifications"
@@ -96,7 +96,7 @@
     {
       "n": 104,
       "url": "https://m.zichai.net/marine-medium-speed-diesel-engine-n280",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Form | | Inline,four stroke,direct injection,exhaust turbo charging,cannot inversion"
@@ -106,7 +106,7 @@
     {
       "n": 105,
       "url": "https://m.zichai.net/marine-medium-speed-diesel-engine-n260",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Name | Unit | Technical specifications"
@@ -116,7 +116,7 @@
     {
       "n": 106,
       "url": "https://m.zichai.net/a270zld",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Set model | CCFJ(2100-2184)X-W | CCFJ(1900-2008)X-W | CCFJ(1750-1874)X-W"
@@ -126,7 +126,7 @@
     {
       "n": 107,
       "url": "https://m.zichai.net/z250zld",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Type of the sets | （r/min） Rated speed | （kW）rated power | （U）Rated voltage | （Hz） Rated frequency"
@@ -136,7 +136,7 @@
     {
       "n": 108,
       "url": "https://m.zichai.net/z170zld",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Type of the sets | （r/min） Rated speed | （kW）rated power | （U）Rated voltage | （Hz） Rated frequency"
@@ -146,12 +146,112 @@
     {
       "n": 109,
       "url": "https://m.zichai.net/z210zld",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Type of the sets | （r/min） Rated speed | （kW）rated power | （U）Rated voltage | （Hz） Rated frequency"
       ],
       "file": "sources/zichai/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://m.zichai.net/m9300dm",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | （r/min） Rated speed | （kW） Continuous output | （MPa） Mean eff. Pressure | （m/s） Mean piston speed"
+      ],
+      "file": "sources/zichai/110.md"
+    },
+    {
+      "n": 112,
+      "url": "https://m.zichai.net/m32a",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Trpe | reted power(KW) | Speed (r/m) | Inlet pressure MPa | Inlet remperature℃ | exhaust pressure MPa | Steam rate Kg/KwH | code"
+      ],
+      "file": "sources/zichai/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://m.zichai.net/a8170a",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | （r/min） Rated speed | （kW） Continuous output | （MPa） Mean eff. Pressure | （m/s） Mean piston speed"
+      ],
+      "file": "sources/zichai/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://m.zichai.net/z6210zlc",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | （r/min） Rated speed | （kW） Continuous output | （MPa） Mean eff. Pressure | （m/s） Mean piston speed"
+      ],
+      "file": "sources/zichai/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://m.zichai.net/z6170zlc",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | （r/min） Rated speed | （kW） Continuous output | （MPa） Mean eff. Pressure | （m/s） Mean piston speed"
+      ],
+      "file": "sources/zichai/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.zichai.net/zichai-l6160-diesel-engine-high-reliability",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Cylinder Bore: 160mm"
+      ],
+      "file": "sources/zichai/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.zichai.net/l230-1800hp-marine-diesel-engines-for-sale",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Cylinder Bore: 225mm"
+      ],
+      "file": "sources/zichai/117.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.zichai.net/productlist-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Bore: 225mm"
+      ],
+      "file": "sources/zichai/118.md"
+    },
+    {
+      "n": 119,
+      "url": "https://www.zichai.net/h6300dm",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Engine | Item | Technical specifications"
+      ],
+      "file": "sources/zichai/119.md"
+    },
+    {
+      "n": 122,
+      "url": "https://www.zichai.net/786-hp-1500-hp-marine-medium-speed-diesel",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | / | ZC6200ZLC"
+      ],
+      "file": "sources/zichai/122.md"
     },
     {
       "n": 1001,
@@ -442,6 +542,174 @@
         "| CCFJ550J-W550GF | 720 | 560 | 450 | 60",
         "| CCFJ600J-W600GF | 720 | 600 | 450 | 60",
         "| CCFJ700J-W700GF | 900 | 730 | 450 | 60"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "rice husk power generation China 9300D/M Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [
+        "| Model | （r/min） Rated speed | （kW） Continuous output | （MPa） Mean eff. Pressure | （m/s） Mean piston speed"
+      ],
+      "rows": [
+        "| 8300C | 450 | 441 | 0.547 | 5.7",
+        "| 8300ZLCA | 450 | 735 | 0.912 | 5.7",
+        "| 8300ZLCA-1 | 450 | 808 | 1.003 | 5.7",
+        "| 8300ZLCA-2 | 500 | 808 | 0.902 | 6.333",
+        "| 8300ZLCA-3 | 500 | 882 | 0.985 | 6.333",
+        "| 8300ZLCA-4 | 600 | 1103 | 1.206 | 7.6"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "industrial gas turbine market China M32 Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [
+        "| Trpe | reted power(KW) | Speed (r/m) | Inlet pressure MPa | Inlet remperature℃ | exhaust pressure MPa | Steam rate Kg/KwH | code"
+      ],
+      "rows": [
+        "| B1-2.35/0.784 | 1000 | 3000 | 2.35 | 390 | 0.784 | 23.36 | M32",
+        "| B1-2.35/0.98 | 1000 | 3000 | 2.35 | 390 | 0.98 | 28.35",
+        "| B1.6-2.35/0.784 | 1600 | 3000 | 2.35 | 390 | 0.784 | 22.56",
+        "| B1.6-2.35/0.882 | 1600 | 3000 | 2.35 | 390 | 0.882 | 25.21",
+        "| B1.6-3.43/0.784 | 1600 | 3000 | 3.43 | 435 | 0.784 | 17.21",
+        "| B1.6-3.43/0.882 | 1600 | 3000 | 3.43 | 435 | 0.882 | 18.18",
+        "| B1.6-3.43/0.98 | 1600 | 3000 | 3.43 | 435 | 0.98 | 19.15",
+        "| B2-3.43/0.784 | 2000 | 3000 | 3.43 | 435 | 0.784 | 16.5",
+        "| B2-3.43/0.98 | 2000 | 3000 | 3.43 | 435 | 0.98 | 18.85",
+        "| B2.5-4.0/0.784 | 2500 | 3000 | 4.0 | 450 | 0.784 | 15.86",
+        "| B2.5-4.0/0.882 | 2500 | 3000 | 4.0 | 450 | 0.882 | 17.48"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "single cylinder diesel engine China 8170 Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [
+        "| Model | （r/min） Rated speed | （kW） Continuous output | （MPa） Mean eff. Pressure | （m/s） Mean piston speed"
+      ],
+      "rows": [
+        "| Z8170ZLC | 1000 | 400 | 1.322 | 6.67",
+        "| Z8170ZLC-1 | 1000 | 300 | 0.992 | 6.67",
+        "| Z8170ZLC-2 | 1000 | 350 | 1.157 | 6.67",
+        "| Z8170ZLC-3 | 1200 | 440 | 1.212 | 8",
+        "| Z8170ZLC-4 | 1200 | 480 | 1.322 | 8",
+        "| Z8170ZLC-5 | 1200 | 350 | 0.964 | 8",
+        "| Z8170ZLC-6 | 1200 | 400 | 1.102 | 8",
+        "| Z8170ZLC-7 | 1500 | 540 | 1.190 | 10",
+        "| Z8170ZLC-8 | 1500 | 600 | 1.311 | 10",
+        "| Z8170ZLC-9 | 1350 | 540 | 1.322 | 9",
+        "| Z8170ZLC-18 | 1200 | 528 | 1.454 | 8",
+        "| Z8170ZLC-19 | 1000 | 440 | 1.454 | 6.67",
+        "| Z8170ZLC-20 | 1350 | 575 | 1.408 | 9"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "dual fuel engine report China Z6210ZLC/S Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [
+        "| Model | （r/min） Rated speed | （kW） Continuous output | （MPa） Mean eff. Pressure | （m/s） Mean piston speed"
+      ],
+      "rows": [
+        "| 6210ZLC | 600 | 400 | 1.33 | 5.8",
+        "| 6210ZLC-1 | 600 | 440 | 1.46 | 5.8",
+        "| 6210ZLC-2 | 720 | 528 | 1.46 | 6.96",
+        "| 6210ZLC-3 | 750 | 550 | 1.46 | 7.25",
+        "| 6210ZLC-4 | 830 | 610 | 1.46 | 8.02",
+        "| 6210ZLC-5 | 750 | 662 | 1.76 | 7.25",
+        "| 6210ZLC-6 | 830 | 735 | 1.76 | 8.02",
+        "| 6210ZLC-7 | 900 | 809 | 1.79 | 8.7",
+        "| 6210ZLC-8 | 1000 | 735 | 1.46 | 9.67",
+        "| 6210ZLC-9 | 1000 | 809 | 1.61 | 9.67",
+        "| 6210ZLC-10 | 750 | 610 | 1.62 | 7.25",
+        "| 6210ZLC-11 | 750 | 490 | 1.30 | 7.25",
+        "| 6210ZLC-12 | 600 | 374 | 1.24 | 5.8",
+        "| 6210ZLC-21 | 1000 | 883 | 1.76 | 9.67",
+        "| 6210ZLC-22 | 1000 | 669 | 1.33 | 9.67"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "dual fuel engine pdf China Z6170ZLC/S Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [
+        "| Model | （r/min） Rated speed | （kW） Continuous output | （MPa） Mean eff. Pressure | （m/s） Mean piston speed"
+      ],
+      "rows": [
+        "| Z6170ZLC | 1000 | 300 | 1.322 | 6.67",
+        "| Z6170ZLC-1 | 1000 | 220 | 0.969 | 6.67",
+        "| Z6170ZLC-2 | 1000 | 258 | 1.137 | 6.67",
+        "| Z6170ZLC-3 | 1200 | 330 | 1.212 | 8",
+        "| Z6170ZLC-4 | 1200 | 350 | 1.285 | 8",
+        "| Z6170ZLC-5 | 1200 | 260 | 0.955 | 8",
+        "| Z6170ZLC-6 | 1200 | 300 | 1.101 | 8",
+        "| Z6170ZLC-7 | 1500 | 400 | 1.175 | 10",
+        "| Z6170ZLC-8 | 1500 | 450 | 1.322 | 10",
+        "| Z6170ZLC-9 | 1350 | 400 | 1.306 | 9",
+        "| Z6170ZLC-14 | 1200 | 250 | 0.918 | 8",
+        "| Z6170ZLC-18 | 1200 | 385 | 1.414 | 8",
+        "| Z6170ZLC-19 | 1000 | 330 | 1.454 | 6.67",
+        "| Z6170ZLC-20 | 1350 | 430 | 1.404 | 9"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "China ZICHAI L6160 Diesel Engine-High Reliability Structural Design Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [],
+      "rows": [
+        "Cylinder Bore: 160mm",
+        "Rated power: 480 kW",
+        "Rated speed: 1500r/min",
+        "Fuel consumption rate: 185 g/kW.h"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "China L230 1800HP Marine Diesel Engines For Sale Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [],
+      "rows": [
+        "Cylinder Bore: 225mm",
+        "Rated power: 1324 kW",
+        "Rated speed: 1000r/min",
+        "Fuel consumption rate: 195 g/kW.h"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "China Generator Sets Manufacturers, Suppliers, Factory - Wholesale Diesel Generator Sets Products - ZICHAI - Page 2",
+      "header": [],
+      "rows": [
+        "Bore: 225mm",
+        "Continuous power: 1213 kW",
+        "Continuous speed: 1000r / min",
+        "Fuel consumption rate: 195 g / KW.h"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "gas turbine generator set China 6300D/M Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [
+        "| Engine | Item | Technical specifications"
+      ],
+      "rows": [
+        "| | Model | 6300D/M | 6300D/M-1 | 6300D/M-2 | 8300D/M-1 | 8300D/M-2 | 8300D/M-3",
+        "| | Cylinder number | 6 | 8",
+        "| | Rated apeed(r/min) | 500 | 600 | 600 | 500 | 600 | 600",
+        "| | Rated power(KW) | 330 | 440 | 550 | 500 | 550 | 660",
+        "| Generator set | Model | 300GFM | 400GFM | 500GFM | 450GFM | 500GFM | 600GFM",
+        "| | Rated power(kw) | 300 | 400 | 500 | 450 | 500 | 600",
+        "| | Current(A) | | 722/46/28 | 902/57/34 | 812/52/31 | 902/57/34 | 1083/69/41",
+        "| | Size(LxWxH)(mm) | 5800X1600X2900 | 6400X1600X2900",
+        "| | Weight(kg) | 18000 | 22000"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "China 786 HP -1500 HP Marine Medium Speed Diesel Engine Manufacturers, Suppliers - Factory Direct Wholesale - ZICHAI",
+      "header": [],
+      "rows": [
+        "| Model | / | ZC6200ZLC",
+        "| Cylinder NO. | / | 6",
+        "| Cylinder diameter | mm | 200",
+        "| Continuous speed | rpm | 900/1000",
+        "| Continuous power | kW/PS | 662/900--1103/1500",
+        "| Fuel consumption | g/kW.h | 190"
       ]
     },
     {

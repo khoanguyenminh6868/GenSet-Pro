@@ -185,7 +185,7 @@
     {
       "n": 101,
       "url": "http://www.googol-power.com/en/products/101.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| No. | Gas Genset Model | Continuous Power（kW/kVA) | Frequency（Hz） | Voltage (V) | Generator Efficiency"
@@ -195,7 +195,7 @@
     {
       "n": 102,
       "url": "http://www.googol-power.com/en/products/103.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| No. | Gas Genset Model | Continuous Power（kW/kVA) | Frequency（Hz） | Voltage (V) | Generator Efficiency"
@@ -205,7 +205,7 @@
     {
       "n": 103,
       "url": "http://www.googol-power.com/en/products/108.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set | Diesel Engine | Alternator | Dimension (L×W×H mm) | Weight (kg)"
@@ -215,7 +215,7 @@
     {
       "n": 104,
       "url": "http://www.googol-power.com/en/products/107.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set | Diesel Engine | Alternator | Dimension (L×W×H mm) | Weight (kg)"
@@ -225,7 +225,7 @@
     {
       "n": 105,
       "url": "http://www.googol-power.com/en/products/106.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set | Diesel Engine | Alternator | Dimension (L×W×H mm) | Weight (kg)"
@@ -235,7 +235,7 @@
     {
       "n": 106,
       "url": "http://www.googol-power.com/en/products/105.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator Set | Diesel Engine | Alternator | Dimension (L×W×H mm) | Weight (kg)"
@@ -245,7 +245,7 @@
     {
       "n": 107,
       "url": "http://www.googol-power.com/en/products/95.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h)"
@@ -255,7 +255,7 @@
     {
       "n": 109,
       "url": "http://www.googol-power.com/en/products/99.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h)"
@@ -265,7 +265,7 @@
     {
       "n": 111,
       "url": "http://www.googol-power.com/en/products/98.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h)"
@@ -275,7 +275,7 @@
     {
       "n": 113,
       "url": "http://www.googol-power.com/en/products/97.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h)"
@@ -285,7 +285,7 @@
     {
       "n": 115,
       "url": "http://www.googol-power.com/en/products/96.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h)"
@@ -295,12 +295,52 @@
     {
       "n": 116,
       "url": "http://www.googol-power.com/en/products/93.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h)"
       ],
       "file": "sources/googol/116.md"
+    },
+    {
+      "n": 117,
+      "url": "http://www.googol-power.com/en/products/92.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h)"
+      ],
+      "file": "sources/googol/117.md"
+    },
+    {
+      "n": 119,
+      "url": "http://www.googol-power.com/en/products/118.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Standby (kW / kVA) | Prime (kW/kVA) | Engine (Output Power) | Alternator | Dimension (L×W×H mm) | Weight (kg)"
+      ],
+      "file": "sources/googol/119.md"
+    },
+    {
+      "n": 123,
+      "url": "http://www.googol-power.com/en/products/116.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Standby (kW / kVA) | Prime (kW/kVA) | Engine (Output Power) | Alternator | Dimension (L×W×H mm) | Weight (kg)"
+      ],
+      "file": "sources/googol/123.md"
+    },
+    {
+      "n": 124,
+      "url": "http://www.googol-power.com/en/products/117.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Standby (kW/kVA) | Prime ( (kW/kVA) | Engine (Output Power) | Alternator | Dimension (L×W×H mm) | Weight (kg)"
+      ],
+      "file": "sources/googol/124.md"
     }
   ],
   "confidence": "medium",
@@ -490,6 +530,58 @@
       "rows": [
         "| PTAA12V-EG750C | 750 | 680 | 660/825 | 600/750 | V12 | 24.4 | 1650 | 164",
         "| PTAA12V-EG815C | 815 | 720 | 704/880 | 640/800 | V12 | 24.4 | 1650 | 175"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "PV10 & PV10生产厂家 &价格 &工厂 - Chongqing Googol Engine-Tech. Co.,Ltd.",
+      "header": [
+        "| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h)",
+        "| Standby (kW) | Prime (kW) | Standby (kW/kVA) | Prime (kW/kVA)"
+      ],
+      "rows": [
+        "| PTAA10V-EG620C | 625 | 568 | 550/688 | 500/625 | V10 | 20.3 | 1480 | 132",
+        "| PTAA10V-EG690C | 690 | 625 | 620/775 | 560/700 | V10 | 20.3 | 1480 | 150"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "GPDG3300E-4125E & GPDG3300E-4125E生产厂家 &价格 &工厂 - Chongqing Googol Engine-Tech. Co.,Ltd.",
+      "header": [
+        "| Model | Standby (kW / kVA) | Prime (kW/kVA) | Engine (Output Power) | Alternator | Dimension (L×W×H mm) | Weight (kg)",
+        "| Model | Standby ( kW ) | Prime ( kW ) | No.of Cylinders"
+      ],
+      "rows": [
+        "| GPDG3300E | 2640/3300 | 2400/3000 | QTA20V-EG2950C | 2950 | 2680 | V20 | GP3000-4P | 7250×2900×3300 | 20500",
+        "| GPDG3438E | 2750/3438 | 2500/3125 | QTA20V-EG3100C | 3100 | 2810 | V20 | GP3125-4P | 7400×2900×3300 | 20800",
+        "| GPDG3575E | 2860/3575 | 2600/3250 | QTA20V-EG3200C | 3200 | 2900 | V20 | GP3250-4P | 7400×2900×3300 | 21600",
+        "| GPDG3750E | 3000/3750 | 2700/3375 | QTA20V-EG3330C | 3330 | 3010 | V20 | GP3500-4P | 7500×2900×3300 | 21600",
+        "| GPDG4125E | 3300/4125 | 3000/3750 | QTA20V-EG3600C | 3600 | 3300 | V20 | GP3750-4P | 7600×2900×3300 | 21800"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "GPDG2063E-2250E & GPDG2063E-2250E生产厂家 &价格 &工厂 - Chongqing Googol Engine-Tech. Co.,Ltd.",
+      "header": [
+        "| Model | Standby (kW / kVA) | Prime (kW/kVA) | Engine (Output Power) | Alternator | Dimension (L×W×H mm) | Weight (kg)",
+        "| Model | Standby ( kW ) | Prime ( kW ) | No.of Cylinders"
+      ],
+      "rows": [
+        "| GPDG2063E | 1650/2063 | 1500/1875 | QTA12V-EG1850C | 1850 | 1680 | V12 | GP1875-4P | 5600×2600×2900 | 11500",
+        "| GPDG2250E | 1800/2250 | 1640/2050 | QTA12V-EG1990C | 1990 | 1810 | V12 | GP2050-4P | 5600×2600×2900 | 11850"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "GPDG2500E-3000E & GPDG2500E-3000E生产厂家 &价格 &工厂 - Chongqing Googol Engine-Tech. Co.,Ltd.",
+      "header": [
+        "| Model | Standby (kW/kVA) | Prime ( (kW/kVA) | Engine (Output Power) | Alternator | Dimension (L×W×H mm) | Weight (kg)",
+        "| Model | Standby ( kW ) | Prime ( kW ) | No.of Cylinders"
+      ],
+      "rows": [
+        "| GPDG2500E | 2000/2500 | 1800/2250 | QTA16V-EG2220C | 2220 | 2000 | V16 | GP2250-4P | 6100×2600×2900 | 14150",
+        "| GPDG2750E | 2200/2750 | 2000/2500 | QTA16V-EG2440C | 2440 | 2220 | V16 | GP2500-4P | 6450×2900×3300 | 14890",
+        "| GPDG3000E | 2420/3025 | 2200/2750 | QTA16V-EG2660C | 2660 | 2440 | V16 | GP2750-4P | 6600×2900×3300 | 16770"
       ]
     }
   ]

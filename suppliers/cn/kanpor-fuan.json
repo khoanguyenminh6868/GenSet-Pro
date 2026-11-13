@@ -174,7 +174,7 @@
     {
       "n": 101,
       "url": "http://gb.kanpor.com/product/198.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPC1375 | KPC1500 | KPC1650 | KPC1718"
@@ -184,7 +184,7 @@
     {
       "n": 102,
       "url": "http://gb.kanpor.com/product/197.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPC250 | KPC275 | KPC275 | KPC330 | KPC350"
@@ -194,7 +194,7 @@
     {
       "n": 103,
       "url": "http://gb.kanpor.com/product/196.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPC132 | KPC150 | KPC176 | KPC200 | KPC220"
@@ -204,7 +204,7 @@
     {
       "n": 104,
       "url": "http://gb.kanpor.com/product/195.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPC25 | KPC27.5 | KPC30 | KPC33 | KPC40"
@@ -214,7 +214,7 @@
     {
       "n": 106,
       "url": "http://gb.kanpor.com/product/193.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPC825 | KPC880 | KPC1000 | KPC1100 | KPC1250"
@@ -224,7 +224,7 @@
     {
       "n": 114,
       "url": "http://gb.kanpor.com/product/200.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPC550 | KPC625 | KPC660 | KPC687 | KPC725"
@@ -234,7 +234,7 @@
     {
       "n": 115,
       "url": "http://gb.kanpor.com/product/201.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPFD40 | KPFD50 | KPFD55 | KPFD66"
@@ -244,7 +244,7 @@
     {
       "n": 116,
       "url": "http://gb.kanpor.com/product/203.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPFD90 | KPFD110 | KPFD135 | KPFD150"
@@ -254,7 +254,7 @@
     {
       "n": 118,
       "url": "http://gb.kanpor.com/product/205.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPFD17 | KPFD25 | KPFD30 | KPFD40"
@@ -264,7 +264,7 @@
     {
       "n": 120,
       "url": "http://gb.kanpor.com/product/207.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPD180 | KPD220 | KPD250 | KPD275"
@@ -274,7 +274,7 @@
     {
       "n": 121,
       "url": "http://gb.kanpor.com/product/208.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPD66 | KPD88 | KPD110 | KPD150"
@@ -284,12 +284,52 @@
     {
       "n": 122,
       "url": "http://gb.kanpor.com/product/210.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | | KPD250 | KPD275 | KPD300 | KPD330"
       ],
       "file": "sources/kanpor-fuan/122.md"
+    },
+    {
+      "n": 133,
+      "url": "http://gb.kanpor.com/product/211.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 静默型 | KP12STA | KP14STA | KP16STA"
+      ],
+      "file": "sources/kanpor-fuan/133.md"
+    },
+    {
+      "n": 134,
+      "url": "http://gb.kanpor.com/product/219.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 静默型 | KP6500STA | KP7500STA | KP6700DGFN | KP7500DGFN | KP9500DGFN"
+      ],
+      "file": "sources/kanpor-fuan/134.md"
+    },
+    {
+      "n": 135,
+      "url": "http://gb.kanpor.com/product/220.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 静默型 | KP2500DX | KP3500DX | KP5500DX | KP6500DX | KP7500DX | KP9000DX"
+      ],
+      "file": "sources/kanpor-fuan/135.md"
+    },
+    {
+      "n": 136,
+      "url": "http://gb.kanpor.com/product/221.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 发电机 | 规范 | KP12000T | KP12000DX"
+      ],
+      "file": "sources/kanpor-fuan/136.md"
     }
   ],
   "confidence": "medium",
@@ -585,6 +625,89 @@
         "| 开架款重量 | kg | 2180 | 2300 | 2400 | 2520",
         "| 静音款尺寸 | mm | 3300x1150x1850 | 3300x1150x1850 | 3400x1300x2000 | 3400x1400x2100",
         "| 静音款重量尺寸 | kg | 3160 | 3300 | 3450 | 3600"
+      ]
+    },
+    {
+      "n": 133,
+      "title": "单缸水冷发电机 8-12kw-福安市康普电机有限公司",
+      "header": [
+        "| 静默型 | KP12STA | KP14STA | KP16STA",
+        "| 额定频率[Hz] | 50/60 Hz",
+        "| 额定电压[V] | 110/115/120/230, 380/220,400/230,415/240"
+      ],
+      "rows": [
+        "| 额定输出功率[kw] | 8/8.5 | 10/10.5 | 12/12.5",
+        "| 最大输出功率[kw] | 9/9.5 | 11/11.5 | 13/13.5",
+        "| 发动机类型 | CY1115 | CY1115 | CY1115",
+        "| 排量[ml（cu/in）] | 24HP | 24HP | 24HP",
+        "| 孔*行程 | 115*120 | 115*120 | 115*120",
+        "| 压缩比 | 17:01 | 17:01 | 17:01",
+        "| 净重[kg] | 320 | 340 | 360",
+        "| 20英尺集装箱容量 | 24 | 24 | 24",
+        "| 40英尺集装箱容量 | 48 | 48 | 48"
+      ]
+    },
+    {
+      "n": 134,
+      "title": "风冷柴油发电机 4.5-6.8kw-福安市康普电机有限公司",
+      "header": [
+        "| 静默型 | KP6500STA | KP7500STA | KP6700DGFN | KP7500DGFN | KP9500DGFN",
+        "| 额定频率[Hz] | 50/60",
+        "| 额定电压[V] | 110/115/120/220/230/240"
+      ],
+      "rows": [
+        "| 额定输出功率[kw] | 4.5/5.0 | 5.5/6.0 | 4.5/5.0 | 5.5/6.0 | 6.8/7.5",
+        "| 最大输出功率[kw] | 5.0/5.5 | 6.0/6.5 | 5.0/5.5 | 6.0/6.5 | 7.5/8.5",
+        "| 噪声级[dB（A）@7米] | 70-74 | 68-70",
+        "| 发动机类型 | 186FAE | 188FE | 186FAE | 188F | 192F",
+        "| 位移 | 418 | 456 | 418 | 456 | 498",
+        "| 外形尺寸（长x宽x高）【mm】 | 950x570x770 | 1050x540x770",
+        "| 干重[kg] | 160 | 170 | 163 | 173 | 185"
+      ]
+    },
+    {
+      "n": 135,
+      "title": "风冷柴油发电机 1.7-6.5kw-福安市康普电机有限公司",
+      "header": [
+        "| 静默型 | KP2500DX | KP3500DX | KP5500DX | KP6500DX | KP7500DX | KP9000DX",
+        "| 额定频率[Hz] | 50/60",
+        "| 额定电压[V] | 110/115/120/220/230/240,110/220,115/230,120/240"
+      ],
+      "rows": [
+        "| 额定输出功率[kw] | 1.7/2.0 | 3.0/3.3 | 4.0/4.5 | 4.5/5.0 | 6.0/6.2 | 6.5/7.0",
+        "| 最大输出功率[kw] | 2.0/2.3 | 3.3/3.6 | 4.5/5.0 | 5.0/5.5 | 6.5/6.8 | 7.0/7.5",
+        "| 噪声级[dB（A）@7米] | 74-77 | 78-83",
+        "| 发动机类型 | KP170F/E | KP178F/E | KP186F/E | KP186FA/E | KP188F/E | KP190F/E",
+        "| 位移 | 211 | 296 | 406 | 418 | 456 | 496",
+        "| 压缩比 | 20:1 | 19:1",
+        "| 外形尺寸（长x宽x高）【mm】 | 660x480x540 | 660x480x540 | 740x500x670 | 740x500x670 | 940x535x780 | 940x540x780",
+        "| 干重[kg] | 58 反冲 63电 | 73 反冲 78电 | 95 反冲 100 电 | 100 反冲 105电 | 103 反冲 108电 | 111 反冲 116电",
+        "| 20'集装箱（件） | 164 | 164 | 101 | 101 | 101 | 101"
+      ]
+    },
+    {
+      "n": 136,
+      "title": "风冷柴油发电机 10-11kw-福安市康普电机有限公司",
+      "header": [
+        "| 发电机 | 规范 | KP12000T | KP12000DX"
+      ],
+      "rows": [
+        "| 额定频率（Hz） | 50hz | 60hz | 50hz | 60hz",
+        "| 额定转速（rpm） | 3000 | 3600 | 3000 | 3600",
+        "| 额定电压（V） | 380/220 | 380/220 | 380/220 | 380/220",
+        "| 最大输出（kw） | 11 | 12 | 11 | 12",
+        "| 额定输出（kw） | 10 | 11 | 10 | 11",
+        "| 相数 | 3相/单相 | 3相/单相",
+        "| 油箱容量（L） | 25L | 25L",
+        "| 7米处噪声级 | 74-77 | 82-85",
+        "| 发动机 | 柴油机型号 | KP290F | KP290F",
+        "| 排量（cc） | 954 | 954",
+        "| 油耗（g/kw*h） | 298 | 298",
+        "| 压缩比 | 19:01 | 19:01",
+        "| 设置 | 电池 | 12V 40Ah | 12V 40Ah",
+        "| 外形尺寸（长x宽x高）【mm】 ] | 1400*710*1130 | 1150*670*940",
+        "| 重量 | 310 | 185",
+        "| 20寸容器（个） | 30 | 30"
       ]
     }
   ]

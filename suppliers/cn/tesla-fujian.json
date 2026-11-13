@@ -119,7 +119,7 @@
     {
       "n": 101,
       "url": "https://www.tesla-power.net/20kVA-Silent-Canopy-Diesel-Generator-CE-ISO-by-Yanmar-4tnv84t-Gge-pd47172091.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Copy Stamford Type"
@@ -129,12 +129,42 @@
     {
       "n": 102,
       "url": "https://www.tesla-power.net/6-56kVA-Original-Japan-Made-Yanmar-Diesel-Generator-Set-with-Original-Stamford-Alternator-pd43872091.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford"
       ],
       "file": "sources/tesla-fujian/102.md"
+    },
+    {
+      "n": 143,
+      "url": "https://www.tesla-power.net/800kVA-Yuchai-Engine-Stamford-Alternator-Open-Type-Electrical-Industrial-Standby-Emergency-Generator-pd44772091.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford Type"
+      ],
+      "file": "sources/tesla-fujian/143.md"
+    },
+    {
+      "n": 147,
+      "url": "https://www.tesla-power.net/60Hz-320kw-400kVA-Yto-Industrial-Electric-Automatic-Start-Diesel-Generator-pd41394091.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford Type"
+      ],
+      "file": "sources/tesla-fujian/147.md"
+    },
+    {
+      "n": 167,
+      "url": "https://www.tesla-power.net/50Hz-60Hz-40kVA-Open-Soundproof-Type-Power-Generator-Yangdong-Diesel-Generator-pd42382091.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Copy Stamford Type"
+      ],
+      "file": "sources/tesla-fujian/167.md"
     }
   ],
   "confidence": "medium",
@@ -213,6 +243,122 @@
         "| BS- YM 51 | 41 | 51 | 45 | 4TNV98T-GGE | 224E",
         "| BS- YM 60 | 48 | 60 | 53 | 4TNV106-GGE | 224F",
         "| BS- YM 69 | 55 | 69 | 61 | 4TNV106T-GGE | 224G"
+      ]
+    },
+    {
+      "n": 143,
+      "title": "800kVA Yuchai Engine Stamford Alternator Open Type Electrical Industrial Standby Emergency Generator - Buy Generator, Silent Generator, Open Type Generator Product on FUJIAN TESLA POWER ELECTRICAL MAC",
+      "header": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford Type"
+      ],
+      "rows": [
+        "| BS-YC38 | 30 | 38 | 54.1 | YC4D60-D21 | BS184H",
+        "| BS-YC45 | 36 | 45 | 65.0 | YC4D60-D21 | BS224C",
+        "| BS-YC60 | 48 | 60 | 86.6 | YC4D85Z-D20 | BS224E",
+        "| BS-YC63 | 50 | 63 | 90.2 | YC4D90Z-D21 | BS224E",
+        "| BS-YC75 | 60 | 75 | 108.3 | YC4A100Z-D20 | BS224F",
+        "| BS-YC100 | 80 | 100 | 144.3 | YC6B135Z-D20 | BS274C",
+        "| BS-YC113 | 90 | 113 | 162.4 | YC6B155L-D21 | BS274D",
+        "| BS-YC125 | 100 | 125 | 180.4 | YC6B180L-D20 | BS274D",
+        "| BS-YC150 | 120 | 150 | 216.5 | YC6A205L-D20 | BS274F",
+        "| BS-YC180 | 144 | 180 | 259.8 | YC6A230L-D20 | BS274G",
+        "| BS-YC188 | 150 | 188 | 270.6 | YC6A245L-D21 | BS274G",
+        "| BS-YC200 | 160 | 200 | 288.7 | YC6G270L-D20 | BS274H",
+        "| BS-YC250 | 200 | 250 | 360.9 | YC6MK350L-D20 | BS274K",
+        "| BS-YC325 | 260 | 325 | 469.1 | YC6MK420L-D20 | HCI444ES",
+        "| BS-YC250 | 280 | 350 | 505.2 | YC6MJ480L-D20 | HCI444E",
+        "| BS-YC375 | 300 | 375 | 541.3 | YC6K500-D30 | HCI444FS",
+        "| BS-YC413 | 330 | 413 | 595.4 | YC6K520-D30 | HCI444F",
+        "| BS-YC438 | 350 | 438 | 631.5 | YC6K570-D30 | HCI544C",
+        "| BS-YC450 | 360 | 450 | 649.5 | YC6T600L-D22 | HCI544C",
+        "| BS-YC500 | 400 | 500 | 721.7 | YC6T660L-D20 | HCI544C",
+        "| BS-YC563 | 450 | 563 | 811.9 | YC6TD780L-D20 | HCI544E",
+        "| BS-YC625 | 500 | 625 | 902.1 | YC6TD840L-D20 | HCI544FS",
+        "| BS-YC675 | 540 | 675 | 974.3 | YC6TD900-D31 | HCI544F",
+        "| BS-YC750 | 600 | 750 | 1082.6 | YC6C1020L-D20 | LVI634B",
+        "| BS-YC800 | 640 | 800 | 1154.7 | YC6C1070L-D20 | LVI634C",
+        "| BS-YC900 | 720 | 900 | 1299.1 | YC6C1220L-D20 | LVI634D",
+        "| BS-YC1000 | 800 | 1000 | 1443.4 | YC6C1320L-D20 | LVI634E",
+        "| BS-YC1125 | 900 | 1125 | 1623.8 | YC6C1520-D31 | LVI634F",
+        "| BS-YC1250 | 1000 | 1250 | 1804.3 | YC12VC1680L-D20 | LVI634G",
+        "| BS-YC1500 | 1200 | 1500 | 2165.1 | YC12VC2070L-D20 | PI734C",
+        "| BS-YC1688 | 1350 | 1688 | 2435.8 | YC12VC2270L-D20 | PI734D",
+        "| BS-YC1875 | 1500 | 1875 | 2706.4 | YC12VC2510L-D20 | PI734E",
+        "| BS-YC2000 | 1600 | 2000 | 2886.8 | YC12VC2700L-D20 | PI734F"
+      ]
+    },
+    {
+      "n": 147,
+      "title": "60Hz 320kw 400kVA Yto Industrial Electric Automatic Start Diesel Generator - Buy Generator, Silent Diesel Generator, Silent Generator Product on FUJIAN TESLA POWER ELECTRICAL MACHINERY CO.,LTD.",
+      "header": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford Type"
+      ],
+      "rows": [
+        "| BS-YT31 | 25 | 31 | 45.10681293 | YT3B2-D | BS184G",
+        "| BS-YT38 | 30 | 37.5 | 54.12817552 | YT3A2Z-D | BS184H",
+        "| BS-YT50 | 40 | 50 | 72.17090069 | LR4B5-D | BS224D",
+        "| BS-YT63 | 50 | 62.5 | 90.21362587 | YT4B2Z-D | BS224E",
+        "| BS-YT65 | 52 | 65 | 93.8221709 | LR4B3Z-D | BS224F",
+        "| BS-YT94 | 75 | 94 | 135.3204388 | LR4M3L-D | BS274C",
+        "| BS-YT100 | 80 | 100 | 144.3418014 | LR4N5LP-D | BS274C",
+        "| BS-YT125 | 100 | 125 | 180.4272517 | LR6A3L-D | BS274D",
+        "| BS-YT150 | 120 | 150 | 216.5127021 | LR6B3L-D | BS274F",
+        "| BS-YT163 | 130 | 163 | 234.5554273 | LR6M3L-D | BS274F",
+        "| BS-YT200 | 160 | 200 | 288.6836028 | YM6H4L-D | BS274H",
+        "| BS-YT225 | 180 | 225 | 324.7690531 | YM6H4LF-D | BS274J",
+        "| BS-YT250 | 200 | 250 | 360.8545035 | YM6S4L-D | BS274K",
+        "| BS-YT275 | 220 | 275 | 396.9399538 | YM6S4LF-D | BS314D",
+        "| BS-YT313 | 250 | 313 | 451.0681293 | YM6S9L-D | BS314ES",
+        "| BS-YT350 | 280 | 350 | 505.1963048 | YM6S9L-DB | BS314FS",
+        "| BS-YT375 | 300 | 375 | 541.2817552 | YM6S9LF-D | BS314F",
+        "| BS-YT400 | 320 | 400 | 577.3672055 | YM6S9LF-DA | BS354C"
+      ]
+    },
+    {
+      "n": 167,
+      "title": "50Hz 60Hz 40kVA Open Soundproof Type Power Generator Yangdong Diesel Generator - Buy Power Generator, Diesel Generator Set, Diesel Generator Product on FUJIAN TESLA POWER ELECTRICAL MACHINERY CO.,LTD.",
+      "header": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Copy Stamford Type"
+      ],
+      "rows": [
+        "| BS-YD10 | 8 | 10 | 14.4 | YD380D | BS164B",
+        "| BS-YD11 | 9 | 11 | 16.2 | YD385D | BS164B",
+        "| BS-YD13 | 10 | 12.5 | 18.0 | YD480D | BS164C",
+        "| BS-YD15 | 12 | 15 | 21.7 | YD4KD | BS164D",
+        "| BS-YD16 | 13 | 16 | 23.5 | YND485D | BS164D",
+        "| BS-YD19 | 15 | 19 | 27.1 | YND490D | BS184ES",
+        "| BS-YD20 | 16 | 20 | 28.9 | YSD490D | BS184E",
+        "| BS-YD24 | 19 | 24 | 34.3 | Y490PD | BS184E",
+        "| BS-YD25 | 20 | 25 | 36.1 | Y495D | BS184F",
+        "| BS-YD30 | 24 | 30 | 43.3 | Y4100D | BS184G",
+        "| BS-YD31 | 25 | 31 | 45.1 | Y4102D | BS184G",
+        "| BS-YD38 | 30 | 37.5 | 54.1 | Y4105D | BS184H",
+        "| BS-YD40 | 32 | 40 | 57.7 | Y4102ZD | BS184J",
+        "| | | | | |"
+      ]
+    },
+    {
+      "n": 167,
+      "title": "50Hz 60Hz 40kVA Open Soundproof Type Power Generator Yangdong Diesel Generator - Buy Power Generator, Diesel Generator Set, Diesel Generator Product on FUJIAN TESLA POWER ELECTRICAL MACHINERY CO.,LTD.",
+      "header": [
+        "| Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford Type"
+      ],
+      "rows": [
+        "| BS-YD12 | 9.6 | 12 | 17.3 | YD380D | BS164B",
+        "| BS-YD13 | 10 | 12.5 | 18.0 | YD385D | BS164B",
+        "| BS-YD16 | 13 | 16.3 | 23.5 | YD480D | BS164C",
+        "| BS-YD19 | 15 | 18.8 | 27.1 | YD4KD | BS164D",
+        "| BS-YD20 | 16 | 20 | 28.9 | YND485D | BS164D",
+        "| BS-YD24 | 19 | 23.8 | 34.3 | YND490D | BS184E",
+        "| BS-YD25 | 20 | 25 | 36.1 | YSD490D | BS184E",
+        "| BS-YD26 | 21 | 26.3 | 37.9 | Y490PD | BS184E",
+        "| BS-YD30 | 24 | 30 | 43.3 | Y495D | BS184F",
+        "| BS-YD35 | 28 | 35 | 50.5 | Y4100D | BS184F",
+        "| BS-YD40 | 32 | 40 | 57.7 | Y4102D | BS184H",
+        "| BS-YD45 | 36 | 45 | 65.0 | Y4105D | BS184H",
+        "| BS-YD48 | 38 | 47.5 | 68.6 | Y4102ZD | BS184J",
+        "| BS-YD53 | 42 | 52.5 | 75.8 | Y4102ZLD | BS224C",
+        "| BS-YD56 | 45 | 56.3 | 81.2 | Y4105ZLD | BS224D"
       ]
     }
   ]

@@ -127,7 +127,7 @@
     {
       "n": 101,
       "url": "http://en.wf-hy.com/product/Generator/Pump/0830/157.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 规格 | 机组功率 KW | 电站尺寸 MM"
@@ -137,7 +137,7 @@
     {
       "n": 102,
       "url": "http://en.wf-hy.com/product/Generator/Perkins/0830/156.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 珀金斯型号 | 外形尺寸(MM) | 重量（KGS）"
@@ -147,7 +147,7 @@
     {
       "n": 103,
       "url": "http://en.wf-hy.com/product/Generator/Standard/0830/153.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | 机组额定输出 | 柴油机 | 最大耗油量 | 外型尺寸及重量"
@@ -157,7 +157,7 @@
     {
       "n": 104,
       "url": "http://en.wf-hy.com/product/Generator/Standard/0830/152.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | 机组额定功率 KW | 柴油机 | 最大油耗 | 外形尺寸及重量"
@@ -167,7 +167,7 @@
     {
       "n": 105,
       "url": "http://en.wf-hy.com/product/Generator/Automatic/0830/150.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组 型号 | 机组主用功率 | 发动机型号 | 排量(L) | 压缩比 | 燃气消耗(m3 /kw.h) | 机组尺寸 (mm) | 净重 (Kg)"
@@ -177,7 +177,7 @@
     {
       "n": 106,
       "url": "http://en.wf-hy.com/product/Generator/Automatic/0830/149.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 Type | HR-150KW | HR-200KW | HR-250KW | HR-275KW | HR-400KW | HR-500KW"
@@ -187,7 +187,7 @@
     {
       "n": 107,
       "url": "http://en.wf-hy.com/product/Generator/Automatic/0830/148.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 Type | HR-50GFQ | HR-60GFQ | HR-75GFQ | HR-80GFQ | HR-100GFQ | HR-120GFQ"
@@ -197,7 +197,7 @@
     {
       "n": 108,
       "url": "http://en.wf-hy.com/product/Generator/Automatic/0830/147.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 Type | HR-10FQ | HR-20GFQ | HR-25GFQ | HR-30GFQ"
@@ -207,7 +207,7 @@
     {
       "n": 109,
       "url": "http://en.wf-hy.com/product/Generator/Cummins/0830/129.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 康明斯型号 | 康明斯功率(KW) | 燃油消耗率 (L/H)"
@@ -217,7 +217,7 @@
     {
       "n": 110,
       "url": "http://en.wf-hy.com/product/engine/Gas/0830/56.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号: | HR6126Q,HR6126ZQ | Model: | HR6126Q,HR6126ZQ"
@@ -227,7 +227,7 @@
     {
       "n": 111,
       "url": "http://en.wf-hy.com/product/engine/Gas/0830/55.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号: | HR6105Q,HR6105ZQ | Model: | HR6105Q,HR6105ZQ"
@@ -237,12 +237,42 @@
     {
       "n": 112,
       "url": "http://en.wf-hy.com/product/engine/Gas/0830/53.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号: | HHR485Q ,HR4100Q,HR4105Q | Model: | HHR485Q ,HR4100Q,HR4105Q"
       ],
       "file": "sources/huayuan-weifang/112.md"
+    },
+    {
+      "n": 113,
+      "url": "http://en.wf-hy.com/product/Generator/Exp/0830/133.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 型号 | 功能 | 发动机型号 | 缸数 L | 缸径mm | 行程mm | 排量 L | 燃油消耗率g/kw.h | 机组重量 Kg | 长×宽×高 mm×mm×mm"
+      ],
+      "file": "sources/huayuan-weifang/113.md"
+    },
+    {
+      "n": 114,
+      "url": "http://en.wf-hy.com/product/Generator/Real/0830/130.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | 主要功率(KW) | 备用功率(KW) | 珀金斯型号 | 外形尺寸(MM) | 重量 KGS"
+      ],
+      "file": "sources/huayuan-weifang/114.md"
+    },
+    {
+      "n": 116,
+      "url": "http://en.wf-hy.com/product/Generator/Cummins/0830/128.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 型号: | HF 250C - HF 800C | Model: | HF 250C - HF 800C"
+      ],
+      "file": "sources/huayuan-weifang/116.md"
     }
   ],
   "confidence": "medium",
@@ -514,6 +544,119 @@
         "| 总排量（L） Displacement (L) | 2.16 | 3.61 | 3.76 | 4.33",
         "| 压缩比 Compression Ratio | 11.3:1 | 11.3:1 | 11.4:1 | 11.5:1",
         "| 额定功率 Rated output (KW) | 15 | 25 | 30 | 38"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Weichai, Hua Chai and MWM series Deutsch generator sets - Export , Water Pump Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+      "header": [
+        "| 型号 | 功能 | 发动机型号 | 缸数 L | 缸径mm | 行程mm | 排量 L | 燃油消耗率g/kw.h | 机组重量 Kg | 长×宽×高 mm×mm×mm",
+        "| 主用 | 备用"
+      ],
+      "rows": [
+        "| HY22GF | 20 | 22 | D226B-3D | 3 | 105 | 120 | 3.12 | 215 | 800 | 1800×740×1000",
+        "| HY27GF | 24 | 27 | D226B-3D | 3 | 105 | 120 | 3.12 | 215 | 800 | 1800×740×1000",
+        "| HY30GF | 27 | 30 | D226B-3D | 3 | 105 | 120 | 3.12 | 215 | 800 | 1800×740×1000",
+        "| HY33GF | 30 | 33 | TD226B-3D | 3 | 105 | 120 | 3.12 | 208 | 850 | 1880×740×1000",
+        "| HY44GF | 40 | 44 | TD226B-3D | 3 | 105 | 120 | 3.12 | 208 | 850 | 1880×740×1000",
+        "| HY55GF | 50 | 55 | TD226B-4D | 4 | 105 | 120 | 4.16 | 208 | 1200 | 2000×800×1100",
+        "| HY70GF | 64 | 70 | TD226B-6D | 6 | 105 | 120 | 6.23 | 205 | 1350 | 2200×900×1200",
+        "| HY80GF | 75 | 80 | TD22B-6D | 6 | 105 | 120 | 6.23 | 205 | 1350 | 2200×900×1200",
+        "| HY90GF | 80 | 90 | TD226B-6D | 6 | 105 | 120 | 6.23 | 205 | 1350 | 2200×900×1200",
+        "| HY100GF | 90 | 100 | TBD226B-6D | 6 | 105 | 120 | 6.23 | 198 | 1600 | 2300×900×1200",
+        "| HY110GF | 100 | 110 | TBD226B-6D | 6 | 105 | 120 | 6.23 | 198 | 1600 | 2300×900×1200",
+        "| HY120GF | 110 | 120 | TBD226B-6D | 6 | 105 | 120 | 6.23 | 198 | 1600 | 2300×900×1200",
+        "| HY132GF | 120 | 132 | TBD226B-6D | 6 | 105 | 120 | 6.23 | 198 | 1600 | 2300×900×1200"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Weichai, Hua Chai and MWM series Deutsch generator sets - Export , Water Pump Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+      "header": [
+        "| 型号 | 常用 功率 (kw) | 过载 功率(kw) | 华柴道依茨柴油机 | 外形尺寸 (mm)",
+        "| 型号 | 功率说明 | 常用 功率 (kw) | 备用 功率 (kw) | 额定 转速 (r/min) | 冷却 方式"
+      ],
+      "rows": [
+        "| HY90GF | 90 | 99 | F8L413F | COP | 117 | 129 | 1500 | 风冷 | 2100×1200×1330",
+        "| HY100GF | 100 | 110 | F8L413F | COP | 117 | 129 | 1500 | 风冷 | 2550×1300×1330",
+        "| HY120GF | 120 | 132 | F10L413 | COP | 147 | 161 | 1500 | 风冷 | 2100×1200×1330",
+        "| HY120GF | 120 | - | BF8L513 | COP | 147 | - | 1500 | 风冷 | 2080×900×970",
+        "| HY120GF | 120 | 132 | HC4132 | COP | 175 | 193 | 1500 | 水冷 | 2450×1255×1440",
+        "| HY150GF | 150 | 165 | F12L413F | COP | 176 | 194 | 1500 | 风冷 | 2700×1200×1410",
+        "| HY150GF | 150 | - | BF8L513C | COP | 174 | - | 1500 | 风冷 | 2170×900×1100",
+        "| HY200GF | 200 | 220 | BF6M1015C | COP | 250 | 264 | 1500 | 水冷 | 2770×1460×1500",
+        "| HY240GF | 240 | 264 | BF6M1015C | COP | 285 | 313 | 1500 | 水冷 | 2920×1460×1500",
+        "| HY250GF | 250 | 275 | BF6M1015C | PRP | 300 | 330 | 1500 | 水冷 | 2920×1460×1500",
+        "| HY260GF | 260 | - | BF6M1015C | LTP | 314 | - | 1500 | 水冷 | 3125×1515×1765",
+        "| HY272GF | 272 | - | BF6M1015C | LTP | 314 | - | 1500 | 水冷 | 2650×1515×1765",
+        "| HY280GF | 280 | 308 | BF8M1015C | COP | 333 | 366 | 1500 | 水冷 | 3130×1515×1765",
+        "| HY300GF | 300 | - | BF6M1015C | LTP | 345 | - | 1500 | 水冷 | 3130×1515×1765",
+        "| HY320GF | 320 | 352 | BF8M1015C | COP | 380 | 418 | 1500 | 水冷 | 3400×1815×1990",
+        "| HY340GF | 340 | 374 | BF8M1015CP | COP | 399 | 439 | 1500 | 水冷 | 3400×1815×1990",
+        "| HY350GF | 350 | 385 | BF8M1015C | PRP | 418 | 460 | 1500 | 水冷 | 3400×1815×1990",
+        "| HY380GF | 380 | 418 | BF8M1015CP | PRP | 448 | 493 | 1500 | 水冷 | 3400×1815×1990",
+        "| HY400GF | 400 | - | BF8M1015C | LTP | 459 | - | 1500 | 水冷 | 3400×1815×1990",
+        "| HY420GF | 420 | - | BF8M1015CP | LTP | 490 | - | 1500 | 水冷 | 3400×1815×1990"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Perkins generator set - Real estate and Hospital Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+      "header": [
+        "| | 主要功率(KW) | 备用功率(KW) | 珀金斯型号 | 外形尺寸(MM) | 重量 KGS"
+      ],
+      "rows": [
+        "| HY 22P | 24 | 27 | 404D22TG | 1680 * 730 * 1100 | 715",
+        "| HY 24P | 28 | 30 | 404D-22TG | 1800 * 730 * 1100 | 715",
+        "| HY 36P | 41 | 46 | 1103A-33G | 1800 * 730 * 1100 | 880",
+        "| HY 48P | 54 | 59 | 1103A-33TG2 | 1900 * 740 * 1200 | 880",
+        "| HY 52P | 58 | 64 | 1104A-44TG2 | 1900 * 740 * 1200 | 900",
+        "| HY 64P | 72 | 79 | 1104A-44TAG1 | 1850 * 830 * 1350 | 1100",
+        "| HY72P | 83 | 92 | 1006TG1A | 2330 * 800 * 1200 | 1120",
+        "| HY 80P | 90 | 100 | 1104C-44TAG2 | 2330 * 800 * 1200 | 1120",
+        "| HY 108P | 121 | 134 | 1006TAG | 2400 * 880 * 1360 | 1180",
+        "| HY 120P | 129 | 143 | 1006TAG2 | 2400 * 800 * 1350 | 1400",
+        "| HY 144P | 158 | 176 | 1106C-E66TAG4 | 2500 * 900 * 1400 | 1700",
+        "| HY 160P | 174 | 191 | 1106A-70TAG4 | 2600 * 960 * 1500 | 1750",
+        "| HY 180P | 198 | 217 | 1306C-E87TAG4 | 2600 * 960 * 1500 | 1750",
+        "| HY 200P | 217 | 239 | 1306C-E87TAG6 | 2560 * 950 * 1450 | 2580",
+        "| HY 280P | 305 | 349 | 2206A-E13TAG2 | 3000 * 1700 * 1750 | 3050",
+        "| HY 320P | 349 | 392 | 2206A-E13TAG3 | 3300 * 1150 * 1800 | 3150",
+        "| HY 364P | 396 | 434 | 2506A-E15TAG1 | 3050 * 1150 * 1800 | 3150",
+        "| HY 400P | 435 | 478 | 2506A-E15TAG2 | 3480 * 1200 * 2000 | 3910",
+        "| HY 480P | 522 | 574 | 2806A-E18TAG1A | 3550 * 1580 * 2100 | 4430",
+        "| HY 520P | 565 | 609 | 2806A-E18TAG2 | 3550 * 1580 * 2100 | 4430"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "Cummins series Generator Set - Cummins series Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+      "header": [
+        "| 型号: | HF 250C - HF 800C | Model: | HF 250C - HF 800C",
+        "| 转速: | 质量可靠，运行稳定，可作为长期运行的不间断电源，1500r/min or 1800r/min | Speed: | 质量可靠，运行稳定，可作为长期运行的不间断电源，1500r/min or 1800r/min"
+      ],
+      "rows": [
+        "| 功率: | 250 - 800 KW | Power: | 250 - 800 KW",
+        "| 用途: | 可以做工厂，矿山，医院，学校，养殖场，住宅等的常用或备用电源 | Purpose: | 可以做工厂，矿山，医院，学校，养殖场，住宅等的常用或备用电源"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "Cummins series Generator Set - Cummins series Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+      "header": [
+        "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 康明斯型号 | 康明斯功率(KW) | 燃油消耗率 (L/H)"
+      ],
+      "rows": [
+        "| HF 250C | 250 | 275 | MTAA11-G3 | 265 | 66.9",
+        "| HF 280C | 280 | 308 | NTA855-G2A | 313 | 77",
+        "| HF 300C | 300 | 330 | NTAA855-G7A | 343 | 84",
+        "| HF 330C | 330 | 360 | NTAA855-G7A | 343 | 94",
+        "| HF 400C | 400 | 440 | KTA19-G4 | 448 | 107",
+        "| HF 500C | 500 | 550 | KTAA19-G6A | 518 | 134",
+        "| HF 600C | 600 | 660 | KTA38-G2 | 665 | 170",
+        "| HF 640C | 640 | 704 | KTA38-G2A | 665 | 186",
+        "| HF 720C | 720 | 792 | KTA38-G2A | 814 | 204",
+        "| HF 800C | 800 | 880 | KTA38-G5 | 881 | 207"
       ]
     }
   ]

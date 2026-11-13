@@ -115,7 +115,7 @@
     {
       "n": 101,
       "url": "https://www.gbpower.net/Product/2873055544.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 50HZ | PERKINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -125,7 +125,7 @@
     {
       "n": 102,
       "url": "https://www.gbpower.net/Product/061289140.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 50HZ | PERKINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -135,7 +135,7 @@
     {
       "n": 103,
       "url": "https://www.gbpower.net/Product/046281921.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 50HZ | DEUTZ Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -145,7 +145,7 @@
     {
       "n": 104,
       "url": "https://www.gbpower.net/Product/375064129.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 60HZ | DEUTZ Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -155,7 +155,7 @@
     {
       "n": 105,
       "url": "https://www.gbpower.net/Product/9314503952.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 50HZ | DEUTZ Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -165,7 +165,7 @@
     {
       "n": 106,
       "url": "https://www.gbpower.net/Product/6917244332.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 60HZ | DEUTZ Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -175,7 +175,7 @@
     {
       "n": 107,
       "url": "https://www.gbpower.net/Product/396257527.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 50HZ | YANMAR Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -185,7 +185,7 @@
     {
       "n": 108,
       "url": "https://www.gbpower.net/Product/5617095416.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 60HZ | YANMAR Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -195,7 +195,7 @@
     {
       "n": 109,
       "url": "https://www.gbpower.net/Product/2547815744.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 50HZ | ISUZU Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -205,7 +205,7 @@
     {
       "n": 110,
       "url": "https://www.gbpower.net/Product/4729065935.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 60HZ | ISUZU Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -215,7 +215,7 @@
     {
       "n": 111,
       "url": "https://www.gbpower.net/Product/896320243.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 50HZ | GB POWER Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
@@ -225,12 +225,52 @@
     {
       "n": 112,
       "url": "https://www.gbpower.net/Product/523768452.html",
-      "accessedAt": "2026-11-09",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Frequency 60HZ | GB POWER Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
       ],
       "file": "sources/gb-power/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.gbpower.net/Product/7695821641.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Frequency 60HZ | CUMMINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
+      ],
+      "file": "sources/gb-power/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.gbpower.net/Product/1367591351.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Frequency 50HZ | CUMMINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
+      ],
+      "file": "sources/gb-power/114.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.gbpower.net/Product/4095734541.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Frequency 50HZ | PERKINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
+      ],
+      "file": "sources/gb-power/116.md"
+    },
+    {
+      "n": 117,
+      "url": "https://www.gbpower.net/Product/278190650.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Frequency 60HZ | PERKINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)"
+      ],
+      "file": "sources/gb-power/117.md"
     },
     {
       "n": 1001,
@@ -929,6 +969,164 @@
         "| GB-500 | 550/440 | 500/400 | GB12V138TAD | 370*148*220 | 530*165*230 |",
         "| GB-550 | 605/484 | 550/440 | GB12V135TAD | 370*148*220 | 530*165*230 |",
         "| GB-625 | 688/550 | 625/500 | GB12V13850 | 370*148*220 | 530*165*230 |"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "SILENT TYPE POWER BY CUMMINS (60HZ)-GB Power",
+      "header": [
+        "| | Frequency 60HZ | CUMMINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)",
+        "| Model | Standby (KVA/KW) | Prime (KVA/KW) | Open Type | Soundproof"
+      ],
+      "rows": [
+        "| GB-C25 | 28/22 | 25/20 | 4B3.9-G1 | 182*76*128 | 220*90*110 |",
+        "| GB-C30 | 33/26.4 | 30/24 | 4B3.9-G2 | 182*76*128 | 220*90*110 |",
+        "| GB-C40 | 44/35.2 | 40/32 | 4BT3.9-G1 | 182*76*128 | 220*104*158 |",
+        "| GB-C63 | 69/55 | 63/50 | 4BTA3.9-G1 | 182*76*128 | 238*104*158 |",
+        "| GB-C100 | 110/88 | 100/80 | 6BT5.9-G1 | 223*83*149 | 276*112*173 |",
+        "| GB-C125 | 138/110 | 125/100 | 6BTA5.9-G2 | 223*83*149 | 323*115*178 |",
+        "| GB-C150 | 165/132 | 150/120 | 6BTAA5.9-G2 | 223*83*152 | 323*115*178 |",
+        "| GB-C175 | 193/154 | 175/140 | 6CTA8.3-G2 | 248*88*149 | 323*115*178 |",
+        "| GB-C200 | 212/170 | 200/160 | 6CTA8.3-G2 | 248*88*149 | 323*115*178 |",
+        "| GB-C220 | 242/194 | 220/176 | 6CTAA8.3-G2 | 250*83*150 | 359*116*203 |",
+        "| GB-C250 | 275/220 | 250/200 | 6LTAA8.9-G2 | 250*83*150 | 359*116*203 |",
+        "| GB-C300 | 330/264 | 300/240 | NTA855-G1 | 307*110*185 | 423*144*220 |",
+        "| GB-C350 | 385/308 | 350/280 | NTA855-G1B | 307*110*185 | 423*144*220 |",
+        "| GB-C400 | 440/352 | 400/320 | NTA855-G3 | 307*110*185 | 423*144*220 |",
+        "| GB-C450 | 495/396 | 450/360 | KTA19-G2 | 340*126*205 | 463*164*230 |",
+        "| GB-C500 | 550/440 | 500/400 | KTA19-G3 | 340*126*205 | 463*164*230 |",
+        "| GB-C562 | 625/500 | 562/450 | KTA19-G4 | 340*126*205 | 463*164*230 |",
+        "| GB-C688 | 756/605 | 688/550 | KTAA19-G6A | 365*164*205 | 503*184*253 |",
+        "| GB-C750 | 825/660 | 750/600 | KT38-G | 455*210*232 | 20ft container |",
+        "| GB-C900 | 990/792 | 900/720 | KTA38-G2 | 455*210*232 | 20ft container |",
+        "| GB-C1000 | 1100/880 | 1000/800 | KTA38-G2A | 455*210*232 | 20ft container |",
+        "| GB-C1125 | 1238/990 | 1125/900 | KTA38-G4 | 455*210*232 | 20ft container |",
+        "| GB-C1250 | 1375/1100 | 1250/1000 | KTA38-G9 | 500*220*220 | 20ft container |",
+        "| GB-C1500 | 1650/1320 | 1500/1200 | KTA50-G9 | 500*220*220 | 20ft container |"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "SILENT TYPE POWER BY CUMMINS (50HZ）-GB Power",
+      "header": [
+        "| | Frequency 50HZ | CUMMINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)",
+        "| Model | Standby (KVA/KW) | Prime (KVA/KW) | Open Type | Soundproof"
+      ],
+      "rows": [
+        "| GB-C25 | 28/22 | 25/20 | 4B3.9-G | 182*76*128 | 220*104*158 |",
+        "| GB-C35 | 39/31 | 35/28 | 4BT3.9-G1 | 182*76*128 | 220*104*158 |",
+        "| GB-C40 | 44/35 | 40/32 | 4BT3.9-G2 | 182*76*128 | 220*104*158 |",
+        "| GB-C50 | 55/44 | 50/40 | 4BTA3.9-G2 | 182*76*128 | 238*104*158 |",
+        "| GB-C60 | 66/52.8 | 60/48 | 4BTA3.9-G2 | 182*76*128 | 238*104*158 |",
+        "| GB-C90 | 100/80 | 90/72 | 6BTA5.9-G | 223*83*149 | 276*112*173 |",
+        "| GB-C100 | 110/88 | 100/80 | 6BT5.9-G2 | 223*83*149 | 323*115*178 |",
+        "| GB-C125 | 138/110 | 125/100 | 6BTA5.9-G2 | 223*83*149 | 323*115*178 |",
+        "| GB-C140 | 154/123 | 140/112 | 6BTAA5.9-G2 | 223*83*149 | 323*115*178 |",
+        "| GB-C180 | 200/160 | 180/144 | 6CTA8.3-G2 | 248*88*149 | 323*115*178 |",
+        "| GB-C200 | 220/176 | 200/160 | 6CTAA8.3-G2 | 248*88*149 | 323*115*178 |",
+        "| GB-C250 | 275/220 | 250/200 | 6LTAA8.9-G2 | 248*88*149 | 359*124*203 |",
+        "| GB-C300 | 330/264 | 300/240 | NTA855-G1A | 248*88*149 | 359*124*203 |",
+        "| GB-C325 | 358/286 | 325/260 | NTA855-G1B | 250*83*150 | 359*124*203 |",
+        "| GB-C350 | 385/308 | 350/280 | NTA855-G2A | 302*110*185 | 423*144*220 |",
+        "| GB-C400 | 440/352 | 400/320 | NTAA855-G7A | 302*110*185 | 423*144*220 |",
+        "| GB-C450 | 500/400 | 450/360 | KTA19-G3 | 340*126*205 | 463*164*230 |",
+        "| GB-C500 | 550/440 | 500/400 | KTA19-G4 | 340*126*205 | 463*164*230 |",
+        "| GB-C550 | 605/484 | 550/440 | KTAA19-G5 | 365*164*205 | 503*184*253 |",
+        "| GB-C600 | 660/528 | 600/480 | KTAA19-G8 | 365*164*205 | 503*184*253 |",
+        "| GB-C625 | 688/550 | 625/500 | KTAA19-G6A | 365*164*205 | 503*184*253 |",
+        "| GB-C750 | 825/660 | 750/600 | KTA38-G2 | 450*178*243 | 20FT |",
+        "| GB-C800 | 880/704 | 800/640 | KTA38-G2B | 450*178*243 | 20FT |",
+        "| GB-C900 | 1000/800 | 900/720 | KTA38-G2A | 450*178*243 | 20FT |",
+        "| GB-C1000 | 1100/880 | 1000/800 | KTA38-G5 | 450*178*243 | 20FT |",
+        "| GB-C1125 | 1237/990 | 1125/900 | KTA38-G9 | 450*210*220 | 20FT |",
+        "| GB-C1250 | 1375/1100 | 1250/1000 | KTA50-G3 | 500*210*230 | 20FT |",
+        "| GB-C1400 | 1540/1232 | 1400/1120 | KTA50-G8 | 500*210*230 | 20FT |",
+        "| GB-C1500 | 1650/1320 | 1500/1200 | KTA50-GS8 | 500*210*230 | 20FT |",
+        "| GB-C1875 | 2062/1650 | 1875/1500 | QSK60-G3 | 600*220*260 | 40HQ |",
+        "| GB-C2045 | 2250/1800 | 2050/1636 | QSK60-G4 | 600*220*260 | 40HQ |"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "SUPER SILENT POWER BY PERKINS (50HZ) -GB Power",
+      "header": [
+        "| | Frequency 50HZ | PERKINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)",
+        "| Model | Standby (KVA/KW) | Prime (KVA/KW) | Open Type | Soundproof"
+      ],
+      "rows": [
+        "| GB-P10 | 11/8.8 | 10/8.0 | 403D-11G | 140*55*110 | 208*90*120 |",
+        "| GB-P12.5 | 14/11 | 12.5/10 | 403D-15G | 140*55*110 | 228*100*120 |",
+        "| GB-P20 | 22/17.6 | 20/16 | 404D-22G | 145*65*120 | 228*100*120 |",
+        "| GB-P25 | 27.5/22 | 25/20 | 404D-22TG | 145*65*120 | 228*100*120 |",
+        "| GB-P30 | 33/26.4 | 30/24 | 1103A-33G | 165*75*125 | 268*113*130 |",
+        "| GB-P40 | 44/35.2 | 40/32 | 1103A-33TG1 | 175*75*125 | 268*113*130 |",
+        "| GB-P45 | 50/40 | 45/36 | 1103A-33TG1 | 175*75*125 | 268*113*130 |",
+        "| GB-P50 | 55/44 | 50/40 | 1103A-33TG2 | 175*75*125 | 268*113*130 |",
+        "| GB-P60 | 66/52 | 60/48 | 1103A-33TG2 | 175*75*125 | 308*113*130 |",
+        "| GB-P65 | 71.5/57.2 | 65/52 | 1104A-44TG1 | 185*90*135 | 308*113*130 |",
+        "| GB-P80 | 88/70.4 | 80/64 | 1104A-44TG2 | 185*90*135 | 308*113*130 |",
+        "| GB-P90 | 100/80 | 90/72 | 1106TG1A | 230*96*148 | 320*116*184 |",
+        "| GB-P100 | 110/88 | 100/80 | 1104C-44TAG2 | 230*96*148 | 338*114*150 |",
+        "| GB-P135 | 150/120 | 135/108 | 1006TAG | 230*96*148 | 320*116*184 |",
+        "| GB-P150 | 165/132 | 150/120 | 1006TAG2 | 230*96*148 | 380*124*170 |",
+        "| GB-P180 | 198/158.4 | 180/144 | 1106C-E66TAG4 | 240*98*160 | 380*124*170 |",
+        "| GB-P200 | 220/176 | 200/160 | 1106A-E70TAG4 | 250*100*165 | 380*124*170 |",
+        "| GB-P230 | 253/202 | 230/184 | 1306C-E87TAG4 | 250*100*165 | 360*135*195 |",
+        "| GB-P250 | 275/220 | 250/200 | 1306A-E87TAG6 | 250*100*165 | 390*124*172 |",
+        "| GB-P300 | 330/264 | 300/240 | 1606A-E93TAG5 | 300*115*198 | 390*124*173 |",
+        "| GB-P350 | 385/308 | 350/280 | 2206A-E13TAG2 | 340*115*198 | 450*150*210 |",
+        "| GB-P400 | 440/352 | 400/320 | 2206A-E13TAG3 | 340*115*198 | 450*150*211 |",
+        "| GB-P500 | 550/440 | 500/400 | 2506C-E15TAG1 | 380*125*210 | 540*169*230 |",
+        "| GB-P500 | 550/440 | 500/400 | 2506C-E15TAG2 | 380*125*210 | 540*169*230 |",
+        "| GB-P600 | 660/528 | 600/480 | 2806A-E18TAG1A | 390*160*220 | 540*169*230 |",
+        "| GB-P625 | 687.5/550 | 625/500 | 2806C-E18TAG2 | 390*160*220 | 540*169*230 |",
+        "| GB-P700 | 770/616 | 700/560 | 4006-23TAG2A | 460*180*225 | 606*224*260 |",
+        "| GB-P750 | 825/660 | 750/600 | 4006-23TAG2A | 460*180*225 | 20FT |",
+        "| GB-P800 | 880/704 | 800/640 | 4006-23TAG3A | 540*165*245 | 20FT |",
+        "| GB-P1000 | 1100/880 | 1000/800 | 4008TAG2A | 540*165*245 | 20FT |",
+        "| GB-P1250 | 1375/1100 | 1250/1000 | 4012-46TWG2A | 560*200*245 | 40HQ |",
+        "| GB-P1500 | 1650/1320 | 1500/1200 | 4012-46TAG2A | 560*200*245 | 40HQ |",
+        "| GB-P1650 | 1815/1452 | 1650/1320 | 4012-46TAG3A | 560*220*260 | 40HQ |",
+        "| GB-P1850 | 2035/1628 | 1850/1480 | 4016-TAG1A | 560*220*260 | 40HQ |",
+        "| GB-P2200 | 2420/1936 | 2200/1760 | 4016-61TRG3A | 560*200*260 | 40HQ |"
+      ]
+    },
+    {
+      "n": 117,
+      "title": "SUPER SILENT POWER BY PERKINS (60HZ)-GB Power",
+      "header": [
+        "| | Frequency 60HZ | PERKINS Diesel Engine | Dimension ( L * W *H ) (cm* cm * cm) | Detail Data (Click for detailed information)",
+        "| Model | Standby (KVA/KW) | Prime (KVA/KW) | Open Type | Soundproof"
+      ],
+      "rows": [
+        "| GB-P12.5 | 14/11 | 12.5/10 | 403D-11G | 140*65*110 | 208*90*120 |",
+        "| GB-P15 | 16.5/14 | 15/12 | 403D-15G | 140*65*110 | 208*90*120 |",
+        "| GB-P20 | 22/17.6 | 20/16 | 403A-15G2 | 145*65*110 | 208*90*120 |",
+        "| GB-P25 | 27.5/22 | 25/20 | 404D-22G | 145*65*120 | 228*100*120 |",
+        "| GB-P30 | 33/26.4 | 30/24 | 404D-22TG | 145*65*120 | 225*100*125 |",
+        "| GB-P35 | 39/31 | 35/28 | 1103A-33G | 165*75*125 | 250*100*157 |",
+        "| GB-P50 | 55/44 | 50/40 | 1103A-33TG1 | 175*75*125 | 268*113*130 |",
+        "| GB-P60 | 66/53 | 60/48 | 1103A-33TG2 | 175*75*125 | 260*100*157 |",
+        "| GB-P75 | 82.5/66 | 75/60 | 1104A-44TG1 | 185*90*135 | 308*113*130 |",
+        "| GB-P90 | 100/80 | 90/72 | 1104D-44TG2 | 185*90*135 | 308*113*130 |",
+        "| GB-P125 | 138/110 | 125/110 | 1106A-70TG1 | 240*98*160 | 340*115*195 |",
+        "| GB-P150 | 165/132 | 150/120 | 1106A-70TG1 | 240*98*160 | 380*124*170 |",
+        "| GB-P170 | 187/150 | 170/136 | 1106A-70TAG2 | 240*98*160 | 340*115*195 |",
+        "| GB-P200 | 220/176 | 200/160 | 1106A-70TAG3 | 240*98*160 | 380*124*170 |",
+        "| GB-P250 | 275/220 | 250/200 | 1506A-E88TAG2 | 250*100*165 | 390*124*172 |",
+        "| GB-P375 | 413/330 | 375/300 | 2206A-E13TAG5 | 340*115*198 | 440*145*225 |",
+        "| GB-P438 | 481/385 | 438/350 | 2206A-E13TAG6 | 340*115*198 | 440*145*225 |",
+        "| GB-P500 | 550/440 | 500/400 | 2506D-E15TAG1 | 380*125*210 | 540*169*230 |",
+        "| GB-P562 | 619/495 | 562/450 | 2506C-E15TAG2 | 380*125*210 | 540*169*230 |",
+        "| GB-P625 | 688/550 | 625/500 | 2806A-E18TAG2 | 390*160*220 | 540*169*230 |",
+        "| GB-P680 | 750/600 | 680/545 | 2806A-E18TAG3 | 390*160*220 | 606*244*260 |",
+        "| GB-P725 | 798/638 | 725/580 | 4006-23TAG2A | 460*180*225 | 606*244*260 |",
+        "| GB-P800 | 880/704 | 800/640 | 4006-23TAG3A | 460*165*225 | 20FT |",
+        "| GB-P1000 | 1100/880 | 1000/800 | 4008TAG2 | 500*165*225 | 20FT |",
+        "| GB-P1250 | 1375/1100 | 1250/1000 | 4012-46TWG2A | 540*165*245 | 40HQ |",
+        "| GB-P1400 | 1540/1232 | 1400/1120 | 4012-46TWG3A | 540*165*245 | 40HQ |",
+        "| GB-P1500 | 1650/1320 | 1500/1200 | 4012-46TAG2A | 560*200*245 | 40HQ |",
+        "| GB-P1750 | 1925/1540 | 1750/1400 | 4012-46TAG3A | 560*200*245 | 40HQ |"
       ]
     },
     {

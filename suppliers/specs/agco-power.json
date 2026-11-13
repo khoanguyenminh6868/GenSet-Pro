@@ -78,5 +78,21 @@
    "| Max torque | 1450-1680 Nm | 1000-1450 Nm | 715-950 Nm",
    "| | See details | See details |"
   ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.agcopower.com/browse-engines/",
+  "title": "Browse engines - AGCO Power",
+  "header": [
+   "| | | CORE80 | CORE75 | CORE50 | 98HD | 84HD | 74HD | 74HD Auxiliary | 74HD (Marine) | 66HD | 49HD | 44HD | 33HD | 44MD | 33MD | 33MD Mechanical | 74HD Propulsion | 66HD (Marine) | 49HD (Marine) | 44HD (Marine) | 84HD (PG) | 74HD (PG) | 49HD (PG) | 33HD (PG) | 84HD (Marine)",
+   "| Emission class | EU Stage V, US Tier 4F | EU Stage V, US Tier 4F | EU Stage V, US Tier 4F | MAR1 & Tier 3, US Tier 4F | EU Stage V, MAR1 & Tier 3, Non-regulated, Tier 2 (R96), US Tier 4F | China IV, EU Stage V, MAR1 & Tier 3, Non-regulated, US Tier 4F | Marine (EU Stage V, IMO Tier 3) | Marine (IMO Tier 2) | China IV, EU Stage V, MAR1 & Tier 3, Non-regulated, US Tier 4F | EU Stage V, MAR1 & Tier 3, Non-regulated, US Tier 4F | EU Stage V, Non-regulated, US Tier 4F | EU Stage V | China IV, EU Stage V, MAR1 & Tier 3, US Tier 4F | EU Stage V, MAR1 & Tier 3, Tier 2 (R96), US Tier 4F | MAR1 & Tier 3 | Marine (EU Stage V, IMO Tier 3) | Marine (IMO Tier 2) | Marine (IMO Tier 2) | Marine (IMO Tier 2) | Non-regulated | EU Stage V, Non-regulated | EU Stage V, Non-regulated | Non-regulated | Marine (IMO Tier 2)"
+  ],
+  "rows": [
+   "| Cylinders | 6 | 6 | 4 | 7 | 6 | 6 | 6 | 6 | 6 | 4 | 4 | 3 | 4 | 3 | 3 | 6 | 6 | 4 | 4 | 6 | 6 | 4 | 3 | 6",
+   "| Max output kW | 208-252 kW | 160-250 kW | 118-165 kW | 280-355 kW | 232-313 kW | 158-225 kW | 135-214 kW | 235 kW | 134-179 kW | 108-149 kW | 83-112 kW | 62-84 kW | 78-107 kW | 58-78 kW | 58 kW | 155-221 kW | 192 kW | 133 kW | 100 kW | 227 kW | 136-214 kW | 94-140 kW | 55 kW | 302 kW",
+   "| Max output hp | 283-343 hp | 218-340 hp | 160-224 hp | 381-483 hp | 315-462 hp | 215-306 hp | 184-291 hp | 320 hp | 182-243 hp | 147-203 hp | 113-152 hp | 84-114 hp | 106-145 hp | 79-106 hp | 79 hp | 211-301 hp | 258 hp | 178 hp | 134 hp | 304 hp | 182-287 hp | 128-190 hp | 74 hp | 405 hp",
+   "| Max torque | 1450-1680 Nm | 1000-1450 Nm | 715-950 Nm | 1698-1921 Nm | 1400-1750 Nm | 950-1280 Nm | 882-1275 Nm | 1100 Nm | 825-1000 Nm | 620-800 Nm | 497-650 Nm | 348-473 Nm | 560-440 Nm | 350-380 Nm | 300 Nm | 1950-1200 Nm | 910 Nm | 675 Nm | 515 Nm | | 972-1275 Nm | 620-800 Nm | | 1417 Nm",
+   "| | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details | See details"
+  ]
  }
 ]

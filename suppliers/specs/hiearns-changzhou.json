@@ -65,5 +65,53 @@
    "| 最大输出功率 (kw) | 12.5 | 12.5",
    "| 持续功率 (kw) | 12.0 | 12.0"
   ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.hiearns.com/Product/18mlflcyfdj.html",
+  "title": "18马力风冷柴油发动机,18马力柴油发动机生产厂家-海润机电",
+  "header": [],
+  "rows": [
+   "| Model 型号 | HR1102F",
+   "| Bore×Stroke 缸径 × 行程 (mm) | 102×88",
+   "| Displacement capacity 排量 (cc) | 718",
+   "| Speed 转速 (rpm) | 3000",
+   "| Rated output 持续功率 (kw) | 11.5",
+   "| Fuel 燃油 | o# or -10# light diesel oil 0# 或 -10 号轻柴油",
+   "| Fuel consumption rate 燃油消耗率 (g/kw.h) | 250",
+   "| Dimension 尺寸 (mm) | 530x530x595"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.hiearns.com/Product/198378.html",
+  "title": "18马力风冷柴油发动机,18马力柴油发动机生产厂家-海润机电",
+  "header": [],
+  "rows": [
+   "| Model 型号 | HR1105FD",
+   "| Bore×Stroke 缸径 × 行程 (mm) | 105×88",
+   "| Displacement capacity 排量 (cc) | 762",
+   "| Speed 转速 (rpm) | 3000/3600",
+   "| Rated output 持续功率 (kw) | 12",
+   "| Fuel 燃油 | o# or -10# light diesel oil 0# 或 -10 号轻柴油",
+   "| Fuel consumption rate 燃油消耗率 (g/kw.h) | 245",
+   "| Dimension 尺寸 (mm) | 545x620x725"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.hiearns.com/Product/3mlflcyj.html",
+  "title": "30马力风冷柴油机,30马力柴油机-海润机电",
+  "header": [],
+  "rows": [
+   "| Model 型号 | HR2V98F",
+   "| Bore×Stroke(mm) 缸径 × 行程 | 98×88",
+   "| Displacement capacity(cc) 排量 | 1326",
+   "| Speed(rpm) 转速 | 3000",
+   "| Rated output （ kw) 额定功率 | 20",
+   "| Fuel 燃油 | 0# (Summer) -10# (Winter) -20#(Cold Winter) -35# (Cold Winter) Light diesel oil 轻质柴油： 0# （夏季）， -10# （冬季）， -20# 或者 -35# （寒冬 )",
+   "| Fuel oil consumption rate(g/kw.h) 油耗 | 240",
+   "| Dimension(mm) 包装尺寸 | 570×580×660"
+  ]
  }
 ]

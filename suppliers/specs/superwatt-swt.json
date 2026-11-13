@@ -494,5 +494,423 @@
    "| Maximum wind resistance level | 20 m/s | 20m/s",
    "| 40-foot high cabinet installation capacity | 7 | 7"
   ]
+ },
+ {
+  "n": 121,
+  "url": "https://swt.cn/products/i9t-series-lighting-tower/",
+  "title": "i9T Series Lighting Tower | SWT",
+  "header": [],
+  "rows": [
+   "| Model | i9T4000 | i9T1200",
+   "| Dimensions | |",
+   "| Length | 2420mm | 2420mm",
+   "| Width | 1360mm | 1360mm",
+   "| Height | 3050 mm | 3050mm",
+   "| Loading container Height | 2570 mm | 2570 mm",
+   "| Full extending Height | 9 m | 9 m",
+   "| Genset power（1500/1800rpm-KW） | 6 | 3",
+   "| Gross weight | 850kg | 890kg",
+   "| Engine | |",
+   "| Model | D1105(Kubota） | D1105(Kubota）",
+   "| Speed(rpm) | 1500/1800 | 1500/1800",
+   "| Number of cylinders | 3 | 3",
+   "| Engine characters | 4 cycles, Water-cooled diesel | 4 cycles, Water-cooled diesel",
+   "| Combustion System | E-TVS | E-TVS",
+   "| Engine aspiration | Naturally aspirated | Naturally aspirated",
+   "| Emission leve | Regular | Regular"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://swt.cn/products/i9t-series-lighting-tower/",
+  "title": "i9T Series Lighting Tower | SWT",
+  "header": [],
+  "rows": [
+   "| Model | i9T4000 | i9T1200",
+   "| Dimensions | |",
+   "| Length | 2420mm | 2420mm",
+   "| Width | 1360mm | 1360mm",
+   "| Height | 3050 mm | 3050mm",
+   "| Loading container Height | 2570 mm | 2570 mm",
+   "| Full extending Height | 9 m | 9 m",
+   "| Genset power（1500/1800rpm-KW） | 6 | 3",
+   "| Gross weight | 850kg | 890kg",
+   "| Engine | |",
+   "| Model | D1105(Kubota） | D1105(Kubota）",
+   "| Speed(rpm) | 1500/1800 | 1500/1800",
+   "| Number of cylinders | 3 | 3",
+   "| Engine characters | 4 cycles, Water-cooled diesel | 4 cycles, Water-cooled diesel",
+   "| Combustion System | E-TVS | E-TVS",
+   "| Engine aspiration | Naturally aspirated | Naturally aspirated",
+   "| Emission leve | Regular | Regular",
+   "| Alternator | |",
+   "| Model | Mecc alte LT3N-130/4, or 100/4 | Mecc alte LT3N-130/4 or 100/4",
+   "| Frequency (HZ) | 50/60 | 50/60",
+   "| Rating voltage ( 50Hz) | 220/110V (50HZ), 240/120 (60HZ) AC | 220/110V (50HZ), 240/120 (60HZ) AC",
+   "| Alternator insulation | Class H | Class H",
+   "| Alternator protection grade | IP23 | IP23",
+   "| Mast & Lamps | |",
+   "| Type of Lights | Regular metal halide | LED Light",
+   "| Light’s fixture | Oval | Rectagle",
+   "| Luminous flux (LM) | 110000 LM/light | 42000 LM /Light",
+   "| Number & power of lights | 4 × 1000W | 4 x 300W",
+   "| Number of mast sections | 6 | 6",
+   "| Mast extension | Electric&Manual(Vertical, integrated winch) | Electric&Manual(Vertical, integrated winch)",
+   "| Mast rotation | 359° Manual rotation with self locking | 359° Manual rotation with self locking",
+   "| Wire rope material | Stainless steel | Stainless streel",
+   "| Light tilt | Manually | Manually",
+   "| Trailer | |",
+   "| Trailer suspension & axle with brakes | Leaf springs axle without brake | Leaf springs axle without brake",
+   "| Tow bar | A style frame with a supporting jack | A style frame with a supporting jack",
+   "| Stabilizing legs & number | 4 pcs drawable bar with manual jacks | 4 pcs drawable bar with manual jacks",
+   "| Wheel’s rim size & tires | 14″ Sunraysia rim with regular tires | 14″ Sunraysia rim with regular tires",
+   "| Tow adapter | 2″ ball coupler or 3″ pintle ring | 2″ ball coupler or 3″ pintle ring",
+   "| Tail lights | Complex tail lights | Complex tail lights",
+   "| Max towing speed | 80km/h | 80km/h",
+   "| Additional Features | |",
+   "| Fuel tank Type | Iron fuel tank（ Single-deck） | Iron fuel tank（ Single-deck）",
+   "| Fuel tank capacity | 100 liters | 100 liters",
+   "| Operating hours @ full lights load | 62 hours | 188 hours",
+   "| Generator starting type or controler | HGM1790（SMARTGEN） | HGM1790（SMARTGEN）",
+   "| Power outlet sockets | 1 unit of Euro standard 16A/220V single phase power outlet socket | 1 unit of Euro standard 16A/220V single phase power outlet socket",
+   "| Max. against wind when fully extended | 17.5m/s | 17.5m/s",
+   "| Acoustic pressure | 72dB(A) at 7 meters away | 72dB(A) at 7 meters away"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://swt.cn/products/kubota-series-small-diesel-generator-set/",
+  "title": "SWT Kubota Series Small Diesel Generator Set | SWT",
+  "header": [
+   "| Model | Engine | Freq. | Speed | Phase | Voltage | Prime Power | Standby Power | Aspiration | Configuration"
+  ],
+  "rows": [
+   "| SK8.3-1P | D1105-BG | 50Hz | 1500r/min | 1-phase | 230V | 6kW / 7.5kVA | 6.6kW / 8.3kVA | Naturally aspirated | Open / Silent / Super Silent",
+   "| SK16.5-1P | D1703-BG | 50Hz | 1500r/min | 1-phase | 230V | 12kW / 15kVA | 13.2kW / 16.5kVA | Naturally aspirated | Open / Silent / Super Silent",
+   "| SK25-1P | V2003-T-BG | 50Hz | 1500r/min | 1-phase | 230V | 18kW / 23kVA* | 20kW / 25kVA | Turbocharged | Open / Silent / Super Silent",
+   "| SK32.5 | V3300-BG | 50Hz | 1500r/min | 3-phase | 380/400/415V | 24kW / 30kVA* | 26kW / 32.5kVA | Naturally aspirated | Open / Silent / Super Silent",
+   "| SK8.8X-1P | D1105-BG | 60Hz | 1800r/min | 1-phase | 240V | 6.4kW / 8kVA | 7kW / 8.75kVA | Naturally aspirated | Open / Silent / Super Silent",
+   "| SK16.5X-1P | V1505-BG | 60Hz* | 1800r/min | 1-phase | 240V | 12kW / 15kVA | 13.2kW / 16.5kVA | Naturally aspirated | Open / Silent / Super Silent",
+   "| SK30X | V2003-T-BG | 60Hz | 1800r/min | 3-phase | 220/127V | 22kW / 27kVA | 24.2kW / 30kVA | Turbocharged | Open / Silent / Super Silent",
+   "| SK30X-1P | V2003-T-BG | 60Hz | 1800r/min* | 1-phase | 240V | 22kW / 27kVA* | 24.2kW / 30kVA | Turbocharged | Open / Silent / Super Silent"
+  ]
+ },
+ {
+  "n": 123,
+  "url": "https://swt.cn/products/swt-cummins-series-diesel-generator-set-product-page-500-572kw/",
+  "title": "SWT Cummins Series Diesel Generator Set Product Page 500–572kW | SWT",
+  "header": [
+   "| Model | Prime Power | Standby Power | Frequency | Rated Speed | Voltage | Power Factor"
+  ],
+  "rows": [
+   "| SC688 | 500kW / 625kVA | 550kW / 688kVA | 50Hz | 1500r/min | 400/230V | 0.8",
+   "| SC688X | 500kW / 625kVA | 550kW / 688kVA | 60Hz | 1800r/min | 440/460/480V | 0.8",
+   "| SC715 | 520kW / 650kVA | 572kW / 715kVA | 50Hz | 1500r/min | 380/400/415V | 0.8"
+  ]
+ },
+ {
+  "n": 124,
+  "url": "https://swt.cn/products/perkins-series-108kw-135kva-diesel-generator-set/",
+  "title": "Perkins 2806A-E18TAG2 Diesel Generator Set | SWT",
+  "header": [],
+  "rows": [
+   "| Rated Voltage | 380V/400V/415V",
+   "| Frequency | 50/60(Optional)",
+   "| Speed | 1500/1800(Optional)",
+   "| Starting system | 24V DC Electric Start",
+   "| Engine Model | 2806A-E18TAG2 PERKINS",
+   "| Power factor | 0.8",
+   "| Prime Power | 500kW/650kVA",
+   "| Standby Power | 550kW/700kVA"
+  ]
+ },
+ {
+  "n": 125,
+  "url": "https://swt.cn/products/perkins-series-1600kw-2000kva-diesel-generator-set/",
+  "title": "Perkins Series 1600kW / 2000kVA Diesel Generator Set | SWT",
+  "header": [],
+  "rows": [
+   "| Genset Model | SP2200",
+   "| Prime Power | 1600kW / 2000kVA",
+   "| Standby Power | 1760kW / 2200kVA",
+   "| Frequency | 50Hz",
+   "| Rated Speed | 1500r/min",
+   "| Rated Voltage | 380/400/415V",
+   "| Power Factor | 0.8",
+   "| Engine Matching | Perkins 4016TAG2A",
+   "| Alternator Rated Power | 1664kW / 2080kVA",
+   "| Alternator Protection | IP23",
+   "| Prime Power (PRP) | The unit can run continuously for 24 hours under variable load. 10% overload is allowed for 1 hour every 12 hours.",
+   "| Standby Power (ESP) | Designed for emergency use at an average load rate of 80%, for no more than 500 hours per year. No overload is allowed."
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://swt.cn/products/yuchai-series-2000kw-2500kva-diesel-generator-set/",
+  "title": "Yuchai Series 2000kW / 2500kVA Diesel Generator Set | SWT",
+  "header": [],
+  "rows": [
+   "| Genset Model | SY2750",
+   "| Prime Power | 2000kW / 2500kVA",
+   "| Standby Power | 2200kW / 2750kVA",
+   "| Frequency | 50Hz",
+   "| Rated Speed | 1500r/min",
+   "| Rated Voltage | 380/400/415V",
+   "| Power Factor | 0.8",
+   "| Engine Brand / Model | Yuchai YC16VC3300-D31",
+   "| Alternator Rated Power | 2000kW / 2500kVA",
+   "| Alternator Protection | IP23"
+  ]
+ },
+ {
+  "n": 127,
+  "url": "https://swt.cn/products/swt-perkins-series-200kw-250kva-diesel-generator-set/",
+  "title": "SWT Perkins Series 200kW / 250kVA Diesel Generator Set | SWT",
+  "header": [
+   "| Item | SP250 50Hz Configuration | SP250X 60Hz Configuration"
+  ],
+  "rows": [
+   "| Genset Model | SP250 | SP250X",
+   "| Prime Power | 184kW / 230kVA | 180kW / 225kVA",
+   "| Standby Power | 200kW / 250kVA | 200kW / 250kVA",
+   "| Frequency | 50Hz | 60Hz",
+   "| Rated Speed | 1500r/min | 1800r/min",
+   "| Rated Voltage | 380/400/415V | 220/127V",
+   "| Power Factor | 0.8 | 0.8",
+   "| Engine Brand | Perkins | Perkins",
+   "| Engine Model | 1206A-E70TTAG2 or 1206D-E70TTAG2 | 1206A-E70TTAG1 or 1206D-E70TTAG1",
+   "| Start Mode | DC24V electrical start | Electrical start",
+   "| Alternator Rated Power | 184kW / 230kVA | 204kW / 255kVA",
+   "| Phase | 3-phase | 3-phase",
+   "| Insulation Class | Class H | Class H",
+   "| Protection Grade | IP23 | IP23",
+   "| Standard Ambient Temperature | 40°C | 40°C",
+   "| Altitude Condition | ≤1000m | ≤1000m",
+   "| Humidity Condition | ≤60% | ≤60%"
+  ]
+ },
+ {
+  "n": 128,
+  "url": "https://swt.cn/products/cummins-diesel-generator-sets-24kw-440kw/",
+  "title": "SWT Cummins Diesel Generator Sets 24-440kW | SWT",
+  "header": [
+   "| Model | Frequency | Prime Power | Standby Power | Voltage | Speed | Engine Match"
+  ],
+  "rows": [
+   "| SCM30X | 60Hz | 22kW / 28kVA | 24kW / 30kVA | 220/127V | 1800r/min | 4B3.9-G2",
+   "| SCM43 | 50Hz | 31kW / 39kVA | 34kW / 43kVA | 380/400/415V | 1500r/min | 4BT3.9-G1",
+   "| SCM143X | 60Hz | 104kW / 130kVA | 114kW / 143kVA | 220/127V | 1800r/min | 6BTAA5.9-G2",
+   "| SCM200 | 50Hz | 144kW / 180kVA | 160kW / 200kVA | 380/400/415V | 1500r/min | 6CTA8.3-G1",
+   "| SCM350 | 50Hz | 256kW / 320kVA | 280kW / 350kVA | 380/400/415V | 1500r/min | MTA11-G3",
+   "| SCM415X | 60Hz | 302kW / 378kVA | 332kW / 415kVA | 440/460/480V | 1800r/min | 6ZTAA13-G3",
+   "| SCM483 | 50Hz | 351kW / 439kVA | 386kW / 483kVA | 380/400/415V | 1500r/min | 6ZTAA13-G2",
+   "| SCM490X | 60Hz | 348kW / 435kVA | 392kW / 490kVA | 440/460/480V | 1800r/min | KTA19-G2",
+   "| SCM550 | 50Hz | 400kW / 500kVA | 440kW / 550kVA | 380/400/415V | 1500r/min | QSX15-G8"
+  ]
+ },
+ {
+  "n": 129,
+  "url": "https://swt.cn/products/swt-perkins-series-diesel-generator-sets-7kw-203kw/",
+  "title": "Perkins Diesel Generator Sets, 7.2–203kW Range | SWT",
+  "header": [
+   "| Model | Frequency | Prime Power | Standby Power | Rated Voltage | Phase | Matched Engine Model"
+  ],
+  "rows": [
+   "| SP10 | 50Hz | 7.2kW / 9kVA | 8kW / 10kVA | 380/400/415V | 3-phase | 403D-11G",
+   "| SP14 | 50Hz | 10.4kW / 13kVA | 11.2kW / 14kVA | 380/400/415V | 3-phase | 403A-15G1",
+   "| SP22-1P | 50Hz | 16kW / 20kVA | 17.6kW / 22kVA | 220/230/240V | 1-phase | 404A-22G1",
+   "| SP73 | 50Hz | 53kW / 66kVA | 58kW / 73kVA | 380/400/415V | 3-phase | 1104A-44TG1",
+   "| SP200 | 50Hz | 144kW / 180kVA | 160kW / 200kVA | 380/400/415V | 3-phase | 1106A-70TAG3",
+   "| SP220 | 50Hz | 160kW / 200kVA | 176kW / 220kVA | 380/400/415V | 3-phase | 1106A-70ATG4",
+   "| SP11X-1P | 60Hz | 8kW / 10kVA | 8.8kW / 11kVA | 220/230/240V | 1-phase | 403D-11G",
+   "| SP17X-1P | 60Hz | 12.5kW / 16kVA | 14kW / 17kVA | 220/230/240V | 1-phase | 403D-15G",
+   "| SP34X-1P | 60Hz | 24.5kW / 31kVA | 27kW / 34kVA | 220/230/240V | 1-phase | 404D-22TG",
+   "| SP106X | 60Hz | N/A | 84kW / 106kVA | 220/127V | 3-phase | 1104D-E44TAG1",
+   "| SP226X | 60Hz | 164kW / 205kVA | 180kW / 226kVA | 220/127V | 3-phase | 1106D-E70TAG4",
+   "| SP254X | 60Hz | N/A | 203kW / 254kVA | 220/127V | 3-phase | 1106D-E70TAG5"
+  ]
+ },
+ {
+  "n": 130,
+  "url": "https://swt.cn/products/swt-perkins-series-diesel-generator-sets-8kw-203kw/",
+  "title": "SWT Perkins Series Diesel Generator Sets 8kw-203kw | SWT",
+  "header": [
+   "| Model | Engine Match | Frequency | Prime Power | Standby Power | Speed | Voltage | Phase"
+  ],
+  "rows": [
+   "| SP10 | 403D-11G | 50Hz | 7.2kW / 9kVA | 8kW / 10kVA | 1500r/min | 380/400/415V | 3-phase",
+   "| SP17-1P | 403A-15G2 | 50Hz | 12kW / 15kVA | 13kW / 17kVA | 1500r/min | 220/230/240V | 1-phase",
+   "| SP73 | 1104A-44TG1 | 50Hz | 53kW / 66kVA | 58kW / 73kVA | 1500r/min | 380/400/415V | 3-phase",
+   "| SP160 | 1106D-E70TAG2 | 50Hz | 116kW / 145kVA | 128kW / 160kVA | 1500r/min | 380/400/415V | 3-phase",
+   "| SP200 | 1106D-E70TAG4 | 50Hz | 144kW / 180kVA | 160kW / 200kVA | 1500r/min | 380/400/415V | 3-phase",
+   "| SP220 | 1106A-70TAG4 | 50Hz | 160kW / 200kVA | 176kW / 220kVA | 1500r/min | 380/400/415V | 3-phase",
+   "| SP11X-1P | 403D-11G | 60Hz | 8kW / 10kVA | 8.8kW / 11kVA | 1800r/min | 220/230/240V | 1-phase",
+   "| SP17X-1P | 403D-15G | 60Hz | 12.5kW / 16kVA | 14kW / 17kVA | 1800r/min | 220/230/240V | 1-phase",
+   "| SP19X-1P | 403A-15G2 | 60Hz | 14kW / 18kVA | 15kW / 19kVA | 1800r/min | 220/230/240V | 1-phase",
+   "| SP34X-1P | 404D-22TG | 60Hz | 24.5kW / 31kVA | 27kW / 34kVA | 1800r/min | 220/230/240V | 1-phase",
+   "| SP106X | 1104D-E44TAG1 | 60Hz | N/A | 84kW / 106kVA | 1800r/min | 220/127V | 3-phase",
+   "| SP130X | 1104D-E44TAG2 | 60Hz | N/A | 104kW / 130kVA | 1800r/min | 220/127V | 3-phase",
+   "| SP254X | 1106D-E70TAG5 | 60Hz | N/A | 203kW / 254kVA | 1800r/min | 220/127V | 3-phase"
+  ]
+ },
+ {
+  "n": 131,
+  "url": "https://swt.cn/products/swt-cummins-series-diesel-generator-sets-24kw-506kw/",
+  "title": "SWT Cummins Series Diesel Generator Sets 24kW-506kW | SWT",
+  "header": [
+   "| Model | Frequency | Prime Power | Standby Power | Voltage | Engine Option | Typical Positioning"
+  ],
+  "rows": [
+   "| SCM30 | 50Hz | 22kW / 27.5kVA | 24kW / 30kVA | 380/400/415V | Cummins 4B3.9-G2 | Three-phase compact power solution",
+   "| SCM30X | 60Hz | 22kW / 28kVA | 24kW / 30kVA | 220/127V | Cummins 4B3.9-G2 | 60Hz compact power solution",
+   "| SC550 | 50Hz | 400kW / 500kVA | 440kW / 550kVA | 380/400/415V | Cummins KTA19-G4 | Industrial standby and prime power",
+   "| SC550 | 50Hz | 400kW / 500kVA | 440kW / 550kVA | 380/400/415V | Cummins QSX15-G8 | Alternative SC550 configuration",
+   "| SC633X | 60Hz | 460kW / 575kVA | 506kW / 633kVA | 440/254V | Cummins KTA19-G4 | High-capacity 60Hz power solution"
+  ]
+ },
+ {
+  "n": 131,
+  "url": "https://swt.cn/products/swt-cummins-series-diesel-generator-sets-24kw-506kw/",
+  "title": "SWT Cummins Series Diesel Generator Sets 24kW-506kW | SWT",
+  "header": [],
+  "rows": [
+   "| Parameter | SCM30 | SCM30X | SC550 | SC633X",
+   "| Frequency | 50Hz | 60Hz | 50Hz | 60Hz",
+   "| Rated Speed | 1500r/min | 1800r/min | 1500r/min | 1800r/min",
+   "| Prime Power | 22kW / 27.5kVA | 22kW / 28kVA | 400kW / 500kVA | 460kW / 575kVA",
+   "| Standby Power | 24kW / 30kVA | 24kW / 30kVA | 440kW / 550kVA | 506kW / 633kVA",
+   "| Rated Voltage | 380/400/415V | 220/127V | 380/400/415V | 440/254V",
+   "| Power Factor | 0.8 | 0.8 | 0.8 | 0.8",
+   "| Starting Mode | DC24V electrical start | DC24V electrical start | Project configuration | Project configuration",
+   "| Operating Temperature | <=40 deg C | <=40 deg C | <=40 deg C | <=40 deg C",
+   "| Altitude | <=1000m | <=1000m | <=1000m | <=1000m",
+   "| Relative Humidity | <=60% | <=60% | <=60% | <=60%"
+  ]
+ },
+ {
+  "n": 132,
+  "url": "https://swt.cn/products/swt-yuchai-series-diesel-generator-sets-440kw-to-2200kw/",
+  "title": "SWT Yuchai Series Diesel Generator Sets 440kW to 2200kW | SWT",
+  "header": [
+   "| Model | Prime Power | Standby Power | Frequency | Speed | Voltage | Matched Engine"
+  ],
+  "rows": [
+   "| SY605 | 440kW / 550kVA | 484kW / 605kVA | 50Hz | 1500r/min | 380/400/415V | YC6TD780-D31",
+   "| SY688 | 500kW / 625kVA | 550kW / 688kVA | 50Hz | 1500r/min | 380/400/415V | YC6TD840-D31",
+   "| SY750 | 544kW / 680kVA | 600kW / 750kVA | 50Hz | 1500r/min | 380/400/415V | YC6TD900-D31",
+   "| SY1025 | 744kW / 930kVA | 820kW / 1025kVA | 50Hz | 1500r/min | 380/400/415V | YC6C1220-D31",
+   "| SY1250 | 910kW / 1138kVA | 1000kW / 1250kVA | 50Hz | 1500r/min | 380/400/415V | YC6C1520-D31",
+   "| SY3000 | 2200kW / 2750kVA | 2400kW / 3000kVA | 50Hz | 1500r/min | 380/400/415V | YC16VC3600-D31"
+  ]
+ },
+ {
+  "n": 133,
+  "url": "https://swt.cn/products/swt-mtu-series-1800kw-2250kva-diesel-generator-set/",
+  "title": "SWT MTU Series 1800kW / 2250kVA Diesel Generator Set | SWT",
+  "header": [],
+  "rows": [
+   "| Genset Model | SM2500",
+   "| Prime Power | 1800kW / 2250kVA",
+   "| Standby Power | 2000kW / 2500kVA",
+   "| Frequency | 50Hz",
+   "| Rated Speed | 1500r/min",
+   "| Rated Voltage | 380/400/415V",
+   "| Power Factor | 0.8",
+   "| Model | SM2500",
+   "| Prime Power (PRP) | 1800kW / 2250kVA",
+   "| Standby Power (ESP) | 2000kW / 2500kVA",
+   "| Engine Brand / Model | MTU 16V4000G24F",
+   "| Alternator Rated Output | 1800kW / 2250kVA",
+   "| Protection Class | IP23",
+   "| Phase | 3-phase"
+  ]
+ },
+ {
+  "n": 134,
+  "url": "https://swt.cn/products/spn-series-powered-by-perkins-50hz300kw-1000kw/",
+  "title": "SPN Series Powered by Perkins (50Hz:300kW-1000kW) | SWT",
+  "header": [
+   "| Genset models | Rated power | Engine model | Efficiency",
+   "| Electric | Heat | Total",
+   "| kWe | kVA | % | % | %"
+  ],
+  "rows": [
+   "| SPN375 | 300 | 375 | 4006-23TRS1 | 37.4 | 52.8 | 90.2",
+   "| SPN460 | 368 | 460 | 4006-23TRS2 | 38.4 | 47.1 | 85.5",
+   "| SPN525 | 420 | 525 | 4008-30TRS1 | 37.9 | 48.1 | 86.0",
+   "| SPN625 | 500 | 625 | 4008-30TRS2 | 38.5 | 46.4 | 84.9",
+   "| SPN1075 | 860 | 1075 | 4016-61TRS1 | 38.4 | 44.6 | 83.0",
+   "| SPN1250 | 1000 | 1250 | 4016-61TRS2 | 38.6 | 42.2 | 80.8"
+  ]
+ },
+ {
+  "n": 135,
+  "url": "https://swt.cn/products/swt-yuchai-series-diesel-generator-sets/",
+  "title": "SWT Yuchai Series Diesel Generator Sets | SWT",
+  "header": [
+   "| Model | Configuration Reference | Prime Power | Standby Power | Frequency | Voltage"
+  ],
+  "rows": [
+   "| SY33 | 4D24TG2 | 24kW / 30kVA | 26.4kW / 33kVA | 50Hz | 380/400/415V",
+   "| SY33 | YCDV254FHZ-40 | 24kW / 30kVA | 26.4kW / 33kVA | 50Hz | 400/230V",
+   "| SY41 | 4D24TG0 | 30kW / 38kVA | 33kW / 41kVA | 50Hz | 380/400/415V",
+   "| SY41 | YCDV254FHZ-50 | 30kW / 37.5kVA | 33kW / 41kVA | 50Hz | 400/230V",
+   "| SY55 | YC4D80-D34 | 40kW / 50kVA | 44kW / 55kVA | 50Hz | 380/400/415V",
+   "| SY55 | YCD4V33H6-75 | 40kW / 50kVA | 44kW / 55kVA | 50Hz | 400/230V",
+   "| SY69 | YC4D90-D34 | 50kW / 63kVA | 55kW / 69kVA | 50Hz | 380/400/415V",
+   "| SY83 | YC4D105-D34 | 60kW / 75kVA | 66kW / 83kVA | 50Hz | 380/400/415V",
+   "| SY156 | YCD6Q23H8-210 | 115kW / 144kVA | 125kW / 156kVA | 50Hz | 400/230V",
+   "| SY180 | YC6A230-D30 | 128kW / 160kVA | 144kW / 180kVA | 50Hz | 380/400/415V",
+   "| SY550 | YC6K660-D30 | 400kW / 500kVA | 440kW / 550kVA | 50Hz | 400/230V",
+   "| SY550 | YC6T660L-D31 | 400kW / 500kVA | 440kW / 550kVA | 50Hz | 380/400/415V",
+   "| SYM550 | YC6T660L-D31 + Mecc Alte | 400kW / 500kVA | 440kW / 550kVA | 50Hz | 380/400/415V"
+  ]
+ },
+ {
+  "n": 136,
+  "url": "https://swt.cn/products/swt-mtu-sml-series-diesel-generator-sets/",
+  "title": "SWT MTU SML Series Diesel Generator Sets | SWT",
+  "header": [
+   "| Model | Prime Power | Standby Power | Frequency | Voltage | Matched Engine"
+  ],
+  "rows": [
+   "| SML500 | 360kW / 450kVA | 400kW / 500kVA | 50Hz | 400/230V | MTU 10V1600G10F",
+   "| SML550 | 400kW / 500kVA | 440kW / 550kVA | 50Hz | 400/230V | MTU 10V1600G20F",
+   "| SML660 | 480kW / 600kVA | 528kW / 660kVA | 50Hz | 400/230V | MTU 12V1600G10F",
+   "| SML715 | 520kW / 650kVA | 572kW / 715kVA | 50Hz | 400/230V | MTU 12V1600G20F"
+  ]
+ },
+ {
+  "n": 137,
+  "url": "https://swt.cn/products/swt-perkins-series-diesel-generator-sets/",
+  "title": "Perkins Diesel Generator Sets, 495–1800kW Prime | SWT",
+  "header": [
+   "| Model | Frequency | Prime Power | Standby Power | Rated Voltage | Matched Engine Model"
+  ],
+  "rows": [
+   "| SP680 | 50Hz | 495kW / 619kVA | 544kW / 680kVA | 380/400/415V | 2806D-E18TAG1A",
+   "| SP825 | 50Hz | 600kW / 750kVA | 660kW / 825kVA | 380/400/415V | 4006-23TAG2A",
+   "| SP1250 | 50Hz | 906kW / 1133kVA | 1000kW / 1250kVA | 380/400/415V | 4008-30TAG3",
+   "| SP1815 | 50Hz | 1320kW / 1650kVA | 1452kW / 1815kVA | 380/400/415V | 4012-46TAG3A",
+   "| SP2275 | 50Hz | 1656kW / 2070kVA | 1820kW / 2275kVA | 380/400/415V | 4016TAG2A",
+   "| SP2500 | 50Hz | 1800kW / 2250kVA | 2000kW / 2500kVA | 380/400/415V | 4016-61TRG3",
+   "| SP840X | 60Hz | 612kW / 765kVA | 672kW / 840kVA | 440/460/480V | 4006-23TAG2A",
+   "| SP1390X | 60Hz | 1012kW / 1265kVA | 1112kW / 1390kVA | 440/460/480V | 4012-46TWG2A",
+   "| SP1687X | 60Hz | 1227kW / 1534kVA | 1350kW / 1687kVA | 440/460/480V | 4012-46TAG2A",
+   "| SP1870X | 60Hz | 1360kW / 1700kVA | 1496kW / 1870kVA | 440/460/480V | 4012-46TAG3A"
+  ]
+ },
+ {
+  "n": 138,
+  "url": "https://swt.cn/products/cummins-series-sc2500-diesel-generator-set/",
+  "title": "Cummins Series SC2500 Diesel Generator Set | SWT",
+  "header": [
+   "| Model | Engine Platform | Prime Power | Standby Power | Frequency | Rated Voltage"
+  ],
+  "rows": [
+   "| SC2500 | Cummins QSK60-G8 | 1800kW / 2250kVA | 2000kW / 2500kVA | 50Hz | 380 / 400 / 415V",
+   "| SC2500 | Cummins QSK60-G13 | 1600kW / 2000kVA | 2000kW / 2500kVA | 50Hz | 380 / 400 / 415V",
+   "| SC2500 | Cummins QSK60-G21 | 1800kW / 2250kVA | 2000kW / 2500kVA | 50Hz | 380 / 400 / 415V"
+  ]
  }
 ]

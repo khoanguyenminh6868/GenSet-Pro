@@ -739,5 +739,575 @@
    "| GK 4 LA steel | 140 | 16 | 19,2 | 83 | 84",
    "| GK 4 LB steel | 140 | 17,5 | 21 | 85 | 86"
   ]
+ },
+ {
+  "n": 134,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-4-poles-1-phase-brushless-capacitor-2/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 4 POLES - 1 PHASE - BRUSHES / AVR",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz"
+  ],
+  "rows": [
+   "| FK 4 MBA | 120 | 5,5 | 6,8 | 77 | 78",
+   "| FK 4 MCA | 120 | 6,5 | 8,1 | 79 | 80",
+   "| FK 4 MDA | 120 | 8 | 10 | 81 | 82",
+   "| FKR 4 LC steel | 132 | 10 | 12 | 83 | 84",
+   "| GKR 4 MB steel | 140 | 13,5 | 16,2 | 81 | 83",
+   "| GKR 4 LA steel | 140 | 16 | 19,2 | 83 | 84",
+   "| GKR 4 LB steel | 140 | 17,5 | 21 | 85 | 86"
+  ]
+ },
+ {
+  "n": 135,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-4-poles-1-phase-brushless-avr-supercompact/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 4 POLES - 1 PHASE - BRUSHLESS / AVR SUPERCOMPACT",
+  "header": [
+   "| model | kVA stand by 230V 50 Hz | kVA (S1) – H class 230V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | LEADS"
+  ],
+  "rows": [
+   "| SK 160 SZ1 | 7,7 | 7 | 82,6 | 4",
+   "| SK 160 SA1 | 9,9 | 9 | 84 | 4",
+   "| SK 160 CA1 | 13,2 | 12 | 86 | 4",
+   "| SK 160 CB1 | 15,4 | 14 | 87,1 | 4",
+   "| SK 160 MA1 | 19,8 | 18 | 88,8 | 4",
+   "| SK 160 LA1 | 24,2 | 22 | 89,8 | 4"
+  ]
+ },
+ {
+  "n": 136,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-4-poles-3-phase-brushes-compound/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP23 - 4 POLES - THREE PHASE - BRUSHES / COMPOUND - www.sogaenergyteam.com",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230/400V 50 Hz | kVA (S1) – H class 277/480V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+  ],
+  "rows": [
+   "| FT 4 MAS | 120 | 7 | 8,7 | 77 | 78",
+   "| FT 4 MBS | 120 | 9 | 11,2 | 79 | 80",
+   "| FT 4 MCS | 120 | 11 | 13,7 | 81 | 82",
+   "| FT 4 MDS | 120 | 13 | 16,2 | 83 | 84",
+   "| FT 4 LC steel | 132 | 17 | 20 | 84 | 85",
+   "| GT 4 MB steel | 140 | 22 | 26,4 | 87 | 88",
+   "| GT 4 LA steel | 140 | 27 | 32,4 | 88 | 89",
+   "| GT 4 LB steel | 140 | 30 | 36 | 89 | 90"
+  ]
+ },
+ {
+  "n": 137,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-4-poles-3-phase-brushes-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP23 - 4 POLES - 3 PHASE - BRUSHES / AVR",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230/400V 50 Hz | kVA (S1) – H class 277/480V 60 Hz | efficiency 4/4 p.f. 0,8 50 Hz | efficiency 4/4 p.f. 0,8 60 Hz"
+  ],
+  "rows": [
+   "| FT 4 MAR | 120 | 7 | 8,7 | 77 | 78",
+   "| FT 4 MBR | 120 | 9 | 11,2 | 79 | 80",
+   "| FT 4 MCR | 120 | 11 | 13,7 | 81 | 82",
+   "| FT 4 MDR | 120 | 13 | 16,2 | 83 | 84",
+   "| FTR 4 LC steel | 132 | 17 | 20 | 84 | 85",
+   "| GTR 4 MB steel | 140 | 22 | 26,4 | 87 | 88",
+   "| GTR 4 LA steel | 140 | 27 | 32,4 | 88 | 89",
+   "| GTR 4 LB steel | 140 | 30 | 36 | 89 | 90"
+  ]
+ },
+ {
+  "n": 138,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-4-poles-3-phase-brushless-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP23 - 4 POLES - THREE PHASE - BRUSHLESS / AVR - www.sogaenergyteam.com",
+  "header": [
+   "| model | kVA stand by 400V 50 Hz | kVA S1 – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | leads"
+  ],
+  "rows": [
+   "| FB 4 SA | 7 | 6,5 | 83 | 6",
+   "| FB 4 SB | 9 | 8 | 83,5 | 6",
+   "| FB 4 MA | 11 | 10 | 83,8 | 6",
+   "| FB 4 MB | 13 | 12 | 84,5 | 6",
+   "| HB 4 SA | 16,5 | 15 | 84 | 12",
+   "| HB 4 SB | 19,3 | 17,5 | 84,4 | 12",
+   "| HB 4 CA | 24,2 | 22 | 84,8 | 12",
+   "| IB 4 SA | 28 | 25 | 84,7 | 12",
+   "| IB 4 SB | 33 | 30 | 87,6 | 12",
+   "| IB 4 MA | 40 | 36 | 87,8 | 12",
+   "| IB 4 MB | 49,5 | 45 | 87,5 | 12",
+   "| IB 4 LA | 55 | 50 | 90,7 | 12",
+   "| SK 225 SM | 72 | 65 | 90 | 6",
+   "| SK 225 MS | 88 | 80 | 90,5 | 6",
+   "| SK 225 MR | 91 | 85 | 90,8 | 6",
+   "| SK 225 MM | 102 | 93 | 91,1 | 6",
+   "| SK 225 MN | 107 | 100 | 91,3 | 6",
+   "| SK 225 ML | 121 | 110 | 91,7 | 6",
+   "| SK 225 LS | 138 | 125 | 92,1 | 6",
+   "| SK 225 LM | 155 | 140 | 92,3 | 6",
+   "| SK 280 SL | 176 | 160 | 91,6 | 6",
+   "| SK 280 MS | 198 | 180 | 91,9 | 6",
+   "| SK 280 MM | 220 | 200 | 92,2 | 6",
+   "| SK 280 ML | 253 | 230 | 92,5 | 6",
+   "| SK 280 LS | 275 | 250 | 92,8 | 6",
+   "| SK 280 LM | 303 | 275 | 92,9 | 6",
+   "| SK 280 LL | 330 | 300 | 93,1 | 6",
+   "| SK 280 WM | 358 | 325 | 93,2 | 6",
+   "| SK 280 WL | 385 | 350 | 93,3 | 6",
+   "| SK 355 SS | 385 | 350 | 92,9 | 6",
+   "| SK 355 SM | 440 | 400 | 93,4 | 6",
+   "| SK 355 SL | 495 | 450 | 93,8 | 6",
+   "| SK 355 MS | 550 | 500 | 94,2 | 6",
+   "| SK 355 MM | 627 | 570 | 94,3 | 6",
+   "| SK 355 LS | 660 | 600 | 94,5 | 6",
+   "| SK 355 LM | 715 | 650 | 94,6 | 6",
+   "| SK 355 WL | 800 | 720 | 94,8 | 6",
+   "| SK 355 ZL | 880 | 800 | 95 | 6",
+   "| SK 400 SD | 858 | 800 | 94,7 | 6",
+   "| SK 400 SE | 966 | 900 | 94,9 | 6",
+   "| SK 400 SF | 1073 | 1000 | 95,1 | 6",
+   "| SK 400 SG | 1180 | 1100 | 95,2 | 6",
+   "| SK 450 ME | 1395 | 1300 | 95,6 | 6",
+   "| SK 450 MF | 1610 | 1500 | 95,8 | 6",
+   "| SK 450 MG | 1717 | 1600 | 95,9 | 6",
+   "| SK 450 LE | 1932 | 1800 | 96,1 | 6",
+   "| SK 500 MA | 2012 | 1875 | 95,5 | 4",
+   "| SK 500 MB | 2200 | 2000 | 96 | 4",
+   "| SK 500 MC | 2530 | 2300 | 96,2 | 4",
+   "| SK 500 MD | 2860 | 2600 | 96,4 | 4"
+  ]
+ },
+ {
+  "n": 139,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-ip23-low-voltage-ac-4-poles-3-phase-brushless-avr-supercompact/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP23- 4 POLES - THREE PHASE - BRUSHLESS / AVR SUPERCOMPACT - www.sogaenergyteam.com",
+  "header": [
+   "| model | kVA stand by 400V 50 Hz | kVA (S1) – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | LEADS"
+  ],
+  "rows": [
+   "| SK 160 SA | 9,4 | 8,5 | 78,1 | 12",
+   "| SK 160 CA | 12,1 | 11 | 80,3 | 12",
+   "| SK 160 CB | 15,4 | 14 | 83,3 | 12",
+   "| SK 160 MA | 19,3 | 17,5 | 84,5 | 12",
+   "| SK 160 MB | 22 | 20 | 86 | 12",
+   "| SK 160 LA | 27,5 | 25 | 87,4 | 12",
+   "| SK 160 LB | 33 | 30 | 87,6 | 12",
+   "| SK 160 WA | 39,6 | 36 | 87,8 | 12",
+   "| SK 160 WB | 44 | 40 | 87,9 | 12"
+  ]
+ },
+ {
+  "n": 140,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-low-voltage-ac-ip54-2-poles-1-phase-brushless-capacitor/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP54 - 2 POLES - SINGLE PHASE - BRUSHLESS / CAPACITOR - www.sogaenergyteam.com",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz"
+  ],
+  "rows": [
+   "| SSG 112 A2-C | 112 | 2,5 | 3",
+   "| SSG 112 C2-C | 112 | 4 | 4,8"
+  ]
+ },
+ {
+  "n": 141,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-low-voltage-ac-ip54-2-poles-1-phase-brushless-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP54 - 2 POLES - SINGLE PHASE - BRUSHLESS / AVR - www.sogaenergyteam.com",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz"
+  ],
+  "rows": [
+   "| SSG 132 MA2-A | 132 | 4,5 | 5,4",
+   "| SSG 132 MB2-A | 132 | 5,5 | 6,6",
+   "| SSG 132 LA2-A | 132 | 8 | 9,6",
+   "| SSG 132 WA2-A | 132 | 8,5 | 10,2",
+   "| SSG 132 ZX2-A | 132 | 10 | 12"
+  ]
+ },
+ {
+  "n": 142,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-low-voltage-ac-ip54-2-poles-3-phase-brushless-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP54 - 2 POLES - 3 PHASE - BRUSHLESS / AVR",
+  "header": [
+   "| model | frame size mm | kVA (S1) – H class 400V 50 Hz | kVA (S1) – H class 480V 60 Hz"
+  ],
+  "rows": [
+   "| SSG 132 MA2-R | 132 | 6 | 7,2",
+   "| SSG 132 MB2-R | 132 | 8 | 9,6",
+   "| SSG 132 LA2-R | 132 | 12 | 14,4",
+   "| SSG 132 WA2-R | 132 | 13 | 15,6",
+   "| SSG 132 ZX2-R | 132 | 16 | 19,2"
+  ]
+ },
+ {
+  "n": 143,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-2448-vdc-ip23-2-poles-24-vdc-brushes-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS 24/48 VDC IP23 - 2 POLES - 24 VDC - BRUSHES / AVR - www.sogaenergyteam.com",
+  "header": [
+   "| model | A | kW @28VDC"
+  ],
+  "rows": [
+   "| E3 2-24/120 | 120 | 3,4",
+   "| E3 2-24/180 | 180 | 5",
+   "| FT 2-24/350 | 350 | 9,8",
+   "| FT 2-24/500 | 500 | 14",
+   "| FT 2-24/600 | 600 | 16,8"
+  ]
+ },
+ {
+  "n": 144,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-2448-vdc-ip23-2-poles-24-vdc-brushless-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS 24/48 VDC IP23 - 2 POLES - 24 VDC - BRUSHLESS / AVR",
+  "header": [
+   "| model | A | kW @28 VDC"
+  ],
+  "rows": [
+   "| FB 2-24/300 | 300 | 8,4",
+   "| SK160 2-24/100 | 100 | 2,8",
+   "| SK160 2-24/150 | 150 | 4,2",
+   "| SK160 2-24/200 | 200 | 5,6",
+   "| SK160 2-24/250 | 250 | 7",
+   "| SK160 2-24/300 | 300 | 8,4",
+   "| SK160 2-24/400 | 400 | 11,2"
+  ]
+ },
+ {
+  "n": 145,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-2448-vdc-ip23-2-poles-48-vdc-brushes-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS 24/48 VDC IP23 - 2 POLES - 48 VDC - BRUSHES / AVR",
+  "header": [
+   "| model | A | kW @56 VDC"
+  ],
+  "rows": [
+   "| E3 2-48/60 | 60 | 3,4",
+   "| E3 2-48/100 | 100 | 5,6",
+   "| E3 2-48/150 | 150 | 8,4",
+   "| FT 2-48/250 | 250 | 14",
+   "| FT 2-48/300 | 300 | 16,8"
+  ]
+ },
+ {
+  "n": 146,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-2448-vdc-ip23-2-poles-48-vdc-brushless-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS 24/48 VDC IP23 - 2 POLES - 48 VDC - BRUSHLESS / AVR",
+  "header": [
+   "| model | A | kW @56 VDC"
+  ],
+  "rows": [
+   "| FB 2-48/250 | 250 | 14",
+   "| FB 2-48/300 | 300 | 16,8",
+   "| SK160 2-48/100 | 100 | 5,6",
+   "| SK160 2-48/150 | 150 | 8,4",
+   "| SK160 2-48/200 | 200 | 11,2",
+   "| SK160 2-48/250 | 250 | 14",
+   "| SK160 2-48/300 | 300 | 16,8",
+   "| SK160 2-48/400 | 400 | 22,4"
+  ]
+ },
+ {
+  "n": 147,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-2448-vdc-ip23-4-poles-24-vdc-brushes-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS 24/48 VDC IP23 - 4 POLES - 24 VDC - BRUSHES / AVR",
+  "header": [
+   "| model | A | kW @28 VDC"
+  ],
+  "rows": [
+   "| FT 4-24/200 | 200 | 5,6",
+   "| FT 4-24/300 | 300 | 8,4",
+   "| FT 4-24/400 | 400 | 11,2"
+  ]
+ },
+ {
+  "n": 148,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-2448-vdc-ip23-4-poles-24-vdc-brushless-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS 24/48 VDC IP23 - 4 POLES - 24 VDC - BRUSHLESS / AVR",
+  "header": [
+   "| model | A | kW @28 VDC"
+  ],
+  "rows": [
+   "| FB 4-24/200 | 200 | 5,6",
+   "| FB 4-24/250 | 250 | 7",
+   "| IB 4-24/500 | 500 | 14",
+   "| SK160 4-24/100 | 100 | 2,8",
+   "| SK160 4-24/150 | 150 | 4,2",
+   "| SK160 4-24/200 | 200 | 5,6",
+   "| SK160 4-24/250 | 250 | 7",
+   "| SK160 4-24/300 | 300 | 8,4",
+   "| SK160 4-24/400 | 400 | 11,2"
+  ]
+ },
+ {
+  "n": 149,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-2448-vdc-ip23-4-poles-48-vdc-brushes-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS 24/48 VDC IP23 - 4 POLES - 48 VDC - BRUSHES / AVR",
+  "header": [
+   "| model | A | kW @56 VDC"
+  ],
+  "rows": [
+   "| FT 4-48/100 | 100 | 5,6",
+   "| FT 4-48/150 | 150 | 8,4",
+   "| FT 4-48/200 | 200 | 11,2"
+  ]
+ },
+ {
+  "n": 150,
+  "url": "https://www.sogaenergyteam.com/products/alternators-constant-speed-synchronous-2448-vdc-ip23-4-poles-48-vdc-brushless-avr/",
+  "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS 24/48 VDC IP23 - 4 POLES - 48 VDC - BRUSHLESS / AVR",
+  "header": [
+   "| model | A | kW @56 VDC"
+  ],
+  "rows": [
+   "| FB 4-48/100 | 100 | 5,6",
+   "| FB 4-48/125 | 125 | 7",
+   "| FB 4-48/150 | 150 | 8,4",
+   "| FB 4-48/200 | 200 | 11,2",
+   "| IB 4-48/500 | 500 | 28",
+   "| IB 4-48/800 | 800 | 44,8",
+   "| SK160 4-48/100 | 100 | 5,6",
+   "| SK160 4-48/150 | 150 | 8,4",
+   "| SK160 4-48/200 | 200 | 11,2",
+   "| SK160 4-48/250 | 250 | 14",
+   "| SK160 4-48/300 | 300 | 16,8",
+   "| SK160 4-48/400 | 400 | 22,4"
+  ]
+ },
+ {
+  "n": 151,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-dc-direct-current-170a/",
+  "title": "WELDERS - 2 POLES - DC DIRECT CURRENT - 170A",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | DC WELDER A 35% | DC WELDER A 60% | AC GENERATOR kVA (S1) | FRAME SIZE (MM)"
+  ],
+  "rows": [
+   "| ED170 MDC/2 | 3000 | 9,5 | 170 | 130 | 3 230V 50 Hz | 100",
+   "| ED190 MDC/2 | 3600 | 11 | 190 | 140 | 3,5 240V 60 Hz | 100"
+  ]
+ },
+ {
+  "n": 152,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-dc-direct-current-200a/",
+  "title": "WELDERS - 2 POLES - DC DIRECT CURRENT - 200A",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | DC WELDER A 35% | DC WELDER A 60% | AC GENERATOR kVA (S1) | FRAME SIZE (MM)"
+  ],
+  "rows": [
+   "| ED200 MDC/2 | 3000 | 11,5 | 200 | 170 | 4 230V 50 Hz | 100",
+   "| ED210 MDC/2 | 3600 | 13 | 210 | 170 | 4 240V 60 Hz | 100"
+  ]
+ },
+ {
+  "n": 153,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-dc-direct-current-220a-electromechanical/",
+  "title": "WELDERS - 2 POLES - DC DIRECT CURRENT - 220A - ELECTROMECHANICAL",
+  "header": [
+   "| model | ENGINE RPM | DC WELDER A 35% | DC WELDER A 60% | AC GENERATOR kVA (S1) | AC GENERATOR kVA (S1) | FRAME SIZE (MM)"
+  ],
+  "rows": [
+   "| ED220 TDC/2 | 3000 | 220 | 170 | 6,5 400V 50 Hz | 3,5 230V 50 Hz | 100",
+   "| ED240 TDC/2 | 3600 | 240 | 180 | 7,5 480V 60 Hz | 3,5 240V 60 Hz | 100",
+   "| ED220 MDC/2 | 3000 | 220 | 170 | – 400V 50 Hz | 5 230V 50 Hz | 100",
+   "| ED240 MDC/2 | 3600 | 240 | 180 | – 480V 60 Hz | 5,5 240V 60 Hz | 100"
+  ]
+ },
+ {
+  "n": 154,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-dc-direct-current-220a-scr/",
+  "title": "WELDERS - 2 POLES - DC DIRECT CURRENT - 220A - SCR",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | DC WELDER A 35% | DC WELDER A 60% | AC GENERATOR kVA (S1) | AC GENERATOR kVA (S1) | FRAME SIZE (MM)"
+  ],
+  "rows": [
+   "| SW-E220 TDC/2 | 3000 | 12,5 | 220 | 170 | 6,5 400V 50 Hz | 3 230V 50 Hz | 100",
+   "| SW-E250 TDC/2 | 3600 | 16 | 250 | 190 | 8,5 3X240V 60 Hz | 6 240V 60 Hz | 100"
+  ]
+ },
+ {
+  "n": 155,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-dc-direct-current-300a-electromechanical/",
+  "title": "WELDERS - 2 POLES - DC DIRECT CURRENT - 300A - ELECTROMECHANICAL",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | DC WELDER A 35% | DC WELDER A 60% | AC GENERATOR kVA (S1) | AC GENERATOR kVA (S1) | FRAME SIZE (MM)"
+  ],
+  "rows": [
+   "| ARC300 TDC/2 | 3000 | 20 | 300 | 250 | 8 400V 50 Hz | 3 230V 50 Hz | 120",
+   "| ARC300 TDC/2 | 3600 | 20 | 300 | 250 | 10 480V 60 Hz | 3,5 240V 60 Hz | 120",
+   "| ARC300 MDC/2 | 3000 | 20 | 300 | 250 | – 400V 50 Hz | 6 230V 50 Hz | 120",
+   "| ARC300 MDC/2 | 3600 | 20 | 300 | 250 | – 480V 60 Hz | 7 240V 60 Hz | 120"
+  ]
+ },
+ {
+  "n": 156,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-dc-direct-current-300a-scr/",
+  "title": "WELDERS - 2 POLES - DC DIRECT CURRENT - 300A - SCR",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | DC WELDER A 35% | DC WELDER A 60% | AC GENERATOR kVA (S1) | AC GENERATOR kVA (S1) | FRAME SIZE (MM)"
+  ],
+  "rows": [
+   "| SW-F300 TDC/2 | 3000 | 20 | 300 | 250 | 10 400V 50 Hz | 4 230V 50 Hz | 120",
+   "| SW-F300 TDC/2 | 3600 | 20 | 300 | 250 | on request | on request | 120",
+   "| SW-F300 MDC/2 | 3000 | 20 | 300 | 250 | – 400V 50 Hz | 6 230V 50 Hz | 120",
+   "| SW-F300 MDC/2 | 3600 | 20 | 300 | 250 | on request | on request | 120"
+  ]
+ },
+ {
+  "n": 157,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-dc-direct-current-400a/",
+  "title": "WELDERS - 2 POLES - DC DIRECT CURRENT - 400A",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | DC WELDER A 35% | DC WELDER A 60% | AC GENERATOR kVA (S1) | AC GENERATOR kVA (S1) | FRAME SIZE (MM)"
+  ],
+  "rows": [
+   "| ARC400 TDC/2 | 3000 | 30 | 400 | 320 | 10 400V 50 Hz | 4 230V 50 Hz | 140",
+   "| ARC400 TDC/2 | 3600 | 30 | 400 | 320 | 12 480V 60 Hz | 5 240V 60 Hz | 140"
+  ]
+ },
+ {
+  "n": 158,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-dc-alternating-current-130a/",
+  "title": "WELDERS - 2 POLES - DC ALTERNATING CURRENT - 130A",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | AC WELDER A 35% | AC WELDER A 60% | AC GENERATOR kVA (S1) | IP"
+  ],
+  "rows": [
+   "| EA130 MAC/2 | 3000 | 8,5 | 130 | 100 | 4 230V 50 Hz | 23",
+   "| EA140 MAC/2 | 3600 | 9 | 140 | 110 | 5 240V 60 Hz | 23"
+  ]
+ },
+ {
+  "n": 159,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-dc-alternating-current-180a/",
+  "title": "WELDERS - 2 POLES - DC ALTERNATING CURRENT - 180A",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | AC WELDER A 35% | AC WELDER A 60% | AC GENERATOR kVA (S1) | IP"
+  ],
+  "rows": [
+   "| EA180 MAC/2 | 3000 | 11 | 180 | 125 | 5 230V 50 Hz | 23",
+   "| EA190 MAC/2 | 3600 | 12 | 190 | 135 | 6 240V 60 Hz | 23"
+  ]
+ },
+ {
+  "n": 160,
+  "url": "https://www.sogaenergyteam.com/products/welders-2-poles-ac-alternating-current-200a/",
+  "title": "WELDERS - 2 POLES - AC ALTERNATING CURRENT - 200A",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | AC WELDER A 35% | AC WELDER A 60% | AC GENERATOR kVA (S1) | IP"
+  ],
+  "rows": [
+   "| EA200 MAC/2 | 3000 | 12 | 200 | 180 | 7 230V 50 Hz | 23",
+   "| EA220 MAC/2 | 3600 | 13 | 220 | 180 | 8 240V 60 Hz | 23"
+  ]
+ },
+ {
+  "n": 161,
+  "url": "https://www.sogaenergyteam.com/products/welders-4-poles-dc-direct-current-280a/",
+  "title": "WELDERS - 4 POLES - DC DIRECT CURRENT - 280A",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | DC WELDER A 35% | DC WELDER A 60% | AC GENERATOR kVA (S1) | AC GENERATOR kVA (S1) | FRAME SIZE (MM)"
+  ],
+  "rows": [
+   "| ARC280 TDC/4 | 1500 | 18,5 | 280 | 220 | 8 400V 50 Hz | 3 230V 50 Hz | 140",
+   "| ARC280 TDC/4 | 1800 | 18,5 | 280 | 220 | 10 480V 60 Hz | 4 240V 60 Hz | 140"
+  ]
+ },
+ {
+  "n": 162,
+  "url": "https://www.sogaenergyteam.com/products/welders-4-poles-dc-direct-current-500a/",
+  "title": "WELDERS - 4 POLES - DC DIRECT CURRENT - 500A",
+  "header": [
+   "| model | ENGINE RPM | ENGINE HP (SUGGESTED) | DC WELDER A 35% | DC WELDER A 60% | AC GENERATOR kVA (S1) | AC GENERATOR kVA (S1) | FRAME SIZE (MM)"
+  ],
+  "rows": [
+   "| SW-I500 TDC/4 | 1500 | 40 | 500 | 400 | 15 400V 50 Hz | 6 230V 50 Hz | 160",
+   "| SW-I500 TDC/4 | 1800 | 40 | 500 | 400 | 16 416V 60 Hz | 6,5 480V 60 Hz | 160"
+  ]
+ },
+ {
+  "n": 163,
+  "url": "https://www.sogaenergyteam.com/products/pto-generators-ip23-1-phase-blavr/",
+  "title": "PTO GENERATORS - IP23 - 1 PHASE - BRUSHLESS / AVR - 4 POLES / HEAVY DUTY - AGROWATT",
+  "header": [
+   "| model | kVA (S1) – H class 230V 50 Hz | kW driving power | HP (recommended) tractor power | rated rpm pto speed"
+  ],
+  "rows": [
+   "| AWBM 4-22 | 22 | 27,1 | 56 | 430",
+   "| AWBM 4-33 | 33 | 39,4 | 81 | 430",
+   "| AWBM 4-43 | 43 | 52,1 | 107 | 400"
+  ]
+ },
+ {
+  "n": 164,
+  "url": "https://www.sogaenergyteam.com/products/pto-generators-ip23-3-phase-brushes-compound-2-poles-light-duty/",
+  "title": "PTO GENERATORS - IP23 - 3 PHASE - BRUSHES / COMPOUND - 2 POLES / LIGHT DUTY - AGROWATT",
+  "header": [
+   "| model | kVA (S1) – H class 400V 50 Hz | kW driving power | HP (recommended) tractor power | rated rpm pto speed"
+  ],
+  "rows": [
+   "| AWT 2-13 | 13,5 | 13,4 | 42 | 430",
+   "| AWT 2-16 | 16 | 15,6 | 49 | 430",
+   "| AWT 2-18 | 18 | 17,4 | 55 | 430",
+   "| AWT 2-24 | 24 | 21,9 | 69 | 430",
+   "| AWT 2-27 | 27 | 26,2 | 83 | 430",
+   "| AWT 2-31 | 31,5 | 30,2 | 95 | 430",
+   "| AWT 2-38 | 38 | 35,6 | 112 | 430"
+  ]
+ },
+ {
+  "n": 165,
+  "url": "https://www.sogaenergyteam.com/products/pto-generators-ip23-3-phase-brushes-compound/",
+  "title": "PTO GENERATORS - IP23 - 3 PHASE - BRUSHES / COMPOUND - 4 POLES / HEAVY DUTY - AGROWATT",
+  "header": [
+   "| model | kVA (S1) – H class 400V 50 Hz | kW driving power | HP (recommended) tractor power | rated rpm pto speed"
+  ],
+  "rows": [
+   "| AWT 4-17 | 17,5 | 16,1 | 51 | 430",
+   "| AWT 4-22 | 22 | 20,9 | 66 | 430",
+   "| AWT 4-27 | 27 | 25,3 | 80 | 430",
+   "| AWT 4-30 | 30 | 27,7 | 87 | 430"
+  ]
+ },
+ {
+  "n": 166,
+  "url": "https://www.sogaenergyteam.com/products/pto-generators-ip23-3-phase-brushless-avr-4-poles-heavy-duty/",
+  "title": "PTO GENERATORS - IP23 - 3 PHASE - BRUSHLESS / AVR - 2 POLES / HEAVY DUTY - AGROWATT",
+  "header": [
+   "| model | kVA (S1) – H class 400V 50 Hz | kW driving power | HP (recommended) tractor power | rated rpm pto speed"
+  ],
+  "rows": [
+   "| AWB 4-17 | 17,5 | 17,1 | 54 | 430",
+   "| AWB 4-22 | 22 | 21,4 | 68 | 430",
+   "| AWB 4-25 | 25 | 24,3 | 77 | 430",
+   "| AWB 4-30 | 30 | 29 | 92 | 430",
+   "| AWB 4-45 | 45 | 42,4 | 124 | 430",
+   "| AWB 4-50 | 50 | 45,5 | 144 | 430",
+   "| AWB 4-65 | 65 | 59,6 | 202 | 400",
+   "| AWB 4-80 | 80 | 72,7 | 247 | 400",
+   "| AWB 4-100 | 100 | 89,7 | 297 | 400",
+   "| AWB 4-125 BUD | 125 | 111,3 | 367 | 1000",
+   "| AWB 4-140 BUD | 140 | 124,6 | 411 | 1000"
+  ]
+ },
+ {
+  "n": 167,
+  "url": "https://www.sogaenergyteam.com/products/pto-generators-ip44-1-phase-blavr-4-poles-heavy-duty-agrowatt/",
+  "title": "PTO GENERATORS - IP23 - 1 PHASE - BRUSHLESS / AVR - 4 POLES / HEAVY DUTY - AGROWATT",
+  "header": [
+   "| model | kVA (S1) – H class 230V 50 Hz | kW driving power | HP (recommended) tractor power | rated rpm pto speed"
+  ],
+  "rows": [
+   "| AWBM 4-20X | 20 | 24,4 | 50 | 430",
+   "| AWBM 4-30X | 30 | 35,4 | 73 | 430"
+  ]
+ },
+ {
+  "n": 168,
+  "url": "https://www.sogaenergyteam.com/products/pto-generators-ip44-3-phase-brushlessavr-4-poles-heavy-duty-agrowatt/",
+  "title": "PTO GENERATORS - IP44 - 3 PHASE - BRUSHLESS/AVR - 4 POLES / HEAVY DUTY - AGROWATT",
+  "header": [
+   "| model | kVA (S1) – H class 400V 50 Hz | kW driving power | HP (recommended) tractor power | rated rpm pto speed"
+  ],
+  "rows": [
+   "| AWB 4-15X | 15,8 | 15,2 | 48 | 430",
+   "| AWB 4-19X | 19,8 | 19 | 60 | 430",
+   "| AWB 4-22X | 22,5 | 21,6 | 68 | 430",
+   "| AWB 4-27X | 27 | 25,8 | 81 | 430",
+   "| AWB 4-40X | 40,5 | 35,1 | 111 | 430",
+   "| AWB 4-45X | 45 | 40,5 | 128 | 430",
+   "| AWB 4-58X | 58,5 | 53 | 180 | 400",
+   "| AWB 4-72X | 72 | 64,8 | 220 | 400",
+   "| AWB 4-90X | 90 | 80,5 | 266 | 400",
+   "| AWB 4-115X BUD | 115 | 99,6 | 329 | 1000",
+   "| AWB 4-130X BUD | 126 | 112 | 370 | 1000"
+  ]
  }
 ]

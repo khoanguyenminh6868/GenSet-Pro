@@ -61,9 +61,215 @@
         "Wärtsilä 31DF dual fuel engine"
       ],
       "file": "sources/wartsila/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.wartsila.com/marine/products/engines-and-generating-sets/generating-sets/wartsila-gensets",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Cylinder bore | 200 mm | Generator voltage | 0.4 - 13.8 kV"
+      ],
+      "file": "sources/wartsila/101.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [],
+      "rows": [
+        "| Cylinder bore | 200 mm | Generator voltage | 0.4 - 13.8 kV",
+        "| Piston stroke | 280 mm | Generator efficiency | 0.95 - 0.96",
+        "| Cylinder output | 160, 195 kW/cyl | Fuel specification: | Fuel oil",
+        "| Speed | 1000, 1200 rpm | 700 cSt/50°C |"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [],
+      "rows": [
+        "| | 60 Hz | 50 Hz",
+        "| Engine type | 195 kW/cyl, 1200 rpm | 160 kW/cyl, 1000 rpm",
+        "| 6L20DF | 1170 | 1123 | 960 | 920",
+        "| 8L20DF | 1560 | 1498 | 1280 | 1230",
+        "| 9L20DF | 1755 | 1685 | 1440 | 1380"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [
+        "| W&auml;rtsil&auml; 25DF generating set | IMO Tier III |"
+      ],
+      "rows": [
+        "| Cylinder bore | 250 mm | Generator voltage | 0.4 - 13.8 kV",
+        "| Piston stroke | 340 mm | Generator efficiency | 0.95-0.96",
+        "| Cylinder output | 315 / 345 kW/cyl | Fuel specification | Fuel oil",
+        "| Speed | 900 / 1000 rpm | | 6 cSt/40 ˚ C",
+        "| Mean effective pressure | 25 bar | | ISO 8217, category ISO-F-DMX, DMA, DFA, DMZ, DFZ. Biodiesel (FAME, HVO)",
+        "| Piston speed | 10.2 / 11.3 m/s | | BSEC 7560 kj/kWh at ISO conditions",
+        "| | 60Hz | 50Hz",
+        "| | 315 kW/cyl, 900 rpm | 345 kW/cyl, 1000 rpm",
+        "| Engine type | Eng. kW | Gen. kW (0,96) | Eng. kW | Gen. kW (0,96)",
+        "| 6L25DF | 1890 | 1814 | 2070 | 1987",
+        "| 7L25DF | 2205 | 2117 | 2415 | 2318",
+        "| 8L25DF | 2520 | 2419 | 2760 | 2650",
+        "| 9L25DF | 2835 | 2722 | 3105 | 2981"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [],
+      "rows": [
+        "| Engine type | 60 Hz | 50 Hz",
+        "| 580 kW/cyl, 720 rpm | 600 kW/cyl, 750 rpm",
+        "| 8V31DF | 4 640 | 4 450 | 4 800 | 4 610",
+        "| 10V31DF | 5 800 | 5 570 | 6 000 | 5 760",
+        "| 12V31DF | 6 960 | 6 680 | 7 200 | 6 910",
+        "| 14V31DF | 8 120 | 7 790 | 8 400 | 8 060",
+        "| 16V31DF | 9 280 | 8 910 | 9 600 | 9 220"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [],
+      "rows": [
+        "| Cylinder bore | 340 mm | Generator voltage | 0.4 - 13.8 kV",
+        "| Piston stroke | 400 mm | Generator efficiency | 0.95 - 0.97",
+        "| Cylinder output | 480, 500 kW/cyl | Fuel specification: | Fuel oil",
+        "| Speed | 720, 750 rpm | 700 cSt/50°C |"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [],
+      "rows": [
+        "| | 60 Hz | 50 Hz",
+        "| Engine type | 480 kW/cyl, 720 rpm | 500 kW/cyl, 750 rpm",
+        "| 6L34DF | 2880 | 2770 | 3000 | 2890",
+        "| 8L34DF | 3840 | 3490 | 4000 | 3840",
+        "| 9L34DF | 4320 | 4150 | 4500 | 4320",
+        "| 12V34DF | 5760 | 5530 | 6000 | 5770",
+        "| 16V34DF | 7680 | 7370 | 8000 | 7680"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [],
+      "rows": [
+        "| Cylinder bore | 200 mm | Generator voltage | 0.4 - 13.8 kV",
+        "| Piston stroke | 280 mm | Generator efficiency | 0.95 - 0.96",
+        "| Cylinder output | 185, 200 kW/cyl | Fuel specification | Fuel oil",
+        "| Speed | 900, 1000rpm | 700 cSt/50°C |"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [],
+      "rows": [
+        "| | 60 Hz | 50 Hz",
+        "| Engine type | 185 kW/cyl, 900 rpm | 220 kW/cyl, 1200 rpm | 200 kW/cyl, 1000 rpm",
+        "| 4L20 | 740 | 700 | - | - | 800 | 760",
+        "| 6L20 | 1110 | 1055 | 1320 | 1255 | 1200 | 1140",
+        "| 8L20 | 1480 | 1405 | 1760 | 1670 | 1600 | 1520",
+        "| 9L20 | 1665 | 1580 | 1980 | 1880 | 1800 | 1710"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [
+        "| W&auml;rtsil&auml; 25 generating set | IMO Tier III |"
+      ],
+      "rows": [
+        "| Cylinder bore | 250 mm | Generator voltage | 0.4 - 13.8 kV",
+        "| Piston stroke | 340 mm | Generator efficiency | 0.95-0.96",
+        "| Cylinder output | 345 / 375 kW/cyl | Fuel specification | Fuel oil",
+        "| Speed | 900 / 1000 rpm | | 6 cSt/40 ˚ C",
+        "| Mean effective pressure | 28 / 27 bar | | ISO 8217, category ISO-F-DMX, DMA, DFA, DMZ, DFZ. Biodiesel (FAME, HVO)",
+        "| Piston speed | 10.2 / 11.3 m/s | | SFOC 182,7 g/kWh at ISO conditions",
+        "| | 60Hz | 50Hz",
+        "| | 345 kW/cyl, 900 rpm | 375 kW/cyl, 1000 rpm",
+        "| Engine type | Eng. kW | Gen. kW (0,96) | Eng. kW | Gen. kW (0,96)",
+        "| 6L25 | 2070 | 1987 | 2250 | 2160",
+        "| 7L25 | 2415 | 2318 | 2625 | 2520",
+        "| 8L25 | 2760 | 2650 | 3000 | 2880",
+        "| 9L25 | 3105 | 2981 | 3375 | 3240"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [],
+      "rows": [
+        "| Engine type | 60 Hz | 50 Hz",
+        "| 630 kW/cyl, 720 rpm | 650 kW/cyl, 750 rpm",
+        "| 8V31 | 5 040 | 4 840 | 5 200 | 4 990",
+        "| 10V31 | 6 300 | 6 050 | 6 500 | 6 240",
+        "| 12V31 | 7 560 | 7 260 | 7 800 | 7 490",
+        "| 14V31 | 8 820 | 8 465 | 9 100 | 8 735",
+        "| 16V31 | 10 080 | 9 675 | 10 400 | 9 985"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [
+        "| W&auml;rtsil&auml; 32 generating set | | IMO Tier II or III"
+      ],
+      "rows": [
+        "| Cylinder bore | 320 mm | Generator voltage | 0.4 - 13.8 kV",
+        "| Piston stroke | 400 mm | Generator efficiency | 0.95 - 0.97",
+        "| Cylinder output | 560, 580 kW/cyl | Fuel specification: | Fuel oil",
+        "| Speed | 720, 750 rpm | 700 cSt/50°C |"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [],
+      "rows": [
+        "| Engine type | 60Hz/720rpm | 50 Hz/750 rpm",
+        "| 560 kW/cyl | 580 kW/cyl",
+        "| 6L32 | 3 360 | 3 230 | 3 480 | 3 340",
+        "| 7L32 | 3 920 | 3 760 | 4 060 | 3 900",
+        "| 8L32 | 4 480 | 4 300 | 4 640 | 4 450",
+        "| 9L32 | 5 040 | 4 840 | 5 220 | 5 010",
+        "| 12V32 | 6 720 | 6 450 | 6 960 | 6 680",
+        "| 16V32 | 8 960 | 8 600 | 9 280 | 8 910"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Wärtsilä genset solutions – diesel gensets and marine auxiliary engines",
+      "header": [
+        "| W&auml;rtsil&auml; 25 Ammonia generating set | IMO Tier III |"
+      ],
+      "rows": [
+        "| Cylinder bore | 250 mm | Generator voltage | 0.4-13.8 kV",
+        "| Piston stroke | 340 mm | Generator efficiency | 0.95-0.96",
+        "| Cylinder output | 280 / 305 kW/cyl | Fuel specification | Fuel oil, Ammonia",
+        "| Speed | 900 / 1000 rpm | | 6 cSt/40 ˚ C",
+        "| Mean effective pressure | 22 bar | | ISO 8217, category ISO-F-DMX, DMA, DFA, DMZ, DFZ. Biodiesel (FAME, HVO)",
+        "| Piston speed | 10.2 / 11.3 m/s | |",
+        "| | 60Hz | 50Hz",
+        "| | 280 kW/cyl, 900 rpm | 305 kW/cyl, 1000 rpm",
+        "| Engine type | Eng. kW | Gen. kW (0,96) | Eng. kW | Gen. kW (0,96)",
+        "| 6L25DF | 1680 | 1613 | 1830 | 1757",
+        "| 7L25DF | 1960 | 1882 | 2135 | 2050",
+        "| 8L25DF | 2240 | 2150 | 2440 | 2342",
+        "| 9L25DF | 2520 | 2419 | 2745 | 2635"
+      ]
+    }
+  ]
 }

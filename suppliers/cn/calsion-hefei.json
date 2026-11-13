@@ -105,13 +105,23 @@
     },
     {
       "n": 101,
-      "url": "https://www.calsionpower.com/product/all.html",
-      "accessedAt": "2026-11-01",
+      "url": "https://www.calsionpower.com/search/2.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Power Range: 600-3500 kVA"
       ],
       "file": "sources/calsion-hefei/101.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.calsionpower.com/search/2.html?id=2&page=2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Power Range: 588-2500 kVA"
+      ],
+      "file": "sources/calsion-hefei/103.md"
     }
   ],
   "confidence": "medium",
@@ -120,7 +130,7 @@
   "specTables": [
     {
       "n": 101,
-      "title": "Product Center | Diesel/Gas/Methanol Generators | Calsion Power",
+      "title": "康尔信",
       "header": [],
       "rows": [
         "Power Range: 600-3500 kVA",
@@ -132,6 +142,23 @@
         "Power Range: 21-2000 kVA",
         "Power Range: 20-3750 kVA",
         "Power Range: 10-3125 kVA"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "康尔信",
+      "header": [],
+      "rows": [
+        "Power Range: 588-2500 kVA",
+        "Frequency: 50 Hz, 60 Hz",
+        "Power Range: 660-2500 kVA",
+        "Frequency: 50 Hz",
+        "Power Range: 21-2000 kVA",
+        "Frequency: 50 Hz，60 Hz",
+        "Power Range: 20-3750 kVA",
+        "Power Range: 10-3125 kVA",
+        "Power Range: 3-9 kVA",
+        "Power Range: 9-1000 kVA"
       ]
     }
   ]

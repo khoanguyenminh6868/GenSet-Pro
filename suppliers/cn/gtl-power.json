@@ -121,7 +121,7 @@
     {
       "n": 101,
       "url": "https://www.gtlplus.com/gtl-cummins-kta50-prime-power-1000kw-1500kw-diesel-generators-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | 1500 rmp/400v 3P 4W/50HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight"
@@ -131,7 +131,7 @@
     {
       "n": 102,
       "url": "https://www.gtlplus.com/cummins-diesel-power-generator-20kva-to115-kva-silent-or-open-diesel-gen-set-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | 1500 rmp/400v 3P 4W/50HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight"
@@ -141,7 +141,7 @@
     {
       "n": 103,
       "url": "https://www.gtlplus.com/cummins-power-generator-275-kva-to-650-kva-diesel-generator-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | 1500 rmp/400v 3P 4W/50HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight"
@@ -151,7 +151,7 @@
     {
       "n": 104,
       "url": "https://www.gtlplus.com/cummins-genset-125-kva-250-kva-diesel-power-generator-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | 1500 rmp/400v 3P 4W/50HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight"
@@ -161,7 +161,7 @@
     {
       "n": 105,
       "url": "https://www.gtlplus.com/reefer-genset-undermounted-type-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | PWUG15 | FWUG15"
@@ -171,7 +171,7 @@
     {
       "n": 106,
       "url": "https://www.gtlplus.com/gtl-gas-generator-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model Item | | GC30-BG | GC40-BG | GC50-BG | GC80-BG | GC120-BG | GC200-BG | GC300-BG | GC500-BA"
@@ -181,12 +181,42 @@
     {
       "n": 109,
       "url": "https://www.gtlplus.com/high-performance-generator-diesel-10kva-50hz-perkins-diesel-generator-set-gtl-2-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | 1500 rpm, 400V/50Hz/3P, 0.8PF | Perkins"
       ],
       "file": "sources/gtl-power/109.md"
+    },
+    {
+      "n": 112,
+      "url": "https://www.gtlplus.com/manufacturer-for-200-kva-cummins-diesel-generator-cummins-kta38-diesel-generator-gtl-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | 1500 rmp/400v 3P 4W/50HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight"
+      ],
+      "file": "sources/gtl-power/112.md"
+    },
+    {
+      "n": 126,
+      "url": "https://www.gtlplus.com/short-lead-time-for-silent-genset-10-kva-gtl-60hz-diesel-power-generator-with-perkins-engine-gtl-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | 1800 rpm, 380V/60Hz/3P, 0.8PF | Perkins"
+      ],
+      "file": "sources/gtl-power/126.md"
+    },
+    {
+      "n": 131,
+      "url": "https://www.gtlplus.com/wholesale-price-100kw-natural-gas-generator-natural-gas-generator-set-gtl-2-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model Item | | | GC30-NG | GC40-NG | GC50-NG | GC80-NG | GC120-NG | GC200-NG | GC300-NG | GC500-NG"
+      ],
+      "file": "sources/gtl-power/131.md"
     }
   ],
   "confidence": "medium",
@@ -480,6 +510,142 @@
         "| PW-2000T5 | 2000 | 1600 | 2250 | 1800 | 4016TAG2A",
         "| PW-2250T5 | 2250 | 1800 | 2500 | 2000 | 4016-61TRG3",
         "| PW-2250T5 | 2250 | 1800 | 2500 | 2000 | 4016-61TRG3"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Best Manufacturer for 200 Kva Cummins Diesel Generator - Cummins KTA38 Diesel Generator – GTL Manufacturer and Factory | GTL",
+      "header": [
+        "| Model | 1500 rmp/400v 3P 4W/50HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight",
+        "| Prime Power | Standby Power | Open Genset | Silent Genset",
+        "| KVA | KW | KVA | KW | Dimension(mm) | weight(kg) | Dimension(mm) | weight(kg)"
+      ],
+      "rows": [
+        "| CCW-713T5 | 713 | 570 | 788 | 630 | KT38-G1 | 4160*1700*2250 | 6600 | 5800*2200*2550 | 8000",
+        "| CCW-725T5 | 725 | 580 | 800 | 640 | KT38-GA | 4400*1700*2250 | 7250 | 5800*2200*2550 | 8700",
+        "| CCW-750T5 | 750 | 600 | 825 | 660 | KTA38-G2 | 4400*1700*2250 | 7250 | 5800*2200*2550 | 8700",
+        "| CCW-800T5 | 800 | 640 | 888 | 710 | KTA38-G2B | 4400*1700*2250 | 7250 | 5800*2200*2550 | 8700",
+        "| CCW-910T5 | 910 | 728 | 1000 | 800 | KTA38-G2A | 4400*1700*2250 | 7250 | 5800*2200*2550 | 8700",
+        "| CCW-1000T5 | 1000 | 800 | 1100 | 880 | KTA38-G5 | 4400*2060*2500 | 8200 | 5800*2200*2550 | 9500",
+        "| CCW-1250ST5 | N.A | N.A | 1250 | 1000 | KTA38-G9 | 4500*2060*2500 | 8600 | 6058*2438*2591 | 10000",
+        "| CCW-875T6 | 875 | 700 | 963 | 770 | KTA38-G1 | 4400*1700*2550 | 7000 | 5800*2200*2550 | 9250",
+        "| CCW-938T6 | 938 | 750 | 1038 | 830 | KTA38-G2B | 4400*1700*2550 | 7000 | 5800*2200*2550 | 9250",
+        "| CCW-1000T6 | 1000 | 800 | 1125 | 900 | KTA38-G2A | 4400*1700*2550 | 7150 | 5800*2200*2550 | 9400",
+        "| CCW-1125T6 | 1125 | 900 | 1250 | 1000 | KTA38-G4 | 4400*2060*2500 | 7500 | 5800*2200*2550 | 10000"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "Best Short Lead Time for Silent Genset 10 Kva - GTL 60HZ Diesel Power Generator With Perkins Engine – GTL Manufacturer and Factory | GTL",
+      "header": [
+        "| Model | 1800 rpm, 380V/60Hz/3P, 0.8PF | Perkins",
+        "| Prime Power | Standby Power",
+        "| KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| PW-11T6 | 11 | 9 | 12 | 10 | 403A-11G1",
+        "| PW-11T6 | 11 | 9 | 12 | 10 | 403D-11G",
+        "| PW-16T6 | 16 | 13 | 18 | 14 | 403A-15G1",
+        "| PW-16T6 | 16 | 13 | 18 | 14 | 403D-15G",
+        "| PW-18T6 | 18 | 14 | 20 | 16 | 403A-15G2",
+        "| PW-24T6 | 24 | 19 | 27 | 21 | 404A-22G1",
+        "| PW-24T6 | 24 | 19 | 27 | 21 | 404D-22G",
+        "| PW-33T6 | 33 | 26 | 36 | 29 | 404D-22TG",
+        "| PW-75T6 | 75 | 60 | 84 | 67 | 1104A-44TG1",
+        "| PW-90T6 | 90 | 72 | 100 | 80 | 1104C-44TAG1",
+        "| PW-90T6 | 90 | 72 | 100 | 80 | 1104A-44TG2",
+        "| PW-115T6 | 115 | 92 | 126 | 101 | 1104C-44TAG2",
+        "| PW-153T6 | 153 | 122 | 169 | 135 | 1106A-70TG1",
+        "| PW-169T6 | 169 | 135 | 188 | 150 | 1106A-70TAG2",
+        "| PW-198T6 | 198 | 158 | 219 | 175 | 1106A-70TAG3",
+        "| PW-35T6 | 35 | 28 | 39 | 31 | 1103A-33G",
+        "| PW-35T6 | 35 | 28 | 39 | 31 | 1103A-33G",
+        "| PW-54T6 | 54 | 43 | 59 | 47 | 1103A-33TG1",
+        "| PW-54T6 | 54 | 43 | 59 | 47 | 1103A-33TG1",
+        "| PW-69T6 | 69 | 55 | 75 | 60 | 1103A-33TG2",
+        "| PW-69T6 | 69 | 55 | 75 | 60 | 1103A-33TG2",
+        "| PW-225T6 | 225 | 180 | 250 | 200 | 1206A-E70TTAG1",
+        "| PW-225T6 | 225 | 180 | 250 | 200 | 1206A-E70TTAG2",
+        "| PW-225T6 | 225 | 180 | 250 | 200 | 1206A-E70TTAG3",
+        "| PW-225T6 | 225 | 180 | 250 | 200 | 1206D-E70TTAG1",
+        "| PW-225T6 | 225 | 180 | 250 | 200 | 1206D-E70TTAG2",
+        "| PW-225T6 | 225 | 180 | 250 | 200 | 1206D-E70TTAG3",
+        "| PW-352T6 | 353 | 282 | 390 | 312 | 1506A-E88TAG5",
+        "| PW-356T6 | 356 | 285 | 394 | 315 | 1706A-E93TAG1",
+        "| PW-356T6 | 356 | 285 | 394 | 315 | 1706A-E93TAG1",
+        "| PW-356T6 | 356 | 285 | 394 | 315 | 1706A-E93TAG2",
+        "| PW-356T6 | 356 | 285 | 394 | 315 | 1706A-E93TAG2",
+        "| PW-400T6 | 400 | 320 | 438 | 350 | 2206C-E13TAG2",
+        "| PW-400T6 | 400 | 320 | 438 | 350 | 2206C-E13TAG2",
+        "| PW-400T6 | 400 | 320 | 438 | 350 | 2206C-E13TAG3",
+        "| PW-400T6 | 400 | 320 | 438 | 350 | 2206C-E13TAG3",
+        "| PW-500T6 | 500 | 400 | 563 | 450 | 2506C-E15TAG1",
+        "| PW-500T6 | 500 | 400 | 563 | 450 | 2506C-E15TAG1",
+        "| PW-500T6 | 500 | 400 | 563 | 450 | 2506C-E15TAG2",
+        "| PW-500T6 | 500 | 400 | 563 | 450 | 2506C-E15TAG2",
+        "| PW-625T6 | 625 | 500 | 688 | 550 | 2806C-E18TAG1A",
+        "| PW-625T6 | 625 | 500 | 688 | 550 | 2806C-E18TAG1A",
+        "| PW-625T6 | 625 | 500 | 688 | 550 | 2806A-E18TAG2",
+        "| PW-625T6 | 625 | 500 | 688 | 550 | 2806A-E18TAG2",
+        "| PW-750T6 | 750 | 600 | 825 | 660 | 4006-23TAG2A",
+        "| PW-750T6 | 750 | 600 | 825 | 660 | 4006-23TAG2A",
+        "| PW-826T6 | 826 | 661 | 909 | 727 | 2806A-E18TTAG4",
+        "| PW-826T6 | 826 | 661 | 909 | 727 | 2806A-E18TTAG5",
+        "| PW-849T6 | 849 | 679 | 944 | 755 | 4006-23TAG3A",
+        "| PW-849T6 | 849 | 679 | 944 | 755 | 4006-23TAG3A",
+        "| PW-1000T6 | 1000 | 800 | 1100 | 880 | 4008TAG2",
+        "| PW-1000T6 | 1000 | 800 | 1100 | 880 | 4008TAG2",
+        "| PW-1250T6 | 1250 | 1000 | 1375 | 1100 | 4012-46TWG2A",
+        "| PW-1250T6 | 1250 | 1000 | 1375 | 1100 | 4012-46TWG2A",
+        "| PW-1375T6 | 1375 | 1100 | 1500 | 1200 | 4012-46TWG3A",
+        "| PW-1500T6 | 1500 | 1200 | 1650 | 1320 | 4012-46TAG2A",
+        "| PW-1500T6 | 1500 | 1200 | 1650 | 1320 | 4012-46TAG2A",
+        "| PW-1688T6 | 1688 | 1350 | 1875 | 1500 | 4012-46TAG3A",
+        "| PW-1688T6 | 1688 | 1350 | 1875 | 1500 | 4012-46TAG3A"
+      ]
+    },
+    {
+      "n": 131,
+      "title": "Best Wholesale Price 100kw Natural Gas Generator - Natural Gas Generator Set – GTL Manufacturer and Factory | GTL",
+      "header": [
+        "| Model Item | | | GC30-NG | GC40-NG | GC50-NG | GC80-NG | GC120-NG | GC200-NG | GC300-NG | GC500-NG"
+      ],
+      "rows": [
+        "| Rate Power | kVA | | 37.5 | 50 | 63 | 100 | 150 | 250 | 375 | 625",
+        "| | kW | | 30 | 40 | 50 | 80 | 100 | 200 | 300 | 500",
+        "| Fuel | | | Natural Gas | | | | | | |",
+        "| Consumption(m³/h) | | | 10.77 | 13.4 | 16.76 | 25.14 | 37.71 | 60.94 | 86.19 | 143.66",
+        "| Rate Voltage(V) | | | 380V-415V | | | | | | |",
+        "| Voltage Stabilized Regulation | | | ≤±1.5% | | | | | | |",
+        "| Voltage Recovery Time(s) | | | ≤1.0 | | | | | | |",
+        "| Frequency(Hz) | | | 50Hz/60Hz | | | | | | |",
+        "| Frequency Fluctuation Ratio | | | ≤1% | | | | | | |",
+        "| Rated Speed(Min) | | | 1500 | | | | | | |",
+        "| Idling Speed(r/Min) | | | 700 | | | | | | |",
+        "| Insulation Level | | | H | | | | | | |",
+        "| Rated Currency(A) | | | 54.1 | 72.1 | 90.2 | 144.3 | 216.5 | 360.8 | 541.3 | 902.1",
+        "| Noise(db) | | | ≤95 | ≤95 | ≤95 | ≤95 | ≤95 | ≤100 | ≤100 | ≤100",
+        "| Engine Model | | | CN4B | CN4BT | CN6B | CN6BT | CN6CT | CN14T | CN19T | CN38T",
+        "| Aspration | | | Natural | Turboch arged | Natural | Turboch arged | Turboch arged | Turboch arged | Turboch arged | Turboch arged",
+        "| Arrangement | | | Inline | Inline | Inline | Inline | Inline | Inline | Inline | V type",
+        "| Engine Type | | | 4 stroke, electronic-control spark plug ignition, water cooling, | | | | | | |",
+        "| | | | premix proper ratio of air and gas before combustion | | | | | | |",
+        "| Cooling Type | | | Radiator fan cooling for closed-type cooling mode, | | | | | | |",
+        "| | | | or heat exchanger water cooling for cogeneration unit | | | | | | |",
+        "| Cylinders | | | 4 | 4 | 6 | 6 | 6 | 6 | 6 | 12",
+        "| Bore | | | 102×120 | 102×120 | 102×120 | 102×120 | 114×135 | 140×152 | 159×159 | 159×159",
+        "| X Stroke(mm) | | | | | | | | | |",
+        "| Displacement(L) | | | 3.92 | 3.92 | 5.88 | 5.88 | 8.3 | 14 | 18.9 | 37.8",
+        "| Compression Ratio | | | 11.5:1 | 10.5:1 | 11.5:1 | 10.5:1 | 10.5:1 | 0.459027778 | 0.459027778 | 0.459027778",
+        "| Engine Rate Power(kW) | | | 36 | 45 | 56 | 90 | 145 | 230 | 336 | 570",
+        "| Oil Recommended | | | API service grade CD or higher SAE 15W-40 CF4 | | | | | | |",
+        "| Oil Consumption | | | ≤1.0 | ≤1.0 | ≤1.0 | ≤1.0 | ≤1.0 | ≤0.5 | ≤0.5 | ≤0.5",
+        "| (g/kW.h) | | | | | | | | | |",
+        "| Exhaust Temperature | | | ≤680℃ | ≤680℃ | ≤680℃ | ≤680℃ | ≤600℃ | ≤600℃ | ≤600℃ | ≤550℃",
+        "| Net Weight(kG) | | | 900 | 1000 | 1100 | 1150 | 2500 | 3380 | 3600 | 6080",
+        "| Dimension(mm) | | L | 1800 | 1850 | 2250 | 2450 | 2800 | 3470 | 3570 | 4400",
+        "| | | W | 720 | 750 | 820 | 1100 | 850 | 1230 | 1330 | 2010",
+        "| | | H | 1480 | 1480 | 1500 | 1550 | 1450 | 2300 | 2400 | 2480"
       ]
     }
   ]
