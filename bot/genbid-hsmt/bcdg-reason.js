@@ -75,7 +75,7 @@ function explanationBlocks(L, startOf) {
       : (i + 1 < L.length && new RegExp("^" + MARK + "(?:công|cty|liên|nhà)", "i").test(l) && !/[.;]$/.test(l) && BIDDER_HEAD.test(l + " " + L[i + 1]) ? l + " " + L[i + 1] : "");
     if (head) {
       close();
-      if (startOf(i) >= 0 || /4101623015/.test(head) || (head.indexOf(":") > 0 && startOf(i + 1) >= 0 && head.length > l.length)) cur = { i, lines: [l], end: i + 1 };
+      if (startOf(i) >= 0 || /\b4101623015\b/.test(head) || (head.indexOf(":") > 0 && startOf(i + 1) >= 0 && head.length > l.length)) cur = { i, lines: [l], end: i + 1 };
       continue;
     }
     // Hàng bảng "1 Công ty TNHH thiết bị | lý do ..." với phần tên kéo sang dòng sau ("kỹ thuật Thảo Nguyên | ...").
