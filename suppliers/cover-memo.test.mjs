@@ -20,8 +20,8 @@ test("hằng số NEG_DAYS khớp isLive: mục 89 ngày còn hạn, 90 ngày h�
 });
 test("WEB_MEMO: thư mục web-memo (ngoài git); đổi được bằng GENBID_WEB_MEMO", () => {
   assert.equal(typeof WEB_MEMO, "string");
-  assert.ok(path.isAbsolute(WEB_MEMO) || process.env.GENBID_WEB_MEMO); // khoá hành vi: đường mặc định cạnh tệp token
-  if (!process.env.GENBID_WEB_MEMO) assert.equal(path.basename(WEB_MEMO), "web-memo");
+  // Đường mặc định ghép từ "C:/Projects/GenSet Pro/..." nên không tuyệt đối trên ubuntu: chỉ kiểm tên thư mục cuối.
+  if (!process.env.GENBID_WEB_MEMO) assert.equal(path.basename(WEB_MEMO.replace(/\\/g, "/")), "web-memo");
 });
 
 test("familyOfRec: họ hãng đọc từ tên, thương hiệu hoặc id; hãng Trung Quốc nhỏ không có họ", () => {
