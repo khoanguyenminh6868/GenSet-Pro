@@ -99,10 +99,9 @@ test("Back qua 4 bước: Nhà thầu → một nhà thầu → gói của nhà 
   await expect(page.locator("#grid tbody tr[data-key]").first()).toBeVisible();
 });
 
-// LỖI (H2, cả máy tính lẫn điện thoại): mở gói → bấm tên một nhà thầu trong bảng nhà thầu của gói (màn Nhà thầu mở đè lên
-// khung chi tiết) → bấm một gói của nhà thầu đó → Back: về thẳng danh sách gói (khung chi tiết đóng, màn Nhà thầu không
-// hiện lại), đáng lẽ về màn nhà thầu rồi mới về gói đầu.
-test.fixme("Back: gói → nhà thầu (từ bảng nhà thầu của gói) → gói của nhà thầu → chủ đầu tư, Back về đúng từng màn", async ({ page }) => {
+// Mở gói → bấm tên một nhà thầu trong bảng nhà thầu của gói (màn Nhà thầu mở đè lên khung chi tiết) → bấm một gói của nhà
+// thầu đó (thường chính là gói đang mở) → Back về màn nhà thầu, rồi gói đầu (lỗi H2, sửa ở W2: navKey tính cả drawerBack).
+test("Back: gói → nhà thầu (từ bảng nhà thầu của gói) → gói của nhà thầu → chủ đầu tư, Back về đúng từng màn", async ({ page }) => {
   await openApp(page);
   const title = page.locator("#dtitle"), drawer = page.locator("#drawer");
   // 1. Gói RICH từ tab Mới.
@@ -151,8 +150,7 @@ test("các tab của gói (Tổng quan, Phân tích, Cấu hình gợi ý, Giá 
     await openTab(page, tab);
     await page.locator("#dbody details").evaluateAll((ds) => ds.forEach((d) => (d.open = true)));
     await noPageOverflow(page, "tab " + tab);
-    // Tab Cấu hình gợi ý: phần tử thò ra màn kiểm riêng ở ca fixme dưới (lỗi đã biết, tuỳ phông chữ).
-    if (tab !== "config") expect(await sticking(page), "tab " + tab).toEqual([]);
+    expect(await sticking(page), "tab " + tab).toEqual([]);
     const wraps = await page.locator("#dbody .tablewrap").evaluateAll((ws) => ws.filter((w) => w.getClientRects().length).map((w) => ({
       wide: w.scrollWidth > w.clientWidth + 1, ox: getComputedStyle(w).overflowX, right: w.getBoundingClientRect().right })));
     for (const w of wraps) {
@@ -162,13 +160,16 @@ test("các tab của gói (Tổng quan, Phân tích, Cấu hình gợi ý, Giá 
   }
 });
 
-// LỖI (H2, thấy trên CI ubuntu + chromium; Edge trên Windows phông hẹp hơn nên không lộ): tab Cấu hình gợi ý ở bề rộng 390 px,
-// nhãn `.chip.mut` "dòng bảng không ghi đầu phát NIANFENG NF…" (bảng so cấu hình, cột Chào) dài hơn màn hình và thò ra mép phải.
-test.fixme("Cấu hình gợi ý trên điện thoại: không phần tử nào thò ra ngoài màn hình", async ({ page }) => {
+// Tab Cấu hình gợi ý ở bề rộng 390 px: nhãn `.chip` dài ("dòng bảng không ghi đầu phát NIANFENG NF…") xuống dòng trong nhãn,
+// không thò ra mép phải (lỗi H2, chỉ lộ trên CI ubuntu + chromium vì phông rộng hơn; sửa ở W2). Lượt hai giãn chữ để phông
+// hẹp của Edge trên Windows cũng bắt được.
+test("Cấu hình gợi ý trên điện thoại: không phần tử nào thò ra ngoài màn hình", async ({ page }) => {
   await openApp(page, "#goi/" + RICH);
   await openTab(page, "config");
   await page.locator("#dbody details").evaluateAll((ds) => ds.forEach((d) => (d.open = true)));
   expect(await sticking(page)).toEqual([]);
+  await page.addStyleTag({ content: "body,body *{letter-spacing:1.5px !important}" });
+  expect(await sticking(page), "chữ giãn").toEqual([]);
 });
 
 test.describe("bảng rộng hơn màn hình", () => {

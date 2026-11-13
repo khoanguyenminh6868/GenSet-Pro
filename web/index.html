@@ -243,6 +243,8 @@ td.r{text-align:right}
 .chip.run{background:var(--violet-soft);color:var(--violet)}
 .chip.mut{background:var(--panel2);color:var(--muted);border-color:var(--line)}
 .chip.cfm{background:var(--panel2);color:var(--muted);border:1px dashed var(--muted)}
+/* Phone: a long label (dòng bảng không ghi đầu phát <model>…) wraps inside its chip instead of running past the screen. */
+@media (max-width:640px){#dbody .chip,#mdl .chip{white-space:normal;max-width:100%;overflow-wrap:anywhere;border-radius:10px}}
 .mstage{display:none}
 .tleft{font:600 11.5px var(--f-mono);margin-top:2px;color:var(--muted)}
 .tleft.urgent{color:var(--orange)}
@@ -879,8 +881,10 @@ function analysisOf(key) {
   return a || null;
 }
 const RUN_STALE = 20 * 60 * 1000;
-// Tenders without "máy phát điện" in the name stay in the list, but their files and analysis are fetched only when Khoa asks.
-const isGenset = (t) => String(t.bidName || "").normalize("NFC").toLowerCase().includes("máy phát điện");
+// Tenders whose name is not a genset tender stay in the list, but their files and analysis are fetched only when Khoa asks.
+// The tender-name rule is the shared one (GenbidBidprice.isGensetName: "MPĐ", diesel / máy phát dự phòng; not wind / solar
+// generators or a power plant's own unit). It only picks the "Chưa có HSMT" mark of a new tender: nothing leaves the list.
+const isGenset = (t) => window.GenbidBidprice.isGensetName(t.bidName);
 function analysisState(t) {
   const a = analysisOf(t._key);
   if (analysisReqPending(t._key)) return "requested";
@@ -4813,18 +4817,30 @@ function navSnap() {
     cat: scr === "cat" ? catView.kind : null, catOpen: scr === "cat" ? catView.open : null, catFrom: scr === "cat" ? catFrom : null,
     dscroll: $("#dbody").scrollTop, mscroll: scr ? mScroll().scrollTop : 0, url: location.href };
 }
-const navKey = (s) => JSON.stringify([s.open, s.list, s.scr, s.sup, s.bd, s.cat, s.catOpen]);
+// The drawer's own back chain is part of the step: a tender opened from a screen over the same tender (Nhà thầu → its
+// first tender is often the one it was opened from) is a new step, not a Back to the one under it.
+const navKey = (s) => JSON.stringify([s.open, s.list, s.scr, s.sup, s.bd, s.cat, s.catOpen, (s.back || []).length]);
 // navStack mirrors this page's history entries; 0 is the page's first entry, 1 the home screen pushed on the first tap.
-let navStack = [NAV_HOME], navAt = 0, navSkip = 0, navPre = null, navPopAt = 0;
+// navDirect: the page was opened straight on a step (a link #goi/<TBMT>, #cdt/…, #nha-thau…); entry 1 is then that step and
+// entry 0 stands for the home screen. Back from the step shows the home screen and goes forward again (entry 0 stays behind
+// it), so Back still never leaves the page.
+let navStack = [NAV_HOME], navAt = 0, navSkip = 0, navPre = null, navPopAt = 0, navDirect = false, navFixUrl = null;
 function navTap() {
   navPre = { dscroll: $("#dbody").scrollTop, mscroll: $("#ov").hidden ? 0 : mScroll().scrollTop };
   if (navStack.length > 1) return;
-  try { history.replaceState({ gb: 0 }, "", location.href); history.pushState({ gb: 1 }, "", location.href); navStack = [NAV_HOME, { ...NAV_HOME, url: location.pathname + location.search }]; navAt = 1; } catch {}
+  const home = location.pathname + location.search, href = location.href, s = navSnap();
+  navDirect = navKey(s) !== navKey(NAV_HOME);
+  try {
+    history.replaceState({ gb: 0 }, "", navDirect ? home : href); history.pushState({ gb: 1 }, "", href);
+    navStack = [NAV_HOME, navDirect ? s : { ...NAV_HOME, url: home }]; navAt = 1;
+  } catch {}
 }
 function navSync() {
   if (navStack.length < 2) return;
   const s = navSnap(), k = navKey(s);
   if (k === navKey(navStack[navAt])) { navStack[navAt] = s; return; }
+  // The step opened by the link closed with the page's own button (X, Escape): the home screen takes its entry.
+  if (navAt === 1 && navDirect && k === navKey(NAV_HOME)) { navDirect = false; navStack[1] = s; try { history.replaceState({ gb: 1 }, "", s.url); } catch {} return; }
   if (navAt > 1 && k === navKey(navStack[navAt - 1])) { navAt--; navStack[navAt] = s; navSkip++; history.back(); return; }
   if (navPre) navStack[navAt] = { ...navStack[navAt], ...navPre };
   // The tap has already put the new step's address on the step before; that one gets its own back.
@@ -4849,9 +4865,14 @@ addEventListener("popstate", (e) => {
   const i = e.state?.gb;
   if (typeof i !== "number" || navStack.length < 2) return;
   navPopAt = Date.now();
-  if (navSkip) { navSkip--; navAt = i; return; }
+  if (navSkip) { navSkip--; navAt = i; if (navFixUrl) try { history.replaceState({ gb: i }, "", navFixUrl); } catch {} navFixUrl = null; return; }
   if (!$("#fpop").hidden) closeFilter();
-  if (i === 0) { navAt = 1; navRestore(navStack[1]); navSkip++; history.forward(); return; }
+  if (i === 0) {
+    navAt = 1;
+    // Back from the step opened by the link: the home screen, then entry 1 (forward again) is home too.
+    if (navDirect) { navDirect = false; navStack[1] = { ...NAV_HOME, url: location.pathname + location.search }; navFixUrl = navStack[1].url; }
+    navRestore(navStack[1]); navSkip++; history.forward(); return;
+  }
   navAt = i; navRestore(navStack[i] || NAV_HOME);
 });
 // The hash a Back puts back is the step's own; it does not open anything again.

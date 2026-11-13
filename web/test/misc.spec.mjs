@@ -168,16 +168,19 @@ test.describe("chi tiết Danh mục từ hàng trúng thầu", () => {
     await drawerOpen(page);
   });
 
-  // LỖI (H2): gói mở thẳng bằng link (#goi/<TBMT>, vd. link gửi qua Zalo) rồi bấm "N model gần giống" / "Xem thông số" →
-  // Back đóng luôn khung chi tiết gói, về danh sách. navTap() chỉ đẩy bước "trang chủ" (NAV_HOME) ở lần chạm đầu, nên gói
-  // đang mở từ link không thành một bước của Back.
-  test.fixme("gói mở thẳng bằng link #goi/<TBMT> → Danh mục → Back về lại gói", async ({ page }) => {
+  // Gói mở thẳng bằng link (#goi/<TBMT>, vd. link gửi qua Zalo) rồi bấm "N model gần giống" → Back về gói, Back nữa về
+  // danh sách (lỗi H2: navTap() lần chạm đầu chỉ đẩy bước "trang chủ", gói mở từ link không thành bước; sửa ở W2).
+  // Các link thẳng khác: back-link.spec.mjs.
+  test("gói mở thẳng bằng link #goi/<TBMT> → Danh mục → Back về lại gói → Back về danh sách", async ({ page }) => {
     await openApp(page, "#goi/" + KEY);
     await expect(page.locator("#dbody .wpart").nth(0)).toHaveText(`${near.length} model gần giống`, { timeout: 20000 });
     await page.locator("#dbody .wpart").nth(0).locator("a").click();
     await expect(page.locator("#catBody #catCount")).toBeVisible();
     await page.goBack();
     await drawerOpen(page);
+    await page.goBack();
+    await expect(page.locator("#drawer")).not.toHaveClass(/\bopen\b/);
+    expect(page.url()).toMatch(/^http:\/\/127\.0\.0\.1:\d+\/?$/);
   });
 });
 
@@ -245,5 +248,32 @@ test.describe("analysis rút gọn (_lite) + db.full", () => {
     await expect(page.locator("#dbody")).toContainText("Đang tải kết quả phân tích...");
     await expect(page.locator("#dbody table.spec1")).toHaveCount(0);
     await ctx.close();
+  });
+});
+
+test.describe("luật tên gói máy phát (isGensetName) cho dấu \"Chưa có HSMT\"", () => {
+  // Gói BỊA. Luật tên gói chung GenbidBidprice.isGensetName (W2 thay includes("máy phát điện") riêng của index.html):
+  // nhận "MPĐ", loại máy phát điện gió và tổ máy của nhà máy điện. Luật chỉ chọn dấu "Chưa có HSMT" của gói Mới chưa có
+  // tệp; gói nào cũng ở lại danh sách, kể cả gói đang theo dõi mà luật mới coi là không phải máy phát.
+  const base = { investorName: "Bên mời thầu BỊA", location: "Thành phố Huế", bidForm: "CHCT", field: "HH", isInternet: true, publicDate: "2026-11-11T02:00:00.000Z", bidCloseDate: "2030-02-10T03:00:00.000Z", estimatedPrice: 1e9, sourceUrl: "" };
+  const MPD = { ...base, notifyNo: "IB2699000901", bidName: "Mua sắm MPĐ dự phòng 300 kVA (BỊA)" };
+  const WIND = { ...base, notifyNo: "IB2699000902", bidName: "Mua sắm cụm cơ khí và máy phát điện gió (BỊA)" };
+  const PLANT = { ...base, notifyNo: "IB2699000903", bidName: "Sửa chữa máy phát điện tổ máy H1 nhà máy thủy điện (BỊA)" };
+  test.use({ patch: { colls: {
+    feed: { current: { ...SEED.colls.feed.current, tenders: [...SEED.colls.feed.current.tenders, MPD, WIND] } },
+    tracked: { [PLANT.notifyNo]: { stage: "preparing", note: "", tender: PLANT } },
+  } } });
+  const mark = (page, k) => page.locator(`#grid tr[data-key="${k}"] .aicon[aria-label="Chưa phân tích, chưa có HSMT"]`);
+
+  test("MPĐ có dấu; máy phát điện gió không có dấu nhưng vẫn trong tab Mới; gói đang theo dõi bị luật loại vẫn ở tab của nó", async ({ page }) => {
+    await openApp(page);
+    await expect(page.locator(`#grid tr[data-key="${MPD.notifyNo}"]`)).toBeVisible();
+    await expect(mark(page, MPD.notifyNo)).toHaveCount(1);
+    await expect(page.locator(`#grid tr[data-key="${WIND.notifyNo}"]`)).toBeVisible();
+    await expect(mark(page, WIND.notifyNo)).toHaveCount(0);
+    // Gói có "máy phát điện" trong tên (luật cũ) vẫn có dấu như trước.
+    await expect(mark(page, "IB2699000102")).toHaveCount(1);
+    await page.locator('#stageTabs [data-stage="preparing"]').click();
+    await expect(page.locator(`#grid tr[data-key="${PLANT.notifyNo}"]`)).toBeVisible();
   });
 });

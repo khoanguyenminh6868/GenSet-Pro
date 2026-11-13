@@ -9,6 +9,8 @@ Chỉ bản web Vercel + bot Windows được dùng; không phát triển nhánh
 - Trích nguồn: dữ liệu vẫn giữ, nhưng màn hình KHÔNG in (`SHOW_SRC = false`). Mọi chỗ hiện câu trích/dòng nguồn/link nguồn phải gate bằng nó; chữ hiển thị mới (note, why) không được chứa câu trích hay số của nguồn.
 - Danh sách gói: mọi tab mở theo ngày đăng giảm dần (`DEFAULT_SORT`), không lưu thứ tự theo người dùng.
 - Back/quẹt trên điện thoại luôn về màn hình trước: màn hình/chi tiết/hộp thoại mới phải thêm vào `navSnap`/`navRestore`; đổi URL dùng `replaceState(history.state, …)`, không dùng null.
+  `navSync` coi bước mới trùng khoá (`navKey`) với bước ngay trước là Back của trang: trường nào phân biệt hai bước khác nhau (vd. độ dài `drawerBack`) phải có trong `navKey`. Trang mở thẳng bằng link (`#goi/…`, `#cdt/…`, `#nha-thau`…) thì `navDirect`: mục lịch sử 1 là màn của link, mục 0 đứng cho trang chủ. Test: `web/test/back-link.spec.mjs`.
+- Luật "gói máy phát" theo tên dùng `GenbidBidprice.isGensetName` (luật chung, xem `suppliers/CLAUDE.md`), không viết `includes("máy phát điện")` riêng.
 - Việc chậm phải có spinner: `busy.js` tự bọc fetch; việc không qua fetch (thư viện, dựng PDF, đọc tệp) bọc `window.genbidBusy(promise)`.
 - Chữ trên màn hình: "Chi phí phát sinh" (không dùng "khoản thêm"); "% gói cũ trúng ≥ mức này" (không gọi là xác suất thắng). Danh sách gợi ý tự vẽ, không dùng `<datalist>`.
 
