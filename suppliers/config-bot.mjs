@@ -4468,9 +4468,15 @@ export function partsOf(rec) {
 }
 const partsText = (p) => (!p ? "" : [p.engines.length && `động cơ: ${p.engines.map((e) => `${e.model}${e.power ? ` (${e.power})` : ""}`).join(", ")}`,
   p.alternators.length && `đầu phát: ${p.alternators.map((e) => e.model).join(", ")}`, p.controllers.length && `bộ điều khiển: ${p.controllers.map((e) => e.model).join(", ")}`].filter(Boolean).join("; ") || "không đọc được động cơ, đầu phát, bộ điều khiển nào");
+// Why Tìm Thông Số is not run for a supplier, "" when it is (Khoa, 2026-11-13: "chặn đi"): the agent only looks on the
+// supplier's own site, so a record with no website has nothing to read and the run (a few USD) finds nothing. 73 of 435
+// records had none that day. specPrep throws it before any folder or agent: specJob posts it as the request's error.
+export const specSkip = (s) => (String(s?.website || "").trim() ? "" : "Nhà cung cấp chưa có website trong hồ sơ nên không có trang nào để tìm thông số. Thêm website cho nhà cung cấp rồi bấm lại.");
 export async function specPrep(id, dir, suppliers) {
   const s = suppliers.find((x) => x.id === id);
   if (!s) throw new Error(`không có nhà cung cấp ${id}`);
+  const skip = specSkip(s);
+  if (skip) throw new Error(skip);
   fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(path.join(dir, "web"), { recursive: true });
   fs.writeFileSync(path.join(dir, "supplier.json"), JSON.stringify(s, null, 1), "utf8");
   fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(suppliers), "utf8");
