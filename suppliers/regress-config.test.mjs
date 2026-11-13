@@ -36,3 +36,19 @@ for (const r of runs) {
     } finally { fs.rmSync(dir, { recursive: true, force: true }); }
   });
 }
+
+// byCode là cờ của code: chạy lại check trên kết quả đã lưu không đếm check byCode là "chưa khớp nguồn" (expected.json có
+// problems 0), còn check agent tự gắn byCode vẫn bị kiểm câu trích (mergeChecked / checkDir gỡ cờ trước khi check).
+test("agent tự gắn byCode vẫn bị kiểm câu trích", async () => {
+  const { mergeChecked, stripAgentCodeFlags } = await import("./config-bot.mjs");
+  const r = runs.find((x) => x.tender === "IB2600586587"), b = readBundle(r.input);
+  const c = b.result.configs[0], req = b.result.requirements.find((q) => !q.byCode && (q.part || "genset") === "genset");
+  const fake = (byCode) => ({ configs: [{ rank: c.rank, checks: [{ item: req.item, requirement: req.requirement, hsmtQuote: "", offered: "7 kVA", sourceQuote: "câu này không có trong bất kỳ nguồn nào", part: "genset", status: "met", ...(byCode ? { byCode: true } : {}) }] }] });
+  const run = (got) => mergeChecked(JSON.parse(JSON.stringify(b.result)), got, { hsmtText: b.hsmtText, suppliers: b.suppliers, origin: b.meta.origin });
+  const plain = run(fake(false)).problems;
+  if (!(plain > 0)) throw new Error("check agent câu trích bịa phải bị đánh dấu");
+  if (run(fake(true)).problems !== plain) throw new Error("agent gắn byCode không được thoát kiểm câu trích");
+  const l = [{ byCode: true, parts: [{ byCode: true }] }];
+  stripAgentCodeFlags(l);
+  if (l[0].byCode || l[0].parts[0].byCode) throw new Error("stripAgentCodeFlags không gỡ cờ");
+});

@@ -84,8 +84,8 @@ test("scratch: tệp không có → 404 (kho báo 400/404); lỗi khác → 502"
   assert.equal((await sc({ path: "hsdt/IB1/1/a.pdf" })).statusCode, 404);
 });
 
-// Lỗi tìm thấy (ghi trong nghiệm thu T3, không sửa): chỉ ký tự lạ bị bỏ, dấu chấm thì không → id ".." đi vào địa chỉ.
-test("blob: id '..' hoặc '.' không được chuyển hướng (sẽ bị trình duyệt chuẩn hoá thành thư mục cha)", { todo: "blob.js giữ nguyên '.' và '..' → /blobs/.. trỏ lên /public/; rủi ro thấp (chỉ đọc kho công khai)" }, async () => {
+// Đã sửa (T3 tìm thấy): chỉ ký tự lạ bị bỏ, dấu chấm thì không → id ".." từng đi vào địa chỉ.
+test("blob: id '..' hoặc '.' không được chuyển hướng (sẽ bị trình duyệt chuẩn hoá thành thư mục cha)", async () => {
   const h = await fresh("blob.js");
   for (const id of ["..", "."]) assert.equal((await call(h, mkReq({ query: { id } }))).statusCode, 400, id);
 });

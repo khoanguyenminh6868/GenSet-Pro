@@ -2098,6 +2098,10 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       const reasons = [], rq = reqs.get(norm(x.group ? x.group.item : x.item));
       x.level = (rq?.level || x.level) === "option" ? "option" : "core";
       if (!PARTS.includes(x.part)) x.part = rq?.part || "genset";
+      // A check the code wrote (byCode: sync, overload rule, cosφ = kW/kVA...) rests on the code's rule: it has no
+      // source quote to verify, and re-checking a saved result must not call it "chưa khớp nguồn". The flag is stripped
+      // from the agent's own answer on entry (checkDir, mergeChecked), so an agent cannot use it to skip this.
+      if (x.byCode) continue;
       if (x.hsmtQuote && !inHsmt(x.hsmtQuote)) reasons.push("câu trích HSMT");
       // factSrc: a figure of this configuration's engine or alternator read from another row or datasheet that names
       // the same model. Only those figures (not the genset ones of that row) may be quoted from it.
@@ -2273,6 +2277,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
 function checkDir(dir, suppliers, added = [], origin) {
   const meta = fs.existsSync(path.join(dir, "meta.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")) : {};
   const result = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8"));
+  // result.json is the agent's own answer: `byCode` is the code's flag, never the agent's (see check()).
+  stripAgentCodeFlags(result.requirements); for (const c of result.configs || []) stripAgentCodeFlags(c.checks);
   // A supplier added from the internet: its rows were numbered in newCatalog.json, renumbered when added.
   for (const a of added) if (a.nmap) for (const c of result.configs || []) for (const s of c.suppliers || []) if (s.supplierId === a.supplierId && a.nmap[s.n] != null) s.n = a.nmap[s.n];
   if (added.length) result.catalogAdded = added.map(({ nmap, ...a }) => a);
@@ -4143,6 +4149,12 @@ async function checkNewConfigs(key, result, ranks, suppliers, cap, sizing = null
     return { ...mergeChecked(result, got, { hsmtText: text, suppliers, origin: result.origin }), readNotes: g.notes };
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }
+// `byCode` marks a requirement / check the CODE wrote (its source is the code's rule, not a quote), so check() does
+// not ask it for a quote. Only the code sets it: whatever the agent wrote (result.json) loses it before check().
+export function stripAgentCodeFlags(list) {
+  for (const x of list || []) { delete x.byCode; for (const p of x.parts || []) delete p.byCode; }
+  return list;
+}
 // The agent's checks (and controller) for the configurations of `got`, verified by check() and put back by rank.
 // Only checks and the controller are taken: the engine, alternator, genset and suppliers stay as the code made them.
 export function mergeChecked(result, got, { hsmtText, suppliers, origin }) {
@@ -4151,7 +4163,7 @@ export function mergeChecked(result, got, { hsmtText, suppliers, origin }) {
   for (const g of got.configs || []) {
     const c = byRank.get(g.rank);
     if (!c || !Array.isArray(g.checks) || !g.checks.length) continue;
-    sub.configs.push({ ...JSON.parse(JSON.stringify(c)), checks: g.checks, ...(g.controller?.model ? { controller: g.controller } : {}) });
+    sub.configs.push({ ...JSON.parse(JSON.stringify(c)), checks: stripAgentCodeFlags(g.checks),...(g.controller?.model ? { controller: g.controller } : {}) });
   }
   if (!sub.configs.length) return { checked: 0, problems: 0 };
   const { result: done, problems } = check(sub, { hsmtText, suppliers, readWeb: () => null, origin: origin || "all", basis: result.originBasis });
