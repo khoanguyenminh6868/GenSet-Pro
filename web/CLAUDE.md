@@ -22,6 +22,7 @@ Chỉ bản web Vercel + bot Windows được dùng; không phát triển nhánh
 - `api/webreq.js` lọc trường yêu cầu theo danh sách: thêm trường mới vào yêu cầu thì phải thêm ở đó.
 - `state.quote`: bỏ qua khoá bắt đầu bằng `_` (`quote/_cost` = tỷ giá + thuế dùng chung); lưu `quote/*` phải giữ trường khác (`{...cũ, ...mới}`). `numIn` coi "." là phân cách nghìn.
 - `GenbidCatalog.build` mất 4–7 s: không gọi `catalog()` đồng bộ lúc mở màn hình. Sửa `catalog.js`: so md5 JSON của `build()` trên `suppliers/cn` với bản origin/main.
+- `placeOf` (xuất xứ): chuẩn hoá NFC; regex `\b` của JS không coi ỹ, đ, ý là chữ → dùng `(?<![\p{L}\p{N}])` với cờ `u`. Tên ngắn trùng chữ thường/tên riêng (Anh, Ý, Mỹ "Mỹ Tho", Đức, Pháp "hợp pháp / biện pháp", Áo, Nga, EU) chỉ tính khi là cả một trường, sau "xuất xứ", hoặc đứng cuối dòng; không đưa vào danh sách nước tự do.
 - `bidprice.js`, `catalog.js`, `conversions.js` dùng chung cho web và bot (`suppliers/`): sửa thì chạy test của cả hai.
 
 ## Thử cục bộ

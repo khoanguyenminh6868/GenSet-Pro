@@ -3,8 +3,8 @@
 // lockStats, nbBucket, wonTokens, wonSetRow, vnMadeSet, placeOf, taxKey, bdPrice, compareCfg, engineGroup, engineWords,
 // costHints, capPick. Số mong đợi tính tay từ quy tắc nghiệp vụ / chú thích trong mã (kW ÷ 0,8 = kVA; 1 MVA = 1000 kVA;
 // ngày tháng kiểu Việt dd/mm/yyyy; hàng thuộc nhóm "giá lẻ" không phải tổ máy…), không chép từ đầu ra của code.
-// Ca `todo`: lỗi / khoảng trống đã đo trên genbid-work\doc-cache\bidhist.json (1.556 gói, 13/11), CHƯA sửa; hỏng không
-// làm đỏ CI, khi sửa xong thì bỏ `todo`. Danh sách: genbid-work\dieu-phoi\nghiem-thu\test-t1.md.
+// Ca `todo` (nếu có): lỗi đã đo, chưa sửa; hỏng không làm đỏ CI, sửa xong thì bỏ `todo`. Ba lỗi của placeOf (NFC, \b với
+// ỹ/đ, thiếu nước) đã sửa 13/11 (việc F1): genbid-work\dieu-phoi\nghiem-thu\fix-f1-placeof.md.
 import test from "node:test";
 import assert from "node:assert/strict";
 import "./config-bot.mjs"; // nạp web/catalog.js và web/bidprice.js vào globalThis
@@ -125,18 +125,25 @@ test("placeOf: Trung Quốc và nước ngoài trong cùng câu → cn thắng (
   assert.equal(BP.placeOf("Động cơ Mỹ (USA), đầu phát Trung Quốc"), "cn");
 });
 
-test("placeOf: chữ có dấu viết ở dạng NFD (tách dấu) vẫn nhận ra", { todo: "placeOf không NFC: 'Trung Quốc' dạng NFD → null; bidhist 13/11: 29/1.247 hàng tổ máy có xuất xứ NFD, 7 dòng đổi kết quả khi NFC" }, () => {
+test("placeOf: chữ có dấu viết ở dạng NFD (tách dấu) vẫn nhận ra", () => {
   assert.equal(BP.placeOf("Trung Quốc".normalize("NFD")), "cn");
   assert.equal(BP.placeOf("Nhật Bản".normalize("NFD")), "foreign");
+  assert.equal(BP.placeOf("Mỹ".normalize("NFD")), "foreign");
 });
 
-test("placeOf: Mỹ, Đức viết một mình là nước ngoài", { todo: "regex \\bmỹ\\b / \\bđức\\b không khớp vì \\b không coi ỹ, đ là chữ: 'Mỹ' 6 hàng, 'Đức' 2 hàng trong bidhist 13/11 ra null" }, () => {
+test("placeOf: Mỹ, Đức viết một mình là nước ngoài", () => {
   assert.equal(BP.placeOf("Mỹ"), "foreign");
   assert.equal(BP.placeOf("Đức"), "foreign");
 });
 
-test("placeOf: Anh, Ý, Hoa Kỳ, Bồ Đào Nha (xuất xứ ghi tên ngắn) là nước ngoài", { todo: "bảng nước thiếu: bidhist 13/11 hàng tổ máy có xuất xứ 'Anh' 5, 'Ý' 7, 'Anh Quốc' 4, 'Hoa Kỳ' 1, 'BỒ ĐÀO NHA' 2 → null" }, () => {
-  for (const s of ["Anh", "Ý", "Hoa Kỳ", "Bồ Đào Nha", "Anh Quốc"]) assert.equal(BP.placeOf(s), "foreign", s);
+test("placeOf: Anh, Ý, Hoa Kỳ, Bồ Đào Nha (xuất xứ ghi tên ngắn) là nước ngoài", () => {
+  for (const s of ["Anh", "Ý", "Hoa Kỳ", "Bồ Đào Nha", "Anh Quốc", "BỒ ĐÀO NHA", "Thái Lan", "Malaysia", "Indonesia", "Singapore", "Thổ Nhĩ Kỳ", "Tây Ban Nha", "EU", "LB Nga"]) assert.equal(BP.placeOf(s), "foreign", s);
+  // Dạng thật trong hàng trúng: tên ngắn nằm giữa các trường.
+  for (const s of ["C18 / Mỹ/ Caterpillar", "Terex, Anh", "Anh/C4.4/Caterpillar", "Mã hiệu: C7.1 Hãng SX:Caterpillar Xuất xứ:Anh", "Máy phát điện Cummins Mỹ"]) assert.equal(BP.placeOf(s), "foreign", s);
+});
+
+test("placeOf: tên ngắn trùng chữ thường / tên riêng (Anh, Ý, Mỹ, Đức, Pháp) không tính khi chỉ nằm trong câu", () => {
+  for (const s of ["Ý kiến của chủ đầu tư", "Mỹ Tho", "Công ty Đức Thành", "Nguyễn Anh Tuấn", "hợp pháp", "biện pháp thi công", "giải pháp lắp đặt", "theo pháp luật hiện hành", "tổng thể theo ý chủ đầu tư"]) assert.equal(BP.placeOf(s), null, s);
 });
 
 // ---------- Nhóm xuất xứ động cơ ----------
