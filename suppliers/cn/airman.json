@@ -54,6 +54,84 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "AIRMAN SDG mobile generators (60Hz, Tier 4 Final)",
+      "fuel": "diesel",
+      "types": [
+        "silent",
+        "mobile"
+      ],
+      "power": {
+        "min": 12.5,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SDG150S-8E1",
+      "fuel": "diesel",
+      "types": [
+        "silent",
+        "mobile"
+      ],
+      "engineModels": [
+        "J.Deere 6068HFG05"
+      ],
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SDG220S-8E1",
+      "fuel": "diesel",
+      "types": [
+        "silent",
+        "mobile"
+      ],
+      "engineModels": [
+        "J.Deere® 6068HFG06"
+      ],
+      "engineMakes": [
+        "John Deere"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
     }
   ],
   "certifications": [],
@@ -73,9 +151,516 @@
         "Tier 4 Final · 45 kVA prime · 64 dB(A) sound-attenuated enclosure for noise-sensitive deployments."
       ],
       "file": "sources/airman/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://anacorp.com/wp-content/uploads/file-manager/Documents/AIRMAN%20GENERATOR%20BROCHURE/WEB/AIRMAN-GENERATOR-FULL-LINE-WEB-VERSION.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "GENERATOR SPECIFICATIONS    SDG13LAX-8E1            SDG25S-8E1              SDG40S-8E1              SDG45S-8E2                   SDG65S-8E1          SDG125S-8E1            SDG150S-8E1             SDG220S-8E1             SDG400S-8E1",
+        "PRIME POWER                 12.5kVA / 10kW          25kVA / 20kW            36kVA / 28.8kW          45kVA    /  36kW             65kVA / 51kW        125kVA /  100kW        150kVA / 120kW          220kVA / 176kW          400kVA / 320kW",
+        "STANDBY POWER               13.8kVA / 11kW          27.5kVA / 22kW          37.8kVA / 30.2kW        48.5kVA  /  38.8kW           69.3kVA / 55.4kW    137.5kVA  / 110kW      165kVA / 132kW          242kVA / 194kW          420kVA / 336kW",
+        "ENGINE                      Kubota D1503            Isuzu 4LE2T             Kubota V2403-CR-T       Isuzu 4LE2X                    Isuzu 4JJ1X       Isuzu BR-4HK1X         J.Deere 6068HFG05       J.Deere 6068HRG06       Isuzu 6WG1X",
+        "DSEGenset® Model 7310 MKII                               and Automotive Door Seals",
+        "Since 1971, AIRMAN has been setting the"
+      ],
+      "file": "sources/airman/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://anacorp.com/mobile-generator-sdg220s-8e1/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "220 kVA Generator | SDG220S-8E1 - ANA",
+        "| ENGINE MODEL | John Deere 6068",
+        "| PRIME POWER | 220 kVA / 176 kW",
+        "| STANDBY POWER | 242 kVA / 194 kW"
+      ],
+      "file": "sources/airman/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://anacorp.com/mobile-generator-sdg13lax-8e1/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "SDG13LAX-8E1 Compact Diesel Generator - ANA",
+        "| ENGINE MODEL | Kubota D1503",
+        "| PRIME POWER | 12.5 kVA / 10 kW",
+        "| STANDBY POWER | 13.8 kVA / 11 kW"
+      ],
+      "file": "sources/airman/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://anacorp.com/mobile-generator-sdg25s-8e1/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "25 kVA Generator | SDG25S-8E1 - ANA",
+        "| ENGINE MODEL | Isuzu 4LE2T",
+        "| PRIME POWER | 25 kVA / 20 kW",
+        "| STANDBY POWER | 27.5 kVA / 22 kW"
+      ],
+      "file": "sources/airman/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://anacorp.com/mobile-generator-sdg40s-8e1/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Three Phase Generator | SDG40S-8E1 - ANA",
+        "| ENGINE MODEL | Isuzu V2403-CR-T",
+        "| PRIME POWER | 36 kVA / 28.6 kW",
+        "| STANDBY POWER | 37.8 kVA / 30.2 kW"
+      ],
+      "file": "sources/airman/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://anacorp.com/mobile-generator-sdg45s-8e2/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "45 kVA Generator | SDG45S-8E1 - ANA",
+        "| ENGINE MODEL | Isuzu 4LE2X",
+        "| PRIME POWER | 45 kVA / 36 kW",
+        "| STANDBY POWER | 48.5 kVA / 38.8 kW"
+      ],
+      "file": "sources/airman/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://anacorp.com/mobile-generator-sdg65s-8e1/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "65 kVA Generator | SDG65S-8E1 - ANA",
+        "| ENGINE MODEL | Isuzu 4JJ1X",
+        "| PRIME POWER | 65 kVA / 51 kW",
+        "| STANDBY POWER | 69.3 kVA / 55.4 kW"
+      ],
+      "file": "sources/airman/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://anacorp.com/mobile-generator-sdg125s-8e1/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "125 kVA Generator | SDG125S-8E1 - ANA",
+        "| ENGINE MODEL | Isuzu BR-4HK1X",
+        "| PRIME POWER | 125 kVA / 100 kW",
+        "| STANDBY POWER | 137.5 kVA / 110 kW"
+      ],
+      "file": "sources/airman/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://anacorp.com/mobile-generator-sdg150s-8e1/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "150 kVA Generator | SDG150S-8E1 - ANA",
+        "| ENGINE MODEL | John Deere 6068 HFG 05",
+        "| PRIME POWER | 150 kVA / 120 kW",
+        "| STANDBY POWER | 165 kVA / 132 kW"
+      ],
+      "file": "sources/airman/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://anacorp.com/mobile-generator-sdg400s-8e1/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 kVA generator | SDG400S-8E1- ANA",
+        "| ENGINE MODEL | Isuzu 6WG1X",
+        "| PRIME POWER | 400 kVA / 320 kW",
+        "| STANDBY POWER | 420 kVA / 336 kW"
+      ],
+      "file": "sources/airman/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://anacorp.com/wp-content/docs/SDG/SDG220/Airman%20Generator%20SDG220S-8E1%20spec%20sheet%20v1.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "242      / 220 kVA",
+        "STANDBY  / PRIME POWER             AIRMAN® Generator Tier 4F Final | J.Deere® 6068HFG06 Engine",
+        "Alternator Type                                          Stamford®",
+        "Prime Power                                220kVA / 176kW                                     85.7 in",
+        "Standby Power                              242kVA / 194kW                            2177 mm",
+        "Engine                                  J.Deere® 6068HFG06"
+      ],
+      "file": "sources/airman/2011.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "AIRMAN SDG mobile generators – specifications (60Hz, Tier 4 Final), ANA full-line brochure AGMFV01.26",
+      "header": [
+        "GENERATOR SPECIFICATIONS    SDG13LAX-8E1            SDG25S-8E1              SDG40S-8E1              SDG45S-8E2                   SDG65S-8E1          SDG125S-8E1            SDG150S-8E1             SDG220S-8E1             SDG400S-8E1"
+      ],
+      "rows": [
+        "NUMBER OF POLES                                                                                                                    4-Pole",
+        "EXCITATION                                                                                                                  Brushless with AVR",
+        "FREQUENCY                                                                                                                           60Hz",
+        "PRIME POWER                 12.5kVA / 10kW          25kVA / 20kW            36kVA / 28.8kW          45kVA    /  36kW             65kVA / 51kW        125kVA /  100kW        150kVA / 120kW          220kVA / 176kW          400kVA / 320kW",
+        "STANDBY POWER               13.8kVA / 11kW          27.5kVA / 22kW          37.8kVA / 30.2kW        48.5kVA  /  38.8kW           69.3kVA / 55.4kW    137.5kVA  / 110kW      165kVA / 132kW          242kVA / 194kW          420kVA / 336kW",
+        "VOLTAGE (THREE-PHASE)       208V / 240V                                                             208V / 240V / 416V / 480V                                                                       208V / 220V / 240V / 416V / 440V / 480V",
+        "ENGINE                      Kubota D1503            Isuzu 4LE2T             Kubota V2403-CR-T       Isuzu 4LE2X                    Isuzu 4JJ1X       Isuzu BR-4HK1X         J.Deere 6068HFG05       J.Deere 6068HRG06       Isuzu 6WG1X",
+        "EPA EMISSION LEVEL                                                                                                                 Tier 4 Final",
+        "                            3 cyl                   4 cyl                   4 cyl                   4 cyl                           4 cyl            4 cyl                  6 cyl                   6 cyl                              6 cyl",
+        "OUTPUT @ RATED SPEED        18.4 HP                 33.3 HP                 44.9 HP                 57.7 HP                        86.5 HP           147.9 HP               235 HP                  323 HP                          457.7 HP",
+        "ENGINE SPEED                                                                                                                       1800 rpm",
+        "FUEL TANK CAPACITY          26.4 gal                51.5 gal                84.5 gal                80.5 gal                       111 gal           168 gal                204 gal                 285 gal                         491 gal",
+        "FULL LOAD                   1.0 gal / hr            1.6 gal / hr            2.3 gal / hr            2.8 gal /   hr                 3.9 gal / hr      7.2 gal / hr           8.5 gal / hr            12.1 gal / hr                23.1  gal  /  hr",
+        "LxWxH W/O TRAILER           55” x 26” x 46”         67” x 31” x 55”         74.8” x 38.2” x 61.4”   74.8” x 38.2” x 61.4”        97” x 39” x 67”    113.4” x 51.2” x 84.6”  130” x 51.2” x 84.6”    138” x 51.2” x 87.4”    177” x 59” x 107.5”",
+        "SOUND LEVEL (NO/FULL LOAD)  58 / 61 dBA             57 / 63 dBA             57 / 61 dBA             57 / 61 dBA                    59 / 65 dBA       66 / 67 dBA            61 / 67 dBA             63 / 69 dBA                  67 / 70 dBA"
+      ],
+      "src": [
+        1
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "SDG220S-8E1 – AIRMAN® 220 kVA Generator (technical specifications)",
+      "header": [
+        "| ENGINE MODEL | John Deere 6068"
+      ],
+      "rows": [
+        "| OUTPUT @ RATED SPD (1,800 RPM) | 295 HP",
+        "| PRIME POWER | 220 kVA / 176 kW",
+        "| STANDBY POWER | 242 kVA / 194 kW",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 127V / 139V 240V / 254V / 277V",
+        "| VOLTAGE 3 PHASE (SWITCHABLE) | 208V / 220V / 240V 416V / 440V/ 480V",
+        "| AMPERAGE 1 PHASE 120V | 491 A x 2",
+        "| AMPERAGE 1 PHASE 240V | 491 A",
+        "| AMPERAGE 3 PHASE 208V | 608 A",
+        "| AMPERAGE 3 PHASE 240V | 529 A",
+        "| AMERPAGE 3 PHASE 480V | 264 A",
+        "| RUN TIME @ FULL LOAD | 23.5 hrs",
+        "| INTEGRAL FUEL TANK CAPACITY | 285 gal",
+        "| EPA EMISSION LEVEL | Tier 4 Final",
+        "| OPERATING WEIGHT | 9,656 lbs",
+        "| DRY WEIGHT | 7,452 lbs",
+        "| GVWR | 11,021 lbs",
+        "| TRAILER WEIGHT | 1,365 lbs",
+        "| DIMENSIONS (W/O TRAILER) | 137.8″ L x 51.2″ W x 87.4″ H",
+        "| DIMENSIONS (W TRAILER) | 219″ L x 83.75″ W x 103.4″ H",
+        "| CERTIFICATION | CSA C22.2 No. 100:14"
+      ],
+      "src": [
+        2
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "SDG13LAX-8E1 – AIRMAN® Compact Diesel Generator (technical specifications)",
+      "header": [
+        "| ENGINE MODEL | Kubota D1503"
+      ],
+      "rows": [
+        "| OUTPUT @ RATED SPD (1,800 RPM) | 18.4 HP",
+        "| PRIME POWER | 12.5 kVA / 10 kW",
+        "| STANDBY POWER | 13.8 kVA / 11 kW",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V",
+        "| VOLTAGE 3 PHASE (SWITCHABLE) | 208V / 240V",
+        "| AMPERAGE 1 PHASE 120V | 40 A x 2",
+        "| AMPERAGE 1 PHASE 240V | 40 A",
+        "| AMPERAGE 3 PHASE 208V | 30 A",
+        "| AMPERAGE 3 PHASE 240V | 30 A",
+        "| RUN TIME @ FULL LOAD | 27.7 hrs",
+        "| INTEGRAL FUEL TANK CAPACITY | 26.4 gal",
+        "| EPA EMISSION LEVEL | Tier 4 Final",
+        "| OPERATING WEIGHT | 1,500 lbs",
+        "| DRY WEIGHT | 1,290 lbs",
+        "| GVWR | 1,995 lbs",
+        "| TRAILER WEIGHT | 494 lbs",
+        "| DIMENSIONS (W/O TRAILER) | 55″ L x 26″ W x 46″ H",
+        "| DIMENSIONS (W TRAILER) | 120″ L x 60″ W x 60″ H",
+        "| CERTIFICATION | CSA C22.2 No. 100:14"
+      ],
+      "src": [
+        3
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "SDG25S-8E1 – AIRMAN® 25 kVA Generator (technical specifications)",
+      "header": [
+        "| ENGINE MODEL | Isuzu 4LE2T"
+      ],
+      "rows": [
+        "| OUTPUT @ RATED SPD (1,800 RPM) | 33.3 HP",
+        "| PRIME POWER | 25 kVA / 20 kW",
+        "| STANDBY POWER | 27.5 kVA / 22 kW",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V 277V",
+        "| VOLTAGE 3 PHASE (SWITCHABLE) | 208V / 240V 416V / 480V",
+        "| AMPERAGE 1 PHASE 120V | 60 A x 2",
+        "| AMPERAGE 1 PHASE 240V | 60 A",
+        "| AMPERAGE 3 PHASE 208V | 65 A",
+        "| AMPERAGE 3 PHASE 240V | 60 A",
+        "| AMERPAGE 3 PHASE 480V | 30 A",
+        "| RUN TIME @ FULL LOAD | 32 hrs",
+        "| INTEGRAL FUEL TANK CAPACITY | 51.5 gal",
+        "| EPA EMISSION LEVEL | Tier 4 Final",
+        "| OPERATING WEIGHT | 2,205 lbs",
+        "| DRY WEIGHT | 1,808 lbs",
+        "| GVWR | 2,849 lbs",
+        "| TRAILER WEIGHT | 644 lbs",
+        "| DIMENSIONS (W/O TRAILER) | 67″ L x 31″ W x 55″ H",
+        "| DIMENSIONS (W TRAILER) | 119″ L x 54″ W x 62″ H",
+        "| CERTIFICATION | CSA C22.2 No. 100:14"
+      ],
+      "src": [
+        4
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "SDG40S-8E1 – AIRMAN® Three Phase Generator (technical specifications)",
+      "header": [
+        "| ENGINE MODEL | Isuzu V2403-CR-T"
+      ],
+      "rows": [
+        "| OUTPUT @ RATED SPD (1,800 RPM) | 44.9 HP",
+        "| PRIME POWER | 36 kVA / 28.6 kW",
+        "| STANDBY POWER | 37.8 kVA / 30.2 kW",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 120V /240V 277V",
+        "| VOLTAGE 3 PHASE (SWITCHABLE) | 208V / 240V 416V / 480V",
+        "| AMPERAGE 1 PHASE 120V | 108 A x 2",
+        "| AMPERAGE 1 PHASE 240V | 108 A",
+        "| AMPERAGE 3 PHASE 208V | 95 A",
+        "| AMPERAGE 3 PHASE 240V | 86 A",
+        "| AMERPAGE 3 PHASE 480V | 43 A",
+        "| RUN TIME @ FULL LOAD | 37 hrs",
+        "| INTEGRAL FUEL TANK CAPACITY | 84.5 gal",
+        "| EPA EMISSION LEVEL | Tier 4 Final",
+        "| OPERATING WEIGHT | 3,065 lbs",
+        "| DRY WEIGHT | 2,426 lbs",
+        "| GVWR | 4,247 lbs",
+        "| TRAILER WEIGHT | 1,182 lbs",
+        "| DIMENSIONS (W/O TRAILER) | 67″ L x 31″ W x 55″ H",
+        "| DIMENSIONS (W TRAILER) | 144″ L x 70″ W x 73″ H",
+        "| CERTIFICATION | CSA C22.2 No. 100:14"
+      ],
+      "src": [
+        5
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "SDG45S-8E2 – AIRMAN® 45 kVA Generator (technical specifications)",
+      "header": [
+        "| ENGINE MODEL | Isuzu 4LE2X"
+      ],
+      "rows": [
+        "| OUTPUT @ RATED SPD (1,800 RPM) | 57.7 HP",
+        "| PRIME POWER | 45 kVA / 36 kW",
+        "| STANDBY POWER | 48.5 kVA / 38.8 kW",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V 277V",
+        "| VOLTAGE 3 PHASE (SWITCHABLE) | 208V / 240V 416V / 480V",
+        "| AMPERAGE 1 PHASE 120V | 60 A x 2",
+        "| AMPERAGE 1 PHASE 240V | 60 A",
+        "| AMPERAGE 3 PHASE 208V | 119 A",
+        "| AMPERAGE 3 PHASE 240V | 108 A",
+        "| AMERPAGE 3 PHASE 480V | 54 A",
+        "| RUN TIME @ FULL LOAD | 28.75 hrs",
+        "| INTEGRAL FUEL TANK CAPACITY | 80.5 gal",
+        "| EPA EMISSION LEVEL | Tier 4 Final",
+        "| OPERATING WEIGHT | 3,337 lbs",
+        "| DRY WEIGHT | 2,954 lbs",
+        "| GVWR | 4,519 lbs",
+        "| TRAILER WEIGHT | 1,182 lbs",
+        "| DIMENSIONS (W/O TRAILER) | 74.8″ L x 38.2″ W x 61.4″ H",
+        "| DIMENSIONS (W TRAILER) | 144″ L x 70″ W x 73″ H",
+        "| CERTIFICATION | CSA C22.2 No. 100:14"
+      ],
+      "src": [
+        6
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "SDG65S-8E1 – AIRMAN® 65 kVA Generator (technical specifications)",
+      "header": [
+        "| ENGINE MODEL | Isuzu 4JJ1X"
+      ],
+      "rows": [
+        "| OUTPUT @ RATED SPD (1,800 RPM) | 86.5 Hp",
+        "| PRIME POWER | 65 kVA / 51 kW",
+        "| STANDBY POWER | 69.3 kVA / 55.4 kW",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V 277V",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 208V / 240V 416V / 480V",
+        "| AMPERAGE 1 PHASE 120V | 152 A x 2",
+        "| AMPERAGE 1 PHASE 240V | 152 A",
+        "| AMPERAGE 3 PHASE 208V | 167 A",
+        "| AMPERAGE 3 PHASE 240V | 152 A",
+        "| AMERPAGE 3 PHASE 480V | 76 A",
+        "| RUN TIME @ FULL LOAD | 28.5 hrs",
+        "| INTEGRAL FUEL TANK CAPACITY | 111 gal",
+        "| EPA EMISSION LEVEL | Tier 4 Final",
+        "| OPERATING WEIGHT | 4,189 lbs",
+        "| DRY WEIGHT | 3,307 lbs",
+        "| GVWR | 5,414 lbs",
+        "| TRAILER WEIGHT | 1,074 lbs",
+        "| DIMENSIONS (W/O TRAILER) | 97″ L x 39″ W x 67″ H",
+        "| DIMENSIONS (W TRAILER) | 160″ L x 74″ W x 84.25″ H",
+        "| CERTIFICATION | CSA C22.2 No. 100:14"
+      ],
+      "src": [
+        7
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "SDG125S-8E1 – AIRMAN® 125 kVA Generator (technical specifications)",
+      "header": [
+        "| ENGINE MODEL | Isuzu BR-4HK1X"
+      ],
+      "rows": [
+        "| OUTPUT @ RATED SPD (1,800 RPM) | 147.9 HP",
+        "| PRIME POWER | 125 kVA / 100 kW",
+        "| STANDBY POWER | 137.5 kVA / 110 kW",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 127V / 139V 240V / 254V / 277V",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 208V / 220V / 240V 416V / 440V/ 480V",
+        "| AMPERAGE 1 PHASE 120V | 300 A x 2",
+        "| AMPERAGE 1 PHASE 240V | 300 A",
+        "| AMPERAGE 3 PHASE 208V | 328 A",
+        "| AMPERAGE 3 PHASE 240V | 300 A",
+        "| AMERPAGE 3 PHASE 480V | 150 A",
+        "| RUN TIME @ FULL LOAD | 23.3 hrs",
+        "| INTEGRAL FUEL TANK CAPACITY | 168 gal",
+        "| EPA EMISSION LEVEL | Tier 4 Final",
+        "| OPERATING WEIGHT | 6,702 lbs",
+        "| DRY WEIGHT | 5,379 lbs",
+        "| GVWR | 8,352 lbs",
+        "| TRAILER WEIGHT | 1,650 lbs",
+        "| DIMENSIONS (W/O TRAILER) | 113″ L x 51″ W x 73″ H",
+        "| DIMENSIONS (W TRAILER) | 196″ L x 79″ W x 85″ H",
+        "| CERTIFICATION | CSA C22.2 No. 100:14"
+      ],
+      "src": [
+        8
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SDG150S-8E1 – AIRMAN® 150 kVA Generator (technical specifications)",
+      "header": [
+        "| ENGINE MODEL | John Deere 6068 HFG 05"
+      ],
+      "rows": [
+        "| OUTPUT @ RATED SPD (1,800 RPM) | 235 Hp",
+        "| PRIME POWER | 150 kVA / 120 kW",
+        "| STANDBY POWER | 165 kVA / 132 kW",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V 277V",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 208V / 240V 416V / 480V",
+        "| AMPERAGE 1 PHASE 120V | 363 A x 2",
+        "| AMPERAGE 1 PHASE 240V | 363 A",
+        "| AMPERAGE 3 PHASE 208V | 394 A",
+        "| AMPERAGE 3 PHASE 240V | 361 A",
+        "| AMERPAGE 3 PHASE 480V | 180 A",
+        "| RUN TIME @ FULL LOAD | 24 hrs",
+        "| INTEGRAL FUEL TANK CAPACITY | 204 gal",
+        "| EPA EMISSION LEVEL | Tier 4 Final",
+        "| OPERATING WEIGHT | 8,488 lbs",
+        "| DRY WEIGHT | 6,878 lbs",
+        "| GVWR | 9,838 lbs",
+        "| TRAILER WEIGHT | 1,350 lbs",
+        "| DIMENSIONS (W/O TRAILER) | 113.4″ L x 51.2″ W x 72.8″ H",
+        "| DIMENSIONS (W TRAILER) | 196″ L x 79″ W x 85″ H",
+        "| CERTIFICATION | CSA C22.2 No. 100:14"
+      ],
+      "src": [
+        9
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "SDG400S-8E1 – AIRMAN® 400 kVA Generator (technical specifications)",
+      "header": [
+        "| ENGINE MODEL | Isuzu 6WG1X"
+      ],
+      "rows": [
+        "| OUTPUT @ RATED SPD (1,800 RPM) | 457.7 Hp",
+        "| PRIME POWER | 400 kVA / 320 kW",
+        "| STANDBY POWER | 420 kVA / 336 kW",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 127V / 139V 240V / 254V / 277V",
+        "| VOLTAGE 1 PHASE (SWITCHABLE) | 208V / 220V / 240V 416V / 440V/ 480V",
+        "| AMPERAGE 1 PHASE 120V | 893 A x 2",
+        "| AMPERAGE 1 PHASE 240V | 893 A",
+        "| AMPERAGE 3 PHASE 208V | 1,048 A",
+        "| AMPERAGE 3 PHASE 240V | 962 A",
+        "| AMERPAGE 3 PHASE 480V | 481 A",
+        "| RUN TIME @ FULL LOAD | 21.3 hrs",
+        "| INTEGRAL FUEL TANK CAPACITY | 491 gal",
+        "| EPA EMISSION LEVEL | Tier 4 Final",
+        "| OPERATING WEIGHT | 17,042 lbs",
+        "| DRY WEIGHT | 13,206 lbs",
+        "| GVWR | 19,602 lbs",
+        "| TRAILER WEIGHT | 2,650 lbs",
+        "| DIMENSIONS (W/O TRAILER) | 177″ L x 59″ W x 107.5″ H",
+        "| DIMENSIONS (W TRAILER) | 270″ L x 92″ W x 127″ H",
+        "| CERTIFICATION | CSA C22.2 No. 100:14"
+      ],
+      "src": [
+        10
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "SDG220S-8E1 Specifications (spec sheet v1)",
+      "header": [
+        "            SDG220S-8E1 Specifications                                               51.2 in"
+      ],
+      "rows": [
+        "Alternator Type                                          Stamford®",
+        "Prime Power                                220kVA / 176kW                                     85.7 in",
+        "Standby Power                              242kVA / 194kW                            2177 mm",
+        "Engine                                  J.Deere® 6068HFG06",
+        "EPA Emission Level                                       EPA Tier 4 Final",
+        "Horsepower                                               323HP",
+        "Engine Speed / Governor Type            1800rpm / Electronic",
+        "Fuel Tank Capacity                                       285gal (1079L)",
+        "Full Load                               12.1gal (45.8L) / hr",
+        "Sound Level (No/Full Load)                               63 / 69 dBA"
+      ],
+      "src": [
+        11
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7310 MKII",
+      "text": "DSEGenset® Model 7310 MKII",
+      "line": "DSEGenset® Model 7310 MKII                               and Automotive Door Seals",
+      "src": [
+        2001
+      ]
+    }
+  ]
 }
