@@ -56,6 +56,1777 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU1250D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38G9"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU1100E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "QST30G4"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU1100D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38G5"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU1000D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38G2A"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU880E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK23G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU880D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38G2B"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU825E5A",
+      "fuel": "diesel",
+      "engineModels": [
+        "VTA28G6"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU825D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU713E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK19G4"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU700D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "VTA28G5"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 636,
+        "max": 636,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU275D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "6LTAA8.9G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU220D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTAA8.3G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU200D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTA8.3G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU165D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BTAA5.9G12"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU150D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BTAA5.9G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 138,
+        "max": 138,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2015
+        ]
+      },
+      "src": [
+        2015
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU138D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BTAA5.9G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2016
+        ]
+      },
+      "src": [
+        2016
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU125D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BTA5.9G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 112,
+        "max": 112,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2017
+        ]
+      },
+      "src": [
+        2017
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU110D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BT5.9G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2018
+        ]
+      },
+      "src": [
+        2018
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU88D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9G11"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2019
+        ]
+      },
+      "src": [
+        2019
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU66D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2020
+        ]
+      },
+      "src": [
+        2020
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P220D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TAG4"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2021
+        ]
+      },
+      "src": [
+        2021
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P200D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2022
+        ]
+      },
+      "src": [
+        2022
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P165D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2023
+        ]
+      },
+      "src": [
+        2023
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P150D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2024
+        ]
+      },
+      "src": [
+        2024
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P110D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104C-44TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2025
+        ]
+      },
+      "src": [
+        2025
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P88D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104A-44TG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2026
+        ]
+      },
+      "src": [
+        2026
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P72D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104A-44TG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 65,
+        "max": 65,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2027
+        ]
+      },
+      "src": [
+        2027
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P66D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "1103A-33TG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2028
+        ]
+      },
+      "src": [
+        2028
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P15D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "403A-15G1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2029
+        ]
+      },
+      "src": [
+        2029
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P1250D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4008-30TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2030
+        ]
+      },
+      "src": [
+        2030
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P1100D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4008-30TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2031
+        ]
+      },
+      "src": [
+        2031
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P1000D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4008TAG1A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2032
+        ]
+      },
+      "src": [
+        2032
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P880D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2033
+        ]
+      },
+      "src": [
+        2033
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P825D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4006-23TAG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2034
+        ]
+      },
+      "src": [
+        2034
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P770E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806A-E18TTAG4"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2035
+        ]
+      },
+      "src": [
+        2035
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P660E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806C-E18TAG1A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2036
+        ]
+      },
+      "src": [
+        2036
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P550E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "2506C-E15TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2037
+        ]
+      },
+      "src": [
+        2037
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P500E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "2506C-E15TAG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2038
+        ]
+      },
+      "src": [
+        2038
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P450E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "2206C-E13TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2039
+        ]
+      },
+      "src": [
+        2039
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P2500D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-61TRG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2040
+        ]
+      },
+      "src": [
+        2040
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P2260D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016TAG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 2050,
+        "max": 2050,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2041
+        ]
+      },
+      "src": [
+        2041
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P2030D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016TAG1A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1845,
+        "max": 1845,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2042
+        ]
+      },
+      "src": [
+        2042
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P1875D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1705,
+        "max": 1705,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2043
+        ]
+      },
+      "src": [
+        2043
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P1850D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2044
+        ]
+      },
+      "src": [
+        2044
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P1650D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TAG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2045
+        ]
+      },
+      "src": [
+        2045
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P1500D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TWG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1350,
+        "max": 1350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2046
+        ]
+      },
+      "src": [
+        2046
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "P1375D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2047
+        ]
+      },
+      "src": [
+        2047
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S770E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC16 072A 02-13"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2048
+        ]
+      },
+      "src": [
+        2048
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S715E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC16 072A 02-12"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2049
+        ]
+      },
+      "src": [
+        2049
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S700E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC16 093A 02-54"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 640,
+        "max": 640,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2050
+        ]
+      },
+      "src": [
+        2050
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S550E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC13 072A 02-14"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2051
+        ]
+      },
+      "src": [
+        2051
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S400E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC13 072A 02-11"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2052
+        ]
+      },
+      "src": [
+        2052
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S360E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC09 072A 02-14"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 330,
+        "max": 330,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2053
+        ]
+      },
+      "src": [
+        2053
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S330E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC09 072A 02-13"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2054
+        ]
+      },
+      "src": [
+        2054
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S313E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC09 072A 02-12"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2055
+        ]
+      },
+      "src": [
+        2055
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE825D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "HC12V132ZL-LAG2A"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2056
+        ]
+      },
+      "src": [
+        2056
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE750D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "HC12V132ZL-LAG1A"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 688,
+        "max": 688,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2057
+        ]
+      },
+      "src": [
+        2057
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE625D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "BF8M1015CP-LA G5"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 563,
+        "max": 563,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2058
+        ]
+      },
+      "src": [
+        2058
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE605D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "BF8M1015CP-LA G4"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2059
+        ]
+      },
+      "src": [
+        2059
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE550E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "BF8M1015CP-LA G2"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2060
+        ]
+      },
+      "src": [
+        2060
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE550D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "BF8M1015CP"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2061
+        ]
+      },
+      "src": [
+        2061
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE500D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "BF8M1015C-LA G2"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2062
+        ]
+      },
+      "src": [
+        2062
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE413D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "BF6M1015CP-LA G"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2063
+        ]
+      },
+      "src": [
+        2063
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE413E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "BF6M1015CP"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2064
+        ]
+      },
+      "src": [
+        2064
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE388D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "BF6M1015C-LA G4"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2065
+        ]
+      },
+      "src": [
+        2065
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU3000E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK78G9"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 2750,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2066
+        ]
+      },
+      "src": [
+        2066
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU2750E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60G23"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2067
+        ]
+      },
+      "src": [
+        2067
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU2500E5A",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60G21"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2068
+        ]
+      },
+      "src": [
+        2068
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU2500E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60G8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2069
+        ]
+      },
+      "src": [
+        2069
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU2250E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60G4"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2070
+        ]
+      },
+      "src": [
+        2070
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU2063E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2071
+        ]
+      },
+      "src": [
+        2071
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU1825E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK50G7"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2072
+        ]
+      },
+      "src": [
+        2072
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU1675D5A",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50GS8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1400,
+        "max": 1400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2073
+        ]
+      },
+      "src": [
+        2073
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU1675D5",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50G8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1400,
+        "max": 1400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2074
+        ]
+      },
+      "src": [
+        2074
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGG CU1375E5",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2075
+        ]
+      },
+      "src": [
+        2075
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C388D5A",
+      "fuel": "diesel",
+      "engineModels": [
+        "NTA855G4"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2076
+        ]
+      },
+      "src": [
+        2076
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE94D6",
+      "fuel": "diesel",
+      "engineModels": [
+        "BF4M2012C G1"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 82,
+        "max": 82,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2077
+        ]
+      },
+      "src": [
+        2077
+      ]
     }
   ],
   "certifications": [],
@@ -89,9 +1860,2163 @@
         "With a dealer and distributor network present in over 80 countries with more than 75,000 generator sets."
       ],
       "file": "sources/agg-power/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU1250D5 1250/1000 1125/900 KTA38G9",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU1100E5 1100/880 1000/800 QST30G4",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU1100D5 1100/880 1000/800 KTA38G5",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU1000D5 1000/800 900/720 KTA38G2A",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU880E5 880/704 800/640 QSK23G3",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU880D5 880/264 800/264 KTA38G2B",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU825E5A 825/660 750/600 VTA28G6",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU825D5 825/660 750/600 KTA38G2",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU713E5 713/570 650/520 QSK19G4",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.aggpower.com/cu-series-275-850-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU700D5 700/560 636/509 VTA28G5",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU275D5 275/220 250/200 6LTAA8.9G2",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU220D5 220/176 200/160 6CTAA8.3G2",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU200D5 200/160 180/144 6CTA8.3G2",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU165D5 165/132 150/120 6BTAA5.9G12",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2014.md",
+      "official": true
+    },
+    {
+      "n": 2015,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU150D5 150/120 138/110 6BTAA5.9G2",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2015.md",
+      "official": true
+    },
+    {
+      "n": 2016,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU138D5 138/110 125/100 6BTAA5.9G2",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2016.md",
+      "official": true
+    },
+    {
+      "n": 2017,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU125D5 125/100 112/90 6BTA5.9G2",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2017.md",
+      "official": true
+    },
+    {
+      "n": 2018,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU110D5 110/88 100/80 6BT5.9G2",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2018.md",
+      "official": true
+    },
+    {
+      "n": 2019,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU88D5 88/70 80/64 4BTA3.9G11",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2019.md",
+      "official": true
+    },
+    {
+      "n": 2020,
+      "url": "https://www.aggpower.com/cu-series-33-300-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU66D5 66/53 60/48 4BTA3.9G2",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2020.md",
+      "official": true
+    },
+    {
+      "n": 2021,
+      "url": "https://www.aggpower.com/p-series-10-220-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P220D5 220/176 200/160 1106A-70TAG4",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2021.md",
+      "official": true
+    },
+    {
+      "n": 2022,
+      "url": "https://www.aggpower.com/p-series-10-220-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P200D5 200/160 180/144 1106A-70TAG3",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2022.md",
+      "official": true
+    },
+    {
+      "n": 2023,
+      "url": "https://www.aggpower.com/p-series-10-220-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P165D5 165/132 150/120 1106A-70TAG2",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2023.md",
+      "official": true
+    },
+    {
+      "n": 2024,
+      "url": "https://www.aggpower.com/p-series-10-220-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P150D5 150/120 135/108 1106A-70TG1",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2024.md",
+      "official": true
+    },
+    {
+      "n": 2025,
+      "url": "https://www.aggpower.com/p-series-10-220-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P110D5 110/88 100/80 1104C-44TAG2",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2025.md",
+      "official": true
+    },
+    {
+      "n": 2026,
+      "url": "https://www.aggpower.com/p-series-10-220-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P88D5 88/70 80/64 1104A-44TG2",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2026.md",
+      "official": true
+    },
+    {
+      "n": 2027,
+      "url": "https://www.aggpower.com/p-series-10-220-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P72D5 72/58 65/52 1104A-44TG1",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2027.md",
+      "official": true
+    },
+    {
+      "n": 2028,
+      "url": "https://www.aggpower.com/p-series-10-220-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P66D5 66/53 60/48 1103A-33TG2",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2028.md",
+      "official": true
+    },
+    {
+      "n": 2029,
+      "url": "https://www.aggpower.com/p-series-10-220-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P15D5 15/12 13/10 403A-15G1",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2029.md",
+      "official": true
+    },
+    {
+      "n": 2030,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P1250D5 1250/1000 1125/900 4008-30TAG3",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2030.md",
+      "official": true
+    },
+    {
+      "n": 2031,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P1100D5 1100/880 1000/800 4008-30TAG2",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2031.md",
+      "official": true
+    },
+    {
+      "n": 2032,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P1000D5 1000/800 900/720 4008TAG1A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2032.md",
+      "official": true
+    },
+    {
+      "n": 2033,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P880D5 880/704 800/640 4006-23TAG3A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2033.md",
+      "official": true
+    },
+    {
+      "n": 2034,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P825D5 825/660 750/600 4006-23TAG2A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2034.md",
+      "official": true
+    },
+    {
+      "n": 2035,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P770E5 770/616 700/560 2806A-E18TTAG4",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2035.md",
+      "official": true
+    },
+    {
+      "n": 2036,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P660E5 660/528 600/480 2806C-E18TAG1A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2036.md",
+      "official": true
+    },
+    {
+      "n": 2037,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P550E5 550/440 500/400 2506C-E15TAG2",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2037.md",
+      "official": true
+    },
+    {
+      "n": 2038,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P500E5 500/400 450/360 2506C-E15TAG1",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2038.md",
+      "official": true
+    },
+    {
+      "n": 2039,
+      "url": "https://www.aggpower.com/p-series-250-1100-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P450E5 450/360 400/320 2206C-E13TAG3",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2039.md",
+      "official": true
+    },
+    {
+      "n": 2040,
+      "url": "https://www.aggpower.com/p-series-825-1880-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P2500D5 2500/2000 2250/1800 4016-61TRG3",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2040.md",
+      "official": true
+    },
+    {
+      "n": 2041,
+      "url": "https://www.aggpower.com/p-series-825-1880-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P2260D5 2260/1808 2050/1640 4016TAG2A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2041.md",
+      "official": true
+    },
+    {
+      "n": 2042,
+      "url": "https://www.aggpower.com/p-series-825-1880-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P2030D5 2030/1624 1845/1476 4016TAG1A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2042.md",
+      "official": true
+    },
+    {
+      "n": 2043,
+      "url": "https://www.aggpower.com/p-series-825-1880-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P1875D5 1875/1500 1705/1364 4012-46TAG3A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2043.md",
+      "official": true
+    },
+    {
+      "n": 2044,
+      "url": "https://www.aggpower.com/p-series-825-1880-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P1850D5 1850/1480 1650/1320 4012-46TAG3A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2044.md",
+      "official": true
+    },
+    {
+      "n": 2045,
+      "url": "https://www.aggpower.com/p-series-825-1880-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P1650D5 1650/1320 1500/1200 4012-46TAG2A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2045.md",
+      "official": true
+    },
+    {
+      "n": 2046,
+      "url": "https://www.aggpower.com/p-series-825-1880-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P1500D5 1500/1200 1350/1080 4012-46TWG3A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2046.md",
+      "official": true
+    },
+    {
+      "n": 2047,
+      "url": "https://www.aggpower.com/p-series-825-1880-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "P1375D5 1375/1100 1250/1000 4012-46TWG2A",
+        "Powered by Perkins"
+      ],
+      "file": "sources/agg-power/2047.md",
+      "official": true
+    },
+    {
+      "n": 2048,
+      "url": "https://www.aggpower.com/s-series-275-880kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "S770E5 770/616 700/560 DC16 072A 02-13",
+        "Powered by Scania"
+      ],
+      "file": "sources/agg-power/2048.md",
+      "official": true
+    },
+    {
+      "n": 2049,
+      "url": "https://www.aggpower.com/s-series-275-880kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "S715E5 715/572 650/520 DC16 072A 02-12",
+        "Powered by Scania"
+      ],
+      "file": "sources/agg-power/2049.md",
+      "official": true
+    },
+    {
+      "n": 2050,
+      "url": "https://www.aggpower.com/s-series-275-880kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "S700E5 700/560 640/512 DC16 093A 02-54",
+        "Powered by Scania"
+      ],
+      "file": "sources/agg-power/2050.md",
+      "official": true
+    },
+    {
+      "n": 2051,
+      "url": "https://www.aggpower.com/s-series-275-880kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "S550E5 550/440 500/400 DC13 072A 02-14",
+        "Powered by Scania"
+      ],
+      "file": "sources/agg-power/2051.md",
+      "official": true
+    },
+    {
+      "n": 2052,
+      "url": "https://www.aggpower.com/s-series-275-880kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "S400E5 400/320 375/300 DC13 072A 02-11",
+        "Powered by Scania"
+      ],
+      "file": "sources/agg-power/2052.md",
+      "official": true
+    },
+    {
+      "n": 2053,
+      "url": "https://www.aggpower.com/s-series-275-880kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "S360E5 360/288 330/264 DC09 072A 02-14",
+        "Powered by Scania"
+      ],
+      "file": "sources/agg-power/2053.md",
+      "official": true
+    },
+    {
+      "n": 2054,
+      "url": "https://www.aggpower.com/s-series-275-880kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "S330E5 330/264 300/240 DC09 072A 02-13",
+        "Powered by Scania"
+      ],
+      "file": "sources/agg-power/2054.md",
+      "official": true
+    },
+    {
+      "n": 2055,
+      "url": "https://www.aggpower.com/s-series-275-880kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "S313E5 313/250 275/220 DC09 072A 02-12",
+        "Powered by Scania"
+      ],
+      "file": "sources/agg-power/2055.md",
+      "official": true
+    },
+    {
+      "n": 2056,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE825D5 825/660 750/600 HC12V132ZL-LAG2A",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2056.md",
+      "official": true
+    },
+    {
+      "n": 2057,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE750D5 750/600 688/550 HC12V132ZL-LAG1A",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2057.md",
+      "official": true
+    },
+    {
+      "n": 2058,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE625D5 625/500 563/450 BF8M1015CP-LA G5",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2058.md",
+      "official": true
+    },
+    {
+      "n": 2059,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE605D5 605/484 550/440 BF8M1015CP-LA G4",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2059.md",
+      "official": true
+    },
+    {
+      "n": 2060,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE550E5 550/440 500/400 BF8M1015CP-LA G2",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2060.md",
+      "official": true
+    },
+    {
+      "n": 2061,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE550D5 550/440 500/400 BF8M1015CP",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2061.md",
+      "official": true
+    },
+    {
+      "n": 2062,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE500D5 500/400 450/360 BF8M1015C-LA G2",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2062.md",
+      "official": true
+    },
+    {
+      "n": 2063,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE413D5 413/330.4 375/300 BF6M1015CP-LA G",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2063.md",
+      "official": true
+    },
+    {
+      "n": 2064,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE413E5 413/330.4 375/300 BF6M1015CP",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2064.md",
+      "official": true
+    },
+    {
+      "n": 2065,
+      "url": "https://www.aggpower.com/de-series-250-825-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE388D5 388/310 350/280 BF6M1015C-LA G4",
+        "Powered by Deutz"
+      ],
+      "file": "sources/agg-power/2065.md",
+      "official": true
+    },
+    {
+      "n": 2066,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU3000E5 3000/2400 2750/2200 QSK78G9",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2066.md",
+      "official": true
+    },
+    {
+      "n": 2067,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU2750E5 2750/2200 2500/2000 QSK60G23",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2067.md",
+      "official": true
+    },
+    {
+      "n": 2068,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU2500E5A 2500/2000 2250/1800 QSK60G21",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2068.md",
+      "official": true
+    },
+    {
+      "n": 2069,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU2500E5 2500/2000 2250/1800 QSK60G8",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2069.md",
+      "official": true
+    },
+    {
+      "n": 2070,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU2250E5 2250/1800 2000/1600 QSK60G4",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2070.md",
+      "official": true
+    },
+    {
+      "n": 2071,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU2063E5 2063/1650 1875/1500 QSK60G3",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2071.md",
+      "official": true
+    },
+    {
+      "n": 2072,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU1825E5 1825/1460 1650/1320 QSK50G7",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2072.md",
+      "official": true
+    },
+    {
+      "n": 2073,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU1675D5A 1675/1340 1400/1120 KTA50GS8",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2073.md",
+      "official": true
+    },
+    {
+      "n": 2074,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU1675D5 1675/1340 1400/1120 KTA50G8",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2074.md",
+      "official": true
+    },
+    {
+      "n": 2075,
+      "url": "https://www.aggpower.com/cu-series-825-3438-kva/?power=50hz&type=three-phase-2",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AGG CU1375E5 1375/1100 1250/1000 KTA50G3",
+        "Powered by Cummins"
+      ],
+      "file": "sources/agg-power/2075.md",
+      "official": true
+    },
+    {
+      "n": 2076,
+      "url": "https://www.aggpower.com/uploads/8f7284bf.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model: C388D5A",
+        "Power (kVA) 350 388 Model C388D5A",
+        "Power (kW) 280 310 Engine brand Cummins",
+        "Rated speed ( r.p.m) 1500 Engine model NTA855G4"
+      ],
+      "file": "sources/agg-power/2076.md",
+      "official": true
+    },
+    {
+      "n": 2077,
+      "url": "https://www.aggpower.com/uploads/DG-SPEC-DE90D6.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model: DE94D6",
+        "Power (kVA) 82 90 Model DE94D6",
+        "Power (kW) 65.6 72 Engine brand Deutz",
+        "Rated speed ( r.p.m) 1800 Engine model BF4M2012C G1"
+      ],
+      "file": "sources/agg-power/2077.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "AGG CU1250D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU1250D5",
+        "1250/1000",
+        "1125/900",
+        "KTA38G9"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "AGG CU1100E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU1100E5",
+        "1100/880",
+        "1000/800",
+        "QST30G4"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "AGG CU1100D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU1100D5",
+        "1100/880",
+        "1000/800",
+        "KTA38G5"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "AGG CU1000D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU1000D5",
+        "1000/800",
+        "900/720",
+        "KTA38G2A"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "AGG CU880E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU880E5",
+        "880/704",
+        "800/640",
+        "QSK23G3"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "AGG CU880D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU880D5",
+        "880/264",
+        "800/264",
+        "KTA38G2B"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "AGG CU825E5A",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU825E5A",
+        "825/660",
+        "750/600",
+        "VTA28G6"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "AGG CU825D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU825D5",
+        "825/660",
+        "750/600",
+        "KTA38G2"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "AGG CU713E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU713E5",
+        "713/570",
+        "650/520",
+        "QSK19G4"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "AGG CU700D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU700D5",
+        "700/560",
+        "636/509",
+        "VTA28G5"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "AGG CU275D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU275D5",
+        "275/220",
+        "250/200",
+        "6LTAA8.9G2"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "AGG CU220D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU220D5",
+        "220/176",
+        "200/160",
+        "6CTAA8.3G2"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "AGG CU200D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU200D5",
+        "200/160",
+        "180/144",
+        "6CTA8.3G2"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "AGG CU165D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU165D5",
+        "165/132",
+        "150/120",
+        "6BTAA5.9G12"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "AGG CU150D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU150D5",
+        "150/120",
+        "138/110",
+        "6BTAA5.9G2"
+      ]
+    },
+    {
+      "n": 2016,
+      "title": "AGG CU138D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU138D5",
+        "138/110",
+        "125/100",
+        "6BTAA5.9G2"
+      ]
+    },
+    {
+      "n": 2017,
+      "title": "AGG CU125D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU125D5",
+        "125/100",
+        "112/90",
+        "6BTA5.9G2"
+      ]
+    },
+    {
+      "n": 2018,
+      "title": "AGG CU110D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU110D5",
+        "110/88",
+        "100/80",
+        "6BT5.9G2"
+      ]
+    },
+    {
+      "n": 2019,
+      "title": "AGG CU88D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU88D5",
+        "88/70",
+        "80/64",
+        "4BTA3.9G11"
+      ]
+    },
+    {
+      "n": 2020,
+      "title": "AGG CU66D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU66D5",
+        "66/53",
+        "60/48",
+        "4BTA3.9G2"
+      ]
+    },
+    {
+      "n": 2021,
+      "title": "P220D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P220D5",
+        "220/176",
+        "200/160",
+        "1106A-70TAG4"
+      ]
+    },
+    {
+      "n": 2022,
+      "title": "P200D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P200D5",
+        "200/160",
+        "180/144",
+        "1106A-70TAG3"
+      ]
+    },
+    {
+      "n": 2023,
+      "title": "P165D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P165D5",
+        "165/132",
+        "150/120",
+        "1106A-70TAG2"
+      ]
+    },
+    {
+      "n": 2024,
+      "title": "P150D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P150D5",
+        "150/120",
+        "135/108",
+        "1106A-70TG1"
+      ]
+    },
+    {
+      "n": 2025,
+      "title": "P110D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P110D5",
+        "110/88",
+        "100/80",
+        "1104C-44TAG2"
+      ]
+    },
+    {
+      "n": 2026,
+      "title": "P88D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P88D5",
+        "88/70",
+        "80/64",
+        "1104A-44TG2"
+      ]
+    },
+    {
+      "n": 2027,
+      "title": "P72D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P72D5",
+        "72/58",
+        "65/52",
+        "1104A-44TG1"
+      ]
+    },
+    {
+      "n": 2028,
+      "title": "P66D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P66D5",
+        "66/53",
+        "60/48",
+        "1103A-33TG2"
+      ]
+    },
+    {
+      "n": 2029,
+      "title": "P15D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P15D5",
+        "15/12",
+        "13/10",
+        "403A-15G1"
+      ]
+    },
+    {
+      "n": 2030,
+      "title": "P1250D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P1250D5",
+        "1250/1000",
+        "1125/900",
+        "4008-30TAG3"
+      ]
+    },
+    {
+      "n": 2031,
+      "title": "P1100D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P1100D5",
+        "1100/880",
+        "1000/800",
+        "4008-30TAG2"
+      ]
+    },
+    {
+      "n": 2032,
+      "title": "P1000D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P1000D5",
+        "1000/800",
+        "900/720",
+        "4008TAG1A"
+      ]
+    },
+    {
+      "n": 2033,
+      "title": "P880D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P880D5",
+        "880/704",
+        "800/640",
+        "4006-23TAG3A"
+      ]
+    },
+    {
+      "n": 2034,
+      "title": "P825D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P825D5",
+        "825/660",
+        "750/600",
+        "4006-23TAG2A"
+      ]
+    },
+    {
+      "n": 2035,
+      "title": "P770E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P770E5",
+        "770/616",
+        "700/560",
+        "2806A-E18TTAG4"
+      ]
+    },
+    {
+      "n": 2036,
+      "title": "P660E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P660E5",
+        "660/528",
+        "600/480",
+        "2806C-E18TAG1A"
+      ]
+    },
+    {
+      "n": 2037,
+      "title": "P550E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P550E5",
+        "550/440",
+        "500/400",
+        "2506C-E15TAG2"
+      ]
+    },
+    {
+      "n": 2038,
+      "title": "P500E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P500E5",
+        "500/400",
+        "450/360",
+        "2506C-E15TAG1"
+      ]
+    },
+    {
+      "n": 2039,
+      "title": "P450E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P450E5",
+        "450/360",
+        "400/320",
+        "2206C-E13TAG3"
+      ]
+    },
+    {
+      "n": 2040,
+      "title": "P2500D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P2500D5",
+        "2500/2000",
+        "2250/1800",
+        "4016-61TRG3"
+      ]
+    },
+    {
+      "n": 2041,
+      "title": "P2260D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P2260D5",
+        "2260/1808",
+        "2050/1640",
+        "4016TAG2A"
+      ]
+    },
+    {
+      "n": 2042,
+      "title": "P2030D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P2030D5",
+        "2030/1624",
+        "1845/1476",
+        "4016TAG1A"
+      ]
+    },
+    {
+      "n": 2043,
+      "title": "P1875D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P1875D5",
+        "1875/1500",
+        "1705/1364",
+        "4012-46TAG3A"
+      ]
+    },
+    {
+      "n": 2044,
+      "title": "P1850D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P1850D5",
+        "1850/1480",
+        "1650/1320",
+        "4012-46TAG3A"
+      ]
+    },
+    {
+      "n": 2045,
+      "title": "P1650D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P1650D5",
+        "1650/1320",
+        "1500/1200",
+        "4012-46TAG2A"
+      ]
+    },
+    {
+      "n": 2046,
+      "title": "P1500D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P1500D5",
+        "1500/1200",
+        "1350/1080",
+        "4012-46TWG3A"
+      ]
+    },
+    {
+      "n": 2047,
+      "title": "P1375D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "P1375D5",
+        "1375/1100",
+        "1250/1000",
+        "4012-46TWG2A"
+      ]
+    },
+    {
+      "n": 2048,
+      "title": "S770E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "S770E5",
+        "770/616",
+        "700/560",
+        "DC16 072A 02-13"
+      ]
+    },
+    {
+      "n": 2049,
+      "title": "S715E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "S715E5",
+        "715/572",
+        "650/520",
+        "DC16 072A 02-12"
+      ]
+    },
+    {
+      "n": 2050,
+      "title": "S700E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "S700E5",
+        "700/560",
+        "640/512",
+        "DC16 093A 02-54"
+      ]
+    },
+    {
+      "n": 2051,
+      "title": "S550E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "S550E5",
+        "550/440",
+        "500/400",
+        "DC13 072A 02-14"
+      ]
+    },
+    {
+      "n": 2052,
+      "title": "S400E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "S400E5",
+        "400/320",
+        "375/300",
+        "DC13 072A 02-11"
+      ]
+    },
+    {
+      "n": 2053,
+      "title": "S360E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "S360E5",
+        "360/288",
+        "330/264",
+        "DC09 072A 02-14"
+      ]
+    },
+    {
+      "n": 2054,
+      "title": "S330E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "S330E5",
+        "330/264",
+        "300/240",
+        "DC09 072A 02-13"
+      ]
+    },
+    {
+      "n": 2055,
+      "title": "S313E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "S313E5",
+        "313/250",
+        "275/220",
+        "DC09 072A 02-12"
+      ]
+    },
+    {
+      "n": 2056,
+      "title": "DE825D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE825D5",
+        "825/660",
+        "750/600",
+        "HC12V132ZL-LAG2A"
+      ]
+    },
+    {
+      "n": 2057,
+      "title": "DE750D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE750D5",
+        "750/600",
+        "688/550",
+        "HC12V132ZL-LAG1A"
+      ]
+    },
+    {
+      "n": 2058,
+      "title": "DE625D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE625D5",
+        "625/500",
+        "563/450",
+        "BF8M1015CP-LA G5"
+      ]
+    },
+    {
+      "n": 2059,
+      "title": "DE605D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE605D5",
+        "605/484",
+        "550/440",
+        "BF8M1015CP-LA G4"
+      ]
+    },
+    {
+      "n": 2060,
+      "title": "DE550E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE550E5",
+        "550/440",
+        "500/400",
+        "BF8M1015CP-LA G2"
+      ]
+    },
+    {
+      "n": 2061,
+      "title": "DE550D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE550D5",
+        "550/440",
+        "500/400",
+        "BF8M1015CP"
+      ]
+    },
+    {
+      "n": 2062,
+      "title": "DE500D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE500D5",
+        "500/400",
+        "450/360",
+        "BF8M1015C-LA G2"
+      ]
+    },
+    {
+      "n": 2063,
+      "title": "DE413D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE413D5",
+        "413/330.4",
+        "375/300",
+        "BF6M1015CP-LA G"
+      ]
+    },
+    {
+      "n": 2064,
+      "title": "DE413E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE413E5",
+        "413/330.4",
+        "375/300",
+        "BF6M1015CP"
+      ]
+    },
+    {
+      "n": 2065,
+      "title": "DE388D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "DE388D5",
+        "388/310",
+        "350/280",
+        "BF6M1015C-LA G4"
+      ]
+    },
+    {
+      "n": 2066,
+      "title": "AGG CU3000E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU3000E5",
+        "3000/2400",
+        "2750/2200",
+        "QSK78G9"
+      ]
+    },
+    {
+      "n": 2067,
+      "title": "AGG CU2750E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU2750E5",
+        "2750/2200",
+        "2500/2000",
+        "QSK60G23"
+      ]
+    },
+    {
+      "n": 2068,
+      "title": "AGG CU2500E5A",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU2500E5A",
+        "2500/2000",
+        "2250/1800",
+        "QSK60G21"
+      ]
+    },
+    {
+      "n": 2069,
+      "title": "AGG CU2500E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU2500E5",
+        "2500/2000",
+        "2250/1800",
+        "QSK60G8"
+      ]
+    },
+    {
+      "n": 2070,
+      "title": "AGG CU2250E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU2250E5",
+        "2250/1800",
+        "2000/1600",
+        "QSK60G4"
+      ]
+    },
+    {
+      "n": 2071,
+      "title": "AGG CU2063E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU2063E5",
+        "2063/1650",
+        "1875/1500",
+        "QSK60G3"
+      ]
+    },
+    {
+      "n": 2072,
+      "title": "AGG CU1825E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU1825E5",
+        "1825/1460",
+        "1650/1320",
+        "QSK50G7"
+      ]
+    },
+    {
+      "n": 2073,
+      "title": "AGG CU1675D5A",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU1675D5A",
+        "1675/1340",
+        "1400/1120",
+        "KTA50GS8"
+      ]
+    },
+    {
+      "n": 2074,
+      "title": "AGG CU1675D5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU1675D5",
+        "1675/1340",
+        "1400/1120",
+        "KTA50G8"
+      ]
+    },
+    {
+      "n": 2075,
+      "title": "AGG CU1375E5",
+      "header": [
+        "Generator Model",
+        "ESP (kVA/kW)",
+        "PRP (kVA/kW)",
+        "Engine Model"
+      ],
+      "rows": [
+        "AGG CU1375E5",
+        "1375/1100",
+        "1250/1000",
+        "KTA50G3"
+      ]
+    },
+    {
+      "n": 2076,
+      "title": "AGG C388D5A datasheet",
+      "header": [
+        "Model: C388D5A"
+      ],
+      "rows": [
+        "Power (kVA)                                               350           388                             Model                                 C388D5A",
+        "Power (kW)                                                280           310                       Engine brand                                Cummins",
+        "Rated speed ( r.p.m)                                              1500                            Engine model                                NTA855G4"
+      ]
+    },
+    {
+      "n": 2077,
+      "title": "AGG DE94D6 datasheet",
+      "header": [
+        "Model: DE94D6"
+      ],
+      "rows": [
+        "Power (kVA)                                                   82             90                         Model                                               DE94D6",
+        "Power (kW)                                                    65.6           72                   Engine brand                                              Deutz",
+        "Rated speed ( r.p.m)                                                  1800                        Engine model                                              BF4M2012C G1"
+      ]
+    }
+  ]
 }
