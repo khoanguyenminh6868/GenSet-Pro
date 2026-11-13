@@ -49,6 +49,2378 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC22(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "4B3.9-G11"
+      ],
+      "power": {
+        "min": 22,
+        "max": 22,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC23(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "4B3.9-G11"
+      ],
+      "power": {
+        "min": 23,
+        "max": 23,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC38(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "4BT3.9-G2"
+      ],
+      "power": {
+        "min": 38,
+        "max": 38,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC50(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC63(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "4BTA3.9-G-11"
+      ],
+      "power": {
+        "min": 63,
+        "max": 63,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC100(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "4BTAA3.9-G3"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC125(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9-G2"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC150(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9-G12"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC187(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6CTA8.3-G2"
+      ],
+      "power": {
+        "min": 187,
+        "max": 187,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC225(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6CTAA8.3-G2"
+      ],
+      "power": {
+        "min": 225,
+        "max": 225,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC250(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6CTAA8.3-G9"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC375(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6ZTAA13-G3"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC438(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6ZTAA13-G2"
+      ],
+      "power": {
+        "min": 438,
+        "max": 438,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC500(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSZ13-G5"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC625(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTAA19-G5"
+      ],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC750(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KT38-GA"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC875(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38-G2B"
+      ],
+      "power": {
+        "min": 875,
+        "max": 875,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC1000(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38-G5"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC1250(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50-G3"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC1500(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50-G8"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LC1875(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50-G15X"
+      ],
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP13(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G1"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP13(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403D-15GL"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP15(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G2"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP20(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22GL"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP20(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404A-22G1"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP30(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP60(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG2"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP60(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104D-44TG2"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP65(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG1"
+      ],
+      "power": {
+        "min": 65,
+        "max": 65,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP80(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG2"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP80(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TAG1"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP100(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TAG2"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP100(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104D-E44TAG2"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP135(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TG1"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP140(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106D-E70TAG2"
+      ],
+      "power": {
+        "min": 140,
+        "max": 140,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP150(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG2"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP150(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106D-E70TAG3"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP180(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG3"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP180(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106D-E70TAG4"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP200(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG4"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP200(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG1"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP200(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206D-E70TTAG1"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP230(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG2"
+      ],
+      "power": {
+        "min": 230,
+        "max": 230,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP230(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206D-E70TTAG2"
+      ],
+      "power": {
+        "min": 230,
+        "max": 230,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP250(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG3"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP250(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206D-E70TTAG3"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP300(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG5L"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP350(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206C-E13TAG2L"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP400(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206C-E13TAG3L"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP400(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206D-E13TAG3L"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP450(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506C-E15TAG1L"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP500(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506C-E15TAG2L"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP500(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506D-E15TAG2L"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP600(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806C-E18TAG1AL"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP600(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806D-E18TAG1AL"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP650(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG2L"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP700(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG4L"
+      ],
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP750(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG2A"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MP800(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MP900(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG1A"
+      ],
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1000(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008-30TAG2"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1000(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG2"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1125(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008-30TAG3"
+      ],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1250(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1850(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016TAG1A"
+      ],
+      "power": {
+        "min": 1850,
+        "max": 1850,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP2000(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016TAG2A"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP2250(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG3"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB12(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G25/5"
+      ],
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB20(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G25/5"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB25(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G25/5"
+      ],
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB33(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G35/5"
+      ],
+      "power": {
+        "min": 33,
+        "max": 33,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB37(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G44/5"
+      ],
+      "power": {
+        "min": 37,
+        "max": 37,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB50(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G50/5"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB62(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M10G70/5"
+      ],
+      "power": {
+        "min": 62,
+        "max": 62,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB80(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M10G88/5"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB100(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M10G110/5"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB125(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M11G150/5"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB150(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M11G165/5"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB187(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M11G188/5"
+      ],
+      "power": {
+        "min": 187,
+        "max": 187,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB200(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M16G220/5"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB250(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M16G250/5"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB283(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M16G275/5"
+      ],
+      "power": {
+        "min": 283,
+        "max": 283,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB375(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M16G350/5"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB437(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M21G400/5"
+      ],
+      "power": {
+        "min": 437,
+        "max": 437,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB500(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M21G500/5"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB500(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M21G550/5"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB625(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M33G715/5"
+      ],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB681(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M33G715/5"
+      ],
+      "power": {
+        "min": 681,
+        "max": 681,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB750(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M33G750/5"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB750(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M33G825/5"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB908(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "8M33G900/5"
+      ],
+      "power": {
+        "min": 908,
+        "max": 908,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB1000(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "8M33G1000/5"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB1000(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M26G1000/5"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB1022(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "8M33G1100/5"
+      ],
+      "power": {
+        "min": 1022,
+        "max": 1022,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB1250(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M33G1250/5"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB1362(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M33G1400/5"
+      ],
+      "power": {
+        "min": 1362,
+        "max": 1362,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB1500(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M33G1500/5"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB1500(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M33G1650/5"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB1703(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "16M33G1900/5"
+      ],
+      "power": {
+        "min": 1703,
+        "max": 1703,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB1817(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "16M33G2000/5"
+      ],
+      "power": {
+        "min": 1817,
+        "max": 1817,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LB2000(S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "16M33G2250/5"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "250kVA soundproof diesel generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6LTAA 8.9-G2"
+      ],
+      "alternatorMakes": [
+        "Leroy-Somer"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -79,9 +2451,355 @@
         "UK INDUSTRIAL GENERATOR MANUFACTURER"
       ],
       "file": "sources/lance-power/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://framerusercontent.com/assets/vB1ufFqy73LSaz0CANjQsc9qiE.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Lance Power is a UK-based global provider of industrial power solutions, specialising in diesel",
+        "Stand By Power KVA 24 25 50 63 75 125",
+        "KVA 22 23 38 50 63 100",
+        "Model 4B3.9-G11 4B3.9-G11 4BT3.9-G2 4BTA3.9-G2 4BTA3.9-G-11 4BTAA3.9-G3",
+        "Stand By Power KVA 150 187 200 250 288 437",
+        "KVA 125 150 187 225 250 375",
+        "Model 6BTAA5.9-G2 6BTAA5.9-G12 6CTA8.3-G2 6CTAA8.3-G2 6CTAA8.3-G9 6ZTAA13-G3",
+        "Stand By Power KVA 500 562 693 888 986 1212",
+        "KVA 438 500 625 750 875 1000",
+        "Model 6ZTAA13-G2 QSZ13-G5 KTAA19-G5 KT38-GA KTA38-G2B KTA38-G5",
+        "Stand By Power KVA 1533 1786 2070",
+        "KVA 1250 1500 1875",
+        "Model KTA50-G3 KTA50-G8 KTA50-G15X",
+        "Stand By Power KVA 9 9 14 14 16 22",
+        "KVA 9 9 13 13 15 20",
+        "Model 403A-11G11 403D-11G 403A-15G1 403D-15GL 403A-15G2 404D-22GL",
+        "Stand By Power KVA 22 33 50 66 66 72",
+        "KVA 20 30 45 60 60 65",
+        "Model 404A-22G1 1103A-33G 1 103A-33TG1 1103A-33TG2 1104D-44TG2 1104A-44TG1",
+        "Stand By Power KVA 88 88 110 110 149 154",
+        "KVA 80 80 100 100 135 140",
+        "Model 1104A-44TG2 1104C-44TAG1 1104C-44TAG2 1104D-E44TAG2 1106A-70TG1 1106D-E70TAG2",
+        "Stand By Power KVA 165 165 198 198 220 220",
+        "KVA 150 150 180 180 200 200",
+        "Model 1106A-70TAG2 1106D-E70TAG3 1106A-70TAG3 1106D-E70TAG4 1106A-70TAG4 1206A-E70TTAG1",
+        "KVA 220 253 253 275 275 330",
+        "KVA 200 230 230 250 250 300",
+        "Model 1206D-E70TTAG1 1206A-E70TTAG2 1206D-E70TTAG2 1206A-E70TTAG3 1206D-E70TTAG3 1506A-E88TAG5L",
+        "Stand By Power KVA 330 385 440 440 495 550",
+        "KVA 300 350 400 400 450 500",
+        "Model 1506A-E88TAG5L 2206C-E13TAG2L 2206C-E13TAG3L 2206D-E13TAG3L 2506C-E15TAG1L 2506C-E15TAG2L",
+        "Stand By Power KVA 550 550 660 660 715 775",
+        "KVA 500 500 600 600 650 700",
+        "Model 2506C-E15TAG2L 2506D-E15TAG2L 2806C-E18TAG1AL 2806D-E18TAG1AL 2806A-E18TAG2L 2806A-E18TAG4L",
+        "KVA 825 880 990 1100 1100 1238",
+        "KVA 750 800 900 1000 1000 1125",
+        "Model 4006-23TAG2A 4006-23TAG3A 4008TAG1A 4008-30TAG2 4008TAG2 4008-30TAG3",
+        "Stand By Power KVA 1375 1485 1650 1881 2053 2200",
+        "KVA 1250 1350 1500 1710 1850 2000",
+        "Model 4012-46TWG2A 4 012- 4 6 T WG3A 4 012- 4 6 TAG2 A 4 012- 4 6 TAG3A 4016TAG1A 4 016 - 61T RG2",
+        "Stand By Power KVA 2200 2475",
+        "KVA 2000 2250",
+        "Model 4016TAG2A 4016-61TRG3",
+        "Stand By Power KVA 13 22 27 37 50 55",
+        "KVA 12 20 25 33 37 50",
+        "Model 4M06G25/5 4M06G25/5 4M06G25/5 4M06G35/5 4M06G44/5 4M06G50/5",
+        "Stand By Power KVA 68 93 125 150 187 206",
+        "KVA 62 80 100 125 150 187",
+        "Model 4M10G70/5 4M10G88/5 4M10G110/5 6M11G150/5 6M11G165/5 6M11G188/5",
+        "Stand By Power KVA 225 275 312 412 481 50",
+        "KVA 200 250 283 375 437 40",
+        "Model 6M16G220/5 6M16G250/5 6M16G275/5 6M16G350/5 6M21G400/5 6M231G440/5",
+        "Stand By Power KVA 550 562 687 750 825 875",
+        "KVA 500 500 625 681 750 750",
+        "Model 6M21G500/5 6M21G550/5 6M33G715/5 6M33G715/5 6M33G750/5 6M33G825/5",
+        "Stand By Power KVA 1000 1100 1100 1125 1375 1500",
+        "KVA 908 1000 1000 1022 1250 1362",
+        "Model 8M33G900/5 8M33G1000/5 12M26G1000/5 8M33G1100/5 12M33G1250/5 12M33G1400/5",
+        "Stand By Power KVA 1650 1650 1875 2000 2250",
+        "KVA 1500 1500 1703 1817 2000",
+        "Model 12M33G1500/5 12M33G1650/5 16M33G1900/5 16M33G2000/5 16M33G2250/5"
+      ],
+      "file": "sources/lance-power/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://www.lance-power.co.uk/case-studies/250kva-diesel-generator-dispatched-in-16-hours",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "The generator supplied was a 250kVA soundproof diesel generator , built using a Cummins 6LTAA 8.9-G2, paired with a Leroy-Somer alternator and controlled via a DSE7320 controller. This combination ensures high performance, fuel efficiency, and reliable standby power for demanding applications.",
+        "At 14:00 on a Thursday, our team received an urgent enquiry for a 250kVA standby diesel generator. The requirement called for immediate availability, rapid preparation, and full compliance with industry standards."
+      ],
+      "file": "sources/lance-power/2002.md",
+      "official": true
     }
   ],
   "confidence": "low",
-  "checkedAt": "2026-11-03",
-  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "LC SERIES 22-100 KVA POWERED BY CUMMINS",
+      "header": [
+        "GROUP MODEL LC22(S) LC23(S) LC38(S) LC50(S) LC63(S) LC100(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 24 25 50 63 75 125",
+        "KVA 22 23 38 50 63 100",
+        "Model 4B3.9-G11 4B3.9-G11 4BT3.9-G2 4BTA3.9-G2 4BTA3.9-G-11 4BTAA3.9-G3"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LC SERIES 150-375 KVA POWERED BY CUMMINS",
+      "header": [
+        "GROUP MODEL LC125(S) LC150(S) LC187(S) LC225(S) LC250(S) LC375(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 150 187 200 250 288 437",
+        "KVA 125 150 187 225 250 375",
+        "Model 6BTAA5.9-G2 6BTAA5.9-G12 6CTA8.3-G2 6CTAA8.3-G2 6CTAA8.3-G9 6ZTAA13-G3"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LC SERIES 437-1000 KVA POWERED BY CUMMINS",
+      "header": [
+        "MODEL LC438(S) LC500(S) LC625(S) LC750(S) LC875(S) LC1000(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 500 562 693 888 986 1212",
+        "KVA 438 500 625 750 875 1000",
+        "Model 6ZTAA13-G2 QSZ13-G5 KTAA19-G5 KT38-GA KTA38-G2B KTA38-G5"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LC SERIES 1250-1875 KVA POWERED BY CUMMINS",
+      "header": [
+        "MODEL LC1250(S) LC1500(S) LC1875(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 1533 1786 2070",
+        "KVA 1250 1500 1875",
+        "Model KTA50-G3 KTA50-G8 KTA50-G15X"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 9-20 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP9(S) LP9(S) LP13(S) LP13(S) LP15(S) LP20(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 9 9 14 14 16 22",
+        "KVA 9 9 13 13 15 20",
+        "Model 403A-11G11 403D-11G 403A-15G1 403D-15GL 403A-15G2 404D-22GL"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 20-65 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP20(S) LP30(S) LP45(S) LP60(S) LP60(S) LP65(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 22 33 50 66 66 72",
+        "KVA 20 30 45 60 60 65",
+        "Model 404A-22G1 1103A-33G 1 103A-33TG1 1103A-33TG2 1104D-44TG2 1104A-44TG1"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 80-140 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP80(S) LP80(S) LP100(S) LP100(S) LP135(S) LP140(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 88 88 110 110 149 154",
+        "KVA 80 80 100 100 135 140",
+        "Model 1104A-44TG2 1104C-44TAG1 1104C-44TAG2 1104D-E44TAG2 1106A-70TG1 1106D-E70TAG2"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 150-200 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP150(S) LP150(S) LP180(S) LP180(S) LP200(S) LP200(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 165 165 198 198 220 220",
+        "KVA 150 150 180 180 200 200",
+        "Model 1106A-70TAG2 1106D-E70TAG3 1106A-70TAG3 1106D-E70TAG4 1106A-70TAG4 1206A-E70TTAG1"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 200-300 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP200(S) LP230(S) LP230(S) LP250(S) LP250(S) LP300(S)"
+      ],
+      "rows": [
+        "KVA 220 253 253 275 275 330",
+        "KVA 200 230 230 250 250 300",
+        "Model 1206D-E70TTAG1 1206A-E70TTAG2 1206D-E70TTAG2 1206A-E70TTAG3 1206D-E70TTAG3 1506A-E88TAG5L"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 300-500 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP300(S) LP350(S) LP400(S) LP400(S) LP450(S) LP500(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 330 385 440 440 495 550",
+        "KVA 300 350 400 400 450 500",
+        "Model 1506A-E88TAG5L 2206C-E13TAG2L 2206C-E13TAG3L 2206D-E13TAG3L 2506C-E15TAG1L 2506C-E15TAG2L"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 500-700 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP500(S) LP500(S) LP600(S) LP600(S) LP650(S) LP700(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 550 550 660 660 715 775",
+        "KVA 500 500 600 600 650 700",
+        "Model 2506C-E15TAG2L 2506D-E15TAG2L 2806C-E18TAG1AL 2806D-E18TAG1AL 2806A-E18TAG2L 2806A-E18TAG4L"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 750-1125 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP750(S) MP800(S) MP900(S) LP1000(S) LP1000(S) LP1125(S)"
+      ],
+      "rows": [
+        "KVA 825 880 990 1100 1100 1238",
+        "KVA 750 800 900 1000 1000 1125",
+        "Model 4006-23TAG2A 4006-23TAG3A 4008TAG1A 4008-30TAG2 4008TAG2 4008-30TAG3"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 1250-2000 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP1250(S) LP1350 (S) LP1500(S) LP1710(S) LP1850(S) LP2000(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 1375 1485 1650 1881 2053 2200",
+        "KVA 1250 1350 1500 1710 1850 2000",
+        "Model 4012-46TWG2A 4 012- 4 6 T WG3A 4 012- 4 6 TAG2 A 4 012- 4 6 TAG3A 4016TAG1A 4 016 - 61T RG2"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LP SERIES 2000-2250 KVA POWERED BY PERKINS",
+      "header": [
+        "MODEL LP2000(S) LP2250(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 2200 2475",
+        "KVA 2000 2250",
+        "Model 4016TAG2A 4016-61TRG3"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LB SERIES 12-50 KVA POWERED BY BAUDOUIN",
+      "header": [
+        "MODEL LB12(S) LB20(S) LB25(S) LB33(S) LB37(S) LB50(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 13 22 27 37 50 55",
+        "KVA 12 20 25 33 37 50",
+        "Model 4M06G25/5 4M06G25/5 4M06G25/5 4M06G35/5 4M06G44/5 4M06G50/5"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LB SERIES 62-187 KVA POWERED BY BAUDOUIN",
+      "header": [
+        "MODEL LB62(S) LB80(S) LB100(S) LB125(S) LB150(S) LB187(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 68 93 125 150 187 206",
+        "KVA 62 80 100 125 150 187",
+        "Model 4M10G70/5 4M10G88/5 4M10G110/5 6M11G150/5 6M11G165/5 6M11G188/5"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LB SERIES 200-453 KVA POWERED BY BAUDOUIN",
+      "header": [
+        "MODEL LB200(S) LB250(S) LB283(S) LB375(S) LB437(S) LB453(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 225 275 312 412 481 50",
+        "KVA 200 250 283 375 437 40",
+        "Model 6M16G220/5 6M16G250/5 6M16G275/5 6M16G350/5 6M21G400/5 6M231G440/5"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LB SERIES 500-750 KVA POWERED BY BAUDOUIN",
+      "header": [
+        "MODEL LB500(S) LB500(S) LB625(S) LB681(S) LB750(S) LB750(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 550 562 687 750 825 875",
+        "KVA 500 500 625 681 750 750",
+        "Model 6M21G500/5 6M21G550/5 6M33G715/5 6M33G715/5 6M33G750/5 6M33G825/5"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LB SERIES 908-1362 KVA POWERED BY BAUDOUIN",
+      "header": [
+        "MODEL LB908(S) LB1000(S) LB1000(S) LB1022(S) LB1250(S) LB1362(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 1000 1100 1100 1125 1375 1500",
+        "KVA 908 1000 1000 1022 1250 1362",
+        "Model 8M33G900/5 8M33G1000/5 12M26G1000/5 8M33G1100/5 12M33G1250/5 12M33G1400/5"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "LB SERIES 1500-2000 KVA POWERED BY BAUDOUIN",
+      "header": [
+        "MODEL LB1500(S) LB1500(S) LB1703(S) LB1817(S) LB2000(S)"
+      ],
+      "rows": [
+        "Stand By Power KVA 1650 1650 1875 2000 2250",
+        "KVA 1500 1500 1703 1817 2000",
+        "Model 12M33G1500/5 12M33G1650/5 16M33G1900/5 16M33G2000/5 16M33G2250/5"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "250kVA diesel generator dispatched in 16 hours (case study)",
+      "header": [
+        "250kVA Diesel Generator Dispatched in 16 Hours for Critical Power Requirements"
+      ],
+      "rows": [
+        "The generator supplied was a 250kVA soundproof diesel generator , built using a Cummins 6LTAA 8.9-G2, paired with a Leroy-Somer alternator and controlled via a DSE7320 controller. This combination ensures high performance, fuel efficiency, and reliable standby power for demanding applications."
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "The generator supplied was a 250kVA soundproof diesel generator , built using a Cummins 6LTAA 8.9-G2, paired with a Leroy-Somer alternator and controlled via a DSE7320 controller. This combination ensures high performance, fuel efficiency, and reliable standby power for demanding applications.",
+      "src": [
+        2002
+      ]
+    }
+  ]
 }
