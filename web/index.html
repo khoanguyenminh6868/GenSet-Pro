@@ -881,8 +881,10 @@ function analysisOf(key) {
   return a || null;
 }
 const RUN_STALE = 20 * 60 * 1000;
-// Tenders without "máy phát điện" in the name stay in the list, but their files and analysis are fetched only when Khoa asks.
-const isGenset = (t) => String(t.bidName || "").normalize("NFC").toLowerCase().includes("máy phát điện");
+// Tenders whose name is not a genset tender stay in the list, but their files and analysis are fetched only when Khoa asks.
+// The tender-name rule is the shared one (GenbidBidprice.isGensetName: "MPĐ", diesel / máy phát dự phòng; not wind / solar
+// generators or a power plant's own unit). It only picks the "Chưa có HSMT" mark of a new tender: nothing leaves the list.
+const isGenset = (t) => window.GenbidBidprice.isGensetName(t.bidName);
 function analysisState(t) {
   const a = analysisOf(t._key);
   if (analysisReqPending(t._key)) return "requested";

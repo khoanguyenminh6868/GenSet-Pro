@@ -250,3 +250,30 @@ test.describe("analysis rút gọn (_lite) + db.full", () => {
     await ctx.close();
   });
 });
+
+test.describe("luật tên gói máy phát (isGensetName) cho dấu \"Chưa có HSMT\"", () => {
+  // Gói BỊA. Luật tên gói chung GenbidBidprice.isGensetName (W2 thay includes("máy phát điện") riêng của index.html):
+  // nhận "MPĐ", loại máy phát điện gió và tổ máy của nhà máy điện. Luật chỉ chọn dấu "Chưa có HSMT" của gói Mới chưa có
+  // tệp; gói nào cũng ở lại danh sách, kể cả gói đang theo dõi mà luật mới coi là không phải máy phát.
+  const base = { investorName: "Bên mời thầu BỊA", location: "Thành phố Huế", bidForm: "CHCT", field: "HH", isInternet: true, publicDate: "2026-11-11T02:00:00.000Z", bidCloseDate: "2030-02-10T03:00:00.000Z", estimatedPrice: 1e9, sourceUrl: "" };
+  const MPD = { ...base, notifyNo: "IB2699000901", bidName: "Mua sắm MPĐ dự phòng 300 kVA (BỊA)" };
+  const WIND = { ...base, notifyNo: "IB2699000902", bidName: "Mua sắm cụm cơ khí và máy phát điện gió (BỊA)" };
+  const PLANT = { ...base, notifyNo: "IB2699000903", bidName: "Sửa chữa máy phát điện tổ máy H1 nhà máy thủy điện (BỊA)" };
+  test.use({ patch: { colls: {
+    feed: { current: { ...SEED.colls.feed.current, tenders: [...SEED.colls.feed.current.tenders, MPD, WIND] } },
+    tracked: { [PLANT.notifyNo]: { stage: "preparing", note: "", tender: PLANT } },
+  } } });
+  const mark = (page, k) => page.locator(`#grid tr[data-key="${k}"] .aicon[aria-label="Chưa phân tích, chưa có HSMT"]`);
+
+  test("MPĐ có dấu; máy phát điện gió không có dấu nhưng vẫn trong tab Mới; gói đang theo dõi bị luật loại vẫn ở tab của nó", async ({ page }) => {
+    await openApp(page);
+    await expect(page.locator(`#grid tr[data-key="${MPD.notifyNo}"]`)).toBeVisible();
+    await expect(mark(page, MPD.notifyNo)).toHaveCount(1);
+    await expect(page.locator(`#grid tr[data-key="${WIND.notifyNo}"]`)).toBeVisible();
+    await expect(mark(page, WIND.notifyNo)).toHaveCount(0);
+    // Gói có "máy phát điện" trong tên (luật cũ) vẫn có dấu như trước.
+    await expect(mark(page, "IB2699000102")).toHaveCount(1);
+    await page.locator('#stageTabs [data-stage="preparing"]').click();
+    await expect(page.locator(`#grid tr[data-key="${PLANT.notifyNo}"]`)).toBeVisible();
+  });
+});
