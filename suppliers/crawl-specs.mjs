@@ -15,7 +15,9 @@ const MODELISH = /(\d+\s?k?va|\d+\s?kw|-pd\d|\/pd\d|product[-_/]?(detail|show)|\
 const only = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--max");
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 const LINK = /(product|engine|generator|genset|gen-set|diesel|series|cummins|perkins|weichai|yuchai|sdec|shangchai|deutz|volvo|mtu|mitsubishi|doosan|baudouin|kubota|yanmar|isuzu|ricardo|fawde|lovol|kva|kw|silent|open|container|gas|marine|alternator|power|chanpin|产品|机组|发动机|柴油机|发电机|pd\d|pl\d)/i;
-const SKIP = /(\/(ar|ru|es|fr|pt|de|it|ne|hi|th|vi|id|tr|ja|ko|pl|nl|fa|ur|bn|ms|uk|he|ro|cs|hu|el|sv|fi|da|no|tl|my|km|lo|si|kk|uz|az|am|sw|ha|yo|ig)(\/|$)|(^|[/_.?=-])(news|blog|article|contact|about|faq|video|case|project|service|login|cart|tags?|privacy|sitemap)s?([/_.?=-]|$)|\.(jpg|jpeg|png|gif|webp|pdf|zip|doc|xls)(\?|$))/i;
+// Globalso sites (Google Translate) link ~100 language copies of each page; they used up the crawl budget
+// (hichaipower.com 2026-11-13: 150 pages read, 2 with tables).
+const SKIP = /(\/(ar|ru|es|fr|pt|de|it|ne|hi|th|vi|id|tr|ja|ko|pl|nl|fa|ur|bn|ms|uk|he|ro|cs|hu|el|sv|fi|da|no|tl|my|km|lo|si|kk|uz|az|am|sw|ha|yo|ig|zh-c[nt]|zh-tw|ga|eu|ca|eo|sq|hy|be|bs|bg|ceb|ny|co|hr|et|fy|gl|ka|gu|ht|haw|iw|hmn|is|jw|kn|ku|ky|la|lv|lt|lb|mk|mg|ml|mt|mi|mr|mn|pa|ps|sr|st|sk|sl|so|sm|gd|sn|sd|su|tg|ta|te|xh|yi|zu|rw|tt|or|tk|ug|af|cy)(\/|$)|(^|[/_.?=-])(news|blog|article|contact|about|faq|video|case|project|service|login|cart|tags?|privacy|sitemap)s?([/_.?=-]|$)|\.(jpg|jpeg|png|gif|webp|pdf|zip|doc|xls)(\?|$))/i;
 const POWER = /\b(k\s?va|kw|kwe|prime|standby|备用|常用|功率)\b/i;
 
 const entities = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", middot: "·", deg: "°", times: "×", plusmn: "±", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", reg: "®", trade: "™", copy: "©", emsp: " ", ensp: " ", le: "≤", ge: "≥", asymp: "≈", sup2: "²", sup3: "³", micro: "µ", divide: "÷", hellip: "…", bull: "•" };

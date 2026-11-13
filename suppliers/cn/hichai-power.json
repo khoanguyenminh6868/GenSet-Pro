@@ -1,0 +1,935 @@
+{
+  "id": "hichai-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Taizhou Kaihua Diesel Generator Sets Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "HICHAI POWER",
+      "HiChai"
+    ]
+  },
+  "website": "https://www.hichaipower.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Taizhou"
+  },
+  "founded": 2003,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [
+    "kaihua-genset"
+  ],
+  "strengths": [
+    {
+      "text": "Thương hiệu xuất khẩu của Kaihua (kaihua-genset); tổ máy 15–3000 kW cho trên bờ, tàu thủy, gas",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: công suất hơn 3000 bộ/năm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "Volvo",
+        "MTU",
+        "Weichai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "LSA",
+        "MECC",
+        "Marathon"
+      ],
+      "power": {
+        "min": 15,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CCS",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "BV",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "cùng pháp nhân với kaihua-genset (kaihuagenset.com); tách bản ghi vì website/thương hiệu xuất khẩu riêng để cào bảng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.hichaipower.com/about-us/",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "HICHAI POWER is an export brand owned by TAIZHOU KAIHUA DIESEL GENERATOR SETS CO., LTD., established in 2003.",
+        "We provide a full range of diesel generator sets from 15 kW to 3000 kW, suitable for land, marine and gas projects.",
+        "We possess a strong annual production capacity of over 3000 sets",
+        "Our products are certified with ISO9001-2008 and other international standards like CE, TLC, CCS, BV",
+        "our strategic partnerships with renowned engine OEMs such as Cummins, Perkins, Volvo, MTU, Weichai, and collaborations with leading alternator brands like Stamford, LSA, MECC, Marathon"
+      ],
+      "file": "sources/hichai-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.hichaipower.com/",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "Taizhou Kaihua Diesel Generator Sets Co., Ltd ALL RIGHTS RESERVED."
+      ],
+      "file": "sources/hichai-power/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.hichaipower.com/hichai-power-diesel-generator-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight"
+      ],
+      "file": "sources/hichai-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.hichaipower.com/hichaipower-diesel-generator-set-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight"
+      ],
+      "file": "sources/hichai-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.hichaipower.com/hichai-baudouin-generator-set-series-model-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "file": "sources/hichai-power/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.hichaipower.com/hichai-200-600kw-generator-set-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight"
+      ],
+      "file": "sources/hichai-power/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.hichaipower.com/hichaipower-10-200kw-diesel-generator-set-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight"
+      ],
+      "file": "sources/hichai-power/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.hichaipower.com/hichai-perkins-diesel-generator-set-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF"
+      ],
+      "file": "sources/hichai-power/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.hichaipower.com/hichaipower-deutz-diesel-generator-set-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG) | Detail Data"
+      ],
+      "file": "sources/hichai-power/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.hichaipower.com/hichaipower-volvo-diesel-generator-set-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight (KG) | Detail Data"
+      ],
+      "file": "sources/hichai-power/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.hichaipower.com/hichai-mtu-diesel-generator-set-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight | Detail Data"
+      ],
+      "file": "sources/hichai-power/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.hichaipower.com/hichai-hd-hyundai-infracore-engine-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight | Detail Data"
+      ],
+      "file": "sources/hichai-power/110.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.hichaipower.com/hichai-baudouin-generator-set-series-top-china-suppliers-and-factory-for-perkins-diesel-generators-1-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Open Type Dimensions (mm) | Soundproof Type Dimensions (mm) | Technical Datasheet"
+      ],
+      "file": "sources/hichai-power/114.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-12",
+  "checkedBy": "Claude Code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "OEM Hichai Power Diesel Generator Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight",
+        "| KVA | KW | kVA | KW | mm | KG"
+      ],
+      "rows": [
+        "| KH-1120GF | 1650 | 1320 | 1400 | 1120 | KTA50-G8 | 5100*2280*2500 | 13000",
+        "| KH-1200GF | 1650 | 1320 | 1500 | 1200 | KTA50-GS8 | 5100*2280*2500 | 13000"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "OEM Hichai Power Diesel Generator Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+        "| KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| KH-1500GF | 2062.5 | 1650 | 1875 | 1500 | QSK60-G3 | 6175x2600x2840 | 15152",
+        "| KH-1600GF | 2200 | 1760 | 2000 | 1600 | QSK60-G4 | 6175x2600x2840 | 15366",
+        "| KH-1800GF | 2475 | 1980 | 2250 | 1800 | QSK60-G13 | 6175x2600x2840 | 17217",
+        "| KH-1150GF | 1581 | 1265 | 1437 | 1150 | 12V4000G23R | 6150x2150x2400 | 12000",
+        "| KH-1280GF | 1760 | 1408 | 1600 | 1280 | 12V4000G23 | 6150x2150x2400 | 13000",
+        "| KH-1360GF | 1870 | 1496 | 1700 | 1360 | 12V4000G23 | 6150x2150x2400 | 13500",
+        "| KH-1450GF | 1993 | 1595 | 1812 | 1450 | 12V4000G63 | 6150x2150x2400 | 14000",
+        "| KH-1640GF | 2255 | 1804 | 2050 | 1640 | 16V4000G23 | 6500x2600x2500 | 17000",
+        "| KH-1880GF | 2585 | 2068 | 2350 | 1880 | 16V4000G63 | 6550x2600x2500 | 17600",
+        "| KH-2000GF | 2750 | 2200 | 2500 | 2000 | 20V4000G23 | 8300x2950x2550 | 24000",
+        "| KH-2330GF | 3203 | 2563 | 2912 | 2330 | 20V4000G63 | 8300x2950x2550 | 24500",
+        "| KH-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000",
+        "| KH-1200GF | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | 5220x2130x2600 | 9720",
+        "| KH-1350GF | 1855.7 | 1485 | 1687 | 1350 | 4012-46TAG3A | 5220x2130x2600 | 10000",
+        "| KH-1500GF | 2062.5 | 1650 | 1875 | 1500 | 4016TAG1A | 5220x2130x2600 | 13155",
+        "| KH-1600GF | 2200 | 1760 | 2000 | 1600 | 4016TAG2A | 5770x2800x3520 | 13450",
+        "| KH-1800GF | 2475 | 1980 | 2250 | 1800 | 4016-61TRG3 | 5770x2800x3520 | 13450"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "OEM Hichaipower Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight",
+        "| KVA | KW | kVA | KW | mm | KG"
+      ],
+      "rows": [
+        "| KH-640GF | 891 | 712 | 800 | 640 | KTA38-G2B | 4260*1650*2350 | 6350",
+        "| KH-720GF | 1034 | 827 | 900 | 720 | KTA38-G2A | 4350*1650*2350 | 6650",
+        "| KH-800GF | 1100 | 880 | 1000 | 800 | KTA38-G5 | 4500*1850*2350 | 6900",
+        "| KH-900GF | 1265 | 1012 | 1125 | 900 | KTA38-G9 | 4500*2100*2500 | 7500",
+        "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | KTA50-G3 | 5100*2280*2500 | 9600"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "OEM Hichaipower Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+        "| KVA | KW | KVA | KW | KG"
+      ],
+      "rows": [
+        "| KH-640GF | 880.0 | 704 | 800 | 640 | P222FE-11 | 3700x1500x1800 | 4160",
+        "| KH-640GF | 880 | 704 | 800 | 640 | QSK23-G3 | 4593x1562x2086 | 6200",
+        "| KH-720GF | 990 | 792 | 900 | 720 | QST30-G3 | 4757x1702x2332 | 6500",
+        "| KH-800GF | 1100 | 880 | 1000 | 800 | QST30-G4 | 4757x1800x2332 | 6700",
+        "| KH-640GF | 880 | 704 | 800 | 640 | 12V2000G65 | 4200x1650x2200 | 7000",
+        "| KH-728GF | 1001 | 801 | 910 | 728 | 16V2000G25 | 4500x2000x2300 | 7850",
+        "| KH-800GF | 1100 | 880 | 1000 | 800 | 16V2000G65 | 4500x2000x2300 | 7850",
+        "| KH-910GF | 1251 | 1001 | 1137 | 910 | 18V2000G65 | 4750x1800x2400 | 9000",
+        "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | 12V4000G21R | 6150x2150x2400 | 11500",
+        "| KH-600GF | 825 | 660 | 750 | 600 | 4006-23TAG2A | 4450x1650x2290 | 5413",
+        "| KH-640GF | 880 | 704 | 800 | 640 | 4006-23TAG3A | 4450x1710x2290 | 5422",
+        "| KH-720GF | 990 | 792 | 900 | 720 | 4008TAG1A | 4700x2450x2475 | 7600",
+        "| KH-800GF | 1100 | 880 | 1000 | 800 | 4008TAG2A | 4700x2450x2475 | 7639",
+        "| KH-900GF | 1237.5 | 990 | 1125 | 900 | 4008-30TAG3 | 4700x2450x2475 | 7639",
+        "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | 5220x2130x2600 | 9230"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "OEM Hichai Baudouin Generator Set Series Model Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "rows": [
+        "| HC-BD70 | 68.8 | 62.5 | 4M10G70/5 | TAL-A42-H | | 2440*1060*1680 | Download",
+        "| HC-BD90 | 90 | 80 | 4M10G88/5 | TAL-A44-C | | 2810*1140*1830 | Download",
+        "| HC-BD110 | 110 | 100 | 4M10G110/5 | TAL-A44-D | | 2810*1140*1830 | Download",
+        "| HC-BD140 | 137.5 | 125 | 6M11G150/5 | TAL-A44-E | | 3230*1170*1800 | Download",
+        "| HC-BD150 | 150 | 135 | 6M11G150/5 | TAL-A44-H | | 3230*1170*1800 | Download",
+        "| HC-BD165 | 165 | 150 | 6M11G165/5 | TAL-A44-J | | 3230*1170*1800 | Download",
+        "| HC-BD220 | 220 | 200 | 6M16G220/5 | N200G4 | | 3590*1310*2050 | Download",
+        "| HC-BD275 | 275 | 250 | 6M16G275/5 | TAL-A46-D | | 3890*1460*2150 | Download",
+        "| HC-BD330 | 330 | 300 | 6M16G350/5 | TAL-A46-F | | 3890*1460*2150 | Download",
+        "| HC-BD350 | 350 | 320 | WP10D320E200 6M16G350/5 | S4L1D-E41 | | 4090*1460*2150 | Download",
+        "| HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | | 4230*1460*2150 | Download",
+        "| HC-BD440 | 440 | 400 | 6M21G440/5 | S4L1D-F41 | | 4230*1460*2150 | Download",
+        "| HC-BD500 | 500 | 450 | 6M21G500/5 | S4L1D-G41 | | 4630*1660*2250 | Download",
+        "| HC-BD550 | 550 | 500 | 6M21G550/5 | S5L1D-C4 | | 4630*1660*2250 | Download",
+        "| HC-BD660 | 660 | 600 | 8M21G660/5 | S5L1D-E41 | | 5030*1860*2550 | Download",
+        "| HC-BD700 | 700 | 635 | 6M33D633E200 | S5L1D-E41 | 3650*1638*2050 | 5530*1860*2550 | Download",
+        "| HC-BD715 | 715 | 650 | 6M33G6D3/5 | S5L1D-F41 | 3650*1638*2050 | 5530*1860*2550 | Download",
+        "| HC-BD760 | 760 | 700 | 6M33G750/5 | S5L1D-G4 | 3650*1638*2050 | 5530*1860*2550 | Download",
+        "| HC-BD825 | 825 | 750 | 6M33G8D3/5 (6M33G825/5) | S5L1D-H41 | 4000*2100*2080 | 5530*1860*2550 | Download",
+        "| HC-BD880 | 880 | 800 | 8M33G900/5 | S6L1D-C41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD880-III | 880 | 800 | 8M33G1D0/5 | S6L1D-C41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1000 | 1000 | 910 | 8M33G1000/5 | S6L1D-D41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1000-III | 1000 | 910 | 8M33G5D0/5 | S6L1D-D41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1100 | 1125 | 1025 | 12M26G1100/5 | S6L1D-E4 | 4500*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1100-III | 1125 | 1025 | 8M33G6D3/5 | S6L1D-E41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1250 | 1250Z | 1135 | 12M33D1108E200 | S6L1D-F4 | 4600*2100*2300 | ISO 20'ft HQ | Download",
+        "| HC-BD1375 | 1375 | 1250 | 12M33D1210E200 | S6L1D-G4 | 4600*2100*2300 | ISO 20'ft HQ | Download",
+        "| HC-BD1375-III | 1375 | 1250 | 12M33G8D3/5 | S6L1D-G41 | 4600*2100*2300 | ISO 20'ft HQ | Download",
+        "| HC-BD1500 | 1500 | 1375 | 12M33G1500/5 | S6L1D-H4 | 4600*2100*2300 | ISO 20'ft HQ | Download",
+        "| HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | | | Download",
+        "| HC-BD1800 | 1800 | 1640 | 16M33G2D3/5 | PI 734ES1 | 5300×2300×2600 | | Download",
+        "| HC-BD1900 | 1900 | 1750 | 16M33G4D3/5 | S7L1D-E41 | 5200×2200×2500 | | Download",
+        "| HC-BD2000 | 2000 | 1875 | 16M33G6D3/5 | S7L1D-F41 | 5300×2300×2600 | | Download",
+        "| HC-BD2250E | 2250 | NA | 16M33G8D3/5 | S7L1D-G41 | 5300×2300×2600 | | Download",
+        "| HC-BD2250 | 2250 | 2050 | 20M33G2D3/5 | S7L1D-G41 | | | Download",
+        "| HC-BD2500 | 2500 | 2275 | 20M33G4D3/5 | S7L1D-H41 | | | Download",
+        "| HC-BD2750 | 2750 | 2500 | 12M55G4D3/5 | S7L1D-J4 | | | Download",
+        "| HC-BD3000 | 3000 | 2750 | 12M55G6D3/5 | LSA52.3 UL16 | | | Download",
+        "| HC-BD3100 | 3125 | 2813 | 16M55G0D3/5 | LSA 53.2M9 | | | Download",
+        "| HC-BD3300 | 3313 | 3000 | 16M55G2D3/5 | LSA 53.2M9 | | | Download",
+        "| HC-BD3750 | 3750 | 3250 | 16M55G4D3/5 | LSA 53.2M12 | | | Download",
+        "| HC-BD4000 | 4135 | 3750 | 16M55G6D3/5 | LSA 54.2L14 | | | Download",
+        "| HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF",
+        "| HC-BD100-60 | 100 | 94 | 4M10G83/6 WP4.1D95E201 | UCI 224G1 | | | Download",
+        "| HC-BD125-60 | 125 | 112 | 4M10G100/6 WP4.1D115E201 | UCI 274C1 | | 2810*1140*1830 | Download",
+        "| HC-BD140-60 | 138 | 125 | 6M11G110/6 WP6D132E201 | UCI 274D1 | | 3230*1170*1800 | Download",
+        "| HC-BD165-60 | 165 | 150 | 6M11G135/6 WP6D158E201 | UCI 274E1 | | 3230*1170*1800 | Download",
+        "| HC-BD200-60 | 200 | 180 | WP6D180E201 6M11G160/6 | UCI 274F1 | | 3230*1170*1800 | Download",
+        "| HC-BD220-60 | 220 | 200 | 6M11G176/6 | UCI 274G1 | | 3230*1170*1800 | Download",
+        "| HC-BD250-60 | 250 | 230 | WP10D238E201 6M16G200/6 | UCI 274H1 | | 3590*1310*2050 | Download",
+        "| HC-BD275-60 | 275 | 250 | WP10D264E201 6M16G220/6 | UCDI 274J1 | | 3890*1460*2150 | Download",
+        "| HC-BD315-60 | 315 | 288 | WP10D288E201 6M16G250/6 | UCDI 274J1 | | 4090*1460*2150 | Download",
+        "| HC-BD385-60 | 385 | 350 | WP13D360E201 6M16G308/6 | S4L1D-D41 | | 4090*1460*2150 | Download",
+        "| HC-BD415-60 | 415 | 380 | WP13D385E201 6M21G330/6 | S4L1D-E41 | | 4230*1460*2150 | Download",
+        "| HC-BD490-60 | 490 | 440 | 6M21G390/6 | S4L1D-F41 | | 4230*1460*2150 | Download",
+        "| HC-BD500-60 | 500 | 455 | 6M21G400/6 | S4L1D-F41 | | 4630*1660*2250 | Download",
+        "| HC-BD550-60 | 550 | 500 | WP13D510E311 6M21G460/6 | S4L1D-F41 | 3400*1270*1974 | 4630*1660*2250 | Download",
+        "| HC-BD710-60 | 712 | 650 | 6M33G575/6 | HCI 544E1 | 3900*1600*2050 | 5530*1860*2550 | Download",
+        "| HC-BD760-60 | 760 | 690 | 6M33G600/6 | HCI 544E1 | 3900*1600*2050 | 5530*1860*2550 | Download",
+        "| HC-BD825-60 | 825 | 750 | 6M33G660/6 | HCI 544F1 | 3900*1600*2050 | 5530*1860*2550 | Download",
+        "| HC-BD1000-60 | 1000 | 910 | 12M26G800/6 | S6L1D-C4 | 4500*2100*2080 | ISO 20'ft GP | Download",
+        "| HC-BD1100-60 | 1125 | 1025 | 12M26D1012E201 | S6L1D-D4 | 4500*2100*2080 | ISO 20'ft GP | Download",
+        "| HC-BD1250-60 | 1250 | 1135 | 12M33D1108E201 | S6L1D-E4 | 4600*2100*2300 | ISO 20'ft GP | Download",
+        "| HC-BD1375-60 | 1375 | 1250 | 12M33D1265E201 | S6L1D-F4 | 4600*2100*2300 | ISO 20'ft GP | Download",
+        "| HC-BD1500-60 | 1500 | 1365 | 12M33D1320E201 | S6L1D-G4 | 4600*2100*2300 | ISO 20'ft GP | Download",
+        "| HC-BD1600-60 | 1600 | 1475 | 12M33G1300/6 | S6L1D-H4 | 4600*2100*2300 | ISO 20'ft GP | Download",
+        "| HC-BD1650-60 | 1650 | 1500 | 12M33G1320/6 | S6L1D-H41 | 4600*2100*2300 | ISO 20'ft HQ | Download",
+        "| HC-BD 1900-60 | 1900 | 1750 | 16M33G1500/6 | S7L1D-F41 | 5200×2200×2500 | ISO 40'ft HQ | Download",
+        "| HC-BD 2060-60 | 2060 | 1875 | 16M33G1650/6 | S7L1D-F41 | 5300×2300×2600 | ISO 40'ft HQ | Download",
+        "| HC-BD 2200-60 | 2200 | NA | 16M33G1750/6 | S7L1D-F41 | 5300×2300×2600 | ISO 40'ft HQ | Download",
+        "| HC-BD2500-60 | 2500 | 2250 | 20M33G2000/6 | S7L1D-G41 | | | Download",
+        "| HC-BD2750-60 | 2750 | 2500 | 20M33G2200/6 | S7L1D-H41 | | | Download",
+        "| HC-BD2800-60 | 2813 | 2557 | 12M55G2250/6 | S7L1D-H41 | | | Download",
+        "| HC-BD3000-60 | 3080 | 2800 | 12M55G2500/6 | LSA 53.2M9 or: ECO46-VL | | | Download",
+        "| HC-BD3300-60 | 3300 | 3000 | 16M55G2640/6 | LSA 53.2M9 or：LV804T | | | Download",
+        "| HC-BD3500-60 | 3500 | 3200 | 16M55G2800/6 | LSA 53.2M9 or：LV804T | | | Download",
+        "| HC-BD3750-60 | 3750 | 3300 | 16M55G3000/6 | LSA 53.2M12 or: LV804W | | | Download",
+        "| HC-BD4000-60 | 4000 | 3750 | 16M55G3300/6 | LSA 54 UL110 or：LV804X | | | Download"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight",
+        "| KVA | KW | kVA | KW | mm | KG"
+      ],
+      "rows": [
+        "| KH-200GF | 275 | 220 | 250 | 200 | NT855-GA | 2980*1000*1700 | 2320",
+        "| 275 | 220 | MTA11-G2A | 2980*1000*1700 | 2320",
+        "| KH-250GF | 330 | 264 | 312.5 | 250 | NTA855-G1A | 2980*1000*1700 | 2450",
+        "| 358 | 286 | MTAA11-G3 | 3150*1050*1700 | 2450",
+        "| KH-275GF | 385 | 308 | 343.7 | 275 | NTA855-G2A | 3100*1000*1700 | 2600",
+        "| KH-300GF | 418 | 334 | 375 | 300 | NTAA855-G7 | 3400*1280*1800 | 3050",
+        "| KH-320GF | 462 | 370 | 400 | 320 | NTAA855-G7A | 3400*1280*1800 | 3050",
+        "| KH-360GF | 495 | 396 | 450 | 360 | KTA19-G3 | 3300*1350*2000 | 3600",
+        "| KH-400GF | 550 | 440 | 500 | 400 | KTA19-G3A | 3420*1250*1930 | 3720",
+        "| KH-420GF | 605 | 484 | 525 | 420 | KTAA19-G5 | 3550*1550*2100 | 4000",
+        "| KH-500GF | 688 | 550 | 625 | 500 | KTA19-G6A | 3550*1550*2100 | 4400",
+        "| KH-600GF | 858 | 686 | 750 | 600 | KTA38-G2 | 4260*1650*2350 | 6350"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight",
+        "| KVA | KW | KVA | KW | mm | KG"
+      ],
+      "rows": [
+        "| KH-350GF | 495 | 396 | 437.5 | 350 | QSZ13-G2 | 3150*1360*1870 | 2600",
+        "| KH-400GF | 550 | 440 | 500 | 400 | QSZ13-G3 | 3150*1360*1870 | 2670"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+        "| KVA | KW | KVA | KW | KG"
+      ],
+      "rows": [
+        "| KH-250GF | 343.8 | 275 | 312.5 | 250 | P126T1-11 | 2960x1030x1500 | 2315",
+        "| KH-280GF | 385.0 | 308 | 350 | 280 | P158LE-1 | 3120x1390x1690 | 2715",
+        "| KH-300GF | 412.5 | 330 | 375 | 300 | P158LE | 3120x1390x1690 | 2885",
+        "| KH-350GF | 481.3 | 385 | 437.5 | 350 | P158LE-S | 3120x1390x1690 | 2885",
+        "| KH-400GF | 550.0 | 440 | 500 | 400 | P180LE | 3300x1390x1780 | 3285",
+        "| KH-450GF | 618.8 | 495 | 562.5 | 450 | P222LE-1 | 3300x1390x1780 | 3285",
+        "| KH-500GF | 687.5 | 550 | 625 | 500 | P222LE-S | 3450x1390x1820 | 3900",
+        "| KH-560GF | 770.0 | 616 | 700 | 560 | P222LE-11 | 3600x1420x1700 | 3980",
+        "| KH-600GF | 825.0 | 660 | 750 | 600 | P222FE-11 | 3600x1420x1700 | 4100",
+        "| KH-40GF | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050",
+        "| KH-50GF | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100",
+        "| KH-80GF | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200",
+        "| KH-100GF | 138 | 110 | 125 | 100 | BF4M1013FC | 2150x750x1550 | 1380",
+        "| KH-120GF | 165 | 132 | 150 | 120 | BF6M1013EC | 2473x900x1546 | 1330",
+        "| KH-150GF | 206 | 165 | 188 | 150 | BF6M1013FC G2 | 2600x1010x1700 | 1820",
+        "| KH-160GF | 220 | 176 | 200 | 160 | BF6M1013FC G3 | 2600x1010x1700 | 1820",
+        "| KH-180GF | 248 | 198 | 225 | 180 | BF6M1015-LA GA | 2600x1140x1800 | 1880",
+        "| KH-200GF | 275 | 220 | 250 | 200 | BF6M1015C-LA G1A | 3060x1315x2035 | 2300",
+        "| KH-220GF | 303 | 242 | 275 | 220 | BF6M1015C-LA G2A | 3060x1315x2035 | 2300",
+        "| KH-250GF | 344 | 275 | 313 | 250 | BF6M1015C-LA G3A | 3060x1315x2035 | 2300",
+        "| KH-280GF | 385 | 308 | 350 | 280 | BF6M1015C-LA G4 | 3060x1315x2035 | 2300",
+        "| KH-300GF | 413 | 330 | 375 | 300 | BF6M1015CP-LA G | 3060x1315x2035 | 2300",
+        "| KH-350GF | 481 | 385 | 438 | 350 | BF8M1015C-LA G1A | 3208x1515x1975 | 2870",
+        "| KH-360GF | 495 | 396 | 450 | 360 | BF8M1015C-LA G2 | 3208x1815x1978 | 3190",
+        "| KH-380GF | 523 | 418 | 475 | 380 | BF8M1015CP-LA G1A | 3208x1815x1978 | 3190",
+        "| KH-400GF | 550 | 440 | 500 | 400 | BF8M1015CP-LA G2 | 3208x1815x1978 | 3190",
+        "| KH-410GF | 564 | 451 | 513 | 410 | BF8M1015CP-LA G3 | 3208x1815x1978 | 3190",
+        "| KH-430GF | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190",
+        "| KH-450GF | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190",
+        "| KH-550GF | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120",
+        "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120",
+        "| KH-364GF | 500.5 | 400.4 | 455 | 364 | QSX15-G6 | 3430x1200x2065 | 4100",
+        "| KH-400GF | 550 | 440 | 500 | 400 | QSX15-G8 | 3430x1200x2065 | 4250",
+        "| KH-500GF | 687.5 | 550 | 625 | 500 | VTA28-G5 | 4067x1880x2286 | 5450",
+        "| KH-600GF | 825 | 660 | 750 | 600 | VTA28-G6 | 4047x1880x2286 | 5900",
+        "| KH-224GF | 308 | 246 | 280 | 224 | 6R1600G10F | 3000x1335x1880 | 2795",
+        "| KH-250GF | 344 | 275 | 313 | 250 | 6R1600G20F | 3000x1335x1880 | 2795",
+        "| KH-300GF | 413 | 330 | 375 | 300 | 8V1600G10G | 3000x1590x1940 | 3570",
+        "| KH-320GF | 440 | 352 | 400 | 320 | 8V1600G20G | 3000x1590x1940 | 3570",
+        "| KH-360GF | 495 | 396 | 450 | 360 | 10V1600G10F | 3095x1590x1970 | 4065",
+        "| KH-400GF | 550 | 440 | 500 | 400 | 10V1600G20F | 3095x1590x1970 | 4065",
+        "| KH-480GF | 660 | 528 | 600 | 480 | 12V1600G10F | 3330x1590x1970 | 4100",
+        "| KH-520GF | 715 | 572 | 650 | 520 | 12V2000G25 | 4200x1650x2200 | 7000",
+        "| KH-528GF | 726 | 581 | 660 | 528 | 12V1600G20F | 3330x1590x1970 | 4100",
+        "| KH-240GF | 330 | 264 | 300 | 240 | 1506A-E88TAG5 | 3035x900x1525 | 2400",
+        "| KH-280GF | 385 | 308 | 350 | 280 | 2206C-E13TAG2 | 3500x1105x1960 | 3385",
+        "| KH-320GF | 440 | 352 | 400 | 320 | 2206C-E13TAG3 | 3500x1105x1960 | 3385",
+        "| KH-360GF | 495 | 396 | 450 | 360 | 2506C-E15TAG1 | 3935x1150x2080 | 3583",
+        "| KH-400GF | 550 | 440 | 500 | 400 | 2506C-E15TAG2 | 3935x1150x2080 | 3691",
+        "| KH-480GF | 660 | 528 | 600 | 480 | 2806C-E18TAG1A | 3960x1532x2100 | 4298",
+        "| KH-520GF | 715 | 572 | 650 | 520 | 2806A-E18TAG2 | 3960x1532x2100 | 4453",
+        "| KH-600GF | 825 | 660 | 750 | 600 | 4006-23TAG2A | 4450x1650x2290 | 5413",
+        "| KH-250GF | 343.8 | 275 | 312.5 | 250 | TAD1341GE | 2950x1120x1595 | 2700",
+        "| KH-280GF | 385.0 | 308 | 350 | 280 | TAD1342GE | 2950x1120x1595 | 2700",
+        "| KH-300GF | 412.5 | 330 | 375 | 300 | TAD1343GE | 3130x1115x1800 | 3000",
+        "| KH-320GF | 440.0 | 352 | 400 | 320 | TAD1344GE | 3130x1115x1800 | 3000",
+        "| KH-360GF | 495.0 | 396 | 450 | 360 | TAD1345GE | 3205x1115x1800 | 3200",
+        "| KH-400GF | 550.0 | 440 | 500 | 400 | TAD1641GE | 3300x1160x2000 | 3800",
+        "| KH-450GF | 618.8 | 495 | 562.5 | 450 | TAD1642GE | 3300x1160x2000 | 3810",
+        "| KH-500GF | 687.5 | 550 | 625 | 500 | TAD1643GE | 3405x1397x2000 | 4050"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "OEM Hichaipower 10-200KW Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight",
+        "| KVA | KW | KVA | KW | mm | KG"
+      ],
+      "rows": [
+        "| KH-15GF | 22 | 18 | 18.75 | 15 | 4B3.9-G2 | 1160*750*1200 | 800",
+        "| KH-20GF | 28 | 22 | 25 | 20 | 4B3.9-G2 | 1160*750*1200 | 800",
+        "| KH-24GF | 33 | 26 | 30 | 24 | 4B3.9-G2 | 1160*750*1200 | 800",
+        "| KH-32GF | 44 | 35 | 40 | 32 | 4BT3.9-G2 | 1160*750*1200 | 810",
+        "| KH-48GF | 69 | 55 | 60 | 48 | 4BTA3.9-G2 | 1860*750*1200 | 850",
+        "| KH-64GF | 83 | 66 | 80 | 64 | 6BT5.9-G2 | 2160*800*1300 | 1040",
+        "| KH-80GF | 110 | 88 | 100 | 80 | 6BT5.9-G2 | 2160*800*1300 | 1056",
+        "| KH-92GF | 132 | 106 | 115 | 92 | 6BTA5.9-G2 | 2160*800*1300 | 1096",
+        "| KH-104GF | 149 | 119 | 130 | 104 | 6BTAA5.9-G2 | 2300*850*1300 | 1400",
+        "| KH-150GF | 198 | 158 | 187.5 | 150 | 6CTA8.3-G2 | 2400*860*1380 | 1440",
+        "| KH-180GF | 220 | 176 | 225 | 180 | 6CTAA8.3-G2 | 2500*960*1450 | 1700",
+        "| KH-200GF | 275 | 220 | 250 | 200 | 6LTAA8.9-G2 | 2640*970*1450 | 2000"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "OEM Hichaipower 10-200KW Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+        "| KVA | KW | KVA | KW | KG"
+      ],
+      "rows": [
+        "| KH-50GF | 68.8 | 55 | 62.5 | 50 | DB58 | 1800 x730x1250 | 810",
+        "| KH-64GF | 88.0 | 70.4 | 80 | 64 | D1126 | 2300x790x1500 | 1500",
+        "| KH-75GF | 103.1 | 82.5 | 93.7 | 75 | D1146T | 2300x790x1500 | 1500",
+        "| KH-90GF | 123.8 | 99 | 112.5 | 90 | D1146T | 2300x790x1500 | 1500",
+        "| KH-100GF | 137.5 | 110 | 125 | 100 | P086T1-1 | 2650x950x1400 | 1800",
+        "| KH-120GF | 165.0 | 132 | 150 | 120 | P086T1-1 | 2650x950x1400 | 1800",
+        "| KH-150GF | 206.3 | 165 | 187.5 | 150 | P086T1 | 2650x950x1400 | 1800",
+        "| KH-200GF | 275.0 | 220 | 250 | 200 | P126T1 | 2960x1030x1500 | 2315",
+        "| KH-40GF | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050",
+        "| KH-50GF | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100",
+        "| KH-80GF | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200",
+        "| KH-100GF | 138 | 110 | 125 | 100 | BF4M1013FC | 2150x750x1550 | 1380",
+        "| KH-120GF | 165 | 132 | 150 | 120 | BF6M1013EC | 2473x900x1546 | 1330",
+        "| KH-150GF | 206 | 165 | 188 | 150 | BF6M1013FC G2 | 2600x1010x1700 | 1820",
+        "| KH-160GF | 220 | 176 | 200 | 160 | BF6M1013FC G3 | 2600x1010x1700 | 1820",
+        "| KH-180GF | 248 | 198 | 225 | 180 | BF6M1015-LA GA | 2600x1140x1800 | 1880",
+        "| KH-200GF | 275 | 220 | 250 | 200 | BF6M1015C-LA G1A | 3060x1315x2035 | 2300",
+        "| KH-220GF | 303 | 242 | 275 | 220 | BF6M1015C-LA G2A | 3060x1315x2035 | 2300",
+        "| KH-250GF | 344 | 275 | 313 | 250 | BF6M1015C-LA G3A | 3060x1315x2035 | 2300",
+        "| KH-280GF | 385 | 308 | 350 | 280 | BF6M1015C-LA G4 | 3060x1315x2035 | 2300",
+        "| KH-300GF | 413 | 330 | 375 | 300 | BF6M1015CP-LA G | 3060x1315x2035 | 2300",
+        "| KH-350GF | 481 | 385 | 438 | 350 | BF8M1015C-LA G1A | 3208x1515x1975 | 2870",
+        "| KH-360GF | 495 | 396 | 450 | 360 | BF8M1015C-LA G2 | 3208x1815x1978 | 3190",
+        "| KH-380GF | 523 | 418 | 475 | 380 | BF8M1015CP-LA G1A | 3208x1815x1978 | 3190",
+        "| KH-400GF | 550 | 440 | 500 | 400 | BF8M1015CP-LA G2 | 3208x1815x1978 | 3190",
+        "| KH-410GF | 564 | 451 | 513 | 410 | BF8M1015CP-LA G3 | 3208x1815x1978 | 3190",
+        "| KH-430GF | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190",
+        "| KH-450GF | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190",
+        "| KH-550GF | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120",
+        "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120",
+        "| KH-8GF | 11 | 8.8 | 10 | 8 | 403A-11G1 | 1100x450x940 | 290",
+        "| KH-10GF | 13.75 | 11 | 12.5 | 10 | 403A-15G1 | 1200x500x1000 | 380",
+        "| KH-16GF | 22 | 17.6 | 20 | 16 | 404A-22G1 | 1350x530x1000 | 456",
+        "| KH-20GF | 27.5 | 22 | 25 | 20 | 1103A-33G | 1740x730x1565 | 762",
+        "| KH-24GF | 33 | 26.4 | 30 | 24 | 1103A-33G | 1740x730x1565 | 762",
+        "| KH-36GF | 49.5 | 39.6 | 45 | 36 | 1103A-33TG1 | 2030x730x1565 | 870",
+        "| KH-50GF | 68.75 | 55 | 62.5 | 50 | 1104A-44TG1 | 2135x730x1595 | 978",
+        "| KH-64GF | 88 | 70.4 | 80 | 64 | 1104A-44TG2 | 2135x730x1595 | 1018",
+        "| KH-80GF | 110 | 88 | 100 | 80 | 1104C-44TAG2 | 2235x730x1595 | 1090",
+        "| KH-100GF | 137.5 | 110 | 125 | 100 | 1106A-70TG1 | 2565x730x1575 | 1376",
+        "| KH-120GF | 165 | 132 | 150 | 120 | 1106A-70TAG2 | 2565x730x1575 | 1416",
+        "| KH-140GF | 192.5 | 154 | 175 | 140 | 1106A-70TAG3 | 2645x730x1630 | 1644",
+        "| KH-160GF | 220 | 176 | 200 | 160 | 1106A-70TAG4 | 2645x730x1630 | 1644",
+        "| KH-180GF | 247.5 | 198 | 225 | 180 | 1506A-E88TAG2 | 3035x900x1525 | 1695",
+        "| KH-200GF | 275 | 220 | 250 | 200 | 1506A-E88TAG3 | 3035x900x1525 | 2035",
+        "| KH-68GF | 93.5 | 74.8 | 85 | 68 | TAD530GE | 2080x720x1450 | 1090",
+        "| KH-75GF | 103.1 | 82.5 | 93.75 | 75 | TAD531GE | 2080x720x1450 | 1150",
+        "| KH-80GF | 110.0 | 88 | 100 | 80 | TAD531GE | 2080x720x1450 | 1150",
+        "| KH-90GF | 123.8 | 99 | 112.5 | 90 | TAD532GE | 2280x900x1450 | 1250",
+        "| KH-100GF | 137.5 | 110 | 125 | 100 | TAD532GE | 2280x900x1450 | 1250",
+        "| KH-120GF | 165.0 | 132 | 150 | 120 | TAD731GE | 2400x870x1450 | 1560",
+        "| KH-150GF | 206.8 | 165 | 188 | 150 | TAD732GE | 2600x1050x1500 | 1600",
+        "| KH-180GF | 247.5 | 198 | 225 | 180 | TAD733GE | 2600x1050x1670 | 1800",
+        "| KH-200GF | 275.0 | 220 | 250 | 200 | TAD734GE | 2600x1120x1770 | 2700"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "OEM Hichai Perkins Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF"
+      ],
+      "rows": [
+        "| HC-10GF | 10 | 9 | 403D-11G | S0L1-H1 | 1300*690*1320 | 1710*880*1350 | Download",
+        "| HC-14GF | 13.75 | 12.5 | 403A-15G1 | S0L1-L1 | 1300*690*1320 | 1710*880*1350 | Download",
+        "| HC-16GF | 16.5 | 15 | 403A-15G2 | S0L1-P1 | 1300*690*1320 | 1710*880*1350 | Download",
+        "| HC-22GF | 22 | 20 | 404A-22G1 | S0L2-G1 | 1470*690*1320 | 1910*880*1450 | Download",
+        "| HC-34GF | 33 | 30 | 1103A-33G | S0L2-P1 | 1760*760*1380 | 2290*1060*1680 | Download",
+        "| HC-50GF | 50 | 45 | 1103A-33TG1 | S1L2-N1 | 1760*760*1380 | 2290*1060*1680 | Download",
+        "| HC-68GF | 68.7 | 62.5 | 1104A-44TG1 | S1L2-Y1 | 1760*760*1380 | 2440*1060*1680 | Download",
+        "| HC-70GF | 71.5 | 65 | 1104A-44TG1 | UCI 224F1 | 1760*760*1380 | 2440*1060*1680 | Download",
+        "| HC-88GF | 88 | 80 | 1104A-44TG2 | UCI 224G1 | 2000*900*1550 | 2810*1140*1830 | Download",
+        "| HC-110GF | 110 | 100 | 1104C-44TAG2 | UCI 274C1 | 2150*900*1550 | 2810*1140*1830 | Download",
+        "| HC-150GF | 148 | 135 | 1106A-70TG1 | UCI 274E1 | 2410*930*1650 | 3250*1170*1800 | Download",
+        "| HC-165GF | 165 | 150 | 1106A-70TAG2 | UCI 274F1 | 2410*930*1650 | 3250*1170*1800 | Download",
+        "| HC-200GF | 200 | 182 | 1106A-70TAG3 | UCI 274G1 | 2550*930*1670 | 3590*1150*2050 | Download",
+        "| HC-220GF | 220 | 200 | 1106A-70TAG4 | UCI 274H1 | 2550*930*1670 | 3590*1150*2050 | Download",
+        "| HC-250GF | 250 | 230 | 1206A-E70TTAG2 | UCDI 274J1 | 2580*930*1670 | 3590*1310*2050 | Download",
+        "| HC-275GF | 275 | 250 | 1506A-E88TAG3 | UCDI 274K1 | 2580*930*1670 | 3590*1310*2050 | Download",
+        "| HC-330GF | 330 | 300 | 1506A-E88TAG5 | S4L1D-D41 | 2800*1000*1690 | 3890*1460*2150 | Download",
+        "| HC-400GF | 400 | 350 | 2206C-E13TAG2 | S4L1D-E41 | 3100*1120*1788 | 4230*1460*2150 | Download",
+        "| HC-450GF | 450 | 400 | 2206C-E13TAG3 | S4L1D-F41 | 3100*1120*1788 | 4230*1460*2150 | Download",
+        "| HC-500GF | 500 | 450 | 2506C-E15TAG1 | S4L1D-G41 | 3400*1270*1974 | 4630*1660*2250 | Download",
+        "| HC-550GF | 550 | 500 | 2506C-E15TAG2 | S5L1D-C4 | 3400*1270*1974 | 4630*1660*2250 | Download",
+        "| HC-660GF | 660 | 600 | 2806C-E18TAG1A | HCI 544E1 | 3600*1400*2100 | 5030*1860*2550 | Download",
+        "| HC-700GF | 700 | 635 | 2806A-E18TAG2 | HCI 544FS1 | 3600*1400*2100 | 5030*1660*2550 | Download",
+        "| HC-825GF | 825 | 750 | UK 4006-23TAG2A | S5L1D-H1 | 3965*1710*2200 | ISO 20'ft GP | Download",
+        "| HC-825GF | 825 | 750 | India 4006-23TAG2A | S5L1D-H1 | 3965*1710*2200 | ISO 20'ft GP | Download",
+        "| HC-880GF | 880 | 800 | UK 4006-23TAG3A | S6L1D-C4 | 3965*1710*2200 | ISO 20'ft GP | Download",
+        "| HC-880GF | 880 | 800 | India 4006-23TAG3A | S6L1D-C4 | 3965*1710*2200 | ISO 20'ft GP | Download",
+        "| HC-1100GF | 1100 | 1000 | UK 4008TAG2 | S6L1D-E5 | 4650*2046*2300 | ISO 20'ft GP | Download",
+        "| HC-1100GF | 1100 | 1000 | India 4008TAG2 | S6L1D-E4 | 4650*2046*2300 | ISO 20'ft GP | Download",
+        "| HC-1250GF | 1250 | 1125 | UK 4008-30TAG3 | S6L1D-F4 | 4650*2046*2300 | ISO 20'ft GP | Download",
+        "| HC-1250GF | 1250 | 1125 | India 4008-30TAG3 | S6L1D-F4 | 4650*2046*2300 | ISO 20'ft GP | Download",
+        "| HC-1375GF | 1375 | 1250 | UK 4012-46TWG2A | S6L1D-G4 | 4700*1780*2400 | ISO 20'ft HQ | Download",
+        "| HC-1375GF | 1375 | 1250 | India 4012-46TWG2A | S6L1D-G4 | 4700*1780*2400 | ISO 20'ft HQ | Download",
+        "| HC-1650 | 1650 | 1500 | UK 4012-46TAG2A | S7L1D-C41 | 5000*2200*2850 | ISO 20'ft HQ | Download",
+        "| HC-1650GF | 1650 | 1500 | India 4012-46TAG2A | S7L1D-C41 | 5000*2200*2850 | ISO 20'ft HQ | Download",
+        "| HC-1800GF | 1812.5 | 1650 | UK 4012-46TAG3A | S7L1D-D41 | 5100*2200*2850 | ISO 20'ft HQ | Download",
+        "| HC-1800GF | 1812.5 | 1650 | India 4012-46TAG3A | S7L1D-D41 | 5100*2200*2850 | ISO 20'ft HQ | Download",
+        "| HC-1875GF | 1875 | 1705 | UK 4012-46TAG3A | S7L1D-E41 | 5100*2200*2850 | ISO 20'ft HQ | Download",
+        "| HC-1875GF | 1875 | 1705 | India 4012-46TAG3A | S7L1D-E41 | 5100*2200*2850 | ISO 20'ft HQ | Download",
+        "| HC-2000GF | 2000 | 1850 | UK 4016TAG1A | S7L1D-F41 | 5400*2650*2650 | ISO 40'ft HQ | Download",
+        "| HC-2000GF | 2000 | 1850 | India 4016TAG1A | S7L1D-F41 | 5400*2650*2650 | ISO 40'ft HQ | Download",
+        "| HC-2000GF(W-A) | 2000 | 1850 | 4016-61TRG1 | S7L1D-F41 | 5400*2650*2650 | ISO 40'ft HQ | Download",
+        "| HC-2250GF(W-A) | 2250 | 2050 | 4016-61TRG2 | S7L1D-F41 | 5400*2650*2650 | ISO 40'ft HQ | Download",
+        "| HC-2250GF | 2250 | 2050 | UK 4016TAG2A | S7L1D-G41 | 5400*2650*2650 | ISO 40'ft HQ | Download",
+        "| HC-2250GF | 2250 | 2050 | India 4016TAG2A | S7L1D-G41 | 5400*2650*2650 | ISO 40'ft HQ | Download",
+        "| HC-2500GF | 2500 | 2272.5 | UK 4016-61TRG3 | S7L1D-J4 or PI 734H1 | 6000*2700*3400 | ISO 40'ft HQ | Download",
+        "| HC-2500GF | 2500 | 2272.5 | India 4016-61TRG3 | S7L1D-J4 or PI 734H1 | 6000*2700*3400 | ISO 40'ft HQ | Download",
+        "| Genset Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF",
+        "| HC-10GF-60 | 12 | 11 | 403D-11G | S0L1-H1 | 1300*690*1320 | 1710*880*1350 | Download",
+        "| HC-14GF-60 | 17 | 15.8 | 403D-15G or 403A-15G2 | S0L1-P1 | 1300*690*1320 | 1710*880*1350 | Download",
+        "| HC-16GF-60 | 20 | 18 | 403A-15G2 | S0L2-F1 | 1470*690*1320 | 1910*880*1450 | Download",
+        "| HC-24GF-60 | 26 | 24 | 404D-22G | S0L2-M1 | 1470*690*1320 | 1910*880*1450 | Download",
+        "| HC-32GF-60 | 33 | 30 | 404D-22TG | S0L2-P1 | 1470*690*1320 | 1910*880*1450 | Download",
+        "| HC-34GF-60 | 38 | 35 | 1103A-33G | S1L2-J1 | 1760*760*1380 | 2290*1060*1680 | Download",
+        "| HC-50GF-60 | 57 | 52 | 1103A-33TG1 | UCI 224C1 | 1760*760*1380 | 2290*1060*1680 | Download",
+        "| HC-65GF-60 | 38 | 35 | 1103A-33G | S1L2-J1 | 1760*760*1380 | 2290*1060*1680 | Download",
+        "| HC-70GF-60 | 82 | 74 | 1104D-44TG1 | UCI 224F1 | 1760*760*1380 | 2440*1060*1680 | Download",
+        "| HC-88GF-60 | 100 | 91 | 1104A-44TG2 | UCI 224G1 | 2000*900*1550 | 2810*1140*1830 | Download",
+        "| HC-110GF-60 | 125 | 114 | 1104C-44TAG2 | UCI 274C1 | 2150*900*1550 | 2810*1140*1830 | Download",
+        "| HC-140GF-60 | 143 | 130 | 1106A-70TG1 | UCI 274D1 | 2410*930*1650 | 3250*1170*1800 | Download",
+        "| HC-150GF-60 | 165 | 150 | 1106A-70TG1 | UCI 274E1 | 2410*930*1650 | 3250*1170*1800 | Download",
+        "| HC-165GF-60 | 185 | 168 | 1106A-70TAG2 | UCI 274F1 | 2410*930*1650 | 3250*1170*1800 | Download",
+        "| HC-200GF-60 | 218 | 198 | 1106A-70TAG3 | UCI 274G1 | 2550*930*1670 | 3590*1250*2050 | Download",
+        "| HC-230GF-60 | 250 | 228 | 1106D-E70TAG5 | UCI 274H1 | 2550*930*1670 | 3590*1250*2050 | Download",
+        "| HC-275GF-60 | 308 | 280 | 1506A-E88TAG3 | UCDI 274J1 | 2580*930*1670 | 3590*1250*2050 | Download",
+        "| HC-300GF-60 | 330 | 300 | 1506A-E88TAG5 | S4L1D-C41 | 2800*1000*1690 | 3890*1460*2150 | Download",
+        "| HC-330GF-60 | 380 | 350 | 1506A-E88TAG5 | S4L1D-D41 | 2800*1000*1690 | 3890*1460*2150 | Download",
+        "| HC-400GF-60 | 438 | 400 | 2206D-E13TAG2 | S4L1D-E41 | 3100*1120*1788 | 4230*1460*2150 | Download",
+        "| HC-450GF-60 | 500 | 450 | 2206D-E13TAG3 | S4L1D-F41 | 3100*1120*1788 | 4230*1460*2150 | Download",
+        "| HC-500GF-60 | 550 | 500 | 2506C-E15TAG1 | HCI 544C1 | 3400*1270*1974 | 4630*1660*2250 | Download",
+        "| HC-510GF-60 | 625 | 568 | 2506C-E15TAG3 | HCI 544D1 | 3400*1270*1974 | 4630*1660*2250 | Download",
+        "| HC-550GF-60 | 625 | 568 | 2506C-E15TAG3 | HCI 544D1 | 3400*1270*1974 | 4630*1660*2250 | Download",
+        "| HC-650GF-60 | 688 | 625 | 2506C-E15TAG4 | HCI 544E1 | 3400*1270*1974 | 4630*1660*2250 | Download",
+        "| HC-720GF-60 | 750 | 681 | 2806C-E18TAG3 | HCI 544E1 | 3600*1400*2100 | 5030*1660*2550 | Download"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "OEM Hichaipower Deutz Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG) | Detail Data",
+        "| KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| HC-40GF | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050 | Download",
+        "| HC-50GF | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100 | Download",
+        "| HC-80GF | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200 | Download",
+        "| HC-100GF | 138 | 110 | 125 | 100 | BF4M1013FC | 2150x750x1550 | 1380 | Download",
+        "| HC-120GF | 165 | 132 | 150 | 120 | BF6M1013EC | 2473x900x1546 | 1330 | Download",
+        "| HC-150GF | 206 | 165 | 188 | 150 | BF6M1013FC G2 | 2600x1010x1700 | 1820 | Download",
+        "| HC-160GF | 220 | 176 | 200 | 160 | BF6M1013FC G3 | 2600x1010x1700 | 1820 | Download",
+        "| HC-180GF | 248 | 198 | 225 | 180 | BF6M1015-LA GA | 2600x1140x1800 | 1880 | Download",
+        "| HC-200GF | 275 | 220 | 250 | 200 | BF6M1015C-LA G1A | 3060x1315x2035 | 2300 | Download",
+        "| HC-220GF | 303 | 242 | 275 | 220 | BF6M1015C-LA G2A | 3060x1315x2035 | 2300 | Download",
+        "| HC-250GF | 344 | 275 | 313 | 250 | BF6M1015C-LA G3A | 3060x1315x2035 | 2300 | Download",
+        "| HC-280GF | 385 | 308 | 350 | 280 | BF6M1015C-LA G4 | 3060x1315x2035 | 2300 | Download",
+        "| HC-300GF | 413 | 330 | 375 | 300 | BF6M1015CP-LA G | 3060x1315x2035 | 2300 | Download",
+        "| HC-350GF | 481 | 385 | 438 | 350 | BF8M1015C-LA G1A | 3208x1515x1975 | 2870 | Download",
+        "| HC-360GF | 495 | 396 | 450 | 360 | BF8M1015C-LA G2 | 3208x1815x1978 | 3190 | Download",
+        "| HC-380GF | 523 | 418 | 475 | 380 | BF8M1015CP-LA G1A | 3208x1815x1978 | 3190 | Download",
+        "| HC-400GF | 550 | 440 | 500 | 400 | BF8M1015CP-LA G2 | 3208x1815x1978 | 3190 | Download",
+        "| HC-410GF | 564 | 451 | 513 | 410 | BF8M1015CP-LA G3 | 3208x1815x1978 | 3190 | Download",
+        "| HC-430GF | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190 | Download",
+        "| HC-450GF | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190 | Download",
+        "| HC-550GF | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120 | Download",
+        "| HC-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120 | Download",
+        "| KH-40GF2 | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050",
+        "| KH-50GF2 | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100",
+        "| KH-80GF2 | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200",
+        "| KH-100GF2 | 138 | 110 | 125 | 100 | BF4M1013FC | 2150x750x1550 | 1380",
+        "| KH-120GF2 | 165 | 132 | 150 | 120 | BF6M1013EC | 2473x900x1546 | 1330",
+        "| KH-150GF2 | 206 | 165 | 188 | 150 | BF6M1013FC G2 | 2600x1010x1700 | 1820",
+        "| KH-160GF2 | 220 | 176 | 200 | 160 | BF6M1013FC G3 | 2600x1010x1700 | 1820",
+        "| KH-180GF2 | 248 | 198 | 225 | 180 | BF6M1015-LA GA | 2600x1140x1800 | 1880",
+        "| KH-200GF2 | 275 | 220 | 250 | 200 | BF6M1015C-LA G1A | 3060x1315x2035 | 2300",
+        "| KH-220GF2 | 303 | 242 | 275 | 220 | BF6M1015C-LA G2A | 3060x1315x2035 | 2300",
+        "| KH-250GF2 | 344 | 275 | 313 | 250 | BF6M1015C-LA G3A | 3060x1315x2035 | 2300",
+        "| KH-280GF2 | 385 | 308 | 350 | 280 | BF6M1015C-LA G4 | 3060x1315x2035 | 2300",
+        "| KH-300GF2 | 413 | 330 | 375 | 300 | BF6M1015CP-LA G | 3060x1315x2035 | 2300",
+        "| KH-350GF2 | 481 | 385 | 438 | 350 | BF8M1015C-LA G1A | 3208x1515x1975 | 2870",
+        "| KH-360GF2 | 495 | 396 | 450 | 360 | BF8M1015C-LA G2 | 3208x1815x1978 | 3190",
+        "| KH-380GF2 | 523 | 418 | 475 | 380 | BF8M1015CP-LA G1A | 3208x1815x1978 | 3190",
+        "| KH-400GF2 | 550 | 440 | 500 | 400 | BF8M1015CP-LA G2 | 3208x1815x1978 | 3190",
+        "| KH-410GF2 | 564 | 451 | 513 | 410 | BF8M1015CP-LA G3 | 3208x1815x1978 | 3190",
+        "| KH-430GF2 | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190",
+        "| KH-450GF2 | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190",
+        "| KH-550GF2 | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120",
+        "| KH-600GF2 | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "OEM Hichaipower Volvo Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight (KG) | Detail Data",
+        "| KVA | KW | KVA | KW"
+      ],
+      "rows": [
+        "| HC-68GF | 93.5 | 74.8 | 85 | 68 | TAD530GE | 2080x720x1450 | 1090 | Download",
+        "| HC-75GF | 103.1 | 82.5 | 93.75 | 75 | TAD531GE | 2080x720x1450 | 1150 | Download",
+        "| HC-80GF | 110.0 | 88 | 100 | 80 | TAD531GE | 2080x720x1450 | 1150 | Download",
+        "| HC-90GF | 123.8 | 99 | 112.5 | 90 | TAD532GE | 2280x900x1450 | 1250 | Download",
+        "| HC-100GF | 137.5 | 110 | 125 | 100 | TAD532GE | 2280x900x1450 | 1250 | Download",
+        "| HC-120GF | 165.0 | 132 | 150 | 120 | TAD731GE | 2400x870x1450 | 1560 | Download",
+        "| HC-150GF | 206.8 | 165 | 188 | 150 | TAD732GE | 2600x1050x1500 | 1600 | Download",
+        "| HC-180GF | 247.5 | 198 | 225 | 180 | TAD733GE | 2600x1050x1670 | 1800 | Download",
+        "| HC-200GF | 275.0 | 220 | 250 | 200 | TAD734GE | 2600x1120x1770 | 2700 | Download",
+        "| HC-250GF | 343.8 | 275 | 312.5 | 250 | TAD1341GE | 2950x1120x1595 | 2700 | Download",
+        "| HC-280GF | 385.0 | 308 | 350 | 280 | TAD1342GE | 2950x1120x1595 | 2700 | Download",
+        "| HC-300GF | 412.5 | 330 | 375 | 300 | TAD1343GE | 3130x1115x1800 | 3000 | Download",
+        "| HC-320GF | 440.0 | 352 | 400 | 320 | TAD1344GE | 3130x1115x1800 | 3000 | Download",
+        "| HC-360GF | 495.0 | 396 | 450 | 360 | TAD1345GE | 3205x1115x1800 | 3200 | Download",
+        "| HC-400GF | 550.0 | 440 | 500 | 400 | TAD1641GE | 3300x1160x2000 | 3800 | Download",
+        "| HC-450GF | 618.8 | 495 | 562.5 | 450 | TAD1642GE | 3300x1160x2000 | 3810 | Download",
+        "| HC-500GF | 687.5 | 550 | 625 | 500 | TAD1643GE | 3405x1397x2000 | 4050 | Download",
+        "| HC-142GF2 | 145 | 131 | TAD532GE | UCI 274D1 | 2150*900*1550 | 2810*1140*1830 | Download",
+        "| HC-206GF2 | 220 | 200 | TAD732GE | UCI 274G1 | 2550*930*1670 | 3590*1310*2050 | Download",
+        "| HC-220GF2 | 248 | 223 | TAD733GE | UCI 274H1 | 2550*930*1670 | 3590*1310*2050 | Download",
+        "| HC-220GF2(8L) | 250 | 225 | TAD840GE-B | UCI 274H1 | 2550*930*1670 | 3590*1310*2050 | Download",
+        "| HC-275GF2 | 286 | 260 | TAD734GE | UCDI 274J1 | 2600*1120*1761 | 3590*1310*2050 | Download",
+        "| HC-275GF2-8L | 286 | 260 | TAD841GE | UCDI 274J1 | 2600*1120*1761 | 3590*1310*2050 | Download",
+        "| HC-330GF2 | 335 | 305 | TAD842GE | S4L1D-C41 | 3100*1120*1788 | 3890*1460*2150 | Download",
+        "| HC-350GF2 | 375 | 340 | TAD1341GE | S4L1D-D41 | 3100*1120*1788 | 4230*1460*2150 | Download",
+        "| HC-360GF2 | 352 | 320 | TAD843GE | S4L1D-D41 | 3100*1120*1788 | 3890*1460*2150 | Download",
+        "| HC-385GF2 | 440 | 400 | TAD1342GE | S4L1D-E41 | 3100*1120*1788 | 4230*1460*2150 | Download",
+        "| HC-415GF2 | 450 | 410 | TAD1343GE | S4L1D-E41 | 3100*1120*1788 | 4230*1460*2150 | Download",
+        "| HC-450GF2 | 500 | 455 | TAD1344GE | S4L1D-F41 | 3100*1120*1788 | 4230*1460*2150 | Download",
+        "| HC-550GF2 | 642 | 570 | TAD1641GE | HCI 544D1 | 3400*1270*1974 | 4630*1660*2250 | Download",
+        "| HC-550GF2-13L | 564 | 512 | TAD1346GE | S5L1D-C41 | 3100*1120*1788 | 4230*1460*2150 | Download",
+        "| HC-670GF2 | 688 | 625 | TAD1642GE | S5L1D-E4 | 3400*1270*1974 | 4630*1660*2250 | Download",
+        "| HC-700GF2 | 750 | 688 | TWD1643GE | HCI 544E1 | 3400*1400*2100 | 5030*1650*2550 | Download",
+        "| HC-700GF2-1 | 752 | 684 | TWD1644GE | S5L1D-E41 | 3400*1400*2100 | 5030*1650*2550 | Download",
+        "| HC-770GF2 | 800 | 725 | TWD1673GE | HCI 544FS1 | 3400*1400*2100 | 5030*1650*2550 | Download",
+        "| HC-836GF2 | 880 | 800 | TWD1744GE | S5L1D-H4 | 5030*1660*2550 | 3600*1400*2100 | Download"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "OEM Hichai MTU Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight | Detail Data",
+        "| kVA | kW | kVA | kW | mm | KG"
+      ],
+      "rows": [
+        "| HC-224GF | 308 | 246 | 280 | 224 | 6R1600G10F | 3000x1335x1880 | 2795 | Download",
+        "| HC-250GF | 344 | 275 | 313 | 250 | 6R1600G20F | 3000x1335x1880 | 2795 | Download",
+        "| HC-300GF | 413 | 330 | 375 | 300 | 8V1600G10G | 3000x1590x1940 | 3570 | Download",
+        "| HC-320GF | 440 | 352 | 400 | 320 | 8V1600G20G | 3000x1590x1940 | 3570 | Download",
+        "| HC-360GF | 495 | 396 | 450 | 360 | 10V1600G10F | 3095x1590x1970 | 4065 | Download",
+        "| HC-400GF | 550 | 440 | 500 | 400 | 10V1600G20F | 3095x1590x1970 | 4065 | Download",
+        "| HC-480GF | 660 | 528 | 600 | 480 | 12V1600G10F | 3330x1590x1970 | 4100 | Download",
+        "| HC-520GF | 715 | 572 | 650 | 520 | 12V2000G25 | 4200x1650x2200 | 7000 | Download",
+        "| HC-528GF | 726 | 581 | 660 | 528 | 12V1600G20F | 3330x1590x1970 | 4100 | Download",
+        "| HC-640GF | 880 | 704 | 800 | 640 | 12V2000G65 | 4200x1650x2200 | 7000 | Download",
+        "| HC-728GF | 1001 | 801 | 910 | 728 | 16V2000G25 | 4500x2000x2300 | 7850 | Download",
+        "| HC-800GF | 1100 | 880 | 1000 | 800 | 16V2000G65 | 4500x2000x2300 | 7850 | Download",
+        "| HC-910GF | 1251 | 1001 | 1137 | 910 | 18V2000G65 | 4750x1800x2400 | 9000 | Download",
+        "| HC-1000GF | 1375 | 1100 | 1250 | 1000 | 12V4000G21R | 6150x2150x2400 | 11500 | Download",
+        "| HC-1150GF | 1581 | 1265 | 1437 | 1150 | 12V4000G23R | 6150x2150x2400 | 12000 | Download",
+        "| HC-1280GF | 1760 | 1408 | 1600 | 1280 | 12V4000G23 | 6150x2150x2400 | 13000 | Download",
+        "| HC-1360GF | 1870 | 1496 | 1700 | 1360 | 12V4000G23 | 6150x2150x2400 | 13500 | Download",
+        "| HC-1450GF | 1993 | 1595 | 1812 | 1450 | 12V4000G63 | 6150x2150x2400 | 14000 | Download",
+        "| HC-1640GF | 2255 | 1804 | 2050 | 1640 | 16V4000G23 | 6500x2600x2500 | 17000 | Download",
+        "| HC-1880GF | 2585 | 2068 | 2350 | 1880 | 16V4000G63 | 6550x2600x2500 | 17600 | Download",
+        "| HC-2000GF | 2750 | 2200 | 2500 | 2000 | 20V4000G23 | 8300x2950x2550 | 24000 | Download",
+        "| HC-2330GF | 3203 | 2563 | 2912 | 2330 | 20V4000G63 | 8300x2950x2550 | 24500 | Download",
+        "| HC-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000 | Download",
+        "| HC-880GF2 | 1000 | 910 | 12V2000G85 | S6L1D-C4 | 4000*1750*2050 | ISO 20'ft GP | Download",
+        "| HC-1000GF2 | 1137 | 1025 | 16V2000G45 | S6L1D-D4 | 4500*2100*2080 | ISO 20'ft GP | Download",
+        "| HC-1100GF2 | 1265 | 1150 | 16V2000G85 | S6L1D-E4 | 4500*2100*2080 | ISO 20'ft GP | Download",
+        "| HC-1250GF2 | 1450 | 1338 | 18V2000G85 | S6L1D-F4 | 4600*2100*2300 | ISO 20'ft GP | Download",
+        "| HC-1350GF2 | 1500 | 1362 | 18V2000G85 | S6L1D-G4 | 4600*2100*2300 | ISO 20'ft GP | Download",
+        "| HC-2000GF2-G24S | 2200 | 2000 | 12V4000G24S | S7L1D-F4 | 3980*1845*2270 | ISO 40'ft HQ | Download",
+        "| HC-2250GF2-G14S | 2500 | 2275 | 16V4000G14S | S7L1D-G4 | 4790*1845*2270 | ISO 40'ft HQ | Download",
+        "| HC-2500GF2-G24S | 2750 | 2500 | 16V4000G24S | S7L1D-H4 | 5400*1845*2500 | ISO 40'ft HQ | Download",
+        "| HC-2750GF2-G14S | 3125 | 2813 | 20V4000G14S | ECO 46-2L | 5650*1900*2650 | ISO 40'ft HQ | Download",
+        "| HC-3000GF2-G24S | 3438 | 3125 | 20V4000G24S | LSA 52.3 UL16 | 5700*1950*2700 | ISO 40'ft HQ | Download",
+        "| HC-3250GF2-G44S | 3750 | 3450 | 20V4000G44S | LSA 53.2M9 | 5750*1980*2750 | ISO 40'ft HQ | Download",
+        "| HC-2000GF2-G83 | 2200 | 2000 | 12V4000G83 | S7L1D-F4 | 3980*1845*2270 | ISO 40'ft HQ | Download",
+        "| HC-2250GF2-G43 | 2500 | 2275 | 16V4000G43 | S7L1D-G4 | 4790*1845*2270 | ISO 40'ft HQ | Download",
+        "| HC-2500GF2-60 | 2750 | 2500 | 16V4000G83 | S7L1D-H4 | 5400*1845*2500 | ISO 40'ft HQ | Download",
+        "| HC-2750GF2-G43 | 3125 | 2813 | 20V4000G43 | ECO 46-2L | 5650*1900*2650 | ISO 40'ft HQ | Download",
+        "| HC-3000GF2-G83 | 3438 | 3125 | 20V4000G83 | ECO46-VL (Mecc Alte) | 5700*1950*2700 | ISO 40'ft HQ | Download",
+        "| HC-3250GF2-G83LS | 3750 | 3450 | 20V4000G83LS | LSA 53.1M80 (Leroy Somer) | 5750*1980*2750 | ISO 40'ft HQ | Download"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "OEM Hichai HD Hyundai Infracore Engine Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight | Detail Data",
+        "| KVA | KW | KVA | KW | KG"
+      ],
+      "rows": [
+        "| HC-50GF | 69 | 55 | 63 | 50 | DB58 | 1800 x730x1250 | 810 | Download",
+        "| HC-64GF | 88 | 70 | 80 | 64 | D1126 | 2300x790x1500 | 1500 | Download",
+        "| HC-75GF | 103 | 83 | 94 | 75 | D1146T | 2300x790x1500 | 1500 | Download",
+        "| HC-90GF | 124 | 99 | 113 | 90 | D1146T | 2300x790x1500 | 1500 | Download",
+        "| HC-100GF | 138 | 110 | 125 | 100 | P086T1-1 | 2650x950x1400 | 1800 | Download",
+        "| HC-120GF | 165 | 132 | 150 | 120 | P086T1-1 | 2650x950x1400 | 1800 | Download",
+        "| HC-150GF | 206 | 165 | 188 | 150 | P086T1 | 2650x950x1400 | 1800 | Download",
+        "| HC-200GF | 275 | 220 | 250 | 200 | P126T1 | 2960x1030x1500 | 2315 | Download",
+        "| HC-250GF | 344 | 275 | 313 | 250 | P126T1-11 | 2960x1030x1500 | 2315 | Download",
+        "| HC-280GF | 385 | 308 | 350 | 280 | P158LE-1 | 3120x1390x1690 | 2715 | Download",
+        "| HC-300GF | 413 | 330 | 375 | 300 | P158LE | 3120x1390x1690 | 2885 | Download",
+        "| HC-350GF | 481 | 385 | 438 | 350 | P158LE-S | 3120x1390x1690 | 2885 | Download",
+        "| HC-400GF | 550 | 440 | 500 | 400 | P180LE | 3300x1390x1780 | 3285 | Download",
+        "| HC-450GF | 619 | 495 | 563 | 450 | P222LE-1 | 3300x1390x1780 | 3285 | Download",
+        "| HC-500GF | 688 | 550 | 625 | 500 | P222LE-S | 3450x1390x1820 | 3900 | Download",
+        "| HC-560GF | 770 | 616 | 700 | 560 | P222LE-11 | 3600x1420x1700 | 3980 | Download",
+        "| HC-600GF | 825 | 660 | 750 | 600 | P222FE-11 | 3600x1420x1700 | 4100 | Download",
+        "| HC-640GF | 880 | 704 | 800 | 640 | P222FE-11 | 3700x1500x1800 | 4160 | Download",
+        "| KH-50GF2 | 69 | 55 | 63 | 50 | DB58 | 1800 x730x1250 | 810",
+        "| KH-64GF2 | 88 | 70 | 80 | 64 | D1126 | 2300x790x1500 | 1500",
+        "| KH-75GF2 | 103 | 83 | 94 | 75 | D1146T | 2300x790x1500 | 1500",
+        "| KH-90GF2 | 124 | 99 | 113 | 90 | D1146T | 2300x790x1500 | 1500",
+        "| KH-100GF2 | 138 | 110 | 125 | 100 | P086T1-1 | 2650x950x1400 | 1800",
+        "| KH-120GF2 | 165 | 132 | 150 | 120 | P086T1-1 | 2650x950x1400 | 1800",
+        "| KH-150GF2 | 206 | 165 | 188 | 150 | P086T1 | 2650x950x1400 | 1800",
+        "| KH-200GF2 | 275 | 220 | 250 | 200 | P126T1 | 2960x1030x1500 | 2315",
+        "| KH-250GF2 | 344 | 275 | 313 | 250 | P126T1-11 | 2960x1030x1500 | 2315",
+        "| KH-280GF2 | 385 | 308 | 350 | 280 | P158LE-1 | 3120x1390x1690 | 2715",
+        "| KH-300GF2 | 413 | 330 | 375 | 300 | P158LE | 3120x1390x1690 | 2885",
+        "| KH-350GF2 | 481 | 385 | 438 | 350 | P158LE-S | 3120x1390x1690 | 2885",
+        "| KH-400GF2 | 550 | 440 | 500 | 400 | P180LE | 3300x1390x1780 | 3285",
+        "| KH-450GF2 | 619 | 495 | 563 | 450 | P222LE-1 | 3300x1390x1780 | 3285",
+        "| KH-500GF2 | 688 | 550 | 625 | 500 | P222LE-S | 3450x1390x1820 | 3900",
+        "| KH-560GF2 | 770 | 616 | 700 | 560 | P222LE-11 | 3600x1420x1700 | 3980",
+        "| KH-600GF2 | 825 | 660 | 750 | 600 | P222FE-11 | 3600x1420x1700 | 4100",
+        "| KH-640GF2 | 880 | 704 | 800 | 640 | P222FE-11 | 3700x1500x1800 | 4160"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "OEM Hichai Baudouin Generator Set Series - Top China Suppliers and Factory for PERKINS Diesel Generators Exporter, Manufacturers | HiChai Power",
+      "header": [
+        "| | HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Open Type Dimensions (mm) | Soundproof Type Dimensions (mm) | Technical Datasheet"
+      ],
+      "rows": [
+        "| HC-BD70 | 68.8 | 62.5 | 4M10G70/5 | TAL-A42-H | — | 2440*1060*1680 | Download",
+        "| HC-BD90 | 90 | 80 | 4M10G88/5 | TAL-A44-C | — | 2810*1140*1830 | Download",
+        "| HC-BD110 | 110 | 100 | 4M10G110/5 | TAL-A44-D | — | 2810*1140*1830 | Download",
+        "| HC-BD140 | 137.5 | 125 | 6M11G150/5 | TAL-A44-E | — | 3230*1170*1800 | Download",
+        "| HC-BD150 | 150 | 135 | 6M11G150/5 | TAL-A44-H | — | 3230*1170*1800 | Download",
+        "| HC-BD165 | 165 | 150 | 6M11G165/5 | TAL-A44-J | — | 3230*1170*1800 | Download",
+        "| HC-BD220 | 220 | 200 | 6M16G220/5 | N200G4 | — | 3590*1310*2050 | Download",
+        "| HC-BD275 | 275 | 250 | 6M16G275/5 | TAL-A46-D | — | 3890*1460*2150 | Download",
+        "| HC-BD330 | 330 | 300 | 6M16G350/5 | TAL-A46-F | — | 3890*1460*2150 | Download",
+        "| HC-BD350 | 350 | 320 | WP10D320E200 6M16G350/5 | S4L1D-E41 | — | 4090*1460*2150 | Download",
+        "| HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | — | 4230*1460*2150 | Download",
+        "| HC-BD440 | 440 | 400 | 6M21G440/5 | S4L1D-F41 | — | 4230*1460*2150 | Download",
+        "| HC-BD500 | 500 | 450 | 6M21G500/5 | S4L1D-G41 | — | 4630*1660*2250 | Download",
+        "| HC-BD550 | 550 | 500 | 6M21G550/5 | S5L1D-C4 | — | 4630*1660*2250 | Download",
+        "| HC-BD660 | 660 | 600 | 8M21G660/5 | S5L1D-E41 | — | 5030*1860*2550 | Download",
+        "| HC-BD700 | 700 | 635 | 6M33D633E200 | S5L1D-E41 | 3650*1638*2050 | 5530*1860*2550 | Download",
+        "| HC-BD715 | 715 | 650 | 6M33G6D3/5 | S5L1D-F41 | 3650*1638*2050 | 5530*1860*2550 | Download",
+        "| HC-BD760 | 760 | 700 | 6M33G750/5 | S5L1D-G4 | 3650*1638*2050 | 5530*1860*2550 | Download",
+        "| HC-BD825 | 825 | 750 | 6M33G8D3/5 (6M33G825/5) | S5L1D-H41 | 4000*2100*2080 | 5530*1860*2550 | Download",
+        "| HC-BD880 | 880 | 800 | 8M33G900/5 | S6L1D-C41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD880-III | 880 | 800 | 8M33G1D0/5 | S6L1D-C41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1000 | 1000 | 910 | 8M33G1000/5 | S6L1D-D41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1000-III | 1000 | 910 | 8M33G5D0/5 | S6L1D-D41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1100 | 1125 | 1025 | 12M26G1100/5 | S6L1D-E4 | 4500*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1100-III | 1125 | 1025 | 8M33G6D3/5 | S6L1D-E41 | 4200*2100*2080 | ISO 20'ft HQ | Download",
+        "| HC-BD1250 | 1250 | 1135 | 12M33D1108E200 | S6L1D-F4 | 4600*2100*2300 | ISO 20'ft HQ | Download",
+        "| HC-BD1375 | 1375 | 1250 | 12M33D1210E200 | S6L1D-G4 | 4600*2100*2300 | ISO 20'ft HQ | Download",
+        "| HC-BD1375-III | 1375 | 1250 | 12M33G8D3/5 | S6L1D-G41 | 4600*2100*2300 | ISO 20'ft HQ | Download",
+        "| HC-BD1500 | 1500 | 1375 | 12M33G1500/5 | S6L1D-H4 | 4600*2100*2300 | ISO 20'ft HQ | Download",
+        "| HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | — | — | Download",
+        "| HC-BD1800 | 1800 | 1640 | 16M33G2D3/5 | PI 734ES1 | 5300×2300×2600 | — | Download",
+        "| HC-BD1900 | 1900 | 1750 | 16M33G4D3/5 | S7L1D-E41 | 5200×2200×2500 | — | Download",
+        "| HC-BD2000 | 2000 | 1875 | 16M33G6D3/5 | S7L1D-F41 | 5300×2300×2600 | — | Download",
+        "| HC-BD2250E | 2250 | NA | 16M33G8D3/5 | S7L1D-G41 | 5300×2300×2600 | — | Download",
+        "| HC-BD2250 | 2250 | 2050 | 20M33G2D3/5 | S7L1D-G41 | — | — | Download",
+        "| HC-BD2500 | 2500 | 2275 | 20M33G4D3/5 | S7L1D-H41 | — | — | Download",
+        "| HC-BD2750 | 2750 | 2500 | 12M55G4D3/5 | S7L1D-J4 | — | — | Download",
+        "| HC-BD3000 | 3000 | 2750 | 12M55G6D3/5 | LSA52.3 UL16 | — | — | Download",
+        "| HC-BD3100 | 3125 | 2813 | 16M55G0D3/5 | LSA 53.2M9 | — | — | Download",
+        "| HC-BD3300 | 3313 | 3000 | 16M55G2D3/5 | LSA 53.2M9 | — | — | Download",
+        "| HC-BD3750 | 3750 | 3250 | 16M55G4D3/5 | LSA 53.2M12 | — | — | Download",
+        "| HC-BD4000 | 4135 | 3750 | 16M55G6D3/5 | LSA 54.2L14 | — | — | Download"
+      ]
+    }
+  ]
+}
