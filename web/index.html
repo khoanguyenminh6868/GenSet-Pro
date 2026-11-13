@@ -4790,7 +4790,7 @@ function bidPriceMultiHtml(doc, t) {
 // ---------- Modal ----------
 function modal(html, onMount, cls = "") {
   if (screenOfUrl()) setScreenUrl();
-  const ov = $("#ov"); $("#mdl").className = "modal " + cls; $("#mdl").innerHTML = html; ov.hidden = false;
+  const ov = $("#ov"); $("#mdl").className = "modal " + cls; $("#mdl").removeAttribute("style"); $("#mdl").innerHTML = html; ov.hidden = false;
   const close = () => { ov.hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); };
   // On a phone a tap outside the window does nothing: it closes only with its own buttons, Escape or Back (Khoa,
   // 2026-11-04). With a mouse a click outside closes it too (Khoa, 2026-11-04), unless the press began inside (a text
@@ -5177,6 +5177,20 @@ function openAiConfig() {
       if (!b) return;
       use[b.dataset.aiuse] = b.dataset.v;
       for (const x of m.querySelectorAll(`[data-aiuse="${b.dataset.aiuse}"]`)) x.setAttribute("aria-selected", x === b ? "true" : "false");
+    });
+    // Thu/mở "Cấu hình Claude" không làm màn hình nhảy (Khoa, 2026-11-13): hộp thoại vốn căn giữa nên co lại thì trôi
+    // lên; giữ mép trên của hộp và vị trí dòng tiêu đề như trước khi bấm, chỉ để hộp co/giãn ở phía dưới.
+    const sum = $("#aiCfgUse > summary", m);
+    sum.addEventListener("click", (e) => {
+      e.preventDefault();
+      const was = sum.getBoundingClientRect().top, top = m.getBoundingClientRect().top;
+      m.style.alignSelf = "start"; m.style.marginTop = "0px";
+      const base = m.getBoundingClientRect().top;
+      sum.parentElement.open = !sum.parentElement.open;
+      // Mở ra mà đáy hộp vượt màn hình thì đẩy hộp lên vừa đủ (không cao hơn chỗ căn từ đầu).
+      const over = Math.max(0, top + m.getBoundingClientRect().height - (innerHeight - base));
+      m.style.marginTop = `${Math.max(0, top - base - over)}px`;
+      m.scrollTop += sum.getBoundingClientRect().top - was;
     });
     const shown = $("#aiSpent", m).value;
     $("#aiCfgOk", m).addEventListener("click", async () => {
