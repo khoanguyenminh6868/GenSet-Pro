@@ -63,6 +63,259 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE65E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C3.3"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 65,
+        "max": 65,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE110E2",
+      "fuel": "diesel",
+      "engineModels": [
+        "C4.4"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE165E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C7.1"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 165,
+        "max": 165,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE220E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C7.1"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE275E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C9 ATAAC"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE330E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C9 ATAAC"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 330,
+        "max": 330,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE450E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C13"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE550E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C15"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE715E0",
+      "fuel": "diesel",
+      "engineModels": [
+        "C18"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 715,
+        "max": 715,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE1250 GC",
+      "fuel": "diesel",
+      "engineModels": [
+        "C32"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DE1400 GC",
+      "fuel": "diesel",
+      "engineModels": [
+        "C32"
+      ],
+      "engineMakes": [
+        "Cat"
+      ],
+      "power": {
+        "min": 1400,
+        "max": 1400,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
     }
   ],
   "certifications": [],
@@ -81,9 +334,572 @@
         "亚实动力系统（天津）有限公司于2000年成立，是卡特彼勒全资子公司。占地28000平方米，具备3条生产装配线和1个定制化装配区域，生产FG Wilson和卡特彼勒两个品牌的柴油发电机组，产品功率覆盖范围6.8kVA-2500kVA"
       ],
       "file": "sources/cat-tianjin/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/106420.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE65E0（50 Hz）| 65 kVA 柴油发电机组 | Cat | Caterpillar",
+        "产品技术规格适用产品 C3.3 | DE65E0",
+        "| 最大额定功率 | 65 kVA 65 kVA",
+        "| 最小额定功率 | 65 kVA 65 kVA",
+        "| 发动机型号 | Cat® C3.3 Cat® C3.3"
+      ],
+      "file": "sources/cat-tianjin/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/108273.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE110E2（50 Hz）| 110 kVA 柴油发电机组 | Cat | Caterpillar",
+        "产品技术规格适用产品 C4.4 | DE110E2",
+        "| 最大额定功率 | 110 kVA 110 kVA",
+        "| 最小额定功率 | 110 kVA 110 kVA",
+        "| 发动机型号 | Cat® C4.4 Cat® C4.4"
+      ],
+      "file": "sources/cat-tianjin/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/108278.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE165E0（50 Hz）| 165 kVA 柴油发电机组 | Cat | Caterpillar",
+        "产品技术规格适用产品 C7.1 | DE165E0",
+        "| 最大额定功率 | 165 kVA 165 kVA",
+        "| 最小额定功率 | 165 kVA 165 kVA",
+        "| 发动机型号 | Cat® C7.1 Cat® C7.1"
+      ],
+      "file": "sources/cat-tianjin/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/108285.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE220E0（50 Hz）| 220 kVA 柴油发电机组 | Cat | Caterpillar",
+        "产品技术规格适用产品 C7.1 | DE220E0",
+        "| 最大额定功率 | 220 kVA 220 kVA",
+        "| 最小额定功率 | 200 kVA 200 kVA",
+        "| 发动机型号 | Cat® C7.1 Cat® C7.1"
+      ],
+      "file": "sources/cat-tianjin/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/116930.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "C9 | DE275E0 柴油发电机组 | Cat | Caterpillar",
+        "产品技术规格适用产品 C9 | DE275E0",
+        "| 备用额定功率 | 275 kVA 275 kVA",
+        "| 主用额定功率 | 250 kVA 250 kVA",
+        "| 最小额定功率 | 250 kVA 250 kVA",
+        "| 最大额定功率 | 275 kVA 275 kVA",
+        "| 发动机型号 | C9 ATAAC，I-6，四冲程水冷柴油机 C9 ATAAC，I-6，四冲程水冷柴油机"
+      ],
+      "file": "sources/cat-tianjin/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/116934.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE330E0（50 Hz）| 330 kVA 柴油发电机组 | Cat | Caterpillar",
+        "产品技术规格适用产品 C9 | DE330E0",
+        "| 备用额定功率 | 330 kVA 330 kVA",
+        "| 主用额定功率 | 300 kVA 300 kVA",
+        "| 最小额定功率 | 300 kVA 300 kVA",
+        "| 最大额定功率 | 330 kVA 330 kVA",
+        "| 发动机型号 | C9 ATAAC，I-6，四冲程水冷柴油机 C9 ATAAC，I-6，四冲程水冷柴油机"
+      ],
+      "file": "sources/cat-tianjin/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/116944.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE450E0（50 Hz）| 450 kVA 柴油发电机组 | Cat | Caterpillar",
+        "产品技术规格适用产品 C13 | DE450E0",
+        "| 备用额定功率 | 450 kVA 450 kVA",
+        "| 主用额定功率 | 400 kVA 400 kVA",
+        "| 最大额定功率 | 450 kVA 450 kVA",
+        "| 最小额定功率 | 400 kVA 400 kVA"
+      ],
+      "file": "sources/cat-tianjin/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/116954.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE550E0（50 Hz）| 550 kVA 柴油发电机组 | Cat | Caterpillar",
+        "产品技术规格适用产品 C15 | DE550E0",
+        "| 备用额定功率 | 550 kVA 550 kVA",
+        "| 主用额定功率 | 500 kVA 500 kVA",
+        "| 最小额定功率 | 500 kVA 500 kVA",
+        "| 最大额定功率 | 550 kVA 550 kVA"
+      ],
+      "file": "sources/cat-tianjin/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/116979.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE715E0（50 Hz）| 715 kVA 柴油发电机组 | Cat | Caterpillar",
+        "产品技术规格适用产品 C18 | DE715E0",
+        "| 备用额定功率 | 715 kVA 715 kVA",
+        "| 主用额定功率 | 650 kVA 650 kVA",
+        "| 最大额定功率 | 715 kVA 715 kVA",
+        "| 最小额定功率 | 650 kVA 650 kVA"
+      ],
+      "file": "sources/cat-tianjin/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/106400.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE1250 GC（50 Hz）| 1250 kVA 柴油发电机 | Cat | Caterpillar",
+        "产品技术规格适用产品 DE1250 GC",
+        "| 最大额定功率 | 1250 kVA 1250 kVA",
+        "| 最小额定功率 | 1250 kVA 1250 kVA",
+        "| 发动机型号 | C32 TA，V-12，四冲程水冷柴油机 C32 TA，V-12，四冲程水冷柴油机"
+      ],
+      "file": "sources/cat-tianjin/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.cat.com/zh_CN/products/new/power-systems/electric-power/diesel-generator-sets/106401.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "DE1400 GC（50 Hz）1400 kVA 柴油发电机 | Cat | Caterpillar",
+        "产品技术规格适用产品 DE1400 GC",
+        "| 最大额定功率 | 1400 kVA 1400 kVA",
+        "| 最小额定功率 | 1400 kVA 1400 kVA",
+        "| 发动机型号 | C32 TA，V-12，四冲程水冷柴油机 C32 TA，V-12，四冲程水冷柴油机"
+      ],
+      "file": "sources/cat-tianjin/2011.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Cat DE65E0 (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 C3.3 | DE65E0"
+      ],
+      "rows": [
+        "| 电压 | 220 至 415 V 220 至 415 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 速度 | 1500 rpm 1500 rpm",
+        "| 工作循环 | 备用、主用 备用、主用",
+        "| 最大额定功率 | 65 kVA 65 kVA",
+        "| 最小额定功率 | 65 kVA 65 kVA",
+        "| 发动机型号 | Cat® C3.3 Cat® C3.3",
+        "| 缸径 | 4.1 in 105 mm",
+        "| 冲程 | 5 in 127 mm",
+        "| 排量 | 201.4 in³ 3.3 l",
+        "| 压缩比 | 17.25:1 17.25:1",
+        "| 进气方式 | 涡轮增压式 涡轮增压式",
+        "| 燃油系统 | 直列式 直列式",
+        "| 调速器类型 | 机械式 机械式",
+        "| 长度 - 最大值 | 75.8 in 1925 mm",
+        "| 宽度 - 最大值 | 44.1 in 1120 mm",
+        "| 高度 - 最大值 | 53.6 in 1361 mm",
+        "| 干重 - 发电机组（最大值） | 1926 lb 874 kg",
+        "M 机架交流发电机",
+        "GCCP 控制面板"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Cat DE110E2 (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 C4.4 | DE110E2"
+      ],
+      "rows": [
+        "| 电压 | 220 至 415 V 220 至 415 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 速度 | 1500 rpm 1500 rpm",
+        "| 工作循环 | 备用、主用 备用、主用",
+        "| 最大额定功率 | 110 kVA 110 kVA",
+        "| 最小额定功率 | 110 kVA 110 kVA",
+        "| 发动机型号 | Cat® C4.4 Cat® C4.4",
+        "| 缸径 | 4.1 in 105 mm",
+        "| 冲程 | 5 in 127 mm",
+        "| 排量 | 201.4 in³ 3.3 l",
+        "| 压缩比 | 18.3:1 18.3:1",
+        "| 进气方式 | 涡轮增压式 涡轮增压式",
+        "| 燃油系统 | 直列式 直列式",
+        "| 调速器类型 | 电子装置 电子装置",
+        "| 长度 - 最大值 | 82.2 in 2089 mm",
+        "| 宽度 - 最大值 | 44.1 in 1120 mm",
+        "| 高度 - 最大值 | 54.1 in 1375 mm",
+        "| 干重 - 发电机组（最大值） | 2490 lb 1129 kg",
+        "M 机架交流发电机",
+        "GCCP 控制面板"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Cat DE165E0 (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 C7.1 | DE165E0"
+      ],
+      "rows": [
+        "| 电压 | 220 至 415 V 220 至 415 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 速度 | 1500 rpm 1500 rpm",
+        "| 工作循环 | 备用、主用 备用、主用",
+        "| 最大额定功率 | 165 kVA 165 kVA",
+        "| 最小额定功率 | 165 kVA 165 kVA",
+        "| 发动机型号 | Cat® C7.1 Cat® C7.1",
+        "| 缸径 | 4.1 in 105 mm",
+        "| 冲程 | 5.3 in 135 mm",
+        "| 排量 | 427.8 in³ 7 l",
+        "| 压缩比 | 16.0:1 16.0:1",
+        "| 进气方式 | 涡轮增压式、空对空后冷式 涡轮增压式、空对空后冷式",
+        "| 燃油系统 | 直列式 直列式",
+        "| 调速器类型 | 机械式 机械式",
+        "| 长度 - 最大值 | 98.4 in 2500 mm",
+        "| 宽度 - 最大值 | 44.1 in 1120 mm",
+        "| 高度 - 最大值 | 60.2 in 1528 mm",
+        "| 干重 - 发电机组（最大值） | 3549 lb 1610 kg",
+        "M 机架交流发电机",
+        "GCCP 控制面板"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Cat DE220E0 (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 C7.1 | DE220E0"
+      ],
+      "rows": [
+        "| 电压 | 220 至 415 V 220 至 415 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 速度 | 1500 rpm 1500 rpm",
+        "| 工作循环 | 备用、主用 备用、主用",
+        "| 最大额定功率 | 220 kVA 220 kVA",
+        "| 最小额定功率 | 200 kVA 200 kVA",
+        "| 发动机型号 | Cat® C7.1 Cat® C7.1",
+        "| 缸径 | 4.1 in 105 mm",
+        "| 冲程 | 5.3 in 135 mm",
+        "| 排量 | 427.8 in³ 7 l",
+        "| 压缩比 | 16.0:1 16.0:1",
+        "| 进气方式 | 涡轮增压式、空对空后冷式 涡轮增压式、空对空后冷式",
+        "| 燃油系统 | 直列式 直列式",
+        "| 调速器类型 | 电子装置 电子装置",
+        "| 长度 - 最大值 | 98.4 in 2500 mm",
+        "| 宽度 - 最大值 | 52 in 1320 mm",
+        "| 高度 - 最大值 | 64 in 1626 mm",
+        "| 干重 - 发电机组（最大值） | 3816 lb 1731 kg",
+        "M 机架交流发电机",
+        "GCCP 控制面板"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Cat DE275E0 (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 C9 | DE275E0"
+      ],
+      "rows": [
+        "| 备用额定功率 | 275 kVA 275 kVA",
+        "| 主用额定功率 | 250 kVA 250 kVA",
+        "| 电压 | 200 到 400 V 200 到 400 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 速度 | 1500 rpm 1500 rpm",
+        "| 工作循环 | 备用、主用 备用、主用",
+        "| 最小额定功率 | 250 kVA 250 kVA",
+        "| 最大额定功率 | 275 kVA 275 kVA",
+        "| 发动机型号 | C9 ATAAC，I-6，四冲程水冷柴油机 C9 ATAAC，I-6，四冲程水冷柴油机",
+        "| 缸径 | 4.41 in 112 mm",
+        "| 冲程 | 5.87 in 149 mm",
+        "| 排量 | 537.01 in³ 8.8 l",
+        "| 压缩比 | 16.1:1 16.1:1",
+        "| 进气方式 | 空冷后冷式 空冷后冷式",
+        "| 燃油系统 | 液压电子单体喷射 液压电子单体喷射",
+        "| 调速器类型 | Adem™A4 Adem™A4",
+        "| 长度 - 最大值 | 157 in 3988 mm",
+        "| 宽度 - 最大值 | 47.5 in 1207 mm",
+        "| 高度 - 最大值 | 73.5 in 1867 mm",
+        "A 型架交流发电机",
+        "GCCP 1.3"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Cat DE330E0 (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 C9 | DE330E0"
+      ],
+      "rows": [
+        "| 备用额定功率 | 330 kVA 330 kVA",
+        "| 主用额定功率 | 300 kVA 300 kVA",
+        "| 电压 | 200 到 400 V 200 到 400 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 速度 | 1500 rpm 1500 rpm",
+        "| 工作循环 | 备用、主用 备用、主用",
+        "| 最小额定功率 | 300 kVA 300 kVA",
+        "| 最大额定功率 | 330 kVA 330 kVA",
+        "| 发动机型号 | C9 ATAAC，I-6，四冲程水冷柴油机 C9 ATAAC，I-6，四冲程水冷柴油机",
+        "| 缸径 | 4.41 in 112 mm",
+        "| 冲程 | 5.87 in 149 mm",
+        "| 排量 | 537.01 in³ 8.8 l",
+        "| 压缩比 | 16.1:1 16.1:1",
+        "| 进气方式 | 空冷后冷式 空冷后冷式",
+        "| 燃油系统 | 液压电子单体喷射 液压电子单体喷射",
+        "| 调速器类型 | Adem™A4 Adem™A4",
+        "| 长度 - 最大值 | 157 in 3988 mm",
+        "| 宽度 - 最大值 | 47.5 in 1207 mm",
+        "| 高度 - 最大值 | 73.5 in 1867 mm",
+        "A 型架交流发电机",
+        "GCCP 1.3"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Cat DE450E0 (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 C13 | DE450E0"
+      ],
+      "rows": [
+        "| 备用额定功率 | 450 kVA 450 kVA",
+        "| 主用额定功率 | 400 kVA 400 kVA",
+        "| 电压 | 200 到 400 V 200 到 400 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 工作循环 | 备用、主用 备用、主用",
+        "| 最大额定功率 | 450 kVA 450 kVA",
+        "| 最小额定功率 | 400 kVA 400 kVA",
+        "| 进气方式 | 涡轮增压式、空对空后冷式 涡轮增压式、空对空后冷式",
+        "GCCP 1.3"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Cat DE550E0 (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 C15 | DE550E0"
+      ],
+      "rows": [
+        "| 备用额定功率 | 550 kVA 550 kVA",
+        "| 主用额定功率 | 500 kVA 500 kVA",
+        "| 电压 | 200 到 400 V 200 到 400 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 工作循环 | 备用、主用 备用、主用",
+        "| 最小额定功率 | 500 kVA 500 kVA",
+        "| 最大额定功率 | 550 kVA 550 kVA",
+        "| 进气方式 | 涡轮增压式、空对空后冷式 涡轮增压式、空对空后冷式",
+        "GCCP 1.3"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "Cat DE715E0 (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 C18 | DE715E0"
+      ],
+      "rows": [
+        "| 备用额定功率 | 715 kVA 715 kVA",
+        "| 主用额定功率 | 650 kVA 650 kVA",
+        "| 电压 | 200 到 400 V 200 到 400 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 工作循环 | 备用、主用 备用、主用",
+        "| 最大额定功率 | 715 kVA 715 kVA",
+        "| 最小额定功率 | 650 kVA 650 kVA",
+        "| 进气方式 | 涡轮增压式、空对空后冷式 涡轮增压式、空对空后冷式",
+        "GCCP 1.2"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Cat DE1250 GC (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 DE1250 GC"
+      ],
+      "rows": [
+        "| 电压 | 400 - 415 V 400 - 415 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 速度 | 1500 rpm 1500 rpm",
+        "| 工作循环 | 备用 备用",
+        "| 最大额定功率 | 1250 kVA 1250 kVA",
+        "| 最小额定功率 | 1250 kVA 1250 kVA",
+        "| 发动机型号 | C32 TA，V-12，四冲程水冷柴油机 C32 TA，V-12，四冲程水冷柴油机",
+        "| 缸径 | 5.71 in 145 mm",
+        "| 冲程 | 6.38 in 162 mm",
+        "| 排量 | 1958.86 in³ 32.1 l",
+        "| 压缩比 | 15.0:1 15.0:1",
+        "| 进气方式 | TA TA",
+        "| 燃油系统 | EUI EUI",
+        "| 调速器类型 | Adem™A4 Adem™A4",
+        "| 长度 - 最大值 | 164.3 in 4175 mm",
+        "| 宽度 - 最大值 | 73.1 in 1856 mm",
+        "| 高度 - 最大值 | 87.3 in 2217.5 mm",
+        "| 干重 - 发电机组（最大值） | 15606 lb 7079 kg",
+        "SR500 交流发电机",
+        "GCCP1.3"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "Cat DE1400 GC (50 Hz)",
+      "header": [
+        "产品技术规格适用产品 DE1400 GC"
+      ],
+      "rows": [
+        "| 电压 | 400 - 415 V 400 - 415 V",
+        "| 频率 | 50 Hz 50 Hz",
+        "| 速度 | 1500 rpm 1500 rpm",
+        "| 工作循环 | 备用 备用",
+        "| 最大额定功率 | 1400 kVA 1400 kVA",
+        "| 最小额定功率 | 1400 kVA 1400 kVA",
+        "| 发动机型号 | C32 TA，V-12，四冲程水冷柴油机 C32 TA，V-12，四冲程水冷柴油机",
+        "| 缸径 | 5.71 in 145 mm",
+        "| 冲程 | 6.38 in 162 mm",
+        "| 排量 | 1958.86 in³ 32.1 l",
+        "| 压缩比 | 14.0:1 14.0:1",
+        "| 进气方式 | TA TA",
+        "| 燃油系统 | EUI EUI",
+        "| 调速器类型 | Adem™A4 Adem™A4",
+        "| 长度 - 最大值 | 164.3 in 4175 mm",
+        "| 宽度 - 最大值 | 82.3 in 1856 mm",
+        "| 高度 - 最大值 | 89.3 in 2268 mm",
+        "| 干重 - 发电机组（最大值） | 16393 lb 7436 kg",
+        "SR500 交流发电机",
+        "GCCP1.3"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Cat",
+      "model": "GCCP",
+      "text": "GCCP",
+      "line": "GCCP 控制面板",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP",
+      "text": "GCCP",
+      "line": "GCCP 控制面板",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP",
+      "text": "GCCP",
+      "line": "GCCP 控制面板",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP",
+      "text": "GCCP",
+      "line": "GCCP 控制面板",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP 1.3",
+      "text": "GCCP 1.3",
+      "line": "GCCP 1.3",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP 1.3",
+      "text": "GCCP 1.3",
+      "line": "GCCP 1.3",
+      "src": [
+        2006
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP 1.3",
+      "text": "GCCP 1.3",
+      "line": "GCCP 1.3",
+      "src": [
+        2007
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP 1.3",
+      "text": "GCCP 1.3",
+      "line": "GCCP 1.3",
+      "src": [
+        2008
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP 1.2",
+      "text": "GCCP 1.2",
+      "line": "GCCP 1.2",
+      "src": [
+        2009
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP1.3",
+      "text": "GCCP1.3",
+      "line": "GCCP1.3",
+      "src": [
+        2010
+      ]
+    },
+    {
+      "brand": "Cat",
+      "model": "GCCP1.3",
+      "text": "GCCP1.3",
+      "line": "GCCP1.3",
+      "src": [
+        2011
+      ]
+    }
+  ]
 }
