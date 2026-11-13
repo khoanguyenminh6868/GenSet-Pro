@@ -1,42 +1,48 @@
 ---
 name: bidprice-suggest
-description: "Gợi ý giá đấu (bidprice-bot.mjs + web/bidprice.js): luồng, quy tắc chọn gói tương tự Khoa chốt, việc còn dở"
+description: "Giá gợi ý (bidprice-bot.mjs + web/bidprice.js) và sổ báo giá: quy tắc Khoa chốt chọn gói tương tự, số liệu thị trường, điều đã thử không hiệu quả, việc chờ quyết"
 metadata:
   node_type: memory
   type: project
-  originSessionId: 93e41953-82a9-4265-a2a5-f081042fd87d
-  modified: 2026-11-11T06:10:45.535Z
+  originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
+  modified: 2026-11-13T00:29:03.871Z
 ---
 
-**Luồng:** web gửi `bidpricereq/<TBMT>` (hoặc tự động sau Gợi ý cấu hình, `autoBidprice`; từ 11/11 PR #521: mọi lượt Gợi ý cấu hình mới của gói ĐÃ có bidpricereq/bidprice tự gửi lại bidpricereq cùng basis — `rebidAfterConfig`/`rebidOf` cuối `answer()`, bỏ qua khi kVA null hoặc không có cấu hình; không lặp vì bidprice-bot chỉ ghi bidprice/bidpricereq; web tab Giá gợi ý `bpStaleHtml` "Giá tính theo cấu hình gợi ý cũ… đang/chưa tính lại") → `config-bot.mjs run` chạy `suppliers/bidprice-bot.mjs run --key` thành tiến trình con → `bidprice/<TBMT>`. Code chọn gói cũ từ `bidhist` (`candidates` trong `web/bidprice.js`, dùng chung web+bot) → agent Claude Opus (`bidprice-prompt.md`) xếp mỗi gói giống/gần/khác/không đủ thông tin kèm câu trích nguyên văn từ chính mục `S…` đó → `check` bỏ gói có câu trích không khớp → `suggest` tính 3 mức giá (phân vị 25/50/75 tỷ lệ giá trúng/giá gói) chỉ từ gói ≥2 nhà thầu, cần ≥3 gói. Agent không ghi số tiền. Thử không đăng: `bidprice-bot.mjs try --key K --kva N --price P`.
+**Luồng:** `bidpricereq/<TBMT>` (web, hoặc tự gửi sau mỗi lượt Gợi ý cấu hình) → `suppliers/bidprice-bot.mjs run --key` → `bidprice/<TBMT>`. Code chọn gói cũ từ `bidhist` (`web/bidprice.js`, dùng chung web + bot) → agent Opus xếp mỗi gói giống/gần/khác kèm câu trích nguyên văn → 3 mức giá = phân vị tỷ lệ giá trúng/giá gói, chỉ từ gói ≥2 nhà thầu, cần ≥3 gói. Agent không ghi số tiền và giữ mức đã xếp ở lượt trước (buộc xếp lại: `GENBID_BIDPRICE_RERATE=1`). Thử không đăng: `bidprice-bot.mjs try --key K --kva N --price P`. Hậu kiểm: `suppliers/bidprice-backtest.mjs`.
 
-**Quy tắc chọn gói tương tự (Khoa chốt 2026-11-03, PR #279, #280):**
-- Công suất lệch ≤5% (`POWER_TOL`; 10% khi HSMT đòi đồng bộ thương hiệu, Khoa 06/11); xếp theo công suất, giá gói, độ giống cấu hình HSMT (`profileOf`/`compareCfg`: hãng động cơ/đầu phát/BĐK được nêu, vỏ cách âm, ATS, hoà đồng bộ, bồn dầu ngoài, trạm biến áp, 1 pha), cùng chủ đầu tư. KHÔNG xét hình thức đấu thầu, tuổi gói.
-- Bỏ gói có động cơ khác nhóm (Trung Quốc / ngoài TQ) với động cơ cấu hình hạng 1 của Gợi ý cấu hình (chưa có thì theo HSMT). Nhóm gói cũ: `goodsGroup` chỉ đọc hàng là máy phát (bỏ cáp/ATS/MBA), không có thì dòng HSMT về động cơ/tổ máy.
-- Gói di dời/lắp lại máy cũ KHÔNG vào ứng viên: `bidKind` "move" theo tên (trừ khi tên có mua sắm/trang bị/đầu tư); `movesOldSet` theo HSMT khi hàng trúng không có máy phát. Dịch vụ (sửa chữa, đại tu, trung tu, giám sát thi công, thuê, vật tư…) = "svc".
-- **Loại Việt Nam (Khoa 11/11, PR #522):** gói cũ có hàng trúng là tổ máy (`isSetRow`) mà hãng/xuất xứ ghi Việt Nam (`vnMadeSet`, `VN_WORD`) bị bỏ khỏi ứng viên và prior (IB2600603983: bỏ 316/1.369 lô); prompt: còn lọt thì `different`. Gợi ý cấu hình `check` cũng bỏ NCC country VN + tổ máy hãng/xuất xứ VN. Kết quả giá cũ chỉ đổi khi gửi lại bidpricereq.
-- samples.md có dòng "So cấu hình (code)" chỉ để gợi ý cho agent, không được chép làm câu trích.
+## Quy tắc Khoa chốt (chọn gói tương tự)
+- Công suất lệch ≤5% (10% khi HSMT đòi đồng bộ thương hiệu), so cùng mức liên tục/dự phòng. Xếp theo công suất, giá gói, độ giống cấu hình HSMT, cùng chủ đầu tư. KHÔNG xét hình thức đấu thầu, tuổi gói.
+- Bỏ gói có động cơ khác nhóm xuất xứ (TQ / ngoài TQ; hãng ngoại sản xuất tại TQ so được với cả hai) với cấu hình hạng 1 của Gợi ý cấu hình.
+- Bỏ gói di dời/lắp lại máy cũ, gói dịch vụ, gói có tổ máy hãng/xuất xứ Việt Nam.
+- Gói đòi đồng bộ thương hiệu: gói cũ tổ máy lắp ráp → "khác".
+- Gói nhiều cỡ máy: chạy riêng từng cỡ, giá gói chia theo số lượng × kVA^0,7.
+- Chỉ dùng gói có cạnh tranh (≥2 nhà thầu).
 
-**Đồng bộ thương hiệu (06/11, PR #424):** profileOf thêm thẻ "đồng bộ thương hiệu"; gói đòi điều này mà gói cũ không đòi → dist +0,6; t.engine (nhóm xuất xứ) bỏ qua cấu hình có check đồng bộ "not_met"; input.md + prompt: gói cũ tổ máy lắp ráp → "khác", không biết → tối đa "gần".
+## Báo giá NCC và giá vốn (web)
+- Tỷ giá + thuế GTGT lưu MỘT lần ở `quote/_cost` cho mọi gói; mọi vòng lặp qua `state.quote` phải bỏ khoá bắt đầu bằng `_`; lưu `quote/*` phải giữ trường khác (`{...cũ, ...mới}`). Không đoán tỷ giá.
+- Giá vốn chỉ lấy báo giá mà mọi dòng khớp hãng HSMT chỉ định. Báo giá >180 ngày là cũ.
+- Chữ trên màn hình: "Chi phí phát sinh" (không dùng "khoản thêm"). Danh sách gợi ý tự vẽ, không dùng `<datalist>` (Khoa chê xấu). Web ghi "% gói cũ trúng ≥ mức này", không gọi là xác suất thắng.
+- Bot chưa đọc tệp báo giá ra dòng giá (đang nhập tay).
 
-**Audit 06/11 (PR #439):** (1) công suất theo mức: `kvaRated` đọc liên tục/dự phòng quanh con số (capText của web, tên, HSMT), `cfgPower` ưu tiên `config.sets` → dòng prime của config.text → cfgKva; `powerMatch` so cùng mức, chỉ MỘT bên biết mức thì đọc thêm k ở mức kia (×/÷1,1, `STANDBY_FACTOR`), hai tên trần thì không; gói khớp nhờ đọc mức kia có `kNote` + dist +0,25. (2) Nhóm xuất xứ thêm `cnmade` (hãng ngoại sản xuất tại TQ: profileOf thấy hãng ngoại + chữ TQ/DCEC/CCEC/Wuxi…; tender: NCC của cấu hình hạng 1 đều country CN → `t.place="cn"`); `conflict()` chỉ loại cn↔foreign, cnmade so với cả hai. (3) `candidates` trả `prior` (gói ±15%, ≥2 nhà thầu, không khác nhóm, không trong list); `suggest(samples,P,K,prior)` gộp prior khi <5 gói giống/gần, trả `nPrior/pool/bidders{median,min,max}/byBidders`; `perKva` chia wp/(k×units) (`unitsOf`: qty hàng máy phát hoặc "N bộ/máy"). Dữ liệu: nb=2 trung vị 0,979, nb≥6 0,794; TQ 0,856 vs ngoài TQ 0,950. (4) Agent đọc `keyText(config.text,3000)` (3.000 đầu + dòng hãng/xuất xứ/phạm vi tới 6.000); bot ghi config.text tối đa 6.000, dòng quyết định trước (`configText` trong genbid-sync.js). Web: "% gói cũ trúng ≥ mức này" (không phải xác suất thắng).
+## Số liệu thị trường (bidhist, đo 09/11, 1.627 lô)
+- Giá trúng/giá gói trung vị 0,962; quyết định chủ yếu bởi SỐ NHÀ THẦU (1 nhà thầu 0,991 → ≥7 nhà thầu 0,782); 32% lô chỉ 1 nhà thầu. TQ 0,856 vs ngoài TQ 0,950. Năm không tạo xu hướng.
+- Đơn giá theo kVA sai ±64% → neo vào giá gói (sai trung vị 6%).
+- 28% lượt dự thầu bị loại kỹ thuật/năng lực. 50% lô có chủ đầu tư từng mua; 46% trong đó người thắng cũ thắng lại.
+- Thảo Nguyên 71 lượt: 18 trúng, 26 thua giá (cao hơn người thắng trung vị 7,1% giá gói), 17 bị loại kỹ thuật; khi trúng cách người kế 1,8%.
+- Hàng trúng hiếm khi ghi model: 5% ghi model động cơ, 56% ghi hãng tổ máy.
 
-**Thực tế:** mỗi gói chỉ ~14–30 ứng viên (< MAX 80), nên thứ tự xếp gần như không đổi kết quả; lọc (nhóm, loại gói) và dòng so cấu hình mới có tác dụng. Bẫy: script import config-bot.mjs không được import ngược từ config-bot (#249, node thoát 13, kẹt `genbid-config.lock`).
+## Đã thử, không hiệu quả (đừng làm lại)
+- Dự báo số nhà thầu: chỉ chủ đầu tư, tỉnh, lĩnh vực có ích và chỉ là xu hướng (~42% đúng); giá gói, hình thức, công suất, G7 không giúp.
+- Lệch ở gói TQ (+7 điểm) và gói ≥6 nhà thầu (+12,5) không sửa được bằng dữ liệu trước đóng thầu (hồi quy về trung bình).
+- Phân vị nội suy: ngoài mẫu kém hơn. Hiện phủ khoảng [thấp, cao] ~62%, sai mức giữa ~5,7 điểm.
+- Mức thấp dao động giữa các lượt là do agent lật một gói ranh giới trong pool 7–8 gói, không phải lỗi code.
+- Giá theo nhóm cấu hình chỉ tốt hơn với nhóm ngoài TQ.
 
-**Gói nhiều cỡ máy (Khoa 04/11: chạy riêng từng cỡ như Gợi ý cấu hình, PR #332):** cỡ lấy từ `configmatch.result.sizes`, không có thì `sizesFor`. Giá gói chia theo số lượng × kVA^0,7 (`sharesOf`; đơn giá trúng bidhist cho mũ 0,69; lệch trung vị 8 điểm % trên 6 gói có đơn giá từng máy — dùng đơn giá/giá gói chia số máy của gói cũ lệch 12–51 vì thiếu số lượng). Mỗi cỡ chạy như gói riêng (basis.qty, perKva × số máy), `bidprice.result = {multi, sizes[{share,result}], levels (tổng các cỡ)}`; web `bidPriceMultiHtml`. Gói cũ cũng có thể nhiều cỡ: prompt dặn xếp "khác" trừ khi các cỡ gần trùng.
+## Chờ Khoa quyết
+- Thêm gói 1 nhà thầu theo dự báo (giảm sai 5,7 → 4,7 nhưng trái quy tắc "chỉ gói có cạnh tranh").
+- Phân vị nội suy (em nghiêng không làm).
+- Gói đòi đồng bộ thương hiệu thường thiếu gói cũ tương tự → không ra giá.
 
-**Còn dở / Khoa chưa chọn:** gói đòi đồng bộ thương hiệu thường thiếu gói cũ tương tự (IB2600594596 sau #424: mỗi cỡ chỉ 2 gói giống/gần → không ra giá; trước đó ra 75–84% giá gói theo gói tổ máy lắp ráp) → Khoa 06/11 chọn nới công suất: gói đòi đồng bộ thương hiệu dùng `SYNC_POWER_TOL`=10% (PR #428), gói khác vẫn 5%; giá riêng theo từng cấu hình/nhóm xuất xứ (ý 2); đưa hàng trúng `bidhist` sang xếp hạng cấu hình + cảnh báo giá không khả thi (ý 3–4); gói "cải tạo…" kèm máy phát vẫn lọt (agent xếp khác). Chưa kiểm nút thật trên Vercel.
-
-**Số liệu bidhist (đo 09/11, 1.627 lô, script scratchpad stats*.mjs đọc `genbid-work/doc-cache/bidhist.json`):** giá trúng/giá gói trung vị 0,962, quyết định chủ yếu bởi số nhà thầu (1 nhà thầu 0,991 → ≥7 nhà thầu 0,782); 32% lô chỉ 1 nhà thầu; năm không tạo xu hướng. Đơn giá theo kVA (kVA^0,48) sai ±64% → neo vào giá gói (sai trung vị 6%). 28% lượt dự bị loại kỹ thuật/năng lực/hợp lệ. 50% lô có CĐT từng mua, 46% trong đó người thắng đã từng thắng CĐT đó. Thảo Nguyên 71 lượt: 18 trúng, 26 thua giá (cao hơn người thắng trung vị 7,1% giá gói), 17 bị loại kỹ thuật; khi trúng, cách người kế trung vị 1,8% giá gói. Đề xuất đã trình Khoa: đường cong xác suất thắng theo số nhà thầu + giá vốn → lợi nhuận kỳ vọng; khai thác báo cáo đánh giá E-HSDT để biết lý do loại kỹ thuật.
-
-**Cạnh tranh dự báo + giá vốn + lợi nhuận kỳ vọng (10/11, PR #470, không cần bot, tính trên web từ state.bidhist):** `nbForecast` (web/bidprice.js): phân bố số nhà thầu 1 / 2–3 / 4–5 / từ 6 = tỉ lệ chung × lệch của chủ đầu tư (K_INV 5) × tỉnh × lĩnh vực (K_SEG 20, ALPHA 0,5); kiểm thử tiến dần log loss 1,317 → 1,217, nhóm cao nhất đúng ~42% (đoán bừa 2–3: 40%) → chỉ là xu hướng. Giá gói, hình thức, công suất, G7 KHÔNG giúp dự báo (đã thử). Dấu hiệu nhà thầu quen (`lockOf`): quen = 1 nhà thầu trúng ≥2 và ≥ nửa số gói trước của CĐT (lịch sử: trúng lại 44–46%); single = ≥2/3 gói trước chỉ 1 nhà thầu (56% lại 1 nhà thầu). `winCurve`: xác suất thắng ở mức r = tỉ lệ gói mua sắm có giá trúng > r, theo số nhà thầu, trộn theo dự báo (Brier ở 90%: 0,249 → 0,230; biết đúng số nhà thầu 0,167 → web cho chọn tay kịch bản). `profitTable`: thắng × (giá bỏ − giá vốn). Sổ báo giá: `quote/<key>.rows[].items[]` {desc,kva,engine,alternator,controller,qty,unitPrice,currency,terms,date,note} + `quote/<key>.cost` {fx, extras[{label,kind vnd|pct,value}]}; `quoteCost` không đoán tỷ giá; `saveQuote(key, rows, more)` giữ các trường khác của tài liệu. Web: Tổng quan có mục Cạnh tranh dự báo; Giá gợi ý có dòng giá, Tỷ giá và khoản thêm, Sổ báo giá (mọi gói), bảng lợi nhuận kỳ vọng. Chưa làm: bot đọc tệp báo giá ra dòng giá (đang nhập tay); chưa xem trên Vercel thật.
-
-**Tỷ giá + thuế GTGT dùng chung (Khoa 10/11, PR #475):** lưu một lần ở `quote/_cost` {fx, vat %, updatedAt, by} cho mọi gói (đổi thì giá vốn mọi gói tính lại); `quote/<key>.cost` chỉ còn `extras` (fx theo gói cũ không dùng nữa, chỉ làm gợi ý trong ô nhập). `quoteCost`: thuế = vat% × (tiền hàng của dòng không có `vatIncl` + khoản thêm). Mọi vòng lặp qua `state.quote` phải bỏ khoá bắt đầu bằng `_`. Sổ báo giá: bảng `supcards` (1 cột trên điện thoại), `supLink` mở hồ sơ NCC, `a[data-qtender]` đóng cửa sổ và mở gói ở tab `price` (back `{sup, scroll}` quay lại hồ sơ NCC). Màn Nhà cung cấp: `filtOpen = true` khi mở, "Cấu hình các model" và "Nguồn" là `details.supsec` gập sẵn (bấm [n] mở `#supSrcBox`), mục "Báo giá đã có" (`supQuotesOf`) + nhãn "Báo giá ở N gói". Bẫy: `<input>` không có `type` không ăn kiểu ô của trang (CSS chỉ bắt theo type).
-
-**Sửa giao diện báo giá (Khoa 10/11, PR #480):** chữ trên màn hình là "Chi phí phát sinh" (không dùng "khoản thêm"), nút "Thêm chi phí"; trong khung Báo giá của NCC: `quoteAllHtml` (dòng "Dùng cho mọi gói" + nút Tỷ giá, thuế GTGT + Sổ báo giá) ngay dưới tiêu đề, `quoteCostHtml` (chi phí phát sinh của gói) ở cuối. Ô tên chi phí dùng danh sách tự vẽ `#qcMenu` (position fixed, không dùng `<datalist>`; Khoa chê danh sách mặc định xấu). Sổ báo giá: lọc chữ / NCC / động cơ (`quoteLedger` trả `engineMake`: hãng theo `ENGINE_BRANDS`, không nhận ra thì giữ chữ đã nhập) / công suất ±15%, hiện 20 dòng rồi Xem thêm 20 (`QL_PAGE`). Thử giao diện: `openDrawer` không phải biến toàn cục, mở gói bằng `#goi/<TBMT>` rồi bấm tab; ảnh chụp ngay sau lệnh JS có thể chụp trước khi vẽ xong.
-
-**Màu NCC + lọc theo hãng HSMT chỉ định (Khoa 10/11, PR #496):** mỗi NCC trong khung Báo giá có màu riêng (`supHues`/`supHue` theo mã NCC, bảng `SUP_HUES` bỏ đỏ hồng/vàng vì trùng nghĩa cảnh báo; `supDot` cũng ở Sổ báo giá). `quoteNeedOf(t)` đọc hãng động cơ/đầu phát/BĐK từ technicalSpecs của Phân tích, bỏ mệnh đề "tương đương"; `quoteMisfits`/`quoteFits`: dòng tổ máy so cả ba, dòng riêng đầu phát/BĐK chỉ so phần đó, dòng khác (ATS, cáp) bỏ qua; ô trống thì đọc tên hàng. Giá vốn chỉ lấy báo giá mà mọi dòng đều khớp; "xem" dòng cùng cỡ chỉ đếm dòng khớp và mở Sổ báo giá với ô "Đúng …" bật sẵn. Bẫy thử cục bộ: gói thử không có công suất trong tên thì `capacityOf` dựa vào phân tích; xoá localStorage `genbid:capScan` nếu vừa đổi dữ liệu.
-
-**Giá chuyên môn (10/11, đã gộp: PR #503 logic, #505 giao diện, #508 hiệu chỉnh — nghiệm thu `genbid-work\dieu-phoi\nghiem-thu\gia-chuyen-mon-1..3.md`):** `costHints` (khoản chi HSMT nhắc, không số; lắp đặt/ống xả chỉ khi là mục riêng), `financeCost` (contractTerms; lãi suất `quote/_cost.rate`, số ngày theo gói `quote/<key>.cost.days`; chỉ 7/1.287 phân tích có contractTerms → web hiện "Phân tích lại"), `feasibility`, `rivalsOf` (Tổng quan, mục Đối thủ), `quoteStale` (>180 ngày), `groupPrices`/`byConfig` (web chỉ hiện khi nhóm foreign: backtest chỉ tốt hơn với foreign). Hậu kiểm `suppliers/bidprice-backtest.mjs` (chỉ dữ liệu trước đóng thầu, bỏ bước agent): hiện nay phủ [thấp,cao] 36%, sai mức giữa 6,8 điểm; `--calib` (trọng số theo nbForecast lam 0,5 + phân vị 20/80) → 53%, 5,7 điểm; **đã bật mặc định (11/11, PR #511)**: `calibOn()` trong bidprice-bot.mjs, `GENBID_BIDPRICE_CALIB=0` để tắt; gói nhiều cỡ có `result.calib` = tổng calib từng cỡ. Web: `bpLevelsOf(result)` (calib nếu có, không thì `levels` cũ; mọi chỗ dùng 3 mức đi qua đó), dòng giải thích khoảng, `bpCrowdNote` (lưu ý khi dự báo nghiêng ≥6 nhà thầu hoặc cấu hình hạng 1 cn, không trừ số). Ô calib không có `chance`. Lệch cn (+6) và ≥6 NT (+11) chưa sửa được. Bẫy: lưu `quote/_cost` hay `cost` phải giữ trường khác (`{...cũ, ...mới}`); `numIn` coi "." là phân cách nghìn.
+**Bẫy:** `numIn` coi "." là phân cách nghìn. Thử giao diện: mở gói bằng `#goi/<TBMT>` rồi bấm tab; xoá localStorage `genbid:capScan` sau khi đổi dữ liệu thử.
 
 Liên quan [[config-suggest]], [[session-log]].
