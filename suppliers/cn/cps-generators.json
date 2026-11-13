@@ -44,6 +44,2618 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPS AP – tổ máy diesel Perkins",
+      "fuel": "diesel",
+      "power": {
+        "min": 13,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001,
+          2003
+        ]
+      },
+      "src": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G2",
+        "4012-46TAG2A",
+        "1103A-33G",
+        "4016-61TRG2",
+        "4008-30TAG3",
+        "1206A-E70TTAG2",
+        "1206A-E70TTAG3",
+        "403A-15G1",
+        "1106A-70TAG1",
+        "1106A-70TAG2",
+        "4016-61TRG1",
+        "404A-22G",
+        "1106A-70TAG4",
+        "404A-22G1",
+        "4016-61TRG3",
+        "1506A-E88TAG4",
+        "1506A-E88TAG5",
+        "2206A-E13TAG3",
+        "2506A-E15TAG2",
+        "1103A-33TG2",
+        "2806A-E18TAG1A",
+        "2806A-E18TAG2",
+        "1104A-44TG1",
+        "2806A-E18TTAG4",
+        "4006-23TAG2A",
+        "2806A-E18TTAG5",
+        "1104A-44TG2",
+        "4008TAG1A"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Mecc Alte"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPS AC – tổ máy diesel Cummins",
+      "fuel": "diesel",
+      "power": {
+        "min": 25,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2007,
+        2008,
+        2009,
+        2014
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38G5",
+        "KTA50G3",
+        "6BTAA5.9G6",
+        "KTA50G8",
+        "QSK50G4",
+        "6BTAA5.9G7",
+        "QSK50G7",
+        "QSB7G4",
+        "QSK60G3",
+        "QSB7G5",
+        "QSK60G4",
+        "QSK78G9",
+        "QSL9-G3",
+        "X2.5G2",
+        "QSX15G8",
+        "QSK23G9",
+        "S3.8G6",
+        "QSZ13G5",
+        "KTA38G3"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Mecc Alte"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPS AV – tổ máy diesel Volvo",
+      "fuel": "diesel",
+      "power": {
+        "min": 100,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2015,
+          2011
+        ]
+      },
+      "src": [
+        2010,
+        2011,
+        2015
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD731GE",
+        "TAD732GE",
+        "TAD733GE",
+        "TAD734GE",
+        "TAD1341GE",
+        "TAD1342GE",
+        "TAD1343GE",
+        "TAD1344GE",
+        "TAD1345GE",
+        "TAD1641GE",
+        "TAD1642GE",
+        "TWD1643GE",
+        "TWD1645GE",
+        "TAD531GE"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Mecc Alte",
+        "Leroy Somer"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CPS AS – tổ máy diesel Scania",
+      "fuel": "diesel",
+      "power": {
+        "min": 300,
+        "max": 725,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012,
+          2013
+        ]
+      },
+      "src": [
+        2012,
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC9 072A",
+        "DC13 072A",
+        "DC16 049A",
+        "DC16 078A"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Mecc Alte"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP450S",
+      "fuel": "diesel",
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506A-E15TAG1"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Mecc Alte"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP250S",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP230S",
+      "fuel": "diesel",
+      "power": {
+        "min": 230,
+        "max": 230,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP1125S",
+      "fuel": "diesel",
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008-30TAG3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP1500S",
+      "fuel": "diesel",
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TAG2A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP30S 1PH 1103A-33G",
+      "fuel": "diesel",
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP28S",
+      "fuel": "diesel",
+      "power": {
+        "min": 28,
+        "max": 28,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP2000S",
+      "fuel": "diesel",
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP15S",
+      "fuel": "diesel",
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP13S",
+      "fuel": "diesel",
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G1"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP150",
+      "fuel": "diesel",
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP150S 1PH 1106A-70TAG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP150S 3PH 1106A-70TAG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP135S",
+      "fuel": "diesel",
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG1"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP1850S",
+      "fuel": "diesel",
+      "power": {
+        "min": 1850,
+        "max": 1850,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG1"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP18S-1PH",
+      "fuel": "diesel",
+      "power": {
+        "min": 18,
+        "max": 18,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404A-22G"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP275S",
+      "fuel": "diesel",
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG4"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP200S",
+      "fuel": "diesel",
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG4"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP24S",
+      "fuel": "diesel",
+      "power": {
+        "min": 24,
+        "max": 24,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP20S",
+      "fuel": "diesel",
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404A-22G1"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP2250S",
+      "fuel": "diesel",
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP300S",
+      "fuel": "diesel",
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG5"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP400S",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206A-E13TAG3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP500S",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506A-E15TAG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP60",
+      "fuel": "diesel",
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP30",
+      "fuel": "diesel",
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP30S 3PH 1103A-33G",
+      "fuel": "diesel",
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP600S",
+      "fuel": "diesel",
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG1A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP650",
+      "fuel": "diesel",
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP650S",
+      "fuel": "diesel",
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG1A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP700S",
+      "fuel": "diesel",
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TTAG4"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP750S",
+      "fuel": "diesel",
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG2A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP65S",
+      "fuel": "diesel",
+      "power": {
+        "min": 65,
+        "max": 65,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG1"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP60S 3PH 1103A-33TG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP770S",
+      "fuel": "diesel",
+      "power": {
+        "min": 770,
+        "max": 770,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TTAG5"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP900",
+      "fuel": "diesel",
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG1A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP900S",
+      "fuel": "diesel",
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG1A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP80",
+      "fuel": "diesel",
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP80S 1PH 1104A-44TG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP80S 3PH 1104A-44TG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC125S",
+      "fuel": "diesel",
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9G6"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1000",
+      "fuel": "diesel",
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38G5"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1000S",
+      "fuel": "diesel",
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38G5"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1250S",
+      "fuel": "diesel",
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50G3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1260",
+      "fuel": "diesel",
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50G3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1400",
+      "fuel": "diesel",
+      "power": {
+        "min": 1400,
+        "max": 1400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50G8"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1400S 3PH KTA50G3",
+      "fuel": "diesel",
+      "power": {
+        "min": 1400,
+        "max": 1400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50G3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC180S",
+      "fuel": "diesel",
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSB7G4"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC160S",
+      "fuel": "diesel",
+      "power": {
+        "min": 160,
+        "max": 160,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9G7"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1400S 3PH KTA50G8",
+      "fuel": "diesel",
+      "power": {
+        "min": 1400,
+        "max": 1400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50G8"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1500",
+      "fuel": "diesel",
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK50G4"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1500S",
+      "fuel": "diesel",
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK50G4"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1650",
+      "fuel": "diesel",
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK50G7"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1650S",
+      "fuel": "diesel",
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK50G7"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1875",
+      "fuel": "diesel",
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK60G3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC250S",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSL9-G3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC200S",
+      "fuel": "diesel",
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSB7G5"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC25S",
+      "fuel": "diesel",
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "X2.5G2"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC1875S",
+      "fuel": "diesel",
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK60G3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC2045",
+      "fuel": "diesel",
+      "power": {
+        "min": 2045,
+        "max": 2045,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK60G4"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC2045S",
+      "fuel": "diesel",
+      "power": {
+        "min": 2045,
+        "max": 2045,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK60G4"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC2500S",
+      "fuel": "diesel",
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK78G9"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV300",
+      "fuel": "diesel",
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1341GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV300S",
+      "fuel": "diesel",
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1341GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV250",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD734GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV250S",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD734GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV200",
+      "fuel": "diesel",
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD733GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV200S",
+      "fuel": "diesel",
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD733GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV180S",
+      "fuel": "diesel",
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD732GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV150S",
+      "fuel": "diesel",
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD731GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV500S",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1641GE"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Mecc Alte",
+        "Leroy Somer"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV350S",
+      "fuel": "diesel",
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1342GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV375",
+      "fuel": "diesel",
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1343GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV375S",
+      "fuel": "diesel",
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1343GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV400S",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1344GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV450S",
+      "fuel": "diesel",
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1345GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV500",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1641GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV590S",
+      "fuel": "diesel",
+      "power": {
+        "min": 590,
+        "max": 590,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD1642GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV640S",
+      "fuel": "diesel",
+      "power": {
+        "min": 640,
+        "max": 640,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TWD1643GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV700S",
+      "fuel": "diesel",
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TWD1645GE"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS300",
+      "fuel": "diesel",
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC9 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS325",
+      "fuel": "diesel",
+      "power": {
+        "min": 325,
+        "max": 325,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC9 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS325S",
+      "fuel": "diesel",
+      "power": {
+        "min": 325,
+        "max": 325,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC9 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS365S",
+      "fuel": "diesel",
+      "power": {
+        "min": 365,
+        "max": 365,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS400",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS400S",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS450",
+      "fuel": "diesel",
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS450S",
+      "fuel": "diesel",
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS500",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS500S",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS550",
+      "fuel": "diesel",
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 049A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS550S",
+      "fuel": "diesel",
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS600",
+      "fuel": "diesel",
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS600S",
+      "fuel": "diesel",
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS650",
+      "fuel": "diesel",
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS650S",
+      "fuel": "diesel",
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS700",
+      "fuel": "diesel",
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS700S",
+      "fuel": "diesel",
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AS725",
+      "fuel": "diesel",
+      "power": {
+        "min": 725,
+        "max": 725,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC500S",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSX15G8"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Mecc Alte"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC400S",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSZ13G5"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC810S",
+      "fuel": "diesel",
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK23G9"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC910S",
+      "fuel": "diesel",
+      "power": {
+        "min": 910,
+        "max": 910,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38G3"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC50S",
+      "fuel": "diesel",
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "S3.8G6"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AV100",
+      "fuel": "diesel",
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2015
+        ]
+      },
+      "src": [
+        2015
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD531GE"
+      ]
     }
   ],
   "certifications": [],
@@ -63,9 +2675,642 @@
         "Kubota Engines"
       ],
       "file": "sources/cps-generators/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://cps-generators.com/product/450kva-3ph-diesel-generator-with-perkins-engine/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "450KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2506A-E15TAG1",
+        "450 Kva Prime Power",
+        "495 Kva Standby Power",
+        "Powered By a 2506A-E15TAG1 Perkins Engine",
+        "Stamford EU or Mecc Alte UK Alternator",
+        "Deep Sea Electronics Control Module",
+        "CPS Diesel generators are controlled by the worldwide renowned brand Deep Sea Electronics, manufactured here in the UK and providing customers worldwide pre/after-sales support. We use the DSE4520, DSE7120, DSE7420, and DSE8610 across our range of Diesel generators. Our engineers are fully trained to program and set up the parameters of the Deep Sea Electronics modules.",
+        "AP15S 15KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 403A-15G2",
+        "AP1500S 1500KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4012-46TAG2A",
+        "AP30S 30KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP13S 13KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 403A-15G1",
+        "AP2000S 2000KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4016-61TRG2",
+        "AP1125S 1125KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4008-30TAG3",
+        "AP230S 230KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1206A-E70TTAG2",
+        "AP28S 28KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP250S 250KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1206A-E70TTAG3"
+      ],
+      "file": "sources/cps-generators/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://cps-generators.com/product-category/perkins-generators/page/3/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Perkins Generators Page 3",
+        "AP135S 135KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG1",
+        "AP150 150KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG2",
+        "AP150S 150KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG2",
+        "AP150S 150KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG2",
+        "AP1850S 1850KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4016-61TRG1",
+        "AP18S-1PH 18KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 404A-22G"
+      ],
+      "file": "sources/cps-generators/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://cps-generators.com/product-category/perkins-generators/page/4/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Perkins Generators Page 4",
+        "AP200S 200KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG4",
+        "AP20S 20KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 404A-22G1",
+        "AP2250S 2250KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4016-61TRG3",
+        "AP24S 24KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP275S 275KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1506A-E88TAG4"
+      ],
+      "file": "sources/cps-generators/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://cps-generators.com/product-category/perkins-generators/page/5/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Perkins Generators Page 5",
+        "AP30 30KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP300S 300KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1506A-E88TAG5",
+        "AP30S 30KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP400S 400KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2206A-E13TAG3",
+        "AP500S 500KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2506A-E15TAG2",
+        "AP60 60KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1103A-33TG2"
+      ],
+      "file": "sources/cps-generators/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://cps-generators.com/product-category/perkins-generators/page/6/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Perkins Generators Page 6",
+        "AP600S 600KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TAG1A",
+        "AP60S 60KVA 1PH CANOPIED DIESEL GENERATOR WITH PERKINS ENGINE",
+        "AP60S 60KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33TG2",
+        "AP650 650KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TAG2",
+        "AP650S 650KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TAG1A",
+        "AP65S 65KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1104A-44TG1",
+        "AP700S 700KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TTAG4",
+        "AP750S 750KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4006-23TAG2A"
+      ],
+      "file": "sources/cps-generators/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://cps-generators.com/product-category/perkins-generators/page/7/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Perkins Generators Page 7",
+        "AP770S 770KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TTAG5",
+        "AP80 80KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1104A-44TG2",
+        "AP80S 80KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1104A-44TG2",
+        "AP80S 80KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1104A-44TG2",
+        "AP900 900KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 4008TAG1A",
+        "AP900S 900KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4008TAG1A"
+      ],
+      "file": "sources/cps-generators/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://cps-generators.com/product-category/cummins-generators/page/2/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Cummins Generators Page 2",
+        "AC1000 1000KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS KTA38G5",
+        "AC1000S 1000KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA38G5",
+        "AC1250S 1250KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA50G3",
+        "AC125S 125KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS 6BTAA5.9G6",
+        "AC1260 1250KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS KTA50G3",
+        "AC1400 1400KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS KTA50G8",
+        "AC1400S 1400KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA50G3"
+      ],
+      "file": "sources/cps-generators/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://cps-generators.com/product-category/cummins-generators/page/3/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Cummins Generators Page 3",
+        "AC1400S 1400KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA50G8",
+        "AC1500 1500KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS QSK50G4",
+        "AC1500S 1500KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK50G4",
+        "AC160S 160KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS 6BTAA5.9G7",
+        "AC1650 1650KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS QSK50G7",
+        "AC1650S 1650KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK50G7",
+        "AC180S 180KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSB7G4",
+        "AC1875 1875KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS QSK60G3"
+      ],
+      "file": "sources/cps-generators/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://cps-generators.com/product-category/cummins-generators/page/4/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Cummins Generators Page 4",
+        "AC1875S 1875KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK60G3",
+        "AC200S 200KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSB7G5",
+        "AC25S 25KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS X2.5G2",
+        "AC2500S 2500KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK78G9",
+        "AC2045 2045KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS QSK60G4",
+        "AC2045S 2045KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK60G4",
+        "AC250S 250KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSL9-G3"
+      ],
+      "file": "sources/cps-generators/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://cps-generators.com/product-category/volvo-generators/page/4/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Volvo Generators Page 4",
+        "AV150S 150KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD731GE",
+        "AV180S 180KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD732GE",
+        "AV200 200KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD733GE",
+        "AV200S 200KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD733GE",
+        "AV250 250KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD734GE",
+        "AV250S 250KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD734GE",
+        "AV300 300KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD1341GE",
+        "AV300S 300KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1341GE"
+      ],
+      "file": "sources/cps-generators/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://cps-generators.com/product-category/volvo-generators/page/5/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Volvo Generators Page 5",
+        "AV350S 350KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1342GE",
+        "AV375 375KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD1343GE",
+        "AV700S 700KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TWD1645GE",
+        "AV375S 375KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1343GE",
+        "AV400S 400KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1344GE",
+        "AV450S 450KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1345GE",
+        "AV500 500KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD1641GE",
+        "AV500S 500KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1641GE",
+        "AV590S 590KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1642GE",
+        "AV640S 640KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TWD1643GE"
+      ],
+      "file": "sources/cps-generators/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://cps-generators.com/product-category/scania-generators/page/5/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Scania Generators Page 5",
+        "AS300 300KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC9 072A 02-13",
+        "AS325 325KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC9 072A 02-14",
+        "AS325S 325KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC9 072A 02-14",
+        "AS365S 365KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-11",
+        "AS400 400KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-12",
+        "AS400S 400KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-12",
+        "AS450 450KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-13",
+        "AS450S 450KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-13",
+        "AS500 500KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-14"
+      ],
+      "file": "sources/cps-generators/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://cps-generators.com/product-category/scania-generators/page/6/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Constant Power Solutions Scania Generators Page 6",
+        "AS500S 500KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-14",
+        "AS550 550KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC16 049A 10-28C",
+        "AS725 725KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-43",
+        "AS550S 550KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-43",
+        "AS600 600KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY SCANIA DC16 078A 02-41",
+        "AS600S 600KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-41",
+        "AS650 650KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY SCANIA DC16 078A 02-42",
+        "AS650S 650KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-42",
+        "AS700 700KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY SCANIA DC16 078A 02-43",
+        "AS700S 700KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-43"
+      ],
+      "file": "sources/cps-generators/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://cps-generators.com/product/500kva-3ph-diesel-generator-with-cummins-engine/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AC500S 500KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSX15G8",
+        "500 Kva Prime Power",
+        "550 Kva Standby Power",
+        "Powered By a QSX15G8 Cummins G-Drive Engine",
+        "Stamford EU or Mecc Alte UK Alternator",
+        "Deep Sea Electronics Control Module",
+        "CPS Diesel generators are controlled by the worldwide renowned brand Deep Sea Electronics, manufactured here in the UK and providing customers worldwide pre/after-sales support. We use the DSE4520, DSE7120, DSE7420, and DSE8610 across our range of Diesel generators. Our engineers are fully trained to program and set up the parameters of the Deep Sea Electronics modules.",
+        "AC810S 800KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK23G9",
+        "AC50S 50KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS S3.8G6",
+        "AC400S 400KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSZ13G5",
+        "AC910S 910KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA38G3"
+      ],
+      "file": "sources/cps-generators/2014.md",
+      "official": true
+    },
+    {
+      "n": 2015,
+      "url": "https://cps-generators.com/product/500kva-3ph-diesel-generator-with-volvo-engine/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AV500S 500KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1641GE",
+        "500 Kva Prime Power",
+        "550 Kva Standby Power",
+        "Powered By a TAD1641GE Engine",
+        "Stamford EU, Mecc Alte UK or Leroy Somer EU Alternator",
+        "Deep Sea Electronics Control Module",
+        "CPS Diesel generators are controlled by the worldwide renowned brand Deep Sea Electronics, manufactured here in the UK and providing customers worldwide pre/after-sales support. We use the DSE4520, DSE7120, DSE7420, and DSE8610 across our range of Diesel generators. Our engineers are fully trained to program and set up the parameters of the Deep Sea Electronics modules.",
+        "AV100 100KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD531GE"
+      ],
+      "file": "sources/cps-generators/2015.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-04",
-  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "CPS AP450S – thông số tổ máy",
+      "header": [
+        "450KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2506A-E15TAG1"
+      ],
+      "rows": [
+        "Model Number AP450S",
+        "450 Kva Prime Power",
+        "495 Kva Standby Power",
+        "3PH 50/60hz",
+        "Powered By a 2506A-E15TAG1 Perkins Engine",
+        "Stamford EU or Mecc Alte UK Alternator",
+        "Deep Sea Electronics Control Module"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "CPS – tổ máy liên quan (Related products)",
+      "header": [
+        "Related products"
+      ],
+      "rows": [
+        "AP15S 15KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 403A-15G2",
+        "AP1500S 1500KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4012-46TAG2A",
+        "AP30S 30KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP2000S 2000KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4016-61TRG2",
+        "AP1125S 1125KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4008-30TAG3",
+        "AP230S 230KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1206A-E70TTAG2",
+        "AP28S 28KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP250S 250KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1206A-E70TTAG3",
+        "AP13S 13KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 403A-15G1"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "CPS – Perkins Generators Page 3",
+      "header": [
+        "Constant Power Solutions Perkins Generators Page 3"
+      ],
+      "rows": [
+        "AP135S 135KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG1",
+        "AP150 150KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG2",
+        "AP150S 150KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG2",
+        "AP150S 150KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG2",
+        "AP1850S 1850KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4016-61TRG1",
+        "AP18S-1PH 18KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 404A-22G"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "CPS – Perkins Generators Page 4",
+      "header": [
+        "Constant Power Solutions Perkins Generators Page 4"
+      ],
+      "rows": [
+        "AP200S 200KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG4",
+        "AP20S 20KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 404A-22G1",
+        "AP2250S 2250KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4016-61TRG3",
+        "AP24S 24KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP275S 275KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1506A-E88TAG4"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "CPS – Perkins Generators Page 5",
+      "header": [
+        "Constant Power Solutions Perkins Generators Page 5"
+      ],
+      "rows": [
+        "AP30 30KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP300S 300KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1506A-E88TAG5",
+        "AP30S 30KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G",
+        "AP400S 400KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2206A-E13TAG3",
+        "AP500S 500KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2506A-E15TAG2",
+        "AP60 60KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1103A-33TG2"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "CPS – Perkins Generators Page 6",
+      "header": [
+        "Constant Power Solutions Perkins Generators Page 6"
+      ],
+      "rows": [
+        "AP600S 600KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TAG1A",
+        "AP60S 60KVA 1PH CANOPIED DIESEL GENERATOR WITH PERKINS ENGINE",
+        "AP60S 60KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33TG2",
+        "AP650 650KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TAG2",
+        "AP650S 650KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TAG1A",
+        "AP65S 65KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1104A-44TG1",
+        "AP700S 700KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TTAG4",
+        "AP750S 750KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4006-23TAG2A"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "CPS – Perkins Generators Page 7",
+      "header": [
+        "Constant Power Solutions Perkins Generators Page 7"
+      ],
+      "rows": [
+        "AP770S 770KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2806A-E18TTAG5",
+        "AP80 80KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1104A-44TG2",
+        "AP80S 80KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1104A-44TG2",
+        "AP80S 80KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1104A-44TG2",
+        "AP900 900KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 4008TAG1A",
+        "AP900S 900KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY PERKINS 4008TAG1A"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "CPS – Cummins Generators Page 2",
+      "header": [
+        "Constant Power Solutions Cummins Generators Page 2"
+      ],
+      "rows": [
+        "AC1000 1000KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS KTA38G5",
+        "AC1000S 1000KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA38G5",
+        "AC1250S 1250KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA50G3",
+        "AC125S 125KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS 6BTAA5.9G6",
+        "AC1260 1250KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS KTA50G3",
+        "AC1400 1400KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS KTA50G8",
+        "AC1400S 1400KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA50G3"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "CPS – Cummins Generators Page 3",
+      "header": [
+        "Constant Power Solutions Cummins Generators Page 3"
+      ],
+      "rows": [
+        "AC1400S 1400KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA50G8",
+        "AC1500 1500KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS QSK50G4",
+        "AC1500S 1500KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK50G4",
+        "AC160S 160KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS 6BTAA5.9G7",
+        "AC1650 1650KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS QSK50G7",
+        "AC1650S 1650KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK50G7",
+        "AC180S 180KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSB7G4",
+        "AC1875 1875KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS QSK60G3"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "CPS – Cummins Generators Page 4",
+      "header": [
+        "Constant Power Solutions Cummins Generators Page 4"
+      ],
+      "rows": [
+        "AC1875S 1875KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK60G3",
+        "AC200S 200KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSB7G5",
+        "AC2045 2045KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY CUMMINS QSK60G4",
+        "AC2045S 2045KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK60G4",
+        "AC2500S 2500KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK78G9",
+        "AC250S 250KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSL9-G3",
+        "AC25S 25KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS X2.5G2"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "CPS – Volvo Generators Page 4",
+      "header": [
+        "Constant Power Solutions Volvo Generators Page 4"
+      ],
+      "rows": [
+        "AV150S 150KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD731GE",
+        "AV180S 180KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD732GE",
+        "AV200 200KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD733GE",
+        "AV200S 200KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD733GE",
+        "AV250 250KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD734GE",
+        "AV250S 250KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD734GE",
+        "AV300 300KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD1341GE",
+        "AV300S 300KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1341GE"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "CPS – Volvo Generators Page 5",
+      "header": [
+        "Constant Power Solutions Volvo Generators Page 5"
+      ],
+      "rows": [
+        "AV350S 350KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1342GE",
+        "AV375 375KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD1343GE",
+        "AV375S 375KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1343GE",
+        "AV400S 400KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1344GE",
+        "AV450S 450KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1345GE",
+        "AV500 500KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD1641GE",
+        "AV500S 500KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1641GE",
+        "AV590S 590KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1642GE",
+        "AV640S 640KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TWD1643GE",
+        "AV700S 700KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TWD1645GE"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "CPS – Scania Generators Page 5",
+      "header": [
+        "Constant Power Solutions Scania Generators Page 5"
+      ],
+      "rows": [
+        "AS300 300KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC9 072A 02-13",
+        "AS325 325KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC9 072A 02-14",
+        "AS325S 325KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC9 072A 02-14",
+        "AS365S 365KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-11",
+        "AS400 400KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-12",
+        "AS400S 400KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-12",
+        "AS450 450KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-13",
+        "AS450S 450KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-13",
+        "AS500 500KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-14"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "CPS – Scania Generators Page 6",
+      "header": [
+        "Constant Power Solutions Scania Generators Page 6"
+      ],
+      "rows": [
+        "AS500S 500KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC13 072A 02-14",
+        "AS550 550KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC16 049A 10-28C",
+        "AS550S 550KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-43",
+        "AS600 600KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY SCANIA DC16 078A 02-41",
+        "AS600S 600KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-41",
+        "AS650 650KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY SCANIA DC16 078A 02-42",
+        "AS650S 650KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-42",
+        "AS700 700KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY SCANIA DC16 078A 02-43",
+        "AS700S 700KVA 3PH CANOPIED DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-43",
+        "AS725 725KVA 3PH OPEN SET DIESEL GENERATOR WITH SCANIA ENGINE DC16 078A 02-43"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "CPS AC500S – thông số tổ máy",
+      "header": [
+        "AC500S 500KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSX15G8"
+      ],
+      "rows": [
+        "Model Number AC500S",
+        "500 Kva Prime Power",
+        "550 Kva Standby Power",
+        "3PH 50/60hz",
+        "Powered By a QSX15G8 Cummins G-Drive Engine",
+        "Stamford EU or Mecc Alte UK Alternator",
+        "Deep Sea Electronics Control Module"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "CPS – tổ máy liên quan (Related products)",
+      "header": [
+        "Related products"
+      ],
+      "rows": [
+        "AC810S 800KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS QSK23G9",
+        "AC50S 50KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS S3.8G6",
+        "AC400S 400KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY CUMMINS QSZ13G5",
+        "AC910S 910KVA 3PH CONTAINERISED DIESEL GENERATOR POWERED BY CUMMINS KTA38G3"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "CPS AV500S – thông số tổ máy",
+      "header": [
+        "AV500S 500KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY VOLVO TAD1641GE"
+      ],
+      "rows": [
+        "Model Number AV500S",
+        "500 Kva Prime Power",
+        "550 Kva Standby Power",
+        "3PH 50/60hz",
+        "Powered By a TAD1641GE Engine",
+        "Stamford EU, Mecc Alte UK or Leroy Somer EU Alternator",
+        "Deep Sea Electronics Control Module"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "CPS – tổ máy liên quan (Related products)",
+      "header": [
+        "Related products"
+      ],
+      "rows": [
+        "AV100 100KVA 3PH OPEN SET DIESEL GENERATOR POWERED BY VOLVO TAD531GE"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DSE4520",
+      "line": "CPS Diesel generators are controlled by the worldwide renowned brand Deep Sea Electronics, manufactured here in the UK and providing customers worldwide pre/after-sales support. We use the DSE4520, DSE7120, DSE7420, and DSE8610 across our range of Diesel generators. Our engineers are fully trained to program and set up the parameters of the Deep Sea Electronics modules.",
+      "src": [
+        2001,
+        2014,
+        2015
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7120",
+      "text": "DSE7120",
+      "line": "CPS Diesel generators are controlled by the worldwide renowned brand Deep Sea Electronics, manufactured here in the UK and providing customers worldwide pre/after-sales support. We use the DSE4520, DSE7120, DSE7420, and DSE8610 across our range of Diesel generators. Our engineers are fully trained to program and set up the parameters of the Deep Sea Electronics modules.",
+      "src": [
+        2001,
+        2014,
+        2015
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7420",
+      "text": "DSE7420",
+      "line": "CPS Diesel generators are controlled by the worldwide renowned brand Deep Sea Electronics, manufactured here in the UK and providing customers worldwide pre/after-sales support. We use the DSE4520, DSE7120, DSE7420, and DSE8610 across our range of Diesel generators. Our engineers are fully trained to program and set up the parameters of the Deep Sea Electronics modules.",
+      "src": [
+        2001,
+        2014,
+        2015
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "CPS Diesel generators are controlled by the worldwide renowned brand Deep Sea Electronics, manufactured here in the UK and providing customers worldwide pre/after-sales support. We use the DSE4520, DSE7120, DSE7420, and DSE8610 across our range of Diesel generators. Our engineers are fully trained to program and set up the parameters of the Deep Sea Electronics modules.",
+      "src": [
+        2001,
+        2014,
+        2015
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea Electronics",
+      "line": "Deep Sea Electronics Control Module",
+      "src": [
+        2001,
+        2014,
+        2015
+      ]
+    }
+  ]
 }
