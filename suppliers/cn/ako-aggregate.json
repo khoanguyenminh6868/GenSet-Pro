@@ -50,6 +50,23 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Notstromaggregate (Einzelanfertigung)",
+      "fuel": "diesel",
+      "power": {
+        "min": 50,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -69,9 +86,21 @@
         "Individuelle Einzelanfertigung ab ca. 50 kVA – als Container, Festeinbau oder mobil."
       ],
       "file": "sources/ako-aggregate/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.ako-gmbh.de/de/notstromaggregate",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "AKO fertigt individuell konzipierte Notstromaggregate ab ca. 50 kVA bis über 3000 kVA Leistung."
+      ],
+      "file": "sources/ako-aggregate/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": []
 }
