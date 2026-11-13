@@ -84,6 +84,76 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "F-Serie (fahrbar) F20–F125",
+      "fuel": "diesel",
+      "power": {
+        "min": 20,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Kohler",
+        "Iveco",
+        "Deutz",
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "LINZ",
+        "Mecc Alte"
+      ],
+      "voltage": [
+        "400 V"
+      ],
+      "frequency": [
+        "50 Hz"
+      ],
+      "emission": [
+        "Stage V"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "F-Serie (fahrbar) 250–670 kVA",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 670,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "Volvo",
+        "Scania"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "LINZ",
+        "Mecc Alte"
+      ],
+      "voltage": [
+        "400 V"
+      ],
+      "frequency": [
+        "50 Hz"
+      ],
+      "emission": [],
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -104,9 +174,316 @@
         "Fahrbare Aggregate 20-125 kVA"
       ],
       "file": "sources/avs-aggregatebau/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.avs-aggregatebau.de/produkte/40-125-fahrbar/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Die Stromaggregate der F-Serie von F20 bis F125 stehen für stabile Leistung im Bereich von 20 bis 125 kVA",
+        "| Leistungsklasse | 20 kVA",
+        "| Leistungsklasse | 125 kVA",
+        "Intelligentes Steuerungskonzept mit ComAp InteliVision 15 Touch",
+        "| Steuerung | ComAp Touch 15 + IG1000"
+      ],
+      "file": "sources/avs-aggregatebau/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.avs-aggregatebau.de/produkte/150-670-fahrbar/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Die fahrbaren Stromaggregate der F-Serie von 250 bis 670 kVA",
+        "| Leistungsklasse | 250 kVA",
+        "| Leistungsklasse | 670 kVA",
+        "| Steuerung | ComAp Touch 15 IG1000"
+      ],
+      "file": "sources/avs-aggregatebau/2002.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Technische Daten 20 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 20 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Kohler, Stage V",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 18 kW",
+        "| Tankvolumen | 160l - 200l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Richtwert) | bis 66h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse, starrer Zugholm, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 + IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technische Daten 40 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 40 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Iveco, Stage V",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 18 kW",
+        "| Tankvolumen | 160l - 200l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Richtwert) | bis 33 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse, starrer Zugholm, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 + IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technische Daten 60 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 60 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Deutz, Stage V",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 18 kW",
+        "| Tankvolumen | 160l - 200l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Richtwert) | bis 22 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse, starrer Zugholm, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 + IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technische Daten 80 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 80 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Kohler, Stage V",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 18 kW",
+        "| Tankvolumen | 160l - 200l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Kraftstoff) | bis 16 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse, starrer Zugholm, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 + IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technische Daten 100 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 100 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Kohler, Stage V",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 18 kW",
+        "| Tankvolumen | 160l - 200l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Kraftstoff) | bis 13 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse, starrer Zugholm, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 + IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technische Daten 125 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 125 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Perkins, Stage V",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 18 kW",
+        "| Tankvolumen | 160l - 200l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Kraftstoff) | bis 10 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse, starrer Zugholm, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 + IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Technische Daten 250 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 250 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Volvo",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 60 kW",
+        "| Tankvolumen | 400l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Richtwert) | bis 10 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse oder zwei-Achs Ausführung, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Technische Daten 330 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 330 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Scania",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 80 kW",
+        "| Tankvolumen | 600l - 1000l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Kraftstoff) | bis 20 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse oder zwei-Achs Ausführung, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Technische Daten 400 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 400 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Volvo",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 100 kW",
+        "| Tankvolumen | 600l - 1000l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Kraftstoff) | bis 16 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse oder zwei-Achs Ausführung, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Technische Daten 500 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 500 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Volvo",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 120 kW",
+        "| Tankvolumen | 600l - 1000l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Kraftstoff) | bis 13 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse oder zwei-Achs Ausführung, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Technische Daten 550 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 550 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Volvo",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 120 kW",
+        "| Tankvolumen | 600l - 1000l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Kraftstoff) | bis 12h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse oder zwei-Achs Ausführung, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Technische Daten 630 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 630 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Volvo",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 150 kW",
+        "| Tankvolumen | 600l - 1000l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Kraftstoff) | bis 10 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse oder zwei-Achs Ausführung, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Technische Daten 670 kVA – Fahrbarer Stromerzeuger – F-Serie",
+      "header": [
+        "| Leistungsklasse | 670 kVA"
+      ],
+      "rows": [
+        "| Spannung / Frequenz | 400 V / 50 Hz",
+        "| Motor | Volvo",
+        "| Generator | LINZ / Mecc Alte oder gleichwertig",
+        "| Integrierte Lastbank | 160 kW",
+        "| Tankvolumen | 600l - 1000l Polyethylen-Tank, Leckageüberwachung",
+        "| Betriebsdauer (Kraftstoff) | bis 10 h bei 75 % Last (modellabhängig)",
+        "| Schallpegel (Richtwert) | ca. 67 dB(A) @ 7 m (modellabhängig)",
+        "| Fahrgestell | Tandemachse oder zwei-Achs Ausführung, LED-Fahrzeugbeleuchtung",
+        "| Steuerung | ComAp Touch 15 IG1000",
+        "| Schutz & Normen | Auffangwanne ≥110 % (WHG), DGUV V3 Werksprobelauf"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "IG1000",
+      "text": "ComAp Touch 15 + IG1000",
+      "line": "| Steuerung | ComAp Touch 15 + IG1000",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliVision 15 Touch",
+      "text": "ComAp InteliVision 15 Touch",
+      "line": "Intelligentes Steuerungskonzept mit ComAp InteliVision 15 Touch",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "IG1000",
+      "text": "ComAp Touch 15 IG1000",
+      "line": "| Steuerung | ComAp Touch 15 IG1000",
+      "src": [
+        2002
+      ]
+    }
+  ]
 }
