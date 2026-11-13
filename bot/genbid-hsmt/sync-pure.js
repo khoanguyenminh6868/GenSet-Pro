@@ -818,7 +818,8 @@ function aiUseOf(settingsText, task) {
 //   fuel at 100 % load in L/h per prime kWe: usual / best; engine fuel in g/kWh (per kWm): usual / best.
 // "Usual" is the median of the supplier tables (3,289 L/h rows of 62 suppliers, 2,228 g/kWh rows); "best" is the physical
 // limit (engine about 190 g/kWh plus alternator and fan losses) and, for noise, the super-silent ranges of the makers.
-// A limit tighter than "best" is a critical highlight; one between the two is a note; a looser one says nothing.
+// Both a limit tighter than "best" and one between "usual" and "best" are critical highlights, with their own titles
+// (Khoa, 2026-11-13: the noise and fuel warnings are Quan trọng, not Thông tin); a looser one says nothing.
 const NORM_BANDS = [
   [10, 70, 65, 0.34, 0.29, 270, 245], [30, 66, 60, 0.31, 0.27, 233, 210], [75, 68, 62, 0.28, 0.25, 215, 198],
   [150, 70, 64, 0.27, 0.245, 206, 192], [300, 72, 66, 0.265, 0.24, 205, 190], [500, 74, 68, 0.26, 0.235, 202, 190],
@@ -906,7 +907,7 @@ function normHighlights(result) {
       if (db >= usual) continue;
       const at = `${normFmt(db)} dB(A) tại ${dist} m`, ref = `tổ máy khoảng ${size} có vỏ chống ồn thường đạt khoảng ${usual} dB(A), vỏ siêu chống ồn tốt nhất khoảng ${best} dB(A) tại ${dist} m`;
       if (db < best) add(`n|${Math.round(p.kva)}|${dist}|${db}`, t, "critical", `Độ ồn yêu cầu (${at}) chặt hơn mức máy đạt được`, `HSMT yêu cầu ${at}; ${ref}.`, "Khuyến nghị: gửi câu hỏi làm rõ khoảng cách đo, mức tải và cách đo; nếu giữ nguyên thì phải có vỏ siêu chống ồn đặt riêng và xác nhận bằng văn bản của nhà sản xuất trước khi chào.");
-      else add(`n|${Math.round(p.kva)}|${dist}|${db}`, t, "info", `Độ ồn yêu cầu (${at}) thấp hơn mức bình quân`, `HSMT yêu cầu ${at}; ${ref}.`, "Khuyến nghị: chọn vỏ siêu chống ồn và xin nhà cung cấp số đo độ ồn đúng khoảng cách và mức tải của HSMT.");
+      else add(`n|${Math.round(p.kva)}|${dist}|${db}`, t, "critical", `Độ ồn yêu cầu (${at}) thấp hơn mức bình quân`, `HSMT yêu cầu ${at}; ${ref}.`, "Khuyến nghị: chọn vỏ siêu chống ồn và xin nhà cung cấp số đo độ ồn đúng khoảng cách và mức tải của HSMT.");
     }
     if (isFuel) for (const x of fuelLimits(text)) {
       const [fu, fb] = FUEL_LOAD[x.load], onStandby = NORM_STANDBY.test(text) && !NORM_PRIME.test(text);
@@ -917,13 +918,13 @@ function normHighlights(result) {
         if (!(r > 0.12) || r >= usual) continue;
         const said = `${normFmt(x.lph, 2)} L/h ở ${x.load}% tải`, ref = `tổ máy khoảng ${size} thường tiêu hao khoảng ${normFmt(usual * kw)} L/h, động cơ tốt nhất khoảng ${normFmt(best * kw)} L/h ở mức tải này`;
         if (r < best) add(key, t, "critical", `Tiêu hao nhiên liệu yêu cầu (${said}) thấp hơn mức máy đạt được`, `HSMT cho phép tối đa ${said}; ${ref}.`, "Khuyến nghị: gửi câu hỏi làm rõ mức tải, loại công suất (liên tục hay dự phòng) và dung sai; kiểm lại con số có phải chép từ một model cụ thể không.");
-        else add(key, t, "info", `Tiêu hao nhiên liệu yêu cầu (${said}) thấp hơn mức bình quân`, `HSMT cho phép tối đa ${said}; ${ref}.`, "Khuyến nghị: chỉ một số động cơ đạt; đối chiếu bảng tiêu hao của nhà sản xuất đúng mức tải trước khi chọn cấu hình.");
+        else add(key, t, "critical", `Tiêu hao nhiên liệu yêu cầu (${said}) thấp hơn mức bình quân`, `HSMT cho phép tối đa ${said}; ${ref}.`, "Khuyến nghị: chỉ một số động cơ đạt; đối chiếu bảng tiêu hao của nhà sản xuất đúng mức tải trước khi chọn cấu hình.");
       } else {
         const usual = band[5] * fu, best = band[6] * fb;
         if (!(x.gkwh > 120) || x.gkwh >= usual) continue;
         const said = `${normFmt(x.gkwh)} g/kWh ở ${x.load}% tải`, ref = `động cơ cho tổ máy khoảng ${size} thường khoảng ${normFmt(usual, 0)} g/kWh, tốt nhất khoảng ${normFmt(best, 0)} g/kWh`;
         if (x.gkwh < best) add(key, t, "critical", `Suất tiêu hao nhiên liệu yêu cầu (${said}) thấp hơn mức động cơ đạt được`, `HSMT cho phép tối đa ${said}; ${ref}.`, "Khuyến nghị: gửi câu hỏi làm rõ con số tính trên công suất cơ hay công suất điện, mức tải và dung sai.");
-        else add(key, t, "info", `Suất tiêu hao nhiên liệu yêu cầu (${said}) thấp hơn mức bình quân`, `HSMT cho phép tối đa ${said}; ${ref}.`, "Khuyến nghị: chỉ một số động cơ đạt; đối chiếu datasheet động cơ đúng mức tải trước khi chọn cấu hình.");
+        else add(key, t, "critical", `Suất tiêu hao nhiên liệu yêu cầu (${said}) thấp hơn mức bình quân`, `HSMT cho phép tối đa ${said}; ${ref}.`, "Khuyến nghị: chỉ một số động cơ đạt; đối chiếu datasheet động cơ đúng mức tải trước khi chọn cấu hình.");
       }
     }
   }
