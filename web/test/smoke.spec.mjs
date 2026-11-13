@@ -157,12 +157,26 @@ test("Danh mục Thông số cấu hình (động cơ, đầu phát, bộ điề
   await expect(page.locator("#catBody")).not.toBeEmpty();
 });
 
-test.fixme("mở thẳng /#dong-co (tải lại trang ở màn Danh mục) hiện danh mục", async ({ page }) => {
-  // Lỗi tìm thấy 13/11/2026: openScreenFromUrl() chạy trước khi initDb() có db, needSup() bỏ qua, không ai nạp
-  // supplier → kẹt "Đang tải nhà cung cấp..." mãi; hash #dong-co cũng mất khỏi URL. #nha-cung-cap thì vẫn hiện.
-  await page.goto("/#dong-co");
-  await expect(page.locator("#catBody .loading")).toHaveCount(0, { timeout: 20000 });
-  expect(new URL(page.url()).hash).toBe("#dong-co");
+// Mở thẳng bằng link (tải lại trang ở màn hình): openScreenFromUrl() chạy trước initDb() — màn phải tự tải nhà cung cấp, giữ hash.
+for (const hash of ["dong-co", "dau-phat", "bo-dieu-khien"]) {
+  test(`mở thẳng /#${hash} hiện danh mục, giữ hash`, async ({ page }) => {
+    await page.goto("/#" + hash);
+    await expect(page.locator("#catTitle")).toBeVisible();
+    await expect(page.locator("#catBody .loading")).toHaveCount(0, { timeout: 20000 });
+    await expect(page.locator("#catBody tr, #catBody .lrow, #catBody [data-catopen]").first()).toBeVisible();
+    await expect(page.locator("#catBody")).not.toContainText("Đang tải nhà cung cấp");
+    expect(new URL(page.url()).hash).toBe("#" + hash);
+  });
+}
+test("mở thẳng /#nha-cung-cap hiện danh sách nhà cung cấp, giữ hash", async ({ page }) => {
+  await page.goto("/#nha-cung-cap");
+  await expect(page.locator("#supBody tr[data-supopen]")).toHaveCount(Object.keys(SEED.colls.supplier).length);
+  expect(new URL(page.url()).hash).toBe("#nha-cung-cap");
+});
+test("mở thẳng /#nha-thau hiện danh sách nhà thầu, giữ hash", async ({ page }) => {
+  await page.goto("/#nha-thau");
+  await expect(page.locator("#bdList [data-bdopen]").first()).toBeVisible();
+  expect(new URL(page.url()).hash).toBe("#nha-thau");
 });
 
 test("trang Chủ đầu tư #cdt/<tên>: mọi gói của chủ đầu tư, mới đăng trước", async ({ page }) => {

@@ -1181,6 +1181,9 @@ async function initDb() {
   // Past generator tenders (bidhist, a few MB) sit in the tabs too: the list waits for them, so its count does not jump
   // from the open tenders to every past one after a reload (Khoa, 2026-11-02).
   loadHist();
+  // Mở thẳng bằng link (/#dong-co, /#nha-cung-cap…): openScreenFromUrl() đã chạy khi chưa có state.db nên needSup() thoát sớm;
+  // nạp nhà cung cấp ở đây, màn hình đang mở tự vẽ lại khi dữ liệu về (supChanged).
+  if (!$("#ov").hidden) needSup(); // modal() đã xoá hash khỏi URL, nên hỏi màn hình đang mở thay vì screenOfUrl()
 }
 
 // ---------- HSMT text ----------
@@ -4434,8 +4437,9 @@ function comparisonHtml(c) {
 // Gợi ý giá đấu needs it. Tenders of our own list read before (bidders/<TBMT>) count too when the history lacks them.
 let histLoad = null, histIdx = null;
 function loadHist() {
+  // Chưa có db (mở thẳng /#nha-thau trước initDb): không nhớ kết quả rỗng, initDb gọi lại loadHist() khi có db.
+  if (!state.db) { state.bidhist ||= {}; state.loaded.hist = true; return Promise.resolve(); }
   return (histLoad ||= new Promise((res) => {
-    if (!state.db) { state.bidhist = {}; state.loaded.hist = true; res(); return; }
     state.db.collection("bidhist").onSnapshot((snap) => {
       const next = {};
       snap.docs.forEach((d) => { next[d.id] = d.data(); });
