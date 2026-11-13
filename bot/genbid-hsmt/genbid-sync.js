@@ -51,7 +51,7 @@ const {
   histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, plainVi, chapterV, specsPick, specsFinish, isServiceTender, NOTICE_MAX,
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
-  checkResult, feedMerge, autoConfigSkip, apiBudgetOf,
+  checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -1756,9 +1756,24 @@ const LIMIT = /hit your [a-z ]*limit|usage limit|rate limit|session limit|credit
 // Get-ApiBudget trong GenBid-Bot.ps1; suppliers/api-budget.mjs (config-bot, bidprice-bot) ghi cùng sổ.
 const API_SPEND = path.join(ROOT, ".anthropic-api-spend.jsonl");
 const API_OUT = /credit balance is too low|reached your specified api usage limits/i;
+// Cấu hình hệ thống trên web (settings/ai, Khoa 13/11/2026), GenBid-Bot.ps1 chép về đây mỗi nhịp tim: việc nào trả bằng
+// API, việc nào dùng gói tháng; ngưỡng chuyển và số tiền đã dùng Khoa sửa tay.
+const AI_SETTINGS = path.join(ROOT, ".genbid-ai-settings.json");
+const textOf = (f) => { try { return fs.readFileSync(f, "utf8"); } catch { return ""; } };
 function apiBudget() {
-  const text = (f) => { try { return fs.readFileSync(f, "utf8"); } catch { return ""; } };
-  return apiBudgetOf(text(path.join(ROOT, ".anthropic-api-budget.json")), text(API_SPEND), new Date());
+  return apiBudgetOf(textOf(path.join(ROOT, ".anthropic-api-budget.json")), textOf(API_SPEND), new Date(), textOf(AI_SETTINGS));
+}
+// Môi trường của một lần gọi Claude cho việc `task` (analysis, compare...): Cấu hình hệ thống đặt gói tháng thì bỏ API key
+// (và dùng token gói tháng khi máy chưa đăng nhập /login); còn lại như tiến trình này.
+function taskEnv(task) {
+  if (!process.env.ANTHROPIC_API_KEY || aiUseOf(textOf(AI_SETTINGS), task) !== "plan") return process.env;
+  const env = { ...process.env };
+  delete env.ANTHROPIC_API_KEY;
+  if (!fs.existsSync(path.join(require("os").homedir(), ".claude", ".credentials.json"))) {
+    const tok = textOf(process.env.GENBID_CLAUDE_TOKEN_FILE || path.join(ROOT, ".claude-bot-token")).trim().split(/\r?\n/)[0];
+    if (tok) env.CLAUDE_CODE_OAUTH_TOKEN = tok;
+  }
+  return env;
 }
 if (!process.env.ANTHROPIC_API_KEY && apiBudget().ok) {
   try { const k = fs.readFileSync(path.join(ROOT, ".anthropic-api-key"), "utf8").trim().split(/\r?\n/)[0]; if (k) { process.env.ANTHROPIC_API_KEY = k; process.env.GENBID_API_SPEND_FILE ||= API_SPEND; } } catch {}
@@ -1780,10 +1795,11 @@ function switchToPlan(text, src) {
   return true;
 }
 
-function askOnce(prompt, model) {
-  const api = !!process.env.ANTHROPIC_API_KEY;
+// task: the Cấu hình hệ thống task of this call (AI_TASK_OF), "" for none.
+function askOnce(prompt, model, task = "") {
+  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY;
   return new Promise((resolve) => {
-    const p = cp.spawn(claudeExe(), ["-p", "--output-format", "json", "--model", model, "--tools", "", "--strict-mcp-config", "--disable-slash-commands"], { windowsHide: true });
+    const p = cp.spawn(claudeExe(), ["-p", "--output-format", "json", "--model", model, "--tools", "", "--strict-mcp-config", "--disable-slash-commands"], { windowsHide: true, env });
     let out = "", err = "";
     const timer = setTimeout(() => p.kill(), 25 * 60e3);
     p.stdout.on("data", (d) => (out += d)); p.stderr.on("data", (d) => (err += d));
@@ -1792,7 +1808,7 @@ function askOnce(prompt, model) {
       let j = null; try { j = JSON.parse(out); } catch {}
       const text = j?.result || "";
       noteApiSpend(j?.total_cost_usd, "ask", api);
-      if (api && (code !== 0 || j?.is_error) && switchToPlan(text + err + out, "ask")) return resolve(askOnce(prompt, model));
+      if (api && (code !== 0 || j?.is_error) && switchToPlan(text + err + out, "ask")) return resolve(askOnce(prompt, model, task));
       if (LIMIT.test(text + err + out) && (code !== 0 || j?.is_error)) return resolve({ limit: (text || err || out).trim().slice(0, 300) });
       if (j) log(askTrace(j));
       if (!j || j.is_error) return resolve({ error: (text || err || out || `mã thoát ${code}`).trim().slice(0, 300) });
@@ -1859,7 +1875,7 @@ async function runAsk() {
       const tag = `${KIND_NAME[job.meta.kind]} ${job.meta.key}${job.out === "result.json" ? "" : " " + job.out}`;
       let r = job.gemini ? await askGemini(job.prompt) : null, model = GEMINI_MODEL;
       if (r?.error) lines.push(`${tag}: Gemini lỗi (${r.error}), dùng Claude`);
-      if (!r || r.error) { r = await askOnce(job.prompt, job.model); model = job.model; }
+      if (!r || r.error) { r = await askOnce(job.prompt, job.model, AI_TASK_OF[job.meta.kind] || ""); model = job.model; }
       if (r.limit) { limit = r.limit; break; }
       if (r.error) { failedDirs.add(job.dir); lines.push(`${tag}: lỗi (${r.error}), chuyển cho agent`); continue; }
       const v = r.value;

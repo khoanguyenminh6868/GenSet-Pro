@@ -54,9 +54,12 @@ export default async function handler(req, res) {
     if (req.query?.kind === "all") {
       // beat=0: the bot (GenBid-Bot.ps1) wrote the heartbeat less than a minute ago; the page waits 3 minutes before
       // saying the PC is off. Without beat (an older bot) the heartbeat is written every poll, as before.
-      const [marks] = await Promise.all([pendingMarks(), req.query.beat === "0" ? null : heartbeat(req.query.running)]);
+      // With a heartbeat (about once a minute) the bot also gets Cấu hình hệ thống (settings/ai, superadmin; Khoa 2026-11-13)
+      // and reports its API spend (?api=<json>), which the page shows there.
+      const beat = req.query.beat !== "0";
+      const [marks, , settings] = await Promise.all([pendingMarks(), beat ? heartbeat(req.query.running, req.query.api) : null, beat ? aiSettings() : undefined]);
       const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks), reqsOf("specreq", marks)]);
-      return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec });
+      return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec, ...(settings !== undefined ? { settings } : {}) });
     }
     // ?kind=analysis: tenders whose "Phân tích" button was pressed on the web (analysisreq/<key>).
     if (req.query?.kind === "analysis") return res.json(await analysisReqs());
@@ -79,13 +82,30 @@ export default async function handler(req, res) {
 }
 
 // The bot's poll doubles as a heartbeat (botstatus/current), so the page can tell when the Windows PC is off.
-async function heartbeat(running) {
+// api: the bot's API key spend this period, {spent, since, switchAt, exhausted} (GenBid-Bot.ps1 Get-ApiBudget).
+async function heartbeat(running, api) {
   const data = { lastPollAt: new Date().toISOString(), running: running === "1" };
+  const a = apiOf(api);
+  if (a) data.api = a;
   await fetch(`${SB_URL}/rest/v1/docs`, {
     method: "POST",
     headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
     body: JSON.stringify([{ coll: "botstatus", id: "current", data, updated_at: data.lastPollAt }]),
   }).catch(() => {});
+}
+function apiOf(text) {
+  let j; try { j = JSON.parse(String(text || "")); } catch { return null; }
+  const n = (v) => (Number.isFinite(Number(v)) && Number(v) >= 0 && Number(v) < 1e6 ? Math.round(Number(v) * 100) / 100 : null);
+  if (!j || n(j.spent) === null) return null;
+  const since = String(j.since || "").slice(0, 40);
+  return { spent: n(j.spent), since, switchAt: n(j.switchAt), exhausted: j.exhausted === true, key: j.key !== false };
+}
+// settings/ai: { use: { analysis, config, bidprice, compare: "api" | "plan" }, switchAtUsd, spent: { usd, at } }, or null.
+async function aiSettings() {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=eq.settings&id=eq.ai&select=data`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
+    return r.ok ? ((await r.json())[0]?.data ?? null) : undefined;
+  } catch { return undefined; }
 }
 const pendingOf = (d) => d.data?.requestedAt && (d.data.doneAt || "") < d.data.requestedAt;
 // The pending requests of a collection, whole. The bot polls every 15 s and nearly every row is already done, so

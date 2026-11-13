@@ -31,7 +31,7 @@ import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
 import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn, clausesOf } from "./reqcodes.mjs";
 import { ratingsOf, stamfordRatings, altSheetAttrs } from "./ratings.mjs";
-import { viaApi, noteApiSpend, costOf, switchToPlan } from "./api-budget.mjs";
+import { noteApiSpend, costOf, switchToPlan, taskEnv } from "./api-budget.mjs";
 import * as MEMO from "./web-memo.mjs";
 import * as RG from "./read-guard.mjs";
 import * as NG from "./named-genset.mjs";
@@ -3749,7 +3749,7 @@ async function answer(req, suppliers) {
       // Gợi ý lại reuses the requirements read last time for the same size (prep, requirements.json).
       const prevResult = size ? prev?.sizes?.find((x) => sameSize(x, size))?.result : prev?.sizes ? null : prev;
       const info = await prep(key, dir, { ...req, prevResult }, suppliers, size && { size, sizes: found });
-      const r = await runClaude(dir, agentInput(dir));
+      const r = await runClaude(dir, agentInput(dir), "config");
       fs.writeFileSync(path.join(os.tmpdir(), `genbid-config-${tag}.log`), `${r.stdout || ""}
 ${r.stderr || ""}`, "utf8");
       return { dir, info, r, size, i, prevResult };
@@ -3886,20 +3886,22 @@ async function autoBidprice(req) {
 // The log is the agent's whole stream, each line with the seconds since the start, to see where a run's minutes go
 // (every tool call and its result); nothing else reads stdout.
 const CLAUDE_TIMEOUT = 40 * 60e3;
-function runClaude(dir, input) {
-  const api = viaApi();
-  return runClaudeOnce(dir, input).then((r) => {
+// task: "config" for Gợi ý cấu hình, which Cấu hình hệ thống may put on the monthly plan (taskEnv); "" for Tìm NCC and
+// Tìm Thông Số (the API key while the budget allows).
+function runClaude(dir, input, task = "") {
+  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY;
+  return runClaudeOnce(dir, input, env).then((r) => {
     noteApiSpend(costOf(r.stdout), "config", api);
-    return api && switchToPlan(r.stdout + r.stderr, "config") ? runClaude(dir, input) : r;
+    return api && switchToPlan(r.stdout + r.stderr, "config") ? runClaude(dir, input, task) : r;
   });
 }
-function runClaudeOnce(dir, input) {
+function runClaudeOnce(dir, input, env = process.env) {
   const t0 = Date.now(), args = ["-p", "--permission-mode", "auto", "--output-format", "stream-json", "--verbose", "--model", process.env.GENBID_CONFIG_MODEL || "opus",
     "--strict-mcp-config", "--disable-slash-commands", "--tools", "Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"];
   return new Promise((ok) => {
     let out = "", err = "", buf = "", done = false, late = false;
     const stamp = (l) => `[${Math.round((Date.now() - t0) / 1000)}s] ${l}\n`;
-    const p = spawn(CLAUDE, args, { cwd: dir, windowsHide: true });
+    const p = spawn(CLAUDE, args, { cwd: dir, windowsHide: true, env });
     const timer = setTimeout(() => { late = true; p.kill(); }, CLAUDE_TIMEOUT);
     const end = (status, error) => { if (done) return; done = true; clearTimeout(timer); if (buf) out += stamp(buf); ok({ stdout: out, stderr: err, status, error }); };
     p.stdout.setEncoding("utf8").on("data", (d) => { buf += d; for (let i; (i = buf.indexOf("\n")) >= 0; buf = buf.slice(i + 1)) out += stamp(buf.slice(0, i)); });
@@ -4139,7 +4141,7 @@ async function checkNewConfigs(key, result, ranks, suppliers, cap, sizing = null
     fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin: result.origin || "all", ...(result.originBasis ? { basis: result.originBasis } : {}) }), "utf8");
     fs.writeFileSync(path.join(dir, "result.json"), JSON.stringify({ requirements: result.requirements, configs: mine.map(({ checks, ...c }) => ({ ...c, checks: [] })) }, null, 1), "utf8");
     fs.writeFileSync(path.join(dir, "prompt.md"), fs.readFileSync(path.join(ROOT, "check-prompt.md"), "utf8").replace("<check>", `node "${SCRIPT}" check --dir .`) + formulasMd(), "utf8");
-    const r = await runClaude(dir, agentInput(dir, "điền checks cho các cấu hình trong result.json, chỉ sửa result.json"));
+    const r = await runClaude(dir, agentInput(dir, "điền checks cho các cấu hình trong result.json, chỉ sửa result.json"), "config");
     fs.writeFileSync(path.join(os.tmpdir(), `genbid-findcheck-${key}.log`), `${r.stdout || ""}\n${r.stderr || ""}`, "utf8");
     const g = RG.guardRun(dir, r.stdout || "");
     if (g.notes.length) console.log(`${key}: CHỐT ĐỌC (đối chiếu Tìm NCC) — ${g.notes.join(" | ")}`);
