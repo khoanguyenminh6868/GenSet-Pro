@@ -24,7 +24,7 @@ Describe 'Get-GenBidBidderTargets.ps1' {
             Write-BotJson "$($global:Fx)/feed.json" @{ tenders = @($D.Feed) }
             foreach ($c in 'Seen', 'Manual', 'Tracked', 'Deleted', 'Bidders', 'Portal', 'Bcdg') {
                 $k = @{ Portal = 'portalids' }[$c]; if (-not $k) { $k = $c.ToLower() }
-                if ($D.ContainsKey($c)) { Write-BotJson "$($global:Fx)\$k.json" @($D[$c]) }
+                if ($D.ContainsKey($c)) { Write-BotJson "$($global:Fx)/$k.json" @($D[$c]) }
             }
             $out = "$($global:Fx)/out.json"
             Use-Env @{ TEMP = $global:Fx } {
