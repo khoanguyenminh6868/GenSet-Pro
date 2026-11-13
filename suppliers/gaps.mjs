@@ -23,6 +23,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { skippedOf, dropSkipped, UNFILTERED_WARNING } from "./sup-skip.mjs";
+import { specNone } from "./spec-todo.mjs";
 import { REQ_CODES,CODE_BY, codesIn, codeOf, clausesOf } from "./reqcodes.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -87,7 +88,8 @@ export function coverageOf(cat, facts) {
   return bands;
 }
 // suppliers: bản ghi nhà cung cấp; specs: { <supplierId>: thời điểm Tìm Thông Số gần nhất (ISO) }.
-export function gapReport({ docs, suppliers, modelFacts, configmatch = [], specs = {}, now = new Date(), cat = CAT.build(suppliers) }) {
+// none: NCC đã tìm thông số mà không ra (spec-none.json, spec-todo.mjs): không vào hàng chờ Tìm Thông Số.
+export function gapReport({ docs, suppliers, modelFacts, configmatch = [], specs = {}, none = {}, now = new Date(), cat = CAT.build(suppliers) }) {
   const facts = modelFacts(cat, suppliers), dem = demandOf(docs), cov = coverageOf(cat, facts);
   const fields = [], noKey = new Map(), targets = new Map();
   const target = (kind, name) => { const id = `${kind}:${name}`; if (!targets.has(id)) targets.set(id, { kind, name, score: 0, missing: new Map() }); return targets.get(id); };
@@ -139,7 +141,7 @@ export function gapReport({ docs, suppliers, modelFacts, configmatch = [], specs
     fields: fields.filter((f) => f.score >= 1).slice(0, 40).map((f) => ({ ...f, fill: Math.round(f.fill * 100) / 100, score: Math.round(f.score * 10) / 10 })),
     noKey: [...noKey.values()].sort((a, b) => b.demand - a.demand).slice(0, 20),
     targets: list.slice(0, 30),
-    queue: list.filter((t) => t.supplierIds.length && stale(t)).slice(0, 10).map((t) => ({ name: t.name, kind: t.kind, supplierId: t.supplierIds[0], score: t.score })),
+    queue: list.map((t) => ({ ...t, ask: t.supplierIds.filter((id) => !none[id]) })).filter((t) => t.ask.length && stale(t)).slice(0, 10).map((t) => ({ name: t.name, kind: t.kind, supplierId: t.ask[0], score: t.score })),
     unclear: [...unclear.values()].filter((u) => u.unclear).sort((a, b) => b.unclear - a.unclear).slice(0, 20),
   };
 }
@@ -193,7 +195,7 @@ async function main() {
   const specs = {};
   for (const d of sms) if (d.data?.at) specs[d.id] = d.data.at;
   for (const d of sreq) if (d.data?.requestedAt && !(d.data.doneAt >= d.data.requestedAt)) specs[d.id] = d.data.requestedAt;
-  const report = gapReport({ docs, suppliers, modelFacts: bot.modelFacts, configmatch: cms.map((d) => d.data), specs });
+  const report = gapReport({ docs, suppliers, modelFacts: bot.modelFacts, configmatch: cms.map((d) => d.data), specs, none: specNone() });
   if (!skip.ok) report.warning = UNFILTERED_WARNING;
   console.log((skip.ok ? "" : `CẢNH BÁO: ${UNFILTERED_WARNING} (không đọc được supexcl/supdeleted); không gửi specreq lượt này.\n`) + reportText(report));
   const rows = [];

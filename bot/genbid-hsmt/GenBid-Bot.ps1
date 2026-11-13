@@ -57,6 +57,9 @@ $ClaudeTokenFile = Join-Path $Root '.claude-bot-token'
 $ApiKeyFile = Join-Path $Root '.anthropic-api-key'
 $ApiSpendFile = Join-Path $Root '.anthropic-api-spend.jsonl'
 $ApiBudgetFile = Join-Path $Root '.anthropic-api-budget.json'
+# Cấu hình hệ thống trên web (settings/ai, chỉ Superadmin; Khoa 13/11/2026): Phân tích, Gợi ý cấu hình, Gợi ý giá,
+# Đối chiếu hồ sơ trả bằng API hay gói tháng; ngưỡng chuyển; số tiền API đã dùng sửa tay. Get-Pending chép về đây.
+$AiSettingsFile = Join-Path $Root '.genbid-ai-settings.json'
 $StateFile = Join-Path $Root '.genbid-bot-state.json'
 $WorkerState = Join-Path $Root '.hsmt-worker-state.json'
 $LockFile = Join-Path $Root '.hsmt-worker.lock'
@@ -112,9 +115,26 @@ function Get-Pending([switch]$Running, [switch]$BeatOnly) {
     if ($BeatOnly -and -not $beat) { return $null }
     $token = (Get-Content $IngestTokenFile -TotalCount 1).Trim()
     $url = $Endpoint + $(if ($Running) { '&running=1' }) + $(if (-not $beat) { '&beat=0' })
+    # Nhịp tim kèm số tiền API kỳ này (Cấu hình hệ thống trên web hiện số này; Khoa 13/11/2026).
+    if ($beat -and (Test-Path $ApiKeyFile)) {
+        try {
+            $bud = Get-ApiBudget
+            $api = [ordered]@{ spent = $bud.Spent; since = $bud.Since.ToString('yyyy-MM-ddTHH:mm:ss'); switchAt = $bud.SwitchAt; exhausted = [bool]$bud.Exhausted } | ConvertTo-Json -Compress
+            $url += '&api=' + [uri]::EscapeDataString($api)
+        } catch {}
+    }
     $r = Invoke-WebRequest $url -Headers @{ Authorization = "Bearer $token" } -UseBasicParsing -TimeoutSec 60
     if ($beat) { $script:LastBeat = $now; $script:LastBeatRunning = [bool]$Running }
-    [Text.Encoding]::UTF8.GetString($r.RawContentStream.ToArray()) | ConvertFrom-Json
+    $p = [Text.Encoding]::UTF8.GetString($r.RawContentStream.ToArray()) | ConvertFrom-Json
+    # Cấu hình hệ thống (settings/ai) đến cùng nhịp tim: chép về máy để genbid-sync.js, config-bot, bidprice-bot đọc.
+    if ($p.PSObject.Properties.Name -contains 'settings' -and $null -ne $p.settings) {
+        try {
+            $json = $p.settings | ConvertTo-Json -Depth 6 -Compress
+            $old = if (Test-Path $AiSettingsFile) { [IO.File]::ReadAllText($AiSettingsFile) } else { '' }
+            if ($json -ne $old) { [IO.File]::WriteAllText($AiSettingsFile, $json, $Utf8); Log "Cấu hình hệ thống mới: $json" }
+        } catch {}
+    }
+    $p
 }
 
 # Các yêu cầu đang chờ, theo chữ ký -> tài liệu sẽ gửi lại web nếu lượt worker không trả lời được.
@@ -170,15 +190,25 @@ function Test-ClaudeLogin { Test-Path (Join-Path $env:USERPROFILE '.claude\.cred
 function Get-ApiBudget {
     $b = [ordered]@{ monthlyUsd = 100.0; resetDay = 2; switchAtUsd = 90.0 }
     try { $j = Get-Content $ApiBudgetFile -Raw -Encoding UTF8 -ErrorAction Stop | ConvertFrom-Json; foreach ($n in @($b.Keys)) { if ($null -ne $j.$n) { $b[$n] = [double]$j.$n } } } catch {}
+    # Cấu hình hệ thống (cùng cách tính với apiBudgetOf trong sync-pure.js): ngưỡng trên web thắng tệp; số tiền Khoa sửa
+    # tay {usd, at} trong kỳ này thay sổ tới lúc `at` (đã dùng = usd + phần sổ sau `at`; "exhausted" trước `at` bỏ qua).
+    $fixUsd = $null; $fixAt = $null
+    try {
+        $s = Get-Content $AiSettingsFile -Raw -Encoding UTF8 -ErrorAction Stop | ConvertFrom-Json
+        if ([double]$s.switchAtUsd -gt 0) { $b.switchAtUsd = [double]$s.switchAtUsd }
+        if ($null -ne $s.spent -and $null -ne $s.spent.usd) { $fixAt = [datetime]::Parse([string]$s.spent.at, [Globalization.CultureInfo]::InvariantCulture); $fixUsd = [double]$s.spent.usd }
+    } catch { $fixUsd = $null }
     $now = Get-Date
     $since = (Get-Date -Year $now.Year -Month $now.Month -Day 1).Date.AddDays([int]$b.resetDay - 1)
     if ($now -lt $since) { $since = $since.AddMonths(-1) }
-    $spent = 0.0; $exhausted = $false
+    $fix = $null -ne $fixUsd -and $fixUsd -ge 0 -and $fixAt -ge $since -and $fixAt -le $now
+    $spent = if ($fix) { $fixUsd } else { 0.0 }; $exhausted = $false
     if (Test-Path $ApiSpendFile) {
         foreach ($l in [IO.File]::ReadAllLines($ApiSpendFile)) {
             if (-not $l.Trim()) { continue }
             try { $e = $l | ConvertFrom-Json; $t = [datetime]::Parse([string]$e.t, [Globalization.CultureInfo]::InvariantCulture) } catch { continue }
             if ($t -lt $since) { continue }
+            if ($fix -and $t -le $fixAt) { continue }
             if ($e.usd) { $spent += [double]$e.usd }
             if ($e.exhausted) { $exhausted = $true }
         }
@@ -191,6 +221,8 @@ function Add-ApiSpend([double]$usd, [string]$src, [switch]$Exhausted) {
     try { [IO.File]::AppendAllText($ApiSpendFile, (($rec | ConvertTo-Json -Compress) + "`n"), $Utf8) } catch {}
 }
 function Set-ClaudeAuth {
+    # Từng việc có thể đặt gói tháng (Cấu hình hệ thống): script Node đọc tệp này, cần token gói tháng khi chưa /login.
+    $env:GENBID_AI_SETTINGS_FILE = $AiSettingsFile; $env:GENBID_CLAUDE_TOKEN_FILE = $ClaudeTokenFile
     if (Test-Path $ApiKeyFile) {
         $k = (Get-Content $ApiKeyFile -TotalCount 1).Trim()
         if ($k) {
@@ -209,7 +241,16 @@ function Set-ClaudeAuth {
     if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
     return 'plan'
 }
-function Clear-ClaudeAuth { Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:ANTHROPIC_API_KEY, Env:GENBID_API_SPEND_FILE, Env:GENBID_CLAUDE_TOKEN_FILE -ErrorAction SilentlyContinue }
+function Clear-ClaudeAuth { Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN, Env:ANTHROPIC_API_KEY, Env:GENBID_API_SPEND_FILE, Env:GENBID_CLAUDE_TOKEN_FILE, Env:GENBID_AI_SETTINGS_FILE -ErrorAction SilentlyContinue }
+# Việc của một thư mục lượt AI (analysis-<TBMT>, compare-..., tlkt-...) trong Cấu hình hệ thống; '' khi không thuộc 4 việc.
+function Get-AiTask([string]$dir) {
+    switch -Regex (Split-Path $dir -Leaf) { '^analysis-' { 'analysis' } '^(compare|tlkt)-' { 'compare' } default { '' } }
+}
+# Cấu hình hệ thống đặt việc này dùng gói tháng?
+function Test-AiPlan([string]$task) {
+    if (-not $task) { return $false }
+    try { return ((Get-Content $AiSettingsFile -Raw -Encoding UTF8 -ErrorAction Stop | ConvertFrom-Json).use.$task -eq 'plan') } catch { return $false }
+}
 
 function Test-WorkerRunning {
     if (-not (Test-Path $LockFile)) { return $false }
@@ -289,11 +330,28 @@ function Invoke-Worker([string[]]$sigs) {
         (Get-Content $out -Encoding UTF8 -ErrorAction SilentlyContinue) | Where-Object { $_ -match '^\s+\S' } | ForEach-Object { Log $_ }
         # 2. Agent chỉ cho các yêu cầu cần xem trang (PDF scan, HSDT chưa đọc được chữ) hoặc trả lời một lần không được.
         $dirs = @($dirs | Where-Object { Test-Path (Join-Path $_ 'AGENT') })
-        if ($dirs.Count -and -not ($script:PauseUntil -gt (Get-Date))) { $reason = Invoke-Agent $claude $dirs $sigs $stamp }
+        if ($dirs.Count -and -not ($script:PauseUntil -gt (Get-Date))) { $reason = Invoke-AgentByPay $claude $dirs $sigs $stamp }
     } finally {
         Clear-ClaudeAuth; Remove-Item Env:GENBID_CLAUDE -ErrorAction SilentlyContinue
         # Gửi kết quả (hoặc lỗi trong error.txt) lên web và xoá thư mục (HSDT là tài liệu riêng của công ty).
         Invoke-Node finish --dir $work | ForEach-Object { Log "  $_" }
+    }
+    return $reason
+}
+
+# Cấu hình hệ thống (Khoa 13/11/2026): khi lượt đang trả bằng API mà có việc đặt gói tháng, các thư mục của việc đó chạy
+# một agent riêng không có API key; còn lại một agent như cũ.
+function Invoke-AgentByPay([string]$claude, [string[]]$dirs, [string[]]$sigs, [string]$stamp) {
+    $plan = @(if ($env:ANTHROPIC_API_KEY) { $dirs | Where-Object { Test-AiPlan (Get-AiTask $_) } })
+    $rest = @($dirs | Where-Object { $plan -notcontains $_ })
+    $reason = $null
+    if ($rest.Count) { $reason = Invoke-Agent $claude $rest $sigs $stamp }
+    if ($plan.Count -and -not ($script:PauseUntil -gt (Get-Date))) {
+        $key = $env:ANTHROPIC_API_KEY; Remove-Item Env:ANTHROPIC_API_KEY
+        if (-not (Test-ClaudeLogin)) { $env:CLAUDE_CODE_OAUTH_TOKEN = (Get-Content $ClaudeTokenFile -TotalCount 1).Trim() }
+        Log "Gói tháng (Cấu hình hệ thống) cho: $(($plan | ForEach-Object { Split-Path $_ -Leaf }) -join ', ')"
+        try { $r2 = Invoke-Agent $claude $plan $sigs "$stamp-plan"; if ($r2) { $reason = $r2 } }
+        finally { $env:ANTHROPIC_API_KEY = $key; Remove-Item Env:CLAUDE_CODE_OAUTH_TOKEN -ErrorAction SilentlyContinue }
     }
     return $reason
 }

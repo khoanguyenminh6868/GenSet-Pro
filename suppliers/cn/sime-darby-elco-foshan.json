@@ -8,7 +8,7 @@
     "zh": null,
     "brands": []
   },
-  "website": null,
+  "website": "https://en.elco-sime.com/",
   "hq": {
     "province": "Guangdong",
     "city": "Foshan"
@@ -65,6 +65,16 @@
         "Email: knight.zhao.wei@simedarby.com.hk"
       ],
       "file": "sources/sime-darby-elco-foshan/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://en.elco-sime.com/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Foshan Sime Darby Elco Power Equipment Ltd. is the first Perkins authorized Engine Power distributorwhich now has over 30 years’ experience in China."
+      ],
+      "file": "sources/sime-darby-elco-foshan/2.md"
     }
   ],
   "confidence": "medium",

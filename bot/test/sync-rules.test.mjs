@@ -232,6 +232,33 @@ test("sổ chi: một dòng JSON không phải object ('null') không làm mất
   assert.equal(P.apiBudgetOf("", book({ t: "2026-11-05T05:00:00", usd: 1 }, "null", { t: "2026-11-06T05:00:00", usd: 2 }), at("2026-11-13T12:00:00")).spent, 3);
 });
 
+// ---------- Cấu hình hệ thống trên web (settings/ai, Khoa 13/11/2026) ----------
+test("cấu hình hệ thống: ngưỡng trên web thắng tệp ngưỡng", () => {
+  const b = P.apiBudgetOf("{\"switchAtUsd\": 98}", book({ t: "2026-11-05T05:00:00", usd: 95 }), at("2026-11-13T12:00:00"), "{\"switchAtUsd\": 90}");
+  assert.equal(b.switchAtUsd, 90);
+  assert.equal(b.ok, false);
+});
+test("cấu hình hệ thống: số tiền sửa tay thay sổ tới lúc sửa, cộng tiếp phần chi sau đó; exhausted trước lúc sửa bỏ qua", () => {
+  const s = JSON.stringify({ spent: { usd: 40, at: "2026-11-10T05:00:00" } });
+  const b = P.apiBudgetOf("", book({ t: "2026-11-05T05:00:00", usd: 80 }, { t: "2026-11-06T05:00:00", usd: 0, exhausted: true }, { t: "2026-11-11T05:00:00", usd: 2.5 }), at("2026-11-13T12:00:00"), s);
+  assert.equal(b.spent, 42.5);
+  assert.equal(b.exhausted, false);
+  assert.equal(b.ok, true);
+});
+test("cấu hình hệ thống: số sửa tay của kỳ trước không tính sang kỳ mới", () => {
+  const s = JSON.stringify({ spent: { usd: 97, at: "2026-10-20T05:00:00" } });
+  assert.equal(P.apiBudgetOf("", book({ t: "2026-11-05T05:00:00", usd: 3 }), at("2026-11-13T12:00:00"), s).spent, 3);
+});
+test("cấu hình hệ thống: việc đặt gói tháng; việc khác, tệp hỏng, không có tệp thì API", () => {
+  const s = JSON.stringify({ use: { analysis: "plan", compare: "api" } });
+  assert.equal(P.aiUseOf(s, "analysis"), "plan");
+  assert.equal(P.aiUseOf(s, P.AI_TASK_OF.tlkt), "api");
+  assert.equal(P.aiUseOf(s, ""), "api");
+  assert.equal(P.aiUseOf("{hỏng", "analysis"), "api");
+  assert.equal(P.aiUseOf("", "analysis"), "api");
+  assert.equal(P.AI_TASK_OF.translation, undefined);
+});
+
 // ---------- câu trả lời một lần gọi bị cắt ----------
 test("câu trả lời Claude bị cắt: dừng ở giới hạn đầu ra, lượt không hoàn tất, subtype lỗi; trọn vẹn thì rỗng", () => {
   assert.equal(P.askCut({ stop_reason: "max_tokens" }), "stop_reason max_tokens");

@@ -15,6 +15,25 @@ afterEach(() => { undo(); mock.restoreAll(); mock.timers.reset(); });
 const post = (body, token = "tok-user") => call(h, mkReq({ method: "POST", body, token }));
 const one = async (coll, item, token) => { const r = await post({ coll, items: [item] }, token); assert.equal(r.statusCode, 200, JSON.stringify(r.jsonBody)); return r.jsonBody.saved[0].data; };
 
+test("Cấu hình hệ thống (settings/ai): chỉ Superadmin; lọc giá trị; số tiền đã dùng có mốc giờ; giữ trường cũ", async () => {
+  const ai = { use: { analysis: "plan", config: "bậy", bidprice: "api", extra: "plan" }, switchAtUsd: "98", spentUsd: 41.257 };
+  assert.equal((await post({ coll: "settings", ai })).statusCode, 403);
+  assert.equal(sbDocsWrites(db).length, 0);
+  const r = await post({ coll: "settings", ai }, "tok-admin");
+  assert.equal(r.statusCode, 200, JSON.stringify(r.jsonBody));
+  const d = db.get("settings", "ai");
+  assert.deepEqual(d.data.use, { analysis: "plan", config: "api", bidprice: "api", compare: "api" });
+  assert.equal(d.data.switchAtUsd, 98);
+  assert.deepEqual(d.data.spent, { usd: 41.26, at: NOW });
+  assert.equal(d.updated_at, NOW);
+  assert.equal(d.data.by, "root@example.com");
+  // Không gửi spentUsd: giữ số cũ.
+  await post({ coll: "settings", ai: { use: {}, switchAtUsd: 90 } }, "tok-admin");
+  assert.deepEqual(db.get("settings", "ai").data.spent, { usd: 41.26, at: NOW });
+  assert.equal(db.get("settings", "ai").data.switchAtUsd, 90);
+  assert.equal((await post({ coll: "settings", ai: { spentUsd: "abc" } }, "tok-admin")).statusCode, 400);
+});
+
 test("Chỉ nhận POST; chưa đăng nhập hoặc token lạ thì 401, không ghi gì", async () => {
   assert.equal((await call(h, mkReq({ method: "GET", token: "tok-user" }))).statusCode, 405);
   assert.equal((await post({ coll: "hsmtreq", items: [{ key: "A" }] }, null)).statusCode, 401);

@@ -114,7 +114,7 @@ function seedReqs() {
 test("kind=all KHÔNG lọc theo thời gian: yêu cầu từ 2020 chưa xong vẫn trả về; xong (doneAt ≥ requestedAt) thì không", async () => {
   seedReqs();
   const r = await get(await fresh("requests.js"), { kind: "all" });
-  assert.deepEqual(Object.keys(r.jsonBody).sort(), ["analysis", "bidprice", "compare", "config", "files", "find", "hsdt", "spec", "supplier", "sync", "tlkt", "translation"]);
+  assert.deepEqual(Object.keys(r.jsonBody).sort(), ["analysis", "bidprice", "compare", "config", "files", "find", "hsdt", "settings", "spec", "supplier", "sync", "tlkt", "translation"], "có nhịp tim thì kèm settings");
   const keys = r.jsonBody.files.map((f) => f.key);
   assert.deepEqual(keys, ["OLD", "NEW", "AGAIN"], "sắp theo requestedAt tăng dần");
   assert.ok(!keys.includes("DONE") && !keys.includes("EQ"));
@@ -152,6 +152,18 @@ test("beat=0: KHÔNG ghi botstatus; thiếu beat (bot cũ) thì ghi mỗi lượ
   assert.equal(db.get("botstatus", "current").data.running, true);
   await get(h, { kind: "all", beat: "1" });
   assert.equal(sbDocsWrites(db).length, 3, "chỉ beat=0 mới bỏ ghi");
+});
+
+test("Cấu hình hệ thống: nhịp tim trả settings/ai (null khi chưa có), beat=0 không kèm; ?api ghi vào botstatus, sai dạng thì bỏ", async () => {
+  const h = await fresh("requests.js");
+  assert.equal((await get(h, { kind: "all" })).jsonBody.settings, null);
+  db.put("settings", "ai", { use: { analysis: "plan" }, switchAtUsd: 98 });
+  assert.deepEqual((await get(h, { kind: "all" })).jsonBody.settings, { use: { analysis: "plan" }, switchAtUsd: 98 });
+  assert.equal("settings" in (await get(h, { kind: "all", beat: "0" })).jsonBody, false);
+  await get(h, { kind: "all", api: JSON.stringify({ spent: 12.345, since: "2026-11-02T00:00:00", switchAt: 98, exhausted: false }) });
+  assert.deepEqual(db.get("botstatus", "current").data.api, { spent: 12.35, since: "2026-11-02T00:00:00", switchAt: 98, exhausted: false, key: true });
+  await get(h, { kind: "all", api: "{hỏng" });
+  assert.equal(db.get("botstatus", "current").data.api, undefined);
 });
 
 test("Nhịp tim ghi botstatus/current với updated_at = lastPollAt (mọi chỗ ghi docs đều đổi updated_at)", async () => {

@@ -67,7 +67,15 @@ function asString(v: unknown): string | undefined {
 
 function asNumber(v: unknown): number | undefined {
   if (v === undefined || v === null || v === '') return undefined;
-  const n = typeof v === 'number' ? v : Number(String(v).replace(/[^\d.-]/g, ''));
+  if (typeof v === 'number') return Number.isFinite(v) ? v : undefined;
+  // Chuỗi: lấy cụm số đầu tiên ("2.500.000.000 đ", "45.000.000", "1250.5"); không có số → không có giá (không phải 0).
+  const m = String(v).match(/-?\d[\d.,]*/);
+  if (!m) return undefined;
+  let t = m[0].replace(/[.,]+$/, '');
+  if (/^-?\d{1,3}(\.\d{3})+(,\d+)?$/.test(t)) t = t.replace(/\./g, '').replace(',', '.'); // kiểu Việt: . ngăn nghìn, , thập phân
+  else if (/^-?\d{1,3}(,\d{3})+(\.\d+)?$/.test(t)) t = t.replace(/,/g, ''); // kiểu Anh: , ngăn nghìn
+  else if (/^-?\d+,\d+$/.test(t)) t = t.replace(',', '.'); // "1250,5"
+  const n = Number(t);
   return Number.isFinite(n) ? n : undefined;
 }
 

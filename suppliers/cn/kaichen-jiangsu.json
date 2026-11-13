@@ -75,6 +75,100 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kaichen silent genset, Ricardo engine (báo giá 2026-11-10)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH4100D",
+        "ZH4105ZLD",
+        "R4105ZD",
+        "R6105ZD",
+        "R6105AZLD",
+        "R6105IZLD",
+        "R6108IZLD",
+        "P10",
+        "618ZLD",
+        "P12"
+      ],
+      "alternatorMakes": [
+        "Kaichen"
+      ],
+      "power": {
+        "min": 30,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          5002
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [
+        "220/380V"
+      ],
+      "types": [
+        "silent"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        5002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kaichen silent genset, Yuchai engine (báo giá 2026-11-10)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC4V35-D20",
+        "YC4V45Z-D20",
+        "YC4V55Z-D20",
+        "YC4D90Z-D25",
+        "YC4A100Z-D25",
+        "YC4A140L-D25",
+        "YC4A180L-D20",
+        "YC6B205L-D20",
+        "YC6A245L-D21",
+        "YC6MK350L-D20",
+        "YC6MK420L-D20",
+        "YC6MJ500L-D21"
+      ],
+      "alternatorMakes": [
+        "Kaichen"
+      ],
+      "power": {
+        "min": 16,
+        "max": 300,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          5002
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [
+        "220/380V"
+      ],
+      "types": [
+        "silent"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        5002
+      ]
     }
   ],
   "certifications": [],
@@ -199,6 +293,21 @@
         "Engine: Cummins NTAA855-G7"
       ],
       "file": "sources/kaichen-jiangsu/108.md"
+    },
+    {
+      "n": 5002,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/kaichen-jiangsu-quotation-2026-11-10.xlsx",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 30KVA | Ricardo | ZH4100D | Kaichen | KCI-30 | mechanical | Silent Type | 2200*950*1400 | 980 | 30 | 33 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 300KVA | Ricardo | P12 | Kaichen | KCI-300 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3700 | 300 | 330 | 100A H | Capable of continuous use for over 8 hours |",
+        "| 16KW/20KVA | YUCHAI | YC4V35-D20 | Kaichen | KCI-16 | HGM6110 Four-fold protection + auto-start | Silent Type | 2200*950*1400 | 860 | 16 | 18 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 300KW/375KVA | YUCHAI | YC6MJ500L-D21 | Kaichen | KCI-300 | HGM6110 Four-fold protection + auto-start | Silent Type | 3600*1400*1950 | 3800 | 300 | 330 | 100AH | Capable of continuous use for over 10 hours |",
+        "Brushless alternator, single bearing, IP23, H insulation class",
+        "Voltage:220/380 Speed: 50HZ , 1500rpm Phase:three phases"
+      ],
+      "file": "sources/kaichen-jiangsu/5002.md"
     }
   ],
   "confidence": "medium",
@@ -772,6 +881,46 @@
         "| KCC-600GF | 600 | 750 | 660 | 825 | KTA38-G2 |",
         "| KCC-800GF | 800 | 1000 | 880 | 1100 | KTA38-G5 |",
         "| KCC-1200GF | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 |"
+      ]
+    },
+    {
+      "n": 5002,
+      "title": "Báo giá Kaichen 2026-11-10 — Ricardo, 50 Hz, 1500 rpm, 220/380 V, 3 pha",
+      "header": [
+        "| Size | Engine make | Engine model | Alternator make | Alternator | Controller | Type | L*W*H (mm) | Weight (kg) | Prime output (kVA) | Standby output (kVA) | Battery | Fuel tank"
+      ],
+      "rows": [
+        "| 30KVA | Ricardo | ZH4100D | Kaichen | KCI-30 | mechanical | Silent Type | 2200*950*1400 | 980 | 30 | 33 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 40KVA | Ricardo | ZH4105ZLD | Kaichen | KCI-40 | mechanical | Silent Type | 2200*950*1400 | 1120 | 40 | 44 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 50KVA | Ricardo | R4105ZD | Kaichen | KCI-50 | mechanical | Silent Type | 2400*1000*1500 | 1250 | 50 | 55 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 75KVA | Ricardo | R6105ZD | Kaichen | KCI-75 | mechanical | Silent Type | 2700*1100*1700 | 1860 | 75 | 80 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 100KVA | Ricardo | R6105AZLD | Kaichen | KCI-100 | mechanical | Silent Type | 2700*1100*1700 | 2320 | 100 | 110 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 120KVA | Ricardo | R6105IZLD | Kaichen | KCI-120 | mechanical | Silent Type | 2700*1100*1700 | 2250 | 120 | 132 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 150KVA | Ricardo | R6108IZLD | Kaichen | KCI-150 | mechanical | Silent Type | 3300*1300*1800 | 2450 | 150 | 165 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 200KVA | Ricardo | P10 | Kaichen | KCI-200 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 2850 | 200 | 220 | 100A H | Capable of continuous use for over 8 hours |",
+        "| 250KVA | Ricardo | 618ZLD | Kaichen | KCI-250 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3300 | 250 | 275 | 100A H | Capable of continuous use for over 8 hours |",
+        "| 300KVA | Ricardo | P12 | Kaichen | KCI-300 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3700 | 300 | 330 | 100A H | Capable of continuous use for over 8 hours |"
+      ]
+    },
+    {
+      "n": 5002,
+      "title": "Báo giá Kaichen 2026-11-10 — Yuchai, 50 Hz, 1500 rpm, 220/380 V, 3 pha",
+      "header": [
+        "| Size | Engine make | Engine model | Alternator make | Alternator | Controller | Type | L*W*H (mm) | Weight (kg) | Prime output (kW) | Standby output (kW) | Battery | Fuel tank"
+      ],
+      "rows": [
+        "| 16KW/20KVA | YUCHAI | YC4V35-D20 | Kaichen | KCI-16 | HGM6110 Four-fold protection + auto-start | Silent Type | 2200*950*1400 | 860 | 16 | 18 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 24KW/30KVA | YUCHAI | YC4V45Z-D20 | Kaichen | KCI-24 | HGM6110 Four-fold protection + auto-start | Silent Type | 2200*950*1400 | 920 | 24 | 26 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 30KW/37.5KVA | YUCHAI | YC4V55Z-D20 | Kaichen | KCI-30 | HGM6110 Four-fold protection + auto-start | Silent Type | 2200*950*1400 | 960 | 30 | 33 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 50KW/62.5KVA | YUCHAI | YC4D90Z-D25 | Kaichen | KCI-50 | HGM6110 Four-fold protection + auto-start | Silent Type | 2400*1000*1500 | 1300 | 50 | 55 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 60KW/75KVA | YUCHAI | YC4A100Z-D25 | Kaichen | KCI-60 | HGM6110 Four-fold protection + auto-start | Silent Type | 2400*1000*1500 | 1450 | 60 | 66 | 80AH | Capable of continuous use for over 10 hours |",
+        "| 80KW/100KVA | YUCHAI | YC4A140L-D25 | Kaichen | KCI-80 | HGM6110 Four-fold protection + auto-start | Silent Type | 2700*1100*1700 | 1650 | 80 | 88 | 80AH | Capable of continuous use for over 10 hours |",
+        "| 100KW/125KVA | YUCHAI | YC4A180L-D20 | Kaichen | KCI-100 | HGM6110 Four-fold protection + auto-start | Silent Type | 2700*1100*1700 | 2300 | 100 | 110 | 80AH | Capable of continuous use for over 10 hours |",
+        "| 120KW/150KVA | YUCHAI | YC6B205L-D20 | Kaichen | KCI-120 | HGM6110 Four-fold protection + auto-start | Silent Type | 2700*1100*1700 | 2420 | 120 | 132 | 80AH | Capable of continuous use for over 10 hours |",
+        "| 150KW/187.5KVA | YUCHAI | YC6A245L-D21 | Kaichen | KCI-150 | HGM6110 Four-fold protection + auto-start | Silent Type | 3300*1300*1800 | 2420 | 150 | 165 | 100AH | Capable of continuous use for over 10 hours |",
+        "| 200KW/250KVA | YUCHAI | YC6MK350L-D20 | Kaichen | KCI-200 | HGM6110 Four-fold protection + auto-start | Silent Type | 3600*1400*1950 | 2850 | 200 | 220 | 100AH | Capable of continuous use for over 10 hours |",
+        "| 250KW/312.5KVA | YUCHAI | YC6MK420L-D20 | Kaichen | KCI-250 | HGM6110 Four-fold protection + auto-start | Silent Type | 3600*1400*1950 | 3280 | 250 | 280 | 100AH | Capable of continuous use for over 10 hours |",
+        "| 300KW/375KVA | YUCHAI | YC6MJ500L-D21 | Kaichen | KCI-300 | HGM6110 Four-fold protection + auto-start | Silent Type | 3600*1400*1950 | 3800 | 300 | 330 | 100AH | Capable of continuous use for over 10 hours |"
       ]
     }
   ],
