@@ -101,6 +101,8 @@ test("gói dịch vụ không tự Gợi ý cấu hình (Khoa 12/11): bảo dư�
 });
 test("gói 'Thuê máy phát điện' (có dấu) là gói dịch vụ, không tự Gợi ý cấu hình", () => {
   for (const n of ["Thuê máy phát điện phục vụ sự kiện", "Thuê máy phát điện 2022", "GTSXKD01-2023 – Cung cấp dịch vụ cho thuê máy phát điện dự phòng"]) assert.equal(P.isServiceTender(n), true, n);
+  // "căn hộ cho thuê" là loại công trình, không phải thuê máy (IB2500020231, 13/11).
+  assert.equal(P.isServiceTender("Gói thầu TB1: Cung cấp và lắp đặt thiết bị công trình: Nhà văn phòng làm việc và căn hộ cho thuê (máy phát điện dự phòng, PCCC, thang máy)"), false);
 });
 test("gói mua máy kèm dịch vụ vẫn là gói mua máy: 'Mua sắm, lắp đặt máy phát … và bảo dưỡng'", () => {
   for (const n of ["Mua sắm và lắp đặt máy phát điện, bảo dưỡng 2 năm", "Cung cấp và lắp đặt 02 tổ máy phát điện, bảo trì", "Trang bị mới máy phát điện, sửa chữa nhà trạm", "Mua sắm thiết bị, máy phát điện"])
