@@ -1,19 +1,10 @@
 // specs: a Chương V longer than one call is read in parts and joined by code (partsOf, specsMerge, specsFinish in
-// bot/genbid-hsmt/genbid-sync.js, which is not a module: the code is cut out of it and run in a vm).
+// bot/genbid-hsmt/sync-pure.js, which genbid-sync.js requires; T5 2026-11-13 moved them there from genbid-sync.js).
 import test from "node:test";
 import assert from "node:assert/strict";
-import fs from "node:fs";
-import os from "node:os";
-import path from "node:path";
-import vm from "node:vm";
-import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 
-const src = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "bot", "genbid-hsmt", "genbid-sync.js"), "utf8");
-const cut = (a, b) => { const i = src.indexOf(a), j = src.indexOf(b, i); assert.ok(i > 0 && j > i, `không thấy ${a}`); return src.slice(i, j); };
-const code = [cut("const plainVi", "function chapterV"), cut("const setsOf", "function histConfigOf"), cut("const lineOf", "const pdftotext"),
-  cut("function specsFinish", "async function specsRound"), cut("const normTxt", "async function runFinish")].join("\n");
-const readJson = (f, d) => { try { return JSON.parse(fs.readFileSync(f, "utf8")); } catch { return d; } };
-const X = vm.runInNewContext(code + "\n({ partsOf, specsMerge, specsFinish, specsEmpty, partHead, densestCut })", { fs, path, os, readJson, console });
+const X = createRequire(import.meta.url)("../bot/genbid-hsmt/sync-pure.js");
 
 const mk = (n, f) => Array.from({ length: n }, (_, i) => f(i)).join("\n");
 const spec = (item, requirement, quote = requirement) => ({ item, requirement, quote, reference: null });
