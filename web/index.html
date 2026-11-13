@@ -5163,13 +5163,13 @@ function openAiConfig() {
   const segOf = (k) => h`<div class="seg" role="tablist" aria-label="Cách trả tiền">${raw(["api", "plan"].map((v) => h`<button type="button" data-aiuse="${k}" data-v="${v}" aria-selected="${(use[k] || "api") === v ? "true" : "false"}">${v === "api" ? "API" : "Gói tháng"}</button>`).join(""))}</div>`;
   modal(h`<div class="row"><h2 style="flex:1">Cấu hình hệ thống</h2><button class="btn sm" data-close>Đóng</button></div>
     <details class="supsec" id="aiCfgUse" open style="margin:0"><summary>Cấu hình Claude</summary>
-      <div class="aicfg" style="margin-top:8px">${raw(AI_TASKS.map(([k, label]) => h`<span>${label}</span>${raw(segOf(k))}`).join(""))}</div></details>
-    <h4 style="margin:6px 0 0">Tiền API</h4>
-    <div class="muted small" id="aiCfgStat">${aiCfgStatus()}</div>
-    <div class="qgrid">
-      <div class="field"><label for="aiSpent">Đã dùng kỳ này (USD)</label><input type="text" id="aiSpent" inputmode="decimal" autocomplete="off" value="${sp ? usdText(sp.usd) : ""}" placeholder="vd 42.5"></div>
-      <div class="field"><label for="aiSwitch">Chuyển sang gói tháng khi tới (USD)</label><input type="text" id="aiSwitch" inputmode="decimal" autocomplete="off" value="${usdText(at)}"></div>
-    </div>
+      <div class="aicfg" style="margin-top:8px">${raw(AI_TASKS.map(([k, label]) => h`<span>${label}</span>${raw(segOf(k))}`).join(""))}</div>
+      <h4 style="margin:14px 0 4px">Tiền API</h4>
+      <div class="muted small" id="aiCfgStat">${aiCfgStatus()}</div>
+      <div class="qgrid" style="margin-top:8px">
+        <div class="field"><label for="aiSpent">Đã dùng kỳ này (USD)</label><input type="text" id="aiSpent" inputmode="decimal" autocomplete="off" value="${sp ? usdText(sp.usd) : ""}" placeholder="vd 42.5"></div>
+        <div class="field"><label for="aiSwitch">Chuyển sang gói tháng khi tới (USD)</label><input type="text" id="aiSwitch" inputmode="decimal" autocomplete="off" value="${usdText(at)}"></div>
+      </div></details>
     ${raw(cfg.updatedAt ? h`<p class="muted small" style="margin:0">Lưu gần nhất ${fmtDate(cfg.updatedAt)}${cfg.by ? `, ${cfg.by}` : ""}.</p>` : "")}
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="aiCfgOk">Lưu</button></div>`, (m, close) => {
     m.addEventListener("click", (e) => {

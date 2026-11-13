@@ -3889,9 +3889,9 @@ const CLAUDE_TIMEOUT = 40 * 60e3;
 // task: "config" for Gợi ý cấu hình, which Cấu hình hệ thống may put on the monthly plan (taskEnv); "" for Tìm NCC and
 // Tìm Thông Số (the API key while the budget allows).
 function runClaude(dir, input, task = "") {
-  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY;
+  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY, t0 = Date.now();
   return runClaudeOnce(dir, input, env).then((r) => {
-    noteApiSpend(costOf(r.stdout), "config", api);
+    noteApiSpend(costOf(r.stdout), "config", api, t0);
     return api && switchToPlan(r.stdout + r.stderr, "config") ? runClaude(dir, input, task) : r;
   });
 }

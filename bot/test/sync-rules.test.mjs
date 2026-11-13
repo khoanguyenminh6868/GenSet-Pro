@@ -262,6 +262,14 @@ test("cấu hình hệ thống: số tiền sửa tay thay sổ tới lúc sửa
   assert.equal(b.exhausted, false);
   assert.equal(b.ok, true);
 });
+test("cấu hình hệ thống: lần gọi đang chạy lúc sửa tay chỉ cộng phần sau lúc sửa; dòng không có t0 cộng cả", () => {
+  const s = JSON.stringify({ spent: { usd: 80, at: "2026-11-13T03:00:00Z" } });
+  const b = P.apiBudgetOf("", book(
+    { t: "2026-11-13T03:10:00Z", t0: "2026-11-13T02:50:00Z", usd: 2 }, // 10/20 phút sau lúc sửa → 1
+    { t: "2026-11-13T03:20:00Z", t0: "2026-11-13T03:05:00Z", usd: 3 }, // bắt đầu sau lúc sửa → cả 3
+    { t: "2026-11-13T03:30:00Z", usd: 0.5 }), at("2026-11-13T12:00:00"), s);
+  assert.equal(b.spent, 84.5);
+});
 test("cấu hình hệ thống: số sửa tay của kỳ trước không tính sang kỳ mới", () => {
   const s = JSON.stringify({ spent: { usd: 97, at: "2026-10-20T05:00:00" } });
   assert.equal(P.apiBudgetOf("", book({ t: "2026-11-05T05:00:00", usd: 3 }), at("2026-11-13T12:00:00"), s).spent, 3);

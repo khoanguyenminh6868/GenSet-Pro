@@ -196,13 +196,13 @@ export function check(dir) {
 const CLAUDE_MIN = 25;
 function runClaude(dir) {
   // Cấu hình hệ thống may put Gợi ý giá on the monthly plan (taskEnv drops the API key for this run).
-  const env = taskEnv("bidprice"), api = !!env.ANTHROPIC_API_KEY;
+  const env = taskEnv("bidprice"), api = !!env.ANTHROPIC_API_KEY, t0 = Date.now();
   // stream-json: every Read is in the log, so read-guard can tell whether input.md and samples.md were read whole; the
   // first message is the instructions and the files to read in order (agentInput).
   const r = spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "stream-json", "--verbose", "--model", process.env.GENBID_BIDPRICE_MODEL || "opus",
     "--strict-mcp-config", "--disable-slash-commands", "--tools", "Read", "Write", "Grep", "Glob"],
     { cwd: dir, env, encoding: "utf8", timeout: CLAUDE_MIN * 60e3, maxBuffer: 256 << 20, windowsHide: true, input: agentInput(dir, TASK, { scripts: false }) });
-  noteApiSpend(costOf(r.stdout), "bidprice", api);
+  noteApiSpend(costOf(r.stdout), "bidprice", api, t0);
   return api && switchToPlan(`${r.stdout || ""}${r.stderr || ""}`, "bidprice") ? runClaude(dir) : r;
 }
 

@@ -717,10 +717,18 @@ function apiBudgetOf(budgetText, spendText, at, settingsText = "") {
       let e; try { e = JSON.parse(l); } catch { continue; }
       if (!e || typeof e !== "object") continue;
       if (!(fix ? new Date(e.t) > from : new Date(e.t) >= from)) continue;
-      spent += Number(e.usd) || 0; if (e.exhausted) exhausted = true;
+      spent += (Number(e.usd) || 0) * (fix ? afterShare(e, from) : 1); if (e.exhausted) exhausted = true;
     }
   } catch {}
   return { ...b, since, spent: Math.round(spent * 100) / 100, exhausted, ok: !exhausted && spent < b.switchAtUsd };
+}
+// A run that was going when the spend was corrected by hand (t0 < at < t): Platform already counted the part before, so
+// only the share of its time after `at` is added (Khoa 2026-11-13: 23 Tìm Thông Số started 09:38, corrected 10:03,
+// ended 10:07–10:18, and their whole cost was added again). A line without t0 (older book) counts whole.
+function afterShare(e, at) {
+  const t0 = new Date(e.t0), t = new Date(e.t);
+  if (!e.t0 || !(t0 < at) || !(t > t0)) return 1;
+  return Math.min(1, Math.max(0, (t - at) / (t - t0)));
 }
 const parseJson = (t) => { try { const j = JSON.parse(String(t || "").replace(/^﻿/, "")); return j && typeof j === "object" ? j : null; } catch { return null; } };
 // The task of a request kind in Cấu hình hệ thống: Phân tích, Đối chiếu hồ sơ (HSDT and TLKT); others have none.
