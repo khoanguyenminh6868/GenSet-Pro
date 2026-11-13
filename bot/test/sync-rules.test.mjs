@@ -102,8 +102,38 @@ test("gói máy phát điện: tên có 'máy phát điện', 'MPĐ', 'genset', 
   assert.equal(P.isGenset({ pname: "Mua máy phát điện" }), true, "pname khi không có bidName");
   assert.equal(P.isGenset({ bidName: ["Mua máy phát điện", "khác"] }), true, "bidName dạng mảng: lấy phần tử đầu");
 });
-test("tên chỉ nói 'MPĐ' (có dấu) là gói máy phát", { todo: "GENSET_RE \\bmp[đd]\\b: \\b của JS không coi 'đ' là chữ nên 'MPĐ' không khớp (chỉ 'MPD' khớp); bidhist 13/11 có 1 gói tên có 'MPĐ', được nhận nhờ chữ khác — gói chỉ ghi MPĐ thì bị Sync / lịch sử bỏ" }, () => {
+test("tên chỉ nói 'MPĐ' (có dấu) là gói máy phát", () => {
   assert.equal(P.isGenset({ bidName: "Cung cấp MPĐ cho trạm BTS" }), true);
+  assert.equal(P.isGenset({ bidName: "Mua sắm MPĐ dự phòng cho trạm BTS" }), true);
+});
+test("máy phát điện gió / điện mặt trời / tua-bin gió không là gói máy phát, trừ khi tên nói diesel / dự phòng / kVA", () => {
+  for (const n of ["Cung cấp máy phát điện gió 5kW", "Hệ thống máy phát điện năng lượng mặt trời", "Bảo dưỡng tua-bin gió", "Phát điện mặt trời áp mái"])
+    assert.equal(P.isGenset({ bidName: n }), false, n);
+  assert.equal(P.isGenset({ bidName: "Hệ thống điện mặt trời và máy phát điện diesel dự phòng 250kVA" }), true);
+});
+// Ba nơi giữ cùng luật tên gói: web/bidprice.js (isGensetName), sync-pure.js (isGenset), server/src/muasamcong.ts
+// (isGeneratorTender, nới nhất: "phát điện" đứng riêng cũng giữ). Danh sách dưới đây là tên mà cả ba phải cùng đáp.
+test("ba nơi (bidprice.js, sync-pure.js, muasamcong.ts) cùng kết luận trên danh sách tên gói", async () => {
+  const req = createRequire(import.meta.url);
+  const g = globalThis; const keep = g.GenbidBidprice;
+  await import("../../web/catalog.js"); await import("../../web/bidprice.js");
+  const BP = g.GenbidBidprice; g.GenbidBidprice = keep;
+  const src = (await import("node:fs")).readFileSync(new URL("../../server/src/muasamcong.ts", import.meta.url), "utf8");
+  const grab = (re) => new RegExp(src.match(re)[1].replace(/\\\\/g, "\\"));
+  const MPD = grab(/const MPD_RE = \/(.*)\/;/), RENEW = grab(/const RENEW_RE =\s*\/(.*)\/;/), SET = grab(/const SET_RE = \/(.*)\/;/);
+  const terms = [...src.match(/RELEVANCE_TERMS = \[(.*)\]/)[1].matchAll(/'([^']+)'/g)].map((m) => m[1]);
+  const strip = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase();
+  const server = (s) => { const n = strip(s); return (terms.some((t) => n.includes(t)) || MPD.test(n)) && (!RENEW.test(n) || SET.test(n)); };
+  const list = [
+    ["Cung cấp MPĐ 100kVA", true], ["Mua sắm MPĐ dự phòng cho trạm BTS", true], ["Mua sắm máy phát điện dự phòng 500kVA", true],
+    ["Cung cấp máy phát điện gió 5kW", false], ["Hệ thống máy phát điện năng lượng mặt trời", false], ["Bảo dưỡng tua-bin gió", false],
+    ["Hệ thống điện mặt trời và máy phát điện diesel dự phòng 250kVA", true], ["Mua sắm máy tính văn phòng", false], ["Gói thầu số 30: Hệ thống cung cấp điện và điện năng lượng mặt trời, Máy phát điện; Điều hòa không khí", true], ["Vật tư Offskid cho nâng cấp hệ thống điều khiển máy phát điện Solar TG-A", false], ["Genset 1000 kVA", true],
+  ];
+  for (const [n, want] of list) {
+    assert.equal(BP.isGensetName(n), want, "bidprice.js: " + n);
+    assert.equal(P.isGenset({ bidName: n }), want, "sync-pure.js: " + n);
+    assert.equal(server(n), want, "muasamcong.ts: " + n);
+  }
 });
 test("không phải gói máy phát: tổ máy của nhà máy điện, tua bin, tên không nói máy phát", () => {
   for (const n of ["Sửa chữa tổ máy số 2 Nhà máy thủy điện Hòa Bình - máy phát điện", "Đại tu tua bin máy phát điện H1", "Giảm phát thải tại Nhà máy Điện", "Mua sắm máy biến áp"])
