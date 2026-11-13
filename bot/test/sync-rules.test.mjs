@@ -99,7 +99,7 @@ test("gói dịch vụ không tự Gợi ý cấu hình (Khoa 12/11): bảo dư�
   for (const n of ["Bảo dưỡng máy phát điện năm 2025", "Sửa chữa máy phát điện", "Thue may phat dien (không dấu)", "Di dời máy phát điện", "Mua sắm vật tư, phụ tùng máy phát điện", "Cung cấp dầu nhờn cho máy phát điện"])
     assert.equal(P.isServiceTender(n), true, n);
 });
-test("gói 'Thuê máy phát điện' (có dấu) là gói dịch vụ, không tự Gợi ý cấu hình", { todo: "SERVICE_RE \\bthu[êe]\\b: \\b sau 'ê' không khớp nên 'thuê' có dấu không bao giờ khớp — đo 13/11 trên doc-cache bidhist: 88/111 tên gói có 'thuê' bị coi là gói mua máy (vd IB2200033737, IB2200068050)" }, () => {
+test("gói 'Thuê máy phát điện' (có dấu) là gói dịch vụ, không tự Gợi ý cấu hình", () => {
   for (const n of ["Thuê máy phát điện phục vụ sự kiện", "Thuê máy phát điện 2022", "GTSXKD01-2023 – Cung cấp dịch vụ cho thuê máy phát điện dự phòng"]) assert.equal(P.isServiceTender(n), true, n);
 });
 test("gói mua máy kèm dịch vụ vẫn là gói mua máy: 'Mua sắm, lắp đặt máy phát … và bảo dưỡng'", () => {

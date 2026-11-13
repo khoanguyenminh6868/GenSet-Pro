@@ -172,7 +172,7 @@ function specsFinish(t, vals, body, info) {
   }
   return { result, v: { ...v, _notes: [...notes, ...[].concat(v._notes || [])] }, checked };
 }
-const SERVICE_RE = /b[ảa]o\s*d[ưu][ỡo]ng|b[ảa]o\s*tr[ìi]|s[ửu]a\s*ch[ữu]a|đ[ạa]i\s*tu|\bthu[êe]\b|di\s*d[ờo]i|v[ậa]t\s*t[ưu]|ph[ụu]\s*t[ùu]ng|nhi[êe]n\s*li[ệe]u|d[ầa]u\s*nh[ờo]n/i;
+const SERVICE_RE = /b[ảa]o\s*d[ưu][ỡo]ng|b[ảa]o\s*tr[ìi]|s[ửu]a\s*ch[ữu]a|đ[ạa]i\s*tu|\bthu[êe](?![a-zà-ỹ])|di\s*d[ờo]i|v[ậa]t\s*t[ưu]|ph[ụu]\s*t[ùu]ng|nhi[êe]n\s*li[ệe]u|d[ầa]u\s*nh[ờo]n/i;
 const BUY_SET_RE = /(\bmua(\s*s[ắa]m)?|trang\s*b[ịi](\s*m[ớo]i)?|l[ắa]p\s*đ[ặa]t|cung\s*c[ấa]p((\s*(và|,)\s*|\s*)l[ắa]p\s*đ[ặa]t)?)\s*(\d+\s*)?(\(\d+\)\s*)?(t[ổo]\s*|b[ộo]\s*|chi[ếe]c\s*)?m[áa]y\s*ph[áa]t|\bmua(\s*s[ắa]m)?\s+(?!v[ậa]t|vttb|ph[ụu]|thi[ếe]t)[^,;]{0,15},\s*m[áa]y\s*ph[áa]t/i;
 function isServiceTender(name, result) {
   const n = String(name || "").normalize("NFC");
