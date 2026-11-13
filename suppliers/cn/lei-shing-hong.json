@@ -8,7 +8,7 @@
     "zh": null,
     "brands": []
   },
-  "website": null,
+  "website": "https://www.lsh-cat.com/en/",
   "hq": {
     "province": null,
     "city": null
@@ -65,6 +65,16 @@
         "Email: perkins@lsh.com"
       ],
       "file": "sources/lei-shing-hong/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.lsh-cat.com/en/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "October 1994: Lei Shing Hong Machinery Limited was registered and established in Hong Kong."
+      ],
+      "file": "sources/lei-shing-hong/2.md"
     }
   ],
   "confidence": "medium",
