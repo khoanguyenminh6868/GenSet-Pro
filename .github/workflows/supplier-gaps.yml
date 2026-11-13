@@ -1,9 +1,9 @@
 name: Supplier gaps
 
-# Việc cần thu thập, hằng tuần: tính thông số nào thiếu trong danh mục đang chặn nhiều gói nhất (suppliers/gaps.mjs),
-# đăng gaps/current cho màn Nhà cung cấp, và gửi Tìm Thông Số (specreq) cho vài hãng đứng đầu chưa tìm trong 8 tuần;
-# bot Windows nhận các yêu cầu đó như khi bấm nút Tìm Thông Số. Số hãng mỗi tuần: biến GAPS_QUEUE của repo (mặc định 3,
-# đặt 0 để chỉ tính và đăng danh sách).
+# Việc cần thu thập, hằng tuần: tính thông số nào thiếu trong danh mục đang chặn nhiều gói nhất (suppliers/gaps.mjs)
+# và đăng gaps/current cho màn Nhà cung cấp. KHÔNG tự gửi Tìm Thông Số nữa (Khoa, 2026-11-13: "tắt luôn việc tự tìm
+# thông số"): mặc định 0 hãng, chỉ tính và đăng danh sách; Tìm Thông Số chạy khi bấm nút trên web. Muốn gửi cho vài hãng
+# đứng đầu chưa tìm trong 8 tuần thì chạy tay workflow này với ô "queue", hoặc đặt biến GAPS_QUEUE của repo.
 on:
   workflow_dispatch:
     inputs:
@@ -34,7 +34,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          QUEUE: ${{ inputs.queue || vars.GAPS_QUEUE || '3' }}
+          QUEUE: ${{ inputs.queue || vars.GAPS_QUEUE || '0' }}
         run: |
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
           node suppliers/gaps.mjs --post --queue "$QUEUE"
