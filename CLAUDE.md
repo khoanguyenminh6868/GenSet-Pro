@@ -7,3 +7,6 @@
   `bot/Install-GenBidBot.ps1` và `bot/SETUP-CLAUDE.md`. Stop hook `genbid-hsmt\Test-GenBidBotGit.ps1` chặn kết thúc lượt khi còn khác.
 - Không đưa token (`.genbid-ingest-token`, `.claude-bot-token`, `.firecrawl-key`) hay tệp trạng thái `.genbid-*.json` vào git.
 - Khoa nói "setup bot trên máy khác" → làm theo `bot/SETUP-CLAUDE.md`.
+- Quy tắc và bẫy theo thư mục: `web/CLAUDE.md`, `suppliers/CLAUDE.md` (tự nạp khi làm việc trong thư mục đó). Bẫy mới phát hiện thì ghi vào đó, không ghi vào bộ nhớ.
+- Sửa mã bằng Edit/Write, không dùng heredoc bash hay `node -e` (hỏng dấu gạch chéo ngược, xuống dòng). Git Bash đổi đối số bắt đầu bằng hai dấu gạch chéo thành một.
+- Checkout chính `C:\Projects\GenSet Pro\GenSet-Pro` là thư mục bot đang chạy: luôn để `main`, sửa code trong worktree `wt-*` từ `origin/main`.

@@ -8,7 +8,7 @@ metadata:
   modified: 2026-11-13T00:29:03.871Z
 ---
 
-**Luồng:** `bidpricereq/<TBMT>` (web, hoặc tự gửi sau mỗi lượt Gợi ý cấu hình) → `suppliers/bidprice-bot.mjs run --key` → `bidprice/<TBMT>`. Code chọn gói cũ từ `bidhist` (`web/bidprice.js`, dùng chung web + bot) → agent Opus xếp mỗi gói giống/gần/khác kèm câu trích nguyên văn → 3 mức giá = phân vị tỷ lệ giá trúng/giá gói, chỉ từ gói ≥2 nhà thầu, cần ≥3 gói. Agent không ghi số tiền và giữ mức đã xếp ở lượt trước (buộc xếp lại: `GENBID_BIDPRICE_RERATE=1`). Thử không đăng: `bidprice-bot.mjs try --key K --kva N --price P`. Hậu kiểm: `suppliers/bidprice-backtest.mjs`.
+**Luồng:** `bidpricereq/<TBMT>` (web, hoặc tự gửi sau mỗi lượt Gợi ý cấu hình) → `suppliers/bidprice-bot.mjs run --key` → `bidprice/<TBMT>`. Code chọn gói cũ từ `bidhist` (`web/bidprice.js`, dùng chung web + bot) → agent Opus xếp mỗi gói giống/gần/khác kèm câu trích nguyên văn → 3 mức giá = phân vị tỷ lệ giá trúng/giá gói, chỉ từ gói ≥2 nhà thầu, cần ≥3 gói. Agent không ghi số tiền và giữ mức đã xếp ở lượt trước (buộc xếp lại: `GENBID_BIDPRICE_RERATE=1`). Lệnh thử và bẫy code: `suppliers/CLAUDE.md`, `web/CLAUDE.md`.
 
 ## Quy tắc Khoa chốt (chọn gói tương tự)
 - Công suất lệch ≤5% (10% khi HSMT đòi đồng bộ thương hiệu), so cùng mức liên tục/dự phòng. Xếp theo công suất, giá gói, độ giống cấu hình HSMT, cùng chủ đầu tư. KHÔNG xét hình thức đấu thầu, tuổi gói.
@@ -19,9 +19,8 @@ metadata:
 - Chỉ dùng gói có cạnh tranh (≥2 nhà thầu).
 
 ## Báo giá NCC và giá vốn (web)
-- Tỷ giá + thuế GTGT lưu MỘT lần ở `quote/_cost` cho mọi gói; mọi vòng lặp qua `state.quote` phải bỏ khoá bắt đầu bằng `_`; lưu `quote/*` phải giữ trường khác (`{...cũ, ...mới}`). Không đoán tỷ giá.
+- Tỷ giá + thuế GTGT nhập MỘT lần, dùng chung cho mọi gói. Không đoán tỷ giá.
 - Giá vốn chỉ lấy báo giá mà mọi dòng khớp hãng HSMT chỉ định. Báo giá >180 ngày là cũ.
-- Chữ trên màn hình: "Chi phí phát sinh" (không dùng "khoản thêm"). Danh sách gợi ý tự vẽ, không dùng `<datalist>` (Khoa chê xấu). Web ghi "% gói cũ trúng ≥ mức này", không gọi là xác suất thắng.
 - Bot chưa đọc tệp báo giá ra dòng giá (đang nhập tay).
 
 ## Số liệu thị trường (bidhist, đo 09/11, 1.627 lô)
@@ -43,6 +42,4 @@ metadata:
 - Phân vị nội suy (em nghiêng không làm).
 - Gói đòi đồng bộ thương hiệu thường thiếu gói cũ tương tự → không ra giá.
 
-**Bẫy:** `numIn` coi "." là phân cách nghìn. Thử giao diện: mở gói bằng `#goi/<TBMT>` rồi bấm tab; xoá localStorage `genbid:capScan` sau khi đổi dữ liệu thử.
-
-Liên quan [[config-suggest]], [[session-log]].
+Liên quan [[config-suggest]], [[quy-tac-luong]].

@@ -20,4 +20,6 @@ Bot chạy từ `C:\Projects\GenSet Pro\genbid-hsmt\` (KHÔNG chạy từ repo);
 
 **Kiến trúc (03/11):** `GenBid-Bot.ps1` chỉ điều phối, mỗi lượt là tiến trình con `-Job <tệp>` (`.genbid-bot-jobs\`). 3 nhóm: browser (Lấy tệp/Sync/lịch, một lượt), ai (không giới hạn — Khoa), config (một `config-bot.mjs run` cho mọi gói, đọc hàng chờ mỗi 20 s; chạy cả Tìm NCC, Tìm Thông Số, giá đấu). Bot lấy yêu cầu từ Vercel `/api/requests`; nhịp tim ~60 s, web báo máy tắt sau 3 phút.
 
+**Đọc tệp (genbid-sync.js):** Tesseract + tessdata_best ở `.genbid-tessdata-best`; `tar.exe` hỏng với đường dẫn tiếng Việt (chép sang tên không dấu), RAR dùng UnRAR.exe; .doc qua Word COM lưu format 2 + UTF-8. VNeGP Agent hay treo → khởi động lại Agent; khởi động lại lượt specs phải tắt cả Chrome hồ sơ `.genbid-browser-spec`. Chữ ký `sig` của feed phải khớp ở search-extract.js, genbid-sync.js, Merge-GenBidFeed.ps1.
+
 **Trả bằng API key (Khoa 11–12/11):** có tệp `C:\Projects\GenSet Pro\.anthropic-api-key` thì các lượt Claude của bot dùng API; hạn mức 100 USD/tháng, làm mới ngày 2; sổ `.anthropic-api-spend.jsonl`, cấu hình `.anthropic-api-budget.json` (≥90 USD hoặc API báo hết tiền → tự về gói tháng tới kỳ sau).
