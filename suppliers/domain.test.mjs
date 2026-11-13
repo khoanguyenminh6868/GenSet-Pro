@@ -101,11 +101,11 @@ test("matches: số trong câu trả lời là kết quả làm tròn (0,5%), kh
   assert.equal(CV.matches(96, [94.67, 97.56]), false); // giữa khoảng nhưng không phải đầu nào: agent phải ghi hai đầu
 });
 
-test("matches: đại lượng nhỏ không đơn vị (cosφ) không được khớp nhờ sàn tuyệt đối 0,05", { todo: "sàn 0,05 làm cosφ 0,80 'khớp' kết quả 0,85" }, () => {
+test("matches: đại lượng nhỏ không đơn vị (cosφ) không được khớp nhờ sàn tuyệt đối 0,05", () => {
   assert.equal(CV.matches(0.8, 0.85), false);
 });
 
-test("compute chặn đầu vào vô lý về vật lý: cosφ > 1, hiệu suất > 100%, số cực lẻ; nhận nhiệt độ ≤ 0 °F", { todo: "compute chỉ kiểm số dương" }, () => {
+test("compute chặn đầu vào vô lý về vật lý: cosφ > 1, hiệu suất > 100%, số cực lẻ; nhận nhiệt độ ≤ 0 °F", () => {
   assert.ok(calc("kva_from_kw", { P_kW: 400, pf: 1.2 }).error, "cosφ 1,2");
   assert.ok(calc("kwe_from_kwm", { P_kWm: 440, eff_pct: 105 }).error, "hiệu suất 105%");
   assert.ok(calc("rpm_from_poles", { f_Hz: 50, poles: 3 }).error, "3 cực");
@@ -142,9 +142,11 @@ test("công suất của tổ máy, không phải của máy biến áp / UPS / 
   assert.deepEqual(capacity(["Trạm biến áp 630kVA và máy phát điện 500kVA"]), { value: 500, unit: "kVA" });
 });
 
-test("kvaOf đọc dấu nghìn kiểu Anh và MVA như capacity", { todo: "kvaOf('1,250 kVA') = 1,25; kvaOf('2 MVA') = null (0 tên gói thật mắc phải, 13/11)" }, () => {
+test("kvaOf đọc dấu nghìn kiểu Anh như capacity; MVA chỉ capacity đọc (tên gói MW là tổ máy nhà máy điện)", () => {
   assert.equal(BP.kvaOf("Máy phát điện 1,250 kVA"), 1250);
-  assert.equal(BP.kvaOf("Máy phát điện 2 MVA"), 2000);
+  assert.equal(BP.kvaOf("Máy phát điện 1,250 kVA dự phòng"), 1250);
+  assert.deepEqual(BP.kvaRated("Máy phát điện 1,250 kVA dự phòng"), { kva: 1250, rating: "standby" });
+  assert.equal(BP.kvaOf("Máy phát điện 2 MVA"), null);
 });
 
 test("chế độ định mức: liên tục (PRP) và dự phòng (ESP) cách nhau 10% là MỘT tổ máy", () => {
@@ -198,7 +200,9 @@ test("isGensetName / bidKind: mua tổ máy, dịch vụ, di dời, tổ máy c�
   for (const [name, genset, kind] of cases) { assert.equal(BP.isGensetName(name), genset, name); assert.equal(BP.bidKind(name), kind, name); }
 });
 
-test("isGensetName nhận chữ viết tắt MPĐ", { todo: "\\b sau chữ Đ không khớp: 'Cung cấp MPĐ 100kVA' bị coi không phải máy phát (web/bidprice.js và genbid-sync.js)" }, () => {
+// Thử sửa 13/11 rồi hoàn lại: 0 tên gói thật được lợi, nhưng 126 dòng hàng hoá / vật tư "MPĐ diesel - Dây curoa…" thành
+// "tổ máy" (unitsOf, isSetRow đếm theo isGensetName). Muốn sửa phải tách luật cho tên gói và cho dòng hàng hoá.
+test("isGensetName nhận chữ viết tắt MPĐ", { todo: "\\b sau chữ Đ không khớp; sửa thẳng làm dòng vật tư MPĐ thành tổ máy" }, () => {
   assert.equal(BP.isGensetName("Cung cấp MPĐ 100kVA"), true);
   assert.equal(BP.isGensetName("Mua sắm MPĐ dự phòng cho trạm BTS"), true);
 });
@@ -295,8 +299,10 @@ test("engineMins / litres: dung tích xi lanh theo L, cc, cm³; bình dầu, nh�
   assert.equal(litres(""), null);
 });
 
-test("litres không đọc in³ (datasheet Mỹ) thành cc", { todo: "litres('912 in3') = 0,912 L thay vì 14,9 L hoặc null (danh mục hiện chưa có dòng in³)" }, () => {
-  assert.notEqual(litres("912 in3"), 0.912);
+test("litres không đọc in³ (datasheet Mỹ) thành cc", () => {
+  assert.equal(litres("912 in3"), 14.945);
+  assert.equal(litres("912 cu. in."), 14.945);
+  assert.equal(litres("5.9 L (359 in3)"), 5.9);
 });
 
 test("dải công suất ứng viên: 100–120% cỡ HSMT; máy nhỏ ≤ 30 kVA (24 kW) tới 140% (Khoa 12/11)", () => {
@@ -357,23 +363,23 @@ test("mã yêu cầu: cách HSMT thật gọi từng chỉ tiêu", () => {
   for (const [item, requirement, code] of cases) assert.equal(codeOf({ item, requirement }), code, `${item}: ${requirement}`);
 });
 
-test("mã yêu cầu: tên chuẩn của mỗi mã phải đọc ngược lại ra chính mã đó", { todo: "4 mã trượt: fuel_system → other, alt_avr → voltage, alt_standard → other, ctl_display_lang → ctl_measure (check hiếm khi mang code nên bị tra lại theo tên)" }, () => {
+test("mã yêu cầu: tên chuẩn của mỗi mã phải đọc ngược lại ra chính mã đó", () => {
   const bad = REQ_CODES.filter((c) => !c.byCode && codeOf({ item: c.item }) !== c.code).map((c) => `${c.code} → ${codeOf({ item: c.item })}`);
   assert.deepEqual(bad, []);
 });
 
-test("mã yêu cầu: AVR là bộ điều chỉnh điện áp của đầu phát, không phải điện áp định mức của tổ máy", { todo: "352/355 dòng 'điều chỉnh điện áp' của phân tích thật ra mã voltage → bị gộp chung với yêu cầu 400/230 V" }, () => {
+test("mã yêu cầu: AVR là bộ điều chỉnh điện áp của đầu phát, không phải điện áp định mức của tổ máy", () => {
   assert.equal(codeOf({ item: "Điều chỉnh điện áp tự động (AVR)", requirement: "Có" }), "alt_avr");
   assert.equal(codeOf({ item: "Bộ điều chỉnh điện áp", requirement: "AVR" }), "alt_avr");
   assert.equal(codeOf({ item: "Độ điều chỉnh điện áp", requirement: "± 1%" }), "alt_vreg");
 });
 
-test("mã yêu cầu: 'cấp cách nhiệt', 'cấp nhiệt độ giới hạn' là cấp cách điện của đầu phát", { todo: "34+ dòng 'đầu phát: cấp cách nhiệt' ra mã other" }, () => {
+test("mã yêu cầu: 'cấp cách nhiệt', 'cấp nhiệt độ giới hạn' là cấp cách điện của đầu phát", () => {
   assert.equal(codeOf({ item: "Cấp cách nhiệt", requirement: "H", part: "alternator" }), "alt_insulation");
   assert.equal(codeOf({ item: "Cấp tăng nhiệt", requirement: "F", part: "alternator" }), "alt_insulation");
 });
 
-test("mã yêu cầu: dòng ngắn mạch đầu phát chịu được (300% / 10 s) không phải chức năng bảo vệ của bộ điều khiển", { todo: "55/80 dòng 'ngắn mạch' ra ctl_protection, gồm 'Khả năng chịu dòng ngắn mạch ≥ 300% trong 10 giây' của đầu phát" }, () => {
+test("mã yêu cầu: dòng ngắn mạch đầu phát chịu được (300% / 10 s) không phải chức năng bảo vệ của bộ điều khiển", () => {
   assert.equal(codeOf({ item: "Khả năng chịu dòng ngắn mạch", requirement: "≥ 300% trong vòng 10 giây", part: "alternator" }), "alt_short_circuit");
   assert.equal(codeOf({ item: "Dòng duy trì ngắn mạch", requirement: "3859A duy trì trong vòng 10 giây", part: "alternator" }), "alt_short_circuit");
   // Bảo vệ ngắn mạch của bộ điều khiển vẫn là ctl_protection.

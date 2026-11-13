@@ -23,9 +23,10 @@ export const REQ_CODES = [
   R("genset_model", "Model tổ máy", "genset", "core", /(model|m[ãa]\s*hi[ệe]u|ki[ểe]u\s*lo[ạa]i)\s*(c[ủu]a\s*)?(t[ổo]\s*m[áa]y|m[áa]y\s*ph[áa]t)|(t[ổo]\s*m[áa]y|m[áa]y\s*ph[áa]t)[^\n]{0,20}\bmodel\b/i),
   R("genset_origin", "Xuất xứ tổ máy", "genset", "core", /(xu[ấa]t\s*x[ứu]|n[ơo]i\s*s[ảa]n\s*xu[ấa]t)[^\n]{0,25}(t[ổo]\s*m[áa]y|m[áa]y\s*ph[áa]t)|(t[ổo]\s*m[áa]y|m[áa]y\s*ph[áa]t)[^\n]{0,40}xu[ấa]t\s*x[ứu]|nguy[êe]n\s*chi[ếe]c|nh[ậa]p\s*kh[ẩa]u\s*(đ[ồo]ng\s*b[ộo]|nguy[êe]n|100)/i),
   R("brand_sync", "Đồng bộ thương hiệu", "genset", "core", /đ[ồo]ng\s*b[ộo]\s*(0?\d|hai|ba|th[ưư][ơo]ng\s*hi[ệe]u|c[ùu]ng|b[ởo]i|t[ừu]|ch[íi]nh)|c[ùu]ng\s*(m[ộo]t\s*)?(h[ãa]ng|th[ưư][ơo]ng\s*hi[ệe]u|nh[ãa]n\s*hi[ệe]u|nh[àa]\s*s[ảa]n\s*xu[ấa]t)/i, { byCode: true }),
-  R("alt_vreg", "Ổn định điện áp", "alternator", "core", /([ổo]n\s*đ[ịi]nh|bi[ếe]n\s*thi[êe]n|dao\s*đ[ộo]ng|sai\s*s[ốo]|đ[ộo]\s*ch[íi]nh\s*x[áa]c)\s*(c[ủu]a\s*)?đi[ệe]n\s*[áa]p|voltage\s*(regulation|variation|stability|accuracy)|±\s*0[.,]?\d*\s*%/i),
+  R("alt_vreg", "Ổn định điện áp", "alternator", "core", /([ổo]n\s*đ[ịi]nh|bi[ếe]n\s*thi[êe]n|dao\s*đ[ộo]ng|sai\s*s[ốo]|đ[ộo]\s*ch[íi]nh\s*x[áa]c|đ[ộo]\s*đi[ềe]u\s*ch[ỉi]nh)\s*(c[ủu]a\s*)?đi[ệe]n\s*[áa]p|voltage\s*(regulation|variation|stability|accuracy)|±\s*0[.,]?\d*\s*%/i),
   R("freq_regulation", "Ổn định tần số", "genset", "core", /([ổo]n\s*đ[ịi]nh|bi[ếe]n\s*thi[êe]n|dao\s*đ[ộo]ng|sai\s*s[ốo]|đ[ộo]\s*ch[íi]nh\s*x[áa]c)\s*t[ầa]n\s*s[ốo]|frequency\s*(regulation|variation|stability)/i),
-  R("voltage", "Điện áp", "genset", "core", /đi[ệe]n\s*[áa]p(?![^\n]{0,20}([ắa]c\s*quy|đ[ềe]|kh[ởo]i\s*đ[ộo]ng|\bDC\b|đi[ềe]u\s*khi[ểe]n|m[ộo]t\s*chi[ềe]u))|\b(380|400|415)\s*\/\s*(220|230|240)\s*V/i),
+  // Not "(bộ) điều chỉnh điện áp" (the AVR, alt_avr): 352 of 355 such lines of the analyses read as the set's voltage (2026-11-13).
+  R("voltage", "Điện áp", "genset", "core", /(?<!đi[ềe]u\s*ch[ỉi]nh\s*)đi[ệe]n\s*[áa]p(?![^\n]{0,20}([ắa]c\s*quy|đ[ềe]|kh[ởo]i\s*đ[ộo]ng|\bDC\b|đi[ềe]u\s*khi[ểe]n|m[ộo]t\s*chi[ềe]u))|\b(380|400|415)\s*\/\s*(220|230|240)\s*V/i),
   R("frequency", "Tần số", "genset", "core", /t[ầa]n\s*s[ốo](?![^\n]{0,20}(bi[ếe]n\s*thi[êe]n|[ổo]n\s*đ[ịi]nh|sai\s*s[ốo]|dao\s*đ[ộo]ng))|\b50\s*Hz/i),
   R("phases", "Số pha", "genset", "core", /s[ốo]\s*pha|\b3\s*pha|ba\s*pha|(^|[^\d])1\s*pha|m[ộo]t\s*pha|3\s*-?\s*phase|single\s*-?\s*phase/i),
   R("current", "Dòng điện định mức", "genset", "core", /d[òo]ng\s*đi[ệe]n\s*(đ[ịi]nh\s*m[ứu]c|danh\s*đ[ịi]nh|đ[ầa]u\s*ra|\(?\s*A\s*\))|rated\s*current|\bIn\s*[=:≥]/i),
@@ -71,12 +72,12 @@ export const REQ_CODES = [
   // được động cơ khởi động trực tiếp, bơm chữa cháy, UPS / biến tần, và cho bảo vệ chọn lọc làm việc. Trước alt_type,
   // whose words also take "PMG" / "excit".
   R("alt_excitation", "Kích từ đầu phát (PMG / AREP)", "alternator", "core", /\bPMG\b|\bAREP\b|nam\s*ch[âa]m\s*v[ĩi]nh\s*c[ửu]u|permanent\s*magnet|k[íi]ch\s*t[ừu]\s*(ph[ụu]|ri[êe]ng|đ[ộo]c\s*l[ậa]p|b[ằa]ng\s*m[áa]y\s*ph[áa]t\s*ph[ụu])/i),
-  R("alt_short_circuit", "Dòng ngắn mạch duy trì (300% / 10 s)", "alternator", "core", /ng[ắa]n\s*m[ạa]ch\s*(duy\s*tr[ìi]|b[ềe]n\s*v[ữu]ng)|sustained\s*short|short\s*-?\s*circuit\s*(current\s*)?(sustain|capab|capacity|withstand)|(300\s*%|\b3\s*x?\s*I\s*[nN]\b)[^\n]{0,40}?\b10\s*%?\s*(s\b|gi[âa]y|sec)/i),
+  R("alt_short_circuit", "Dòng ngắn mạch duy trì (300% / 10 s)", "alternator", "core", /ng[ắa]n\s*m[ạa]ch\s*(duy\s*tr[ìi]|b[ềe]n\s*v[ữu]ng)|(?<!(ATS|t[ủu]|ACB|MCCB|m[áa]y\s*c[ắa]t|busway|thanh\s*c[áa]i)[^\n]{0,60})(ch[ịi]u\s*(đ[ựu]ng\s*)?(d[òo]ng\s*)?(đi[ệe]n\s*)?|duy\s*tr[ìi]\s*)ng[ắa]n\s*m[ạa]ch|sustained\s*short|short\s*-?\s*circuit\s*(current\s*)?(sustain|capab|capacity|withstand)|(300\s*%|\b3\s*x?\s*I\s*[nN]\b)[^\n]{0,40}?\b10\s*%?\s*(s\b|gi[âa]y|sec)/i),
   R("alt_type", "Kiểu đầu phát (không chổi than, tự kích)", "alternator", "core", /ki[ểe]u\s*(đ[ầa]u|c[ủu])\s*ph[áa]t|lo[ạa]i\s*(đ[ầa]u|c[ủu])\s*ph[áa]t|ch[ổo]i\s*than|brushless|t[ựu]\s*k[íi]ch|k[íi]ch\s*t[ừu]|\bPMG\b|excit|đ[ồo]ng\s*b[ộo]\s*3\s*pha|synchronous/i),
   R("alt_power", "Công suất đầu phát", "alternator", "core", /(?<!h[ệe]\s*s[ốo]\s*)c[ôo]ng\s*su[ấa]t[^\n]{0,20}(đ[ầa]u|c[ủu])\s*ph[áa]t|(đ[ầa]u|c[ủu])\s*ph[áa]t[^\n]{0,30}c[ôo]ng\s*su[ấa]t|alternator\s*(output|rating|power)/i),
-  R("alt_insulation", "Cấp cách điện", "alternator", "core", /c[ấa]p\s*c[áa]ch\s*đi[ệe]n|c[áa]ch\s*đi[ệe]n\s*(c[ấa]p|lo[ạa]i|class)?\s*[FH]\b|insulation|đ[ộo]\s*t[ăa]ng\s*nhi[ệe]t|temperature\s*rise/i),
+  R("alt_insulation", "Cấp cách điện", "alternator", "core", /c[ấa]p\s*c[áa]ch\s*đi[ệe]n|c[ấa]p\s*(c[áa]ch|t[ăa]ng)\s*nhi[ệe]t|c[ấa]p\s*nhi[ệe]t\s*đ[ộo]\s*gi[ớo]i\s*h[ạa]n|c[áa]ch\s*đi[ệe]n\s*(c[ấa]p|lo[ạa]i|class)?\s*[FH]\b|insulation|đ[ộo]\s*t[ăa]ng\s*nhi[ệe]t|temperature\s*rise/i),
   R("alt_ip", "Cấp bảo vệ đầu phát (IP)", "alternator", "core", /c[ấa]p\s*b[ảa]o\s*v[ệe]|\bIP\s?\d\d\b|protection\s*(class|degree)/i),
-  R("alt_avr", "Điều chỉnh điện áp (AVR)", "alternator", "core", /\bAVR\b|đi[ềe]u\s*ch[ỉi]nh\s*đi[ệe]n\s*[áa]p\s*t[ựu]\s*đ[ộo]ng|b[ộo]\s*[ổo]n\s*[áa]p|voltage\s*regulator|\bDSR\b|\bR\s?\d{3}\b/i),
+  R("alt_avr", "Điều chỉnh điện áp (AVR)", "alternator", "core", /\bAVR\b|đi[ềe]u\s*ch[ỉi]nh\s*đi[ệe]n\s*[áa]p|b[ộo]\s*[ổo]n\s*[áa]p|voltage\s*regulator|\bDSR\b|\bR\s?\d{3}\b/i),
   R("alt_poles", "Số cực đầu phát", "alternator", "core", /s[ốo]\s*c[ựu]c|\b[24]\s*c[ựu]c|\b[24]\s*-?\s*poles?\b/i),
   R("alt_bearing", "Ổ đỡ đầu phát", "alternator", "core", /[ổo]\s*(đ[ỡo]|bi|tr[ụu]c|l[ăa]n)|v[òo]ng\s*bi|bearing/i),
   R("alt_pitch", "Bước quấn dây đầu phát (2/3)", "alternator", "core", /b[ưư][ớo]c\s*(d[âa]y|qu[ấa]n|c[ựu]c)|\b2\s*\/\s*3\b|winding\s*pitch/i),
@@ -84,7 +85,7 @@ export const REQ_CODES = [
   R("alt_efficiency", "Hiệu suất đầu phát", "alternator", "core", /hi[ệe]u\s*su[ấa]t(?![^\n]{0,15}c[ấa]p)|efficiency/i),
   R("alt_thd", "Méo sóng hài (THD)", "alternator", "core", /s[óo]ng\s*h[àa]i|\bTHD\b|harmonic|\bTIF\b|\bTHF\b/i),
   R("alt_cooling", "Làm mát đầu phát", "alternator", "core", /(đ[ầa]u|c[ủu])\s*ph[áa]t[^\n]{0,30}l[àa]m\s*m[áa]t|l[àa]m\s*m[áa]t[^\n]{0,20}((đ[ầa]u|c[ủu])\s*ph[áa]t|b[ằa]ng\s*qu[ạa]t)|\bIC\s?0?1\b|l[àa]m\s*m[áa]t|cooling/i),
-  R("alt_standard", "Tiêu chuẩn đầu phát", "alternator", "core", /(đ[ầa]u|c[ủu])\s*ph[áa]t[^\n]{0,40}(ti[êe]u\s*chu[ẩa]n|IEC|BS\s*\d|NEMA|VDE)|(IEC\s*60034|NEMA\s*MG|BS\s*5000|VDE\s*0530)/i),
+  R("alt_standard", "Tiêu chuẩn đầu phát", "alternator", "core", /(đ[ầa]u|c[ủu])\s*ph[áa]t[^\n]{0,40}(ti[êe]u\s*chu[ẩa]n|IEC|BS\s*\d|NEMA|VDE)|ti[êe]u\s*chu[ẩa]n[^\n]{0,20}(đ[ầa]u|c[ủu])\s*ph[áa]t|(IEC\s*60034|NEMA\s*MG|BS\s*5000|VDE\s*0530)/i),
   // ---- controller ----
   R("ctl_make", "Hãng bộ điều khiển", "controller", "core", /(h[ãa]ng|th[ưư][ơo]ng\s*hi[ệe]u|nh[ãa]n\s*hi[ệe]u|nh[àa]\s*s[ảa]n\s*xu[ấa]t)[^\n]{0,20}đi[ềe]u\s*khi[ểe]n|đi[ềe]u\s*khi[ểe]n[^\n]{0,40}(h[ãa]ng|th[ưư][ơo]ng\s*hi[ệe]u|nh[ãa]n\s*hi[ệe]u|nh[àa]\s*s[ảa]n\s*xu[ấa]t)|\b(Deep\s*-?Sea|SmartGen|ComAp|DEIF|Woodward|Datakom|PowerCommand|EMCP|Decision[\s-]*Maker)\b/i),
   R("ctl_model", "Model bộ điều khiển", "controller", "core", /(model|m[ãa]\s*hi[ệe]u)[^\n]{0,10}đi[ềe]u\s*khi[ểe]n|đi[ềe]u\s*khi[ểe]n[^\n]{0,40}\b(model|m[ãa]\s*hi[ệe]u)\b|\b(DSE|HGM|InteliLite|InteliGen|DKG)\s?-?\d{2,4}/i),
@@ -200,11 +201,16 @@ export const codesIn = (text) => {
 // The code of one requirement the agent (or the analysis) wrote: its own `code` when it is in the list; else the first
 // code its item names, those of its part first (an "Hệ thống làm mát" under alternator is alt_cooling); else the first
 // its item and requirement together name, again its part first; else "other".
+const BY_ITEM = new Map(REQ_CODES.filter((c) => !c.byCode).map((c) => [normTxt(c.item).toLowerCase(), c.code]));
 export function codeOf(r) {
   if (r?.code && (CODE_BY.has(r.code) || r.code === OTHER)) return r.code;
   const item = normTxt(r?.item), both = `${item}: ${normTxt(r?.requirement)}`;
   const part = r?.part, pick = (text, byPart) => REQ_CODES.find((c) => !c.byCode && (!byPart || c.part === part) && c.words.test(text))?.code;
   if (!item) return OTHER;
+  // The list's own name of a code is that code ("Ngôn ngữ, màn hình bộ điều khiển" read as ctl_measure by its words:
+  // a check seldom carries its code and is looked up again by the name withCode gave it, 2026-11-13).
+  const own = BY_ITEM.get(item.toLowerCase());
+  if (own) return own;
   return (part && pick(item, true)) || pick(item, false) || (part && pick(both, true)) || pick(both, false) || OTHER;
 }
 // A requirement normalized by its code: the list's item name, part and level (the agent's level stays only for "other").

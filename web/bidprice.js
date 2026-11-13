@@ -21,7 +21,7 @@
   function kvaOf(text) {
     const t = String(text || "").normalize("NFC"), m = capPick(t, [...t.matchAll(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/gi)]);
     if (!m) return null;
-    const v = Number(m[1].replace(/\.(?=\d{3}\b)/, "").replace(",", "."));
+    const v = numOf(m);
     return v > 0 ? (/kw/i.test(m[2]) ? v / 0.8 : v) : null;
   }
   // The rating a power figure is given at (2026-11-06 audit: the name of a tender gives the prime power, its HSMT often the
@@ -29,7 +29,8 @@
   // standby in the same clause as the figure ("500 kVA liên tục; 550 kVA dự phòng", "Công suất định mức (Standby) 2500kVA").
   const PRIME_RE = /li[êe]n\s*t[ụu]c|\bprime\b|\bPRP\b|\bCOP\b|continuous|c[ơo]\s*b[ảa]n/i, STANDBY_RE = /d[ựu]\s*ph[òo]ng|\bstandby\b|\bESP\b|emergency|kh[ẩa]n\s*c[ấa]p/i;
   const ratingIn = (s) => { const p = PRIME_RE.test(s), b = STANDBY_RE.test(s); return p === b ? null : p ? "prime" : "standby"; };
-  const numOf = (m) => Number(m[1].replace(/\.(?=\d{3}\b)/, "").replace(",", "."));
+  // "1.250" and "1,250" are 1250 (a group of three digits is thousands, as config-bot.mjs capacity reads it); "12,5" is 12.5.
+  const numOf = (m) => Number(/^\d{1,3}[.,]\d{3}$/.test(m[1]) ? m[1].replace(/[.,]/, "") : m[1].replace(",", "."));
   function kvaRated(text) {
     const t = String(text || "").normalize("NFC"), ms = [...t.matchAll(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\b/gi)], m = capPick(t, ms);
     if (!m) return null;
