@@ -10,7 +10,7 @@
       "Lance Power"
     ]
   },
-  "website": null,
+  "website": "https://www.lance-power.co.uk/",
   "hq": {
     "province": null,
     "city": null
@@ -69,6 +69,16 @@
         "Thanks to Lance Power’s UK stock holding"
       ],
       "file": "sources/lance-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.lance-power.co.uk/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "UK INDUSTRIAL GENERATOR MANUFACTURER"
+      ],
+      "file": "sources/lance-power/2.md"
     }
   ],
   "confidence": "low",

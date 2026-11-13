@@ -10,7 +10,7 @@
       "Weiman"
     ]
   },
-  "website": null,
+  "website": "https://www.wt-motor.com/",
   "hq": {
     "province": "Fujian",
     "city": "Fuan"
@@ -76,9 +76,739 @@
         "Weiman’s decision to use the full range of Perkins electric power engines, from the 400 through to the 4000 Series, in its generator sets"
       ],
       "file": "sources/weiman-fujian/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.wt-motor.com/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "FUJIAN WEIMAN POWER TECHNOLOGY CO., LTD. is a professional power generation equipment manufacturer, Our expertise is built on hundreds of thousands of generator sets installed worldwide since 1993."
+      ],
+      "file": "sources/weiman-fujian/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://wt-motor.com/product/gas-generator-set/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | | Size & Weight"
+      ],
+      "file": "sources/weiman-fujian/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://wt-motor.com/product/wt-wantong-engine/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Typical generator capacity (kVA) | Diesel Engine Model | Engine output (kW) | Type"
+      ],
+      "file": "sources/weiman-fujian/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://wt-motor.com/product/wt-yanmar/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download"
+      ],
+      "file": "sources/weiman-fujian/103.md"
+    },
+    {
+      "n": 105,
+      "url": "https://wt-motor.com/product/wt-wantong/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | | Size & Weight"
+      ],
+      "file": "sources/weiman-fujian/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://wt-motor.com/product/wt-fawde/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download"
+      ],
+      "file": "sources/weiman-fujian/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://wt-motor.com/product/wt-mitsubishi-mhi/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download"
+      ],
+      "file": "sources/weiman-fujian/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://wt-motor.com/product/wt-mtu/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download"
+      ],
+      "file": "sources/weiman-fujian/108.md"
+    },
+    {
+      "n": 109,
+      "url": "https://wt-motor.com/product/deutz/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | | Technical Data of Diesel Engine(50hz/1500rpm) | Download"
+      ],
+      "file": "sources/weiman-fujian/109.md"
+    },
+    {
+      "n": 110,
+      "url": "https://wt-motor.com/product/cummins/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) |"
+      ],
+      "file": "sources/weiman-fujian/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://wt-motor.com/product/perkins/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) |"
+      ],
+      "file": "sources/weiman-fujian/111.md"
+    },
+    {
+      "n": 112,
+      "url": "https://wt-motor.com/product/wt-weichai/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | | Size & Weight | Download"
+      ],
+      "file": "sources/weiman-fujian/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://wt-motor.com/product/wt-yangdong/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download"
+      ],
+      "file": "sources/weiman-fujian/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://wt-motor.com/product/wt-ricardo/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator | Size & Weight | Download"
+      ],
+      "file": "sources/weiman-fujian/114.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-03",
-  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Gas Generator Set – WEIMAN",
+      "header": [
+        "| Gensets | | Size & Weight",
+        "| Model | Gensets power(KW/KVA) | Engine model | Open Type Size (mm) | Weight (KG) | Silent Type Size (mm) | Weight (KG) | Download",
+        "| Prime | Standby"
+      ],
+      "rows": [
+        "| GF-20 | 16 | 20 | 17,6 | 22 | WT2.3D25E | 1700x650x1100 | 464 | 2000x900x1200 | 749 | More data",
+        "| GF-24 | 20 | 25 | 22 | 28 | WT2.3D33E | 1700*650*1100 | 484 | 2250x900x1200 | 789 | More data",
+        "| GF-30 | 24 | 30 | 26,4 | 33 | WT2.3D33E | 1830*650*1100 | 670 | 2250*900*1250 | 975 | More data",
+        "| GF-40 | 30 | 38 | 33 | 41 | WT2.3D40E | 1830*650*1100 | 685 | 2250*900*1250 | 985 | More data",
+        "| GF-50 | 40 | 50 | 44 | 55 | WT4.1D66E | 1900*750*1320 | 712 | 2350*950*1250 | 1030 | More data",
+        "| GF-64 | 50 | 63 | 55 | 69 | WT4.1D66E | 1900*860*1150 | 910 | 2550*1000*1280 | 1030 | More data",
+        "| GF-80 | 60 | 75 | 66 | 83 | WT4.1D80E | 1900*860*1150 | 1020 | 2700*1100*1400 | 1075 | More data",
+        "| GF-100 | 75 | 94 | 82,5 | 103 | WT4.1D100E | 2100*860*1150 | 1130 | 2700*1100*1400 | 1085 | More data",
+        "| GF-120 | 108 | 135 | 118,8 | 149 | WT6D132E | 2500*1000*1650 | 1340 | 3350*1100*1650 | 2230 | More data",
+        "| GF-160 | 120 | 150 | 132 | 165 | WT6D152E | 2500*1000*1650 | 1510 | 3450*1100*1650 | 2420 | More data",
+        "| GF-200 | 150 | 188 | 165 | 206 | WT10D200E | 3180*1050*1750 | 1910 | 3600*1100*1650 | 2780 | More data",
+        "| GF-240 | 160 | 200 | 184 | 230 | WT10D238E | 3280*1050*1750 | 2130 | 3900*1400*2260 | 2920 | More data",
+        "| GF-250 | 180 | 225 | 198 | 248 | WT10D238E | 3280*1050*1750 | 2130 | 3900*1400*2260 | 2920 | More data",
+        "| GF-260 | 200 | 250 | 220 | 275 | WT10D264E | 3280*1050*1750 | 2220 | 3900*1400*2260 | 3000 | More data",
+        "| GF-300 | 260 | 325 | 286 | 358 | WT10D320E | 3380*1050*1750 | 2360 | 3900*1400*2260 | 3111 | More data",
+        "| GF-320 | 300 | 375 | 330 | 413 | WT13D385E | 3880*1550*2100 | 2750 | 4200*1600*2300 | 3560 | More data",
+        "| GF-400 | 320 | 400 | 352 | 440 | WT13D405E | 3880*1550*2100 | 2880 | 4500*1800*2300 | 3850 | More data",
+        "| GF-500 | 360 | 450 | 396 | 495 | WT13D440E | 3880*1550*2100 | 3020 | 4500*1800*2300 | 4130 | More data",
+        "| GF-640 | 400 | 500 | 440 | 550 | WT13D490E | 3880*1550*2100 | 3160 | 4500*1800*2300 | 4330 | More data"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "WT-WANTONG ENGINE – WEIMAN",
+      "header": [
+        "| Typical generator capacity (kVA) | Diesel Engine Model | Engine output (kW) | Type",
+        "| 50HZ | 1500rpm | Cylinder | Flywheel & Housing | Fuel system | Download",
+        "| Prime | Standby | COP/Prime | Standby",
+        "| (PRP) | (ESP)"
+      ],
+      "rows": [
+        "| 20 | 22 | WT2.3D25E | 23 | 25 | L4 | SAE4#7.5″ | e-gov. | More data",
+        "| 30 | 33 | WT2.3D33E | 30 | 33 | L4 | SAE4#7.5″ | e-gov. | More data",
+        "| 38 | 41 | WT2.3D40E | 36 | 40 | L4 | SAE4#7.5″ | e-gov. | More data",
+        "| 45 | 50 | WT2.3D48E | 44 | 48 | L4 | SAE4#7.5″ | e-gov. | More data",
+        "| 63 | 69 | WT4.1D66E | 60 | 66 | L4 | SAE3#11.5″ | e-gov. | More data",
+        "| 75 | 83 | WT4.1D80E | 72 | 80 | L4 | SAE3#11.5″ | e-gov. | More data",
+        "| 94 | 103 | WT4.1D100E | 90 | 100 | L4 | SAE3#11.5″ | e-gov. | More data",
+        "| 100 | 110 | WT4.1D113E | 103 | 113 | L4 | SAE3#11.5″ | e-gov. | More data",
+        "| 135 | 149 | WT6D132E | 120 | 132 | L6 | SA1#11.5″ | e-gov. | More data",
+        "| 150 | 165 | WT6D152E | 138 | 152 | L6 | SA1#11.5″ | e-gov. | More data",
+        "| 188 | 206 | WT10D200E | 182 | 200 | L6 | SA1#14″ | e-gov. | More data",
+        "| 200 | 230 | WT10D238E | 216 | 238 | L6 | SA1#14″ | e-gov. | More data",
+        "| 225 | 248 | WT10D238E | 216 | 238 | L6 | SA1#14″ | e-gov. | More data",
+        "| 250 | 275 | WT10D264E | 240 | 264 | L6 | SA1#14″ | e-gov. | More data",
+        "| 325 | 358 | WT10D320E | 290 | 320 | L6 | SA1#14″ | e-gov. | More data",
+        "| 325 | 358 | WT12D353E | 288 | 253 | L6 | SA1#14″ | e-gov. | More data",
+        "| 375 | 413 | WT13D385E | 350 | 385 | L6 | SA1#14″ | e-gov. | More data",
+        "| 400 | 440 | WT13D405E | 368 | 404 | L6 | SA1#14″ | e-gov. | More data",
+        "| 450 | 495 | WT13D440E | 392 | 440 | L6 | SA1#14″ | e-gov. | More data",
+        "| 500 | 550 | WT13D490E | 450 | 490 | L6 | SA1#14″ | e-gov. | More data"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "WT-YANMAR – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp.",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-YM7 | 5 | 6 | 6 | 7 | 3TNM68-GGE | 5.5 | 6.1 | 265 | 1.71 | 3×68×72 | 0.784 | 23.5:1 | TC | More data",
+        "| WT-YM10 | 7.5 | 9 | 8.25 | 10 | 3TNV76-GGE | 8.2 | 9 | 258 | 2.49 | 3×76×82 | 1.116 | 23.5:1 | TC | More data",
+        "| WT-YM11 | 8 | 10 | 8.8 | 11 | 3TNV82A-GGE | 9.9 | 11 | 245 | 2.85 | 3×82×84 | 1.331 | 19.2:1 | TC | More data",
+        "| WT-YM14 | 10 | 13 | 11 | 14 | 3TNV88-GGE | 12.2 | 13.2 | 245 | 3.52 | 3×88×90 | 1.642 | 19.1:1 | TC | More data",
+        "| WT-YM17 | 12 | 15 | 13.2 | 17 | 3TNV84T-GGE | 14 | 15.8 | 245 | 4.04 | 3×84×90 | 1.496 | 19:1 | TC | More data",
+        "| WT-YM19 | 14 | 18 | 15.4 | 19 | 4TNV88-GGE | 16.4 | 18 | 245 | 4.73 | 4×88×90 | 2.19 | 19.1:1 | TC | More data",
+        "| WT-YM22 | 16 | 20 | 17.6 | 22 | 4TNV84T-GGE | 19.1 | 21 | 245 | 5.51 | 4×84×90 | 1.995 | 18.9:1 | TC | More data",
+        "| WT-YM33 | 24 | 30 | 26.4 | 33 | 4TNV98-GGE | 30.7 | 34.1 | 231 | 8.34 | 4×98×110 | 3.319 | 18.5:1 | TC | More data",
+        "| WT-YM47 | 34 | 43 | 37.4 | 47 | 4TNV98T-GGE | 37.7 | 41.4 | 222 | 9.85 | 4×98×110 | 3.319 | 18.1:1 | TC | More data",
+        "| WT-YM55 | 40 | 50 | 44 | 55 | 4TNV106-GGE | 44.9 | 49.4 | 237.6 | 12.55 | 4×106×125 | 4.412 | 18:1 | TC | More data",
+        "| WT-YM66 | 48 | 60 | 52.8 | 66 | 4TNV106T-GGE | 50.9 | 56 | 220 | 13.17 | 4×106×125 | 4.412 | 18:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "WT-WANTONG – WEIMAN",
+      "header": [
+        "| Gensets | | Size & Weight",
+        "| Model | Gensets power(KW/KVA) | Engine model | Open Type Size (mm) | Weight (KG) | Silent Type Size (mm) | Weight (KG) | Download",
+        "| Prime | Standby"
+      ],
+      "rows": [
+        "| WT-WT22 | 16 | 20 | 17,6 | 22 | WT2.3D25E | 1700x650x1100 | 464 | 2000x900x1200 | 749 | More data",
+        "| WT-WT27.5 | 20 | 25 | 22 | 28 | WT2.3D33E | 1700*650*1100 | 484 | 2250x900x1200 | 789 | More data",
+        "| WT-WT33 | 24 | 30 | 26,4 | 33 | WT2.3D33E | 1830*650*1100 | 670 | 2250*900*1250 | 975 | More data",
+        "| WT-WT42 | 30 | 38 | 33 | 41 | WT2.3D40E | 1830*650*1100 | 685 | 2250*900*1250 | 985 | More data",
+        "| WT-WT50 | 36 | 45 | 39,6 | 50 | WT2.3D48E | 1830*630*1320 | 687 | 2350*950*1250 | 995 | More data",
+        "| WT-WT55 | 40 | 50 | 44 | 55 | WT4.1D66E | 1900*750*1320 | 712 | 2350*950*1250 | 1030 | More data",
+        "| WT-WT69 | 50 | 63 | 55 | 69 | WT4.1D66E | 1900*860*1150 | 910 | 2550*1000*1280 | 1030 | More data",
+        "| WT-WT80 | 60 | 75 | 66 | 83 | WT4.1D80E | 1900*860*1150 | 1020 | 2700*1100*1400 | 1075 | More data",
+        "| WT-WT100 | 75 | 94 | 82,5 | 103 | WT4.1D100E | 2100*860*1150 | 1130 | 2700*1100*1400 | 1085 | More data",
+        "| WT-WT150 | 108 | 135 | 118,8 | 149 | WT6D132E | 2500*1000*1650 | 1340 | 3350*1100*1650 | 2230 | More data",
+        "| WT-WT165 | 120 | 150 | 132 | 165 | WT6D152E | 2500*1000*1650 | 1510 | 3450*1100*1650 | 2420 | More data",
+        "| WT-WT206 | 150 | 188 | 165 | 206 | WT10D200E | 3180*1050*1750 | 1910 | 3600*1100*1650 | 2780 | More data",
+        "| WT-WT230 | 160 | 200 | 184 | 230 | WT10D238E | 3280*1050*1750 | 2130 | 3900*1400*2260 | 2920 | More data",
+        "| WT-WT250 | 180 | 225 | 198 | 248 | WT10D238E | 3280*1050*1750 | 2130 | 3900*1400*2260 | 2920 | More data",
+        "| WT-WT275 | 200 | 250 | 220 | 275 | WT10D264E | 3280*1050*1750 | 2220 | 3900*1400*2260 | 3000 | More data",
+        "| WT-WT360 | 260 | 325 | 286 | 358 | WT10D320E | 3380*1050*1750 | 2360 | 3900*1400*2260 | 3111 | More data",
+        "| WT-WT360 | 260 | 325 | 286 | 358 | WT12D353E | 3580*1550*2100 | 2560 | 3900*1400*2260 | 3320 | More data",
+        "| WT-WT415 | 300 | 375 | 330 | 413 | WT13D385E | 3880*1550*2100 | 2750 | 4200*1600*2300 | 3560 | More data",
+        "| WT-WT440 | 320 | 400 | 352 | 440 | WT13D405E | 3880*1550*2100 | 2880 | 4500*1800*2300 | 3850 | More data",
+        "| WT-WT495 | 360 | 450 | 396 | 495 | WT13D440E | 3880*1550*2100 | 3020 | 4500*1800*2300 | 4130 | More data",
+        "| WT-WT550 | 400 | 500 | 440 | 550 | WT13D490E | 3880*1550*2100 | 3160 | 4500*1800*2300 | 4330 | More data"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "WT-FAWDE – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp.",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-FD17 | 12 | 15 | 13 | 17 | 4DW81-23D | 17 | 19 | 240 | 4.8 | 4×85×100 | 2.27 | 17:1 | N/A | More data",
+        "| WT-FD22 | 16 | 20 | 18 | 22 | 4DW91-29D | 21 | 23 | 240 | 5.93 | 4×90×100 | 2.54 | 17:1 | N/A | More data",
+        "| WT-FD28 | 20 | 25 | 22 | 28 | 4DW92-35D | 26 | 29 | 230 | 7.04 | 4×90×100 | 2.54 | 17:1 | TC | More data",
+        "| WT-FD33 | 24 | 30 | 26 | 33 | 4DW93-42D | 31 | 34 | 216 | 7.88 | 4×90×100 | 2.54 | 17:1 | TC | More data",
+        "| WT-FD39 | 28 | 35 | 31 | 39 | 4DX21-45D | 33 | 36 | 230 | 8.93 | 4×102×118 | 3.86 | 17:1 | N/A | More data",
+        "| WT-FD44 | 32 | 40 | 35 | 44 | 4DX22-50D | 37 | 41 | 220 | 9.58 | 4×102×118 | 3.86 | 17:1 | TC | More data",
+        "| WT-FD55 | 40 | 50 | 44 | 55 | 4DX23-65D | 48 | 53 | 215 | 12.14 | 4×102×118 | 3.86 | 17:1 | TC | More data",
+        "| WT-FD69 | 50 | 63 | 55 | 69 | 4110/125Z-09D | 65 | 72 | 215 | 16.44 | 4×110×125 | 4.75 | 17:1 | TC | More data",
+        "| WT-FD103 | 75 | 94 | 83 | 103 | CA4DF2-12D | 84 | 92 | 205 | 20.26 | 4×110×125 | 4.75 | 17:1 | TC | More data",
+        "| WT-FD110 | 80 | 100 | 88 | 110 | CA6DF2D-14D | 96 | 104 | 202 | 22.81 | 6×110×115 | 6.55 | 17:1 | TC | More data",
+        "| WT-FD138 | 100 | 125 | 110 | 138 | CA6DF2-17D | 125 | 138 | 202 | 29.71 | 6×110×125 | 7.13 | 17:1 | TC | More data",
+        "| WT-FD165 | 120 | 150 | 132 | 165 | CA6DF2-19D | 140 | 154 | 200 | 32.94 | 6×110×125 | 7.13 | 17:1 | TC | More data",
+        "| WT-FD220 | 160 | 200 | 176 | 220 | CA6DL1-24D | 176 | 194 | 196 | 40.58 | 6×110×135 | 7.7 | 17.5:1 | TC | More data",
+        "| WT-FD248 | 180 | 225 | 198 | 248 | CA6DL2-27D | 205 | 226 | 195 | 47.03 | 6×112×145 | 8.57 | 17.5:1 | TC | More data",
+        "| WT-FD275 | 200 | 250 | 220 | 275 | CA6DL2-30D | 227 | 251 | 195 | 52.08 | 6×112×145 | 8.57 | 17.5:1 | TC | More data",
+        "| WT-FD330 | 240 | 300 | 264 | 330 | CA6DM2J-39D | 287 | 316 | 195 | 65.84 | 6×123×155 | 11.04 | 17.5:1 | TC | More data",
+        "| WT-FD358 | 260 | 325 | 286 | 358 | CA6DM2J-41D | 300 | 330 | 195 | 68.82 | 6×123×155 | 11.04 | 17.5:1 | TC | More data",
+        "| WT-FD413 | 300 | 375 | 330 | 413 | CA6DN1-45D | 332 | 365 | 191 | 74.6 | 6×131×155 | 12.53 | 18:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "WT-MITSUBISHI – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp.",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-M7 | 5 | 6 | 5.5 | 7 | L3E-65SAG | 6.4 | 7.5 | 280 | 2.11 | 3×76×70 | 0.952 | 23:1 | N/A | More data",
+        "| WT-M11 | 8 | 10 | 8.8 | 11 | S3L2-65SAG | 9.9 | 11 | 280 | 3.26 | 3×78×92 | 6.373 | 22:1 | N/A | More data",
+        "| WT-M17 | 12 | 15 | 13.2 | 17 | S4L2-65SAG | 14 | 15.4 | 300 | 4.94 | 4×78×92 | 1.758 | 22:1 | N/A | More data",
+        "| WT-M19 | 16 | 20 | 14.9 | 19 | S4Q2-65SAG | 20.6 | 22.4 | 260 | 6.30 | 4×88×103 | 2.505 | 22:1 | N/A | More data",
+        "| WT-M33 | 24 | 30 | 26.4 | 33 | S4S-65SAG | 28.7 | 31.6 | 260 | 8.78 | 4×94×120 | 3.331 | 22:1 | N/A | More data",
+        "| WT-M47 | 34 | 43 | 37.4 | 47 | S4S-DT65SAG | 37.5 | 41.2 | 240 | 10.59 | 4×94×120 | 3.331 | 17:1 | TC | More data",
+        "| WT-M50 | 36 | 45 | 39.6 | 50 | S4K-D65SAG | 42.7 | 46.7 | 245 | 12.31 | 4×102×130 | 4.249 | 17:1 | N/A | More data",
+        "| WT-M66 | 48 | 60 | 52.8 | 66 | S4K-DT65SAG | 54.7 | 59.7 | 235 | 15.12 | 4×102×130 | 4.249 | 17:1 | TC | More data",
+        "| WT-M80 | 58 | 73 | 63.8 | 80 | S6KD65SAG | 64 | 70.5 | 245 | 18.45 | 6×102×130 | 6.373 | 17:1 | N/A | More data",
+        "| WT-M103 | 75 | 94 | 82.5 | 103 | S6K-DT65SAG | 81.6 | 89.7 | 230 | 22.08 | 6×102×130 | 6.373 | 17:1 | TC | More data",
+        "| WT-M743 | 540 | 675 | 594 | 743 | S6R2-PTA | 575 | 635 | 205 | 138.68 | 6×170×220 | 29.96 | 14.1:1 | TC | More data",
+        "| WT-M825 | 600 | 750 | 660 | 825 | S6R-PTAA | 645 | 710 | 211 | 160.11 | 6×170×220 | 29.96 | 14.1:1 | TC | More data",
+        "| WT-M880 | 640 | 800 | 704 | 880 | S12A2-PTA | 679 | 747 | 214 | 170.95 | 12×150×160 | 33.93 | 14.5:1 | TC | More data",
+        "| WT-M1170 | 850 | 1063 | 935 | 1169 | S12H-PTA | 930 | 1023 | 206 | 225.39 | 12×150×175 | 37.11 | 14.0:1 | TC | More data",
+        "| WT-M1375 | 1000 | 1250 | 1100 | 1375 | S12R-PTA | 1080 | 1190 | 205 | 260.47 | 12×170×180 | 49.03 | 14.0:1 | TC | More data",
+        "| WT-M1513 | 1100 | 1375 | 1210 | 1513 | S12R-PTA2 | 1165 | 1285 | 205 | 280.97 | 12×170×180 | 49.03 | 13.5:1 | TC | More data",
+        "| WT-M1650 | 1200 | 1500 | 1320 | 1650 | S12R-PTAA2 | 1277 | 1404 | 205 | 307.98 | 12×170×180 | 49.03 | 13.5:1 | TC | More data",
+        "| WT-M1925 | 1400 | 1750 | 1540 | 1925 | S16R-PTA | 1450 | 1590 | 207 | 353.12 | 16×170×180 | 65.37 | 14.0:1 | TC | More data",
+        "| WT-M2063 | 1500 | 1875 | 1650 | 2063 | S16R-PTA2 | 1600 | 1760 | 207 | 389.65 | 16×170×180 | 65.37 | 13.5:1 | TC | More data",
+        "| WT-M2200 | 1600 | 2000 | 1760 | 2200 | S16R-PTAA2 | 1684 | 1895 | 207 | 410.10 | 16×170×180 | 65.37 | 14.0:1 | TC | More data",
+        "| WT-M2475 | 1800 | 2250 | 1980 | 2475 | S16R2-PTAW | 1875 | 2083 | 207 | 456.62 | 16×170×220 | 79.9 | 14.0:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "WT-MITSUBISHI – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp.",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-MC825 | 600 | 750 | 660 | 825 | S6R-PTAA-C | 645 | 710 | 211 | 161.11 | 6×170×220 | 29.96 | 14.1:1 | TC | More data",
+        "| WT-MC1375 | 1000 | 1250 | 1100 | 1375 | S12R-PTA-C | 1080 | 1190 | 205 | 260.47 | 12×170×180 | 49.03 | 14.0:1 | TC | More data",
+        "| WT-MC1513 | 1100 | 1375 | 1210 | 1513 | S12R-PTA2-C | 1165 | 1285 | 205 | 280.97 | 12×170×180 | 49.03 | 13.5:1 | TC | More data",
+        "| WT-MC1650 | 1200 | 1500 | 1320 | 1650 | S12R-PTAA2-C | 1277 | 1404 | 205 | 307.98 | 12×170×180 | 49.03 | 13.5:1 | TC | More data",
+        "| WT-MC1925 | 1400 | 1750 | 1540 | 1925 | S16R-PTA-C | 1450 | 1590 | 207 | 353.12 | 16×170×180 | 65.37 | 14.0:1 | TC | More data",
+        "| WT-MC2063 | 1500 | 1875 | 1650 | 2063 | S16R-PTA2-C | 1600 | 1760 | 207 | 389.65 | 16×170×180 | 65.37 | 13.5:1 | TC | More data",
+        "| WT-MC2200 | 1600 | 2000 | 1760 | 2200 | S16R-PTAA2-C | 1684 | 1895 | 207 | 410.10 | 16×170×180 | 65.37 | 14.0:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "WT-MTU – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp.",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-MT303 | 220 | 275 | 242 | 303 | 6R1600G10F | 242 | 266 | 196 | 55.8 | 6×122×150 | 10.5 | 17.5:1 | TC | More data",
+        "| WT-MT344 | 250 | 313 | 275 | 344 | 6R1600G20F | 269 | 296 | 195 | 61.7 | 6×122×150 | 10.5 | 17.5:1 | TC | More data",
+        "| WT-MT413 | 300 | 375 | 330 | 413 | 8V1600G10F | 325 | 358 | 210 | 80.29 | 8×122×150 | 14 | 17.5:1 | TC | More data",
+        "| WT-MT440 | 320 | 400 | 352 | 440 | 8V1600G20F | 358 | 394 | 193 | 81.29 | 8×122×150 | 14 | 17.5:1 | TC | More data",
+        "| WT-MT500 | 360 | 450 | 396 | 495 | 10V1600G10F | 407 | 448 | 191 | 91.46 | 10×122×150 | 17.5 | 17.5:1 | TC | More data",
+        "| WT-MT550 | 400 | 500 | 440 | 550 | 10V1600G20F | 448 | 493 | 190 | 100.14 | 10×122×150 | 17.5 | 17.5:1 | TC | More data",
+        "| WT-MT660 | 480 | 600 | 528 | 660 | 12V1600G10F | 524 | 576 | 192 | 118.36 | 12×122×150 | 21 | 17.5:1 | TC | More data",
+        "| WT-MT723 | 525 | 656 | 578 | 723 | 12V1600G20F | 576 | 634 | 192 | 130.11 | 12×122×150 | 21 | 17.5:1 | TC | More data",
+        "| WT-MT715 | 520 | 650 | 572 | 715 | 12V2000G25 | 580 | 635 | 203 | 138.52 | 12×130×150 | 23.88 | 16:1 | TC | More data",
+        "| WT-MT860 | 640 | 800 | 685 | 856 | 12V2000G65 | 695 | 765 | 202 | 165.16 | 12×130×150 | 23.88 | 16:1 | TC | More data",
+        "| WT-MT1004 | 730 | 913 | 803 | 1004 | 16V2000G25 | 810 | 890 | 198 | 188.68 | 16×130×150 | 31.84 | 16:1 | TC | More data",
+        "| WT-MT1100 | 800 | 1000 | 880 | 1100 | 16V2000G65 | 890 | 975 | 198 | 207.32 | 16×130×150 | 31.84 | 16:1 | TC | More data",
+        "| WT-MT1240 | 900 | 1125 | 990 | 1238 | 18V2000G65 | 1000 | 1100 | 202 | 237.65 | 18×130×150 | 35.82 | 16:1 | TC | More data",
+        "| WT-MT1375 | 1000 | 1250 | 1100 | 1375 | 18V2000G26F | 1102 | 1212 | 199 | 258 | 18×135×156 | 40.2 | 17.5:1 | TC | More data",
+        "| WT-MT1510 | 1100 | 1375 | 1210 | 1513 | 12V4000G23R | 1205 | 1325 | 195 | 276.4 | 12×170×210 | 57.2 | 16.5:1 | TC | More data",
+        "| WT-MT1800 | 1320 | 1650 | 1420 | 1775 | 12V4000G23 | 1420 | 1575 | 221 | 369.2 | 12×170×210 | 57.2 | 16.4:1 | TC | More data",
+        "| WT-MT2000 | 1450 | 1813 | 1600 | 2000 | 12V4000G63 | 1575 | 1750 | 193 | 357.62 | 12×170×210 | 57.2 | 16.4:1 | TC | More data",
+        "| WT-MT2270 | 1650 | 2063 | 1815 | 2269 | 16V4000G23 | 1798 | 1965 | 192 | 406.14 | 16×170×210 | 76.3 | 16.4:1 | TC | More data",
+        "| WT-MT2475 | 1800 | 2250 | 1980 | 2475 | 16V4000G63 | 1965 | 2185 | 191 | 441.55 | 16×170×210 | 76.3 | 16.4:1 | TC | More data",
+        "| WT-MT2750 | 2000 | 2500 | 2200 | 2750 | 20V4000G23 | 2200 | 2420 | 195 | 504.71 | 20×170×210 | 95.4 | 16.4:1 | TC | More data",
+        "| WT-MT3000 | 2200 | 2750 | 2400 | 3000 | 20V4000G63 | 2420 | 2670 | 193 | 549.48 | 20×170×210 | 95.4 | 16.4:1 | TC | More data",
+        "| WT-MT3200 | 2400 | 3000 | 2600 | 3250 | 20V4000GG63L | 2590 | 2850 | 192 | 585.04 | 20×170×210 | 95.4 | 16.4:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "WT-DEUTZ – WEIMAN",
+      "header": [
+        "| Gensets | | Technical Data of Diesel Engine(50hz/1500rpm) | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp.",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-D14F | 10 | 13 | 11 | 14 | F2L912D | 14 | 17 | 238 | 3.92 | 2×100×120 | 1.88 | 17:1 | N/A | More data",
+        "| WT-D17F | 12 | 15 | 13 | 16 | F2L912D | 14 | 17 | 238 | 3.92 | 2×100×120 | 1.88 | 17:1 | N/A | More data",
+        "| WT-D28F | 20 | 25 | 22 | 28 | F3L912D | 24 | 28 | 232 | 6.55 | 3×100×120 | 2.828 | 17:1 | N/A | More data",
+        "| WT-D33F | 24 | 30 | 27 | 33 | F4L912D | 32 | 38 | 228 | 8.58 | 4×100×120 | 3.77 | 17:1 | N/A | More data",
+        "| WT-D40F | 30 | 38 | 33 | 41 | F4L913D | 34 | 40 | 228 | 9.12 | 4×102×125 | 4.086 | 17:1 | N/A | More data",
+        "| WT-D50F | 36 | 45 | 40 | 50 | F4L912TD | 41 | 48 | 228 | 11 | 4×100×120 | 3.77 | 17:1 | TC | More data",
+        "| WT-D55F | 40 | 50 | 44 | 55 | F6L912D | 48 | 60 | 228 | 12.88 | 6×100×120 | 5.655 | 17:1 | N/A | More data",
+        "| WT-D62F | 45 | 56 | 50 | 62 | F6L913D | 51 | 65 | 228 | 13.68 | 6×102×125 | 6.128 | 17:1 | N/A | More data",
+        "| WT-D70F | 50 | 63 | 55 | 69 | F6L912TD | 61 | 72 | 228 | 16.36 | 6×100×120 | 5.655 | 17:1 | TC | More data",
+        "| WT-D110F | 80 | 100 | 88 | 110 | BF6L913 | 88 | 97 | 220 | 22.78 | 6×102×125 | 6.128 | 18:1 | TC | More data",
+        "| WT-D140F | 100 | 125 | 110 | 138 | BF6L913C | 114 | 125 | 220 | 29.51 | 6×102×125 | 6.128 | 18:1 | TC | More data",
+        "| WT-D176F | 128 | 160 | 141 | 176 | BF8L513 | 147 | 160 | 215 | 37.18 | 8×125×130 | 12.763 | 15.8:1 | TC | More data",
+        "| WT-D220F | 160 | 200 | 176 | 220 | BF8L513C | 176 | 190 | 215 | 44.52 | 8×125×130 | 12.763 | 17:1 | TC | More data",
+        "| 160 | 200 | 176 | 220 | F12L413F | 176 | 190 | 217 | 44.93 | 12×125×130 | 19.144 | 18:1 | N/A | More data"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "WT-DEUTZ – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) |",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp. | Download",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-D33 | 24 | 30 | 26 | 33 | D226B-3 | 32 | 35 | 215 | 8.1 | 3×105×120 | 3.12 | 16.5:1 | N/A | More data",
+        "| WT-D39 | 28 | 35 | 31 | 39 | D226B-3 | 32 | 35 | 215 | 8.1 | 3×105×120 | 3.12 | 16.5:1 | N/A | More data",
+        "| WT-D50 | 36 | 45 | 40 | 50 | TD226B-3 | 47 | 52 | 208 | 11.5 | 3×105×120 | 3.12 | 16:1 | TC | More data",
+        "| WT-D55 | 40 | 50 | 44 | 55 | TD226B-3 | 47 | 52 | 208 | 11.5 | 3×105×120 | 3.12 | 16:1 | TC | More data",
+        "| WT-D66BF | 48 | 60 | 53 | 66 | BF4M2012 | 54 | 60 | 216 | 13.7 | 4×101×126 | 4.03 | 18.4:1 | TC | More data",
+        "| WT-D83BF | 60 | 75 | 66 | 83 | BF4M2012C | 71 | 75 | 217 | 18.1 | 4×101×126 | 4.03 | 18.4:1 | TC | More data",
+        "| WT-D116BF | 84 | 105 | 92 | 116 | BF4M1013EC | 97 | 102 | 212 | 24.2 | 4×108×130 | 4.764 | 19:1 | TC | More data",
+        "| WT-D138BF | 100 | 125 | 110 | 138 | BF4M1013FC | 117 | 129 | 210 | 28.9 | 4×108×130 | 4.764 | 18.1:1 | TC | More data",
+        "| WT-D176BF | 128 | 160 | 141 | 176 | BF6M1013EC | 146 | 153 | 209 | 35.9 | 6×108×130 | 7.146 | 19:1 | TC | More data",
+        "| WT-D206BF | 150 | 188 | 165 | 206 | BF6M1013ECP | 166 | 183 | 208 | 40.6 | 6×108×130 | 7.146 | 18.1:1 | TC | More data",
+        "| WT-D220BF | 160 | 200 | 176 | 220 | BF6M1013FCP1 | 183 | 201 | 212 | 45.6 | 6×108×130 | 7.146 | 18.1:1 | TC | More data",
+        "| WT-D248BF | 180 | 225 | 198 | 248 | BF6M1015-GA | 208 | 231 | 208 | 50.9 | 6×132×145 | 11.906 | 16.5:1 | TC | More data",
+        "| WT-D275BF | 200 | 250 | 220 | 275 | BF6M1015C-G1A | 228 | 250 | 205 | 54.99 | 6×132×145 | 11.906 | 16.5:1 | TC | More data",
+        "| WT-D330BF | 240 | 300 | 264 | 330 | BF6M1015C-G2A | 256 | 285 | 203 | 61.14 | 6×132×145 | 11.906 | 16.5:1 | TC | More data",
+        "| WT-D350BF | 260 | 325 | 280 | 350 | BF6M1015C-G3A | 282 | 314 | 205 | 68.01 | 6×132×145 | 11.906 | 16.5:1 | TC | More data",
+        "| WT-D385BF | 280 | 350 | 308 | 385 | BF6M1015C-G4 | 310 | 345 | 212 | 77.32 | 6×132×145 | 11.906 | 16.5:1 | TC | More data",
+        "| WT-D415BF | 300 | 375 | 330 | 413 | BF6M1015CP-G | 328 | 365 | 215 | 82.96 | 6×132×145 | 11.906 | 16.5:1 | TC | More data",
+        "| WT-D480BF | 350 | 438 | 385 | 481 | BF8M1015C-G1A | 388 | 418 | 206 | 94.03 | 8×132×145 | 15.874 | 16.5:1 | TC | More data",
+        "| WT-D500BF | 360 | 450 | 400 | 500 | BF8M1015C-G2 | 403 | 440 | 215 | 101.94 | 8×132×145 | 15.874 | 16.5:1 | TC | More data",
+        "| WT-D550BF | 400 | 500 | 440 | 550 | BF8M1015CP-G1A | 413 | 459 | 215 | 104.46 | 8×132×145 | 15.874 | 16.5:1 | TC | More data",
+        "| 400 | 500 | 440 | 550 | BF8M1015CP-G2 | 448 | 490 | 220 | 115.95 | 8×132×145 | 15.874 | 16.5:1 | TC | More data",
+        "| WT-D620BF | 450 | 563 | 495 | 619 | BF8M1015CP-G3 | 458 | 509 | 220 | 118.54 | 8×132×145 | 15.874 | 16.5:1 | TC | More data",
+        "| 450 | 563 | 495 | 619 | BF8M1015CP-G4 | 482 | 530 | 220 | 124.75 | 8×132×145 | 15.874 | 16.5:1 | TC | More data",
+        "| WT-D660BF | 480 | 600 | 528 | 660 | BF8M1015CP-G5 | 500 | 560 | 220 | 129.41 | 8×132×145 | 15.874 | 16.5:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "WT-CUMMINS – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) |",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp. | Download",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h |"
+      ],
+      "rows": [
+        "| WT-C28 | 20 | 25 | 22 | 28 | 4B3.9-G1 | 24 | 27 | 245 | 7.1 | 4×102×120 | 3.9 | 17.3:1 | N/A | More data",
+        "| WT-C33 | 24 | 30 | 26 | 33 | 4B3.9-G2 | 24 | 27 | 229 | 6.7 | 4×102×120 | 3.9 | 18.0:1 | N/A | More data",
+        "| WT-C41 | 30 | 38 | 33 | 41 | 4BT3.9-G1 | 36 | 40 | 229 | 10 | 4×102×120 | 3.9 | 17.3:1 | TC | More data",
+        "| WT-C45 | 32 | 40 | 36 | 45 | 4BT3.9-G2 | 36 | 40 | 214 | 9.3 | 4×102×120 | 3.9 | 18.0:1 | TC | More data",
+        "| WT-C66 | 48 | 60 | 53 | 66 | 4BTA3.9-G2 | 58 | 64 | 212 | 14.9 | 4×102×120 | 3.9 | 17.3:1 | TC | More data",
+        "| WT-C80 | 60 | 75 | 66 | 83 | 4BTAA3.9-G11 | 70 | 80 | 208 | 17.6 | 4×102×120 | 3.9 | 17.3:1 | TC | More data",
+        "| WT-C110 | 80 | 100 | 88 | 110 | 6BT5.9-G1 | 86 | 92 | 208 | 21.7 | 6×102×120 | 5.9 | 17.3:1 | TC | More data",
+        "| 80 | 100 | 88 | 110 | 6BT5.9-G2 | 86 | 92 | 214 | 22.3 | 6×102×120 | 5.9 | 17.3:1 | TC | More data",
+        "| WT-C140 | 100 | 125 | 110 | 138 | 6BTA5.9-G2 | 106 | 116 | 211 | 27 | 6×102×120 | 5.9 | 17.3:1 | TC | More data",
+        "| WT-C150 | 112 | 140 | 120 | 150 | 6BTAA5.9-G2 | 120 | 130 | 208 | 30 | 6×102×120 | 5.9 | 17.3:1 | TC | More data",
+        "| WT-C165 | 120 | 150 | 132 | 165 | 6BTAA5.9-G12 | 140 | 155 | 203 | 34 | 6×102×120 | 5.9 | 17.3:1 | TC | More data",
+        "| WT-C206 | 150 | 188 | 165 | 206 | 6CTA8.3-G1 | 163 | 180 | 215 | 42 | 6×114×135 | 8.3 | 17.3:1 | TC | More data",
+        "| 150 | 188 | 165 | 206 | 6CTA8.3-G2 | 163 | 180 | 212 | 42 | 6×114×135 | 8.3 | 17.3:1 | TC | More data",
+        "| WT-C220 | 160 | 200 | 176 | 220 | 6CTAA8.3-G2 | 183 | 200 | 205 | 45 | 6×114×135 | 8.3 | 18.0:1 | TC | More data",
+        "| WT-C280 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2 | 220 | 245 | 197 | 53 | 6×114×145 | 8.9 | 16.6:1 | TC | More data",
+        "| 200 | 250 | 220 | 275 | 6LTAA8.9-G3 | 230 | 255 | 195 | 54 | 6×114×145 | 8.9 | 16.6:1 | TC | More data",
+        "| 200 | 250 | 220 | 275 | NT855-GA | 231 | 254 | 191.8 | 53.4 | 6×140×152 | 14.0 | 15:1 | TC | More data",
+        "| 200 | 250 | 220 | 275 | MTA11-G2A | 234 | 257 | 220 | 60.56 | 6×125×147 | 10.8 | 16.1:1 | TC | More data",
+        "| WT-C330 | 240 | 300 | 264 | 330 | NTA855-G1A | 261 | 291 | 195 | 61.3 | 6×140×152 | 14.0 | 14.5:1 | TC | More data",
+        "| WT-C360 | 260 | 325 | 286 | 358 | NTA855-G1B | 284 | 321 | 208.8 | 71.4 | 6×140×152 | 14.0 | 14:1 | TC | More data",
+        "| 260 | 325 | 286 | 358 | MTAA11-G3 | 282 | 310 | 188 | 62.37 | 6×125×147 | 10.8 | 15:1 | TC | More data",
+        "| WT-C390 | 280 | 350 | 308 | 385 | NTA855-G2A | 310 | 343 | 192.6 | 71.9 | 6×140×152 | 14.0 | 14:1 | TC | More data",
+        "| 280 | 350 | 308 | 385 | NTA855-G4 | 317 | 351 | 197.2 | 75.3 | 6×140×152 | 14.0 | 14:1 | TC | More data",
+        "| WT-C420 | 300 | 375 | 330 | 413 | 6ZTAA13-G3 | 340 | 380 | 189 | 76.5 | 6×130×163 | 13.0 | 17:1 | TC | More data",
+        "| 300 | 375 | 330 | 413 | NTAA855-G7A | 370 | 407 | 200.5 | 89.2 | 6×140×152 | 14.0 | 14:1 | TC | More data",
+        "| WT-C450 | 330 | 413 | 360 | 450 | NTAA855-G7A | 370 | 407 | 200.5 | 89.2 | 6×140×152 | 14.0 | 14:1 | TC | More data",
+        "| WT-C500 | 360 | 450 | 396 | 495 | 6ZTAA13-G2 | 390 | 415 | 192 | 89.1 | 6×130×163 | 13.0 | 17:1 | TC | More data",
+        "| 360 | 450 | 396 | 495 | QSZ13-G2 | 400 | 440 | 191 | 88.8 | 6×130×163 | 13.0 | 17:1 | TC | More data",
+        "| 360 | 450 | 396 | 495 | KTA19-G3 | 403 | 448 | 204 | 97 | 6×159×159 | 18.9 | 13.9:1 | TC | More data",
+        "| WT-C550 | 400 | 500 | 440 | 550 | QSZ13-G3 | 450 | 470 | 193 | 101.0 | 6×130×163 | 13.0 | 17:1 | TC | More data",
+        "| 400 | 500 | 440 | 550 | KTA19-G3A | 448 | 504 | 203 | 106.99 | 6×159×159 | 18.9 | 13.9:1 | TC | More data",
+        "| WT-C600 | 440 | 550 | 484 | 605 | KTAA19-G5 | 470 | 555 | 203 | 112.25 | 6×159×159 | 18.9 | 13.5:1 | TC | More data",
+        "| WT-C650 | 480 | 600 | 520 | 650 | KTAA19-G8 | 523 | 575 | 206 | 126.75 | 6×159×159 | 18.9 | 13.9:1 | TC | More data",
+        "| WT-C688 | 500 | 625 | 550 | 688 | KTAA19-G6A | 550 | 610 | 206 | 134.75 | 6×159×159 | 18.9 | 13.9:1 | TC | More data",
+        "| WT-C729 | 530 | 663 | 583 | 729 | QSKT19-G3 | 574 | 634 | 206 | 139.11 | 6×170×170 | 19.0 | 16.0:1 | TC | More data",
+        "| WT-C825 | 600 | 750 | 660 | 825 | KTA38-G1 | 640 | 711 | 213 | 160.38 | 12×159×159 | 37.8 | 14.5:1 | TC | More data",
+        "| 600 | 750 | 660 | 825 | KTA38-G2 | 664 | 731 | 213 | 166.39 | 12×159×159 | 37.8 | 14.5:1 | TC | More data",
+        "| WT-C880 | 640 | 800 | 704 | 880 | KTA38-G2B | 711 | 789 | 213 | 178.17 | 12×159×159 | 37.8 | 14.5:1 | TC | More data",
+        "| WT-C1000 | 730 | 913 | 800 | 1000 | KTA38-G2A | 813 | 895 | 213 | 203.73 | 12×159×159 | 37.8 | 14.5:1 | TC | More data",
+        "| WT-C1100 | 800 | 1000 | 880 | 1100 | KTA38-G5 | 880 | 970 | 213 | 220.52 | 12×159×159 | 37.8 | 14.5:1 | TC | More data",
+        "| WT-C1240 | 900 | 1125 | 990 | 1238 | KTA38-G9 | 990 | 1089 | 213 | 248.08 | 12×159×159 | 37.8 | 13.9:1 | TC | More data",
+        "| WT-C1400 | 1000 | 1250 | 1100 | 1375 | KTA50-G3 | 1097 | 1207 | 210 | 271.02 | 16×159×159 | 50.3 | 13.9:1 | TC | More data",
+        "| WT-C1540 | 1120 | 1400 | 1232 | 1540 | KTA50-G8 | 1200 | 1320 | 215 | 303.53 | 16×159×159 | 50.3 | 14.9:1 | TC | More data",
+        "| WT-C1650 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 | 1287 | 1429 | 204 | 308.88 | 16×159×159 | 50.3 | 14.9:1 | TC | More data",
+        "| | | | | | | | | | | | | | |"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "WT-CUMMINS – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(60hz/1800rpm) | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp.",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-C33 | 24 | 30 | 26 | 33 | 4B3.9-G2 | 30 | 33 | 238 | 8.6 | 4×102×120 | 3.9 | 18.0:1 | N/A | More data",
+        "| WT-C55 | 40 | 50 | 44 | 55 | 4BT3.9-G2 | 40 | 44 | 221 | 10.7 | 4×102×120 | 3.9 | 18.0:1 | TC | More data",
+        "| WT-C69 | 50 | 63 | 55 | 69 | 4BTA3.9-G2 | 67 | 74 | 214 | 17.4 | 4×102×120 | 3.9 | 17.3:1 | TC | More data",
+        "| WT-C94 | 68 | 85 | 75 | 94 | 4BTAA3.9-G11 | 80 | 90 | 207 | 20.1 | 4×102×120 | 3.9 | 17.3:1 | TC | More data",
+        "| WT-C110 | 80 | 100 | 88 | 110 | 6BT5.9-G2 | 100 | 110 | 235 | 28.5 | 6×102×120 | 5.9 | 17.3:1 | TC | More data",
+        "| WT-C140 | 100 | 125 | 110 | 138 | 6BTA5.9-G2 | 120 | 132 | 211 | 31 | 6×102×120 | 5.9 | 17.3:1 | TC | More data",
+        "| WT-C154 | 112 | 140 | 123 | 154 | 6BTAA5.9-G2 | 132 | 145 | 212 | 34 | 6×102×120 | 5.9 | 17.3:1 | TC | More data",
+        "| WT-C165 | 120 | 150 | 132 | 165 | 6BTAA5.9-G12 | 150 | 165 | 208 | 38 | 6×102×120 | 5.9 | 17.3:1 | TC | More data",
+        "| WT-C206 | 150 | 188 | 165 | 206 | 6CTA8.3-G2 | 170 | 187 | 213 | 44 | 6×114×135 | 8.3 | 17.3:1 | TC | More data",
+        "| WT-C220 | 160 | 200 | 176 | 220 | 6CTAA8.3-G2 | 190 | 209 | 214 | 49 | 6×114×135 | 8.3 | 18.0:1 | TC | More data",
+        "| WT-C248 | 180 | 225 | 198 | 248 | 6LTAA8.9-G2 | 235 | 259 | 208 | 59 | 6×114×145 | 8.9 | 16.6:1 | TC | More data",
+        "| WT-C275 | 200 | 250 | 220 | 275 | 6LTAA8.9-G3 | 255 | 282 | 201 | 62 | 6×114×145 | 8.9 | 16.6:1 | TC | More data",
+        "| WT-C303 | 220 | 275 | 242 | 303 | NT855-GA | 257 | 283 | 191.8 | 53.4 | 6×140×152 | 14.0 | 15:1 | TC | More data",
+        "| WT-C344 | 250 | 313 | 275 | 344 | NTA855-G1 | 287 | 317 | 212.3 | 73.4 | 6×140×152 | 14.0 | 14.5:1 | TC | More data",
+        "| WT-C385 | 280 | 350 | 308 | 385 | NTA855-G1B | 313 | 347 | 208.8 | 71.4 | 6×140×152 | 14.0 | 14:1 | TC | More data",
+        "| WT-C413 | 300 | 375 | 330 | 413 | 6ZTAA13-G3 | 340 | 380 | 200 | 81 | 6×130×163 | 13.0 | 17:1 | TC | More data",
+        "| WT-C440 | 320 | 400 | 352 | 440 | NTA855-G3 | 358 | 399 | 207 | 87 | 6×140×152 | 14.0 | 14:1 | TC | More data",
+        "| WT-C495 | 360 | 450 | 396 | 495 | 6ZTAA13-G2 | 390 | 415 | 192 | 89.1 | 6×130×163 | 13.0 | 17:1 | TC | More data",
+        "| 360 | 450 | 396 | 495 | QSZ13-G2 | 400 | 440 | 194 | 90.2 | 6×130×163 | 13.0 | 17:1 | TC | More data",
+        "| 360 | 450 | 396 | 495 | KTA19-G2 | 392 | 448 | 213 | 98 | 6×159×159 | 18.9 | 14.5:1 | TC | More data",
+        "| WT-C550 | 400 | 500 | 440 | 550 | QSZ13-G3 | 450 | 500 | 199 | 104.1 | 6×130×163 | 13.0 | 17:1 | TC | More data",
+        "| 400 | 500 | 440 | 550 | KTA19-G3 | 463 | 511 | 203 | 111 | 6×159×159 | 18.9 | 13.9:1 | TC | More data",
+        "| WT-C619 | 450 | 563 | 495 | 619 | KTA19-G3A | 507 | 563 | 203 | 121 | 6×159×159 | 18.9 | 13.9:1 | TC | More data",
+        "| WT-C660 | 480 | 600 | 528 | 660 | KTAA19-G5 | 533 | 605 | 213 | 134 | 6×159×159 | 18.9 | 13.5:1 | TC | More data",
+        "| WT-C756 | 550 | 688 | 605 | 756 | KTAA19-G6A | 600 | 664 | 206 | 145 | 6×159×159 | 18.9 | 13:1 | TC | More data",
+        "| WT-C866 | 630 | 788 | 693 | 866 | KTA38-G | 679 | 747 | 193 | 154 | 12×159×159 | 37.8 | 15.5:1 | TC | More data",
+        "| WT-C1001 | 728 | 910 | 801 | 1001 | KTA38-G2 | 809 | 895 | 214 | 204 | 12×159×159 | 37.8 | 14.5:1 | TC | More data",
+        "| WT-C1100 | 800 | 1000 | 880 | 1100 | KTA38-G2A | 915 | 1007 | 209 | 225 | 12×159×159 | 37.8 | 14.5:1 | TC | More data",
+        "| WT-C1238 | 900 | 1125 | 990 | 1238 | KTA38-G4 | 1007 | 1112 | 207 | 245 | 12×159×159 | 37.8 | 13.9:1 | TC | More data",
+        "| WT-C1375 | 1000 | 1250 | 1100 | 1375 | KTA38-G9 | 1110 | 1220 | 199 | 259.87 | 12×159×159 | 37.8 | 13.9:1 | TC | More data",
+        "| WT-C1513 | 1100 | 1375 | 1210 | 1513 | KTA50-G3 | 1220 | 1380 | 203 | 291 | 16×159×159 | 50.3 | 13.9:1 | TC | More data",
+        "| WT-C1733 | 1260 | 1575 | 1386 | 1733 | KTA50-G9 | 1386 | 1657 | 203 | 331 | 16×159×159 | 50.3 | 13.9:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "WT-PERKINS – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) |",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp. | DOWNLOAD",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-P10 | 7 | 8 | 7.7 | 9.6 | 403A-11G1 | 8 | 9 | 248 | 3.0 | 3×77×81 | 1.131 | 23:1 | N/A | More data",
+        "| 7 | 8 | 7.7 | 9.6 | 403D-11G | 8 | 9 | 248 | 2.6 | 3×77×81 | 1.131 | 23:1 | N/A | More data",
+        "| WT-P15 | 10 | 12.5 | 11 | 14 | 403D-15G | 12 | 13 | 248 | 3.6 | 3×84×90 | 1.496 | 22.5:1 | N/A | More data",
+        "| 10 | 12.5 | 11 | 14 | 403A-15G1 | 12 | 13 | 248 | 3.7 | 3×84×90 | 1.496 | 22.5:1 | N/A | More data",
+        "| WT-P16 | 12 | 15 | 13.2 | 16.5 | 403A-15G2 | 13 | 15 | 250 | 5.0 | 3×84×90 | 1.496 | 22.5:1 | N/A | More data",
+        "| WT-P22 | 16 | 20 | 17.6 | 22 | 404A-22G1 | 18 | 20 | 237 | 5.3 | 4×84×100 | 2.216 | 23.3:1 | N/A | More data",
+        "| 16 | 20 | 17.6 | 22 | 404D-22G | 18 | 20 | 237 | 5.3 | 4×84×100 | 2.216 | 23.3:1 | N/A | More data",
+        "| WT-P28 | 20 | 25 | 22 | 27.5 | 404D-22TD | 25 | 27 | 246 | 7.1 | 4×84×100 | 2.216 | 23.3:1 | TC | More data",
+        "| WT-P33 | 24 | 30 | 26.4 | 33 | 1103A-33G | 28 | 30 | 211.1 | 7.2 | 3×105×127 | 3.3 | 19.25:1 | N/A | More data",
+        "| WT-P50 | 36 | 45 | 40 | 50 | 1103A-33TG1 | 41 | 46 | 207.7 | 10.8 | 3×105×127 | 3.3 | 17.25:1 | TC | More data",
+        "| WT-P66 | 48 | 60 | 53 | 66 | 1103A-33TG2 | 54 | 59 | 217.7 | 14.6 | 3×105×127 | 3.3 | 17.25:1 | TC | More data",
+        "| WT-P69 | 50 | 62.5 | 55 | 69 | 1104A-44TG1 | 58 | 64 | 208 | 14.8 | 4×105×127 | 4.4 | 17.25:1 | TC | More data",
+        "| WT-P88 | 64 | 80 | 70 | 88 | 1104A-44TG2 | 72 | 79 | 208 | 15.66 | 4×105×127 | 4.4 | 17.25:1 | TC | More data",
+        "| 64 | 80 | 70 | 88 | 1104C-44TAG1 | 72 | 79 | 211 | 18.6 | 4×105×127 | 4.41 | 18·2 :1 | TC | More data",
+        "| WT-P110 | 80 | 100 | 88 | 110 | 1104C-44TAG2 | 90 | 100 | 205 | 22.6 | 4×105×127 | 4.41 | 18·2 :1 | TC | More data",
+        "| WT-P150 | 108 | 135 | 119 | 149 | 1106A-70TG1 | 117 | 129 | 206.9 | 26.29 | 6×105×135 | 7.01 | 18.2:1 | TC | More data",
+        "| WT-P165 | 120 | 150 | 132 | 165 | 1106A-70TAG2 | 130 | 144 | 213 | 45.8 | 6×105×135 | 7.01 | 16:1 | TC | More data",
+        "| WT-P200 | 144 | 180 | 158 | 198 | 1106A-70TAG3 | 157 | 172 | 207.2 | 41.6 | 6×105×135 | 7.01 | 16:1 | TC | More data",
+        "| WT-P220 | 160 | 200 | 176 | 220 | 1106A-70TAG4 | 174 | 191 | 206.9 | 42.35 | 6×105×135 | 7.01 | 16:1 | TC | More data",
+        "| 160 | 200 | 176 | 220 | 1506A-E88TAG1 | 184 | 202 | 197.3 | 44.6 | 6×112×149 | 8.8 | 16.1:1 | TC | More data",
+        "| WT-P250 | 180 | 225 | 198 | 248 | 1506A-E88TAG2 | 205 | 228 | 197 | 48.6 | 6×112×149 | 8.8 | 16.1:1 | TC | More data",
+        "| WT-P275 | 200 | 250 | 220 | 275 | 1506A-E88TAG3 | 228 | 250 | 199 | 56 | 6×112×149 | 8.8 | 16.1:1 | TC | More data",
+        "| WT-P330 | 240 | 300 | 264 | 330 | 1506A-E88TAG5 | 273 | 299 | 196 | 65 | 6×112×149 | 8.8 | 16.1:1 | TC | More data",
+        "| WT-P385 | 280 | 350 | 308 | 385 | 2206C-E13TAG2 | 305 | 349 | 209 | 75 | 6×130×157 | 12.5 | 16.3:1 | TC | More data",
+        "| WT-P440 | 320 | 400 | 352 | 440 | 2206C-E13TAG3 | 349 | 392 | 206 | 85 | 6×130×157 | 12.5 | 16.3:1 | TC | More data",
+        "| WT-P495 | 360 | 450 | 396 | 495 | 2506C-E15TAG1 | 396 | 434 | 216 | 99 | 6×137×171 | 15 | 16:1 | TC | More data",
+        "| WT-P550 | 400 | 500 | 440 | 550 | 2506C-E15TAG2 | 435 | 478 | 211 | 106 | 6×137×171 | 15 | 16:1 | TC | More data",
+        "| WT-P660 | 480 | 600 | 528 | 660 | 2806C-E18TAG1A | 522 | 574 | 216 | 129 | 6×145×183 | 18.1 | 14.5:1 | TC | More data",
+        "| WT-P715 | 520 | 650 | 572 | 715 | 2806A-E18TAG2 | 565 | 609 | 202 | 132 | 6×145×183 | 18.1 | 14.5:1 | TC | More data",
+        "| WT-P825 | 600 | 750 | 660 | 825 | 4006-23TAG2A | 632 | 695 | 202 | 155 | 6×160×190 | 22.921 | 13.6:1 | TC | More data",
+        "| WT-P880 | 640 | 800 | 704 | 880 | 4006-23TAG3A | 679 | 760 | 210 | 172 | 6×160×190 | 22.921 | 13.6:1 | TC | More data",
+        "| WT-P1100 | 800 | 1000 | 880 | 1100 | 4008TAG2A | 861 | 947 | 206 | 215 | 8×160×190 | 30.561 | 13.6:1 | TC | More data",
+        "| WT-P1238 | 900 | 1125 | 990 | 1238 | 4008-30TAG3 | 947 | 1055 | 206 | 244 | 8×160×190 | 30.5 | 13.1:1 | TC | More data",
+        "| WT-P1375 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | 1055 | 1166 | 212 | 259 | 12×160×190 | 45.842 | 13.6:1 | TC | More data",
+        "| WT-P1485 | 1080 | 1350 | 1188 | 1485 | 4012-46TWG3A | 1149 | 1263 | 212 | 283 | 12×160×190 | 45.842 | 13.6:1 | TC | More data",
+        "| | 1200 | 1500 | 1320 | 1650 | 4012-46TAG2A | 1267 | 1395 | 200 | 310 | 12×160×190 | 45.842 | 13.6:1 | TC | More data",
+        "| WT-P1856 | 1350 | 1688 | 1485 | 1856 | 4012-46TAG3A | 1440 | 1583 | 208 | 370 | 12×160×190 | 45.842 | 13.6:1 | TC | More data",
+        "| WT-P2035 | 1480 | 1850 | 1628 | 2035 | 4016TAG1A | 1537 | 1690 | 205 | 370.69 | 16×160×190 | 61.123 | 13.6:1 | TC | More data",
+        "| 1480 | 1850 | 1628 | 2035 | 4016-61TRG1 | 1558 | 1684 | 201 | 384 | 16×160×190 | 61.123 | 13.6:1 | TC | More data",
+        "| WT-P2200 | 1600 | 2000 | 1760 | 2200 | 4016TAG2A | 1715 | 1886 | 213 | 400.94 | 16×160×190 | 61.123 | 13.6:1 | TC | More data",
+        "| 1600 | 2000 | 1760 | 2200 | 4016-61TRG2 | 1684 | 1894 | 205 | 422 | 16×160×190 | 61.123 | 13.6:1 | TC | More data",
+        "| WT-P2475 | 1800 | 2250 | 1980 | 2475 | 4016-61TRG3 | 1875 | 2083 | 205 | 470 | 16×160×190 | 61.123 | 13.6:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "WT-PERKINS – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(60hz/1800rpm) |",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp. | DOWNLOAD",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h |"
+      ],
+      "rows": [
+        "| WT-P12 | 9 | 11 | 9.9 | 12 | 403D-11G | 10 | 11 | 248 | 3.0 | 3×77×81 | 1.131 | 23:1 | N/A | More data",
+        "| WT-P17 | 12 | 15 | 13.2 | 17 | 403D-15G | 14 | 16 | 247 | 4.07 | 3×84×90 | 1.496 | 22.5:1 | N/A | More data",
+        "| WT-P18 | 13 | 16 | 14.3 | 18 | 403A-15G2 | 16 | 18 | 261 | 4.32 | 3×84×90 | 1.496 | 22.5:1 | N/A | More data",
+        "| WT-P26 | 19 | 24 | 20.9 | 26 | 404D-22G | 22 | 24 | 233 | 6.2 | 4×84×100 | 2.216 | 23.3:1 | N/A | More data",
+        "| WT-P34 | 25 | 31 | 27.5 | 34 | 404D-22TG | 30 | 33 | 241 | 8.3 | 4×84×100 | 2.216 | 23.3:1 | TC | More data",
+        "| WT-P40 | 28 | 35 | 30.8 | 39 | 1103A-33G | 32 | 35 | 228 | 8.6 | 3×105 x 127 | 3.3 | 19.25:1 | N/A | More data",
+        "| WT-P60 | 42 | 53 | 46.2 | 58 | 1103A-33TG1 | 49 | 54 | 224 | 12.9 | 3×105 x 127 | 3.3 | 17.25:1 | TC | More data",
+        "| WT-P74 | 54 | 68 | 59 | 74 | 1103A-33TG2 | 61 | 68 | 231 | 16.6 | 3×105 x 127 | 3.3 | 17.25:1 | TC | More data",
+        "| WT-P83 | 60 | 75 | 66 | 83 | 1104A-44TG1 | 69 | 76 | 211 | 17.7 | 4×105 x 127 | 4.4 | 17.25:1 | TC | More data",
+        "| WT-P100 | 72 | 90 | 79.2 | 99 | 1104A-44TG2 | 82 | 90 | 231 | 22.3 | 4×105 x 127 | 4.4 | 17.25:1 | TC | More data",
+        "| 72 | 90 | 79.2 | 99 | 1104C-44TAG1 | 80 | 89 | 223 | 22 | 4×105 x 127 | 4.41 | 18.2:1 | TC | More data",
+        "| WT-P124 | 90 | 113 | 99 | 124 | 1104C-44TAG2 | 102 | 112 | 218 | 26.9 | 4×105 x 127 | 4.41 | 18.2 :1 | TC | More data",
+        "| WT-P165 | 120 | 150 | 132 | 165 | 1106A-70TG1 | 134 | 148 | 210.9 | 35.2 | 6×105 x 135 | 7.01 | 18.2:1 | TC | More data",
+        "| WT-P186 | 135 | 169 | 148.5 | 186 | 1106A-70TAG2 | 147 | 164 | 205.1 | 38.2 | 6×105 x 135 | 7.01 | 16:1 | TC | More data",
+        "| WT-C220 | 160 | 200 | 176 | 220 | 1106A-70TAG3 | 173 | 192 | 214.2 | 46.4 | 6×105 x 135 | 7.01 | 16:1 | TC | More data",
+        "| WT-P270 | 196 | 245 | 216 | 270 | 1506A-E88TAG1 | 218 | 239 | 199 | 54.2 | 6×112 x 149 | 8.8 | 16.1:1 | TC | More data",
+        "| WT-P270 | 196 | 245 | 216 | 270 | 1506A-E88TAG2 | 218 | 239 | 199 | 63 | 6×112 x 149 | 8.8 | 16.1:1 | TC | More data",
+        "| WT-P309 | 225 | 281 | 248 | 309 | 1506A-E88TAG3 | 250 | 278 | 198 | 68 | 6×112 x 149 | 8.8 | 16.1:1 | TC | More data",
+        "| WT-P371 | 270 | 338 | 297 | 371 | 1506A-E88TAG5 | 300 | 333 | 201 | 77 | 6×112 x 149 | 8.8 | 16.1:1 | TC | More data",
+        "| WT-P385 | 280 | 350 | 308 | 385 | 2206C-E13TAG2 | 349 | 381 | 204 | 84 | 6×130 x 157 | 12.5 | 16.3:1 | TC | More data",
+        "| WT-P440 | 320 | 400 | 352 | 440 | 2206A-E13TAG3 | 349 | 381 | 204 | 84 | 6×130 x 157 | 12.5 | 16.3:1 | TC | More data",
+        "| WT-P500 | 360 | 450 | 396 | 495 | 2506C-E15TAG1 | 396 | 434 | 199 | 100 | 6×137 x 171 | 15 | 16:1 | TC | More data",
+        "| WT-P550 | 400 | 500 | 440 | 550 | 2506C-E15TAG2 | 435 | 478 | 199 | 100 | 6×137 x 171 | 15 | 16:1 | TC | More data",
+        "| WT-P715 | 520 | 650 | 572 | 715 | 2806C-E18TAG1A | 543 | 598 | 206 | 130 | 6×145×183 | 18.1 | 14.5:1 | TC | More data",
+        "| WT-P825 | 600 | 750 | 660 | 825 | 4006-23TAG2A | 638 | 702 | 222 | 177 | 6×160×190 | 22.921 | 13.6:1 | TC | More data",
+        "| WT-P 935 | 680 | 850 | 748 | 935 | 4006-23TAG3A | 715 | 795 | 226 | 200 | 6×160×190 | 22.921 | 13.6:1 | TC | More data",
+        "| WT-P1100 | 800 | 1000 | 880 | 1100 | 4008TAG2A | 838 | 924 | 213 | 224 | 8×160×190 | 30.561 | 13.6:1 | TC | More data",
+        "| WT-P1375 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | 1055 | 1166 | 217 | 266 | 12×160×190 | 45.842 | 13.6:1 | TC | More data",
+        "| WT-P1650 | 1200 | 1500 | 1320 | 1650 | 4012-46TAG2A | 1272 | 1399 | 213 | 319 | 12×160×190 | 45.842 | 13.6:1 | TC | More data",
+        "| WT-P1815 | 1350 | 1688 | 1452 | 1815 | 4012-46TAG3A | 1440 | 1583 | 213 | 361 | 12×160×190 | 45.842 | 13.6:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "WT-WEICHAI – WEIMAN",
+      "header": [
+        "| Gensets | | Size & Weight | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Open Type Size (mm) | Weight (KG) | Silent Type Size (mm) | Weight (KG)",
+        "| Prime | Standby"
+      ],
+      "rows": [
+        "| WT-WP22 | 16 | 20 | 17.6 | 22 | WP2.3D25E200/23KW | 1700x650x1100 | 464 | 2000x900x1200 | 749 | More data",
+        "| WT-WP27.5 | 20 | 25 | 22 | 28 | WP2.3D33E200/30KW | 1700x650x1100 | 484 | 2250x900x1200 | 789 | More data",
+        "| WT-WP33 | 24 | 30 | 26.4 | 33 | WP2.3D33E200/30KW | 1830x650x1100 | 670 | 2250x900x1250 | 975 | More data",
+        "| WT-WP42 | 30 | 38 | 33 | 41 | WP2.3D40E200/36KW | 1830x650x1100 | 685 | 2250x900x1250 | 985 | More data",
+        "| WT-WP50 | 36 | 45 | 39.6 | 50 | WP2.3D48E200/44KW | 1830x630x1320 | 687 | 2350x950x1250 | 995 | More data",
+        "| WT-WP55 | 40 | 50 | 44 | 55 | WP4.1D66E200/60KW | 1900x750x1320 | 712 | 2350x950x1250 | 1030 | More data",
+        "| WT-WP69 | 50 | 63 | 55 | 69 | WP4.1D66E200/60KW | 1900x860x1150 | 910 | 2550x1000x1280 | 1030 | More data",
+        "| WT-WP80 | 60 | 75 | 66 | 83 | WP4.1D80E200/72KW | 1900x860x1150 | 1020 | 2700x1100x1400 | 1075 | More data",
+        "| WT-WP100 | 75 | 94 | 82.5 | 103 | WP4.1D100E200/90KW 电调 | 2100*860*1150 | 1130 | 2700x1100x1400 | 1085 | More data",
+        "| WT-WP150 | 108 | 135 | 118.8 | 149 | WP6D132E200/120KW | 2500*1000*1650 | 1340 | 3350x1100x1650 | 2230 | More data",
+        "| WT-WP165 | 120 | 150 | 132 | 165 | WP6D152E200/138KW | 2500*1000*1650 | 1510 | 3450x1100x1650 | 2420 | More data",
+        "| WT-WP206 | 150 | 188 | 165 | 206 | WP10D200E200/182KW | 3180*1050*1750 | 1910 | 3600x1100x1650 | 2780 | More data",
+        "| WT-WP250 | 180 | 225 | 198 | 248 | WP10D238E200/216kw | 3280*1050*1750 | 2130 | 3750*1300*1850 | 2920 | More data",
+        "| WT-WP275 | 200 | 250 | 220 | 275 | WP10D264E200/240kw | 3280*1050*1750 | 2220 | 3750*1300*1850 | 3000 | More data",
+        "| WT-WP360 | 260 | 325 | 286 | 358 | WP10D320E200/291kw | 3380*1050*1750 | 2360 | 3900*1400*2200 | 3111 | More data",
+        "| WT-WP360 | 260 | 325 | 286 | 358 | WP12D353E200/288kw | 3580*1550*2100 | 2560 | 3900*1400*2200 | 3320 | More data",
+        "| WT-WP415 | 300 | 375 | 330 | 413 | WP13D385E200/350kw | 3880*1550*2100 | 2750 | 4200*1600*2200 | 3560 | More data",
+        "| WT-WP440 | 320 | 400 | 352 | 440 | WP13D405E200/368kw | 3880*1550*2100 | 2880 | 4500x1800x2200 | 3850 | More data",
+        "| WT-WP495 | 360 | 450 | 396 | 495 | WP13D440E200/392kw | 3880*1550*2100 | 3020 | 4500x1800x2200 | 4130 | More data",
+        "| WT-WP550 | 400 | 500 | 440 | 550 | WP13D490E310/450KW | 3880*1550*2100 | 3160 | 4500x1800x2200 | 4330 | More data",
+        "| WT-WP605 | 440 | 550 | 484 | 605 | 6M33D572E200 | 4350*1600*2100 | 4440 | 4800x1800x2200 | 5890 | More data",
+        "| WT-WP688 | 500 | 625 | 550 | 688 | 6M33D633E200 /575KW | 4350*1600*2100 | 4635 | 4900x1800x2200 | 6010 | More data",
+        "| WT-WP825 | 600 | 750 | 660 | 825 | 6M33D725E310/675KW | 4350*1600*2100 | 4835 | 5400x2000x2500 | 6550 | More data",
+        "| WT-WP880 | 640 | 800 | 704 | 880 | 8M33D800E200/730/800KW | 4750*1800*2200 | 5160 | 5400x2000x2500 | 7160 | More data",
+        "| WT-WP1000 | 730 | 913 | 803 | 1004 | 8M33D890E200/815/890KW | 4750*1800*2200 | 5160 | 5400x2000x2500 | 7160 | More data",
+        "| WT-WP1100 | 800 | 1000 | 880 | 1100 | 12M26D968E200/880KW | 5050*1800*2200 | 6980 | 5900x2200x2500 | 8530 | More data",
+        "| WT-WP1240 | 900 | 1125 | 990 | 1238 | 12M33D1108E200/1007KW | 5260*2200*2550 | 8900 | 5900x2200x2500 | 12900 | More data",
+        "| WT-WP1375 | 1000 | 1250 | 1100 | 1375 | 12M33D1210E200/1108KW | 5460*2200*2550 | 9300 | 6400x2200x2500 | 14300 | More data",
+        "| WT-WP1500 | 1100 | 1375 | 1210 | 1513 | 12M33D1320E200/1200KW | 5460*2200*2550 | 10000 | 6400x2200x2500 | 16500 | More data",
+        "| WT-WP1650 | 1200 | 1500 | 1320 | 1650 | 12M33D1500E310/1350KW | 5460*2200*2550 | 10500 | 40HQ | 20500 | More data",
+        "| WT-WP1800 | 1300 | 1625 | 1430 | 1788 | 16M33D1530E310/1390KW | 6027*2350*2580 | 12000 | 40HQ | 22000 | More data",
+        "| WT-WP1800 | 1300 | 1625 | 1430 | 1788 | 16M33D1580E310/1430KW | 6027*2350*2580 | 12600 | 40HQ | 22600 | More data",
+        "| WT-WP1925 | 1400 | 1750 | 1540 | 1925 | 16M33D1680E310/1530KW | 6027*2350*2580 | 13000 | 40HQ | 23000 | More data",
+        "| WT-WP2060 | 1500 | 1875 | 1650 | 2063 | 16M33D1800E310/1680KW | 6027*2350*2580 | 13600 | 40HQ | 23600 | More data",
+        "| WT-WP2200 | 1600 | 2000 | 1760 | 2200 | 16M33D1980E310/1800KW | 6027*2350*2580 | 13600 | 40HQ | 23600 | More data",
+        "| WT-WP2475 | 1800 | 2250 | 1980 | 2475 | 12M55D2210E310/2010KW | 7200*2450*2690 | 18500 | 40HQ | 28500 | More data",
+        "| WT-WP2750 | 2000 | 2500 | 2200 | 2750 | 12M55D2450E310/2200KW | 7200*2450*2690 | 19500 | 40HQ | 29500 | More data",
+        "| WT-WP3025 | 2200 | 2750 | 2420 | 3025 | 12M55D2700E310/2420KW | 7200*2450*2690 | 19500 | 40HQ | 29500 | More data",
+        "| WT-WP3300 | 2400 | 3000 | 2640 | 3300 | 16M55D2900E310/2646KW | 7800*2550*2690 | 21000 | 40HQ | 31000 | More data",
+        "| WT-WP63 | | 0 | 0 | 0 | 16M55D3300E310/2900KW | | | 40HQ | | More data",
+        "| WT-WP4215 | 3000 | 3750 | 3300 | 4125 | 16M55D3600E310/3300KW | | | | | More data"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "WT-YANGDONG – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp.",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-YD11 | 8 | 10 | 9 | 11 | YD385D | 11 | 13.2 | 255 | 3.3 | 3×85×90 | 1.532 | 18:1 | N/A | More data",
+        "| WT-YD14 | 10 | 13 | 11 | 14 | YD480D | 14 | 17 | 250.5 | 4.13 | 4×80×90 | 1.809 | 18:1 | N/A | More data",
+        "| WT-YD17 | 12 | 15 | 13 | 17 | YD4KD | 15 | 18 | 240 | 4.24 | 4×85×90 | 2.043 | 18:1 | N/A | More data",
+        "| WT-YD19 | 14 | 18 | 15 | 19 | YND485D | 17 | 20 | 247 | 4.94 | 4×85×95 | 2.156 | 18:1 | N/A | More data",
+        "| WT-YD22 | 16 | 20 | 18 | 22 | YSD490D | 21 | 25 | 247.5 | 6.11 | 4×90×100 | 2.543 | 18:1 | N/A | More data",
+        "| WT-YD28 | 20 | 25 | 22 | 28 | Y490D | 24 | 27 | 247.5 | 6.99 | 4×90×105 | 2.672 | 18:1 | N/A | More data",
+        "| 20 | 25 | 22 | 28 | Y495D | 27 | 30 | 240 | 7.62 | 4×95×105 | 2.977 | 18:1 | N/A | More data",
+        "| WT-YD33 | 24 | 30 | 26 | 33 | Y4100D | 32 | 36 | 237 | 8.92 | 4×100×118 | 3.707 | 18:1 | N/A | More data",
+        "| WT-YD36 | 26 | 33 | 29 | 36 | Y4102D | 33 | 39.6 | 235 | 9.12 | 4×102×118 | 3.857 | 18:1 | N/A | More data",
+        "| WT-YD41 | 30 | 38 | 33 | 41 | Y4105D | 38 | 42 | 235 | 10.5 | 4×105×118 | 4.1 | 18:1 | N/A | More data",
+        "| WT-YD44 | 32 | 40 | 35 | 44 | Y4102ZD | 40 | 44 | 220 | 10.35 | 4×102×118 | 3.857 | 18:1 | TC | More data",
+        "| WT-YD55 | 40 | 50 | 44 | 55 | Y4102ZLD | 48 | 53 | 225 | 12.7 | 4×102×118 | 3.857 | 18:1 | TC | More data",
+        "| WT-YD66 | 48 | 60 | 53 | 66 | Y4105ZLD | 55 | 60 | 220 | 14.2 | 4×105×118 | 4.1 | 18:1 | TC | More data"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "WT-RICARDO – WEIMAN",
+      "header": [
+        "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator | Size & Weight | Download",
+        "| Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp. | WANTONG | Rated Voltage (V) | Open Type Size (mm) | Weight (KG)",
+        "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+      ],
+      "rows": [
+        "| WT-R28 | 20 | 25 | 22 | 28 | K4100D | 30.1 | 33.11 | 258 | 9.14 | 4×100×115 | 3.61 | 19:1 | N/A | WT-184F | 380, 400, 415, 440, 200, 208, 220, etc. | 1770×650×1200 | 675 | More data",
+        "| WT-R33 | 24 | 30 | 26 | 33 | K4102D | 33 | 36.3 | 235 | 9.12 | 4×102×118 | 3.856 | 18:1 | N/A | WT-184G | 1820×650×1200 | 688 | More data",
+        "| WT-R41 | 30 | 38 | 33 | 41 | K4100ZD-1 | 40 | 44 | 235 | 11.06 | 4×102×118 | 3.856 | 18:1 | TC | WT-184H | 1880×650×1200 | 743 | More data",
+        "| 30 | 38 | 33 | 41 | N4105D | 38 | 41.8 | 231 | 9.51 | 4×105×125 | 4.33 | 17:1 | N/A | WT-184H | 1880×650×1200 | 703 | More data",
+        "| WT-R55 | 40 | 50 | 44 | 55 | N4105ZD-1 | 48 | 53 | 238 | 13.44 | 4×102×118 | 3.857 | 18:1 | TC | WT-224D | 1920×650×1200 | 833 | More data",
+        "| WT-R66 | 48 | 60 | 53 | 66 | R4105ZD1 | 56 | 62 | 225 | 14.82 | 4×105×125 | 4.33 | 17:1 | TC | WT-224E | 2050×750×1200 | 905 | More data",
+        "| WT-R78 | 56 | 70 | 62 | 78 | R4105AZLD1 | 66 | 73 | 225 | 17.47 | 4×105×125 | 4.33 | 17:1 | TC | WT-224F | 2150×750×1320 | 962 | More data",
+        "| WT-R88 | 64 | 80 | 70 | 88 | WR4110ZD | 75 | 83 | 225 | 19.85 | 4×105×125 | 4.33 | 17:1 | TC | WT-224G | 2150×750×1350 | 1030 | More data",
+        "| WT-R104 | 75 | 94 | 83 | 104 | R6105ZD1 | 84 | 92 | 225 | 22.24 | 6×105×125 | 6.49 | 17:1 | TC | WT-274C | 2350×770×1650 | 1185 | More data",
+        "| WT-R140 | 100 | 125 | 110 | 138 | R6105AZLD | 110 | 121 | 218 | 28.21 | 6×105×130 | 6.75 | 17:1 | TC | WT-274D | 2450×770×1650 | 1310 | More data",
+        "| WT-R165 | 120 | 150 | 132 | 165 | R6105IZLD | 132 | 145 | 218 | 33.85 | 6×105×130 | 7 | 17:1 | TC | WT-274FS | 2500×770×1650 | 1403 | More data",
+        "| 120 | 150 | 132 | 165 | WT6B200D | 133 | 146 | 202 | 31.61 | 6×108×125 | 6.87 | 17.5:1 | TC | WT-274FS | 2550×770×1650 | 1515 | More data",
+        "| WT-R176 | 128 | 160 | 141 | 176 | WT6B210D | 141 | 155 | 202 | 33.51 | 6×108×125 | 6.87 | 17.5:1 | TC | WT-274F | 2650×770×1650 | 1535 | More data",
+        "| WT-R198 | 144 | 180 | 158 | 198 | R6110ZLD | 170 | 187 | 218 | 43.6 | 6×110×135 | 8.01 | 17:1 | TC | WT-274G | 2800×850×1700 | 1565 | More data",
+        "| WT-R206 | 150 | 188 | 165 | 206 | WT6A245D | 166 | 183 | 200 | 39.06 | 6×108×132 | 7.25 | 17.5:1 | TC | WT-274G | 2800×900×1700 | 1650 | More data",
+        "| WT-R220 | 160 | 200 | 176 | 220 | WT6LA285D | 192 | 211 | 195 | 44.08 | 6×108×140 | 7.7 | 17.5:1 | TC | WT-274H | 2900×900×1700 | 1870 | More data",
+        "| 160 | 200 | 176 | 220 | WT6126-68D | 187 | 206 | 215 | 47.3 | 6×126×130 | 9.73 | 17:1 | TC | WT-274H | 2950x970x1620 | 2055 | More data",
+        "| WT-R275 | 200 | 250 | 220 | 275 | WT6126-42D | 231 | 254 | 215 | 58.43 | 6×126×130 | 9.73 | 17:1 | TC | WT-274K | 3050x970x1620 | 2242 | More data",
+        "| WT-R330 | 240 | 300 | 264 | 330 | WT12D-26 | 260 | 286 | 288 | 88.09 | 6×126×130 | 9.73 | 17:1 | TC | WT-C4D | 3050x970x1900 | 2590 | More data",
+        "| WT-R286 | 260 | 325 | 286 | 358 | WT12D-29 | 288 | 308 | 215 | 72.85 | 6×126×155 | 11.6 | 19:1 | TC | WT-C4ES | 3150x970x1900 | 2680 | More data"
+      ]
+    }
+  ]
 }
