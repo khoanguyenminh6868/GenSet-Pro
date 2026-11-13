@@ -172,7 +172,7 @@ function specsFinish(t, vals, body, info) {
   }
   return { result, v: { ...v, _notes: [...notes, ...[].concat(v._notes || [])] }, checked };
 }
-const SERVICE_RE = /b[ảa]o\s*d[ưu][ỡo]ng|b[ảa]o\s*tr[ìi]|s[ửu]a\s*ch[ữu]a|đ[ạa]i\s*tu|\bthu[êe]\b|di\s*d[ờo]i|v[ậa]t\s*t[ưu]|ph[ụu]\s*t[ùu]ng|nhi[êe]n\s*li[ệe]u|d[ầa]u\s*nh[ờo]n/i;
+const SERVICE_RE = /b[ảa]o\s*d[ưu][ỡo]ng|b[ảa]o\s*tr[ìi]|s[ửu]a\s*ch[ữu]a|đ[ạa]i\s*tu|(?<!(c[ăa]n\s*h[ộo]|nh[àa](\s*[ởo])?|v[ăa]n\s*ph[òo]ng|m[ặa]t\s*b[ằa]ng)\s*cho\s*)\bthu[êe](?![a-zà-ỹ])|di\s*d[ờo]i|v[ậa]t\s*t[ưu]|ph[ụu]\s*t[ùu]ng|nhi[êe]n\s*li[ệe]u|d[ầa]u\s*nh[ờo]n/i;
 const BUY_SET_RE = /(\bmua(\s*s[ắa]m)?|trang\s*b[ịi](\s*m[ớo]i)?|l[ắa]p\s*đ[ặa]t|cung\s*c[ấa]p((\s*(và|,)\s*|\s*)l[ắa]p\s*đ[ặa]t)?)\s*(\d+\s*)?(\(\d+\)\s*)?(t[ổo]\s*|b[ộo]\s*|chi[ếe]c\s*)?m[áa]y\s*ph[áa]t|\bmua(\s*s[ắa]m)?\s+(?!v[ậa]t|vttb|ph[ụu]|thi[ếe]t)[^,;]{0,15},\s*m[áa]y\s*ph[áa]t/i;
 function isServiceTender(name, result) {
   const n = String(name || "").normalize("NFC");
@@ -707,9 +707,10 @@ function apiBudgetOf(budgetText, spendText, at, settingsText = "") {
   const fix = s?.spent && Number(s.spent.usd) >= 0 && new Date(s.spent.at) >= since && new Date(s.spent.at) <= now ? s.spent : null;
   const from = fix ? new Date(fix.at) : since;
   let spent = fix ? Number(fix.usd) : 0, exhausted = false;
-  try { // as before: a line that is valid JSON but not an object ("null") ends the reading, the sum so far counts
+  try { // a line that is not a JSON object (broken, or valid JSON such as "null") is skipped, the lines after it still count
     for (const l of String(spendText).split(/\r?\n/)) {
       let e; try { e = JSON.parse(l); } catch { continue; }
+      if (!e || typeof e !== "object") continue;
       if (!(fix ? new Date(e.t) > from : new Date(e.t) >= from)) continue;
       spent += Number(e.usd) || 0; if (e.exhausted) exhausted = true;
     }

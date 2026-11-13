@@ -8,6 +8,7 @@ await (async () => {
   const vnd = (n) => (n == null ? "" : Number(n).toLocaleString("vi-VN"));
   const tax = (code) => String(code || "").replace(/^vn/i, "");
   let root = null, kq = null, mt = null;
+  //@include goods-read.js
   for (let i = 0; i < 40; i++) {
     root = [...document.querySelectorAll("[id]")].map((e) => e.__vue__).find((v) => v && v === v.$root && v.$data && ("dtlKqlcnt" in v.$data || "dtlRoundMngRes" in v.$data));
     kq = root?.$data.dtlKqlcnt?.bideContractorInputResultDTO;
@@ -43,23 +44,14 @@ await (async () => {
     const opens = kq.lotOpenDetails || [];
     const list = [];
     for (const lot of kq.lotResultDTO || []) {
-      // Hàng hoá từng nhà thầu chào (hãng, model, xuất xứ), nằm trong goodsList dạng chuỗi JSON.
-      // goodsList là mảng [{contractorCode, formValue}], hoặc ở một số gói là object nhiều danh sách (listTG, listKQDR, ...).
-      let goods = [];
-      try {
-        const g = typeof lot.goodsList === "string" ? JSON.parse(lot.goodsList || "[]") : lot.goodsList || [];
-        goods = Array.isArray(g) ? g : Object.values(g).filter(Array.isArray).flat();
-      } catch { goods = []; }
-      const goodsOf = (code) => {
-        const g = goods.find((x) => x && x.contractorCode === code);
-        const rows = g?.formValue?.lotContent?.Table || [];
-        return rows.slice(0, 4).map((r) => [r.labelGood || r.manufacturer, r.codeGood, r.origin && `(${r.origin})`].filter(Boolean).join(" ")).filter(Boolean).join("; ");
-      };
+      // Hàng hoá nhà thầu trúng chào (hãng, model, xuất xứ): goodsList của phần, đọc bằng goods-read.js (chung với
+      // history-extract.js: mẫu cũ formValue.lotContent.Table, mẫu BD.CG.02.0192 dsHhKq[].dsHH, danh sách dùng chung).
+      const goodsOf2 = (code) => goodsOf(lot, [code]).slice(0, 4).map((r) => [r.label || r.maker, r.code, r.origin && `(${r.origin})`].filter(Boolean).join(" ")).filter(Boolean).join("; ");
       for (const c of lot.contractorList || []) {
         const o = opens.find((x) => x.contractorCode === c.orgCode && (!x.lotNo || x.lotNo === lot.lotNo)) || {};
         const won = c.bidResult === 1;
         // muasamcong lặp bảng hàng của nhà thầu trúng cho mọi nhà thầu, nên chỉ tin bảng của nhà thầu trúng.
-        const g = won ? goodsOf(c.orgCode) : "";
+        const g = won ? goodsOf2(c.orgCode) : "";
         const note = [multi && lot.lotName, won ? `Trúng thầu, giá trúng ${vnd(c.bidWiningPrice ?? c.lotFinalPrice)}` : c.reason ? `Không được chọn: ${c.reason}` : "", g && `Hàng chào: ${g}`].filter(Boolean).join(" · ");
         const pct = c.discountPercent ?? o.discountPercent;
         list.push({ name: c.orgFullname || o.contractorName, taxCode: c.taxCode || tax(c.orgCode), bidPrice: c.lotOpenPrice ?? o.lotPrice ?? c.lotPrice ?? null,

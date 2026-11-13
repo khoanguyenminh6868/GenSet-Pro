@@ -151,7 +151,7 @@ test("nhà thầu, mẫu cũ: hàng chào chỉ của nhà thầu trúng (hãng,
   assert.deepEqual(r.list.map((x) => [x.taxCode, x.won, x.note]), [["0101", true, "Trúng thầu, giá trúng 100 · Hàng chào: Cummins C110D5 (Ấn Độ)"], ["0202", false, ""]]);
 });
 
-test("nhà thầu, mẫu BD.CG.02.0192 nhiều phần lô: ghi chú 'Hàng chào' của nhà thầu trúng", { todo: "bidders-extract.js chỉ đọc formValue.lotContent.Table + labelGood; mẫu dsHhKq[].dsHH (lableGood) của history-extract.js không được đọc nên nhà thầu trúng không có hàng chào" }, async () => {
+test("nhà thầu, mẫu BD.CG.02.0192 nhiều phần lô: ghi chú 'Hàng chào' của nhà thầu trúng", async () => {
   const r = await runSnippet("bidders-extract.js", { root: vueRoot({ dtlKqlcnt: { bideContractorInputResultDTO: kq268027() } }) });
   assert.match(r.list.find((x) => x.won).note, /Hàng chào: Excel Power EPS-FA12KVA \(China\)/);
 });

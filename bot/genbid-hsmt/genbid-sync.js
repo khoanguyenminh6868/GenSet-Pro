@@ -192,6 +192,8 @@ async function challenged(page) {
 function snippet(page, file, repl = {}) {
   let code = fs.readFileSync(path.join(KIT, file), "utf8");
   for (const [k, v] of Object.entries(repl)) code = code.split(k).join(v);
+  // "//@include <file>" on a line of its own: that kit file pasted in (goods-read.js, shared by history- and bidders-extract.js).
+  code = code.replace(/^[ \t]*\/\/@include\s+(\S+)[ \t]*$/gm, (_, f) => fs.readFileSync(path.join(KIT, f), "utf8"));
   return page.evaluate(code.replace(/^await\s+\(async/m, "(async"));
 }
 // The page's own search: type the text, set "Chỉ tìm kiếm ... chưa đóng thầu", click Tìm kiếm.

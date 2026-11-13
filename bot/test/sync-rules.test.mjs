@@ -99,8 +99,10 @@ test("gói dịch vụ không tự Gợi ý cấu hình (Khoa 12/11): bảo dư�
   for (const n of ["Bảo dưỡng máy phát điện năm 2025", "Sửa chữa máy phát điện", "Thue may phat dien (không dấu)", "Di dời máy phát điện", "Mua sắm vật tư, phụ tùng máy phát điện", "Cung cấp dầu nhờn cho máy phát điện"])
     assert.equal(P.isServiceTender(n), true, n);
 });
-test("gói 'Thuê máy phát điện' (có dấu) là gói dịch vụ, không tự Gợi ý cấu hình", { todo: "SERVICE_RE \\bthu[êe]\\b: \\b sau 'ê' không khớp nên 'thuê' có dấu không bao giờ khớp — đo 13/11 trên doc-cache bidhist: 88/111 tên gói có 'thuê' bị coi là gói mua máy (vd IB2200033737, IB2200068050)" }, () => {
+test("gói 'Thuê máy phát điện' (có dấu) là gói dịch vụ, không tự Gợi ý cấu hình", () => {
   for (const n of ["Thuê máy phát điện phục vụ sự kiện", "Thuê máy phát điện 2022", "GTSXKD01-2023 – Cung cấp dịch vụ cho thuê máy phát điện dự phòng"]) assert.equal(P.isServiceTender(n), true, n);
+  // "căn hộ cho thuê" là loại công trình, không phải thuê máy (IB2500020231, 13/11).
+  assert.equal(P.isServiceTender("Gói thầu TB1: Cung cấp và lắp đặt thiết bị công trình: Nhà văn phòng làm việc và căn hộ cho thuê (máy phát điện dự phòng, PCCC, thang máy)"), false);
 });
 test("gói mua máy kèm dịch vụ vẫn là gói mua máy: 'Mua sắm, lắp đặt máy phát … và bảo dưỡng'", () => {
   for (const n of ["Mua sắm và lắp đặt máy phát điện, bảo dưỡng 2 năm", "Cung cấp và lắp đặt 02 tổ máy phát điện, bảo trì", "Trang bị mới máy phát điện, sửa chữa nhà trạm", "Mua sắm thiết bị, máy phát điện"])
@@ -228,7 +230,7 @@ test("sổ chi: API báo hết tiền (exhausted) thì dùng gói tháng tới k
   assert.equal(P.apiBudgetOf("", book("{hỏng", { t: "2026-11-05T05:00:00", usd: 1 }, ""), at("2026-11-13T12:00:00")).spent, 1);
   assert.deepEqual([P.apiBudgetOf("", "", at("2026-11-13T12:00:00")).spent, P.apiBudgetOf("{hỏng", "", at("2026-11-13T12:00:00")).switchAtUsd], [0, 90]);
 });
-test("sổ chi: một dòng JSON không phải object ('null') không làm mất các dòng chi sau nó", { todo: "apiBudgetOf (như apiBudget cũ): dòng 'null' ném lỗi trong vòng đọc, try ngoài nuốt lỗi và bỏ mọi dòng sau → chi tiêu bị tính thiếu; sổ hiện tại không có dòng như vậy" }, () => {
+test("sổ chi: một dòng JSON không phải object ('null') không làm mất các dòng chi sau nó", () => {
   assert.equal(P.apiBudgetOf("", book({ t: "2026-11-05T05:00:00", usd: 1 }, "null", { t: "2026-11-06T05:00:00", usd: 2 }), at("2026-11-13T12:00:00")).spent, 3);
 });
 
