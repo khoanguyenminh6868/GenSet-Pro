@@ -5158,14 +5158,12 @@ function openAiConfig() {
   const sp = aiSpent(), at = cfg.switchAtUsd ?? state.botstatus?.api?.switchAt ?? AI_SWITCH_DEFAULT;
   const segOf = (k) => h`<div class="seg" role="tablist" aria-label="Cách trả tiền">${raw(["api", "plan"].map((v) => h`<button type="button" data-aiuse="${k}" data-v="${v}" aria-selected="${(use[k] || "api") === v ? "true" : "false"}">${v === "api" ? "API" : "Gói tháng"}</button>`).join(""))}</div>`;
   modal(h`<div class="row"><h2 style="flex:1">Cấu hình hệ thống</h2><button class="btn sm" data-close>Đóng</button></div>
-    <h4 style="margin:0">Trả tiền Claude cho từng việc</h4>
-    <p class="muted small" style="margin:0">API: trả bằng API key tới khi tiền API tới ngưỡng bên dưới, rồi tự chuyển sang gói tháng. Gói tháng: luôn dùng hạn mức gói Claude tháng.</p>
-    <div class="aicfg">${raw(AI_TASKS.map(([k, label]) => h`<span>${label}</span>${raw(segOf(k))}`).join(""))}</div>
+    <details class="supsec" id="aiCfgUse" open style="margin:0"><summary>Cấu hình Claude</summary>
+      <div class="aicfg" style="margin-top:8px">${raw(AI_TASKS.map(([k, label]) => h`<span>${label}</span>${raw(segOf(k))}`).join(""))}</div></details>
     <h4 style="margin:6px 0 0">Tiền API</h4>
     <div class="muted small" id="aiCfgStat">${aiCfgStatus()}</div>
     <div class="qgrid">
-      <div class="field"><label for="aiSpent">Đã dùng kỳ này (USD)</label><input type="text" id="aiSpent" inputmode="decimal" autocomplete="off" value="${sp ? usdText(sp.usd) : ""}" placeholder="vd 42.5">
-        <div class="muted small">Sửa theo số trên console.anthropic.com nếu lệch; bot cộng tiếp các lần gọi sau lúc lưu.</div></div>
+      <div class="field"><label for="aiSpent">Đã dùng kỳ này (USD)</label><input type="text" id="aiSpent" inputmode="decimal" autocomplete="off" value="${sp ? usdText(sp.usd) : ""}" placeholder="vd 42.5"></div>
       <div class="field"><label for="aiSwitch">Chuyển sang gói tháng khi tới (USD)</label><input type="text" id="aiSwitch" inputmode="decimal" autocomplete="off" value="${usdText(at)}"></div>
     </div>
     ${raw(cfg.updatedAt ? h`<p class="muted small" style="margin:0">Lưu gần nhất ${fmtDate(cfg.updatedAt)}${cfg.by ? `, ${cfg.by}` : ""}.</p>` : "")}
