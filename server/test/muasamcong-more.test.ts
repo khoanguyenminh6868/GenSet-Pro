@@ -84,9 +84,8 @@ test('chuẩn hoá: dùng tên trường dự phòng (notifyId, notifyNoStand, p
   assert.equal(t.status, 'open');
 });
 
-// LỖI (asNumber): chuỗi có dấu chấm ngăn nghìn kiểu Việt "2.500.000.000" → Number("2.500.000.000") = NaN → undefined.
-// Cổng thật hiện trả số/mảng số nên chưa gây hại; nếu cổng đổi sang chuỗi định dạng thì mất giá gói. Không sửa mã ở việc này.
-test('giá dạng chuỗi có dấu chấm ngăn nghìn "2.500.000.000 đ" đọc được 2,5 tỷ', { todo: 'asNumber trả undefined với dấu chấm nghìn (muasamcong.ts)' }, () => {
+// asNumber: chuỗi có dấu chấm ngăn nghìn kiểu Việt phải đọc được (đã sửa).
+test('giá dạng chuỗi có dấu chấm ngăn nghìn "2.500.000.000 đ" đọc được 2,5 tỷ', () => {
   const t = normalizeTender({ id: 'x', notifyNo: 'n', bidName: 'g', estimatePrice: '2.500.000.000 đ' }, now);
   assert.equal(t?.estimatedPrice, 2_500_000_000);
 });
@@ -141,11 +140,19 @@ test('số tiền: bảo đảm dự thầu đọc từ guaranteeValue/bidGuaran
   assert.equal(mk({ bidGuarantee: '45000000' })?.bidSecurity, 45_000_000);
 });
 
-test('giá là chữ không có số ("Không công bố") phải là "không có giá", không phải 0 đồng', { todo: 'asNumber: chuỗi không có chữ số → Number("") = 0 (muasamcong.ts)' }, () => {
+test('số thập phân thật giữ đúng', () => {
+  const p = (v: unknown) => normalizeTender({ id: 'x', notifyNo: 'n', bidName: 'g', bidPrice: v }, now)?.estimatedPrice;
+  assert.equal(p('1250.5'), 1250.5);
+  assert.equal(p(1250.5), 1250.5);
+  assert.equal(p('1.250,5'), 1250.5);
+  assert.equal(p('1,250,000'), 1250000);
+});
+
+test('giá là chữ không có số ("Không công bố") phải là "không có giá", không phải 0 đồng', () => {
   assert.equal(normalizeTender({ id: 'x', notifyNo: 'n', bidName: 'g', bidPrice: 'Không công bố' }, now)?.estimatedPrice, undefined);
 });
 
-test('bảo đảm dự thầu dạng chuỗi "45.000.000" đọc được 45 triệu', { todo: 'cùng lỗi asNumber với dấu chấm nghìn' }, () => {
+test('bảo đảm dự thầu dạng chuỗi "45.000.000" đọc được 45 triệu', () => {
   assert.equal(normalizeTender({ id: 'x', notifyNo: 'n', bidName: 'g', bidGuarantee: '45.000.000' }, now)?.bidSecurity, 45_000_000);
 });
 

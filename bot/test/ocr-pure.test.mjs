@@ -13,7 +13,7 @@ const rep = (s, n) => Array.from({ length: n }, () => s).join(" ");
 test("lớp chữ hỏng phông: phông TCVN3 ('Yªu cÇu kü thuËt') là hỏng (> 5% ký tự lạ, ≥ 300 ký tự)", () => {
   assert.equal(O.garbled(rep("Yªu cÇu kü thuËt cña m¸y ph¸t ®iÖn", 20)), true);
 });
-test("phông vỡ kiểu '3456ÿ89ÿ ÿ' (ví dụ trong chú thích, IB2500127205) là hỏng", { todo: "garbled() tách dấu (NFD) trước khi đếm: 'ÿ' thành 'y' + dấu kết hợp (được phép) nên chuỗi chỉ gồm số và ÿ không bị coi là hỏng; trang thật có thể còn ký tự lạ khác — chưa đo (không có PDF gốc trong doc-cache)" }, () => {
+test("phông vỡ kiểu '3456ÿ89ÿ ÿ' (ví dụ trong chú thích, IB2500127205) là hỏng", () => {
   assert.equal(O.garbled(rep("3456ÿ89ÿ ÿ", 40)), true);
 });
 test("lớp chữ tốt: tiếng Việt có dấu (cả dạng tách dấu NFD), tiếng Nga (Vietsovpetro), ký hiệu kỹ thuật ≤ ≥ ±", () => {

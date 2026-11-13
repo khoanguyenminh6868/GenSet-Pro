@@ -56,6 +56,4137 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "BF BaseFrame",
+      "fuel": "diesel",
+      "power": {
+        "min": 10,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.011/010.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-11G1"
+      ],
+      "power": {
+        "min": 9,
+        "max": 9,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.YAS5.011/010.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "3TNV80F"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.017/015.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G20/5"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.017/015.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G2"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.YAS5.017/015.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "3TNV88F"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.022/020.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G25/5"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.022/020.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404A-22G1"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PKS5.021/020.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404J-22G"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.YAS5.022/020.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV88-BIECS"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.030/027.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "X2.5G2"
+      ],
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.033/030.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "S 8000 AM"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.035/032.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G35/5"
+      ],
+      "power": {
+        "min": 32,
+        "max": 32,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DWS5.032/030.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "D18"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.034/031.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.YA.037/033.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98"
+      ],
+      "power": {
+        "min": 33,
+        "max": 33,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.YAS5.037/033.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98C-IYE"
+      ],
+      "power": {
+        "min": 33,
+        "max": 33,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.044/040.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G44/5"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.YA.047/044.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98T"
+      ],
+      "power": {
+        "min": 44,
+        "max": 44,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.YA3A.047/044.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98T ZGECS"
+      ],
+      "power": {
+        "min": 44,
+        "max": 44,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.YAS5.044/040.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98CT-IYE"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.YA.044\\040.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98T"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.056/051.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N45AM2"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.055/050.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M06G55/5"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DWS5.052/050.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "D24"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.051/046.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG1"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.066/060.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N45SM1A"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI3A.066/060.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N45SM1F"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AIS5.061/060.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "F34TEVP01.00"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.065/060.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M11G70/5"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.067/061.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG2"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.090/080.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N45SM3"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI3A.088/080.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N45TE1F"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.090/082.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M11G90/5"
+      ],
+      "power": {
+        "min": 82,
+        "max": 82,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DWS5.085/075.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "D34"
+      ],
+      "power": {
+        "min": 75,
+        "max": 75,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.088/080.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG2"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK3A.088/080.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104D-E44TAG1"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.094/085.SS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 530 GE"
+      ],
+      "power": {
+        "min": 85,
+        "max": 85,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.110\\100.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N45TM2A"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.110\\100.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M11G110/5"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.110\\105.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF4M1013EC"
+      ],
+      "power": {
+        "min": 102,
+        "max": 102,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZA.110\\100.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF6L 914"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.110\\100.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TAG2"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.110\\100.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 531 GE"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.131\\120.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N45TM3"
+      ],
+      "power": {
+        "min": 120,
+        "max": 120,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.150\\135.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M11G150/5"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.150\\135.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9G6"
+      ],
+      "power": {
+        "min": 136,
+        "max": 136,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.130\\120.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF4M1013FC"
+      ],
+      "power": {
+        "min": 120,
+        "max": 120,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.151\\137.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TG1"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.150\\135.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 532 GE"
+      ],
+      "power": {
+        "min": 130,
+        "max": 130,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.176\\165.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N67TM4"
+      ],
+      "power": {
+        "min": 165,
+        "max": 165,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.165\\150.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M11G165/5"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.176\\160.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9G7"
+      ],
+      "power": {
+        "min": 155,
+        "max": 155,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.170\\150.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP086TA"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.160\\150.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF6M1013EC"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.166\\150.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG2"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.165\\150.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 731 GE"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.205\\185.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 732 GE"
+      ],
+      "power": {
+        "min": 185,
+        "max": 185,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.221\\201.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N67TM7"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.220\\200.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M16G220/5"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.220\\200.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "P086TI"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.225\\205.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF6M 1013FCG3"
+      ],
+      "power": {
+        "min": 205,
+        "max": 205,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.220\\200.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG4"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.225\\205.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 733 GE"
+      ],
+      "power": {
+        "min": 205,
+        "max": 205,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.275\\250.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "N67 TE8W"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.275\\250.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M16G275/5"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.250\\230.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP086LA"
+      ],
+      "power": {
+        "min": 230,
+        "max": 230,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.275\\250.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "TCD 2013 L06 4V"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.275\\250.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG3"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.275\\250.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 734 GE"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.300\\275.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "P126TI"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.332\\305.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "C87TE4"
+      ],
+      "power": {
+        "min": 305,
+        "max": 305,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.340\\310.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M16G330/5"
+      ],
+      "power": {
+        "min": 310,
+        "max": 310,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.346\\301.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSL9G5"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.340\\310.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "P126TI-II"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.350\\315.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF6M 1015 C G1"
+      ],
+      "power": {
+        "min": 315,
+        "max": 315,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.335\\300.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG5"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.SC.335\\304.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC09 072A 02 13"
+      ],
+      "power": {
+        "min": 320,
+        "max": 320,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.360\\325.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 1341 GE"
+      ],
+      "power": {
+        "min": 320,
+        "max": 320,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.385\\350.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "C13TE2A"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.385\\350.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M21G385/5"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.400\\365.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP126LB"
+      ],
+      "power": {
+        "min": 365,
+        "max": 365,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.390\\350.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF6M 1015 C G2"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.400\\350.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206A-E13TAG2"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.375\\350.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 1342 GE"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.410\\380.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF6M 1015CP"
+      ],
+      "power": {
+        "min": 380,
+        "max": 380,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.SC.410\\375.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A 02 11"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.410\\375.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 1343 GE"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.440\\400.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "C13TE3A"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.440\\400.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M21G440/5"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.460\\420.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "P158 LE"
+      ],
+      "power": {
+        "min": 410,
+        "max": 410,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.450\\400.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206A-E13TAG3"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.SC.456\\413.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A 02 12"
+      ],
+      "power": {
+        "min": 410,
+        "max": 410,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.450\\410.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 1344 GE"
+      ],
+      "power": {
+        "min": 410,
+        "max": 410,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.500\\450.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "C13TE6W"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.500\\450.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M21G500/5"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.500\\460.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP158 LCF"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.480\\450.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF8M 1015CG1"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT3A.500\\450.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "10V 1600 G10F"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.500\\450.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506C-E15TAG1"
+      ],
+      "power": {
+        "min": 455,
+        "max": 455,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.SC.503\\456.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A 02 13"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.500\\450.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 1345 GE"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.550\\500.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "C13TE7W"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.550\\500.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSX15G8"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.580\\520.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP158 LDF"
+      ],
+      "power": {
+        "min": 530,
+        "max": 530,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DZ.560\\510.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF8M 1015CP"
+      ],
+      "power": {
+        "min": 510,
+        "max": 510,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT3A.550\\500.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "10V 1600 G20F"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.550\\500.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506C-E15TAG2"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.SC.553\\503.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 072A 02 14"
+      ],
+      "power": {
+        "min": 503,
+        "max": 503,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.550\\500.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 1641 GE"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.625\\560.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP180LAF"
+      ],
+      "power": {
+        "min": 570,
+        "max": 570,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.SC.613\\555.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 093A 02 52"
+      ],
+      "power": {
+        "min": 555,
+        "max": 555,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.630\\570.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 1642 GE"
+      ],
+      "power": {
+        "min": 570,
+        "max": 570,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.AI.620\\600.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "C16TE1W"
+      ],
+      "power": {
+        "min": 595,
+        "max": 595,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.660\\600.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M33G660/5"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.710\\640.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP180LBF"
+      ],
+      "power": {
+        "min": 640,
+        "max": 640,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.650\\600.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V 1600 G10F"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.660\\600.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG1A"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.SC.660\\600.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A 02 41"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.650\\596.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD 1642 GE"
+      ],
+      "power": {
+        "min": 596,
+        "max": 596,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.700\\630.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TWD 1643 GE"
+      ],
+      "power": {
+        "min": 630,
+        "max": 630,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.715\\650.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M33G715/5"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.760\\680.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP222LBF"
+      ],
+      "power": {
+        "min": 680,
+        "max": 680,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.700\\650.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V 1600 G20F"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.715\\650.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG2"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.SC.715\\650.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A 02 42"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.715\\650.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TWD 1644 GE"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.SC.770\\700.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A 02 43"
+      ],
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.VO.770\\700.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TWD 1645 GE"
+      ],
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.825\\750.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "6M33G825/5"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.DW.825\\750.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP222 LCF"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.900\\810.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M26G900/5"
+      ],
+      "power": {
+        "min": 810,
+        "max": 810,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.890\\800.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK23G3"
+      ],
+      "power": {
+        "min": 805,
+        "max": 805,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.870\\780.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V 2000 G26F"
+      ],
+      "power": {
+        "min": 783,
+        "max": 783,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.880\\800.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.1000\\900.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M26G1000/5"
+      ],
+      "power": {
+        "min": 910,
+        "max": 910,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.1030\\940.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QST30G3"
+      ],
+      "power": {
+        "min": 935,
+        "max": 935,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.1000\\910.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V 2000 G16F"
+      ],
+      "power": {
+        "min": 910,
+        "max": 910,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.1101\\1001.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38G5"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.1120\\1020.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M26G1100/5"
+      ],
+      "power": {
+        "min": 1020,
+        "max": 1020,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.1100\\1000.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QST30G4"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.1100\\1000.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V 2000 G26F"
+      ],
+      "power": {
+        "min": 1005,
+        "max": 1005,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.1130\\1000.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008-TAG2A"
+      ],
+      "power": {
+        "min": 1022,
+        "max": 1022,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.1250\\1125.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M33G1250/5"
+      ],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.1260\\1140.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V 2000 G36F"
+      ],
+      "power": {
+        "min": 1135,
+        "max": 1135,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.1250\\1125.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008 30TAG3"
+      ],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.1400\\1250.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "12M33G1400/5"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.1390\\1260.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50G3"
+      ],
+      "power": {
+        "min": 1260,
+        "max": 1260,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MH.1390\\1260.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S12R-PTA"
+      ],
+      "power": {
+        "min": 1280,
+        "max": 1280,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.1370\\1250.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "18V 2000 G26F"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.1380\\1250.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "power": {
+        "min": 1253,
+        "max": 1253,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.1540\\1400.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50G8"
+      ],
+      "power": {
+        "min": 1400,
+        "max": 1400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MH.1540\\1400.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S12R-PTA2"
+      ],
+      "power": {
+        "min": 1380,
+        "max": 1380,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.1500\\1370.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG3A"
+      ],
+      "power": {
+        "min": 1364,
+        "max": 1364,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.1700\\1500.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "16M33G1700/5"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.1690\\1540.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK50G4"
+      ],
+      "power": {
+        "min": 1540,
+        "max": 1540,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MH.1690\\1540.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S12R-PTAA2"
+      ],
+      "power": {
+        "min": 1510,
+        "max": 1510,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.1660\\1500.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG4A"
+      ],
+      "power": {
+        "min": 1505,
+        "max": 1505,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.BD.1900\\1750.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "16M33G1900/5"
+      ],
+      "power": {
+        "min": 1750,
+        "max": 1750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MH.1900\\1730.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S16R-PTA"
+      ],
+      "power": {
+        "min": 1720,
+        "max": 1720,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.1820\\1650.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V 4000 G14F"
+      ],
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.1880\\1700.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TAG3A"
+      ],
+      "power": {
+        "min": 1705,
+        "max": 1705,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.2080\\1890.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK60G3"
+      ],
+      "power": {
+        "min": 1890,
+        "max": 1890,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MH.2090\\1900.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S16R-PTA2"
+      ],
+      "power": {
+        "min": 1900,
+        "max": 1900,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.2040\\1850.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V 4000 G24F"
+      ],
+      "power": {
+        "min": 1850,
+        "max": 1850,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.2030\\1850.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG1"
+      ],
+      "power": {
+        "min": 1844,
+        "max": 1844,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.2240\\2040.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK60G4"
+      ],
+      "power": {
+        "min": 2034,
+        "max": 2034,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MH.2200\\2000.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S16R-PTAA2"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.2300\\2100.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V 4000 G14F"
+      ],
+      "power": {
+        "min": 2100,
+        "max": 2100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.2265\\2060.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG2"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MH.2500\\2280.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S16R2-PTAW"
+      ],
+      "power": {
+        "min": 2280,
+        "max": 2280,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.2530\\2300.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V 4000 G24F"
+      ],
+      "power": {
+        "min": 2300,
+        "max": 2300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.PK.2500\\2250.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG3"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MH.2640\\2400.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S16R2-PTAW-E"
+      ],
+      "power": {
+        "min": 2400,
+        "max": 2400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.2800\\2550.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "20V 4000 G14F"
+      ],
+      "power": {
+        "min": 2550,
+        "max": 2550,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.CU.3000\\2750.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSK78G9"
+      ],
+      "power": {
+        "min": 2750,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.3000\\2800.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "20V 4000 G24F"
+      ],
+      "power": {
+        "min": 2800,
+        "max": 2800,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GE.MT.3360\\3000.BF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "20V 4000 G34F"
+      ],
+      "power": {
+        "min": 3050,
+        "max": 3050,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DCP (Data Center Power)",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 4100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DCP 2100 kVA (CASE 003)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "20M33G2250/5"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 2100,
+        "max": 2100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -75,9 +4206,547 @@
         "10 – 4100 kVA"
       ],
       "file": "sources/elcos/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.elcospowergenerators.com/download/BF-ELCOS-EN.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Power range 10-3000 kVA",
+        "Generating sets 1500-1800 RPM - 50/60Hz - 400-230 V/480-277 V",
+        "Option with QBM DSE7320 controller on board",
+        "Option with QBM ComAp AMF25 controller on board",
+        "GE.PK.011/010.SS    10       -    9        -    Perkins   403A-11G1      W50°     Stage 0   M         175x90x140  650        110             48       16",
+        "GE.YAS5.011/010.SS  11       10   10       9    Yanmar    3TNV80F        W50°     Stage 5   M         175x90x140  581        110             62       16",
+        "GE.BD.017/015.SS    17       25   15       23   Baudouin  4M06G20/5      W50°     Stage 0   M         175x90x140  763        110             30       20",
+        "GE.PK.017/015.SS    17       19   15       17   Perkins   403A-15G2      W50°     Stage 0   M         175x90x140  667        110             36       20",
+        "GE.YAS5.017/015.SS  17       17   15       15   Yanmar    3TNV88F        W50°     Stage 5   M         175x90x140  630        110             43       20",
+        "GE.BD.022/020.SS    21       32   20       29   Baudouin  4M06G25/5      W50°     Stage 0   E         175x90x140  782        110             25       32",
+        "GE.PK.022/020.SS    22     26,5   20       25   Perkins   404A-22G1      W50°     Stage 0   M         175x90x140  737        110             28       32",
+        "GE.PKS5.021/020.SS  21       27   20       24   Perkins   404J-22G       W50°     Stage 5   M         175x90x140  737        110             28       32",
+        "GE.YAS5.022/020.SS  22       -    20       -    Yanmar    4TNV88-BIECS   W50°     Stage 5   M         175x90x140  667        110             28       32",
+        "GE.CU.030/027.SS    27,5     -    25       -    Cummins   X2.5G2         W50°     Stage 0   M         190x90x150  853        110             23       40",
+        "GE.AI.033/030.SS    33       37   30       33   FPT       S 8000 AM      W50°     Stage 0   M         190x90x150  993        110             21       50",
+        "GE.BD.035/032.SS    35       42   32       38   Baudouin  4M06G35/5      W50°     Stage 0   E         190x90x150  913        110             21       50",
+        "GE.DWS5.032/030.SS  32       41   30       37   Doosan    D18            W50°     Stage 5   E         190x90x150  858        110             20       50",
+        "GE.PK.034/031.SS    33       38   30       35   Perkins   1103A-33G      W50°     Stage 0   M         190x90x150  1036       110             20       50",
+        "GE.YA.037/033.SS    37       38   33       35   Yanmar    4TNV98         W50°     Stage 3A  M         190x90x150  875        110             22       50",
+        "GE.YAS5.037/033.SS  37       -    33       -    Yanmar    4TNV98C-IYE    W50°     Stage 5   E         190x90x150  926        110                      50",
+        "GE.BD.044/040.SS    44       51   40       47   Baudouin  4M06G44/5      W50°     Stage 0   E         190x90x150  939        110             17       63",
+        "GE.YA.047/044.SS    47       55   44       50   Yanmar    4TNV98T        W50°     Stage 2   M         190x90x150  911        110             16       63",
+        "GE.YA3A.047/044.SS  47       -    44       -    Yanmar    4TNV98T ZGECS  W50°     Stage 3A  E         190x90x150  928        110             16       63",
+        "GE.YAS5.044/040.SS  44       -    40       -    Yanmar    4TNV98CT-IYE   W50°     Stage 5   E         190x90x150  952        110                      63",
+        "GE.YA.044\\040.BF    44       49   40       46   Yanmar    4TNV98T        W50°     Stage 2   M         170x80x127  697        85              13       63",
+        "GE.AI.056/051.SS    55            50            FPT       N45AM2         W50°     Stage 0   M         220x110x165  1182       250             27       80",
+        "GE.BD.055/050.SS    55       63   50       56   Baudouin  4M06G55/5      W50°     Stage 0   E         220x110x165  1048       250             29       80",
+        "GE.DWS5.052/050.SS  52       56   50       52   Doosan    D24            W50°     Stage 5   E         220x110x165  1026       250             30       80",
+        "GE.PK.051/046.SS    50       60   45       54   Perkins   1103A-33TG1    W50°     Stage 0   M         220x110x165  1253       250             31       63",
+        "GE.AI.066/060.SS    66       73   60       66   FPT       N45SM1A        W50°     Stage 2   M         220x110x165  1278       250             26       100",
+        "GE.AI3A.066/060.SS  66            60            FPT       N45SM1F        W50°     Stage 3A  M         220x110x165  1278       250             20       100",
+        "GE.AIS5.061/060.SS  60            60            FPT       F34TEVP01.00   W50°     Stage 5   E         260x110x168  1270       250             23       100",
+        "GE.BD.065/060.SS    66            60            Baudouin  4M11G70/5      W50°     Stage 0   E         260x110x168  1462       250             23       100",
+        "GE.PK.067/061.SS    66       75   60       69   Perkins   1103A-33TG2    W50°     Stage 0   M         220x110x165  1299       250             25       100",
+        "GE.AI.090/080.SS    90       99   80       90   FPT       N45SM3         W50°     Stage 0   M         260x110x168  1453       250             17       125",
+        "GE.AI3A.088/080.SS  88            80            FPT       N45TE1F        W50°     Stage 3A  E         260x110x168  1503       250             16       125",
+        "GE.BD.090/082.SS    90     103    82       94   Baudouin  4M11G90/5      W50°     Stage 0   E         260x110x168  1605       250             19       125",
+        "GE.DWS5.085/075.SS  85     100    75       90   Doosan    D34            W50°     Stage 5   E         260x110x168  1541       250             18       125",
+        "GE.PK.088/080.SS    88     100    80       90   Perkins   1104A-44TG2    W50°     Stage 0   M         260x110x168  1527       250             18       125",
+        "GE.PK3A.088/080.SS  88     100    80       91   Perkins   1104D-E44TAG1  W50°     Stage 3A  E         260x110x168  1531       250             15       125",
+        "GE.VO.094/085.SS    95       97   85       86   Volvo     TAD 530 GE     W50°     Stage 2   M         260x110x168  1569       250             20       125",
+        "GE.AI.110\\100.BF    110    121    100    110    FPT       N45TM2A        W50°     Stage  2  M         200x100x152  1191       110             7        160",
+        "GE.BD.110\\100.BF    110      -    100      -    Baudouin  4M11G110/5     W50°     Stage  0  E         200x100x150  1337       110             7        160",
+        "GE.DZ.110\\105.BF    108    117    102    112    Deutz     BF4M1013EC     W50°     Stage  2  M         240x110x170  1146       250             14       160",
+        "GE.DZA.110\\100.BF   105      -    100      -    Deutz     BF6L 914       Air      Stage  2  M         200x100x152  1154       110             7        160",
+        "GE.PK.110\\100.BF    110    125    100    112    Perkins   1104C-44TAG2   W50°     Stage  2  E         200x100x140  1226       110             7        160",
+        "GE.VO.110\\100.BF    110    115    100    103    Volvo     TAD 531 GE     W50°     Stage  2  M         240x110x170  1287       250             16       160",
+        "GE.AI.131\\120.BF  135    140    120    130    FPT       N45TM3           W50°     Stage  0  M         240x110x165  1322       250             12       250",
+        "GE.BD.150\\135.BF  150    -      135     -     Baudouin  6M11G150/5       W50°     Stage  0  E         270x120x160  1573       250             11       250",
+        "GE.CU.150\\135.BF  150    170    136    150    Cummins   6BTAA5.9G6       W50°     Stage  0  E         240x110x170  1538       250             10       250",
+        "GE.DZ.130\\120.BF  130    132    120    120    Deutz     BF4M1013FC       W50°     Stage  2  M         240x110x170  1254       250             14       250",
+        "GE.PK.151\\137.BF  150    169    135    152    Perkins   1106A-70TG1      W50°     Stage  0  M         240x110x170  1545       250             12       250",
+        "GE.VO.150\\135.BF  144    151    130    135    Volvo     TAD 532 GE       W50°     Stage  2  E         240x110x170  1488       250             12       250",
+        "GE.AI.176\\165.BF  176    187    165    170    FPT       N67TM4           W50°     Stage  0  M         240x110x165  1517       250             9        250",
+        "GE.BD.165\\150.BF  165    -      150     -     Baudouin  6M11G165/5       W50°     Stage  0  E         270x120x160  1611       250             10       250",
+        "GE.CU.176\\160.BF  170    -      155     -     Cummins   6BTAA5.9G7       W50°     Stage  0  E         270x120x180  1621       250             9        250",
+        "GE.DW.170\\150.BF  170    200    150    185    Doosan    DP086TA          W50°     Stage  2  E         240x110x165  1715       250             10       250",
+        "GE.DZ.160\\150.BF  162    180    150    171    Deutz     BF6M1013EC       W50°     Stage  2  M         270x120x180  1477       250             11       250",
+        "GE.PK.166\\150.BF  165    188    150    168    Perkins   1106A-70TAG2     W50°     Stage  0  M         270x120x165  1691       250             11       250",
+        "GE.VO.165\\150.BF  165    172    150    155    Volvo     TAD 731 GE       W50°     Stage  2  M         270x120x170  1694       250             10       250",
+        "GE.VO.205\\185.BF  205    227    185    203    Volvo     TAD 732 GE       W50°     Stage 2   E         270x120x180  1816       250             9        400",
+        "GE.AI.221\\201.BF  220    234    200    210    FPT       N67TM7           W50°     Stage  0  M         240x110x165  1688       250             7        400",
+        "GE.BD.220\\200.BF  220    -      200     -     Baudouin  6M16G220/5       W50°     Stage  0  E         270x120x160  2095       250             8        400",
+        "GE.DW.220\\200.BF  225    250    200    230    Doosan    P086TI           W50°     Stage  2  E         270x120x195  1926       250             8        400",
+        "GE.DZ.225\\205.BF  226    250    205    220    Deutz     BF6M 1013FCG3    W50°     Stage  2  E         270x120x180  1675       250             8        400",
+        "GE.PK.220\\200.BF  220    -      200     -     Perkins   1106A-70TAG4     W50°     Stage  0  E         270x120x165  1817       250             8        400",
+        "GE.VO.225\\205.BF  225    252    205    226    Volvo     TAD 733 GE       W50°     Stage  2  E         270x120x180  1987       250             8        400",
+        "GE.AI.275\\250.BF  275    290    250    260    FPT       N67 TE8W         W50°     Stage  0  E         270x120x180  1854       250             7        400",
+        "GE.BD.275\\250.BF  275    -      250     -     Baudouin  6M16G275/5       W50°     Stage  0  E         300x115x190  2461       400             10       400",
+        "GE.DW.250\\230.BF  250    285    230    250    Doosan    DP086LA          W50°     Stage  2  E         270x120x180  2027       250             7        400",
+        "GE.DZ.275\\250.BF  279    300    250    260    Deutz     TCD 2013 L06 4V  W50°     Stage  2  E         270x120x180  2126       250             7        400",
+        "GE.PK.275\\250.BF  275    -      250     -     Perkins   1206A-E70TTAG3   W50°     Stage  0  E         270x120x180  1935       250             7        400",
+        "GE.VO.275\\250.BF  275    287    250    255    Volvo     TAD 734 GE       W50°     Stage  2  E         270x120x180  2078       250             7        400",
+        "GE.DW.300\\275.BF  300    335    275    300    Doosan    P126TI           W50°     Stage 2   E         300x135x190  2594       400             10       400",
+        "GE.AI.332\\305.BF  332    363    305    330    FPT       C87TE4           W50°     Stage  0  E         305x135x188  2726       400             8        630",
+        "GE.BD.340\\310.BF  340    -      310     -     Baudouin  6M16G330/5       W50°     Stage  0  E         300x135x190  2700       400             8        630",
+        "GE.CU.346\\301.BF  330    375    300    344    Cummins   QSL9G5           W50°     Stage  0  E         300x135x188  2513       400             9        630",
+        "GE.DW.340\\310.BF  335    390    300    345    Doosan    P126TI-II        W50°     Stage  0  E         300x135x190  2594       400             9        630",
+        "GE.DZ.350\\315.BF  350    374    315    338    Deutz     BF6M 1015 C G1   W50°     Stage  2  E         300x135x206  2503       400             8        630",
+        "GE.PK.335\\300.BF  335    389    300    352    Perkins   1506A-E88TAG5    W50°     Stage  0  E         300x135x180  2807       400             9        630",
+        "GE.SC.335\\304.BF  350    360    320    340    Scania    DC09 072A 02 13  W50°     Stage  0  E         300x135x194  2773       400             9        630",
+        "GE.VO.360\\325.BF  350    360    320    340    Volvo     TAD 1341 GE      W50°     Stage  2  E         300x135x194  3300       400             10       630",
+        "GE.AI.385\\350.BF  385    418    350    380    FPT       C13TE2A          W50°     Stage  2  E         300x135x188  2956       400             8        630",
+        "GE.BD.385\\350.BF  385    -      350     -     Baudouin  6M21G385/5       W50°     Stage  0  E         300x135x188  2911       400             7        630",
+        "GE.DW.400\\365.BF  405    445    365    400    Doosan    DP126LB          W50°     Stage  0  E         300x135x215  2777       400             8        630",
+        "GE.DZ.390\\350.BF  390    -      350     -     Deutz     BF6M 1015 C G2   W50°     Stage  2  E         300x135x170  2587       400             8        630",
+        "GE.PK.400\\350.BF  400    440    350    400    Perkins   2206A-E13TAG2    W50°     Stage  0  E         300x135x200  3203       400             8        630",
+        "GE.VO.375\\350.BF  375    438    350    401    Volvo     TAD 1342 GE      W50°     Stage  2  E         300x135x194  3300       400             8        630",
+        "GE.DZ.410\\380.BF  412    426    380    387    Deutz     BF6M 1015CP      W50°     Stage 2   E         300x135x170  2737       400             7        630",
+        "GE.SC.410\\375.BF  410    451    375    410    Scania    DC13 072A 02 11  W50°     Stage 0   E         300x135x194  3194       400             8        630",
+        "GE.VO.410\\375.BF  410    451    375    410    Volvo     TAD 1343 GE      W50°     Stage 2   E         300x135x194  3436       400             8        630",
+        "GE.AI.440\\400.BF  440    462    400    420    FPT       C13TE3A          W50°     Stage  2  E         312x135x196  3155       400             6        630",
+        "GE.BD.440\\400.BF  440    -      400     -     Baudouin  6M21G440/5       W50°     Stage  0  E         312x135x196  3116       400             7        630",
+        "GE.DW.460\\420.BF  470    510    410    445    Doosan    P158 LE          W50°     Stage  0  E         312x135x220  3176       400             7        630",
+        "GE.PK.450\\400.BF  450    438    400    400    Perkins   2206A-E13TAG3    W50°     Stage  0  E         320x135x200  3354       400             7        630",
+        "GE.SC.456\\413.BF  450    501    410    456    Scania    DC13 072A 02 12  W50°     Stage  0  E         327x135x195  3266       400             7        630",
+        "GE.VO.450\\410.BF  450    501    410    456    Volvo     TAD 1344 GE      W50°     Stage  2  E         305x135x194  3451       400             7        630",
+        "GE.AI.500\\450.BF    500    550    450    475    FPT       C13TE6W          W50°     Stage 0   E         350x150x195  3342       400             6        800",
+        "GE.BD.500\\450.BF    500    -      450    -      Baudouin  6M21G500/5       W50°     Stage 0   E         350x150x200  3216       400             6        800",
+        "GE.DW.500\\460.BF    510    570    450    520    Doosan    DP158 LCF        W50°     Stage 0   E         350x150x200  3611       400             6        800",
+        "GE.DZ.480\\450.BF    480    512    450    464    Deutz     BF8M 1015CG1     W50°     Stage 2   E         350x152x218  3065       400             6        800",
+        "GE.MT3A.500\\450.BF  500    550    450    500    MTU       10V 1600 G10F    W50°     Stage 3A  E         350x150x210  3666       400             6        800",
+        "GE.PK.500\\450.BF    500    550    455    500    Perkins   2506C-E15TAG1    W50°     Stage 2   E         350x150x220  3740       400             6        800",
+        "GE.SC.503\\456.BF    503    553    450    503    Scania    DC13 072A 02 13  W50°     Stage 0   E         350x150x195  3336       400             7        800",
+        "GE.VO.500\\450.BF    500    501    450    456    Volvo     TAD 1345 GE      W50°     Stage 2   E         350x150x195  3481       400             6        800",
+        "GE.AI.550\\500.BF    550    605    500    550    FPT       C13TE7W          W50°     Stage 0   E         350x150x215  3445       400             5        800",
+        "GE.CU.550\\500.BF    550    500    500    450    Cummins   QSX15G8          W50°     Stage 2   E         350x150x215  3789       400             6        800",
+        "GE.DW.580\\520.BF    580    652    530    568    Doosan    DP158 LDF        W50°     Stage 0   E         350x150x206  3714       400             5        800",
+        "GE.DZ.560\\510.BF    560    588    510    536    Deutz     BF8M 1015CP      W50°     Stage 2   E         350x150x190  3179       400             5        800",
+        "GE.MT3A.550\\500.BF  550    630    500    575    MTU       10V 1600 G20F    W50°     Stage 3A  E         350x150x210  3809       400             6        800",
+        "GE.PK.550\\500.BF    550    563    500    500    Perkins   2506C-E15TAG2    W50°     Stage 2   E         350x150x220  3843       400             5        800",
+        "GE.SC.553\\503.BF    553    553    503    503    Scania    DC13 072A 02 14  W50°     Stage 0   E         350x150x215  3539       400             6        800",
+        "GE.VO.550\\500.BF    550    645    500    573    Volvo     TAD 1641 GE      W50°     Stage 2   E         350x150x215  3707       400             6        800",
+        "GE.DW.625\\560.BF    630    694    570    629    Doosan    DP180LAF         W50°     Stage 0   E         350x150x200  4120       400             5        1000",
+        "GE.SC.613\\555.BF    613    607    555    550    Scania    DC16 093A 02 52  W50°     Stage 0   E         350x150x208  3894       400             5        1000",
+        "GE.VO.630\\570.BF    625    660    570    600    Volvo     TAD 1642 GE      W50°     Stage 2   E         350x150x215  3994       400             5        1000",
+        "GE.AI.620\\600.BF    617    700    595    630    FPT       C16TE1W          W50°     Stage  0  E         350x150x195  3835       400             5        1000",
+        "GE.BD.660\\600.BF    660    -      600    -      Baudouin  6M33G660/5       W50°     Stage  0  E         372x160x210  5057       400             5        1000",
+        "GE.DW.710\\640.BF    710    748    640    678    Doosan    DP180LBF         W50°     Stage  0  E         350x150x200  4275       400             4        1000",
+        "GE.MT.650\\600.BF    650    690    600    630    MTU       12V 1600 G10F    W50°     Stage  2  E         350x150x218  4281       400             5        1000",
+        "GE.PK.660\\600.BF    660    680    600    625    Perkins   2806A-E18TAG1A   W50°     Stage  0  E         350x155x210  4431       400             5        1000",
+        "GE.SC.660\\600.BF    660    660    600    600    Scania    DC16 078A 02 41  W50°     Stage  0  E         350x150x218  4064       400             5        1000",
+        "GE.VO.650\\596.BF    650    690    596    625    Volvo     TAD 1642 GE      W50°     Stage  2  E         350x150x218  4007       400             5        1000",
+        "GE.VO.700\\630.BF    700    761    630    685    Volvo     TWD 1643 GE      W50°     Stage  2  E         350x150x218  4743       400             5        1000",
+        "GE.BD.715\\650.BF    715    -      650    -      Baudouin  6M33G715/5       W50°     Stage  0  E         375x160x210  5199       400             4        1000",
+        "GE.DW.760\\680.BF    750    880    680    800    Doosan    DP222LBF         W50°     Stage  0  E         350x150x200  4474       400             4        1000",
+        "GE.MT.700\\650.BF    700    750    650    680    MTU       12V 1600 G20F    W50°     Stage  2  E         350x150x210  4428       400             5        1000",
+        "GE.PK.715\\650.BF    715    687    650    625    Perkins   2806A-E18TAG2    W50°     Stage  0  E         350x155x210  4573       400             5        1000",
+        "GE.SC.715\\650.BF    715    715    650    650    Scania    DC16 078A 02 42  W50°     Stage  0  E         350x150x218  4306       400             5        1000",
+        "GE.VO.715\\650.BF    715    752    650    684    Volvo     TWD 1644 GE      W50°     Stage  2  E         350x150x218  4841       400             4        1000",
+        "GE.SC.770\\700.BF    770    770    700    700    Scania    DC16 078A 02 43  W50°     Stage 0   E         350x150x218  4586       400             4        1000",
+        "GE.VO.770\\700.BF    770    800    700    727    Volvo     TWD 1645 GE      W50°     Stage 2   E         365x150x218  5178       400             4        1000",
+        "GE.BD.825\\750.BF    825    -      750    -      Baudouin  6M33G825/5     W50°     Stage 0   E         395x168x215  5521       No tank   n.a.            1250",
+        "GE.DW.825\\750.BF    825    930    750    845    Doosan    DP222 LCF      W50°     Stage 0   E         365x150x200  4754       400              4        1250",
+        "GE.BD.900\\810.BF    900    -      810    -      Baudouin  12M26G900/5    W50°     Stage 0   E         430x200x240  6740       No tank   n.a.            1250",
+        "GE.CU.890\\800.BF    886    1000   805    910    Cummins   QSK23G3        W50°     Stage 0   E         418x167x216  6298       No tank   n.a.            1250",
+        "GE.MT.870\\780.BF    865    -      783    -      MTU       12V 2000 G26F  W50°     Stage 0   E         410x170x210  6487       No tank   n.a.            1250",
+        "GE.PK.880\\800.BF    880    940    800    845    Perkins   4006-23TAG3A   W50°     Stage 0   E         380x175x220  6002       No tank   n.a.            1250",
+        "GE.BD.1000\\900.BF   1000   -      910    -      Baudouin  12M26G1000/5   W50°     Stage 0   E         430x200x240  6892       No tank   n.a.            1600",
+        "GE.CU.1030\\940.BF   1029   1132   935    1029   Cummins   QST30G3        W50°     Stage 0   E         450x200x216  6818       No tank   n.a.            1600",
+        "GE.MT.1000\\910.BF   1005   -      910    -      MTU       16V 2000 G16F  W50°     Stage 0   E         450x200x215  7084       No tank   n.a.            1600",
+        "GE.CU.1101\\1001.BF  1100   -      1000   -      Cummins   KTA38G5        W50°     Stage  0  E         450x180x225  8568       No  tank  n.a.            1600",
+        "GE.BD.1120\\1020.BF  1120   -      1020   -      Baudouin  12M26G1100/5   W50°     Stage  0  E         480x210x240  7334       No  tank  n.a.            1600",
+        "GE.CU.1100\\1000.BF  1100   1256   1000   1146   Cummins   QST30G4        W50°     Stage  0  E         420x200x235  7305       No  tank  n.a.            1600",
+        "GE.MT.1100\\1000.BF  1106   -      1005   -      MTU       16V 2000 G26F  W50°     Stage  0  E         450x200x215  7646       No  tank  n.a.            1600",
+        "GE.PK.1130\\1000.BF  1124   1125   1022   1000   Perkins   4008-TAG2A     W50°     Stage  0  E         470x175x220  7970       No  tank  n.a.            1600",
+        "GE.BD.1250\\1125.BF  1250   -      1125   -      Baudouin  12M33G1250/5   W50°     Stage 0   E         480x220x240  8392       No tank   n.a.            2000",
+        "GE.MT.1260\\1140.BF  1254   -      1135   -      MTU       16V 2000 G36F  W50°     Stage 0   E         460x180x240  7936       No tank   n.a.            2000",
+        "GE.PK.1250\\1125.BF  1250   -      1125   -      Perkins   4008 30TAG3    W50°     Stage 0   E         480x210x220  9184       No tank   n.a.            2000",
+        "GE.BD.1400\\1250.BF  1400   -      1250   -      Baudouin       12M33G1400/5   W50°     Stage  0  E         520x220x255  8745       No  tank  n.a.            2000",
+        "GE.CU.1390\\1260.BF  1386   1610   1260   1418   Cummins        KTA50G3        W50°     Stage  0  E         520x170x240  10184      No  tank  n.a.            2000",
+        "GE.MH.1390\\1260.BF  1390   1500   1280   1350   Mitsubishi     S12R-PTA       W50°     Stage  0  E         450x200x235  11544      No  tank  n.a.            2000",
+        "GE.MT.1370\\1250.BF  1370   -      1250   -      MTU            18V 2000 G26F  W50°     Stage  0  E         520x190x255  8837       No  tank  n.a.            2000",
+        "GE.PK.1380\\1250.BF  1378   1378   1253   1253   Perkins     4012-46TWG2A      W50°     Stage  0  E         485x180x235  9660       No  tank  n.a.            2000",
+        "GE.CU.1540\\1400.BF  1540   -      1400   -      Cummins        KTA50G8        W50°     Stage 0   E         560x200x240  11209      No tank   n.a.            2000",
+        "GE.MH.1540\\1400.BF  1520   1680   1380   1520   Mitsubishi     S12R-PTA2      W50°     Stage 0   E         450x200x235  11444      No tank   n.a.            2000",
+        "GE.PK.1500\\1370.BF  1500   1500   1364   1364   Perkins     4012-46TWG3A      W50°     Stage 0   E         520x190x255  9778       No tank   n.a.            2000",
+        "GE.BD.1700\\1500.BF  1700   -      1500   -      Baudouin       16M33G1700/5   W50°     Stage 0   E         540x230x260  10679      No tank   n.a.            2500",
+        "GE.CU.1690\\1540.BF  1690   -      1540   -      Cummins        QSK50G4        W50°     Stage 0   E         480x200x250  12323      No tank   n.a.            2500",
+        "GE.MH.1690\\1540.BF  1650   1880   1510   1700   Mitsubishi     S12R-PTAA2     W50°     Stage 0   E         480x200x260  11752      No tank   n.a.            2500",
+        "GE.PK.1660\\1500.BF  1656   1656   1505   1505   Perkins     4012-46TWG4A      W50°     Stage 0   E         510x230x240  10104      No tank   n.a.            2500",
+        "GE.BD.1900\\1750.BF  1900   -      1750   -      Baudouin       16M33G1900/5   W50°     Stage 0   E         560x230x270  11117      No tank   n.a.            3200",
+        "GE.MH.1900\\1730.BF  1880   2000   1720   1820   Mitsubishi     S16R-PTA       W50°     Stage 0   E         530x200x260  13860      No tank   n.a.            2500",
+        "GE.MT.1820\\1650.BF  1815   1875   1650   1700   MTU            12V 4000 G14F  W50°     Stage 0   E         500x200x250  12453      No tank   n.a.            2500",
+        "GE.PK.1880\\1700.BF  1876   1880   1705   1710   Perkins        4012-46TAG3A   W50°     Stage 0   E         510x220x270  11915      No tank   n.a.            2500",
+        "GE.CU.2080\\1890.BF  2079   -      1890   -      Cummins        QSK60G3        W50°     Stage 0   E         600x250x280  13906      No tank   n.a.            3200",
+        "GE.MH.2090\\1900.BF  2080   2280   1900   2070   Mitsubishi     S16R-PTA2      W50°     Stage 0   E         530x200x255  14528      No tank   n.a.            3200",
+        "GE.MT.2040\\1850.BF  2035   2200   1850   2000   MTU            12V 4000 G24F  W50°     Stage 0   E         500x200x250  12901      No tank   n.a.            3200",
+        "GE.PK.2030\\1850.BF  2028   -      1844   -      Perkins        4016-61TRG1    W50°     Stage 0   E         550x250x270  13473      No tank   n.a.            3200",
+        "GE.CU.2240\\2040.BF  2237   -      2034   -      Cummins        QSK60G4        W50°     Stage 0   E         600x250x280  14190      No tank   n.a.            3200",
+        "GE.MH.2200\\2000.BF  2200   -      2000   -      Mitsubishi     S16R-PTAA2     W50°     Stage 0   E         602x215x255  14820      No tank   n.a.            3200",
+        "GE.MT.2300\\2100.BF  2300   2500   2100   2275   MTU            16V 4000 G14F  W50°     Stage 0   E         610x230x300  14735      No tank   n.a.            3200",
+        "GE.PK.2265\\2060.BF  2250   -      2000   -      Perkins        4016-61TRG2    W50°     Stage 0   E         600x220x255  13757      No tank   n.a.            3200",
+        "GE.MH.2500\\2280.BF  2500   -      2280   -      Mitsubishi     S16R2-PTAW     W50°     Stage 0   E         610x230x300  16966      No tank   n.a.            4000",
+        "GE.MT.2530\\2300.BF  2530   2750   2300   2500   MTU            16V 4000 G24F  W50°     Stage 0   E         610x230x300  15714      No tank   n.a.            4000",
+        "GE.PK.2500\\2250.BF  2500   -      2250   -      Perkins        4016-61TRG3    W50°     Stage 0   E         610x230x300  14216      No tank   n.a.            4000",
+        "GE.MH.2640\\2400.BF  2640   -      2400   -      Mitsubishi     S16R2-PTAW-E   W50°     Stage 0   E         610x230x300  18298      No tank   n.a.            4000",
+        "GE.MT.2800\\2550.BF  2805   3125   2550   2813   MTU            20V 4000 G14F  W50°     Stage 0   E         665x232x278  19322      No tank   n.a.            4000",
+        "GE.CU.3000\\2750.BF  3000   -      2750   -      Cummins        QSK78G9        W50°     Stage 0   E         650x200x275  18997      No tank   n.a.            4000",
+        "GE.MT.3000\\2800.BF  3080   3438   2800   3125   MTU            20V 4000 G24F  W50°     Stage 0   E         650x200x275  19492      No tank   n.a.            4000",
+        "GE.MT.3360\\3000.BF  3355   3750   3050   3450   MTU            20V 4000 G34F  W50°     Stage 0   E         650x200x275  20033      No tank   n.a.            5000"
+      ],
+      "file": "sources/elcos/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.elcospowergenerators.com/download/DCP_EN.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "250-4100 KVA",
+        "FROM 250 KVA TO 4100 KVA,",
+        "POWER        4 x 2100 kVA DCP",
+        "20M33G2250/5",
+        "POWER        3x3000 kVA DCP",
+        "16M55G3300/5",
+        "POWER        2 x 1000 kVA DCP",
+        "4008-TAG2A",
+        "CONTROLLER:  ComAp IG-NTC-BB (sync,",
+        "CONTROLLER:  ComAp IG-1000 + IV5.2"
+      ],
+      "file": "sources/elcos/2002.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "BF Power Generators 10-40 kVA, 1500/1800 RPM (BF-ELCOS-EN.pdf)",
+      "header": [
+        "50 HZ  60 HZ  50 HZ  60 HZ  BRAND     CODE           COOLING  STAGE     GOVERNOR  L X W X H   WEIGHT kg  TANK lt  LOAD @ 75% - h  SWITCH A"
+      ],
+      "rows": [
+        "GE.PK.011/010.SS    10       -    9        -    Perkins   403A-11G1      W50°     Stage 0   M         175x90x140  650        110             48       16",
+        "GE.YAS5.011/010.SS  11       10   10       9    Yanmar    3TNV80F        W50°     Stage 5   M         175x90x140  581        110             62       16",
+        "GE.BD.017/015.SS    17       25   15       23   Baudouin  4M06G20/5      W50°     Stage 0   M         175x90x140  763        110             30       20",
+        "GE.PK.017/015.SS    17       19   15       17   Perkins   403A-15G2      W50°     Stage 0   M         175x90x140  667        110             36       20",
+        "GE.YAS5.017/015.SS  17       17   15       15   Yanmar    3TNV88F        W50°     Stage 5   M         175x90x140  630        110             43       20",
+        "GE.BD.022/020.SS    21       32   20       29   Baudouin  4M06G25/5      W50°     Stage 0   E         175x90x140  782        110             25       32",
+        "GE.PK.022/020.SS    22     26,5   20       25   Perkins   404A-22G1      W50°     Stage 0   M         175x90x140  737        110             28       32",
+        "GE.PKS5.021/020.SS  21       27   20       24   Perkins   404J-22G       W50°     Stage 5   M         175x90x140  737        110             28       32",
+        "GE.YAS5.022/020.SS  22       -    20       -    Yanmar    4TNV88-BIECS   W50°     Stage 5   M         175x90x140  667        110             28       32",
+        "GE.CU.030/027.SS    27,5     -    25       -    Cummins   X2.5G2         W50°     Stage 0   M         190x90x150  853        110             23       40",
+        "GE.AI.033/030.SS    33       37   30       33   FPT       S 8000 AM      W50°     Stage 0   M         190x90x150  993        110             21       50",
+        "GE.BD.035/032.SS    35       42   32       38   Baudouin  4M06G35/5      W50°     Stage 0   E         190x90x150  913        110             21       50",
+        "GE.DWS5.032/030.SS  32       41   30       37   Doosan    D18            W50°     Stage 5   E         190x90x150  858        110             20       50",
+        "GE.PK.034/031.SS    33       38   30       35   Perkins   1103A-33G      W50°     Stage 0   M         190x90x150  1036       110             20       50",
+        "GE.YA.037/033.SS    37       38   33       35   Yanmar    4TNV98         W50°     Stage 3A  M         190x90x150  875        110             22       50",
+        "GE.YAS5.037/033.SS  37       -    33       -    Yanmar    4TNV98C-IYE    W50°     Stage 5   E         190x90x150  926        110                      50",
+        "GE.BD.044/040.SS    44       51   40       47   Baudouin  4M06G44/5      W50°     Stage 0   E         190x90x150  939        110             17       63",
+        "GE.YA.047/044.SS    47       55   44       50   Yanmar    4TNV98T        W50°     Stage 2   M         190x90x150  911        110             16       63",
+        "GE.YA3A.047/044.SS  47       -    44       -    Yanmar    4TNV98T ZGECS  W50°     Stage 3A  E         190x90x150  928        110             16       63",
+        "GE.YAS5.044/040.SS  44       -    40       -    Yanmar    4TNV98CT-IYE   W50°     Stage 5   E         190x90x150  952        110                      63",
+        "GE.YA.044\\040.BF    44       49   40       46   Yanmar    4TNV98T        W50°     Stage 2   M         170x80x127  697        85              13       63"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "BF Power Generators 50-100 kVA, 1500/1800 RPM (BF-ELCOS-EN.pdf)",
+      "header": [
+        "50 HZ  60 HZ  50 HZ  60 HZ  BRAND     CODE           COOLING  STAGE     GOVERNOR  L X W X H    WEIGHT kg  TANK lt  LOAD @ 75% - h  SWITCH A"
+      ],
+      "rows": [
+        "GE.AI.056/051.SS    55            50            FPT       N45AM2         W50°     Stage 0   M         220x110x165  1182       250             27       80",
+        "GE.BD.055/050.SS    55       63   50       56   Baudouin  4M06G55/5      W50°     Stage 0   E         220x110x165  1048       250             29       80",
+        "GE.DWS5.052/050.SS  52       56   50       52   Doosan    D24            W50°     Stage 5   E         220x110x165  1026       250             30       80",
+        "GE.PK.051/046.SS    50       60   45       54   Perkins   1103A-33TG1    W50°     Stage 0   M         220x110x165  1253       250             31       63",
+        "GE.AI.066/060.SS    66       73   60       66   FPT       N45SM1A        W50°     Stage 2   M         220x110x165  1278       250             26       100",
+        "GE.AI3A.066/060.SS  66            60            FPT       N45SM1F        W50°     Stage 3A  M         220x110x165  1278       250             20       100",
+        "GE.AIS5.061/060.SS  60            60            FPT       F34TEVP01.00   W50°     Stage 5   E         260x110x168  1270       250             23       100",
+        "GE.BD.065/060.SS    66            60            Baudouin  4M11G70/5      W50°     Stage 0   E         260x110x168  1462       250             23       100",
+        "GE.PK.067/061.SS    66       75   60       69   Perkins   1103A-33TG2    W50°     Stage 0   M         220x110x165  1299       250             25       100",
+        "GE.AI.090/080.SS    90       99   80       90   FPT       N45SM3         W50°     Stage 0   M         260x110x168  1453       250             17       125",
+        "GE.AI3A.088/080.SS  88            80            FPT       N45TE1F        W50°     Stage 3A  E         260x110x168  1503       250             16       125",
+        "GE.AIS5.090/085.SS  90            85,7          FPT       F36ETVP03.A85  W50°     Stage 5   E         260x110x168  1433       250             20       125",
+        "GE.BD.090/082.SS    90     103    82       94   Baudouin  4M11G90/5      W50°     Stage 0   E         260x110x168  1605       250             19       125",
+        "GE.DWS5.085/075.SS  85     100    75       90   Doosan    D34            W50°     Stage 5   E         260x110x168  1541       250             18       125",
+        "GE.PK.088/080.SS    88     100    80       90   Perkins   1104A-44TG2    W50°     Stage 0   M         260x110x168  1527       250             18       125",
+        "GE.PK3A.088/080.SS  88     100    80       91   Perkins   1104D-E44TAG1  W50°     Stage 3A  E         260x110x168  1531       250             15       125",
+        "GE.VO.094/085.SS    95       97   85       86   Volvo     TAD 530 GE     W50°     Stage 2   M         260x110x168  1569       250             20       125",
+        "GE.AI.110\\100.BF    110    121    100    110    FPT       N45TM2A        W50°     Stage  2  M         200x100x152  1191       110             7        160",
+        "GE.BD.110\\100.BF    110      -    100      -    Baudouin  4M11G110/5     W50°     Stage  0  E         200x100x150  1337       110             7        160",
+        "GE.DZ.110\\105.BF    108    117    102    112    Deutz     BF4M1013EC     W50°     Stage  2  M         240x110x170  1146       250             14       160",
+        "GE.DZA.110\\100.BF   105      -    100      -    Deutz     BF6L 914       Air      Stage  2  M         200x100x152  1154       110             7        160",
+        "GE.PK.110\\100.BF    110    125    100    112    Perkins   1104C-44TAG2   W50°     Stage  2  E         200x100x140  1226       110             7        160",
+        "GE.VO.110\\100.BF    110    115    100    103    Volvo     TAD 531 GE     W50°     Stage  2  M         240x110x170  1287       250             16       160"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "BF Power Generators 130-250 kVA, 1500/1800 RPM (BF-ELCOS-EN.pdf)",
+      "header": [
+        "50 HZ  60 HZ  50 HZ  60 HZ  BRAND     CODE             COOLING  STAGE     GOVERNOR  L X W X H    WEIGHT kg  TANK lt  LOAD @ 75% - h  SWITCH A"
+      ],
+      "rows": [
+        "GE.AI.131\\120.BF  135    140    120    130    FPT       N45TM3           W50°     Stage  0  M         240x110x165  1322       250             12       250",
+        "GE.BD.150\\135.BF  150    -      135     -     Baudouin  6M11G150/5       W50°     Stage  0  E         270x120x160  1573       250             11       250",
+        "GE.CU.150\\135.BF  150    170    136    150    Cummins   6BTAA5.9G6       W50°     Stage  0  E         240x110x170  1538       250             10       250",
+        "GE.DZ.130\\120.BF  130    132    120    120    Deutz     BF4M1013FC       W50°     Stage  2  M         240x110x170  1254       250             14       250",
+        "GE.PK.151\\137.BF  150    169    135    152    Perkins   1106A-70TG1      W50°     Stage  0  M         240x110x170  1545       250             12       250",
+        "GE.VO.150\\135.BF  144    151    130    135    Volvo     TAD 532 GE       W50°     Stage  2  E         240x110x170  1488       250             12       250",
+        "GE.AI.176\\165.BF  176    187    165    170    FPT       N67TM4           W50°     Stage  0  M         240x110x165  1517       250             9        250",
+        "GE.BD.165\\150.BF  165    -      150     -     Baudouin  6M11G165/5       W50°     Stage  0  E         270x120x160  1611       250             10       250",
+        "GE.CU.176\\160.BF  170    -      155     -     Cummins   6BTAA5.9G7       W50°     Stage  0  E         270x120x180  1621       250             9        250",
+        "GE.DW.170\\150.BF  170    200    150    185    Doosan    DP086TA          W50°     Stage  2  E         240x110x165  1715       250             10       250",
+        "GE.DZ.160\\150.BF  162    180    150    171    Deutz     BF6M1013EC       W50°     Stage  2  M         270x120x180  1477       250             11       250",
+        "GE.PK.166\\150.BF  165    188    150    168    Perkins   1106A-70TAG2     W50°     Stage  0  M         270x120x165  1691       250             11       250",
+        "GE.VO.165\\150.BF  165    172    150    155    Volvo     TAD 731 GE       W50°     Stage  2  M         270x120x170  1694       250             10       250",
+        "GE.VO.205\\185.BF  205    227    185    203    Volvo     TAD 732 GE       W50°     Stage 2   E         270x120x180  1816       250             9        400",
+        "GE.AI.221\\201.BF  220    234    200    210    FPT       N67TM7           W50°     Stage  0  M         240x110x165  1688       250             7        400",
+        "GE.BD.220\\200.BF  220    -      200     -     Baudouin  6M16G220/5       W50°     Stage  0  E         270x120x160  2095       250             8        400",
+        "GE.DW.220\\200.BF  225    250    200    230    Doosan    P086TI           W50°     Stage  2  E         270x120x195  1926       250             8        400",
+        "GE.DZ.225\\205.BF  226    250    205    220    Deutz     BF6M 1013FCG3    W50°     Stage  2  E         270x120x180  1675       250             8        400",
+        "GE.PK.220\\200.BF  220    -      200     -     Perkins   1106A-70TAG4     W50°     Stage  0  E         270x120x165  1817       250             8        400",
+        "GE.VO.225\\205.BF  225    252    205    226    Volvo     TAD 733 GE       W50°     Stage  2  E         270x120x180  1987       250             8        400",
+        "GE.AI.275\\250.BF  275    290    250    260    FPT       N67 TE8W         W50°     Stage  0  E         270x120x180  1854       250             7        400",
+        "GE.BD.275\\250.BF  275    -      250     -     Baudouin  6M16G275/5       W50°     Stage  0  E         300x115x190  2461       400             10       400",
+        "GE.DW.250\\230.BF  250    285    230    250    Doosan    DP086LA          W50°     Stage  2  E         270x120x180  2027       250             7        400",
+        "GE.DZ.275\\250.BF  279    300    250    260    Deutz     TCD 2013 L06 4V  W50°     Stage  2  E         270x120x180  2126       250             7        400",
+        "GE.PK.275\\250.BF  275    -      250     -     Perkins   1206A-E70TTAG3   W50°     Stage  0  E         270x120x180  1935       250             7        400",
+        "GE.VO.275\\250.BF  275    287    250    255    Volvo     TAD 734 GE       W50°     Stage  2  E         270x120x180  2078       250             7        400"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "BF Power Generators 275-400 kVA, 1500/1800 RPM (BF-ELCOS-EN.pdf)",
+      "header": [
+        "50 HZ  60 HZ  50 HZ  60 HZ  BRAND     CODE             COOLING  STAGE     GOVERNOR  L X W X H    WEIGHT kg  TANK lt  LOAD @ 75% - h  SWITCH A"
+      ],
+      "rows": [
+        "GE.DW.300\\275.BF  300    335    275    300    Doosan    P126TI           W50°     Stage 2   E         300x135x190  2594       400             10       400",
+        "GE.AI.332\\305.BF  332    363    305    330    FPT       C87TE4           W50°     Stage  0  E         305x135x188  2726       400             8        630",
+        "GE.BD.340\\310.BF  340    -      310     -     Baudouin  6M16G330/5       W50°     Stage  0  E         300x135x190  2700       400             8        630",
+        "GE.CU.346\\301.BF  330    375    300    344    Cummins   QSL9G5           W50°     Stage  0  E         300x135x188  2513       400             9        630",
+        "GE.DW.340\\310.BF  335    390    300    345    Doosan    P126TI-II        W50°     Stage  0  E         300x135x190  2594       400             9        630",
+        "GE.DZ.350\\315.BF  350    374    315    338    Deutz     BF6M 1015 C G1   W50°     Stage  2  E         300x135x206  2503       400             8        630",
+        "GE.PK.335\\300.BF  335    389    300    352    Perkins   1506A-E88TAG5    W50°     Stage  0  E         300x135x180  2807       400             9        630",
+        "GE.SC.335\\304.BF  350    360    320    340    Scania    DC09 072A 02 13  W50°     Stage  0  E         300x135x194  2773       400             9        630",
+        "GE.VO.360\\325.BF  350    360    320    340    Volvo     TAD 1341 GE      W50°     Stage  2  E         300x135x194  3300       400             10       630",
+        "GE.AI.385\\350.BF  385    418    350    380    FPT       C13TE2A          W50°     Stage  2  E         300x135x188  2956       400             8        630",
+        "GE.BD.385\\350.BF  385    -      350     -     Baudouin  6M21G385/5       W50°     Stage  0  E         300x135x188  2911       400             7        630",
+        "GE.DW.400\\365.BF  405    445    365    400    Doosan    DP126LB          W50°     Stage  0  E         300x135x215  2777       400             8        630",
+        "GE.DZ.390\\350.BF  390    -      350     -     Deutz     BF6M 1015 C G2   W50°     Stage  2  E         300x135x170  2587       400             8        630",
+        "GE.PK.400\\350.BF  400    440    350    400    Perkins   2206A-E13TAG2    W50°     Stage  0  E         300x135x200  3203       400             8        630",
+        "GE.VO.375\\350.BF  375    438    350    401    Volvo     TAD 1342 GE      W50°     Stage  2  E         300x135x194  3300       400             8        630",
+        "GE.DZ.410\\380.BF  412    426    380    387    Deutz     BF6M 1015CP      W50°     Stage 2   E         300x135x170  2737       400             7        630",
+        "GE.SC.410\\375.BF  410    451    375    410    Scania    DC13 072A 02 11  W50°     Stage 0   E         300x135x194  3194       400             8        630",
+        "GE.VO.410\\375.BF  410    451    375    410    Volvo     TAD 1343 GE      W50°     Stage 2   E         300x135x194  3436       400             8        630",
+        "GE.AI.440\\400.BF  440    462    400    420    FPT       C13TE3A          W50°     Stage  2  E         312x135x196  3155       400             6        630",
+        "GE.BD.440\\400.BF  440    -      400     -     Baudouin  6M21G440/5       W50°     Stage  0  E         312x135x196  3116       400             7        630",
+        "GE.DW.460\\420.BF  470    510    410    445    Doosan    P158 LE          W50°     Stage  0  E         312x135x220  3176       400             7        630",
+        "GE.PK.450\\400.BF  450    438    400    400    Perkins   2206A-E13TAG3    W50°     Stage  0  E         320x135x200  3354       400             7        630",
+        "GE.SC.456\\413.BF  450    501    410    456    Scania    DC13 072A 02 12  W50°     Stage  0  E         327x135x195  3266       400             7        630",
+        "GE.VO.450\\410.BF  450    501    410    456    Volvo     TAD 1344 GE      W50°     Stage  2  E         305x135x194  3451       400             7        630"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "BF Power Generators 450-700 kVA, 1500/1800 RPM (BF-ELCOS-EN.pdf)",
+      "header": [
+        "50 HZ  60 HZ  50 HZ  60 HZ  BRAND     CODE             COOLING  STAGE     GOVERNOR  L X W X H    WEIGHT kg  TANK lt  LOAD @ 75% - h  SWITCH A"
+      ],
+      "rows": [
+        "GE.AI.500\\450.BF    500    550    450    475    FPT       C13TE6W          W50°     Stage 0   E         350x150x195  3342       400             6        800",
+        "GE.BD.500\\450.BF    500    -      450    -      Baudouin  6M21G500/5       W50°     Stage 0   E         350x150x200  3216       400             6        800",
+        "GE.DW.500\\460.BF    510    570    450    520    Doosan    DP158 LCF        W50°     Stage 0   E         350x150x200  3611       400             6        800",
+        "GE.DZ.480\\450.BF    480    512    450    464    Deutz     BF8M 1015CG1     W50°     Stage 2   E         350x152x218  3065       400             6        800",
+        "GE.MT3A.500\\450.BF  500    550    450    500    MTU       10V 1600 G10F    W50°     Stage 3A  E         350x150x210  3666       400             6        800",
+        "GE.PK.500\\450.BF    500    550    455    500    Perkins   2506C-E15TAG1    W50°     Stage 2   E         350x150x220  3740       400             6        800",
+        "GE.SC.503\\456.BF    503    553    450    503    Scania    DC13 072A 02 13  W50°     Stage 0   E         350x150x195  3336       400             7        800",
+        "GE.VO.500\\450.BF    500    501    450    456    Volvo     TAD 1345 GE      W50°     Stage 2   E         350x150x195  3481       400             6        800",
+        "GE.AI.550\\500.BF    550    605    500    550    FPT       C13TE7W          W50°     Stage 0   E         350x150x215  3445       400             5        800",
+        "GE.CU.550\\500.BF    550    500    500    450    Cummins   QSX15G8          W50°     Stage 2   E         350x150x215  3789       400             6        800",
+        "GE.DW.580\\520.BF    580    652    530    568    Doosan    DP158 LDF        W50°     Stage 0   E         350x150x206  3714       400             5        800",
+        "GE.DZ.560\\510.BF    560    588    510    536    Deutz     BF8M 1015CP      W50°     Stage 2   E         350x150x190  3179       400             5        800",
+        "GE.MT3A.550\\500.BF  550    630    500    575    MTU       10V 1600 G20F    W50°     Stage 3A  E         350x150x210  3809       400             6        800",
+        "GE.PK.550\\500.BF    550    563    500    500    Perkins   2506C-E15TAG2    W50°     Stage 2   E         350x150x220  3843       400             5        800",
+        "GE.SC.553\\503.BF    553    553    503    503    Scania    DC13 072A 02 14  W50°     Stage 0   E         350x150x215  3539       400             6        800",
+        "GE.VO.550\\500.BF    550    645    500    573    Volvo     TAD 1641 GE      W50°     Stage 2   E         350x150x215  3707       400             6        800",
+        "GE.DW.625\\560.BF    630    694    570    629    Doosan    DP180LAF         W50°     Stage 0   E         350x150x200  4120       400             5        1000",
+        "GE.SC.613\\555.BF    613    607    555    550    Scania    DC16 093A 02 52  W50°     Stage 0   E         350x150x208  3894       400             5        1000",
+        "GE.VO.630\\570.BF    625    660    570    600    Volvo     TAD 1642 GE      W50°     Stage 2   E         350x150x215  3994       400             5        1000",
+        "GE.AI.620\\600.BF    617    700    595    630    FPT       C16TE1W          W50°     Stage  0  E         350x150x195  3835       400             5        1000",
+        "GE.BD.660\\600.BF    660    -      600    -      Baudouin  6M33G660/5       W50°     Stage  0  E         372x160x210  5057       400             5        1000",
+        "GE.DW.710\\640.BF    710    748    640    678    Doosan    DP180LBF         W50°     Stage  0  E         350x150x200  4275       400             4        1000",
+        "GE.MT.650\\600.BF    650    690    600    630    MTU       12V 1600 G10F    W50°     Stage  2  E         350x150x218  4281       400             5        1000",
+        "GE.PK.660\\600.BF    660    680    600    625    Perkins   2806A-E18TAG1A   W50°     Stage  0  E         350x155x210  4431       400             5        1000",
+        "GE.SC.660\\600.BF    660    660    600    600    Scania    DC16 078A 02 41  W50°     Stage  0  E         350x150x218  4064       400             5        1000",
+        "GE.VO.650\\596.BF    650    690    596    625    Volvo     TAD 1642 GE      W50°     Stage  2  E         350x150x218  4007       400             5        1000",
+        "GE.VO.700\\630.BF    700    761    630    685    Volvo     TWD 1643 GE      W50°     Stage  2  E         350x150x218  4743       400             5        1000",
+        "GE.BD.715\\650.BF    715    -      650    -      Baudouin  6M33G715/5       W50°     Stage  0  E         375x160x210  5199       400             4        1000",
+        "GE.DW.760\\680.BF    750    880    680    800    Doosan    DP222LBF         W50°     Stage  0  E         350x150x200  4474       400             4        1000",
+        "GE.MT.700\\650.BF    700    750    650    680    MTU       12V 1600 G20F    W50°     Stage  2  E         350x150x210  4428       400             5        1000",
+        "GE.PK.715\\650.BF    715    687    650    625    Perkins   2806A-E18TAG2    W50°     Stage  0  E         350x155x210  4573       400             5        1000",
+        "GE.SC.715\\650.BF    715    715    650    650    Scania    DC16 078A 02 42  W50°     Stage  0  E         350x150x218  4306       400             5        1000",
+        "GE.VO.715\\650.BF    715    752    650    684    Volvo     TWD 1644 GE      W50°     Stage  2  E         350x150x218  4841       400             4        1000",
+        "GE.SC.770\\700.BF    770    770    700    700    Scania    DC16 078A 02 43  W50°     Stage 0   E         350x150x218  4586       400             4        1000",
+        "GE.VO.770\\700.BF    770    800    700    727    Volvo     TWD 1645 GE      W50°     Stage 2   E         365x150x218  5178       400             4        1000"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "BF Power Generators 750-1100 kVA, 1500/1800 RPM (BF-ELCOS-EN.pdf)",
+      "header": [
+        "50 HZ  60 HZ  50 HZ  60 HZ  BRAND     CODE           COOLING  STAGE     GOVERNOR  L X W X H    WEIGHT kg  TANK lt   LOAD @ 75% - h  SWITCH A"
+      ],
+      "rows": [
+        "GE.BD.825\\750.BF    825    -      750    -      Baudouin  6M33G825/5     W50°     Stage 0   E         395x168x215  5521       No tank   n.a.            1250",
+        "GE.DW.825\\750.BF    825    930    750    845    Doosan    DP222 LCF      W50°     Stage 0   E         365x150x200  4754       400              4        1250",
+        "GE.BD.900\\810.BF    900    -      810    -      Baudouin  12M26G900/5    W50°     Stage 0   E         430x200x240  6740       No tank   n.a.            1250",
+        "GE.CU.890\\800.BF    886    1000   805    910    Cummins   QSK23G3        W50°     Stage 0   E         418x167x216  6298       No tank   n.a.            1250",
+        "GE.MT.870\\780.BF    865    -      783    -      MTU       12V 2000 G26F  W50°     Stage 0   E         410x170x210  6487       No tank   n.a.            1250",
+        "GE.PK.880\\800.BF    880    940    800    845    Perkins   4006-23TAG3A   W50°     Stage 0   E         380x175x220  6002       No tank   n.a.            1250",
+        "GE.BD.1000\\900.BF   1000   -      910    -      Baudouin  12M26G1000/5   W50°     Stage 0   E         430x200x240  6892       No tank   n.a.            1600",
+        "GE.CU.1030\\940.BF   1029   1132   935    1029   Cummins   QST30G3        W50°     Stage 0   E         450x200x216  6818       No tank   n.a.            1600",
+        "GE.MT.1000\\910.BF   1005   -      910    -      MTU       16V 2000 G16F  W50°     Stage 0   E         450x200x215  7084       No tank   n.a.            1600",
+        "GE.CU.1101\\1001.BF  1100   -      1000   -      Cummins   KTA38G5        W50°     Stage  0  E         450x180x225  8568       No  tank  n.a.            1600",
+        "GE.BD.1120\\1020.BF  1120   -      1020   -      Baudouin  12M26G1100/5   W50°     Stage  0  E         480x210x240  7334       No  tank  n.a.            1600",
+        "GE.CU.1100\\1000.BF  1100   1256   1000   1146   Cummins   QST30G4        W50°     Stage  0  E         420x200x235  7305       No  tank  n.a.            1600",
+        "GE.MT.1100\\1000.BF  1106   -      1005   -      MTU       16V 2000 G26F  W50°     Stage  0  E         450x200x215  7646       No  tank  n.a.            1600",
+        "GE.PK.1130\\1000.BF  1124   1125   1022   1000   Perkins   4008-TAG2A     W50°     Stage  0  E         470x175x220  7970       No  tank  n.a.            1600",
+        "GE.BD.1250\\1125.BF  1250   -      1125   -      Baudouin  12M33G1250/5   W50°     Stage 0   E         480x220x240  8392       No tank   n.a.            2000",
+        "GE.MT.1260\\1140.BF  1254   -      1135   -      MTU       16V 2000 G36F  W50°     Stage 0   E         460x180x240  7936       No tank   n.a.            2000",
+        "GE.PK.1250\\1125.BF  1250   -      1125   -      Perkins   4008 30TAG3    W50°     Stage 0   E         480x210x220  9184       No tank   n.a.            2000"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "BF Power Generators 1250-3000 kVA, 1500/1800 RPM (BF-ELCOS-EN.pdf)",
+      "header": [
+        "50 HZ  60 HZ  50 HZ  60 HZ  BRAND          CODE           COOLING  STAGE     GOVERNOR  L X W X H    WEIGHT kg  TANK lt   LOAD @ 75% - h  SWITCH A"
+      ],
+      "rows": [
+        "GE.BD.1400\\1250.BF  1400   -      1250   -      Baudouin       12M33G1400/5   W50°     Stage  0  E         520x220x255  8745       No  tank  n.a.            2000",
+        "GE.CU.1390\\1260.BF  1386   1610   1260   1418   Cummins        KTA50G3        W50°     Stage  0  E         520x170x240  10184      No  tank  n.a.            2000",
+        "GE.MH.1390\\1260.BF  1390   1500   1280   1350   Mitsubishi     S12R-PTA       W50°     Stage  0  E         450x200x235  11544      No  tank  n.a.            2000",
+        "GE.MT.1370\\1250.BF  1370   -      1250   -      MTU            18V 2000 G26F  W50°     Stage  0  E         520x190x255  8837       No  tank  n.a.            2000",
+        "GE.PK.1380\\1250.BF  1378   1378   1253   1253   Perkins     4012-46TWG2A      W50°     Stage  0  E         485x180x235  9660       No  tank  n.a.            2000",
+        "GE.CU.1540\\1400.BF  1540   -      1400   -      Cummins        KTA50G8        W50°     Stage 0   E         560x200x240  11209      No tank   n.a.            2000",
+        "GE.MH.1540\\1400.BF  1520   1680   1380   1520   Mitsubishi     S12R-PTA2      W50°     Stage 0   E         450x200x235  11444      No tank   n.a.            2000",
+        "GE.PK.1500\\1370.BF  1500   1500   1364   1364   Perkins     4012-46TWG3A      W50°     Stage 0   E         520x190x255  9778       No tank   n.a.            2000",
+        "GE.BD.1700\\1500.BF  1700   -      1500   -      Baudouin       16M33G1700/5   W50°     Stage 0   E         540x230x260  10679      No tank   n.a.            2500",
+        "GE.CU.1690\\1540.BF  1690   -      1540   -      Cummins        QSK50G4        W50°     Stage 0   E         480x200x250  12323      No tank   n.a.            2500",
+        "GE.MH.1690\\1540.BF  1650   1880   1510   1700   Mitsubishi     S12R-PTAA2     W50°     Stage 0   E         480x200x260  11752      No tank   n.a.            2500",
+        "GE.PK.1660\\1500.BF  1656   1656   1505   1505   Perkins     4012-46TWG4A      W50°     Stage 0   E         510x230x240  10104      No tank   n.a.            2500",
+        "GE.BD.1900\\1750.BF  1900   -      1750   -      Baudouin       16M33G1900/5   W50°     Stage 0   E         560x230x270  11117      No tank   n.a.            3200",
+        "GE.MH.1900\\1730.BF  1880   2000   1720   1820   Mitsubishi     S16R-PTA       W50°     Stage 0   E         530x200x260  13860      No tank   n.a.            2500",
+        "GE.MT.1820\\1650.BF  1815   1875   1650   1700   MTU            12V 4000 G14F  W50°     Stage 0   E         500x200x250  12453      No tank   n.a.            2500",
+        "GE.PK.1880\\1700.BF  1876   1880   1705   1710   Perkins        4012-46TAG3A   W50°     Stage 0   E         510x220x270  11915      No tank   n.a.            2500",
+        "GE.CU.2080\\1890.BF  2079   -      1890   -      Cummins        QSK60G3        W50°     Stage 0   E         600x250x280  13906      No tank   n.a.            3200",
+        "GE.MH.2090\\1900.BF  2080   2280   1900   2070   Mitsubishi     S16R-PTA2      W50°     Stage 0   E         530x200x255  14528      No tank   n.a.            3200",
+        "GE.MT.2040\\1850.BF  2035   2200   1850   2000   MTU            12V 4000 G24F  W50°     Stage 0   E         500x200x250  12901      No tank   n.a.            3200",
+        "GE.PK.2030\\1850.BF  2028   -      1844   -      Perkins        4016-61TRG1    W50°     Stage 0   E         550x250x270  13473      No tank   n.a.            3200",
+        "GE.CU.2240\\2040.BF  2237   -      2034   -      Cummins        QSK60G4        W50°     Stage 0   E         600x250x280  14190      No tank   n.a.            3200",
+        "GE.MH.2200\\2000.BF  2200   -      2000   -      Mitsubishi     S16R-PTAA2     W50°     Stage 0   E         602x215x255  14820      No tank   n.a.            3200",
+        "GE.MT.2300\\2100.BF  2300   2500   2100   2275   MTU            16V 4000 G14F  W50°     Stage 0   E         610x230x300  14735      No tank   n.a.            3200",
+        "GE.PK.2265\\2060.BF  2250   -      2000   -      Perkins        4016-61TRG2    W50°     Stage 0   E         600x220x255  13757      No tank   n.a.            3200",
+        "GE.MH.2500\\2280.BF  2500   -      2280   -      Mitsubishi     S16R2-PTAW     W50°     Stage 0   E         610x230x300  16966      No tank   n.a.            4000",
+        "GE.MT.2530\\2300.BF  2530   2750   2300   2500   MTU            16V 4000 G24F  W50°     Stage 0   E         610x230x300  15714      No tank   n.a.            4000",
+        "GE.PK.2500\\2250.BF  2500   -      2250   -      Perkins        4016-61TRG3    W50°     Stage 0   E         610x230x300  14216      No tank   n.a.            4000",
+        "GE.MH.2640\\2400.BF  2640   -      2400   -      Mitsubishi     S16R2-PTAW-E   W50°     Stage 0   E         610x230x300  18298      No tank   n.a.            4000",
+        "GE.MT.2800\\2550.BF  2805   3125   2550   2813   MTU            20V 4000 G14F  W50°     Stage 0   E         665x232x278  19322      No tank   n.a.            4000",
+        "GE.CU.3000\\2750.BF  3000   -      2750   -      Cummins        QSK78G9        W50°     Stage 0   E         650x200x275  18997      No tank   n.a.            4000",
+        "GE.MT.3000\\2800.BF  3080   3438   2800   3125   MTU            20V 4000 G24F  W50°     Stage 0   E         650x200x275  19492      No tank   n.a.            4000",
+        "GE.MT.3360\\3000.BF  3355   3750   3050   3450   MTU            20V 4000 G34F  W50°     Stage 0   E         650x200x275  20033      No tank   n.a.            5000"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "DCP CASE 003 (4 x 2100 kVA, Scandinavia)",
+      "header": [
+        "LOCATION: Scandinavia, EUROPE"
+      ],
+      "rows": [
+        "POWER        4 x 2100 kVA DCP",
+        "ENGINE:      BAUDOUIN",
+        "20M33G2250/5",
+        "ALTERNATOR:  STAMFORD",
+        "S7L1D-H",
+        "CONTROLLER:  ComAp IG-NTC-BB (sync,"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "DCP CASE 002 (3x3000 kVA, Norway)",
+      "header": [
+        "LOCATION: Norway, EUROPE"
+      ],
+      "rows": [
+        "POWER        3x3000 kVA DCP",
+        "CASE 002  ENGINE:      BAUDOUIN",
+        "16M55G3300/5",
+        "ALTERNATOR:  MECCALTE",
+        "ECO47LV - 2M/4A",
+        "CONTROLLER:  ComAp IG-1000 + IV5.2"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "DCP CASE 001 (2 x 1000 kVA, Italy)",
+      "header": [
+        "LOCATION: Italy, EUROPE"
+      ],
+      "rows": [
+        "POWER        2 x 1000 kVA DCP",
+        "ENGINE:      PERKINS",
+        "4008-TAG2A",
+        "ALTERNATOR:  STAMFORD",
+        "CASE 001               S6L1D-E",
+        "CONTROLLER:  Elcos enhanced controller",
+        "MC4evo + remote"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Option with QBM DSE7320 controller on board",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AMF25",
+      "text": "ComAp AMF25",
+      "line": "Option with QBM ComAp AMF25 controller on board",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "IG-NTC-BB",
+      "text": "ComAp IG-NTC-BB",
+      "line": "CONTROLLER:  ComAp IG-NTC-BB (sync,",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "IG-1000",
+      "text": "ComAp IG-1000",
+      "line": "CONTROLLER:  ComAp IG-1000 + IV5.2",
+      "src": [
+        2002
+      ]
+    }
+  ]
 }

@@ -8,6 +8,7 @@
 - Catalog PDF: `catalog-pdf.mjs <id> <url> <pdf> [--rows|--single|--spread|--engines|--ocr]`. Trang ngang ghép 50|60 Hz → `--spread`; có lớp chữ mà không ra bảng → `--rows`; bảng vẽ bằng nét hoặc PDF có lớp chữ ẩn/chồng đôi → chạy thêm `--ocr` và so theo model. Luôn đối chiếu vài dòng với ảnh crop; sau lượt OCR so model trong chữ OCR với bản ghi để tìm cả nhóm bị loại.
 - OCR bảng ảnh: `ocr-specs.mjs <id> <trang> <ảnh|pdf>...`; chỉ giữ dòng code kiểm được. Tesseract nhầm 6/8/B, 5/S, Z/7/2, mất dấu chấm; còn đường kẻ thì mất gần hết số.
 - Tìm Thông Số một NCC: `config-bot.mjs spec --id X` (skill `tim-thong-so-ncc`).
+- NCC còn cần tìm thông số: `spec-todo.mjs` (chưa có dòng bảng, trừ `spec-none.json`). Đã thử tìm website + cào + Tìm Thông Số mà không ra bảng → `spec-todo.mjs --mark <id> --why "…"` để lần sau không tìm lại (gaps.mjs cũng không gửi specreq cho chúng); có nguồn mới thì `--unmark`.
 
 ## Bẫy cào / gộp
 - Sau mọi lần `merge-specs` toàn bộ: chạy verify VÀ so số dòng bảng/nguồn từng bản ghi với origin/main.

@@ -50,6 +50,370 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMBV-500",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "6M21G500/5"
+      ],
+      "alternatorMakes": [
+        "STAMFORD"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMB2-35",
+      "fuel": "diesel",
+      "power": {
+        "min": 35,
+        "max": 35,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "4M06G6D0/S"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMB2-72",
+      "fuel": "diesel",
+      "power": {
+        "min": 72,
+        "max": 72,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "4M10G2D0/S"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMB3-110",
+      "fuel": "diesel",
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "4M10G6D0/S"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMB2-150",
+      "fuel": "diesel",
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "6M11G2D0/S"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMB2-220",
+      "fuel": "diesel",
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "6M16G2D0/S"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMB-300",
+      "fuel": "diesel",
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "6M16G300/5"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMV-400",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2008
+        ]
+      },
+      "engineMakes": [
+        "VOLVO"
+      ],
+      "engineModels": [
+        "TAD 1342 GE"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMB3-550",
+      "fuel": "diesel",
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2009
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "6M21G8D0/S"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMBV-735",
+      "fuel": "diesel",
+      "power": {
+        "min": 735,
+        "max": 735,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "6M33G715/5"
+      ],
+      "alternatorMakes": [
+        "STAMFORD"
+      ],
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMV-800",
+      "fuel": "diesel",
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "engineMakes": [
+        "VOLVO"
+      ],
+      "engineModels": [
+        "TWD1645GE"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMOI-1000",
+      "fuel": "diesel",
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2012
+        ]
+      },
+      "engineMakes": [
+        "PERKINS"
+      ],
+      "engineModels": [
+        "4008-30TAG1"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMB-1250",
+      "fuel": "diesel",
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2013
+        ]
+      },
+      "engineMakes": [
+        "BAUDOUIN"
+      ],
+      "engineModels": [
+        "12M33G1250/5"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EMU-1600",
+      "fuel": "diesel",
+      "power": {
+        "min": 1600,
+        "max": 1600,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2014
+        ]
+      },
+      "engineMakes": [
+        "MITSUBISHI"
+      ],
+      "engineModels": [
+        "S12RPTA2"
+      ],
+      "alternatorMakes": [
+        "MECC-ALTE"
+      ],
+      "src": [
+        2014
+      ]
     }
   ],
   "certifications": [],
@@ -69,9 +433,581 @@
         "de 550 a 4000 KVA"
       ],
       "file": "sources/electra-molins/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=1250&Potencia=500&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMBV-500",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                500 kVA 400 kW",
+        "Potencia en servicio principal                                                                            450 kVA 360 kW",
+        "Marca y modelo                                                                                BAUDOUIN 6M21G500/5",
+        "Marca y modelo                                                                                       STAMFORD  S4L1D-G",
+        "Tipo de cuadro de control                                                                                 Comap AMF 25"
+      ],
+      "file": "sources/electra-molins/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=1511&Potencia=35&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMB2-35",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 35 kVA 28 kW",
+        "Potencia en servicio principal                                                                             32 kVA 25,6 kW",
+        "Marca y modelo                                                                               BAUDOUIN 4M06G6D0/S",
+        "Marca y modelo                                                                               LEROY  SOMER   TAL 042 CCC",
+        "Tipo de cuadro de control                                                                                  AUT-MP12"
+      ],
+      "file": "sources/electra-molins/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=1509&Potencia=72&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMB2-72",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 72 kVA 57,6 kW",
+        "Potencia en servicio principal                                                                             65 kVA 52 kW",
+        "Marca y modelo                                                                               BAUDOUIN 4M10G2D0/S",
+        "Marca y modelo                                                                               LEROY  SOMER  TAL.044.ACC",
+        "Tipo de cuadro de control                                                                                  AUT-MP12"
+      ],
+      "file": "sources/electra-molins/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=1507&Potencia=110&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMB3-110",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                110 kVA 88 kW",
+        "Potencia en servicio principal                                                                            100 kVA 80 kW",
+        "Marca y modelo                                                                                BAUDOUIN 4M10G6D0/S",
+        "Marca y modelo                                                                                LEROY  SOMER TAL.044.DCC",
+        "Tipo de cuadro de control                                                                                 AUT-MP12"
+      ],
+      "file": "sources/electra-molins/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=712&Potencia=150&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMB2-150",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                150 kVA 120 kW",
+        "Potencia en servicio principal                                                                            135 kVA 108 kW",
+        "Marca y modelo                                                                                BAUDOUIN 6M11G2D0/S",
+        "Marca y modelo                                                                                LEROY  SOMER TAL.044.HCC",
+        "Tipo de cuadro de control                                                                                 AUT-MP12"
+      ],
+      "file": "sources/electra-molins/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=1464&Potencia=220&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMB2-220",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                220 kVA 176 kW",
+        "Potencia en servicio principal                                                                            200 kVA 160 kW",
+        "Marca y modelo                                                                                BAUDOUIN 6M16G2D0/S",
+        "Marca y modelo                                                                                LEROY  SOMER TAL.044.MCC",
+        "Tipo de cuadro de control                                                                                 AUT-MP12"
+      ],
+      "file": "sources/electra-molins/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=818&Potencia=300&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMB-300",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 300 kVA 240 kW",
+        "Potencia en servicio principal                                                                             270 kVA 216 kW",
+        "Marca y modelo                                                                               BAUDOUIN 6M16G300/5",
+        "Marca y modelo                                                                               LEROY  SOMER     TAL.046.ECC",
+        "Tipo de cuadro de control                                                                                  AUT-MP12"
+      ],
+      "file": "sources/electra-molins/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=742&Potencia=400&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMV-400",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 400 kVA 320 kW",
+        "Potencia en servicio principal                                                                             360 kVA 288 kW",
+        "Marca y modelo                                                                                      VOLVO TAD 1342 GE",
+        "Marca y modelo                                                                                         LEROY SOMER",
+        "Tipo de cuadro de control                                                                                  AUT-MP12"
+      ],
+      "file": "sources/electra-molins/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=1580&Potencia=550&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMB3-550",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                550 kVA 440 kW",
+        "Potencia en servicio principal                                                                            500 kVA 400 kW",
+        "Marca y modelo                                                                                BAUDOUIN 6M21G8D0/S",
+        "Marca y modelo                                                                                LEROY  SOMER    TAL.047.CCC",
+        "Tipo de cuadro de control                                                                                 AUT-MP12"
+      ],
+      "file": "sources/electra-molins/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=1298&Potencia=735&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMBV-735",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                735 kVA 588 kW",
+        "Potencia en servicio principal                                                                            650 kVA 520 kW",
+        "Marca y modelo                                                                                BAUDOUIN 6M33G715/5",
+        "Marca y modelo                                                                                          STAMFORD HCI5F",
+        "Tipo de cuadro de control                                                                                 Comap AMF 25"
+      ],
+      "file": "sources/electra-molins/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=845&Potencia=800&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMV-800",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 800 kVA 640 kW",
+        "Potencia en servicio principal                                                                             700 kVA 560 kW",
+        "Marca y modelo                                                                                      VOLVO TWD1645GE",
+        "Marca y modelo                                                                               LEROY  SOMER     TAL 049 BCC",
+        "Tipo de cuadro de control                                                                                  AUT-MP15"
+      ],
+      "file": "sources/electra-molins/2011.md",
+      "official": false
+    },
+    {
+      "n": 2012,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=996&Potencia=1000&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMOI-1000",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                1.000 kVA 800 kW",
+        "Potencia en servicio principal                                                                            910 kVA 728 kW",
+        "Marca y modelo                                                                                PERKINS 4008-30TAG1",
+        "Marca y modelo                                                                                LEROY  SOMER     TAL.049.ECC",
+        "Tipo de cuadro de control                                                                                 AUT-MP15"
+      ],
+      "file": "sources/electra-molins/2012.md",
+      "official": false
+    },
+    {
+      "n": 2013,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=1071&Potencia=1250&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMB-1250",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                           1.250 kVA 1.000 kW",
+        "Potencia en servicio principal                                                                       1.125 kVA 900 kW",
+        "Marca y modelo                                                                                BAUDOUIN 12M33G1250/5",
+        "Marca y modelo                                                                                LEROY  SOMER     LSA 50.2 M6",
+        "Tipo de cuadro de control                                                                            MP15"
+      ],
+      "file": "sources/electra-molins/2013.md",
+      "official": false
+    },
+    {
+      "n": 2014,
+      "url": "https://cartec.electramolins.es/CartecPDF.aspx?IdGrupo=1075&Potencia=1600&FCons=1&IdiomaISO=es",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Modelo: EMU-1600",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                           1.600 kVA 1.280 kW",
+        "Potencia en servicio principal                                                                       1.400 kVA 1.120 kW",
+        "Marca y modelo                                                                                MITSUBISHI S12RPTA2",
+        "Marca y modelo                                                                                MECC-ALTE ECO46 1S4",
+        "Tipo de cuadro de control                                                                            AUT-MP15"
+      ],
+      "file": "sources/electra-molins/2014.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Electra Molins EMBV-500 – datos técnicos (BAUDOUIN 6M21G500/5, STAMFORD S4L1D-G)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMBV-500 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMBV-500",
+        "Tipo de cuadro de control                                                                                 Comap AMF 25",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                500 kVA 400 kW",
+        "Potencia en servicio principal                                                                            450 kVA 360 kW",
+        "Tensión                                                                                                   400 V",
+        "Frecuencia                                                                                                50 Hz",
+        "Largo x Ancho x Alto                                                                          3.650  x  1.300 x 1.920 mm",
+        "Peso sin combustible                                                                                           3.300 kg",
+        "Consumo de combustible al 75% de carga              (300  kW)                                                                 82,5 l/h",
+        "Marca y modelo                                                                                BAUDOUIN 6M21G500/5",
+        "Nº y disposición de los cilindros                                                                              6 en línea",
+        "Cilindrada total                                                                                                              12,54 l",
+        "Marca y modelo                                                                                       STAMFORD  S4L1D-G"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Electra Molins EMB2-35 – datos técnicos (BAUDOUIN 4M06G6D0/S, LEROY SOMER TAL 042 CCC)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMB2-35 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMB2-35",
+        "Tipo de cuadro de control                                                                                  AUT-MP12",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 35 kVA 28 kW",
+        "Potencia en servicio principal                                                                             32 kVA 25,6 kW",
+        "Tensión                                                                                                    400 V",
+        "Frecuencia                                                                                                 50 Hz",
+        "Largo x Ancho x Alto                                                                         1.670  x  870  x 1.570 mm",
+        "Peso sin combustible                                                                                                          750 kg",
+        "Consumo de combustible al 75% de carga              (21   kW)                                                                 6.30 l/h",
+        "Marca y modelo                                                                               BAUDOUIN 4M06G6D0/S",
+        "Nº y disposición de los cilindros                                                                           4 en línea",
+        "Cilindrada total                                                                                                              2,3 l",
+        "Marca y modelo                                                                               LEROY  SOMER   TAL 042 CCC"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Electra Molins EMB2-72 – datos técnicos (BAUDOUIN 4M10G2D0/S, LEROY SOMER TAL.044.ACC)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMB2-72 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMB2-72",
+        "Tipo de cuadro de control                                                                                  AUT-MP12",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 72 kVA 57,6 kW",
+        "Potencia en servicio principal                                                                             65 kVA 52 kW",
+        "Tensión                                                                                                    400 V",
+        "Frecuencia                                                                                                 50 Hz",
+        "Largo x Ancho x Alto                                                                         2.220  x  830 x 1.516 mm",
+        "Peso sin combustible                                                                                       1.300 kg",
+        "Consumo de combustible al 75% de carga              (43,2    kW)                                                              12,5 l/h",
+        "Marca y modelo                                                                               BAUDOUIN 4M10G2D0/S",
+        "Nº y disposición de los cilindros                                                                          4 en línea",
+        "Cilindrada total                                                                                                              4,087 l",
+        "Marca y modelo                                                                               LEROY  SOMER  TAL.044.ACC"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Electra Molins EMB3-110 – datos técnicos (BAUDOUIN 4M10G6D0/S, LEROY SOMER TAL.044.DCC)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMB3-110 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMB3-110",
+        "Tipo de cuadro de control                                                                                 AUT-MP12",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                110 kVA 88 kW",
+        "Potencia en servicio principal                                                                            100 kVA 80 kW",
+        "Tensión                                                                                                   400 V",
+        "Frecuencia                                                                                                50 Hz",
+        "Largo x Ancho x Alto                                                                          2.200  x  933 x 1.516 mm",
+        "Peso sin combustible                                                                                    1.350 kg",
+        "Consumo de combustible al 75% de carga              (66   kW)                                           18,35 l/h",
+        "Marca y modelo                                                                                BAUDOUIN 4M10G6D0/S",
+        "Nº y disposición de los cilindros                                                                       4 en línea",
+        "Cilindrada total                                                                                                              4,087 l",
+        "Marca y modelo                                                                                LEROY  SOMER TAL.044.DCC"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Electra Molins EMB2-150 – datos técnicos (BAUDOUIN 6M11G2D0/S, LEROY SOMER TAL.044.HCC)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMB2-150 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMB2-150",
+        "Tipo de cuadro de control                                                                                 AUT-MP12",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                150 kVA 120 kW",
+        "Potencia en servicio principal                                                                            135 kVA 108 kW",
+        "Tensión                                                                                                   400 V",
+        "Frecuencia                                                                                                50 Hz",
+        "Largo x Ancho x Alto                                                                          2.620  x  920  x 1.470 mm",
+        "Peso sin combustible                                                                                         1.680 kg",
+        "Consumo de combustible al 75% de carga              (90   kW)                                                                 21,6 l/h",
+        "Marca y modelo                                                                                BAUDOUIN 6M11G2D0/S",
+        "Nº y disposición de los cilindros                                                                            6 en línea",
+        "Cilindrada total                                                                                                              6,75 l",
+        "Marca y modelo                                                                                LEROY  SOMER TAL.044.HCC"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Electra Molins EMB2-220 – datos técnicos (BAUDOUIN 6M16G2D0/S, LEROY SOMER TAL.044.MCC)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMB2-220 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMB2-220",
+        "Tipo de cuadro de control                                                                                 AUT-MP12",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                220 kVA 176 kW",
+        "Potencia en servicio principal                                                                            200 kVA 160 kW",
+        "Tensión                                                                                                   400 V",
+        "Frecuencia                                                                                                50 Hz",
+        "Largo x Ancho x Alto                                                                          3.000  x  1.080 x 1.630 mm",
+        "Peso sin combustible                                                                                    2.400 kg",
+        "Consumo de combustible al 75% de carga              (132  kW)                                                                 35,5 l/h",
+        "Marca y modelo                                                                                BAUDOUIN 6M16G2D0/S",
+        "Nº y disposición de los cilindros                                                                       6 en línea",
+        "Cilindrada total                                                                                                              9,73 l",
+        "Marca y modelo                                                                                LEROY  SOMER TAL.044.MCC"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Electra Molins EMB-300 – datos técnicos (BAUDOUIN 6M16G300/5, LEROY SOMER TAL.046.ECC)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMB-300 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMB-300",
+        "Tipo de cuadro de control                                                                                  AUT-MP12",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 300 kVA 240 kW",
+        "Potencia en servicio principal                                                                             270 kVA 216 kW",
+        "Tensión                                                                                                    400 V",
+        "Frecuencia                                                                                                 50 Hz",
+        "Largo x Ancho x Alto                                                                         3.010  x  1.080  x 1.750 mm",
+        "Peso sin combustible                                                                                          2.460 kg",
+        "Consumo de combustible al 75% de carga              (180  kW)                                                                 43,2 l/h",
+        "Marca y modelo                                                                               BAUDOUIN 6M16G300/5",
+        "Nº y disposición de los cilindros                                                                             6 en línea",
+        "Cilindrada total                                                                                                              9,726 l",
+        "Marca y modelo                                                                               LEROY  SOMER     TAL.046.ECC"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Electra Molins EMV-400 – datos técnicos (VOLVO TAD 1342 GE, LEROY SOMER)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMV-400 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMV-400",
+        "Tipo de cuadro de control                                                                                  AUT-MP12",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 400 kVA 320 kW",
+        "Potencia en servicio principal                                                                             360 kVA 288 kW",
+        "Tensión                                                                                                    400 V",
+        "Frecuencia                                                                                                 50 Hz",
+        "Largo x Ancho x Alto                                                                         3.330  x  1.200  x 1.895 mm",
+        "Peso sin combustible                                                                                          3.220 kg",
+        "Consumo de combustible al 75% de carga              (240  kW)                                                                 55,2 l/h",
+        "Marca y modelo                                                                                      VOLVO TAD 1342 GE",
+        "Nº y disposición de los cilindros                                                                             6 en línea",
+        "Cilindrada total                                                                                                              12,78 l",
+        "Marca y modelo                                                                                         LEROY SOMER"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "Electra Molins EMB3-550 – datos técnicos (BAUDOUIN 6M21G8D0/S, LEROY SOMER TAL.047.CCC)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMB3-550 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMB3-550",
+        "Tipo de cuadro de control                                                                                 AUT-MP12",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                550 kVA 440 kW",
+        "Potencia en servicio principal                                                                            500 kVA 400 kW",
+        "Tensión                                                                                                   400 V",
+        "Frecuencia                                                                                                50 Hz",
+        "Largo x Ancho x Alto                                                                          3.195  x  1.195 x 1.880 mm",
+        "Peso sin combustible                                                                                          3.600 kg",
+        "Consumo de combustible al 75% de carga              (330  kW)                                                 80,85 l/h",
+        "Marca y modelo                                                                                BAUDOUIN 6M21G8D0/S",
+        "Nº y disposición de los cilindros                                                                             6 en línea",
+        "Cilindrada total                                                                                                              12,54 l",
+        "Marca y modelo                                                                                LEROY  SOMER    TAL.047.CCC"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Electra Molins EMBV-735 – datos técnicos (BAUDOUIN 6M33G715/5, STAMFORD HCI5F)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMBV-735 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMBV-735",
+        "Tipo de cuadro de control                                                                                 Comap AMF 25",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                735 kVA 588 kW",
+        "Potencia en servicio principal                                                                            650 kVA 520 kW",
+        "Tensión                                                                                                   400 V",
+        "Frecuencia                                                                                                50 Hz",
+        "Largo x Ancho x Alto                                                                          3.800  x  1.320  x 2.200 mm",
+        "Peso sin combustible                                                                                           5.700 kg",
+        "Consumo de combustible al 75% de carga              (441  kW)                                                                 115 l/h",
+        "Marca y modelo                                                                                BAUDOUIN 6M33G715/5",
+        "Nº y disposición de los cilindros                                                                              6 en línea",
+        "Cilindrada total                                                                                                              19,6 l",
+        "Marca y modelo                                                                                          STAMFORD HCI5F"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "Electra Molins EMV-800 – datos técnicos (VOLVO TWD1645GE, LEROY SOMER TAL 049 BCC)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMV-800 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMV-800",
+        "Tipo de cuadro de control                                                                                  AUT-MP15",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                 800 kVA 640 kW",
+        "Potencia en servicio principal                                                                             700 kVA 560 kW",
+        "Tensión                                                                                                    400 V",
+        "Frecuencia                                                                                                 50 Hz",
+        "Largo x Ancho x Alto                                                                         3.420  x  1.560  x 2.120 mm",
+        "Peso sin combustible                                                                                          5.100 kg",
+        "Consumo de combustible al 75% de carga              (480  kW)                                                 110,4 l/h",
+        "Marca y modelo                                                                                      VOLVO TWD1645GE",
+        "Nº y disposición de los cilindros                                                                             6 en línea",
+        "Cilindrada total                                                                                                              16,12 l",
+        "Marca y modelo                                                                               LEROY  SOMER     TAL 049 BCC"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "Electra Molins EMOI-1000 – datos técnicos (PERKINS 4008-30TAG1, LEROY SOMER TAL.049.ECC)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMOI-1000 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMOI-1000",
+        "Tipo de cuadro de control                                                                                 AUT-MP15",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                                1.000 kVA 800 kW",
+        "Potencia en servicio principal                                                                            910 kVA 728 kW",
+        "Tensión                                                                                                   400 V",
+        "Frecuencia                                                                                                50 Hz",
+        "Largo x Ancho x Alto                                                                          4.630  x  1.780  x 2.250 mm",
+        "Peso sin combustible                                                                                           7.780 kg",
+        "Consumo de combustible al 75% de carga              (600  kW)                                                                 163 l/h",
+        "Marca y modelo                                                                                PERKINS 4008-30TAG1",
+        "Nº y disposición de los cilindros                                                                              8 en línea",
+        "Cilindrada total                                                                                                              30,56 l",
+        "Marca y modelo                                                                                LEROY  SOMER     TAL.049.ECC"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "Electra Molins EMB-1250 – datos técnicos (BAUDOUIN 12M33G1250/5, LEROY SOMER LSA 50.2 M6)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMB-1250 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMB-1250",
+        "Tipo de cuadro de control                                                                            MP15",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                           1.250 kVA 1.000 kW",
+        "Potencia en servicio principal                                                                       1.125 kVA 900 kW",
+        "Tensión                                                                                              400 V",
+        "Frecuencia                                                                                           50 Hz",
+        "Largo x Ancho x Alto                                                                          4.630  x  1.870  x 2.550 mm",
+        "Peso sin combustible                                                                                           8.720 kg",
+        "Consumo de combustible al 75% de carga              (750  kW)                                                                 180 l/h",
+        "Marca y modelo                                                                                BAUDOUIN 12M33G1250/5",
+        "Nº y disposición de los cilindros                                                                                             12 en V",
+        "Cilindrada total                                                                                                              39,2 l",
+        "Marca y modelo                                                                                LEROY  SOMER     LSA 50.2 M6"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "Electra Molins EMU-1600 – datos técnicos (MITSUBISHI S12RPTA2, MECC-ALTE ECO46 1S4)",
+      "header": [
+        "Datos técnicos del grupo electrógeno: Modelo Electra Molins EMU-1600 FIJO / AUTOMÁTICO"
+      ],
+      "rows": [
+        "Modelo: EMU-1600",
+        "Tipo de cuadro de control                                                                            AUT-MP15",
+        "Potencia Máxima en servicio de emergencia por fallo de red                                           1.600 kVA 1.280 kW",
+        "Potencia en servicio principal                                                                       1.400 kVA 1.120 kW",
+        "Tensión                                                                                              400 V",
+        "Frecuencia                                                                                           50 Hz",
+        "Largo x Ancho x Alto                                                                          4.335  x  2.050 x 2.213 mm",
+        "Peso sin combustible                                                                                       10.300 kg",
+        "Consumo de combustible al 75% de carga              (960  kW)                                                                 239 l/h",
+        "Marca y modelo                                                                                MITSUBISHI S12RPTA2",
+        "Nº y disposición de los cilindros                                                                                             12 en V",
+        "Cilindrada total                                                                                                              49,03 l",
+        "Marca y modelo                                                                                MECC-ALTE ECO46 1S4"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "AMF 25",
+      "text": "Comap AMF 25",
+      "line": "Tipo de cuadro de control                                                                                 Comap AMF 25",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Electra Molins",
+      "model": "AUT-MP12",
+      "text": "AUT-MP12",
+      "line": "Tipo de cuadro de control                                                                                  AUT-MP12",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Electra Molins",
+      "model": "AUT-MP15",
+      "text": "AUT-MP15",
+      "line": "Tipo de cuadro de control                                                                                  AUT-MP15",
+      "src": [
+        2011
+      ]
+    },
+    {
+      "brand": "Electra Molins",
+      "model": "MP15",
+      "text": "MP15",
+      "line": "Tipo de cuadro de control                                                                            MP15",
+      "src": [
+        2013
+      ]
+    }
+  ]
 }

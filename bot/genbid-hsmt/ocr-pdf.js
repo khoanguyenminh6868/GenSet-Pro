@@ -33,8 +33,9 @@ const popplerBin = () => {
 // with OCR like a scan. Vietnamese text is ASCII plus combining marks (after NFD), đ, Cyrillic (the Vietnamese-Russian
 // HSMT of Vietsovpetro, IB2600015031) and some punctuation: a page with
 // more than 5% of other characters (ÿ, ª, Ç, ü, Ë, ...) is taken for a broken font. (A word list flagged a good page of
-// a table of upper-case items, IB2600011106.)
-const ODD = /[^\x20-\x7E\s̀-ͯđĐЀ-ӿ‐-‧‰-›°±×÷·€§©®™√≤≥≈∑∆Ωµ←→↑↓•▪●■□◦○◆✓✔]/gu;
+// a table of upper-case items, IB2600011106.) Only the combining marks Vietnamese uses are allowed (grave, acute,
+// circumflex, tilde, breve, hook above, horn, dot below): NFD splits "ÿ" into "y" + diaeresis, which must count as odd.
+const ODD = /[^\x20-\x7E\ṣ̛̀́̂̃̆̉đĐЀ-ӿ‐-‧‰-›°±×÷·€§©®™√≤≥≈∑∆Ωµ←→↑↓•▪●■□◦○◆✓✔]/gu;
 function garbled(t) {
   const s = t.replace(/\s/g, "").normalize("NFD");
   return s.length >= 300 && (s.match(ODD) || []).length / s.length > 0.05;

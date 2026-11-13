@@ -118,6 +118,9 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .syncline .spin{width:10px;height:10px}
 .syncline{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .syncline .ibtn{width:30px;height:30px}
+/* Chỉ lấy gói mới and Cấu hình hệ thống: the superadmin only (Khoa, 2026-11-13); shown by initDb. */
+.syncline .ibtn[hidden]{display:none}
+.aicfg{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center}
 .navbtns{display:flex;gap:8px;flex-wrap:wrap}
 #stageTabs .tshort{display:none}
 @media (max-width:640px){#stageTabs .tlong{display:none}#stageTabs .tshort{display:inline}}
@@ -515,7 +518,8 @@ details.sec>div{margin-top:10px}
     <div class="bmeta">
       <div class="syncline"><span class="dot" id="sdot"></span><span id="stext">Đang tải dữ liệu...</span>
         <button class="ibtn" id="refreshBtn" aria-label="Refresh" title="Đồng bộ: trong ứng dụng trên máy tính, lấy gói mới trực tiếp từ muasamcong; ở nơi khác chỉ tải lại danh sách đã lưu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
-        <button class="ibtn" id="syncNewBtn" aria-label="Chỉ lấy gói mới" title="Chỉ lấy các gói mới nhất từ muasamcong (so với gói mới nhất trong hệ thống), không kiểm tra hay cập nhật gói cũ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+        <button class="ibtn" id="syncNewBtn" hidden aria-label="Chỉ lấy gói mới" title="Chỉ lấy các gói mới nhất từ muasamcong (so với gói mới nhất trong hệ thống), không kiểm tra hay cập nhật gói cũ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+        <button class="ibtn" id="cfgBtn" hidden aria-label="Cấu hình hệ thống" title="Cấu hình hệ thống (chỉ Superadmin)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
         <span class="navbtns"><button class="btn sm" id="supBtn" title="Danh sách nhà cung cấp máy phát điện, có nguồn cho từng thông tin"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M4 21V11l5 3v-3l5 3V5h5v16"/><path d="M8 17h1M12 17h1M16 9h1M16 13h1M16 17h1"/></svg>Nhà cung cấp</button><button class="btn sm" id="bdBtn" title="Các nhà thầu gói máy phát điện trên muasamcong: gói đã dự, giá dự thầu, trúng hay không"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c.9-4 3.8-6.2 7.5-6.2s6.6 2.2 7.5 6.2"/></svg>Nhà thầu</button><button class="btn sm" data-catopen="engine" title="Thông số cấu hình: động cơ, bộ điều khiển, đầu phát rút từ dữ liệu của các nhà cung cấp"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M12 4v3"/><path d="M6 7h9l2 3h2v6h-2l-2 3H8l-2-3H4v-6h2z"/><path d="M1 11v4"/></svg>Thông số</button></span></div>
     </div>
     <div class="bnote" id="bnote" role="status" hidden></div>
@@ -1143,7 +1147,12 @@ async function initDb() {
   db.doc("feed/current").onSnapshot((snap) => { state.feed = snap.exists ? snap.data() : null; state.loaded.feed = true; renderAll(); rememberSeen(); },
     () => { state.loaded.feed = true; renderAll(); });
   db.doc("syncreq/current").onSnapshot((snap) => { state.syncreq = snap.exists ? snap.data() : null; renderTop(); }, () => {});
-  db.doc("botstatus/current").onSnapshot((snap) => { state.botstatus = snap.exists ? snap.data() : null; refreshWaits(); }, () => {});
+  db.doc("botstatus/current").onSnapshot((snap) => { state.botstatus = snap.exists ? snap.data() : null; refreshWaits(); aiCfgRedraw(); }, () => {});
+  // Chỉ lấy gói mới and Cấu hình hệ thống: the superadmin only (Khoa, 2026-11-13).
+  if (isSuperadmin()) {
+    $("#syncNewBtn").hidden = false; $("#cfgBtn").hidden = false;
+    db.doc("settings/ai").onSnapshot((snap) => { state.aiSettings = snap.exists ? snap.data() : null; aiCfgRedraw(); }, () => {});
+  }
   db.doc(viewDoc()).onSnapshot((snap) => {
     const v = snap.exists ? snap.data() : null;
     if (!v) return;
@@ -1181,6 +1190,9 @@ async function initDb() {
   // Past generator tenders (bidhist, a few MB) sit in the tabs too: the list waits for them, so its count does not jump
   // from the open tenders to every past one after a reload (Khoa, 2026-11-02).
   loadHist();
+  // Mở thẳng bằng link (/#dong-co, /#nha-cung-cap…): openScreenFromUrl() đã chạy khi chưa có state.db nên needSup() thoát sớm;
+  // nạp nhà cung cấp ở đây, màn hình đang mở tự vẽ lại khi dữ liệu về (supChanged).
+  if (!$("#ov").hidden) needSup(); // modal() đã xoá hash khỏi URL, nên hỏi màn hình đang mở thay vì screenOfUrl()
 }
 
 // ---------- HSMT text ----------
@@ -4339,7 +4351,7 @@ function tlktHtml(c) {
 }
 
 // ---------- Analysis rendering ----------
-const specsTableHtml = (a) => h`<details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table class="spec1"><thead><tr><th>Hạng mục</th><th>Yêu cầu</th><th>Nguồn</th></tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td class="s-item">${s.item}</td><td>${s.requirement}${raw(s.quote ? h`<div class="muted small">"${s.quote}"</div>` : "")}</td><td class="muted s-ref">${s.reference || ""}${raw(s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td></tr>`).join(""))}</tbody></table></div></details>`;
+const specsTableHtml = (a) => h`<details class="sec" open><summary>Thông số kỹ thuật (${(a.technicalSpecs || []).length})</summary><div class="tablewrap"><table class="spec1"><thead><tr><th>Hạng mục</th><th>Yêu cầu</th>${raw(SHOW_SRC ? "<th>Nguồn</th>" : "")}</tr></thead><tbody>${raw((a.technicalSpecs || []).map((s) => h`<tr><td class="s-item">${s.item}</td><td>${s.requirement}${raw(SHOW_SRC && s.quote ? h`<div class="muted small">"${s.quote}"</div>` : "")}${raw(!SHOW_SRC && s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td>${raw(SHOW_SRC ? h`<td class="muted s-ref">${s.reference || ""}${raw(s.unverified ? '<div style="color:var(--amber)">⚠ Chưa kiểm chứng được trong văn bản HSMT, cần kiểm tra</div>' : "")}</td>` : "")}</tr>`).join(""))}</tbody></table></div></details>`;
 // basis "specs": the bot read only the technical specs of Chương V (genbid-sync.js specs, Khoa 2026-11-03).
 function specsOnlyHtml(a) {
   const cap = a.keyInfo?.generatorCapacity;
@@ -4375,7 +4387,7 @@ function analysisHtml(a) {
     <details class="sec" open><summary>Thông tin chính</summary><div><dl class="kv kvw">${raw(KI.filter(([k]) => ki[k]).map(([k, l]) => h`<dt>${l}</dt><dd>${ki[k]}</dd>`).join(""))}</dl></div></details>
     ${raw(specsTableHtml(a))}
     ${raw(contractTermsHtml(a))}
-    <details class="sec"><summary>Yêu cầu năng lực, kinh nghiệm (${(a.qualificationRequirements || []).length})</summary><div>${raw(list((a.qualificationRequirements || []).map((q) => q.requirement + (q.reference ? ` (${q.reference})` : ""))))}</div></details>
+    <details class="sec"><summary>Yêu cầu năng lực, kinh nghiệm (${(a.qualificationRequirements || []).length})</summary><div>${raw(list((a.qualificationRequirements || []).map((q) => q.requirement + (SHOW_SRC && q.reference ? ` (${q.reference})` : ""))))}</div></details>
     <details class="sec"><summary>Tài liệu phải nộp (${(a.requiredDocuments || []).length})</summary><div>${raw(list(a.requiredDocuments))}</div></details>
     <details class="sec"><summary>Điều khoản có dấu hiệu hạn chế (${(a.restrictiveClauses || []).length})</summary><div>${raw(list(a.restrictiveClauses))}</div></details>
     <details class="sec"><summary>Câu hỏi nên gửi làm rõ (${(a.questionsForClarification || []).length})</summary><div>${raw(list(a.questionsForClarification))}</div></details>
@@ -4386,7 +4398,7 @@ function analysisHtml(a) {
 function contractTermsHtml(a) {
   const t = a.contractTerms || [];
   if (!t.length) return "";
-  return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv kvw kv1m">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
+  return h`<details class="sec" open><summary>Điều khoản hợp đồng: phạt, thanh toán, bảo đảm (${t.length})</summary><div><dl class="kv kvw kv1m">${raw(t.map((x) => h`<dt>${x.term}</dt><dd>${x.requirement}${raw(SHOW_SRC && x.reference ? h` <span class="muted small">(${x.reference})</span>` : "")}${raw(SHOW_SRC && x.quote ? h`<blockquote class="small">"${x.quote}"</blockquote>` : "")}</dd>`).join(""))}</dl></div></details>`;
 }
 // "Tự kiểm hồ sơ dự thầu": the bid against itself (other package's files, model mix-ups, catalogue vs offer, missing proof,
 // adverse wording). Problems first; older results have no selfChecks and show nothing. Quotes and file names follow SHOW_SRC.
@@ -4434,8 +4446,9 @@ function comparisonHtml(c) {
 // Gợi ý giá đấu needs it. Tenders of our own list read before (bidders/<TBMT>) count too when the history lacks them.
 let histLoad = null, histIdx = null;
 function loadHist() {
+  // Chưa có db (mở thẳng /#nha-thau trước initDb): không nhớ kết quả rỗng, initDb gọi lại loadHist() khi có db.
+  if (!state.db) { state.bidhist ||= {}; state.loaded.hist = true; return Promise.resolve(); }
   return (histLoad ||= new Promise((res) => {
-    if (!state.db) { state.bidhist = {}; state.loaded.hist = true; res(); return; }
     state.db.collection("bidhist").onSnapshot((snap) => {
       const next = {};
       snap.docs.forEach((d) => { next[d.id] = d.data(); });
@@ -4777,7 +4790,7 @@ function bidPriceMultiHtml(doc, t) {
 // ---------- Modal ----------
 function modal(html, onMount, cls = "") {
   if (screenOfUrl()) setScreenUrl();
-  const ov = $("#ov"); $("#mdl").className = "modal " + cls; $("#mdl").innerHTML = html; ov.hidden = false;
+  const ov = $("#ov"); $("#mdl").className = "modal " + cls; $("#mdl").removeAttribute("style"); $("#mdl").innerHTML = html; ov.hidden = false;
   const close = () => { ov.hidden = true; $("#mdl").innerHTML = ""; if (screenOfUrl()) setScreenUrl(); };
   // On a phone a tap outside the window does nothing: it closes only with its own buttons, Escape or Back (Khoa,
   // 2026-11-04). With a mouse a click outside closes it too (Khoa, 2026-11-04), unless the press began inside (a text
@@ -4893,6 +4906,7 @@ document.addEventListener("click", async (e) => {
   if (e.target.id === "goCompare") { $("#ov").hidden = true; openDrawer(e.target.dataset.key, "compare"); return; }
   if (e.target.closest("#refreshBtn")) { refreshAll(); return; }
   if (e.target.closest("#syncNewBtn")) { syncNew(); return; }
+  if (e.target.closest("#cfgBtn")) { openAiConfig(); return; }
   if (e.target.closest("#supBtn")) { openSuppliers(); return; }
   if (e.target.closest("#bdBtn")) { openBidders(); return; }
   const bdo = e.target.closest("[data-bdopen]");
@@ -5116,6 +5130,83 @@ async function syncNew() {
   try { await saveRequests("syncreq", [{ key: "current", mode: "new" }]); syncState.note = null; }
   catch (e) { syncState.note = { kind: "err", text: "Không gửi được yêu cầu lấy gói mới: " + (e?.message || "lỗi không rõ") }; }
   finally { btn.disabled = false; btn.blur(); renderAll(); }
+}
+// ---------- Cấu hình hệ thống (superadmin; Khoa, 2026-11-13) ----------
+// settings/ai: which tasks the bot pays with the API key or the monthly Claude plan, the API money spent this period
+// (the bot's own count, which Khoa can correct) and the amount at which the bot moves everything to the monthly plan.
+// The bot reads it with its heartbeat (api/requests.js) and reports its count in botstatus/current.api.
+const AI_TASKS = [["analysis", "Phân tích"], ["config", "Gợi ý cấu hình"], ["bidprice", "Gợi ý giá"], ["compare", "Đối chiếu hồ sơ"]];
+const AI_SWITCH_DEFAULT = 98;
+const usdText = (n) => (Number.isFinite(n) ? n.toLocaleString("en-US", { maximumFractionDigits: 2 }) : "");
+// "12,5" or "12.5" → 12.5 (numIn would read "." as a thousands mark); "" → null; anything else → NaN.
+const usdIn = (s) => { const t = String(s || "").trim().replace(/\s|\$|usd/gi, "").replace(",", "."); return t ? (/^\d+(\.\d+)?$/.test(t) ? Number(t) : NaN) : null; };
+// The spend as the page knows it: the bot's count, or what was saved here if the bot has not answered since.
+function aiSpent() {
+  const a = state.botstatus?.api, s = state.aiSettings?.spent;
+  if (s && (!a || (state.botstatus.lastPollAt || "") < s.at)) return { usd: s.usd, fromBot: false };
+  return a ? { usd: a.spent, fromBot: true, since: a.since, exhausted: a.exhausted } : null;
+}
+function aiCfgStatus() {
+  const sp = aiSpent(), cfg = state.aiSettings || {}, a = state.botstatus?.api;
+  const at = cfg.switchAtUsd ?? a?.switchAt ?? AI_SWITCH_DEFAULT;
+  if (!sp) return "Bot chưa báo số tiền API (bot chưa chạy bản mới, hoặc máy chưa có API key).";
+  const since = sp.since ? ` từ ${fmtDate(sp.since, false)}` : "";
+  const over = sp.exhausted ? " · API đã báo hết tiền: mọi việc đang dùng gói tháng tới kỳ sau."
+    : sp.usd >= at ? ` · đã tới ${usdText(at)} USD: mọi việc đang dùng gói tháng tới kỳ sau.` : "";
+  return `Dự kiến đã dùng ${usdText(sp.usd)} USD${since}${sp.fromBot ? "" : " (vừa lưu, chờ bot cập nhật)"}${over}`;
+}
+function aiCfgRedraw() { const el = $("#aiCfgStat"); if (el) el.textContent = aiCfgStatus(); }
+function openAiConfig() {
+  if (!isSuperadmin() || state.readOnly) { toast("Chỉ Superadmin được đổi cấu hình hệ thống."); return; }
+  const cfg = state.aiSettings || {}, use = { ...cfg.use };
+  const sp = aiSpent(), at = cfg.switchAtUsd ?? state.botstatus?.api?.switchAt ?? AI_SWITCH_DEFAULT;
+  const segOf = (k) => h`<div class="seg" role="tablist" aria-label="Cách trả tiền">${raw(["api", "plan"].map((v) => h`<button type="button" data-aiuse="${k}" data-v="${v}" aria-selected="${(use[k] || "api") === v ? "true" : "false"}">${v === "api" ? "API" : "Gói tháng"}</button>`).join(""))}</div>`;
+  modal(h`<div class="row"><h2 style="flex:1">Cấu hình hệ thống</h2><button class="btn sm" data-close>Đóng</button></div>
+    <details class="supsec" id="aiCfgUse" open style="margin:0"><summary>Cấu hình Claude</summary>
+      <div class="aicfg" style="margin-top:8px">${raw(AI_TASKS.map(([k, label]) => h`<span>${label}</span>${raw(segOf(k))}`).join(""))}</div></details>
+    <h4 style="margin:6px 0 0">Tiền API</h4>
+    <div class="muted small" id="aiCfgStat">${aiCfgStatus()}</div>
+    <div class="qgrid">
+      <div class="field"><label for="aiSpent">Đã dùng kỳ này (USD)</label><input type="text" id="aiSpent" inputmode="decimal" autocomplete="off" value="${sp ? usdText(sp.usd) : ""}" placeholder="vd 42.5"></div>
+      <div class="field"><label for="aiSwitch">Chuyển sang gói tháng khi tới (USD)</label><input type="text" id="aiSwitch" inputmode="decimal" autocomplete="off" value="${usdText(at)}"></div>
+    </div>
+    ${raw(cfg.updatedAt ? h`<p class="muted small" style="margin:0">Lưu gần nhất ${fmtDate(cfg.updatedAt)}${cfg.by ? `, ${cfg.by}` : ""}.</p>` : "")}
+    <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="aiCfgOk">Lưu</button></div>`, (m, close) => {
+    m.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-aiuse]");
+      if (!b) return;
+      use[b.dataset.aiuse] = b.dataset.v;
+      for (const x of m.querySelectorAll(`[data-aiuse="${b.dataset.aiuse}"]`)) x.setAttribute("aria-selected", x === b ? "true" : "false");
+    });
+    // Thu/mở "Cấu hình Claude" không làm màn hình nhảy (Khoa, 2026-11-13): hộp thoại vốn căn giữa nên co lại thì trôi
+    // lên; giữ mép trên của hộp và vị trí dòng tiêu đề như trước khi bấm, chỉ để hộp co/giãn ở phía dưới.
+    const sum = $("#aiCfgUse > summary", m);
+    sum.addEventListener("click", (e) => {
+      e.preventDefault();
+      const was = sum.getBoundingClientRect().top, top = m.getBoundingClientRect().top;
+      m.style.alignSelf = "start"; m.style.marginTop = "0px";
+      const base = m.getBoundingClientRect().top;
+      sum.parentElement.open = !sum.parentElement.open;
+      // Mở ra mà đáy hộp vượt màn hình thì đẩy hộp lên vừa đủ (không cao hơn chỗ căn từ đầu).
+      const over = Math.max(0, top + m.getBoundingClientRect().height - (innerHeight - base));
+      m.style.marginTop = `${Math.max(0, top - base - over)}px`;
+      m.scrollTop += sum.getBoundingClientRect().top - was;
+    });
+    const shown = $("#aiSpent", m).value;
+    $("#aiCfgOk", m).addEventListener("click", async () => {
+      const spentIn = $("#aiSpent", m).value, spent = usdIn(spentIn), sw = usdIn($("#aiSwitch", m).value);
+      if (Number.isNaN(spent) || Number.isNaN(sw)) { toast("Số tiền USD không hợp lệ (vd 42.5)."); return; }
+      const ai = { use: Object.fromEntries(AI_TASKS.map(([k]) => [k, use[k] === "plan" ? "plan" : "api"])), switchAtUsd: sw ?? AI_SWITCH_DEFAULT };
+      // Only a changed figure resets the bot's count.
+      if (spent != null && spentIn.trim() !== shown.trim()) ai.spentUsd = spent;
+      const btn = $("#aiCfgOk", m); btn.disabled = true;
+      try {
+        const { saved } = await window.genbidApi("/api/webreq", { coll: "settings", ai });
+        state.aiSettings = saved?.[0]?.data || state.aiSettings;
+        close(); toast("Đã lưu cấu hình. Bot áp dụng trong khoảng 1 phút.");
+      } catch (e) { btn.disabled = false; toast("Không lưu được: " + (e?.message || "lỗi không rõ"), 6000); }
+    });
+  });
 }
 async function refreshAll() {
   const btn = $("#refreshBtn"); btn.disabled = true;

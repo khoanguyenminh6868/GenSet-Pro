@@ -15,7 +15,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
-import { viaApi, noteApiSpend, costOf, switchToPlan } from "./api-budget.mjs";
+import { noteApiSpend, costOf, switchToPlan, taskEnv } from "./api-budget.mjs";
 import { api, allDocs, doc, post, technicalPart, hsmtTextOf, sizesFor, sizeText, MAX_SIZES, fitPart, writeForRead, agentInput, capNote } from "./config-bot.mjs";
 import * as RG from "./read-guard.mjs";
 
@@ -195,12 +195,13 @@ export function check(dir) {
 
 const CLAUDE_MIN = 25;
 function runClaude(dir) {
-  const api = viaApi();
+  // Cấu hình hệ thống may put Gợi ý giá on the monthly plan (taskEnv drops the API key for this run).
+  const env = taskEnv("bidprice"), api = !!env.ANTHROPIC_API_KEY;
   // stream-json: every Read is in the log, so read-guard can tell whether input.md and samples.md were read whole; the
   // first message is the instructions and the files to read in order (agentInput).
   const r = spawnSync(CLAUDE, ["-p", "--permission-mode", "auto", "--output-format", "stream-json", "--verbose", "--model", process.env.GENBID_BIDPRICE_MODEL || "opus",
     "--strict-mcp-config", "--disable-slash-commands", "--tools", "Read", "Write", "Grep", "Glob"],
-    { cwd: dir, encoding: "utf8", timeout: CLAUDE_MIN * 60e3, maxBuffer: 256 << 20, windowsHide: true, input: agentInput(dir, TASK, { scripts: false }) });
+    { cwd: dir, env, encoding: "utf8", timeout: CLAUDE_MIN * 60e3, maxBuffer: 256 << 20, windowsHide: true, input: agentInput(dir, TASK, { scripts: false }) });
   noteApiSpend(costOf(r.stdout), "bidprice", api);
   return api && switchToPlan(`${r.stdout || ""}${r.stderr || ""}`, "bidprice") ? runClaude(dir) : r;
 }
