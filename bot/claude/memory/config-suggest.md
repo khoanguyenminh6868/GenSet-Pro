@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-13T00:39:22.536Z
+  modified: 2026-11-13T00:55:12.430Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -38,7 +38,7 @@ metadata:
 
 **Gói nhiều cỡ máy:** mỗi cỡ một agent (tối đa 4), ngưỡng HSMT đọc theo khối của từng cỡ. **Gói dịch vụ** không tự Gợi ý.
 
-**Khoa bảo bỏ, đừng hỏi lại:** đầu phát mã TQ (S5L1D-H41); đưa giao hàng / MAF / giá vốn vào xếp hạng. Đã đo và bỏ: luật "chỉ loại khi nguồn hãng hoặc ≥2 nguồn"; nới trần 6 cấu hình.
+**Khoa bảo bỏ, đừng hỏi lại:** đầu phát mã TQ (S5L1D-H41); đưa giao hàng / MAF / giá vốn vào xếp hạng. xin datasheet từ đại lý; bổ sung bảng cho các NCC chưa có dòng bảng; thử Sonnet thay Opus cho Phân tích/xếp gói. Đã đo và bỏ: luật "chỉ loại khi nguồn hãng hoặc ≥2 nguồn"; nới trần 6 cấu hình; ứng viên 30 → 50 dòng.
 **Chưa chốt với Khoa:** đại diện hãng tại VN/MAF, ISO/prototype có tính vào xếp hạng không; hàng trúng có nên đưa lên trên không.
 
 ## Nguồn datasheet hãng

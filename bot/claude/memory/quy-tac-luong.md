@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-13T00:38:46.021Z
+  modified: 2026-11-13T00:55:17.132Z
 ---
 
 Chỉ ghi quyết định của Khoa và hiểu biết nghiệp vụ. Bẫy code ghi ở `web/CLAUDE.md`, `suppliers/CLAUDE.md` trong repo; việc còn dở ghi ở sổ điều phối ([[orchestrator-delegate-by-model]]). Không có tệp nhật ký gom.
@@ -17,7 +17,7 @@ Chỉ ghi quyết định của Khoa và hiểu biết nghiệp vụ. Bẫy code
 - **specs** (đọc Chương V mọi gói chưa có phân tích, 03–04/11/2026): có Chương V webform đủ nội dung → không OCR tệp scan; có tệp Chương V/YCKT riêng → không tải E-HSMT cả bộ; tệp trùng MD5 đọc 1 bản; không có tài liệu kỹ thuật → bảng "Danh mục hàng hóa". Không giới hạn dung lượng/số trang. Dừng gọn: tạo `genbid-work\specs-stop`; hết hạn mức Claude thì lượt tự dừng, chạy lại tay.
 - **Phân tích:** không cảnh báo thủ tục ([[phan-tich-bo-canh-bao]]); có mục Điều khoản hợp đồng (phạt, tạm ứng, thanh toán, bảo đảm) — phân tích cũ chưa có thì bấm Phân tích lại. Đối chiếu HSDT có tự kiểm chéo, phát hiện có bằng chứng tính vào điểm và kết luận (12/11/2026). HSDT chỉ lưu ở máy bot `Downloads\GenBid-HSDT\`, không lên git.
 - **NCC trên web:** yêu thích (☆, chung cả nhóm; dropdown Báo giá chỉ hiện NCC yêu thích); Loại trừ (mọi bot bỏ qua). Nhật ký hoạt động chỉ giữ 1 ngày.
-- **PR liên quan egress Supabase** phải qua nghiệm thu của phiên điều phối, không tự merge.
+- **Egress Supabase:** PR liên quan phải qua nghiệm thu của phiên điều phối. Khoa đã bảo bỏ (12/11/2026): lọc realtime `hsmttext`, chờ số Usage để lên Pro — đừng đề xuất lại.
 
 **Vì sao Thảo Nguyên bị loại kỹ thuật** (19 gói, Báo cáo đánh giá E-HSDT ở `C:\Projects\GenSet Pro\genbid-test\bcdg\`): xuất xứ chỉ là lý do ở 1 gói. Còn lại: lỗi soạn hồ sơ (nộp nhầm tệp gói khác, mã hàng lệch catalogue, không trả lời làm rõ, cam kết 48h thay vì 24h); thiếu catalogue / xác nhận hãng / test report / BPTC; linh kiện trượt một chỉ tiêu (BĐK Smartgen HGM6120 thiếu bảo vệ ngắn mạch, hiệu suất đầu phát, tiêu hao 50% tải, khí thải). Các chỉ tiêu này thành cảnh báo trên cấu hình hạng 1–3 ([[config-suggest]]).
 
