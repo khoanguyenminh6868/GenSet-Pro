@@ -8,7 +8,7 @@
     "zh": null,
     "brands": []
   },
-  "website": null,
+  "website": "https://www.cummins.com.cn/",
   "hq": {
     "province": null,
     "city": null
@@ -133,6 +133,16 @@
         "[029-83217576](tel:+102983217576) [Get Directions](https://www.google.com/maps/dir/?api=1&destination=No.31%2CXianning+East+Road%2C+Xi%27An%2C+SHAANXI+710043%2C+China)"
       ],
       "file": "sources/cummins-china-investment/6.md"
+    },
+    {
+      "n": 7,
+      "url": "https://www.cummins.com.cn/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "© 1990-2025康明斯（中国）投资有限公司 公司京ICP备06027042号"
+      ],
+      "file": "sources/cummins-china-investment/7.md"
     }
   ],
   "confidence": "medium",
