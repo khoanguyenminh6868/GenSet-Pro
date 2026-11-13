@@ -35,9 +35,10 @@ function append(rec) {
   try { fs.appendFileSync(f, JSON.stringify({ t: new Date().toISOString(), ...rec }) + "\n"); } catch {}
 }
 
-// usd: total_cost_usd of one claude -p run; api: whether that run was started with the API key.
-export function noteApiSpend(usd, src, api) {
-  if (api && Number(usd) > 0) append({ usd: Math.round(Number(usd) * 1e4) / 1e4, src });
+// usd: total_cost_usd of one claude -p run; api: whether that run was started with the API key; t0 (ms, optional): when
+// it started, so a spend corrected by hand in the middle of a run counts only the part after (apiBudgetOf).
+export function noteApiSpend(usd, src, api, t0) {
+  if (api && Number(usd) > 0) append({ usd: Math.round(Number(usd) * 1e4) / 1e4, src, ...(t0 ? { t0: new Date(t0).toISOString() } : {}) });
 }
 
 // The total_cost_usd of a --output-format json / stream-json run ({"type":"result",...} line), or null.

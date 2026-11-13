@@ -1780,9 +1780,10 @@ function taskEnv(task) {
 if (!process.env.ANTHROPIC_API_KEY && apiBudget().ok) {
   try { const k = fs.readFileSync(path.join(ROOT, ".anthropic-api-key"), "utf8").trim().split(/\r?\n/)[0]; if (k) { process.env.ANTHROPIC_API_KEY = k; process.env.GENBID_API_SPEND_FILE ||= API_SPEND; } } catch {}
 }
-function noteApiSpend(usd, src, api) {
+// t0 (ms): lúc bắt đầu lần gọi; số tiền Khoa sửa tay giữa chừng một lần gọi thì chỉ tính phần sau lúc sửa (apiBudgetOf).
+function noteApiSpend(usd, src, api, t0) {
   const f = process.env.GENBID_API_SPEND_FILE;
-  if (api && f && Number(usd) > 0) try { fs.appendFileSync(f, JSON.stringify({ t: new Date().toISOString(), usd: Math.round(Number(usd) * 1e4) / 1e4, src }) + "\n"); } catch {}
+  if (api && f && Number(usd) > 0) try { fs.appendFileSync(f, JSON.stringify({ t: new Date().toISOString(), usd: Math.round(Number(usd) * 1e4) / 1e4, src, ...(t0 ? { t0: new Date(t0).toISOString() } : {}) }) + "\n"); } catch {}
 }
 // API hết tiền / chạm hạn mức: ghi "exhausted", bỏ API key khỏi tiến trình này (các lần gọi sau dùng gói tháng).
 function switchToPlan(text, src) {
@@ -1799,7 +1800,7 @@ function switchToPlan(text, src) {
 
 // task: the Cấu hình hệ thống task of this call (AI_TASK_OF), "" for none.
 function askOnce(prompt, model, task = "") {
-  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY;
+  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY, t0 = Date.now();
   return new Promise((resolve) => {
     const p = cp.spawn(claudeExe(), ["-p", "--output-format", "json", "--model", model, "--tools", "", "--strict-mcp-config", "--disable-slash-commands"], { windowsHide: true, env });
     let out = "", err = "";
@@ -1809,7 +1810,7 @@ function askOnce(prompt, model, task = "") {
       clearTimeout(timer);
       let j = null; try { j = JSON.parse(out); } catch {}
       const text = j?.result || "";
-      noteApiSpend(j?.total_cost_usd, "ask", api);
+      noteApiSpend(j?.total_cost_usd, "ask", api, t0);
       if (api && (code !== 0 || j?.is_error) && switchToPlan(text + err + out, "ask")) return resolve(askOnce(prompt, model, task));
       if (LIMIT.test(text + err + out) && (code !== 0 || j?.is_error)) return resolve({ limit: (text || err || out).trim().slice(0, 300) });
       if (j) log(askTrace(j));

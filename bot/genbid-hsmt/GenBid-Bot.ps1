@@ -209,14 +209,24 @@ function Get-ApiBudget {
             try { $e = $l | ConvertFrom-Json; $t = [datetime]::Parse([string]$e.t, [Globalization.CultureInfo]::InvariantCulture) } catch { continue }
             if ($t -lt $since) { continue }
             if ($fix -and $t -le $fixAt) { continue }
-            if ($e.usd) { $spent += [double]$e.usd }
+            # Lần gọi đang chạy lúc sửa tay (t0 < lúc sửa < t): chỉ cộng phần thời gian sau lúc sửa (như afterShare).
+            $share = 1.0
+            if ($fix -and $e.t0) {
+                try {
+                    $t0 = [datetime]::Parse([string]$e.t0, [Globalization.CultureInfo]::InvariantCulture)
+                    if ($t0 -lt $fixAt -and $t -gt $t0) { $share = [math]::Min(1, [math]::Max(0, ($t - $fixAt).TotalSeconds / ($t - $t0).TotalSeconds)) }
+                } catch {}
+            }
+            if ($e.usd) { $spent += [double]$e.usd * $share }
             if ($e.exhausted) { $exhausted = $true }
         }
     }
     [pscustomobject]@{ Spent = [math]::Round($spent, 2); Limit = $b.monthlyUsd; SwitchAt = $b.switchAtUsd; Since = $since; Exhausted = $exhausted }
 }
-function Add-ApiSpend([double]$usd, [string]$src, [switch]$Exhausted) {
+# $start: lúc bắt đầu lần gọi (t0), để số tiền sửa tay giữa chừng chỉ cộng phần sau lúc sửa.
+function Add-ApiSpend([double]$usd, [string]$src, [switch]$Exhausted, $start = $null) {
     $rec = [ordered]@{ t = (Get-Date).ToUniversalTime().ToString('o'); usd = [math]::Round($usd, 4); src = $src }
+    if ($start) { $rec.t0 = ([datetime]$start).ToUniversalTime().ToString('o') }
     if ($Exhausted) { $rec.exhausted = $true }
     try { [IO.File]::AppendAllText($ApiSpendFile, (($rec | ConvertTo-Json -Compress) + "`n"), $Utf8) } catch {}
 }
@@ -376,13 +386,13 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
     if ($guard) { Invoke-Node-File $node $readJs (@('prep') + $dirs) | ForEach-Object { Log "  đọc: $_" } }
     # stream-json (--verbose) để code đọc được từng lần Read; dòng result cuối có total_cost_usd (sổ chi tiêu API).
     $cliArgs = @('-p', '--permission-mode', 'auto', '--output-format', 'stream-json', '--verbose', '--model', $model, '--strict-mcp-config', '--disable-slash-commands', '--tools', 'Bash', 'Read', 'Write', 'Edit', 'Glob', 'Grep')
-    $api = [bool]$env:ANTHROPIC_API_KEY
+    $api = [bool]$env:ANTHROPIC_API_KEY; $t0 = Get-Date
     $reason = Start-Run $claude $cliArgs $promptFile $sigs $out
     if ($api) {
         try {
             $last = Get-Content $out -Encoding UTF8 | Where-Object { $_ -like '*"type":"result"*' } | Select-Object -Last 1
             $c = ($last | ConvertFrom-Json).total_cost_usd
-            if ($c) { Add-ApiSpend ([double]$c) 'agent' }
+            if ($c) { Add-ApiSpend ([double]$c) 'agent' -start $t0 }
         } catch {}
     }
     # Đọc thiếu thì read-guard.json trong thư mục báo; genbid-sync.js finish không ghi đè kết quả cũ bằng kết quả đó.
