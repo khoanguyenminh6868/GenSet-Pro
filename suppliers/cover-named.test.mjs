@@ -176,8 +176,8 @@ test("brandLicensedChecks: gọi hai lần không lặp câu ghi chú của code
   brandLicensedChecks(c, reqs, NAMED, "make", noDot);
   assert.equal((c.checks[0].note.match(/Code ghi:/g) || []).length, 1);
 });
-// LỖI BIẾT: regex gỡ câu cũ dùng [^.]* nên dừng ở dấu chấm trong "S.L." → câu ghi chú lặp khi chạy lại trên cùng cấu hình.
-test("brandLicensedChecks: gọi hai lần với 'GRV POWER PRODUCTS, S.L.' không lặp câu ghi chú", { todo: "regex gỡ câu cũ dừng ở dấu chấm của 'S.L.', note lặp 'Code ghi:'" }, () => {
+// Đã sửa: regex gỡ câu cũ từng dùng [^.]* nên dừng ở dấu chấm trong "S.L." → câu ghi chú lặp khi chạy lại trên cùng cấu hình.
+test("brandLicensedChecks: gọi hai lần với 'GRV POWER PRODUCTS, S.L.' không lặp câu ghi chú", () => {
   const c = cfg("met");
   brandLicensedChecks(c, reqs, NAMED, "make", lic);
   c.checks[0].status = "met";

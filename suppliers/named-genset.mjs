@@ -287,7 +287,7 @@ export function brandLicensedChecks(c, reqs = [], named, hit, supOf = () => null
   x.was = x.status; x.status = "confirm"; x.confirm = "document"; x.licensed = true;
   x.ask = BRAND_ASK(named.make);
   x.licensedNote = `thương hiệu ${named.make} do ${who} chào, cần giấy tờ của nhà sản xuất (CO, CQ, thư uỷ quyền)`;
-  x.note = [String(x.note || "").replace(/\s*Code ghi: thương hiệu [^.]*\(CO, CQ, thư uỷ quyền\)\./g, "").trim(), `Code ghi: ${x.licensedNote}.`].filter(Boolean).join(" ");
+  x.note = [String(x.note || "").replace(/\s*Code ghi: thương hiệu .*?\(CO, CQ, thư uỷ quyền\)\./g, "").trim(), `Code ghi: ${x.licensedNote}.`].filter(Boolean).join(" ");
   return c;
 }
 // An internet source of the named configuration that is a seller's page: tier C as the agent wrote it, or no tier at all.
