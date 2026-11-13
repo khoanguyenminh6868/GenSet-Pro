@@ -252,15 +252,21 @@ test("specPrep: thư mục lượt có supplier.json, suppliers.json, meta.json 
   assert.match(input, /- Website: https:\/\/www\.cn-web\.com/);
   assert.match(input, /spec-check --dir \./);
 });
-test("specPrep NCC không có website: KHÔNG dừng sớm — vẫn chuẩn bị, input.md ghi 'Website: (không có)' (khoá hành vi: chặn NCC không web là việc của spec-todo / gaps.mjs)", async () => {
+test("specPrep NCC không có website: dừng trước khi dựng thư mục lượt và chạy agent (Khoa 13/11 'chặn đi')", async () => {
   const dir = tmpDir("spec-noweb");
-  await C.specPrep("cn-band", dir, [BAND]);
-  assert.match(read(dir, "input.md"), /- Website: \(không có\)/);
+  fs.rmSync(dir, { recursive: true, force: true });
+  for (const website of [null, undefined, "", "   "]) {
+    await assert.rejects(C.specPrep("cn-band", dir, [{ ...BAND, website }]), /chưa có website/, JSON.stringify(website));
+    assert.equal(fs.existsSync(dir), false, "không tạo thư mục lượt");
+  }
+  assert.equal(C.specSkip({ website: "https://www.cn-web.com" }), "");
+  assert.match(C.specSkip({ website: null }), /Thêm website/);
+  assert.match(C.specSkip(undefined), /chưa có website/);
 });
 test("specPrep NCC đã có bảng: liệt kê 'Bảng thông số đã có (đừng thêm lại)' và động cơ đọc được; > 80 bảng thì cắt, chỉ chỗ xem tiếp (khoá hành vi: không dừng sớm)", async () => {
   const dir = tmpDir("spec-full");
   const tables = Array.from({ length: 85 }, (_, i) => ({ n: 101 + i, title: `Bảng ${i + 1}`, header: [H], rows: [`| M-${i} | 400 | 320 | NTA855-G4 |`] }));
-  await C.specPrep("cn-full", dir, [sup("cn-full", [], { specTables: tables })]);
+  await C.specPrep("cn-full", dir, [sup("cn-full", [], { specTables: tables, website: "https://www.cn-full.com" })]);
   const input = read(dir, "input.md");
   const part = input.split("## Bảng thông số đã có (đừng thêm lại)\n")[1].split("\n\n")[0].split("\n");
   assert.equal(part.length, 81);
@@ -269,7 +275,7 @@ test("specPrep NCC đã có bảng: liệt kê 'Bảng thông số đã có (đ�
 });
 test("specPrep NCC chưa có bảng nào: '(chưa có)' ở bảng, động cơ, đầu phát, bộ điều khiển", async () => {
   const dir = tmpDir("spec-empty");
-  await C.specPrep("cn-none", dir, [{ id: "cn-none", country: "CN", role: "genset_oem", names: { en: "None" }, sources: [] }]);
+  await C.specPrep("cn-none", dir, [{ id: "cn-none", country: "CN", role: "genset_oem", names: { en: "None" }, website: "https://www.cn-none.com", sources: [] }]);
   const input = read(dir, "input.md");
   assert.equal(input.match(/\(chưa có\)/g).length, 4);
 });
