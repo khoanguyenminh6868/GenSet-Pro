@@ -1,0 +1,38 @@
+name: Test bot (PowerShell)
+
+# The PowerShell part of the Windows bot (bot/genbid-hsmt/*.ps1), tested with Pester from bot/test/*.Tests.ps1: Sync schedule,
+# lane grouping, delivered-request signatures, Set-ClaudeAuth and the API budget book, heartbeat, Get-GenBidBidderTargets,
+# Merge-GenBidFeed, Publish-GenBidHsmt (Get-FileText), Send-GenBidIngest. No network, no claude, no real .genbid-* files:
+# web, gh, Start-Process, Get-Date are faked in the tests. The bot itself runs on Windows PowerShell 5.1 (Pester 3.4 on its
+# machine); the tests avoid `Should` syntax so they run on both Pester 3.4 and 5.
+on:
+  pull_request:
+    paths: ['bot/**', '.github/workflows/test-bot-ps.yml']
+  push:
+    branches: [main]
+    paths: ['bot/**', '.github/workflows/test-bot-ps.yml']
+
+jobs:
+  bot-ps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pester on pwsh
+        shell: pwsh
+        run: |
+          $PSVersionTable.PSVersion
+          Install-Module Pester -RequiredVersion 5.7.1 -Force -Scope CurrentUser -SkipPublisherCheck
+          Import-Module Pester -RequiredVersion 5.7.1
+          Invoke-Pester -Path bot/test -CI -Output Detailed
+
+  bot-ps-win:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pester on Windows PowerShell 5.1
+        shell: powershell
+        run: |
+          $PSVersionTable.PSVersion
+          Install-Module Pester -RequiredVersion 5.7.1 -Force -Scope CurrentUser -SkipPublisherCheck
+          Import-Module Pester -RequiredVersion 5.7.1
+          Invoke-Pester -Path bot/test -CI -Output Detailed
