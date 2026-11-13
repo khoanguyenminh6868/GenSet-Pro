@@ -42,6 +42,1248 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "4006-23TAG2A E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG2A"
+      ],
+      "power": {
+        "min": 746,
+        "max": 746,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4006-23TAG3A E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4008TAG1A E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG1A"
+      ],
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4008TAGZA E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAGZA"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4008TAG3A E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG3A"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4008-30TAG3 E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008-30TAG3"
+      ],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4012-46TWG2A E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4012-46TAG2A E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TAG2A"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4012-46TAG3A E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TAG3A"
+      ],
+      "power": {
+        "min": 1710,
+        "max": 1710,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4016TAG1A E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016TAG1A"
+      ],
+      "power": {
+        "min": 1850,
+        "max": 1850,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4016TAGZA E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016TAGZA"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4016-61TRG1 E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG1"
+      ],
+      "power": {
+        "min": 1850,
+        "max": 1850,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4016-61TRG2 E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG2"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4016-61TRG3 E-unit",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016-61TRG3"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "5006",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "5006"
+      ],
+      "power": {
+        "min": 750,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "5008",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "5008"
+      ],
+      "power": {
+        "min": 910,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "5012",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "5012"
+      ],
+      "power": {
+        "min": 1275,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "5016",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "5016"
+      ],
+      "power": {
+        "min": 1710,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1506A-E88TAG4",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG4"
+      ],
+      "power": {
+        "min": 282,
+        "max": 282,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1506A-E88TAG5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG5"
+      ],
+      "power": {
+        "min": 308,
+        "max": 308,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1103A-33G",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1103A-33TG 1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG 1"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1103A-33TG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG2"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104A-441G1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-441G1"
+      ],
+      "power": {
+        "min": 65,
+        "max": 65,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104A-441G2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-441G2"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104C-44TAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TAG1"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104C-44TAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TAG2"
+      ],
+      "power": {
+        "min": 101,
+        "max": 101,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104D-44TG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104D-44TG1"
+      ],
+      "power": {
+        "min": 71,
+        "max": 71,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104D-F44TG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104D-F44TG1"
+      ],
+      "power": {
+        "min": 81,
+        "max": 81,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104D-E44TAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104D-E44TAG1"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104D-E44TAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104D-E44TAG2"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1106A-70TG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TG1"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1106A-70TAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG2"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1106A-70TAG3",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG3"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1106A-70TAG4",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG4"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "403A-15G1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G1"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "403A-15G2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G2"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "404A-22G1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404A-22G1"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "403D-15G",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403D-15G"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "404D-22G",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22G"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "404D-22TG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22TG"
+      ],
+      "power": {
+        "min": 27,
+        "max": 27,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "404D-22TAG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22TAG"
+      ],
+      "power": {
+        "min": 37,
+        "max": 37,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1206A-E70TTAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG1"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1206A-E70TTAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG2"
+      ],
+      "power": {
+        "min": 230,
+        "max": 230,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1206A-E70TTAG3",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG3"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1204F-E44TTAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1204F-E44TTAG2"
+      ],
+      "power": {
+        "min": 114,
+        "max": 114,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1206F-E70TTAG3",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206F-E70TTAG3"
+      ],
+      "power": {
+        "min": 169,
+        "max": 169,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1206F-E70TTAG4",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206F-E70TTAG4"
+      ],
+      "power": {
+        "min": 225,
+        "max": 225,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1706A-E93TAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1706A-E93TAG1"
+      ],
+      "power": {
+        "min": 308,
+        "max": 308,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1706A-E93TAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1706A-E93TAG2"
+      ],
+      "power": {
+        "min": 307,
+        "max": 307,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2206C-E13TAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206C-E13TAG2"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2206C-E13TAG3",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206C-E13TAG3"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2506C-E15TAG1",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506C-E15TAG1"
+      ],
+      "power": {
+        "min": 455,
+        "max": 455,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2506C-E15TAG2",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506C-E15TAG2"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
     }
   ],
   "certifications": [],
@@ -75,10 +1317,198 @@
         "October 1994: Lei Shing Hong Machinery Limited was registered and established in Hong Kong."
       ],
       "file": "sources/lei-shing-hong/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.lsh-cat.com/en/ps/perkins/product/t74/2393",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Perkins®️4000系列 parameter",
+        "4006-23TAG2A E-unit",
+        "| 发电机组功率 | 597 KW/746 KVA",
+        "4006-23TAG3A E-unit",
+        "| 机组功率主用 | 641 KW/800 KVA",
+        "4008TAG1A E-unit",
+        "| 机组功率主用 | 720 KW/900 KVA",
+        "4008TAGZA E-unit",
+        "| 机组功率主用 | 800KW/1000 KVA",
+        "4008TAG3A E-unit",
+        "4008-30TAG3 E-unit",
+        "| 机组功率主用 | 900KW/1125 KVA",
+        "4012-46TWG2A E-unit",
+        "| 机组功率主用 | 1000KW/1250 KVA",
+        "4012-46TAG2A E-unit",
+        "| 机组功率主用 | 1200KW/1500KVA",
+        "4012-46TAG3A E-unit",
+        "| 机组功率主用 | 1350KW/1710 KVA",
+        "4016TAG1A E-unit",
+        "| 机组功率主用 | 1480KW/1850KVA",
+        "4016TAGZA E-unit",
+        "| 机组功率主用 | 1600KW/2000KVA",
+        "4016-61TRG1 E-unit",
+        "4016-61TRG2 E-unit",
+        "4016-61TRG3 E-unit",
+        "| 机组功率主用 | 1800KW/2250KVA"
+      ],
+      "file": "sources/lei-shing-hong/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.lsh-cat.com/en/ps/perkins/product/t74/3144",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "新一代电控发动机5000系列 parameter",
+        "| 50Hz 功率（kVA）** | 750-900",
+        "| 50Hz 功率（kVA）** | 910-1250",
+        "| 50Hz 功率（kVA）** | 1275-1875",
+        "| 50Hz 功率（kVA）** | 1710-2500"
+      ],
+      "file": "sources/lei-shing-hong/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.lsh-cat.com/en/ps/perkins/product/t74/2395",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Perkins®️1500系列 parameter",
+        "1506A-E88TAG4",
+        "| 发电机组功率 | 226 KW/282 KVA",
+        "1506A-E88TAG5",
+        "| 机组功率主用 | 246 KW/308 KVA"
+      ],
+      "file": "sources/lei-shing-hong/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.lsh-cat.com/en/ps/perkins/product/t74/2397",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Perkins®️1100系列 parameter",
+        "1103A-33G",
+        "| 发电机组功率主用 | 24KW/30KVA",
+        "1103A-33TG 1",
+        "| 机组功率主用 | 36 KW/45KVA",
+        "1103A-33TG2",
+        "| 机组功率主用 | 48 KW/60 KVA",
+        "1104A-441G1",
+        "| 机组功率主用 | 52KW/65 KVA",
+        "1104A-441G2",
+        "| 机组功率主用 | 64KW/80 KVA",
+        "1104C-44TAG1",
+        "1104C-44TAG2",
+        "| 机组功率主用 | 81KW/101 KVA",
+        "1104D-44TG1",
+        "| 机组功率主用 | 57KW/71 KVA",
+        "1104D-F44TG1",
+        "| 机组功率主用 | 65KW/81 KVA",
+        "1104D-E44TAG1",
+        "| 机组功率主用 | 64KW/80KVA",
+        "1104D-E44TAG2",
+        "| 机组功率主用 | 80KW/100KVA",
+        "1106A-70TG1",
+        "| 机组功率主用 | 108KW/135KVA",
+        "1106A-70TAG2",
+        "| 机组功率主用 | 120KW/150KVA",
+        "1106A-70TAG3",
+        "| 机组功率主用 | 144KW/180KVA",
+        "1106A-70TAG4",
+        "| 机组功率主用 | 160KW/200KVA"
+      ],
+      "file": "sources/lei-shing-hong/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.lsh-cat.com/en/ps/perkins/product/t74/2399",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Perkins®400系列 parameter",
+        "403A-15G1",
+        "| 机组功率主用 | 主用10KW/备用13KVA",
+        "403A-15G2",
+        "| 机组功率主用 | 主用12KW/备用15KVA",
+        "404A-22G1",
+        "| 机组功率主用 | 16KW/20 KVA",
+        "403D-15G",
+        "| 机组功率主用 | 10KW/13 KVA",
+        "404D-22G",
+        "| 机组功率主用 | 16KW/20KVA",
+        "404D-22TG",
+        "| 机组功率主用 | 22KW/27KVA",
+        "404D-22TAG",
+        "| 机组功率主用 | 29KW/37 KVA"
+      ],
+      "file": "sources/lei-shing-hong/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.lsh-cat.com/en/ps/perkins/product/t74/2505",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Perkins®️1200系列 parameter",
+        "1206A-E70TTAG1",
+        "| 发电机组功率 | 160 KW/200KVA",
+        "1206A-E70TTAG2",
+        "| 机组功率主用 | 184 KW/230 KVA",
+        "1206A-E70TTAG3",
+        "| 机组功率主用 | 200 KW/250 KVA",
+        "1204F-E44TTAG2",
+        "| 机组功率主用 | 91 KW/114 KVA",
+        "1206F-E70TTAG3",
+        "| 机组功率主用 | 135KW/169KVA",
+        "1206F-E70TTAG4",
+        "| 机组功率主用 | 180KW/225 KVA"
+      ],
+      "file": "sources/lei-shing-hong/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.lsh-cat.com/en/ps/perkins/product/t74/2506",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Perkins®️1700系列 parameter",
+        "1706A-E93TAG1",
+        "| 发电机组功率 | 246 KW/308 KVA",
+        "1706A-E93TAG2",
+        "| 机组功率主用 | 246 KW/307 KVA"
+      ],
+      "file": "sources/lei-shing-hong/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.lsh-cat.com/en/ps/perkins/product/t74/2507",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Perkins®️2000系列 parameter",
+        "2206C-E13TAG2",
+        "| 机组功率主用 | 280 KW/350 KVA",
+        "2206C-E13TAG3",
+        "| 机组功率主用 | 320 KW/400 KVA",
+        "2506C-E15TAG1",
+        "| 机组功率主用 | 360 KW/455 KVA",
+        "2506C-E15TAG2",
+        "| 机组功率主用 | 400 KW/500 KVA"
+      ],
+      "file": "sources/lei-shing-hong/2008.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-13",
   "checkedBy": "discover-bot",
   "contacts": [
     {
@@ -93,6 +1523,756 @@
       "value": "0531-88772225",
       "src": [
         1
+      ]
+    }
+  ],
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "4006-23TAG2A E-unit",
+      "header": [
+        "4006-23TAG2A E-unit"
+      ],
+      "rows": [
+        "| 发电机组功率 | 597 KW/746 KVA",
+        "| Engine Power主用 | 628 KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4006-23TAG3A E-unit",
+      "header": [
+        "4006-23TAG3A E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 641 KW/800 KVA",
+        "| Engine Power主用 | 675Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4008TAG1A E-unit",
+      "header": [
+        "4008TAG1A E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 720 KW/900 KVA",
+        "| Engine Power主用 | 767KW",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4008TAGZA E-unit",
+      "header": [
+        "4008TAGZA E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 800KW/1000 KVA",
+        "| Engine Power主用 | 861Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4008TAG3A E-unit",
+      "header": [
+        "4008TAG3A E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 800KW/1000 KVA",
+        "| Engine Power主用 | 861 Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4008-30TAG3 E-unit",
+      "header": [
+        "4008-30TAG3 E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 900KW/1125 KVA",
+        "| Engine Power主用 | 947Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4012-46TWG2A E-unit",
+      "header": [
+        "4012-46TWG2A E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 1000KW/1250 KVA",
+        "| Engine Power主用 | 1055Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4012-46TAG2A E-unit",
+      "header": [
+        "4012-46TAG2A E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 1200KW/1500KVA",
+        "| Engine Power主用 | 1267Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4012-46TAG3A E-unit",
+      "header": [
+        "4012-46TAG3A E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 1350KW/1710 KVA",
+        "| Engine Power主用 | 1440Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4016TAG1A E-unit",
+      "header": [
+        "4016TAG1A E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 1480KW/1850KVA",
+        "| Engine Power主用 | 1537Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4016TAGZA E-unit",
+      "header": [
+        "4016TAGZA E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 1600KW/2000KVA",
+        "| Engine Power主用 | 1715Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4016-61TRG1 E-unit",
+      "header": [
+        "4016-61TRG1 E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 1480KW/1850KVA",
+        "| Engine Power主用 | 1558Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4016-61TRG2 E-unit",
+      "header": [
+        "4016-61TRG2 E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 1600KW/2000KVA",
+        "| Engine Power主用 | 1684Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "4016-61TRG3 E-unit",
+      "header": [
+        "4016-61TRG3 E-unit"
+      ],
+      "rows": [
+        "| 机组功率主用 | 1800KW/2250KVA",
+        "| Engine Power主用 | 1875Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | electric",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "5006",
+      "header": [
+        "5006"
+      ],
+      "rows": [
+        "| Displacement（升） | 23",
+        "| 60Hz 功率（kWe）* | 800",
+        "| 50Hz 功率（kVA）** | 750-900"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "5008",
+      "header": [
+        "5008"
+      ],
+      "rows": [
+        "| Displacement（升） | 30",
+        "| 60Hz 功率（kWe）* | 900-1000",
+        "| 50Hz 功率（kVA）** | 910-1250"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "5012",
+      "header": [
+        "5012"
+      ],
+      "rows": [
+        "| Displacement（升） | 46",
+        "| 60Hz 功率（kWe）* | 1250-1500",
+        "| 50Hz 功率（kVA）** | 1275-1875"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "5016",
+      "header": [
+        "5016"
+      ],
+      "rows": [
+        "| Displacement（升） | 61",
+        "| 60Hz 功率（kWe）* | Coming Soon",
+        "| 50Hz 功率（kVA）** | 1710-2500"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "1506A-E88TAG4",
+      "header": [
+        "1506A-E88TAG4"
+      ],
+      "rows": [
+        "| 发电机组功率 | 226 KW/282 KVA",
+        "| Engine Power主用 | 246 KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | ECM",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "1506A-E88TAG5",
+      "header": [
+        "1506A-E88TAG5"
+      ],
+      "rows": [
+        "| 机组功率主用 | 246 KW/308 KVA",
+        "| Engine Power主用 | 270 KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | ECM",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1103A-33G",
+      "header": [
+        "1103A-33G"
+      ],
+      "rows": [
+        "| 发电机组功率主用 | 24KW/30KVA",
+        "| Engine Power主用 | 28KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1103A-33TG 1",
+      "header": [
+        "1103A-33TG 1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 36 KW/45KVA",
+        "| Engine Power主用 | 42KW",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1103A-33TG2",
+      "header": [
+        "1103A-33TG2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 48 KW/60 KVA",
+        "| Engine Power主用 | 54KW",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1104A-441G1",
+      "header": [
+        "1104A-441G1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 52KW/65 KVA",
+        "| Engine Power主用 | 58Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1104A-441G2",
+      "header": [
+        "1104A-441G2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 64KW/80 KVA",
+        "| Engine Power主用 | 72Kw",
+        "| 转速 | 1500/1800",
+        "| 控制模式 | mech",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1104C-44TAG1",
+      "header": [
+        "1104C-44TAG1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 64KW/80 KVA",
+        "| Engine Power主用 | 72Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | LCG2",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1104C-44TAG2",
+      "header": [
+        "1104C-44TAG2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 81KW/101 KVA",
+        "| Engine Power主用 | 90Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | LCG2",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1104D-44TG1",
+      "header": [
+        "1104D-44TG1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 57KW/71 KVA",
+        "| Engine Power主用 | 63Kw",
+        "| 转速 | 1800rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1104D-F44TG1",
+      "header": [
+        "1104D-F44TG1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 65KW/81 KVA",
+        "| Engine Power主用 | 72Kw",
+        "| 转速 | 1800rpm",
+        "| 控制模式 | ECM",
+        "| Emission Standard | Tier3"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1104D-E44TAG1",
+      "header": [
+        "1104D-E44TAG1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 64KW/80KVA",
+        "| Engine Power主用 | 74Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | ECM",
+        "| Emission Standard | Tier3"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1104D-E44TAG2",
+      "header": [
+        "1104D-E44TAG2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 80KW/100KVA",
+        "| Engine Power主用 | 91Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | ECM",
+        "| Emission Standard | Stage IIIA, Tier3"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1106A-70TG1",
+      "header": [
+        "1106A-70TG1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 108KW/135KVA",
+        "| Engine Power主用 | 118Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | Stage IIIA, Tier3"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1106A-70TAG2",
+      "header": [
+        "1106A-70TAG2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 120KW/150KVA",
+        "| Engine Power主用 | 131Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech/LCG2",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1106A-70TAG3",
+      "header": [
+        "1106A-70TAG3"
+      ],
+      "rows": [
+        "| 机组功率主用 | 144KW/180KVA",
+        "| Engine Power主用 | 158Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech/LCG2",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "1106A-70TAG4",
+      "header": [
+        "1106A-70TAG4"
+      ],
+      "rows": [
+        "| 机组功率主用 | 160KW/200KVA",
+        "| Engine Power主用 | 174Kw",
+        "| 转速 | 1500rpm",
+        "| 控制模式 | LCG2",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "403A-15G1",
+      "header": [
+        "403A-15G1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 主用10KW/备用13KVA",
+        "| Engine Power主用 | 12KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "403A-15G2",
+      "header": [
+        "403A-15G2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 主用12KW/备用15KVA",
+        "| Engine Power主用 | 14KW",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "404A-22G1",
+      "header": [
+        "404A-22G1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 16KW/20 KVA",
+        "| Engine Power主用 | 18Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "403D-15G",
+      "header": [
+        "403D-15G"
+      ],
+      "rows": [
+        "| 机组功率主用 | 10KW/13 KVA",
+        "| Engine Power主用 | 12Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | N/A<19KW, Tier3"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "404D-22G",
+      "header": [
+        "404D-22G"
+      ],
+      "rows": [
+        "| 机组功率主用 | 16KW/20KVA",
+        "| Engine Power主用 | 18Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | Stage IIIA, Tier3"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "404D-22TG",
+      "header": [
+        "404D-22TG"
+      ],
+      "rows": [
+        "| 机组功率主用 | 22KW/27KVA",
+        "| Engine Power主用 | 25Kw",
+        "| 转速 | 1500/1800rpm",
+        "| 控制模式 | mech",
+        "| Emission Standard | Stage IIIA, Tier3"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "404D-22TAG",
+      "header": [
+        "404D-22TAG"
+      ],
+      "rows": [
+        "| 机组功率主用 | 29KW/37 KVA",
+        "| Engine Power主用 | 32Kw",
+        "| 转速 | 1800rpm",
+        "| 控制模式 | ECG",
+        "| Emission Standard | Stage IIIA, Tier3"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "1206A-E70TTAG1",
+      "header": [
+        "1206A-E70TTAG1"
+      ],
+      "rows": [
+        "| 发电机组功率 | 160 KW/200KVA",
+        "| Engine Power主用 | 176KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | ECM",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "1206A-E70TTAG2",
+      "header": [
+        "1206A-E70TTAG2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 184 KW/230 KVA",
+        "| Engine Power主用 | 200KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | MEC",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "1206A-E70TTAG3",
+      "header": [
+        "1206A-E70TTAG3"
+      ],
+      "rows": [
+        "| 机组功率主用 | 200 KW/250 KVA",
+        "| Engine Power主用 | 220KW",
+        "| 转速 | 1500/1800",
+        "| 控制模式 | MEC",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "1204F-E44TTAG2",
+      "header": [
+        "1204F-E44TTAG2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 91 KW/114 KVA",
+        "| Engine Power主用 | 100Kw",
+        "| 转速 | 1800",
+        "| 控制模式 | MEC",
+        "| Emission Standard | Tier 4 Final"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "1206F-E70TTAG3",
+      "header": [
+        "1206F-E70TTAG3"
+      ],
+      "rows": [
+        "| 机组功率主用 | 135KW/169KVA",
+        "| Engine Power主用 | 150Kw",
+        "| 转速 | 1800",
+        "| 控制模式 | ECM",
+        "| Emission Standard | Tier 4 Final"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "1206F-E70TTAG4",
+      "header": [
+        "1206F-E70TTAG4"
+      ],
+      "rows": [
+        "| 机组功率主用 | 180KW/225 KVA",
+        "| Engine Power主用 | 200Kw",
+        "| 转速 | 1800",
+        "| 控制模式 | MEC",
+        "| Emission Standard | Tier 4 Final"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "1706A-E93TAG1",
+      "header": [
+        "1706A-E93TAG1"
+      ],
+      "rows": [
+        "| 发电机组功率 | 246 KW/308 KVA",
+        "| Engine Power主用 | 270 KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | ECM",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "1706A-E93TAG2",
+      "header": [
+        "1706A-E93TAG2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 246 KW/307 KVA",
+        "| Engine Power主用 | 271 KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | ECM",
+        "| Emission Standard | N"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "2206C-E13TAG2",
+      "header": [
+        "2206C-E13TAG2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 280 KW/350 KVA",
+        "| Engine Power主用 | 305 KW",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | ECM",
+        "| Emission Standard | Tier2. Stage Il"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "2206C-E13TAG3",
+      "header": [
+        "2206C-E13TAG3"
+      ],
+      "rows": [
+        "| 机组功率主用 | 320 KW/400 KVA",
+        "| Engine Power主用 | 349Kw",
+        "| 转速 | 1500/1800 rpm",
+        "| 控制模式 | MEC",
+        "| Emission Standard | Tier2. Stage Il"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "2506C-E15TAG1",
+      "header": [
+        "2506C-E15TAG1"
+      ],
+      "rows": [
+        "| 机组功率主用 | 360 KW/455 KVA",
+        "| Engine Power主用 | 396KW",
+        "| 转速 | 1500/1800",
+        "| 控制模式 | MEC",
+        "| Emission Standard | Tier2. Stage Il"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "2506C-E15TAG2",
+      "header": [
+        "2506C-E15TAG2"
+      ],
+      "rows": [
+        "| 机组功率主用 | 400 KW/500 KVA",
+        "| Engine Power主用 | 435Kw",
+        "| 转速 | 1500/1800",
+        "| 控制模式 | MEC",
+        "| Emission Standard | Tier2. Stage Il"
       ]
     }
   ]
