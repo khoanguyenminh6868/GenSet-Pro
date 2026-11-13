@@ -59,6 +59,305 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "PD400-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "2206D-E13TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "JD60-02",
+      "fuel": "diesel",
+      "engineModels": [
+        "4045TF280"
+      ],
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PD100-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104D-E44TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "JD150-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "6068HF285"
+      ],
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PD200-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106D-E70TAG5"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VD250-03",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD852GE"
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VD300-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD1351GE"
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VD500-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD1641GE-B"
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PD600-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806C-E18TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PD750-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806C-E18TTAG7"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MD1000-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12H-Y2PTAW-1"
+      ],
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MD1250-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12R-Y2PTAW-1"
+      ],
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PD1500-01",
+      "fuel": "diesel",
+      "engineModels": [
+        "5012C-E46TAG6"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
     }
   ],
   "certifications": [
@@ -102,9 +401,391 @@
         "UL 2200 & CSA - 2021"
       ],
       "file": "sources/blue-star-power/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/PD400-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Perkins                                        Displacement - Cu. In. (lit):                               763 (12.5)",
+        "Model:                                                       2206D-E13TAG3                                  Bore - in. (cm) x Stroke - in.  (cm):       5.12    (13.0)  x 6.18 (15.7)",
+        "Generator  Model                      S4L1D-G41                  S4L1D-G41               S4L1D-F41                          S4L1S-F4",
+        "kWe                                   400                        400                     400                                400"
+      ],
+      "file": "sources/blue-star-power/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/JD60-02_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                                  John Deere                                 Displacement - Cu. In. (lit):                              275 (4.50)",
+        "Model:                                                                         4045TF280                                  Bore - in. (cm) x Stroke - in.  (cm):       4.19 (10.6)    x 5.00 (12.7)",
+        "Generator Model                 UCI224G        UCI224F                      UCI224F        UCI224E                        UCI224E",
+        "kWe                             60             60                           60             60                             60"
+      ],
+      "file": "sources/blue-star-power/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/PD100-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Perkins                                        Displacement - Cu. In. (lit):                               269 (4.40)",
+        "Model:                                                       1104D-E44TAG2                                  Bore - in. (cm) x Stroke - in.  (cm):       4.13    (10.5)  x 5.00 (12.7)",
+        "Generator  Model                UCI274F         UCI274D                      UCI274D         UCI274C                        UCI274D",
+        "kWe                             100             100                          100             100                            100"
+      ],
+      "file": "sources/blue-star-power/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/JD150-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                John Deere                                           Displacement - Cu. In. (lit):                               415 (6.80)",
+        "Model:                                                       6068HF285                                            Bore - in. (cm) x Stroke - in.  (cm):       4.19    (10.6)  x 5.00 (12.7)",
+        "Generator  Model                UCDI274J1       UCI274G                      UCI274G         UCI274F                        UCI274F",
+        "kWe                             150             150                          150             150                            150"
+      ],
+      "file": "sources/blue-star-power/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/PD200-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Perkins                                       Displacement - Cu. In. (lit):                               428 (7.01)",
+        "Model:                                                       1106D-E70TAG5                                 Bore - in. (cm) x Stroke - in.  (cm):       4.13    (10.5)  x 5.31 (13.5)",
+        "Generator  Model                S4L1D-E41       UCDI274J1                    UCDI274J1       UCI274H                        UCI274H",
+        "kWe                             200             200                          200             200                            200"
+      ],
+      "file": "sources/blue-star-power/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/VD250-03_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Volvo Penta                                       Displacement - Cu. In. (lit):                               470 (7.70)",
+        "Model:                                                       TAD852GE                                          Bore - in. (cm) x Stroke - in.  (cm):       4.33    (11.0)  x 5.31 (13.5)",
+        "Generator Model                 S4L1D-G41     S4L1D-D41                    S4L1D-D41      S4L1D-C41                      S4L1S-C4",
+        "kWe                             250           250                          250            250                            250"
+      ],
+      "file": "sources/blue-star-power/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/VD300-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Volvo Penta                                         Displacement - Cu. In. (lit):                               780 (12.8)",
+        "Model:                                                       TAD1351GE                                           Bore - in. (cm) x Stroke - in.  (cm):       5.16    (13.1)  x 6.22 (15.8)",
+        "Generator Model                       S4L1D-E41                S4L1D-E41               S4L1D-D41                          S4L1S-D4",
+        "kWe                                   300                      300                     300                                300"
+      ],
+      "file": "sources/blue-star-power/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/VD500-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Volvo Penta                                         Displacement - Cu. In. (lit):                               984 (16.1)",
+        "Model:                                                       TAD1641GE-B                                         Bore - in. (cm) x Stroke - in.  (cm):       5.67    (14.4)  x 6.50 (16.5)",
+        "Generator  Model                      HCI534E                    HCI534E                 HCI534D                            HCI534D",
+        "kWe                                   500                        500                     500                                500"
+      ],
+      "file": "sources/blue-star-power/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/PD600-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Perkins                                           Displacement - Cu. In. (lit):                       1,106 (18.1)",
+        "Model:                                                       2806C-E18TAG3                                     Bore - in. (cm) x Stroke - in.  (cm):       5.71    (14.5) x 7.20 (18.3)",
+        "Generator  Model                      S6L1D-C                    S6L1D-C                 HCI534E                            HCI534F",
+        "kWe                                   600                        600                     600                                600"
+      ],
+      "file": "sources/blue-star-power/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/PD750-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Perkins                                        Displacement - Cu. In. (lit):                       1,105 (18.1)",
+        "Model:                                                       2806C-E18TTAG7                                 Bore - in. (cm) x Stroke - in.  (cm):       5.71    (14.5) x 7.20 (18.3)",
+        "Generator  Model                      S6L1D-D                    S6L1D-D                 S6L1D-C                            S6L1D-C",
+        "kWe                                   750                        750                     750                                750"
+      ],
+      "file": "sources/blue-star-power/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/MD1000-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Mitsubishi                                        Displacement - Cu. In. (lit):                       2,265 (37.1)",
+        "Model:                                                       S12H-Y2PTAW-1                                     Bore - in. (cm) x Stroke - in.  (cm):       5.91    (15.0) x 6.89 (17.5)",
+        "Generator Model                 S6L1D-F        S6L1D-F                      S6L1D-E       S6L1D-E                       MVWI734E",
+        "kWe                             1000           1000                         1000          1000                          1000"
+      ],
+      "file": "sources/blue-star-power/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/MD1250-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Mitsubishi                                        Displacement - Cu. In. (lit):                       2,992 (49.0)",
+        "Model:                                                       S12R-Y2PTAW-1                                     Bore - in. (cm) x Stroke - in.  (cm):       6.69    (17.0) x 7.09 (18.0)",
+        "Generator Model                 Consult  Factory  Consult  Factory             S6L1D-H       S6L1D-H                       MVWI734F",
+        "kWe                             1250              1250                         1250          1250                          1250"
+      ],
+      "file": "sources/blue-star-power/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://power.bluestarps.com/media/Product/Diesel%20Product%20Line/PD1500-01_SpecSheet.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Manufacturer:                                                Perkins                                          Displacement - Cu. In. (lit):                       2,795 (45.8)",
+        "Model:                                                       5012C-E46TAG6                                    Bore - in. (cm) x Stroke - in.  (cm):       6.30    (16.0) x 7.48 (19.0)",
+        "Generator Model                 Consult  Factory  Consult  Factory             S7L1D-E       S7L1D-D                       MVWI734H",
+        "kWe                             1500              1500                         1500          1500                          1500"
+      ],
+      "file": "sources/blue-star-power/2013.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "PD400-01 400 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "208V                       240V                    480V                               600V"
+      ],
+      "rows": [
+        "Generator  Model                      S4L1D-G41                  S4L1D-G41               S4L1D-F41                          S4L1S-F4",
+        "kWe                                   400                        400                     400                                400",
+        "Manufacturer:                                                Perkins                                        Displacement - Cu. In. (lit):                               763 (12.5)",
+        "Model:                                                       2206D-E13TAG3                                  Bore - in. (cm) x Stroke - in.  (cm):       5.12    (13.0)  x 6.18 (15.7)"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "JD60-02 60 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "240V               208V                         240V           480V                           600V"
+      ],
+      "rows": [
+        "Generator Model                 UCI224G        UCI224F                      UCI224F        UCI224E                        UCI224E",
+        "kWe                             60             60                           60             60                             60",
+        "Manufacturer:                                                                  John Deere                                 Displacement - Cu. In. (lit):                              275 (4.50)",
+        "Model:                                                                         4045TF280                                  Bore - in. (cm) x Stroke - in.  (cm):       4.19 (10.6)    x 5.00 (12.7)"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "PD100-01 100 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "240V                208V                         240V            480V                           600V"
+      ],
+      "rows": [
+        "Generator  Model                UCI274F         UCI274D                      UCI274D         UCI274C                        UCI274D",
+        "kWe                             100             100                          100             100                            100",
+        "Manufacturer:                                                Perkins                                        Displacement - Cu. In. (lit):                               269 (4.40)",
+        "Model:                                                       1104D-E44TAG2                                  Bore - in. (cm) x Stroke - in.  (cm):       4.13    (10.5)  x 5.00 (12.7)"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "JD150-01 150 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "240V                208V                         240V            480V                           600V"
+      ],
+      "rows": [
+        "Generator  Model                UCDI274J1       UCI274G                      UCI274G         UCI274F                        UCI274F",
+        "kWe                             150             150                          150             150                            150",
+        "Manufacturer:                                                John Deere                                           Displacement - Cu. In. (lit):                               415 (6.80)",
+        "Model:                                                       6068HF285                                            Bore - in. (cm) x Stroke - in.  (cm):       4.19    (10.6)  x 5.00 (12.7)"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "PD200-01 200 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "240V                208V                         240V            480V                           600V"
+      ],
+      "rows": [
+        "Generator  Model                S4L1D-E41       UCDI274J1                    UCDI274J1       UCI274H                        UCI274H",
+        "kWe                             200             200                          200             200                            200",
+        "Manufacturer:                                                Perkins                                       Displacement - Cu. In. (lit):                               428 (7.01)",
+        "Model:                                                       1106D-E70TAG5                                 Bore - in. (cm) x Stroke - in.  (cm):       4.13    (10.5)  x 5.31 (13.5)"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "VD250-03 250 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "240V              208V                         240V           480V                           600V"
+      ],
+      "rows": [
+        "Generator Model                 S4L1D-G41     S4L1D-D41                    S4L1D-D41      S4L1D-C41                      S4L1S-C4",
+        "kWe                             250           250                          250            250                            250",
+        "Manufacturer:                                                Volvo Penta                                       Displacement - Cu. In. (lit):                               470 (7.70)",
+        "Model:                                                       TAD852GE                                          Bore - in. (cm) x Stroke - in.  (cm):       4.33    (11.0)  x 5.31 (13.5)"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "VD300-01 300 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "208V                     240V                    480V                               600V"
+      ],
+      "rows": [
+        "Generator Model                       S4L1D-E41                S4L1D-E41               S4L1D-D41                          S4L1S-D4",
+        "kWe                                   300                      300                     300                                300",
+        "Manufacturer:                                                Volvo Penta                                         Displacement - Cu. In. (lit):                               780 (12.8)",
+        "Model:                                                       TAD1351GE                                           Bore - in. (cm) x Stroke - in.  (cm):       5.16    (13.1)  x 6.22 (15.8)"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "VD500-01 500 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "208V                       240V                    480V                               600V"
+      ],
+      "rows": [
+        "Generator  Model                      HCI534E                    HCI534E                 HCI534D                            HCI534D",
+        "kWe                                   500                        500                     500                                500",
+        "Manufacturer:                                                Volvo Penta                                         Displacement - Cu. In. (lit):                               984 (16.1)",
+        "Model:                                                       TAD1641GE-B                                         Bore - in. (cm) x Stroke - in.  (cm):       5.67    (14.4)  x 6.50 (16.5)"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "PD600-01 600 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "208V                       240V                    480V                               600V"
+      ],
+      "rows": [
+        "Generator  Model                      S6L1D-C                    S6L1D-C                 HCI534E                            HCI534F",
+        "kWe                                   600                        600                     600                                600",
+        "Manufacturer:                                                Perkins                                           Displacement - Cu. In. (lit):                       1,106 (18.1)",
+        "Model:                                                       2806C-E18TAG3                                     Bore - in. (cm) x Stroke - in.  (cm):       5.71    (14.5) x 7.20 (18.3)"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "PD750-01 750 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "208V                       240V                    480V                               600V"
+      ],
+      "rows": [
+        "Generator  Model                      S6L1D-D                    S6L1D-D                 S6L1D-C                            S6L1D-C",
+        "kWe                                   750                        750                     750                                750",
+        "Manufacturer:                                                Perkins                                        Displacement - Cu. In. (lit):                       1,105 (18.1)",
+        "Model:                                                       2806C-E18TTAG7                                 Bore - in. (cm) x Stroke - in.  (cm):       5.71    (14.5) x 7.20 (18.3)"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "MD1000-01 1000 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "208V               240V                         480V          600V                          4160V"
+      ],
+      "rows": [
+        "Generator Model                 S6L1D-F        S6L1D-F                      S6L1D-E       S6L1D-E                       MVWI734E",
+        "kWe                             1000           1000                         1000          1000                          1000",
+        "Manufacturer:                                                Mitsubishi                                        Displacement - Cu. In. (lit):                       2,265 (37.1)",
+        "Model:                                                       S12H-Y2PTAW-1                                     Bore - in. (cm) x Stroke - in.  (cm):       5.91    (15.0) x 6.89 (17.5)"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "MD1250-01 1250 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "208V                  240V                         480V          600V                          4160V"
+      ],
+      "rows": [
+        "Generator Model                 Consult  Factory  Consult  Factory             S6L1D-H       S6L1D-H                       MVWI734F",
+        "kWe                             1250              1250                         1250          1250                          1250",
+        "Manufacturer:                                                Mitsubishi                                        Displacement - Cu. In. (lit):                       2,992 (49.0)",
+        "Model:                                                       S12R-Y2PTAW-1                                     Bore - in. (cm) x Stroke - in.  (cm):       6.69    (17.0) x 7.09 (18.0)"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "PD1500-01 1500 kWe Standby, 60 Hz / 1800 RPM",
+      "header": [
+        "208V                  240V                         480V          600V                          4160V"
+      ],
+      "rows": [
+        "Generator Model                 Consult  Factory  Consult  Factory             S7L1D-E       S7L1D-D                       MVWI734H",
+        "kWe                             1500              1500                         1500          1500                          1500",
+        "Manufacturer:                                                Perkins                                          Displacement - Cu. In. (lit):                       2,795 (45.8)",
+        "Model:                                                       5012C-E46TAG6                                    Bore - in. (cm) x Stroke - in.  (cm):       6.30    (16.0) x 7.48 (19.0)"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7310",
+      "text": "DSE 7310",
+      "line": "DSE 7310",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7310",
+      "text": "DSE 7310",
+      "line": "DSE 7310",
+      "src": [
+        2009
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7310",
+      "text": "DSE 7310",
+      "line": "DSE 7310",
+      "src": [
+        2010
+      ]
+    }
+  ]
 }
