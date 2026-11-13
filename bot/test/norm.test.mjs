@@ -1,6 +1,6 @@
 // Noise and fuel limits of an HSMT against what diesel sets can do (Khoa, 2026-11-13: thresholds per size, approved the
-// same day): a limit tighter than the usual figure of a set of that size is a critical highlight of Phân tích (Khoa: "Quan
-// Trọng chứ không phải Thông Tin"), titled by whether the best sets still reach it; a looser one says nothing. Figures by hand.
+// same day): a limit tighter than the usual figure of a set of that size is a critical highlight of Phân tích (Khoa: Quan
+// trọng, not Thông tin), titled by whether the best sets still reach it; a looser one says nothing. Figures by hand.
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
