@@ -1154,7 +1154,9 @@ async function initDb() {
   db.doc("botstatus/current").onSnapshot((snap) => { state.botstatus = snap.exists ? snap.data() : null; refreshWaits(); aiCfgRedraw(); }, () => {});
   // Chỉ lấy gói mới and Cấu hình hệ thống: the superadmin only (Khoa, 2026-11-13).
   if (isSuperadmin()) {
-    $("#syncNewBtn").hidden = false; $("#cfgBtn").hidden = false;
+    // Thêm mới (#syncNewBtn) tạm ẩn theo Khoa 2026-11-13: bỏ chú thích dòng dưới để hiện lại.
+    // $("#syncNewBtn").hidden = false;
+    $("#cfgBtn").hidden = false;
     db.doc("settings/ai").onSnapshot((snap) => { state.aiSettings = snap.exists ? snap.data() : null; aiCfgRedraw(); }, () => {});
   }
   db.doc(viewDoc()).onSnapshot((snap) => {
