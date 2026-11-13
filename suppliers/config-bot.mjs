@@ -356,8 +356,9 @@ const cfgNumOf = (v) => Number(v).toLocaleString("vi-VN", { maximumFractionDigit
 export const sizeText = (s) => `${s.qty ? `${s.qty} x ` : ""}${s.label}`;
 const sameSize = (a, b) => a?.cap && b?.cap && a.cap.unit === b.cap.unit && Math.abs(a.cap.value - b.cap.value) < 1e-6;
 // The sizes of a tender: from its analysis, else its name.
-export async function sizesFor(key, bidName) {
-  const a = (await doc("analysis", key).catch(() => null))?.result;
+// read: doc (tests pass a fake).
+export async function sizesFor(key, bidName, read = doc) {
+  const a = (await read("analysis", key).catch(() => null))?.result;
   const name = bidName || a?.keyInfo?.bidName || "";
   return sizesOf([a?.keyInfo?.generatorCapacity, name], name);
 }
@@ -1484,10 +1485,10 @@ function suppliersMd(suppliers) {
 const rowPower = (u, cap) => Math.min(...Object.values(u.power || {}).map((p) => p[cap.unit] ?? 1e9), 1e9);
 
 // The HSMT text of a tender (its files, then the notice); `parts` alone is what the requirements are read from.
-export async function hsmtTextOf(key) {
-  const [hsmt, notice] = await Promise.all([doc("hsmt", key), doc("notice", key)]);
+export async function hsmtTextOf(key, read = doc) {
+  const [hsmt, notice] = await Promise.all([read("hsmt", key), read("notice", key)]);
   const parts = [];
-  for (let i = 0; i < (hsmt?.textChunks || 0); i++) parts.push((await doc("hsmttext", `${key}_${i}`))?.text || "");
+  for (let i = 0; i < (hsmt?.textChunks || 0); i++) parts.push((await read("hsmttext", `${key}_${i}`))?.text || "");
   // The notice as text (2026-11-06: it was JSON.stringify'd into one line, so its webform chapter V had "\n" escapes, the
   // agent read it as JSON and no line-by-line reading of it (missingCodes) could work).
   const noticeText = notice ? [notice.info || "", ...(notice.chapters || []).map((c) => `### ${c.name || ""}\n${c.text || ""}`), notice.goods ? `### Danh mục hàng hóa (tab Thông tin chung)\n${notice.goods}` : ""].filter((s) => s.trim()).join("\n\n") : "";
@@ -1556,15 +1557,18 @@ export function recordSearched(result, { logText = "", listed = [], root = WEB_M
   return r;
 }
 
-async function prep(key, dir, reqData = {}, given = null, multi = null) {
+// io (tests; every default is what the bot uses): doc / allDocs read the web, supDir is the supplier DB of this checkout
+// (cn/*.json) read when `local`, memoDir the web memo, today the day its entries are weighed on.
+export async function prep(key, dir, reqData = {}, given = null, multi = null, io = {}) {
+  const { doc: read = doc, allDocs: readAll = allDocs, supDir = path.join(ROOT, "cn"), local = !!process.env.GENBID_LOCAL_SUPPLIERS, memoDir = WEB_MEMO_DIR, today = new Date().toISOString().slice(0, 10) } = io;
   fs.mkdirSync(path.join(dir, "web"), { recursive: true });
   // GENBID_LOCAL_SUPPLIERS=1: the supplier DB of this checkout (cn/*.json) instead of the web's, to try records not yet published.
   const localSuppliers = async () => {
-    const skip = await skippedOf(allDocs); // NCC loại trừ / xoá mềm trên web (sup-skip.mjs); không đọc được thì chỉ cảnh báo, đây là đường thử
+    const skip = await skippedOf(readAll); // NCC loại trừ / xoá mềm trên web (sup-skip.mjs); không đọc được thì chỉ cảnh báo, đây là đường thử
     if (!skip.ok) console.error(`CẢNH BÁO: ${UNFILTERED_WARNING} (GENBID_LOCAL_SUPPLIERS)`);
-    return dropSkipped(fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).map((f) => ({ id: f.slice(0, -5), data: JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8")) })).filter((d) => d.data.status !== "incomplete"), skip.ids);
+    return dropSkipped(fs.readdirSync(supDir).filter((f) => f.endsWith(".json")).map((f) => ({ id: f.slice(0, -5), data: JSON.parse(fs.readFileSync(path.join(supDir, f), "utf8")) })).filter((d) => d.data.status !== "incomplete"), skip.ids);
   };
-  const [analysis, { hsmt, parts, text, notice }, suppliers] = await Promise.all([doc("analysis", key), hsmtTextOf(key), process.env.GENBID_LOCAL_SUPPLIERS ? localSuppliers() : given ? given.map((data) => ({ data })) : allDocs("supplier")]);
+  const [analysis, { hsmt, parts, text, notice }, suppliers] = await Promise.all([read("analysis", key), hsmtTextOf(key, read), local ? localSuppliers() : given ? given.map((data) => ({ data })) : readAll("supplier")]);
   fs.writeFileSync(path.join(dir, "hsmt.txt"), text, "utf8");
   const a = analysis?.result;
   const cap = multi ? multi.size.cap : capacity([reqData.bidName, a?.keyInfo?.generatorCapacity, hsmt?.capacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
@@ -1589,7 +1593,7 @@ async function prep(key, dir, reqData = {}, given = null, multi = null) {
   const offGroup = grp ? new Set(byOrigin(full.engines, origin, cn).flatMap((e) => (e.uses || []).map((u) => u.supplierId)).filter((id) => !grp.has(id))).size : 0;
   const { md, ctlMd, shown, top, ctlLookup } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, keep: keepOf(reqData.prevResult), hsmtText: text, ...(facts ? { facts } : {}) });
   // What earlier runs searched on the internet and did not find, for the models of this run (web-memo.mjs, Khoa 2026-11-12).
-  const runList = runModels(top), negMd = MEMO.negativesMd(MEMO.loadNeg(WEB_MEMO_DIR), runList, new Date().toISOString().slice(0, 10), { origin, hsmtText: text });
+  const runList = runModels(top), negMd = MEMO.negativesMd(MEMO.loadNeg(memoDir), runList, today, { origin, hsmtText: text });
   // catalog.md whole for the code and grep; parts under the Read limit for the agent (writeForRead, read-order.json).
   const catFiles = writeForRead(dir, "catalog.md", md + (negMd ? "\n\n" + negMd : "") + "\n\n" + suppliersMd(all.filter((s) => shown.has(s.id))));
   const lookFiles = ctlLookup ? writeForRead(dir, "ctl-lookup.md", ctlLookup) : [];
@@ -1688,8 +1692,9 @@ export function fixNotes(problems = [], result = {}) {
 // A table in a PDF (a line-up: model | kWm | kWe | kVA ...) keeps each model and its figures on one line with xpdf's
 // pdftotext -table; -layout (poppler has no -table) can shift a row's figures onto the line of another model, so a
 // row copied from it names the wrong figures (FPT Unregulated Line-up, 2026-11-10).
-export function pdfToText(file) {
-  const run = (mode) => execFileSync("pdftotext", [mode, "-enc", "UTF-8", file, "-"], { maxBuffer: 64 << 20, stdio: ["ignore", "pipe", "ignore"] }).toString("utf8");
+// exec: execFileSync (tests pass a fake pdftotext).
+export function pdfToText(file, exec = execFileSync) {
+  const run = (mode) => exec("pdftotext", [mode, "-enc", "UTF-8", file, "-"], { maxBuffer: 64 << 20, stdio: ["ignore", "pipe", "ignore"] }).toString("utf8");
   try { return run("-table"); } catch { return run("-layout"); }
 }
 async function save(dir, url) {
@@ -3626,7 +3631,7 @@ export function catalogRecords(entries, { existing, readWeb, today, keepSeller =
   return out;
 }
 
-const git = (cwd, ...a) => execFileSync("git", ["-C", cwd, ...a], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
+const gitRun = (cwd, ...a) => execFileSync("git", ["-C", cwd, ...a], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
 // Writes the records into a fresh worktree of the repo (origin/main), checks them with that tree's verify.mjs, posts
 // the ones that pass to the web as supplier/<id> and opens a pull request with them (records, saved pages).
 // opts (Tìm NCC): its own branch and PR title, so a Gemini round and a Claude round never share a branch.
@@ -3643,10 +3648,13 @@ setTimeout(() => {
   try { spawn(process.execPath, ["-e", code, gh, pr], { cwd: os.tmpdir(), detached: true, stdio: "ignore", windowsHide: true }).unref(); } catch {}
 }
 
+// opts.io (tests; every default is what the bot uses): git(cwd, ...args), post(rows) to the web, gh(args, cwd) → its
+// output, merge(pr, cwd) the CI watcher, repo the checkout the worktree is made from.
 export async function addToCatalog(dir, key, suppliers, opts = {}) {
   const file = path.join(dir, "newCatalog.json");
   if (!fs.existsSync(file)) return { added: [], records: [] };
-  const repo = process.env.GENBID_REPO_DIR || path.join(ROOT, ".."), branch = opts.branch || `catalog/${key.toLowerCase()}`;
+  const { git = gitRun, post: send = post, gh = (args, cwd) => execFileSync(process.env.GENBID_GH || "gh", args, { cwd, encoding: "utf8" }), merge = mergeWhenGreen } = opts.io || {};
+  const repo = opts.io?.repo || process.env.GENBID_REPO_DIR || path.join(ROOT, ".."), branch = opts.branch || `catalog/${key.toLowerCase()}`;
   const wt = path.join(os.tmpdir(), "genbid-catalog", branch.replace(/[^\w-]+/g, "-"));
   const title = opts.title || `Danh mục: bổ sung từ Gợi ý cấu hình ${key}`;
   const body = opts.body || `Tìm trên internet khi Gợi ý cấu hình gói ${key} không có nhà cung cấp phù hợp trong hệ thống. Bản ghi đã qua verify.mjs và đã đăng lên web.`;
@@ -3676,15 +3684,15 @@ export async function addToCatalog(dir, key, suppliers, opts = {}) {
     }
     // GENBID_CATALOG_DRY=1: check only, nothing is posted or pushed.
     if (records.length && !process.env.GENBID_CATALOG_DRY) {
-      await post(records.map((r) => ({ coll: "supplier", id: r.id, data: r })));
+      await send(records.map((r) => ({ coll: "supplier", id: r.id, data: r })));
       try {
         git(wt, "add", "-A", "suppliers");
         git(wt, "-c", `user.name=${process.env.GENBID_GIT_NAME || "GenBid Bot"}`, "-c", `user.email=${process.env.GENBID_GIT_EMAIL || "genbid-bot@users.noreply.github.com"}`,
           "commit", "-q", "-m", `${title} (${records.map((r) => r.id).join(", ")})`);
         git(wt, "push", "-q", "-f", "-u", "origin", branch);
-        const pr = execFileSync(process.env.GENBID_GH || "gh", ["pr", "create", "--head", branch, "--base", "main", "--title", title, "--body", body], { cwd: wt, encoding: "utf8" }).trim();
+        const pr = gh(["pr", "create", "--head", branch, "--base", "main", "--title", title, "--body", body], wt).trim();
         for (const a of added) if (!a.error) a.pr = pr.split("\n").pop();
-        mergeWhenGreen(pr.split("\n").pop(), wt);
+        merge(pr.split("\n").pop(), wt);
       } catch (e) { for (const a of added) if (!a.error) a.prError = `Đã đăng lên web nhưng chưa mở được PR vào repo: ${String(e.stderr || e.message).trim().slice(0, 200)}`; }
     }
   } finally {
@@ -3948,10 +3956,11 @@ function runGemini(dir, input) {
 // rank, engine, alternator, controller, genset); the search is for suppliers of that configuration at that size only.
 // The suppliers found join it in code (mergeFind: same engine, and the same alternator when both name one).
 export const targetText = (t) => [t.engine?.model && `động cơ ${t.engine.model}${t.engine.make ? ` (${t.engine.make})` : ""}`, t.alternator?.model && `đầu phát ${t.alternator.model}${t.alternator.make ? ` (${t.alternator.make})` : ""}`, t.controller?.model && `bộ điều khiển ${t.controller.model}${t.controller.make ? ` (${t.controller.make})` : ""}`, t.genset?.model && `tổ máy tham chiếu ${t.genset.model}`].filter(Boolean).join(", ");
-export async function findPrep(key, dir, req, suppliers) {
-  const found = await sizesFor(key, req.bidName), sizes = found.slice(0, MAX_SIZES), t = req.target?.engine?.model ? req.target : null;
+// io: as prep's.
+export async function findPrep(key, dir, req, suppliers, io = {}) {
+  const found = await sizesFor(key, req.bidName, io.doc), sizes = found.slice(0, MAX_SIZES), t = req.target?.engine?.model ? req.target : null;
   const one = t && sizes.length > 1 ? sizes.find((x) => x.label === t.size) || null : null;
-  const info = await prep(key, dir, req, suppliers, one ? { size: one, sizes, find: true, only: true } : sizes.length > 1 ? { size: sizes[0], sizes, find: true } : null);
+  const info = await prep(key, dir, req, suppliers, one ? { size: one, sizes, find: true, only: true } : sizes.length > 1 ? { size: sizes[0], sizes, find: true } : null, io);
   if (sizes.length > 1 && !one) info.cap = sizes.map((x) => x.cap);
   // Tìm NCC must see every supplier in the system (not only those of the candidate rows), so as not to suggest them again.
   const cat = fs.readFileSync(path.join(dir, "catalog.md"), "utf8"), cut = cat.indexOf("\n\n# Nhà cung cấp trong hệ thống");
@@ -4490,7 +4499,8 @@ async function specChecked(dir, suppliers) {
   const res = await findCheck(dir, suppliers, null);
   return res.map((c) => ({ ...c, errors: [...c.errors, ...(c.id && c.id !== id ? [`id khác nhà cung cấp cần tìm (${id})`] : [])], parts: c.rec ? partsOf(c.rec) : null }));
 }
-export async function specPost(dir, suppliers, req = {}) {
+// io: addToCatalog's (tests).
+export async function specPost(dir, suppliers, req = {}, io = undefined) {
   const { id } = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
   const info = (() => { try { return JSON.parse(fs.readFileSync(path.join(dir, "spec.json"), "utf8")); } catch { return {}; } })();
   const checked = await specChecked(dir, suppliers);
@@ -4502,7 +4512,7 @@ export async function specPost(dir, suppliers, req = {}) {
   }
   fs.writeFileSync(path.join(dir, "newCatalog.json"), JSON.stringify(JSON.parse(fs.readFileSync(path.join(dir, "newCatalog.json"), "utf8")).filter((e) => e?.id === id), null, 1), "utf8");
   const { added } = await addToCatalog(dir, id, suppliers, { branch: `specs/${id}`, title: `Nhà cung cấp: Tìm thông số ${id}`,
-    body: `Nút Tìm Thông Số ở màn Nhà cung cấp${req.by ? ` (${req.by})` : ""}: Claude tìm trên trang của nhà cung cấp động cơ, đầu phát, bộ điều khiển của các tổ máy (skill tim-thong-so-ncc). Bản ghi đã qua verify.mjs và đã đăng lên web.` });
+    body: `Nút Tìm Thông Số ở màn Nhà cung cấp${req.by ? ` (${req.by})` : ""}: Claude tìm trên trang của nhà cung cấp động cơ, đầu phát, bộ điều khiển của các tổ máy (skill tim-thong-so-ncc). Bản ghi đã qua verify.mjs và đã đăng lên web.`, io });
   const good = added.find((a) => !a.error);
   return { ...base, added, ...(good ? { found: ok[0].parts } : { error: added.map((a) => a.error).filter(Boolean).join("; ") || "bản ghi không qua được verify.mjs của repo" }) };
 }
