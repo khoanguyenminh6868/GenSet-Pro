@@ -47,7 +47,7 @@ const readJson = (f, d) => { try { return JSON.parse(fs.readFileSync(f, "utf8").
 const writeJson = (f, o) => { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, JSON.stringify(o, null, 2), "utf8"); };
 // Pure helpers (file choice, sections, Chương V parts and join, quote checks, history rows): sync-pure.js, tested in bot/test.
 const {
-  sig, isDecisionFile, has, isGenset, histUrl, histTender, histPower, histNeedsConfig, configText, setsOf, histConfigOf,
+  sig, isDecisionFile, has, isGenset, histUrl, histTender, histPower, histNeedsConfig, configText, setsOf, histConfigOf, withNormHighlights,
   histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, plainVi, chapterV, specsPick, specsFinish, isServiceTender, NOTICE_MAX,
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
@@ -1929,6 +1929,8 @@ async function runFinish() {
         if (!result) throw new Error("result.json không phải JSON hợp lệ");
         const checked = meta.translate || meta.kind === "hsdt" ? [] : checkResult(meta, result, dir);
         if (meta.kind === "analysis") result.generatorSets = setsOf(result.generatorSets);
+        // Noise and fuel limits outside what diesel sets do become highlights (Khoa, 2026-11-13), after checkResult: they are ours.
+        if (meta.kind === "analysis") result.highlights = withNormHighlights(result);
         if (meta.kind === "analysis") rows.push({ coll: "analysis", id: meta.key, data: { status: "done", result, notes: [].concat(readJson(path.join(dir, "notes.json"), []) || [], checked, readJson(path.join(dir, "cuts.json"), []) || [], guard.notes || []), analyzedAt: at, by: "hsmt-worker" } });
         else if (meta.translate) {
           // The English version joins the stored result, unless a new comparison replaced it meanwhile.
