@@ -60,6 +60,318 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi12Y",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "3TNV88F-UGGE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi8Y",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "3TNV80F-NGGE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 8,
+        "max": 8,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi22Y-BB",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV84T-BGGE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 22,
+        "max": 22,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi20P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22G"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi25P-E",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22TG"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi50P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104D-44TG1"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi40H",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Hatz"
+      ],
+      "engineModels": [
+        "4H50TIC"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi13P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403F-15G"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi10P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403F-11G"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi15P-E",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22G"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi24Y-E",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV84T-BGGE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 24,
+        "max": 24,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGi25H-E",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Hatz"
+      ],
+      "engineModels": [
+        "3H50TIC"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
     }
   ],
   "certifications": [],
@@ -89,9 +401,446 @@
         "Made in Ontario - Aurora Cottage and Home Generators. 6 kw to 100 kw Powered by clean, quiet"
       ],
       "file": "sources/aurora-generators/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi12y-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "12 kW Diesel Generator",
+        "Power 12,000 watts"
+      ],
+      "file": "sources/aurora-generators/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi8y-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "8 kW Diesel Generator",
+        "Power 8,000 watts"
+      ],
+      "file": "sources/aurora-generators/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi22y-bb_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "22 kW Standby Generator",
+        "Power 22,000 watts"
+      ],
+      "file": "sources/aurora-generators/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi20p-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "20 kW Standby Generator",
+        "Power 20,000 watts"
+      ],
+      "file": "sources/aurora-generators/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi25p-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "25 kW Standby Generator",
+        "Power 25,000 watts"
+      ],
+      "file": "sources/aurora-generators/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi50p-o_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "50 kW Diesel Generator",
+        "Power 50,000 watts"
+      ],
+      "file": "sources/aurora-generators/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi40h-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "40 kW Diesel Generator",
+        "Power 40,000 watts"
+      ],
+      "file": "sources/aurora-generators/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi13p-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "13 kW Diesel Generator",
+        "Prime Power 13,000 watts standby"
+      ],
+      "file": "sources/aurora-generators/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi10p-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "10 kW Diesel Generator",
+        "Power 10,000 watts"
+      ],
+      "file": "sources/aurora-generators/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi15p-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "15 kW Standby Generator",
+        "Power 15,000 watts"
+      ],
+      "file": "sources/aurora-generators/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi24y-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "24 kW Standby Generator",
+        "Power 24,000 watts"
+      ],
+      "file": "sources/aurora-generators/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://auroragenerators.com/wp-content/uploads/agi25h-e_specifications.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "25 kW Diesel Generator",
+        "Power 25,000 watts"
+      ],
+      "file": "sources/aurora-generators/2012.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "AGi12Y (12 kW Diesel Generator)",
+      "header": [
+        "12 kW Diesel Generator"
+      ],
+      "rows": [
+        "Model - AGi12Y",
+        "Power            12,000 watts",
+        "Make & Model                   Yanmar 3TNV88F-UGGE                         Make & Model      DynaGen TG350",
+        "Power                          13.9 kWe Standby                            Function          Instrumentation, protection &",
+        "Make & Model                   Mecc Alte NPE32 1M4 C*                                        Includes Modbus communications",
+        "Instrumentation  DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "AGi8Y (8 kW Diesel Generator)",
+      "header": [
+        "8 kW Diesel Generator"
+      ],
+      "rows": [
+        "Model - AGi8Y",
+        "Power            8,000 watts",
+        "Make & Model                   Yanmar 3TNV80F-NGGE                         Make & Model      DynaGen TG350",
+        "Power                          9.4 kWe Standby / 8.6 kWe     Prime         Function          Instrumentation, protection &",
+        "Make & Model                   Mecc Alte NPE32 2S4 C*                      Enclosure         powder coated and UV rated, with",
+        "Instrumentation  DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "AGi22Y-BB (22 kW Standby Generator)",
+      "header": [
+        "22 kW Standby Generator"
+      ],
+      "rows": [
+        "Model - AGi22Y-BB",
+        "Power                    22,000 watts",
+        "Make & Model                   Yanmar 4TNV84T-BGGE                         Make & Model                   DynaGen TG350",
+        "Power                          26.9 kWm / 36 HP @ 1800 RPM                 Function                       Instrumentation, protection &",
+        "Make & Model                   Mecc Alte NPE32 L4 C*",
+        "Instrumentation          DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "AGi20P (20 kW Standby Generator)",
+      "header": [
+        "20 kW Standby Generator"
+      ],
+      "rows": [
+        "Model - AGi20P",
+        "Power            20,000 watts",
+        "Make & Model                  Perkins 404D-22G                            Make & Model      DynaGen TG350",
+        "Power                         21.3 kWe Standby                            Function          Instrumentation, protection &",
+        "Make & Model                  Mecc Alte NPE32 L4 C*                                         Includes Modbus communications",
+        "Instrumentation  DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "AGi25P-E (25 kW Standby Generator)",
+      "header": [
+        "25 kW Standby Generator"
+      ],
+      "rows": [
+        "Model - AGi25P-E",
+        "Power            25,000 watts",
+        "Make & Model                   Perkins 404D-22TG                           Make & Model                   DynaGen TG350",
+        "Power                          25.6 kWe Prime                              Function                       Instrumentation, protection &",
+        "Make & Model                   Mecc Alte NPE32 L4 C*                                                      Includes Modbus communications",
+        "Instrumentation  DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "AGi50P (50 kW Diesel Generator)",
+      "header": [
+        "50 kW Diesel Generator"
+      ],
+      "rows": [
+        "Model - AGi50P",
+        "Power            50,000 watts",
+        "Make & Model        Perkins 1104D-44TG1                                  Make & Model      DynaGen TG350",
+        "Power               63 kWm / 84 HP @ 1800 RPM                            Function          Instrumentation, protection &",
+        "Make & Model        Mecc Alte ECP32 1L4 C*                                                 Includes Modbus communications",
+        "Instrumentation  DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "AGi40H (40 kW Diesel Generator)",
+      "header": [
+        "40 kW Diesel Generator"
+      ],
+      "rows": [
+        "Model - AGi40H",
+        "Power               40,000 watts",
+        "Make & Model                  Hatz 4H50TIC                                Make & Model      DynaGen TG350",
+        "Power                         45.2 kWm / 60.6 HP @ 1800 RPM               Function          Instrumentation, protection &",
+        "Make & Model                  Mecc Alte ECP32 1M4 C*                                        Includes Modbus communications",
+        "Instrumentation     DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "AGi13P (13 kW Diesel Generator)",
+      "header": [
+        "13 kW Diesel Generator                                                                                               13 kW Diesel Generator"
+      ],
+      "rows": [
+        "Model - AGi13P                                                                                                       Model - AGi13P",
+        "Prime Power      13,000 watts standby                                                                                Engine                                                                    Generator Controller",
+        "120 V - 100 A                                                                                       Make                          Perkins                                     Make | Model      DynaGen | TG350",
+        "Voltage          240 V - 50 A                                                                                        Model                         403F-15G                                    Function          Instrumentation, protection &",
+        "Power                         14.0 kW | 18.8 HP @ 1800 RPM                                  control",
+        "PERKINS ENGINE                                                                                                       Make | Model                  Mecc Alte | NPE32 1M C *                                      all stainless steel fasteners.",
+        "Instrumentation  DynaGen - TG350 Auto-start                                                                                                                                                                      speed, frequency, status, hour"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "AGi10P (10 kW Diesel Generator)",
+      "header": [
+        "10 kW Diesel Generator"
+      ],
+      "rows": [
+        "Model - AGi10P",
+        "Power            10,000 watts",
+        "Make & Model                  Perkins 403F-11G                            Make & Model      DynaGen TG350",
+        "Power                         9.8 kWm / 13.1 HP @ 1800      RPM           Function          Instrumentation, protection &",
+        "Make & Model                  Mecc Alte NPE32 2S 4C*                      Enclosure         powder coated and UV rated, with",
+        "Instrumentation  DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "AGi15P-E (15 kW Standby Generator)",
+      "header": [
+        "15 kW Standby Generator"
+      ],
+      "rows": [
+        "Model - AGi15P-E",
+        "Power            15,000 watts",
+        "Make & Model                  Perkins 404D-22G                            Make & Model      DynaGen TG350",
+        "Power                         23.9 kWm / 32.1 HP @ 1800 RPM               Function          Instrumentation, protection &",
+        "Make & Model                  Mecc Alte NPE32 1M 4 C                      Enclosure         all stainless steel fasteners.",
+        "Instrumentation  DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "AGi24Y-E (24 kW Standby Generator)",
+      "header": [
+        "24 kW Standby Generator"
+      ],
+      "rows": [
+        "Model - AGi24Y-E",
+        "Power            24,000 watts",
+        "Make & Model                   Yanmar 4TNV84T-BGGE                         Make & Model                   DynaGen TG350",
+        "Power                          26.9 kWm / 36 HP @ 1800 RPM                 Function                       Instrumentation, protection &",
+        "Make & Model                   Mecc Alte NPE32 L4 C*                       Enclosure                      powder coated and UV rated, with",
+        "Instrumentation  DynaGen - TG350 Auto-start"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "AGi25H-E (25 kW Diesel Generator)",
+      "header": [
+        "25 kW Diesel Generator"
+      ],
+      "rows": [
+        "Model - AGi25H-E",
+        "Power               25,000 watts",
+        "Make & Model                   Hatz 3H50TIC                                Make & Model      DynaGen TG350",
+        "Power                          35.4 kWm / 47.3 HP @ 1800     RPM           Function          Instrumentation, protection &",
+        "Make & Model                   Mecc Alte NPE32 L4C*                                          Includes Modbus communications",
+        "Instrumentation     DynaGen - TG350 Auto-start"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2006
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2007
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start speed, frequency, status, hour",
+      "src": [
+        2008
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2009
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2010
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2011
+      ]
+    },
+    {
+      "brand": "DynaGen",
+      "model": "TG350",
+      "text": "DynaGen - TG350",
+      "line": "Instrumentation DynaGen - TG350 Auto-start",
+      "src": [
+        2012
+      ]
+    }
+  ]
 }
