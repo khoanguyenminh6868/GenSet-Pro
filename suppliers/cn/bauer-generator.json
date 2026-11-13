@@ -42,6 +42,212 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFS-12 ATS",
+      "fuel": "diesel",
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH490D/22KW"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFS-16 ATS",
+      "fuel": "diesel",
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH490D / 22KW"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFS-24 ATS",
+      "fuel": "diesel",
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH4100D/30,1 KW"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFS-40 ATS",
+      "fuel": "diesel",
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH4102ZD/44KW"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFS-50 ATS",
+      "fuel": "diesel",
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH4105ZD/56KW"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFS-80 ATS",
+      "fuel": "diesel",
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH6105ZLD/100KW"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFS-90 ATS",
+      "fuel": "diesel",
+      "power": {
+        "min": 90,
+        "max": 90,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH6105AZLD/110KW"
+      ],
+      "alternatorMakes": [],
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFS-120 ATS",
+      "fuel": "diesel",
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH6105IZLD/132KW"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2008
+      ]
     }
   ],
   "certifications": [],
@@ -60,9 +266,320 @@
         "Mit dem GFS-50 ATS von Bauer Generatoren sind Sie dank 62,5 kVA Leistung immer auf der sicheren Seite."
       ],
       "file": "sources/bauer-generator/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://bauer-generator.de/notstromgenerator-gfs-12/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Bauer GFS-12 ATS, 12 kW/15 kVA Notstromgenerator / Notstromaggregat - Bauer Generator",
+        "Dauerleistung [kW/kVA/PS] 12/15/16,32",
+        "Modell ZH490D/22KW"
+      ],
+      "file": "sources/bauer-generator/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://bauer-generator.de/notstromgenerator-gfs-16/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Bauer GFS-16 ATS, 16 kW/20 kVA Notstromgenerator / Notstromaggregat - Bauer Generator",
+        "Dauerleistung [kW/kVA/PS] 16 / 20 / 21,75",
+        "Modell ZH490D / 22KW"
+      ],
+      "file": "sources/bauer-generator/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://bauer-generator.de/notstromgenerator-gfs-24/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Bauer GFS-24 ATS, Notstromgenerator / Notstromaggregat, - Bauer Generator",
+        "Dauerleistung [kW/kVA/PS] 24 / 30 / 32,63",
+        "Modell ZH4100D/30,1 KW"
+      ],
+      "file": "sources/bauer-generator/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://bauer-generator.de/notstromgenerator-gfs-40/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Bauer GFS-40 ATS, 40 kW/50 kVA Notstromgenerator / Notstromaggregat - Bauer Generator",
+        "Dauerleistung [kW/kVA/PS] 40 / 50 / 54,39",
+        "Modell ZH4102ZD/44KW"
+      ],
+      "file": "sources/bauer-generator/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://bauer-generator.de/notstromgenerator-gfs-50/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Bauer GFS-50 ATS, 50 kW/62,5 kVA Notstromgenerator / Notstromaggregat - Bauer Generator",
+        "Dauerleistung [kW/kVA/PS] 50 / 62,5 / 67,98",
+        "Modell ZH4105ZD/56KW"
+      ],
+      "file": "sources/bauer-generator/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://bauer-generator.de/notstromgenerator-gfs-80/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Bauer GFS-80 ATS, 80 kW/100 kVA Notstromgenerator / Notstromaggregat - Bauer Generator",
+        "Dauerleistung [kW/kVA/PS] 80 / 100 / 108,77",
+        "Modell ZH6105ZLD/100KW"
+      ],
+      "file": "sources/bauer-generator/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://bauer-generator.de/notstromgenerator-gfs-90/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Bauer GFS-90 ATS, 90 kW/112,5 kVA Notstromgenerator / Notstromaggregat - Bauer Generator",
+        "Dauerleistung [kW/kVA/PS] 90 / 112,5 / 122,37",
+        "Modell ZH6105AZLD/110KW"
+      ],
+      "file": "sources/bauer-generator/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://bauer-generator.de/notstromgenerator-gfs-120/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Bauer GFS-120 ATS, 120 kW/150 kVA Notstromgenerator / Notstromaggregat - Bauer Generator",
+        "Dauerleistung [kW/kVA/PS] 120 / 150 / 163,16",
+        "Modell ZH6105IZLD/132KW"
+      ],
+      "file": "sources/bauer-generator/2008.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Bauer GFS-12 ATS – Technische Daten",
+      "header": [
+        "Bauer GFS-12 ATS, 12 kW/15 kVA Notstromgenerator / Notstromaggregat - Bauer Generator"
+      ],
+      "rows": [
+        "Dauerleistung [kW/kVA/PS] 12/15/16,32",
+        "Max. Leistung [kW/kVA/PS] 13,2/15,6/17,95",
+        "Nennspannung [V] 230 / 400",
+        "Frequenz [Hz] 50",
+        "Ma&szlig;e L x B x H [mm] ca. 2100 x 850 x 1120",
+        "Gewicht trocken ca. [Kg] 680",
+        "Tankinhalt [L] 50",
+        "Marke Ricardo",
+        "Modell ZH490D/22KW",
+        "Anzahl Zylinder 4",
+        "Hubraum [L] 2,54",
+        "Marke Stamford",
+        "Modellname YHG/12kW 1500 rpm",
+        "Marke SmartGen",
+        "Modellname HGM 6120N"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Bauer GFS-16 ATS – Technische Daten",
+      "header": [
+        "Bauer GFS-16 ATS, 16 kW/20 kVA Notstromgenerator / Notstromaggregat - Bauer Generator"
+      ],
+      "rows": [
+        "Dauerleistung [kW/kVA/PS] 16 / 20 / 21,75",
+        "Max. Leistung [kW/kVA/PS] 17,6 /22/ 23,92",
+        "Nennspannung [V] 230 / 400",
+        "Frequenz [Hz] 50",
+        "Ma&szlig;e L x B x H [mm] ca. 2100 x 850 x 1120",
+        "Gewicht trocken ca. [Kg] 710",
+        "Tankinhalt [L] 50",
+        "Marke Ricardo",
+        "Modell ZH490D / 22KW",
+        "Anzahl Zylinder 4",
+        "Hubraum [L] 2,54",
+        "Marke Stamford",
+        "Modellname YHG/16kW 1500 rpm",
+        "Marke SmartGen",
+        "Modellname HGM 6120N"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Bauer GFS-24 ATS – Technische Daten",
+      "header": [
+        "Bauer GFS-24 ATS, Notstromgenerator / Notstromaggregat, - Bauer Generator"
+      ],
+      "rows": [
+        "Dauerleistung [kW/kVA/PS] 24 / 30 / 32,63",
+        "Max. Leistung [kW/kVA/PS] 26 / 33 / 35,35",
+        "Nennspannung [V] 230 / 400",
+        "Frequenz [Hz] 50",
+        "Ma&szlig;e L x B x H [mm] ca. 2100 x 850 x 1120",
+        "Gewicht trocken ca. [Kg] 820",
+        "Tankinhalt [L] 50",
+        "Marke Ricardo",
+        "Modell ZH4100D/30,1 KW",
+        "Anzahl Zylinder 4",
+        "Hubraum [L] 3,61",
+        "Marke Stamford",
+        "Modellname YHG/24kW 1500 rpm",
+        "Marke SmartGen",
+        "Modellname HGM 6120N"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Bauer GFS-40 ATS – Technische Daten",
+      "header": [
+        "Bauer GFS-40 ATS, 40 kW/50 kVA Notstromgenerator / Notstromaggregat - Bauer Generator"
+      ],
+      "rows": [
+        "Dauerleistung [kW/kVA/PS] 40 / 50 / 54,39",
+        "Max. Leistung [kW/kVA/PS] 44 / 55 / 59,82",
+        "Nennspannung [V] 230 / 400",
+        "Frequenz [Hz] 50",
+        "Ma&szlig;e L x B x H [mm] ca. 2200 x 850 x 1120",
+        "Gewicht trocken ca. [Kg] 870",
+        "Tankinhalt [L] 50",
+        "Marke Ricardo",
+        "Modell ZH4102ZD/44KW",
+        "Anzahl Zylinder 4",
+        "Hubraum [L] 3,76",
+        "Marke Stamford",
+        "Modellname YHG/40kW 1500 rpm",
+        "Marke SmartGen",
+        "Modellname HGM 6120N"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Bauer GFS-50 ATS – Technische Daten",
+      "header": [
+        "Bauer GFS-50 ATS, 50 kW/62,5 kVA Notstromgenerator / Notstromaggregat - Bauer Generator"
+      ],
+      "rows": [
+        "Dauerleistung [kW/kVA/PS] 50 / 62,5 / 67,98",
+        "Max. Leistung [kW/kVA/PS] 55 / 68,75 / 74,78",
+        "Nennspannung [V] 230 / 400",
+        "Frequenz [Hz] 50",
+        "Ma&szlig;e L x B x H [mm] ca. 2200 x 850 x 1120",
+        "Gewicht trocken ca. [Kg] 940",
+        "Tankinhalt [L] 50",
+        "Marke Ricardo",
+        "Modell ZH4105ZD/56KW",
+        "Anzahl Zylinder 4",
+        "Hubraum [L] 4,15",
+        "Marke Stamford",
+        "Modellname YHG/50kW 1500 rpm",
+        "Marke SmartGen",
+        "Modellname HGM 6120N"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Bauer GFS-80 ATS – Technische Daten",
+      "header": [
+        "Bauer GFS-80 ATS, 80 kW/100 kVA Notstromgenerator / Notstromaggregat - Bauer Generator"
+      ],
+      "rows": [
+        "Dauerleistung [kW/kVA/PS] 80 / 100 / 108,77",
+        "Max. Leistung [kW/kVA/PS] 88 / 110 / 119,65",
+        "Nennspannung [V] 230 / 400",
+        "Frequenz [Hz] 50",
+        "Ma&szlig;e L x B x H [mm] ca. 2950 x 1100 x 1280",
+        "Gewicht trocken ca. [Kg] 1530",
+        "Tankinhalt [L] 135",
+        "Marke Ricardo",
+        "Modell ZH6105ZLD/100KW",
+        "Anzahl Zylinder 6",
+        "Hubraum [L] 6,49",
+        "Marke Stamford",
+        "Modellname YHG/80kW 1500 rpm",
+        "Marke SmartGen",
+        "Modellname HGM 6120N"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Bauer GFS-90 ATS – Technische Daten",
+      "header": [
+        "Bauer GFS-90 ATS, 90 kW/112,5 kVA Notstromgenerator / Notstromaggregat - Bauer Generator"
+      ],
+      "rows": [
+        "Dauerleistung [kW/kVA/PS] 90 / 112,5 / 122,37",
+        "Max. Leistung [kW/kVA/PS] 99 / 124 / 134,60",
+        "Nennspannung [V] 230 / 400",
+        "Frequenz [Hz] 50",
+        "Ma&szlig;e L x B x H [mm] ca. 2950 x1100 x 1280",
+        "Gewicht trocken ca. [Kg] 1530",
+        "Tankinhalt [L] 135",
+        "Marke Ricardo",
+        "Modell ZH6105AZLD/110KW",
+        "Anzahl Zylinder 6",
+        "Hubraum [L] 6,75"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Bauer GFS-120 ATS – Technische Daten",
+      "header": [
+        "Bauer GFS-120 ATS, 120 kW/150 kVA Notstromgenerator / Notstromaggregat - Bauer Generator"
+      ],
+      "rows": [
+        "Dauerleistung [kW/kVA/PS] 120 / 150 / 163,16",
+        "Max. Leistung [kW/kVA/PS] 132 / 165 / 179,47",
+        "Nennspannung [V] 230 / 400",
+        "Frequenz [Hz] 50",
+        "Ma&szlig;e L x B x H [mm] ca. 2950 x1100 x 1280",
+        "Gewicht trocken ca. [Kg] 1860",
+        "Tankinhalt [L] 135",
+        "Marke Ricardo",
+        "Modell ZH6105IZLD/132KW",
+        "Anzahl Zylinder 6",
+        "Hubraum [L] 7,02",
+        "Marke Stamford",
+        "Modellname YHG/120kW 1500 rpm",
+        "Marke SmartGen",
+        "Modellname HGM 6120N"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM 6120N",
+      "line": "Modellname HGM 6120N",
+      "src": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2008
+      ]
+    }
+  ]
 }
