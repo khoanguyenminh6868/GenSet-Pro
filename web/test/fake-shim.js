@@ -2,11 +2,21 @@
 // db của shim.js (doc/collection/onSnapshot/get/set/update/delete/full/refresh), nạp dữ liệu mẫu /__test/seed.json.
 // Mọi lần ghi được ghi lại ở window.__gb.writes [{ path, data, updated_at, op }] như upsert của shim.js thật đổi updated_at.
 // Không gọi mạng; /api/* (genbidApi) trả lời giả và ghi vào window.__gb.api.
+// Dữ liệu riêng của một ca: page.addInitScript đặt window.__gbPatch trước khi trang chạy (fixtures.mjs withPatch):
+//   colls: { coll: { id: doc | null } } trộn vào dữ liệu mẫu (null = bỏ tài liệu);
+//   full: { "coll/id": doc } bản đầy đủ của tài liệu rút gọn (_lite, như api/lite.js): db.full(path) thay vào như shim.js;
+//   scratch: "fail" → genbidScratch ném lỗi (trang đọc chữ trong tệp bằng thư viện); mặc định trả danh sách tệp giả.
 (() => {
-  const gb = (window.__gb = { writes: [], api: [], colls: null, stamps: {} });
+  const patch = window.__gbPatch || {};
+  const gb = (window.__gb = { writes: [], api: [], colls: null, stamps: {}, fulls: [], scratch: [] });
   const seeded = fetch("/__test/seed.json").then((r) => r.json()).then((s) => {
     gb.colls = s.colls;
-    for (const [c, docs] of Object.entries(s.colls)) gb.stamps[c] = Object.fromEntries(Object.keys(docs).map((id) => [id, s.stamp]));
+    for (const [c, docs] of Object.entries(patch.colls || {})) {
+      const next = { ...(gb.colls[c] || {}) };
+      for (const [id, d] of Object.entries(docs)) { if (d === null) delete next[id]; else next[id] = d; }
+      gb.colls[c] = next;
+    }
+    for (const [c, docs] of Object.entries(gb.colls)) gb.stamps[c] = Object.fromEntries(Object.keys(docs).map((id) => [id, s.stamp]));
   });
   const listeners = {}; // coll -> Set(fn)
   const split = (p) => { const i = p.indexOf("/"); return [p.slice(0, i), p.slice(i + 1)]; };
@@ -23,13 +33,23 @@
   }
   const db = {
     async refresh() {},
-    async full() {},
+    // Như shim.js: chỉ đọc khi tài liệu đang giữ là bản rút gọn; xong thì báo người nghe của collection.
+    async full(path) {
+      await seeded;
+      const [c, id] = split(path);
+      if (!gb.colls[c]?.[id]?._lite) return;
+      gb.fulls.push(path);
+      const whole = patch.full?.[path];
+      if (!whole) return;
+      gb.colls[c] = { ...gb.colls[c], [id]: clone(whole) };
+      notify(c);
+    },
     doc(path) {
       const [c, id] = split(path);
       return {
         id,
         onSnapshot(fn) { return watch(c, () => fn(snapDoc(id, gb.colls[c]?.[id]))); },
-        async get() { await seeded; return snapDoc(id, gb.colls[c]?.[id]); },
+        async get() { await seeded; await db.full(path); return snapDoc(id, gb.colls[c]?.[id]); },
         async set(data) {
           await seeded;
           const at = now();
@@ -67,12 +87,26 @@
     return {};
   };
   window.genbidFetch = async () => { throw { message: "Không có tệp ở server thử." }; };
-  window.genbidScratch = async () => [];
+  // Như shim.js: mỗi tệp một đường dẫn trong bucket scratch; tên thật đi kèm yêu cầu.
+  window.genbidScratch = async (key, files, dir = "hsdt") => {
+    gb.scratch.push({ key, dir, names: [...files].map((f) => f.name) });
+    if (patch.scratch === "fail") throw { message: "Không tải được tệp lên (server thử)" };
+    return [...files].map((f, i) => ({ path: `${dir}/${key}/1/${String(i + 1).padStart(2, "0")}-${f.name}`, name: f.name, size: f.size }));
+  };
+  // Tải tệp về như shim.js (thẻ <a download>): Playwright bắt được sự kiện download và đọc nội dung.
+  const downloads = {
+    async save({ filename, data }) {
+      const blob = data instanceof Blob ? data : new Blob([data]);
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob); a.download = filename;
+      document.body.appendChild(a); a.click(); a.remove();
+    },
+  };
   window.claude = {
     async use(name) {
       await seeded;
       if (name === "db") return db;
-      if (name === "downloads") return { async save() {} };
+      if (name === "downloads") return downloads;
       if (name === "assets") return { async upload() { throw { message: "Không tải tệp lên ở server thử." }; } };
       return null;
     },

@@ -26,6 +26,7 @@ Chỉ bản web Vercel + bot Windows được dùng; không phát triển nhánh
 - `bidprice.js`, `catalog.js`, `conversions.js` dùng chung cho web và bot (`suppliers/`): sửa thì chạy test của cả hai.
 
 ## Thử cục bộ
-- Máy không có Python/playwright. Dùng `C:\Projects\GenSet Pro\.claude\launch.json` + serve.js (shim DB giả; nạp `suppliers/cn/*.json` và dump bidhist từ `genbid-work\doc-cache`), trỏ vào `<worktree>/web`.
+- Server thử: `node web/test/serve.mjs 4317` (DB giả `web/test/fake-shim.js` + `fixtures/seed.json`). Playwright chạy được trên máy này qua Edge: `cd web/test; npm ci; $env:PW_CHANNEL="msedge"; npx playwright test` (cổng bận thì đặt `PW_PORT`). Xem `web/test/README.md`.
+- Đổi phiên bản thư viện trong `LIBS` thì đổi cả devDependencies của `web/test/package.json` và bảng `LOCAL` của `web/test/fixtures.mjs` (test phục vụ thư viện cục bộ thay CDN, SRI vẫn kiểm).
 - Thử bằng UI thật, không chép code ra console. Đổi hash không tải lại trang → reload thật. Mở gói bằng `#goi/<TBMT>` rồi bấm tab. Xoá localStorage `genbid:capScan` sau khi đổi dữ liệu thử.
 - Preview Vercel của PR bị "Ignored Build Step"; chỉ `main` được deploy.
