@@ -23,6 +23,7 @@ jobs:
           $PSVersionTable.PSVersion
           Install-Module Pester -RequiredVersion 5.7.1 -Force -Scope CurrentUser -SkipPublisherCheck
           Import-Module Pester -RequiredVersion 5.7.1
+          ./bot/test/zz-diag.ps1
           Invoke-Pester -Path bot/test -CI -Output Detailed
 
   bot-ps-win:
