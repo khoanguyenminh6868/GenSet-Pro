@@ -34,3 +34,4 @@ Lệnh, số nguồn, cách đọc catalog PDF/OCR và bẫy cào: `suppliers/CL
 - Kachai datasheet đòi mật khẩu (hỏi Kachai/đại lý). Keypower 59 tờ scan chưa OCR. 35 đại lý Cummins chưa tìm website. Volvo TAD1641/1642GE, TAD1350/1353GE, TWD1653GE chưa đọc được PDF.
 
 Liên quan [[config-suggest]], [[quy-tac-luong]].
+- **Cào lại toàn bộ (13/11, PR #629):** `crawl-specs --max 80` cho 435 NCC → +24.252 dòng ở 118 NCC. Bẫy: lượt chạy toàn bộ dừng im lặng sau 138 NCC (exit 0) → luôn đếm dòng log, chạy tiếp id còn thiếu. Bẫy: cào lại đánh số lại nguồn 1xx → `controllers[]` trỏ số nguồn cũ thì verify lỗi → giữ bản main cho NCC đó (7 NCC). Cách so: lưu số dòng + câu trích tay (n<101, ≥2001) trước, sau merge-specs revert NCC giảm dòng/đổi câu trích.
