@@ -105,7 +105,7 @@ export function stripAccents(s: string): string {
 const MPD_RE = /(?<![a-z])mpd(?![a-z])/;
 const RENEW_RE =
   /may\s*phat\s*(dien\s*)?(gio|mat\s*troi|nang\s*luong)|phat\s*dien\s*(gio|mat\s*troi|nang\s*luong)|dien\s*gio|nang\s*luong\s*gio|tua\s*-?\s*bin\s*gio|pin\s*(nang\s*luong\s*)?mat\s*troi|quang\s*dien|\bsolar\b|\bwind\b/;
-const SET_RE = /du\s*phong|diesel|diezen|\d\s*kva\b/;
+const SET_RE = /du\s*phong|die[sz]e[ln]|\d\s*kva\b/;
 
 export function isGeneratorTender(bidName: string): boolean {
   const n = stripAccents(bidName);
