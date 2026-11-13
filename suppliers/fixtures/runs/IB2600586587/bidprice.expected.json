@@ -1,0 +1,55 @@
+{
+ "problems": 0,
+ "samples": [
+  "S1:different",
+  "S2:close",
+  "S3:different",
+  "S4:close",
+  "S5:different",
+  "S6:different"
+ ],
+ "chosen": [
+  "IB2200004914|BP2200099735",
+  "IB2300231276|BP2300446484"
+ ],
+ "stats": {
+  "basis": "same+close",
+  "n": 1,
+  "same": 0,
+  "close": 1,
+  "nPrior": 16,
+  "pool": 17,
+  "enough": true,
+  "levels": [
+   "low:718137000",
+   "mid:831129000",
+   "high:884827000"
+  ],
+  "calib": [
+   "low:624356000",
+   "mid:858253000",
+   "high:899289000"
+  ],
+  "perKva": 583712000
+ },
+ "byConfig": [
+  {
+   "rank": 1,
+   "group": "cn",
+   "main": true,
+   "n": null,
+   "levels": []
+  },
+  {
+   "rank": 3,
+   "group": "cnmade",
+   "main": false,
+   "n": 6,
+   "levels": [
+    "low:718137000",
+    "mid:871791000",
+    "high:896910000"
+   ]
+  }
+ ]
+}

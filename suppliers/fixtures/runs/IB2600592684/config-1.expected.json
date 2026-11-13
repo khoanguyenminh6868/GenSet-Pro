@@ -1,0 +1,154 @@
+{
+ "problems": 0,
+ "requirements": 40,
+ "unverifiedRequirements": 0,
+ "brandSync": null,
+ "named": {
+  "make": "Fortugen",
+  "models": [
+   "FG-C33LS"
+  ],
+  "found": false,
+  "equivalent": true,
+  "warn": false
+ },
+ "clarifyByCode": [],
+ "missingCodes": [
+  "standards",
+  "cooling",
+  "fuel_system",
+  "alt_type",
+  "ctl_measure"
+ ],
+ "message": null,
+ "configs": [
+  {
+   "rank": 1,
+   "engine": "Cummins 4B3.9-G12",
+   "alternator": "Stamford S0L2-P1",
+   "controller": "Deep Sea DSE7320",
+   "named": "equivalent",
+   "suppliers": [
+    "fdk-energy:108",
+    "long-gen:110",
+    "mecca-power:101"
+   ],
+   "checks": {
+    "genset": "3/0/4/7",
+    "engine": "7/0/6/0",
+    "alternator": "2/0/6/0",
+    "controller": "4/0/1/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "alt_power:unclear"
+   ]
+  },
+  {
+   "rank": 2,
+   "engine": "Cummins 4B3.9-G12",
+   "alternator": null,
+   "controller": "Deep Sea Deepsea 6120",
+   "named": "equivalent",
+   "suppliers": [
+    "aosif:101",
+    "longkai-power:121",
+    "voltgent:103"
+   ],
+   "checks": {
+    "genset": "3/0/4/7",
+    "engine": "6/0/7/0",
+    "alternator": "0/0/7/1",
+    "controller": "5/0/0/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "alt_power:unclear"
+   ]
+  },
+  {
+   "rank": 3,
+   "engine": "FAWDE 4DW93-42D-YFD10W",
+   "alternator": null,
+   "controller": "Deep Sea DSE6120",
+   "named": "equivalent",
+   "suppliers": [
+    "longkai-power:119"
+   ],
+   "checks": {
+    "genset": "2/0/5/7",
+    "engine": "0/0/13/0",
+    "alternator": "0/0/7/1",
+    "controller": "5/0/0/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "alt_power:unclear"
+   ]
+  },
+  {
+   "rank": 4,
+   "engine": "Yuchai YCV2.5T45-G20",
+   "alternator": "184GS",
+   "controller": "SmartGen HGM6110",
+   "named": "equivalent",
+   "suppliers": [
+    "byc-power:103"
+   ],
+   "checks": {
+    "genset": "3/0/4/7",
+    "engine": "0/0/13/0",
+    "alternator": "0/0/7/1",
+    "controller": "3/0/2/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 5,
+   "engine": "FAWDE 4DX21-45D-YFD10W",
+   "alternator": null,
+   "controller": "Deep Sea DSE6120",
+   "named": "equivalent",
+   "suppliers": [
+    "longkai-power:119"
+   ],
+   "checks": {
+    "genset": "2/0/5/7",
+    "engine": "0/0/13/0",
+    "alternator": "0/0/7/1",
+    "controller": "3/0/0/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 6,
+   "engine": "Hyundai DM01VP",
+   "alternator": "Leroy-Somer TAL-A42-C",
+   "controller": "Deep Sea DSE6020",
+   "named": "equivalent",
+   "suppliers": [
+    "jet-power:104"
+   ],
+   "checks": {
+    "genset": "5/0/3/6",
+    "engine": "0/2/11/0",
+    "alternator": "3/1/4/0",
+    "controller": "4/0/1/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Số xi lanh",
+    "Dung tích xi lanh",
+    "Kích từ đầu phát (PMG / AREP)"
+   ],
+   "lossWarn": []
+  }
+ ]
+}

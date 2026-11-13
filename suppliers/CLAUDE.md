@@ -31,4 +31,5 @@
 - `GENBID_LOCAL_SUPPLIERS=1` + prep → claude → check. Kiểm hồi quy nhanh: chạy `check --dir` bằng code mới trên thư mục lượt cũ. Log agent `%TEMP%\genbid-config-<TBMT>.log`.
 - `bidprice-bot.mjs try --key K --kva N --price P` (không đăng); `bidprice-backtest.mjs` hậu kiểm; `restore-web` chỉ đọc (cần `--origin`).
 - Gửi lại Gợi ý từ máy: `post([{coll:"configreq", id, data:{by, from:"web", origin:"all", bidName, notifyNo, requestedAt: now, error:""}}])` (import từ `config-bot.mjs`).
+- Hồi quy không tốn agent có sẵn trong test: `regress-config.test.mjs` / `regress-bidprice.test.mjs` chạy lại `check` trên lượt thật đóng băng (`fixtures/runs/`). Đổi quy tắc có chủ ý: `GENBID_REGRESS_UPDATE=1 node --test suppliers/regress-*.test.mjs`, đọc `git diff suppliers/fixtures/runs` rồi commit cùng PR.
 - Đo trước/sau: chụp bản cố định của `genbid-work\doc-cache\*.json` trước (phiên khác ghi đè giữa chừng). Chữ HSMT của gói lịch sử trên web chỉ là Chương V, không phải HSMT cả bộ.

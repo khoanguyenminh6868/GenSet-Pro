@@ -1,0 +1,160 @@
+{
+ "problems": 6,
+ "requirements": 43,
+ "unverifiedRequirements": 0,
+ "brandSync": null,
+ "named": {
+  "make": "Hyundai",
+  "models": [
+   "DHY110K SE"
+  ],
+  "found": false,
+  "equivalent": false,
+  "warn": true
+ },
+ "clarifyByCode": [],
+ "missingCodes": [],
+ "message": null,
+ "configs": [
+  {
+   "rank": 1,
+   "engine": "Cummins 6BT5.9-G2",
+   "alternator": "EL 274C",
+   "controller": "SmartGen Smartgen 6120",
+   "named": "equivalent",
+   "suppliers": [
+    "eastern-lion-fuan:108",
+    "uleengen:104",
+    "aosif:101"
+   ],
+   "checks": {
+    "genset": "5/0/6/9",
+    "engine": "5/0/7/0",
+    "alternator": "0/0/4/0",
+    "controller": "4/0/3/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "ctl_protection:unclear",
+    "fuel_consumption_50:unclear",
+    "emission:unclear",
+    "alt_power:unclear"
+   ]
+  },
+  {
+   "rank": 2,
+   "engine": "Perkins 1104C-44TAG2",
+   "alternator": "Stamford UCI274C",
+   "controller": "Deep Sea DSE7320",
+   "named": "equivalent",
+   "suppliers": [
+    "jet-power:129",
+    "fdk-energy:103",
+    "uleengen:104"
+   ],
+   "checks": {
+    "genset": "10/0/4/6",
+    "engine": "4/0/7/1",
+    "alternator": "1/0/3/0",
+    "controller": "3/0/4/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "ctl_protection:unclear",
+    "fuel_consumption_50:unclear",
+    "emission:unclear",
+    "alt_power:unclear"
+   ]
+  },
+  {
+   "rank": 3,
+   "engine": "Yuchai YC4D140-D31",
+   "alternator": "NIANFENG NF274C",
+   "controller": "Deep Sea DSE7320",
+   "named": "equivalent",
+   "suppliers": [
+    "fdk-energy:108",
+    "longkai-power:129",
+    "westinpower:109"
+   ],
+   "checks": {
+    "genset": "5/0/6/9",
+    "engine": "5/0/7/0",
+    "alternator": "2/0/2/0",
+    "controller": "3/0/4/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "ctl_protection:unclear",
+    "fuel_consumption_50:unclear",
+    "emission:unclear",
+    "alt_power:unclear"
+   ]
+  },
+  {
+   "rank": 4,
+   "engine": "Yuchai YC4A140L-D25",
+   "alternator": "NIANFENG NF274C",
+   "controller": "Deep Sea DSE7320",
+   "named": "equivalent",
+   "suppliers": [
+    "fdk-energy:108",
+    "waeta-fujian:108",
+    "kaichen-jiangsu:5001"
+   ],
+   "checks": {
+    "genset": "5/0/6/9",
+    "engine": "5/0/7/0",
+    "alternator": "2/0/2/0",
+    "controller": "3/0/4/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 5,
+   "engine": "SDEC 4HTAA4.3-G34",
+   "alternator": "NIANFENG NF274C",
+   "controller": "Deep Sea DSE7320",
+   "named": "equivalent",
+   "suppliers": [
+    "fdk-energy:108",
+    "kachai-hangzhou:2009",
+    "westinpower:110"
+   ],
+   "checks": {
+    "genset": "5/0/6/9",
+    "engine": "5/0/7/0",
+    "alternator": "2/0/2/0",
+    "controller": "3/0/4/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 6,
+   "engine": "Volvo Penta TAD551GE",
+   "alternator": "Stamford UCI274C",
+   "controller": "Deep Sea DSE7320",
+   "named": "equivalent",
+   "suppliers": [
+    "jet-power:132",
+    "rise-power:111"
+   ],
+   "checks": {
+    "genset": "6/0/5/9",
+    "engine": "5/0/7/0",
+    "alternator": "1/0/3/0",
+    "controller": "3/0/4/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  }
+ ]
+}

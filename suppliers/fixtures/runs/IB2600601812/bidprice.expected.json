@@ -1,0 +1,75 @@
+{
+ "problems": 0,
+ "samples": [
+  "S1:close",
+  "S2:close",
+  "S3:close",
+  "S4:same",
+  "S5:same",
+  "S6:close",
+  "S7:different",
+  "S8:different",
+  "S9:same",
+  "S10:close",
+  "S11:different",
+  "S12:different",
+  "S13:different",
+  "S14:different",
+  "S15:different",
+  "S16:different",
+  "S17:different",
+  "S18:different",
+  "S19:different",
+  "S20:different"
+ ],
+ "chosen": [
+  "IB2500611943|BP2500829119",
+  "IB2200060818|BP2200117757",
+  "IB2300030889|BP2300072629",
+  "IB2400560854|BP2400806434",
+  "IB2400232891|BP2400416692",
+  "IB2300165112|BP2300342153",
+  "IB2200106999|BP2200357417",
+  "IB2600089010|BP2600052693"
+ ],
+ "stats": {
+  "basis": "same+close",
+  "n": 8,
+  "same": 3,
+  "close": 5,
+  "nPrior": 0,
+  "pool": 8,
+  "enough": true,
+  "levels": [
+   "low:257032000",
+   "mid:383240000",
+   "high:440204000"
+  ],
+  "calib": [
+   "low:295598000",
+   "mid:404624000",
+   "high:466000000"
+  ],
+  "perKva": 323636000
+ },
+ "byConfig": [
+  {
+   "rank": 1,
+   "group": "cn",
+   "main": true,
+   "n": null,
+   "levels": []
+  },
+  {
+   "rank": 4,
+   "group": "cnmade",
+   "main": false,
+   "n": 19,
+   "levels": [
+    "low:383240000",
+    "mid:408624000",
+    "high:440204000"
+   ]
+  }
+ ]
+}

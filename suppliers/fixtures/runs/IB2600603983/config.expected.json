@@ -1,0 +1,167 @@
+{
+ "problems": 5,
+ "requirements": 53,
+ "unverifiedRequirements": 0,
+ "brandSync": null,
+ "named": null,
+ "clarifyByCode": [
+  "Ổn định điện áp"
+ ],
+ "missingCodes": [
+  "iso8528_class",
+  "alt_cooling",
+  "oil_capacity",
+  "alt_ip"
+ ],
+ "message": null,
+ "configs": [
+  {
+   "rank": 1,
+   "engine": "Perkins 4006-23TAG2A",
+   "alternator": "Stamford S5L1D-H41",
+   "controller": "Deep Sea DSE8610",
+   "named": null,
+   "suppliers": [
+    "uleengen:103",
+    "fdk-energy:108",
+    "koten-power:4014"
+   ],
+   "checks": {
+    "genset": "3/0/9/9",
+    "engine": "6/0/8/0",
+    "alternator": "0/0/7/3",
+    "controller": "2/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "ctl_protection:unclear",
+    "fuel_consumption_50:unclear",
+    "emission:unclear",
+    "alt_standard:document",
+    "alt_power:unclear",
+    "ctl_display_lang:unclear"
+   ]
+  },
+  {
+   "rank": 2,
+   "engine": "Cummins QSK23-G2",
+   "alternator": "Stamford S5L1D-H41",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:1028",
+    "huadong-yangzhou:103",
+    "yanfa-yancheng:107"
+   ],
+   "checks": {
+    "genset": "7/0/9/5",
+    "engine": "8/0/6/0",
+    "alternator": "5/0/2/3",
+    "controller": "2/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "ctl_protection:unclear",
+    "fuel_consumption_50:unclear",
+    "emission:unclear",
+    "alt_standard:document",
+    "ctl_display_lang:unclear"
+   ]
+  },
+  {
+   "rank": 3,
+   "engine": "Volvo Penta TWD1744GE",
+   "alternator": "Mecc Alte ECO40 VL4C",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "jet-power:122",
+    "kaihua-genset:107",
+    "agg-fuzhou:101"
+   ],
+   "checks": {
+    "genset": "6/0/5/10",
+    "engine": "5/0/7/2",
+    "alternator": "1/0/7/2",
+    "controller": "2/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "ctl_protection:unclear",
+    "fuel_consumption_50:unclear",
+    "emission:unclear",
+    "alt_standard:document",
+    "alt_power:unclear",
+    "ctl_display_lang:unclear"
+   ]
+  },
+  {
+   "rank": 4,
+   "engine": "Perkins 4006-23TAG3A",
+   "alternator": "Stamford Stamford S5L1D-H4",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:103",
+    "uleengen:103",
+    "dingbo:106"
+   ],
+   "checks": {
+    "genset": "4/0/7/10",
+    "engine": "6/0/8/0",
+    "alternator": "2/0/5/3",
+    "controller": "2/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 5,
+   "engine": "Mitsubishi S6R2-PTAA",
+   "alternator": "Stamford Stamford S5L1D-H41",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:103",
+    "comappower:111",
+    "mecca-power:181"
+   ],
+   "checks": {
+    "genset": "4/0/7/10",
+    "engine": "3/0/9/2",
+    "alternator": "1/0/7/2",
+    "controller": "2/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 6,
+   "engine": "Baudouin 6M33G825/5",
+   "alternator": "Leroy-Somer LSA49.3 M65",
+   "controller": "Deep Sea DSE6120",
+   "named": null,
+   "suppliers": [
+    "longkai-power:108",
+    "koten-power:4005",
+    "westinpower:108"
+   ],
+   "checks": {
+    "genset": "4/1/7/9",
+    "engine": "3/0/9/2",
+    "alternator": "1/0/7/2",
+    "controller": "2/0/5/1"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Kích thước"
+   ],
+   "lossWarn": []
+  }
+ ]
+}
