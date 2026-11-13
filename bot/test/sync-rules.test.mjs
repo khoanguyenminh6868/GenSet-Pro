@@ -228,7 +228,7 @@ test("sổ chi: API báo hết tiền (exhausted) thì dùng gói tháng tới k
   assert.equal(P.apiBudgetOf("", book("{hỏng", { t: "2026-11-05T05:00:00", usd: 1 }, ""), at("2026-11-13T12:00:00")).spent, 1);
   assert.deepEqual([P.apiBudgetOf("", "", at("2026-11-13T12:00:00")).spent, P.apiBudgetOf("{hỏng", "", at("2026-11-13T12:00:00")).switchAtUsd], [0, 90]);
 });
-test("sổ chi: một dòng JSON không phải object ('null') không làm mất các dòng chi sau nó", { todo: "apiBudgetOf (như apiBudget cũ): dòng 'null' ném lỗi trong vòng đọc, try ngoài nuốt lỗi và bỏ mọi dòng sau → chi tiêu bị tính thiếu; sổ hiện tại không có dòng như vậy" }, () => {
+test("sổ chi: một dòng JSON không phải object ('null') không làm mất các dòng chi sau nó", () => {
   assert.equal(P.apiBudgetOf("", book({ t: "2026-11-05T05:00:00", usd: 1 }, "null", { t: "2026-11-06T05:00:00", usd: 2 }), at("2026-11-13T12:00:00")).spent, 3);
 });
 

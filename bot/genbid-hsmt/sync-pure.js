@@ -700,9 +700,10 @@ function apiBudgetOf(budgetText, spendText, at) {
   let since = new Date(now.getFullYear(), now.getMonth(), b.resetDay);
   if (now < since) since = new Date(now.getFullYear(), now.getMonth() - 1, b.resetDay);
   let spent = 0, exhausted = false;
-  try { // as before: a line that is valid JSON but not an object ("null") ends the reading, the sum so far counts
+  try { // a line that is not a JSON object (broken, or valid JSON such as "null") is skipped, the lines after it still count
     for (const l of String(spendText).split(/\r?\n/)) {
       let e; try { e = JSON.parse(l); } catch { continue; }
+      if (!e || typeof e !== "object") continue;
       if (!(new Date(e.t) >= since)) continue;
       spent += Number(e.usd) || 0; if (e.exhausted) exhausted = true;
     }
