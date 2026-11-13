@@ -96,12 +96,32 @@
     {
       "n": 101,
       "url": "http://www.changsongpower.com/cn/product/fadianji2131.html",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 Gensets Model | 输出功率 Output Power | 柴油机型号 Engine Model | 机组外形尺寸 Gensets Overall Dimensions | 重量 Weight"
       ],
       "file": "sources/changsong-weifang/101.md"
+    },
+    {
+      "n": 102,
+      "url": "http://www.changsongpower.com/cn/product/chaiyouji0855.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | | 6105AZLG"
+      ],
+      "file": "sources/changsong-weifang/102.md"
+    },
+    {
+      "n": 103,
+      "url": "http://www.changsongpower.com/cn/product/chaiyouji1159.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | 机型 项目 | ZH4100Y6"
+      ],
+      "file": "sources/changsong-weifang/103.md"
     }
   ],
   "confidence": "medium",
@@ -145,6 +165,46 @@
         "| 1100GF | 1100/1375 | 4012TWG2 | 5374*1760*2462 | 10650",
         "| 1120GF | 1120/1400 | 4012TAG | 5374*1760*2462 | 10650",
         "| 1200GF | 1200/1500 | 4012TAG1 | 5250*2220*2895 | 10650"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "R6105系列固定动力用柴油机",
+      "header": [],
+      "rows": [
+        "| Model | | 6105AZLG",
+        "| Output power | kw | 121KW",
+        "| Fuel consumption | g/kw.h | 224",
+        "| Cylinders | | 6",
+        "| Bore | mm | 105",
+        "| Engine displacement | L | 3.93"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "4100装载机挖掘机用柴油机",
+      "header": [
+        "| | 机型 项目 | ZH4100Y6",
+        "| 1 | 型式 | 四冲程，水冷，直列，直喷燃烧室"
+      ],
+      "rows": [
+        "| 2 | 汽缸数-缸径*行程 （mm） | 4-100*115",
+        "| 3 | 活塞总排量 （L） | 3.26",
+        "| 4 | 压缩比 | 19:1",
+        "| 5 | 发火次序 | 1-3-4-2",
+        "| 6 | 进气方式 | 自然吸气",
+        "| 8 | 最高空载转速（r/min） | ≤2380",
+        "| 9 | 最低空载稳定转速（r/min） | ≤550",
+        "| 10 | 最大扭矩/转速（N.M/r/min） | 220/1430",
+        "| 11 | 标定工况时 | 平均有效压力（kpa） | 620",
+        "| 12 | 燃油消耗率（g/kw.h） | ≤258.4",
+        "| 13 | 机油消耗率（g/kw.h） | ≤2.04",
+        "| 14 | 排气温度（℃） | ≤540",
+        "| 15 | 曲轴转向 | 逆时针（从功率输出端看）",
+        "| 16 | 冷却方式 | 强制水冷",
+        "| 17 | 润滑方式 | 压力飞溅复合式",
+        "| 18 | 启动方式 | 电启动",
+        "| 19 | 净质量 | 380"
       ]
     }
   ]

@@ -6,7 +6,10 @@
   "header": [],
   "rows": [
    "| Rated Power: | 200KW/ 250kVA | Standby Power: | 220KW/ 275kVA",
-   "| Primary Power: | 231KW | Standby Power: | 254KW"
+   "| Frequency: | 50HZ, 60HZ | Speed: | 1500rpm/min, 1800rpm/min",
+   "| Voltage: | 3P4W; 110V/220V, 230V/400V, | |",
+   "| Primary Power: | 231KW | Standby Power: | 254KW",
+   "| Protection Class: | IP22 | |"
   ]
  }
 ]

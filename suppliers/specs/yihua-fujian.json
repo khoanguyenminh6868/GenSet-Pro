@@ -114,5 +114,40 @@
    "| TFX-120 | 120/150 | 400 | 216.8 | 1500 | 50 | 55",
    "| TFX-150 | 150/187.5 | 400 | 271 | 1500 | 50 | 75"
   ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.yihua-genset.com/Yihua-Silent-Diesel-Generators-100kVA-80kw-Cummins-Engine-Strong-Power-p5710234.html",
+  "title": "50HZ 100KVA 80KW Silent Diesel Generators Powered By Cummins",
+  "header": [],
+  "rows": [
+   "| GENERATOR SET MODEL | YH-100C",
+   "| Prime Output (KVA/KW) | 100KVA/80KW",
+   "| Standby Power(kVA/KW) | 110KVA/88KW",
+   "| Engine Model | Cummins 6BT5.9-G2-96KW",
+   "| Alternator Model | UCI274C-80KW",
+   "| Rated Output | 80KW",
+   "| Standby Output | 88KW",
+   "| Rated Speed | 1500 RPM",
+   "| Frequency | 50 HZ",
+   "| Rated Voltage | 380/220V, 400/231V, 415/240V, 440/254V",
+   "| Power Factor | 0.8",
+   "| Model | Cummins 6BT5.9-G2-96KW",
+   "| Rated Output/Speed | 96KW/130.7HP/1500RPM",
+   "| Standby Output/Speed | 105.6KW/143.7HP/1500RPM",
+   "| Engine Type | 6 cylinder in line",
+   "| Bore X Stroke | 102*120 mm",
+   "| Displacement | 5.9L",
+   "| Rated speed(rpm) | 1500",
+   "| Fuel Consumption/rated output | 214 g/h",
+   "| Fuel Consumption/standby output | 213 g/h",
+   "| Starting method | D.C. 24V Electric starting",
+   "| ALTERNATOR MODEL | UCI274C-80KW",
+   "| Continuous Output (KW) | 80KW",
+   "| Power Efficiency | 0.866",
+   "| Voltage Regulation | ±1.5% with 4% engine govering",
+   "Speed:1500/1800rpm",
+   "Frequency :50/60HZ"
+  ]
  }
 ]

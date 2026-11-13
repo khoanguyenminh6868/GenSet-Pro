@@ -119,7 +119,7 @@
     {
       "n": 101,
       "url": "https://www.swtgenset.com/mtu-diesel-generator/57570727.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Gense t Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
@@ -129,7 +129,7 @@
     {
       "n": 102,
       "url": "https://www.swtgenset.com/cummins-diesel-generator/57570663.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
@@ -139,7 +139,7 @@
     {
       "n": 104,
       "url": "https://www.swtgenset.com/silent-generator/57680874.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Genset Model | Prime Power (kW/kVA) | Standby Power (kW/kVA) | Diesel Engine Model | Open Type Size L x W x H (mm) | Silent Type Siz e L x W x H (mm) | Weight (kg)"
@@ -149,7 +149,7 @@
     {
       "n": 111,
       "url": "https://www.swtgenset.com/cummins-diesel-generator/57570541.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
@@ -159,7 +159,7 @@
     {
       "n": 112,
       "url": "https://www.swtgenset.com/perkins-diesel-generator/57570717.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Ge nset Mod el | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
@@ -169,12 +169,42 @@
     {
       "n": 117,
       "url": "https://www.swtgenset.com/mitsubishi-diesel-generator/57626857.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Gense t Model | Prime Power kW/kVA | Standby Power kW/kVA | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
       ],
       "file": "sources/superwatt-power/117.md"
+    },
+    {
+      "n": 129,
+      "url": "https://www.swtgenset.com/cummins-diesel-generator/57678381.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "file": "sources/superwatt-power/129.md"
+    },
+    {
+      "n": 131,
+      "url": "https://www.swtgenset.com/cummins-diesel-generator/57678293.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "file": "sources/superwatt-power/131.md"
+    },
+    {
+      "n": 138,
+      "url": "https://www.swtgenset.com/kubota-diesel-generator/57570941.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Prime Power (kW/kVA) | Standby Power (kW/kVA) | Engine Model | Dimension-Open LxWxH (mm) | Dimension-Silent LxWxH (mm)"
+      ],
+      "file": "sources/superwatt-power/138.md"
     }
   ],
   "confidence": "medium",
@@ -313,6 +343,59 @@
         "| SL2100 | 1500/1875 | 1680/2100 | S16R-PTA2-C | 5200x2400x3200 | 14000",
         "| SL2250 | 1640/2050 | 1800/2250 | S16R-PTAA2-C | 5800x2200x3400 | 15000",
         "| SL2500 | 1800/2250 | 2000/2500 | S16R2-PTAW-C | 6200X2380X3370 | 17000"
+      ]
+    },
+    {
+      "n": 129,
+      "title": "160kW Diesel Generaor Powered by Cummins China Manufacturers Suppliers Factory Exporter",
+      "header": [
+        "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "rows": [
+        "| SC28 | 20/25 | 22/27.5 | 6 | 4B3.9-G1 | 1600x830x1300 | 950",
+        "| SC33 | 24/30 | 26/32.5 | 7.2 | 4BT3.9-G1 | 1800x830x1300 | 1000",
+        "| SC44 | 32/40 | 35/44 | 9.2 | 4BT3.9-G1 | 1800x830x1300 | 1050",
+        "| SC55 | 40/50 | 44/55 | 12 | 4BTA3.9-G2 | 1850x850x1430 | 1100",
+        "| SC69 | 50/62.5 | 55/69 | 15.6 | 4BTA3.9-G2 | 1900x850x1430 | 1200",
+        "| SC83 | 60/75 | 66/82.5 | 17.8 | 4BTA3.9-G11 | 2150x850x1430 | 1300",
+        "| SC110 | 80/100 | 88/110 | 23 | 6BT5.9-G2 | 2300x850x1430 | 1400",
+        "| SC125 | 90/112.5 | 100/125 | 26 | 6BTA5.9-G2 | 2400x850x1430 | 1550",
+        "| SC138 | 100/125 | 110/137.5 | 30 | 6BTAA5.9-G2 | 2400x950x1500 | 1700",
+        "| SC165 | 120/150 | 132/165 | 36 | 6BTAA5.9-G12 | 2500x950x1500 | 1800",
+        "| SC206 | 150/187.5 | 165/206 | 41.2 | 6CTA8.3-G2 | 2650x1050x1500 | 2100",
+        "| SC220 | 160/200 | 176/220 | 44 | 6CTAA8.3-G2 | 2800x1050x1500 | 2200",
+        "| SC275 | 200/250 | 220/275 | 50 | 6LTAA8.9-G2 | 2800x1050x1600 | 2500",
+        "| SC500E | 360/400 | 400/500 | 93 | QSZ13-G2 | 3100x1050x1600 | 3000",
+        "| SC550E | 400/500 | 440/550 | 102 | QSZ13-G3 | 3200x1050x1600 | 3200"
+      ]
+    },
+    {
+      "n": 131,
+      "title": "100kW Diesel Generaor Powered by Cummins China Manufacturers Suppliers Factory Exporter",
+      "header": [
+        "| Genset Model | Prime Power kW/kVA | Standby Power kW/kVA | Fuel Con. l/h | Engine Model | Dimension Size LxWxH (mm) | Weight kg"
+      ],
+      "rows": [
+        "| SC110 | 80/100 | 88/110 | 23 | 6BT5.9-G2 | 2300x850x1430 | 1400",
+        "| SC125 | 90/112.5 | 100/125 | 26 | 6BTA5.9-G2 | 2400x850x1430 | 1550",
+        "| SC138 | 100/125 | 110/137.5 | 30 | 6BTAA5.9-G2 | 2400x950x1500 | 1700",
+        "| SC165 | 120/150 | 132/165 | 36 | 6BTAA5.9-G12 | 2500x950x1500 | 1800"
+      ]
+    },
+    {
+      "n": 138,
+      "title": "20kW Diesel Generator Powered by Kubota China Manufacturers Suppliers Factory Exporter",
+      "header": [
+        "| Genset Model | Prime Power (kW/kVA) | Standby Power (kW/kVA) | Engine Model | Dimension-Open LxWxH (mm) | Dimension-Silent LxWxH (mm)"
+      ],
+      "rows": [
+        "| SK11 | 8/10 | 8.8/11 | D1105-BG | 1460x730x1170 | 1715x900x1235",
+        "| SK14 | 10/12.5 | 11/13.75 | V1505-BG | 1550x730x1170 | 1915x900x1235",
+        "| SK17 | 12/15 | 13.2/16.5 | D1703-BG | 1560x730x1170 | 1915x900x1235",
+        "| SK23 | 16/20 | 18/22.5 | V2203-BG | 1650x730x1170 | 1915x900x1235",
+        "| SK25 | 18/22.5 | 20/25 | V2003-T-BG | 1650x730x1170 | 1915x900x1235",
+        "| SK33 | 24/30 | 26.4/33 | V3300-BG | 1910x730x1170 | 2215x1000x1550",
+        "| SK40 | 28/35 | 32/40 | V3300-T-BG | 1910x730x1170 | 2215x1000x1550"
       ]
     }
   ],

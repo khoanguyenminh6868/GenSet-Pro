@@ -103,16 +103,6 @@
       "file": "sources/fpt-industrial/1.md"
     },
     {
-      "n": 101,
-      "url": "https://www.fptindustrial.com/en/engines/Power-Generation/G-Drive/R38",
-      "accessedAt": "2026-11-09",
-      "tier": "A",
-      "quote": [
-        "Prime Power [ kWm kVA ] @ 1500 rpm:"
-      ],
-      "file": "sources/fpt-industrial/101.md"
-    },
-    {
       "n": 2001,
       "url": "https://www.fptindustrial.com/-/media/FPT/Brochures/Engines/POWER-GEN/FPT_Unregulated_Lineup.pdf",
       "accessedAt": "2026-11-09",
@@ -121,6 +111,16 @@
         "N67                  NEF67TE8P.A263      6.7                   6L/TAA                                             ECR                239       219    274   216          199    248  254     233          292    230        211    264  92%"
       ],
       "file": "sources/fpt-industrial/2001.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.fptindustrial.com/en/engines/Power-Generation/G-Drive/R38",
+      "accessedAt": "2026-11-09",
+      "tier": "A",
+      "quote": [
+        "Prime Power [ kWm kVA ] @ 1500 rpm:"
+      ],
+      "file": "sources/fpt-industrial/101.md"
     }
   ],
   "confidence": "medium",

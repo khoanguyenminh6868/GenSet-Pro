@@ -104,7 +104,7 @@
     {
       "n": 101,
       "url": "https://www.bisongenerator.com/generator/diesel-generator/3KW-home-backup-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | BS3500DSE"
@@ -113,18 +113,18 @@
     },
     {
       "n": 102,
-      "url": "https://www.bisongenerator.com/generator/diesel-generator/5kw-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.bisongenerator.com/generator/diesel-generator/7KW-diesel-engine-generator.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "| Model | BS6500DSE"
+        "| Model | BS10000DSE"
       ],
       "file": "sources/bison-zhejiang/102.md"
     },
     {
       "n": 103,
       "url": "https://www.bisongenerator.com/generator/diesel-generator/5KW-portable-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Max.output(KW) | 6 | 6.5"
@@ -133,28 +133,28 @@
     },
     {
       "n": 104,
-      "url": "https://www.bisongenerator.com/generator/diesel-generator/4-5KW-silent-genset.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.bisongenerator.com/generator/diesel-generator/6kw-diesel-powered-generator.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "| Model | BS6500DSE"
+        "| Model | BS8500DSE"
       ],
       "file": "sources/bison-zhejiang/104.md"
     },
     {
       "n": 105,
-      "url": "https://www.bisongenerator.com/generator/diesel-generator/5-5KW-silent-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.bisongenerator.com/generator/diesel-generator/air-cooled-7kva-diesel-generator.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "| Model | BS7500DSE"
+        "| Model | BS6000DCE"
       ],
       "file": "sources/bison-zhejiang/105.md"
     },
     {
       "n": 106,
       "url": "https://www.bisongenerator.com/generator/diesel-generator/12kw-diesel-motor-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Generator set Model | BS12000DSE | BS15000DSE"
@@ -163,48 +163,48 @@
     },
     {
       "n": 107,
-      "url": "https://www.bisongenerator.com/generator/diesel-generator/6-5kva-single-phase-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.bisongenerator.com/generator/diesel-generator/4-5KW-silent-genset.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "| Model | BS6500 | BS7500"
+        "| Model | BS6500DSE"
       ],
       "file": "sources/bison-zhejiang/107.md"
     },
     {
       "n": 108,
-      "url": "https://www.bisongenerator.com/generator/diesel-generator/7KW-diesel-engine-generator.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.bisongenerator.com/generator/diesel-generator/6-5kva-single-phase-diesel-generator.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "| Model | BS10000DSE"
+        "| Model | BS6500 | BS7500"
       ],
       "file": "sources/bison-zhejiang/108.md"
     },
     {
       "n": 109,
-      "url": "https://www.bisongenerator.com/generator/diesel-generator/6kw-diesel-powered-generator.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.bisongenerator.com/generator/diesel-generator/5-5KW-silent-diesel-generator.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "| Model | BS8500DSE"
+        "| Model | BS7500DSE"
       ],
       "file": "sources/bison-zhejiang/109.md"
     },
     {
       "n": 110,
-      "url": "https://www.bisongenerator.com/generator/diesel-generator/air-cooled-7kva-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "url": "https://www.bisongenerator.com/generator/diesel-generator/5kw-diesel-generator.html",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
-        "| Model | BS6000DCE"
+        "| Model | BS6500DSE"
       ],
       "file": "sources/bison-zhejiang/110.md"
     },
     {
       "n": 111,
       "url": "https://www.bisongenerator.com/generator/inverter-generator/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| small inverter generator | BS-R1250IS | BS-R2000AIE | BS-R2000IS | BS-H2000iS | BS-H2250iS | BS-H2750iS | BS-H3150iS | BS-R2500IS"
@@ -214,7 +214,7 @@
     {
       "n": 112,
       "url": "https://www.bisongenerator.com/generator/diesel-generator/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Open Frame Diesel generator | BS2500DCE | BS3500DCE | BS6500DCE | BS7500DCE | BS8500DCE | BS12000DCE"
@@ -224,7 +224,7 @@
     {
       "n": 113,
       "url": "https://www.bisongenerator.com/generator/diesel-generator/10-kva-domestic-diesel-generator.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | BS6500 | BS7500 | BS11000SE"
@@ -234,7 +234,7 @@
     {
       "n": 114,
       "url": "https://www.bisongenerator.com/generator/gasoline-generator/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| small gasoline generator | BS950 | BS1800 | BS2500 | BS3000 | BS3500"
@@ -297,21 +297,20 @@
     },
     {
       "n": 102,
-      "title": "Wholesale 5kw diesel generator factory in China | BISON",
+      "title": "Wholesale 7KW diesel engine generator factory | BISON",
       "header": [],
       "rows": [
-        "| Model | BS6500DSE",
-        "| Rated frequency (HZ) | 50",
-        "| Rated Output (KW) | 4.5",
-        "| Rated voltage (V) | 220V",
+        "| Model | BS10000DSE",
+        "| Rated frequency (HZ) | 50/60",
+        "| Rated Output (KW) | 7",
         "| Rated rotation speed (r/min) | 3000/3600",
-        "| Power factor (cos) | 1",
-        "| Engine model | BS186FA",
-        "| Bore×Stroke(mm) | 86*72",
-        "| Displacement | 418cc",
+        "| Power factor (cos?) | 1",
+        "| Engine model | BS198F",
+        "| Bore×Stroke(mm) | 98*75",
+        "| Displacement | 498cc",
         "| Fuel tank capacity (L) | 16",
-        "| Fuel consumption (g/KW.h) | ≤280",
-        "| Continuous running time | 8.5/7.8",
+        "| Fuel consumption (g/KW.h) | ≤268",
+        "| Continuous running time | 9.4/8.4",
         "| Noise level (7m, dB) | 68-72"
       ]
     },
@@ -331,17 +330,17 @@
     },
     {
       "n": 104,
-      "title": "Wholesale 4.5KW silent genset factory in China | BISON",
+      "title": "purchase 6kw diesel powered generator from China factory | BISON",
       "header": [],
       "rows": [
-        "| Model | BS6500DSE",
+        "| Model | BS8500DSE",
         "| Rated frequency (HZ) | 50/60",
-        "| Rated Output (KW) | 4.5",
+        "| Rated Output (KW) | 6",
         "| Rated rotation speed (r/min) | 3000/3600",
         "| Power factor (cos?) | 1",
-        "| Engine model | BS186FA",
-        "| Bore×Stroke(mm) | 86*72",
-        "| Displacement | 418cc",
+        "| Engine model | BS192FB",
+        "| Bore×Stroke(mm) | 92*75",
+        "| Displacement | 498cc",
         "| Fuel tank capacity (L) | 16",
         "| Fuel consumption (g/KW.h) | ≤280",
         "| Continuous running time | 8.5/7.8",
@@ -350,21 +349,21 @@
     },
     {
       "n": 105,
-      "title": "Wholesale 5.5KW silent diesel generator factory | BISON",
+      "title": "purchase air cooled 7kva diesel generator from China factory | BISON",
       "header": [],
       "rows": [
-        "| Model | BS7500DSE",
+        "| Model | BS6000DCE",
         "| Rated frequency (HZ) | 50/60",
         "| Rated Output (KW) | 5",
         "| Rated rotation speed (r/min) | 3000/3600",
-        "| Power factor (cos?) | 1",
-        "| Engine model | BS188FA",
-        "| Bore×Stroke(mm) | 88*75",
-        "| Displacement | 456cc",
-        "| Fuel tank capacity (L) | 16",
-        "| Fuel consumption (g/KW.h) | ≤285",
-        "| Continuous running time | 8.5/7.8",
-        "| Noise level (7m, dB) | 68-72"
+        "| Power factor (cosϕ) | 1",
+        "| Engine model | BS186FA",
+        "| Bore×Stroke(mm) | 86*72",
+        "| Displacement | 418cc",
+        "| Fuel tank capacity (L) | 12.5",
+        "| Fuel consumption (g/KW.h) | 280",
+        "| Continuous running time | 6.5/6",
+        "| Noise level (7m, dB) | 80-85"
       ]
     },
     {
@@ -399,6 +398,25 @@
     },
     {
       "n": 107,
+      "title": "Wholesale 4.5KW silent genset factory in China | BISON",
+      "header": [],
+      "rows": [
+        "| Model | BS6500DSE",
+        "| Rated frequency (HZ) | 50/60",
+        "| Rated Output (KW) | 4.5",
+        "| Rated rotation speed (r/min) | 3000/3600",
+        "| Power factor (cos?) | 1",
+        "| Engine model | BS186FA",
+        "| Bore×Stroke(mm) | 86*72",
+        "| Displacement | 418cc",
+        "| Fuel tank capacity (L) | 16",
+        "| Fuel consumption (g/KW.h) | ≤280",
+        "| Continuous running time | 8.5/7.8",
+        "| Noise level (7m, dB) | 68-72"
+      ]
+    },
+    {
+      "n": 108,
       "title": "Purchase 6.5kva single phase diesel generator from China - BISON",
       "header": [],
       "rows": [
@@ -413,60 +431,42 @@
       ]
     },
     {
-      "n": 108,
-      "title": "Wholesale 7KW diesel engine generator factory | BISON",
-      "header": [],
-      "rows": [
-        "| Model | BS10000DSE",
-        "| Rated frequency (HZ) | 50/60",
-        "| Rated Output (KW) | 7",
-        "| Rated rotation speed (r/min) | 3000/3600",
-        "| Power factor (cos?) | 1",
-        "| Engine model | BS198F",
-        "| Bore×Stroke(mm) | 98*75",
-        "| Displacement | 498cc",
-        "| Fuel tank capacity (L) | 16",
-        "| Fuel consumption (g/KW.h) | ≤268",
-        "| Continuous running time | 9.4/8.4",
-        "| Noise level (7m, dB) | 68-72"
-      ]
-    },
-    {
       "n": 109,
-      "title": "purchase 6kw diesel powered generator from China factory | BISON",
+      "title": "Wholesale 5.5KW silent diesel generator factory | BISON",
       "header": [],
       "rows": [
-        "| Model | BS8500DSE",
+        "| Model | BS7500DSE",
         "| Rated frequency (HZ) | 50/60",
-        "| Rated Output (KW) | 6",
+        "| Rated Output (KW) | 5",
         "| Rated rotation speed (r/min) | 3000/3600",
         "| Power factor (cos?) | 1",
-        "| Engine model | BS192FB",
-        "| Bore×Stroke(mm) | 92*75",
-        "| Displacement | 498cc",
+        "| Engine model | BS188FA",
+        "| Bore×Stroke(mm) | 88*75",
+        "| Displacement | 456cc",
         "| Fuel tank capacity (L) | 16",
-        "| Fuel consumption (g/KW.h) | ≤280",
+        "| Fuel consumption (g/KW.h) | ≤285",
         "| Continuous running time | 8.5/7.8",
         "| Noise level (7m, dB) | 68-72"
       ]
     },
     {
       "n": 110,
-      "title": "purchase air cooled 7kva diesel generator from China factory | BISON",
+      "title": "Wholesale 5kw diesel generator factory in China | BISON",
       "header": [],
       "rows": [
-        "| Model | BS6000DCE",
-        "| Rated frequency (HZ) | 50/60",
-        "| Rated Output (KW) | 5",
+        "| Model | BS6500DSE",
+        "| Rated frequency (HZ) | 50",
+        "| Rated Output (KW) | 4.5",
+        "| Rated voltage (V) | 220V",
         "| Rated rotation speed (r/min) | 3000/3600",
-        "| Power factor (cosϕ) | 1",
+        "| Power factor (cos) | 1",
         "| Engine model | BS186FA",
         "| Bore×Stroke(mm) | 86*72",
         "| Displacement | 418cc",
-        "| Fuel tank capacity (L) | 12.5",
-        "| Fuel consumption (g/KW.h) | 280",
-        "| Continuous running time | 6.5/6",
-        "| Noise level (7m, dB) | 80-85"
+        "| Fuel tank capacity (L) | 16",
+        "| Fuel consumption (g/KW.h) | ≤280",
+        "| Continuous running time | 8.5/7.8",
+        "| Noise level (7m, dB) | 68-72"
       ]
     },
     {

@@ -111,6 +111,16 @@
       "file": "sources/kaichen-jiangsu/2.md"
     },
     {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/kaichen-jiangsu-catalog.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "| KCC-25GF | 22 | 27 | 24 | 30 | 4B3.9-G2 |"
+      ],
+      "file": "sources/kaichen-jiangsu/5001.md"
+    },
+    {
       "n": 101,
       "url": "https://www.kaichenpower.com/cummins-diesel-generator/300kw-industrial-diesel-generators.html",
       "accessedAt": "2026-10-29",
@@ -189,16 +199,6 @@
         "Engine: Cummins NTAA855-G7"
       ],
       "file": "sources/kaichen-jiangsu/108.md"
-    },
-    {
-      "n": 5001,
-      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/kaichen-jiangsu-catalog.pdf",
-      "accessedAt": "2026-11-11",
-      "tier": "A",
-      "quote": [
-        "| KCC-25GF | 22 | 27 | 24 | 30 | 4B3.9-G2 |"
-      ],
-      "file": "sources/kaichen-jiangsu/5001.md"
     }
   ],
   "confidence": "medium",

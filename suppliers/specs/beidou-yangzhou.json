@@ -4,39 +4,95 @@
   "url": "https://www.bdgenerator.com/225kva-180kw-shangchai-diesel-generator-set-product/",
   "title": "225KVA 180KW Shangchai Diesel Generator Set",
   "header": [
-   "| Genset Model | Genset Power (KVA) | Engine Model | Engine Power | Diemension (MM) | Weight (KG) | Rated"
+   "| Genset Model | Genset Power (KVA) | Engine Model | Engine Power | Diemension (MM) | Weight (KG)",
+   "| Rated | Backup"
   ],
   "rows": [
-   "| Backup | BD-S18 | 18 | 20 | 4Z2.3-G11 | 20/23 | 1400*560*1100",
-   "| 400 | BD-S63 | 63 | 69 | 4ZT4.1-G21 | 75/83 | 1650*750*1150",
-   "| 900 | BD-S125 | 125 | 138 | SC4H180D2 | 150/165 | 2150*850*1250",
-   "| 1200 | BD-S150 | 150 | 165 | SC7H250D2 | 168/185 | 2550*1050*1450",
-   "| 1650 | BD-S250 | 250 | 275 | SC9D340D2 | 285/319 | 2750*1100*1590",
-   "| 2300 | BD-S313 | 313 | 344 | SC12E420D2 | 350/385 | 3000*1150*1750",
-   "| 2600 | BD-S375 | 375 | 413 | SC15G500D2 | 424/466 | 3100*1240*1720",
-   "| 2800 | BD-S450 | 450 | 495 | SC25G610D2 | 506/556 | 3450*1530*2050",
-   "| 3800 | BD-S500 | 500 | 550 | SC25G690D2 | 574/631 | 3450*1500*2100",
-   "| 3950 | BD-S500 | 563 | 619 | SC27G755D2 | 631/700 | 3500*1600*2150",
-   "| 4200 | BD-S625 | 625 | 688 | SC27G830D2 | 701/763 | 3650*1680*2200",
-   "| 4300 | BD-S688 | 688 | 756 | SC27G900D2 | 753/828 | 3650*1680*2200",
-   "| 4400 | BD-S750 | 750 | 825 | SC33W990D2 | 825/908 | 4450*1780*2400",
-   "| 6000 | BD-S875 | 875 | 963 | SC33W1150D2 | 978/1075 | 4450*1780*2400",
-   "| 6500 | BD-S1000 | 1000 | 1100 | 6WTAA35-G31 | 1103/1213 | 4100*2000*2200",
-   "| 6300 | BD-S1125 | 1125 | 1238 | 6WTAA35-G310 | 1273/1400 | 4430*1855*2450",
-   "| 8000 | BD-S1125 | 1250 | 1375 | 6WTAA35-G311 | 1398/1538 | 4430*1855*2450"
+   "| BD-S18 | 18 | 20 | 4Z2.3-G11 | 20/23 | 1400*560*1100 | 400",
+   "| BD-S63 | 63 | 69 | 4ZT4.1-G21 | 75/83 | 1650*750*1150 | 900",
+   "| BD-S125 | 125 | 138 | SC4H180D2 | 150/165 | 2150*850*1250 | 1200",
+   "| BD-S150 | 150 | 165 | SC7H250D2 | 168/185 | 2550*1050*1450 | 1650",
+   "| BD-S250 | 250 | 275 | SC9D340D2 | 285/319 | 2750*1100*1590 | 2300",
+   "| BD-S313 | 313 | 344 | SC12E420D2 | 350/385 | 3000*1150*1750 | 2600",
+   "| BD-S375 | 375 | 413 | SC15G500D2 | 424/466 | 3100*1240*1720 | 2800",
+   "| BD-S450 | 450 | 495 | SC25G610D2 | 506/556 | 3450*1530*2050 | 3800",
+   "| BD-S500 | 500 | 550 | SC25G690D2 | 574/631 | 3450*1500*2100 | 3950",
+   "| BD-S500 | 563 | 619 | SC27G755D2 | 631/700 | 3500*1600*2150 | 4200",
+   "| BD-S625 | 625 | 688 | SC27G830D2 | 701/763 | 3650*1680*2200 | 4300",
+   "| BD-S688 | 688 | 756 | SC27G900D2 | 753/828 | 3650*1680*2200 | 4400",
+   "| BD-S750 | 750 | 825 | SC33W990D2 | 825/908 | 4450*1780*2400 | 6000",
+   "| BD-S875 | 875 | 963 | SC33W1150D2 | 978/1075 | 4450*1780*2400 | 6500",
+   "| BD-S1000 | 1000 | 1100 | 6WTAA35-G31 | 1103/1213 | 4100*2000*2200 | 6300",
+   "| BD-S1125 | 1125 | 1238 | 6WTAA35-G310 | 1273/1400 | 4430*1855*2450 | 8000",
+   "| BD-S1125 | 1250 | 1375 | 6WTAA35-G311 | 1398/1538 | 4430*1855*2450 | 8500"
   ]
  },
  {
   "n": 102,
-  "url": "https://www.bdgenerator.com/la/500kva-400kw-perkins-generator-2-product/",
-  "title": "Generator Perkins 500KVA 400KW",
+  "url": "https://www.bdgenerator.com/200-kva-perkins-diesel-generator-set-product/",
+  "title": "200 KVA Perkins Diesel Generator Set",
   "header": [
-   "| Typus | Frequentia | Potestas | Currens (A) | Genus machinae | Genus alternatoris | Magnitudo (cm) | Pondus",
-   "| (Hz) | (kW/kva) | (kg)"
+   "| Brand | Beidou | Genset Model | BD-P200",
+   "| Engine | Perkins | Power (KVA) | 200",
+   "| Alternator | Beidou | Current(A) | 288A",
+   "| Fuel Consumption (L/h) | 25.6 | Phase | 3 Phase"
   ],
   "rows": [
-   "| BD-P400 | 50 | 400/500 | DCCXX | 2506C-E15TAG2 | BDI720A | 376*113*206 | 3570",
-   "| BD-P400 | 60 | 400/500 | DCCXX | 2506C-E15TAG2 | BDI720A | 376*113*206 | 3570"
+   "| Rated AC Voltage (V) | 230/400 | Rated Speed(r/min) | 1500/1800",
+   "| Rated Frequency (Hz) | 50/60 | Starting Method | DC start",
+   "| Starting batter voltage(V) | 24 | |"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.bdgenerator.com/50kva-40kw-perkins-generator-2-product/",
+  "title": "50KVA 40KW Perkins Generator",
+  "header": [],
+  "rows": [
+   "| Model | BD-P40",
+   "| Prime power | 40KW 50KVA",
+   "| Standby power | 44KW 55KVA",
+   "| Rated current | 72A",
+   "| Power factor | 0.8",
+   "| Rated frequency/ speed | 50 Hz / 60Hz",
+   "| Voltage fluctuation rate (%) | ≤±1",
+   "| Frequency fluctuation rate (%) | ≤0.5",
+   "| Engine model | 1003TG",
+   "| Alternator model | BDI72A",
+   "| Protection grade | IP23"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.bdgenerator.com/100kva-80kw-perkins-generator-2-product/",
+  "title": "100KVA 80KW Perkins Generator",
+  "header": [],
+  "rows": [
+   "| Model | BD-P80",
+   "| Prime Output | 80 KW 100 KVA",
+   "| Standby Output | 88 KW 110KVA",
+   "| Rated Current | 144A",
+   "| Rated AC Voltage (V) | 230/400",
+   "| Power factor | 0.8",
+   "| Rated frequency/speed | 50 Hz /60 Hz @1500RPM 1800RPM",
+   "| Voltage fluctuation rate (%) | ≤±1",
+   "| Frequency fluctuation rate (%) | ≤0.5"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.bdgenerator.com/60kva-yangdong-deisel-generator-set-product/",
+  "title": "Sourcing 60KVA Yangdong Deisel Generator Set",
+  "header": [
+   "| Brand | Beidou | Genset Model | BD-Y60",
+   "| Engine | Yangdong | Power (KVA) | 60",
+   "| Alternator | Beidou | Current(A) | 87A",
+   "| Fuel Consumption (L/h) | 8 | Phase | 3 Phase"
+  ],
+  "rows": [
+   "| Rated AC Voltage (V) | 230/400 | Rated Speed(r/min) | 1500/1800",
+   "| Rated Frequency (Hz) | 50/60 | Starting Method | DC start",
+   "| Starting batter voltage(V) | 24 | |"
   ]
  }
 ]

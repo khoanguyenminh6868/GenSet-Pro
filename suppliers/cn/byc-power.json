@@ -127,7 +127,7 @@
     {
       "n": 101,
       "url": "https://www.bycpower.com/High-performance-10-Kva-Open-Diesel-Generator-for-Mining-pd540497758.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | CKD1000E"
@@ -137,7 +137,7 @@
     {
       "n": 102,
       "url": "https://www.bycpower.com/Self-Starting-600kw-Container-Generator-Manufacturer-pd517297758.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | LDDL-S16"
@@ -147,12 +147,22 @@
     {
       "n": 103,
       "url": "https://www.bycpower.com/Diesel-Generator-Powered-By-YuChai-pd561363178.html",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Genset Model | Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (kVA) | Engine Model | Speed (rpm) | Engine Prime Power (kW) | Alternator Model | Alternator Prime Power (kW)"
       ],
       "file": "sources/byc-power/103.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.bycpower.com/Cummins-Diesel-Generator-Vs-Perkins-Diesel-Generator-Selection-Guide-id43661255.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Specification Metric | Cummins QSX15-G8 | Perkins 2506A-E15TAG2"
+      ],
+      "file": "sources/byc-power/105.md"
     }
   ],
   "confidence": "medium",
@@ -257,6 +267,19 @@
         "| BY-YC3500 | 2600 | 3250 | 2800 | 3500 | YCC105TA4200-G30 | 1500 | 2806 | QYI564B | 2700",
         "| BY-YC3750 | 2800 | 3500 | 3000 | 3750 | YCC105TA4500-G30 | 1500 | 3010 | QYI564C | 3000",
         "| BY-YC4190 | 3050 | 3810 | 3355 | 4190 | YCC105TA4900-G30 | 1500 | 3280 | QYI564C | 3000"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Cummins Diesel Generator Vs Perkins Diesel Generator: Selection Guide - BYC Power",
+      "header": [
+        "| Specification Metric | Cummins QSX15-G8 | Perkins 2506A-E15TAG2"
+      ],
+      "rows": [
+        "| Fuel Consumption (100% Load) | ~13.5 gal/hr | ~14.5 gal/hr",
+        "| Emissions Standard | EPA Tier 4 Final | EPA Tier 3",
+        "| Dry Weight | 7,500 lbs | 6,500 lbs",
+        "| Ideal Application | Heavy prime power generation | Compact commercial retrofits"
       ]
     }
   ],

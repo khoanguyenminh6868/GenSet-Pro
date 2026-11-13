@@ -79,7 +79,7 @@
     {
       "n": 101,
       "url": "https://www.everllence.com/marine/",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Engine speed: 56 – 125 rpm"
@@ -89,7 +89,7 @@
     {
       "n": 102,
       "url": "https://www.everllence.com/marine/products/two-stroke-engines",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Engine speed : rpm to 56 – 167"
@@ -99,7 +99,7 @@
     {
       "n": 103,
       "url": "https://www.everllence.com/marine/products/two-stroke-engines/two-stroke-fuel-oil-engines",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Engine speed: rpm to 56 – 167"
@@ -109,7 +109,7 @@
     {
       "n": 104,
       "url": "https://www.everllence.com/marine/products/two-stroke-engines/me-gi",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Engine speed : rpm to 56 – 167"
@@ -119,7 +119,7 @@
     {
       "n": 105,
       "url": "https://www.everllence.com/marine/products/two-stroke-engines/b-w-me-lgim",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Engine speed: rpm to 56 – 167"
@@ -129,12 +129,32 @@
     {
       "n": 106,
       "url": "https://www.everllence.com/marine/products/two-stroke-engines/lgip",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Engine speed: rpm to 56 – 167"
       ],
       "file": "sources/everllence/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.everllence.com/marine/applications/commercial/bulker",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Engine speed : rpm to 56 – 167"
+      ],
+      "file": "sources/everllence/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.everllence.com/marine/applications/commercial/container",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Engine speed: rpm to 56 – 167"
+      ],
+      "file": "sources/everllence/108.md"
     },
     {
       "n": 1001,
@@ -231,6 +251,32 @@
         "Output: 8,600 – 21,440 kW at L1",
         "Engine speed: 56 – 125 rpm",
         "Output: 6,950 – 82,440 kW at L1"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Bulk carrier engines and propulsion | Everllence",
+      "header": [],
+      "rows": [
+        "Engine speed : rpm to 56 – 167",
+        "Output : 4,350 – 82,440 kW at L1",
+        "Engine speed: rpm to 56 – 167",
+        "Output: 4,350 – 82,440 kW at L1",
+        "Engine speed: 56 – 125 rpm",
+        "Output: 6,950 – 82,440 kW at L1"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Container ship engines | Everllence",
+      "header": [],
+      "rows": [
+        "Engine speed: rpm to 56 – 167",
+        "Output: 4,350 – 82,440 kW at L1",
+        "Engine speed: 56 – 125 rpm",
+        "Output: 6,950 – 82,440 kW at L1",
+        "Engine speed : rpm to 56 – 167",
+        "Output : 4,350 – 82,440 kW at L1"
       ]
     },
     {

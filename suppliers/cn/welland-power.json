@@ -75,7 +75,7 @@
     {
       "n": 101,
       "url": "https://www.wellandpower.net/collections/diesel-generators",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | GenName | ESP kVA | Phases | Freq | Engine Brand | Engine Model | EU Emissions Level | Radtype | Alternator Brand | Alt. Model |"
@@ -85,7 +85,7 @@
     {
       "n": 102,
       "url": "https://www.wellandpower.net/collections/perkins-powered-generators",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | GenName | ESP kVA | Phases | Freq | Engine Brand | Engine Model | EU Emissions Level | Radtype | Alternator Brand | Alt. Model |"
@@ -95,7 +95,7 @@
     {
       "n": 103,
       "url": "https://www.wellandpower.net/collections/baudouin-powered-generators",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | GenName | ESP kVA | Phases | Freq | Engine Brand | Engine Model | EU Emissions Level | Radtype | Alternator Brand | Alt. Model |"
@@ -105,7 +105,7 @@
     {
       "n": 104,
       "url": "https://www.wellandpower.net/collections/cummins-powered-generators",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | GenName | ESP kVA | Phases | Freq | Engine Brand | Engine Model | EU Emissions Level | Radtype | Alternator Brand | Alt. Model |"
@@ -115,7 +115,7 @@
     {
       "n": 105,
       "url": "https://www.wellandpower.net/collections/scania-powered-generators",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | GenName | ESP kVA | Phases | Freq | Engine Brand | Engine Model | EU Emissions Level | Radtype | Alternator Brand | Alt. Model |"
@@ -322,6 +322,7 @@
         "| 53WP0165A00 | 166 | 3 | 50 | Perkins | 1106A-70TAG2 | None | TROP | Stamford | UCI274F1 | View",
         "| 53WP0200A01 | 200 | 3 | 50 | Perkins | 1106A-70TAG3 | None | TROP | Leroy Somer | TAL044L | View",
         "| 53WP0200A00 | 204 | 3 | 50 | Perkins | 1106A-70TAG3 | None | TROP | Stamford | UCI274H1 | View",
+        "| 53WP0220A03 | 218 | 3 | 50 | Perkins | 1106A-70TAG4 | None | TROP | Leroy Somer | TAL046C | View",
         "| 53WP0220A00 | 220 | 3 | 50 | Perkins | 1106A-70TAG4 | None | TROP | Stamford | UCI274H1 | View",
         "| 53WP0220A01 | 220 | 3 | 50 | Perkins | 1106A-70TAG4 | None | TROP | Leroy Somer | TAL044M | View",
         "| 53WP0220B00 | 220 | 3 | 50 | Perkins | 1206A-E70TTAG1 | None | TROP | Stamford | UCI274H1 | View",
@@ -519,6 +520,7 @@
         "| 53WP0165A00 | 166 | 3 | 50 | Perkins | 1106A-70TAG2 | None | TROP | Stamford | UCI274F1 | View",
         "| 53WP0200A01 | 200 | 3 | 50 | Perkins | 1106A-70TAG3 | None | TROP | Leroy Somer | TAL044L | View",
         "| 53WP0200A00 | 204 | 3 | 50 | Perkins | 1106A-70TAG3 | None | TROP | Stamford | UCI274H1 | View",
+        "| 53WP0220A03 | 218 | 3 | 50 | Perkins | 1106A-70TAG4 | None | TROP | Leroy Somer | TAL046C | View",
         "| 53WP0220A00 | 220 | 3 | 50 | Perkins | 1106A-70TAG4 | None | TROP | Stamford | UCI274H1 | View",
         "| 53WP0220A01 | 220 | 3 | 50 | Perkins | 1106A-70TAG4 | None | TROP | Leroy Somer | TAL044M | View",
         "| 53WP0220B00 | 220 | 3 | 50 | Perkins | 1206A-E70TTAG1 | None | TROP | Stamford | UCI274H1 | View",

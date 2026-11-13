@@ -109,7 +109,7 @@
     {
       "n": 101,
       "url": "https://www.jspandapower.com/hot-sale-1-2000kva-power-supply-vehicle-diesel-generator-genset-cummins-perkins-engine-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Displacement | 2,54l"
@@ -119,7 +119,7 @@
     {
       "n": 102,
       "url": "https://www.jspandapower.com/professional-220kw275kva-silent-soundproof-diesel-generator-container-power-low-noise-quiet-genset-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Output Type: AC 3/Three Phase Output Type"
@@ -129,7 +129,7 @@
     {
       "n": 103,
       "url": "https://www.jspandapower.com/90kw113kva-mobile-trailer-diesel-generator-silent-soundproof-electric-start-dynamo-generator-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Output Type: AC 3/Three Phase Output Type"
@@ -139,7 +139,7 @@
     {
       "n": 106,
       "url": "https://www.jspandapower.com/open-type-standby-generador-55kw69kva-power-generadores-electrics-diesel-propane-generator-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Output Type: AC 3/Three Phase Output Type"
@@ -149,7 +149,7 @@
     {
       "n": 107,
       "url": "https://www.jspandapower.com/factory-price-open-type-20kw25kva-power-generator-diesel-3-phase-stirling-engine-generators-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Rated Voltage: 400/230V"
@@ -159,7 +159,7 @@
     {
       "n": 108,
       "url": "https://www.jspandapower.com/factory-price-90kw113kva-standby-silent-soundproof-diesel-generators-with-cummins-engine-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Output Type: AC 3/Three Phase Output Type"
@@ -169,7 +169,7 @@
     {
       "n": 123,
       "url": "https://www.jspandapower.com/40kw50kva-panda-diesel-generator-electric-groupe-electrogene-diesel-genset-power-by-brand-engine-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Standby Power: 22kVA @ 230v | 50Hz | 1500rpm"
@@ -179,12 +179,22 @@
     {
       "n": 138,
       "url": "https://www.jspandapower.com/heavy-duty-400kw500kva-container-type-silent-diesel-generator-set-electric-super-silent-genset-product/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "Rated Voltage: 400/230V"
       ],
       "file": "sources/panda-power/138.md"
+    },
+    {
+      "n": 151,
+      "url": "https://www.jspandapower.com/120kw150kva-mobile-trailer-diesel-generator-silent-waterproof-diesel-generator-set-electric-power-generator-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Output Type: AC 3/Three Phase Output Type"
+      ],
+      "file": "sources/panda-power/151.md"
     }
   ],
   "confidence": "medium",
@@ -414,6 +424,38 @@
         "| Model Number | XM-P792",
         "| Speed | 1500",
         "| Power factor | 0.8",
+        "| Displacement | 2,54l",
+        "| Cylinder bore/Stroke | 90mm x 100mm",
+        "| Cylinders | Four (4) cylinders, water cooled",
+        "| Engine output power at 1500rpm | 21kW",
+        "| Fuel tank capacity | 200l",
+        "| Fuel consumption 100% | 6.3 l/h",
+        "| Fuel consumption 75% | 4.7 l/h",
+        "| Fuel consumption 50% | 3.2 l/h",
+        "| Fuel consumption 25% | 1.6 l/h",
+        "| Engine speed | 1500rpm",
+        "| Standby power output | 22kVA",
+        "| Prime power output | 20kVA",
+        "| Voltage regulation | ± 1%",
+        "| Voltage | 230v",
+        "| Rated frequency | 50Hz",
+        "| Voltage regulate change | ≤ ±10% UN",
+        "| Phase change rate | ± 1%",
+        "| Power factor | 1φ",
+        "| Protection class | IP23 Standard | Screen protected | Drip-proof"
+      ]
+    },
+    {
+      "n": 151,
+      "title": "OEM 120KW/150KVA mobile trailer diesel generator silent waterproof diesel generator set electric power generator Manufacturers and Suppliers | Panda Power",
+      "header": [],
+      "rows": [
+        "Output Type: AC 3/Three Phase Output Type",
+        "Rated Voltage: 400/230V",
+        "Rated Current: 217A",
+        "Frequency: 50/60HZ",
+        "| Model Number | XM-M-KP-120",
+        "| Speed | 1500/1800rpm",
         "| Displacement | 2,54l",
         "| Cylinder bore/Stroke | 90mm x 100mm",
         "| Cylinders | Four (4) cylinders, water cooled",

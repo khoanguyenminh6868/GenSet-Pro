@@ -122,6 +122,16 @@
       "file": "sources/mecca-power/2.md"
     },
     {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/mecca-power-catalog-2026.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "| MC66C | 48 | 60 | 53 | 66 | 4BTAA3.3G14 |"
+      ],
+      "file": "sources/mecca-power/5001.md"
+    },
+    {
       "n": 101,
       "url": "https://www.meccapower.com.cn/20KVA-500KVA-Industrial-DCEC-Cummins-Silent-Diesel-Generator-pd40730264.html",
       "accessedAt": "2026-10-28",
@@ -350,16 +360,6 @@
         "| Model | LTP | PRP | ENGINE | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | Weight"
       ],
       "file": "sources/mecca-power/190.md"
-    },
-    {
-      "n": 5001,
-      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/mecca-power-catalog-2026.pdf",
-      "accessedAt": "2026-11-11",
-      "tier": "A",
-      "quote": [
-        "| MC66C | 48 | 60 | 53 | 66 | 4BTAA3.3G14 |"
-      ],
-      "file": "sources/mecca-power/5001.md"
     }
   ],
   "confidence": "medium",

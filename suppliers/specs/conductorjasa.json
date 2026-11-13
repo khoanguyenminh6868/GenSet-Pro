@@ -1,1 +1,632 @@
-[]
+[
+ {
+  "n": 101,
+  "url": "https://conductorjasa.co.id/genset-2000-kva",
+  "title": "Genset 2000 kVA Mitsubishi, Perkins & Cummins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-2000 WP 4016TAG2A 2000 kVA prime | 4016TAG2A | 2000 | 2200 | 316 L/jam | 6000 × 2800 × 3500 mm",
+   "| PJPS-1800-WP 4016TAG1A 2000 kVA standby | 4016TAG1A | 1800 | 1980 | 316 L/jam | 5770 × 2800 × 3520 mm"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://conductorjasa.co.id/genset-2000-kva",
+  "title": "Genset 2000 kVA Mitsubishi, Perkins & Cummins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS O-2000 WP QSK60-G4 2000 kVA prime | QSK60-G4 | 2000 | 2200 | 291 L/jam | 6450 × 2260 × 2685 mm"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://conductorjasa.co.id/genset-1500-kva",
+  "title": "Genset 1500 kVA Open & Silent – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-1500 WP KTA50-GS8 1500 kVA prime | KTA50-GS8 | 1500 | 1650 | 238 L/jam | 5700 × 2270 × 2550 mm",
+   "| CJPS C-1375 WP KTA50-G8 1500 kVA standby | KTA50-G8 | 1375 | 1512,5 | 222 L/jam | 5800 × 2000 × 2300 mm"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://conductorjasa.co.id/genset-1500-kva",
+  "title": "Genset 1500 kVA Open & Silent – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-1500-WP 12M33G1650/5 1500 kVA prime | 12M33G1650/5 | 1500 | 1650 | – | 4800 × 2195 × 2430 mm"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://conductorjasa.co.id/genset-1500-kva",
+  "title": "Genset 1500 kVA Open & Silent – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-1500 WP1 4012-46TAG2A 1500 kVA prime | 4012-46TAG2A | 1500 | 1650 | 237 L/jam | 5200 × 2150 × 2700 mm"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://conductorjasa.co.id/genset-1000-kva",
+  "title": "Genset 1000 kVA Open & Silent – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-1000 WP KTA38-G5 1000 kVA prime | KTA38-G5 | 1000 | 1100 | 161 L/jam | 4250 × 1850 × 2200 mm",
+   "| CJPS O-1000 WP1 QST30-G4 1000 kVA prime | QST30-G4 | 1000 | 1100 | 161 L/jam | 4250 × 1850 × 2200 mm",
+   "| CJPS O-1000 WP2 KTA38-G5 1000 kVA prime | KTA38-G5 | 1000 | 1100 | 161 L/jam | 4250 × 1850 × 2200 mm",
+   "| CJPS C-900 WP KTA38-G2A 1000 kVA standby | KTA38-G2A | 900 | 990 | 147 L/jam | 4250 × 1850 × 2200 mm",
+   "| CJPS O-900 WP QST30-G3 1000 kVA standby | QST30-G3 | 900 | 990 | 147 L/jam | 4250 × 1850 × 2200 mm"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://conductorjasa.co.id/genset-1000-kva",
+  "title": "Genset 1000 kVA Open & Silent – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-1000 WP1 4008 TAG 2 1000 kVA prime | 4008 TAG 2 | 1000 | 1100 | 162 L/jam | 4770 × 2070 × 2450 mm",
+   "| PJPS-900 WP1 4008-TAG1A 1000 kVA standby | 4008-TAG1A | 900 | 990 | 143 L/jam | 4700 × 2050 × 2500 mm"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://conductorjasa.co.id/genset-1000-kva",
+  "title": "Genset 1000 kVA Open & Silent – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-900-WP 8M33G 1000/5 1000 kVA standby | 8M33G 1000/5 | 900 | 1000 | – | 3925 × 1865 × 2020 mm"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://conductorjasa.co.id/genset-800-kva",
+  "title": "Genset 800 kVA Cummins, Baudouin & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-800 WP KTA38-G2B 800 kVA prime | KTA38-G2B | 800 | 880 | 132 L/jam | 4250 × 1850 × 2200 mm",
+   "| CJPS O-800 WP QSK23-G3 800 kVA prime | QSK23-G3 | 800 | 880 | 132 L/jam | 4250 × 1850 × 2200 mm",
+   "| CJPS C-725 WP KT38-GA 800 kVA standby | KT38-GA | 725 | 797,5 | 132 L/jam | 4250 × 1850 × 2200 mm"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://conductorjasa.co.id/genset-800-kva",
+  "title": "Genset 800 kVA Cummins, Baudouin & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-800-WP 8M33G900/5 800 kVA prime | 8M33G900/5 | 800 | 900 | 127,2 L/jam | 3925 × 1865 × 2020 mm"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://conductorjasa.co.id/genset-800-kva",
+  "title": "Genset 800 kVA Cummins, Baudouin & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-800 WP1 4006-23TAG3A 800 kVA prime | 4006-23TAG3A | 800 | 880 | 130 L/jam | 4450 × 1730 × 2290 mm"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://conductorjasa.co.id/genset-500-kva",
+  "title": "Genset 500 kVA Cummins, Deutz, Perkins & Baudouin – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-500 WP QSZ13-G10 500 kVA prime | QSZ13-G10 | 500 | 550 | 74 L/jam | 3600 × 1450 × 2100 mm",
+   "| CJPS C-500 WP1 (CCEC) QSZ13-G3 500 kVA prime | QSZ13-G3 | 500 | 550 | 74 L/jam | 3600 × 1450 × 2100 mm",
+   "| CJPS C-500 WP1 (DCEC) QSZ13-G3 500 kVA prime | QSZ13-G3 | 500 | 550 | 74 L/jam | 3600 × 1450 × 2100 mm",
+   "| CJPS C-500 WP2 KTA19-G3A 500 kVA prime | KTA19-G3A | 500 | 550 | 82 L/jam | 3485 × 1155 × 1640 mm",
+   "| CJPS C-500 WP3 KTA19-G4 500 kVA prime | KTA19-G4 | 500 | 550 | 82 L/jam | 3485 × 1155 × 1640 mm",
+   "| CJPS O-500 WP QSX15-G8 500 kVA prime | QSX15-G8 | 500 | 550 | 78,7 L/jam | 3600 × 1450 × 2100 mm",
+   "| CJPS C-450 WP1 6ZTAA13-G4 500 kVA standby | 6ZTAA13-G4 | 450 | 495 | 66,8 L/jam | 3600 × 1355 × 1900 mm",
+   "| CJPS C-450 WP2 QSZ13-G5 500 kVA standby | QSZ13-G5 | 450 | 495 | 50,8 L/jam | 3600 × 1355 × 1900 mm",
+   "| CJPS C-450 WP3 KTA19-G3 500 kVA standby | KTA19-G3 | 450 | 495 | 73 L/jam | 3485 × 1155 × 1640 mm",
+   "| CJPS O-450 WP QSX15-G6 500 kVA standby | QSX15-G6 | 450 | 495 | 74,3 L/jam | 3600 × 1400 × 2000 mm"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://conductorjasa.co.id/genset-500-kva",
+  "title": "Genset 500 kVA Cummins, Deutz, Perkins & Baudouin – JERBINDO",
+  "header": [],
+  "rows": [
+   "| DJPS-500 WP BF8M 1015 CP 500 kVA prime | BF8M 1015 CP | 500 | 550 | 84,9 L/jam | 3000 × 1500 × 2050 mm",
+   "| DJPS-500 WP-L BF8M 1015 CP 500 kVA prime | BF8M 1015 CP | 500 | 550 | 84,9 L/jam | 3000 × 1500 × 2050 mm",
+   "| DJPS-450 WP BF 8M 1015 C 500 kVA standby | BF 8M 1015 C | 450 | 495 | 75,3 L/jam | 3000 × 1500 × 2050 mm"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://conductorjasa.co.id/genset-500-kva",
+  "title": "Genset 500 kVA Cummins, Deutz, Perkins & Baudouin – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-500 WP 2506 C-E15TAG2 500 kVA prime | 2506 C-E15TAG2 | 500 | 550 | 81 L/jam | 3500 × 1350 × 2000 mm",
+   "| PJPS-450 WP 2506 C-E15TAG1 500 kVA standby | 2506 C-E15TAG1 | 450 | 495 | 73 L/jam | 3500 × 1350 × 2000 mm",
+   "| PJPS-455 WP 2506 C-E15TAG1 500 kVA standby | 2506 C-E15TAG1 | 455 | 500,5 | 73 L/jam | 3500 × 1350 × 2000 mm"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://conductorjasa.co.id/genset-500-kva",
+  "title": "Genset 500 kVA Cummins, Deutz, Perkins & Baudouin – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-500-WP 6M21G550/5 500 kVA prime | 6M21G550/5 | 500 | 550 | 75,3 L/jam | 3090 × 1230 × 1490 mm"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://conductorjasa.co.id/genset-400-kva",
+  "title": "Genset 400 kVA Cummins, Baudouin, Deutz & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-400 WP1 QSZ13-G7 400 kVA prime | QSZ13-G7 | 400 | 440 | 73,3 L/jam | 3300 × 1300 × 1800 mm",
+   "| CJPS C-400 WP2 NTAA855-G7A 400 kVA prime | NTAA855-G7A | 400 | 440 | 67,8 L/jam | 3300 × 1300 × 1800 mm",
+   "| CJPS C-400WP QSG12-G4 400 kVA prime | QSG12-G4 | 400 | 440 | 60 L/jam | 3300 × 1300 × 1800 mm"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://conductorjasa.co.id/genset-400-kva",
+  "title": "Genset 400 kVA Cummins, Baudouin, Deutz & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-375-WP 6M21G400/5 400 kVA standby | 6M21G400/5 | 375 | 400 | 63 L/jam | 2650 × 1200 × 1588 mm"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://conductorjasa.co.id/genset-400-kva",
+  "title": "Genset 400 kVA Cummins, Baudouin, Deutz & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| DJPS-400 WP BF8M 1015 C 400 kVA prime | BF8M 1015 C | 400 | 440 | 69,3 L/jam | 2900 × 1500 × 2100 mm"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://conductorjasa.co.id/genset-400-kva",
+  "title": "Genset 400 kVA Cummins, Baudouin, Deutz & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-400 WP 2206 C-E13TAG3 400 kVA prime | 2206 C-E13TAG3 | 400 | 440 | 65 L/jam | 3500 × 1350 × 2000 mm"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://conductorjasa.co.id/genset-300-kva",
+  "title": "Genset 300 kVA Cummins, Perkins & Deutz – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-300 WP (CCEC) NTA855-G1A 300 kVA prime | NTA855-G1A | 300 | 330 | 51 L/jam | 3000 × 1300 × 1800 mm",
+   "| CJPS C-300 WP (DCEC) 6LTAA9.5-G1 300 kVA prime | 6LTAA9.5-G1 | 300 | 330 | 44 L/jam | 3100 × 1100 × 1800 mm",
+   "| CJPS O-300 WP QSL9-G7 300 kVA prime | QSL9-G7 | 300 | 330 | 56 L/jam | 3115 × 1100 × 1850 mm",
+   "| CJPS C-275 WP1 6LTAA9.5-G3 300 kVA standby | 6LTAA9.5-G3 | 275 | 302,5 | 44 L/jam | 3100 × 1100 × 1800 mm",
+   "| CJPS C-275 WP2 NTA855.G1A 300 kVA standby | NTA855.G1A | 275 | 302,5 | 46,3 L/jam | 3100 × 1100 × 1800 mm",
+   "| CJPS O-275 WP QSL9-G4 300 kVA standby | QSL9-G4 | 275 | 302,5 | 50 L/jam | 3100 × 1100 × 1800 mm"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://conductorjasa.co.id/genset-300-kva",
+  "title": "Genset 300 kVA Cummins, Perkins & Deutz – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-275 WP 1506A-E88TAG4 300 kVA prime | 1506A-E88TAG4 | 300 | 330 | 45 L/jam | 2800 × 1100 × 1700 mm",
+   "| PJPS-300 WP 1706A-E93TAG1 L 300 kVA prime | 1706A-E93TAG1 L | 300 | 330 | 48 L/jam | 2800 × 1100 × 1700 mm"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://conductorjasa.co.id/genset-300-kva",
+  "title": "Genset 300 kVA Cummins, Perkins & Deutz – JERBINDO",
+  "header": [],
+  "rows": [
+   "| DJPS-300 WP BF6M 1015 C 300 kVA prime | BF6M 1015 C | 300 | 330 | 51,7 L/jam | 2800 × 1381 × 2100 mm"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://conductorjasa.co.id/genset-250-kva",
+  "title": "Genset 250 kVA Cummins, Perkins & Deutz – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-250 WP1 6LTAA8.9G2 250 kVA prime | 6LTAA8.9G2 | 250 | 275 | 39 L/jam | 2600 × 1100 × 1800 mm",
+   "| CJPS C-250 WP3 (CCEC) MTA11-G2A 250 kVA prime | MTA11-G2A | 250 | 275 | 42 L/jam | 2600 × 1100 × 1800 mm",
+   "| CJPS C-250 WP3 (DCEC) QSL8.9-G4 250 kVA prime | QSL8.9-G4 | 250 | 275 | 41 L/jam | 2600 × 1100 × 1800 mm",
+   "| CJPS C-250 WP4 NT855-GA 250 kVA prime | NT855-GA | 250 | 275 | 43 L/jam | 2600 × 1100 × 1800 mm",
+   "| CJPS O-250 WP QSL9-G3 250 kVA prime | QSL9-G3 | 250 | 275 | 49 L/jam | 2650 × 1100 × 1800 mm",
+   "| CJPS C-225 WP 6LTAA8.9G2 250 kVA standby | 6LTAA8.9G2 | 225 | 247,5 | 39 L/jam | 2500 × 1100 × 1800 mm",
+   "| CJPS O-225 WP QSL9-G2 250 kVA standby | QSL9-G2 | 225 | 247,5 | 46 L/jam | 2500 × 1100 × 1800 mm"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://conductorjasa.co.id/genset-250-kva",
+  "title": "Genset 250 kVA Cummins, Perkins & Deutz – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-250 WP 1206A-E70TTAG3 250 kVA prime | 1206A-E70TTAG3 | 250 | 275 | 41 L/jam | 2800 × 1100 × 1700 mm",
+   "| PJPS-225 WP 1506A-E88TAG2 250 kVA standby | 1506A-E88TAG2 | 225 | 247,5 | 38 L/jam | 2800 × 1100 × 1700 mm"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://conductorjasa.co.id/genset-250-kva",
+  "title": "Genset 250 kVA Cummins, Perkins & Deutz – JERBINDO",
+  "header": [],
+  "rows": [
+   "| DJPS-250 WP TCD 2013 L06 4 V DCR 250 kVA prime | TCD 2013 L06 4 V DCR | 250 | 275 | 48,1 L/jam | 2850 × 1050 × 1710 mm"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://conductorjasa.co.id/genset-200-kva",
+  "title": "Genset 200 kVA Cummins, Deutz, Perkins & Baudouin – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-200 WP 6CTAA8.3-G2 200 kVA prime | 6CTAA8.3-G2 | 200 | 220 | 38 L/jam | 2500 x1100 × 1500 mm",
+   "| CJPS O-200 WP QSB7G5 200 kVA prime | QSB7G5 | 200 | 220 | 36 L/jam | 2500 x1100 × 1500 mm",
+   "| CJPS C-180 WP 6CTA8.3-G2 200 kVA standby | 6CTA8.3-G2 | 180 | 198 | 31 L/jam | 2500 x1000 × 1510 mm",
+   "| CJPS O-181 WP QSB7-G4 200 kVA standby | QSB7-G4 | 181 | 199,1 | 34 L/jam | 2500 × 1000 × 1500 mm"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://conductorjasa.co.id/genset-200-kva",
+  "title": "Genset 200 kVA Cummins, Deutz, Perkins & Baudouin – JERBINDO",
+  "header": [],
+  "rows": [
+   "| DJPS-200 WP BF6M 1013 FC 200 kVA prime | BF6M 1013 FC | 200 | 220 | 34,2 L/jam | 2600 × 1000 × 1650 mm",
+   "| DJPS-200 WP EDT TCD 2013 L06 4 V DCR 200 kVA prime | TCD 2013 L06 4 V DCR | 200 | 220 | 48,1 L/jam | 2850 × 1050 × 1710 mm",
+   "| DJPS-180 WP BF 6M 1013 FC 200 kVA standby | BF 6M 1013 FC | 180 | 198 | 30,0 L/jam | 2600 × 1000 × 1650 mm"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://conductorjasa.co.id/genset-200-kva",
+  "title": "Genset 200 kVA Cummins, Deutz, Perkins & Baudouin – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-200 WP 1106A-70TAG4 200 kVA prime | 1106A-70TAG4 | 200 | 220 | 34,7 L/jam | 2500 × 1100 × 1500 mm",
+   "| PJPS-180 WP 1106A-70TAG3 200 kVA standby | 1106A-70TAG3 | 180 | 198 | 31 L/jam | 2400x 1100 × 1500 mm"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://conductorjasa.co.id/genset-200-kva",
+  "title": "Genset 200 kVA Cummins, Deutz, Perkins & Baudouin – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-200-WP 6M16G220/5 200 kVA prime | 6M16G220/5 | 200 | 275 | 32 L/jam | 2650 × 1200 × 1588 mm"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://conductorjasa.co.id/genset-150-kva",
+  "title": "Genset 150 kVA Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-150-WP 6M11G165/5 150 kVA prime | 6M11G165/5 | 150 | 165 | 24 L/jam | 2300 × 1000 × 1433 mm",
+   "| BJPS-135-WP 6M11G150/5 150 kVA standby | 6M11G150/5 | 135 | 150 | 23 L/jam | 2300 × 1000 × 1433 mm"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://conductorjasa.co.id/genset-150-kva",
+  "title": "Genset 150 kVA Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-150 WP 6BTAA5.9-G12 150 kVA prime | 6BTAA5.9-G12 | 150 | 165 | 26 L/jam | 2500 x1000 × 1510 mm",
+   "| CJPS O-135 WP QSB5-G6 150 kVA standby | QSB5-G6 | 135 | 148,5 | 27 L/jam | 2320 × 1030 × 1580 mm"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://conductorjasa.co.id/genset-150-kva",
+  "title": "Genset 150 kVA Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-150 WP 1106A-70TAG2 150 kVA prime | 1106A-70TAG2 | 150 | 165 | 24,7 L/jam | 2600 × 750 × 1570 mm",
+   "| PJPS-135 WP 1106A-70TG1 150 kVA standby | 1106A-70TG1 | 135 | 148,5 | 22,7 L/jam | 2465 × 1100 × 1505 mm"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://conductorjasa.co.id/genset-100-kva",
+  "title": "Genset 100 kVA Cummins, Deutz, Baudouin & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-100 WP 6BT5.9-G2 100 kVA prime | 6BT5.9-G2 | 100 | 110 | 17 L/jam | 2150 × 1030 × 1580 mm",
+   "| CJPS O-100 WP QSB5-G5 100 kVA prime | QSB5-G5 | 100 | 110 | 20 L/jam | 2200 × 1030 × 1580 mm"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://conductorjasa.co.id/genset-100-kva",
+  "title": "Genset 100 kVA Cummins, Deutz, Baudouin & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| DJPS-100 AP BF6L914 100 kVA prime | BF6L914 | 100 | 110 | 19,7 L/jam | 2100 × 780x 1350 mm",
+   "| DJPS-100 WP BF 4M 1 013 EC 100 kVA prime | BF 4M 1 013 EC | 100 | 110 | 18,4 L/jam | 2200 × 800x 1500 mm"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://conductorjasa.co.id/genset-100-kva",
+  "title": "Genset 100 kVA Cummins, Deutz, Baudouin & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-100-WP 4M10G110/5 100 kVA prime | 4M10G110/5 | 100 | 110 | 16,01 L/jam | 2000 × 750 × 1000 mm"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://conductorjasa.co.id/genset-100-kva",
+  "title": "Genset 100 kVA Cummins, Deutz, Baudouin & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-100 WP 1104 C-44TAG2 100 kVA prime | 1104 C-44TAG2 | 100 | 110 | 17,1 L/jam | 2100 × 750 × 1350 mm"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://conductorjasa.co.id/genset-50-kva",
+  "title": "Genset 50 kVA Deutz, Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| DJPS-50 AP F6L912 50 kVA prime | F6L912 | 50 | 55 | 11 L/jam | 2000 × 760 × 1250 mm",
+   "| DJPS-45 AP F4L914 50 kVA standby | F4L914 | 45 | 49,5 | 8 L/jam | 1500 × 756 × 1075 mm"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://conductorjasa.co.id/genset-50-kva",
+  "title": "Genset 50 kVA Deutz, Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-50-WP 4M06G55/5 50 kVA prime | 4M06G55/5 | 50 | 55 | 8,9 L/jam | 1775 × 685 × 805 mm"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://conductorjasa.co.id/genset-50-kva",
+  "title": "Genset 50 kVA Deutz, Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-50 WP 4BTA3.9-G2 50 kVA prime | 4BTA3.9-G2 | 50 | 55 | 7,8 L/jam | 1850 × 970 × 1530 mm"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://conductorjasa.co.id/genset-50-kva",
+  "title": "Genset 50 kVA Deutz, Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-45 WP1 1103A-33TG1 50 kVA standby | 1103A-33TG1 | 45 | 49,5 | 5,6 L/jam | 1200 × 900 × 1200 mm"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://conductorjasa.co.id/genset-30-kva",
+  "title": "Genset 30 kVA Deutz, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| DJPS-30 OP F4L2011 30 kVA prime | F4L2011 | 30 | 33 | 7,4 L/jam | 1500 × 760 × 1200 mm",
+   "| DJPS-30 OP1 BF4L2011 30 kVA prime | BF4L2011 | 30 | 33 | 7,4 L/jam | 1500 × 760 × 1200 mm",
+   "| DJPS-30 OP2 F4M2011 30 kVA prime | F4M2011 | 30 | 33 | 5,7 L/jam | 1500 × 760 × 1200 mm"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://conductorjasa.co.id/genset-30-kva",
+  "title": "Genset 30 kVA Deutz, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-30 WP 4BT3.9-G1 30 kVA prime | 4BT3.9-G1 | 30 | 33 | 5,4 L/jam | 1750 × 970 × 1530 mm",
+   "| CJPS C-30 WP2 4BT3.9-G12 30 kVA prime | 4BT3.9-G12 | 30 | 33 | 5,4 L/jam | 1750 × 970 × 1530 mm"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://conductorjasa.co.id/genset-30-kva",
+  "title": "Genset 30 kVA Deutz, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-30 WP1 1103A-33G 30 kVA prime | 1103A-33G | 30 | 33 | 5,4 L/jam | 1280 × 850 × 1230 mm"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "https://conductorjasa.co.id/genset-20-kva",
+  "title": "Genset 20 kVA Deutz, Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| DJPS-20 OP1 2011 20 kVA prime | 2011 | 20 | 22 | 4,2 L/jam | 1300 × 700 × 1070 mm",
+   "| DJPS-20 OP2 F3M 2011 20 kVA prime | F3M 2011 | 20 | 22 | 4,2 L/jam | 1300 × 700 × 1070 mm"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "https://conductorjasa.co.id/genset-20-kva",
+  "title": "Genset 20 kVA Deutz, Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| BJPS-18-WP 6M21G500/5 20 kVA standby | 6M21G500/5 | 18 | 20 | – | 3200 × 1396 × 2025 mm"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "https://conductorjasa.co.id/genset-20-kva",
+  "title": "Genset 20 kVA Deutz, Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| CJPS C-20 WP 4B3.9-G11 20 kVA prime | 4B3.9-G11 | 20 | 22 | 5,2 L/jam | 1750 × 970 × 1530 mm"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "https://conductorjasa.co.id/genset-20-kva",
+  "title": "Genset 20 kVA Deutz, Baudouin, Cummins & Perkins – JERBINDO",
+  "header": [],
+  "rows": [
+   "| PJPS-20 WP 404A-22G1 20 kVA prime | 404A-22G1 | 20 | 22 | 4,0 L/jam | 1630 × 1000 × 1530 mm"
+  ]
+ },
+ {
+  "n": 115,
+  "url": "https://conductorjasa.co.id/katalog/pjps-2250-wp-2500-kva-stdby",
+  "title": "Genset Perkins 2250 kVA – PJPS-2250 WP (2500 kVA Stdby)",
+  "header": [],
+  "rows": [
+   "| Prime Output | 2250 kVA | 1980 kW",
+   "| Standby Output | 2475 kVA | 2178 kW",
+   "| Tegangan | Frekuensi | Putaran | 400 V | 50 Hz | 1500 rpm"
+  ]
+ },
+ {
+  "n": 116,
+  "url": "https://conductorjasa.co.id/genset-perkins",
+  "title": "Genset Perkins 13–2250 kVA Open & Silent | Conductorjasa",
+  "header": [],
+  "rows": [
+   "| PJPS-750 WP2 4006-23TAG2A | 4006-23TAG2A | 750 | 825",
+   "| PJPS-750 WP3 4006-23TAG3A | 4006-23TAG3A | 750 | 825",
+   "| PJPS-800 WP1 4006-23TAG3A | 4006-23TAG3A | 800 | 880",
+   "| PJPS-900 WP1 4008-TAG1A | 4008-TAG1A | 900 | 990",
+   "| PJPS-1000 WP1 4008 TAG 2 | 4008 TAG 2 | 1000 | 1100",
+   "| PJPS-1125 WP1 4008 30TAG3 | 4008 30TAG3 | 1125 | 1237,5",
+   "| PJPS-1250 WP1 4012-46TWG2A | 4012-46TWG2A | 1250 | 1375",
+   "| PJPS-1350 WP 4012-46TWG3A | 4012-46TWG3A | 1250 | 1375",
+   "| PJPS-1500 WP1 4012-46TAG2A | 4012-46TAG2A | 1500 | 1650",
+   "| PJPS-1650 WP1 4012-46TAG3A | 4012-46TAG3A | 1650 | 1815",
+   "| PJPS-1710 WP 4012-46TAG3A | 4012-46TAG3A | 1710 | 1881",
+   "| PJPS-1750 WP 4012-46TAG3A | 4012-46TAG3A | 1750 | 1925",
+   "| PJPS-1800-WP 4016TAG1A | 4016TAG1A | 1800 | 1980",
+   "| PJPS-1850 WP 4016TAG1A | 4016TAG1A | 1850 | 2035",
+   "| PJPS-2000 WP 4016TAG2A | 4016TAG2A | 2000 | 2200",
+   "| PJPS-2250 WP 4016-61TRG3 | 4016-61TRG3 | 2250 | 2475",
+   "| PJPS-2250 WP (2500 kVA Stdby) 4016-61TRG3 | 4016-61TRG3 | 2250 | 2475"
+  ]
+ },
+ {
+  "n": 117,
+  "url": "https://conductorjasa.co.id/katalog/cjps-c-500-wp1-cummins-ccec",
+  "title": "Genset Cummins 500 kVA – JERBINDO CJPS C-500 WP1 (CCEC)",
+  "header": [],
+  "rows": [
+   "| Prime Output | 500 kVA | 400 kW",
+   "| Standby Output | 550 kVA | 440 kW",
+   "| Tegangan | Frekuensi | Putaran | 380 V | 50 Hz | 1500 rpm"
+  ]
+ },
+ {
+  "n": 118,
+  "url": "https://conductorjasa.co.id/katalog/cjps-c-500-wp1-cummins-dcec",
+  "title": "Genset Cummins 500 kVA – JERBINDO CJPS C-500 WP1 (DCEC)",
+  "header": [],
+  "rows": [
+   "| Prime Output | 500 kVA | 400 kW",
+   "| Standby Output | 550 kVA | 440 kW",
+   "| Tegangan | Frekuensi | Putaran | 380 V | 50 Hz | 1500 rpm"
+  ]
+ },
+ {
+  "n": 119,
+  "url": "https://conductorjasa.co.id/katalog/cjps-c-300-wp-cummins-ccec",
+  "title": "Genset Cummins 300 kVA – JERBINDO CJPS C-300 WP (CCEC)",
+  "header": [],
+  "rows": [
+   "| Prime Output | 300 kVA | 240 kW",
+   "| Standby Output | 330 kVA | 264 kW",
+   "| Tegangan | Frekuensi | Putaran | 380 V | 50 Hz | 1500 rpm"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://conductorjasa.co.id/katalog/cjps-c-300-wp-cummins-dcec",
+  "title": "Genset Cummins 300 kVA – JERBINDO CJPS C-300 WP (DCEC)",
+  "header": [],
+  "rows": [
+   "| Prime Output | 300 kVA | 240 kW",
+   "| Standby Output | 330 kVA | 264 kW",
+   "| Tegangan | Frekuensi | Putaran | 380 V | 50 Hz | 1500 rpm"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://conductorjasa.co.id/katalog/cjps-c-250-wp3-cummins-ccec",
+  "title": "Genset Cummins 250 kVA – JERBINDO CJPS C-250 WP3 (CCEC)",
+  "header": [],
+  "rows": [
+   "| Prime Output | 250 kVA | 200 kW",
+   "| Standby Output | 275 kVA | 220 kW",
+   "| Tegangan | Frekuensi | Putaran | 380 V | 50 Hz | 1500 rpm"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://conductorjasa.co.id/katalog/cjps-c-250-wp3-cummins-dcec",
+  "title": "Genset Cummins 250 kVA – JERBINDO CJPS C-250 WP3 (DCEC)",
+  "header": [],
+  "rows": [
+   "| Prime Output | 250 kVA | 200 kW",
+   "| Standby Output | 275 kVA | 220 kW",
+   "| Tegangan | Frekuensi | Putaran | 380 V | 50 Hz | 1500 rpm"
+  ]
+ },
+ {
+  "n": 123,
+  "url": "https://conductorjasa.co.id/katalog/pjps-2250-wp-2500-kva-stdby",
+  "title": "Genset Perkins 2250 kVA – PJPS-2250 WP (2500 kVA Stdby)",
+  "header": [],
+  "rows": [
+   "| Prime Output | 2250 kVA | 1980 kW",
+   "| Standby Output | 2475 kVA | 2178 kW",
+   "| Tegangan | Frekuensi | Putaran | 400 V | 50 Hz | 1500 rpm"
+  ]
+ },
+ {
+  "n": 124,
+  "url": "https://conductorjasa.co.id/genset-besar",
+  "title": "Genset Besar 500–4125 kVA Open & Silent | Conductorjasa",
+  "header": [
+   "| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe"
+  ],
+  "rows": [
+   "| PJPS-750 WP2 | Perkins 4006-23TAG2A | 750 | 825 | Open Type · opsi silent, container",
+   "| PJPS-1250 WP1 | Perkins 4012-46TWG2A | 1250 | 1375 | Open Type · opsi silent, container",
+   "| PJPS-2250 WP (2500 kVA Stdby) | Perkins 4016-61TRG3 | 2250 | 2475 | Open Type · opsi silent, container",
+   "| CJPS C-800 WP | Cummins KTA38-G2B | 800 | 880 | Open Type · opsi silent, container",
+   "| CJPS O-1400 WP | Cummins KTA50-G8 | 1400 | 1540 | Open Type · opsi silent, container",
+   "| CJPS O-3350 WP1 | Cummins QSK95-G4 | 3350 | 3685 | Open Type · opsi silent, container",
+   "| MJPS-1000 | Mitsubishi S12H-PTA | 1000 | 1100 | Open Type · opsi silent, container",
+   "| MJPS-2000 | Mitsubishi S16R-PTAA2 | 2000 | 2200 | Open Type · opsi silent, container",
+   "| BJPS-750-WP | Baudouin 6M33G825/5 | 750 | 825 | Open Type · opsi silent, container",
+   "| BJPS-1250-WP | Baudouin 12M33G1400/5 | 1250 | 1375 | Open Type · opsi silent, container",
+   "| BJPS-2250-WP | Baudouin 20M33G2500/5 | 2250 | 2500 | Open Type · opsi silent, container",
+   "| BJPS-3750-WP | Baudouin 16M55G4000/5 | 3750 | 4125 | Open Type · opsi silent, container"
+  ]
+ },
+ {
+  "n": 125,
+  "url": "https://conductorjasa.co.id/genset-data-center",
+  "title": "Genset Data Center hingga 4125 kVA, N+1 | Conductorjasa",
+  "header": [
+   "| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe"
+  ],
+  "rows": [
+   "| MJPS-1000 | Mitsubishi S12H-PTA | 1000 | 1100 | Open Type · opsi silent, container",
+   "| MJPS-1740 | Mitsubishi S16R-PTA | 1740 | 1914 | Open Type · opsi silent, container",
+   "| MJPS-2000 | Mitsubishi S16R-PTAA2 | 2000 | 2200 | Open Type · opsi silent, container",
+   "| CJPS O-1400 WP | Cummins KTA50-G8 | 1400 | 1540 | Open Type · opsi silent, container",
+   "| CJPS O-3350 WP1 | Cummins QSK95-G4 | 3350 | 3685 | Open Type · opsi silent, container",
+   "| BJPS-1250-WP | Baudouin 12M33G1400/5 | 1250 | 1375 | Open Type · opsi silent, container",
+   "| BJPS-2250-WP | Baudouin 20M33G2500/5 | 2250 | 2500 | Open Type · opsi silent, container",
+   "| BJPS-3000-WP | Baudouin 16M55G3300/5 | 3000 | 3313 | Open Type · opsi silent, container",
+   "| BJPS-3750-WP | Baudouin 16M55G4000/5 | 3750 | 4125 | Open Type · opsi silent, container"
+  ]
+ }
+]

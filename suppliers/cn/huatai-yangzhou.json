@@ -64,7 +64,7 @@
     {
       "n": 101,
       "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=34",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号GENSET MODEL | 功率POWER(kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
@@ -74,7 +74,7 @@
     {
       "n": 102,
       "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=33",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号GENSET MODEL | 功率POWER(kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
@@ -84,7 +84,7 @@
     {
       "n": 103,
       "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=32",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号GENSET MODEL | 功率POWER(kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
@@ -94,7 +94,7 @@
     {
       "n": 104,
       "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=28",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号GENSET MODEL | 功率POWER(kw) | 柴油机型ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
@@ -104,7 +104,7 @@
     {
       "n": 105,
       "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=20",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号GENSET MODEL | 功率POWER(kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT (kg) | 长×宽×高 L X B X H(mm)"
@@ -114,7 +114,7 @@
     {
       "n": 106,
       "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=19",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号GENSET MODEL | 功率POWER(kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT (kg) | 长×宽×高 L X B X H(mm)"
@@ -124,7 +124,7 @@
     {
       "n": 107,
       "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=18",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 机组型号 Gensets Model | 输出功率 Output Power | 柴油机型号 Engine Model | 机组外形尺寸 Gensets Overall Dimensions | 重量 Weight"
@@ -134,7 +134,7 @@
     {
       "n": 108,
       "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=15",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 型号GENSET MODEL | 功率POWER(kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
@@ -144,12 +144,42 @@
     {
       "n": 109,
       "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=11",
-      "accessedAt": "2026-11-01",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| 静音箱体配套规格 （kw） | 噪声指标 Noise index | 机组尺寸 | 燃油箱容量 | 重量 Weight | 常规配套机型注明 Conventional Matching Model indicate"
       ],
       "file": "sources/huatai-yangzhou/109.md"
+    },
+    {
+      "n": 110,
+      "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=14",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 型号GENSET MODEL | 功率POWER (kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
+      ],
+      "file": "sources/huatai-yangzhou/110.md"
+    },
+    {
+      "n": 111,
+      "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=13",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set"
+      ],
+      "file": "sources/huatai-yangzhou/111.md"
+    },
+    {
+      "n": 112,
+      "url": "http://www.yzhuatai.cn/index.php?s=index/show/index&id=12",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 型号GENSET MODEL | 功率POWER (kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
+      ],
+      "file": "sources/huatai-yangzhou/112.md"
     }
   ],
   "confidence": "medium",
@@ -403,6 +433,73 @@
         "| 400kw | 68db | 4700 | 2100 | 2450 | 2300 | 750 | 配上柴、无动、帕欧、康明斯机组用（12V135） Supportting shagnchai、wuxipower、paou、cummins (12Cylinder)",
         "| 500kw | 72db | 4900 | 2250 | 2600 | 2800 | 1000 | 配上柴、无动、帕欧、康明斯机组用（12V135） Supportting shagnchai、wuxipower、paou、cummins (12Cylinder)",
         "| 600-1000kw | 75db | 9000 | 3000 | 3400 | 7000 | 2500 | 配济柴机组用 Supportting jichai (12Cylinder)"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "济柴系列柴油发电机组-扬州华泰电气有限公司",
+      "header": [
+        "| 型号GENSET MODEL | 功率POWER (kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
+      ],
+      "rows": [
+        "| 630GF | 630 | 8190ZLC | 8L | 190/210 | 48.60 | 160 | 10200 | 5320*2000*2700",
+        "| 700GF | 700 | Z12V190B | 12L | 190/210 | 71.45 | 200 | 11900 | 5690*2000*2820",
+        "| 800GF | 800 | Z12V190BD2 | 12L | 190/210 | 71.45 | 200 | 13000 | 5690*2000*2820",
+        "| 900GF | 900 | G12V190ZL1 | 12L | 190/215 | 73.15 | 200 | 13500 | 5690*2000*2820",
+        "| 1000GF | 1000 | A12V190ZLD | 12L | 190/215 | 73.15 | 240 | 14600 | 5690*2000*2820",
+        "| 1200GF | 1200 | A12V190ZLD | 12L | 190/215 | 73.15 | 240 | 14800 | 5690*2000*2820",
+        "| 1500GF | 1500 | H12V190ZLD | 12L | 190/215 | 73.15 | 280 | 18000 | 6520*2570*3150",
+        "| 2000GF | 2000 | H16V190ZL | 12L | 190/215 | 73.15 | 350 | 19000 | 8200*3500*"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "无锡动力系列柴油发电机组-扬州华泰电气有限公司",
+      "header": [
+        "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
+        "| 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)"
+      ],
+      "rows": [
+        "| 200GF | 135/320 | 362 | WD129TAD23 | 259 | 6缸直列 | 198 | 24 | 2700×900×1400 | 1900",
+        "| 250GF | 138/150 | 452.5 | WD135TAD28 | 308 | 6缸直列 | 198 | 24 | 2700×900×1400 | 2000",
+        "| 300GF | 138/160 | 543 | WD145TAD30 | 340 | 6缸直列 | 198 | 24 | 2800×900×1500 | 2200",
+        "| 320GF | 138/160 | 579.2 | WD145TAD33L | 373 | 6缸直列 | 198 | 30 | 2900×1100×1600 | 2500",
+        "| 350GF | 138/160 | 633.5 | WD145TAD35 | 388 | 6缸直列 | 198 | 50 | 3200×1350×1800 | 3300",
+        "| 400GF | 138/150 | 724 | WD269TAD38 | 420 | 12缸V型 | 198 | 50 | 3200×1350×1800 | 3300",
+        "| 400GF | 138/150 | 724 | WD269TAD41 | 460 | 12缸V型 | 198 | 50 | 3400×1400×1850 | 3600",
+        "| 450GF | 138/150 | 814.5 | WD269TAD45 | 512 | 12缸V型 | 198 | 50 | 3600×1400×1850 | 3800",
+        "| 500GF | 138/150 | 905 | WD269TAD48 | 530 | 12缸V型 | 198 | 55 | 3600×1400×1850 | 3800",
+        "| 500GF | 138/150 | 905 | WD269TAD50 | 556 | 12缸V型 | 198 | 55 | 3650×1500×1900 | 4500",
+        "| 500GF | 138/150 | 905 | WD269TAD56 | 618 | 12缸V型 | 198 | 55 | 3800×1800×2100 | 4550",
+        "| 600GF | 138/160 | 1086 | WD287TAD61L | 680 | 12缸V型 | 198 | 55 | 3800×1800×2100 | 4550",
+        "| 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550",
+        "| 800GF | 140/165 | 1448 | WD327TAD78 | 858 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000",
+        "| 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000",
+        "| 900GF | 145/165 | 1629 | WD327TAD88 | 970 | 12缸V型 | 196 | 65 | 4000×2000×2200 | 5500",
+        "| 1000GF | 145/165 | 1810 | WD327TAD92 | 1012 | 12缸V型 | 196 | 65 | 4500×2100×2300 | 6000"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "通柴/帕欧系列柴油发电机组-扬州华泰电气有限公司",
+      "header": [
+        "| 型号GENSET MODEL | 功率POWER (kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
+      ],
+      "rows": [
+        "| 150GF | 150 | 6135AZD | 6L | 135/150 | 12.88 | 28.7 | 2000 | 2700*900*1600",
+        "| 200GF | 200 | NT129LA21 | 6L | 135/150 | 12.9 | 28.7 | 2300 | 2800*1250*1800",
+        "| 200GF | 200 | NT137LR22 | 6L | 135/160 | 13.74 | 28.7 | 2300 | 2800*1250*1800",
+        "| 250GF | 250 | NT144LU25 | 6L | 138/168 | 14.42 | 28.7 | 2600 | 3000*1250*1900",
+        "| 300GF | 300 | NT151LU33 | 6L | 138/168 | 15.1 | 28.7 | 2800 | 3000*1250*2050",
+        "| 300GF | 300 | J258ZA33 | 12L | 135/150 | 25.8 | 57.4 | 3200 | 3200*1450*2050",
+        "| 360GF | 360 | NT283ZW40 | 12L | 135/158 | 27.12 | 57.4 | 3800 | 3400*1650*2050",
+        "| 400GF | 400 | NT271LW56 | 12L | 135/158 | 28.32 | 57.4 | 4000 | 3600*1650*2050",
+        "| 450GF | 450 | NT271LW51 | 12L | 135/158 | 27.12 | 57.4 | 4200 | 3600*1700*2050",
+        "| 500GF | 500 | TC283LW53 | 12L | 138/158 | 27.12 | 57.4 | 4300 | 3600*1700*2050",
+        "| 500GF | 500 | TC283LW56 | 12L | 135/158 | 28.32 | 57.4 | 4400 | 3650*1800*2050",
+        "| 550GF | 550 | TC283LW59 | 12L | 135/158 | 28.32 | 57.4 | 4500 | 3650*1800*2050",
+        "| 600GF | 600 | TC283LW62 | 12L | 138/158 | 28.32 | 57.4 | 4500 | 3700*1800*2050",
+        "| 600GF | 600 | TC283LW66 | 12L | 138/165 | 29.6 | 80.4 | 4600 | 3700*1800*2050"
       ]
     }
   ]

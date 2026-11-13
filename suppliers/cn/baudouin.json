@@ -131,76 +131,6 @@
       "file": "sources/baudouin/2.md"
     },
     {
-      "n": 101,
-      "url": "https://baudouin.com/engine_product/6m11-heat-exchanger/",
-      "accessedAt": "2026-11-09",
-      "tier": "A",
-      "quote": [
-        "| Model | Rated Power | Peak Torque | Displacement | Aspiration | Coupling FWH | FW | Throttle"
-      ],
-      "file": "sources/baudouin/101.md"
-    },
-    {
-      "n": 102,
-      "url": "https://baudouin.com/engine_product/non-road-mobile-wp36n/",
-      "accessedAt": "2026-11-09",
-      "tier": "A",
-      "quote": [
-        "| Model | Rated Power - kW | Rated Power - HP | Rated Speed - RPM | Peak Torque Speed - RPM | Peak Torque Nm- RPM | Displacement - l"
-      ],
-      "file": "sources/baudouin/102.md"
-    },
-    {
-      "n": 103,
-      "url": "https://baudouin.com/engine_product/20m55-generator-set",
-      "accessedAt": "2026-11-09",
-      "tier": "A",
-      "quote": [
-        "| | | Gross Engine Output"
-      ],
-      "file": "sources/baudouin/103.md"
-    },
-    {
-      "n": 104,
-      "url": "https://baudouin.com/engine_product/6f21/",
-      "accessedAt": "2026-11-09",
-      "tier": "A",
-      "quote": [
-        "| Duty | HP | kW | RPM | Certifications"
-      ],
-      "file": "sources/baudouin/104.md"
-    },
-    {
-      "n": 105,
-      "url": "https://baudouin.com/engine_product/8f21/",
-      "accessedAt": "2026-11-09",
-      "tier": "A",
-      "quote": [
-        "| Duty | HP | kW | RPM | Certifications"
-      ],
-      "file": "sources/baudouin/105.md"
-    },
-    {
-      "n": 106,
-      "url": "https://baudouin.com/engine_product/6m33-stage-v/",
-      "accessedAt": "2026-11-09",
-      "tier": "A",
-      "quote": [
-        "| Model | Gross Engine Output | Typical engine output | |"
-      ],
-      "file": "sources/baudouin/106.md"
-    },
-    {
-      "n": 107,
-      "url": "https://baudouin.com/engine_product/12m33-stagev/",
-      "accessedAt": "2026-11-09",
-      "tier": "A",
-      "quote": [
-        "| Model | Gross Engine Output | Typical engine output | |"
-      ],
-      "file": "sources/baudouin/107.md"
-    },
-    {
       "n": 2001,
       "url": "https://baudouinindia.com/wp-content/uploads/2023/07/Baudouin_Genset_Engines.pdf",
       "accessedAt": "2026-11-10",
@@ -210,6 +140,76 @@
         "Suitable kVA rating 250 320 400 500 520 625 750 910 1010"
       ],
       "file": "sources/baudouin/2001.md"
+    },
+    {
+      "n": 101,
+      "url": "https://baudouin.com/engine_product/6m11-heat-exchanger/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated Power | Peak Torque | Displacement | Aspiration | Coupling FWH | FW | Throttle"
+      ],
+      "file": "sources/baudouin/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://baudouin.com/engine_product/non-road-mobile-wp36n/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated Power - kW | Rated Power - HP | Rated Speed - RPM | Peak Torque Speed - RPM | Peak Torque Nm- RPM | Displacement - l"
+      ],
+      "file": "sources/baudouin/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://baudouin.com/engine_product/20m55-generator-set/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | | Gross Engine Output"
+      ],
+      "file": "sources/baudouin/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://baudouin.com/engine_product/6f21/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Duty | HP | kW | RPM | Certifications"
+      ],
+      "file": "sources/baudouin/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://baudouin.com/engine_product/8f21/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Duty | HP | kW | RPM | Certifications"
+      ],
+      "file": "sources/baudouin/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://baudouin.com/engine_product/6m33-stage-v/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Gross Engine Output | Typical engine output | |"
+      ],
+      "file": "sources/baudouin/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://baudouin.com/engine_product/12m33-stagev/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Gross Engine Output | Typical engine output | |"
+      ],
+      "file": "sources/baudouin/107.md"
     }
   ],
   "confidence": "medium",

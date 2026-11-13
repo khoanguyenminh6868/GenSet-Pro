@@ -123,5 +123,19 @@
    "Speed Options: 1800 RPM, 3600 RPM and other speed configurations available.",
    "Starting Systems: Multiple starting options are available including auto-start, recoil, remote, 12V DC and 24V DC electric start."
   ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.bycpower.com/Cummins-Diesel-Generator-Vs-Perkins-Diesel-Generator-Selection-Guide-id43661255.html",
+  "title": "Cummins Diesel Generator Vs Perkins Diesel Generator: Selection Guide - BYC Power",
+  "header": [
+   "| Specification Metric | Cummins QSX15-G8 | Perkins 2506A-E15TAG2"
+  ],
+  "rows": [
+   "| Fuel Consumption (100% Load) | ~13.5 gal/hr | ~14.5 gal/hr",
+   "| Emissions Standard | EPA Tier 4 Final | EPA Tier 3",
+   "| Dry Weight | 7,500 lbs | 6,500 lbs",
+   "| Ideal Application | Heavy prime power generation | Compact commercial retrofits"
+  ]
  }
 ]

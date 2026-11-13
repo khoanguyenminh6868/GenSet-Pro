@@ -843,5 +843,586 @@
    "| D1500MG | 1500 | 1650 | S16R-PTA2-C | 1600 | 16L | 65.37 | MX-1540-4 | 2706 | 5380×2560×2930 | 15500",
    "| D1600MG | 1600 | 1760 | S16R-PTAA2-C | 1684 | 16L | 65.37 | MX-1600-4 | 2887 | 5870×2395×3150 | 17500"
   ]
+ },
+ {
+  "n": 118,
+  "url": "https://dieselpower-en.com/1-4-mtu-diesel-engine-powered-generator/",
+  "title": "MTU Diesel Generator | MTU Engine | RISE Power",
+  "header": [
+   "| Model | Power (kVA/kW) | Engine Model | Dimension | Weight(kg)",
+   "| Prime | Standby | Open Type | Open Type"
+  ],
+  "rows": [
+   "| RMM515 | 643/515 | 708/567 | 12V2000G25 | 3680*1700*2160 | 5434",
+   "| RMM576 | 720/576 | 781/625 | 12V2000G63 | 4000*1750*2050 | 5900",
+   "| RMM640 | 800/640 | 880/704 | 12V2000G65 | 4500*1750*2080 | 6188",
+   "| RMM728 | 910/728 | 1000/800 | 16V2000G25 | 4500*1750*2080 | 7084",
+   "| RMM800 | 1000/800 | 1100/880 | 16V2000G65 | 4500*1750*2080 | 7247",
+   "| RMM908 | 1135/908 | 1250/1000 | 18V2000G65 | 4600*2100*2300 | 8000",
+   "| RMM1000 | 1250/1000 | 1375/1100 | 12V4000G21R | 6150*2150*2400 | 11910",
+   "| RMM1120 | 1400/1120 | N/A | 12V4000G23R | 6150*2150*2400 | 12030",
+   "| RMM1240 | 1550/1240 | 1660/1328 | 12V4000G23 | 6150*2150*2400 | 12210",
+   "| RMM1312 | 1640/1312 | 18000/1440 | 12V4000G23 | 6150*2150*2400 | 12250",
+   "| RMM1450 | 1813/1450 | 2000/1600 | 12V4000G63 | 6150*2150*2400 | 12300",
+   "| RMM1640 | 2050/1640 | 2250/1800 | 12V4000G63 | 6500*2600*2500 | 12400",
+   "| RMM1760 | 2200/1760 | 2375/1900 | 16V4000G63 | 6500*2600*2500 | 14500",
+   "| RMM2000S | N/A | 2500/2000 | 16V4000G63 | 6500*2600*2500 | 14550",
+   "| RMM2000 | 2500/2000 | 2750/2200 | 20V4000G23 | 8300*2950*2550 | 16720",
+   "| RMM2200 | 2750/2200 | 3000/2400 | 20V4000G63 | 8300*2950*2550 | 17500",
+   "| RMM2400 | 3000/2400 | 3250/2600 | 20V4000G63L | 8300*2950*2550 | 18500"
+  ]
+ },
+ {
+  "n": 118,
+  "url": "https://dieselpower-en.com/1-4-mtu-diesel-engine-powered-generator/",
+  "title": "MTU Diesel Generator | MTU Engine | RISE Power",
+  "header": [
+   "| Model | Power (kVA/kW) | Engine Model | Dimension | Weight(kg)",
+   "| Prime | Standby | Open Type | Open Type"
+  ],
+  "rows": [
+   "| RMM725-60 | 906/725 | 1000/800 | 12V2000G85 | 4000*1750*2050 | 5500",
+   "| RMM820-60 | 1025/820 | 1137/910 | 16V2000G45 | 4500*2100*2080 | 7100",
+   "| RMM908-60 | 1135/908 | 1250/1000 | 16V2000G85 | 4500*2100*2080 | 7400",
+   "| RMM1070-60 | 1337/1070 | 1462/1170 | 18V2000G85 | 4600*2100*2300 | 8200",
+   "| RMM1360-60 | 1700/1360 | 1875/1500 | 12V4000G43 | 3960*1835*2260 | 12250",
+   "| RMM1600-60 | 2000/1600 | 2200/1760 | 12V4000G83 | 3980*1845*2270 | 12400",
+   "| RMM1820-60 | 2275/1820 | 2500/2000 | 16V4000G43 | 4790*1845*2270 | 14400",
+   "| RMM2000-60 | 2500/2000 | 2750/2200 | 16V4000G83 | 5400*1845*2500 | 14600",
+   "| RMM2250-60 | 2813/2250 | 3125/2500 | 20V4000G43 | 5650*1900*2650 | 16900",
+   "| RMM2500-60 | 3125/2500 | 3438/2750 | 20V4000G83 | 5700*1950*2700 | 18000",
+   "| RMM2760-60 | 3450/2760 | 3750/3000 | 20V4000G83L | 5750*1980*2750 | 19000"
+  ]
+ },
+ {
+  "n": 119,
+  "url": "https://dieselpower-en.com/1-6-scania-diesel-generator/",
+  "title": "SCANIA Diesel Generator | SCANIA Diesel Engine | RISE Power",
+  "header": [
+   "| Generator Model | Engine Model | Alternator Model | Frequency (Hz) | Prime Power | Standby Power",
+   "| kW | kVA | kW | kVA"
+  ],
+  "rows": [
+   "| RSCM200 | DC9 65A 10-93 | MP-200-4 | 50 | 200 | 253 | 220 | 278",
+   "| RSCM220 | DC9 65A 10-94 | MP-220-4 | 50 | 220 | 278 | 242 | 307",
+   "| RSCM240 | DC9 65A 10-95 | MP-250-4 | 50 | 240 | 303 | 264 | 329",
+   "| RSCM280 | DC12 59A 10-32A | MP-280-4 | 50 | 280 | 351 | 320 | 401",
+   "| RSCM320 | DC12 59A 10-33A | MP-320-4 | 50 | 320 | 401 | 360 | 451",
+   "| RSCM350 | DC12 59A 10-34A | MP-350-4 | 50 | 350 | 438 | 385 | 481",
+   "| RSCM400 | DC16 45A 10-30A | MP-400-4 | 50 | 400 | 501 | 440 | 550",
+   "| RSCM440 | DC16 44A 10-27A | MP-480-4 | 50 | 440 | 550 | 480 | 599"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://dieselpower-en.com/1-8-doosan-daewoo-industrial-diesel-generator/",
+  "title": "DOOSAN DAEWOO Diesel Generator | Industrial Generator | RISE Power",
+  "header": [
+   "| Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight",
+   "| Prime | Standby | Open Type | Sound Proof | Open Type | Sound Proof"
+  ],
+  "rows": [
+   "| RDL72 | 72/90 | 79/99 | D1146 | LSA44.2VS3 | 2200×820×1370 | 2900×1080×1600 | 1300 | 2800",
+   "| RDL100 | 100/125 | 110/137 | D1146T | LSA44.2S7 | 2250×820×1370 | 3000×1080×1600 | 1400 | 3000",
+   "| RDL140 | 140/175 | 157/192 | P086TⅠ-1 | LSA46.2M3 | 2600×950×1520 | 3500×1120×1700 | 1600 | 3500",
+   "| RDL160 | 160/200 | 176/220 | P086TI | LSA46.2M5 | 2600×950×1520 | 3500×1120×1700 | 1650 | 3550",
+   "| RDL220 | 220/275 | 242/303 | P126TI | LSA46.2L9 | 2900×1050×1550 | 3900×1300×1850 | 2200 | 4200",
+   "| RDL240 | 240/300 | 264/330 | P126TI-II | LSA46.2VL12 | 3000×1050×1550 | 3900×1300×1850 | 2400 | 4250",
+   "| RDL300 | 300/375 | 330/413 | P158LE-1 | LSA47.2VS2 | 2800×1400×1850 | 3900×1600×2150 | 2800 | 4800",
+   "| RDL340 | 340/425 | 374/467 | P158LE | LSA47.2S5 | 2850×1400×1850 | 3900×1600×2150 | 2900 | 4800",
+   "| RDL360 | 360/450 | 396/495 | P180LE | LSA47.2S5 | 3050×1400×1850 | 4100×1800×2250 | 3100 | 5000",
+   "| RDL400 | 400/500 | 440/550 | P180LE | LSA47.2M7 | 3150×1400×1850 | 4200×1800×2250 | 3250 | 5200",
+   "| RDL500 | 500/625 | 550/688 | P222LE | LSA49.1S4 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800",
+   "| RDL530 | 530/663 | 583/729 | P222LE-S | LSA49.1S4 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800",
+   "| RDL550 | NA | 550/688 | P222LE-II | LSA49.1M6 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://dieselpower-en.com/1-8-doosan-daewoo-industrial-diesel-generator/",
+  "title": "DOOSAN DAEWOO Diesel Generator | Industrial Generator | RISE Power",
+  "header": [
+   "| Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight",
+   "| Prime | Standby | Open Type | Sound Proof | Open Type | Sound Proof"
+  ],
+  "rows": [
+   "| RDL80-60 | 80/100 | 88/110 | D1146 | LSA44.2VS3 | 2200×820×1370 | 2900×1080×1600 | 1350 | 2900",
+   "| RDL110-60 | 110/137 | 121/150 | D1146T | LSA44.2S7 | 2200×820×1370 | 3000×1080×1600 | 1450 | 3050",
+   "| RDL157-60 | 157/196 | 172/216 | P086TI-1 | LSA46.2M3 | 2600×950×1520 | 3500×1120×1700 | 1600 | 3500",
+   "| RDL184-60 | 184/230 | 202/253 | P086TI | LSA46.2M5 | 2600×950×1520 | 3500×1120×1700 | 1650 | 3550",
+   "| RDL250-60 | 250/313 | 275/344 | P126TI | LSA46.2L9 | 2900×1050×1550 | 3900×1300×1850 | 2200 | 4200",
+   "| RDL276-60 | 276/345 | 304/380 | P126TI-II | LSA46.2VL12 | 3000×1050×1550 | 3900×1300×1850 | 2400 | 4250",
+   "| RDL323-60 | 323/412 | 363/453 | P158LE-1 | LSA47.2VS2 | 2800×1400×1850 | 3900×1600×2150 | 2800 | 4800",
+   "| RDL360-60 | 360/450 | 396/495 | P158LE | LSA47.2VS2 | 2850×1400×1850 | 3900×1600×2150 | 2900 | 4800",
+   "| RDL448-60 | 448/560 | 493/616 | P180LE | LSA47.2S5 | 3050×1400×1850 | 4100×1800×2250 | 3100 | 5000",
+   "| RDL532-60 | 532/665 | 585/732 | P222LE | LSA49.1S4 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800",
+   "| RDL560-60 | 560/700 | 616/770 | P222LE-S | LSA49.1S4 | 3420×1390×1840 | 4500×1900×1900 | 4200 |"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://dieselpower-en.com/1-10-xincai-industrial-diesel-generator/",
+  "title": "XinChai Diesel Generator | Industrial Diesel Generator | RISE Power",
+  "header": [
+   "| Model | Power (kW / kVA) | Engine Model | Alternator Model | Dimension | Weight",
+   "| Prime | Standby | Open Type | Open Type"
+  ],
+  "rows": [
+   "| RXL8 | 8/10 | 9/11 | 3N17D | SLW-8.8 | 1400×550×900 | 580",
+   "| RXL12 | 12/15 | 13/17 | NC485BD | SLW-12 | 1450×550×900 | 590",
+   "| RXL16 | 16/20 | 18/22 | C490BD | SLW-16 | 1500×550×920 | 600",
+   "| RXL18 | 18/23 | 20/25 | A498BD | SLW-18 | 1560×560×960 | 630",
+   "| RXL22 | 22/28 | 24/30 | A498BD | SLW-22 | 1560×560×960 | 640",
+   "| RXL25 | 25/31 | 28/34 | 4K39D | SLW-25 | 1620×560×960 | 650",
+   "| RXL30 | 30/38 | 33/41 | 4K41D | SLW-30 | 1620×560×960 | 660",
+   "| RXL34 | 34/43 | 37/47 | 4K43D | SLW-34 | 1620×560×960 | 700"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://dieselpower-en.com/1-10-xincai-industrial-diesel-generator/",
+  "title": "XinChai Diesel Generator | Industrial Diesel Generator | RISE Power",
+  "header": [
+   "| Model | Power (kW / kVA) | Engine Model | Alternator Model | Dimension | Weight",
+   "| Prime | Standby | Open Type | Open Type"
+  ],
+  "rows": [
+   "| RXL8 | 8/10 | 9/11 | 3N17D | SLW-8.8 | 1400×550×900 | 580",
+   "| RXL10 | 10/13 | 11/14 | 3N17D | SLW-12 | 1400×550×900 | 585",
+   "| RXL12 | 12/15 | 13/17 | NC485BD | SLW-12 | 1450×550×900 | 590",
+   "| RXL14 | 14/18 | 15/18 | NC485BD | SLW-16 | 1450×550×900 | 595",
+   "| RXL16 | 16/20 | 18/22 | C490BD | SLW-16 | 1500×550×920 | 600",
+   "| RXL18 | 18/23 | 20/25 | C490BD | SLW-18 | 1500×550×920 | 610",
+   "| RXL22 | 22/28 | 24/30 | A498BD | SLW-22 | 1560×560×960 | 630",
+   "| RXL25 | 25/31 | 28/34 | A498BD | SLW-25 | 1560×560×960 | 640",
+   "| RXL28 | 28/35 | 31/39 | 4K39D | SLW-30 | 1620×560×960 | 650",
+   "| RXL30 | 30/38 | 33/41 | 4K41D | SLW-30 | 1620×560×960 | 660",
+   "| RXL32 | 32/40 | 35/44 | 4K41D | SLW-34 | 1620×560×960 | 670",
+   "| RXL34 | 34/43 | 37/47 | 4K43D | SLW-34 | 1620×560×960 | 700",
+   "| RXL36 | 36/45 | 40/50 | 4K43D | SLW-40 | 1620×560×960 | 720",
+   "| RXL40 | 40/50 | 44/55 | 4K43ZD | SLW-40 | 1650×600×1000 | 750",
+   "| RXL45 | 45/56 | 50/62 | 4K43ZD | SLW-50 | 1650×600×1000 | 760",
+   "| RXL50 | 50/63 | 55/69 | 4V33 | SLW-50 | 1680×610×1010 | 780",
+   "| RXL56 | 56/70 | 62/77 | 4V33 | SLW-60 | 1680×610×1010 | 790"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://dieselpower-en.com/1-12-gas-powered-generator-set/",
+  "title": "Gas Powered Generator Set | Gas Generator | RISE Power",
+  "header": [
+   "| Model of genset | Model of engine | Rated power (kW/kVA) | Rated voltage (V) | Rated frequ ency (Hz) | Overall dimension L×B×H(mm) | Net weigh (kg) | Fuel"
+  ],
+  "rows": [
+   "| 75GFZ-T | 4190T3-2 | 75/93.75 | 400/230 | 50 | 3766×1560×1737 | 5300 | Natural gas",
+   "| 125GFZ-T | 4190 ZLT1-2 | 125/156.25 | 400/230 | 50 | 4106×1900×1836 | 7500 | Natural gas",
+   "| 210 GFZ-T | 6190 TL-2 | 210/262.5 | 400/230 | 50 | 5105×2006×2110 | 8690 | Natural gas",
+   "| 250GF-TK | 6190 TL-2 | 250/312.5 | 400/230 | 50 | 4395×1760×2441 | 8690 | Natural gas",
+   "| 400 GF-NK | 12V190Z-2 | 400/500 | 400/230 | 50 | 5120×2200×2312 | 11300 | Biogas",
+   "| 400 GF-T | 12V190DT2-2 | 400/500 | 400/230 | 50 | 6470×2110×2795 | 11800 | Natural gas",
+   "| 400 GF-TK | 12V190DT2-2 | 400/500 | 400/230 | 50 | 4566×2040×2195 | 11300 | Natural gas",
+   "| 450GF1-NK | 12V190Z LDZ-2 | 450/562.5 | 400/230 | 50 | 5120×2200×2312 | 11300 | Biogas",
+   "| 500GF18-TK | 12V190ZDT-2 | 500/625 | 400/230 | 50 | 4566×2040×2780 | 11800 | Natural gas",
+   "| 400GF-MK1 | 12V190ZLM-2 | 400/500 | 400/230 | 50 | 5120×2040×2678 | 1200 | Coal gas",
+   "| 450GF-T1 | G12V190ZLDT-2 | 450/562.5 | 400/230 | 50 | 5120×2040×2678 | 1200 | Natural gas",
+   "| 500GF-TK | G12V190ZL T-2 | 500/625 | 400/230 | 50 | 5120×2040×2678 | 1200 | Natural gas",
+   "| 500GF-MK1 | 12V190ZL M | 500/625 | 400/230 | 50 | 5120×2040×2678 | 1200 | Coal gas",
+   "| 500GF-LK | G12V190ZL-2 | 500/625 | 400/230 | 50 | 5120×2040×2678 | 7500 | Refinery gas",
+   "| 700GTK | G12V190ZL-T | 700/875 | 400/230 | 50 | 5120×2040×2678 | 12000 | Natural gas",
+   "| 1000FG-TK2 | AD12V190ZLT2 | 1000/1250 | 400/230 | 50 | 5735×2312×2776 | 16500 | Natural gas",
+   "| 100GF-NK | AD12V190ZLZ | 1000/1250 | 400/230 | 50 | 5735×2312×2776 | 16500 | Biogas"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://dieselpower-en.com/1-12-gas-powered-generator-set/",
+  "title": "Gas Powered Generator Set | Gas Generator | RISE Power",
+  "header": [
+   "| Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight",
+   "| Prime | Standby | Open Type | Open Type"
+  ],
+  "rows": [
+   "| RMS1100-N | 1100/1375 | 1210/1513 | 16V165RQ | IFC2 561-4LB42 | 4856×1543×2100 | 11800"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://dieselpower-en.com/1-12-gas-powered-generator-set/",
+  "title": "Gas Powered Generator Set | Gas Generator | RISE Power",
+  "header": [
+   "| Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight",
+   "| Prime | Standby | Open Type | Open Type"
+  ],
+  "rows": [
+   "| RCS30-N | 30/38 | 33/42 | 4BT3.9-GA | UCI224D | 1800×800×1200 | 780",
+   "| RCS40-N | 40/50 | 44/55 | 4BTA3.9-GA | UCI224D | 1800×800×1220 | 800",
+   "| RCS60-N | 60/75 | 66/83 | 4BTAA3.9-GA | UCI244F | 1800×800×1220 | 890",
+   "| RCS85-N | 85/106 | 94/117 | 6BTAA5.9-GA | UCI274D | 2200×820×1400 | 1400",
+   "| RCS120-N | 120/150 | 132/165 | 6CTAA8.3-GA | UCI274F | 2500×850×1500 | 1850",
+   "| RCS160-N | 160/200 | 176/220 | MTAA11-GA | UCI274H | 2500×850×1500 | 1850",
+   "| RCS200-N | 200/250 | 220/275 | NTAA855-GA | HCI4C | 3155×1050×1541 | 3550",
+   "| RCS280-N | 280/350 | 308/385 | KTAA19-GA | HCI4E | 3443×1300×1916 | 4630",
+   "| RCS400-N | 400/500 | 440/550 | KTA38-GA | HCI5C | 4525×1900×2310 | 8478",
+   "| RCS550-N | 550/688 | 605/757 | KTAA38-GA | LVI6B | 4525×1900×2310 | 8760",
+   "| RCL24-N | 24/30 | 26.4/33 | 4B3.9-GB | LSA42.2L9 | 1650×740×1400 | 780",
+   "| RCL36-N | 36/45 | 39.6/49.5 | 4BT3.9-GB | LSA43.2S25 | 1700×740×1400 | 820",
+   "| RCL50-N | 50/63 | 55/69 | 4BTA3.9-GB | LSA43.2L65 | 1750×740×1400 | 900",
+   "| RCL80-N | 80/100 | 88/110 | 6BT5.9-GB | LSA44.2VS45 | 2100×830×1550 | 1200",
+   "| RCL100-N | 100/125 | 110/137.5 | 6BTA5.9-GB | LSA44.2S7 | 2150×830×1550 | 1300",
+   "| RCL120-N | 120/150 | 132/165 | 6BTAA5.9-GB | LSA44.2M95 | 2150×830×1550 | 1300",
+   "| RCL160-N | 160/200 | 176/220 | 6CTA8.3-GB | LSA46.2M5 | 2400×900×1650 | 1550",
+   "| RCL180-N | 180/225 | 198/248 | 6CTAA8.3-GB | LSA46.2L6 | 2500×1000×1550 | 1700",
+   "| RCL220-N | 220/275 | 242/303 | 6LTAA8.9-GB | LSA46.2L9 | 2600×1000×1700 | 1900"
+  ]
+ },
+ {
+  "n": 123,
+  "url": "https://dieselpower-en.com/2-1-1-cummins-marine-generator/",
+  "title": "40—800kW Cummins Marine Generator | Diesel Generator | RISE Power",
+  "header": [
+   "| Generator Model | Engine Model (Cummins) | Alternator Model (Marathon) | Frequency (Hz) | Prime Power | Standby Power",
+   "| kW | kVA | kW | kVA"
+  ],
+  "rows": [
+   "| RCM40M | 4BTA3.9-GM47 | MP-H-40-4 | 50 | 40 | 50 | 44 | 55",
+   "| RCM75M | 6BT5.9-GM80 | MP-H-75-4 | 50 | 75 | 94 | 82 | 103",
+   "| RCM100M | 6CT8.3-GM115 | MP-H-100-4 | 50 | 100 | 125 | 110 | 138",
+   "| RCM140M | 6CTA8.3-GM155 | MP-H-150-4 | 50 | 140 | 175 | 154 | 193",
+   "| RCM200M | NTA855-G1M | MP-H-200-4 | 50 | 200 | 250 | 220 | 275",
+   "| RCM250M | NTA855-G2M | MP-H-250-4 | 50 | 250 | 313 | 275 | 344",
+   "| RCM280M | NTA855-G4M | MP-H-280-4 | 50 | 280 | 350 | 308 | 385",
+   "| RCM300M | KTA19-G2M | MP-H-300-4 | 50 | 300 | 375 | 330 | 413",
+   "| RCM350M | KTA19-G3M | MP-H-350-4 | 50 | 350 | 438 | 385 | 481",
+   "| RCM400M | KTA19-G4M | MX-H-400-4 | 50 | 400 | 500 | 440 | 550",
+   "| RCM500M | KT38-GM | MX-H-500-4 | 50 | 500 | 625 | 550 | 688",
+   "| RCM600M | KTA38-G2M | MX-H-630-4 | 50 | 600 | 750 | 660 | 825",
+   "| RCM800M | KTA38-G5M | MX-H-800-4 | 50 | 800 | 1000 | 880 | 1100"
+  ]
+ },
+ {
+  "n": 124,
+  "url": "https://dieselpower-en.com/2-1-2-sdec-marine-generator/",
+  "title": "50—200kW SDEC Marine Generator | Marine Generator | RISE Power",
+  "header": [
+   "| Model | Prime Power | Standby Power | Engine | Cylinders | Displacement (L) | Fuel Consumption(g/kWh) | Oil Consumption(g/kWh) | Rated Current (A) | Dimensions",
+   "| kVA | kW | kVA | kW | L*W*H(mm) | Weight (kg)"
+  ],
+  "rows": [
+   "| RSM50M | 63 | 50 | 69 | 55 | SC4H95CF2 | 4L | 4.3 | < 204 | ≦0.3 | 90 | 1618*766*1160 | 849",
+   "| RSM64M | 80 | 64 | 88 | 70 | SC4H115CF2 | 4L | 4.3 | < 204 | ≦0.3 | 115 | 1651*766*1160 | 887",
+   "| RSM80M | 100 | 80 | 110 | 88 | SC4H160CF2 | 4L | 4.3 | < 198 | ≦0.3 | 144 | 1748*766*1160 | 1064",
+   "| RSM90M | 113 | 90 | 125 | 100 | SC4H160CF2 | 4L | 4.3 | < 198 | ≦0.3 | 162 | 1748*766*1160 | 1070",
+   "| RSM100M | 125 | 100 | 138 | 110 | SC4H180CF2 | 4L | 4.3 | < 198 | ≦0.3 | 180 | 1757*766*1160 | 1080",
+   "| RSM120M | 150 | 120 | 165 | 132 | SC7H230CF2 | 6L | 6.5 | < 195 | ≦0.3 | 217 | 1988*785*1312 | 1385",
+   "| RSM150M | 188 | 150 | 206 | 165 | SC7H250CF2 | 6L | 6.5 | < 195 | ≦0.3 | 271 | 1988*785*1312 | 1445",
+   "| RSM180M | 225 | 180 | 248 | 198 | G128ZLCaf1 | 6L | 12.9 | < 205 | ≦0.7 | 325 | 2542*911*1649 | 2520",
+   "| RSM200M | 250 | 200 | 275 | 220 | G128ZLCaf2 | 6L | 12.9 | < 205 | ≦0.7 | 361 | 2542*911*1649 | 2540",
+   "| RSM250M | 312 | 250 | 343 | 275 | G128ZLCaf3 | 6L | 12.9 | < 210 | ≦0.7 | 451 | 2595*911*1649 | 2650",
+   "| RSM300M | 375 | 300 | 413 | 330 | SC15G500CF2 | 6L | 14.16 | < 210 | ≦0.4 | 541 | 2700*909*1629 | 2700"
+  ]
+ },
+ {
+  "n": 125,
+  "url": "https://dieselpower-en.com/2-2-2-lovol-marine-diesel-engine/",
+  "title": "LOVOL Marine Diesel Engine | Diesel Engine | RISE Power",
+  "header": [],
+  "rows": [
+   "| Item | 1004GM | 1004TGM | 1006TGM | 1006TWGM",
+   "| Cylinder number | 4 | 4 | 6 | 6",
+   "| Model | Pressurized water, In-line, 4 stroke, directory injection, cylinder liner | | |",
+   "| Bore*stroke(mm*mm) | 100*127 | 100*127 | 100*127 | 100*127",
+   "| Displacement(L) | 3.99 | 3.99 | 5.99 | 5.99",
+   "| Induction system | Naturally aspirated | Turbocharged | Turbocharged | Turbocharged water intercooler",
+   "| Compression ratio | 16.5:1 | 17.5:1 | 17.5:1 | 17.5:1",
+   "| Rated power/speed(kw/rpm) | 40/1500 | 60/1500 | 90/1500 | 110/1500",
+   "| Max. power(kw) | 44 | 66 | 99 | 121",
+   "| Min. fule consumption(g/kwh) | 215 | 215 | 215 | 210",
+   "| Temperature exhausting(℃) | 600 | 550 | 550 | 550",
+   "| Engine oil pressure(Mpa) | 0.34~0.45 | 0.34~0.45 | 0.34~0.45 | 0.34~0.45",
+   "| Average sound dB(A) | 92 | 92 | 94 | 94",
+   "| Start type | Electric started | Electric started | Electric started | Electric started",
+   "| Overall dimensions(mm)A*B*C | 1150*810*980 | 1150*810*980 | 1430*900*1000 | 1430*940*1000"
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://dieselpower-en.com/2-2-3-sdec-marine-diesel-engine/",
+  "title": "SDEC Marine Propulsion Engine | Propulsion Engine | RISE Power",
+  "header": [
+   "| Model | Aspiration | Continuous Power (kW)/RPM | Overload Power (kW)/RPM | Unrestricted Rating Power (kW)/RPM | Unrestricted Max Power (kW)/RPM | Fuel Consumption (g/kWh) | Oil Consumption (g/kWh) | Weight (kg) | Certificate"
+  ],
+  "rows": [
+   "| D683ZCA1B | Turbocharged | 137.5/1800 | 151.3/1854 | 134/1800 | 147/1854 | 220 | < 0.4 | 780 | CCS+IMO2",
+   "| D683ZCA2B | Turbocharged | 110/1500 | 121/1545 | 107/1500 | 117.5/1545 | 220 | < 0.4 | 780 | CCS+IMO2",
+   "| D683ZLCAB | Turbocharged, Aftercooled | 205/2200 | 225.5/2266 | 200//2200 | 220/2266 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCA1B | Turbocharged,Aftercooled | 184/2200 | 202.4/2266 | 179/2200 | 197/2266 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCA3B | Turbocharged,Aftercooled | 225/2300 | 247.5/2369 | 219/2300 | 241/2369 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCA4B | Turbocharged,Aftercooled | 170/1800 | 187/1854 | 165.5/1800 | 182/1854 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCA5B | Turbocharged, Aftercooled | 150/1800 | 165/1854 | 146/1800 | 160.5/1854 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCA6B | Turbocharged, Aftercooled | 150/1500 | 165/1545 | 146/1500 | 160.5/1545 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCA7B | Turbocharged, Aftercooled | 137.5/1500 | 151.3/1545 | 134/1500 | 147/1545 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCA8B | Turbocharged, Aftercooled | 234.5/2330 | 258/2400 | 228.5/2330 | 251/2400 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCA9B | Turbocharged, Aftercooled | 264/2430 | 290/2500 | 259/2430 | 285/2500 | 220 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZCFB | Turbocharged | 110/1500 | 121/1500 | 107/1500 | 117.5/1500 | 220 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZCF1B | Turbocharged | 137.5/1800 | 151/1800 | 134/1800 | 147/1800 | 220 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCFB | Turbocharged, Aftercooled | 150/1500 | 165/1500 | 146/1500 | 160.5/1500 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCF1B | Turbocharged, Aftercooled | 170/1800 | 187/1800 | 165.5/1800 | 182/1800 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCF2B | Turbocharged, Aftercooled | 137.5/1500 | 151/1500 | 134/1500 | 147/1500 | 215 | < 0.4 | 800 | CCS+IMO2",
+   "| D683ZLCF3B | Turbocharged, Aftercooled | 150/1800 | 165/1800 | 146/1800 | 160.5/1800 | 215 | < 0.4 | 800 | CCS+IMO2"
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://dieselpower-en.com/2-2-3-sdec-marine-diesel-engine/",
+  "title": "SDEC Marine Propulsion Engine | Propulsion Engine | RISE Power",
+  "header": [
+   "| Model | Aspiration | Continuous Power (kW)/RPM | Overload Power (kW)/RPM | Unrestricted Rating Power (kW)/RPM | Unrestricted Max Power (kW)/RPM | Fuel Consumption (g/kWh) | Oil Consumption (g/kWh) | Weight (kg) | Certificate"
+  ],
+  "rows": [
+   "| G128ZCa | Turbocharged | 162/1500 | 178.2/1545 | 155.5/1500 | 171.5/1545 | 213 | < 0.4 | 1315 | CCS",
+   "| G128ZCa1 | Turbocharged | 162/1800 | 178.2/1854 | 155.5/1800 | 171.5/1854 | 215 | < 0.4 | 1315 | CCS",
+   "| G128ZLCa | Turbocharged, Aftercooled | 189/1500 | 208/1545 | 180/1500 | 198/1545 | 200 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZLCa1 | Turbocharged,Aftercooled | 200.5/1500 | 220.5/1545 | 193/1500 | 212.3/1545 | 200 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZLCa2 | Turbocharged,Aftercooled | 236/1500 | 260/1545 | 227/1500 | 250/1545 | 198 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZLCa3 | Turbocharged,Aftercooled | 187/1800 | 206/1854 | 180/1800 | 198/1854 | 197 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZLCa5 | Turbocharged, Aftercooled | 267/1500 | 294/1545 | 254.9/1500 | 280.3/1545 | 199 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZLCa12 | Turbocharged, Aftercooled | 236/1800 | 260/1854 | 227/1800 | 250/1854 | 199 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZLCa15 | Turbocharged, Aftercooled | 267/1800 | 294/1854 | 254.9/1800 | 280.3/1854 | 198 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZCaf1 | Turbocharged | 165.3/1500 | 181.8/1500 | 162/1500 | 178.2/1500 | 213 | < 0.4 | 1315 | CCS",
+   "| G128ZCaf2 | Turbocharged | 165.3/1500 | 181.8/1500 | 162/1500 | 178.2/1500 | 213 | < 0.4 | 1315 | CCS",
+   "| G128ZLCaf | Turbocharged, Aftercooled | 187/1500 | 206/1500 | 180/1500 | 198/1500 | 200 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZLCaf1 | Turbocharged, Aftercooled | 200.5/1500 | 220.5/1500 | 198.5/1500 | 218.3/1500 | 200 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZLCaf2 | Turbocharged, Aftercooled | 242.4/1500 | 266.6/1500 | 240/1500 | 264/1500 | 200 | < 0.4 | 1350 | CCS+IMO2",
+   "| G128ZLCaf3 | Turbocharged, Aftercooled | 278.8/1500 | 306.7/1500 | 276/1500 | 303.6/1500 | 200 | < 0.4 | 1350 | CCS+IMO2",
+   "| SC15G400CA2 | Turbocharged, Aftercooled | 267/1500 | 294/1545 | 254.9/1500 | 280.3/1545 | 198 | < 0.4 | 1350 | CCS+IMO2",
+   "| SC15G420CA2 | Turbocharged, Aftercooled | 280/1500 | 308/1545 | 272/1500 | 300/1545 | 198 | < 0.4 | 1350 | CCS+IMO2",
+   "| SC15G460CA2 | Turbocharged, Aftercooled | 308/1500 | 338/1545 | 300/1500 | 330/1545 | 198 | < 0.4 | 1350 | CCS+IMO2",
+   "| SC15G500CA2 | Turbocharged, Aftercooled | 330/1500 | 363/1545 | 320/1500 | 352/1545 | 197 | < 0.4 | 1350 | CCS+IMO2",
+   "| SC15G500.1CA2 | Turbocharged, Aftercooled | 330/1800 | 363/1854 | 320/1800 | 352/1854 | 197 | < 0.4 | 1350 | CCS+IMO2",
+   "| SC15G500CF2 | Turbocharged, Aftercooled | 330/1500 | 363/1500 | 320/1500 | 352/1500 | 199 | < 0.4 | 1350 | CCS+IMO2"
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://dieselpower-en.com/2-2-3-sdec-marine-diesel-engine/",
+  "title": "SDEC Marine Propulsion Engine | Propulsion Engine | RISE Power",
+  "header": [
+   "| Model | Aspiration | Continuous Power (kW)/RPM | Overload Power (kW)/RPM | Unrestricted Rating Power (kW)/RPM | Unrestricted Max Power (kW)/RPM | Fuel Consumption (g/kWh) | Oil Consumption (g/kWh) | Weight (kg) | Certificate"
+  ],
+  "rows": [
+   "| SC4H95CF2 | Turbocharged | 62/1500 | 68/1500 | 60/1500 | 66/1500 | 205 | < 0.35 | 495 | CCS",
+   "| SC4H115CF2 | Turbocharged | 78/1500 | 86/1500 | 75/1500 | 83/1500 | 205 | < 0.35 | 495 | CCS",
+   "| SC4H160CF2 | Turbocharged, Aftercooled | 105/1500 | 116/1500 | 102/1500 | 112/1500 | 198 | < 0.35 | 540 | CCS",
+   "| SC4H180CF2 | Turbocharged,Aftercooled | 120/1500 | 132/1500 | 116/1500 | 128/1500 | 198 | < 0.35 | 540 | CCS",
+   "| SC7H230CF2 | Turbocharged,Aftercooled | 154/1500 | 170/1500 | 149/1500 | 164/1500 | 198 | < 0.35 | 675 | CCS+IMO2",
+   "| SC7H250CF2 | Turbocharged,Aftercooled | 168/1500 | 185/1500 | 163/1500 | 179/1500 | 198 | < 0.35 | 675 | CCS+IMO2"
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://dieselpower-en.com/2-2-3-sdec-marine-diesel-engine/",
+  "title": "SDEC Marine Propulsion Engine | Propulsion Engine | RISE Power",
+  "header": [
+   "| Model | Aspiration | Continuous Power (kW)/RPM | Overload Power (kW)/RPM | Unrestricted Rating Power (kW)/RPM | Unrestricted Max Power (kW)/RPM | Fuel Consumption (g/kWh) | Oil Consumption (g/kWh) | Weight (kg) | Certificate"
+  ],
+  "rows": [
+   "| SC33W680CA2 | Turbocharged,Aftercooled | 500/1350 | 550/1390 | 490/1350 | 539/1390 | 199 | < 0.4 | 3400 | CCS+IMO 2",
+   "| SC33W825CA2 | Turbocharged,Aftercooled | 605/1500 | 665/1545 | 588/1500 | 647/1545 | 200 | < 0.4 | 3400 | CCS+IMO 2"
+  ]
+ },
+ {
+  "n": 127,
+  "url": "https://dieselpower-en.com/2-2-marine-engine-2.html",
+  "title": "Deutz Marine Engine | Marine Diesel Engine | RISE Power",
+  "header": [
+   "| Model | Cylinder Quantity | Bore/stroke (mm) | Displace ment (L) | Rated Power Output (kW) | Rated Speed (r/Min) | Starting Method | Net Weight (Kg) | Scope of Application"
+  ],
+  "rows": [
+   "| D226B-3C | 3 | 105/120 | 3.117 | 35 | 1800 | Electric | 560 | fishing ship, transport ship",
+   "| TD226B-3C | 3 | 105/120 | 3.117 | 40 | 1500 | Electric | 560 | fishing ship, transport ship",
+   "| TD226B-3C1 | 3 | 105/120 | 3.117 | 50 | 1800 | Electric | 560 | fishing ship, transport ship",
+   "| TD226B-3C2 | 3 | 105/120 | 3.117 | 55 | 2100 | Electric | 560 | fishing ship, transport ship, speed boat",
+   "| TD226B-3C3 | 3 | 105/120 | 3.117 | 60 | 2500 | Electric | 560 | transport ship, speed boat",
+   "| TD226B-4C | 4 | 105/120 | 4.156 | 60 | 1500 | Electric | 650 | fishing ship, transport ship",
+   "| TD226B-4C1 | 4 | 105/120 | 4.156 | 70 | 1800 | Electric | 650 | fishing ship, transport ship",
+   "| TD226B-4C2 | 4 | 105/120 | 4.156 | 75 | 2100 | Electric | 650 | fishing ship, transport ship, speed boat",
+   "| TD226B-4C3 | 4 | 105/120 | 4.156 | 80 | 2500 | Electric | 650 | transport ship, speed boat",
+   "| TD226B-6C | 6 | 105/120 | 6.234 | 90 | 1500 | Electric | 760 | fishing ship, transport ship",
+   "| TD226B-6C1 | 6 | 105/120 | 6.234 | 105 | 1800 | Electric | 760 | fishing ship, transport ship",
+   "| TD226B-6C2 | 6 | 105/120 | 6.234 | 115 | 2100 | Electric | 760 | fishing ship, transport ship, speed boat",
+   "| TD226B-6C3 | 6 | 105/120 | 6.234 | 120 | 2500 | Electric | 760 | transport ship, speed boat",
+   "| TBD226B-6C | 6 | 105/120 | 6.234 | 110 | 1500 | Electric | 810 | fishing ship, transport ship",
+   "| TBD226B-6C2 | 6 | 105/120 | 6.234 | 110 | 1800 | Electric | 810 | fishing ship, transport ship",
+   "| TBD226B-6C3 | 6 | 105/120 | 6.234 | 120 | 1800 | Electric | 810 | fishing ship, transport ship",
+   "| TBD226B-6C4 | 6 | 105/120 | 6.234 | 135 | 2100 | Electric | 810 | fishing ship, transport ship, speed boat",
+   "| TBD226B-6C5 | 6 | 105/120 | 6.234 | 150 | 2500 | Electric | 810 | transport ship, speed boat"
+  ]
+ },
+ {
+  "n": 128,
+  "url": "https://dieselpower-en.com/3-1-3-leroy-somer-alternator/",
+  "title": "Leroy Somer Alternator | Marine Alternator | RISE Power",
+  "header": [],
+  "rows": [
+   "| MODEL | 400V/50Hz/3Ph | 400V/50Hz/3Ph | 400V/50Hz/3Ph",
+   "| 1500RPM | Cont.duty/40℃ | Standby / 40℃ | Standby / 27OC",
+   "| LSA40 VS1 | J6-4 | 12 | 8 | 10 | 8.4 | 10.5 | 8.8 | 11",
+   "| LSA40 VS2 | J6-4 | 12 | 10 | 12.5 | 10.8 | 13.5 | 11.2 | 14",
+   "| LSA40 S3 | J6-4 | 12 | 12 | 15 | 12.8 | 16 | 13.2 | 16.5",
+   "| LSA40 S4 | J6-4 | 12 | 14 | 17.5 | 15.2 | 19 | 15.6 | 19.5",
+   "| LSA40 M5 | J6-4 | 12 | 16 | 20 | 18.2 | 21.5 | 17.6 | 17.6",
+   "| LSA40 L7 | J6-4 | 12 | 18.4 | 23 | 19.2 | 24 | 20 | 20",
+   "| LSA 42.2 VVS | J6-4 | 12 | 6.4 | 8 | | | 8 | 10",
+   "| LSA42.2 VS0 | J6-4 | 12 | 8 | 10 | | | 10 | 12",
+   "| LSA42.2VS1 | J6-4 | 12 | 10 | 12.5 | | | 12 | 15",
+   "| LSA4.2 VS2 | J6-4 | 12 | 12 | 15 | | | 14 | 18",
+   "| LSA42.2 S4 | J6-4 | 12 | 14 | 17.5 | 16 | 20 | 16.8 | 21",
+   "| LSA42.2 S5 | J6-4 | 12 | 16 | 20 | 19.2 | 24 | 20 | 25",
+   "| LSA42.2 M6 | J6-4 | 12 | 18.4 | 23 | 21.6 | 27 | 22.4 | 28",
+   "| LSA42.2 M7 | J6-4 | 12 | 21.6 | 27 | 24 | 30 | 24.8 | 31",
+   "| LSA42.2 L9 | J6-4 | 12 | 25.2 | 31.5 | 26.72 | 33.4 | 28 | 35",
+   "| LSA43.2 S1 | J6-4 | 12 | 28 | 35 | 32 | 40 | 36 | 45",
+   "| LSA43.2 S15 | J6-4 | 12 | 32 | 40 | 35 | 44 | 38 | 47",
+   "| LSA43.2 S25 | J6-4 | 12 | 36 | 45 | 4539 | 49 | 42 | 52",
+   "| LSA43.2 S35 | J6-4 | 12 | 42 | 53 | 5345 | 56 | 46 | 58",
+   "| LSA43.2 M45 | J6-4 | 12 | 48 | 60 | 6050 | 63 | 53 | 66",
+   "| LSA43.2 L65 | J6-4 | 12 | 56 | 70 | 59 | 74 | 62 | 77",
+   "| LSA43.2 L8 | J6-4 | 12 | 64 | 80 | 67 | 84 | 70 | 88",
+   "| LSA 44.2 VS3 | J6-4 | 12 | 72 | 90 | 76 | 95 | 80 | 100",
+   "| LSA44.2 VS45 | J6-4 | 12 | 84 | 105 | 88 | 110 | 93 | 116",
+   "| LSA44.2 S7 | J6-4 | 12 | 100 | 125 | 105 | 131 | 110 | 138",
+   "| LSA44.2 S75 | J6-4 | 12 | 108 | 135 | 114 | 143 | 120 | 150",
+   "| LSA44.2 M95 | J6-4 | 12 | 120 | 150 | 125 | 156 | 132 | 165",
+   "| LSA44.2 L12 | J6-4 | 12 | 132 | 165 | 136 | 170 | 140 | 175",
+   "| LSA46.2 M3 | J6-4 | 12 | 144 | 180 | 156 | 195 | 162 | 203",
+   "| LSA46.2 M5 | J6-4 | 12 | 160 | 200 | 171 | 214 | 178 | 223",
+   "| LSA 46.2 L6 | J6-4 | 12 | 200 | 250 | 208 | 260 | 220 | 275",
+   "| LSA 46.2 L9 | J6-4 | 12 | 224 | 280 | 232 | 290 | 240 | 300",
+   "| LSA 46.2 VL12 | J6-4 | 12 | 252 | 315 | 362 | 327 | 273 | 341",
+   "| LSA47.2 VS1 | J6-4 | 12 | 280 | 350 | 302 | 377 | 314 | 392",
+   "| LSA 47.2 VS2 | J6-4 | 12 | 300 | 375 | 324 | 405 | 336 | 420",
+   "| LSA47.2 S4 | J6-4 | 12 | 328 | 410 | 344 | 430 | 360 | 450",
+   "| LSA47.2 S5 | J6-4 | 12 | 328 | 455 | 377 | 471 | 400 | 500",
+   "| LSA47.2 M7 | J6-4 | 12 | 364 | 500 | 436 | 545 | 456 | 570",
+   "| LSA47.2 M8 | J6-4 | 12 | 400 | 550 | 460 | 575 | 480 | 600",
+   "| LSA47.2 L9 | C6S/4 | 6 | 480 | 600 | 504 | 630 | 528 | 660",
+   "| LSA49.1 S4A | C6S/4 | 6 | 500 | 625 | 525 | 656 | 550 | 686",
+   "| LSA49.1 S4 | C6S/4 | 6 | 528 | 660 | 554 | 693 | 580 | 725",
+   "| LSA49.1 M6 | C6S/4 | 6 | 580 | 725 | 608 | 760 | 640 | 800",
+   "| LSA49.1 65M | C6S/4 | 6 | 600 | 750 | 630 | 787 | 660 | 825",
+   "| LSA49.1 M75 | C6S/4 | 6 | 640 | 800 | 672 | 840 | 704 | 880",
+   "| LSA49.1 L9 | C6S/4 | 6 | 704 | 880 | 736 | 920 | 768 | 960",
+   "| LSA49.1 L10 | C6S/4 | 6 | 728 | 910 | 764 | 955 | 800 | 1000",
+   "| LSA50.2 S3 | C6S/4 | 6 | 800 | 1000 | 840 | 1050 | 896 | 1120",
+   "| LSA50.2 S4 | C6S/4 | 6 | 832 | 1040 | 876 | 1095 | 916 | 1145",
+   "| LSA50.2 M6 | C6S/4 | 6 | 1000 | 1250 | 1052 | 1315 | 1100 | 1375",
+   "| LSA50.2 L7 | C6S/4 | 6 | 1080 | 1350 | 1136 | 1420 | 1188 | 1485",
+   "| LSA50.2 L8 | C6S/4 | 6 | 1200 | 1500 | 1260 | 1575 | 1320 | 1650",
+   "| LSA50.2 VL10 | C6S/4 | 6 | 1312 | 1640 | 1376 | 1720 | 1440 | 1800",
+   "| LSA51.2 S55 | C6S/4 | 6 | 1440 | 1800 | 1512 | 1890 | 1584 | 1980",
+   "| LSA51.2 M60 | C6S/4 | 6 | 1600 | 2000 | 1680 | 2100 | 1760 | 2200",
+   "| LSA51.2 L70 | C6S/4 | 6 | 1720 | 2150 | 1804 | 2255 | 1892 | 2365",
+   "| LSA51.2 VL85 | C6S/4 | 6 | 1800 | 2250 | 1888 | 2360 | 1980 | 2475",
+   "| LSA51.2 VL90 | C6S/4 | 6 | 2000 | 2500 | 2100 | 2625 | 2200 | 2750"
+  ]
+ },
+ {
+  "n": 129,
+  "url": "https://dieselpower-en.com/3-1-4-stamform-alternator/",
+  "title": "Stamford Alternator | Electrical Machine | RISE Power",
+  "header": [
+   "| P0/P1 Range | UC Range | HC Range | P7 Range | P80 Range"
+  ],
+  "rows": [
+   "| 7.5 - 42.5 kVA | 40 - 250 kVA | 250 - 1400 kVA | 1260 - 2750 kVA | 2000 - 5370 kVA",
+   "| 2 pole or 4 pole configuration | 4 pole configuration | 4 pole or 6 pole configuration | 4 pole or 6 pole configuration | 4 pole configuration",
+   "| The new P0/P1 range features state of the art design, modular options and excitation boost. Benefits include: reduced gen-set assembly time, better engine alignment with ratings and improved serviceability. | A broad range of single and three phase voltages are available from a 12 wire reconnectable winding. Voltages available up to 690v, IP23 enclosure protection as standard. A Permanent Magnet Generator (PMG) is available as an option. | A range of single and two bearing AVR controlled generators. Voltages available up to 690v, IP23 enclosure protection as standard. A Permanent Magnet Generator (PMG) is fitted as standard on HC6. | A range of single and two bearing AVR controlled generators. 2/3 pitch windings avoid excessive neutral currents. Permanent Magnet Generator (PMG) is fitted as standard. | A range of larger self-regulating brushless generators fitted with the AvK STAMFORD DM110 digital excitation system and STAMFORD's most advanced Permanent Magnet Generator (PMG) as standard."
+  ]
+ },
+ {
+  "n": 130,
+  "url": "https://dieselpower-en.com/3-1-5-mecc-alte-alternator/",
+  "title": "Mecc Alte Alternator 7.8—2800kVA | RISE Power",
+  "header": [
+   "| Model | New Model | kVA, 50Hz, 3P, 40oC/27℃ | Net Weight (kg) | Package Dimension (mm) | Sets /Package",
+   "| Continuous (kVA) | Standby (kVA)"
+  ],
+  "rows": [
+   "| ECP28-1VS/4 | ECP28 1VS4 | 7.8 | 8.4 | 107 | 1200*800 | 3",
+   "| ECP28-2VS/4 | ECP28 2VS4 | 11 | 11.7 | 122 | 1200*800 | 3",
+   "| ECP28-0S/4 | ECP28 0S4 | 13.5 | 14.6 | 139 | 1200*800 | 2",
+   "| ECP28-S/4 | ECP28 S4 | 17 | 18 | 165 | 1200*800 | 2",
+   "| ECP28-M/4 | ECP28 M4 | 20 | 21.5 | 185 | 1200*800 | 2",
+   "| ECP28-2L/4 | ECP28 2L4 | 25 | 26.5 | 199 | 1200*800 | 2",
+   "| ECP28-VL/4 | ECP28 VL4 | 30 | 32.5 | 214 | 1200*800 | 2",
+   "| ECP32-2S/4 | ECP32 2S4 | 35 | 39 | 282 | 1200*800 | 2",
+   "| ECP32-3S/4 | ECP32 3S4 | 42.5 | 48 | 298 | 1200*800 | 2",
+   "| ECP32-1L/4 | ECP32 1M4 | 50 | 56 | 341 | 1150*700 | 1",
+   "| ECP32-2L/4 | ECP32 2M4 | 63 | 71 | 419 | 1150*700 | 1",
+   "| ECP32-3L/4 | ECP32 3L4 | 75 | 83 | 445 | 1150*700 | 1",
+   "| | ECP32 4L4 | 80 | 87 | 450 | 1150*700 | 1",
+   "| ECP34-1S/4 | ECP34 1S4 | 85 | 95 | 491 | 1150*700 | 1",
+   "| ECP34-2S/4 | ECP34 2S4 | 105 | 116 | 495 | 1150*700 | 1",
+   "| ECP34-1L/4 | ECP34 1L4 | 135 | 148 | 510 | 1150*700 | 1",
+   "| ECP34-2L/4 | ECP34 2L4 | 150 | 164 | 560 | 1150*700 | 1",
+   "| ECP34-3L/4 | ECP34 3L4 | 160 | 176 | 580 | 1150*700 | 1",
+   "| ECO38-1SN/4 | ECO38 1S4 | 180 | 196 | 590 | 1150*700 | 1",
+   "| ECO38-2SN/4 | ECO38 2S4 | 200 | 220 | 680 | 1150*700 | 1",
+   "| ECO38-3SN/4 | ECO38 3S4 | 225 | 250 | 765 | 1150*700 | 1",
+   "| ECO38-1LN/4 | ECO38 1L4 | 250 | 275 | 905 | 1150*700 | 1",
+   "| ECO38-2LN/4 | ECO38 2L4 | 300 | 330 | 1040 | 1450*750 | 1",
+   "| ECO38-3LN/4 | ECO38 3L4 | 350 | 370 | 1118 | 1450*750 | 1",
+   "| ECO40-1S/4 | ECO40 1S4 | 400 | 437 | 1171 | 1450*750 | 1",
+   "| ECO40-2S/4 | ECO40 2S4 | 450 | 491 | 1324 | 1450*750 | 1",
+   "| ECO40-3S/4 | ECO40 3S4 | 500 | 546 | 1380 | 1450*750 | 1",
+   "| ECO40-1L/4 | ECO40 1L4 | 550 | 601 | 1586 | 1450*750 | 1",
+   "| ECO40-1.5L/4 | ECO40 1.5L4 | 620 | 670 | 1693 | 1450*750 | 1",
+   "| ECO40-2L/4 | ECO40 2L4 | 680 | 735 | 1870 | 1750*870 | 1",
+   "| ECO40-VL/4 | ECO40 VL4 | 750 | 810 | 2090 | 1750*870 | 1",
+   "| ECO43-1SN/4 | ECO43 1S4 | 800 | 870 | 2395 | 1750*870 | 1",
+   "| ECO43-2SN/4 | ECO43 2S4 | 930 | 1016 | 2660 | 1750*870 | 1",
+   "| | ECO43 1M4 | 1025 | 1119 | 2750 | 1750*870 | 1",
+   "| ECO43-1LN/4 | ECO43 2M4 | 1150 | 1256 | 2850 | 1750*870 | 1",
+   "| ECO43-2LN/4 | ECO43 2L4 | 1300 | 1420 | 3010 | 2000*1100 | 1",
+   "| ECO43-VL/4 | ECO43 VL4 | 1400 | 1520 | 3250 | 2000*1100 | 1",
+   "| ECO46-1S/4 | ECO46 1S4 | 1500 | 1620 | 3380 | 2000*1100 | 1",
+   "| ECO46-1.5S/4 | ECO46 1.5S4 | 1650 | 1780 | 3565 | 2000*1100 | 1",
+   "| ECO46-2S/4 | ECO46 2S4 | 1800 | 1944 | 3810 | 2000*1100 | 1",
+   "| ECO46-1L/4 | ECO46 1L4 | 2100 | 2268 | 4260 | 2000*1100 | 1",
+   "| ECO46-1.5L/4 | ECO46 1.5L4 | 2300 | 2480 | 4380 | 2000*1100 | 1",
+   "| ECO46-2L/4 | ECO46 2L4 | 2500 | 2700 | 4500 | 2000*1100 | 1",
+   "| | ECO46 VL4 | 2800 | 3024 | 4700 | 2000*1100 | 1"
+  ]
+ },
+ {
+  "n": 131,
+  "url": "https://dieselpower-en.com/3-3-1-sdec-diesel-engine/",
+  "title": "SDEC Diesel Engine | Diesel Engine | RISE Power",
+  "header": [
+   "| Model | Standby Power(kW) | Cylinders | Displacement (L) | Fuel Consumption(L/h) | Oil Consumption(g/kWh) | Lube Capacity(L) | Coolant Capacity(L) | Dimensions",
+   "| L*W*H(mm) | Weight (kg)"
+  ],
+  "rows": [
+   "| SC4H95D2 | 68 | 4L | 4.3 | < 14.8 | ≦0.3 | 15 | 6.8 | 1053*717*1158 | 430",
+   "| SC4H115D2 | 86 | 4L | 4.3 | < 18.7 | ≦0.3 | 15 | 6.8 | 1053*717*1158 | 430",
+   "| SC4H160D2 | 116 | 4L | 4.3 | < 20.7 | ≦0.3 | 15 | 6.8 | 1053*717*1158 | 460",
+   "| SC4H180D2 | 132 | 4L | 4.3 | < 28.8 | ≦0.3 | 15 | 6.8 | 1053*717*1158 | 460",
+   "| SC8D220D2 | 160 | 6L | 8.27 | < 35.0 | ≦0.3 | 22 | 8.2 | 1472*762*1240 | 740",
+   "| SC7H230D2 | 170 | 6L | 6.5 | < 36.9 | ≦0.3 | 20 | 9.6 | 1343*741*1178 | 600",
+   "| SC7H250D2 | 185 | 6L | 6.5 | < 40.3 | ≦0.3 | 20 | 9.6 | 1343*741*1178 | 600",
+   "| SC8D280D2 | 204 | 6L | 8.27 | < 44.4 | ≦0.3 | 22 | 8.2 | 1472*762*1240 | 740",
+   "| SC9D310D2 | 228 | 6L | 8.82 | < 48.2 | ≦0.3 | 22 | 8.2 | 1578*778*1260 | 740",
+   "| SC9D340D2 | 255 | 6L | 8.82 | < 52.5 | ≦0.3 | 22 | 12 | 1578*778*1260 | 900",
+   "| SC13G355D2 | 260 | 6L | 12.88 | < 54.9 | ≦0.4 | 33 | 25.5 | 1704*1063*1540 | 1290",
+   "| SC13G420D2 | 308 | 6L | 12.88 | < 67.2 | ≦0.4 | 33 | 25.5 | 1704*1063*1540 | 1290",
+   "| SC12E460D2 | 338 | 6L | 11.8 | < 73.6 | ≦0.4 | 37 | 25.5 | 1787*918*1304 | 1165",
+   "| SC15G500D2 | 373 | 6L | 14.16 | < 81.3 | ≦0.4 | 33 | 25.5 | 1704*1063*1540 | 1290",
+   "| SC25G610D2 | 445 | 12L | 25.8 | < 97.2 | ≦0.4 | 65 | 151 | 1930*1686*1872 | 2080",
+   "| SC25G690D2 | 505 | 12L | 25.8 | < 110.1 | ≦0.4 | 65 | 151 | 1930*1686*1872 | 2080",
+   "| SC27G755D2 | 555 | 12L | 25.8 | < 121.2 | ≦0.4 | 65 | 151 | 1930*1686*1872 | 2080",
+   "| SC27G830D2 | 610 | 12L | 25.8 | < 144.4 | ≦0.4 | 65 | 151 | 1930*1686*1872 | 2080",
+   "| SC33W990D2 | 726 | 6L | 32.8 | < 158.4 | ≦0.6 | 75 | 56 | 2307*1371*1983 | 3400",
+   "| SC33W1150D2 | 860 | 6L | 32.8 | < 195.4 | ≦0.6 | 75 | 56 | 2307*1371*1983 | 3400"
+  ]
  }
 ]

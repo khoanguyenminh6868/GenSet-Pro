@@ -110,7 +110,7 @@
     {
       "n": 101,
       "url": "https://motors-world.com/products/brushless-synchronous-generator-yh-yhd-series/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| YH-164/184 | | | | | | | | | | | | | | | | |"
@@ -120,7 +120,7 @@
     {
       "n": 107,
       "url": "https://motors-world.com/products/diesel-generator-set-fawde-series/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator | Size & Weight"
@@ -130,7 +130,7 @@
     {
       "n": 108,
       "url": "https://motors-world.com/products/three-phase-a-c-synchronous-generator-stc-series/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Model | Output | Installing dimensions | External dimensions",
@@ -141,12 +141,22 @@
     {
       "n": 116,
       "url": "https://motors-world.com/products/diesel-generator-set-cummins-series/",
-      "accessedAt": "2026-10-29",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator | Size & Weight"
       ],
       "file": "sources/keliang-fuan/116.md"
+    },
+    {
+      "n": 124,
+      "url": "https://motors-world.com/products/single-phase-a-c-synchronous-generator-st-series/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Model | Output (kW) | Installing Dimensions | External Dimensions"
+      ],
+      "file": "sources/keliang-fuan/124.md"
     }
   ],
   "confidence": "medium",
@@ -487,6 +497,35 @@
         "| WT-C1375 | 1000 | 1250 | 1100 | 1375 | KTA38-G9 | 1110 | 1220 | 199 | 259.87 | 12×159×159 | 37.8 | 13.9:1 | TC | WT-LV6F | 4600×2100×2320 | 7800 | 20GP | 8500",
         "| WT-C1513 | 1100 | 1375 | 1210 | 1513 | KTA50-G3 | 1220 | 1380 | 203 | 291 | 16×159×159 | 50.3 | 13.9:1 | TC | WT-PI7A | 4950×2100×2320 | 9600 | 40HQ | 11000",
         "| WT-C1733 | 1260 | 1575 | 1386 | 1733 | KTA50-G9 | 1386 | 1657 | 203 | 331 | 16×159×159 | 50.3 | 13.9:1 | TC | WT-PI7B | 5100×2150×2400 | 10000 | 40HQ | 12600"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "Single Phase A.C Synchronous Generator ST series Manufacturer & Factory Wholesale | Keliang",
+      "header": [
+        "| Model | Output (kW) | Installing Dimensions | External Dimensions",
+        "| A | B | C | D | E | F | G | H | K | a | b | h1 | h | L1 | L2 | g"
+      ],
+      "rows": [
+        "| ST-2 | 2 | 216 | 178 | 89 | Ø32 | 80 | 10 | 27 | 132 | 12 | 34 | 250 | 18 | 385 | 480 | 270 | 35",
+        "| ST-3 | 3 | 216 | 178 | 89 | Ø32 | 80 | 10 | 27 | 132 | 12 | 34 | 250 | 18 | 385 | 480 | 270 | 35",
+        "| ST-5 | 5 | 254 | 254 | 108 | Ø38 | 80 | 10 | 33 | 160 | 15 | 50 | 310 | 25 | 440 | 580 | 325 | 41",
+        "| ST-7.5 | 7.5 | 254 | 254 | 108 | Ø38 | 80 | 10 | 33 | 160 | 15 | 50 | 310 | 25 | 440 | 580 | 325 | 41",
+        "| ST-10 | 10 | 279 | 203 | 121 | Ø42 | 110 | 12 | 37 | 180 | 15 | 60 | 339 | 25 | 480 | 610 | 365 | 45",
+        "| ST-12 | 12 | 279 | 203 | 121 | Ø42 | 110 | 12 | 37 | 180 | 15 | 60 | 339 | 25 | 480 | 610 | 365 | 45",
+        "| ST-15 | 15 | 318 | 228 | 133 | Ø48 | 110 | 14 | 42.5 | 200 | 19 | 60 | 378 | 30 | 540 | 660 | 400 | 51.5",
+        "| ST-20 | 20 | 318 | 228 | 133 | Ø48 | 110 | 14 | 42.5 | 200 | 19 | 60 | 378 | 30 | 540 | 660 | 400 | 51.5",
+        "| ST-30 | 30 | 356 | 286 | 149 | Ø60 | 140 | 18 | 53 | 225 | 20 | 65 | 421 | 32 | 650 | 770 | 452 | 64",
+        "| ST-2 | 2 | 8.7 | 17.4 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |",
+        "| ST-3 | 3 | 13 | 26 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |",
+        "| ST-5 | 5 | 21.7 | 43.5 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |",
+        "| ST-7.5 | 7.5 | 32.6 | 65.2 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |",
+        "| ST-10 | 10 | 43.5 | 87 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |",
+        "| ST-12 | 12 | 52.2 | 104.4 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |",
+        "| ST-15 | 15 | 65.2 | 130.4 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |",
+        "| ST-20 | 20 | 87 | 174 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |",
+        "| ST-24 | 24 | 104.4 | 208.8 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |",
+        "| ST-30 | 30 | 130.4 | 260.8 | 230 | 115 | 1.0 | 4 | 1500 | | | | | | | | |"
       ]
     }
   ]

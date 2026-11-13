@@ -261,6 +261,16 @@
       "file": "sources/koten-power/4015.md"
     },
     {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/koten-catalog-2025.pdf",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "| KF70D5 | 56 | 70 | 62 | 77 | 4110/125Z-09D |"
+      ],
+      "file": "sources/koten-power/5001.md"
+    },
+    {
       "n": 101,
       "url": "https://www.kotenpower.com/product/40kva-cummins-seires-diesel-generator-silent-type",
       "accessedAt": "2026-10-28",
@@ -1169,16 +1179,6 @@
         "Generator"
       ],
       "file": "sources/koten-power/1027.md"
-    },
-    {
-      "n": 5001,
-      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/koten-catalog-2025.pdf",
-      "accessedAt": "2026-11-12",
-      "tier": "A",
-      "quote": [
-        "| KF70D5 | 56 | 70 | 62 | 77 | 4110/125Z-09D |"
-      ],
-      "file": "sources/koten-power/5001.md"
     }
   ],
   "confidence": "medium",

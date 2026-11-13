@@ -86,12 +86,82 @@
     {
       "n": 101,
       "url": "https://www.yanmar.com/us/energy/products/power_generator/on_site_power/ay/",
-      "accessedAt": "2026-11-03",
+      "accessedAt": "2026-11-13",
       "tier": "A",
       "quote": [
         "| | Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series"
       ],
       "file": "sources/yanmar/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.yanmar.com/global/powergeneration/products/diesel_generators/6ey26lw/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Model | 6EY26LW"
+      ],
+      "file": "sources/yanmar/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.yanmar.com/global/powergeneration/products/diesel_generators/8ey26lw/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Model | 8EY26LW"
+      ],
+      "file": "sources/yanmar/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.yanmar.com/global/powergeneration/products/diesel_generators/6ey33lw/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Model | 6EY33LW"
+      ],
+      "file": "sources/yanmar/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.yanmar.com/global/powergeneration/products/diesel_generators/6ey18alw/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Model | 6EY18ALW"
+      ],
+      "file": "sources/yanmar/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.yanmar.com/global/powergeneration/products/diesel_generators/6ey22alw/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Model | 6EY22ALW"
+      ],
+      "file": "sources/yanmar/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.yanmar.com/global/powergeneration/products/diesel_generators/ay20let/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Model | AY20L-ET"
+      ],
+      "file": "sources/yanmar/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.yanmar.com/global/marinecommercial/products/dual_fuel_engine/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| | Engine Model | 6EY26DF | 8EY26DF"
+      ],
+      "file": "sources/yanmar/108.md"
     }
   ],
   "confidence": "medium",
@@ -133,6 +203,119 @@
         "| Bore × Stroke (mm) | 155 × 180 | 155 × 180 | 155 × 180 | 155 × 180",
         "| Rated Speed (min -1 ) | 1,500 | 1,800 | 1,500 | 1,800",
         "| Total Weight (Gen. Set) (kg) | 9,300 | 9,300 | 9,350 | 9,350"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "6EY26LW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR",
+      "header": [
+        "| | Model | 6EY26LW"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Generator | Rated Output (kWe) | 1720",
+        "| No. of Poles (P) | 8 | 10",
+        "| Diesel Engine | Rated Output (kW(HP)) | 1840(2467)",
+        "| Rated Speed (min -1 ) | 750 | 720"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "8EY26LW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR",
+      "header": [
+        "| | Model | 8EY26LW"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Generator | Rated Output (kWe) | 2300",
+        "| No. of Poles (P) | 8 | 10",
+        "| Diesel Engine | Rated Output (kW(HP)) | 2450(3286)",
+        "| Rated Speed (min -1 ) | 750 | 720"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "6EY33LW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR",
+      "header": [
+        "| | Model | 6EY33LW"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Generator | Rated Output (kWe) | 3100",
+        "| No. of Poles (P) | 8 | 10",
+        "| Diesel Engine | Rated Output (kW(HP)) | 3360",
+        "| Rated Speed (min -1 ) | 750 | 720"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "6EY18ALW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR",
+      "header": [
+        "| | Model | 6EY18ALW"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Generator | Rated Output (kWe) | 750",
+        "| No. of Poles (P) | 6 | 8",
+        "| Diesel Engine | Rated Output (kW(HP)) | 800(1073)",
+        "| Rated Speed (min -1 ) | 1000 | 900"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "6EY22ALW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR",
+      "header": [
+        "| | Model | 6EY22ALW"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Generator | Rated Output (kWe) | 1250",
+        "| No. of Poles (P) | 6 | 8",
+        "| Diesel Engine | Rated Output (kW(HP)) | 1370(1863)",
+        "| Rated Speed (min -1 ) | 1000 | 900"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "AY20L-ET｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR",
+      "header": [
+        "| | Model | AY20L-ET"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Generator | Rated Output (kWe) | 500 | 520",
+        "| Diesel Engine | Rated Output (kW(HP)) | 544(730) | 565(758)",
+        "| Rated Speed (min -1 ) | 1500 | 1800"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Dual Fuel Engine｜Marine Commercial｜YANMAR",
+      "header": [
+        "| | Engine Model | 6EY26DF | 8EY26DF",
+        "| Method of ignition | Micro-pilot fuel compression"
+      ],
+      "rows": [
+        "| No. of cylinders | 6 | 8",
+        "| Displacement (L) | 122.6 | 163.5",
+        "| Output [ Shaft ] (kW) | 1533 | 2044",
+        "| Fuel | Natural gas / M.D.O | Natural gas / M.D.O / [H.F.O]"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "Dual Fuel Engine｜Marine Commercial｜YANMAR",
+      "header": [
+        "| | Engine Model | 6EY22ALDF | 6EY26LDF | 8EY26LDF",
+        "| Method of ignition | Micro-pilot fuel compression"
+      ],
+      "rows": [
+        "| No. of cylinders | 6 | 6 | 8",
+        "| Cylinder bore × stroke (mm) | 220 × 320 | 260 × 385",
+        "| Displacement (L) | 73.0 | 122.6 | 163.5",
+        "| Engine speed (min -1 ) | 900 | 720/750",
+        "| Output [Shaft] (kW) | 1100 | 1470 | 1960",
+        "| Mean effective pressure (Mpa) | 2.01 | 1.92/2.00"
       ]
     }
   ]
