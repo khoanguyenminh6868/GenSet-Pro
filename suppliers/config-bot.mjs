@@ -1015,6 +1015,8 @@ const dispLitres = (f) => litres(DISP_UNIT_L.test(f.label || "") && !/\d\s*(?:cc
 export const litres = (v) => {
   const s = String(v ?? ""), m = s.match(/\d{1,3}(?:[.,]\d{3})+(?!\d)|\d+(?:[.,]\d+)?/);
   if (!m) return null;
+  // Cubic inches (a US data sheet: "912 in3", "912 cu. in.", "912 CID") were read as cc.
+  if (/^\s*(in\s?[3³]|cu\.?\s*in\b|cid\b)/i.test(s.slice(m.index + m[0].length))) return Math.round(numOf(m[0]) * 0.016387064 * 1000) / 1000;
   const n = numOf(m[0]), unit = s.slice(m.index + m[0].length).match(/^\s*(cc|cm\s?[3³]|ml|l[íi]t|lit|liter|litre|ltr|L)\b/i)?.[1] || "";
   if (/^(cc|cm|ml)/i.test(unit)) return n / 1000;
   // In litres a figure written with three decimals ("9.726L", "1,116 L") is no thousand: an engine of 9726 L is none

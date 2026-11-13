@@ -24,6 +24,10 @@
     c_from_f: { label: "t (°C) = (t (°F) − 32) × 5/9", basis: "Định nghĩa thang nhiệt độ Fahrenheit", inputs: ["t_F"], unit: "°C", calc: (x) => ((x.t_F - 32) * 5) / 9 },
   };
 
+  // Inputs that cannot be (2026-11-13): a power factor over 1, an efficiency over 100 %, an odd number of poles. A
+  // temperature in °F may be zero or below.
+  const LIMITS = { pf: [(v) => v <= 1, "hệ số công suất không lớn hơn 1"], eff_pct: [(v) => v <= 100, "hiệu suất không lớn hơn 100%"], poles: [(v) => Number.isInteger(v) && v % 2 === 0, "số cực phải là số chẵn"] };
+  const SIGNED = new Set(["t_F"]);
   // One conversion → { value: number | [min, max], error? }. `known` maps "standard" inputs to their range.
   function compute(conv) {
     const f = F[conv?.formula];
@@ -38,7 +42,8 @@
         vals[name] = [st.min, st.max]; ranged.push(name);
       } else {
         const v = Number(inp.value);
-        if (!Number.isFinite(v) || v <= 0) return { error: `đầu vào ${name} không phải số dương` };
+        if (SIGNED.has(name) ? !Number.isFinite(v) : !Number.isFinite(v) || v <= 0) return { error: `đầu vào ${name} không phải số dương` };
+        if (LIMITS[name] && !LIMITS[name][0](v)) return { error: `đầu vào ${name} = ${v}: ${LIMITS[name][1]}` };
         vals[name] = v;
       }
     }
@@ -47,7 +52,9 @@
     const out = [0, 1].map((k) => f.calc(Object.fromEntries(Object.entries(vals).map(([n, v]) => [n, Array.isArray(v) ? v[k] : v]))));
     return { value: [Math.min(...out), Math.max(...out)] };
   }
-  const close = (a, b) => Math.abs(a - b) <= Math.max(0.005 * Math.abs(b), 0.05);
+  // The floor of 0.05 is the rounding of a figure to one decimal; a value under 2 (a power factor, a ratio) is written
+  // to two decimals, where 0.05 would take 0.80 for 0.85.
+  const close = (a, b) => Math.abs(a - b) <= Math.max(0.005 * Math.abs(b), Math.abs(b) < 2 ? 0.005 : 0.05);
   // A number written in the answer matches a computed value when it is that value rounded (to 0.5% or 0.05).
   const matches = (n, value) => (Array.isArray(value) ? value.some((v) => close(n, v)) : close(n, value));
 
