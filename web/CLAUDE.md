@@ -18,6 +18,7 @@ Chỉ bản web Vercel + bot Windows được dùng; không phát triển nhánh
 - MỌI chỗ ghi `docs` phải đổi `updated_at` (IndexedDB của web, doc-cache của bot, view đều dựa vào).
 - Mọi truy vấn phân trang phải có `.order(...)` (thiếu thì mất dòng).
 - `allTenders()` memo theo identity của state → luôn THAY object, đừng sửa tại chỗ.
+- `dbSet` trả `false` khi không ghi được (mất mạng, không quyền) và KHÔNG ném lỗi: chỗ nào báo "Đã chuyển/xoá/lưu…" phải kiểm giá trị trả về. `saveTracked` trả `true/false`, tự đưa màn hình về như đã lưu và báo "Chưa lưu được" (`{ revert: false }` giữ bản đang gõ như ghi chú, `{ quiet: true }` không báo). Test: `failSet` của `fake-shim.js`.
 - `analysis` trên web là bản rút gọn (`_lite`); cần thông số của gói KHÁC gói đang mở thì gọi `db.full` trước.
 - `hsmttext` tải theo từng tài liệu `hsmttext/<K>_<i>` (cả collection → Vercel 502).
 - `api/requests.js`: KHÔNG lọc yêu cầu theo cửa sổ thời gian ở `kind=all` (bot quên chữ ký đã giao, lượt con không báo lỗi được).

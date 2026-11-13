@@ -81,6 +81,22 @@ test("xoá gói ở tab Đã đóng: hỏi trước, ghi deleted/<TBMT> với up
   await expect(page.locator("#bulkBar")).toBeHidden();
 });
 
+test.describe("xoá gói khi DB không ghi được", () => {
+  test.use({ patch: { failSet: ["deleted"] } });
+  test("gói quay lại danh sách, báo chưa xoá được, không báo Đã xoá (Argon review 13/11)", async ({ page }) => {
+    await openApp(page);
+    await page.locator('#stageTabs [data-stage="closed"]').click();
+    const k = "IB2200004914";
+    await page.locator(`#grid .selbox[data-sel="${k}"]`).check();
+    await page.locator("#delSel").click();
+    await page.locator("#delOk").click();
+    await expect(page.locator(".toast", { hasText: "Chưa xoá được" })).toBeVisible();
+    await expect(page.locator(".toast", { hasText: "Đã xoá" })).toHaveCount(0);
+    await expect.poll(() => gridKeys(page)).toEqual(byPubDesc(CLOSED));
+    expect(await writesOf(page, "deleted/" + k)).toHaveLength(0);
+  });
+});
+
 test.describe("tạo dự án", () => {
   test.beforeEach(async ({ page }) => { await page.clock.install({ time: new Date(NOW) }); });
   test("Tạo dự án: tên bắt buộc, ghi manual/DA-… với mã DA-<ngày>-01, mở dự án, hiện ở tab Dự án", async ({ page }) => {
