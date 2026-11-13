@@ -23,11 +23,11 @@ const cat = {
 };
 const facts = () => new Map([["engine:E1", [{ key: "disp" }, { key: "cyl" }]], ["engine:E3", [{ key: "cyl" }]], ["alternator:ALT1", [{ key: "insul" }]]]);
 const suppliers = [
-  { id: "cummins-inc", role: "genset_oem", names: { en: "Cummins Inc.", brands: ["Cummins"] } },
-  { id: "dcec", role: "engine_maker", names: { en: "Dongfeng Cummins Engine", brands: ["Cummins"] } },
-  { id: "dealer", role: "distributor", names: { en: "Cummins dealer", brands: ["Cummins"] } },
-  { id: "weichai", role: "engine_maker", names: { en: "Weichai Power", brands: ["Weichai"] } },
-  { id: "oem-a", role: "genset_oem", names: { en: "OEM A" } }, { id: "oem-b", role: "genset_oem", names: { en: "OEM B" } },
+  { id: "cummins-inc", website: "https://cummins-inc.example", role: "genset_oem", names: { en: "Cummins Inc.", brands: ["Cummins"] } },
+  { id: "dcec", website: "https://dcec.example", role: "engine_maker", names: { en: "Dongfeng Cummins Engine", brands: ["Cummins"] } },
+  { id: "dealer", website: "https://dealer.example", role: "distributor", names: { en: "Cummins dealer", brands: ["Cummins"] } },
+  { id: "weichai", website: "https://weichai.example", role: "engine_maker", names: { en: "Weichai Power", brands: ["Weichai"] } },
+  { id: "oem-a", website: "https://oem-a.example", role: "genset_oem", names: { en: "OEM A" } }, { id: "oem-b", website: "https://oem-b.example", role: "genset_oem", names: { en: "OEM B" } },
 ];
 
 test("codesOfText / demandOf: requirement codes an HSMT names, by the tender's power band", () => {
@@ -66,4 +66,22 @@ test("gapReport: NCC trong spec-none.json (đã tìm không ra) không vào hàn
   assert.ok(!r.queue.some((q) => q.supplierId === first));
   // Vẫn hiện trong danh sách hãng nên tìm (để biết vì sao thiếu), chỉ không bị gửi lại.
   assert.ok(r.targets.some((t) => t.supplierIds.includes(first)));
+});
+
+test("gapReport: hãng thiếu website bị bỏ khỏi hàng chờ, hãng kế tiếp thế chỗ, và báo cáo ghi rõ hãng thiếu website", () => {
+  const base = { docs, suppliers, modelFacts: facts, cat, now: new Date("2026-11-10T00:00:00Z") };
+  const all = gapReport(base);
+  assert.ok(all.queue.some((q) => q.supplierId === "cummins-inc") && all.noWebsite.length === 0);
+  const noSite = suppliers.map((s) => (["cummins-inc", "dcec"].includes(s.id) ? { ...s, website: "  " } : s));
+  const r = gapReport({ ...base, suppliers: noSite });
+  // Hãng động cơ Cummins chỉ có hai hồ sơ, cả hai không có website: không gửi, không chiếm chỗ.
+  assert.ok(!r.queue.some((q) => ["cummins-inc", "dcec"].includes(q.supplierId)));
+  assert.equal(r.queue.length, all.queue.length - 1);
+  assert.deepEqual(r.noWebsite.map((x) => [x.name, x.supplierIds]), [["Cummins", ["cummins-inc", "dcec"]]]);
+  assert.match(reportText(r), /BỎ QUA VÌ HỒ SƠ CHƯA CÓ WEBSITE.*Cummins \(cummins-inc, dcec\)/);
+  assert.doesNotMatch(reportText(all), /CHƯA CÓ WEBSITE/);
+  // Một hãng có hai hồ sơ, một có website: gửi cho hồ sơ có website.
+  const one = gapReport({ ...base, suppliers: suppliers.map((s) => (s.id === "cummins-inc" ? { ...s, website: "" } : s)) });
+  assert.equal(one.queue.find((q) => q.name === "Cummins").supplierId, "dcec");
+  assert.equal(one.noWebsite.length, 0);
 });
