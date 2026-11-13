@@ -31,7 +31,7 @@ import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
 import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn, clausesOf } from "./reqcodes.mjs";
 import { ratingsOf, stamfordRatings, altSheetAttrs } from "./ratings.mjs";
-import { noteApiSpend, costOf, switchToPlan, taskEnv } from "./api-budget.mjs";
+import { apiMeter, switchToPlan, taskEnv } from "./api-budget.mjs";
 import * as MEMO from "./web-memo.mjs";
 import * as RG from "./read-guard.mjs";
 import * as NG from "./named-genset.mjs";
@@ -3897,13 +3897,15 @@ const CLAUDE_TIMEOUT = 40 * 60e3;
 // task: "config" for Gợi ý cấu hình, which Cấu hình hệ thống may put on the monthly plan (taskEnv); "" for Tìm NCC and
 // Tìm Thông Số (the API key while the budget allows).
 function runClaude(dir, input, task = "") {
-  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY, t0 = Date.now();
-  return runClaudeOnce(dir, input, env).then((r) => {
-    noteApiSpend(costOf(r.stdout), "config", api, t0);
+  const env = taskEnv(task), api = !!env.ANTHROPIC_API_KEY;
+  // The spend book follows the run message by message (a run killed at CLAUDE_TIMEOUT is counted too).
+  const meter = apiMeter("config", api);
+  return runClaudeOnce(dir, input, env, (d) => meter.data(d)).then((r) => {
+    meter.finish();
     return api && switchToPlan(r.stdout + r.stderr, "config") ? runClaude(dir, input, task) : r;
   });
 }
-function runClaudeOnce(dir, input, env = process.env) {
+function runClaudeOnce(dir, input, env = process.env, onData = () => {}) {
   const t0 = Date.now(), args = ["-p", "--permission-mode", "auto", "--output-format", "stream-json", "--verbose", "--model", process.env.GENBID_CONFIG_MODEL || "opus",
     "--strict-mcp-config", "--disable-slash-commands", "--tools", "Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch", "WebFetch"];
   return new Promise((ok) => {
@@ -3912,7 +3914,7 @@ function runClaudeOnce(dir, input, env = process.env) {
     const p = spawn(CLAUDE, args, { cwd: dir, windowsHide: true, env });
     const timer = setTimeout(() => { late = true; p.kill(); }, CLAUDE_TIMEOUT);
     const end = (status, error) => { if (done) return; done = true; clearTimeout(timer); if (buf) out += stamp(buf); ok({ stdout: out, stderr: err, status, error }); };
-    p.stdout.setEncoding("utf8").on("data", (d) => { buf += d; for (let i; (i = buf.indexOf("\n")) >= 0; buf = buf.slice(i + 1)) out += stamp(buf.slice(0, i)); });
+    p.stdout.setEncoding("utf8").on("data", (d) => { onData(d); buf += d; for (let i; (i = buf.indexOf("\n")) >= 0; buf = buf.slice(i + 1)) out += stamp(buf.slice(0, i)); });
     p.stderr.setEncoding("utf8").on("data", (d) => { err += d; });
     p.on("error", (e) => end(null, e));
     p.on("close", (code) => end(code, late ? new Error(`quá ${CLAUDE_TIMEOUT / 60e3} phút`) : null));

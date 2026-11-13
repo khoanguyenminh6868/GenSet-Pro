@@ -736,6 +736,73 @@ function afterShare(e, at) {
   if (!e.t0 || !(t0 < at) || !(t > t0)) return 1;
   return Math.min(1, Math.max(0, (t - at) / (t - t0)));
 }
+// API price per million tokens (Khoa 2026-11-13: "số tiền sử dụng API ... cần cập nhật mỗi khi sử dụng"): [input,
+// output, cache read, cache write 5 min, cache write 1 h]. Opus 5.5 checked against a real result line (2.5240332 USD).
+// A model not listed is priced as Opus 5.5; the run's total_cost_usd, when it comes, corrects the estimate.
+const API_PRICE = {
+  "claude-opus-5-5": [4, 20, 0.2, 5, 8], "claude-sonnet-5-5": [2, 10, 0.1, 2.5, 4],
+  "claude-fable-5-2": [8, 40, 0.2, 10, 16], "claude-haiku-5-5": [0.1, 0.5, 0.01, 0.125, 0.2],
+};
+const WEB_SEARCH_USD = 0.01;
+// Output tokens per character of what a run wrote (text + tool input), hidden thinking included: 1.04–1.33 on six
+// Gợi ý cấu hình runs of 2026-11-13 (output_tokens of the result line / characters).
+const OUT_PER_CHAR = 1.15;
+// USD of one API message's usage.
+function usageUsd(model, u) {
+  if (!u) return 0;
+  const p = API_PRICE[String(model || "").replace(/\[.*\]$/, "")] || API_PRICE["claude-opus-5-5"];
+  const c = u.cache_creation || {}, h1 = Number(c.ephemeral_1h_input_tokens) || 0;
+  const m5 = c.ephemeral_5m_input_tokens != null ? Number(c.ephemeral_5m_input_tokens) || 0 : Math.max(0, (Number(u.cache_creation_input_tokens) || 0) - h1);
+  return ((Number(u.input_tokens) || 0) * p[0] + (Number(u.output_tokens) || 0) * p[1] + (Number(u.cache_read_input_tokens) || 0) * p[2]
+    + m5 * p[3] + h1 * p[4]) / 1e6 + (Number(u.server_tool_use?.web_search_requests) || 0) * WEB_SEARCH_USD;
+}
+// The spend of one claude -p --output-format stream-json run, written to the spend book while it runs: every assistant
+// message adds its token cost, and once the estimate is `step` USD above what was written, write(rec) gets the difference
+// {usd, t0} (t0: when the part it covers began, for afterShare). A run killed half way (Tìm thông số "quá 40 phút",
+// 2026-11-13: 22 runs, ~15 USD never written because only the result line was read) is still counted. finish() writes
+// what is left: total_cost_usd of the result line when there is one (it may be below the estimate: then a negative
+// line), else the estimate. Lines may carry config-bot's "[Ns] " prefix. stream-json repeats an assistant message once
+// per content block with growing usage: each message id counts once, with its largest numbers.
+function spendMeter(write, { step = 0.05, now = () => new Date(), start = now() } = {}) {
+  const msgs = new Map();
+  let est = 0, logged = 0, last = start, total = null, buf = "";
+  const put = (usd) => {
+    const r = Math.round(usd * 1e4) / 1e4;
+    if (!r) return;
+    const t = now();
+    write({ usd: r, t0: last.toISOString() }, t); logged += r; last = t;
+  };
+  const line = (l) => {
+    if (!l.includes('"type":"assistant"') && !l.includes('"type":"result"')) return;
+    let j; try { j = JSON.parse(l.slice(l.indexOf("{"))); } catch { return; }
+    if (j?.type === "result") { if (Number.isFinite(Number(j.total_cost_usd))) total = Number(j.total_cost_usd); return; }
+    const m = j?.type === "assistant" && j.message;
+    if (!m?.usage) return;
+    const id = m.id || `n${msgs.size}`, old = msgs.get(id), u = { ...m.usage };
+    if (old) for (const k of ["input_tokens", "output_tokens", "cache_read_input_tokens", "cache_creation_input_tokens"]) u[k] = Math.max(Number(u[k]) || 0, Number(old.u[k]) || 0);
+    // stream-json gives output_tokens as at the message's start; what it wrote (text, tool input; one block per event)
+    // tells the rest: OUT_PER_CHAR tokens a character, hidden thinking included.
+    const chars = (old?.chars || 0) + (m.content || []).reduce((n, b) => n + (b.type === "text" ? String(b.text || "").length
+      : b.type === "tool_use" ? JSON.stringify(b.input || {}).length : b.type === "thinking" ? String(b.thinking || "").length : 0), 0);
+    const usd = usageUsd(m.model, { ...u, output_tokens: Math.max(Number(u.output_tokens) || 0, Math.round(chars * OUT_PER_CHAR)) });
+    est += usd - (old?.usd || 0);
+    msgs.set(id, { u, usd, chars });
+    if (est - logged >= step) put(est - logged);
+  };
+  return {
+    // Feeds stdout as it comes (any chunking).
+    data(d) { buf += d; for (let i; (i = buf.indexOf("\n")) >= 0; buf = buf.slice(i + 1)) line(buf.slice(0, i)); },
+    line,
+    finish(rest = "") {
+      if (buf) { line(buf); buf = ""; }
+      if (rest) for (const l of String(rest).split(/\r?\n/)) line(l);
+      const fin = total ?? est;
+      if (Math.abs(fin - logged) >= 1e-4) put(fin - logged);
+      return { usd: fin, logged, total, est };
+    },
+    get logged() { return logged; },
+  };
+}
 const parseJson = (t) => { try { const j = JSON.parse(String(t || "").replace(/^﻿/, "")); return j && typeof j === "object" ? j : null; } catch { return null; } };
 // The task of a request kind in Cấu hình hệ thống: Phân tích, Đối chiếu hồ sơ (HSDT and TLKT); others have none.
 const AI_TASK_OF = { analysis: "analysis", compare: "compare", tlkt: "compare" };
@@ -867,7 +934,7 @@ const withNormHighlights = (result) => [...(Array.isArray(result?.highlights) ? 
 
 module.exports = {
   NORM_BANDS, normPower, noiseLimits, fuelLimits, normHighlights, withNormHighlights,
-  feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF,
+  feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, API_PRICE, usageUsd, spendMeter,
   sig, isDecisionFile, HIST_PREFIX, has, GENSET_RE, PLANT_RE, SET_RE, isGenset, vnTime, histUrl, histTender,
   POWER_RE, POWER_PAIR_RE, histNum, histPower, histNeedsConfig, CONFIG_TEXT_MAX, CONFIG_KEY, configText, setsOf,
   histConfigOf, histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, SPEC_TITLE_RE, plainVi, chapterV, specsPick, specsFinish,
