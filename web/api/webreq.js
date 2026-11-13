@@ -18,6 +18,9 @@ export default async function handler(req, res) {
   const member = await memberFrom(req);
   if (!member) return res.status(401).json({ error: "Chưa đăng nhập hoặc chưa được cấp quyền." });
   const coll = req.body?.coll;
+  // Cấu hình hệ thống (settings/ai), the superadmin only (Khoa, 2026-11-13): API key or monthly plan for each task, and
+  // the API money spent this period (corrected by hand). The bot reads it with its heartbeat (api/requests.js).
+  if (coll === "settings") return saveAiSettings(req, res, member);
   const items = Array.isArray(req.body?.items) ? req.body.items : [];
   if (!COLLS.has(coll)) return res.status(400).json({ error: "Loại yêu cầu không hợp lệ." });
   // Tìm Thông Số of a supplier (specreq/<supplier id>, config-bot.mjs specJob): the superadmin only (Khoa, 2026-11-06).
@@ -51,6 +54,31 @@ export default async function handler(req, res) {
   const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, "x-actor": member.email, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify(rows) });
   if (!w.ok) return res.status(502).json({ error: `Lưu thất bại (HTTP ${w.status}): ${(await w.text()).slice(0, 200)}` });
   res.json({ saved: rows.map((r) => ({ key: r.id, data: r.data })) });
+}
+
+// POST { coll: "settings", ai: { use: { analysis|config|bidprice|compare: "api"|"plan" }, switchAtUsd, spentUsd } }.
+// spentUsd (optional): the spend this period as of now; the bot adds what it spends after `spent.at`.
+const AI_TASKS = ["analysis", "config", "bidprice", "compare"];
+async function saveAiSettings(req, res, member) {
+  if (member.role !== "superadmin") return res.status(403).json({ error: "Chỉ Superadmin được đổi cấu hình hệ thống." });
+  const ai = req.body?.ai || {};
+  const usd = (v) => (v === "" || v == null ? null : Number.isFinite(Number(v)) && Number(v) >= 0 && Number(v) < 100000 ? Math.round(Number(v) * 100) / 100 : NaN);
+  const sw = usd(ai.switchAtUsd), sp = usd(ai.spentUsd);
+  if (Number.isNaN(sw) || Number.isNaN(sp)) return res.status(400).json({ error: "Số tiền không hợp lệ." });
+  const at = new Date().toISOString();
+  const q = await fetch(`${SB_URL}/rest/v1/docs?select=data&coll=eq.settings&id=eq.ai`, { headers: sbHeaders });
+  if (!q.ok) return res.status(502).json({ error: `Đọc thất bại (HTTP ${q.status})` });
+  const cur = (await q.json())[0]?.data || {};
+  const data = {
+    ...cur,
+    use: Object.fromEntries(AI_TASKS.map((k) => [k, ai.use?.[k] === "plan" ? "plan" : "api"])),
+    ...(sw != null ? { switchAtUsd: sw } : {}),
+    ...(sp != null ? { spent: { usd: sp, at } } : {}),
+    updatedAt: at, by: member.email,
+  };
+  const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, "x-actor": member.email, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify([{ coll: "settings", id: "ai", data, updated_at: at }]) });
+  if (!w.ok) return res.status(502).json({ error: `Lưu thất bại (HTTP ${w.status}): ${(await w.text()).slice(0, 200)}` });
+  res.json({ saved: [{ key: "ai", data }] });
 }
 
 // Only model / make strings of the configuration, its size label and rank.

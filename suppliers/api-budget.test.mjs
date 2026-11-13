@@ -1,6 +1,15 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { costOf } from "./api-budget.mjs";
+import { costOf, aiUse } from "./api-budget.mjs";
+
+test("aiUse: Cấu hình hệ thống đặt gói tháng cho config/bidprice; còn lại API", () => {
+  const s = '﻿{"use":{"config":"plan","bidprice":"api"}}';
+  assert.equal(aiUse("config", s), "plan");
+  assert.equal(aiUse("bidprice", s), "api");
+  assert.equal(aiUse("", s), "api");
+  assert.equal(aiUse("config", "{hỏng"), "api");
+  assert.equal(aiUse("config", ""), "api");
+});
 
 // Shortened from a real run (2026-11-12, Gợi ý cấu hình, stdout as config-bot stores it: "[Ns] " before every line).
 // The newer CLI writes "type":"result" after other keys, so the line does not start with {"type":"result".

@@ -693,25 +693,39 @@ function autoConfigSkip(bidName, result = null) {
 
 // ---------- API key budget (the book .anthropic-api-spend.jsonl), cut out of apiBudget unchanged (T5 2026-11-13) ----------
 // budgetText: .anthropic-api-budget.json ("" when none); spendText: the book ("" when none); at: the time (Date).
-function apiBudgetOf(budgetText, spendText, at) {
+// settingsText (optional): .genbid-ai-settings.json, Cấu hình hệ thống on the web (settings/ai; Khoa 2026-11-13). Its
+// switchAtUsd wins over the budget file; its spent {usd, at} (corrected by hand) replaces the book up to `at` when `at`
+// is in this period: spent = usd + what the book has after `at`, and an "exhausted" before `at` no longer counts.
+function apiBudgetOf(budgetText, spendText, at, settingsText = "") {
   let b = { monthlyUsd: 100, resetDay: 2, switchAtUsd: 90 };
   try { b = { ...b, ...JSON.parse(String(budgetText).replace(/^﻿/, "")) }; } catch {}
+  const s = parseJson(settingsText);
+  if (Number(s?.switchAtUsd) > 0) b.switchAtUsd = Number(s.switchAtUsd);
   const now = at;
   let since = new Date(now.getFullYear(), now.getMonth(), b.resetDay);
   if (now < since) since = new Date(now.getFullYear(), now.getMonth() - 1, b.resetDay);
-  let spent = 0, exhausted = false;
+  const fix = s?.spent && Number(s.spent.usd) >= 0 && new Date(s.spent.at) >= since && new Date(s.spent.at) <= now ? s.spent : null;
+  const from = fix ? new Date(fix.at) : since;
+  let spent = fix ? Number(fix.usd) : 0, exhausted = false;
   try { // as before: a line that is valid JSON but not an object ("null") ends the reading, the sum so far counts
     for (const l of String(spendText).split(/\r?\n/)) {
       let e; try { e = JSON.parse(l); } catch { continue; }
-      if (!(new Date(e.t) >= since)) continue;
+      if (!(fix ? new Date(e.t) > from : new Date(e.t) >= from)) continue;
       spent += Number(e.usd) || 0; if (e.exhausted) exhausted = true;
     }
   } catch {}
   return { ...b, since, spent: Math.round(spent * 100) / 100, exhausted, ok: !exhausted && spent < b.switchAtUsd };
 }
+const parseJson = (t) => { try { const j = JSON.parse(String(t || "").replace(/^﻿/, "")); return j && typeof j === "object" ? j : null; } catch { return null; } };
+// The task of a request kind in Cấu hình hệ thống: Phân tích, Đối chiếu hồ sơ (HSDT and TLKT); others have none.
+const AI_TASK_OF = { analysis: "analysis", compare: "compare", tlkt: "compare" };
+// "plan" when Cấu hình hệ thống says the task goes on the monthly plan; else "api" (the API key while the budget allows).
+function aiUseOf(settingsText, task) {
+  return task && parseJson(settingsText)?.use?.[task] === "plan" ? "plan" : "api";
+}
 
 module.exports = {
-  feedMerge, autoConfigSkip, apiBudgetOf,
+  feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF,
   sig, isDecisionFile, HIST_PREFIX, has, GENSET_RE, PLANT_RE, SET_RE, isGenset, vnTime, histUrl, histTender,
   POWER_RE, POWER_PAIR_RE, histNum, histPower, histNeedsConfig, CONFIG_TEXT_MAX, CONFIG_KEY, configText, setsOf,
   histConfigOf, histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, SPEC_TITLE_RE, plainVi, chapterV, specsPick, specsFinish,

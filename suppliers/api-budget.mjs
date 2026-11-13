@@ -10,6 +10,25 @@ export const API_OUT = /credit balance is too low|reached your specified api usa
 
 export const viaApi = () => !!process.env.ANTHROPIC_API_KEY;
 
+// Cấu hình hệ thống trên web (settings/ai, Khoa 2026-11-13): GenBid-Bot.ps1 copies it to GENBID_AI_SETTINGS_FILE.
+// "plan" when it puts `task` (config, bidprice) on the monthly plan; else "api" (the API key while the budget allows).
+export function aiUse(task, text) {
+  if (text === undefined) { try { text = fs.readFileSync(process.env.GENBID_AI_SETTINGS_FILE || "", "utf8"); } catch { text = ""; } }
+  try { return JSON.parse(String(text).replace(/^﻿/, ""))?.use?.[task] === "plan" ? "plan" : "api"; } catch { return "api"; }
+}
+// The environment for one claude -p run of `task`: without the API key (and with the monthly plan's token when this PC
+// has no /login) when Cấu hình hệ thống says the monthly plan; else this process's own.
+export function taskEnv(task) {
+  if (!process.env.ANTHROPIC_API_KEY || aiUse(task) !== "plan") return process.env;
+  const env = { ...process.env };
+  delete env.ANTHROPIC_API_KEY;
+  const tok = process.env.GENBID_CLAUDE_TOKEN_FILE;
+  if (!fs.existsSync(path.join(os.homedir(), ".claude", ".credentials.json")) && tok) {
+    try { env.CLAUDE_CODE_OAUTH_TOKEN = fs.readFileSync(tok, "utf8").trim().split(/\r?\n/)[0]; } catch {}
+  }
+  return env;
+}
+
 function append(rec) {
   const f = process.env.GENBID_API_SPEND_FILE;
   if (!f) return;
