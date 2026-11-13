@@ -142,9 +142,14 @@ function specsPick(files, web) {
     // E-HSMT ….pdf" were read in place of chapter V (2026-11-04, a dozen tenders).
     return CFG_SKIP_RE.test(x) || /h(ợ|o)p\s*(đ|d)(ồ|o)ng|(^|[^a-z])h(đ|d)([^a-z]|$)|b(ả|a)ng\s*gi(á|a)|bi(ể|e)u\s*m(ẫ|a)u|b(á|a)o\s*c(á|a)o|(^|[^a-z])bc\s*l(ậ|a)p/i.test(x);
   };
-  const cand = files.filter((x) => { const nm = x.name.normalize("NFC"); return (CFG_FILE_RE.test(nm) || SHORT.test(nm) || YCKT_NAME.test(nm) || CH5.test(nm) || HSMT_NAME.test(nm)) && !skipName(nm) && (!web || !HSMT_NAME.test(nm)); });
+  // A name that says chapter V or the technical requirements is that chapter even with "HSMT" in it ("Chương V - TCKT -
+  // HSMT MPĐ 12KVA.pdf", IB2200008717; "E-HSMT - MPD (GD3) - Yeu cau ve ky thuat.pdf", IB2200091251): before 2026-11-13
+  // it counted as the whole E-HSMT, so 25 of 1,472 tenders also read the whole E-HSMT, "Mục 3", the contract (130 MB,
+  // 1,510 pages), and with a webform chapter it was dropped ("Chuong 3" read in its place, IB2600588204).
+  const named = (nm) => YCKT_NAME.test(nm) || CH5.test(nm), whole = (nm) => HSMT_NAME.test(nm) && !named(nm);
+  const cand = files.filter((x) => { const nm = x.name.normalize("NFC"); return (CFG_FILE_RE.test(nm) || SHORT.test(nm) || named(nm) || HSMT_NAME.test(nm)) && !skipName(nm) && (!web || !whole(nm)); });
   // A file of its own for chapter V / the technical requirements: the whole E-HSMT (often a 40–100 MB scan) is not needed.
-  const own = cand.filter((x) => !HSMT_NAME.test(x.name.normalize("NFC")));
+  const own = cand.filter((x) => !whole(x.name.normalize("NFC")));
   // Nothing else: in a chào hàng cạnh tranh rút gọn (HSYC) chapter III holds the technical requirements ("Chương III.pdf",
   // "Chương IV.pdf" = draft contract, "QĐ ….pdf"; IB2200044785, IB2300393435 and a dozen more).
   const ch3 = files.filter((x) => { const nm = x.name.normalize("NFC"); return /ch(ư|u)?(ơ|o|ô)ng[\s_.-]*(iii|3)(?![ivx\d])/i.test(nm) && !DECISION.test(nm) && !/h(ợ|o)p\s*(đ|d)(ồ|o)ng|tc(đ|d)g|ti(ê|e)u\s*chu(ẩ|a)n\s*(đ|d)(á|a)nh/i.test(nm); });

@@ -27,13 +27,28 @@ test("tên tệp dạng tách dấu (NFD) vẫn nhận ra quyết định", () =
 test("có tệp Chương V riêng thì không đọc cả bộ E-HSMT", () => {
   assert.deepEqual(pick(["Chương V. Yêu cầu kỹ thuật.pdf", "E-HSMT.pdf", "Hồ sơ mời thầu.pdf"]).pick, ["Chương V. Yêu cầu kỹ thuật.pdf"]);
 });
-const TODO_HSMT_NAME = "specsPick: tệp tên vừa nói Chương V/YCKT vừa có chữ 'HSMT' bị coi là HSMT cả bộ (own bỏ, webform thì loại) — đo 13/11 trên genbid-work\\specs: 102/1.472 gói có tên như vậy, 25 gói chọn thêm tệp HSMT cả bộ / 'Điều kiện cụ thể'";
-test("tên tệp Chương V có chữ 'HSMT' vẫn là tệp Chương V riêng: không đọc thêm HSMT cả bộ (IB2200008717)", { todo: TODO_HSMT_NAME }, () => {
+// Fix G2 (13/11): đo trên genbid-work\specs, 102/1.472 gói có tệp tên vừa Chương V/YCKT vừa 'HSMT'; 25 gói đọc thêm HSMT cả
+// bộ / Mục 3 / hợp đồng. Sau sửa đúng 25 gói đó đổi lựa chọn, không gói nào khác.
+test("tên tệp Chương V có chữ 'HSMT' vẫn là tệp Chương V riêng: không đọc thêm HSMT cả bộ (IB2200008717)", () => {
   assert.deepEqual(pick(["Chương V - TCKT - HSMT MPĐ 12KVA (1).pdf", "Chương V - TCKT - HSMT MPĐ 12KVA.pdf", "HSMT MPĐ 12KVA.pdf"]).pick,
     ["Chương V - TCKT - HSMT MPĐ 12KVA (1).pdf", "Chương V - TCKT - HSMT MPĐ 12KVA.pdf"]);
 });
-test("khoá hành vi: hôm nay IB2200008717 đọc cả 3 tệp (2 tệp Chương V và HSMT cả bộ)", () => {
-  assert.equal(pick(["Chương V - TCKT - HSMT MPĐ 12KVA (1).pdf", "Chương V - TCKT - HSMT MPĐ 12KVA.pdf", "HSMT MPĐ 12KVA.pdf"]).pick.length, 3);
+test("tệp Chương V tên 'E-HSMT' không kéo theo Mục 3 / chương VIII / HSMT cả bộ (IB2400558775, IB2300268389, IB2400428063)", () => {
+  assert.deepEqual(pick(["BÁO CÁO LẬP E-HSMT MÁY PHÁT ĐIỆN.pdf", "CHƯƠNG V E-HSMT MÁY PHÁT ĐIỆN.pdf", "MỤC 3 CHƯƠNG E E-HSMT MÁY PHÁT ĐIỆN.pdf"]).pick, ["CHƯƠNG V E-HSMT MÁY PHÁT ĐIỆN.pdf"]);
+  assert.deepEqual(pick(["E-HSMT_XL_gói 3 - CHUONG V.pdf", "E-HSMT_XL_gói 3 -CHUONG VIII.pdf"]).pick, ["E-HSMT_XL_gói 3 - CHUONG V.pdf"]);
+  assert.deepEqual(pick(["E-HSMT Chuong V (1).pdf", "E-HSMT.pdf"]).pick, ["E-HSMT Chuong V (1).pdf"]);
+  assert.deepEqual(pick(["HSMT.pdf", "HSMT+phạm vi cung cấp chi tiết + yêu cầu kỹ thuật.rar"]).pick, ["HSMT+phạm vi cung cấp chi tiết + yêu cầu kỹ thuật.rar"]);
+});
+test("có webform: tệp Chương V tên 'E-HSMT' vẫn đọc, không lấy 'Chuong 3' thay (IB2600588204, IB2600564645)", () => {
+  const f = ["14.1 Mẫu số 4A E-HSMT hàng hóa 1 túi -22.10.2026 ( Chuong 3).docx", "14.2 Mẫu số 4A E-HSMT hàng hóa 1 túi -22.10.2026 ( Chuong 5 - Ky Thuat).docx", "E-HSMT hàng hóa 1 túi May phat dien.pdf", "IB2600588204_QuyetDinhPheDuyetHSMT_23_10_2026.pdf"];
+  assert.deepEqual(pick(f).pick, [f[1]]);
+  assert.deepEqual(pick(f, "web").pick, [f[1]]);
+  assert.deepEqual(pick(["20261023_VCB ĐĐN_E-HSMT - Điều kiện cụ thể của hợp đồng.pdf", "20261023_VCB ĐĐN_E-HSMT-Chương V - Yêu cầu kỹ thuật.pdf", "IB2600564645_QuyetDinhPheDuyetHSMT_28_10_2026.pdf"], "web").pick,
+    ["20261023_VCB ĐĐN_E-HSMT-Chương V - Yêu cầu kỹ thuật.pdf"]);
+});
+test("tên chỉ là HSMT cả bộ vẫn là cả bộ: 'Hồ sơ mời thầu', 'HO SO CHCT', 'E-HSMT.pdf' (Khoa 04/11)", () => {
+  assert.deepEqual(pick(["E-HSMT.pdf", "Hồ sơ mời thầu.pdf"], "web").pick, []);
+  assert.deepEqual(pick(["Chuong V. HSMT_CHCT QM.pdf", "HSMT_CHCT QM.pdf"]).pick, ["Chuong V. HSMT_CHCT QM.pdf"]);
 });
 test("'Phụ lục bảng giá hợp đồng' không đọc thay Chương V (IB2200029877)", () => {
   assert.deepEqual(pick(["PHỤ LỤC BẢNG GIÁ HỢP ĐỒNG.pdf", "Yeu cau ky thuat 16 (1).pdf", "Yeu cau ky thuat 16.pdf"]).pick, ["Yeu cau ky thuat 16 (1).pdf", "Yeu cau ky thuat 16.pdf"]);
@@ -50,7 +65,7 @@ test("chỉ có HSMT cả bộ thì đọc nó (IB2300030459); đã có Chương
 test("có webform Chương V: vẫn đọc tệp yêu cầu kỹ thuật riêng", () => {
   assert.deepEqual(pick(["03. Yêu cầu về kỹ thuật.rar", "05. Dự thảo hợp đồng.pdf"], "web").pick, ["03. Yêu cầu về kỹ thuật.rar"]);
 });
-test("tệp 'E-HSMT - … - Yeu cau ve ky thuat' là YCKT riêng: đọc nó, không đọc 'Dieu kien cu the' (IB2200091251)", { todo: TODO_HSMT_NAME }, () => {
+test("tệp 'E-HSMT - … - Yeu cau ve ky thuat' là YCKT riêng: đọc nó, không đọc 'Dieu kien cu the' (IB2200091251)", () => {
   const files = ["E-HSMT - MPD (GD3) - Yeu cau ve ky thuat.pdf", "E-HSMT - MPD (GD3) - Du thao hop dong.pdf", "E-HSMT - MPD (GD3) - Dieu kien cu the.pdf"];
   assert.deepEqual(pick(files).pick, ["E-HSMT - MPD (GD3) - Yeu cau ve ky thuat.pdf"]);
   assert.deepEqual(pick(files, "web").pick, ["E-HSMT - MPD (GD3) - Yeu cau ve ky thuat.pdf"]);
