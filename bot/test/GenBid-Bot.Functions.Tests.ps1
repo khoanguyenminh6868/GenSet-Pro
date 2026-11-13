@@ -15,7 +15,7 @@ Describe 'GenBid-Bot.ps1: hàm' {
             $global:Root = $r; $global:Utf8 = $global:Utf8NoBom
             $global:IngestTokenFile = "$r/.genbid-ingest-token"; $global:ClaudeTokenFile = "$r/.claude-bot-token"; $global:ApiKeyFile = "$r/.anthropic-api-key"
             $global:ApiSpendFile = "$r/.anthropic-api-spend.jsonl"; $global:ApiBudgetFile = "$r/.anthropic-api-budget.json"
-            $global:WorkerState = "$r/.hsmt-worker-state.json"; $global:LockFile = "$r/.hsmt-worker.lock"; $global:PauseFile = "$r/.genbid-bot-pause.json"
+            $global:WorkerState = "$r/.hsmt-worker-state.json"; $global:LockFile = "$r/hsmt-worker.lock"; $global:PauseFile = "$r/.genbid-bot-pause.json"
             $global:LogDir = "$r/genbid-bot-logs"; New-Item -ItemType Directory -Force $global:LogDir | Out-Null
             $global:Endpoint = 'http://fake/api/requests?kind=all'; $global:PollSeconds = 15; $global:RunTimeoutMinutes = 180; $global:LimitPauseMinutes = 30
             $global:Job = $null; $global:Lane = ''; $global:PauseUntil = [datetime]::MinValue; $global:PauseReason = ''
@@ -177,7 +177,7 @@ Describe 'GenBid-Bot.ps1: hàm' {
         }
     }
 
-    Context 'Get-Requests: chữ ký yêu cầu "<loại>:<TBMT>|<requestedAt>"' {
+    Context 'Get-Requests: chữ ký yêu cầu "loại:TBMT|requestedAt"' {
         BeforeEach { New-Root | Out-Null }
         It 'mỗi loại yêu cầu ra chữ ký và collection *req đúng' {
             $p = '{"files":[{"key":"K1","notifyNo":"IB1","sourceUrl":"u","bidName":"n","requestedAt":"t1"}],"analysis":[{"key":"K2","notifyNo":"IB2","requestedAt":"t2"}],"translation":[{"key":"K3","notifyNo":"IB3","requestedAt":"t3"}],"compare":[{"key":"K4","requestedAt":"t4"}],"tlkt":[{"key":"K5","requestedAt":"t5"}],"hsdt":[{"key":"K6","requestedAt":"t6"}],"sync":{"pending":true,"requestedAt":"t7"}}' | ConvertFrom-Json
@@ -292,10 +292,10 @@ Describe 'GenBid-Bot.ps1: hàm' {
         }
         It 'lượt Trình duyệt xong: xoá khoá worker viết sau lúc nó bắt đầu; khoá cũ hơn thì để nguyên' {
             $global:Lane = 'browser'
-            Write-BotText $global:LockFile 'x'; (Get-Item $global:LockFile).LastWriteTime = [datetime]'2026-11-13 09:30:00'
+            Write-BotText $global:LockFile 'x'; (Get-Item -Force $global:LockFile).LastWriteTime = [datetime]'2026-11-13 09:30:00'
             Wait 'xong' 0 | Out-Null
             Assert-False (Test-Path $global:LockFile)
-            Write-BotText $global:LockFile 'x'; (Get-Item $global:LockFile).LastWriteTime = [datetime]'2026-11-13 08:00:00'
+            Write-BotText $global:LockFile 'x'; (Get-Item -Force $global:LockFile).LastWriteTime = [datetime]'2026-11-13 08:00:00'
             Wait 'xong' 0 | Out-Null
             Assert-True (Test-Path $global:LockFile)
             $global:Lane = ''
@@ -303,7 +303,7 @@ Describe 'GenBid-Bot.ps1: hàm' {
         It 'lượt AI hay Cấu hình xong không được xoá khoá của một Sync đang chạy song song' {
             foreach ($lane in 'ai', 'config') {
                 $global:Lane = $lane
-                Write-BotText $global:LockFile 'x'; (Get-Item $global:LockFile).LastWriteTime = [datetime]'2026-11-13 09:30:00'
+                Write-BotText $global:LockFile 'x'; (Get-Item -Force $global:LockFile).LastWriteTime = [datetime]'2026-11-13 09:30:00'
                 Wait 'xong' 0 | Out-Null
                 Assert-True (Test-Path $global:LockFile) $lane
             }
@@ -319,9 +319,9 @@ Describe 'GenBid-Bot.ps1: hàm' {
             Assert-True (Test-WorkerRunning 6>$null)
         }
         It 'khoá cũ hơn $RunTimeoutMinutes (180) phút bị bỏ và coi là rảnh; 179 phút vẫn là đang chạy' {
-            Write-BotText $global:LockFile 'x'; (Get-Item $global:LockFile).LastWriteTime = [datetime]::Now.AddMinutes(-179)
+            Write-BotText $global:LockFile 'x'; (Get-Item -Force $global:LockFile).LastWriteTime = [datetime]::Now.AddMinutes(-179)
             Assert-True (Test-WorkerRunning 6>$null)
-            (Get-Item $global:LockFile).LastWriteTime = [datetime]::Now.AddMinutes(-181)
+            (Get-Item -Force $global:LockFile).LastWriteTime = [datetime]::Now.AddMinutes(-181)
             Assert-False (Test-WorkerRunning 6>$null)
             Assert-False (Test-Path $global:LockFile)
         }

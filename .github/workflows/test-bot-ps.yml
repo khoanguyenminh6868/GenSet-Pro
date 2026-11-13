@@ -21,8 +21,8 @@ jobs:
         shell: pwsh
         run: |
           $PSVersionTable.PSVersion
-          Install-Module Pester -MinimumVersion 5.5.0 -Force -Scope CurrentUser -SkipPublisherCheck
-          Import-Module Pester -MinimumVersion 5.5.0
+          Install-Module Pester -RequiredVersion 5.7.1 -Force -Scope CurrentUser -SkipPublisherCheck
+          Import-Module Pester -RequiredVersion 5.7.1
           Invoke-Pester -Path bot/test -CI -Output Detailed
 
   bot-ps-win:
@@ -33,6 +33,6 @@ jobs:
         shell: powershell
         run: |
           $PSVersionTable.PSVersion
-          Install-Module Pester -MinimumVersion 5.5.0 -Force -Scope CurrentUser -SkipPublisherCheck
-          Import-Module Pester -MinimumVersion 5.5.0
+          Install-Module Pester -RequiredVersion 5.7.1 -Force -Scope CurrentUser -SkipPublisherCheck
+          Import-Module Pester -RequiredVersion 5.7.1
           Invoke-Pester -Path bot/test -CI -Output Detailed

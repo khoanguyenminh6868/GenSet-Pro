@@ -4,6 +4,8 @@
 # Get-Date) được thay bằng hàm giả ở phạm vi global. Không gọi mạng, không gọi claude, không đụng tệp .genbid-* thật.
 # Hàm global: để Pester 3 và 5 đều thấy được dù phạm vi khác nhau.
 
+# pwsh 7 đổi chuỗi ISO trong JSON thành DateTime (bot chạy Windows PowerShell 5.1 giữ chuỗi): từ 7.5 có -DateKind để về hành vi 5.1.
+if ((Get-Command ConvertFrom-Json).Parameters.ContainsKey('DateKind')) { $global:PSDefaultParameterValues['ConvertFrom-Json:DateKind'] = 'String' }
 $global:BotDir = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\genbid-hsmt'))
 $global:Utf8NoBom = New-Object Text.UTF8Encoding $false
 

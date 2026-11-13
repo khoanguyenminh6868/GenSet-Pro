@@ -24,9 +24,7 @@ Describe 'Merge-GenBidFeed.ps1' {
             $doc = @{ tenders = $Tenders }
             if ($Wrapped) { $doc = @{ data = $doc; version = 'v7' } }
             Write-BotJson "$d/cur.json" $doc
-            $hasKind = (Get-Command ConvertFrom-Json).Parameters.ContainsKey('DateKind')
-            if ($hasKind) { $global:PSDefaultParameterValues['ConvertFrom-Json:DateKind'] = 'String' }
-            try { $r = Run-Merge @{ Mode = 'Sigs'; Current = "$d/cur.json" } } finally { if ($hasKind) { $global:PSDefaultParameterValues.Remove('ConvertFrom-Json:DateKind') } }
+            $r = Run-Merge @{ Mode = 'Sigs'; Current = "$d/cur.json" }
             if ($r.Code -ne 0) { throw "Sigs mã thoát $($r.Code)" }
             ($r.Out -join '') | ConvertFrom-Json
         }

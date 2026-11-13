@@ -7,12 +7,12 @@ Describe 'GenBid-HSMT.ps1: phần thuần' {
         Import-BotFunctions 'GenBid-HSMT.ps1' @('Get-SafeName', 'Read-List')
     }
 
-    It 'tên tệp an toàn: ký tự cấm của Windows \ / : * ? " < > | đổi thành _ (nhiều ký tự liền nhau thành một), cắt khoảng trắng hai đầu' {
+    It 'tên tệp an toàn: ký tự cấm của Windows \ / : * ? " và dấu nhỏ hơn, lớn hơn, | đổi thành _ (nhiều ký tự liền nhau thành một), cắt khoảng trắng hai đầu' {
         Assert-Eq (Get-SafeName 'HSMT: Chương V/YCKT?.pdf') 'HSMT_ Chương V_YCKT_.pdf'
         Assert-Eq (Get-SafeName '  a**b  ') 'a_b'
         Assert-Eq (Get-SafeName 'bình thường (1).docx') 'bình thường (1).docx'
     }
-    It 'danh sách tải: dòng "# <TBMT>" cho số thông báo, các dòng khác là mục tải (id hoặc "id,tên"), bỏ dòng trống' {
+    It 'danh sách tải: dòng "# số TBMT" cho số thông báo, các dòng khác là mục tải (id hoặc "id,tên"), bỏ dòng trống' {
         $p = Join-Path (New-BotTemp 'hsmt-list') 'IB2600000001_danh-sach-file.txt'
         Write-BotText $p "# IB2600000001`n`n11111111-1111-1111-1111-111111111111,Chương V.pdf`n22222222-2222-2222-2222-222222222222`n"
         $l = Read-List $p

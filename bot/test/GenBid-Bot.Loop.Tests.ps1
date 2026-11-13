@@ -4,6 +4,8 @@
 # Không chạy node, không gọi claude: lượt con không được khởi động thật (Start-Process giả chỉ ghi lại tham số).
 . (Join-Path $PSScriptRoot 'TestHelpers.ps1')
 
+$NotWindows = [IO.Path]::DirectorySeparatorChar -ne '\'
+
 Describe 'GenBid-Bot.ps1: vòng quét' {
     BeforeAll {
         $global:BotTD = $TestDrive
@@ -82,7 +84,7 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
             Assert-Eq @($s.Jobs).Count 0
             Assert-Null $s.Schedule
         }
-        It '10:09 chưa tới mốc; 10:10 đúng mốc thì Sync (mốc 10:10, lượt browser, chữ ký schedule:<ngày giờ>)' {
+        It '10:09 chưa tới mốc; 10:10 đúng mốc thì Sync (mốc 10:10, lượt browser, chữ ký schedule:ngày giờ)' {
             Assert-Eq @((Run-Loop (New-BotRoot) (At '10:09')).Jobs).Count 0
             $s = Run-Loop (New-BotRoot) (At '10:10')
             Assert-Eq @($s.Jobs).Count 1
@@ -141,18 +143,18 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
             Assert-Eq $global:Spawned.Count 0
             Assert-Null $s.Schedule
         }
-        It 'worker đang chạy (khoá .hsmt-worker.lock còn mới) thì không Sync; khoá quá 180 phút thì bỏ khoá và Sync' {
+        It 'worker đang chạy (khoá .hsmt-worker.lock còn mới) thì không Sync; khoá quá 180 phút thì bỏ khoá và Sync (chỉ Windows: PowerShell trên Linux coi tệp dấu chấm là ẩn)' -Skip:$NotWindows {
             $r = New-BotRoot
-            Write-BotText "$r/.hsmt-worker.lock" 'x'; (Get-Item "$r/.hsmt-worker.lock").LastWriteTime = (At '10:55')
+            Write-BotText "$r/.hsmt-worker.lock" 'x'; (Get-Item -Force "$r/.hsmt-worker.lock").LastWriteTime = (At '10:55')
             Assert-Eq @((Run-Loop $r (At '11:00')).Jobs).Count 0
-            (Get-Item "$r/.hsmt-worker.lock").LastWriteTime = (At '11:00').AddMinutes(-181)
+            (Get-Item -Force "$r/.hsmt-worker.lock").LastWriteTime = (At '11:00').AddMinutes(-181)
             Assert-Eq @((Run-Loop $r (At '11:00')).Jobs).Count 1
             Assert-False (Test-Path "$r/.hsmt-worker.lock")
         }
     }
 
     Context 'phân nhóm lượt: browser / ai / config' {
-        It 'Lấy tệp đi lượt browser, chữ ký đủ "files:<key>|<requestedAt>"; lượt Phân tích của gói khác đi lượt ai song song' {
+        It 'Lấy tệp đi lượt browser, chữ ký đủ "files:key|requestedAt"; lượt Phân tích của gói khác đi lượt ai song song' {
             $global:Pend.files = @((Req 'K1')); $global:Pend.analysis = @((Req 'K2'))
             $s = Run-Loop (New-BotRoot) (At '09:00')
             Assert-Eq $s.Lanes @('ai', 'browser')
@@ -209,7 +211,7 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
             $global:Pend.files = @((Req 'K1')); $global:Pend.analysis = @((Req 'K2')); $global:Pend.config = @(@{ key = 'K3' })
             Assert-Eq (Run-Loop (New-BotRoot) (At '09:00')).Lanes @('ai', 'browser', 'config')
         }
-        It 'lượt con khởi động bằng powershell.exe -Job <tệp> -Root … ẩn cửa sổ, truyền đủ tham số' {
+        It 'lượt con khởi động bằng powershell.exe -Job tệp -Root … ẩn cửa sổ, truyền đủ tham số' {
             $global:Pend.analysis = @((Req 'K2'))
             Run-Loop (New-BotRoot) (At '09:00') | Out-Null
             $a = $global:Spawned[0].Args -join ' '
@@ -330,7 +332,7 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
         }
         It 'tệp lượt hỏng quá 1 phút thì bị xoá; mới ghi thì để nguyên' {
             $r = New-BotRoot
-            Write-BotText "$r/.genbid-bot-jobs/old.json" '{hỏng'; (Get-Item "$r/.genbid-bot-jobs/old.json").LastWriteTime = [datetime]::Now.AddMinutes(-5)
+            Write-BotText "$r/.genbid-bot-jobs/old.json" '{hỏng'; (Get-Item -Force "$r/.genbid-bot-jobs/old.json").LastWriteTime = [datetime]::Now.AddMinutes(-5)
             Write-BotText "$r/.genbid-bot-jobs/new.json" '{hỏng'
             Run-Loop $r ([datetime]::Now) | Out-Null
             Assert-False (Test-Path "$r/.genbid-bot-jobs/old.json")
@@ -353,19 +355,19 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
 
     Context 'thiếu điều kiện chạy: chỉ ghi log và chờ' {
         It 'thiếu .genbid-ingest-token: không hỏi web, không lượt nào, log báo thiếu' {
-            $r = New-BotRoot; Remove-Item "$r/.genbid-ingest-token"
+            $r = New-BotRoot; Remove-Item -Force "$r/.genbid-ingest-token"
             $s = Run-Loop $r (At '11:00')
             Assert-Eq $global:Urls.Count 0; Assert-Eq @($s.Jobs).Count 0
             Assert-Match $s.Log 'Thiếu \.genbid-ingest-token'
         }
         It 'chưa đăng nhập Claude, không có token setup-token và không có API key: không chạy gì' {
-            $r = New-BotRoot; Remove-Item "$r/.claude-bot-token"
+            $r = New-BotRoot; Remove-Item -Force "$r/.claude-bot-token"
             $s = Run-Loop $r (At '11:00')
             Assert-Eq $global:Urls.Count 0
             Assert-Match $s.Log 'Thiếu \.claude-bot-token'
         }
         It 'có API key (không có token setup-token) thì vẫn chạy' {
-            $r = New-BotRoot; Remove-Item "$r/.claude-bot-token"; Write-BotText "$r/.anthropic-api-key" 'k'
+            $r = New-BotRoot; Remove-Item -Force "$r/.claude-bot-token"; Write-BotText "$r/.anthropic-api-key" 'k'
             Assert-Eq @((Run-Loop $r (At '11:00')).Jobs).Count 1
         }
         It 'lỗi mạng khi hỏi web: log "Lỗi khi quét", vòng quét không chết' {
