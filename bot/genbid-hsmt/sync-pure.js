@@ -24,10 +24,10 @@ const HIST_PREFIX = "egpportalcontractorselectionv2_WAR_egpportalcontractorselec
 const has = (v) => v && v !== "undefined";
 // muasamcong's search matches the words loosely ("phát thải ... Nhà máy Điện", turbine generators of power plants):
 // keep only tenders whose name is about a generator set.
-const GENSET_RE = /m[áa]y\s*ph[áa]t\s*(đi[ệe]n|di[eê]s[eê]l|di[eê]zen|dự\s*phòng)|m[áa]y\s*ph[áa]t[^,;:]{0,30}\d+\s*k[vV]?[aA]\b|\bgenset\b|\bmp[đd]\b/i;
+const GENSET_RE = /m[áa]y\s*ph[áa]t\s*(đi[ệe]n|[dđ]i[eê][sz][eê][ln]|dự\s*phòng)|m[áa]y\s*ph[áa]t[^,;:]{0,30}\d+\s*k[vV]?[aA]\b|\bgenset\b|\bmp[đd]\b/i;
 // A power plant's own generator (turbine, "tổ máy số 2", thuỷ điện / nhiệt điện) is not a generator set, unless the name
 // says standby, diesel or kVA.
-const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|di[eê]s[eê]l|di[eê]zen|\d\s*kva\b/i;
+const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|[dđ]i[eê][sz][eê][ln]|\d\s*kva\b/i;
 // Tender-name rule, the same as isGensetName in web/bidprice.js and isGeneratorTender in server/src/muasamcong.ts (keep the
 // three alike; bot/test/sync-rules.test.mjs compares them on one list). "MPĐ" alone is a set (JS \b does not see Đ as a
 // letter, hence the lookarounds); wind / solar generators are not, unless the name also says diesel, standby or kVA.

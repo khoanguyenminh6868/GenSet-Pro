@@ -134,6 +134,17 @@ test("ba nơi (bidprice.js, sync-pure.js, muasamcong.ts) cùng kết luận trê
     assert.equal(P.isGenset({ bidName: n }), want, "sync-pure.js: " + n);
     assert.equal(server(n), want, "muasamcong.ts: " + n);
   }
+  // "Diezel" / "Diezen" / "Diesen" là diesel (Khoa 13/11): máy diesel dự phòng của nhà máy điện là tổ máy, dù tên có "Tổ máy 300MW"
+  // (IB2400069058). Tổ máy của chính nhà máy (không nói diesel) vẫn không phải.
+  for (const n of ["08PTV-UB-SXKD-2024: Sửa chữa máy phát điện Diezel số 2 Tổ máy 300MW", "Đại tu Máy phát Diezen số 1 và số 2 - Nhiệt điện Phả Lại", "Sửa chữa máy phát điện Diesen tổ máy số 1", "Cung cấp máy phát điện điêzen 250kVA"]) {
+    assert.equal(BP.isGensetName(n), true, "bidprice.js: " + n);
+    assert.equal(P.isGenset({ bidName: n }), true, "sync-pure.js: " + n);
+    assert.equal(server(n), true, "muasamcong.ts: " + n);
+  }
+  for (const n of ["Sửa chữa máy phát điện tổ máy số 2 - 300MW", "Phục hồi vành góp kích từ máy phát điện tổ máy số 2"]) {
+    assert.equal(BP.isGensetName(n), false, "bidprice.js: " + n);
+    assert.equal(P.isGenset({ bidName: n }), false, "sync-pure.js: " + n);
+  }
 });
 test("không phải gói máy phát: tổ máy của nhà máy điện, tua bin, tên không nói máy phát", () => {
   for (const n of ["Sửa chữa tổ máy số 2 Nhà máy thủy điện Hòa Bình - máy phát điện", "Đại tu tua bin máy phát điện H1", "Giảm phát thải tại Nhà máy Điện", "Mua sắm máy biến áp"])

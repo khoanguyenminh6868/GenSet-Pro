@@ -60,8 +60,8 @@
     return m && Number(m[1]) >= 1 ? Number(m[1]) : 1;
   }
   // Same name rules as the bot (genbid-sync.js isGenset): a power plant's own generator is not a generator set.
-  const GENSET_RE = /m[áa]y\s*ph[áa]t\s*(đi[ệe]n|di[eê]s[eê]l|di[eê]zen|dự\s*phòng)|m[áa]y\s*ph[áa]t[^,;:]{0,30}\d+\s*k[vV]?[aA]\b|\bgenset\b|\bmp[đd]\b/i;
-  const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|di[eê]s[eê]l|di[eê]zen|\d\s*kva\b/i;
+  const GENSET_RE = /m[áa]y\s*ph[áa]t\s*(đi[ệe]n|[dđ]i[eê][sz][eê][ln]|dự\s*phòng)|m[áa]y\s*ph[áa]t[^,;:]{0,30}\d+\s*k[vV]?[aA]\b|\bgenset\b|\bmp[đd]\b/i;
+  const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\s*(thủy|thuỷ|nhiệt)\s*điện/i, SET_RE = /dự\s*phòng|[dđ]i[eê][sz][eê][ln]|\d\s*kva\b/i;
   // Goods / section lines ("MPĐ diesel - Dây curoa" is a part, not a set): the rule as it was, "MPĐ" not read.
   const isGensetRow = (n) => { n = String(n || "").normalize("NFC"); return GENSET_RE.test(n) && (!PLANT_RE.test(n) || SET_RE.test(n)); };
   // Tender names: same rule in bot/genbid-hsmt/sync-pure.js (isGenset) and server/src/muasamcong.ts (isGeneratorTender),
