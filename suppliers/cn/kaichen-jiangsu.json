@@ -885,21 +885,21 @@
     },
     {
       "n": 5002,
-      "title": "Báo giá Kaichen 2026-11-10 — Ricardo, 50 Hz, 1500 rpm, 220/380 V, 3 pha",
+      "title": "Báo giá Kaichen 2026-11-10 — Ricardo, 50 Hz, 1500 rpm, 220/380 V, 3 pha (kW quy đổi cosφ 0,8)",
       "header": [
-        "| Size | Engine make | Engine model | Alternator make | Alternator | Controller | Type | L*W*H (mm) | Weight (kg) | Prime output (kVA) | Standby output (kVA) | Battery | Fuel tank"
+        "| Prime kW | Prime kVA | Standby kW | Standby kVA | Size | Engine make | Engine model | Alternator make | Alternator | Controller | Type | L*W*H (mm) | Weight (kg) | Battery | Fuel tank"
       ],
       "rows": [
-        "| 30KVA | Ricardo | ZH4100D | Kaichen | KCI-30 | mechanical | Silent Type | 2200*950*1400 | 980 | 30 | 33 | 60A H | Capable of continuous use for over 8 hours |",
-        "| 40KVA | Ricardo | ZH4105ZLD | Kaichen | KCI-40 | mechanical | Silent Type | 2200*950*1400 | 1120 | 40 | 44 | 60A H | Capable of continuous use for over 8 hours |",
-        "| 50KVA | Ricardo | R4105ZD | Kaichen | KCI-50 | mechanical | Silent Type | 2400*1000*1500 | 1250 | 50 | 55 | 60A H | Capable of continuous use for over 8 hours |",
-        "| 75KVA | Ricardo | R6105ZD | Kaichen | KCI-75 | mechanical | Silent Type | 2700*1100*1700 | 1860 | 75 | 80 | 80A H | Capable of continuous use for over 8 hours |",
-        "| 100KVA | Ricardo | R6105AZLD | Kaichen | KCI-100 | mechanical | Silent Type | 2700*1100*1700 | 2320 | 100 | 110 | 80A H | Capable of continuous use for over 8 hours |",
-        "| 120KVA | Ricardo | R6105IZLD | Kaichen | KCI-120 | mechanical | Silent Type | 2700*1100*1700 | 2250 | 120 | 132 | 80A H | Capable of continuous use for over 8 hours |",
-        "| 150KVA | Ricardo | R6108IZLD | Kaichen | KCI-150 | mechanical | Silent Type | 3300*1300*1800 | 2450 | 150 | 165 | 80A H | Capable of continuous use for over 8 hours |",
-        "| 200KVA | Ricardo | P10 | Kaichen | KCI-200 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 2850 | 200 | 220 | 100A H | Capable of continuous use for over 8 hours |",
-        "| 250KVA | Ricardo | 618ZLD | Kaichen | KCI-250 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3300 | 250 | 275 | 100A H | Capable of continuous use for over 8 hours |",
-        "| 300KVA | Ricardo | P12 | Kaichen | KCI-300 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3700 | 300 | 330 | 100A H | Capable of continuous use for over 8 hours |"
+        "| 24 | 30 | 26.4 | 33 | 30KVA | Ricardo | ZH4100D | Kaichen | KCI-30 | mechanical | Silent Type | 2200*950*1400 | 980 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 32 | 40 | 35.2 | 44 | 40KVA | Ricardo | ZH4105ZLD | Kaichen | KCI-40 | mechanical | Silent Type | 2200*950*1400 | 1120 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 40 | 50 | 44 | 55 | 50KVA | Ricardo | R4105ZD | Kaichen | KCI-50 | mechanical | Silent Type | 2400*1000*1500 | 1250 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 60 | 75 | 64 | 80 | 75KVA | Ricardo | R6105ZD | Kaichen | KCI-75 | mechanical | Silent Type | 2700*1100*1700 | 1860 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 80 | 100 | 88 | 110 | 100KVA | Ricardo | R6105AZLD | Kaichen | KCI-100 | mechanical | Silent Type | 2700*1100*1700 | 2320 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 96 | 120 | 105.6 | 132 | 120KVA | Ricardo | R6105IZLD | Kaichen | KCI-120 | mechanical | Silent Type | 2700*1100*1700 | 2250 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 120 | 150 | 132 | 165 | 150KVA | Ricardo | R6108IZLD | Kaichen | KCI-150 | mechanical | Silent Type | 3300*1300*1800 | 2450 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 160 | 200 | 176 | 220 | 200KVA | Ricardo | P10 | Kaichen | KCI-200 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 2850 | 100A H | Capable of continuous use for over 8 hours |",
+        "| 200 | 250 | 220 | 275 | 250KVA | Ricardo | 618ZLD | Kaichen | KCI-250 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3300 | 100A H | Capable of continuous use for over 8 hours |",
+        "| 240 | 300 | 264 | 330 | 300KVA | Ricardo | P12 | Kaichen | KCI-300 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3700 | 100A H | Capable of continuous use for over 8 hours |"
       ]
     },
     {
