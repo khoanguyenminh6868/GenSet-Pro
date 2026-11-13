@@ -58,3 +58,12 @@ test("gapReport: score = tenders asking × share of models without the figure; w
   assert.deepEqual(r.unclear.map((u) => [u.code, u.unclear, u.total]), [["displacement", 1, 2]]);
   assert.match(reportText(r), /Dung tích xi lanh · 300–700 kVA: 2 gói nêu, 1\/3 model có/);
 });
+
+test("gapReport: NCC trong spec-none.json (đã tìm không ra) không vào hàng chờ Tìm Thông Số", () => {
+  const base = { docs, suppliers, modelFacts: facts, cat, now: new Date("2026-11-10T00:00:00Z") };
+  const all = gapReport(base), first = all.queue[0].supplierId;
+  const r = gapReport({ ...base, none: { [first]: { at: "2026-11-13", why: "thử" } } });
+  assert.ok(!r.queue.some((q) => q.supplierId === first));
+  // Vẫn hiện trong danh sách hãng nên tìm (để biết vì sao thiếu), chỉ không bị gửi lại.
+  assert.ok(r.targets.some((t) => t.supplierIds.includes(first)));
+});
