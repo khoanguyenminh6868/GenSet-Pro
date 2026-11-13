@@ -1,0 +1,33 @@
+{
+  "id": "hichai-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "Taizhou Kaihua Diesel Generator Sets Co., Ltd.",
+  "zh": null,
+  "brands": ["HICHAI POWER", "HiChai"],
+  "web": "https://www.hichaipower.com/",
+  "prov": "Jiangsu",
+  "city": "Taizhou",
+  "founded": 2003,
+  "fsrc": [1],
+  "related": ["kaihua-genset"],
+  "src": {
+    "1": ["A",
+      "HICHAI POWER is an export brand owned by TAIZHOU KAIHUA DIESEL GENERATOR SETS CO., LTD., established in 2003.",
+      "We provide a full range of diesel generator sets from 15 kW to 3000 kW, suitable for land, marine and gas projects.",
+      "We possess a strong annual production capacity of over 3000 sets",
+      "Our products are certified with ISO9001-2008 and other international standards like CE, TLC, CCS, BV",
+      "our strategic partnerships with renowned engine OEMs such as Cummins, Perkins, Volvo, MTU, Weichai, and collaborations with leading alternator brands like Stamford, LSA, MECC, Marathon"],
+    "2": ["A", "Taizhou Kaihua Diesel Generator Sets Co., Ltd ALL RIGHTS RESERVED."]
+  },
+  "str": [["Thương hiệu xuất khẩu của Kaihua (kaihua-genset); tổ máy 15–3000 kW cho trên bờ, tàu thủy, gas", 1], ["Theo hãng: công suất hơn 3000 bộ/năm", 1]],
+  "cert": [["ISO9001", 1], ["CE", 1], ["CCS", 1], ["BV", 1]],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator sets", "fuel": "diesel", "eng": ["Cummins", "Perkins", "Volvo", "MTU", "Weichai"], "models": [], "alt": ["Stamford", "LSA", "MECC", "Marathon"],
+      "p": [15, 3000, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["cùng pháp nhân với kaihua-genset (kaihuagenset.com); tách bản ghi vì website/thương hiệu xuất khẩu riêng để cào bảng"],
+  "by": "Claude Code"
+}
