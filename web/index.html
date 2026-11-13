@@ -4813,7 +4813,9 @@ function navSnap() {
     cat: scr === "cat" ? catView.kind : null, catOpen: scr === "cat" ? catView.open : null, catFrom: scr === "cat" ? catFrom : null,
     dscroll: $("#dbody").scrollTop, mscroll: scr ? mScroll().scrollTop : 0, url: location.href };
 }
-const navKey = (s) => JSON.stringify([s.open, s.list, s.scr, s.sup, s.bd, s.cat, s.catOpen]);
+// The drawer's own back chain is part of the step: a tender opened from a screen over the same tender (Nhà thầu → its
+// first tender is often the one it was opened from) is a new step, not a Back to the one under it.
+const navKey = (s) => JSON.stringify([s.open, s.list, s.scr, s.sup, s.bd, s.cat, s.catOpen, (s.back || []).length]);
 // navStack mirrors this page's history entries; 0 is the page's first entry, 1 the home screen pushed on the first tap.
 let navStack = [NAV_HOME], navAt = 0, navSkip = 0, navPre = null, navPopAt = 0;
 function navTap() {

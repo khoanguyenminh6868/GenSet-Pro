@@ -99,10 +99,9 @@ test("Back qua 4 bước: Nhà thầu → một nhà thầu → gói của nhà 
   await expect(page.locator("#grid tbody tr[data-key]").first()).toBeVisible();
 });
 
-// LỖI (H2, cả máy tính lẫn điện thoại): mở gói → bấm tên một nhà thầu trong bảng nhà thầu của gói (màn Nhà thầu mở đè lên
-// khung chi tiết) → bấm một gói của nhà thầu đó → Back: về thẳng danh sách gói (khung chi tiết đóng, màn Nhà thầu không
-// hiện lại), đáng lẽ về màn nhà thầu rồi mới về gói đầu.
-test.fixme("Back: gói → nhà thầu (từ bảng nhà thầu của gói) → gói của nhà thầu → chủ đầu tư, Back về đúng từng màn", async ({ page }) => {
+// Mở gói → bấm tên một nhà thầu trong bảng nhà thầu của gói (màn Nhà thầu mở đè lên khung chi tiết) → bấm một gói của nhà
+// thầu đó (thường chính là gói đang mở) → Back về màn nhà thầu, rồi gói đầu (lỗi H2, sửa ở W2: navKey tính cả drawerBack).
+test("Back: gói → nhà thầu (từ bảng nhà thầu của gói) → gói của nhà thầu → chủ đầu tư, Back về đúng từng màn", async ({ page }) => {
   await openApp(page);
   const title = page.locator("#dtitle"), drawer = page.locator("#drawer");
   // 1. Gói RICH từ tab Mới.

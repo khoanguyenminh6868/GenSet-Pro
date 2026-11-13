@@ -240,6 +240,39 @@ test("Back: Nhà thầu → một nhà thầu → gói của nhà thầu đó �
   await expect(page.locator("#drawer")).not.toHaveClass(/\bopen\b/);
 });
 
+// Màn Nhà thầu mở từ bảng nhà thầu của gói: gói đầu tiên của nhà thầu thường chính là gói vừa mở. Bấm nó là một bước mới,
+// không phải Back (W2: trước đây navSync coi là Back, Back sau đó về thẳng danh sách).
+test("Back: gói → nhà thầu (từ bảng nhà thầu của gói) → gói của nhà thầu, Back về nhà thầu, gói đầu, danh sách", async ({ page }) => {
+  await openApp(page);
+  const title = page.locator("#dtitle"), drawer = page.locator("#drawer");
+  await page.locator(`#grid tr[data-key="${RICH}"] td.c-name`).click();
+  await expect(title).toHaveText(tender(RICH).bidName);
+  const bd = page.locator("#dbody table.bdtbl [data-bdopen]").first();
+  const bdName = (await bd.innerText()).trim();
+  await bd.click();
+  await expect(page.locator("#bdBody")).toContainText(bdName);
+  const links = page.locator("#bdBody [data-bdtender]");
+  // Ca khó: gói của nhà thầu trùng gói đang mở bên dưới.
+  const link = page.locator(`#bdBody [data-bdtender="${RICH}"]`).first();
+  await expect(links.first()).toBeVisible();
+  await (await link.count() ? link : links.first()).click();
+  await expect(page.locator("#ov")).toBeHidden();
+  await expect(drawer).toHaveClass(/\bopen\b/);
+
+  await page.goBack();
+  await expect(page.locator("#ov")).toBeVisible();
+  await expect(page.locator("#bdBody")).toContainText(bdName);
+  await page.goBack();
+  await expect(page.locator("#ov")).toBeHidden();
+  await expect(drawer).toHaveClass(/\bopen\b/);
+  await expect(title).toHaveText(tender(RICH).bidName);
+  await page.goBack();
+  await expect(drawer).not.toHaveClass(/\bopen\b/);
+  await page.goBack();
+  expect(page.url()).toMatch(/^http:\/\/127\.0\.0\.1:\d+\//); // Back không rời trang
+  await expect(page.locator(`#grid tr[data-key="${RICH}"]`)).toBeVisible();
+});
+
 test("đổi trạng thái gói (Mới → Chuẩn bị HSDT) ghi tracked/<TBMT> với updated_at mới", async ({ page }) => {
   await openApp(page);
   await page.locator('#stageTabs [data-stage="new"]').click();
