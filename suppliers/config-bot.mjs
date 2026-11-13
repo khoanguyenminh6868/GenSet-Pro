@@ -1832,12 +1832,13 @@ export const plainWhy = (s) => String(s || "")
   .replace(/[;,]?\s*(?:vai trò:?\s*)?\b(?:genset_oem|engine_maker|alternator_maker|controller_maker|distributor)\b/gi, "")
   .replace(/[;,]?\s*độ tin cậy:?\s*(?:high|medium|low|cao|trung bình|thấp)\b/gi, "")
   .replace(/\s*[;,]\s*(?=[;,]|$)/g, "").replace(/^\s*[;,]\s*/, "").replace(/\s{2,}/g, " ").trim();
-export function check(result, { hsmtText, suppliers, readWeb, origin, basis, sized = false }) {
+// sourcesDir: where sourceRatings reads sources/<id>/<n>.md (default the repo's; the regression fixtures pass their frozen copy).
+export function check(result, { hsmtText, suppliers, readWeb, origin, basis, sized = false, sourcesDir }) {
   const problems = [], H = norm(hsmtText);
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
   // Figures of a model from any supplier's row or datasheet (modelFacts); a check may quote one with factSrc.
-  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built), RT = sourceRatings(suppliers);
+  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built), RT = sourceRatings(suppliers, sourcesDir);
   // A genset row as web/catalog.js reads it (its power per rating), by the src that names it.
   const rows = new Map();
   for (const e of built.engines || []) for (const u of e.uses) if (u.line) rows.set(`${u.supplierId}|${u.n}|${CAT.keyOf(u.line)}`, u);

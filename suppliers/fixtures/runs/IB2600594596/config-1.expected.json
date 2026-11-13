@@ -1,0 +1,158 @@
+{
+ "problems": 9,
+ "requirements": 46,
+ "unverifiedRequirements": 0,
+ "brandSync": "2/3",
+ "named": null,
+ "clarifyByCode": [],
+ "missingCodes": [
+  "cooling"
+ ],
+ "message": null,
+ "configs": [
+  {
+   "rank": 1,
+   "engine": "Cummins QSL9-G5",
+   "alternator": "Stamford HC4D",
+   "controller": "Cummins PowerCommand 1.2",
+   "named": null,
+   "suppliers": [
+    "ade-power:2001",
+    "cummins-inc:2002"
+   ],
+   "checks": {
+    "genset": "8/0/12/3",
+    "engine": "3/0/6/0",
+    "alternator": "0/0/8/0",
+    "controller": "1/0/5/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "fuel_consumption_50:unclear"
+   ]
+  },
+  {
+   "rank": 2,
+   "engine": "Doosan P126TI-II",
+   "alternator": "",
+   "controller": "APM403",
+   "named": null,
+   "suppliers": [
+    "rehlko:2004"
+   ],
+   "checks": {
+    "genset": "2/0/12/9",
+    "engine": "1/0/7/1",
+    "alternator": "0/0/8/0",
+    "controller": "0/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "fuel_consumption_50:unclear"
+   ]
+  },
+  {
+   "rank": 3,
+   "engine": "Cummins 6LTAA9.5-G1",
+   "alternator": "Bobig BW-314DS",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "bobig-power:111",
+    "fdk-energy:102",
+    "victory-generator:110"
+   ],
+   "checks": {
+    "genset": "4/2/8/9",
+    "engine": "7/0/2/0",
+    "alternator": "1/0/7/0",
+    "controller": "1/0/4/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Đồng bộ thương hiệu",
+    "Kích thước"
+   ],
+   "lossWarn": [
+    "fuel_consumption_50:unclear"
+   ]
+  },
+  {
+   "rank": 4,
+   "engine": "Yuchai YC6MK420-D30",
+   "alternator": "Nianfeng NIANFENG NF314E",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:108",
+    "westinpower:109",
+    "comappower:101"
+   ],
+   "checks": {
+    "genset": "4/1/8/10",
+    "engine": "6/0/2/1",
+    "alternator": "4/1/3/0",
+    "controller": "1/1/4/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Đồng bộ thương hiệu",
+    "Hãng đầu phát",
+    "Hãng bộ điều khiển"
+   ],
+   "lossWarn": []
+  },
+  {
+   "rank": 5,
+   "engine": "Yuchai YC6MK420L-D20",
+   "alternator": "Nianfeng NIANFENG NF314E",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:108",
+    "eastern-lion-fuan:110",
+    "comappower:101"
+   ],
+   "checks": {
+    "genset": "4/1/8/10",
+    "engine": "5/0/3/1",
+    "alternator": "4/1/3/0",
+    "controller": "1/1/4/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Đồng bộ thương hiệu",
+    "Hãng đầu phát",
+    "Hãng bộ điều khiển"
+   ],
+   "lossWarn": []
+  },
+  {
+   "rank": 6,
+   "engine": "Weichai WP10D320E200",
+   "alternator": "Nianfeng NIANFENG NF314E",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:108",
+    "jet-power:113",
+    "longkai-power:126"
+   ],
+   "checks": {
+    "genset": "4/1/8/10",
+    "engine": "5/0/4/0",
+    "alternator": "4/1/3/0",
+    "controller": "1/1/4/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Đồng bộ thương hiệu",
+    "Hãng đầu phát",
+    "Hãng bộ điều khiển"
+   ],
+   "lossWarn": []
+  }
+ ]
+}

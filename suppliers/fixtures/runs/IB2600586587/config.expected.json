@@ -1,0 +1,141 @@
+{
+ "problems": 0,
+ "requirements": 26,
+ "unverifiedRequirements": 0,
+ "brandSync": null,
+ "named": null,
+ "clarifyByCode": [],
+ "missingCodes": [
+  "iso8528_class",
+  "genset_type"
+ ],
+ "message": null,
+ "configs": [
+  {
+   "rank": 1,
+   "engine": "Perkins 1106A-70TAG4",
+   "alternator": "Stamford UCI274G",
+   "controller": "SmartGen HGM6120N",
+   "named": null,
+   "suppliers": [
+    "tecgen-fujian:122",
+    "hosem-power:112",
+    "uleengen:104"
+   ],
+   "checks": {
+    "genset": "5/0/2/5",
+    "engine": "5/0/1/1",
+    "alternator": "3/0/0/1",
+    "controller": "2/0/1/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 2,
+   "engine": "Yuchai YC6A245L-D21",
+   "alternator": "Nianfeng NIANFENG NF274H",
+   "controller": "SmartGen HGM6110N",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:108",
+    "uleengen:104",
+    "comappower:101"
+   ],
+   "checks": {
+    "genset": "4/0/2/6",
+    "engine": "2/0/2/3",
+    "alternator": "3/0/0/1",
+    "controller": "2/0/1/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 3,
+   "engine": "Yuchai YC6A245-D30",
+   "alternator": "Nianfeng NIANFENG NF274H",
+   "controller": "SmartGen HGM6110N",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:108",
+    "comappower:101",
+    "westinpower:109"
+   ],
+   "checks": {
+    "genset": "4/0/2/6",
+    "engine": "2/0/2/3",
+    "alternator": "3/0/0/1",
+    "controller": "2/0/1/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 4,
+   "engine": "Cummins 6CTA8.3-G2",
+   "alternator": "Stamford UCI274H",
+   "controller": "SmartGen HGM6110N",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:102",
+    "uleengen:104",
+    "eastern-lion-fuan:108"
+   ],
+   "checks": {
+    "genset": "3/0/3/6",
+    "engine": "2/0/2/3",
+    "alternator": "2/0/1/1",
+    "controller": "2/0/1/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 5,
+   "engine": "Weichai WP6D167E200",
+   "alternator": "JET274G",
+   "controller": "SmartGen HGM6120N",
+   "named": null,
+   "suppliers": [
+    "jet-power:113",
+    "longkai-power:126",
+    "kaichen-jiangsu:5001"
+   ],
+   "checks": {
+    "genset": "6/0/0/6",
+    "engine": "1/0/3/3",
+    "alternator": "1/0/2/1",
+    "controller": "2/0/1/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 6,
+   "engine": "Perkins 1106A-70TAG3",
+   "alternator": "Stamford UCI274G",
+   "controller": "SmartGen HGM6120N",
+   "named": null,
+   "suppliers": [
+    "tecgen-fujian:117",
+    "jet-power:129",
+    "uleengen:104"
+   ],
+   "checks": {
+    "genset": "5/0/2/5",
+    "engine": "3/0/3/1",
+    "alternator": "3/0/0/1",
+    "controller": "2/0/1/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  }
+ ]
+}
