@@ -18,6 +18,8 @@ $Cl = Join-Path $env:USERPROFILE '.claude'
 $map = [ordered]@{
     'bot/genbid-hsmt'                        = Join-Path $Root 'genbid-hsmt'
     'bot/claude/skills/run-hsmt-worker'      = Join-Path $Cl 'skills\run-hsmt-worker'
+    'bot/claude/skills/genbid-setup'         = Join-Path $Cl 'skills\genbid-setup'
+    'bot/claude/skills/tim-thong-so-ncc'     = Join-Path $Cl 'skills\tim-thong-so-ncc'
     'bot/claude/scheduled-tasks/hsmt-worker' = Join-Path $Cl 'scheduled-tasks\hsmt-worker'
 }
 $live = [ordered]@{}
