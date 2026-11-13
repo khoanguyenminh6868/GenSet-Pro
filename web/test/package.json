@@ -1,0 +1,14 @@
+{
+  "name": "genbid-web-test",
+  "private": true,
+  "type": "module",
+  "description": "Test khói giao diện web (Playwright) + test tĩnh index.html; xem web/test/README.md",
+  "scripts": {
+    "static": "node --test static.test.mjs",
+    "serve": "node serve.mjs",
+    "e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}
