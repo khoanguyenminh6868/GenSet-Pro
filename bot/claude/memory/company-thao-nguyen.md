@@ -1,15 +1,13 @@
 ---
 name: company-thao-nguyen
-description: "Khoa's company is CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN, tax code 4101623015 (muasamcong code vn4101623015)"
+description: "Công ty của Khoa: CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN, MST 4101623015 (muasamcong: vn4101623015)"
 metadata:
   node_type: memory
   type: user
-  originSessionId: 361d1336-5af9-4489-9f68-5108ceb272eb
-  modified: 2026-11-03T13:57:15.292Z
+  originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
+  modified: 2026-11-13T00:29:45.828Z
 ---
 
-Khoa's company: **CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN**, MST **4101623015** (on muasamcong the contractor code is `vn4101623015`). Stated by Khoa on 2026-10-23.
+Công ty của Khoa: **CÔNG TY TNHH THIẾT BỊ KỸ THUẬT THẢO NGUYÊN**, MST **4101623015** (mã nhà thầu trên muasamcong `vn4101623015`). Khoa nêu 23/10/2026.
 
-Khoa wants (2026-10-27): when a Sync finds our company in a tender's bidders, move the tender to the matching tab — Đã nộp from the opening record, then Trúng thầu / Không trúng once the result (KQLCNT) is out. Implemented in `markJoined` in web/api/ingest.js (PR #74).
-
-In GenBid Pro this is "us": `OUR_RE = /thảo\s*nguyên/i` in web/index.html highlights our row in the bidders table and fills our bid price. When matching bidders, prefer the tax code over the name.
+Trong GenBid Pro đây là "mình": khi so khớp nhà thầu ưu tiên MST hơn tên. Sync thấy công ty mình trong danh sách nhà thầu thì gói tự sang Đã nộp, rồi Trúng thầu / Không trúng khi có kết quả (Khoa 27/10/2026).

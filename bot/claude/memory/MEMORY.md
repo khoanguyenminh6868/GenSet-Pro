@@ -1,14 +1,11 @@
-- [Nhật ký phiên](session-log.md) — luồng chính, bẫy chung, việc còn dở; đọc đầu phiên, ghi thêm sau mỗi thay đổi lớn
-- [Pull latest main trước](pull-latest-main-first.md) — đầu phiên: fetch + pull --ff-only main, nhánh mới từ origin/main
-- [Merge PRs without asking](merge-prs-without-asking.md) — Khoa: tự merge PR GenSet-Pro (squash), không cần hỏi
-- [Restart bot sau khi sửa script](bot-restart-after-update.md) — vòng điều phối GenBid-Bot.ps1 nạp 1 lần, sửa xong phải restart task
-- [Gợi ý cấu hình](config-suggest.md) — quy tắc xếp hạng Khoa chốt, cơ chế, nguồn datasheet hãng, Tìm NCC, việc chờ quyết
-- [Gợi ý giá đấu](bidprice-suggest.md) — chọn gói tương tự theo cấu hình + nhóm xuất xứ, bỏ gói di dời; ý tưởng còn lại
-- [Supplier DB](supplier-db.md) — nhà cung cấp máy phát: nguồn + verify, OCR bảng ảnh, lượt G7, bẫy crawl/merge-specs
-- [Khoa's company](company-thao-nguyen.md) — Thảo Nguyên, MST 4101623015 (vn4101623015 trên muasamcong)
-- [No artifact version](no-artifact-version.md) — chỉ dùng web Vercel + bot Windows, bỏ qua nhánh claude.ai
-- [Bot kit trong git](bot-kit-in-git.md) — sửa genbid-hsmt xong chạy bot\Backup-GenBidBot.ps1 + PR; máy mới dùng Install-GenBidBot.ps1
-- [Làm trong worktree](work-in-worktree.md) — checkout chính là RepoDir của bot, luôn để main; sửa code ở wt-*; PR merge xong tự xoá wt của mình
+- [Nhật ký phiên](session-log.md) — quyết định của Khoa theo luồng, bẫy chung, việc còn dở; đọc đầu phiên
+- [Quy trình git](git-workflow.md) — pull main trước, làm trong wt-*, tự merge PR (squash), tự xoá worktree của mình
+- [Vận hành bot](bot-ops.md) — sửa genbid-hsmt xong Backup + PR + restart task; thử ở genbid-test; trả bằng API key
+- [Điều phối, giao task theo model](orchestrator-delegate-by-model.md) — phiên chính là kỹ sư trưởng; đầu phiên đọc `genbid-work\dieu-phoi\so-dieu-phoi.md`
+- [Gợi ý cấu hình](config-suggest.md) — quy tắc Khoa chốt về xếp hạng, xuất xứ, nguồn thông số; nguồn datasheet hãng; bẫy
+- [Giá gợi ý](bidprice-suggest.md) — quy tắc chọn gói tương tự, báo giá/giá vốn, số liệu thị trường, việc chờ quyết
+- [Supplier DB](supplier-db.md) — không bịa + verify, thêm NCC, catalog PDF/OCR, bẫy crawl, hãng chưa làm được
+- [Công ty của Khoa](company-thao-nguyen.md) — Thảo Nguyên, MST 4101623015 (vn4101623015 trên muasamcong)
+- [Không dùng bản artifact](no-artifact-version.md) — chỉ web Vercel + bot Windows, bỏ qua nhánh claude.ai
 - [Phân tích: bỏ cảnh báo thủ tục](phan-tich-bo-canh-bao.md) — không cảnh báo đóng thầu, bảo đảm dự thầu, hiệu lực E-HSDT
-- [Điều phối, giao task theo model](orchestrator-delegate-by-model.md) — phiên chính là kỹ sư trưởng; phân loại task, giao session Haiku/Sonnet/Opus theo độ khó; đầu phiên đọc sổ `genbid-work\dieu-phoi\so-dieu-phoi.md`
-- [Repo public: không hỏi lại](repo-public-khong-hoi.md) — Khoa đã chấp nhận memory nằm trong repo public; sao lưu bình thường
+- [Repo public: không hỏi lại](repo-public-khong-hoi.md) — Khoa đã chấp nhận memory nằm trong repo public
