@@ -61,6 +61,344 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC 220",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSB7-G5"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Aksa"
+      ],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP 33",
+      "fuel": "diesel",
+      "engineModels": [
+        "1103A-33G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 33,
+        "max": 33,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC 66",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTAA3.3-G13"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Aksa"
+      ],
+      "power": {
+        "min": 66,
+        "max": 66,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC 110",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BTA5.9-G5"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Aksa"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AJD 110",
+      "fuel": "diesel",
+      "engineModels": [
+        "4045HFG20 (103kW)"
+      ],
+      "engineMakes": [
+        "John Deere"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP 110",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104C-44TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "APD 110 A",
+      "fuel": "diesel",
+      "engineModels": [
+        "A4CRX46TI"
+      ],
+      "engineMakes": [
+        "Aksa"
+      ],
+      "alternatorMakes": [
+        "Aksa"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AD 251-6",
+      "fuel": "diesel",
+      "engineModels": [
+        "P086TI"
+      ],
+      "engineMakes": [
+        "Hyundai"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC 550",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSX15-G8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC 1100 K",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G14"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 1100,
+        "max": 1100,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AC 2500",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60-G8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP 2500",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-61TRG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "APD 2750 M",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R2-PTAW2-E"
+      ],
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 2750,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
     }
   ],
   "certifications": [],
@@ -79,9 +417,546 @@
         "Today, Aksa Power Generation is one of the leading companies in the industry, producing gasoline, diesel, and natural gas generators ranging from 1 kVA to 3,750 kVA"
       ],
       "file": "sources/aksa-power/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ac-220_2452_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         176.0                             220                                       160.00                             200                      318",
+        "Model Name                                                                                                            AC 220",
+        "Engine Make and Model                                                                                                 Cummins QSB7-G5"
+      ],
+      "file": "sources/aksa-power/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ap-33_84_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         26.4                              33                                        24.0                               30                       48",
+        "Model Name                                                                                                            AP 33",
+        "Engine Make and Model                                                                                                 Perkins 1103A-33G"
+      ],
+      "file": "sources/aksa-power/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ac-66_18_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         52.8                              66                                        48.0                               60                       95",
+        "Model Name                                                                                                            AC 66",
+        "Engine Make and Model                                                                                                 Cummins 4BTAA3.3-G13"
+      ],
+      "file": "sources/aksa-power/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ac-110_19_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         88.0                              110                                       80.0                               100                      159",
+        "Model Name                                                                                                            AC 110",
+        "Engine Make and Model                                                                                                 Cummins 6BTA5.9-G5"
+      ],
+      "file": "sources/aksa-power/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ajd-110_14_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         88.0                              110                                       80.0                           100                         159",
+        "Model Name                                                                                                            AJD 110",
+        "Engine Make and Model                                                                                                 John Deere 4045HFG20 (103kW)"
+      ],
+      "file": "sources/aksa-power/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ap-110_88_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         88.0                              110                                       80.00                              100                      159",
+        "Model Name                                                                                                            AP 110",
+        "Engine Make and Model                                                                                                 Perkins 1104C-44TAG2"
+      ],
+      "file": "sources/aksa-power/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/apd-110-a_134_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         88.0                              110                                       80.00                              100                      159",
+        "Model Name                                                                                                            APD 110 A",
+        "Engine Make and Model                                                                                                 Aksa A4CRX46TI"
+      ],
+      "file": "sources/aksa-power/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ad-251-6_196_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "480 / 277                         200.0                             250                                       184.00                             230                      301",
+        "Model Name                                                                                                            AD 251-6",
+        "Engine Make and Model                                                                                                 Hyundai P086TI"
+      ],
+      "file": "sources/aksa-power/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ac-550_26_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         440.0                             550                                       400.0                              500                      794",
+        "Model Name                                                                                                            AC 550",
+        "Engine Make and Model                                                                                                 Cummins QSX15-G8"
+      ],
+      "file": "sources/aksa-power/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ac-1100-k_30_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         880.0                             1100                                      800.0                1000                                  1588",
+        "Model Name                                                                                                            AC 1100 K",
+        "Engine Make and Model                                                                                                 Cummins KTA38-G14"
+      ],
+      "file": "sources/aksa-power/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ac-2500_34_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         2000.0                            2500                                      1816.00            2270                                    3609",
+        "Model Name                                                                                                             AC 2500",
+        "Engine Make and Model                                                                                                  Cummins QSK60-G8"
+      ],
+      "file": "sources/aksa-power/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/ap-2500_105_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         2000.0                            2500                                      1800.0               2250                                  3609",
+        "Model Name                                                                                                            AP 2500",
+        "Engine Make and Model                                                                                                 Perkins 4016-61TRG3"
+      ],
+      "file": "sources/aksa-power/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://webcdn.aksa.com.tr/CDN/productPdf/apd-2750-m_1410_english.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "400 / 231                         2200.0                            2750                                      2000.00                 2500                               3969",
+        "Model Name                                                                                                             APD 2750 M",
+        "Engine Make and Model                                                                                                  Mitsubishi S16R2-PTAW2-E"
+      ],
+      "file": "sources/aksa-power/2013.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "AC 220 – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            AC 220"
+      ],
+      "rows": [
+        "400 / 231                         176.0                             220                                       160.00                             200                      318",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Cummins QSB7-G5",
+        "Alternator Make and Model                                                                                             Aksa AK 4160",
+        "Control Panel Model                                                                                                   DSE 7320",
+        "Engine Model                                                                                                          QSB7-G5",
+        "Number of Cylinders / Type                                                                                            6 cylinders - in line",
+        "Displacement l (cu. In)                                                                        6.69",
+        "Engine Speed (rpm)                                                                             1500"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "AP 33 – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            AP 33"
+      ],
+      "rows": [
+        "400 / 231                         26.4                              33                                        24.0                               30                       48",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Perkins 1103A-33G",
+        "Alternator Make and Model                                                                                             Mecc Alte ECP 28-VL/4           C",
+        "Control Panel Model                                                                                                   DSE 6120",
+        "Engine Model                                                                                                          1103A-33G",
+        "Number of Cylinders / Type                                                                                            3 cylinders - in line",
+        "Displacement l (cu. In)                                                                            3.3",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "AC 66 – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            AC 66"
+      ],
+      "rows": [
+        "400 / 231                         52.8                              66                                        48.0                               60                       95",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Cummins 4BTAA3.3-G13",
+        "Alternator Make and Model                                                                                             Aksa AK 351",
+        "Control Panel Model                                                                                                   DSE 6120",
+        "Engine Model                                                                                                          4BTAA3.3-G13",
+        "Number of Cylinders / Type                                                                                            4 cylinders - in line",
+        "Displacement l (cu. In)                                                                            3.3",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "AC 110 – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            AC 110"
+      ],
+      "rows": [
+        "400 / 231                         88.0                              110                                       80.0                               100                      159",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Cummins 6BTA5.9-G5",
+        "Alternator Make and Model                                                                                             Aksa AK 480",
+        "Control Panel Model                                                                                                   DSE 6120",
+        "Engine Model                                                                                                          6BTA5.9-G5",
+        "Number of Cylinders / Type                                                                                            6 cylinders - in line",
+        "Displacement l (cu. In)                                                                            5.9",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "AJD 110 – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            AJD 110"
+      ],
+      "rows": [
+        "400 / 231                         88.0                              110                                       80.0                           100                         159",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 John Deere 4045HFG20 (103kW)",
+        "Alternator Make and Model                                                                                             Mecc Alte ECP 34-2S/4 C",
+        "Control Panel Model                                                                                                   DSE 6120",
+        "Engine Model                                                                                                          4045HFG20 (103kW)",
+        "Number of Cylinders / Type                                                                                            4 cylinders - in line",
+        "Displacement l (cu. In)                                                                            4.5",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "AP 110 – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            AP 110"
+      ],
+      "rows": [
+        "400 / 231                         88.0                              110                                       80.00                              100                      159",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Perkins 1104C-44TAG2",
+        "Alternator Make and Model                                                                                             Mecc Alte ECP 34-2S/4 C",
+        "Control Panel Model                                                                                                   DSE 6120",
+        "Engine Model                                                                                                          1104C-44TAG2",
+        "Number of Cylinders / Type                                                                                            4 cylinders - in line",
+        "Displacement l (cu. In)                                                                            4.4",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "APD 110 A – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            APD 110 A"
+      ],
+      "rows": [
+        "400 / 231                         88.0                              110                                       80.00                              100                      159",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Aksa A4CRX46TI",
+        "Alternator Make and Model                                                                                             Aksa AK 480",
+        "Control Panel Model                                                                                                   DSE 6120",
+        "Engine Model                                                                                                          A4CRX46TI",
+        "Number of Cylinders / Type                                                                                            4 cylinders - in line",
+        "Displacement l (cu. In)                                                                            4,58",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "AD 251-6 – Aksa datasheet (60 Hz)",
+      "header": [
+        "Model Name                                                                                                            AD 251-6"
+      ],
+      "rows": [
+        "480 / 277                         200.0                             250                                       184.00                             230                      301",
+        "Frequency (Hz)                                                                                                        60",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Hyundai P086TI",
+        "Alternator Make and Model                                                                                             Mecc Alte ECO 38-1M/4           C",
+        "Control Panel Model                                                                                                   DSE 7320",
+        "Engine Model                                                                                                          P086TI",
+        "Number of Cylinders / Type                                                                                            6 cylinders - in line",
+        "Displacement l (cu. In)                                                                            8.071",
+        "Engine Speed (rpm)                                                                                 1800"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "AC 550 – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            AC 550"
+      ],
+      "rows": [
+        "400 / 231                         440.0                             550                                       400.0                              500                      794",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Cummins QSX15-G8",
+        "Alternator Make and Model                                                                                             Mecc Alte ECO 40-3S/4           C",
+        "Control Panel Model                                                                                                   DSE 7320",
+        "Engine Model                                                                                                          QSX15-G8",
+        "Number of Cylinders / Type                                                                                            6 cylinders - in line",
+        "Displacement l (cu. In)                                                                            14.9",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "AC 1100 K – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            AC 1100 K"
+      ],
+      "rows": [
+        "400 / 231                         880.0                             1100                                      800.0                1000                                  1588",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Cummins KTA38-G14",
+        "Alternator Make and Model                                                                                             Mecc Alte ECO 43-1M/4              A",
+        "Control Panel Model                                                                                                   DSE 7320",
+        "Engine Model                                                                                                          KTA38-G14",
+        "Number of Cylinders / Type                                                                                            12 cylinders - V type",
+        "Displacement l (cu. In)                                                                            37.8",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "AC 2500 – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                             AC 2500"
+      ],
+      "rows": [
+        "400 / 231                         2000.0                            2500                                      1816.00            2270                                    3609",
+        "Frequency (Hz)                                                                                                         50",
+        "Fuel Type                                                                                                              Diesel",
+        "Engine Make and Model                                                                                                  Cummins QSK60-G8",
+        "Alternator Make and Model                                                                                              Mecc Alte ECO 46-1.5L/4           A",
+        "Control Panel Model                                                                                                    DSE 7320",
+        "Engine Model                                                                                                           QSK60-G8",
+        "Number of Cylinders / Type                                                                                             16 cylinders - V type",
+        "Displacement l (cu. In)                                                                            60.2",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "AP 2500 – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                            AP 2500"
+      ],
+      "rows": [
+        "400 / 231                         2000.0                            2500                                      1800.0               2250                                  3609",
+        "Frequency (Hz)                                                                                                        50",
+        "Fuel Type                                                                                                             Diesel",
+        "Engine Make and Model                                                                                                 Perkins 4016-61TRG3",
+        "Alternator Make and Model                                                                                             Mecc Alte ECO 46-1.5L/4            A",
+        "Control Panel Model                                                                                                   DSE 7320",
+        "Engine Model                                                                                                          4016-61TRG3",
+        "Number of Cylinders / Type                                                                                            16 cylinders - V type",
+        "Displacement l (cu. In)                                                                            61.123",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "APD 2750 M – Aksa datasheet (50 Hz)",
+      "header": [
+        "Model Name                                                                                                             APD 2750 M"
+      ],
+      "rows": [
+        "400 / 231                         2200.0                            2750                                      2000.00                 2500                               3969",
+        "Frequency (Hz)                                                                                                         50",
+        "Fuel Type                                                                                                              Diesel",
+        "Engine Make and Model                                                                                                  Mitsubishi S16R2-PTAW2-E",
+        "Alternator Make and Model                                                                                              Mecc Alte ECO 46-2L/4 A",
+        "Control Panel Model                                                                                                    DSE 7320",
+        "Engine Model                                                                                                           S16R2-PTAW2-E",
+        "Number of Cylinders / Type                                                                                             16 cylinders - V type",
+        "Displacement l (cu. In)                                                                            79.90",
+        "Engine Speed (rpm)                                                                                 1500"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE 7320",
+      "line": "Control Panel Model                                                                                                   DSE 7320",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE 6120",
+      "line": "Control Panel Model                                                                                                   DSE 6120",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE 6120",
+      "line": "Control Panel Model                                                                                                   DSE 6120",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE 6120",
+      "line": "Control Panel Model                                                                                                   DSE 6120",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE 6120",
+      "line": "Control Panel Model                                                                                                   DSE 6120",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE 6120",
+      "line": "Control Panel Model                                                                                                   DSE 6120",
+      "src": [
+        2006
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE 6120",
+      "line": "Control Panel Model                                                                                                   DSE 6120",
+      "src": [
+        2007
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE 7320",
+      "line": "Control Panel Model                                                                                                   DSE 7320",
+      "src": [
+        2008
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE 7320",
+      "line": "Control Panel Model                                                                                                   DSE 7320",
+      "src": [
+        2009
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE 7320",
+      "line": "Control Panel Model                                                                                                   DSE 7320",
+      "src": [
+        2010
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE 7320",
+      "line": "Control Panel Model                                                                                                    DSE 7320",
+      "src": [
+        2011
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE 7320",
+      "line": "Control Panel Model                                                                                                   DSE 7320",
+      "src": [
+        2012
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE 7320",
+      "line": "Control Panel Model                                                                                                    DSE 7320",
+      "src": [
+        2013
+      ]
+    }
+  ]
 }
