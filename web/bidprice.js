@@ -112,8 +112,13 @@
   const SCOPE = [["vỏ cách âm", /cách\s*âm|chống\s*ồn|giảm\s*âm|soundproof|silent|canopy/i], ["ATS", /\bATS\b|chuyển\s*(đổi\s*)?nguồn\s*tự\s*động/i],
     ["hoà đồng bộ", /h(oà|òa)\s*đồng\s*bộ|synchroni[sz]/i], ["bồn dầu ngoài", /(bồn|bể|téc)\s*(chứa\s*)?(dầu|nhiên\s*liệu)\s*(ngoài|rời|ngầm|riêng)/i],
     ["trạm biến áp", /trạm\s*biến\s*áp|máy\s*biến\s*áp/i], ["1 pha", /(^|[^\d])1\s*pha\b|một\s*pha/i]];
-  const CN_WORD = /trung\s*quốc|\bchina\b|\bPRC\b/i;
-  const FOREIGN_WORD = /\bG7\b|\bG20\b|\bmỹ\b|\bUSA\b|vương\s*quốc\s*anh|\bUK\b|nhật\s*bản|\bjapan\b|\bđức\b|\bgermany\b|\bpháp\b|\bfrance\b|\bitaly\b|hàn\s*quốc|\bkorea\b|thụy\s*điển|\bsweden\b|ấn\s*độ|\bindia\b|châu\s*âu/i;
+  const CN_WORD = /trung\s*qu[ốô]c|\bchina\b|\bPRC\b/i;
+  // Countries that name themselves anywhere in the text (letters and digits around them end a word: the JS regex word boundary does not count ỹ, đ, ý as letters).
+  const FOREIGN_WORD = /(?<![\p{L}\p{N}])(?:G7|G20|USA|UK|japan|germany|france|italy|korea|sweden|india|thailand|malaysia|indonesia|indonexia|singapore|taiwan|turkey|spain|portugal|czech|netherlands|switzerland|finland|denmark|canada|australia)(?![\p{L}\p{N}])|vương\s*quốc\s*anh|anh\s*quốc|hoa\s*kỳ|nhật\s*bản|hàn\s*quốc|thụy\s*điển|ấn\s*độ|châu\s*âu|bồ\s*đào\s*nha|tây\s*ban\s*nha|thổ\s*nhĩ\s*kỳ|thái\s*lan|đài\s*loan|(?:liên\s*bang|lb)\s*nga|hà\s*lan|phần\s*lan|đan\s*mạch|thụy\s*sĩ/iu;
+  // Short names that are also common words or names (Anh, Ý, Mỹ "Mỹ Tho", Đức, Pháp "hợp pháp", Áo, Nga, EU; Italia, which a cabinet line "thiết bị ABB - Italia" also names): a country only as a
+  // whole field ("Anh", "C18 / Mỹ / Caterpillar"), after "xuất xứ" / "made in", or ending a line in capitals ("máy phát Cummins Mỹ").
+  const SHORT_NAME = /^(?:anh|mỹ|đức|pháp|ý|áo|nga|eu|italia)$/iu, SHORT_AFTER = /(?:xuất\s*xứ|nước\s*sản\s*xuất|made\s*in|origin)\s*[:\-]?\s*(?:anh|mỹ|đức|pháp|ý|áo|nga|eu|italia)(?![\p{L}\p{N}])/iu, SHORT_END = /(?:^|\s)(?:Anh|Mỹ|Đức|Pháp|Ý|Áo|Nga|EU|Italia|ANH|MỸ|ĐỨC|PHÁP|ÁO|NGA|ITALIA)\s*[.]?\s*$/mu;
+  const shortForeign = (t) => SHORT_AFTER.test(t) || SHORT_END.test(t) || t.split(/[,;\/()\[\]|:\n\r"“”–—-]+/).some((p) => SHORT_NAME.test(p.trim().replace(/^[.\s]+|[.\s]+$/g, "")));
   // "Đồng bộ thương hiệu" (Khoa, 2026-11-06, IB2600594596): the HSMT asks that the engine, the alternator and / or the
   // controller be made by the genset's own maker ("Tổ máy phải được đồng bộ 02 trong 03 bộ phận chính (động cơ, đầu
   // phát, bộ điều khiển) bởi nhà sản xuất máy phát điện", "động cơ, đầu phát, bảng điều khiển ... cùng một nhà sản
@@ -203,7 +208,7 @@
   // Where a set or engine is made, from the words of a text: China (the country, or a Chinese plant of a foreign make:
   // DCEC / CCEC Cummins, Perkins Wuxi, MTU Yuchai, Shanghai MHI), another country, or not said.
   const CN_MADE = /\bDCEC\b|\bCCEC\b|dongfeng|chongqing|\bwuxi\b|mtu\s*yuchai|shanghai\s*(diesel|mhi)|lắp\s*ráp\s*tại\s*trung|sản\s*xuất\s*tại\s*trung|made\s*in\s*china/i;
-  const placeOf = (s) => (CN_WORD.test(String(s || "")) || CN_MADE.test(String(s || "")) ? "cn" : FOREIGN_WORD.test(String(s || "")) ? "foreign" : null);
+  const placeOf = (s) => { const t = String(s || "").normalize("NFC"); return CN_WORD.test(t) || CN_MADE.test(t) ? "cn" : FOREIGN_WORD.test(t) || shortForeign(t) ? "foreign" : null; };
   const GROUP = { cn: "Trung Quốc", cnmade: "hãng ngoài Trung Quốc, sản xuất tại Trung Quốc", foreign: "ngoài Trung Quốc" };
   // Groups that cannot price each other: a Chinese make against a foreign make made abroad; cnmade compares with both.
   const conflict = (a, b) => !!a && !!b && a !== b && a !== "cnmade" && b !== "cnmade";
