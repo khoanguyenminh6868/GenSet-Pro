@@ -84,6 +84,350 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM550",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTAA19-G6A"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM50",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 56,
+        "max": 56,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM100",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTA5.9-G2"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 113,
+        "max": 113,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM155",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6CTA8.3-G2"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 175,
+        "max": 175,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM250",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "NTA855-G1A"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM330",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA19-G2"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM400",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA19-G3"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM660",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38-G2"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM880",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA38-G5"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 1100,
+        "max": 1100,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM1100",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50-G3"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "BCM1320",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50-G8"
+      ],
+      "alternatorMakes": [
+        "Marathon"
+      ],
+      "power": {
+        "min": 1375,
+        "max": 1375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Binshi-Cummins Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Marathon",
+        "Stamford",
+        "Faraday",
+        "Leroy Somer",
+        "Engga"
+      ],
+      "power": {
+        "min": 20,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "23.8kVA Cummins Diesel Generator Set",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "4B3.9-G11"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Marathon",
+        "Leroy Somer",
+        "Faraday",
+        "Engga"
+      ],
+      "power": {
+        "min": 21,
+        "max": 21,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
     }
   ],
   "certifications": [
@@ -123,9 +467,538 @@
         "公司已经通过了ISO9001国际质量认证、ISO14001国际环保认证及OHSAS18001职业健康安全管理体系认证"
       ],
       "file": "sources/bspower-guangdong/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.bs-power.com/Diesel-Generator/92.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Engine: Cummins(USA), DCEC Cummins, CCEC Cummins",
+        "Alternator: Marathon, Stamford, Faraday, Lerosomer, Engga",
+        "Controller: Deepsea 7320",
+        "Power range from 20 to 2000KW."
+      ],
+      "file": "sources/bspower-guangdong/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM550-KTAA19-G6A.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM550",
+        "Standby Power 550KW/688KVA",
+        "Cummins: KTAA19-G6A",
+        "Prime Power:                         500 KW /625KVA",
+        "Standby Power:                       550 KW / 688KVA",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://www.bs-power.com/Diesel-Generator/210.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "23.8VA Cummins Diesel Generator:",
+        "Prime Power 17KW / 21KVA;",
+        "Standby Power 19 KW / 24KVA;",
+        "Engine model: 4B3.9-G11",
+        "Automatic controller: Deep Sea DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM50-4BTA3.9-G2.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM50",
+        "Standby Power 50KW/63KVA",
+        "Cummins: 4BTA3.9-G2",
+        "Prime Power:                         45KW / 56KVA",
+        "Standby Power:                       50 KW / 63KVA",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM100-6BTA5.9-G2.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM100",
+        "Standby Power 100KW/125KVA",
+        "Cummins: 6BTA5.9-G2",
+        "Prime Power:                         90KW / 113KVA",
+        "Standby Power:                       100 KW / 125KVA",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM155-6CTA8.3-G2.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM155",
+        "Standby Power 155KW/194KVA",
+        "Cummins: 6CTA8.3-G2",
+        "Prime Power:                         140 KW / 175KVA",
+        "Standby Power:                       155 KW / 194KVA",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM250-NTA855-G1A.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM250",
+        "Standby Power 250KW/313KVA",
+        "Cummins: NTA855-G1A",
+        "Prime Power:                       220 KW /275KVA",
+        "Standby Power:                     250 KW / 313KVA",
+        "Alternator:                        Marathon",
+        "Controller:                        DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM330-KTA19-G2.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM330",
+        "Standby Power 330KW/413KVA",
+        "Cummins: KTA19-G2",
+        "Prime Power:                         300 KW /375KVA",
+        "Standby Power:                       330 KW / 413KVA",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM400-KTA19-G3.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM400",
+        "Standby Power 400KW/500KVA",
+        "Cummins: KTA19-G3",
+        "Prime Power:                         360 KW /450KVA",
+        "Standby Power:                       400 KW / 500KVA",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM660-KTA38-G2.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM660",
+        "Standby Power 660KW/825KVA",
+        "Cummins: KTA38-G2",
+        "Prime Power:                         600 KW /750KVA",
+        "Standby Power:                       660 KW / 825KVA",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM880-KTA38-G5.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM880",
+        "Standby Power 880KW/1100KVA",
+        "Cummins: KTA38-G5",
+        "Prime Power:                   728 KW /910KVA",
+        "Standby Power:                 800 KW / 1000KVA",
+        "Alternator:                    Marathon",
+        "Controller:                    DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2011.md",
+      "official": false
+    },
+    {
+      "n": 2012,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM1100-KTA50-G3.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM1100",
+        "Standby Power 1100KW/1375KVA",
+        "Cummins: KTA50-G3",
+        "Prime Power:                   1000 KW /1250KVA",
+        "Standby Power:                 1100 KW / 1375KVA",
+        "Alternator:                    Marathon",
+        "Controller:                    DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2012.md",
+      "official": false
+    },
+    {
+      "n": 2013,
+      "url": "https://www.bspower.sg/Download/Cummins-Marathon-50Hz/BCM1320-KTA50-G8.pdf",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "Model No.：BCM1320",
+        "Standby Power 1320KW/1650KVA",
+        "Cummins: KTA50-G8",
+        "Prime Power:                   1100 KW / 1375KVA",
+        "Standby Power:                 1320 KW / 1650KVA",
+        "Alternator:                    Marathon",
+        "Controller:                    DeepSea",
+        "Model: DSE7320"
+      ],
+      "file": "sources/bspower-guangdong/2013.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-29",
-  "checkedBy": "discover-bot"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 2002,
+      "title": "BCM550 – Cummins KTAA19-G6A (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM550"
+      ],
+      "rows": [
+        "Standby Power 550KW/688KVA",
+        "Cummins: KTAA19-G6A",
+        "Standby 688KVA at 50Hz,    400V",
+        "Genset Model:                        BCM550",
+        "Prime Power:                         500 KW /625KVA",
+        "Standby Power:                       550 KW / 688KVA",
+        "Fuel consumption (100% load)：        127.8 L/h",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Dimensions (LxWxH):                  3600×1550×1900 mm",
+        "Marathon Alternator",
+        "Model: MP-500-4",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "BCM50 – Cummins 4BTA3.9-G2 (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM50"
+      ],
+      "rows": [
+        "Standby Power 50KW/63KVA",
+        "Cummins: 4BTA3.9-G2",
+        "Standby 63KVA at 50Hz,     400V",
+        "Genset Model:                        BCM50",
+        "Prime Power:                         45KW / 56KVA",
+        "Standby Power:                       50 KW / 63KVA",
+        "Fuel consumption (100% load)：        12.9L/h",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Dimensions (LxWxH):                  1750×710×1300mm",
+        "Marathon Alternator",
+        "Model: MP-48-4",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "BCM100 – Cummins 6BTA5.9-G2 (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM100"
+      ],
+      "rows": [
+        "Standby Power 100KW/125KVA",
+        "Cummins: 6BTA5.9-G2",
+        "Standby 125KVA at 50Hz,    400V",
+        "Genset Model:                        BCM100",
+        "Prime Power:                         90KW / 113KVA",
+        "Standby Power:                       100 KW / 125KVA",
+        "Fuel consumption (100% load)：        27L/h",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Dimensions (LxWxH):                  2120×860×1430mm",
+        "Marathon Alternator",
+        "Model: MP-90-4",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "BCM155 – Cummins 6CTA8.3-G2 (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM155"
+      ],
+      "rows": [
+        "Standby Power 155KW/194KVA",
+        "Cummins: 6CTA8.3-G2",
+        "Standby 194KVA at 50Hz,    400V",
+        "Genset Model:                        BCM155",
+        "Prime Power:                         140 KW / 175KVA",
+        "Standby Power:                       155 KW / 194KVA",
+        "Fuel consumption (100% load)：        42/h",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Dimensions (LxWxH):                  2460×850×1300 mm",
+        "Marathon Alternator",
+        "Model: MP-140-4",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "BCM250 – Cummins NTA855-G1A (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM250"
+      ],
+      "rows": [
+        "Standby Power 250KW/313KVA",
+        "Cummins: NTA855-G1A",
+        "Standby 313KVA at 50Hz,  400V",
+        "Genset Model:                      BCM250",
+        "Prime Power:                       220 KW /275KVA",
+        "Standby Power:                     250 KW / 313KVA",
+        "Fuel consumption:                  61L/h",
+        "Alternator:                        Marathon",
+        "Controller:                        DeepSea",
+        "Dimensions (LxWxH):                3000×1000×1600 mm",
+        "Marathon Alternator",
+        "Model: MP-220-4A",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "BCM330 – Cummins KTA19-G2 (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM330"
+      ],
+      "rows": [
+        "Standby Power 330KW/413KVA",
+        "Cummins: KTA19-G2",
+        "Standby 413KVA at 50Hz,    400V",
+        "Genset Model:                        BCM330",
+        "Prime Power:                         300 KW /375KVA",
+        "Standby Power:                       330 KW / 413KVA",
+        "Fuel consumption (100% load)：        83L/h",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Dimensions (LxWxH):                  3600×1550×1900 mm",
+        "Marathon Alternator",
+        "Model: MP-300-4A",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "BCM400 – Cummins KTA19-G3 (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM400"
+      ],
+      "rows": [
+        "Standby Power 400KW/500KVA",
+        "Cummins: KTA19-G3",
+        "Standby 500KVA at 50Hz,    400V",
+        "Genset Model:                        BCM400",
+        "Prime Power:                         360 KW /450KVA",
+        "Standby Power:                       400 KW / 500KVA",
+        "Fuel consumption (100% load)：        97 L/h",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Dimensions (LxWxH):                  3600×1550×1900 mm",
+        "Marathon Alternator",
+        "Model: MP-360-4",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "BCM660 – Cummins KTA38-G2 (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM660"
+      ],
+      "rows": [
+        "Standby Power 660KW/825KVA",
+        "Cummins: KTA38-G2",
+        "Standby 825KVA at 50Hz,    400V",
+        "Genset Model:                        BCM660",
+        "Prime Power:                         600 KW /750KVA",
+        "Standby Power:                       660 KW / 825KVA",
+        "Fuel consumption (100% load)：        167 L/h",
+        "Alternator:                          Marathon",
+        "Controller:                          DeepSea",
+        "Dimensions (LxWxH):                  4500×1650×2400 mm",
+        "Marathon Alternator",
+        "Model: MX-600-4",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "BCM880 – Cummins KTA38-G5 (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM880"
+      ],
+      "rows": [
+        "Standby Power 880KW/1100KVA",
+        "Cummins: KTA38-G5",
+        "Standby 1100KVA at 50Hz,   400V",
+        "Genset Model:                  BCM800",
+        "Prime Power:                   728 KW /910KVA",
+        "Standby Power:                 800 KW / 1000KVA",
+        "Fuel consumption (100% load)：  209 L/h",
+        "Alternator:                    Marathon",
+        "Controller:                    DeepSea",
+        "Dimensions (LxWxH):            4600×1900×2400 mm",
+        "Marathon Alternator",
+        "Model: MX-850-4",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "BCM1100 – Cummins KTA50-G3 (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM1100"
+      ],
+      "rows": [
+        "Standby Power 1100KW/1375KVA",
+        "Cummins: KTA50-G3",
+        "Standby 1375KVA at 50Hz,   400V",
+        "Genset Model:                  BCM1100",
+        "Prime Power:                   1000 KW /1250KVA",
+        "Standby Power:                 1100 KW / 1375KVA",
+        "Fuel consumption (100% load)：  254 L/h",
+        "Alternator:                    Marathon",
+        "Controller:                    DeepSea",
+        "Dimensions (LxWxH):            5200×2000×2250 mm",
+        "Marathon Alternator",
+        "Model: MX-1030-4",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "BCM1320 – Cummins KTA50-G8 (datasheet Binshi)",
+      "header": [
+        "Model No.：BCM1320"
+      ],
+      "rows": [
+        "Standby Power 1320KW/1650KVA",
+        "Cummins: KTA50-G8",
+        "Standby 1650KVA at 50Hz,   400V",
+        "Genset Model:                  BCM1320",
+        "Prime Power:                   1100 KW / 1375KVA",
+        "Standby Power:                 1320 KW / 1650KVA",
+        "Fuel consumption (100% load)：  289 L/h",
+        "Alternator:                    Marathon",
+        "Controller:                    DeepSea",
+        "Dimensions (LxWxH):            5500×2000×2250 mm",
+        "Marathon Alternator",
+        "Model: MX-1240-4",
+        "Model: DSE7320"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Tổ máy Cummins 23.8kVA – 4B3.9-G11",
+      "header": [
+        "23.8VA Cummins Diesel Generator:"
+      ],
+      "rows": [
+        "Prime Power 17KW / 21KVA;",
+        "Standby Power 19 KW / 24KVA;",
+        "Engine model: 4B3.9-G11",
+        "Standby 23.8KVA at 50Hz, 400V;",
+        "Fuel cons.100%(L/H): 5.7 ;",
+        "Displacement(L): 3.9 ;",
+        "Dimension(mm): 1750×700×1100;",
+        "Weight(kg): 830;",
+        "Alternator: Stamford, Marathon, Leroy Somer, Faraday, Engga;",
+        "Automatic controller: Deep Sea DSE7320"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Model: DSE7320",
+      "src": [
+        2002,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "Deepsea 7320",
+      "line": "Controller: Deepsea 7320",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "Deep Sea DSE7320",
+      "line": "Automatic controller: Deep Sea DSE7320",
+      "src": [
+        2003
+      ]
+    }
+  ]
 }
