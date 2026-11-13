@@ -84,6 +84,103 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mitsubishi Open type (VPD...S)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S6R2-PTA-C",
+        "S6R2-PTAA-C",
+        "S12R-PTA-C",
+        "S12R-PTA2-C",
+        "S12R-PTAA2-C",
+        "S16R-PTA-C",
+        "S16R-PTA2-C",
+        "S16R-PTAA2-C",
+        "S6R-PTA",
+        "S6R2-PTA",
+        "S6R2-PTAA",
+        "S12A2-PTA",
+        "S12H-PTA",
+        "S12R-PTA",
+        "S12R-PTA2",
+        "S12R-PTAA2",
+        "S16R-PTA",
+        "S16R-PTA2",
+        "S16R-PTAA2",
+        "S16R2-PTAW"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 600,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MTU Open Type (VPD...M)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V2000G65",
+        "16V2000G25",
+        "16V2000G65",
+        "18V2000G65",
+        "18V2000G26F",
+        "12V4000G23R",
+        "12V4000G23",
+        "12V4000G63",
+        "16V4000G23",
+        "16V4000G63",
+        "20V4000G23",
+        "20V4000G63",
+        "20V4000G63L",
+        "12V2000G45",
+        "12V2000G85",
+        "16V2000G45",
+        "16V2000G85",
+        "18V2000G85",
+        "12V4000G43",
+        "12V4000G83",
+        "16V4000G43",
+        "16V4000G83",
+        "20V4000G43"
+      ],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 800,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -112,9 +209,167 @@
         "1.Power range cover from 69KW to 520KW"
       ],
       "file": "sources/eastpower-genset/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.eastpowergenset.com/mitsubishi-open-type-diesel-generator-set-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| VPD600S5 | 600 | 480 | 660 | 528 | S6R-PTA | 3480×1420×1980 | 4898",
+        "| VPD2250S5 | 2250 | 1800 | 2500 | 2000 | S16R2-PTAW | 5985×2555×2810 | 17200",
+        "Controller: Smartgen, Comap, Deep Sea Etc.",
+        "Alternator Brand: Stamford, leroy Somer,Mecc Alte"
+      ],
+      "file": "sources/eastpower-genset/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.eastpowergenset.com/mtu-open-type-diesel-generator-product/",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| VPD800M5 | 800 | 640 | 880 | 704 | 12V2000G65 | 4200×1650×2280 | 7000",
+        "| VPD3000M5 | 3000 | 2400 | 3250 | 2600 | 20V4000G63L | 8300×2950×2550 | 21000",
+        "Controller: Smartgen, Comap, Deep Sea Etc.",
+        "Alternator Brand: Stamford, leroy Somer,Mecc Alte"
+      ],
+      "file": "sources/eastpower-genset/2002.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot"
+  "checkedAt": "2026-11-13",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Mitsubichi Open type -50HZ China",
+      "header": [
+        "| Model | Prime Power (KVA/KW) | Standby Power (KVA/KW) | Engine | Deminsions (MM) | Weight (KG)"
+      ],
+      "rows": [
+        "| VPD650SN5 | 650 | 520 | 750 | 600 | S6R2-PTA-C | 3480×1420×1980 | 4898",
+        "| VPD750SN5 | 750 | 600 | 825 | 660 | S6R2-PTAA-C | 3560×1420×2020 | 5118",
+        "| VPD1250SN5 | 1250 | 1000 | 1375 | 1100 | S12R-PTA-C | 4080×1715×1985 | 5482",
+        "| VPD1375SN5 | 1375 | 1100 | 1500 | 1200 | S12R-PTA2-C | 4200×1730×2310 | 6170",
+        "| VPD1500SN5 | 1500 | 1200 | 1650 | 1320 | S12R-PTAA2-C | 4400×1756×2440 | 8244",
+        "| VPD1740SN5 | 1740 | 1392 | 1900 | 1520 | S16R-PTA-C | 4400×1756×2440 | 8335",
+        "| VPD1900SN5 | 1900 | 1520 | 2100 | 1680 | S16R-PTA2-C | 4515×2200×2510 | 10335",
+        "| VPD2000SN5 | 2000 | 1600 | 2250 | 1800 | S16R-PTAA2-C | 4515×2200×2510 | 10835"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Mitsubichi Open type -50HZ Japan",
+      "header": [
+        "| Model | Prime Power (KVA/KW) | Standby Power (KVA/KW) | Engine | Deminsions (MM) | Weight (KG)"
+      ],
+      "rows": [
+        "| VPD600S5 | 600 | 480 | 660 | 528 | S6R-PTA | 3480×1420×1980 | 4898",
+        "| VPD650S5 | 650 | 520 | 750 | 600 | S6R2-PTA | 3560×1420×2020 | 5118",
+        "| VPD750S5 | 750 | 600 | 825 | 660 | S6R2-PTAA | 4080×1715×1985 | 5482",
+        "| VPD780S5 | 780 | 624 | 860 | 688 | S12A2-PTA | 4200×1730×2310 | 6170",
+        "| VPD910S5 | 910 | 728 | 1000 | 800 | S12H-PTA | 4400×1756×2440 | 8244",
+        "| VPD1050S5 | 1050 | 840 | 1160 | 928 | S12H-PTA | 4400×1756×2440 | 8335",
+        "| VPD1250S5 | 1250 | 1000 | 1375 | 1100 | S12R-PTA | 4515×2200×2510 | 10335",
+        "| VPD1375S5 | 1375 | 1100 | 1500 | 1200 | S12R-PTA2 | 4515×2200×2510 | 10835",
+        "| VPD1500S5 | 1500 | 1200 | 1650 | 1320 | S12R-PTAA2 | 4920×2192×2810 | 12317",
+        "| VPD1750S5 | 1750 | 1400 | 1900 | 1520 | S16R-PTA | 5470×2200×2810 | 14150",
+        "| VPD1900S5 | 1900 | 1520 | 2100 | 1680 | S16R-PTA2 | 5470×2200×2810 | 14540",
+        "| VPD2000S5 | 2000 | 1600 | 2250 | 1800 | S16R-PTAA2 | 5700×2392×2810 | 14900",
+        "| VPD2250S5 | 2250 | 1800 | 2500 | 2000 | S16R2-PTAW | 5985×2555×2810 | 17200"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Mitsubichi Open type -60HZ Japan",
+      "header": [
+        "| Model | Prime Power (KVA/KW) | Standby Power (KVA/KW) | Engine | Deminsions (MM) | Weight (KG)"
+      ],
+      "rows": [
+        "| VPD1328S6 | 1328 | 1063 | 1500 | 1200 | S12R-PTA | 4515×2200×2510 | 10335",
+        "| VPD1506S6 | 1506 | 1205 | 1687.5 | 1350 | S12R-PTA2 | 4515×2200×2510 | 10835",
+        "| VPD1693S6 | 1693 | 1354 | 1875 | 1500 | S12R-PTAA2 | 4920×2192×2810 | 12317",
+        "| VPD1791S6 | 1791 | 1433 | 2000 | 1600 | S16R-PTA | 5470×2200×2810 | 14150",
+        "| VPD2011S6 | 2011 | 1609 | 2250 | 1800 | S16R-PTA2 | 5470×2200×2810 | 14540",
+        "| VPD2236S6 | 2236 | 1789 | 2500 | 2000 | S16R-PTAA2 | 5700×2392×2810 | 14900"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "MTU Open Type -50HZ",
+      "header": [
+        "| Model | Prime Power (KVA/KW) | Standby Power (KVA/KW) | Engine | Deminsions (MM) | Weight (KG)"
+      ],
+      "rows": [
+        "| VPD800M5 | 800 | 640 | 880 | 704 | 12V2000G65 | 4200×1650×2280 | 7000",
+        "| VPD900M5 | 900 | 720 | 1000 | 800 | 16V2000G25 | 4500×2000×2300 | 7350",
+        "| VPD1000M5 | 1000 | 800 | 1100 | 880 | 16V2000G65 | 4500×2000×2300 | 7850",
+        "| VPD1125M5 | 1125 | 900 | 1250 | 1000 | 18V2000G65 | 4750×2000×2380 | 9000",
+        "| VPD1250M5 | 1250 | 1000 | 1375 | 1100 | 18V2000G26F | 4800×2000×2380 | 9800",
+        "| VPD1350M5 | 1350 | 1080 | 1500 | 1200 | 12V4000G23R | 6150×2150×2400 | 11000",
+        "| VPD1500M5 | 1500 | 1200 | 1650 | 1320 | 12V4000G23 | 6150×2150×2400 | 11200",
+        "| VPD1625M5 | 1625 | 1300 | 1800 | 1440 | 12V4000G23 | 6150×2150×2400 | 14000",
+        "| VPD1812M5 | 1812 | 1450 | 2000 | 1600 | 12V4000G63 | 6150×2150×2400 | 14000",
+        "| VPD2050M5 | 2050 | 1640 | 2250 | 2000 | 16V4000G23 | 6500×2600×2500 | 14000",
+        "| VPD2250M5 | 2250 | 1800 | 2500 | 2000 | 16V4000G63 | 6550×2600×2500 | 17600",
+        "| VPD2500M5 | 2500 | 2000 | 2750 | 2200 | 20V4000G23 | 8300×2950×2550 | 20500",
+        "| VPD2750M5 | 2750 | 2200 | 3000 | 2400 | 20V4000G63 | 8300×2950×2550 | 21000",
+        "| VPD3000M5 | 3000 | 2400 | 3250 | 2600 | 20V4000G63L | 8300×2950×2550 | 21000"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "MTU Open Type -60HZ",
+      "header": [
+        "| Model | Prime Power (KVA/KW) | Standby Power (KVA/KW) | Engine | Deminsions (MM) | Weight (KG)"
+      ],
+      "rows": [
+        "| VPD800M6 | 800 | 640 | 880 | 700 | 12V2000G45 | 3680×1700×2160 | 5440",
+        "| VPD900M6 | 900 | 720 | 1000 | 800 | 12V2000G85 | 3950×1700×2160 | 6200",
+        "| VPD1025M6 | 1025 | 820 | 1125 | 900 | 16V2000G45 | 4350×1730×2300 | 7000",
+        "| VPD1138M6 | 1138 | 910 | 1251 | 1000 | 16V2000G85 | 4350×1730×2300 | 7250",
+        "| VPD1375M6 | 1375 | 1100 | 1500 | 1200 | 18V2000G85 | 4550×1900×2500 | 8000",
+        "| VPD1819M6 | 1819 | 1455 | 2000 | 1600 | 12V4000G43 | 5765×2200×2500 | 12250",
+        "| VPD2000M6 | 2000 | 1600 | 2200 | 1760 | 12V4000G83 | 5765×2200×2500 | 12500",
+        "| VPD2250M6 | 2250 | 1800 | 2500 | 2000 | 16V4000G43 | 6320×2600×2650 | 14500",
+        "| VPD2625M6 | 2625 | 2100 | 2875 | 2300 | 16V4000G83 | 6595×2600×2650 | 15000",
+        "| VPD2875M6 | 2875 | 2300 | 3125 | 2500 | 20V4000G43 | 8300×2555×2690 | 20500"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "Smartgen",
+      "line": "Controller: Smartgen, Comap, Deep Sea Etc.",
+      "src": [
+        2001,
+        2002
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "Comap",
+      "line": "Controller: Smartgen, Comap, Deep Sea Etc.",
+      "src": [
+        2001,
+        2002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea",
+      "line": "Controller: Smartgen, Comap, Deep Sea Etc.",
+      "src": [
+        2001,
+        2002
+      ]
+    }
+  ]
 }
