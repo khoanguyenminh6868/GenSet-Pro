@@ -82,9 +82,447 @@
         "NK296LM83发电型柴油机"
       ],
       "file": "sources/tongchai-nantong/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=26",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： 4135D-1发电型柴油机(船检)",
+        "型 号： 4135D-1",
+        "额定功率： 58.8 kW"
+      ],
+      "file": "sources/tongchai-nantong/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=29",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： 6135AD发电型柴油机(船检)",
+        "型 号： 6135AD",
+        "额定功率： 110 kW"
+      ],
+      "file": "sources/tongchai-nantong/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=30",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： 6135ZD发电型柴油机",
+        "型 号： 6135ZD",
+        "额定功率： 140 kW"
+      ],
+      "file": "sources/tongchai-nantong/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=20",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： NT129LA21发电型柴油机",
+        "型 号： NT129LA21",
+        "额定功率： 206 kW"
+      ],
+      "file": "sources/tongchai-nantong/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=13",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： NT137LR24发电型柴油机",
+        "型 号： NT137LR24",
+        "额定功率： 236 kW"
+      ],
+      "file": "sources/tongchai-nantong/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=14",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： NT144LU28发电型柴油机",
+        "型 号： NT144LU28",
+        "额定功率： 275 kW"
+      ],
+      "file": "sources/tongchai-nantong/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=22",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： NT151LU35发电型柴油机",
+        "型 号： NT151LU35",
+        "额定功率： 356 kW"
+      ],
+      "file": "sources/tongchai-nantong/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=231",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： NK151LU40发电型柴油机",
+        "型 号： NK151LU40",
+        "额定功率： 402 kW"
+      ],
+      "file": "sources/tongchai-nantong/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=8",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： NT271LW55发电型柴油机",
+        "型 号： NT271LW55",
+        "额定功率： 550 kW"
+      ],
+      "file": "sources/tongchai-nantong/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=9",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： TC283LW64发电型柴油机",
+        "型 号： TC283LW64",
+        "额定功率： 640 kW"
+      ],
+      "file": "sources/tongchai-nantong/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=211",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： TC296LM75发电型柴油机",
+        "型 号： TC296LM75",
+        "额定功率： 750 kW"
+      ],
+      "file": "sources/tongchai-nantong/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=212",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： NK296LM88发电型柴油机",
+        "型 号： NK296LM88",
+        "额定功率： 890 kW"
+      ],
+      "file": "sources/tongchai-nantong/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=257",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： NK296LM100B发电型柴油机",
+        "型 号： NK296LM100B",
+        "额定功率： 1000 kW"
+      ],
+      "file": "sources/tongchai-nantong/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "http://www.ntdec.cn/Product/Product.aspx?ID=253",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "产品名称 ： NGC12V1810发电型柴油机",
+        "型 号： NGC12V1810",
+        "额定功率： 1210 kW"
+      ],
+      "file": "sources/tongchai-nantong/2014.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "4135D-1发电型柴油机(船检)",
+      "header": [
+        "产品名称 ： 4135D-1发电型柴油机(船检)"
+      ],
+      "rows": [
+        "型 号： 4135D-1",
+        "额定转速： 1500 r/min",
+        "额定功率： 58.8 kW",
+        "缸 数： 4",
+        "缸径*行程： 135 mm*140 mm",
+        "最大功率： 64.7 kW",
+        "通检方式： 船检",
+        "类 别： 发电型柴油机",
+        "进气方式： 自然吸气",
+        "外形尺寸： 1205 mm × 770 mm × 1105 mm"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "6135AD发电型柴油机(船检)",
+      "header": [
+        "产品名称 ： 6135AD发电型柴油机(船检)"
+      ],
+      "rows": [
+        "型 号： 6135AD",
+        "额定转速： 1500 r/min",
+        "额定功率： 110 kW",
+        "缸 数： 6",
+        "缸径*行程： 135 mm*150 mm",
+        "最大功率： 121 kW",
+        "通检方式： 船检",
+        "类 别： 发电型柴油机",
+        "进气方式： 自然吸气",
+        "外形尺寸： 1435 mm × 797 mm × 1236 mm"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "6135ZD发电型柴油机",
+      "header": [
+        "产品名称 ： 6135ZD发电型柴油机"
+      ],
+      "rows": [
+        "型 号： 6135ZD",
+        "额定转速： 1500 r/min",
+        "额定功率： 140 kW",
+        "缸 数： 6",
+        "缸径*行程： 135 mm*140 mm",
+        "最大功率： 154 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 自然吸气",
+        "外形尺寸： 1611 mm × 797 mm × 1255 mm"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "NT129LA21发电型柴油机",
+      "header": [
+        "产品名称 ： NT129LA21发电型柴油机"
+      ],
+      "rows": [
+        "型 号： NT129LA21",
+        "额定转速： 1500 r/min",
+        "额定功率： 206 kW",
+        "缸 数： 6",
+        "缸径*行程： 135 mm*150 mm",
+        "最大功率： 227 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压中冷",
+        "外形尺寸： 1440 mm × 801 mm × 1500 mm"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "NT137LR24发电型柴油机",
+      "header": [
+        "产品名称 ： NT137LR24发电型柴油机"
+      ],
+      "rows": [
+        "型 号： NT137LR24",
+        "额定转速： 1500 r/min",
+        "额定功率： 236 kW",
+        "缸 数： 6",
+        "缸径*行程： 135 mm*160 mm",
+        "最大功率： 260 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压中冷",
+        "外形尺寸： 1900 mm × 1145 mm × 1550 mm"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "NT144LU28发电型柴油机",
+      "header": [
+        "产品名称 ： NT144LU28发电型柴油机"
+      ],
+      "rows": [
+        "型 号： NT144LU28",
+        "额定转速： 1500 r/min",
+        "额定功率： 275 kW",
+        "缸 数： 6",
+        "缸径*行程： 135 mm*168 mm",
+        "最大功率： 302 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压中冷",
+        "外形尺寸： 1900 mm × 1200 mm × 1256 mm"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "NT151LU35发电型柴油机",
+      "header": [
+        "产品名称 ： NT151LU35发电型柴油机"
+      ],
+      "rows": [
+        "型 号： NT151LU35",
+        "额定转速： 1500 r/min",
+        "额定功率： 356 kW",
+        "缸 数： 6",
+        "缸径*行程： 138 mm*168 mm",
+        "最大功率： 391 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压中冷",
+        "外形尺寸： 2000 mm × 1200 mm × 1650 mm"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "NK151LU40发电型柴油机",
+      "header": [
+        "产品名称 ： NK151LU40发电型柴油机"
+      ],
+      "rows": [
+        "型 号： NK151LU40",
+        "额定转速： 1500 r/min",
+        "额定功率： 402 kW",
+        "缸 数： 6",
+        "缸径*行程： 138 mm*168 mm",
+        "最大功率： 442 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压中冷",
+        "外形尺寸： 2000 mm × 1200 mm × 1650 mm"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "NT271LW55发电型柴油机",
+      "header": [
+        "产品名称 ： NT271LW55发电型柴油机"
+      ],
+      "rows": [
+        "型 号： NT271LW55",
+        "额定转速： 1500 r/min",
+        "额定功率： 550 kW",
+        "缸 数： 12",
+        "缸径*行程： 135 mm*158 mm",
+        "最大功率： 605 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压中冷",
+        "外形尺寸： 1682 mm × 1562 mm × 1256 mm"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "TC283LW64发电型柴油机",
+      "header": [
+        "产品名称 ： TC283LW64发电型柴油机"
+      ],
+      "rows": [
+        "型 号： TC283LW64",
+        "额定转速： 1500 r/min",
+        "额定功率： 640 kW",
+        "缸 数： 12",
+        "缸径*行程： 138 mm*158 mm",
+        "最大功率： 704 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压中冷",
+        "外形尺寸： 1682 mm × 1562 mm × 1256 mm"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "TC296LM75发电型柴油机",
+      "header": [
+        "产品名称 ： TC296LM75发电型柴油机"
+      ],
+      "rows": [
+        "型 号： TC296LM75",
+        "额定转速： 1500 r/min",
+        "额定功率： 750 kW",
+        "缸 数： 12",
+        "缸径*行程： 138 mm*165 mm",
+        "最大功率： 825 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压中冷",
+        "外形尺寸： 1682 mm × 1562 mm × 1256 mm"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "NK296LM88发电型柴油机",
+      "header": [
+        "产品名称 ： NK296LM88发电型柴油机"
+      ],
+      "rows": [
+        "型 号： NK296LM88",
+        "额定转速： 1500 r/min",
+        "额定功率： 890 kW",
+        "缸 数： 12",
+        "缸径*行程： 138 mm*165 mm",
+        "最大功率： 979 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压中冷",
+        "外形尺寸： 1682 mm × 1562 mm × 1256 mm"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "NK296LM100B发电型柴油机",
+      "header": [
+        "产品名称 ： NK296LM100B发电型柴油机"
+      ],
+      "rows": [
+        "型 号： NK296LM100B",
+        "额定转速： 1500 r/min",
+        "额定功率： 1000 kW",
+        "缸 数： 12",
+        "缸径*行程： 138 mm*165 mm",
+        "最大功率： 1100 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压",
+        "外形尺寸： 1682 mm × 2093 mm × 1654 mm"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "NGC12V1810发电型柴油机",
+      "header": [
+        "产品名称 ： NGC12V1810发电型柴油机"
+      ],
+      "rows": [
+        "型 号： NGC12V1810",
+        "额定转速： 1500 r/min",
+        "额定功率： 1210 kW",
+        "缸 数： 12",
+        "缸径*行程： 165 mm*190 mm",
+        "最大功率： 1331 kW",
+        "类 别： 发电型柴油机",
+        "进气方式： 增压",
+        "外形尺寸： 2144 mm × 1888 mm × 2075 mm"
+      ]
+    }
+  ]
 }
