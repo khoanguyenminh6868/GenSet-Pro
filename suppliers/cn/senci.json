@@ -55,6 +55,292 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins (DCEC/CCEC) diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 17,
+        "max": 1200,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Yuchai diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "power": {
+        "min": 16,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Weichai diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "power": {
+        "min": 16,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SDEC diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "power": {
+        "min": 13,
+        "max": 660,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 10,
+        "max": 1800,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Volvo Penta diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "power": {
+        "min": 68,
+        "max": 560,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gas generator sets",
+      "fuel": "gas",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "power": {
+        "min": 25,
+        "max": 720,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Pangu diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Pangu"
+      ],
+      "power": {
+        "min": 400,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SDEC diesel generator sets (jssenci.com)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "power": {
+        "min": 50,
+        "max": 665,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Volvo Penta diesel generator sets (jssenci.com)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "power": {
+        "min": 68,
+        "max": 550,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Deutz diesel generator sets (jssenci.com)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 16,
+        "max": 400,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Hanma (CM) diesel generator sets (jssenci.com)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Hanma"
+      ],
+      "power": {
+        "min": 230,
+        "max": 410,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Qianneng diesel generator sets (jssenci.com)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Qianneng"
+      ],
+      "power": {
+        "min": 120,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SC62DCE",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 62,
+        "max": 62,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
     }
   ],
   "certifications": [
@@ -82,9 +368,1171 @@
         "adheres to the ISO9001:2008 quality management standard"
       ],
       "file": "sources/senci/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.senci.com/uploads/202504287584.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "The parameters above is about: rotating speed 1500RPM, frequency 50Hz, rated voltage 400/230V, power factor 0.8, three phase four line of wiring mode. We have Stamford, Leroy somer,",
+        "Mecc Alte, Marathon, Wellpower and other famous brands alternator for your choice.",
+        "SC21DCF   SC21DCE     19   17   4B3.9-G11                                           L4   3.9           1800*850*1300       710     2000*900*1250                                       900",
+        "SC1500CCF  SC1500CCE   1320  1200  KTA50-GS8                                        16  50.3          5200*2080*2500      10000   7000*2250*2690                                       12000  广西玉柴机器集团有限公司总部位于广西玉林市，成    Guangxi Yuchai Machinery Group Co., Ltd. is headquartered",
+        "SC38YCF    SC38YCE     33    30    YC4V55Z-D20      4                               2.5           1650×800×930        550     2200×900×1250    930                                         SC20YCF    SC20YCE     17.6  16                                YC4V35*D21    4    2.5           1700*800*1200        680     2300*1100*1240                               1050",
+        "SC2500YCF  SC2500YCE   2200  2000  YC16VC3300-D31   12                              105.56        7600×2800×3200      21200   12090×2350×2590  27200                                       SC375YCF   SC375YCE    330   300                               YC6MK500*D32  6    10.34         3100*1150*1850       2960    4200*1500*2100                               4060",
+        "SC20WCF    SC20WCE     17.6  16    WP2.3D25E200                                     4    2.3           1600*760*1200       550     1950*900*1200                                       680",
+        "SC3000WCF  SC3000WCE   2640  2400  16M55D2960E311                            20   87.5          9500*2500*3300       18400   /                                            /          性、可靠性、可操作性和低廉的运行及维护成本，同      -800KW.",
+        "SC16SDF   SC16SDE     12   13   4Z23-G11/G21                                   4    2.3           1800*850*1330       730     2300*1100*1290                                      1050  SC20SDF   SC20SDE     18   16                                  4Z2 3-G12/G21  4    2.3           1800*850*1330       730     2300*1100*1290                               1050",
+        "SC700SDF  SC700SDE    600  560  6KTAA25-G38                                    6    25.18         3900*1650*2150      5060    5100*1900*2430                                      6960  SC825SDF  SC825SDE    720  660  6KTAA25-G31.1                                 6    25.18         4100*1650*2150      5400    5100*1900*2430                               7300",
+        "SC13PF    SC13PE      11    10    403A-15G1                                         3    1.496         1200*750*1200       430     1800*1000*1180                                      780",
+        "pollution, and meet Euro Ill environmental emission stan-     SC2250PF  SC2250PE    2000  1800  4016-61TRG3                                       16   61.123        6900*2250x2750      17500   40HQ container                                      25500",
+        "SC85VF   SC85VE      75   68   TAD530GE     4                                       4.76          2050*900x1550       1300    2800*1100*1800  1750",
+        "SC700VF  SC700VE     616  560  TWD1645GE    6                                       16.12         3520*1430*2330      4556    5100*1900x2430  5756",
+        "SC38WNGF    SC38WNG     30   25    WP4D40E200NG                                        4       4.5        1800*710*1300            900  2500*1000*1500                                 1250",
+        "到极高的精度要求�4。此外，博杜安动力的大缸径发  which processes with micrometer level precision to ensure        SC1063WNGF  SC1063WNG   850  720   12M33D960E311NG                     12                   39.2          5000*1800*2000      7550      5800*2250*2450  8050",
+        "SC500PG   400/440    PTAA6L-EG490    450/490        135X166                         6    30        202.5        国Ⅲ         3300X1170X1610  3370",
+        "磐谷系列                                                                                              SC3000PG  2400/2640  QTA20V-EG2950D  2680/2950      185X200                         20   300       192.39       国Ⅲ         8000X2800X3100  19400"
+      ],
+      "file": "sources/senci/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.jssenci.com/pd40401701.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "潍柴系列 WEICHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio |"
+      ],
+      "file": "sources/senci/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://www.jssenci.com/pd41948601.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "上柴系列 SHANGCHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径×行程（mm） Bore-stroke ratio |",
+        "| SC58SC | 50/58 | SC4H95D2 | 62/68 | 105×124 | 4 | 13 | 195 | 国Ⅱ | 1900×900×1200 |",
+        "| SC735SC | 665/735 | SC33W1150D2 | 782/860 | 180×215 | 6 | 100 | 205 | 国Ⅱ | 4500×1700×2050 |"
+      ],
+      "file": "sources/senci/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://www.jssenci.com/pd48438601.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "沃尔沃系列 VOLVO SERIES",
+        "机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio |",
+        "| | 68/75 | TAD530GE | 76/83 | 108x130 | 4 | 13 | 213 | 国Ⅱ | 2200X720X1380 | 1050",
+        "| | 550/605 | TWD1645GE | 595/655 | 144X165 | 6 | 42 | 191 | 国Ⅲ | 3460X1400X2100 | 3600"
+      ],
+      "file": "sources/senci/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://www.jssenci.com/pd41167691.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "道依茨系列 DAOYICI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio |",
+        "| | 16/17.6 | BFM3 G1 | 20/22 | | | | | 国Ⅱ | |",
+        "| | 400/440 | TCD13 G2 | 440/470 | | | | | 国Ⅱ | |"
+      ],
+      "file": "sources/senci/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://www.jssenci.com/pd48661701.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "汉马系列 汉马 SERIES (国Ⅲ排放 STAGEⅢ EMISSION )",
+        "机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio |",
+        "| SC230HM | 230/253 | CM6D12F.250 30 | 250/275 | 128X153 | 6 | 30 | ≤200 | 国Ⅲ | |",
+        "| SC410HM | 410/450 | CM6D30F.408 30 | 450/490 | 130X161 | 6 | 41 | ≤195 | 国Ⅲ | |"
+      ],
+      "file": "sources/senci/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://www.jssenci.com/pd49102701.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "乾能系列 乾能 SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio |",
+        "| | 120KW | QN8H163 | 120/171 | | | | | 国Ⅱ | |",
+        "| | 1000KW | QN32H1480 | | | 12 | | | 国Ⅱ | |"
+      ],
+      "file": "sources/senci/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://www.jssenci.com/pd48059011.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "东康系列 COMMINS SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio |"
+      ],
+      "file": "sources/senci/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://www.jssenci.com/pd41438601.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "重康系列 重康 SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio |"
+      ],
+      "file": "sources/senci/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://www.jssenci.com/pd42301701.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "玉柴系列 YUCHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio |"
+      ],
+      "file": "sources/senci/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://www.senci.com/index.php?c=article&id=971",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Rated Power 50kw/62kva",
+        "model: 4BTA3.9-G2Engine",
+        "Alternator Model: S1L2-Y1Alternator",
+        "Display format: DSE7320"
+      ],
+      "file": "sources/senci/2011.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Cummins (DCEC) series 50Hz",
+      "header": [
+        "Open      Soundproof  ESP  PRP  Engine                                              Cyl  Displacement  Open TypeDimention  Weight  TypeDimention                                       Weight",
+        "Type      Type        备用   常用   Model                                               缸    排量            开架尺寸                重量      静音尺寸                                                重量",
+        "开架机型      静音机型        kW   kW   动力型号                                                数    L             mm                  Kg      mm                                                  Kg"
+      ],
+      "rows": [
+        "SC21DCF   SC21DCE     19   17   4B3.9-G11                                           L4   3.9           1800*850*1300       710     2000*900*1250                                       900",
+        "SC28DCF   SC28DCE     24   22   4B3.9-G2                                            L4   3.9           1800*850*1300       730     2200*900*1250                                       930",
+        "SC31DCF   SC31DCE     27   25   4B3.9-G12                                           L4   3.9           1800*850*1300       810     2200*900*1250                                       950",
+        "SC40DCF   SC40DCE     35   32   4BT3.9-G2                                           L4   3.9           1800*850*1300       830     2200*900*1250                                       1000",
+        "SC56DCF   SC56DCE     50   45   4BTA3.9-G2                                          L4   3.9           1800*850*1300       950     2500*1000*1600                                      1250",
+        "SC65DCF   SC65DCE     56   52   4BTA3.9-G2                                          L4   3.9           1800*850*1300       970     2500*1000*1600                                      1290",
+        "SC80DCF   SC80DCE     72   64   4BTA3.9-G11                                         L4   3.9           1900*850*1300       1040    2500*1000*1600                                      1330",
+        "SC94DCF   SC94DCE     82   75   6BT5.9-G2                                           L6   5.9           2200*940*1500       1150    2800*1100*1700                                      1650",
+        "SC100DCF  SC100DCE    88   80   4BTAA3.9-G3                                         L4   3.9           2200*940*1500       1160    2800*1100*1700                                      1600",
+        "SC115DCF  SC115DCE    100  92   6BTA5.9-G2                                          L6   5.9           2200*940*1500       1180    2800*1100*1700                                      1680",
+        "SC135DCF  SC135DCE    116  108  6BTAA5.9-G2                                         L6   5.9           2350*950*1500       1280    2800*1100*1700                                      1720",
+        "SC150DCF  SC150DCE    132  120  6BTAA5.9-G12                                        L6   5.9           2350*950*1500       1320    2800*1100*1700                                      1750",
+        "SC181DCF  SC181DCE    160  145  6CTA8.3-G2                                          L6   8.3           2400*950*1600       1650    3000*1100*1800                                      2200",
+        "SC200DCF  SC200DCE    176  160  6CTAA8.3-G2                                         L6   8.3           2550*1000*1600      1750    3300*1300*1800                                      2350",
+        "SC220DCF  SC220DCE    200  NA   6CTAA8.3-G9                                         L6   8.3           2600*1050*1820      1900    3300*1300*1800                                      2350",
+        "SC250DCF  SC250DCE    211  200  6LTAA8.9-G2                                         L6   8.9           2600*1050*1820      1900    3500*1650*1950                                      2550",
+        "SC270DCF  SC270DCE    240  216  6LTAA9.5-G3                                         L6   9.5           2600*1050*1820      2000    3800*1650*1950                                      2800",
+        "SC320DCF  SC320DCE    280  256  6LTAA9.5-G1                                         L6   9.5           2600*1050*1820      2050    3800*1650*1950                                      2850",
+        "SC388DCF  SC388DCE    340  310  6ZTAA13-G3                                          L6   13            3000*1100*1920      3200    4200*1500*2100                                      4350",
+        "SC438DCF  SC438DCE    380  350  6ZTAA13-G2                                          L6   13            3000*1100*1920      3350    4200*1500*2100                                      4500",
+        "SC438DCF  SC438DCE    380  350  6ZTAA13-G4                                          L6   13            3500*1350*2110      4200    4800*2100*2280                                      5400",
+        "康明斯系列                                                                                              SC438DCF  SC438DCE    375  350  QSZ13-G2                                            L6   13            3500*1350*2110      4200    4800*2100*2280                                      5400",
+        "CUMMINS SERIES                                                                                     SC450DCF  SC450DCE    400  360  QSZ13-G5                                            L6   13            3500*1350*2110      4300    4800*2100*2280                                      5500",
+        "SC475DCF  SC475DCE    400  380  QSZ13-G3                                            L6   13            3500*1350*2110      4300    4800*2100*2280                                      5500",
+        "SC500DCF  SC500DCE    440  400  QSZ13-G10                                           L6   13            3500*1350*2110      4300    4800*2100*2280                                      5500"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Cummins (DCEC) series 50Hz / 60Hz",
+      "header": [
+        "Open     Soundproof            Engine                                          Cyl  Displacement  Open TypeDimention  Weight  Soundproof      Weight                                    Open      Soundproof                                           Engine        Cyl  Displacement  Open TypeDimention   Weight  Soundproof                                   Weight",
+        "Type     Type        ESP  PRP  Model                                           缸    排量            开架尺寸                重量      TypeDimention                                       重量    Type      Type        ESP  PRP                                 Model         缸    排量            开架尺寸                 重量      TypeDimention                                重量"
+      ],
+      "rows": [
+        "SC25DCF  SC25DCE     22   20   QSB3.9-G31                                      L4   3.9           1800*850*1330       730     2300*1100*1290                                      1050  SC25DCF   SC25DCE     22   20                                  4B3.9-G11     4    3.9           1800*850*1300        710     2200*900*1250                                920",
+        "SC38DCF  SC38DCE     33   30   QSB3.9-G33                                      L4   3.9           1800*850*1330       830     2300*1100*1290                                      1120  SC30DCF   SC30DCE     27   24                                  4B3.9-G2      4    3.9           1800*850*1300        730     2200*900*1250                                930",
+        "SC63DCF  SC63DCE     55   50   QSB3.9-G35                                      L4   3.9           1800*850*1330       970     2300*1100*1290                                      1340  SC35DCF   SC35DCE     30   28                                  4B3.9-G12     4    3.9           1800*850*1300        800     2200*900*1250                                950",
+        "SC60DCF  SC60DCE     53   48   QSB3.9-G2                                       L4   3.9           1800*850*1330       950     2300*1100*1290                                      1320  SC45DCF   SC45DCE     40   36                                  4BT3.9-G2     4    3.9           1800*850*1300        830     2200*900*1250                                1000",
+        "SC80DCF  SC80DCE     70   64   QSB3.9-G3                                       L4   3.9           1900*850*1330       1040    2300*1100*1290                                      1410",
+        "SC88DCF  SC88DCE     75   70   QSB3.9-G37                                      L4   3.9           2300*900*1480       1100    2800*1100*1480                                      1550  SC64DCF   SC64DCE     56   51                                  4BTA3.9-G2    4    3.9           1800*850*1300        950     2500*1000*1600                               1290",
+        "SC100DCF      SC100DCE    88   80   QSB3.9-G39                                      L4   3.9           1950*850*1330       1080    2300*1100*1290                                      1530  SC75DCF   SC75DCE     68   60                                  4BTA3.9-G2    4    3.9           1800*850*1300        970     2500*1000*1600                               1290",
+        "SC100DCF      SC100DCE    88   80   QSB5.9-G2                                       L6   5.9           2200*940*1480       1150    2800*1100*1480                                      1600  SC90DCF   SC90DCE     80   72                                  4BTA3.9-G11   4    3.9           1800*850*1300        1000    2500*1000*1600                               1330",
+        "SC113DCF      SC113DCE    100  90   QSB5.9-G30                                      L6   5.9           2200*940*1480       1180    2800*1100*1480                                      1630  SC105DCF  SC105DCE    92   84                                  6BT5.9-G2     6    5.9           2200*940*1500        1100    2800*1100*1700                               1650",
+        "SC125DCF      SC125DCE    112  100  QSB5.9-G3                                       L6   5.9           2350*950*1500       1280    2800*1100*1480                                      1700  SC125DCF  SC125DCE    110  100                                 6BT5.9-G2     6    5.9           2200*940*1500        1160    2800*1100*1700                               1720",
+        "SC125DCF      SC125DCE    120  100  QSB5.9-G31                                      L6   5.9           2350*950*1500       1280    2800*1100*1480                                      1700  SC131DCF  SC131DCE    116  105                                 6BTA5.9-G2    6    5.9           2200*940*1500        1180    2800*1100*1700                               1680",
+        "SC150DCF      SC150DCE    132  120  QSB5.9-G33                                      L6   5.9           2350*950*1520       1340    2800*1100*1700                                      1800  SC145DCF  SC145DCE    125  116                                 6BTAA5.9-G2   6    5.9           2200*980*1500        1200    3000*1100*1800                               2000",
+        "SC150DCF      SC150DCE    132  120  QSB6.7-G3                                       L6   6.7           2350*950*1520       1340    2800*1100*1700                                      1800  SC160DCF  SC160DCE    140  128                                 6BTAA5.9-G12  6    5.9           2200*980*1500        1250    3000*1100*1800                               2000",
+        "SC180DCF      SC180DCE    160  144  QSB6.7-G4                                       L6   6.7           2400*950*1570       1650    2800*1100*1800                                      2250  SC190DCF  SC190DCE    167  152                                 6CTA8.3-G2    6    8.3           2550*1000*1600       1720    3300*1300*1800                               2000",
+        "SC188DCF      SC188DCE    165  150  QSB6.7-G32                                      L6   6.7           2400*950*1570       1680    2800*1100*1800                                      2300  SC210DCF  SC210DCE    184  168                                 6CTAA8.3-G2   6    8.3           2550*1000*1600       1750    3300*1300*1800                               2350",
+        "SC200DCF      SC200DCE    176  160  QSL8.9-G2                                       L6   8.9           2550*1000*1570      1750    3000*1200*1800                                      2350",
+        "SC225DCF      SC225DCE    200  180  QSB6.7-G31                                      L6   6.7           2600*1050*1820      1900    3800*1300*1850                                      2750  SC220DCF  SC220DCE    220  NA                                  6CTAA8.3-G9   6    8.3           2550*1000*1600       1800    3500*1650*1950                               2500",
+        "SC225DCF      SC225DCE    200  180  QSL8.9-G3                                       L6   8.9           2600*1050*1820      1900    3800*1300*1850                                      2750  SC260DCF  SC260DCE    228  208                                 6LTAA8.9-G2   6    8.9           2600*1050*1820       1900    3500*1650*1950                               2550",
+        "SC250DCF      SC250DCE    220  200  QSL8.9-G4                                       L6   8.9           3000*1100*1920      2600    4200*1500*2100                                      3700  SC280DCF  SC280DCE    248  224                                 6LTAA8.9-G3   6    8.9           2600*1050*1820       1950    3500*1650*1950                               2550",
+        "SC250DCF      SC250DCE    220  200  QSL8.9-G34                                      L6   8.9           2600*1050*1820      1950    3800*1300*1850                                      2800  SC285DCF  SC285DCE    252  228                                 6LTAA9.5-G3   6    9.5           2600*1050*1820       2000    3800*1650*1950                               2800",
+        "SC288DCF      SC288DCE    250  230  QSL8.9-G33                                      L6   8.9           2600*1050*1820      2000    3800*1300*1850                                      2850  SC320DCF  SC320DCE    280  256                                 6LTAA9.5-G1   6    9.5           2600*1050*1820       2050    3800*1650*1950                               2850",
+        "SC320DCF      SC320DCE    280  256  QSL8.9-G30                                      L6   8.9           2600*1050*1820      2050    3800*1300*1850                                      2900  SC388DCF  SC388DCE    340  310                                 6ZTAA13-G3    6    13            3000*1100*1920       3200    4200*1500*2100                               4350",
+        "SC350DCF      SC350DCE    320  280  QSZ13-G6                                        L6   13            3000*1100*1920      3150    4200*1500*2100                                      4300  SC438DCF  SC438DCE    380  350                                 6ZTAA13-G2    6    13            3000*1100*1920       3350    4200*1500*2100                               4500",
+        "SC400DCF      SC400DCE    360  320  QSZ13-G7                                        L6   13            3300*1150*120       3350    4200*1500*2100                                      4500  SC438DCF  SC438DCE    380  350                                 6ZTAA13-G4    6    13            3500*1350*2110       4200    4800*2100*2280                               5400",
+        "SC113DCF      SC113DCE    100  90   QSB5.9-G30                                      L6   5.9           2200*940*1480       1180    2800*1100*1480                                      1630  SC438DCF  SC438DCE    375  350                                 QSZ13-G2      6    13            3500*1350*2110       4200    4800*2100*2280                               5400",
+        "SC125DCF      SC125DCE    110  100  QSB5.9-G31                                      L6   5.9           2350*950*1500       1280    2800*1100*1480                                      1700  SC475DCF  SC475DCE    420  380                                 QSZ13-G5      6    13            3500*1350*2110       4300    4800*2100*2280                               5500",
+        "SC150DCF      SC150DCE    132  120  QSB5.9-G33                                      L6   5.9           2350*950*1520       1340    2800*1100*1700                                      1800",
+        "SC188DCF      SC188DCE    165  150  QSB6.7-G32                                      L6   6.7           2400*950*1570       1650    2800*1100*1700                                      2250  SC475DCF  SC475DCE    400  380                                 QSZ13-G3      6    13            3500*1350*2110       4300    4800*2100*2280                               5500",
+        "SC225DCF      SC225DCE    200  180  QSB6.7-G31                                      L6   6.7           2600*1050*1820      1900    3800*1300*1850                                      2750  SC550DCF  SC550DCE    480  440                                 QSZ13-G11     6    13            3500*1350*2110       4300    4800*2100*2280                               5500",
+        "SC250DCF      SC250DCE    220  200  QSL8.9-G34                                      L6   8.9           2600*1050*1820      1950    3800*1300*1850                                      2800  以上技术参数转速为1800RPM，频率60Hz，功率因数0.8，接线方式为3相4线。发电机可选用神驰、无锡斯坦福、利莱森玛、美奥迪、上海马拉松、威尔能等知名品牌。",
+        "SC288DCF      SC288DCE    250  230  QSL8.9-G33                                      L6   8.9           2600*1050*1820      2000    3800*1300*1850                                      2850  The parameters above is about: rotating speed 1800RPM, frequency 60Hz, power factor 0.8, three phase four line of wiring mode. We have Stamford, Leroy somer, Mecc Alte,  Marathon,",
+        "SC320DCF      SC320DCE    280  256  QSL8.9-G30                                      L6   8.9           2600*1050*1820      2050    3800*1300*1850                                      2900  本参数表仅供参考，如有更改恕不另行通知（This parameter table is only for reference and no notice any more if have change in the future.",
+        "SC60DCF  SC60DCE     53   48   QSB3.9-G2                                       L4   3.9           1800*850*1330       950     2300*1100*1290                                      1320",
+        "SC80DCF  SC80DCE     70   64   QSB3.9-G3                                       L4   3.9           1900*850*1330       1040    2300*1100*1290                                      1410",
+        "SC100DCF      SC100DCE    88   80   QSB5.9-G2                                       L6   5.9           2200*940*1480       1150    2800*1100*1480                                      1600",
+        "SC125DCF      SC125DCE    110  100  QSB5.9-G3                                       L6   5.9           2350*950*1500       1280    2800*1100*1480                                      1700",
+        "SC150DCF      SC150DCE    132  120  QSB6.7-G3                                       L6   6.7           2350*950*1520       1340    2800*1100*1700                                      1800",
+        "SC180DCF      SC180DCE    160  144  QSB6.7-G4                                       L6   6.7           2400*950*1570       1650    2800*1100*1800                                      2250",
+        "SC200DCF      SC200DCE    176  160  QSL8.9-G2                                       L6   8.9           2550*1000*1570      1750    3000*1200*1800                                      2350",
+        "SC225DCF      SC225DCE    200  180  QSL8.9-G3                                       L6   8.9           2600*1050*1820      1900    3800*1300*1850                                      2750",
+        "SC250DCF      SC250DCE    220  200  QSL8.9-G4                                       L6   8.9           3000*1100*1920      2600    4200*1500*2100                                      3700",
+        "SC350DCF      SC350DCE    320  280  QSZ13-G6                                        L6   13            3000*1100*1920      3150    4200*1500*2100                                      4300",
+        "SC400DCF      SC400DCE    360  320  QSZ13-G7                                        L6   13            3300*1150*120       3350    4200*1500*2100                                      4500"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Cummins (CCEC) series 50Hz / Yuchai series",
+      "header": [
+        "Open  Soundproof  ESP   PRP   Engine      Cyl                                      Displacement  Open TypeDimention  Weight  TypeDimention   Weight",
+        "Type  Type        备用    常用    Model                                            缸   排量            开架尺寸                重量      静音尺寸                                                 重量"
+      ],
+      "rows": [
+        "SC250CCF   SC250CCE    220   200   MTA11-G2                                         6   10.8          3000*950*1750       2700    4200*1400*2150                                       3600",
+        "SC250CCF   SC250CCE    220   200   NT855-GA                                         6   14            3000*1050*1850      2870    4200*1400*2000                                       3750",
+        "SC250CCF   SC250CCE    220   200   NTA855-G1                                        6   14            3000*1050*1850      2820    4200*1400*2000                                       3750",
+        "SC275CCF   SC275CCE    240   220   NTA855-G1A                                       6   14            3000*1050*1850      2900    4200*1400*2000                                       3850",
+        "SC310CCF   SC310CCE    280   250   NTA855-G1B                                       6   14            3000*1050*1850      2965    4200*1400*2000                                       3900",
+        "SC312CCF   SC312CCE    280   250   MTAA11-G3                                        6   10.8          3000*1100*1850      2800    4200*1300*1900                                       3720",
+        "SC312CCF   SC312CCE    280   250   NTA855-G1B                                       6   14            3000*1050*1850      2965    4200*1400*2000                                       3900",
+        "SC350CCF   SC350CCE    308   280   NTA855-G2A                                       6   14            3100*1050*1850      3200    4200*1400*2000                                       4300",
+        "SC350CCF   SC350CCE    308   280   NTA855-G4                                        6   14            3100*1050*1850      3100    4200*1400*2000                                       4200",
+        "SC375CCF   SC375CCE    330   300   NTAA855-G7                                       6   14            3200*1050*1900      3200    4500*1600*2250                                       4300",
+        "SC438CCF   SC438CCE    360   350   NTA855-G7A                                       6   14            3300*1250*1900      3200    4500*1600*2250                                       4300",
+        "SC375CCF   SC375CCE    330   300   KTA19-G2                                         6   19            3300*1250*1850      3890    4600*1800*2230                                       3900",
+        "SC450CCF   SC450CCE    400   360   KTA19-G3                                         6   18.9          3350*1280*1970      4070    4650*1800*2250                                       4800",
+        "SC500CCF   SC500CCE    440   400   KTA19-G3A                                        6   18.9          3450*1280*1970      4100    4950*1800*2250                                       4950",
+        "SC500CCF   SC500CCE    440   400   KTA19-G4                                         6   18.9          3450*1320*1970      4150    4950*1800*2250                                       4970",
+        "SC525CCF   SC525CCE    480   420   KTAA19-G5                                        6   18.9          3600*1600*2250      4450    5300*1800*2530                                       6000",
+        "SC563CCF   SC563CCE    520   460   KTAA19-G6                                        6   19            3600*1600*2250      4530    5300*1800*2530                                       6050",
+        "SC625CCF   SC625CCE    550   500   KT38-G                                           12  38            4300*1630*2350      6780    5800*1800*2630                                       8000",
+        "SC700CCF   SC700CCE    630   570   KTA38-G1                                         12  38            4400*1630*2350      7300    5900*1800*2630                                       8500",
+        "SC700CCF   SC700CCE    630   570   KTA38-G1B                                        13  38            4400*1630*2350      7300    5900*1800*2630                                       8500                                                                   玉柴系列",
+        "SC725CCF   SC725CCE    640   580   KTA38-GA                                         12  37.8          4400*1630*2350      7300    5900*1800*2630                                       8500",
+        "SC750CCF   SC750CCE    660   600   KTA38-G2                                         12  37.8          4400*1630*2350      7300    5900*1800*2630                                       8500                                                                   YUCHAI SERIES",
+        "SC800CCF   SC800CCE    704   640   KTA38-G2B                                        12  37.8          4700*1800*2500      7800    6200*2000*2690                                       9000",
+        "SC910CCF   SC910CCE    800   728   KTA38-G2A                                        12  37.8          4700*1800*2500      7900    6200*2000*2690                                       9000",
+        "SC1000CCF  SC1000CCE   880   800   KTA38-G5                                         12  37.8          4700*1800*2500      8100    6200*2000*2690                                       9500",
+        "SC1250CCF  SC1250CCE   1100  1000  KTA50-G3                                         16  50.3          5200*2080*2500      10000   7000*2250*2690                                       12000",
+        "SC1375CCF  SC1375CCE   1200  1100  KTA50-G8                                         16  50.3          5200*2080*2500      10000   7000*2250*2690                                       12000",
+        "SC1500CCF  SC1500CCE   1320  1200  KTA50-GS8                                        16  50.3          5200*2080*2500      10000   7000*2250*2690                                       12000  广西玉柴机器集团有限公司总部位于广西玉林市，成    Guangxi Yuchai Machinery Group Co., Ltd. is headquartered"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Yuchai series 50Hz / 60Hz",
+      "header": [
+        "Open  Soundproof              Engine           Cyl                             Displacement  Open TypeDimention  Weight  Soundproof                                                   Open       Soundproof                                          Engine        Cyl  Displacement  Open TypeDimention   Weight  Soundproof                                   Weight",
+        "Type  Type        ESP   PRP   Model            缸                               排量            开架尺寸                重量      TypeDimention    Weight 重量                                   Type       Type        ESP   PRP                               Model         缸    排量            开架尺寸                 重量      TypeDimention                                重量"
+      ],
+      "rows": [
+        "SC38YCF    SC38YCE     33    30    YC4V55Z-D20      4                               2.5           1650×800×930        550     2200×900×1250    930                                         SC20YCF    SC20YCE     17.6  16                                YC4V35*D21    4    2.5           1700*800*1200        680     2300*1100*1240                               1050",
+        "SC63YCF    SC63YCE     55    50    YC4D90Z-D25      4                               4.75          1900×800×1200       900     2300×1100×1290   1260                                        SC30YCF    SC30YCE     26    24                                YC4V45Z*D21   4    2.5           1700*800*1200        770     2300*1100*1240                               1140",
+        "SC100YCF   SC100YCE    88    80    YC4A140L-D25     4                               4.75          1950×950×1320       1200    2800×1100×1730   1520                                        SC38YCF    SC38YCE     33    30                                YC4V55Z*D21   4    2.5           1740*850*1110        770     2300*1100*1240                               1140",
+        "SC125YCF   SC125YCE    110   100   YC4A180L-D20     4                               4.84          2130×1000×1450      1250    2800×1100×1730   1600                                        SC38YCF    SC38YCE     33    30                                YC4D65*D20    4    4.214         1800*850*1250        760     2300*1100*1290                               1120",
+        "SC150YCF   SC150YCE    132   120   YC6B205L-D20     6                               6.87          2400×1000×1480      1550    3300×1300×1800   1880                                        SC56YCF    SC56YCE     50    45                                YC4D80Z*D20   4    4.214         1900*850*1250        870     2300*1100*1290                               1240",
+        "SC188YCF   SC188YCE    165   150   YC6A245L-D20     6                               7.25          2600×1000×1500      1700    3300×1300×1800   2000                                        SC69YCF    SC69YCE     60    55                                YC4D100Z*D20  4    4.214         1900*850*1250        890     2300*1100*1290                               1260",
+        "SC250YCF   SC250YCE    220   200   YC6MK350L-D20    6                               10.34         2900×1200×1650      2500    4000×1800×2150   2750                                        SC100YCF   SC100YCE    88    80                                YC68130Z*D20  6    6.87          2200*1050*1450       1380    2800*1100*1600                               1850",
+        "SC313YCF   SC313YCE    275   250   YC6MK420L-D20    6                               10.34         3000×1200×1650      2700    4000×1800×2150   3000                                        SC113YCF   SC113YCE    100   90                                YC6B160Z*020  6    6.87          2200*1050*1450       1430    2800*1100*1600                               1900",
+        "SC375YCF   SC375YCE    330   300   YC6MJ500L-D21    6                               11.73         3100×1200×1650      2900    4200×1800×2150   3400                                        SC150YCF   SC150YCE    132   120                               YC6B210L*D20  6    6.87          2400*1050*1470       1530    2800*1100*1600                               1970",
+        "SC450YCF   SC450YCE    396   360   YC6T600L-D22     6                               16.35         3800×1350×2000      4000    4800×1900×2280   4800                                        SC180YCF   SC180YCE    160   144                               YC6A245L*D20  6    7.255         2550*1050*1500       1680    3000*1200*1800                               2230",
+        "SC500YCF   SC500YCE    440   400   YC6T660L-D20     6                               16.35         3800×1350×2000      4100    4800×1900×2280   4900                                        SC250YCF   SC250YCE    220   200   YC6MK360L*D20                             6    10.34         2900*1150*1800       2470    4200*1500*2100                               3600",
+        "SC563YCF   SC563YCE    495   450   YC6TD780-D31     6                               16.35         4500×1750×1950      4800    5800×2100×2280   5600                                        SC313YCF   SC313YCE    275   250   YC6MK420L*D21                             6    10.34         3100*1150*1850       2680    4200*1500*2100                               3780",
+        "SC625YCF   SC625YCE    550   500   YC6TD840-D31     6                               17.96         4500×1750×1950      4900    5800×2100×2280   5700                                        SC350YCF   SC350YCE    300   280   YC6MJ480L*D21                             6    11.73         3100*1150*1850       2960    4200*1500*2100                               4060",
+        "SC750YCF   SC750YCE    660   600   YC6TD1000-D30    6                               19.6          4500×1750×1950      5600    5800×2100×2280   6700                                        SC375YCF   SC375YCE    330   300                               YC6MJ515*D22  6    11.73         3100*1150*1850       2960    4200*1500*2100                               4060",
+        "SC800YCF   SC800YCE    715   650   YC6TD1070-D31    6                               28.14         4500×1750×1950      6600    5800×2100×2280   7600                                        SC500YCF   SC500YCE    440   400                               YC6T660L*D21  6    19.6          3500*1350*2100       4150    4800*1900*2280                               5200",
+        "SC913YCF   SC913YCE    803   730   YC6TH1220-D31    6                               28.14         4500×1750×1950      6700    5800×2100×2280   7800                                        SC100YCF   SC100YCE    88    80                                YC4D140*D33   4    4.21          2200*1050*1450       1430    2800*1100*1600                               1900",
+        "SC1000YCF  SC1000YCE   880   800   YC6TH1320-D31    6                               28.14         4500×1750×1950      6800    5800×2100×2280   7900                                        SC113YCF   SC113YCE    100   90                                YC4D155*D33   4    4.21          2400*1050*1470       1480    2800*1100*1600                               1920",
+        "SC1125YCF  SC1125YCE   990   900   YC6C1520-D31     6                               39.58         5400×2350×2700      13000   6096×2438×2590   15000                                       SC125YCF   SC125YCE    110   100                               YC4D180*D33   4    4.21          2400*1050*1470       1480    2800*1100*1600                               1920",
+        "SC1250YCF  SC1250YCE   1100  1000  YC6C1660-D31     6                               39.58         5400×2350×2700      13200   6096×2438×2590   15200                                       SC150YCF   SC150YCE    132   120                               YC4A205*D32   4    4.84          2400*1050*1470       1530    2800*1100*1600                               1970",
+        "SC1500YCF  SC1500YCE   1320  1200  YC12VTD2000-D30  12                              39.58         5900×2650×2950      16100   12090×2350×2590  23000                                       SC188YCF   SC188YCE    160   150                               YC6A245*D32   6    4.84          2550*1050*1500       1780    3000*1200*1800                               2330",
+        "SC1688YCF  SC1688YCE   1485  1350  YC12VC2270-D31   12                              79.17         5900×2650×2950      16300   12090×2350×2590  23300                                       SC200YCF   SC200YCE    176   160                               YC6A285*D32   6    4.84          2600*1050*1700       1800    3800*1300*1850                               2560",
+        "SC1875YCF  SC1875YCE   1650  1500  YC12VC2510-D31   12                              79.17         5900×2650×2950      16900   12090×2350×2590  23900                                       SC219YCF   SC219YCE    192   175                               YC6A305*D32   6    4.84          2600*1050*1700       1800    3800*1300*1850                               2560",
+        "SC2125YCF  SC2125YCE   1870  1700  YC12VC2700-D31   12                              79.17         5900×2650×2950      17100   12090×2350×2590  24100                                       SC250YCF   SC250YCE    220   200                               YC6MK360*D30  6    10.34         2900*1150*1800       2500    4200*1500*2100                               3630",
+        "SC2250YCF  SC2250YCE   1980  1800  YC12VC3000-D30   12                              79.17         5900×2650×2950      18600   12090×2350×2590  25270                                       SC313YCF   SC313YCE    275   250                               YC6MK420*D31  6    10.34         3100*1150*1850       2750    4200*1500*2100                               3850",
+        "SC2500YCF  SC2500YCE   2200  2000  YC16VC3300-D31   12                              105.56        7600×2800×3200      21200   12090×2350×2590  27200                                       SC375YCF   SC375YCE    330   300                               YC6MK500*D32  6    10.34         3100*1150*1850       2960    4200*1500*2100                               4060",
+        "以上技术参数转速为1500RPM，频率50Hz，额定电压400/230V，功率因数0.8，接线方式为3相4线。发电机可选用神驰、无锡斯坦福、利莱森玛、美奥迪、上海马拉松、威尔能等知名品牌。                                                                                             SC563YCF   SC563YCE    500   450                               YC6TD780*D32  6    19.6          3500*1350*2100       4300    4800*1900*2280                               5400",
+        "Mecc Alte, Marathon, Wellpower and other famous brands alternator for your choice.                                                                                                         SC625YCF   SC625YCE    550   500                               YC6TD840*D32  6    19.6          3600*1400*2250       4400    5100*1900*2430                               5560",
+        "SC688YCF   SC688YCE    600   550                               YC6TD940*D32  6    19.6          3600*1400*2250       4450    5100*1900*2430                               5610",
+        "SC750YCF   SC750YCE    660   600   YC6TD1020*D32                             6    19.6          4400*1850*2380       7080    5800*2250*2580                               8700",
+        "SC810YCF   SC810YCE    710   648   YC6TH1070*D33                             6    28.14         4100*1850*2250       5780    5800x2250*2580                               7400",
+        "SC913YCF   SC913YCE    800   730   YC6TH1220*D33                             6    28.14         4200*1850*2250       5880    5800x2250*2580                               7500",
+        "SC1000YCF  SC1000YCE   880   800   YC6TH1350*D33                             6    28.14         4200*1850*2250       5980    5800x2250*2580                               7650",
+        "SC1000YCF  SC1000YCE   880   800   YC12VTD1350*D32                           12   39.2          4800*2550*2520       7350    20ft container                               9150",
+        "SC1125YCF  SC1125YCE   1000  900   YC12VTD1500*D32                           12   39.2          4800*2550*2520       8700    20ft container                               13700",
+        "SC1250YCF  SC1250YCE   1100  1000  YC12VTD1680*D32                           12   39.2          4800*2550*2520       14156   20ft container                               22156",
+        "SC1375YCF  SC1375YCE   1200  1100  YC12VTD1860*D32                           12   39.2          4800*2550*2520       14356   20ft container                               22356",
+        "SC1500YCF  SC1500YCE   1320  1200  YC12VTD2070*D32                           12   39.2          4800*2550*2520       14614   20ft container                               22614",
+        "SC1688YCF  SC1688YCE   1500  1350  YC16VTD2270*D32                           16   52.26         5200*2200*2820       12014   4Oft container                               20014",
+        "SC1875YCF  SC1875YCE   1650  1500  YC16VTD2510*D32                           16   52.26         5200*2200*2820       12352   4Oft container                               20352",
+        "SC2125YCF  SC2125YCE   1800  1700  YC16VTD2700*D32                           16   52.26         5200*2200*2820       12352   4Oft container                               20352"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Weichai series 50Hz",
+      "header": [
+        "潍柴系列                                                                                     Open       Soundproof              Engine                                           Cyl  Displacement  Open TypeDimention  Weight  Soundproof      Weight",
+        "Type       Type        ESP   PRP   Model                                            缸    排量            开架尺寸                重量      TypeDimention                                       重量"
+      ],
+      "rows": [
+        "SC20WCF    SC20WCE     17.6  16    WP2.3D25E200                                     4    2.3           1600*760*1200       550     1950*900*1200                                       680",
+        "SC30WCF    SC30WCE     26.4  24    WP2.3D33E200                                     4    2.3           1600*760*1200       600     1950*900*1200                                       720",
+        "SC38WCF    SC38WCE     33    30    WP2.3D40E200                                     4    2.3           1680*760*1200       640     2000*900*1250                                       790",
+        "SC45WCF    SC45WCE     40    36    WP2.3D48E200                                     4    2.3           1750*760*1320       680     2200*900*1250                                       860",
+        "SC62WCF    SC62WCE     55    50    WP4.1D66E200                                     4    4.1           1950*800*1370       800     2400*1000*1250                                      980",
+        "SC80WCF    SC80WCE     72    64    WP4.1D80E200                                     4    4.1           1880*800*1370       910     2500*1020*1250                                      1280",
+        "SC100WCF   SC100WCE    88    80    WP4.1D113E200                                    4    4.1           1880*800*1370       980     2500*1100*1500                                      1450",
+        "SC125WCF   SC125WCE    110   100   WP6D132E200                                      6    6.75          2400*950*1500       1300    3200*1200*1500                                      1800",
+        "SC150WCF   SC150WCE    132   120   WP6D152E200                                      6    6.75          2400*950*1500       1350    3200*1200*1500                                      1850",
+        "SC170WCF   SC170WCE    150   136   WP6D167E200                                      6    6.75          2400*950*1500       1350    3200*1200*1500                                      1850",
+        "SC200WCF   SC200WCE    150   160   WP10D200E200                                     6    9.726         2900*1200*1800      1800    3400*1300*1800                                      2250",
+        "SC230WCF   SC230WCE    200   184   WP10D238E200                                     6    9.726         2900*1200*1800      1900    3400*1300*1800                                      2350",
+        "SC250WCF   SC250WCE    220   200   WP10D264E200                                     6    9.726         2900*1200*1800      2100    3400*1300*1800                                      2570",
+        "SC312WCF   SC312WCE    275   250   WP10D320E200                                     6    9.726         3000*1200*1800      2280    3600*1300*2000                                      2770",
+        "SC312WCF   SC312WCE    275   250   WP12D353E200                                     6    11.6          3000*1200*1800      2380    3600*1300*2000                                      2870",
+        "SC375WCF   SC375WCE    320   300   WP13D385E200                                     6    12.54         3050*1250*1800      2820    3600*1400*2000                                      3300",
+        "SC437WCF   SC437WCE    400   350   WP13D440E310                                     6    12.54         3050*1250*1800      2900    3600*1400*2000                                      3500",
+        "SC500WCF   SC500WCE    450   400   WP13D490E310                                     6    12.54         3500*1500*1800      3800    4000*1800*2200                                      4500",
+        "SC575WCF   SC575WCE    520   460   6M33D572E200                                     6    19.6          3600*1500*1850      5000    4300*1900*2200                                      5800",
+        "SC650WCF   SC650WCE    580   520   6M33D633E200                                     6    19.6          3600*1500*1850      5050    4300*1900*2200                                      5900",
+        "SC675WCF   SC675WCE    600   540   6M33D670E200                                          19.6          3800*1600*1900      5200    4500*2000*2250                                      6100",
+        "SC800WCF   SC800WCE    720   640   8M33D800E200                                     8    26.14         4300*1800*2000      6000    5300*2200*2300                                      6900",
+        "潍柴系列                                                                                          SC900WCF   SC900WCE    800   720   8M33D890E200                                     8    26.14         4300*1800*2000      6200    5300*2200*2300                                      7100",
+        "SC800WCF   SC800WCE    700   640   12M26D792E200                                    12   31.8          4500*1800*2200      6500    5500*2200*2400                                      7500",
+        "WEICHAI SERIES                                                                                SC900WCF   SC900WCE    800   720   12M26D902E200                                    12   31.8          4500*1800*2200      6700    5500*2200*2450                                      7600",
+        "SC1000WCF  SC1000WCE   880   800   12M26D968E200                                    12   31.8          4500*1800*2200      6900    5500*2200*2450                                      7800",
+        "SC1125WCF  SC1125WCE   1000  900   12M33D1108E200                                   12   39.2          4800*2100*2350      7000    5900*2250*2530                                      7900",
+        "SC1250WCF  SC1250WCE   1100  1000  12M33D1210E200                                   12   39.2          4800*2100*2450      7200    5900*2250*2530                                      8100",
+        "SC1375WCF  SC1375WCE   1200  1100  12M33D1320E200                                   12   39.2          4900*2100*2450      7800    5900*2250*2530                                      8800",
+        "潍柴动力股份有限公司在产业规模、研发能力、工程     Weichai Power Co., Ltd. is in a leading position in the industry  SC1562WCF  SC1562WCE   1400  1250  16M33D1530E310                                   16   52.3          7200*2100*2300      12000   40HQ                                                16500",
+        "开发体系建设等方面处于行业的领先位置，在国内各     in terms of industrial scale, research and development capa-      SC1750WCF  SC1750WCE   1520  1400  16M33D1680E310                                   16   52.3          7200*2100*2300      12500   40HQ                                                17000",
+        "自细分市场均处于绝对优势地位。             bilities, and engineering development system construction,        SC1875WCF  SC1875WCE   1650  1500  16M33D1800E310                                   16   52.3          7200*2100*2300      13000   40HQ                                                17500",
+        "潍柴创建于1946年，是山东重工集团有限公司的核心   and has an absolute advantage in its respective segmented         SC2000WCF  SC2000WCE   1800  1600  16M33D1980E310                                   16   52.3          7200*2100*2300      13500   40HQ                                                18000",
+        "子公司，已发展成为中国领先、在全球具有重要影响     markets in China. Weichai was founded in 1946 and is a core       SC2250WCF  SC2250WCE   2000  1800  12M55D2210E310                                   12   65.2          6600*2200*2500      14000   40HQ                                                18500",
+        "力的工业装备跨国集团。拥有潍柴动力、陕汽重卡、     subsidiary of Shandong Heavy Industry Group Co., Ltd. It has      SC2500WCF  SC2500WCE   2200  2000  12M55D2450E310                                   12   65.2          6600*2200*2500      14300   40HQ                                                19000",
+        "潍柴雷沃智慧农业、法士特变速器、汉德车桥、火炬     developed into a leading industrial equipment multinational       SC2750WCF  SC2750WCE   2400  2200  12M55D2700E310                                   12   65.2          6600*2200*2500      15500   40HQ                                                20500"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Weichai 60Hz / SDEC series",
+      "header": [
+        "Open       Soundproof                                          Engine        Cyl  Displacement  Open TypeDimention   Weight  Soundproof                                   Weight         上柴系列",
+        "Type  Type        ESP   PRP                               Model         缸    排量            开架尺寸                 重量      TypeDimention                                重量"
+      ],
+      "rows": [
+        "SC25WCF    SC25WCE     24    20                                WP2.3D30E201  4    2.289         1600*760*1200        550     1950*900*1200                                680",
+        "SC37WCF    SC37WCE     33    30                                WP2.3D41E201  4    2.289         1600*760*1200        600     1950*900*1200                                720",
+        "SC44WCF    SC44WCE     40    35                                WP2.3D47E201  4    2.289         1600*760*1200        640     2000*900*1250                                790",
+        "SC50WCF    SC50WCE     50    40                                WP2.3D58E201  4    2.289         1600*760*1200        680     2200*900*1250                                860",
+        "SC75WCF    SC75WCE     66    60                                WP4.1D80E201  4    4.087         1880*800*1370        800     2400*1000*1250                               980",
+        "SC94WCF    SC94WCE     83    75                                WP4.1D95E201  4    4.087         1880*800*1370        910     2500*1020*1250                               1280",
+        "SC112WCF   SC112WCE    100   90    WP4.1D120E201                             4    4.087         1880*800*1370        980     2500*1100*1500                               1450",
+        "SC125WCF   SC125WCE    110   100                               WP6D132E201   6    6.75          2400*950*1500        1300    3200*1200*1500                               1800",
+        "SC150WCF   SC150WCE    132   120                               WP6D158E201   6    6.75          2400*950*1500        1350    3200*1200*1500                               1850",
+        "SC181WCF   SC181WCE    150   145                               WP6D180E201   6    6.75          2400*950*1500        1350    3200*1200*1500                               1850",
+        "SC187WCF   SC187WCE    165   150   WP10D200E201                              6    9.726         2900*1200*1800       1800    3400*1300*1800                               2350",
+        "SC225WCF   SC225WCE    200   180   WP10D238E201                              6    9.726         2900*1200*1800       1900    3400*1300*1800                               2550",
+        "SC250WCF   SC250WCE    220   200   WP10D264E201                              6    9.726         2900*1200*1800       2100    3400*1300*1800                               2770",
+        "SC350WCF   SC350WCE    308   280   WP10D360E201                              6    9.726         2900*1200*1800       2280    3600*1300*2000                               2970",
+        "SC375WCF   SC375WCE    300   300   WP13D385E201                              6    12.54         3500*1500*1800       2820    3600*1300*2000                               3570",
+        "SC500WCF   SC500WCE    460   400   WP13D510E311                              6    12.54         3500*1500*1800       2900    3600*1400*2000                               3700",
+        "SC562WCF   SC562WCE    500   450   6M33D572E201                              6    19.6          3800*1600*1900       5000    4300*1900*2200                               6000",
+        "SC650WCF   SC650WCE    575   520   6M33D633E201                              6    19.6          3800*1600*1900       5050    4300*1900*2200                               6100",
+        "SC687WCF   SC687WCE    600   550   6M33D670E201                              6    19.6          3800*1600*1900       5200    4500*2000*2250                               6300",
+        "SC718WCF   SC718WCE    633   575   6M33D710E201                              8    19.6          3800*1600*1900       6000    5300*2200*2300                               7100",
+        "SC750WCF   SC750WCE    660   600   6M33D740E311                              8    19.6          3800*1600*1900       6200    5300*2200*2300                               7300",
+        "SC800WCF   SC800WCE    700   640   8M33D845E201                              12   26.14         4300*1800*2000       6500    5500*2200*2400                               7500",
+        "SC900WCF   SC900WCE    800   720   8M33D909E201                              12   26.14         4300*1800*2000       6200    5500*2200*2450                               7600                                                                          上柴系列",
+        "SC1000WCF  SC1000WCE   900   800   8M33D1012E311                             12   26.14         4300*1800*2000       6350    5500*2200*2450                               7800",
+        "SC800WCF   SC800WCE    700   640   12M26D792E201                             12   31.8          4500*1800*2200       6500    5900*2250*2530                               7900                                                                          SDEC SERIES",
+        "SC900WCF   SC900WCE    800   720   12M26D902E201                             12   31.8          4500*1800*2200       6700    5900*2250*2530                               8100",
+        "SC1000WCF  SC1000WCE   900   800   12M26D1012E201                            12   31.8          4500*1800*2200       6900    5900*2250*2530                               8500",
+        "SC1125WCF  SC1125WCE   1000  900   12M33D1108E201                            16   39.2          4900*2100*2450       7000    40HQ                                         11900",
+        "SC1250WCF  SC1250WCE   1100  1000  12M33D1265E201                            16   39.2          4900*2100*2450       7300    40HQ                                         12000",
+        "SC1375WCF  SC1375WCE   1200  1100  12M33D1320E201                            16   39.2          4900*2100*2450       7800    40HQ                                         12600      上海柴油机股份有限公司创建于1947年，拥有50多年   Shanghai Diesel Engine Co., Ltd, established in 1947, has",
+        "SC1500WCF  SC1500WCE   1300  1200  12M33D1420E201                            16   39.2          4900*2100*2450       8000    40HQ                                         12500      的柴油机制造经验，集开发、设计、制造于一体的国      more than 50 years experience in diesel engine manufactur-",
+        "SC1750WCF  SC1750WCE   1520  1400  16M33D1680E311                            16   52.3          7200*2100*2300       12500   40HQ                                         17500      家特大型高新技术企业，其产品遍布载重汽车、客       ing. It is a national large-scale high-tech enterprise integrating",
+        "SC1875WCF  SC1875WCE   1650  1500  16M33D1785E311                            16   52.3          7200*2100*2300       13000   40HQ                                         17000      车、工程机械、船舶、移动式电站等领域。上柴公司      development, design and manufacture.",
+        "SC2000WCF  SC2000WCE   1750  1600  16M33D1920E311                            16   52.3          7200*2100*2300       13500   40HQ                                         18000      于1958年自行设计制造了我国第一台6135柴油机，开  Its products are widely used in trucks, buses, construction",
+        "SC2250WCF  SC2250WCE   2000  1800  20M33D2230E311                            16   65.4          9000*2100*2450       15500   40HQ                                         20000      创了我国中等缸径柴油发动机的先河。            machinery, ships and mobile power stations. In 1958, SDEC",
+        "SC2500WCF  SC2500WCE   2200  2000  20M33D2460E311                            16   65.4          9000*2100*2450       15500   40HQ                                         20000      上柴发电机组技术成熟，零配件易购、功率范围大，      designed and manufactured China’s first 6135 diesel engine,",
+        "SC2750WCF  SC2750WCE   2420  2200  12M55D2420E311                            16   65.65         6600*2200*2500       14000   40HQ                                         18500      有直列4缸、6缸；V型12缸。其功率覆盖范围为      which pioneered China’s medium-bore diesel engine. SDEC",
+        "SC2812WCF  SC2812WCE   2500  2250  12M55D2700E311                            20   65.65         6600*2200*2500       14500   40HQ                                         19000      50KW—800KW，具有优良的动力性、经济性、稳定   has 4, 6 cylinders in line and 12 cylinders V, and covers 50KW",
+        "SC3000WCF  SC3000WCE   2640  2400  16M55D2960E311                            20   87.5          9500*2500*3300       18400   /                                            /          性、可靠性、可操作性和低廉的运行及维护成本，同      -800KW."
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - SDEC series 50Hz / 60Hz",
+      "header": [
+        "Open      Soundproof            Engine                                         Cyl  Displacement  Open TypeDimention  Weight  Soundproof      Weight                                    Open      Soundproof                                           Engine         Cyl  Displacement  Open TypeDimention  Weight  Soundproof                                   Weight",
+        "Type      Type        ESP  PRP  Model                                          缸    排量            开架尺寸                重量      TypeDimention                                       重量    Type      Type        ESP  PRP                                 Model          缸    排量            开架尺寸                重量      TypeDimention                                重量"
+      ],
+      "rows": [
+        "SC16SDF   SC16SDE     12   13   4Z23-G11/G21                                   4    2.3           1800*850*1330       730     2300*1100*1290                                      1050  SC20SDF   SC20SDE     18   16                                  4Z2 3-G12/G21  4    2.3           1800*850*1330       730     2300*1100*1290                               1050",
+        "SC22SDF   SC22SDE     16   18   4Z2.7-G11/G21                                  4    2.7           1800*850*1330       730     2300*1100*1290                                      1050  SC25SDF   SC25SDE     22   20                                  4Z2.7-G12/G21  4    2.7           1800*850*1330       730     2300*1100*1290                               1050",
+        "SC28SDF   SC28SDE     20   22   4Z3.0-G11/G21                                  4    3             1800*850*1330       730     2300*1100*1290                                      1120  SC30SDF   SC30SDE     26   24                                  4Z3.0-G12/G21  4    3             1800*850*1330       730     2300*1100*1290                               1120",
+        "SC35SDF   SC35SDE     25   28   4Z3.2-G11/G21                                  4    3.2           1800*850*1330       730     2300*1100*1290                                      1200  SC38SDF   SC38SDE     33   30                                  4Z3.2-G12/G21  4    3.2           1800*850*1330       730     2300*1100*1290                               1200",
+        "SC41SDF   SC41SDE     30   33   4ZT3.2-G11                                     4    3.2           1900*900*1200       950     2300*1100*1240                                      1320  SC43SDF   SC43SDE     37   34   4ZT3.2-G12/G21                                4    3.2           1900*900*1200       970     2300*1100*1240                               1340",
+        "SC44SDF   SC44SDE     32   35   4ZT3.2-G21                                     4    3.2           1900*900*1200       970     2300*1100*1240                                      1340  SC60SDF   SC60SDE     53   48                                  4ZT3.5-G21     4    3.5           1900*900*1200       1040    2300*1100*1240                               1410",
+        "SC55SDF   SC55SDE     40   44   4ZT3.5-G21                                     4    3.5           1900*900*1200       1040    2300*1100*1240                                      1410  SC63SDF   SC63SDE     55   50                                  4HT4.3-G21     4    4.3           1800*1000*1500      1130    2300*1200*1800                               1500",
+        "SC55SDF   SC55SDE     40   44   4HT4.3-G21                                     4    4.3           1800*1000*1500      1130    2300*1200*1800                                      1500  SC68SDF   SC68SDE     60   54                                  4HT4.3-G22     4    4.1           1800*1000*1500      1130    2300*1200*1800                               1500",
+        "SC69SDF   SC69SDE     50   55   4ZT4.1-G21                                     4    4.1           1900*900*1200       1040    2300*1100*1240                                      1410  SC70SDF   SC70SDE     62   56                                  4ZT4.1-G21     4    4.3           1900*900*1200       1040    2300*1100*1240                               1410",
+        "SC69SDF   SC69SDE     50   55   4HT4.3-G22                                     4    43            1800*1000*1500      1130    2300*1200*1800                                      1500  SC75SDF   SC75SDE     66   60                                  4ZTAA4.1-G21   4    4.1           1900*900*1200       1040    2300*1100*1240                               1410",
+        "SC75SDF   SC75SDE     55   60   4ZTAA4.1-G21                                   4    4.1           1900*900*1200       1040    2300*1100*1240                                      1410  SC85SDF   SC85SDE     80   68                                  4HT4.3-G23     4    4.3           1800*1000*1500      1130    2300*1200*1800                               1500",
+        "SC88SDF   SC88SDE     64   70   4HT4.3-G23                                     4    4.3           1800*1000*1500      1130    2300*1200*1800                                      1500  SC110SDF  SC110SDE    100  88                                  4HTAA4.3-G21   4    4.3           1800*1000*1500      1130    2300*1200*1800                               1500",
+        "SC110SDF  SC110SDE    80   88   4HTAA4.3-G21                                   4    4.3           1800*1000*1500      1130    2300*1200*1800                                      1500  SC125SDF  SC125SDE    110  100                                 4HTAA4.3-G23   4    4.3           1800*1000*1500      1130    2300*1200*1800                               1500",
+        "SC125SDF  SC125SDE    92   100  4HTAA43-G23                                    4    4.3           1800*1000*1500      1130    2300*1200*1800                                      1500  SC125SDF  SC125SDE    110  100                                 4HTAA4.3-G22   4    4.3           1800*1000*1500      1130    2300*1200*1800                               1500",
+        "SC138SDF  SC138SDE    100  110  4HTAA4.3-G22                                   4    4.3           1800*1000*1500      1130    2300*1200*1800                                      1500  SC150SDF  SC150SDE    132  120                                 6HTAA6.5-G21   6    6.5           2400*1100*1600      1420    2800*1400*1900                               1860",
+        "SC150SDF  SC150SDE    110  120  6HTAA6 5-G21                                   6    6.5           2400*1100*1600      1420    2800*1400*1900                                      1860  SC160SDF  SC160SDE    140  128                                 6HTAA6.5-G22   6    6.5           2400*1100*1600      1420    2800*1400*1900                               1860",
+        "SC220SDF  SC220SDE    160  176  6DTAA8.9-G21                                   6    8.82          2500*1100*1700      1670    3000*1500*2200                                      2220  SC250SDF  SC250SDE    220  200                                 6DTAA8.9-G24   6    8.82          2600*1200*1900      1835    3000*1500*2200                               2385",
+        "SC250SDF  SC250SDE    180  200  6DTAA8.9-G24                                   6    8.82          2600*1200*1900      1835    3000*1500*2200                                      2385  SC275SDF  SC275SDE    240  220                                 6DTAA8.9-G23   6    8.82          2600*1200*1900      1835    3000*1500*2200                               2385",
+        "SC275SDF  SC275SDE    200  220  6DTAA8.9-G23                                   6    8.82          2600*1200*1900      1835    3000*1500*2200                                      2385  SC350SDF  SC350SDE    300  280                                 6ETAA11.8-G22  6    11.8          3100*1200*1900      2480    4200*1500*2100                               3580",
+        "SC344SDF  SC344SDE    250  275  6ETAA11.8-G22                                  6    11.8          3100*1200*1700      2480    4200*1500*2100                                      3580  SC350SDF  SC350SDE    300  280                                 6ETAA11.8-G21  6    11.8          3100*1200*1700      2480    4200*1500*2100                               3580",
+        "SC375SDF  SC375SDE    280  300  6ETAA11.8-G21                                  6    11.8          3100*1200*1700      2480    4200*1500*2100                                      3580  SC375SDF  SC375SDE    330  300                                 6ETAA12.8-G22  6    12.8          3100*1200*1700      2700    4200*1500*2100                               3800",
+        "SC413SDF  SC413SDE    300  330  6ETAA12.8-G22                                  6    12.8          3100*1200*1700      2700    4200*1500*2100                                      3800  SC400SDF  SC400SDE    352  320                                 6ETAA12.8-G21  6    12.8          3100*1200*1700      2700    4200*1500*2100                               3800",
+        "SC440SDF  SC440SDE    320  352  6ETAA12 8-G21                                  6    12.8          3100*1200*1700      2700    4200*1500*2100                                      3800  SC500SDF  SC500SDE    440  400  6ETAA12.8-G310.1                              6    12.8          3400*1200*1700      2800    4200*1500*2100                               3900",
+        "SC450SDF  SC450SDE    400  360  6ETAA12 8-G31                                  6    12.8          3100*1200*1700      2780    4200*1500*2100                                      3880  SC563SDF  SC563SDE    500  450                                 6KTAA25-G311   6    25.18         3900*1650*2150      4770    5100*1900*2430                               6670",
+        "SC500SDF  SC500SDE    440  400  6ETAA12 8-G310                                 6    12.8          3400*1200*1700      2800    4200*1500*2100                                      3900  SC625SDF  SC625SDE    550  500                                 6KTAA25-G310   6    25.18         3900*1650*2150      4910    5100*1900*2430                               6810",
+        "SC500SDF  SC500SDE    440  400  6KTAA25-G311                                   6    25.18         3900*1650*2150      4770    5100*1900*2430                                      6670  SC700SDF  SC700SDE    600  560                                 6KTAA25-G39    6    25.18         3900*1650*2150      4970    5100*1900*2430                               6870",
+        "SC575SDF  SC575SDE    500  460  6KTAA25-G310                                   6    25.18         3900*1650*2150      4910    5100*1900*2430                                      6810  SC700SDF  SC700SDE    600  560                                 6KTAA25-G38    6    25.18         3900*1650*2150      5060    5100*1900*2430                               6960",
+        "SC625SDF  SC625SDE    550  500  6KTAA25-G39                                    6    25.18         3900*1650*2150      4970    5100*1900*2430                                      6870  SC750SDF  SC750SDE    660  600                                 6KTAA25-G321   6    25.18         3900*1650*2150      5260    5100*1900*2430                               7160",
+        "SC700SDF  SC700SDE    600  560  6KTAA25-G38                                    6    25.18         3900*1650*2150      5060    5100*1900*2430                                      6960  SC825SDF  SC825SDE    720  660  6KTAA25-G31.1                                 6    25.18         4100*1650*2150      5400    5100*1900*2430                               7300",
+        "SC750SDF  SC750SDE    660  600  6KTAA25-G32                                    6    25.18         3900*1650*2150      5260    5100*1900*2430                                      7160  以上技术参数转速为1800RPM，频率60Hz，功率因数0.8，接线方式为3相4线。发电机可选用神驰、无锡斯坦福、利莱森玛、美奥迪、上海马拉松、威尔能等知名品牌。",
+        "SC825SDF  SC825SDE    720  660  6KTAA25-G31                                    6    25.18         4100*1650*2150      5400    5100*1900*2430                                      7300  The parameters above is about: rotating speed 1500RPM, frequency 60Hz, power factor 0.8, three phase four line of wiring mode. We have Stamford, Leroy somer, Mecc Alte,  Marathon,"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Perkins series 50Hz",
+      "header": [
+        "珀金斯系列                                                                                  Open      Soundproof              Engine                                            Cyl  Displacement  Open TypeDimention  Weight  Soundproof                                          Weight",
+        "Type      Type        ESP   PRP   Model                                             缸    排量            开架尺寸                重量      TypeDimention                                       重量"
+      ],
+      "rows": [
+        "SC13PF    SC13PE      11    10    403A-15G1                                         3    1.496         1200*750*1200       430     1800*1000*1180                                      780",
+        "SC13PF    SC13PE      11    10    403D-15G                                          3    1.496         1200*750*1200       430     1800*1000*1180                                      780",
+        "SC15PF    SC15PE      13    12    403A-15G2                                         3    1.496         1200*750*1200       430     1800*1000*1180                                      780",
+        "SC20PF    SC20PE      18    16    404A-22G1                                         4    2.216         1300*750*1200       500     1800*1000*1180                                      880",
+        "SC20PF    SC20PE      18    16    404D-22G                                          4    2.216         1300*750*1200       500     1800*1000*1180                                      880",
+        "SC28PF    SC28PE      24    22    404D-22TG                                         4    2.216         1300*750*1200       500     1800*1000*1180                                      880",
+        "SC30PF    SC30PE      26    24    1103A-33G                                         3    33            1500*800*1200       700     2300*1100*1240                                      1200",
+        "SC45PF    SC45PE      40    36    1103A-33TG1                                       3    3.3           1600*800*1250       840     2300*1100*1240                                      1350",
+        "SC60PF    SC60PE      53    48    1103A-33TG2                                       3    3.3           1700*800*1250       890     2300*1100*1240                                      1370",
+        "SC65PF    SC65PE      57    52    1104A-44TG1                                       4    4.4           1900*900*1320       970     2300*1100*1240                                      1460",
+        "SC80PF    SC80PE      70    64    1104A-44TG2                                       4    4.4           1900*900*1320       1010    2300*1100*1240                                      1500",
+        "SC100PF   SC100PE     88    80    1104C-44TAG2                                      4    4.4           1900*900*1320       1060    2300*1100*1240                                      1550",
+        "SC135PF   SC135PE     120   108   1106A-70TG1                                       6    7.01          2350*950*1520       1480    2800*1100*1470                                      1880",
+        "SC143PF   SC143PE     126   114   1106D-E70TAG2                                     6    7.01          2350*950*1520       1580    2800*1100*1800                                      2030",
+        "SC150PF   SC150PE     132   120   1106A-70TAG2                                      6    7.01          2350*950*1520       1580    2800*1100*1800                                      2060",
+        "SC150PF   SC150PE     132   120   1106D-E70TAG3                                     6    7.01          2350*950*1520       1580    2800*1100*1800                                      2060",
+        "SC180PF   SC180PE     160   144   1106A-70TAG3                                      6    7.01          2450*950*1570       1650    2800*1100*1800                                      2220",
+        "SC180PF   SC180PE     160   144   1106D-E70TAG4                                     6    7.01          2450*950*1570       1650    2800*1100*1800                                      2220",
+        "SC200PF   SC200PE     176   160   1106A-70TAG4                                      6    7.01          2450*950*1570       1700    2800*1100*1800                                      2270",
+        "SC200PF   SC200PE     176   160   1206A-E70TTAG1                                    6    7.01          2.45*0.95*1.57      1700    2800*1100*1800                                      2270",
+        "SC230PF   SC230PE     200   184   1206A-E70TTAG2                                    6    7.01          2700*1100*1850      2290    3800*1300*2000                                      3360",
+        "珀金斯系列                                                                                       SC250PF   SC250PE     220   200   1206A-E70TTAG3                                    6    7.01          2700*1100*1850      2300    3800*1300*2000                                      3380",
+        "PERKINS SERIES                                                                              SC306PF   SC306PE     270   245   1706A-E93TAG1                                     6    9.3           2700*1100*1850      2700    4200*1500*2100                                      3810",
+        "SC350PF   SC350PE     308   280   1706A-E93TAG2                                     6    9.3           2700*1100*1850      2750    4200*1500*2100                                      3860",
+        "SC350PF   SC350PE     320   280   2206C-E13TAG2                                     6    12.5          3300*1150*2100      3240    4200*1500*2100                                      4350",
+        "SC400PF   SC400PE     360   320   2206C-E13TAG3                                     6    12.5          3300x1150x2100      3290    4200*1500*2100                                      4400",
+        "SC450PF   SC450PE     400   360   2506C-E15TAG1                                     6    15.2          3500*1250*2120      3800    4800*1700x2280                                      5500",
+        "英国Perkins（珀金斯）发动机有限公司创建于1932  Perkins Engines Company Limited, established in 1932, is      SC500PF   SC500PE     440   400   2506C-E15TAG2                                     6    15.2          3500*1250*2120      3840    4800*1700*2280                                      5590",
+        "年，是全球领先的发动机制造商之一。全球网络超过       one of world‘s leading engine manufacturers. With more than   SC600PF   SC600PE     528   480   2806C-E18TAG1A                                    6    18.13         3500*1250*2120      3940    4800*1700*2280                                      5690",
+        "118家，遍及180多个国家和地区，超过3,500个服务  118 global networks in more than 180 countries and regions,   SC650PF   SC650PE     560   520   2806A-E18TAG2                                     6    18.13         3500*1250*2120      4150    4800*1700*2280                                      5900",
+        "网点提供产品支持，所有网点均秉承最严格的标准，       more than 3,500 service outlets provide product support. All  SC750PF   SC750PE     660   600   4006-23TAG2A                                      6    22.921        4100*1750*2210      4750    5800*2250*2500                                      7250",
+        "保证在世界每个角落的客户都可获得优质的服务。        outlets adhere to the most stringent standards, ensuring      SC800PF   SC800PE     720   640   4006-23TAG3A                                      6    22.921        4100*1750*2210      4800    5800*2250*2500                                      7300",
+        "珀金斯发动机进口机型是由美国卡特彼勒及英国劳斯       excellent service to customers in every corner of the world.  SC1000PF  SC1000PE    880   800   4008TAG2                                          8    30.561        4700*2050*2300      7611    20ft container                                      11111",
+        "莱斯生产的，此类发动机采用新技术及高强度耐磨材       The imported Perkins engine is manufactured by Caterpillar    SC1000PF  SC1000PE    880   800   4008TAG2A                                         8    30.561        4700*2050*2300      7611    20ft container                                      11111",
+        "料，品质优越。此外，Perkins在中国无锡设有生产基   and Rolls Royce. These engines are made of new technology     SC1125PF  SC1125PE    1000  900   4008-30TAG3                                       8    30.561        4900*2100*2400      7750    20ft container                                      11250",
+        "地由Perkins直接生产管理。              and high-strength wear-resistant materials. In addition,      SC1250PF  SC1250PE    1100  1000  4012*46TWG2A                                      12   45.842        5100*2220*2300      9154    20HQ container                                      13154",
+        "珀金斯柴油发电机组规格全、品种多、结构紧凑、效       Perkins has a production facility in Wuxi, China, which is    SC1500PF  SC1500PE    1320  1200  4012-46TAG2A                                      12   45.842        5100*2220x2350      11580   20HQ container                                      15580",
+        "率高、废气排放污染低、达到欧三环保排放标准，部       directly managed by Perkins.                                  SC1710PF  SC1710PE    1500  1368  4012-46TAG3A                                      12   45.842        5100x2220*2400      11580   20HQ container                                      15580",
+        "分机型符合美国EPA排放标准。其功率覆盖范围为       Perkins diesel generator sets have full specifications,       SC1850PF  SC1850PE    1600  1480  4016TAG1A                                         16   61.123        6600*2250*2750      16500   40HQ container                                      24500",
+        "7KW-1800KW。                   variet-ies, compact structure, high efficiency, low emission  SC2000PF  SC2000PE    1800  1600  4016TAG2A                                         16   61.123        6600*2250*2750      16500   40HQ container                                      24500",
+        "pollution, and meet Euro Ill environmental emission stan-     SC2250PF  SC2250PE    2000  1800  4016-61TRG3                                       16   61.123        6900*2250x2750      17500   40HQ container                                      25500"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Volvo Penta series 50Hz",
+      "header": [
+        "Open     Soundproof            Engine       Cyl                                     Displacement  Open TypeDimention  Weight  Soundproof      Weight",
+        "Type     Type        ESP  PRP  Model        缸                                       排量            开架尺寸                重量      TypeDimention   重量"
+      ],
+      "rows": [
+        "SC85VF   SC85VE      75   68   TAD530GE     4                                       4.76          2050*900x1550       1300    2800*1100*1800  1750",
+        "VOLVO PENTA SERIES                                                                       SC100VF  SC100VE     88   80   TAD531GE     4                                       4.76          2050*900*1600       1350    2800*1100*1800  1830",
+        "SC130VF  SC130VE     114  104  TAD532GE     4                                       4.76          2200*920*1600       1450    3200*1100*1800  2080",
+        "沃尔沃系列                                                                                    SC150VF  SC150VE     132  120  TAD731GE     6                                       7.15          2550*1050*1730      1800    3400*1100*1800  2500",
+        "50Hz              SC188VF  SC188VE     165  150  TAD732GE     6                                       7.15          2600*1050*1730      1850    3800*1300*2050  2700",
+        "SC200VF  SC200VE     176  160  TAD733GE     6                                       7.15          2600*1050*1730      1850    3800*1300*2050  2700",
+        "SC250VF  SC250VE     220  200  TAD734GE     6                                       7.15          2660*1050*1730      2000    3800*1300*2050  2940",
+        "SC250VF  SC250VE     220  200  TAD841GE     6                                       7.7           2800*1100*1800      2500    4200*1500*2100  4020",
+        "SC300VF  SC300VE     264  240  TAD842GE     6                                       7.7           2800*1100*1800      2600    4200*1500*2100  4120",
+        "SC325VF  SC325VE     286  260  TAD843GE     6                                       7.7           2800*1100*1800      2600    4200*1500*2100  4120",
+        "SC313VF  SC313VE     275  250  TAD1341GE-B  6                                       12.78         3120*1150*1900      3270    4200*1500*2100  4260",
+        "SC350VF  SC350VE     308  280  TAD1342GE-B  6                                       12.78         3120*1150*1900      3270    4200*1500*2100  4260",
+        "SC375VF  SC375VE     330  300  TAD1343GE-B  6                                       12.78         3120*1150*1900      3400    4200*1500*2100  4720",
+        "SC400VF  SC400VE     352  320  TAD1344GE-B  6                                       12.78         3120*1150*1900      3400    4200*1500*2100  4790",
+        "SC450VF  SC450VE     400  360  TAD1345GE-B  6                                       12.78         3120*1150*1900      3530    4200*1500*2100  4920",
+        "SC500VF  SC500VE     440  400  TAD1346GE    6                                       12.78         3300*1160*2050      3900    4800*1700*2280  5050",
+        "SC500VF  SC500VE     440  400  TAD1641GE-B  6                                       16.12         3350*1230*2300      3850    4800*1700*2280  5050",
+        "SC591VF  SC591VE     520  473  TAD1642GE-B  6                                       16.12         3350*1230*2300      3950    4800*1700*2280  5150",
+        "SC650VF  SC650VE     572  520  TWD1644GE    6                                       16.12         3520*1430*2330      4356    5100*1900x2430  5556",
+        "SC700VF  SC700VE     616  560  TWD1645GE    6                                       16.12         3520*1430*2330      4556    5100*1900x2430  5756",
+        "SC85VF   SC85VE      75   68   TAD55OGE     4                                       4.76          2050*900*1550       1300    2800*1100*1800  1750",
+        "SC100VF  SC100VE     88   80   TAD551GE     4                                       4.76          2050*900*1600       1350    2800*1100*1800  1830",
+        "SC130VF  SC130VE     114  104  TAD750GE     6                                       7.15          2550*1050*1730      1800    3400*1100*1800  2500",
+        "SC150VF  SC150VE     132  120  TAD751GE     6                                       7.15          2550*1050*1730      1800    3400*1100*1800  2500",
+        "SC188VF  SC188VE     165  150  TAD752GE     6                                       7.15          2600*1050*1730      1850    3800*1300*2050  2700",
+        "SC200VF  SC200VE     176  160  TAD753GE     6                                       7.15          2600*1050*1730      1850    3800*1300*2050  2700",
+        "SC250VF  SC250VE     220  200  TAD754GE     6                                       7.15          2660*1050*1730      2000    3800*1300*2050  2940",
+        "SC324VF  SC324VE     285  259  TAD1351GE    6                                       12.78         3120*1150*1900      3270    4200*1500*2100  4620",
+        "SC363VF  SC363VE     320  290  TAD1352GE    6                                       12.78         3120*1150*1900      3270    4200*1500*2100  4620",
+        "SC380VF  SC380VE     334  304  TAD1354GE    6                                       12.78         3120*1150*1900      3400    4200*1500*2100  4720",
+        "SC413VF  SC413VE     363  330  TAD1355GE    6                                       12.78         3120*1150*1900      3400    4200*1500*2100  4790",
+        "沃尔沃系列                                                                                         SC463VF  SC463VE     407  370  TAD16SOGE    6                                       16.12         3200*1100*1900      3530    4200*1500*2100  4790",
+        "SC500VF  SC500VE     440  400  TAD1651GE    6                                       16.12         3300*1160*2050      3900    4800*1700*2280  5050",
+        "VOLVO PENTA SERIES                                                                            SC600VF  SC600VE     528  480  TWD1652GE    6                                       16.12         3350*1230*2300      3950    4800*1700*2280  5150",
+        "SC650VF  SC650VE     572  520  TWD1653GE    6                                       16.12         3520*1430*2330      4400    5100*1900*2430  5600",
+        "SC700VF  SC700VE     616  560  TWD1645GE    6                                       16.12         3520*1430x2330      4556    5100*1900*2430  5756",
+        "SC100VF  SC100VE     86   80   TADS8OVE     4                                       5.13          2050*900x1600       1350    2800*1100*1800  1830",
+        "SC130VF  SC130VE     118  108  TAD582VE     4                                       5.13          2200*920*1600       1450    3200*1100*1800  2080",
+        "沃尔沃公司于1927年在瑞典哥德堡创建，是瑞典最大   Founded in 1927, Volvo is Sweden‘s largest industrial com-        SC150VF  SC150VE     132  120  TAD88OVE     6                                       7.7           2550*1050*1730      1800    3400x1100x1800  2500",
+        "的工业企业。沃尔沃一直全力致力于降低柴油机的油     pa-ny. Volvo has been fully committed to reducing the fuel        SC188VF  SC188VE     165  150  TAD882VE     6                                       7.7           2600*1050*1730      1850    3800*1300*2050  2700",
+        "耗和排放的研究。长期以来，它的三个核心价值       consumption and emissions of diesel engines. For a long           SC250VF  SC250VE     220  200  TAD1181VE    6                                       10.84         2660*1050*1730      2000    3800*1300*2050  2940",
+        "观——质量、安全、环保，一直与它的品牌紧密联      time, its three core values - quality, safety, and environmental  SC313VF  SC313VE     275  250  TAD1382VE    6                                       12.78         3120*1150*1900      3270    4200*1500*2100  4620",
+        "系。                          protection, have always been closely linked to its brand.         SC394VF  SC394VE     347  315  TAD1385VE    6                                       12.78         3120*1150*1900      3400    4200*1500*2100  4720",
+        "沃尔沃系列柴油发电机组属于环保型机组，排放标准     Volvo diesel generator sets are environmentally friendly units    SC100VF  SC100VE     86   80   TAD58OVE     4                                       5.13          2050*900*1600       1350    2800x1100*1800  1830",
+        "达到欧川及EPA环保标准，其功率覆盖范围为80KW一  with emission standards up to Euro Ill and EPA environmental      SC119VF  SC119VE     104  95   TAD581VE     4                                       5.13          2200*920*1600       1450    3200*1100*1800  2080",
+        "550KW，具有性能可靠、马力强劲、绿色环保、冷启   standards. Power ranges from 80KW to 550KW. The advan-            SC135VF  SC135VE     118  108  TAD582VE     4                                       5.13          2200*920*1600       1450    3200*1100*1800  2080",
+        "动特性好、加载能力强、人性化的安全设计等优点，     tag es of reliable performance, strong horsepower, green          SC150VF  SC150VE     132  120  TAD880GE     6                                       7.7           2550*1050*1730      1800    3400*1100*1800  2500",
+        "深得全球客户的青睐。                  environmental protection, cold start characteristics, strong      SC200VF  SC200VE     176  160  TAD881GE     6                                       7.7           2600*1050*1730      1850    3800*1300*2050  2700",
+        "loading capacity, humanized safety design and others have         SC250VF  SC250VE     220  200  TAD882GE     6                                       7.7           2660*1050x1730      2000    3800*1300*2050  2940",
+        "won the favor of customers all over the world.                    SC300VF  SC300VE     264  240  TAD1380GE    6                                       12.78         3120x1150x1900      3270    4200*1500*2100  4620",
+        "SC353VF  SC353VE     310  282  TAD1381GE    6                                       12.78         3120*1150*1900      3270    4200*1500*2100  4620",
+        "SC400VF  SC400VE     352  320  TAD1382GE    6                                       12.78         3120*1150*1900      3400    4200*1500*2100  4790",
+        "SC670VF  SC670VE     589  536  TWD1683GE    6                                       16.12         3520*1430*2330      4400    5100*1900*2430  5600"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Pangu series 50Hz",
+      "header": [
+        "PRP/ESP    Engine model    Prime/Standby  Bore-                                Machine   Fuel                    Open Type",
+        "Set Type  机组输出功率     柴油机型号           柴油机功率          stroke ratio                    Cyl  oil       consumption  Discharge  开架机组",
+        "机组型号      （KW）                       （KW）           缸径X行程                           缸数   capacity  g/kw·h       排放         Overall Size    Welght",
+        "（主用/备                      主用/备用          （mm）                                 （L）       燃油消耗                    外形尺寸            机组重量 (kg)"
+      ],
+      "rows": [
+        "SC500PG   400/440    PTAA6L-EG490    450/490        135X166                         6    30        202.5        国Ⅲ         3300X1170X1610  3370",
+        "SC560PG   450/500    PTAA8V-EG575    510/575        135X145                         8    28        199.2        国Ⅲ         3050X1400X2070  3970",
+        "SC600PG   500/550    PTAA8V-EG620    570/620        135X145                         8    28        200.2        国Ⅲ         3050X1400X2070  4200",
+        "SC700PG   560/620    PTAA10V-EG690   630/690        135X145                         10   30        199.1        国Ⅲ         3050X1400X2120  4750",
+        "SC750PG   600/660    PTAA10V-EG740   670/740        135X145                         10   30        199.3        国Ⅲ         3350X1400X2120  5000",
+        "SC800PG   640/704    PTAA12V-EG815   730/815        135X145                         12   32        199.5        国Ⅲ         3700X1400X2120  5500",
+        "SC900PG   720/800    PTAA12V-EG900   810/900        135X145                         12   32        199.5        国Ⅲ         4300X1540X2120  5500",
+        "SC1000PG  800/880    HTAA32-EG5      890/980        132X145                         16   50        201.5        国Ⅲ         4150X2140X2240  6600",
+        "SC1125PG  900/1000   PTAA16V-EG1120  1010/1120      135X145                         16   50        196.8        国Ⅲ         4150X2140X2240  6750",
+        "SC1250PG  1000/1100  HTAA40-EG3      1110/1225      132X145                         20   60        197.9        国Ⅲ         5000X2140X2420  7500",
+        "SC1375PG  1100/1200  PTAA20V-EG1345  1220/1345      135X145                         20   60        199.0        国Ⅲ         5200X2140X2420  8000",
+        "SC1500PG  1200/1320  PTAA20V-EG1480  1330/1480      135X145                         20   60        200.0        国Ⅲ         5400X2140X2420  8300",
+        "SC1250PG  1000/1100  QTA8V-EG1230D   1120/1230      185X200                         8    115       193.49       国Ⅲ         4500X2600X3000  7350",
+        "SC1375PG  1100/1200  QTA8V-EG1350D   1230/1350      185X200                         8    115       194.33       国Ⅲ         4600X2600X3000  7650",
+        "SC1500PG  1200/1320  QTA8V-EG1490    1345/1490      185X200                         8    115       194.36       国Ⅲ         4600X2600X3000  7700",
+        "SC1680PG  1350/1500  QTA10V-EG1670D  1520/1670      185X200                         10   150       190.56       国Ⅲ         5050X2600X3000  11000",
+        "SC1875PG  1500/1650  QTA10V-EG1850   1680/1850      185X200                         10   150       197.34       国Ⅲ         5050X2600X3000  11200",
+        "SC2000PG  1600/1760  QTA12V-EG1960D  1780/1960      185X200                         12   180       191.55       国Ⅲ         6900X2600X3000  12000",
+        "SC2050PG  1640/1800  QTA12V-EG1990D  1810/1990      185X200                         12   180       191.32       国Ⅲ         6900X2600X3000  12200",
+        "SC2250PG  1800/2000  QTA12V-EG2210   2010/2210      185X200                         12   180       190.59       国Ⅲ         7000X2600X3000  13000",
+        "SC2250PG  1800/2000  QTA16V-EG2220D  2000/2220      185X200                         16   240       186.9        国Ⅲ         6000X2600X3000  14100",
+        "SC2500PG  2000/2200  QTA16V-EG2440D  2220/2440      185X200                         16   240       188.3        国Ⅲ         6000X2600X3000  14500",
+        "SC2750PG  2200/2400  QTA16V-EG2660D  2440/2660      185X200                         16   240       196.48       国Ⅲ         6200X2600X3000  15000",
+        "SC3000PG  2400/2640  QTA16V-EG2940   2675/2940      185X200                         16   240       196.65       国Ⅲ         6400X2800X3000  15500",
+        "磐谷系列                                                                                              SC3000PG  2400/2640  QTA20V-EG2950D  2680/2950      185X200                         20   300       192.39       国Ⅲ         8000X2800X3100  19400"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Gas power 50Hz",
+      "header": [
+        "Open        Soundproof                                         Engine                       Displacement  Open TypeDimention  Weight    Soundproof                                     Weight",
+        "Type        Type        ESP  PRP                               Model                   Cyl     排量         开架尺寸                     重量   TypeDimention                                  重量"
+      ],
+      "rows": [
+        "SC38WNGF    SC38WNG     30   25    WP4D40E200NG                                        4       4.5        1800*710*1300            900  2500*1000*1500                                 1250",
+        "SC75WNGF    SC75WNG     60   50    WP4D77E300NG                                        4       4.5        1900*800*1300            980  2600*1000*1500                                 1300",
+        "SC125WNGF   SC125WNG    100  80    WP6D132E300NG                                       6       6.75       2500*1000*1500          1600  3500*1200*1800                                 1950",
+        "SC188WNGF   SC188WNG    150  120   WP10D200E300NG                                      6    9.726         3150*1150*1700          2500  4100*1500*2000                                 2900",
+        "SC313WNGF   SC313WNG    250  205   WP13D317E300NG                                      6    12.54         3450*1500*2000          3900  4200*1800*2000                                 4300",
+        "SC500WNGF   SC500WNG    400  320   6M33D450E310NG                                      6       19.6       4000*1600*2000          5800  4800*2200*2200                                 6350",
+        "SC625WNGF   SC625WNG    500     /  12M26D605E300NG                                     12      31.8       4600*1800*2000          7300  5500*2200*2200                                 7750",
+        "SC1000WNGF  SC1000WNG   800  670   12M33D900E310NG                                     12      39.2       5000*1800*2000          7500  5800*2250*2450                                 8000"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SENCI 2025 Industrial Genset catalogue - Gas power 60Hz",
+      "header": [
+        "Open        Soundproof  ESP  PRP                               Engine  Cyl缸                 Displacement  Open TypeDimention  Weight    Soundproof",
+        "燃气机组                                                                                       Type        Type        备用   常用                                Model   数                    排量            开架尺寸                重量        TypeDimention   Weight 重量"
+      ],
+      "rows": [
+        "SC38WNGF    SC38WNG     30   25    WP4D44E201NG                                     4       4.5           1800*710*1300       900       2500*1000*1500  1250",
+        "SC75WNGF    SC75WNG     60   50    WP4D77E301NG                                     4       4.5           1900*800*1300       980       2600*1000*1500  1300",
+        "SC125WNGF   SC125WNG    100  80    WP6D132E301NG                                    6       6.75          2500*1000*1500      1600      3500*1200*1800  1950",
+        "SC225WNGF   SC225WNG    180  145   WP10D238E301NG                                   6       9.726         3150*1150*1700      2600      4100*1500*2000  2900",
+        "博杜安动力的产品特点包括高精度制造和严格的质量   The product features of Boduan Power include high-precision      SC313WNGF   SC313WNG    250  205   WP13D317E301NG                                   6       12.54         3150*1150*1700      3900      4200*1800*2000  4300",
+        "控制。其生产过程采用全球顶尖的五轴加工中心，以   manufacturing and strict quality control. The production         SC500WNGF   SC500WNG    400  330   6M33D480E311NG                                   6       19.6          4000*1600*2000      5800      4800*2200*2200  6350",
+        "微米级精度进行加工，确保发动机的各个部件都能达   process adopts the world’s top five axis machining center,       SC688WNGF   SC688WNG    550  /     12M26D660E301NG                     12                   31.8          4600*1800*2500      7350      5500*2200*2200  7800",
+        "到极高的精度要求�4。此外，博杜安动力的大缸径发  which processes with micrometer level precision to ensure        SC1063WNGF  SC1063WNG   850  720   12M33D960E311NG                     12                   39.2          5000*1800*2000      7550      5800*2250*2450  8050"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "潍柴系列 WEICHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+      "header": [
+        "| 潍柴系列 WEICHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+        "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+      ],
+      "rows": [
+        "| | | WP2.3D33E200 | 30/33 | 89X92 | 4 | 8 | ≤212 | 国Ⅱ | 1600X760X1200 | 620",
+        "| | | WP2.3D40E200 | 36/40 | 89X92 | 4 | 8 | ≤216 | 国Ⅱ | 1680X760X1200 | 680",
+        "| | | WP2.3D48E200 | 44/48 | 89X92 | 4 | 8 | ≤220 | 国Ⅱ | 1750X760X1350 | 720",
+        "| | | WP4.1D66E200 | 60/66 | 105X118 | 4 | 13 | ≤235 | 国Ⅱ | 1950X950X1400 | 860",
+        "| | | WP4.1D80E200 | 72/80 | 105X118 | 4 | 13 | ≤235 | 国Ⅱ | |",
+        "| | | WP4.1D100E200 | 90/100 | 105X118 | 4 | 13 | ≤201 | 国Ⅱ | 2100X950X1500 | 1130",
+        "| | | WP6D132E200 | 120/132 | 105X130 | 6 | 18 | ≤205 | 国Ⅱ | 2400X950X1500 | 1330",
+        "| | | WP6D152E200 | 138/152 | 105X130 | 6 | 18 | ≤205 | 国Ⅱ | 2400X950X1500 | 1400",
+        "| | | WP6D167E200 | 150/167 | 105X130 | 6 | 18 | ≤205 | 国Ⅱ | |",
+        "| | | WP10D200E200 | 182/200 | 126X130 | 6 | 24 | ≤215 | 国Ⅱ | 2900X1200X1800 | 1800",
+        "| | | WP10D238E200 | 216/238 | 126X130 | 6 | 24 | ≤215 | 国Ⅱ | 2900X1200X1800 | 1980",
+        "| | | WP10D264E200 | 240/264 | 126X130 | 6 | 24 | ≤215 | 国Ⅱ | 2900X1200X1800 | 2200",
+        "| | | WP12D317E200 | 288/317 | 126X155 | 6 | 24 | ≤210 | 国Ⅱ | 3000X1200X2000 | 2550",
+        "| | | WP10D320E200 | 291/320 | 126X130 | 6 | 24 | ≤210 | 国Ⅱ | 3000X1200X2000 | 2380",
+        "| | | WP13D385E200 | 350/385 | 127X165 | 6 | 36 | ≤210 | 国Ⅱ | 3050X1250X2100 | 2820",
+        "| | | WP13D405E200 | 405 | 127X165 | 6 | 36 | ≤200 | 国Ⅱ | 3050X1250X2100 | 3500",
+        "| | | WP3.2D28E310 | 25/27.5 | 98X105 | 4 | 9 | ≤212 | 国Ⅲ | |",
+        "| | | WP3.2D36E310 | 33/36.3 | 98X105 | 4 | 9 | ≤212 | 国Ⅲ | |",
+        "| | | WP3.2D44E310 | 36.8/44 | 98X105 | 4 | 9 | ≤212 | 国Ⅲ | |",
+        "| | | WP4.1D66E310 | 60/66 | 105X118 | 4 | 13 | ≤205 | 国Ⅲ | |",
+        "| | | WP4.1D84E310 | 74.5/84 | 105X118 | 4 | 13 | ≤205 | 国Ⅲ | |",
+        "| | | WP4.1D105E310 | 96/105 | 105X118 | 4 | 13 | ≤205 | 国Ⅲ | |",
+        "| | | WP4.6ND120E310 | 110/112 | 108X125 | 4 | 16 | ≤205 | 国Ⅲ | |",
+        "| | | WP4.6ND138E310 | 125/138 | 108X125 | 4 | 16 | ≤205 | 国Ⅲ | |",
+        "| | | WP4.6ND148E310 | 135/148 | 108X125 | 4 | 16 | ≤205 | 国Ⅲ | |",
+        "| | | WP6D152E200 | 138/152 | 105X130 | 6 | 16 | ≤205 | 国Ⅲ | |",
+        "| | | WP7D185E310 | 168/185 | 108X136 | 6 | 24 | ≤205 | 国Ⅲ | |",
+        "| | | WP7D240E310 | 218/240 | 108X136 | 6 | 24 | ≤215 | 国Ⅲ | |",
+        "| | | WP7D264E310 | 235/264 | 108X136 | 6 | 24 | ≤215 | 国Ⅲ | |",
+        "| | | WP10D264E200 | 240/264 | 126X130 | 6 | 24 | ≤215 | 国Ⅲ | |",
+        "| | | WP10D320E200 | 291/320 | 126X130 | 6 | 24 | ≤215 | 国Ⅲ | |",
+        "| | | WP13D385E310 | 350/385 | 127X165 | 6 | 30 | ≤210 | 国Ⅲ | |",
+        "| | | WP13D440E310 | 392/440 | 127X165 | 6 | 30 | ≤205 | 国Ⅲ | 3050X1250X2100 | 3680",
+        "| | | WP13D490E310 | 450/490 | 127X165 | 6 | 30 | ≤205 | 国Ⅲ | |"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "上柴系列 SHANGCHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+      "header": [
+        "| 上柴系列 SHANGCHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径×行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+        "| 外形尺寸Overall Size (L×W×H)(mm) | 机组重量 Welght (kg)"
+      ],
+      "rows": [
+        "| SC58SC | 50/58 | SC4H95D2 | 62/68 | 105×124 | 4 | 13 | 195 | 国Ⅱ | 1900×900×1200 |",
+        "| SC75SC | 65/75 | SC4H115D2 | 78/86 | 105×124 | 4 | 13 | 195 | 国Ⅱ | 1950×900×1200 |",
+        "| SC100SC | 90/100 | SC4H160D2 | 105/116 | 105×124 | 4 | 13 | 195 | 国Ⅱ | 2000×1000×1200 |",
+        "| SC110SC | 100/110 | SC4H180D2 | 120/132 | 105×124 | 4 | 13 | 195 | 国Ⅱ | 2000×1000×1200 |",
+        "| SC145SC | 130/145 | SC7H230D2 | 154/170 | 105×124 | 6 | 17.5 | 195 | 国Ⅱ | 2500×950×1400 |",
+        "| SC160SC | 140/160 | SC7H250D2 | 168/185 | 105×124 | 6 | 17.5 | 195 | 国Ⅱ | 2500×950×1400 |",
+        "| | 125/135 | SC8D220D2 | 146/160 | 114×135 | 6 | 19 | 200 | 国Ⅱ | 2600×1000×1500 |",
+        "| | | SC8D250D2 | 168/185 | 114×135 | 6 | 19 | 200 | 国Ⅱ | 2600×1000×1500 |",
+        "| SC175SC | 160/175 | SC8D280D2 | 185/204 | 114×135 | 6 | 19 | 200 | 国Ⅱ | 2600×1000×1500 |",
+        "| SC190SC | 180/190 | SC9D310D2 | 208/228 | 114×144 | 6 | 19 | 200 | 国Ⅱ | 2600×1000×1500 |",
+        "| SC220SC | 195/220 | SC9D340D2 | 228/255 | 114×144 | 6 | 25 | 198 | 国Ⅱ | 2700×1000×1550 |",
+        "| SC240SC | 220/240 | SC10E380D2 | 255/280 | 128×135 | 6 | 41 | 192 | 国Ⅱ | 3000×1200×1600 |",
+        "| SC250SC | 225/250 | SC10E400D2 | 265/294 | 128×135 | 6 | 41 | 192 | 国Ⅱ | 3000×1200×1600 |",
+        "| SC265SC | 240/265 | SC12E420D2 | 280/308 | 128×153 | 6 | 41 | 192 | 国Ⅱ | 3000×1200×1600 |",
+        "| SC290SC | 260/290 | SC12E460D2 | 307/338 | 128×153 | 6 | 41 | 192 | 国Ⅱ | 3000×1200×1600 |",
+        "| SC175SC | 160/175 | SC13G280D2 | 187/206 | 135×150 | 6 | 41 | 210 | 国Ⅱ | 3100×1250×1700 |",
+        "| SC195SC | 175/195 | SC13G3100D2 | 206/227 | 135×150 | 6 | 41 | 210 | 国Ⅱ | 3100×1250×1700 |",
+        "| SC220SC | 200/220 | SC13G355D2 | 236/260 | 135×150 | 6 | 41 | 205 | 国Ⅱ | 3100×1250×1700 |",
+        "| SC265SC | 240/265 | SC13G420D2 | 280/308 | 135×150 | 6 | 41 | 205 | 国Ⅱ | 3100×1250×1700 |",
+        "| SC320SC | 280/320 | SC15G500D2 | 330/373 | 135×165 | 6 | 41 | 205 | 国Ⅱ | 3150×1250×1700 |",
+        "| SC380SC | 345/380 | SC25G610D2 | 405/445 | 135×150 | 12 | 65 | 205 | 国Ⅱ | 3500×1400×2000 |",
+        "| SC430SC | 390/430 | SC25G690D2 | 459/505 | 135×150 | 12 | 65 | 205 | 国Ⅱ | 3550×1400×2000 |",
+        "| SC480SC | 430/480 | SC27G755D2 | 505/560 | 135×155 | 12 | 65 | 205 | 国Ⅱ | 3550×1400×2000 |",
+        "| SC520SC | 480/520 | SC27G830D2 | 561/610 | 135×155 | 12 | 65 | 205 | 国Ⅱ | 3550×1400×2000 |",
+        "| SC565SC | 510/565 | SC27G900D2 | 602/662 | 135×155 | 12 | 65 | 205 | 国Ⅱ | 3650×1400×2000 |",
+        "| SC620SC | 565/620 | SC33W990D2 | 660/726 | 180×215 | 6 | 100 | 205 | 国Ⅱ | 4500×1700×2050 |",
+        "| SC735SC | 665/735 | SC33W1150D2 | 782/860 | 180×215 | 6 | 100 | 205 | 国Ⅱ | 4500×1700×2050 |"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "沃尔沃系列 VOLVO SERIES",
+      "header": [
+        "| 沃尔沃系列 VOLVO SERIES",
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+        "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+      ],
+      "rows": [
+        "| | 68/75 | TAD530GE | 76/83 | 108x130 | 4 | 13 | 213 | 国Ⅱ | 2200X720X1380 | 1050",
+        "| | 80/88 | TAD531GE | 88/98 | 108x130 | 4 | 13 | 218 | 国Ⅱ | 2200X720X1380 | 1200",
+        "| | 100/110 | TAD532GE | 112/125 | 108x130 | 4 | 13 | 218 | 国Ⅱ | 2300X720X1380 | 1250",
+        "| | 120/132 | TAD731GE | 133/148 | 108x130 | 6 | 17 | 215 | 国Ⅱ | 2600X1000X1650 | 1480",
+        "| | 150/165 | TAD732GE | 160/179 | 108x130 | 6 | 31 | 213 | 国Ⅱ | 2600X1000X1650 | 1500",
+        "| | 160/180 | TAD733GE | 175/195 | 108x130 | 6 | 31 | 216 | 国Ⅱ | 2650X1070X1650 | 1550",
+        "| | 200/220 | TAD734GE | 213/238 | 108x130 | 6 | 24 | 204 | 国Ⅱ | 2650X1070X1650 | 1650",
+        "| | 200/220 | TAD841GE | 220/242 | 108x130 | 6 | 24 | 204 | 国Ⅱ | 2650X1070X1650 | 1650",
+        "| | 250/275 | TAD843GE | 280/308 | 108x130 | 6 | 24 | 204 | 国Ⅱ | 2650X1070X1650 | 1650",
+        "| | 250/275 | TAD1341GE-B | 271/298 | 131X158 | 6 | 30 | 191 | 国Ⅱ | 3000X1100X1750 | 2300",
+        "| | 280/308 | TAD1342GE-B | 303/333 | 131/158 | 6 | 30 | 191 | 国Ⅱ | 3000X1100X1750 | 2300",
+        "| | 300/330 | TAD1343GE-B | 325/356 | 131X158 | 6 | 35 | 192 | 国Ⅱ | 3100X1200X1750 | 2900",
+        "| | 320/352 | TAD1344GE-B | 354/389 | 131/158 | 6 | 30 | 194 | 国Ⅱ | 3100X1200X1750 | 2950",
+        "| | 350/385 | TAD1345GE-B | 388/431 | 131X158 | 6 | 30 | 196 | 国Ⅱ | 3100X1200X1750 | 2950",
+        "| | 400/440 | TAD1641GE-B | 445/473 | 144X165 | 6 | 42 | 199 | 国Ⅱ | 3200X1160X2022 | 3100",
+        "| | 470/520 | TAD1642GE-B | 521/554 | 144X165 | 6 | 42 | 201 | 国Ⅱ | 3200X1160X2022 | 3200",
+        "| | 500/550 | TAD1643GE-B | 560/596 | 144X165 | 6 | 42 | 199 | 国Ⅱ | 3460X1400X2100 | 3300",
+        "| | 68/75 | TAD550GE | 76/84 | 108x130 | 4 | 19 | 212 | 国Ⅲ | 2200X720X1380 | 1050",
+        "| | 80/88 | TAD551GE | 90/98 | 108x130 | 4 | 19 | 218 | 国Ⅲ | 2200X720X1380 | 1200",
+        "| | 105/120 | TAD750GE | 117/127 | 108x130 | 6 | 20 | 219 | 国Ⅲ | 2600X1000X1650 | 1400",
+        "| | 120/132 | TAD751GE | 134/146 | 108x130 | 6 | 20 | 216 | 国Ⅲ | 2600X1000X1650 | 1480",
+        "| | 150/165 | TAD752GE | 160/174 | 108x130 | 6 | 31 | 205 | 国Ⅲ | 2600X1000X1650 | 1500",
+        "| | 160/180 | TAD753GE | 180/194 | 108x130 | 6 | 31 | 205 | 国Ⅲ | 2650X1070X1650 | 1550",
+        "| | 200/220 | TAD754GE | 225/242 | 108x130 | 6 | 31 | 204 | 国Ⅲ | 2650X1070X1650 | 1650",
+        "| | 250/275 | TAD1351GE | 285/306 | 131/158 | 6 | 30 | 200 | 国Ⅲ | 3000X1100X1750 | 2300",
+        "| | 300/330 | TAD1352GE | 321/345 | 131X158 | 6 | 30 | 197 | 国Ⅲ | 3100X1200X1750 | 2900",
+        "| | 305/340 | TAD1354GE | 336/361 | 131X158 | 6 | 30 | 194 | 国Ⅲ | 3100X1200X1750 | 2900",
+        "| | 330/360 | TAD1355GE | 367/390 | 131X158 | 6 | 30 | 192 | 国Ⅲ | 3100X1200X1750 | 2950",
+        "| | 360/400 | TAD1650GE | 407/433 | 144/165 | 6 | 42 | 202 | 国Ⅲ | 3200X1160X2022 | 3000",
+        "| | 400/440 | TAD1651GE | 445/473 | 144X165 | 6 | 42 | 198 | 国Ⅲ | 3200X1160X2022 | 3100",
+        "| | 480/528 | TWD1652GE | 529/557 | 144X165 | 6 | 42 | 210 | 国Ⅲ | 3200X1160X2022 | 3300",
+        "| | 520/572 | TWD1653GE | 573/603 | 144X165 | 6 | 42 | 208 | 国Ⅲ | 3460X1400X2100 | 3400",
+        "| | 550/605 | TWD1645GE | 595/655 | 144X165 | 6 | 42 | 191 | 国Ⅲ | 3460X1400X2100 | 3600"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "道依茨系列 DAOYICI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+      "header": [
+        "| 道依茨系列 DAOYICI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+        "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+      ],
+      "rows": [
+        "| | 16/17.6 | BFM3 G1 | 20/22 | | | | | 国Ⅱ | |",
+        "| | 24/26.4 | BFM3 G2 | 29/32 | | | | | 国Ⅱ | |",
+        "| | 32/35.2 | BFM3T | 40/44 | | | | | 国Ⅱ | |",
+        "| | 40/44 | BFM3C | 45/50 | | | | | 国Ⅱ | |",
+        "| | 48/52 | BF4M2012 | 54/60 | | | | | 国Ⅱ | |",
+        "| | 60/64 | BF4M2012C G1 | 71/75 | | | | | 国Ⅱ | |",
+        "| | 72/80 | BF4M2012C G2 | 85/93 | | | | | 国Ⅱ | |",
+        "| | 80/88 | BF4M1013EC G1 | 97/102 | | | | | 国Ⅱ | |",
+        "| | 89.6/100 | BF4M1013EC G2 | 105/116 | | | | | 国Ⅱ | |",
+        "| | 104/116 | BF4M1013FC | 117/129 | | | | | 国Ⅱ | |",
+        "| | 128/140 | BF6M1013EC G1 | 146/153 | | | | | 国Ⅱ | |",
+        "| | 144/160 | BF6M1013EC G2 | 160/175 | | | | | 国Ⅱ | |",
+        "| | 150.4/168 | BF6M1013FCG2 | 166/183 | | | | | 国Ⅱ | |",
+        "| | 160/176 | BF6M1013FCG3 | 183/201 | | | | | 国Ⅱ | |",
+        "| | 200/220 | TCD8.0 | 225/250 | | | | | 国Ⅱ | |",
+        "| | 240/264 | TCD8.7 | 265/290 | | | | | 国Ⅱ | |",
+        "| | 260/280 | TCD12.1 G1 | 290/330 | | | | | 国Ⅱ | |",
+        "| | 300/320 | TCD12.1 G2 | 330/360 | | | | | 国Ⅱ | |",
+        "| | 360/400 | TCD13 G1 | 395/435 | | | | | 国Ⅱ | |",
+        "| | 400/440 | TCD13 G2 | 440/470 | | | | | 国Ⅱ | |"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "汉马系列 汉马 SERIES (国Ⅲ排放 STAGEⅢ EMISSION )",
+      "header": [
+        "| 汉马系列 汉马 SERIES (国Ⅲ排放 STAGEⅢ EMISSION )",
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+        "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+      ],
+      "rows": [
+        "| SC230HM | 230/253 | CM6D12F.250 30 | 250/275 | 128X153 | 6 | 30 | ≤200 | 国Ⅲ | |",
+        "| SC265HM | 265/290 | CM6D18F.290 30 | 290/319 | 118X150 | 6 | 34.5 | ≤240 | 国Ⅲ | |",
+        "| SC274HM | 274/300 | CM6D28F.300 30 | 300/330 | 128X153 | 6 | 34.5 | ≤200 | 国Ⅲ | |",
+        "| SC320HM | 320/350 | CM6D28F.350 30 | 350/385 | 128X153 | 6 | 41.6 | ≤200 | 国Ⅲ | |",
+        "| SC410HM | 410/450 | CM6D30F.408 30 | 450/490 | 130X161 | 6 | 41 | ≤195 | 国Ⅲ | |"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "乾能系列 乾能 SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+      "header": [
+        "| 乾能系列 乾能 SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+        "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+      ],
+      "rows": [
+        "| | 120KW | QN8H163 | 120/171 | | | | | 国Ⅱ | |",
+        "| | 150KW备用 | QN8H163 | 120/171 | | | | | 国Ⅱ | |",
+        "| | 160KW | QN8H217 | 160/206 | | | | | 国Ⅱ | |",
+        "| | 180KW备用 | QN8H217 | 160/206 | | | | | 国Ⅱ | |",
+        "| | 180KW | QN9H245 | 180/227 | | | | | 国Ⅱ | |",
+        "| | 200KW备用 | QN9H245 | 180/227 | | | | | 国Ⅱ | |",
+        "| | 200KW | QN9H272 | 200/263 | | | | | 国Ⅱ | |",
+        "| | 250KW | QN9H340-1 | 250/308 | | | | | 国Ⅱ | |",
+        "| | 250KW | QN13H340 | 250/308 | | 6 | | | 国Ⅱ | |",
+        "| | 280KW | QN13H380 | 280/330 | | 6 | | | 国Ⅱ | |",
+        "| | 300KW备用 | QN13H380 | 280/330 | | 6 | | | 国Ⅱ | |",
+        "| | 320KW | QN13H435 | 320/375 | | 6 | | | 国Ⅱ | |",
+        "| | 350KW备用 | QN13H435 | 320/375 | | 6 | | | 国Ⅱ | |",
+        "| | 350KW | QN13H516 | 380/450 | | 6 | | | 国Ⅱ | |",
+        "| | 400KW备用 | QN13H516 | | | 6 | | | 国Ⅱ | |",
+        "| | 400KW | QN26H571 | 420/510 | | 12 | | | 国Ⅱ | |",
+        "| | 450KW备用 | QN26H571 | | | 12 | | | 国Ⅱ | |",
+        "| | 450KW | QN26H612 | 450/550 | | 12 | | | 国Ⅱ | |",
+        "| | 500KW备用 | QN26H612 | | | 12 | | | 国Ⅱ | |",
+        "| | 500KW | QN26H680 | 500/610 | | 12 | | | 国Ⅱ | |",
+        "| | 550KW备用 | QN26H680 | | | 12 | | | 国Ⅱ | |",
+        "| | 600KW | QN28H816 | 600/660 | | 12 | | | 国Ⅱ | |",
+        "| | 600KW | QN28H843 | 620/720 | | 12 | | | 国Ⅱ | |",
+        "| | 650KW备用 | QN28H843 | | | 12 | | | 国Ⅱ | |",
+        "| | 650KW | QN28H884 | 650/780 | | 12 | | | 国Ⅱ | |",
+        "| | 700KW备用 | QN28H884 | | | 12 | | | 国Ⅱ | |",
+        "| | 700KW | QN28H960 | 700/840 | | 12 | | | 国Ⅱ | |",
+        "| | 750KW备用 | QN28H960 | | | 12 | | | 国Ⅱ | |",
+        "| | 720KW | QN28H1100 | 720/936 | | 12 | | | 国Ⅱ | |",
+        "| | 800KW备用 | QN28H1100 | | | 12 | | | 国Ⅱ | |",
+        "| | 750KW | QN28H1150 | 750/966 | | 12 | | | 国Ⅱ | |",
+        "| | 850KW备用 | QN28H1150 | | | 12 | | | 国Ⅱ | |",
+        "| | 800KW | QN32H1210 | 800/1020 | | 12 | | | 国Ⅱ | |",
+        "| | 900KW备用 | QN32H1210 | | | 12 | | | 国Ⅱ | |",
+        "| | 850KW | QN32H1280 | 850/1070 | | 12 | | | 国Ⅱ | |",
+        "| | 950KW备用 | QN32H1280 | | | 12 | | | 国Ⅱ | |",
+        "| | 900KW | QN32H1340 | 900/1120 | | 12 | | | 国Ⅱ | |",
+        "| | 1000KW备用 | QN32H1340 | | | 12 | | | 国Ⅱ | |",
+        "| | 950KW | QN32H1420 | | | 12 | | | 国Ⅱ | |",
+        "| | 1000KW | QN32H1480 | | | 12 | | | 国Ⅱ | |"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "东康系列 COMMINS SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+      "header": [
+        "| 东康系列 COMMINS SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+        "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+      ],
+      "rows": [
+        "| | | 4B3.9-G1 | | | | | ≤ | 国Ⅱ | |",
+        "| | | 4B3.9-G11 | | | | | ≤ | 国Ⅱ | |",
+        "| | | 4B3.9-G2 | 24/27 | 102X120 | 4 | 11 | ≤215 | 国Ⅱ | 1650X800X1300 | 760",
+        "| | | 4B3.9-G12 | 27/28 | 102X120 | 4 | 11 | ≤215 | 国Ⅱ | 1650X800X1300 | 780",
+        "| | | 4BT3.9-G1 | 36/40 | 102X120 | 4 | 11 | ≤215 | 国Ⅱ | 1650X800X1300 | 800",
+        "| | | 4BT3.9-G2 | 36/40 | 102X120 | 4 | 11 | ≤215 | 国Ⅱ | 1650X800X1300 | 800",
+        "| | | 4BTA3.9-G2 | 50/55 | 102X120 | 4 | 11 | ≤215 | 国Ⅱ | 1850X850X1300 | 820",
+        "| | | 4BTA3.9-G11 | 70/80 | 102X120 | 4 | 11 | ≤215 | 国Ⅱ | 1850X850X1300 | 900",
+        "| | | 4BTA3.9-G13 | | 102X120 | | | ≤ | 国Ⅱ | 1650X800X1300 |",
+        "| | | 6BT5.9-G1 | 86/92 | 102X120 | 6 | 17 | ≤214 | 国Ⅱ | 2200*850*1600 | 1060",
+        "| | | 6BT5.9-G2 | 86/92 | 102X120 | 6 | 17 | ≤214 | 国Ⅱ | 2200*850*1600 | 1060",
+        "| | | 6BTA5.9-G2 | 106/116 | 102X120 | 6 | 17 | ≤215 | 国Ⅱ | 2300*850*1600 | 1080",
+        "| | | 6BTAA5.9-G2 | 120/130 | 102X120 | 6 | 17 | ≤215 | 国Ⅱ | 2450*850*1600 | 1150",
+        "| | | 6BTAA5.9-G12 | 140/155 | 102*120 | 6 | 17 | ≤215 | 国Ⅱ | 2450*850*1600 | 1150",
+        "| | | 6CTA8.3-G1 | 163/183 | 114*135 | 6 | 28 | ≤205 | 国Ⅱ | 2450*850*1800 | 1450",
+        "| | | 6CTA8.3-G2 | 163/183 | 114*135 | 6 | 28 | ≤205 | 国Ⅱ | 2450*850*1800 | 1450",
+        "| | | 6CTAA8.3-G2 | 183/203 | 114*135 | 6 | 28 | ≤205 | 国Ⅱ | 2600*950*1800 | 1860",
+        "| | | 6CTAA8.3-G9 | | | | | ≤ | 国Ⅱ | |",
+        "| | | 6LTAA8.9-G2 | 220/240 | 114*145 | 6 | 28 | ≤197 | 国Ⅱ | 2800*1000*1800 | 2000",
+        "| | | 6LTAA8.9-G3 | 230/250 | 114*145 | 6 | 28 | ≤197 | 国Ⅱ | 2800*1000*1800 | 2300",
+        "| | | 6LTAA9.5-G3 | 250/275 | 116*148 | 6 | 28 | ≤197 | 国Ⅱ | 2800*1000*1800 | 2300",
+        "| | | 6LTAA9.5-G1 | 290/320 | 116*148 | 6 | 28 | ≤197 | 国Ⅱ | 2800*1000*1800 | 2500",
+        "| | | 6ZTAA13-G3 | 340/380 | 130*163 | 6 | 46 | ≤192 | 国Ⅱ | 3250*1360*2100 | 2700",
+        "| | | 6ZTAA13-G2 | 390/415 | 130*163 | 6 | 46 | ≤192 | 国Ⅱ | 3250*1360*2100 | 2700",
+        "| | | 6ZTAA13-G4 | 400/415 | 130*163 | 6 | 46 | ≤192 | 国Ⅱ | 3250*1360*2100 | 3200",
+        "| | | QSZ13-G2 | 400 | 130*163 | 6 | 46 | ≤212 | 国Ⅱ | 3250*1360*2100 | 3200",
+        "| | | QSZ13-G5 | 411/470 | 130*163 | 6 | 46 | ≤212 | 国Ⅱ | 3250*1360*2100 | 3200",
+        "| | | QSZ13-G3 | 450 | 130/163 | 6 | 46 | ≤212 | 国Ⅱ | 3250*1360*2100 | 3200",
+        "| | | QSB3.9-G2 | 63/70 | 102X120 | 4 | 11 | ≤230 | 国Ⅲ | 1850X850X1300 | 900",
+        "| | | QSB3.9-G3 | 79/88 | 102*120 | 4 | 11 | ≤214 | 国Ⅲ | 2200*850*1600 | 1080",
+        "| | | QSB5.9-G2 | 96/106 | 102*120 | 6 | 17 | ≤224 | 国Ⅲ | 2300*850*1600 | 1100",
+        "| | | QSB5.9-G3 | 120/132 | 102*120 | 6 | 17 | ≤215 | 国Ⅲ | 2450*850*1600 | 1200",
+        "| | | QSB6.7-G3 | 151/166 | 107*124 | 6 | 20 | ≤213 | 国Ⅲ | 2450*850*1800 | 1480",
+        "| | | QSB6.7-G4 | 168/185 | 107*124 | 6 | 20 | ≤213 | 国Ⅲ | 2450*850*1800 | 1480",
+        "| | | QSL8.9-G2 | 206/226 | 114*144.5 | 6 | 24 | ≤219 | 国Ⅲ | 2555*960*1650 | 2000",
+        "| | | QSL8.9-G3 | 220/242 | 114*144.5 | 6 | 24 | ≤213 | 国Ⅲ | 2555*960*1650 | 2000",
+        "| | | QSL8.9-G4 | 235/258 | 114*144.5 | 6 | 24 | ≤210 | 国Ⅲ | 2555*960*1650 | 2000",
+        "| | | QSZ13-G6 | 328/374 | 130*163 | 6 | 75 | ≤214 | 国Ⅲ | 3250*1360*2100 | 3200",
+        "| | | QSZ13-G7 | 367/419 | 130*163 | 6 | 75 | ≤209 | 国Ⅲ | 3250*1360*2100 | 3200",
+        "| | | QSZ13-G10 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSZ13-G11 | | | | | ≤ | 国Ⅲ | |"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "重康系列 重康 SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+      "header": [
+        "| 重康系列 重康 SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+        "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+      ],
+      "rows": [
+        "| | | NT855-GA | 231/254 | 140*152 | 6 | 39 | ≤191 | 国Ⅱ | 2900*1000*1800 | 2300",
+        "| | | MTA11-G2 | 224/264 | 125*147 | 6 | 34 | ≤225 | 国Ⅱ | 2900*1000*1800 | 2250",
+        "| | | NTA855-G1A | 261/291 | 140*152 | 6 | 39 | ≤225 | 国Ⅱ | 3000*1040*1655 | 2600",
+        "| | | MTA11-G3 | 282/310 | 125*147 | 6 | 34 | ≤225 | 国Ⅱ | 3000*1000*1800 | 2500",
+        "| | | NTA855-G1B | | | | | ≤ | 国Ⅱ | |",
+        "| | | NTA855-G1B | | | | | ≤ | 国Ⅱ | |",
+        "| | | NTA855-G2A | | | | | ≤ | 国Ⅱ | |",
+        "| | | NTA855-G4 | | | | | ≤ | 国Ⅱ | |",
+        "| | | NTAA855-G7 | | | | | ≤ | 国Ⅱ | |",
+        "| | | NTAA855-G7A | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA19-G2 | | | | | ≤ | 国Ⅱ | |",
+        "| | | NTAA855-G7A | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA19-G3 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA19-G3 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA19-G3A | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA19-G4 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTAA19-G5 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTAA19-G6 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTAA19-G6A | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA19-G8 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KT38-G | | | | | ≤ | 国Ⅱ | |",
+        "| | | KT38-GA | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA38-G2 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA38-G1B | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA38-G2B | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA38-G2B | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA38-G2A | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA38-G2A | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA38-G5 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA38-G9 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA50-G3（SO66447) | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA50-G12 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA50-G12A | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA50-G8铜水箱 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA50-GS8铜水箱 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA50-G15X | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA50-G8铝水箱 | | | | | ≤ | 国Ⅱ | |",
+        "| | | KTA50-GS8铝水箱 | | | | | ≤ | 国Ⅱ | |",
+        "| | | QSNT-G6 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSNT-G7 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSNT-G1 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSNT-G2 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSNT-G3 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSNT-G3 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G14 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSNT-G4X | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G13 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G12 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G6 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G4 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G11 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G8 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G7 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G6 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G1 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G2 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G5 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G19 | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA19-G8E | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA19-G8A | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA19-G9A | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA38-G2E | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA38-G5E | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA38-G7E | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA38-G9E | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA50-G3E | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA50-G7E | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA50-G8E | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA50-G15A | | | | | ≤ | 国Ⅲ | |",
+        "| | | KTA50-G16A | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G15 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G16 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G17 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G18 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G19 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G20 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK19-G21 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G9 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G10 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G11 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G12 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G13 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G14 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK38-G15 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK60-G3 | | | | | ≤ | 国Ⅲ | |",
+        "| | | QSK60-G23 | | | | | ≤ | 国Ⅲ | |"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "玉柴系列 YUCHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+      "header": [
+        "| 玉柴系列 YUCHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )",
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+        "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+      ],
+      "rows": [
+        "| | | YCD4V12D-35 | 20/22 | 115X120 | 4 | 12 | 225 | 国Ⅱ | 1700*700*1000 | 650",
+        "| | | YCD4V22D-55 | | | | 12 | | 国Ⅱ | |",
+        "| | | YC4D60-D25 | 30/33 | 108*115 | 4 | 12 | 205 | 国Ⅱ | 1850*760*1060 | 1100",
+        "| | | YC4D90Z-D25 | 50/55 | 108*115 | 4 | 12 | 220 | 国Ⅱ | 2000*740*1150 | 1190",
+        "| | | YC4A100Z-D25 | 70/74 | 108*132 | 4 | 12 | 200 | 国Ⅱ | 2000*760*1150 | 1100",
+        "| | | YC4A140L-D25 | 95/105 | 108*132 | 4 | 12 | 200 | 国Ⅱ | 2100*750*1350 | 1200",
+        "| | | YC4A180L-D20 | 110/125 | 108*132 | | | | 国Ⅱ | 2100*750*1350 | 1200",
+        "| | | YC6B180L-D20 | 120/132 | 108*125 | 6 | 21 | 192 | 国Ⅱ | 2300*900*1270 | 1290",
+        "| | | YC6B205L-D20 | 138/152 | 108*125 | 6 | 17 | 202 | 国Ⅱ | 2200*700*1450 | 1700",
+        "| | | YC6A245L-D21 | 165/182 | 108*132 | 6 | 22 | 200 | 国Ⅱ | 2500*900*1600 | 1700",
+        "| | | YC6MK350L-D20 | 235/258 | 123*145 | 6 | 28 | 197 | 国Ⅱ | 3000*1140*1540 | 2100",
+        "| | | YC6MK420L-D20 | 281/309 | 123*145 | 6 | 28 | 195 | 国Ⅱ | 3200*1200*1700 | 2900",
+        "| | | YC6MJ500L-D21 | 330/375 | 131*145 | 6 | 28 | 197 | 国Ⅱ | 3100*1000*1800 | 2600",
+        "| | | YC6T600L-D22 | 401/441 | 145*165 | 6 | 52 | 195 | 国Ⅱ | 3550*1400*1850 | 3600",
+        "| | | YC6T660L-D20 | 441/485 | 145*165 | 6 | 52 | 195 | 国Ⅱ | 3550*1440*1850 | 3600",
+        "| | | YC4D65-D20 | | | | | | 国Ⅱ | |",
+        "| | | YC4D80Z-D20 | | | | | | 国Ⅱ | |",
+        "| | | YC4D100Z-D20 | | | | | | 国Ⅱ | |",
+        "| | | YC6B130Z-D20 | 90/99 | 108*125 | 6 | 20 | 196 | 国Ⅱ | 2200*900*1400 | 1150",
+        "| | | YC6B160Z-D20 | | | | | | 国Ⅱ | |",
+        "| | | YC6B210L-D20 | | | | | | 国Ⅱ | |",
+        "| | | YC6A245L-D20 | 165/182 | 108*132 | 6 | 21 | 215 | 国Ⅱ | 2600*1000*1500 | 1700",
+        "| | | YC6MK360L-D20 | | | | | | 国Ⅱ | |",
+        "| | | YC6MK420L-D21 | | | | | | 国Ⅱ | |",
+        "| | | YC6MJ515L-D22 | | | | | | 国Ⅱ | |",
+        "| | | YC6T660L-D21 | | | | | | 国Ⅱ | |",
+        "| | | YC6T660L-D21 | | | | | | 国Ⅱ | |"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "SC62DCE 60kva Diesel Generator Set with Cummins Engine",
+      "header": [],
+      "rows": [
+        "SC62DCE",
+        "Rated Power 50kw/62kva",
+        "Engine Brand: CumminsEngine",
+        "model: 4BTA3.9-G2Engine",
+        "Alternator Brand: Stanford",
+        "Alternator Model: S1L2-Y1Alternator",
+        "Display format: DSE7320"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": "HGM420",
+      "text": "HGM420",
+      "line": "HGM420  DSE6120  DSE7320  HGM6120                        AGC150  DSE8610  HGM9530",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "HGM420  DSE6120  DSE7320  HGM6120                        AGC150  DSE8610  HGM9530",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "HGM420  DSE6120  DSE7320  HGM6120                        AGC150  DSE8610  HGM9530",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120",
+      "text": "HGM6120",
+      "line": "HGM420  DSE6120  DSE7320  HGM6120                        AGC150  DSE8610  HGM9530",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": "AGC150",
+      "text": "AGC150",
+      "line": "HGM420  DSE6120  DSE7320  HGM6120                        AGC150  DSE8610  HGM9530",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "HGM420  DSE6120  DSE7320  HGM6120                        AGC150  DSE8610  HGM9530",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9530",
+      "text": "HGM9530",
+      "line": "HGM420  DSE6120  DSE7320  HGM6120                        AGC150  DSE8610  HGM9530",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Display format: DSE7320",
+      "src": [
+        2011
+      ]
+    }
+  ]
 }
