@@ -75,6 +75,1017 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "GRW Series (Stage V, rental)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT",
+        "Scania"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "power": {
+        "min": 60,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GPW Series (Stage V, rental)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins",
+        "Yanmar",
+        "FPT"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte",
+        "Leroy Somer"
+      ],
+      "power": {
+        "min": 9,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1500",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V4000G23"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1500",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V4000G61"
+      ],
+      "power": {
+        "min": 1557,
+        "max": 1557,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1015",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V2000G65"
+      ],
+      "power": {
+        "min": 1013,
+        "max": 1013,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW330V",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD941GE"
+      ],
+      "power": {
+        "min": 315,
+        "max": 315,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW560V",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD1641GE"
+      ],
+      "power": {
+        "min": 505,
+        "max": 505,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW2600",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V4000G63"
+      ],
+      "power": {
+        "min": 2310,
+        "max": 2310,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW665",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V1600G70F"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1260",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "18V2000G85"
+      ],
+      "power": {
+        "min": 1364,
+        "max": 1364,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1120M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V2000G65"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW2030",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016TAG1A"
+      ],
+      "power": {
+        "min": 1846,
+        "max": 1846,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1900",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S16R-PTA2"
+      ],
+      "power": {
+        "min": 1904,
+        "max": 1904,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW2060",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4016TAG2A"
+      ],
+      "power": {
+        "min": 2064,
+        "max": 2064,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW2260",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S16R-PTAA2"
+      ],
+      "power": {
+        "min": 2031,
+        "max": 2031,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1500",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V4000G23R"
+      ],
+      "power": {
+        "min": 1379,
+        "max": 1379,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1770M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V4000G23"
+      ],
+      "power": {
+        "min": 1656,
+        "max": 1656,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1360",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S12R-PTA2"
+      ],
+      "power": {
+        "min": 1396,
+        "max": 1396,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1140",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "18V2000G65"
+      ],
+      "power": {
+        "min": 1142,
+        "max": 1142,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1400",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "power": {
+        "min": 1253,
+        "max": 1253,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW205",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Deutz"
+      ],
+      "engineModels": [
+        "BF6M1013FC"
+      ],
+      "power": {
+        "min": 205,
+        "max": 205,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1750",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S16R-PTA"
+      ],
+      "power": {
+        "min": 1744,
+        "max": 1744,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW870M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V2000G65"
+      ],
+      "power": {
+        "min": 788,
+        "max": 788,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW665M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V1600G70F"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1130P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008-TAG2A"
+      ],
+      "power": {
+        "min": 1031,
+        "max": 1031,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW2600",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "20V4000G23"
+      ],
+      "power": {
+        "min": 2588,
+        "max": 2588,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW630V",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD1642GE"
+      ],
+      "power": {
+        "min": 572,
+        "max": 572,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1770M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V4000G23"
+      ],
+      "power": {
+        "min": 1506,
+        "max": 1506,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1260M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "18V2000G65"
+      ],
+      "power": {
+        "min": 1138,
+        "max": 1138,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW815M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG2A"
+      ],
+      "power": {
+        "min": 731,
+        "max": 731,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW1260M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "18V2000G65"
+      ],
+      "power": {
+        "min": 1140,
+        "max": 1140,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW875M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "power": {
+        "min": 807,
+        "max": 807,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1000M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V2000G25"
+      ],
+      "power": {
+        "min": 931,
+        "max": 931,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1650P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TAG2A"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1120M",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V2000G65"
+      ],
+      "power": {
+        "min": 1015,
+        "max": 1015,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW1400",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GCW815P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23 TAG2A"
+      ],
+      "power": {
+        "min": 737,
+        "max": 737,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW225V",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD753GE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 200.46,
+        "max": 200.46,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW-340P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG5"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 361.75,
+        "max": 361.75,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW315P (Alt. LS)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG4"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "power": {
+        "min": 320.33,
+        "max": 320.33,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GDW-510V/SNE",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD1344GE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 467,
+        "max": 467,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW220V",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD733GE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 225.12,
+        "max": 225.12,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSW110V",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo"
+      ],
+      "engineModels": [
+        "TAD531GE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 109.04,
+        "max": 109.04,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
     }
   ],
   "certifications": [],
@@ -106,9 +1117,1169 @@
         "From 815 to 3600kVA, these heavy-duty generating sets are designed for high power demands."
       ],
       "file": "sources/pramac/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.pramac.com/file/96665",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "GRW Series                       60-550 kVA",
+        "GPW Series                       9-100 kVA",
+        "The Stage V Pramac generators are specifically designed for the rental business. They feature FPT, Volvo"
+      ],
+      "file": "sources/pramac/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://old.pramac.com/file/2574",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "• \u0007Stationary generators designed for all market’s needs, up to 3 Megawatt",
+        "• \u0007250.000 units of Stationary generators produced in size from 750 to 3.000     kVA",
+        "• \u0007Power PRP 1500 kVA",
+        "• \u0007Engine MTU 12V4000G23",
+        "• \u0007Power PRP 1557 kVA",
+        "• \u0007Engine MTU 12V4000G61",
+        "• \u0007Power PRP 1013 kVA",
+        "• \u0007Engine MTU 16V2000G65",
+        "• \u0007Power PRP 315 kVA",
+        "• \u0007Engine VOLVO TAD941GE",
+        "• \u0007Power PRP 505 kVA",
+        "• \u0007Engine VOLVO TAD1641GE",
+        "• \u0007Power PRP 2310 kVA",
+        "• \u0007Engine MTU 16V4000G63",
+        "• \u0007Power PRP 600 kVA",
+        "• \u0007Engine MTU 12V1600G70F",
+        "• \u0007Power PRP 1364 kVA",
+        "• \u0007Engine MTU 18V2000G85",
+        "• \u0007Power PRP 1000 kVA",
+        "• \u0007Power PRP 1846 kVA",
+        "• \u0007Engine PERKINS 4016TAG1A",
+        "• \u0007Power PRP 1904 kVA",
+        "• \u0007Engine MITSUBISHI S16R-PTA2",
+        "• \u0007Power PRP 2064 kVA",
+        "• \u0007Engine PERKINS 4016TAG2A",
+        "• \u0007Power PRP 2031 kVA",
+        "• \u0007Engine MITSUBISHI S16R-PTAA2",
+        "• \u0007Power PRP 1379 kVA",
+        "• \u0007Engine MTU 12V4000G23R",
+        "• Power DCC 1656 kVA",
+        "• Engine MTU 12V4000G23 application 3F",
+        "• \u0007Power PRP 1396 kVA",
+        "• \u0007Engine MITSUBISHI S12R-PTA2",
+        "• \u0007Power PRP 1142 kVA",
+        "• \u0007Engine MTU 18V2000G65",
+        "• \u0007Power PRP 1253 kVA",
+        "• \u0007Engine PERKINS 4012-46TWG2A",
+        "• \u0007Power PRP 205 kVA",
+        "• \u0007Engine DEUTZ BF6M1013FC G3",
+        "• \u0007Power PRP 1744 kVA",
+        "• \u0007Engine MITSUBISHI S16R-PTA",
+        "• \u0007Power PRP 788 kVA",
+        "• \u0007Engine MTU 12V2000G65",
+        "• \u0007Power PRP 1031 kVA",
+        "• \u0007Engine PERKINS 4008-TAG2A",
+        "• \u0007Power PRP 2588 kVA",
+        "• \u0007Engine MTU 20V4000G23",
+        "• \u0007Power PRP 572 kVA",
+        "• \u0007Engine VOLVO TAD1642GE",
+        "• \u0007Power PRP 1506 kVA",
+        "• \u0007Power PRP 1138 kVA",
+        "• \u0007Power PRP 731 kVA",
+        "• \u0007Engine PERKINS 4006-23TAG2A",
+        "• \u0007Power PRP 1140 kVA",
+        "• \u0007Power PRP 807 kVA",
+        "• \u0007Engine PERKINS 4006-23TAG3A",
+        "• \u0007Power PRP 931 kVA",
+        "• \u0007Engine MTU 16V2000G25",
+        "• \u0007Engine PERKINS 4012-46TAG2A",
+        "• \u0007Power PRP 1015 kVA",
+        "• \u0007Power PRP 1250 kVA",
+        "• \u0007Power PRP 737 kVA",
+        "• \u0007Engine PERKINS 4006-23 TAG2A"
+      ],
+      "file": "sources/pramac/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://pramac.com/product?folder=289&product=3144",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PRIME POWER PRP kVA 200.46",
+        "MODEL TAD753GE"
+      ],
+      "file": "sources/pramac/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://pramac.com/product?folder=289&product=19943",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PRIME POWER PRP kVA 361.75",
+        "MODEL 1506A-E88TAG5"
+      ],
+      "file": "sources/pramac/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://pramac.com/product?folder=290&product=188051",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PRIME POWER PRP kVA 320.33",
+        "MODEL 1506A-E88TAG4"
+      ],
+      "file": "sources/pramac/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://pramac.com/product?folder=263&product=19177",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PRIME POWER PRP kVA 467.0",
+        "MODEL TAD1344GE"
+      ],
+      "file": "sources/pramac/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://pramac.com/product?folder=289&product=1562",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PRIME POWER PRP kVA 225.12",
+        "MODEL TAD733GE"
+      ],
+      "file": "sources/pramac/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://pramac.com/product?folder=289&product=1450",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PRIME POWER PRP kVA 109.04",
+        "MODEL TAD531GE"
+      ],
+      "file": "sources/pramac/2008.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "GRW Series Stage V (400V 50Hz)",
+      "header": [
+        "Models         PRP [kVA]  Engine                                     Alternator   Fuel/DEF  Dimensions      Control unit"
+      ],
+      "rows": [
+        "GRW60I/S5      60                                      FPT           Leroy Somer  280/NA    2400x1200x1630  DSE7320MKII / DSE8610MKII + DSE8003",
+        "GRW80I/S5      80                                      FPT           Leroy Somer  540/43    2800x1200x2035  DSE7320MKII / DSE8610MKII + DSE8003",
+        "GRW100I/S5     100                                     FPT           Leroy Somer  540/43    2800x1200x2035  DSE7320MKII / DSE8610MKII + DSE8003",
+        "GRW150I/S5     150                                     FPT           Leroy Somer  310/43    3460x1200x2050  DSE7320MKII / DSE8610MKII + DSE8003",
+        "GRW200I/S5     204                                     FPT           Leroy Somer  310/43    3460x1200x2050  DSE7320MKII / DSE8610MKII + DSE8003",
+        "GRW250I/S5     250                                     FPT           Leroy Somer  800/80    4165x1500x2130  DSE7320MKII / DSE8610MKII + DSE8003",
+        "GRW300I/S5     307                                     FPT           Leroy Somer  800/80    4165x1500x2130  DSE7320MKII / DSE8610MKII + DSE8003",
+        "GRW350S/S5     353        Scania                                     Leroy Somer  1500/155  4630x1600x2450  DSE7320MKII / DSE8920MKII",
+        "GRW400S/S5     406        Scania                                     Leroy Somer  1500/155  4630x1600x2450  DSE7320MKII / DSE8920MKII",
+        "GRW450S/S5     455        Scania                                     Leroy Somer  1500/155  4630x1600x2450  DSE7320MKII / DSE8920MKII",
+        "GRW500S/S5 SS  509        Scania                                     Leroy Somer  1500/155  4630x2100x2450  DSE7320MKII / DSE8920MKII",
+        "GRW550S/S5 SS  561        Scania                                     Leroy Somer  1500/155  4630x2100x2450  DSE7320MKII / DSE8920MKII"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "GPW Series Stage V (400V 50Hz)",
+      "header": [
+        "Models       PRP [kVA]  Engine                         Alternator             Fuel Tank [L]*        Dimensions      Control unit"
+      ],
+      "rows": [
+        "GPW9P/FS5    9          Perkins                        Mecc Alte              poly 8h/ metal 8-24h  1813x933x1313   DSE4520MKII / DSE7320MKII",
+        "GPW9Y/FS5    9          Yanmar                         Mecc Alte              poly 8h/ metal 8-24h  1813x933x1313   DSE4520MKII / DSE7320MKII",
+        "GPW13Y/FS5   13         Yanmar                         Mecc Alte              poly 8h/ metal 8-24h  1813x933x1313   DSE4520MKII / DSE7320MKII",
+        "GPW18Y/FS5   18         Yanmar                         Leroy Somer/Mecc Alte  poly 8h/ metal 8-24h  1813x933x1313   DSE4520MKII / DSE7320MKII",
+        "GPW20P/FS5   20         Perkins                        Leroy Somer/Mecc Alte  poly 8h/ metal 8-24h  1813x933x1313   DSE4520MKII / DSE7320MKII",
+        "GPW35Y/FS5   35         Yanmar                         Leroy Somer/Mecc Alte  poly 8h/ metal 8-24h  2200x1020x1423  DSE7320MKII / DSE8620MKII",
+        "GPW45Y/FS5   43         Yanmar                         Leroy Somer/Mecc Alte  poly 8h/ metal 8-24h  2200x1020x1423  DSE7320MKII / DSE8620MKII",
+        "GPW60I/FS5   60         FPT                            Leroy Somer/Mecc Alte  poly 8h/ metal 8-24h  2437x1033x1743  DSE7320MKII / DSE8610MKII",
+        "GPW80I/FS5   83         FPT                            Leroy Somer/Mecc Alte  poly 8h/ metal 8-24h  2757x1120x1846  DSE7320MKII / DSE8610MKII",
+        "GPW100I/FS5  100        FPT                            Leroy Somer/Mecc Alte  poly 8h/ metal 8-24h  2757x1120x1847  DSE7320MKII / DSE8610MKII"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1500 (Pramac Reference Book)",
+      "header": [
+        "GCW1500"
+      ],
+      "rows": [
+        "• \u0007Power PRP 1500 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 600 V",
+        "• \u0007Power factor 0,7",
+        "• \u0007Engine MTU 12V4000G23",
+        "• \u0007Alternator LEROY SOMER LSA51.2 L70"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1500 (Pramac Reference Book)",
+      "header": [
+        "GCW1500"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1630 kVA",
+        "• \u0007Power PRP 1557 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 690 V",
+        "• \u0007Power factor 0,8",
+        "• \u0007Engine MTU 12V4000G61",
+        "• \u0007Alternator STAMFORD HCI7F",
+        "• \u0007Engine water and oil preheating systems"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1015 (Pramac Reference Book)",
+      "header": [
+        "GCW1015"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1115 kVA",
+        "• \u0007Power PRP 1013 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 16V2000G65",
+        "• \u0007Alternator MECCALTE ECO43 1L"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GSW330V (Pramac Reference Book)",
+      "header": [
+        "GSW330V"
+      ],
+      "rows": [
+        "• \u0007Power LTP 330 kVA",
+        "• \u0007Power PRP 315 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine VOLVO TAD941GE",
+        "• \u0007Alternator MECCALTE ECO38 2L"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GSW560V (Pramac Reference Book)",
+      "header": [
+        "GSW560V"
+      ],
+      "rows": [
+        "• \u0007Power LTP 546 kVA",
+        "• \u0007Power PRP 505 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine VOLVO TAD1641GE",
+        "• \u0007Alternator MECCALTE ECO40 3S"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW2600 (Pramac Reference Book)",
+      "header": [
+        "GCW2600"
+      ],
+      "rows": [
+        "• \u0007Power LTP 2570 kVA",
+        "• \u0007Power PRP 2310 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 16V4000G63",
+        "• \u0007Alternator MARELLI MJB500LA4"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW665 (Pramac Reference Book)",
+      "header": [
+        "GCW665"
+      ],
+      "rows": [
+        "• \u0007Power LTP 661 kVA",
+        "• \u0007Power PRP 600 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 12V1600G70F",
+        "• \u0007Alternator MECCALTE ECO40 1,5L"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1260 (Pramac Reference Book)",
+      "header": [
+        "GCW1260"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1506 kVA",
+        "• \u0007Power PRP 1364 kVA",
+        "• \u0007Frequency 60 Hz",
+        "• \u0007Tension 480 V",
+        "• \u0007Engine MTU 18V2000G85",
+        "• \u0007Alternator STAMFORD HCI6K"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1120M (Pramac Reference Book)",
+      "header": [
+        "GCW1120M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1100 kVA",
+        "• \u0007Power PRP 1000 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 5000 V",
+        "• \u0007Power factor 0,8",
+        "• \u0007Engine MTU 16V2000G65",
+        "• \u0007Alternator LEROY SOMER LSA52.2 L45"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW2030 (Pramac Reference Book)",
+      "header": [
+        "GCW2030"
+      ],
+      "rows": [
+        "• \u0007Power LTP 2030 kVA",
+        "• \u0007Power PRP 1846 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine PERKINS 4016TAG1A",
+        "• \u0007Alternator STAMFORD PI7E"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1900 (Pramac Reference Book)",
+      "header": [
+        "GCW1900"
+      ],
+      "rows": [
+        "• \u0007Power LTP 2097 kVA",
+        "• \u0007Power PRP 1904 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MITSUBISHI S16R-PTA2",
+        "• Alternator MARELLI MJB500LA4"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW2060 (Pramac Reference Book)",
+      "header": [
+        "GCW2060"
+      ],
+      "rows": [
+        "• \u0007Power LTP 2230 kVA",
+        "• \u0007Power PRP 2064 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine PERKINS 4016TAG2A",
+        "• \u0007Alternator STAMFORD PI7F"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW2260 (Pramac Reference Book)",
+      "header": [
+        "GCW2260"
+      ],
+      "rows": [
+        "• \u0007Power LTP 2286 kVA",
+        "• \u0007Power PRP 2031 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MITSUBISHI S16R-PTAA2",
+        "• \u0007Alternator MARELLI MJB500MB4"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1500 (Pramac Reference Book)",
+      "header": [
+        "GCW1500"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1443 kVA",
+        "• \u0007Power PRP 1379 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 6,6 kV",
+        "• \u0007Engine MTU 12V4000G23R",
+        "• \u0007Alternator LEROY SOMER LSA52.2 L45"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1770M (Pramac Reference Book)",
+      "header": [
+        "GCW1770M"
+      ],
+      "rows": [
+        "• Power DCC 1656 kVA",
+        "• Frequency 50 Hz",
+        "• Tension 400 V",
+        "• Power factor 0,8",
+        "• Engine MTU 12V4000G23 application 3F",
+        "• Alternator MARELLI MJB450LA4"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1360 (Pramac Reference Book)",
+      "header": [
+        "GCW1360"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1540 kVA",
+        "• \u0007Power PRP 1396 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MITSUBISHI S12R-PTA2",
+        "• \u0007Alternator MARELLI MJB450MB4"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1140 (Pramac Reference Book)",
+      "header": [
+        "GCW1140"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1262 kVA",
+        "• \u0007Power PRP 1142 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 18V2000G65",
+        "• \u0007Alternator MECCALTE ECO43 2L"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1400 (Pramac Reference Book)",
+      "header": [
+        "GCW1400"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1385 kVA",
+        "• \u0007Power PRP 1253 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 kV",
+        "• \u0007Engine PERKINS 4012-46TWG2A",
+        "• \u0007Alternator MECCALTE ECO43 2L"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW205 (Pramac Reference Book)",
+      "header": [
+        "GCW205"
+      ],
+      "rows": [
+        "• \u0007Power LTP 220 kVA",
+        "• \u0007Power PRP 205 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine DEUTZ BF6M1013FC G3",
+        "• \u0007Alternator STAMFORD UCI274H"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1750 (Pramac Reference Book)",
+      "header": [
+        "GCW1750"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1918 kVA",
+        "• \u0007Power PRP 1744 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 kV",
+        "• \u0007Engine MITSUBISHI S16R-PTA",
+        "• \u0007Alternator STAMFORD HCI7G"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW870M (Pramac Reference Book)",
+      "header": [
+        "GCW870M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 871 kVA",
+        "• \u0007Power PRP 788 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 12V2000G65",
+        "• \u0007Alternator MECCALTE ECO43 1S",
+        "• \u0007Engine water preheating system"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GSW665M (Pramac Reference Book)",
+      "header": [
+        "GSW665M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 661 kVA",
+        "• \u0007Power PRP 600 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 12V1600G70F",
+        "• \u0007Alternator MECCALTE ECO40 1,5L"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1130P (Pramac Reference Book)",
+      "header": [
+        "GCW1130P"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1134 kVA",
+        "• \u0007Power PRP 1031 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine PERKINS 4008-TAG2A",
+        "• \u0007Alternator MECCALTE ECO43 1L"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GSW1000M (Pramac Reference Book)",
+      "header": [
+        "​GSW1000M"
+      ],
+      "rows": [
+        "• Power LTP: 1010,05 kVA / 800,04 kW",
+        "• Power PRP: 913,46 kVA / 730,77 kW",
+        "• Voltage: 400V",
+        "• Frequency: 50Hz",
+        "• Engine MTU 16V2000G25",
+        "• Alternator: Mecc Alte ECO43-2SN/4"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW2600 (Pramac Reference Book)",
+      "header": [
+        "GCW2600"
+      ],
+      "rows": [
+        "• \u0007Power LTP 2700 kVA",
+        "• \u0007Power PRP 2588 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 20V4000G23",
+        "• \u0007Alternator MECCALTE ECO46 2L"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW 1000M (Pramac Reference Book)",
+      "header": [
+        "GCW 1000M​"
+      ],
+      "rows": [
+        "• Power LTP 1010 kVA",
+        "• Power PRP 913 kVA",
+        "• Voltage 400 V",
+        "• Engine MTU 16V 2000 G25",
+        "• Alternator LEROY SOMER LSA  50.2  VL10"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW630V (Pramac Reference Book)",
+      "header": [
+        "GCW630V"
+      ],
+      "rows": [
+        "• \u0007Power LTP 632 kVA",
+        "• \u0007Power PRP 572 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine VOLVO TAD1642GE",
+        "• \u0007Alternator MECCALTE ECO40 1,5L",
+        "• \u0007Engine water preheating system"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1770M (Pramac Reference Book)",
+      "header": [
+        "GCW1770M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1658 kVA",
+        "• \u0007Power PRP 1506 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 12V4000G23",
+        "• \u0007Alternator STAMFORD PI7D"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1260M (Pramac Reference Book)",
+      "header": [
+        "GCW1260M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1257 kVA",
+        "• \u0007Power PRP 1138 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 18V2000G65",
+        "• \u0007Alternator MARELLI MJB400LA4",
+        "• \u0007Engine water preheating system"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GSW815M (Pramac Reference Book)",
+      "header": [
+        "GSW815M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 807 kVA",
+        "• \u0007Power PRP 731 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine PERKINS 4006-23TAG2A",
+        "• \u0007Alternator STAMFORD HCI6G",
+        "• \u0007Engine water preheating system"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GSW280V (Pramac Reference Book)",
+      "header": [
+        "GSW280V​"
+      ],
+      "rows": [
+        "• Power LTP: 275 kVA",
+        "• Power PRP: 253,3 kVA",
+        "• Frequency: 50hz",
+        "• Voltage: 400V",
+        "• Engine: Volvo TAD754GE Stage IIIA"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GSW1260M (Pramac Reference Book)",
+      "header": [
+        "GSW1260M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1260 kVA",
+        "• \u0007Power PRP 1140 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 18V2000G65",
+        "• \u0007Alternator MECCALTE ECO43-2LN"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GSW875M (Pramac Reference Book)",
+      "header": [
+        "GSW875M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 874 kVA",
+        "• \u0007Power PRP 807 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine PERKINS 4006-23TAG3A",
+        "• \u0007Alternator MECCALTE ECO43 1S",
+        "• \u0007Engine water preheating system"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1000M (Pramac Reference Book)",
+      "header": [
+        "GCW1000M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1009 kVA",
+        "• \u0007Power PRP 931 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 16V2000G25",
+        "• \u0007Alternator MECCALTE ECO43 2S"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1650P (Pramac Reference Book)",
+      "header": [
+        "GCW1650P"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1649 kVA",
+        "• \u0007Power PRP 1500 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine PERKINS 4012-46TAG2A",
+        "• \u0007Alternator STAMFORD PI7C"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1120M (Pramac Reference Book)",
+      "header": [
+        "GCW1120M"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1117 kVA",
+        "• \u0007Power PRP 1015 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine MTU 16V2000G65",
+        "• \u0007Alternator MECCALTE ECO43 2L",
+        "• \u0007Engine water preheating system"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW1400 (Pramac Reference Book)",
+      "header": [
+        "GCW1400"
+      ],
+      "rows": [
+        "• \u0007Power LTP 1382 kVA",
+        "• \u0007Power PRP 1250 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine PERKINS 4012-46TWG2A",
+        "• \u0007Alternator MARELLI MJB400LB4",
+        "• \u0007Engine water preheating system"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GCW815P (Pramac Reference Book)",
+      "header": [
+        "GCW815P"
+      ],
+      "rows": [
+        "• \u0007Power LTP 814 kVA",
+        "• \u0007Power PRP 737 kVA",
+        "• \u0007Frequency 50 Hz",
+        "• \u0007Tension 400 V",
+        "• \u0007Engine PERKINS 4006-23 TAG2A",
+        "• \u0007Alternator MECCALTE ECO43-1SN"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "GSW225V (pramac.com product page, 50 Hz)",
+      "header": [
+        "GSW225V"
+      ],
+      "rows": [
+        "Main Features",
+        "FREQUENCY",
+        "Hz",
+        "50",
+        "VOLTAGE",
+        "V",
+        "400",
+        "POWER FACTOR",
+        "cos ϕ",
+        "0.8",
+        "PHASE",
+        "3",
+        "Power Rating",
+        "EMERGENCY STANDBY POWER ESP",
+        "kVA",
+        "220.00",
+        "EMERGENCY STANDBY POWER ESP",
+        "kW",
+        "176.00",
+        "PRIME POWER PRP",
+        "kVA",
+        "200.46",
+        "PRIME POWER PRP",
+        "kW",
+        "160.37",
+        "Engine specifications",
+        "ENGINE BRAND",
+        "Volvo",
+        "ENGINE BRAND",
+        "MODEL",
+        "TAD753GE",
+        "MODEL",
+        "ENGINE COOLING SYSTEM",
+        "Water",
+        "ENGINE COOLING SYSTEM",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "Stage IIIA",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "Alternator Specifications",
+        "ALTERNATOR",
+        "Mecc Alte",
+        "ALTERNATOR"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "GSW-340P (pramac.com product page, 60 Hz)",
+      "header": [
+        "GSW-340P"
+      ],
+      "rows": [
+        "Main Features",
+        "FREQUENCY",
+        "Hz",
+        "60",
+        "VOLTAGE",
+        "V",
+        "380",
+        "POWER FACTOR",
+        "cos ϕ",
+        "0.8",
+        "PHASE",
+        "3",
+        "Power Rating",
+        "EMERGENCY STANDBY POWER ESP",
+        "kVA",
+        "396.00",
+        "EMERGENCY STANDBY POWER ESP",
+        "kW",
+        "316.80",
+        "PRIME POWER PRP",
+        "kVA",
+        "361.75",
+        "PRIME POWER PRP",
+        "kW",
+        "289.40",
+        "Engine specifications",
+        "ENGINE BRAND",
+        "ENGINE BRAND",
+        "Perkins",
+        "MODEL",
+        "1506A-E88TAG5",
+        "MODEL",
+        "ENGINE COOLING SYSTEM",
+        "ENGINE COOLING SYSTEM",
+        "Water",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "Non Emission Certified",
+        "Alternator Specifications",
+        "ALTERNATOR",
+        "ALTERNATOR",
+        "Mecc Alte"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "GSW315P (Alt. LS) (pramac.com product page, 60 Hz)",
+      "header": [
+        "GSW315P (Alt. LS)"
+      ],
+      "rows": [
+        "Main Features",
+        "FREQUENCY",
+        "Hz",
+        "60",
+        "VOLTAGE",
+        "V",
+        "208",
+        "POWER FACTOR",
+        "cos ϕ",
+        "0.8",
+        "PHASE",
+        "3",
+        "Power Rating",
+        "EMERGENCY STANDBY POWER ESP",
+        "kVA",
+        "353.16",
+        "EMERGENCY STANDBY POWER ESP",
+        "kW",
+        "282.53",
+        "PRIME POWER PRP",
+        "kVA",
+        "320.33",
+        "PRIME POWER PRP",
+        "kW",
+        "256.26",
+        "Engine specifications",
+        "ENGINE BRAND",
+        "ENGINE BRAND",
+        "Perkins",
+        "MODEL",
+        "1506A-E88TAG4",
+        "MODEL",
+        "ENGINE COOLING SYSTEM",
+        "Water",
+        "ENGINE COOLING SYSTEM",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "Non Emission Certified",
+        "Alternator Specifications",
+        "ALTERNATOR",
+        "Leroy Somer",
+        "ALTERNATOR"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "GDW-510V/SNE (pramac.com product page, 60 Hz)",
+      "header": [
+        "GDW-510V/SNE"
+      ],
+      "rows": [
+        "Power Rating",
+        "EMERGENCY STANDBY POWER ESP",
+        "kVA",
+        "513.4",
+        "EMERGENCY STANDBY POWER ESP",
+        "kW",
+        "410.7",
+        "PRIME POWER PRP",
+        "kVA",
+        "467.0",
+        "PRIME POWER PRP",
+        "kW",
+        "373.6",
+        "VOLTAGE",
+        "240/139",
+        "FREQUENCY",
+        "60",
+        "POWER FACTOR",
+        "cos ϕ",
+        "0.8",
+        "PHASES",
+        "3",
+        "Power Rating DCP",
+        "DATA CENTER POWER DCP",
+        "kVA",
+        "467.0",
+        "DATA CENTER POWER DCP",
+        "kW",
+        "373.6",
+        "Engine specifications",
+        "ENGINE BRAND",
+        "Volvo",
+        "MODEL",
+        "TAD1344GE",
+        "ENGINE COOLING SYSTEM",
+        "Water",
+        "EXHAUST EMISSION LEVEL",
+        "Non Emission Certified",
+        "Alternator specifications",
+        "ALTERNATOR BRAND",
+        "Mecc alte",
+        "MODEL",
+        "ECO40 2S4 C"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "GSW220V (pramac.com product page, 60 Hz)",
+      "header": [
+        "GSW220V"
+      ],
+      "rows": [
+        "Main Features",
+        "FREQUENCY",
+        "Hz",
+        "60",
+        "VOLTAGE",
+        "V",
+        "480",
+        "POWER FACTOR",
+        "cos ϕ",
+        "0.8",
+        "PHASE",
+        "3",
+        "Power Rating",
+        "EMERGENCY STANDBY POWER ESP",
+        "kVA",
+        "250.91",
+        "EMERGENCY STANDBY POWER ESP",
+        "kW",
+        "200.73",
+        "PRIME POWER PRP",
+        "kVA",
+        "225.12",
+        "PRIME POWER PRP",
+        "kW",
+        "180.10",
+        "Engine specifications",
+        "ENGINE BRAND",
+        "ENGINE BRAND",
+        "Volvo",
+        "MODEL",
+        "MODEL",
+        "TAD733GE",
+        "ENGINE COOLING SYSTEM",
+        "Water",
+        "ENGINE COOLING SYSTEM",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "Tier 2",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "Alternator Specifications",
+        "ALTERNATOR",
+        "Mecc Alte",
+        "ALTERNATOR"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "GSW110V (pramac.com product page, 60 Hz)",
+      "header": [
+        "GSW110V"
+      ],
+      "rows": [
+        "Main Features",
+        "FREQUENCY",
+        "Hz",
+        "60",
+        "VOLTAGE",
+        "V",
+        "380",
+        "POWER FACTOR",
+        "cos ϕ",
+        "0.8",
+        "PHASE",
+        "3",
+        "Power Rating",
+        "EMERGENCY STANDBY POWER ESP",
+        "kVA",
+        "121.94",
+        "EMERGENCY STANDBY POWER ESP",
+        "kW",
+        "97.55",
+        "PRIME POWER PRP",
+        "kVA",
+        "109.04",
+        "PRIME POWER PRP",
+        "kW",
+        "87.23",
+        "Engine specifications",
+        "ENGINE BRAND",
+        "Volvo",
+        "ENGINE BRAND",
+        "MODEL",
+        "MODEL",
+        "TAD531GE",
+        "ENGINE COOLING SYSTEM",
+        "ENGINE COOLING SYSTEM",
+        "Water",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "[50HZ] EXHAUST EMISSION LEVEL",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "[60HZ] EXHAUST EMISSION OPTIMIZED FOR EPA TIER (EPA)",
+        "Tier 2",
+        "Alternator Specifications",
+        "ALTERNATOR",
+        "ALTERNATOR",
+        "Mecc Alte"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520MKII",
+      "text": "DSE4520MKII",
+      "line": "GPW9P/FS5    9          Perkins                        Mecc Alte              poly 8h/ metal 8-24h  1813x933x1313   DSE4520MKII / DSE7320MKII",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320MKII",
+      "text": "DSE7320MKII",
+      "line": "GPW9P/FS5    9          Perkins                        Mecc Alte              poly 8h/ metal 8-24h  1813x933x1313   DSE4520MKII / DSE7320MKII",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8620MKII",
+      "text": "DSE8620MKII",
+      "line": "GPW35Y/FS5   35         Yanmar                         Leroy Somer/Mecc Alte  poly 8h/ metal 8-24h  2200x1020x1423  DSE7320MKII / DSE8620MKII",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610MKII",
+      "text": "DSE8610MKII",
+      "line": "GRW60I/S5      60                                      FPT           Leroy Somer  280/NA    2400x1200x1630  DSE7320MKII / DSE8610MKII + DSE8003",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8003",
+      "text": "DSE8003",
+      "line": "GRW60I/S5      60                                      FPT           Leroy Somer  280/NA    2400x1200x1630  DSE7320MKII / DSE8610MKII + DSE8003",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8920MKII",
+      "text": "DSE8920MKII",
+      "line": "GRW350S/S5     353        Scania                                     Leroy Somer  1500/155  4630x1600x2450  DSE7320MKII / DSE8920MKII",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "AC03",
+      "text": "COMAP AC03",
+      "line": "• \u0007Control Panel: Automatic Control panel equipped with COMAP AC03 control unit.",
+      "src": [
+        2002
+      ]
+    }
+  ]
 }
