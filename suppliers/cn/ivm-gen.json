@@ -45,6 +45,23 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Gruppi elettrogeni IVM",
+      "fuel": "diesel",
+      "power": {
+        "min": 30,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -63,9 +80,21 @@
         "IVM Gruppi Elettrogeni è stata fondata nel 1986 e vanta oltre 35 anni di esperienza nel settore."
       ],
       "file": "sources/ivm-gen/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.ivmgen.com/noleggio-gruppi-elettrogeni-a-vicenza/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "I gruppi elettrogeni prodotti da IVM vanno dai più piccoli, 30 kVA, ai più grandi, 1000 kVA, e possono essere di vario genere: aperti, specializzati o insonorizzati."
+      ],
+      "file": "sources/ivm-gen/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": []
 }
