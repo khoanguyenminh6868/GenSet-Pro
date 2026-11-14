@@ -75,6 +75,150 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Q30000",
+      "fuel": "diesel",
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "MAN"
+      ],
+      "engineModels": [
+        "D3872LE"
+      ],
+      "alternatorMakes": [],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Q12000",
+      "fuel": "diesel",
+      "power": {
+        "min": 220,
+        "max": 527,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "MAN"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Q24000",
+      "fuel": "diesel",
+      "power": {
+        "min": 710,
+        "max": 953,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "engineMakes": [
+        "MAN"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Q30000 800WT50 / 800ST50",
+      "fuel": "diesel",
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "engineMakes": [
+        "MAN"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Q6800 100ST50 / 100WT50 / 106ST60 / 106WT60",
+      "fuel": "diesel",
+      "power": {
+        "min": 123,
+        "max": 133,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Q4500 70ST60 / 70WT60",
+      "fuel": "diesel",
+      "power": {
+        "min": 87,
+        "max": 87,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "src": [
+        2006
+      ]
     }
   ],
   "certifications": [],
@@ -92,9 +236,244 @@
         "Nanni designs and develops complete marine solutions including engines from 10 to 2200 hp, marine generators from 5 to 800 kW, manoeuvring systems and interfaces. Nanni distributes its products through its sales and service network in 90 countries worldwide."
       ],
       "file": "sources/nanni-industries/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://nannienergy.com/wp-content/uploads/2025/08/DGBXXC01400_Tier-II-Q12000.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "177WT50 - 262WT50 - 355WT50 - 50 Hz",
+        "205WT60 - 310WT60 - 422WT60 - 60 Hz",
+        " MAN Engine Base - EPA Tier II - 50/60 Hz",
+        " Diesel engine 4 strokes, 6 cylinders, 12420 cm3",
+        "177WT50                                   317,54     176/220             Heat Exchanger",
+        "262WT50        380-415      3             474,51     263/330             Safeguards on the main parameters",
+        "355WT50                                   640,50     355/443",
+        "205WT60                                   321,62     205/256            Optional Equipement",
+        "310WT60        440-480-690  3             486,35     310/387             Pneumatic Air start",
+        "422WT60                                   662,07     422/527             Exhaust compensator and silencer",
+        " Compatible with InteliGen 1000 Marine and InteliMains"
+      ],
+      "file": "sources/nanni-industries/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://nannienergy.com/nanni-launches-q30000-marine-generator-range-for-superyachts-megayachts-and-commercial-vessels/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Engine base: MAN D3872LE",
+        "Power range: 800–1213 kW",
+        "Fixed RPM/Speed: 800–920 kW, 50/60 Hz",
+        "Variable RPM/Speed: 800–1213 kW"
+      ],
+      "file": "sources/nanni-industries/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://nannienergy.com/wp-content/uploads/2025/08/DGBXXC01402_Tier-II-Q24000.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "568WT50 - 668WT50 - 50 Hz",
+        "664WT60 - 764WT60 - 60 Hz",
+        " MAN Engine Base - EPA Tier II - 50/60 Hz",
+        " Diesel engine 4 strokes, 12 cylinders, 24240 cm3",
+        "568WT50                                   1024,80    568/710             Safeguards on the main parameters",
+        "668WT50                                   1203,41    667/833",
+        "664WT60        440-480-690  3             1087,45    663/828            Optional Equipement",
+        "764WT60                                   1251,47    763/953             Pneumatic Air start",
+        " Compatible with InteliGen 1000 Marine and InteliMains"
+      ],
+      "file": "sources/nanni-industries/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://nannienergy.com/wp-content/uploads/2026/09/DGBXXC01404_Tier-II_50Hz-Q30000.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "800WT50 - 800ST50 - 50 Hz",
+        " MAN Engine Base - EPA Tier II - 50 Hz",
+        " Diesel engine 4 strokes, 12 cylinders, 29620 cm3",
+        "800ST50        440-480-690  3             1210      800/1000           Pressetting for paralleling system",
+        "800WT50        440-480-690  3             1210      800/1000          Optional Equipement",
+        " Compatible with InteliGen 1000 Marine and InteliMains            cooling system."
+      ],
+      "file": "sources/nanni-industries/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://nannienergy.com/wp-content/uploads/2025/02/DGBXXC01196_EN_Q6800-100ST50-100WT50_106ST60-106WT60.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "100ST50 - 100WT50 - 50 Hz",
+        "106ST60 - 106WT60 - 60 Hz",
+        " John Deere Engine Base - EPA Tier III - 50/60 Hz",
+        " Diesel engine 4 strokes, 6 cylinders, 6800 cm3 [415 in3]",
+        "Governor type:                             Electronic                    Model:                                LSAM 44.3 M8",
+        "Genset   Volts    Phase    Amps    kW/kVA prp  kW/kVA ltp        Presetting for paralleling system",
+        "100ST50                                                         Optional Equipement",
+        "230/400  3        177     98,4/123    108/135           Siphon break",
+        "100WT50                                                          Fuel pre-filter",
+        "106ST60  120/208           369",
+        "3                106,4/133   116,8/146",
+        "106WT60  240/416           184",
+        "PRP = Prime Running Power"
+      ],
+      "file": "sources/nanni-industries/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://nannienergy.com/wp-content/uploads/2025/02/DGBXXC01193_EN_Q4500-60ST50-60WT50_70ST60-70WT60.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "60ST50 - 60WT50 - 50 Hz",
+        "70ST60 - 70WT60 - 60 Hz",
+        " John Deere Engine Base - EPA Tier III - 50/60 Hz",
+        " Diesel engine 4 strokes, 4 cylinders, 4500 cm3 [275 in3]",
+        "Governor type:                             Electronic                  Model:                                LSAM 44.3 S3 /       S4",
+        "Genset  Volts     Phase      Amps  kW/kVA     kW/kVA        Optional Equipement",
+        "prp        ltp            Siphon break",
+        "60ST50                                                       Fuel pre-filter",
+        "230/400           3  103   57,5/71,8  63,3/79",
+        "70ST60  120/208              242",
+        "3        69,7/87    76,8/96",
+        "70WT60  240/416              121"
+      ],
+      "file": "sources/nanni-industries/2006.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-03",
-  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude (rà hàng chào trúng thầu 04/11)",
+  "specTables": [
+    {
+      "n": 2002,
+      "title": "Q30000 - technical overview",
+      "header": [
+        "Technical overview of the Q30000 generator range"
+      ],
+      "rows": [
+        "Engine base: MAN D3872LE",
+        "Power range: 800–1213 kW",
+        "Fixed RPM/Speed: 800–920 kW, 50/60 Hz",
+        "Variable RPM/Speed: 800–1213 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Q12000 Series - generator ratings (MAN engine base, Leroy Somer)",
+      "header": [
+        "Genset            Volts     Phases        Amps per   kWe/kVA             Bipolar 24 Volts Electric system",
+        "Phase      PRP                 Wet Exhaust"
+      ],
+      "rows": [
+        "177WT50                                   317,54     176/220             Heat Exchanger",
+        " Raw water Pump with neoprene rotor",
+        "262WT50        380-415      3             474,51     263/330             Safeguards on the main parameters",
+        " Pressetting for paralleling system",
+        "355WT50                                   640,50     355/443",
+        "205WT60                                   321,62     205/256            Optional Equipement",
+        "310WT60        440-480-690  3             486,35     310/387             Pneumatic Air start",
+        " Vessel-side cooling (HT and LT systems)",
+        "422WT60                                   662,07     422/527             Exhaust compensator and silencer",
+        " MAN Engine Base - EPA Tier II - 50/60 Hz",
+        " Diesel engine 4 strokes, 6 cylinders, 12420 cm3",
+        "Height, mm [in.]                          1549 [68,98\"]                  Leroy Somer alternator"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Q24000 Series - generator ratings (MAN engine base, Leroy Somer)",
+      "header": [
+        "Genset            Volts     Phases        Amps per   kWe/kVA             Heat Exchanger",
+        "Phase      PRP                 Raw water Pump with neoprene rotor"
+      ],
+      "rows": [
+        "568WT50                                   1024,80    568/710             Safeguards on the main parameters",
+        "380-415   3                                            Pressetting for paralleling system",
+        "668WT50                                   1203,41    667/833",
+        "664WT60        440-480-690  3             1087,45    663/828            Optional Equipement",
+        "764WT60                                   1251,47    763/953             Pneumatic Air start",
+        " MAN Engine Base - EPA Tier II - 50/60 Hz",
+        " Diesel engine 4 strokes, 12 cylinders, 24240 cm3",
+        "Height, mm [in.]                          1736 [68,34\"]                  Leroy Somer alternator"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Q30000 Series 50 Hz Tier II - generator ratings",
+      "header": [
+        "Genset            Volts     Phases        Amps per  kWe/kVA            Raw water Pump with neoprene rotor",
+        "Phase           PRP          Safeguards on the main parameters"
+      ],
+      "rows": [
+        "800ST50        440-480-690  3             1210      800/1000           Pressetting for paralleling system",
+        "800WT50        440-480-690  3             1210      800/1000          Optional Equipement",
+        " MAN Engine Base - EPA Tier II - 50 Hz",
+        " Diesel engine 4 strokes, 12 cylinders, 29620 cm3",
+        "Length, mm [in.]         4000 [157,48’’]  5000 [196,85’’]              Leroy Somer alternator"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Q6800 Series - generator ratings (John Deere engine base, Leroy Somer LSAM 44.3 M8)",
+      "header": [
+        "Genset   Volts    Phase    Amps    kW/kVA prp  kW/kVA ltp        Presetting for paralleling system"
+      ],
+      "rows": [
+        "100ST50                                                         Optional Equipement",
+        "230/400  3        177     98,4/123    108/135           Siphon break",
+        "100WT50                                                          Fuel pre-filter",
+        "106ST60  120/208           369",
+        "3                106,4/133   116,8/146",
+        "106WT60  240/416           184",
+        "PRP = Prime Running Power",
+        " John Deere Engine Base - EPA Tier III - 50/60 Hz",
+        " Diesel engine 4 strokes, 6 cylinders, 6800 cm3 [415 in3]",
+        "Governor type:                             Electronic                    Model:                                LSAM 44.3 M8"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Q4500 Series - generator ratings (John Deere engine base, Leroy Somer LSAM 44.3 S3/S4)",
+      "header": [
+        "Genset  Volts     Phase      Amps  kW/kVA     kW/kVA        Optional Equipement",
+        "prp        ltp            Siphon break"
+      ],
+      "rows": [
+        "60ST50                                                       Fuel pre-filter",
+        "230/400           3  103   57,5/71,8  63,3/79",
+        "60WT50",
+        "70ST60  120/208              242",
+        "3        69,7/87    76,8/96",
+        "70WT60  240/416              121",
+        " John Deere Engine Base - EPA Tier III - 50/60 Hz",
+        " Diesel engine 4 strokes, 4 cylinders, 4500 cm3 [275 in3]",
+        "Governor type:                             Electronic                  Model:                                LSAM 44.3 S3 /       S4"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "InteliGen 1000 Marine",
+      "text": "InteliGen 1000 Marine",
+      "line": " Compatible with InteliGen 1000 Marine and InteliMains",
+      "src": [
+        2001,
+        2003
+      ]
+    }
+  ]
 }
