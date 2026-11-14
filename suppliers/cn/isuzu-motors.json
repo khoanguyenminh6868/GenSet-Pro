@@ -85,6 +85,305 @@
       "src": [
         3
       ]
+    },
+    {
+      "kind": "engine",
+      "series": "4LE1N generator (Stage 3A page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "4LE1N"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 21.4,
+        "max": 21.4,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "4LE2N generator (Stage 3A page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "4LE2N"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 21,
+        "max": 21,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "4JJ1T generator (Stage 3A page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "4JJ1T"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 43,
+        "max": 43,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "4JJ1X generator (Stage 3A page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "4JJ1X"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 57,
+        "max": 57,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "4HK1X generator (Stage 3A page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "4HK1X"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 108,
+        "max": 108,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "6HK1X generator (Stage 3A page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "6HK1X"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 168,
+        "max": 168,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "6UZ1X generator (Stage 3A page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "6UZ1X"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 228,
+        "max": 228,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "6WG1X generator (Stage 3A page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "6WG1X"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 353,
+        "max": 353,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "4LE2T generator (US EPA T4F page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "4LE2T"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "4LE2X generator (US EPA T4F page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "4LE2X"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 49,
+        "max": 49,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "4JJ1X generator (US EPA T4F page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "4JJ1X"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 71,
+        "max": 71,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "4HK1X generator (US EPA T4F page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "4HK1X"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 127.4,
+        "max": 127.4,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "6WG1X generator (US EPA T4F page)",
+      "fuel": "diesel",
+      "engineModels": [
+        "6WG1X"
+      ],
+      "engineMakes": [
+        "ISUZU"
+      ],
+      "power": {
+        "min": 382,
+        "max": 382,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -128,9 +427,346 @@
         "382 kW / 1800 min -1"
       ],
       "file": "sources/isuzu-motors/3.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.isuzu.co.jp/world/product/industrial/generator/s3a.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "25.8 kW / 1800 min -1 　21.4 kW / 1500 min -1",
+        "25.1 kW / 1800 min -1 　21 kW / 1500 min -1",
+        "50 kW / 1800 min -1 　43 kW / 1500 min -1",
+        "73 kW / 1800 min -1 　57 kW / 1500 min -1",
+        "129 kW / 1800 min -1 　108 kW / 1500 min -1",
+        "198 kW / 1800 min -1 　168 kW / 1500 min -1",
+        "260 kW / 1800 min -1 　228 kW / 1500 min -1",
+        "397 kW / 1800 min -1 　353 kW / 1500 min -1"
+      ],
+      "file": "sources/isuzu-motors/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.isuzu.co.jp/world/product/industrial/generator/t4.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "30 kW / 1800 min -1",
+        "49 kW / 1800 min -1",
+        "71 kW / 1800 min -1",
+        "127.4 kW / 1800 min -1",
+        "382 kW / 1800 min -1"
+      ],
+      "file": "sources/isuzu-motors/2002.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "ISUZU 4LE1N – generator (Stage 3A page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "4LE1N",
+        "Rated Output",
+        "25.8 kW / 1800 min -1 　21.4 kW / 1500 min -1",
+        "Dry Weight",
+        "170 kg",
+        "Displacement",
+        "2.179L",
+        "Engine Type",
+        "Vertical In-Line, 4-Cylinder, OHV",
+        "Type of Aspiration",
+        "Naturally Aspirated",
+        "Type of Injection",
+        "Indirect",
+        "Emission Regulation",
+        "StageⅢA"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "ISUZU 4LE2N – generator (Stage 3A page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "4LE2N",
+        "Rated Output",
+        "25.1 kW / 1800 min -1 　21 kW / 1500 min -1",
+        "Dry Weight",
+        "170 kg",
+        "Displacement",
+        "2.179L",
+        "Engine Type",
+        "Vertical In-Line, 4-Cylinder, OHV",
+        "Type of Aspiration",
+        "Naturally Aspirated",
+        "Type of Injection",
+        "Direct",
+        "Emission Regulation",
+        "StageⅢA"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "ISUZU 4JJ1T – generator (Stage 3A page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "4JJ1T",
+        "Rated Output",
+        "50 kW / 1800 min -1 　43 kW / 1500 min -1",
+        "Dry Weight",
+        "335 kg",
+        "Displacement",
+        "2.999L",
+        "Engine Type",
+        "Vertical In-Line, 4-Cylinder, OHC",
+        "Type of Aspiration",
+        "Turbocharged",
+        "Type of Injection",
+        "Direct",
+        "Emission Regulation",
+        "StageⅢA"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "ISUZU 4JJ1X – generator (Stage 3A page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "4JJ1X",
+        "Rated Output",
+        "73 kW / 1800 min -1 　57 kW / 1500 min -1",
+        "Dry Weight",
+        "320 kg",
+        "Displacement",
+        "2.999L",
+        "Engine Type",
+        "Vertical In-Line, 4-Cylinder, OHC",
+        "Type of Aspiration",
+        "Turbocharged and Charge Air Cooled",
+        "Type of Injection",
+        "Direct",
+        "Emission Regulation",
+        "StageⅢA"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "ISUZU 4HK1X – generator (Stage 3A page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "4HK1X",
+        "Rated Output",
+        "129 kW / 1800 min -1 　108 kW / 1500 min -1",
+        "Dry Weight",
+        "470 kg",
+        "Displacement",
+        "5.193L",
+        "Engine Type",
+        "Vertical In-Line, 4-Cylinder, OHC",
+        "Type of Aspiration",
+        "Turbocharged and Charge Air Cooled",
+        "Type of Injection",
+        "Direct",
+        "Emission Regulation",
+        "StageⅢA"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "ISUZU 6HK1X – generator (Stage 3A page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "6HK1X",
+        "Rated Output",
+        "198 kW / 1800 min -1 　168 kW / 1500 min -1",
+        "Dry Weight",
+        "623 kg",
+        "Displacement",
+        "7.79L",
+        "Engine Type",
+        "Vertical In-Line, 6-Cylinder, OHC",
+        "Type of Aspiration",
+        "Turbocharged and Charge Air Cooled",
+        "Type of Injection",
+        "Direct",
+        "Emission Regulation",
+        "StageⅢA"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "ISUZU 6UZ1X – generator (Stage 3A page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "6UZ1X",
+        "Rated Output",
+        "260 kW / 1800 min -1 　228 kW / 1500 min -1",
+        "Dry Weight",
+        "840 kg",
+        "Displacement",
+        "9.839L",
+        "Engine Type",
+        "Vertical In-Line, 6-Cylinder, OHC",
+        "Type of Aspiration",
+        "Turbocharged and Charge Air Cooled",
+        "Type of Injection",
+        "Direct",
+        "Emission Regulation",
+        "StageⅢA"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "ISUZU 6WG1X – generator (Stage 3A page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "6WG1X",
+        "Rated Output",
+        "397 kW / 1800 min -1 　353 kW / 1500 min -1",
+        "Dry Weight",
+        "1150 kg",
+        "Displacement",
+        "15.681L",
+        "Engine Type",
+        "Vertical In-Line, 6-Cylinder, OHC",
+        "Type of Aspiration",
+        "Turbocharged and Charge Air Cooled",
+        "Type of Injection",
+        "Direct",
+        "Emission Regulation",
+        "StageⅢA"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "ISUZU 4LE2T – generator (US EPA T4F page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "4LE2T",
+        "Rated Output",
+        "30 kW / 1800 min -1",
+        "Dry Weight",
+        "199 kg",
+        "Displacement",
+        "2.179L",
+        "Engine Type",
+        "Vertical In-Line, 4-Cylinder, OHV",
+        "Type of Aspiration",
+        "Turbocharged",
+        "Type of Injection",
+        "Direct"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "ISUZU 4LE2X – generator (US EPA T4F page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "4LE2X",
+        "Rated Output",
+        "49 kW / 1800 min -1",
+        "Dry Weight",
+        "170 kg",
+        "Displacement",
+        "2.179L",
+        "Engine Type",
+        "Vertical In-Line, 4-Cylinder, OHV",
+        "Type of Aspiration",
+        "Turbocharged and Charge Air Cooled",
+        "Type of Injection",
+        "Direct"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "ISUZU 4JJ1X – generator (US EPA T4F page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "4JJ1X",
+        "Rated Output",
+        "71 kW / 1800 min -1",
+        "Dry Weight",
+        "320 kg",
+        "Displacement",
+        "2.999L",
+        "Engine Type",
+        "Vertical In-Line, 4-Cylinder, OHC",
+        "Type of Aspiration",
+        "Turbocharged and Charge Air Cooled",
+        "Type of Injection",
+        "Direct"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "ISUZU 4HK1X – generator (US EPA T4F page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "4HK1X",
+        "Rated Output",
+        "127.4 kW / 1800 min -1",
+        "Dry Weight",
+        "530 kg",
+        "Displacement",
+        "5.193L",
+        "Engine Type",
+        "Vertical In-Line, 4-Cylinder, OHC",
+        "Type of Aspiration",
+        "Turbocharged and Charge Air Cooled",
+        "Type of Injection",
+        "Direct"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "ISUZU 6WG1X – generator (US EPA T4F page)",
+      "header": [
+        "Engine Model"
+      ],
+      "rows": [
+        "6WG1X",
+        "Rated Output",
+        "382 kW / 1800 min -1",
+        "Dry Weight",
+        "1180 kg",
+        "Displacement",
+        "15.681L",
+        "Engine Type",
+        "Vertical In-Line, 6-Cylinder, OHC",
+        "Type of Aspiration",
+        "Turbocharged and Charge Air Cooled",
+        "Type of Injection",
+        "Direct"
+      ]
+    }
+  ]
 }
