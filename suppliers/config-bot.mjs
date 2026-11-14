@@ -100,6 +100,7 @@ export function normFig(s, ctx, want = {}) {
   if (want.enclosure && r.cond?.enclosure && r.cond.enclosure !== want.enclosure) why.push(`bản ${r.cond.enclosure}`);
   return { r, ok: !why.length, why };
 }
+const BLOCK = Symbol("chưa so được");
 const normWhyVi = (why) => [...new Set(why.map((w) => NORM_VI[w] || w))].join(", ");
 export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (các nước thành viên trừ Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả",
   // Only read from the HSMT ("G7, EU"), never chosen on the web (Khoa, 2026-11-10).
@@ -1175,8 +1176,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // GENBID_SPEC_NORM=1: a figure is read through the normalization layer (normFig); one it cannot compare gives null.
       const ctxOf = (f) => NORM_CTX.get(f) || ((u.specs || []).includes(f) ? useNormCtx(u, rowsMap) : undefined);
       const nfig = (f, want) => { const x = normFig(f, ctxOf(f), want); if (!x.ok) normSkip.push({ key: f.key, label: f.label, value: f.value, why: x.why, supplierId: f.supplierId ?? u.supplierId, line: f.line ?? u.line }); return x.ok ? x.r : null; };
-      const below = (key, min, read) => { const fs = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]).filter(([, x]) => x != null), v = fs.map(([, x]) => x);
-        const hit = min && v.length && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
+      const below = (key, min, read) => { const all = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
+        // Normalized: a source giving a figure the layer cannot compare (no unit, cc...) is "Chưa rõ": the row is not left out.
+        const hit = min && v.length && !all.some(([, x]) => x === BLOCK) && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
         return hit ? v[0] : null; };
       // No displacement given: bore × stroke × cylinders (web/conversions.js displacement), when the sources give them.
       const given = [...ef, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
@@ -1184,16 +1186,18 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const [b, st] = NORM ? [nbs?.bore?.bore, nbs?.bore?.stroke] : bs ? numbersIn(bs.value) : [], n = NORM ? nz?.count ?? null : z ? numbersIn(z.value)[0] : null;
       const calcL = !given.some((f) => f.key === "disp") && b > 50 && st > 50 && n ? Math.round(Math.PI / 4 * b * b * st * n / 1e4) / 100 : null;
       // Normalized: litres only as the source writes them (cc has no formula in web/conversions.js: not compared).
-      const dispOf = NORM ? (v, f) => nfig(f, { unit: "L" })?.num ?? null : (v, f) => dispLitres(f);
-      const cylOf = NORM ? (v, f) => nfig(f, {})?.count ?? null : (v) => numbersIn(v)[0] ?? null;
+      // BLOCK: the layer read a figure but cannot compare it (a figure, not just an empty / text cell).
+      const nread = (f, want, get) => { const x = normFig(f, ctxOf(f), want); if (x.ok) return get(x.r) ?? null; normSkip.push({ key: f.key, label: f.label, value: f.value, why: x.why, supplierId: f.supplierId ?? u.supplierId, line: f.line ?? u.line }); return x.why.includes("value") ? null : BLOCK; };
+      const dispOf = NORM ? (v, f) => nread(f, { unit: "L" }, (r) => r.num) : (v, f) => dispLitres(f);
+      const cylOf = NORM ? (v, f) => nread(f, {}, (r) => r.count) : (v) => numbersIn(v)[0] ?? null;
       const dl = (hints.minDisp ? below("disp", hints.minDisp, dispOf) : null) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = hints.minCyl ? below("cyl", hints.minCyl, cylOf) : null;
       // Below a minimum of the HSMT (displacement, cylinders, prime) or past its largest displacement: the row is left out,
       // unless the HSMT names its engine model (`named`): then its sources disagree with the HSMT's own choice, and it
       // stays with 600 points off and the reason, for the agent to see.
       const ruled = [];
       if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
-      const dh = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => dispOf(f.value, f)).filter((x) => x != null) : [];
-      if (dh.length && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
+      const dh0 = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => dispOf(f.value, f)) : [], dh = dh0.filter((x) => x != null && x !== BLOCK);
+      if (dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
       if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
       const pr = u.power?.prime, mp = hints.minPrime;

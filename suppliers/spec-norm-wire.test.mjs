@@ -58,6 +58,20 @@ test("candidates: a displacement in cc is not compared with the HSMT's litres un
   assert.deepEqual(n.top.map((r) => r.u.supplierId), ["cc"]);
 });
 
+test("candidates: a source the layer cannot compare keeps the row (Chưa rõ), even when another source is below", () => {
+  const H1 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (L) |", H2 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement |";
+  // Two suppliers of one engine: 5.9 L (with unit) below 8.3 L, and "8.3" with no unit.
+  const list = [sup("u", ["| u-1 | 420 | 336 | 6BTAA5.9-G2 | XY1 | 5.9 |"], H1), sup("n", ["| n-1 | 420 | 336 | 6BTAA5.9-G2 | XY1 | 8.3 |"], H2)];
+  const h = free("Dung tích xi lanh ≥ 8,3 lít\n50 Hz");
+  // Off: "8.3" is read as litres, so not every source is below. On: it has no unit, which blocks the drop too.
+  assert.equal(run(list, h).dropped.length, 0);
+  const n = on(() => run(list, h));
+  assert.equal(n.dropped.length, 0);
+  assert.ok(n.top.every((r) => r.normSkip.some((s) => s.key === "disp" && s.why.includes("unit"))));
+  // With only the source of known unit, the row is left out under either flag.
+  assert.deepEqual(on(() => run(list.slice(0, 1), h)).dropped.map((d) => d.ruled), [["disp"]]);
+});
+
 test("khoaRules: a weight with no open / canopy written is compared off, \"Chưa rõ\" under the flag", () => {
   const ROW = { header: ["| Model | Prime kVA | Prime kW | Engine | Gross Weight(kg)"], line: "| SD-440 | 400 | 320 | 6ETAA12.8-G21 | 3550", title: "", power: { prime: { kVA: 400, kW: 320 } },
     specs: [{ key: "weight", label: "Gross Weight(kg)", value: "3550" }] };
