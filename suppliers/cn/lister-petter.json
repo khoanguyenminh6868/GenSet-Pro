@@ -57,6 +57,1754 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "TR2",
+      "fuel": "diesel",
+      "power": {
+        "min": 11.8,
+        "max": 11.8,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "TR2"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "TR3",
+      "fuel": "diesel",
+      "power": {
+        "min": 18.1,
+        "max": 18.1,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "TR3"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SA315G2",
+      "fuel": "diesel",
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "SA315G2"
+      ],
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SA423G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 16,
+        "max": 16,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "SA423G1"
+      ],
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SA427G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 21,
+        "max": 21,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "SA427G1"
+      ],
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SA430G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "SA430G1"
+      ],
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SA432G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 31,
+        "max": 31,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "SA432G1"
+      ],
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SA432G2",
+      "fuel": "diesel",
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "SA432G2"
+      ],
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SA435G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "SA435G1"
+      ],
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SA441G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "SA441G1"
+      ],
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SA441G2",
+      "fuel": "diesel",
+      "power": {
+        "min": 66,
+        "max": 66,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "SA441G2"
+      ],
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP311EVG1_s515",
+      "fuel": "diesel",
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP311EVG1_s515"
+      ],
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP311EVG1_s818",
+      "fuel": "diesel",
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2013
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP311EVG1_s818"
+      ],
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP322EVG1_s543",
+      "fuel": "diesel",
+      "power": {
+        "min": 31,
+        "max": 31,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2014
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP322EVG1_s543"
+      ],
+      "src": [
+        2014
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP322EVG1_s848",
+      "fuel": "diesel",
+      "power": {
+        "min": 37.5,
+        "max": 37.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2015
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP322EVG1_s848"
+      ],
+      "src": [
+        2015
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP322EVG2_s554",
+      "fuel": "diesel",
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2016
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP322EVG2_s554"
+      ],
+      "src": [
+        2016
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP322EVG2_s866",
+      "fuel": "diesel",
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2017
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP322EVG2_s866"
+      ],
+      "src": [
+        2017
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP430EVG2_s566",
+      "fuel": "diesel",
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2018
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP430EVG2_s566"
+      ],
+      "src": [
+        2018
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP430EVG2_s872",
+      "fuel": "diesel",
+      "power": {
+        "min": 56,
+        "max": 56,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2019
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP430EVG2_s872"
+      ],
+      "src": [
+        2019
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP311EG1",
+      "fuel": "diesel",
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2020
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP311EG1"
+      ],
+      "src": [
+        2020
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP429EG1",
+      "fuel": "diesel",
+      "power": {
+        "min": 28,
+        "max": 28,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2021
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP429EG1"
+      ],
+      "src": [
+        2021
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP432EG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2022
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP432EG2"
+      ],
+      "src": [
+        2022
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP435EG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 75,
+        "max": 75,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2023
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP435EG2"
+      ],
+      "src": [
+        2023
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP443EG3",
+      "fuel": "diesel",
+      "power": {
+        "min": 83,
+        "max": 83,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2024
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP443EG3"
+      ],
+      "src": [
+        2024
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP443EG4",
+      "fuel": "diesel",
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2025
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP443EG4"
+      ],
+      "src": [
+        2025
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP443EG5",
+      "fuel": "diesel",
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2026
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP443EG5"
+      ],
+      "src": [
+        2026
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP443EG6",
+      "fuel": "diesel",
+      "power": {
+        "min": 138,
+        "max": 138,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2027
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP443EG6"
+      ],
+      "src": [
+        2027
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP665EG1",
+      "fuel": "diesel",
+      "power": {
+        "min": 138,
+        "max": 138,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2028
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP665EG1"
+      ],
+      "src": [
+        2028
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP665EG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2029
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP665EG2"
+      ],
+      "src": [
+        2029
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP665EG3",
+      "fuel": "diesel",
+      "power": {
+        "min": 188,
+        "max": 188,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2030
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP665EG3"
+      ],
+      "src": [
+        2030
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP665EG4",
+      "fuel": "diesel",
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2031
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP665EG4"
+      ],
+      "src": [
+        2031
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP689EG1",
+      "fuel": "diesel",
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2032
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP689EG1"
+      ],
+      "src": [
+        2032
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP689EG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 225,
+        "max": 225,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2033
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP689EG2"
+      ],
+      "src": [
+        2033
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP689EG3",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2034
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP689EG3"
+      ],
+      "src": [
+        2034
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP689EG4",
+      "fuel": "diesel",
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2035
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP689EG4"
+      ],
+      "src": [
+        2035
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP612EG1",
+      "fuel": "diesel",
+      "power": {
+        "min": 313,
+        "max": 313,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2036
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP612EG1"
+      ],
+      "src": [
+        2036
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP612EG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2037
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP612EG2"
+      ],
+      "src": [
+        2037
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP612EG3",
+      "fuel": "diesel",
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2038
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP612EG3"
+      ],
+      "src": [
+        2038
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP613EG1",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2039
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP613EG1"
+      ],
+      "src": [
+        2039
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP613EG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2040
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP613EG2"
+      ],
+      "src": [
+        2040
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP613EG3",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2041
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP613EG3"
+      ],
+      "src": [
+        2041
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP613EG4",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2042
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP613EG4"
+      ],
+      "src": [
+        2042
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG1",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2043
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG1"
+      ],
+      "src": [
+        2043
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 575,
+        "max": 575,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2044
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG2"
+      ],
+      "src": [
+        2044
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG3",
+      "fuel": "diesel",
+      "power": {
+        "min": 638,
+        "max": 638,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2045
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG3"
+      ],
+      "src": [
+        2045
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG4",
+      "fuel": "diesel",
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2046
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG4"
+      ],
+      "src": [
+        2046
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG5",
+      "fuel": "diesel",
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2047
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG5"
+      ],
+      "src": [
+        2047
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG6",
+      "fuel": "diesel",
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2048
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG6"
+      ],
+      "src": [
+        2048
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG7",
+      "fuel": "diesel",
+      "power": {
+        "min": 825,
+        "max": 825,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2049
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG7"
+      ],
+      "src": [
+        2049
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG8",
+      "fuel": "diesel",
+      "power": {
+        "min": 825,
+        "max": 825,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2050
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG8"
+      ],
+      "src": [
+        2050
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG9",
+      "fuel": "diesel",
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2051
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG9"
+      ],
+      "src": [
+        2051
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625EG10",
+      "fuel": "diesel",
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2052
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625EG10"
+      ],
+      "src": [
+        2052
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1258EG1",
+      "fuel": "diesel",
+      "power": {
+        "min": 1375,
+        "max": 1375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2053
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP1258EG1"
+      ],
+      "src": [
+        2053
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1258EG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 1563,
+        "max": 1563,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2054
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP1258EG2"
+      ],
+      "src": [
+        2054
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1258EG3",
+      "fuel": "diesel",
+      "power": {
+        "min": 1687,
+        "max": 1687,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2055
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP1258EG3"
+      ],
+      "src": [
+        2055
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1258EG4",
+      "fuel": "diesel",
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2056
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP1258EG4"
+      ],
+      "src": [
+        2056
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP1258EG5",
+      "fuel": "diesel",
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2057
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP1258EG5"
+      ],
+      "src": [
+        2057
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625SG1",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2058
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625SG1"
+      ],
+      "src": [
+        2058
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625SG2",
+      "fuel": "diesel",
+      "power": {
+        "min": 575,
+        "max": 575,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2059
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625SG2"
+      ],
+      "src": [
+        2059
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625SG3",
+      "fuel": "diesel",
+      "power": {
+        "min": 638,
+        "max": 638,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2060
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625SG3"
+      ],
+      "src": [
+        2060
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP625SG4",
+      "fuel": "diesel",
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2061
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP625SG4"
+      ],
+      "src": [
+        2061
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP443G3",
+      "fuel": "diesel",
+      "power": {
+        "min": 83,
+        "max": 83,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2062
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP443G3"
+      ],
+      "src": [
+        2062
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP443G4",
+      "fuel": "diesel",
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2063
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP443G4"
+      ],
+      "src": [
+        2063
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP443G5",
+      "fuel": "diesel",
+      "power": {
+        "min": 113,
+        "max": 113,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2064
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP443G5"
+      ],
+      "src": [
+        2064
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP443G6",
+      "fuel": "diesel",
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2065
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP443G6"
+      ],
+      "src": [
+        2065
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP665G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 138,
+        "max": 138,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2066
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP665G1"
+      ],
+      "src": [
+        2066
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP665G2",
+      "fuel": "diesel",
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2067
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP665G2"
+      ],
+      "src": [
+        2067
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP665G3",
+      "fuel": "diesel",
+      "power": {
+        "min": 188,
+        "max": 188,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2068
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP665G3"
+      ],
+      "src": [
+        2068
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP689G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 206,
+        "max": 206,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2069
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP689G1"
+      ],
+      "src": [
+        2069
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP689G2",
+      "fuel": "diesel",
+      "power": {
+        "min": 225,
+        "max": 225,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2070
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP689G2"
+      ],
+      "src": [
+        2070
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP689G3",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2071
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP689G3"
+      ],
+      "src": [
+        2071
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP612G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 280,
+        "max": 280,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2072
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP612G1"
+      ],
+      "src": [
+        2072
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP612G2",
+      "fuel": "diesel",
+      "power": {
+        "min": 325,
+        "max": 325,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2073
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP612G2"
+      ],
+      "src": [
+        2073
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP612G3",
+      "fuel": "diesel",
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2074
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP612G3"
+      ],
+      "src": [
+        2074
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP613G1",
+      "fuel": "diesel",
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2075
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP613G1"
+      ],
+      "src": [
+        2075
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LP613G2",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2076
+        ]
+      },
+      "engineMakes": [
+        "Lister Petter"
+      ],
+      "engineModels": [
+        "LP613G2"
+      ],
+      "src": [
+        2076
+      ]
     }
   ],
   "certifications": [],
@@ -87,9 +1835,1757 @@
         "By the 1990s, Lister Petter engines were the heartbeat of FG Wilson’s industry-leading diesel generators"
       ],
       "file": "sources/lister-petter/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/10816-TR-Generator-Engines-TDS.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "TR Generator Engines TDS",
+        "TR2 | TR2G1500-FB I 11.8 kVA PRP 50Hz  TR2G1500FSFBSAE4 |\u0007 11.8 kVA PRP 50Hz"
+      ],
+      "file": "sources/lister-petter/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/10816-TR-Generator-Engines-TDS.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "TR Generator Engines TDS",
+        "TR3G1500FS I 18.1 kVA PRP 50Hz         TR3G1500FS I 18.1 kVA PRP 50Hz"
+      ],
+      "file": "sources/lister-petter/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Starlite-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Starlite Generator Engines - Price List",
+        "            SA315G2  10                   11       9.3            10.3  8                      10   9    11            12           13.2      11.3        12.5  10            12.0  10.6            13.2                        electric      Stage  II  Changeable        $2,248"
+      ],
+      "file": "sources/lister-petter/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Starlite-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Starlite Generator Engines - Price List",
+        "            SA423G1  16                   18       15.3           16.9  13                     16   14          18     20           22        19.3        21.3  16            20                18       22                     electric      Stage  II  Changeable        $2,420"
+      ],
+      "file": "sources/lister-petter/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Starlite-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Starlite Generator Engines - Price List",
+        "            SA427G1  20.5                 23       19.5           21.6  17                     21   19   23            24.5         27        23.5        26.0  20            25                22  28                          electric      Stage  II  Changeable        $2,520"
+      ],
+      "file": "sources/lister-petter/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Starlite-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Starlite Generator Engines - Price List",
+        "            SA430G1  24.5                 27       23.5           26.0  20                     25   22          28     27.5         30        26.0        28.5  22            28                24       30                     electric      Stage  II  Changeable        $2,781"
+      ],
+      "file": "sources/lister-petter/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Starlite-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Starlite Generator Engines - Price List",
+        "Starlite    SA432G1  30.5                 34       29.0           32.5  25                     31   27   34            37.5         42        35.5        40.0  30            38                33  41                          electric      Stage  II  Changeable        $3,079"
+      ],
+      "file": "sources/lister-petter/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Starlite-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Starlite Generator Engines - Price List",
+        "            SA432G2  39                   44       36.5           41.5  32                     40   35          44     42           46        39.5        43.5  35            44                39       48                     electric      Stage  II  Changeable        $3,773"
+      ],
+      "file": "sources/lister-petter/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Starlite-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Starlite Generator Engines - Price List",
+        "            SA435G1  49                   54       46.5           51.4  40                     50   44   55            59           65        56.5        62.5  50            63                55  69                          electric      Stage  II  Changeable        $4,040"
+      ],
+      "file": "sources/lister-petter/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Starlite-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Starlite Generator Engines - Price List",
+        "            SA441G1  59                   65       54.0           60.9  48                     60   53          66     70           77        65.0        73    60            75                66       83                     electric      Stage  II  Changeable        $4,568"
+      ],
+      "file": "sources/lister-petter/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Starlite-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Starlite Generator Engines - Price List",
+        "            SA441G2  64                   70       59.0           66.4  53                     66   58   72            76           83        71.0        79    65            81    71.5            89                          electric      Stage  II  Changeable        $4,988"
+      ],
+      "file": "sources/lister-petter/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP311EVG1_s515  11          12   10              11.1  8          10  8.8        11                                                                                    ECU      Stage V   Changeable    $3,900"
+      ],
+      "file": "sources/lister-petter/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP311EVG1_s818                                                                           13.2         15   12.2            14    9.6         12     10.6  13.2         ECU      Stage V   Changeable    $3,900"
+      ],
+      "file": "sources/lister-petter/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP322EVG1_s543  32          35   30              33.0  25         31         28  34                                                                                    ECU      Stage V   Changeable    $10,964"
+      ],
+      "file": "sources/lister-petter/2014.md",
+      "official": true
+    },
+    {
+      "n": 2015,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP322EVG1_s848                                                                           36           40   34.0            38    30          37.5   33    41           ECU      Stage V   Changeable    $10,964"
+      ],
+      "file": "sources/lister-petter/2015.md",
+      "official": true
+    },
+    {
+      "n": 2016,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "Mercury Max  LP322EVG2_s554  40          44   37.5            41.5  32.0       40  35.0       44                                                                                    ECU      Stage V   Changeable    $11,289"
+      ],
+      "file": "sources/lister-petter/2016.md",
+      "official": true
+    },
+    {
+      "n": 2017,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP322EVG2_s866                                                                           49           54   46.5            51.5  40          50     44    55           ECU      Stage V   Changeable    $11,289"
+      ],
+      "file": "sources/lister-petter/2017.md",
+      "official": true
+    },
+    {
+      "n": 2018,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP430EVG2_s566  49          54   46.5            51.5  40.0       50  44.0       55                                                                                    ECU      Stage V   Changeable    $11,789"
+      ],
+      "file": "sources/lister-petter/2018.md",
+      "official": true
+    },
+    {
+      "n": 2019,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP430EVG2_s872                                                                           54           60   51.5            57.5  45          56     50    62           ECU      Stage V   Changeable    $11,789"
+      ],
+      "file": "sources/lister-petter/2019.md",
+      "official": true
+    },
+    {
+      "n": 2020,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP311EG1        11          12   10              11.1  8.0        10  8.8        11      13.2         15   12.2            13.5  9.6         12     10.6  13.2         ECU      Stage  Ⅲ  Changeable    $3,241"
+      ],
+      "file": "sources/lister-petter/2020.md",
+      "official": true
+    },
+    {
+      "n": 2021,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP429EG1        27          30   25              28.0  22         28         24  30      30           33          28       31    24          30     26    32           ECU      Stage  Ⅲ  Changeable    $3,743"
+      ],
+      "file": "sources/lister-petter/2021.md",
+      "official": true
+    },
+    {
+      "n": 2022,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP432EG2        55          60   52.5            57.5  40         50         44  55      60           66   57.5            63.5  50          62.5   55    68.5         ECU      Stage  Ⅲ  Changeable    $4,768"
+      ],
+      "file": "sources/lister-petter/2022.md",
+      "official": true
+    },
+    {
+      "n": 2023,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP435EG2        74          81   71.5            78.5  60         75         64  80      74           81   71.5            78.5  64          80     70    88           ECU      Stage  Ⅲ  Changeable    $5,187"
+      ],
+      "file": "sources/lister-petter/2023.md",
+      "official": true
+    },
+    {
+      "n": 2024,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP443EG3        78          86   73              81    66         83         72  90      86           95   81              90    72          90     79    99           ECU      Stage  Ⅲ  Switchable    $8,120"
+      ],
+      "file": "sources/lister-petter/2024.md",
+      "official": true
+    },
+    {
+      "n": 2025,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP443EG4        95          105  89              99    80    100             88  110     105          116         99       110   90          110    100   125          ECU      Stage  Ⅲ  Switchable    $8,385"
+      ],
+      "file": "sources/lister-petter/2025.md",
+      "official": true
+    },
+    {
+      "n": 2026,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP443EG5        106         117  100             111   90    110      100        125     120          132  114             126   100         125    110   138          ECU      Stage  Ⅲ  Switchable    $8,651"
+      ],
+      "file": "sources/lister-petter/2026.md",
+      "official": true
+    },
+    {
+      "n": 2027,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP443EG6        125         140  119             134   110   138      120        150     125          140  119             134   110         138    120   150          ECU      Stage  Ⅲ  Switchable    $9,153"
+      ],
+      "file": "sources/lister-petter/2027.md",
+      "official": true
+    },
+    {
+      "n": 2028,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP665EG1        128         141  119             132   110   138      120        150     136          150  127             141   120         150    132   165          ECU      Stage  Ⅲ  Switchable    $10,941"
+      ],
+      "file": "sources/lister-petter/2028.md",
+      "official": true
+    },
+    {
+      "n": 2029,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP665EG2        140         155  131             146   120   150      132        165     150          165  141             156   132         165    144   180          ECU      Stage  Ⅲ  Switchable    $11,206"
+      ],
+      "file": "sources/lister-petter/2029.md",
+      "official": true
+    },
+    {
+      "n": 2030,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP665EG3        168         185  159             176   150   188      164        205     180          198  171             189   160         200    176   220          ECU      Stage  Ⅲ  Switchable    $11,710"
+      ],
+      "file": "sources/lister-petter/2030.md",
+      "official": true
+    },
+    {
+      "n": 2031,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP665EG4        186         205  177             196   160   200      176        220     186          205  177             196   160         200    176   220          ECU      Stage  Ⅲ  Switchable    $11,949"
+      ],
+      "file": "sources/lister-petter/2031.md",
+      "official": true
+    },
+    {
+      "n": 2032,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "Venus Max    LP689EG1        185         204  179             198   160   200      176        220     205          226  199             220   180         225    196   245          ECU      Stage  Ⅲ  Switchable    $12,169"
+      ],
+      "file": "sources/lister-petter/2032.md",
+      "official": true
+    },
+    {
+      "n": 2033,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP689EG2        195         228  189             222   180   225      196        245     235          259  229             253   200         250    220   275          ECU      Stage  Ⅲ  Switchable    $14,320"
+      ],
+      "file": "sources/lister-petter/2033.md",
+      "official": true
+    },
+    {
+      "n": 2034,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP689EG3        230         253  224             247   200   250      220        275     255          280  249             274   220         275    240   300          ECU      Stage  Ⅲ  Switchable    $14,664"
+      ],
+      "file": "sources/lister-petter/2034.md",
+      "official": true
+    },
+    {
+      "n": 2035,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP689EG4        255         280  249             274   220   275      240        300     280          308  274             302   240         300    264   330          ECU      Stage  Ⅲ  Switchable    $15,223"
+      ],
+      "file": "sources/lister-petter/2035.md",
+      "official": true
+    },
+    {
+      "n": 2036,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP612EG1        280         308  270             298   250   313      272        340     307          338  297             328   280         350    308   385          ECU      Stage  Ⅲ  Switchable    $17,758"
+      ],
+      "file": "sources/lister-petter/2036.md",
+      "official": true
+    },
+    {
+      "n": 2037,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP612EG2        307         338  297             328   280   350      308        385     340          380  330             370   300         375    328   410          ECU      Stage  Ⅲ  Switchable    $17,939"
+      ],
+      "file": "sources/lister-petter/2037.md",
+      "official": true
+    },
+    {
+      "n": 2038,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP612EG3        340         380  330             370   300   375      328        410     340          380  330             370   300         375    328   410          ECU      Stage  Ⅲ  Switchable    $19,208"
+      ],
+      "file": "sources/lister-petter/2038.md",
+      "official": true
+    },
+    {
+      "n": 2039,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP613EG1        360         400  345             385   320   400      352        440     401          441  386             426   360         450    384   480          ECU      Stage  Ⅲ  Switchable    $21,912"
+      ],
+      "file": "sources/lister-petter/2039.md",
+      "official": true
+    },
+    {
+      "n": 2040,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP613EG2        401         441  386             426   360   450      392        490     /            /           /        /     /           /      /            /     ECU      Stage  Ⅲ  /             $23,602"
+      ],
+      "file": "sources/lister-petter/2040.md",
+      "official": true
+    },
+    {
+      "n": 2041,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP613EG3        450         495  435             480   400   500      435        544     /            /           /        /     /           /      /            /     ECU      Stage  Ⅲ  /             $26,786"
+      ],
+      "file": "sources/lister-petter/2041.md",
+      "official": true
+    },
+    {
+      "n": 2042,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "             LP613EG4        /           /            /       /     /          /          /        /  450          495  435             480   400         500    435   544          ECU      Stage  Ⅲ  /             $28,272"
+      ],
+      "file": "sources/lister-petter/2042.md",
+      "official": true
+    },
+    {
+      "n": 2043,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625EG1      460               506      438            484      400          500   436     545      520               572.0  498           550  460               575  504  630                                      ECU      Stage  Ⅲ   Changeable              $37,511"
+      ],
+      "file": "sources/lister-petter/2043.md",
+      "official": true
+    },
+    {
+      "n": 2044,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625EG2      520               572      498            550      460          575   504     630      572               629.0  550           607  510               638  556  695                                      ECU      Stage  Ⅲ   Changeable              $41,534"
+      ],
+      "file": "sources/lister-petter/2044.md",
+      "official": true
+    },
+    {
+      "n": 2045,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625EG3      572               629      550            607      510          638   556     695      622               684.0  600           662  560               700  612  765                                      ECU      Stage  Ⅲ   Changeable              $42,956"
+      ],
+      "file": "sources/lister-petter/2045.md",
+      "official": true
+    },
+    {
+      "n": 2046,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625EG4      622               684      600            662      560          700   612     765      622               684.0  600           662  560               700  612  765                                      ECU      Stage  Ⅲ   Changeable              $47,308"
+      ],
+      "file": "sources/lister-petter/2046.md",
+      "official": true
+    },
+    {
+      "n": 2047,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625EG5      685               754      661            730      600          750   656     820              /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $49,594"
+      ],
+      "file": "sources/lister-petter/2047.md",
+      "official": true
+    },
+    {
+      "n": 2048,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625EG6      /                 /           /               /    /            /          /        /  685               754.0  661           730  600               750  656  820                                      ECU      Stage  Ⅲ        /                  $51,362"
+      ],
+      "file": "sources/lister-petter/2048.md",
+      "official": true
+    },
+    {
+      "n": 2049,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625EG7      728               800      704            776      660          825   720     900              /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $55,373"
+      ],
+      "file": "sources/lister-petter/2049.md",
+      "official": true
+    },
+    {
+      "n": 2050,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625EG8      /                 /           /               /    /            /          /        /  728               800.0  704           776  660               825  720  900                                      ECU      Stage  Ⅲ        /                  $57,825"
+      ],
+      "file": "sources/lister-petter/2050.md",
+      "official": true
+    },
+    {
+      "n": 2051,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "Mars Max  LP625EG9      820               902      785            867      720          900   788     985              /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $63,318"
+      ],
+      "file": "sources/lister-petter/2051.md",
+      "official": true
+    },
+    {
+      "n": 2052,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625EG10     880               968      845            933      800          1000  876     1095             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $70,581"
+      ],
+      "file": "sources/lister-petter/2052.md",
+      "official": true
+    },
+    {
+      "n": 2053,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP1258EG1     1280              1410     TBD            TBD      1100         1375  1200    1500             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $157,428"
+      ],
+      "file": "sources/lister-petter/2053.md",
+      "official": true
+    },
+    {
+      "n": 2054,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP1258EG2     1420              1560     TBD            TBD      1250         1563  1376    1720             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $159,158"
+      ],
+      "file": "sources/lister-petter/2054.md",
+      "official": true
+    },
+    {
+      "n": 2055,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP1258EG3     1560              1720     TBD            TBD      1350         1687  1485    1856             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $180,170"
+      ],
+      "file": "sources/lister-petter/2055.md",
+      "official": true
+    },
+    {
+      "n": 2056,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP1258EG4     1720              1890     TBD            TBD      1500         1875  1650    2062             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $212,941"
+      ],
+      "file": "sources/lister-petter/2056.md",
+      "official": true
+    },
+    {
+      "n": 2057,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP1258EG5     1850              2035     TBD            TBD      1600         2000  1760    2200             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $236,830"
+      ],
+      "file": "sources/lister-petter/2057.md",
+      "official": true
+    },
+    {
+      "n": 2058,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625SG1      460               506      438            484      400          500   436     545      520               572.0  498           550  460               575  504  630                                      ECU      Stage  Ⅲ        Switchable         $35,473"
+      ],
+      "file": "sources/lister-petter/2058.md",
+      "official": true
+    },
+    {
+      "n": 2059,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625SG2      520               572      498            550      460          575   504     630      572               629.0  550           607  510               638  556  695                                      ECU      Stage  Ⅲ        Switchable         $38,243"
+      ],
+      "file": "sources/lister-petter/2059.md",
+      "official": true
+    },
+    {
+      "n": 2060,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625SG3      572               629      550            607      510          638   556     695      622               684.0  600           662  560               700  612  765                                      ECU      Stage  Ⅲ        Switchable         $39,627"
+      ],
+      "file": "sources/lister-petter/2060.md",
+      "official": true
+    },
+    {
+      "n": 2061,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Mercury-Max-Venus-Max-Mars-Max.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Engines - Price",
+        "          LP625SG4      622               684      600            662      560          700   612     765      622               684.0  600           662  560               700  612  765                                      ECU      Stage  Ⅲ        Switchable         $43,798"
+      ],
+      "file": "sources/lister-petter/2061.md",
+      "official": true
+    },
+    {
+      "n": 2062,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP443G3  78                       86   76                 84       66                  83   72   90            86          95        84            93                72          90     80   100                        electric  Stage  II  Switchable                $5,988"
+      ],
+      "file": "sources/lister-petter/2062.md",
+      "official": true
+    },
+    {
+      "n": 2063,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP443G4  95                       105  90                 100      80                  100  88   110           105    116            100           111               90          113    100  125                        electric  Stage  II  Switchable                $6,834"
+      ],
+      "file": "sources/lister-petter/2063.md",
+      "official": true
+    },
+    {
+      "n": 2064,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP443G5  105                      116  99                 110      90                  113  100  125           120    132            114           126               100         125    110  138                        electric  Stage  II  Switchable                $7,147"
+      ],
+      "file": "sources/lister-petter/2064.md",
+      "official": true
+    },
+    {
+      "n": 2065,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP443G6  120                      132  114                126      100                 125  110  138           120    132            114           126               100         125    110  138                        electric  Stage  II  Switchable                $7,158"
+      ],
+      "file": "sources/lister-petter/2065.md",
+      "official": true
+    },
+    {
+      "n": 2066,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP665G1  128                      141  122                135      110                 138  120  150           136    150            130           144               120         150    132  165                        electric  Stage  II  Switchable                $8,106"
+      ],
+      "file": "sources/lister-petter/2066.md",
+      "official": true
+    },
+    {
+      "n": 2067,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP665G2  140                      155  131                146      120                 150  132  165           150    165            141           156               132         165    145  182                        electric  Stage  II  Switchable                $8,165"
+      ],
+      "file": "sources/lister-petter/2067.md",
+      "official": true
+    },
+    {
+      "n": 2068,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP665G3  168                      185  159                176      150                 188  165  206           180    198            171           189               160         200    176  220                        electric  Stage  II  Switchable                $10,032"
+      ],
+      "file": "sources/lister-petter/2068.md",
+      "official": true
+    },
+    {
+      "n": 2069,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "Venus   LP689G1  185                      204  179                198      165                 206  182  227           205    226            199           220               180         225    198  248                        electric  Stage  II  Switchable                $10,694"
+      ],
+      "file": "sources/lister-petter/2069.md",
+      "official": true
+    },
+    {
+      "n": 2070,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP689G2  208                      228  202                222      180                 225  198  248           228    250            222           244               200         250    220  275                        electric  Stage  II  Switchable                $10,958"
+      ],
+      "file": "sources/lister-petter/2070.md",
+      "official": true
+    },
+    {
+      "n": 2071,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP689G3  230                      253  224                247      200                 250  220  275           255    282            249           276               220         275    242  303                        electric  Stage  II  Switchable                $11,753"
+      ],
+      "file": "sources/lister-petter/2071.md",
+      "official": true
+    },
+    {
+      "n": 2072,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP612G1  255                      280  245                270      224                 280  246  308           268    282            258           272               240         300    264  330                        electric  Stage  II  Switchable                $15,588"
+      ],
+      "file": "sources/lister-petter/2072.md",
+      "official": true
+    },
+    {
+      "n": 2073,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP612G2  280                      308  270                298      260                 325  286  358           307    338            297           328               280         350    308  385                        electric  Stage  II  Switchable                $15,715"
+      ],
+      "file": "sources/lister-petter/2073.md",
+      "official": true
+    },
+    {
+      "n": 2074,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP612G3  307                      338  297                328      280                 350  308  385           307    338            297           328               280         350    308  385                        electric  Stage  II  Switchable                $15,906"
+      ],
+      "file": "sources/lister-petter/2074.md",
+      "official": true
+    },
+    {
+      "n": 2075,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP613G1  339                      373  324                358      300                 375  330  413           368    405            353           390               320         400    352  440                        electric  Stage  II  Switchable                $17,578"
+      ],
+      "file": "sources/lister-petter/2075.md",
+      "official": true
+    },
+    {
+      "n": 2076,
+      "url": "https://listerpetter.com/wp-content/uploads/2025/10/Lister-Petter-Price-List-20250626%EF%BC%88FOB-UK-OR-FOB-FUZHOU-USD-Venus.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Venus Generator Engines - Price List",
+        "        LP613G2  368                      405  353                390      320                 400  352  440           368    405            353           390               320         400    352  440                        electric  Stage  II  Switchable                $18,618"
+      ],
+      "file": "sources/lister-petter/2076.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "TR Generator Engines TDS - TR2",
+      "header": [
+        "TR Generator Engines TDS                                                                  2"
+      ],
+      "rows": [
+        "TR2 | TR2G1500-FB I 11.8 kVA PRP 50Hz  TR2G1500FSFBSAE4 |\u0007 11.8 kVA PRP 50Hz"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "TR Generator Engines TDS - TR3",
+      "header": [
+        "TR Generator Engines TDS                                                                  2"
+      ],
+      "rows": [
+        "TR3G1500FS I 18.1 kVA PRP 50Hz         TR3G1500FS I 18.1 kVA PRP 50Hz"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Starlite Generator Engines - Price List - SA315G2",
+      "header": [
+        "Series      Model    engine power                  engine power                                                        engine power           engine power                                                                      Fuel Control  Emission   1500/1800rpm  Selling FOB",
+        "                     kWm                  kWm      kWm            kWm   kWe                    kVA  kWe  kVA           kWm    kWm             kWm         kWm   kWe           kVA   kWe             kVA"
+      ],
+      "rows": [
+        "            SA315G2  10                   11       9.3            10.3  8                      10   9    11            12           13.2      11.3        12.5  10            12.0  10.6            13.2                        electric      Stage  II  Changeable        $2,248"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Starlite Generator Engines - Price List - SA423G1",
+      "header": [
+        "Series      Model    engine power                  engine power                                                        engine power           engine power                                                                      Fuel Control  Emission   1500/1800rpm  Selling FOB",
+        "                     kWm                  kWm      kWm            kWm   kWe                    kVA  kWe  kVA           kWm    kWm             kWm         kWm   kWe           kVA   kWe             kVA"
+      ],
+      "rows": [
+        "            SA423G1  16                   18       15.3           16.9  13                     16   14          18     20           22        19.3        21.3  16            20                18       22                     electric      Stage  II  Changeable        $2,420"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Starlite Generator Engines - Price List - SA427G1",
+      "header": [
+        "Series      Model    engine power                  engine power                                                        engine power           engine power                                                                      Fuel Control  Emission   1500/1800rpm  Selling FOB",
+        "                     kWm                  kWm      kWm            kWm   kWe                    kVA  kWe  kVA           kWm    kWm             kWm         kWm   kWe           kVA   kWe             kVA"
+      ],
+      "rows": [
+        "            SA427G1  20.5                 23       19.5           21.6  17                     21   19   23            24.5         27        23.5        26.0  20            25                22  28                          electric      Stage  II  Changeable        $2,520"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Starlite Generator Engines - Price List - SA430G1",
+      "header": [
+        "Series      Model    engine power                  engine power                                                        engine power           engine power                                                                      Fuel Control  Emission   1500/1800rpm  Selling FOB",
+        "                     kWm                  kWm      kWm            kWm   kWe                    kVA  kWe  kVA           kWm    kWm             kWm         kWm   kWe           kVA   kWe             kVA"
+      ],
+      "rows": [
+        "            SA430G1  24.5                 27       23.5           26.0  20                     25   22          28     27.5         30        26.0        28.5  22            28                24       30                     electric      Stage  II  Changeable        $2,781"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Starlite Generator Engines - Price List - SA432G1",
+      "header": [
+        "Series      Model    engine power                  engine power                                                        engine power           engine power                                                                      Fuel Control  Emission   1500/1800rpm  Selling FOB",
+        "                     kWm                  kWm      kWm            kWm   kWe                    kVA  kWe  kVA           kWm    kWm             kWm         kWm   kWe           kVA   kWe             kVA"
+      ],
+      "rows": [
+        "Starlite    SA432G1  30.5                 34       29.0           32.5  25                     31   27   34            37.5         42        35.5        40.0  30            38                33  41                          electric      Stage  II  Changeable        $3,079"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Starlite Generator Engines - Price List - SA432G2",
+      "header": [
+        "Series      Model    engine power                  engine power                                                        engine power           engine power                                                                      Fuel Control  Emission   1500/1800rpm  Selling FOB",
+        "                     kWm                  kWm      kWm            kWm   kWe                    kVA  kWe  kVA           kWm    kWm             kWm         kWm   kWe           kVA   kWe             kVA"
+      ],
+      "rows": [
+        "            SA432G2  39                   44       36.5           41.5  32                     40   35          44     42           46        39.5        43.5  35            44                39       48                     electric      Stage  II  Changeable        $3,773"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "Starlite Generator Engines - Price List - SA435G1",
+      "header": [
+        "Series      Model    engine power                  engine power                                                        engine power           engine power                                                                      Fuel Control  Emission   1500/1800rpm  Selling FOB",
+        "                     kWm                  kWm      kWm            kWm   kWe                    kVA  kWe  kVA           kWm    kWm             kWm         kWm   kWe           kVA   kWe             kVA"
+      ],
+      "rows": [
+        "            SA435G1  49                   54       46.5           51.4  40                     50   44   55            59           65        56.5        62.5  50            63                55  69                          electric      Stage  II  Changeable        $4,040"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Starlite Generator Engines - Price List - SA441G1",
+      "header": [
+        "Series      Model    engine power                  engine power                                                        engine power           engine power                                                                      Fuel Control  Emission   1500/1800rpm  Selling FOB",
+        "                     kWm                  kWm      kWm            kWm   kWe                    kVA  kWe  kVA           kWm    kWm             kWm         kWm   kWe           kVA   kWe             kVA"
+      ],
+      "rows": [
+        "            SA441G1  59                   65       54.0           60.9  48                     60   53          66     70           77        65.0        73    60            75                66       83                     electric      Stage  II  Changeable        $4,568"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "Starlite Generator Engines - Price List - SA441G2",
+      "header": [
+        "Series      Model    engine power                  engine power                                                        engine power           engine power                                                                      Fuel Control  Emission   1500/1800rpm  Selling FOB",
+        "                     kWm                  kWm      kWm            kWm   kWe                    kVA  kWe  kVA           kWm    kWm             kWm         kWm   kWe           kVA   kWe             kVA"
+      ],
+      "rows": [
+        "            SA441G2  64                   70       59.0           66.4  53                     66   58   72            76           83        71.0        79    65            81    71.5            89                          electric      Stage  II  Changeable        $4,988"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP311EVG1_s515",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP311EVG1_s515  11          12   10              11.1  8          10  8.8        11                                                                                    ECU      Stage V   Changeable    $3,900"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP311EVG1_s818",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP311EVG1_s818                                                                           13.2         15   12.2            14    9.6         12     10.6  13.2         ECU      Stage V   Changeable    $3,900"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP322EVG1_s543",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP322EVG1_s543  32          35   30              33.0  25         31         28  34                                                                                    ECU      Stage V   Changeable    $10,964"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP322EVG1_s848",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP322EVG1_s848                                                                           36           40   34.0            38    30          37.5   33    41           ECU      Stage V   Changeable    $10,964"
+      ]
+    },
+    {
+      "n": 2016,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP322EVG2_s554",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "Mercury Max  LP322EVG2_s554  40          44   37.5            41.5  32.0       40  35.0       44                                                                                    ECU      Stage V   Changeable    $11,289"
+      ]
+    },
+    {
+      "n": 2017,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP322EVG2_s866",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP322EVG2_s866                                                                           49           54   46.5            51.5  40          50     44    55           ECU      Stage V   Changeable    $11,289"
+      ]
+    },
+    {
+      "n": 2018,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP430EVG2_s566",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP430EVG2_s566  49          54   46.5            51.5  40.0       50  44.0       55                                                                                    ECU      Stage V   Changeable    $11,789"
+      ]
+    },
+    {
+      "n": 2019,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP430EVG2_s872",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP430EVG2_s872                                                                           54           60   51.5            57.5  45          56     50    62           ECU      Stage V   Changeable    $11,789"
+      ]
+    },
+    {
+      "n": 2020,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP311EG1",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP311EG1        11          12   10              11.1  8.0        10  8.8        11      13.2         15   12.2            13.5  9.6         12     10.6  13.2         ECU      Stage  Ⅲ  Changeable    $3,241"
+      ]
+    },
+    {
+      "n": 2021,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP429EG1",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP429EG1        27          30   25              28.0  22         28         24  30      30           33          28       31    24          30     26    32           ECU      Stage  Ⅲ  Changeable    $3,743"
+      ]
+    },
+    {
+      "n": 2022,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP432EG2",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP432EG2        55          60   52.5            57.5  40         50         44  55      60           66   57.5            63.5  50          62.5   55    68.5         ECU      Stage  Ⅲ  Changeable    $4,768"
+      ]
+    },
+    {
+      "n": 2023,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP435EG2",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP435EG2        74          81   71.5            78.5  60         75         64  80      74           81   71.5            78.5  64          80     70    88           ECU      Stage  Ⅲ  Changeable    $5,187"
+      ]
+    },
+    {
+      "n": 2024,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP443EG3",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP443EG3        78          86   73              81    66         83         72  90      86           95   81              90    72          90     79    99           ECU      Stage  Ⅲ  Switchable    $8,120"
+      ]
+    },
+    {
+      "n": 2025,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP443EG4",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP443EG4        95          105  89              99    80    100             88  110     105          116         99       110   90          110    100   125          ECU      Stage  Ⅲ  Switchable    $8,385"
+      ]
+    },
+    {
+      "n": 2026,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP443EG5",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP443EG5        106         117  100             111   90    110      100        125     120          132  114             126   100         125    110   138          ECU      Stage  Ⅲ  Switchable    $8,651"
+      ]
+    },
+    {
+      "n": 2027,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP443EG6",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP443EG6        125         140  119             134   110   138      120        150     125          140  119             134   110         138    120   150          ECU      Stage  Ⅲ  Switchable    $9,153"
+      ]
+    },
+    {
+      "n": 2028,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP665EG1",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP665EG1        128         141  119             132   110   138      120        150     136          150  127             141   120         150    132   165          ECU      Stage  Ⅲ  Switchable    $10,941"
+      ]
+    },
+    {
+      "n": 2029,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP665EG2",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP665EG2        140         155  131             146   120   150      132        165     150          165  141             156   132         165    144   180          ECU      Stage  Ⅲ  Switchable    $11,206"
+      ]
+    },
+    {
+      "n": 2030,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP665EG3",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP665EG3        168         185  159             176   150   188      164        205     180          198  171             189   160         200    176   220          ECU      Stage  Ⅲ  Switchable    $11,710"
+      ]
+    },
+    {
+      "n": 2031,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP665EG4",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP665EG4        186         205  177             196   160   200      176        220     186          205  177             196   160         200    176   220          ECU      Stage  Ⅲ  Switchable    $11,949"
+      ]
+    },
+    {
+      "n": 2032,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP689EG1",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "Venus Max    LP689EG1        185         204  179             198   160   200      176        220     205          226  199             220   180         225    196   245          ECU      Stage  Ⅲ  Switchable    $12,169"
+      ]
+    },
+    {
+      "n": 2033,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP689EG2",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP689EG2        195         228  189             222   180   225      196        245     235          259  229             253   200         250    220   275          ECU      Stage  Ⅲ  Switchable    $14,320"
+      ]
+    },
+    {
+      "n": 2034,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP689EG3",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP689EG3        230         253  224             247   200   250      220        275     255          280  249             274   220         275    240   300          ECU      Stage  Ⅲ  Switchable    $14,664"
+      ]
+    },
+    {
+      "n": 2035,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP689EG4",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP689EG4        255         280  249             274   220   275      240        300     280          308  274             302   240         300    264   330          ECU      Stage  Ⅲ  Switchable    $15,223"
+      ]
+    },
+    {
+      "n": 2036,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP612EG1",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP612EG1        280         308  270             298   250   313      272        340     307          338  297             328   280         350    308   385          ECU      Stage  Ⅲ  Switchable    $17,758"
+      ]
+    },
+    {
+      "n": 2037,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP612EG2",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP612EG2        307         338  297             328   280   350      308        385     340          380  330             370   300         375    328   410          ECU      Stage  Ⅲ  Switchable    $17,939"
+      ]
+    },
+    {
+      "n": 2038,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP612EG3",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP612EG3        340         380  330             370   300   375      328        410     340          380  330             370   300         375    328   410          ECU      Stage  Ⅲ  Switchable    $19,208"
+      ]
+    },
+    {
+      "n": 2039,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP613EG1",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP613EG1        360         400  345             385   320   400      352        440     401          441  386             426   360         450    384   480          ECU      Stage  Ⅲ  Switchable    $21,912"
+      ]
+    },
+    {
+      "n": 2040,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP613EG2",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP613EG2        401         441  386             426   360   450      392        490     /            /           /        /     /           /      /            /     ECU      Stage  Ⅲ  /             $23,602"
+      ]
+    },
+    {
+      "n": 2041,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP613EG3",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP613EG3        450         495  435             480   400   500      435        544     /            /           /        /     /           /      /            /     ECU      Stage  Ⅲ  /             $26,786"
+      ]
+    },
+    {
+      "n": 2042,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP613EG4",
+      "header": [
+        "Series       Model           engine power     engine power                                            engine power      engine power                                                Fuel     Emission  1500/1800rpm  Selling FOB",
+        "                             kWm    kWm       kWm             kWm   kWe   kVA      kWe        kVA     kWm    kWm        kWm             kWm   kWe         kVA    kWe   kVA"
+      ],
+      "rows": [
+        "             LP613EG4        /           /            /       /     /          /          /        /  450          495  435             480   400         500    435   544          ECU      Stage  Ⅲ  /             $28,272"
+      ]
+    },
+    {
+      "n": 2043,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG1",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625EG1      460               506      438            484      400          500   436     545      520               572.0  498           550  460               575  504  630                                      ECU      Stage  Ⅲ   Changeable              $37,511"
+      ]
+    },
+    {
+      "n": 2044,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG2",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625EG2      520               572      498            550      460          575   504     630      572               629.0  550           607  510               638  556  695                                      ECU      Stage  Ⅲ   Changeable              $41,534"
+      ]
+    },
+    {
+      "n": 2045,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG3",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625EG3      572               629      550            607      510          638   556     695      622               684.0  600           662  560               700  612  765                                      ECU      Stage  Ⅲ   Changeable              $42,956"
+      ]
+    },
+    {
+      "n": 2046,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG4",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625EG4      622               684      600            662      560          700   612     765      622               684.0  600           662  560               700  612  765                                      ECU      Stage  Ⅲ   Changeable              $47,308"
+      ]
+    },
+    {
+      "n": 2047,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG5",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625EG5      685               754      661            730      600          750   656     820              /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $49,594"
+      ]
+    },
+    {
+      "n": 2048,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG6",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625EG6      /                 /           /               /    /            /          /        /  685               754.0  661           730  600               750  656  820                                      ECU      Stage  Ⅲ        /                  $51,362"
+      ]
+    },
+    {
+      "n": 2049,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG7",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625EG7      728               800      704            776      660          825   720     900              /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $55,373"
+      ]
+    },
+    {
+      "n": 2050,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG8",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625EG8      /                 /           /               /    /            /          /        /  728               800.0  704           776  660               825  720  900                                      ECU      Stage  Ⅲ        /                  $57,825"
+      ]
+    },
+    {
+      "n": 2051,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG9",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "Mars Max  LP625EG9      820               902      785            867      720          900   788     985              /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $63,318"
+      ]
+    },
+    {
+      "n": 2052,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625EG10",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625EG10     880               968      845            933      800          1000  876     1095             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $70,581"
+      ]
+    },
+    {
+      "n": 2053,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP1258EG1",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP1258EG1     1280              1410     TBD            TBD      1100         1375  1200    1500             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $157,428"
+      ]
+    },
+    {
+      "n": 2054,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP1258EG2",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP1258EG2     1420              1560     TBD            TBD      1250         1563  1376    1720             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $159,158"
+      ]
+    },
+    {
+      "n": 2055,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP1258EG3",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP1258EG3     1560              1720     TBD            TBD      1350         1687  1485    1856             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $180,170"
+      ]
+    },
+    {
+      "n": 2056,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP1258EG4",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP1258EG4     1720              1890     TBD            TBD      1500         1875  1650    2062             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $212,941"
+      ]
+    },
+    {
+      "n": 2057,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP1258EG5",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP1258EG5     1850              2035     TBD            TBD      1600         2000  1760    2200             /         /            /       /    /                 /    /             /                               ECU      Stage  Ⅲ        /                  $236,830"
+      ]
+    },
+    {
+      "n": 2058,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625SG1",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625SG1      460               506      438            484      400          500   436     545      520               572.0  498           550  460               575  504  630                                      ECU      Stage  Ⅲ        Switchable         $35,473"
+      ]
+    },
+    {
+      "n": 2059,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625SG2",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625SG2      520               572      498            550      460          575   504     630      572               629.0  550           607  510               638  556  695                                      ECU      Stage  Ⅲ        Switchable         $38,243"
+      ]
+    },
+    {
+      "n": 2060,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625SG3",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625SG3      572               629      550            607      510          638   556     695      622               684.0  600           662  560               700  612  765                                      ECU      Stage  Ⅲ        Switchable         $39,627"
+      ]
+    },
+    {
+      "n": 2061,
+      "title": "Mercury Max & Venus Max & Mars Max Generator Engines - Price List - LP625SG4",
+      "header": [
+        "Series         Model    engine power               engine power                                                engine power             engine power                                                                            Fuel     Emission   1500/1800rpm     Selling FOB",
+        "                        kWm               kWm      kWm            kWm      kWe          kVA   kWe     kVA      kWm        kWm           kWm           kWm  kWe               kVA  kWe  kVA"
+      ],
+      "rows": [
+        "          LP625SG4      622               684      600            662      560          700   612     765      622               684.0  600           662  560               700  612  765                                      ECU      Stage  Ⅲ        Switchable         $43,798"
+      ]
+    },
+    {
+      "n": 2062,
+      "title": "Venus Generator Engines - Price List - LP443G3",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP443G3  78                       86   76                 84       66                  83   72   90            86          95        84            93                72          90     80   100                        electric  Stage  II  Switchable                $5,988"
+      ]
+    },
+    {
+      "n": 2063,
+      "title": "Venus Generator Engines - Price List - LP443G4",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP443G4  95                       105  90                 100      80                  100  88   110           105    116            100           111               90          113    100  125                        electric  Stage  II  Switchable                $6,834"
+      ]
+    },
+    {
+      "n": 2064,
+      "title": "Venus Generator Engines - Price List - LP443G5",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP443G5  105                      116  99                 110      90                  113  100  125           120    132            114           126               100         125    110  138                        electric  Stage  II  Switchable                $7,147"
+      ]
+    },
+    {
+      "n": 2065,
+      "title": "Venus Generator Engines - Price List - LP443G6",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP443G6  120                      132  114                126      100                 125  110  138           120    132            114           126               100         125    110  138                        electric  Stage  II  Switchable                $7,158"
+      ]
+    },
+    {
+      "n": 2066,
+      "title": "Venus Generator Engines - Price List - LP665G1",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP665G1  128                      141  122                135      110                 138  120  150           136    150            130           144               120         150    132  165                        electric  Stage  II  Switchable                $8,106"
+      ]
+    },
+    {
+      "n": 2067,
+      "title": "Venus Generator Engines - Price List - LP665G2",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP665G2  140                      155  131                146      120                 150  132  165           150    165            141           156               132         165    145  182                        electric  Stage  II  Switchable                $8,165"
+      ]
+    },
+    {
+      "n": 2068,
+      "title": "Venus Generator Engines - Price List - LP665G3",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP665G3  168                      185  159                176      150                 188  165  206           180    198            171           189               160         200    176  220                        electric  Stage  II  Switchable                $10,032"
+      ]
+    },
+    {
+      "n": 2069,
+      "title": "Venus Generator Engines - Price List - LP689G1",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "Venus   LP689G1  185                      204  179                198      165                 206  182  227           205    226            199           220               180         225    198  248                        electric  Stage  II  Switchable                $10,694"
+      ]
+    },
+    {
+      "n": 2070,
+      "title": "Venus Generator Engines - Price List - LP689G2",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP689G2  208                      228  202                222      180                 225  198  248           228    250            222           244               200         250    220  275                        electric  Stage  II  Switchable                $10,958"
+      ]
+    },
+    {
+      "n": 2071,
+      "title": "Venus Generator Engines - Price List - LP689G3",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP689G3  230                      253  224                247      200                 250  220  275           255    282            249           276               220         275    242  303                        electric  Stage  II  Switchable                $11,753"
+      ]
+    },
+    {
+      "n": 2072,
+      "title": "Venus Generator Engines - Price List - LP612G1",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP612G1  255                      280  245                270      224                 280  246  308           268    282            258           272               240         300    264  330                        electric  Stage  II  Switchable                $15,588"
+      ]
+    },
+    {
+      "n": 2073,
+      "title": "Venus Generator Engines - Price List - LP612G2",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP612G2  280                      308  270                298      260                 325  286  358           307    338            297           328               280         350    308  385                        electric  Stage  II  Switchable                $15,715"
+      ]
+    },
+    {
+      "n": 2074,
+      "title": "Venus Generator Engines - Price List - LP612G3",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP612G3  307                      338  297                328      280                 350  308  385           307    338            297           328               280         350    308  385                        electric  Stage  II  Switchable                $15,906"
+      ]
+    },
+    {
+      "n": 2075,
+      "title": "Venus Generator Engines - Price List - LP613G1",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP613G1  339                      373  324                358      300                 375  330  413           368    405            353           390               320         400    352  440                        electric  Stage  II  Switchable                $17,578"
+      ]
+    },
+    {
+      "n": 2076,
+      "title": "Venus Generator Engines - Price List - LP613G2",
+      "header": [
+        "Series  Model    engine power                  engine power                                                            engine power          engine power                                                                       Fuel      Emission   1500/1800rpm              Selling FOB Price",
+        "                 kWm    kWm                    kWm                kWm      kWe                 kVA  kWe  kVA           kWm    kWm            kWm           kWm               kWe         kVA    kWe  kVA"
+      ],
+      "rows": [
+        "        LP613G2  368                      405  353                390      320                 400  352  440           368    405            353           390               320         400    352  440                        electric  Stage  II  Switchable                $18,618"
+      ]
+    }
+  ]
 }
