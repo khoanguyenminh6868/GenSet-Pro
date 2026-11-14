@@ -54,6 +54,362 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "30GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "NQ35D3.3"
+      ],
+      "engineMakes": [
+        "Quanchai"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 37.5,
+        "max": 37.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "50GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "ND68D6"
+      ],
+      "engineMakes": [
+        "HuaBei (DEUTZ licensed)"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 62.5,
+        "max": 62.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "80GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "ND68D9TL"
+      ],
+      "engineMakes": [
+        "HuaBei (DEUTZ licensed)"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "100GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "NY78D12TL"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "160GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "ND119D18TL"
+      ],
+      "engineMakes": [
+        "HuaBei (DEUTZ licensed)"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "200GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "NY129D22TL"
+      ],
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "300GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "NY196D35TL"
+      ],
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "350GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "NY196D40-TL"
+      ],
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 437.5,
+        "max": 437.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "500GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "NY396D55TL"
+      ],
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "150 GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "NY103D17TL"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 187.5,
+        "max": 187.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "280 GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "NY196D32TL"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "30GFT",
+      "fuel": "gas",
+      "engineModels": [
+        "NW52D4"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 37.5,
+        "max": 37.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "150GFT - J1",
+      "fuel": "gas",
+      "engineModels": [
+        "NS118D17TL"
+      ],
+      "engineMakes": [
+        "SDEC"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 187.5,
+        "max": 187.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "200GFT - J2",
+      "fuel": "gas",
+      "engineModels": [
+        "NY163D23TL"
+      ],
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "alternatorMakes": [
+        "Xingnuo"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
     }
   ],
   "certifications": [
@@ -86,9 +442,1208 @@
         "power capacities ranging from 10kW to 1000kW"
       ],
       "file": "sources/naipute-weifang/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-30-kw-natural-gas-biogas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 30GFT",
+        "| Rated Power ( kW/kVA ) | 30/37.5",
+        "| Model | NQ35D3.3 ( Yanmar Technology )",
+        "| Rated Power ( kW ) | 33",
+        "| Model | XN184H",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "NQ series adopts QUANCHAI base gas engine and Japanese Yanmar technology."
+      ],
+      "file": "sources/naipute-weifang/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-50kw-natural-gas-biogas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 50GFT",
+        "| Rated Power ( kW/kVA ) | 50/62.5",
+        "| Model | ND68D6",
+        "| Rated Power ( kW ) | 60",
+        "| Model | XN224E",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "The gas generator adopts the base gas engine of HuaBei diesel engine factory, which is authorized by DEUTZ."
+      ],
+      "file": "sources/naipute-weifang/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-80kw-natural-gas-biogas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 80GFT",
+        "| Rated Power ( kW/kVA ) | 80/100",
+        "| Model | ND68D9TL ( Deutz Technology )",
+        "| Rated Power ( kW ) | 90",
+        "| Model | XN274C",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "The gas generator adopts the base gas engine of HuaBei diesel engine factory, which is authorized by DEUTZ."
+      ],
+      "file": "sources/naipute-weifang/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-100kw-natural-gas-biogas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 100GFT",
+        "| Rated Power ( kW/kVA ) | 100/125",
+        "| Model | NY78D12TL ( AVL Technology )",
+        "| Rated Power ( kW ) | 120",
+        "| Model | XN274DS",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "This series of products are the company's main products.",
+        "Unit control module: Zhongzhi controller, deepsea, COMAP, etc"
+      ],
+      "file": "sources/naipute-weifang/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-160kw-natural-gas-biogas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 160GFT",
+        "| Rated Power ( kW/kVA ) | 160/200",
+        "| Model | ND119D18TL ( Deutz Technology )",
+        "| Rated Power ( kW ) | 180",
+        "| Model | XN274H",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "The gas generator adopts the base gas engine of HuaBei diesel engine factory, which is authorized by DEUTZ.",
+        "3.Gas generator control module: Smartgen controller, DEEPSEA, COMAP, etc."
+      ],
+      "file": "sources/naipute-weifang/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-200kw-natural-gas-biogas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 200GFT",
+        "| Rated Power ( kW/kVA ) | 200/250",
+        "| Model | NY129D22TL",
+        "| Rated Power ( kW ) | 220",
+        "| Model | XN4C",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "The engine of this series of products uses Guangxi Yuchai base gas engine, which is a well-known internal combustion engine manufacturer in China.",
+        "Unit control module: Smartgen controller, DEEPSEA"
+      ],
+      "file": "sources/naipute-weifang/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-300kw-natural-gas-biogas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 300GFT",
+        "| Rated Power ( kW/kVA ) | 300/375",
+        "| Model | NY196D35TL ( AVL Technology )",
+        "| Rated Power ( kW ) | 350",
+        "| Model | XN4F",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "The engine of this series of products uses Guangxi Yuchai base gas engine, which is a well-known internal combustion engine manufacturer in China."
+      ],
+      "file": "sources/naipute-weifang/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-350kw-natural-gas-biogas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 350GFT",
+        "| Rated Power ( kW/kVA ) | 350/437.5",
+        "| Model | NY196D40-TL",
+        "| Rated Power ( kW ) | 350",
+        "| Model | XN5C",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "The engine of this series of products uses Guangxi Yuchai base gas engine, which is a well-known internal combustion engine manufacturer in China."
+      ],
+      "file": "sources/naipute-weifang/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-500kwnatural-gas-biogas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 500GFT",
+        "| Rated Power ( kW/kVA ) | 500/625",
+        "| Model | NY396D55TL ( AVL Technology )",
+        "| Rated Power ( kW ) | 550",
+        "| Model | XN5FS",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "The engine of this series of products uses Guangxi Yuchai base gas engine, which is a well-known internal combustion engine manufacturer in China."
+      ],
+      "file": "sources/naipute-weifang/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-150kw-lpg-gas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 150 GFT",
+        "| Rated Power ( kW/kVA ) | 150/187.5",
+        "| Model | NY103D17TL ( AVL Technology )",
+        "| Rated Power ( kW ) | 150",
+        "| Model | XN274G",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "This series of products are the company's main products."
+      ],
+      "file": "sources/naipute-weifang/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-280kw-lpg-gas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 280 GFT",
+        "| Rated Power ( kW/kVA ) | 280/350",
+        "| Model | NY196D32TL ( AVL Technology )",
+        "| Rated Power ( kW ) | 320",
+        "| Model | XN4F",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "This series of products are the company's main products."
+      ],
+      "file": "sources/naipute-weifang/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-30kw-biomass-gas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 30GFT",
+        "| Rated Power ( kW/kVA ) | 30/37.5",
+        "| Model | NW52D4 ( Ricardo Technology )",
+        "| Rated Power ( kW ) | 40",
+        "| Model | XN184H",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand"
+      ],
+      "file": "sources/naipute-weifang/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-150kw-biomass-gas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 150GFT - J1",
+        "| Rated Power ( kW/kVA ) | 150/187.5",
+        "| Model | NS118D17TL ( Benz Technology )",
+        "| Rated Power ( kW ) | 170",
+        "| Model | XN274G",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "NS series products use SDEC Power base gas engine."
+      ],
+      "file": "sources/naipute-weifang/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://www.nptgasgenset.com/product/product-specifications-for-200kw-biomass-gas-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | 200GFT - J2",
+        "| Rated Power ( kW/kVA ) | 200/250",
+        "| Model | NY163D23TL ( AVL Technology )",
+        "| Rated Power ( kW ) | 230",
+        "| Model | XN4C",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "The engine of this series of products uses Guangxi Yuchai base gas engine, which is a well-known internal combustion engine manufacturer in China."
+      ],
+      "file": "sources/naipute-weifang/2014.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "30GFT natural gas / biogas generator",
+      "header": [
+        "| Genset Model | 30GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 30/37.5",
+        "| Rated Current ( A ) | 54",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤± 1%",
+        "| Instantaneous Voltage Regulation Rate | ≤ -15% ~ +20%",
+        "| Voltage Recover Time | ≤ 3 S",
+        "| Voltage Fluctuation Rate | ≤± 0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤± 10%",
+        "| Frequency Stabilization Time | ≤ 5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤ 2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 1730*830*1300",
+        "| Net Weight ( kg ) | 650",
+        "| Noise dB ( A ) | ＜ 93",
+        "| Overhaul Cycle ( h ) | 20000",
+        "| Model | NQ35D3.3 ( Yanmar Technology )",
+        "| Type | Inline, 4 strokes, electric control ignition, pre-mixed stoichiometry burn, natural aspiration",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke ( mm ) | 98*115",
+        "| Total Displacement ( L ) | 3.470",
+        "| Rated Power ( kW ) | 33",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Natural gas/Biogas",
+        "| Oil (L) | 7",
+        "| Model | 30KZY, NPT brand",
+        "| Display type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN184H",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 30/37.5",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 86.6"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "50GFT natural gas / biogas generator",
+      "header": [
+        "| Genset Model | 50GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 50/62.5",
+        "| Rated Current ( A ) | 90",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤± 1%",
+        "| Instantaneous Voltage Regulation Rate | ≤ -15% ~ +20%",
+        "| Voltage Recover Time | ≤ 3 S",
+        "| Voltage Fluctuation Rate | ≤± 0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤± 10%",
+        "| Frequency Stabilization Time | ≤ 5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤ 2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 2400*1000*1600",
+        "| Net Weight ( kg ) | 1300",
+        "| Noise dB ( A ) | ＜ 93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | ND68D6",
+        "| Type | Inline, 4 strokes, electric control ignition, pre-mixed stoichiometry burn,natural aspiration",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 105*130",
+        "| Total Displacement ( L ) | 6.8",
+        "| Rated Power ( kW ) | 60",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Biogas / Natural gas",
+        "| Oil (L) | 14",
+        "| Model | 50KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN224E",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 50/62.5",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 88.6"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "80GFT natural gas / biogas generator",
+      "header": [
+        "| Genset Model | 80GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 80/100",
+        "| Rated Current ( A ) | 144",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤± 1%",
+        "| Instantaneous Voltage Regulation Rate | ≤ -15% ~ +20%",
+        "| Voltage Recover Time | ≤ 3 S",
+        "| Voltage Fluctuation Rate | ≤± 0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤± 10%",
+        "| Frequency Stabilization Time | ≤ 5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤ 2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 2600*1000*1600",
+        "| Net Weight ( kg ) | 1480",
+        "| Noise dB ( A ) | ＜ 93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | ND68D9TL ( Deutz Technology )",
+        "| Type | Inline, 4 strokes, electric control ignition, turbocharged and inter-cooled, pre-mixed lean burn",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 105*130",
+        "| Total Displacement ( L ) | 6.754",
+        "| Rated Power ( kW ) | 90",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Natural gas/Biogas",
+        "| Oil (L) | 14",
+        "| Model | 80KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN274C",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 80/100",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 89.9"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "100GFT natural gas / biogas generator",
+      "header": [
+        "| Genset Model | 100GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 100/125",
+        "| Rated Current ( A ) | 180",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 2650*950*1650",
+        "| Net Weight ( kg ) | 1680",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | NY78D12TL ( AVL Technology )",
+        "| Type | Inline, 4 strokes, electric control ignition, turbocharged and inter-cooled, pre-mixed lean burn",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 112*132",
+        "| Total Displacement ( L ) | 7.803",
+        "| Rated Power ( kW ) | 120",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Natural gas/ Biogas",
+        "| Oil (L) | 21",
+        "| Model | 100KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN274DS",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 100/125",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 90.3"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "160GFT natural gas / biogas generator",
+      "header": [
+        "| Genset Model | 160GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 160/200",
+        "| Rated Current ( A ) | 288",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 3400*1300*1800",
+        "| Net Weight ( kg ) | 2560",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | ND119D18TL ( Deutz Technology )",
+        "| Type | V-type, 4 strokes, electric control ignition, turbocharged and inter-cooled, pre-mixed lean burn",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 132*145",
+        "| Total Displacement ( L ) | 11.906",
+        "| Rated Power ( kW ) | 180",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Natural gas/Biogas",
+        "| Oil (L) | 48",
+        "| Model | 160KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN274H",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 160/200",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 93.3"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "200GFT natural gas / biogas generator",
+      "header": [
+        "| Genset Model | 200GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 200/250",
+        "| Rated Current ( A ) | 360",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 3250*1300*2000",
+        "| Net Weight ( kg ) | 3390",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | NY129D22TL",
+        "| Type | V-type, 4 strokes, electric control ignition, pre-mixed mixed stoichiometry burn, natural aspiration",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 129*165",
+        "| Total Displacement ( L ) | 19.597",
+        "| Rated Power ( kW ) | 220",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Natural gas/ Biogas",
+        "| Oil (L) | 32",
+        "| Model | 200KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN4C",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 200/250",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 92.5"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "300GFT natural gas / biogas generator",
+      "header": [
+        "| Genset Model | 300GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 300/375",
+        "| Rated Current ( A ) | 540",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 3850*1900*2080",
+        "| Net Weight ( kg ) | 4830",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | NY196D35TL ( AVL Technology )",
+        "| Type | Inline, 4 strokes, electric control ignition, turbocharged and intercooled, pre-mixed lean burn",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 152*180",
+        "| Total Displacement ( L ) | 19.597",
+        "| Rated Power ( kW ) | 350",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Natural gas/Biogas",
+        "| Oil (L) | 52",
+        "| Model | 300KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN4F",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 300/375",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 93.1"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "350GFT natural gas / biogas generator",
+      "header": [
+        "| Genset Model | 350GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 350/437.5",
+        "| Rated Current ( A ) | 630",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 3900*1800*2395",
+        "| Net Weight ( kg ) | 4980",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | NY196D40-TL",
+        "| Type | Inline, 4 strokes, electric control ignition, turbocharged and intercooled, pre-mixed lean burn",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 152*180",
+        "| Total Displacement ( L ) | 19.6",
+        "| Rated Power ( kW ) | 350",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Natural gas/Biogas",
+        "| Oil (L) | 56",
+        "| Model | 350KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN5C",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 350/437.5",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 93.1"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "500GFT natural gas / biogas generator",
+      "header": [
+        "| Genset Model | 500GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 500/625",
+        "| Rated Current ( A ) | 900",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 5400*2250*2540",
+        "| Net Weight ( kg ) | 8400",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | NY396D55TL ( AVL Technology )",
+        "| Type | Inline, 4 strokes, electric control ignition, turbocharged and intercooled, pre-mixed lean burn",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 200*210",
+        "| Total Displacement ( L ) | 39.584",
+        "| Rated Power ( kW ) | 550",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Natural gas/ Biogas",
+        "| Oil (L) | 170",
+        "| Model | 500KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN5FS",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 500/625",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 94.6"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "150 GFT LPG generator",
+      "header": [
+        "| Genset Model | 150 GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 150/187.5",
+        "| Rated Current ( A ) | 270",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 2950*1000*1750",
+        "| Net Weight ( kg ) | 2150",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | NY103D17TL ( AVL Technology )",
+        "| Type | Inline, 4 stroke, electric control ignition, turbocharged and inter-cooled lean burn",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 123*145",
+        "| Total Displacement ( L ) | 10.337",
+        "| Rated Power ( kW ) | 150",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | LPG",
+        "| Oil (L) | 35",
+        "| Model | 150KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN274G",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 150/187.5",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 92.2"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "280 GFT LPG generator",
+      "header": [
+        "| Genset Model | 280 GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 280/350",
+        "| Rated Current ( A ) | 504",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 3850*1900*2080",
+        "| Net Weight ( kg ) | 4815",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | NY196D32TL ( AVL Technology )",
+        "| Type | Inline, 4 strokes, electric control ignition, turbocharged and inter-cooled lean burn",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 152*180",
+        "| Total Displacement ( L ) | 19.597",
+        "| Rated Power ( kW ) | 320",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | LPG",
+        "| Oil (L) | 52",
+        "| Model | 280KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN4F",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 280/350",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 93.0"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "30GFT biomass gas generator",
+      "header": [
+        "| Genset Model | 30GFT"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 30/37.5",
+        "| Rated Current ( A ) | 54",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 1900*900*1400",
+        "| Net Weight ( kg ) | 920",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 20000",
+        "| Model | NW52D4 ( Ricardo Technology )",
+        "| Type | Inline, 4 strokes, electric control ignition, pre-mixed stoichiometry burn, natural aspiration",
+        "| Cylinder Number | 4",
+        "| Bore*Stroke ( mm ) | 110*135",
+        "| Total Displacement ( L ) | 5.132",
+        "| Rated Power ( kW ) | 40",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Biomass gas",
+        "| Oil (L) | 7",
+        "| Model | 30KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN184H",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 30/37.5",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 86.6"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "150GFT - J1 biomass gas generator",
+      "header": [
+        "| Genset Model | 150GFT - J1"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 150/187.5",
+        "| Rated Current ( A ) | 270",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 3400*1300*1800",
+        "| Net Weight ( kg ) | 2560",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | NS118D17TL ( Benz Technology )",
+        "| Type | Inline, 4 strokes, electric control ignition, pre-mixed and turbocharged inter-cooled lean burn.",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 128*153",
+        "| Total Displacement ( L ) | 11.813",
+        "| Rated Power ( kW ) | 170",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Biomass gas",
+        "| Oil (L) | 23",
+        "| Model | 150KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN274G",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 150/187.5",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 92.2"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "200GFT - J2 biomass gas generator",
+      "header": [
+        "| Genset Model | 200GFT - J2"
+      ],
+      "rows": [
+        "| Structure | integrated",
+        "| Exciting Method | AVR Brushless",
+        "| Rated Power ( kW/kVA ) | 200/250",
+        "| Rated Current ( A ) | 360",
+        "| Rated Voltage ( V ) | 230/400",
+        "| Rated Frequency ( Hz ) | 50/60",
+        "| Rated Power Factor | 0.8 LAG",
+        "| No Load Voltage Range | 95% ~ 105%",
+        "| Stable Voltage Regulation Rate | ≤±1%",
+        "| Instantaneous Voltage Regulation Rate | ≤-15% ~ +20%",
+        "| Voltage Recover Time | ≤3 S",
+        "| Voltage Fluctuation Rate | ≤±0.5%",
+        "| Instantaneous Frequency Regulation Rate | ≤±10%",
+        "| Frequency Stabilization Time | ≤5 S",
+        "| Line-voltage Waveform Sinusoidal Distortion Rate | ≤2.5%",
+        "| Overall Dimension ( L*W*H ) ( mm ) | 3850*1800*1990",
+        "| Net Weight ( kg ) | 3950",
+        "| Noise dB ( A ) | ＜93",
+        "| Overhaul Cycle ( h ) | 25000",
+        "| Model | NY163D23TL ( AVL Technology )",
+        "| Type | Inline, 4 strokes, electric control ignition, pre-mixed and turbocharged inter-cooled lean burn.",
+        "| Cylinder Number | 6",
+        "| Bore*Stroke ( mm ) | 145*165",
+        "| Total Displacement ( L ) | 16.348",
+        "| Rated Power ( kW ) | 230",
+        "| Rated Speed ( r/min ) | 1500/1800",
+        "| Fuel Type | Biomass gas",
+        "| Oil (L) | 52",
+        "| Model | 200KZY, NPT brand",
+        "| Display Type | Multi-function LCD display",
+        "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+        "| Operation Language | English",
+        "| Model | XN4C",
+        "| Brand | XN ( Xingnuo )",
+        "| Shaft | Single bearing",
+        "| Rated Power ( kW/kVA ) | 200/250",
+        "| Enclosure Protection | IP23",
+        "| Efficiency ( % ) | 92.5"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2006
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2006
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2007
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2007
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2008
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2008
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2009
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2009
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2010
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2010
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2011
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2011
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2012
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2012
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2013
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2013
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320",
+      "text": "HGM9320",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2014
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510",
+      "text": "HGM9510",
+      "line": "| Control Module | HGM9320 or HGM9510, Smartgen brand",
+      "src": [
+        2014
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "deepsea",
+      "line": "Unit control module: Zhongzhi controller, deepsea, COMAP, etc",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "COMAP",
+      "line": "Unit control module: Zhongzhi controller, deepsea, COMAP, etc",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "DEEPSEA",
+      "line": "3.Gas generator control module: Smartgen controller, DEEPSEA, COMAP, etc.",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "COMAP",
+      "line": "3.Gas generator control module: Smartgen controller, DEEPSEA, COMAP, etc.",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "DEEPSEA",
+      "line": "Unit control module: Smartgen controller, DEEPSEA",
+      "src": [
+        2006
+      ]
+    }
+  ]
 }
