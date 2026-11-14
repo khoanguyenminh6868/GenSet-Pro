@@ -42,6 +42,1170 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG",
+      "fuel": "diesel",
+      "power": {
+        "min": 20,
+        "max": 3300,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSMIT",
+      "fuel": "diesel",
+      "power": {
+        "min": 800,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO",
+      "fuel": "diesel",
+      "power": {
+        "min": 77,
+        "max": 600,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00020",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M06G25/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00030",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M06G33/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00040",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M06G41/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00050",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M06G55/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00060",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M10G83/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00080",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M10G83/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00100",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M10G100/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00125",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M11G135/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00150",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M11G160/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00175",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M11G176/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 175,
+        "max": 175,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00200",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M16G200/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00250",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M16G250/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00300",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M16G308/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00350",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M21G330/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00400",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M21G390/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00500",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M26G500/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00600",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M33G600/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00750",
+      "fuel": "diesel",
+      "engineModels": [
+        "12M26G704/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG00800",
+      "fuel": "diesel",
+      "engineModels": [
+        "12M26G800/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG01000",
+      "fuel": "diesel",
+      "engineModels": [
+        "12M26G1000/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG01250",
+      "fuel": "diesel",
+      "engineModels": [
+        "12M33G1300/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG01500",
+      "fuel": "diesel",
+      "engineModels": [
+        "16M33G1500/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG01750",
+      "fuel": "diesel",
+      "engineModels": [
+        "16M33G1750/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 1750,
+        "max": 1750,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG02000",
+      "fuel": "diesel",
+      "engineModels": [
+        "12M55G2000/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIG02250",
+      "fuel": "diesel",
+      "engineModels": [
+        "12M55G2250/6"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 2200,
+        "max": 2200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSMIT00800",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12A2-Y1PTA-1"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSMIT01000",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12H-Y1PTA-3"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSMIT01250",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12R-Y1PTA-2"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSMIT01600",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R-Y1PTA-2"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 1600,
+        "max": 1600,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSIMIT2000",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R-Y1PTAA2-1"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO10077",
+      "fuel": "diesel",
+      "engineModels": [
+        "TD520GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 77,
+        "max": 77,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO10080",
+      "fuel": "diesel",
+      "engineModels": [
+        "TD520GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20095",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD531GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 95,
+        "max": 95,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20115",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD532GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 115,
+        "max": 115,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20140",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD731GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 140,
+        "max": 140,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20180",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD732GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20200",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD733GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO30225",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD753GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 225,
+        "max": 225,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20250",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD940GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20300",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD941GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20360",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD1343GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 360,
+        "max": 360,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20400",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD1344GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20450",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD1640GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20500",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD1641GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20550",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD1642GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GSVO20600",
+      "fuel": "diesel",
+      "engineModels": [
+        "TWD1643GE"
+      ],
+      "engineMakes": [],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -60,9 +1224,220 @@
         "IGSA - Plantas eléctricas, cogeneración y telecomunicaciones"
       ],
       "file": "sources/igsa-mexico/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.igsa.com.mx/wp-content/uploads/CATALOGO-PLANTAS-ELECTRICAS-2026pdf.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "20kW - 3300kw",
+        "800kW - 2000kW",
+        "100kW - 600kW",
+        "PLANTAS ELÉCTRICAS / GENSETS",
+        "77         GSVO10077        TD520GE             2270   1006   1420  1380                     3015   1021   1744                   1821       22.5      UCI224G-1",
+        "600        GSVO20600        TWD1643GE           3950   1660   2450  5698                     5100   2010   2557                   6908       161.76    HCI534E",
+        "Controles estándar DeepSea 4520, 7320",
+        "Controles para sincronía 8610,",
+        "Sync Controls: 8610, 8620, 8660.",
+        "20         GSIG00020           4M06G25/6     1726             974      1250           1036         2203    989             1416          1405   8.5       S0L2-M1",
+        "30         GSIG00030           4M06G33/6     1726             974      1250           1036         2203    989             1416          1405   10.3      S1L2-J1",
+        "40         GSIG00040           4M06G41/6     1865             971      1321           1097         2534    986             1520          1493   12.4      S1L2-N",
+        "50         GSIG00050           4M06G55/6     1865             971      1321           1097         2534    986             1520          1493   15.8      S1L2-R",
+        "60         GSIG00060           4M10G83/6     2270             1006     1420           1435         3015    1021            1744          1875   24.54     S1L2-Y",
+        "80         GSIG00080           4M10G83/6     2270             1006     1420           1452         3015    1021            1744          1892   24.54     UCI224G1",
+        "100        GSIG00100           4M10G100/6    2270             1006     1420           1551         3015    1021            1744          1991   28.65     UCI274C",
+        "125        GSIG00125           6M11G135/6    2487             1130     1600           2073         3401    1145            1940          2434   37.5      UCI274E",
+        "150        GSIG00150           6M11G160/6    2487             1130     1600           2112         3401    1145            1940          2662   43.9      UCI274F",
+        "175        GSIG00175           6M11G176/6    2487             1130     1600           2170         3401    1145            1940          2720   48.6      UCI274G",
+        "200        GSIG00200           6M16G200/6    2950             1430     1696           3091         3841    1434            2212          3806   56.5      UCI274H",
+        "250        GSIG00250           6M16G250/6    2950             1430     1696           3186         3841    1434            2212          3901   70.1      UCDI274K",
+        "300        GSIG00300           6M16G308/6    2950             1430     1696           3474         3841    1434            2212          4189   88.9      S4L1D-D",
+        "350        GSIG00350           6M21G330/6    3413             1316     1754           3657         4600    1650            2453          4647   90.9      S4L1D-E",
+        "400        GSIG00400           6M21G390/6    3413             1316     1754           3657         4600    1650            2453          4647   110.2     S4L1D-F",
+        "500        GSIG00500           6M26G500/6    3950             1660     2450           4680         5100    2010            2557          5604   139.9     HCI534D",
+        "600        GSIG00600           6M33G600/6    3950             1660     2450           5995         5100    2010            2557          7205   168.8     HCI534E",
+        "750        GSIG00750           12M26G704/6   4400             2150     2599           8455         5533    2204            2556          11237  194.9     S6L1D-C4",
+        "800        GSIG00800           12M26G800/6   4400             2150     2426           8455         5533    2204            2556          11237  225.9     S6L1D-C4",
+        "1000       GSIG01000           12M26G1000/6  4400             2150     2426           8667         5533    2204            2556          11453  290.1     S6L1D-E4",
+        "1250       GSIG01250           12M33G1300/6  5155             2300     2622           11562        6200    2430            2700          14745  359.3     S6L1D-G4",
+        "1500       GSIG01500           16M33G1500/6  TBD              TBD      TBD            TBD          6533    2424            3308          TBD    402.1     S7L1D-C",
+        "1750       GSIG01750           16M33G1750/6  TBD              TBD      TBD            TBD          6533    2424            3308          TBD    496.5     S7L1D-F",
+        "2000       GSIG02000           12M55G2000/6  TBD              TBD      TBD            TBD          9000    2700            3757          14745  501.8     S7L1D-G",
+        "2200       GSIG02250           12M55G2250/6  TBD              TBD      TBD            TBD          ESP     ESP             ESP           TBD    548.8     S7L1D-J",
+        "800        GSMIT00800  S12A2-Y1PTA-1   4400   2150         2511    7450                            5533   2204   2559              11474  235.4     S6L1D-C4",
+        "1000       GSMIT01000  S12H-Y1PTA-3    4400   2150         2760    10117                           5533   2204   2559              12321  283.4     S6L1D-E4",
+        "1250       GSMIT01250  S12R-Y1PTA-2    4400   2150         2753    11739                           6200   2430   3050              15731  354.2     S6L1D-G4",
+        "1600       GSMIT01600  S16R-Y1PTA-2    5155   2300         3048    14092                           6533   2424   3308              19650  437.9     PI734ED",
+        "2000       GSIMIT2000  S16R-Y1PTAA2-1  TBD    TBD          TBD     TBD                             8000   2800   3829              21894  509       S7L1D-G",
+        "77         GSVO10077        TD520GE             2270   1006   1420  1380                     3015   1021   1744                   1821       22.5      UCI224G-1",
+        "80         GSVO10080        TD520GE             2270   1006   1420  1409                     3015   1021   1744                   1849       22.5      UCI224G-1",
+        "95         GSVO20095        TAD531GE            2270   1006   1420  1409                     3015   1021   1744                   1849       28.5      UCI274C",
+        "115        GSVO20115        TAD532GE            2270   1006   1420  1728                     3015   1021   1744                   2221       36.0      UCI274E",
+        "140        GSVO20140        TAD731GE            2487   1130   1600  2083                     3401   1145   1940                   2633       41.6      UCI274F",
+        "180        GSVO20180        TAD732GE            2487   1130   1600  2166                     3401   1145   1940                   2716       52.8      UCI274H",
+        "200        GSVO20200        TAD733GE            2950   1430   1696  2948                     3841   1434   2212                   3663       60.3      UCI274H",
+        "225        GSVO30225        TAD753GE            2950   1430   1696  3043                     3841   1434   2212                   3758       56.5      UCDI274K",
+        "250        GSVO20250        TAD940GE            2950   1430   1696  3330                     3841   1434   2212                   4045       70.6      UCDI274K",
+        "300        GSVO20300        TAD941GE            2950   1430   1696  4274                     3841   1434   2212                   5264       83.8      S4L1D-D",
+        "360        GSVO20360        TAD1343GE           3413   1316   1754  4274                     4600   1650   2453                   5264       96.0      S4L1D-F",
+        "400        GSVO20400        TAD1344GE           3413   1316   1754  4274                     4600   1650   2453                   5264       106.7     S4L1D-F",
+        "450        GSVO20450        TAD1640GE           3950   1660   2450  5313                     5100   2010   2557                   6523       119.7     HCI534D",
+        "500        GSVO20500        TAD1641GE           3950   1660   2450  5313                     5100   2010   2557                   6523       139.6     HCI534D",
+        "550        GSVO20550        TAD1642GE           3950   1660   2450  5698                     5100   2010   2557                   6908       150.6     HCI534E",
+        "600        GSVO20600        TWD1643GE           3950   1660   2450  5698                     5100   2010   2557                   6908       161.76    HCI534E"
+      ],
+      "file": "sources/igsa-mexico/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.igsa.com.mx/unidades-de-negocio/plantas-electricas/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "IGSA, Baudouin, Cummins, Mitsubishi y Volvo Penta",
+        "Stamford, Leroy Sommer",
+        "Capacidades desde los 20kW hasta 3,300 kW"
+      ],
+      "file": "sources/igsa-mexico/2002.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Plantas Eléctricas / Gensets 20kW - 3300kw (serie GSIG, generador Stamford)",
+      "header": [
+        "                                                                    DIMENSIONES EQUIPO ABIERTO               DIMENSIONES EQUIPO CON CASETA                CONSUMO   STAMFORD",
+        "          CAPACIDAD  MODELO              MODELO DE     LARGO            ANCHO    ALTO           PESO         LARGO   ANCHO           ALTO          PESO   100% ESP  MODELO",
+        "          (Kw)                           MOTOR                                                  SECO (kg)                                   SECO (kg)               GENERADOR"
+      ],
+      "rows": [
+        "          20         GSIG00020           4M06G25/6     1726             974      1250           1036         2203    989             1416          1405   8.5       S0L2-M1",
+        "          30         GSIG00030           4M06G33/6     1726             974      1250           1036         2203    989             1416          1405   10.3      S1L2-J1",
+        "          40         GSIG00040           4M06G41/6     1865             971      1321           1097         2534    986             1520          1493   12.4      S1L2-N",
+        "          50         GSIG00050           4M06G55/6     1865             971      1321           1097         2534    986             1520          1493   15.8      S1L2-R",
+        "          60         GSIG00060           4M10G83/6     2270             1006     1420           1435         3015    1021            1744          1875   24.54     S1L2-Y",
+        "          80         GSIG00080           4M10G83/6     2270             1006     1420           1452         3015    1021            1744          1892   24.54     UCI224G1",
+        "          100        GSIG00100           4M10G100/6    2270             1006     1420           1551         3015    1021            1744          1991   28.65     UCI274C",
+        "          125        GSIG00125           6M11G135/6    2487             1130     1600           2073         3401    1145            1940          2434   37.5      UCI274E",
+        "          150        GSIG00150           6M11G160/6    2487             1130     1600           2112         3401    1145            1940          2662   43.9      UCI274F",
+        "          175        GSIG00175           6M11G176/6    2487             1130     1600           2170         3401    1145            1940          2720   48.6      UCI274G",
+        "          200        GSIG00200           6M16G200/6    2950             1430     1696           3091         3841    1434            2212          3806   56.5      UCI274H",
+        "          250        GSIG00250           6M16G250/6    2950             1430     1696           3186         3841    1434            2212          3901   70.1      UCDI274K",
+        "          300        GSIG00300           6M16G308/6    2950             1430     1696           3474         3841    1434            2212          4189   88.9      S4L1D-D",
+        "          350        GSIG00350           6M21G330/6    3413             1316     1754           3657         4600    1650            2453          4647   90.9      S4L1D-E",
+        "          400        GSIG00400           6M21G390/6    3413             1316     1754           3657         4600    1650            2453          4647   110.2     S4L1D-F",
+        "          500        GSIG00500           6M26G500/6    3950             1660     2450           4680         5100    2010            2557          5604   139.9     HCI534D",
+        "          600        GSIG00600           6M33G600/6    3950             1660     2450           5995         5100    2010            2557          7205   168.8     HCI534E",
+        "          750        GSIG00750           12M26G704/6   4400             2150     2599           8455         5533    2204            2556          11237  194.9     S6L1D-C4",
+        "          800        GSIG00800           12M26G800/6   4400             2150     2426           8455         5533    2204            2556          11237  225.9     S6L1D-C4",
+        "          1000       GSIG01000           12M26G1000/6  4400             2150     2426           8667         5533    2204            2556          11453  290.1     S6L1D-E4",
+        "          1250       GSIG01250           12M33G1300/6  5155             2300     2622           11562        6200    2430            2700          14745  359.3     S6L1D-G4",
+        "          1500       GSIG01500           16M33G1500/6  TBD              TBD      TBD            TBD          6533    2424            3308          TBD    402.1     S7L1D-C",
+        "          1750       GSIG01750           16M33G1750/6  TBD              TBD      TBD            TBD          6533    2424            3308          TBD    496.5     S7L1D-F",
+        "          2000       GSIG02000           12M55G2000/6  TBD              TBD      TBD            TBD          9000    2700            3757          14745  501.8     S7L1D-G",
+        "          2200       GSIG02250           12M55G2250/6  TBD              TBD      TBD            TBD          ESP     ESP             ESP           TBD    548.8     S7L1D-J",
+        "          2500       GSIG02500           12M55G2500/6  TBD              TBD      TDB            N/D          ESP     ESP             ESP           TBD    653.6     S7L1D-J",
+        "          2640       GSIG064005          16M55G2640/6  *8001            *3003    *3630          TBD          *10700  *3400           *4000         TBD    706.4     S7L1D-K",
+        "          2750       GSIG02750S          16M55G2800/6  *8001            *3003    *3630          TBD          *10700  *3400           *4000         TBD    749       S7L1D-K",
+        "          3000       GSIG03000           16M55G3000/6  TBD              TBD      TBD            TBD          TBD     TBD             TBD           TBD    801       S9L1D-D",
+        "          3300       GSIG03300           16M55G3300/6  TBD              TBD      TBD            TBD          TBD     TBD             TBD           TBD    890.1     S9L1D-E"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Plantas Eléctricas / Gensets 800kW - 2000kW (serie GSMIT, generador Stamford)",
+      "header": [
+        "                                                        DIMENSIONES  EQUIPO  ABIERTO                         DIMENSIONES EQUIPO CON  CASETA         CONSUMO   STAMFORD",
+        "          CAPACIDAD  MODELO      MODELO DE       LARGO  ANCHO        ALTO    PESO SECO                       LARGO  ANCHO  ALTO      PESO SECO      100% ESP  MODELO",
+        "          (Kw)                   MOTOR                                       (kg)                                                            (kg)             GENERADOR"
+      ],
+      "rows": [
+        "          800        GSMIT00800  S12A2-Y1PTA-1   4400   2150         2511    7450                            5533   2204   2559              11474  235.4     S6L1D-C4",
+        "          1000       GSMIT01000  S12H-Y1PTA-3    4400   2150         2760    10117                           5533   2204   2559              12321  283.4     S6L1D-E4",
+        "          1250       GSMIT01250  S12R-Y1PTA-2    4400   2150         2753    11739                           6200   2430   3050              15731  354.2     S6L1D-G4",
+        "          1600       GSMIT01600  S16R-Y1PTA-2    5155   2300         3048    14092                           6533   2424   3308              19650  437.9     PI734ED",
+        "          2000       GSIMIT2000  S16R-Y1PTAA2-1  TBD    TBD          TBD     TBD                             8000   2800   3829              21894  509       S7L1D-G"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Plantas Eléctricas / Gensets 100kW - 600kW (serie GSVO, generador Stamford)",
+      "header": [
+        "                                                             DIMENSIONES   EQUIPO ABIERTO                 DIMENSIONES EQUIPO CON  CASETA                  CONSUMO   STAMFORD",
+        "             CAPACIDAD  MODELO           MODELO DE           LARGO  ANCHO  ALTO  PESO                     LARGO  ANCHO  ALTO                   PESO       100% ESP  MODELO",
+        "             (Kw)                        MOTOR                                   SECO (kg)                                                     SECO (kg)            GENERADOR"
+      ],
+      "rows": [
+        "             77         GSVO10077        TD520GE             2270   1006   1420  1380                     3015   1021   1744                   1821       22.5      UCI224G-1",
+        "             80         GSVO10080        TD520GE             2270   1006   1420  1409                     3015   1021   1744                   1849       22.5      UCI224G-1",
+        "             95         GSVO20095        TAD531GE            2270   1006   1420  1409                     3015   1021   1744                   1849       28.5      UCI274C",
+        "             115        GSVO20115        TAD532GE            2270   1006   1420  1728                     3015   1021   1744                   2221       36.0      UCI274E",
+        "             140        GSVO20140        TAD731GE            2487   1130   1600  2083                     3401   1145   1940                   2633       41.6      UCI274F",
+        "             180        GSVO20180        TAD732GE            2487   1130   1600  2166                     3401   1145   1940                   2716       52.8      UCI274H",
+        "             200        GSVO20200        TAD733GE            2950   1430   1696  2948                     3841   1434   2212                   3663       60.3      UCI274H",
+        "             225        GSVO30225        TAD753GE            2950   1430   1696  3043                     3841   1434   2212                   3758       56.5      UCDI274K",
+        "             250        GSVO20250        TAD940GE            2950   1430   1696  3330                     3841   1434   2212                   4045       70.6      UCDI274K",
+        "             300        GSVO20300        TAD941GE            2950   1430   1696  4274                     3841   1434   2212                   5264       83.8      S4L1D-D",
+        "             360        GSVO20360        TAD1343GE           3413   1316   1754  4274                     4600   1650   2453                   5264       96.0      S4L1D-F",
+        "             400        GSVO20400        TAD1344GE           3413   1316   1754  4274                     4600   1650   2453                   5264       106.7     S4L1D-F",
+        "             450        GSVO20450        TAD1640GE           3950   1660   2450  5313                     5100   2010   2557                   6523       119.7     HCI534D",
+        "             500        GSVO20500        TAD1641GE           3950   1660   2450  5313                     5100   2010   2557                   6523       139.6     HCI534D",
+        "             550        GSVO20550        TAD1642GE           3950   1660   2450  5698                     5100   2010   2557                   6908       150.6     HCI534E",
+        "             600        GSVO20600        TWD1643GE           3950   1660   2450  5698                     5100   2010   2557                   6908       161.76    HCI534E"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "   y paralelismo.                                                                            DSE7320 Control",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DeepSea 4520",
+      "line": "•  Controles estándar DeepSea 4520, 7320                       •  DeepSea Control Panels – 4520, 7320.",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "8610",
+      "line": "•  Controles para sincronía 8610,                                 •                  Sync Controls: 8610, 8620, 8660.",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8620",
+      "text": "8620",
+      "line": "•  Controles para sincronía 8610,                                 •                  Sync Controls: 8610, 8620, 8660.",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8660",
+      "text": "8660",
+      "line": "•  Controles para sincronía 8610,                                 •                  Sync Controls: 8610, 8620, 8660.",
+      "src": [
+        2001
+      ]
+    }
+  ]
 }
