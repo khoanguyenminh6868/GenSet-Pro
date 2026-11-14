@@ -9,3 +9,4 @@
 - [Không dùng bản artifact](no-artifact-version.md) — chỉ web Vercel + bot Windows, bỏ qua nhánh claude.ai
 - [Phân tích: bỏ cảnh báo thủ tục](phan-tich-bo-canh-bao.md) — không cảnh báo đóng thầu, bảo đảm dự thầu, hiệu lực E-HSDT
 - [Repo public: không hỏi lại](repo-public-khong-hoi.md) — Khoa đã chấp nhận memory nằm trong repo public
+- [Gọi Gemini 4 Argon](argon-delegate.md) — CHỈ khi Khoa bảo; qua OpenRouter, script `genbid-work\argon`, quy trình rẻ, giá, bẫy
