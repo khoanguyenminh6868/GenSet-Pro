@@ -63,6 +63,282 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE25T/T3N",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM480"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE22VT/VT3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM2V105FE"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 17,
+        "max": 17,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE20VT/VT3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM2V100FE"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 16,
+        "max": 16,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE18VT/VT3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM2V95FE"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 14,
+        "max": 14,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE15E/E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM380"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 12.5,
+        "max": 12.5,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE19ST",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM375"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE16VT/VT3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM2V92FE"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE16E/E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM295FE"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 11,
+        "max": 11,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE14E/E3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM292FE"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE12VT/VT3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM2V88FE"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 9,
+        "max": 9,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE16T/T3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM295FE"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 11,
+        "max": 11,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KDE14T/T3",
+      "fuel": "diesel",
+      "engineModels": [
+        "KM292FE"
+      ],
+      "engineMakes": [
+        "Kama"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
     }
   ],
   "certifications": [
@@ -120,9 +396,287 @@
         "发电功率从0.6千瓦到800千瓦"
       ],
       "file": "sources/hykama-wuxi/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.hykama.com/product/100",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号：KDE25T/T3N",
+        "功率：20KW\n发动机型号：KM480"
+      ],
+      "file": "sources/hykama-wuxi/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.hykama.com/product/164",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号：KDE22VT/VT3",
+        "功率：17KW\n发动机型号：KM2V105FE"
+      ],
+      "file": "sources/hykama-wuxi/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.hykama.com/product/145",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号： KDE20VT/VT3",
+        "功率： 16KW\n发动机型号：KM2V100FE"
+      ],
+      "file": "sources/hykama-wuxi/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.hykama.com/product/149",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号： KDE18VT/VT3",
+        "功率： 14KW\n发动机型号： KM2V95FE"
+      ],
+      "file": "sources/hykama-wuxi/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.hykama.com/product/99",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号：KDE15E/E3",
+        "功率：12.5KW\n发动机型号：KM380"
+      ],
+      "file": "sources/hykama-wuxi/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.hykama.com/product/97",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号：KDE19ST",
+        "功率：12KW\n发动机型号：KM375"
+      ],
+      "file": "sources/hykama-wuxi/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.hykama.com/product/148",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号： KDE16VT/VT3",
+        "功率： 12KW\n发动机型号： KM2V92FE"
+      ],
+      "file": "sources/hykama-wuxi/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.hykama.com/product/143",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号： KDE16E/E3",
+        "功率： 11KW\n发动机型号：KM295FE"
+      ],
+      "file": "sources/hykama-wuxi/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.hykama.com/product/142",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号： KDE14E/E3",
+        "功率： 10KW\n发动机型号：KM292FE"
+      ],
+      "file": "sources/hykama-wuxi/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.hykama.com/product/146",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号：KDE12VT/VT3",
+        "功率：9KW\n发动机型号：KM2V88FE"
+      ],
+      "file": "sources/hykama-wuxi/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.hykama.com/product/144",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号： KDT16T/T3",
+        "功率： 11KW\n发动机型号：KM295FE"
+      ],
+      "file": "sources/hykama-wuxi/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.hykama.com/product/98",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "型号：KDE14T/T3",
+        "功率：10KW\n发动机型号：KM292FE"
+      ],
+      "file": "sources/hykama-wuxi/2012.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "KDE25T/T3N (柴油发电机组)",
+      "header": [
+        "型号：KDE25T/T3N"
+      ],
+      "rows": [
+        "功率：20KW",
+        "发动机型号：KM480"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "KDE22VT/VT3 (柴油发电机组)",
+      "header": [
+        "型号：KDE22VT/VT3"
+      ],
+      "rows": [
+        "功率：17KW",
+        "发动机型号：KM2V105FE"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "KDE20VT/VT3 (柴油发电机组)",
+      "header": [
+        "型号： KDE20VT/VT3"
+      ],
+      "rows": [
+        "功率： 16KW",
+        "发动机型号：KM2V100FE"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "KDE18VT/VT3 (柴油发电机组)",
+      "header": [
+        "型号： KDE18VT/VT3"
+      ],
+      "rows": [
+        "功率： 14KW",
+        "发动机型号： KM2V95FE"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "KDE15E/E3 (柴油发电机组)",
+      "header": [
+        "型号：KDE15E/E3"
+      ],
+      "rows": [
+        "功率：12.5KW",
+        "发动机型号：KM380"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "KDE19ST (柴油发电机组)",
+      "header": [
+        "型号：KDE19ST"
+      ],
+      "rows": [
+        "功率：12KW",
+        "发动机型号：KM375"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "KDE16VT/VT3 (柴油发电机组)",
+      "header": [
+        "型号： KDE16VT/VT3"
+      ],
+      "rows": [
+        "功率： 12KW",
+        "发动机型号： KM2V92FE"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "KDE16E/E3 (柴油发电机组)",
+      "header": [
+        "型号： KDE16E/E3"
+      ],
+      "rows": [
+        "功率： 11KW",
+        "发动机型号：KM295FE"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "KDE14E/E3 (柴油发电机组)",
+      "header": [
+        "型号： KDE14E/E3"
+      ],
+      "rows": [
+        "功率： 10KW",
+        "发动机型号：KM292FE"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "KDE12VT/VT3 (柴油发电机组)",
+      "header": [
+        "型号：KDE12VT/VT3"
+      ],
+      "rows": [
+        "功率：9KW",
+        "发动机型号：KM2V88FE"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "KDE16T/T3 (柴油发电机组)",
+      "header": [
+        "型号： KDT16T/T3"
+      ],
+      "rows": [
+        "功率： 11KW",
+        "发动机型号：KM295FE"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "KDE14T/T3 (柴油发电机组)",
+      "header": [
+        "型号：KDE14T/T3"
+      ],
+      "rows": [
+        "功率：10KW",
+        "发动机型号：KM292FE"
+      ]
+    }
+  ]
 }
