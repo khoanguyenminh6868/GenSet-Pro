@@ -60,6 +60,188 @@
         1,
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "KD165",
+      "fuel": "diesel",
+      "engineModels": [
+        "KD59L06T-AA56"
+      ],
+      "engineMakes": [
+        "Rehlko"
+      ],
+      "alternatorMakes": [
+        "Rehlko"
+      ],
+      "power": {
+        "min": 165,
+        "max": 165,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KD250",
+      "fuel": "diesel",
+      "engineModels": [
+        "KD83L06T-AA56B"
+      ],
+      "engineMakes": [
+        "Rehlko"
+      ],
+      "alternatorMakes": [
+        "Rehlko"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "V715C2",
+      "fuel": "diesel",
+      "engineModels": [
+        "TWD1644GE"
+      ],
+      "engineMakes": [
+        "Volvo"
+      ],
+      "alternatorMakes": [
+        "Rehlko"
+      ],
+      "power": {
+        "min": 715,
+        "max": 715,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KD1000-E",
+      "fuel": "diesel",
+      "engineModels": [
+        "KD27V12-5CES"
+      ],
+      "engineMakes": [
+        "Rehlko"
+      ],
+      "alternatorMakes": [
+        "Rehlko"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KD1800-E",
+      "fuel": "diesel",
+      "engineModels": [
+        "KD45V20-5EES"
+      ],
+      "engineMakes": [
+        "Rehlko"
+      ],
+      "alternatorMakes": [
+        "Rehlko"
+      ],
+      "power": {
+        "min": 1800,
+        "max": 1800,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "T2200",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R-PTAA2B"
+      ],
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "alternatorMakes": [
+        "Rehlko"
+      ],
+      "power": {
+        "min": 2255,
+        "max": 2255,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KD1250-F",
+      "fuel": "diesel",
+      "engineModels": [
+        "KD36V16-5AFS"
+      ],
+      "engineMakes": [
+        "KOHLER"
+      ],
+      "alternatorMakes": [
+        "KOHLER"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
     }
   ],
   "certifications": [],
@@ -90,9 +272,302 @@
         "Generator sets of all power outputs - for 1 to 4,500 kVA each"
       ],
       "file": "sources/lepron/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.lepron-sa.com/fr/categorie/gammes/groupes-electrogenes-1000kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Puissance secours ESP : 165kVA - PRP : 150kVA",
+        "- Type moteur KD59L06T-AA56"
+      ],
+      "file": "sources/lepron/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.lepron-sa.com/fr/categorie/gammes/groupes-electrogenes-1000kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Puissance secours ESP : 250kVA - PRP : 227kVA",
+        "- Type moteur KD83L06T-AA56B"
+      ],
+      "file": "sources/lepron/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.lepron-sa.com/fr/categorie/gammes/groupes-electrogenes-1000kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Puissance secours ESP : 715kVA - PRP : 650kVA",
+        "- Type moteur TWD1644GE"
+      ],
+      "file": "sources/lepron/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.lepron-sa.com/fr/categorie/gammes/groupes-electrogenes-1000kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Puissance secours ESP : 1000kVA - PRP : 909kVA",
+        "- Type moteur KD27V12-5CES"
+      ],
+      "file": "sources/lepron/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.lepron-sa.com/fr/categorie/gammes/groupes-electrogenes-industriels-4500kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Puissance secours ESP : 1800kVA - PRP : 1636kVA",
+        "- Type moteur KD45V20-5EES"
+      ],
+      "file": "sources/lepron/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.lepron-sa.com/fr/categorie/gammes/groupes-electrogenes-industriels-4500kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Puissance secours ESP : 2255kVA - PRP : 2050kVA",
+        "- Type moteur S16R-PTAA2B"
+      ],
+      "file": "sources/lepron/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.lepron-sa.com/fr/categorie/gammes/groupe-electrogene-kohler.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Puissance secours ESP : 1250kVA - PRP : 1136kVA",
+        "- Type moteur KD36V16-5AFS"
+      ],
+      "file": "sources/lepron/2007.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "LEPRON KD165 — 165 kVA ESP",
+      "header": [
+        "Modèle : KD165"
+      ],
+      "rows": [
+        "Moteur : Rehlko",
+        "Alternateur : Rehlko",
+        "Biocarburant HVO / Diesel",
+        "Puissance secours ESP : 165kVA - PRP : 150kVA",
+        "- Marque moteur Rehlko KD Series",
+        "- Type moteur KD59L06T-AA56",
+        "- Classe de performance : G3",
+        "- Fréquence : 50 Hz",
+        "- Tension de référence : 400/230V",
+        "- Coffret standard : APM303 - APM403"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "LEPRON KD250 — 250 kVA ESP",
+      "header": [
+        "Modèle : KD250"
+      ],
+      "rows": [
+        "Moteur : Rehlko",
+        "Alternateur : Rehlko",
+        "Biocarburant HVO / Diesel",
+        "Puissance secours ESP : 250kVA - PRP : 227kVA",
+        "- Marque moteur Rehlko KD Series",
+        "- Type moteur KD83L06T-AA56B",
+        "- Classe de performance : G3",
+        "- Fréquence : 50 Hz",
+        "- Tension de référence : 400/230V",
+        "- Coffret standard : APM303 - APM403"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "LEPRON V715C2 — 715 kVA ESP",
+      "header": [
+        "Modèle : V715C2"
+      ],
+      "rows": [
+        "Moteur : Volvo",
+        "Alternateur : Rehlko",
+        "Biocarburant HVO / Diesel",
+        "Puissance secours ESP : 715kVA - PRP : 650kVA",
+        "- Marque moteur Volvo",
+        "- Type moteur TWD1644GE",
+        "- Classe de performance : G3",
+        "- Fréquence : 50 Hz",
+        "- Tension de référence : 400/230V",
+        "- Coffret standard : APM403"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "LEPRON KD1000-E — 1000 kVA ESP",
+      "header": [
+        "Modèle : KD1000-E"
+      ],
+      "rows": [
+        "Moteur : Rehlko",
+        "Alternateur : Rehlko",
+        "Biocarburant HVO / Diesel",
+        "Puissance secours ESP : 1000kVA - PRP : 909kVA",
+        "- Marque moteur Rehlko KD Series",
+        "- Type moteur KD27V12-5CES",
+        "- Classe de performance : G3",
+        "- Fréquence : 50 Hz",
+        "- Tension de référence : 400/230V",
+        "- Coffret standard : M80-D"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "LEPRON KD1800-E — 1800 kVA ESP",
+      "header": [
+        "Modèle : KD1800-E"
+      ],
+      "rows": [
+        "Moteur : Rehlko",
+        "Alternateur : Rehlko",
+        "Biocarburant HVO / Diesel",
+        "Puissance secours ESP : 1800kVA - PRP : 1636kVA",
+        "- Marque moteur Rehlko KD Series",
+        "- Type moteur KD45V20-5EES",
+        "- Classe de performance : G3",
+        "- Fréquence : 50 Hz",
+        "- Tension de référence : 400/230V",
+        "- Coffret standard : M80-D"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "LEPRON T2200 — 2255 kVA ESP",
+      "header": [
+        "Modèle : T2200"
+      ],
+      "rows": [
+        "Moteur : Mitsubishi",
+        "Alternateur : Rehlko",
+        "Biocarburant HVO / Diesel",
+        "Puissance secours ESP : 2255kVA - PRP : 2050kVA",
+        "- Marque moteur Mitsubishi",
+        "- Type moteur S16R-PTAA2B",
+        "- Classe de performance : G3",
+        "- Fréquence : 50 Hz",
+        "- Tension de référence : 400/230V",
+        "- Coffret standard : Bornier"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "LEPRON KD1250-F — 1250 kVA ESP",
+      "header": [
+        "Modèle : KD1250-F"
+      ],
+      "rows": [
+        "Moteur : KOHLER",
+        "Alternateur : KOHLER",
+        "Biocarburant HVO / Diesel",
+        "Puissance secours ESP : 1250kVA - PRP : 1136kVA",
+        "- Marque moteur KOHLER KD Series",
+        "- Type moteur KD36V16-5AFS",
+        "- Classe de performance : G3",
+        "- Fréquence : 50 Hz",
+        "- Tension de référence : 400/230V",
+        "- Coffret standard : M80-D"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Rehlko",
+      "model": "APM303",
+      "text": "APM303",
+      "line": "- Coffret standard : APM303 - APM403",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Rehlko",
+      "model": "APM403",
+      "text": "APM403",
+      "line": "- Coffret standard : APM303 - APM403",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Rehlko",
+      "model": "APM303",
+      "text": "APM303",
+      "line": "- Coffret standard : APM303 - APM403",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Rehlko",
+      "model": "APM403",
+      "text": "APM403",
+      "line": "- Coffret standard : APM303 - APM403",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Rehlko",
+      "model": "APM403",
+      "text": "APM403",
+      "line": "- Coffret standard : APM403",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "Rehlko",
+      "model": "M80-D",
+      "text": "M80-D",
+      "line": "- Coffret standard : M80-D",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "Rehlko",
+      "model": "M80-D",
+      "text": "M80-D",
+      "line": "- Coffret standard : M80-D",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "Rehlko",
+      "model": "M80-D",
+      "text": "M80-D",
+      "line": "- Coffret standard : M80-D",
+      "src": [
+        2007
+      ]
+    }
+  ]
 }
