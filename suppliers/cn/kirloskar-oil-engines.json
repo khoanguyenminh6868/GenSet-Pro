@@ -51,6 +51,351 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG1-1010WS",
+      "fuel": "diesel",
+      "engineModels": [
+        "DV16ETA"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 1010,
+        "max": 1010,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-20WS1",
+      "fuel": "diesel",
+      "engineModels": [
+        "3R550TA 4G1"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-40WS1",
+      "fuel": "diesel",
+      "engineModels": [
+        "3R1190ETA 4G1"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-82.5WS1",
+      "fuel": "diesel",
+      "engineModels": [
+        "4R1190ETA 4G1"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 82.5,
+        "max": 82.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-125WS1",
+      "fuel": "diesel",
+      "engineModels": [
+        "4K1080ETA 4G1"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-160WS11",
+      "fuel": "diesel",
+      "engineModels": [
+        "6K1080ETA 4G1"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 160,
+        "max": 160,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-200WS1",
+      "fuel": "diesel",
+      "engineModels": [
+        "6K1080ETA 4G2"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-250WS1",
+      "fuel": "diesel",
+      "engineModels": [
+        "6SL90ETA 4G2"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-320WS1",
+      "fuel": "diesel",
+      "engineModels": [
+        "6SL90ETA 4G3"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 320,
+        "max": 320,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-400WS11",
+      "fuel": "diesel",
+      "engineModels": [
+        "DV8ETA 4G2"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-500WS",
+      "fuel": "diesel",
+      "engineModels": [
+        "DV8ETA 4G3"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-625WS11",
+      "fuel": "diesel",
+      "engineModels": [
+        "DV10ETA 4G2"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG4-750WS",
+      "fuel": "diesel",
+      "engineModels": [
+        "DV12ETA 4G2"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG1-1250WS",
+      "fuel": "diesel",
+      "engineModels": [
+        "12K4300-E1"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG1-1500WS",
+      "fuel": "diesel",
+      "engineModels": [
+        "12K4300-E2"
+      ],
+      "engineMakes": [
+        "Kirloskar"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2015
+        ]
+      },
+      "src": [
+        2015
+      ]
     }
   ],
   "certifications": [],
@@ -79,9 +424,865 @@
         "Our standard genset range, from 7.5 kVA to 3000 kVA, is built for dependable performance"
       ],
       "file": "sources/kirloskar-oil-engines/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/hhp/diesel-generators/1010-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "1010 kVA Diesel Genset - Product Specifications",
+        "KG1-1010WS"
+      ],
+      "file": "sources/kirloskar-oil-engines/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/lhp/diesel-generators/20-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "20 kVA Diesel Genset - Product Specifications",
+        "KG4-20WS1"
+      ],
+      "file": "sources/kirloskar-oil-engines/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/lhp/diesel-generators/40-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "40 kVA Diesel Genset - Product Specifications",
+        "KG4-40WS1"
+      ],
+      "file": "sources/kirloskar-oil-engines/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/lhp/diesel-generators/82.5-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "82.5 kVA Diesel Genset - Product Specifications",
+        "KG4-82.5WS1"
+      ],
+      "file": "sources/kirloskar-oil-engines/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/lhp/diesel-generators/125-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "125 kVA Diesel Genset - Product Specifications",
+        "KG4-125WS1"
+      ],
+      "file": "sources/kirloskar-oil-engines/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/lhp/diesel-generators/160-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "160 kVA Diesel Genset - Product Specifications",
+        "KG4-160WS11"
+      ],
+      "file": "sources/kirloskar-oil-engines/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/lhp/diesel-generators/200-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "200 kVA Diesel Genset - Product Specifications",
+        "KG4-200WS1"
+      ],
+      "file": "sources/kirloskar-oil-engines/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/lhp/diesel-generators/250-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "250 kVA Diesel Genset - Product Specifications",
+        "KG4-250WS1"
+      ],
+      "file": "sources/kirloskar-oil-engines/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/mhp/diesel-generators/320-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "320 kVA Diesel Genset - Product Specifications",
+        "KG4-320WS1"
+      ],
+      "file": "sources/kirloskar-oil-engines/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/mhp/diesel-generators/400-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "400 kVA Diesel Genset - Product Specifications",
+        "KG4-400WS11"
+      ],
+      "file": "sources/kirloskar-oil-engines/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/mhp/diesel-generators/500-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "500 kVA Diesel Genset - Product Specifications",
+        "KG4-500WS"
+      ],
+      "file": "sources/kirloskar-oil-engines/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/mhp/diesel-generators/625-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "625 kVA Diesel Genset - Product Specifications",
+        "KG4-625WS11"
+      ],
+      "file": "sources/kirloskar-oil-engines/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/mhp/diesel-generators/750-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "750 kVA Diesel Genset - KOEL",
+        "KG4-750WS"
+      ],
+      "file": "sources/kirloskar-oil-engines/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/hhp/diesel-generators/1250-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "1250 kVA Diesel Genset - Product Specifications",
+        "KG1-1250WS"
+      ],
+      "file": "sources/kirloskar-oil-engines/2014.md",
+      "official": true
+    },
+    {
+      "n": 2015,
+      "url": "https://www.kirloskaroilengines.com/products/power-gen/genset/hhp/diesel-generators/1500-kva-diesel-genset",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "1500 kVA Diesel Genset - Product Specifications",
+        "KG1-1500WS"
+      ],
+      "file": "sources/kirloskar-oil-engines/2015.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "KG1-1010WS – 1010 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "1010 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "808 kW",
+        "Genset Model",
+        "KG1-1010WS",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Weight of genset with canopy",
+        "Dry",
+        "13200 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "7800 mm",
+        "Width",
+        "2300 mm",
+        "Height",
+        "2713 mm",
+        "Electrical Battery Starting Voltage",
+        "24 Volts-DC",
+        "Engine Model",
+        "DV16ETA",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "889 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "1210 HP"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "KG4-20WS1 – 20 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "20 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "16 kW",
+        "Genset Model",
+        "KG4-20WS1",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "230 (1ɸ) & 415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G2",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "680 kg",
+        "Wet",
+        "690 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "2180 mm",
+        "Width",
+        "905 mm",
+        "Height",
+        "1150 mm",
+        "Electrical Battery Starting Voltage",
+        "12 Volts-DC",
+        "Engine Model",
+        "3R550TA 4G1",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "18.8 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "25.5 HP"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "KG4-40WS1 – 40 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "40 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "32 kW",
+        "Genset Model",
+        "KG4-40WS1",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G2",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "1165 kg",
+        "Wet",
+        "1180 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "2750 mm",
+        "Width",
+        "1050 mm",
+        "Height",
+        "1495 mm",
+        "Electrical Battery Starting Voltage",
+        "12 Volts-DC",
+        "Engine Model",
+        "3R1190ETA 4G1",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "41.1 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "56 HP"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "KG4-82.5WS1 – 82.5 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "82.5 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "66 kW",
+        "Genset Model",
+        "KG4-82.5WS1",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "1800 kg",
+        "Wet",
+        "1860 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "3200 mm",
+        "Width",
+        "1350 mm",
+        "Height",
+        "1595 mm",
+        "Electrical Battery Starting Voltage",
+        "12 Volts-DC",
+        "Engine Model",
+        "4R1190ETA 4G1",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "77.2 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "105 HP"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "KG4-125WS1 – 125 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "125 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "100 kW",
+        "Genset Model",
+        "KG4-125WS1",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "2200 kg",
+        "Wet",
+        "2260 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "3200 mm",
+        "Width",
+        "1350 mm",
+        "Height",
+        "1800 mm",
+        "Electrical Battery Starting Voltage",
+        "12 Volts-DC",
+        "Engine Model",
+        "4K1080ETA 4G1",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "114.7 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "156 HP"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "KG4-160WS11 – 160 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "160 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "128 kW",
+        "Genset Model",
+        "KG4-160WS11",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "2980 kg",
+        "Wet",
+        "3050 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "4200 mm",
+        "Width",
+        "1450 mm",
+        "Height",
+        "1900 mm",
+        "Electrical Battery Starting Voltage",
+        "12 Volts-DC",
+        "Engine Model",
+        "6K1080ETA 4G1",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "147.1 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "200 HP"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "KG4-200WS1 – 200 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "kVA",
+        "200",
+        "kVA",
+        "200 HD",
+        "KW",
+        "160",
+        "Genset Model",
+        "KG4-200WS1",
+        "Genset Model",
+        "KG4-200WS1 (HD)",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "3080 Kg",
+        "Dry",
+        "3850 Kg",
+        "Wet (w/o fuel)",
+        "3150 Kg",
+        "Wet (w/o fuel)",
+        "3960 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "4200 mm",
+        "Width",
+        "1450 mm",
+        "Height",
+        "1900 mm",
+        "Overall dimensions of genset",
+        "Length",
+        "4550 mm",
+        "Width",
+        "1700 mm",
+        "Height",
+        "2005 mm",
+        "Electrical Battery Starting Voltage",
+        "12 Volts-DC",
+        "Electrical Battery Starting Voltage",
+        "24 Volts-DC",
+        "Engine Model",
+        "6K1080ETA 4G2",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "183.8 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "250 HP"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "KG4-250WS1 – 250 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating",
+        "250 kVA",
+        "200 kW",
+        "Genset Model",
+        "KG4-250WS1",
+        "Fuel",
+        "Diesel",
+        "Frequency",
+        "50 Hz",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Noise level",
+        "<75 dBA",
+        "Weight of Genset with Canopy (Dry)",
+        "3990",
+        "Weight of Genset with Canopy {Wet (w/o fuel)",
+        "4100",
+        "Overall Dimension (LxWxH)",
+        "4750 x 1700 x 2005",
+        "Electrical Battery Starting Voltage",
+        "24 V",
+        "Engine Model",
+        "6SL90ETA 4G2",
+        "Rated output",
+        "228 kW",
+        "310 HP"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "KG4-320WS1 – 320 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "320 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "256 kW",
+        "Genset Model",
+        "KG4-320WS1",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "4090 Kg",
+        "Wet",
+        "4200 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "4750 mm",
+        "Width",
+        "1700 mm",
+        "Height",
+        "2005 mm",
+        "Electrical Battery Starting Voltage",
+        "24 Volts-DC",
+        "Engine Model",
+        "6SL90ETA 4G3",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "279.5 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "380 HP"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "KG4-400WS11 – 400 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "400 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "320 kW",
+        "Genset Model",
+        "KG4-400WS11",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "6220 Kg",
+        "Wet",
+        "6415 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "5575 mm",
+        "Width",
+        "2125 mm",
+        "Height",
+        "2610 mm",
+        "Electrical Battery Starting Voltage",
+        "24 Volts-DC",
+        "Engine Model",
+        "DV8ETA 4G2",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "360 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "490 HP"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "KG4-500WS – 500 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "500 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "400 kW",
+        "Genset Model",
+        "KG4-500WS",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "6240 Kg",
+        "Wet",
+        "6435 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "5575 mm",
+        "Width",
+        "2125 mm",
+        "Height",
+        "2610 mm",
+        "Electrical Battery Starting Voltage",
+        "24 Volts-DC",
+        "Engine Model",
+        "DV8ETA 4G3",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "447.2 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "608 HP"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "KG4-625WS11 – 625 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "625 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "500 kW",
+        "Genset Model",
+        "KG4-625WS11",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Noise level",
+        "<75 DBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "8150 kg",
+        "Wet",
+        "8370 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "6500 mm",
+        "Width",
+        "2125 mm",
+        "Height",
+        "2710 mm",
+        "Electrical Battery Starting Voltage",
+        "24 Volts-DC",
+        "Engine Model",
+        "DV10ETA 4G2",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "561.1 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "763 HP"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "KG4-750WS – 750 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "750 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "600 kW",
+        "Genset Model",
+        "KG4-750WS",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Noise level",
+        "<75 dBA",
+        "Weight of genset with canopy",
+        "Dry",
+        "8760 Kg",
+        "Wet (w/o fuel)",
+        "9100 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "6800 mm",
+        "Width",
+        "2300 mm",
+        "Height",
+        "2715 mm",
+        "Electrical Battery Starting Voltage",
+        "Volts-DC",
+        "24",
+        "Engine Model",
+        "DV12ETA 4G2",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "662 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "900.6 HP"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "KG1-1250WS – 1250 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "1250 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "1000 kW",
+        "Genset Model",
+        "KG1-1250WS",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Weight of genset with canopy",
+        "Dry",
+        "18250 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "8500 mm",
+        "Width",
+        "2560 mm",
+        "Height",
+        "3120 mm",
+        "Electrical Battery Starting Voltage",
+        "24 Volts-DC",
+        "Engine Model",
+        "12K4300-E1",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "1097 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "1492 HP"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "KG1-1500WS – 1500 kVA prime (Kirloskar)",
+      "header": [
+        "Technical Specification"
+      ],
+      "rows": [
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "1500 kVA",
+        "Prime Rating at rated rpm (as per ISO8528)1",
+        "1200 kW",
+        "Genset Model",
+        "KG1-1500WS",
+        "Frequency",
+        "50",
+        "Power Factor",
+        "0.8",
+        "Voltage",
+        "415 (3ɸ)",
+        "Governing class (As per ISO 8528 Part-V)",
+        "G3",
+        "Weight of genset with canopy",
+        "Dry",
+        "18750 Kg",
+        "Overall dimensions of genset",
+        "Length",
+        "8500 mm",
+        "Width",
+        "2560 mm",
+        "Height",
+        "3120 mm",
+        "Electrical Battery Starting Voltage",
+        "24 Volts-DC",
+        "Engine Model",
+        "12K4300-E2",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "1295 kW",
+        "Rated output (Prime Continuous rating as per ISO 8528-1)",
+        "1760 HP"
+      ]
+    }
+  ]
 }
