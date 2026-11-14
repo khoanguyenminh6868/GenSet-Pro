@@ -53,6 +53,23 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "开架型柴油发电机组",
+      "fuel": "diesel",
+      "power": {
+        "min": 10,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -73,9 +90,44 @@
         "设计和开发功率范围从2KVA到2500KVA的高品质发电机组产品"
       ],
       "file": "sources/ruiying-jiangsu/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.cnriyi.net/power-generation/open-type-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| 01. | 功率范围 | 10kva-2000kva",
+        "| 03. | 可选发动机品牌 | 康明斯、铂金斯、潍柴、玉柴、上柴等",
+        "| 04. | 可选发电机品牌 | 瑞营、斯坦福、美奥迪等",
+        "| 05. | 可选控制面板品牌 | 瑞营、科迈、深海等"
+      ],
+      "file": "sources/ruiying-jiangsu/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "科迈",
+      "line": "| 05. | 可选控制面板品牌 | 瑞营、科迈、深海等",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "深海",
+      "line": "| 05. | 可选控制面板品牌 | 瑞营、科迈、深海等",
+      "src": [
+        2001
+      ]
+    }
+  ]
 }
