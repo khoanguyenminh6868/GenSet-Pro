@@ -47,6 +47,146 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "alternator",
+      "series": "EVO188 Series",
+      "fuel": null,
+      "alternatorMakes": [
+        "EVOTEC"
+      ],
+      "power": {
+        "min": 25,
+        "max": 54,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "EVO228 Series",
+      "fuel": null,
+      "alternatorMakes": [
+        "EVOTEC"
+      ],
+      "power": {
+        "min": 50,
+        "max": 190,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "EVO288 Series",
+      "fuel": null,
+      "alternatorMakes": [
+        "EVOTEC"
+      ],
+      "power": {
+        "min": 175,
+        "max": 420,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "EVO318 Series",
+      "fuel": null,
+      "alternatorMakes": [
+        "EVOTEC"
+      ],
+      "power": {
+        "min": 381,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "EVO368 Series",
+      "fuel": null,
+      "alternatorMakes": [
+        "EVOTEC"
+      ],
+      "power": {
+        "min": 563,
+        "max": 960,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "EVO428 Series",
+      "fuel": null,
+      "alternatorMakes": [
+        "EVOTEC"
+      ],
+      "power": {
+        "min": 913,
+        "max": 1800,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "EVO468 Series",
+      "fuel": null,
+      "alternatorMakes": [
+        "EVOTEC"
+      ],
+      "power": {
+        "min": 1650,
+        "max": 2700,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
     }
   ],
   "certifications": [],
@@ -64,9 +204,255 @@
         "EVOTEC,a National High-tech Enterprise, was established in May 2011,specializing in research and development, manufacturing, and sales of Industrial/Marine Synchronous Low,Medium and High Voltage alternators and Permanent Magnet alternators.EVOTEC is located in Lujiang High-tech Development Zone in Hefei City,Anhui Province"
       ],
       "file": "sources/evotec-power/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://en.evotecpower.com/alternators/industrial-generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "EVO188 Series Industrial Generator 25/54kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO228 Series Industrial Alternator 50/190kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO288 Series Industrial Generator 175/420kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO318 Series Industrial Generator 381/600kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO368 Series Industrial Generator 563/960kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO428 Series Industrial Generator 913/1800kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO468 Series Industrial Alternator 1650/2700kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "Our alternators for generators cover a wide power range from 6.8 to 6000KW"
+      ],
+      "file": "sources/evotec-power/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://en.evotecpower.com/alternators/industrial-generator/evo228-series-industrial-generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "EVO228 Series Industrial Alternator 50/190kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "file": "sources/evotec-power/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://en.evotecpower.com/alternators/industrial-generator/evo188-series-industrial-generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "EVO188 Series Industrial Generator 25/54kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "file": "sources/evotec-power/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://en.evotecpower.com/alternators/industrial-generator/evo288-series-industrial-generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "EVO288 Series Industrial Generator 175/420kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "file": "sources/evotec-power/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://en.evotecpower.com/alternators/industrial-generator/evo318-series-industrial-generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "EVO318 Series Industrial Generator 381/600kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "file": "sources/evotec-power/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://en.evotecpower.com/alternators/industrial-generator/evo368-series-industrial-generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "EVO368 Series Industrial Generator 563/960kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "file": "sources/evotec-power/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://en.evotecpower.com/alternators/industrial-generator/evo428-series-industrial-generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "EVO428 Series Industrial Generator 913/1800kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "file": "sources/evotec-power/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://en.evotecpower.com/alternators/industrial-generator/evo468-series-industrial-generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "EVO468 Series Industrial Alternator 1650/2700kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "file": "sources/evotec-power/2008.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "EvoTec Industrial Generator – các series đầu phát",
+      "header": [
+        "HOME > ALTERNATORS > Industrial Generator"
+      ],
+      "rows": [
+        "EVO188 Series Industrial Generator 25/54kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO228 Series Industrial Alternator 50/190kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO288 Series Industrial Generator 175/420kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO318 Series Industrial Generator 381/600kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO368 Series Industrial Generator 563/960kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO428 Series Industrial Generator 913/1800kVA，400/480V，50/60Hz，2/4/6/8/10Pole",
+        "EVO468 Series Industrial Alternator 1650/2700kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "EVO188 Series – Specification",
+      "header": [
+        "EVO188 Series Industrial Generator 25/54kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "rows": [
+        "Model:",
+        "C/CS/D/DS/E/F/G",
+        "50Hz Continuous (kVA):",
+        "25~54",
+        "60Hz Continuous (kVA):",
+        "-",
+        "Winding Pitch:",
+        "2/3",
+        "AVR:",
+        "ETC-1"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EVO228 Series – Specification",
+      "header": [
+        "EVO228 Series Industrial Alternator 50/190kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "rows": [
+        "Model:",
+        "B/C/D/E/F/G/H/J/K/L/M/N",
+        "50Hz Continuous (kVA):",
+        "50~160",
+        "60Hz Continuous (kVA):",
+        "60~190",
+        "Winding Pitch:",
+        "2/3",
+        "AVR:",
+        "AVR: ETC-1"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "EVO288 Series – Specification",
+      "header": [
+        "EVO288 Series Industrial Generator 175/420kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "rows": [
+        "Model:",
+        "AS/B/C/D/E/F/H/J/K/L",
+        "50Hz Continuous (kVA):",
+        "175~350",
+        "60Hz Continuous (kVA):",
+        "210~420",
+        "Winding Pitch:",
+        "2/3",
+        "AVR:",
+        "ETC-1"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "EVO318 Series – Specification",
+      "header": [
+        "EVO318 Series Industrial Generator 381/600kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "rows": [
+        "Model:",
+        "B/C/D/E",
+        "50Hz Continuous (kVA):",
+        "381~500",
+        "60Hz Continuous (kVA):",
+        "456~600",
+        "Winding Pitch:",
+        "2/3",
+        "AVR:",
+        "ETC-1"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "EVO368 Series – Specification",
+      "header": [
+        "EVO368 Series Industrial Generator 563/960kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "rows": [
+        "Model:",
+        "B/C/D/E/F/G/H",
+        "50Hz Continuous (kVA):",
+        "563~800",
+        "60Hz Continuous (kVA):",
+        "675~960",
+        "Winding Pitch:",
+        "2/3",
+        "AVR:",
+        "ETC-2 (Above500kW)"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "EVO428 Series – Specification",
+      "header": [
+        "EVO428 Series Industrial Generator 913/1800kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "rows": [
+        "Model:",
+        "B/C/D/E/F/G",
+        "50Hz Continuous (kVA):",
+        "913~1500",
+        "60Hz Continuous (kVA):",
+        "1095~1800",
+        "Winding Pitch:",
+        "2/3",
+        "AVR:",
+        "ETC-2"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "EVO468 Series – Specification",
+      "header": [
+        "EVO468 Series Industrial Alternator 1650/2700kVA，400/480V，50/60Hz，2/4/6/8/10Pole"
+      ],
+      "rows": [
+        "Model:",
+        "B/C/D/E/F",
+        "50Hz Continuous (kVA):",
+        "1650~2250",
+        "60Hz Continuous (kVA):",
+        "1980~2700",
+        "Winding Pitch:",
+        "2/3",
+        "AVR:",
+        "ETC-2"
+      ]
+    }
+  ]
 }
